@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "Lua: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が？なぜ？
+## 何となぜ？
 
-文字列から部分文字列を取り出すことを抽出すると、プログラマーは特定の文字列を取得したり、正規表現によるパターンマッチングを可能にしたりすることができます。
+部分文字列の抽出とは、より大きな文字列から特定の範囲の文字を選択して取り出す操作のことです。プログラマーがこれを行う理由は、大量のデータを操作、解析、フィルタリングするためです。
 
 ## 方法：
 
-	```Lua
-	-- 文字列 "Hello, Lua" から "Lua" を抽出する
-	local str = "Hello, Lua"
-	local substr = string.sub(str, 8) -- "Lua"を抽出
-	print(substr) -- 出力は "Lua" になる
-	```
+Luaでは、「string.sub」を使用します。次はその例です：
 
-	```Lua
-	-- 文字列 "I love coding" から "coding"を抽出する
-	local str = "I love coding"
-	local substr = string.sub(str, 8, 13) -- "coding"を抽出
-	print(substr) -- 出力は "coding" になる
-	```
+```Lua
+str = "こんにちは、世界！"
+print(string.sub(str, 3, 5))  -- "にち"
+```
+このプログラムを実行すると、「にち」と出力されます。2番目の引数は始点、3番目の引数は終点の位置を指定します。
 
-## 深堀り：
+## より深く：
 
-抽出する方法は多くありますが、Luaでは基本的には`string.sub()`関数を使用します。また、パターンマッチングのために`string.find()`や`string.match()`を使用することもできます。
+Luaの「string.sub」関数は演算子が1から始まることを前提としています。これは言語の設計の一部で、他の言語とは異なります。代替として、「string.slice」のような他の文字列操作関数も利用できますが、Luaでは「string.sub」が最も一般的です。また、「string.sub」は非常に効率的に実装されており、大量の文字列を処理するときには理想的です。
 
-## 関連情報：
+## 参考情報：
 
-- [Luaの公式ドキュメント](https://www.lua.org/manual/5.4/manual.html#6.4.1)
-- [W3SchoolsのLuaチュートリアル](https://www.w3schools.com/lua/)
+それぞれの使用方法や実装詳細については以下を参照してください：
+
+1. 公式Luaマニュアル: [string.sub](https://www.lua.org/manual/5.4/manual.html#6.4.2)
+2. Lua Users Wiki: [Strings Tutorial](http://lua-users.org/wiki/StringsTutorial)
+3. Stack Overflow: [How do I get a substring in Lua?](https://stackoverflow.com/questions/19664666/how-do-i-get-a-substring-in-lua)

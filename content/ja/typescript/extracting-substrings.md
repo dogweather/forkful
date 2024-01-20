@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "TypeScript: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かしら？
-文字列から一部を取り出すことを文字列の抽出と呼びます。プログラマーたちがこれをする理由は、特定の部分文字列を必要な情報として取り出すためです。
+## なんでしょうか？そして、なぜ？
 
-## 方法：
-TypeScriptのコードブロック内にあるコーディング例とサンプル出力です。
+部分文字列の抽出は、元の文字列から特定の範囲の文字を取り出すプロセスのことを指します。開発者は主にデータ操作や情報のフィルタリングを実行するために、この技術を使用します。
 
-```TypeScript
-const str: string = "Hello World";
-const substring: string = str.substring(6);
-console.log(substring);
+## 使い方：
 
-// Output: World
-```
+TypeScriptでは、「substring」や「slice」メソッドで部分文字列を抽出します。
 
 ```TypeScript
-const str: string = "Hello World";
-const startIndex: number = 0;
-const endIndex: number = 5;
-const substring: string = str.substring(startIndex, endIndex);
-console.log(substring);
-
-// Output: Hello
+let str = 'TypeScript サブストリング';
+console.log(str.substring(0,10));   // Output: 'TypeScript'
+console.log(str.slice(start));       // Output: 'サブストリング'
 ```
 
-## 詳しく：
-文字列の抽出は、古代のプログラミング言語であるBASICから生まれた概念です。他にも、正規表現や部分文字列の置き換えなどの代替手段があります。抽出方法には、`.substring()`、`.substr()`、`.slice()`のようなメソッドや、インデックス番号を指定することによる手動の抽出方法などがあります。抽出は、文字列操作やデータ処理でよく使用される一般的な機能です。
+## ディープダイブ：
 
-## 関連リンク：
-- [JavaScriptの複数の部分文字列を取得する方法](https://www.w3schools.com/code/tryit.asp?filename=GJAEKFUGAO7W)
-- [TypeScriptの文字列操作方法](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#string-slicing)
-- [BASIC言語の歴史](https://www.edp.hr/en/bj88_basic_history)
+部分文字列の抽出は、ユーザからの入力が予測不能で多様性のあるシチュエーションや大量のテキストデータの解析など、多くのプログラミング場面で使用されます。
+
+伝統的には、「substring」メソッドは開始位置と終了位置を受け取り、「slice」メソッドは開始位置と抽出する文字数を受け取りますが、TypeScriptでは両メソッドとも同じ挙動をします。
+
+なお、他の抽出の方法として「substr」メソッドも存在しますが、現在は非推奨とされ、確実な互換性のためには「substring」か「slice」メソッドを利用するべきです。
+
+## その他参考になる情報源：
+
+TypeScript公式ドキュメントの該当部分:
+- [`String.prototype.substring()`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [`String.prototype.slice()`](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+
+これらのリンクは、TypeScriptでの部分文字列の抽出についてより深く学ぶための参考資料となります。

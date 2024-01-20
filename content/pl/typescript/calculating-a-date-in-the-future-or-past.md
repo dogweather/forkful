@@ -10,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dla czego?
+## Co i dlaczego?
 
-Obliczenie daty w przyszłości lub przeszłości jest jedną z najczęstszych czynności wykonywanych przez programistów. Polega ona na wykorzystaniu wcześniej podanej daty i dodaniu (lub odjęciu) odpowiedniej liczby dni, tygodni, miesięcy lub lat, aby uzyskać przyszłą lub przeszłą datę. Programiści wykonują tę czynność, aby móc operować na różnych przedziałach czasowych i dokonywać obliczeń na dacie.
+Obliczanie daty w przyszłości lub przeszłości to prosta koncepcja polegająca na dodawaniu do obecnej daty określonej ilości dni, miesięcy czy lat w celu uzyskania nowej daty. Programiści robią to bardzo często, na przykład do tworzenia harmonogramów lub prognoz.
 
 ## Jak to zrobić:
 
-TypeScript jest językiem programowania, który umożliwia obliczanie daty w przyszłości lub przeszłości w bardzo prosty sposób. Wystarczy użyć wbudowanego obiektu "Date" i jego metody "setDate" lub "getDate", aby ustawić lub odczytać daną część daty. Poniżej znajdują się przykładowe kody w TypeScript oraz odpowiadające im wyniki:
+```TypeScript
+let teraz: Date = new Date();
 
+// Obliczanie daty 5 dni do przodu
+let przyszlosc: Date = new Date();
+przyszlosc.setDate(teraz.getDate() + 5);
+console.log(przyszlosc);
+
+// Obliczanie daty 5 dni wstecz
+let przeszlosc: Date = new Date();
+przeszlosc.setDate(teraz.getDate() - 5);
+console.log(przeszlosc);
 ```
-// Ustawienie daty 10 dni w przyszłości
-const currentDate = new Date();
-currentDate.setDate(currentDate.getDate() + 10);
-console.log(currentDate); // Output: Wed Jan 20 2021 20:25:00 GMT+0100 (czas środkowoeuropejski standardowy)
 
-// Odczytanie dnia tygodnia dla przyszłej daty
-const futureDate = new Date('2021-02-14');
-const dayOfWeek = futureDate.getDay();
-console.log(dayOfWeek); // Output: 0 (niedziela)
+### Wyjście
+```TypeScript
+2022-03-21T00:00:00.000Z 
+2022-03-11T00:00:00.000Z
 ```
+Za pomocą metody setDate natychmiastowe dodanie lub odjęcie dni jest proste i wydajne.
 
-## Głębszy wykład:
+## Deep Dive
 
-Obliczanie daty w przyszłości lub przeszłości jest bardzo przydatną umiejętnością w programowaniu i jest wykorzystywane w wielu dziedzinach, takich jak tworzenie aplikacji do zarządzania czasem, systemów rezerwacji lub serwisów społecznościowych. Istnieje wiele alternatywnych sposobów na obliczanie daty, takich jak użycie bibliotek zewnętrznych czy korzystanie z różnych formatów daty w języku TypeScript. Warto również pamiętać o uwzględnieniu różnych stref czasowych, aby obliczenia były dokładne i nie powodowały niepotrzebnych błędów.
+Concept obliczania daty w przyszłości lub przeszłości to nie jest nową ideą i jest powszechnie stosowany w różnych dziedzinach programowania. W TypeScript, modyfikując wartość getDate(), możemy łatwo manipulować datami w przyszłości i przeszłości.
 
-## Zobacz również:
+Alternatywnie, dla bardziej złożonych operacji na datach, możemy skorzystać z bibliotek takich jak Moment.js, które oferują bardziej zaawansowane funkcje manipulacji datą.
 
-- Dokumentacja TypeScript dla obiektu "Date": https://www.typescriptlang.org/docs/handbook/standard-library.html#date
-- Przewodnik po korzystaniu z dat w języku TypeScript: https://www.zaniyahstudio.com/2017/10/20/managing-dates-with-typescript/
-- Biblioteka Moment.js dla łatwiejszego zarządzania datami w języku JavaScript i TypeScript: https://momentjs.com/
+Co do szczegółów implementacyjnych, metoda setDate() działa zarówno dla przyszłych, jak i przeszłych dat i jest dostępna we wszystkich współczesnych przeglądarkach, co czyni ją bardzo użyteczną dla większości programistów TypeScript.
+
+## Zobacz też
+
+- [Podręcznik TypeScript: Data](https://www.typescriptlang.org/docs/handbook/basic-types.html#date)
+- [Przewodnik po manipulacji datami w JavaScript](https://flaviocopes.com/how-to-date-javascript/)
+- [Libraries for working with dates in TypeScript and JavaScript](https://www.smashingmagazine.com/2021/06/complete-guide-date-time-strings-javascript/)

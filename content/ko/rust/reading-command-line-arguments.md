@@ -1,6 +1,6 @@
 ---
 title:                "명령줄 인수 읽기"
-html_title:           "Rust: 명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
 simple_title:         "명령줄 인수 읽기"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇이며 왜 해야하나요?
+## 무엇이며 왜 사용하는가?
 
-커맨드 라인 인자를 읽는 것은 프로그래머들이 커맨드 라인에서 사용자로부터 입력을 받기 위해서 하는 것입니다. 보통 프로그램이 실행될 때, 사용자는 프로그램에게 추가 정보를 제공하기 위해 커맨드 라인 인자를 전달합니다. 따라서 이를 읽는 것은 더 유연한 프로그램을 만드는 데에 도움이 됩니다.
+명령줄 인자 읽기는 프로그램이 외부에서 데이터를 입력 받는 방식 중 하나입니다. 프로그래머들은 이를 이용해 사용자로부터 여러 형태의 동적 데이터를 입력 받아 프로그램의 동작을 조절합니다.
 
-## 방법:
+## 어떻게 사용하는가?
 
-Rust에서는 `std::env` 모듈을 사용하여 커맨드 라인 인자를 읽을 수 있습니다. `std::env::args()` 함수를 호출하여 커맨드 라인 인자를 벡터로 받아올 수 있습니다. 이 벡터를 순환하며 인자를 사용할 수 있습니다. 아래는 커맨드 라인에서 `name` 인자를 받아 출력하는 간단한 예제입니다.
+Rust에서 명령줄 인자를 읽기 위한 가장 기본적인 방법은 `std::env::args` 함수를 이용하는 것입니다.
 
-```
-Rust
-use std::env;
-
+```Rust
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args: Vec<String> = std::env::args().collect();
 
-    let name = &args[1];
-
-    println!("Hello, {}!", name);
+    for arg in args {
+        println!("'{}'", arg);
+    }
 }
 ```
 
-커맨드 라인에서 `cargo run` 명령어를 사용하여 위 코드를 실행하면 `Hello, [name]!` 형식으로 인자에 입력한 값이 출력됩니다.
+위 코드를 실행하면 프로그램에 전달된 모든 인자들이 출력됩니다. 
 
-## 깊게 들어가기:
+예를 들어, `cargo run --example args foo bar baz`를 실행하면 다음과 같은 결과가 나옵니다.
 
-커맨드 라인 인자를 처음 사용한 것은 1960년대에 메인 프레임에서 프로그램을 실행하기 위해 사용되었습니다. 현재 대부분의 OS들은 `argc`와 `argv` 매개변수를 제공하여 프로그램에 대한 커맨드 라인 인자를 전달할 수 있도록 지원하고 있습니다.
+```bash
+"target/debug/examples/args"
+"foo"
+"bar"
+"baz"
+```
+ 
+## 깊게 알아보기
 
-Rust에서는 `std::env` 외에도 `clap`이라는 오픈 소스 라이브러리를 사용하여 더 유연하고 강력한 방식으로 커맨드 라인 인자를 읽을 수 있습니다. `clap`은 Rust 커뮤니티에서 많이 사용되고 있는 라이브러리이며 다양한 기능을 지원합니다.
+### 역사적 배경
 
-커맨드 라인 인자를 읽는 방식은 환경에 따라 다를 수 있지만, 보통은 문자열로 전달됩니다. 따라서 문자열 처리에 대한 이해가 필요합니다. 또한 Rust에서는 우리가 전달받는 인자에 대한 타입 정보를 정적으로 추론하여 사용할 수도 있습니다.
+명령줄 인자는 UNIX와 같은 고전적인 운영체제부터 사용되어 왔습니다. 이 기능은 프로그램을 동적으로 구성하고, 텍스트 기반의 인터페이스에서 사용자의 입력에 반응할 수 있게 해 줌으로써 매우 유용하다는 것이 입증되었습니다.
 
-## 관련 자료:
+### 대안
 
-- [Rust Book - CLI Arguments](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)
-- [The `env` module](https://doc.rust-lang.org/std/env/index.html)
-- [The `clap` library](https://crates.io/crates/clap)
+Rust에서는 `std::env::args` 외에도 명령줄 인자 작업을 돕는 여러 패키지가 존재합니다. 그 중 `getopts`나 `clap`와 같은 패키지는 복잡한 인자 분석과 검증, 에러 메시지 생성 등 더 많은 기능을 제공합니다.
+
+### 구현 세부 사항
+
+`std::env::args`는 프로그램 시작 시 인자를 String 형태의 Vector로 변환하여 반환합니다. 이는 Rust의 소유권 모델과 잘 맞아떨어지며, 안전한 파싱을 가능하게 합니다.
+
+## 참고 링크
+
+- [Rust Documentation: std::env](https://doc.rust-lang.org/std/env/index.html)
+- [The Rust Programming Language: Command line arguments](https://doc.rust-lang.org/book/ch12-01-accepting-command-line-arguments.html)

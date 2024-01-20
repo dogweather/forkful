@@ -1,6 +1,6 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "Elm: Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Por Que?
 
-Gerar números aleatórios é uma técnica comum usada por programadores para criar valores não previsíveis. Isso pode ser útil em situações como jogos, sorteios ou criptografia.
+Gerar números aleatórios é o processo de criar números que não têm padrão previsível. Programadores fazem isso para muitos fins, como simulações, jogos e testes de programas, onde a aleatoriedade é necessária.
 
-## Como fazer:
+## Como Fazer:
 
-Para gerar um número aleatório no Elm, podemos usar a função `Random.generate`. Veja um exemplo abaixo:
-
+A geração de números aleatórios no Elm é realizada usando o módulo `Random`. Aqui está um exemplo de como gerar um número inteiro aleatório entre 1 e 100.
 ```Elm
-import Random exposing (..)
+import Random exposing (Generator, int)
 
-myRandomNumber : Int
-myRandomNumber =
-  Random.generate (always 10) (int 1 100)
+randomInt : Generator Int
+randomInt =
+    int 1 100
 ```
+Depois de definir o gerador, podemos usá-lo dentro de uma função para gerar um valor aleatório.
+```Elm
+import Random exposing (Generator, int, generate)
 
-Neste exemplo, usamos a função `always` para sempre retornar o número 10 e a função `int` para especificar o intervalo em que queremos gerar o número aleatório, no caso, entre 1 e 100.
+randomInt : Generator Int
+randomInt =
+    int 1 100
 
-O exemplo acima irá gerar um número aleatório entre 1 e 100 toda vez que for executado.
+generateRandomInt : Generator Int -> Cmd msg
+generateRandomInt gen =
+    generate always gen
+```
+## Deep Dive
 
-## Profundando:
+Historicamente, a geração de números aleatórios tem sido uma parte importante da programação desde o início dos computadores. No entanto, é importante lembrar que a geração de números aleatórios em computadores é, na verdade, pseudoaleatória. Isso significa que, dada a mesma "semente", a sequência de números gerados será a mesma.
 
-Gerar números aleatórios pode ser uma tarefa complicada e muitas vezes depende do sistema operacional ou do hardware utilizado. No Elm, temos a garantia de que a sequência de números gerada será a mesma em todos os sistemas e dispositivos.
+Alternativas para a geração de números aleatórios no Elm incluem o uso de diferentes distribuições, como uniforme ou normal, dependendo do uso pretendido. Além disso, a função `float` pode ser usada para gerar números aleatórios de ponto flutuante.
 
-Alternativamente, é possível gerar números pseudoaleatórios usando a função `Random.initialSeed`. Esta função nos permite especificar uma semente, que será usada para gerar uma sequência de números aleatórios.
+Os detalhes de implementação para a geração de números aleatórios no Elm estão escondidos, como deveriam estar em uma linguagem de programação de alto nível. No entanto, é provavelmente baseado em algum tipo de gerador de número pseudoaleatório, semelhante a outras linguagens de programação modernas.
 
-Além disso, é importante mencionar que o Elm possui uma biblioteca chamada `elm-random-extra` que oferece funções adicionais para gerar números aleatórios.
+## Veja Também
 
-## Veja também:
+Módulo `Random`: [Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/Random)
 
-- Documentação oficial do Elm sobre geração de números aleatórios: https://package.elm-lang.org/packages/elm/random/latest/
-- Documentação oficial do `elm-random-extra`: https://package.elm-lang.org/packages/elm-community/random-extra/latest/
+Gerador Pseudoaleatório: [Wikipedia](https://pt.wikipedia.org/wiki/Gerador_de_números_pseudoaleatórios)
+
+Distribuições de Probabilidade: [Wikipedia](https://pt.wikipedia.org/wiki/Distribuição_de_probabilidade)

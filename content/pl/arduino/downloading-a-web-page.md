@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Arduino: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,80 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co i dlaczego?
 
-Pobieranie strony internetowej to proces pobierania zawartości witryny internetowej z internetu na lokalny komputer lub urządzenie. Programiści często pobierają strony internetowe, aby uzyskać dostęp do danych, które mogą być wykorzystane do analizy lub wyświetlenia użytkownikom.
+Ściąganie strony internetowej polega na pobieraniu kodu HTML danej strony, przez co programiści mogą analizować i manipulować te dane. Robimy to, aby zautomatyzować procesy, takie jak zbieranie danych (web scraping) lub monitorowanie zmian na stronach internetowych.
 
-# Jak to zrobić:
+## Jak to zrobic:
 
-Arduino może być używane do pobierania stron internetowych przy użyciu Ethernet Shield lub WiFi Shield. Poniżej znajdziesz przykładowy kod oraz wynik.
+Poniżej znajduje się przykład wykorzystania biblioteki Ethernet do pobrania strony internetowej za pomocą Arduino. 
 
-## Kod:
-```
-#include <WiFi.h> //dołączenie biblioteki WiFi
+```Arduino
+#include <Ethernet.h>
 
-//Ustawienie danych sieciowych WiFi
-const char* SSID = "nazwa sieci";
-const char* password = "hasło";
-
-WiFiClient client;
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+EthernetClient client;
 
 void setup() {
-  Serial.begin(115200); //inicjalizacja komunikacji szeregowej
-  WiFi.begin(SSID, password); //łączenie z siecią WiFi
-  while (WiFi.status() != WL_CONNECTED) { //czekanie na połączenie z siecią
-    delay(500);
-    Serial.print(".");
-  }
+  Ethernet.begin(mac);
+  delay(1000);
   
-  Serial.println("WiFi Connected!"); //połączenie nawiązane, wypisanie w konsoli
-
-  //Pobieranie zawartości strony
-  Serial.println("Downloading web page...");
-  client.println("GET /index.html HTTP/1.1");
-  client.println("Host: www.example.com");
-  client.println("Connection: close");
-  client.println();
+  if (client.connect("www.przykladowastrona.pl", 80)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.przykladowastrona.pl");
+    client.println("Connection: close");
+    client.println();
+  }
 }
 
 void loop() {
-  while (client.available()) { //sprawdzanie dostępności danych do odczytu
-    String line = client.readStringUntil('\r'); //odczytanie linii tekstu
-    Serial.print(line); //wyświetlenie odczytanej linii w konsoli
+  if (client.available()) {
+    char c = client.read();
+    Serial.print(c);
   }
-
-  if (!client.connected()) { //sprawdzanie, czy połączenie zostało zamknięte
-    Serial.println();
-    Serial.println("Web page downloaded!");
-    client.stop(); //zamknięcie połączenia
-    while (true); //pętla nieskończona
+  if (!client.connected()) {
+    client.stop();
+    for(;;);
   }
 }
 ```
 
-## Wynik w konsoli:
-```
-WiFi Connected!
-Downloading web page...
-HTTP/1.1 200 OK
-Server: nginx/1.14.0 (Ubuntu)
-Date: Tue, 15 Jun 2021 18:30:05 GMT
-Content-Type: text/html
-Content-Length: 234
-Connection: close
-Last-Modified: Tue, 08 Jun 2021 12:15:39 GMT
-ETag: "60c02a1b-ea"
-Accept-Ranges: bytes
-[treść strony internetowej]
-Web page downloaded!
-```
+Po zagłębieniu się w proces, obejrzyj wynik na podłączonym monitorze szeregowej. Zobaczysz pełną zawartość strony internetowej.
 
-# Głębsze zanurzenie:
+## Głębsze spojrzenie:
 
-Pobieranie stron internetowych jest popularną praktyką w dziedzinie programowania, szczególnie w przypadku analizy danych lub tworzenia aplikacji internetowych. Alternatywą dla korzystania z Arduino do pobierania stron internetowych jest użycie bibliotek lub frameworków programistycznych dostępnych w językach takich jak Python czy Java. Implementacja pobierania stron internetowych na Arduino wymaga podłączenia odpowiedniego shielda i napisania odpowiedniego kodu, jednak nie jest to trudne ani skomplikowane.
+Pobieranie stron internetowych na Arduino ma swój początek wraz ze wsparciem dla Ethernetu. Są też inne alternatywy - Wi-Fi (biblioteka WiFiNINA), GSM (biblioteka GSM). Wybór zależy od rodzaju dostępnego sprzętu i wymagań projektu.
 
-# Zobacz również:
+Implementacja pobierania strony web poprzez Arduino jest całkiem prosta, ale ma swoje ograniczenia. Arduino ma ograniczoną pamięć, dlatego musimy dbać o to, aby nie przekroczyć dostępnej ilości podczas pracy z dużymi stronami.
 
-- [Getting Started with Ethernet Shield for Arduino](https://github.com/arduino-libraries/Ethernet)
-- [WiFi Library for Arduino](https://www.arduino.cc/en/Reference/WiFi)
-- [Python Requests library for web crawling and scraping](https://requests.readthedocs.io/en/master/)
+## Zobacz także:
+
+Dla głębszego zrozumienia, przejrzyj następujące źródła:
+
+- Więcej o bibliotece Ethernet: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/Ethernet)
+- Więcej o bibliotece WiFiNINA: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/WiFiNINA)
+- Więcej o bibliotece GSM: [oficjalna dokumentacja](https://www.arduino.cc/en/Reference/GSM)
+- Przewodnik po monitorze szeregowym Arduino: [Przewodnik Sparkfun](https://learn.sparkfun.com/tutorials/serial-monitor-tutorial/all)

@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "PHP recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,61 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Searching and Replacing Text in PHP
 
-Searching and replacing text is a common task in programming where specific strings of characters are identified and replaced with other strings. This can be done for a variety of reasons such as correcting mistakes, updating code, or making changes to a large amount of text at once. Programmers use this technique to save time and ensure accuracy in their code.
+## What & Why?
+Text searching and replacing is a common task in programming where specific strings are located, and possibly modified, within a chunk of text. Programmers do this to manipulate data, automate edits and extract meaningful details.
 
 ## How to:
+There are few latest methods in PHP to search and replace text. 
 
-To search and replace text in PHP, use the built-in function `str_replace()`. Here's an example of how it works:
-
-```PHP
-// Define a string
-$string = "Hello world!";
-
-// Replace 'world' with 'there'
-$new_string = str_replace('world', 'there', $string);
-
-// Output the new string
-echo $new_string;
-```
-
-This will output `Hello there!`. Another useful function for searching and replacing text is `str_ireplace()` which is case-insensitive. Here's an example:
+### str_replace Function
+The str_replace function is probably the first method to consider. Below is a simple example:
 
 ```PHP
-// Define a string
-$string = "This is a Test.";
-
-// Replace 'test' with 'example'
-$new_string = str_ireplace('test', 'example', $string);
-
-// Output the new string
-echo $new_string;
+$text = "I love Python";
+$newText = str_replace("Python", "PHP", $text);
+echo $newText;
 ```
+The function's output will be: `"I love PHP"`.
 
-This will output `This is a Example.`. You can also use `str_replace()` to replace multiple instances of a string at once. Here's an example:
+### preg_replace Function
+If you need more advanced features, for instance, to support regular expressions, you can use preg_replace. Here's how:
 
 ```PHP
-// Define a string
-$string = "The red pen is on the table.";
-
-// Replace 'red' and 'table' with 'blue' and 'desk'
-$new_string = str_replace(['red', 'table'], ['blue', 'desk'], $string);
-
-// Output the new string
-echo $new_string;
+$text = "I love Python";
+$newText = preg_replace("/Python/", "PHP", $text);
+echo $newText;
 ```
+This will also output: `"I love PHP"`.
 
-This will output `The blue pen is on the desk.`.
 
 ## Deep Dive
+Text searching and replacing have roots that go back to the first programs. As PHP evolved, additional functions like str_replace and preg_replace with more versatile options have been introduced.
 
-PHP's `str_replace()` function was first introduced in PHP 4.0. The function takes in four parameters - the search string, the replacement string, the original string, and an optional fifth parameter for specifying the number of replacements to make. It uses a simple string replacement algorithm, making it an efficient method for replacing text in PHP.
+There are other alternatives that you can use according to your preference and the complexity of the task. For instance, `strtr` function if you're looking for a reliable performance with larger text.
 
-Another alternative for searching and replacing text in PHP is using the `preg_replace()` function. This function uses regular expressions for pattern matching and can be more powerful than `str_replace()`. However, it is also more resource-intensive and should be used with caution, especially for large strings.
+In terms of implementation, both str_replace and preg_replace do a simple task. They look for a specific pattern in the string (text), and replace it with new pattern (replacement). The performance of these functions, however, relies heavily on the size and complexity of the text and replacement patterns.
 
-## See Also
+## See Also:
+Below are some useful related PHP manuals and resources:
 
-Documentation for [PHP's str_replace() function](https://www.php.net/manual/en/function.str-replace.php).
-
-Documentation for [PHP's preg_replace() function](https://www.php.net/manual/en/function.preg-replace.php).
+[str_replace](https://www.php.net/manual/en/function.str-replace.php) 
+[preg_replace](https://www.php.net/manual/en/function.preg-replace.php)
+[String manipulation](https://www.w3schools.com/php/php_ref_string.asp) in PHP tutorial
+[PHP Regular Expressions](https://www.w3schools.com/php/php_regex.asp) at w3schools.

@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Calcular una fecha en el futuro o pasado es una tarea común que los programadores realizan en sus proyectos. Consiste en determinar una fecha específica a partir de una fecha dada y una cantidad de tiempo (días, semanas, meses, etc.) hacia adelante o hacia atrás. Los programadores suelen realizar esta tarea para automatizar tareas relacionadas con el manejo de fechas, como programar recordatorios, calcular fechas de vencimiento o generar calendarios.
+Calcular una fecha futura o pasada es determinar una fecha específica a partir de una reducción o adición de un número específico de días, meses o años. Los programadores recurren a ello cuando se requiere programar eventos, recordatorios o tareas en las aplicaciones.
 
-## Cómo:
+## Cómo Hacerlo:
+
+Swift incorpora la clase `DateComponents` para este propósito. Podemos adicionar o restar días, meses, años, etc., a una fecha específica de esta manera:
 
 ```Swift
-let today = Date() // Crear una variable con la fecha actual
-let futureDate = Calendar.current.date(byAdding: .day, value: 7, to: today) // Calcular la fecha 7 días en el futuro
-let pastDate = Calendar.current.date(byAdding: .month, value: -1, to: today) // Calcular la fecha 1 mes en el pasado
+import Foundation
 
-print("La fecha de hoy es: \(today)") // Imprimir la fecha actual
-print("La fecha en 7 días será: \(futureDate!)") // Imprimir la fecha en 7 días
-print("La fecha hace un mes fue: \(pastDate!)") // Imprimir la fecha hace un mes
+let fechaActual = Date()
+var componentes = DateComponents()
+
+// Adicionar 30 días a la fecha actual
+componentes.day = 30
+if let nuevaFecha = Calendar.current.date(byAdding: componentes, to: fechaActual) {
+    print("La fecha después de 30 días será \(nuevaFecha)")
+}
 ```
 
-La salida de este código sería algo como:
+La salida del código anterior será la fecha después de 30 días desde el día actual.
 
-```
-La fecha de hoy es: 2020-01-10 05:00:00 +0000
-La fecha en 7 días será: 2020-01-17 05:00:00 +0000
-La fecha hace un mes fue: 2019-12-10 05:00:00 +0000
-```
+## Inmersión Profunda
 
-## Profundizando:
+1. **Contexto Histórico**: Antiguamente, los programadores tenían que recurrir a funciones complicadas, manipulación directa de los tiempos de Unix y realizar tediosas conversiones para calcular fechas futuras o pasadas. Swift simplifica todo este proceso con la introducción de `DateComponents`.
 
-Calcular fechas en el futuro o pasado es una tarea que se ha vuelto mucho más sencilla con el uso de lenguajes de programación modernos como Swift. Anteriormente, los programadores tenían que realizar cálculos más complejos para lograr el mismo resultado. Sin embargo, todavía existen otras formas de lograr esta tarea, como el uso de librerías externas o la implementación de algoritmos propios.
+2. **Alternativas**: Aunque `DateComponents` es la opción preferida en Swift, otras técnicas como las extensiones de `Date` también existen. Sin embargo, requieren más líneas de código y es más probable que introduzcan errores.
 
-El cálculo de fechas en el futuro o pasado también es importante en el desarrollo de aplicaciones que requieren recordatorios o eventos programados. Al automatizar esta tarea, los programadores pueden ahorrar tiempo y esfuerzo en la gestión de fechas y asegurar una mayor precisión en la planificación.
+3. **Detalles de Implementación**: Calcular una fecha futura o pasada con `DateComponents` en su nivel más básico simplemente implica crear un objeto `DateComponents`, establecer su propiedad de día/mes/año y luego usar la función `date(byAdding:to:)` del calendario actual. Esta abstracción útil maneja todos los problemas de desbordamiento y ajustes de tiempo automáticamente.
 
-## Ver también:
+## Ver También
 
-Si quieres saber más sobre cómo trabajar con fechas en Swift, puedes consultar la documentación oficial de Apple sobre fechas [aquí](https://developer.apple.com/documentation/swift/date). También puedes explorar opciones de librerías externas como [SwiftDate](https://github.com/malcommac/SwiftDate) o [DateTools](https://github.com/MatthewYork/DateTools).
+- Documentación de Apple en `DateComponents`: [https://developer.apple.com/documentation/foundation/datecomponents](https://developer.apple.com/documentation/foundation/datecomponents) 
+- Tutorial sobre el trabajo con fechas y horas en Swift: [https://www.hackingwithswift.com/articles/141/working-with-dates-and-times-in-swift](https://www.hackingwithswift.com/articles/141/working-with-dates-and-times-in-swift)

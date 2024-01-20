@@ -1,7 +1,7 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "Javascript: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Sök och Ersätt Text i JavaScript
 
-Sökning och ersättning av text är en vanlig uppgift för programmerare. Det innebär helt enkelt att söka efter en specifik sträng av text inom en större text, och ersätta den med en annan sträng. Detta kan vara användbart för att göra ändringar i stora mängder av kod eller text.
+## Vad och Varför?
+Sökning och ersättning av text är processen att identifiera en viss textsträng och byta ut den med en annan. Denna teknik är ofta nödvändig vid manipulering av data och formatering av text i programmeringsuppgifter.
 
-Programmerare utför detta för att effektivisera sitt arbete och spara tid. Istället för att manuellt ändra text i flera filer, kan man använda sök- och ersättningsfunktioner för att göra ändringarna på en gång.
+## Hur man Gör:
+För att söka och ersätta text i JavaScript, använder vi `string.replace()` funktionen. Här är ett exempel:
 
-## Så här:
-
-Enklaste sättet att utföra en sökning och ersättning i Javascript är genom att använda den inbyggda ```replace``` funktionen. Till exempel:
-
-```
-var originalText = "Hej alla!";
-var nyText = originalText.replace("alla", "vänner");
+```Javascript
+let text = 'Hej Världen!';
+let sökText = 'Världen';
+let ersättText = 'Sverige';
+let nyText = text.replace(sökText, ersättText);
 console.log(nyText);
 ```
+När du kör den här koden, kommer utmatningen att bli: `Hej Sverige!`
 
-Output: "Hej vänner!"
+## Djupdykning
+Möjligheten att söka och ersätta text i programmeringsspråk har varit närvarande sedan tidiga versioner av språk som COBOL och Fortran. I JavaScript, `replace()` funktionen används inte bara för att ersätta en viss sträng, men kan också använda reguljära uttryck för att matcha och ersätta komplexa mönster.
 
-Man kan också använda reguljära uttryck för att söka efter specifika mönster av text och ersätta dem. Till exempel:
+Alternativ för textersättning i JavaScript inkluderar att använda `split()` och `join()` funktionerna tillsammans, men detta är ofta mer komplicerat än att bara använda `replace()`.
 
-```
-var originalText = "Jag älskar att programmera i Javascript";
-var nyText = originalText.replace(/javascript/i, "Python");
-console.log(nyText);
-```
+Notera att `replace()` funktionen i JavaScript inte ändrar den ursprungliga strängen. Istället skapar den och returnerar en ny sträng.
 
-Output: "Jag älskar att programmera i Python"
-
-## Djupdykning:
-
-Sökning och ersättning av text har funnits sedan de tidiga dagarna av datorprogrammering. Tidigare användes ofta komplicerade sökalgoritmer för att hitta specifika mönster av text. Idag är det enkelt att utföra genom inbyggda funktioner i olika programmeringsspråk.
-
-En alternativ metod för att utföra sökning och ersättning i Javascript är att använda reguljära uttryck. Detta ger en mer flexibel och kraftfull metod för att hitta och ersätta text, men kan också vara mer komplicerat för nybörjare.
-
-## Se även:
-
-- [W3Schools: JavaScript String replace() Method](https://www.w3schools.com/jsref/jsref_replace.asp)
-- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+## Se även
+För mer information om `replace()` och reguljära uttryck i JavaScript, se följande länkar:
+- [JavaScript Replace() metoden från W3Schools](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [Intro till Reguljära Uttryck (Regex) i JavaScript från DigitalOcean](https://www.digitalocean.com/community/tutorials/an-introduction-to-regular-expressions-regex-in-javascript)

@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einem String extrahieren"
-html_title:           "Java: Ein Datum aus einem String extrahieren"
-simple_title:         "Ein Datum aus einem String extrahieren"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -12,34 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Parsen eines Datums aus einem String ist ein häufiger Vorgang in der Programmierung, bei dem ein Datum, das in einem lesbaren Textformat vorliegt, in ein von der Software verarbeitbares Format umgewandelt wird. Programmierer tun dies, um beispielsweise Benutzereingaben, Datenbankabfragen oder API-Antworten zu verarbeiten.
+Das Parsen eines Datums aus einem String ist ein übliches Verfahren zum Extrahieren und Speichern von Datumswerten aus Textformaten, besonders beim Umgang mit Benutzereingaben oder Datenfeeds. Es ist nützlich, da Datumsangaben in unterschiedlichen Formaten kommen können und wir müssen sie in einer einheitlichen Form speichern, damit wir sie in unserem Code einfach verwalten können.
 
-## Wie geht's?
+## Wie geht's:
 
-Das Parsen eines Datums aus einem String in Java ist mit der Klasse "SimpleDateFormat" und einem bestimmten Datumsformat-String recht einfach. Schauen wir uns ein Beispiel an:
+In Java verwenden wir die `parse()` Methode in der `SimpleDateFormat` Klasse, um ein Datum aus einem String zu parsen.
 
 ```Java
-// Erstelle eine neue Instanz von SimpleDateFormat
-SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-// Lege einen String mit dem Datum fest, das geparst werden soll
-String dateAsString = "08/03/2020";
-// Verwende die parse() Methode, um den String in ein Datum umzuwandeln
-Date parsedDate = sdf.parse(dateAsString);
-// Gib das Format des geparsten Datums aus
-System.out.println("Geparstes Datum: " + parsedDate);
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("dd.MM.yyyy");
+            Date date = format.parse("01.12.2020");
+            System.out.println(date);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
+}
+```
+Ausgabe:
+```Java
+Tue Dec 01 00:00:00 CET 2020
 ```
 
-Die Ausgabe dieses Codes wird sein: "Geparstes Datum: Sun Mar 08 00:00:00 GMT 2020". Somit wurde das Datum erfolgreich von einem lesbaren String in ein von der Software verarbeitbares Format umgewandelt.
+## Tiefgang:
 
-## Tiefergehende Informationen
+Historisch waren die Datumsformate in unterschiedlichen Kulturen und Technologien sehr unterschiedlich. In den frühen Tagen der Programmierung mussten Programmierer oftmals ihre eigenen Parsertools schreiben. Heutzutage stellen fast alle Programmiersprachen eine eingebaute Methode zum Parsen von Datumsstrings bereit. In Java haben wir mehrere Alternativen wie `LocalDate.parse()` oder die `DateTimeFormatter` Klasse.
 
-Das Parsen von Daten aus einem String ist ein wichtiger Teil der Programmierung und wird seit vielen Jahren verwendet. Früher war die Klasse "SimpleDateFormat" die einzige Möglichkeit, Datumsformatierungen in Java durchzuführen. Mittlerweile gibt es aber auch die neuen Klassen "LocalDate" und "DateTimeFormatter", die fortschrittlichere Funktionen bieten.
+Intern wird die `parse()` Methode von `SimpleDateFormat` durch Umwandlung des gegebenen Strings in seine Datums-/Zeitfeldwerte implementiert. Diese Werte werden dann in eine `Date`-Instanz überführt, die das spezifische Datum und die Uhrzeit repräsentiert.
 
-Eine Alternative zum Parsen von Daten aus einem String ist die Verwendung von Regulären Ausdrücken in Verbindung mit der "Pattern" Klasse, um das gewünschte Datumsmuster zu identifizieren und zu extrahieren. Dies kann in manchen Fällen präziser sein als die Verwendung von "SimpleDateFormat".
+## Siehe auch:
 
-Bei der Implementierung des Parsens eines Datums aus einem String ist es wichtig, auf die richtige Verwendung von Formatierungssymbolen zu achten, da dies zu Fehlern führen kann, wenn sie falsch eingesetzt werden. Eine ausführliche Dokumentation zu den Formatierungssymbolen von "SimpleDateFormat" ist auf der offiziellen Java-Dokumentationsseite zu finden.
-
-## Siehe auch
-
-- [Oracle Java-Dokumentation zum Parsen von Datumsangaben](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Tutorial zum Parsen von Datumsangaben in Java](https://www.baeldung.com/java-string-to-date)
+Weitere Informationen zu diesem Thema finden Sie unter den folgenden Links:
+- Offizielle Java-Dokumentation: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+- Tutorial für Fortgeschrittene zur SimpleDateFormat-Klasse: https://www.javatpoint.com/java-simpledateformat

@@ -1,7 +1,7 @@
 ---
-title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
-html_title:           "TypeScript: तारीख को स्ट्रिंग में रूपांतरण करना"
-simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
+title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
+simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,19 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#ये क्या है और क्यों करें?
-Converting a date into a string का मतलब है कि हम एक तारीख को एक स्ट्रिंग में रूपांतरित करते हैं| प्रोग्रामर इसे तारीख को अपनी खुद की पसंद अनुसार दिखाने के लिए करते हैं| वह एक स्ट्रिंग में दिन, महीना, साल और समय को अलग-अलग तरीकों से दिखाना पसंद कर सकते हैं|
+## क्या और क्यों?
 
-#कैसे करें:
-```TypeScript
-const today = new Date(); // तारीख के वर्तमान मूल्य को प्राप्त करता है
-const dateString = today.toLocaleDateString("en-US"); // तारीख को स्ट्रिंग में कन्वर्ट करता है
-console.log(dateString); // मूल्य को कंसोल में प्रिंट करता है
+तारीख को एक String में बदलना म्हानता का काम है, जिसे कंप्यूटर programmars use structured data को स्वरूपीत एवं उपयोगी त्रुटि संदेशों,लॉग एंट्रियों, यूआई रेंडरिंग आदि में खोजने के लिए किया जाता है। यह तत्त्व की परतों की व्याख्या करने में आपकी सहायता करता है, इसलिए इसका उपयोग अनिवार्य रूप से किया जाता है। 
+
+## कैसे:
+
+"Date" और "toISOString()" का उपयोग करके TypeScript में दिनांक को स्ट्रिंग में बदलने के लिए कोड कैसे दिखाया जाएगा, उसका उदाहरण नीचे दिया गया है:
+
+``` TypeScript 
+let date: Date = new Date(); // आज की तारीख
+let str: string = date.toISOString(); // तारीख को स्ट्रिंग में बदलें
+
+console.log(str); // "2021-12-22T12:33:55.629Z"
 ```
-**आउटपुट:** "6/7/2021" (मई के 7, 2021)
 
-#गहराई में जाएँ:
-Converting a date into a string के इतिहास की बात करें तो शुरुआत में, प्रोग्रामरों को तारीख को स्ट्रिंग में अनुस्मारक के रूप में रखा गया था| यह आसानी से पढ़ा जा सकने वाली और संग्रह वाले स्थानों को शामिल करने के लिए एक अलग तरीके से संरचित था| हालांकि, TypeScript में यह एक परिचित और आसान प्रक्रिया है जो कि दिन, महीना, साल और समय को बहुत ही समझने योग्य तरीके से डिफ़ॉल्ट स्ट्रिंग में दर्शाता है| यदि आप अपनी तारीख-स्ट्रिंग को अन्य तरीकों से फॉर्मेट करना चाहते हैं, तो JavaScript की Date() फंक्शन के साथ काम करने का एक अल्टर्नेटिव भी मौजूद है|
+## गहरी जानकारी:
 
-#इससे जुड़े स्रोत:
-- [Date - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+दिनांक को स्ट्रिंग में बदलने का काम Unix एरा के दौरान शुरू हुआ, जिसमें वेब एप्लिकेशन की सहायता के लिए पहली बार इसका उपयोग किया गया था। इसमें वैकल्पिक तरीके शामिल हैं जैसे कि "Date.prototype.toString()" और "Date.prototype.toLocaleString()", जो अलग-अलग स्थितियों में उपयोगी हो सकते हैं। इसका implementation अभ्यास में ब्राउज़र में मानक्क्त होने के आधार पर JavaScript / TypeScript कोड में अद्वितीय होता है।  
+
+## अन्य स्रोत:
+
+- [MDN वेब डॉक्यूमेंटेशन - तारीख वाली ऑब्जेक्ट](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript का अफ़ीशियल डॉक्यूमेंटेशन](https://www.typescriptlang.org/docs/handbook/basic-types.html#about-number)
+- [Stack Overflow डिस्कसन टॉपिक ](https://stackoverflow.com/questions/3552461/how-to-format-a-javascript-date)

@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Java recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Java"
 category:             "Java"
@@ -12,39 +12,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML is the process of extracting data from HTML code, which is the standard markup language used for creating web pages. Programmers often need to parse HTML in order to extract relevant information from websites for various purposes, such as data analysis or web scraping.
+Parsing HTML is the process of analyzing a document to extract meaningful information. Programmers often parse HTML files to manipulate, extract, and transform the contained data, particularly in web scraping or data mining tasks.
 
-## How to: 
+## How to:
 
-To parse HTML in Java, we can use the JSoup library, which provides a simple and flexible API for working with HTML. Here's an example of how to use JSoup to extract the text from a paragraph element in an HTML document:
+Let’s dive into some coding. We'll use the Jsoup, a popular library in Java. 
+
+First, add the following Maven dependency to your project's pom.xml:
 
 ```Java
-// import the JSoup library
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-
-// parse the HTML document
-Document doc = Jsoup.parse("<p>Hello, world!</p>");
-
-// get the paragraph element and extract the text
-Element paragraph = doc.select("p").first();
-String text = paragraph.text();
-
-// print the extracted text
-System.out.println(text);
+<dependency>
+   <groupId>org.jsoup</groupId>
+   <artifactId>jsoup</artifactId>
+   <version>1.13.1</version>
+</dependency>
 ```
 
-The output of this code would be: `Hello, world!`
+Then, here's how to connect to a website and parse its HTML:
+
+```Java
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+	
+public class Main
+{
+    public static void main(String[] args) throws Exception
+    {
+        Document document = Jsoup.connect("http://example.com").get();
+        System.out.println(document.title());
+    }
+}
+```
+
+Output:
+```
+Example Domain
+```
+
+Simple, isn't it? In the above example, the `Jsoup.connect().get()` opens a connection to the given URL and fetches the HTML. `document.title()` prints out the title of the webpage.
 
 ## Deep Dive
 
-HTML parsing has been a common task for web developers since the early days of the internet. Before the introduction of libraries like JSoup, developers had to write their own parsing code or rely on complex and often unreliable regular expressions. JSoup, first released in 2009, revolutionized HTML parsing in Java by providing a straightforward and easy-to-use API.
+HTML parsing in Java goes way back and currently, libraries like Jsoup, HTMLUnit enrich the Java ecosystem. HTML parsers were not cool initially; their importance grew after the web scraping boom. 
 
-While JSoup is the go-to library for HTML parsing in Java, there are other alternatives available, such as HTMLCleaner and NekoHTML. However, JSoup is still the most popular choice due to its intuitive API and efficient performance.
+Jsoup, for instance, provides APIs to extract and manipulate the data using DOM, CSS, and JQuery-like methods. 
 
-Under the hood, JSoup uses a robust parsing algorithm to analyze and transform the HTML code into a Document object, which can then be traversed and manipulated using CSS selectors or DOM methods. This enables programmers to extract specific data elements from HTML documents with ease.
+However, the alternative parser, HTMLUnit, while a bit unwieldy, provides more than just parsing; it’s a complete web browser simulator. 
+
+Fundamentally, parsing HTML involves breaking down HTML documents into parse trees. These trees can then be navigated and manipulated easily for data extraction. 
+
+While using libraries like Jsoup simplifies our task, it’s crucial to understand the underlying concepts and the complexities involved in their creation. Cold hard fact: Underneath, it’s a web of tokens, syntax analysis, and tree construction - a complex mechanism.
 
 ## See Also
 
-To get started with JSoup, check out the official documentation at https://jsoup.org/. For more information on web scraping and data extraction, you can also refer to resources such as the Beautiful Soup library for Python or the Selenium framework for automated testing.
+Here is some food for thought:
+
+[Jsoup official documentation][1]: Need more insights into Jsoup features? 
+
+[HTMLUnit official documentation][2]: Want to go beyond just parsing? Try HTMLUnit.
+
+[HTML Parsing theory][3]: Interested in the mechanism of HTML parsing? Dive in. 
+
+[1]: http://jsoup.org/
+[2]: http://htmlunit.sourceforge.net/
+[3]: https://html.spec.whatwg.org/multipage/parsing.html

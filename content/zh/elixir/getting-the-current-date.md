@@ -1,7 +1,7 @@
 ---
-title:                "获取当前日期."
-html_title:           "Elixir: 获取当前日期."
-simple_title:         "获取当前日期."
+title:                "获取当前日期"
+html_title:           "Arduino: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是获取当前日期，为什么程序员需要做这件事？
+## 什么以及为什么？
 
-获取当前日期是指获取当前日历日期及时间的功能。在程序中，我们经常需要使用当前日期来记录、跟踪或者比较不同的时间点，以便于实现各种功能。因此，程序员经常需要获取当前日期来确保程序的正常运行。
+获取当前日期是指编程代码为你提供今天的确切日期。程序员执行此操作的主要原因是跟踪、记录数据或日志，以及提供时间戳功能。
 
-如何操作？
+## 如何操作：
 
-想要获取当前日期，我们可以使用 Elixir 标准库中的 `DateTime` 模块，它提供了丰富的日期和时间处理功能。以下是一个简单的示例代码：
+在Elixir中，我们依靠DateTime模块获取当前日期。以下为你操作的代码示例以及输出结果：
 
 ```Elixir
-Elixir 生成了 DateTime 对象，显示当前日期和时间
-iex> DateTime.utc_now() 
-{:ok, #DateTime<2019-08-07 07:37:43Z>}
-
-Elixir 生成了当前日期
-iex> DateTime.to_date(DateTime.utc_now()) 
-{:ok, #Date<2019-08-07>}
+DateTime.now("Etc/UTC")
 ```
 
-在上述代码中，我们首先调用了 `DateTime.utc_now()` 方法来获得当前的日期和时间，然后通过 `DateTime.to_date()` 方法将其转换为日期对象，并最终输出当前的日期。可以看到，Elixir 提供了简单且方便的方法来获取当前日期。
+输出示例：
 
-深入探讨
+```Elixir
+{:ok, #DateTime<2021-09-24 03:44:01.266302Z>}
+```
 
-获取当前日期在软件开发中非常重要，因为它可以帮助我们记录重要的时间信息，并且在需要的时候对时间进行比较和处理。在 Elixir 之前的其他语言中，常用的获取当前日期的方法包括使用系统命令或者调用操作系统的 API 来获得当前时间信息。而在 Elixir 中，我们可以直接使用 `DateTime` 模块来完成这一操作，使得获取当前日期更加简单和高效。
+上述代码段中，“Etc/UTC”是官方标准的世界时区，你可以根据需求更改为其他标准时区字符串。
 
-另外，除了 `DateTime` 模块，还有其他一些第三方库也提供了获取当前日期的功能，如 `Calendar`、 `Timex` 等，开发者可以选择根据自己的需求来使用不同的库。
+## 深入了解
 
-查看更多
+使用Elixir获取当前日期的历史并不是特别悠久。Elixir 1.3版本开始引入了DateTime模块，将这个功能更好地集成到语言中。
 
-如果你想了解有关 Elixir 中日期和时间处理的更多信息，建议查看官方文档，其中包含了详细的说明和使用示例。同时，如果你对其他语言中的日期和时间处理方式感兴趣，也可以查看相关文档来进一步学习。
+在获取日期时，还有一些替代方法，比如我们也可以使用Date.today函数：
 
-在这篇文章中，我们简单介绍了获取当前日期的意义和方法，并探讨了其在软件开发中的重要性。希望这可以帮助您更好地理解和使用日期和时间处理功能，使您的程序更加强大和可靠。
+```Elixir
+Date.today
+#输出示例：
+#~D[2021-09-23]
+```
+
+这段代码会根据本地时区输出当前日期。
+
+在Elixir中取得当前日期的实现细节主要依靠DateTime和Date模块，这两个模块都使用了内部结构，并考虑了各种可能的边界情况，以提供最准确的日期和时间。
+
+## 另请参见
+
+以下链接提供了Elixir获取当前日期的相关内容：
+
+1. Elixir官方网站-DateTime：https://hexdocs.pm/elixir/DateTime.html
+2. Elixir之PhO – 获取当前日期和时间：https://pragtob.wordpress.com/2017/04/17/getting-the-current-date-and-time-in-elixir-a-journey/
+3. Elixir中的日期和时间：https://www.poeticoding.com/working-with-dates-and-times-in-elixir-with-elixir
+
+这些链接让你更深入地了解Elixir中获取日期和时间的知识，并提供更多操作实例和教程。

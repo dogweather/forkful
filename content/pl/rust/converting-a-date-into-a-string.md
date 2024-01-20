@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków"
-html_title:           "Rust: Konwertowanie daty na ciąg znaków"
-simple_title:         "Konwertowanie daty na ciąg znaków"
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i Dlaczego?
 
-Konwertowanie daty na ciąg znaków jest zwykłym zadaniem, które polega na zamianie informacji o dacie w formacie przechowywanym przez komputer na czytelną dla ludzi postać. Programiści często wykonują tę czynność, aby umożliwić użytkownikom wygodne korzystanie z aplikacji, bądź aby wyświetlać datę w różnych formatach.
+Konwersja daty na łańcuch (string) to proces zamiany formatu daty/czasu na sekwencję znaków, którą łatwo odczytać i zapisać. Programiści robią to, aby ułatwić manipulację i prezentację daty na różne sposoby.
 
 ## Jak to zrobić:
 
+Użyjemy metody format!() do konwersji `SystemTime` na `String`. Podajemy specjalny format zamiany (%Y-%m-%d).
+
 ```Rust
-use chrono::prelude::*;
+use std::time::SystemTime;
 
 fn main() {
-    let date = Utc::now();
-    let date_string = date.format("%Y-%m-%d").to_string();
+    let system_time = SystemTime::now();
+    let datetime: chrono::DateTime<chrono::Utc> = system_time.into();
+    let date_string = datetime.format("%Y-%m-%d").to_string();
     println!("{}", date_string);
 }
 ```
+Wyjście to będzie łańcuch znaków reprezentujący dzisiejszą datę, np.: "2022-05-14"
 
-W powyższym przykładzie użyto biblioteki `chrono`, która jest popularnym narzędziem w Rust do operacji na datach i czasie. Funkcja `format` pozwala nam ustalić pożądany format dla daty, a następnie używamy metody `to_string` do zamiany daty na ciąg znaków. Ostatecznie wyświetlamy wynik za pomocą funkcji `println!`.
+## Dogłębne zrozumienie:
 
-## Dogłębnie:
+Metoda `format!()` pochodzi z języka C, gdzie używano funkcji `strftime()` do formatowania czasu. Metoda `format!()` w Rust jest bardziej bezpieczna typologicznie i wydajna.
 
-### Kontekst historyczny:
+Istnieją alternatywy dla metody `format!()`, takie jak `to_rfc3339()` i `to_rfc2822()`, które zwracają datę w specyfikacjach standardów internetowych. Wybór zależy od wymagań zastosowań.
 
-Zadanie konwertowania daty na ciąg znaków jest powszechne w programowaniu i stało się jeszcze bardziej popularne dzięki rozwojowi aplikacji internetowych i mobilnych. W przeszłości, aby wyświetlić datę w różnych formatach, programiści musieli ręcznie manipulować danymi, co było czasochłonne i podatne na błędy.
+As for implementation details, Rust's `format!()` relies on the `Display` trait, which dictates how types are formatted. This makes the code more robust and less prone to errors.
 
-### Alternatywy:
+## Zobacz też:
 
-Niektóre języki programowania posiadają wbudowane narzędzia do konwertowania daty na ciąg znaków, na przykład funkcję `strftime` w języku C. W Rust jednak, korzystanie z biblioteki takiej jak `chrono` jest powszechne i wygodne.
+Nie zapomnij odwiedzić oficjalnej dokumentacji Rust na temat [SystemTime](https://doc.rust-lang.org/std/time/struct.SystemTime.html) oraz dokumentacji biblioteki [Chrono](https://docs.rs/chrono/0.4.19/chrono/), jeśli chcesz dowiedzieć się więcej o konwersji dat.
 
-### Szczegóły implementacji:
-
-Konwersja daty na ciąg znaków w Rust jest wykonywana przez bibliotekę lub samodzielnie przez użytkownika przy użyciu funkcji `format`. Powstały ciąg znaków jest następnie zwracany lub wyświetlany na ekranie. Kluczowe jest tu użycie odpowiedniego formatu, aby otrzymać pożądany rezultat.
-
-## Zobacz również:
-
-- Dokumentacja biblioteki `chrono` dla Rust: https://docs.rs/chrono/
-- Przewodnik po konwersji daty i formatowaniu w Rust: https://stevedonovan.github.io/rust-gentle-intro/6-dates.html
+Następnie można zapoznać się z również [Wgęszczenie kodu Rust'a](https://nnethercote.github.io/perf-book/size-bloat.html) i [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/), które zawierają wiele praktycznych przykładów i wskazówek dotyczących kodowania w Rust.

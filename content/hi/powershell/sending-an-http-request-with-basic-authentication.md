@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-html_title:           "PowerShell: बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,24 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## समझिये की बात    
-एक HTTP अनुरोध भेजना बेसिक प्रमाणीकरण के साथ क्या होता है और क्यों प्रोग्रामर इसे करते हैं।
+## क्या और क्यों?
 
-HTTP अनुरोध भेजना बहुत साधारण है, यह आपको इंटरनेट से डेटा को हासिल करने की अनुमति देता है। जब आप अपने कंप्यूटर से URL पर जाते हैं, तो आप वास्तविकता में कुछ न कुछ डेटा को हासिल करने के लिए सर्वर से एक HTTP अनुरोध भेजते हैं। यह अनुरोध सामान्य रूप से एक HTML पेज के रूप में दिखता है, जो आपके द्वारा आगमन पर आपको दिखाया गया है।
+HTTP अनुरोध के साथ मूल प्रमाणीकरण भेजना सीधे API से डेटा प्राप्त करने की प्रक्रिया होती है जिसे हम PowerShel में कूड सकते हैं। प्रोग्रामर्स एक सुरक्षित तरीके से सर्वर तक पहुचने और डेटा मिलाने के लिए इसे इस्तेमाल करते हैं।
 
-अनुरोध भेजने के लिए, आपको अपने अनुरोध में विशिष्ट प्रकार के प्रमाणीकरण को शामिल करना होगा। बेसिक प्रमाणीकरण एक साधारण प्रमाणीकरण प्रणाली है, जो इस्तेमाल किया जाता है ताकि आपको अपने उपयोगकर्ता नाम और पासवर्ड को सत्यापित कर सकें जब आप इंटरनेट द्वारा अनुरोध भेजते हैं। यह अनुरोध भेजने का एक सुरक्षित और सत्यापित तरीका है ताकि आप आपके अनुरोध द्वारा हासिल किया गया डेटा को सुरक्षित रूप से रख सकें।
+## कैसे:
+```PowerShell
+# प्रमाणीकरण हेडर की निर्माण
+$User = 'username'
+$Pass = 'password'
 
-## कैसे करें:
-```powershell
-$cred = Get-Credential
-Invoke-WebRequest -Uri "https://example.com" -Credential $cred
+# पासवर्ड को सुरक्षित करे
+$SecPass = ConvertTo-SecureString $Pass -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential($User, $SecPass)
+
+# HTTP अनुरोध बनाए
+$R = Invoke-RestMethod -Uri 'https://your-api-url.com' -Method Get -Credential $Cred 
+$R
+```
+आपका उत्तर प्राप्त हो सकता है जैसे-
+```Shell
+username
+password
 ```
 
-इस उदाहरण में, हमने `Get-Credential` कमांड का उपयोग करके एक आगमन प्रमाणीकरण श्रृंखला प्राप्त किया है। फिर हमने इस प्रमाणीकरण को एक `Invoke-WebRequest` कमांड के साथ उपयोग किया है, जो अपने द्वारा निर्धारित यूआरआई पर एक HTTP अनुरोध भेजता है। हमने `Uri` अनुप्रयोग को आपके अपने URL से बदल दिया है। आपको अपने फ़ील्ड्स को अपने अधिकृत यूआरआई से बदलना है। हमने इस उदाहरण में एक वेब पेज के रूप में डेटा प्राप्त किया लेकिन यह आपके अपने अनुरोध द्वारा दिए गए टाइप के आधार पर विभिन्न प्रकार के डेटा हो सकता है।
+## गहरा विमर्श:
+HTTP के साथ मूल प्रमाणीकरण का उपयोग 1991 में WWW द्वारा ऑनलाइन सन्देश प्रेषण करने के लिए किया गया था। अन्य विकल्पों में OAuth और Digest Access Authentication का उपयोग किया जाता है, पर मूलभूत प्रमाणीकरण की सरलता इसे लोकप्रिय रखती है। Invoke-RestMethod cmdlet इसे Powershell में बहुत आसानी से लागू करने की अनुमति देता है।
 
-```powershell
-$cred = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes('username:password'))
-Invoke-WebRequest -Uri "https://example.com" -Headers @{Authorization = "Basic $cred"}
-```
-
-यदि आप अपने उपयोगकर्ता नाम और पासवर्ड को सीधे `Invoke-WebRequest` कमांड में पास करना भी चाहते हैं, तो आप उन्हें डेटा कोड कर सकते हैं। इस उदाहरण में, हमने `ToBase64String` और `UTF8.GetBytes` फ़ंक्शन
+## अधिक जानकारी के लिए:
+Invoke-RestMethod की विस्तार से जानकारी के लिए Microsoft दस्तावेज़: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1
+HTTP Basic Authentication की विस्तार से जानकारी के लिए Mozilla Developer Network: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

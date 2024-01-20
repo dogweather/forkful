@@ -10,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Obliczanie daty w przeszłości lub przyszłości jest procesem, w którym programista wykorzystuje język programowania Go do określenia daty, która jest pewną liczbą dni wcześniej lub później niż aktualna data. Jest to przydatne w wielu aplikacjach, takich jak tworzenie kalendarza, wyświetlanie daty ważnych wydarzeń lub obliczanie wieku.
+## Co i dlaczego?
+
+Obliczanie daty w przyszłości lub przeszłości polega na dodawaniu lub odejmowaniu dni, miesięcy i lat od konkretnej daty. Programiści robią to, na przykład, aby ustalić, kiedy wygasa określony termin albo aby sprawdzić jak długo coś trwało.
 
 ## Jak to zrobić:
+
+W języku Go, możemy skorzystać z pakietu `time` aby obliczyć datę w przyszłości lub przeszłości. Wystarczy wywołać metodę `AddDate` na obiekcie `time.Time`, podając ilość lat, miesięcy i dni jako parametry.
+
+Zobaczmy przykład:
+
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    // obecna data
-    today := time.Now()
+	t := time.Now()
+	fmt.Println("Dzisiaj:", t.Format("2006-01-02"))
 
-    // ustalenie przyszłej daty o 5 dni
-    futureDate := today.AddDate(0, 0, 5)
+	future := t.AddDate(0, 0, 10)
+	fmt.Println("Za 10 dni:", future.Format("2006-01-02"))
 
-    // wyświetlenie daty w formacie dnia-miesiąc-rok
-    fmt.Println(futureDate.Format("02-01-2006"))
+	past := t.AddDate(0, -1, 0)
+	fmt.Println("Miesiąc temu:", past.Format("2006-01-02"))
 }
 ```
 
-Output: ```18-09-2021```
+Po uruchomieniu powyższego kodu zobaczysz wydrukowane dzisiejszą datę, datę za 10 dni oraz datę miesiąca temu.
 
-## Głębsze wgląd:
-### Kontekst historyczny:
-Obliczanie daty w przeszłości lub przyszłości jest przydatne od początków programowania, kiedy to ludzie zaczęli wykorzystywać komputery do przechowywania i przetwarzania danych.
+## Głębsze spojrzenie
 
-### Alternatywy:
-Istnieje wiele innych języków programowania, które również pozwalają na obliczanie dat w przeszłości lub przyszłości. Na przykład w języku Python można wykorzystać moduł ```datetime``` do tego celu.
+Częste obliczanie daty w przyszłości lub przeszłości jest powszechne w programowaniu, a różne języki programowania mają różne metody na tego typu operacje. W Go jest to relatywnie proste dzięki wbudowanemu typowi `time.Time`. Z perspektywy historycznej, można powiedzieć że Go zaimplementowało to w bardziej prostej i zwięzłej formie niż wiele innych języków.
 
-### Szczegóły implementacji:
-W języku Go funkcja ```time.AddDate()``` przyjmuje trzy parametry: rok, miesiąc oraz dzień i zwraca wynik w postaci daty. Dodatkowo, funkcja ```Format()``` pozwala na określenie żądanego formatu wyświetlanej daty.
+W Go, wartości `time.Time` są niezmienne, co oznacza, że kiedy dodajesz lub odejmujesz czas do danego obiektu `time.Time`, zwracany jest nowy obiekt a nie modyfikowany istniejący.
 
-## Zobacz także:
-- Dokumentacja języka Go na temat funkcji ```time.AddDate()```: https://golang.org/pkg/time/#Time.AddDate
-- Przykład obliczania daty w przeszłości w języku Python: https://python101.readthedocs.io/pl/latest.asm/functions/time.html
+Jeśli potrzebujesz alternatywy do metody `AddDate`, możesz zastosować metodę `Add`, podając jako parametr obiekt `time.Duration`.
+
+## Zobacz także
+
+- Dokumentacja pakietu time w Go: https://pkg.go.dev/time
+- Poradnik do stosowania czasu i daty w Go: https://yourbasic.org/golang/time-date-difference-format-parse
+- Wprowadzenie do date i time w Go na blogu Go: https://blog.golang.org/time

@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan tiedostokansion olemassaolo"
-html_title:           "Haskell: Tarkistetaan tiedostokansion olemassaolo"
-simple_title:         "Tarkistetaan tiedostokansion olemassaolo"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Haskell: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Tiedoston on tärkeä osa ohjelmointia varmistaessa, että hakemisto on olemassa. Näin varmistetaan, että tiedostoja voidaan luoda ja käsitellä onnistuneesti. Ohjelmoijat tekevät tämän tarkistaakseen, että oikeat tiedostot ovat käytettävissä ja välttääkseen virheitä tiedostojen käsittelyssä.
+# Tarkistetaanko hakemisto olemassa?
 
-# Kuinka tehdä:
+### Mikä & Miksi?
+
+Hakemiston olemassaolon tarkistaminen tarkoittaa, toteamme onko tietty hakemisto olemassa tiedostojärjestelmässämme. Tätä käytetään välttääksemme virheitä koodissa, kun yritämme käsitellä hakemistoa joka ei ehkä ole olemassa.
+
+### Miten:
+
+Haskellissa voit tarkistaa, onko hakemisto olemassa, käyttämällä `System.Directory` -moduulin `doesDirectoryExist`-funktiota. tässä on esimerkki:
+
 ```Haskell
 import System.Directory
 
-checkDirectory :: FilePath -> IO Bool
-checkDirectory path = do
-    exists <- doesDirectoryExist path
-    return exists
-
-main :: IO ()
 main = do
-    let directory = "test" -- replace with desired path
-    exists <- checkDirectory directory
+    let dirPath = "/polku/hakemistoon"
+    exists <- doesDirectoryExist dirPath
     if exists
-        then putStrLn "Hakemisto on olemassa."
-        else putStrLn "Hakemistoa ei ole olemassa."
+        then print $ dirPath ++ " on olemassa."
+        else print $ dirPath ++ " ei ole olemassa."
 ```
+Kun ajat tämän koodin, jos hakemisto on olemassa, ohjelma tulostaa "/polku/hakemistoon on olemassa.". Muutoin ohjelma tulostaa "/polku/hakemistoon ei ole olemassa.".
 
-Suoritus:
+### Syvempi sukellus:
 
-```
->> Hakemistoa ei ole olemassa.
-```
-# Syvällinen Syventyminen:
-## Historiallinen Konteksti:
-Tiedostojen käsittely on ollut merkittävä osa ohjelmointia jo pitkään. Varmistaminen, että hakemisto on olemassa, on välttämätöntä, jotta ohjelmat voivat toimia luotettavasti ja käsitellä tiedostoja oikein.
+1. Historiallinen konteksti: Hakemiston olemassaolon tarkistaminen on ikivanha käsitteen kaikissa ohjelmointikielissä. Se on perustarve kun käsittellään tiedostojärjestelmiä.
 
-## Vaihtoehtoja:
-On olemassa useita tapoja tarkistaa, onko hakemisto olemassa. Yksi vaihtoehto on käyttää UNIX-järjestelmän komentoa "ls", joka listaa tiedostot hakemistossa. Toinen vaihtoehto on käyttää hakemiston ominaisuuksia, kuten "isDirectory", joka palauttaa totuusarvon, onko kyseessä hakemisto.
+2. Vaihtoehdot: Voit myös tarkistaa, onko tiedosto olemassa käyttämällä `doesFileExist`-funktiota. Tämä on hyödyllistä, kun työskentelet tiedostojen, eikä hakemistojen, kanssa.
 
-## Toteutus:
-Tarkistaaksesi, onko hakemisto olemassa, käytetään "doesDirectoryExist" -funktiota, joka on osa "System.Directory" -kirjastoa. Tämä funktio palauttaa "Bool" -arvon, joka ilmaisee, onko hakemisto olemassa vai ei.
+3. Toteutuksen yksityiskohdat: `doesDirectoryExist` ja `doesFileExist` -funktiot toimivat tehokkaasti, sillä ne eivät lue koko hakemiston sisältöä tai tiedostoa. Ne vain tarkistavat, onko kohde olemassa tiedostojärjestelmässä.
 
-# Katso myös:
-- [System.Directory - Haskellin virallinen dokumentaatio](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-- [Tiedostojen käsittely - Haskellin virallinen dokumentaatio](https://www.haskell.org/tutorial/io.html#files-and-directories)
+### Katso myös:
+
+1. [Haskellin 'System.Directory'-moduulin dokumentaatio](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html): Täältä löydät lisätietoa kaikista moduulin tarjoamista funktioista.
+
+2. [Haskellin opas IO-toiminnoista](https://www.haskell.org/tutorial/io.html): Tässä on toinen ohje, joka keskittyy IO-toiminnallisuuteen Haskellissa, mukaan lukien tiedostojärjestelmätoiminnot.
+
+Toivottavasti tästä artikkelista oli sinulle apua. Hyvää koodausta, Haskell-ystäväni!

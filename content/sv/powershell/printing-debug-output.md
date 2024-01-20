@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av Felsökningsutdata"
-html_title:           "PowerShell: Utskrift av Felsökningsutdata"
-simple_title:         "Utskrift av Felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# PowerShell: Skriva ut Debug Output
+
 ## Vad & Varför?
-Att skriva ut felsökningsinformation är ett sätt för programmerare att få en bättre förståelse för hur deras kod fungerar och för att identifiera eventuella fel eller buggar. Det är också ett bra sätt att spåra variabler eller data som programmet behandlar under körning.
+
+Skriva ut debug output är processen att visa kodutförande data till utvecklaren. Det används av programmerare för att hitta och lösa problem i koden.
 
 ## Hur man gör:
-En enkel metod för att skriva ut felsökningsinformation är genom att använda Write-Host cmdlet i PowerShell. Detta låter oss skriva ut variabler, strängar eller andra typer av data till konsolen.
 
-```powershell
-$x = 5
-Write-Host "värdet av x är $x."
+Använd `Write-Debug` cmdlet för att skriva ut debug information. Kontrollera att du har aktiverat debug-preferenserna genom `Set-PSDebug` -Verbose.
+
+```PowerShell
+# Aktivera debug output
+Set-PSDebug -Trace 2
+
+# Skriv ut debug output
+Write-Debug "Det här är en debug-meddelande"
 ```
-Output: Värdet av x är 5.
-
-För att se utskriften från Write-Host cmdlet i grön text, kan vi använda -ForegroundColor parameter tillsammans med värdet "Green".
-
-```powershell
-$x = 5
-Write-Host "värdet av x är $x." -ForegroundColor Green
+Du borde se:
+```PowerShell
+DEBUG: Det här är en debug-meddelande
 ```
-Output: Värdet av x är 5 i grön text.
+## Fördjupning
 
-## Djupdykning:
-Skrivande av felsökningsinformation har funnits sedan de tidiga dagarna av programmering, när man använde utskrivna utskrifter som ett sätt att spåra programmet. Det har blivit mer standardiserat och konsoliderat i moderna programmeringsspråk, vilket inkluderar PowerShell.
+PowerShell förbättrade debuggingmöjligheter med introduktionen av `Set-PSDebug` cmdlet i version 5.0 som ett alternativ till traditionell `Write-Host` eller `Write-Output`.
 
-Det finns också andra sätt att skriva ut felsökningsinformation, som att använda Write-Debug cmdlet. Skillnaden mellan Write-Host och Write-Debug är att Write-Debug endast skrivs ut om felsökning är aktiverat för skriptet eller kommandot.
+`Write-Debug` erbjuder en mer kontrollerad utgång bygger på debug preferensvärde jämfört med `Write-Host` eller `Write-Output` som skriver ut output direkt till konsolen.
 
-För att aktivera felsökning för ett PowerShell skript, kan du använda -Debug flaggan när du kör skriptet från PowerShell prompten.
+Implementationdetaljer av debugutskrift i PowerShell är att den är kopplad till debug-strömmen och inte till standardoutputströmmen, vilket möjliggör att filtrera och omdirigera output för bättre hantering.
 
-Ytterligare ett alternativ för att skriva ut felsökningsinformation är att använda Start-Transcript cmdlet, vilket sparar all konsolutmatning till en loggfil. Detta är särskilt användbart om du vill ha en fullständig spårningslogg av allt skriptet gör.
+## Se också
 
-## Se också:
-- [Officiell dokumentation för Write-Host cmdlet](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7)
-- [Officiell dokumentation för Write-Debug cmdlet](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7)
-- [Officiell dokumentation för Start-Transcript cmdlet](https://docs.microsoft.com/sv-se/powershell/module/microsoft.powershell.host/start-transcript?view=powershell-7)
+För mer information om debugging i PowerShell, se följande länkar:
+
+1. Officiella Microsoft-dokumentationen: [Att skriva debug output](https://docs.microsoft.com/sv-se/powershell/scripting/learn/debugging-scripts?view=powershell-7.1)
+2. Bloggartikel: [PowerShell Debugging: En djupdykning](https://devblogs.microsoft.com/scripting/powershell-debugging-deep-dive/)
+3. PowerShell-rörströmmar: [Översikt](https://docs.microsoft.com/sv-se/powershell/scripting/learn/concepts/powershell-pipelines?view=powershell-7.1) 
+4. GitHub: [Kolla in kodsamlingar](https://github.com/PowerShell/Debugger) för PowerShell Debugger på GitHub för att se hur samhället använder dessa tekniker för att bygga kraftfulla skript och arbetsflöden.

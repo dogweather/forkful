@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
-html_title:           "Swift: Senden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -11,52 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-
-Das Senden einer HTTP-Anfrage mit Basisauthentifizierung ist ein Prozess, bei dem ein Programmierer einen Benutzernamen und ein Passwort verwendet, um auf eine geschützte Ressource im Internet zuzugreifen. Dies wird häufig verwendet, um sicherzustellen, dass nur autorisierte Benutzer auf bestimmte Inhalte oder Funktionalitäten zugreifen können.
+HTTP-Anfragen mit Basisauthentifizierung erlauben es Programmierern, Daten von einem Server zu holen, was durch Benutzername und Passwort gesichert ist. Sie sind die Notwendigkeit, wenn du auf geschützte Informationen zugreifen musst und dabei den Server dafür authentifizieren willst, dass du der bist, wer sagt, dass du bist.
 
 ## So geht's:
+Sie können dies in Swift erreichen durch:
 
-Um eine HTTP-Anfrage mit Basisauthentifizierung in Swift zu senden, können Sie die folgenden Schritte befolgen:
+```Swift
+import Foundation
 
-```
-let username = "benutzername"
-let password = "passwort"
+let user = "username"
+let password = "password"
 
-// Erstellen Sie eine URL-Komponente mit der Basis-URL der Ressource
-let url = URL(string: "https://beispiel.com/geschützte-ressource")!
-
-// Erstellen Sie eine Anfrage mit dem URLRequest-Objekt und fügen Sie die Basisauthentifizierung hinzu
+let url = URL(string: "http://example.com")!
 var request = URLRequest(url: url)
-let loginString = "\(benutzername):\(passwort)"
-let loginData = loginString.data(using: .utf8)
-let base64LoginString = loginData?.base64EncodedString()
-request.setValue("Basic \(base64LoginString)", forHTTPHeaderField: "Authorization")
+let loginString = "\(user):\(password)"
+if let data = loginString.data(using: .utf8) {
+    let base64 = data.base64EncodedString()
+    request.setValue("Basic \(base64)", forHTTPHeaderField: "Authorization")
+}
 
-// Senden Sie die Anfrage mit URLSession
 let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-    // Verarbeiten Sie die Antwort und gegebenenfalls den Fehler
-    if let error = error {
-        print("Fehler beim Senden der Anfrage: \(error)")
-        return
-    }
-    guard let data = data else {
-        print("Keine Daten erhalten.")
-        return
-    }
-    // Verarbeiten Sie die erhaltenen Daten
-    print(String(data: data, encoding: .utf8)!)
+    // Handle response here
 }
 task.resume()
 ```
+Wenn Sie dieses Programm ausführen, sendet es eine Anfrage an `http://example.com` mit Basissicherheit (`username`/`password`).
 
-Dies ist ein einfaches Beispiel, aber es zeigt, wie Sie die Basisauthentifizierung zu Ihrer Anfrage hinzufügen können.
+## Tiefere Info:
+Historisch gesehen sind HTTP-Anfragen mit Basisauthentifizierung für die Übertragung von sensiblen Daten nicht ausreichend, da die Anmeldeinformationen im Klartext gesendet werden. Deshalb sollten sie über sichere Verbindungen (HTTPS) gemacht werden.
 
-## Tiefere Einblicke:
+Eine prominenteste Alternative wäre die Verwendung eines OAuth2-Tokens für die Authentifizierung. Es bietet mehr Sicherheit und Kontrolle, erfordert jedoch eine komplexere Einrichtung.
 
-Basisauthentifizierung wurde in den späten 90er Jahren entwickelt und ist eine der ältesten Methoden zur Authentifizierung bei HTTP-Anfragen. Obwohl es weit verbreitet ist, hat es auch einige Nachteile, wie z.B. die Möglichkeit, dass Benutzername und Passwort im Klartext übertragen werden, was ein Sicherheitsrisiko darstellen kann. Alternativen zur Basisauthentifizierung sind z.B. OAuth oder API-Schlüssel.
-
-Wenn Sie genauer verstehen möchten, wie die Basisauthentifizierung funktioniert, können Sie sich das HTTP-Header-Feld "Authorization" genauer ansehen. Hier werden Benutzername und Passwort im Base64-Format codiert und mit dem Präfix "Basic" versehen, um anzuzeigen, dass es sich um Basisauthentifizierung handelt.
+In der Umsetzung sind Details zu beachten. Der "Authorization"-Header enthält die Base64-kodierten Anmeldeinformationen im Format "Benutzername:Passwort". Beachte, dass Base64 unverschlüsselt ist, was die Notwendigkeit einer sicheren Verbindung unterstreicht.
 
 ## Siehe auch:
+HTTP-Anfragen in Swift: https://developer.apple.com/documentation/foundation/url_loading_system/making_http_and_https_requests
 
-Für weitere Informationen und Beispiele zum Senden von HTTP-Anfragen in Swift können Sie unsere Artikel zu "HTTP-Anfragen in Swift" und "Verwendung von URLSession in Swift" lesen.
+Basis-Authentifizierung: https://tools.ietf.org/html/rfc7617
+
+Infos zur sichereren OAuth2-Authentifizierung: https://oauth.net/2/
+
+Details zur Base64-Kodierung: https://developer.apple.com/documentation/foundation/data/1417069-base64encodedstring

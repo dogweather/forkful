@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट को ढूंढ़ना और बदलना"
-html_title:           "Haskell: टेक्स्ट को ढूंढ़ना और बदलना"
-simple_title:         "टेक्स्ट को ढूंढ़ना और बदलना"
+title:                "पाठ की खोज और प्रतिस्थापन"
+html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
+simple_title:         "पाठ की खोज और प्रतिस्थापन"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या & क्यों?
 
-टेक्स्ट को खोजना और बदलना हमारे दैनिक जीवन में काफी आम होता है, और यह विशेष रूप से डेवलपर्स के लिए एक अहम काम है। जब हमें एक बड़ी फ़ाइल में विशेषताओं को ढूंढना और उसको बदलना होता है, तो हम इस टूल का उपयोग करते हैं। यह हमें समय और परेशानी दोनों बचाता है।
+खोजना और पाठ को बदलना मतलब है कि हमें दिए गए टेक्स्ट के भीतर से एक विशेष टेक्स्ट को ढूंढना होता है ঔर फिर उसे किसी दूसरे टेक्स्ट से बदल देना। प्रोग्रामर्स इसे इसलिए करते हैं क्योंकि यदि किसी बड़े डाटा सेट के भीतर हमें कुछ बदलना है, तो यूजर्स को आसानी होती है।
 
-## कैसे करें?
-
-```Haskell
-main = do
-  -- "Hello World!" को "नमस्ते दुनिया!" में बदलें।
-  let str = "Hello World!"
-  putStrLn $ replace "Hello World!" "नमस्ते दुनिया!" str
-
-  -- "नमस्ते दुनिया!" से "Hello World!" में बदलें।
-  putStrLn $ replace "नमस्ते दुनिया!" "Hello World!" str
- where
-  replace = flip . replace_trans
-
-replace_trans sfinds srep str = let slen = length sfinds
-   flist = head $ filter ((sfinds ==) . flip take str) $ inits str
-   (mlist, rest) = splitAt (length flist + slen) str
-   prepend = id
-      . if null flist
-        then id
-        else ((++) flist)
-   rest' = if rest == sfinds then srep else rest
- in prepend rest'
-```
-
-आउटपुट:
+## कैसे करें:
 
 ```Haskell
-नमस्ते दुनिया!
-Hello World!
+import Data.String.Utils
+
+main = putStrLn (replace "खोजने वाला टेक्स्ट" "बदलने वाला टेक्स्ट" "मूल टेक्स्ट")
 ```
 
-## गहराई में जाएं
+उदाहरण के लिए, यदि हम चाहते हैं कि 'केला' को 'सेव' में बदल दें, हम तब इसे इस तरह करेंगे:
 
-टेक्स्ट को खोजने और बदलने की इस तकनीक को 1970 के दशक में केन थॉम्पसन द्वारा उपनिर्धारित किया गया था। वैकल्पिक और अधिक उन्नत तरीकों में शामिल हैं फ़ाइल परिवर्तन और कांट्रोल संरचनाओं के साथ प्रोग्राम में टेक्स्ट को बदलना। यह जिंदगी को सरल बनाता है जो एक विशेष उदाहरण देखने से स्पष्ट हो जाता है।
+```Haskell
+main = putStrLn (replace "केला" "सेव" "मैं केला खा रहा हूँ")
+```
 
-## भी देखें
+साम्पल आउटपुट:
 
-- [Haskell टेक्स्ट प्रोग्रामिंग गाइड](https://wiki.haskell.org/Introduction_to_Haskell_Text_IO)
-- [टेक्स्ट में खोजें और बदलें डेवलपर्स का ट्यूटोरियल](https://www.twilio.com/blog/2015/02/comprehensive-guide-updating-text-data-in-haskell-prelude-text.html)
+```
+मैं सेव खा रहा हूं
+```
+
+## गहरा डाइव:
+
+### इतिहास
+हास्केल में, पाठ को खोजने और बदलने की कार्यक्षमता पहली बार 1990 में जोड़ी गई थी, जब हास्केल का पहला स्थिर संस्करण जारी हुआ था।
+
+### विकल्प
+वेर्बोस ओपरेशन के बजाय, हम `Data.Text` पैकेज का उपयोग करके भी इसे प्रदान कर सकते हैं।
+
+### वास्तविकता
+पाठ को खोजने और बदलने के लिए हास्केल में एक तत्व का उपयोग किया जा रहा है, जिसे 'लेजी एवाल्यूएशन' कहते हैं।
+
+## और भी देखें:
+
+- हास्केल डॉक्यूमेंटेशन: https://www.haskell.org/documentation/
+- पाठ को खोजविद्धार्थ: https://hackage.haskell.org/package/regex-posix
+- लेजी एवाल्यूएशन: https://wiki.haskell.org/Lazy_evaluation
+- `Data.Text` पैकेज: https://hackage.haskell.org/package/text

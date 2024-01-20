@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo una fecha en una cadena"
-html_title:           "Kotlin: Convirtiendo una fecha en una cadena"
-simple_title:         "Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena de texto"
+html_title:           "C++: Convirtiendo una fecha en una cadena de texto"
+simple_title:         "Convirtiendo una fecha en una cadena de texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## ¿Qué & Por qué?
+Conversión de fechas en cadenas significa transformar un objeto de fecha en un formato de texto legible, como por ejemplo "2022-02-28". Los programadores lo hacen para simplificar la visualización y almacenamiento de fechas, y para facilitar su manipulación en diferentes formas en la interfaz de usuario.
 
-La conversión de una fecha a un texto es un proceso en el que se transforman los valores numéricos de una fecha en un formato de texto legible para los humanos. Los programadores a menudo realizan esta conversión para mostrar fechas en diferentes formatos en las aplicaciones, como en un calendario o en un registro de eventos.
-
-## ¡Cómo hacerlo!
-
-Con Kotlin, la conversión de una fecha a un texto es muy sencilla. Aquí hay un ejemplo:
+## Cómo hacerlo:
+Aquí te muestro cómo puedes hacerlo con la biblioteca `DateTimeFormatter` de kotlin. 
 
 ```Kotlin
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
-// Creamos una fecha utilizando la clase LocalDate
-val fecha = LocalDate.of(2021, 9, 15)
+fun main() {
+    val actualDate = LocalDate.now()
 
-// Creamos un formato de fecha deseado utilizando la clase DateTimeFormatter
-val formato = DateTimeFormatter.ofPattern("dd MMM yyyy")
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd")
+    val formattedDate = actualDate.format(formatter)
 
-// Convertimos la fecha a un texto utilizando el método format() del objeto DateTimeFormatter
-val textoFecha = fecha.format(formato)
-
-// Imprimimos el resultado
-println(textoFecha) // Salida: 15 Sep 2021
+    println(formattedDate)
+}
 ```
 
-## Inmersión Profunda
+La salida será algo como esto:
 
-El concepto de representar fechas como texto ha existido desde los primeros días de la informática. Antes de la estandarización de los formatos de fechas, los programadores debían escribir sus propias funciones para realizar esta conversión. En Kotlin, el paquete java.time ofrece una variedad de clases y métodos para facilitar esta tarea.
+```2022-02-28```
 
-Además de DateTimeFormatter, también podemos utilizar SimpleDateFormat para convertir fechas a texto en otros formatos. Sin embargo, se recomienda utilizar DateTimeFormatter ya que es más moderno y ofrece soporte para fechas más específicas, como las zonas horarias.
+## Análisis Profundo
+En kotlin, el uso `DateTimeFormatter` para formato de fechas es estándar desde la versión de Java 8. Anteriormente, en las versiones de Java 6 y 7, teníamos que usar `SimpleDateFormat` para hacer la misma tarea, pero era más verboso y menos eficiente.
+
+Alternativamente, también puedes usar bibliotecas de terceros como `Joda-Time` y `ThreeTenABP` para esta tarea. Pero dado que `DateTimeFormatter` está incorporado, es la opción preferida en la mayoría de los casos.
+
+La implementación de `DateTimeFormatter` es bastante directa, solo necesitas proporcionar un patrón como "yyyy-MM-dd" al método `ofPattern` y después puedes aplicar este formato a cualquier objeto `LocalDate` usando el método `format`.
 
 ## Ver También
+Aquí te dejo algunas fuentes útiles para entender mejor el trabajo con fechas en kotlin:
 
-- Documentación oficial de Kotlin sobre java.time: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time/
-- Tutorial sobre cómo trabajar con fechas en Kotlin: https://www.baeldung.com/kotlin-working-with-dates
-- Ejemplos prácticos de la conversión de fechas a texto en Kotlin: https://www.programiz.com/kotlin-programming/convert-date-string
+- Documentación oficial de kotlin `DateTimeFormatter`: [link](https://kotlinlang.org/docs/dates-and-times.html#parse-and-format-dates)
+- Tutorial sobre cómo utilizar `DateTimeFormatter`: [link](https://www.journaldev.com/17899/java-simpledateformat-java-date-format)
+- Comparación de `SimpleDateFormat` y `DateTimeFormatter`: [link](https://www.baeldung.com/java-8-date-time-intro)

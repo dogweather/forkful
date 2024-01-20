@@ -11,20 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Convertir una cadena de texto a minúsculas es el proceso de cambiar todas las letras de una cadena a su versión en minúsculas. En términos técnicos, esto se conoce como "normalización de mayúsculas y minúsculas". Los programadores a menudo realizan esta tarea para facilitar la comparación y manipulación de cadenas de texto en su código.
+
+Convertir una cadena a minúsculas en Bash implica cambiar todos los caracteres alfabéticos en ella a su forma en minúsculas. Los programadores lo hacen para normalizar las entradas de texto y realizar comparaciones no sensibles a mayúsculas y minúsculas.
 
 ## Cómo hacerlo:
-Para convertir una cadena de texto a minúsculas en Bash, podemos usar el comando `tr` seguido de las opciones `-s` para eliminar repeticiones y `-d` para eliminar un conjunto de caracteres específico. A continuación se muestra un ejemplo de código y su resultado:
-```
-cadena="Hola MUNDO"
-echo "$cadena" | tr -s '[:upper:]' '[:lower:]'
-```
-Salida: `hola mundo`
 
-## Inmersión profunda:
-Este proceso de normalización de mayúsculas y minúsculas se ha utilizado durante mucho tiempo en la impresión y la tipografía, y se remonta a la época de las máquinas de escribir. En lugar de usar el comando `tr`, también podemos lograr el mismo resultado utilizando la herramienta `sed` o la función incorporada `lower()` en lenguajes de programación como Python y PHP.
+Aquí está cómo puedes convertir una cadena a minúsculas en Bash:
 
-## Véase también:
-- [Documentación de Bash sobre el comando `tr`](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [Documentación de Bash sobre la función `lower()`](https://www.gnu.org/software/bash/manual/html_node/String-Manipulation.html#index-lower-_0028_0029)
-- [Documentación de Python sobre la función `lower()`](https://docs.python.org/es/3/library/stdtypes.html#str.lower)
+```bash
+cadena="Hola, Mundo"
+cadena_minusculas=${cadena,,}
+echo $cadena_minusculas
+```
+
+El código anterior imprimirá:
+
+```bash
+hola, mundo
+```
+
+El código utiliza la expansión de parámetros shell de Bash, `${cadena,,}`, para convertir todos los caracteres de `cadena` a minúsculas.
+
+## Profundización
+
+Bash 4.0 introdujo la funcionalidad de expansión de parámetros que también incluye la conversión de minusculas. Antes de esta versión, los programadores tenían que usar otras soluciones menos limpias y eficientes, como `tr '[:upper:]' '[:lower:]'`.
+
+Una alternativa a la expansión de parámetros es usar la función `tolower` de AWK:
+
+```bash
+cadena="Hola, Mundo"
+cadena_minusculas=$(echo $cadena | awk '{print tolower($0)}')
+echo $cadena_minusculas
+```
+
+Pero esta opción puede resultar demasiado verbosa y menos eficiente para la mayoría de las tareas.
+
+## Ver también
+
+- Guía del Manual de Bash sobre Expansión de Parámetros: http://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html
+- Manual de AWK para `tolower`: https://www.gnu.org/software/gawk/manual/html_node/String-Functions.html
+- Herramienta en línea para aprender Bash: http://www.learnshell.org/

@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Java recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Java"
 category:             "Java"
@@ -11,45 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Generating random numbers means producing a sequence of numbers that appear to be chosen at random. This is useful for a variety of purposes in programming, such as generating passwords, simulating random events, and creating unique identifiers. 
 
-Programmers use random numbers to add an element of unpredictability to their programs, making them more realistic and secure. It allows for more dynamic and varied outcomes, making programs more versatile and engaging for users.
+Generating random numbers is the process of creating a sequence that lacks any pattern. Programmers do this to ensure variability and unpredictability in their programs—vital for tasks like randomized tests, simulated experiments, or even for gaming logic.
 
 ## How to:
-To generate random numbers in Java, we can use the built-in ```Random``` class. Here's an example of generating a random integer between 0 and 10:
+
+Java provides several ways to generate random numbers. Among them, using java.util.Random and java.util.concurrent.ThreadLocalRandom classes are common. Here's a small piece of code:
+
 ```Java
 import java.util.Random;
 
-public class RandomExample {
-   public static void main(String[] args) {
-      // create a Random object
-      Random random = new Random();
-      // generate a random integer between 0 and 10
-      int randomNumber = random.nextInt(11);
-      // print the generated number
-      System.out.println("Random number: " + randomNumber);
-   }
+public class MyClass {
+  public static void main(String args[]) {
+    Random rand = new Random();
+
+    // Generate random integers in range 0 to 999
+    int rand_int1 = rand.nextInt(1000);
+    int rand_int2 = rand.nextInt(1000);
+
+    // Print random integers
+    System.out.println("Random Integers: "+rand_int1);
+    System.out.println("Random Integers: "+rand_int2);
+  }
 }
 ```
-Sample output:
-```
-Random number: 7
-```
+When this code runs, it might output:
 
-We can also generate random numbers within a specific range by using arithmetic operations with the generated number. For example, to generate a random number between 50 and 100, we can use the following code:
-```Java
-// generate a random number between 50 and 100
-int randomNumber = random.nextInt(51) + 50;
+```
+Random Integers: 636
+Random Integers: 512
 ```
 
-## Deep Dive:
-The concept of random numbers can be traced back to ancient civilizations, where methods like rolling dice or drawing straws were used for decision-making. In the world of computing, the first random number generator was developed in 1969 by John von Neumann. Since then, many different algorithms and techniques have been created for generating random numbers.
+Notice the range provided in the nextInt() method. It defines the upper limit for the random number generation.
 
-In Java, the `Random` class uses a variant of the linear congruential generator (LCG) algorithm to generate random numbers. This algorithm uses a mathematical formula to produce seemingly random numbers based on a starting value called the seed.
+## Deep Dive
 
-However, it is important to note that these numbers are not truly random, as they are generated using a deterministic algorithm. They are referred to as pseudo-random numbers. To achieve truly random numbers, specialized hardware or external sources of randomness are needed.
+*Historical context*: The concept of generating random numbers dates back to ancient times, used primarily for games and divination. The advent of computers shifted their importance toward fields like simulation and cryptography.
 
-## See Also:
-- [Java's Random class Documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Comparison of Pseudo-Random Number Generators](https://en.wikipedia.org/wiki/Comparison_of_pseudo-random_number_generators)
-- [Random Number Generation in Java 8](https://dzone.com/articles/random-number-generation-java-8)
+*Alternatives*: Besides the Random and ThreadLocalRandom classes, you can also use java.lang.Math.random() method and java.util.stream API to generate random numbers in Java.
+
+*Implementation details*: The standard Random class uses a linear congruential generator (LCG) to generate random numbers. However, for multi-threaded environments, ThreadLocalRandom is more efficient as it reduces contention and overhead typical of shared Random objects.
+
+## See Also
+
+- Oracle Java Documentation: Random (https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Random.html)
+- Oracle Java Documentation: ThreadLocalRandom (https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/concurrent/ThreadLocalRandom.html)
+- java.lang.Math (https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--)
+- java.util.stream (https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)

@@ -10,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-
-Verificar se um diretório existe é simplesmente verificar se um certo caminho de diretório existe no sistema de arquivos. Os programadores geralmente fazem isso para garantir que seu código funcione corretamente e não cause erros.
+## O Que & Por Que?
+Checar se um diretório existe é verificar se há uma pasta específica num sistema de arquivos. Programadores fazem isso para prevenir erros antes que tentem acessar, modificar ou remover diretórios que podem não estar presentes.
 
 ## Como fazer:
+Aqui estão alguns exemplos de como fazer isso no Bash. Em cada exemplo, assumimos que o diretório que queremos verificar é `/tmp/testdir`.
 
-Para verificar se um diretório existe, podemos usar o comando ```[ -d <diretório> ] ```. Isso irá retornar 0 se o diretório existir e 1 se não existir. Podemos utilizar essa condição em um `if` statement para executar ações diferentes dependendo do resultado.
+Para verificar se o diretório existe:
 
-Exemplo de código:
-
-```
-if [ -d diretório_existente ]; then
-  echo "O diretório existe!"
+```Bash
+if [ -d "/tmp/testdir" ] 
+then
+    echo "O diretório existe."
 else
-  echo "O diretório não existe."
+    echo "O diretório não existe."
+fi
+```
+Output esperado quando o diretório existir: `O diretório existe.`
+Output esperado quando o diretório não existir: `O diretório não existe.`
+
+## Deep Dive
+
+Bash é uma interface de linha de comando do usuário que foi lançada pela primeira vez em 1989. A verificação da existência de um diretório é uma operação comum e antiga em programação que permite que o desenvolvedor manuseie erros de I/O eficientemente.
+
+Na verdade, o comando '-d' não é a única maneira de verificar a existência de um diretório em Bash. '-e' também pode ser usado para verificar se qualquer tipo de arquivo (incluindo diretórios) existe.
+
+```Bash
+if [ -e "/tmp/testdir" ] 
+then
+    echo "O arquivo ou diretório existe."
+else
+    echo "O arquivo ou diretório não existe."
 fi
 ```
 
-Saída: O diretório existe!
+Claro, em termos de detalhes de implementação, é importante notar que esses comandos Bash funcionarão apenas em sistemas operacionais baseados em UNIX, como Linux ou macOS.
 
-Também podemos usar o comando `test` para verificar se um diretório existe:
+## Veja Também
 
-```
-if test -d diretório_existente; then
-  echo "O diretório existe!"
-else
-  echo "O diretório não existe."
-fi
-```
+Para mais detalhes ou para resolver qualquer dúvida, você pode verificar os links abaixo:
 
-Saída: O diretório existe!
-
-## Deep Dive:
-
-Verificar se um diretório existe é uma tarefa comumente realizada por programadores em diversos contextos, como por exemplo, em scripts de automação de tarefas ou em programas que manipulam arquivos e pastas. Essa funcionalidade está disponível em diversas linguagens de programação, mas o Bash torna isso muito simples com o uso do comando `test` ou do comando `[`.
-
-Além disso, também podemos usar o comando `ls` para verificar se um diretório existe, mas ele também exibirá o conteúdo do diretório, o que pode não ser ideal em algumas situações.
-
-## Veja também:
-
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/bash.html)
-- [Artigo da Linuxize sobre verificar se um arquivo ou diretório existe](https://linuxize.com/post/bash-check-if-file-exists/)
-- [Vídeo do canal Linux Hint no YouTube sobre verificar se um diretório existe](https://www.youtube.com/watch?v=XLORXoSYJ8c)
+1. Manual do Bash: https://www.gnu.org/software/bash/manual/bash.html
+2. Referência do Bash: https://tldp.org/LDP/abs/html/testconstructs.html#DBLBRACKETS 
+3. Perguntas frequentes sobre o Bash de Greg's Wiki: https://mywiki.wooledge.org/BashFAQ/031

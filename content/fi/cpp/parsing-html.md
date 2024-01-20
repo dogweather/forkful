@@ -1,7 +1,7 @@
 ---
-title:                "HTML: n jäsentäminen"
-html_title:           "C++: HTML: n jäsentäminen"
-simple_title:         "HTML: n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi & Mitä?
-HTML:n parsiminen tarkoittaa verkkosivun koodin lukemista ja sen tietojen erottamista käyttökelpoisiksi tietorakenteiksi. Ohjelmoijat käyttävät parsimista tehdäkseen verkkosivujen sisällöstä helposti käsiteltävää ja analysoitavaa dataa.
+## Mitä & Miksi?
+
+HTML-koodin jäsennys tarkoittaa HTML-dokumentin rakenteellisen tiedon erottamista sen esitystavasta. Ohjelmoijat jäsentelevät HTML-dokumentteja, jotta he voivat käsitellä ja analysoida verkkosisältöä automaattisesti.
 
 ## Miten:
+
+Esimerkkikoodi ja tulosteet:
 ```C++
 #include <iostream>
-#include <string>
-
-using namespace std;
+#include <gumbo.h>
 
 int main() {
-    // Luodaan merkkijono esimerkiksi HTML-koodille
-    string html = "<html><head><title>Esimerkki sivu</title></head><body><h1>Tämä on otsikko</h1><p>Tämä on tekstiä</p></body></html>";
+    const char* html =
+    "<html>\
+        <body>\
+            <h1>Hello, world!</h1>\
+        </body> \
+    </html\>";
 
-    // Tulostetaan otsikko
-    size_t start = html.find("<h1>") + 4; // Etsitään otsikon alku
-    size_t end = html.find("</h1>"); // Etsitään otsikon loppu
-    cout << "Otsikko: " << html.substr(start, end-start) << endl;
+    GumboOutput* output = gumbo_parse(html);
+    std::cout << output->root->v.document.children.length << std::endl;
 
-    // Tulostetaan tekstit
-    start = html.find("<p>") + 3; // Etsitään tekstin alku
-    end = html.find("</p>"); // Etsitään tekstin loppu
-    cout << "Teksti: " << html.substr(start, end-start) << endl;
-
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
+  
     return 0;
 }
 ```
 
-Lähtö:
-```
-Otsikko: Tämä on otsikko
-Teksti: Tämä on tekstiä
-```
+Esimerkkikoodimme tulosteeksi saadaan `2`, mikä tarkoittaa, että juurielementillä on kaksi lapsielementtiä.
 
-## Syvempi sukellus:
-HTML:n parsiminen kehitettiin 1990-luvulla, kun Internet-käyttö yleistyi. Tähän mennessä on kehitetty useita eri tapoja parsia HTML:ää, joista yksi on regulääri ilmeisyyksien avulla. Tämä kuitenkin ei ole paras vaihtoehto, sillä HTML:n rakenteet voivat olla hyvin monimutkaisia ja sen parsiminen on vaativaa. Sen sijaan käytetään usein parseereita, jotka ovat erityisesti HTML:n parsimiseen suunniteltuja ohjelmia.
+## Syvällisempi sukellus:
+
+HTML-jäsennys syntyi webin alkuvuosina, jolloin sisällön esitystapa määritti sen rakenteen. Nykypäivänä on olemassa monia vaihtoehtoisia jäsennyskeinoja, kuten SAX ja DOM.
+
+C++ HTML-jäsennys käyttää tyypillisesti kirjastoja, kuten Gumbo, joka on esitelty esimerkissämme. Tieto pakataan sisäiseen metsänmuotoiseen datastruktuuriin ja sen jälkeen käsitellään.
 
 ## Katso myös:
-- [Mozilla Developer Network: Introduction to HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
+
+1. W3C HTML5 - Lyhyt esittely: [linkki](https://www.w3.org/TR/html5/syntax.html#parsing)
+2. Google Gumbo – GitHub: [linkki](https://github.com/google/gumbo-parser)
+3. Sax vs. Dom: [linkki](http://stackoverflow.com/questions/6828703/difference-between-sax-and-dom)

@@ -1,7 +1,7 @@
 ---
-title:                "未来や過去の日付の計算"
-html_title:           "C#: 未来や過去の日付の計算"
-simple_title:         "未来や過去の日付の計算"
+title:                "未来または過去の日付を計算する"
+html_title:           "C#: 未来または過去の日付を計算する"
+simple_title:         "未来または過去の日付を計算する"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,40 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-日本語読者のためのC#(最新バージョン)プログラミング記事
-非公式トーンと冗長でない、的確なスタイルを使用して書いてください。不必要な単語や文章を避けてください。
+# 未来または過去の日付の計算: C# のガイド
 
-## 何か？どうして？
+## 何となぜ?
 
-日付を未来や過去に計算することは、ある特定の日付から一定期間を加えたり引いたりすることです。これは、プログラマーが様々なアプリケーションで有用な機能を作成するために使用することができます。
+日付の計算とは、過去または未来の特定の日付を特定するためのものです。これは、特定のイベントの予定日を記録したり、特定の日数後の日付を知る必要がある場合にプログラマーが行います。
 
-## 方法：
+## 方法:
 
-```C#
-// 今日の日付を取得
-DateTime today = DateTime.Now;
-// 10日後の日付を計算
-DateTime futureDate = today.AddDays(10);
-// 計算した日付を出力
-Console.WriteLine("10日後は" + futureDate);
-```
-出力: 10日後は{計算した日付}
+以下は、C#で未来の日付を計算するコードの一例です:
 
 ```C#
-// このコードは特定の日付から一定期間を引く例です
-// 例: 1990年10月10日から5年前の日付を計算
-DateTime specificDate = new DateTime(1990, 10, 10);
-DateTime pastDate = specificDate.AddYears(-5);
-Console.WriteLine("5年前は" + pastDate);
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        DateTime today = DateTime.Now;
+        DateTime futureDate = today.AddDays(10);
+        
+        Console.WriteLine("今日の日付: " + today.ToString("d"));
+        Console.WriteLine("10日後の日付: " + futureDate.ToString("d"));
+    }
+}
 ```
-出力: 5年前は{計算した日付}
 
-## 深い情報：
+これを実行すると次のような出力が表示されます:
 
-日付の計算は非常に古い考え方であり、ローマ時代にさかのぼります。しかし、現在ではさまざまなプログラミング言語やライブラリがこの機能を提供しています。また、別の方法として、timestampを使用して日付を計算することもできます。
+```C#
+今日の日付: 01/01/2022
+10日後の日付: 01/11/2022
+```
 
-## 関連サイト：
+## 深いダイブ
 
-- [Microsoft公式ドキュメンテーション](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/datetime/)
-- [W3Schoolsでの実践的な例](https://www.w3schools.com/cs/cs_examples.asp)
-- [MSDNの日付計算の例](https://docs.microsoft.com/en-us/dotnet/standard/base-types/how-to-calculate-a-date-by-adding-days)
+(1)
+長い間、開発者は特定の時間操作を手動で行ってきました。しかし、C#のような現代のプログラミング言語では、組み込みの日付と時刻の演算機能を提供しています。
+
+(2)
+代替手段としては、自分で日付時間を操作するための関数を作成することも可能です。しかし、これはコードをより複雑にする可能性があり、ミスを引き起こす可能性があります。
+
+(3)
+C#では、日付と時刻はDateTimeとTimeSpanオブジェクトとして表されます。それぞれの専用のメソッド（例：AddDays）を使って日付計算をしたり、２つのDateTimeオブジェクトの差をTimeSpanオブジェクトとして取得し、時間の操作を行ったりします。
+
+## 関連情報
+
+- [DateTime Struct (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+- [Working with Dates and Times in C# (Pluralsight Blog Post)](https://www.pluralsight.com/guides/working-with-dates-and-times-in-csharp)
+- [Date and Time Data (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/datetime/)

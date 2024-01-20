@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Lua recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,49 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Reading command line arguments is the process of obtaining user-provided values from the command line when running a program. This allows programmers to create more flexible and interactive programs that can be customized by the user. By reading command line arguments, programmers can easily incorporate user input, making their programs more dynamic and efficient.
+
+The process of reading command line arguments in Lua refers to fetching user input provided in the terminal when running a script. It allows customization of execution and passing of data without modifying code.
 
 ## How to:
-To read command line arguments in Lua, we use the global variable `arg`. This variable is an array that holds all the arguments passed to the program. To access a specific argument, we use the index of the argument in the array. Let's see an example:
 
-```
-Lua
-print(arg[0]) -- prints the name of the program
-print(arg[1]) -- prints the first argument entered
-print(arg[2]) -- prints the second argument entered
-```
-If we run this program with `lua example.lua Hello World`, the output will be:
-```
-Lua
-example.lua
-Hello
-World
-```
+Reading command line arguments in Lua is simple thanks to the global `arg` table. User input is read as strings in an array `arg` starting at index 0 (for script name) followed by parameters at increased indices.
 
-We can also use loops to iterate over all the arguments passed to the program. Let's see an example of printing all the arguments entered by the user:
+Here's a quick illustration:
 
-```
-Lua
-for i, v in ipairs(arg) do
-  print(i, v) -- prints the index and value of each argument
+```Lua
+-- argument_test.lua
+print("Script name:",arg[0])
+for i = 1, #arg do
+    print("Argument", i .. ":", arg[i])
 end
 ```
-If we run this program with `lua example.lua Hello World`, the output will be:
+Test this with command:
+
+```bash
+lua argument_test.lua testArg1 testArg2 testArg3
 ```
-Lua
-1 Hello
-2 World
+
+And the output becomes:
+
+```
+Script name: argument_test.lua
+Argument 1: testArg1
+Argument 2: testArg2
+Argument 3: testArg3
 ```
 
 ## Deep Dive:
-Command line arguments have been widely used in programming for a long time. They provide a simple and efficient way to customize programs before they are executed. Alternative methods of obtaining user input, such as prompting the user during runtime, can be cumbersome and less efficient.
 
-Lua also provides the `arg.n` variable, which contains the total number of arguments passed to the program. This can be useful for validation purposes or determining if the user has provided enough arguments.
+Historical context: Lua has been around since 1993 but adopted `arg` officially in 5.1 (2006). Before, it relied on the deprecated `arg` mechanism in shell.
 
-To access the name of the program without using `arg[0]`, we can use `arg[-1]`. This is a common technique used to keep the code cleaner and easier to read.
+Alternatives: There are Lua libraries lik `Penlight` and `Lapp` that provide improved interfaces for dealing with command line arguments. They check types, set default values, and display help messages.
+
+Implementation details: Lua's `arg` is a simple table holding all arguments. `arg[0]` is the script name and negative indices start from `arg[-1]` for the interpreter name going in reverse order.
 
 ## See Also:
-To learn more about reading command line arguments in Lua, check out:
-- [Lua official documentation](https://www.lua.org/)
-- [A Beginner's Guide to Lua - Command Line Arguments](https://medium.com/beginners-guide-to-web-development/a-beginners-guide-to-lua-command-line-arguments-ec3d2a1c1b8)
-- [Writing command-line apps in Lua](https://cmdchallenge.com/#/writing_cli_apps_in_lua)
+
+1. [Lua 5.1 Reference Manual](https://www.lua.org/manual/5.1/manual.html) - The official Lua manual.
+2. [Deciphering Lua Command Line Arguments](https://www.tutorialspoint.com/lua/lua_command_line_arguments.htm) - A tutorial on reading command line arguments in Lua.
+3. [Penlight library](https://stevedonovan.github.io/Penlight/api/index.html) - A popular utility library for Lua.
+4. [Lapp library](https://github.com/luapower/lapp) - A library for handling command line arguments in a declarative way.

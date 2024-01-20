@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "C++ recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "C++"
 category:             "C++"
@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# String Interpolation in C++
+
 ## What & Why?
-Interpolating a string is the process of combining multiple strings or values into one cohesive string. This allows programmers to create dynamic and personalized output based on user input or other variables. It saves time and effort by reducing the need for writing out long, repetitive strings.
+String interpolation is a process of injecting values into a string. It makes code cleaner, easier to understand, and reduces chances of errors.
 
 ## How to:
+Let's get straight into code:
+
 ```C++
-#include <iostream>
-using namespace std;
+#include<iostream>
+#include<string>
 
 int main() {
-  string name = "John";
-  int age = 25;
-  
-  // Using concatenation
-  cout << "Hello, my name is " + name + " and I am " + to_string(age) + " years old.";
+   std::string name = "James";
+   int age = 22;
 
-  // Using interpolation
-  cout << "Hello, my name is " << name << " and I am " << age << " years old.";
-  
-  return 0;
+   std::cout << "Hello, my name is " << name << " and I am " << age << " years old.";
+   return 0;
 }
-
-// Output:
-// Hello, my name is John and I am 25 years old.
 ```
 
-## Deep Dive:
-Interpolating strings has been around since the early days of programming. It became more popular with the introduction of string formatting languages like Perl and Python. In C++, there are other alternatives such as the `sprintf` function, but interpolation offers a simpler and more intuitive approach.
+Output:
+```
+Hello, my name is James and I am 22 years old.
+```
+In the above code, values of variables `name` and `age` are interpolated into a string.
 
-It is important to note that interpolation can improve the readability of code, but it can also lead to security vulnerabilities if not used properly. This is because interpolated strings are susceptible to injection attacks, so it is important to sanitize user input when using interpolation.
+## Deep Dive
+- Historical Context: Earlier versions of C++ didn't natively support string interpolation. Programmers had to concatenate variables into strings using `+` operator or `sprintf()` method. In C++20, string formatting library `std::format` was introduced making it more convenient.
+- Alternatives: There are libraries like `fmt` and `boost::format` that can be used for string formatting. Or you can construct strings using `std::stringstream`.
+- Details: C++ does not directly support string interpolation but through methods mentioned above. Unlike Python, Ruby, or modern Javascript, it does not have a built-in template language.
 
 ## See Also:
-- [C++ Reference- String Interpolation](https://en.cppreference.com/w/cpp/language/string_literal)
-- [A Beginner's Guide to String Interpolation in C++](https://www.bogotobogo.com/cplusplus/StringInterpolation.php)
-- [Interpolation (computer programming)](https://en.wikipedia.org/wiki/Interpolation_(computer_programming))
+- [String Interpolation in Python](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
+- [String Formatting in C++](https://en.cppreference.com/w/cpp/utility/format) 
+- [fmt library](https://fmt.dev/latest/)
+- [boost::format](https://www.boost.org/doc/libs/1_76_0/libs/format/)
+- [std::stringstream](https://en.cppreference.com/w/cpp/io/basic_stringstream)

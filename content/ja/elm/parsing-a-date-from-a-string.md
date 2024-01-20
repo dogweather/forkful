@@ -1,6 +1,6 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "Elm: 文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするか & なぜするか？
-日付を文字列からパースすることは、プログラマーにとって非常に重要な作業です。パースとは、文字列から特定の形式のデータを抽出することを指します。日付を文字列からパースするためには、文字列内の日付の形式を認識し、それを日付オブジェクトとして扱う必要があります。プログラマーがこれを行う理由は、データの取得や処理を簡単にするためです。
+## 何となぜ？
 
-## やり方：
-Elmを使って日付を文字列からパースするサンプルコードを以下に示します。
+日付の解析とは文字列から日付形式に変換することを指します。プログラマーはこの処理を用いて、ユーザーから提供された、あるいは外部システムから取得した日付形式の異なるデータを正しく解釈・処理するために必要となります。
 
-```elm
-import Time exposing (Posix)
-import Date.Extra exposing (Date, fromIsoString)
+## 手順：
 
--- 文字列から日付をパースする
-getParsedDate : String -> Date
-getParsedDate str =
-  fromIsoString str
+Elmでは、日付の解析には`Date.fromIsoString`関数を使用します。これは、ISO 8601の日付文字列を`Maybe Date`の値に変換する関数です。
 
--- 日付を文字列からパースする関数の実行例
-getParsedDate "2021-04-23" -- 結果: Apr 23, 2021
+```Elm
+import Date
 
--- 文字列から日付と時刻をパースする
-getParsedDateTime : String -> Date
-getParsedDateTime str =
-  case str of
-    "2021-04-23 12:00:00" ->
-      Posix.fromEpoch 0
-    "2021-04-23 18:00:00" ->
-      Posix.fromEpoch 6
-    _ ->
-      Posix.fromEpoch 12
+parseDate : String -> Maybe Date
+parseDate date =
+    Date.fromIsoString date
+
+main =
+    parseDate "2022-03-25"
+        |> Maybe.map Date.toIsoString
+        |> Debug.toString
+        |> Html.text
 ```
 
-## より詳しく：
-日付を文字列からパースする方法は、プログラミング言語によって異なりますが、基本的な考え方は同じです。日付を文字列からパースするには、まず文字列内の日付の形式を認識する必要があります。その後、認識した日付の形式を基に、日付オブジェクトとして扱うコードを記述します。日付を文字列からパースする方法としては、上記のように標準ライブラリの関数を使う方法や、外部ライブラリを使う方法があります。
+この場合、出力は `Just "2022-03-25"`となります。
 
-## 関連情報：
-- [Elm Timeパッケージ](https://package.elm-lang.org/packages/elm/time/latest/)：Timeパッケージには日付を扱うための便利な関数が含まれています。
-- [Elm Date.Extraパッケージ](https://package.elm-lang.org/packages/elm-community/date-extra/latest/)：Date.Extraパッケージには、さまざまな日付を扱うための関数が含まれています。
-- [Elm日付の操作方法のドキュメント](https://elm-lang.org/docs/), https://elm-lang.org/docs/packages/elm/time/latest/Time
-：Elmの公式ドキュメントには日付を操作するための詳細な情報が記載されています。
+## 詳細
+
+日付解析は歴史的に多くの問題を抱えてきました。初期のプログラミング言語では、このような高水準の方が利用できず、とても複雑な処理が必要でした。しかし、現代の言語では、Elmの`Date`モジュールのような強力な関数が用意されています。
+
+代替方法としては、自分でパーサーを実装するという方法もあるかもしれません。しかし、この手法は非常に複雑でエラーが起きやすいため、推奨されません。
+
+## 参考情報:
+
+以下のリンクは、日付解析に関してさらに学ぶための参考情報となります：
+
+- Elmの公式ダキュメント： 
+    [Date.fromIsoString関数](https://package.elm-lang.org/packages/elm/time/latest/Time#fromIsoString) 
+- ISO 8601の日付規格：
+    [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) 
+- Elmにおける日付の扱い：
+    ["Parsing dates in Elm"](https://korban.net/posts/elm/2018-10-08-parsing-dates-in-elm/)

@@ -1,6 +1,6 @@
 ---
 title:                "HTML 파싱"
-html_title:           "PowerShell: HTML 파싱"
+html_title:           "Fish Shell: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 사용하나요?
 
-HTML 분석이란 무엇인지 궁금하시다면, HTML은 웹 사이트에서 사용되는 코드로, 예를 들어 "heading"과 "paragraph"와 같은 요소를 정의하는 것을 말합니다. 프로그래머들이 이것을 하지 왜하는가 하면, HTML parsing은 웹 페이지로부터 원하는 정보를 추출하기 위한 중요한 도구이기 때문입니다.
+HTML 파싱이란 웹 페이지의 HTML 문서를 분석하고 이해하는 프로세스를 가리킵니다. 이를 통해 프로그래머들은 웹 페이지의 구조를 이해하거나 필요한 데이터를 추출하는 등 다양한 작업을 수행할 수 있습니다.
 
-## 하는 법:
+## 사용법:
+
+PowerShell을 사용하여 HTML을 파싱하는 것은 간단합니다. 아래에 예시를 드릴게요.
 
 ```PowerShell
-# Invoke-WebRequest를 사용하여 URL에서 HTML 가져오기
-$HTML = Invoke-WebRequest -Uri https://www.example.com
+# 웹 페이지 가져오기
+$page = Invoke-WebRequest -Uri "https://example.com"
 
-# 해당 태그의 내용을 가져오기
-$HTML.ParsedHtml.getElementsByTagName("h1").innerText
+# HTML 파싱하기
+$html = New-Object -ComObject "HTMLFile"
+$html.IHTMLDocument2_write($page.Content)
 
-# 특정 id를 가진 태그의 내용 가져오기
-$HTML.ParsedHtml.getElementById("main-content").innerText
+# 파싱된 요소 확인하기
+$html.body.all.tags('a') | ForEach-Object { $_.innerText }
 ```
 
-## 심층 분석:
+이 코드는 "https://example.com" 웹 페이지에서 모든 'a' 태그를 가져온 뒤, 그 내용을 출력합니다.
 
-HTML 분석은 웹 개발이 발전함에 따라 그 중요성이 더욱 커졌습니다. 다양한 웹 스크래핑 도구 중에서 PowerShell을 사용한 HTML parsing은 간단하고 효율적으로 웹 페이지로부터 정보를 추출할 수 있는 방법 중 하나입니다.
+## 딥 다이브:
 
-대안으로는 파이썬의 Beautiful Soup이나 JavaScript의 Cheerio와 같이 다른 프로그래밍 언어를 사용하는 방법이 있으며, 각각의 장단점이 있습니다. PowerShell을 이용한 HTML parsing은 웹 개발을 할 때 유용한 기법 중 하나이며, 원하는 정보를 빠르고 손쉽게 추출할 수 있습니다.
+HTML 파싱은 웹의 복잡한 구조를 이해하고 처리하는 데 중요한 역할을 합니다. 이는 웹 크롤링 및 스크래핑, 웹 콘텐츠의 분석, 웹 페이지의 자동화된 디버깅 등에 필요한 기능입니다.
 
-## 관련 자료:
+HTML 파싱에는 여러 방법이 있으며, 각각의 방법은 파싱할 웹 페이지의 구조 및 필요한 정보에 따라 적합하게 사용됩니다. 예를 들어, CSS 선택자를 사용하여 원하는 정보를 직접 추출할 수 있습니다.
 
-- [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/import-clixml?view=powershell-7)
-- [A Beginner’s Guide to Scraping in PowerShell](https://adamtheautomator.com/powershell-web-scraping/)
-- [HTML DOM Methods](https://www.w3schools.com/jsref/dom_obj_all.asp)
+PowerShell에서는 HTML 파서 -ComObject를 통해 파싱을 실행합니다. 이는 Windows 만에서 기본으로 이용할 수 있지만, PowerShell Core에서는 사용할 수 없습니다. 따라서 다른 플랫폼을 위해 HtmlAgilityPack 등의 라이브러리를 이용할 수 있습니다.
+
+## 추가 정보:
+
+HTML 파싱에 대해 더 알아보고 싶다면 아래 링크를 참조하세요.
+
+1. [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+2. [An introduction to HTML Parsing in PowerShell](https://4sysops.com/archives/an-introduction-to-html-parsing-in-powershell/)
+3. [HtmlAgilityPack](https://html-agility-pack.net/)

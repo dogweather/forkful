@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków odpowiadających wzorcowi"
-html_title:           "Gleam: Usuwanie znaków odpowiadających wzorcowi"
-simple_title:         "Usuwanie znaków odpowiadających wzorcowi"
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,46 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści,
+## Co i dlaczego?
 
-Dziś mówimy o tym, jak usuwać znaki pasujące do wzorca w języku programowania Gleam. W tym artykule dowiesz się, czym jest to operacja i dlaczego programiści jej używają.
+Usuwanie znaków pasujących do wzorca to proces w którym znaki pasujące do określonego wzoru są eliminowane z łańcucha znaków. Programiści robią to, aby manipulować danymi tekstowymi - od prostego oczyszczenia tekstu po skomplikowane przetwarzanie języka naturalnego.
 
-## Co i czemu?
+## Jak to zrobić:
 
-Usuwanie znaków pasujących do wzorca to czynność polegająca na usuwaniu określonych znaków z tekstu, które odpowiadają zadanemu wzorcowi. Jest to użyteczne w wielu sytuacjach, na przykład w procesowaniu danych lub weryfikacji użytkownika.
+Poniżej pokazuję przykład jak usunąć wszystkie cyfry z tekstu przy użyciu języka Gleam.
 
-## Jak to zrobić?
+```gleam
+import gleam/string
 
-Oto przykład kodu w języku Gleam, który usuwa wszystkie litery "a" z podanego tekstu:
-
-```Gleam
-lib String = import gleam/string
-
-pub fn delete_a(text: String) String {
-  replace(text, "a", "")
-}
-
-test "deleting a" {
-  expect(delete_a("apple")).toBe("pple")
+fn main() {
+  let text = "Moje ulubione liczby to 678 i 123"
+  let clean_text = string.replace(text, ~"\\d", "")
+  Io.print(clean_text)
 }
 ```
-W powyższym przykładzie wykorzystujemy funkcję `replace` do zastąpienia wszystkich wystąpień liter "a" pustym ciągiem. Następnie testujemy funkcję, aby upewnić się, że działa prawidłowo.
+Gdy uruchomisz powyższy kod, wynik będzie następujący:
 
-## Głębszy zanurzenie
+```
+Moje ulubione liczby to i
+```
 
-Jeśli jesteś ciekawy, skąd wzięła się operacja usuwania znaków pasujących do wzorca, warto przejrzeć historię wyrażeń regularnych. Wyrażenia regularne, czyli wzorce, zostały wprowadzone w 1958 roku przez Stephena Cole Kleena i od tego czasu są nieodłączną częścią wielu języków programowania. W Gleam, operacja usuwania znaków pasujących do wzorca jest również możliwa dzięki wyrażeniom regularnym.
+## Głębsze zanurzenie
 
-Alternatywą dla usuwania znaków pasujących do wzorca jest użycie funkcji `filter`, która wyrzuci wszystkie znaki niepasujące do zadanego wzorca. Jednak w przypadku, gdy chcemy dokładnie określić, które znaki chcemy usunąć, operacja usuwania jest bardziej odpowiednia.
-
-W języku Gleam, usuwanie znaków pasujących do wzorca jest zaimplementowane za pomocą funkcji `replace` z pakietu `gleam/string`. Funkcja ta przyjmuje dwa argumenty - tekst i wzorzec do usunięcia - i zwraca zmodyfikowany tekst.
+Usuwanie znaków pasujących do wzorca ma korzenie sięgające języków programowania takich jak Perl i Python, które posiadają wbudowane operacje do manipulacji tekstami. Alternatywą dla Gleam może być Erlang z biblioteką `re` do manipulacji wyrażeniami regularnymi, ale Gleam oferuje bardziej nowoczesny i przyjazny składni typowania. Co więcej, działanie funkcji `string.replace` jest dość proste - przechodzi przez ciąg znaków znak po znaku, porównywając go z wzorcem i usuwając dopasowania.
 
 ## Zobacz także
 
-Szukasz więcej informacji na temat języka Gleam i jego funkcji? Oto kilka przydatnych źródeł:
-
-- Dokumentacja języka Gleam: https://gleam.run/documentation/
-- Gleam w Github: https://github.com/gleam-lang/gleam
-
-Zapraszam również na nasz blog, gdzie znajdziesz wiele ciekawych artykułów na temat programowania.
-
-Dziękuję za przeczytanie tego artykułu. Mam nadzieję, że dowiedziałeś się czegoś nowego na temat usuwania znaków pasujących do wzorca w języku Gleam. Do zobaczenia w następnym artykule!
+Chcesz dowiedzieć się więcej? Zweryfikuj poniższe linki:
+- Gleam documentation: https://gleam.run/book/tour/strings.html
+- Regular expressions in Gleam: https://gleam.run/news/gleam-v0.14-released/
+- Erlang `re` module: https://erlang.org/doc/man/re.html

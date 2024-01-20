@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Gleam: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# Debuggeando con Gleam: Una Guía a Imprimir Resultados de Debug
 
-Imprimir la salida de depuración es una técnica utilizada por los programadores para obtener información sobre el estado del programa en tiempo de ejecución. Esta información es útil para identificar errores y mejorar el rendimiento del código.
+## ¿Qué es y Porqué?
 
-## ¡Cómo hacerlo!
+Imprimir resultados de debug es una práctica que los programadores usan para inspeccionar los datos internos de un programa mientras se está ejecutando. Hacer esto ayuda a entender cómo es que el programa está funcionando y a detectar cualquier problema.
 
-Puedes imprimir la salida de depuración en Gleam utilizando la función `Debug.print`. Aquí hay un ejemplo:
+## ¿Cómo hacerlo?
 
-```Gleam
-let message = "¡Hola, mundo!"
+Usamos la función`io.debug` para imprimir en la consola. Aquí hay un ejemplo:
 
-let _ = Debug.print(message)
+```gleam
+import gleam/io
+
+fn main() {
+  let datos = "Hello, Gleam!"
+  io.debug(datos)
+}
 ```
 
-La salida resultante será:
+Esto va a imprimir:
 
+```stdout
+Hello, Gleam!
 ```
-"¡Hola, mundo!"
-```
 
-## Inmersión profunda
+## Un vistazo más profundo
 
-La impresión de salida de depuración ha sido una técnica ampliamente utilizada por los programadores desde los primeros días de la programación. Sin embargo, también existen otras formas de depurar un programa, como el uso de un depurador o la implementación de pruebas unitarias.
+La impresión de debug tiene sus raíces en la era de programación más temprana cuando los errores tenían que ser identificados manualmente leyendo listados de código. Ahora, es una de las maneras más fáciles y directas de entender que es lo que está pasando dentro de tu código.
 
-En Gleam, la función `Debug.print` utiliza macros en lugar de funciones regulares para mejorar el rendimiento y minimizar la sobrecarga en el código resultante.
+Sin embargo, hay alternativas a imprimir datos de debug. Podrías usar un depurador que te permite pausar tu programa y examinar el estado de tu aplicación, línea por línea. También, hay herramientas de logging que proveen una manera de colectar, almacenar, y analizar resultados de debug.
 
-## Lee también
+En cuanto a `io.debug`, esta implementación es bastante simple. Vale la pena mencionar que `io.debug` siempre devuelve `Ok(Nil)`, lo que significa que es fácil de usar en cualquier parte de tu código sin cambiar el resultado.
 
-- Documentación oficial de Gleam: https://gleam.run/documentation/
-- Artículo de la revista Wired sobre la importancia de la impresión de salida de depuración: https://www.wired.com/story/importance-debugging-output/
-- Tutorial de Codecademy sobre la depuración en Gleam: https://www.codecademy.com/learn/learn-gleam/modules/debugging-in-gleam
+## Ver también
+
+Si quieres aprender más, te recomendamos seguir estos enlaces:
+
+- La [documentación oficial de Gleam](https://gleam.run/book/tour/file_io.html) te hará entender mejor la función `io.debug`.
+- El [artículo en wikipedia sobre debug](https://es.wikipedia.org/wiki/Depuraci%C3%B3n) te dará un resumen de los métodos de debug.
+- Para entender más sobre las alternativas a la impresión de debug, puedes leer la [documentación de The Elixir School](https://elixirschool.com/es/lessons/specifics/debugging) sobre debug en Elixir, que también aplica a Gleam.

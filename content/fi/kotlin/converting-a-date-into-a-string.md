@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
-html_title:           "Kotlin: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,43 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärätiedon muuttamista helpommin ymmärrettävään muotoon. Ohjelmoijat tekevät tämän yleisesti tietojen tallentamisen tai näyttämisen helpottamiseksi.
+## Mikä & Miksi?
 
-## Miten: 
-Esimerkkejä koodinpätkistä ja tulostus näytetään ```Kotlin ... ``` koodilohkoissa.
+Date String -muunnos on prosessi, jossa päivämäärä muunnetaan merkkijonoksi. Tämä auttaa paremmassa datakäsittelyssä ja ihmiskäyttäjille sopivan esitystavan tarjoamisessa.
 
-Esimerkki 1: Muuntaa päivämäärä ja aikaleima merkkijonoksi. 
+## Kuinka toimii:
 
-```
-val date = "21.09.2021"
-val time = "12:00"
-val stringDate = "$date klo $time"
-println(stringDate)
-```
+Kotlinin 'SimpleDateFormat'-luokan avulla voidaan muuntaa päivämäärä merkkijonoksi näin:
 
-Tuloste: 
-```
-21.09.2021 klo 12:00
-```
+```Kotlin
+import java.text.SimpleDateFormat
+import java.util.Date
 
-Esimerkki 2: Käyttäen SimpleDateFormat-luokkaa muuntaaksesi päivämäärän ja aikaleiman haluamassasi muodossa. 
-
-```
-val date = Date()
-val dateFormat = SimpleDateFormat("dd.MM.yyyy HH:mm")
-val stringDate = dateFormat.format(date)
-println(stringDate)
+fun main(args: Array<String>) {
+    val date = Date()
+    val sdf = SimpleDateFormat("dd/M/yyyy")
+    val dateString = sdf.format(date)
+    println("Päivämäärä merkkijonona: $dateString")
+}
 ```
 
-Tuloste: 
+Suoritettaessa, esimerkiksi:
+
 ```
-21.09.2021 12:10
+Päivämäärä merkkijonona: 28/12/2022
 ```
 
-## Syvään sukeltaminen:
-Päivämäärän ja aikaleiman muuntamista merkkijonoksi on tehty jo kauan ennen nykyaikaisia ohjelmointikieliä. Yksi vaihtoehto muunnokseen on käyttää Seconds Tiedoston » access stamp, joka tallentaa datan sekunteina. Java SDK tarjoaa myös vaihtoehdon kutsuttuna SimpleDateFormat luokka, jonka avulla voit muuntaa päivämäärän ja aikaleiman haluamassasi muodossa. Kotlin tarjoaa myös samoja luokkia ja metodeja kuin Java.
+## Syvä sukellus:
+
+1) Historiallinen konteksti: Alun perin Javan 'SimpleDateFormat'-luokka tuotiin käytettäväksi Kotlinissa saattamaan helppokäyttöisen ja joustavan päivämäärän muotoilun ja parsinnan.
+2) Vaihtoehtoja: Jos haluat muotoilla päivämäärän merkkijonoksi eri tavalla, voit muokata 'SimpleDateFormat'-mallia. Esimerkiksi: "dd MMMM yyyy HH:mm:ss".
+3) Toteutuksen yksityiskohdat: Muotoilussa täytyy olla varovainen, koska väärät mallit voivat tuottaa odottamattomia tuloksia tai virheitä.
 
 ## Katso myös:
-- [Date and Time API in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/)
-- [SimpleDateFormat Class in Java](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+
+1) Kotlinin virallinen dokumentaatio: https://kotlinlang.org/docs/what-is-kotlin.html
+2) SimpleDateFormat-luokan Javadoc: https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html
+3) Kotlinin päivämäärien ja aikojen käsittely: https://kotlinlang.org/docs/dates-and-times.html

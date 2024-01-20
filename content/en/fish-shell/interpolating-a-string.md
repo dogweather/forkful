@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Fish Shell recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,28 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Interpolating a string in Fish Shell refers to the process of inserting a variable or expression into a string, allowing the string to dynamically change based on the value of the inserted element. This is commonly done by programmers to easily and efficiently build complex strings without manually concatenating or manipulating each individual component.
+
+String interpolation in programming is a way to substitute single values or entire expressions into a string. Programmers do it to make their code cleaner and easier to understand.
 
 ## How to:
-Coding examples:
 
-```
-# Basic Example
-set greeting "Hello"
-set name "John"
-echo "$greeting $name" # Output: Hello John
+The Fish shell makes string interpolation straightforward- you use a variable directly within quotations. Check the code below:
 
-# Expression Example
-set x 2
-set y 3
-echo "$x + $y = $(expr $x + $y)" # Output: 2 + 3 = 5
+```Fish Shell
+set greeting "world"
+echo "Hello, $greeting"
 ```
 
-## Deep Dive:
-When it comes to string interpolation, Fish Shell's syntax is borrowed from other popular languages such as Ruby and Perl. This feature makes it easy for developers familiar with those languages to transition to Fish Shell. Other alternative methods for string interpolation include using printf formatting or string concatenation.
+Here, `echo` will print `Hello, world`. The variable `$greeting` was interpolated into the string.
 
-Internally, Fish Shell uses the variable expansion mechanism to perform string interpolation. This involves replacing the variable or expression with its corresponding value before the string is outputted.
+## Deep Dive
 
-## See Also:
-- [Fish Shell documentation on variable expansion](https://fishshell.com/docs/current/docvars.html#string-interpolation)
-- [Comparison of string interpolation methods](https://www.rubyguides.com/2019/02/ruby-string-interpolation/)
+String interpolation has been around since the early programming languages, but has become a standard feature only in more recent ones. Fish shell, being a modern shell, takes the approach of Bash and other Unix-style shells but simplifies it. 
+
+There are alternatives to string interpolation like string concatenation. For example:
+
+```Fish Shell
+set greeting "world"
+echo "Hello, " + $greeting
+```
+
+This will also output `Hello, world`. However, it's not as readable and intuitive as string interpolation. 
+
+In Fish shell, the interpolation works by replacing the variable with its value during the echo command. That's why enclosing the variable in quotes doesn't stop it from being replaced.
+
+## See Also
+
+For more details about string interpolation in Fish shell and other programming topics, check out these resources:
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [String Interpolation on Wikipedia](https://en.wikipedia.org/wiki/String_interpolation)
+
+Happy coding!

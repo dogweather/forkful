@@ -1,7 +1,7 @@
 ---
-title:                "Extraire des sous-chaînes"
-html_title:           "Rust: Extraire des sous-chaînes"
-simple_title:         "Extraire des sous-chaînes"
+title:                "Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,41 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-L'extraction de sous-chaînes est simplement le fait de séparer une chaîne de caractères en plusieurs parties plus petites, appelées sous-chaînes. Les programmeurs le font souvent pour traiter des chaînes de caractères de manière plus efficace et pour ne travailler qu'avec les parties pertinences de la chaîne.
+Extraire des sous-chaînes est le processus de retirer des morceaux spécifiques d'une chaîne de caractères. Les programmeurs le font souvent pour manipuler ou analyser des données textuelles.
 
 ## Comment faire:
-Il existe plusieurs façons d'extraire des sous-chaînes en Rust, dont voici quelques exemples:
-
+Rust permet d'extraire les sous-chaînes à l'aide de l'indexation de tranches. Voici comment vous pouvez le faire:
 ```Rust
-let s = "Bonjour tout le monde";
-let sous_chaine = &s[3..10];
-println!("{}", sous_chaine); // Affiche "jour to"
+let chaine = "Bonjour Monde!";
+let sous_chaine = &chaine[0..7];
+println!("{}", sous_chaine); // affiche "Bonjour"
 ```
+Il convient de noter que l'indexation de tranches en rust est basée sur les limites des caractères Unicode, donc si vous accédez à une tranche qui ne correspond pas à ces limites, votre programme panic.
 
-Nous pouvons également extraire une sous-chaîne à partir d'un index spécifique jusqu'à la fin de la chaîne:
+## Plongée en profondeur:
+Rust n'inclut pas de méthode intégrée pour extraire des sous-chaînes, il opte plutôt pour des tranches, ce qui est beaucoup plus sûr, en tenant compte des détails spécifiques liés à Unicode. 
 
-```Rust
-let s = "Hello World!";
-let sous_chaine = &s[6..];
-println!("{}", sous_chaine); // Affiche "World!"
-```
+Cependant, il existe d'autres moyens pour extraire des sous-chaînes. Par exemple, au lieu d'utiliser la méthode des tranches, on peut utiliser une boucle for pour parcourir les caractères.
 
-Et si nous souhaitons extraire une sous-chaîne à partir du début de la chaîne jusqu'à un index spécifique:
+Les détails d'implémentation sont également intéressants. Le type de chaîne Rust contient un pointeur vers les données de la chaîne (qui sont stockées dans la mémoire heap), la longueur et la capacité. Donc quand vous créez une slice, vous créez juste un nouveau pointeur vers la même mémoire heap existante.
 
-```Rust
-let s = "Rust est génial!";
-let sous_chaine = &s[..4];
-println!("{}", sous_chaine); // Affiche "Rust"
-```
-
-## Deep Dive:
-L'extraction de sous-chaînes est une opération courante dans la programmation, car elle permet de manipuler des données sous forme de chaînes de caractères de manière plus efficace. Cela peut être utile pour des choses comme la manipulation de texte, la recherche et le filtrage de données.
-
-En termes d'implémentation, Rust utilise un type spécifique appelé "str" pour représenter les chaînes de caractères. Ce type possède des méthodes intégrées pour extraire des sous-chaînes, telles que "slice" qui est utilisée dans les exemples ci-dessus.
-
-Il existe également d'autres méthodes pour extraire des sous-chaînes, telles que "split", qui sépare une chaîne en plusieurs parties en utilisant un délimiteur spécifique, et "chars", qui itère à travers chaque caractère de la chaîne.
-
-## Voir aussi:
-- [La documentation officielle de Rust pour l'extraction de sous-chaînes](https://doc.rust-lang.org/std/str/index.html#methods)
-- [Un tutoriel vidéo sur l'extraction de sous-chaînes en Rust](https://www.youtube.com/watch?v=gfkTfcpWqAY)
-- [Un article approfondi sur les méthodes d'extraction de sous-chaînes en Rust](https://www.samizdat.dev/extraction-of-substrings-in-rust/)
+## Voir Aussi: 
+- Documentation Rust sur les chaînes : https://doc.rust-lang.org/book/ch08-02-strings.html
+- Discussion StackOverflow sur l'extraction de sous-chaînes : https://stackoverflow.com/questions/24163159/what-is-the-right-way-to-extract-a-substring-in-rust

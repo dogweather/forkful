@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Swift recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,31 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Sending an HTTP request is the process of your application communicating with a server over the internet, typically to retrieve or send data. Programmers use this method to seamlessly exchange information between a client (your app) and a server.
+---
 
+## What & Why?
+
+Sending an HTTP request is a way for your program to get or send info to a server. Programmers do this to get data, send data, or interact with APIs.
+
+---
 ## How to:
-Sending an HTTP request is a straightforward process in Swift. First, import the `Foundation` framework and create a `URL` object with the desired endpoint. Then, use the `URLSession` class to create a data task with the request and handle the response in a completion handler. Here's a simple example of sending a GET request and retrieving the response data in a string format:
+In Swift, use the URLSession library to send HTTP requests. Here's how to GET some JSON:
 
 ```Swift
 import Foundation
 
-let url = URL(string: "https://example.com")!
-let request = URLRequest(url: url)
-
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
+let url = URL(string: "https://api.github.com/users/octocat")!
+let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
     if let data = data {
-        let responseString = String(data: data, encoding: .utf8)
-        print(responseString)
+        let str = String(data: data, encoding: .utf8)
+        print(str) // JSON output
     }
 }
-
 task.resume()
 ```
-Output: The response data in string format.
+This prints the Github profile of 'octocat' in JSON. Sending a POST request? Use URLRequest.
 
-## Deep Dive:
-Sending HTTP requests has been a staple of web development since the creation of the internet. Alternatives to this method include accessing a server's data directly through a database or using a third-party API. However, sending HTTP requests remains the most common and user-friendly approach for exchanging data between a client and server. Under the hood, Swift uses the `URLSession` API to handle the details of the request, including sending the request, receiving the response, and handling errors. Additionally, programmers can customize the request and response by setting specific headers or using different methods, such as POST or PUT.
+```Swift
+import Foundation
 
-## See Also:
-To learn more about sending HTTP requests in Swift, check out the official documentation for `URLSession` and `URLRequest`. Other helpful resources include tutorials for using the `Alamofire` library for a more streamlined approach to HTTP requests and understanding the principles of the HTTP protocol.
+let url = URL(string: "https://httpbin.org/post")!
+var request = URLRequest(url: url)
+request.httpMethod = "POST"
+request.httpBody = "foo=bar&baz=qux".data(using: .utf8)
+
+let task = URLSession.shared.dataTask(with: request) {(data, response, error) in
+    if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print(str) // JSON output
+    }
+}
+task.resume()
+```
+
+The output shows your POST data echoed back as JSON.
+
+---
+
+## Deep Dive
+
+HTTP requests started with the internet. In 1996, HTTP/1.0 turned into HTTP/1.1, and POST was born. Swift came on the scene in 2014, and its native networking library URLSession has been sending HTTP requests since.
+
+Libraries like AlamoFire offer detailed network operations. But URLSession is enough for many tasks.
+
+When you call `dataTask(with:completionHandler:)`, URLSession creates a task but keeps it idle. The task fires only when you call `resume()`. Don't forget it or nothing happens.
+
+---
+
+## See Also
+
+- [URLSession - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [HTTP/1.1: Method Definitions](https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html)
+- [Alamofire Github](https://github.com/Alamofire/Alamofire)

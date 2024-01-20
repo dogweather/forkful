@@ -1,7 +1,7 @@
 ---
-title:                "होमपेज को विश्लेषण करने का तरीका"
-html_title:           "Go: होमपेज को विश्लेषण करने का तरीका"
-simple_title:         "होमपेज को विश्लेषण करने का तरीका"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,60 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## परिचय
+## "क्या और क्यों?"
 
-HTML को पार्स (parse) करना एक आम क्रिया है जो वेब डेवलपर्स को रेंतेवेबल और लागू संचित जानकारी देने के लिए की जाती है। यह कोड, टेक्स्ट और मल्टीमीडिया कंटेंट को सांझा करने के लिए स्ट्रक्चर्स के रूप में काम करता है। वेब पृष्ठों के स्ट्रक्चर को समझने के लिए, वेब डेवलपर्स उपलब्ध HTML को पार्स करते हैं।
+HTML पार्सिंग (parsing) एक प्रक्रिया है जिसमें एक HTML डॉक्यूमेंट को उसके संगठनात्मक संरचना में विभाजित किया जाता है। प्रोग्रामर्स इसे उपयोग करते हैं ताकि वे वेब पेजेस के विभिन्न हिस्सों (जैसे कि शीर्षक, पैराग्राफ, लिंक, इत्यादि) के उपयोग और संपादन को स्वचालित कर सकें।
 
-## कैसे:
+## "कैसे:"
 
-जाओ कोड के जरिए प्रैक्टिकल उदाहरण सिखाएं:
+आप Go से HTML पार्स कर सकते हैं गो नेट / HTML पैकेज का उपयोग करके। निम्नलिखित कोड संकेत देता है कि कैसे:
+
 ```Go
-package main
-
-import (
-	"fmt"
-	"strings"
-
-	"golang.org/x/net/html"
+इंपॉर्ट (
+    "fmt"
+    "golang.org/x/net/html"
+    "net/http"
 )
-
+  
 func main() {
-	htmlString := "<html><head><title>This is a title</title></head><body><h1>Heading</h1><p>This is a paragraph</p></body></html>"
-
-	r := strings.NewReader(htmlString)
-	doc, err := html.Parse(r)
-	if err != nil {
-		fmt.Println("Error parsing HTML!")
-	}
-
-	var traverse func(*html.Node)
-	traverse = func(n *html.Node) {
-		if n.Type == html.ElementNode && n.Data == "h1" {
-			fmt.Println("Heading found!")
-		}
-		if n.Type == html.ElementNode && n.Data == "p" {
-			fmt.Println("Paragraph found!")
-		}
-		for c := n.FirstChild; c != nil; c = c.NextSibling {
-			traverse(c)
-		}
-	}
-	traverse(doc)
+    res, err := http.Get("http://www.google.com")
+    if err != nil {
+        fatal("%s", err)
+    }
+  
+    doc, err := html.Parse(res.Body)
+    if err != nil {
+        fatal("%s", err)
+    }
+  
+    fmt.Println(doc)
 }
 ```
 
-आउटपुट:
-```
-Heading found!
-Paragraph found!
-```
+ये कोड ब्लॉक Google के होमपेज की HTML डॉक्यूमेंट को पार्स करेगा और पार्स किये गए संरचना को प्रिंट करेगा।
 
-## गहराई में जानकारी:
+## "गहरी डाइव"
 
-HTML को पार्स करने का इतिहास 1991 में आईएनएसजी के इयान हैंटेंन के द्वारा बनाया गया था। इससे पहले, एक जेनेरेटेड सुविधा का उपयोग किया जाता था जिससे HTML को ट्रैन्सलेट करें और पेश करें। लेकिन प्रोग्रामर्स इस सुविधा को अनकवरेजी और नायांकों के प्रवाह के समस्याओं के कारण छोड़ रहे थे। अब यहां, HTML को पार्स करने के लिए बहुत सारे विकल्प हैं जैसे कि एचएमएल, सि, पायथन आदि। गो पोपुलर, विकसित, तेजी से संपादन होने और मजबूत होने के कारण, वेब डेवलपरों को HTML को पार्स करने के लिए अधिक लोकप्रिय विकल्प में से एक है। गो के आरामदेह कोडिंग संरक्षण को ध्यान में रखते हुए, अनुभवी प्रोग्रामर्स को संबंधित कोडिंग कुशलताओं को पालन करने के लिए इसमें सलाह दी जाती है।
+HTML पार्सिंग का इस्तेमाल वेब डेवलपमेंट की शुरुआत से ही किया जा रहा है। पार्सिंग से वेब पेजेस के डाटा को एक्स्ट्रैक्ट करने या विश्लेषित करने के लिए दानवादी प्रक्रियाएं और फ़ंक्शन्स बना सकते हैं।
 
-## अन्य संसाधनों को देखें:
+Go के अलावा, भाषाएं जैसे कि Python और JavaScript भी HTML पार्सिंग समर्थन करती हैं, जिनमें पार्सर्स जैसे BeautifulSoup और Cheerio शामिल हैं। 
 
-- https://golang.org/pkg/net/html/
-- https://www.w3schools.com/html/html_intro.asp
-- https://developer.mozilla.org/en-US/docs/Web/HTML
+Go का `net/html` पैकेज, जो Golang का कोर लाइब्रेरी का हिस्सा है, उसके DOM-like पार्सिंग समर्थन के साथ-साथ HTML5 स्पेसिफिकेशन में उल्लिखित विभिन्न 'नोड' का समर्थन करता है।
+
+## "और भी देखें:"
+
+1. Go द्वारा HTML पार्सिंग: [Link](https://golang.org/pkg/net/html/)
+2. Python BeautifulSoup HTML पार्सिंग: [Link](https://beautiful-soup-4.readthedocs.io/)
+3. JavaScript Cheerio HTML पार्सिंग: [Link](https://cheeriojs.github.io/cheerio/)

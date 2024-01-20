@@ -1,7 +1,7 @@
 ---
-title:                "L'envoi d'une demande http"
-html_title:           "TypeScript: L'envoi d'une demande http"
-simple_title:         "L'envoi d'une demande http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,32 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi on le fait?
+## Qu'est-Ce Que C'est & Pourquoi?
 
-L'envoi d'une requête HTTP est une manière pour les programmeurs de communiquer avec un serveur Web. Cela leur permet d'obtenir des données ou d'envoyer des informations à un site Web.
+Envoyer une requête HTTP, c'est demander à un serveur de vous fournir des données ou d'effectuer une action. En tant que programmeur, vous faites cela pour interagir avec des applications Web, récupérer, modifier, ajouter ou supprimer des données.
 
-# Comment faire:
+## Comment faire:
 
-Voici comment on peut envoyer une requête HTTP en utilisant TypeScript :
+Voici comment vous pouvez envoyer une requête HTTP avec le module `http` dans TypeScript:
 
 ```TypeScript
-const request = await fetch('https://www.mon-site-web.com/api/donnees'); 
-const data = await request.json(); 
-console.log(data); 
+import * as http from 'http';
+
+const options = {
+  hostname: 'www.example.com',
+  port: 80,
+  path: '/api/data',
+  method: 'GET'
+};
+
+const req = http.request(options, response => {
+  let data = '';
+
+  response.on('data', chunk => {
+    data += chunk;
+  });
+
+  response.on('end', () => {
+    console.log(data);
+  });
+});
+
+req.on('error', error => {
+  console.error(error);
+});
+
+req.end();
 ```
 
-Dans cet exemple, nous utilisons la fonction `fetch` pour envoyer une requête à l'URL spécifiée. Nous attendons ensuite que la réponse soit reçue et nous la convertissons en JSON pour pouvoir l'utiliser dans notre code. Enfin, nous affichons les données dans la console.
+Ceci envoie une requête GET à `www.example.com/api/data` et affiche la réponse dans la console.
 
-# Plongée en profondeur:
+## Plongée Profonde:
 
-Les requêtes HTTP existent depuis longtemps et sont essentielles pour la communication entre les clients et les serveurs Web. Cependant, TypeScript offre une syntaxe plus facile à utiliser pour envoyer des requêtes que JavaScript.
+L'envoi de requêtes HTTP est fondamental pour le Web depuis les années 90. C'était, et reste encore, la principale méthode d'échange de données sur Internet. Des alternatives telles que WebSockets et GraphQL offrent des paradigmes d'interaction différents, mais les requêtes HTTP restent le moyen le plus populaire pour la communication client-serveur.
 
-Il existe également d'autres façons d'envoyer des requêtes HTTP en JavaScript, telles que l'utilisation de la bibliothèque Axios ou d'outils de développement tels que Postman.
+Dans TypeScript, il existe plusieurs façons d'envoyer des requêtes HTTP. Vous pouvez utiliser le module `http` incorporé comme montré ci-dessus, ou vous pouvez utiliser des bibliothèques tierces comme `axios` ou `fetch`. Chacune a ses propres avantages et inconvénients, mais elles suivent toutes le même modèle de base: créer une requête, l'envoyer et gérer la réponse.
 
-L'implémentation détaillée de l'envoi d'une requête HTTP en TypeScript varie selon l'outil utilisé, mais en général, il s'agit de spécifier l'URL de la requête, les paramètres et les en-têtes nécessaires, ainsi que le type de méthode utilisée (GET, POST, etc.).
+## Voir Aussi:
 
-# Voir aussi:
-
-Vous pouvez en apprendre plus sur l'envoi de requêtes HTTP en TypeScript en consultant la documentation officielle de TypeScript : https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html.
-
-Si vous souhaitez en savoir plus sur les différentes façons d'envoyer des requêtes HTTP en JavaScript, consultez cet article : https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data.
+* [MDN Web Docs](https://developer.mozilla.org/fr/docs/Web/HTTP) - Un guide complet sur les requêtes HTTP.
+* [Fetch API](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) - Une alternative moderne pour faire des requêtes HTTP dans le navigateur.
+* [Axios](https://axios-http.com/) - Une bibliothèque populaire pour faire des requêtes HTTP en JavaScript / TypeScript.

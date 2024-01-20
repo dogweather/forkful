@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट को खोजना और बदलना"
-html_title:           "PowerShell: टेक्स्ट को खोजना और बदलना"
-simple_title:         "टेक्स्ट को खोजना और बदलना"
+title:                "पाठ की खोज और प्रतिस्थापन"
+html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
+simple_title:         "पाठ की खोज और प्रतिस्थापन"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -11,20 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-सर्च और रिप्लेस टेक्स्ट क्या है, और प्रोग्रामर्स इसे क्यों करते हैं? सर्च और रिप्लेस टेक्स्ट भाषा में भिन्नताएं ढूंढने और उन्हें दूसरी भाषा में बदलने का एक तरीका है। प्रोग्रामर्स इसका उपयोग कोड के सुधार और लेखों में त्रुटियों को ढूंढने और सुधार के लिए करते हैं।
 
-## कैसे करें?
+*सर्च और रिप्लेस* टेक्स्ट की एक प्रक्रिया है जिसमें आप किसी विशिष्ट शब्द या वाक्यांश को विशिष्ट पाठ में खोजने की कोशिश करते हैं, और फिर उसको किसी अन्य शब्द या वाक्यांश से बदलते हैं। प्रोग्रामर्स इसका प्रयोग विशिष्ट बग्स को ठीक करने, डेटा का स्थानांतरण, और उनके कोड को अद्यतित रखने के लिए करते हैं।
+
+## कैसे करें:
+
+इसे करने के लिए PowerShell में `replace` ऑपरेटर का उपयोग किया जा सकता है।
+
 ```PowerShell
-# टेक्स्ट सर्च और रिप्लेस करने के लिए आवश्यक कोड
-Get-Content file.txt | ForEach-Object { $_ -replace "भाषा", "language" } | Set-Content file.txt
+$text = "Hello, world!"
+$newText = $text -replace "world", "PowerShell"
+echo $newText
 ```
-इस उदाहरण में, हमने ```file.txt``` नामक एक फाइल के सामग्री को पढ़कर, हर पंक्ति में "भाषा" को "language" में बदल दिया है। परिवर्तन उसी फाइल में रखा गया है।
 
-## गहराई में जाएं
-सर्च और रिप्लेस टेक्स्ट का इतिहास बहुत पुराना है। शुरू में, प्रोग्रामर्स इसे स्वयं करते थे अथवा विभिन्न शैलियों में कॉडिंग के साथ समय अवधारणा करते थे। हालांकि, आजकल कई एडिटर और आधुनिक IDE में इस टेक्स्ट फीचर उपलब्ध है। अन्य समाधानों में, विभिन्न कोडिंग भाषाओं के लिए विशेष टेक्स्ट एडिटर भी सर्च और रिप्लेस के लिए उपलब्ध हैं। टेक्स्ट सर्च और रिप्लेस का मुख्य फायदा है कि यह दृष्टिकोण और ढांचे को बदले बिना, कोड को सुधारने में मदद करता है। 
+इस उदाहरण में, "world" को "PowerShell" के साथ बदल दिया जाता है, जिससे आउटपुट "Hello, PowerShell!" होता है।
 
-## अन्य संबंधित स्रोत
-टेक्स्ट सर्च और रिप्लेस के लिए PowerShell में कुछ और विशेषताएं हैं, जैसे Regular Expression (सामान्य अभिव्यक्ति) और -match या -like पैरामीटर। अधिक जानकारी के लिए, निम्नलिखित स्रोतों को देखें:
-- [PowerShell's official documentation](https://docs.microsoft.com/en-us/powershell/scripting/getting-started/cookbooks/working-with-text-based-data-files?view=powershell-7)
-- [PowerTip: Use PowerShell to search and replace text](https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-search-and-replace-text)
-- [PowerShell Techniques: File Substitution with RegEx and Set-Content](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-techniques-file-substitution-with-regex-and-set-content)
+## गहरी डाइव:
+
+1. *ऐतिहासिक संदर्भ*: टेक्स्ट सर्च और रिप्लेस ऑपरेशन का उपयोग प्राचीन कंप्यूटर सिस्टम्स में भी होता था, लेकिन PowerShell में इसका उपयोग और भी सुगम और शक्तिशाली हो गया है।
+
+2. *विकल्प*: `replace` के अलावा, PowerShell में भी `regex` (रेगुलर एक्सप्रेशन) में सर्च और रिप्लेस की सुविधाएं हैं। 
+
+3. *कार्यान्वयन विवरण*: `replace` ऑपरेटर का उपयोग करके, PowerShell पहले वे सभी अवस्थान खोजता है जहां हमारा सर्च टेक्स्ट मिलता है, और फिर उन्हें रिप्लेसमेंट टेक्स्ट से बदल देता है।
+
+## देखने के लिए:
+
+1. [PowerShell का ऑफिशियल डॉक्युमेंटेशन](https://docs.microsoft.com/en-us/powershell/)
+2. [PowerShell की सर्च और रिप्लेस ट्यूटोरियल](https://www.tutorialspoint.com/powershell/powershell_regular_expressions.htm)
+3. [StackOverflow पर PowerShell के सम्बंधित प्रश्न](https://stackoverflow.com/questions/tagged/powershell)

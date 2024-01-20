@@ -1,7 +1,7 @@
 ---
-title:                "Strings großschreiben"
-html_title:           "Gleam: Strings großschreiben"
-simple_title:         "Strings großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Gleam: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist Capitalizing und warum machen Programmierer es?
+## Was & Warum?
 
-Capitalizing in der Programmierung bedeutet, den ersten Buchstaben eines Strings groß zu schreiben. Das wird oft verwendet, um die Lesbarkeit und das visuelle Erscheinungsbild von Code zu verbessern. Es macht Variablen und Funktionen einfacher zu erkennen und hilft bei der Konsistenz in einem Projekt.
+Das Großschreiben eines Strings ändert alle Anfangsbuchstaben der im String enthaltenen Worte in Großbuchstaben. Programmierer nutzen dieses Verfahren, um Texte hervorzuheben und optisch zu gliedern, besonders in Überschriften oder in Situationen, in denen Großschreibung einen Unterschied im Bedeutungskontext ausmacht.
 
-Wie geht's?
+## Wie geht's:
 
-Eine Möglichkeit, einen String in Gleam zu capitalizen, ist die Verwendung der ```String.capitalize``` Funktion. Diese Funktion nimmt einen String als Argument und gibt eine neue Version des Strings zurück, in dem der erste Buchstabe großgeschrieben ist.
+```Gleam
+import gleam/string
 
-Ein Beispiel für die Verwendung dieser Funktion könnte so aussehen:
-```
-Gleam
-
-pub fn main() {
-  let name = String.capitalize("gleam");
-  debug(name); // Gibt "Gleam" aus
+fn main() {
+  let mein_string = "hallo, welt!"
+  let ergebnis = string.capitalize(mein_string)
+  ergebnis
+  |> should.equal(_ Ok("Hallo, Welt!") )
 }
-
 ```
+Ausgabe: 
 
-Es ist auch möglich, die Funktion direkt auf einem String-Literal anzuwenden, wie im folgenden Beispiel:
-```
-Gleam
+`Hallo, Welt!`
 
-pub fn main() {
-  let name = "gleam".capitalize();
-  debug(name); // Gibt "Gleam" aus
-}
+## Tiefere Innenansichten:
 
-```
+(1) In der Vergangenheit gab es keine eingebaute Funktion, um Strings in Gleam zu capitalizen. Programmierer mussten den String in Zeichen aufteilen, das erste Zeichen manuell in einen Großbuchstaben umwandeln und den String wieder zusammenbauen.
 
-Vertiefung
+(2) Es gibt Alternativen zur `string.capitalize` - Funktion, wie die Verwendung von Map oder Reduce - Funktionen, um über jeden Buchstaben im String zu iterieren und ihn je nach Bedarf zu ändern.
 
-Capitalizing hat sich als nützliche Praxis in der Programmierung etabliert, um die Lesbarkeit und Konsistenz des Codes zu verbessern. Es ist auch eine gängige Konvention in vielen Programmiersprachen. Es gibt jedoch Alternativen, wie zum Beispiel das Verwenden von Unterstrichen oder CamelCase, um Variablen und Funktionen zu benennen.
+(3) Die Implementierung der `string.capitalize` - Funktion in Gleam erfolgt mithilfe der [case - Funktion](https://gleam.run/getting-started/references.html), die jeden Unicode-Buchstaben in einen Großbuchstaben umwandelt.
 
-In Gleam ist die ```String.capitalize``` Funktion die beste Wahl für das Capitalizing von Strings, da sie effizient und einfach zu verwenden ist. Außerdem unterstützt die Gleam-Standardbibliothek auch Funktionen wie ```String.to_uppercase``` und ```String.to_lowercase```, um den gesamten String in Groß- oder Kleinbuchstaben zu konvertieren.
+## Siehe auch:
 
-Siehe auch
-
-Für weitere Informationen über Gleam und seine Funktionen empfehlen wir die offizielle Dokumentation auf der Website: https://gleam.run
-
-Außerdem gibt es eine aktive Community auf Discord, wo du Fragen stellen und mit anderen Gleam-Entwicklern in Kontakt treten kannst: https://discord.gg/QdyXWayb8m
+Besuchen Sie die offizielle Gleam Dokumentation zur [string.capitalize - Funktion](https://gleam.run/getting-started/references.html) und [case - Funktion](https://gleam.run/getting-started/references.html), um mehr darüber zu erfahren, wie Sie Strings in Gleam manipulieren können. Ebenfalls hilfreich könnte der Leitfaden zum [Unicode-Handling in Gleam](https://gleam.run/notes/unicode.html) sein.

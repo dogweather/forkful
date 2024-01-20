@@ -1,7 +1,7 @@
 ---
-title:                "乱数の生成"
-html_title:           "Bash: 乱数の生成"
-simple_title:         "乱数の生成"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Numbers"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何 & なぜ？
+# ランダム数字の生成について
 
-ランダムな数字を生成することは、プログラマーがランダムな値を必要とする場合に使用されるテクニックです。例えば、ランダムなパスワードを作成したり、ゲームの乱数を生成したりするのに役立ちます。
+## 何となぜ?
 
-# 方法：
+ランダム数字の生成は、求められた範囲内の任意の数値を生成するプロセスです。この機能は、テストデータの生成や、ゲームの中での予測不能な結果を出すためなどによく利用されます。
 
-ランダムな数字を生成するには、シェルスクリプトの中で```$RANDOM```変数を使用します。この変数は、-32768から32767の範囲内でランダムな値を返します。例えば、次のように使用します。
+## どうやって:
 
-```Bash
-echo $RANDOM
-```
-出力：
+以下のコードを見てみましょう。
 
 ```Bash
-7432
+# 1から100までのランダムな数を生成
+echo $((RANDOM % 100 + 1))
 ```
-または、より具体的に数字の範囲を指定する場合は、次のようにします。
+
+実行結果は以下の通りです。
 
 ```Bash
-echo $(($RANDOM % 100)) 
-```
-出力：
-
-```Bash
-59 
+72
 ```
 
-# 詳細を深く：
+この場合、'72' は生成されたランダムな数値の一例です。
 
-ランダムな数字を生成する方法には、他にも様々な方法があります。例えば、Bashの```/dev/random```デバイスを使用する方法や、Pythonなどのプログラミング言語で使用できる乱数生成関数を利用する方法があります。また、ランダムな数字を使用するアルゴリズムには、偽乱数生成アルゴリズムと真の乱数生成アルゴリズムの2種類があります。偽乱数生成アルゴリズムでは、ある固定された数列を元にランダムな数字を生成しますが、真の乱数生成アルゴリズムでは、外部の要因や物理現象を元にランダムな数を生成するため、より安全性の高い方法と言えます。
+## 詳細情報:
 
-# 関連情報：
+ランダム数字の生成は、コンピュータプログラムが生まれたときから存在しています。Bashは内蔵の変数 'RANDOM' を使用してランダム数を生成します。この方法以外にも、`/dev/random` や `/dev/urandom`デバイスを利用する方法、`openssl`コマンドを使用する方法など、さまざまな方法があります。
 
-- Bashのランダムな数字の生成方法について詳しくは、こちらの記事を参考にしてください：https://tldp.org/LDP/abs/html/randomvar.html
-- 真の乱数と偽乱数について詳しくは、こちらの記事を参考にしてください：https://en.wikipedia.org/wiki/Random_number_generation
+`RANDOM`の内部的な仕組みは、擬似乱数ジェネレータ (PRNG) に基づいています。各生成は次の数を予測するために前の数に依存します。
+
+## 参照資料:
+
+1. BashマニュアルのRANDOMセクション: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Bash-Variables
+2. `openssl` コマンドとランダム生成: https://www.openssl.org/docs/man1.1.1/man1/openssl-rand.html
+3. `/dev/random` と `/dev/urandom` の違い: https://www.2daygeek.com/linux-dev-random-vs-dev-urandom-difference/

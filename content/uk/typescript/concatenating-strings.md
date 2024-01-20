@@ -1,7 +1,7 @@
 ---
-title:                "Об'єднання рядків"
-html_title:           "TypeScript: Об'єднання рядків"
-simple_title:         "Об'єднання рядків"
+title:                "Конкатенація рядків"
+html_title:           "PHP: Конкатенація рядків"
+simple_title:         "Конкатенація рядків"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,29 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Конкатенація рядків - це процес об'єднання декількох окремих рядків в один. Це часто використовується програмістами для створення складніших рядків або виведення повідомлень користувачам.
+## Що це і чому?
+Складання рядків - це процес об’єднання двох або більше рядків в програмуванні. Програмісти роблять це для маніпулювання даними, створення динамічного вмісту, або формування повідомлень для користувача.
 
-## Як?
-```TypeScript
-let firstName = "John";
-let lastName = "Doe";
-let fullName = firstName + lastName;
-
-console.log(fullName); // Output: JohnDoe
-```
+## Як зробити:
+Для складання рядків у TypeScript використовуються оператори `+` або `${}` в шаблонних літералах. Ось декілька прикладів:
 
 ```TypeScript
-let str1 = "Hello";
-let str2 = "world";
-let greeting = str1 + " " + str2;
+let hello: string = "Привіт, ";
+let world: string = "світ!";
+let helloWorld: string = hello + world;
+console.log(helloWorld); // "Привіт, світ!"
 
-console.log(greeting); // Output: Hello world
+let name: string = "Валя";
+console.log(`Привіт, ${name}!`); // "Привіт, Валя!"
 ```
 
-## Поглиблене вивчення
-Конкатенація рядків має своє коріння в C-подібних мовах програмування, але зараз є популярним підходом у багатьох інших мовах. Існують альтернативні методи, такі як використання шаблонних рядків або функцій для конкатенації. У TypeScript, конкатенація рядків можна виконувати за допомогою оператора "+" або методу "concat()". При цьому необхідно звернути увагу на типи даних, оскільки конкатенація з числами може призводити до небажаних результатів.
+## Поглиблений аналіз
+Складання рядків - не нова концепція, вона присутня в більшості мов програмування. Однак, в TypeScript це можливо зробити двома способами: за допомогою оператора `+` і за допомогою шаблонних літералів `${}`. Шаблонні літерали були введені в ES6 і є більш потужними та гнучкими, дозволяючи вставляти вирази безпосередньо в рядок.
+
+Є різні альтернативи для складання рядків, такі як методи `concat()`, `join()`, або навіть оператор `+=`. Втім, в TypeScript, оскільки він використовує стандарти ES6, шаблонні літерали є часто використовуваним методом.
 
 ## Дивіться також
-- [Шаблонні рядки в TypeScript](https://www.typescriptlang.org/docs/handbook/template-literals.html)
-- [Метод concat() в JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+- [Рядки і шаблонні літерали в TypeScript](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- [Тема складання рядків в JavaScript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Guide/Grammar_and_types#Склеювання_рядків)

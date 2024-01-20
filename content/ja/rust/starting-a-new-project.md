@@ -1,6 +1,6 @@
 ---
 title:                "新しいプロジェクトを始める"
-html_title:           "Rust: 新しいプロジェクトを始める"
+html_title:           "C: 新しいプロジェクトを始める"
 simple_title:         "新しいプロジェクトを始める"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,29 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ?:
+## 何となぜ？
 
-新しいプロジェクトを始めることは、プログラマーにとって最も重要なステップの1つです。これは、新しいソフトウェアやアプリケーションを開発するために必要なステップです。新しいプロジェクトを始めることで、機能の追加や改善を行うことができます。
+新プロジェクトの開始とは、新しいソフトウェア開発が始まることを意味します。プログラマーはこれを行うことで、アイデアを実現し、解決策を提供します。
 
-## 作り方:
+## どのように行うか：
 
-Rustでは、```cargo new``` コマンドを使用して新しいプロジェクトを作成することができます。例えば、```cargo new my_project``` と入力すると、"my_project"という名前の新しいプロジェクトが作成されます。このコマンドを実行すると、必要なファイルやフォルダが自動的に作成され、プロジェクトの始め方がわかりやすくなります。
+新しいプロジェクトを開始するために、Rustで利用可能な `cargo new` コマンドを使用します。
 
 ```Rust
+$ cargo new my_project
+```
+
+上記のコマンド実行後、`my_project` ディレクトリが作成され、新しいRustプロジェクトの初期セットアップが行われます。
+
+```Rust
+$ ls my_project
+Cargo.toml
+src
+
+$ cat my_project/Cargo.toml
+[package]
+name = "my_project"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2018"
+
+$ cat my_project/src/main.rs
 fn main() {
     println!("Hello, world!");
 }
 ```
-上のコードは、"Hello, world!"というテキストを出力する最も基本的なRustプログラムです。```cargo run``` コマンドを使用して、このコードを実行することができます。
 
-## 深堀り:
+## より深い情報：
 
-プログラミングにおいて、プロジェクトを始めることは非常に重要です。これは、プログラマーが目的やゴールを明確にするために必要なステップです。また、Rust以外の言語でも、同様のプロジェクトの始め方が存在します。
+Rustの `cargo new` コマンドは、新規プロジェクトに必要なファイルとディレクトリ構造を自動的に生成します。このコマンドはPythonの `venv` やJavaの `gradle init` などと同等です。
 
-Rustでは、プロジェクトを管理するために```cargo```というツールが使用されます。このツールを使用することで、依存関係の管理やビルドなどの作業を簡略化することができます。
+初期設定では、固定の "Hello, world!" プログラムが含まれていますが、これは開発者が自身のプログラムに置換できます。`Cargo.toml` はプロジェクトの設定ファイルで、プロジェクトに関する重要な情報、使用する依存関係やビルド設定などが記載されます。
 
-## 関連リンク:
+## 参考情報：
 
-- [Rust公式ドキュメント](https://www.rust-lang.org/)
-- [Rustプロジェクトの始め方についての記事](https://dev.to/ralfedo/how-to-start-a-rust-project-1m2e)
-- [cargoコマンドの詳細](https://doc.rust-lang.org/cargo/)
+- [公式Rustドキュメンテーション](https://www.rust-lang.org/learn)
+- [Cargoのガイド](https://doc.rust-lang.org/cargo/)
+- [Rustプログラミングの入門ガイド](https://doc.rust-jp.rs/book-ja/)

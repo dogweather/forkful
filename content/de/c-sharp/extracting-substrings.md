@@ -1,7 +1,7 @@
 ---
-title:                "Unterstränge extrahieren"
-html_title:           "C#: Unterstränge extrahieren"
-simple_title:         "Unterstränge extrahieren"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,28 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Extrahieren von Teilzeichenketten in C#
+
 ## Was & Warum?
-Substring-Extraktion ist im Wesentlichen das Herausholen von Teilzeichenfolgen aus einer größeren Zeichenfolge. Programmierer tun dies, um bestimmte Teile von Zeichenfolgen zu isolieren und für verschiedene Zwecke zu verwenden, z.B. zur Datenverarbeitung oder zur Manipulation von Text.
+Extrahieren von Teilzeichenketten bedeutet, bestimmte Abschnitte einer Zeichenkette in einer neuen Zeichenkette zu isolieren. Es ist nützlich, um bestimmte Informationsblöcke zu filtern oder zu bearbeiten, ohne die gesamte Zeichenkette zu manipulieren.
 
-## Anleitung:
-Um Substrings in C# zu extrahieren, können Sie die Methode "Substring" verwenden. Diese Methode akzeptiert zwei Parameter: den Startindex und die Länge des zu extrahierenden Substrings. Zum Beispiel:
+## Wie man:
+Nutzen Sie die `Substring` Methode in C#. Hier ist ein simples Beispiel:
+
 ```C#
-string zeichenfolge = "Hallo Welt!";
-string substr = zeichenfolge.Substring(0,5);
-Console.WriteLine(substr); // Ausgabe: "Hallo"
+string str = "Hallo, Welt!";
+string substr = str.Substring(7, 5);
+Console.WriteLine(substr);
 ```
-In diesem Beispiel haben wir den Substring von Index 0 bis einschließlich Index 4 extrahiert. Beachten Sie, dass die Indexierung in C# bei 0 beginnt, daher gibt der Startindex den ersten Buchstaben an und die Länge gibt an, wie viele Zeichen extrahiert werden sollen.
+Ausgabe des Programms wird "`Welt!`" sein.
 
-## Tiefer Einblick:
-Die Methode "Substring" wurde erstmals in C# 1.0 eingeführt und ist seitdem eine sehr nützliche Funktion für Programmierer. Eine alternative Möglichkeit, Substrings in C# zu extrahieren, ist die Verwendung der "Range"-Syntax, die mit C# 8.0 eingeführt wurde. Diese Syntax ermöglicht es, Teilzeichenfolgen mit einer intuitiveren Notation zu extrahieren, z.B.:
-```C#
-var zeichenfolge = "Hallo Welt!";
-var substr = zeichenfolge[0..5];
-Console.WriteLine(substr); // Ausgabe: "Hallo"
-```
-Hier haben wir dieselbe Extraktion wie im vorherigen Beispiel durchgeführt, aber diesmal mit der neuen "Range"-Syntax. Sie können auch den Endindex statt der Länge angeben, z.B. "0..^6" gibt den Substring von Index 0 bis einschließlich dem 6. letzten Zeichen.
+## Tiefgang
+Zum geschichtlichen Kontext, die `Substring` Methode existiert schon seit der Anfangszeit von C# und .NET, was ihre Beliebt- und Vertrautheit erklärt. Als Alternativen könnten `Split`, `IndexOf` oder reguläre Ausdrücke verwendet werden, aber diese haben tendenziell mehr Aufwand und Komplexität.
 
-## Siehe auch:
-Weitere Informationen zur Methode "Substring" und zur "Range"-Syntax finden Sie in der offiziellen Dokumentation von Microsoft:
-https://docs.microsoft.com/dotnet/api/system.string.substring \newline
-https://docs.microsoft.com/dotnet/api/system.indexing.range
+Beim Extrahieren einer Teilzeichenkette wird eigentlich eine ganz neue Zeichenkette erstellt. Das liegt daran, dass Zeichenketten in C# unveränderlich sind, was bedeutet, dass sie nach ihrer Erstellung nicht geändert werden können. 
+
+## Siehe auch
+Weitere Informationen und detailliertere Anleitungen finden Sie unter den folgenden Links:
+
+1. Microsoft Dokumentation: [Substring Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.substring?view=net-5.0)
+2. StackOverflow Diskussion: [Substring vs Split Methode](https://stackoverflow.com/questions/298830/split-string-containing-command-line-parameters-into-string-in-c-sharp)
+3. C# Station Tutorial: [Arbeiten mit Zeichenketten](https://csharp-station.com/Tutorial/CSharp/Lesson13)

@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin lähettäminen http-pyynnöllä"
-html_title:           "Javascript: Perusautentikoinnin lähettäminen http-pyynnöllä"
-simple_title:         "Perusautentikoinnin lähettäminen http-pyynnöllä"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -12,31 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Kun lähetät HTTP-pyynnön perustunnuksella, lähetät tietokoneella olevan koodin ja pyydät tietoa jostakin verkkosivusta tai palvelusta. Ohjelmoijat tekevät tätä usein hankkimaan tai välittämään tietoja palvelimen ja käyttäjän välillä turvallisesti ja luotettavasti.
+HTTP-pyynnön lähettäminen perusautentikoinnilla on menetelmä, jolla varmennetaan käyttäjän henkilöllisyys verkossa. Ohjelmoijat käyttävät sitä tietoturvan varmistamiseksi ja luvattoman pääsyn estämiseksi.
 
-## Kuinka:
+## Miten:
 
-```javascript
-let url = "https://www.example.com/";
-let username = "käyttäjänimi";
-let password = "salasana";
-// Luo HTTP-pyyntö käyttäen perustunnusta
-let request = new XMLHttpRequest();
-request.open('GET', url);
-request.setRequestHeader('Authorization', 'Basic ' + btoa(username + ":" + password));
-request.send();
+Javascriptissa voidaan lähettää HTTP-pyyntö perusautentikoinnilla käyttämällä `fetch` funktiota. Tässä on esimerkkikoodi:
+
+```Javascript
+const username = 'kayttajatunnus';
+const password = 'salasana';
+
+let headers = new Headers();
+
+headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+fetch('https://example.com',{
+    method:'GET',
+    headers: headers
+})
+.then(response => response.json())
+.then(data => console.log(data));
 ```
 
-Esimerkiksi käyttäjänimen ja salasanan avulla voimme lähettää pyynnön verkkosivulle ja vastaanottaa tarvitsemamme tiedot.
+Jos pyyntö onnistui, tulostetaan palvelimelta palautettu data konsoliin.
 
-## Syvyyteen:
+## Sukellus syvyyksiin
 
-HTTP-pyynnöt perustunnuksella ovat yksi tapa varmistaa tietoturva ja luotettavuus verkkoyhteyden kautta. Tämä menetelmä kehitettiin alkuaikoina lähinnä sähköpostin ja FTP-palvelimien käytön yhteydessä. Nykyään on olemassa myös muita menetelmiä, kuten OAuth, joita voidaan käyttää autentikointiin ja autorisointiin. Perustunnus ei turvaa tietoja yhtä tehokkaasti kuin muut menetelmät, mutta se on edelleen turvallinen tapa siirtää tietoja verkon yli.
+Perusautentikoinnin käyttö HTTP-pyynnöissä on käytäntö, joka juontaa juurensa www-verkon alkuaikoihin. Se on yksinkertainen, mutta tehokas tapa varmistaa, että pyynnön lähettäjällä on oikeat käyttöoikeudet. Vaikka nykymaailmassa on käytössä monimutkaisempia ja turvallisempia autentikointimenetelmiä, perusautentikointi on edelleen yleinen nopean ja yksinkertaisen autentikoinnin vuoksi.
+
+JavaScriptin `fetch`-funktio on vain yksi tapa lähettää HTTP-pyyntöjä. Axios on toinen suosittu työkalu, jolla voit tehdä saman. Kuten `fetch`, Axiosilla voit lähettää pyyntöjä sekä selaimesta että Node.js-sovelluksesta.
+
+Lähettäessäsi HTTP-pyynnön perusautentikoinnilla, käyttäjänimesi ja salasanasi koodataan Base64-muotoon. Tätä autentikointitietoa ei kuitenkaan salata, joten tietoturvasyistä perusautentikointia ei tule käyttää ilman HTTPS-yhteyttä.
 
 ## Katso myös:
 
-Jotta opit lisää HTTP-pyynnöistä ja perustunnuksella lähetettävistä pyynnöistä, tutustu seuraaviin lähteisiin:
-
-- [MDN Web Docs - HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-- [W3Schools - HTTP Authorization](https://www.w3schools.com/tags/att_http_authorization.asp)
-- [Google Developers - OAuth Overview](https://developers.google.com/identity/protocols/oauth2#httprest)
+- Fetch API: [https://developer.mozilla.org/fi/docs/Web/API/Fetch_API](https://developer.mozilla.org/fi/docs/Web/API/Fetch_API)
+- Axios: [https://axios-http.com/](https://axios-http.com/)
+- HTTPs ja tietoturva: [https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/](https://www.cloudflare.com/learning/ssl/why-is-http-not-secure/)

@@ -1,7 +1,7 @@
 ---
-title:                "Send en http-forespørsel med grunnleggende autentisering"
-html_title:           "C++: Send en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Send en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,77 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+# Å sende HTTP forespørsel med grunnleggende autentisering i C++  
 
-HTTP-forespørsler er en metode for å kommunisere med en server ved å be om spesifikke ressurser, for eksempel en nettside. Noen ganger er det viktig å sikre at bare autoriserte brukere har tilgang til disse ressursene. Dette er når sending av en HTTP-forespørsel med grunnleggende autentisering kommer inn i bildet. Dette er en måte å bekrefte identiteten til en bruker ved å inkludere et brukernavn og passord i forespørselen.
+## Hva & Hvorfor?   
+Å sende en HTTP forespørsel med grunnleggende autentisering er en måte for et program å få tilgang til ressurser over nettet – spesielt de nettadressene som krever en brukernavn og passord. Programmerere gjør dette for å hente og poste data på sikret webområder på vegne av brukeren.  
 
-# Hvordan å gjøre det?
-
-For å sende en HTTP-forespørsel med grunnleggende autentisering, trenger du en HTTP-client i ditt C++ program. Her er et eksempel med boost::beast bibliotek:
+## Hvordan:   
+Her er et grunnleggende eksempel på hvordan du kan sende en GET-forespørsel med grunnleggende autentisering i C++, ved bruk av libcurl-biblioteket. 
 
 ```C++
+#include <curl/curl.h>
+#include <string>
 
-// inkudere de nødvendige bibliotekene
-#include <boost/asio.hpp>
-#include <boost/beast.hpp>
-#include <iostream>
+void sendHttpRequest() {
+    const char* url = "https://example.com";
+    const char* username = "user";
+    const char* password = "password";
 
-int main() {
-  // opprette en boost::asio::io_context for å håndtere nettverkstilkoblinger
-  boost::asio::io_context io_context;
+    CURL* curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, username);
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, password);
 
-  // opprette en TCP-socket og koble til serveren
-  boost::asio::ip::tcp::socket socket(io_context);
-  socket.connect(boost::asio::ip::tcp::endpoint(
-      boost::asio::ip::make_address("127.0.0.1"), 80));
+        CURLcode res = curl_easy_perform(curl); 
+        if(res != CURLE_OK)
+          fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
 
-  // konstruere en HTTP-forespørsel med et brukernavn og passord
-  boost::beast::http::request<boost::beast::http::string_body> request;
-  request.version = 11;
-  request.method(boost::beast::http::verb::get);
-  request.target("/protected/resource");
-  request.set(boost::beast::http::field::host, "www.example.com");
-  request.set(boost::beast::http::field::authorization,
-              "Basic dXNlcjE6cGFzc3dvcmQ="); // dette er et eksempel, det faktiske
-                                           // brukernavnet og passordet må settes
-
-  // sende forespørsel til serveren
-  boost::beast::http::write(socket, request);
-
-  // motta respons og skrive ut til konsollen
-  boost::beast::flat_buffer buffer;
-  boost::beast::http::response<boost::beast::http::dynamic_body> response;
-  boost::beast::http::read(socket, buffer, response);
-  std::cout << response << "\n";
-
-  // lukke socketen
-  boost::beast::error_code error;
-  socket.shutdown(boost::asio::ip::tcp::socket::shutdown_both, error);
+        curl_easy_cleanup(curl);
+    }
 }
 ```
+Bemerk at du må lenke mot libcurl i byggeprosessen for å bruke ovenstående kode.
 
-Eksempeloutput: 
+## Dyp Dykk   
+Grunnleggende HTTP-autentisering fikk sin oppstart i de tidlige dagene av webben som en enkel, usofistikert måte å hente ressurser fra sikret nettsteder. Men vær oppmerksom på at brukernavnet og passordet som sendes over nettet er i klartekst. Over tid, har det blitt mange nye teknikker som oAuth og tokenbasert autentisering som gir mer sikkerhet og fleksibilitet.  
 
-```
-HTTP/1.1 200 OK
-Date: Thu, 01 Jul 2021 12:00:00 GMT
-Server: Apache
-Content-Type: text/html; charset=UTF-8
-Content-Length: 1234
+Hvis libcurl ikke er et valg for prosjektet ditt, kan du også se på andre biblioteker som CppREST (tidligere kjent som Casablanca) eller POCO HTTPClient for å utføre HTTP-forespørsler med grunnleggende autentisering.
 
-<body>Protected resource</body>
-```
+På implementasjonsnivå kan det være noen forskjeller i håndteringen av HTTP-autentisering avhengig av operativsystemet og biblioteket du bruker. Derfor er det viktig å attferdigstille seg med dokumentasjonen før du implementerer disse detaljene.
 
-# Dykk dypere
-
-Grunnleggende autentisering er en av de eldste formene for autentisering på nettet og ble først definert i HTTP-standarden i 1999. Det er en enkel og effektiv metode, men den mangler sikkerhet siden brukernavn og passord sendes i klartekst over nettverket.
-
-En alternativ måte å autentisere på er ved hjelp av oauth2-protokollen, som bruker tokens i stedet for brukernavn og passord for å bekrefte identitet. For mer informasjon om hvordan du implementerer dette i C++, kan du se dokumentasjonen til Abseil biblioteket.
-
-En viktig detalj å merke seg er at noen servere kan kreve en SSL-tilkobling for å kunne bruke grunnleggende autentisering, så det er viktig å sjekke med servere dokumentasjon eller utvikler før du sender HTTP-forespørselen.
-
-# Se også
-
-[Boost Beast Dokumentasjon](https://www.boost.org/doc/html/beast.html)
-
-[Abseil Biblioteket](https://abseil.io/docs/cpp/)
+## Se også   
+Curl dokumentasjon: https://curl.haxx.se/libcurl/c/   
+CppREST SDK GitHub: https://github.com/microsoft/cpprestsdk  
+POCO dokumentasjon: https://pocoproject.org/docs/ Poco.Net.HTTPClientSession.html

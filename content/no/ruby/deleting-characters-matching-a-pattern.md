@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som matcher et mønster"
-html_title:           "Ruby: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Fjerning av tegn som matcher et mønster er en vanlig måte for programvareutviklere å manipulere og håndtere strenger av tekst i Ruby. Dette kan være nyttig når man ønsker å filtrere ut uønsket informasjon eller endre strenger for å passe til en bestemt format.
+Å slette tegn som passer til et mønster er en programmeringsoppgave som handler om å fjerne bestemte deler av en streng. Programmere gjør dette for å tilpasse data, rense opp i uønskede tegn, eller for å bryte ned informasjon til en mer håndterlig form.
 
-## Slik gjør du det:
-Følgende eksempler viser hvordan å slette tegn som matcher et mønster ved hjelp av Ruby-programmeringsspråket. I hvert eksempel vil koden bli vist i en kodeblokk markert med ```Ruby```:
+## Hvordan:
+Her er et eksempel på hvordan du kan slette bokstaver fra en streng i Ruby. Anta at du vil fjerne alle vokaler fra en tekststreng. Da kan du bruke `delete` metoden:
 
-### Eksempel 1: Fjern et bestemt tegn fra en streng
-```Ruby
-string = "Hei verden!"
-puts string.delete("e")
+```ruby
+tekst = 'Hei, hvordan går det?'
+resultat = tekst.delete 'aeiouyæøå'
+puts resultat
 ```
-Output: Hllo world!
 
-### Eksempel 2: Fjern alle vokaler fra en tekst
-```Ruby
-string = "Dette er en setning"
-puts string.delete("aeiouy")
+Dette vil skrive ut: 'H, hvrdn gr dt?'.
+
+Metoden `delete` tar et sett med tegn og fjerner alle forekomstene av disse tegnene fra streng.
+
+## Dyp Dykk
+Å slette tegn som passer til et mønster er en felles oppgave i mange programmeringsspråk. Ruby-metoden `delete` har en historie som strekker seg tilbake til de tidlige dagene av Perl, som har et veldig lignende `tr///` operatør.
+
+En alternativ metode ville være å bruke en regular uttrykk for å finne og erstatte tegn. Her er et eksempel på hvordan du kan gjøre det:
+
+```ruby
+tekst = 'Hei, hvordan går det?'
+resultat = tekst.gsub(/[aeiouyæøå]/, '')
+puts resultat
 ```
-Output: Dtt r n stnng
 
-### Eksempel 3: Fjern tall fra en streng
-```Ruby
-string = "123 Hei 456 verden"
-puts string.delete("0-9")
-```
-Output: Hei verden
+Dette vil gi samme resultat som det første eksemplet. Men det er verdt å merke seg at `gsub` metoden kan være mer fleksibel enn `delete`, ettersom det tillater mer komplekse mønstre.
 
-## Dykk dypere:
-Sletting av tegn basert på et mønster er ikke bare begrenset til Ruby. Det finnes også andre programmeringsspråk som tilbyr lignende funksjonalitet, som Java og Python. I tillegg til å bruke ```delete```-metoden, kan man også slette tegn ved hjelp av regulære uttrykk i Ruby.
+## Se Også:
+Hvis du vil lære mer om strengmanipulasjon i Ruby, kan du sjekke ut disse linkene:
 
-## Se også:
-* [Ruby dokumentasjon om ```String#delete```metoden](https://ruby-doc.org/core-3.0.2/String.html#method-i-delete)
-* [Enkle Python-eksempler på å fjerne tegn basert på et mønster](https://www.geeksforgeeks.org/python-string-methods-set-3-strip-lstrip-rstrip-min-max-maketrans-translate-rel-just-zfill/)
+- Ruby Dokumentasjon om Strenger: [Link](https://ruby-doc.org/core/String.html)
+- Ruby Monks module på Strenger: [Link](https://rubymonk.com/learning/books/1-ruby-primer/chapters/5-strings/lessons/31-string-basics)
+- Stack Overflow spørsmål om å fjerne tegn fra strenger: [Link](https://stackoverflow.com/questions/14348494/remove-character-from-string-ruby)

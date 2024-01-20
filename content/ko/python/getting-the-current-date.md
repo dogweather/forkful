@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "Python: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Python"
 category:             "Python"
@@ -11,49 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
+현재 날짜를 얻는 것은, 오늘 날짜를 출력하거나, 날짜 기반의 함수를 수행하는 코드를 작성하는 것을 말합니다. 프로그래머들이 이것을 하는 이유는 로그 파일에 타임스탬프를 새기거나, 데이터 추적 등의 목적으로 시간 관리를 할 수 있게 하기 위해서입니다. 
 
-최신 날짜를 얻는 것이란 무엇일까요? 프로그래머들이 왜 이 작업을 하는 걸까요?
+## 어떻게:
+```Python
+from datetime import date
 
-현재 날짜를 얻는 것은 현재 시간을 알기 위해서입니다. 프로그래머들은 이를 사용하여 소프트웨어의 특정 기능과 일정한 기간을 연결할 수 있습니다. 또한 데이터를 정렬하거나 현재 시간의 구조를 이용하여 특정 작업을 수행하는 데에도 사용됩니다.
-
-## 사용 방법:
-
-### 예제 1: 현재 날짜 및 시간 출력하기
-
-```python
-import datetime
-
-current_time = datetime.datetime.now()
-print("현재 날짜 및 시간: ", current_time)
+# 현재 날짜 얻기
+today = date.today()
+print("오늘의 날짜는 ", today)
+```
+이 코드를 실행한다면, 출력 결과는 다음과 같습니다.
+```
+오늘의 날짜는  2022-03-26
 ```
 
-출력 결과:
-현재 날짜 및 시간: 2021-05-24 20:30:00.000000
+## 딥 다이브
+현재 날짜를 얻는 데는 여러 방법이 있습니다. `time` 모듈을 사용하는 방법도 있지만, 일반적으로 `datetime` 모듈을 사용하는 것이 더 명확하고 편리합니다. `datetime` 모듈은 Python 2.3 버전부터 추가되었습니다. 
 
-### 예제 2: 현재 날짜만 출력하기
+대안으로, `strftime` 함수를 사용하여 날짜를 문자열 형태로 다룰 수도 있습니다. 예를 들어, `%Y-%m-%d` 형식을 사용하면 연도-월-일 형식으로 날짜를 출력할 수 있습니다.
+```Python
+from datetime import date
 
-```python
-import datetime
+today = date.today()
 
-current_date = datetime.date.today()
-print("오늘의 날짜: ", current_date)
+# strftime 함수를 사용
+d = today.strftime("%Y-%m-%d")
+print("오늘의 날짜는 ", d)
 ```
 
-출력 결과:
-오늘의 날짜: 2021-05-24
-
-## 더 들여다보기:
-
-### 역사적 배경:
-
-현재 날짜를 얻는 방법은 프로그래밍 언어와 운영 체제에 따라 다를 수 있지만, 대부분의 언어와 운영 체제에서 기본적인 함수 또는 라이브러리를 통해 현재 날짜를 얻을 수 있습니다. 초기에는 현재 날짜를 얻는 것이 복잡한 작업이었지만, 현재는 대부분의 프로그래밍 언어에서 쉽게 구현할 수 있습니다.
-
-### 대안:
-
-현재 날짜를 얻기 위해서는 파이썬의 datetime 라이브러리를 사용하는 것이 가장 일반적인 방법입니다. 다른 대안으로는 time 모듈이 있지만, datetime보다는 낮은 수준의 기능만 제공합니다. 또한 서드파티 라이브러리 중에는 더 다양한 날짜 및 시간 관련 기능을 제공하는 것들도 있습니다.
-
-## 관련 자료:
-
-- [Python datetime 모듈](https://docs.python.org/3/library/datetime.html)
-- [time 모듈](https://docs.python.org/3/library/time.html)
-- [popular third-party date and time libraries for Python](https://realpython.com/python-datetime/#third-party-date-time-libraries)
+## 추가 정보
+다른 관련 자료를 탐색하려면 아래의 링크를 참고하십시오.
+- Python 공식 문서: https://docs.python.org/ko/3/library/datetime.html
+- Python 날짜와 시간 다루기 튜토리얼: https://dojang.io/mod/page/view.php?id=2463

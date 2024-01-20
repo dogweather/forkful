@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Haskell recipe: Comparing two dates"
+html_title:           "Arduino recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,34 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Comparing two dates is the process of determining which of the two dates is earlier or later. Programmers often do this to sort a list of dates, find out the time difference between two dates, or validate user input.
-
+In a nutshell, comparing two dates is figuring out whether one given date is earlier, later, or the same as another. As programmers, we often need this to sequence events, calculate time intervals, or trigger time-based actions in software.
+  
 ## How to:
 
-In Haskell, there are various ways to compare two dates depending on the specific use case. Here are two simple examples:
+To compare dates in Haskell, we use the `Data.Time` library. Here's a basic example:
 
-```
--- Using the default Ord instance for the Date type
-compareDates :: Date -> Date -> Ordering
-compareDates d1 d2 = compare d1 d2
+```Haskell
+import Data.Time.Clock
+import Data.Time.Calendar
 
--- Custom comparison function for comparing years
-compareYears :: Date -> Date -> Ordering
-compareYears d1 d2 = compare (year d1) (year d2)
-```
-
-Sample output:
-```
-compareDates (Date 2020 12 7) (Date 2021 1 1) -- LT
-compareYears (Date 2020 12 7) (Date 2021 1 1) -- LT
+main = do
+    let date1 = fromGregorian 2020 1 1
+        date2 = fromGregorian 2021 1 1
+    print (compare date1 date2)
 ```
 
-## Deep Dive:
+The `compare` function will simply return a value of type `Ordering`, which can be `LT`, `EQ`, `GT` meaning less than, equal, or greater than respectively.
 
-There are alternative ways to compare dates using functions like `diffDays` or `compareCalendarTime`, but they require additional libraries or conversions to the `Day` or `CalendarTime` types. It is important to note that dates are complex entities with varying formats and time zones, so it is recommended to use a well-tested library like `time` for accurate and reliable comparisons.
+When you run the above code, you will see: 
 
-## See Also:
+```Haskell
+LT
+```
 
-- [Haskell Time Library](https://hackage.haskell.org/package/time)
-- [Date and Time in Haskell](https://wiki.haskell.org/Date_and_time)
-- [Difference between two dates in Haskell](https://stackoverflow.com/questions/30799011/difference-between-two-dates-in-haskell)
+This means `date1` (1 Jan 2020) is earlier than `date2` (1 Jan 2021).
+
+## Deep Dive
+
+Historically, time-and-date manipulation has been an important, though occasionally underestimated, part of programming. From the early days of UNIX timed scheduling to modern-day e-commerce sales ending at midnight, time matters.
+
+There are alternatives to the Haskell's `Data.Time` library, like the older `calendarTime`, but `Data.Time` is more comprehensive and favored in modern use.
+
+The `compare` function is actually part of the `Ord` class in Haskell, common to all data types that are "order-able". It's implemented by converting the dates to Julian Day Numbers (a continuous count of days since the beginning of the Julian Period). It's Haskell's under-the-hood way of conveniently telling which day came first.
+
+## See Also
+
+For more about the `Data.Time` library, check out the [Haskell Library Documentation](https://hackage.haskell.org/package/time). 
+
+If the default `compare` function doesn’t fit, you may want to create a custom comparison function. [Haskell Documentation on Ord](https://learn.haskell.org/doc/classes/03.html) will help. Finally, for historical perspectives, this [Computer History Page on Time](http://www.computerhistory.org/fellowawards/hall/time/) is worth a visit.

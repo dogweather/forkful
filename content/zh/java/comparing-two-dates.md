@@ -1,6 +1,6 @@
 ---
 title:                "比较两个日期"
-html_title:           "Java: 比较两个日期"
+html_title:           "Clojure: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "Java"
 category:             "Java"
@@ -10,38 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是日期比较？为什么程序员要这么做？
+## 什么 & 为什么？
 
-日期比较是指比较两个不同日期之间的大小关系。程序员经常需要进行日期比较，以确定日期的先后顺序或时间间隔，以便更好地处理和分析日期数据。
+日期比较指的是计算两个不同日期之间的差别，包括年、月、日、小时、分钟和秒。编程者之所以进行日期比较，是因为它可以方便地管理和操作日期数据，执行计划任务，内容丰富，例如可能是为了确定一个事件是否已经发生，或者在给定的时间范围内是否发生。
 
-# 如何实现日期比较？
+## 如何做？
 
-日期比较可以通过Java提供的Date对象和Calendar类来实现。下面是一个简单的例子，展示了如何使用```Java Date```对象来比较两个日期：
+下面的代码示例描述了如何使用Java的LocalDate类的isBefore(), isAfter()和isEqual()方法比较两个日期：
 
 ```Java
-Date date1 = new Date();
-Date date2 = new Date();
+import java.time.LocalDate;
 
-if (date1.equals(date2)) {
-    System.out.println("日期一和日期二相等");
-} else if (date1.after(date2)) {
-    System.out.println("日期一晚于日期二");
-} else if (date1.before(date2)) {
-    System.out.println("日期一早于日期二");
+public class DateComparison {
+    public static void main(String[] args) {
+        LocalDate date1 = LocalDate.of(2020, 1, 1);
+        LocalDate date2 = LocalDate.of(2021, 1, 1);
+
+        if (date1.isBefore(date2)) {
+            System.out.println("Date1 is before Date2");
+        }
+
+        if (date1.isAfter(date2)) {
+            System.out.println("Date1 is after Date2");
+        }
+
+        if (date1.isEqual(date2)) {
+            System.out.println("Date1 is equal to Date2");
+        }
+    }
 }
 ```
+输出结果是 : 
+```
+Date1 is before Date2
+```
 
-运行以上代码，将会输出相应的比较结果。
+## 深入研究
 
-# 深入了解日期比较
+在历史的长河中，我们已经从Java.util.Date中的比较方法（通过.equals()和.compareTo()方法）发展到现在更简单，更直接的LocalDate的比较方法。旧方法虽然适用，但在处理闰年和时区时可能会遇到问题，而新方法则可以轻松处理这些问题。
 
-历史背景：在计算机发展早期，日期比较通常通过数字表示日期来进行。但是，这种方法不够灵活，因此Date对象和Calendar类被引入，使日期比较更加简单方便。
+至于实现细节，isBefore(), isAfter()和isEqual()方法通过比较年、月、日的值来判断日期的顺序和相等性。
 
-其他方法：除了使用Java提供的Date对象和Calendar类，还可以使用第三方的日期操作库来实现日期比较。
+另外，通过使用比较方法之外，还有一种代替方法，那就是用Period类计算两个日期之间的天数，月数或年数差。
 
-实现原理：Date对象内部是以毫秒形式来存储日期的，因此比较两个日期的大小，实际上是比较它们所对应的毫秒数的大小。
+```Java
+import java.time.LocalDate;
+import java.time.Period;
 
-# 相关资源
+public class DateDiff {
+    public static void main(String[] args) {
+        LocalDate date1 = LocalDate.of(2020, 1, 1);
+        LocalDate date2 = LocalDate.of(2021, 1, 1);
 
-- [Java日期比较的官方文档](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [使用第三方日期操作库进行日期比较的示例](https://www.baeldung.com/java-date-compare)
+        Period period = Period.between(date1, date2);
+
+        System.out.printf("Differences: %d years, %d months, %d days \n", 
+        period.getYears(), period.getMonths(), period.getDays());
+    }
+}
+```
+输出结果是 : 
+```
+Differences: 1 years, 0 months, 0 days 
+```
+## 参见
+
+- [Java LocalDate文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java Period文档](https://docs.oracle.com/javase/8/docs/api/java/time/Period.html)
+- [Java官方教程：Date-Time API](https://docs.oracle.com/javase/tutorial/datetime/index.html)

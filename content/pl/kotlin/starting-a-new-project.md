@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczęcie nowego projektu"
-html_title:           "Kotlin: Rozpoczęcie nowego projektu"
-simple_title:         "Rozpoczęcie nowego projektu"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -12,26 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-W programowaniu, otwarcie nowego projektu oznacza rozpoczęcie pracy nad nowym projektem, który zazwyczaj wymaga utworzenia nowego środowiska i struktury kodu. Programiści często otwierają nowy projekt, gdy potrzebują zacząć od zera lub gdy chcą oddzielić kod od innych projektów.
+Rozpoczęcie nowego projektu to proces tworzenia zupełnie nowego kodu od podstaw – to znakomite doświadczenie dla każdego programisty. Programiści to robią, aby wdrażać nowe pomysły, zdobywać umiejętności i rozwiązywać problemy.
 
 ## Jak to zrobić:
 
-```kotlin
+Zaczniemy od instalacji Kotlin w systemie:
+
+```bash
+sudo snap install --classic kotlin
+```
+
+A teraz utworzymy nasz pierwszy program Kotlin:
+
+```Kotlin
 fun main() {
-  println("Cześć! Witaj w naszym nowym projekcie!")
+    println("Witaj, Kotlin!")
 }
 ```
+Gdy uruchomimy ten kod, na ekranie zobaczymy:
 
+```bash
+Witaj, Kotlin!
 ```
-Cześć! Witaj w naszym nowym projekcie!
-```
 
-## Głębsza analiza:
+## Pogłębiona analiza
 
-W przeszłości, otwarcie nowego projektu wymagało użycia narzędzi takich jak Maven lub Gradle, aby skonfigurować odpowiednie środowisko i strukturę projektu. Jednak dzięki językowi programowania Kotlin, którego głównym założeniem jest prostota i elastyczność, otwarcie nowego projektu stało się dużo łatwiejsze. Alternatywnym podejściem jest również użycie integracji z środowiskiem programistycznym takim jak IntelliJ IDEA, które pozwala łatwo utworzyć i zarządzać nowymi projektami. W przypadku, gdy programiści chcą rozpocząć pracę nad istniejącym projektem, mogą skorzystać z narzędzi takich jak Git, aby utworzyć nowy branch dla wystarczająco izolowanego środowiska.
+Rozpoczęcie projektu z Kotlin ma swoje korzenie w Java, ponieważ Kotlin jest językiem JVM. Alternatywą dla Kotlin może być Java lub Scala. Jednak wielu programistów preferuje Kotlin ze względu na jego krótszą składnię i pełną interoperacyjność z Java.
 
-## Zobacz też:
+Szczegóły implementacji zależą od konkretnego projektu. Jednak zasadniczo, rozpoczęcie projektu w Kotlinie obejmuje proces konfiguracji środowiska, instalacji potrzebnych narzędzi, a następnie rzeczywistego pisania kodu.
 
-- Oficjalne dokumentacje Kotlin: https://kotlinlang.org/docs/reference/
-- Poradniki i kursy Kotlin: https://kotlinlang.org/docs/resources.html
-- Alternatywne środowiska programistyczne: https://www.jetbrains.com/idea/
+## Zobacz także
+
+1. Dokumentacja Kotlin: https://kotlinlang.org/docs/reference/
+2. Kotlin for Android Developers (Kotlin dla developerów Androida): https://developer.android.com/kotlin
+3. Kotlin for Native Development (Kotlin dla natywnego developmentu): https://kotlinlang.org/docs/native-overview.html

@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "C: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "C"
 category:             "C"
@@ -10,29 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-문자열의 길이를 찾는 것은 그 이름 그대로, 특정 문자열이 얼마나 긴지를 알아내는 것을 말합니다. 이 기능은 프로그래밍에서 매우 중요한데, 우리가 다루는 데이터가 얼마나 길거나 얼마만큼의 용량을 차지하는지 알아야 하기 때문입니다.
+## 무엇 & 왜? 
 
-# How to:
-예를 들어 문자열 "Hello World"의 길이를 알고 싶다면, 다음과 같이 코드를 작성할 수 있습니다.
+문자열의 길이를 찾는 것은 문자가 얼마나 많이 연결되어 있는지를 확인하는 것입니다. 프로그래머들은 메모리 최적화, 데이터 유효성 검사, 상황에 따른 적절한 출력 등을 위해 이를 실행합니다.
+
+## 어떻게:
+
+### C 언어를 사용하여 문자열의 길이 찾기:
+
+```C 
+#include<stdio.h> 
+#include<string.h> 
+
+int main() 
+{ 
+   char str[] = "Code it Better!"; 
+   int leng = strlen(str); 
+   
+   printf("Length of string = %d", leng); 
+   
+   return 0; 
+} 
+```
+### 출력 :
+
 ```C
-#include <stdio.h>
-#include <string.h>
-
-int main() {
-    char str[] = "Hello World";
-    int length = strlen(str);
-    printf("Length of string: %d \n", length);
-}
+Length of string = 15
 ```
-위 코드를 실행하면 다음과 같은 결과가 출력됩니다.
-```
-Length of string: 11
-```
+## 딥다이브:
 
-# Deep Dive:
-이 기능은 C 언어에서 기본적으로 제공되는 함수인 `strlen()` 을 이용해 구현할 수 있습니다. 이 함수는 `<string.h>` 헤더 파일에 정의되어 있으며, 주어진 문자열의 길이를 반환합니다. 반대로, 문자열의 실제 크기를 구한다면 `sizeof()` 함수를 사용할 수 있지만 이 함수는 NULL 문자를 포함한 전체 배열의 크기를 반환하기 때문에 문자열의 길이를 찾는 데는 적합하지 않습니다. 또 다른 대안은 반복문을 사용해 문자열의 각 문자가 나타날 때마다 카운터를 증가시켜 길이를 찾는 것입니다.
+### 히스토리컬 컨텍스트:
+사실상 모든 프로그래밍 언어는 문자열 길이를 찾는 함수를 제공합니다. 이는 자료구조를 다루는 기본적인 요소이므로, 가장 초기의 프로그래밍 언어부터 도입되었습니다.
 
-# See Also:
-- [strlen() 함수 문서](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-- [sizeof() 함수 문서](https://www.tutorialspoint.com/c_standard_library/c_function_sizeof.htm)
+### 대안 :
+"strlen" 함수 외에도  "for" 루프를 활용해서도 문자열의 길이를 찾을 수 있습니다. 그러나 이 방법은 코드를 불필요하게 복잡하게 만들 수 있습니다.
+
+### 구현 세부정보: 
+C 언어에서 "strlen" 함수는 문자열의 마지막에 자동으로 추가되는 널 문자 ('\0')를 찾아 문자열의 길이를 계산합니다.
+
+## 추가 정보 :
+
+1. [C 언어 문자열 관련 함수 설명서](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
+2. [C 프로그래밍에서 문자열 처리에 대한 자세한 이해](https://www.geeksforgeeks.org/string-in-c/)

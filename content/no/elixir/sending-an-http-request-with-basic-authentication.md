@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Elixir: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,28 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å legge til brukernavn og passord i en forespørsel for at serveren skal kunne verifisere identiteten til forespørselen. Dette er vanligvis gjort for å sikre at bare autoriserte brukere kan få tilgang til en ressurs eller utføre en handling.
+# Send en HTTP-forespørsel med grunnleggende autentisering med Elixir
 
-# Hvordan:
-Eksempel 1:
+## Hva & Hvorfor?
+En HTTP-forespørsel med grunnleggende autentisering er når du sender data over HTTP-protokollen med innloggingdetaljer som brukernavn og passord. Programmører gjør dette for å tilby sikker kommunikasjon med webservere.
+
+## Hvordan gjøre det:
+Her er et eksempel på hvordan man sender en HTTP GET-forespørsel med grunnleggende autentisering i Elixir ved bruk av HTTPoisons `basic_auth`-metode:
+
 ```Elixir
-response = HTTPotion.get("https://example.com/api/users", auth: {"username", "password"})
+{:ok, response} = HTTPoison.get("http://example.com", [], basic_auth: {"username", "password"})
+IO.inspect(response.body)
 ```
-Output:
-Et svar som inneholder informasjon om brukerne som ble hentet fra API-en.
+Du bør se den forespurte ressursen til output. Pass bare på at du erstatter "http://example.com", "username" og "password" med dine egentlige verdier.
 
-Eksempel 2:
-```Elixir
-response = HTTPotion.get("https://example.com/api/posts", headers: ["authorization": Basic.encode64("username:password")])
-```
-Output:
-Et svar som inneholder informasjon om innlegg som ble hentet fra API-en.
+## Dyp dykk
+Grunnleggende autentisering er et gammelt konsept i webverdenen, som er definert i RFC 7617. Det tilbyr en enkel måte å beskytte ressurser på en webserver på. Alternativt kunne du også brukt Digest-autentisering, OAuth, eller Bearer Tokens avhengig av hva API-en støtter. Elixir bruker Erlang's :httpc modul under panseret for å håndtere HTTP-forespørsler, så egenskapene og begrensningene til :httpc gjelder også her.
 
-# Dypdykk:
-Grunnleggende autentisering er en enkel form for autentisering som har blitt brukt i lang tid på internett. Det er imidlertid en sikkerhetsrisiko, da brukernavn og passord kan bli avlyttet og stjålet. En alternativ metode for autentisering er OAuth, som bruker tokens i stedet for brukernavn og passord. Implementeringen av grunnleggende autentisering involverer å legge til en `Authorization` header med brukernavn og passord som er kodet med Base64.
+## Se også
+For flere detaljer om å jobbe med HTTP i Elixir, sjekk ut følgende ressurser:
 
-# Se også:
-- [HTTPotion biblioteket](https://hexdocs.pm/httpotion/HTTPotion.html) for å utføre HTTP-forespørsler i Elixir.
-- [BaseX biblioteket](https://hexdocs.pm/basex/BaseX.html) for å kryptere tekst med Base64 i Elixir.
-- [Elixir Style Guide](https://github.com/christopheradams/elixir_style_guide) for å lære mer om å skrive ren og lesbar Elixir-kode.
+- [HTTPoison GitHub repo](https://github.com/edgurgel/httpoison)
+- [Elixir's :httpc Doc](https://erlang.org/doc/man/httpc.html)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+
+Merk: Sørg for å ha ferskste versjon av Elixir samt HTTPoison biblioteket for å unngå eventuelle kompatibilitetsproblemer.

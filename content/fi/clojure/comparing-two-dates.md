@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Clojure: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,27 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Päivämäärien vertailu tarkoittaa kahden päivämäärän välisen eron tai suhteen selvittämistä. Ohjelmoijat tekevät tätä esimerkiksi tarkastaessaan kahden tapahtuman välistä aikaa tai laskiessaan eron kahden henkilön syntymäajan välillä.
+## Mitä & Miksi? 
+Päivämäärien vertaaminen tarkoittaa kahta ajankohtaa suhteessa toisiinsa. Ohjelmoijat tekevät tämän selvittääkseen esimerkiksi, onko yksi päivämäärä ennen toista tai kuinka kauan kahden päivämäärän välinen ero on.
 
 ## Miten:
-```Clojure
-(require '[clj-time.core :as time])
-;; Käytetään clj-time -kirjastoa päivämäärien käsittelyyn
+`java.time.LocalDate` ja `java.time.Period` -luokkia voidaan käyttää päivämäärien vertaamiseen Clojure-ohjelmassa.
 
-(def today (time/today))
-(def tomorrow (time/plus-days today 1))
+```clojure
+(ns comparing-dates
+  (:import [java.time LocalDate Period]))
 
-(time/days-diff today tomorrow) ;; Output: -1
-;; Palauttaa päivien määrän, joka on erotus kahden päivämäärän välillä
+(def date1 (LocalDate/of 2020 1 1))
+(def date2 (LocalDate/of 2021 1 1))
 
-(time/after? today tomorrow) ;; Output: false
-;; Tarkistaa, onko päivämäärä today jälkeen tomorrow
-
+(def period (Period/between date1 date2))
+  
+(println (.getYears period)) ;; tulostaa 1
 ```
 
-## Syvällinen sukellus:
-Päivämäärien vertailu on ollut tärkeä osa ohjelmointia jo pitkään. Aiemmin manuaalinen laskeminen oli ainoa tapa tehdä se, mutta nykyään on olemassa useita kirjastoja, kuten clj-time, jotka tekevät prosessin helpoksi ja tarkaksi. Joissakin ohjelmointikielissä, kuten Java, päivämääräluokat ovat osa ydintoimintoja, kun taas toisissa se voi olla lisäominaisuus. Tällöin tietojen välittäminen muista kielistä, kuten penkojen databasesista, voi olla vaikeaa ja saada aikaan virheitä päivämäärien muotoilussa.
+## Syvällisemmin:
+Päivämäärien vertaaminen ei ole uusi käsite, vaan se on peräisin ohjelmoinnin alkuajoista. Useita tapoja on esitetty ajankohdan määrittämiseen; joitakin näistä tavoista käytetään edelleen.
+
+`java.time`-kirjasto, joka esiteltiin Javassa 8, tarjoaa useita luokkia, kuten `LocalDate` ja `Period`, joita voidaan käyttää päivämäärien vertailuun.
+
+On olemassa myös muita kirjastoja, kuten Joda-Time, jotka tarjoavat samanlaisia ominaisuuksia. Mutta ne ovat nykyään vähemmän suosittuja `java.time`-kirjaston käyttöönoton jälkeen.
+
+Yksityiskohdat päivämäärien vertailusta ja niiden edustuksesta voivat vaihdella ohjelmointikielillä. Joissakin niistä, kuten Pythonissa, päivämäärän tyyppi on sisäänrakennettu, mutta toisissa, kuten JavaScriptissä, se ei ole.
 
 ## Katso myös:
-[clj-time-kirjasto](https://github.com/clj-time/clj-time)
+- Java-ohjelman päivämäärien käsittely ja vertaaminen: https://docs.oracle.com/javase/tutorial/datetime/
+- Päivämäärien vertailu Joda-Time-kirjastossa: https://www.joda.org/joda-time/
+- Päivämäärien vertaaminen eri ohjelmointikielissä: https://www.codeproject.com/Articles/2750/Handling-Dates-and-Time-in-Various-Programming-Lan

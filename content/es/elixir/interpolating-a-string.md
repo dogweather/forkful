@@ -1,7 +1,7 @@
 ---
-title:                "Interpolación de una cadena"
-html_title:           "Elixir: Interpolación de una cadena"
-simple_title:         "Interpolación de una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
-La interpolación de cadenas es una técnica utilizada por programadores para insertar valores en una cadena de texto. Esto permite una mayor flexibilidad y dinamismo en la creación de cadenas de texto en un programa. Además, ayuda a evitar la concatenación de cadenas largas y tediosas.
+## ¿Qué y por qué?
 
-# ¿Cómo hacerlo?
-```Elixir
-# Usando la sintaxis #{valor} dentro de una cadena de texto
-nombre = "Juan"
-edad = 25
-"Hola, mi nombre es #{nombre} y tengo #{edad} años."
-# Output: "Hola, mi nombre es Juan y tengo 25 años."
+La interpolación de cadenas en Elixir permite incluir valores de variables dentro de cadenas. Es rápida, fácil de usar y facilita la legibilidad y claridad del código.
+
+## ¿Cómo hacerlo?
+
+En Elixir, se realiza la interpolación de cadenas utilizando el símbolo `#` seguido de llaves `{}`. Abajo, un ejemplo.
+
+```elixir
+nombre = "Carlos"
+IO.puts "Hola, #{nombre}!"
 ```
 
-```Elixir
-# También se pueden interpolar otras expresiones
-numero1 = 5
-numero2 = 10
-"La suma de #{numero1} y #{numero2} es #{numero1 + numero2}."
-# Output: "La suma de 5 y 10 es 15."
+La salida sería:
+
+```elixir
+Hola, Carlos!
 ```
 
-# Profundizando
-La interpolación de cadenas se popularizó con la programación orientada a objetos en el lenguaje Smalltalk en la década de 1970. Actualmente, muchos lenguajes de programación modernos tienen soporte para esta técnica, como Ruby, Python y por supuesto, Elixir.
+Si lo que tienes es una expresión, también puedes interpolarla en una cadena. Veamos un ejemplo:
 
-Como alternativas a la interpolación de cadenas, algunos lenguajes utilizan el operador de concatenación (+) o proporcionan funciones específicas para la creación de cadenas de texto. Sin embargo, la interpolación de cadenas sigue siendo una opción popular debido a su simplicidad y facilidad de uso.
+```elixir
+x = 5 
+y = 10
+IO.puts "Suma: #{x + y}"
+```
 
-En Elixir, la interpolación de cadenas es realizada por la macro "sigil", que permite una mayor integración con el resto del lenguaje y la posibilidad de utilizar módulos personalizados para el formateo de cadenas.
+Lo que imprimirá:
 
-# Ver también
-- Documentación oficial de Elixir sobre interpolación de cadenas: https://hexdocs.pm/elixir/stable/String.html#sigil
-- Ejemplo de uso de interpolación de cadenas en Elixir: https://www.tutorialspoint.com/elixir/elixir_strings.htm
+```elixir
+Suma: 15
+```
+
+## Excavando un poco más profundo
+
+La interpolación de cadenas es una característica que viene de lenguajes de programación más antiguos como Perl, y ha sido adoptada por muchos otros lenguajes modernos por su comodidad y eficiencia.
+
+En cuanto a alternativas, se podrían concatenar cadenas usando el operador `<>`, pero eso es más tedioso y genera un código menos legible.
+
+Desde el punto de vista de la implementación, cuando interpolas una cadena, Elixir genera internamente una serie de concatenaciones. Sin embargo, este detalle está oculto para los desarrolladores para que se pueda mantener un código más limpio y fácil de entender.
+
+## Ver también
+
+Para más información:
+
+[Documentación oficial de Elixir](https://elixir-lang.org/getting-started/basic-types.html#strings)
+
+[Interpolación de cadenas en Elixir](https://elixirschool.com/es/lessons/basics/strings/)

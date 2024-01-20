@@ -1,6 +1,6 @@
 ---
 title:                "文字列から日付を解析する"
-html_title:           "C: 文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
 simple_title:         "文字列から日付を解析する"
 programming_language: "C"
 category:             "C"
@@ -10,71 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をやっているのか？
+## 何となぜ？
+日付のパースとは、文字列から日付情報を取り出すプロセスのことを指します。これは、さまざまなフォーマットの日付を統一し、要求に応じて効率的に使用できるようにするためにプログラマーが行います。
 
-日付を文字列から解析することはプログラマーがよく行う作業です。日付を表す文字列を解析して、その日付をコンピューターが理解できる形式に変換することで、プログラム内で日付を操作したり、比較したりすることができるようになります。
-
-なぜ日付を文字列から解析するのかというと、プログラムで日付を扱う際には、様々な形式の日付が与えられることがあります。例えば、「2021/04/01」という形式や、「3月31日」という形式などがあります。そのため、プログラムがそのまま日付を扱うことは困難であり、文字列から解析することで日付を正しい形式に変換することができるのです。
-
-## やり方：
-
-**コード例 1：**
+## 使い方：
+以下に示すように、`sscanf`関数の利用で、文字列から日付をパースします。
 
 ```C
-#include<stdio.h>
-#include<time.h>
-
-int main()
-{
-  char date_string[] = "2021/05/01";
-  struct tm date;
-  
-  // 文字列から日付を解析する
-  strptime(date_string, "%Y/%m/%d", &date);
-  
-  // 解析した日付をフォーマットして出力する
-  printf("解析した日付: %d年%d月%d日", date.tm_year + 1900, date.tm_mon + 1, date.tm_mday);
-  
-  return 0;
+#include <stdio.h>
+int main() {
+    int day, month, year;
+    char str[] = "15-09-2021";
+    sscanf(str, "%d-%d-%d", &day, &month, &year);
+    printf("Day: %d, Month: %d, Year: %d\n", day, month, year);
+    return 0;
 }
 ```
 
-**出力結果：**
-
-```2021年05月01日```
-
-**コード例 2：**
-
-```C
-#include<stdio.h>
-#include<time.h>
-
-int main()
-{
-  char date_string[] = "3月31日";
-  struct tm date;
-  
-  // 文字列から日付を解析する
-  strptime(date_string, "%m月%d日", &date);
-  
-  // 解析した日付をフォーマットして出力する
-  printf("解析した日付: %d年%d月%d日", date.tm_year + 1900, date.tm_mon + 1, date.tm_mday);
-  
-  return 0;
-}
+このコードを実行すると以下のような出力が生じます：
+```
+Day: 15, Month: 9, Year: 2021
 ```
 
-**出力結果：**
+## 深堀り：
+### ヒストリカルコンテキスト
+早い段階では、日付の解析は手動で行われ、それぞれの文脈で異なる方法が使用されました。 Cプログラミング言語が提供する一般的な関数のひとつとしての`sscanf`は、標準化と自動化を提供しました。
 
-```2021年03月31日```
+### 代替案：
+一部のプロジェクトでは、特殊なニーズを満たすためにカスタムパーサーを使用することがあります。また、他の言語やライブラリには、より深いコントロールまたはより豊富な機能を提供する日付パーサがあります。
 
-## 詳しく見ていく：
+### 実装の詳細：
+Cにおける`sscanf`の基本的な機能では、「%d」は整数を検索し、「-」は区切り文字として機能します。この関数は文字列を左から右へと読み進み、指示に従って値を抽出します。
 
-日付を文字列から解析する方法は、古くから様々なアルゴリズムが提案されてきました。現在では、標準ライブラリであるtime.hの関数である「strptime」を使うことが一般的です。
-
-また、日付の形式によっては「正規表現」を使って文字列から日付を抽出する方法もあります。しかし、正規表現を使うとコードが複雑になってしまうため、簡単に解析できるライブラリを使うことがおすすめです。
-
-## 関連情報：
-
-- [strptime 関数のドキュメント](https://www.ibm.com/docs/ja/aix/7.2?topic=strptimeB)
-- [正規表現の使い方を学ぶ](https://programming-study.com/ja/lesson/228/)
+## 参考資料：
+- Cプログラミングにおける[`sscanf`](https://www.cplusplus.com/reference/cstdio/sscanf/)
+- 日付と時間についての[Cプログラミングチュートリアル](https://www.programiz.com/c-programming/library-function/time.h/strptime)
+- [`strftime`](https://www.cplusplus.com/reference/ctime/strftime/)によるCにおける日付フォーマットのカスタマイズ。

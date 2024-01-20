@@ -1,6 +1,6 @@
 ---
 title:                "Hitta längden på en sträng"
-html_title:           "Gleam: Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
 simple_title:         "Hitta längden på en sträng"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,23 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att hitta längden på en sträng är en viktig teknik för programmerare. Det innebär helt enkelt att räkna antalet tecken som finns i en sträng. Det här är användbart för att göra jämförelser, validera inmatad data och utföra olika typer av manipulation på text. 
+## Vad & varför?
+Att hitta längden på en sträng innebär att bestämma antalet enheter i den, vanligtvis tecken. Programmerare gör det för att bearbeta data mer effektivt, särskilt inom textbearbetning och analys.
 
-## Hur man gör:
-För att hitta längden på en sträng i Gleam använder man funktionen `String.length`. Här är ett exempel på hur man kan använda det i en kod:
+## Så här gör du:
+I Gleam kan du hitta längden på en sträng med hjälp av `length` funktionen.
 
 ```Gleam
-let sträng = "Hej, världen!"
-let längd = String.length(sträng)
-
-io.println(längd) // kommer att skriva ut 13
+let minStrang = "Hej Sverige!"
+let minStrangLangd = string.length(minStrang)
 ```
 
-## Djupdykning:
-Att hitta längden på en sträng är en grundläggande uppgift som har funnits sedan de tidigaste programmeringsspråken. I Gleam finns det också andra sätt att hitta längden på en sträng, såsom `sträng.length()`, men det är en mindre vanligt använd funktion. Några alternativ till Gleam för att hitta längden på en sträng är Java med funktionen `length()` och Python med `len()`.
+Exempel output:
 
-Implementationen av `String.length` i Gleam är baserad på Unicode-teckenet som standard, men man kan också ange att man vill räkna tecken baserat på byte genom att använda `Byte.length`. Detta kan vara användbart om man arbetar med icke-Unicode-tecken.
+```Gleam
+12
+```
 
-## Se även:
-Om du vill lära dig mer om strängar och hur de används i Gleam, rekommenderas att läsa dokumentationen. Det finns också flera användbara tutorials och videor som visar hur man använder `String.length` och andra strängfunktioner.
+Här är "Hej Sverige!" strängen 12 tecken lång, inklusive mellanslag och utropstecken.
+
+## Djup dykning
+Att hitta längden på en sträng är ett grundläggande koncept inom programmering och har använts sedan de tidigaste dagarna av programmeringsspråk.
+
+Det finns alternativ till `string.length`-metoden i andra språk, till exempel `len()` i Python eller `length()` i Java. Vilken du väljer att använda beror på det specifika programmeringsspråket och problemet du försöker lösa.
+
+Vad gäller implementeringsdetaljer i Gleam, då Gleam är ett starkt och statiskt typat språk byggt på Erlang, behandlar det också strängar som listor av bokstäver. Så, när du begär en strängs längd, itererar Gleam igenom listan för att räkna antalet element.
+
+## Se också
+För mer information om strängar i Gleam, kolla in följande länkar:
+
+1. [Gleam's String Documentation](https://gleam.run/book/tour/strings.html)
+2. [Why use String length method](https://stackoverflow.com/questions/37756389/why-use-string-length-method)
+3. [Learn Gleam: Strings and their length](https://gleam.run/tour/strings.html)

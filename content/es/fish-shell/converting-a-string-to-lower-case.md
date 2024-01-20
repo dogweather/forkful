@@ -1,6 +1,6 @@
 ---
 title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "Fish Shell: Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Convertir una cadena de texto a minúsculas es simplemente cambiar todas las letras mayúsculas a su equivalente en minúsculas. Los programadores a menudo lo hacen para facilitar la comparación de cadenas de texto o para estandarizar la entrada del usuario.
+## ¿Qué y Por qué?
 
-## Cómo hacerlo:
-Para convertir una cadena de texto a minúsculas en Fish Shell, podemos utilizar el comando `string lower`. Por ejemplo:
+La conversión de una cadena a minúsculas en programación es el proceso de cambiar cualquier carácter en mayúsculas en un string a su correspondiente en minúsculas. Los programadores hacen esto para estandarizar los datos, lo que ayuda a evitar errores y problemas de coincidencia de texto.
 
+## Cómo:
+
+Para convertir un string a minúsculas en Fish Shell, usamos el comando `string lower`.
+
+```fish
+# String inicial
+set miString "HOLA MUNDO"
+
+# Conversión en string a minúsculas
+set miString (string lower -q $miString)
+
+# Imprimir el string
+echo $miString
 ```
-Fish Shell> set mi_cadena "HOLA MUNDO"
-Fish Shell> echo $mi_cadena
-HOLA MUNDO
-Fish Shell> string lower $mi_cadena
-Fish Shell> echo $mi_cadena
+
+El resultado será:
+
+```fish
 hola mundo
 ```
 
-## Profundizando:
-La conversión de una cadena de texto a minúsculas puede ser útil al trabajar con diferentes sistemas operativos, ya que algunos son sensibles a mayúsculas y minúsculas en las cadenas de texto. También puede ser necesario para comparar cadenas de texto de manera adecuada, ya que no todas las letras mayúsculas y minúsculas son iguales (como en idiomas que tienen caracteres especiales). 
+## Un vistazo en profundidad:
 
-Existen varias formas de convertir una cadena de texto a minúsculas en diferentes lenguajes y shells, como el comando `tr` en Bash. En Fish Shell, el comando `string lower` utiliza la función `tolower()` de C para realizar la conversión.
+**1. Contexto histórico:** La mayoría de los lenguajes de programación ofrecen funciones incorporadas para convertir caracteres a minúsculas. Fish Shell no es la excepción.
 
-## Ver también:
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
-- [Bash: tr command](https://www.geeksforgeeks.org/tr-command-in-unix-linux-with-examples/)
-- [C: tolower() function](https://www.geeksforgeeks.org/c-tolower-function/)
+**2. Alternativas:** Si necesitas trabajar en bash en lugar de Fish Shell, podrías usar el comando `tr` para convertir un string a minúsculas tal y cómo se muestra:
+
+```bash
+echo "HOLA MUNDO" | tr '[:upper:]' '[:lower:]'
+```
+
+**3. Detalles de implementación:** Fish Shell ofrece una selección de funciones incorporadas, incluyendo `string lower`, la cual no solo es efectiva, sino también eficiente, ya que ha sido optimizada para su uso con este shell de línea de comandos.
+
+## Ver También:
+
+Para mayor información y orientación, visita los siguientes enlaces:
+- Documentación de Fish Shell: [https://fishshell.com/docs/current/](https://fishshell.com/docs/current/)
+- Referencia útil de convertir string a minúsculas en diferentes lenguajes: [https://www.tutorialsteacher.com/articles/convert-string-to-lowercase-in-different-languages](https://www.tutorialsteacher.com/articles/convert-string-to-lowercase-in-different-languages)

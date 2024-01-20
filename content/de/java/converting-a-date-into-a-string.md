@@ -1,7 +1,7 @@
 ---
-title:                "Eine Datum in eine Zeichenkette umwandeln"
-html_title:           "Java: Eine Datum in eine Zeichenkette umwandeln"
-simple_title:         "Eine Datum in eine Zeichenkette umwandeln"
+title:                "Ein Datum in einen String umwandeln"
+html_title:           "Java: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Die Umwandlung eines Datums in einen String ist ein gängiges Vorgehen in der Programmierung. Dabei wird ein Datum, das als numerischer Wert gespeichert ist, in einen lesbaren Text umgewandelt. Programmierer tun dies, um die Ausgabe von Datumsangaben in einem bestimmten Format zu kontrollieren oder um die Lesbarkeit von Code zu verbessern.
+---
 
-Wie geht das?
-In Java gibt es verschiedene Möglichkeiten, ein Datum in einen String umzuwandeln. Eine einfache Methode ist die Verwendung der ```toString()``` Methode für Datumsklassen wie ```Date``` oder ```Calendar```. Diese gibt das Datum in einem festgelegten Format zurück, abhängig von der lokalen Einstellung des Systems. Beispielcode:
+## Was & Warum?
+Die Konvertierung eines Datums in einen String in Java ist ein durchaus üblicher Vorgang, bei dem ein Datum in seinen textbasierten Repräsentation umgewandelt wird. Dies erleichtert die Manipulation, Anzeige oder Speicherung von Datumsinformationen und supports Kompatibilität mit nicht-nativen Datentypen.
 
+## Wie geht's:
+Hier ist ein Beispiel, wie man das Java 8 `DateTimeFormatter` verwendet, um ein `LocalDate` in einen String zu konvertieren:
+
+```Java 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Program {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
+        String dateString = date.format(formatter);
+        System.out.println(dateString);
+    }
+}
 ```
-// Datumsobjekt erstellen
-Date date = new Date();
-// Datumsobjekt in String umwandeln
-String dateString = date.toString();
-// Ausgabe
-System.out.println(dateString);
-```
-**Ausgabe:**
 
-```Mon Sep 20 10:30:15 CEST 2021```
+Laufen Sie das, und Sie werden so etwas wie `10.07.2022` auf Ihrer Konsole sehen.
 
-Eine weitere Möglichkeit ist die Verwendung von Formatierungsmustern mithilfe der ```SimpleDateFormat``` Klasse. Diese erlaubt es, das Datum in einem spezifischen Format auszugeben. Beispielcode:
+## Tiefgehende Information
+Java unterstützte zunächst Datumsformatierung mit `SimpleDateFormat`. Allerdings stellte dies einige Schwierigkeiten dar, wie Thread-Unsicherheit und umständliches API-Design. Mit der Einführung von Java 8 wurde eine neuere, verbesserte API eingeführt: die `DateTimeFormatter` Klasse. Es ist thread-sicher und bietet flexiblere Formatierungsoptionen.
 
-```
-// Datumsobjekt erstellen
-Date date = new Date();
-// Formatierungsmuster erstellen
-SimpleDateFormat sdf = new SimpleDateFormat("dd.MM.yyyy");
-// Datumsobjekt in String umwandeln und formatieren
-String dateString = sdf.format(date);
-// Ausgabe
-System.out.println(dateString);
-```
-**Ausgabe:**
+Alternativ zu `DateTimeFormatter`, könnten Sie externe Bibliotheken wie `Joda-Time` oder `Apache Commons Lang` verwenden.
 
-```20.09.2021```
+Die konkreten Implementierungsdetails beinhalten die Verwendung der `format` Methode von `DateTimeFormatter`, wobei die Formatzeichenkette die formattierte Darstellung des `LocalDate` Objekts bestimmt.
 
-Tiefer graben
-Die Umwandlung von Datum in String hat eine lange Geschichte in der Softwareentwicklung. Früher mussten Entwickler oft komplexe Berechnungen durchführen, um ein Datum in ein bestimmtes Format zu bringen. Mit der Einführung von Formatierungsmustern und der Standardisierung des Datumsformats hat sich die Umwandlung vereinfacht.
+## Siehe auch
+1. Offizielle Java-Dokumentation zu DateTimeFormatter: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
+2. Joda-Time Bibliothek: https://www.joda.org/joda-time/
+3. Apache Commons Lang: https://commons.apache.org/proper/commons-lang/
 
-Als Alternative zur Umwandlung in einen String können Programmierer auch auf die ```Date.toInstant()``` und ```Instant.toString()``` Methode zurückgreifen, um das Datum in einen lesbaren Text umzuwandeln. Zudem gibt es in Java die Möglichkeit, die Klasse ```DateTimeFormatter``` zu verwenden, welche ein umfangreiches Set an Formatierungsmustern für Datumsangaben zur Verfügung stellt.
-
-Zur Vertiefung empfiehlt es sich, die Java-Dokumentation zu den genannten Klassen und Methoden zu studieren.
-
-Siehe auch
-- [Java-Dokumentation: Datumsklassen](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Java-Dokumentation: SimpleDateFormat Klasse](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java-Dokumentation: DateTimeFormatter Klasse](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+---

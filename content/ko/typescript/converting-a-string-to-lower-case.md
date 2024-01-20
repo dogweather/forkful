@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "TypeScript: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# 문자열을 소문자로 변환하기: TypeScript를 활용하다
+
 ## 무엇 & 왜?
 
-- 문자열을 소문자로 변환하는 것은 우리가 난해한 코드를 다루기 쉽게하기 위한 방법 중 하나입니다.
-- 프로그래머들은 소문자로 변환함으로써 대소문자 구분 없이 데이터를 처리하고 비교할 수 있기 때문에 이 작업을 수행합니다.
+문자열을 소문자로 변환하는 것은 큰 문자를 작은 문자로 바꾸는 것을 의미합니다. 프로그래머들이 이를 수행하는 이유는, 대/소문자 구분 없이 문자열 비교를 하거나, 사용자 입력을 표준화하기 위해서입니다.
 
-## 하는 법:
+## 어떻게 하는가:
 
 ```TypeScript
-const str = "HeLlO WoRlD!";
-const lowerCaseStr = str.toLowerCase();
-
-console.log(lowerCaseStr);
-// output: "hello world!"
+let str: string = "Hello World!";
+let lowerCaseStr: string = str.toLowerCase();
+console.log(lowerCaseStr);  // "hello world!"
 ```
 
-## 깊게 들어가보기:
+위 코드는 문자열 "Hello World!" 를 소문자로 변환하여 "hello world!"를 단순히 출력합니다.
 
-- 소문자로 변환하는 방법은 오래전부터 존재했으며, 문자열 처리와 관련된 기본적인 방법 중 하나입니다.
-- 대소문자를 구분하지 않고 문자열을 비교하거나 검색하기 위해 알고리즘에서 이 작업을 자주 사용합니다.
-- 다른 대안으로는 정규표현식을 사용하는 것이 있지만, 이 경우 정규표현식을 작성하는 데 시간이 더 걸릴 수 있습니다.
+## 심화 학습
 
-## 관련 자료:
+이 메소드는 JavaScript가 최초로 출시된 이후, 포함된 기능 중 하나였습니다. 이 기능은 사용이 간단하고 직관적이며 그리하여 많은 개발자들이 이용합니다. 그렇지만, 문자열을 소문자로 변환하는 다양한 방법이 있습니다. 
 
-- 소문자로 변환하는 방법에 대한 자세한 설명: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
-- 정규표현식을 사용하여 문자열 변환하기: https://regexr.com/
+예를 들어, 배열 메소드와 함께 ES6의 화살표 함수를 사용할 수도 있습니다:
+
+```TypeScript
+let str = 'Hello World!';
+let lowerCaseStr = [...str].map(ch => ch.toLowerCase()).join('');
+```
+
+또한, 문자열의 대소문자를 변환하는 다른 언어와 라이브러리에서 제공하는 특별한 메소드도 있습니다. 예를 들면, Python에는 `lower()`이라는 메소드가 있고, Java에는 `toLowerCase()` 메소드가 있습니다. 
+
+## 참고 자료:
+
+다음은 배울 수 있는 관련 자료들 입니다:
+
+1. [MDN Web Docs - String.prototype.toLowerCase()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+2. [TypeScript - Working with Strings](https://www.typescripttutorial.net/typescript-tutorial/typescript-strings/)

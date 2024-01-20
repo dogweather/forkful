@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Go: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Väliaikaisten tiedostojen luominen on yleinen käytäntö ohjelmoinnissa. Se tarkoittaa tilapäisten tiedostojen luomista, joita käytetään väliaikaisesti ohjelman suorituksen aikana. Tämä on hyödyllistä esimerkiksi silloin, kun tarvitaan väliaikaista tallennustilaa tai kun tiedostoa ei haluta tallentaa pysyvästi.
+## Mikä & Miksi?
 
-## Miten:
-Voit luoda väliaikaisen tiedoston käyttämällä Go-ohjelmointikielen tarjoamaa ```ioutil.TempFile()```-funktiota. Tämä luo uuden tiedoston ja palauttaa tiedostonimen sekä osan id:stä, joka varmistaa uniikin nimikkeen. Alla on esimerkki koodista ja sen tulostuksesta:
+Luodaan väliaikainen tiedosto kun tarve väliaikaisesti tallentaa tietoa, esimerkiksi logit tai tilapäiset muokkausjäljet. Tämä säästää muistia ja auttaa ohjelmia,koska tiedot eivät kulje edestakaisin muistin ja levyn välillä.
 
+## Näin teet:
+
+```Go
+package main
+
+import (
+	"io/ioutil"
+	"fmt"
+)
+
+func main() {
+	tempFile, err := ioutil.TempFile("temp", "progr-*.txt")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("Väliaikainen tiedosto luotu:", tempFile.Name())
+}
 ```
-tiedosto, _ := ioutil.TempFile("", "testi")
-defer os.Remove(tiedosto.Name())
+Kun ajat tämän koodin, se luo temp-nimisen hakemiston ja siellä on uusi tiedosto nimeltä "progr-*.txt".
 
-fmt.Println("Tiedostonimi:", tiedosto.Name())
+```Output
+Väliaikainen tiedosto luotu: /temp/progr-63kf8f2n.txt
 ```
+## Syvempi silmäys
 
-```
-Tiedostonimi: /tmp/testi183588789
-```
+Ei ole tarkkaa ajankohtaa kun luotiin ensimmäinen väliaikainen tiedosto, mutta luultavasti vuosikymmeniä sitten. Vaihtoehtoisia tapoja tiedon tallentamiseen ovat muun muassa väli- tai jaetut muistit tai verkkoyhteydet paikallisten tiedostojen sijaan.
 
-## Syvällinen sukellus:
-Väliaikaisten tiedostojen luominen on ollut tärkeä osa ohjelmointia jo pitkään, ja niitä käytetään usein esimerkiksi ohjelmointikielessä tai tietokannoissa. Go-ohjelmointikielen lisäksi myös muut ohjelmointikielet tarjoavat vastaavia toimintoja, kuten Java ```File.createTempFile()```. Väliaikaisten tiedostojen luominen on myös tärkeää tietoturvan kannalta, sillä ne auttavat estämään ei-toivotun tiedoston käsittelyn luvattomilta käyttäjiltä.
+Go:n `ioutil.TempFile()`-funktio käyttää yksilöllisiä muodostimia tekemään aina yksilöllisen tiedoston. Tämä minimoi törmäyksen mahdollisuuden. Tiedostot korjataan automaattisesti Go:n jätekeräimen toimesta, kun niitä ei enää tarvita.
 
 ## Katso myös:
-- Go:n viralliset dokumentaatiot väliaikaisten tiedostojen luomisesta: https://golang.org/pkg/io/ioutil/#TempFile
-- Java:n vastaava funktio väliaikaisten tiedostojen luomiseen: https://docs.oracle.com/javase/8/docs/api/java/io/File.html#createTempFile-java.lang.String-java.lang.String-
-- Tietoturvavinkkejä väliaikaisten tiedostojen käytöstä: https://www.sans.org/white-papers/2131/
+
+- Go:n viralliset dokumentit: <https://golang.org/pkg/io/ioutil/#TempFile>
+- Erilaisia menetelmiä tiedon tallentamiseen Go:ssa: <https://gobyexample.com/temporary-files-and-directories>
+- Lisätietoja Go:n jätekerääjästä: <https://blog.golang.org/ismmkeynote>

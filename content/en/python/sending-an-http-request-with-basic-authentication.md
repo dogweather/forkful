@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Python recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Python"
 category:             "Python"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Python and HTTP Requests: A Crash Course
 ## What & Why?
-
-When sending an HTTP request with basic authentication, programmers are including a set of credentials in the request header in order to access protected resources. This method of authentication is commonly used for simple applications that do not require high levels of security. 
+At its core, sending an HTTP request with basic authentication is a way to interact with web services that require username/password credentials. We essentially pack up say "Hello, I'm 'username' and my password is 'password'", right in the HTTP request. Programmers do this to pull, push, or manipulate data from these web services.
 
 ## How to:
+Python's requests library makes HTTP requests a breeze. Here’s a basic implementation:
 
 ```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-url = "https://www.example.com/api/protected_resource"
-username = "username"
-password = "password"
+response = requests.get('https://httpbin.org/basic-auth/user/passwd', auth=HTTPBasicAuth('user', 'passwd'))
 
-r = requests.get(url, auth=(username, password))
-
-print(r.status_code)
+print(response.status_code)
+print(response.json())
 ```
-Output: 200
 
-## Deep Dive:
+Running this code, you should receive:
 
-### Historical Context:
+```
+200
+{'authenticated': True, 'user': 'user'}
+```
 
-HTTP basic authentication has been around since the early days of the internet, and was originally designed to be a simple and easy way to authenticate users for web applications. 
+This assumes the webservice at `https://httpbin.org/basic-auth/user/passwd` requires basic auth using 'user' as username and 'passwd' as password.
 
-### Alternatives:
 
-While basic authentication is still commonly used, it is not considered the most secure option. Alternatives such as OAuth and token-based authentication have been developed to provide more secure methods of authentication.
+## Deep Dive
+The use of HTTP basic authentication goes way back to the early days of the web. Back when the internet was a new frontier, basic auth provided an easy method of securing a web page or web service.
 
-### Implementation Details:
+As for alternatives, more secure methods of authentication have been developed over the years including Digest, token-based, and OAuth. Basic auth has its limitations (credentials sent in plain text), but continues to be used due to its simplicity.
 
-When sending an HTTP request with basic authentication, the username and password must be encoded in a specific format and added to the request header. The server then checks these credentials against the ones stored on its end to allow access to the resource. 
+On the implementation details, the `requests.get()` function sends a GET request to the URL defined. The optional `auth` parameter is used to handle HTTP basic authentication. 
 
-## See Also:
+## See Also
+For further information, check out these links:
 
-- [HTTP Authentication: Basic and Digest Access Authentication | Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [OAuth Official Website](https://oauth.net/)
-- [Token-Based Authentication for WebAPIs: ASP.NET Cors + Custom Delegating Handler](https://docs.microsoft.com/en-us/archive/blogs/azureossds/token-based-authentication-for-webapis-asp-net-cors-custom-delegating-handler)
+- [Python requests library documentation](https://docs.python.org/3/library/http.client.html)
+- [W3C docs on HTTP Basic Auth](http://www.w3.org/Protocols/HTTP/1.0/spec.html#BasicAA)
+- [HTTPbin for testing your requests](https://httpbin.org)

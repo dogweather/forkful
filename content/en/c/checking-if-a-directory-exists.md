@@ -11,42 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Checking if a directory exists is the process of verifying if a given directory (folder) exists on a computer's file system. This is commonly done by programmers to ensure that a certain directory is present before performing relevant operations or to handle error cases when a directory is missing.
+If you're writing a C program that interacts with the file system, you need to know if a directory exists before performing operations on it. This is preventive error handling: you stop bugs before they mess up your user's data.
 
 ## How to:
-To check if a directory exists in C, we can use the ```opendir()``` function from the ```<dirent.h>``` header. This function opens a directory stream and returns a pointer to the ```DIR``` type, which represents a directory stream. If the directory does not exist, the function returns a ```NULL``` pointer.
+In C, we use the `stat` function and `S_ISDIR` macro to check if a directory exists. This works for both Unix-based systems (like Linux and MacOS) and Windows.
 
-```
+```C
+#include <sys/stat.h>
 #include <stdio.h>
-#include <dirent.h>
 
 int main() {
-    char* directory_name = "my_directory";
-    DIR* dir = opendir(directory_name);
-    
-    if (dir == NULL) {
-        printf("Directory \"%s\" does not exist.\n", directory_name);
-    } else {
-        printf("Directory \"%s\" exists.\n", directory_name);
+    struct stat status = {0};
+    const char *dirPath = "./testdirectory";
+    if(stat(dirPath, &status) == -1 || !S_ISDIR(status.st_mode)) {
+        printf("Directory does not exist\n");
     }
-    
-    closedir(dir);
+    else {
+        printf("Directory exists\n");
+    }
+
     return 0;
 }
 ```
 
-Sample Output:
+## Deep Dive
+The `stat` function has been a part of Unix-based systems since the 70s, allowing programmers to access file or directory properties. Passed the correct path, it populates a `struct stat` with information about the file or directory. Windows implements `stat` as part of the POSIX compatibility in its C library.
+
+`S_ISDIR` is a POSIX macro that uses the `st_mode` field of `struct stat` to determine if the path belongs to a directory.
+
+But we have alternatives too. `opendir` function, for an instance, tries to open a directory and will return `NULL` if it doesn't exist or can't be read.
+
+```C
+#include <dirent.h>
+#include <stdio.h>
+
+int main() {
+    const char *dirPath = "./testdirectory";
+    DIR* dir = opendir(dirPath);
+    if (dir) {
+        printf("Directory exists\n");
+        closedir(dir);
+    }
+    else {
+        printf("Directory does not exist\n");
+    }
+
+    return 0;
+}
 ```
-Directory "my_directory" does not exist.
-```
+This works perfectly well, but it's best to only use it if you actually want to read the directory. For merely checking if it's there, `stat` uses fewer resources.
 
-## Deep Dive:
-In C, the ```opendir()``` function is part of the POSIX standard and has been available since the first version of the C programming language. It is commonly used on Unix and Unix-like systems such as Linux and macOS. For Windows systems, the ```_findfirst()``` function can be used to achieve similar functionality.
-
-In addition to using the ```opendir()``` function, there are other ways to check if a directory exists, such as using the ```stat()``` function or the ```access()``` function. These functions can provide more detailed information about the existence and access permissions of a directory.
-
-## See Also:
-- [opendir() documentation](https://man7.org/linux/man-pages/man3/opendir.3.html)
-- [stat() documentation](https://man7.org/linux/man-pages/man2/stat.2.html)
-- [access() documentation](https://man7.org/linux/man-pages/man2/access.2.html)
-- [_findfirst() documentation](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/findfirst-functions?view=msvc-160)
+## See Also
+For more info, see the official documentation on [`stat`](https://man7.org/linux/man-pages/man2/stat.2.html), [`S_ISDIR`](https://linux.die.net/man/3/s_isdir), and [`opendir`](https://linux.die.net/man/3/opendir). To deepen your understanding, engage in [this](https://stackoverflow.com/questions/4553012/checking-if-a-file-is-a-directory-or-just-a-file) StackOverflow discussion.

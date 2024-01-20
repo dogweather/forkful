@@ -1,7 +1,7 @@
 ---
-title:                "发送一个http请求"
-html_title:           "Swift: 发送一个http请求"
-simple_title:         "发送一个http请求"
+title:                "发送http请求"
+html_title:           "C#: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,54 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是HTTP请求以及为什么程序员会这样做？
+## 什么是HTTP请求，为什么要发送它?
 
-发送HTTP请求是指通过网络向服务器发送信息，以获取特定数据或执行特定操作。程序员经常使用此方法来访问网页上的内容、与其他平台进行交互或使用Web API来获取数据。
+HTTP请求是在网络编程中发送到服务器的一种请求方式，开发者通常使用它来获取或者发送数据。
 
-## 如何发送HTTP请求：
-
-首先，您需要在您的代码中导入`Foundation`框架。然后，您可以使用`URLSession`类来发送HTTP请求。以下是一个例子：
+## 如何实现:
+以下是在Swift中创建并发送HTTP请求的一个例子。首先，你创建了一个URL对象，然后创建了一个URLRequest对象。最后你创建了一个URLSession对象并调用了他的dataTask方法来发送请求:
 
 ```Swift
 import Foundation
 
-// 创建URL对象
-let url = URL(string: "https://www.example.com")!
+let url = URL(string: "https://www.example.com/")!
+var request = URLRequest(url: url)
 
-// 创建URLSession对象
-let session = URLSession.shared
-
-// 创建请求任务
-let task = session.dataTask(with: url) { (data, response, error) in
-    // 处理返回的数据
-    if let data = data {
-        print(String(data: data, encoding: .utf8)!)
+request.httpMethod = "GET"
+let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+    if let error = error {
+        print("Error: \(error)")
+    } else if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print("Received data:\n\(str ?? "")")
     }
 }
-
-// 开始请求任务
 task.resume()
 ```
+输出:
 
-输出：
+Received data:
+This is example data.
 
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-<body>
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-</body>
-</html>
-```
+## 深度解析：
+HTTP请求的历史可以追溯到1990年代早期的万维网。从那时起，开发者就开始使用它获取或发送网页和其他类型的数据。虽然有其他的替代方法，如WebSocket或HTTP/2，但HTTP请求仍然是最常用的方式。
 
-## 深入了解HTTP请求：
+在Swift和其他现代编程语言中，发送HTTP请求的实现细节主要依赖于具体的库和框架。大多数语言都有内建的库作为HTTP客户端，Swift也不例外。在上面的例子中，`dataTask(with:request)`函数由底层的URLSession对象处理，这是Apple的Foundation框架提供的。
 
-HTTP（Hypertext Transfer Protocol）是一种应用层协议，用于在Web上进行数据通信。它是现代互联网的基础，并且它的发展已经超过了25年。除了使用`URLSession`来发送HTTP请求之外，还可以使用第三方库如`Alamofire`等进行网络请求。
+## 更多参考资料：
 
-## 参考链接：
-
-- [Apple Developer Documentation: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Alamofire: Elegant HTTP Networking in Swift](https://github.com/Alamofire/Alamofire)
+- [Apple Swift Documentation](https://developer.apple.com/documentation/swift)
+- [The Swift Programming Language Book by Apple](https://docs.swift.org/swift-book/)
+- [Online URL Encoding/Decoding](http://meyerweb.com/eric/tools/dencoder/ )
+- [HTTP: The Protocol Every Web Developer Must Know](https://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)

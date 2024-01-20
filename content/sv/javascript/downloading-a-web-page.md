@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Javascript: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,28 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Ladda ner en webbsida innebär att hämta dess kompletta innehåll i kod. Programmerare gör det för att analysera strukturen, optimera prestanda eller för att skrapa data.
 
-Att ladda ner en webbsida innebär att hämta en kopia av en webbsidas innehåll från internet och spara den på din dator. Programutvecklare gör det för att använda innehållet för olika ändamål, till exempel för att analysera eller manipulera data.
+## Hur man gör:
+Här är ett enkelt exempel på att ladda ner en webbsida i JavaScript med `node-fetch` biblioteket.
 
-## Hur gör man:
-Ett enkelt sätt att ladda ner en webbsida är att använda den inbyggda funktionen fetch() i JavaScript. Denna funktion gör en HTTP-förfrågan till en given URL och returnerar ett löfte som innehåller webbsidans innehåll. Exempelvis:
+```
+Javascript
+const fetch = require('node-fetch');
 
-```javascript
-fetch('https://www.example.com')
+let url = "http://example.com";
+
+fetch(url)
   .then(response => response.text())
   .then(data => console.log(data));
-```
+  ```
+Ovenstående kod laddar ner webbsidan på den angivna URL:en och skriver ut innehållet i konsolen.
 
-Det här koden skickar en GET-förfrågan till exempelwebbsidan, tar emot svaret och loggar innehållet i konsolen.
+## Djupdykning
+Tidigare användes metoder som 'wget' eller 'curl' för att ladda ner webbsidor, men nu görs det vanligtvis med olika JavaScript-bibliotek, som 'axios' eller 'node-fetch'. 'node-fetch' är baserad på Window.Fetch API och är ofta använd för sömlös server till server kommunikation. Alternativt kan 'puppeteer' biblioteket användas för en mera fullständig webbbläsare upplevelse, inklusive JavaScript exekvering.
 
-## Djupdykning:
-Historiskt sett har programmerare använt tekniker som screen scraping för att ladda ner webbsidor. Detta innebär att man "skrapar" innehållet från en webbsida genom att ladda ner sidan och sedan söka efter specifika element som behövs. Idag används dock ofta API:er för att hämta data från webbsidor.
+Detaljer: Jadå, allt detta kan låta enkelt men vi måste hantera olika situationer. Som att säkert hantera 404 fel och timeout situationer. Också, det kan vara viktigt för oss att exekvera JavaScript på den laddade sidan, vilket 'node-fetch' inte hjälper oss med, men 'puppeteer' klarar däremot av.
 
-Alternativet till att ladda ner en webbsida är att använda en webbläsare som gör det automatiskt när du besöker en sida. Detta kan vara användbart när du vill få en kopia av en sida som är interaktiv eller dynamisk.
-
-När du laddar ner en webbsida hämtar du ofta HTML-koden, men du kan också hämta andra filtyper som bilder eller CSS-filer som behövs för att rendera sidan korrekt.
-
-## Se även:
-- [Fetch API dokumentation](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Web scraping for beginners](https://towardsdatascience.com/web-scraping-for-beginners-9c2f6e464dcf)
-- [Alternatives to downloading web pages](https://medium.com/datadriveninvestor/alternatives-to-web-scraping-4d9e08aba286)
+## Se Även:
+För mer information och tutorials, se dessa länkar:
+- Node Fetch: https://github.com/node-fetch/node-fetch
+- Axios dokumentation: https://github.com/axios/axios
+- Puppeteer dokumentation: https://pptr.dev/
+- Window.Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+- JavaScript exekvering med Puppeteer: https://javascript.info/puppeteer

@@ -1,7 +1,7 @@
 ---
-title:                "एक HTTP अनुरोध भेजना"
-html_title:           "Rust: एक HTTP अनुरोध भेजना"
-simple_title:         "एक HTTP अनुरोध भेजना"
+title:                "http अनुरोध भेजना"
+html_title:           "Elixir: http अनुरोध भेजना"
+simple_title:         "http अनुरोध भेजना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,22 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##
-Kya hai aur kyu?: 
-HTTP request bhejna ek prakar ka communication hai jisme server se client ko data ya information bheja jaata hai. Iss prakriya ka upyog website par content ko access karne ke liye kiya jaata hai. Programmers isliye iska upyog karte hai kyunki isse communication ko asaani se handle kiya ja sakta hai aur server se information ko retrieve kiya ja sakta hai.
+# Rust में HTTP अनुरोध भेजना: साइनसे के पिछे
 
-Kaise karein:
+## क्या और क्यों?
+
+HTTP अनुरोध भेजना, इसका अर्थ होता है कि हम इंटरनेट पर एक सर्वर से जानकारी मांग रहे हैं। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे डाटा को खोज सकें और मशीन्स को संवादित कर सकें।
+
+## कैसे करें:
+
+Rust में, हम `reqwest` crate का उपयोग करके एक HTTP अनुरोध भेज सकते हैं। यहां एक उदाहरण है:
+
 ```Rust
-fn main() {
-    reqwest::get("https://example.com")
-        .send()
-        .expect("Could not send request");
+use reqwest::Error;
+
+async fn get_data() -> Result<(), Error> {
+    let res = reqwest::get("https://httpbin.org/ip").await?;
+
+    let body = res.text().await?;
+    println!("बॉडी:\n{}", body);
+
+    Ok(())
 }
 ```
 
-Deeper Dive: 
-HTTP request ko bhejne ka prathamik tarika GET request tha, jisme client se server tak information jaata tha. Lekin ab POST, PUT, DELETE jaise methods bhi use kiye jaate hain. Rust mein, reqwest library ka upyog karke HTTP request bheja ja sakta hai. Iske alawa, hyper aur curl jaisi libraries bhi kaafi prachalit hain.
+यह कोड सर्वर से डाटा के प्राप्त करने की कोशिश करता है और इसे कंसोल पर प्रिंट करता है। ऐसा करने पर, आपको निम्नलिखित आउटपुट मिलेगा:
 
-See Also:
-- https://doc.rust-lang.org/stable/book/ch12-01-accepting-command-line-arguments.html
-- https://learning-rust.github.io/docs/e6.http_server.php
+```Rust
+बॉडी:
+{
+  "origin": "58.87.32.100"
+}
+```
+
+## गहरी गोता
+
+HTTP अनुरोधों का प्रयोग 90 के दशक के मध्य से हो रहा है, जब वेब स्टार्ट हुआ था। अल्ट्रनेटिवली, Rust में `hyper` और `http` जैसे अन्य crates भी हैं जो HTTP अनुरोधों को सहयोग देते हैं, लेकिन `reqwest` क्रेट का सरलता और क्षमता का मिश्रण उन्हें एक अच्छा विकल्प बनाता है।
+
+जब आप `reqwest::get` कॉल करते हैं, तो यह एक GET HTTP अनुरोध को विनिर्माण करता है और वो अनुरोध सर्वर के पास भेजता है।
+
+## और देखें
+
+अधिक जानकारी के लिए, Rust का आधिकारिक [reqwest crate documentation](https://docs.rs/reqwest) देखें। HTTP के इतिहास और विलेखन के बारे में जानने के लिए, [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP) की छाँव में पढ़ें।

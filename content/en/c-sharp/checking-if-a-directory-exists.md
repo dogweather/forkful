@@ -10,42 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Checking If a Directory Exists in C#
+
 ## What & Why?
 
-Checking if a directory exists is a common task that programmers do to determine whether a specified directory exists on a computer's file system. This process is important for various reasons, including error handling, file management, and ensuring proper program functionality.
+Checking if a directory exists is about verifying the presence of a folder in a specific location within the file system, from your C# code. Programmers frequently do this to avoid runtime errors and exceptions when attempting to access or manipulate directories that might, or might not, exist.
 
 ## How to:
 
-To check if a directory exists in C#, we can use the `Directory.Exists()` method. This method accepts a string parameter representing the directory path and returns a boolean value indicating whether the directory exists. Here's an example of how we can use this method in our code:
+In C#, we use the `Directory.Exists` method to check if a directory exists. Here's a simple example:
 
 ```C#
-// Check if the "Documents" directory exists
-bool doesExist = Directory.Exists(@"C:\Users\John\Documents");
+using System.IO;
 
-// Print the result to the console
-Console.WriteLine("Does the \"Documents\" directory exist? " + doesExist);
+class Program
+{
+    static void Main()
+    {
+        string path = @"C:\SomeDirectory";
+
+        if (Directory.Exists(path))
+        {
+            System.Console.WriteLine("Exists");
+        }
+        else
+        {
+            System.Console.WriteLine("Does not exist");
+        }
+    }
+}
 ```
 
-This code will check if the "Documents" directory exists in the specified path and print the result to the console as either `True` or `False`.
+If `C:\SomeDirectory` exists, this program prints "Exists". Otherwise, it prints "Does not exist".
 
-## Deep Dive:
+## Deep Dive
 
-### Historical Context:
+The `Directory.Exists` method has been part of the .NET framework since its inception, and it's probably the most commonly-used method to check for a directory's existence due to its simplicity and efficiency.
 
-In earlier versions of C#, checking if a directory exists required using the `FileInfo` class or `DirectoryInfo` class. The `Exists()` method was later added to the `Directory` class in .NET Framework 1.1, making it much simpler to perform this task.
+Of course, there are alternative ways to ascertain the existence of a directory. One could attempt to open the directory with `Directory.GetDirectories`, which throws an exception if the directory doesn't exist. However, this is less efficient and considered bad practice since exceptions should be reserved for truly exceptional circumstances.
 
-### Alternatives:
+Internally, `Directory.Exists` is a wrapper around the Win32 function `GetFileAttributes`, which has been part of Windows since the earliest days of the operating system. Despite its age, this function remains the most efficient way to determine if a directory exists.
 
-Apart from using the `Directory.Exists()` method, there are other ways to check if a directory exists in C#. One alternative is to use the `DirectoryInfo` class, which provides various methods and properties for interacting with directories.
-
-### Implementation Details:
-
-Internally, the `Directory.Exists()` method uses the Win32 API `GetFileAttributes()` function to check the attributes of the specified file or directory. It then checks for the `FILE_ATTRIBUTE_DIRECTORY` attribute to determine if the given path is a directory or not.
-
-## See Also:
-
-To learn more about checking if directories exist in C#, you can refer to the following resources:
-
-- [Microsoft Docs: Directory.Exists() Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
-- [Microsoft Docs: DirectoryInfo Class](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo)
-- [Stack Overflow: Checking if Directory Exists in C#](https://stackoverflow.com/questions/3253052)
+## See Also
+Please refer to the following resources for more in-depth information:
+- Microsoft Official Documentation - Directory.Exists Method: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists
+- Stack Overflow: https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-file-or-a-directory
+- DotNetPerls - Directory.Exists: https://www.dotnetperls.com/directory-exists

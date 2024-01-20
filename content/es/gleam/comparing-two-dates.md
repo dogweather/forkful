@@ -1,6 +1,6 @@
 ---
 title:                "Comparando dos fechas"
-html_title:           "Gleam: Comparando dos fechas"
+html_title:           "C#: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
+Comparar dos fechas es analizar cuál es anterior o posterior a la otra. Los programadores lo hacen para ejecutar ciertas acciones basadas en estos resultados, especialmente en la gestión de datos.
 
-Comparar dos fechas es una tarea común para los programadores. Esto implica tomar dos fechas diferentes y determinar cuál de las dos es mayor, menor o si son iguales. Los programadores suelen hacer esto para ordenar listas de fechas, realizar cálculos de tiempo o para validar fechas de entrada del usuario.
+## Cómo hacerlo:
+Aquí hay un ejemplo simple de cómo se puede hacer esto en Gleam:
 
-## Cómo:
+```gleam
+fn main() {
+  let fecha1 = Date.from(2020, 4, 7)
+  let fecha2 = Date.from(2022, 8, 14)
 
-Comparar dos fechas es muy sencillo en Gleam. Primero, debemos importar el módulo de tiempo ```gleam/time```. Luego, podemos usar la función ```compare``` para comparar dos objetos de fecha. Esta función devuelve un número entero que indica si la primera fecha es mayor, menor o igual a la segunda fecha.
-
+  case fecha1.compare(fecha2) {
+    Equal   -> io.print("Las fechas son iguales")
+    Greater -> io.print("La fecha1 es mayor que la fecha2")
+    Less    -> io.print("La fecha1 es menor que la fecha2")
+  }
+}
 ```
-Gleam importar/tiempo
 
-let fecha1 = Gleam.tiempo.string_a_fecha("2021-03-15")
-let fecha2 = Gleam.tiempo.string_a_fecha("2021-03-16")
+El resultado de la ejecución del código anterior será `"La fecha1 es menor que la fecha2"` porque la primera fecha ocurre antes que la segunda.
 
-Gleam.tiempo.comparar(fecha1, fecha2)  // Devuelve -1
-```
+## Inmersión Profunda
+Historia: Comparar dos fechas es un problema común en programación desde los primerizos tiempos de la informática. Gleam gestiona esta tarea de manera eficiente, apoyándose en su tipo de datos integrado `Date` y su función `compare`.
 
-En este ejemplo, la primera fecha es menor que la segunda ya que la función ```compare``` devuelve -1. También podemos usar los operadores ```<, >``` y ```==``` para comparar fechas.
+Alternativas: En otros lenguajes de programación, como JavaScript o Python, la comparación de fechas puede realizarse con operadores de comparación estándar, aunque puede resultar más complicado debido a las peculiaridades de zona horaria y formato de fechas.
 
-## Profundizando:
+Detalles de Implementación: La función `compare` implementada en Gleam devuelve uno de los tres valores predefinidos `Equal`, `Greater`o `Less` lo que facilita mucho la comprensión y el uso de la comparación de fechas.
 
-La comparación de fechas ha sido un problema común en programación desde hace mucho tiempo. Antes de la introducción de tipos de datos nativos de fecha en muchos lenguajes de programación, los programadores tenían que realizar complicados cálculos para comparar fechas. Afortunadamente, en Gleam, este proceso es mucho más sencillo gracias al módulo de tiempo incorporado. Alternativas para comparar fechas incluyen el uso de bibliotecas externas o implementar una solución personalizada.
-
-## Ver También:
-
-- [Documentación del módulo Gleam de tiempo](https://gleam.run/lib/time/)
-- [Documentación de la biblioteca de fechas y hora externa Chronos](https://hexdocs.pm/chronos/readme.html)
+## Ver También
+1. [Documentación oficial de Gleam](https://gleam.run/docs/introduction/)
+2. [Gleam en GitHub](https://github.com/gleam-lang/gleam)
+3. [Comparar fechas en otros lenguajes](https://stackoverflow.com/questions/tagged/date-comparison)
+   
+Para una guía más profunda sobre la programación en Gleam, puedes consultar el libro [Gleam programming for beginner](https://gleam.run/book).

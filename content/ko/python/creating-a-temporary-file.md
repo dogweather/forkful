@@ -10,39 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-임시 파일을 만드는 것은 파이썬 프로그래머들이 자주 사용하는 중요한 방법 중 하나입니다. 임시 파일은 프로그램이 실행되는 동안 일시적으로 사용되며, 필요하지 않게 되면 자동으로 삭제됩니다. 이를 통해 프로그래머들은 메모리를 절약하고 시스템 리소스를 최적화할 수 있습니다.
+## 무엇 & 왜?
 
-## How to:
-파이썬에서 최신 버전인 3.8을 사용한다고 가정하겠습니다. 임시 파일을 만드는 가장 간단한 방법은 `tempfile` 모듈을 이용하는 것입니다. 아래의 코드는 임시 파일을 만들고 쓰기 위한 예제입니다.
+임시 파일 생성은 컴퓨터에 일시적 파일을 만드는 과정입니다. 이렇게 하는 이유는 일시적으로 데이터를 저장하거나 처리가 필요할 때, 또는 마치 파일처럼 동작하는 메모리 저장 공간이 필요할 때 입니다.
 
-```python
+## 어떻게:
+
+Python에서는 `tempfile` 라이브러리를 사용해 쉽게 임시 파일을 생성할 수 있습니다. 예컨대 아래와 같이 사용할 수 있습니다:
+
+```Python
 import tempfile
 
-# 임시 파일 생성
 temp = tempfile.TemporaryFile()
-
-# 파일에 데이터 쓰기
-temp.write(b"Hello, world!")
-
-# 파일에서 데이터 읽기
+temp.write(b'Some data')
 temp.seek(0)
-print(temp.read())
 
-# 파일 자동 삭제
+print(temp.read())
 temp.close()
 ```
 
-위 코드를 실행하면 `"Hello, world!"`가 콘솔에 출력되는 것을 볼 수 있습니다.
+이 코드를 실행하면 'Some data'라는 문자열이 저장된 임시 파일이 생성됩니다.
 
 ## Deep Dive:
-임시 파일이 처음 등장한 것은 계산 필터링과 관련된 운영체제에서였습니다. 이전에는 프로그램이 메모리를 관리하는 것이 너무 어려워서 프로그램이 종료될 때까지 메모리를 차지해야 했습니다. 하지만 임시 파일을 사용하면 프로그램 종료 시 파일이 자동으로 제거되므로 메모리 관리가 더 쉬워졌습니다.
 
-현재 파이썬에서 임시 파일을 생성하는 다른 방법으로는 `tempfile.mkstemp()`와 `tempfile.NamedTemporaryFile()`를 사용하는 것이 있습니다. 각각 파일 디스크립터와 임시 파일 이름을 반환합니다.
+임시 파일 생성은 오래된 개념이며, 이런 방식으로 데이터를 일시적으로 처리하는 것은 컴퓨터 세계에서 흔히 볼 수 있는 방식입니다. Python에서는 이를 매우 간단하게 처리할 수 있는 `tempfile` 라이브러리를 제공합니다. 
 
-임시 파일을 생성하는 방법 뿐만 아니라, `tempfile` 모듈은 임시 디렉토리를 생성해주는 함수들도 제공합니다.
+대안으로는, 문자열을 메모리에 저장하는 방식이나, 직접 전용의 일시적 저장소를 설계하는 방법 등이 있습니다. 하지만 대부분의 경우, 파이썬의 `tempfile` 라이브러리로 충분히 임시 파일 저장 공간을 관리할 수 있습니다.
 
-## See Also:
-- [파이썬 공식 문서 - tempfile 모듈](https://docs.python.org/ko/3/library/tempfile.html)
-- [RealPython - Working With Temporary Files in Python](https://realpython.com/python-tempfile/)
-- [Tutorialspoint - Python - Temporary Files](https://www.tutorialspoint.com/python/python_temporary_files.htm)
+`tempfile` 라이브러리의 임시 파일은 기본적으로 바이너리 모드(w+b)으로 열립니다. 원한다면 텍스트 모드를 사용할 수도 있지만, 이 경우 인코딩도 같이 설정해야 합니다. 
+
+## 참고자료:
+
+- Python 공식 문서: [임시 파일과 디렉토리 생성](https://docs.python.org/3/library/tempfile.html)
+- Python 프로그래밍에 대한 자세한 가이드: [임시 파일 사용](https://pymotw.com/3/tempfile/)

@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "C#: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cosa & Perché?
 
-L'estrazione di sottostringhe è il processo di selezione di una parte di una stringa più grande. I programmatori spesso lo fanno per ottenere solo una porzione delle informazioni di una stringa o per manipolare i dati in modo più efficiente.
+Estrarre le sottostringhe è l'operazione di estrarre porzioni di stringa da una stringa più grande. I programmatori fanno questo per manipolare e analizzare dati di testo.
 
 ## Come fare:
 
-Per estrarre una sottostringa in C#, possiamo utilizzare il metodo ```Substring()``` della classe string. Vediamo un esempio:
+Ecco alcuni esempi di come estrarre sottostringhe in C#:
+```C#
+string str = "Ciao, sono un programmatore C#";
+// Ricorda che gli indici iniziano da 0!
+string substring = str.Substring(6); // output: "sono un programmatore C#"
 
-```c#
-string frase = "Benvenuti in questo articolo!";
-string sottostringa = frase.Substring(10, 7); // estrae la sottostringa "questo"
-Console.WriteLine(sottostringa); // output: questo
+string anotherSubstring = str.Substring(6, 4); // output: "sono"
 ```
+`Substring(int startIndex)` e `Substring(int startIndex, int length)` sono i metodi che usiamo per estrarre sottostringhe. `startIndex` è l'indice da cui inizia la sottostringa, mentre `length` è il numero di caratteri da estrarre.
 
-Qui stiamo utilizzando il metodo ```Substring()``` per estrarre una sottostringa dalla posizione 10 della stringa fino a 7 caratteri dopo. Possiamo anche specificare solo la posizione di inizio e ottenere la sottostringa fino alla fine della stringa:
+## Approfondimenti
 
-```c#
-string ulterioriInformazioni = frase.Substring(22); // estrae "articolo!"
-```
+C# fornisce molteplici modi per lavorare con le stringhe. La funzione `Substring` ha le sue radici nei primi giorni del linguaggio. È un'implementazione diretta del concetto di "sottostringa" che proviene dalla teoria degli insiemi.
 
-Notare che le posizioni all'interno di una stringa iniziano da 0.
+Esistono altre alternative a `Substring`, come `Split`, `Replace`, ecc., ma queste funzioni hanno scopi diversi e specifici.
 
-## Approfondimenti:
+La funzione `Substring` è implementata internamente attraverso l'uso di un array di caratteri. Non crea una nuova stringa, invece restituisce un riferimento all'array di caratteri della stringa originale. 
+Ricorda, però, che le stringhe in C# sono immutabili, quindi non puoi modificare la sottostringa senza creare una nuova stringa.
 
-L'idea di estrarre sottostringhe esiste da molto tempo ed è stata utilizzata in molti linguaggi di programmazione diversi. In C#, ci sono anche altri modi per estrarre sottostringhe, come utilizzare i metodi ```Split()``` e ```Replace()``` o i pattern di ricerca tramite espressioni regolari.
+## Vedi Anche:
 
-Inoltre, l'estrazione di sottostringhe è spesso utilizzata in congiunzione con altri metodi e funzioni per manipolare e analizzare le stringhe. Ad esempio, possiamo utilizzare la sottostringa ottenuta per cercare una corrispondenza specifica tramite il metodo ```Contains()``` o per convertire i dati in un tipo diverso utilizzando i metodi di casting.
+Per ulteriori informazioni sulle stringhe in C#, consulta i seguenti link:
 
-## Vedi anche:
-
-- Documentazione ufficiale su ```Substring()``` in C#: [https://docs.microsoft.com/en-us/dotnet/api/system.string.substring](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-- Esempi di utilizzo di sottostringhe in C#: [https://www.geeksforgeeks.org/c-sharp-string-substring-method/](https://www.geeksforgeeks.org/c-sharp-string-substring-method/)
-- Approfondimenti sulle espressioni regolari in C#: [https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+-[Documentazione Microsoft sull'oggetto String](https://docs.microsoft.com/it-it/dotnet/api/system.string?view=net-5.0)
+-[Guida alla programmazione C# - lavorare con le stringhe nel .NET](https://docs.microsoft.com/it-it/dotnet/csharp/programming-guide/strings/)

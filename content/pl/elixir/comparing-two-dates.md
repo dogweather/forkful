@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Elixir: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest porównywanie dwóch dat i dlaczego programiści to robią?
-Porównywanie dwóch dat to proces porównywania dwóch punktów w czasie, aby określić, która data jest wcześniejsza lub późniejsza. Jest to przydatne w wielu przypadkach, na przykład w systemach rezerwacji, raportów finansowych lub planowania zadań.
+# Porównywanie dwóch dat w języku Elixir
+
+## Co i dlaczego?
+
+Porównywanie dat w programowaniu polega na ustaleniu, która data jest wcześniejsza lub późniejsza. Programiści często używają tego do sortowania danych według daty i godziny oraz do kalkulacji różnicy czasu między dwoma datami.
 
 ## Jak to zrobić:
-```Elixir
-# Importowanie modułu Date
-import Date
 
-# Definiowanie dwóch dat
-date1 = Date.new!(2021, 3, 15)
-date2 = Date.new!(2021, 4, 1)
+W Elixirze porównanie dwóch dat jest bardzo proste. Poniżej znajdują się przykładowe bloki kodu.
 
-# Porównywanie dat
-case Date.compare(date1, date2) do
-  :lt ->
-    IO.puts("Data 1 jest wcześniejsza niż data 2")
-  :gt ->
-    IO.puts("Data 2 jest wcześniejsza niż data 1")
-  :eq ->
-    IO.puts("Obie daty są sobie równe")
+```elixir
+date1 = ~D[2022-01-01]
+date2 = ~D[2022-12-31]
+
+if Date.compare(date1, date2) == :lt do
+  IO.puts "date1 jest wcześniejszy"
+else
+  IO.puts "date2 jest późniejszy"
 end
 ```
-Output:
-```
-Data 1 jest wcześniejsza niż data 2
-```
+Gdy uruchomisz powyższy kod, zobaczysz wynik: "date1 jest wcześniejszy".
 
-## Wnikliwe spojrzenie:
-Porównywanie dat jest możliwe dzięki temu, że Elixir posiada moduł Date, który udostępnia funkcję compare do porównania dwóch dat. Alternatywnie, można użyć operatora `==` lub funkcji Date.diff, aby porównać daty.
+## Głębsze spojrzenie
 
-## Zobacz również:
-Oficjalny podręcznik Elixira: https://hexdocs.pm/elixir/Date.html#compare/2
+Porównywanie dat w Elixirze, jak większość języków programowania, korzysta z api's datetime. Historycznie, programiści tworzyli własne funkcje do porównywania czasu, co było niewłaściwe i skomplikowane. Dzięki wbudowanej funkcji `Date.compare`, Elixir ułatwia tę pracę.
+
+Innymi technikami porównywania dat są konwersje do sekund, a następnie porównanie tych wartości, ale Elixir radzi sobie z tym za nas, oferując wyraźne i łatwe do zrozumienia rozwiązanie.
+
+Jeśli chodzi o szczegóły implementacji, `Date.compare` zwraca `:lt` (less than), `:gt` (greater than) lub `:eq` (equals), co jest typowe dla porównywania w Elixirze. Wywołujesz tylko tę funkcję, podając dwie daty jako argumenty, co czyni ją skuteczną i prostą w użyciu.
+
+## Zobacz także
+
+Jest wiele źródeł online dla tych, którzy chcą zgłębić temat dat i czasu w Elixirze. Oto kilka z nich:
+- Oficjalna dokumentacja Elixir: https://hexdocs.pm/elixir/Date.html
+- Ciekawy wpis na blogu o obsłudze czasu w Elixirze: https://dev.to/cassiozen/dates-and-time-for-elixir
+- Przewodnik po DateTime w Elixirze na stronie Elixir School: https://elixirschool.com/pl/lessons/basics/date_time/

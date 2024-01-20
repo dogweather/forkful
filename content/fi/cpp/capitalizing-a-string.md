@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isointa kirjainta käyttäväksi"
-html_title:           "C++: Merkkijonon muuttaminen isointa kirjainta käyttäväksi"
-simple_title:         "Merkkijonon muuttaminen isointa kirjainta käyttäväksi"
+title:                "Merkkijonon isoilla kirjaimilla"
+html_title:           "C++: Merkkijonon isoilla kirjaimilla"
+simple_title:         "Merkkijonon isoilla kirjaimilla"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Capitalizeeraus on prosessi, jossa merkkijonon ensimmäinen kirjain vaihdetaan isoon kirjaimeen. Tämä tehdään yleensä siistimään syötteenä olevaa tietoa tai parantamaan luettavuutta. Koodaajat käyttävät tätä tekniikkaa esimerkiksi kirjoittaessaan otsikoita tai luetteloidessaan tietoja aakkosjärjestyksessä.
+## Mitä & miksi?
 
-## Miten:
-### Esimerkki 1:
+Merkkijonojen muuntaminen isoiksi kirjaimiksi tarkoittaa, että jokainen merkkijonon kirjain muutetaan isoksi kirjaimeksi. Ohjelmoijat tekevät tämän yleisimmin tiedon käsittelyssä ja vertailussa, erityisesti silloin kun halutaan tehdä kirjainkoosta riippumattomia vertailuja.
+
+## Kuinka:
+
 ```C++
-#include <iostream>
-#include <string>
-#include <cctype>
-using namespace std;
-
-int main() {
-    string s = "tämä on testi";
-    s[0] = toupper(s[0]);
-    cout << s << '\n';
-
-    return 0;
-}
-
-```
-Tulostus: "Tämä on testi"
-
-### Esimerkki 2:
-```C++
-#include <iostream>
-#include <string>
 #include <algorithm>
+#include <cctype>
+#include <iostream>
+#include <string>
+
+// Funktio joka muuntaa merkkijonon isoiksi kirjaimiksi
+void muutaIsoiksiKirjaimiksi(std::string &s) {
+    std::transform(s.begin(), s.end(), s.begin(), 
+        [](unsigned char c){ return std::toupper(c); }
+    );
+}
 
 int main() {
-    std::string s = "esimerkki TEKSTI";
-    std::transform(s.begin(), s.end(), s.begin(), ::tolower);
-    std::transform(s.begin(), s.begin()+1, s.begin(), ::toupper);
-    std::cout << s << '\n';
-    
+    std::string s = "tervetuloa c++ ohjelmointiin!";
+    muutaIsoiksiKirjaimiksi(s);
+    std::cout << s << std::endl;  // TULOS: TERVETULOA C++ OHJELMOINTIIN!
     return 0;
 }
 ```
-Tulostus: "Esimerkki teksti"
 
-## Syväsukellus:
-Capitalizeerauksen alkuperä juontaa juurensa kirjoitustyylistä, jossa lauseet alkoivat isoilla kirjaimilla ja jatkuvat pienillä. Tämä oli alun perin helpottamaan lukemista, mutta nykyään sitä käytetään lähinnä visuaalisiin tarkoituksiin. Joissakin ohjelmointikielissä kuten Pythonissa, capitalizeeraus sisältyy valmiiksi merkkijonojen muokkausmetodeihin. Myös muita vaihtoehtoisia tapoja capitalizeeraukseen on kehitetty, kuten kirjahyllykapselointi, joka muuttaa merkkijonon jokaisen sanan ensimmäisen kirjaimen isoksi.
+## Syvempi sukellus:
+
+Historiallisesti merkkijonojen muuntaminen isoiksi kirjaimiksi on ollut yksinkertainen tapa tehdä vertailuja, jotka ovat herkkiä kirjainkoostumiselle. 
+
+Kuten näemme, C++ tarjoaa erittäin tehokkaan ja yksinkertaisen tavan tehdä tämä `std::toupper` funktion avulla , joka on osa standardikirjastoa. Voimme myös käyttää `std::transform` funktiota läpikäymään merkkijonon ja soveltamaan `std::toupper` funktiota jokaiseen merkkiin.
+
+Muut ohjelmointikielet saattavat tarjota myös muut metodit tai funktiot merkkijonojen käsittelyyn. Esimerkiksi Pythonissa löytyy sisäänrakennettu `upper` metodi.
 
 ## Katso myös:
-- C++ dokumentaatio merkkijono-olioille: [string](https://www.cplusplus.com/reference/string/)
-- Lisää esimerkkejä capitalizeerauksesta: [Capitalization In C++](https://www.geeksforgeeks.org/capitalization-in-cpp/)
+
+- C++ Standard Library: http://www.cplusplus.com/reference/
+- Transform function in C++ STL: https://www.geeksforgeeks.org/stdtransform-c-stl/?ref=lbp
+- ASCII Table: https://ascii.cl/

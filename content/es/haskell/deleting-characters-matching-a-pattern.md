@@ -1,6 +1,6 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Haskell: Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## ¿Qué y por qué?
 
-La eliminación de caracteres que coinciden con un patrón es una técnica común en la programación para eliminar ciertos caracteres específicos de una cadena de texto. Los programadores utilizan esta técnica para limpiar y formatear datos, haciendo que la información sea más legible para las computadoras y los humanos.
+Eliminar caracteres que coinciden con un patrón es el proceso de buscar y quitar caracteres específicos de una cadena. Los programadores realizan esta tarea para limpiar los datos, mejorar el formato o filtrar información innecesaria.
 
 ## Cómo:
 
-```Haskell
--- Eliminar todas las letras minúsculas de una cadena
-deleteLowercase :: String -> String
-deleteLowercase = filter (not . isLower)
-```
-
-** Input: ** "Hola Mundo"
-** Output: ** "HM"
+En Haskell, utilizamos la función `filter` junto con las funciones `notElem` y `delete` del módulo `Data.List` para eliminar caracteres que coinciden con un patrón. Aquí tienes un ejemplo:
 
 ```Haskell
--- Eliminar todos los dígitos de una cadena
-deleteDigits :: String -> String
-deleteDigits = filter (not . isDigit)
+import Data.List
+
+eliminarCaracteres :: String -> String -> String
+eliminarCaracteres patrones texto = filter (`notElem` patrones) texto
 ```
 
-** Input: ** "123abc456def"
-** Output: ** "abcdef"
+Y así es como se ve en acción:
 
-## Profundizando:
+```Haskell
+main = do
+    let texto = "Desarrollo de Software en Haskell"
+    let patrones = "aeiouAEIOU"
+    putStrLn (eliminarCaracteres patrones texto)
+```
 
-La eliminación de caracteres que coinciden con un patrón se ha utilizado desde los primeros días de la programación para manipular y limpiar datos. Antes de que existieran funciones de alto nivel en los lenguajes de programación, los programadores tenían que utilizar bucles y condicionales para realizar esta tarea.
+La salida sería:
 
-Hoy en día, hay alternativas a la eliminación de caracteres que coinciden con un patrón, como el uso de expresiones regulares o funciones de biblioteca especializadas. Estas alternativas ofrecen una mayor flexibilidad y facilidad de uso, pero no siempre son tan eficientes como la eliminación de caracteres directa.
+```Haskell
+"Dsrll d Sftwr n Hskll"
+```
 
-En Haskell, la función `filter` es la que se encarga de la eliminación de caracteres que coinciden con un patrón. Utiliza la función `isLower` y `isDigit` para comprobar si un carácter es una letra minúscula o un dígito, y luego filtra la lista de caracteres en función de eso. Esta implementación es bastante sencilla y eficiente, lo que la hace ideal para su uso en la programación diaria.
+## Inmersión profunda
 
-## Ver también:
+Históricamente, el concepto de 'patrones de coincidencia' tiene sus raíces en el mundo de las expresiones regulares, con uso muy frecuente en lenguajes de programación como Perl y Ruby.
 
-- [Documentación oficial de filter en Haskell] (https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:filter)
-- [Tutorial sobre expresiones regulares en Haskell] (https://wiki.haskell.org/Regular_expressions)
-- [Librería de funciones para manipulación de cadenas en Haskell] (https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text-Internal.html)
+Alternativamente, puedes usar una comprensión de lista para conseguir el mismo resultado, aunque la legibilidad del código puede ser debatible:
+
+```Haskell
+eliminarCaracteres :: String -> String -> String
+eliminarCaracteres patrones texto = [ c | c <- texto, c `notElem` patrones ]
+```
+
+La implementación de nuestra función es directa, usamos funciones de alto orden que aceptan funciones como argumentos. De esta manera, `filter` acepta la función `notElem`, la cual comprueba que un elemento no está contenido en la lista `patrones`.
+
+## Ver también
+
+Aquí tienes algunos recursos útiles para profundizar:
+
+* [Introducción a Haskell](http://learnyouahaskell.com/chapters)
+* [Documentación de la Biblioteca estándar de Haskell](https://www.haskell.org/onlinereport/standard-prelude.html)
+* [Expresiones Regulares en Haskell](https://wiki.haskell.org/Regular_expressions)
+* [El módulo Data.List de Haskell](http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html)

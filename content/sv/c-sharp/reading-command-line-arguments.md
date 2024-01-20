@@ -1,6 +1,6 @@
 ---
 title:                "Läsa kommandoradsargument"
-html_title:           "C#: Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
 simple_title:         "Läsa kommandoradsargument"
 programming_language: "C#"
 category:             "C#"
@@ -11,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Läsning av kommandoradsargument är en vanlig praxis bland programmerare för att få åtkomst till information som användaren skriver in vid körning av ett program. Genom att läsa in dessa argument kan programmeraren göra sitt program mer användarvänligt och addera olika funktioner baserat på användarens input.
 
-## Hur man gör:
+Kommandoradsargument läses in för att skicka data till ett program vid körning. Detta gör programmering flexibelt och anpassningsbart till olika användningssituationer.
+
+## Hur gör man:
+
 ```C#
-// Kodexempel för läsning av kommandoradsargument:
 static void Main(string[] args)
 {
-    // Läs in argumentslista från kommandoraden
-    string[] arguments = Environment.GetCommandLineArgs();
-
-    // Loopa igenom arguments och skriv ut dem
-    foreach (string argument in arguments)
+    foreach (string arg in args)
     {
-        Console.WriteLine(argument);
+        Console.WriteLine("Argument: " + arg);
     }
 }
 ```
-Exempel på hur programmet kan köras från kommandoraden och dess output:
+
+Om du kör programmet med argumenten `hej värld`, kommer output att vara:
+
+```text
+Argument: hej
+Argument: värld
 ```
-> myProgram.exe arg1 arg2
-arg1
-arg2
-```
 
-## Djupdykning:
-Historiskt sett har kommandoradsargument varit en vanlig metod för att konfigurera och köra program på operativsystem som DOS och Unix. Idag används det fortfarande flitigt även i modernt operativsystem som Windows och macOS.
+## Djupt Dyk
 
-Det finns dock alternativ till kommandoradsargument, som till exempel att använda konfigurationsfiler eller grafiska användargränssnitt (GUI). Valet av metod beror oftast på programmerarens personliga preferenser och vilket som passar bäst för programmet i fråga.
+(1) Historiskt kontext: Kommandoradsargument har använts i decennier, återifrån tiden då datorns gränssnitt inte var grafiska utan textbaserade.
 
-Implementeringsdetaljer för läsning av kommandoradsargument kan skilja sig mellan olika programmeringsspråk, men principen är densamma. Det är viktigt att hantera eventuella fel och ogiltiga argument på ett säkert sätt för att undvika programkrascher.
+(2) Alternativ: Ett alternativ till kommandoradsargument är att använda filinmatning och -utdata, men detta kan vara långsammare och kräver mer kod.
 
-## Se även:
-- [Dokumentation för Environment.GetCommandLineArgs metoden (Microsoft Docs)](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=net-5.0)
-- [Kommandoradsargument (Wikipedia på svenska)](https://sv.wikipedia.org/wiki/Kommandoradsargument)
+(3) Implementeringsdetaljer: I C# samlas kommandoradsargument i en array av strängar som skickas till `Main`-metoden. Arguments index bestämmer ordningen på kommandoradsargument.
+
+## Se Även
+
+För mer information om att använda kommandoradsargument i C#, se följande länkar: 
+
+- Microsoft's [Command-Line Arguments Tutorial](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
+- En StackOverflow-diskussion om [Command Line Arguments in C#](https://stackoverflow.com/questions/490570/command-line-arguments-in-c-sharp)
+- Artikel på GeeksforGeeks: [Command Line Parameters in C#](https://www.geeksforgeeks.org/command-line-parameters-in-c-sharp/)

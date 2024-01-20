@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Gleam: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,23 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wysyłanie zapytania HTTP to podstawowa czynność w programowaniu. Polega ona na wysłaniu zapytania do serwera przez program i otrzymaniu odpowiedzi. Programiści wykonują tę czynność w celu pobrania informacji z zewnętrznych źródeł lub komunikacji z innymi programami.
+## Co to i dlaczego?
+Wysyłanie żądania HTTP to proces, w którym klient (np. przeglądarka) prosi o dane od serwera. Programiści robią to, aby pobierać, wysyłać lub aktualizować dane na serwerach - to jest podstawą wszelkiej interakcji sieciowej.
 
-## Jak to zrobić:
+## Jak to zrobić?
+Oto przykład kodu w Gleam, który pokazuje, jak wysłać żądanie HTTP:
+
 ```Gleam
-
-import gleam/http
-
-let res = http.send("https://www.example.com")
-// Tutaj zmienna 'res' będzie zawierać odpowiedź serwera
-
+  import gleam/http.{Request}
+  
+  let url = http.Uri.parse("https://example.com")
+  let request = Request.get(url)
+  let result = http.send(request)
 ```
 
-## W toku:
-Wysyłanie zapytania HTTP było możliwe dzięki rozwojowi protokołu HTTP w latach 90. Alternatywami dla tej metody komunikacji są między innymi protokoły FTP czy SSH. W Gleam istnieje moduł "http" umożliwiający wysyłanie zapytań i odbieranie odpowiedzi. Implementacja tego modułu jest oparta na języku Erlang, co zapewnia szybkość i niezawodność.
+Po uruchomieniu powyższego kodu, Gleam wyśle żądanie GET do "https://example.com" i zwróci wynik.
 
-## Zobacz także:
-- Oficjalna dokumentacja Gleam: https://gleam.run/
-- Moduł "http" Gleam: https://gleam.run/modules/gleam/http/latest/
-- Wprowadzenie do programowania w Gleam: https://medium.com/@lpil/introduction-to-gleam-f818a1f489e0
+## Pogłębienie tematu
+1. W przeszłości, żądania HTTP były wysyłane przy użyciu surowego tekstu, co było niewydajne i podatne na błędy. Dzisiaj, języki takie jak Gleam gwarantują, że żądanie jest prawidłowo sformatowane i bezpieczne.
+
+2. Alternatywami dla `http.send` w Gleam są różne biblioteki HTTP dostępne w innych językach, takie jak `reqwest` w Rust, `http.client` w Python, lub `axios` w JavaScript.
+
+3. Wysyłanie żądania HTTP to nie tylko wysyłanie tekstu do serwera. Za kulisami, Gleam musi nawiązać bezpieczne połączenie z serwerem, odpowiednio sformatować żądanie, a następnie przetworzyć odpowiedź serwera.
+
+## Zobacz też
+1. Dokumentacja HTTP Gleam: [link](https://hexdocs.pm/gleam/http/readme.html)
+2. Szczegółowe informacje o protokole HTTP: [link](https://developer.mozilla.org/pl/docs/Web/HTTP)
+3. Biblioteki HTTP w innych językach: [reqwest](https://docs.rs/reqwest/), [http.client](https://docs.python.org/3/library/http.client.html), [axios](https://www.npmjs.com/package/axios)

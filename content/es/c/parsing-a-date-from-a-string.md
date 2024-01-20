@@ -1,7 +1,7 @@
 ---
-title:                "Extrayendo una fecha de una cadena."
-html_title:           "C: Extrayendo una fecha de una cadena."
-simple_title:         "Extrayendo una fecha de una cadena."
+title:                "Analizando una fecha a partir de una cadena de texto"
+html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
+simple_title:         "Analizando una fecha a partir de una cadena de texto"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,45 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+---
 
-El análisis de una fecha a partir de una cadena de texto es un proceso que permite a los programadores extraer información de una fecha dada en forma de texto. Esto es útil para manipular y trabajar con fechas en formato de texto, ya sea para mostrarlas al usuario o realizar cálculos con ellas en el código.
+## ¿Qué & Por Qué?
+En programación, parsear una fecha desde una cadena es convertir un valor string a un objeto de fecha válido. Los programadores suelen hacerlo para almacenar, comparar o manipular fechas más eficazmente en el código.
 
-## Cómo hacerlo:
+## Cómo se hace:
+Aquí está un código sencillo de muestra en C para parsear una fecha desde una cadena.
 
 ```C
-#include <stdio.h>
-#include <stdlib.h>
-#include <time.h>
+#include<stdio.h>
+#include<time.h>
 
 int main() {
-  char fecha[] = "10/05/2021";
-  struct tm tm;
-  strptime(fecha, "%d/%m/%Y", &tm);
-  printf("El día de la semana es: %d\n", tm.tm_wday);
-  printf("El mes es: %d\n", tm.tm_mon + 1);
-  printf("El día del mes es: %d\n", tm.tm_mday);
-  printf("El año es: %d\n", tm.tm_year + 1900);
+    char cadena_fecha[10];
+    struct tm fecha = {0};
 
-  return 0;
+    printf("Ingrese la fecha (dd-mm-aaaa): ");
+    fgets(cadena_fecha, 10, stdin);
+
+    strptime(cadena_fecha, "%d-%m-%Y", &fecha);
+
+    printf("Fecha: \nDia: %d \nMes: %d \nAño: %d", 
+    fecha.tm_mday, fecha.tm_mon + 1, fecha.tm_year + 1900);
+  
+    return 0;
 }
 ```
+Este programa solicita al usuario una fecha, la procesa y la muestra separada en día, mes y año.
 
-Salida:
-```
-El día de la semana es: 1
-El mes es: 5
-El día del mes es: 10
-El año es: 2021
-```
+## Profundización
+Este proceso de parseo de fechas tiene más historia de la que parece a primera vista. Tradicionalmente, las fechas se representaban como cadenas en la mayoría de las aplicaciones. Sin embargo, esto presentaba problemas cuando se requería hacer cálculos o comparaciones. Así surgió la necesidad de una forma útil de convertir las cadenas de texto a objetos de fecha.
 
-## Profundizando
+Existen alternativas al método presentado. Por ejemplo, la función sscanf puede ser usada para descomponer una cadena, aunque implica una mayor complejidad y riesgo de errores.
 
-El análisis de fechas es una tarea común en la programación, especialmente en aplicaciones que manejan información sobre eventos y horarios. Algunos lenguajes de programación, como Python o JavaScript, tienen funciones integradas para analizar fechas, como `datetime.strptime()` y `Date.parse()`. En C, se puede utilizar la función `strptime()` de la librería `<time.h>` para realizar la tarea.
-
-Es importante tener en cuenta que el análisis de fechas puede variar dependiendo del formato en que se encuentra la fecha en la cadena de texto. Es necesario especificar cómo está estructurada la fecha en la cadena mediante la utilización de especificadores de formato, como `%d` para el día, `%m` para el mes y `%Y` para el año.
+Algo a tener en cuenta sobre strptime es que, según el compilador que se utilice, es posible que no admire todas las directivas de formato. En este caso, puede requerir un tratamiento adicional de las fechas.
 
 ## Ver También
+Para profundizar en este tópico, podrías echar un vistazo a los siguientes recursos:
 
-- Documentación oficial de la función strptime de C: https://www.cplusplus.com/reference/ctime/strptime/ 
-- Tutorial de análisis y manipulación de fechas en C: https://www.tutorialspoint.com/c_standard_library/time_h.htm
+- Manual GNU libc sobre fecha y tiempo: [https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html)
+- Stack Overflow acerca de parseo de fecha: [https://stackoverflow.com/questions/321849/strptime-equivalent-in-c](https://stackoverflow.com/questions/321849/strptime-equivalent-in-c)

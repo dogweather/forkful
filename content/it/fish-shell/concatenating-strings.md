@@ -1,6 +1,6 @@
 ---
 title:                "Concatenazione di stringhe"
-html_title:           "Fish Shell: Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
 simple_title:         "Concatenazione di stringhe"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+## Che Cosa & Perché?
 
-Concatenare le stringhe è un processo che unisce più stringhe per formare una nuova stringa più lunga. I programmatori spesso fanno ciò per combinare informazioni provenienti da diverse fonti o per creare un output più complesso.
+La concatenazione delle stringhe è l'operazione che unisce due o più stringhe in una sola. I programmatori la usano per creare dinamicamente le stringhe, per esempio, creando percorsi di file o messaggi per l'utente.
 
-## Come fare:
+## Come si fa:
 
-Codice di esempio:
+Nell'esempio seguente, vediamo come concatenare stringhe in Fish Shell usando l'operatore `string join`.
 
+```Fish Shell
+# Definiamo due variabili
+set nome "Mario"
+set cognome "Rossi"
+
+# Concateniamo le stringhe
+set nome_completo (string join " " $nome $cognome)
+
+# Stampa il risultato
+echo $nome_completo
 ```
-Fish Shell> set nome "Mario"
-Fish Shell> set cognome "Rossi"
-Fish Shell> echo "Benvenuto $nome $cognome"
-Benvenuto Mario Rossi
+
+Output:
+```
+Mario Rossi
 ```
 
-In questo esempio, il comando `echo` viene utilizzato per stampare la stringa "Benvenuto" seguito dalla variabile `$nome` e dalla variabile `$cognome`, che vengono concatenati per formare una sola stringa.
+## Approfondimento
 
-## Approfondimento:
+Prima di Fish Shell, le shell script avevano modi differenti per concatenare le stringhe. Alcune usavano l'operatore '+', altre usavano l'operatore '.'. Fish Shell ha introdotto il comando `string` per unificare le operazioni sulle stringhe in un unico comando. Sebbene ci siano alternative, come `set -x`, la maggior parte dei programmatori preferisce `string join` per la sua leggibilità.
 
-**Contesto storico**: Il concetto di concatenazione delle stringhe è stato introdotto negli anni '60 con il linguaggio di programmazione ALGOL 60.
+In termini di implementazione, quando si esegue `string join`, Fish Shell concatena le stringhe in memoria prima di assegnarle alla variabile di destinazione. Questo è più efficiente, ma può utilizzare più memoria se le stringhe sono molto lunghe.
 
-**Alternative**: Alcune alternative al concatenamento delle stringhe includono l'utilizzo di uno specifico carattere come separatore tra le stringhe e l'utilizzo di un linguaggio di programmazione che supporta l'interpolazione delle stringhe come Python.
+## Per Saperne di Più
 
-**Dettagli di implementazione**: In Fish Shell, è possibile concatenare le stringhe utilizzando il comando `string join` o il comando `string append` per aggiungere una stringa alla fine di un'altra.
+Per saperne di più sulla concatenazione di stringhe in Fish Shell, consulta le seguenti risorse:
 
-## Vedi anche:
-
-Per ulteriori informazioni sul concatenamento delle stringhe in Fish Shell, puoi consultare la documentazione ufficiale su [Fish Shell documentation](https://fishshell.com/docs/current/tutorial.html#tut_concat).
+- Documentazione ufficiale di Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Tutorial su string join: [https://fishshell.com/docs/current/cmds/string-join.html](https://fishshell.com/docs/current/cmds/string-join.html)
+- Discussione su StackOverflow su come concatenare stringhe in Fish Shell: [https://stackoverflow.com/questions/21192760/concatenate-strings-in-fish-shell](https://stackoverflow.com/questions/21192760/concatenate-strings-in-fish-shell)

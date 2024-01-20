@@ -1,7 +1,7 @@
 ---
-title:                "Das Abrufen des aktuellen Datums"
-html_title:           "PowerShell: Das Abrufen des aktuellen Datums"
-simple_title:         "Das Abrufen des aktuellen Datums"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -11,57 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Abrufen des aktuellen Datums ist eine grundlegende und häufig verwendete Funktion in der PowerShell. Programmierer verwenden es, um das aktuelle Datum und die aktuelle Zeit für verschiedene Zwecke zu erhalten, wie z.B. das Erstellen von Protokollen oder das Synchronisieren von Dateien.
 
-## How to:
-Hier sind einige Beispiele, die zeigen, wie Sie das aktuelle Datum in der PowerShell abrufen können:
+Das Abrufen des aktuellen Datums ist ein grundlegender Aspekt in der Programmierung, durch den wir Zugang zu dem genauen Zeitpunkt der Ausführung einer bestimmten Code-Zeile haben. Es spielt eine unverzichtbare Rolle in Bereichen wie Protokollierung, Terminplanung und Zeitstempel für Transaktionen.
 
-1. Mit dem Befehl `Get-Date` können Sie das aktuelle Datum und die aktuelle Zeit in der Standardformatierung abrufen:
+## So geht's:
+
+Um das aktuelle Datum in PowerShell zu ermitteln, verwenden wir das Cmdlet `Get-Date`.
+
 ```PowerShell
-Get-Date
+$datum = Get-Date
+$datum
 ```
 
-Output:
-```
-Sonntag, 5. Dezember 2021 22:18:34
-```
+Als Ausgabe bekommen Sie das aktuelle Datum und die Uhrzeit:
 
-2. Sie können auch ein bestimmtes Format für das Datum angeben, z.B. `dd.MM.yyyy`, um nur den Tag, den Monat und das Jahr anzuzeigen:
 ```PowerShell
-Get-Date -Format dd.MM.yyyy
-```
-
-Output:
-```
-05.12.2021
-```
-
-3. Um das aktuelle Datum zu einem bestimmten Datum hinzu zu addieren, können Sie den Befehl `Get-Date` mit dem Parameter `AddDays` verwenden:
-```PowerShell
-(Get-Date).AddDays(7)
-```
-
-Output:
-```
-Sonntag, 12. Dezember 2021 22:18:34
-```
-
-4. Sie können auch das aktuelle Datum in einem bestimmten Zeitformat abrufen, z.B. `hh:mm:ss tt` für eine 12-Stunden-Zeitangabe mit AM/PM-Anzeige:
-```PowerShell
-Get-Date -Format hh:mm:ss tt
-```
-
-Output:
-```
-10:18:34 PM
+Samstag, 12. November 2022 08:05:42
 ```
 
 ## Deep Dive:
-- Ursprünglich wurde das Abrufen des aktuellen Datums in der PowerShell mithilfe des .NET Frameworks und der Klasse `DateTime` implementiert. Diese Klasse bietet eine umfangreiche Funktionalität für die Arbeit mit Datum und Zeit.
-- Eine Alternative zum `Get-Date` Befehl ist der Befehl `Get-Culture`, der das aktuelle Systemdatum und die aktuelle Systemzeit in einer spezifischen Kultur zurückgibt.
-- Die PowerShell bietet auch Befehle wie `New-TimeSpan` und `Measure-Command`, um Zeitintervalle und die Ausführungszeit von Befehlen zu messen.
 
-## Siehe auch:
-- [Get-Date Dokumentation auf Microsoft Docs](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/get-date)
-- [DateTime-Klasse Dokumentation auf Microsoft Docs](https://docs.microsoft.com/de-de/dotnet/api/system.datetime)
-- [Microsoft .NET Framework Dokumentation](https://dotnet.microsoft.com/download/dotnet-framework)
+Historisch gesehen wurde in PowerShell das Cmdlet `Get-Date` eingeführt, um das Datum und die Uhrzeit abzurufen. Es gibt auch Alternativen, wie die `.NET`-Methode `[DateTime]::Now`, aber in den meisten Fällen ist `Get-Date` die bevorzugte Lösung.
+
+Im Hintergrund ruft `Get-Date` die `[DateTime]::Now`-.NET Methode auf, um das aktuelle Datum und die Uhrzeit abzurufen. Es bietet auch zusätzliche Optionen, um das Format der zurückgegebenen Zeichenkette zu kontrollieren. Beispiel:
+
+```PowerShell
+$heutigesDatum = Get-Date -Format "dd-MM-yyyy"
+$heutigesDatum
+```
+
+Ausgabe:
+
+```PowerShell
+12-11-2022
+```
+
+## Siehe Auch:
+
+1. Offizielle PowerShell-Dokumentation über `Get-Date` - (https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+
+2. Microsoft .NET-Dokumentation `DateTime.Now` - (https://docs.microsoft.com/de-de/dotnet/api/system.datetime.now?view=net-5.0)
+
+3. Führung durch die grundlegenden Cmdlets in PowerShell - (https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-day-sysadmin-use/)

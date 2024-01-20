@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Lua: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+# "Mitä & Miksi?"
 
-Verkkosivujen lataaminen tarkoittaa tiedon hakemista internetistä ja sen tallentamista paikalliseen tietokoneeseen. Ohjelmoijat tekevät tätä esimerkiksi uuden sisällön hakuun tai tiedon analysointiin.
+Lataat verkkosivun kun tuot sen sisältöä tietokoneellesi nähtäväksi ilman jatkuvaa internet-yhteyttä. Ohjelmoijat tekevät tämän mm. tietojen keräämisen, verkkosivujen testaamisen tai offline-lukemiseen.
 
-## Miten:
+# "Näin se tehdään:"
 
-Esimerkiksi alla oleva koodi näyttää, kuinka voimme ladata verkkosivun käyttäen Lua-ohjelmointikieltä ja kirjastoa nimeltä "luasocket". Tämä koodi lataa google.com -sivun ja tulostaa sen sisällön.
+```Lua
+-- tarvitsemme socketin http-moduuli
+http = require("socket.http")
 
+-- Haetaan sivu
+sivun_tiedot = http.request("http://www.example.com")
+
+-- Tulostetaan sivun tiedot
+print(sivun_tiedot)
 ```
-Lua näyte 
-luaSokea = vaativa = require "lua-socket"
-local url = "http://www.google.com"
-local body, error = socket.http.request(url)
-if not body then
-    print(error)
-else
-    print(body)
-end
-```
+Tämä koodipätkä lataisi sivun www.example.com sisällön ja tulostaisi sen merkkijonona. 
 
-Tulostaessa näemme, että sivun HTML-koodi on ladattu ja tulostettu komentokehotteeseen. Tätä tekniikkaa voidaan käyttää moniin eri tarkoituksiin, kuten tiedon kaivamiseen tai tiedon visualisointiin.
+# "Syvempi sukellus":
 
-## Syventävä tarkastelu:
+Lua tarjoaa luonnollisen syntaksin verkkoyhteyksien käsittelyyn socket-kirjaston avustuksella, jonka http-moduuli auttaa erityisesti HTTP-pyyntöjen tekemisessä. Tämän tilalle voit harkita esim. wget-ohjelmaa tai curl-kirjastoa, jos tarvitset enemmän mukautettavuutta tai suoritusnopeutta.
 
-Tämä web-sivujen lataustekniikka oli vallankumouksellinen aikanaan, koska se mahdollisti verkkosivujen sisällön käsittelyn ohjelmallisesti. Nykyään on olemassa myös muita tapoja ladata verkkosivuja, kuten käyttäen REST API:a tai HTML-kasana, mutta lua-socket pysyy silti suosittuna vaihtoehtona sen yksinkertaisuuden ja nopeuden vuoksi. Tämän toteuttamiseksi lua-socket käyttää "socket" kirjastoa, joka käytännössä muodostaa yhteyden annettuun verkkosivuun ja hakee sen HTML-koodin.
+Verkkosivujen lataus Lua:lla on yksinkertaista: http.request funktio ottaa URL:n argumenttina, lähettää GET-pyynnön ja palauttaa vastauksen sisällön merkkijonona. Kuitenkin tässä voi olla haitallista se, että koko sivun sisältö ladataan kerralla muistiin. Suuret sivut voivat näin syödä muistia nopeasti, joten muista aina olla varovainen, kun luet tuntemattomia URL:ja.
 
-## Katso myös:
+# "Lue myös":
 
-- Lua-kielen opas: https://www.lua.org/docs.html
-- Lua-socket kirjaston dokumentaatio: https://luasocket.github.io/luasocket/
-- Lua-kielen foorumi: https://www.lua.org/lua-l.html
+Lua socket-kirjaston dokumentaatio (http://w3.impa.br/~diego/software/luasocket/http.html)
+
+Tutorial Lua:n http-moduulin käyttöön (https://www.tutorialspoint.com/lua/lua_http_requests.htm)
+
+Curl-kirjaston dokumentaatio (https://curl.haxx.se/libcurl/c/)

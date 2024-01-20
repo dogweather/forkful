@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que e por que?
+## O Que & Porquê?
+Ao capitalizar uma string, transformamos a primeira letra de cada palavra para maiúscula. Os programadores costumam fazer isso para melhorar a legibilidade e apresentação dos dados, como por exemplo, ao exibir nomes próprios.
 
-Capitalize uma string significa tornar a primeira letra de cada palavra em maiúscula. Programadores fazem isso para tornar o texto mais legível e bem formatado em suas aplicações.
-
-## Como fazer:
-
+## Como Fazer:
+Em Kotlin, podemos capitalizar strings usando a função `capitalize`. Veja o exemplo abaixo:
 ```Kotlin
-fun capitalizarString(palavra: String): String {
-    val palavras = palavra.split(" ")
-    var stringCapitalizada = ""
-    for (palavra in palavras) {
-        stringCapitalizada += "${palavra.capitalize()} "
-    }
-    return stringCapitalizada.trim()
+fun main() {
+    val frase = "olá, mundo!"
+    println(frase.capitalize())
 }
-
-println(capitalizarString("exemplo de texto em kotlin"))
-// Output: Exemplo De Texto Em Kotlin
+```
+Saída:
+```
+Olá, mundo!
 ```
 
-## Profundando:
-
-Historicamente, capitalizar strings era uma forma de destacar nomes próprios e títulos em textos manuscritos. Atualmente, essa prática é amplamente utilizada em programação para melhorar a legibilidade e organização de códigos, especialmente em situações onde é necessário exibir o texto em maiúsculas, como em cabeçalhos ou títulos de botões.
-
-Uma alternativa ao método acima é usar a função `replace()` para substituir a primeira letra de cada palavra pela versão capitalizada, como mostrado no exemplo abaixo:
+Se quisermos todas as palavras com a primeira letra maiúscula, podemos dividir a string em palavras e capitalizar cada uma delas:
 
 ```Kotlin
-"exemplo de texto em kotlin".replaceEachChar { if (isFirst()) it.titlecase(Locale.getDefault()) else it.toString() }
+fun main() {
+    val frase = "olá, mundo maravilhoso!"
+    
+    val fraseCapitalizada = frase.split(" ").joinToString(" ") { it.capitalize() }
+    
+    println(fraseCapitalizada)
+}
+```
+Saída:
+```
+Olá, Mundo Maravilhoso!
 ```
 
-Em termos de implementação, a função `capitalize()` é internamente chamada pelo método `titlecase()` para capitalizar a primeira letra de cada palavra, enquanto a função `replaceEachChar()` percorre a string e aplica a lógica definida pelo usuário para cada caractere.
+## Aprofundamento
+Embora a capitalização de strings pareça uma tarefa simples, sua implementação varia de acordo com o idioma e as regras de formatação. Historicamente, a capitalização se originou dos manuscritos medievais para destacar certas palavras e evoluiu para uso comum em textos e programação. 
 
-## Veja também:
+Em Kotlin, além da função `capitalize`, temos a função `replaceFirstChar` que pode ser usada para o mesmo propósito mas oferece mais controle, permitindo-nos definir como queremos alterar o primeiro caractere.
 
-- [Documentação da função `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
-- [Alternativas para capitalizar strings em Kotlin](https://www.techiedelight.com/capitalize-strings-kotlin/)
+Também vale considerar a capitalização em contextos multilíngues - a capitalização pode não funcionar da mesma maneira em diferentes idiomas. A localização adequada pode exigir o uso de bibliotecas e métodos específicos que respeitam as regras gramaticais dos idiomas em questão.
+
+## Veja Também
+[Aqui](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html) está a documentação oficial para a função `capitalize` no Kotlin.
+
+Para uma lista mais completa de funções de strings em Kotlin, consulte [esta página](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html).
+
+Para discutir tópicos mais avançados, como a capitalização correta de strings em vários idiomas, você pode explorar [esta discussão](https://stackoverflow.com/questions/5054995/how-to-capitalize-the-first-character-of-each-word-in-a-string) no StackOverflow.

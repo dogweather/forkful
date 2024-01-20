@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "Gleam: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-文字列のインポーティングが何であるかと、プログラマーがなぜそれを行うのかを説明します。
+## 何となぜ？
 
-文字列のインポーティングとは、あなたが既存のストリングを組み合わせたり、変数を埋め込んだりして、新しい文字列を作成することです。プログラマーはこれを行うことで、コードをより柔軟にし、繰り返し作業を減らし、プログラムの実行をより効率的にすることができます。
+文字列補間とは、文字列中に変数を挿入する方法です。これを行う主な理由は一貫性と見通しの良さを確保するためです。
 
-## 使い方：
-以下のコードブロック内にコーディングの例とサンプル出力を示します。Gleamの文法に従ってください。
+## やり方：
 
-```
-Gleam
-let name = "山田";
-let greeting = "こんにちは、{name}さん！";
+文字列補間を使ってみましょう。
 
-let output = interpolate("こんにちは、{name}さん！", name);
-
-assert.equal(output, greeting); // 出力は "こんにちは、山田さん！" となります。
+```Gleam 
+let name = "Yamada"
+let hello = "こんにちは、{name}さん"
+IO.println(hello)
 ```
 
-## 深堀り：
-文字列のインポーティングには、以前は文字列を結合することが一般的でした。しかし、これは繰り返し作業を伴い、バグの原因となりやすいものでした。インポーティングを使用することで、より効率的に文字列を生成できるようになりました。
+出力結果:
 
-文字列のインポーティングの代替方法として、テンプレートリテラルやフォーマット関数があります。しかし、Gleamのインポーティングはより安全であり、コンパイル時にエラーを検出することができます。
+```
+こんにちは、Yamadaさん
+```
 
-文字列のインポーティングは、Gleamで使用できる様々な型に対応しています。これにより、複雑な文字列を生成する際にも便利に使用することができます。
+## より深く：
 
-## 関連情報：
-- [Gleamドキュメント- 文字列のインポーティング](https://gleam.run/documentation/current/string-interpolation)
-- [Gleamコミュニティフォーラム](https://forum.gleam.run/t/string-interpolation-in-gleam/238)
-- [「プログラミング入門」- インポーティングとは？](https://programmingintro.com/concepts/string-interpolation)
+1. 詠み込みの歴史的背景: 古いプログラミング言語では、文字列と変数を連結するために '+' オペレータを使用していました。でも、これは扱いが難しく、エラーを起こしやすいです。幸い、現代のプログラミング言語ではこの問題を解決するために文字列補間があります。
+
+2. 代替案: 場合によっては、文字列の連結や、フォーマット指定子を使用した `printf` ような関数を使用することも可能です。
+
+3. 実装の詳細: Gleamでは、文字列補間は `{}`内に変数名を含む特殊な構文を使用して行います。内部的には、これは特定の変数名に基づいて新しい文字列を生成します。
+
+## さらに学ぶ：
+
+- Gleam公式ドキュメント: [https://gleam.run/book/tour/introduction.html](https://gleam.run/book/tour/introduction.html)
+- 文字列連結と補間: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)

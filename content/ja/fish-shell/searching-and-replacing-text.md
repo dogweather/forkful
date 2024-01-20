@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Fish Shell: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,65 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か&なんで?
+## 何となぜ？
 
-テキストの検索と置換とは何かを説明し、プログラマーがそれをする理由を説明します。
+テキストの検索と置換は、誤ったコードや要素を特定しそれらを正しいものに修正する過程を指します。プログラマは、コードの品質を向上させ、バグを早期に検出するためにこの技術を良く利用します。
 
-##やり方:
+## どうやって：
 
-```
-Fish Shellを使用して、テキストの検索と置換を行う方法を以下のコーディング例と出力のサンプルを用いて説明します。
-
-```
-
-### 文字列の検索と置換
+Fish Shellでは、`string replace` コマンドを使用してテキストの置換を行うことができます。以下にその例を示します:
 
 ```
-#文字列の検索と置換
-set my_string "こんにちは!"
-echo $my_string
-# 出力: こんにちは!
-
-# 文字列の置換
-set new_string (echo $my_string | sed 's/こんにちは/Hello/')
-echo $new_string
-#出力: Hello!
+Fish Shell
+> set sample_text "I love sushi"
+> echo $sample_text | string replace "sushi" "ramen"
+I love ramen
 ```
 
-### ファイル内のテキストの検索と置換
+このスクリプトは"sample_text"という変数に"I love sushi"と指定し、その後`string replace`を使用して"sushi"を"ramen"に置換します。結果として"I love ramen"が出力されます。
 
-```
-#ファイル内のテキストの検索と置換
-set file_name my_file.txt
+## ディープダイブ：
 
-# 検索したい文字列
-set search_string "Hello"
-# 置換したい文字列
-set replace_string "こんにちは"
+テキストの検索と置換は、歴史的に長い間プログラマによって使用されてきました。古くは、1970年代に初めて導入されたUNIXの`sed`コマンドがそのよく知られた例です。 
 
-# ファイル内のテキストを検索し、置換する
-sed -i 's/'$search_string'/'$replace_string'/g' $file_name
+Fish Shellの`string replace`コマンドの代替としては、`sed`コマンドや`awk`コマンドなどがあります。しかし、Fish Shellのコマンドの方がデフォルトでインストールされていることが多く、それらの代替策に比べて学習コストも低いです。
 
-# 置換後のファイルの中身を確認
-cat $file_name
-```
+実装の詳細については、Fish Shellは本質的には入力されたパターンに一致する部分文字列を特定し、それを指定した文字列で置換するというプロセスを行います。
 
-## 詳細を見る:
+## 参考文献：
 
-### 歴史的な文脈
+以下に、Fish Shellとテキストの検索と置換に関するいくつかの資料を紹介します：
 
-テキストの検索と置換は、1970年代に最初に登場したUnixのツールであるsed (Stream Editor)によって導入されました。その後、他のツールやプログラミング言語でも同様の機能が実装されました。
-
-### 代替手段
-
-Fish Shellを使用せずにテキストの検索と置換を行うには、他のシェルやテキストエディタ、プログラミング言語を使用することができます。例えば、bashシェルでは、`sed`コマンドを使用してテキストの検索と置換を実行できます。
-
-### 実装の詳細
-
-Fish Shellは、検索と置換のために標準のUnixツールであるsedとawkを使用しています。これらのツールは、正規表現やパターンマッチングを使用してテキストを検索・置換することができます。
-
-## 関連情報を見る:
-
-- [fish shell公式ウェブサイト](https://fishshell.com/)
-- [Fish Shell on GitHub](https://github.com/fish-shell/fish-shell)
-- [sed - Linux Command](https://www.computerhope.com/unix/used.htm)
+1. [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)
+2. [Fish Shell's string replace - StackOverflow](https://stackoverflow.com/questions/3293786/find-and-replace-in-fish-shell)
+3. [Fish Shell Tutorial - Ryuichi](https://tutorial.ryuichi.io/fish-shell-tutorial/replace-text)

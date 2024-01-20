@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Javascript recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,47 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page is the process of retrieving information from a website and saving it on your computer. Programmers often do this for tasks such as web scraping, data analysis, or building applications that require data from the web.
+Downloading a webpage is grabbing a copy of its HTML, CSS, and other data. Programmers do this for various reasons, like creating offline versions of sites, scraping the data for analysis, or automated testing of web functionalities.
 
 ## How to:
 
-To download a web page in Javascript, we can use the built-in `fetch` function. This function takes in the URL of the webpage we want to download and returns a promise that we can use to access the webpage's data. Here is an example of using `fetch` in action:
+In JavaScript, you can use several methods to download a webpage. One common library for this is `Axios`, due to its promise-based, browser-compatible feature set. Here's an example:
 
 ```Javascript
-fetch("https://www.example.com")
-  .then(response => {
-    // do something with the response data
+const axios = require('axios');
+const fs = require('fs');
+
+axios.get('http://example.com')
+  .then(function (response) {
+    fs.writeFileSync('example.html', response.data);
   })
-  .catch(error => {
-    // handle any error that may occur
+  .catch(function (error) {
+    console.log(error);
   });
 ```
-
-We can also use `async/await` syntax to make our code more readable. Here's an example:
-
-```Javascript
-async function fetchWebpage() {
-  try {
-    const response = await fetch("https://www.example.com");
-    // do something with the response data
-  } catch (error) {
-    // handle any error that may occur
-  }
-}
-
-fetchWebpage();
-```
+Running this script will create a copy of the `example.com` home page as `example.html` in your script’s directory, or print an error to the console.
 
 ## Deep Dive:
 
-Webpage downloading has been around since the early days of the internet when people used tools like wget and curl. With the rise of languages like Javascript, it has become easier to do with built-in functions like `fetch`. An alternative to using `fetch` is using libraries such as Axios or jQuery's `$.ajax` function which provide more options and customization.
+Historically, fetching web content in JavaScript was more complex. You'd have to deal with the low-level `XMLHttpRequest` API and callback functions. However, higher-level libraries like `axios`, `node-fetch` or `request` have abstracted most of the complexities, allowing for simplified, promise-based syntax.
 
-When using `fetch`, we have access to the Response object, which contains information such as the status code and headers. We can also specify the HTTP request method and add any necessary headers. 
+There are also different strategies for downloading web pages, like streaming the data for large pages or concurrent downloading for several pages at once. It's important to choose the right toolset and strategy depending on the use case.
+
+Keep in mind, downloading a webpage simply fetches its static content. For dynamic pages with a lot of JavaScript or SPA's (single page applications) like those built with React or Vue, you might need more complex tools like headless browsers.
 
 ## See Also:
 
-To learn more about the `fetch` function in Javascript, check out the following resources:
-
-- [MDN Web Docs on Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
-- [Axios library](https://github.com/axios/axios)
-- [jQuery.ajax()](https://api.jquery.com/jquery.ajax/) function.
+- [Axios documentation](https://axios-http.com/docs/intro)
+- [Node.js File System documentation](https://nodejs.org/api/fs.html)
+- [MDN Web Docs guide to using Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
+- [Puppeteer, a Node.js library for headless Chrome browser automation](https://pptr.dev)

@@ -1,6 +1,6 @@
 ---
 title:                "Analysering av html"
-html_title:           "Fish Shell: Analysering av html"
+html_title:           "C#: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,32 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Parsing av HTML er prosessen med å ta en websides kildekode og gjøre den om til et strukturert dataprogram som kan behandles av datamaskiner. Dette gjøres vanligvis for å trekke ut spesifikke data fra en nettside, for eksempel priser på produkter eller informasjon om arrangementer. Programmerere gjør dette for å automatisere oppgaver og effektivisere prosessen med å samle inn og organisere data.
+Analysere (parse) HTML er prosessen der en datamaskin leser og forstår HTML-kode. Programmerere gjør dette hovedsakelig for å manipulere, hente data fra eller endre struktur på websider.
 
-## Hvordan gjør man det?
+## Hvordan:
 
-Det er flere måter å parse HTML i Fish Shell. For eksempel kan man bruke kommandoen `curl` for å få kildekoden til en nettside og deretter behandle den. Dette kan gjøres ved å bruke vanlige kommandoer som `grep` og `sed` for å finne og manipulere spesifikke data i kildekoden. Et annet alternativ er å bruke Fish Shells HTML-parser plugin, som heter `html-parsing.fish`. Dette pluginet lar deg enkelt hente ut data fra HTML-koden ved å bruke CSS-selektorer. Begge metodene kan gi deg nyttig informasjon fra nettsider, men pluginet gjør prosessen mer strømlinjeformet og enklere.
+Her er et enkelt eksempel på hvordan du kan analisere HTML med Fish Shell:
 
 ```Fish Shell
-# Eksempel på bruk av `curl` og `grep` for å hente data fra en nettside
-curl -s https://www.example.com | grep "<h1>"
-
-# Eksempel på bruk av `html-parsing.fish` for å hente data fra en nettside
-html-parsing "https://www.example.com" "h1"
+set html "<html><body><h1>Hei Verden!</h1></body></html>"
+set begynnelsen (string match -r "<h1>" $html)
+set slutten (string match -r "</h1>" $html)
+echo (string sub -s (math $begynnelsen+4) -l (math $slutten-$begynnelsen-4) $html)
 ```
 
-Output:
+Når du kjører denne koden, får du følgende utskrift:
+
+```Fish Shell
+Hei Verden!
 ```
-<h1>Velkommen til Example.com!</h1>
-```
 
-## Dykk dypere
+## Dypdykk:
 
-Parsing av HTML er en viktig del av web-scraping, som er prosessen med å automatisk samle inn og organisere data fra nettsider. Dette har blitt en vanlig praksis blant programmerere for å hente ut informasjon fra nettsider og bruke den til en rekke formål. Før Fish Shell HTML-parser pluginet ble utviklet, var det vanlig å bruke spesifikke programmeringsspråk som Python eller Perl for å parse HTML i terminalen. Med HTML-parser pluginet blir denne prosessen enklere og mer tilgjengelig for alle Fish Shell brukere.
+Historisk sett har parsing av HTML blitt brukt siden tidlige dager av nettutvikling. Det tilbyr en effektiv måte å hente data og manipulere nettstedsinnhold på. 
 
-## Se også
+Alternativt til Fish Shell er det mange andre verktøy som også kan brukes til å analysere HTML, som Python's BeautifulSoup, Node's Cheerio og mange flere.
 
-For mer informasjon om Fish Shell HTML-parser pluginet og hvordan det kan brukes, se følgende ressurser:
+Når det kommer til implementeringsdetaljer er Fish Shell karakterisert ved sin enkelhet og lesebarhet, men det kan være mindre kraftig for komplekse oppgaver sammenlignet med noen av de andre verktøyene nevnt ovenfor.
 
-- Offisiell nettside for HTML-parser pluginet: https://github.com/oh-my-fish/plugin-html-parsing
-- En guide for å komme i gang med web-scraping: https://scrapinghub.com/blog/web-scraping-101-with-fish-shell
+## Se Også:
+
+1. [Fish Shell Dokumentasjon](https://fishshell.com/docs/current/index.html)
+2. [Python's BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+3. [Node's Cheerio](https://github.com/cheeriojs/cheerio)

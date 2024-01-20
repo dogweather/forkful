@@ -1,7 +1,7 @@
 ---
-title:                "Tulostaa virheenkorjaustulosteita"
-html_title:           "C++: Tulostaa virheenkorjaustulosteita"
-simple_title:         "Tulostaa virheenkorjaustulosteita"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
-Tulostus virheenkorjaustietoja on tärkeä osa ohjelmointia. Se tarkoittaa että ohjelma tulostaa tietoa, joka auttaa löytämään ja korjaamaan virheitä. Tämä auttaa ohjelmoijaa selvittämään miksi heidän ohjelmansa ei toimi oikein.
+## Mikä & Miksi?
 
-Kuinka tehdä se:
-Debug-tulostus tapahtuu C ++ -lohkoissa ```C ++ ... ``` . Tässä on esimerkki siitä, kuinka voit tulostaa debug-tietoja konsoliin:
+Tulosteen virheenkorjauksen tulostaminen on ohjelman suorittamisen aikana tapahtuvaa informaation tulostamista, usein konsolille. Se auttaa ohjelmoijia ymmärtämään ja korjaamaan ohjelman toiminnan virheitä tai virheitä.
 
-```C++
-#include <iostream>
+## Miten tehdään:
 
-using namespace std;
-
-int main() {
-    int x = 5;
-    cout << "X:n arvo on: " << x << endl; // Tulostaa "X:n arvo on: 5" konsoliin
-    return 0;
-}
-```
-
-Tässä on toinen esimerkki, jossa debug-tulostusta käytetään tarkistamaan, onko tietty ehto tosi:
+Käytämme C++:n sisäänrakennettua `cout`-funktiota. Tässä on perusotsikotiedosto ja kaksi erilaista tapaa esittää debug-tietoja.
 
 ```C++
 #include <iostream>
 
-using namespace std;
-
 int main() {
-    int x = 10;
-    if (x == 10) {
-        cout << "X on yhtä suuri kuin 10" << endl; // Tulostaa "X on yhtä suuri kuin 10" konsoliin
-    }
+    int val = 5;
+    std::cout << "Debug: Value is " << val << "\n";
     return 0;
 }
 ```
+Ja sample-ohjelman antama output on `Debug: Value is 5`.
 
-Syvä sukellus:
-Debug-tulostus on yleinen työkalu ohjelmoijille, ja se on ollut osa ohjelmointia jo pitkään. Ennen nykyaikaisia kehitysympäristöjä, tulostus virheenkorjaustietoja konsoliin oli yksi harvoista käytettävissä olevista työkaluista virheiden löytämiseen.
+Tai vaihtoehtoisesti voit käyttää `cerr`-funktiota:
 
-Nykyään on myös muita tapoja tulostaa debug-tietoja, kuten käyttämällä kehittäjäympäristön ominaisuuksia kuten breakpointteja ja katseluikkunoita. Nämä voivat olla tehokkaampia joissakin tilanteissa, mutta debug-tulostus on edelleen tärkeä työkalu monille ohjelmoijille.
+```C++
+#include <iostream>
 
-Katso myös:
-Tässä on muutamia linkkejä, jotka voivat olla hyödyllisiä, jos haluat oppia lisää debug-tulostuksesta:
+int main() {
+    int val = 5;
+    std::cerr << "Debug: Value is " << val << "\n";
+    return 0;
+}
+```
+Johtuen `cerr`:n erilaisesta käsittelystä, tämä tuottaa saman tuloksen, mutta tietovirta tulee eri lähteestä.
 
-- [Debug-tulostus C ++ -ohjelmoinnissa ](https://www.tutorialspoint.com/cplusplus/cpp_debugging.htm)
-- [Debug-tulostuksen käyttö Code::Blocksissa](https://www.youtube.com/watch?v=1DP6KqFoU6g)
-- [Debug-tulostuksen merkitys ohjelmoinnissa](https://www.geeksforgeeks.org/debugging-important-programming-skill/)
+## Syvempi katsaus
+
+Historiallisessa kontekstissa, ohjelmoijat ovat käyttäneet debug-tulosteita lähes yhtä kauan kuin ohjelmointikieliä on ollut olemassa. Se on yksinkertainen mutta tehokas työkalu. 
+
+C++:ssa on erilaisia vaihtoehtoja: voit käyttää `cout` standardia tiedon ulostuloa tai `cerr` virheen ulostulolokiin. Tämä on erityisen hyödyllistä, jos ohjelmasi ohjaa kaksi erillistä ulostulovirtaa.
+
+Toteutuksen yksityiskohdissa, `cout` tulostaa lopullisen tuotannon, kun taas `cerr` tulostaa ohjelman virhetulostuksiin. `cerr` on tärkeä, kun halutaan tulostaa virheet heti, koska se ei joudu mukaan puskurointiin kuten `cout`.
+
+## Katso myös
+
+C++ virheenkäsittelyn yleiskuvaus: http://www.cplusplus.com/doc/tutorial/exceptions/
+C++ IOstream Library: http://www.cplusplus.com/reference/iostream/ 
+C++ Debugging with Visual Studio: https://docs.microsoft.com/en-us/visualstudio/debugger/how-to-use-the-debugger?view=vs-2019

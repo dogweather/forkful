@@ -1,7 +1,7 @@
 ---
-title:                "Scaricando una pagina web"
-html_title:           "Python: Scaricando una pagina web"
-simple_title:         "Scaricando una pagina web"
+title:                "Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Il download di una pagina web si riferisce al processo di scaricare il contenuto di una pagina da Internet. I programmatori lo fanno per ottenere informazioni da un sito web o per analizzare il codice sorgente di una pagina.
+## Cos'è & Perché?
+Scaricare una pagina web è assegnare a un tuo programma il compito di richiedere e ricevere dati da un sito web particolare. I programmatori fanno questo per vari motivi, ad esempio per analizzare il contenuto di una pagina, rilevare alterazioni o implementare dei bot.
 
-## Come fare:
+## Come si fa:
+Ecco un modo semplice per farlo usando la libreria `requests` in Python.
+
 ```Python
-# Importa il modulo "requests"
 import requests
 
-# Utilizza il metodo "get" per scaricare il contenuto di una pagina web
-response = requests.get("https://www.esempio.com")
+url = 'http://www.esempio.it'
+risposta = requests.get(url)
 
-# Stampa il contenuto della pagina
-print(response.text)
+print(risposta.text)
 ```
+Proprio così, puoi scaricare una pagina web in soli tre righe di codice! 
 
-L'esempio sopra utilizza il modulo "requests" per scaricare il contenuto della pagina web e stamparlo. È possibile anche specificare l'indirizzo IP della pagina anziché l'URL.
+## Approfondimento
+Negli anni '90, scaricare una pagina web richiedeva codice complesso e non aveva molta utilità. Oggi, con l'aumento delle API web RESTful e dei servizi basati su cloud, scaricare una pagina web è diventato un compito comune. 
 
-## Approfondimento:
-Ci sono diversi modi per scaricare una pagina web in Python. Oltre al modulo "requests", è possibile utilizzare anche i moduli "urllib" e "urllib2". Inoltre, esistono diverse librerie di scraping come "Beautiful Soup" che semplificano il processo di estrazione delle informazioni da una pagina web.
+Ci sono molte alternative a `requests` come `urllib` e `httplib`, ma `requests` è generalmente preferita per la sua semplicità. 
 
-È importante notare che il download di una pagina web senza il permesso del proprietario potrebbe essere considerato una violazione dei diritti d'autore. Inoltre, alcune pagine web potrebbero impostare delle restrizioni per prevenire il download del loro contenuto.
+Dal punto di vista dell'implementazione, quando invii una richiesta GET utilizzando `requests.get()`, stai chiedendo al server di inviarti dei dati. Il server risponde inviandoti il codice HTML della pagina, che viene memorizzato nella variabile `response.text`.
 
-## Vedi anche:
-- Documentazione del modulo "requests": https://requests.readthedocs.io/en/master/
-- Documentazione del modulo "urllib": https://docs.python.org/3/library/urllib.html
-- Documentazione del modulo "urllib2": https://docs.python.org/3/library/urllib2.html
-- Libreria "Beautiful Soup" per lo scraping: https://www.crummy.com/software/BeautifulSoup/
-- Leggi sulla proprietà intellettuale e il web scraping: https://developer.ibm.com/open/ebooks/legal-guides-on-web-scraping-and-artificial-intelligence/
-- Esempi di codice per il download di una pagina web con diverse librerie: https://www.bogotobogo.com/python/python_network_programming_server_client_download.php
+## Vedi anche
+- [Documentazione ufficiale della libreria requests](https://docs.python-requests.org/)
+- [Come scaricare una pagina web con Python e Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/#making-the-soup)
+- [HTTP per principianti](https://developer.mozilla.org/it/docs/Web/HTTP/Overview)

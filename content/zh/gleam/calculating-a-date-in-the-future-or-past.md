@@ -1,7 +1,7 @@
 ---
-title:                "计算未来或过去的日期。"
-html_title:           "Gleam: 计算未来或过去的日期。"
-simple_title:         "计算未来或过去的日期。"
+title:                "计算未来或过去的日期"
+html_title:           "Gleam: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是日期计算？为什么程序员要做它？
+## 是什么与为什么？
 
-日期计算是指根据给定的日期和时间，在未来或过去计算出特定日期和时间。程序员经常需要进行日期计算来处理时间相关的任务，如计划任务、调度事件等。
+计算未来或过去的日期是指在当前日期基础上加减特定的时间单位，比如天、周、月、年等。程序员经常需要进行此类计算来处理和时间相关的需求，例如制定日程、预设提醒、创建日期日志等。
 
-# 如何进行日期计算？
+## 如何完成：
 
-日期计算在Gleam中非常简单，在```Gleam ...
-```代码块中输入以下代码即可： 
+使用 Gleam 进行日期计算非常直观，下面是一个计算5天后日期的代码示例：
 
-```Gleam
-import gleam/time
+```gleam
+import gleam/datetime.{Date}
+import gleam/int
 
-// 计算未来的日期
-let future = time.add_days(time.now(), 10)
+fn days_later(date: Date, days: Int) -> Date {
+    Date.add_days(date, days)
+}
 
-// 计算过去的日期
-let past = time.sub_days(time.now(), 10)
-
-// 输出结果
-time.to_string(future) // 3 days, 10 hours, 32 minutes
-time.to_string(past) // 1 year, 2 months, 3 days
+fn main() {
+    let now = Date.today()
+    let future_date = days_later(now, 5)
+    future_date
+}
 ```
+运行结果就是5天后的日期。
 
-# 深入探讨
+## 深入解析
 
-历史背景：在计算机上使用日期和时间最早可以追溯到20世纪60年代，当时的主要挑战是将公历转换为计算机可以理解的日期格式。现在，我们通过使用特定的编程语言和库来处理日期和时间，可以更轻松地完成日期计算。
+历史上，人们处理日期时间的方式各异，直到 1972 年，由于计算机科技的发展，导致我们现在的日期时间处理方案显得更为科学合理。 
 
-替代方法：除了使用Gleam，程序员也可以使用其他编程语言和库来进行日期计算，如Python中的“datetime”模块或Java中的“SimpleDateFormat”类。
+曾经没有标准库支持，开发人员不得不针对特定的编程语言自己写代码来进行日期计算。然而，这样做通常会导致一些奇怪的问题，例如无法正确处理闰年或跨年问题。
 
-实现细节：在Gleam中，日期计算依赖于标准库中的“time”模块，它提供了各种功能来处理时间和日期。在上面的示例中，我们使用了“add_days”和“sub_days”函数来计算未来和过去的日期，然后将结果转换为字符串以便输出。
+Gleam 的 `gleam/datetime` 模块提供了一种高级且标准的方式来处理日期计算。它对不同的编程语言提供了简洁一致的 API，并提供了大量的实用方法来操作和处理日期和时间。
 
-# 参考资料
+然而，你也可以选择其它库或自行实现相关的功能，但如果非要在已经有很好的轮子的情况下，还要重复地发明轮子，未免有些浪费时间。
 
-- Gleam官方文档 (https://gleam.run/) 
-- [Pythondatetime模块文档] (https://docs.python.org/3/library/datetime.html)
-- [Java SimpleDateFormat类文档] (https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+## 参考资料
+
+* Gleam 官方文档: [https://gleam.run/docs/](https://gleam.run/docs/)
+* `gleam/datetime`库文档: [https://hexdocs.pm/gleam_datetime/gleam/datetime.html](https://hexdocs.pm/gleam_datetime/gleam/datetime.html)
+* 日期计算相关的知识: [https://www.timeanddate.com/date/workdays.html](https://www.timeanddate.com/date/workdays.html)

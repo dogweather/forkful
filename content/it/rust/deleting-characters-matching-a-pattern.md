@@ -1,7 +1,7 @@
 ---
-title:                "Eliminazione dei caratteri corrispondenti ad un modello"
-html_title:           "Rust: Eliminazione dei caratteri corrispondenti ad un modello"
-simple_title:         "Eliminazione dei caratteri corrispondenti ad un modello"
+title:                "Eliminazione dei caratteri corrispondenti a un modello"
+html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-La cancellazione di caratteri che corrispondono ad un determinato pattern è una pratica comune tra i programmatori per rimuovere parti di testo indesiderate nei loro codici. Ad esempio, potresti voler eliminare tutti i commenti o spazi vuoti da un file di testo per renderlo più leggibile e meno verboso.
+# Eliminare Caratteri Corrispondenti a un Modello in Rust
 
-## Come fare:
-Ecco come puoi eseguire la cancellazione di caratteri che corrispondono ad un pattern in Rust:
+## Che Cosa e Perché?
+
+Eliminare caratteri corrispondenti a un modello significa rimuovere tutte le occorrenze di un determinato set di caratteri da una stringa. I programmatori lo fanno per ripulire i dati, normalizzare le stringhe o semplificare i test di confronto.
+
+## Come Fare:
+
+Ecco un esempio di codice che mostra come eliminare i caratteri corrispondenti a un modello usando Rust:
 
 ```Rust
-use regex::Regex;
-
 fn main() {
-    // Definisci il tuo pattern
-    let pattern = Regex::new(r"([A-Z]+)\s+([0-9]+)").unwrap();
-    
-    // Crea una stringa su cui eseguire la cancellazione
-    let testo = "COD123 abc456 DEF789";
-    
-    // Esegui la cancellazione del pattern
-    let nuovo_testo = pattern.replace_all(testo, "$1$2");
-    
-    println!("{}", nuovo_testo); 
+    let mut s = String::from("Hello, World!");
+    let chars_to_remove: &[char] = &['l', ','];
+    s.retain(|c| !chars_to_remove.contains(&c));
+    println!("{}", s);
 }
 ```
 
-Questo codice userà una libreria chiamata `regex` per definire un pattern e utilizzarlo per sostituire ogni corrispondenza con una stringa vuota. Nel nostro esempio, vogliamo rimuovere i caratteri dalla stringa iniziale e ottenere "COD123abc456DEF789" come output.
+Questo darà come output:
 
-## Approfondimento:
-La cancellazione di caratteri che corrispondono ad un pattern è spesso vista come un'alternativa più efficiente rispetto alla rimozione di singoli caratteri da una stringa. Inoltre, questa pratica è diventata più popolare con l'uso diffuso delle espressioni regolari nelle moderne programmazioni.
+```Rust
+Heo Word!
+```
 
-Per implementare questa funzione in Rust, è necessario utilizzare una libreria esterna, come `regex` o `sregex`, che forniscono funzioni di manipolazione delle stringhe basate su espressioni regolari.
+## Approfondimento
 
-## Vedi anche:
-- [Documentazione della libreria regex](https://docs.rs/regex/1.3.7/regex/)
-- [Esempi di espressioni regolari in uso in Rust](https://github.com/rust-lang/regex/tree/master/examples)
+Rust non aveva originariamente un metodo diretto per eliminare i caratteri corrispondenti a un modello. Questo è cambiato con l'aggiunta del metodo `retain` nella versione 1.53.0, che ha reso il processo molto più agevole.
+
+Una valida alternativa è usare delle espressioni regolari. Tuttavia, questo necessiterà dell'aggiunta della crate `regex`, il che potrebbe aggiungere un overhead innecessario per operazioni di stringhe relativamente semplici.
+
+Il metodo `retain` funziona iterando attraverso la stringa e mantenendo solo i caratteri che non matchano il pattern. Questo è un'operazione `O(n)`, il che la rende molto efficiente.
+
+## Vedi Anche:
+
+- Documentazione ufficiale di Rust sul metodo `retain`: [https://doc.rust-lang.org/std/string/struct.String.html#method.retain](https://doc.rust-lang.org/std/string/struct.String.html#method.retain)
+- Rust by Example - "String": [https://doc.rust-lang.org/rust-by-example/std/str.html](https://doc.rust-lang.org/rust-by-example/std/str.html)
+- Community di Rust su StackOverflow: [https://stackoverflow.com/questions/tagged/rust](https://stackoverflow.com/questions/tagged/rust)

@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Gleam recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-Starting a new project in programming means creating something new using code. It can be a web app, a mobile app, a game, or anything else you can think of. Programmers start new projects for various reasons, such as building a new and innovative product, learning a new language or technology, or simply for fun.
+## What & Why?
 
-# How to:
-To start a new project in Gleam, follow these simple steps:
+Starting a new project is the creation of a fresh idea on a blank canvas; it's where innovation births. Coders kickstart new projects to materialize designs, solve problems, create applications, or just to explore the depths of a new technology.
 
-1. Create a new directory for your project: ```mkdir my_project```
-2. Navigate to the project directory: ```cd my_project```
-3. Initialize a new Gleam project: ```gleam init```
-4. This will generate some boilerplate code to get you started, including a ```src``` folder for your source code and a ```tests``` folder for your tests.
-5. Open the ```src/main.gleam``` file and start coding your project.
-6. Once you are done, run ```gleam build``` to compile your project.
-7. You can then run your project by typing ```gleam run```.
-8. That's it! You have successfully started a new project in Gleam.
+## How to:
 
-# Deep Dive
-Gleam is a relatively new programming language, created in 2020 by Louis Pilfold and other contributors. It is a compiled, statically-typed language that runs on the Erlang Virtual Machine, making it highly performant and fault-tolerant. Starting a new project in Gleam gives you access to its powerful type system, excellent tooling, and functional programming paradigm.
+In Gleam, creating a new project is a breeze, using predefined templates, elements, and the `gleam new` command.
 
-If you are familiar with other languages like Rust, Elm, or Haskell, you will find some similarities in Gleam's syntax and features. However, Gleam has its unique features, including lightweight processes, pattern matching, and automatic memory management.
+```Gleam
+$ gleam new my_cool_project
+```
 
-In the past, starting a new project in a functional language was not as simple as it is now. With Gleam, you no longer need to worry about complicated setup processes or dependency management. The language's tooling takes care of all that for you, so you can focus on writing code and building your project.
+If you're looking for a back-end application: 
 
-# See Also
-To learn more about Gleam and its features, check out the official documentation at https://gleam.run/documentation. You can also join the vibrant community on the Gleam Discord server at https://discord.gg/RZexrjq, where you can ask questions, share ideas, and learn from other developers. Happy coding!
+```Gleam
+$ gleam new my_cool_project --template gleam/http
+```
+
+Running these commands sets up a standard, ready-to-go project architecture in a directory called "my_cool_project". 
+
+## Deep Dive 
+
+Gleam stems from the Erlang ecosystem's roots. Its 'new project' generation utilizes Rebar3 (Erlang's build tool), yielding cross-compatibility with Erlang and Elixir.
+
+Alternatively, you can also start projects manually, crafting each file and folder from scratch, but it's not recommended because of the efficiency and convenience provided by the built-in project generator.
+
+Once a project is created, it will follow a pre-defined structure:
+
+```Gleam
+src/                  # Source Gleam files
+test/                 # Test Gleam files
+rebar.config          # Rebar3 config file
+gleam.toml            # Gleam configuration file
+.gitignore            # Whitelist for version control
+```
+
+## See Also
+
+- [Gleam's Official Tutorial](https://gleam.run/tour/)
+- [Project Setup in Gleam](https://gleam.run/guides/creating-our-first-project/)
+- [Rebar3 Docs](https://www.rebar3.org/docs/getting-started)
+- [Erlang Language Basics](http://erlang.org/doc/getting_started/users_guide.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma string para letra minúscula"
-html_title:           "C#: Convertendo uma string para letra minúscula"
-simple_title:         "Convertendo uma string para letra minúscula"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Quê & Porquê?
+Converter uma string para caixa baixa em C# significa transformar todas as letras maiúsculas em minúsculas. Programadores fazem isso para padronizar os dados, garantindo a precisão de comparações e buscas.
 
-Converter uma string para letras minúsculas é um processo que transforma todas as letras maiúsculas em letras minúsculas. Isso é importante para que o programa possa procurar e comparar strings com precisão, pois letras maiúsculas e minúsculas são consideradas diferentes. Os programadores geralmente fazem isso para tornar seus códigos mais robustos e evitar erros causados por diferenças de capitalização.
-
-## Como Fazer:
-
+## Como fazê-lo:
+Aqui está um exemplo simples:
+```C#
+string strOriginal = "Fala DEV!";
+string strMinusc = strOriginal.ToLower();
+Console.WriteLine(strMinusc);
 ```
-// Código de exemplo para converter uma string para letras minúsculas
-string frase = "EXEMPLO DE STRING"; // string em letras maiúsculas
-string resultado = frase.ToLower(); // converter para letras minúsculas
+Como resultado veremos: `fala dev!`.
 
-Console.WriteLine(resultado); // saída: exemplo de string
+## Deep Dive:
+- **Contexto Histórico**: A função de conversão de string para minúsculas tem sido padrão nos idiomas de programação desde a origem do C.
+- **Alternativas**: Se você quiser converter apenas uma letra específica, pode fazê-lo, em vez de converter a string inteira.
+```C#
+char charMaiusc = 'D', charMinusc;
+charMinusc = char.ToLower(charMaiusc);
+Console.WriteLine(charMinusc);
 ```
+Resultado: `d`.
+- **Detalhes de implementação**: O código `ToLower` leva em conta as especificidades linguísticas, ou seja, funciona mesmo com caracteres especiais do português como "Ç", "Ã", etc.
 
-## Mergulho Profundo:
-
-Historicamente, o uso de letras maiúsculas e minúsculas no processo de codificação data da época em que as máquinas de datilografia eram usadas para inserir o código. Como as máquinas de datilografia tinham apenas letras maiúsculas, o hábito de usar letras maiúsculas para representar palavras-chave ou comandos se manteve até hoje. Existem alternativas para converter strings para letras minúsculas, como usar um método que verifica se duas strings são iguais independentemente da capitalização. A implementação dessa conversão geralmente envolve a utilização de uma tabela de mapeamento para substituir as letras maiúsculas pelas letras minúsculas correspondentes.
-
-## Veja Também:
-
-- Documentação oficial do método ToLower em C#: [https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-- Tutorial sobre conversão de strings para letras minúsculas em C#: [https://www.tutorialspoint.com/csharp/csharp_string_tolower.htm](https://www.tutorialspoint.com/csharp/csharp_string_tolower.htm)
-- Discussão sobre os prós e contras da conversão de strings para letras minúsculas em fóruns de programação: [https://stackoverflow.com/questions/21409709/to-lower-vs-to-lower-in-c-sharp-performance-gain-or-just-good-practice](https://stackoverflow.com/questions/21409709/to-lower-vs-to-lower-in-c-sharp-performance-gain-or-just-good-practice)
+## Ver também:
+- Documentação Microsoft sobre `ToLower`: https://docs.microsoft.com/pt-br/dotnet/api/system.string.tolower?view=net-5.0
+- Comparando strings em C#: https://docs.microsoft.com/pt-br/dotnet/csharp/how-to/compare-strings
+- Caracteres Unicode em C#: https://docs.microsoft.com/pt-br/dotnet/csharp/programming-guide/strings/how-to-use-unicode-characters-in-strings

@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
-html_title:           "Arduino: Wysyłanie żądania http z uwierzytelnieniem podstawowym"
-simple_title:         "Wysyłanie żądania http z uwierzytelnieniem podstawowym"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,70 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co i dlaczego?
+## Co i Dlaczego?
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem to proces, w którym programista pobiera dane z internetu poprzez przesłanie specjalnego żądania do serwera. Programiści często stosują tę metodę z uwagi na jej prostotę i bezpieczeństwo.
+Wysyłanie żądań HTTP z podstawowym uwierzytelnianiem to technika, którą programiści używają do komunikacji Arduino z internetowymi serwerami API. Niezbędne jest to wtedy, gdy serwer wymaga autentykacji użytkownika przed przetwarzaniem żądania.
 
-Jak to zrobić:
+## Jak to zrobić:
+
+W poniższym przykładzie, używamy biblioteki ESP8266HTTPClient do wysłania żądania GET do serwera API za pomocą podstawowego uwierzytelniania.
 
 ```Arduino
-// Uwierzytelnienie podstawowe
-#include <WiFiClientSecure.h>
-#include <ArduinoHttpClient.h>
-
-char host[] = "example.com";
-char username[] = "username";
-char password[] = "password";
+#include <ESP8266HTTPClient.h>
 
 void setup() {
-  Serial.begin(9600);
-  WiFiClientSecure client;
-  Serial.println("Connecting to WiFi");
-  Serial.println("Sending HTTP request");
-  if (client.connect(host, 443)) {
-    Serial.println("Connected to server");
-    client.println("GET / HTTP/1.1");
-    client.print("Authorization: Basic ");
-    client.println(base64Encode(username, password));
-    client.println("Host: example.com");
-    client.println("Connection: close");
-    client.println();
-  }
+    Serial.begin(115200);
+
+    HTTPClient http;
+    
+    http.begin("http://example.com"); //Specify the URL
+    http.setAuthorization("username", "password"); //Specify username/password
+    int httpCode = http.GET();
+
+    if(httpCode > 0){
+        String payload = http.getString();
+        Serial.println(payload);
+    } else {
+        Serial.println("Error in HTTP request");
+    }
+    http.end();
 }
 
 void loop() {
-  // waiting for server response
-  while (client.available()) {
-    char c = client.read();
-    Serial.print(c);
-  }
-  if (!client.connected()) {
-    Serial.println();
-    Serial.println("Server disconnected");
-    client.stop();
-    for(;;);
-  }
 }
+```
+Jeżeli wszystko pójdzie zgodnie z planem, output będzie wyglądał tak:
 
-String base64Encode(String username, String password) {
-  char auth[100] = {0};
-  strcpy(auth, username.c_str());
-  strcat(auth, ":");
-  strcat(auth, password.c_str());
-
-  char encoded[100] = {0};
-  base64_encode(encoded, auth, strlen(auth));
-
-  return String(encoded);
+```Arduino
+{
+   "username": "John",
+   "accessLevel": "admin",
+   "accountStatus": "active"
 }
 ```
 
-Głębszy zanurzenie:
+## W Głębokie Wody
 
-Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem jest stosowane od początków sieci WWW, aby zapewnić bezpieczne przesyłanie danych użytkowników. Alternatywnymi metodami są uwierzytelnianie oparte na tokenach lub uwierzytelnianie z użyciem certyfikatów SSL.
+- Kontekst historyczny: HTTP Basic Auth jest jednym z najstarszych sposobów uwierzytelniania w HTTP i jest używany do dziś z powodu swojej prostoty.
+- Alternatywy: Inne metody, takie jak uwierzytelnianie typu Digest czy token JWT, oferują więcej warstw zabezpieczeń, ale są bardziej skomplikowane w implementacji.
+- Szczegóły dotyczące implementacji: Pamiętaj, że hasła są kodowane za pomocą kodowania base64, co nie jest bezpieczne. Dlatego zawsze używaj połączenia HTTPS, gdy korzystasz z uwierzytelniania podstawowego.
 
-Zobacz także:
+## Zobacz także
 
-Dokumentacja biblioteki ArduinoHttpClient: https://www.arduino.cc/en/Reference/HttpClient
-
-Informacje na temat HTTP i uwierzytelnienia: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+1. Dokumentacja do HTTPClient: [http://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html](http://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
+2. Więcej o Basic Auth: [https://pl.wikipedia.org/wiki/HTTP_Basic_Auth](https://pl.wikipedia.org/wiki/HTTP_Basic_Auth)
+3. Poradnik Uwierzytelnianie HTTP ze stroną HTTPS: [https://create.arduino.cc/projecthub/Arduino_Scuola/http-authentication-with-httpclient-2bb90a](https://create.arduino.cc/projecthub/Arduino_Scuola/http-authentication-with-httpclient-2bb90a)

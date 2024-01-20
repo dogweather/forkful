@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Python: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,32 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Skapandet av en temporär fil refererar till skapandet av en fil som är avsedd att användas för en kort tidsperiod och sedan bli raderad. Detta är en användbar teknik för programmerare som behöver skapa en fil för tillfälligt bruk, till exempel för att lagra temporära data eller mellansteg i en process. Genom att använda temporära filer kan man undvika att skriva över befintliga filer eller skapa onödiga permanenta filer.
+## Vad och varför?
 
-## Så här:
+Att skapa en temporär fil innebär att generera en fil med data som endast är tillfällig i sin natur och raderas efter att den uppfyllt sitt syfte. Programmerare gör detta för att hantera stora datamängder, flytta information mellan olika delar av ett program eller skapa backuper under en igångsättande process.
+
+## Hur gör man:
+
+Python's `tempfile`-modulen är designad för just det här ändamålet. Nedan är ett exempel på hur man skapar en temporär fil med Python:
+
 ```Python
 import tempfile
 
-# Skapa en temporär fil och skriv innehåll till den
-with tempfile.TemporaryFile() as tf:
-    tf.write(b"Hej! Det här är en temporär fil.")
-    # Återgiv innehållet
-    tf.seek(0)
-    print(tf.read())
+# Skapa en temporär fil
+temp = tempfile.TemporaryFile()
 
-# Resultat:
-# b"Hej! Det här är en temporär fil."
+# Skriv något i den
+temp.write(b'Test text')
+
+# Gå tillbaka till början och läs innehållet
+temp.seek(0)
+print(temp.read())
+
+# Stäng och radera filen
+temp.close()
 ```
 
-## Djupdykning:
-Att använda temporära filer är en bra praxis eftersom det bidrar till en mer effektiv och organiserad kod. Istället för att skriva över befintliga filer eller skapa nya filer som sedan behöver rensas upp, kan man enkelt använda en temporär fil som sedan automatiskt raderas när programmet avslutas.
+När du kör det här skriptet, får du följande output:
 
-Alternativ till att använda ett modul som `tempfile` är att skapa en temporär fil manuellt genom att generera ett unikt filnamn och skriva till filen. Detta kan vara mer komplicerat och tidskrävande, så användning av `tempfile` modulen är oftast föredraget.
+```Python
+b'Test text'
+```
 
-En intressant detalj om skapandet av temporära filer är att det inte alltid resulterar i en faktisk fil på hårddisken. Istället kan operativsystemet skapa en virtuell fil i minnet för att öka prestandan.
+## Djupare dyk:
 
-## Se också:
-- Dokumentation för `tempfile` modulen: https://docs.python.org/3/library/tempfile.html
-- En jämförelse av olika tekniker för att skapa temporära filer i Python: https://stackoverflow.com/questions/827371/is-there-a-way-to-create-a-temporary-file-in-python
-- Stöt på problem? Diskutera dem på Python-forumet: https://www.python-forum.se/
+Att skapa temporära filer är inte unikt för Python, men det debiterades av Unix-operativsystem under 1970-talet. Alternativ inkluderar att skapa egen-hanterade temporära filer (vilket kan skapa risker för säkerhet och integritet) eller att använda minnesbaserade alternativ som Named Temporary Files.
+
+När en temporär fil skapas i Python, görs detta med hjälp av systemanrop till operativsystemet. Python ber OS att skapa en unik filplats, och delar sedan denna plats som ett filobjekt som alla andra.
+
+## Se även:
+
+För mer information om att skapa temporära filer i Python, se följande länkar:
+
+1. [Python’s Official Documentation for the tempfile Module](https://docs.python.org/3/library/tempfile.html)
+2. [Python's `tempfile` — Generate Temporary Files and Directories](https://realpython.com/python-tempfile/)
+3. [How To Create a Temporary File in Python](https://www.delftstack.com/howto/python/create-a-temporary-file-in-python/)

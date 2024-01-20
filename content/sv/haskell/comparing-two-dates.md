@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "Haskell: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför:
-Att jämföra två datum är en vanlig uppgift för programmerare. Det innebär att man kontrollerar vilket av de två datumen som är senare eller tidigare.
-
-Varför gör vi det? I många fall behöver vi veta vilket datum som är senare för att kunna sortera datum i rätt ordning eller för att beräkna antalet dagar mellan två datum.
+## Vad & Varför?
+Att jämföra två datum handlar om att bestämma vilket datum som kommer före eller efter det andra. Programmerare gör det för att delvis hantera händelser och tidslinjer i applikationer.
 
 ## Hur man gör:
+Här är ett enkelt exempel på hur man jämför två datum i Haskell:
+
 ```Haskell
-import Data.Time.Calendar (toGregorian, Day)
-import Data.Time.Calendar.OrdinalDate (fromOrdinalDate)
+import Data.Time
 
--- Comparing two dates
-compareDates :: Day -> Day -> Ordering
-compareDates d1 d2 =
-    let (y1, m1, _) = toGregorian d1
-        (y2, m2, _) = toGregorian d2
-    in compare (y1, m1) (y2, m2)
-
--- Getting the number of days between two dates
-diffDays :: Day -> Day -> Integer
-diffDays d1 d2 =
-    let (y1, _, _) = toGregorian d1
-        (y2, _, _) = toGregorian d2
-        (d1', _) = fromOrdinalDate y1
-        (d2', _) = fromOrdinalDate y2
-    in abs (d1' - d2')
+dateCompare :: IO ()
+dateCompare = do
+  let date1 = fromGregorian 2020 5 17 
+  let date2 = fromGregorian 2021 5 17
+  print (date1 < date2)
 ```
+När du kör denna kod skulle utskriften bli `True` eftersom `date1` (17 maj 2020) är tidigare än `date2` (17 maj 2021).
 
-Koderna ovan visar hur man kan jämföra två datum och beräkna antalet dagar mellan dem. Vi använder funktionerna `toGregorian` och `fromOrdinalDate` från modulerna `Data.Time.Calendar` och `Data.Time.Calendar.OrdinalDate` för att få ut datumets komponenter (år, månad, dag) och för att konvertera om ett datum till ordinalform.
+## Fördjupning
+Jämförelse av datum är en fundamental operation och har funnits lika länge som programmeringsspråk. Det finns också flera alternativ för jämförelse av datum, speciellt med bibliotek som `time` eller `datetime`. Haskell använder `Data.Time` modulen för att hantera datum och tid.
 
-## Djupdykning:
-Att jämföra datum är en vanlig uppgift, speciellt inom områden som finans och logistik där exakta datumen är avgörande. Innan de moderna dataprogrammen, var det vanligt att jämföra datum på papper eller med hjälp av en linjal.
+Haskell jämför två datum med hjälp av standardsoperatörerna (>, <, ==, etc). Innan jämförelsen omvandlar Haskell datumen till den interna representationen av dagsantalet sedan början av den gregorianska kalendern. Detta gör jämförelsen både snabb och exakt.
 
-Det finns också alternativa sätt att jämföra datum i Haskell, såsom att använda olika datumtyper eller använda funktioner från andra moduler som `Data.Time.Clock` för att hantera tidszon och tid.
+## Se även
+För mer information om datumhantering i Haskell, besök följande länkar:
 
-## Se även:
-- [Haskell documentation for Data.Time.Calendar](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar.html)
-- [Haskell documentation for Data.Time.Calendar.OrdinalDate](https://hackage.haskell.org/package/time/docs/Data-Time-Calendar-OrdinalDate.html)
-- [Haskell documentation for Data.Time.Clock](https://hackage.haskell.org/package/time/docs/Data-Time-Clock.html)
+- Haskell's [`Data.Time` module documentation](https://hackage.haskell.org/package/time-1.6.0.1/docs/Data-Time.html)
+- [A deep dive into Haskell's dates and times on StackOverflow](https://stackoverflow.com/questions/37089029/how-do-i-parse-and-format-dates-in-haskell)
+- [Comparison and Equality in Haskell tutorial](https://www.schoolofhaskell.com/school/starting-with-haskell/introduction-to-haskell/2-equality-and-comparisons)

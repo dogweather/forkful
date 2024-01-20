@@ -1,7 +1,7 @@
 ---
-title:                "Utmatning av felsökningsinformation"
-html_title:           "Elixir: Utmatning av felsökningsinformation"
-simple_title:         "Utmatning av felsökningsinformation"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Elixir Programmering: Att Skriva Ut Debug Utdata
 
-Att skriva ut debuggning är en vanlig metod som programmerare använder för att hitta fel i sin kod. Genom att skriva ut information om vad som händer i programmet vid olika steg, kan man lättare identifiera och åtgärda eventuella buggar.
+##
+## Vad och Varför?
+Att skriva ut debug utdata handlar om att spåra programutvecklingsfel genom att visa variabler eller tillstånd i koden vid körning. Det är ett viktigt steg för programmerare för att snabbt identifiera och lösa koden fel.
 
-## Hur man gör:
-
-För att skriva ut debuggning i Elixir, kan du använda funktionen IO.inspect(). Detta kommer att skriva ut värdet på en variabel eller ett uttryck. Här är ett exempel på hur man gör det:
-
-```Elixir
-iex> name = "Maria"
-iex> IO.inspect(name)
-"Maria"
-```
-
-Det finns också möjlighet att skriva ut flera variabler samtidigt genom att skriva dem i en lista:
+## Hur ska man göra det:
+Använd `IO.inspect` funktionen för att skriva ut debug information. Den returnerar samma värde som skickades till den, vilket gör det enkelt att infoga överallt i koden:
 
 ```Elixir
-iex> age = 25
-iex> city = "Stockholm"
-iex> IO.inspect([age, city])
-[25, "Stockholm"]
+IO.inspect("Hej Världen!")
 ```
+Det gäller även för mer komplexa datatyper:
 
-## Djupdykning:
+```Elixir
+IO.inspect(%{ "namn" => "Erik", "ålder" => 27})
+```
+Utdata för koden ovan blir:
+```
+"Hej Världen!"
+%{"namn" => "Erik", "ålder" => 27}
+```
+## Djupdykning
+`IO.inspect` funktionen gick live med Elixir version 1.0.0, som en bekvämlighetsfunktion för att skriva ut biståndsdata. Alternativet är att använda `IO.puts` och manuellt formatera utdatan, vilket kan vara tidskrävande och invecklat för stora datastrukturer.
 
-Att skriva ut debuggning är en viktig del av felsökning i programmering. Det hjälper till att förstå vad som pågår i koden vid olika steg och kan användas för att hitta och åtgärda fel snabbare.
+`IO.inspect` implementeras med hjälp av `Inspect` protokollet, vilket garanterar korrekt visning av alla typer av data i Elixir. Detta inkluderar allt från enkla datatyper, som strängar och heltal, till mer komplexa som kartor och tuples.
 
-Förutom att skriva ut värden på variabler och uttryck, kan du också använda dig av funktionen Logger i Elixir. Detta ger möjlighet att skriva ut meddelanden med olika nivåer av allvarlighet, vilket kan vara användbart för att filtrera och hantera utskrifter på ett mer specifikt sätt.
+## Se Även
+Fler detaljer om `IO.inspect` och `Inspect` protokollet kan hittas i Elixir's officiella dokumentation:
 
-Du kan också använda alternativ som Pry, som ger mer avancerade funktioner för att skriva ut debuggning och interagera med programmet i en körunderbrytare. Detta kan vara användbart för mer komplexa situationer där en enkel utskrift inte räcker.
-
-## Se även:
-
-- [Elixir dokumentation om IO.inspect()](https://hexdocs.pm/elixir/IO.html#inspect/2)
-- [Elixir dokumentation om Logger](https://hexdocs.pm/logger/Logger.html)
-- [Pry Elixir](https://github.com/pry/pry)
+- IO.inspect: https://hexdocs.pm/elixir/IO.html#inspect/2
+- Inspect protokollet: https://hexdocs.pm/elixir/Inspect.html

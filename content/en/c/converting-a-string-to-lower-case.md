@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "C recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "C"
 category:             "C"
@@ -12,60 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case is a common task in programming where a string is converted from containing uppercase letters to lowercase letters. This is often done to standardize input or to compare strings without worrying about the case. By converting to lower case, programmers can save time and avoid potential mistakes in their code.
+Converting a string to lower case in C programming means changing all the uppercase characters in a string to lowercase. Programmers do it to ensure case-insensitive comparisons and searches within the string.
 
 ## How to:
 
-To convert a string to lower case in C, we can use the `tolower()` function from the standard library. It takes in a character as an argument and returns its lowercase equivalent. Here's an example:
+Here is a simple example showing how to convert a string to lower case:
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main() {
-    char str[] = "HeLlo WoRLd!";
-    for (int i = 0; str[i] != '\0'; i++) {
-        str[i] = tolower(str[i]);
+void stringToLower(char s[]) {
+    for(int i = 0; s[i]; i++){
+        s[i] = tolower(s[i]);
     }
-    printf("%s", str);
 }
-```
-
-Output:
-```
-hello world!
-```
-
-We can also use the `tolower()` function with strings stored in arrays or pointers. Here's another example:
-
-```C
-#include <stdio.h>
-#include <ctype.h>
 
 int main() {
-    char *str = "ByE Bye";
-    while (*str != '\0') { 
-        *str = tolower(*str);
-        str++;
-    }
-    printf("%s", str);
+    char str[] = "HELLO, WORLD!";
+    stringToLower(str);
+    printf("%s\n", str); // Output: hello, world!
+    return 0;
 }
 ```
+In this code, a `for` loop is used to iterate over the characters in the string, and the `tolower` function from the `ctype.h` library is applied to each character.
 
-Output:
-```
-bye bye
-```
+## Deep Dive
 
-## Deep Dive:
+Historically, case manipulation functions like `tolower` have been part of the C programming language standard since its inception in 1972. It falls under the `ctype.h` header file, which contains a set of functions used to classify characters by their types — alphabetic, numeric, etc.
 
-Historically, converting strings to lower case was done by hand using ASCII codes to determine the lowercase equivalent of each character. However, this is prone to errors and can be time-consuming. Hence, the `tolower()` function was introduced in the C programming language to make this task easier and more efficient.
+The `tolower` function has a counterpart, `toupper`, which converts a character to uppercase.
 
-An alternative to using `tolower()` is the `strlwr()` function, but it is not part of the standard library and is only available in certain compilers. It also has some limitations, such as not converting extended ASCII characters.
-
-In terms of implementation, the `tolower()` function can be implemented using bitwise operations to convert the ASCII code of a character to its lowercase equivalent. This is more efficient than using a series of conditional statements.
+One alternative to using the `ctype.h` library would be to manipulate the ASCII values of characters directly. In ASCII, the difference between an uppercase letter and its lowercase equivalent is 32. However, this method is not usually recommended due to its reliance on ASCII specifics and it's less readable than using the standard library functions.
 
 ## See Also:
 
-- [ASCII code](https://www.asciitable.com/)
-- [C library functions](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_74/rtref/clibfunc.htm) for more string manipulation functions.
+1. [C Library - ctype.h](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+2. [C String manipulation functions](https://www.geeksforgeeks.org/string-handling-in-c/) 
+3. [Converting Strings and Characters to Lowercase in C](https://pagefault.blog/2021/01/15/converting-strings-and-characters-to-lowercase-in-c/)

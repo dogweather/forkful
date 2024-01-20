@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "PowerShell: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-שליחת בקשת HTTP היא פעולה נפוצה בתכנות, שבה מתבצעת בקשה לאתר אינטרנט כדי לקבל מידע מסוים. מתכנתים מבצעים פעולה זו כדי לתקשר עם שרתים וליצור תקשורת בין האפליקציות שלהם לשירותים חיצוניים ברשת.
+## מה זה ולמה? 
 
-# כיצד לבצע?
-תחת ```PowerShell ... ``` ניתן לראות כמה דוגמאות של שליחת בקשת HTTP תוך השתמשות בפקודות השונות שמציגות את הפעולה בפועל. למשתמש תופיע המידע המבוקש מהאתר המבוקש בתוך הפקודה.
+שליחת בקשת HTTP היא ביצוע בקשה לשרת על ידי שימוש בפרוטוקול HTTP. מתכנתים מבצעים את זה כדי לגשת למידע או לשלוט במאפיינים של השרת.
 
+## איך ל:
 ```PowerShell
-# דוגמא 1 
-Invoke-WebRequest 'https://www.example.com' # שולח בקשה לאתר ומציג את התוצאה המלאה של האתר
+# התקנה של מודול ה-HTTP:
+Install-PackageProvider Nuget –Force
+Install-Module -Name Powershell-InvokeWebRequestWrapper
 
-# דוגמא 2
-Invoke-WebRequest -Method GET -Uri 'https://www.example.com' # שולח בקשה מדורגת על פי הפעולה המבוקשת ומציג את התוצאה המלאה
+# שליחת בקשת GET
+$response = Invoke-WebRequest -Uri "http://your-url.com"
+# הדפסת התגובה
+$response.Content
 ```
 
-# צלילה עמוקה
-שליחת בקשת HTTP נעשית מאז שתחילת התכנות והיא נמצאת בשימוש רב בכלי תכנון ובתחומי האפליקציות השונות. פקודות אחרות כמו Invoke-RestMethod ו-Invoke-WebRequest גם הן נעשות באופן דמיוני לשליחת בקשת HTTP. חשוב לוודא שמתחברים לאתר באמצעות פרוטוקול חזק ומאובטח כמו HTTPS כדי להגן על המידע הנשלח והמקבל.
+## צלילה עמוקה
 
-# ראה גם
-למידע נוסף על שמות הפקודות ואפשרויות נוספות, בדוק את המדריך הרשמי של PowerShell על שליחת בקשת HTTP.
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7
+האם ידעת? ה-Powershell Invoke-WebRequest נוצר ב2012 כחלק מ-Powershell v3. חלופות ל-PowerShell כוללות cURL או אינטגרציה של שפות תכנות אחרות כמו Python או Node.js.
 
-למידע נוסף על פקודת Invoke-RestMethod, יש לעיין בתיעוד הרשמי של Microsoft.
-https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7
+בפרט, שימו לב שהשיטה Invoke-WebRequest של PowerShell משתמשת במתודת GET כברירת מחדל. אם ברצונך לשנות את השיטה, תוכל לעשות זאת באמצעות הפרמטר -Method.
 
-למידע מורחב על פעולת השליחה של הבקשה, אפשר לראות את מדריך הקוד הפתוח של Microsoft על Invoke-WebRequest.
-https://github.com/PowerShell/PowerShell/blob/24ad6da1993d742d28eb19613ffde1c4dd861e41/src/Microsoft.PowerShell.Commands.Utility/commands/utility/InvokeWebRequest.cs
+## ראה גם
+
+* [למידת PowerShell](https://docs.microsoft.com/he-il/powershell/scripting/overview?view=powershell-7.1): תיעוד הרשמי של Microsoft של שפת תכנות PowerShell.
+* [מסמך ה-API של פרוטוקול HTTP](https://tools.ietf.org/html/rfc2616): מסמך ה-RFC המוגדר לפרוטוקול ה-HTTP.
+* [ספר ב-Powershell Scripting](https://www.amazon.com/Windows-PowerShell-Scripting-Guide-Ed/dp/0735675112): ספר אשר מעמיק יותר לגבי שפת תכנות Powershell.

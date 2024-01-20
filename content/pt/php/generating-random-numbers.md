@@ -1,7 +1,7 @@
 ---
-title:                "Geração de números aleatórios"
-html_title:           "PHP: Geração de números aleatórios"
-simple_title:         "Geração de números aleatórios"
+title:                "Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -10,31 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que e por que?
+## O Que & Por Quê?
 
-Gerar números aleatórios é uma técnica muito utilizada na programação para produzir resultados imprevisíveis. Isso é especialmente útil em jogos e aplicações de segurança, onde a repetibilidade de um resultado pode comprometer a integridade do sistema.
+Gerar números aleatórios em programação é a criação de valores numéricos que não têm padrão ou correlação previsível. Programadores geram números aleatórios para criar cenários variados e imprevisíveis em jogos, testes de simulação e outros contextos.
 
-# Como fazer:
+## Como Fazer:
 
-Para gerar um número aleatório em PHP, podemos usar a função ```rand()```, que recebe dois parâmetros opcionais: o valor mínimo e máximo do intervalo desejado. Veja o exemplo abaixo:
+Está se sentindo sortudo? Vamos correr alguns exemplos simples utilizando a função `rand()` e `mt_rand()` do PHP, e o novo método `random_int()` introduzido no PHP 7.
 
+```PHP
+<?php
+// Usando a função rand()
+$random_num = rand(1, 100);
+echo $random_num;
+?>
 ```
-<?php 
-$num_aleatorio = rand(1, 10); // gera um número entre 1 e 10
-echo $num_aleatorio;
+
+```PHP
+<?php
+// Usando a função mt_rand()
+$random_num = mt_rand(1, 100);
+echo $random_num;
+?>
 ```
 
-A saída deste código pode ser, por exemplo, o número 7.
+```PHP
+<?php
+// Usando a função random_int()
+try {
+    $random_num = random_int(1, 100);
+} catch (Exception $e) {
+    // Conduzir lógica de tratamento de exceções aqui.
+}
+echo $random_num;
+?>
+```
 
-# Mergulho profundo:
+A saída de cada um desses scripts será um número aleatório entre 1 e 100.
 
-Historicamente, gerar números aleatórios era uma tarefa complexa e muitas vezes imprecisa. Antigamente, era comum utilizar métodos baseados em eventos aleatórios do mundo real, como lançar dados ou baralhos de cartas. Com o avanço da tecnologia, foram desenvolvidos algoritmos matemáticos mais eficientes para gerar números aleatórios.
+## Mergulho Profundo:
 
-Além da função ```rand()```, PHP também possui a função ```mt_rand()```, que usa um algoritmo mais seguro e é recomendada para aplicações que requerem um alto nível de aleatoriedade.
+O PHP, ao longo de sua história, sempre forneceu uma forma de gerar números aleatórios. No início, tínhamos apenas a função `rand()`, mas como ela não era boa o suficiente para algumas aplicações, a função `mt_rand()` foi introduzida. Esta última, baseada no algoritmo Mersenne Twister, gera números aleatórios de uma maneira insuperável, oferecendo uma combinação de velocidade e qualidade que até mesmo `rand()` não poderia alcançar.
 
-Uma alternativa ao uso das funções nativas do PHP para gerar números aleatórios é o uso de serviços externos, como APIs que fornecem números aleatórios criptografados e seguros.
+Na versão 7.x do PHP, a função `random_int()` foi introduzida. Esta função gera verdadeiros números aleatórios inteiros numa gama especificada de forma segura. Isto é extremamente importante para aplicações onde a segurança e a imprevisibilidade são necessárias, tais como na geração de tokens de segurança.
 
-# Veja também:
+Como alternativas, existem bibliotecas PHP que fornecem mais funcionalidades para gerar números aleatórios, como o RandomLib e o SecureRandom, que fornecem APIs adicionais e abstração para geração de números aleatórios em vários ambientes.
 
-- Documentação oficial do PHP sobre a função ```rand()```: https://www.php.net/manual/pt_BR/function.rand.php
-- Documentação oficial do PHP sobre a função ```mt_rand()```: https://www.php.net/manual/pt_BR/function.mt-rand.php
+## Veja Também:
+
+Quer entrar ainda mais fundo no assunto? São links úteis:
+
+- [PHP Manual on Random Functions](https://www.php.net/manual/en/book.math.php)
+- [PHP Manual on Cryptography Extensions](https://www.php.net/manual/en/book.crypt.php)
+- [RandomLib on GitHub](https://github.com/ircmaxell/random-lib)
+- [SecureRandom on GitHub](https://github.com/paragonie/random_compat)

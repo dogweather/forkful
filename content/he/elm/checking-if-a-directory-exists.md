@@ -1,7 +1,7 @@
 ---
-title:                "בדיקת קיום תיקייה"
-html_title:           "Elm: בדיקת קיום תיקייה"
-simple_title:         "בדיקת קיום תיקייה"
+title:                "בדיקה אם ספרייה קיימת"
+html_title:           "Elm: בדיקה אם ספרייה קיימת"
+simple_title:         "בדיקה אם ספרייה קיימת"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
+## מה ולמה?
+בדיקה אם תיקייה קיימת היא פעולה של מרשם את המיקום של תיקייה ובדיקה אם היא קיימת במערכת. בודקים תיקיות כדי למנוע שגיאות קריאה/כתיבה.
 
-מוודאת קיום תיקייה היא פעולה שמאפשרת למתכנת לבדוק אם תיקייה קיימת במערכת הקבצים. בעיקרון נעשה זאת כדי לוודא שאנחנו יכולים לגשת לתיקייה ולעשות עליה פעולות נדרשות לתוכנית שלנו.
-
-# כיצד לעשות?
-
-בelm, ניתן לוודא אם תיקייה קיימת באמצעות פונקציה ארוכלם המקבלת את השם של התיקייה כפרמטר ומחזירה ערך בוליאני שמציין אם התיקייה קיימת או לא. לדוגמה:
+## כיצד ל:
+בחלק זה, אנו נציג את הקוד הדרוש לבדיקה אם תיקייה קיימת באלם. אנא שים לב שאלם אינו מספק דרך ישירה לבדוק את זה, אז אנו נוכל להשתמש ב- JS interop.
+שים לב שזה יעבוד רק באמצעים של סביבת דפדפן.
 
 ```Elm
-import File
+port module Main exposing (..)
+import Html
 
-dirExists : String -> Bool
-dirExists name =
-  File.exists name
+port checkDirExists : String -> Cmd msg
+port dirExistsResult : (Bool -> msg) -> Sub msg
 ```
 
-כאשר מופעלת הפונקציה `dirExists` עם שם של תיקייה קיימת, היא תחזיר את הערך True. ואם השם של התיקייה אינו קיים, היא תחזיר את הערך False.
+אתה תצטרך להשלים דרך JS Interop.
+```JS
+app.ports.checkDirExists.subscribe(function(dirPath) {
+    var fs = require('fs');
+    fs.access(dirPath, function(error) {
+        app.ports.dirExistsResult.send(!error);
+    });
+});
+```
 
-# עומק הבנת הנושא
+כאן אנחנו משתמשים ב- 'fs.access' של Node.js כדי לבדוק אם נתיב המכיל את התיקייה קיים.
 
-## היסטוריה:
+## צלילה עמוקה
+במהלך השנים, הדרך הקבועה ביותר לבדוק אם תיקייה (או קובץ) קייםת בשפות תכנות שונות היא באמצעות פונקציה שבודקת את הנתיב. אם ישנן חריגות, מסופקים להם מחזירים שגיאה, כלול ב- Node.js, fs.existsSync או fs.open.
 
-בעבר, בשפת התכנות elm לא הייתה פונקציה מובנית לבדיקת קיום תיקייה. לכן, מתכנתים היו נאלצים ליצור פתרון בעצמם או להשתמש בספריית צד שלישי.
+במקרה שלנו באלם, קיימת מעטת סביב נתיבים חוצה תחום ('cross-platform path handling'). באופן טבעי, Elm מספקת API פשוטה ונקייה עבור מרבית המטרות. אבל לפעמים, אתה יכול להיות צריך להתממשק עם JavaScript דרך JS interop, כפי שהראינו למעלה.
 
-## אלטרנטיבות:
-
-בנוסף לפתרונות שהוזכרו לעיל, אפשר לבדוק אם תיקייה קיימת באמצעות קריאה לפעולת קורות השמחה ובדיקת הקוד שלהם. אך לעיתים, את הפעולות הללו עדיף להשאיר לפונקציות ממוחשבות כדי לאפשר למתכנתים להתמקד בפיתוח במקום בהתעסקות עם קוד שכתבו כבר לפני מספר שנים.
-
-## פרטי היישום:
-
-הפונקציה `exists` נמצאת בספריית `File` ומקבלת שני פרמטרים, שם של קובץ או תיקייה ותנאי שמציין האם לבדוק את קיום הקובץ או התיקייה. היא מחזירה ערך בוליאני כמו שהסברנו לעיל.
-
-# ראו גם:
-
-* [Official Elm Documentation on File Module](https://package.elm-lang.org/packages/elm/file/latest/File)
-* [Elm in Action: Writing a File Module](https://www.manning.com/books/elm-in-action#writing-an-elm-module-for-files)
+## ראה גם
+- [Elm Official Guide](https://guide.elm-lang.org/)
+- [Elm Language GitHub](https://github.com/elm/compiler)
+- [Working with Filepaths in Elm](https://korban.net/posts/elm/2018-11-28-working-file-paths-elm/)
+- [Node.js fs documentation](https://nodejs.org/api/fs.html)

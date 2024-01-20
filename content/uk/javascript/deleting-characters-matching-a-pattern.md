@@ -1,7 +1,7 @@
 ---
-title:                "Видалення символів, які відповідають заданому шаблону"
-html_title:           "Javascript: Видалення символів, які відповідають заданому шаблону"
-simple_title:         "Видалення символів, які відповідають заданому шаблону"
+title:                "Видалення символів, що відповідають патерну"
+html_title:           "C: Видалення символів, що відповідають патерну"
+simple_title:         "Видалення символів, що відповідають патерну"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,21 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо? 
-Видалення символів, які відповідають вказаному шаблону, є популярним завданням у програмуванні. Програмісти зазвичай виконують цю задачу, щоб очистити вхідні дані, встановити певні обмеження або перетворити рядки у більш зручний формат.
+## Що і навіщо?
 
-## Як це зробити: 
-Для видалення символів за шаблоном використовуємо метод `replace()` в Javascript. Далі вказуємо шаблон і рядок, в якому потрібно зробити заміну. Наприклад, якщо ми хочемо видалити всі цифри із рядка "Hello123World", то застосовуємо наступний код: 
-```Javascript 
-var str = "Hello123World"; 
-var newStr = str.replace(/[0-9]/g, ''); 
-console.log(newStr); // виведе "HelloWorld" 
+Видалення символів, що відповідають певному шаблону - це пошук конкретних елементів в рядках коду і їх видалення. Програмісти це роблять для оптимізації коду і виправлення помилок.
+
+## Як це зробити:
+
+Одним з простих методів є використання вбудованого методу `replace()` в JavaScript. Він шукає певний шаблон і замінює його. Щоб видалити зайве, ми просто замінимо наївність:
+
+```Javascript
+    let my_string = 'This is a test string';
+    let new_string = my_string.replace('test', '');
+    console.log(new_string);
 ```
 
-## Глибше вдивимося:
-Історичний контекст цієї задачі пов'язаний з регулярними виразами - механізмом для пошуку та заміни символів у рядках. Однак, наявні є й інші способи видалення символів за шаблоном, такі як застосування циклів та умовних операцій. Реалізація цього завдання в Javascript залежить від використання глобального модифікатора `/g` і регулярних виразів, що дозволяє докладніше налаштувати процес видалення символів.
+Вихід: `This is a  string`
+
+## Занурення в деталі:
+
+1. **Історичний контекст**: JavaScript був створений в 1995 році, і з того часу він пропонує різні способи видалення символів. Значно пізніше додали `replace()`.
+2. **Альтернативи**: Інша популярна функція JavaScript є `split()` і `join()`. `split()` розбиває рядок на масив по заданому символу, а `join()` об'єднує масив назад в рядок.
+    
+```Javascript
+    let my_string = 'This is a test string';
+    let new_string = my_string.split('test').join('');
+    console.log(new_string);
+```
+
+Вихід: `This is a  string`
+3. **Деталі імплементації**: Проте, при використанні `replace()`, за замовчуванням замінюється лише перша зустріч з шаблоном. Якщо ви хочете замінити всі збіги, використовуйте регулярні вирази з глобальним прапором /g.
+
+```Javascript
+    let my_string = 'This test is a test string';
+    let new_string = my_string.replace(/test/g, '');
+    console.log(new_string);
+```
+
+Вихід: `This  is a  string`
 
 ## Дивіться також:
-- Документація по методу `replace()` у Javascript: https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replace 
-- Регулярні вирази в Javascript: https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/RegExp 
-- Інші методи для роботи з рядками у Javascript: https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String
+
+1. [MDN Web Docs: String.prototype.replace()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+2. [MDN Web Docs: String.prototype.split()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/split)
+3. [MDN Web Docs: Array.prototype.join()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Array/join)

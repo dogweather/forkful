@@ -1,6 +1,6 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Bash: HTML 파싱"
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,22 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜?
-HTML 파싱은 HTML 문서를 분석하여 원하는 정보를 추출하는 것을 의미합니다. 프로그래머들은 이를 하는 이유는 웹 스크래핑이나 데이터 마이닝과 같은 작업을 수행하기 위해서입니다.
+## 무엇인가요 & 왜 그래야하나요?
+HTML 파싱은 웹페이지의 HTML 내용을 분석하고 원하는 정보를 얻어내는 과정입니다. 이를 통해 프로그래머는 웹페이지의 요소를 다루고 웹스크레이핑, 콘텐츠 분류 등 다양한 작업을 수행할 수 있습니다.
 
-## 방법:
+## 어떻게 하는 건가요?:
+Bash에서 `lynx`, `awk` 처럼 기본적인 CLI 도구를 사용하여 HTML을 파싱해볼 수 있습니다. 예제 코드는 아래와 같습니다.
+
 ```Bash
-# 웹페이지에서 h1 태그의 텍스트 추출하기
-curl "https://www.example.com" | grep "<h1>" | sed -e "s/<[^>]*>//g"
+#!/bin/bash
+# 우선, lynx를 사용하여 HTML을 텍스트로 변환합니다.
+lynx -dump https://google.com > google.txt
+
+# 그리고 awk를 사용하여 원하는 정보를 추출합니다.
+awk '/검색/ {print $0}' google.txt
 ```
-```Bash
-# 웹 페이지에서 특정 클래스가 지정된 모든 링크 추출하기
-curl "https://www.example.com" | grep "class=\"myLink\"" | sed -e "s/^.*href\s*=\s*\"\([^ ]*\)\".*$/\1/g"
-``` 
+이 스크립트는 https://google.com 웹페이지의 HTML을 파싱하여 '검색'이라는 단어가 포함된 라인을 출력합니다.
 
-## 깊이 들어가기:
-HTML 파싱은 인터넷이 발전하면서 생겨난 기술로, 웹 페이지의 구조와 데이터를 추출하는 데에 사용됩니다. 다른 방법으로는 DOM 파싱이 있는데, 이는 HTML 문서를 구성하는 모든 요소를 객체로 변환하여 조작하는 것입니다. 하지만 Bash에서는 일반적으로 ```grep```과 ```sed```을 사용하여 문자열을 추출하고 조작합니다.
+## 깊이 알아보기: 
+HTML 파싱은 웹의 초기 시대부터 수행되는 중요한 작업입니다. 하지만, 복잡한 HTML 페이지에 대해서는 Bash만으로 처리하기 어려울 수 있습니다. 이런 경우, Python의 BeautifulSoup나, Node.js의 Cheerio 같은 modern 라이브러리를 활용하는 것을 고려해볼 수 있습니다.
 
-## 참고자료:
-- [HTML 파싱을 위한 Bash 스크립트 예제](https://stackoverflow.com/questions/7479445/what-command-do-i-need-to-use-to-extract-particular-keystrings-using-grep/7479478#7479478)
-- [Bash에서 문자열 추출하는 방법](https://www.linuxjournal.com/content/bash-string-manipulation)
+또, 기억할 점은 Bash가 해석 가능한 정보만을 추출할 수 있다는 것입니다. JavaScript로 생성되는 동적인 내용은 다룰 수 없습니다. 이를 처리하기 위해서는 Selenium과 같은 웹 드라이버가 필요합니다.
+
+## 참고 자료:
+이 주제에 대해 더 알아보려면 아래의 링크를 참고하세요:
+
+1. BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+2. Cheerio: https://cheerio.js.org/
+3. Selenium: https://www.selenium.dev/documentation/en/

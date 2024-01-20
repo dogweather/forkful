@@ -1,7 +1,7 @@
 ---
-title:                "Großschreibung eines Strings"
-html_title:           "C: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "Einen String großschreiben"
+html_title:           "C: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,45 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist das Capitalizen einer Zeichenfolge und warum machen Programmierer es?
+## Was & Warum?
 
-Das Capitalizen einer Zeichenfolge bedeutet, dass alle Buchstaben in einer Zeichenfolge von Klein- zu Großbuchstaben umgewandelt werden. Programmierer tun dies, um die Lesbarkeit und Konsistenz von Code zu verbessern, da es bestimmte Formatierungsanforderungen gibt, die von Programmiersprachen vorgegeben werden und es einfacher ist, diese einzuhalten, wenn die Zeichenfolgen capitalisiert sind.
+Strings zu Grossbuchstaben umwandeln, bedeutet, jeden Buchstaben innerhalb eines Strings in seinen entsprechenden Grossbuchstaben umzuwandeln. Programmierer machen das hauptsächlich, um die Texteingabe zu standardisieren und unabhängig von der Eingabeform des Nutzers zu machen.
 
-So machen Sie es:
+## Anleitung:
 
-```c
-#include <stdio.h>
-#include <ctype.h>
+Das folgende ist ein einfaches C-Programm, das einen String zu Grossbuchstaben umwandelt:
+
+```C
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+
+void stringToupper(char *s) {
+   for(int i = 0; i < strlen(s); i++){
+      s[i] = toupper(s[i]);
+   }
+}
 
 int main() {
-    char string[] = "hallo, welt!";
-    int i = 0;
-
-    printf("Vor dem Capitalizen: %s\n", string);
-
-    while (string[i]) {
-        string[i] = toupper(string[i]);
-        i++;
-    }
-
-    printf("Nach dem Capitalizen: %s\n", string);
-
-    return 0;
+   char s[] = "Hallo Welt!";
+   stringToupper(s);
+   printf("%s", s);
+   return 0;
 }
 ```
+Verwenden Sie den `toupper` Funktion, um jeden Buchstaben in einen Grossbuchstaben umzuwandeln. Wenn dieses Programm ausgeführt wird, druckt es `HALLO WELT!`.
 
-Output:
+## Vertiefung:
 
-```
-Vor dem Capitalizen: hallo, welt!
-Nach dem Capitalizen: HALLO, WELT!
-```
+Die `toupper` Funktion ist teil der `ctype.h` Bibliothek und sie wurde in der frühen Version von C eingeführt. Im Kontext des Umgangs mit Strings ist sie sehr praktisch.
 
-Tiefgehende Informationen:
+Alternativ könnten wir die ASCII-Codierung verwenden, um Grossbuchstaben zu erzeugen, but `toupper` nimmt uns diese manuelle Arbeit ab. Ein weiterer Vorteil von `toupper` ist, dass sie funktioniert, auch wenn der Eingabe-String bereits Grossbuchstaben enthält.
 
-Das Capitalizen von Zeichenfolgen ist eine gängige Praxis in der Programmierung. Es stammt aus der Zeit, als Computer noch nicht in der Lage waren, Groß- und Kleinbuchstaben zu unterscheiden - daher war es einfacher, durchgehend Großbuchstaben zu verwenden. Heutzutage gibt es verschiedene Alternativen zum Capitalizen, z. B. das Konvertieren von Zeichenfolgen in Titel- oder Kamelkasus, je nach spezifischen Anforderungen des Codes. Die Implementierung des Capitalizens in C kann auch mit der Funktion `toupper()` in der Header-Datei `<ctype.h>` erfolgen, die jeden übergebenen Buchstaben in einen Großbuchstaben umwandelt.
+Die Implementierung von `toupper` kann von System zu System variieren, aber im Allgemeinen überprüft sie, ob der übergebene Charakter ein Kleinbuchstabe ist, und kehrt zurück, falls dies nicht der Fall ist. Wenn der Charakter ein Kleinbuchstabe ist, wird er durch Abzug des Unterschieds zwischen ASCII-Werten von 'a' und 'A' in einen Grossbuchstaben umgewandelt.
 
-Siehe auch:
+## Siehe auch:
 
-- [Unterschiedliche String Transformationen in C](https://stackoverflow.com/questions/14176122/string-transformations-in-c-uppercase-lowercase-titles) auf Stack Overflow
-- [Die Header-Datei <ctype.h>](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm) auf Tutorials Point
+Weitere Informationen zu den Themen in diesem Artikel finden Sie unter den folgenden Links:
+- [toupper function](https://en.cppreference.com/w/c/string/byte/toupper)
+- [ctype.h library](https://en.cppreference.com/w/c/string/byte)
+- [ASCII Table and Description](http://www.asciitable.com/)

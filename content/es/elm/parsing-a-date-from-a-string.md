@@ -1,7 +1,7 @@
 ---
-title:                "Analizando una fecha de una cadena"
-html_title:           "Elm: Analizando una fecha de una cadena"
-simple_title:         "Analizando una fecha de una cadena"
+title:                "Analizando una fecha a partir de una cadena de texto"
+html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
+simple_title:         "Analizando una fecha a partir de una cadena de texto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -12,34 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y Por Qué?
 
-Parsear una fecha de una cadena de texto es el proceso de extraer información específica de una fecha, como el día, mes y año, a partir de una cadena de texto que la contiene en un formato específico. Los programadores hacen esto para manipular y utilizar la información de la fecha en sus programas, como en la creación de calendarios o en el cálculo de la duración entre dos fechas.
+El parseo de fechas desde una cadena de texto es el proceso de convertir un string a un tipo de dato fecha. Los programadores lo hacen para manipular y trabajar más fácilmente con fechas.
 
-## Cómo:
+## Cómo Hacerlo:
+
+En Elm, puedes usar la biblioteca elm/time para parsear fechas. Aquí hay un ejemplo simple de parseo de fechas:
 
 ```Elm
-import Date exposing (fromIsoString)
+import Time
 
-Date.fromString "2021-09-30"
+tipoFecha : Time.Zone -> String -> Result String Time.Posix
+tipoFecha zona horario = 
+  Time.parse zona (Time.fromIsoString horario)
+
+-- Entrada de ejemplo
+tipoFecha Time.utc "2021-12-31T23:59:59Z"
+-- Salida: Ok (Posix 1640995199)
 ```
 
-Este ejemplo utiliza la función `fromIsoString` del módulo `Date` para convertir la cadena de texto "2021-09-30" en un valor de fecha de Elm en formato ISO. El resultado sería `Ok (Date.fromString "2021-09-30")`, lo que significa que la fecha fue parseada con éxito y se puede utilizar en el programa.
+El código anterior intenta convertir un string ISO8601 a Posix time. Las fechas parseadas serán en la zona horaria UTC.
 
-## Profundizando:
+## Inmersión Profunda
 
-### Contexto Histórico:
+Los tipos de fechas pueden ser representados de muchas maneras, pero ISO8601 es un estándar ampliamente aceptado. En Elm, puedes usar la función 'Time.fromIsoString' para parsear cadenas ISO8601. Sin embargo, esta función solo maneja la zona horaria UTC. Si necesitas parsear cadenas de fecha/hora en otras zonas horarias, deberías usar la biblioteca elm/time-extra.
 
-Antes de la introducción del estándar de formato ISO para fechas, los programadores debían lidiar con una variedad de formatos de fecha en diferentes regiones y sistemas operativos. La necesidad de parsear una fecha de una cadena de texto surgió para unificar y facilitar el manejo de esta información.
+El uso de 'Result' en Elm es una forma segura de manejar posibles errores durante el parseo de fechas. Es una práctica común en Elm donde las funciones que pueden fallar devuelven Result en lugar de arrojar excepciones.
 
-### Alternativas:
+## Ver También
 
-Aunque Elm ofrece la función `Date.fromString` para parsear fechas, existen otras herramientas y bibliotecas que pueden ser útiles dependiendo del contexto del programa, como la biblioteca `elm-community/date-extra` que ofrece funciones adicionales para manipular y formatear fechas.
+Mira la documentación oficial de Elm para más detalles sobre control de fechas y los paquetes 'Time' y 'Time.Extra': 
+- [elm/time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [elm/time-extra](https://package.elm-lang.org/packages/justinmimbs/time-extra/latest/)
 
-### Detalles de Implementación:
-
-La función `Date.fromString` utiliza el estándar de formato ISO para parsear la fecha. Esto significa que la cadena de texto debe seguir un formato específico: "YYYY-MM-DD". Si la cadena de texto no se ajusta a este formato, se lanzará un error.
-
-## También puedes ver:
-
-- [Documentación de Elm sobre manejo de fechas](https://package.elm-lang.org/packages/elm/time/latest/)
-- [Tutorial sobre manejo de fechas en Elm](https://guide.elm-lang.org/architecture/effects/time.html)
-- [Biblioteca extra de fechas para Elm](https://github.com/elm-community/date-extra)
+Por otra parte, si buscas una solución más completa que cubra también formatos de fecha más exóticos, considera la biblioteca [elm/iso8601-date-strings](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest/).

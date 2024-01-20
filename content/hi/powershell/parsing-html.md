@@ -1,7 +1,7 @@
 ---
-title:                "HTML का विश्लेषण"
-html_title:           "PowerShell: HTML का विश्लेषण"
-simple_title:         "HTML का विश्लेषण"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,36 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-पार्सिंग एचटीएमएल क्या है, यह एक प्रोग्रामर के लिए क्यों महत्वपूर्ण है।
 
-पार्सिंग एचटीएमएल एक तकनीक है जो एचटीएमएल दस्तावेजों को अनुकूलित करने के लिए उपयोग किया जाता है। यह प्रोग्रामर को दस्तावेजों के साथ काम करने को आसान बनाता है और डेटा को अधिक संस्थापित रूप से प्रदर्शित करने की अनुमति देता है। 
+HTML Parsing सिंधांत रूप से, एक HTML दस्तावेज़ को विश्लेषण करने की प्रक्रिया है, ताकि उसकी संरचना और विषय-वस्तु का पता चल सके। प्रोग्रामर्स इसे वेबसाइटों की ताजगी और विशेषज्ञता में सुधार करने के लिए इस्तेमाल करते हैं। 
 
-## कैसे करें?
-पार्सिंग एचटीएमएल करने के लिए PowerShell का उपयोग कर सकते हैं। नीचे एक उदाहरण है:
+## कैसे करें:
+
+PowerShell के साथ HTML पर्सिंग के लिए, आप `Invoke-WebRequest` कमांडलेट का उपयोग कर सकते हैं। यहाँ एक उदाहरण है:
 
 ```PowerShell
-$webpage = "https://www.example.com"
-$content = Invoke-WebRequest $webpage
-$links = $content.Links
+# वेबसाइट से HTML प्राप्त करें
+$response = Invoke-WebRequest -Uri 'https://www.example.com'
 
-foreach ($link in $links)
-{
-    Write-Output $link.href
-}
+# HTML पार्स करें
+$parsedHtml = $response.ParsedHtml
+
+# शीर्षक एलिमेंट का पाठ प्राप्त करें
+$title = $parsedHtml.getElementsByTagName('title')[0].innerText
+```
+आउटपुट:
+
+```PowerShell
+PS> $title
+"Example Domain"
 ```
 
-उपरोक्त कोड द्वारा, हम वेबपेज से लिंक हस्तानांतरित करते हुए उन्हें प्रदर्शित कर सकते हैं। आप भी एचटीएमएल तंत्र को प्रयोग करके वेबपेज से दस्तावेज भी प्राप्त कर सकते हैं।
+## गहरा डाइव
 
-## गहराई में जाये
-पार्सिंग एचटीएमएल की वजह से, हम डेटा से काम करने का आसानी से तरीका खोज सकते हैं। पहले, डेटा को सही तरीके से संरचित करना समय लेता था, लेकिन अब PowerShell जैसे टूल सहायता देते हैं जो हमें सिर्फ जरूरी जानकारी तक ही पहुंचते हैं।
-
-एचटीएमएल पार्सिंग के अलावा अन्य तरीके जैसे XPath भी हैं। यह मानक फ्रेमवर्क है जो डेटा को अधिक संस्थापित रूप से प्रकट करने की अनुमति देता है। पार्सिंग की दृष्टि से, एचटीएमएल और XPath दोनों बराबर हैं, लेकिन कुछ पाठकों के लिए XPath उपयोग में आसान हो सकता है।
+HTML पार्सिंग का इस्तेमाल 90 के दशक में हुआ था। PowerShell उपकरण मे इसे जोड़ा गया। दूसरे विकल्प में Python का BeautifulSoup library और Node.js का Cheerio library शामिल हैं। HTML पार्सिंग का कार्य पहले टैग पर ध्यान केंद्रित करने, फिर उसकी विशेषताओं पर जाने और अंत में उसके भीतर की सामग्री पर निर्भर करता है।
 
 ## और भी देखें
-यहाँ कुछ संबंधित स्रोत हैं जिनसे आप पार्सिंग एचटीएमएल के बारे में अधिक जान सकते हैं:
 
-- [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- [XPath Tutorials](https://www.w3schools.com/xml/xpath_syntax.asp)
-- [Using HTML Parsing Tools](https://www.pluralsight.com/guides/html-parsing-with-powershell)
-
-अपने कोड में HTML पार्सिंग करने के लिए PowerShell का उपयोग करके, आप अपने डेटा को अधिक संस्थापित और और सुव्यवस्थित बना सकते हैं। यह उपकरण थोड़े समय बचाने में आपकी मदद कर सकता है और आपके कोड को सुधार सकता है। आशा है कि आपको यह लेख मददगार था।
+1. [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest) के बारे में अधिक जानकारी के लिए Microsoft का डाक्युमेंटेशन देखें।
+2. Python के लिए [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) library. 
+3. Node.js के लिए [Cheerio](https://cheerio.js.org/) library.

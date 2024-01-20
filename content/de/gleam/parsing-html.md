@@ -1,7 +1,7 @@
 ---
-title:                "HTML-Verarbeitung"
-html_title:           "Gleam: HTML-Verarbeitung"
-simple_title:         "HTML-Verarbeitung"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist HTML Parsen und warum machenProgrammierer das? 
- HTML Parsen ist der Prozess, bei dem der Computer den Code einer Webseite liest und interpretiert, um die Inhalte darzustellen. Programme, die das parsen von HTML ermöglichen, werden von Programmierern verwendet, um Daten aus dem Internet zu sammeln oder Websites dynamisch zu erstellen.
+## Was & Warum?
 
-Wie geht das? 
+Das Parsen von HTML bezieht sich auf den Prozess, in dem ein HTML-Dokument analysiert und seine Struktur erfasst wird. Programmierer machen dies, um auf bestimmte Daten zuzugreifen oder Webseiten zu scrapen.
 
-Um HTML mit Gleam zu parsen, muss zunächst das Modul 'html-parser' importiert werden. Dann kann die Funktion 'parse' verwendet werden, um den HTML Code einzulesen und als strukturiertes Gleam-Datenmodell zurückzugeben. Zum Beispiel erhält man mit dem folgenden Code die Anzahl der Absätze in einem HTML Dokument:
+## Wie zu:
+
+In Gleam könnte der Code zum Parsen eines HTML-Dokuments mit der Bibliothek `gleam/http` folgendermaßen aussehen.
 
 ```Gleam
-import html-parser
+import gleam/http.{get, start_link}
 
-html = "<p>Erster Absatz</p><p>Zweiter Absatz</p>"
-
-parsed_html = html-parser.parse(html)
-
-//parsed_html enthält nun die Struktur: [{_, "p", _, [{_, _, "Erster Absatz"}]}, {_, "p", _, {_ _, _, "Zweiter Absatz"}]}]
-
-parsed_html
-|> List.length
-//Output: 2
+fn main(_) {
+  case start_link() {
+    Error(e) -> io.println(e)
+    Ok(_) ->
+      case get("https://example.com") {
+        Error(e) -> io.println(e)
+        Ok(response) -> io.println(response.body)
+      }
+  }
+}
 ```
+Führen Sie diesen Code aus und Sie werden den HTML-Inhalt der Webseite `https://example.com` auf der Konsole anzeigen.
 
-Tiefere Einblicke 
-Das Parsen von HTML hat eine lange Geschichte seit seinem ersten Auftreten in den 1990er Jahren. Viele Programmiersprachen bieten eigene Bibliotheken für das Parsen von HTML an, wie zum Beispiel BeautifulSoup in Python oder JavaScript mit Cheerio. Alternativ können auch Formatierungsregeln wie reguläre Ausdrücke verwendet werden, obwohl dies oft nicht so robust und effizient ist wie dem Einsatz von spezifischen Bibliotheken.
+## Deep Dive
 
-Implementation Details 
-Gleam verwendet das Modul 'html5ever' aus der Rust-Programmiersprache, um HTML zu parsen. Dies ermöglicht dem Gleam-Code effiziente Implementierung und Robustheit bei der Verarbeitung von HTML. Es ist wichtig zu beachten, dass HTML-Parsing ein komplexer und sich ständig weiterentwickelnder Bereich ist und daher möglicherweise nicht immer fehlerfrei durchgeführt wird.
+Das Parsen von HTML hat eine lange Geschichte, die bis in die frühen Tage des Webs zurückreicht, als Entwickler anfingen, Daten von Websites zu extrahieren. Alternativen zum Parsen von HTML sind das Screen-Scraping oder der Datenzugriff über APIs, sofern diese vorhanden sind.
 
-Weitere Informationen 
-Für weitere Informationen und Beispiele zur Verwendung von HTML-Parsing mit Gleam, besuchen Sie die offizielle Dokumentation unter: https://gleam.run/modules/html_parser.html.
+In Gleam können Sie bei der Implementierung von HTML-Parsing auf bestehende Bibliotheken wie Beautiful Soup oder Html Agility Pack zurückgreifen, wenn Sie die Interoperabilität mit Sprachen wie Python oder .NET nutzen möchten.
+
+## Siehe Auch
+
+Für weitere Informationen zu Gleam und der Verwendung von HTTP-Anfragen in Gleam, besuchen Sie bitte die offizielle Gleam-Dokumentation (https://gleam.run/docs/introduction/). Sie können auch das Gleam-Repository auf GitHub besuchen (https://github.com/gleam-lang/http) für detaillierte Beispiele und Diskussionen zur Verwendung der `gleam/http` Bibliothek.

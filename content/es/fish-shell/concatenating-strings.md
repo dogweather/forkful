@@ -1,7 +1,7 @@
 ---
-title:                "Concatenando cadenas"
-html_title:           "Fish Shell: Concatenando cadenas"
-simple_title:         "Concatenando cadenas"
+title:                "Concatenando cadenas de texto"
+html_title:           "Arduino: Concatenando cadenas de texto"
+simple_title:         "Concatenando cadenas de texto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Concatenar cadenas de texto es cuando se combinan dos o más cadenas para formar una sola. Los programadores lo hacen para crear mensajes complejos o manipular datos de manera eficiente.
+# Concatenación de Cadenas en Fish Shell
 
-## Cómo:
-Los bloques de código de ```Fish Shell``` se pueden usar para concatenar cadenas de texto de la siguiente manera:
+## ¿Qué & Por Qué?
 
+La concatenación de cadenas es el proceso de unir dos o más cadenas de texto. Los programadores lo hacen para formar frases, comandos o instrucciones más complejas.
+
+## Cómo hacerlo:
+
+En Fish Shell, usamos el comando ```echo``` y simplemente ponemos las cadenas juntas.
+
+```fish
+set cadena1 'Hola, '
+set cadena2 'Mundo!'
+echo $cadena1$cadena2
 ```
-set nombre "Juan"
-set apellido "Pérez"
-echo "¡Hola $nombre $apellido!"
+Salida:
+
+```fish
+Hola, Mundo!
 ```
+Y ahí lo tienen. Simple y directo.
 
-El resultado de este código sería "¡Hola Juan Pérez!". También se pueden concatenar cadenas directamente en la línea de comando, por ejemplo: `echo "¡Hola" "mundo!"` resultaría en "¡Hola mundo!".
+## Inmersión Profunda
 
-## Profundizando:
-La concatenación de cadenas de texto es una técnica común en la programación y se puede realizar en otros lenguajes además de Fish Shell. Algunas alternativas a la concatenación incluyen el uso de `printf` o `sprintf` en C, o `join` en Python.
+La opción de concatenar cadenas en Fish Shell ha cambiado en su última versión, y ahora es mucho más simple y fácil de usar. Históricamente, tenías que usar comandos más complicados para lograr algo similar. Por supuesto, existen otras formas de concatenar cadenas en diferentes lenguajes de programación, cada uno con su propia sintaxis y reglas.
 
-En términos de implementación, la concatenación de cadenas puede ser más o menos eficiente dependiendo del lenguaje y las funciones utilizadas. Por ejemplo, en Fish Shell, utilizar un solo argumento en `echo` es más eficiente que concatenar múltiples cadenas.
+La concatenación de cadenas en Fish Shell se realiza en tiempo de ejecución. El intérprete de Fish Shell es el encargado de decidir cómo concatenar las cadenas, por eso es importante tener en cuenta que no todo será tan rápido si estás concatenando cadenas muy largas.
 
-## Ver también:
-- [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/cmds/echo.html)
-- [Artículo de concatenación de cadenas en C en GeeksforGeeks](https://www.geeksforgeeks.org/concatenate-strings-in-c-3-different-ways/)
+## Ver También
+
+Aprenda más sobre la programación en Fish Shell mirando los siguientes enlaces: 
+
+- [Tutorial oficial de Fish Shell](https://fishshell.com/docs/3.1/tutorial.html)
+- [Cómo concatenar cadenas en otros lenguajes de programación](https://www.learnpython.org/en/String_Concatenation_and_Formatting)
+
+Y ahí lo tienes, un vistazo rápido a la concatenación de cadenas en Fish Shell. ¡Feliz programación!

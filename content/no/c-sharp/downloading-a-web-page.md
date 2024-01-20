@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av en nettside"
-html_title:           "C#: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,63 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## Hva og Hvorfor?
 
-Når du laster ned en nettside, henter du innholdet på siden og lagrer det på datamaskinen din. Dette er nyttig for programmerere fordi det lar dem manipulere og behandle dataene fra nettsiden på en enkel måte, for eksempel å hente ut spesifikke informasjon eller analysere dataene.
+Å laste ned en nettside innebærer å hente dens data slik at det kan vises på en brukers enhet. Programmerere gjør dette for å behandle nettsideinnholdet på klientsiden, eksempelvis for webskraping eller offline visning.
 
-## Slik gjør du:
+## Hvordan:
+
+Vi skal bruke HttpClient-klassen i .NET. Her er grunnkode for dette:
 
 ```C#
 using System;
-using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
 class Program
 {
-    static void Main()
+    static readonly HttpClient client = new HttpClient();
+
+    static async Task Main()
     {
-        //Oppretter en Webclient
-        WebClient client = new WebClient();
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync("http://example.com");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
 
-        //Laster ned innholdet til en nettside og lagrer det i en streng
-        string webpage = client.DownloadString("https://www.example.com");
-
-        Console.WriteLine(webpage); //Skriver ut nettsiden i konsollen
+            Console.WriteLine(responseBody);
+        }
+        catch(HttpRequestException e)
+        {
+            Console.WriteLine("\nException caught.");
+            Console.WriteLine("Message : {0} ",e.Message);
+        }
     }
 }
 ```
+Kjører du denne koden, vil innholdet på "http://example.com" skrives ut i konsollen. 
 
-Output:
+## Dypdykk: 
 
-```html
-<!doctype html>
-<html>
-<head>
-<title>Example Domain</title>
-<meta charset="utf-8" />
-<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<style type="text/css">
-/* CSS code her... */
-</style>
-</head>
+Før HttpClient, brukte programmerere WebClient eller HttpWebRequest for å laste ned nettsider. HttpClient er mer moderne og tilbyr mer funksjonalitet.
 
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is established to be used for illustrative examples in documents. You may use this
-    domain in examples without prior coordination or asking for permission.</p>
-    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
-```
+Et alternativ til HttpClient er RestSharp, en tredjeparts bibliotek som har noen funksjoner HttpClient mangler, som innebygget JSON-serialisering.
 
-## Dypdykk:
+`client.GetAsync()` brukes til å sende en GET-forespørsel til den angitte Uri og returnerer en HttpResponseMessage som inneholder HTTP-responsmeldingen. Hvis du vil lese innholdet på siden, kall `response.Content.ReadAsStringAsync()`.  
 
-Weblesere gjør også nedlasting av nettsider for å vise dem til brukeren. Alternativt kan man bruke en annen metode for å laste ned og behandle nettsidedata, for eksempel HTTP-forespørsler eller tredjepartsbiblioteker. Når du laster ned en nettside i C#, bruker du vanligvis en ```WebClient``` eller ```HttpClient``` klasse. Disse klassene har metoder for å sende HTTP-forespørsler og motta responsen.
+## Se også
 
-## Se også:
+- [Microsofts HttpClient dokumentasjon](https://docs.microsoft.com/no-no/dotnet/api/system.net.http.httpclient)
+- [Microsofts detaljerte guide for å laste ned filer](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/download-files)
+- [RestSharp biblioteket](https://restsharp.dev/getting-started/installation.html)
 
-- Microsoft sin [dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0) for WebClient-klassen.
-- En [tutorial](https://www.tutorialspoint.com/csharp/csharp_web_client.htm) fra Tutorialspoint om hvordan du bruker WebClient-klassen i C#.
-- Alternativet til WebClient, HttpClient-klassen, som er mer fleksibel og skaleres bedre, men er også mer kompleks å bruke.
+Husk at beste praksis anbefaler å gjenbruke HttpClient-objekter i stedet for å opprette nye for hver forespørsel.

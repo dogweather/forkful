@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Fish Shell: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,21 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was und warum?
-Beim Programmieren geht es darum, Webseiten zu downloaden. Dies ist ein gängiger Prozess, um Daten aus dem Internet zu extrahieren und weiterzuverarbeiten. Programmierer verwenden diesen Vorgang, um beispielsweise Informationen für Analyse- oder Scraping-Aufgaben zu sammeln.
+## Was & Warum?
 
-# So geht's:
-Um eine Webseite mit Fish Shell herunterzuladen, müssen Sie zunächst die entsprechende URL angeben und die heruntergeladenen Daten in einer Datei speichern. Hier ist ein Beispielcode:
+Das Herunterladen einer Webseite ist der Prozess, in dem der gesamte Inhalt einer bestimmten Webseite auf den lokalen Computer übertragen wird. Programmierer tun dies oft, um den Inhalt einer Webseite für Datenanalyse, Web-Scraping oder Offline-Nutzung zu sichern.
+
+## So geht's:
+
+```Fish Shell
+# Installiere httpie mit
+brew install httpie
+
+# Lade eine Webseite herunter
+http -d example.com > page.html
 ```
-wget https://www.beispielseite.com -O beispiel.html 
-```
-Dieser Befehl lädt die Seite von "beispielseite.com" herunter und speichert sie in der Datei "beispiel.html".
 
-# Tiefere Einblicke:
-Das Herunterladen von Webseiten ist ein wichtiger Bestandteil der Webentwicklung und des Webscrapings. Es gibt verschiedene Tools und Programmiersprachen, die für diesen Prozess verwendet werden können, wie z.B. Python oder Curl. Fish Shell bietet jedoch eine saubere und einfache Möglichkeit, Webseiten herunterzuladen, ohne zusätzliche Abhängigkeiten zu installieren.
+Die obigen Anweisungen installieren zuerst `httpie`, ein Befehlswerkzeug, das zum Senden von HTTP-Anfragen verwendet wird. Danach lädt das `http`-Kommando die Webseite `example.com` herunter und speichert sie als `page.html`.
 
-# Siehe auch:
-- https://fishshell.com/docs/current/cmds/wget.html
-- https://www.gnu.org/software/wget/
-- https://www.python.org/
-- https://curl.se/
+## Vertiefung:
+
+Die Praxis des Herunterladens von Webseiten reicht bis in die frühen Tage des Internets zurück, als die Verbindungsgeschwindigkeiten oft so langsam waren, dass das Offline-Lesen von Webseiten eine wünschenswerte Option war. Heutzutage ist das Herunterladen von Webseiten für Datenwissenschaftler, Web-Crawler und Archivierer immer noch wichtig.
+
+Alternativen zu `httpie` sind unter anderem `wget` und `curl`. Während `httpie` für seine Benutzerfreundlichkeit geschätzt wird, bieten `wget` und `curl` mehr Anpassungsmöglichkeiten und werden häufiger in bestimmten Programmierumgebungen verwendet.
+
+Die Implementation des Herunterladens einer Webseite mit `httpie` in der Fish Shell ist ziemlich unkompliziert. Die Anfrage wird an die Ziel-URL gesendet und der Antwortbody (die Webseite) wird in eine Datei auf dem lokalen System gespeichert.
+
+## Siehe Auch:
+
+- HTTPie Dokumentation: https://httpie.org/doc 
+- Wget Anleitung: https://www.gnu.org/software/wget/ 
+- Curl Anleitung: https://curl.haxx.se/docs/manpage.html

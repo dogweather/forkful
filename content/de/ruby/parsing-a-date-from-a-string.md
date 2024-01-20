@@ -1,7 +1,7 @@
 ---
-title:                "Das Parsen eines Datums aus einem String"
-html_title:           "Ruby: Das Parsen eines Datums aus einem String"
-simple_title:         "Das Parsen eines Datums aus einem String"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,18 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Parsen eines Datums aus einer Zeichenfolge geht es darum, ein Datum in einer lesbaren Form aus einem Textformat zu extrahieren. Programmierer nutzen dies, um Daten aus unterschiedlichen Quellen zu verarbeiten und in einem einheitlichen Format zu präsentieren.
+
+Das Parsen eines Datums aus einem String in Ruby bedeutet, diesen String in ein Datum-Objekt umzuwandeln. Programmierer tun dies, um mit den Daten in Formaten zu arbeiten, die mit Datums- und Zeitoperationen kompatibel sind.
 
 ## So geht's:
-Wenn du ein Datum aus einer Zeichenfolge parsen möchtest, kannst du einfach das ```Date```-Modul in Ruby nutzen. Zum Beispiel:
-```
-require 'date'
-Date.parse("25.08.2021") # Output => 2021-08-25
-```
 
-## Tiefgehende Einblicke:
-Das Parsen von Datumsangaben aus einer Zeichenfolge ist seit langer Zeit eine häufige Aufgabe für Programmierer. Früher mussten sie diese Funktion oft von Grund auf neu programmieren, aber heute bieten die meisten Programmiersprachen und Frameworks eingebaute Methoden dazu an. Eine Alternative zu Ruby ist zum Beispiel das Moment.js-Framework in JavaScript. Bei der Implementierung des Parsings von Datumsangaben ist es wichtig, auf die Formatierung der Zeichenfolge und mögliche Fehlerquellen wie falsche Eingaben zu achten.
+Mit der Ruby's built-in Methode `parse` von `Date` Klasse können wir ganz einfach ein Datum aus einem String parsen:
+
+```Ruby
+require 'date'
+datum_string = "2022-01-01"
+datum = Date.parse(datum_string)
+puts datum
+```
+Die Ausgabe wird "2022-01-01" sein.
+
+## Tiefer Eintauchen
+
+Parsen eines Datums hat eine lange Geschichte. Früher mussten Programmierer teils komplexe Algorithmen schreiben, um dies zu erreichen. Heute erleichtert Ruby's eingebaute ‘Date’ Klasse diesen Vorgang.
+
+Es gibt auch Alternativen zur Methode `parse`. Einige davon sind `strptime` oder `iso8601`. Der Unterschied liegt darin, dass `strptime` und `iso8601` ein bestimmtes Format erwarten, während `parse` verschiedene Formate behandelt.
+
+Bei der Umsetzung dieser Methode ist darauf zu achten, dass `parse` eine mögliche Ausnahme wie "ArgumentError" wirft, wenn der String nicht in ein gültiges Datum umgewandelt werden kann. Daher ist es praktisch, den Prozess in einer "begin-rescue"-Struktur zu verpacken, um solche Probleme zu behandeln.
 
 ## Siehe auch:
-- [Ruby Date Dokumentation](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html)
-- [Moment.js Dokumentation](https://momentjs.com/docs/#/parsing/)
+
+1. [Ruby's Date documentation](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+2. [Ruby's time handling (stackoverflow)](https://stackoverflow.com/questions/3700110/how-do-i-use-date-strptime-with-a-format-from-datetime-to-time)
+3. [More on parsing dates (tutorialspoint)](https://www.tutorialspoint.com/ruby/ruby_date_time.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "Swift: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "Lua: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+# Sjekker om en Katalog Eksisterer i Swift
 
-Sjekking om en mappe eksisterer er når en programmerer sjekker om en spesifisert mappe finnes på et gitt sted i programmet. Dette gjøres for å sikre at endringer i filstrukturen eller plassering ikke ødelegger funksjonaliteten til programmet.
+## Hva og Hvorfor?
 
-## Hvordan:
+Sjekker om en katalog eksisterer innebærer at vi leter etter en spesifikk katalog i et filsystem. Dette gjør vi for å unngå feil som kan oppstå hvis det vi prøver å lese eller skrive til en katalog som ikke finnes.
 
-Sjekke om en mappe eksisterer kan gjøres ved hjelp av Swifts File Manager bibliotek. Her er et eksempel på hvordan det kan gjøres:
+## Hvordan Gjør vi Det?
+
+I Swift er det veldig rett fram å sjekke om en katalog eksisterer.
 
 ```Swift
+import Foundation
+
 let fileManager = FileManager.default
-let directoryURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first // velger ønsket mappe å sjekke
-if let url = directoryURL {
-    do {
-        let results = try fileManager.contentsOfDirectory(at: url, includingPropertiesForKeys: nil) //sjekker om mappen har noen innhold
-        print("Mappen finnes og har følgende filer: ")
-        print(results)
-    } catch {
-        print("Mappen eksisterer, men har ingen filer i seg")
-    }
+let directoryPath = "/path/to/your/directory"
+
+if fileManager.fileExists(atPath: directoryPath) {
+    print("Katalogen eksisterer")
 } else {
-    print("Mappen finnes ikke")
+    print("Katalogen eksisterer ikke")
 }
 ```
 
-Output vil se slik ut dersom mappen eksisterer og har filer i seg:
+Kjører du dette eksemplet og bytter `/path/to/your/directory` med en faktisk sti, vil du se stringen "Katalogen eksisterer" eller "Katalogen eksisterer ikke" printet ut i terminalen din.
 
-```Swift
-Mappen finnes og har følgende filer:
-[file:///Users/bruker/Documents/file1.pdf, file:///Users/bruker/Documents/file2.docx, file:///Users/bruker/Documents/file3.png]
-```
+## Fordypning
 
-Og output vil se slik ut dersom mappen eksisterer, men ikke har noen filer i seg:
+Denne metoden har lenge vært et grunnleggende verktøy i programmering siden tidlige dager av UNIX. Alternativer inkluderer bruk av `attributesOfItem(atPath:)` metoden, men det gir mer informasjon enn bare om katalogen eksisterer. Det er verdt å merke seg at `fileExists(atPath:)` metoden også sjekker om filer eksisterer, så navnet kan være misvisende.
 
-```Swift
-Mappen eksisterer, men har ingen filer i seg
-```
+## Se Også
 
-## Dypdykk:
+For mer informasjon om `FileManager` og relaterte metoder, sjekk ut disse lenkene:  
+1. [Apple Dokumentasjon on FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+2. [Stack Overflow: How to check if a directory exists in Swift](https://stackoverflow.com/questions/30089775/how-to-check-if-a-directory-exists-in-swift) 
+3. [Apple Dokumentasjon on fileExists(atPath:)](https://developer.apple.com/documentation/foundation/filemanager/1410277-fileexists)
 
-Sjekking om en mappe eksisterer ble introdusert i LSE (Large-Scale Environment) for IBM i systemer på 80-tallet. En alternativ måte å sjekke om en mappe eksisterer på er ved hjelp av systemkall, men dette kan være mer komplekst og kreve mer kode. Selv om Swifts File Manager bibliotek er det enkleste og mest effektive metoden for å sjekke om en mappe eksisterer.
-
-## Se også:
-
-For mer informasjon om Swifts File Manager bibliotek og andre metoder for å sjekke om mapper eksisterer, se disse lenkene:
-
-- [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager)
-- [Alternative methods for checking if a directory exists in Swift](https://www.hackingwithswift.com/example-code/system/how-to-check-whether-a-file-or-directory-exists-using-filemanager)
+*Artikkelen har ingen konklusjonsdel.*

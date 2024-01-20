@@ -1,7 +1,7 @@
 ---
-title:                "הדפסת פלט מנתח"
-html_title:           "Swift: הדפסת פלט מנתח"
-simple_title:         "הדפסת פלט מנתח"
+title:                "הדפסת פלט ניפוי שגיאות"
+html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
+simple_title:         "הדפסת פלט ניפוי שגיאות"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -11,46 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+יציאת ניפוי שגיאות היא שיטה שמסייעת למתכנתים לזהות ולאתר בעיות או שגיאות בתוכנית שלהם. מתכנתים משתמשים בכך כדי להבין את ההתנהגות של קוד מסוים, לאטר בעיות על מנת לתקן שגיאות ולאופטים את התוכנית.
 
-הדפסת הפלט של העתקה (debug output) היא תהליך שבו המתכנת מחזיק פונקציות או תנאים באמצעות הדפסות לקבלת מידע נוסף לגבי קוד שהוא מנסה להריץ. מתכננים משתמשים בתהליך זה בכדי לזהות בעיות ולפתור אותן בקלות.
+## איך לעשות:
+בלשון התכנות Swift, ניתן להדפיס יציאה של ניפוי שגיאות על ידי שימוש בפונקציה `print()`.
 
-## איך לעשות זאת:
-
-דוגמאות לכתיבת קוד ופלט משתמשות בבלוקי קוד ```Swift ... ```.
-
-```swift
-// דוגמא לשימוש בפונקציה בכדי להדפיס מידע נוסף
-func printDebugOutput() {
-    print("מידע נוסף לגבי קוד זה")
-}
-// הפלט:
-// מידע נוסף לגבי קוד זה
+```Swift
+let name = "Swift"
+print("Hello, \(name)")
 ```
 
-```swift
-//דוגמא לכתיבת תנאים עם הדפסות למידע נוסף
-let testScores = [85, 92, 77, 68, 95]
-for score in testScores {
-    if score >= 90 {
-        print("ציון גבוה - \(score)")
-    } else {
-        print("ציון נמוך - \(score)")
-    }
-}
-// הפלט:
-// ציון גבוה - 92
-// ציון גבוה - 95
-// ציון נמוך - 77
-// ציון נמוך - 68
-// ציון גבוה - 85
-```
+הקוד הנ"ל ייצא את המחרוזת "Hello, Swift" לחלון ה-Outputs.
 
-## טיול עמוק:
+## צלילה עמוקה:
+הדפסת יציאת ניפוי היא שיטה שהתפתחה מאז שהתחילו לכתוב קוד. זה היה דרך יעילה למתכנתים לבחון ולבדוק את הריצה של קוד התוכנית שלהם בזמן אמת. החלופות כוללות שימוש במנגנון Debug של Xcode או שימוש במנגנון הניפוי של המערכת המראה שגיאות בזמן ריצה.
 
-ההדפסת הפלט של העתקה (Debug output) התחיל כאשר מתכנתים נאלצו להשתמש בו כדי למצוא באגים במכונות מכאניות. היום, יכולת זו הופכת את חיינו יותר קלים וסובלניים כי מאפשרת לנו לזהות בעיות ולתקן אותן בקלות בעזרת המידע הנוסף שאנחנו מקבלים. יתר על כן, ישנן כמה אלטרנטיבות להדפסת הפלט של העתקה, כגון בדיקת משתנים באמצעות בקרת בידור כמו דבאג ב Xcode. סביר להניח כי הדפסת הפלט של העתקה תישאר כלי מצוין עבור מתכנתים ומפתחים כאחד.
+## ראה גם:
+[SOSwift: Debug Utilities](https://www.sosoftware.io/swift/debugging/utilities): Guides, tips, and code examples for debugging Swift code.
 
-## ראו גם:
+[Xcode: Debugging tools](https://developer.apple.com/documentation/xcode/debugging_your_app): Documentation and getting-started guides for using Xcode's built-in debugging utilities. 
 
-[מסמכי התיעוד של Swift](https://docs.swift.org/swift-book/LanguageGuide/Functions.html)
-
-[דניאל סטיימן על הדפסת הפלט של העתקה](https://danielsteiman.com/posts/when-to-use-prints-and-commented-code)
+[Swift.org: Debugging](https://swift.org/debugging): Official documentation and discussions about debugging in Swift.

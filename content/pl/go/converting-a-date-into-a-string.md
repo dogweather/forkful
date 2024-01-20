@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja daty na ciąg znaków"
-html_title:           "Go: Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
 simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Go"
 category:             "Go"
@@ -12,42 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Konwertowanie daty na ciąg znaków jest jednym z najczęściej wykonywanych zadań przez programistów. Polega to na przekształceniu daty w formacie liczbowym na czytelny dla człowieka ciąg znaków, który można wykorzystać do wyświetlenia lub przechowywania daty. Jest to niezbędne w wielu aplikacjach, na przykład w bazach danych czy generowaniu raportów.
+Konwersja danych w postaci daty do ciągu znaków pozwala na łatwiejszą manipulację i prezentację danych dla użytkowników. Programiści wykonują to przede wszystkim w celu wyświetlania daty w czytelnym formacie.
 
 ## Jak to zrobić:
 
-Go oferuje wbudowany sposób na konwertowanie daty do ciągu znaków za pomocą funkcji "Format" z pakietu "time". W poniższym przykładzie pokazane jest jak wyświetlić aktualną datę w formacie "DD-MM-RRRR":
+W Go, możemy skonwertować datę do ciągu znaków, stosując wbudowany pakiet `time` oraz metodę `Format`.
 
-    ```Go
-    import (
-      "fmt"
-      "time"
-    )
+```Go
+package main
 
-    func main() {
-      now := time.Now()
-      formattedDate := now.Format("02-01-2006")
-      fmt.Println(formattedDate) //output: 05-12-2021
-    }
-    ```
+import (
+	"fmt"
+	"time"
+)
 
-Można również użyć specjalnych znaków, aby określić inne formaty daty, na przykład "Mon Jan _2 15:04:05 2006 MST":
+func main() {
+	t := time.Now()
+	fmt.Println(t.Format("2006-01-02"))
+}
+```
 
-    ```Go
-    func main() {
-      now := time.Now()
-      formattedDate := now.Format("Mon Jan _2 15:04:05 2006 MST")
-      fmt.Println(formattedDate) //output: Sun Dec 5 11:22:36 2021 MST
-    }
-    ```
+Za wywołanie powyższego kodu dostaniemy bieżącą datę wyświetloną w formacie: `RRRR-MM-DD`.
 
-Zwróć uwagę, że w formacie należy używać liczby 2 dla dnia miesiąca, 1 dla miesiąca i 2006 dla roku, ponieważ jest to konwencja w języku Go.
+## Głębsze spojrzenie
 
-## Głębsza analiza:
+Konwersja daty do ciągu znaków jest czynnością powszechną w programowaniu. W historii, różne języki oferowały różne metody do osiągnięcia tego, na przykład `strftime` w języku C.
 
-Konwersja daty na ciąg znaków jest niezbędnym wyzwaniem, ponieważ różne kraje stosują różne formaty dat. Dlatego ważne jest, aby dokładnie zdefiniować format w celu uniknięcia błędów i niejednoznaczności. W języku Go jest dostępnych wiele funkcji i pakietów do pracy z datami, więc warto zapoznać się z dokumentacją, aby wybrać najlepszą opcję dla danego projektu.
+Jeśli chodzi o Go, użyliśmy metody `Format`, która jest dość unikalna ze względu na niekonwencjonalne formatowanie oparte na "magicznej" dacie `2006-01-02 15:04:05`.
 
-## Zobacz także:
+Inne metody, takie jak `Unix`, mogą być używane do konwersji daty do ciągu znaków w formacie unix timestamp. Z kolei `RFC3339` pozwoli na uzyskanie daty w formacie określonym przez standard RFC3339.
 
-- Dokumentacja pakietu "time" w języku Go: https://golang.org/pkg/time/
-- Porównanie różnych metod konwersji dat w języku Go: https://blog.golang.org/go-data-formats
+## Zobacz również
+
+* Dokumentacja Go na temat pakietu `time`: https://golang.org/pkg/time/
+* Więcej o standardzie `RFC3339`: https://www.ietf.org/rfc/rfc3339.txt
+* Porównanie różnych języków programowania w zakresie formatowania dat: https://programming.guide/worlds-most-copied-so-called-piece-of-code.html

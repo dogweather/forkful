@@ -1,6 +1,6 @@
 ---
 title:                "Tworzenie tymczasowego pliku"
-html_title:           "Bash: Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
 simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,37 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
+Tworzenie tymczasowych plików jest procesem, który polega na generowaniu tymczasowej przestrzeni do przechowywania danych. Programiści tworzą je w celu przechowywania informacji, które mogą być potrzebne tylko podczas jednej sesji lub procedury.
 
-Tworzenie pliku tymczasowego to proces tworzenia pliku, który jest używany tylko do przechowywania danych tymczasowych lub do wykonania określonego zadania. Programiści często tworzą pliki tymczasowe, aby przechowywać informacje, które są potrzebne tylko w określonym momencie lub których nie chcą zachowywać w stałym pliku.
-
-## Jak to zrobić?
-
-W Bash tworzenie pliku tymczasowego można zrobić za pomocą polecenia "mktemp". Polecenie to tworzy pusty plik o losowej nazwie w bieżącym katalogu. Można również utworzyć plik tymczasowy o określonej nazwie za pomocą opcji "-p". Przykładowy kod:
-
+## Jak to Zrobić:
+Najprostszym sposobem na stworzenie tymczasowego pliku w Bash jest użycie polecenia `mktemp`. Przykład:
 ```Bash
-# tworzenie pustego pliku tymczasowego
-mktemp
-# tworzenie pliku tymczasowego o nazwie "temp_file"
-mktemp -p temp_file
+temp_file=$(mktemp)
+echo "To jest przykładowa zawartość." > "$temp_file"
+cat "$temp_file"
 ```
+Po uruchomieniu kodu powyżej, zostanie wygenerowany tymczasowy plik, wpis do niego tekstu "To jest przykładowa zawartość." a następnie wyświetlonego z zawartością pliku.
 
-Przykładowy output:
+## Głębsze Zanurzenie:
+Tworzenie tymczasowych plików ma swoje korzenie w starszych systemach operacyjnych, które wykorzystywały takie pliki do przechowywania tymczasowych danych podczas wykonywania długotrwałych operacji. Istnieją alternatywy dla `mktemp`, takie jak utworzenie pliku o unikalnej nazwie za pomocą kombinacji daty i czasu. Szczegół implementacji polecenia `mktemp` polega na tworzeniu pliku w katalogu /tmp systemu Linux.
 
-```Bash
-$ mktemp
-/private/var/folders/bm/368vf7kn7l14gldsnc172wsw0000gp/T/tmp.tPOqEAol
-
-$ mktemp -p temp_file
-temp_filehshLSr9
-```
-
-## Głębsza analiza
-
-Tworzenie plików tymczasowych jest popularną praktyką w świecie programowania. Pierwsze wykorzystanie tego sposobu datuje się na lata 70., kiedy to mało dostępna była pamięć komputera i nie można było trzymać dużych danych w pamięci. Obecnie istnieją również inne sposoby na przechowywanie danych tymczasowych, na przykład w zmiennej środowiskowej USER_TEMPDIR. Jednakże tworzenie plików tymczasowych jest w dalszym ciągu stosowane ze względu na swoją prostotę i efektywność.
-
-## Zobacz również
-
-- [Bash man page](https://www.gnu.org/software/bash/manual/html_node/index.html)
-- [Tutorial Bash dla początkujących](https://www.tutorialspoint.com/unix/shell_scripting.htm)
-- [Poradnik tworzenia plików tymczasowych w innych językach programowania](https://www.tecmint.com/create-temporary-files-and-directories-in-linux/)
+## Zobacz Również:
+1. [Tworzenie plików tymczasowych w Pythonie](http://python-examples.com/python-tempfile/)
+2. [Tworzenie plików tymczasowych w C++](http://cpp-examples.com/cpp-tempfile/)
+3. [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+4. [Dokumentacja mktemp](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)

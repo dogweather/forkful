@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "PowerShell: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć Programiści!
+# Zaczynając Nowy Projekt w PowerShell
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Za każdym razem, gdy zaczynamy nowy projekt, jesteśmy podekscytowani nowymi wyzwaniami, możliwościami i możliwością rozwoju naszych umiejętności programistycznych. Tworzenie nowych projektów jest nieodłączną częścią naszej pracy i pozwala nam rozwijać nasze umiejętności i kreatywność. 
+Startowanie nowego projektu to tworzenie nowego, od podstaw systemu kodu, który służy rozwiązaniu określonego problemu. Programiści robią to w celu stworzenia unikalnych rozwiązań dla świeżych problemów lub zastosować nowe podejście do starych problemów.
 
-## Jak to zrobić?
+## Jak to Zrobić:
 
-```PowerShell
-New-Item -ItemType Directory -Path C:\NowyProjekt
-```
-
-Jeśli chcesz utworzyć nowy projekt w wybranej lokalizacji, możesz użyć komendy `New-Item`. W powyższym przykładzie utworzymy nowy folder o nazwie "NowyProjekt" w lokalizacji C:\.
+Zakładając, że masz zainstalowany PowerShell, poniższy kod pokazuje, jak stworzyć nowy skrypt (`MyScript.ps1`). Niech będzie on naszym "projektem". 
 
 ```PowerShell
-Get-ChildItem -Path C:\NowyProjekt
+# Utwórz nowy plik
+New-Item -ItemType File -Path . -Name MyScript.ps1
 ```
 
-Aby potwierdzić, że folder został utworzony, można użyć komendy `Get-ChildItem`. W powyższym przykładzie zobaczymy wynik w formie listy plików i folderów w lokalizacji C:\NowyProjekt.
+Kiedy uruchomisz ten kod, powinieneś zobaczyć coś takiego:
 
-## Deep Dive
+```PowerShell
+    Directory: C:\Users\YourUsername
 
-Historia PowerShell sięga 2002 roku, kiedy to Microsoft zaczął prace nad nowym narzędziem do automatyzacji procesów. Aktualnie PowerShell jest jednym z najbardziej popularnych narzędzi dla programistów, dzięki jego możliwościom przetwarzania danych w formacie tekstowym. Alternatywnymi narzędziami do tworzenia nowych projektów w PowerShell są Visual Studio Code i PowerShell ISE. 
-Implementacja powyższych przykładów jest równie prosta w obu tych narzędziach.
+Mode                LastWriteTime         Length Name
+----                -------------         ------ ----
+-a---         10/22/2021   5:15 PM              0 MyScript.ps1
+```
 
-## Zobacz też
+## Głębsze Zanurzenie:
 
-- Dokumentacja Microsoft: https://docs.microsoft.com/pl-pl/powershell/
-- Wideo tutorial YouTube: <link>
-- Strona GitHub prezentująca przykłady kodów: <link>
+Historia: PowerShell powstał w 2006 roku jako projekt Microsoftu dla zarządzania systemami Windows. Od tego czasu zyskał na popularności i jest teraz stosowany do szerokiego zakresu zadań, zarówno na platformach Windows, jak i Linux.
+
+Alternatywy: Alternatywami dla tworzenia nowego projektu w PowerShell są używanie innych języków skryptowych, takich jak Python lub Bash.
+
+Szczegóły implementacji: Nowy projekt w PowerShell zazwyczaj zaczyna się od tworzenia nowego skryptu, ale może również obejmować tworzenie modułów PowerShell, tworzenie funkcji, czy tworzenie procesów automatyzacji.
+
+## Zobacz Też:
+
+- [Dokumentacja PowerShell](https://docs.microsoft.com/pl-pl/powershell/)
+- [PowerShell for beginners: Scripts and loops](https://www.computerworld.com/article/2694433/powershell-for-beginners-scripts-and-loops.html)
+- [Poradnik Bash-a dla początkujących](https://ryanstutorials.net/bash-scripting-tutorial/)

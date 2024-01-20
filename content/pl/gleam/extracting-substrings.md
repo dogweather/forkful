@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podciągów"
-html_title:           "Gleam: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,36 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego?
+## Co i Dlaczego?
 
-Ekstrakcja podciągów to proces pobierania części ciągu znaków z głównego ciągu. Programiści często stosują to w celu wydobycia określonych informacji lub danych z dłuższego ciągu. Jest to szczególnie przydatne w przypadku parsowania danych lub manipulacji tekstami.
+Ekstrakcja podciągów to proces wydobywania mniejszych nitek znaków, z większych ciągów tekstowych. Programiści często korzystają z niej, aby przekształcić, filtrować lub analizować dane.
 
 ## Jak to zrobić:
 
-Gleam posiada niezawodne i proste w użyciu funkcje do wyodrębniania podciągów. Przykładowe użycie wygląda następująco:
-
-```Gleam
-let text = "To jest przykładowy tekst."
-let substring = String.slice(start=11, end=19, text)
+Rozważmy przykład w języku Gleam:
+```Gleam 
+  let tekst = "Cześć, Świecie"
+  let podciąg = string.slice(tekst, 7, 13)
+  // Wynikiem będzie "Świecie"
 ```
-W powyższym przykładzie pobieramy podciąg z oryginalnego tekstu, zaczynając od 11 znaku i kończąc na 19 znaku. Wynik zostaje przypisany do zmiennej "substring" i będzie to "przykładowy".
+Tutaj, za pomocą funkcji `string.slice()`, pobieramy podciąg z `tekst` zaczynając od 7. pozycji i kończąc na 13.
 
-Można również wyodrębnić podciąg od wybranego indeksu do końca ciągu, używając tylko jednego argumentu w funkcji "String.slice". Na przykład:
+## Wgląd Głębszy:
 
-```Gleam
-let text = "To jest inny przykładowy tekst."
-let substring = String.slice(start=5, text)
-```
+Możliwość ekstrakcji podciągów pojawiła się w większości języków programowania historycznie rano, ułatwiając manipulację danymi tekstowymi. Alternatywą dla `string.slice()` w Gleam jest `string.split()`, ale ta funkcja dzieli tekst na względem określonego separatora, a nie indeksów.
 
-Wynik będzie taki sam jak w poprzednim przykładzie, tylko tym razem cały ciąg od 5 znaku zostanie wybrany.
-
-## Głębsze zanurzenie:
-
-Ekstrakcja podciągów jest częstym zadaniem w programowaniu, ponieważ pozwala na łatwe manipulowanie tekstami i wydobycie potrzebnych informacji. Alternatywnym sposobem na to jest użycie metody "split", która dzieli ciąg na części według określonego separatora.
-
-Implementacja funkcji "String.slice" w Gleam jest bardzo wydajna i korzysta z metody "sub" dostępnej w wielu językach programowania.
+Szczegóły implementacji Gleam są jasne i proste. Faktycznie `string.slice()` wywołuje tylko natywną funkcję `slice()` Erlanga na tyłach.
 
 ## Zobacz także:
 
-- Dokumentacja Gleam dotycząca funkcji String: https://gleam.run/module/stdlib/String.html
-- Wideo tutorial o ekstrakcji podciągów w Gleam: https://www.youtube.com/watch?v=94d7fPfM3Dc
+Polecamy zapoznanie się z oficjalnymi źródłami dokumentacji:
+- Gleam String API docs: [https://hexdocs.pm/gleam_stdlib/gleam/string.html](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
+- Erlang string module: [https://erlang.org/doc/man/string.html](https://erlang.org/doc/man/string.html)

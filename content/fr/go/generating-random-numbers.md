@@ -1,7 +1,7 @@
 ---
-title:                "La génération de nombres aléatoires"
-html_title:           "Go: La génération de nombres aléatoires"
-simple_title:         "La génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
+Générer des nombres aléatoires est une tâche commune en programmation. Cela permet d'ajouter de l'incertitude dans nos programmes, nécessaire pour les jeux, la simulation, le chiffrement et bien plus.
 
-Générer des nombres aléatoires est une tâche souvent utilisée par les programmeurs pour créer des éléments aléatoires dans leurs programmes. Cela peut être utile dans les jeux, les simulations, les tests et bien d'autres applications.
-
-## Comment faire:
-
-Voici un exemple de code en Go pour générer un nombre aléatoire entre 1 et 10:
+## Comment faire
+Voici un exemple de code pour générer des nombres aléatoires en Go.
 
 ```Go
-import "math/rand"
-import "time"
+package main
+
+import (
+  "fmt"
+  "math/rand"
+  "time"
+)
 
 func main() {
-    // nous devons définir une "graine" pour le générateur aléatoire
-    rand.Seed(time.Now().UnixNano())
+  rand.Seed(time.Now().UnixNano())
+  num := rand.Intn(100) // génère un nombre entre 0 et 99
 
-    // maintenant, nous pouvons utiliser la fonction rand.Intn pour obtenir un nombre aléatoire
-    // entre 1 et 10
-    num := rand.Intn(10) + 1
-    fmt.Println(num) // output: un nombre aléatoire entre 1 et 10
+  fmt.Println(num)
 }
 ```
 
-## Plongée en profondeur:
+La sortie sera un nombre aléatoire entre 0 et 99.
 
-Générer des nombres aléatoires est une pratique courante en informatique depuis de nombreuses années. Avant l'avènement des ordinateurs, des méthodes telles que le tirage au sort de nombres dans un chapeau étaient utilisées pour obtenir des résultats aléatoires.
+## Plongée profonde
+Historiquement, générer de l'incertitude en programmation n'était pas si simple qu'aujourd'hui, impliquant l'utilisation de générateurs de nombres pseudo-aléatoires qui ont besoin d'être "semés" pour éviter les répétitions.
 
-En dehors de la bibliothèque intégrée de Go pour générer des nombres aléatoires, il existe d'autres alternatives telles que la bibliothèque "crypto/rand" qui utilise des méthodes de cryptographie pour garantir une meilleure aléatorité.
+En Go, `math/rand` est utilisé pour générer des nombres pseudo-aléatoires. Il utilise le temps actuel, en nano-secondes depuis 1970, comme graine pour `Rand.Seed()`. Toutefois, il faut noter que ces nombres ne sont pas adaptés à la cryptographie pour laquelle on utilisera `crypto/rand` à la place.
 
-## A voir également:
+Une alternative est d'utiliser l'API de cryptographie pour générer des nombres aléatoires cryptographiquement sécurisés, mais cela peut être excessif pour certaines applications.
 
-Si vous souhaitez en savoir plus sur la génération de nombres aléatoires en Go, voici quelques ressources utiles:
+## Voir aussi
+Pour approfondir, voici quelques liens utiles:
 
-- [Documentation officielle de Go pour les fonctions de génération de nombres aléatoires](https://golang.org/pkg/math/rand/)
-- [Utilisation de la bibliothèque "crypto/rand" pour une meilleure aléatorité en Go](https://golang.org/pkg/crypto/rand/)
+- Documentation de math/rand: https://golang.org/pkg/math/rand/
+- Guide complet sur les nombres aléatoires en Go: https://yourbasic.org/golang/generate-random-number/
+- Sécurité de la cryptographie et génération de nombres aléatoires: https://arxiv.org/pdf/2001.00939.pdf

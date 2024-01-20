@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Swift: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,24 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是字符串转换成小写？为什么程序员要这样做？
+# 什么和为什么？
+将字符串转换为小写是让字符串中的所有字符都以小写形式出现的过程。程序员之所以这样做，是因为在比较文本数据等操作中，将所有字符统一为小写可以避免大小写带来的问题，使得数据处理更方便。
 
-字符串转换为小写是指将大写字母变成小写字母。程序员经常这样做是因为在编写代码时，经常会出现大小写不一致的问题，这会影响程序的运行。
+# 怎么做：
+在Swift中，你可以使用`lowercased()`方法来将字符串转换为小写。这是一个简单的例子：
 
-如何进行字符串转换为小写？
-
+```Swift
+let str = "Hello, Swift!"
+let lowercasedStr = str.lowercased()
+print(lowercasedStr)  //"hello, swift!"
 ```
-Swift let exampleString = "Hello World!" print(exampleString.lowercased()) // output: hello world! 
-```
 
-深入了解
+在这个例子中，我们首先定义了一个字符串`str`，然后使用`lowercased()`方法将其转换为全小写，并赋值给`lowercasedStr`。最后，我们打印出`lowercasedStr`的值，你会看到所有的字符都被转换为小写了。
 
-字符串转换为小写的历史背景：在早期的计算机编程中，只能输入大写字母，随着技术的发展，程序员发现在编写代码时，使用小写字母能够提高可读性和代码的效率。
+# 深度挖掘：
+字符串小写化是一种常见的文本处理操作，并且几乎所有的编程语言都提供了相应的支持。在早期的编程语言中，例如C，程序员需要自己编写函数来完成这个操作。然而，现代编程语言，如Swift,提供了内置的方法来简化这个过程。
 
-其他替代方法：除了使用.lowercased()方法之外，程序员还可以使用.uppercased()方法将字符串转换为大写，或者使用.capitalized方法将字符串首字母大写。
+另外，Python是另一种提供类似功能的编程语言，它使用的方法是`lower()`。同时，JavaScript也有相似的功能，使用的方法是`toLowerCase()`。
 
-实现细节：在Swift中，字符串类型有一个lowercased()方法，可用于将字符串转换为小写。该方法会返回一个新的字符串，而不是修改原字符串。
+具体到字符串转小写这个功能的实现，其实在底层上跟字符编码有关。每个大写字母在ASCII表中都有一个对应的小写字符，他们之间的区别就是ASCII编码值的差异。
 
-相关链接
-
-了解更多关于字符串转换为小写的信息，请参考Swift官方文档：https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID290
+# 参考资料：
+为了更深入的理解字符串小写化，你也可以参考以下的链接：
+- Swift官方文档：[https://swift.org/documentation/#the-swift-programming-language](https://swift.org/documentation/#the-swift-programming-language)
+- Stack Overflow上关于字符串小写化的讨论：[https://stackoverflow.com/questions/26318577/how-do-i-convert-to-lowercase-in-swift](https://stackoverflow.com/questions/26318577/how-do-i-convert-to-lowercase-in-swift)

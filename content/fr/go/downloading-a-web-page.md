@@ -1,7 +1,7 @@
 ---
-title:                "Le téléchargement d'une page web"
-html_title:           "Go: Le téléchargement d'une page web"
-simple_title:         "Le téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,25 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Télécharger une page web consiste à récupérer son contenu sur Internet et à l'afficher sur votre navigateur. Les programmeurs le font pour accéder à des données ou pour automatiser des tâches telles que la validation de formulaire ou le scrapping de données.
+## Quoi & Pourquoi ?
 
-## Comment faire:
-Pour télécharger une page web en utilisant Go, utilisez la fonction `Get()` du package `http` en spécifiant l'URL de la page. Par exemple:
+Télécharger une page Web signifie récupérer son contenu HTML. Les programmeurs le font pour analyser, tester ou utiliser ultérieurement ses données.
 
-```Go
-resp, err := http.Get("https://www.example.com")
+## Comment faire :
+
+Voici un exemple de code pour télécharger une page Web avec Go. Le code utilise le package `net/http` pour envoyer une requête GET, puis enregistre la réponse.
+
+```go
+package main
+
+import (
+   "io/ioutil"
+   "net/http"
+)
+
+func main() {
+    resp, err := http.Get("http://example.com")
+    if err != nil {
+        panic(err)
+    }
+    defer resp.Body.Close()
+
+    body, err := ioutil.ReadAll(resp.Body)
+    if err != nil {
+        panic(err)
+    }
+    ioutil.WriteFile("example.html", body, 0644)
+}
 ```
 
-Cela renverra un objet `Response` qui contient le contenu de la page ainsi que des informations telles que le code de statut et les en-têtes. Pour afficher le contenu de la page, vous pouvez utiliser `resp.Body` avec la méthode `Read()` du package `io`.
+Lorsque vous exécutez ce programme, un fichier "example.html" est créé contenant le contenu de la page Web.
 
-```Go
-body, err := io.ReadAll(resp.Body)
-fmt.Println(string(body))
-```
+## Plongée Profonde :
 
-## Plongée profonde:
-Télécharger des pages web est une tâche courante pour les programmeurs, en particulier pour les développeurs web. D'autres alternatives telles que cURL peuvent également être utilisées pour télécharger des pages web en utilisant des lignes de commande. De plus, la méthode `Get()` utilise une requête GET par défaut, mais vous pouvez également spécifier d'autres méthodes HTTP telles que POST ou PUT.
+Historiquement, le téléchargement de pages Web était surtout utilisé pour l'exploration de données ou le "scraping".  Aujourd'hui, c'est un outil essentiel pour les tests automatiques, l'analyse des performances et bien plus encore.
 
-## Voir aussi:
-Pour plus d'informations sur la récupération des pages web en utilisant Go, vous pouvez consulter la documentation officielle: https://golang.org/pkg/net/http/#Get. Vous pouvez également découvrir d'autres fonctionnalités intéressantes du package `http` telles que la gestion des cookies et l'utilisation de clients personnalisés.
+Si `net/http` ne répond pas à vos besoins, vous pouvez essayer des bibliothèques telles que `GoQuery` ou `Colly`. Ces outils offrent des fonctionnalités supplémentaires, comme le parcours du DOM ou le support des sites Web dynamiques.
+
+Quant au fonctionnement interne, lorsque vous envoyez une requête GET, le serveur Web renvoie le code HTML de la page. Ce code est ensuite sauvegardé dans un fichier sur votre disque dur.
+
+## Voir Aussi :
+
+Pour plus d'informations sur ce sujet, consultez les liens suivants :
+- Documentation officielle Go net/http: https://golang.org/pkg/net/http/
+- GoQuery pour l'analyse de HTML : https://github.com/PuerkitoBio/goquery
+- Colly, un cadre de scraping en Go : http://go-colly.org/

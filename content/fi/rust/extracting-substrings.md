@@ -1,7 +1,7 @@
 ---
-title:                "Alastringien erotus"
-html_title:           "Rust: Alastringien erotus"
-simple_title:         "Alastringien erotus"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,27 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Substringien ottaminen (extracting substrings) tarkoittaa tietyn osajonon tai merkkijonon ottamista toisesta merkkijonosta. Tätä tehdään yleisesti siksi, että tietynlaiset tiedot tai merkinnät voidaan erottaa ja käsitellä erikseen.
+## Mitä & Miksi?
 
-## Kuinka:
-Esimerkiksi jos haluat ottaa vain nimen sähköpostiosoitteesta, voit käyttää "split()" funktiota ja määritellä erotinmerkin, jonka mukaan jaat merkkijonon kahteen osaan. Tämän jälkeen voit ottaa halutun osan käyttämällä "get()" funktiota. 
+Alimerkkijonojen erottaminen tarkoittaa merkkijonon osan poimimista tiettyjen ohjelmien toiminnan kannalta olennaiseksi. Se auttaa käsittelyssä ja analysoinnissa koodin suorituskyvyn optimoinnissa.
 
-```Rust 
-let email = "esimerkki@gmail.com";
-let split_email: Vec<&str> = email.split("@").collect();
-let name = split_email.get(0).unwrap();
-println!("Nimi: {}", name); // Tulostaa: Nimi: esimerkki 
+## Näin teet:
+
+Rustin `slice`-toiminto on yksi yleisimmästi käytetyistä alimerkkijonojen erottamiseen:
+
+```Rust
+fn main() {
+    let s = "Tervetuloa Rustiin!";
+    let tervetuloa = &s[0..11];
+    println!("{}", tervetuloa);
+}
 ```
 
-## Syvempi sukellus:
-Substringien ottaminen on yleinen tehtävä ohjelmoinnissa erityisesti silloin, kun halutaan käsitellä tai analysoida tietynlaisia merkkijonoja. Tämän avulla voidaan helposti erotella tiettyjä tietoja, kuten nimet, osoitteet tai puhelinnumerot, ja käsitellä niitä erikseen.
+Tämän koodin ajo tuottaa:
+```
+Tervetuloa
+```
+On myös mahdollista jättää indeksit pois tietyissä tapauksissa, kuten:
 
-Toinen tapa ottaa substringeja on käyttää "slice" syntaksia, joka ottaa tietyn alueen merkkijonosta. Tämä on hyödyllistä esimerkiksi silloin, kun halutaan ottaa tietyn määrän merkkejä merkkijonon alusta tai lopusta.
+```Rust
+fn main() {
+    let s = "Tervetuloa Rustiin!";
+    let alku = &s[..11];
+    let loppu = &s[11..];
+    println!("{}{}", alku, loppu);
+}
+```
+Tämä tulostaa alkuperäisen merkkijonon kokonaisuudessaan:
+```
+Tervetuloa Rustiin!
+```
 
-Substringien ottaminen on myös mahdollista muilla ohjelmointikielillä, kuten Pythonissa ja Javassa. Näissä kielissä käytetään usein "substring" tai "slice" funktioita.
+## Syvempi katsaus:
+
+Rustin `slice`-operaatiot ovat peräisin alkuperäisen C-ohjelmointikielen ojelmointikielen osajonojen käsitteestä. Rustissa osajonojen erottamiseksi on myös muita keinoja, kuten `str::split_at`-funktio, joka voi olla hyödyllinen, kun työskentelet suurempien merkkijonodatan kanssa.
+
+```Rust
+fn main() {
+    let s = "Tervetuloa Rustiin!";
+    let (tervetuloa, loppu) = s.split_at(11);
+    println!("{}", tervetuloa);
+}
+```
+Tämä esimerkki tulostaa `Tervetuloa`.
 
 ## Katso myös:
-- [Rust `String` dokumentaatio](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Merkkijonon jakaminen (split() function) dokumentaatio](https://doc.rust-lang.org/std/primitive.str.html#method.split)
-- [Substringien ottaminen muiden ohjelmointikielien kanssa](https://www.geeksforgeeks.org/substring-string-python/)
+
+Rustilla on runsaasti dokumentaatioita ja lähdemateriaalia, joka tarjoaa syvempää tietoa ja esimerkkejä alimerkkijonojen erottamisesta. Tässä muutama linkki, jotka kannattaa tutkia:
+
+- Rustin virallinen dokumentaatio: [String Slices](https://doc.rust-lang.org/book/ch04-03-slices.html)
+- Stackoverflow: [How do I create a substring in Rust?](https://stackoverflow.com/questions/25428920/how-do-i-create-a-substring-in-rust) 
+- Rust-lang GitHub: [The Rust Programming Language](https://github.com/rust-lang/rust)

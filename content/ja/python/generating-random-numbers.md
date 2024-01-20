@@ -1,7 +1,7 @@
 ---
-title:                "乱数の生成"
-html_title:           "Python: 乱数の生成"
-simple_title:         "乱数の生成"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,44 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
-ランダムな数字を生成することは、プログラマーがプログラミング中に行う重要なタスクの一つです。ランダムな数字は、ゲームやシミュレーション、暗号化などのアプリケーションで使用されます。プログラマーは、ユーザーにとってランダムで不可予の値を生成する必要がある場合に、この技術を使用します。
+# Pythonでのランダム数字生成
+こんにちは、皆さん。今回はPythonでランダムな数を生成する方法について学んでいきましょう。
 
-## 方法：
-Pythonでは、**random**モジュールを使用して、簡単にランダムな数字を生成することができます。下記のコードを使用して、10から20までのランダムな整数を生成する方法を見てみましょう。
+## ランダムな数字って何？そしてその理由は？
+ランダムな数とは、予測不可能な数のことを示します。プログラムの結果を予測不可能にする、ゲームのコンテキストで利用する、または情報のシャッフル・選択などのため、プログラマーはランダムな数を生成します。
 
-```Python
-import random
-random_number = random.randint(10, 20)
-print(random_number)
-```
-
-出力は以下のようになります。
-
-```
-16
-```
-
-また、小数点以下のランダムな数値を生成することもできます。下記のコードは、0から1までのランダムな小数点以下の数値を生成する例です。
+## 実装方法
+Pythonでランダムな数を生成するには、`random`という標準ライブラリを使用します。以下にその一部を紹介します。
 
 ```Python
 import random
+
+# 0.0から1.0までのランダムな浮動小数点数を生成します。
 random_float = random.random()
 print(random_float)
+
+# 1から10までのランダムな整数を生成します。
+random_integer = random.randint(1, 10)
+print(random_integer)
+```
+上記のコードを実行すると以下のような出力が得られます。 
+
+```
+0.47411011327940105
+3
 ```
 
-出力は以下のようになります。
+出力は毎回異なることにご注意ください。
 
-```
-0.782994658361
-```
+## ディープダイブ
+- **歴史的背景**: ランダム数の生成は、統計学、暗号学、ゲーム理論など、様々な分野で用いられています。
+- **代替手段**: `numpy`ライブラリの`numpy.random`モジュールを使うことで、より複雑なランダム数の生成が可能です。例えば、正規分布や二項分布などのランダムな数を生成します。
+- **詳細**: Pythonの`random`モジュールでは、メルセンヌツイスターという高品質の疑似乱数生成アルゴリズムを用いています。
 
-## 詳しく調べる：
-ランダムな数字を生成するために、様々なアルゴリズムが使用されます。疑似乱数生成器と呼ばれるアルゴリズムは、事前に決められた種（seed）からランダムな数列を生成します。Pythonでは、初期化する種を指定することで、同じ数字の再現性を得ることができます。また、外部の物理現象を利用して本物のランダム数列を生成するハードウェアランダム数生成器もあります。
+## 詳細情報
+以下に、関連する情報源へのリンクを掲蓉します。これらのリンクから更なる詳細を学ぶことができます。
 
-Pythonでランダムな数字を生成するための他の方法として、**random.uniform**関数や**random.choice**関数があります。詳しくは[公式ドキュメント](https://docs.python.org/ja/3/library/random.html)を参照してください。
-
-## 関連リンク：
-- [公式ドキュメント](https://docs.python.org/ja/3/library/random.html)
-- [Pythonにおける疑似乱数生成器の仕組み](https://dozzie.jarowit.net/1998/12/python-random/)
-- [ハードウェアランダム数生成器とは？](https://www.everythingrf.com/community/what-is-a-hardware-random-number-generator)
+- [Python公式ドキュメンテーション: random --- 擬似乱数を生成する](https://docs.python.org/ja/3/library/random.html)
+- [Wikipedia: メルセンヌツイスター](https://ja.wikipedia.org/wiki/%E3%83%A1%E3%83%AB%E3%82%BB%E3%83%B3%E3%83%8C%E3%83%84%E3%82%A4%E3%82%B9%E3%82%BF)
+- [NumPy公式ドキュメンテーション: Random sampling (numpy.random)](https://numpy.org/doc/stable/reference/random/index.html)

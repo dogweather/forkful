@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שתי תאריכים"
-html_title:           "Swift: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+##  מה זה ולמה? 
 
-השוואת שתי תאריכים היא תהליך השוואת שני תאריכים כדי לקבוע אם הם זהים או אם אחד קודם לשני. זהו כלי שימושי למתכנתים להשוואה בין תאריכים, לדוגמה כאשר מחשבים את גילם של משתמשים או במסגרת חישובי תאריכים כמו טווחי תאריכים לאירועים.
+השוואה בין שני תאריכים במציאות היא תהליך בו אנו משווים שני תאריכים כדי לראות איזה מהם מגיע לפני השני, או אם שניהם שווים. תכנתים משתמשים בו כדי לאתר אירועים המתרחשים לפי סדר זמני, לנתח מדדים כמו משך זמן, ועוד.
 
-## איך לעשות זאת?
+##  שימוש: 
 
-כדי לבצע השוואת שני תאריכים בשפת Swift, עלינו להשתמש בפעולת השוואה "==" כדי לבדוק אם שני התאריכים זהים. ניתן גם להשתמש בפעולות אחרות כדי לבדוק את התאריכים לפי יחידות זמן שונות, כגון ימים, שבועות או חודשים.
+דוגמאות קוד ודוגמאות לפלט הקוד תחת קטעי הקוד ```Swift ... ```:
 
-```Swift
-let date1 = Date()
-let date2 = Date()
+```swift
+import Foundation
 
-// Check if the two dates are equal
-if date1 == date2 {
-  print("The dates are equal!")
-}
-```
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+let date1 = dateFormatter.date(from: "2023/01/01 12:00")!
+let date2 = dateFormatter.date(from: "2023/01/02 13:30")!
 
-התוצאה המודפסת בקוד הזה תהיה "The dates are equal!" רק אם שני התאריכים זהים. אם נרצה להשוות את התאריכים כדי למצוא את התאריך המוקדם יותר, נוכל להשתמש בפעולאת השוואה ">", כך:
-
-```Swift
-let date1 = Date()
-let date2 = Date() - 100000 // 100000 seconds ago
-
-// Check which date is earlier
-if date1 < date2 {
-  print("date1 is the earlier date")
-} else if date2 < date1 {
-  print("date2 is the earlier date")
+if date1.compare(date2) == .orderedAscending {
+    print("Date1 is earlier than date2.")
+} else if date1.compare(date2) == .orderedSame {
+    print("Both dates are same.")
 } else {
-  print("The dates are equal!")
+    print("Date1 is later than date2.")
 }
 ```
 
-התוצאה המודפסת תהיה "date1 is the earlier date" כיוון שהתאריך date1 הוא התאריך הקדום יותר.
+פלט של הדוגמא הוא:
 
-## חקירה משיכה
+```sh
+Date1 is earlier than date2.
+```
 
-בעבר, השוואת שני תאריכים הייתה עדיפה באמצעות פעולות של השוואה פשוטות מתוך שימוש בספריות כמו Date.js או Moment.js. אך עם כניסת לישראל של שיפט 5 בשנה 2017 (שכוללת את התמיכה בספריות כמו Date.js), עכשיו ניתן לבצע השוואת תאריך בצורה יותר יעילה ישירות בשפת Swift.
+##  בחפיפה עמוקה: 
 
-נושא זה גם מדגים את כוח של שפת Swift כהכוון לקוד פייתון וספריות הקשורות להן. כאשר אנחנו משווים שני תאריכים בשפת Swift, אנחנו משווים במקרה זה בתאריך לפי פורמט המקובל בתקופה זו - משתמש באחת מהספריות משתמשים יותר מאשר במפעל לסיים את הבעיה הזו.
+1. מאז אבי קדמוני, מתכנתים נמוכים בעיסוקים הקשורים לניהול זמן. Swift, כמו שפות אחרות, מציעה מספר אפשרויות לעזרה בטיפול בתאריכים ובזמן.
+2. ישנם דרכים אחרות להשוות בין שני תאריכים ב-Swift, כולל שימוש ב- `.timeIntervalSince` כדי למצוא את מספר השניות שבין שני תאריכים.
+3. הפונקציה `.compare()` מבצעת פעולה של השוואה ישירה בין שני אובייקטים של `Date` ומחזירה ערך מספרי ממנה של `ComparisonResult`.
 
-## ראו גם
+##  ראה גם: 
 
-* מידע נוסף על השוואת תאריכים בשפת Swift: https://developer.apple.com/documentation/swift/
-* כריכת תאריכים בשפת Swift: https://www.hackingwithswift.com/articles/211/comparing-dates-in-swift
+1. [פוסט ב-Stackoverflow על השוואת תאריכים ב- Swift](https://stackoverflow.com/questions/26198526/how-compare-two-dates-in-swift)
+2. [מדריך התכנות של Apple בנושא 'Working with Dates and Times'](https://developer.apple.com/documentation/foundation/date)
+3. [מאמר מאוייר בנושא 'Understanding Dates and comparing two dates in Swift'](https://www.hackingwithswift.com/example-code/language/how-to-compare-dates-with-swift)

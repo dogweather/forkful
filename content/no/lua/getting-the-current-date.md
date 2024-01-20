@@ -1,7 +1,7 @@
 ---
-title:                "Hente den nåværende datoen"
-html_title:           "Lua: Hente den nåværende datoen"
-simple_title:         "Hente den nåværende datoen"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -11,25 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å få den nåværende datoen er en metode for å få informasjon om dagens dato, inkludert år, måned og dag. Dette er nyttig for programmerere som trenger å holde styr på tidsbaserte hendelser eller for å generere dynamisk innhold basert på datoen.
 
-## Slik gjør du det:
+Å få dagens dato handler om å hente nåværende dato og tid. Programmerere gjør dette for å spore hendelser, generere tidsspesifikke data eller bare vise tiden.
+
+## Slik gjør du:
+
+Lua gir `os.date` funksjonen for å få dagens dato. Her er et enkelt eksempel på hvordan du bruker det.
+
 ```Lua
--- Bruk funksjonen os.date() for å få den nåværende datoen
-local dato = os.date()
-
--- Du kan også spesifisere et eget format for datoen med hjelp av strenger og tegn
-local formatert_dato = os.date("%d.%m.%Y")
-
--- Skriver ut den nåværende datoen og det spesifiserte formatet
-print(dato) --> 01/03/2021
-print(formatert_dato) --> 01.03.2021
+dato = os.date("*t") -- Få den nåværende datoen
+print(os.date("I dag er det %d/%m/%Y", os.time(dato))) -- Skriver ut: I dag er det dd/mm/åååå
 ```
 
-## Dypdykk:
-Funksjonen os.date() er tilgjengelig i mange programmeringsspråk og er basert på standarden ANSI C. Dette gjør den enkel å forstå og implementere, selv om det finnes alternativer som Moment.js eller Luxon for mer avansert dato-behandling. Det er også mulig å spesifisere lokale tidssoner og formater i os.date() for å tilpasse datoen til dine behov.
+Dette vil hente og formatere datoen til en mer lesbar streng.
 
-## Se også:
-- [Lua dokumentasjon for os.date()](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [Moment.js](https://momentjs.com/)
-- [Luxon](https://moment.github.io/luxon/)
+## Deep Dive
+
+Historisk har Lua alltid hatt innebygde funksjoner for å håndtere dato og tid. `os.date` funksjonen har sin opprinnelse i C programming språket, som Lua er skrevet i. 
+
+Alternativer for å få dagens dato i Lua inkluderer bruk av tredjeparts biblioteker som `luadate` eller `lua-timestamp`. Disse bibliotekene kan gi mer funksjonalitet, men de krever ekstra avhengigheter.
+
+Implementasjonen av `os.date` funksjonen i Lua bruker C standardbibliotekets `time.h` headerfil. Dette gjør det enkelt og effektivt, men også plattformavhengig i noen tilfeller.
+
+## Se Også
+
+- Lua 5.4 manual: https://www.lua.org/manual/5.4/
+- Lua users wiki: http://lua-users.org/wiki/
+- Tredjeparts bibliotek - luadate: https://github.com/Tieske/date
+- Tredjeparts bibliotek - lua-timestamp: https://github.com/leafo/lua-date

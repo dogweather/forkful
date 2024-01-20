@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di una data da una stringa"
-html_title:           "Kotlin: Analisi di una data da una stringa"
-simple_title:         "Analisi di una data da una stringa"
+title:                "Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
+simple_title:         "Analizzare una data da una stringa"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,40 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cosa & Perché?
 
-Il parsing di una data da una stringa è il processo attraverso il quale i programmatori estraggono informazioni sulla data da una stringa di testo. Questo è utile quando la data è inserita in un formato diverso da quello utilizzato dal sistema. I programmatori spesso eseguono il parsing delle date per manipolarle e utilizzarle nei loro programmi.
+La conversione di una data da una stringa è un processo nel quale trasformiamo una stringa in un oggetto data. Questo viene fatto dai programmatori per manipolare e utilizzare meglio le date in un contesto di programmazione.
 
 ## Come fare:
 
-```Kotlin
-import java.time.format.DateTimeFormatter
+Ecco un esempio su come fare parsing di una stringa in una data in Kotlin:
+
+```kotlin
 import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 
 fun main() {
-  // Definizione della stringa contenente la data
-  val dateString = "10/05/2020"
-  // Utilizzo di un formatter per parsare la data
-  val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
-  // Creazione di un oggetto LocalDate
-  val date = LocalDate.parse(dateString, formatter)
-  // Visualizzazione della data nel formato desiderato
-  println(date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")))
+  val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+  val stringData = "21.12.2022"
+  val data = LocalDate.parse(stringData, formatter)
+
+  println(data)  // Stampa: 2022-12-21
 }
 ```
 
-L'output sarà: `10/05/2020`
+In questo esempio, definiamo un formato di data (dd.MM.yyyy) e una stringa di data. Usiamo il metodo `LocalDate.parse()` per convertire la stringa in un oggetto data.
 
-## Approfondimento:
+## Approfondisci:
 
-Il parsing delle date da una stringa è stato un problema comune per i programmatori in passato, poiché non c'erano strumenti specifici per eseguirlo facilmente. Tuttavia, con l'introduzione delle librerie e dei framework più moderni, è diventato un processo più semplice.  
+Nel contesto storico, prima dell'introduzione del modulo `java.time.*` con Java 8, i programmatori usavano le classi `java.util.Date` e `java.text.SimpleDateFormat` per effettuare il parsing delle stringhe data. Ma queste classi erano poco pratiche e presentavano diversi problemi, tra cui thread-safety.
 
-In alternativa all'utilizzo del `DateTimeFormatter` di Kotlin, è possibile utilizzare altre librerie come Joda-Time o Java 8 Date and Time API. Inoltre, è importante prestare attenzione al formato della data in input e alla specifica lingua utilizzata, in quanto ciò può influire sulla riuscita del parsing.
+Una alternativa notevole al `LocalDate.parse()` nelle versioni più recenti di Kotlin è l'utilizzo degli standard ISO per rappresentare le date. Ad esempio, possiamo fare parsing di date ISO senza dover specificare un formato:
 
-Per quanto riguarda l'implementazione del parsing di una data da una stringa in Kotlin, il linguaggio offre una semplice e intuitiva sintassi che facilita il processo. Inoltre, utilizzando gli strumenti forniti dalla libreria standard di Kotlin, è possibile gestire facilmente eventuali errori durante il parsing della data.
+```kotlin
+import java.time.LocalDate
+
+fun main() {
+  val stringData = "2022-12-10"
+  val data = LocalDate.parse(stringData)
+
+  println(data)  // Stampa: 2022-12-10
+}
+```
+
+Dettagli di implementazione: quando si effettua il parsing di una data, è importante specificare il formato corretto. Se il formato non matcha la stringa data, si otterrà un errore di runtime.
 
 ## Vedi anche:
 
-- [Guida ufficiale al parsing delle date con Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/java.time.-date-time/index.html)
-- [Documentazione di Joda-Time per il parsing delle date in Kotlin](https://www.joda.org/joda-time/index.html)
-- [Tutorial su come utilizzare il Java 8 Date and Time API in Kotlin](https://howtodoinjava.com/kotlin/kotlin/java-8-datetime-api-support-kotlin-tutorial/)
+1. [Kotlin Official Docs: java.time Library](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/)
+2. [Java 8 Date/Time API - Tutorial by Oracle](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+3. [Guide to the Date and Time API in Java](https://www.baeldung.com/java-8-date-time-intro)

@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av kommandoradsargument"
-html_title:           "C: Läsning av kommandoradsargument"
-simple_title:         "Läsning av kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,35 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
+## Vad & Varför?
 
-Läsning av kommandoradsargument är en vanlig uppgift i programmering som innebär att ta emot information från användaren genom kommandoraden. Detta gör det möjligt för användare att anpassa programmets beteende och öka dess användbarhet.
+Kommandoradsargument läses in för att överföra information till ett program vid körning. Detta skapar mer dynamiska program som kan hantera olika uppgifter.
 
-Hur man:
-```c
-int main(int argc, char *argv[]) { 
-    printf("Antalet kommandoradsargument är: %d\n", argc); 
-    printf("De givna argumenten är:\n"); 
-    for (int i = 0; i < argc; i++) {
-        printf("%s\n", argv[i]); 
-    } 
-    return 0; 
+## Hur gör man:
+
+Följande kod demonstrerar hur man läser in kommandoradsargument i C:
+
+```C
+#include <stdio.h>
+
+int main(int argc, char **argv) {
+    for(int i = 0; i < argc; i++) {
+        printf("Argument %d : %s\n", i, argv[i]);
+    }
+    return 0;
 }
 ```
 
-Om programmet körs från kommandoraden med argument som "hello" och "world", kommer utmatningen att vara:
+Om du kör programmet med `./myProgram Hello World`,
+Visar outputet:
+
 ```
-Antalet kommandoradsargument är: 3
-De givna argumenten är:
-programnamnet
-hello
-world
+Argument 0 : ./myProgram
+Argument 1 : Hello
+Argument 2 : World
 ```
 
-Djupt dyk:
-Läsning av kommandoradsargument har funnits sedan de tidigaste dagarna av programmering och har en betydande roll i att göra programmen mer anpassningsbara och användarvänliga. Det finns också alternativ till att läsa kommandoradsargument, till exempel att använda en konfigurationsfil, men kommandoradsargument är enklare för mindre program.
+## Djupdykning:
 
-Se även:
-- [https://www.programiz.com/c-programming/c-command-line-arguments](https://www.programiz.com/c-programming/c-command-line-arguments)
-- [https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm](https://www.tutorialspoint.com/cprogramming/c_command_line_arguments.htm)
-- [https://www.techonthenet.com/c_language/standard_library_functions/stdio_h/main.php](https://www.techonthenet.com/c_language/standard_library_functions/stdio_h/main.php)
+1. Historisk bakgrund: Konceptet med kommandoradsargument går tillbaka till de tidiga dagarna av UNIX, där program utformades för att vara små och effektiva verktyg. Argumenten var vanligtvis filnamn eller datasträngar som skulle bearbetas.
+2. Alternativ: Alternativen till kommandoradsargument inkluderar interaktiva användarinput, filinput och internet-kommunikation. Dock är kommandoradsargument det enklaste och mest direkt sättet att ange input till ett program vid körning.
+3. Implementeringsdetaljer: I C är `argv` en dubbelpekare till en array av strängar. Antalet strängar (argument) överförs som `argc`. Första argumentet (`argv[0]`) är alltid programmets körbara namn.
+
+## Se också:
+
+1. [C Library - <stdio.h>](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm): Djupdykning till C's stdio.h library.
+2. [Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/): En annan bra artikel om kommandoradsargument.
+3. [C Programming for Beginners](https://www.udemy.com/course/c-programming-for-beginners-/): En Udemy-kurs för nybörjare i C programmering.

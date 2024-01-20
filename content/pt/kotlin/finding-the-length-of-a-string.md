@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma string."
-html_title:           "Kotlin: Encontrando o comprimento de uma string."
-simple_title:         "Encontrando o comprimento de uma string."
+title:                "Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por quê?
+## O Que & Porquê?
 
-Encontrar o tamanho de uma string é uma tarefa comum na programação. Isso nos permite saber quantos caracteres uma determinada string contém, o que é útil para diversas aplicações. Programadores muitas vezes precisam encontrar o tamanho de uma string para validar entradas do usuário, formatar saídas, entre outras ações.
+Encontrar o comprimento de uma string significa determinar o número de caracteres que ela contém. Essa é uma tarefa comum na programação, usada para validar entradas de dados, gerenciar a apresentação do texto na interface do usuário e muito mais.
 
-## Como fazer:
+## Como fazer
 
-Para encontrar o tamanho de uma string em Kotlin, você pode usar a função length(). Veja um exemplo de código em Kotlin abaixo:
+Em Kotlin, você pode encontrar o comprimento de uma string usando a propriedade `length`:
 
-```Kotlin
-val string = "Olá mundo!"
-val tamanho = string.length()
-print(tamanho) // Saída: 11
+```kotlin
+val string = "Olá, mundo!"
+println("Comprimento da string: ${string.length}")
 ```
 
-## Mergulho profundo:
+A saída será:
 
-Encontrar o tamanho de uma string é uma tarefa que tem sido realizada desde os primeiros dias da programação. No início, as linguagens de programação tinham funções específicas para encontrar o tamanho de uma string, mas hoje em dia a função length() é comum na maioria das linguagens orientadas a objetos, incluindo Kotlin.
+```
+Comprimento da string: 12
+```
 
-Existem algumas alternativas para encontrar o tamanho de uma string, como contar os caracteres manualmente ou usar a propriedade size, que retorna o tamanho de uma coleção de dados. No entanto, a função length() em Kotlin é a forma mais recomendada e prática de encontrar o tamanho de uma string.
+## Deep Dive
 
-## Veja também:
+A propriedade `length` em Kotlin é inteiramente tirada de Java, a linguagem em que Kotlin foi construído. Esta operação é eficiente, porque as strings em Kotlin (e em Java) são imutáveis e armazenam seu comprimento como um campo.
 
-- [Documentação oficial do Kotlin sobre a função length()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/length.html)
-- [Outros métodos para obter o tamanho de uma string em Kotlin](https://www.tutorialkart.com/kotlin/measure-string-length-in-kotlin/)
+Uma alternativa para encontrar o comprimento de uma string poderia ser iterar sobre cada caractere na string e contar os caracteres. No entanto, isso é desnecessariamente complexo e menos eficiente do que usar a propriedade `length`.
+
+A implementação detalhada da propriedade `length` em Kotlin é simplesmente retornar o valor armazenado do campo `length` da string original.
+
+## Ver tambem
+
+Para obter mais detalhes sobre strings e suas propriedades e funções em Kotlin, você pode verificar estas fontes:
+
+- Kotlin String Class - Documentação oficial do Kotlin: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
+
+- Kotlin for Java Developers: Comparison to Java Programming Language: [https://kotlinlang.org/docs/reference/comparison-to-java.html](https://kotlinlang.org/docs/reference/comparison-to-java.html)

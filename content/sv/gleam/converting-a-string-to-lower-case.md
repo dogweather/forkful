@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera en sträng till små bokstäver"
-html_title:           "Gleam: Konvertera en sträng till små bokstäver"
-simple_title:         "Konvertera en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att konvertera en sträng till gemener innebär att ändra alla stora bokstäver till småtbokstäver i en given textsträng. Programmerare gör detta för att underlätta textmatchning och sortering, eftersom datorer skiljer på stora och små bokstäver.
 
-Att konvertera en sträng till små bokstäver är en vanlig operation som programmerare måste utföra när de jobbar med textdata. Det innebär att alla stora bokstäver i en sträng byts ut mot motsvarande små bokstäver. Varför gör man det? För att göra strängar enhetliga och lättare att jämföra och manipulera.
-
-## Så här gör du:
-
-Att konvertera en sträng till små bokstäver är enkelt i Gleam. Använd funktionen `String.to_lower` och skicka in den sträng som du vill konvertera.
+## Hur man gör:
+I Gleam används funktionen `to_lower` i `string`-modulen för att konvertera till gemener. Här är ett exempel:
 
 ```Gleam
-let string = "HeLlO wOrLd"
-let lower_string = String.to_lower(string)
+import gleam/string
+
+fn main() -> Nil {
+  let sträng = "Hej VÄRLDEN!"
+  let gentemener = string.to_lower(sträng)
+  assert(gentemener == "hej världen!")
+}
 ```
 
-Output: `hello world`
-
-Det är också möjligt att använda `String.to_lower` på en lista av strängar. Då blir varje sträng i listan konverterad.
-
+Kör denna kod, och utmatningen kommer att bli:
 ```Gleam
-let strings = ["gLeAm", "iS", "aWeSoMe!"]
-let lower_strings = List.map(String.to_lower, strings)
+"hej världen!"
 ```
 
-Output: `["gleam", "is", "awesome!"]`
+## Fördjupning
+Historiskt sett användes konvertering till gemener i början av datortiden för att spara utrymme, eftersom det inte fanns plats för både stora och små bokstäver i vissa lagringssystem. I Gleam och de flesta moderna språk, används detta för jämförelser och sortering. 
 
-## Djupdykning:
+Ett alternativ till `string.to_lower` kan vara att skriva en egen funktion, men detta rekommenderas inte eftersom det är troligt att det blir fel. 
 
-Att konvertera strängar till små bokstäver kan spåras tillbaka till de tidiga dagarna av datorer och programmering. Det används ofta för att göra textbearbetning (som sökning och sortering) mer effektivt och enhetligt.
+`to_lower`-funktionen i Gleam fungerar genom att gå igenom varje tecken i strängen, kolla om det är en stor bokstav, och om det är, ändra den till en liten bokstav.
 
-Det finns också andra sätt att konvertera en sträng till små bokstäver, som att använda Unicode-standarden och dess funktioner som `String.to_lowercase`. Gleams funktion `String.to_lower` stöder Unicode, men är också optimerad för att ha hög prestanda och vara enkel att använda i Gleam-kod.
+## Se även
+1. Gleam language doc - [Link](https://gleam.run/book/tour/basics.html)
+2. Expand your Gleam skills with "Learn X in Y minutes: Gleam" - [Link](https://learnxinyminutes.com/docs/gleam)
+3. For more on string manipulation, here's a [Link](https://gleam.run/stdlib/string.html) to the official String module docs.
 
-## Se även:
-
-- Gleams officiella dokumentation för `String.to_lower`: [link](https://gleam.run/documentation/stdlib/string.html#to_lower)
-- Mer om Unicode och behandling av strängar: [link](https://www.smashingmagazine.com/2019/04/unicode-events-javascript/)
+## See Also
+1. Gleam språkdokumentation - [Länk](https://gleam.run/book/tour/basics.html)
+2. Bredda dina Gleam färdigheter med "Learn X in Y minutes: Gleam" - [Länk](https://learnxinyminutes.com/docs/gleam)
+3. För mer om strängmanipulation, här är en [Länk](https://gleam.run/stdlib/string.html) till den officiella dokumentationen för String-modulet.

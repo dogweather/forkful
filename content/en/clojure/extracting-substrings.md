@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Clojure recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-Extracting substrings is the act of retrieving a specific portion of a string, rather than the entire string. Programmers often do this to manipulate, manipulate, or analyze data in a more granular way.
+## What & Why?
 
-# How to:
+Extracting substrings is the task of getting a smaller string (substring) from a larger one in programming. We do this because it's a handy way to drill down into text data, whether for extracting unique ID's, parsing useful parts, or simply performing text manipulations.
+
+## How to:
+
+Let's see how to extract a substring in Clojure:
+
+```clojure
+(subs "Clojure is Awesome!" 0 7)
 ```
-Clojure (str "Hello World")  ;; Retrieves the full string "Hello World"
-Clojure (subs "Hello World" 0 5)  ;; Retrieves the first 5 characters "Hello"
-Clojure (subs "Hello World" 6)  ;; Retrieves everything after the 6th character "World"
 
+This will return "Clojure" because indices in Clojure start from 0, and the `subs` function extracts the substring from the start index to the index before the end.
+
+If you want to extract from a certain point to the end, just give the start index.
+
+```clojure
+(subs "Clojure is Awesome!" 9)
 ```
 
-#Deep Dive:
+This will output "is Awesome!" because we're starting from index 9 till the end of the string.
 
-(1) Historical context:
-Extracting substrings has been a common task in programming since the early days of string manipulation. In older languages such as C and BASIC, it required writing custom code using pointer arithmetic. However, with the advent of high-level languages like Clojure, this task has become much simpler and more streamlined.
+## Deep Dive:
 
-(2) Alternatives:
-While extracting substrings using the `subs` function is the most common approach, there are alternative methods such as using regular expressions or the `substring` function. However, these methods may require more complex syntax and are not specific to Clojure.
+Originally arising from the Lisp tradition, Clojure represents strings as Java String objects but intermingles the idea of substrings from the general sphere of programming. The `subs` function lets you take chunks out of strings, conceptually akin to slices in other languages like Python.
 
-(3) Implementation details:
-The `subs` function in Clojure takes in three arguments - the string to be extracted from, the starting index, and the optional ending index. If no ending index is provided, the function will default to the end of the string. This makes it easy to retrieve both a single character or a range of characters from a string.
+Alternatives for substring extraction in Clojure exist, though. You might convert a string into a sequence of characters and play with Clojure's rich sequence functions. Remember, though, that `subs` is direct and usually more efficient.
 
-# See Also:
-- [ClojureDocs - subs](https://clojuredocs.org/clojure.core/subs)
-- [The Joy of Clojure - chapter 5](https://www.manning.com/books/the-joy-of-clojure-second-edition)
+On the implementation side, Clojure's `subs` function uses Java's `substring` method, which creates a new string object that references the same char array as the original string but with different offset and count values.
+
+## See Also:
+
+1. Clojure Docs: [subs](https://clojuredocs.org/clojure.core/subs)
+2. Stack Overflow: [Clojure String to Character Array](https://stackoverflow.com/questions/5427764/clojure-string-to-character-array) for alternatives.
+3. Java Docs: [substring](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int)) for the implementation journey of `subs`.

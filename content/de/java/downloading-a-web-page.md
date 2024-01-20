@@ -1,6 +1,6 @@
 ---
 title:                "Eine Webseite herunterladen"
-html_title:           "Java: Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
 simple_title:         "Eine Webseite herunterladen"
 programming_language: "Java"
 category:             "Java"
@@ -11,49 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Download einer Webseite wird der Inhalt einer Website von einem Server auf Ihren Computer übertragen. Programmierer nutzen diese Funktion, um Inhalte von Webseiten in ihre Anwendungen zu integrieren oder um Daten für Analysen zu sammeln.
+Das Herunterladen einer Webseite ist der Prozess, bei dem ein Programm die Inhalte einer Webseite aus dem Internet abruft und lokal speichert. Programmierer tun dies, um Webdaten zu analysieren, Ressourcen zu speichern oder um Offlinemöglichkeiten zu ermöglichen.
 
-## Wie geht's:
-Um eine Webseite in Java herunterzuladen, können Sie die Java-Standardbibliothek verwenden oder eine externe Bibliothek wie Apache HttpClient einbinden. Hier ist ein Beispiel, wie Sie eine Webseite mit Java herunterladen können:
+## So geht's:
+Unten finden Sie ein einfaches Beispiel, wie Sie eine Webseite mit Java und der Bibliothek `java.net.HttpURLConnection` herunterladen können:
 
 ```Java
-import java.io.IOException;
+import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
-public class WebpageDownloader {
-    public static void main(String[] args) throws IOException {
-        // URL der herunterzuladenen Webseite
-        String url = "https://www.example.com";
+public class Main {
+    public static void main(String[] args) throws Exception {
+        
+        // URL definieren
+        URL url = new URL("http://beispiel.de");
 
-        // Die URL wird in ein URL-Objekt umgewandelt
-        URL webpageURL = new URL(url);
+        // Verbindung öffnen
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-        // Ein Scanner-Objekt wird verwendet, um den Inhalt der Webseite zu lesen
-        Scanner scanner = new Scanner(webpageURL.openStream());
-        String content = "";
-
-        // Der Inhalt der Webseite wird Zeile für Zeile gelesen und in "content" gespeichert
-        while(scanner.hasNext()) {
-            content += scanner.nextLine();
+        // Response lesen
+        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String line;
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
         }
-
-        // Der heruntergeladene Inhalt wird ausgegeben
-        System.out.println(content);
-
-        // Der Scanner wird geschlossen
-        scanner.close();
+        reader.close();
     }
 }
 ```
+Dieses Programm wird die gesamte HTML-Daten einer gegebenen URL ausdrucken.
 
-Das oben genannte Beispiel nutzt die Java-Standardbibliothek, indem es die `URL`- und `Scanner`-Klassen verwendet, um den Inhalt der Webseite zu lesen. Es ist auch möglich, eine externe Bibliothek wie Apache HttpClient einzubinden, um den Vorgang zu vereinfachen.
+## Vertiefung
+Historisch gesehen, wurden Webseiten massenhaft heruntergeladen, um Webindizes für Suchmaschinen wie Google zu erstellen. Heute wird dies auch oft zur Datenanalyse (Web Scraping) oder zur Archivierung verwendet.
 
-## Tiefentauchen:
-Das Herunterladen von Webseiten ist eine grundlegende Funktion in der Webentwicklung und ermöglicht es Programmierern, dynamische Inhalte in ihre Anwendungen zu integrieren. Es gibt verschiedene Möglichkeiten, eine Webseite in Java herunterzuladen, einschließlich der Verwendung von externen Bibliotheken wie Apache HttpClient oder der Nutzung der Java-Standardbibliothek.
+Es gibt viele Alternativen zum Herunterladen von Webseiten in Java, z.B. die Bibliotheken Jsoup oder HTMLUnit. Diese bieten weitere Funktionen, wie das Durchsuchen und Analysieren von HTML-Daten.
 
-Weitere Informationen und Anwendungsbeispiele finden Sie in der offiziellen Java-Dokumentation und auf Websites wie Stack Overflow.
+Die Implementierungsdetails, insbesondere die Behandlung von HTTP-Response-Codes, Umleitungen und Cookies, hängen von den spezifischen Anforderungen deines Programms ab.
 
-## Siehe auch:
-- [Java Documentation - URL class](https://docs.oracle.com/javase/10/docs/api/java/net/URL.html)
-- [Stack Overflow - How to download a webpage](https://stackoverflow.com/questions/238547/how-do-you-programmatically-download-a-webpage-in-java)
+##  Siehe auch
+Weitere nützliche Ressourcen:
+
+1. Jsoup: https://jsoup.org/
+2. HTMLUnit: http://htmlunit.sourceforge.net/
+3. Java HttpURLConnection Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html
+4. Mehr über Web Scraping: https://de.wikipedia.org/wiki/Screen_Scraping
+
+Erinnere dich immer an gute Praktiken beim Herunterladen von Webseiten, respektiere immer die Nutzungsbedingungen und Datenschutzrichtlinien der Webseiten, die du herunterlädst.

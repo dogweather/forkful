@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "Gleam: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,22 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-文字列の長さを求めることは、プログラマーにとって重要なタスクです。文字列の長さを知ることにより、プログラムが文字列を正しく処理できるようになります。また、文字列の長さを求めることは、文字列の操作や分析にも役立ちます。
+## 何となく？
 
-## 手順：
-まず、「$ string_length(string)」を使用して、文字列の長さを求める関数を定義します。次に、定義した関数に文字列を入力し、返された結果を確認します。例えば、```Gleam
-let string_length(string) {
-  ...
+文字列の長さを調べるとは、その文字列が何文字から構成されているかを確認することです。大抵のプログラマーは、配列や文字列の長さを操作するためや、入力の有効性を確認するためにこれを用います。
+
+## やってみよう：
+
+文字列の長さを調べる方法を学ぶために、以下のGleamのコード例題を見てみましょう：
+
+```Gleam
+import gleam/string
+
+fn main() {
+  let text = "こんにちは、世界"
+  let length = string.length(text)
+  io.println(length)
 }
+```
 
-let length = string_length("こんにちは")
-``` 
-のように使用することができます。このコードを実行すると、返される結果は"5"となります。
+上記のコードを実行すると、文字列`"こんにちは、世界"`の長さ、つまり文字数が出力されます。
 
-## 深く掘り下げる：
-文字列の長さを求める方法は、プログラミング言語によって異なります。Gleamでは、文字列の長さを求めるための組み込み関数を提供していますが、他の言語では独自の方法を使用することができます。また、文字列の長さを求める際には、文字のエンコーディングにも注意する必要があります。
+## 深堀り：
+
+1. **歴史的文脈**：古くからの多くのプログラミング言語では、文字列の長さを調べるための組み込み関数が用意されています。その中には、Gleamや、その他の関数型PLも含まれます。
+
+2. **代替案**：多くの言語（Gleamを含む）では、組み込み関数を使う以外にも、ループを使って一文字ずつ数える方法など、独自に文字列の長さを計算する方法を用いることも可能です。
+
+3. **実装の詳細**: Gleamの`string.length`関数は内部的にはErlangの`byte_size`関数を使用しています。この方法では、UTF-8エンコードされた文字列のバイト数が返されるため、含まれている全ての文字を正確にカウントします。
 
 ## 関連情報：
-- 文字列処理の基本: https://gleam.run/book/std-lib-string.html
-- 文字列の操作について: https://www.unicode.org/unicode/support.html#string_manipulation
+
+関連するリソースについては、以下のリンクをチェックしてみてください：
+
+- Gleamの公式ドキュメンション：[文字列](https://gleam.run/book/tour/strings.html)
+- `string.length`の詳細なAPIドキュメンテーション：[API Docs](https://hexdocs.pm/gleam_stdlib/Gleam.String.html#length/1)

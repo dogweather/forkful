@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Haskell: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,49 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Sammenligne Datoer med Haskell
+
 ## Hva & Hvorfor?
 
-Sammenligning av to datoer er en vanlig oppgave for programmere. Det innebærer å sjekke om en dato er før, etter eller lik en annen dato. Dette er nyttig for å organisere og filtrere data basert på datoer, for eksempel når man lager en kalender eller sorterer data basert på når de ble opprettet.
+Sammenligning av to datoer betyr å bestemme hvilken dato som kommer først eller om begge er de samme. Programmerere gjør dette for å håndtere tidslinjer, løse tidsavhengige problemer og utføre dato-aritmetikk.
 
-## Hvordan gjøre det:
+## Hvordan:
+
+Bruk `Data.Time` biblioteket for å sammenligne datoer i Haskell.
 
 ```Haskell
--- Importer Data.Time biblioteket for å bruke funksjoner for datoer
 import Data.Time
 
--- Opprett en utdatafunksjon for å vise sammenligningsresultat
-output :: Ordering -> String
-output LT = "Før"
-output GT = "Etter"
-output EQ = "Lik"
-
--- Definer to datoer (i dette tilfellet, 1. januar 2020 og 15. februar 2020)
-d1 :: Day
-d1 = fromGregorian 2020 1 1
-d2 :: Day
-d2 = fromGregorian 2020 2 15
-
--- Sammenlign datoene ved hjelp av compare-funksjonen
--- og skriv ut resultatet
-main :: IO ()
 main = do
-    let comparison = compare d1 d2
-    putStrLn $ "Dato 1 er " ++ output comparison ++ " dato 2."
-
--- Output:
--- Dato 1 er Før dato 2.
+    let dato1 = ModifiedJulianDay 59000
+    let dato2 = ModifiedJulianDay 60200
+    putStrLn $ if dato1 < dato2 then "Dato1 er tidligere." else "Dato2 er tidligere."
 ```
 
-## Dykk dypere:
+Hvis du kjører denne, vil output være:
 
-Sammenligning av datoer har alltid vært en viktig del av programmering, særlig med utviklingen av datamaskiner og datasystemer. Etter hvert som datamaskiner ble mer vanlige, ble behovet for å håndtere datoer og tidsdata mer komplekst. Dette førte til utviklingen av spesifikke funksjoner og biblioteker som Data.Time i Haskell, som gjør det enkelt å håndtere og sammenligne datoer.
+```Haskell
+"Dato1 er tidligere."
+```
 
-Det finnes også alternative måter å sammenligne datoer på, for eksempel ved å representere dem som tall og bruke vanlige matematiske operatorer. Dette kan være en enklere tilnærming, men det kan også føre til feil og unøyaktigheter når man håndterer tidsdata.
+## Dypdykk
 
-Når det kommer til implementasjonsdetaljer, bruker Data.Time-biblioteket i Haskell konseptet om "Julian Day Numbers" for å representere datoer. Dette er et numerisk system som angir antall dager siden en bestemt startdato. Ut fra dette kan man enkelt bruke vanlige numeriske operatorer for å sammenligne datoer.
+Sammenligning av datoer har vært en kritisk del av programmering siden dets tidlige dager. Haskell, opprinnelig født i 1990, har blitt brukt i bredt spekter av applikasjoner som inkluderer tid og dato manipulasjoner.
 
-## Se også:
+Alternativer til `Data.Time` inkluderer `Time` og `Data.Dates` bibliotekene. Men `Data.Time` er det mest anbefalte biblioteket for håndtering av tid og dato i Haskell fordi det er grundig og nøye testet.
 
-- [Haskell wiki - Data.Time](https://wiki.haskell.org/Data.Time)
-- [Haskell.org - Data.Time dokumentasjon](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/time-1.9.3/Data-Time.html)
-- [W3 Schools - Sammenligning av datoer i Haskell](https://www.w3schools.com/haskell/haskell_date_comparison.asp)
+Sammenligning av datoer i Haskell er en grei prosess fordi alle datoobjekter er av typen `Ord`, som betyr at de inneholder innebygde sammenligningsoperasjoner. Data typen `ModifiedJulianDay` vi brukte ovenfor er et eksempel.
+
+## Se også 
+
+For mer informasjon om dato- og tidsfunksjoner i Haskell, se følgende kilder:
+
+1. [Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+2. [Sammenligning av tid og dato](https://wiki.haskell.org/Time_and_dates) på HaskellWiki.
+3. For et dypere dykk med tid og dato håndtering i Haskell, sjekk [School of Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks).

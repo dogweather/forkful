@@ -1,7 +1,7 @@
 ---
-title:                "Ottenere la data corrente."
-html_title:           "Gleam: Ottenere la data corrente."
-simple_title:         "Ottenere la data corrente."
+title:                "Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
+simple_title:         "Ottenere la data corrente"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perché?
+## Cos'è e Perché?
 
-Ottenere la data corrente è una funzione essenziale per i programmatori. Si tratta semplicemente di recuperare la data corrente dal sistema operativo, che può essere utilizzata per una varietà di scopi come registrazione di eventi, tempistica delle attività o sincronizzazione con altri sistemi.
+Prendere la data corrente in programmazione significa ottenere istantaneamente la data e l'ora del sistema. Lo facciamo per segnare eventi, registrare le transazioni o semplicemente visualizzare l'ora e la data attuali.
 
-## How to:
+## Come si fa:
 
-Per ottenere la data corrente in Gleam, è sufficiente utilizzare la funzione "date.now()" seguita dal formato desiderato. Ad esempio:
+Iniziamo con un esempio di codice Gleam per ottenere la data corrente. Nota: Gleam utilizza il modulo Erlang :calendar per gestire la data e l'ora.
 
-```Gleam
-let current_date = date.now() |> date.format("%m/%d/%Y") 
+```gleam
+import erlang
+
+fn today() {
+  let erlang.Tuple(_, month, day) = erlang.localtime()
+  day
+}
 ```
 
-Il risultato sarà una stringa contenente la data corrente formattata nel formato specificato.
+Quando esegui questo codice otterai il giorno corrente.
 
-Ecco un esempio di output: 
-
+```shell
+gleam run today
+-> 15 (se oggi è il 15esimo giorno del mese)
 ```
-06/26/2021
-```
 
-## Deep Dive
+## Approfondimento
 
-L'implementazione di come ottenere la data corrente varia a seconda del sistema operativo. Tuttavia, la maggior parte dei linguaggi di programmazione, tra cui Gleam, fornisce una libreria standard per semplificare questa operazione. 
+Storicamente, molti linguaggi di programmazione si affidano a librerie o moduli built-in per l'ottenimento della data corrente. Ad esempio, in Gleam utilizziamo il modulo :calendar di Erlang, come abbiamo mostrato sopra.
 
-In alternativa, è possibile utilizzare una libreria di terze parti per ottenere date più precise o con formati personalizzati.
+Ci sono alternative a questa implementazione. Alcuni linguaggi ti permettono di creare il tuo modulo per gestire il tempo e la data. Tuttavia, in Gleam, probabilmente troverai più facile ed efficiente utilizzare le funzioni di Erlang come ```erlang.localtime()```.
 
-Per gli sviluppatori più esperti, è possibile implementare manualmente l'acquisizione della data utilizzando la libreria FFI (Foreign Function Interface) per comunicare con il sistema operativo.
+## Vedi anche
 
-## See Also
+Per approfondire la gestione delle date e delle ore in Gleam (e in Erlang), dai un'occhiata a queste fonti:
 
-- [Documentazione ufficiale di Gleam per la funzione date.now()](https://gleam.run/stdlib/date.html#now)
-- [Esempi di formati di data supportati da Gleam](https://gleam.run/stdlib/date.html#format_flags)
-- [Libreria di terze parti per ottenere date e orari più precisi](https://github.com/gleam-lang/calendar)
-- [Documentazione di FFI per Gleam](https://gleam.run/ffi/)
+- Documentazione ufficiale di Gleam: https://gleam.run/book/tour/dynamic-typing.html
+- Documentazione ufficiale di Erlang :calendar: https://erlang.org/doc/man/calendar.html

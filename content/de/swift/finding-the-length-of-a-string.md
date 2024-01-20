@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden."
-html_title:           "Swift: Die Länge eines Strings finden."
-simple_title:         "Die Länge eines Strings finden."
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,21 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Finden der Länge einer Zeichenkette ist ein grundlegender Schritt beim Programmieren. Es ermöglicht dir, die Anzahl der Zeichen in einer Zeichenkette zu bestimmen, was in vielen Szenarien wichtig ist. Zum Beispiel, um sicherzustellen, dass eine Eingabe innerhalb der erwarteten Länge liegt oder um bestimmte Formatierungen vorzunehmen.
 
-## Wie geht's:
-Um die Länge einer Zeichenkette zu finden, kannst du die Methode `count` verwenden, die in Swift integriert ist. Sie gibt die Anzahl der Zeichen in einer Zeichenkette zurück. Hier ist ein Beispiel:
+Das Finden der Länge eines Strings bedeutet, die Anzahl der Zeichen in diesem String zu ermitteln. Programmierer tun dies, um z.B. Berechnungen durchzuführen, Bedingungen zu prüfen oder Inhalte zu formatieren.
+
+## Wie macht man das:
+
+In Swift ist es ganz einfach, die Länge eines Strings zu finden. Du verwendest die `count` Eigenschaft des Strings. Hier ist ein einfaches Beispiel:
 
 ```Swift
-let string = "Hallo!"
-print(string.count) // gibt 6 aus
+let meinString = "Programmieren"
+let laenge = meinString.count
+print("Die Länge des Strings ist \(laenge).")
 ```
 
-## Tiefere Einblicke:
-Das Konzept, die Länge einer Zeichenkette zu finden, ist nicht spezifisch für Swift, sondern wird in vielen Programmiersprachen verwendet. In älteren Sprachen wie C oder Java musste man eine Schleife verwenden und jedes Zeichen einzeln zählen, um die Länge einer Zeichenkette zu bestimmen. In Swift wird dies jedoch durch die `count` Methode vereinfacht.
+Die Ausgabe dieses Codes würde sein: Die Länge des Strings ist 13.
 
-Alternativ dazu gibt es auch die Möglichkeit, die Länge einer Zeichenkette mit der Eigenschaft `countElements` zu finden. Diese Methode zählt nicht die Anzahl der Zeichen, sondern die Anzahl der Unicode-Scalars in einer Zeichenkette. Dies kann in manchen Fällen zu unterschiedlichen Ergebnissen führen, daher ist es wichtig zu wissen, welche Methode für dein Szenario geeignet ist.
+## Tiefer Einblick
 
-## Siehe auch:
-- Offizielle Dokumentation zu `count` in Swift: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
-- Stack Overflow: Unterschied zwischen `count` und `countElements` in Swift: https://stackoverflow.com/questions/26360057/count-vs-countelements-in-swift
+Swift handhabt das Strings Zählen etwas anders als ältere Sprachen. Früher wurden Strings als Arrays von Zeichen gehandhabt. Man würde über diese Arrays iterieren, um ihre Länge zu finden. Swift betrachtet Strings jedoch als Unicode-skalare Werte. Daher ist es möglich, dass ein scheinbar einzelnes Zeichen (zum Beispiel ein Emoticon) als mehrere Unicode-skalare Werte betrachtet wird. Daher sollte man mit der `count` Eigenschaft von Swift das Zählen durchführen.
+
+Es gibt auch alternative Weisen, die Länge eines Strings in Swift zu finden. Eine Möglichkeit ist es, die `utf16` Eigenschaft des Strings zu verwenden, die den String in eine Art Array aus 16-Bit-Unicode-Transformationseinheiten umwandelt. Hier ein Beispiel:
+
+```Swift
+let meinString = "Programmieren 🚀"
+let laenge = meinString.utf16.count
+print("Die Länge des Strings ist \(laenge).")
+```
+
+Beachte, dass bei Verwendung von `utf16` die Ausgabe für das obige Beispiel 15 ist und nicht 14, da das Emoticon als zwei separate Einheiten gezählt wird.
+
+## Sehen Sie Auch
+
+- Swift-String und Character Dokumentation: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- StackOverFlow-Diskussion über das Zählen von Zeichen in einem String in Swift: [https://stackoverflow.com/questions/24092884/get-number-of-characters-in-a-string-in-swift](https://stackoverflow.com/questions/24092884/get-number-of-characters-in-a-string-in-swift)

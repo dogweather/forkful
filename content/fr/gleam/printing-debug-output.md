@@ -1,7 +1,7 @@
 ---
-title:                "Afficher la sortie de débogage"
-html_title:           "Gleam: Afficher la sortie de débogage"
-simple_title:         "Afficher la sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est & Pourquoi?
 
-Le "debug output" c'est simplement le fait d'afficher des informations pendant que votre code s'exécute pour le déboguer ou le comprendre. Les programmeurs le font pour trouver des erreurs, suivre le déroulement de leur code et mieux comprendre comment il fonctionne.
+L'impression de sortie de débogage est un moyen pour les programmeurs d'afficher des messages d'erreur, des variables et d'autres données pour vérifier le fonctionnement du programme. C'est essentiel pour identifier et résoudre les problèmes rapidement.
 
-#Comment faire:
+## Comment faire:
 
-Pour afficher du "debug output" dans Gleam, utilisez la fonction `debug` et placez l'information que vous voulez afficher comme argument. Voici un exemple:
+Gleam vous permet d'imprimer le débogage avec la fonction `io.debug`. Prenez cet exemple:
 
+```Gleam
+import gleam/io
+
+fn main() {
+  let a = 100
+  io.debug(a) // Affiche "DEBUG: 100\n" dans la console
+}
 ```
-Gleam.debug("Voici un message de débogage")
-```
+Lors de l'exécution de ce programme, `100` sera affiché dans la sortie de débogage.
 
-Cela affichera "Voici un message de débogage" dans la console lorsque le code sera exécuté.
+## Plongée profonde
 
-#Plongée en profondeur:
+Historiquement, l'impression de débogage est une pratique ancienne qui remonte aux premiers jours de la programmation. En Gleam, c'est une fonctionnalité simple mais essentielle qui incorpore le meilleur des langages de programmation fonctionnels et impératifs.
 
-Afficher des informations de débogage n'est pas une pratique nouvelle. Les programmeurs l'utilisent depuis longtemps pour aider à comprendre et dépanner leur code. Il existe également d'autres moyens de déboguer, tels que l'utilisation de débogueurs spéciaux, mais afficher du "debug output" reste une méthode simple et efficace.
+Une autre alternative possible pour débugger en Gleam est d'utiliser une interface débogueur avec un EDI comme Visual Studio Code, qui offre un environnement pour surveiller activement les variables et l'état du programme.
 
-Dans Gleam, la fonction `debug` est implémentée à l'aide d'un module standard appelé `gleam_io`. Ce module fournit des fonctions pour l'entrée et la sortie de données, y compris l'affichage du "debug output".
+Quant à l'implémentation, `io.debug` fonctionne en affichant des messages sur `stderr`; ce qui signifie que le débogage n'affecte pas la sortie standard du programme, garantissant ainsi que seul le développeur verra les messages de débogage.
 
-#Voir aussi:
+## Voir aussi
 
-Pour plus d'informations sur le débogage en général, consultez ces liens utiles:
+Pour en savoir plus sur le débogage en Gleam, consultez les ressources suivantes :
 
-- [Site officiel de Gleam](https://gleam.run/documentation/) pour plus d'informations sur la fonction `debug` et d'autres fonctionnalités utiles de Gleam.
-- [Article Wikipédia sur le débogage](https://fr.wikipedia.org/wiki/D%C3%A9bogage) pour en apprendre davantage sur l'historique et les différentes méthodes de débogage.
-- [Vidéo YouTube sur le débogage en pratique](https://www.youtube.com/watch?v=a2Q8AETVpwE) pour voir comment les programmeurs utilisent le "debug output" dans leur processus de développement.
+- [Gleam IO Documentation](https://hexdocs.pm/gleam_stdlib/gleam/io/)
+- [Gleam Language Guide](https://gleam.run/book/tour/)
+- [Visual Studio Code - Debugger Extension](https://code.visualstudio.com/docs/editor/debugging)

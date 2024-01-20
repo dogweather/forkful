@@ -1,6 +1,6 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "PHP: 웹 페이지 다운로드하기"
+html_title:           "Bash: 웹 페이지 다운로드하기"
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,26 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜해? 
-웹 페이지를 다운로드한다는 것은 프로그래머가 웹 페이지의 소스 코드를 컴퓨터로 저장하는 것을 의미합니다. 프로그래머는 이를 통해 웹 페이지의 정보를 사용할 수 있게 됩니다.
+## 무엇이고 왜합니까?
+웹 페이지를 다운로드하는 것은 인터넷에서 웹 페이지의 데이터를 로컬로 복사하여 가져오는 것입니다. 프로그래머들은 이를 통해 웹 사이트의 콘텐츠를 분석하고, 어플리케이션을 위한 데이타를 수집하거나, 오프라인에서 웹 페이지를 사용하기 위해 이를 수행합니다.
 
-## 방법: 
-아래의 예시 코드를 통해 다운로드하는 방법을 알아보겠습니다.
+## 실행 방법:
+Web 페이지를 다운로드하는 가장 간단한 방법은 `file_get_contents()` 함수를 사용하는 것입니다. 이를 통해 웹 페이지 콘텐츠를 모두 가져올 수 있습니다.
 
 ```PHP
 <?php
-$url = "https://www.example.com/index.html";
-$contents = file_get_contents($url);
-echo $contents;
+  $url = 'https://www.example.com';
+  $content = file_get_contents($url);
+  echo $content;
 ?>
 ```
-위 코드는 "www.example.com"의 인덱스 페이지를 다운로드하고, 컴퓨터에 저장한 후 해당 페이지의 소스 코드를 출력합니다.
 
-## 깊이 파헤치기: 
-우리는 더 이상 웹 페이지를 수동으로 다운로드하고 저장해야 하는 시대를 지나서, PHP를 통해 간단하게 웹 페이지를 다운로드할 수 있게 되었습니다. 또한, file_get_contents() 함수 외에도 cURL 등 다른 방법으로도 웹 페이지를 다운로드할 수 있습니다.
+위 코드를 실행하면, 'https://www.example.com' URL에 해당하는 웹 페이지의 HTML 컨텐츠가 출력됩니다.
 
-## 관련 정보: 
-추가적인 정보는 아래의 링크를 참고해주세요.
-- [PHP 공식 문서](https://www.php.net/manual/en/function.file-get-contents.php)
-- [cURL 사용 예시](https://www.geeksforgeeks.org/how-to-use-curl-in-php/)
-- [웹 크롤링과 관련된 더 많은 정보](https://medium.com/@ieuneo/web-crawling-%EB%A7%88%EC%86%8C%EC%9D%84-%ED%86%B5%ED%95%B4%ED%95%98%EC%A7%80-%EC%95%8A%EC%95%98%EC%8B%9C%EB%8A%94-%EB%B2%95-fa77f2fc4411)
+## 깊게 파보기:
+웹 페이지 다운로드는 웹 페이지의 HTML 소스를 가져오는 과정으로, 인터넷 초기부터 존재했습니다. 하지만 이를 수행하는 방법은 여러가지가 있습니다. `file_get_contents()` 뿐만 아니라, cURL 라이브러리를 사용한 방법도 있습니다. cURL은 다양한 프로토콜을 지원하고, 복잡한 웹 페이지 다운로드 요구를 처리할 수 있다는 장점을 가지고 있습니다. `file_get_contents()`는 간단한 용도로 충분하지만, 상세한 설정이 필요한 경우 cURL이 더 좋은 선택일 수 있습니다.
+
+## 참고 자료:
+1. PHP file_get_contents() 함수: http://php.net/manual/kr/function.file-get-contents.php
+2. cURL를 이용한 웹 스크래핑: https://www.php.net/manual/en/book.curl.php

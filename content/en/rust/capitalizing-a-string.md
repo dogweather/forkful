@@ -10,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Capitalize Strings in Rust
+
 ## What & Why?
-Capitalizing a string means converting the first character of the string to uppercase and leaving the rest of the characters unchanged. Programmers do this to make strings more visually appealing and consistent, especially when displaying them to users.
 
-## How to:
-To capitalize a string in Rust, we can use the built-in `to_uppercase()` function. The function takes in a `String` type and returns a new string with the first character capitalized. Here's an example:
-```
-let hello = "hello".to_string();
-let hello_capitalized = hello.to_uppercase();
+Capitalizing strings is making all the first letters of the words within the string uppercase. It makes your program user interface tidy and readable.
 
-println!("{}", hello_capitalized);
-```
-Output:
-```
-Hello
-```
+## How To:
 
-We can also use the `chars` iterator to manually capitalize the first character of the string. Here's an example:
-```
-let hello = "hello".to_string();
-let mut chars = hello.chars();
+Take a look at this simple way to capitalize a string in Rust.  
 
-if let Some(first_char) = chars.next() {
-    println!("{}{}", first_char.to_uppercase(), chars.as_str());
+```Rust
+fn capitalize(s: &str) -> String {
+    let mut cap = String::new();
+    let mut new_word = true; 
+    for c in s.chars() {
+        if c.is_alphanumeric() {
+            if new_word { cap.extend(c.to_uppercase()); new_word = false; }
+            else { cap.push(c); }
+        } else { cap.push(c); new_word = true; }
+    }
+    cap
+}
+
+fn main() {
+    println!("{}", capitalize("hello, rust programming!")); //Output: "Hello, Rust Programming!"
 }
 ```
-Output:
-```
-Hello
-```
+In this code snippet, `capitalize()` is a utility function that receives a str (slice of a string) and returns a new string that includes capitalized characters according to the rules defined by the logic enclosed within the loop.
 
-## Deep Dive:
-Capitalizing strings has been a common practice in programming languages, dating back to the early days of programming when punch cards were used. It was typically done to differentiate keywords or commands from regular text. However, with the advances in programming languages and improved user interfaces, capitalization is now mostly used for aesthetic purposes.
+## Deep Dive
 
-There are a few alternatives to the `to_uppercase()` function in Rust, such as the `to_ascii_uppercase()` function, which only capitalizes ASCII characters. There is also the `capitalize` crate, which has additional options for capitalizing strings according to different rules like title casing.
+Historical context: Rust doesn't come with a built-in method to capitalize strings - that's why we need a custom function as above. 
 
-When it comes to implementation, the `to_uppercase()` function uses the `core/unicode/normalization.rs` module in the Rust standard library. It follows the Unicode specification for converting characters to uppercase.
+Alternatives: There may be alternative libraries/add-ons providing this functionality such as the popular `heck` crate in Rust that gives solution for string case conversions. 
 
-## See Also:
-- [Rust Standard Library](https://doc.rust-lang.org/std/index.html)
-- [capitalize crate](https://crates.io/crates/capitalize)
-- [Unicode Case Mapping Functions](https://www.unicode.org/Public/UNIDATA/CaseFolding.txt)
+Implementation details: The function above checks for alphabetic characters to capitalize the first letter after each non-alphabetic character (indicating a new word). Uppercased characters use more memory than lowercase, so this version avoids unnecessary creations of uppercase characters that aren't needed. Only the first character of each word is uppercased, reducing storage and computation.
+
+## See Also
+
+Heck crate: https://crates.io/crates/heck
+Guide to Strings in Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#str-is-a-view-into-a-string

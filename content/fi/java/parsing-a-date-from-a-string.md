@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Java: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,26 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi? 
-Päivämäärän jäsenteleminen merkkijonosta on tärkeä ohjelmointitaito, joka mahdollistaa päivämäärätietojen käsittelyn tietokoneella. Tämä voi olla tarpeellista esimerkiksi sovelluksissa, joissa käyttäjä antaa päivämäärän tietynlaisessa muodossa ja ohjelma tarvitsee muuttaa sen tietokoneen ymmärtämään muotoon.
+## Mitä & Miksi?
+Tietojen hahmontaminen (eli parsiminen) tekstistä on prosessi, jossa jäsennellään erityisessä formaatissa oleva tekstiä ja muunnetaan se sopivaan esitysmuotoon, kuten Java-päivämääräksi. Tätä käytetään usein, kun käsitellään ulkoista dataa, esimerkiksi API-tiedusteluja tai tiedostojen lukemista.
 
-## Kuinka:
-Käyttämällä Javaa, voimme käyttää erilaisia ​​metodeja muuntaa merkkijono päivämääräksi. Alla on esimerkki, kuinka tämä voidaan tehdä:
+## Näin tehdään:
+Aloitetaan perus esimerkillä kuinka parsiaan päivämäärä String-tyyppiseltä arvolta:
+
 ```Java
- //Esimerkki päivämäärän muuntamisesta merkkijonosta
- String merkkijono = "12.11.2020";
- SimpleDateFormat muotoilu = new SimpleDateFormat("dd.MM.yyyy");
- Date paivamaara = muotoilu.parse(merkkijono);
- System.out.println(paivamaara);
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+    public static void main(String[] args) {
+        String pvmTeksti = "2022-02-01";
+        DateTimeFormatter muodonMuunnin = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+       
+        LocalDate parsedPvm = LocalDate.parse(pvmTeksti, muodonMuunnin);
+        System.out.println("Parsed päivämäärä: " + parsedPvm);
+    }
+}
 ```
 
-Tämä tulostaa päivämäärän muodossa "November 12, 2020". Tässä käytetty SimpleDateFormat-luokka mahdollistaa päivämäärän muotoilun halutunlaiseksi.
+Tämän ohjelman suoritus tuottaa tulosteen: `Parsed päivämäärä: 2022-02-01`.
 
-## Syvällinen sukellus:
-Päivämäärän jäsentelemisen tarve on syntynyt tietokoneiden käyttöönoton myötä ja erilaisten päivämäärämuotojen käytön kasvaessa. Vaihtoehtoisia tapoja muuntaa päivämäärä merkkijonosta ovat esimerkiksi käyttää apuna Regex-lausuntoja tai käyttää kirjastoja kuten Joda-Time.
+## Syvällinen tarkastelu
+Historiallisesti päivämäärä-parsing oli suoritettu `SimpleDateFormat` luokalla, mutta se on ollut heikoilla kohdallaan syyt johtuen turvallisuusongelmista ja suorituskyvystä. Nykyaikaisempi tapa on käyttää `java.time` kirjastoa, jota on käytetty tässä esimerkissä.
 
-Päivämäärän jäsentelemisen toteutus riippuu käytettävissä olevasta ohjelmointikielestä ja sen tarjoamista työkaluista. Java tarjoaa näppärät SimpleDateFormat-luokan, mutta muissa kielissä voi olla erilaisia vaihtoehtoja.
+On olemassa myös muita vaihtoehtoja, kuten Joda-Time kirjasto, mutta `java.time` on nyt suositumpaa koska se on osa standardia Java-kirjastoa.
 
-## Katso myös:
-- [SimpleDateFormat luokan dokumentaatio](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Joda-Time kirjasto](https://www.joda.org/joda-time/)
+Java-päivämäärän hahmontaminen vaatii jäsennyskuvion. Yleisimmät kuviot ovat `yyyy-MM-dd` päivämäärille ja `HH:mm:ss` ajoille. On tärkeää muistaa, että kuukauden ja minuutin kuvioiksi käytetään suurta M-kirjainta ja pientä m-kirjainta.
+
+## Katso myös
+Ohjelmistoja ja esimerkkejä, jotka saattavat auttaa sinua ymmärtämään tätä paremmin:
+- [Joda-Time - Java date and time API](https://www.joda.org/joda-time/)
+- [Java DateTimeFormatter luokka](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Miksi SimpleDateFormat ei ole thread-safe](https://stackoverflow.com/questions/6840803/why-is-javas-simpledateformat-not-thread-safe)

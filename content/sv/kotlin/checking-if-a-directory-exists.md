@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en katalog existerar"
-html_title:           "Kotlin: Kontrollera om en katalog existerar"
-simple_title:         "Kontrollera om en katalog existerar"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Bash: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & varför?
-Att kontrollera om en mapp finns är ett sätt för programmerare att verifiera om en viss mapp finns i ett givet system eller inte. Det är ett viktigt steg när man skapar funktioner för att läsa, skriva eller navigera i olika mappar.
+## Vad & Varför?
+Att kontrollera om en katalog finns är processen att bestämma om en viss katalog existerar inom ditt filsystem. Programmers gör detta för att undvika fel som kan uppstå vid försök att manipulera en katalog som inte existerar.
 
-# Hur man gör:
-Kotlin har en inbyggd funktion för att kontrollera om en mapp finns eller inte. Använd ```File(filePath).exists()``` för att kontrollera om en mapp, representerad av ```filePath```, finns. Om filen finns returnerar funktionen "true", annars returnerar den "false".
+## Hur man gör:
+Här är hur du kan kontrollera om en katalog finns med Kotlin:
 
-## Kodexempel:
-```
-val directory = File("C:/Users/Desktop") 
-val exists = directory.exists() 
+```Kotlin
+import java.nio.file.Files
+import java.nio.file.Paths
 
-if (exists) {
-  println("Mappen existerar!")
-} else {
-  println("Mappen finns inte.")
+fun main() {
+    val path = Paths.get("/home/myDirectory")
+
+    if (Files.exists(path)) {
+        println("Katalogen finns.")
+    } else {
+        println("Katalogen finns inte.")
+    }
 }
-
-// Output: Mappen existerar!
 ```
+
+Om katalogen finns kommer detta att skriva ut "Katalogen finns.". Annars kommer det att skriva ut "Katalogen finns inte.".
 
 ## Djupdykning:
-Att kontrollera om en mapp finns har varit en viktig del av programmering sedan den första datorn skapades. Idag har det blivit ännu viktigare när vi hanterar stora mängder information i våra system och behöver veta exakt var alla filer och mappar finns.
+1. **Historisk kontext:** Kotlin är ett relativt ungt programmeringsspråk som introducerades 2011 av JetBrains. Trots det har det snabbt blivit mycket populärt, särskilt för Android-utveckling, tack vare sin stramlade syntax och moderna funktioner. Förmågan att kontrollera om en katalog finns är bara en av dessa många praktiska funktioner.
 
-Alternativet till att använda ```exists()```-funktionen är att använda ```File.isFile()``` eller ```File.isDirectory()``` för att kontrollera om en fil eller en mapp finns. Dessa funktioner returnerar också "true" eller "false" beroende på resultatet.
+2. **Alternativ:** Förutom detta `Files.exists(path)`-metod, kan du också använda klassiska Java I/O metoder för att kontrollera om en fil eller katalog existerar. Men Kotlin's `Files.exist`-metod är mer läsbar och rekommenderad att använda.
 
-## Se även:
-- [Dokumentation för filsystemet i Kotlin](https://kotlinlang.org/docs/reference/files.html)
-- [Mer om hantering av filer i Kotlin](https://www.geeksforgeeks.org/file-handling-in-kotlin-reading-from-a-text-file/)
-- [Kotlin Cookbook](https://www.oreilly.com/library/view/kotlin-cookbook/9781788472145/) av Ken Kousen
+3. **Implementationsdetaljer:** `Files.exists(path)`-metoden kontrollerar faktiskt om den angivna sökvägen existerar och är nåbar på filsystemet.
+
+## Se också:
+Kotlin officiella dokumentation: https://kotlinlang.org/docs/reference/
+Using Paths and Files in Java: https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html

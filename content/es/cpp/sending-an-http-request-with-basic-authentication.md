@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "C++: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "C++"
 category:             "C++"
@@ -10,74 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-En programación, el envío de una solicitud HTTP con autenticación básica se refiere a enviar una solicitud de acceso a un servidor web que requiere credenciales de usuario para autorizar el acceso. Los programadores hacen esto para garantizar la seguridad y la privacidad al acceder a cierta información o realizar acciones en un servidor en línea.
+Enviar una solicitud HTTP con autenticación básica implica la utilización de un protocolo de red simétrica para la autenticación de los datos. Los programadores lo hacen para restringir los recursos sólo a usuarios válidos, garantizando seguridad y privacidad.
 
-## Cómo:
+## Cómo hacerlo:
+
+Utilizando la librería cURL en C++, puedes enviar una solicitud HTTP con autenticación básica:
 
 ```C++
-// Ejemplo de código para enviar una solicitud HTTP con autenticación básica en C++:
-
-#include <iostream>
 #include <curl/curl.h>
 
-using namespace std;
-
 int main() {
-    // Creamos un objeto CURL para realizar la solicitud
     CURL *curl;
-    // Inicializamos la sesión de CURL
     curl = curl_easy_init();
-
-    if (curl) {
-        // Establecemos la URL a la que queremos enviar la solicitud
-        curl_easy_setopt(curl, CURLOPT_URL, "https://www.ejemplo.com/");
-        // Establecemos el método de solicitud a GET
-        curl_easy_setopt(curl, CURLOPT_HTTPGET, 1L);
-        // Establecemos el nombre de usuario y la contraseña para la autenticación básica
-        curl_easy_setopt(curl, CURLOPT_USERPWD, "nombre_usuario:contraseña");
+    
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "https://api.example.com/data");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_ANY);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "usuario");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "contraseña");
         
-        // Realizamos la solicitud y guardamos la respuesta en una variable
         CURLcode res = curl_easy_perform(curl);
-
-        // Si la solicitud fue exitosa, imprimimos la respuesta
-        if (res == CURLE_OK) {
-            cout << "Respuesta recibida: " << endl;
-            cout << curl_easy_getinfo(curl, CURLINFO_RESPONSE_CODE) << endl;
-        } else {
-            // En caso de error, imprimimos el código de error
-            cout << "Error al realizar la solicitud: " <<
-                curl_easy_strerror(res) << endl;
-        }
-
-        // Finalizamos la sesión de CURL
+        
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() falló: %s\n",
+            curl_easy_strerror(res));
+        
         curl_easy_cleanup(curl);
     }
-
     return 0;
 }
 ```
 
-### Salida de ejemplo:
-```
-Respuesta recibida:
-200
-```
+La salida sería simplemente si la autenticación funcionó o no.
 
-## Profundizando:
+## Análisis Profundo:
 
-- **Contexto histórico:** La autenticación básica fue uno de los primeros métodos utilizados para proteger el acceso a las páginas web en la World Wide Web.
-- **Alternativas:** Además de la autenticación básica, existen otros métodos de autenticación más seguros y ampliamente utilizados, como OAuth y JSON Web Tokens (JWT).
-- **Detalles de la implementación:** Para enviar una solicitud HTTP con autenticación básica, se deben seguir los siguientes pasos:
-    1. Crear un objeto CURL y establecer la URL a la que se desea enviar la solicitud.
-    2. Establecer el método de solicitud a GET, POST, PUT, etc.
-    3. Establecer el nombre de usuario y contraseña para la autenticación básica con `CURLOPT_USERPWD`.
-    4. Realizar la solicitud con `curl_easy_perform`.
-    5. Manejar la respuesta recibida, ya sea imprimiéndola o guardándola en una variable.
-    6. Finalizar la sesión de CURL con `curl_easy_cleanup`.
+La autenticación HTTP básica es un método para un cliente HTTP proporcionar un nombre de usuario y una contraseña cuando realiza una solicitud. Inventado en los primeros días de la web, proporciona un mecanismo de seguridad rudimentario para controlar el acceso a los recursos web.
 
-## Ver también:
+Aunque simple, no es la opción más segura ya que las credenciales se pasan en texto plano. Alternativas más seguras son OAuth y JWT.
 
-- [Documentación de CURL](https://curl.se/libcurl/)
-- [Artículo sobre autenticación básica en MDN Web Docs](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
+La implementación en C++ requiere el uso de librerías como cURL o Boost. En particular, cURL proporciona una API fácil de utilizar para el manejo de credenciales y la transmisión de datos.
+
+## Véase también:
+
+1. [Documentación de cURL](https://curl.se/libcurl/c/)
+2. [Autenticación básica de HTTP en Wikipedia](https://es.wikipedia.org/wiki/Autenticación_de_acceso_básico)
+3. [Librería Boost.Asio](https://www.boost.org/doc/libs/1_77_0/doc/html/boost_asio.html)
+4. [OAuth](https://oauth.net/)
+5. [JWT (JSON Web Tokens)](https://jwt.io/)

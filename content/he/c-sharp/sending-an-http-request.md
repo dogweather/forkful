@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "C#: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "C#"
 category:             "C#"
@@ -10,43 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+# שולחים בקשת HTTP בשפת C# - המדריך המושלם
 
-שליחת בקשת HTTP היא פעולה שמאפשרת לתוכנית לבקש מידע משרת אינטרנט אחר. תכנית יכולה לשלוח בקשת HTTP למגוון של מקורות, כולל אתרי אינטרנט ושירותי תוכן. תוכנית יכולה גם לבצע פעולות נוספות, כמו להוסיף, לערוך או למחוק מידע משרת באמצעות בקשת HTTP.
+## מה זה ולמה? 
 
-מדוע מתכנתים עושים זאת? בקשת HTTP היא כלי שימושי לקבלת נתונים וליצירת יישומים אינטרנטיים מתקדמים. על ידי שליחת בקשת HTTP, מתכנתים יכולים לקבל גישה למגוון רחב של מידע וליצור יישומים אינטרנטיים מתקדמים.
+שליחת בקשת HTTP היא דרך שבה האפליקציה שלנו יכולה לדבר עם שרתים אחרים ברשת. הנתונים שאנחנו שולחים ומקבלים בתהליך זה ממש מאפשרים לנו להשתמש בקוד שלנו כדי ליצור אינטראקציות מורכבות עם העולם החיצוני.
 
-## איך לעשות זאת:
+## איך לעשות את זה:
 
-כדי לשלוח בקשת HTTP ב-C#, ניתן להשתמש בפעולת "WebRequest" ו-"WebResponse". לדוגמה, לשלוח בקשת GET לאתר מסוים:
+בשפת C# משתמשים במחלקת HttpClient לשליחת בקשות HTTP. אז כך זה עובד:
 
+```C#
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+public class Example
+{
+    private static readonly HttpClient client = new HttpClient();
+
+    public static async Task Main()
+    {
+        HttpResponseMessage response = await client.GetAsync("http://example.com");
+
+        response.EnsureSuccessStatusCode();
+        string responseBody = await response.Content.ReadAsStringAsync();
+
+        Console.WriteLine(responseBody);
+    }
+}
 ```
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("http://example.com");
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-Console.WriteLine("Response Status Code: " + response.StatusCode); // מדפיס קוד סטטוס התגובה
-Console.WriteLine("Response Status Description: " + response.StatusDescription); // מדפיס תיאור קוד סטטוס התגובה
-```
 
-כדי לשלוח בקשת POST ולקבל נתונים מפורמט JSON, ניתן להשתמש בפעולת "WebClient" ו-"UploadString":
+הקוד מבצע בקשה לכתובת http://example.com ולאחר מכן מדפיס את התוכן שהוא מקבל בתשובה.
 
-```
-string url = "http://example.com/api";
-string postData = "{\"username\": \"John\", \"password\": \"1234\"}";
-WebClient client = new WebClient();
-client.Headers[HttpRequestHeader.ContentType] = "application/json";
-string result = client.UploadString(url, "POST", postData);
-```
+## אין להתעמק
 
-תוצאה מודפסת: {"status": "success", "message": "User John logged in"}
+1. במהלך השנים, המחלקה HttpClient התפתחה לכדי הפתרון הסטנדרטי לביצוע בקשות HTTP ב-.NET, שעברה שיפורים רבים לאורך הדרך.
 
-## חפירה עמוקה:
+2. ישנם גם אלטרנטיבות אחרות, כמו RestSharp ו Flurl.Http, שהן אפשרויות נוספות ליצירת בקשות HTTP ב-C#.
 
-בעבר, לשלוח בקשת HTTP הייתה נדרשת בעיקר לגישה לאתרים אינטרנט ולגישה למטא-נתונים ופתרונות רשת אחרים. אבל עם התפתחות האינטרנט והפיתוח הטכנולוגי, שליחת בקשת HTTP יכולה להיות חלק מיישומי רשת מתקדמים בתחומים רבים כגון מכשירים חכמים ואינטרנט הדברים.
+3. שימו לב שהשימוש בHttpClient יכול להיות לחץ על מערכת הקשת לכך שהמחלקה הזו מנהלת מאגר מחזורי של חיבורים. זו הסיבה שנהוג לשמור על מופע יחיד של HttpClient באפליקציה.
 
-אלטרנטיבות לשליחת בקשת HTTP כוללות את תוכניות ה-API ושימוש בפרוטוקולים אחרים כמו WebSocket ו-SPDY.
+## ראה גם: 
 
-כדי לממש שליחת בקשת HTTP ב-C#, יש להשתמש בפעולות "WebRequest" ו-"WebResponse" או "WebClient". ישנם גם כלים נוספים כמו ממשקי תכנות כמו RestSharp ו-HttpClient המקלים על שליחת בקשת HTTP ועיבוד נתונים מהתגובה.
+- [עזרה ל- HttpClient באתר הרשמי של Microsoft](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
 
-## ראה גם:
+- [תיעוד HTTP ב-C# מאתר StackOverflow](https://stackoverflow.com/questions/tagged/c%23+http)
 
-למידע נוסף על שליחת בקשת HTTP ב-C#, ניתן להתייעץ עם המסמכים הרשמיים של מיקרוסופט. כמו כן, ניתן למצוא מידע מפורט על פקודות שליחת בקשת HTTP ופעולות נוספות באתרים כמו W3C ו-MDN.
+קודים נעימים!

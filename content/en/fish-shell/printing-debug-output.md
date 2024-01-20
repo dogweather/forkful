@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Fish Shell recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,32 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+# Article: Debug Output in Fish Shell
 
-Debugging is an important part of programming and involves finding and fixing errors in code. One way programmers do this is by printing debug output, which is when specific values or information is displayed while the code is running. This can help identify where an error is occurring and what the current state of the code is. 
+## What & Why?
 
-# How to:
+Printing debug output is a programmer's tactical move to identify and fix bugs during code runtime. It's like leaving breadcrumbs along the path to trace back the problem spots.
 
-Fish Shell makes printing debug output a breeze with its built-in `fish_echo` function. Simply use the `fish_echo` command followed by the value or information you want to print. For example:
+## How to:
 
+In Fish Shell, we can use the 'echo' command. Below is a simple example:
+
+```Fish Shell
+function greet
+  echo "Hello, World!"
+end
+
+greet
 ```
-Fish Shell > set variable_name 3
-Fish Shell > fish_echo $variable_name 
-3
+
+The console will print:
+
+```Fish Shell
+Hello, World!
 ```
 
-This can also be used within a script or function to print out multiple values or track the execution of the code.
+Now, let's level up with debugging info:
 
-# Deep Dive:
+```Fish Shell
+function debug_greet
+  echo "DEBUG: Entering debug_greet function"
+  echo "Hello, Debugging World!"
+  echo "DEBUG: Exiting debug_greet function"
+end
 
-Historically, the most common way to print debug output was through the use of `printf` statements in C programming. However, with the rise of shell scripting and other high-level languages, the use of dedicated functions like `fish_echo` have become popular. 
+debug_greet
+```
 
-Alternative methods for printing debug output include using the `echo` command or redirecting standard output to a file. However, these may not provide as much control and flexibility as using a dedicated function.
+And poof! Here's your debug output:
 
-In terms of implementation, Fish Shell's `fish_echo` function is implemented in the C++ language and is available as a part of the core package. It also supports various formatting options, such as the `-n` flag for omitting the trailing new line.
+```Fish Shell
+DEBUG: Entering debug_greet function
+Hello, Debugging World!
+DEBUG: Exiting debug_greet function
+```
 
-# See Also:
+## Deep Dive
 
-For more information on Fish Shell's `fish_echo` function, check out the official documentation here: https://fishshell.com/docs/current/cmds/fish_echo.html
+Now, while the 'echo' method is efficient, it comes with a pinch of history. Introduced in Version 2.3.0, Fish incorporates 'printf' redirection commands for more advanced debug output tactics.
 
-To learn more about debugging and other essential programming skills, consider checking out the tutorials and resources available on websites like Codecademy, Udemy, and FreeCodeCamp. Happy coding!
+Consider alternatives like 'stderr' for error reporting or use Fish's built-in 'fish_trace' for function call tracebacks without altering code.
+
+As a matter of implementation, Fish handles debug output at shell level, not within the language or libraries. That heightens efficiency and lets the core language stay clean.
+
+## See Also:
+
+1. [Fish Official Documentation](https://fishshell.com/docs/current/index.html) for an extensive guide to Fish Shell programming.
+2. [Fish GitHub Repository](https://github.com/fish-shell/fish-shell) to catch up with ongoing development.
+3. [Fish Shell Tutorial by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell) for a comprehensive, user-friendly start. 
+
+Remember, mastering debug is what separates good coders from rushed ones. So, off you go! Happy Fishing!

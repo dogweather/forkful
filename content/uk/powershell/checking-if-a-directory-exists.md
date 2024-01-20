@@ -1,6 +1,6 @@
 ---
 title:                "Перевірка наявності директорії"
-html_title:           "PowerShell: Перевірка наявності директорії"
+html_title:           "Go: Перевірка наявності директорії"
 simple_title:         "Перевірка наявності директорії"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -12,33 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Що і чому?
 
-Перевірка існування директорії є важливою задачею при програмуванні, оскільки дозволяє впевнитися в наявності або відсутності необхідного шляху на комп'ютері. Це забезпечує точність та безпеку виконання програм.
+Перевірка наявності каталогу - це процес, який дозволяє програмістам визначити, чи існує вказаний каталог. Це важливо для уникнення помилок при спробі доступу до невідомих ресурсів.
 
-## Як?
+## Як це зробити:
 
-За допомогою команди "Test-Path" можна перевірити існування директорії в PowerShell. Нижче наведені приклади коду та відповідний вихід для ілюстрації цього:
-
-```PowerShell
-Test-Path C:\Users -PathType Any
-```
-Виведе результат "True", оскільки директорія "Users" існує на вашому комп'ютері.
+Для перевірки наявності каталогу в PowerShell, вам потрібно використовувати cmdlet `Test-Path`. Давайте подивимося, як це працює:
 
 ```PowerShell
-Test-Path C:\Program Files (x86)\Microsoft Office -PathType Container
+$directoryPath = "C:\SomeDirectory"
+if (Test-Path $directoryPath)
+{
+    Write-Host "Directory exists."
+}
+else
+{
+    Write-Host "Directory does not exist."
+}
 ```
-Виведе результат "False", оскільки директорія "Microsoft Office" не існує в директорії "Program Files (x86)".
+Виведенням буде лише "Directory exists." або "Directory does not exist." в залежності від того, чи існує вказаний каталог.
 
-```PowerShell
-Test-Path D:\Documents -PathType Leaf
-```
-Виведе результат "False", оскільки директорія "Documents" не є файловою структурою, а отже не є кінцевою точкою шляху.
+## Поглиблений огляд:
 
-## Deep Dive
+**Історичний контекст**: PowerShell був вперше введений в 2006 році як Windows PowerShell. З цього часу, `Test-Path` була ключовою командою для перевірки наявності файлів або каталогів.
 
-Перевірка існування директорії є стандартною процедурою в більшості мов програмування, включаючи PowerShell. Це забезпечує безпечне виконання програм, оскільки дозволяє програмістам уникнути спроб доступу до неіснуючих директорій, що може призвести до помилок або витоку інформації. Альтернативою команді "Test-Path" може бути використання функцій "Get-ChildItem" або "Get-Item", що також дозволяють отримати інформацію про існування директорій. Різним параметрам команди "Test-Path" можна задавати виконання різних видів перевірок, наприклад, чи є даний шлях директорією, файлом, або навіть посиланням. Додаткову інформацію про використання команди можна знайти в офіційній документації PowerShell.
+**Альтернативи**: Хоча `Test-Path` є найбільш поширеним варіантом для цієї задачі в PowerShell, можна використовувати інші методи, такі як `[System.IO.Directory]::Exists($directoryPath)`.
 
-## See Also
+**Деталі реалізації**: `Test-Path` працює шляхом використання .NET Framework для отримання інформації про шлях. Це може означати, що його ефективність може залежати від версії .NET Framework, встановленої на вашій системі.
 
-- [Документація PowerShell на тему "Test-Path"](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path)
-- [Стаття "PowerShell для початківців"](https://docs.microsoft.com/en-us/learn/modules/collect-computer-evidence-powershell-introduction/)
-- [Інструкція "Використання команд для роботи з файлами та директоріями в PowerShell"](https://blog.netwrix.com/2018/08/06/powershell-file-directory-commands/)
+## Дивіться також:
+
+- [Офіційна документація PowerShell](https://docs.microsoft.com/uk-ua/powershell/)
+- [Cmdlet `Test-Path` в документації PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1)
+- [Клас `System.IO.Directory` в документації .NET Framework](https://docs.microsoft.com/uk-ua/dotnet/api/system.io.directory?view=net-5.0)
+- [Перевірка наявності файлу чи теки в PowerShell](https://www.computerperformance.co.uk/powershell/test-path/)

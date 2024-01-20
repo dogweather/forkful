@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Clojure: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -11,9 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sammenligning av to datoer er en måte for programmerere å sammenligne to tidspunkter eller datoer og bestemme deres forhold. Dette kan være nyttig for å håndtere tidsdata, utløpsdatoer eller for å avgjøre rekkefølgen av hendelser.
+Sammenligne to datoer betyr å vurdere om en er tidligere, senere eller samme som den andre. Programmet gjør dette for å kontrollere hendelsesrækkefølgen, beregne tidsrammen, og flere.
 
-## Hvordan:
-La oss si vi vil sammenligne to datoer, 1. januar 2020 og 1. januar 2021, for å se om de er like eller ikke. Vi kan bruke Clojure-funksjonen "clojure.core/same?" for å sammenligne datoene og få et boolsk resultat tilbake.
-```Clojure
-(clojure.core/same? (java.time.Local
+## Hvordan gjør du det:
+La oss se på et enkelt eksempel med Java Interoperabilitet i Clojure.
+
+```clojure 
+(defn sammenlign-datoer [dato1 dato2] 
+  (.compareTo dato1 dato2))
+```
+Her er en prøvekjøring:
+```clojure 
+(require '[clj-time.core :as t])
+(def dato1 (t/date-time 2020 10 1)) 
+(def dato2 (t/date-time 2021 10 1)) 
+(sammenlign-datoer dato1 dato2)
+```
+Kode blokken vil skrive ut `-1`, som betyr at dato1 kommer før dato2.
+
+## Dypdykk
+Clojure, som opprinnelig ble utviklet i 2007, støtter Java Interoperabilitet, så man kan sammenligne to datoobjekter direkte. 
+
+Alternativt, hvis du vil jobbe med ren Clojure-biblioteker, kan du bruke `clj-time` biblioteket. Der finnes det funksjoner som `before?`, `after?` og `equal?` 
+
+Når man sammenligner to datoer, gjøres en enkel numerisk sammenligning mellom tidspunktene for de to datoene, som er millisekunder fra referansepunktet, 1. januar 1970 (Unix epoch).
+
+## Se Også
+Sjekk ut følgende lenker for mer informasjon:
+- Clojure Dokumentasjon: https://clojure.org/
+- clj-time Bibliotek: https://github.com/clj-time/clj-time
+- Java Date Dokumentasjon: https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Date.html

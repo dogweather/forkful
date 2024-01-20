@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "Java: Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Java"
 category:             "Java"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+# Pobieranie aktualnej daty w Javie: Szybki przewodnik
 
-Pobieranie aktualnej daty to podstawowa funkcja w wielu programach. Programiści używają jej w celu uzyskania aktualnego czasu i daty dla działań takich jak tworzenie logów, wyświetlanie dat w aplikacjach lub manipulowanie danymi. W prostych słowach, jest to sposób na uzyskanie informacji o aktualnym czasie w naszym kodzie.
+## Co i dlaczego?
+Pobieranie aktualnej daty w Javie to rutynowe zadanie, polegające na odczytaniu bieżącej daty i czasu bezpośrednio z systemu operacyjnego. Programiści robią to po to, aby śledzić momenty wystąpienia określonych zdarzeń lub zarządzać datami ważności w aplikacji.
 
 ## Jak to zrobić:
+Za pomocą poniższego kodu, mozemy pobrac aktualną datę:
 
-```java
-import java.time.LocalDate;  // importujemy klasę LocalDate z pakietu java.time
+```Java
+import java.time.LocalDateTime;
 
-public class AktualnaData {
-
+public class Main {
     public static void main(String[] args) {
-        
-        // używamy metody statycznej now(), aby utworzyć obiekt klasy LocalDate 
-        LocalDate dzis = LocalDate.now();
-        
-        System.out.println("Dzisiejsza data: " + dzis);
+        LocalDateTime teraz = LocalDateTime.now();
+        System.out.println("Aktualna data i czas: " + teraz);
     }
 }
 ```
 
-Output:
+Po uruchomieniu powyższej klasy `Main`, wynik byłby mniej więcej taki:
 
+```Java
+Aktualna data i czas: 2022-04-16T14:15:55.354
 ```
-Dzisiejsza data: 2021-06-30
-```
 
-## Głębszy zanurzenie:
+## Deep Dive
+Początkowo, dla celów zarządzania datami i czasem w Javie, używano klas Date i Calendar z pakietu java.util. Jednak były one kłopotliwe w obsłudze i miały wiele innych problemów, dlatego od Javy 8 zaczęto używać pakietu java.time.
 
-Pobieranie aktualnej daty jest możliwe dzięki wprowadzeniu pakietu java.time w Javie 8. Wcześniej, programiści mogli użyć klasy Date lub Calendar, ale wprowadzenie klasy LocalDate ułatwiło operowanie datami i czasem w bardziej czytelny sposób. Istnieją także inne sposoby na pobieranie aktualnej daty, na przykład za pomocą biblioteki Joda-Time lub wykorzystując serwer czasu internetowego (NTP). Wszystkie te rozwiązania mają swoje plusy i minusy, więc ważne jest, aby wybrać najbardziej odpowiednie dla swojego projektu.
+Inna klasa, którą moglibyśmy użyć to `java.time.LocalDate`, która zwraca tylko datę. Stanowi to przydatną alternatywę, kiedy nie zależy nam na czasie.
 
-## Zobacz także:
+A oto szczegół techniczny: kiedy używamy `LocalDateTime.now()`, domyślnie używamy zegara systemowego, co nie zawsze może być idealnym rozwiązaniem, na przykład podczas testowania.
 
-- [Dokumentacja Java 8: Klasa LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Tutorial Java Podstawy: Pobieranie aktualnego czasu i daty](https://javastart.pl/kurs/java/java-podstawy/aktualny-czas-i-data)
-- [Oracle Java Tutorial: Pobieranie aktualnego czasu i daty z NTP](https://docs.oracle.com/en/java/javase/11/core/date-time-services.html#GUID-48E72DBE-D890-4E35-8F3E-EC164DADC0B5)
+## Zobacz też
+- Więcej informacji na temat klasy LocalDateTime można znaleźć w [oficjalnej dokumentacji Oracle](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html).
+- Aby dowiedzieć się więcej o zarządzaniu datami i czasem w Javie, sprawdź [przewodnik na stronie Baeldung](https://www.baeldung.com/java-8-date-time-intro).

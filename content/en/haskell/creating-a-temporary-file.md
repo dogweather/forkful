@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "Haskell recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,35 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Creating a temporary file is a common task in programming. It involves creating a file that will hold temporary data, useful for tasks such as storing intermediate results, cache files, or temp logs. Programmers use temporary files to improve performance, save memory, and ensure the smooth execution of their code.
+Creating a temporary file means generating a unique file for short-term storage. Programmers do it to handle large data chunks without exhausting memory, store session-specific info, or provide buffers for data exchange between processes.
 
 ## How to:
 
-To create a temporary file in Haskell, we can use the `withSystemTempFile` function from the `System.IO.Temp` library. This function takes in two parameters: a file name pattern and a function that will be executed with the temporary file as an argument.
+The `System.IO.Temp` module in Haskell provides functions to create temporary files. Here's how you can create one:
 
-```
+```Haskell
 import System.IO.Temp (withSystemTempFile)
 
-withSystemTempFile "temp.txt" $ \tempFile -> do
-  putStrLn ("Created temporary file: " ++ tempFile)
-  writeFile tempFile "This is a temporary file."
-
--- Output:
--- Created temporary file: /tmp/temp3618.txt
+main = withSystemTempFile "temp.txt" $ \tempFilePath tempFileHandle -> do
+    putStrLn $ "A temporary file has been created at: " ++ tempFilePath
 ```
 
-Once the function finishes executing, the temporary file will be automatically deleted. We can also specify a custom directory for the temporary file by using the `withSystemTempDirectory` function.
+Running this code will print a message with the temporary file's path:
 
-## Deep Dive:
+```
+A temporary file has been created at: /tmp/temp.txt12345
+```
 
-Temporary files have been in use since the early days of computing when memory was limited and expensive. They were initially used to store intermediate results of computations to save memory. As technology advanced, temporary files also became useful for implementing features such as caching and logging.
+## Deep Dive
 
-While temporary files provide a convenient solution for many programming tasks, they do come with some drawbacks. For example, if the program crashes before the file is deleted, it can lead to leftover temporary files that take up space. Additionally, some modern programming languages, like Rust, have implemented alternative solutions such as temporary in-memory buffers that eliminate the need for physical temporary files altogether.
+Temporary file creation isn't new, dating back to the early days of single-user systems. It was then repurposed for multi-user systems.
 
-Creating a temporary file involves a few steps behind the scenes. Firstly, a unique file name is generated based on the given pattern. Then, the file is created in the specified directory, and the function is executed with the file as an argument. Once the function finishes, the file is deleted. All these steps are handled by the `withSystemTempFile` function, making it a convenient and easy-to-use solution.
+There are alternatives, including in-memory data storage structures like `Data.Text` or `Data.ByteString.Lazy`. Yet, these aren't always viable when handling enormous data volumes or when persistence across sessions is required.
 
-## See Also:
+While implementing, note that these temporary files have permission defaults to be readable and writable only by the file creator. It's also important to know that Haskell's garbage collector removes these files when they're no longer in use by the program.
 
-- [System.IO.Temp library documentation](https://hackage.haskell.org/package/temporary-1.3.0.5/docs/System-IO-Temp.html)
-- [Rust's Tempfile library](https://docs.rs/tempfile/3.1.0/tempfile/)
-- [Temporary files vs in-memory buffers in Rust](https://medium.com/courier-engineering/temporary-files-or-in-memory-buffers-e28d7dcca5f4)
+## See Also
+
+To learn more, check out these sources:
+
+- [Haskell's I/O Inside: Temporary Files](https://wiki.haskell.org/Tutorials/Programming_Haskell/IO_inside#Temporary_files)
+- [Haskell System.IO.Temp Library Documentation](https://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html)

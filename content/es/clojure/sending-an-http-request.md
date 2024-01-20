@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Clojure: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Introducción a la Programación Con Clojure para Realizar Solicitudes HTTP
-
-¡Saludos, programadores! Hoy vamos a sumergirnos en el emocionante mundo de Clojure, especialmente en cómo podemos utilizarlo para realizar solicitudes HTTP. Si eres un principiante en el mundo de la programación, no te preocupes, ¡este artículo es para ti!
+# Enviar una solicitud HTTP en Clojure: Una guía introductoria
 
 ## ¿Qué y Por Qué?
 
-Enviar una solicitud HTTP es una forma de comunicación entre dos sistemas o aplicaciones a través de internet. En términos simples, es como pedirle a alguien que haga algo por nosotros en línea. Los programadores usan solicitudes HTTP para obtener datos de un servidor, enviar formularios o incluso realizar operaciones como compras en línea.
+Enviar una solicitud HTTP es el proceso de transmitir datos y solicitar recursos a un servidor a través del protocolo HTTP. Los programadores lo hacen para interactuar con la web, acceder a APIs y realizar tareas basadas en la red.
 
-## Cómo:
+## Cómo hacer:
 
-Para realizar una solicitud HTTP en Clojure, primero debemos importar la biblioteca `clj-http`. Luego, podemos utilizar la función `clj-http.client/get` para especificar la URL a la que queremos realizar la solicitud y qué tipo de solicitud queremos hacer (GET, POST, PUT, etc.). A continuación, podemos utilizar la función `:as` junto con un mapa para especificar los encabezados y los parámetros que queremos enviar en la solicitud.
+Clojure nos proporciona las dependencias `clj-http` para manejar las solicitudes HTTP fácilmente. Aquí tienes un ejemplo de cómo enviar una solicitud GET con `clj-http`.
 
-```Clojure 
-(ns mi-proyecto.http
-  (:require [clj-http.client :as client]))
+```Clojure
+(require '[clj-http.client :as client])
 
-(def respuesta (client/get "https://mi-servidor.com/api" :as {:headers {"Content-Type" "application/json"}
-                                                             :params {:id 1234}
-                                                             :body "Mi cuerpo de solicitud"}))
+(def response (client/get "http://example.com" 
+    {:headers {"Accept" "application/json"}}))
+
+(println (:status response))
+(println (:body response))
 ```
 
-La variable `respuesta` devolverá un mapa con diferentes claves, como `:status` para el estado de la solicitud, `:headers` para los encabezados de la respuesta y `:body` para el cuerpo de la respuesta.
+Este código recupera una página web (http://example.com) y muestra la respuesta, incluyendo el estado y el contenido de la página.
 
-## Deep Dive:
+## Inmersión Profunda
 
-Como se mencionó anteriormente, `clj-http` es una biblioteca de Clojure que nos permite enviar solicitudes HTTP. Sin embargo, también existen otras opciones, como `http-kit`, que es más ligera que `clj-http` y ofrece una API similar. Además, podemos utilizar la biblioteca `clojure.java.io` para construir nuestras propias funciones personalizadas para realizar solicitudes HTTP.
+La capacidad de enviar solicitudes HTTP se incluyó en los primeros días de Clojure, reconociendo la creciente importancia de las comunicaciones basadas en web en la programación moderna. Una alternativa popular a `clj-http` es `http-kit`, que puede ser más adecuada para situaciones de alto rendimiento debido a su modelo de threading asíncrono. 
 
-En cuanto a la implementación, Clojure aprovecha su inmutabilidad para manejar solicitudes HTTP de forma más eficiente. Esto significa que podemos realizar múltiples solicitudes a la vez sin preocuparnos por compartir datos entre ellas. Además, Clojure también utiliza secuencias de transductores para manejar los datos de manera más eficiente, lo que puede resultar útil al trabajar con grandes conjuntos de datos.
+Cuando enviamos una solicitud HTTP con `clj-http`, se crea una nueva conexión con cada solicitud bajo el capó, lo cual puede no ser eficiente en aplicaciones de alto rendimiento.
 
-## Ver También:
+## Ver También
 
-- Puedes encontrar más información sobre `clj-http` en [su documentación](https://github.com/dakrone/clj-http)
-- Si te interesa aprender más sobre `http-kit`, te recomendamos [este artículo](http://charsequence.blogspot.com/2015/10/experiences-with-http-client-libraries.html)
-- Y si quieres sumergirte aún más en Clojure, puedes explorar [su sitio oficial](https://clojure.org/)
+Para explorar más sobre el trabajo con HTTP en Clojure, te recomiendo estos recursos:
+
+- La documentación oficial de `clj-http`: https://github.com/dakrone/clj-http
+- Un artículo útil en la programación Clojure HTTP: https://www.toptal.com/clojure/clojure-http-client-clj-http
+- `http-kit`, una alternativa a `clj-http`: http://www.http-kit.org/379.html
+
+No dudes en experimentar y elegir la herramienta que mejor se adapte a tus necesidades de programación.

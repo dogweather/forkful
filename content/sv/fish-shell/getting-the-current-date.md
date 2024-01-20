@@ -1,7 +1,7 @@
 ---
-title:                "Att få den aktuella datumet"
-html_title:           "Fish Shell: Att få den aktuella datumet"
-simple_title:         "Att få den aktuella datumet"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
 
-Att hämta den aktuella datumet är en vanlig uppgift för programmerare. Det innebär helt enkelt att få ut dagens datum och tidszon för att använda det i olika program eller skript. Det kan vara användbart för att spåra när ett program körs, eller för att organisera filer efter datum.
+Att hämta det nuvarande datumet är en viktig funktion som ger programmerare möjligheten att ändra beteende baserat på när ett skript eller kommando körs. Det är användbart för att logga, tidstämpla filer, och schemalägga händelser.
 
-# Så här gör du:
+## Hur man gör det:
 
-```Fish Shell
-date
-```
-
-När du kör kommandot ovan i Fish Shell kommer du att få ut dagens datum och tidszon på din dator. Om du vill formatera det på ett specifikt sätt kan du använda följande syntax:
+Hämta det nuvarande datumet i Fish Shell är lätt som en plätt. Använd bara kommandot `date`.
 
 ```Fish Shell
-date +"format"
+> date
+Onsdag 9 mars 2022 kl. 16:00:00 CET
 ```
+## Djupdykning
 
-Där "format" är den specifika formateringskoden du vill använda. Till exempel kan du använda "%d" för att få ut datumet i siffror, eller "%B" för att få ut månaden i textform. Här är några exempel:
+Det att hämta datum har historiskt sett alltid varit en grundläggande komponent i programmering. I Unix-baserade system, som Fish Shell, används `date` kommandot. Det är ett kraftfullt verktyg, vilket kan skräddarsys för att passa en mängd olika behov.
+
+Om du behöver mer kraft från ditt datumkommando, överväg att använda `strftime` funktionen i Fish. Det låter dig ange en anpassad formatsträng för att få exakt den output du behöver.
 
 ```Fish Shell
-date +"%d-%B-%Y" # kommer att ge ut formatet 07-Juni-2021
-date +"%A, %d %B %Y" # kommer att ge ut formatet Måndag, 07 Juni 2021
+> date "+%A %d %B %Y kl. %H:%M:%S %Z"
+Onsdag 09 Mars 2022 kl. 16:00:00 CET
 ```
+I vissa fall kan du använda alternativa sätt för att hämta datumet, som `clock_gettime` funktionen i C++. Detta kan ge mer precision, men det kan också vara mer komplicerat att använda.
 
-# Djupdykning:
+## Se också:
 
-Att få ut dagens datum har blivit enklare med moderna operativsystem och språk, men det finns fortfarande flera olika metoder för att göra det. En alternativ metod är att använda det inbyggda datumobjektet i många programmeringsspråk, som till exempel "datetime" biblioteket i Python.
+För mer information om att använda datumkommandot och andra relaterade ämnen, kolla in följande länkar:
 
-Fish Shell använder en extern kommando "date" för att hämta aktuella datumet, men det är fortfarande möjligt att skapa en egen inbyggd funktion för att göra detta med hjälp av kommandot "builtin". Detta skulle vara mer effektivt för stora mängder av begäranden till datumet, och skulle möjliggöra för programmerare att skapa en egen formateringsmetod.
-
-# Se även:
-
-- [Fish Shell dokumentation om "date"](https://fishshell.com/docs/current/cmds/date.html)
-- [Fish Shell dokumentation om "builtin"](https://fishshell.com/docs/current/cmds/builtin.html)
+1. Fish Shell dokumentation: [Fish Shell](https://fishshell.com/docs/current/index.html)
+2. GNU Core Utilities manual: [Date-command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+3. Strftime manuella sidan: [Strftime](https://man7.org/linux/man-pages/man3/strftime.3.html)
+4. C++ dokumentation: [clock_gettime](http://www.cplusplus.com/reference/ctime/clock_gettime/)

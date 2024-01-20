@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrahering av delstrenger"
-html_title:           "Lua: Ekstrahering av delstrenger"
-simple_title:         "Ekstrahering av delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,51 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Utvinning av delstrenger, også kalt delstrengmanipulering, er en viktig del av programmering. Det innebærer å trekke ut en del av en eksisterende tekststreng og bruke den som en separat del av koden. Dette kan være nyttig for å matche og filtrere data eller for å formatere informasjon på en lesbar måte.
+Å ekstrahere delstrenger er en prosess hvor vi henter en del av en større streng, bestemt av sin start og slutt posisjon. Dette er praktisk når vi skal manipulere spesifikke deler av tekst i vår kode.
 
-## Slik gjør du det:
-Se for deg at du har en tekststreng med navnet "Lua-programmering". Hvis du ønsker å ekstrahere navnet "Lua", kan du bruke følgende kode:
-
-```Lua
--- Lag en tekststreng
-tekststreng = "Lua-programmering"
-
--- Ekstraher delstreng ved å angi start og slutt indekser
-delstreng = string.sub(tekststreng, 1, 3)
-
--- Skriv ut delstreng
-print(delstreng)
-```
-Dette vil gi følgende output:
-
-```
-Lua
-```
-
-Du kan også bruke delstrekksposisjonen som en variabel og kombinere den med andre tekststrenger som denne:
+## Hvordan Gjøre Dette
+I Lua, kan vi bruke `string.sub` funksjonen for å hente delstrenger. Se dette eksempelet:
 
 ```Lua
--- Lag en tekststreng
-navn = "Sven"
-
--- Kombiner navnet med en annen tekststreng
-tekststreng = navn .. "-programmering"
-
--- Ekstraher delstreng ved å angi start og slutt indekser
-delstreng = string.sub(tekststreng, 1, 3)
-
--- Skriv ut delstreng
-print(delstreng)
+tekst = "Hei Verden!" 
+print(string.sub(tekst, 1, 3)) 
 ```
-
-Dette vil gi følgende output:
+Output vil være:
 
 ```
-Sve
+Hei
 ```
+Her henter vi karakterene fra posisjon 1 til 3 fra `tekst` strengen.
 
-## Dypdykk:
-Utvinning av delstrenger har vært en del av programmering siden de tidligste språkene ble utviklet, og det finnes flere ulike måter å gjøre det på. Noen programmeringsspråk har egne funksjoner for å ekstrahere delstrenger, mens andre krever at man spesifiserer start og slutt indekser manuelt. I Lua, kan man også bruke negative indekser, som teller fra slutten av tekststrengen, for eksempel hvis man ønsker å ekstrahere de siste tre bokstavene.
+## Dykket Ned
+1. Historisk Kontekst: Lua, designet i 1993 av et team i Brasil, er kjent for sin enkelthet i manipulering av strenger. `string.sub` er en funksjon som har vært med fra starten.
 
-## Se også:
-http://www.lua.org/manual/5.4/manual.html#6.4.7
+2. Alternativer: En annen måte er å bruke `string.match`, som kan brukes med mønstre for å hente ut mer komplekse delstrenger.
+
+```Lua
+tekst = "Hei Verden!" 
+print(string.match(tekst, "%a+")) 
+```
+Output:
+
+```
+Hei
+```
+Her henter vi ut det første ordet i strengen.
+
+3. Implementerings Detaljer: `string.sub` mottar tre argumenter: strengen å manipulere, startposisjon, og sluttposisjon. Indeksering i Lua starter fra 1, ikke 0.
+
+## Se Også
+For mer informasjon, se disse relaterte kildene:
+1. Offisiell Lua dokumentasjon om strenger: https://www.lua.org/manual/5.4/manual.html#6.4
+2. Lua Brukerveiledning om `string.sub`: http://lua-users.org/wiki/StringLibraryTutorial
+3. Diskusjon på StackOverflow om ekstrahering av delstrenger: https://stackoverflow.com/questions/20777089/lua-extract-substring-from-string

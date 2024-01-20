@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Swift: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,31 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-Hvis du er en programmerer, har du kanskje hørt begrepet "string-interpolering" før. Dette er en enkel måte å sette sammen en tekststreng ved å inkludere variabler, konstanter eller uttrykk i en tekst. Dette gjør det mulig å lage dynamiske tekststrenger som endrer seg basert på ulike inputs.
+---
 
-Interpolering av en string er nyttig fordi det gjør koden mer effektiv og lesbar. Istedenfor å måtte skrive ut alle delene av en tekststreng separat, kan du enkelt kombinere dem ved hjelp av interpolering. Dette sparer tid og reduserer risikoen for skrivefeil.
+## Hva & Hvorfor?
 
-## Slik gjør du:
-```Swift
-let navn = "Maria"
-let alder = 25
-print("Hei, mitt navn er \(navn) og jeg er \(alder) år gammel.")
+Stringinterpolering er prosessen å sette variabler eller uttrykk inn i en streng. Programmerere bruker det for å gjøre koden lettere å lese og for å samle og presentere data på en enkel måte.
+
+---
+
+## Hvordan gjøre det: 
+
+Her er et enkelt eksempel på string-interpolering i Swift:
+
+```swift
+var brukerNavn = "Ola"
+print("Hei, \(brukerNavn)!")
 ```
-Output:
+
+Utskriften vil være: 
+
 ```
-Hei, mitt navn er Maria og jeg er 25 år gammel.
+Hei, Ola!
 ```
 
-Som du kan se i dette eksempelet, bruker vi bakoverstrek (\) for å inkludere variablene våre i teksten. Merk at det er viktig å bruke parentes rundt variablene for å få det til å fungere.
+Du kan også legge inn matematiske uttrykk direkte i stringen:
 
-## Dykk dypere
-Interpolering av strings har vært en del av Swift siden versjon 2, og har gjort det lettere for utviklere å produsere dynamiske tekststrenger. Det finnes også andre muligheter for å lage tekststrenger, som for eksempel ved hjelp av String-metoder eller formatere en streng ved hjelp av spesielle formateringskonstanter. Men interpolering anses som den mest effektive og letteste måten å oppnå dette på.
+```swift
+print("Fire ganger fire blir \(4 * 4)")
+```
 
-Når du jobber med interpolering, er det også nyttig å vite at du kan bruke escape-karakteret (\) for å forhindre at spesialtegn som anførselstegn eller line breaks ødelegger teksten din.
+Utskriften vil være: 
 
-## Se også
-Hvis du vil lære mer om string-interpolering og andre nyttige Swift-funksjoner, kan du sjekke ut disse kildene:
+```
+Fire ganger fire blir 16
+```
 
-- [The Swift Programming Language (Swift i praksis)](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
-- [Swift By Example - Strings (Swift ved å eksempel - Tekst)](https://www.hackingwithswift.com/example-code/strings/swift-by-example-string-interpolation)
+---
+
+## Dypdykk
+
+Swift ble introdusert i 2014 av Apple, som en forbedring fra Objective-C, men med metoder for stringinterpolering inspirert av andre moderne programmeringsspråk som Ruby.
+
+Et alternativ til stringinterpolering ville være traditionelle metoder for sammenføyning av strenger, men disse er ofte mindre leselige og mer tidkrevende å skrive.
+
+Når det kommer til implementasjonsdetaljer, konverterer Swift de interpolerte delene av strengen til den riktige stringify-representasjonen først og deretter setter sammen de fullførte strengene.
+
+---
+
+## Se også:
+
+- Swift dokumentasjon om String interpolation: [Hvis du vil lære mer](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Andre moderne bruk av stringinterpolering: [Besøk denne linken](https://www.hackingwithswift.com/read/0/5/string-interpolation)

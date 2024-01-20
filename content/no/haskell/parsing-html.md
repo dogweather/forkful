@@ -1,7 +1,7 @@
 ---
-title:                "Håndtering av HTML."
-html_title:           "Haskell: Håndtering av HTML."
-simple_title:         "Håndtering av HTML."
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,41 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Parsing HTML er prosessen med å analysere og tolke HTML-kode for å kunne hente ut informasjon fra nettsider. Dette er nyttig for programmerere som trenger å skrive kode som kan behandle og manipulere nettsideinnhold.
+# Parsing HTML i Haskell
 
-# Hvordan:
-Her er en enkel funksjon i Haskell som bruker et innebygd bibliotek kalt "tagsoup" for å utføre parsing av en nettside. Denne funksjonen tar inn en URL som argument og returnerer en liste over alle tekstblokkene på nettsiden.
+## Hva & Hvorfor?
+
+Parsing av HTML handler om å analysere HTML-kode for å forstå dens struktur og innhold. Programmerere gjør det for å høste, manipulere, eller presentere data hentet fra HTML-dokumenter.
+
+## Hvordan:
+
+Først, installer `tagsoup` biblioteket ved å kjøre dette i terminalen:
+
+```Haskell
+cabal install tagsoup
+```
+
+La oss lage en enkel parser som henter alle lenkene fra en HTML-tekst:
 
 ```Haskell
 import Text.HTML.TagSoup
 
-parseHTML :: String -> IO [String]
-parseHTML url = do
-    html <- getResponseBody =<< simpleHTTP (getRequest url)
-    return $ map (innerText . canonizeTags) $ partitions (~== "<p>") $ parseTags html
+lenkeParser :: String -> [String]
+lenkeParser html = [href | TagOpen "a" atts <- parseTags html, ("href",href) <- atts]
 ```
 
-Eksempel på bruk av funksjonen:
+Bruk det slik:
 
 ```Haskell
-main :: IO ()
-main = do
-    articles <- parseHTML "https://www.example.com/articles"
-    mapM_ putStrLn articles
+print $ lenkeParser "<a href='https://www.example.com'>Eksempel</a>"
+```
+Dette vil gi resultatet:
+
+```Haskell
+["https://www.example.com"]
 ```
 
-Eksempel på output:
+## Dyp Dykk
 
-```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Phasellus id faucibus leo, non pharetra erat.
-Sed vel ligula eget ex mollis mattis.
-```
+**Historisk Kontekst**: Parsing av HTML har vært sentralt siden World Wide Webs fødsel, å kunne ha innsikt i hvordan nettsider innhold og struktur er framstilt har en rekke applikasjoner. Først og fremst innen data mining, web scraping, og web-crawling.
 
-# Dykke dypere:
-Parsing av HTML har en interessant historie, da HTML standarden har utviklet seg over tid og har ført til forskjellige implementeringer og tilnærminger for parsing. Noen programmerere bruker andre språk som for eksempel Python eller JavaScript for å gjøre dette, men med Haskell og bibliotek som tagsoup er det enkelt å utføre parsing også.
+**Alternativer**: Det er mange alternative biblioteker for HTML-parsing i Haskell, som `html-conduit`, og `hxt`. Hvert med sine egne fordeler og ulemper.
 
-# Se også:
-- [Tagsoup biblioteket](https://hackage.haskell.org/package/tagsoup)
-- [Dypdykk i HTML parsing med Haskell](https://www.fpcomplete.com/blog/2017/04/html-parsing-with-tagsoup)
+**Implementeringsdetaljer**: Under panseret konverterer `TagSoup`-biblioteket HTML-strengen til en strøm av merkelapper. Disse merkelappene kan være åpne koder (f.eks. `<p>`), lukkede koder (f.eks. `</p>`), eller tekst. Deretter brukes listekomprimering for å filtrere ut og hente verdier fra disse taggene.
+
+## Se Også
+
+- [TagSoup på Hackage](https://hackage.haskell.org/package/tagsoup)
+- [Real World Haskell: Kapittel 19, Parsing HTML and XML](http://book.realworldhaskell.org/read/parsing-a-binary-data-format.html)
+- [Andre parsing biblioteker på Hackage](https://hackage.haskell.org/packages/#cat:Parsing)

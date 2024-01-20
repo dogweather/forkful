@@ -12,31 +12,66 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating a date in the future or past refers to the process of determining a specific date that is a certain amount of time away from a given starting date. This can be useful for tasks such as scheduling events or calculating deadlines. Programmers often need to do this in their code in order to automate these types of calculations and make their programs more efficient.
+Working out a future or past date involves adjusting a given date by a specific duration. Programmers do this to handle time-based tasks like scheduling, reminders, or historical data tracking.
 
 ## How to:
 
-To calculate a date in the future or past using Clojure, you can use the `plus` and `minus` functions from the `clj-time` library. These functions take in a date and a duration, and return a new date that is the result of either adding or subtracting the duration from the initial date. Here is an example of how to use them:
+To calculate a future or past date in Clojure, we use the `plus` or `minus` methods from `clj-time` library. First, we need to add the dependency in the project.clj file:
 
 ```Clojure
-(require '[clj-time.core :as time])
-
-(time/minus (time/today) (time/days 7)) ;; subtracts 7 days from today's date
-;; => #inst "2021-06-30T00:00:00.000-00:00"
-
-(time/plus (time/today) (time/months 3)) ;; adds 3 months to today's date
-;; => #inst "2021-09-30T00:00:00.000-00:00"
+(defproject future-date "0.1.0-SNAPSHOT"
+  :dependencies [[org.clojure/clojure "1.10.1"]
+                 [clj-time "0.15.2"]])
 ```
 
-You can also use the `days` and `months` functions from the `clj-time.core` namespace to specify the duration in days or months. The resulting dates will be returned as Clojure instants, which are a representation of a specific point in time.
+Then, we import it in our Clojure code:
 
-## Deep Dive:
+```Clojure
+(ns future-date.core
+(:require [clj-time.core :as t]
+          [clj-time.coerce :as c]))
+```
 
-In the past, calculating dates in a programming language was a complex task that required a lot of code and tedious calculations. With the `clj-time` library, this process is now much easier and more efficient. Other alternatives for calculating dates in Clojure include using the Java 8 time API or creating custom functions to do the calculations manually.
+To add days to the current date:
 
-Under the hood, the `plus` and `minus` functions use the `clj-time.period` namespace to handle durations. This library handles the complexity of different month lengths, leap years, and daylight saving time, making it a reliable option for date calculations.
+```Clojure
+(defn future-date [days]
+  (-> (t/now)
+      (t/plus (t/days days))
+      (c/to-local-date)))
+```
 
-## See Also:
+To subtract days from the current date:
 
-- [clj-time documentation](https://github.com/clj-time/clj-time)
-- [Java time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+```Clojure
+(defn past-date [days]
+  (-> (t/now)
+      (t/minus (t/days days))
+      (c/to-local-date)))
+```
+
+Sample output:
+
+```Clojure
+(future-date 5)  
+;; Output: 2022-03-25
+
+(past-date 5)
+;; Output: 2022-03-15
+```
+
+## Deep Dive
+
+Dating back to the ‘70s, programmers calculated future or past dates using built-in date and time functionalities in the programming languages or custom-built code. Now we use libraries providing relevant functions.
+
+Alternatives for `clj-time` include `java.time` in Java, `date-fns` in JavaScript, or `Joda-Time` in Java. All are worth considering if you're working with those languages.
+
+The key implementation detail is that both `plus` and `minus` methods return a new ReadableInstant object, leaving your original date unaffected. Additionally, they can handle edge cases regarding different number of days in months and leap years.
+
+## See Also
+
+Check out these sources for further details:
+
+- Clj-time GitHub repository: https://github.com/clj-time/clj-time
+- Java 8 Date-Time guide: https://www.baeldung.com/java-8-date-time-intro
+- Joda-Time library: https://www.joda.org/joda-time/

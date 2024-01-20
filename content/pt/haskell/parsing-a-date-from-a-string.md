@@ -1,7 +1,7 @@
 ---
-title:                "Analisando uma data de uma string"
-html_title:           "Haskell: Analisando uma data de uma string"
-simple_title:         "Analisando uma data de uma string"
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+# Analisando Datas em Haskell: Uma Visão Prática
 
-Parsing de uma data a partir de uma string é o ato de extrair informações de uma string que representa uma data, e transformá-la em um formato de data estruturado. Programadores geralmente fazem isso para facilitar a manipulação e a comparação de datas em seus códigos.
+## O Que & Por Que?
+Analisar uma data a partir de uma string significa converte-la para um tipo de data reconhecível. Programadores fazem isso para poder manipular datas de modo inteligente, como calcular diferenças ou formatar de diferentes maneiras.
 
-## Como Fazer:
-
-Para fazer o parsing de uma data a partir de uma string em Haskell, podemos usar a função `parseTimeM` do módulo `Data.Time.Format`. Por exemplo, se quisermos extrair uma data no formato "dia/mês/ano" da string "22/10/2021", podemos usar o seguinte código:
+## Como fazer:
+Para essa tarefa, usaremos a biblioteca Time em Haskell. Em primeiro lugar, importamos o que precisamos:
 
 ```Haskell
-import Data.Time.Format
-import Data.Time.Calendar
-
-main = do
-  let dateString = "22/10/2021"
-  let date = parseTimeM True defaultTimeLocale "%d/%m/%Y" dateString :: Maybe Day
-  print date
+import Data.Time
 ```
-A saída seria: Just 2021-10-22, indicando que a string foi convertida para um valor do tipo `Day`.
 
-## Profundando:
+Agora, vamos utilizar a função `parseTimeM` para converter uma string para um objeto `Day`.
 
-Para entender melhor o conceito de parsing de datas a partir de strings, é importante conhecer um pouco sobre a história das datas e calendários. Uma das primeiras formas de medir o tempo foi baseada nas fases da lua, e ao longo do tempo foram criados diversos calendários diferentes, como o calendário juliano e o calendário gregoriano.
+```Haskell
+parseDate :: String -> Maybe Day
+parseDate str = parseTimeM True defaultTimeLocale "%Y-%m-%d" str
 
-Em termos de implementação, existem outras formas de fazer parsing de datas em Haskell, como usar a biblioteca `dateparser` ou escrever funções personalizadas para diferentes formatos de data. Além disso, é importante estar atento a questões como a localização (locale) e formatação da data, para garantir a correta conversão da string em data.
+-- Testando a função
+main = print (parseDate "2020-04-25")
+```
 
-## Veja também:
+Isso irá imprimir `Just 2020-04-25`.
 
-- Documentação do módulo `Data.Time.Format`: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
-- Documentação da biblioteca `dateparser`: https://hackage.haskell.org/package/dateparser
-- História dos calendários: https://en.wikipedia.org/wiki/Calendar
+## Mergulho Profundo
+Historicamente, a análise de datas era uma tarefa complexa devido à falta de padronização. Hoje, a ISO 8601 é geralmente a norma adotada, da qual "YYYY-MM-DD" é um exemplo.
+
+Em Haskell, poderíamos usar outras bibliotecas, como "date" ou "old-locale", mas "time" é a mais comumente usada e é bastante eficiente.
+
+Vimos o uso de `parseTimeM` com um formato fixo. Mas você também pode alterá-lo de acordo com suas necessidades. A função `parseTimeM` usa uma especificação de formato para fazer a análise. Por exemplo, "%Y-%m-%d" é para o formato de data YYYY-MM-DD. Você pode alterá-lo de acordo com o formato desejado.
+
+## Veja também
+Para uma imersão mais profunda nesse tópico, confira os seguintes links:
+
+1. Documentação da biblioteca Time: http://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html
+2. Um tutorial completo sobre tratamento de datas e tempo em Haskell: https://wiki.haskell.org/Dealing_with_data_and_time_in_Haskell
+3. Padrões de especificação de formato: https://strftime.org/

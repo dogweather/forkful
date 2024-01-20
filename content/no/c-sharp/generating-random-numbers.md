@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "C#: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,18 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?:
+# Generer tilfeldige tall i C# 
 
-Å generere tilfeldige tall er en vanlig oppgave for mange programmerere. Dette refererer til produksjon av tall som ikke følger noen bestemte mønstre, og derfor er uforutsigbare. Programmerere bruker dette for en rekke formål, som å lage forskjellige spill, simulere data og utføre sikkerhetsrelaterte oppgaver.
+## Hva og hvorfor?
 
-Slik Gjør Du:
+Å generere tilfeldige tall betyr at man lager et tall som ikke kan forutsies rasjonalet, i en viss definert rekkevidde. Dette er viktig for mange aspekter i programmering, slike som spill, sikkerhet, håndtering av data, og mye mer.
 
-I C# kan du generere tilfeldige tall ved hjelp av Random-klassen. Først må du instansiere klassen ved å skrive ```C# Random random = new Random(); ``` i koden din. Deretter kan du bruke ulike metoder, som ```C# Next() ```, for å få tilfeldige tall. For eksempel, hvis du ønsker å generere et tilfeldig tall mellom 1 og 10, kan du skrive ```C# int number = random.Next(1, 11); ```, hvor 1 er det minste tallet og 11 ikke er inkludert, som gir deg tallene fra 1 til 10.
+## Slik gjør du:
 
-Dypdykk:
+Her er et enkelt eksempel på hvordan du kan generere tilfeldige tall i C#.
 
-Den første metoden for tilfeldig tallgenerering ble utviklet av den britiske matematikeren George Everest. Moderne datamaskiner bruker en pseudorandom algoritme, som er en matematisk formel som produserer tall som er tilfeldig nok til å tilfredsstille de fleste behov. I tillegg til Random-klassen i C#, finnes det også andre alternativer for tilfeldig tallgenerering, som å bruke eksterne tjenester eller generere sanntidstall basert på eksterne variabler. Det er også viktig å være oppmerksom på at tilfeldige tall ofte ikke er helt tilfeldige, men kan følge et mønster som kan bli gjenkjent og utnyttet av hackere.
+```C#
+using System;
 
-Se Også:
+class Program
+{
+    static void Main()
+    {
+        Random rand = new Random();
+        int tilfeldigTall = rand.Next(1, 100); // generer et tall mellom 1 og 100
+        Console.WriteLine(tilfeldigTall);
+    }
+}
+```
 
-Du kan lære mer om tilfeldige tallgenerering i C# ved å følge denne lenken: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1. Det er også verdt å lese om tilfeldighet og sikkerhet i onlinekilder som denne: https://www.geeksforgeeks.org/how-randomized-algorithms-are-used-for-cryptography/.
+Når du kjører dette programmet, vil det skrive ut et tilfeldig tall mellom 1 og 100 hver gang.
+
+
+## Dypdykk
+
+I tidligere versjoner av programmeringsspråk, var det mer komplisert å generere tilfeldige tall, og man måtte ofte bruke algoritmer som f.eks. Middle-square metoden. 
+
+I C# har vi klassen `Random` som brukes for å generere tilfeldige tall. Den genererer et pseudo-tilfeldige tall, det vil si at tallene ser tilfeldige ut, men vil følge samme rekkefølge hvis du bruker samme startverdi (eller seed).
+
+Alternativt, hvis du trenger sikkerhetssensitive tilfeldige tall (som for eksempel ved generering av kryptografiske nøkler), bør du bruke klassen `RNGCryptoServiceProvider` istedenfor. Dette er en klasse som er laget for å generere tilfeldige tall som er sterke nok for kryptografi.
+
+## Se også
+
+For mer informasjon om generering av tilfeldige tall, kan du se på følgende ressurser:
+* [.NET API Dokumentasjon - Random](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
+* [.NET API Dokumentasjon - RNGCryptoServiceProvider](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
+* [How To Generate Random Numbers In C#](https://www.c-sharpcorner.com/article/how-to-generate-random-numbers-in-C-Sharp/)

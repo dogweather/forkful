@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Rust recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Rust"
 category:             "Rust"
@@ -12,51 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Starting a new project in Rust means creating a new codebase that you can work on and develop into a functional program. Programmers often start new projects to solve a problem or create a tool that can be used for a specific purpose.
+Starting a new project is the initial step of creating a new, unique application from ground zero. Programmers do this to design new functionality, solve a problem, or take an idea and bring it to life.
 
 ## How to:
 
-### Creating a new project
-
-To create a new project in Rust, you can use the `cargo new` command followed by the name of your project. This will create a new directory with the given name and initialize it as a Rust project. 
+In Rust, you'll use Cargo, Rust's built-in package manager, to create and manage your projects. Here's how:
 
 ```Rust
-cargo new my_project
+// To create a new Rust project
+$ cargo new my_cool_project
+Created binary (application) `my_cool_project` package
+
+// Check out the directory it created
+$ cd my_cool_project
 ```
 
-### Compiling and running your project
-
-Once your project is created, you can use the `cargo build` command to compile it. This will create an executable in the `target/debug` directory within your project. To run your program, you can use the `cargo run` command.
+Your directory should look like this:
 
 ```Rust
-cargo build
-cargo run
+my_cool_project
+ ├── Cargo.toml
+ └── src
+     └── main.rs
 ```
 
-### Adding dependencies
-
-Rust has a package manager called Cargo that allows you to easily add dependencies to your project. You can use the `cargo add` command followed by the name of the package you want to add.
+Cargo.toml is your project build config and src/main.rs is a basic 'Hello, World!' application. Now, run the project:
 
 ```Rust
-cargo add rand
+$ cargo run
+   Compiling my_cool_project v0.1.0 (/my_cool_project)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.31s
+     Running `target/debug/my_cool_project`
+Hello, world!
 ```
+The 'Hello, World!' message is a success! You're up and running.
 
 ## Deep Dive
 
-### Historical Context
+Historically, Rust and therefore Cargo, came into being to solve complex system issues with a focus on safety and performance. Before Cargo, managing a Rust project was chaotic—managing dependencies and building a project robbed you of time and energy before you even got to your code.
 
-Rust was created by Mozilla in 2010 and has gained popularity in recent years due to its focus on memory safety and performance. It was designed to be a systems programming language, meaning it is used for low-level tasks such as operating systems or device drivers.
+Key alternatives to starting a project, like cloning a repo or reusing code from another project, lack the freshness and learning experience of a new project. Moreover, they may come wired with old bugs or unwanted features.
 
-### Alternatives
-
-There are various alternatives to Rust for starting new projects, such as Python, JavaScript, or Java. However, Rust's unique features, such as its strong type system and memory safety, make it a popular choice for certain types of projects.
-
-### Implementation Details
-
-Rust has a syntax that is similar to C++, but with additional features such as memory safety and functional programming concepts. It uses a concept called "ownership" to manage memory, making it less prone to common bugs such as dangling pointers or data races.
+Your new project creation uses templates and defaults as described in the Cargo.toml file. It's the heart of your Rust application. It defines your project details (like its name and version), its dependencies, and build instructions. This declarative approach, coupled with Cargo's functionality of downloading and building your dependencies, simplifies working with Rust to a large degree.
 
 ## See Also
 
-- [The Rust Programming Language](https://www.rust-lang.org/)
-- [Cargo: Rust's Package Manager](https://doc.rust-lang.org/cargo/)
-- [Rust Cookbook: Common Programming Recipes](https://rust-lang-nursery.github.io/rust-cookbook/)
+- Details on Cargo.toml and how to customize it: https://doc.rust-lang.org/cargo/reference/manifest.html
+- A full list of Cargo's commands: https://doc.rust-lang.org/cargo/commands/index.html
+- From newbie to professional Rustacean: The Rust Programming Language book: https://doc.rust-lang.org/book/.

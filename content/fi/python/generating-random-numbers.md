@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen luominen"
-html_title:           "Python: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,20 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Satunnaislukujen luominen on tärkeä osa monia ohjelmointitehtäviä. Kuten nimi vihjaa, se tarkoittaa satunnaisten numeroiden luomista ohjelmoidusti. Tämä on hyödyllistä esimerkiksi pelikehityksessä, tietokantasovelluksissa tai testidataa luotaessa.
+## Mikä & Miksi?
+
+Satunnaislukujen generointi tietojenkäsittelyssä merkitsee lukuja, jotka ovat lain mukaan satunnaisesti valitut. Ohjelmoijat tekevät näin simulaatioiden, pelien, turvallisuuden ja tietojenkäsittelyalgoritmiensa vuoksi.
 
 ## Miten:
+
+Pythonissa satunnaislukujen luominen on erittäin yksinkertaista. 'random' kirjasto tekee sen.
+
 ```Python
 import random
-print(random.random())
-```
-Tämä yksinkertainen koodinpätkä luo pseudosatunnaisen numeron väliltä 0 ja 1. Tämä voi olla hyödyllistä esimerkiksi pelin arvonnan tapahtumassa. Random-modulin avulla voit luoda myös satunnaisia kokonaislukuja tietyllä välillä, valita satunnaisesti listan elementtejä tai sekoittaa listan järjestyksen.
 
-## Syväsukellus:
-Satunnaislukujen luominen ei ole uusi keksintö, vaan jo antiikin ajoilta on löydetty menetelmiä satunnaisluvun luomiseen esimerkiksi noppien heittämisen avulla. Nykyään ohjelmoijille on tarjolla erilaisia algoritmeja ja generaattoreita satunnaislukujen luomiseen. On myös hyvä huomata, että tietokoneen generoimat satunnaisluvut ovat pääasiassa pseudosatunnaisia, eli ne seuraavat tiettyä laskennallista kaavaa eivätkä ole täysin sattumanvaraisia.
+# Generoi satunnainen luku väliltä 0 ja 1
+x = random.random()
+print(x)
+
+# Generoi satunnainen kokonaisluku väliltä 1 ja 10
+y = random.randint(1, 10)
+print(y)
+```
+
+Esimerkiksi, käytön jälkeen, saatat saada tuloksen, kuten:
+
+```Python
+0.35461964653229205
+7
+```
+Tässä 0.35461964653229205 ja 7 ovat Pythonin generoimat satunnaisluvut.
+
+## Syvempi tieto:
+
+Satunnaislukujen generointi ei ole uusi käsite, ja sitä on käytetty vuosisatojen ajan pelien kuten nopan ja korttipelien yhteydessä. Pythonin 'random' kirjasto perustuu todellakin perinteiseen 'C' kirjastoon ja se luo pseudo-satunnaislukuja, joka tarkoittaa, että ne näyttävät satunnaisilta, mutta niitä voidaan toistaa, jos tunnet algoritmin ja siementen.
+
+Vaihtoehtona Pythonin random kirjastolle voit myös käyttää numpy-kirjastoa monimutkaisempiin toimintoihin. Lisäksi uuid-kirjasto antaa sinun generoida satunnaisia UUID-koodilohkoja.
 
 ## Katso myös:
-- [Pythonin virallinen dokumentaatio generoiden random-modulille](https://docs.python.org/3/library/random.html)
-- [Satunnaislukugeneraattorit eri ohjelmointikielissä](https://blog.finxter.com/satunnaislukugeneraattorit-eri-ohjelmointikielissa/)
-- [Satunnaislukujen käyttö pelikehityksessä](https://www.gamasutra.com/view/feature/130007/creating_randomness_in_games.php)
+
+1. Pythonin dokumentaatio: https://docs.python.org/3/library/random.html
+2. Numpy-kirjasto satunnaislukujen generointiin: https://numpy.org/doc/stable/reference/random/index.html
+3. UUID-kirjasto: https://docs.python.org/3/library/uuid.html
+4. Wikipedia-sivu pseudo-satunnaislukugeneraattorista: https://fi.wikipedia.org/wiki/Pseudosatunnaislukugeneraattori

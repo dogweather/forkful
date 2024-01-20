@@ -1,7 +1,7 @@
 ---
-title:                "Analizando HTML"
-html_title:           "PowerShell: Analizando HTML"
-simple_title:         "Analizando HTML"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -12,40 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y por qué?
 
-El análisis de HTML es una técnica utilizada por los programadores para extraer información específica de una página web. Esto les permite automatizar ciertas tareas y acceder a datos de forma más eficiente.
+El análisis de HTML se trata de descomponer un documento HTML en sus elementos y atributos para manipularlos o extraer información. Los programadores lo hacen por muchas razones, desde la extracción de datos, la automatización de la web, hasta las pruebas de funcionalidad del software.
 
-## Cómo hacerlo:
+## ¿Cómo se hace?
 
-El siguiente código en PowerShell ilustra cómo analizar un archivo HTML utilizando el módulo "Invoke-WebRequest" de PowerShell. Este código extraerá todos los títulos de las noticias de la página de inicio de un sitio web y los imprimirá en la consola.
+Primero instalamos el módulo `HtmlAgilityPack` con `Install-Package`.
 
 ```PowerShell
-# Descargar el contenido HTML de la página de inicio
-$html = Invoke-WebRequest -Uri "https://www.ejemplo.com/"
+Install-Package HtmlAgilityPack
+```
+Después, importamos el módulo y analizamos un archivo local de HTML.
 
-# Encontrar todos los elementos <h1> y almacenarlos en una variable
-$titulos = $html.ParsedHtml.getElementsByTagName("h1")
+```PowerShell
+Add-Type -Path 'C:\path\to\HtmlAgilityPack.dll'
+$doc = New-Object HtmlAgilityPack.HtmlDocument
+$doc.Load('C:\path\to\your.html')
+$doc.DocumentNode.SelectNodes('//a[@href]') | ForEach-Object { $_.Attributes['href'].Value }
+```
+O también podemos analizar HTML directamente desde una URL.
 
-# Iterar sobre los elementos y mostrar su texto
-foreach ($titulo in $titulos) {
-    Write-Host $titulo.innerText
-}
+```PowerShell
+$web = New-Object HtmlAgilityPack.HtmlWeb
+$doc = $web.Load('https://example.com')
+$doc.DocumentNode.SelectSingleNode('//title').InnerText
 ```
 
-La salida de este código sería algo como:
+## Más a fondo
 
-```
-Bienvenidos a ejemplo.com
-Últimas noticias
-Cambia tu vida con nuestro nuevo curso en línea
-Nuevo lanzamiento de producto: ¡No te lo pierdas!
-```
+Historia: PowerShell comenzó incluyendo el análisis de HTML en su versión 3.0, aprovechando la biblioteca .NET `HtmlAgilityPack`. Antes de esto, los programadores solían hacer uso de métodos rudimentarios como el uso de expresiones regulares, lo cual era propenso a errores.
 
-## Profundizando:
+Alternativas: hay varias alternativas a PowerShell para analizar HTML, tales como Python con Beautiful Soup, Javascript con JSDOM o PHP con DOMDocument.
 
-El análisis de HTML ha sido una técnica utilizada desde los primeros días de la web para extraer datos de páginas web. Sin embargo, también existen otras formas de extraer datos, como la API de un sitio o el uso de herramientas de scraping dedicadas.
+Detalles de la implementación: El `HtmlAgilityPack` en PowerShell permite a los programadores analizar HTML tanto bien formado como mal formado. Puede manejar tags que no están cerrados y las inconsistencias que son comunes en el HTML de la web real.
 
-El módulo "Invoke-WebRequest" de PowerShell utiliza la clase "HtmlDocument" del lenguaje .NET para analizar el HTML. Esto significa que también se pueden utilizar otros lenguajes de programación que utilicen .NET para lograr el mismo resultado.
+## Ver también
 
-## Ver también:
-
-- Documentación oficial de "Invoke-WebRequest": https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7
+1. [Html agility pack](https://html-agility-pack.net/)
+2. [Librerías de Python para parsear HTML](https://realpython.com/python-html-parser/#beautiful-soup)
+3. [JSDOM en JavaScript](https://www.npmjs.com/package/jsdom)
+4. [DOMDocument en PHP](https://php.net/manual/book.dom.php)

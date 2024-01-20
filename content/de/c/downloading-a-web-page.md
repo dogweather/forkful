@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "C: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,85 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Das Herunterladen einer Webseite bezieht sich auf den Prozess des Abrufs und Auslesens von Daten aus dem Internet. Programmierer nutzen dieses Verfahren, um Informationen von Websites zu erfassen und zu verarbeiten, um sie für verschiedene Anwendungen zu nutzen. Beispielsweise kann es verwendet werden, um Daten aus einer Webanwendung zu sammeln oder um automatisierte Aufgaben auszuführen, wie das Überprüfen von Aktienkursen oder das Extrahieren von Informationen für Suchmaschinen.
+Das Herunterladen einer Webseite bedeutet, ihre Daten über das Internet zu beziehen und lokal zu speichern. Programmierer tun dies oft, um Informationen für die Datenanalyse zu sammeln oder um offline auf Inhalt zuzugreifen.
 
-# Wie geht's?
+## So geht's:
+
+C bietet mehrere Bibliotheken zum Herunterladen von Webseiten, aber wir konzentrieren uns hier auf die `libcurl` Bibliothek. Hier ist ein einfacher Code, der eine Webseite herunterlädt und ihre Daten auf der Konsole ausgibt.
 
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
+size_t write_data(void *ptr, size_t size, size_t nmemb, void *stream)
+{
+    size_t written = fwrite(ptr, size, nmemb, (FILE *)stream);
+    return written;
+}
+
 int main(void)
 {
-  CURL *curl;
+  CURL *curl_handle;
   CURLcode res;
- 
-  curl = curl_easy_init();
-  if(curl) {
-    // URL der zu ladenden Webseite angeben
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-    
-    // Falls die Webseite eine HTTPS Verbindung verwendet, muss SSL aktiviert werden
-    curl_easy_setopt(curl, CURLOPT_SSL_VERIFYPEER, 1L);
-    
-    // Die zurückgegebenen Daten werden in die Standardausgabe geschrieben
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, fwrite);
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, stdout);
-    
-    // Die Anfrage ausführen
-    res = curl_easy_perform(curl);
-    
-    // Falls ein Fehler auftritt, wird eine Fehlermeldung ausgegeben
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-    
-    // Ressourcen freigeben
-    curl_easy_cleanup(curl);
-  }
-  
+
+  curl_global_init(CURL_GLOBAL_ALL);
+  curl_handle = curl_easy_init();
+
+  curl_easy_setopt(curl_handle, CURLOPT_URL, "http://example.com");
+  curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, write_data);
+
+  res = curl_easy_perform(curl_handle);
+
+  if(res != CURLE_OK)
+    fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+
+  curl_easy_cleanup(curl_handle);
+  curl_global_cleanup();
+
   return 0;
 }
 ```
+Dieser Code würde die gesamte HTML-Ausgabe von `http://example.com` auf die Konsole ausgeben.
 
-Beispiel Ausgabe:
+## Tiefere Einblicke
 
-```
-<!doctype html>
-<html>
-<head>
-   <title>Example Domain</title>
-   
-   <meta charset="utf-8" />
-   <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-   <meta name="viewport" content="width=device-width, initial-scale=1" />
-   <style type="text/css">
-   body {
-      background-color: #f0f0f2;
-      margin: 0;
-      padding: 0;
-      font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-      -webkit-font-smoothing: antialiased;
-      font-size: 4vmin;
-   }
-   …
-</head>
-<body>
-<div>
-   <h1>Example Domain</h1>
-   <p>This domain is established to be used for illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.</p>
-   <p><a href="http://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
-```
+Webseiten herunterzuladen ist ein grundlegender Aspekt des Web-Scrapings und wurde seit den frühen Tagen des Internets praktiziert. Es gibt viele andere Bibliotheken und Techniken, um dies in verschiedenen Programmiersprachen zu erreichen, einschließlich Python's `requests` und JavaScript's `axios`.
 
-# Tiefer eintauchen
+Die `libcurl` Bibliothek, die wir in diesem Artikel verwenden, ist eine leistungsstarke und flexible Möglichkeit, dies in C zu tun. Sie ermöglicht es uns, HTTP-GET-Anfragen zu senden und die Antwort zu empfangen. Dabei werden Callback-Funktionen wie `write_data` in unserem Beispiel genutzt, um die empfangenen Daten zu verarbeiten und in diesem Fall auf der Konsole auszugeben.
 
-Das Herunterladen von Webseiten hat in den letzten Jahren an Bedeutung gewonnen, da immer mehr Anwendungen Informationen aus dem Internet benötigen. Eine alternative Methode zum Herunterladen von Webseiten ist das Scraping, bei dem auch Informationen von den Webseiten extrahiert werden können. Um das Herunterladen von Webseiten in C zu implementieren, wird häufig die cURL Bibliothek verwendet, die eine Vielzahl von Funktionen bietet, um mit dem Internet zu interagieren.
+## Siehe auch
 
-# Siehe auch
+Für weitere Informationen, bitte sehen Sie die folgenden Ressourcen:
 
-Offizielle Dokumentation der cURL Bibliothek: https://curl.haxx.se/libcurl/c/
+- [`libcurl` offizielle Dokumentation](https://curl.haxx.se/libcurl/c/)
+- [Das `libcurl-tutorial`](https://curl.se/libcurl/c/libcurl-tutorial.html)
+- [Andere Methoden zum herunterladen von Webseiten in C](http://zetcode.com/articles/curl/)

@@ -1,7 +1,7 @@
 ---
-title:                "Analizando el html"
-html_title:           "C++: Analizando el html"
-simple_title:         "Analizando el html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,49 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
 
-Parsing HTML en programación es el proceso de analizar un documento en formato HTML para extraer información específica de él. Los programadores lo hacen para automatizar tareas, como extraer datos de una página web o generar código HTML estructurado.
+El análisis de HTML implica descomponer y entender el contenido de una página web escrita en HTML. Los programadores lo hacen para extraer datos útiles, interactuar con sitios web o incluso construir web scrapers.
 
-## Cómo:
+## ¿Cómo hacerlo?
 
-Aquí hay un ejemplo de cómo se puede parsear HTML usando C++:
+Aquí hay un ejemplo de cómo podemos analizar HTML utilizando la biblioteca de C++ `htmlcxx`:
 
-```
-#include <iostream>
-#include <fstream>
-#include <htmlcxx/html/parser.hxx>
+```C++
+#include <htmlcxx/html/ParserDom.h>
+using namespace std;
+using namespace htmlcxx;
 
-int main() {
-    std::ifstream html_file("ejemplo.html");
-    std::string html_content((std::istreambuf_iterator<char>(html_file)),
-                             std::istreambuf_iterator<char>());
+int main(){
+ string html = "<html><body>Hola Mundo!</body></html>";
 
-    htmlcxx::HTML::Parser parser;
-    parser.parse(html_content);
+ HTML::ParserDom parser;
+ tree<HTML::Node> dom = parser.parseTree(html);
 
-    htmlcxx::HTML::Node body = parser.getTree()->exposedRoot()->find("body");
-
-    std::cout << "Contenido del elemento <body>:" << std::endl;
-    std::cout << body.content() << std::endl;
-
-    return 0;
+ //Recorremos el árbol
+ for(auto it = dom.begin(); it != dom.end(); ++it){
+   if(it->isTag()){
+     cout << it->tagName() << endl;
+   } else if(it->isComment()){
+     cout << "Comment: " << it->text()<< endl;
+   } else {
+     cout << "Text: "<< it->text() << endl;
+   }
+ }
+ return 0;
 }
 ```
+Este código muestra la salida:
 
-La salida de este ejemplo sería el contenido del elemento `<body>` del archivo "ejemplo.html".
+```
+html
+body
+Text: Hola Mundo!
+```
 
-## Profundizando
+## Buceo Profundo
 
-Parsing HTML ha sido una práctica muy común desde la aparición de la World Wide Web. Anteriormente, se usaban herramientas como el SGML para analizar documentos HTML. Hoy en día, existen lenguajes específicos como XPath o CSS selectors que también pueden ser utilizados para parsear HTML.
+1. **Contexto Histórico**: Los primeros buscadores de la web utilizaban análisis de HTML para indexar el contenido de la web.
 
-Otro enfoque para parsear HTML es mediante el uso de bibliotecas externas, como libxml2 o BeautifulSoup. Estas bibliotecas son útiles cuando se trabaja con archivos HTML más complejos que pueden incluir CSS y JavaScript.
+2. **Alternativas**: Existen muchas otras bibliotecas para realizar análisis de HTML en C++, como Gumbo, Myhtml, entre otros.
 
-La implementación de un parser HTML puede ser un desafío, ya que hay muchos casos especiales y excepciones a tener en cuenta. Por esta razón, es recomendable utilizar bibliotecas existentes, a menos que se tenga un conocimiento profundo del lenguaje y se quiera crear una solución personalizada.
+3. **Detalles de Implementación**: Las bibliotecas de análisis de HTML generalmente construyen un Document Object Model (DOM) - un árbol que representa la estructura HTML - que permite recorrer y manipular los elementos HTML.
 
-## Ver también
+## Ver También
 
-Para obtener más información sobre parsing HTML en C++, estos enlaces pueden ser útiles:
-
-- Documentación para la biblioteca htmlcxx: http://htmlcxx.sourceforge.net/
-- Tutorial sobre cómo usar XPath y CSS selectors en C++: https://eduardokortright.medium.com/parse-html-in-c-using-xpath-and-css-selectors-f13627f6febb
+1. [Documentación de htmlcxx](http://htmlcxx.sourceforge.net/)
+2. [Gumbo: Un analizador HTML de Google](https://github.com/google/gumbo-parser)
+3. [Myhtml: Un analizador HTML rápido y modular](https://github.com/lexborisov/myhtml)
+4. [W3C Document Object Model (DOM)](https://www.w3.org/DOM/)

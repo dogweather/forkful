@@ -1,7 +1,7 @@
 ---
-title:                "Tekstitiedoston lukeminen."
-html_title:           "Lua: Tekstitiedoston lukeminen."
-simple_title:         "Tekstitiedoston lukeminen."
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Tekstin tiedostojen lukeminen tarkoittaa tietyn tekstin sisällön lataamista tiedostosta jollekin tietokoneen ohjelmalle. Ohjelmoijat tekevät tätä esimerkiksi käyttäjän syöttämän tekstin lähettämisen yhteydessä, jotta ohjelma voi käsitellä ja näyttää kyseisen tekstin.
+Tekstitiedoston lukeminen tarkoittaa tiedostosta tietojen lukemista merkkijonoina. Koodaajat tekevät sen hakiessaan tietoja tiedostoista.
 
-## Miten:
+## Miten tehdään:
 
-Esimerkki tiedoston lukemisesta Lua-koodilla:
+Luin tiedoston lua-koodauksella näin:
 
 ```Lua
-local tiedosto = io.open("tiedostonimi.txt", "r") -- avataan tiedosto lukutilassa
-local sisältö = tiedosto:read("*a") -- luetaan tiedoston sisältö muuttujaan
-tiedosto:close() -- suljetaan tiedosto
-
-print(sisältö) -- tulostetaan teksti konsolille
+local tiedosto = io.open("testi.txt", "r") -- tiedoston avaus lukutilassa
+if tiedosto then 
+    for rivi in tiedosto:lines() do -- käydään tiedoston rivit läpi
+        print(rivi) -- tulostetaan rivi
+    end 
+    tiedosto:close() -- tiedoston sulkeminen
+else
+    print("Ei voitu avata tiedostoa!") -- virheenkäsittely
+end
 ```
 
-Tässä koodissa tiedosto avataan tiedoston avulla ja sen sisältö luetaan muuttujaan. Lopuksi tiedosto suljetaan ja tulostetaan sisältö konsolille.
+Koodin ajo tulostaa tiedostossa olevat rivit.
 
-Tämä koodi toimii, jos tiedostonimi on muuttujassa `tiedostonimi.txt`. Voit myös antaa tai muuttaa tiedostonimeä halutessasi.
+## Syvempi sukellus
 
-## Syvempi sukellus:
+Lua perustuu alun perin 1993 julkaistuun Fast Light Toolkit -kirjastoon. Sen syntyyn vaikutti halu kevyempään ja nopeampaan ohjelmointityökaluun.
 
-Tiedostojen lukeminen on tärkeä osa ohjelmointia, koska se mahdollistaa tekstin lähettämisen ja käsittelyn. Historiallisesti, tekstitiedostoja käytettiin pääasiassa tallentamaan ja jakamaan tietoa ennen kuin graafiset käyttöliittymät ja tietokannat olivat yleistyneet.
+Vaihtoehtoisia keinoja tiedostojen lukemiseen on, kuten 'io.lines' sijaan käyttää 'io.read'. Erilaisia lukuoptioita on esimerkiksi '*line' (lue seuraava rivi), '*all' (lue kaikki) ja '*number' (lue seuraava numero).
 
-Muita tapoja lukea tiedostoja on esimerkiksi `io.lines()` ja `io.read()`, mutta `io.open()` tarjoaa eniten hallintaa tiedoston avaamiselle ja luvulle.
+Tiedoston lukeminen tapahtuu puskuroimalla, joka pitää sisällään datan lukemisen kerrallaan suuremmassa osassa kuin yksi tavu, mikä tekee prosessista nopeampi. 
 
 ## Katso myös:
 
-[Lua Reference Manual - io library](https://www.lua.org/manual/5.4/manual.html#6.8)
+[Lua Ohjelmoinnin Perusteet](https://ohjelmointi.net/lua)
+
+[Lua Kielen Historia](https://fi.wikipedia.org/wiki/Lua_(ohjelmointikieli)) 
+
+[Tietoa Tiedoston Lukemisesta](https://www.tutorialspoint.com/lua/lua_file_io.htm)

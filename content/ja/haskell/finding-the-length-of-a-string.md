@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "Haskell: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## 何となぜ?
 
-文字列の長さを見つけることは、プログラマーにとって非常に重要なタスクの一つです。プログラムで使用される文字列の長さを知ることで、データの処理や編集がより簡単になります。また、文字列の長さがプログラムの実行に影響を与える場合もあります。そのため、文字列の長さを見つけることは、プログラミングにおける基本的なスキルの一つです。
+文字列の長さを求めるとは、文字列が含む文字の数を計算することを指します。プログラマーは、メモリ使用量を把握するため、または特定のアルゴリズムが適用可能かどうかを判断するために、この操作を実行します。
 
-## 方法：
+## 方法:
 
-Haskellでは、文字列の長さを見つけるために、`length`関数を使用します。この関数は、文字列を引数として受け取り、その文字列の長さを返します。以下は、`length`関数を使用したサンプルコードと出力の例です。
+`length`関数を使用して、Haskellで文字列の長さを簡単に取得できます。
 
 ```Haskell
-length "Haskell" -- 出力結果: 7
-length "こんにちは" -- 出力結果: 5
+myString = "こんにちは、世界"
+main = print (length myString)
 ```
 
-## 深く掘り下げる：
+実行結果は次のとおりです:
 
-文字列の長さを見つける方法は、プログラミング言語によって異なります。しかし、Haskellの`length`関数は、非常に簡単で使いやすい方法です。また、Haskellでは他にも、文字列を扱うための様々な関数が提供されています。例えば、`concat`関数を使用すると、複数の文字列を結合することができます。
+```Haskell
+8
+```
 
-また、長い文字列の場合、`length`関数はパフォーマンスの面で注意が必要です。そのため、より高速な方法を使用したい場合は、`Data.Text`モジュールをインポートし、`length`関数の代わりに`Data.Text.length`関数を使用することができます。
+## ディープダイブ:
 
-## 関連情報：
+歴史的な文脈：Haskellの文字列は、文字のリストとして実装されています。`length`関数は、リストの長さを返す一般的な関数で、文字列での使用は特別な事例ではありません。
 
-- [Haskellのドキュメンテーション: String関数](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html)
-- [Haskell Wikiの文字列処理に関する記事](https://wiki.haskell.org/Strings)
-- [Haskellの基本的な文字列操作についての記事](https://souenzzo.github.io/posts/taotal-haskell-string-function/)
+代替手段：リストの長さを取得する他の方法として、`foldl'`関数を使う方法もあります。しかし、`length`関数の方が直感的で、より効率的です。
+
+実装詳細：`length`関数は、再帰を使用してリスト全体を走査します。再帰呼び出しごとにカウンターが1増加し、リストの終わりに到達すると、その数が返されます。
+
+## 参考文献:
+
+1. [Learn You a Haskell for Great Good - Strings](http://learnyouahaskell.com/starting-out#strings)
+2. [Real World Haskell - Lists and Tuples](http://book.realworldhaskell.org/read/lists-and-tuples.html)
+3. [Haskell Documentation - Data.List.length](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:length)

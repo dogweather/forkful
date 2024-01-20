@@ -1,6 +1,6 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "C#: Завантаження веб-сторінки"
+html_title:           "Gleam: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "C#"
 category:             "C#"
@@ -10,30 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Завантаження веб-сторінки - це коли програміст збирає дані з інтернет-адреси і зберігає їх у програмі. Програмісти роблять це, щоб отримати інформацію, яка буде використовуватися для різних цілей, таких як аналіз чи обробка.
+## Що та для чого?
 
-## Як зробити:
+Завантаження веб-сторінки - це процес отримання даних веб-сторінки і запису їх на локальний пристрій. Програмісти це роблять, щоб аналізувати вміст веб-сторінки або використовувати контент веб-сайту в їх програмах.
+
+## Як це зробити:
+
+Ось приклад коду, що використовує HttpClient, щоб завантажити вміст веб-сторінки:
+
 ```C#
-using System.Net;
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-// створюємо об'єкт WebClient
-WebClient client = new WebClient();
+class Program
+{
+    static readonly HttpClient client = new HttpClient();
 
-// задаємо URL адресу для завантаження
-string url = "https://example.com";
+    static async Task Main()
+    {
+        try
+        {
+            string responseBody = await client.GetStringAsync("http://www.example.com");
 
-// використовуємо метод DownloadString для завантаження сторінки
-string content = client.DownloadString(url);
-
-// виводимо зміст сторінки у консоль
-Console.WriteLine(content);
+            Console.WriteLine(responseBody);
+        }
+        catch (HttpRequestException e)
+        {
+            Console.WriteLine("Error: {0}", e.Message);
+        }
+    }
+}
 ```
+Цей код у виводі надає HTML-код завантаженої веб-сторінки.
 
-## Більш глибоке погруження:
-Завантаження веб-сторінки стало можливим завдяки поширенню інтернету та розвитку технологій. Проте, є інші способи отримати дані з веб-сторінок, такі як парсинг HTML-коду або використання API. У C# також існує багато бібліотек для завантаження веб-сторінок, які надають більш розширені можливості.
+## Глибше занурення:
 
-## Дивись також:
-- [Документація Microsoft про клас WebClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=net-5.0)
-- [Стаття про завантаження веб-сторінок в C#](https://www.c-sharpcorner.com/blogs/download-a-webpage-in-html-format-in-net-core)
-- [Бібліотека AngleSharp для парсингу HTML-коду в C#](https://anglesharp.github.io/)
+Подібно до створення HTTP-клієнта, бібліотеки, такі як HtmlAgilityPack або ScrapySharp, були створені щоб допомогти програмістам легко аналізувати вміст HTML. З тих пір, як було створено HttpClient в .NET 4.5, він став основою для встановлення HTTP-з'єднань в більшості програм C#.
+
+В залежності від ваших потреб, є інші методи для завантаження веб-сторінок, такі як використання WebClient або HttpWebRequest.
+
+HttpClient був створений з метою поліпшення процесу встановлення з'єднань за допомогою HTTP. Висока продуктивність і швидкість справили свою справу, і він став стандартом в програмуванні на C#.
+
+## Див. також:
+
+1. [MSDN HttpClient Class](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient)
+2. [Comparison of Different Ways to Download Web Pages in .NET](https://exceptionnotfound.net/the-ultimate-guide-to-the-async-and-await-keywords-in-c-sharp/)
+3. [ScrapySharp](https://github.com/rflechner/ScrapySharp)
+4. [HtmlAgilityPack](https://html-agility-pack.net/)

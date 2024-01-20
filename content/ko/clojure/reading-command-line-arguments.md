@@ -1,7 +1,7 @@
 ---
-title:                "컴퓨터 프로그래밍에서 명령줄 인수 읽기"
-html_title:           "Clojure: 컴퓨터 프로그래밍에서 명령줄 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍에서 명령줄 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-뭐, 왜?
-==============
-우선, 우리는 프로그램을 만들 때 사용자로부터 입력을 받아 프로그램의 실행 결과를 조절하고 싶을 때가 있습니다. 이 때, 콘솔 창에서 받은 입력을 읽어들이는 것이 필요합니다. 이를 읽기 위해, 우리는 커맨드 라인 인자를 읽어야 합니다. 이를 통해 프로그램은 사용자로부터 입력 값을 받아 실행 결과를 조절할 수 있게 됩니다.
+## 무엇이며 왜?
+명령행 인자를 읽는 것은 프로그램을 시작할 때 사용자로부터 전달받는 인자를 읽는 것입니다. 이를 통해 프로그램의 실행 방식을 사용자 정의할 수 있습니다.
 
-어떻게?
-==============
-우리는 클로저에서 ```(command-line-args)```를 호출하는 것으로 커맨드 라인 인자를 읽을 수 있습니다. 다음은 간단한 예제입니다.
+##어떻게 할 것인가:
+```Clojure 
+(defn -main [& args]
+  (println "입력한 인자: " args))
+```
+이 매우 간단한 Clojure 프로그램을 사용하여 명령행 인자를 읽을 수 있습니다.
 
-```Clojure
-(def args (command-line-args))
-(println "안녕하세요, " (first args) "님!")
+프로그램을 다음과 같이 실행하면:
+
+```bash
+$ lein run 인자1 인자2 인자3
+```
+다음과 같은 출력을 볼 수 있습니다:
+
+```
+입력한 인자: (인자1 인자2 인자3)
 ```
 
-위 코드를 실행하면 "안녕하세요, [사용자이름] 님!"이라는 출력 결과를 볼 수 있습니다.
+## 행 수
+명령 행 인자는 Unix 시스템에서 프로그래밍 및 자동화 작업을 실행할 때 일반적으로 사용되었습니다. 이는 스크립트에 다양성을 추가하고 작업을 쉽게 자동화 할 수 있게 해줍니다. 
 
-더 깊이 들어가보면?
-==============
-우리가 커맨드 라인 인자를 읽는 방법은 실제로 오래된 역사를 가지고 있습니다. 초기에는 명령어로 실행되는 프로그램들은 사용자의 입력 값이 필요 없이 실행되었습니다. 하지만, 사용자와 상호작용 할 필요가 있는 프로그램들이 더 많아지면서, 커맨드 라인 인자를 읽는 기능이 추가되었습니다. 클로저를 비롯한 많은 프로그래밍 언어들에서도 커맨드 라인 인자를 읽는 기능이 제공됩니다.
+이를 대체할 수 있는 방법은 프로그램 내부의 동적 입력 (예: 사용자 입력 또는 파일 입력)이지만, 명령행 인자는 프로그램이 시작할 때 한번만 입력 받기 때문에 더 향상된 효율성과 성능을 가지고 있습니다.
 
-또한, 다른 방법으로는 환경 변수를 사용하는 것이 있습니다. 이 경우에는 사용자가 직접 값을 설정해주어야 합니다.
+명령행 인자는 JVM에 의해 String 배열로 전달되며, Clojure는 이 배열을 가변 인자 목록으로 매핑하여 `-main` 함수에 제공합니다.
 
-이를 구현하는 방법은 운영 체제 별로 다를 수 있습니다. 우리가 작성하는 프로그램이 실행되는 운영 체제를 확인하고, 이를 기반으로 적절한 방법을 선택해야 합니다.
-
-참조
-==============
-관련 정보를 더 알고 싶다면, 다음 링크들을 확인해보세요.
-- [Official Clojure Documentation for Command Line Arguments](https://clojure.org/reference/jvm_commandline#_command_line_arguments)
-- [ClojureDocs for command-line-args](https://clojuredocs.org/clojure.core/command-line-args)
-- [A blog post on using command line arguments in Clojure](https://dzone.com/articles/handling-command-line-arguments-in-clojure)
+## 참조
+Crojure 명령행 인자에 대한 더 깊은 이해를 위해 다음 링크를 확인하십시오:
+- [Clojure 공식 문서](https://clojure.org/)
+- [Command Line Arguments in Clojure](https://clojuredocs.org/clojure.core/*command-line-args*)
+- [Command-line argument parsing in Clojure](http://web.archive.org/web/20100621051006/http://programming-puzzler.blogspot.com/2009/05/command-line-argument-parsing-in.html)

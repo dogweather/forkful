@@ -1,7 +1,7 @@
 ---
-title:                "Uttrekk av delstrenger"
-html_title:           "Elm: Uttrekk av delstrenger"
-simple_title:         "Uttrekk av delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -12,31 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Hva er egentlig "ekstrahering av substrings"? Dette er når vi ønsker å hente ut en del av en tekststreng. Dette gjøres for å få tak i spesifikke deler av teksten, for eksempel for å analysere eller manipulere den. Det er en vanlig oppgave blant programvareutviklere, og kan være svært nyttig i mange situasjoner.
+Utdrag av substrings er å hente en del av en streng basert på gitte indekser. Programmører gjør det for å manipulere og behandle data mer effektivt. 
 
-## Hvordan:
+## Hvordan gjør man det?
 
-I Elm kan vi bruke funksjonen `String.slice start end` for å hente ut en del av en streng. Her er `start` en integer som representerer starten av substringen, og `end` er en integer som representerer slutten av substringen. Dette kan også kombineres med funksjonen `String.length` for å hente ut en substring fra slutten av en streng, ved å bruke en negativ verdi for `start` eller `end`.
+Du kan hente en substring i Elm ved hjelp av "String.slice" funksjonen. La oss se på følgende eksempel:
 
-Eksempel:
-```Elm
-import String exposing (slice, length)
+```elm
+import String exposing (slice)
 
--- Henter ut de tre første tegnene fra en streng
-substring = slice 0 2 "Hei!"
--- Resultatet blir "He"
-
--- Henter ut de tre siste tegnene fra en streng
-substring = slice (-3) (-1) "Hello!"
--- Resultatet blir "lo"
+main =
+    let
+        bokstaver = "Hei, Verden!"
+    in
+        slice 0 3 bokstaver
 ```
 
-## Dykk ned:
+Kjører du det, vil utfallet bli:
 
-Teksten "Substring" kan spores tilbake til programmeringsspråket "Snobol" fra 1960-tallet, som introduserte begrepet "SUBSTR". I tillegg til funksjonen `slice` i Elm er det også mulig å bruke den innebygde funksjonen `String.sub` for å hente ut enkelte tegn fra en streng. Det finnes også lignende funksjoner i andre programmeringsspråk som JavaScript og Java.
+```elm
+"Hei"
+```
 
-## Se også:
+Vi ber om å hente en substring fra indeks 0 til 3. String.slice start indeksen er inklusiv mens slutt indeksen er eksklusiv. 
 
-- [Offisiell dokumentasjon for `String` modulen i Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Definisjon av "Substring" på wikipedia.org](https://en.wikipedia.org/wiki/Substring)
-- [Eksempel på bruk av `slice` og `length` i en utforskning av Fibonacci-sekvensen](https://programmers27.wordpress.com/2016/01/01/fibonacci-number/)
+## Dyp Dykk
+
+Substring teknikken stammer fra tidligere programmeringsspråk som C and C++, og blir ofte brukt når vi ønsker å hente ut en del av informasjonen i en større streng.
+
+I Elm kan du også bruke funksjonen "String.dropLeft" eller "String.dropRight" for å hente substrings, men dette kan også innebære at funksjoner blir litt mer innviklet.
+
+Elms implementering av substrings er støttet av både String modulen og List modulen for indeksbasert adgang. På grunn av dette kan du også hente ut substrings av lister og andre array-lignende strukturer.
+
+## Se også  
+
+Her er et par nyttige lenker for ytterligere læring:
+
+1. [Elm's Offisielle Dokumentasjon på String.slice](https://package.elm-lang.org/packages/elm/core/latest/String#slice)
+2. [Real World Elm Eksempler](https://elmprogramming.com/)
+3. [Elm's Offisielle Dokumentasjon på String modulet](https://package.elm-lang.org/packages/elm/core/latest/String)
+
+Husk at mestring av grunnleggende string manipulasjon som substring extraksjon er en kritisk ferdighet for alle Elm utviklere.

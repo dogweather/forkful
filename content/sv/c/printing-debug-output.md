@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutmatning"
-html_title:           "C: Utskrift av felsökningsutmatning"
-simple_title:         "Utskrift av felsökningsutmatning"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Debugutskrift i C-programmering
+# Att Skriva Ut Debugoutput i C
 
 ## Vad & Varför?
-Debugutskrift är en metod för att lägga till extra kod i ditt C-program för att få ut utskrifter av variabler eller viktiga steg i koden under körning. Detta är ett vanligt sätt för programmerare att felsöka och förstå vad som händer i programmet.
+Att skriva ut debug output är ett sätt att spåra och lösa problem i koden genom att visa variabelvärden och programflödet. Det hjälper programmeraren att förstå vad programmet gör och var det möjligtvis går fel.
 
-## Så här gör du:
-För att lägga till utskrifter i ditt C-program, använd `printf()` funktionen. Du kan skriva ut text eller värden av variabler genom att inkludera dem inuti citattecken eller genom att använda speciella konverterare (%d, %f, osv.) för variabler.
-
-Till exempel, om du vill skriva ut värdet av variabeln `x`, kan du skriva:
+## Hur man gör:
+Här är ett grundläggande exempel på hur man skriver ut debug output med hjälp av `printf` funktionen i C.
 
 ```C
-printf("x = %d\n", x);
+#include <stdio.h>
+
+int main() {
+    int i = 5;
+    printf("Debug: i is %d\n", i);  // Skriver ut "Debug: i is 5"
+    return 0;
+}
 ```
 
-Detta kommer att skriva ut värdet av `x` följt av en radbrytning.
+Lägg märke till att vi använder `printf` för att skriva ut variabelvärdet. På detta sätt kan vi följa vad som händer med variabeln `i` i programmet.
 
-## Djupdykning:
-Printing debug output är ett vanligt sätt att felsöka i C-programmering eftersom det är enkelt att implementera och ge en ögonblicksbild av variabler och koden. Alternativ till att använda `printf()` inkluderar att använda en debugger eller att logga utskrifter till en fil.
+## Fördjupning
+Vi lägger nu märke till någrar punkter. För det första, användandet av debug utskrifter är en gammal teknik, men ändå kraftfull och användbar. Faktum är att det började användas i början av programmeringshistorien när mer sofistikerade debuggers inte fanns.
 
-När du lägger till debugutskrifter i din kod, se till att ta bort dem när du är klar med felsökningen, annars kan det påverka prestandan av ditt program.
+Det finns alternativ till att använda `printf` för debug utskrift. Ett av dessa alternativ är användning av debuggers, som GDB, vilka erbjuder mycket mer kraftfulla verktyg för felsökning men kan vara mer komplicerade att använda.
 
-## Se även:
-- [De olika formateringskonverterarna i C](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
-- [Introduktion till felsökning i C](https://www.geeksforgeeks.org/cpp-debugging-tips/)
-- [C debuggin verktyg](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb/)
+När det gäller implementation, se till att du tar bort debug utskrifter från din kod när du är klar. Ett sätt att hantera detta på är att ha en `DEBUG` flagga som du kan ställa in för att aktivera eller inaktivera debug utskrifter.
+
+## Se också
+För mer information om C programmering och debug tekniker, se följande källor:
+
+- [C Programming Language (2nd Edition) av Brian W. Kernighan och Dennis M. Ritchie](https://www.amazon.com/Programming-Language-Brian-W-Kernighan/dp/0131103628)
+- [GDB: The GNU Project Debugger](https://www.gnu.org/software/gdb/) 
+- [Effective Debugging: 66 Specific Ways to Debug Software and Systems av Diomidis Spinellis](https://www.amazon.com/Effective-Debugging-Specific-Software-Systems/dp/0134394798)

@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Ruby recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,31 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Interpolating a string in Ruby refers to inserting values or variables into a string to create dynamic content. This allows programmers to generate strings with changing information, making their code more efficient and flexible. It is a common practice in Ruby and is used in many different scenarios, such as displaying user input or generating error messages.
+## What & Why? 
 
-## How to:
-To interpolate a string in Ruby, use the "#" and "{}" symbols to wrap the variable or value inside the string. For example:
-```Ruby
-name = "John"
-puts "Hello #{name}"
+Interpolation is a method of injecting values directly into a string. It makes it easy to insert variables or computed values into a text in Ruby — saving programmers from fumbling with string concatenation.
+
+## How to
+
+String interpolation in Ruby looks like this:
+
+```Ruby 
+name = "Ruby"
+puts "Hello, #{name}!"
 ```
-This will output: "Hello John"
-You can also use interpolation with method calls or mathematical operations:
-```Ruby
-age = 25
-puts "John is now #{age + 5} years old"
+
+The output would be:
+
 ```
-This will output: "John is now 30 years old"
+Hello, Ruby!
+```
 
-## Deep Dive:
-Interpolating strings has been a feature in Ruby since its early versions. It is heavily influenced by the Perl programming language, which also uses the "#" and "{}" symbols for string interpolation. However, unlike Perl, Ruby supports more complex expressions within the {} brackets, such as method calls and mathematical operations.
+You can also inject code. Consider that we need to calculate a total price:
 
-An alternative to string interpolation in Ruby is the use of the concatenation operator "+". While this achieves the same result, it is not as efficient and can be tedious in cases where multiple variables or values need to be inserted into a string. String interpolation simplifies and streamlines the process.
+```Ruby
+quantity = 10
+price_per_item = 2.5
+puts "Total price is #{quantity * price_per_item}"
+```
 
-Behind the scenes, string interpolation uses the method `to_s` to convert the inserted value or variable into a string before it is added to the string. This is important to keep in mind when using interpolation with custom objects or classes as the `to_s` method can be overridden to return a specific string representation.
+And the output:
 
-## See Also:
-- [Ruby Documentation on String Interpolation](https://ruby-doc.org/core-<DateTime>/doc/syntax/literals_rdoc.html#label-String+Literals)
-- [History of String Interpolation in Programming Languages](https://en.wikipedia.org/wiki/String_interpolation)
-- [Alternative to String Interpolation using Concatenation](https://learnrubythehardway.org/book/ex4.html)
+```
+Total price is 25.0
+```
+
+## Deep Dive 
+
+String interpolation was introduced in Ruby 1.9, replacing the older and more verbose `sprintf` formatting approach. 
+
+An alternative to interpolation is concatenation, but beware, interpolation often reads more easily. Compare these two pieces of code:
+
+```Ruby
+puts "Hello, " + name + "!"  # Concatenation 
+puts "Hello, #{name}!"       # Interpolation
+```
+
+When interpolating, Ruby executes the code inside the curly braces and converts the result to a string. It's handy, but keep in mind your string cannot perform heavy computations or complex object manipulations.
+
+## See Also
+
+Look up these related topics:
+
+- [Ruby docs: String](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ruby docs: String interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings)
+- [Intro to Ruby: String Interpolation](http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation.html)
+- [ThoughtCo: How to Use String Interpolation in Ruby](https://www.thoughtco.com/string-interpolation-in-ruby-2907742).

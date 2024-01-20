@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som samsvarer med et mønster"
-html_title:           "Elm: Sletting av tegn som samsvarer med et mønster"
-simple_title:         "Sletting av tegn som samsvarer med et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,29 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Å Slette Tegn Som Matcher et Mønster i Elm
+
+Dette er en nesten lommebokstørrelse guide til å slette tegn som matcher et mønster i Elm. Få koden rett, raskt.
+
 ## Hva & Hvorfor?
-Å slette tegn som matcher et mønster er en vanlig oppgave for programmere. Dette innebærer å fjerne spesifikke tegn eller tegnkombinasjoner fra en streng, basert på et forhåndsdefinert mønster. Dette kan være nyttig for å rydde opp i data, filtrere ut uønskede tegn eller formatere tekster på en mer konsistent måte.
+
+Sletting av tegn som matcher et mønster gjør det mulig å manipulere og rydde opp i strenger. Programmerere bruker denne teknikken for å redusere rot og uønsket data i kode.
 
 ## Hvordan:
+
+Her er en enkel måte å bruke `String.Extra` biblioteket for å slette alle vokaler fra en tekststreng i Elm.
+
 ```Elm
-import String
+import String.Extra
 
--- Sletter alle tegn i en streng som matcher mønsteret [A-Z]
+removeVowels : String -> String
+removeVowels text = 
+    String.Extra.replaceRegex "[aeiouAEIOU]" "" text
 
-deleteCharacters: String -> String
-deleteCharacters str =
-  String.filter (\c -> c `List.member` ['A'..'Z']) str
+-- Eksempel
 
--- Input: "Here Are Some Numbers: ABC123"
--- Output: "re re me  umers: 123"
+main =
+    let
+        text = "Programmering i Elm er gøy!"
+        result = removeVowels text
+    in
+    Html.text result   -- Output: "Prgrmmrng  Elm r gy!"
 ```
 
-Det er flere måter å implementere denne funksjonen på, avhengig av utfordringen du står overfor og språket du bruker. Ved hjelp av Elm sin innebygde String modul kan du filtrere ut uønskede tegn med `String.filter` og `List.member` funksjonene.
+## Dypdykk
 
-## Dypdykk:
-Å slette tegn som matcher et mønster er ikke en ny oppgave i programmering og har blitt løst på ulike måter gjennom årene. I tillegg til å bruke filter funksjoner, kan du også bruke regex (regular expressions) for mer avanserte og komplekse mønstre. Det finnes også andre funksjoner i Elm sin String modul som kan være nyttig, som for eksempel `String.replace` for å erstatte tegn som matcher et mønster.
+Historisk sett, Elm populariserte funksjonell reaktiv programmering på weben. Elm's innebygde `String` bibliotek tilbyr mange funksjoner for strengmanipulasjon, men for å slette tegn som matcher et mønster, må du ty til pakker som `String.Extra`.
 
-## Se også:
-- [Elm String modul dokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Regex i Elm](https://guide.elm-lang.org/interop/regex.html)
-- [Andre løsninger på å slette tegn i programmeringsspråk som Java og Python](https://www.geeksforgeeks.org/remove-all-occurrences-of-a-character-from-a-string-in-python/)
+Alternativt, du kan implementere din egen løsning ved hjelp av en rekursiv funksjon som itererer over hver karakter i strengen.
+
+I tillegg, sletting av tegn som matcher et mønster kan være ganske effektiv i Elm, siden Elm bruker Unicode under panseret.
+
+## Se Også: 
+
+1. [Elm's String Documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+2. [Elm's String.Extra Documentation](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
+3. [Elm's Regex Documentation](https://package.elm-lang.org/packages/elm/regex/latest/)
+4. [Funksjonell programmering i Elm](https://elm-lang.org/)

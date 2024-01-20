@@ -1,6 +1,6 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "Fish Shell: Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
+## Qu'est-ce que c'est & Pourquoi?
 
-La recherche et le remplacement de texte est une tâche courante pour les programmeurs, qui leur permet de modifier rapidement et efficacement des portions de code spécifiques. Cela peut être utile pour corriger une erreur, mettre à jour une variable ou encore pour effectuer des modifications en masse dans un projet.
+La recherche et le remplacement de texte permettent de repérer une chaîne de caractères spécifique et de la remplacer par une autre. Les programmeurs l'utilisent pour modifier rapidement les codes source ou configurer les systèmes.
 
-# Comment:
+## Comment faire :
 
-La programmation en shell Fish offre une syntaxe simple et concise pour effectuer une recherche et un remplacement de texte.
+Utiliser le shell de poisson(Fish Shell) pour la recherche et le remplacement est facile. Jetons un œil à cet exemple.
 
-Par exemple, pour remplacer toutes les occurrences d'un mot ou d'une phrase dans un fichier, vous pouvez utiliser la commande suivante :
+```Fish Shell 
+set sentence "J'aime le poisson"
+echo $sentence | string replace "poisson" "shell de poisson"
+``` 
 
+Sortie: "J'aime le shell de poisson"
+
+Ici, nous avons remplacé 'poisson' par 'shell de poisson' dans la variable sentence.
+
+```Fish Shell
+set list "un deux trois un deux trois"
+echo $list | string replace --all "un" "one"
 ```
-fish_slooow textSearch 'textToReplace' < fichier_a_traiter
-```
+Sortie: "one deux trois one deux trois"
 
-Voici un exemple de sortie de cette commande :
+Dans cet exemple, nous avons remplacé toutes les instances de 'un' par 'one' dans la variable list.
 
-```
-Welcome to Fish Shell! This is a demonstration of text search and replace.
-If you see this text, it means your Fish Shell is working properly.
-```
+## Plongée profonde :
 
-Après avoir utilisé la commande de recherche et de remplacement mentionnée précédemment, le résultat serait modifié comme suit :
+Le shell de poisson a été initialement développé pour être plus intuitif et facile à utiliser que les coquilles traditionnelles. D'autres alternatives existent, comme grep et sed pour la recherche et le remplacement de texte, mais le Shell de poisson rend les choses beaucoup plus simples.
 
-```
-Welcome to Fish Shell! This is a demo of text search fish_slooow and replace.
-If you see this text, it means your Fish Shell is working properly.
-```
+Le détail d'implémentation important ici est que le Shell de poisson utilise son propre language de script, qui est différent des shells UNIX traditionnels. Cela signifie qu'il est plus facile à utiliser et plus flexible pour faire des tâches comme la recherche et le remplacement de texte.
 
-# Plongée en profondeur:
+## Voir aussi :
 
-La recherche et le remplacement de texte ont été introduits pour la première fois dans le système Unix en 1979 et sont restés un outil précieux pour les programmeurs depuis lors. Alternativement, les programmeurs peuvent utiliser des expressions régulières pour effectuer des recherches et des remplacements de texte. Cependant, la syntaxe des expressions régulières peut être complexe et difficile à comprendre pour les débutants.
-
-La mise en œuvre de la recherche et du remplacement de texte dans Fish Shell est basée sur la bibliothèque GNU Sed, ce qui lui confère une grande flexibilité et un large éventail de fonctionnalités.
-
-# Voir aussi:
-
-- La documentation officielle de Fish Shell pour en savoir plus sur les commandes et les fonctionnalités disponibles.
-- "Practical Guide to Linux Commands, Editors, and Shell Programming" pour approfondir vos connaissances sur les expressions régulières et d'autres fonctions de recherche et de remplacement de texte.
+Pour plus d'informations sur le poisson Shell et ses capacités, jetez un oeil à ces liens:
+1. [Documentation officielle de poisson Shell](https://fishshell.com/docs/current/index.html)
+2. [Github du projet poisson Shell](https://github.com/fish-shell/fish-shell)
+3. [Tutoriel poisson Shell](https://fishshell.com/docs/current/tutorial.html)

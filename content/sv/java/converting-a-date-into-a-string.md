@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "Java: Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Java"
 category:             "Java"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-När vi pratar om att konvertera ett datum till en sträng i Java, så menar vi att omvandla formatet på datumet från ett datumobjekt till en textsträng. Det här är ett vanligt förekommande steg inom programmering när vi behöver använda datum i vår kod. Genom att konvertera datumet till en sträng, kan vi enkelt manipulera och visa det på önskat sätt.
+## Vad & Varför? 
+Att konvertera ett datum till en sträng i Java innebär att förändra datatypen från ett Datum-objekt till en textsträng i ett specifikt format. Programutvecklare gör detta för att det är lättare att arbeta med och visa data i textform.
 
-## Så här gör du:
-```Java
-// Skapa ett datumobjekt
-Date date = new Date();
+## Hur man gör:
+Här är en enkel kodsnutt för att konvertera ett datum till en sträng i Java:
+``` Java
+import java.text.SimpleDateFormat; 
+import java.util.Date; 
 
-// Med hjälp av SimpleDateFormat klassen kan vi konvertera datumet till en sträng enligt önskat format. Här använder vi formatet "dd/MM/yyyy".
-SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-
-// Använd format-metoden för att konvertera datumet och lagra det som en sträng i en variabel.
-String dateString = dateFormat.format(date);
-
-// Skriv ut resultatet
-System.out.println("Datumet som en sträng: " + dateString);
+public class Main {
+  public static void main(String[] args) { 
+    Date date = new Date(); 
+    SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss"); 
+    String strDate = formatter.format(date); 
+    System.out.println("Date Format with dd-MM-yyyy HH:mm:ss : "+ strDate);
+  } 
+}
 ```
-
-Output:
+När du kör denna kod, kommer utskriften att se ut så här (datum och tid variabler beroende på när du kör koden):
+``` Java
+Date Format with dd-MM-yyyy HH:mm:ss : 22-02-2022 14:23:45
 ```
-Datumet som en sträng: 24/06/2021
-```
+## Djupdykning: 
 
-## Djupdykning:
-Att konvertera ett datum till en sträng är ett vanligt förekommande problem inom programutveckling. Historiskt sett så användes den inbyggda Date-klassen för hantering av datum i Java, men den har visat sig vara besvärlig och problematisk. Numera är det rekommenderat att istället använda Joda-Time biblioteket eller Java 8's Date and Time API för att hantera datum och tidsberäkningar.
+1. Historiskt: Funktionen för att konvertera datum till en sträng infördes i Java 1.1-biblioteket som en del av java.text.SimpleDateFormat klassen.
+
+2. Alternativ: Du kan också använda Java 8 LocalDate och DateTimeFormatter-klasserna för att göra konverteringen effektivare och säkrare.
+
+3. Implementation detaljer: SimpleDateFormat-klassen i Java använder särskilda formatteringssymboler för att definiera hur det konverterade datumet ska se ut. Till exempel betyder 'dd' dagen i månaden, 'MM' betyder månaden, 'yyyy' betyder året, 'HH' betyder timmen, 'mm' betyder minuten, och 'ss' betyder sekunden.
 
 ## Se även:
-- [Java documentation for SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Joda-Time documentation](https://www.joda.org/joda-time/)
-- [Java 8 Date and Time API documentation](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+Länkar till ytterligare resurser finns nedan: 
+
+1. Oracle Java Docs: [SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) 
+2. Oracle Java Docs: [Date](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html) 
+3. StackOverFlow: [How to convert Date to String in Java](https://stackoverflow.com/questions/5683728/convert-java-util-date-to-string)
+4. Oracle Java Docs: [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)

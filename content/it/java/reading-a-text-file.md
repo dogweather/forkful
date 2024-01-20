@@ -1,6 +1,6 @@
 ---
 title:                "Lettura di un file di testo"
-html_title:           "Java: Lettura di un file di testo"
+html_title:           "C: Lettura di un file di testo"
 simple_title:         "Lettura di un file di testo"
 programming_language: "Java"
 category:             "Java"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Leggere un file di testo è un'operazione comune nel mondo della programmazione, che consiste nel leggere i contenuti di un file di testo all'interno di un programma e manipolarli in base alle esigenze. I programmatori utilizzano questa tecnica per svariati motivi, ad esempio per analizzare dati, elaborare informazioni o leggere configurazioni.
+## Che cosa e Perche?
+
+Leggere un file di testo è un'operazione comune in programmazione che permette di prendere dati da un file esterno e usarli nel tuo programma. Questo è molto utile quando si lavora con grandi volumi di dati, come le configurazioni dell'applicazione o l'input dell'utente.
 
 ## Come fare:
-```java
-// Leggi un file di testo
-File file = new File("test.txt"); // sostituisci con il tuo file di testo
-Scanner scanner = new Scanner(file);
-while (scanner.hasNextLine()) {
-    String line = scanner.nextLine();
-    System.out.println(line); // stampa ogni riga del file di testo
+
+Ecco un esempio di come leggere un file di testo con Java:
+
+```Java
+import java.nio.file.*;
+import java.io.*;
+
+public class Main {
+  public static void main(String[] args) {
+    try {
+      String content = new String(Files.readAllBytes(Paths.get("fileDiTesto.txt")));
+      System.out.println(content);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 }
-scanner.close();
 ```
+Output previsto:
 
-Output:
 ```
-Questa è la prima riga del file di testo.
-Questa è la seconda riga.
-E questa è l'ultima.
+Ecco una riga di testo.
+Questa è un'altra riga di testo.
 ```
+## Il tuffo nel profondo:
 
-## Approfondimento:
-La lettura di file di testo è una pratica comune nella programmazione sin dagli albori, quando le informazioni venivano memorizzate principalmente in questo formato. Oggi ci sono varie alternative alla lettura dei file di testo, come ad esempio i database o l'utilizzo di framework che semplificano la lettura dei dati.
+Nell'era pre-Java 7, i programmatori usavano principalmente le classi `BufferedReader` e `FileReader` per leggere i file di testo. Tuttavia, da Java 7 in poi, è stato introdotto il package `java.nio.file` che fornisce metodi più efficienti e facili da usare come `Files.readAllBytes()`.
 
-Per implementare la lettura di un file di testo, è necessario comprendere il concetto di buffer, ovvero una memoria temporanea che contiene i dati letti dal file di testo prima che vengano elaborati dal programma. Inoltre, bisogna gestire correttamente gli errori durante la lettura del file, come ad esempio la mancanza di permessi o il file non esistente.
+Ci sono diverse alternative per leggere un file di testo in Java, come l'uso dello scanner o il mappaggio della memoria file. La scelta del metodo più adatto dipende dalle tue esigenze. Ad esempio, lo scanner è più adatto quando si leggono dati di input utente, mentre `Files.readAllBytes()` è più utile per leggere interi file in una volta sola.
 
-## Vedi anche:
-- Esempi di lettura di file di testo in Java su [GitHub](https://github.com/topics/java-file-reading)
-- Tutorial dettagliato sulla gestione dei file di testo in Java su [GeeksforGeeks](https://www.geeksforgeeks.org/different-ways-reading-text-file-java/)
+In termini di implementazione, quando chiami `Files.readAllBytes()`, il metodo apre un flusso di input, legge tutti i byte dal file e infine chiude il flusso. Tutto questo viene fatto in un unico passaggio, risparmiando la necessità di scrivere codice supplementare per la gestione delle risorse.
+
+## Guarda anche:
+
+- [Java Documentation: Class Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+- [Java I/O Tutorial by Oracle](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
+- [Baeldung Guide: Java Read File](https://www.baeldung.com/java-read-file)

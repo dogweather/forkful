@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "PowerShell: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -10,18 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?: Generowanie losowych liczb to proces, w którym programy są wykorzystywane do tworzenia kolejnych wartości, które są naprawdę losowe. Programiści korzystają z tego narzędzia w celu uzyskania przypadkowych danych lub do testowania swojego kodu.
+## Co i Dlaczego?
+Generowanie liczb losowych to proces tworzenia liczb, które nie mają żadnego przewidywalnego wzorca. Programiści robią to dla wielu celów, takich jak zabezpieczenia, symulacje czy testowanie.
 
-## Jak to zrobić?: W PowerShell można wygenerować losowe liczby w prosty i szybki sposób za pomocą wbudowanej komendy Get-Random. Poniżej znajduje się przykład kodu, który wygeneruje piętnaście losowych liczb z zakresu od 1 do 100 oraz wyświetli je na ekranie. 
+## Jak to zrobić:
+PowerShell posiada wbudowany mechanizm do generowania liczb losowych. Załóżmy, że chcemy wygenerować losową liczbę między 1 a 100.
 
 ```PowerShell
-Get-Random -Count 15 -Minimum 1 -Maximum 100
+Get-Random -Minimum 1 -Maximum 100
 ```
 
-**Output:** 57, 72, 13, 30, 64, 10, 45, 86, 1, 41, 18, 94, 61, 79, 29
+Po wykonaniu tego kodu, na ekranie zobaczysz losową liczbę w tym zakresie.
 
-## Głębsza analiza: Generowanie losowych liczb jest techniką, która jest wykorzystywana od dawna w programowaniu. W przeszłości programiści używali złożonych algorytmów do generowania liczb, ale dzięki postępowi technologii, można teraz korzystać z wbudowanych funkcji, takich jak Get-Random w PowerShell. Alternatywnymi sposobami na generowanie losowych liczb są także wykorzystanie dedykowanych modułów lub wykorzystanie API dostępnych w różnych językach programowania.
+Jeśli chcesz wygenerować listę 10 losowych liczb, możesz to zrobić w następujący sposób:
 
-Co więcej, warto również zwrócić uwagę na to, że losowe liczby generowane przez komputery są w rzeczywistości pseudolosowe, ponieważ wynik jest określany przez algorytm komputera i ziarno (eng. seed) wybrane przez użytkownika. Dzięki temu można uzyskać takie same losowe liczby w przypadku ponownego uruchomienia tego samego kodu z tym samym ziarnem.
+```PowerShell
+1..10 | ForEach-Object { Get-Random -Minimum 1 -Maximum 100 }
+```
+Wynik tego kodu to 10 losowych liczb między 1 a 100.
 
-## Zobacz również: Jeśli chcesz dowiedzieć się więcej o generowaniu losowych liczb w PowerShell, możesz zapoznać się z oficjalną dokumentacją firmy Microsoft [tutaj](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1). Możesz także przetestować różne sposoby wykorzystania komendy Get-Random i zobaczyć, jakie wyniki uzyskasz.
+## Pogłębione informacje:
+Generowanie liczb losowych było częścią programowania od początku jego istnienia. Zainteresowanie tym tematem zaczęło wzrastać w związku z coraz większym zapotrzebowaniem na bezpieczeństwo i prywatność w sieci.
+
+Jedną z alternatyw dla `Get-Random` jest użycie klasy `System.Random` w .NET, co oferuje dodatkowe funkcje, takie jak generowanie liczb losowych z określonego rozkładu.
+
+W przypadku `Get-Random`, PowerShell korzysta z generatora liczb pseudolosowych z klasy `System.Security.Cryptography.RNGCryptoServiceProvider` w .NET, który jest bardziej odpowiedni dla zastosowań wymagających większej losowości i bezpieczeństwa niż podstawowy generator `System.Random`.
+
+## Zobacz też:
+1. [Dokumentacja Get-Random na Microsoft Docs](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1)
+2. [Dokumentacja System.Random na Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/api/system.random?view=net-5.0)
+3. [Dokumentacja System.Security.Cryptography.RNGCryptoServiceProvider na Microsoft Docs](https://docs.microsoft.com/pl-pl/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)

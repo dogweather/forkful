@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "C: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "C"
 category:             "C"
@@ -10,58 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Ciao a tutti! Oggi parleremo di come inviare richieste HTTP utilizzando il linguaggio di programmazione C. Iniziamo subito con la sezione "What & Why?"!
+## Cos'è e perché?
 
-## Che cos'è e perché lo si fa?
-
-Inviare una richiesta HTTP significa mandare una richiesta a un server web per ottenere informazioni o per effettuare un'operazione. I programmatori spesso inviano richieste HTTP quando sviluppano applicazioni web o client che hanno bisogno di interagire con un server.
+Inviare una richiesta HTTP è il mezzo fondamentale per lo scambio di dati e richieste tra client e server sul web. I programmatori lo fanno per richiedere dati da un server, inviare nuovi dati, aggiornare i dati esistenti o eliminarli.
 
 ## Come fare:
 
-Per inviare una richiesta HTTP in C, possiamo utilizzare la libreria "curl", che ci permette di creare e inviare richieste. Ecco un esempio di codice:
-
+Un modo semplice per inviare una richiesta HTTP in C è l'uso della libreria `curl`. Installala prima utilizzando un gestore di pacchetti come `apt` per Ubuntu:
+```C
+sudo apt-get install curl
+```
+Poi includila nel tuo file `c`:
+```C
+#include <curl/curl.h>
+```
+Ecco un esempio che mostra come inviare una richiesta GET:
 ```C
 #include <stdio.h>
 #include <curl/curl.h>
 
-int main()
+int main(void)
 {
-    CURL *curl;
-    CURLcode res;
-    
-    // Inizializza la libreria curl
-    curl = curl_easy_init();
-    
-    // Se curl è stato inizializzato correttamente
-    if(curl) 
-    {
-        // Impostiamo l'URL della richiesta
-        curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
-        // Inviamo la richiesta
-        res = curl_easy_perform(curl);
-        // Controlliamo se ci sono stati errori
-        if(res != CURLE_OK)
-            fprintf(stderr, "Invio della richiesta fallito: %s\n", curl_easy_strerror(res));
-        // Cleanup
-        curl_easy_cleanup(curl);
-    }
+  CURL *curl;
+  CURLcode res;
 
-    return 0;
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+    res = curl_easy_perform(curl);
+
+    if(res != CURLE_OK) {
+      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+    }
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
 ```
 
-L'output di questo codice sarà una pagina HTML contenente il codice sorgente della homepage del sito web "www.example.com". Geniale, vero?
+## Approfondimento
 
-## Approfondimento:
+Inviare richieste HTTP è una pratica comune fin dalla nascita del web. Prima dell'avvento delle librerie come `libcurl`, i programmatori di solito scrivevano la loro implementazione utilizzando i socket TCP, che è una procedura più laboriosa e complessa.
 
-L'utilizzo di librerie come "curl" per inviare richieste HTTP è diventato molto popolare nel mondo della programmazione. In passato, gli sviluppatori utilizzavano principalmente il "Winsock" di Microsoft per inviare richieste HTTP, ma oggi ci sono molte alternative, come "libmicrohttpd" e "libuv".
+Sebbene `curl` sia tra le opzioni più popolari, esistono molte altre librerie che puoi utilizzare per inviare richieste HTTP in C, come `libwww`, `Soup` di GNOME e `C++ REST SDK` di Microsoft.
 
-Per quanto riguarda l'implementazione dei dettagli, le librerie come "curl" si occupano di gran parte del lavoro sporco. Ma per chi vuole andare veramente a fondo, il protocollo HTTP è descritto nel dettaglio nelle specifiche RFC 2616 e RFC 7230.
+Se vai alle implementazioni, i dettagli specifici della richiesta HTTP saranno determinati dalle specifiche HTTP che stai seguendo (ad esempio, HTTP / 1.0, HTTP / 1.1 o HTTP / 2) e dal metodo utilizzato (ad esempio, GET, POST, PUT, DELETE). 
 
-## Vedi anche:
+## Per ulteriori informazioni
 
-Se vuoi saperne di più su come inviare richieste HTTP utilizzando C, ti consiglio di dare un'occhiata a questi link:
-
-- https://curl.haxx.se/libcurl/c/example.html
-- https://developer.mozilla.org/it/docs/Web/HTTP
-- https://legacy.imatix.com/html/c.h
+1. [Documentazione ufficiale di libcurl](https://curl.se/libcurl/c/)
+2. [Riferimenti HTTP da Mozilla](https://developer.mozilla.org/it/docs/Web/HTTP)
+3. [Recap della documentazione HTTP](https://www.w3.org/Protocols/rfc2616/rfc2616.html)
+4. [Overview delle librerie C HTTP](https://www.codediesel.com/c/5-http-library-for-c/)

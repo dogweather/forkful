@@ -1,7 +1,7 @@
 ---
-title:                "开展一个新项目"
-html_title:           "Fish Shell: 开展一个新项目"
-simple_title:         "开展一个新项目"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,51 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是新项目？为什么程序员要启动新项目？
+## 什么和为什么？
+开始一个新项目就是创建一个全新的编程工作据点，程序员这么做是为了实现特定的软件目标。
 
-启动一个新项目是一种常见的程序员做法，这意味着开始编写新的程序或应用程序。程序员通常会启动新项目来解决问题或实现新的想法。
+## 如何做：
+在下面的```Fish Shell```代码块中，我们将看到如何启动一个新项目。
 
-## 如何操作：
+```Fish Shell
+# 创建一个新的文件夹
+mkdir newproject
+cd newproject
 
-```Fish Shell ...```代码块中的编码示例和输出范例。
+# 初始化Git
+git init
 
-### 创建一个新文件夹
-
+# 创建一个简单的README文件
+echo "# New Project" > README.md
 ```
-mkdir new_project
-```
+在上述操作之后，你的新项目目录将包含一个.git目录和README.md文件。
 
-输出：创建了一个名为`new_project`的新文件夹。
+## 深入探索
+开始一个新项目在过去的几十年间一直是编程的核心部分。虽然还有其他方式可以管理你的代码，例如子版本（SVN），和梅丽尓神墓（Mercurial），但Git已经成为最优先的工具，几乎所有现代开发者在起步时都会选择Git。此外，每个项目都应该有描述项目内容的Readme文件。
 
-###  复制一个已存在的项目
+## 另请参阅：
+1. [学习Git](https://git-scm.com/book/zh/v2)
+2. [Fish Shell文档](https://fishshell.com/docs/current/tutorial.html)
 
-```
-cp -a old_project/. new_project/
-```
-
-输出：复制了一个已存在项目`old_project`到新的文件夹`new_project`中。
-
-### 在新项目中创建一个Python虚拟环境
-
-```
-cd new_project
-python3 -m venv venv
-```
-
-输出：在`new_project`文件夹中创建了一个名为`venv`的Python虚拟环境。
-
-### 激活虚拟环境
-
-```
-source venv/bin/activate.fish
-```
-
-输出：激活了名为`venv`的Python虚拟环境。
-
-## 深入了解
-
-启动新项目是一个关键步骤，它通常意味着开始一个全新的开发过程。历史上，在编程领域，启动新项目的方式有很多种，如使用不同的集成开发环境（IDE）或工作流程。除了Fish Shell，程序员也可在其他Shell环境中启动新项目，如Bash、Zsh等。启动新项目的早期实现方式很可能是通过手动创建文件夹、复制文件等来完成的，但现在有了更多功能强大且简化的工具和命令来启动新项目。
-
-## 参考资料
-
-- Fish Shell官方文档：https://fishshell.com/docs/current/index.html
+备注：为了减少不必要的错误，建议总是利用你的编辑器的文件保存对话框来创建新文件或目录。

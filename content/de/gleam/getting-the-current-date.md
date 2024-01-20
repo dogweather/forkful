@@ -1,7 +1,7 @@
 ---
-title:                "Das aktuelle Datum abrufen."
-html_title:           "Gleam: Das aktuelle Datum abrufen."
-simple_title:         "Das aktuelle Datum abrufen."
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -12,40 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Abrufen des aktuellen Datums ist ein grundlegender und wichtiger Teil der Programmierung. Es ermöglicht es uns, Datum und Uhrzeit in unseren Anwendungen auf einfache und effiziente Weise zu verarbeiten. Programmierer verwenden diese Funktion oft für die Reihenfolge von Ereignissen, das Verwalten von Planungen oder das Berechnen von Ausführungszeiten.
+Das Abrufen des aktuellen Datums ist eine Standardfunktion in der Programmierung. Es wird oft von Programmierern verwendet, um Zeitstempel für Benutzeraktivitäten zu erstellen oder Termine und Fristen zu verwalten.
 
 ## So geht's:
 
-### Gleam-Syntax:
+`scheduler` von Gleam enthält die Möglichkeit, Datum und Uhrzeit abzurufen. Hier ist ein Beispiel, wie es aussieht:
 
-```Gleam
-import DateTime
+```gleam
+import gleam/otp/scheduler.{now}
 
-let current_date = DateTime.now()
+pub fn current_date() {
+  let timestamp = now(Native)
+  let {_year, _month, _day} = timestamp.date()
 
-IO.print("Das aktuelle Datum ist: {}", [DateTime.format(current_date, "%Y-%m-%d")])
+  println("Jahr: {year}, Monat: {month}, Tag: {day}")
+}
 ```
 
-### Ausgabe:
+Dieser Code gibt das aktuelle Jahr, Monat und Tag zurück. 
 
-Das aktuelle Datum ist: 2021-09-09
+## Tief tauchen:
 
-## Tief einsteigen:
+Früher musste man die Uhrzeit und das Datum manuell vom Betriebssystem abrufen und umwandeln, was unzuverlässig und ineffizient war. Gleam hat diesen Prozess durch die Einbeziehung von eingebauten Funktionen vereinfacht, die Zeit und Datum in einer viel mehr handhabbaren Weise abrufen.
 
-### Historischer Kontext:
+Ein alternativer Ansatz zum Abrufen des aktuellen Datums besteht darin, auf interne Funktionen von Gleam zu verzichten und stattdessen eine Drittanbieter-Bibliothek zu verwenden. Obwohl dies zusätzliche Funktionen bereitstellen könnte, erhöht es auch die Komplexität und möglicherweise die Unzuverlässigkeit des Programms.
 
-Das Abrufen des aktuellen Datums ist ein wesentlicher Bestandteil der Programmierung seit den Anfängen der Computer. In frühen Programmiersprachen wie BASIC und FORTRAN war es jedoch aufgrund fehlender Bibliotheken und Funktionen deutlich komplexer.
-
-### Alternativen:
-
-Es gibt verschiedene Möglichkeiten, das aktuelle Datum in einer Programmiersprache zu erhalten. Einige Programmiersprachen haben eine integrierte Funktion, andere benötigen spezielle Bibliotheken oder Module, wie es bei Gleam der Fall ist.
-
-### Implementation:
-
-In Gleam wird das aktuelle Datum mithilfe der DateTime-Bibliothek abgerufen. Diese Bibliothek bietet verschiedene Funktionen für die Verarbeitung von Datum und Uhrzeit. Die `now()` Funktion gibt das aktuelle Datum im Format `datetime` zurück, welches dann mithilfe der `format()` Funktion in das gewünschte Format umgewandelt werden kann.
+In Bezug auf die Implementierungsdetails extrahiert die `now` Funktion von Gleam das aktuelle Datum und die aktuelle Uhrzeit aus dem internen Managementsystem. Diese Information wird dann in ein leicht zugängliches Format umgewandelt, das für weitere Manipulationen oder Ausgaben genutzt werden kann.
 
 ## Siehe auch:
 
-- [Gleam DateTime Dokumentation](https://gleam.run/libraries/date-time/)
-- [Erläuterungen zum aktuellen Datum in anderen Programmiersprachen](https://www.guru99.com/dates-date-times-in-programming.html)
-- [Verwendung von Datum und Uhrzeit in Gleam-Anwendungen](https://medium.com/gleam-lang-blog/working-with-dates-and-times-in-gleam-2bb543b14c1f)
+Für weitere Informationen über Gleam und seine Funktionen, besuchen Sie:
+
+1. [Die offizielle Gleam Dokumentation](https://gleam.run/docs/)
+2. [Gleam Repositorium auf Github](https://github.com/gleam-lang/gleam)

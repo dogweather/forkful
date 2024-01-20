@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando la longitud de una cadena"
-html_title:           "Javascript: Encontrando la longitud de una cadena"
+html_title:           "Arduino: Encontrando la longitud de una cadena"
 simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué es y por qué!
+## ¿Qué y por qué?
 
-En la programación, encontrar la longitud de una cadena de texto es una tarea común. Esto implica determinar el número de caracteres que componen una cadena de texto. Los programadores hacen esto para poder manipular cadenas de texto de manera efectiva, ya sea para imprimirlas, compararlas con otras cadenas o realizar cualquier otra operación.
+Encontrar la longitud de un string significa calcular el número de caracteres en esa cadena de texto. Los programadores a menudo necesitan saber cuántos caracteres hay para funciones como la validación de entrada, la manipulación de texto y más.
 
-## ¿Cómo hacerlo?
+## ¿Cómo se hace?
 
-Para encontrar la longitud de una cadena de texto en Javascript, puedes usar el método `length`. Este método es parte del objeto String y devuelve la cantidad de caracteres en una cadena de texto. Veamos un ejemplo de cómo usarlo:
+En JavaScript, puedes encontrar la longitud de un string usando el método `.length`. Aquí te dejo un ejemplo.
 
-```
-// Definimos una cadena de texto
-let cadena = "¡Hola Mundo!";
-
-// Usamos el método length para encontrar su longitud
-let longitud = cadena.length;
-
-// Imprimimos el resultado
-console.log(longitud); // Output: 11
+``` Javascript
+let frase = '¡Hola, Mundo!';
+console.log(frase.length); // devuelve: 13
 ```
 
-Como puedes ver, el método `length` devuelve el número de caracteres en la cadena, incluyendo espacios y signos de puntuación.
+En este código, `frase.length` devuelve `13` porque '¡Hola, Mundo!' tiene 13 caracteres, incluyendo comas y espacios.
 
-## En profundidad
+## Un análisis más profundo
 
-El método `length` ha estado presente en Javascript desde su versión inicial en 1995. Sin embargo, hay otras formas de encontrar la longitud de una cadena de texto, como usar bucles y contar cada caracter. Incluso puedes usar la propiedad `size` para obtener la longitud de una cadena en otros lenguajes de programación como Python.
+Desde los primeros días del lenguaje JavaScript, siempre ha habido una forma de obtener la longitud de un string. Sólo necesitas llamar a la propiedad `.length` de tu string.
 
-En términos de implementación, el método `length` en Javascript hace un recorrido rápido por cada caracter en la cadena y devuelve la cantidad total. Esto lo hace muy eficiente y adecuado para su uso en aplicaciones con grandes cantidades de texto.
+De manera alternativa, podrías convertir la cadena de texto a un array usando el método `.split('')` y luego obtener su longitud, pero esto es innecesariamente complicado y lento.
+
+Un detalle de implementación interesante es que la propiedad `.length` no recuenta los caracteres cada vez que se la llama. En vez de eso, JavaScript almacena la longitud de la cadena de texto cuando se crea, y simplemente devuelve este valor cuando accedes a `.length`. Esto significa que obtener la longitud de un string es rápido, independientemente de su tamaño.
 
 ## Ver también
 
-- [Método length en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [Ejemplos de uso del método length](https://www.w3schools.com/jsref/jsref_length_string.asp) en W3Schools.
+MDN (Mozzila Developer Network) proporciona una excelente referencia sobre el método `.length` en JavaScript:
+
+- [MDN - String.length](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/length)

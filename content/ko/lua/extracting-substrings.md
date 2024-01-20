@@ -1,6 +1,6 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Lua: 부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
 simple_title:         "부분 문자열 추출"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,31 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
+문자열 추출은 문자열에서 특정 부분을 가져오는 것입니다. 이는 데이터를 처리하고 분석할 때 중요한 작업 중 하나로, 효율적인 프로그래밍을 가능케 합니다.
 
-서브스트링 추출이란 무엇이고 프로그래머들이 왜 이것을 하는지 간단히 설명해보겠습니다. 서브스트링 추출은 문자열에서 원하는 부분만을 따로 추출하는 것을 의미합니다. 이를테면, "Hello World"라는 문자열에서 "World"라는 부분만을 추출하는 것입니다. 프로그래머들은 서브스트링 추출을 사용하여 문자열을 다루기 더 편리하고 유연하게 만들고, 원하는 정보만을 추출하여 처리하는 데 시간과 노력을 절약할 수 있습니다.
-
-## 어떻게:
+## 사용법:
+Lua에서 문자열 추출은 `string.sub()` 함수를 사용합니다. 여기 예시 코드와 결과입니다:
 
 ```Lua
-local str = "Hello World"
--- string.sub() 함수 사용하여 서브스트링 추출하기
-print(string.sub(str, 7, 11)) -- 결과: "World"
--- 인덱스를 사용하여 직접 추출하기
-print(str:sub(7, 11)) -- 결과: "World"
+str = "안녕하세요, Lua 프로그래밍"
+print(string.sub(str, 1, 5))
 ```
-출력:
+결과:
+```Lua
+안녕하세요
 ```
-World
-World
-```
+위의 예제에서는 문자열 `str`에서 첫 번째 문자로부터 다섯 번째 문자까지의 부분 문자열을 추출하였습니다.
 
-## 심층 탐구:
+## 깊게 알아보기
+문자열 추출은 프로그래밍의 역사와 함께한 기능 중 하나로, 메모리 관리와 데이터 처리에 있어서 중요한 역할을 합니다. Lua에서는 `string.sub()` 외에도 `string.find()` 등 특정 문자열을 찾는 함수도 제공하고 있습니다.
 
-1. 역사적 배경: 서브스트링 추출은 오래 전부터 이용되어온 기술이며, 문자열을 다루는 데 있어서 필수적인 기능 중 하나입니다.
-2. 대안: 서브스트링 추출을 위해 문자열의 일부를 복제하는 방식 대신, 문자열의 일부를 가리키는 포인터 개념을 사용하는 언어들도 있습니다.
-3. 구현 세부 사항: Lua에서는 문자열 내부에 있는 개별 문자를 인덱스로 접근할 수 있도록 하는 문자열 라이브러리를 제공합니다. 이를 바탕으로 내장 함수인 ```string.sub()``` 함수를 사용하여 서브스트링을 추출할 수 있습니다.
+구현 면에서 보면, `string.sub()` 함수는 Lua에서 제공하는 문자열 라이브러리의 일부로 작동합니다. 이 함수는 시작 인덱스와 종료 인덱스를 받아 대상 문자열에서 선택된 범위의 부분 문자열을 반환합니다.
 
-## 관련 자료:
+## 참고자료
+다음은 문자열 처리와 관련된 일부 외부 자료의 링크입니다:
 
-- [Lua 공식 문서 - string 라이브러리](https://www.lua.org/pil/20.html)
-- [직접 해보는 Lua 프로그래밍 - 문자열 다루기](https://edykim.com/ko/post/string-processing-in-lua-part1/)
+[1] 공식 Lua 문자열 라이브러리 문서: (https://www.lua.org/manual/5.3/manual.html#6.4)
+
+[2] Lua 프로그래밍 가이드의 문자열 처리 섹션: (https://www.lua.org/pil/20.html)
+
+[3] Lua 문자열 함수에 대한 튜토리얼 (englisch): (https://www.tutorialspoint.com/lua/lua_strings.htm)

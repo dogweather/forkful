@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'html"
-html_title:           "Java: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,32 +10,70 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faisons-nous?
+## Qu'est-ce & Pourquoi?
 
-On peut définir le parsing HTML comme le fait de « lire » un code HTML et d'en extraire des données ou de les manipuler. Les développeurs le font souvent pour exploiter des informations à partir de sites web, automatiser des tâches ou même créer des applications web.
+L'analyse de HTML est le processus de conversion d'un document HTML en un arbre d'éléments structuré. Les programmeurs le font pour manipuler, extraire ou comprendre les données contenues dans le HTML.
 
-## Comment faire :
+## Comment faire:
 
-Voici un exemple de code Java qui utilise la bibliothèque Jsoup pour parser une page web et en extraire tous les liens :
+Examinons un exemple simple où nous utilisons la bibliothèque Jsoup pour analyser un document HTML:
 
 ```Java
-Document doc = Jsoup.connect("https://www.example.com").get();
-Elements links = doc.select("a");
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
 
-for (Element link : links) {
-    String linkHref = link.attr("href");
-    // faire quelque chose avec le lien extrait
+public class Main {
+  public static void main(String[] args) {
+    String html = "<html><body><p>Bonjour tout le monde</p></body></html>";
+    Document doc = Jsoup.parse(html);
+    System.out.println(doc.text());
+  }
 }
 ```
 
-Lorsque vous exécutez ce code, vous obtiendrez une liste de tous les liens présents sur la page web.
+Si vous exécutez le code ci-dessus, la sortie sera:
 
-## Plongée en profondeur :
+```Java
+Bonjour tout le monde
+```
 
-Le parsing HTML est né de la nécessité de traiter les données structurées présentes sur les pages web. Avant sa création, les développeurs devaient utiliser des méthodes plus laborieuses pour extraire des données, telles que la recherche manuelle et la copie-coller. Aujourd'hui, il existe des alternatives telles que les API et les bibliothèques de scraping, mais le parsing HTML reste une méthode simple et efficace pour traiter les données web.
+Maintenant, si nous voulons extraire tous les paragraphe d'un document HTML:
 
-## Voir aussi :
+```Java
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
 
-- [Documentation de Jsoup](https://jsoup.org/)
-- [Différences entre parsing HTML et scraping](https://medium.com/octopus-investments-blog/scraping-vs-parsing-html-data-90de463c3a80)
-- [Exemples d'utilisation du parsing HTML en Java](https://www.geeksforgeeks.org/extract-html-links-java/)
+public class Main {
+  public static void main(String[] args) {
+    String html = "<html><body><p>Bonjour tout le monde</p><p>Soyez les bienvenus</p></body></html>";
+    Document doc = Jsoup.parse(html);
+    Elements paragraphs = doc.select("p");
+    for (Element paragraph : paragraphs) {
+      System.out.println(paragraph.text());
+    }
+  }
+}
+```
+
+La sortie sera :
+
+```Java
+Bonjour tout le monde
+Soyez les bienvenus
+```
+
+## Plongée profonde
+
+L'analyse de HTML est nécessaire depuis l'adoption massive du Web dans les années 90. Il y avait et il y a toujours une nécessité d'interagir avec le HTML d'une manière plus structurée. 
+Une alternative à Jsoup pourrait être le `DOM Parsing API` intégré dans `Java`, mais il est généralement considéré comme plus verbeux et plus difficile à utiliser.
+
+Au niveau d'implémentation, Jsoup utilise une analyse syntaxique ascendante, dans laquelle il lit le HTML de gauche à droite et crée un arbre représentatif, permettant à l'utilisateur d'interagir avec le HTML de manière structurée.
+
+## Pour aller plus loin
+
+- [Documentation officielle de Jsoup](https://jsoup.org/)
+- [API Java DOM Parsing](https://docs.oracle.com/javase/tutorial/jaxp/dom/index.html)
+
+N'hésitez pas à consulter ces ressources pour une compréhension plus approfondie de l'analyse de HTML en Java.

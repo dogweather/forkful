@@ -1,7 +1,7 @@
 ---
-title:                "Mayúsculas en una cadena"
-html_title:           "Rust: Mayúsculas en una cadena"
-simple_title:         "Mayúsculas en una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Rust: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Por qué y para qué hacer mayúsculas en una cadena
+## ¿Qué & Por qué?
 
-Cuando se habla de capitalizar una cadena en programación, nos referimos a cambiar todas las letras a mayúsculas. Esto puede ser útil en situaciones en las que se necesita comparar cadenas sin importar si tienen mayúsculas o minúsculas, o simplemente para mejorar la legibilidad de una cadena.
-
-Los programadores a menudo capitalizan cadenas para estandarizar el formato o para que una búsqueda o comparación sea más fácil. También puede ser necesario en algunas situaciones de procesamiento de texto.
+Capitalizar una cadena implica convertir la primera letra de cada palabra en una letra mayúscula. Los programadores lo hacen para mejorar la legibilidad y hacer que las cadenas estén en un formato estándar.
 
 ## Cómo hacerlo:
 
-En Rust, para capitalizar una cadena podemos utilizar el método ```to_uppercase()``` que convierte la cadena a mayúsculas. Por ejemplo:
-
 ```Rust
-let ejemplo = "texto a capitalizar";
-print!("{}", ejemplo.to_uppercase());
+fn main() {
+    let mi_cadena = "hola mundo";
+    let resultado = mi_cadena.to_uppercase();
+    println!("{}", resultado);
+}
 ```
 
-Este código producirá la salida "TEXTO A CAPITALIZAR".
+Este programa imprimirá "HOLA MUNDO".
 
-## Una mirada más profunda:
+## Inmersión profunda
 
-En el pasado, capitalizar cadenas era especialmente importante en lenguajes que no distinguían entre mayúsculas y minúsculas, como COBOL. En la actualidad, muchos lenguajes de programación cuentan con métodos integrados que permiten capitalizar cadenas de manera sencilla.
+Históricamente, la capitalización se ha utilizado en los lenguajes de programación para mejorar la legibilidad y estandarizar la salida de las cadenas.
 
-Otra alternativa a la hora de capitalizar cadenas es utilizar expresiones regulares, que permiten buscar y reemplazar patrones en una cadena. Sin embargo, esto puede ser más complejo y requerir un mayor conocimiento técnico.
+Otras formas de capitalizar en Rust incluyen la función to_lowercase para convertir todas las letras a minúsculas, o usar la función char::to_uppercase en cada caracter de la cadena.
 
-En Rust, la implementación del método ```to_uppercase()``` se basa en Unicode, lo que significa que funcionará con caracteres de cualquier idioma.
+Para capitalizar una cadena en Rust, se crea una nueva cadena con las letras cambiadas a mayúsculas. Rust utiliza el concepto de propiedad de datos, por lo que la función to_uppercase devuelve una nueva cadena. Esto significa que no puede cambiar la cadena original a menos que la sobreescriba con el valor devuelto por to_uppercase.
 
-## Véase también:
+## Ver también:
 
-- La documentación oficial de Rust sobre el método ```to_uppercase()``` (https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase)
-- Un tutorial sobre cómo utilizar expresiones regulares en Rust (https://blog.burntsushi.net/transducers/)
+Puede encontrar más información sobre las cadenas en Rust y sus métodos asociados en los siguientes recursos:
+
+- Documentación oficial de Rust sobre cadenas: https://doc.rust-lang.org/book/ch08-02-strings.html
+- Artículo acerca de cómo trabajar con strings en Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
+- Post de blog “Understanding string &str in Rust”: https://hermanradtke.com/2015/05/03/string-vs-str-in-rust-functions.html

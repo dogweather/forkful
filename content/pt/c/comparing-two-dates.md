@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "C: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "C"
 category:             "C"
@@ -10,58 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Comparar duas datas é uma tarefa comum no mundo da programação. Isso ocorre porque, muitas vezes, precisamos verificar se uma data é anterior, posterior ou igual a outra, para tomar decisões lógicas no nosso código.
+## O que e por que?
+
+Comparar duas datas é avaliar se uma data é anterior, posterior ou igual a outra. Programadores fazem isso para realizar funções de cronometragem, controle de prazos ou filtragem de informações baseadas em datas.
 
 ## Como fazer:
-A linguagem C possui diversas funções para trabalhar com datas. Vejamos alguns exemplos de como comparar duas datas utilizando diferentes funções:
-```
-#include <stdio.h>
+
+Aqui está um exemplo usando a função `difftime` da biblioteca de tempo:
+
+```c
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    // Exemplo 1: Comparando dois objetos do tipo struct tm
-    
-    struct tm dt1 = { .tm_year=2021, .tm_mon=7, .tm_mday=29 };
-    struct tm dt2 = { .tm_year=2021, .tm_mon=7, .tm_mday=30 };
+    struct tm data1 = {0, 0, 0, 10, 7, 21, 0, 0, 0}; 
+    struct tm data2 = {0, 0, 0, 15, 7, 21, 0, 0, 0}; 
+    time_t tempo1 = mktime(&data1);
+    time_t tempo2 = mktime(&data2);
 
-    if (difftime(mktime(&dt1), mktime(&dt2)) > 0) {
-        printf("A data 1 é posterior a data 2!\\n");
-    } else if (difftime(mktime(&dt1), mktime(&dt2)) < 0) {
-        printf("A data 1 é anterior a data 2!\\n");
-    } else {
-        printf("As datas são iguais!\\n");
-    }
+    double diferenca = difftime(tempo2, tempo1);
 
-    // Exemplo 2: Comparando duas strings no formato "AAAA-MM-DD"
-
-    char dt1[] = "2021-07-29";
-    char dt2[] = "2021-07-30";
-
-    if (strcmp(dt1, dt2) > 0) {
-        printf("A data 1 é posterior a data 2!\\n");
-    } else if (strcmp(dt1, dt2) < 0) {
-        printf("A data 1 é anterior a data 2!\\n");
-    } else {
-        printf("As datas são iguais!\\n");
-    }
+    printf("Diferença em segundos: %.0lf\n", diferenca);
 
     return 0;
 }
 ```
-Saída:
+
+Aqui `data1` é 10 de agosto de 2021 e `data2` é 15 de agosto de 2021. O output será:
+
 ```
-A data 1 é anterior a data 2!
-A data 1 é anterior a data 2!
+Diferença em segundos: 432000
 ```
-Note que, no primeiro exemplo, utilizamos a função `difftime` para calcular a diferença entre duas datas em segundos e comparar os resultados. Já no segundo exemplo, utilizamos a função `strcmp` para comparar duas strings no formato de data.
 
-## Mergulho Profundo:
-Comparar datas nem sempre foi tão fácil quanto é hoje. Nas versões anteriores da linguagem C, era necessário converter as datas em strings e realizar uma série de verificações manuais para determinar a relação entre elas. Além disso, existem outros métodos alternativos para comparar datas, como o uso de bibliotecas externas.
+## Mais Detalhes:
 
-Em relação à implementação interna da função `difftime` e `strcmp`, elas utilizam algoritmos de comparação de strings e cálculo de diferença de datas específicos da linguagem C, que são otimizados para um desempenho eficiente.
+A função `difftime` foi introduzida no C89, e é muito usada até hoje para comparar duas datas. Uma alternativa é usar a função `memcmp`, mas tem implicações e não é recomendada.
 
-## Veja também:
-- [Documentação da função difftime na linguagem C](https://www.cplusplus.com/reference/ctime/difftime/)
-- [Documentação da função strcmp na linguagem C](https://www.cplusplus.com/reference/cstring/strcmp/)
-- [Biblioteca date.h para trabalhar com datas em C](https://github.com/HowardHinnant/date)
+Detalhes de implementação: A `difftime` retorna a diferença em segundos. Portanto, para converter em dias, precisamos dividir por (60*60*24). Note que a estrutura `tm` tem o mês começando em 0 (Janeiro) e o ano desde 1900.
+
+## Ver Também:
+
+1. Documentação do GNU para a função difftime: [https://www.gnu.org/software/libc/manual/html_node/Elapsed-Time.html](https://www.gnu.org/software/libc/manual/html_node/Elapsed-Time.html)
+2. Tutorial prático sobre a biblioteca de timestamps em C: [https://beginnersbook.com/2017/08/c-timestamp/](https://beginnersbook.com/2017/08/c-timestamp/)

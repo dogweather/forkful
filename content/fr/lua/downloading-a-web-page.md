@@ -1,7 +1,7 @@
 ---
-title:                "Le téléchargement d'une page web"
-html_title:           "Lua: Le téléchargement d'une page web"
-simple_title:         "Le téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Le téléchargement d'une page web est le fait de récupérer le contenu d'une page web à partir d'Internet. Les programmeurs le font souvent pour extraire des données ou pour automatiser des tâches comme la mise à jour de sites web. 
+## Qu'est-ceet Pourquoi?
 
-## Comment faire:
-Voici un exemple de code en Lua pour télécharger une page web et afficher son contenu:
+Télécharger une page web est l'action de copier les données d'une page web d'un serveur à votre machine locale. Les programmeurs le font pour analyser ou manipuler les données, construire des applications intéressantes ou résoudre des problèmes spécifiques.
 
-```lua
+## Comment faire :
+
+Voici un simple script Lua utilisant par exemple le module `luasocket.http`.
+
+```Lua
 local http = require("socket.http")
-local url = "https://www.example.com"
-local body, code, _, _ = http.request(url)
-if code == 200 then
-  print(body)
+
+local body, code, headers, status = http.request("http://example.com")
+
+if code == 200 then 
+    print(body)
+else
+    print(status)
 end
 ```
 
-Output:
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Example Domain</title>
- ...
- </body>
-</html>
-```
+Si tout se passe bien, cela imprimera le contenu de `example.com`. Si quelque chose va mal, il imprimera le statut d'erreur.
 
-## Plongée en profondeur:
-Le téléchargement de pages web est un concept très ancien dans le monde de la programmation Internet, remontant aux tout premiers jours du World Wide Web. Bien que Lua n'offre pas de fonction native pour le téléchargement de pages web, il est facile de le faire en utilisant des bibliothèques tierces telles que `socket.http` ou `http.client`. Il existe également des alternatives telles que l'utilisation de l'API de requêtes HTTP en utilisant un serveur tel que Nginx ou Apache. 
+## Plongeons plus profondément :
 
-## Voir aussi:
-- [Socket.http Library](https://w3.impa.br/~diego/software/luasocket/http.html)
-- [HTTP Client Library](https://github.com/PedroMiguelSS/Lua_HTTPclient)
+Historiquement, les données sur le Web étaient récupérées à l'aide de diverses bibliothèques et outils, mais avec l'évolution de la technologie Internet, des outils plus simples et plus efficaces ont été développés pour effectuer la tâche. LuaSocket est l'un de ces outils, une bibliothèque de programmation réseau pour Lua, et c'est pourquoi il est souvent utilisé pour ce genre de tâches.
+
+Les alternatives à LuaSocket pour télécharger une page web pourraient être des bibliothèques telles que `luajit-request` ou `lua-http`, qui fournissent également un moyen pratique de faire des requêtes HTTP.
+
+Le processus pour télécharger une page web en Lua est assez simple. Lorsque vous exécutez votre script, Lua envoie une requête GET HTTP au serveur web. Le serveur web répond ensuite avec le code HTML de la page, que vous pouvez ensuite traiter ou analyser en Lua.
+
+## À voir également :
+
+- LuaSocket : http://w3.impa.br/~diego/software/luasocket/http.html
+- Luajit-request : https://github.com/LPGhatguy/luajit-request
+- Lua-http : https://github.com/daurnimator/lua-http

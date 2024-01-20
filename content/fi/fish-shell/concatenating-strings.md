@@ -1,7 +1,7 @@
 ---
-title:                "Jonojen yhdistäminen"
-html_title:           "Fish Shell: Jonojen yhdistäminen"
-simple_title:         "Jonojen yhdistäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mitä & Miksi?
 
-"Konkatenaatio" on ohjelmoinnin termi, joka tarkoittaa merkkijonojen yhdistämistä toisiinsa. Tämä voi olla hyödyllistä esimerkiksi silloin, kun halutaan luoda uusi merkkijono, joka sisältää useita erillisiä osia. Ohjelmoijat käyttävät konkatenaatiota, jotta voivat luoda dynaamisesti muuttuvia merkkijonoja, jotka vastaavat tiettyjä tarpeita, kuten tulostusta tai tiedostojen luontia.
+Yhdistämme merkkijonoja, eli teemme merkkijonojen ketjutusta, kun liitämme useita merkkijonoja yhdeksi. Tämä on kätevä tapa luoda dynaamista sisältöä koodauksessa.
 
-# Miten:
+## Näin teet:
 
+Fish Shellissa merkkijonon ketjutus on yksinkertaista. Voit yksinkertaisesti luetella merkkijonot peräkkäin ja Fish yhdistää ne. Katsotaan esimerkkiä:
 
-Fish Shell tarjoaa kätevän ja helppokäyttöisen tavan yhdistää merkkijonoja. Voit käyttää "string join" -komennolla yhdistää merkkijonoja erilaisilla erottimilla tai jättää eroittimen kokonaan pois. Alla on esimerkki koodista ja tulosteesta:
-
+```fish
+set tervehdys "Hei"
+set nimi "Matti"
+echo $tervehdys $nimi
+# Tulostuu: Hei Matti
 ```
-Fish Shell string join example:
-$ set fruits peach mango banana
-$ echo (string join , $fruits)
-peach, mango, banana
-```
+Fish Shell ei välitä erityisesti merkkijonon yhdistämisestä (`concatenation`). Se vain liittää merkkijonot yhteen.
 
-# Syvemmälle:
+## Syvällisemmin:
 
-Konkatenaatio on ollut käytössä jo pitkään ohjelmoinnissa, ja se on edelleen suosittu ratkaisu tähän päivään asti. Sen lisäksi, että Fish Shell tarjoaa helpon tavan yhdistää merkkijonoja, on olemassa myös muita vaihtoehtoja kuten "string concatenation" -funktiot muissa kielissä kuten Python ja Java. Konkatenaation toteuttaminen Fish Shellissä perustuu useisiin algoritmeihin, jotka optimoivat muistinvarauksia ja parantavat suorituskykyä.
+Merkkijonojen yhdistäminen on ollut ohjelmointikielissä jo pitkään, ja Fish Shell on tehnyt siitä erittäin helppoa. 
 
-# Katso myös:
+Vaihtoehtoina voisi käyttää monia eri ohjelmointikieliä, mutta Fish Shelliä pidetään yksinkertaisena ja selkeänä ratkaisuna.
 
-Voit lukea lisää Fish Shellin string join -komennosta dokumentaatiosta osoitteessa https://fishshell.com/docs/current/cmds/string.html#join ja tutustua muihin merkkijonojen käsittelyyn liittyviin komentoihin kuten string split ja string length.
+Merkkijonojen yhdistämisen toteutus Fish Shellissä on yksinkertainen - se vain liittää merkkijonot yhteen, ilman mitään erityistä logiikkaa.
+
+## Katso myös:
+
+Fish Shell Documentation: (https://fishshell.com/docs/current/index.html) Tämä on erinomainen resurssi Fish Shellin oppimiseen, mukaan lukien merkkijonon ketjutus.
+
+Learn The Hard Way: Fish Tutorial (https://learnxinyminutes.com/docs/fish/): Tämä Fish Shell-opas sisältää monia esimerkkejä ja harjoituksia, jotka auttavat oppimaan eri näkökohtia Fish Shellistä, mukaan lukien merkkijonojen yhdistämisen.

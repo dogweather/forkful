@@ -1,6 +1,6 @@
 ---
 title:                "Tworzenie tymczasowego pliku"
-html_title:           "PHP: Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
 simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego?
+## Co i dlaczego?
 
-Tworzenie pliku tymczasowego to proces, w którym programista tworzy tymczasowy plik na potrzeby wykonywania określonego zadania. Jest to często wykorzystywane w aplikacjach webowych, aby tymczasowo przechowywać dane lub wykonane operacje.
+Tworzenie tymczasowego pliku to proces, który produkuje plik o unikalnej nazwie, stale utworzony, ale przeznaczony do usunięcia po zakończeniu sesji. Programiści robią to usuwając ryzyko konfliktu nazw plików i zapewniając bezpieczeństwo danych, ograniczając dostęp do plików tymczasowych.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-```PHP
-$tempFile = tempnam(sys_get_temp_dir(), 'prefix_');
-```
-W powyższym przykładzie tworzymy tymczasowy plik przy użyciu funkcji tempnam(). Pierwszy argument to ścieżka do katalogu tymczasowego na serwerze, a drugi to prefiks, który będzie wykorzystany do nazwy pliku.
+Tworzenie plików tymczasowych w PHP jest proste. Zaczynamy od funkcji `tempnam()`, która tworzy unikalną nazwę pliku.
 
 ```PHP
-$fileContent = "This is a sample text.";
-$tempFile = tempnam(sys_get_temp_dir(), 'prefix_');
-file_put_contents($tempFile, $fileContent);
-echo file_get_contents($tempFile);
+<?php
+$tmpfname = tempnam("/tmp", "FOO");
+$handle = fopen($tmpfname, "w");
+fwrite($handle, "test writing to a temporary file");
+fclose($handle);
+?>
 ```
-W tym przykładzie do pliku tymczasowego zapisujemy zawartość tekstu, a następnie ją odczytujemy i wyświetlamy.
+Aby przeczytać plik, użyjemy `fopen()` i `fread()`:
 
-## Wnikliwe spojrzenie
+```PHP
+<?php
+$handle = fopen($tmpfname, "r");
+$contents = fread($handle, filesize($tmpfname));
+fclose($handle);
+echo $contents; // Outputs: test writing to a temporary file
+```
 
-Tworzenie pliku tymczasowego jest powszechną praktyką w programowaniu, która ma swoje korzenie jeszcze z czasów, gdy serwery były mniej wydajne. Wtedy tworzenie pliku tymczasowego było wykorzystywane w celu zapisania danych, które nie były jeszcze gotowe do finalnego zapisania na serwerze.
+## Pod wodą
 
-Alternatywą dla tworzenia plików tymczasowych może być wykorzystanie baz danych lub pamięci podręcznej. Jednak w niektórych przypadkach, tworzenie tymczasowych plików jest szybsze i wygodniejsze.
+Tworzenie tymczasowych plików to stary trik w programowaniu, mocno osadzony w PHP od jego pierwszych wersji. Do alternatywnych metod należy korzystanie z pamięci masowej `tmpfile()`, która jest mniej skomplikowana, ale oferuje mniej kontroli. Od strony implementacji, PHP generuje nazwę pliku tymczasowego poprzez sklejenie określonego prefiksu z unikalnym identyfikatorem.
 
-Tworzenie pliku tymczasowego w PHP jest możliwe dzięki funkcji tempnam(). Możliwe jest również wykorzystanie funkcji tmpfile(), która zwraca uchwyt do otwartego pliku tymczasowego. Istotną kwestią jest również usunięcie pliku tymczasowego po wykonaniu wszystkich operacji na nim, aby nie pozostawić niepotrzebnych śmieci w systemie.
+## Zobacz również
 
-## Zobacz także
-
-- [PHP - Dokumentacja o funkcji tempnam()](https://www.php.net/manual/en/function.tempnam.php)
-- [PHP - Dokumentacja o funkcji tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
-- [Tworzenie plików tymczasowych w PHP - poradnik](https://www.sitepoint.com/temporary-files-in-php/)
+* [Dokumentacja PHP dla tempnam()](https://www.php.net/manual/en/function.tempnam.php)
+* [Dokumentacja PHP dla tmpfile()](https://www.php.net/manual/en/function.tmpfile.php)
+* [Jak bezpiecznie korzystać z plików tymczasowych w PHP – na StackOverflow](https://stackoverflow.com/questions/377279/are-php-temporary-file-name-functions-secure)

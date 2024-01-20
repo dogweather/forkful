@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 프린팅"
-html_title:           "C: 디버그 출력 프린팅"
-simple_title:         "디버그 출력 프린팅"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이고 왜 사용하나요?
 
-디버그 출력을 출력하는 것은 프로그래머들이 사용하는 디버깅 기술입니다. 이는 코드 실행 중에 중간 결과를 확인하고 디버그 목적으로 사용됩니다.
+디버그 출력은 코드가 어떻게 실행되는지 이해하는 데 도움이 되는 문자열 또는 데이터의 출력을 의미합니다. 프로그래머들은 코드에서 문제를 발견하거나 특정 로직의 동작 방식을 확인하기 위해 이를 사용합니다.
 
-## 방법:
+## 어떻게 하는가:
 
-디버그 출력을 사용하기 위해서는 ```printf()``` 함수를 사용하여 출력할 내용을 지정해주어야 합니다. 예시 코드는 다음과 같습니다.
+디버그 출력을 사용하는 가장 기본적인 방법은 `printf` 함수를 사용하는 것입니다. 예를 확인해봅시다:
 
 ```C
 #include <stdio.h>
+
 int main() {
-    int num = 5;
-    printf("현재 num의 값은 %d입니다.\n", num);
+    int a = 5;
+    printf("a의 값: %d\n", a);
+    return 0;
 }
 ```
+이 코드를 실행하면, 터미널에 "a의 값: 5"가 출력됩니다. 이렇게 해서 변수 a의 값이 제대로 설정되었음을 확인할 수 있습니다.
 
-이 코드를 실행하면 디버그 창에 `현재 num의 값은 5입니다.` 라는 결과가 출력됩니다.
+## 깊게 알아보기:
 
-## 깊이 들어가보기:
+디버그 출력은 프로그래밍의 상당히 오래된 개념입니다. 초기 컴퓨터 시스템에서는 시스템의 상태를 이해하거나 잠재적인 문제를 추적하기 위해 지속적으로 출력을 확인할 필요가 있었습니다.
 
-디버그 출력은 현재 버전의 C언어에서도 사용되는 중요한 디버깅 기술입니다. 이는 예전부터 프로그래머들이 사용해오던 방법으로, 코드를 실행하면서 중간 결과를 확인하기 위해 사용됩니다.
+표준 `printf` 함수 외에도 여러 디버깅 라이브러리가 있습니다. 예로는 gdb, lldb와 같은 디버거, 또는 콘솔에 로그를 출력하는 것을 넘어 시각적 인터페이스에서 로그를 확인할 수 있는 도구들이 있습니다.
 
-디버그 출력 외에도 C언어에서는 `assert`문을 사용하여 디버깅할 수도 있으며, `gcc` 컴파일러에서는 `-DDEBUG` 옵션을 사용하여 디버그를 할 수도 있습니다. 또한 디버그 출력은 버그를 찾는 데 유용하지만, 성능 저하를 야기할 수 있으므로 프로그래머는 적절히 사용해야 합니다.
+`printf`는 실제로 내부적으로 버퍼링을 사용하여 출력을 처리합니다. 이는 직접 콘솔에 쓰는 것보다 효율적이지만, 디버깅에 있어서는 문제가 될 수 있습니다. 왜냐하면 프로그램이 비정상적으로 종료되면 버퍼에 남은 내용은 출력되지 않기 때문입니다. 이를 해결하기 위해, `setbuf(stdout, NULL);` 를 사용하여 버퍼를 비활성화할 수 있습니다.
 
-## 참고:
+## 참고 자료:
 
-- [C 프로그래밍 언어 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/C_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EB%93%9C)
-- [C 프로그래밍의 역사 - 위키백과, 우리 모두의 백과사전](https://ko.wikipedia.org/wiki/C_%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%A8%EB%93%9C%EC%9D%98_%EC%97%AD%EC%82%AC)
-- [The Evolution of Debugging: From Gordian Knots to the JDI - Oracle](https://www.oracle.com/technetwork/server-storage/developer-tools/jdi-evolution-087348.html)
+- [GDB 공식 문서](https://sourceware.org/gdb/current/onlinedocs/gdb/) : GDB에 대한 상세한 정보를 제공합니다.
+- [LLDB 공식 문서](https://lldb.llvm.org/) : LLVM의 LLDB에 대한 모든 사항을 알려줍니다.
+- [printf와 버퍼링](https://www.learn-c.org/en/Buffer_Overflow) : printf의 내부 버퍼링 시스템에 대한 설명이 있습니다.

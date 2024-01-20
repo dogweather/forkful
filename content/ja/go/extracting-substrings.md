@@ -1,7 +1,7 @@
 ---
-title:                "部分文字列を抽出する"
-html_title:           "Go: 部分文字列を抽出する"
-simple_title:         "部分文字列を抽出する"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？どうして？
+## 何となぜ？
 
-抽出したい文字列とは、大きな文字列から特定の部分を取り出すことを指します。プログラマーたちは、情報を特定の部分に分割する必要があるため、この作業を行います。
+部分文字列の抽出とは特定の部分を文字列から取得することです。これはプログラマーがデータを分析しやすいように特定の情報を隔離する必要があるときにします。
 
-## 方法：
+## どのように：
+
+以下はGoLANGで部分文字列を抽出する方法についての単純なソースコードです。```Go```コードブロックを用いて提供されます。
 
 ```Go
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 func main() {
-
-    str := "こんにちは、世界！"
-
-    // substringの抽出
-    subStr := str[3:6]
-    fmt.Println(subStr) // "んにち"
-
-    // 文字列の長さ
-    length := len(str)
-    fmt.Println(length) // 11
+	str := "こんにちは、世界"
+	fmt.Println(str[0:5])
 }
 ```
 
-## 詳細：
+上記のコードを実行すると次のような出力が得られます。
 
-文字列から抽出するというアイディアは古くから存在していましたが、正確なメソッドや言語によって異なります。Go言語では、スライス記法を使用して文字列の部分を指定できます。他の言語では、インデックスを使用することができます。
+```Go
+こんに
+```
 
-代替案として、正規表現、置換（replace）や削除（delete）などの方法があります。しかし、抽出は最も一般的な方法です。また、Go言語では、実装の詳細をカスタマイズすることもできます。
+## ディープダイブ
 
-## 関連リンク：
+部分文字列の抽出は文字列操作の歴史とあいまって、早くから使用されていました。Go言語では、インデックスを利用して部分文字列を抽出します。他の言語、例えばPythonではスライスを使います。両者の差異は主に実装の詳細で、GoはASCII(byteベース)とunicodeを取り扱えます。
 
-- [Go言語ドキュメント](https://golang.org/)
-- [Go言語ハブ](https://golanghub.com/learn/beginners-tutorial/strings)
-- [正規表現](https://www.regular-expressions.info/)
+## 参考リンク
+
+部分文字列の抽出についてさらに知りたい方は以下を参照してください。
+
+1. Go公式ドキュメンテーション: [Strings, bytes, runes and characters in Go](https://blog.golang.org/strings)
+
+2. Go by Example: [String Functions](https://gobyexample.com/string-functions)
+
+3. The Go Playground: [Substring examples](https://play.golang.org/p/j-I9BGgj2SW)
+
+さらなる学習と努力により、部分文字列の抽出技術を磨くことができます！

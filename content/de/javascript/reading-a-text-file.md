@@ -1,7 +1,7 @@
 ---
-title:                "Eine Textdatei lesen."
-html_title:           "Javascript: Eine Textdatei lesen."
-simple_title:         "Eine Textdatei lesen."
+title:                "Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist Lesen einer Textdatei und warum machen Programmierer es?
+# Lesen einer Textdatei in JavaScript: Eine kurze und unkomplizierte Anleitung
 
-Das Lesen einer Textdatei ist das Einlesen von Inhalten aus einer Textdatei in einen Computer oder ein Programm. Programmierer tun dies, um auf die in der Textdatei enthaltenen Daten zuzugreifen und diese in ihrem Code zu verwenden.
+## Was & Warum?
+Eine Textdatei lesen bedeutet, den gesamten oder einen Teil des Inhalts einer Textdatei mit einer bestimmten Programmiersprache zu erfassen. Als Programmierer tun wir dies, um Daten zu analysieren, zu manipulieren und zu verwenden.
 
-Wie geht das?
+## So geht's:
+Es gibt verschiedene Möglichkeiten, eine Textdatei in JavaScript zu lesen. Die moderne Art ist die Verwendung der File-API, die Damit können wir Dateien lesen, die vom Nutzer hochgeladen wurden.
 
-Das Lesen einer Textdatei kann in Javascript auf verschiedene Arten erfolgen. Eine Möglichkeit ist die Verwendung der "fs" -Bibliothek, die Funktionen zum Lesen von Dateien bereitstellt. Hier ist ein Beispielcode, der den Inhalt einer Datei namens "text.txt" ausgibt:
+```Javascript
+let input = document.querySelector('input[type="file"]');
+
+input.addEventListener('change', function() {
+  let reader = new FileReader();
+
+  reader.addEventListener('load', function() {
+    console.log(reader.result);
+  });
+
+  reader.readAsText(input.files[0]);
+});
+```
+
+Wenn Sie diesen Code ausführen und eine Textdatei hochladen, werden Sie den Inhalt der Datei in der Konsole sehen.
+
+## Vertiefung
+Historisch gesehen, lasen wir Textdateien auf serverseitigem JavaScript mithilfe des `fs` Moduls von Node.js. Aber jetzt preferieren wir die File-API für seine Einfachheit und Effizienz.
 
 ```Javascript
 const fs = require('fs');
-fs.readFile('text.txt', 'utf-8', (err, data) => {
+
+fs.readFile('/Pfad/zur/Datei.txt', 'utf8', function(err, data) {
   if (err) throw err;
   console.log(data);
 });
 ```
 
-Die Ausgabe wird den Inhalt der "text.txt" -Datei in der Konsole anzeigen.
+Die File-API hat jedoch Nachteile: Sie kann nur bei Dateien verwendet werden, die vom Benutzer hochgeladen wurden. Für serverseitige Aktionen bleibt `fs` die Hauptoption.
 
-Tieferer Einblick
+## Siehe auch
+Um mehr über die File-API zu erfahren, besuchen Sie die [MDN-Webseite](https://developer.mozilla.org/de/docs/Web/API/File/Using_files_from_web_applications).
+Weitere Informationen zum `fs` Modul finden Sie in der [Node.js-Dokumentation](https://nodejs.org/api/fs.html).
 
-Das Lesen von Textdateien ist eine wichtige Funktion für Programmierer, da sie es ermöglicht, auf externe Daten zuzugreifen und diese in ihren Code zu integrieren. In der Vergangenheit mussten Programmierer komplexe Algorithmen erstellen, um Textdateien zu lesen, aber mit der Einführung von Bibliotheken wie "fs" ist das Lesen von Textdateien wesentlich einfacher geworden. Es ist wichtig zu beachten, dass das Lesen von Textdateien nicht die einzige Möglichkeit ist, auf externe Daten zuzugreifen. Es gibt auch andere Methoden wie das Lesen von JSON-Dateien oder das Anfordern von Daten von einer API.
-
-Siehe auch
-
-Weitere Informationen zum Lesen von Textdateien in Javascript finden Sie in der offiziellen Dokumentation von Node.js unter: https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback
+Verwenden Sie die richtigen Werkzeuge für Ihre spezifischen Anforderungen. Vergessen Sie nicht, dass Lernen durch Üben kommt. Frohes Codieren!

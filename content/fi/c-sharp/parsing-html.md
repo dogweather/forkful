@@ -1,7 +1,7 @@
 ---
-title:                "Html:n jäsentäminen"
-html_title:           "C#: Html:n jäsentäminen"
-simple_title:         "Html:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-HTML:n jäsentäminen ("parsing") tarkoittaa HTML-koodin lukemista ja sen sisältämien elementtien tunnistamista. Tämä on tärkeää, koska ohjelmoijat usein haluavat luoda ohjelmia, jotka pystyvät käsittelemään ja muokkaamaan HTML-tiedostoja automaattisesti.
+## Mikä & Miksi?
+
+HTML-tulkitseminen on prosessi, jossa HTML-merkkijono muunnetaan muihin formaatteihin kuten DOM (Document Object Model) -rakenteet. Ohjelmoijat käyttävät tätä ymmärtääkseen ja käsitelläkseen verkkosivujen sisältöä tehokkaammin.
 
 ## Miten:
+
 ```C#
-using System;
 using HtmlAgilityPack;
 
-var url = "www.example.com";
 var web = new HtmlWeb();
-var doc = web.Load(url);
-var nodes = doc.DocumentNode.SelectNodes("//a[@href]");
+var doc = web.Load("http://ohjelmointi.fi"); // Vaihda URL oman tarpeen mukaan.
 
-foreach(var node in nodes)
+foreach (var node in doc.DocumentNode.DescendantsAndSelf())
 {
-    Console.WriteLine(node.GetAttributeValue("href", ""));
+    Console.WriteLine(node.Name);
 }
 ```
-Tässä esimerkissä käytetään HtmlAgilityPack-kirjastoa, joka tarjoaa valmiita työkaluja HTML:n jäsentämiseen. Ensimmäisillä riveillä asetetaan muuttujat url-osoitteelle ja HtmlWeb-olioon. Seuraavaksi ladataan HTML-tiedosto ja etsitään siitä kaikki a-elementit sen attribuutilla "href". Lopuksi tulostetaan löytyneiden elementtien "href"-attribuutit.
+Tässä esimerkissä käytämme HtmlAgilityPack-kirjastoa HTML:n tulkintaan. HTML:n tulostaa kaikki solmun nimet verkkosivulta "http://ohjelmointi.fi".
 
-## Pureutuminen:
-HTML:n jäsentämisen tarve on alkanut kasvaa Internetin kehityksen myötä. Aikaisemmin sivustot olivat staattisia ja sisälsivät vähemmän elementtejä, joten niiden käsittely ei ollut niin tärkeää. Nykyään sivustot ovat monimutkaisia ja sisältävät paljon erilaisia elementtejä, joten tarve jäsentämiseen on suurempi. Vaihtoehtoisia tapoja jäsentämiseen ovat esimerkiksi regex eli säännölliset lausekkeet ja manuaalinen käsittely, mutta ne ovat usein huomattavasti hankalampia ja epäluotettavampia kuin erilaiset kirjastot. HTML:n jäsentämisessä käytetään yleensä erilaisia XPath-kyselyitä löytämään haluttuja elementtejä. Tekniikan käytöstä löytyy paljon oppaita ja esimerkkejä, joten sen omaksuminen ei ole vaikeaa.
+## Syvä sukellus:
+
+HTML-tulkitseminen alkoi 1990-luvulla, kun WWW-kehittäjät tarvitsivat tavan käsitellä HTML-koodeja järjestäytyneemällä ja tehokkaammalla tavalla. Ohjelmoijat voivat käyttää muitakin menetelmiä, kuten regex-komennon, mutta usein tulkinta-libraarit kuten HtmlAgilityPack tarjoavat yksinkertaisemman ja tehokkaamman lähestymistavan. Implementaatio riippuu projektin vaatimuksista: esimerkiksi verkkosivun rakenteen muutos voi vaatia ohjelmoijaa mukauttamaan tulkintakoodia vastaavasti.
 
 ## Katso myös:
-- [HtmlAgilityPack-dokumentaatio](https://html-agility-pack.net/documentation)
-- [XPath-tutoriaali](https://www.w3schools.com/xml/xpath_intro.asp)
-- [Esimerkki HTML:n jäsentämisestä Pythonilla](https://realpython.com/parsing-html-web-page/)
+
+1. [HTMLAgilityPack-kirjasto](https://html-agility-pack.net/)
+2. [Document Object Model (DOM)](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+3.Memory usage and performance considerations when parsing HTML with C# ([HTML-tulkinnan muisti ja suorituskyky C#-kielellä](https://stackoverflow.com/questions/3622457/memory-usage-and-performance-considerations-when-parsing-html-with-c))

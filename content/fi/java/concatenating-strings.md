@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Java: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Java"
 category:             "Java"
@@ -11,46 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-"Ohjelmoijat käyttävät usein erilaisia tapoja yhdistää merkkijonoja, eli tekstinpätkiä, yhdeksi kokonaisuudeksi. Tätä kutsutaan merkkijonojen yhdistelemiseksi (concatenating strings) ja se on erittäin tärkeä osa ohjelmoinnin perustaitoja. Tämä mahdollistaa esimerkiksi käyttäjän syöttämien tietojen liittämisen valmiiksi ohjelmoituihin viesteihin tai tulostettaessa tiedot yhdessä halutussa muodossa."
 
-## Miten
-"### Esimerkki 1:
-```java
-String etunimi = "Matti";
-String sukunimi = "Meikäläinen";
-String kokoNimi = etunimi + " " + sukunimi;
-System.out.println(kokoNimi);
+Merkkijonojen yhdistäminen, tai "concatenation" tarkoittaa kahden tai useamman merkkijonon liittämistä yhteen. Ohjelmoijat tekevät tämän tiedon esittämiseksi helpommin luettavaan muotoon tai dynaamisten tekstien luomiseksi.
+
+## Näin se toimii:
+
+Java tarjoaa useita tapoja yhdistää merkkijonoja. Tässä on kolme esimerkkiä:
+
+1. Käyttämällä '+' -operaattoria:
+```Java 
+String a = "Hei, "; 
+String b = "maailma!";
+String c = a + b; 
+System.out.println(c); // Tulostaa: "Hei, maailma!"
 ```
-Tulostaa: Matti Meikäläinen
 
-### Esimerkki 2: 
-```java
-String toivelause = "Olen " + 27 + " vuotta vanha.";
-System.out.println(toivelause);
+2. Käyttämällä `concat()` -metodia:
+```Java 
+String a = "Hei, "; 
+String b = "maailma!";
+String c = a.concat(b); 
+System.out.println(c); // Tulostaa: "Hei, maailma!"
 ```
-Tulostaa: Olen 27 vuotta vanha.
 
-### Esimerkki 3: 
-```java
-String tervehdys = "Hei ";
-String nimi = "Maria";
-String huutomerkki = "!";
-System.out.println(tervehdys.concat(nimi).concat(huutomerkki));
+3. Käyttämällä `StringBuilder` -luokkaa:
+```Java
+String a = "Hei, "; 
+String b = "maailma!";
+StringBuilder sb = new StringBuilder(a);
+sb.append(b); // Liitetään b-arvo StringBuilderiin
+System.out.println(sb.toString()); // Tulostaa: "Hei, maailma!"
 ```
-Tulostaa: Hei Maria!
 
-### Esimerkki 4:
-```java
-String muuttuja1 = "Tervetuloa";
-String muuttuja2 = " Java-maailmaan!";
-System.out.println(muuttuja1.concat(muuttuja2));
-```
-Tulostaa: Tervetuloa Java-maailmaan!"
+## Syvällisemmin:
 
-## Syväsukellus
-"Merkkijonojen yhdistelemistä on käytetty ohjelmoinnissa jo pitkään, ja Java-kielen syntaksissa se tehdään yleensä käyttämällä plus-merkkiä (+) tai concat-metodia. Joissain tapauksissa voi olla hyödyllistä käyttää StringBuilder-luokkaa, mikäli tiedetään, että merkkijonojen yhdisteleminen tapahtuu suurella datamäärällä. Tämä johtuu siitä, että StringBuilder-luokka luo uuden merkkijonon tarvittaessa, kun taas String-luokka luo aina uuden merkkijonon joka kerta, kun siihen tehdään muutoksia. Tämä voi aiheuttaa tehokkuusongelmia, jos käytetään paljon merkkijonojen yhdistelemistä."
+1. Historiallinen tausta: Merkkijonojen yhdistäminen on ollut olemassa ohjelmointikielissä jo vuosikymmeniä. Java tarjoaa useita tapoja tämän tekemiseen, jokaisella on omat vahvuudet ja heikkoutensa.
 
-## Katso myös
-- [Java StringBuilder-luokka](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/StringBuilder.html)
-- [Java String-luokka](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
-- [Merkkijonojen muokkaaminen Java:ssa](https://www.w3schools.com/java/java_strings.asp)
+2. Vaihtoehdot: Java 8 toimitti `String.join()` -metodin, joka tarjoaa toisen tavan yhdistää merkkijonoja: `String c = String.join(" ", a, b);`
+
+3. Toteutuksen nyanssit: Yleisimmin käytetty '+' -operaattori on melko tehokas pienillä merkkijonoilla, mutta voi olla hidas suurille merkkijonoille, koska se luo uuden merkkijonon jokaiselle concat-operaatiolle. `StringBuilder` on huomattavasti tehokkaampi suurien merkkijonojen käsittelyssä.
+
+## Katso myös:
+
+1. Oracle Java Docs - [String Concatenation Operator](https://docs.oracle.com/javase/specs/jls/se8/html/jls-15.html#jls-15.18.1)
+2. Stack Overflow - [What is the difference between String + and String.concat()?](https://stackoverflow.com/questions/47605/string-concatenation-concat-vs-operator)
+3. Baeldung - [Guide to String Concatenation in Java](https://www.baeldung.com/java-string-concatenation)

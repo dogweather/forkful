@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "C#: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "C#"
 category:             "C#"
@@ -10,89 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest i po co?
+## Co i dlaczego?
 
-Wysyłanie żądania HTTP jest jedną z podstawowych umiejętności w programowaniu. Polega ono na wysyłaniu zapytania do serwera internetowego w celu pobrania danych lub wykonania określonej akcji. Programiści często korzystają z tego mechanizmu, aby uzyskać dostęp do zasobów online lub komunikować się z innymi aplikacjami.
+Wysyłanie żądania HTTP to proces komunikacji, gdzie aplikacja klienta prosi o informacje od serwera. Programiści robią to, aby pobierać dane z serwerów, przesyłać dane do serwerów i integrować swoje aplikacje z serwisami internetowymi.
 
-Jak to zrobić:
+## Jak (How To):
+
+W języku C# możliwe jest wysłanie żądania HTTP za pomocą klasy HttpClient. Poniżej przykład, o którym mówimy:
 
 ```C#
-// Example 1: Wysyłanie żądania GET do serwera Google
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
 class Program
 {
-   static async Task Main()
-   {
-      // Utworzenie obiektu HttpClient
-      using var client = new HttpClient();
+    private static readonly HttpClient client = new HttpClient();
 
-      // Wywołanie metody GetAsync() z adresem URL, który chcemy odwiedzić
-      using var response = await client.GetAsync("https://www.google.com");
-
-      // Sprawdzenie statusu odpowiedzi
-      Console.WriteLine($"Status code: {response.StatusCode}");
-
-      // Pobranie zawartości odpowiedzi
-      var content = await response.Content.ReadAsStringAsync();
-
-      // Wyświetlenie pobranej zawartości
-      Console.WriteLine(content);
-   }
+    static async Task Main()
+    {
+        HttpResponseMessage response = await client.GetAsync("http://api.example.com/data");
+        response.EnsureSuccessStatusCode();
+        string responseBody = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(responseBody);
+    }
 }
-
-/* Wynik:
- Status code: 200
-(...Zawartość strony Google...)
-*/
 ```
 
-```C#
-// Example 2: Wysyłanie żądania POST z danymi formularza
-using System;
-using System.Net.Http;
-using System.Collections.Generic;
-using System.Collections.Specialized;
+W wyjściu zobaczysz treść żądania HTTP zakończonej pomyślnie.
 
-class Program
-{
-   static async Task Main()
-   {
-      // Utworzenie obiektu HttpClient
-      using var client = new HttpClient();
+## Deep Dive
 
-      // Utworzenie kolekcji z danymi formularza
-      var data = new NameValueCollection {
-          { "username", "example" },
-          { "password", "secret" }
-      };
+HttpClient to klasa wprowadzona w .NET Framework 4.5 w 2012 roku jako nowy model programowania dla wysyłania żądań HTTP. Jest bardziej elastyczny i wygodny w użyciu niż starsze klasy, takie jak WebClient.
 
-      // Wywołanie metody PostAsync() z adresem URL i danymi formularza
-      using var response = await client.PostAsync("https://www.example.com/login", new FormUrlEncodedContent(data));
+Alternatywą dla HttpClient jest RestSharp, ktory oferuje bardziej rozbudowany zestaw funkcji, ale może nie być potrzebny w prostych przypadkach.
 
-      // Sprawdzenie statusu odpowiedzi
-      Console.WriteLine($"Status code: {response.StatusCode}");
+Jednocześnie warto pamiętać, że HttpClient jest projektowany do bycia wielokrotnie używaną długotrwałą instancją, a nie tworzonym na nowo dla każdego żądania. Jest to związane z obsługą połączeń przez HttpClient, które mogą pozostać otwarte po zakończeniu żądania.
 
-      // Pobranie zawartości odpowiedzi
-      var content = await response.Content.ReadAsStringAsync();
+## Zobacz także
 
-      // Wyświetlenie pobranej zawartości
-      Console.WriteLine(content);
-   }
-}
-
-/* Wynik:
- Status code: 200
-(...Zawartość strony po zalogowaniu...)
-*/
-```
-
-Pogłębiona analiza:
-
-Wysyłanie żądania HTTP jest powszechnym sposobem pobierania danych lub komunikacji z serwerami internetowymi. Metoda ta została wprowadzona w protokole HTTP, który jest podstawowym mechanizmem komunikacji w sieci. Istnieje także wiele innych alternatywnych sposobów na korzystanie z serwisów online, takich jak protokół FTP czy RPC. Wysyłanie żądań HTTP jest jednak najczęściej stosowane w programowaniu, ponieważ jest prostsze w użyciu i obsługuje większość zasobów internetowych.
-
-Zobacz też:
-
-- Dokumentacja Microsoft dotycząca klasy HttpClient: https://docs.microsoft.com/pl-pl/dotnet/api/system.net.http.httpclient
-- Poradnik na stronie MDN dotyczący żądań HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP/Overview
+1. Dokumentacja HttpClient dla .NET 5.0 [link](https://docs.microsoft.com/pl-pl/dotnet/api/system.net.http.httpclient)
+2. Wprowadzenie do RestSharp [link](http://restsharp.org/)
+3. Skąd wiesz, kiedy otworzyć i zamknąć połączenia HTTP [link](https://www.aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/)

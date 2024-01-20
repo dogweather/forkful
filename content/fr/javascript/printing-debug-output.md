@@ -1,7 +1,7 @@
 ---
-title:                "Affichage du débogage"
-html_title:           "Javascript: Affichage du débogage"
-simple_title:         "Affichage du débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est & Pourquoi?
 
-La sortie de débogage est un moyen pour les programmeurs de voir des informations supplémentaires sur leur code pendant le processus de développement. Il est généralement utilisé pour trouver et corriger les erreurs ou pour mieux comprendre le fonctionnement d'une partie spécifique du code.
+L'affichage des messages de débogage en Javascript permet de suivre le déroulement du code à des points spécifiques. C'est crucial pour les développeurs, permettant de comprendre et de rectifier les comportements inattendus dans leurs programmes.
 
 ## Comment faire:
 
-Pour imprimer une sortie de débogage en Javascript, vous pouvez utiliser la méthode ```console.log()``` qui accepte un ou plusieurs arguments et les imprime dans la console du navigateur. Par exemple:
-
 ```Javascript
-var name = "Jean";
-var age = 25;
-console.log("Bonjour, je m'appelle " + name + " et j'ai " + age + " ans.");
+console.log('Message de débogage');
 ```
-La sortie de débogage affichera: "Bonjour, je m'appelle Jean et j'ai 25 ans."
+C'est comme ça que l'on imprime un message de débogage en Javascript. Cette déclaration affichera 'Message de débogage' dans la console du navigateur ou l’interface de ligne de commande en fonction de l’environnement d’exécution.
 
-## Plongée en profondeur:
+## Exploration approfondie
 
-La sortie de débogage est apparue dès les premiers jours de la programmation informatique pour aider les programmeurs à trouver des erreurs dans leur code. Mais au fil du temps, elle est devenue un outil utile pour comprendre le code et pour le développer de manière plus efficace. Bien que ```console.log()``` soit la méthode la plus couramment utilisée pour imprimer une sortie de débogage en Javascript, il existe également d'autres méthodes telles que ```console.error()``` pour afficher des messages d'erreur ou ```console.warn()``` pour afficher des avertissements.
+Historiquement, l'affichage des messages de débogage a été introduit pour aider les développeurs à suivre le flux de leurs programmes lors du développement. C'est un mécanisme de suivi largement utilisé, mais il y a des alternatives.
+
+Pour des affichages plus complexes, certains développeurs utilisent 'console.table()' pour afficher des données sous forme de tableau ou 'console.trace()' pour un suivi plus détaillé de la pile.
+
+Dans l'implémentation, il est crucial de noter que le débogage par affichage de messages doit normalement être désactivé dans la version finale du logiciel car il peut exposer des informations sensibles.
 
 ## Voir aussi:
 
-Pour en savoir plus sur la sortie de débogage en Javascript, vous pouvez consulter ces sources:
-- [Documentation MDN de console.log](https://developer.mozilla.org/fr/docs/Web/API/Console/log)
-- [Vidéo YouTube sur l'utilisation de la sortie de débogage en Javascript](https://www.youtube.com/watch?v=-sblJk2Nq-o)
-- [Article Medium sur l'importance de la sortie de débogage](https://medium.com/the-code-smith/how-can-console-log-save-your-life-afc2b0cfb0ff)
+- [Console API reference sur MDN](https://developer.mozilla.org/fr/docs/Web/API/Console)
+- [Débogage JavaScript dans Google Chrome](https://developers.google.com/web/tools/chrome-devtools/javascript)
+- [Guide de débogage dans NodeJS](https://nodejs.org/en/docs/guides/debugging-getting-started/)

@@ -1,7 +1,7 @@
 ---
-title:                "Poikkeustulosteiden tulostus"
-html_title:           "Haskell: Poikkeustulosteiden tulostus"
-simple_title:         "Poikkeustulosteiden tulostus"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Tulostetaan virheenkorjaustietoa Haskellissa
 
-Painattaminen debug-tulosteilla on yksinkertainen mutta tärkeä tapa tarkistaa ja korjata virheitä ohjelmoinnissa. Kun painatamme koodiamme, näemme tarkalleen missä vaiheessa ohjelma toimii ja mikä mahdollisesti aiheuttaa virheen. Näin voimme nopeasti etsiä ja korjata ongelmat.
+## Mikä & Miksi?
+Ohjelmoijat tulostavat virheenkorjaustietoa ymmärtääkseen ohjelmien toimintaa ja löytääkseen virheitä. Tämä auttaa korjaamaan koodin helpommin ja nopeammin.
 
-## Tee näin:
+## Miten
+Haskellissa voit käyttää `Debug.Trace` -moduulia tulostaaksesi virheenkorjaustietoa. Tässä on esimerkki:
 
-```Haskell
--- Esimerkki lista-arvojen tulostamisesta
-lista = [1, 2, 3, 4, 5]
-putStrLn "Lista:"
-print lista
+```Haskell 
+import Debug.Trace
+
+main = trace "Hei Maailma!" return ()
 ```
 
-Tämä koodi tulostaa "Lista:" ja [1, 2, 3, 4, 5] näytölle. Voit myös käyttää ```show```-funktiota, joka muuntaa arvon merkkijonoksi ja tulostaa sen.
+Kun ajat tämän ohjelman, se tulostaa `Hei Maailma!` -viestin ja ei tee muuta.
 
-```Haskell
--- Esimerkki muuttujan tulostamisesta
-nimi = "Johanna"
-putStrLn "Hei, " ++ nimi ++ "!"
-```
+## Syvempi tutkiskelu
+Historiallisesti, `Debug.Trace` -moduulin käyttö on ollut yleinen tapa tulostaa virheenkorjaustietoa Haskellissa, vaikka se on hankala koska rikkoo puhtaan funktionaalisuuden. 
 
-## Syvempi sukellus:
+Vaihtoehtoisesti, voit käyttää `System.IO.Unsafe` -moduulia. Mutta, tämäkin voi aiheuttaa väärinkäytöksiä, koska se rikkoo puhtaan funktionaalisuuden hahmotuksen.
 
-Debug-tulosteiden käyttö ei ole mikään uusi keksintö. Ohjelmistojen kehittäjät ovat käyttäneet sitä jo vuosia virheiden paikantamiseen ja korjaamiseen. On myös muita tapoja tarkkailla koodia, kuten yksikkötestauksen avulla, mutta debug-tulosteen käyttö on edelleen nopea ja yksinkertainen tapa tarkistaa koodia.
+Monet Haskell-kehittäjät suosivat lokeja debuggausprosessissa. Loggerit, kuten `monad-logger` tai `fast-logger`, ovat suosittuja, koska ne eivät riko puhtaita funktioita.
 
-Voit myös käyttää erilaisia debug-tulosteiden muotoiluvaihtoehtoja, kuten värillisiä viestejä, jotta ne erottuvat paremmin koodista. Voit lukea lisää näistä vaihtoehdoista [täältä](https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html).
+## Katso myös
+Tärkeitä linkkejä Haskell-ohjelmointijärjestelmän virheenkorjauksen opiskeluun:
 
-## Katso myös:
+- [Debug.Trace-moduuli](https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html) 
+- [Monad-logger](https://hackage.haskell.org/package/monad-logger)
+- [Fast-logger](https://hackage.haskell.org/package/fast-logger)
+- [Haskell-virheenkorjauksen parhaat käytännöt](https://wiki.haskell.org/Debugging)
+- [System.IO.Unsafe](https://hackage.haskell.org/package/base/docs/System-IO-Unsafe.html)
 
-- [Yksikkötestaus Haskellissa](https://haskell.org/haskellwiki/Unit_testing)
-- [Juuriuksien käyttö Haskellissa](https://haskell.org/haskellwiki/Using_Channel_Ids)
-- [Haskellin virallinen dokumentaatio debug-tulosteiden käytöstä](https://wiki.haskell.org/Debugging)
+Muista, virheenkorjauksen oppiminen ja hallinta ovat tärkeitä taitoja jokaiselle ohjelmoijalle. Jatka harjoittelua ja koodaa onnellisesti!

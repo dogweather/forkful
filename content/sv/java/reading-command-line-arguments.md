@@ -1,6 +1,6 @@
 ---
 title:                "Läsa kommandoradsargument"
-html_title:           "Java: Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
 simple_title:         "Läsa kommandoradsargument"
 programming_language: "Java"
 category:             "Java"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Läsning av Kommandoradsargument med Java
+
 ## Vad & Varför?
-Läsning av kommandoradsargument är när man läser in information från kommandoraden genom att skriva in kommandoradsargument efter programmets namn. Detta är en viktig del av programmering eftersom det tillåter användaren att ange specifik information eller inställningar för programmet vid körning.
+
+Kommandoradsargument är inputvärden som skickas till ett Java-program vid dess start. Java-programmerare använder dem för att justera programbeteende utan att ändra koden.
 
 ## Så här gör du:
+
+I Java fångar du kommandoradsargument med `main()` metoden. Här är ett enkelt exempel:
+
 ```Java
-public class ArgumentExample{
-    public static void main(String[] args){
-        // Programkod här
-        String argument = args[0]; // Läs in kommandoradsargument
-        System.out.println(argument); // Skriv ut argumentet
+public class Main {
+    public static void main(String[] args) {
+        for (String arg : args) {
+            System.out.println("Argument: " + arg);
+        }
     }
 }
 ```
-Programmet ovan tar emot ett kommandoradsargument och skriver ut det till användaren. Om man till exempel kör programmet med kommandoradsargumentet "Hello", så kommer det att skriva ut "Hello" till skärmen.
 
-## Djupdykning:
-Att läsa kommandoradsargument har funnits sedan de tidiga dagarna av datoranvändning och är fortfarande ett viktigt koncept inom programmering. Alternativ till att läsa kommandoradsargument inkluderar GUI (Graphical User Interface) där användaren kan ange information genom ett grafiskt gränssnitt, och läsning från filer som lagrar information som sedan kan läsas in av programmet. När man läser kommandoradsargument är det viktigt att hantera felaktig eller inkorrekt formaterad input för att undvika kraschar eller felaktiga resultat i programmet.
+Om du kör ditt program med `java Main FirstArg SecondArg`, så kommer output att vara:
+
+```Java
+Argument: FirstArg
+Argument: SecondArg
+```
+
+## Djupdykning
+
+1. **Historisk kontext**: Läsning av kommandoradsargument är en programmetod som har använts sedan de tidiga dagarna av CLI-baserade operativsystem.
+
+2. **Alternativ**: Om ditt program behöver mer komplexa inmatningar kan du använda bibliotek som JCommander eller Apache CLI.
+
+3. **Implementeringsdetaljer**: Argumenten till `main()` metoden, dvs. `String[] args`, får värdena direkt från operativsystemet. Orden och tecknen du skriver efter `java classname` blir strängar i detta strängarray.
 
 ## Se även:
-Läsa kommandoradsargument är en viktig del av att skapa robusta och användarvänliga program. Här är några källor för mer information och exempel:
 
-- [Oracle Java Documentation - Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Spring Framework - Command Line Arguments](https://www.baeldung.com/spring-boot-command-line-arguments)
-- [Codingame - How to Use Command Line Arguments in Java](https://www.codingame.com/playgrounds/4181/how-to-use-command-line-arguments-in-java)
+- [Officiell Java-dokumentation om kommandoradsargument](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [JCommander, en Java-bibliotek för tolkning av kommandoradsparametrar](http://jcommander.org/)
+- [Apache Commons CLI, ett API för att tolka kommandoradsalternativ](https://commons.apache.org/proper/commons-cli/)
+
+Glöm inte att öva för att bli en effektiv Java-programmerare! God programmering!

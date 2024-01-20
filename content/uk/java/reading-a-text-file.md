@@ -1,6 +1,6 @@
 ---
 title:                "Читання текстового файлу"
-html_title:           "Java: Читання текстового файлу"
+html_title:           "Arduino: Читання текстового файлу"
 simple_title:         "Читання текстового файлу"
 programming_language: "Java"
 category:             "Java"
@@ -10,26 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що та чому?
-Читання текстового файлу - це процес отримання інформації з файлу, який містить текстову інформацію. Програмісти роблять це для отримання даних із зовнішніх джерел, таких як бази даних або інші програми.
+## Що це таке і навіщо?
 
-Як це зробити?
+Читання текстового файлу - це процес збору інформації, що зберігається у текстовому форматі з файлу. Програмісти це роблять, щоб маніпулювати даними та використовувати їх в своїх програмах.
+
+## Як це зробити:
+
+У Java є кілька способів роботи з текстовими файлами. Ось два основні приклади:
+
 ```Java
-public static void main(String[] args) throws FileNotFoundException {
-   File file = new File("myfile.txt");
-   Scanner scanner = new Scanner(file);
-   while (scanner.hasNextLine()){
-       String line = scanner.nextLine();
-       System.out.println(line);
-   }
-   scanner.close();
+// Метод за допомогою Files
+import java.nio.file.*;
+
+public class ReadFile {
+  public static void main(String[] args) {
+    Path file = Paths.get("file.txt");
+    try {
+      byte[] data = Files.readAllBytes(file);
+      System.out.println(new String(data));
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
 }
 ```
-Використовуючи клас Scanner у Java, ми можемо створити об'єкт файлу та сканувати його рядок за рядком за допомогою методу `nextLine()`. У цьому прикладі ми друкуємо кожен рядок на екрані. Не забудьте закрити сканер після використання.
 
-Глибоке погруження
-В минулому, до появи класу Scanner, програмісти використовували клас BufferedReader для читання текстових файлів. Крім того, існують інші альтернативи, такі як використання потоків або регулярних виразів. Щоб точно визначити, яка опція найкраща для вашої програми, рекомендується зробити дослідження та провести власні тести.
+```Java
+// Метод за допомогою BufferedReader
+import java.io.*;
 
-Дивись також
-1. Документація по класу Scanner: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Scanner.html
-2. Стаття "Робота з текстовими файлами в Java": https://www.baeldung.com/java-read-lines-large-file
+public class ReadFile {
+  public static void main(String[] args) {
+    try {
+      BufferedReader reader = new BufferedReader(new FileReader("file.txt"));
+      String line;
+      while((line = reader.readLine()) != null) {
+        System.out.println(line);
+      }
+      reader.close();
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+## Поглиблено:
+
+Для читання текстових файлів, Java пропонує ряд інших методів, включаючи Scanner або FileInputStream. Ці класи були розроблені в різний час, як вдосконалення і адаптації до нових вимог та стандартів. Вибір методу залежить від конкретних потреб та вимог вашого проекту.
+
+## Дивіться також:
+
+- [Документація Java SE](https://docs.oracle.com/javase/tutorial/), щоб дізнатися більше про роботу з файлами та стрічками в Java.
+- [Stack Overflow](https://stackoverflow.com/questions/4716503/reading-a-plain-text-file-in-java), тут ви можете знайти корисні обговорення про читання файлів в Java.

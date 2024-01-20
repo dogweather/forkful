@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "Haskell: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le fait-on?
+## Qu'est-ce que c'est et Pourquoi?
+L'interpolation de chaîne est l'inclusion des valeurs de variables directement dans une chaîne. On le fait pour réduire la nécessité d'opérations de concaténation répétées ou excessives, améliorant ainsi la lisibilité du code.
 
-Interpoler une chaîne est une technique utilisée par les programmeurs pour insérer des valeurs dynamiquement dans un message ou une phrase prédéfinie. Cela permet de personnaliser les messages en fonction des variables ou des données fournies lors de l'exécution du programme.
 
-# Comment faire:
+## Comment faire:
 
-Voici un exemple de code Haskell montrant comment interpoler une chaîne :
+Voici un exemple de la façon dont vous pourriez interpoler une chaîne en Haskell:
 
-```
+```Haskell
 let name = "John"
-putStrLn $ "Bonjour " ++ name ++ "!"
+let age = 30
+print ("Salut " ++ name ++ ", tu as " ++ show age ++ " ans.")
 ```
-Ce code affichera "Bonjour John!" lorsque vous l'exécuterez. La séquence ``` ++ ``` est utilisée pour concaténer ou fusionner les chaînes ensemble. Dans cet exemple, la variable ``` name ``` est insérée dans la phrase pour créer un message personnalisé.
 
-# Plongée en profondeur:
+Ce programme produit le résultat suivant:
 
-Historiquement, l'interpolation de chaîne a été introduite dans le langage de programmation Perl et a ensuite été adoptée par d'autres langages tels que Ruby, Python et Haskell. Cette méthode est souvent préférée à la concaténation car elle améliore la lisibilité du code et permet une meilleure manipulation des données.
+```
+Salut John, tu as 30 ans.
+```
 
-Une alternative populaire à l'interpolation de chaîne est l'utilisation de modèles ou de gabarits, qui sont des structures de données spéciales contenant des emplacements pour les valeurs à insérer. Cependant, dans certains cas, l'interpolation de chaîne peut être plus simple et plus efficace.
+## Plongée en profondeur:
 
-# Voir aussi:
+1. **Contexte historique:** Haskell possède des capacités d'interpolation de chaîne très primitives par rapport à d'autres langages plus modernes comme Python ou JavaScript. En raison de la nature purement fonctionnelle de Haskell, l'interpolation de chaîne doit être effectuée manuellement à l'aide de l'opérateur de concaténation "++" et de la fonction "show" pour convertir les non-chaînes en chaînes.
 
-Pour en savoir plus sur l'interpolation de chaîne en Haskell, consultez la documentation officielle sur les chaînes de caractères : https://www.haskell.org/documentation/#strings
+2. **Alternatives:** Il existe des bibliothèques Haskell comme `Text.Printf` et `Text.InterpolatedString.Perl6` qui fournissent plus de capacités d'interpolation de chaîne, semblable à ce que vous trouverez dans d'autres langages de programmation.
 
-Vous pouvez également trouver des exemples pratiques et des tutoriels sur les sites tels que le wiki Haskell ou StackOverflow.
+3. **Détails de l'implémentation:** Les opérations de concaténation de chaînes en Haskell sont généralement coûteuses en termes de performances. Si vous prévoyez d'effectuer une grande quantité d'interpolation de chaîne, il peut être préférable d'utiliser une bibliothèque dédiée ou une autre méthode de construction de chaîne plus performante.
+
+## Voir aussi:
+
+Pour en savoir plus sur les chaînes de caractères dans Haskell, consultez la documentation officielle:
+
+[Haskell Wiki: Chaînes de caractères](https://wiki.haskell.org/Strings)
+
+Pour une discussion plus approfondie sur `Text.Printf` et `Text.InterpolatedString.Perl6`, jetez un oeil ici:
+
+[Hackage: Text.Printf](https://hackage.haskell.org/package/base/docs/Text-Printf.html)
+
+[Hackage: Text.InterpolatedString.Perl6](https://hackage.haskell.org/package/interpolatedstring-perl6-1.0.0/docs/Text-InterpolatedString-Perl6.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Hitta längden på en sträng"
-html_title:           "Lua: Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
 simple_title:         "Hitta längden på en sträng"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,38 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-
-Att hitta längden på en sträng är en viktig del av programmering. Det är helt enkelt att räkna antalet tecken i en sträng, oavsett om det är bokstäver, nummer eller symboler. Detta är användbart för att kontrollera om en sträng är inom en specifik längd, skapa loopar eller manipulera strängar på olika sätt.
+Att hitta längden på en sträng innebär att bestämma antalet tecken i den. Programmerare gör detta för att navigera eller manipulera information inom strängar och för att kontrollera dataintegritet.
 
 ## Så här gör du:
-
-För att hitta längden på en sträng i Lua, använder man funktionen "string.len()". Nedan är ett exempel på hur man använder denna funktion i kod:
+För att hitta längden på en sträng i Lua, använder du funktionen `string.len()`. Eller än kortare kan du använda operatorn `#`.
 
 ```Lua
-local str = "Hej, världen!"
-print(string.len(str))
+local str = "tecken"
+print(string.len(str))  -- Output: 6
+print(#str)  -- Output: 6
 ```
+Deep Dive
+Längdfunktionen är en grundläggande del av strängmanipulation, där sedan starten av programmeringsspråket i 1993. I Lua kan du använda två metoder att få stränglängden, `string.len()` metoden och `#` operatorn.
 
-Detta kommer att ge följande utmatning:
+Det finns inga direkta alternativ till att hitta längden på en sträng bortsett från ovanstående två metoder. Dock kan man manuellt utföra operationen genom att iterera över strängen, men det är ineffektivt och onödigt i Lua.
 
-```
-13
-```
-
-Som du kan se är längden på strängen "Hej, världen!" 13 tecken lång.
-
-## Djupdykning:
-
-Historiskt sett har längden på en sträng varit en utmaning för programmerare att hitta. I vissa språk, som C, var det nödvändigt att manuellt räkna antalet tecken i en sträng. Men i moderna språk, som Lua, finns det inbyggda funktioner som gör det enklare och mer effektivt.
-
-En alternativ metod för att hitta längden på en sträng är att använda en loop. Denna loop skulle iterera genom varje tecken i strängen och räkna dem tills den når slutet. Men detta är inte en rekommenderad metod eftersom det är mer tidskrävande och mindre effektivt än att använda den inbyggda funktionen.
-
-Implementationen av "string.len()" funktionen i Lua är optimerad för att vara snabb och effektiv, vilket gör att programmet körs snabbare och mer smidigt.
+Lua lagrar intern den stränglängden för omedelbar åtkomst, vilket gör ovanstående metoder snabba och effektiva. Obs! `#` operatorn kan ge inkorrekt resultat om strängen innehåller nolla-byte.
 
 ## Se även:
+För mer information om strängar i Lua, utforska följande länkar:
 
-[Officiell Lua dokumentation - strängfunktioner](https://www.lua.org/manual/5.3/manual.html#6.4)
-
-[GeeksforGeeks - stränglängd i Lua](https://www.geeksforgeeks.org/string-length-in-lua/)
-
-[Tutorialspoint - Lua strängfunktioner](https://www.tutorialspoint.com/lua/lua_string_length.htm)
+1. [Programming in Lua: Strings](https://www.lua.org/pil/2.4.html)
+2. [Lua 5.3 Reference Manual: string.len](https://www.lua.org/manual/5.3/manual.html#pdf-string.len)
+3. [Lua-Users Wiki: String Library Tutorial](http://lua-users.org/wiki/StringLibraryTutorial)

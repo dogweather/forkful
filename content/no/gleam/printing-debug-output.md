@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Gleam: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Å skrive ut feilsøkingsutdata er en måte for programmører å få informasjon om hvordan programmet deres kjører. Dette kan hjelpe dem med å finne og rette feil i koden sin. Det er også nyttig for å forstå hva som skjer i programmet og hvordan dataene endrer seg underveis.
+Utskrift av feilsøkingsoutput er prosessen med å vise kodeløp og variabelverdier mens programmet kjører. Dette gjøres for å hjelpe programmererne med å finne og fikse problemer i koden.
 
-Slik gjør du:
+## Hvordan gjøre det:
 
-For å skrive ut feilsøkingsutdata i Gleam, kan du bruke funksjonen `io.format`. For eksempel:
+I Gleam, kan ```io.debug``` brukes til å skrive ut feilsøkingsinformasjon. Her er et enkelt eksempel:
 
 ```Gleam
-io.format("Debugging output: {} \n", ["Hello, world!"])
+import gleam/io
+
+fn main() {
+  io.debug("Hei, feilsøking!")
+}
 ```
 
-Output:
+Når du kjører dette programmet, vil du se følgende utskrift:
 
+```Gleam
+"Hei, feilsøking!"
 ```
-Debugging output: Hello, world!
-```
 
-Dykk ned i detaljene:
+## Dyp Dykk
 
-Skriving av feilsøkingsutdata har vært en høyt elsket metode blant programmører i mange år. Selv om det finnes alternative metoder som for eksempel å bruke en interaktiv debugger, er det fortsatt en enkel og effektiv måte å få innsikt i programmet ditt på. I Gleam, kan du også bruke `log`-funksjonen for å skrive ut meldinger, men `io.format` gir deg mer kontroll over formateringen og utdataen.
+Feilsøkingsutskrift har en lang historie, går tilbake til dagene med fysiske printere og perforerte kort. Alternativene til feilsøkingsutskrift inkluderer logger og formelle feilsøkingsverktøy, men noen ganger kan ingenting slå enkelheten og direktheten til utskrift for feilsøking. I Gleam kan ```io.debug``` brukes til å skrive ut hvilken som helst type som kan gjengis som en streng, og på noe miljø som implementerer Gleam's IO-modul.
 
-Se også:
+## Se Også
 
-- [Gleam dokumentasjon](https://gleam.run/book/tutorials/logging.html)
-- [En oversikt over feilsøkingsmetoder i programmering](https://www.freecodecamp.org/news/7-debugging-techniques-any-developer-should-know/)
-- [Diskusjon om fordelene og ulempene ved å skrive ut feilsøkingsutdata](https://stackoverflow.com/questions/885908/good-way-to-log-code)
+For en mer detaljert forklaring på ```io.debug``` og dens bruk, sjekk ut [Gleam IO Module Documentation](https://hexdocs.pm/gleam_erlang/gleam/io.html). For mer om feilsøking i Gleam, ta en titt på [Gleam School](https://gleam.run/tutorials/).

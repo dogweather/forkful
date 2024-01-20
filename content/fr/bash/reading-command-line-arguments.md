@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Bash: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Lire des arguments de ligne de commande, c'est simplement prendre des valeurs spécifiées par l'utilisateur lors de l'exécution d'un programme en utilisant un terminal. Les programmeurs le font pour rendre leurs programmes plus flexibles et personnalisables pour les utilisateurs.
+Lire les arguments de la ligne de commande, c'est récupérer les données passées à votre script Bash lors de son exécution. Les programmateurs le font pour rendre leurs scripts plus flexibles et réutilisables.
 
-## Comment faire:
+## Comment Faire : 
 
-Voici un exemple de code Bash pour lire un argument de ligne de commande en utilisant la variable $1 (la première valeur passée après le nom du script):
+Voici comment lire les arguments de la ligne de commande en Bash :
 
 ```Bash
-#!/bin/bash
-echo "Voici votre argument: $1"
+#!/bin/bash 
+   
+echo "Le premier argument est : $1"
+echo "Le deuxième argument est : $2"
+echo "Le troisième argument est : $3"
+```
+Exemple de sortie si vous exécutez le script avec `./myscript.sh arg1 arg2 arg3`
+```
+Le premier argument est : arg1
+Le deuxième argument est : arg2
+Le troisième argument est : arg3
 ```
 
-Si l'utilisateur exécute ce script avec l'argument "Bonjour", la sortie sera "Voici votre argument: Bonjour".
+## Plongée en Profondeur :
 
-## Plongée en profondeur:
+(1) Contexte historique : Bash, introduit dans les années 80, prend en charge le passage d'arguments sur la ligne de commande depuis ses débuts.
 
-La lecture des arguments de ligne de commande a été introduite dans les années 1970 avec l'émergence du système Unix. Alternativement, les programmeurs peuvent également utiliser des options de ligne de commande ou des fichiers de configuration pour permettre aux utilisateurs de personnaliser leurs programmes.
+(2) Alternatives: D'autres langages de script comme Python et Ruby ont leurs propres méthodes pour lire les arguments de la ligne de commande.
 
-Pour implémenter la lecture des arguments de ligne de commande, les programmeurs utilisent souvent une boucle for pour parcourir toutes les valeurs passées et les stockent dans des variables. Les erreurs de syntaxe ou les valeurs manquantes peuvent être gérées avec des instructions conditionnelles.
+(3) Détails de mise en œuvre : En Bash, les variables spéciales (`$1`, `$2`, `$3`, etc.) sont utilisées pour lire les arguments. `$0` représente le nom du script lui-même. Vous pouvez aussi utiliser `$#` pour obtenir le nombre d'arguments.
 
-## Voir aussi:
+## Voir Aussi :
 
-- [Tutoriel sur la lecture des arguments de ligne de commande en Bash](https://linuxize.com/post/bash-command-line-arguments/)
-- [Livres Linux pour les débutants](https://fr.linux.com/tutorials/bash-a-buyers-guide-for-the-uninitiated/)
-- [Documentation officielle sur les arguments de ligne de commande en Bash](https://www.gnu.org/software/bash/manual/html_node/Command_002dLine-Processing.html#Command_002dLine-Processing)
+- [Guide Bash Avancé](http://tldp.org/LDP/abs/html/)
+- [Guide Bash pour les Débutants](https://ryanstutorials.net/bash-scripting-tutorial/)
+- [Argument Parsing en Bash](https://sookocheff.com/post/bash/parsing-bash-script-arguments-with-shopts/)

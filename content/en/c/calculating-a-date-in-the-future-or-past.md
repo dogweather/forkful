@@ -10,43 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# The Programming Path: Calculating Dates in C
+
 ## What & Why?
-Calculating a date in the future or past refers to performing mathematical operations on a given date to obtain a new date that is either in the future or the past. Programmers often do this to perform date-related calculations in their code, such as generating expiration dates, scheduling tasks, or calculating timelines.
+Calculating a future or past date is simply determining what the date will be or was after or before a specific period. Coders frequently use this operation in programs that manage tasks, events, or any time-based activities.
 
 ## How to:
-To calculate a future or past date in C, we can use the `time.h` library. This library provides functions for working with dates and times in C. Here's an example code to calculate a date 10 days from today:
+There are various ways to calculate dates in C, but we'll use `mktime()` and `localtime()` functions from `time.h` in our code example. Note: Adjustments for daylight saving time are made automatically.
 
 ```C
-#include <stdio.h>
-#include <time.h>
+#include<stdio.h>
+#include<time.h>
 
 int main() {
-  // obtain the current date
-  time_t currentTime;
-  time(&currentTime);
+    time_t raw;
+    struct tm * timeinfo;
 
-  // set the desired offset, here we choose 10 days
-  int daysOffset = 10;
+    time (&raw);                      // get current time
+    timeinfo = localtime (&raw);
+    printf ("Today's date: %s", asctime(timeinfo));
 
-  // calculate the future date
-  time_t futureTime = currentTime + (daysOffset * 24 * 60 * 60);
+    timeinfo->tm_mday += 5;           // add 5 days to the date
+    mktime (timeinfo);
+    printf ("Future date: %s", asctime(timeinfo));
 
-  // print the date in a readable format
-  printf("The date 10 days from today is: %s", ctime(&futureTime));
+    return 0;
 }
 ```
+This code prints the current date and the date 5 days from now. Enjoy playing with it!
 
-Output:
-```
-The date 10 days from today is: Mon Aug 09 00:00:00 2021
-```
-Similarly, we can calculate a date in the past by using a negative offset.
+## Deep Dive
+Historically, date calculations in C were not always straightforward. Early coders had to manually consider aspects like leap years or variable month lengths. Over time, functions in libraries such as `time.h` have simplified this task significantly.
 
-## Deep Dive:
-Historically, calculating dates has been a complex task due to differences in calendars and timekeeping systems. However, the ISO 8601 standard, which specifies the internationally accepted date and time format, has made it easier to perform date calculations across different systems. Other alternatives for calculating dates in C include using the `chrono` library from C++ and using external libraries such as `libdate` or `libtspd`.
+Alternatives to using `mktime()` and `localtime()` include `difftime()` and `strftime()`. You could also use libraries like Boost or date.h if you’re comfortable adding dependencies to your project.
 
-When calculating dates in C, it's important to take into account leap years and timezones, especially if the calculation is for a specific location or event. This can be achieved by considering the daylight saving time changes and using built-in functions such as `mktime` and `localtime` to handle different timezones accurately.
+Implementation details worth noting: The `mktime()` function normalizes all the fields of the `tm` structure. This means if you add 40 to the days field, `mktime()` will account for this overflow and update the month and year fields accordingly. Remember, `mktime()` considers Daylight Saving Time. If you find any inconsistencies in your calculation, time zones and DST could be the culprits. 
 
-## See Also:
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [C time.h library documentation](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+## See Also
+- [C Library - <time.h>](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Boost Date-Time Library](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+- [date.h](https://github.com/HowardHinnant/date)

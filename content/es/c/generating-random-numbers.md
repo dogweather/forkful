@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "C: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "C"
 category:             "C"
@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Generar números aleatorios es una técnica común en la programación en la que se crean valores aleatorios para utilizar en un programa. Los programadores lo utilizan para crear resultados impredecibles o para seleccionar una opción al azar dentro de un conjunto.
+## ¿Qué y Por Qué?
+
+La generación de números aleatorios es un proceso por el cual se generan números sin ningún orden o patrón reconocible. Los programadores lo utilizan para muchas aplicaciones, desde juegos y simulaciones hasta sistemas de seguridad y pruebas de software.
 
 ## Cómo hacerlo:
+
+Aquí te muestro cómo puedes generar números aleatorios en C:
+
 ```C
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 int main() {
-    // Para generar un número aleatorio entre 1 y 10:
-    // 1. Inicializar la semilla utilizando la hora actual
-    // 2. Llamar a la función rand() y generar un número entre 0 y RAND_MAX
-    // 3. Dividir el número generado por RAND_MAX y multiplicar por 10
-    // 4. Redondear el resultado utilizando la función round()
-    // 5. Imprimir el resultado
-    srand(time(NULL));
-    int numero = round(rand() * 10.0 / RAND_MAX);
-    printf("Número aleatorio: %d\n", numero);
-    return 0;
+   srand(time(0)); // inicializar el generador de números aleatorios
+   int random_number = rand(); // generar un número aleatorio
+   printf("Número Aleatorio: %d\n", random_number);
+   return 0;
 }
 ```
 
-Output:
+Ejemplo de salida:
+
 ```
-Número aleatorio: 4
+Número Aleatorio: 1804289383
 ```
+## Análisis detallado:
 
-## Profundizando:
-La generación de números aleatorios ha sido un desafío en la programación desde sus inicios. Antes de la invención de los ordenadores electrónicos, se utilizaban métodos como tirar dados o barajar cartas para obtener resultados aleatorios. Sin embargo, con la llegada de los ordenadores, se desarrollaron algoritmos y funciones matemáticas para generar números aleatorios de manera eficiente.
+Históricamente, la generación de números aleatorios en computadoras comenzó con algoritmos pseudorandom, que son predecibles y no verdaderamente aleatorios. Un ejemplo clásico de estos algoritmos es la función rand() en C.
 
-Algunas alternativas a la función `rand()` incluyen el uso de generadores de números pseudoaleatorios (PRNG), que aunque no generan números verdaderamente aleatorios, pueden ser útiles en ciertos casos.
+En el contexto de alternativas, puedes utilizar diferentes semillas para obtener diferentes secuencias de números aleatorios. Utilizar el tiempo actual, `time(0)`, es una técnica común para proporcionar una semilla diferente en cada ejecución del programa.
 
-La implementación del método `rand()` en C utiliza un generador congruencial lineal, que utiliza una fórmula matemática para producir una secuencia de números aparentemente aleatorios. Esta secuencia se puede repetir utilizando la misma semilla, lo que significa que el resultado no es verdaderamente aleatorio.
+En lo que respecta a los detalles de implementación, la función “srand()” se usa para inicializar el generador de números aleatorios en C. Una vez inicializado, puedes usar “rand()” para generar los números. Un detalle importante a recordar es que “rand()” genera la misma secuencia de números cada vez que se ejecuta el programa, a menos que se cambie la semilla con “srand()”.
 
-## Ver también:
-- [Tutorial sobre generación de números aleatorios en C](https://www.geeksforgeeks.org/rand-and-srand-in-ccpp/)
-- [Más información sobre generadores de números pseudoaleatorios en C](https://www.geeksforgeeks.org/generating-random-number-range-c/)
-- [Explicación detallada sobre el funcionamiento de la función `rand()`](https://www.cs.hmc.edu/~geoff/classes/hmc.cs070.200101/homework10/rand_jenkins.pdf)
+## Ver Además:
+
+Para más detalles, explora estos enlaces:
+
+- [Function rand() in C](https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm)
+- [Function srand() in C](https://www.tutorialspoint.com/c_standard_library/c_function_srand.htm)
+- [Random number generation](https://en.wikipedia.org/wiki/Random_number_generation)

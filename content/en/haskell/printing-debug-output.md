@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Haskell recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,43 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Printing debug output is the process of displaying information about the state of a program during its execution. This is often used by programmers to track down bugs and optimize their code. Printing debug output can provide valuable insights into the program's behavior and help in identifying and resolving issues.
+Printing debug output is the process of outputting code information for debugging purposes. Programmers do it to find and fix issues in their code by closely examining the step-by-step execution.
 
 ## How to:
+In Haskell, you can use the `Debug.Trace` module to print debug output.
 
-To print debug output in Haskell, we can use the `trace` function from the `Debug.Trace` module. This function takes in a string as its first argument, which will be displayed as the debug output. We can then use this function anywhere in our code to print out useful information.
-
-```Haskell
-import Debug.Trace
-
--- simple example
-let x = 5
-trace "x is now: " x
-
--- output: x is now: 5
-```
-
-We can also use the `traceShow` function to print out the value of a variable along with a custom message.
+Here's the way to go:
 
 ```Haskell
 import Debug.Trace
 
--- using traceShow
-let x = 5
-traceShow "x is now: " x
-
--- output: x is now: 5
+exampleFunction :: Int -> Int
+exampleFunction x = trace ("Debug: x = " ++ show x) (x * x) 
 ```
 
-## Deep Dive:
+In the example, when you call `exampleFunction 3`, it prints "Debug: x = 3" and returns 9. `trace` is useful when you want to inspect values in pure functions for debugging.
 
-Historically, printing debug output has been a popular method for debugging and troubleshooting code. However, with advances in debugging tools and IDEs, it's becoming less common. Some alternative methods for debugging in Haskell include using the `Debug.Trace` module with GHCi or using a debugger such as GHCi's `-fbreak-on-error` option.
+## Deep Dive
+1. **Historical context**: In the initial phase of Haskell, debugging was quite a challenge due to its inherent purity. Later, with the `Debug.Trace` module, things improved. However, remember that debug tracing is not a "pure" function and impacts referential transparency, so use it judiciously.
+2. **Alternatives**: For serious debugging, consider using a proper Haskell debugging tool like GHCi debugger, Hoed, or Haskell Debug Adapter.
+3. **Implementation details**: The `trace` function relies on `unsafePerformIO` under the hood to print debug output to stderr. It's typically used temporarily during debugging and removed when the bug is resolved.
 
-The `trace` function works by adding the debug output to the program's standard output. This means that it will also be included in the program's final output, which may not be desirable. To avoid this, we can use the `traceM` function, which discards the output and only prints it to the console. Another issue with using `trace` for debugging is its significant performance overhead, so it's recommended to remove the `trace` calls in a production-ready code.
-
-## See Also:
-
-- [Debugging in Haskell](https://wiki.haskell.org/Debugging)
-- [GHCi Debugging Options Documentation](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Proper Debugging in Haskell](https://blog.jez.io/debugging-in-haskell/)
+## See Also
+1. [Haskell's Debug.Trace Documentation](http://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
+2. [Hoed, A Haskell Debugging Tool](https://wiki.haskell.org/Hoed)
+3. [Haskell Debug Adapter](https://github.com/phoityne/haskell-debug-adapter)

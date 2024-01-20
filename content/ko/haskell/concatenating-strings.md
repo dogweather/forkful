@@ -1,7 +1,7 @@
 ---
-title:                "스트링 연결하기"
-html_title:           "Haskell: 스트링 연결하기"
-simple_title:         "스트링 연결하기"
+title:                "문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
+simple_title:         "문자열 연결하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## 무엇이고, 왜 사용하나요?
 
-문자열을 연결하는 것은 간단하게 말하면 두 개 이상의 문자열을 하나로 합치는 것이다. 프로그래머는 이러한 작업을 할 수 있는 이유는 하나의 문자열이 아니라 여러 개의 문자열을 조합해서 다양한 결과를 얻기 위해서다.
+문자열 연결은 여러 개의 문자열을 하나로 결합하는 것을 의미합니다. 이는 데이터를 적절하게 형식화하거나 결과를 출력하기 위해 프로그래머들이 많이 사용합니다.
 
-## 어떻게:
+## 어떻게 하나요:
 
-Haskell에서 문자열을 연결하기 위해선 "++" 연산자를 사용한다. 아래 예시처럼 이 연산자를 사용하면 여러 문자열을 하나로 이어 붙일 수 있다.
+Haskell에서 문자열 연결을 하는 방법에는 주로 두 가지가 있습니다. 
 
 ```Haskell
--- 두 개의 문자열을 연결하는 예제
-"Hello" ++ "World"
+-- (++) 연산자를 이용한 방법
+main = putStrLn ("Hello " ++ "World!")
+-- 출력: Hello World!
+```
+또는 `concat` 함수를 사용하여 더 복잡한 문자열 연결을 할 수 있습니다.
 
--- 두 개 이상의 문자열을 연결하는 예제
-"Hello" ++ " " ++ "World"
+```Haskell
+main = putStrLn (concat ["Hello ", "World!"])
+-- 출력: Hello World!
 ```
 
-다음과 같은 결과가 나온다.
+## 심층 탐구:
 
+Haskell의 문자열 연결 방식은 다른 언어들의 방식과 다소 차이가 있습니다. 이는 이전 함수형 언어와 그 배경에 따른 것입니다. 대안으로는 `intercalate` 함수를 사용하여 리스트에 있는 문자열 사이에 다른 문자열을 삽입하여 연결할 수 있습니다.
+
+```Haskell
+import Data.List
+main = putStrLn (intercalate " " ["Hello", "World!"])
+-- 출력: Hello World!
 ```
-HelloWorld
-Hello World
-```
+    
+문자열 연결 구현의 세부 사항에 대해서는 리스트 연산이 어떻게 작동하는지를 이해하면 됩니다. Haskell에서 문자열은 문자의 리스트입니다. 따라서 문자열 연결은 리스트 연결이며, 이는 복잡성이 `O(n)` 입니다.
 
-## 깊게 살펴보기:
+## 참고 자료:
 
-Haskell에서 문자열 연결 방식은 다른 프로그래밍 언어에서도 일반적으로 사용되는 방식과 유사하다. 하지만 Haskell의 경우 문자열이 실제로는 문자의 리스트로 동작하기 때문에 문자열 연결은 리스트의 append 작업과 동일하다. 
-
-또한 "++" 연산자 대신에 "concat" 함수를 사용하여 문자열을 연결할 수도 있다. 이 함수의 이점은 다양한 문자열을 합치는 작업을 한 번에 처리할 수 있다는 것이다.
-
-마지막으로, Haskell에서는 문자열을 불변 데이터로 취급하기 때문에 문자열을 연결하면 새로운 문자열이 생성되는 것이 아니라 기존의 문자열이 변경되는 것이 아니다. 
-
-## 관련 자료:
-
-- [Haskell Strings](https://wiki.haskell.org/Strings_as_lists)
-- [Concatenation in Programming](https://www.thoughtco.com/concatenation-programming-3736554)
-- [Haskell List Operations](https://www.dummies.com/programming/big-data/data-science/handling-lists-haskell/)
+다음은 문자열 연결에 대한 더 많은 정보와 관련 학습 자료에 대한 링크들입니다:
+1. haskell.org에 있는 문자열 연결에 관한 설명: https://wiki.haskell.org/Concatenate_two_lists
+2. Stack Overflow에서의 관련 질문: https://stackoverflow.com/questions/9156393/concatenation-in-haskell
+3. "Learn You a Haskell for Great Good"의 문자열 섹션: http://learnyouahaskell.com/starting-out#an-intro-to-lists

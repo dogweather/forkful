@@ -1,7 +1,7 @@
 ---
-title:                "文字列のキャピタライズ"
-html_title:           "Ruby: 文字列のキャピタライズ"
-simple_title:         "文字列のキャピタライズ"
+title:                "文字列を大文字にする"
+html_title:           "Ruby: 文字列を大文字にする"
+simple_title:         "文字列を大文字にする"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,21 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何でしょう & なぜ: StringをCapital化することとプログラマーがそれをする理由を説明します。
-文字列のCapital化とは、最初の文字を大文字に変換することです。これにより、より読みやすいコードを作成することができます。プログラマーは、コードを読みやすくするためにしばしばStringをCapital化します。
+## 何となぜ？
 
-## 方法: ```Ruby```コードブロック内のコーディング例とサンプル出力を参照してください。
-```ruby
-name = "john"
-puts name.capitalize # "John"
-age = 25
-puts age.to_s.capitalize # "25"
+文字列のキャピタライズは、文字列の最初の文字を大文字にすることを指します。プログラマーがこれを行う理由は、適切な読みやすさと一貫性を提供するためです。
+
+## 方法：
+
+Ruby言語では、文字列のキャピタライズは非常に簡単になります。 `capitaliza`メソッドを使用して実行できます。
+
+```Ruby
+str = "hello world"
+cap_str = str.capitalize
+puts cap_str
+```
+これを実行すると、以下の出力が得られます。
+
+```Ruby
+"Hello world"
 ```
 
-## 詳しく: (1)歴史的背景、(2)代替方法、および(3)StringをCapital化する実装の詳細について説明します。
-文字列のCapital化は、英語の文章で最初の文字を大文字にすることから始まりました。これは、名詞や文の先頭を大文字にする英語の文法規則に基づいています。代替方法としては、Stringを全て大文字もしくは小文字に変換するメソッドもあります。StringをCapital化する実装には、最初の文字を抽出し、それを大文字に変換するアルゴリズムが使われています。
+## 深掘り：
 
-## 関連情報を参照: 関連する情報源へのリンク。
-- [Rubyドキュメント - class String](https://docs.ruby-lang.org/ja/latest/class/String.html)
-- [Stringを大文字に変換する方法](https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize)
-- [Stringを小文字に変換する方法](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
+文字列のキャピタライズは、プログラミングの初期から存在します。これはある種の標準化を可能にし、読解性を高めるのに役立ちます。
+
+代替策としては、 `upcase` メソッドを使用して文字列全体を大文字にするか、または `downcase` メソッドを用いて文字列全体を小文字にすることもできます。ただし、キャピタライズは特定のケース、特にタイトルや文章の始めなどで最も一般的です。
+
+具体的な実装としては、Rubyは実際に `capitalize`メソッドを呼び出すことにより、文字列の最初の文字を大文字にし、残りの文字を小文字に変換します。
+
+## 参考に：
+
+1. [Ruby API 文書](https://docs.ruby-lang.org/ja/latest/method/String/i/capitalize.html)
+2. [文字列をキャピタライズする方法](https://www.rubyguides.com/2018/01/ruby-string-methods/#capitalize)
+3. [Ruby String capitalize() メソッド](https://www.geekhideout.com/rubyhacker/ref/rubyref-String.html)

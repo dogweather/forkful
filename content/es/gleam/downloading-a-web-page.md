@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Gleam: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué es y por qué se hace?
+## ¿Qué & Por qué?
 
-Descargar una página web es obtener el código HTML de una página en internet. Los programadores realizan esto para acceder a la información de la página y utilizarla en sus propios programas.
+Descargar una página web es obtener su código fuente para manipularla o analizarla. Los programadores lo hacen para recopilar datos, automatizar pruebas y tareas, o para crear versiones sin conexión de las páginas.
 
-# Cómo hacerlo:
+## Cómo hacerlo:
 
-```Gleam 
-fn main() {
-  let response = download("https://google.com");
-  let text = response.text();
-  println(text);
+Aquí se muestra un ejemplo sencillo en Gleam de cómo descargar una página web.
+
+``` Gleam
+import gleam/httpc
+
+fn download_page(url: String) {
+  let Ok(body) = httpc.get(url)
+  Console.display(body)
 }
+
+download_page("https://example.com")
 ```
 
-Este código descargará la página de Google y mostrará su contenido en la consola. Para personalizar lo que se descarga, se pueden utilizar diferentes funciones como ```headers``` para especificar encabezados o ```params``` para agregar parámetros a la URL.
+Al ejecutar este código, verás que la respuesta completa del servidor se imprime en tu consola.
 
-# Profundizando:
+## Inmersión profunda:
 
-Descargar páginas web es una práctica común para obtener datos de internet. Alternativas a Gleam para lograr esto incluyen librerías como ```reqwest``` o ```curl```. Gleam también ofrece la posibilidad de manejar respuestas en formatos como JSON para facilitar el procesamiento de datos.
+Históricamente, las bibliotecas de hardware gestionaban la descarga de páginas web. Pero, con el tiempo, los lenguajes de programación como Gleam introdujeron módulos internos para manejar estas tareas. 
 
-# Ver también:
+Existen otras formas de descargar páginas web, como el raspado web o los sockets de red, pero usar una biblioteca http es una opción mucho más simple y directa para la mayoría de los casos. 
 
-Para más información sobre cómo descargar páginas web con Gleam, puedes consultar la documentación oficial: https://gleam.run/documentation/working-with-http/ También puedes revisar diferentes ejemplos de código en el directorio de ejemplos de Gleam: https://github.com/gleam-lang/gleam/tree/master/examples
+El método `httpc.get` en Gleam realiza una petición GET al URL proporcionado y devuelve la respuesta del servidor. Lo que realmente sucede detrás de escena implica abrir una conexión al servidor, enviar la petición, recibir la respuesta y finalmente cerrar la conexión.
+
+## Ver también:
+
+Para saber más acerca de estas temáticas, puedes consultar los siguientes enlaces:
+
+- Documentación oficial de Gleam: [Gleam HTTP API](https://hexdocs.pm/gleam_httpc/gleam/httpc.html)
+- Documentación de Mozilla sobre HTTP: [An overview of HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+- Un tutorial para principiantes sobre HTTP con Gleam: [A Simple Guide to HTTP with Gleam](https://example.com/tutorial-http-gleam)

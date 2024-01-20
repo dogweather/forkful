@@ -1,7 +1,7 @@
 ---
-title:                "Pobieranie bieżącej daty"
-html_title:           "Swift: Pobieranie bieżącej daty"
-simple_title:         "Pobieranie bieżącej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,18 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Pobranie aktualnej daty to proces, w którym programista uzyskuje bieżącą datę z systemu operacyjnego lub urządzenia. Jest to przydatne w celu pokazywania aktualnej daty i godziny użytkownikom lub do celów związanych z zapisywaniem i analizowaniem czasu w aplikacji.
+## Co i Dlaczego?
+
+Pobieranie aktualnej daty w programowaniu to proces wyznaczania bieżącej daty i godziny. Programiści często korzystają z tej funkcji do znacznikowania danych, monitorowania pamięci podręcznej lub ustalania interwałów czasowych.
 
 ## Jak to zrobić:
+
+Rozważmy proces za pomocą kodu Swift. Dla uzyskania aktualnej daty, używamy klasa `Date()`.
+
 ```Swift
-let currentDate = Date()
-print("Aktualna data to: \(currentDate)")
+let AktualnaData = Date()
+print(AktualnaData)
 ```
 
-## Głębszy Zanurzenie:
-Pobieranie aktualnej daty było jednym z pierwszych problemów, z którym musieli zmierzyć się programiści. W przeszłości wymagało to ręcznego wprowadzania daty, co mogło prowadzić do błędów. Alternatywnym rozwiązaniem jest używanie specjalnych bibliotek lub frameworków do pobierania daty, na przykład `NSCalendar` czy `Calendar` w Swift. W przypadku aplikacji mobilnych, aktualna data może również być pobierana z usługi sieciowej.
+W przypadku uruchomienia tego kodu uzyskalibyśmy wydruk bieżącej daty i czasu, np.:
 
-## Zobacz również:
-- [Dokumentacja NSDate](https://developer.apple.com/documentation/foundation/nsdate)
-- [Przewodnik po użytkowaniu daty i czasu w Swift](https://www.hackingwithswift.com/quick-start/swiftui/how-to-work-with-dates-and-times-in-swiftui)
+```Swift
+2022-10-01 17:50:53 +0000
+```
+
+## Pogłębiona analiza
+
+Pobieranie aktualnej daty to stara praktyka w programowaniu, stosowana na przykład w systemach operacyjnych UNIX już w latach 70. XX wieku. W Swift istnieją również alternatywne metody pobierania daty, takie jak korzystanie z `DateComponents()` lub `NSDate()`.
+
+Szczegóły implementacji `Date()` polegają na wykorzystaniu czasu UTC. Oznacza to, że data i godzina są zawsze przedstawiane w odniesieniu do czasu uniwersalnego, a nie lokalnego czasu użytkownika. Aby przeliczyć na czas lokalny, potrzebny jest obiekt `TimeZone`.
+
+## Zobacz też 
+
+1. Dokumentacja Swift `Date`: https://developer.apple.com/documentation/foundation/date
+2. Dokumentacja Swift `DateComponents`: https://developer.apple.com/documentation/foundation/datecomponents
+3. Przewodnik po czasie i dacie w Swift: https://www.hackingwithswift.com/articles/141/8-practical-time-and-date-handling-with-swift

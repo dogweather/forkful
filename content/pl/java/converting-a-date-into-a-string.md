@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja daty na ciąg znaków"
-html_title:           "Java: Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
 simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Java"
 category:             "Java"
@@ -12,56 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Konwertowanie daty na ciąg znaków jest powszechną operacją w programowaniu. Pozwala ona na zmianę wartości daty na czytelną dla człowieka postać, która może być wykorzystana na przykład w interfejsie użytkownika. Programiści często wykonują tę czynność w celu wizualnego przekazywania informacji o dacie.
+Przekształcanie daty na łańcuch znaków to proces zmiany typu danych reprezentujących datę na ciąg znaków, który może być łatwiej manipulowany lub wyświetlany. Programiści robią to, aby ułatwić wyświetlanie dat lub zapisywanie ich w plikach i bazach danych.
 
 ## Jak to zrobić:
 
+Zobaczmy jak możemy przekształcić datę na łańcuch znaków w Javie:
 ```Java
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.text.SimpleDateFormat; 
+import java.util.Date;  
 
-public class DateFormatter {
-
-	public static void main(String[] args) {
-		
-		// Utworzenie obiektu typu Date z aktualną datą
-		Date date = new Date();
-		
-		// Utworzenie obiektu SimpleDateFormat z wybranym formatem
-		SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
-		
-		// Wyświetlenie daty w postaci ciągu znaków
-		System.out.println(formatter.format(date));
-		
-		// Możliwe formaty:
-		// "dd.MM.yyyy" - 01.01.2019
-		// "dd.MM.yyyy HH:mm:ss" - 01.01.2019 14:30:00
-		// "dd.MM.yyyy, EEEE" - 01.01.2019, wtorek
-	}
-
+public class Main 
+{ 
+    public static void main(String[] args) 
+    { 
+        Date date = new Date(); 
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss"); 
+        String strDate = formatter.format(date); 
+        System.out.println("Data w formie łańcucha znaków: " + strDate); 
+    } 
 }
 ```
-
-Oto wynik działania powyższego kodu:
-
+Wyjście:
 ```
-24.02.2021
+Data w formie łańcucha znaków: 10-05-2022 14:55:30
 ```
+Klasa `SimpleDateFormat` pozwala nam sformatować datę według określonego wzorca.
 
-## Wnikliwa analiza:
+## Głębsza wiedza:
 
-**Kontekst historyczny:**
+Historia: Przed wprowadzeniem klas Java 8 do obsługi dat i czasu, najczęściej używaną klasą do manipulacji datą była klasa `java.util.Date`.
 
-Konwertowanie dat na ciągi znaków jest wykorzystywane od lat w różnych językach programowania. W Java pojawiło się to już w pierwszej wersji - Java 1.0. Nitka formatowania została wprowadzona w celu ułatwienia tworzenia czytelnego kodu.
+Alternatywy: Od Java 8, obiekty daty można konwertować do łańcuchów znaków za pomocą klas `java.time.LocalDateTime` i `java.time.format.DateTimeFormatter`. 
 
-**Alternatywy:**
-
-Alternatywnymi sposobami na konwertowanie daty na ciąg znaków są m.in. biblioteki do obsługi dat, takie jak Joda-Time lub Java 8 Date and Time API.
-
-**Szczegóły implementacji:**
-
-W Java do konwertowania daty na ciąg znaków wykorzystywany jest obiekt SimpleDateFormat. Służy on do formatowania i analizy dat w danym formacie. Wymaga podania odpowiedniej maski, która określa sposób prezentacji daty.
+Szczegóły implementacji: Java korzysta z domyślnej strefy czasowej i lokalizacji (języka, kraju i wariantu), które mogą wpływać na formatowanie daty. Można to dostosować za pomocą SimpleDateFormat.
 
 ## Zobacz także:
 
-Dokumentacja klasy ```SimpleDateFormat```: https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+[Java SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)
+[Dokumentacja klas Java 8 LocalDateTime i DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+[Praca z datami w Javie](https://www.baeldung.com/java-8-date-time-intro)

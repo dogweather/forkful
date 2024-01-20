@@ -1,7 +1,7 @@
 ---
-title:                "Extrahering av substrängar"
-html_title:           "C: Extrahering av substrängar"
-simple_title:         "Extrahering av substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Detta handlar om att extrahera delsträngar i en C-programmering. Det är en vanlig teknik som används för att åtkomst till och manipulera delar av en större sträng. Programmerare använder det för att enkelt hämta information från en sträng utan att behöva bläddra igenom hela strängen.
+# Artikel: Extrahera Understrängar i C Programmering
+
+## Vad & varför?
+Extraktion av understängar i C innebär att skapa nya strängar genom att ta ut en del från ursprungliga strängar. Detta används för att enkelt och effektivt manipulera och analysera data.
 
 ## Hur man gör:
-Här är ett enkelt exempel på hur man extraherar en delsträng från en större sträng i C:
+Här är hur man kodar för att extrahera understängar i C:
 
-```c
-// Skapa en sträng
-char str[] = "Välkommen till C-programmering";
+```C
+#include <stdio.h>
+#include <string.h>
 
-// Extrahera en delsträng från index 10 till index 19
-char substr[10];
-int start = 10;
-int end = 19;
+int main() {
+    char str[20] = "Hej Sverige";
+    char substr[10];
 
-// Kopiera delsträngen till substr
-strncpy(substr, str + start, end-start);
-substr[end-start] = '\0';
+    strncpy(substr, str, 5);
+    substr[5] = '\0';
 
-// Skriv ut delsträngen
-printf("Delsträngen är: %s", substr);
+    printf("%s\n", substr);
+
+    return 0;
+}
 ```
 
-Detta skulle producera följande utmatning:
+Utskriften av koden ovan skulle vara:
 
-`Delsträngen är: C-programmer`
+```
+Hej S
+```
 
-Notera att vi använder funktionen `strncpy()` för att kopiera delsträngen och lägger till en nollbyte för att markera slutet på delsträngen.
+## Djupdykning
+Historisk sett har extraktion av understängar i C hjälpt till att förfina och förbättra datainsamling och analys. Det finns flera sätt att göra detta på: vissa använder `strncpy`, andra kanske använder pekare.
 
-## Djupdykning:
-Extrahera delsträngar är inte ett nytt koncept och har funnits i många år. I C-programmering finns också andra sätt att utföra samma uppgift, såsom att använda `memcpy()` eller löpande `for` -loopar för att kopiera tecken efter tecken. Beroende på applikationen kan en metod vara snabbare eller mer lättläst än den andra.
+När det gäller att extrahera understängar, är det viktigt att notera att C språket inte direkt stöder strängtypen. Istället, representeras strängar som en array av tecken, som slutar med en NULL-tecken (`\0`), vilket markerar slutet på strängen. 
 
-När det gäller implementationen av extrahering av delsträngar, måste programmören se till att de angivna indexen inte leder till några minnesfel, som att försöka extrahera en delsträng som är längre än den ursprungliga strängen. Det är alltid bra att använda inbyggda funktioner som `strlen()` för att säkerställa att de angivna indexen är inom strängens gränser.
+## Se även
+För mer information och relaterade ämnen, behandlade på djupet, besök följande länkar:
 
-## Se även:
-- [strncpy()](https://www.cplusplus.com/reference/cstring/strncpy/)
-- [memcpy()](https://www.cplusplus.com/reference/cstring/memcpy/)
-- [strlen()](https://www.cplusplus.com/reference/cstring/strlen/)
+1. [C programming Guide on Programiz](https://www.programiz.com/c-programming/c-strings)
+2. [C String handling functions on GeeksforGeeks](https://www.geeksforgeeks.org/string-handling-in-c-set-1/)
+3. [C Programming Strings on W3Schools](https://www.w3schools.com/C/c_strings.asp)

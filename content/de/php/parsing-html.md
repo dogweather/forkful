@@ -1,7 +1,7 @@
 ---
-title:                "HTML-Parsing"
-html_title:           "PHP: HTML-Parsing"
-simple_title:         "HTML-Parsing"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,38 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Parsen von HTML ist eine Technik, mit der Programmierer HTML-Code analysieren und extrahieren können. Dadurch können sie bestimmte Informationen aus einer Webseite isolieren und in ihren eigenen Programmen verwenden. Das Parsen von HTML wird häufig verwendet, um automatisierte Bots zu erstellen, die Daten von Websites sammeln oder um Inhalte auf Websites dynamisch zu aktualisieren.
 
-## Wie geht's?
-Eine einfache Möglichkeit, HTML mit PHP zu parsen, ist die Verwendung der `simple_html_dom`-Bibliothek. Diese Bibliothek bietet verschiedene Funktionen zum Durchsuchen und Extrahieren von HTML-Elementen. Zum Beispiel können Sie mit dem folgenden Code ein HTML-Dokument laden und alle Links auf der Seite auflisten:
+HTML-Parsing ist der Prozess, bei dem wir ein HTML-Dokument analysieren und strukturieren. Programmierer machen das, weil sie dadurch Daten extrahieren oder manipulieren können - oftmals automatisiert.
+
+## So geht's:
+Nun zeigen wir, wie das geht, indem wir die DOMDocument-Klasse in PHP nutzen:
 
 ```PHP
 <?php
-include 'simple_html_dom.php';
+// Erzeuge ein neues Dokument
+$doc = new DOMDocument();
 
-// HTML-Dokument laden
-$html = file_get_html('https://www.example.com');
+// Lade dein HTML
+$doc->loadHTML('
+<html>
+    <body>
+        <h1>Willkommen auf meiner Webseite!</h1>
+        <p>Hallo Welt</p>
+    </body>
+</html>
+');
 
-// Alle Links auswählen und ausgeben
-foreach($html->find('a') as $link) {
-  echo $link->href . '<br>';
-}
+// Finde den ersten Abschnitt (p)
+$p = $doc->getElementsByTagName('p')->item(0);
+
+// gibt den Inhalt des Abschnitts aus (Hallo Welt)
+echo $p->textContent;
 ?>
 ```
 
-Die Ausgabe könnte beispielsweise so aussehen:
-```
-https://www.example.com/link1
-https://www.example.com/link2
-https://www.example.com/link3
-```
+Das wird "Hallo Welt" ausgeben.
 
-## Tiefer eintauchen
-Der erste Parser für HTML wurde bereits im Jahr 1980 entwickelt und seitdem gibt es viele verschiedene Parsing-Methoden und Bibliotheken. Neben der Verwendung von PHP gibt es auch andere Möglichkeiten, um HTML zu parsen, wie z.B. mit regulären Ausdrücken oder mit JavaScript. Jede Methode hat ihre eigenen Vor- und Nachteile, aber PHP ist eine häufig verwendete und bewährte Option.
+## Deep Dive:
+HTML-Parsing hat eine lange Geschichte und geht auf die Anfänge des Webs zurück. Im Laufe der Zeit hat sich der Prozess stets weiterentwickelt und verbessert.
 
-Wenn Sie sich für die Verwendung von `simple_html_dom` entscheiden, gibt es viele weitere Funktionen, die Sie erkunden können. Zum Beispiel können Sie spezifische HTML-Tags oder -Attribute auswählen oder sogar auf CSS-Selektoren zugreifen.
+Es gibt auch Alternativen zum Standard-DOMDocument in PHP, z.B. SimpleHTMLDom oder PHPQuery. Diese Tools bieten oft mehr Funktionen, können aber langsamer sein oder zusätzliche Abhängigkeiten haben.
 
-## Siehe auch
-- Offizielle Dokumentation für `simple_html_dom`: https://simplehtmldom.sourceforge.io/
-- Einführung in das Parsen von HTML mit PHP: https://code.tutsplus.com/tutorials/html-parsing-and-screen-scraping-with-the-simple-html-dom-library--net-11856
-- Alternative Methode zum Parsen von HTML mit PHP: https://github.com/azettl/php-html-parser
+Beim Parsen eines HTML-Dokuments mit der DOMDocument-Klasse wird eine Baumstruktur erstellt. Jedes Element im HTML wird zu einem Knoten in diesem Baum.
+
+## Siehe auch:
+1. Offizielle [PHP-Dokumentation](https://www.php.net/manual/de/book.dom.php)
+2. [DOMDocument](https://www.php.net/manual/de/class.domdocument.php)
+3. [SimpleHTMLDom](http://simplehtmldom.sourceforge.net/)
+4. [PHPQuery](https://code.google.com/archive/p/phpquery/)

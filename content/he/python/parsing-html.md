@@ -1,7 +1,7 @@
 ---
-title:                "פיענוח HTML"
-html_title:           "Python: פיענוח HTML"
-simple_title:         "פיענוח HTML"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,45 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+פענוח HTML הוא התהליך שבו אנחנו משנים דף אינטרנט למבנה נתונים מאורגנים, כמו עץ DOM. תכנתים עושים את זה כדי לגשת למידע באופן אוטומטי, למניעה של שימוש ממשק משתמש או לניתוח נתונים.
 
-פרסום HTML הוא תהליך של קריאה וניתוח של קוד HTML על מנת לחלץ מידע מגובה איברים בעמוד האינטרנט. תהליך זה חשוב למתכנתים בכדי לאפשר עיבוד והצגת מידע בצורה חכמה.
-
-## איך לעשות:
-
-כדי לקרוא קוד HTML בעזרת פייתון, ניתן להשתמש בספריית html.parser שהיא חלק מהספרייה המובנית של פייתון. הקוד הבא מדגים איך להשתמש בספריית זו כדי לפרסם את תוכן אלמנט מסוים בעמוד אינטרנט:
+## איך ל:
+אחת הספריות הפופולריות ביותר עבור פענוח HTML ב-Python היא BeautifulSoup. הריצו קוד בסיסי כדי לראות את זה בפעולה:
 
 ```Python
-from html.parser import HTMLParser
-class MyHTMLParser(HTMLParser):
-    def handle_starttag(self, tag, attrs):
-        if tag == "p":
-            print("Found a paragraph!")
-    def handle_data(self, data):
-        print(data)
+from bs4 import BeautifulSoup
+import requests
 
-parser = MyHTMLParser()
-example_html = "<html><p>My first paragraph</p><p>My second paragraph</p></html>"
-parser.feed(example_html)
-```
-Output:
-```
-Found a paragraph!
-My first paragraph
-Found a paragraph!
-My second paragraph
+url = "https://www.example.com"
+page = requests.get(url)
+
+soup = BeautifulSoup(page.content, 'html.parser')
+links = soup.find_all('a')
+
+for link in links:
+    print(link.get('href'))
 ```
 
-## כיול עמוק:
+זה ידפיס את כל הקישורים בדף.
 
-פרסום HTML נוצר כדי לאפשר למתכנתים להוציא תוכן מהאינטרנט ולעבד אותו בצורה נוחה ויעילה. ישנן גם אפשרויות אחרות כמו ספריות חיצוניות שניתן להשתמש בהן לפרסום HTML, כגון BeautifulSoup. לפצת ספרייה מובנית בפייתון הוא הבחירה האופטימלית כדי למנוע התחברות נוספת.
-
-ספריית html.parser משתמשת בתיקן פייתון תוך כדי עיבוד קוד HTML, כאשר תיקן זה מאפשר לכל הסמלים להופיע באופן אדיקטבי ללא תשובה למשתנים המסורבים. פרסום HTML גם יכול לשמש ככלי אבא מחזק פייתון.
+## צלילה עמוקה
+- הקשר היסטורי: במקור, HTML נוצר כדי להגדיר מבנה דפי האינטרנט, אך הוא התפתח והתהווה לשפה מורכבת. אתה יכול לראות שינויים במהלך השנים בגרסאות של HTML.
+- החלופות: ספריות אחרות פופולריות שתכנתים משתמשים בהן כוללות lxml, pyquery ו־ html5lib. ההחלטה היא בעיקר בראש ובראש תלויה בצרכים ובמשאבים של פרויקטים מסוימים.
+- פרטי ביצוע: BeautifulSoup מתאים להמון מטלות פענוח HTML, אך הוא יכול להיות קצת איטי ביחס לספריות כמו lxml בגלל אופן התמחור השונה שלהם.
 
 ## ראה גם:
-
-למידע נוסף על פרסום HTML ואיך להשתמש בו בפייתון, ניתן למצוא מידע באתר הרשמי של פייתון ובמסמך המפורסם על ספריית html.parser.
-
-אתר הרשמי של פייתון: https://www.python.org/
-
-מסמך html.parser: https://docs.python.org/3/library/html.parser.html
+- [מדריך BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [הבדלים בין BeautifulSoup ו- lxml](https://www.azavea.com/blog/2014/03/11/intro-to-virtualenv-and-beautiful-soup/)
+- [מדריך לספריית pyquery](https://pythonhosted.org/pyquery/)
+- [מדריך ל- html5lib](https://html5lib.readthedocs.io/en/latest/)

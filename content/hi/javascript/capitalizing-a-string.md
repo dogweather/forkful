@@ -10,26 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-कोई भी स्ट्रिंग (तार) या शब्द जब हम कैपिटल लेटर्स (मामूली नकशे में लिखे लेटर्स) से बनाते हैं, तो हम उसे कैपिटलाइज़ (मोटे अक्षरों से लिखना) करते हैं। यह देखने में शायद असाधारण लगे, लेकिन प्रोग्रामर्स इसका इस्तेमाल उस शब्द की पहचान बढ़ाने के लिए करते हैं।
+## व्हाट एंड व्हाय? (What & Why?)
 
-## कैसे करें?
-```
-वादा = "मैं वादा रहूँगा";
-console.log(वादा.toUpperCase()); 
-// आउटपुट: वादा Rहूँगा।
+एक स्ट्रिंग को कैपिटलाइज़ करना, उसे शुरुआत में बड़े अक्षर(Session capital letter) में बदलने को कहते हैं। प्रोग्रामर इसे पाठ को अधिक पठनीय और सुंदर बनाने के लिए करते हैं।
+
+## हाउ टू (How to)
+
+यहां हम देखेंगे कि कैसे हम String पर `toUpperCase()` और `charAt()` जावास्क्रिप्ट के मेथड का उपयोग करके कैपिटलाइज कर सकते हैं। 
+
+```Javascript
+function capitalizeFirstChar(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+console.log(capitalizeFirstChar('hello world')); 
 ```
 
-```
-नाम = "रामचंद्र";
-console.log(नाम.charAt(0).toUpperCase() + नाम.slice(1)); 
-// आउटपुट: रामचंद्र।
-```
+ऊपर बताए गए कोड का आउटपुट - 'Hello world' होगा।
 
-## गहराई में जाएं
-कैपिटलाइज़ का इतिहास बहुत ही पुराना है। यह पहले से ही टाइपिकल लेटर्स (आम नकशे वाले अक्षर) चरण का हिस्सा रहा है। इसके अलावा, इसके अन्य कई विकल्प भी हैं, जैसे कि स्ट्रिंग को मामूली अच्छी तरह से कैपिटलाइज़ किया जा सकता है और उसे प्रिंट किया जा सकता है। यह कैसे करें और कोड पर पूरी तरह से निर्भर करता है।
+## डीप डाइव (Deep Dive)
 
-## इससे जुड़ी अन्य स्रोतों के लिंक
-- [W3Schools पर स्ट्रिंग कैपिटलाइज़ फ़ंक्शन का उपयोग कैसे करें](https://www.w3schools.com/jsref/jsref_touppercase.asp)
-- [MDN वेब डेवलपर नेटवर्क के माध्यम से Box के साथ मामूली स्ट्रिंग कैपिटलाइज़ करें](https://developer.mozilla.org/en-US/docs/Web/Javascript/Reference/Global_Objects/String/toUpperCase)
-- [जावास्क्रिप्ट प्रोग्रामिंग भाषा पर कैपिटलाइज़ फंक्शन के महत्व पर एक वीडियो](https://www.youtube.com/watch?v=IOZtNx74Mnw)
+- **ऐतिहासिक प्रसंग (Historical Context)**: जावास्क्रिप्ट में String.toUpperCase() और String.charAt() मेथड्स 1st वर्जन से ही मौजूद थे।
+
+- **विकल्प (Alternatives)**: आप या तो `String.prototype` का उपयोग करके अपना कस्टम मेथड बना सकते हैं, या किसी पुस्तकालय (जैसे lodash) का उपयोग कर सकते हैं। 
+
+- **आंतरिक विवरण (Implementation Details)**: `String.charAt()` मेथड स्ट्रिंग में निर्दिष्ट स्थान पर वर्ण वापस करता है। `String.toUpperCase()` मेथड एक नई स्ट्रिंग वापस करता है, जिसमें शेष स्ट्रिंग के सभी अक्षर कैपिटल लेटर्स में होते हैं।
+
+## सी अल्सो(See Also)
+
+अतिरिक्त जानकारी के लिए, निम्नलिखित लिंक पर जा सकते हैं:
+
+1. [MDN String.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+2. [MDN String.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+3. [ECMAScript Specification](https://tc39.es/ecma262/)

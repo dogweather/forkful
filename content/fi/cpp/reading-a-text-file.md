@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "C++: Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Lue tekstitiedosto (text file) on toiminto, jossa ohjelma lukee ja käsittelee tiedostossa olevaa tekstiä. Ohjelmoijat tekevät tätä, jotta he voivat käyttää ja manipuloida tiedostojen sisältöä koodissaan.
+# Tekstin lukemisen ohjelmointi C++:ssa
 
-## Kuinka:
-Esimerkkejä koodista ja tulosteista käytettäessä C++ -kielen ```...``` koodilohkoja.
+## Mikä & Miksi?
 
-```c++
-// Avataan tiedosto lukemista varten ja tallennetaan se muuttujaan "tiedosto"
-ifstream tiedosto("tekstitiedosto.txt");
+Tekstitiedoston lukeminen on prosessi, jossa ohjelma noutaa ja käsittelee tiedossa olevia tietoja. Ohjelmoijat tekevät sen tiedon käyttämiseksi, analysoimiseksi ja manipuloimiseksi.
 
-// Luetaan tiedostosta yhden rivin verran ja tallennetaan se teksti-muuttujaan
-string teksti;
-getline(tiedosto, teksti);
+## Näin se tehdään:
 
-// Tulostetaan luettu teksti näytölle
-cout << teksti << endl;
+```C++
+#include <fstream>
+#include <string>
+#include <iostream>
 
-// Suljetaan tiedosto
-tiedosto.close();
+int main() {
+    std::ifstream file("example.txt");
+    std::string line;
 
-// Tulos:
-// Tämä on esimerkkiteksti tiedostossa.
+    if (!file.is_open()) {
+        std::cout << "Tiedoston avaaminen epäonnistui." << std::endl;
+        return 1;
+    }
+
+    while (std::getline(file, line)) {
+        std::cout << line << std::endl;
+    }
+
+    file.close();
+
+    return 0;
+}
 ```
+Otoksen tuotoksessa lukee rivejä `example.txt` -nimisestä tiedostosta ja tulostaa ne konsoliin.
 
-## Syvällisempi sukellus:
-Tiedostojen lukemisella on pitkä historia tietokoneohjelmoinnissa ja se on edelleen tärkeä osa ohjelmistojen kehittämistä. On olemassa myös muita tapoja käsitellä tiedostojen sisältöä, kuten kirjoittaminen tai muokkaaminen. Tiedostojen luku toteutetaan usein käyttämällä syöte- ja tulostusoperaatioita tai tietokantaohjelmointia.
+## Sukellus syvemmälle
 
-## Katso myös:
-- [C++ getline() -funktio](https://www.cplusplus.com/reference/string/string/getline/)
-- [Tiedostojen lukeminen C++:lla](https://www.learncpp.com/cpp-tutorial/186-basic-file-io/)
+Tekstitiedostojen lukemisen historia kulkee käsi kädessä tietokoneiden kanssa. Varhaisin esimerkki tällaisesta on lochkortit - tyypillisesti pahvista valmistettu kortti, jossa on esipainetut tietueet tiedon tallentamiseksi.
+
+Vaihtoehtoja tiedostojen käsittelyyn C++:ssa ovat mm. `fread()` ja `fstream`. `fread()` on C-kielen funktio, normaalisti käytetty binääritiedostojen käsittelyyn. `fstream` on C++ kirjaston tiedostonkäsittelyluokka, jota käytettiin edellä olevassa esimerkissä.
+
+Tekstitiedoston lukemisessa tietojen siirtäminen levyltä muistiin (I/O-toiminnot) saattaa olla hitaampaa kuin levyn lukuoperaatiot. Tämä johtuu usein käyttöjärjestelmän suorittamista välivarastointitoiminnoista (caching/buffering), jotka yrittävät parantaa levyoperaatioiden suorituskykyä. Näinollen useita pieniä lukuoperaatioita on yleensä hitaampaa kuin yksi suuri operaatio.
+
+## Katso myös
+
+* [Cplusplus.com - std::ifstream](http://www.cplusplus.com/reference/fstream/ifstream/) : Perusteellinen tietopaketti C++:n `ifstream`-luokasta.
+* [Cppreference.com - Input/Output Library](https://en.cppreference.com/w/cpp/io) : Yksityiskohtainen C++:n I/O-kirjaston kuvaus.
+* [GeeksforGeeks - C++ File Handling](https://www.geeksforgeeks.org/c-plus-plus-file-handling/?ref=lbp) : Paljon esimerkkejä ja vinkkejä tekstitiedostojen käsittelystä C++:ssa.

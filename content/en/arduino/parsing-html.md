@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Arduino recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,23 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Parsing HTML is the process of analyzing and interpreting HTML code to identify its underlying structure and extract specific information from it. Programmers do this to automate tasks such as data extraction, web scraping, and web page manipulation.
+## What & Why? 
+
+Parsing HTML is extracting data from HTML code. Programmers do it to manipulate, transform, or extract specifics from an HTML document.
 
 ## How to:
-To parse HTML using Arduino, we will use the [ArduinoJson library](https://arduinojson.org/). Follow these steps to get started:
-1. Install the library: Go to *Sketch* > *Include Library* > *Manage Libraries*. Search for "ArduinoJson" and click *Install*.
-2. Create a new project: Go to *File* > *Examples* > *ArduinoJson* > *JsonParserExample*.
-3. Modify the code: In the example code, replace the URL in line 20 with the webpage you want to parse.
-4. Compile and upload: Verify your code and upload it to your Arduino board.
-5. Check the serial monitor: After uploading, open *Tools* > *Serial Monitor*. You should see the parsed HTML data from the webpage you provided.
 
-## Deep Dive:
-(1) Parsing HTML has been around since the early days of the web, when it was mainly used to extract links and text from web pages. However, with the recent rise in web scraping and data extraction tasks, it has become an essential skill for many programmers.
-(2) While ArduinoJson is a popular choice for parsing HTML with Arduino, other libraries like *ESP8266HTTPClient* and *WebParser* also offer similar functionalities.
-(3) In the *JsonParserExample* code, the ```parseObject()``` function is used to extract data from the webpage in a JSON format. This function can be modified to extract specific elements such as *img* tags or *div* classes.
+Let's dive into the coding details. Here's an example of a simple Arduino program using the HTML library to parse HTML titles:
 
-## See Also:
-- [ArduinoJson library](https://arduinojson.org/)
-- [ESP8266HTTPClient library](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient)
-- [WebParser library](https://github.com/amicojeko/WebParser)
+```Arduino
+#include <ESP8266WiFi.h>
+#include <HTMLParser.h>
+
+HTMLParser htmlParser;
+
+// callback for found HTML tags
+void htmlTagCallback (HTMLTag& tag) {
+  if (tag.tagName == "TITLE" && !tag.isEndTag) {
+    Serial.println (tag.innerText);
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  htmlParser.init("http://example.com");
+  htmlParser.setHTTPTagCallback(htmlTagCallback);
+  htmlParser.processHTML();
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+}
+
+```
+
+The output would be the title of the HTTP page at "http://example.com". 
+
+## Deep Dive
+
+HTML parsing isn't a new concept. Originated in the days of Interactive Data Language (IDL), it's used to extract information from the IDL files. 
+
+There are alternatives to parsing HTML in Arduino, though. For instance, JSON is lighter and easier to 'pick apart' if the data is available in this format.
+
+Details about parsing HTML include the fact that the HTML parser reads HTML codes from the top going down, and when it finds a match (tag), it interprets it and executes the assigned action if any.
+
+## See Also
+
+For more tutorials, you may consider checking these out: 
+
+- Official Arduino Website (https://www.arduino.cc/)
+- Arduino Stack Exchange Forum (https://arduino.stackexchange.com/)
+- Arduino Playground - General (https://playground.arduino.cc/Category:General/)

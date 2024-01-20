@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "PHP: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,29 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP-förfrågan med grundläggande autentisering är en vanlig teknik som används av programmerare för att verifiera användare och utföra åtgärder på webbplatser och webbtjänster. Detta gör det möjligt för webbplatser att begränsa åtkomsten till vissa resurser och skydda känslig information från obehöriga användare.
+
+Att sända en HTTP-begäran med grundläggande autentisering innebär att inkludera autentiseringsuppgifter som användarnamn och lösenord i vår anrop för att få tillgång till skyddade resurser. Programmerare gör det för att kommunicera skyddat med API:er och webbsidor som kräver inloggning.
 
 ## Hur man gör:
-För att skicka en HTTP-förfrågan med grundläggande autentisering i PHP, måste du använda funktionen `curl_init()` för att initiera en ny cURL-session. Sedan lägger du till nödvändig information som användarnamn och lösenord i en HTTP-autentiseringsheader med hjälp av funktionen `curl_setopt()`. Slutligen utför du förfrågan genom att använda funktionen `curl_exec()` och få svar från webbtjänsten.
+
+Här är ett exempel på hur man skickar en HTTP-begäran med grundläggande autentisering i PHP.
 
 ```PHP
-$ch = curl_init();
-$url = 'http://example.com/api/';
-$username = 'användarnamn';
-$password = 'lösenord';
+<?php
+$curl = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_USERPWD, "$username:$password");
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-$response = curl_exec($ch);
-curl_close($ch);
+curl_setopt_array($curl, array(
+CURLOPT_URL => 'https://example.com',
+CURLOPT_RETURNTRANSFER => true,
+CURLOPT_ENCODING => '',
+CURLOPT_MAXREDIRS => 10,
+CURLOPT_TIMEOUT => 0,
+CURLOPT_FOLLOWLOCATION => true,
+CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+CURLOPT_CUSTOMREQUEST => 'GET',
+CURLOPT_HTTPHEADER => array(
+'Authorization: Basic '. base64_encode('username:password')
+),
+));
 
-echo $response; //visar svar från webbtjänsten
+$response = curl_exec($curl);
+
+curl_close($curl);
+echo $response
+?>
 ```
 
-## Utforska vidare:
-Att skicka en HTTP-förfrågan med grundläggande autentisering använder sig av en HTTP-autentiseringsheader som innehåller en Base64-kodad version av användarnamn och lösenord. Den här metoden är enkel men inte särskilt säker då både användarnamn och lösenord skickas i klartext. Det finns alternativ som OAuth som ger en mer säker autentiseringsprocess. För att implementera detta i din kod, kan du använda OAuth-bibliotek för PHP.
+Detta skript kommer att ge oss svaret från `https://example.com` som en sträng, vilket är autentiserat genom grundläggande autentisering.
 
-## Se även:
-- [PHP manualen om cURL](https://www.php.net/manual/en/book.curl.php)
-- [OAuth-bibliotek för PHP](https://oauth.net/code/php/)
+## Djupdykning
+
+1. Historisk bakgrund: Den grundläggande autentiseringsmekanismen är en del av HTTP:s tidigare specifikationer och har funnits sedan 1996. Det ger ett sätt att skydda resurser med ett användarnamn och lösenord, krypterade med Base64.
+
+2. Alternativ: Andra autentiseringsmetoder inkluderar tokens (OAuth, JWT etc.) och Digest-access-autentisering. De ger mer säkerhet och funktionalitet jämfört med grundläggande autentisering.
+
+3. Implementeringsdetaljer: I PHP används cURL-funktioner för att skicka HTTP-begäran. `CURLOPT_HTTPHEADER`-alternativet används för att lägga till "Authorization"-headern med base64-kodade legitimationsuppgifter.
+
+## Se även
+
+- PHP cURL bibliotek: https://www.php.net/manual/en/book.curl.php
+- HTTP Basic authentication: https://en.wikipedia.org/wiki/Basic_access_authentication

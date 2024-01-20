@@ -1,7 +1,7 @@
 ---
-title:                "Tarkista, onko hakemisto olemassa."
-html_title:           "Python: Tarkista, onko hakemisto olemassa."
-simple_title:         "Tarkista, onko hakemisto olemassa."
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Kotlin: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,45 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Tarkistetaan, Onko Hakemisto Olemassa Pythonissa
+
 ## Mikä & Miksi?
-Tiedoston olemassaolon tarkistaminen on yksinkertainen, mutta tärkeä osa ohjelmoinnin arkea. Se tarkoittaa, että ohjelma kysyy, onko tietyllä polulla sijaitseva kansio olemassa vai ei. Ohjelmoijat tekevät tätä, jotta he voivat varmistaa, että heidän koodinsa toimii oikein ja estää mahdolliset virheet.
 
-## Miten:
-Esimerkki koodi, joka tarkistaa, onko kansio nimeltään "projekti" olemassa:
+Tiedostohakemiston olemassaolon tarkistaminen Pythonissa tarkoittaa, onko määritelty hakemisto olemassa tiedostojärjestelmässä. Tällainen tarkistus on tarpeen, ettemme kohtaa virheitä, kun yritämme Sijoittaa (tai hakea) tietoa hakemistosta, joka ei ole olemassa.
 
-```Python
+## Kuinka Tehdä:
+
+Alla on koodiesimerkki, joka tarkistaa, onko tietyllä polulla oleva hakemisto olemassa :
+
+```python
 import os
-if os.path.exists("./projekti"):
-    print("Kansio nimeltä 'projekti' on olemassa.")
+
+def tarkista_hakemisto(hakemisto):
+    if os.path.isdir(hakemisto):
+        print(f"Hakemisto {hakemisto} löytyy!")
+    else:
+        print(f"Hakemisto {hakemisto} ei ole olemassa.")
+
+tarkista_hakemisto("/polku/hakemistoon")
+```
+
+Tämä tulostaa "Hakemisto /polku/hakemistoon löytyy!" tai "Hakemisto /polku/hakemistoon ei ole olemassa." riippuen siitä, onko hakemisto olemassa.
+
+## Syvempi Sukellus
+
+Pythonin `os.path.isdir` -toiminto, jota käytimme ylläolevassa koodissa, tuli saataville Python 1.5.2 -versiossa julkisesti. Sen suorittaa kirjaston sisäinen `stat` -toiminto, joka tarkistaa tiedostojärjestelmän määritellyn polun olemassaolon ja tyypin.
+
+Vaihtoehtona voit käyttää `pathlib` -moduulia, joka tuli saataville Python 3.4:ssä ja tarjoaa objekti-orientoituneen tavan käsittellä tiedostopolkuja:
+
+```python
+from pathlib import Path
+
+hakemisto = Path('/polku/hakemistoon')
+if hakemisto.is_dir():
+    print(f"Hakemisto {hakemisto} löytyy!")
 else:
-    print("Kansiota nimeltä 'projekti' ei löytynyt.")
+    print(f"Hakemisto {hakemisto} ei ole olemassa.")
 ```
 
-#### Tulostus:
-```
-Kansio nimeltä 'projekti' on olemassa.
-```
+Tämä tarjoaa saman toiminnallisuuden, mutta elegantimman syntaksin.
 
-Toinen tapa tarkistaa tiedoston olemassaolo on käyttää ```os.path.isdir()``` -funktiota:
+## Katso Myös 
 
-```Python
-import os
-if os.path.isdir("./projekti"):
-    print("Tämä on kansio.")
-else:
-    print("Tämä ei ole kansio.")
-```
+Lisätietoja Pythonin kansio- ja tiedostokäsittelystä saat seuraavista lähteistä:
 
-#### Tulostus:
-```
-Tämä on kansio.
-```
-
-## Syvemmälle:
-Ohjelmoijat ovat joutuneet tarkistamaan tiedoston olemassaolon jo vuosikymmenien ajan, mutta koodi on muuttunut hieman riippuen käytössä olevasta ohjelmointikielestä. Esimerkiksi C-kielessä käytetään funktiota ```fopen()``` tiedoston avaamiseen, ja sen palauttama arvo voi kertoa, onko tiedosto olemassa vai ei. Pythonissa sen sijaan voidaan käyttää ```os.path.exists()``` tai ```os.path.isdir()``` -funktioita.
-
-On myös muita tapoja tarkistaa tiedoston olemassaolo, kuten käyttämällä ```try/except``` -lohkoa tai ```os.stat()``` -funktiota. Nämä vaihtoehdot ovat käteviä, kun halutaan tehdä jotain erilaista, jos tiedostoa ei löydy.
-
-## Katso myös:
-- [Python os.path -dokumentaatio](https://docs.python.org/3/library/os.path.html)
-- [Os.path module ja tiedostojärjestelmä - Real Python](https://realpython.com/python-pathlib/)
+1. Pythonin virallinen ohjedokumentaatio: [os](https://docs.python.org/3/library/os.html) ja [pathlib](https://docs.python.org/3/library/pathlib.html)
+2. Tutorial: [Python 101: File and Directory Access](https://www.blog.pythonlibrary.org/2016/05/24/python-101-working-with-file-system-path-and-directory-access/)

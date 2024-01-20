@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 숫자 생성"
-html_title:           "Haskell: 랜덤 숫자 생성"
-simple_title:         "랜덤 숫자 생성"
+title:                "임의의 숫자 생성하기"
+html_title:           "Elixir: 임의의 숫자 생성하기"
+simple_title:         "임의의 숫자 생성하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -10,49 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
-(1) 랜덤한 숫자를 생성하는 것은 프로그래머가 무작위성을 필요로 하는 작업을 수행할 수 있게 해줍니다.
-(2) 랜덤한 숫자를 생성하는 이유는 보안, 게임 또는 실험 등 다양한 목적을 위해서입니다.
+## 무엇 & 왜?
 
-## 해는 포함하는 방법:
+랜덤 숫자 생성은 예측할 수 없는 숫자를 만드는 프로그래밍 기법입니다. 이를 통해 프로그래머는 유저입력 없이 다양성과 무작위성을 코딩 내에 주입할 수 있습니다.
+
+## 사용 방법:
+
+Haskell에서는 System.Random 모듈을 사용하여 쉽게 랜덤 숫자를 생성할 수 있습니다. 아래는 간단한 랜덤 숫자 생성 코드입니다.
+
 ```Haskell
 import System.Random
 
--- 범위 내 랜덤 정수 생성 예제
-randomInt :: Int -> Int -> IO Int
-randomInt a b = randomRIO (a, b)
-
--- 1부터 10까지의 랜덤 정수 출력 예제
+main :: IO()
 main = do
-  num <- randomInt 1 10
-  putStrLn ("랜덤 정수: " ++ show num)
+  g <- newStdGen
+  print (take 5 (randoms g :: [Int]))
 ```
 
-```Haskell
--- 리스트에서 랜덤한 요소 선택 예제
-randomElement :: [a] -> IO a
-randomElement [] = error "빈 리스트"
-randomElement xs = do
-  idx <- randomInt 0 (length xs - 1)
-  return (xs !! idx)
+이 코드는 표준 제너레이터를 이용하여 5개의 랜덤한 정수를 출력합니다.
 
--- 리스트에서 랜덤한 요소 출력 예제
-main = do
-  let numList = [1, 2, 3, 4, 5]
-  num <- randomElement numList
-  putStrLn ("랜덤 요소: " ++ show num)
-```
+## 깊이 들어가기
 
-출력 결과:
-```
-랜덤 정수: 7
-랜덤 요소: 3
-```
+이번 섹션에서는 랜덤 숫자 생성의 역사적 배경, 대안 그리고 구현 상세에 대해 더 깊게 알아보겠습니다.
 
-## 깊게 들어가기:
-(1) 랜덤한 숫자를 생성하는 기술은 1946년 미국의 수학자인 존 폰 노이만에 의해 제안되었습니다.
-(2) 다른 프로그래밍 언어에서는 보통 의사난수 생성기(Pseudo-Random Number Generator)를 사용하지만, 해스켈은 더 정교한 진정한 난수 생성기(True Random Number Generator)를 제공합니다.
-(3) 해스켈의 경우 System.Random 라이브러리를 사용하여 랜덤 숫자를 생성할 수 있습니다.
+1. 역사적 배경: 초기 컴퓨터 시스템에서는 랜덤 숫자 생성기가 부재했으며, 대신 고정된 테이블을 사용하여 이를 대체하곤했습니다. 하지만 시간이 지남에 따라 여러 알고리즘이 개발되어 현재에 이르게 되었습니다.
 
-## 관련 자료:
-- https://hackage.haskell.org/package/random 아프리카 가빙글 19세기 언어 기능  - 내 프로젝트 무엇처럼 만들어무어 `RND` 구 상승한다. 2020 02
+2. 대안: System.Random 외에도 다른 Haskell 라이브러리들이 랜덤 숫자 생성을 지원합니다. 예를 들어, 'random-fu' 패키지는 확률 분포에 따른 랜덤 생성을 지원합니다.
+
+3. 구현 상세: Haskell의 `newStdGen` 함수는 시스템의 현재 시간에 기반하여 새로운 랜덤 숫자 생성기를 생성합니다. 이후 나온 랜덤 숫자들은 이전에 생성된 숫자에 의존하는 pseudo-random algorithm에 따라 생성됩니다.
+
+## 참고 자료
+
+Haskell과 랜덤 숫자 생성에 관한 추가 정보를 원하면 아래 링크를 참조하세요.
+1. [Random Numbers: Introduction - School of Haskell | FP Complete](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/randoms)
+2. [System.Random – Hackage](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)

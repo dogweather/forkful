@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Swift: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-Debug-utmatning är en process där du som programutvecklare skriver ut information om vad som sker i ditt program under körning. Detta kan hjälpa dig att hitta och lösa fel i din kod.
+# Swift Programmering: Skriv ut Debug Output
 
-## Hur man gör:
-Här är ett exempel på hur du kan skriva ut debug-utmatning i Swift:
+## Vad & Varför?
 
-```Swift
-// Skapa en variabel som innehåller ett meddelande
-let message = "Välkomna till Swift-programmering!"
+Att skriva ut debug output är det snabbaste sättet att följa din kod under körning. Med det kan vi hitta buggar, better förstå hur koden exekverar, plus verifiera att datastrukturer är korrekt uppförda och begränsas.
 
-// Skriv ut meddelandet till konsolen
-print(message)
-```
+## Hur gör man:
 
-Detta kommer att skriva ut "Välkomna till Swift-programmering!" i konsolen när du kör ditt program. Du kan även skriva ut värden från variabler, till exempel:
+Härunder hittar du hur du kan skriva ut i konsolen med Swift.
 
 ```Swift
-let num1 = 2
-let num2 = 9
+// Enkel output till konsolen
+print("Hej, Swift!")
 
-print("Summan av \(num1) och \(num2) är \(num1 + num2)")
+// Output med variabel
+var nummer = 10
+print("Numret är \(nummer)")
+
+// Debug Description
+dump(nummer)
 ```
 
-Detta kodexempel kommer att skriva ut "Summan av 2 och 9 är 11" i konsolen.
+Om du kör detta kod kommer du att se följande output:
 
-## Djupdykning:
-Debug-utmatning har varit en viktig del av programmering sedan början av datorernas tid. Innan det fanns graphiska gränssnitt var debug-utmatning det enda sättet att hålla koll på vad som hände i programmen.
+```
+Hej, Swift!
+Numret är 10
+10
+```
+## Djupdykning
 
-En alternativ metod för debug-utmatning är användandet av s.k. breakpoints, där programmet pausas när en viss kodrad har nåtts. Detta kan vara ett effektivare sätt att hitta buggar i vissa situationer.
+Historiskt har utvecklare alltid behövt sätt att övervaka ett programs tillstånd, och skriva ut debug-output är ett av de mest grundläggande verktygen i deras arsenal. Det är direkt arv från tidigare programmeringsspråk som C och JavaScript.
 
-I Swift kan du också använda funktionen "assert()" för att skriva ut felmeddelanden om ett visst villkor inte uppfylls.
+Vad gäller alternativ, kan du använda debuggers, som är mer kraftfulla men kräver mer inlärning. Swifts inbyggda `dump()` funktion Printing debug output är dock snabbt, lättanvänt och universellt, vilket gör det till ett go-to verktyg för många utvecklare.
 
-## Se även:
-[Apple Documentation on Debugging](https://developer.apple.com/documentation/xcode/debugging)
+Intressant i Swift är att standard `print()` funktion inte visar alla detaljer för komplexa objekt, men `dump()` gör, vilket gör det till en värdefull tillägg i en Swift-utvecklares verktygslåda.
+
+## Se också
+
+För mer information om att skriva ut debug output och debugging i Swift, se följande källor:
+
+- Apple's officiella [Swift dokumentation](https://docs.swift.org/swift-book/LanguageGuide/TheBasics.html)
+- [Debugging with Xcode](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html)
+- [Använda print och Dump i Swift](https://www.hackingwithswift.com/example-code/language/how-to-use-dump-to-debug-your-swift-code) från Hacking With Swift.

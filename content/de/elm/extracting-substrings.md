@@ -1,7 +1,7 @@
 ---
-title:                "Untersuchen von Teilzeichenketten"
-html_title:           "Elm: Untersuchen von Teilzeichenketten"
-simple_title:         "Untersuchen von Teilzeichenketten"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,31 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Substring-Extraktion ist ein gängiger Vorgang in der Programmierung, bei dem ein Teil eines Strings oder einer Zeichenkette aus einem größeren String extrahiert wird. Programmierer nutzen dies häufig, um bestimmte Daten oder Informationen aus Strings zu isolieren und zu verwenden.
+
+Das Extrahieren von Teilketten ist der Prozess, bestimmte Teile einer Zeichenkette zu isolieren. Programmierer tun dies, um relevante Daten aus einer größeren Textmasse zu extrahieren.
 
 ## So geht's:
-```Elm
-import String
 
--- Beispiel: Extrahieren des Wortes "Blau" aus einem Satz
-String.dropUntil "Blau" "Der Himmel ist Blau und die Sonne scheint"
-
--- Output: "Blau und die Sonne scheint"
-```
+Mit Elm kann man einen bestimmten Teil einer Zeichenkette extrahieren, indem man die eingebaute `String.slice`-Funktion verwendet. Hierfür musst du nur den Anfangs- und den Endindex des gewünschten Teilstrings angeben:
 
 ```Elm
-import String
+import Html exposing (text)
+import String 
 
--- Beispiel: Extrahieren aller Vokale aus einem String
-String.filter (\c -> List.member (String.toLower c) ["a", "e", "i", "o", "u"]) "Hallo Welt"
+extractSubstring start end str = 
+    String.slice start end str
 
--- Output: "a ae"
+main = 
+    text (extractSubstring 0 5 "Hallo Welt")
 ```
 
-## Tiefentauchen:
-Die erste Implementierung von Substring-Extraktion wurde in der Programmiersprache SNOBOL (StriNg Oriented and symBOlic Language) entwickelt, die 1960 von David Farber, Ralph Griswold und Ivan Polonsky entworfen wurde. Heutzutage gibt es auch alternative Methoden, um Substrings zu extrahieren, wie zum Beispiel reguläre Ausdrücke. In Elm kann der Befehl `String.access` verwendet werden, um auf bestimmte Zeichen innerhalb eines Strings zuzugreifen und sie auszugeben.
+Die Ausgabe wäre in diesem Fall `"Hallo"`.
 
-## Siehe auch:
-https://package.elm-lang.org/packages/elm/strings/latest/String#right
-https://www.tutorialspoint.com/snobol_programming/snobol_language_basics.htm
-https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions
+## Vertiefung
+
+Historisch gesehen wurde das Konzept des Teilketten-Extrahierens schon früh in der Computerwissenschaft eingeführt und es hat sich seitdem in praktisch jeder Programmiersprache etabliert. In Elm ist die Implementierung sehr einfach und direkt, da das Extrahieren von Teilketten in der Sprache eingebaut ist und man keine Bibliotheken hinzufügen muss.
+
+Diese Lösung ist für die meisten Anwendungen ausreichend. Es gibt jedoch alternative Methoden, wie die Verwendung der `String.left` oder `String.right` Funktion, die den Anfang oder das Ende einer Zeichenkette abhängig von der Anzahl der angegebenen Zeichen extrahieren.
+
+## Siehe auch 
+
+Für weitere Details zur Verwendung von `String.slice` und anderen String-Funktionen in Elm, schau dir die offizielle Dokumentation an: 
+- [Elm String Dokumentation](https://package.elm-lang.org/packages/elm/core/latest/String)
+
+Um mehr über die Geschichte von Zeichenketten und ihre Handhabung in der Informatik zu lernen, könnten diese Quellen interessant sein:
+- [Geschichte der Zeichenketten in der Informatik](https://en.wikipedia.org/wiki/String_(computer_science))
+- [Behandlung von Zeichenketten in verschiedenen Programmiersprachen](https://en.wikibooks.org/wiki/An_Introduction_to_Programming_Languages/Strings)

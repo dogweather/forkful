@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Haskell: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,34 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## O Que & Por Quê?
 
-Comparar duas datas é o processo de verificar se uma data é maior, menor ou igual a outra. Isso pode ser útil em programação quando precisamos classificar eventos por ordem cronológica ou realizar cálculos de tempo entre duas datas.
+Comparar duas datas é medir a diferença entre elas em termos de dias, meses, anos etc. Programadores fazem isso para realizar cálculos de tempo, como o tempo restante para uma data, tempo decorrido desde um evento, e assim por diante.
 
 ## Como Fazer:
 
+Vamos usar a biblioteca `Data.Time` no Haskell. Primeiro, você precisa importar a biblioteca:
+
+```Haskell
+import Data.Time
 ```
-compararDatas :: Data -> Data -> Ordering
-compararDatas data1 data2
-    | data1 > data2 = GT
-    | data1 < data2 = LT
-    | otherwise = EQ
+Depois de importar a biblioteca, você pode começar a comparar duas datas. Aqui está um exemplo:
+
+```Haskell
+import Data.Time
+  
+main = do
+    let date1 = fromGregorian 2023 6 14 
+    let date2 = fromGregorian 2023 7 16
+    print $ diffDays date2 date1
+```
+A saída desse código seria:
+
+```Haskell
+32
 ```
 
-Para comparar duas datas em Haskell, podemos usar a função pré-definida `Ord`. Essa função recebe duas datas e retorna um tipo de dados `Ordering` que representa se a primeira data é maior (`GT`), menor (`LT`) ou igual (`EQ`) à segunda data.
+## Mergulho Profundo
 
-Exemplo de input:
-```
-compararDatas (Data 10 03 2020) (Data 05 03 2020)
-```
-Output esperado: `GT`
+Historicamente, a comparação de datas foi introduzida à medida que os sistemas de computador começaram a exigir funcionalidades relacionadas à data e tempo, e as linguagens de programação, incluindo o Haskell, desenvolveram maneiras de manipular datas e tempo.
 
-## Deep Dive:
-Comparar datas é uma tarefa comum em programação, especialmente quando lidamos com agendamentos, tarefas ou cálculos envolvendo tempo. Em Haskell, podemos utilizar a biblioteca `Data.Time` para trabalhar com datas de forma mais complexa, incluindo cálculos entre datas, manipulação de fusos horários, entre outros recursos.
+Existem múltiplas maneiras de comparar datas. Além do método `diffDays` mostrado acima, você também pode usar `diffUTCTime` ou `diffUTCTime` para comparar tempos de UTC.
 
-Uma alternativa para comparar datas em Haskell é utilizando a biblioteca `Chiphunk`, que oferece funções específicas para lidar com datas no formato ISO 8601.
+A comparação de datas no Haskell é feita convertendo-as para Julian Day Number (um sistema contínuo de contagem de dias desde um passado remoto) e depois subtraindo uma da outra. Isso permite uma calculo eficiente da diferença, independentemente de como os calendários são estruturados.
 
-A implementação da função `Ord` em Haskell utiliza o conceito de "typeclass", que permite que diferentes tipos de dados possam ser ordenados de forma flexível. Isso significa que podemos aplicar a função `Ord` em diferentes tipos de dados, desde que esses tipos tenham uma instância da classe `Ord` implementada.
+## Veja Também
 
-## Veja também:
-- [Haskell: Aprenda a programar](https://www.casadocodigo.com.br/products/livro-aprenda-haskell) - Livro de introdução à linguagem Haskell.
-- [Documentação oficial do Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/) - Referência completa sobre a linguagem.
-- [Chiphunk](https://hackage.haskell.org/package/chiphunk) - Biblioteca para manipulação de datas em Haskell no formato ISO 8601.
+- [Data.Time](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html) documentação 
+- [Comparando Datas](https://riptutorial.com/haskell/example/5805/date-comparison)
+- [Julian Day](https://en.wikipedia.org/wiki/Julian_day) na Wikipedia

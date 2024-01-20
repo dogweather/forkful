@@ -1,7 +1,7 @@
 ---
-title:                "Перевірка наявності папки"
-html_title:           "C++: Перевірка наявності папки"
-simple_title:         "Перевірка наявності папки"
+title:                "Перевірка наявності директорії"
+html_title:           "C++: Перевірка наявності директорії"
+simple_title:         "Перевірка наявності директорії"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,54 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & чому?
+## Що і навіщо?
 
-Перевірка наявності директорії - це процес, який дозволяє програмі перевірити, чи існує певна директорія на комп'ютері. Програмісти часто використовують цю функцію для того, щоб перевірити, чи можна отримати доступ до певної директорії, перед тим як почати працювати з файлами, що знаходяться в цій директорії.
+Перевірка на існування директорії - це процес, який визначає, чи наявна вказана директорія. Програмісти це роблять, щоб уникнути помилок при спробі відкриття або зміни директорій, які не існують.
 
-## Як:
+## Як це робиться:
 
 ```C++
-#include <iostream>
-#include <filesystem> // необхідна бібліотека
+#include <filesystem>
 
-using namespace std;
-namespace fs = std::filesystem;
-
-int main() 
+bool is_directory_exists(const std::filesystem::path& p)
 {
-    // шлях до перевіряємої директорії
-    string path = "C:/Users/User/Documents";
+    return std::filesystem::exists(p) && std::filesystem::is_directory(p);
+}
 
-    // використовуємо функцію exists для перевірки наявності директорії
-    if (fs::exists(path)) 
-    {
-        cout << "Директорія існує!" << endl;
-    } 
-    else 
-    {
-        cout << "Директорія не існує." << endl;
+int main()
+{
+    std::filesystem::path p{"/path/to/directory"};
+    if (is_directory_exists(p)) {
+        std::cout << "Directory exists.\n";
+    } else {
+        std::cout << "Directory does not exist.\n";
     }
-
     return 0;
 }
 ```
 
-Вихідні дані:
+При відповідному шляху до директорії, вивід коду може бути таким:
 
 ```
-Директорія існує!
+Directory exists.
 ```
 
-## Глибоке дослідження:
+## Пірнемо глибше:
 
-Перевірка наявності директорії є важливим етапом при роботі з файлами та директоріями на комп'ютері. Вона була введена у C++ стандарті C++17, тому може бути недоступна у старіших версіях мови.
+**Історичний контекст** - перевірка існування директорії в C++ не завжди була пряма. Перш ніж з’явилося стандартне бібліотеку <filesystem>, програмісти використовували бібліотеки сторонніх розробників або системні виклики.
 
-Окрім використання функції `exists`, існує й інший шлях для перевірки наявності директорії - за допомогою функції `is_directory`. Ця функція перевіряє, чи є переданий їй шлях дійсно директорією і повертає `true` або `false` відповідно.
+**Альтернативи** - в деяких випадках, якщо ви працюєте з C++17 або старіше, можете використовувати `std::filesystem::is_directory()`, який також перевіряє існування перед визначенням, чи є шлях директорією.
 
-Найпоширенішим способом перевірки наявності директорії є використання функції `exists`, оскільки вона автоматично перевіряє як наявність директорії, так і правильність шляху до неї.
+**Деталі впровадження** - `std::filesystem::exists(p)` перевіряє, чи існує файл / директорія, тоді як `std::filesystem::is_directory(p)` перевіряє, чи є об'єкт директорією.
 
 ## Дивіться також:
 
-- [Документація по функції exists](https://en.cppreference.com/w/cpp/filesystem/exists)
-- [Документація по функції is_directory](https://en.cppreference.com/w/cpp/filesystem/is_directory)
-- [Як працює функція `exists`?](https://ncona.com/2014/08/how-does-the-stdstdfilesystemexists-function-work/)
+- C++ документація std::filesystem::exists: https://en.cppreference.com/w/cpp/filesystem/exists
+- C++ документація std::filesystem::is_directory: https://en.cppreference.com/w/cpp/filesystem/is_directory
+- Навчальний посібник з файлової системи C++17 від Microsoft: https://docs.microsoft.com/en-us/cpp/standard-library/file-system-navigation?view=msvc-160

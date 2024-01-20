@@ -1,6 +1,6 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "Swift: קריאת קובץ טקסט"
+html_title:           "Go: קריאת קובץ טקסט"
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,24 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה? 
-קוראים לקובץ טקסט זה לשיטה שמאפשרת למתכנתים לקרוא ולהתייחס לתוכן שנמצא בקובץ מסוים. קריאת קבצי טקסט היא חלק בלתי נפרד מתחום התכנות כי היא מאפשרת כניסה ועיבוד של מידע שממוקד סביב מחשבים.
+## מה ולמה?
+קריאת קובץ טקסט היא פעולה בה מפענח התוכנית מידע שמשמש בתוכניות שונות. מתכנתים קוראים קבצים מטקסט כדי לנתח נתונים, לנהל מידע, או כאשר יש צורת לקוח חיצונית עם דרישות מסוימות.
 
-## איך לעשות: 
-באמצעות שפת Swift, ניתן לקרוא תוכן שנמצא בקובץ טקסט כמו שאתה עושה עם קבצים אחרים. השימוש בפונקציות פנימיות כמו "readLine ()" תאפשר לך לקרוא את התוכן המעניין ולהתייחס אליו לפי הצורך. לדוגמה, אם תרצה לקרוא קובץ טקסט שמכיל את שם האקונט שלך, תוכל לעשות זאת על ידי הרצת הפקודה הבאה:
+## איך לעשות:
+נחפש באמצעות Swift קובץ טקסט בשם `example.txt`.
+קאוד:
+```swift
+import Foundation
 
-```Swift
-if let filePath = Bundle.main.path(forResource: "account", ofType: "txt"),
-let fileContent = try? String(contentsOfFile: filePath) {
-    print("Your account name is \(fileContent)")
+let fileURL = Bundle.main.url(forResource: "example", withExtension: "txt")
+do {
+    let content = try String(contentsOf: fileURL!, encoding: .utf8)
+    print(content)
+} catch {
+    print("Failed reading from URL: \(fileURL), Error: " + error.localizedDescription)
 }
 ```
+פלט:
+```
+Hello, Swift!
+```
+כאן, אנו משתמשים ב- `String(contentsOf:, encoding:)` כדי לקרוא את הקובץ.
 
-התוכן שנקרא יופיע בתוך משתנה בשם "fileContent" שאליו אתה יכול להתייחס בהמשך התכנית שלך.
+## צלילה עמוקה
+היסטורית, Swift נבנה מאט במשך שנים כדי להיות שפה שתהיה גמישה, מהירה וידידותית למשתמש. הקריאה של קובץ טקסט היא אחת מן התכונות שמאפשרות גמישות זו.
+בנוסף, ישנם שיטות חלופיות לקריאת קבצי טקסט, כמו פעולות נמוכות יותר של אלגוריתמים כמו fread ב-C, אך Swift מספקת גישה פשוטה יותר ומבנית למטרה זו.
 
-## חפירה עמוקה: 
-קריאת קובץ טקסט אינה תהליך חדש וגם לא סובכת כמו שהיא בימי קדם שהיה למתכנתים ליצור תוכניות נפרדות להתמודד מול כל סוג של קובץ טקסט. היום ישנם כלים מתקדמים יותר שמסייעים למתכנתים לקרוא ולעבד תוכן של קבצי טקסט, כגון ספריות חיצוניות ופונקציות פנימיות בשפת Swift כמו String(contentsOfFile:), which allows the programmer to deal with the content directly instead of dealing with low-level operations such as file descriptors and buffers. 
-למידע נוסף על פונקציות קריאת קבצי טקסט ניתן לקרוא את התיעוד אודות הפונקציה "String(contentsOfFile:)" ולראות דוגמאות שונות של קוד מקור לטיפול בקבצי טקסט.
+## ראו גם
+- [Reading and Writing Files in Swift](https://www.hackingwithswift.com/read/0/17/reading-and-writing-files-with-string)
+- [Swift Documentation: String(contentsOf:encoding:)](https://developer.apple.com/documentation/swift/string/1414957-init)
 
-## ראה גם: 
-למידע נוסף על קיפודית קריאת קבצי טקסט בשפת Swift ראה את התיעוד הרשמי של לשונית "קריאה" בדפדפן קיפודית השפה הרשמי.
+כאן, אתם מוזמנים להכיר יותר על Swift וקריאת קבצי טקסט.

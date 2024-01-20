@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
-html_title:           "Lua: コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
-simple_title:         "コンピュータープログラミングにおける「コマンドライン引数の読み取り」"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なぜ？
+## 何となぜ？
 
-コマンドライン引数を読み込むこととは、プログラマーがプログラム内の特定のコードにアクセスすることができるように情報を提供することです。プログラマーがユーザーからの入力データを受け取るために使われ、特にユーザーによって変更される可能性のあるプログラムの場合に重要です。
+コマンドライン引数の読み取りは、Luaプログラムが実行時に追加情報を受け取る方法です。これにより、システムの柔軟性と動的対応能力が高まります。
 
-## 方法：
+## やり方:
 
 ```Lua
--- 単純なコマンドライン引数の読み込み
-local argument = arg[1]
-print(argument)
+-- コマンドライン引数を取得します。
+local args = {...}
 
--- 複数のコマンドライン引数の読み込み
-local arg_length = #arg
-for i = 1, arg_length do
-  local argument = arg[i]
-  print(argument)
+--引数を表示します。
+for i,v in ipairs(args) do
+  print("引数" .. i .. "： " .. v)
+end
+```
+コマンドラインからこのプログラムを実行した場合：
+
+```bash
+$ lua test.lua 1 2 3
+```
+
+次の出力が得られます:
+
+```
+引数1： 1
+引数2： 2
+引数3： 3
+```
+
+## ディープダイブ:
+
+コマンドライン引数の読み取りは、シェルスクリプトやC言語のような古い言語からの伝統的な概念です。
+Luaでは選択肢があり、グローバルなargテーブルを使用してコマンドライン引数にアクセスすることもできます。この方法の詳細については、公式ドキュメンテーションを参照してください。
+```Lua
+-- コマンドライン引数を取得します。
+for i,v in ipairs(arg) do
+  print("引数" .. i .. "： " .. v)
 end
 ```
 
-出力:
-```bash
-$ lua example.lua hello
-hello
+## 参考資料：
 
-$ lua example.lua hello world
-hello
-world
-```
-
-## 詳細：
-
-コマンドライン引数の読み込みは、プログラミング言語によって異なります。Luaでは、そのまま ```arg``` というグローバル変数を使用することで、コマンドライン引数にアクセスすることができます。また、コマンドライン引数は全て文字列として読み込まれます。
-
-別の方法としては、Luaの外部ライブラリである ```lua-apr``` を使用することで、より高度なコマンドライン引数の読み込みが可能です。 ```lua-apr``` は、Perlの ```Getopt::Long``` モジュールと似たインターフェースを提供します。
-
-## 関連情報：
-
-- [lua-users wiki - コマンドライン引数の読み込み](http://lua-users.org/wiki/CommandLineArguments)
-- [lua-apr](https://github.com/mwild1/lua-apr)
+- コマンドライン引数についてのより詳細な議論: [https://learnxinyminutes.com/docs/lua/](https://learnxinyminutes.com/docs/lua/)
+- Lua言語の公式ドキュメンテーション: [http://www.lua.org/manual/5.4/manual.html](http://www.lua.org/manual/5.4/manual.html)

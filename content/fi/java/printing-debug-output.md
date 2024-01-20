@@ -1,7 +1,7 @@
 ---
-title:                "Tulostaminen virheenjäljitystulosteet"
-html_title:           "Java: Tulostaminen virheenjäljitystulosteet"
-simple_title:         "Tulostaminen virheenjäljitystulosteet"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -11,28 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
+Tulostaminen debug-tiedot on ohjelmointitekniikka, jonka avulla ohjelmoijat voivat tarkastella sovelluksen sisäistä tilaa. Tätä tekniikkaa käytämme, koska se auttaa meitä korjaamaan vikoja nopeammin.
 
-Printtaaminen tarkoittaa koodin suorituksen aikana tulostamista näytölle. Kehittäjät tekevät tätä yleensä virheiden korjaamiseksi ja ohjelman toiminnan tarkkailuksi.
-
-## Miten:
-
-```Java
-System.out.println("Hello World!"); 
-```
-
-Tämä koodirivi tulostaa "Hello World!" näytölle konsolissa. Voit myös tulostaa muuttujien arvoja näytölle näin:
+## Miten tehdä:
+Java tarjoaa `System.out.println` -komennon, jonka avulla voit tulostaa debug-tiedot. Tässä on yksinkertainen esimerkki:
 
 ```Java
-int numero = 5;
-System.out.println(numero); 
+public class DebugDemo {
+    public static void main(String[] args) {
+        int sum = 0;
+        for(int i=1; i<=10; i++){
+            sum += i;
+            System.out.println("Sum after adding " + i + ": " + sum);
+        }
+    }
+}
 ```
+Tämä ohjelma laskee numerot 1-10 ja tulostaa summan jokaisen lisäyksen jälkeen.
 
-Tämä tulostaisi "5" näytölle. Lisäksi voit myös käyttää "print" sijasta "println" jos haluat tulostaa ilman rivinvaihtoa konsolissa.
+## Syvempi sukellus:
+Historiallisesti ottaen, debug-tulostuksen käyttö on ollut yksi vanhimmista ja luotettavimmista debuggausmenetelmistä. Modernit IDE:t ja lähdekoodin debuggaustyökalut tarjoavat korkeatasoisempia tapoja debuggaukseen, kuten asettaminen taukokohtia ja seuraaminen muuttujien tilaa ohjelman suorituksen aikana. Kuitenkin, debug-tulostus antaa yksinkertaisen ja tehokkaan tavan hankkia nopeasti yleiskäsitys ohjelman tilasta.
 
-## Syväkurkistelu:
+Java käyttää virtuaalikoneen (JVM) standarditulostuskanavaa (standard out, tai sysout) debug-tulostuksen lähettämiseen, johon `System.out.println` kirjoittaa.
 
-Printtaaminen on ollut tärkeä osa kehittäjien työkalupakkia jo vuosia. Ennen kuin nykyaikaiset debuggaustyökalut tulivat saataville, printtaaminen oli yleisin tapa tunnistaa ohjelmassa olevia virheitä. Nykyään on olemassa myös muita tapoja korjata ohjelman virheitä, kuten yksikkötestaaminen ja debuggausohjelmat.
+On myös olemassa alternativeja `System.out.println` komennolle, kuten loggauskehykset (esim. Log4J, SLF4J), jotka tarjoavat enemmän joustavuutta ja kontrollia viestien tulostamisesta ja tallentamisesta.
 
 ## Katso myös:
-
-[Java-tutoriaali: Debuggaus](https://www.tutorialspoint.com/java/java_debugging.htm)
+1. Oracle Java Documentation: [System (Java Platform SE 8 )](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
+2. Apache Logging Services: [Log4j](https://logging.apache.org/log4j/2.x/)
+3. Baeldung Tutorial: [Guide to Logging in Java](https://www.baeldung.com/java-logging)
+4. StackOverflow Discussion: [When and why is it appropriate to use System.out.println() for debugging?](https://stackoverflow.com/questions/1778689/when-and-why-is-it-appropriate-to-use-system-out-println-for-debugging)

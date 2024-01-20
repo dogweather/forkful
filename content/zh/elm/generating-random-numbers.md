@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "Elm: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是生成随机数？为什么程序员需要这么做？
+## 是什么以及为什么？
 
-生成随机数是在计算机编程中常见的一种操作，它可以让我们产生一个随机的数字或者序列。程序员通常会在创建游戏、模拟实验或者加密数据时需要生成随机数。
+随机数生成是一种编程方法，用于产生不可预测的数字值。编程师通过使用随机数生成来测试性能，创建复杂的动画或增加游戏和应用的元素的难度。
 
-## 如何实现：
+## 如何做：
+
+以下是在Elm中生成随机数的简单例子：
+ 
+```Elm
+import Random
+
+main =
+    Random.generate identity (Random.int 1 100)
+```
+
+在这个例子中，`Random.int 1 100`产生一个介于1和100之间的随机整数。 `Random.generate`函数则将产生的随机数传递给主函数(main)。
+
+输出样例：
 
 ```Elm
-import Random exposing (..)
-
-randomInt : Int
-randomInt =
-    generate int (range 1 10)
+Result : Int
+Result = 42
 ```
-生成的结果可能是 5、8、2 等等。我们可以通过调整 ```range``` 函数内的参数来指定随机数的范围。
+## 深入研究：
 
-## 深入探讨：
+历史背景：在先前的编程语言中，生成随机数通常依赖于硬件或操作系统的随机数生成器。而在Elm中，放弃了这个工具包，改用函数式的方式生成随机数字，也就是说，生成的随机数是由其验证过的函数决定的。
 
-在编程历史上，生成随机数一直是一个有挑战性的问题。因为计算机程序其实是按照一定的算法运行的，所以它们本质上是不能产生真正的随机数。程序员通常通过伪随机数生成器来模拟随机数，这类似于从一个看似无序的序列中挑选出一个数作为随机数。
+替代方案：如果你不像使用Elm随机库，你可以使用外部服务，例如随机化API或者使用JavaScript互操作。
 
-除了 Elm 中的 ```Random``` 模块，还有其他语言也提供了生成随机数的方法，比如 JavaScript 中的 ```Math.random()``` 函数。
-
-## 参考资料：
-
-[Elm 文档中的 Random 模块介绍](https://package.elm-lang.org/packages/elm/random/latest/)
-
-[CSDN 文章：随机数算法](https://blog.csdn.net/u013368721/article/details/77977066)
-
-[Wikipedia：伪随机数生成器](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+实现

@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Swift: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,48 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
-Comparar duas datas é uma tarefa muito comum entre os programadores. Isso permite determinar qual data ocorreu antes ou depois da outra, o que pode ser útil em diversas situações de programação. Por exemplo, pode ser usado para verificar a idade de uma pessoa, calcular o tempo de vida de um objeto ou determinar a data de validade de um produto.
+## O Que & Por Quê?
 
-## Como fazer:
-Existem várias maneiras de comparar duas datas em Swift. Uma delas é usando o operador de igualdade `==`, que verifica se duas datas são iguais. Por exemplo:
+Comparar duas datas significa verificar se uma data é mais antiga, mais recente ou igual a outra. Programadores fazem isso frequentemente para manipular, organizar dados em seu software ou realizar cálculos que dependem da passagem do tempo.
 
-```Swift
-let data1 = Date()
-let data2 = Date()
+## Como Fazer:
 
-if data1 == data2 {
-    print("As datas são iguais")
-} else {
-    print("As datas são diferentes")
-}
-```
-
-Outra maneira é usar o método `compare`, que retorna um `ComparisonResult` indicando se as datas são iguais, anteriores ou posteriores. Por exemplo:
+No Swift, você pode comparar duas instâncias `Date` usando os operadores de comparação padrão. Aqui está um exemplo:
 
 ```Swift
-let data1 = Date()
-let data2 = Date(timeIntervalSinceNow: 60) // adiciona 60 segundos à data atual
+let dataAntiga = Date(timeIntervalSince1970: 60)
+let dataRecente = Date(timeIntervalSince1970: 3600)
 
-let resultado = data1.compare(data2)
-
-if resultado == .orderedSame {
-    print("As datas são iguais")
-} else if resultado == .orderedAscending {
-    print("A data1 ocorreu antes da data2")
+if dataAntiga < dataRecente {
+  print("A dataAntiga vem antes da dataRecente")
+} else if dataAntiga > dataRecente {
+  print("A dataAntiga vem depois da dataRecente")
 } else {
-    print("A data2 ocorreu depois da data1")
+  print("As datas são iguais")
 }
 ```
+Se você rodar este código, você verá a seguinte saída: "A dataAntiga vem antes da dataRecente"
 
-## Mergulhe fundo:
-Comparar datas é uma prática comum em programação desde os primórdios da computação. Muitas linguagens de programação, como C e Java, possuem esse recurso em suas bibliotecas padrão. Além disso, existem outras formas de comparar datas em Swift, como usando a classe `Calendar` ou a biblioteca `DateTools`, que oferecem mais opções e funcionalidades.
+## Mergulho Profundo 
 
-Além da comparação entre duas datas, também é possível calcular a diferença entre elas, usando métodos como `timeIntervalSince` ou `timeTo`. Essas informações podem ser úteis em situações em que se deseja saber quanto tempo passou desde uma determinada data.
+Antigamente, a comparação de datas era uma tarefa complicada devido a questões como fusos horários e bissextos. Swift simplifica isso por meio da classe Date e TimeInterval.
 
-Para implementar a comparação entre datas, o Swift utiliza o padrão internacional ISO 8601. Isso garante uma comparação precisa e consistente em qualquer dispositivo ou sistema operacional.
+Uma alternativa ao uso direto dos operadores de comparação seria usar os métodos `compare(_:)` ou `isEqual(to:)` da classe Date. Esses métodos fornecem uma abordagem mais semântica, mas são um pouco mais verbosos e menos comuns em comparação ao uso dos operadores de comparação.
 
-## Veja também:
-- [Documentação oficial do Swift sobre Comparing Dates](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Artigo da Ray Wenderlich sobre Comparing Dates in Swift](https://www.raywenderlich.com/900-swift-date-manipulation-nsdateformatter-and-nscalendar)
-- [Biblioteca DateTools para Swift](https://github.com/MatthewYork/DateTools)
+Internamente, a comparação de datas no Swift é possível porque a classe Date armazena a data e a hora como um ponto único na linha do tempo, em segundos desde 1 de janeiro de 2001.
+
+## Veja Também 
+
+1. [Documentação oficial do Swift - Date](https://developer.apple.com/documentation/foundation/date)
+2. [Comparing Dates in Swift](https://useyourloaf.com/blog/comparing-dates-in-swift/)
+3. [Swift by Sundell - Working with dates](https://www.swiftbysundell.com/basics/dates/)

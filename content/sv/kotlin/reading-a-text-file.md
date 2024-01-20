@@ -1,6 +1,6 @@
 ---
 title:                "Läsa en textfil"
-html_title:           "Kotlin: Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,23 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Läsning av en textfil är en vanlig uppgift för programmerare, där man läser in innehållet av en textfil och använder detta i sin programkod. Det kan vara användbart för att hämta data från en annan källa, som en databas eller en extern fil.
 
-## Så här gör du:
-```
-Kotlin
-val file = File("textfil.txt")
-file.forEachLine {
-   println(it)
+"Läsa en textfil" i en programmeringskontext innehåller processen att skaffa data från en fil och använda den i ditt program. Detta är oumbärligt för att hantera användarindata, loggfiler, konfigurationsinställningar och mer.
+
+## Hur man gör:
+
+Här är ett enkelt exempel på hur du kan läsa en textfil i Kotlin:
+
+```Kotlin
+import java.io.File
+
+fun main() {
+    val text = File("exempelfil.txt").readText()
+    println(text)
 }
 ```
-Detta kodexempel visar hur man kan öppna och läsa in innehållet av en textfil i Kotlin. ```val``` används för att skapa en variabel som kan referera till textfilen. Sedan används ```forEachLine``` för att iterera över varje rad i filen och skriva ut den på skärmen.
+
+Om `exempelfil.txt` innehåller texten "Hej, världen", kommer utdata att vara:
+
+```
+Hej, världen
+```
 
 ## Djupdykning:
-Att läsa en textfil är en grundläggande uppgift, men det finns många olika sätt att göra det på. En alternativ metod är att använda en ```BufferedReader``` för att läsa en textfil rad för rad. Det är också viktigt att tänka på hur filen är kodad, till exempel om det är en textfil i UTF-8 eller ANSI-format.
+
+1. Kotlin kom ut offentligt först 2016, vilket är relativt nytt jämfört med andra populära programmeringsspråk. Men det ärvde JVM:ens stora bibliotek, vilket inkluderar `java.io.File`.
+
+2. Alternativ till att läsa en textfil inkluderar: Läsa en binär fil (användbart för effektivitet), och att hämta data från en databas eller en webbserver.
+
+3. Notera att `readText` laddar hela filens innehåll i minnet. För stora filer kan det vara mer minneseffektivt att läsa rad för rad:
+
+```Kotlin
+import java.io.File
+
+fun main() {
+    File("exempelfil.txt").forEachLine { println(it) }
+}
+```
 
 ## Se även:
-Här är några användbara länkar för att lära dig mer om att läsa textfiler i Kotlin:
-* [Kotlin File IO](https://kotlinlang.org/docs/tutorials/kotlin-for-py/file-io.html)
-* [Java Tutorial: Reading a Text File](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
-* [Kotlin Text Processing](https://learnxinyminutes.com/docs/kotlin/)
+
+För mer information, se följande länkar:
+
+- [Reading Files in Kotlin Explained](https://baeldung.com/kotlin-read-file) – En djupare teknisk guide.
+- [Kotlin för JVM](https://kotlinlang.org/docs/reference/jvm-overview.html) – Officiell dokumentation.
+- [Kotlin and Java IO](https://medium.com/@OhadShai/kotlin-and-java-io-c0b0b3429300) – Djupare diskussion om Kotlin och Java IO-funktionalitet.

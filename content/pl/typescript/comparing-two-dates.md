@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "TypeScript: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## W czym rzecz & dlaczego?
-Porównywanie dwóch dat jest narzędziem, które pozwala na porównanie dwóch dat ze sobą i sprawdzenie, która jest wcześniejsza lub późniejsza. Programiści często wykonują tę czynność w celu zarządzania datami w aplikacjach lub do obliczeń czasu.
+## Co to i dlaczego?
 
-## Jak to zrobić:
-Oto przykład, jak porównać dwie daty w TypeScript:
+Porównywanie dwóch dat to proces ustalania, która data jest wcześniejsza, a która późniejsza. Programiści robią to, gdy potrzebują operować na danych związanych z czasem i datą, na przykład do sortowania wydarzeń wg daty, terminach ważności sesji użytkownika, itp.
+
+## Jak zrobić:
+
+Aby porównać dwie daty w TypeScript, tworzymy dwa obiekty `Date` i wykorzystujemy metodę `getTime()`, która zwraca czas w milisekundach, liczone od 1 stycznia 1970 roku.
 
 ```TypeScript
-let data1 = new Date("2021-05-20");
-let data2 = new Date("2021-05-30");
+let data1: Date = new Date('2021-03-01');
+let data2: Date = new Date('2021-03-02');
 
-if(data1 < data2) {
-  console.log("Data 1 jest wcześniejsza.");
-} else if(data1 == data2) {
-  console.log("Daty są takie same.");
+if(data1.getTime() < data2.getTime()) {
+    console.log("Data1 jest wcześniejsza niż Data2");
+} else if(data1.getTime() > data2.getTime()) {
+    console.log("Data1 jest późniejsza niż Data2");
 } else {
-  console.log("Data 2 jest wcześniejsza.");
+    console.log("Data1 i Data2 są równe");
 }
 ```
+Sample output:
 
-**Wynik: Data 1 jest wcześniejsza.**
+```TypeScript
+"Data1 jest wcześniejsza niż Data2"
+```
+## Pogłębione omówienie:
 
-Kod ten tworzy dwie zmienne reprezentujące daty i porównuje je za pomocą operatorów porównania "<" i "==". W zależności od wyniku, wyświetlana jest odpowiednia wiadomość.
+Porównywanie dat jest dość prostym procesem, jednak ważne jest zrozumienie, jak jest zaimplementowane w TypeScript. Mamy dwie daty, które porównujemy używając metody `getTime()`. Metoda ta zwraca wartość czasu w milisekundach, dzięki czemu możemy łatwo porównać daty.
 
-## Głębsza analiza:
-Porównywanie dat ma swoje korzenie w programowaniu od samego początku. W starszych językach programowania, takich jak C czy Java, porównywanie dat wymagało użycia specjalnych funkcji, a czasem nawet stawiania warunków porównania dla każdego elementu daty (dzień, miesiąc, rok). Jednakże w nowszych językach, takich jak TypeScript, wystarczy użycie operatorów porównania, co ułatwia pracę programistom.
+Dodatkowo, warto wiedzieć, że istnieją alternatywne metody porównywania dat. Na przykład, zamiast konwertować do milisekund, można porównać rok, miesiąc i dzień separatystycznie. Choć może to być bardziej skomplikowane, czasami może być preferowane w zależności od scenerio.
 
-Alternatywą dla porównywania dat jest użycie biblioteki, która oferuje funkcje dedykowane do obsługi dat. Przykładem takiej biblioteki dla TypeScript jest moment.js.
+## Zobacz także:
 
-Podczas wewnętrznej implementacji porównywania dat, TypeScript konwertuje daty na liczby (timestamp) i porównuje je ze sobą. Timestamp jest to liczba sekund lub milisekund, która upływa od początku epoki (1 stycznia 1970 r. w czasie UTC).
-
-## Zobacz też:
-- [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/handbook/intro.html)
-- [Biblioteka moment.js](https://momentjs.com/)
-- [Wprowadzenie do timestampów](https://pl.wikipedia.org/wiki/Unix)
+1. Dokumentacja MDN na temat obiektu Date: https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date
+2. Wizualizator JavaScript Date: https://www.w3schools.com/js/js_dates.asp
+3. Artykuł na temat porównywania dat w TypeScript: https://www.freecodecamp.org/news/how-to-compare-dates-in-typescript/

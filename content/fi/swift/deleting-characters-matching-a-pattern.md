@@ -1,7 +1,7 @@
 ---
-title:                "Mallia vastaavien merkkien poistaminen"
-html_title:           "Swift: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,23 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Miksi poistamme merkkejä, jotka vastaavat tiettyä kuvioa? Tätä tehdään ohjelmoinnissa, kun haluamme puhdistaa tai muokata tiettyä tekstiä tai dataa. Tämä on hyödyllistä esimerkiksi silloin, kun haluamme poistaa ylimääräisiä välilyöntejä tai muokata syötettä haluttuun muotoon.
+# Miten ja miksi poistaa merkkejä vastaamalla kuvioon Swiftissä
 
-## Kuinka:
-Tässä esimerkissä käytämme String-tyypin `replacingOccurrences`-metodia poistaaksemme kaikki numerot merkkijonosta `text`.
+## Mikä & Miksi?
+
+Merkkijonojen käsittelyyn kuuluu usein hahmon (kuten tietyt merkit tai hahmot) poisto. Tämän tekeminen auttaa ohjelmoijia parantamaan datan puhtautta tai muotoilemaan sen halutulla tavalla.
+
+## Miten tehdä:
+
+Tässä on esimerkki siitä, kuinka voit poistaa kaikki numerot merkkijonosta Swiftissä.
 
 ```Swift
-let text = "H3ll0 W0rld!"
-let noNumbers = text.replacingOccurrences(of: "[0-9]", with: "", options: .regularExpression)
+var str: String = "Swift123Programming456"
 
-print(noNumbers) // Tulostaa “Hll Wrld!”
+let strippedStr = str.filter { !"0123456789".contains($0) }
+
+print(strippedStr)  // Tulostaa: "SwiftProgramming"
 ```
 
-## Syväsukellus:
-Historiallisesta kontekstista, poistamalla merkkejä halutun kuvion perusteella on ollut pitkään käytetty ohjelmointiin. Ennen regex-järjestelmän esittelyä ohjelmoijien täytyi käyttää monimutkaisia kaavoja ja tietorakenteita tämän saavuttamiseksi. Nykyään käytämme yleisesti säännöllisiä lausekkeita eli regexejä, jotka tarjoavat helppokäyttöisen ja tehokkaan tavan poistaa merkkejä kuvioittain. Tämän lisäksi on olemassa myös muita vaihtoehtoisia tapoja poistaa merkkejä, kuten käyttämällä looppeja ja merkkijonojen metodien yhdistelmää.
+## Syvä sukellus:
+
+On hyödyllistä ymmärtää, miksi ja milloin näitä tekniikoita kehitettiin. Usein ne liittyvät ohjelmistosuunnittelun historian teemoihin, kuten tehokkuuden ja luettavuuden parantamiseen.
+
+### Historia
+
+Hahmojen poistaminen on peräisin vanhoista koodikielistä. Sen avulla voitiin käsitellä dataa tehokkaammin, koska se säästi muistia ja vähensi laskentaa.
+
+### Vaihtoehdot
+
+Swiftissä voit myös käyttää `replacingOccurrences(of:with:)` -metodia, jos haluat korvata tietyn merkkijonon toisella.
+
+```Swift
+var esimerkkiString = "Hello, World!123"
+esimerkkiString = esimerkkiString.replacingOccurrences(of: "123", with: "")
+print(esimerkkiString)  // Tulostaa: "Hello, World!"
+```
+
+### Toteutuksen tiedot
+
+`filter(_:)` -funktio Swiftissä suodattaa elementtejä kollektiosta tietyn ehdon mukaan. Tässä tapauksessa ehdon (`!"0123456789".contains($0)`) on tosi, kun merkki ei kuulu lueteltuihin numeroihin.
 
 ## Katso myös:
-- [NSString Regular Expressions - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/nsstring/1411947-replacingcharacters)
-- [Swift Regular Expressions - Stack Overflow](https://stackoverflow.com/questions/27880650/swift-extract-regex-matches#27880421)
-- [Learn Regular Expressions Basics - RegexOne](https://regexone.com/)
+
+Lisätietoja ja resursseja aiheesta löydät seuraavista lähteistä:
+
+- [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string)
+- [Stack Overflow: How to remove specific characters from a string in Swift?](https://stackoverflow.com/questions/26797739/how-to-remove-specific-characters-from-a-string-in-swift)

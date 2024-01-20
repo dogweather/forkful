@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynając nowy projekt"
-html_title:           "Ruby: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,22 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & dlaczego?
-Rozpoczęcie nowego projektu to proces tworzenia nowego oprogramowania lub aplikacji. Programiści wykonują to, aby stworzyć coś nowego lub ulepszyć już istniejące rozwiązania.
+## Co i Dlaczego?
+
+Zaczynając nowy projekt, tworzysz od podstaw środowisko dla swojego kodu. Programiści robią to, aby uporządkować, zorganizować swoje prace, oraz ułatwić prace zespołową i kontrolę wersji.
 
 ## Jak to zrobić:
-Kod przykładowy i wynik w ramach bloku kodowego Ruby `...`
+
+Tworzenie nowego projektu Rails można zrobić za pomocą jednej prostej komendy w terminalu. Poniżej znajduje się przykład oraz wynik działania kodu:
 
 ```Ruby
-10 + 5  # wynik: 15
+$ rails new my_new_project 
 ```
 
-## Wnikliwa Analiza:
-1. Kontekst historyczny: Rozpoczęcie nowego projektu jest jednym z najważniejszych etapów w tworzeniu oprogramowania. W przeszłości programiści korzystali z różnych narzędzi i metod, aby to osiągnąć.
-2. Alternatywy: Istnieje wiele języków programowania, takich jak Python, Java czy C++, które również pozwalają na rozpoczęcie nowego projektu.
-3. Szczegóły implementacyjne: W Ruby, aby rozpocząć nowy projekt, można użyć komendy `rails new`, która automatycznie tworzy podstawową strukturę projektu.
+Po użyciu powyższej komendy, Rails utworzy nowy katalog o nazwie "my_new_project”. 
 
-## Zobacz również:
-- [Dokumentacja Ruby](https://www.ruby-lang.org/pl/documentation/)
-- [Oficjalna strona języka Ruby](https://www.ruby-lang.org/pl/)
-- [Kursy Ruby](https://www.codecademy.com/learn/learn-ruby)
+## Uważne Spojrzenie
+
+- **Kontekst historyczny:** Ruby on Rails uruchomiony został w 2005 roku, aby uprościć budowanie aplikacji webowych. Rails udostępnia zestaw konwencji, które umożliwiają szybki start projektu.
+
+- **Alternatywy:** Istnieje wiele innych frameworków, które możesz rozważyć, np. Sinatra, Hanami. Każdy z nich ma swoje unikalne cechy i może być lepszy od Rails w określonych sytuacjach.
+
+- **Szczegóły implementacji:** Rails stara się być zgodny z paradygmatem "konwencja przed konfiguracją" (Convention over Configuration). Dzięki temu, kiedy tworzysz nowy projekt Rails, generuje wiele plików i katalogów. Te generowane komponenty to m.in. MVC (Model-View-Controller), system routingu, itd.
+
+
+## Zobacz też
+
+Ruby on Rails:
+- Dokumentacja: [https://guides.rubyonrails.org/](https://guides.rubyonrails.org/)
+
+Sinatra:
+- Strona domowa: [http://sinatrarb.com/](http://sinatrarb.com/)
+
+Hanami:
+- Strona domowa: [https://hanamirb.org/](https://hanamirb.org/)

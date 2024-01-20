@@ -1,7 +1,7 @@
 ---
-title:                "난수 생성하기"
-html_title:           "Go: 난수 생성하기"
-simple_title:         "난수 생성하기"
+title:                "임의의 숫자 생성하기"
+html_title:           "Elixir: 임의의 숫자 생성하기"
+simple_title:         "임의의 숫자 생성하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인고, 왜?
-랜덤 숫자 생성이 무슨 일인지는 꽤 명확해요. 우리가 컴퓨터 프로그래밍을 할 때, 간혹 필요할 때가 있어요. 일반적인 예를 들어, 우리는 랜덤 숫자를 사용하여 게임에서 다양한 상황이 될 수 있도록 합니다. 즉, 이것은 우리가 미리 정해놓은 결과가 아니라, 각각의 시도마다 다른 결과를 얻을 수 있도록 해줘요. 
+## 무엇이며 왜 필요한가?
 
-## 하는 법:
-Go에서는 매우 간단하게 랜덤 숫자를 생성할 수 있어요. 다음 예시를 보세요:
+랜덤 숫자 생성이란, 컴퓨터에서 예측이 불가능한 숫자를 생성하는 것입니다. 이것은 보안, 새로운 데이터 생성, 게임 개발 등의 목적에 사용될 수 있습니다.
+
+## 어떻게 하는가:
+
 ```Go
-// 1부터 100까지의 범위에서 랜덤 숫자 생성
-go 랜덤 숫자 := rand.Intn(100)
-fmt.Println(랜덤 숫자)
+package main
 
-// 0부터 99까지의 범위에서 랜덤 숫자 생성
-go 랜덤 숫자 := rand.Intn(100)
-fmt.Println(랜덤 숫자)
+import (
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+func main() {
+    // 시드값으로 현재 시간을 사용
+    rand.Seed(time.Now().UnixNano())
+    fmt.Println(rand.Intn(100)) // 0 ~ 99 사이의 랜덤한 값 출력
+}
 ```
- 
-## 깊이 파헤쳐보기:
-랜덤 숫자 생성은 많은 언어에서 이미 예전부터 지원되어왔어요. 그래서 우리는 당연히 포함되어 있는 것이라고 생각할 수 있지만, 실제로는 쉽지 않은 배경이 있어요. 랜덤 숫자 생성은 컴퓨터에서 진행하는 계산에 대한 예측 가능성을 손상시키려는 시도이기도 해요. 이것은 암호화와 관련이 있고, 많은 노력이 들어가는 분야이기도 해요. 하지만 다행히도 우리는 Go에서 이것을 간단하게 처리할 수 있어요. 또한, 우리는 crypto/rand 패키지를 사용하여 보안적으로 더 안전한 랜덤 수를 생성할 수 있다는 것도 알아두세요.
+위 예제를 실행하면, 0과 99 사이의 랜덤한 숫자를 생성합니다.
 
-## 참고해봐요:
-Go 공식 문서에서 더 많은 정보를 얻을 수 있어요. 또한, 랜덤 숫자 생성과 별개로, 우리는 이것을 어떻게 활용할 수 있는지에 대한 아이디어를 찾아볼 수도 있어요. 더 많은 정보와 예시를 보시려면, 아래 자료들을 참고하세요.
+## 깊이 있게 알아보기:
 
-- [Go 공식 문서](https://golang.org/pkg/math/rand/)
-- [Bitcoin 암호화 기술에서의 난수 생성](https://arxiv.org/pdf/1112.3076.pdf)
-- [다양한 용도로 활용할 수 있는 랜덤 숫자 생성의 유용함](https://medium.com/@sfbehnke/why-random-numbers-are-useful-and-how-to-use-them-8d78cb6c947b)
+랜덤 숫자 생성은 알고리즘에 의해 이루어지므로 엄밀히 말하면 이는 완전히 무작위가 아닙니다. 이를 의사 랜덤 숫자(Pseudorandom number)라 하며, 알고리즘이 시작하는 시드값에 따라 동일한 시리즈의 숫자가 생성됩니다.
+
+Go 언어에서는 `math/rand` 패키지를 사용해 가장 일반적인 의사 랜덤 숫자를 생성할 수 있습니다. 물론 이외에도, CSPRNG(Cryptographically Secure Pseudorandom Number Generator)와 같이 보안에 좀 더 적합한 `crypto/rand` 패키지를 사용하는 등 다양한 방법이 존재합니다.
+
+## 참고 자료:
+
+- Go 공식 문서에서 `math/rand` 패키지에 대한 더 깊은 이해를 얻을 수 있습니다: https://golang.org/pkg/math/rand/
+- `crypto/rand` 패키지에 대한 자세한 내용은 다음을 참조하세요: https://golang.org/pkg/crypto/rand/

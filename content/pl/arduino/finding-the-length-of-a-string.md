@@ -10,21 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Znalezienie długości ciągu znaków to zwykła czynność wykonywana przez programistów, polegająca na obliczeniu liczby znaków w ciągu. Jest to ważna umiejętność, która pomaga w manipulowaniu i porównywaniu różnych ciągów znaków w programach.
+## Co i Dlaczego?
+
+Sprawdzanie długości ciągu oznacza po prostu liczenie liczby znaków w tym ciągu. Programiści robili to z różnych powodów, jak na przykład do kontrolowania wielkości danych wejściowych lub do sterowania iteracją pętli.
 
 ## Jak to zrobić:
-Arduino ma wbudowaną funkcję `strlen()`, która zwraca długość ciągu znaków. Przykładowo, jeśli chcesz wyświetlić liczbę znaków w zmiennej `string`, użyj:
-```
-Arduino
-Serial.println(strlen(string));
-```
-Ten kod zwróci liczbę całkowitą reprezentującą długość ciągu znaków.
 
-## Zagłębienie się w temat:
-Znajdowanie długości ciągu znaków jest ważnym elementem w programowaniu, ponieważ pozwala na porównywanie i analizowanie różnych ciągów znaków w celu wykonywania odpowiednich operacji. Alternatywą dla funkcji `strlen()` w Arduino jest funkcja `sizeof()`, która zwraca rozmiar zmiennej w bajtach. Jednak `sizeof()` może zwrócić niewłaściwą wartość w przypadku zmiennych o typie danych `string`.
+```Arduino 
+String mojCiąg = "Cześć, świecie!";
+int dlugosc = mojCiąg.length();
+Serial.begin(9600);
+Serial.println(dlugosc);
+```
+W tym przykładzie, wpisane wyjście wyniesie "16", co jest długością ciągu "Cześć, świecie!".
 
-## Zobacz również:
-- [Podstawy programowania w Arduino](https://www.arduino.cc/en/Tutorial/Foundations)
-- [Pełny podręcznik Arduino](https://www.arduino.cc/reference/en/)
-- [Jak zacząć z Arduino](https://www.arduino.cc/en/Guide/HomePage)
+## Głębsze Perspektywy
+
+Znalezienie długości ciągu jest jednym z najstarszych tricków w książce programistycznym, sięgającym czasów, gdy pamięć była kosztowna i trzeba było uważnie nią zarządzać. Alternatywą dla metody ".length()" jest stworzenie własnej funkcji, która iteruje przez ciąg do momentu napotkania "null" (terminatora ciągu). Nawiasem mówiąc, to właśnie metoda ".length()" robi pod spodem. Ta metoda kompatybilna jest całkowicie z obecną wersją Arduino.
+
+## Zobacz Również
+
+Zaleca się zapoznanie z poniższymi źródłami:
+
+- [Dokumentacja Arduino na temat klasy String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Tutorial o ciągach tekstu na Arduino](https://arduino.pl/kurs/jedenastyliterowe-napisy.php)
+- [Różnice między C string i Arduino String](https://arduino.stackexchange.com/questions/556/what-exactly-does-this-thing-refer-to)

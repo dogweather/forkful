@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "PowerShell: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -12,33 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Quoi & Pourquoi?
 
-Générer des nombres aléatoires est une fonctionnalité importante pour les programmeurs, car cela leur permet de créer de manière aléatoire des valeurs numériques pour leurs programmes. Cela peut être utile dans des jeux, des simulations, des tests et bien plus encore.
+La génération de nombres aléatoires est une fonctionnalité couramment utilisée en programmation. Les programmeurs l'utilisent pour créer des données d'essai, ajouter de l'aléatoire dans les jeux ou générer une valeur secrète, comme un token de sécurité.
 
 ## Comment faire:
 
-Voici comment générer des nombres aléatoires en utilisant PowerShell:
+Pour générer un nombre aléatoire en PowerShell, on utilise souvent le Get-Random. Voici un exemple rapide:
 
 ```PowerShell
-# Génère un nombre entier aléatoire entre 0 et 100
-Get-Random -Minimum 0 -Maximum 100 
+# Génération d'un nombre aléatoire entre 1 et 100
+$nombreRandom = Get-Random -Minimum 1 -Maximum 100
+Write-Output $nombreRandom
+```
 
-# Génère un nombre à virgule aléatoire entre 0 et 1
-Get-Random -Minimum 0 -Maximum 1 
+Quand vous exécutez ce script, vous verrez un nombre aléatoire entre 1 et 100. Par exemple, lors d'une exécution vous pouvez avoir l'affichage suivant:
 
-# Génère un nombre entier aléatoire entre 1 et 10
-Get-Random -Minimum 1 -Maximum 10 
-
-# Génère un nombre aléatoire compris dans une liste spécifiée
-$liste = 1, 5, 10, 15, 20
-Get-Random -InputObject $liste
+```PowerShell
+56
 ```
 
 ## Plongée en profondeur:
 
-Générer des nombres aléatoires est une pratique courante en informatique depuis les années 1940. Avant l'apparition des ordinateurs, les programmeurs utilisaient des moyens manuels pour générer des nombres aléatoires, tels que des tables de nombres pré-calculés. De nos jours, il existe d'autres langages de programmation qui proposent également des fonctions de génération de nombres aléatoires, tels que Python et Java. Cependant, PowerShell offre une syntaxe simple et facile à utiliser qui la rend idéale pour les tâches de génération de nombres aléatoires.
+Historiquement, les programmeurs utilisaient des méthodes comme le lancer de dés ou les mouvements de souris pour générer de l'aléatoire. Maintenant, la plupart des langages de programmation, dont PowerShell, disposent de fonctions intégrées pour générer des nombres aléatoires. 
+
+Une alternative à Get-Random est l'utilisation d'une fonction basée sur le .NET comme System.Random. C'est plus complexe mais cela peut être nécessaire si vous recherchez une méthode plus flexible ou spécifique.
+
+Au niveau de l'implémentation, Get-Random utilise un générateur de nombres aléatoires pseudo-aléatoire. Ce n'est pas parfaitement aléatoire, mais suffisamment proche pour la plupart des utilisations.
 
 ## Voir aussi:
 
-- [Documentation officielle de la commande Get-Random](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7)
-- [Article sur la génération de nombres aléatoires en Python](https://realpython.com/python-random/)
-- [Article sur la génération de nombres aléatoires en Java](https://www.baeldung.com/java-random)
+Pour plus d'informations sur la génération de nombres aléatoires en PowerShell :
+
+- Documentation officielle de `Get-Random` sur le site de Microsoft : [LIEN](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/get-random)
+- Un article de blog détaillé sur la génération de nombres aléatoires en PowerShell : [LIEN](https://www.howtogeek.com/183351/how-to-generate-a-random-number-in-windows-powershell/)

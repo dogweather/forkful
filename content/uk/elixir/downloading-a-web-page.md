@@ -1,6 +1,6 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Elixir: Завантаження веб-сторінки"
+html_title:           "Gleam: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## Що і Чому?
+Скачування веб-сторінки - це процес зчитування інформації з URL адреси. Програмісти роблять це, щоб аналізувати вміст сторінки, автоматизувати робочі процеси чи створити бекапи сторінок.
 
-Завантаження веб-сторінки - це процес отримання вмісту веб-сторінки з сервера і відображення його у веб-браузері. Програмісти роблять це для отримання необхідної інформації з веб-сайту для подальшої обробки, аналізу або використання у своїх програмах.
-
-Як це зробити:
+## Як зробити:
+Для скачування веб-сторінок в Elixir нам знадобиться HTTP бібліотека, наприклад, HTTPoison. Установка та використання HTTPoison відображено нижче:
 
 ```Elixir
-httpc.get("https://example.com/")
-|> IO.inspect
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
 ```
 
-Вивід:
-`{:ok, %HTTPoison.Response{status_code: 200, headers: [...], body: "..."}}`
+Після додавання залежностей, запустити команду `mix deps.get` в ваших терміналах. Потім створимо запит:
 
-Глибокий погляд:
+```Elixir
+defmodule MyApp.WebScraper do
+  require HTTPoison
 
-Історичний контекст: Завантаження веб-сторінки є важливою частиною розробки веб-сайтів з моменту появи інтернету. У початкові часи, це робилося шляхом написання власного клієнта для отримання вмісту веб-сторінки. З поширенням мов програмування, було розроблено багато інструментів для полегшення цього процесу.
+  def fetch_page(url) do
+    case HTTPoison.get(url) do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        {:ok, body}
+      {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        {:error, "Received status code #{status_code}"}
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        {:error, reason}
+    end
+  end
+end
+```
 
-Альтернативи: Крім Elixir, існують інші мови програмування та інструменти, які можна використовувати для завантаження веб-сторінок, такі як Python з бібліотеками (requests, urllib), JavaScript (fetch API) тощо.
+## Пірнання в деталі:
+Загрузка веб-сторінок - це старий як інтернет концепт, потреба в якому постійно зростає. Спочатку програмісти створювали власні скрипти для скачування сторінок, але з розвитком мови програмування, були створені спеціальні бібліотеки, такие як HTTPoison в Elixir.
 
-Деталі реалізації: В Elixir для завантаження веб-сторінки використовується HTTP-клієнт, наприклад, HTTPoison або Mint. Після отримання відповіді, результат може бути оброблений додатковими функціями, наприклад, виконавчою машиною Plug.
+Як альтернатива, можливо використовувати інші бібліотеки, такі як Hackney чи :httpc, яка є частиною OTP. Обидва варіанти достатньо гнучкі, але HTTPoison надає більш вдалий, що до функцій interfeys.
 
-Дивись також:
+Щодо деталей реалізації, HTTPoison використовує бібліотеку Hackney в якості транспорту HTTP і надає більш "Elixir-friendly" API для виконання HTTP запитів.
 
-- Розділ про HTTP-клієнти в документації Elixir
-(https://hexdocs.pm/elixir/HTTPoison.html)
-- Документація на Mint (https://hexdocs.pm/mint/Mint.html)
-- Вступ до веб-розробки в Elixir (https://elixir-lang.org/getting-started/introduction.html)
+## Див. також:
+1. [HTTPoison Docs](https://hexdocs.pm/httpoison/readme.html)
+2. [Hackney GitHub](https://github.com/benoitc/hackney)
+3. [Elixir :httpc](https://erlang.org/doc/man/httpc.html)

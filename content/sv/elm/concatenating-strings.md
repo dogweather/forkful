@@ -1,6 +1,6 @@
 ---
 title:                "Sammanslagning av strängar"
-html_title:           "Elm: Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,26 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Sammanfogning av strängar i programmering är processen att lägga ihop flera strängar för att skapa en längre sträng. Detta är användbart för att skapa dynamiskt innehåll på en webbplats eller för att skapa enkel textbas information till användare.
+Att konkatenera strängar betyder att sammansätta två eller flera strängar i ett gemensamt uttryck. Programmerare gör detta för att bygga sammanhängande meddelanden, användargränssnitt och för att bearbeta datavärden som text.
 
-## Hur?
-```Elm 
-import Html
+## Hur man gör:
+I Elm, vi använder `++` operatorer för att konkatenera strängar. Låt oss visa det med några kodexempel.
 
-strang1 = "Hej "
-strang2 = "Världen!"
-kombinerad = strang1 ++ strang2
+```Elm
+"hej" ++ " " ++ "värld" -- Resultatet blir "hej värld"
+```
+Eller, man kan konkatenera strängar och tulpaner med `++` och `toString`:
 
-Html.text kombinerad
+```Elm
+"Året är " ++ toString 2022 -- Resultatet blir "Året är 2022"
 ```
 
-Output:
-Hej Världen!
+## Djupgående
+Historiskt sett, konkatenering av strängar representerade en grundläggande operation i tidiga programmeringsspråk som Fortran och COBOL. I Elm, det visas sig genom att använda `++` operator. Det finns alternativ till `++`, som `String.concat`, som tar en lista av strängar och kombinerar dem till en enda sträng. Strängkonkatenering i Elm är strikt modifiering av strängar. Eftersom Elm är ett funktionellt språk, redan existerande strängar är aldrig ändrat, istället nya strängar är skapade när strängar konkateneras.
 
-## Djupdykning:
-Att sammanfoga strängar är en grundläggande funktion inom programmering och är vanligt förekommande i många olika programmeringsspråk. Det finns dock alternativa sätt att sammanfoga strängar, som att använda en "join" -funktion eller en "concat" -funktion. I Elm kan man också använda funktionen "append" för att sammanfoga strängar. 
-
-När man sammanfogar strängar i Elm använder man operatorn "++" istället för "+" som man kanske är van vid från andra språk. Detta är för att i Elm är "+" reserverat för aritmetiska operationer. 
-
-## Se även:
-Officiell dokumentation för sträng-sammanfogning i Elm: https://guide.elm-lang.org/strings.html#concatenation
+## Se även
+Läs mer om strängar på Elm's officiella dokumentation: [The String module in Elm](https://package.elm-lang.org/packages/elm/core/latest/String)
+Liknande begrepp och tillvägagångssätt i andra funktionella programmeringsspråk: [Concatenation in Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:-43--43-) och  [Concatenation in F#](https://docs.microsoft.com/en-us/dotnet/fsharp/language-reference/symbol-and-operator-reference/)

@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "TypeScript: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -10,25 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att starta ett nytt projekt är när en programmerare börjar arbeta på en ny kodbas eller programvara. Programmare gör detta för att lösa ett specifikt problem eller förbättra en befintlig lösning. Det kan också vara för att utforska nya tekniker och möjligheter.
+# Påbörja Ett Nytt TypeScript Projekt: En Praktisk Guide
 
-Hur man:
+## Vad och Varför?
+Att påbörja ett nytt projekt handlar om att skapa en strukturerad bas att bygga ditt program på. Det gör programmerarna för att fastställa en stabil grund, definiera projekt filstrukturen och skapa en effektiv arbetsflöde.
+
+## Hur man Gör:
+För att starta ett nytt TypeScript-projekt, kör du följande kod:
+
 ```TypeScript
-// Skapa ett nytt projekt med TypeScript
-tsc --init
-
-// Kompilerar TypeScript till JavaScript
-tsc app.ts
-
-// Köra TypeScript-program
-node app.js
+npm init -y
+npm i typescript ts-node --save-dev
 ```
+För att kompilera dina TypeScript-filer till JavaScript, behöver du skapa en `tsconfig.json`-fil och lägga till följande konfiguration:
 
-## Djupdykning:
-Att starta ett nytt projekt är en viktig del av utvecklingsprocessen och kan vara avgörande för dess framgång. Det finns många olika alternativ till TypeScript för att lösa problem, men TypeScript har blivit populärt på grund av dess starka typning och förmåga att identifiera fel vid kompilering. Implementeringen av ett nytt projekt med TypeScript kan vara krävande, men det finns många resurser och dokumentation tillgängliga för att underlätta processen.
+```TypeScript
+{
+    "compilerOptions": {
+        "target": "es5",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "strict": true
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "src/**/*.ts"
+    ]
+}
+```
+Du kan nu lägga till ditt startskript i package.json:
 
-## Se även:
-- [TypeScript dokumentation] (https://www.typescriptlang.org/docs/)
-- [10 anledningar till att använda TypeScript] (https://stackify.com/10-reasons-to-use-typescript/)
-- [TypeScript-tutorials] (https://www.tutorialspoint.com/typescript/index.htm)
+```TypeScript
+"scripts": {
+    "start": "ts-node ./src/index.ts"
+}
+```
+## Djupdykning
+Projektinitiering i TypeScript har utvecklats över tid och anpassats till moderna utvecklingskrav. Alternativ inkluderar att använda JavaScript direkt, eller andra kompilerade till JavaScript språk som Dart och Babel.
+
+`tsconfig.json`-filen ger utomordentlig detaljnivå för att anpassa kompileringsprocessen till projektets behov. Vissa av dessa inställningar inkluderar "strict" för att tvinga statisk typkontroll, och "outDir" för att specificera var den kompilerade JavaScript-kod som kommer att genereras ska placeras.
+
+## Se Även
+- [TypeScript Dokumentation](https://www.typescriptlang.org/docs/)
+- [ts-node](https://www.npmjs.com/package/ts-node)
+- [TypeScript GitHub Repo](https://github.com/microsoft/TypeScript)
+- [npm init](https://docs.npmjs.com/cli/v7/commands/npm-init)

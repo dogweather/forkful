@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Calcolare una data nel futuro o nel passato è un'operazione comune per i programmatori. Questo permette loro di effettuare calcoli temporali per creare funzionalità come notifiche di scadenze o promemoria di eventi.
+## Cosa & Perché? 
+Calcolare una data futura o passata significa determinare una data spostando un certo numero di giorni prima o dopo una data di partenza specificata. I programmatori lo fanno per gestire eventi temporali, come scadenze, scadenze o programmazione di eventi.
 
 ## Come fare:
-```Fish Shell``` offre diverse funzioni e strumenti per calcolare date nel futuro o nel passato. Uno dei modi più semplici per farlo è utilizzare il comando ```date``` seguito dalla data desiderata nel formato ```+days```, dove "days" rappresenta il numero di giorni dopo o prima la data corrente.
+Ecco un esempio semplice per calcolare una data 5 giorni dopo la data corrente nel fish shell:
 
-Ad esempio, se vogliamo sapere quale data sarà tra 10 giorni, possiamo eseguire il seguente comando:
-
-```
-date +10 days
-```
-
-Il risultato dovrebbe essere qualcosa del genere:
-
-```
-gio 11 ott 2021 10:30:45 CEST
+```Fish Shell
+set -lx data_corrente (date -u +"%Y%m%d")
+set -lx data_futura (date -u -d "$data_corrente + 5 days" +"%Y%m%d")
+echo $data_futura
 ```
 
-Inoltre, è possibile combinare questa funzione con altre come ad esempio ```+weeks```, ```+months``` o ```+years``` per effettuare calcoli ancora più precisi.
+Questo produrrà un output simile al seguente:
 
-## Approfondimento:
-In passato, per calcolare date nel futuro o nel passato era necessario utilizzare linguaggi come Ruby o Python. Tuttavia, grazie alla potenza e alla flessibilità di ```Fish Shell```, ora è possibile utilizzarlo anche per questo scopo.
+```Fish Shell
+20291010
+```
 
-Inoltre, oltre al comando ```date```, esistono anche altri strumenti utili come il plugin [Oh My Fish](https://github.com/oh-my-fish/oh-my-fish) che offre funzioni di calcolo avanzate per le date.
+## Approfondimento
+Mentre la gestione delle date può sembrare semplice, in realtà ha un contesto storico complesso. Il calendario che utilizziamo oggi è frutto di secoli di evoluzione e ha una serie di anomalie. Per gestirli, i programmatori utilizzano una varietà di librerie e strumenti di calcolo delle date.
 
-## Vedi anche:
-- [Documentazione ufficiale di Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Plugin Oh My Fish](https://github.com/oh-my-fish/oh-my-fish)
-- [Articolo su come calcolare date in Fish Shell](https://www.tecmint.com/set-date-and-time-in-fish/)
+Ci sono molte alternative al calcolo delle date. Ad esempio, puoi utilizzare librerie di programmazione come la libreria di date e tempo di Java.
+
+Durante il calcolo delle date passate e future, Fish eseguirà la sottrazione o l'aggiunta delle date internamente. Sappi solo che il calcolo viene effettuato in termini di secondi da un'epoca, il 1 gennaio 1970. 
+
+## Vedi Anche
+Per ulteriori informazioni su come calcolare le date future o passate, consulta i seguenti link:
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Calculating Dates in Fish](https://www.baeldung.com/linux/date-arithmetic-fish)
+- [Date Command in Unix or Linux (geeksforgeeks.org)](https://www.geeksforgeeks.org/date-command-linux-unix-examples/) 
+
+Ricorda che le capacità di calcolo della data variano da un sistema operativo all'altro e da un linguaggio di programmazione all'altro. Fai attenzione a queste differenze durante la programmazione.

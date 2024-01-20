@@ -1,7 +1,7 @@
 ---
-title:                "एक एचटीटीपी अनुरोध भेजना"
-html_title:           "C++: एक एचटीटीपी अनुरोध भेजना"
-simple_title:         "एक एचटीटीपी अनुरोध भेजना"
+title:                "http अनुरोध भेजना"
+html_title:           "Elixir: http अनुरोध भेजना"
+simple_title:         "http अनुरोध भेजना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+# क्या और क्यों? (What & Why?)
+HTTP अनुरोध भेजना मतलब किसी वेबसर्वर से डाटा मांगना। प्रोग्रामर्स इसे वेबसर्वर से विभिन्न प्रकार की जानकारी हासिल करने के लिए करते हैं। 
 
-HTTP अनुरोध भेजना एक कंप्यूटर के साथ अन्य कंप्यूटर के बीच डेटा को एक जगह से दूसरी जगह भेजने की प्रक्रिया है। प्रोग्रामर इसे डेटा को शेयर करने, संचार करने या सर्वर से डेटा प्राप्त करने के लिए करते हैं।
+# कैसे करें: (How to:) 
+C++ में, आप एक अनुरोध भेजने के लिए 'cURL' लाइब्रेरी का उपयोग कर सकते हैं। 
 
-## कैसे करें:
-
-```c++
-#include <iostream>
+```C++
 #include <curl/curl.h>
 
-// हर अनुरोध के लिए एक नया हैंडलर बनाएं
-CURL *curl = curl_easy_init();
+int main() {
+  CURL *curl;
+  CURLcode res;
 
-// अनुरोध को सेट करें
-curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
+  curl_global_init(CURL_GLOBAL_DEFAULT);
+  curl = curl_easy_init();
 
-// अनुरोध को भेजें
-curl_easy_perform(curl);
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+    res = curl_easy_perform(curl);
+    if(res != CURLE_OK) {
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+    }
+    curl_easy_cleanup(curl);
+  }
 
-// हैंडलर को साफ करें
-curl_easy_cleanup(curl);
+  curl_global_cleanup();
+
+  return 0;
+}
 ```
+इस कोड में, आप "http://example.com" पर HTTP अनुरोध भेज रहे हैं। अगर कुछ भी गलत हुआ है, तो आपको उसकी जानकारी मिलेगी। 
 
-आउटपुट:
+# गहरी जानकारी: (Deep Dive)
+HTTP अनुरोधों का इस्तेमाल वेब की विकास प्रक्रिया में महत्वपूर्ण भूमिका निभा रहा है। cURL के विकल्प के रूप में, आप `WinINet`, `libwww`, `Poco` आदि का उपयोग कर सकते हैं। cURL बहु भाषीय लाइब्रेरी है जिसे C, C++, Python आदि में उपयोग किया जा सकता है। 
 
-```
-<!doctype html>
-<html>
-<head>
-    <title>उदाहरण वेबसाइट</title>
-</head>
-<body>
-    <h1>नमस्ते,</h1>
-    <p>यह एक उदाहरण वेबसाइट है।</p>
-</body>
-</html>
-```
-
-## गहराई विस्तार:
-
-HTTP अनुरोधों को पहले से ही विभिन्न प्रोटोकॉलों विकसित किया गया है, लेकिन C++ में एक आम प्रयोग है। यह अन्य लोकप्रिय लाइब्रेरी विकल्प जैसे कि libcurl और Poco C++ भी है। एक HTTP अनुरोध भेजने के पहले, एक TCP कनेक्शन स्थापित किया जाता है जो प्रतिक्रिया को प्राप्त करने के बाद समाप्त होता है।
-
-## देखें भी:
-
-- [libcurl डॉक्यूमेंटेशन](https://curl.haxx.se/libcurl/)
-- [C++ से HTTP से संबंधित सवालों का समाधान](https://stackoverflow.com/questions/tagged/c%2B%2B+http)
-- [Poco C++ वेबसाइट](https://pocoproject.org/)
+# एक्स्ट्रा जानकारी: (See Also)
+अधिक जानकारी के लिए, आप निम्नलिखित लिंक पर जा सकते हैं:
+- cURL कार्यान्वयन: [curl tutorial](https://ec.haxx.se/)
+- HTTP अनुरोध के विविध प्रकार: [types of HTTP requests](https://www.restapitutorial.com/)
+- अन्य C++ लाइब्रेरी: [other C++ libraries](https://www.slant.co/topics/7890/~best-http-clients-for-c-plus-plus)

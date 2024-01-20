@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin kanssa http-pyynnön lähettäminen."
-html_title:           "Lua: Perusautentikoinnin kanssa http-pyynnön lähettäminen."
-simple_title:         "Perusautentikoinnin kanssa http-pyynnön lähettäminen."
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,46 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Lähettäminen HTTP-pyyntö basic authenticationin kanssa tarkoittaa, että pyyntöön lisätään käyttäjän tunnistetiedot, kuten käyttäjätunnus ja salasana. Tämä auttaa varmistamaan, että vain oikeat käyttäjät pääsevät käsiksi tiettyyn resurssiin, kuten verkkosivulle tai sovellukseen. Ohjelmoijat käyttävät tätä tekniikkaa parantamaan tietoturvaa ja estämään luvattomien käyttäjien pääsyn.
 
-## Kuinka:
-```
--- Lähetä HTTP-pyyntö basic authenticationilla
--- Ota käyttöön http-kirjasto
-local http = require("socket.http")
+HTTP-pyyntö perustodennuksella on prosessi, jossa lähettää serverille suojattuja tietoja. Ohjelmoijat käyttävät sitä varmistaakseen, että vain valtuutetut osapuolet pääsevät käsiksi tietoihin.
 
--- Muodosta pyyntö
-local username = "käyttäjätunnus"
-local password = "salasana"
-local authtoken = username..":"..password
-local response_body = {}
-local request_body = "Tervetuloa!"
+## Näin se tehdään:
 
--- Lähetä pyyntö
-local code, headers, status = http.request{
-  url = "https://example.com",
-  method = "POST",
-  source = ltn12.source.string(request_body),
-  headers = {
-    ["Content-Type"] = "text/plain",
-    ["Authorization"] = "Basic "..mime.b64(authToken)
-  },
-  sink = ltn12.sink.table(response_body)
-}
+Lua-koodin avulla perustodennuksen HTTP-pyyntö suoritetaan seuraavasti:
 
--- Tulosta vastauskoodi ja vastauksen sisältö
-print(code)
-print(table.concat(response_body))
+```Lua
+http = require("socket.http")
+ltn12 = require("ltn12")
+
+function http_auth(url, user, pass)
+    local responsebody = {}
+
+    http.request{
+        url = url,
+        sink = ltn12.sink.table(responsebody),
+        user = user,
+        password = pass
+    } 
+
+    return table.concat(responsebody)
+end
 ```
 
-Tulostettu vastauskoodi näyttää pyynnön onnistumisen tai mahdollisen virheen. Vastauksen sisältö sisältää palvelimesta saadun vastauksen.
+Ja esimerkki sen käytöstä:
 
-## Syvempi sukellus:
-HTTP-perusautentikointi ei ole täysin turvallinen menetelmä, koska käyttäjätunnus ja salasana välitetään perusrakenteessa (base64) ja ne voidaan helposti salata. Tästä syystä kehitettiin muita keinoja, kuten Digest authentication, joka käyttää haaste-vastaus-menetelmää ja SSL / TLS-salausta.
+```Lua
+res = http_auth('http://example.com', 'username', 'password')
+print(res)
+```
 
-Jos käytät Lua-versiota, joka ei tue socket.http-kirjastoa, voit käyttää muita kirjastoja, kuten LuaSocket tai luasec.
+Tässä esimerkissä pyynnön vastauksen on tulostettu konsolille.
 
-## Katso myös:
-- [HTTP-pyyntöjen lähettäminen Lua-kielellä](https://wiki.garrysmod.com/page/HTTP_Library)
-- [LuaSocket-kirjasto](https://luarocks.org/modules/luarocks/luasocket)
-- [Sec-kirjasto](https://github.com/openresty/lua-resty-core/blob/master/lib/ngx/ssl.md)
+## Syvempi sukellus
+
+HTTP-pyyntö perustodennuksella on ollut osa ohjelmointia siitä asti, kun suojattu verkkosisältö tuli mahdolliseksi. Valitettavasti se ei ole kaikkein turvallisin menetelmä todennukseen, joten se on parasta jättää sisältöön, joka ei ole erityisen arkaluonteista.
+
+Vaihtoehtoisia menetelmiä ovat token-pohjainen todennus ja OAuth, jotka tarjoavat ylimääräistä turvallisuutta.
+
+Lua noudattaa tiettyä syntaksia perustodennuksen suhteen. 'user' ja 'password' kenttien tulee olla osana http.request-kutsua. Serverin saa vastauksena yhdistetyn viestin.
+
+## Katso myös
+
+- [Lua:n virallinen dokumentaatio](http://www.lua.org/manual/5.4/)
+- [HTTP-autentikointi: perus- ja ruoansulatuspääsyautentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
+- [OAuth 2.0 -protokolla](https://oauth.net/2/)

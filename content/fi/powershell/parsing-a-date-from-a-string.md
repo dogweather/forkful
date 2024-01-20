@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "PowerShell: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,32 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+---
 
-Päivämäärän parsiminen merkkijonosta on prosessi, jossa muutetaan merkkijono sisäiseen päivämäärämuotoon. Tämä on tärkeää ohjelmoijille, jotta he voivat käsitellä ja vertailla päivämääriä tietokannoissa ja tiedostomuodoissa.
+## Mitä ja Miksi?
 
-# Miten:
+Parsing-päivämäärä merkkijonosta tarkoittaa, että jäsennämme päivämäärän merkkijonojen muodossa ja muutamme sen päivämääräobjektiksi, jota voimme käsitellä ohjelmoinnissa. Sitä tarvitaan, kun teemme ohjelmia, jotka lukevat tai tallentavat päivämäärärajoituksia merkkijonona.
+
+---
+
+## Kuinka tehdä:
 
 ```PowerShell
-$date = [datetime]::ParseExact("2020-12-25", "yyyy-MM-dd", $null)
-Write-Output $date.ToShortDateString()
+# Luodaan merkkijono, joka sisältää päivämäärän
+$päivämääräMerkkijono = "21.12.2022"
+
+# Muunnetaan merkkijono päivämääräksi
+$päivämäärä = [DateTime]::ParseExact($päivämääräMerkkijono, 'dd.MM.yyyy', $null)
+
+# Tulostetaan päivämäärä
+Write-Output $päivämäärä
 ```
+Esimerkkisuorituksen tulostus on: `21. joulukuuta 2022 0:00:00`
+
+---
+
+## Syvällistä:
+
+1. **Historiallinen konteksti**:
+Parsing-päivämäärä merkkijonoista on yleinen tehtävä, joka on ollut olemassa ohjelmoinnin alkuaikojen jälkeen. PowerShellin syntaksi suorittaa tämän käyttämällä `ParseExact` -metodia.
+
+2. **Vaihtoehtoja**:
+Voit myös käyttää `DateTime.TryParse` -metodia provosoidaksesi virheitä, jos merkkijono ei ole suoritettavissa päivämääränä.
 
 ```PowerShell
-$date = [datetime]::ParseExact("12/25/2020", "M/dd/yyyy", $null)
-Write-Output $date.ToShortDateString()
+$päivämääräMerkkijono = "21.12.2022"
+$onnistuuko = [DateTime]::TryParseExact($päivämääräMerkkijono, 'dd.MM.yyyy', $null, [System.Globalization.DateTimeStyles]::None, [ref]$päivämäärä)
+
+if($onnistuuko) {
+    Write-Output $päivämäärä
+} else {
+    Write-Output "Ei voitu muuntaa päivämääräksi"
+}
 ```
 
-```
-25.12.2020
-25.12.2020
-```
+3. **Rakentamistiedot**: 
+`ParseExact` -metodi ottaa 3 parametria: (1) merkkijonon, joka jäsennetään, (2) formaatilla esitetyt päivämäärän muotoilusäännöt, ja (3) kulttuuri-informaatio, jota käytetään jäsennyksessä. Jos tämä arvo on $null, käytetään nykyistä kulttuuria.
 
-# Syvällinen sukellus:
+---
 
-Päivämäärän parsimisessa on tärkeää määrittää oikea päivämäärämuoto, jotta parseri pystyy tulkitsemaan merkkijonon oikein. Tämä voi olla haastavaa etenkin, jos päivämäärät ovat kansainvälisessä muodossa – kuten esimerkiksi ensimmäinen esimerkki yllä, jossa kuukausi ja päivä on vaihdettu alkuruotsalaiseen tyyliin. On myös muita tapoja parsia päivämääriä PowerShellin avulla, kuten käyttämällä "Get-Date -Date" komentoa.
+## Katso myös:
 
-# Katso myös:
+1. [Päivämäärän muuntaminen merkkijonoksi](https://docs.microsoft.com/fi-fi/dotnet/standard/base-types/how-to-convert-a-string-to-a-date-and-time)
+2. [DateTime.TryParse-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime.tryparse?view=net-5.0)
+3. [DateTime.ParseExact-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime.parseexact?view=net-5.0)
 
-- [Microsoftin virallinen dokumentaatio päivämäärien parsimisesta PowerShellillä](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=netcore-3.1#System_DateTime_ParseExact_System_String_System_String_System_IFormatProvider_)
-- [Päivämäärän parsiminen PowerShellin avulla YouTube-videossa (englanniksi)](https://www.youtube.com/watch?v=USXhLq9EEW8)
+---

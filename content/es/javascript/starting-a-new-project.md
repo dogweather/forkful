@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Javascript: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -10,24 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Empezar un nuevo proyecto en Javascript es simplemente iniciar un nuevo conjunto de códigos y archivos para crear una aplicación o programa. Los programadores lo hacen para poder desarrollar nuevas ideas, solucionar problemas y seguir mejorando sus habilidades en el lenguaje.
+## ¿Qué y Por Qué?
+Iniciar un nuevo proyecto implica comenzar a escribir código desde cero para una nueva aplicación o función. Los programadores lo hacen para resolver problemas específicos o innovar con tecnologías emergentes.
 
 ## ¿Cómo hacerlo?
-Para crear un nuevo proyecto en Javascript, simplemente sigue estos pasos:
+Ahora, te mostraré cómo iniciar un nuevo proyecto en JavaScript. JavaScript es un lenguaje simple y potente, muy popular en desarrollo web en el cliente y el servidor.
+
+Para iniciar un proyecto desde cero, debemos crear un archivo nuevo. Por ejemplo, `app.js` y este será nuestro punto de inicio.
+
+```Javascript 
+// app.js
+console.log("¡Hola Mundo!");
+```
+Para correr este script, simplemente usamos node en la terminal:
 
 ```Javascript
-// Crea un archivo en blanco con la extensión .js
-// Escribe el siguiente código en tu nuevo archivo:
-console.log("¡Hola mundo!");
-
-// Guarda tu archivo y ejecútalo en el navegador o en la consola
-// Verás la frase "¡Hola mundo!" impresa en la pantalla
+$ node app.js
 ```
 
-## Profundizando
-Iniciar un nuevo proyecto en Javascript se ha vuelto muy popular debido a su facilidad de uso y su gran cantidad de recursos y herramientas disponibles en línea. Alternativamente, algunos programadores pueden optar por utilizar otros lenguajes de programación como Python o Java para iniciar sus proyectos. Algunos detalles importantes a tener en cuenta al empezar un nuevo proyecto son la planificación de la estructura del código, la elección de un editor de texto y la investigación sobre librerías y frameworks disponibles para optimizar el desarrollo.
+El resultado será:
 
-## Ver también
-- [Getting started with Javascript](https://developer.mozilla.org/es/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
-- [Comparación de lenguajes de programación](https://www.educba.com/comparacion-de-lenguajes-de-programacion/)
+```
+¡Hola Mundo!
+```
+
+## Inmersión Profunda
+
+(1) El JavaScript se creó hace más de dos décadas y ha cambiado dramáticamente desde su inicio. Ha pasado de ser un lenguaje básico para hacer páginas web interactivas a ser la base del desarrollo web moderno con Node.js, React.js, Angular y muchas otras bibliotecas y marcos.
+
+(2) Hay alternativas a iniciar un proyecto desde cero. Los generadores de proyectos como Create React App o Vue CLI pueden ayudarte a comenzar rápidamente con una estructura de proyecto predefinida y estar repletos de características.
+
+(3) Al iniciar un proyecto nuevo, necesitas considerar la arquitectura de tu aplicación, patrones de diseño, y cómo organizar tu código. Para proyectos de JavaScript, podrías considerar usar un linter como ESLint para ayudar a mantener un estilo de código coherente y evitar errores comunes.
+
+## Ver También
+
+- Tutorial de JavaScript de Mozilla: [https://developer.mozilla.org/es/docs/Web/JavaScript/Guide](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide)
+
+- Node.js Docs: [https://nodejs.org/es/docs/](https://nodejs.org/es/docs/)
+
+- Create React App: [https://create-react-app.dev/](https://create-react-app.dev/)
+
+- Vue CLI: [https://cli.vuejs.org/](https://cli.vuejs.org/)
+
+- ESLint: [https://eslint.org/](https://eslint.org/)

@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "Java recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Java"
 category:             "Java"
@@ -11,37 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Converting a date into a string involves converting a date object into a human-readable string representation. This is useful because it allows programmers to display dates in various formats, depending on the needs of the application or user. It also makes it easier to work with dates in different programming languages and systems.
+Turning a date into a string in Java means going from the DateTime data type, into something legible for humans—an operation we call formatting. We do this so end-users can read, use or save date data in a user-friendly format.
 
 ## How to:
-To convert a date into a string in Java, we can use the `SimpleDateFormat` class. We first create an instance of this class, passing in the desired date format as a string. Then, we can use the `format()` method to convert the date object into a string in the specified format.
+Here's an example of how to convert a Date to a String in Java using SimpleDateFormat:
 
-```Java
-SimpleDateFormat dateFormat = new SimpleDateFormat("MM/dd/yyyy");
-Date date = new Date();
-String dateString = dateFormat.format(date);
+```java
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-System.out.println(dateString); // Output: 03/17/2021
+public class Main {
+  public static void main(String[] args) {
+    Date currentDate = new Date(); // This gets the current date-time.
+    SimpleDateFormat format = new SimpleDateFormat("MM-dd-yyyy HH:mm:ss"); // This sets the format.
+    String stringDate = format.format(currentDate); // This converts to string.
+    System.out.println(stringDate);  // This prints the date.
+  }
+}
 ```
 
-We can also include time in our string representation by adding hours, minutes, and seconds to the format.
-
-```Java
-SimpleDateFormat dateTimeFormat = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss");
-Date date = new Date();
-String dateTimeString = dateTimeFormat.format(date);
-
-System.out.println(dateTimeString); // Output: 03/17/2021 09:23:15
-```
+When you run this script, you'll see something like "05-08-2022 19:01:30" printed on your console—simple, fast, and useful.
 
 ## Deep Dive
-The `SimpleDateFormat` class was introduced in Java 1.1 and is part of the `java.text` package. It supports a variety of date and time formatting options, including different languages and locales. It also provides methods for parsing string representations of dates into date objects.
+Formatting dates have been necessary since the inception of programming, as it's key to interface with end-users. In Java, the DateFormat class, introduced in JDK 1.1, initially allowed this. But DateFormat had thread-safety and performance issues, leading to the more robust SimpleDateFormat in Java 1.2.
 
-An alternative to using the `SimpleDateFormat` class is the `DateTimeFormatter` class, introduced in Java 8. This class offers a more modern and thread-safe way to format and parse dates. It also supports new date and time classes introduced in Java 8, such as `LocalDate` and `LocalDateTime`.
+Alternatives to SimpleDateFormat exist: Java 8 introduced DateTimeFormatter, which is not only thread-safe but also immutables (a win!). If you're dealing with older codebases or libraries still hung up on java.util.Calendar and java.util.Date, Joda-Time library poses an excellent option.
 
-Under the hood, the `SimpleDateFormat` class uses a `Calendar` object to handle date and time calculations. It also uses a `Locale` object to determine the language and country for the date representation. These components can be accessed and modified through the `setCalendar()` and `setLocale()` methods of the `SimpleDateFormat` class.
+Implementing these conversions is routine—just remember, dates are managed as milliseconds betwixt Jan 1, 1970, and the date in question. The crux is parsing these milliseconds into a user-friendly format.
 
-## See Also:
-- [Official Java Documentation for SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Official Java Documentation for DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Stack Overflow: Oracle recommends avoiding SimpleDateFormat and switching to DateTimeFormatter](https://stackoverflow.com/questions/12035482/simpledateformat-thread-safety/37213843#37213843)
+## See Also
+- Oracle Docs: [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html), [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- [Baeldung: Converting between Date, Calendar, and LocalDate](https://www.baeldung.com/java-convert-date-to-localdate-and-back)
+- [Princeton Java: Dates, times and intervals](https://introcs.cs.princeton.edu/java/stdlib/javadoc/edu/princeton/cs/stdlib/Date.html)

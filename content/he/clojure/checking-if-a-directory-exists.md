@@ -1,7 +1,7 @@
 ---
-title:                "בדיקת קיום תיקייה"
-html_title:           "Clojure: בדיקת קיום תיקייה"
-simple_title:         "בדיקת קיום תיקייה"
+title:                "בדיקה אם ספרייה קיימת"
+html_title:           "Clojure: בדיקה אם ספרייה קיימת"
+simple_title:         "בדיקה אם ספרייה קיימת"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,41 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-בעולם התכנות, ייתכן שנתקלתם במצב שבו עליכם לבדוק האם תיקייה מסוימת קיימת במערכת הקוד שלכם. התהליך הזה ידוע כבדיקת קיום תיקייה והוא מאפשר לפרוגרמים לבצע פעולות שונות בהתאם לכך אם התיקייה קיימת או לא. זהו כלי חשוב ונחוץ לכל מתכנת שרוצה לכתוב קוד יעיל ובטוח.
+#מה זה ולמה?
+בדיקה אם תיקייה קיימת היא פעולה שבה התכנית בודקת האם ספסיףי תיקייה קיים כבר במערכת הקבצים. מתכנתים בוחרים לבדוק את זה למנוע שגיאות כתיבה לתיקייה שלא קיימת ולוודא שהמאמרים מאוחסנים במקום הנכון.
 
-## איך לעשות?
-תיקיית הקוד הבאה מראה דוגמאות לשימוש בפונקציה המובנת 'exists?' בשפת קלוז'ור כדי לבדוק קיום תיקייה במערכת הקבצים שלנו. אתם יכולים לשנות את הנתיב לפי התיקייה שאתם רוצים לבדוק.
-
-```Clojure
-;; Import the 'exists?' function
-(import '[java.io File])
-;; Define the directory path
-(def dir "/Users/username/documents")
-;; Check if the directory exists
-(print (exists? (File. dir)))
-```
-מחזיר: true or false
-
-בדוגמה השנייה, אנו מבצעים בדיקה אם תיקייה קיימת בכתובת האתר שלנו. אנחנו יכולים להשתמש בפונקציה 'exists?' עם כתובת האתר כפרמטר.
+#איך לעשות:
+אפשר לבדוק אם תיקייה קיימת באמצעות המשפט `clojure.io/file` שבו Clojure:
 
 ```Clojure
-;; Import the 'exists?' function
-(import '[java.io File])
-;; Define the website URL
-(def url "https://www.example.com")
-;; Check if the directory exists
-(print (exists? (File. url)))
+(let [dir (clojure.java.io/file "/path/to/directory")]
+  (.exists dir))
 ```
-מחזיר: true or false
+אם התיקייה קיימת, הקוד מחזיר את הערך `true`. אם היא לא קיימת, הקוד מחזיר את הערך `false`.
 
-## חפירה עמוקה
-לפני שמתחילים לבדוק קיום תיקייה, כדאי לבחון אם יש פתרונות אחרים שעשויים להיות יעילים יותר. עליכם לקחת בחשבון את סוג הקוד שאתם מפתחים ורמת הביצועים שאתם צריכים.
+#צלילה עמוקה:
+בדיקה אם תיקייה קיימת היא מטלה פשוטה לשם ולמרות זאת היא שגרתית בתכנות. למרות ש-clojure.io/file מרגיש כמו הדרך ה"נכונה" לבדוק את זה, קיימות גם שיטות אלטרנטיביות. אחת מהן היא לנסות ליצור את התיקייה עם `clojure.io/make-dir`, שמחזיר `nil` אם התיקיה כבר קיימת. אבל, זו איננה המתודה המומלצת, מכיוון שהשימוש בזה יכול להוביל לתוצאות לא צפויות אם קיימת תיקיה עם השם שהוזן.
 
-אם אתם משתמשים בקלוז'ור כשפת תכנות העיקרית שלכם, והשימוש בפונקציה 'exists?' מספק לכם את התוצאה הרצויה, עליכם להמשיך להשתמש בפונקציה הזו. אם אתם משתמשים בשפה נוספת, כדאי לחפש פתרונות אחרים מתאימים לטכנולוגיות השונות.
+#ראה גם:
+רקע נוסף ומידע מעמיק אפשר למצוא במקורות הבאים:
 
-פונקציית 'exists?' מאפשרת גם לבדוק קיום קבצים או קישורים אחרים, לא רק תיקיות. אתם יכולים למצוא מידע נוסף ודוגמאות אחרות על הפונקציה במקורות הקשורים שנמצאים בסעיף "ראה גם".
+[Clojure Documentation: clojure.java.io/file](https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file)
 
-## ראה גם
-- [Clojure 'exists?' ניתוח חדשני](https://www.baeldung.com/clojure-exists)
-- [פונקציית 'exists?' על ClojureDocs](https://clojuredocs.org/clojure.java.io/exists_qmark_)
+[Stack Overflow: How to check if a directory exists in Clojure?](https://stackoverflow.com/questions/2850203/how-to-check-if-a-directory-exists-in-clojure)
+
+[Oracle Documentation: File I/O in Clojure](https://docs.oracle.com/cd/E88353_01/html/E37843/bgbkf.html)

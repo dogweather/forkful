@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Lua recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,53 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output is the process of displaying information about the execution of a program. This can help developers track and troubleshoot any issues that may arise during the execution of their code.
+Printing debug output helps us visualize what our code does. It's a simple way to track variables, check if code reaches a certain point, or exactly where an error occurs.
 
 ## How to:
 
-To print debug output in Lua, we use the `print()` function. This function takes in one or more arguments and displays them in the console or terminal. Let's look at some examples:
+In Lua, you can use the `print()` function:
 
-```
--- printing a simple string
-print("Hello, world!")
-
--- printing the value of a variable
-myVar = 10
-print(myVar)
-
--- printing multiple values
-myString = "Hello"
-myNumber = 5
-print(myString, myNumber)
+```Lua
+print("Hello") -- Will output: Hello
 ```
 
-Output:
-```
-Hello, world!
-10
-Hello 5
-```
+If you want to print a variable's value, use concatenation:
 
-We can also print the type of a variable using the `type()` function:
+```Lua
+local hours = 10
+print("I have worked for " .. hours .. " hours.") -- Outputs: I have worked for 10 hours.
 ```
-myVar = "test"
-print(type(myVar))
+In case of debugging error or tracebacks, consider using `debug.traceback()`:
+
+```Lua
+local function buggyFunction()
+    print(debug.traceback("Stack trace"))
+    error("Oops, an error occurred!")
+end
+
+buggyFunction()
 ```
+Running the code above, we'll see the detailed stack trace and the error message.
 
-Output:
-```
-string
-```
+## Deep Dive
 
-## Deep Dive:
+Printing debug traces back to the use of early "teletypewriters" where errors and statuses were printed as messages. It's a basic but powerful tool, especially when other complex debugging tools aren't available or overcomplicate things.
 
-Debug output has been a common practice in programming since the early days of computing. It allows developers to see the inner workings of their code and identify any potential errors or bugs.
+An alternative in Lua could be using a library like `Penlight` where we find `pl.utils.printf()` with better formatting support. But remember, external libraries need to be installed separately and they increase your project dependencies.
 
-Alternatively, some programmers use a debugger tool to step through their code and analyze its behavior. However, printing debug output is a quick and easy way to get a glimpse into the execution of a program.
-
-In Lua, the `print()` function calls the `tostring()` function on each argument, which converts it into a string representation. This is why we can use this function with different data types without any issues.
+The `print()` function in Lua internally uses `_G.tostring()`, that converts the given parameter to its string equivalent, and `_G._io.write()`, that eventually writes this string to output.
 
 ## See Also:
 
-- Lua official documentation on `print()` function: https://www.lua.org/manual/5.4/manual.html#pdf-print
-- Lua debugging guide: https://www.lua.org/manual/5.4/manual.html#25
+- [Lua's Built In Functions](https://www.lua.org/manual/5.4/manual.html#6.1) 
+- [Penlight Library](https://stevedonovan.github.io/Penlight/api/index.html)
+- [Debugging in Lua](https://www.lua.org/pil/23.html)

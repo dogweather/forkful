@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자 추출"
-html_title:           "Clojure: 부분 문자 추출"
-simple_title:         "부분 문자 추출"
+title:                "부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 필요한가?
 
-서브스트링을 추출하는 것은 문자열에서 일부 문자들을 잘라내는 작업입니다. 프로그래머들은 주어진 문자열에서 원하는 부분만을 추출하기 위해 서브스트링을 사용합니다.
+문자열 추출은 문자열의 한 부분을 가져오는 것을 의미합니다. 이는 데이터를 분석하거나 처리할 때 필요한 특정 정보만을 추출하고 싶을 때 가장 많이 사용됩니다.
 
-## 하는 방법:
+## 어떻게 사용하는가?
 
-```Clojure
-(def str "Hello World")
+Clojure에서는 `subs` 함수를 사용하여 문자열에서 하위 문자열을 추출할 수 있습니다. 이는 첫 번째 인수로 대상 문자열을, 그리고 두 번째 및 세 번째 인수로 시작 및 끝 인덱스를 받습니다.
 
-(subs str 0 5) ;output: "Hello"
-(subs str 6) ;output: "World"
-(subs str 0 6) ;output: "Hello "
+```clojure
+(let [str "안녕하세요, Clojure!"]
+  (println "원본 문자열:" str)
+  (println "추출된 문자열:" (subs str 0 2)))
 ```
 
-위의 코드 예제에서 ```subs``` 함수는 문자열에서 주어진 범위 내의 문자들을 잘라낼 수 있도록 해줍니다. 첫 번째 매개변수로는 추출할 문자열을, 두 번째 매개변수로는 추출할 문자열의 시작 위치를, 세 번째 매개변수로는 추출할 문자열의 끝 위치를 전달해 줍니다. 만약 끝 위치를 전달하지 않으면 시작 위치부터 문자열의 끝까지 추출하게 됩니다.
+위 코드를 실행하면 아래와 같은 결과가 출력됩니다.
 
-## 깊이 알아보기:
+```
+원본 문자열: 안녕하세요, Clojure!
+추출된 문자열: 안녕
+```
 
-서브스트링 추출은 옛날부터 사용되어 온 방법이며, 다양한 언어에서도 지원해오고 있습니다. 다른 방법으로는 정규표현식을 사용하거나 다른 문자열 함수들을 조합하여 서브스트링을 추출할 수도 있습니다.
+## 디프다이브
 
-서브스트링 추출은 문자열을 가공하는 작업 중 하나로, 문자열을 다루는 프로그램 작성에 있어서 필수적입니다. 이 작업을 잘 활용하면 프로그램의 효율성을 높일 수 있습니다.
+`subs` 함수는 Clojure의 문자열 처리 기능 중 하나로, Clojure 1.0부터 지원됩니다. 이 함수는 문자열의 시작 인덱스와 끝 인덱스를 기반으로 한 부분 문자열을 반환하며, 끝 인덱스가 주어지지 않았을 경우에는 시작 인덱스부터 문자열 끝까지의 모든 문자를 반환합니다.
 
-## 관련 자료:
+추출하려는 범위가 문자열의 길이를 초과하는 경우 `subs` 함수는 IndexOutOfBoundsException을 발생시킵니다. 이러한 상황을 피하기 위해 `count` 함수를 사용하여 문자열의 길이를 미리 확인해야 합니다.
 
-정규표현식에 대해 좀 더 자세히 알고 싶다면 [이 링크](https://ko.wikipedia.org/wiki/정규_표현식)를 참고해보세요.
+```clojure
+(let [str "안녕하세요, Clojure!"]
+  (println "원본 문자열:" str)
+  (println "추출된 문자열:" (if (< (count str) 5)
+                             (subs str 0 5)
+                             (subs str 0 (count str)))))
+```
 
-Clojure 관련 자료는 [공식 문서](https://clojuredocs.org/core-library/substring)에서도 확인할 수 있습니다.
+## 참고 자료
+
+[1] Clojure 공식 문서: `subs` 함수 - https://clojuredocs.org/clojure.core/subs
+
+[2] Wikibook Clojure Programming: 문자열 처리 - https://en.wikibooks.org/wiki/Clojure_Programming/Strings
+
+[3] Clojure for the Brave and True: 문자열과 패턴 - https://www.braveclojure.com/core-functions-in-depth/

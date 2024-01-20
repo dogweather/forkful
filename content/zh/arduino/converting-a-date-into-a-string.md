@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "Arduino: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期转换为字符串？为什么要这样做？
-日期转换为字符串是将日期数据转换为字符串格式的过程。程序员这样做是为了能够更方便地处理日期数据，以便于在程序中使用和显示。
+## 什么 & 为什么？ （What & Why?）
 
-## 如何进行日期转换为字符串：
+日期转字符串是将日期数据转换为可读文本形式的过程。程序员这么做是因为，这可以让人更容易理解和操作日期数据。
+
+## 如何： （How to:）
+
 ```Arduino
-// 设置日期对象
-DateTime now = RTC.now();
-// 使用String对象创建字符串，格式为年-月-日
-String date_str = String(now.year(), DEC) + "-" + String(now.month(), DEC) + "-" + String(now.day(), DEC);
-// 打印输出日期字符串
-Serial.print(date_str);
-// 输出结果为：2021-12-31
+#include <TimeLib.h>
+#include <Time.h>
+
+void setup() {
+  Serial.begin(9600);
+  
+  setTime(8, 29, 0, 15, 10, 2021); //设置时间和日期为：2021年10月15日上午8:29。
+                                   
+}
+
+void loop() {
+  time_t t = now();
+  String dateStr = String(day(t)) + "-" +
+                   String(month(t)) + "-" +
+                   String(year(t)); //将日期转换为“日-月-年”格式的字符串。
+ 
+  Serial.println(dateStr);
+  delay(1000);
+}
 ```
 
-## 深入了解：
-日期转换为字符串的历史背景可以追溯到机器语言编程时代，当时的计算机只能处理数字，所以日期也只能以数字的形式存储和显示。随着程序语言的发展，日期转换为字符串的方式也逐渐多样化，如使用各种格式字符串库、内置函数等。在Arduino中，可以使用String对象来将日期转换为字符串，也可以使用其他库如Time库来实现。
+串口监视器的输出将会是：“15-10-2021”。
 
-## 参考资料：
-- [Arduino官方文档-日期转换为字符串](https://www.arduino.cc/en/Tutorial/StringConversions) 
-- [Arduino官方文档-日期函数](https://www.arduino.cc/en/Reference/DateTime)
-- [时间库 Time库](https://playground.arduino.cc/code/time/)
-- [字符串库 String库](https://playground.arduino.cc/Main/StringObject/)
+## 深入探索 （Deep Dive）
+
+历史背景上，日期转字符串的操作常常被用在不同的计算机程序中，其核心目的是为了人机交互的便捷性。至于替代方案，如果数据的表示形式没有严格要求，那么UNIX时间戳也是一种选择。它是从1970年1月1日开始按秒计算的时间，很适合于计算机程序间的交互。至于实现细节，你可以使用Arduino的Time库，它已包含了大部分你所需要的日期和时间操作功能。
+
+## 另见 （See Also）
+
+1. Time库的GitHub仓库：[https://github.com/PaulStoffregen/Time](https://github.com/PaulStoffregen/Time)
+2. Arduino官方关于Time库的教程： [https://www.arduino.cc/en/Reference.Time](https://www.arduino.cc/en/Reference.Time)
+3. 关于Unix时间戳的更多信息： [https://www.unixtimestamp.com/](https://www.unixtimestamp.com/)

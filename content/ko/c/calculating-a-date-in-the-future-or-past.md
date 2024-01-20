@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-빠른날짜 계산을 위한 C 프로그래밍
+## 무엇 & 왜?
 
-## What & Why?
+미래 혹은 과거의 날짜를 계산하는 것은 특정 기간 후나 전의 날짜를 얻는 프로그래밍 작업입니다. 이는 사용자에게 리마인더를 보내거나, 일정을 계획하는 등 다양한 기능에 사용됩니다.
 
-날짜 계산이란, 특정 날짜로부터 과거나 미래로 일정 시간을 계산하는 것을 말합니다. 프로그래머들은 주로 이것을 날짜/시간 기능을 사용하여 프로그램 내에서 일정한 작업을 수행할 때 필요합니다.
+## 어떻게 하는가:
 
-## How to:
-
-날짜 계산을 위한 코드의 예시를 살펴보겠습니다. 우선 <time.h> 헤더 파일을 포함시키고, 두 날짜를 나타내는 구조체(예: struct tm)를 만들어야 합니다. 그 다음, 구조체의 값을 적절하게 설정하고, mktime() 함수를 사용하여 두 날짜 사이의 차이를 계산할 수 있습니다. 아래는 이 과정을 보여주는 예시 코드입니다.
+다음은 C 프로그래밍 언어를 이용한 날짜 계산 방법입니다:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
 int main() {
-    struct tm start_date = {0};
-    start_date.tm_year = 2020 - 1900;
-    start_date.tm_mon = 0;
-    start_date.tm_mday = 1; // 2020년 1월 1일
-    time_t start_time = mktime(&start_date);
-    
-    struct tm end_date = {0};
-    end_date.tm_year = 2020 - 1900;
-    end_date.tm_mon = 2;
-    end_date.tm_mday = 15; // 2020년 3월 15일
-    time_t end_time = mktime(&end_date);
-    
-    int difference = difftime(end_time, start_time) / (24 * 60 * 60); // 하루는 86,400초
-    printf("두 날짜 사이의 차이는 %d일입니다.", difference);
-    
-    return 0;
+   time_t N = 5 * 24 * 60 * 60;  // 5일 후
+   time_t future;
+
+   time(&future);  // 현재 시간 획득
+   future += N;    // 미래 시간 계산
+
+   printf("예정 날짜: %s", ctime(&future));
+
+   return 0;
 }
 ```
 
-위 코드에서는 2020년 1월 1일과 2020년 3월 15일 사이의 차이를 일단위로 출력합니다. 결과는 "두 날짜 사이의 차이는 74일입니다."가 될 것입니다.
+이 코드는 현재 날짜에서 5일 후의 날짜를 출력합니다.
 
-## Deep Dive
+## 심층 이해
 
-날짜 계산은 컴퓨터 시스템에서 매우 중요한 역할을 합니다. 예를 들어, 파일의 만료일이나 휴가 기간 등과 같이 일정한 시간이 지나면 특정 작업이 필요한 경우에 자주 사용됩니다.
+1. **역사적 배경**: 초기 컴퓨터 시스템에서는 시스템 시간을 UNIX epoch (1970년 1월 1일)부터의 초 단위로 표현하였습니다. 이 방법은 다양한 시간과 날짜 계산에 효과적이었습니다.
+2. **대안**: 이외에도 `localtime()`, `mktime()`, `strftime()`과 같은 함수를 이용하여 더 복잡한 날짜 연산도 가능합니다.
+3. **구현 세부 사항**: `time()` 함수는 시스템의 칼렌더 시간을 가져옵니다. `ctime()` 함수는 `time_t` 형식의 시간을 문자열로 변환합니다.
 
-날짜 계산에는 여러 가지 방식이 존재하지만, 대표적으로 Julian Day와 UNIX Timestamp가 있습니다. Julian Day는 1582년 10월 15일 이전에 사용되는 달력 시스템을 바탕으로 하며, UNIX Timestamp는 1970년 1월 1일 이후부터 초 단위로 계산되는 시간을 나타냅니다.
+## 참고 자료:
 
-## See Also
-
-- [날짜와 시간 관련 함수 참조](https://ko.wikipedia.org/wiki/C_%EC%99%80_%ED%99%88%EC%8A%A4_%EC%8B%9C%EC%9E%91)
-- [Julian Day에 대한 자세한 설명](https://ko.wikipedia.org/wiki/%EC%A3%BC%EB%A6%84%EB%8E%99%EC%8B%9C%EC%9D%98_%EA%B0%92)
-- [UNIX Timestamp 정보](https://ko.wikipedia.org/wiki/UNIX_%EC%8B%9C%EA%B0%84)
+- [C Library - <time.h>](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [C Programming/Time](https://en.wikibooks.org/wiki/C_Programming/Time)
+- [UNIX 시간과 날짜 관련 함수](https://www.gribble.org/c/programming2.html)

@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリの存在をチェックする"
-html_title:           "C: ディレクトリの存在をチェックする"
-simple_title:         "ディレクトリの存在をチェックする"
+title:                "ディレクトリが存在するかどうかの確認"
+html_title:           "C: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,37 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ?
-ディレクトリが存在するかどうかを確認することは、プログラマーがプログラムを実行する前に必要な手順です。ディレクトリが存在しない場合、プログラムは意図したとおりに動作しない可能性があります。そのため、ディレクトリの存在を確認することは重要な課題です。
+## 何となぜ？
+ディレクトリが存在するか確認とは、特定のディレクトリが現在のファイルシステムに存在するかどうかをプログラムで調べることです。これは、ファイルの保存やデータの読み取りなど操作前にディレクトリの存在を確認することで、エラーを予防するために行います。
 
-## 方法:
-以下のコードブロックに示すように、C言語を使用してディレクトリの存在を確認する方法があります。
-
+## 方法：
+ディレクトリ存在確認の基本的な方法は、`stat`関数を利用することです。
 ```C
-#include <stdio.h>
 #include <sys/stat.h>
+#include <stdbool.h>
+
+bool doesDirectoryExist(char* path) {
+    struct stat statbuf;
+    if (stat(path, &statbuf) != -1) {
+       if (S_ISDIR(statbuf.st_mode)) {
+           return true;
+       }
+    }
+    return false;
+}
 
 int main() {
-    char *directory = "example_directory";
-    struct stat st = {0};
-    
-    if (stat(directory, &st) == -1) {
-        printf("Directory does not exist.\n");
+    if (doesDirectoryExist("/path/to/dir")) {
+        printf("Directory exists!\n");
     } else {
-        printf("Directory exists.\n");
+        printf("Directory does not exist!\n");
     }
-    
     return 0;
 }
 ```
 
-上記のコードでは、```stat()```関数を使用してディレクトリのメタデータを取得し、その結果を元にディレクトリが存在するかどうかを判断しています。もしディレクトリが存在しない場合、```stat()```関数は-1を返し、その結果を元にプログラムはディレクトリが存在しないと判断します。
+このコードの出力は次の通り：
+```
+Directory does not exist!
+```
+調べたいディレクトリのフルパスをこの関数に渡します。
 
-## 詳細な情報:
-ディレクトリの存在を確認する方法は、C言語以外でも利用可能です。Pythonなどのスクリプト言語では、```os.path.exists()```関数を使用することでディレクトリの存在を確認することができます。
+## 詳細説明：
+ディレクトリ存在確認はUNIX系オペレーティングシステムの初期から存在し、`stat`システムコールによって実装されています。「stat」は「status」の略で、ファイルやディレクトリの状態を調べるために使用されます。`stat`はただし、存在しないパスを指定した場合には-1を返すので、その結果をチェックすることでディレクトリの存在を確認します。
 
-ディレクトリの存在を確認するために使用される```stat()```関数は、POSIX標準で定義されており、LinuxやUnixなどの多くのオペレーティングシステムで利用可能です。
+オペレーティングシステムによっては、`access`関数を使ったアプローチもあります。
 
-## 関連リンク:
-- [C言語のstat()関数ドキュメント](https://www.ibm.com/support/knowledgecenter/en/ssw_ibm_i_74/rtref/stat.htm)
-- [Pythonのos.path.exists()関数ドキュメント](https://docs.python.org/3/library/os.path.html#os.path.exists)
+```C
+#include <unistd.h>
+
+bool doesDirectoryExist2(char* path) {
+    if (access(path, F_OK) != -1) {
+       return true;
+    }
+    return false;
+}
+```
+しかし、この場合はパスが存在するだけでなく、プログラムが実際にそれにアクセスできるかどうかを確認します。そのため、必ずしもディレクトリが存在することを意味するわけではありません。
+
+## 参考文献：
+- [File Access and Permissions - Gnu](https://www.gnu.org/software/libc/manual/html_node/File-Access.html)
+- [The GNU C Library: Testing File Type](https://www.gnu.org/software/libc/manual/html_node/Testing-File-Type.html)
+これらのソースは、`stat`と`access`機能を詳しく議論しています。 深く理解したい場合*にはぜひ参照してください。

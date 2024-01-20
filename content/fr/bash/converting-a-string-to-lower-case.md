@@ -1,6 +1,6 @@
 ---
 title:                "Convertir une chaîne en minuscules"
-html_title:           "Bash: Convertir une chaîne en minuscules"
+html_title:           "Arduino: Convertir une chaîne en minuscules"
 simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-La conversion d'une chaîne de caractères en minuscules est le fait de transformer toutes les lettres majuscules d'une chaîne de caractères en minuscules. Les programmeurs font cela pour faciliter la comparaison et la manipulation de chaînes de caractères.
+## Quoi & Pourquoi?
+
+La conversion d'une chaîne en minuscules est le processus de conversion de tous les caractères alphanumériques d'une chaîne en minuscules. Les programmeurs le font souvent pour assurer uniformité et cohérence dans le traitement de l'information textuelle.
 
 ## Comment faire:
-Voici quelques exemples de code pour convertir une chaîne de caractères en minuscules en utilisant Bash:
+
+Voici comment vous pouvez convertir une chaîne en minuscules en bash:
 
 ```Bash
-# Exemple 1:
-my_string="HELLO"
-echo "${my_string,,}"  # Output: hello
+chaine="JE SUIS EN MAJUSCULES"
+chaine_en_minuscules=$(echo "$chaine" | tr '[:upper:]' '[:lower:]')
 
-# Exemple 2:
-my_string="Hello World"
-tr '[:upper:]' '[:lower:]' <<< "$my_string"  # Output: hello world
-
-# Exemple 3:
-my_string="Hello World"
-echo "$my_string" | awk '{print tolower($0)}'  # Output: hello world
+echo "$chaine_en_minuscules"
 ```
 
-## L'exploration en profondeur:
-La conversion d'une chaîne de caractères en minuscules peut sembler une tâche simple, mais cela a une histoire intéressante. Avant 1984, lorsque le standard ASCII était utilisé, il n'existait pas de différence entre lettres majuscules et minuscules. Cependant, avec l'introduction du standard ISO 646, des variations sont apparues comme le code 40 pour les lettres majuscules et le code 60 pour les lettres minuscules. Dans le monde de l'informatique, il existe également d'autres méthodes pour convertir des chaînes de caractères en minuscules, par exemple l'utilisation de la fonction "tr" en utilisant des expressions régulières.
+Lorsque vous exécutez ce script, la sortie sera:
 
-## Voir aussi:
-Pour plus d'informations sur la conversion de chaînes de caractères en minuscules, vous pouvez consulter les sources suivantes:
+```Bash
+je suis en minuscules
+```
 
-- https://www.gnu.org/software/bash/manual/html_node/Character-Case-Modification.html
-- http://tldp.org/LDP/abs/html/string-manipulation.html
-- https://www.computerhope.com/unix/bash/tr.htm
+## Exploration approfondie:
+
+Historiquement, la conversion de chaînes en minuscules est une opération fréquente dans le traitement du texte dans de nombreuses applications, y compris la recherche de texte, le tri, l'analyse de données et plus encore.
+
+Il existe plusieurs façons de faire cette conversion en bash. Une alternative à l'exemple donné serait d'utiliser la commande `awk`:
+
+```Bash
+chaine_en_minuscules=$(echo "$chaine" | awk '{print tolower($0)}')
+```
+
+La commande `tr` utilisée dans notre exemple est une commande UNIX standard qui sert à traduire ou supprimer des caractères. En interne, il utilise une table de correspondance pour effectuer la conversion entre les caractères majuscules et minuscules.
+
+## Voir Aussi:
+
+Voici quelques sources utiles pour approfondir le sujet:
+
+- GNU Coreutils: [Tr](https://www.gnu.org/software/coreutils/manual/coreutils.html#tr-invocation)
+- GNU Awk User’s Guide: [Built-in Functions](https://www.gnu.org/software/gawk/manual/html_node/Built_002din-Functions.html)
+- Advanced Bash-Scripting Guide: [Case Conversion](http://www.tldp.org/LDP/abs/html/case-conversion.html)

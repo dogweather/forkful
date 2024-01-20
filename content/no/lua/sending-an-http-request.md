@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "Lua: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Sending av HTTP-forespørsler er en måte for programmer å kommunisere med nettsider og andre internett-tjenester. Dette gjøres ved å be om informasjon eller utføre handlinger gjennom bruk av spesifikke protokoller og koding.
+## Hva & Hvorfor?
 
-# Slik gjør du:
-For å sende en HTTP-forespørsel i Lua, må du bruke et bibliotek som støtter denne funksjonaliteten. Et populært valg er LuaSocket, som lar deg opprette en socket-tilkobling og sende forespørsler til en spesifikk URL.
+Å sende en HTTP-forespørsel er en prosess der et program sender en forespørsel til en server for å hente eller oppdatere data. Programmerere gjør dette for å få tilgang til en tjeneste som en webserver tilbyr, slik som å hente nettsideinformasjon, eller manipulere data i en database.
 
-```lua
--- importer biblioteket
-local socket = require("socket")
--- opprett en socket-tilkobling
-local connection = socket.tcp()
--- koble til en URL
-connection:connect("www.example.com", 80)
--- send en GET-forespørsel
-connection:send("GET /index.html HTTP/1.1\r\nHost: www.example.com\r\n\r\n")
--- motta svar fra nettsiden
-local response = connection:receive()
--- lukk tilkoblingen
-connection:close()
--- skriv ut svaret
-print(response)
+## Hvordan:
+
+Først, installere 'socket.http' bibilioteket i Lua:
+
+```Lua
+-- importer socket.http biblioteket
+http = require("socket.http")
+
+-- send en GET forespørsel og skriv ut respons
+http.request{
+  url = "http://www.google.com", 
+  sink = ltn12.sink.file(io.stdout)
+}
 ```
 
-Dette kodesnippet viser hvordan du kan opprette en HTTP-forespørsel ved å bruke LuaSocket-biblioteket. Du trenger imidlertid å inkludere flere sikkerhetstiltak og håndtere eventuelle feil som kan oppstå.
+I dette eksemplet har vi sendt en GET forespørsel til google.com, og skrev ut responsen.
 
-# Dypdykk:
-Sending av HTTP-forespørsler har eksistert siden starten av internettet og er en viktig del av nettverkskommunikasjon. I tillegg til LuaSocket finnes det andre biblioteker og rammeverk som kan brukes til å håndtere HTTP-forespørsler, som f.eks. OpenResty og Luvit.
+## Dykking
 
-En annen måte å håndtere HTTP-kommunikasjon på er ved hjelp av en webserver, som for eksempel Nginx. Denne metoden er mer skalerbar og effektiv for store mengder forespørsler.
+HTTP-forespørsel har sin opprinnelse i HTTP-protokollen, som ble opprettet i 1989 av Tim Berners-Lee på CERN. Det er benyttet for det meste til web visningsoperasjoner.
 
-Implementasjonen av HTTP-protokollen kan være ganske kompleks, med flere trinn og kommandoer som må følges nøye for å sende en vellykket forespørsel. Det er derfor viktig å sette seg godt inn i dokumentasjonen for det spesifikke biblioteket eller rammeverket du velger å bruke.
+Alternativer til 'socket.http' inkluderer blant annet 'luasocket' og 'lua-http' bibliotekene. Valget mellom disse vil avhenge av dine spesifikke krav, som ytelse, letthet av bruk, og støtten for forskjellige HTTP-metoder.
 
-# Se også:
-- [LuaSocket dokumentasjon](https://w3.impa.br/~diego/software/luasocket/index.html)
-- [OpenResty hjemmeside](https://openresty.org/en/)
-- [Luvit hjemmeside](https://luvit.io/)
-- [Nginx hjemmeside](https://nginx.org/en/)
+En HTTP-forespørsel kan bli sendt ved å bruke forskjellige metoder som GET, POST, DELETE, osv., avhengig av hvilken operasjon du vil utføre på serveren. Disse forespørslene kan inneholde hodedata, slik som innholdstype og lengde, og et meldingslegeme, som bildedata eller formdata.
+
+## Se Også 
+
+1. [HTTP-forespørselsmetoder](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+2. [Lua 5.1 Nettverksstøtte: socket.http](http://w3.impa.br/~diego/software/luasocket/http.html)
+3. [Lua HTTP-forespørselsbiblioteker](https://luarocks.org/modules/luarocks/luajit-request)
+
+Ikke glem å prøve ut forskjellige forespørselsmetoder og se hvordan serveren reagerer. Lykke til med læringen!

@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Lua: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,41 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Wysyłanie żądania HTTP jest podstawowym elementem tworzenia aplikacji internetowych za pomocą języka programowania Lua. Programiści używają tego procesu, aby komunikować się z innymi serwerami lub zasobami w sieci, takimi jak bazy danych lub zewnętrzne usługi.
+
+Wysyłanie żądania HTTP to proces, w którym komputer (klient) żąda danych od serwera poprzez protokół HTTP. Programiści robią to, aby komunikować się z serwerami internetowymi, pobierać dane lub wysyłać informacje do serwera.
 
 ## Jak to zrobić:
-### Przykład 1:
-Wysłanie prostej prośby GET do wewnętrznego adresu URL z wykorzystaniem biblioteki HTTP w Lua:
+
+Możesz wysłać żądanie HTTP w Lua za pomocą biblioteki `socket.http`. Poniżej przedstawiam przykład prostej żądania GET:
+
 ```Lua
-local http = require("resty.http")
-local client = http.new()
-local res, err = client:request_uri("http://localhost:8080/api")
-ngx.say(res.body) 
-```
-Wynik:
-`Hello World!`
+local http = require("socket.http")
 
-### Przykład 2:
-Wysłanie żądania POST z danymi do zewnętrznego API przy użyciu biblioteki HTTP w Lua:
+-- Adres URL, z którego chcemy pobrać dane
+local url = "http://example.com"
+
+-- Wyślij żądanie HTTP GET
+local body, statusCode, headers, statusText = http.request(url)
+
+-- Wydrukuj odpowiedź
+print(statusCode, statusText)
+print(body)
+```
+Gdy uruchomisz powyższy kod, zobaczysz coś takiego:
 ```Lua
-local http = require("resty.http")
-local client = http.new()
-local res, err = client:request_uri("https://example.com/api", {
-    method = "POST",
-    body = "name=John&age=30",
-    headers = {
-        ["Content-Type"] = "application/x-www-form-urlencoded",
-    },
-})
-ngx.say(res.body) 
+200    OK
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+   ...
 ```
-Wynik:
-`{"message": "Success"}`
 
-## Głębokie zanurzenie:
-Wysyłanie żądań HTTP stało się powszechne ze wzrostem popularności aplikacji internetowych. Wcześniej w języku Lua nie było wbudowanych funkcji do obsługi sieci, dlatego programiści korzystali z zewnętrznych bibliotek, takich jak LuaSocket czy copas. Obecnie istnieje wiele bibliotek do obsługi żądań HTTP, a jedna z popularniejszych jest resty.http, oparta na asynchronicznej architekturze. Do wysłania żądania można również użyć wbudowanego w język Lua modułu os, ale wymagałoby to ręcznego tworzenia protokołu HTTP.
+## W głąb tematu
 
-## Zobacz także:
-- https://github.com/pintsized/lua-resty-http - biblioteka resty.http dla obsługi żądań HTTP w języku Lua
-- https://www.lua.org/ - oficjalna strona języka Lua
-- https://cloudflare.github.io/lua-resty-http/api.html - dokumentacja dla biblioteki resty.http
+Wysyłanie żądań HTTP jest ważnym elementem komunikacji sieciowej od wprowadzenia protokołu HTTP w 1991 roku. O ile Lua nie ma wbudowanego wsparcia dla HTTP, biblioteki takie jak `socket.http` umożliwiają łatwe tworzenie i wysyłanie żądań.
+
+Alternatywą dla `socket.http` może być biblioteka `luajit-request`, która oferuje większą elastyczność, ale może wymagać więcej konfiguracji. Istnieją też biblioteki, które umożliwiają współpracę z innymi protokołami, takimi jak HTTPS.
+
+Szczegóły implementacji bibliotek HTTP w Lua zależą od biblioteki. Na przykład, `socket.http` korzysta z TCP sockets do nawiązania połączenia sieciowego, a następnie wysyła surowe dane HTTP do serwera.
+
+## Zobacz także 
+
+- [Lua Users Wiki: HTTP luasocket example](http://lua-users.org/wiki/HttpLuaSocketExample) 
+- [Lua Documentation: Programming in Lua (Networking)](https://www.lua.org/pil/27.1.html) 
+- [luajit-request on GitHub](https://github.com/LPGhatguy/luajit-request)

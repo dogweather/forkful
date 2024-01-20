@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Bash recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,43 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Finding the length of a string in Bash is the process of determining the number of characters in a given string. This is useful for various reasons, such as validating user input, manipulating strings, and creating custom output.
+
+Finding the length of a string checks how many characters a string has. Often, programmers do this for validation, truncation, or alignment.
 
 ## How to:
-To find the length of a string in Bash, you can use the built-in `expr` command with the `- length` option. Here's an example:
 
-```
-str="Hello World!" 
-len=$(expr length "$str") 
-echo "The length of the string is $len" 
-```
+In Bash, the length of a string can be obtained using the `${#string}` syntax. Let's say we have a string `hello`.
 
-This will output: `The length of the string is 12`. 
-
-Another option is to use the `${#var}` syntax, where `var` is the variable containing the string. Here's an example:
-
-```
-str="Hello World!" 
-len=${#str} 
-echo "The length of the string is $len" 
+```Bash
+string="hello"
+echo ${#string}
 ```
 
-This will also output: `The length of the string is 12`.
+The output will be `5` indicating that the string `hello` comprises of 5 characters.
 
-## Deep Dive:
-The `expr` command has been a part of Unix since the early days and was designed to be used in shell scripts for basic arithmetic operations. However, it can also handle string operations with the `length` option. 
+## Deep Dive
 
-An alternative to using `expr` is to use the `wc` command with the `-m` option. This will count the number of characters in a file or input, but it can also be used to count characters in a string by redirecting the string to the command. Here's an example:
+The `${#string}` syntax is historical and stems from Bash's Unix origins. Personal Computing History notes that this syntax existed in the Unix shell well before Bash was developed in 1989.
 
-```
-str="Hello World!" 
-len=$(echo -n "$str" | wc -m) 
-echo "The length of the string is $len" 
-```
+There are alternative ways to find string length:
 
-This will also output: `The length of the string is 12`.
+1. `expr length $string` : The `expr` command also calculates the length.
+2. `echo -n $string | wc -c` : The `wc` command (word, line, character, and byte count) with `-c` option counts the number of characters.
 
-## See Also:
-You can check out the official Bash documentation on `expr` and `wc` for more information and options. Here are the links:
-- [expr](https://www.gnu.org/software/coreutils/manual/html_node/expr-invocation.html)
-- [wc](https://www.gnu.org/software/coreutils/manual/html_node/wc-invocation.html)
+In Bash, finding the string length is efficient due to its internal implementation. When a string variable is set, Bash keeps track of its length and simply needs to retrieve it. Internally, the `${#string}` syntax triggers Bash to give you the length tracked when the variable was set.
+
+## See Also
+
+For more detailed info about string operations in Bash:
+- Greg's Wiki: http://mywiki.wooledge.org/BashGuide/Parameters
+- The Linux Documentation Project: https://www.tldp.org/LDP/abs/html/string-manipulation.html
+- Personal Computing History: http://www.computinghistory.org.uk/det/6128/Bash-Bourne-Again-Shell/

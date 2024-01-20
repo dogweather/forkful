@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porque?
-Verificar se um diretório existe é um processo importante para os programadores. Isso envolve verificar se um determinado caminho no sistema de arquivos é um diretório válido ou não. A razão pela qual os programadores fazem isso é para garantir que seu código possa lidar adequadamente com diferentes situações e evitar erros no programa.
+## O que é e por quê?
+
+Verificar se um diretório existe é o ato de confirmar se um caminho específico do diretório está disponível em seu sistema de arquivos. Programadores fazem isso para evitar erros ao tentar acessar ou manipular diretórios que podem não existir.
 
 ## Como fazer:
-Existem várias maneiras de verificar se um diretório existe em Fish Shell. Uma maneira simples é usar o comando `test` seguido do operador `-d` para verificar o tipo de arquivo. Por exemplo, para verificar se o diretório "documents" existe, podemos usar o seguinte comando:
 
-```
-test -d documents
-```
+Para verificar se um diretório existe no Fish Shell, você deve usar a função `test -d` seguida do caminho do diretório. Aqui está um exemplo:
 
-Isso retornará um código de saída 0 se o diretório existir e um código de saída 1 se não existir.
-
-Outra opção é usar o comando `stat` para obter informações sobre um arquivo ou diretório específico. Por exemplo, para verificar se o diretório "pictures" existe, podemos usar o seguinte comando:
-
-```
-if stat pictures
-  echo "O diretório existe!"
+```fish
+if test -d /caminho/para/seu/diretorio
+   echo "O diretório existe."
 else
-  echo "O diretório não existe."
+   echo "O diretório não existe."
 end
 ```
 
-Este comando irá imprimir "O diretório existe!" se o diretório "pictures" existe, e "O diretório não existe." se não existir.
+A saída do script será "O diretório existe." se o caminho especificado existir, e "O diretório não existe." se não existir.
 
-## Mergulho Profundo:
-Verificar se um diretório existe não é uma tarefa nova para os programadores. De fato, é uma tarefa comum em muitas linguagens de programação e sistemas operacionais. Além dos métodos acima mencionados, também é possível usar o comando `ls` ou a função `os.path.isdir()` em Python para verificar se um diretório existe.
+## Análise mais aprofundada
 
-No entanto, é importante mencionar que verificar se um diretório existe não é a mesma coisa que acessá-lo. Um diretório pode existir no sistema de arquivos, mas pode não ter permissão de acesso. Portanto, é importante considerar também a verificação de permissões ao trabalhar com diretórios.
+A necessidade de verificar a existência de um diretório remonta às primeiras formas de sistemas operacionais onde os erros de E/S dispendiosos poderiam ocorrer ao tentar acessar um diretório inexistente. No Fish Shell, a declaração `test -d` é nativa e muito eficiente, sendo uma abordagem preferida pela maioria dos programadores.
 
-## Veja também:
-- [Documentação do Fish Shell](https://fishshell.com/docs/current/)
-- [Guia rápido de Fish Shell](https://fishshell.com/docs/current/#quick-start)
-- [Como verificar se um diretório existe em outras linguagens de programação](https://www.codecademy.com/articles/how-to-check-if-directory-exists-python)
+Existem alternativas ao `test -d`, como o uso do comando `ls`. No entanto, `ls` é menos direto e pode produzir erros de E/S. Além disso, estáveis e mais ineficientes se você só precisa verificar a existência do diretório:
+
+```fish
+if ls /caminho/para/seu/diretorio >/dev/null 2>&1
+   echo "O diretório existe."
+else
+   echo "O diretório não existe."
+end
+```
+
+Esta implementação envolve o redirecionamento do stdout e stderr para /dev/null, o que pode não ser ideal em todos os cenários. Portanto, `test -d` é geralmente a abordagem preferida.
+
+## Veja também
+
+- [Documentação oficial do Fish Shell sobre o comando `test`](https://fishshell.com/docs/current/cmds/test.html)
+- [Tutorial completo sobre manipulação de arquivos e diretórios no Fish Shell](https://tutorial.djangogirls.org/pt/python_introduction/#o-que-e-a-linha-de-comando)
+- [Dicas e truques do Fish Shell](https://www.sitepoint.com/tips-tricks-for-the-fish-shell/)

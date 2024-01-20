@@ -1,6 +1,6 @@
 ---
 title:                "दो तारीखों की तुलना"
-html_title:           "C++: दो तारीखों की तुलना"
+html_title:           "Elixir: दो तारीखों की तुलना"
 simple_title:         "दो तारीखों की तुलना"
 programming_language: "C++"
 category:             "C++"
@@ -10,45 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों? 
-दो तारीखों की तुलना करना क्या है और क्यों प्रोग्रामर्स इसे करते हैं? प्रोग्रामर्स दो तारीखों की तुलना करें ताकि वे दो अलग तारीखों के बीच अंतर को ध्यान से जांच सकें और जोड़ सकें। इससे कार्यक्रमों में गलती की संभावना कम होती है और समय की बचत होती है।
+Title: दो तारीखों की तुलना C++ (वर्तमान संस्करण) में 
 
-## कैसे करें: 
+## क्या और क्यों? (What & Why?)
+
+तारीखों की तुलना का मतलब होता है कि हम देखते हैं कि कौन सी तारीख अन्य की तुलना में पहले या बाद में है। कोडर्स इसका उपयोग यह निर्धारित करने के लिए करते हैं कि क्या एक घटना पहले हुई है या एक निर्दिष्ट समय के बाद।
+
+## कैसे: (How to:)
+
 ```C++
 #include <iostream>
+#include<chrono>
 using namespace std;
-
 int main() {
-  // तारीखों को समान बनाने के लिए मूल्य घोषित करें 
-  int firstDate = 20210811;
-  int secondDate = 20200702;
-
-  if (firstDate > secondDate) {
-    cout << "पहली तारीख बड़ी है।" << endl;
-  } else if (firstDate < secondDate) {
-    cout << "दूसरी तारीख बड़ी है।" << endl;
-  } else {
-    cout << "पहली और दूसरी तारीख समान हैं।" << endl;
-  }
-  
-  return 0;
+   auto current_time = std::chrono::system_clock::now();
+   auto one_hour_later = current_time + std::chrono::hours(1);
+   if (current_time < one_hour_later) {
+      cout << "One hour later is in future!" << endl;
+   }
+   return 0;
 }
+
 ```
-
-Output:
-``` 
-पहली तारीख बड़ी है।
+उत्पादन संपादक 
 ```
+One hour later is in future!
+```
+## गहन समझ (Deep Dive)
 
-## गहराई में जाएं: 
-एक और दृष्टिकोण से, इन तारीखों की तुलना का इतिहास हमारे समय के पहले की घटनाओं से जुड़ा हुआ है। आजकल इस कार्य को कम समय में करने के लिए और अधिक सुगम बनाने के लिए संसाधनों के रूप में कंप्यूटर प्रोग्रामिंग सहायक गणित विधि भी उपलब्ध है। तारीखों की तुलना को पहले खारिज कर दिया जाता था जब इसे अलग तरह से सूचित किया जाता था। साधारणतया, तारीख स्पष्ट त्योहार की शुरुआत या संविधानात्मक प्रक्रियाओं को जानने के लिए लिए इस्तेमाल की जाती है।
+1. ऐतिहासिक सन्दर्भ: C++ में तारीखों की तुलना को संनिवेश करने के लिए std::chrono लाइब्ररी का उपयोग किया जाता है, जो C++11 के साथ शामिल हुई थी।
+2. विकल्प: अन्य भाषा जैसे कि Python, Java इत्यादि कर्नल (core) तारीख और समय का समर्थन करते हैं।
+3. आधार विवरण: std::chrono::system_clock::now वर्तमान समय प्रदान करता है। std::chrono::hours(1) आने वाले समय तारीख जोड़ता है। 
 
-अलग तारीखों की तुलना के अल्टरनेटिव में, मास के दौरान हालिया दिवसों का अंतर देखना भी आमतौर पर अपनाया जाता है। कुछ प्रोग्रामिंग भाषाओं में, तारीखों की तुलना के लिए विशिष्ट फ़ंक्शन सुलभ होते हैं जो भविष्य में होने वाली घटनाओं को भी प्रभावित कर सकते हैं।
+## देखने के लिए (See Also)
 
-## जानें भी: 
-विस्तृत जानकारी और उदाहरण लेने के लिए ये लिंक देखें:
-- [GeeksforGeeks - Comparing Dates in C++](https://www.geeksforgeeks.org/comparing-two-dates-in-cpp/)
-- [HACKERRANK - Date and Time](https://www.hackerrank.com/domains/cpp?filters%5Bsubdomains%5D%5B%5D=c-language-features&filters%5Bsubdomains%5D%5B%5D=date-time)
-- [Programiz - C++ Date and Time](https://www.programiz.com/cpp-programming/library-function/ctime)
-
-अब आपको पता है कि कैसे दो तारीखों की तुलना करें और इससे कुछ वक्त और सुगमता बचाएं। हमें आशा है कि आपको ये लेख उपयोग
+1. C++ रेफरेन्स किताब- std::chrono लाइब्ररी: https://en.cppreference.com/w/cpp/chrono
+2. तारीख़ और समय से क्या क्या कर सकते हैं उसके लिए यहाँ क्लिक करें: https://www.cplusplus.com/reference/ctime/

@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo una fecha en una cadena"
-html_title:           "Elixir: Convirtiendo una fecha en una cadena"
-simple_title:         "Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena de texto"
+html_title:           "C++: Convirtiendo una fecha en una cadena de texto"
+simple_title:         "Convirtiendo una fecha en una cadena de texto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Convertir una fecha en una cadena de texto es un proceso común en la programación, especialmente cuando se trabaja con fechas y horarios en un sistema. Esto se hace para que la fecha se pueda mostrar de forma legible para los usuarios. Los programadores lo hacen para facilitar la visualización y manipulación de las fechas en sus aplicaciones.
+Convertir una fecha en una cadena consiste en transformar un objeto de fecha a su representación textual. Los programadores hacen esto porque facilita la visualización y el procesamiento de fechas.
 
 ## Cómo hacerlo:
 
-```Elixir  
-  date = ~D[2021-11-01]
-  String.to_charlist(date) 
+Elixir, mediante la función `Date.to_string/1` de su módulo `Date`, permite convertir una fecha en una cadena de texto. Mira este ejemplo:
+
+```elixir
+date = ~D[2022-08-24]
+IO.puts Date.to_string(date)
 ```
 
-Salida esperada: "2021-11-01"
+El comando anterior imprimirá en consola:
 
-El ejemplo anterior muestra cómo se puede convertir una fecha en una cadena de texto en Elixir. Primero, se define la fecha en el formato de fecha Elixir usando el prefijo `~D` seguido de la fecha entre corchetes. Luego, se utiliza la función `String.to_charlist/1` para convertir la fecha en una lista de caracteres, que es lo mismo que una cadena de texto.
+```
+"2022-08-24"
+```
 
-## Inmersión profunda:
+## Un vistazo más profundo
 
-Con convertir una fecha en una cadena de texto, uno puede obtener elementos específicos, como el día de la semana, o manipular la fecha según sus necesidades. Antes, en Elixir, se usaba la función `DateTime.to_string/3` para realizar esta tarea. Sin embargo, a partir de Elixir 1.5, se recomienda usar la función `String.to_charlist/1` como se mostró en el ejemplo anterior.
+En Elixir, el módulo Date se basa en el calendario ISO. Esto implica que respeta tanto las reglas de las zonas horarias como los cambios en el tiempo a lo largo de la historia.
 
-## Vea también:
+Existen otras formas de representar una fecha como cadena en Elixir. Por ejemplo, puedes utilizar `NaiveDateTime.to_string/1` o `DateTime.to_string/1` si necesitas más detalle acerca del tiempo.
 
-- Documentación oficial de Elixir String.to_charlist/1 (https://hexdocs.pm/elixir/String.html)
-- Tutorial de conversión de fechas en Elixir (https://elixirschool.com/en/lessons/basics/strings/#date-conversion)
-- StackOverflow para preguntas de programación (https://stackoverflow.com/questions/tagged/elixir)
+Sobre la implementación, la función `Date.to_string/1` convierte la fecha en su representación textual acorde al formato "YYYY-MM-DD". Nota que siempre rellena el mes y el día con ceros a la izquierda si estos son números de un solo dígito.
+
+## Ver También
+
+Para más información y ejemplos acerca de cómo trabajar con fechas y tiempos en Elixir, visita los siguientes enlaces:
+
+- [Documentación oficial de Elixir - Date](https://hexdocs.pm/elixir/Date.html)
+- [Elixir School - Fechas y Tiempos](https://elixirschool.com/es/lessons/basics/date-and-time/)
+- [PragTob - El mundo de las fechas, los tiempos y las zonas horarias](https://pragtob.wordpress.com/2019/08/29/the-world-of-dates-times-and-timezones/)

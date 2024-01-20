@@ -1,7 +1,7 @@
 ---
-title:                "At få den aktuella datumet."
-html_title:           "Clojure: At få den aktuella datumet."
-simple_title:         "At få den aktuella datumet."
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,28 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-Att få den nuvarande datumen är en vanlig uppgift för programmerare. Det är en enkel och användbar funktion som hjälper till med att spåra tidsstämplar i program och applikationer.
+# Klä på sig med Datum i Clojure
 
-## Hur man gör:
-För att få den nuvarande datumen i Clojure, kan vi använda funktionen `(java.time.LocalDate/now)`. Detta kommer att returnera en `LocalDate` objekt som representerar den aktuella datumen. Du kan också specificera en tidszon genom att använda funktionen `(java.time.ZonedDateTime/now)`.
+## Vad & Varför?
+
+Att få det aktuella datumet handlar om att hämta den aktuella tiden, ned till sekunden, för ögonblicket när koden körs. Det är ovärderligt för att logga, tidstämpla, beräkna tidsskillnader, och många fler applikationer.
+
+## Hur göra:
+
+Att hämta det nuvarande datumet i Clojure är överraskande simpelt. Vi kan använda `java.util.Date` klassen. Här är hur:
 
 ```Clojure
-(java.time.LocalDate/now)
-=> #object[java.time.LocalDate 0x19be4a12 "2021-08-10"]
- 
-(java.time.ZonedDateTime/now (java.time.ZoneOffset/UTC))
-=> #object[java.time.ZonedDateTime 0x4e1ffda6"2021-08-10T00:00Z[UTC]"]
+(import 'java.util.Date)
+(def current-date (Date.))
 ```
 
-## Djupdykning:
-För att förstå hur man får den nuvarande datumen i Clojure, behöver vi förstå lite om datum och tidshantering. Historiskt sett har det funnits många olika sätt att representera datum och tid, men de flesta moderna programmeringsspråk använder ISO-standarden för dag och tidshantering.
+När du kör ovanstående kod, kommer `current-date` att vara ett `java.util.Date` objekt som representerar den exakta tidpunkten när objektet skapades. Pröva och skriv ut det:
 
-Det finns också andra alternativ för att få den nuvarande datumen i Clojure, till exempel genom att använda bibliotek som Joda-Time eller clj-time. Dessa bibliotek erbjuder fler funktioner och mer flexibilitet vid hantering av datum och tid.
+```Clojure
+(println current-date)
+```
 
-För att implementera funktionen `(java.time.LocalDate/now)` i Clojure, använder vi Java Time API som introducerades i Java 8. Detta API ger en robust och standardiserad metod för att hantera datum och tid i Java-baserade språk.
+Du borde se något ungefär som det här:
+`Tue Sep 28 11:43:22 CEST 2021`
 
-## Se även:
-- Java Time API-dokumentation: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Joda-Time biblioteket: https://www.joda.org/joda-time/
-- clj-time biblioteket: https://github.com/clj-time/clj-time
+## Fördjupning
+
+Att hämta det aktuella datumet kanske verkar rakt på sak, men det finns en del saker att tänka på. För det första, `java.util.Date`-objekt representerar ett exakt ögonblick i tiden, ner till millisekunder. Detta gör det perfekt för loggning och tidstämpling, men om du bara behöver datumet kan det bli knepigt.
+
+För detta ändamål kan du använda `java.time.LocalDate` klassen:
+
+```Clojure
+(import 'java.time.LocalDate)
+(def only-date (.toString LocalDate/now))
+```
+
+Detta kommer att returnera dagens datum som en sträng i formatet `yyyy-mm-dd`.
+
+Histories sett har Java haft problem med datum- och tidsmanipulering, men tack vare valfriheten i Clojure och tillgången till Java's inbyggda klasser, är att hantera datum och tid i Clojure inget att oroa sig för.
+
+## Se också
+
+För mer information och alternativ för att hämta och hantera datum och tid i Clojure, se följande resurser:
+
+- Official Clojure Documentation: [https://clojure.org/guides/dates_and_time](https://clojure.org/guides/dates_and_time)
+- Clojure Cookbook: [https://www.braveclojure.com/zombie-metaphysics/](https://www.braveclojure.com/zombie-metaphysics/)
+  
+Där har du det, ett snabbt sätt att hämta det aktuella datumet i Clojure!

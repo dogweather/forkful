@@ -1,7 +1,7 @@
 ---
-title:                "Kapitalisering av en streng"
-html_title:           "Lua: Kapitalisering av en streng"
-simple_title:         "Kapitalisering av en streng"
+title:                "Gjøre en streng stor"
+html_title:           "Lua: Gjøre en streng stor"
+simple_title:         "Gjøre en streng stor"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Å "kapitalisere" en streng i programmering betyr å gjøre den første bokstaven stor og resten av bokstavene små. Dette er en vanlig konvensjon innen programmering for å gjøre koden mer lesbar og konsistent. Det gjør at variabler og funksjoner skiller seg tydelig ut fra tekst og andre elementer i koden.
+Title: Håndtering av store bokstaver i strenger i Lua
 
-## Hvordan:
-Hvis du vil kapitalisere en streng i Lua, er det flere forskjellige måter å gjøre det på. Du kan enten bruke den innebygde funksjonen "string.upper" for å gjøre alle bokstavene i strengen store, eller du kan bruke "string.sub" for å utheve den første bokstaven og deretter bruke "string.upper" på den. 
+## Hva Og Hvorfor?
+
+En stor bokstavstreng er en streng der det første tegnet i hvert ord er i store bokstaver. Vi bruker dette i programmering for å gjøre teksten mer lesbar, eller for å oppfylle bestemte formatkrav.
+
+## Hvordan du:
+
+For å endre en streng til store bokstaver i Lua, vil vi bruke innebygde funksjoner:
 
 ```Lua
--- Eksempel på bruk av string.upper funksjonen:
-local tekst = "hei, dette er en test"
-print(string.upper(tekst))
--- Output: HEI, DETTE ER EN TEST
+str = "hei verden fra lua"
+cap_str = str:gsub("(%a)([%w_]*)", function(first, rest) return first:upper()..rest:lower() end)
 
--- Eksempel på bruk av string.sub og string.upper:
-local tekst = "hei, dette er en test"
-local uthevetTekst = string.sub(tekst, 1, 1) -- Henter ut den første bokstaven
-local restenAvTekst = string.sub(tekst, 2) -- Henter ut resten av teksten
-print(string.upper(uthevetTekst) .. restenAvTekst)
--- Output: Hei, dette er en test
+print(cap_str)
 ```
 
-## Dypdykk:
-Å kapitalisere tekst er en konvensjon som har vært brukt i programmering i lang tid. Det hjelper til med å gjøre koden mer standardisert og lesbar for andre utviklere. Alternativet til å kapitalisere en streng er å bruke camel-case, hvor starten på hvert ord er stor bokstav. Dette kan være nyttig for lengre variabelnavn, men kan være mindre ønskelig for enkle og korte variabelnavn.
+Dette vil skrive ut:
 
-Det er også viktig å merke seg at Lua er et språk som er sensitivt for store og små bokstaver, så det kan være lurt å være konsekvent i hvordan du bruker kapitalisering i koden din. For eksempel, hvis du har definert en variabel "navn" med små bokstaver og prøver å bruke den som "Navn", vil Lua oppfatte dette som to forskjellige variabler.
+```Lua
+Hei Verden Fra Lua
+```
 
-## Se også:
-- [Lua offisiell dokumentasjon om strenger](https://www.lua.org/pil/20.1.html)
-- [Wikipedia artikkel om Lower Camel Case](https://en.wikipedia.org/wiki/Camel_case#Lower_camel_case)
+## Dypdykk
+
+Strengkapitalisering, som mange andre funksjoner, ble en del av Lua-biblioteket på et tidlig tidspunkt på grunn av dets brukbarhet og popularitet i behandling av tekstdokumenter.
+
+Lua tilbyr også funksjonene `string.upper()` og `string.lower()` som kan gjøre alle tegnene i strengen til henholdsvis store bokstaver og små bokstaver. Men for å endre kun det første tegnet av hvert ord til stort, bruker vi funksjonen `string.gsub()` til å finne og erstatte undersekvenser i strengen.
+
+Det er viktig å merke seg at denne metoden ikke vil fungere riktig for strenger som inneholder ikke-bokstavtegn på steder hvor vanlige bokstaver ville vært.
+
+## Se også
+
+- Lua 5.3 referanse manual String Library: https://www.lua.org/manual/5.3/manual.html#6.4
+- Programets ydeevne med Lua string funksjoner: https://www.lua.org/pil/11.4.html
+- Litt mer om Lua string mønster matching: https://www.lua.org/pil/20.2.html

@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten numeroiden tuottaminen"
-html_title:           "C++: Sattumanvaraisten numeroiden tuottaminen"
-simple_title:         "Sattumanvaraisten numeroiden tuottaminen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Numbers"
@@ -11,37 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Satunnaisten numeroiden generointi on tärkeä osa ohjelmointia, jossa luodaan numeroita satunnaisesti tai tiettyjen sääntöjen mukaisesti. Ohjelmoijat tekevät tätä useista syistä, kuten pelien satunnaisuuden luomiseen, salausavaimien luomiseen tai simulointien tekemiseen.
 
-## Miten:
-Esimerkiksi, jos haluat luoda satunnaisen kokonaisluvun välillä 1-10, voit käyttää rand() toimintoa. Katso alla oleva esimerkki:
+Satunnaislukujen generointi on prosessi, jossa saadaan aikaan ennustamaton numerojono. Ohjelmoijat käyttävät sitä esimerkiksi simulaatioissa, salausalgoritmeissa ja pelilogiikassa, joka vaatii sattumanvaraisuutta.
+
+## Näin se tehdään:
 
 ```C++
+#include <random>
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
-
-using namespace std;
 
 int main() {
+    std::random_device rd;  // luo satunnaislukulaite
+    std::mt19937 gen(rd()); // alusta generointi Mersenne Twister -algoritmilla
+    std::uniform_int_distribution<> dis(1, 6); // määrittää jakelun välillä 1 ja 6
 
-    // alusta satunnaislukujen generoijat
-    srand(time(0));
-
-    // generoi ja tulosta satunnainen kokonaisluku välillä 1-10
-    int random = rand() % 10 + 1;
-    cout << random;
-
-    return 0;
+    for (int n=0; n<10; ++n)
+        std::cout << dis(gen) << " "; // tulosta 10 sattumanvaraista lukua
 }
 ```
+Tätä koodia suoritettaessa saadaan tulostukseksi esimerkiksi seuraava sekvenssi: `4 1 6 3 5 2 2 4 6 3`
 
-Tuloste voi näyttää esimerkiksi seuraavalta: `7`
+## Syvemmälle meneminen:
 
-## Syvemmälle:
-Historiallisesti, satunnaisnumeroita on generoitu fyysisillä laitteilla, kuten nopilla tai arpakuutioilla. Nykyään käytetään usein pseudosatunnaislukugeneraattoreita, jotka perustuvat algoritmeihin ja aloituskohdan arvoon, jota kutsutaan siemeneksi. Lisäksi on olemassa muita tapoja generoida satunnaisia lukuja, kuten käyttämällä fyysisiä olosuhteita, kuten kohinan määrää tietokoneen ympärillä.
+### Historiallinen konteksti
+Historiallisesti satunnaislukuja on käytetty erilaisissa tilanteissa, joissa pitää tehdä sattumanvarainen valinta tai arvioida tietyn ilmiön todennäköisyys. Tietokoneohjelmissa usein käytetty vanhempi menetelmä on rand()-funktio, kuitenkin uudemmissa C++ -standardeissa suositellaan käyttämään yllä esiteltyä menetelmää.
+
+### Vaihtoehtoja
+On myös muita menetelmiä, kuten lineaariset kongruenssialgoritmit ja Lagged Fibonacci Generator. Jokaisella on omat vahvuudet ja heikkoudet, ja valinta riippuu sovelluksen vaatimuksista.
+
+### Toteutuksen yksityiskohdat
+Edellä määritellyssä koodissa "random_device" on laitteistopohjainen satunnaislukugeneraattori, jos sellainen on saatavilla. "mt19937" on Mersenne Twister -algoritmi, joka on yksi tunnetuimmista satunnaislukugeneraattoralgoritmeista.
 
 ## Katso myös:
-- [rand() -funktio C++:ssa (Cplusplus.com)](http://www.cplusplus.com/reference/cstdlib/rand/)
-- [From Dice to Computers: A Brief History of Random Number Generation (DataGenetics)](https://datagenetics.com/blog/september22012/)
-- [Introduction to Random Number Generators (Medium)](https://medium.com/@whouserandom/introduction-to-random-number-generators-dcecf0d25d34)
+
+- C++ kirjasto dokumentaatio: [www.cplusplus.com/reference/random/](http://www.cplusplus.com/reference/random/)
+- Erilaisia satunnaislukugeneraattoreita: [en.wikipedia.org/wiki/List_of_random_number_generators](https://en.wikipedia.org/wiki/List_of_random_number_generators)

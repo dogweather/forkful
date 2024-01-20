@@ -1,7 +1,7 @@
 ---
-title:                "Ricercare e sostituire testo"
-html_title:           "Haskell: Ricercare e sostituire testo"
-simple_title:         "Ricercare e sostituire testo"
+title:                "Ricerca e sostituzione del testo"
+html_title:           "Arduino: Ricerca e sostituzione del testo"
+simple_title:         "Ricerca e sostituzione del testo"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,31 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cos'è & Perché?
-La ricerca e sostituzione di testo è un'operazione comune tra i programmatori che consente di trovare determinati elementi all'interno di un testo e sostituirli con altri. Questa operazione è utile per modificare rapidamente e in modo efficiente grandi quantità di codice, risparmiando tempo e fatica.
+# Haskell - Ricerca e Sostituzione del Testo
 
-# Come fare:
-Ecco un esempio di come eseguire una ricerca e sostituzione di testo in Haskell:
+## Cos'è & Perché?
+La ricerca e la sostituzione del testo è l'operazione di identificare stringhe specifiche in un testo e sostituirle con altre stringhe. È fondamentale nella programmazione per manipolare i dati e per il raffinamento degli algoritmi.
+
+## Come si fa:
+Ecco un esempio anche più semplice di come fare la ricerca e la sostituzione di testo in Haskell.
 
 ```Haskell
-import Data.Text (replace)
--- Definiamo una funzione per eseguire la ricerca e sostituzione
-searchAndReplace :: Text -> Text -> Text -> Text
-searchAndReplace old new text = replace old new text
+import Data.List.Utils
 
--- Esempio di utilizzo
-let oldText = "casa"
-let newText = "albero"
-let text = "La mia casa è bella."
-searchAndReplace oldText newText text
--- Output: "La mia albero è bella."
+main = do
+    let str = "Ciao, mondo!"
+    putStrLn $ replace "mondo" "Haskell" str
 ```
+Quando eseguiamo questo codice, l'output sarà:
 
-# Approfondimento:
-- La ricerca e sostituzione di testo è un concetto che ha origini nel campo dell'editing di testi. Veniva utilizzato per sostituire determinate parole o frasi all'interno di un documento.
-- Ci sono anche altri modi per eseguire una ricerca e sostituzione di testo, ad esempio utilizzando espressioni regolari.
-- Nell'esempio mostrato sopra, abbiamo utilizzato la funzione "replace" del modulo Data.Text, che è una delle opzioni disponibili in Haskell per eseguire questa operazione.
+```
+Ciao, Haskell!
+```
+L'operazione di sostituzione è realizzata dalla funzione `replace` nel modulo `Data.List.Utils`.
 
-# Vedi anche:
-- [Documentazione di Data.Text](https://hackage.haskell.org/package/text/docs/Data-Text.html)
-- [Tutorial di espressioni regolari in Haskell](https://www.schoolofhaskell.com/user/dshevchenko/cookbook/regexpressions)
+## Approfondimento
+Nel contesto storico, la ricerca e la sostituzione del testo è stata una funzione chiave delle prime tecnologie di editing del testo. In Haskell, esistono molte funzioni di libreria standard per manipolare le stringhe, tra cui ricerca e sostituzione.
+
+Ci sono alternative alla funzione `replace`, ad esempio, possiamo implementare manualmente una funzione di ricerca e sostituzione con l'aiuto di altre funzioni Haskell. Ecco un esempio:
+
+```Haskell
+mio_replace :: Eq a => [a] -> [a] -> [a] -> [a]
+mio_replace cercato sostituisci = unfoldr (\b -> if null b then Nothing else Just (go b))
+    where
+        go s
+           | cercato `isPrefixOf` s = (sostituisci, drop (length cercato) s)
+           | otherwise = ([head s], tail s)
+```           
+La funzione `mio_replace` definisce un metodo personalizzato per effettuare la ricerca e sostituzione nel modulo `Data.List`.
+
+## Vedi anche
+Per ulteriori informazioni sulla programmazione in Haskell, consulta:
+
+1. "Learn You a Haskell for Great Good!": http://learnyouahaskell.com/chapters
+
+2. Servizi di librerie Haskell: http://hackage.haskell.org/
+
+3. Haskell Language: https://www.haskell.org/

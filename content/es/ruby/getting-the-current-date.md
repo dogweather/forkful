@@ -1,6 +1,6 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "Ruby: Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-Obtener la fecha actual es una tarea común en la programación. Permite a los desarrolladores trabajar con el tiempo en sus programas, ya sea para mostrar la fecha a los usuarios, realizar cálculos de tiempo o establecer fechas de caducidad.
+# Trabajando con fechas en Ruby: Cómo obtener la fecha actual
 
-## Cómo hacerlo:
+## ¿Qué y Por qué?
+
+Obtener la fecha actual en un programa es una forma de capturar el estado temporal preciso al momento de ejecución. Es esencial cuando manejamos estadísticas, trazabilidad en registros(logs), posts en un blog, entre otros.
+
+## Cómo hacerlo: 
 ```Ruby
-Time.now
-```
-Esta es la forma más sencilla de obtener la fecha y hora actuales en Ruby. Esto devolverá un objeto `Time` que contiene información como el año, mes, día, hora, minuto y segundo actuales.
+require 'date'
+puts Date.today
+``` 
+Esto imprimirá la fecha en formato 'yyyy-mm-dd'. Por ejemplo, si hoy es 22 de febrero de 2023, la salida será `2023-02-22`.
 
-Para obtener información más específica, como el día de la semana, la hora en un formato determinado o la hora en otra zona horaria, se puede utilizar el método `strftime`.
-
+Si deseas agregar la hora, solo usa `DateTime` en lugar de `Date`:
 ```Ruby
-Time.now.strftime("Hoy es %A")
-```
-Salida: Hoy es jueves
+require 'date'
+puts DateTime.now
+``` 
+Esto generará una salida parecida a `2023-02-22T11:20:30+00:00`, que incluye la fecha, la hora, los minutos, los segundos y el huso horario.
 
+## Buceo Profundo
+
+Historia: Ruby ha incluido el módulo de `Date` desde su versión 1.9 para facilitar el trabajo con fechas. Antes de eso, los programadores tenían que recurrir a la biblioteca estándar de `Time`, que no tiene tantas funciones relacionadas con las fechas.
+
+Alternativas: Aunque `Date` y `DateTime` son suficientes para la mayoría de los casos, también puedes usar `Time` para obtener una marca de tiempo de Unix (segundos desde la época 1970-01-01 00:00:00 UTC). Aquí tienes un ejemplo:
 ```Ruby
-Time.now.strftime("Son las %I:%M%p")
-```
-Salida: Son las 06:34PM
+puts Time.now.to_i
+``` 
 
-```Ruby
-Time.now.getlocal("+02:00")
-```
-Con este método, se puede obtener la hora en una zona horaria específica. En el ejemplo, se devuelve la hora actual en el huso horario GMT +2.
+Un detalle de implementación a tener en cuenta es la precisión. `DateTime.now` sólo tiene precisión hasta el segundo, mientras que `Time.now` puede tener una precisión de hasta un nanosegundo.
 
-## Profundizando:
-Aunque `Time.now` es la forma más común de obtener la fecha y hora actuales en Ruby, también existen otras opciones. Por ejemplo, se pueden utilizar las gemas `Date` y `DateTime` para trabajar específicamente con fechas y tiempos respectivamente.
+## Ver También
 
-También es importante tener en cuenta que `Time.now` devuelve la hora del sistema en el que se está ejecutando el programa. Si se desea obtener la hora actual en una zona horaria diferente o en un servidor de tiempo en línea, se pueden utilizar otras opciones como la gema `time_difference`.
-
-## Ver también:
-Para obtener más información sobre cómo trabajar con fechas y tiempos en Ruby, se pueden consultar las siguientes fuentes:
-
-- La documentación oficial de Ruby sobre la clase `Time`: [https://ruby-doc.org/core-2.7.0/Time.html](https://ruby-doc.org/core-2.7.0/Time.html)
-- La gema `time_difference`: [https://github.com/tmlee/time_difference](https://github.com/tmlee/time_difference)
-- El libro "The Ruby Way" de Hal Fulton: [https://www.amazon.com/gp/product/0672320835](https://www.amazon.com/gp/product/0672320835)
+- La documentación oficial de `Date`: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- La documentación oficial de `DateTime`: [https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/DateTime.html)
+- Ejemplos y tutoriales con `Time`: [https://www.rubyguides.com/ruby-tutorial/ruby-time-date/](https://www.rubyguides.com/ruby-tutorial/ruby-time-date/)

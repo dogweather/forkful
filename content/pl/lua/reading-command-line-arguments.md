@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów z wiersza poleceń"
-html_title:           "Lua: Odczytywanie argumentów z wiersza poleceń"
-simple_title:         "Odczytywanie argumentów z wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest wczytywanie argumentów wiersza poleceń i dlaczego programiści to robią?
+## Co i dlaczego?
 
-Wczytywanie argumentów wiersza poleceń jest sposobem na uzyskanie danych od użytkownika podczas uruchamiania programu z wiersza poleceń. Jest to przydatne, gdy chcemy, aby program był bardziej interaktywny i dostosowalny do różnych przypadków użycia.
+Czytanie argumentów linii poleceń to proces, w którym program interpretuje dane wprowadzane do niego za pomocą interfejsu wiersza poleceń. Programiści robią to, aby umożliwić użytkownikom modyfikowanie działania programu na podstawie podanych argumentów.
 
-Jak to zrobić:
+## Jak to zrobić:
 
-```lua
--- Przykładowy program, który wczytuje argumenty wiersza poleceń i wyświetla je jako tabelę
-local args = {...} -- zmienna args przechowuje wszystkie argumenty wiersza poleceń (pierwszy argument będzie miał indeks 1, drugi 2, itd.)
+Przykład czytania argumentów linii poleceń w języku Lua.
 
-print("Przekazane argumenty:")
-for i, v in ipairs(args) do -- używamy pętli for do przeiterowania przez wszystkie argumenty
-    print("Argument " .. i .. ": " .. v) -- wyświetlamy numer argumentu i jego wartość
+Parametry przekazane do programu Lua są dostępne przez globalną tablicę o nazwie `arg`. 
+
+Skrypt Lua:
+
+```Lua
+for i = 0, #arg do
+  print("Argument", i, "=", arg[i])
 end
 ```
 
-Przykładowe wyjście:
+Przykładowy wynik dla polecenia `lua script.lua test1 test2`:
 
+```Lua
+Argument 0 = script.lua
+Argument 1 = test1
+Argument 2 = test2
 ```
-Przekazane argumenty:
-Argument 1: pierwszy
-Argument 2: drugi
-Argument 3: trzeci
-```
 
-Głębsza analiza:
+## Pogłębiona analiza
 
-Wczytywanie argumentów wiersza poleceń jest stosowane od dawna, jeszcze przed pojawieniem się języka Lua. Jest to popularna metoda pozwalająca na łatwe i szybkie dostarczenie danych do programu, zwłaszcza w przypadku zastosowań konsolowych.
+Początkowo, w Lua 5.0, argumenty linii poleceń nie były dostępne bezpośrednio - można było je uzyskać tylko za pomocą `arg`. Dopiero w Lua 5.1 wprowadzono globalną tablicę `arg`.
 
-Alternatywne sposoby wczytywania danych od użytkownika są stosowane w innych językach programowania, na przykład w języku Python istnieje wbudowany moduł "sys", który pozwala na dostęp do argumentów wiersza poleceń.
+Jeżeli chodzi o alternatywy, są inne języki programowania, które obsługują argumenty linii poleceń, takie jak Python, C++ i Java. W tych językach stosuje się różne podejścia, od prostych tablic (jak w C++) do bardziej zaawansowanych narzędzi, takich jak parsowanie argumentów w Pythonie.
 
-Implementacyjne detale wczytywania argumentów wiersza poleceń mogą się różnić w zależności od środowiska uruchomieniowego. Na przykład w przypadku LuaJIT, argumenty wiersza poleceń są przechowywane w osobnej globalnej tabeli "arg". Z kolei w systemie operacyjnym Windows, argumenty są odseparowane za pomocą znaku "/".
+Jeżeli chodzi o szczegóły implementacji, tablica `arg` zawiera nie tylko argumenty linii poleceń, ale także pewne dodatkowe wartości. `arg[-1]` to interpreter Lua, `arg[0]` to nazwa skryptu, a `arg[n]` to reszta argumentów.
 
-Zobacz też:
+## Zobacz także
 
-- Oficjalna dokumentacja języka Lua dotycząca wczytywania argumentów wiersza poleceń: https://www.lua.org/pil/13.4.1.html
-- Przykłady użycia wczytywania argumentów wiersza poleceń w praktyce: https://www.lua.org/pil/17.1.html
+Poniżej jest kilka linków do dodatkowych zasobów dotyczących czytania argumentów linii poleceń:
+
+1. [Dokumentacja Lua gdzie opisana jest tablica `arg`](http://www.lua.org/manual/5.4/manual.html#pdf-arg)
+2. [Tutorial jak korzystać z argumentów linii poleceń w Lua](https://www.tutorialspoint.com/lua/lua_command_line_arguments.htm)
+3. [Poradnik jak przerabiać argumenty linii poleceń w Pythonie](https://docs.python.org/3/howto/argparse.html)

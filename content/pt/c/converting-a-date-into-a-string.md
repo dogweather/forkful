@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma data em uma string"
-html_title:           "C: Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
 simple_title:         "Convertendo uma data em uma string"
 programming_language: "C"
 category:             "C"
@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e porque?
+# Data e Strings: Uma Conversão Simples em C
 
-Converter uma data em uma string é uma tarefa comum na programação que permite que os programadores transformem uma data em um formato de texto legível. Isso facilita a visualização e a manipulação de datas em diferentes programas e sistemas.
+## O Que & Por Quê?
 
-Os programadores geralmente convertem datas em strings para facilitar a comunicação e o compartilhamento de dados com outros sistemas ou usuários. Também pode ser necessário para fins de formatação e visualização em interfaces de usuário.
+A conversão de uma data para uma string em C envolve exibir a data num formato legível para o usuário, em forma de texto. Programadores fazem isso para facilitar a interação do usuário com as datas, tornando-as mais compreensíveis e utilizáveis.
 
-## Como fazer:
+## Como Fazer:
+
+Vamos utilizar a função strftime() em C. Ela pega uma estrutura 'struct tm' e a converte para uma data em forma de texto.
 
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-  // Obter a data atual
-  time_t agora;
-  time(&agora);
+    char buf[80];
+    time_t t = time(NULL);
+    struct tm *tm_info;
+    
+    tm_info = localtime(&t);
 
-  // Converter a data em uma string
-  char data_str[30];
-  strftime(data_str, 30, "%d/%m/%Y", localtime(&agora));
+    strftime(buf, sizeof(buf), "%d-%m-%Y", tm_info);
+    puts(buf);
 
-  // Imprimir a data convertida
-  printf("Hoje é %s\n", data_str);
-
-  return 0;
+    return 0;
 }
 ```
-Saída:
-```
-Hoje é 23/08/2021
-```
+A saída poderia ser algo como `12-05-2022`.
 
-## Mergulho profundo:
+## Mergulho Profundo
 
-### Contexto histórico:
-O uso de strings para representar datas remonta às primeiras linguagens de programação, onde as datas eram armazenadas como números inteiros. Com o avanço da programação e a necessidade de interação com interfaces de usuário, a conversão de datas em strings se tornou uma prática comum.
+Historicamente, a função de converter uma data para uma string em C tem-se mostrado essencial desde o advento do Unix, onde se tornou uma maneira padrão de apresentar datas para os usuários.
 
-### Alternativas:
-Embora seja a forma mais comum, converter uma data em uma string não é a única opção. Alguns programadores preferem trabalhar com estruturas de data prontas, enquanto outros usam funções de biblioteca que manipulam diretamente datas em seu formato original.
+Em termos de alternativas, nós poderíamos usar gettimeofday() com ctime(), mas isso não nos dá o controle sobre o formato da data, como o strftime() nos dá.
 
-### Detalhes de implementação:
-A biblioteca padrão C, <time.h>, fornece funções úteis para a manipulação de datas, como strftime() e localtime(). É importante lembrar de ajustar o formato da string de acordo com o ambiente em que ela será utilizada, já que diferentes países utilizam formatos de data diferentes.
+Em termos de implementação, a função strftime() pega a estrutura 'struct tm' e um formato de string que define como a data será exibida, e retorna a data formatada como uma string.
 
-## Veja também:
+## Veja Também:
 
-- [Manipulating time with C](https://www.lix.polytechnique.fr/~liberti/public/computing/prog/c/C/CONCEPT/date_time.html)
-- [C library function - strftime()](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Date and Time Functions in C and C++](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
+Você pode encontrar mais informações sobre a função strftime() em sua página de manual no Linux [`man strftime`](http://man7.org/linux/man-pages/man3/strftime.3.html) ou na documentação oficial do cplusplus [`cpp referencia`](http://www.cplusplus.com/reference/ctime/strftime/). 
+
+Para um entendimento mais aprofundado do manuseio de tempo e datas em C, dê uma olhada nesse tutorial [`tutorialspoint`](https://www.tutorialspoint.com/c_standard_library/time_h.htm).

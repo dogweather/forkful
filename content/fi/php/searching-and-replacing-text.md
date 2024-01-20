@@ -1,7 +1,7 @@
 ---
-title:                "Tekstin hakeminen ja korvaaminen"
-html_title:           "PHP: Tekstin hakeminen ja korvaaminen"
-simple_title:         "Tekstin hakeminen ja korvaaminen"
+title:                "Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
+simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mitä ja Miksi?
 
-Tekstin etsiminen ja korvaaminen on yleinen ohjelmoinnin käsite, joka tarkoittaa tiettyjen merkkijonojen tai osien etsimistä ja niiden korvaamista toisilla. Tämä on tärkeä työkalu, jota ohjelmoijat käyttävät muun muassa tehokkaamman koodin luomiseen ja virheiden korjaamiseen.
+Tekstin hakeminen ja korvaaminen on menetelmä, jolla löydämme ja muutamme koodeihin upotettua tekstiä. Ohjelmoijat tekevät tämän korjatakseen virheitä, päivittääkseen tietoja tai selkeyttääkseen koodia.
 
-## Miten:
+## Näin se tehdään:
 
-Esimerkiksi, jos haluat etsiä tietyn sanan tai lauseen ja korvata sen toisella, voit käyttää PHP:n ```str_replace()``` funktiota. Tässä on yksinkertainen esimerkki koodista ja sen tulosteesta:
+```PHP
+<?php
+$alkuperainen_teksti = "Tervetuloa, Talo!";
+$uusi_teksti = str_replace("Talo", "Koti", $alkuperainen_teksti);
+echo $uusi_teksti;
+?>
 ```
-$input = "Tervetuloa kurssille!";
-$output = str_replace("Tervetuloa", "Hei", $input);
-echo $output; // tulostaa "Hei kurssille!"
-```
-Voit myös käyttää säännöllisiä lausekkeita tekstien etsimiseen ja korvaamiseen. Esimerkiksi, jos haluat korvata kaikki välimerkit tyhjillä, voit käyttää ```preg_replace()``` funktiota:
-```
-$string = "Tämä on esimerkki: ääkkösiä!";
-$output = preg_replace("/[^\p{L}]/u", '', $string);
-echo $output; // tulostaa "TämäonEsimerkiääkkösiä"
-```
+Yllä oleva pätkä löytää sanan "Talo" alkuperäisestä tekstistä ja korvaa sen sanalla "Koti". Ohjelman ajamisen jälkeen saamme tulostuksen "Tervetuloa, Koti!".
 
-## Syvemmälle:
+## Syväsukellus
 
-Tekstin etsiminen ja korvaaminen on ollut osa ohjelmointia jo vuosikymmenten ajan ja sitä on käytetty erilaisiin tarkoituksiin, kuten datan siirtoon ja käännöstyöhön. Lisäksi on olemassa muita vaihtoehtoisia tapoja toteuttaa tämä toiminto, kuten awk, sed ja Perl.
+1. Historiallinen konteksti: PHP:n `str_replace()` -funktio on ollut käytössä PHP 4 -versiosta lähtien, mikä julkaistiin vuonna 2000. Se on yksinkertainen ja tehokas tapa manipuloida merkkijonoja.
 
-Tekstin etsiminen ja korvaaminen on myös mahdollista tehdä käyttäen PHP:n omia string funktioita, kuten ```str_replace()``` ja ```substr_replace()```. Näiden toimintojen ero on lähinnä siinä, että säännöllisiä lausekkeita voi käyttää vain ```preg_replace()``` funktion kanssa.
+2. Vaihtoehdot: On muitakin funktioita, kuten `preg_replace()`, jotka käyttävät säännöllisiä lausekkeita hakemiseen ja korvaamiseen. Se on tehokkaampi, mutta monimutkaisempi.
+
+3. Toteutuksen yksityiskohdat: `str_replace()` -funktio skannaa merkkijonon ja korvaa jokaisen löydetyn kohteen. Jos korvattavaa tekstiä ei löydy, toiminto palauttaa alkuperäisen merkkijonon.
 
 ## Katso myös:
 
-- [PHP:n virallinen dokumentaatio tekstien etsimisestä ja korvaamisesta](https://www.php.net/manual/en/function.preg-replace.php)
-- [Selitys regular expression säännöistä](http://www.rexegg.com/regex-quickstart.html)
+- [PHP str_replace()](https://www.php.net/manual/en/function.str-replace.php) - virallinen PHP-dokumentaatio `str_replace()` -funktiosta
+- [PHP preg_replace()](https://www.php.net/manual/en/function.preg-replace.php) - virallinen PHP-dokumentaatio `preg_replace()` -funktiosta

@@ -1,7 +1,7 @@
 ---
-title:                "Hente nåværende dato"
-html_title:           "Python: Hente nåværende dato"
-simple_title:         "Hente nåværende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva er og hvorfor bruker vi den nåværende datoen?
+## Hva & Hvorfor?
+Å få nåværende dato i programmering handler om å hente den nåværende datoen fra systemet hvor programmet kjører. Dette er nyttig i mange sammenhenger, som loggføring, tidsstempling av data, og å vise dato til brukere.
 
-Å få nåværende dato er et vanlig behov for mange programmerere, enten det er å spore tid, lage tidsstempler eller utføre beregninger basert på datoen. Det er viktig for programmerere å ha nøyaktig informasjon om tiden for å sikre at deres koder fungerer riktig og effektivt.
-
-# Hvordan:
+## Slik gjør du det:
+Du kan få nåværende dato i Python ved å bruke `datetime`-modulen. Her er en enkel linje med kode som viser hvordan du kan gjøre dette:
 
 ```Python
+from datetime import date
 
-# Importer datetime modulen
-import datetime
+# Få dagens dato
+dagens_dato = date.today()
 
-# Bruk datetime.now () -funksjonen for å få nåværende dato og lagre den i en variabel
-current_date = datetime.now()
-
-# Skriv ut nåværende dato i dag / måned / år-format
-print(current_date.strftime("%d/%m/%Y"))
-
-# Skriv ut nåværende dato i dagens navn, månedsnavn, år-format
-print(current_date.strftime("%A, %B %Y"))
-
+print("Dagens dato:", dagens_dato)
 ```
+Når du kjører dette programmet vil det skrive ut dagens dato.
 
-```
-Output:
+## Dypdykk
+Før Python 2.3 ble datetime-modulen introdusert, brukte Python-biblioteket `time`-modulen for å håndtere dato og tid. `datetime`-modulen forenkler mange operasjoner og er nå standard for de fleste Python-programmer.
 
-19/11/2021
-Friday, November 2021
-```
+I tillegg til `datetime`-modulen, finnes det også alternative moduler som `arrow`, `pendulum`, og `delorean` som gir flere funksjoner og en mer intuitiv API.
 
-# Dykk dypere:
+Når du bruker `today()`-metoden fra `date`-klassen, utføres en systemkall til datamaskinens klokke for å hente dagens dato. Denne datoen er deretter representert som et `date`-objekt som kan manipuleres videre.
 
-Det finnes flere måter å få nåværende dato på i Python, som å bruke time-modulen eller calendar-modulen. Du kan også spesifisere tidssone, formatere dato og til og med utføre matematiske operasjoner med datoer ved hjelp av datetime-modulen.
-
-# Se også:
-
-- Python dokumentasjon for datetime-modulen: https://docs.python.org/3/library/datetime.html
-- Tutorialspoint sin artikkel om hvordan å få nåværende dato i Python: https://www.tutorialspoint.com/python/time_strftime.htm
+## Se Også
+1. Python `datetime` modul dokumentasjon: https://docs.python.org/3/library/datetime.html
+2. `arrow` modul: https://arrow.readthedocs.io/en/latest/
+3. `pendulum` modul: https://pendulum.eustace.io/docs/
+4. `delorean` modul: https://delorean.readthedocs.io/en/latest/

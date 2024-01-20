@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Ruby: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,22 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sammenligne to datoer er en vanlig oppgave for programmere. Dette innebærer å bestemme om en dato er før, lik eller etter en annen dato. Vi gjør dette for å kunne sortere datoer, bestemme forfallsdatoer, eller for å utføre andre operasjoner som involverer avhengighet av datoer.
 
-## Slik gjør du det:
-Å sammenligne to datoer i Ruby er ganske enkelt. Vi bruker metoden `#<=>` som returnerer enten -1, 0 eller 1 avhengig av om den første datoen er før, lik eller etter den andre datoen. For eksempel:
+Sammenligning av to datoer er prosessen med å bestemme hvilken av to spesifikke datoer er tidligst eller senest. Programmerere gjør dette for å uthente eller sortere data basert på tid og dato i applikasjoner og databaser. 
+
+## Hvordan:
+
+Ruby, som mange andre programmeringsspråk, tilbyr innebygde metoder for å gjøre datoforvaltning enklere. Du kan for eksempel sammenligne to datoer i Ruby på følgende måte:
 
 ```Ruby
-dob = Date.new(1990, 2, 8)
-today = Date.today
-dob <=> today # => -1
+require 'date'
+
+date1 = Date.new(2022, 5, 3)
+date2 = Date.new(2023, 5, 3)
+
+if date1 > date2
+  puts "date1 is later"
+elsif date1 < date2
+  puts "date2 is later"
+else
+  puts "Both dates are the same"
+end
 ```
-I dette tilfellet betyr -1 at `dob` er før `today`. Hvis de to datoene er like, vil metoden returnere 0, og hvis den første datoen er etter den andre, vil den returnere 1.
+Når du kjører dette kodesnippet, vil outputten være "date2 is later" fordi 3. mai 2023 er etter 3. mai 2022.
 
-## Dykke dypere:
-Metoden `#<=>` er en del av `Comparable` modulen i Ruby. Dette gjør det mulig å sammenligne ikke bare datoer, men også andre typer objekter, som strenger og tall. Alternativt kan vi også bruke `#==`, `#<`, `#<=`, `#>`, og `#>=` for å sammenligne datoer og få et boolsk svar, true eller false. Datoer kan også sammenlignes ved å konvertere dem til `Time` objekter og bruke `#<=>` eller `#is_before?` og `#is_after?` metoder.
+## Dypdykk:
 
-## Se også:
-- [Official Ruby documentation for Date class](https://ruby-doc.org/stdlib-2.7.4/libdoc/date/rdoc/Date.html#method-i-3C-3D-3E)
-- [The Comparable Module in Ruby](https://www.techotopia.com/index.php/The_Comparable_Module_in_Ruby)
-- [Ruby Date and Time Comparison](https://www.go4expert.com/articles/ruby-date-time-comparison-t879/)
+Før dagens digitale tidsalder brukte folk forskjellige måter å sammenligne datoer på - som å bruke kalendere, steintavler, eller solklokker! Heldigvis har programmeringsspråk som Ruby gjort livene våre litt enklere.
+
+Alternativt kan Ruby's `Date` klasse også bruke 'ajd' metode (absolutt juledagsdating) for å lage en sammenlignbar skala for å sammenligne datoer. Denne metoden gir et enkelt tall for hver dato, noe som gjør sammenligningene litt mer håndterlige.
+
+```Ruby
+date1 = Date.new(2022, 5, 3).ajd
+date2 = Date.new(2023, 5, 3).ajd
+puts date1 < date2
+```
+Den overnevnte koden vil også returnere "true", fordi ajd-verdien til date2 er høyere (senere) enn ajd-verdien til date1.
+
+## Se Også:
+
+Hvis du er interessert i Ruby eller dato-håndtering, kan du prøve å lese mer om følgende temaer og ressurser:
+- Ruby's offisielle dokumentasjon på 'Date' klassen: [Date](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
+- Julius Mendegorias "How To Work With Dates And Times In Ruby" på ThoughtCo er et flott sted å starte: [How To Work With Dates And Times In Ruby](https://www.thoughtco.com/dates-and-times-in-ruby-2907742)
+- For en dypere forståelse av tid og dato i programmering, Jim Menard's bok "Time for Ruby" er en fantastisk ressurs: [Time for Ruby](https://www.amazon.com/Time-Ruby-Jim-Menard/dp/0578144874)

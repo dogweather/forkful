@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "C# recipe: Comparing two dates"
+html_title:           "Arduino recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "C#"
 category:             "C#"
@@ -10,53 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# An Unverbose Introduction to Date Comparison in C#
+
 ## What & Why?
+Comparing two dates in programming is the evaluation of two date-time variables to find out which is earlier, later, or if they are the same. Developers do this when they need to sort events, calculate durations, or trigger actions at specific times.
 
-Comparing two dates is a common task for programmers where they check if one date is earlier, later, or the same as another date. This allows for efficient and accurate organization of data as well as creating time-based logic in programs.
-
-## How to:
+## How To:
+Here's a quick code snippet that shows how it's done in C#:
 
 ```C#
-//Code examples for comparing two dates in C#
+DateTime date1 = new DateTime(2022, 01, 01);
+DateTime date2 = new DateTime(2022, 06, 01);
 
-//Create two DateTime objects to compare
-DateTime date1 = new DateTime(2021, 8, 10);
-DateTime date2 = new DateTime(2021, 8, 15);
-DateTime date3 = new DateTime(2021, 8, 10);
-
-//Using the DateTime.Compare() method to compare two dates
 int result = DateTime.Compare(date1, date2);
-Console.WriteLine(result);  //Output: -1 (date1 is earlier than date2)
 
-//Using the < and > operators to compare two dates
-if (date1 < date2)
-{
-    Console.WriteLine("Date1 is earlier than date2."); //Output: Date1 is earlier than date2.
-}
+if (result < 0)
+     Console.WriteLine("date1 is earlier than date2.");
+else if (result == 0)
+     Console.WriteLine("date1 is the same as date2.");
+else
+     Console.WriteLine("date1 is later than date2.");
+```
+Output
 
-if (date2 > date3)
-{
-    Console.WriteLine("Date2 is later than date3."); //Output: Date2 is later than date3.
-}
-
-//Using the Equals() method to check if two dates are the same
-if (date1.Equals(date3))
-{
-    Console.WriteLine("Date1 and date3 are the same."); //Output: Date1 and date3 are the same.
-}
-
+```sh
+date1 is earlier than date2.
 ```
 
+The `DateTime.Compare` method returns an integer that tells us whether the first date is earlier, later, or the same as the second date by returning a negative value, positive value, or zero respectively.
+
 ## Deep Dive
+C# was released in 2002 and the `DateTime` structure has been there from the beginning due to the importance of date and time manipulation in programming The `DateTime.Compare` function was also there from the start, giving developers a straightforward way to compare date and time data.
 
-Historically, comparing dates was a complex process where programmers had to convert dates into numerical values to perform comparisons. However, with advancements in programming languages, the process has become much simpler and more efficient.
+You can achieve the same results through subtraction but `DateTime.Compare` is more cognitive-friendly. For example: 
 
-Alternative methods for comparing dates include using the DateTime.Ticks property to get the number of ticks (a unit of time equal to 100 nanoseconds) since January 1, 0001 and comparing them, or using the DateTime.Compare() method with different parameters such as year, month, and day.
+```C#
+TimeSpan result = date1 - date2;
+// then you evaluate if result is less than, equal to, or greater than TimeSpan.Zero
+```
+This method works fine but it’s not as clear as using `DateTime.Compare`.
 
-When comparing dates, it is important to consider time zones and daylight saving time. This can be done by using the TimeZoneInfo.ConvertTime method to convert the dates to a specific time zone before comparing.
+Remember, `DateTime` values are represented as ticks (10 million ticks = 1 second) from the C# datetime epoch (00:00:00 UTC on January 1, 0001). Therefore, the comparison operations are essentially integer comparisons under the hood.
 
 ## See Also
+For more information about `DateTime` check these sources:
+- Microsoft's [DateTime Structure documentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- [DateTime.Compare method documentation](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-6.0)
+- [TimeSpan Structure](https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-6.0)
 
-- [DateTime.Compare Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare)
-- [DateTime.Ticks Property (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.ticks)
-- [TimeZoneInfo.ConvertTime Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.timezoneinfo.converttime)
+Happy coding!

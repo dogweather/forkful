@@ -1,7 +1,7 @@
 ---
-title:                "अस्थायी फ़ाइल बनाना"
-html_title:           "Ruby: अस्थायी फ़ाइल बनाना"
-simple_title:         "अस्थायी फ़ाइल बनाना"
+title:                "एक अस्थायी फ़ाइल बनाना"
+html_title:           "Arduino: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों: 
-एक अस्थायी फ़ाइल को बनाना, उपेक्षित फ़ाइल होता है जो केवल ऐसे समय के लिए उपलब्ध रहता है जब आपको प्रोग्राम के दौरान कुछ सामान्य डेटा को अस्थाई रूप से स्थानांतरित करने की ज़रूरत होती है। प्रोग्रामर्स अक्सर अस्थायी फ़ाइल संचालन का उपयोग करते हैं, जैसे कि डेटा बेस डेटाबेस सुविधाओं के लिए।
+# Ruby के साथ अस्थायी फ़ाइलें कैसे बनाएं
 
-## कैसे करें: 
-आप अपने रेली प्रोग्राम में अस्थायी फ़ाइलों को बनाने के लिए आसानी से उपयोग कर सकते हैं। निम्न उदाहरण से आप अपने प्रोग्राम में अस्थायी फ़ाइलों को कैसे बना सकते हैं देख सकते हैं:
+## क्या और क्यों?
 
-उदाहरण 1: एक रिक्त अस्थायी फ़ाइल बनाएँ
+अस्थायी फ़ाइलें, जैसा कि नाम सुझाता हैं, कुछ समय के लिए डेटा स्टोर करने के लिए बनाई जाती हैं। ये फ़ाइलें तब उपयोगी होती हैं, जब आपको कुछ डेटा तब तक स्टोर करके रखना होता है, जब तक कि कुछ निश्चित क्रियाएँ पूरी नहीं हो जाती।
+
+## कैसे करें:
+
+Ruby में `Tempfile` लाइब्रेरी का उपयोग करके अस्थायी फ़ाइलें बनाई जा सकती हैं। 
+
 ```Ruby
-file = Tempfile.new
-puts "Temporary file created at #{file.path}"
+require 'tempfile'
+
+# अस्थायी फ़ाइल बनाने के लिए
+file = Tempfile.new('hello')
+puts file.path      # => "/tmp/hello... . .. .. .3.8" (रैंडम नाम)
+file.write("world") # फ़ाइल में लिखने के लिए
+file.rewind         # फ़ाइल के शुरू में पुनः जाने के लिए
+
+puts file.read      # => "world"
+file.close          # फ़ाइल को बंद करने के लिए
 ```
 
-उदाहरण 2: फाइल में डेटा लिखें
-```Ruby
-file = Tempfile.new
-file.write("Hello world!")
-file.rewind
-puts "Data written to temporary file:\n#{file.read}"
-```
+## गहरी छानबिन
 
-उदाहरण 3: फाइल में से डेटा पढ़ें
-```Ruby
-file = Tempfile.new
-file.write("Hello world!")
-file.rewind
-puts "Reading data from temporary file:\n#{file.read}"
-```
+अस्थायी फ़ाइलें अस्थायी स्थोरेज़ समाधान के रूप में लंबे समय से उपयोग हो रही हैं। यह एक सुरक्षित तरीका प्रदान करता है डेटा स्टोर करने का जो बाद में हटा दिया जाता है। Ruby में, `Tempfile` लाइब्रेरी 'tmpdir' लाइब्ररी का उपयोग करती है जो अगर आप चाहते हैं, तो अलग से भी उपयोग कर सकते हैं।
 
-## गहराई तक पदार्थ : 
-अस्थायी फ़ाइलों को आमतौर पर कोड का एक हिस्सा ही समझा जाता है, लेकिन अस्थायी फ़ाइल का इतिहास रिक बनाने वाले प्रोग्रामिंग भाषाओं के साथ संबंधित है। अस्थायी फ़ाइलों के प्रयोग के अलावा, आप फ़ाइल को स्थाई रूप से भी स्थानांतरित कर सकते हैं और अस्थायी फोल्डरों का उपयोग कर सकते हैं। इसके अलावा अस्थायी फ़ाइलों की कुछ अवधारणाओं में भी फ़ायदे हैं जो आपको आपके प्रोग्राम के विकास को आसान बना सकते हैं।
+## अन्य जानकारी के लिए:
 
-## अन्य जानकारी: 
-अस्थायी फ़ाइल बनाने के बारे में अधिक जानकारी के लिए आप निम्नलिखित स्रोतों की जांच कर सकते हैं:
-- [Ruby डॉक्यूमेंटेशन: Tempfile कक्ष](https://ruby-doc.org/stdlib-2.7.2/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby सीखने के कॉर्स: अस्थायी फ़ाइल](https://www.ruby-lang.org/en/documentation/quickstart/2/)
-- [GeeksforGeeks: रेली में अस्थायी फ़ाइल और अस्थाई फ़ोल्डर](https://www.geeksforgeeks.org/temporary-files-folders-ruby/)
-- [Upcase: रेली में अस्थायी फ़ाइल कैसे बनाएं](https://thoughtbot.com/upcase/videos/temporary-file-primer)
+1. [Ruby Tempfile Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/tempfile/rdoc/Tempfile.html)
+2. [Ruby TmpDir Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/tmpdir/rdoc/Tmpdir.html)

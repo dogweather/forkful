@@ -1,6 +1,6 @@
 ---
 title:                "デバッグ出力の印刷"
-html_title:           "Go: デバッグ出力の印刷"
+html_title:           "Fish Shell: デバッグ出力の印刷"
 simple_title:         "デバッグ出力の印刷"
 programming_language: "Go"
 category:             "Go"
@@ -10,23 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-デバッグ出力を表示することとは、プログラマーがコードの実行中に作成したデータやメッセージをターミナルやファイルに表示することです。プログラマーがデバッグ出力を使用する理由は、コードの実行中に発生するエラーやバグを特定し、それらを修正するために役立つからです。
+## 何となぜ?
 
-## 方法：
+デバッグ出力の印刷は、コードがどのように動作しているかを理解するための重要な手段です。これにより、開発者は問題の特定と解決を迅速に行うことができます。
+
+## 使い方:
+
+実際にGoでデバッグ出力を印刷する方法を見てみましょう。
+
 ```Go
-fmt.Println("Hello, World!")
+package main
+import "fmt"
+func main() {
+    var str = "Hello, world!"
+    fmt.Println("Debug: " + str)
+}
 ```
-上記のコードを実行すると、ターミナルに「Hello, World!」という出力が表示されます。これはデバッグ出力の一例です。デバッグ出力をより詳細に表示したい場合は、```fmt.Printf```を使用することもできます。
+
+このコードを実行すると、以下の出力を期待できます。
+
 ```Go
-age := 25
-fmt.Printf("My age is %v years old.", age)
+Debug: Hello, world!
 ```
-これにより、ターミナルには「My age is 25 years old.」という出力が表示されます。
 
-## より詳しく：
-デバッグ出力は、プログラム開発の初期に使用されていた手法の一つです。他の方法としては、デバッガーを使用したり、断片化したコードを実行することでエラーを発見する方法があります。しかし、デバッグ出力を使用することで、コード全体を実行しなくてもエラーを特定することができ、効率的なデバッグ作業が可能になります。
+## 詳細について
 
-## 関連情報：
-- [Golang fmtパッケージドキュメント](https://golang.org/pkg/fmt/)
-- [デバッグ技術に関する日本語の記事](https://qiita.com/tags/debug)
+元々、デバッグ出力の印刷は、ソフトウェアの初期の日々から存在していました。開発者がコードの流れを把握し、迅速に問題を特定できる簡単な手段として用いられてきました。
+
+Go言語での代替方法としては、"log"パッケージを使用する方法があります。これは、エラーのロギングに更に適しています。
+
+```Go
+package main
+import "log"
+func main() {
+    log.Println("This is a debug message")
+}
+```
+このように、出力メッセージに日付と時間が自動的に付加されます。
+
+```Go
+2009/11/10 23:00:00 This is a debug message
+```
+
+## 参考資料
+
+以下のリンクは、デバッグ出力の更なる理解に役立つかもしれません：
+- [Go公式ドキュメンテーション](https://golang.org/pkg/fmt/)
+- [Logパッケージの使用方法](https://golang.org/pkg/log/)

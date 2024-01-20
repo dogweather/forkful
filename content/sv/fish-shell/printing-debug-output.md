@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Fish Shell: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,60 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+### Vad & varför?
+Att skriva ut felsökningsdata är en teknik som hjälper programmerare att hitta fel och problem i sin kod. Det gör det möjligt för oss att se vad vårt program gör steg för steg och upptäcka var exakt saker går snett.
 
-Att skriva ut debuggutdata är ett sätt för programmerare att kontrollera vad som händer i sin kod. Det kan också hjälpa till att hitta och lösa fel i programmet.
-
-## Hur man gör:
-
-### Skriv ut till terminalen
+### Så här gör du:
+Här är några exempel på hur man använder `echo` för att skriva ut debugginformation i Fish shell:
 
 ```Fish Shell
-echo "Debugging output is here!" 
-```
-Output:
-```
-Debugging output is here!
-```
+# Skriv ut en enkel meddelande
+echo "Detta är ett felsökningsmeddelande"
 
-### Visa variabler
-
-```Fish Shell
-set my_variable "This is a variable"
-echo $my_variable
+# Skriv ut en variabels värde
+set variabel "Detta är ett värde"
+echo $variabel
 ```
-Output:
+Och här är vad output ser ut:
 ```
-This is a variable
+Detta är ett felsökningsmeddelande
+Detta är ett värde
 ```
 
-### Använd en debuggande funktion
+### Djupdykning
+Den `echo` kommando i Fish shell härstammar från Unix operativsystem, och har sedan dess blivit en standardfunktion i de flesta kommandotolkar. Det finns andra alternativ för att skriva ut debugginformation, till exempel `printf` och `write`, men `echo` är det mest använda på grund av sin enkelhet. I Fish shell, kommer `echo` att skriva till den standard output streamen (`stdout`), vilket innebär att utdata kan omdirigeras till filer eller andra program.
 
-Fish Shell har en inbyggd funktion för att skriva ut debuggutdata i formatet "[DEBUG]: <din utdata>". Detta kan vara ett bra sätt att separera din debuggutdata från andra utskrifter i ditt program.
+### Se också
+För mer information om `echo`, se Fish shell dokumentation: 
+https://fishshell.com/docs/current/cmds/echo.html
 
-```Fish Shell
-debug "This is my debugging output"
-```
-Output:
-```
-[DEBUG]: This is my debugging output
-```
-
-## Deep Dive:
-
-### Historiskt sammanhang
-
-Att skriva ut debuggutdata är ett vanligt sätt att kontrollera och felsöka kod i många programmeringsspråk. Det har funnits med sedan de tidigaste dagarna av programmering och är fortfarande en viktig del av utvecklingen idag.
-
-### Alternativ till utskrift i terminalen
-
-Förutom att skriva ut till terminalen finns det andra sätt att visa debuggutdata, till exempel att skriva till en loggfil som kan granskas senare. Det finns också olika verktyg och bibliotek som kan hjälpa dig att granska och analysera din debuggutdata.
-
-### Implementeringsdetaljer
-
-I Fish Shell kan du använda enkla kommandon som `echo` eller `set` för att visa debuggutdata. Du kan också använda funktionen `debug` för att skriva ut i ett mer standardiserat format. Se `man fish` för mer information om varje kommando och dess användningsområden.
-
-## Se även:
-
-- [Fish Shell dokumentation](https://fishshell.com/docs/current/index.html)
-- [The art of debugging](https://hbr.org/2018/02/the-art-of-debugging) (engelska)
+För instruktioner om hur man omdirigerar output till filer eller andra program, se: 
+https://fishshell.com/docs/current/tutorial.html#redirection

@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Elm: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,30 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porque?
+##O Que & Porquê?
 
-Baixar uma página da web é o processo de transferir um documento HTML de um servidor para um dispositivo, permitindo que o usuário visualize o conteúdo do site em seu navegador. Os programadores geralmente fazem isso para acessar informações de sites externos ou adicionar funcionalidades a seus próprios aplicativos.
+Baixar uma página da web é o processo de copiar e salvar o conteúdo de uma página da web em um dispositivo local. Programadores fazem isso por várias razões, como para criar backups, analisar páginas da web ou trabalhar offline.
 
-## Como:
+##Como Fazer:
 
-Para baixar uma página da web usando Elm, você pode usar a função `Http.get` e passar a URL desejada como argumento. Aqui está um exemplo de código:
+Infelizmente, Elm, por ser uma linguagem funcional voltada para a arquitetura de front-end, não possui módulos incorporados para baixar páginas da web diretamente. No entanto, você pode usar requisições HTTP para obter o conteúdo de uma página da web. 
 
-````Elm
+####Instalando o pacote:
+
+```Elm
+elm install elm/http
+```
+
+####Exemplo de código:
+
+```Elm
+module Main exposing (..)
+
+import Browser
+import Html exposing (..)
 import Http
 
-Http.get "https://www.example.com" 
-    |> Task.perform PageLoaded FailedToLoad
-````
+type alias Model =
+    { content : String }
 
-Neste exemplo, estamos usando a função `get` da biblioteca padrão `Http` e passando a URL "https://www.example.com" como argumento. Em seguida, usamos o operador de pipeline `|>` para encadear a função `Task.perform` que irá lidar com o resultado da solicitação. Se a solicitação for bem-sucedida, a função `PageLoaded` será executada com o conteúdo da página como argumento. Caso contrário, a função `FailedToLoad` será executada com uma mensagem de erro.
+init : Model
+init =
+    { content = "" }
 
-## Deep Dive:
+type Msg
+    = LoadContent
+    | ContentLoaded (Result Http.Error String)
 
-O processo de baixar páginas da web é uma parte essencial do desenvolvimento web e é usado em uma variedade de aplicações, como aplicativos de busca, agregadores de notícias e muito mais. Além disso, as funções `Http.get` podem aceitar argumentos adicionais, como headers e parâmetros, para permitir uma personalização ainda maior na solicitação.
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        LoadContent ->
+            ( model
+            , Http.get
+                { url = "http://example.com"
+                , expect = Http.expectString ContentLoaded
+                }
+            )
 
-Alternativas para baixar páginas da web em Elm incluem o uso da extensão `port` para se comunicar com JavaScript ou a utilização de outras bibliotecas de terceiros que ofereçam mais funcionalidades para lidar com solicitações HTTP.
+        ContentLoaded (Ok content) ->
+            ( { model | content = content }, Cmd.none )
 
-## See Also:
+        ContentLoaded (Err _) ->
+            ( model, Cmd.none )
 
-- Documentação oficial de Elm sobre funções Http.get: https://package.elm-lang.org/packages/elm/http/latest/Http#get
-- Tutorial sobre como baixar páginas da web em Elm: https://dev.to/elmuniversity/downloading-web-pages-with-elm-2eni
+main =
+    Browser.sandbox { init = init, update = update, view = \_ -> div [] [] }
+```
+
+Aqui, quando o comando `LoadContent` é executado, uma requisição HTTP é feita para http://example.com. O conteúdo da página da web é então atualizado em nossa model.
+
+##Fundo Histórico
+
+O Elm foi criado em 2012 por Evan Czaplicki, então um estudante, despertou a atenção da comunidade de desenvolvimento por seus recursos para aplicativos de página única robustos e confiáveis. E embora o Elm seja principalmente uma linguagem de front-end, ela pode receber dados por meio de requisições HTTP, que é como você pode "baixar" o conteúdo de uma página da web no idioma.
+
+##Alternativas
+
+Se você estiver procurando uma solução mais robusta que se aproxime do que geralmente significa baixar um site, talvez seja melhor usar outra linguagem que permita o scraping de sites, como Python ou Node.js.
+
+##Detalhes da Implementação
+
+Quanto aos detalhes da implementação, a função Http.get é usada para fazer a requisição HTTP. A url do site deve ser incluída como um dos parâmetros. O segundo parâmetro é "esperar", que define o tipo de resposta que esperamos receber do site. No caso acima, estamos esperando uma string.
+
+##Veja Também
+
+[Elm HTTP](https://package.elm-lang.org/packages/elm/http/latest/)
+
+[Elm Guide](https://guide.elm-lang.org/)
+
+[Elm Syntax](https://elm-lang.org/docs/syntax)

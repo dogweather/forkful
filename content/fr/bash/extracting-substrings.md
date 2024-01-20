@@ -1,7 +1,7 @@
 ---
-title:                "Extraction de sous-chaines"
-html_title:           "Bash: Extraction de sous-chaines"
-simple_title:         "Extraction de sous-chaines"
+title:                "Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,23 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & pourquoi?
-L'extraction de sous-chaînes est une technique utilisée par les programmeurs pour récupérer une partie spécifique d'une chaîne de caractères. Cela est utile lors de la manipulation de grandes quantités de données textuelles ou pour effectuer des opérations spécifiques sur certaines parties d'une chaîne. Les programmeurs utilisent souvent cette technique pour simplifier leur code et le rendre plus efficace.
+## Quoi & Pourquoi?
 
-## Comment faire:
-Voici un exemple de code Bash pour extraire les deux premiers caractères d'une chaîne de caractères :
+L'extraction de sous-chaînes signifie obtenir des parties spécifiques d'une chaîne de caractères. Les programmeurs le font souvent pour manipuler, analyser, ou substituer certaines portions d'une chaîne.
 
+## Comment Faire:
+
+Vous pouvez extraire des sous-chaînes dans Bash avec ${var:position:longueur}. Voici un exemple:
+
+```Bash
+ma_chaine="Bonjour le monde"
+echo ${ma_chaine:0:7}   # sortie: Bonjour
+echo ${ma_chaine:8:2}   # sortie: le
 ```
-str = "Bonjour"
-echo ${str:0:2}
-```
 
-La sortie de ce code serait "Bo", car les caractères aux positions 0 et 1 sont extraits de la chaîne originale. Vous pouvez également spécifier un index de départ différent en modifiant le nombre après le premier ":". Par exemple, si vous voulez extraire les deux derniers caractères d'une chaîne, vous pouvez utiliser ```${str: -2}```. Le " -2 " spécifie que nous voulons commencer à extraire à partir de l'avant-dernier caractère de la chaîne.
+Ici, nous avons défini 'position' comme un index basé sur 0, et 'longueur' comme le nombre de caractères à extraire.
 
-## Plongée en profondeur:
-L'extraction de sous-chaînes existe depuis les premiers jours de la programmation. Elle est principalement utilisée dans les langages de programmation de type C, mais elle est également disponible dans Bash. Une alternative à l'extraction de sous-chaînes est l'utilisation de la commande ```cut```, qui permet de spécifier des délimiteurs pour extraire une partie d'une chaîne. Cependant, l'utilisation de la commande ```cut``` peut parfois être plus complexe que l'extraction de sous-chaînes.
+## Plongée Profonde:
 
-Au niveau de l'implémentation, l'extraction de sous-chaînes se base sur la manipulation des indices de caractères dans une chaîne. Cela signifie qu'il est important de comprendre comment les indices sont numérotés dans votre langage de programmation pour effectuer une extraction précise.
+Historiquement, Bash a hérité de la fonctionnalité d'extraction de sous-chaînes de l'interpréteur de commandes 'sh'. Aujourd'hui, c'est une fonctionnalité précieuse pour les scripts bash, mais il existe aussi des alternatives. Par exemple, on peut aussi utiliser 'cut' ou 'awk', deux autres commandes Unix.
 
-## Voir aussi:
-Pour en savoir plus sur l'extraction de sous-chaînes en Bash, vous pouvez consulter la documentation officielle de Bash ou des ressources en ligne telles que Bash 101. Vous pouvez également rechercher des tutoriels sur l'extraction de sous-chaînes dans d'autres langages de programmation pour comparer les différentes méthodes d'implémentation.
+Notez que les indices de position sont basés sur zéro. Aussi, si 'longueur' dépasse la longueur restante de la chaîne, Bash ne se plaint pas et renvoie simplement la portion restante de la chaîne.
+
+## Voir Aussi:
+
+Pour plus d'informations sur l'extraction de sous-chaînes en Bash, consultez ces sources :
+
+- Le manuel Bash : https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html
+- IBM Developer : https://developer.ibm.com/technologies/linux/tutorials/l-bash-strings/
+- StackOverflow : https://stackoverflow.com/questions/428109/extract-substring-in-bash

@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en tekststreng"
-html_title:           "Arduino: Store bokstaver i en tekststreng"
-simple_title:         "Store bokstaver i en tekststreng"
+title:                "Kapitalisering av en streng"
+html_title:           "Arduino: Kapitalisering av en streng"
+simple_title:         "Kapitalisering av en streng"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,22 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & hvorfor?
-Å kapitalisere en streng betyr å gjøre den første bokstaven i hvert ord stor. Programmere gjør dette for å gjøre teksten mer leselig og estetisk tiltalende. 
+## Hva & Hvorfor?
 
-# Hvordan:
-```Arduino 
-String tekst = "dette er en test";
-tekst.capitalize(); 
-```
+Å skrive en tekststreng med store bokstaver betyr å gjøre alle bokstavene i en tekststreng til blokkbokstaver. Programmerere gjør dette for å standardisere tekstdataene, noe som forenkler sammenligninger og søk.
+
+## Hvordan:
+
+Følgende viser hvordan du kan kapitalisere en streng i Arduino.
+
 ```Arduino
-Output: Dette Er En Test
+void setup() {
+  Serial.begin(9600);
+  
+  char myString[] = "heisann verden!";
+  for (int i = 0; myString[i]; i++){
+    myString[i] = toupper(myString[i]);
+  }
+  
+  Serial.print("Kapitaliserte streng: ");
+  Serial.println(myString);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+}
+```
+Når du kjører dette eksemplet, vil output være:
+
+```
+Kapitaliserte streng: HEISANN VERDEN!
 ```
 
-# Dypdykk:
-Å kapitalisere en streng har vært et standardkonsept i programmering i lang tid, og det finnes mange måter å implementere dette på. Alternativene inkluderer å bruke innebygde funksjoner som "capitalize()", eller å lage din egen funksjon ved å iterere gjennom hvert ord i strengen og endre den første bokstaven til stor bokstav. 
+## Dyp Dykk:
 
-# Se også:
-For mer informasjon om å kapitalisere en streng i Arduino, se følgende kilder: 
-- Arduino String objekt dokumentasjon: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
-- Tutorial om å bruke "capitalize()" funksjonen: https://www.programmersought.com/article/62436480009/
+I historikken til programmering, har behovet for å standardisere tekstdata vært nøkkelen til mye funksjoner i datatjenester. Det å kapitalisere en streng, er bare ett av mange verktøy som hjelper oss å oppnå dette.
+
+En alternativ måte å kapitalisere en streng på, er å bruke funksjonen `strtransform()` i kombinasjon med `::toupper` i `ArduinoSTL` biblioteket. Men denne funksjonen er ikke alltid tilgengelig på alle plattformer, og kan føre til større bruk av minne.
+
+I praksis forvandles hver bokstav i strengen til en stor bokstav ved hjelp av ASCII-verdiene. ASCII-verdien til hver lille bokstav er redusert med 32 for å få store bokstaver.
+
+## Se Også:
+
+For å utvide kunnskapen din, sjekk ut følgende:
+
+1. [Arduino Reference Page on ASCII Characters](https://www.arduino.cc/en/Reference/ASCIIchart)
+
+2. [Arduino Language Reference Page](https://www.arduino.cc/reference/en/)

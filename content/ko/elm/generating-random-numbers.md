@@ -1,7 +1,7 @@
 ---
-title:                "난수 생성하기"
-html_title:           "Elm: 난수 생성하기"
-simple_title:         "난수 생성하기"
+title:                "임의의 숫자 생성하기"
+html_title:           "Elixir: 임의의 숫자 생성하기"
+simple_title:         "임의의 숫자 생성하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,64 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-무작위 숫자 생성은 숫자를 무작위로 생성하는 것을 말합니다. 이는 프로그래머들이 랜덤한 데이터를 생성하여 다양한 시나리오를 시뮬레이션하고 테스트하는데 유용합니다.
+## 무엇인가 & 왜?
 
-## 무엇 & 왜?
+랜덤 숫자를 생성하는 것은, 예측할 수 없는 수를 생성하는 것을 말합니다. 프로그래머들은 간혹 현실 세계의 불확실성을 시뮬레이션하거나, 테스트 데이터를 만들기 위해 이를 사용합니다.
 
-무작위 숫자 생성은 매우 간단하고 기본적인 프로그래밍 작업입니다. 랜덤한 데이터를 사용하여 프로그램의 여러 가지 경우를 시뮬레이션하거나 데이터를 테스트하는 데 사용됩니다. 예를 들어, 게임에서 적의 위치를 랜덤하게 생성하거나, 인터넷 검색 결과를 섞어서 보여주는 등 다양한 용도로 사용될 수 있습니다.
+## 어떻게 하는가:
 
-## 방법:
+아래는 Elm에서 Random 모듈을 사용하여 랜덤 숫자를 생성하는 예제입니다.
 
-Elm에서는 Random 라이브러리를 사용하여 무작위 숫자를 생성할 수 있습니다. 아래의 코드를 참고하여 간단한 예제를 살펴보세요.
+```Elm
+import Random
 
-```
-module Main exposing (main)
-
-import Random exposing (..)
-
-type Msg = 
-    NewRandomNumber Int
-
-update : Msg -> Int -> (Int, Cmd Msg)
-update msg currentNumber =
-    case msg of
-        NewRandomNumber num ->
-            (num, Cmd.none)
-
-randomNumber : Random.Generator Int
-randomNumber =
-    Random.int 1 10 -- 1부터 10 사이의 랜덤한 정수 생성
-
-main : Program Int
 main =
-    Html.beginnerProgram
-        { model = 0
-        , view = view
-        , update = update
-        }
-
-view : Int -> Html Msg
-view number =
-    Html.div []
-        [ Html.text ("Random number: " ++ (toString number)) ]
-
-subscriptions : Int -> Sub Msg
-subscriptions num =
-    Sub.none
-
+    Random.generate identity (Random.int 1 100)
 ```
 
-### 출력:
+이 코드는 1에서 100사이의 무작위 정수를 생성합니다.
 
-```
-Random number: 7
-```
+## 깊게 파보기:
 
-## 조금 더 깊이 들어가보기:
+### 역사적 맥락
 
-무작위 숫자 생성은 컴퓨터 과학에서 매우 중요한 개념입니다. 이는 알고리즘에서 필수적인 요소로 사용되며, 확률 분포에 따라 랜덤한 데이터를 생성하는 다양한 방법들이 존재합니다. 한 가지 대안으로는 수학적으로 랜덤한 난수를 생성하는 알고리즘을 사용하는 것이 있는데, 이는 무작위성을 위해 물리적인 장치를 사용하지 않아도 된다는 장점이 있습니다. Elm의 Random 라이브러리는 우리가 원하는 확률 분포를 정확하게 조절할 수 있도록 다양한 함수들을 제공합니다.
+랜덤 숫자 생성은 컴퓨터 과학의 초창기부터 핵심 기능으로 자리 잡았습니다. 프로그램 중에서도 시뮬레이션, 암호화, 갬블링 등에서 주로 쓰였습니다.
 
-## 더 알아보기:
+### 대안
 
-- [Elm Random 라이브러리 문서](https://package.elm-lang.org/packages/elm/random/latest/Random)
-- [랜덤 함수와 무작위성에 대한 주의](https://elmprogramming.com/randomness-with-elm.html)
+Elm 외에도 JavaScript, Python 등 다양한 언어에서 랜덤 숫자를 생성할 수 있는 기능이 있습니다. 각 언어는 다양한 방식으로 랜덤성을 제공합니다.
+
+### 구현 세부 정보
+
+Elm에서 랜덤 숫자를 생성하는 것은 순수 함수를 이용해야 합니다. 즉, 랜덤 숫자 생성 함수는 항상 동일한 입력에 대해서는 동일한 결과를 반환해야 합니다. Elm은 이 순수성을 유지하기 위해 Task나 Cmd와 같은 별도의 컨텍스트에서 랜덤 값을 생성합니다.
+
+## 참고 자료:
+
+- [Elm의 Random 모듈 문서](https://package.elm-lang.org/packages/elm/random/latest/)
+- [랜덤 숫자 생성에 대한 컴퓨터 과학계의 연구 자료](https://www.jstor.org/stable/2003355)
+- [다른 언어에서의 랜덤 숫자 생성 방법](https://www.geeksforgeeks.org/random-number-generator-in-arbitrary-probability-distribution-fashion/)

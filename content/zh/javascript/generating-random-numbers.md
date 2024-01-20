@@ -1,7 +1,7 @@
 ---
-title:                "产生随机数"
-html_title:           "Javascript: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "Go: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,43 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-机器具有计算能力，但是在某些任务中，重复性是必要的。为了解决这个问题，程序员们创建了一种方法来使用计算机来生成随机数。这就是我们今天要探讨的主题-生成随机数。
+## 什么和为什么？
+生成随机数是编程中产生不可预测数字的过程。程序员使用它来创建随机事件，比如抽奖应用或者在游戏中模拟不可预知的行为。
 
-## 什么 & 为什么?
+## 如何操作：
+在Javascript中，你可以使用`Math.random()`来生成0到1之间的伪随机浮点数。看下面的例子：
 
-生成随机数是一种使用计算机来产生看似随机的数字的方法。这在许多应用中都很有用，例如游戏中的随机事件，密码生成以及模拟实验。
-
-程序员们经常需要生成随机数来进行测试和调试。它也可以被用来作为安全功能，例如在密码重置过程中生成临时密码。
-
-## 如何:
-
-下面是一个简单的例子来生成一个范围在1到10之间的随机数：
-
-```javascript
-Math.floor(Math.random() * 10) + 1;
+```Javascript
+let randomNumber = Math.random();
+console.log(randomNumber);  
 ```
 
-这里我们使用了`Math.random()`方法来生成0到1之间的随机小数。然后通过乘以10来扩大范围，并使用`Math.floor()`方法来将小数转换为整数。最后，加上1来将范围设置为1到10。
+在这段代码中，我们调用了Math.random()函数，它返回了一个在0和1之间的随机数（包含0，但不包含1）。每次你运行代码，`randomNumber`都会是一个新的随机数字。
 
-我们也可以将这个逻辑封装到一个函数中，让我们可以重复使用它：
+如果你需要在一个特定范围内生成随机数（比如在1和100之间），你可以这样写：
 
-```javascript
-function getRandomNumber(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-// 生成一个范围在3到8之间的随机数
-getRandomNumber(3, 8);
+```Javascript
+let min = 1;
+let max = 100;
+let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+console.log(randomNumber);
 ```
 
-## 深入探讨:
+这段代码会返回1到100之间的一个整数。每次运行时，`randomNumber`都会是这个范围内的一个新随机数。
 
-在早期的计算机中，生成随机数并不容易。因为计算机在其本质上是可预测的，它必须从一个种子开始，然后通过一系列的计算来生成随机数。现代计算机使用的伪随机数生成器，通过一系列复杂的算法来生成看似随机的数字。
+## 深度解析：
+生成随机数的历史可以追溯到计算机科学的早期。先前的方法如使用电机噪声，采用钟摆摆动等，都被认为是产生真正随机数字的有效方式。但是，这些方法都不适用于计算机编程。
 
-除了使用`Math.random()`方法来生成随机数，还有其他一些方法，如使用随机数生成器软件或使用硬件设备来生成真正的随机数。
+对于编程来说，最常用的是伪随机数生成器 (PRNGs)。JavaScript使用称为“线性同余法”的PRNG。一个被选定的初始数字（称为“种子”），根据预设的一组数学方程（称为“算法”）进行运算，生成的结果看起来像随机数，这就是伪随机。
 
-## 看看这些:
+虽然`Math.random()`对于大部分用途都很足够，但如果你需要特别的公正或安全性，它可能不够。这种情况下，你可能需要寻求其他更为深度的随机数生成想要实现。
 
-- [JavaScript随机数生成器](https://javascript.info/random) ：一个详细的教程来学习如何在JavaScript中生成随机数。
-- [随机数生成器](https://www.random.org/) ：一个可以生成真正随机数的在线工具。
-- [利用随机数生成器提高密码强度](https://www.cnet.com/news/using-a-random-number-generator-to-improve-password-security/)：一个关于如何使用随机数生成器来提高密码安全性的文章。
+## 另请参阅：
+- MDN 文档对JavaScript中`Math.random()`的解释 (https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- Node.js的`crypto.randomInt()`作为具有更高安全性的随机数生成的备选方法(https://nodejs.org/api/crypto.html#crypto_crypto_randomint_min_max_callback)
+- "用JavaScript制作随机数"的详细文章. (https://www.javascripting.org/creating-random-numbers/)

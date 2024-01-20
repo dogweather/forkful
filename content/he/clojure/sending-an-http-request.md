@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Clojure: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,22 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-שליחת בקשת HTTP היא פעולה נפוצה מאוד בתחום התכנות. היא מתאימה לשליחת מידע מהשרת ללקוח, כגון קבצים, תמונות או מידע דינמי. תכנתנים משתמשים בבקשות HTTP כדי ליצור יישומים רבי שימוש לצד הלקוח.
+## מה ולמה?
+שליחת בקשת HTTP היא פעולה שבה מבקשים משרת מידע מסוים. מתכנתים משתמשים בו לדבר עם שרתים שונים, לשלוח נתונים ולקבל מידע חזרה.
 
-## איך לעשות?
-בקשת HTTP נשלחת באמצעות פונקציית "clj-http.client/post". למשל:
+## איך ל:
+```clojure
+(defn send-http-request
+  [url]
+  (let [client (http/create-client {})]
+    (-> client
+      (http/get url)
+      (http/throw-unless 200))))
 
-```Clojure
-(require '[clj-http.client :as client])
-(client/post "http://example.com" {:form-params {:username "user" :password "pass"}})
+(println (send-http-request "http://example.com"))
 ```
+ערך הפלט של הקוד הזה הוא מידע שהשרת מחזיר, כגון תוכן הדף של "http://example.com".
 
-תוצאת הפעולה תחזיר מידע מהשרת, כגון קבצים או מידע דינמי של האתר המבוקש.
-
-## עומק ממעמקים
-בקשות HTTP הן חלק בלתי נפרד מהעולם התעשייתי והתכנות. פונקציות נוספות כמו "GET" ו-"PUT" מאפשרות לקבל ולעדכן מידע מהשרת. פתאום כל העולם נמצא בכפתורים של המחשב שלנו.
+## עומק נוסף
+משלוח בקשת HTTP היה חלק חשוב בהיסטוריה של האינטרנט מאז שהוצא לאור הגרסה הראשונה של הפרוטוקול HTTP ב-1991. בחרנו בדוגמא שמשתמשת ב-http-kit, אך ישנם אלטרנטיבות רבות אחרות, כמו clj-http או אפשרות לשליחת בקשות HTTP באמצעות Java או כלים נוספים. הקוד מפרט את הURL לו אנו מבקשים להתחבר, יוצר את הבקשה ושולח את הבקשה לשרת.
 
 ## ראה גם
-למידת Clojure: https://clojure.org/
-מדריך לשליחת בקשות HTTP ב-Clojure: https://github.com/dakrone/cheshire/wiki/Sending-HTTP-Requests-with-Clojure
+- [HTTP Kit](http://www.http-kit.org/)
+- [clj-http](https://github.com/dakrone/clj-http)
+- [Clojure Cookbook: Making HTTP Requests](https://clojure-cookbook.com/posts_output/clojure_make_http_requests/)

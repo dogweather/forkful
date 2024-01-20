@@ -1,7 +1,7 @@
 ---
-title:                "Interpolación de una cadena"
-html_title:           "C++: Interpolación de una cadena"
-simple_title:         "Interpolación de una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué? 
-En términos simples, la interpolación de cadenas es la capacidad de insertar datos en una cadena de texto. Los programadores lo hacen para hacer que sus cadenas sean más dinámicas y personalizadas para el usuario. Esto también les permite evitar tener que escribir manualmente cadenas de texto largas y complejas que contienen datos variables.
+# Cadena de Interpolación en C++: Su 'Qué' y 'Por Qué'  
 
-## Cómo:
-En C++, se puede realizar la interpolación de cadenas utilizando la función `std::stringstream`. Primero, se debe incluir la biblioteca `sstream` en el código. Luego, se puede crear un objeto `stringstream` y utilizar el operador `<<` para insertar diferentes valores en la cadena de texto. Finalmente, se puede obtener la cadena resultante utilizando el método `str()`. A continuación se muestra un ejemplo de código y su salida:
+Interpolar una cadena puede ser tan simple como insertar valores en una cadena de texto. Los programadores hacen esto para construir cadenas de forma dinámica, lo cual permite que los datos sean expresados de una forma más natural y legible.
 
-```
-#include <iostream>
-#include <sstream> // incluir la biblioteca sstream
+## Cómo hacerlo: 
+
+En C++, interpolación de cadena puede ser lograda utilizando la biblioteca `fmt`, que es oficialmente parte de C++20. A continuación tienes un ejemplo.
+
+```C++
+#include <fmt/core.h>
 
 int main() {
-    // crear un objeto stringstream
-    std::stringstream ss;
-    
-    // insertar valores en la cadena
-    ss << "Hola, mi nombre es " << "Juan" << " y tengo " << 25 << " años.";
-    
-    // obtener la cadena resultante
-    std::string output = ss.str();
-    
-    // imprimir la cadena resultante
-    std::cout << output; // salida: Hola, mi nombre es Juan y tengo 25 años.
+    int edad = 25;
+    std::string nombre = "Carlos";
+    fmt::print("Hola, {}. Tienes {} años.\n", nombre, edad);
+    return 0;
 }
 ```
 
-## Profundizando:
-La interpolación de cadenas es una técnica común para facilitar la creación de cadenas de texto personalizadas. Antes de que se introdujera esta funcionalidad en C++, los programadores tenían que utilizar técnicas más complejas, como la concatenación de cadenas o el uso de formateadores de cadenas. Sin embargo, ahora hay muchas bibliotecas disponibles que ofrecen funciones más avanzadas de interpolación de cadenas para facilitar aún más el trabajo del programador.
+La salida será:
+```
+Hola, Carlos. Tienes 25 años.
+```  
 
-## Ver También:
-- [La biblioteca sstream en C++](https://www.cplusplus.com/reference/sstream/)
-- [Otras opciones de interpolación de cadenas en C++](https://www.codeproject.com/Articles/3962/C-String-Formatting-by-Using-C-Streams.aspx)
+## Profundizando:  
+
+A pesar de que C++ ahora soporta la interpolación de cadenas, históricamente no siempre fue así. Antes de C++20, tenías que utilizar `printf` o una secuencia complicada de operaciones de inserción.
+
+Hay alternativas a `print` de `fmt`, como el clásico `printf` de C o `stringstream`, pero `fmt` es más eficiente y seguro contra tipos.
+
+La interpolación de cadenas en C++ mediante `fmt` es implementada a través de la expansión de plantillas en tiempo de compilación, lo cual es más eficiente en tiempo de ejecución en comparación con el procesamiento en tiempo de ejecución propio de otros lenguajes.
+
+## Ver también:  
+
+Aquí están algunos recursos útiles para la interpolación de cadenas en C++:
+
+- Documentación oficial de `fmt`: https://fmt.dev/latest/index.html
+- Tutorial en línea sobre C++20: https://learncpp.com/
+- `printf` vs `fmt::print` : https://www.zverovich.net/2020/06/13/fmt-vs-printf.html

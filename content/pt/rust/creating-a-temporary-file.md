@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Rust: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que e por que criar arquivos temporários?
+## O Quê & Porquê?
 
-Criar um arquivo temporário é uma técnica comum usada pelos programadores para armazenar dados temporários de maneira eficiente. Isso permite que o programa armazene e manipule dados que não são necessários permanentemente, economizando espaço e recursos.
+Criar um arquivo temporário é o processo de gerar um arquivo que pode ser usado para armazenar informações temporariamente. Programadores fazem isso normalmente para testes, para manipular dados sem alterar o original, ou quando o programa precisa de um espaço para manusear uma grande quantidade de dados.
 
-# Como fazer:
+## Como Fazer:
 
-```rust
-use std::fs::File;
-use std::io::prelude::*;
+Vamos usar a biblioteca `tempfile` para criar arquivos temporários em Rust. Primeiro, adicione a dependência no seu `Cargo.toml`.
 
-// Cria um arquivo temporário e escreve "Olá mundo!" nele
-let mut file = File::create("temp.txt")?;
-file.write_all("Olá mundo!")?;
+```Rust
+[dependencies]
+tempfile = "3.0"
+```
+Agora, aqui está um exemplo simples de como criar um arquivo temporário:
 
-// Lê o conteúdo do arquivo e imprime no console
-let mut content = String::new();
-file.read_to_string(&mut content)?;
-println!("{}", content); // "Olá mundo!"
+```Rust
+use tempfile::NamedTempFile;
 
-// Apaga o arquivo temporário
-std::fs::remove_file("temp.txt")?;
+fn main() {
+    let temp_file = NamedTempFile::new().unwrap();
+
+    println!("Arquivo temporário criado: {:?}", temp_file.path());
+}
 ```
 
-# Profundando na técnica:
+Quando você executa este código, ele criará um arquivo temporário e imprimirá o caminho do arquivo.
 
-Criar arquivos temporários é uma prática comum na programação, especialmente em sistemas operacionais Unix, onde é uma parte importante da estrutura de arquivos. As alternativas a essa técnica incluem usar variáveis em memória ou criar novos arquivos permanentes, mas essas soluções podem ser menos eficientes.
+## Imersão Profunda:
 
-Ao criar um arquivo temporário, o sistema operacional o cria com uma nomeação exclusiva, geralmente baseada na data e hora, e o salva na pasta temporária do sistema. Esse arquivo será automaticamente excluído quando o programa terminar de executar, evitando a necessidade de limpeza manual.
+A criação de arquivos temporários é uma prática comum usada desde os primeiros tempos da computação. No contexto histórico, alguns sistemas operacionais até oferecem seu próprio sistema de arquivos temporários.
 
-# Veja também:
+Em termos de alternativas, você também pode usar a função `tempdir()` para criar um diretório temporário em vez de um arquivo.
 
-- Documentação oficial do Rust sobre criação de arquivos temporários: https://doc.rust-lang.org/std/fs/struct.File.html
-- Tutorial sobre como criar e manipular arquivos temporários em Rust: https://www.tutorialspoint.com/rust/rust_files.htm
-- Artigo sobre estruturas de arquivos em sistemas operacionais Unix: https://www.tutorialspoint.com/unix/unix-file-management.htm
+Em relação aos detalhes de implementação, quando você cria um arquivo temporário em Rust com a biblioteca `tempfile`, o arquivo é automaticamente removido quando o `TempFile` é solto. Este comportamento é incrivelmente útil, já que lida automaticamente com a limpeza de arquivos temporários, impedindo o acúmulo de arquivos obsoletos.
+
+## Veja Também:
+
+Você pode verificar estes links para mais informações:
+
+- Documentação Rust Tempfile: https://docs.rs/tempfile/3.0.7/tempfile/
+- Guia do usuário Rust: https://doc.rust-lang.org/book/title-page.html
+- Exemplos na Create a Temporary File in Rust: https://stackoverflow.com/questions/31192956/whats-the-de-facto-way-of-reading-and-writing-files-in-rust

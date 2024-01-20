@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla."
-html_title:           "Python: HTTP-pyynnön lähettäminen perusautentikoinnilla."
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla."
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -11,44 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-HTTP-pyynnön lähettäminen perusautentikoinnin avulla tarkoittaa sitä, että lähettäessämme pyynnön verkkosivulle, järjestelmä pyytää meiltä käyttäjätunnusta ja salasanaa ennen kuin se antaa meille pääsyn pyydettyyn sisältöön. Tätä tehdään yleensä tietoturvasyistä, jotta vain oikeilla käyttäjillä on pääsy tiettyihin sivustoihin tai palveluihin.
 
-## Kuinka:
+HTTP-pyynnön lähettäminen perustunnistuksella tarkoittaa käyttäjänimen ja salasanan sisällyttämistä HTTP-pyynnöön autentikoinnin varmistamiseksi. Ohjelmoijat tekevät tämän tietoturvan parantamiseksi ja oikeiden käyttäjien varmistamiseksi.
+
+## Miten tehdä:
+
+Pythonissa voit tehdä tämän `requests`-moduulin avulla. Kokeile seuraavaa:
 
 ```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-url = 'https://example.com' 
-# Replace with the URL of the website or service you want to access
+# Luo tunnistustiedot
+credentials = HTTPBasicAuth('kayttajanimi', 'salasana')
 
-username = 'example_username'
-# Replace with your own username 
+# Lähetä pyyntö
+response = requests.get('https://esimerkki.com', auth=credentials)
 
-password = 'example_password'
-# Replace with your own password
-
-# Sending a GET request with basic authentication 
-response = requests.get(url, auth=(username, password))
-
-# Accessing the response's status code
-print(response.status_code) # Should output 200 if successful
-
-# Accessing the response's content
-print(response.content) # Will contain the website's HTML
-
-# Sending a POST request with basic authentication
-response = requests.post(url, auth=(username, password), json={'key': 'value'})
-
-# Accessing the response's status code
-print(response.status_code) # Should output 200 if successful
-
-# Accessing the response's content
-print(response.content) # Will contain the response from the server
+# Tulosta vastauksen status-koodi
+print(response.status_code)
 ```
 
-## Syväsukellus:
-Perusautentikointi kehitettiin alun perin HTTP-protokollaan, kun tarve muodostaa suojattuja yhteyksiä syntyi. Nykyään on olemassa myös muita tunnistautumismenetelmiä, kuten Digest-autentikointi, jotka tarjoavat parempaa tietoturvaa ja salauksen vaihtoehtona perusautentikoinnille. Perusautentikointi on kuitenkin edelleen yleisesti käytetty menetelmä, koska se on helppo toteuttaa ja tukee lähes kaikkia verkkopalveluita.
+Tämän pitäisi tulostaa vastauksen status-koodi (esim. `200` onnistuneelle pyynnölle).
+
+## Syvempi tarkastelu:
+
+Alun perin HTTP Basic authentication otettiin käyttöön sellaisenaan, ja sitä on käytetty laajasti tähän päivään asti. Se on yksinkertainen ja suoraviivainen, mutta se ei ole turvallisin menetelmä.
+
+Vaihtoehtona voit käyttää kerrostuksellisempia autentikointijärjestelmiä, kuten OAuth2 tai JWT-tunnukset. Nämä menetelmät lisäävät ylimääräisiä turvapiirejä, mikä tekee niistä turvallisemman vaihtoehdon.
+
+Pythonin `requests`-kirjasto käyttää `Authorization`-otsaketta ja toimittaa perustunnistustiedot `Base64`-koodatut käyttäjänimi ja salasana.
 
 ## Katso myös:
-- [Pythonin virallinen Requests-kirjaston dokumentaatio](https://requests.readthedocs.io/en/latest/)
-- [Information Security - Basic HTTP Authentication](https://www.infosecurity.nl/knowledge-item/N58395/Basic-HTTP-authentication)
+
+- Requests-kirjaston dokumentointi: [https://docs.python-requests.org/en/latest/](https://docs.python-requests.org/en/latest/)
+- HTTP Basic authenticationin määrittely: [https://datatracker.ietf.org/doc/html/rfc7617](https://datatracker.ietf.org/doc/html/rfc7617)
+- Pythonin virallinen dokumentaatio: [https://www.python.org/doc/](https://www.python.org/doc/)

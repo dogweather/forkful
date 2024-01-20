@@ -1,6 +1,6 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Bash: Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & perché?
-Leggere gli argomenti della riga di comando è il processo di leggere le informazioni inserite dall'utente nel terminale quando viene eseguito un programma nella shell Bash. I programmatori usano questa funzionalità per ottenere input dagli utenti e personalizzare l'esecuzione del programma.
+## Cos'è e perchè?
 
-## Come fare:
-Di seguito sono riportati alcuni esempi di codice e l'output corrispondente per illustrare come leggere gli argomenti della riga di comando in Bash.
+La lettura degli argomenti da linea di comando in Bash permette agli script di interagire con l'utente. Questa funzionalità rende gli script più flessibili e personalizzabili in base alle esigenze dell'utente.
+
+## Come si fa:
+
+Ecco un semplice script Bash che dimostra come leggere gli argomenti dalla linea di comando. Il comando `echo` è usato per stampare argomenti a schermo.
 
 ```Bash
-# Esempio 1: Leggere un singolo argomento
-# Input: bash sample.sh hello
 #!/bin/bash
 echo "Il primo argomento è: $1"
-
-# Output: Il primo argomento è: hello
-
-# Esempio 2: Leggere più argomenti
-# Input: bash sample.sh hello world
-#!/bin/bash
-echo "Ciao a tutti i miei amici: $1 e $2"
-
-# Output: Ciao a tutti i miei amici: hello e world
+echo "Il secondo argomento è: $2"
+echo "Il terzo argomento è: $3"
 ```
 
-## Approfondimento:
-### Contesto storico:
-Il concetto di leggere gli argomenti della riga di comando è stato introdotto negli anni '70 con l'arrivo delle prime shell e si è evoluto nel tempo, diventando una pratica comune tra i programmatori.
+Ecco l'output del codice quando si passano tre argomenti (esempio1, esempio2, esempio3) allo script:
 
-### Alternative:
-Oltre a Bash, ci sono altri linguaggi di scripting che supportano la lettura degli argomenti della riga di comando, come Python e Perl.
+```Bash
+Il primo argomento è: esempio1
+Il secondo argomento è: esempio2
+Il terzo argomento è: esempio3
+```
 
-### Dettagli implementativi:
-Per accedere agli argomenti della riga di comando in Bash, si utilizza il simbolo "$" seguito dal numero dell'argomento desiderato (iniziando da 1). Inoltre, è possibile utilizzare l'array "@", che contiene tutti gli argomenti inseriti.
+## Approfondimento
 
-## Vedi anche:
-- [Documentazione ufficiale Bash](https://www.gnu.org/software/bash/)
-- [Esempi di letture degli argomenti della riga di comando](https://www.tutorialspoint.com/unix_commands/bash.htm)
-- [Articolo su esempi di argomenti della riga di comando in Bash](https://www.linuxnix.com/reading-command-line-arguments-bash-script/)
+La lettura degli argomenti da linea di comando esiste fin dall'origine dei sistemi Unix. Nel contesto storico, ci ha permesso di automatizzare compiti ripetitivi in modo più efficiente. È fondamentale ricordare che in Bash gli argomenti sono accessibili tramite i parametri posizionali `$1`, `$2`, `$3`, ecc.
+
+Alternative alla lettura di argomenti da linea di comando includono l'uso di file di input o di variabili d'ambiente. Tuttavia, gli argomenti da linea di comando sono spesso la scelta preferita per la loro semplicità e flessibilità.
+
+## Per saperne di più
+
+Per ulteriori informazioni su come utilizzare Bash e gli argomenti della linea di comando, visita i seguenti link:
+
+- [Manuale GNU Bash](https://www.gnu.org/software/bash/manual/bash.html)
+- [Corso interattivo Bash](https://www.codecademy.com/learn/learn-the-command-line/modules/bash-scripting)
+- [Guida alla programmazione bash](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)

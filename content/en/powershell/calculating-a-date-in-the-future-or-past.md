@@ -10,51 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Calculating a Date in the Future or Past with PowerShell
+
 ## What & Why?
 
-Calculating a date in the future or past is the task of determining a specific date, either ahead or behind the current date, based on a given time period or interval. This is commonly done by programmers in order to automate tasks or schedule events.
+Manipulating dates is a common operation where we calculate a date in the future or past from a given date. This helps in scheduling tasks, performing chronological comparison, or generating date-dependent reports.
 
 ## How to:
 
-Calculating a date in the future or past in PowerShell is simple and can be done in various ways.
-
-First, we can use the `AddDays()` method to add a specific number of days to the current date. For example, to calculate a date 5 days in the future, we can use the following code:
+PowerShell makes manipulating dates incredibly easy. Below are some simple examples:
 
 ```PowerShell
-(Get-Date).AddDays(5)
+# To get the current date
+$today = Get-Date
+$today
 ```
 
-The output would be the date 5 days from the current date.
+The output will be the current system date.
 
-We can also use the `AddMonths()` method to add a specific number of months to the current date. For example, to calculate a date 3 months in the future, we can use the following code:
+To add or subtract days, hours, minutes, or seconds from the current date, you can use the AddDays(), AddHours(), AddMinutes(), and AddSeconds() methods.
 
 ```PowerShell
-(Get-Date).AddMonths(3)
+# To get the date 7 days from today
+$sevenDaysFromNow = $today.AddDays(7)
+$sevenDaysFromNow
 ```
 
-Finally, we can use the `AddYears()` method to add a specific number of years to the current date. For example, to calculate a date 2 years in the future, we can use the following code:
+The output will be the date for 7 days in the future. 
+
+Using similar concept, you can get a date in the past.
 
 ```PowerShell
-(Get-Date).AddYears(2)
+# To get the date 30 days ago
+$thirtyDaysAgo = $today.AddDays(-30)
+$thirtyDaysAgo
 ```
 
-## Deep Dive:
+The output will be the date 30 days ago from the current date.
 
-Historically, calculating dates in the future or past has been done manually or with the use of complex algorithms. However, with the advancements in technology and programming languages, this task has become much simpler and can be done with just a few lines of code.
+## Deep Dive
 
-In addition to the methods mentioned above, PowerShell also has other built-in methods such as `AddHours()`, `AddMinutes()`, and `AddSeconds()` which can be used to add a specific amount of time to the current date.
+Historically, dealing with date and time was a big challenge in most programming languages. With the introduction of .NET framework and subsequently PowerShell (which is built on .NET), tasks involving date and time are significantly eased.  
 
-An alternative method to calculate a date in the future or past is by using the `New-TimeSpan` cmdlet. This cmdlet allows us to specify a start date and a time interval in order to calculate the end date. For example, to calculate a date 10 days in the future, we can use the following code:
+PowerShell offers alternative ways to manipulate dates. For example, the New-TimeSpan cmdlet can be used to get a time difference and then add or subtract the result from a date.
 
 ```PowerShell
-$endDate = (Get-Date) + New-TimeSpan -Days 10
+$oneWeek = New-TimeSpan -Days 7
+$futureDate = $today + $oneWeek
+$futureDate
 ```
 
-## See Also:
+Under the hood, these functions work on the DateTime object of the .NET Framework. This object stores date and time data, offering numerous methods for date/time manipulation. 
 
-For more information on calculating dates in PowerShell, you can refer to the official documentation: https://docs.microsoft.com/en-us/sql/powershell/sql-server-pester-testing?view=sql-server-ver15.
+## See Also
 
-Additionally, you can also check out these related sources:
+1. For more information on date and time in PowerShell, see the [official documentation](https://docs.microsoft.com/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7.1).
+   
+2. To understand more about .NET DateTime, refer to the [.NET documentation](https://docs.microsoft.com/dotnet/api/system.datetime?view=net-5.0). 
 
-- https://www.petri.com/powershell-problem-solver-calculate-future-dates
-- https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1
+3. For an in-depth discussion on time manipulation in PowerShell, visit [ITPro Today](https://www.itprotoday.com/powershell/date-and-time-math-powershell).

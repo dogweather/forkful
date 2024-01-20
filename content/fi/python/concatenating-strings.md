@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Python: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Python"
 category:             "Python"
@@ -10,24 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## Mitä & Miksi?
+Stringien yhdistäminen tarkoittaa kahta tai useampaa merkkijonoa liitetään yhteen. Ohjelmoijat tekevät tämän, koska se mahdollistaa dynaamiset tekstit ja tiedon muokkaamisen.
 
-Merkkijonojen yhdistäminen on yksinkertainen tapa yhdistää kaksi tai useampia merkkijonoja yhdeksi. Ohjelmoijat käyttävät tätä toimintoa esimerkiksi tulostuksessa ja tiedostonimien luomisessa.
+## Näin teet:
+Pythonissa on useita tapoja yhdistää merkkijonot. Kaksi yleisintä tapaa ovat `+` -operaattorin ja `join()` -funktion käyttäminen.
 
-## Miten:
 ```python
-nimi = "Tuomas"
-ika = 24
-print("Hei, olen " + nimi + " ja olen " + str(ika) + " vuotta vanha.")
-````
-Tulostaa:
-```
-Hei, olen Tuomas ja olen 24 vuotta vanha.
+# Tapa 1: käyttämällä '+' operaattoria
+merkkijono1 = "Hei"
+merkkijono2 = " maailma"
+yhdistetty = merkkijono1 + merkkijono2
+print(yhdistetty)  # Tulostaa: Hei maailma
+
+# Tapa 2: käyttämällä 'join()' funktiota
+sanat = ["Hei", "maailma"]
+yhdistetty = " ".join(sanat)
+print(yhdistetty)  # Tulostaa: Hei maailma
 ```
 
-## Syvempi sukellus:
-Merkkijonojen yhdistäminen ei ole uusi käsite, sitä on käytetty jo 1960-luvulta lähtien. Pythonissa on myös muita tapoja yhdistää merkkijonoja, kuten käyttämällä %-operaattoria tai `.join()`-metodia. Lisäksi on tärkeää huomata, että merkkijonoja ei voi yhdistää muiden tietotyyppien kanssa ilman muunnoksia.
+## Syvempi sukellus
+Merkkijonojen yhdistämistä on käytetty ohjelmoinnissa sen alkuvaiheista lähtien. Pythonissa on useita tapoja yhdistää merkkijonoja, kuten `+` -operaattorin, `join()` -funktion, ja f-merkkijonot.
 
-## Katso myös:
-- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/tutorial/datastructures.html#more-on-strings)
-- [Merkkijonojen yhdistämisen eri tavat Stack Overflow'ssa](https://stackoverflow.com/questions/46838697/which-is-best-among-the-two-for-concatenation-in-python)
+`+` -operaattori on yksinkertaisin tapa yhdistää merkkijonoja, mutta se luo uuden merkkijonon jokaisella yhdistämisoperaatiolla, mikä ei ole tehokasta suurille tietomäärille. 
+
+`join()` -funktio on tehokkaampi, koska se luo uuden merkkijonon vain kerran. 
+
+Python 3.6:ssa esiteltiin f-merkkijonot, jotka ovat erityisen käteviä merkkijonojen muotoilussa.
+
+```python
+nimi = "Pekka"
+tervehdys = f"Hei, {nimi}"
+print(tervehdys)  # Tulostaa: Hei, Pekka
+```
+
+## Katso myös
+[Pythonin merkkijonojen yhdistäminen](https://docs.python.org/3/library/stdtypes.html#str.join)
+[Pythonin f-merkkijonot](https://pep498.python.org/)
+[Pythonin tekijänoikeuskäytäntö](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)

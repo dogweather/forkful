@@ -1,7 +1,7 @@
 ---
-title:                "Maiúscula de uma string"
-html_title:           "Lua: Maiúscula de uma string"
-simple_title:         "Maiúscula de uma string"
+title:                "Capitalizando uma string"
+html_title:           "Lua: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Porquê?
 
-Capitalizar uma string em Lua significa transformar todas as letras minúsculas em maiúsculas. Os programadores fazem isso para padronizar a formatação de texto e facilitar a comparação de strings.
+Em programação, capitalizar uma cadeia significa transformar o primeiro caractere de cada termo em sua versão maiúscula. Isso é comum para melhorar a legibilidade e garantir a padronização dos dados.
 
-## Como fazer:
+## Como Fazer:
 
-```lua
--- Exemplo 1: Usando a função string.upper()
-local texto = "exemplo de texto"
-print(string.upper(texto))
--- Saída: EXEMPLO DE TEXTO
+Em Lua, podemos capitalizar uma string utilizando a função `gsub` combinada com `upper`:
 
--- Exemplo 2: Usando um laço de repetição
-local texto = "exemplo de texto"
-local novoTexto = ""
-for i = 1, #texto do
-  local letra = string.sub(texto, i, i)
-  if string.byte(letra) >= 97 and string.byte(letra) <= 122 then
-    letra = string.char(string.byte(letra) - 32)
-  end
-  novoTexto = novoTexto .. letra
-end
-print(novoTexto)
--- Saída: EXEMPLO DE TEXTO
+```Lua
+texto = "Olá, mundo!"
+texto_capitalizado = (texto:gsub("^%l", string.upper))
+print(texto_capitalizado)  -- Saída: "Olá, Mundo!"
 ```
 
-## Profundando:
+A primeira letra de cada palavra pode ser capitalizada com:
 
-Antigamente, a função string.upper() não estava disponível em Lua, então os programadores precisavam usar o método manual mostrado no exemplo 2.
+```Lua
+texto = "olá, mundo lua!"
+texto_capitalizado = (texto:gsub("(%a)([%w_']*)", function(first, rest) return first:upper()..rest:lower() end))
+print(texto_capitalizado)  -- Saída: "Olá, Mundo Lua!"
+```
 
-Além da função string.upper(), também existe a função string.lower() que transforma todas as letras em minúsculas.
+## Análise Mais Profunda:
 
-## Veja também:
+A capitalização em Lua é feita através da transformação direta dos códigos ASCII do texto, um a um. A maiúscula de cada letra é obtida subtraindo 32 do código ASCII correspondente da minúscula.
 
-- Documentação oficial do Lua sobre strings: https://www.lua.org/manual/5.4/manual.html#6.4.1
-- Página sobre Lua na Wikipedia: https://pt.wikipedia.org/wiki/Lua_(linguagem_de_programa%C3%A7%C3%A3o)
+Quanto a alternativas, outras linguagens de programação possuem funções específicas para capitalização. Em Lua, precisamos fazer uso das funções `gsub` e `upper`.
+
+É importante mencionar que a capitalização em Lua é case-sensitive, ou seja, faz distinção entre letras maiúsculas e minúsculas. Portanto, é importante cuidado ao usar funções relacionadas a capitalização. 
+
+## Ver Também:
+
+Para aprender mais sobre strings em Lua:
+- A documentação oficial sobre Strings: https://www.lua.org/manual/5.4/manual.html#6.4
+- Wiki sobre funções de string em Lua: http://lua-users.org/wiki/StringLibraryTutorial
+- Stack Overflow, para perguntas e respostas relacionadas a Lua: https://stackoverflow.com/questions/tagged/lua

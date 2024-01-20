@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "Kotlin: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que é feito?
+# Interpolando Strings em Kotlin
 
-Interpolar uma string é um recurso que permite aos programadores adicionar variáveis ou expressões dentro de uma string em Kotlin. Isso facilita a criação de strings dinâmicas, que se ajustam de acordo com os valores das variáveis. Os programadores usam esse recurso para tornar seus códigos mais legíveis e concisos, além de facilitar a manutenção e modificação das strings.
+## O Que & Porquê?
 
-## Como fazer:
+A interpolação de string é um recurso onde as variáveis são inseridas diretamente em strings. É útil para tornar o código mais compacto, legível e para otimizar a construção de strings.
+
+## Como Fazer:
+
+Aqui está um exemplo básico de interpolação de string em Kotlin:
 
 ```Kotlin
 val nome = "João"
-val idade = 25
-val mensagem = "Olá, meu nome é $nome e eu tenho $idade anos."
-println(mensagem)
+println("Olá, $nome!")
+```
+Resultado da execução:
+
+```
+Olá, João!
+```
+Podemos até mesmo inserir expressões mais complexas dentro desses marcadores:
+
+```Kotlin
+val idade = 30
+println("No próximo ano você terá ${idade + 1} anos.")
+```
+Resultado da execução:
+
+```
+No próximo ano você terá 31 anos.
 ```
 
-Output:
-```
-Olá, meu nome é João e eu tenho 25 anos.
-```
+## Aprofundando
 
-## Profundidade:
+Historicamente, no Java e em outras linguagens semelhantes, você precisava usar a concatenação de string ou `String.format()` para conseguir algo semelhante à interpolação de string. Kotlin introduziu a interpolação de string para tornar a linguagem mais moderna e conveniente.
 
-A interpolação de string foi introduzida originalmente em linguagens como Ruby e Scala e se tornou uma característica popular no desenvolvimento de aplicações web. Em Kotlin, a interpolação é feita usando a sintaxe `$variável` ou `${expressão}`, podendo ser inserida em qualquer lugar dentro de uma string. Alternativas para interpolação incluem concatenação de strings e formatação de strings usando o método `format()`.
+Os programadores costumavam usar o `StringBuilder` ou `StringBuffer` para construir strings em Java. O Kotlin se desvia desse método mais antigo em favor da interpolação de string.
 
-## Veja também:
+Em termos de implementação, a interpolação de string em Kotlin é compilada em uma instância do `StringBuilder`. Portanto, essa sintaxe mais limpa não compromete a eficiência de sua execução.
 
-- [Documentação do Kotlin sobre interpolação de string](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
-- [Artigo da IBM sobre interpolação de string em outras linguagens de programação](https://developer.ibm.com/tutorials/swift-string-formatting/)
+## Veja Também
+
+Para mais informações sobre Strings em Kotlin, consulte a documentação oficial [aqui](https://kotlinlang.org/docs/strings.html#string-literals).
+
+Para um guia mais detalhado sobre interpolação de string e sua eficiência comparativa, consulte este [_post_ no blog](https://medium.com/androiddevelopers/strings-are-your-friends-1347e37bcae1) de Android Developers.

@@ -1,6 +1,6 @@
 ---
 title:                "문자열 연결하기"
-html_title:           "Kotlin: 문자열 연결하기"
+html_title:           "Arduino: 문자열 연결하기"
 simple_title:         "문자열 연결하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-무엇 & 왜?
+## 무엇이고 왜 그래야하는가?
 
-코틀린에서, 문자열 연결은 두 개의 문자열을 결합하여 새로운 하나의 문자열을 만드는 작업을 말합니다. 이렇게 하는 이유는 때로는 여러 개의 문자열을 결합해야 할 때가 있기 때문입니다. 예를 들어, 사용자 이름을 받아서 인사말을 만들거나, 여러 개의 파일 경로를 결합하여 하나의 경로를 만들 때 사용할 수 있습니다.
+문자열 연결(string concatenation)은 두 개 이상의 문자열을 한 줄로 결합하는 과정입니다. 프로그래머들은 데이터를 모니터링하고, 로깅하고, 사용자에게 메시지를 전달할 때 종종 이를 사용합니다.
 
-어떻게:
+## 어떻게 사용하나요?
+
+Kotlin에서 문자열을 연결하는 방법은 수많은 편리한 방법이 있습니다. 여기 2가지 방법을 보여드리겠습니다.
+
+첫 번째 방법은 `+` 연산자를 사용하는 것입니다.
 
 ```Kotlin
-val firstName = "John"
-val lastName = "Smith"
-val fullName = firstName + " " + lastName
-println(fullName)
+val a = "Hello, "
+val b = "World!"
+println(a + b) // "Hello, World!"
+```
+이제 두 번째 방법은 문자열 템플릿을 사용하는 것입니다. 이 방법은 문자열 사이에 변수를 삽입할 수 있는 강력한 방법입니다.
+
+```Kotlin
+val c = "Kotlin"
+println("Hello, $c!") // "Hello, Kotlin!"
 ```
 
-출력:
+## 깊이 파헤치기
 
-```
-John Smith
-```
+문자열 연결은 프로그래밍 언어의 역사와 깊이 연관되어 있습니다. 초기 프로그래밍 언어에서는 이 작업이 단순하지 않았지만, Kotlin에서는 문자열 연결을 쉽게 할 수 있도록 많은 도구를 제공하고 있습니다.
 
-딥 다이브:
+문자열 연결의 대체 방법으로 "StringBuilder"를 사용할 수 있습니다. 이러한 접근 방법은 긴 문자열을 반복적으로 생성할 때 성능을 향상시키는 데 유용합니다.
 
-여러분은 문자열을 연결하기 위해 `+` 연산자를 사용할 수 있지만,이는 매우 비효율적일 수 있습니다. 왜냐하면 매번 문자열을 연결할 때마다 새로운 문자열 객체를 만들기 때문입니다. 따라서 많은 문자열을 연결해야 할 경우 `StringBuilder` 클래스를 사용하는 것이 좋습니다. 이 클래스는 내부적으로 문자열 버퍼를 사용하여 문자열을 연결하므로 메모리를 효율적으로 사용할 수 있습니다.
+구현 세부사항으로는 Kotlin의 내부에서 연산자 오버로딩이 어떻게 작동하는지, 문자열 템플릿이 어떻게 처리되는지 등을 알 수 있습니다. 이는 컴파일 타임에 문자열 연결 코드가 최적화되는 방식을 이해하는 데 도움이 됩니다.
 
-또한 다른 언어에서는 이 작업을 수행하는 방법이 다를 수 있습니다. 예를 들어, 자바에서는 `String.concat()` 메서드를 사용하여 문자열을 연결할 수 있습니다. 코틀린에서는 이와 같은 메서드가 없기 때문에 `+` 연산자를 사용해야 합니다.
+## 참고 또한 
 
-마지막으로, `+` 연산자는 코드를 읽기 쉽고 간결하게 만들어 주기 때문에 많은 개발자가 선호하는 방법입니다.
-
-참고 자료:
-
-코틀린 문서에서 문자열 연산자에 대해 더 자세히 알아보실 수 있습니다. 또한 `StringBuilder` 클래스에 대한 자세한 정보는 코틀린 문서나 자바 문서를 참고하시기 바랍니다.
+1. [Kotlin 문자열 템플릿](https://kotlinlang.org/docs/basic-syntax.html)
+2. [Kotlin에서의 문자열 관리](https://kotlinlang.org/docs/idioms.html#string-interpolation)
+3. [Stackoverflow: Kotlin에서 효율적으로 문자열 연결](https://stackoverflow.com/questions/46450220/when-should-i-use-the-stringbuilder-in-kotlin)

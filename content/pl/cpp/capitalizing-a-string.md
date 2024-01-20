@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana pierwszej litery w ciągu znaków"
-html_title:           "C++: Zmiana pierwszej litery w ciągu znaków"
-simple_title:         "Zmiana pierwszej litery w ciągu znaków"
+title:                "Zamiana małych liter na wielkie w ciągu znaków"
+html_title:           "C++: Zamiana małych liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana małych liter na wielkie w ciągu znaków"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści! Dzisiaj porozmawiamy o jednej ważnej funkcji w C++, a mianowicie o "capitalizing a string" (czyli wielkopisanie łańcucha znaków). Zobaczymy, co to takiego i dlaczego warto znać tę funkcję.
+## Co i dlaczego?
 
-## Co i Dlaczego?
-Wielkopisanie łańcucha znaków to proces zmiany wszystkich liter w danym tekście na wielkie litery. Programiści często używają tej funkcji, aby ułatwić sobie pracę z tekstem, szczególnie gdy chodzi o porównywanie czy dwie zmienne są takie same. Ponadto, wielkopisanie może być użyteczne w sytuacji, gdy chcemy wyświetlić tekst w jednolitym formacie, np. w nagłówkach w aplikacji.
+Zamiana małych liter na wielkie, czyli tzw. 'capitalization', to proste przekształcenie tekstu, używane w programowaniu do poprawy czytelności kodu. Programiści robią to na przykład po to, żeby odróżniać stałe od zmiennych. 
 
 ## Jak to zrobić:
-Aby wielkopisać łańcuch znaków w C++, musimy użyć funkcji ```toupper()```, która zamienia małą literę na odpowiadającą jej wielką. Przykładowy kod wyglądałby następująco:
-```
-#include <iostream>
-#include <string>
+
+```C++
 #include <algorithm>
+#include <cctype>
 
-using namespace std;
-
-int main()
-{
-    string text = "witaj swiecie!";
-    transform(text.begin(), text.end(), text.begin(), ::toupper);
-    cout << text << endl;
-
-    return 0;
-} 
+std::string wejsciowyTekst = "witaj, świecie";
+std::transform(wejsciowyTekst.begin(), wejsciowyTekst.end(), wejsciowyTekst.begin(), ::toupper);
 ```
-Wynik wyświetli nam: WITAJ SWIECIE!
+Przykładowe wyjście:
 
-## Głębsza dyskusja:
-Wielkopisanie w programowaniu pojawiło się wraz z pojawieniem się języków programowania. W niektórych językach, takich jak Fortran czy COBOL, wielkość liter nie miała znaczenia, a więc taki proces nie był potrzebny. Jednak w językach takich jak C czy C++, wielkość liter ma znaczenie, dlatego też taka funkcja jest ważna. Większość języków programowania posiada wbudowane funkcje do wielkopisania, ale w niektórych przypadkach warto napisać własną wersję, np. gdy chcemy uwzględnić polskie znaki.
+```C++
+"WITAJ, ŚWIECIE"
+```
+
+## Głębsze zanurzenie:
+
+Historia funkcji `toupper` sięga pierwszych dni języka C, jako jednej z wbudowanych funkcji obsługujących znaki. Alternatywą dla `transform` i `toupper` byłoby manualne przekształcenie każdego znaku w naszym łańcuchu, ale jest to mniej wydajne. Implementacja `toupper` jest specyficzna dla platformy, ale zazwyczaj polega na dodaniu stałej wartości do kodowania ASCII danego znaku. 
 
 ## Zobacz też:
-Jeśli chcesz poznać inne przydatne funkcje związane z obsługą tekstu w C++, warto zajrzeć na stronę: https://en.cppreference.com/w/cpp/string/basic_string. Znajdziesz tam wiele przydatnych informacji, włącznie z wielkopisaniem tekstu.
+
+Więcej informacji o transformacji i funkcjach znakowych w C++ można znaleźć tutaj: 
+[link do www.cplusplus.com](https://www.cplusplus.com/reference/string/string/transform/)

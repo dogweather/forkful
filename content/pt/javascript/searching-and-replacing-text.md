@@ -1,7 +1,7 @@
 ---
-title:                "Busca e substituição de texto"
-html_title:           "Javascript: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & porquê?
-Substituir e pesquisar por texto é uma tarefa comum em programação. Isso envolve encontrar um determinado trecho de texto em um código e substituí-lo por outro. Os programadores realizam essa tarefa para corrigir erros, atualizar informações ou refatorar seu código.
+## O Que e Por Quê?
 
-## Como fazer:
-Para substituir e pesquisar por texto em Javascript, podemos usar o método replace() da classe String. Este método aceita dois parâmetros: o texto a ser substituído e o novo texto que será usado para substituir o texto antigo.
+Buscar e substituir texto é uma prática comum de programação que envolve a localização de um pedaço específico de texto (uma "string") e a substituição por outra. É importante para manipular e corrigir dados, esclarecer variáveis ou otimizar a eficiência do código.
 
-Exemplo:
-```
-let texto = "Olá mundo!";
-texto = texto.replace("mundo", "amigos");
-console.log(texto);
-```
+## Como Fazer:
 
-Saída:
-```
-Olá amigos!
+No JavaScript, você pode usar o método `replace()` para buscar e substituir texto. Veja como funciona:
+
+```Javascript
+var str = "Olá, sou um programador!";
+var newText = str.replace("programador", "desenvolvedor");
+
+console.log(newText);
 ```
 
-## Aprofundamento:
-A substituição e pesquisa de texto é uma técnica amplamente utilizada desde os primeiros dias da programação. Inicialmente, os programadores precisavam escrever seus próprios algoritmos para realizar essa tarefa. Com o avanço das linguagens de programação, como o Javascript, surgiram métodos e funções que facilitam essa tarefa.
+Ao executar este código, a saída será: "Olá, sou um desenvolvedor!" 
 
-Uma alternativa ao método replace() é o método split() da classe String, que divide uma string em um array de substrings com base em um separador especificado. Combinado com o método join(), também da classe String, podemos criar um código semelhante ao método replace().
+## Aprofundando
 
-Exemplo:
-```
-let texto = "Olá mundo!";
-texto = texto.split("mundo").join("amigos");
-console.log(texto);
-```
+O método `replace()` tem uma longa história na programação e tem sido uma parte integral do JavaScript desde sua introdução. No entanto, este método tem suas limitações. Ele só substitui a primeira instância do texto, e para substituições mais complexas, você precisaria usar expressões regulares.
 
-Saída:
-```
-Olá amigos!
-```
+Para alternativas, existem diversas bibliotecas de manipulação de strings disponíveis, como a lodash e a underscore, que oferecem maior flexibilidade. Além disso, você também pode usar ciclos de repetição para implementar uma busca e substituição manualmente.
 
-## Veja também:
-- [Método replace() no Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [Método split() no Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [Método join() no Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Array/join)
+Por último, é importante compreender que o método `replace()` não altera a string original, mas retorna uma nova. Por isso, se você precisa substituir várias ocorrências de um texto, deve usar o método `replaceAll()`, introduzido recentemente ao JavaScript.
+
+```Javascript
+let str = 'Olá, sou um programador, programador, programador!';
+let newText = str.replaceAll('programador', 'desenvolvedor');
+
+console.log(newText);
+```
+Ao executar este código, a saída será: "Olá, sou um desenvolvedor, desenvolvedor, desenvolvedor!" 
+
+## Veja Também
+
+Para se aprofundar em manipulação de texto em JavaScript, veja estes recursos:
+
+- Documentação oficial da Mozilla sobre `replace()`: mdn.io/StringReplace
+- Documentação oficial da Mozilla sobre `replaceAll()`: mdn.io/StringReplaceAll
+- Lições no w3schools sobre manipulação de strings em JavaScript: w3schools.com/js/js_string_methods.asp
+
+E lembre-se, práticar é a chave para aprofundar o conhecimento. Happy coding!

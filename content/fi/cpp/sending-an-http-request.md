@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämään http-pyyntö"
-html_title:           "C++: Lähettämään http-pyyntö"
-simple_title:         "Lähettämään http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,49 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-HTTP-pyynnön lähettäminen on tärkeä osa web-ohjelmointia. Se tarkoittaa datan tai tiedon lähettämistä yhdestä tietokoneesta (lähtee) toiselle (saaja) verkossa käyttäen HTTP-protokollaa. Tämä on tapa, jolla ohjelmoijat viestivät web-sovellusten kanssa, kuten esimerkiksi lähettävät tietoa palvelimille tai hakukoneita.
+## Mitä & Miksi?
 
-## Miten:
-Koodi-C++ ohjelmoijat käyttävät bibliotekkia, kuten HttpClient, jotta he voivat helposti ja tehokkaasti lähettää HTTP-pyynnön. Alla olevassa esimerkissä näemme, kuinka voidaan lähettää GET-pyynto palvelimelle ja tulostaa vastauksen:
+HTTP-pyynnön lähettäminen tarkoittaa palvelimen kanssa kommunikoinnin aloittamista verkon yli HTTP-protokollaa käyttäen. Ohjelmoijat tekevät tämän hakeakseen tai lähettääkseen dataa.
+
+## Näin teet:
+
+Katsotaan esimerkkiä käyttämällä `C++17:n` `CPR` -kirjastoa.
 ```C++
-#include <iostream>
-#include "HttpClient.h"
+#include <cpr/cpr.h>
 
-using namespace std;
+int main() {
+  cpr::Response r = cpr::Get(cpr::Url{"http://www.httpbin.org/get"},
+                            cpr::Parameters{{"key", "value"}});
 
-int main()
-{
-    HttpClient client("www.example.com");
-    // Luodaan HTTP-client ja annetaan url
-    string response = client.send_request("GET", "/index.html");  // Lähetetään GET-pyynto
-    cout << response << endl; // Tulostetaan palvelimen vastaus
-    return 0;
+  std::cout << r.text << std::endl; 
+  return 0;
 }
 ```
-**Tuloste:**
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-<link rel="bolaan" href="https://maxcdn.bootstrapcdn.com">
-</head>
-<body>
-<div>
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this domain in examples without prior coordination or asking for permission.</p>
-<p>More information...</p>
-</div>
-</body>
-</html>
+
+Odotettu tuloste on seuraava:
+
+```json
+{
+  "args": {
+    "key": "value"
+  },
+  "headers": {
+    "Accept": "*/*",
+    "Host": "www.httpbin.org"
+  },
+  "origin": "YOUR_IP_ADDRESS",
+  "url": "http://www.httpbin.org/get?key=value"
+}
 ```
 
-## Syvällinen sukellus:
-HTTP-pyyntöjen lähettämiseen on olemassa useita eri tapoja ja työkaluja. Ennen bibliotekkien käyttöä, ohjelmoijat voivat myös luoda omia HTTP-pyyntöjä luomalla HTTP-yhteyden ja muodostamalla pyynnön manuaalisesti. Tämä voi olla hyödyllistä tarkemman kontrollin saamiseksi, mutta se voi myös olla aikaa vievää ja monimutkaista.
+## Deep Dive:
 
-## Katso myös
-Lisätietoja HTTP-pyyntöjen lähettämisestä löytyy esimerkiksi näistä lähteistä:
-- [W3Schools - HTTP Requests](https://www.w3schools.com/tags/ref_httpmethods.asp)
-- [MDN Web Docs - HTTP Request Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [Microsoft Docs - HTTP Request Methods](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest.method?view=netcore-3.1)
+Lähettäessäsi HTTP-pyyntöä, olet itse asiassa seuraamassa käytäntöä, joka on ollut olemassa vuodesta 1991, kun HTTP (Hypertext Transfer Protocol) esiteltiin. 
+
+Vaihtoehtoisesti voit käyttää kirjastoa ASUSU. Se tarjoaa enemmän joustavuutta ja se on hyvä vaihtoehto pitkäaikaisiin projekteihin.
+
+Toteutusyksityiskohdat: `C++17:n CPR` käärii `libcurl`-kirjaston, joka on tehokas ja monipuolinen tapa lähettää HTTP-pyyntöjä. Se ottaa URL:n ja määritteet nimettyjen parametrien muodossa, minkä jälkeen se lähettää pyynnön ja palauttaa vastauksen.
+
+## Katso myös:
+
+- [CPR GitHub](https://github.com/whoshuu/cpr)
+- [HTTP](https://www.ietf.org/rfc/rfc2616.txt)
+- [ASUSU](http://www.example.com)

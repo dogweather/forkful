@@ -1,6 +1,6 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "Ruby: Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-"Eliminar caracteres que coinciden con un patrón" es una tarea común para los programadores de Ruby. Consiste en eliminar cualquier carácter en una cadena que coincida con un patrón específico. Los programadores pueden hacer esto para limpiar datos, procesar entradas de usuario o transformar una cadena en un formato específico.
+# Eliminación de Caracteres que Coinciden con un Patrón en Ruby
 
-## ¿Cómo hacerlo?
-Podemos utilizar el método `gsub` para eliminar todos los caracteres que coincidan con un patrón en una cadena. Por ejemplo, si queremos eliminar todas las vocales de una cadena, podemos hacer lo siguiente:
+## ¿Qué & Por Qué?
+
+La eliminación de caracteres que coinciden con un patrón es una operación que retira ciertos caracteres en una cadena de texto, basándose en un patrón predefinido. Los programadores lo hacen para limpiar o manipular datos de una manera rápida y eficaz.
+
+## Cómo hacerlo
+
+Aquí te mostramos cómo eliminar caracteres que coinciden con un patrón en Ruby:
+
 ```Ruby
-string = "Hola mundo"
-string.gsub(/[aeiou]/, "")
+cadena = "Hola, ¿cómo estás?"
+cadena = cadena.delete(",?")  # Elimina comas y signos de interrogación.
+puts cadena # Muestra: "Hola cómo estás"
 ```
-El código anterior primero crea una nueva cadena con el contenido "Hola mundo" y luego usa el método `gsub` para eliminar todas las vocales. El resultado final sería la cadena "Hl mnd".
 
-También podemos utilizar expresiones regulares para eliminar caracteres específicos de una cadena. Por ejemplo, si queremos eliminar todos los dígitos de una cadena, podemos hacer lo siguiente:
-```Ruby
-string = "1234Ruby5678"
-string.gsub(/\d+/, "")
-```
-El resultado final sería la cadena "Ruby".
+El método `.delete` de Ruby nos permite eliminar cualquier caracter que coincida con los caracteres pasados como un string.
 
-## En profundidad
-El método `gsub` es parte de la clase `String` en Ruby, que es una de las razones por las que es tan conveniente de usar para eliminar caracteres que coinciden con un patrón. Este método también tiene una variante llamada `gsub!`, que modifica la cadena original en lugar de crear una nueva.
+## En Profundidad
 
-Hay otras formas de eliminar caracteres que coinciden con un patrón en Ruby, como el método `delete` o el operador `tr`. Sin embargo, `gsub` es la opción más común y versátil ya que nos permite utilizar expresiones regulares para especificar el patrón de caracteres que queremos eliminar.
+La función de eliminar caracteres que coinciden con un patrón ha sido parte de los lenguajes de programación durante mucho tiempo, facilitando la manipulación de cadenas de caracteres al eliminar la necesidad de operaciones manuales lentas y propensas a errores.
+
+Existen alternativas a `.delete` en Ruby, como `.gsub`, que puede reemplazar caracteres en lugar de solo eliminarlos. 
+
+En términos de implementación, el método `.delete` opera escaneando la cadena y creando una nueva cadena con los caracteres que no se eliminan. Esto significa que es bastante eficiente en términos de tiempo, pero puede consumir más memoria porque crea una nueva cadena.
 
 ## Ver también
-- Documentación oficial de `gsub`: https://ruby-doc.org/core-3.0.0/String.html#method-i-gsub
-- Tutorial sobre expresiones regulares en Ruby: https://www.ruby-lang.org/es/documentation/regular-expressions/
-- Otros métodos para eliminar caracteres en Ruby: https://www.geeksforgeeks.org/ruby-string-delete-sub-and-gsub-method/
+
+Para obtener más información sobre el trabajo con cadenas en Ruby, te recomiendo consultar los siguientes recursos:
+
+- El método `.delete` en la [documentación de Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-delete)
+- Tutorial sobre cadenas en [RubyMonk]( https://rubymonk.com/learning/books/1-ruby-primer/chapters/5-strings/lessons/31-string-basics)
+- Ejemplos de uso del método `.gsub` en [Stack Overflow](https://stackoverflow.com/questions/19445003/using-ruby-gsub-to-replace-a-string-with-variable-content)
+
+La programación es un continuo aprendizaje. ¡No dejes de explorar nuevas formas de resolver problemas!

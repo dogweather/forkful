@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Elixir: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -11,29 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
+Vertailemme kahta päivämäärää ymmärtääksemme niiden ajallista suhdetta. Ohjelmoijat tekevät tämän useimmiten päättääkseen, mitä seuraavaksi suoritetaan.
 
-Päivämäärien vertailu on prosessi, jossa ohjelmoijat vertaavat kahta eri päivämäärää ja tarkistavat, ovatko ne samat, eri vai kumpi on suurempi. Tämä on tärkeätä esimerkiksi tietokannoissa, kun etsitään tietoja tietyltä ajanjaksolta tai järjestetään tuloksia aikajärjestykseen.
+## Kuinka Tehdä:
+Seuraavassa nähdään, kuinka kahta päivämäärää verrataan Elixir-ohjelmointikielessä.
 
-## Miten:
+```elixir
+dt1 = Date.new!(2021, 12, 1)
+dt2 = Date.new!(2021, 12, 2)
 
-```Elixir
-Date.compare({{2020, 12, 1}, {2020, 12, 2}}) 
+if Date.compare(dt1, dt2) == :lt do
+  IO.puts "Päivämäärä dt1 on ennen päivämäärää dt2"
+else
+  IO.puts "Päivämäärä dt1 ei ole ennen päivämäärää dt2"
+end
 ```
-
-Tuloksena on:
-
+Tämä antaa tulosteen:
+```elixir
+"Päivämäärä dt1 on ennen päivämäärää dt2"
 ```
-:lt
-```
-
-Suurin osa Elixirin päivämäärätoiminnoista käyttää Erlangin kalenterimoduulia, joka käyttää Gregoriaanista kalenteria ja tallentaa päivämäärän tietueena {vuosi, kuukausi, päivä}.
+Date.compare palauttaa: :gt, :lt, tai :eq jos dt1 on suurempi, pienempi tai yhtä suuri kuin dt2.
 
 ## Syvemmälle:
+Elixirin päivämäärien vertailu periytyy Erlang-kielestä, jonka pohjalta Elixir luotiin. `Date.compare` -funktio on nopea ja tehokas tapa verrata päivämääriä. Vaihtoehtoisesti voidaan käyttää `Date.diff`, joka palauttaa päivien eron kahteen päivään. Implementointidetaljina, päivämäärät tallennetaan sisäisesti kokonaislukutietotyyppeinä, mikä mahdollistaa nopean vertailun.
 
-Päivämäärien vertailu on ollut haastavaa monille ohjelmointikielille, mutta Elixirin tapauksessa se on helppoa ja tehokasta Erlangin kalenterimoduulin ansiosta. Lisäksi voit käyttää myös Elixirin date-moduulia, joka tuo lisää toimintoja päivämäärien käsittelyyn.
-
-## Katso myös:
-
-[Lisätietoa Elixirin päivämäärätoiminnoista](https://hexdocs.pm/elixir/master/Date.html)
-
-[Turvallisempi tapa vertailla päivämääriä](https://dev.to/rizafahmi/comparing-dates-in-elixir-3la4)
+## Katso Myös:
+- Elixirin virallinen dokumentaatio: [Date](https://hexdocs.pm/elixir/Date.html)
+- Erlangin päivämäärien käsittely - [Calendar](http://erlang.org/doc/man/calendar.html)
+- Great article on Elixir Date & Time handling - [Working with dates and times in Elixir](https://www.amberbit.com/blog/2019/4/25/dates-and-times-in-elixir/)

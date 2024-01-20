@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligne to datoer"
-html_title:           "Gleam: Sammenligne to datoer"
-simple_title:         "Sammenligne to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,28 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Sammenligning av to datoer er en vanlig oppgave for utviklere for å håndtere dato- og tidsdata på en nøyaktig og effektiv måte. Dette kan være nyttig for å sortere og filtrere data, eller for å beregne tidsintervaller og forfallsdatoer. Det er også en viktig del av å løse problemer og feil knyttet til tidsformater og tidssoner.
+---
 
-# Hvordan:
-Gleam tilbyr ulike funksjoner og metoder for å sammenligne to datoer. Her er noen eksempler på hvordan du kan gjøre det:
+## Hva & Hvorfor?
 
-```Gleam
-import gleam/time
+Dato-sammenligning er prosessen med å bestemme hvilken av to datoer som er tidligst, eller om de er de samme. Dette er en nøkkeloperasjon i mange programmer for alt fra loggføring til å utløse hendelser.
 
-fremtidig_dato = time.DateTime.new(2022, 05, 15)
-dagens_dato = time.now()
+## Hvordan:
 
-gleam/time.compare(dagens_dato, fremtidig_dato) // Output: time.Order.LessThan
+Gleam tilbyr innebygde funksjoner for å håndtere dato-sammenligning. Se på eksemplet nedenfor:
 
-gleam/time.difference(dagens_dato, fremtidig_dato, "days") // Output: -349
+```gleam
+import gleam/utc_date.{new, compare}
+import gleam/order.{greater_than, equal}
+
+let start_date = new(2021, 10, 10)
+let end_date = new(2021, 12, 31)
+
+match compare(start_date, end_date) {
+  greater_than -> 
+    "Startdatoen er etter sluttdatoen."
+  equal ->
+    "Startdatoen er den samme som sluttdatoen."
+  _ ->
+    "Startdatoen er før sluttdatoen."
+}
 ```
 
-# Dykk dypere:
-Mens datostyring er viktig for de fleste programmer, har det vært et konstant problem for programmerere å håndtere dato- og tidsdata riktig. Dette skyldes hovedsakelig ulike tidsstandarder og datomønstre som brukes over hele verden. Alternativer til Gleam for dato-og klokkeslett sammenligning inkluderer biblioteker som Moment.js og Luxon.
+**Sample Output:**
+```gleam
+"Startdatoen er før sluttdatoen."
+```
 
-Gleam benytter seg av ISO 8601-standard for dato- og tidsformater, og implementerer funksjoner som gjør det enkelt å manipulere og sammenligne datoer og klokkeslett.
+## Dybdeplunge:
 
-# Se også:
-- Offisiell Gleam dokumentasjon for ```gleam/time``` biblioteket: https://gleam.run/modules/time
-- ISO 8601-standard: https://www.iso.org/iso-8601-date-and-time-format.html
+Dato-sammenligning har eksistert siden tidlige datamaskiner. De viktigste alternativene til den innebygde `gleam/utc_date.compare` funksjonen inkluderer å subtrahere den ene datoen fra den andre og tolke resultatet, eller til og med å forvandle datoene til tekststrenger og sammenligne dem alfabetisk.
+
+Implementeringen i Gleam drar fordel av Erlangs kraftige støtte for dato- og tidshantering, noe som resulterer i en rasjonell, effektiv og fleksibel tilnærming til dato-sammenligning.
+
+## Se Også: 
+
+1. Gleam's offisielle dokumentasjon:
+   - [gleam/utc_date](https://hexdocs.pm/gleam_stdlib/gleam/utc_date)
+   - [gleam/order](https://hexdocs.pm/gleam_stdlib/gleam/order)
+
+2. Erlang's innebygde datofunksjoner:
+   - [Erlang - calendar](https://erlang.org/doc/man/calendar.html)
+
+---

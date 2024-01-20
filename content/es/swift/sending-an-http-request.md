@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Swift: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola programadores! ¿Listos para aprender sobre cómo enviar solicitudes HTTP en Swift? ¡Perfecto! En este artículo, te explicaré qué es una solicitud HTTP y por qué los programadores la utilizan. También te mostraré cómo puedes enviar una solicitud HTTP utilizando código Swift y te daré algunos detalles más profundos sobre esta técnica. ¡Comencemos!
+# Enviando una petición HTTP con Swift
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
 
-Una solicitud HTTP es una forma de comunicación entre tu aplicación y un servidor. Básicamente, cada vez que accedes a una página web o utilizas una aplicación que necesita datos de una fuente externa, se está enviando una solicitud HTTP. Los programadores envían solicitudes HTTP para acceder a información, enviar datos o realizar acciones en una aplicación web o en un servidor.
+Enviando una petición HTTP es cómo nuestros programas hablan con servidores web. Lo hacemos para recuperar o enviar datos a través de la web.
 
-## Cómo:
+## Cómo hacerlo:
+
+En Swift, puedes enviar una solicitud HTTP usando `URLSession`. Aquí hay un ejemplo simple:
 
 ```Swift
-let url = URL(string: "https://miapp.com/datos") // creando un objeto URL con la dirección del servidor
-let session = URLSession.shared // iniciando una sesión para hacer la solicitud
-let task = session.dataTask(with: url!) { (data, response, error) in // creando una tarea para manejar la respuesta de la solicitud
-    if error == nil { // comprobando si no hay ningún error
-        if let data = data { // si hay datos disponibles
-            do {
-                let result = try JSONSerialization.jsonObject(with: data, options: []) // convirtiendo los datos en un objeto JSON
-                print(result) // imprimiendo la respuesta en la consola
-            } catch {
-                print(error) // manejando cualquier error al convertir los datos
-            }
-        }
-    } else {
-        print(error?.localizedDescription) // imprimiendo el mensaje de error
+import Foundation
+
+let url = URL(string: "https://api.misitio.com")!
+let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+    if let data = data {
+        print(String(data: data, encoding: .utf8)!)
     }
 }
-task.resume() // iniciando la tarea
+task.resume()
 ```
-El código anterior muestra cómo puedes enviar una solicitud HTTP utilizando Swift y cómo puedes manejar la respuesta de la solicitud. Primero, creamos un objeto URL con la dirección del servidor que queremos acceder. Luego, iniciamos una sesión y creamos una tarea que manejará la respuesta de la solicitud. En este ejemplo, convertimos los datos recibidos en un objeto JSON y los imprimimos en la consola. 
 
-## Inmersión profunda:
+Al ejecutar el código anterior, harás una petición GET a `https://api.misitio.com` y imprimirás la respuesta.
 
-La comunicación a través de solicitudes HTTP ha existido desde el inicio de la World Wide Web en los años 90. Sin embargo, la forma en que los lenguajes de programación y las aplicaciones manejan estas solicitudes ha evolucionado a lo largo de los años. Además de utilizar el código Swift anterior, también puedes utilizar frameworks como Alamofire o URLSession para enviar solicitudes HTTP en Swift.
+## Profundizando
 
-## Ver también:
+En el pasado, enviar una solicitud HTTP era un proceso mucho más complicado. Pero con el tiempo y las actualizaciones de software, Swift ha hecho que este proceso sea mucho más sencillo.
 
-Si quieres aprender más sobre cómo enviar solicitudes HTTP en Swift, aquí hay algunos recursos adicionales:
+A pesar de eso, hay alternativas a `URLSession`, como Alamofire, que pueden ofrecer más funcionalidades. Sin embargo, `URLSession` sigue siendo una excelente opción debido a su simplicidad e integración nativa con Swift.
 
-- [Documentación de URLSession en Swift] (https://developer.apple.com/documentation/foundation/urlsession)
-- [Tutorial de solicitud HTTP en Swift utilizando la función fetch API] (https://www.swiftbysundell.com/basics/urlsession)
-- [Tutorial de solicitudes HTTP en Swift utilizando Alamofire] (https://www.raywenderlich.com/64-alamofire-tutorial-getting-started)
+Cuando envías una petición HTTP con `URLSession`, ocurren una serie de etapas: la creación de la URL, la construcción de la tarea usando la sesión compartida, el establecimiento del manejador de completado y, finalmente, la reanudación de la tarea.
+
+## Ver También
+
+Para aprender más acerca de las peticiones HTTP y `URLSession`, revisa los siguientes recursos:
+
+- Documentación oficial de Apple sobre URLSession: [URLSession - Foundation | Apple Developer Documentation](https://developer.apple.com/documentation/foundation/urlsession)
+- Alamofire, una alternativa a URLSession: [Alamofire GitHub](https://github.com/Alamofire/Alamofire)
+- TutorialsPoint sobre peticiones HTTP: [TutorialsPoint HTTP](https://www.tutorialspoint.com/http/index.htm)

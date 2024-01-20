@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?:
-Das Überprüfen, ob ein Verzeichnis vorhanden ist, ist ein grundlegender Bestandteil der Programmierung. Es ermöglicht Programmierern, zu überprüfen, ob ein bestimmter Ordner bereits existiert, bevor sie weitere Aktionen ausführen. Dadurch können Probleme vermieden werden, die auftreten können, wenn ein Ordner mehrmals erstellt wird.
+## Was & Warum?
 
-Wie geht's:
-Zum Überprüfen, ob ein Verzeichnis vorhanden ist, können wir die Funktion `Directory.exists` verwenden. Diese Funktion akzeptiert eine Zeichenfolge als Eingabe und gibt ein Bool zurück, das angibt, ob das Verzeichnis vorhanden ist oder nicht. Hier ist ein Beispielcode:
+In Programmiersprachen überprüfen wir oft, ob ein Verzeichnis existiert, da es uns hilft, Fehler wie das Fehlen einer erforderlichen Datei zu vermeiden. Dies kann dazu beitragen, die Stabilität und Zuverlässigkeit unseres Programmes zu gewährleisten.
 
-```
-Elm Directory.exists "/Users/me/Documents" 
---> True 
-```
+## So geht's:
 
-Hier ist ein Beispiel für den Fall, dass das Verzeichnis nicht vorhanden ist:
+Elm hat nicht die native Fähigkeit, auf Dateisysteme zuzugreifen, aber es kann durch Ports auf JavaScript zugreifen. So ein Beispiel könnte folgendermaßen aussehen:
 
-```
-Elm Directory.exists "/Users/me/Images" 
---> False
+```Elm
+port module Main exposing (..)
+
+port checkDirectoryExists : String -> Cmd msg
+port directoryExists : (Bool -> msg) -> Sub msg
 ```
 
-Tiefere Einblicke:
-Das Überprüfen von Verzeichnissen ist ein wichtiger Bestandteil der Dateiverwaltung in der Programmierung. Früher war die Überprüfung von Verzeichnissen oft komplizierter und fehleranfälliger, da Programmierer eigene Methoden entwickeln mussten, um auf das Dateisystem zuzugreifen. Dank Funktionen wie `Directory.exists` ist dieser Prozess jedoch sehr viel einfacher geworden. Es gibt auch alternative Methoden zum Überprüfen von Verzeichnissen, z.B. die Verwendung von Dateisystem-Monad oder das Auslösen von Ausnahmen, wenn das Verzeichnis nicht gefunden wird.
+Dann würden Sie auf der JS-Seite den Callback `directoryExists` anwenden:
 
-Siehe auch:
-- Elm-Dokumentation von `Directory.exists`: https://package.elm-lang.org/packages/elm/file/latest/Directory#exists
-- Alternative Methoden zum Überprüfen von Verzeichnissen in Elm: https://discourse.elm-lang.org/t/check-if-directory-exists/4809/3
+```JavaScript
+const app = Elm.Main.init();
+const fs = require('fs');
+
+app.ports.checkDirectoryExists.subscribe((dir) => {
+  const dirExists = fs.existsSync(dir);
+  app.ports.directoryExists.send(dirExists);
+});
+```
+
+Die Ausgabe wäre dann `True` wenn das Verzeichnis existiert, oder `False` wenn es nicht existiert.
+
+## Vertiefung
+
+Historisch gesehen wurde Elm für Web-Anwendungen entwickelt und hatte dementsprechend keinen eingebauten Zugriff auf Dateisysteme. Dies kann über Ports mit JavaScript umgangen werden, es ist jedoch wichtig zu beachten, dass dies aufgrund Sicherheitseinschränkungen von Browsern nur auf der Serverseite oder in einer Umgebung wie NodeJS durchgeführt werden kann.
+
+Alternativ können Sie auch Tools wie Elixir und Phoenix mit Elm verwenden, die eine komfortable Server-Seiten Umgebung bieten, in welcher Sie Verzeichnisse und Dateien überprüfen können.
+
+## Siehe auch
+
+Für mehr zu diesem Thema, siehe folgende Links:
+
+- [Elm Ports Dokumentation](https://guide.elm-lang.org/interop/ports.html)
+- [NodeJS Dateisystem API](https://nodejs.org/api/fs.html)
+- [Erläuterung der Trennung von Elm und JavaScript](https://elm.christmas/2019/16)

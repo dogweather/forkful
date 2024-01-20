@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Python: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Python"
 category:             "Python"
@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä se on & miksi?: 
-Merkkijonon interpolointi tarkoittaa merkkijonon muotoilun lisäämistä muuttujien tai muiden arvojen kanssa samaisen merkkijonon sisällä. Tämä on erittäin hyödyllinen tapa muokata merkkijonoja ja yhdistää erilaisia tietoja helposti.
+# Muotoile String Pythonissa: Mitä, Miksi ja Kuinka?
 
-Miten?: 
-Esimerkiksi, jos haluat tulostaa tervehdyksen muuttujan kanssa, voit käyttää merkkijonon interpolointia sijoittamalla muuttujan arvon halutun merkkijonon sisälle. Alla on yksinkertainen esimerkki:
+## Mitä & Miksi?
 
+Merkkijonojen interpolointi on tapa sisällyttää muuttujien arvoja suoraan merkkijonoon. Tätä käytetään, jotta voidaan tuottaa dynaamista sisältöä tai formatoida tietoja keskustelujenomaisella tavalla.
+
+## Kuinka:
+Niille, jotka ovat uusia Pythonissa tai ohjelmoinnissa, tässä on kaksi tapaa muotoilla merkkijonoja Pythonissa: `.format()`-metodi ja f-stringit.
 ```Python
-nimi = "Matti"
-print("Hei {nimi}, tervetuloa Pythonin maailmaan!")
+# Esimerkki 1: .format()-metodi:
+nimi = "Jaska"
+viesti = "Hei, nimeni on {}.".format(nimi)
+print(viesti) # Tulostaa: "Hei, nimeni on Jaska."
+
+# Esimerkki 2: f-string:
+nimi = "Jaska"
+viesti = f"Hei, nimeni on {nimi}."
+print(viesti) # Tulostaa: "Hei, nimeni on Jaska."
 ```
+## Deep Dive
+Merkkijonojen interpolointi on ollut olemassa pitkään useissa ohjelmointikielissä. Pythonin `.format()`-metodi esiteltiin Python 2.6:ssa ja f-stringit Python 3.6:ssa. F-stringit ovat yleensä suositumpia, koska ne ovat vähemmän monisanaisia ja nopeampia suorittaa. On kuitenkin tärkeää huomata, että joissakin tilanteissa, esimerkiksi kun merkkijonoja säilytetään erillisissä tietostossa, `.format()` saattaa olla parempi valinta.
 
-Tämä tuottaisi seuraavan tulosteen:
+## Katso myös
+- Pythonin dokumentaatio merkkijonojen muotoilusta: https://docs.python.org/3/tutorial/inputoutput.html
+- `.format()` vs f-stringit: https://realpython.com/python-f-strings/#f-strings-a-new-and-improved-way-to-format-strings-in-python  
 
-```Python
-Hei Matti, tervetuloa Pythonin maailmaan!
-```
-
-Deep Dive:
-Merkkijonon interpolointi ei ole uusi käsite, vaan sitä on käytetty ohjelmointimaailmassa jo pitkään. Aiemmin sitä kutsuttiin muotoillun merkkijonon käyttämiseksi, mutta nykyään tätä termiä ei enää yleisesti käytetä.
-
-On olemassa myös muita tapoja muotoilla merkkijonoja, kuten käyttämällä %-operaattoria tai format()-funktiota. Nämä ovat vaihtoehtoisia tapoja saavuttaa sama tulos kuin merkkijonon interpoloinnilla. Pythonin uudemmat versiot suosittavat kuitenkin merkkijonon interpolointia sen selkeyden ja luettavuuden vuoksi.
-
-See Also:
-Mikäli haluat tutustua merkkijonon interpolointiin tarkemmin, suosittelemme lukemaan Pythonin virallisen dokumentaation aiheesta: https://docs.python.org/3/library/string.html#format-string-syntax.
-
-Tutustu myös muihin tapoihin muotoilla merkkijonoja, kuten %-operaattoriin ja format()-funktioon. Näitä käsitellään tarkemmin tässä artikkelissa: https://realpython.com/python-string-formatting/.
+Ota rohkeasti koodi ja leiki sen kanssa itse!

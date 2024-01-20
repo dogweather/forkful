@@ -1,6 +1,6 @@
 ---
 title:                "Порівняння двох дат"
-html_title:           "Javascript: Порівняння двох дат"
+html_title:           "Clojure: Порівняння двох дат"
 simple_title:         "Порівняння двох дат"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Порівняння двох дат є процесом, під час якого ми порівнюємо одну дату з іншою, для визначення, яка з них раніше або пізніше. Програмісти виконують це для багатьох причин, включаючи встановлення порядку подій, обробки даних та створення логіки програм.
+## Що це & Навіщо?
 
-Як це зробити:
+Порівняння двох дат це процес визначення, яка дата більша (пізніше), менша (раніше) або чи вони рівні. Програмісти роблять це для обробки та керування даними за вказаними датами. 
+
+## Як це робити:
+
 ```Javascript
-const date1 = new Date('2021-01-01');
-const date2 = new Date('2021-01-02');
+let date1 = new Date('2021-02-10');
+let date2 = new Date('2022-02-10');
 
-if (date1 > date2) {
-  console.log('Date 1 is later than date 2');
-} else if (date1 < date2) {
-  console.log('Date 1 is earlier than date 2');
+if(date1 > date2) {
+  console.log('Дата 1 пізніша за дату 2');
+} else if(date1 < date2) {
+  console.log('Дата 2 пізніша за дату 1');
 } else {
-  console.log('Date 1 is equal to date 2');
+  console.log('Дати рівні');
 }
 ```
-Виведе "Date 1 is earlier than date 2".
 
-Глибоке погруження:
-Історичний контекст: Порівняння дат активно використовувалося в комп'ютерах вже з початку їх винайдення. Раніше для цього використовувались числові представлення дат, однак із появою різних форматів дати, таких як ISO-8601, стало популярніше використовувати вбудовані функції для порівняння.
+Приклад вивода:
 
-Альтернативи: Окрім використання вбудованих функцій у Javascript, існують також бібліотеки, які спеціалізуються на порівнянні дат, наприклад Moment.js.
+```Javascript
+'Дата 2 пізніша за дату 1'
+```
 
-Деталі реалізації: В Javascript існує вбудована функція `Date()` для створення об'єкта дати. Ця функція приймає різні типи вхідних даних, які потім перетворюються у датові об'єкти, наприклад строки, числа або дати. Можна також використовувати методи `getFullYear()`, `getMonth()`, `getDate()` для отримання частин дати, які можна порівнювати між собою.
+## Поглиблений огляд:
 
-Дивіться також:
-- [Документація MDN про вбудований об'єкт дати у Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js бібліотека](https://momentjs.com/)
-- [Стаття про порівняння дат з використанням If/Else у Javascript](https://www.delftstack.com/uk/howto/javascript/javascript-compare-dates/)
+1. _Історичний контекст_: JavaScript, розроблений у 1995 році, з самого початку мав вбудовані об'єкти для роботи з датами і часом. Протягом років було додано багато функцій для праці з ними.
+
+2. _Альтернативи_: Є бібліотеки, як-то Moment.js, які надають більш потужні функції роботи з датами.
+
+3. _Деталі реалізації_: Порівняння двох дат в JavaScript відбувається автоматично з конвертацією дат у мілісекунди, що дозволяє просто використовувати оператори порівняння.
+
+## Дивіться також:
+
+1. [Date - JavaScript | MDN](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [Moment.js](https://momentjs.com/)
+3. [Understanding Date and Time in JavaScript](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript)

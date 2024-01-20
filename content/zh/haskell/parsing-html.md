@@ -1,7 +1,7 @@
 ---
-title:                "解析 HTML"
-html_title:           "Haskell: 解析 HTML"
-simple_title:         "解析 HTML"
+title:                "解析HTML"
+html_title:           "Clojure: 解析HTML"
+simple_title:         "解析HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是HTML解析？
+## 什么和为什么?
 
-解析HTML是指从HTML文件中提取信息的过程。由于网络上的大量信息都以HTML格式存在，开发者需要通过解析来获取有用的数据，例如网页内容、图片URL等。这是一个非常常见的任务，因此学习如何解析HTML对于开发者来说是必不可少的技能。
+解析HTML是处理HTML源代码以提取数据或信息的过程。程序员之所以要进行HTML解析，主要是为了从网页上抽取有用的信息。
 
-## 如何做？
+## 怎么做:
 
-在Haskell中，我们可以使用第三方库"tagsoup"来解析HTML。首先，我们需要导入"Data.HTML"模块，然后使用"parseTags"函数来解析HTML文件。以下是一个例子，假设我们想要从某个网页中提取所有图片的URL：
+使用Haskell来解析HTML, 我们将采用`tagsoup`库，它销售一个简洁的API，很适合我们的需求。
+
+让我们下载这个库并写个例子:
 
 ```Haskell
-import Data.HTML
-html <- readFile "http://example.com"
-let tags = parseTags html
-let images = filter isTagOpen tags
-let urls = map (\t -> fromAttrib "href" t) images
-print urls
+import Text.HTML.TagSoup
+
+main = do
+    let tags = parseTags "<html><body><a href=www.google.com>Google!</a></body></html>"
+    print $ filter (~== "<a>") tags
 ```
 
-可以看到，在只有几行代码的情况下，我们就可以轻松地提取出所需的信息。这种简单直接的编程方式是Haskell的一个优点。
+上述代码解析HTML字符串，然后筛选出所有的`<a>`标签。
 
-## 深入探讨
+运行结果应该如下:
 
-HTML解析已经成为当今Web开发中必不可少的一部分。在过去，解析HTML的主要方法是使用正则表达式，这种方法很麻烦并且容易出错。现在，借助于结构化数据的概念，使用库来解析HTML已成为一个更常用的方法。
+```Haskell
+[TagOpen "a" [("href","www.google.com")],TagText "Google!",TagClose "a"]
+```
 
-除了"tagsoup"之外，还有一些其他的HTML解析库可供选择，例如"html-conduit"和"html-tagsoup"。每个库都有其特定的优势，因此开发者可以根据自己的需求选择最适合的工具。
+## 深度解析
 
-在实现HTML解析时，有一些值得注意的细节，例如处理特殊字符和错误处理。因此，在选择使用哪个工具时，也要考虑其文档的完整性和社区的支持。
+历史背景: Haskell的`tagsoup`库由Neil Mitchell创建，他是一位知名的Haskell程序员。这个库鼓励使用函数式编程的方式处理HTML，它相比传统的暴力解析方法，更简洁并且强大。
 
-## 参考资料
+替代方案: `tagsoup`不是唯一的选择，还有`html-conduit`、`hxt`、`lambdasoup`等库也可以实现HTML的解析。
 
-- [tagsoup官方文档](https://hackage.haskell.org/package/tagsoup)
-- [html-conduit官方文档](https://hackage.haskell.org/package/html-conduit)
-- [html-tagsoup官方文档](https://hackage.haskell.org/package/html-tagsoup)
-- [关于HTML解析的更多信息](https://haskell-university.com/articles/tutorial/retrieving-document-content-from-the-www.html)
+实施细节: `tagsoup`通过标记化HTML，然后使用模特匹配（pattern matching）的方式，对HTML元素进行筛选和提取。
+
+## 扩展阅读
+
+如果你对解析HTML更感兴趣，你可以查看以下链接:
+
+1. [TagSoup库官方文档](https://hackage.haskell.org/package/tagsoup)
+2. [Neil Mitchell的博客](http://neilmitchell.blogspot.com/)
+3. [Haskell HTML解析教程](https://wiki.haskell.org/Parsing_HTML)

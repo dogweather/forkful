@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "Elm: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列を大文字にする"
+html_title:           "Elm: 文字列を大文字にする"
+simple_title:         "文字列を大文字にする"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,25 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ?
-文字列を大文字にすることをキャピタライズと呼び、プログラマーが行う理由は2つあります。1つ目は、ある文字列の最初の文字を大文字にすることで、より見やすく読みやすいコードを書くためです。2つ目は、プログラマーが用意したソフトウェアにユーザーが入力する文字列を大文字に変換することで、入力ミスを防ぐためです。
+## 何となぜ?
 
-## 使い方:
-```Elm
-String.toUpper "hello" == "HELLO"
-```
+文字列を大文字化するとは文字列内のあらゆる小文字文字を対応する大文字に変換するという操作です。プログラマーはこれを主に、一貫性を保ち使用者が誤りやすい小大文字の混在を避けるために行います。
 
-```Elm
-String.toUpper "elm programming" == "ELM PROGRAMMING"
-```
+## どうするのか:
+
+以下、Elmでの文字列大文字化のコード例とその出力結果です。
 
 ```Elm
-String.toUpper "12345" == "12345"
+import String
+
+capitalize : String -> String
+capitalize str = 
+    String.toUpper str
+
+main = 
+    print (capitalize "hello world!")
 ```
 
-## 深く掘り下げる:
-キャピタライズという用語は、より古いコンピューターの時代から存在しています。当時は、大文字を書くことは紙やテープのエンコードにおいて重要な役割を果たしており、アルファベットの大文字は小文字よりも強く表現されていました。代替手段としては、String.toUpperCaseを使用することもできますが、String.toUpperの方がより一般的に使われています。実装の詳細としては、String.toUpperは指定された文字列をすべて大文字に変換することで実現されています。
+このコードを実行すると、"HELLO WORLD!"と大文字化された文字列が出力されます。
 
-## 関連リンク:
-- [Elm Documentation: String](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Wikipedia: Capitalization](https://ja.wikipedia.org/wiki/%E5%A4%A7%E6%96%87%E5%AD%97)
+## 深堀り:
+
+1. **歴史的背景**
+大文字と小文字の概念は古代ローマから存在しています。しかし、コンピュータプログラミングにおける文字列の大文字化は、主にコンピュータが主流になった1970年代以降にクロスプラットフォーム互換性や一貫性を保つために使われてきました。
+
+2. **代替手段**
+大文字化のみならず、Elmには小文字化(`String.toLower`)や先頭のみ大文字化(`String.capitalize`)といった関数もあります。
+
+3. **実装の詳細**
+Elmの`String.toUpper`関数はUTF-16互換の全ての文字を対応する大文字に置換します。特定の文字が大文字バージョンを持たない場合、元の文字はそのまま残されます。
+
+## 関連情報:
+
+- Elmの文字列操作については、公式ドキュメンテーションで詳しく解説されています: [Elm String Module](https://package.elm-lang.org/packages/elm/core/latest/String) 
+- Unicodeについてのより詳しい情報はこちらで提供されています: [Unicode.org](https://www.unicode.org) 
+- 文字コードについて学びたい方は[Udemyの関連コース](https://www.udemy.com/courses/search/?src=ukw&q=character+encoding)がおすすめです。

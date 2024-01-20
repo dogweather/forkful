@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증과 함께 http 요청 보내기"
-html_title:           "Java: 기본 인증과 함께 http 요청 보내기"
-simple_title:         "기본 인증과 함께 http 요청 보내기"
+title:                "기본 인증을 이용한 HTTP 요청 보내기"
+html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
+simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,71 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇이고 왜 필요한가요? (What & Why?)
+HTTP 요청에 기본 인증을 추가하는 것은 웹 서버로 전송되는 사용자의 정보를 인증하고 보호하기 위한 것입니다. 이를 통해 개발자는 사용자의 권한을 체크하고, 제대로된 사용자만 요청을 처리하도록 할 수 있습니다.
 
-HTTP 요청에 기본 인증을 사용하는 것은 인증된 사용자만이 액세스할 수 있는 보안이 강화된 웹 서비스를 만들기 위한 방법입니다. 프로그래머들은 이것을 사용하여 사용자가 자신의 어플리케이션에 로그인을 하도록 하거나 보안 인증이 필요한 API에 액세스하는 데 사용합니다.
-
-# 방법:
+## 어떻게 동작하는지 (How to)
+다음은 Java에서 HTTP 요청에 기본 인증을 추가하는 방법입니다. 
 
 ```Java
-// URL을 생성합니다.
-URL url = new URL("https://example.com/api/user");
+import java.net.Authenticator;
+import java.net.PasswordAuthentication;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.URI;
 
-// HTTP Connection을 만듭니다.
-HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+public class Main {
+    public static void main(String[] args) throws Exception {
 
-// 기본 인증을 설정합니다.
-String username = "username";
-String password = "password";
-String encoded = Base64.getEncoder().encodeToString((username + ":" + password).getBytes());
-connection.setRequestProperty("Authorization", "Basic " + encoded);
+        HttpClient client = HttpClient.newBuilder().authenticator(new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication("username", "password".toCharArray());
+            }
+        }).build();
 
-// 요청 메소드 및 헤더를 설정합니다.
-connection.setRequestMethod("GET");
-connection.setRequestProperty("Accept", "application/json");
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(new URI("http://example.com"))
+                .GET()
+                .build();
 
-// 요청 전송 및 응답 코드 확인
-int responseCode = connection.getResponseCode();
-System.out.println("Response Code: " + responseCode);
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
 
-// 응답 메세지를 읽습니다.
-BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-String output;
-StringBuilder response = new StringBuilder();
-while ((output = reader.readLine()) != null) {
-    response.append(output);
+        System.out.println(response.body());
+    }
 }
 
-// 응답 메세지 출력
-System.out.println("Response: " + response.toString());
-
-// 연결 종료
-connection.disconnect();
 ```
+위 코드를 실행하면 "http://example.com" 사이트로 HTTP GET 요청이 전송되고, 그 응답이 콘솔에 출력될 것입니다.
 
-예상 결과:
-```
-Response Code: 200
-Response: {
-    "id": "12345",
-    "username": "username",
-    "email": "username@example.com"
-}
-```
+## 깊은 이해를 위하여 (Deep Dive)
+HTTP에 기본 인증을 추가하는 방법은 1990년대부터 사용되어 왔으며, 이것은 HTTP/1.0 표준의 일부입니다. 하지만 오늘날에는 보안성 문제로 인하여 대체적으로 다른 인증 방식들(예를 들어, OAuth 또는 JWT)로 바뀌고 있습니다.
 
-# 깊이 파고들기:
+Java에서는 `java.net.http.HttpClient` 클래스를 이용하여 HTTP 요청을 보낼 수 있으며, `HttpClient.newBuilder().authenticator`를 이용하여 기본 인증을 추가할 수 있습니다. `Authenticator` 객체는 요청을 보낼 때 호출되고, 요청에 부합하는 인증정보를 반환합니다.
 
-## 역사적 맥락:
-기본 인증은 HTTP의 초기 버전에서 이미 사용되어 왔습니다. 이는 사용자의 인증 정보를 Base64로 인코딩하여 전송하는 간단한 방법으로, 웹의 보안을 위해 고안된 첫 번째 방식 중 하나입니다.
-
-## 대안:
-기본 인증은 매우 간단하지만 보안적으로 취약합니다. 따라서 현재는 보다 안전한 HTTPS를 사용하는 것이 권장되고 있습니다. 또 다른 대안으로는 OAuth나 JWT같은 보다 강력한 인증 시스템을 사용하는 것이 있습니다.
-
-## 구현 세부사항:
-기본 인증은 Base64로 인코딩되기 때문에 실제로 매우 취약합니다. 따라서 보안이 중요한 경우, HTTPS와 함께 사용하는 것이 좋습니다. 또한 인증 정보를 URL 매개 변수에 보내는 것보다는 헤더에 포함시키는 것이 더 안전합니다.
-
-# 참고:
-
-- [Java HTTP 요청 보내기 튜토리얼](https://www.baeldung.com/java-http-request)
-- [Base64 인코딩과 디코딩](https://www.baeldung.com/java-base64-encode-and-decode)
-- [HTTP 기본 인증에 대한 RFC](https://www.ietf.org/rfc/rfc2617.txt)
+## 참조 링크 (See Also)
+- Java SE 11 & JDK 11: HTTP Client: [https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+- HTTP basic authentication : [https://tools.ietf.org/html/rfc7617](https://tools.ietf.org/html/rfc7617)

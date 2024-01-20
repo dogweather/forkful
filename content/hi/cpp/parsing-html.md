@@ -1,7 +1,7 @@
 ---
-title:                "पार्सिंग HTML"
-html_title:           "C++: पार्सिंग HTML"
-simple_title:         "पार्सिंग HTML"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -12,48 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-पार्सिंग HTML क्या है, और इसे क्यों प्रोग्रामर्स करते हैं? पार्सिंग HTML का मतलब है कि आप किसी वेब पेज को ब्राउज़र में देखने के लिए इस्तेमाल होने वाले HTML कोड को समझ रहे हैं। प्रोग्रामर्स इसे करते हैं क्योंकि वे वेब डेवलपमेंट, डेटा स्क्रैपिंग, और डेटा व्यवस्थापन से जुड़ी कई चुनौतियों को हल कर सकते हैं।
+HTML पार्सिंग, हमारे कंप्यूटर को वेब पेज की संरचना को पढ़ने और समझने की कला है। कार्यक्रमकर्ता इसे ताकि वे वेबसाइट्स की जानकारी बाहर निकाल सकें और उसे अन्य उद्देश्यों के लिए उपयोग कर सकें, करते हैं।
 
 ## कैसे करें:
 
 ```C++
-#include <iostream>
-#include <string>
-#include <algorithm>
-
-using namespace std;
+// गम्भीर पुस्तकालय लोड करें।
+#include <htmlcxx/html/ParserDom.h>
 
 int main() {
-  // HTML के कोड को string में स्टोर करें
-  string html = "<p>Hello, world!</p>";
+ // पार्सर बनायें।
+ htmlcxx::HTML::ParserDom parser;
 
-  // string में से टैग हटाएं
-  html.erase(remove(html.begin(), html.end(), '<'), html.end());
-  html.erase(remove(html.begin(), html.end(), '>'), html.end());
+ // HTML कंटेंट का उदाहरण।
+ std::string html = "<html><body><h1>नमस्ते दुनिया</h1></body></html>";
+  
+ // पार्स HTML।
+ auto dom = parser.parseTree(html);
+  
+ // ट्री में प्रवेश करें।
+ auto root = dom.begin();
 
-  // शब्दों को अलग अलग चिह्नों पर स्प्लिट करें
-  vector<string> words;
-  stringstream ss(html);
-  string word;
-  while (ss >> word) {
-    words.push_back(word);
-  }
+ // रूट से शीर्षक तक।
+ auto title = root->find(htmlcxx::HTML::TAG::H1);
 
-  // output: Hello, world!
-  cout << words[1] << " " << words[2] << " " << words[3];
-
-  return 0;
+ // शीर्षक प्रिंट करें।
+ std::cout << title->text() << std::endl;
+  
+ return 0;
 }
 ```
 
-## गहराई में जाएं:
+इसके आउटपुट में "नमस्ते दुनिया" होगा।
 
-1. इतिहासिक पृष्ठभूमि: HTML के साथ पार्सिंग का शुरुआती रूप से चन्द तरीकों का उल्लेख है, जैसे SGML और XML
-2. वैकल्पिक तरीके: कुछ प्रोग्रामर्स दूसरी भाषाओं का उपयोग करके HTML को पार्स करते हैं, जैसे Python के लिए BeautifulSoup और Java के लिए Jsoup
-3. प्रयोग करने की स्थिति: इस अनुप्रयोग को में बहुत से तरीके हो सकते हैं, जैसे कि कैसे बिजली का संचार करें, या अपने स्क्रिप्ट से कुछ डेटा स्क्रैप करें
+## Deep Dive:
 
-## जाने के लिए:
+1. HTML पार्सिंग का इतिहास:
+   HTML पार्सिंग की जरूरत पहली बार WWW (World Wide Web) के विस्तार के साथ आई। यह नए प्रौद्योगिकी से प्रभावित होता है और साथ ही साथ बदलता रहता है।
 
-- [MDN - HTML introduction](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML)
-- [W3Schools - HTML tutorial](https://www.w3schools.com/html/default.asp)
-- [Codecademy - HTML course](https://www.codecademy.com/learn/learn-html)
+2. वैकल्पिक विधियाँ:
+   BeautifulSoup, lxml और PyQuery जैसे पायथन के पुस्तकालय भी HTML पार्सिंग करने के लिए मौजूद हैं। यह आपके प्रोजेक्ट की आवश्यकताओं पर निर्भर करता है कि आप किसे चुनते हैं।
+
+3. आवश्यक विवरण:
+   HTML पार्सर, वेब पृष्ठ के डॉम(DOM) ट्री का निर्माण करता है, जिससे कोड वेबसाइट के विभिन्न हिस्सों को पहुंच सकता है।
+
+## चर्चा वर्जित:
+
+1. [W3Schools HTML Parsing](https://www.w3schools.com/php/php_ref_simplexml.asp)
+2. [HTML Parsing in Python](https://docs.python.org/3/library/html.parser.html)
+3. [Boost Library for HTML Parsing in C++](https://www.boost.org/doc/libs/1_74_0/libs/beast/doc/html/beast/using_http/basics.html)

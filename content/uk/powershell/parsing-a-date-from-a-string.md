@@ -1,7 +1,7 @@
 ---
-title:                "Розбір дати зі стрічки"
-html_title:           "PowerShell: Розбір дати зі стрічки"
-simple_title:         "Розбір дати зі стрічки"
+title:                "Аналіз дати з рядка"
+html_title:           "C++: Аналіз дати з рядка"
+simple_title:         "Аналіз дати з рядка"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що таке та навіщо?
+## Що та навіщо?
+Використовуючи PowerShell, нерідко виникає необхідність аналізувати дату з рядка. Цей процес називається "parsing". Програмісти роблять це для сортування, порівняння або просто керування датами в рядках.
 
-Розбір дати з рядка - це процес отримання дати з рядкового значення. В програмуванні це дуже важливий процес, оскільки часто дати зберігаються у вигляді рядків. Тому розбір дати з рядка дозволяє нам отримати коректну дату для подальшої обробки в нашій програмі.
-
-## Як?
-
+## Як це робити:
+Ось простий приклад коду, який показує, як виконується процес:
 ```PowerShell
-# Приклад 1: Розбір дати з рядка у форматі "dd/MM/yyyy"
-$dateString = "25/06/2020"
-$date = [DateTime]::ParseExact($dateString, "dd/MM/yyyy", $null)
-Write-Output $date
-# Виведе "Thursday, June 25, 2020 12:00:00 AM"
-
-# Приклад 2: Розбір дати з рядка у форматі "ddd, d MMM yyyy"
-$dateString = "Thu, 25 Jun 2020"
-$date = [DateTime]::ParseExact($dateString, "ddd, d MMM yyyy", $null)
-Write-Output $date
-# Виведе "Thursday, June 25, 2020 12:00:00 AM"
+$StringDate = '01-02-2021'
+$ParsedDate = [datetime]::ParseExact($StringDate, 'dd-MM-yyyy', $null)
+Write-Output $ParsedDate
+```
+При виконанні цього скрипта, ви отримаєте наступний результат:
+```PowerShell
+Sunday, February 1, 2021 12:00:00 AM
 ```
 
-## Глибоке занурення
+## Глибоке занурення:
+Перед введенням PowerShell, программісти використовували різні способи аналізу дати з рядка, наприклад прийоми з JScript або VBScript. Але PowerShell вносить у цей процес значні полегшення.
 
-Розбір дати з рядка є складним процесом, оскільки існує багато різних форматів дати. У минулому для цього використовувалися ручні методи, однак зараз існує багато готових функцій для розбору дати з рядка. Також,  існує багато альтернативних шляхів розбору дати, наприклад, використання регулярних виразів.
+Наприклад, альтернативою для ```[datetime]::ParseExact``` є ```[datetime]::TryParseExact```, що повертає булеве значення, яке вказує, чи було успішним аналізування рядка або ні.
 
-Щоб розбирати дату з рядка у PowerShell, ми використовуємо статичний метод [DateTime]::ParseExact(), який приймає три аргументи: рядок з датою, формат дати та об'єкт для обробки помилок.
+Якщо рядок містить фрагменти, які потрібно проігнорувати при аналізуванні, то випарсити дату можна за допомогою його формату:
+```PowerShell
+$StringDate = 'Дата: 01-02-2021'
+$ParsedDate = [datetime]::ParseExact($StringDate, "'Дата: 'dd-MM-yyyy", $null)
+Write-Output $ParsedDate
+```
 
-## Дивись також
-
-[Microsoft довідковий посібник](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/parseexact) про розбір дати з рядка у PowerShell.
+## Додатково:
+Чудове джерело для додаткового вивчення цієї теми - офіційна документація Microsoft, особливо сторінка ParseExact: https://docs.microsoft.com/en-us/dotnet/api/system.datetime.parseexact?view=netframework-4.7.2

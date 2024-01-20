@@ -1,7 +1,7 @@
 ---
-title:                "מחיקת תווים התואמים את הדפוס"
-html_title:           "PowerShell: מחיקת תווים התואמים את הדפוס"
-simple_title:         "מחיקת תווים התואמים את הדפוס"
+title:                "מחיקת תווים התואמים לתבנית"
+html_title:           "Elixir: מחיקת תווים התואמים לתבנית"
+simple_title:         "מחיקת תווים התואמים לתבנית"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,36 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
+## מה ולמה?
+מחיקת תווים שמתאימים לדפוס מסוים היא פעולה שבה משתמשים בביטויים רגולריים או באלגוריתמים אחרים כדי למחוק תווי ספציפיים מתוך מחרוזת. מתכנתים מבצעים זאת כדי לטהר נתונים, לשפר את הניתונים שלהם, ולאפשר ביצועים מועדפים.
 
-מחיקת תווים התואמים לתבנית היא תהליך שבו מחפשים ומוחקים תווים מסוימים בטקסט על סמך תבנית מסוימת. פעולה זו חשובה למתכנתים כדי לנקות טקסטים שנוצרו באופן מכולו.
-
-כיצד לעשות זאת?
-
+## איך לעשות:
 ```PowerShell
-# נמחק את התווים הנמצאים בין התו "" לתו ""
-$str = "זה תוים ""לא נחמדים"" בטקסט שלנו"
-$str -replace '".*?"', ""
-# פלט: זה תוים בטקסט שלנו
+# אנחנו נעבוד עם המחרוזת הבאה
+$string = "Hello, עולם! אנחנו לומדים PowerShell 123."
+
+# מחק תווים לפי דפוס מסוים באמצעות -Replace
+$string = $string -Replace '[א-ת]','' # מחיקת תווים עבריים בלבד
+$string = $string -Replace '[^a-zA-Z^]','' # מחיקת כל תו שאינו אות לטנית
+
+# תוצאה
+HelloPowerShell
 ```
 
-```PowerShell
-# נמחק את כל האותיות הקטנות מהמחרוזת
-$str = "המחרוזת כל AMA נכתבת רק באותיות קטנות"
-$str -replace "[a-z]", ""
-# פלט: AAMA
-```
+## צלילה עמוקה:
+המחיקה של תווים שמתפקדים לפי דפוס מסוים היא חלק בלתי נמנע מעיבוד מחרוזות מאז ששפת תכנות בראש פעם שוחררה. זה היה ונותר דרך משמעותית לניקוי וניפוי נתונים. Kotlin, Python, Java ואחרות, הן בין השפות שמאפשרות זאת גם כן. עם PowerShell, הטריק הוא להשתמש ב `-Replace`, שמאפשר לכם להחליף תווים שמתאימים לדפוס המבוקש. זו הסיבה שיש לנו את הצורך להחזיר מחרוזת ריקה '' כחלופה.
 
-צלילה עמוקה
-
-מחיקת תווים התואמים לתבנית היא פונקציונליות שנמצאת מזה עשורים בשפות תכנות כמו Perl ו- awk. זה מאפשר למתכנת לבצע פעולות מורכבות על טקסט בצורה נוחה יותר, במיוחד כאשר מדובר בטקסטים גדולים.
-
-אלטרנטיבות למחיקת תווים התואמים לתבנית כוללות את פקודת ```Select-String``` ב-PowerShell ופקודת ```grep``` בשפת Unix. בנוסף, ניתן לבצע פעולה דומה בעזרת פונקציות תכנותיות כגון ```substring``` בשפת C.
-
-מימוש פנימי של מחיקת תווים התואמים לתבנית דורש שימוש בתבניות רגולריות למציאת התווים הרלוונטיים למחיקה וביצוע החלפה שלהם בשפה. זה משמש כמנגנון אחסון וטכנולוגיה יסודית ביותר ליישומים בתחום עיבוד הטקסט.
-
-ראו גם
-
-- [תיעוד רשמי על פקודת -replace ב-PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#replace-operator)
-- [מדריך רגולרי ל-PowerShell](https://www.regular-expressions.info/powershell.html)
-- [Exploring Grep - פאנל מקומי של תהליך grepping](https://www.youtube.com/watch?v=QZ1blL9KjjI&t=5s)
+## ראו גם:
+* [דוקומנטציה הרשמית של פעול Elace PowerShell R](https://docs.microsoft.com/he-il/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#example-4--replace-operator)
+* [הסקירה של RegExr על ביטויים רגולריים](https://regexr.com/)
+* [הערכה מהירה של תוכנית סקריפטים בשפת PowerShell](https://stackoverflow.com/questions/8762406/how-can-i-remove-a-specific-character-from-a-string-in-powershell)

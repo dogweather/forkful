@@ -1,7 +1,7 @@
 ---
-title:                "Alimerkkijonojen erottaminen"
-html_title:           "Javascript: Alimerkkijonojen erottaminen"
-simple_title:         "Alimerkkijonojen erottaminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -12,31 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mikä & Miksi?
 
-Substringien eristäminen on prosessi, jossa valitaan ja paljastetaan tietty osa merkkijonosta. Ohjelmoijat tekevät näin esimerkiksi lopullisen tulosteen muotoilun tai tietojen käsittelyn vuoksi. Se on yleinen tekniikka, jota käytetään laajasti monissa ohjelmointikielessä.
+Merkkijonoista osamerkkijonojen (substring) poimiminen on prosessi, jossa otetaan osa kokonaisesta merkkijonosta. Tämä on hyödyllistä useissa tilanteissa, kuten datan käsittelyssä ja tiettyjen koodirakenteiden parantamisessa.
 
-## Kuinka tehdä?
+## Kuinka:
+
+Katsotaanko esimerkki Javascriptin 'substring', 'substr' ja 'slice' metodeista.
 
 ```Javascript
-let merkkijono = "Tämä on esimerkkiteksti";
-let substr = merkkijono.substring(5, 14);
+let str = "Ohjelmointi on kivaa";
 
-console.log(substr); // tulostaa "on esimerk"
+// Kaikki alla olevat esimerkit tulostavat "Ohjelma"
+console.log(str.substring(0,7));
+console.log(str.substr(0,7));
+console.log(str.slice(0,7));
 ```
 
-- Määritä ensin muuttuja, joka sisältää merkkijonon, josta haluat eristää substringin.
-- Käytä `substring()` -funktiota ja anna sille aloitus- ja lopetusindeksit alueelle, jonka haluat eristää.
-- Tallenna tulos muuttujaan ja tulosta se käyttämällä `console.log()` -funktiota.
+Ero näiden välillä on se, miten ne käsittelevät syöttöparametreja. Esimerkiksi, jos negatiivinen arvo annetaan toiseksi parametriksi substr-metodille, se otetaan merkkijonon pituudesta:
 
-## Syvällinen sukellus
+```Javascript
+console.log(str.substr(0,-2)); // tulostaa "Ohjelmointi on k"
+```
 
-- Substringien eristämisellä on pitkä historia, ja se on tullut yhä tärkeämmäksi nykyaikaisessa ohjelmoinnissa.
-- Vaikka `substring()` on yleinen ja kätevä funktio, on myös muita tapoja eristää substringeja, kuten `slice()` ja `substr()`.
-- Käytä `substring()` -funktiota varovaisesti ja muista ottaa huomioon indeksoinnin välittäminen.
+## Syvempi sukellus:
 
-## Katso myös
+Alunperin, JavaScriptissä oli vain 'substring' metodi. 'substr' ja 'slice' lisättiin myöhemmin tarjoamaan enemmän joustavuutta.
 
-Jos haluat lisätietoja substringien eristämisestä Javascriptillä, tutustu seuraaviin lähteisiin:
+- 'substring' ottaa kaksi argumenttia: aloitusindeksin ja lopetusindeksin. 
+- 'substr' ottaa aloitusindeksin ja palautettavan merkkijonojen määrän.
+- 'slice' toimii kuten 'substring', mutta se sallii negatiiviset indeksit, jotka viittaavat merkkijonon loppuun.
 
-- [MDN Web Docs: substring()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [W3Schools: JavaScript substring()](https://www.w3schools.com/jsref/jsref_substring.asp)
-- [JavaScript.info: Substrings and substr](https://javascript.info/string-substr)
+On tärkeää tunnistaa nämä erot ja valita oikea metodi tarpeidesi mukaan.
+
+## Katso myös:
+
+Lisätietoja saadaksesi, tutustu seuraaviin lähteisiin:
+
+- MDN Web Docs ja sen artikkeli ["String.prototype.substring()"](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- W3Schoolsin opas ["JavaScript String Methods"](https://www.w3schools.com/js/js_string_methods.asp)
+- Blogikirjoitus ["JavaScript Substring: How to Use Slice and Substring in JS"](https://coderrocketfuel.com/article/javascript-substring-how-to-use-slice-and-substring-in-js) Coder Rocket Fuel -sivustolla.

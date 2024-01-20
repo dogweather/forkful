@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "C#: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
+## ¿Qué y Por Qué?
+El 'parsing' de HTML, extraer y analizar el contenido de un documento HTML, nos permite manipular y utilizar sus datos. Lo hacemos para extraer información, editar la estructura o el contenido, o transformar el documento.
 
-Parsing HTML es el proceso de analizar y convertir código HTML en una estructura de datos legible para una computadora. Los programadores utilizan el parsing HTML para extraer información específica de una página web y utilizarla en sus aplicaciones.
-
-# Cómo hacerlo:
-
-El siguiente código en C# utiliza la clase ```HtmlAgilityPack``` para realizar el parsing HTML. Primero, asegúrate de tenerla instalada en tu proyecto. Luego, importa el espacio de nombres ```HtmlAgilityPack``` en tu código:
+## ¿Cómo Hacerlo?
+Para 'parsear' HTML en C#, podemos utilizar la biblioteca HtmlAgilityPack. Aquí hay un ejemplo:
 
 ```C#
 using HtmlAgilityPack;
+HtmlDocument doc = new HtmlDocument();
+doc.LoadHtml("<html><body><p>Hola Mundo!</p></body></html>");
+var nodo = doc.DocumentNode.SelectSingleNode("//body/p");
+Console.WriteLine(nodo.InnerHtml);
 ```
 
-A continuación, crea una instancia de la clase ```HtmlDocument``` y carga el HTML de una página web en ella:
-
-```C#
-HtmlDocument html = new HtmlDocument();
-html.Load("https://www.ejemplo.com");
+Salida:
 ```
-
-Una vez cargado el HTML, puedes utilizar los métodos y propiedades de la clase para acceder a diferentes partes de la página web. Por ejemplo, para obtener una lista de todos los enlaces en la página, puedes utilizar el método ```SelectNodes``` y la sintaxis de XPath:
-
-```C#
-HtmlNodeCollection enlaces = html.DocumentNode.SelectNodes("//a");
+Hola Mundo!
 ```
+Este programa carga un HTML, luego busca y selecciona el primer parágrafo en el cuerpo del documento. Finalmente, imprime el contenido del parágrafo - 'Hola Mundo!'.
 
-Finalmente, puedes recorrer la colección de nodos para obtener la información que necesites y utilizarla en tu aplicación.
+## Análisis Profundo
+'Parsing' HTML ayuda a depurar, poner a prueba y automatizar la web desde los primeros días de la Internet. Sin embargo, HTML no estaba pensado para ser fácil de parsear, llevarlo a cabo puede ser engorroso y propenso a errores.
 
-# Profundizando:
+Además de HtmlAgilityPack, existen otras bibliotecas como CsQuery y AngleSharp. También puedes utilizar regex, pero solo para tareas muy simples. El 'parsing' HTML correctamente requiere una comprensión del HTML y CSS, incluyendo su sintaxis, reglas de precendencia y funcionamiento de etiquetas especiales.
 
-El parsing HTML ha sido una herramienta esencial para los programadores desde los inicios de la web. Antes de las tecnologías como HTML5 y AngularJS, que facilitan la creación de páginas web dinámicas, el parsing HTML era la única forma de extraer información de una página.
-
-Aunque el parsing HTML sigue siendo ampliamente utilizado, existen alternativas como el scraping web o el uso de APIs públicas. Además, el proceso puede ser bastante complejo y propenso a errores debido a la naturaleza cambiante del código HTML.
-
-# Ver También:
-
-- [Documentación de HtmlAgilityPack](https://html-agility-pack.net/)
-- [Tutorial de parsing HTML en C#](https://www.c-sharpcorner.com/UploadFile/suthish_nair/parsing-html-using-html-agility-pack/)
-- [Más sobre scraping web](https://www.scrapehero.com/)
+## Ver También
+- [HtmlAgilityPack](https://html-agility-pack.net/)
+- [CsQuery](https://github.com/jamietre/CsQuery)
+- [AngleSharp](https://anglesharp.github.io/)
+Examina estos enlaces para obtener más información sobre 'parsing' HTML en C#.

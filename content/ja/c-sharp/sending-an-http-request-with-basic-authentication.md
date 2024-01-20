@@ -1,7 +1,7 @@
 ---
-title:                "基本認証付きのhttpリクエストの送信"
-html_title:           "C#: 基本認証付きのhttpリクエストの送信"
-simple_title:         "基本認証付きのhttpリクエストの送信"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,40 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
+## 何となぜ？
 
-HTTP要求を基本認証で送信することは、プログラマーがWebサービスに接続するための一般的な方法です。この方法は、セキュリティを強化し、機密性の高い情報を保護するために使用されます。
+HTTPリクエストにBasic認証を含むことは、特定のプロトコルを使用してリソースを安全にアクセスする方法です。プログラマーは、ユーザーIDとパスワードを通じてサーバーへのアクセスを制御するためにこれを行います。
 
-## 方法：
+## どうするの？
+
+下記はC#でBasic認証を使用してHTTPリクエストを送信する基本的な例です。
 
 ```C#
-// リクエストを作成
-var request = (HttpWebRequest)WebRequest.Create("https://example.com/api/endpoint");
-request.Method = "GET";
-
-// 基本認証ヘッダーを作成
-string credentials = "username:password";
-Byte[] credentialBytes = Encoding.UTF8.GetBytes(credentials);
-string encodedCredentials = Convert.ToBase64String(credentialBytes);
-request.Headers.Add("Authorization", "Basic " + encodedCredentials);
-
-// レスポンスを取得
-var response = (HttpWebResponse)request.GetResponse();
-using (var streamReader = new StreamReader(response.GetResponseStream()))
+using (var client = new HttpClient())
 {
-    var result = streamReader.ReadToEnd();
-    Console.WriteLine(result);  // サーバーからの応答を表示
+    var byteArray = Encoding.ASCII.GetBytes("username:password");
+    client.DefaultRequestHeaders.Authorization =
+        new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+    var response = await client.GetAsync("http://targeturl.com");
+    Console.WriteLine(await response.Content.ReadAsStringAsync());
 }
 ```
+このコードが正常に動作すると、指定したURLから返されたすべてのテキストがコンソールに表示されます。
 
-## ディープダイブ：
+## ディープダイブ
 
-基本認証は、HTTP仕様の一部であり、長年にわたって使用されてきた古典的な認証方法です。近年、より安全な認証方法が開発されているため、基本認証は使用されなくなる可能性があります。代替手段として、トークンベースの認証があります。
+1. 歴史的背景: Basic認証はHTTP/1.0時代から存在しており、今日でも広く利用されています。
+2. 代替手段: OAuth、Bearerトークン、APIキーなど、他の認証方法も存在します。
+3. 実装詳細: Basic認証はBase64エンコーディングを使用してユーザー名とパスワードを伝送しますが、これは脆弱性があるため、HTTPSなどの安全な接続でのみ使用することを推奨します。
 
-基本認証を実装するには、リクエストヘッダーにHTTP Authorizationヘッダーの形式でユーザー名とパスワードを含める必要があります。また、セキュリティを強化するために、HTTPS通信を使用することをお勧めします。
+## 同関連ソース
 
-## 関連情報：
-
-- [HTTP Basic Access Authentication](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Basic_Authentication_scheme)
-- [HTTP Authentication](https://www.w3.org/Protocols/HTTP/Authentication.html)
-- [Token-based authentication vs. session-based authentication](https://medium.com/@sherryhsu/session-vs-token-based-authentication-11a6c5ac45e4)
+-  [HttpClient クラス (System.Net.Http)](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.http.httpclient?view=net-5.0)
+-  [AuthenticationHeaderValue クラス (System.Net.Http.Headers)](https://docs.microsoft.com/ja-jp/dotnet/api/system.net.http.headers.authenticationheadervalue?view=net-5.0)
+-  [HTTP Basic認証](https://tools.ietf.org/html/rfc7617)

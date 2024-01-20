@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "PHP recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,33 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Simply put, extracting substrings in PHP means taking a small part of a larger string. Programmers use this technique to manipulate and work with specific portions of a string without affecting the rest of it. This helps make their code more efficient and precise.
+
+Extracting substrings simply refers to the selection of a part or parts from a string. This is done by programmers to ensure data is displayed/manipulated in usable and meaningful chunks.
 
 ## How to:
-To extract substrings in PHP, we use the `substr()` function. Let's take a look at an example:
+
+We can use the `substr()` function in PHP to extract substrings. Two key parameters are required: the starting point and length of the substring.
 
 ```PHP
-$string = "Hello World";
-$subString = substr($string, 6, 5);
-echo $subString;
-```
-The first argument in the `substr()` function is the original string, and the second argument is the starting index of the substring. The third argument is optional and represents the length of the substring. In this example, we start at index 6, which is the 'W' in "World" and include the next 5 characters, resulting in "World" being printed as the output.
+<?php
+$string = "Welcome to PHP programming!";
 
-Another example using the optional length parameter:
+// Extract "Welcome" from string
+$substring = substr($string, 0, 7);
+echo $substring;  // Displays: Welcome
+```
+
+If you need to extract from the end of the string, use a negative starting point:
+
 ```PHP
-$string = "I love coding in PHP";
-$subString = substr($string, 7);
-echo $subString;
+// Extract "programming!" from string
+$substring = substr($string, -12);
+echo $substring;  // Displays: programming!
 ```
-In this example, we start at index 7, which is the space after "love", and include all the rest of the characters in the string. The output will be "coding in PHP".
 
-## Deep Dive:
-The `substr()` function was introduced in PHP 4 and has been a handy tool for programmers since then. Before its existence, programmers had to use more complicated and less efficient methods to extract substrings.
+## Deep Dive
 
-There is also an alternative function, `mb_substr()`, which is a multi-byte safe version of `substr()`. This means it can handle strings with non-ASCII characters correctly. In cases where you are working with multibyte characters, it is recommended to use `mb_substr()` instead.
+The `substr()` function, a mainstay since PHP 4, has remained relevant because of its simple, yet powerful approach to string manipulation. 
 
-Internally, `substr()` uses the `memcmp()` function to compare bytes of the string. This is done in a relatively efficient way to avoid excessive memory usage for large strings.
+An alternative to `substr()` is `mb_substr()`. This function works similar but its use is recommended when dealing with multi-byte characters like Japanese or emojis. 
 
-## See Also:
-- PHP manual for substr(): http://php.net/manual/en/function.substr.php
-- PHP manual for mb_substr(): http://php.net/manual/en/function.mb-substr.php
+While `substr()` operates on bytes, `mb_substr()` works with characters, ideal for internationalization (i18n).
+
+Execution wise, the `substr()` function has a slight performance advantage, but in real-world scenarios, the difference is often negligible. 
+
+## See Also
+
+For further reading and resources regarding string manipulation, refer to the PHP documentation:
+
+1. [PHP: substr - Manual](https://www.php.net/manual/en/function.substr.php)
+2. [PHP: mb_substr - Manual](https://www.php.net/manual/en/function.mb-substr.php)
+3. [PHP: Strings - Manual](https://www.php.net/manual/en/language.types.string.php)
+
+Be sure to understand the options, features and limitations of each function to pick the best tool for your task. Happy coding!

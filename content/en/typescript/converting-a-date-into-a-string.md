@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "TypeScript recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -12,33 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a date into a string in TypeScript means taking a date object and transforming it into a string representation. Programmers often do this to display dates in a specific format or to easily manipulate and compare dates.
+Converting a date into a string in TypeScript is just what it sounds like: transforming a Date object into a readable string format. This is handy when you want to display dates for users in a customized style or store the date data in a more readable way.
 
-## How to:
+## How To:
+
+In TypeScript, we can lean on the built-in `toDateString()` and `toISOString()` methods of the Date object. Let's see them in action.
 
 ```TypeScript
-const date = new Date();
+let today = new Date();
 
-// Convert a date into a string using toDateString() method
-const dateString = date.toDateString();
-console.log(dateString); // "Thu Sep 09 2021"
+// Using toDateString
+let dateString = today.toDateString();
+console.log(dateString); // Output will be "Wed Sep 22 2021"
 
-// Convert a date into a custom string format using toLocaleDateString() method
-const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }; // specify format options
-const customString = date.toLocaleDateString('en-US', options); // get string in specified format
-console.log(customString); // "Thursday, September 9, 2021"
+// Using toISOString
+let isoString = today.toISOString();
+console.log(isoString); // Output will resemble "2021-09-22T19:39:34.937Z"
 ```
+The `toDateString()` method provides a more human-readable format, while `toISOString()` gives you a precise, standardized string that's ISO 8601 compliant.
 
 ## Deep Dive:
 
-Converting a date into a string has been a common task for programmers since the early days of computing. In the past, this was often done by using a combination of different functions to manipulate and display the different components of a date (day, month, year, etc.). The introduction of specific methods like `toDateString()` and `toLocaleDateString()` in languages like TypeScript has made this process much simpler and more efficient.
+The Date object has been in JavaScript (and consequently in TypeScript) since its first edition. Before these convenient methods like `toISOString()`, developers had to manually slice and dice strings to manipulate date formats.
 
-There are also alternatives to converting a date into a string, such as using third-party libraries like Moment.js or using JavaScript's built-in `toLocaleString()` method. However, the built-in methods in TypeScript offer more flexibility and customization options.
+There are also several libraries, including day.js, moment.js, date-fns, that offer even more features for date and time manipulation. They are great for handling more complex tasks, but for simple conversions, the built-in methods are quite sufficient and efficient.
 
-When converting a date into a string, it's important to consider the format and locale. Different regions and languages have varying conventions for displaying dates. The `toLocaleDateString()` method allows you to specify the desired format and locale, making it easier to display dates in a way that is familiar and easily understandable to your audience.
+The actual implementation of `toDateString()` and `toISOString()` can vary among engines. In general, they take the date held in the Date object, apply appropriate localization or ISO standard rules, and construct a new string with the converted format.
 
 ## See Also:
 
-- [MDN web docs on Date object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
-- [JavaScript toLocaleString() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleString)
+- [Mozilla Developer Guide on Date Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [ISO 8601 Date and Time Format](https://www.iso.org/iso-8601-date-and-time-format.html)
+- [Date libraries comparison: Moment.js vs date-fn vs Day.js](https://stackshare.io/stackups/day-js-vs-date-fns-vs-moment-js)

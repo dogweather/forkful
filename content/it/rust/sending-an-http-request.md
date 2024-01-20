@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "Rust: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,63 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché si invia una richiesta HTTP?
+## Che Cos'è e Perché?
 
-Invio di una richiesta HTTP è l'azione di inviare una richiesta da un client (come un browser web) a un server. I programmatori lo fanno per interagire con una risorsa o un servizio disponibile su un server, come una pagina web o un'API. 
+Invio di una richiesta HTTP è un'esigenza fondamentale in molte applicazioni web; permette la comunicazione tra client e server. I programmatori lo fanno per interagire con API, scaricare file, e così via.
 
-## Come fare:
+## Come si fa:
+
+Utilizzeremo il pacchetto `reqwest` per fare richieste HTTP, quindi prima dovrai installarlo.
+
+Aggiungi questa riga al tuo `Cargo.toml` sotto la sezione `[dependencies]`.
+
+```Rust
+reqwest = "0.11"
+```
+
+Esempio di invio di una richiesta GET:
 
 ```Rust
 use reqwest;
-use std::collections::HashMap;
 
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
+    let response = reqwest::get("https://httpbin.org/ip").await?;
 
-// Esempio di richiesta GET
-let response = reqwest::get("https://jsonplaceholder.typicode.com/posts/1")
-    .await?;
-
-if response.status().is_success() {
-    let body = response.text().await?;
-    println!("Corpo della risposta: {}", body);
+    println!("{}", response.text().await?);
+    Ok(())
 }
+```
+Risposta prevista:
 
-// Esempio di richiesta POST con parametri
-let params = [("username", "john"), ("password", "secret")];
-let client = reqwest::Client::new();
-let response = client.post("https://jsonplaceholder.typicode.com/posts")
-    .form(&params)
-    .send()
-    .await?;
-
-if response.status().is_success() {
-    let body = response.text().await?;
-    println!("Corpo della risposta: {}", body);
+```Rust
+{
+  "origin": "123.45.67.89"
 }
 ```
 
-Output:
+## Approfondimento
 
-Corpo della risposta: {
-  "userId": 1,
-  "id": 1,
-  "title": "titolo",
-  "body": "testo della pagina"
-}
+L'invio di richieste HTTP è stato a lungo un componente del web, originariamente definito nel 1991. Nel contesto di Rust, un'alternativa a `reqwest` può essere l'uso di `hyper`, una libreria HTTP piuttosto basso livello. I dettagli implementativi dell'invio di richieste HTTP coinvolgono la creazione di un client, la definizione di un URL e l'opzionale invio di dati al server.
 
-Corpo della risposta: {
-  "username": "john",
-  "password": "secret",
-  "id": 101
-}
+## Vedi Anche:
 
-## Approfondimento:
-
-Mandare richieste HTTP è un'azione fondamentale della programmazione web. Originariamente, il protocollo HTTP è stato creato nel 1991 da Tim Berners-Lee ed è stato adottato come standard per scambiare informazioni su Internet. Esistono anche alternative a HTTP, come HTTPS che utilizza la crittografia per proteggere le comunicazioni.
-
-Una implementazione comune di invio di richieste HTTP in Rust è attraverso la libreria reqwest. Tuttavia, ci sono anche altre librerie disponibili come hyper e actix-web. 
-
-## Vedi anche:
-
-- [Documentazione ufficiale di Reqwest](https://docs.rs/reqwest/)
-- [Tutorial su come inviare richieste HTTP con Rust](https://erwabook.com/intro/http.html)
-- [Progetto di esempio di invio di richieste HTTP in Rust](https://github.com/ZcashFoundation/zecwallet-light-cli)
+* Documentazione `reqwest`: https://docs.rs/reqwest/0.11.3/reqwest/
+* Per saperne di più sull'HTTP: https://it.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+* Documentazione `hyper`: https://docs.rs/hyper/0.14.4/hyper/

@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "PHP recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Creating a Temporary File in PHP
-
-Creating temporary files is a common practice in programming, and PHP is no exception. A temporary file is a file that is only meant to exist temporarily, and is typically used for a specific purpose before being deleted. Programmers often use temporary files in situations where they need to store data temporarily, or with functions that require a file as an input.
-
 ## What & Why?
 
-Creating a temporary file in PHP involves creating a file with a random, unique name in a designated temporary directory. This file can then be used for temporary storage of data or as an input for functions that require a file. Temporary files are useful for a variety of tasks, such as caching data, managing subprocesses, and handling file uploads.
+Unlocking temporary files in PHP is like setting up a 'disposable' area in your computer's memory, where data is only stored for a limited period. Programmers create temporary files for tasks requiring additional, short-term memory; this can help in situations such as bulk data manipulation or file processing where immediate impacts could be costly if mistakes occur. 
 
-## How to:
+## How to: 
 
-To create a temporary file in PHP, we can use the built-in function `tempnam()`. This function takes two parameters, the first being the temporary directory where the file will be created and the second being a prefix for the file name. Here's an example:
-
-```PHP
-// create a temporary file in the system's default temporary directory
-$tempFile = tempnam(sys_get_temp_dir(), "prefix_");
-```
-The resulting `$tempFile` variable will contain the path to the newly created temporary file. We can then use this file like any other and perform operations such as reading, writing, or appending data to it.
-
-When we are finished with the temporary file, we can simply delete it using the `unlink()` function.
+Let's dive into the PHP code to create a temporary file:
 
 ```PHP
-// delete the temporary file
-unlink($tempFile);
+$tempFile = tmpfile();
+
+$writtenData = fwrite($tempFile, "Just a Sample Data!\nHello World!");
+
+rewind($tempFile);
+
+$readData = fread($tempFile, 1024);
+
+echo $readData; 
+
+fclose($tempFile);
 ```
+When you run this code, it first creates a temporary file, writes some data into it, rolls back the file pointer to the start of the file, reads the data from the file, prints the data, and finally, closes the file. The output will be:
 
-## Deep Dive
+``` 
+Just a Sample Data!
+Hello World!
+```
+Please note the temporary file is automatically removed once it's closed or the script ends.
 
-Temporary files have been used for various purposes since the early days of programming. In the past, they were mainly used for managing temporary disk space, but nowadays they are more commonly used for performance optimizations and security purposes.
+## Deep Dive 
 
-In addition to the `tempnam()` function, PHP also offers the `tmpfile()` function, which creates a temporary file and opens it for read and write operations. This provides a more streamlined approach for performing operations on the temporary file without having to manually open it with the `fopen()` function.
+Believe it or not, temporary files have been a part of PHP since version 4.0.2 back in August 2000. It was introduced as a solution for storing data temporarily when memory is a constraint. 
 
-However, there are some alternatives to creating temporary files in PHP, such as using in-memory variables or databases. Depending on the specific use case, these alternatives may be more efficient or secure.
+Alternatively, nowadays some developers prefer memory-based filesystems like `/dev/shm` on Linux, but the traditional `tmpfile()` function is still widely used. 
 
-One important thing to note about creating temporary files in PHP is that they may not always be created in the specified temporary directory. This can happen due to the OS or file system's limitations, or if the temporary directory is not writable. It's always a good idea to check if the file was created successfully and handle potential errors.
+One fun fact: when you create a temp file using `tmpfile()` in PHP, under the hood it uses the system's default location for temp files. On Unix-based systems, this is often `/tmp`. 
 
-## See Also
+Remember that `tmpfile()` creates a binary-safe file. This means it can also hold binary data, and it's the programmer's responsibility to handle data correctly.  
 
-For more information on creating temporary files in PHP, check out the official documentation:
-- [PHP tempnam() function](https://www.php.net/manual/en/function.tempnam.php)
-- [PHP tmpfile() function](https://www.php.net/manual/en/function.tmpfile.php)
+## See Also 
+
+- PHP Official Documentation on [`tmpfile`](https://www.php.net/manual/en/function.tmpfile.php)
+- An insightful blog post on [Working with Files in PHP](http://www.php.net/manual/en/ref.filesystem.php)
+- For Linux users: [What is `/dev/shm` and its practical usage](https://www.howtogeek.com/116778/htg-explains-what-is-devshm-and-its-practical-usage/)

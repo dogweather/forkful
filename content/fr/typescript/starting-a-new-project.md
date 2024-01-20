@@ -1,7 +1,7 @@
 ---
-title:                "Lancer un nouveau projet"
-html_title:           "TypeScript: Lancer un nouveau projet"
-simple_title:         "Lancer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Getting Started"
@@ -10,42 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que c'est un nouveau projet en programmation et pourquoi les programmeurs le font ?
+## Quoi & Pourquoi?
+Démarrer un nouveau projet consiste à lancer une nouvelle idée concrète, souvent en commençant à écrire des lignes de code. Les programmeurs le font pour explorer des idées nouvelles ou émergentes, résoudre des problèmes existants ou créer des solutions uniques.
 
-Un nouveau projet en programmation est un projet où les programmeurs créent de nouvelles applications, logiciels ou sites web à partir de zéro. Les programmeurs le font pour répondre à un besoin spécifique, pour améliorer une technologie existante ou pour apporter une nouvelle solution à un problème.
-
-Comment faire un nouveau projet en TypeScript ?
-
-Voici un exemple de code TypeScript pour démarrer un nouveau projet :
+## Comment faire:
+Vous voudrez d'abord installer l'outil Node Package Manager (npm) pour gérer vos packages TypeScript. 
 
 ```TypeScript
-// Déclaration d'une variable avec une valeur string
-const texte: string = "Bonjour le monde !";
-
-// Affichage de la variable dans la console
-console.log(texte);
-
-// Déclaration d'une fonction pour inverser une chaîne de caractères
-function inverserTexte(texte: string): string {
-  return texte.split('').reverse().join('');
-}
-
-// Utilisation de la fonction pour inverser le texte initial
-console.log(inverserTexte(texte)); // !ednom el ruojnoB
+npm install -g typescript  
 ```
 
-Ce code déclare une variable avec une valeur string et affiche cette variable dans la console. Ensuite, il y a une fonction pour inverser une chaîne de caractères, qui est utilisée pour inverser le texte initial et le réafficher dans la console avec le résultat inversé.
+Ensuite, créez un nouveau dossier pour votre projet et initialisez un nouveau projet npm.
 
-Plongée en profondeur
+```TypeScript
+mkdir my_project  
+cd my_project  
+npm init -y  
+```
 
-Historiquement, les programmeurs ont toujours eu besoin de créer de nouveaux projets pour répondre à de nouveaux besoins ou résoudre de nouveaux problèmes. Cela peut se faire en utilisant différents langages de programmation, mais TypeScript devient de plus en plus populaire en raison de ses fonctionnalités avancées et de sa compatibilité avec JavaScript.
+Maintenant, nous allons créer un fichier .tsconfig pour configurer notre environnement de développement TypeScript.
 
-Il existe également d'autres alternatives pour démarrer un nouveau projet, telles que React, Angular ou Vue, qui sont des frameworks basés sur TypeScript pour le développement d'interfaces utilisateur.
+```TypeScript
+tsc --init  
+```
 
-La mise en œuvre d'un nouveau projet en TypeScript peut être réalisée en utilisant un environnement de développement intégré (IDE) tel que Visual Studio Code ou en utilisant le compilateur TypeScript en ligne de commande.
+Votre nouvel environnement de projet TypeScript est prêt à être utilisé! Vous pouvez désormais créer de nouveaux fichiers .ts et compiler en JavaScript en utilisant le command 'tsc'.
 
-Pour en savoir plus
+## Plongée profonde
+Derrière ce processus relativement simple, il y a une histoire intéressante. TypeScript a été introduit en 2012 par Microsoft pour combler le manque de fonctionnalités orientées objet dans JavaScript. 
 
-- [Site officiel de TypeScript] (https://www.typescriptlang.org/)
-- [Introduction à TypeScript] (https://www.tutsmake.com/typescript-tutorial-with-example/) en français
-- [Tutoriel TypeScript pour débutants] (https://www.digitalocean.com/community/tutorials/typescript-tutorial-for-beginners)
+Il y a d'autres alternatives à TypeScript, y compris Babel et Elm. Cependant, TypeScript reste l'un des plus populaires en raison de ses caractéristiques et de la grande communauté qui le soutient.
+
+Au cœur de TypeScript se trouve la création du fichier .tsconfig. Ce fichier vous permet de spécifier vos préférences de compiler, y compris la version du JavaScript que vous souhaitez cibler et les chemins de sortie des fichiers compilés.
+
+## Voir aussi
+Pour approfondir TypeScript et comment démarrer un nouveau projet, vous pouvez consulter les ressources suivantes :
+
+- Documentation officielle TypeScript: https://www.typescriptlang.org/docs/
+- Tutoriel vidéo sur YouTube: https://www.youtube.com/watch?v=BwuLxPH8IDs 
+- Liste de ressources apprentissage sur GitHub: https://github.com/dzharii/awesome-typescript

@@ -1,7 +1,7 @@
 ---
-title:                "L'analyse syntaxique HTML"
-html_title:           "Bash: L'analyse syntaxique HTML"
-simple_title:         "L'analyse syntaxique HTML"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,35 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi faire?
+## Qu'est-ce et Pourquoi?
 
-Le parsing HTML, ou l'analyse HTML, est le processus de lecture et d'analyse du code source d'une page web en HTML. Les programmateurs utilisent cette technique pour extraire des données spécifiques d'une page web ou pour créer des scripts qui interagissent avec du contenu HTML.
+Analyser du HTML, c'est extraire des données à partir d'un document HTML. Les programmeurs le font pour récupérer des informations d'une page web dans un format manipulable.
 
 ## Comment faire:
 
-Voici un exemple de code Bash pour extraire tous les liens d'une page web:
+Utilisons `html-xml-utils`, un utilitaire propre pour le parsing HTML en Bash. Installez-le d'abord:
 
 ```Bash
-#!/bin/bash
-# Utiliser curl pour récupérer le code source de la page
-raw_html=$(curl -s "https://www.example.com")
-# Utiliser grep pour filtrer les liens
-links=$(echo "$raw_html" | grep -oE '<a[^>]+>' | grep -oE 'href="[^"]+"' | cut -d'"' -f2)
-# Afficher les liens trouvés
-echo "$links"
+sudo apt-get install html-xml-utils
 ```
 
-Sortie:
+Ensuite, scrappez une page web avec sa structure intacte:
+
+```Bash
+curl https://example.com | hxnormalize -x
 ```
-/example-page
-/another-page
+
+Maintenant, imaginez que vous voulez tous les liens `href` sur la page. Faites cela:
+
+```Bash
+curl https://example.com | hxnormalize -x | hxselect -s '\n' 'a[href]' | cut -d'"' -f2
 ```
 
-## Approfondissement:
+Voilà, c'est du scraping HTML en Bash.
 
-Le parsing HTML est souvent utilisé dans le web scraping, où les données sont extraites d'une page web pour être utilisées dans des applications. Il existe également des bibliothèques et des outils tels que BeautifulSoup et HTML Parser pour faciliter le parsing HTML. Les techniques telles que XPath peuvent également être utilisées pour sélectionner des éléments spécifiques dans le code HTML.
+## Plongée profonde
 
-## À voir aussi:
+Les premiers parsers HTML ont été développés à la naissance du web, dans les années 90. Alternativement, vous pouvez utiliser des langages plus modernes comme Python ou Javascript qui ont des bibliothèques de parsing HTML robustes, telles que BeautifulSoup et Cheerio. Cependant, Bash reste une solution rapide et portable sans l'overhead d'un langage de script complet.
 
-- [Un guide complet sur le parsing HTML en Bash](https://dev.to/~/gitignore/article/spidering-the-web-with-bash-3oib)
-- [La documentation officielle de Bash](https://www.gnu.org/software/bash/)
+L'analyseur `html-xml-utils` fonctionne en construisant un arbre de documents à partir d'une page HTML, et en appliquant ensuite des filtres de sélection sur cet arbre pour extraire les informations souhaitées.
+
+## Voir aussi:
+
+- Documentation officielle de `html-xml-utils`: http://www.w3.org/Tools/HTML-XML-utils/README
+- Tutoriel sur le Web Scraping avec Python et BeautifulSoup: https://www.dataquest.io/blog/web-scraping-tutorial-python/
+- Guide de débutant pour le Web Scraping en JavaScript avec Node.js: https://www.freecodecamp.org/news/the-ultimate-guide-to-web-scraping-with-node-js-daa2027dcd3/

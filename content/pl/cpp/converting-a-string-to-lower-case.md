@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "C++: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest konwersja ciągu znaków na małe litery i dlaczego programiści tego potrzebują?
+# Konwersja Stringów na Małe Litery w C++: Jak to Zrobić
+Napiszemy dzisiaj o konwersji stringów na małe litery w C++. Jest to wystarczająco częste, aby zatytułować ten wpis "Jak to zrobić".
 
-Konwersja ciągu znaków na małe litery jest procesem zmiany wszystkich liter w ciągu na ich niskie odpowiedniki. Jest to przydatne w programowaniu, ponieważ pozwala na porównywanie i przetwarzanie ciągów znaków w sposób bardziej jednolity. Na przykład, jeśli mamy ciąg "PrzyKłAdoWy CiĄg", to po konwersji na małe litery otrzymamy "przykładowy ciąg", co umożliwi łatwiejsze porównywanie lub przetwarzanie.
+## Co & Dlaczego?
+Konwersja stringa na małe litery polega na zamianie wszystkich wielkich liter w stringu na małe. Programiści robią to często, aby ułatwić sobie porównywanie i sortowanie stringów.
 
-Jak to zrobić:
+## Jak to Zrobić:
+Wykorzystamy wbudowaną w C++ funkcję `tolower()`. Oto prosty przykład: 
 
 ```C++
-#include <iostream>
-#include <string>
-#include <locale>
+#include <cctype>
+#include <algorithm>
 
-using namespace std;
-
-int main()
-{
-    string s = "PrzyKłAdoWy CiĄg";
-
-    //konwersja ciągu na małe litery
-    std::locale loc;
-    for (char& c : s)
-        c = std::tolower(c,loc);
-
-    cout << s; //wyświetli "przykładowy ciąg"
-
-    return 0;
+int main() {
+    std::string str_upper("WITAJ, ŚWIECIE!");
+    std::transform(str_upper.begin(), str_upper.end(), str_upper.begin(), ::tolower);
+    std::cout << str_upper;
 }
 ```
 
-Pogłębione spojrzenie:
+Wyjście:  `witaj, świecie!`
 
-Konwersja ciągu na małe litery jest przydatna w programowaniu, ponieważ pozwala na jednolite traktowanie i porównywanie ciągów znaków niezależnie od tego, czy zawierają one litery wielkie czy małe. Jest to szczególnie ważne przy porównywaniu czy sprawdzaniu równości ciągów, ponieważ zestawienie "ABC" z "abc" może dać nieprawidłowy wynik, jeśli nie są one w tej samej wielkości liter.
+## Szczegółowe Omówienie
+Konwersja stringów na małe litery to powszechna operacja, szczególnie w kontekście przetwarzania tekstu i analizy danych. 
 
-Alternatywnym sposobem na konwersję ciągu na małe litery jest użycie funkcji transform() z biblioteki <algorithm>. Można także użyć funkcji toupper() do konwersji na wielkie litery.
+1. **Kontekst Historyczny**: Początkowo, funkcje konwersji przypadków były częścią większości bibliotek języków programowania, z koniecznością obsługi różnych standardów kodowania. Wraz z ewolucją Unicode, funkcje te stały się bardziej złożone i zróżnicowane.
 
-Implementacja konwersji na małe litery jest zależna od sposobu obsługi znaków przez system operacyjny, ponieważ niektóre języki mają różne znaki diakrytyczne, które mogą zostać źle przetłumaczone przez prosty algorytm zamiany liter na ich niskie odpowiedniki.
+2. **Alternatywy**: Jest wiele innych metod konwersji stringa na małe litery. Możemy również użyć pętli for, iterując przez każdy znak i korzystając z funkcji `tolower()`, czy skorzystać z `boost::algorithm::to_lower(str)` z biblioteki Boost.
 
-Zobacz także:
+3. **Szczegóły Implementacji**: Funkcja `tolower()` konwertuje każdy znak na małą literę (jeśli jest to litera). Najważniejsze jest, aby pamiętać o poprawnym obszarze kodowania, szczególnie dla non-ASCII znaków.
 
-- Przykładowy kod konwersji ciągu na małe litery: https://www.includehelp.com/cpp-programs/c-string-to-lower-case.aspx
-- Dokumentacja funkcji tolower() z biblioteki <cctype>: http://www.cplusplus.com/reference/cctype/tolower/
+## Zobacz Również
+Więcej na ten temat można znaleźć, przechodząc do tych źródeł:
+1. ["tolower" na cppreference.com](https://en.cppreference.com/w/cpp/string/byte/tolower)
+2. [Lowercasing strings with Boost](https://www.boost.org/doc/libs/1_73_0/doc/html/boost/algorithm/to_lower.html)
+3. [Unicode Case Mapping](https://unicode.org/faq/casemap_charprop.html)

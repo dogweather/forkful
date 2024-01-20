@@ -1,6 +1,6 @@
 ---
 title:                "パターンに一致する文字を削除する"
-html_title:           "Haskell: パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
 simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,24 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## それは何か？
-「パターンにマッチする文字を削除する」とは、文字列中から特定のパターンに一致する文字を除外することです。プログラマーはこれを行うことで、文字列処理やデータクレンジングなどのタスクを効率的に実行することができます。
+## 何となぜ?
 
-## 方法：
+文字列から特定のパターンに一致する文字を削除する手続きです。データの整形、不要な値の排除など、より有効かつ意図的なデータ操作の一環としてプログラマーが使用します。
+
+## 実装方法
+
+Haskellには `Data.List` の `delete` 関数を使って特定の文字を削除することができます。以下に一例を示します。
+
 ```Haskell
--- 文字列から数字のみを除外する関数
-removeDigits :: String -> String
-removeDigits str = [c | c <- str, not (elem c "0123456789")]
+import Data.List
 
--- 使用例
-removeDigits "abc123def456" --> "abcdef"
+deleteChar :: Char -> String -> String
+deleteChar c s = (filter (/= c) s)
+
+main = do
+    let sentence = "I love Japanese curry."
+    let noVowels = deleteChar 'a' sentence
+    print noVowels
 ```
 
-## 深堀り
-1. 歴史的な文脈：文字列処理は、古くからプログラミングで使用されており、その中にはパターンに一致する文字を除外する必要がある場合があります。
-2. 代替方法：他の言語やツールでも同様の機能を実現することができますが、Haskellでは高度なパターンマッチングとリスト内包表記の組み合わせにより、簡潔かつ効率的に文字列を加工することができます。
-3. 実装の詳細：上記の例では、リスト内包表記を使用して文字列を処理していますが、実際にはリストを他の方法でフィルタリングすることも可能です。
+このコードは、与えられた文字列から特定の文字（この例では 'a'）を削除します。出力結果は以下の通りです。
+
+```Haskell
+"I love Jpnese curry."
+```
+
+## 詳細な解説
+
+Haskellの `Data.List` モジュールで提供されている `filter` 関数を使用して、文字を削除します。この関数は高階関数であり、他の関数（この場合 `/=`）とリスト（または文字列）を引数にとります。元の文字列を参照し、指定した関数によってTrueと評価される各要素の新しいリストを生成します。
+
+代替として、`Char` を `Maybe Char` へ変換する `map` 関数と `catMaybes` 関数を組み合わせて使用する方法もある。ここでは詳しく説明しないが、必要に応じて調査してみよう。
 
 ## 関連情報
-- [Haskellのリスト内包表記の使い方](https://qiita.com/satosystems/items/9194d5d0829f34896aad)
-- [他の言語における文字列処理の方法](https://www.tutorialspoint.com/data_structures_algorithms/string_processes.htm)
+
+詳しい情報は以下のリンクから得られます：
+
+- Haskell `filter` 関数のドキュメンテーション： http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:filter
+- 高階関数についての一般的な説明： https://wiki.haskell.org/Higher_order_function
+- `Maybe` 型と `catMaybes` 関数についての説明： http://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Maybe.html

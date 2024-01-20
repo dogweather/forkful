@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "Elm: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que la comparaison de deux dates et pourquoi les programmeurs le font-ils ?
+## Quoi et Pourquoi?
 
-La comparaison de deux dates est simplement le fait de comparer les valeurs de deux dates pour déterminer leur relation chronologique. Par exemple, on peut comparer deux dates pour savoir laquelle est plus récente ou si elles sont équivalentes. Les programmeurs font cela pour traiter de manière appropriée les données temporelles dans leurs programmes et s'assurer que les actions sont effectuées dans l'ordre correct.
+Comparer deux dates signifie vérifier quelle date est antérieure, postérieure ou si les deux sont identiques. Les programmeurs l'utilisent fréquemment pour des tâches telles que le tri d'événements, le calcul de l'âge ou la détermination de la durée.
 
-## Comment faire :
+## Comment faire:
 
+En Elm, nous pouvons utiliser les fonctions intégrées `Date.before`, `Date.after` et `Date.equals` pour comparer deux dates. 
+
+```Elm
+import Date exposing (..)
+
+date1 = Date.fromIsoString "2020-01-01T00:00:00Z"
+date2 = Date.fromIsoString "2020-12-01T00:00:00Z"
+
+isBefore = Date.before date1 date2
+isAfter = Date.after date1 date2
+isEqual = Date.equals date1 date2 
 ```
-Elm.Date.compare date1 date2
-```
 
-La fonction `compare` de la bibliothèque Elm Date compare les valeurs de deux dates et renvoie un `Order` indiquant leur relation. Voici quelques exemples de sortie possibles :
+Cela fournira respectivement `True`, `False` et `False` puisque la date1 se trouve avant la date2.
 
-- `LT` : si la `date1` est avant `date2`
-- `GT` : si la `date1` est après `date2`
-- `EQ` : si la `date1` est égale à `date2`
+## Plongée Profonde:
 
-Vous pouvez également utiliser cette fonction pour trier une liste de dates en utilisant la fonction `List.sortBy` avec `compare` comme argument.
+Historiquement, la comparaison de dates est un problème ancien en informatique. Des solutions variées et parfois complexes ont été utilisées. Dans Elm, il suffit d'utiliser le module `Date` pour une comparaison plus simple et plus précise.
 
-## Plongée en profondeur :
+Cependant, d'autres alternatives existent. On pourrait, par exemple, convertir les deux dates en millisecondes depuis l'époque Unix et les comparer. Cette approche plus bas niveau a l'avantage d’être indépendante de la librairie.
 
-La comparaison de deux dates est souvent utilisée dans les programmes de planification et de suivi du temps, ainsi que dans les applications liées aux événements et aux tâches.
+Au niveau de l’implémentation, `Date.before`, `Date.after` et `Date.equals` utilisent l'opérateur de comparaison (`<`, `>`, `==`) sur la valeur en millisecondes des dates.
 
-Au lieu d'utiliser `Date.compare`, certains programmeurs peuvent utiliser la fonction `Date.isBefore` ou `Date.isAfter` pour une comparaison spécifique. Il est également important de noter que la bibliothèque Elm Date utilise le nombre de millisecondes écoulées depuis le 1er janvier 1970 pour représenter une date, ce qui peut différer des autres langages de programmation.
+## Voir aussi:
 
-## Voir aussi :
+Pour en savoir plus sur le module Date, consultez:
 
-- Documentation officielle de la bibliothèque Elm Date : https://package.elm-lang.org/packages/elm/core/latest/Date
-- Article sur la représentation des dates en informatique : https://fr.wikipedia.org/wiki/Date_%28informatique%29
+- [Documentation Elm pour le module Date](http://package.elm-lang.org/packages/elm/time/latest/Date)
+
+Pour une exploration plus étendue de la comparaison de temps, vous pouvez consulter:
+
+- [La page Time sur le wiki Elm](https://elmprogramming.com/time.html)

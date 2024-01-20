@@ -1,6 +1,6 @@
 ---
 title:                "检查目录是否存在"
-html_title:           "Ruby: 检查目录是否存在"
+html_title:           "Kotlin: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么&为什么？
+## 什么 & 为什么?
 
-在编程中，我们经常需要检查一个目录是否存在。这有助于我们避免在代码中引用不存在的目录，从而防止程序出错。检查目录是否存在的另一个常见原因是为了确保我们需要的文件和资源都存在，并且程序可以顺利运行。
+检查一个目录是否存在是在程序中确认一个特定的文件目录是否真实存在的过程。程序员这么做主要是为了防止在对不存在的目录进行操作时候出现错误。
 
-# 如何：
+## 如何操作:
 
+下面的Ruby代码可以用来检查一个目录是否存在：
 ```Ruby
-# 使用File类的‘exists?’方法来检查目录是否存在，若存在则返回true，反之则返回false。
-File.exists?("my_directory")  # => true/false
+if Dir.exist?("/path/to/directory")
+  puts "Directory exists"
+else
+  puts "Directory does not exist"
+end
+```
+如果目录存在，输出将会是 "Directory exists"，如果目录不存在，输出将会是 "Directory does not exist"。
+
+## 深度解析
+
+#### 历史背景
+
+在早期的编程语言中，检查目录是否存在通常不是一项内置的功能，需要程序员自行实现。随着编程语言的发展，如Ruby等现代编程语言在库中都包含了这种功能，使得检查更为便捷。
+
+#### 替代方法
+
+除了使用Dir.exist?方法，你还能使用File.directory?方法来检查一个目录是否存在，方法如下：
+```Ruby
+if File.directory?("/path/to/directory")
+  puts "Directory exists"
+else
+  puts "Directory does not exist"
+end
 ```
 
-# 深入探究：
+#### 执行细节
 
-## 历史背景：
+在Ruby中, Dir.exist? 和 File.directory?这两个方法都直接调用底层的文件系统API，所以执行速度上几乎没有区别。
 
-在过去，程序员可能会使用操作系统或系统调用来检查目录是否存在。但是，Ruby的File类提供了更简便的方法，让我们可以直接在代码中使用。此外，现在的操作系统也提供了更好的目录管理功能，使得检查目录是否存在更容易。
+## 参见
 
-## 替代方法：
-
-除了File类的‘exists?’方法，我们也可以使用‘directory?’和‘readable?’方法来检查目录是否存在。‘directory?’方法可以确保目录的类型是一个目录，而‘readable?’方法则可以检查目录是否具有读取权限。
-
-## 实现细节：
-
-Ruby的‘Dir’和‘File’类都是通过调用操作系统提供的系统调用来实现检查目录是否存在的功能。这些类还提供了更多的方法来操作文件和目录，如创建、删除、移动和重命名等。
-
-# 看看这些：
-
-- [File类文档](https://ruby-doc.org/core-3.0.2/File.html)
-- [Dir类文档](https://ruby-doc.org/core-3.0.2/Dir.html)
+你可以在Ruby官方文档中查看更多有关这两个方法的详细信息和更多示例： 
+- [`Dir.exist?` documentation](https://ruby-doc.org/core-2.7.1/Dir.html#method-c-exist-3F)
+- [`File.directory?` documentation](https://ruby-doc.org/core-2.7.1/File.html#method-c-directory-3F)

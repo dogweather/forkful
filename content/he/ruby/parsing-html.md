@@ -1,6 +1,6 @@
 ---
 title:                "ניתוח HTML"
-html_title:           "Ruby: ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,50 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-הפעלת קוד בתחביר של HTML היא תהליך חשוב עבור תכנתנים בפרויקטים שונים. תהליך זה מרכז את התארת האתר באופן נכון ומאשר את תקינות הקוד. תכנתנים לעיתים קרובות מנסים לפרוטסט את ה-CSS של האתר המקורי.
+פרסור HTML הוא התהליך שבו אנו מפרשים קוד HTML לנתונים שהוא מייצג. מתכנתים עושים את זה להגיש נתונים מדף אינטרנט בצורה מבנית.
 
-## איך לבצע?
-לדוגמא, ננסה לגלות את הכותרת של האתר באמצעות ניתוח התחביר של HTML. לפני שנגשים לקוד, ניצור משתנה חדש שייצג את העמוד כולו. בדברי ימי נאחזתם בשם כותית האתר [], כפי שמופיע בקוד:
+## איך:
+הנה דוגמא של קוד Ruby שמשתמש ב-gem שנקרא 'nokogiri' לפרסור HTML.
 
-```ruby
-html = '
-<html>
-  <head>
-    <title>אתר דוגמה</title>
-  </head>
-  <body>
-    <h1>כותרת עיקרית</h1>
-    <p>טקסט בתוך פסקה</p>
-  </body>
-</html>'
+```Ruby
+require 'open-uri'
+require 'nokogiri'
+
+url = 'http://example.com'
+doc = Nokogiri::HTML(open(url))
+
+doc.css('h1').each do |title|
+  puts title.text
+end
 ```
+הפלט של דוגמא זו יהיה כל הכותרות מסוג h1 מהאתר http://example.com.
 
-כעת, נתחת את הכותית עם עזרת הפקודות הבאות:
+## צלילה עמוקה :
+הפרסור של HTML שונה קצת מפרסור שאר שפות התכנות משום ששפת HTML היא שפה שמאוד חשיפה לשגיאות. פרסרים של שפות אחרות לא ירחמו, אך ה- HTML פרסרים נותנים לנו מעין התמרמרות על שגיאות סינטקס. אלטרנטיבות ל- 'nokogiri' כוללות gems כמו 'hpricot' ו- 'oga'. 'Nokogiri', אך ורק, נהיה למועדף בשל flexability ומהירות שלו. הוא מאפשר למתכנת לבחור את המנוע שעליו הפרסר ירוץ - yaoba או REXML.
 
-```ruby
-title = html[/title>([^<]+)/m, 1]
-```
+## ראה גם:
+1. [Nokogiri](https://nokogiri.org/)
+2. [Hpricot](https://github.com/hpricot/hpricot)
+3. [Oga](https://github.com/YorickPeterse/oga)
 
-המפרש שלנו מחפש את התנאי הראשון בתוך התחביר של HTML. התנאי הזה מופיע לפני כל הערכים שהמפרש מפעיל. במידה והתנאי נמצא, המפרש מחזיר את התוצאה.
-
-## חפירה עמוקה
-החפירה בתחביר HTML נעשתה כברית עולם. אנחנו עושים את זה בגלל שזה מקל על קריאת קודי HTML. אבל ישנן אפשרויות נוספות לפרוס קוד של דפוסים ותורת קוד:
-* איפיי: כלי בתורה קוד ונוסה על ידי יחסים בכלי המחשב.
-* אמסון אם נחשבת כדי לגלות צורות של קוד תוצאות של subarrays על ידי partial-beacon-function כמו:
-
-
-```ruby
-array_except [3], paper pourtant [1] do
-exception_passe ???("Cartoon", la_date) do |la date de texte|
- à l'où_css, la_date de my_activité_seconde, une_chanson|
- à la_BDD, précédente_place_au, à_ma_partone_aux_beds_ 9
- end
- end
- end
-```
-
-אבל לשומר מכיוון שהמקבל הרב עובד גם עם נתונים ברמת עולם ב-HTML, אנחנו נצפה להשתמש בכלי זה כדי לעבור על תערובת HTML תחביר.
-
-## ראה גם
-למד עוד על טכניקות פרישת קוד של דפוס תערובת עם [Nokogiri](https://nokogiri.org/).
-למידע נוסף אודות כתבי RBP המעונה מ-HTML לפרסוניס תו בעמודים השונים כאב, [כלל טוב](http://goo.gl/Sjyfh).
+אין לשכוח מהבנות HTML משום שהן משחקות תפקיד חיוני ביצירת קוד ראוי. יותר מאשר כלי, הן הבחירה של מאמץ.

@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Elm recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,35 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Starting a new project in Elm means creating a fresh codebase for a new application or program. This allows programmers to start from a clean slate and build a project from scratch, tailored to their specific needs and goals. Starting a new project can also be a great opportunity to learn and practice new techniques and improve one's skills.
+Starting a new project in Elm involves initializing a basic project structure allowing us to organize and manage our code effectively. Programmers do this since it's a straightforward way to jumpstart coding without dealing with time-consuming setup details.
 
 ## How to:
+Let's create a new Elm project. Installing Elm is a prerequisite. Go to your terminal, and run:
 
-To start a new project in Elm, first make sure you have the latest version of Elm installed. Then, create a new directory for your project and navigate to it in your command line. Once in the project directory, run the following command:
-
+```sh
+npm install -g elm
 ```
+Navigate to your workspace directory with `cd your-directory` and initialize a new Elm project.
+
+```sh
 elm init
 ```
 
-This will create a new Elm project with the basic file structure and dependencies. You can then open the project in your preferred code editor and start writing your code in the `src` directory. When you're ready to compile your code into a JavaScript file, run the following command:
+This command sets up a new Elm project by creating an `elm.json` file which manages dependencies and a `src` directory where you'll put your code.
 
-```
-elm make src/Main.elm --output=main.js
+```Elm
+// ./src/Main.elm
+module Main exposing (..)
+
+import Html exposing (Html, text)
+
+main : Html msg
+main =
+    text "Hello, Elm!"
 ```
 
-This will generate a `main.js` file in your project's directory, which you can then include in your HTML file to run your Elm code in the browser.
+To run the above Elm application, type in the terminal:
+
+```Sh
+elm reactor
+```
+
+Copy the URL shown in the terminal and paste it in your browser to see your app running.
 
 ## Deep Dive:
+Elm introduced `elm init` only in version 0.19. It aims to eradicate the manual file scrub-creating and configuring tasks, giving programmers a swift start. 
 
-Elm was created by Evan Czaplicki in 2012 as a functional programming language for building web applications. It was designed to be simple, fast, and reliable, with a focus on code readability and maintainability. Starting a new project in Elm is a great choice for developers who prioritize efficient and bug-free code.
+If you need more complex setups, frameworks like `create-elm-app` or `elm-webpack-starter` are alternatives, yielding project structures for larger applications. However, `elm init` is the official technique and typically the simplest one.
 
-As an alternative to starting a new project in Elm, some programmers may choose to use JavaScript or another popular web development language. However, these languages often have more complex syntax and can lead to more errors and bugs in the code. Elm's strict type system and functional approach help prevent common bugs and make refactoring and maintenance easier in the long run.
-
-To implement a new project in Elm, it's important to understand the basics of functional programming and Elm's architecture. The Elm Architecture is a well-defined pattern for structuring Elm applications, which consists of a model, a view, and an update function. By following this pattern, developers can easily manage state and user interactions in their application.
+`elm init` creates a basic Elm 0.19 `elm.json` file behind the scenes. This file dictates your project dependencies and source directories. It is similar to `package.json` in Node.js ecosystem or `pom.xml` in Maven. 
 
 ## See Also:
-
-- Official Elm Documentation: https://guide.elm-lang.org/
-- Elm Cheat Sheet: https://devhints.io/elm
-- Getting Started with Elm video series: https://www.youtube.com/watch?v=H-i-iP2QiJI
+Look into official Elm guide [Installation Guide | An Introduction to Elm](https://guide.elm-lang.org/install/elm.html) and Richard Feldman’s Elm tutorial for further details and more advanced concepts [Beginning Elm - A gentle introduction to the Elm language](http://elmprogramming.com/)

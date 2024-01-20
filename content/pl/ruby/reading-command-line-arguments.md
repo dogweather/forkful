@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Ruby: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,29 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co to robić?
+# Czytanie Argumentów Linii Poleceń w Ruby
 
-Czy wiesz, że programiści często potrzebują, by ich programy przyjmowały zmienne wartości bezpośrednio z wiersza poleceń? To właśnie jest czytanie argumentów z wiersza poleceń! Jest to przydatny sposób na dostosowywanie programów dla różnych zastosowań lub wykorzystywanie zmiennych ustawień w miejscu uruchamiania aplikacji.
+## Co i dlaczego?
+
+Czytanie argumentów linii poleceń to proces gromadzenia informacji wprowadzonych przez użytkowników podczas wywoływania skryptów. Dzięki temu, programiści mogą dynamicznie manipulować funkcjami i zachowaniem skryptów.
 
 ## Jak to zrobić:
 
-Żeby odczytać argumenty z wiersza poleceń, w Ruby musisz użyć specjalnej metody ARGV. Spójrz na poniższy kod:
+W Ruby, argumenty linii poleceń są dostępne za pomocą specjalnej tablicy ARGV. Kiedy uruchamiasz skrypt, wszystko po nazwie skryptu traktowane jest jako argumenty i zapisywane do tablicy ARGV.
 
-```Ruby
-puts ARGV
+Poniżej znajduje się przykład.
+
+```ruby
+# plik: args.rb
+puts "You gave #{ARGV.size} arguments"
+ARGV.each_with_index do |arg, index|
+  puts "Argument #{index + 1}: #{arg}"
+end
 ```
 
-Zapisz go jako plik przyklad.rb, a następnie uruchom go w terminalu za pomocą polecenia `ruby przyklad.rb` i przekaż w tym samym wierszu poleceń jakieś zmienne, na przykład `ruby przyklad.rb hello world`. Wynikiem powinno być wyświetlenie tablicy argumentów przekazanych do programu: `["hello","world"]`.
+Przykładowe wyjście, kiedy uruchomisz `ruby args.rb arg1 arg2 arg3`:
 
-## Deep Dive:
+```
+You gave 3 arguments
+Argument 1: arg1
+Argument 2: arg2
+Argument 3: arg3
+```
 
-Odczytywanie argumentów z wiersza poleceń jest możliwe dzięki wbudowanej w język Ruby metodzie ARGV, która przekazuje przekazane wartości jako tablicę stringów zapisanych pod systemowym aliasem `ARGV`. Dzięki temu, programista może manipulować argumentami za pomocą znanych już metod tablicowych, np. `pop`, `shift` czy `join`.
+## Deep Dive
 
-Alternatywą dla ARGV jest użycie biblioteki o nazwie `optparse`, która pozwala na bardziej zaawansowane odczytywanie argumentów oraz budowę interfejsów wiersza poleceń.
+Czytanie argumentów linii poleceń ma wiele zastosowań, od zmiany zachowania skryptu po przetwarzanie danych. W historii programowania, jest to funkcja dostępna w prawie każdym języku, pozwalająca na interakcję użytkownika z kodem.
 
-Warto wiedzieć, że można przekazywać argumenty z wiersza poleceń do programu również przez zmienne globalne typu `$0`, `$*` i `$:`.
+W Ruby, alternatywą do użycia ARGV jest użycie biblioteki `OptionParser`, która umożliwia bardziej zaawansowane manipulacje z argumentami.
 
-## See Also:
+Co do implementacji, Ruby traktuje argumenty linii poleceń jako ciągi znaków. ARGV jest tablicą tych ciągów, a indeksy tablicy odpowiadają kolejności, w której argumenty zostały wprowadzone.
 
-- [Dokumentacja Ruby o metodzie ARGV](https://ruby-doc.org/core/ARGF.html)
-- [Przykładowa biblioteka optparse](https://github.com/ruby/rdoc/blob/master/lib/rdoc/task.rb)
+## Zobacz także:
+
+- Dokumentacja Ruby ARGV: https://ruby-doc.org/core-2.1.4/ARGV.html
+- Ruby OptionParser: https://ruby-doc.com/stdlib/libdoc/optparse/rdoc/OptionParser.html
+- Przewodnik po argumentach linii poleceń: https://www.learnenough.com/command-line-tutorial/command-line-arguments

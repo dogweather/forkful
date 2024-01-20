@@ -1,6 +1,6 @@
 ---
 title:                "部分文字列の抽出"
-html_title:           "C#: 部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
 simple_title:         "部分文字列の抽出"
 programming_language: "C#"
 category:             "C#"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何ができて、なぜやるのか？
+## 何となぜ？
 
-サブ文字列を抽出するとは、文字列から特定の部分文字列を取り出すことを指します。プログラマーがこれを行うのは、より柔軟な文字列操作を実現するためです。
+文字列抽出は、元の文字列から特定の部分文字列を切り出すことを指します。プログラマーは、取り扱うことの多いテキスト操作でもあり、データの検索や特定の情報の取り出しを簡単にするためにタスクを行います。
 
 ## 方法：
 
+C#では、Substringメソッドを使用して文字列から部分文字列を抽出します。次はその例です：
+
 ```C#
-// 文字列の一部を抽出する文字数を指定して抽出する方法
-string str = "こんにちは！私はプログラマーです。";
-string extractedStr = str.Substring(3, 5);
-// 出力：はじめま
-
-// 文字列内の文字で部分文字列を抽出する方法
-// (例：「はじめま」の「は」を抽出)
-string extractedChar = extractedStr.Substring(0, 1);
-// 出力：は
+string str = "Hello, World!";
+string substr = str.Substring(0, 5);
+Console.WriteLine(substr);
 ```
+出力：
+```
+Hello
+```
+この例では、文字列から最初の5文字を抽出しています。Substringメソッドの第一引数は開始インデックスで、第二引数は抽出する文字数です。
 
-## 深く掘り下げる
+## Deep Dive:
 
-抽出したい部分文字列の位置を指定することで、Substringメソッドを使用して任意の長さのサブ文字列を取得することができます。この機能は、文字列操作やデータ処理の際に非常に役立ちます。他のアルゴリズムやデータ構造を使用する代わりに、サブ文字列を抽出することでより柔軟なコーディングを実現できます。
+過去には、別の方法で部分文字列を抽出することもありました。特に古いプログラミング環境では、ArrayやListのようなデータ構造とインデックスを使って部分文字列を抽出することがよく行われました。しかし、C#のような現代的な言語では、この操作がSubstringメソッドのように組み込まれています。
 
-## 関連リンク
+部分文字列の抽出は、元の文字列を変更せずに新しい文字列を作成するため、メモリに影響を与えます。しかし、必要なケースでは他の手段を超えるほど便利で効率的な操作です。
 
-- [C# ドキュメント - Substring メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.substring)
-- [C# サブ文字列の例](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/how-to-extract-a-substring-from-a-string)
-- [C# の文字列操作のチュートリアル](https://www.tutorialsteacher.com/csharp/csharp-string)
+また、Substringメソッドの代わりにSpan<T>やMemory<T>を使用するという選択肢もあります。これらはメモリ効率を向上させる可能性がありますが、使い勝手は少し違います。
+
+## 参照：
+
+- マイクロソフト公式ドキュメンテーション：[String.Substring メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.string.substring?view=net-5.0)
+- [Span<T>について詳しく](https://docs.microsoft.com/ja-jp/dotnet/api/system.span-1?view=net-5.0)
+- [Memory<T>について詳しく](https://docs.microsoft.com/ja-jp/dotnet/api/system.memory-1?view=net-5.0)

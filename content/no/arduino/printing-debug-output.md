@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Arduino: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -11,32 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Å skrive ut debug output er en måte for programmerere å få informasjon om hvordan programmet fungerer mens det kjører. Dette gjør det enklere å finne og feilsøke eventuelle problemer i koden.
+Trykking av feilsøkingsutdata er det når programmerere logger data for å spore variabler og systemtilstand under kjøringen av et program. Dette gjør at de kan identifisere og fikse feilene raskere og mer effektivt.
 
 ## Hvordan:
+Her er noen nyttige eksempler på hvordan du kan prøve ut feilsøkingsutskrift i Arduino.
 
-For å skrive ut debug output i Arduino, bruker vi funksjonen ```Serial.print()```. Dette lar oss skrive ut tekst eller variabler til seriell-monitoren i Arduino IDE. La oss se på et eksempel:
-
-```
-int skole_timer = 5;
-Serial.print("Antall timer på skolen: ");
-Serial.print(skole_timer); // Printer variabelen skole_timer
-```
-
-Dette vil skrive ut følgende i seriell-monitoren:
-
-```
-Antall timer på skolen: 5
+```Arduino
+void setup() {
+  Serial.begin(9600); //starter serial kommunikasjon  
+}
+void loop() {
+  int sensorValue = analogRead(A0); //leser sensor verdien fra A0 pin
+  Serial.println(sensorValue); //printer sensorverdien for feilsøk
+  delay(1000); //venter i 1 sekund
+}
 ```
 
-## Dypdykk:
+Når du laster opp denne koden, vil Arduino lese sensorverdien hvert sekund og skrive den ut i den serielle monitoren. Dette hjelper oss med å holde oversikt over sensordataene.
 
-Å skrive ut debug output har vært en viktig del av programmering siden begynnelsen. Det lar oss få et bedre forståelse av hvordan koden fungerer og identifisere eventuelle problemer. Alternativet til å skrive ut debug output er å bruke en debugger, men dette kan være mer komplisert og ikke alltid tilgjengelig. I tillegg kan seriell-monitoren til Arduino brukes til å kommunisere med annet utstyr, som for eksempel sensorer eller skjermer.
+## Dyp Dykk
+Historisk ble feilsøkingsutskrift brukt fordi verktøyene for interaktiv feilsøking var primitive eller ikke-eksisterende. Selv om vi nå har mer sofistikerte feilsøkingsverktøy, er feilsøkingsutskrift fortsatt et nyttig verktøy på grunn av dets enkelhet og brede bruksområder.
 
-For å skrive ut tall i seriell-monitoren, må vi bruke ```Serial.println()``` i stedet for ```Serial.print()```. Dette vil legge til en linjeskift etter teksten eller variabelen. Det er også mulig å skrive ut tall i binær eller hexadecimal format ved å bruke hhv. ```Serial.print(BIN)``` og ```Serial.print(HEX)```.
+Det finnes alternativer til feilsøkingsutskrift, som f.eks interaktive feilsøkere, som gir mer detaljert informasjon og mer avansert kontroll over kjøringen. Men de kan være mer kompliserte og overkill for mange situasjoner.
 
-## Se også:
+Fra implementeringsperspektivet er `Serial.print` og `Serial.println` funksjoner i Arduino brukt for å sende data (tekst, variabler) fra Arduino til datamaskinen over USB-tilkoblingen. Disse funksjonene er en del av Serial Library.
 
-- Docs for ```Serial.print()``` i [Arduino Reference](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
-- Tutorial: [Skrive ut til seriell-monitoren med Arduino](https://www.arduino.cc/en/Tutorial/SerialPrint)
+## Se Også
+1. [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+2. [Arduino debug techniques](https://www.baldengineer.com/arduino-debug-techniques.html)
+3. [Understanding the Serial.print() Function in Arduino](https://www.makerguides.com/arduino-serial/)

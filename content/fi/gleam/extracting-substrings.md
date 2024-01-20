@@ -1,7 +1,7 @@
 ---
-title:                "Alimerkkijonojen erottelu"
-html_title:           "Gleam: Alimerkkijonojen erottelu"
-simple_title:         "Alimerkkijonojen erottelu"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,27 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & miksi?
+## Mitä & Miksi?
 
-Substringien erottaminen on prosessi, jossa ohjelmoijat etsivät merkkijonosta tietyt osat, jotka vastaavat määritettyjä kriteerejä. Useimmiten tätä käytetään tiedon jäsentämiseen ja käsittelyyn, jotta voidaan helpommin käsitellä suuria määriä dataa. Substringien erottaminen on tärkeä työkalu monissa ohjelmointitehtävissä, ja sen avulla voidaan tehdä monimutkaisista tehtävistä helpommin hallittavia.
+Merkkijonojen alijonot ovat osa merkkijonoa, joka koostuu peräkkäisistä merkeistä. Ohjelmoijat käyttävät tätä toimintaa data-analyysiin, validointiin ja manipulointiin.
 
-# Miten?
+## Kuinka:
 
-Gleamilla on monia tapoja toteuttaa substringien erottamista. Yksi yleisimmistä on käyttää funktiota `substring` yhdessä `find`-funktion kanssa, joka etsii merkkijonosta tietyt kohdat. Tässä esimerkissä otamme luvun 123 merkkijonosta "Gleam on ohjelmointikieli", ja palauttaa uuden merkkijonon "ohjelmointikieli" käyttämällä `substring`-funktiota yhdessä `find`-funktion kanssa:
+Gleamissa (versio 0.14.1) voit saada merkkijonojen alijonot kuin tämä:
 
 ```Gleam
-gleam> let s = "Gleam on ohjelmointikieli"
-gleam> let i = find(s, "123")
-Option(10)
-gleam> let substr = substring(s, i, 17)
-gleam> substr
-"Ohjelmointikieli"
+import gleam/string
+
+fn substring_example() {
+  let my_string = "Moi, Gleam!"
+  // Hae alijono indeksien 0 ja 3 väliltä
+  let greeting = string.slice(my_string, 0, 3)
+  let name = string.slice(my_string, 5, 10)
+  (greeting, name)
+}
+
+substring_example() // Tulostus: ("Moi", "Gleam")
 ```
 
-# Syvällisemmin
+## Syvemmällä:
 
-Substringien erottamista on käytetty ohjelmointitehtävissä jo pitkään, mutta Gleamilla sen toteuttaminen on helpompaa ja kevyempää kuin perinteisillä ohjelmointikielillä. Lisäksi Gleam tarjoaa myös muita vaihtoehtoja kuten `match`-lausekkeen, joka mahdollistaa monimutkaisempien substringien erottamisen. Implementationäpitä levetä käyttämällä `pattern`-avainsanaa ja ohjaamalla kunkin substritudun kohdan oikealle muuttujalle.
+Merkkijonojen alijonojen etsiminen on yleinen tehtävä, joka on ollut olemassa ikuisuuden ohjelmointikielen historiassa. Gleam käyttää tuotannon tehokasta ja turvallista implementointia, strings.slice joka on suoraviivainen ja tehokas.
 
-# Katso myös
+Vaihtoehtoisesti, voit käyttää string.split-toimintoa jakamaan merkkijono ja saamaan osia siitä. Mutta tämä on vähemmän tehoisa ja vie enemmän muistia.
 
-Käy lukemassa lisää Gleamista ja sen ominaisuuksista sen viralliselta verkkosivulta osoitteesta www.gleam-lang.org. Lisätietoja substringien erottamisesta löydät Gleamin dokumentaatiosta osoitteesta www.gleam-lang.org/docs. Voit myös tarkastella muita vaihtoehtoja, kuten Regex-kirjastoa, joka tarjoaa lisää työkaluja merkkijonojen hallintaan.
+```Gleam
+import gleam/string
+
+fn split_example() {
+   let my_string = "Moi, Gleam!"
+   string.split(my_string, ", ") // Tulostus: ["Moi", "Gleam!"]
+}
+
+split_example()
+```
+
+Tämä on yleiskatsaus Gleamin substring-toiminnallisuudesta, mutta se tarjoaa monia muita merkkijono-kirjaston menetelmiä.
+
+## Katso myös:
+
+Enemmän tietoa Gleamista ja sen merkkijonojen toiminnoista: 
+
+1. Gleam's Official Guide: https://gleam.run/book/tour/strings.html
+2. Gleam's API docs: https://hexdocs.pm/gleam_stdlib/gleam/string.html
+3. History of Substring operations: https://en.wikipedia.org/wiki/Substring

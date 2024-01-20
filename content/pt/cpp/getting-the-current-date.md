@@ -1,6 +1,6 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "C++: Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "C++"
 category:             "C++"
@@ -10,50 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que é e por que fazer a obtenção da data atual?
+# Obtendo A Data Atual em C++
 
-A obtenção da data atual é um processo simples em que um programa de computador obtém a data atual do sistema operacional e a utiliza para realizar determinadas tarefas. Programadores geralmente fazem isso para registrar informações em logs ou para exibir a data atual em um programa.
+## O Que & Por quê?
 
-# Como fazer:
+Obter a data atual é um processo que retorna a data e a hora atuais do sistema. Programadores costumam fazer isso quando precisam registrar eventos, criar um registro de atividades ou controlar o tempo.
 
-```
+## Como Fazer:
+Aqui estão exemplos de como usar a biblioteca Chrono, disponível no C++ (versão atual):
+
+```C++
 #include <iostream>
+#include <chrono>
 #include <ctime>
 
-using namespace std;
+int main() {
+    auto agora = std::chrono::system_clock::now();
+    std::time_t tempo_agora = std::chrono::system_clock::to_time_t(agora);
 
-int main()
-{
-    // Obtém a data atual do sistema
-    time_t now = time(0);
-
-    // Converte a data para o formato de string
-    char* dt = ctime(&now);
-
-    // Imprime a data atual
-    cout << "A data atual é: " << dt << endl;
+    std::cout << "Data e hora atuais: " << std::ctime(&tempo_agora) << std::endl;
 
     return 0;
 }
 ```
 
-Saída:
-A data atual é: Ter Dec 14 08:54:08 2021
+Ao rodar este código, você deverá ver algo similar ao seguinte na sua tela:
 
-# Deep Dive
+```C++
+Data e hora atuais: Tue Sep 14 20:21:39 2021
+```
 
-## Contexto histórico:
+## Mergulhando Mais Fundo
 
-Antes do padrão C++11, a biblioteca `<ctime>` não possuía funções específicas para obter a data atual. Programadores precisavam recorrer a bibliotecas de terceiros ou utilizar funções do sistema operacional, o que tornava o processo mais complexo.
+Historicamente, C++ não possuía suas próprias funções de data e hora. Costumava-se usar as funções da biblioteca C `ctime`. No C++11, a biblioteca `chrono` foi introduzida, oferecendo um manejo de tempo mais preciso e flexível.
 
-## Alternativas:
+Existem muitas alternativas para obter a data atual em C++. Uma delas é usando a função `time()` da biblioteca C. No entanto, é recomendado usar `chrono` pois ela é mais precisa e tem uma API mais consistente.
 
-Além do exemplo apresentado, existem outras maneiras de obter a data atual em um programa. Uma alternativa seria utilizar a biblioteca `<chrono>` do C++11, que possui funções mais robustas para lidar com datas e horários.
+A função `system_clock::now()` da biblioteca `chrono` retorna o tempo atual como um objeto `time_point`. Para converter isso em uma string legível, primeiro precisamos convertê-lo para `time_t` usando `to_time_t()`, e depois podemos usar `ctime()` para converter esse `time_t` em string.
 
-Outra opção seria utilizar uma biblioteca externa, como o Boost Date Time, que oferece uma ampla gama de funcionalidades para trabalhar com datas e horários.
+## Veja também
 
-# Veja também:
-
-- [Referência da biblioteca ctime do C++](https://www.cplusplus.com/reference/ctime/)
-- [Documentação da biblioteca chrono do C++11](https://en.cppreference.com/w/cpp/chrono)
-- [Boost Date Time Library](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)
+Aqui estão alguns links para fontes relacionadas que podem ser úteis:
+- Documentação da biblioteca Chrono: [https://en.cppreference.com/w/cpp/chrono](https://en.cppreference.com/w/cpp/chrono)
+- Tutorial de date e time em C++: [http://www.cplusplus.com/reference/ctime/](http://www.cplusplus.com/reference/ctime/)
+- Guia de Programação em C++ da Microsoft: [https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-160](https://docs.microsoft.com/en-us/cpp/cpp/?view=msvc-160)

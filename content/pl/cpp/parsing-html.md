@@ -1,7 +1,7 @@
 ---
-title:                "Analiza kodu HTML"
-html_title:           "C++: Analiza kodu HTML"
-simple_title:         "Analiza kodu HTML"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,138 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Parsowanie HTML to proces analizowania i przetwarzania kodu HTML w celu wyodrębnienia elementów i danych z danej strony internetowej. Programiści wykorzystują parsowanie HTML do automatycznego przetwarzania i wyświetlania zawartości stron internetowych.
+Analiza HTML (Parsing HTML), to proces wyodrębniania strukturalnych informacji z dokumentów HTML. Programiści wykonują to, aby manipulować i uzyskać dostęp do danych zawartych na stronach internetowych.
 
 ## Jak to zrobić:
+
+Oto przykładowy kod, jak zrealizować analizę HTML, używając biblioteki Gumbo w C++.
+
 ```C++
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-#include <vector>
-#include <algorithm>
+#include "gumbo.h"
 
-// Funkcja do parsowania HTML
-std::vector<std::string> parseHTML(std::string html) {
-    // Deklaracja zmiennych
-    std::vector<std::string> result; // przechowywanie elementów HTML
-    std::string tag, data; // przechowywanie tagu i danych
-    std::stringstream ss; // strumień danych
-    bool insideTag = false; // flaga do sprawdzania, czy znajdujemy się wewnątrz tagu
+void parseHtml(const std::string& html)
+{
+    GumboOutput* output = gumbo_parse(html.c_str());
 
-    // Przeglądanie kodu HTML po znakach
-    for (char c : html) {
-        // Jeśli napotkamy znak rozpoczynający tag
-        if (c == '<') {
-            // Jeśli już jesteśmy wewnątrz innego tagu, wstaw w wynik poprzedni tag i dane, które już przechowujemy                
-            if (insideTag) {
-                result.push_back(tag);
-                result.push_back(data);
-            }
-            // Przełączamy flagę na true i czyścimy zmienne
-            insideTag = true;
-            tag.clear();
-            data.clear();
-        }
-        // Jeśli napotkamy znak kończący tag
-        else if (c == '>'){
-            // Przełączamy flagę na false i zapisujemy tag i dane do zmiennych
-            insideTag = false;
-            tag = ss.str();
-            ss.str("");
-        }
-        // Jeśli jesteśmy wewnątrz tagu i napotkamy kolejny znak
-        else if (insideTag){
-            // Dopisujemy go do zmiennej data
-            ss << c;
-        }
-        // Jeśli nie jesteśmy wewnątrz tagu, ale napotkamy kolejny znak
-        else {
-            // Dopisujemy go do zmiennej tag
-            data += c;
-        }
-    }
-    // Dodaj ostatni tag i dane do wyniku
-    result.push_back(tag);
-    result.push_back(data);
-    // Zwróć wynik
-    return result;
+    //... Przetwarzanie `output->root`
+
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 
-int main() {
-    // Wczytywanie pliku HTML
-    std::ifstream file("index.html");
-    std::string html;
-
-    // Jeśli wczytano plik, przypisz kod HTML do zmiennej
-    if (file){
-        html = std::string( std::istreambuf_iterator<char>(file), std::istreambuf_iterator<char>() );
-        file.close();
-    }
-    // Jeśli nie, wyświetl komunikat o błędzie
-    else {
-        std::cout << "Błąd podczas wczytywania pliku!" << std::endl;
-        return 0;
-    }
-
-    // Parsowanie HTML przy użyciu naszej funkcji
-    std::vector<std::string> parsed = parseHTML(html);
-
-    // Wyświetlanie wyniku
-    for (auto it = parsed.begin(); it != parsed.end(); it+=2 ) {
-        std::cout << "Tag: " << *it << ", Dane: " << *(it+1) << std::endl; 
-    }
+int main()
+{
+    std::string html = "<p>Witaj, świat!</p>";
+    parseHtml(html);
+    return 0;
 }
 ```
-
-Przykładowy kod HTML w pliku:
-
-```html
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Przykładowa strona</title>
-    </head>
-    <body>
-        <h1>Witaj na mojej stronie!</h1>
-        <p>Tekst</p>
-        <a href="https://www.example.com">Link</a>
-    </body>
-</html>
+Przykładowe wyjście:
+```
+Witaj, świat!
 ```
 
-Przykładowy output:
+## Wgłąb:
 
-```
-Tag: <!DOCTYPE html>, Dane: 
-Tag: <html>, Dane: 
-Tag: <head>, Dane: 
-Tag: <title>, Dane: Przykładowa strona
-Tag: </title>, Dane: 
-Tag: </head>, Dane: 
-Tag: <body>, Dane: 
-Tag: <h1>, Dane: Witaj na mojej stronie!
-Tag: </h1>, Dane: 
-Tag: <p>, Dane: Tekst
-Tag: </p>, Dane: 
-Tag: <a href="https://www.example.com">, Dane: Link
-Tag: </a>, Dane: 
-Tag: </body>, Dane: 
-Tag: </html>, Dane: 
-```
+**Kontekst historyczny**: W różnych okresach w historii programowania, różne metody i biblioteki były używane do analizowania HTML, takie jak BeautifulSoup w Pythonie, Jsoup w Javie czy Gumbo w C++.
 
-Parsowanie HTML może być użyteczne w wielu przypadkach, na przykład do automatycznego przetwarzania danych ze stron internetowych lub do wyświetlania ich w odpowiedni sposób. Możliwe są również inne sposoby na parsowanie HTML, takie jak wykorzystanie bibliotek specjalnie stworzonych do tego celu.
+**Alternatywy**: Alternatywami dla Gumbo mogą być Tinyxml2 lub htmlcxx, które również są bibliotekami C++ do analizowania HTML.
 
-## Głębsza analiza
+**Szczegóły implementacji**: Gumbo jest minimalistyczną biblioteką C do analizy dokumentów HTML. Jest zgodny z HTML5, niezależny od platformy i został stworzony przez Google. Wielowątkowość nie jest obsługiwana bezpośrednio, ale można używać osobnych instancji Gumbo w różnych wątkach.
 
-Parsowanie HTML ma swoje początki w latach 90-tych, gdy powstał język HTML i zaczął być wykorzystywany w budowaniu stron internetowych. Obecnie istnieje wiele bibliotek i narzędzi, które ułatwiają ten proces. Istnieją również różne sposoby parsowania HTML, takie jak wykorzystanie wyrażeń regularnych lub drzewa DOM.
+## Zobacz też:
 
-## Zobacz także
-
-- [Tutorial: Jak napisać prosty algorytm parsowania HTML w C++](https://www.codeproject.com/Articles/4765/An-HTML-parser-in-C)
-
-- [Biblioteka do parsowania HTML w C++](https://code.google.com/archive/p/html-parser/)
-
-- [Szybkie przeglądanie HTML w C++](https://github.com/ot/metafi/blob/master/src/prolog/html_parser.cc)
+- Dokumentacja Gumbo: https://github.com/google/gumbo-parser#readme
+- Przewodnik po analizie HTML dla programistów: https://htmlparser.info/
+- Porównanie bibliotek do analizy HTML: https://tomassetti.me/parsing-html/

@@ -1,6 +1,6 @@
 ---
 title:                "デバッグ出力の印刷"
-html_title:           "Bash: デバッグ出力の印刷"
+html_title:           "Fish Shell: デバッグ出力の印刷"
 simple_title:         "デバッグ出力の印刷"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ 何をしているの？
-デバッグ出力を印刷するとは、わざとソフトウェアにエラーや問題が発生したときに、それらを見つけて修正するために、プログラマーが使用する手段です。 デバッグ出力を印刷することで、ソフトウェアの動作を追跡し、問題を特定できるようになります。
+## 何となぜ?
 
-＃＃ 方法：
-```bash
+デバッグ出力の印刷は、プログラムがどのように動作しているかを確認するための手段です。だから、プログラマーはそれを使います。問題が発生したとき、それを迅速に解決するための重要なツールです。
+
+## 使い方:
+
+下記コードを参考にしてください。
+
+```Bash
 #!/bin/bash
-...
-# この行はデバッグ出力を印刷するための例です
-echo "デバッグ出力: 変数の値は${variable}です"
+
+for i in {1..3}
+do
+   echo "Debug: Current iterator value is $i"
+done
 ```
 
-上記のように、Bashスクリプトでは、デバッグ出力を印刷するために``echo``コマンドを使用します。 印刷したいテキストを``""``で囲み、バッククォート内で変数を参照することができます。
-このようにすることで、実行中のプログラムが特定のステップに到達すると、その時点での変数の値を確認することができます。
+このスクリプトを実行すると次のような出力が得られます:
 
-＃＃ 深いダイブ：
-デバッグ出力を印刷することは、プログラミングの歴史の中でよく使用されてきたテクニックの一つです。 初期のプログラミング言語では、デバッグ出力はプログラムの標準出力に直接印刷されましたが、現代のプログラミングではデバッグ出力をファイルに書き込んだり、コンソールに表示することができます。
+```Bash
+Debug: Current iterator value is 1
+Debug: Current iterator value is 2
+Debug: Current iterator value is 3
+```
 
-デバッグ出力の代わりに、ログファイルに問題の情報を記録することもできますが、デバッグ出力の方がより即座に情報を確認できるため、より一般的な選択肢です。また、特定のバグを調査する際には、デバッグ出力を使用することで特定のステップで値が正しく設定されているかどうかを簡単に確認することができます。
+## 深堀り:
 
-デバッグ出力を実装する際には、必要な箇所でのみ出力するように注意することが重要です。過剰なデバッグ出力はプログラムの実行速度を遅くし、メモリを消費します。また、デバッグ出力をコメントアウトすることで、本番環境での実行には影響を及ぼさないようにすることも重要です。
+デバッグ出力の歴史は長く、コンピュータソフトウェアが存在する限り続いています。代替方法として、特定のセクションを詳細にチェックするためのデバッガツールも利用可能です。
 
-＃＃ 関連情報：
-デバッグ出力についてさらに学習したい場合は、以下のリンクを参考にしてください。
+バッシュでは、`set -x`を用いて、スクリプトの各行が実行される前にその行を表示することでデバッグ出力の印刷を実装することもできます。
 
-- [Bashのリファレンスガイド]（https://www.gnu.org/software/bash/manual/）
-- [デバッグモード]（https://www.gnu.org/software/make/manual/html_node/Debugging-Mode.html）
-- [Linuxでのデバッグ出力の設定]（https://www.cyberciti.biz/tips/debugging-shell-script.html）
+## 参考情報:
+
+1. GNU Bash manual: https://www.gnu.org/software/bash/manual/bash.html
+2. Debugging Bash scripts: https://www.linuxjournal.com/content/debugging-bash-scripts
+3. Bash Debugging: https://www.tutorialspoint.com/unix/debugging.htm
+
+以上です。この記事が皆さんのプログラミングに役立つことを願っています！

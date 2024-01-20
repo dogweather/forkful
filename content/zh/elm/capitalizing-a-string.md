@@ -1,7 +1,7 @@
 ---
-title:                "将字符串大写"
-html_title:           "Elm: 将字符串大写"
-simple_title:         "将字符串大写"
+title:                "将字符串转化为大写"
+html_title:           "Elm: 将字符串转化为大写"
+simple_title:         "将字符串转化为大写"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 是什么 & 为什么？
-对一个字符串进行 capitalization 是指将字符串中的首字母变为大写。程序员这样做的原因是为了让字符串更容易阅读，以及符合特定的代码规范。
+## 什么 & 为什么?
+大写字符串，意即将字符串中的所有小写字母转换为大写字母。程序员这样做，主要是为了保证文本的一致性和易读性。
 
-## 如何：
+## 如何做:
+在Elm编程语言中，我们可以使用 `String.toUpper` 函数来实现这个功能。下面给出一段简单的代码示例:
 ```Elm
--- 例1：将字符串 "hello world" 进行 capitalization
-String.toUpper "hello world"
+import Html exposing (text)
+import String
 
--- 输出： "Hello world"
+main =
+    text (String.toUpper "hello, elm!")
 ```
+运行上述代码，输出结果如下：
 ```Elm
--- 例2：将字符串 "elm programming" 进行 capitalization
-String.toUpper "elm programming"
-
--- 输出： "Elm programming"
+"HELLO, ELM!"
 ```
+在这个示例中，我们将 "hello, elm!" 这个字符串全部转化为了大写字母。
 
-## 深入探讨：
-- 历史背景：在早期的程序设计中，大部分程序语言都采用全大写的方式来书写代码和变量名。但是随着编程语言的发展，capitalization 逐渐成为一种编程风格和规范。
-- 替代方法：除了 Elm 中的 `String.toUpper` 函数，也可以使用 `String.toTitle` 函数来进行 capitalization。不过要注意，`toTitle` 函数不仅会将首字母变为大写，还会将字符串中每个单词的首字母都变为大写。
-- 实现细节：在 Elm 中，使用 `String.toUpper` 函数实现 capitalization 的原理是先将字符串转换为单个字符的列表，再对列表中的首字母进行大写转换，最后再将列表转换为字符串。
+## 深入探究
+大写字符串这个功能很早就出现在编程语言中。而在Elm中， `String.toUpper` 函数的内部实现是借助JS的 `toUpperCase` 函数完成的。
 
-## 参考资料：
-- Elm 的官方文档：https://guide.elm-lang.org/
-- `String.toUpper` 函数的详细说明：https://package.elm-lang.org/packages/elm/core/latest/String#toUpper
-- `String.toTitle` 函数的详细说明：https://package.elm-lang.org/packages/elm/core/latest/String#toTitle
+一种可能的替代方式是，逐个遍历字符串中的字符并用 `Char.toUpper` 函数将其变为大写。这种方法虽然更繁琐，但可以让我们更直接地处理每个字符。
+
+在Elm中，并没有现成的函数可以实现只大写字符串中的首字母（像JS中的 `capitalize` 函数那样）。不过，我们可以将字符串拆分为首字母和其余部分，然后分别处理。
+
+## 参见
+1. Elm官方文档对 `String.toUpper` 函数的说明：[链接](https://package.elm-lang.org/packages/elm/core/latest/String#toUpper)
+2. Elm官方文档对 `Char.toUpper` 函数的说明：[链接](https://package.elm-lang.org/packages/elm/core/latest/Char#toUpper)

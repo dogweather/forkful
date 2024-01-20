@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une demande http"
-html_title:           "Java: Envoi d'une demande http"
-simple_title:         "Envoi d'une demande http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,47 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-L'envoi d'une requête HTTP est le moyen pour un programme informatique de demander des informations à un serveur web. Les programmeurs le font pour obtenir des données en temps réel ou pour intégrer des fonctionnalités interactives dans leurs applications.
+L'envoi d’une requête HTTP, c'est demander des données à un serveur via le protocole HTTP. Les programmeurs l'utilisent pour interagir avec des services Web, récupérer des données, etc.
 
-## Comment le faire:
+## Comment faire:
 
-Dans Java, vous pouvez utiliser la classe HttpURLConnection pour envoyer une requête HTTP. Voici un exemple de code:
+**Importation de bibliothèques nécessaires**
 
-```
-URL url = new URL("https://www.example.com/api");
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setRequestMethod("GET");
-
-int responseCode = con.getResponseCode();
-System.out.println("Code de réponse: " + responseCode);
-
-BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream()));
-
-String inputLine;
-StringBuffer response = new StringBuffer();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
-}
-in.close();
-
-System.out.println("Réponse: " + response.toString());
+```Java
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.net.URI;
 ```
 
-Cela enverra une requête GET à l'URL spécifiée et affichera le code de réponse et la réponse du serveur.
+**Créer une requête HTTP GET**
 
-## Plongée en profondeur:
+```Java
+HttpClient client = HttpClient.newHttpClient();
+HttpRequest request = HttpRequest.newBuilder()
+      .uri(URI.create("http://example.com"))
+      .build();
+```
 
-L'envoi d'une requête HTTP est un aspect essentiel de la communication entre le client et le serveur dans le développement web. Historiquement, les programmeurs utilisaient la classe HttpURLConnection, mais depuis Java 11, il est recommandé d'utiliser la classe HttpClient pour une meilleure gestion des connexions et des requêtes.
+**Envoyer la requête et obtenir la réponse**
 
-Il existe également des alternatives telles que l'utilisation de bibliothèques externes comme Apache HttpComponents ou OkHttp.
+```Java
+HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+System.out.println(response.body());
+```
 
-Pour comprendre le processus d'envoi d'une requête HTTP, il est important de connaître les différents types de méthodes de requête (GET, POST, PUT, etc.) et leur utilisation appropriée, ainsi que la structure d'une requête et d'une réponse HTTP.
+Lors de l'exécution de ce code, vous devriez voir le contenu HTML de "http://example.com" dans votre console.
 
-## Voir aussi:
+## Plongée Profonde
 
-- Guide Java sur l'utilisation de HttpURLConnection: https://docs.oracle.com/javase/tutorial/networking/urls/readingURL.html
-- Documentation officielle de la classe HttpClient: https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html
-- Utilisation d'Apache HttpComponents: https://www.baeldung.com/httpclient-guide
-- Utilisation d'OkHttp: https://square.github.io/okhttp/
+Historiquement, les requêtes HTTP étaient réalisées en Java à l'aide de `HttpURLConnection`. Cependant, depuis Java 11, le `HttpClient` plus moderne et complet est le mode privilégié.
+
+En termes d'alternatives, vous pouvez également utiliser des bibliothèques tiers comme OkHttp ou Apache HttpClient. Chacune a ses propres avantages et inconvénients en termes de performance, de flexibilité et de facilité d'utilisation.
+
+En ce qui concerne les détails de mise en œuvre, `HttpClient` offre un paradigme à la fois synchrone (comme dans l'exemple montré) et asynchrone (utilisant `CompletableFuture`) pour gérer les requêtes HTTP. Il prend également en charge HTTP/2 et WebSocket.
+
+## Voir Aussi
+
+- [Java - Envoi de demandes HTTP](https://www.baeldung.com/java-http-request)
+- [Java HttpClient Tutorial](https://www.callicoder.com/java-11-http-client-api-tutorial-example/)
+- [API HttpClient (Java 11 et plus récent)](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando o comprimento de uma cadeia de caracteres"
-html_title:           "Rust: Encontrando o comprimento de uma cadeia de caracteres"
-simple_title:         "Encontrando o comprimento de uma cadeia de caracteres"
+title:                "Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
+simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Por Que?
+Determinar o comprimento de uma string é o processo pelo qual descobrimos o número de caracteres presentes numa string. Os programadores fazem isso principalmente para ajudar na manipulação e validação de dados.
 
-Encontrar o tamanho de uma string em programação significa descobrir quantos caracteres existem naquela string. Isso é útil porque permite que os programadores manipulem e usem essas strings de maneira eficiente em seus códigos.
+## Como Fazer:
 
-## Como fazer:
-
-Existem algumas maneiras de encontrar o tamanho de uma string em Rust. Uma maneira é usando o método `len ()`, que retorna o número de bytes na string. Veja o exemplo abaixo:
-
-```Rust
-let string = String::from("Olá mundo!");
-println!("Tamanho da string: {}", string.len());
-```
-
-A saída será:
-
-```
-Tamanho da string: 11
-```
-
-Outra maneira é usar o método `chars ()`, que retorna um iterador de cada caractere na string. Então, você pode usar o método `count ()` para contar o número de caracteres na string. Veja o exemplo abaixo:
+Para descobrir o comprimento de uma string em Rust, podemos usar a função len(). Veja o exemplo abaixo:
 
 ```Rust
-let string = String::from("Olá mundo!");
-println!("Tamanho da string: {}", string.chars().count());
+fn main() {
+    let string = "Olá, Mundo!";
+    println!("O comprimento da string é: {}", string.len());
+}
 ```
 
-A saída será a mesma: 11.
+Ao rodar este código, o resultado será:
 
-## Mergulho profundo:
+```Rust
+O comprimento da string é: 12
+```
 
-Historicamente, encontrar o tamanho de uma string tem sido um desafio para os programadores, pois muitas linguagens exigiam que o desenvolvedor aloque espaço suficiente na memória antes de adicionar uma string a um array de caracteres. Em Rust, isso é tratado automaticamente pelo tipo String, que armazena o tamanho da string junto com o seu conteúdo.
+## Mergulhando Fundo
 
-Existem algumas alternativas para encontrar o tamanho de uma string em Rust, sendo a mais comum o uso do método `len ()` mencionado anteriormente.
+1) Contexto Histórico
+Rust, desenvolvido pela Mozilla Research, é uma linguagem conhecida por sua segurança e performance, por isso a função len() foi concebida de forma direta para contornar a complexidade decorrente de codificações com diferentes números de bytes por caractere.
 
-## Veja também:
+2) Alternativas
+Se você quiser contar os caracteres Unicode em vez dos bytes, use a função chars(). Esta função considera os caracteres com acentos como um só, diferente da len(). Veja o exemplo:
 
-- Documentação oficial do método `len ()`: https://doc.rust-lang.org/std/string/struct.String.html#method.len
-- Outras maneiras de trabalhar com strings em Rust: https://www.geeksforgeeks.org/working-strings-rust/
+```Rust
+fn main() {
+    let s = "olá";
+    println!("{}", s.len()); // imprime: 4
+    println!("{}", s.chars().count()); // imprime: 3
+}
+```
+
+3) Detalhes de Implementação
+A função len() retorna o número de bytes que a string ocupa, não o número de caracteres Unicode. Em Rust, as strings são codificadas em UTF-8, onde cada caractere Unicode pode ocupar de 1 a 4 bytes.
+
+## Para Saber Mais
+
+- Rust Documentation: https://doc.rust-lang.org/std/string/struct.String.html
+- The Rust Programming Language Book: https://doc.rust-lang.org/book/
+- Strings in Rust: https://fasterthanli.me/articles/a-half-hour-to-learn-rust

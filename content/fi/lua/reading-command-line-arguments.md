@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Lua: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Käskyriviparametrien Lukemista Lua-Kielellä
+
 ## Mikä & Miksi?
 
-Command-line argumenttien lukeminen tarkoittaa tietyn komennon antamista ohjelmalle sen käynnistämisen yhteydessä. Tämä on tärkeä osa ohjelmointia, sillä se mahdollistaa ohjelman käyttämisen eri tilanteisiin ja tarjoaa monipuolisuutta sen käyttöön.
+Käskyriviparametrien lukeminen viittaa prosessiin, jossa ohjelma vastaanottaa ja käsittelee käyttäjän syöttämät tiedot käynnistysvaiheessa. Koodarit tekevät tämän jotta he voivat ohjeistaa ohjelmaa tekemään haluttunsa perusteella käyttäjän tarpeita.
 
-## Miten?
-
-Käytössäsi on useita vaihtoehtoja, joilla voit lukea command-line argumentteja Lua-kielellä. Yksi tapa on käyttää standardia `arg`-taulukkoa, joka sisältää kaikki annetut argumentit. Esimerkiksi seuraavassa koodinpätkässä tulostetaan ensimmäinen annettu argumentti:
+## Miten toimii:
 
 ```Lua
-print(arg[1])
+-- Hae argumentit 
+local args = {...}
+
+-- Tulosta argumentit
+for i, arg in ipairs(args) do
+    print("Argumentti " .. i .. ": " .. arg)
+end
 ```
 
-Voit myös käyttää `arg`-taulukon `select`-funktiota, joka mahdollistaa halutun argumentin valitsemisen. Esimerkiksi seuraavassa koodissa tulostetaan kolmas argumentti:
+Kun ajetaan koodi yläpuolella `lua script.lua Hello, Lua!`, ohjelma tulostaa seuraavan:
 
 ```Lua
-print(select(3, table.unpack(arg)))
+Argumentti 1: Hello,
+Argumentti 2: Lua!
 ```
 
-## Syvemmälle
+## Syvällinen Sukellus
 
-Valmiit vaihtoehdot command-line argumenttien lukemiseen eivät aina välttämättä tarjoa riittäviä mahdollisuuksia ohjelman muokkaamiseen. Tässä tapauksessa voit käyttää `io.stdin`-tiedostoa, johon voit ohjata käyttäjän antamat argumentit.
+Lua-kielessä käskyriviparametrit esitellään taulukossa, johon pääsee käsiksi käyttämällä kolmea pistettä (`...`). Tämä tapa otettiin käyttöön Lua-julkaisun 5.1 myötä vuonna 2006; aiemmissa versioissa käytettiin globaalia taulukkoa nimeltä arg.
 
-On myös olemassa useita kirjastoja, kuten `pl` ja `cmdline`, jotka tarjoavat lisätoiminnallisuuksia command-line argumenttien käsittelyyn.
+Vaihtoehtona, voi käyttää io-moduulia syöttö- ja lähtötoimintojen, myös syötteiden, hankkimiseen käyttäjältä. Tämä menetelmä on joustavampi, mutta saattaa olla monimutkaisempi uusille Lua-koodareille.
 
-Juuret command-line argumenttien lukemisessa ovat UNIX-järjestelmissä, joissa käyttäjät tarvitsevat tapoja antaa ohjelmille tietoja niiden suorittamista varten.
+Lisätiedot, kuten matalamman tason toteutuksen yksityiskohdat, yleensä riippuvat käytetyn Lua-toteutuksen syvemmistä yksityiskohdista.
 
-## Katso myös
+## Katso Myös
 
-• Oficial Lua: https://www.lua.org/
+- Lua-Kieliopas: [Programming in Lua](https://www.lua.org/pil/contents.html)
+- Lisää Lua-ohjelmointiesimerkkejä: [Learn X in Y minutes](https://learnxinyminutes.com/docs/lua/)
 
-• Lua arg documentation: https://www.lua.org/manual/5.3/manual.html#lua_env_args
-
-• Lua stdio documentation: https://www.lua.org/pil/24.1.html
+Niin siinä. Toivottavasti tämä artikkeli antoi selkeyttä siitä, miten Lua käsittelee käskyriviparametreja!

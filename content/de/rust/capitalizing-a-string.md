@@ -1,7 +1,7 @@
 ---
-title:                "String großschreiben"
-html_title:           "Rust: String großschreiben"
-simple_title:         "String großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Rust: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,53 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist das und warum?
+## Was & Warum?
 
-Das Hochsetzen eines Strings bedeutet, alle Buchstaben in einem String so zu ändern, dass sie großgeschrieben sind. Programmierer machen das in der Regel, um eine konsistente Formatierung von Text zu gewährleisten.
+Das Grossschreiben einer Zeichenkette ist die Umwandlung des ersten Buchstabens jedes Wortes in Großbuchstaben. Programmierer machen dies meistens für die Formatierung der Benutzerausgabe oder um Sortier- und Suchoperationen zu standardisieren.
 
-Wie geht's?
+## Wie macht man das:
 
-Rust hat eine eingebaute Methode, um eine Zeichenkette zu kapitalisieren. Dies kann entweder durch die Verwendung der `to_uppercase` Methode oder der `to_ascii_uppercase` Methode erreicht werden. Hier ist ein Beispielcode:
+In Rust erreichen Sie dies, indem Sie die Methode `to_uppercase()` in Kombination mit dem Iterator `chars()`. Hier ein Beispiel:
 
-``` Rust
-let mut mein_string = String::from("hallo welt");
-mein_string = mein_string.to_uppercase();
-println!("{}", mein_string); // Ausgabe: HALLO WELT
+```Rust
+fn haupt() {
+    Lass uns eingabe = "hallo welt";
+    Lass uns ergebnis: String = eingabe.chars()
+        .enumerate()
+        .map(|(i, c)| if i == 0 || eingabe.chars().nth(i - 1).unwrap() == ' ' { c.to_uppercase().collect::<String>() } else { c.to_lowercase().collect::<String>() })
+        .collect();
+    println!("{}", ergebnis);
+}
 ```
 
-Eine alternative Methode ist die Verwendung von `chars` und `map`. Hier ist ein Beispielcode:
+Wenn Sie dieses Programm ausführen, erhalten Sie: `Hallo Welt`
 
-``` Rust
-let mut mein_string = String::from("hallo welt");
+## Vertiefung:
 
-mein_string = mein_string.chars()
-    .map(|c| c.to_ascii_uppercase())
-    .collect();
-    
-println!("{}", mein_string); // Ausgabe: HALLO WELT
-```
+Das Konzept des Großschreibens von Zeichenketten stammt aus der Zeit der gedruckten Medien, wo es zur Hervorhebung und besseren Lesbarkeit genutzt wurde. In Rust können Sie die Eingebaute Methode `to_uppercase()` verwenden, es gibt jedoch auch Alternativen wie die Bibliothek `unicase` für komplexere Anforderungen.
 
-Eine dritte Möglichkeit ist die Verwendung der `to_uppercase` Funktion aus dem `ascii` Crate. Hier ist ein Beispielcode:
+Die Methode `to_uppercase()` in Rust arbeitet teichenweise, was bedeutet, dass sie jedes Zeichen in einen Unicode-Skalarwert umwandelt, ihn in Großbuchstaben umwandelt und anschließend in einen String zurückführt. 
 
-``` Rust
-use ascii::{AsciiChar, AsciiString};
+## Weitere Informationen:
 
-let mut mein_ascii_string = AsciiString::from_str("hallo welt");
-mein_ascii_string = mein_ascii_string.to_uppercase();
-println!("{}", mein_ascii_string); // Ausgabe: HALLO WELT
-```
-
-Tiefer eintauchen
-
-Das Kapitalisieren von Strings ist eine gängige Aufgabe in der Programmierung, und nahezu alle Programmiersprachen bieten Möglichkeiten, dies zu erreichen. In früheren Versionen von Rust musste man eine externe Library (wie z.B. `text_io`) verwenden, um dies zu erreichen. Seit Rust 1.27 ist diese Funktion jedoch in die Standardbibliothek integriert.
-
-Alternativ kann das `to_uppercase` Verfahren auch auf einzelne Zeichen angewendet werden. Dies ermöglicht eine feinere Kontrolle über die Formatierung von Strings.
-
-Der konkrete Algorithmus, der zur Kapitalisierung eines Strings verwendet wird, ist vom System abhängig und kann in zukünftigen Rust-Versionen geändert werden.
-
-Weitere Informationen
-
-- Rust Standard Library Dokumentation für `to_uppercase`: https://doc.rust-lang.org/std/string/trait.UpperCase.html
-- `ascii` Crate Dokumentation: https://docs.rs/ascii/0.9.1/ascii/
-- Frühere Option: `text_io` Crate Dokumentation: https://docs.rs/text_io/0.1.7/text_io/
-- Rust-Community-Diskussion über das Kapitalisieren von Strings: https://users.rust-lang.org/t/why-use-ascii-ci-case-insensitive-or-upper-case-or-lower-case/18057
+- [Rust Buch: Mehr über Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- [Rust Documentation: Methode to_uppercase()](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
+- [Bibliothek 'unicase'](https://docs.rs/unicase/2.6.0/unicase/)

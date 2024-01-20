@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "Javascript: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,29 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什麼和為什麼？
+# 将日期转换为字符串：深入研究JavaScript日期处理
 
-日期轉換成字串是將日期數據轉換為可讀的文字格式。程式設計師做這件事的原因是為了讓日期更容易閱讀和理解，以及方便日期在不同的程式語言和格式之間轉換。
+## 什么 & 为什么？
+将日期转换为字符串，就是将日期对象变成一串可读的文本。程序员为何要做这一步？其原因在于，我们要将日期美化显示出来，或者在不同的编程环境之间传递数据。
 
-## 如何：
+## 怎么做： 
 
-```
-// 使用JavaScript中的內建函式將日期轉換為字串
-let today = new Date(); // 創建一個日期物件
-let dateString = today.toDateString(); // 使用toDateString()方法將日期轉換為字串
-console.log(dateString); // 輸出："Sat Nov 14 2020"
+在JavaScript中，我们可以使用`Date`对象的`toString()`方法来完成转换。
 
-// 使用第三方函式庫Moment.js將日期轉換為指定格式的字串
-let today = new Date(); // 創建一個日期物件
-let dateString = moment(today).format('MMMM Do YYYY'); // 使用format()方法將日期轉換為"Month Day Year"格式的字串
-console.log(dateString); // 輸出："November 14th 2020"
+```Javascript
+let date = new Date();
+console.log(date.toString());
 ```
 
-## 深入探討：
+示例的输出可能如下：
 
-日期轉換成字串其實是一項很常見的任務，在不同的程式語言和平台中都會有相應的方法或函式可以使用。除了使用內建函式或第三方函式庫，也可以自己寫程式碼來完成日期轉換的任務。不過需要注意的是，日期的格式會影響轉換結果，因此在使用時需確保日期格式的準確性。
+```Javascript
+"Wed Mar 24 2021 10:23:42 GMT+0800 (中国标准时间)"
+```
 
-## 參考資料：
+## 深入研究 
 
-- [日期物件(Date) - JavaScript | MDN](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js - Parse, validate, manipulate, and display dates in JavaScript](https://momentjs.com/)
+JavaScript在1995年由Netscape公司创造，并且内建了对日期和时间的处理。如果你想格式化日期的输出，或者需要更细粒度的控制，那么可以使用`date-fns`, `moment.js`等流行的第三方库。
+
+替代方法可以使用`toISOString()`方法，它返回一个遵循ISO 8601扩展格式的字符串。
+
+```Javascript
+let date = new Date();
+console.log(date.toISOString());
+```
+
+示例的输出可能如下：
+
+```Javascript
+"2021-03-24T02:23:42.000Z"
+```
+
+你可能注意到，上述结果是以GPMT时间表示的，与中国标准时间相比，需要把时间向后调8小时才能得到本地时间。
+
+## 另请参阅 
+
+如果你想深入研究JavaScript日期方法和库，推荐阅读以下材料：
+
+- [MDN Web文档：Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [date-fns库](https://date-fns.org/)
+- [moment.js库](https://momentjs.com/)

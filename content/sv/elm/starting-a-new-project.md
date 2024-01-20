@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "Elm: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,23 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Vad & Varför?
-Att starta ett nytt projekt innebär att du skapar en ny Elm-applikation från grunden. Detta kan innebära att du utvecklar en helt ny applikation eller att du bygger vidare på en befintlig applikation. Programerare börjar ofta nya projekt för att utforska nya idéer, lösa problem eller förbättra befintliga applikationer.
+## Vad & Varför?
+Att starta ett nytt projekt är processen att initialisera ett programmeringsarbete från grunden. Programmerare gör detta för att bygga unika lösningar, skapa nya produkter eller lära sig nya programmeringskoncept.
 
-### Så här:
+## Så här gör du:
+Här är hur du kan starta ett nytt Elm-projekt. Först, installera Elm och skapa en ny katalog för ditt projekt.
+
 ```Elm
-module Main exposing (..)
-
-import Html exposing (text)
-
-main =
-    text "Hello World!"
+$ npm install -g elm
+$ mkdir my-elm-project && cd my-elm-project
 ```
 
-Kör detta exempel i Elm REPL eller kompilera det till JavaScript och öppna det i en webbläsare. Du bör se texten "Hello World!" visas på skärmen. Detta är det grundläggande kodmönstret för en Elm-applikation.
+Ange därefter följande kod för att skapa din första Elm-fil.
 
-### Djupdykning:
-Elm är ett funktionellt programmeringsspråk som utvecklades av Evan Czaplicki år 2012. Det är baserat på Haskell och utformats för att skapa användargränssnitt för webbläsaren. Alternativ till Elm kan vara JavaScript, PureScript eller ReasonML, men Elm erbjuder en renare och säkrare kodstruktur. För att starta ett Elm-projekt behöver du installera Elm-plattformen på din dator och börja med att skriva kod i en Elm-fil (.elm). För att se mer avancerade exempel och funktioner, kan du utforska Elm's officiella dokumentation.
+```Elm
+$ echo "module Main exposing (..)\n\nimport Html exposing (text)\n\nmain =\n    text \"Hej, Elm!\"" >> Main.elm
+```
 
-### Se också:
-[Elm Documentaion](https://elm-lang.org/docs)
+Om du kör Elm-filen kommer du att se "Hej, Elm!" på skärmen.
+
+```Elm
+$ elm reactor
+```
+
+Navigera till `http://localhost:8000` för att se projektet.
+
+## Djupdykning:
+
+(1) Historisk kontext: Elm är ett funktionellt programmeringsspråk som fokuserar på användargränssnitt. Lanserad 2012, det var det första att förespråka arkitektonisk modell känd som "The Elm Architecture".
+
+(2) Alternativ: Förutom Elm, finns det andra verktyg för att bygga webbapplikationer som React, Vue och Angular. Men, Elm skilldrar sig genom sina robusta säkerhetsfunktioner och enklare koncept för tillståndshantering.
+
+(3) Implementeringsdetaljer: Ett Elm-program består av moduler, vilket bidrar till att främja koden återanvändning och underhåll. Dessutom använder Elm ett strikt statiskt typsystem, vilket betyder att många potentiella körningsfel fångas vid kompileringstid. 
+
+## Se Även:
+Du kan lära dig mer om Elm-programmering genom att besöka följande länkar:
+
+- Elm's officiella dokumentation: https://elm-lang.org/docs
+- Elm Architecture: https://guide.elm-lang.org/architecture/
+- Elm tutorial på Elm's officiella Youtube-kanal: https://www.youtube.com/watch?v=tdYVjgVqgi4

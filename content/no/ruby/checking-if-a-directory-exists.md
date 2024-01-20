@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "Ruby: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "Lua: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,24 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Nå som du har blitt en habil Ruby programmerer, er det på tide å dykke dypere inn i språket. En viktig del av programmering er å sjekke om en mappe eksisterer. Dette er nyttig når du ønsker å legge til nye filer i en eksisterende mappe eller å navigere mellom forskjellige mapper.
+## Hva og Hvorfor?
 
-## Hva & Hvorfor?
-Sjekking av mappeeksistens er en måte å kontrollere om en spesifikk mappe finnes på en gitt sti. Dette er en grunnleggende funksjon i programmering, da det hjelper deg å navigere og håndtere filer mer effektivt. Ved å sjekke om en mappe eksisterer, kan du også unngå feil og unødvendig kode som kan bremse ned programmet ditt.
+Sjekking av om en mappe eksisterer er prosessen hvor programmeret fastslår om det er en gitt mappe i systemet eller ikke. Dette er nyttig for å unngå feil som kan forekomme når programmer prøver å få tilgang til mapper som ikke eksisterer.
 
-## Slik gjør du det:
-For å sjekke om en mappe eksisterer i Ruby, bruker du `Dir.exist?()` metoden. Denne metoden tar inn en streng som parameter, som representerer stien til den aktuelle mappen. Her er et eksempel på hvordan dette kan se ut i praksis:
+## Hvordan Gjøre Det:
+
+Eksemplet nedenfor viser hvordan sjekke om en katalog eksisterer i Ruby. 
+
 ```Ruby
-if Dir.exist?("./mappenavn")
-    puts "Mappen eksisterer!"
-else
-    puts "Mappen finnes ikke"
+def directory_exists?(directory)
+  Dir.exist?(directory)
 end
+
+puts directory_exists?('/path/to/directory') # returnerer enten true or false
 ```
-Dette vil skrive ut "Mappen eksisterer!" hvis mappen med navnet "mappenavn" finnes, ellers vil den skrive ut "Mappen finnes ikke". Du kan også bruke `Dir.exist?()` i kombinasjon med andre metoder, for eksempel `Dir.entries()` for å få en liste over filer og mapper inni den gitte mappen.
 
-## Dykk dypere:
-Å sjekke om en mappe eksisterer er en grunnleggende funksjon i alle programmeringsspråk. Faktisk var det en vanlig utfordring for mange programmerere før i tiden da datamaskiner ofte ikke hadde grafiske grensesnitt, men var basert på kommandolinjen. Å sjekke om en mappe eksisterer er også en viktig del av å håndtere feil og unntak i et program. I tillegg kan du også bruke `File.exist?()` metoden for å sjekke om en spesifikk fil eksisterer, i stedet for en mappe.
+Ved å kjøre koden ovenfor, vil du se `true` hvis mappen '/path/to/directory' eksisterer, og `false` hvis den ikke gjør det.
 
-## Se også:
-For mer informasjon om å sjekke mappeeksistens i Ruby, sjekk ut [Ruby dokumentasjonen](https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F) for `Dir.exist?()` metoden. Du kan også sjekke ut [denne YouTube videoen](https://www.youtube.com/watch?v=NTg0EXVDeRc) for en praktisk gjennomgang av å sjekke mappeeksistens i Ruby. Lykke til med programmeringen din!
+## Dyp Dykk:
+
+Den `Dir.exist?` metoden har blitt brukt til å sjekke om en mappe eksisterer siden Ruby 1.9.3. Før denne versjonen, måtte programmerere bruke `File.directory?` metoden.
+
+Et alternativ til `Dir.exist?` er `File.directory?`, som også returnerer `true` hvis katalogen eksisterer. Bruken er nesten lik:
+
+```Ruby
+def directory_exists?(directory)
+  File.directory?(directory)
+end
+
+puts directory_exists?('/path/to/directory') # returnerer enten true or false
+```
+
+Forskjellen mellom `Dir.exist?` og `File.directory?` er at sistnevnte også sjekker om stien peker på et filsystem objekt som er en mappe, mens `Dir.exist?` kun sjekker om stien er gyldig.
+
+## Se Også:
+
+For mer komplette diskusjoner og relaterte ressurser om dette emnet, se følgende lenker:
+
+1. Ruby Dokumentasjon: [Dir.exist?](https://ruby-doc.org/core-2.6.3/Dir.html#method-c-exist-3F)
+2. Ruby Dokumentasjon: [File.directory?](https://ruby-doc.org/core-2.6.3/File.html#method-c-directory-3F)
+3. Stack Overflow: [Hvordan sjekke om en katalog eksisterer i Ruby](https://stackoverflow.com/questions/2108727/which-in-ruby-checking-if-a-file-exists)
+4. Ruby Forum: [Diskusjoner om katalog behandling i Ruby](https://www.ruby-forum.com/c/ruby)

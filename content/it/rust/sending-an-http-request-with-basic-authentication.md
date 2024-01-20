@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Rust: Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
-L'invio di una richiesta HTTP con autenticazione di base è un metodo comune utilizzato dai programmatori per accedere a risorse protette su una rete, come ad esempio una password protetta o una pagina web privata.
+## Che cosa & Perché?
+Invio di una richiesta HTTP con autenticazione base significa fornire un nome utente e una password per l'accesso al server. I programmatori lo fanno per garantire la sicurezza e restringere l'accesso a particolari risorse sul server.
 
-Come:
+## Come fare:
+In Rust, potresti usare la libreria 'reqwest'. Ecco un esempio:
+
 ```Rust
-extern crate reqwest;
+use reqwest::Client;
+use reqwest::header::HeaderValue;
 
-use std::io::Read;
+let client = Client::new();
+let url = "http://example.com";
+let auth_value = HeaderValue::from_str(&format!("Basic {}", base64::encode("username:password")))
+    .unwrap();
 
-fn main() {
-    let mut response = reqwest::get("http://example.com")
-        .expect("Errore nella richiesta HTTP")
-        .text()
-        .expect("Errore nel parsing della risposta");
-        
-    println!("Response: {}", response);
-}
+let res = client.get(url)
+    .header(reqwest::header::AUTHORIZATION, auth_value)
+    .send()
+    .await?;
+
+println!("Response: {:?}", res);
 ```
-Questo codice utilizza la libreria di terze parti "reqwest" per inviare una richiesta HTTP al sito "example.com" e ottenere una risposta sotto forma di testo.
 
-Deep Dive:
-L'autenticazione di base è uno dei metodi di autenticazione più antichi utilizzati sul web. Essenzialmente, il client invia una stringa contenente il nome utente e la password, codificati in base64, all'interno dell'header "Authorization" di una richiesta HTTP. Questo metodo di autenticazione non è considerato sicuro poiché la stringa può essere facilmente decodificata, ma è ancora ampiamente utilizzato per i suoi scopi di compatibilità e facilità d'uso.
+Questo codice invia una richiesta GET ad un URL con l'autenticazione base. Nella risposta, vedrai se l'accesso è stato concesso o no.
 
-Alternative:
-Ci sono molti altri metodi di autenticazione che offrono un livello maggiore di sicurezza, come ad esempio l'autenticazione a chiave pubblica. Tuttavia, l'autenticazione di base viene utilizzata spesso per risorse interne o in situazioni in cui la sicurezza non è una preoccupazione principale.
+## Approfondimento:
+L'autenticazione base evita l'accesso non autorizzato, ma non è sicura come altre tecniche, poiché trasmette le credenziali come una stringa codificata in Base64, che può essere facilmente decodificata. Entrò in uso nei primi giorni dell'Internet.
 
-Implementazione:
-Come mostrato nell'esempio di codice, l'utilizzo della libreria "reqwest" semplifica notevolmente il processo di invio di una richiesta HTTP con autenticazione di base. Tuttavia, è possibile anche impostare manualmente l'header "Authorization" utilizzando altre librerie come ad esempio "hyper".
+Esistono alternative più sicure, come l'autenticazione Digest o l'autenticazione con token JWT. Inoltre, l'autenticazione OAuth è ampiamente usata per le API Web.
 
-Vedi anche:
-- Documentazione della libreria "reqwest": https://docs.rs/reqwest
-- Altro codice di esempio per l'autenticazione di base in Rust: https://github.com/berdasarkan/rust-http-basic-auth-example
+Implementare l'autenticazione base in Rust implica la codifica di una coppia username e password in Base64 e l'invio di questa stringa nell'header di autorizzazione della richiesta HTTP.
+
+## Vedi anche:
+1. [Rust Reqwest Doc](https://docs.rs/reqwest/0.10.4/reqwest/)
+2. [HTTP Basic Auth](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
+3. [Rust Base64](https://docs.rs/base64/0.9.3/base64/)

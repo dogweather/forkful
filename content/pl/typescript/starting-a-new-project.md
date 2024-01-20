@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "TypeScript: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,14 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Rozpoczęcie nowego projektu jest nieodłączną częścią pracy każdego programisty. Polega ono na stworzeniu nowego projektu od zera i zazwyczaj obejmuje wybór odpowiednich narzędzi, ustawienie projektu oraz zdefiniowanie jego celu i funkcjonalności. Programiści często rozpoczynają nowe projekty, aby rozwinąć swoje umiejętności, zrealizować swoje pomysły lub po prostu w celu tworzenia nowych, innowacyjnych rozwiązań.
+# Wprowadzenie do TypeScript: Jak zaczynać nowy projekt
+
+## Co i dlaczego?
+Rozpoczęcie nowego projektu oznacza stworzenie od podstaw nowej aplikacji lub systemu, które będą realizować określone zadania. Programiści to robią aby rozwiązywać nowe problemy, nauczyć się nowych technologii, czy też zaspokoić wymagania klientów.
 
 ## Jak to zrobić:
-Aby rozpocząć nowy projekt w TypeScript, potrzebujesz zainstalować odpowiednie narzędzia na swoim komputerze. Następnie utwórz nowy folder dla swojego projektu i skonfiguruj go przy użyciu komendy ```npm init```. Następnie możesz zacząć pisanie kodu w plikach TypeScript, używając składni, którą dostarcza ten język programowania. Kiedy skończysz pisanie kodu, możesz skompilować go do kodu JavaScript, który jest wykonywalny w przeglądarce internetowej lub w środowisku Node.js.
+Przykład tworzenia nowego projektu w TypeScript na platformie Node.js z użyciem narzędzia npm (node package manager).
 
-## Deep Dive:
-TypeScript został stworzony przez Microsoft w 2012 roku jako rozszerzenie języka JavaScript. Jest to język programowania typowanego statycznie, co oznacza, że ​​wszystkie zmienne i funkcje muszą mieć zdefiniowany typ danych. Jedną z alternatyw dla TypeScript jest JavaScript ES6, który również wprowadził typowanie danych. Jednak TypeScript oferuje większą kontrolę nad typami, co może ułatwić pracę programistom w większych projektach.
+```TypeScript
+// krok 1: utworzenie nowego katalogu na projekt
+$ mkdir moj-projekt
+$ cd moj-projekt
 
-## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej o rozpoczynaniu nowych projektów w TypeScript, polecamy przeczytać dokumentację języka i obejrzeć tutorial na stronie https://www.typescriptlang.org/. Możesz także spróbować stworzyć prosty projekt i eksperymentować z różnymi funkcjami i typami danych. Pamiętaj, że najlepszym sposobem na naukę jest praktyka!
+// krok 2: inicjalizacja nowego projektu npm
+$ npm init -y
+
+// krok 3: dodanie TypeScript do projektu
+$ npm install --save-dev typescript
+
+// krok 4: utworzenie pliku konfiguracyjnego TypeScript (tsconfig.json)
+$ npx tsc --init
+```
+
+Później, możesz tworzyć pliki .ts (TypeScript) w swoim projekcie i kompilować je do JavaScript używając komendy `tsc`.
+
+## Głębsze spojrzenie:
+
+1. Kontekst historyczny: TypeScript został stworzony przez Microsoft w 2012 roku jako język programowania który dodaje typy statyczne i klasy do JavaScript.
+
+2. Alternatywy: Istnieja inne języki (takie jak Dart czy Elm) które również dodaja silne typowanie do JavaScript, ale TypeScript jest najbardziej popularny ze względu na swoje możliwości i zgodność z JavaScript.
+
+3. Szczegóły implementacji: Po utworzeniu projektu TypeScript, kod jest kompilowany do JavaScript, który jest językiem który może być interpretowany przez wszystkie przeglądarki. Pliki konfiguracyjne TypeScript (tsconfig.json) umożliwiają szczegółowe dostosowanie tego procesu.
+
+## Zobacz również:
+
+1. [Dokumentacja TypeScript](https://www.typescriptlang.org/docs/)
+2. [Poradnik npm](https://docs.npmjs.com/)
+3. [Krótkie wprowadzenie do TypeScript (tutorial)](https://www.typescripttutorial.net/)

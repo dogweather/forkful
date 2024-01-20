@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "Go: Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Go"
 category:             "Go"
@@ -10,64 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+# Invio di una richiesta HTTP con autenticazione base in Go
 
-Invio di una richiesta HTTP con autenticazione di base è quando un programma comunica con un server web e fornisce credenziali di accesso per accedere alle risorse protette. I programmatori lo fanno per garantire una maggiore sicurezza nelle comunicazioni tra il loro programma e il server.
+## Cosa & Perché?
+L'invio di una richiesta HTTP con autenticazione base significa spedire dati ad un servizio web protetto da un semplice sistema di autenticazione. Questa pratica è comune quando si lavora con servizi web restrittivi che richiedono una prova della tua identità per concederti l'accesso.
 
 ## Come fare:
-
-Go rende facile l'invio di una richiesta HTTP con autenticazione di base utilizzando la libreria "net/http". Di seguito è riportato un esempio di codice che mostra come inviare una richiesta GET con autenticazione di base a un server:
-
-```
+Ecco un esempio di codice, in Go, per inviare una richiesta GET con autenticazione base:
+```Go
 package main
 
 import (
-    "fmt"
-    "net/http"
-    "io/ioutil"
+        "net/http"
+        "fmt"
 )
 
 func main() {
-    url := "https://example.com/api"
-    username := "username"
-    password := "password"
-    
-    req, err := http.NewRequest("GET", url, nil)
+    client := &http.Client{}
+    req, err := http.NewRequest("GET", "http://example.com", nil)
     if err != nil {
-        panic(err)
+        fmt.Println(err)
+        return
     }
-
-    req.SetBasicAuth(username, password)
-
-    resp, err := http.DefaultClient.Do(req)
+    req.SetBasicAuth("username", "password")
+    resp, err := client.Do(req)
     if err != nil {
-        panic(err)
+        fmt.Println(err)
+        return
     }
-
     defer resp.Body.Close()
-    
-    body, err := ioutil.ReadAll(resp.Body)
-    if err != nil {
-        panic(err)
-    }
-    
-    fmt.Println(string(body))
+    // ...
 }
 ```
-Il codice sopra invia una richiesta GET all'URL specificato con autenticazione di base utilizzando il metodo ```http.NewRequest```. Vengono quindi impostati username e password con il metodo ```req.SetBasicAuth```. Infine, viene effettivamente eseguita la richiesta al server e il corpo della risposta viene letto e stampato sulla console.
+In questo esempio, stiamo creando una nuova richiesta GET, settando l'autenticazione base con `req.SetBasicAuth("username", "password")`, inviando poi la richiesta con `client.Do(req)`.
 
-L'output dovrebbe essere qualcosa del genere:
+## Approfondimento
+L’autenticazione base è un meccanismo di autenticazione molto semplice, introdotto in HTTP 1.0 e ancora utilizzato. Tuttavia, essendo una tecnica molto semplice che invia nome utente e password in testo non cifrato (sebbene codificati in base64), viene ora consigliato utilizzare metodi più sicuri, come la autenticazione token-based o l’OAuth.
 
-```
-{"message": "Autenticazione riuscita. Benvenuto!"}
-```
+Nell'implementazione nell'esempio di codice, è importante notare come la funzione Do del client HTTP utilizzi l'autenticazione in maniera sincrona. Se si vuole rendere l'operazione asincrona, sarà necessario utilizzare un meccanismo di goroutine e di channel.
 
-## Approfondimento:
-
-L'autenticazione di base è uno dei metodi più antichi per la sicurezza delle comunicazioni web. È stato introdotto nei primi standard HTTP nel 1995 e si basa su un semplice schema di autenticazione username e password inviato come testo non criptato. Ciò lo rende un metodo di autenticazione molto semplice ma anche meno sicuro rispetto ad altre alternative come OAuth o token JWT.
-
-Una alternativa all'autenticazione di base in Go è l'utilizzo della libreria "golang.org/x/oauth2" per implementare l'autenticazione OAuth con un server API.
-
-## Vedi anche:
-
-Per ulteriori informazioni su come inviare richieste HTTP con autenticazione di base in Go, si consiglia di consultare la documentazione ufficiale della libreria "net/http" e "golang.org/x/oauth2".
+## Approfondisci
+Per ulteriori approfondimenti sul lavoro con le API HTTP in Go, risorse:
+- [HTTP package - The Go Programming Language](https://golang.org/pkg/net/http/)
+- [Making HTTP Requests in Golang](https://medium.com/@masnun/making-http-requests-in-golang-dd123379efe7)
+- [An Introduction to HTTP Basic Authentication Using Golang](https://tutorialedge.net/golang/http-basic-authentication-tutorial/)

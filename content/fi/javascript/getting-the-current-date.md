@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän saaminen"
-html_title:           "Javascript: Nykyisen päivämäärän saaminen"
-simple_title:         "Nykyisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärän saaminen on yksinkertainen tapa tietää tämänhetkinen päivämäärä. Tämä on tärkeää monessa ohjelmointikielessä esimerkiksi aikaleimojen luomisessa tai ajan laskemisessa.
+# JavaScriptin Nykyisen Päivämäärän Haku
 
-## Kuinka se tehdään?
-Voit saada nykyisen päivämäärän JavaScriptillä käyttäen Date-objektia. Voit luoda uuden Date-objektin ilman parametreja jolloin se antaa nykyisen ajan ja päivämäärän, esim:
+## Mitä & Miksi?
+
+Nykyisen päivämäärän hakeminen tarkoittaa tämänhetkisen päivämäärän ja kellonajan selvittämistä ohjelmoimalla. Se on välttämätöntä ajanherkkien tehtävien, kuten aikaleimojen, aikataulutuksen ja päivämäärärajoitettujen ominaisuuksien, hallitsemiseksi.
+
+## Näin teet:
+
+Käytämme `Date`-luokkaa nykyisen päivämäärän saamiseksi JavaScriptissa.
+
 ```Javascript
-new Date()
+let päivämäärä = new Date();
+console.log(päivämäärä);
 ```
-Tämä palauttaa objektin jokaisessa käyttämässäsi muodossa, joten voit käyttää sopivaa metodista palauttaaksesi haluamasi arvon, esim:
+
+Tämä koodipätkä tulostaa jotakin seuraavanlaista:
+
 ```Javascript
-new Date().getFullYear() //2021
+2022-05-28T12:34:56.789Z
 ```
 
-## Syvällinen sukellus
-Date-objekti luotiin JavaScriptin alkuperäisessä versiossa vuonna 1995. Se on ollut yksi tärkeimmistä tavoista käsitellä aikaa ja päivämäärää ohjelmoinnissa. On myös olemassa muita tapoja saada päivämäärä, kuten Moment.js-kirjaston käyttäminen tai ulkoisia API-palveluita. Date-objektin tarkka määritelmä ja sen toimintatapa voi vaihdella selaimen ja ympäristön mukaan.
+## Syvä sukellus
 
-## Katso myös
-- [MDN Date-objekti](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
-- [WorldTime API](http://worldtimeapi.org/)
+Historiallisesti JavaScriptin `Date`-luokka on ollut perustana kaikille päivämäärä- ja aikatoiminnoille siitä lähtien, kun se lisättiin kielen spesifikaatioon. Se käyttää vuodesta 1970 lähtevää Unix-aikaa sisäisenä pohjanaan - arkkitehtoninen päätös, joka heijastaa JavaScriptin juuria web-selausympäristönä.
+
+Vaihtoehtoisia päivämääräkirjastoja, kuten `Moment.js` ja `date-fns`, käytetään usein parantamaan päivämäärätoimintojen käyttöä selkeämmällä syntaksilla ja lisäominaisuuksilla. Kuitenkin suurimmalle osalle sovelluksia `Date`-luokka tarjoaa riittävät työkalut.
+
+JavaScriptin `Date`-objekti ei ota huomioon aikavyöhykkeitä luodessaan uuden instanssin. Sitä voidaan käyttää aikavyöhyke-spesifisten juttujen tekemiseen ajamalla aika UTC-muotoon.
+
+## Katso myös 
+
+- MDN Web Docs, [JavaScript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Moment.js, [Moment.js documentation](https://momentjs.com/)
+- date-fns, [date-fns documentation](https://date-fns.org/docs/Getting-Started)

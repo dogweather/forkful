@@ -1,6 +1,6 @@
 ---
 title:                "Lecture d'un fichier texte"
-html_title:           "TypeScript: Lecture d'un fichier texte"
+html_title:           "Arduino: Lecture d'un fichier texte"
 simple_title:         "Lecture d'un fichier texte"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Quoi & Pourquoi?
 
-Lire un fichier texte en TypeScript consiste simplement à parcourir le contenu d'un fichier et à le stocker dans une variable. Les programmeurs utilisent cette méthode pour lire des fichiers de configuration, des données d'entrée ou des fichiers de log.
+Lecture d'un fichier texte, c'est simplement d'extraire du contenu texte à partir de fichier. Les programmeurs le font pour accéder aux données stockées, pour analyser ou modifier les informations.
 
 ## Comment faire:
 
-Lire un fichier texte en TypeScript est très simple grâce à la fonction `readFileSync` du module `fs`. Cette fonction prend en paramètre le chemin vers le fichier et renvoie son contenu sous forme de chaîne de caractères. Voici un exemple de code:
+Dans TypeScript, il existe diverses méthodes pour lire un fichier texte. La plus couramment utilisée est le module `fs` (fichier système) de Node.js. Voici comment le faire:
 
 ```TypeScript
-import * as fs from 'fs';
+import fs from 'fs/promises';
 
-const fileContent = fs.readFileSync('example.txt', 'utf8');
+async function lireFichierTexte(fichier: string) {
+    try {
+        const données = await fs.readFile(fichier, 'utf-8');
+        console.log(données);
+    } catch (erreur) {
+        console.error(`Erreur lors de la lecture du fichier: ${erreur}`);
+    }
+}
+
+lireFichierTexte('monFichier.txt');
 ```
-
-Ensuite, vous pouvez utiliser la variable `fileContent` pour manipuler le contenu du fichier comme bon vous semble. Par exemple, vous pouvez l'afficher sur la console avec `console.log(fileContent)` ou le traiter en tant que JSON avec `JSON.parse(fileContent)`.
 
 ## Plongée en profondeur:
 
-Lire un fichier en TypeScript peut sembler banal, mais cela a été une fonctionnalité très demandée par la communauté jusqu'à la version 2.2 du langage. Avant cela, les programmeurs devaient utiliser du code supplémentaire ou des bibliothèques externes pour lire des fichiers.
+Depuis ses débuts, la lecture des fichiers texte en JavaScript (et donc en TypeScript) a évolué. Au départ, cela se faisait généralement côté serveur via Node.js et son module `fs`. Aujourd'hui, nous utilisons toujours la même approche mais dans une version modernisée et plus sécurisée avec `fs/promises`.
 
-Si vous avez besoin de lire un gros fichier, il serait plus efficace d'utiliser des bibliothèques dédiées comme `readline` ou `bufferedReader` plutôt que la méthode `readFileSync` qui utilise une ressource système importante.
+Il existe des alternatives, comme l'API `fetch` pour les environnements front-end. Cependant, elle présente des limitations en termes de permissions.
+
+Dans l'implémentation ci-dessus, nous utilisons une fonction asynchrone pour attendre que `fs.readFile()` soit résolue. Cela permet de lire le fichier texte sans bloquer le reste du code. 
 
 ## Voir aussi:
 
-Pour en savoir plus sur la fonction `readFileSync` et le module `fs`, vous pouvez consulter la documentation officielle de TypeScript (https://www.typescriptlang.org/docs/) ou le module `fs` dans la documentation de Node.js (https://nodejs.org/api/fs.html). Vous pouvez également trouver de nombreux tutoriels sur Internet pour vous aider à lire un fichier en TypeScript selon vos besoins spécifiques.
+Pour plus d'informations sur la manipulation de fichiers en JavaScript/TypeScript, voici quelques liens utiles:
+
+- [Documentation officielle de Node.js sur fs/promises](https://nodejs.org/api/fs.html#fs_fs_promises_api)
+- [Article Mozilla sur l'API Fetch](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
+- [Guide de survie à la programmation asynchrone en JavaScript/TypeScript](https://www.freecodecamp.org/news/async-programming-in-typescript/)

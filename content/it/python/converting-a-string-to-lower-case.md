@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una stringa in minuscolo"
-html_title:           "Python: Convertire una stringa in minuscolo"
+html_title:           "Arduino: Convertire una stringa in minuscolo"
 simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Python"
 category:             "Python"
@@ -10,20 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-La conversione di una stringa in minuscolo è un'operazione comune nel mondo della programmazione. In pratica, si tratta di trasformare tutte le lettere maiuscole presenti in una stringa in lettere minuscole. I programmatori lo fanno principalmente per uniformare la formattazione delle stringhe e semplificare le operazioni di confronto e ricerca.
+---
 
-## Come:
-Basta utilizzare il metodo `lower()` sulla stringa desiderata per effettuare la conversione. Ad esempio:
+## Cos'è & Perché?
+
+Trasformare una stringa in minuscolo significa convertire tutti i caratteri di una stringa in lettere minuscole. Questo è fatto dai programmatori per facilitare il confronto tra stringhe e per standardizzare l'input dell'utente.
+
+## Come fare:
+
+```Python
+# Stringa di esempio
+str_esempio = "CIAO MONDO"
+
+# Conversione a minuscolo utilizzando il metodo lower()
+str_convertita = str_esempio.lower()
+
+print(str_convertita)
 ```
-stringa = "CIAO MONDO!"
-print(stringa.lower())
+
+L'output sarà:
+
+```Python
+"ciao mondo"
 ```
-Output: ciao mondo!
 
-## Approfondimento:
-La conversione di stringhe in minuscolo ha origini nella lingua inglese, dove il concetto di maiuscole e minuscole è molto più importante rispetto ad altre lingue. Negli anni sono stati sviluppati molti modi diversi di effettuare questa operazione, come utilizzare il modulo `string` e il metodo `casefold()`. In Python, il metodo `lower()` è la scelta più semplice ed efficace.
+## Approfondimenti
 
-## Vedi anche:
-- [Documentazione ufficiale di Python su stringhe](https://docs.python.org/3/library/string.html)
-- [Differenze tra `lower()` e `casefold()`](https://www.geeksforgeeks.org/difference-between-casefold-and-lower-in-python/)
+Convertire una stringa in minuscolo è un concetto fondamentale della programmazione e presente in tutti i linguaggi, non solo in Python. Esistono alternative, come l'utilizzo di loop e condizioni, ma il metodo `.lower()` è il più semplice ed efficiente in Python.
+
+La sua implementazione specifica può variare tra le diverse versioni di Python e i diversi sistemi operativi. Ad esempio, nelle implementazioni Unicode di Python, il metodo `.lower()` rispetta le regole di conversione definite nel Unicode Data File.
+
+## Altri riferimenti
+
+- [Documentazione ufficiale Python sul metodo `.lower()`](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- ["Understanding Python String Lower() Method" su Python Pool](https://www.pythonpool.com/python-string-lower/)
+- [Esempi Python String lower() su Programiz](https://www.programiz.com/python-programming/methods/string/lower) 
+
+---

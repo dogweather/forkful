@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Haskell: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# En snabb introduktion till att ladda ner webbsidor med Haskell
 
-Att ladda ner en webbsida innebär att man hämtar en kopia av en webbsida från internet till sin egna dator. Detta kan göras av olika skäl, till exempel för att kunna arbeta offline eller analysera webbsidans struktur och innehåll.
+## Vad & Varför?
+Att ladda ner en webbsida innebär att hämta HTML-koden som webbläsaren renderar till webbsidans visuella format. Programmerare gör detta ofta för att analysera webbplatsers innehåll eller skrapa data.
 
 ## Så här gör du:
-
-```Haskell 
-import Network.HTTP.Simple 
-main = do 
-    response <- httpGet "https://example.com" 
-    print $ getResponseBody response 
-
--- Output: a complete copy of the webpage in question 
+Låt oss använda `http-conduit`-biblioteket i Haskell för att ladda ner en webbsida. Installera biblioteket med kommandot:
+```haskell
+cabal install http-conduit
 ```
+och här är ett enkelt exempel på hur man använder det:
+```haskell
+import Network.HTTP.Conduit (simpleHttp)
 
-## Deep Dive:
+main = do
+    body <- simpleHttp "http://example.com"
+    putStrLn $ take 100 body
+```
+När du kör det här programmet laddar det ner webbsidan `http://example.com` och skriver ut de första 100 tecknen av dess innehåll.
 
-Att ladda ner en webbsida är ett vanligt behov hos många programmerare, särskilt de som arbetar med webbutveckling eller dataanalys. Det finns flera alternativ för att hämta en webbsida, inklusive direkta anrop till webbservern eller användning av specialiserade bibliotek. I Haskell är användning av Network.HTTP.Simple ett enkelt och smidigt sätt att hämta en webbsida, vilket illustreras i exemplet ovan.
+## Fördjupning
+Att ladda ner webbsidor är något som programmerare har behövt göra sedan webbens födelse. Ett flertal bibliotek och verktyg finns tillgängliga för Haskell, till exempel `http-client`, `http-streams` och `Wreq`. 
 
-## Se också:
+Det historiska kontextet för detta gäller att förstå hur HTTP-protokollet fungerar, vilket är den underliggande tekniken för hur webbläsare laddar ner webbsidor. Det är en bra idé att ha en viss förståelse för HTTP när du utför den här typen av programmering.
 
-För mer information om hur man hämtar och bearbetar webbinnehåll i Haskell, se dessa länkar: 
+När det kommer till implementering, ger `http-conduit`-biblioteket oss en högnivå-API för att göra HTTP-förfrågningar. Funktionen `simpleHttp` tar en URL som sträng och returnerar en `IO ByteString` som innehåller webbsidans innehåll. Vi använder `putStrLn`-funktionen för att skriva ut det till konsolen.
 
-- https://hackage.haskell.org/package/http-client 
-- https://www.haskell.org/hoogle/?hoogle=http+request
+## Referenser
+För mer information om ämnet, se följande källor:
+
+1. [Haskell http-conduit bibliotek](https://hackage.haskell.org/package/http-conduit)
+2. [HTTP protokollet](https://sv.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+3. [Fler HTTP-bibliotek i Haskell](https://wiki.haskell.org/Networking)
+4. [Webbskrapning i Haskell](https://www.schoolofhaskell.com/user/meiersi/wreq-0-3-0-0---web-browsing-in-haskell-revisited)

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को कैपिटलाइज़ करना"
-html_title:           "Gleam: स्ट्रिंग को कैपिटलाइज़ करना"
-simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
+title:                "एक स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "Gleam: एक स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "एक स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,24 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kya aur Kyon?
+## क्या और क्यों?
 
-Capitalizing ek tarika hai jisme ham ek string ke har word ko upper case mein change karte hai. Programmers isse karte hai taaki string ko easily padha ja sake aur usme consistency bani rahe.
+स्ट्रिंग को कैपिटलाइज करने का अर्थ होता है उसके हर शब्द के पहले अक्षर को बड़ा बनाना। प्रोग्रामर्स इसे डाटा को एकसरह और पठनीय बनाने के लिए करते हैं। 
 
-# Kaise Kare?
+## कैसे करें:
 
-Gleam mein, hum `String.capitalize` function ka istemaal kar sakte hai. Iske liye hum ek string ko function ke andar pass karenge aur upper case mein ho jaane ke baad wo string return karega. Iske alawa, hum `String.to_uppercase` function bhi use kar sakte hai jo same kaam karta hai lekin uppercase mein puri string ko return karta hai.
-
-```
-Gleam.run()
+```Gleam
 import gleam/string
 
-let str = "mera naam swati hai"
-gleam/string.String.capitalize(str)
+pub fn capitalise_string(input: String) -> String {
+  string.capitalise(input)
+}
 
-// Output: "Mera Naam Swati Hai"
+assert capitalise_string("नमस्ते दुनिया") == "नमस्ते दुनिया"
 ```
 
-# Gehri Jhaank
+## गहरी जांच:
 
-Capitalizing ka concept asal mein English language se aaya hai jaha jaise hum proper nouns jaise naam ko upper case mein likhte hai, waise hi programmers bhi apne code mein consistency maintain karne ke liye ye technique istemaal karte hai. Iske alawa, dusre programming languages mein bhi `capitalize` function ki alag alag variations hoti hai, jaise ki keval pehle word ko capitaliz
+- ऐतिहासिक संदर्भ: स्ट्रिंग कैपिटलाइज़ेशन का क्रियान्वयन उच्च-स्तरीय प्रोग्रामिंग भाषाओं से शुरू हुआ था, जो मानव-योग्य योग्यताओं को बढ़ाते थे।
+- विकल्प: कैपिटलाइज़ेशन के बिना भी, आप इसी तरह की उम्मीदें निर्धारित कर सकते हैं। आपको स्ट्रिंग के टेक्स्ट केस पर निर्भर नहीं होना चाहिए।
+- शासन विवरण: Gleam के ``string.capitalise`` फ़ंक्शन का उपयोग करके, हम हर शब्द के पहले अक्षर को कैपिटलाइज करते हैं।
+
+## और देखिए:
+
+- Gleam Docs: [String](https://gleam.run/documentation/the-gleam-standard-library/std/string/)
+- संबंधित स्रोत: [Learning Gleam](https://gleam.run/getting-started/)

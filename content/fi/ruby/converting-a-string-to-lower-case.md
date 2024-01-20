@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Ruby: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja Miksi?
+# Muuttaminen Merkkijonosta Pieneen Kirjaimistoon Ruby-ohjelmassa
 
-Miksi haluat muuttaa merkkijonon pieniin kirjaimiin? No, se on yksi tapa tehdä merkkijonosta helpommin vertailtavissa oleva. Esimerkiksi, jos vertaat kahta eri sanaa tai lausetta keskenään, on hyvä olla varma, että molemmat ovat samoilla kirjaimilla. Muuten vertailu ei toimi oikein. Monet ohjelmoijat myös muuttavat merkkijonot pieniin kirjaimiin, jotta ei olisi väliä miten käyttäjät syöttävät tekstiä ohjelmaan.
+## Mikä ja Miksi?
 
-##  Näin teet sen:
+Merkkijonon muuttaminen pieniksi kirjaimiksi on prosessi, jossa kaikki merkkijonon isot kirjaimet korvataan pienillä kirjaikilla. Ohjelmoijat tekevät tämän usein tietojen normalisointia ja vertailua varten.
 
-```ruby
-merkkijono = "Tämä ON esimerkkisana"
-p merkkijono.downcase 
+## Kuinka Tehdä:
+
+Alla on koodiesimerkki kuinka muuntaa merkkijono pieniksi kirjaimiksi Rubyssa:
+
+```Ruby
+iso_kirjain = "SUOMI"
+pieni_kirjain = iso_kirjain.downcase
+
+puts pienen_kirjain
 ```
 
-Tulos: "tämä on esimerkkisana"
+Tulostuksesta tulee:
 
-Kuten näet, Ruby-kielellä voit käyttää `downcase`-metodia muuttaaksesi merkkijonon pieniin kirjaimiin. Tämä metodi on valmiina osana Rubyä, joten sinun ei tarvitse itse keksiä miten se tehdään.
+```Ruby
+"suomi"
+```
+Tämä `downcase`-menetelmä muuntaa kaikki merkkijonon kirjaimet pieniksi kirjaimiksi.
 
-## Syvällisempi sukellus:
+## Syvällinen Tieto
 
-Historiallinen tausta: Merkkijonojen muuttaminen pieniin kirjaimiin on ollut tärkeä ohjelmoinnin käytäntö jo pitkään. Vanhemmissa kielissä tämän toteuttaminen oli monimutkaisempaa, mutta Ruby-kielellä se on erittäin helppoa.
+Historiallisesti Ruby-ohjelmointikieli on tukenut merkkijonojen muuttamisen pieniksi kirjaimiksi alusta asti, joka osoittaa tämän toiminnallisuuden tärkeyden. Jotkin vaihtoehdot tämän toiminnallisuuden toteuttamiseen sisältävät oman menetelmän kirjoittamisen manuaalisesti, mutta tämä ei ole yhtä tehokasta kuin `downcase` -menetelmä Rubyssa.
 
-Vaihtoehtoja: Yksi vaihtoehto merkkijonojen käsittelyyn on käyttää `capitalize`-metodia, joka muuttaa vain merkkijonon ensimmäisen kirjaimen isoksi. Tämä voi olla hyödyllistä esimerkiksi nimien käsittelyssä.
+Ilmeisyyden vuoksi, kulissien takana `downcase` vertaa jokaista merkkijonon kirjainta Unicode-taulukon kanssa. Jos kirjain on iso, se korvataan vastaavalla pienellä kirjaimella.
 
-Toteutus: Ruby-käyttää Unicode-algoritmeja muuttaakseen merkkijonot pieniin kirjaimiin. Tämä tarkoittaa, että se toimii hyvin kaikenlaisten merkkien kanssa, kuten aksentteja sisältävien kirjainten tai erikoismerkkien kanssa.
+## Katso Lisää
 
-## Katso myös:
+Jos haluat tietää lisää Ruby-ohjelmoinnista, tutustu seuraaviin linkkeihin:
 
-- [Ruby Language Documentation - String Class](https://ruby-doc.org/core-2.7.2/String.html#method-i-downcase)
-- [Ruby Guides - String Basics](https://www.rubyguides.com/2018/10/ruby-string-methods/)
-- [Ruby Programming Language - Official Website](https://www.ruby-lang.org/fi/)
+- [Ruby Official Documentation](https://ruby-doc.org/core-2.7.2/String.html#method-i-downcase)
+- [Ruby Guides - Strings in Ruby](https://www.rubyguides.com/2015/05/ruby-string-methods/) 
+
+Tämän lisäksi, merkkijonotoiminnot ovat keskeinen osa kaikkia ohjelmointikieliä, ja näin ollen, niitä löytyy myös useissa muissa Ruby-algoritmeissa ja -menetelmissä.

@@ -1,7 +1,7 @@
 ---
-title:                "तारीख को स्ट्रिंग में रूपांतरण करना"
-html_title:           "Elm: तारीख को स्ट्रिंग में रूपांतरण करना"
-simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना"
+title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
+simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+# एल्म अनुभाग कहानी: तारीख को स्ट्रिंग में बदलना
 
-Jab hum ek date ko string mein convert karte hai to hum us date ko readable format mein represent kar rahe hote hai. Programmers ki sabse common use case hai jab wo ek date ko website ya database mein store karna chahte hai. String format mein store karna unko flexibility deta hai aur dates ko alag-alag tarike se display karne ki aasani bhi deta hai.
+## क्या और क्यों?
+तारीख को स्ट्रिंग में बदलना एक ऐसी प्रक्रिया है जिसमें एक प्रोग्रामर डेट को टेक्स्ट यानी स्ट्रिंग में बदलता है। प्रोग्रामर इसे उपयोगकर्ता इंटरफ़ेस में दिखाने, लोग्स लिखने या डाटा को आसानी से प्रिंट करने के लिए करते हैं। 
 
-# How to:
+## कैसे करें:
+Elm मॐ टारीख को माइक्रोसेकंड्स में स्टोर किया जाता है, और इसे ज़्यादा पढ़ने योग्य बनाया जा सकता है। इसके लिए, हमें 'elm/time' पैकेज की सहायता चाहिए होगी।
 
 ```Elm
-import Time exposing (Date)
-import Time.Format exposing (format)
+import Time exposing (..)
+import Time.Extra exposing (..)
 
-dateToString : Date -> String
-dateToString date =
-    format "%Y-%m-%d" date
+viewTime: Zone -> Posix -> Html msg
+viewTime zone posix =
+    text (toString (toOffsetTime zone posix))
+
+-- उदाहारण टाइमजोन के लिए
+let
+    posix = Time.millisToPosix 1630705367008
+    timeZone = Time.utc
+in
+viewTime timeZone posix
 ```
 
-Yahan humne `Time` aur `Time.Format` libraries ko import kiya hai jiske andar `Date` aur `format` functions available hai. Phir humne `dateToString` function declare kiya hai jo ek `Date` type ka argument lega aur use `%Y-%m-%d` format mein string mein convert karega. Is format mein `%Y` saal, `%m` month aur `%d` day represent karte hai. Iske baad hum `dateToString` function ko sahi date ke sath call kar sakte hai aur uska output kuch iss tarah se hoga: `"2021-05-28"`
+नीचे की तरह प्रिंट होता है:
+```
+"2021-09-04T08:56:07.008Z"
+```
 
-# Deep Dive
+## गहराई की बातें
+1. **ऐतिहासिक संदर्भ**: जब एल्म बनाया गया था, तारीखों को संभालने के बहुत कम तरीके थे। इसे स्थायी और सुरक्षित बनाने के लिए, एल्म ने इसे Milliseconds पोज़िक्स इन्टज़ के रूप में किया।
+2. **विकल्प**: आप भी 'Date' पैकेज का उपयोग कर सकते हैं, यह उपयोगकर्ता को ज्यादा Flexibility देता है लेकिन इसे मैंन्टेन करना कठिन हो जाता है।
+3. **प्रदर्शन विवरण**: टाइमज़ोन की जानकारी मौजूद होने पर, 'toOffsetTime' फ़ंक्शन POSIX समय को 'OffsetTime' में बदल देता है और इसे सही दिखाने के लिए 'toString' इस्तेमाल किया जाता है। 
 
-Converting dates into strings is not a new concept and has been used in programming for a long time. In fact, most programming languages provide built-in functions or libraries to make this task easier. Some alternatives to the `%Y-%m-%d` format used in our example are `%m/%d/%y`, `%d/%m/%y`, or even `%B %d, %Y` which displays the month name instead of a numeric representation.
-
-Implementing this conversion can involve various steps such as parsing the date, checking for leap years, and formatting the output. While it may seem like a simple task, there are nuances and edge cases that programmers have to consider when working with dates and strings.
-
-# See Also
-
-1. Elm Time module: https://package.elm-lang.org/packages/elm/time/latest/
-2. Time formatting in Elm: https://guide.elm-lang.org/effects/time.html#formatting-time
+## अधिक जानके लिए
+* Elm टाइम डॉक्यूमेंटेशन: [http://package.elm-lang.org/packages/elm/time/latest](http://package.elm-lang.org/packages/elm/time/latest)
+* के Epiloug से एल्म 'Bot' जो यहां उपयोगी हो सकता है: [https://korban.net/posts/elm/2019-11-23-elm-date-utc-local-timezone/](https://korban.net/posts/elm/2019-11-23-elm-date-utc-local-timezone/)

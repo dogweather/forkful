@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en mappe eksisterer"
-html_title:           "Elm: Sjekke om en mappe eksisterer"
-simple_title:         "Sjekke om en mappe eksisterer"
+title:                "Sjekker om en katalog eksisterer"
+html_title:           "Elm: Sjekker om en katalog eksisterer"
+simple_title:         "Sjekker om en katalog eksisterer"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,35 +11,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Undersøkelse for eksistensen av en mappe er en kodingsteknikk hvor vi bekrefter om en bestemt mappe eksisterer i systemet eller ikke. Programmerere gjør dette for å hindre eventuelle feil, slik som å skrive til en mappe som ikke finnes.
 
-Det å sjekke om en mappe eksisterer er en vanlig oppgave for programmerere. Det er en måte å kontrollere og håndtere filsystemer på, og det kan også være nyttig for å sikre at programmet fungerer som forventet.
+## Hvordan gjøre
+Elm gir dessverre ingen innebygget funksjonalitet til å sjekke om en mappe eksisterer direkte. Dette skyldes at Elm er renVirtuell og bør ikke ha noen side-effekt slik som å lese filsystemet. Vi bør benytte server API-er eller JavaScript interop for denne oppgaven. Her er et eksempel på hvordan det kan gjøres ved hjelp av Node.js og Elm:
 
-## Hvordan:
-
-```elm
--- Sjekke om en mappe eksisterer:
- 
-
-Elm.Directory.exists "/dokumenter" 
--- Returnerer True hvis mappen eksisterer 
+```javascript
+var fs = require('fs');
+var exists = fs.existsSync('/path/to/directory');
 ```
 
-```elm
--- Sjekke om en mappe ikke eksisterer: 
+Vi kan så overføre denne informasjonen til Elm.
 
-Elm.Directory.notExists "/bilder" 
--- Returnerer False hvis mappen eksisterer 
-```
+## Dypdykk
 
-## Dypdykk:
+Begrepet å sjekkke om en mappe eksisterer ble populært i dagene av strukturert programmering, når programmerere begynte å jobbe med filsystemer. Til tross for mangel på innebygget støtte i Elm, finnes det alternativt teknikker, som for eksempel å bruke JavaScript Interop, eller ved å få bakenden til å gjøre jobben.
 
-**Historisk kontekst:** Sjekking av mapper har vært en viktig del av programmering i lang tid, spesielt med filbehandlingssystemer.
+Hovedidéen bak å ikke tillate direkte filsystemtilgang i Elm er å holde den ren og sørge for at all kode er predikerbar og testbar. Elm koder kjører i nettlesermiljøet, og av sikkerhetsgrunner er tilgang til filsystemet sterkt begrenset.
 
-**Alternativer:** I tillegg til Elm har også andre programmeringsspråk og plattformer funksjoner for å sjekke eksistensen av mapper. Dette inkluderer Java, Python og .NET.
-
-**Implementasjonsdetaljer:** Elm bruker en funksjon som heter "directoryExists" for å sjekke om en mappe eksisterer. Denne funksjonen sammenlignes med en liste over eksisterende mapper på datamaskinen for å bestemme om det er en kamp.
-
-## Se også:
-
-- Elm Directory Module: https://package.elm-lang.org/packages/elm/core/latest/Directory
-- Python os module: https://docs.python.org/3/library/os.html
+## Se Også
+1. [Elm guide for interoperabilitet med JavaScript](https://guide.elm-lang.org/interop/)
+2. [Node.js filsystem API](https://nodejs.org/api/fs.html) for hvordan du interagerer med filsystemet via JavaScript.
+3. [Elm Diskusjon om filsystemtilgang](https://discourse.elm-lang.org/t/reading-files-from-disk/6006) for samfunnets perspektiver og diskusjoner på dette emnet.

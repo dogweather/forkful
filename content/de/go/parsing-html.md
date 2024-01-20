@@ -1,7 +1,7 @@
 ---
-title:                "Das Aufteilen von HTML"
-html_title:           "Go: Das Aufteilen von HTML"
-simple_title:         "Das Aufteilen von HTML"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,79 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Das PARSING von HTML ist der Prozess des Analysierens und Extrahierens von Informationen aus HTML-Dokumenten, um sie für die weitere Verarbeitung verfügbar zu machen. Programmierer nutzen dies, um zum Beispiel automatisierte Aufgaben wie das Scrapen von Daten oder das Generieren von dynamischen Webseiten zu erleichtern.
+HTML-Parsing ist der Prozess, HTML-Strings zu analysieren und zu interpretieren. Programmierer tun dies, um Daten aus Webseiten zu extrahieren oder Informationsstruktur der Webseiten zu manipulieren.
 
-## Wie geht's:
+## So wird’s gemacht:
 
-```Go
-import "golang.org/x/net/html"
+Mit dem `net/html` Paket in Go, können wir HTML einfach etablieren. Hier ist ein einfacher Codeausschnitt:
+
+```Go 
+package main
+
+import (
+  "fmt"
+  "golang.org/x/net/html"
+  "strings"
+)
 
 func main() {
-    // HTML-Code als Zeichenkette definieren
-    htmlString := "<html><head><title>Testseite</title></head><body><h1>Hello World!</h1></body>"
-
-    // HTML-String in ein html.Tokenizer-Objekt parsen
-    tokenizer := html.NewTokenizer(strings.NewReader(htmlString))
-
-    // Token für jedes Element im Dokument finden
-    for {
-        // Nächstes Token aus dem HTML-Dokument extrahieren
-        tokenType := tokenizer.Next()
-
-        // Wenn das Token ein Start-Element ist
-        if tokenType == html.StartTagToken {
-            // Namen des Elements aus dem Token auslesen
-            tagName, _ := tokenizer.TagName()
-
-            // Namen als Zeichenkette ausgeben
-            fmt.Println("Start-Element: " + string(tagName))
-        // Wenn das Token ein Text-Element ist
-        } else if tokenType == html.TextToken {
-            // Text aus dem Token auslesen
-            text := tokenizer.Text()
-
-            // Text als Zeichenkette ausgeben
-            fmt.Println("Text-Element: " + string(text))
-        // Wenn das Token ein Ende-Element ist
-        } else if tokenType == html.EndTagToken {
-            // Namen des Elements aus dem Token auslesen
-            tagName, _ := tokenizer.TagName()
-
-            // Namen als Zeichenkette ausgeben
-            fmt.Println("Ende-Element: " + string(tagName))
-        } else if tokenType == html.ErrorToken {
-            // Bei einem Fehler die Schleife beenden
-            break
-        }
+  doc, _ := html.Parse(strings.NewReader("<html><head></head><body>Hello World</body></html>"))
+  var f func(*html.Node)
+  f = func(n *html.Node) {
+    if n.Type == html.TextNode {
+      fmt.Println(n.Data)
     }
+    for c := n.FirstChild; c != nil; c = c.NextSibling {
+      f(c)
+    }
+  }
+  f(doc)
 }
 ```
 
-Output:
+Wenn du dieses Programm ausführst, wird es "Hello World" auf der Konsole ausgeben.
 
-```
-Start-Element: html
-Start-Element: head
-Start-Element: title
-Text-Element: Testseite
-Ende-Element: title
-Ende-Element: head
-Start-Element: body
-Start-Element: h1
-Text-Element: Hello World!
-Ende-Element: h1
-Ende-Element: body
-Ende-Element: html
-```
+## Tiefer einsteigen:
 
-## Tief tauchen:
+HTML-Parsing hat eine lange Geschichte, von Anfang an mit Perl und Regular expressions, bis hin zum aktuellen Stand mit leistungsfähigen Bibliotheken in fast jeder Sprache. Alternativen in Go wären `goquery` zum Beispiel, das eine zusätzliche Schicht über `net/html` schafft und es einfacher macht, bestimmte Knoten zu finden.
 
-Das Parsen von HTML hat in der IT-Geschichte eine bewegte Vergangenheit durchlaufen, von einfacher String-Manipulation über XML-basierte Parser bis hin zu heutigen DOM-basierten Parsers. Alternativen zum Parsen von HTML in Go sind unter anderem das Package "html/template" und externe Libraries wie "GoQuery". Die Implementierung in Go basiert auf dem offenen Standards HTML5 und DOM Level 2.
+Für mehr Kontext darüber, was `net/html` unter der Haube tut: es ist eigentlich eine Basis-Implementierung eines HTML5-Parser gemäß der HTML5-Spezifikation. Es enthält einen Tokenizer, der den HTML String in kleinere Teile bricht, sowie einen Parser, der diese Token dann in eine nachvollziehbare Dokumentenstruktur aufbaut.
 
 ## Siehe auch:
 
-- Offizielle Dokumentation von Go: https://golang.org/pkg/html/
-- "html/template" Package in Go: https://golang.org/pkg/html/template/
-- GoQuery Library: https://github.com/PuerkitoBio/goquery
+- Go net/html Dokumentation: https://pkg.go.dev/golang.org/x/net/html
+- Goquery: https://github.com/PuerkitoBio/goquery
+- "Web Scraping with Go": Sehr ausführliches Tutorial, auf das sich jeder beziehen kann, der es ernst meint mit Web Scraping in Go: https://edmundmartin.com/web-scraping-with-golang/

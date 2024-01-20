@@ -1,6 +1,6 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Javascript: Завантаження веб-сторінки"
+html_title:           "Gleam: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Чому і для чого?
+## Що це і навіщо?
 
-Завантаження сторінки в Інтернеті означає отримання всієї інформації, яка є на даній сторінці, замість того, щоб переглядати готовий вигляд в браузері. Програмісти часто завантажують сторінки для отримання потрібних даних для своїх проектів.
+Завантаження веб-сторінки - це процес отримання інформації з веб-сайту. Програмісти роблять це, щоб аналізувати структуру сайтів, отримувати потрібні дані або створювати резервні копії.
 
-Як це зробити:
+## Як це зробити:
+
+Ось базовий приклад кода для завантаження веб-сторінки в Javascript за допомогою модуля `axios`.
 
 ```Javascript
-fetch('https://www.example.com')
-  .then(response => response.text())
-  .then(data => console.log(data))
-  .catch(err => console.log(err));
+const axios = require('axios');
+
+axios.get('https://example.com')
+  .then((response) => {
+    console.log(response.data);
+  })
+  .catch((error) => {
+    console.log(error);
+  });
 ```
+Вихідний код повинен відображати HTML структуру запитуваної веб-сторінки.
 
-Результат:
+## Поглиблений дискурс:
 
-```HTML
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Example Domain</title>
-  <meta charset="utf-8" />
-</head>
-<body>
-<div><h1>Example Domain</h1></div>
-<div>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</div>
-<div><a href="https://www.iana.org/domains/example">More information...</a></div>
-</body>
-</html>
-```
+Історично завантаження веб-сторінок було складним процесом, який вимагав глибоких знань мережевого рівня. З появою Node.js і модулів, таких як `axios`, завантаження стало набагато простішим.
 
-Глибоке занурення:
+Альтернативою `axios` може служити модуль `request`. Він також дозволяє завантажувати веб-сторінки, але має інший API.
 
-Зазвичай, завантаження веб-сторінок використовується для отримання даних для подальшого аналізу або використання в проекті. Існують інші методи, такі як парсинг HTML або використання спеціальних бібліотек, але завантаження сторінки за допомогою Javascript є найшвидшим і простим способом отримання необхідних даних. Також, важливо зазначити, що завантаження сторінки необхідно виконувати відповідно до законів про авторські права і з урахуванням прав доступу до веб-сторінок.
+Ці модулі працюють, відправляючи HTTP GET запит до сервера, який розміщує веб-сайт. Сервер повертає відповідь, яку модуль інтерпретує як HTML сторінку.
 
-Подивіться також:
+## Див. також:
 
-- [Fetch API](https://developer.mozilla.org/uk/docs/Web/API/Fetch_API)
-- [Axios](https://axios-http.com/)
-- [Web Scraping](https://www.geeksforgeeks.org/what-is-web-scraping-and-how-to-extract-useful-information-from-the-web/)
+- [HTTP - Вікіпедія](https://uk.wikipedia.org/wiki/HTTP)
+- [Axios](https://www.npmjs.com/package/axios)
+- [Request](https://www.npmjs.com/package/request)

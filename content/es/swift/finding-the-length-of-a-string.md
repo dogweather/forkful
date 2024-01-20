@@ -1,7 +1,7 @@
 ---
-title:                "Encontrando la longitud de una cadena."
-html_title:           "Swift: Encontrando la longitud de una cadena."
-simple_title:         "Encontrando la longitud de una cadena."
+title:                "Encontrando la longitud de una cadena"
+html_title:           "Arduino: Encontrando la longitud de una cadena"
+simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-En programación, conocer el largo de una cadena de caracteres es una habilidad importante ya que nos permite manipular y modificar la información de manera adecuada. Al conocer la longitud de una cadena, podemos asegurarnos de que los datos se almacenen de manera correcta y evitar errores en nuestro código.
+## ¿Qué & Por Qué?
+Encontrar la longitud de una cadena (string), es el proceso de contar cuántos caracteres hay en una cadena. Los programadores hacen esto para limitar la entrada del usuario, dividir cadenas, validar datos, entre otros.
 
-## Cómo hacerlo:
-Para encontrar la longitud de una cadena en Swift, podemos utilizar la propiedad `count` o el método `count` de la estructura `String`. Veamos un ejemplo práctico:
-
+## ¿Cómo hacerlo?
+Aquí hay un ejemplo de cómo usar Swift para encontrar la longitud de una cadena:
 ```Swift
-let nombre = "Juan"
-print(nombre.count) // resultado: 4
-print(nombre.count + 2) // resultado: 6
+let cadena = "Hola, mundo"
+print("Longitud de la cadena es \(cadena.count)")
+```
+Este código imprimirá:
+```
+Longitud de la cadena es 11
 ```
 
-## Profundizando:
-El contar la longitud de una cadena es una técnica común en cualquier lenguaje de programación. En Swift, podemos usar la propiedad `count` para obtener el número de caracteres en una cadena. También podemos utilizar el método `count` si queremos realizar alguna operación con ese valor.
+## Vista Detallada
+Para encontrar la longitud de una cadena en Swift, usamos la propiedad `count`. En contraste con otros lenguajes de programación que usan una función `length()`, Swift opta por la propiedad `count` para mantenerse consistente con sus colecciones y arreglos.
 
-Otra alternativa para contar la longitud de una cadena es utilizando el método `countElements()`, pero se recomienda utilizar `count` ya que `countElements()` está siendo deprecado en versiones antiguas de Swift.
+Otra forma de hacer esto es utilizando la función `distance(from:to:)` de la propiedad `indices`. Aquí está ese código:
+```Swift
+let cadena = "Hola, mundo"
+let longitud = cadena.distance(from: cadena.startIndex, to: cadena.endIndex)
+print("La longitud de la cadena es \(longitud)")
+```
 
-Es importante mencionar que en Swift, los caracteres `"á", "é", "í", "ó", "ú"` entre otros, son considerados como un solo elemento y no como dos, a diferencia de otros lenguajes de programación.
+Este código también imprimirá:
+```
+La longitud de la cadena es 11
+```
+Pero esta alternativa es un tanto más compleja y utilizada principalmente cuando se requiere gran detalle al trabajar con índices personalizados o con diferentes idiomas y conjuntos de caracteres.
 
-## Ver también:
-- Documentación oficial de Swift sobre la estructura `String`: https://developer.apple.com/documentation/swift/string
-- Otros métodos y propiedades de la estructura `String`: https://www.hackingwithswift.com/example-code/strings/how-to-loop-over-strings
-- Uso del método `count` para validar la longitud de una cadena en la base de datos de Firebase: https://firebase.google.com/docs/firestore/query-data/get-data#example_get_all_documents_in_a_collection
+## Ver También
+1. [Swift String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html): Documentación oficial de Swift sobre cadenas y caracteres.
+2. [¿Qué es una cadena?](https://www.computerhope.com/jargon/s/string.htm): Definición simple y detallada de una cadena.
+3. [String Manipulation in Swift](https://www.hackingwithswift.com/articles/141/8-examples-of-strings-in-Swift): Varias formas de manipular cadenas en Swift.

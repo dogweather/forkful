@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt"
-html_title:           "Rust: Å starte et nytt prosjekt"
-simple_title:         "Å starte et nytt prosjekt"
+title:                "Starter et nytt prosjekt"
+html_title:           "Arduino: Starter et nytt prosjekt"
+simple_title:         "Starter et nytt prosjekt"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor? 
+---
 
-Når du begynner å jobbe med et nytt prosjekt, starter du en uoppdaget reise i kodesamfunnet. Dette kan være et spennende og utfordrende eventyr, hvor du kan utforske nye idéer og løse problemer.
+## Hva & Hvorfor?
+Å starte et nytt prosjekt er å lage en nytt kodebase for et bestemt formål. Programmerere gjør dette for å begynne å løse en annen problemstilling eller utvikle en ny programvare.
 
-Programmerere starter nye prosjekter fordi de ønsker å løse et problem eller skape noe nytt og nyttig. Dette gir seg mulighet til å bruke sine kreative ferdigheter og lære nye programmeringskonsepter.
+## Slik gjør du:
+Her er et eksempel på hvordan man kan starte med et nytt prosjekt i Rust med ```cargo init```.
 
-## Hvordan: 
-
-Under viser et eksempel på hvordan du kan starte et nytt prosjekt i Rust og skrive "Hello World" til konsollen: 
-
+```Rust
+$ cargo new mitt_prosjekt
+$ cd mitt_prosjekt
 ```
-Rust fn main() {
-    println!("Hei, verden!");
+
+Dette vil generere en ny katalog kalt `mitt_prosjekt` med en enkel "Hello, World!" kodefil og en Cargo.toml fil, din pakkemanager for Rust prosjekt.
+
+Koden vil se slik ut:
+
+```Rust
+fn main() {
+    println!("Hei, Verden!");
 }
 ```
 
-Konsolloutputen vil være: 
+Kjør prosjektet ditt med ```cargo run``` i din terminal.
 
+```Rust
+$ cargo run
+   Compiling mitt_prosjekt v0.1.0 (/path/to/your/project/mitt_prosjekt)
+    Finished dev [unoptimized + debuginfo] target(s) in 2.83s
+     Running `target/debug/mitt_prosjekt`
+Hei, Verden!
 ```
-Hei, verden!
-```
 
-## Dykk dypere:
+Som du ser, sier programmet "Hei, Verden!".
 
-Rust ble utviklet av Mozilla Research og først utgitt i 2010. Språket er designet for å være et trygt og samtidig raskt alternativ til C og C++. Det har også et utvidbart økosystem med et omfattende bibliotek og en aktiv samfunn. Å starte et nytt prosjekt i Rust kan være en flott måte å bli kjent med et kraftig og voksende programmeringsspråk.
+## Dypdykk
+Rust ble først utgitt i 2010 av Mozilla Research for å løse problemer med system programmering. De ønsket et språk som ga kontroll over systemressurser, men som også vektla hastighet og sikkerhet.
 
-Noen alternativer til å starte et prosjekt i Rust inkluderer å bruke C eller C++ eller å bruke et annet programmeringsspråk som Python eller Java. Imidlertid er Rust unikt fordi det tilbyr en blanding av enkel syntaks, lavnivå-kontroll og minneeffektivitet.
+Alternativt kan man kan også bruke andre språk som Go, C++, Java for system programmering, men Rust har fått mye oppmerksomhet på grunn av sin ytelse og memory-safe design.
 
-For å implementere et nytt prosjekt i Rust, må du først installere Rust-programvaren på datamaskinen din og deretter følge Rusts dokumentasjon for å lære å bygge, teste og publisere din kode.
+Når det gjelder Rust prosjekter, er det viktig å merke seg at Cargo spiller en vesentlig rolle i prosjektadministrasjon. Det håndterer Rust pakker (kalt "crates") og sikrer at riktig versjon er installert og kompilert.
 
-## Se også:
-
-- Rust dokumentasjon: https://www.rust-lang.org/learn 
-- Rust samfunn: https://www.rust-lang.org/community 
-- Utforske Rusts prosjekteksempler: https://github.com/rust-unofficial/awesome-rust
+## Se Også
+For mer i dybden informasjon, se følgende ressurser:
+1. [The Rust Programming Language book](https://doc.rust-lang.org/book/)
+2. [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)
+3. [Rust-Lang website](https://www.rust-lang.org/)
+4. [Cargo Guide](https://doc.rust-lang.org/cargo/guide/)
+---

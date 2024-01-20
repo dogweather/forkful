@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Python recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Python"
 category:             "Python"
@@ -12,42 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Finding the length of a string means determining the number of characters in a given string. This is a common task for programmers, as it allows for manipulating and analyzing text data in various ways. Whether it's for data validation, formatting, or analysis purposes, knowing the length of a string is essential in many programming applications.
+Finding the length of a string involves determining the number of characters in it. Programmers do it to manipulate data, validate input, or loop through characters.
 
 ## How to:
 
-Calculating the length of a string in Python is a simple task. Use the `len()` function and pass the string as an argument to it. For example:
+Use Python's built-in `len()` function:
 
 ```Python
-string = "Hello, World!"
-print(len(string))
+text = 'Hello, world!'
+print(len(text)) # Outputs: 13
 ```
 
-This will output `13`, as the string contains 13 characters. Additionally, you can also use the `len()` function on other data types, such as lists, tuples, and dictionaries.
+It's simple and works even with Unicode characters:
 
 ```Python
-list = [1, 2, 3, 4, 5]
-print(len(list))
-
-tuple = (6, 7, 8, 9)
-print(len(tuple))
-
-dictionary = {'a': 1, 'b': 2, 'c': 3}
-print(len(dictionary))
+text = '你好，世界！'
+print(len(text)) # Outputs: 6
 ```
 
-The output for these examples would be `5`, `4`, and `3` respectively.
+## Deep Dive
 
-## Deep Dive:
+Python's `len()` was already there in Python's earliest versions in the late '80s. It counts non-null-terminated characters, which is why you get the full Unicode character count.
 
-Calculating the length of a string is a relatively simple concept, but it has evolved over time. In the early days of programming, the length of a string was determined by finding the string's null terminator, which is a character used to indicate the end of a string. However, with the introduction of high-level programming languages, this process has become more efficient and less complicated.
+An alternative: using a loop to manually count characters:
 
-While the `len()` function is the most common way of finding the length of a string in Python, there are other approaches as well. For example, using a for loop to iterate through each character in the string and incrementing a counter variable could also achieve the same result. However, this method is less efficient and recommended only for learning purposes.
+```Python
+text = 'Hello, world!'
+count = 0
+for char in text:
+  count += 1
+print(count) # Outputs: 13
+```
 
-Internally, the `len()` function uses a hidden attribute of an object called `__len__()` to calculate the length of a string and return it. All built-in objects in Python have this attribute, allowing them to be used with the `len()` function.
+But `len()` is generally faster and more efficient unless you're doing something very peculiar indeed.
 
-## See Also:
+`len()` is an O(1) operation in Python. That's because Python strings are objects whose length is stored and accessible without needing to scan the entire string.
 
-- [Python String Methods](https://www.w3schools.com/python/python_ref_string.asp) - other useful methods for manipulating strings.
-- [Python Documentation on len()](https://docs.python.org/3/library/functions.html#len) - official documentation for the `len()` function in Python.
-- [Python Strings](https://realpython.com/python-strings/) - a comprehensive guide on strings in Python.
+## See Also
+
+Check out Python's official documentation on its built-in `len()` function: 
+- [https://docs.python.org/3/library/functions.html#len](https://docs.python.org/3/library/functions.html#len)
+
+And here's more on how Python implements its strings:
+- [https://docs.python.org/3/c-api/unicode.html](https://docs.python.org/3/c-api/unicode.html)
+
+There are plenty of additional Python string manipulations worth learning:
+- [https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)

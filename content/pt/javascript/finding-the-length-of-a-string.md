@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando o comprimento de uma string"
-html_title:           "Javascript: Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
 simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,30 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que & Por quê?
+# Aprendendo JavaScript: Descobrindo o Comprimento de uma String
 
-A função de encontrar o comprimento de uma string é uma tarefa comum para programadores de Javascript. O comprimento de uma string se refere ao número de caracteres contidos nela, incluindo espaços e pontuações. Programadores usam essa funcionalidade para realizar diversas ações, como validar dados ou gerar resultados de forma dinâmica.
+## O Que É e Por Quê?
 
-# Como fazer:
+Descobrir o comprimento de uma String significa determinar o número de caracteres que ela contém. Programadores fazem isso para manipular, validar ou comparar Strings com eficácia em seus códigos.
+
+## Como Fazer:
+
+Aqui está um exemplo de como obter o comprimento de uma String em JavaScript. 
+
+```JavaScript
+let texto = "Olá, mundo!";
+console.log(texto.length);  // Saída: 12
+```
+A propriedade `.length` retorna o número de caracteres na string. No exemplo, a saída será 12, que inclui caracteres e espaços.
+
+## Aprofundamento
+
+Embora a propriedade `.length` seja a maneira mais comum e rápida de obter o comprimento de uma string em JavaScript, existem alternativas dependendo do problema que você está resolvendo.
+
+### Contexto Histórico
+
+Antes da existência da propriedade `.length`, os programadores tinham que iterar pelos caracteres de uma string para contar seu comprimento.
 
 ```Javascript
-// Utilizando a propriedade length
-let string = "Olá amigos!"
-console.log(string.length)
-// Output: 12
-
-// Utilizando o método .length()
-let nome = "Maria"
-console.log(nome.length)
-// Output: 5
+function comprimentoDaString(str) {
+    let i = 0;
+    while (str[i] !== undefined) {
+        i++;
+    }
+    return i;
+}
+console.log(comprimentoDaString("Olá, mundo!")); // Saída: 12
 ```
 
-# Profundidade Técnica:
+### Alternativas
 
-A funcionalidade de encontrar o comprimento de uma string foi introduzida como uma propriedade do objeto String em ECMAScript 1 (também conhecido como Javascript 1.0). Esta propriedade é acessível através do operador `.` e é uma propriedade somente leitura, o que significa que não pode ser modificada. Alternativamente, é possível utilizar o método `.length()` que realiza a mesma tarefa. É importante ter em mente que, em ambos os casos, os espaços e pontuações também são incluídos na contagem.
+Em algumas situações, você pode querer contar apenas os caracteres que não sejam espaços. Em tal caso, você pode usar o método `.replace()` para remover espaços e, em seguida, calcular o comprimento.
 
-# Veja também:
+```Javascript
+let texto = "Olá, mundo!";
+let textoSemEspacos = texto.replace(/ /g, '');
+console.log(textoSemEspacos.length);  // Saída: 11
+```
 
-- Documentação do MDN: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/length
-- Vídeo tutorial (em inglês): https://www.youtube.com/watch?v=ZJ8vXiAFC8c
-- Prática da função: https://www.youtube.com/watch?v=BTjE72fQxbA
+## Veja Também
+
+1. [MDN Web Docs: String.length](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+2. [JavaScript.Info: Strings](https://pt.javascript.info/string)
+3. [W3Schools: JavaScript String Length Property](https://www.w3schools.com/jsref/jsref_length_string.asp)
+
+Espero que este guia simplificado tenha te ajudado a entender melhor como encontrar o comprimento de uma string em JavaScript. Continue praticando e explore as referências fornecidas para dominar os conceitos.

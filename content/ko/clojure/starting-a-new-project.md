@@ -1,7 +1,7 @@
 ---
-title:                "새로운 프로젝트 시작하기"
-html_title:           "Clojure: 새로운 프로젝트 시작하기"
-simple_title:         "새로운 프로젝트 시작하기"
+title:                "새 프로젝트 시작하기"
+html_title:           "Arduino: 새 프로젝트 시작하기"
+simple_title:         "새 프로젝트 시작하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -12,49 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-새 프로젝트를 시작한다는 것은 단순히 새로운 코드를 작성하는 것을 의미합니다. 프로그래머들은 자신의 아이디어를 현실화하기 위해 새 프로젝트를 시작합니다. 또 다른 이유는 기존의 코드보다 더 나은 코드를 만들기 위해서입니다.
+새로운 프로젝트를 시작하는 것은 기존 애플리케이션에서 독립적인 새로운 기능을 구현하거나 완전히 새로운 소프트웨어 제품을 개발하는 것을 의미합니다. 프로그래머들은 새로운 아이디어를 테스트하거나 특정 문제를 해결하기 위해 이를 수행합니다.
 
-## 어떻게:
+## 어떻게 하나:
 
-### 새 프로젝트 만들기:
-```Clojure 
-(defproject my-project "0.1.0-SNAPSHOT"
-  :description "My new project"
-  :dependencies [[org.clojure/clojure "1.10.1"]]
-  :main my-project.core)
-```
+Clojure 새 프로젝트를 시작하는 것은 여러 단계로 이루어집니다. 우선, Leiningen이라는 도구를 이용하여 프로젝트 디렉토리를 생성합니다:
 
-### 새 파일 만들기:
 ```Clojure
-(defn hello-world [name]
-  (println (str "Hello, " name "!")))
+lein new project-name
 ```
 
-### 함수 호출하기:
+그런 다음, 생성된 프로젝트의 디렉토리로 이동합니다:
+
 ```Clojure
-(hello-world "John")
+cd project-name
 ```
 
-Output:
-```
-Hello, John !
-```
+일단 프로젝트 디렉토리에 있으면, Clojure 소스 코드를 작성할 수 있습니다.
 
-## 더 깊게 들어가보기:
+## 깊은 탐색:
 
-### 역사적 배경:
-Clojure는 Rich Hickey가 2007년에 발표한 함수형 프로그래밍 언어입니다. Clojure는 JVM에서 실행되는 리스프 변종으로서 Java와의 상호 운용성을 강조하며 개발되었습니다.
+새 프로젝트를 시작하는 개념은 프로그래밍의 역사 상 가장 오래되었고, 다양한 언어와 환경에 적용되었습니다. Clojure에서는 Leiningen이라는 도구를 사용하여 이를 처리하며, 이는 프로젝트의 빌드와 관리를 단순화합니다. 이외에도 Boot이나 Clojure-CLI라는 대안적인 도구도 있습니다. 
 
-### 대안:
-Clojure 외에도 새 프로젝트를 시작하는 다른 방법들이 있습니다. Java나 JavaScript와 같은 다른 언어들을 사용하여 프로젝트를 시작할 수도 있습니다.
+새 프로젝트를 생성하는 동안 Clojure는 일반적으로 다음과 같은 몇 가지 요소를 설정합니다:
 
-### 구현 세부사항:
-Clojure에서 새 프로젝트를 시작하기 위해서는 Leiningen이라는 빌드 도구를 사용할 수 있습니다. 이를 통해 프로젝트의 버전, 종속성, 메인 함수 등을 설정할 수 있습니다.
+- 프로젝트의 이름과 버전
+- 프로젝트의 종속성
+- Application의 시작점
 
-## 더 알아보기:
+## 참고:
 
-Clojure 프로젝트를 시작하는 더 많은 정보를 원한다면 다음 링크를 참고해보세요.
+아래는 Clojure 프로젝트 관리에 대한 추가적인 정보를 제공하는 몇몇 소스들입니다: 
 
-### 관련 링크:
-- [Clojure 문서](https://clojure.org/index)
-- [Leiningen 공식 사이트](https://leiningen.org/)
+- [Official Clojure](https://clojure.org/guides/getting_started) : Clojure 공식 가이드
+- [Leiningen](https://leiningen.org/) : Leiningen 공식 문서
+- [Boot](https://boot-clj.com/) : Boot 공식 문서
+- [Clojure-CLI](https://clojure.org/reference/deps_and_cli) : Clojure-CLI 공식 문서

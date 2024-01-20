@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscules une chaîne de caractères."
-html_title:           "Elixir: Mettre en majuscules une chaîne de caractères."
-simple_title:         "Mettre en majuscules une chaîne de caractères."
+title:                "Mettre une chaîne en majuscules"
+html_title:           "Elixir: Mettre une chaîne en majuscules"
+simple_title:         "Mettre une chaîne en majuscules"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+# Elixir : Mettre en majuscule une chaîne de caractères
 
-Capitaliser une chaîne de caractères est simplement le fait de mettre la première lettre de chaque mot en majuscule, tout en laissant les autres lettres en minuscule. Les programmeurs font cela pour la lisibilité et la cohérence du code. 
+## Qu'est-ce que c'est et pourquoi ?
 
-## Comment faire:
+Mettre en majuscule une chaîne de caractères, c'est transformer la première lettre de chaque mot en majuscule. C'est utile pour une présentation propre du texte dans des scénarios comme les titres, les noms de personnes, etc.
 
-```
-Elixir
-iex> String.capitalize("hello world")
-"Hello world"
-```
+## Voici comment :
 
-Dans cet exemple, nous utilisons la fonction `capitalize` du module `String` pour capitaliser la chaîne "hello world". Le résultat renvoie "Hello world".
+Utilisez la fonction `capitalize/1` du module `String`.
 
-```
-Elixir
-iex> String.capitalize("élève")
-"Élève"
+```elixir
+IO.puts(String.capitalize("elixir est super cool"))
 ```
 
-Dans ce deuxième exemple, nous pouvons voir que même avec des caractères accentués, la fonction `capitalize` fonctionne correctement et renvoie le bon résultat.
+Résultat :
 
-## Plongée en profondeur:
+```elixir
+"Elixir est super cool"
+```
 
-Historiquement, le concept de capitalisation est issu du domaine de la typographie, où les premières lettres des phrases étaient écrites en majuscules pour une meilleure lisibilité. Dans le monde de la programmation, cela est également important pour distinguer les noms de variables, de fonctions, etc. des mots clés du langage.
+## Plongée en profondeur
 
-Une alternative à la fonction `capitalize` de Elixir serait d'utiliser la fonction `titlecase` qui met en majuscule la première lettre de chaque mot, mais qui convertit également les caractères suivants en minuscules.
+Historiquement, l'idée de mettre en majuscule une chaîne de caractères existe depuis longtemps en programmation. En Elixir, cela se fait avec la fonction `capitalize/1` qui fait partie du module `String`.
 
-Le principe derrière la capitalisation d'une chaîne de caractères est en fait assez simple. En utilisant des règles de grammaire et des expressions régulières, le langage peut déterminer quelles lettres doivent être mises en majuscule ou en minuscule.
+Il existe des alternatives, comme écrire votre propre fonction qui parcourt la chaîne et capitalise chaque mot. Cependant, l'utiliser sans nécessité est déconseillé car `String.capitalize/1` est plus performant et maintenu par la communauté Elixir.
 
-## Voir aussi:
+La fonction `String.capitalize/1` applique le cas de titre aux valeurs de code point Unicode de la chaîne de caractères. Elle respecte l'Unicode et gère même correctement les lettres accentuées.
 
-- [Documentation sur les chaînes de caractères en Elixir](https://hexdocs.pm/elixir/String.html)
+## Voir aussi
+
+Pour plus d'informations sur les chaînes de caractères en Elixir, consultez les liens suivants :
+
+- [Documentation officielle Elixir : Module String](https://hexdocs.pm/elixir/String.html)
+- [Guide Elixir School sur les chaînes de caractères](https://elixirschool.com/fr/lessons/basics/strings/)

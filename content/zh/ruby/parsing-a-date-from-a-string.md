@@ -1,6 +1,6 @@
 ---
 title:                "从字符串解析日期"
-html_title:           "Ruby: 从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
 simple_title:         "从字符串解析日期"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,36 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期解析 & 为什么要做它?
+## 什么 & 为什么? (What & Why?)
 
-日期解析是通过编程代码从一个字符串中提取日期信息的过程。程序员通常会这样做是因为日期信息可能以不同的格式出现，如"12月25日"、"25/12"或"2020/12/25"，所以需要通过解析来标准化日期信息，以便后续处理。
+解析字符串中的日期是指从字符串中提取并理解日期信息的过程。程序员这么做的目的是为了处理、格式化以及比较日期，这通常在数据处理和分析中十分常见。
 
-## 如何实现:
+## 如何操作? (How to?)
 
-```Ruby
-require 'date'
-
-date_str = "12月25日"
-date = Date.parse(date_str)
-
-puts date # 2021-12-25
-```
+Ruby内置了解析日期的功能，只需要引用 `Date` 类即可:
 
 ```Ruby
 require 'date'
 
-date_str = "25/12"
-date = Date.strptime(date_str, "%d/%m")
-
-puts date # 2021-12-25
+str = '2021-08-13'
+date = Date.parse(str)
+puts date
 ```
 
-## 深入探讨:
+运行上述脚本，你将看到如下输出：
 
-在过去，日期解析是一个复杂而繁琐的过程，需要手动处理各种日期格式。但是，现在有许多库和类可以帮助我们轻松解析和处理日期信息，如Ruby标准库中的Date类和DateTime类。此外，也可以使用正则表达式来实现日期解析。在解析日期时，需要注意不同语言和文化背景所使用的日期格式，以免出现错误解析。
+```
+2021-08-13
+```
 
-## 链接参考:
+如果日期格式复杂，我们可以使用 `strptime` 方法:
 
-- Ruby官方文档：https://ruby-doc.org/stdlib/libdoc/date/rdoc/index.html
-- 正则表达式介绍：https://www.runoob.com/regexp/regexp-syntax.html
-- 关于日期解析的更多讨论：https://stackoverflow.com/questions/25235061/parsing-date-in-ruby
+```Ruby
+str = '13-八月-2021'
+date = Date.strptime(str, '%d-%B-%Y')
+puts date
+```
+
+输出:
+
+```
+2021-08-13
+```
+
+## 深入探讨 (Deep Dive)
+
+在早期的编程语言中，并没有内置解析日期的功能，程序员需要自己实现。Ruby中的 `Date` 类就源于此，它引用了strptime来解析复杂的日期格式。
+
+一个可选的方式是使用 `Time` 类，但是它通常用于处理带时间的日期。而对于只有日期的情况，我们更倾向于使用`Date` 类。
+
+实现细节上，`Date.parse` 使用的是国际日期格式（YYYY-MM-DD）。在Ruby中，对日期的解析始终依赖于语言或环境的日期格式。
+
+## 图示参考 (See Also)
+
+若希望了解更多关于Ruby日期解析的内容，可以参考以下链接:
+
+- [官方文档: Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+- [官方文档: Time](https://ruby-doc.org/core-3.0.0/Time.html)
+- [Ruby日期格式化指南](https://www.justinweiss.com/articles/3-ways-to-monkey-patch-without-making-a-mess/)

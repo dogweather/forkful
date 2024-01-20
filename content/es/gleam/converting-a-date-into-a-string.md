@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo una fecha en una cadena"
-html_title:           "Gleam: Convirtiendo una fecha en una cadena"
-simple_title:         "Convirtiendo una fecha en una cadena"
+title:                "Convirtiendo una fecha en una cadena de texto"
+html_title:           "C++: Convirtiendo una fecha en una cadena de texto"
+simple_title:         "Convirtiendo una fecha en una cadena de texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
+Convertir una fecha en una cadena es cuando cambiamos un formato de fecha, como DD/MM/AAAA, a una cadena de texto ("2/10/2021"). Los programadores hacen esto para facilitar la manipulación de fechas y la visualización en varias interfaces de usuario.
 
-Convertir una fecha en una cadena de texto es una tarea común para los programadores. Usualmente se hace para manipular y mostrar fechas en diferentes formatos, como por ejemplo para mostrar la fecha en un formato legible para los usuarios. Además, algunas funciones o herramientas requieren que las fechas sean representadas como cadenas de texto para poder ser procesadas correctamente.
+## Cómo se hace:
+En Gleam, la conversión de una fecha a una cadena de texto se hace a través del módulo `erlang`.
 
-## Cómo:
+```gleam
+import erlang
 
-Gleam proporciona diferentes maneras de convertir fechas en cadenas de texto. Una forma sencilla es utilizando la función ```strftime```, la cual permite formatear una fecha en un estilo personalizado. Por ejemplo, si queremos formatear la fecha actual en formato "DD/MM/AAAA", podríamos utilizar el siguiente código:
-
-```Gleam
-import Time
-
-let date = Time.now()
-let formatted_date = Time.strftime("%d/%m/%Y", date)
-
+fn main() {
+-> Tuple(tuple([1, 1, 1970]))
+  |> erlang.tuple_to_list
+  |> list.map(fn(x) { str.from_int(x) })
+  |> list.append(["/"])
+}
 ```
+La salida será:
 
-El resultado sería "28/02/2021".
-
-Otra opción es utilizar la función ```format``` que viene incluida en el módulo ```Calendar```. Esta función recibe un objeto de fecha y una cadena de formato, y devuelve la fecha en el formato especificado. Por ejemplo:
-
-```Gleam
-import Calendar
-
-let date = Calendar.local_now()
-let formatted_date = Calendar.format(date, "%B %d, %Y")
-
+```gleam
+["1", "/", "1", "/", "1970"]
 ```
+## Buceo en profundidad
+Convertir fechas en cadenas de texto es una práctica común en programación. Históricamente, esto se hizo para trabajar alrededor de limitaciones de lenguaje y biblioteca, y para ahorrar espacio de almacenamiento. Otras alternativas incluyen el uso de `date_to_string` en otras bibliotecas de terceros o lenguajes.
 
-El resultado sería "febrero 28, 2021".
+El módulo `erlang` en Gleam convierte las fechas en cadenas por medio de la conversión de cada componente (día, mes, año) a cadenas de texto, y luego los concatena con un "/". Este método es simple y directo, y hace que la fecha sea fácilmente legible y manipulable desde cualquier lugar del programa.
 
-## Profundizando:
+## Ver También
+Para más información sobre Gleam y sus utilidades, puedes visitar los siguientes enlaces:
 
-La necesidad de convertir fechas en cadenas de texto ha existido desde los primeros días de la programación. Anteriormente, muchos lenguajes de programación no tenían formas integradas de trabajar con fechas y horas, por lo que era necesario utilizar funciones de biblioteca externas o escribir código personalizado para manejarlas.
-
-Además de las funciones ```stftime``` y ```format```, existen otras opciones para trabajar con fechas en Gleam, como el módulo ```DateTime``` y la función ```parse``` del módulo ```ISO8601```. También es importante tener en cuenta el sistema de tipos en Gleam, que permite trabajar con fechas de forma segura y sin errores comunes relacionados con formatos incorrectos.
-
-## Ver también:
-
-- Documentación oficial de Gleam sobre fechas y tiempos: https://gleam.run/documentation/stdlib_time
-- Ejemplos de uso de fechas y tiempos en Gleam: https://github.com/luminous-io/gleam/blob/master/stdlib/time/test/time_test.gleam
-- Introducción al sistema de tipos de Gleam: https://gleam.run/book/static-types
+- Documentación oficial de Gleam: [https://gleam.run/docs/](https://gleam.run/docs/)
+- Libro de programación Gleam ["Programming Gleam"](https://pragprog.com/titles/lotwb/programming-gleam/)
+- Artículo útil sobre la conversión de fechas a cadenas: [https://www.toptal.com/software/definitive-guide-to-datetime-manipulation](https://www.toptal.com/software/definitive-guide-to-datetime-manipulation)

@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Bash recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,42 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Searching and replacing text is a process of finding specific words or phrases in a piece of text and replacing them with desired ones. Programmers use this technique to quickly make changes to their code without manually going through every line. It's an efficient way to make multiple changes at once, saving time and effort.
+Searching and replacing text within files is a common task in programming. It helps manage and manipulate data, tweak configuration settings, and upgrade code syntax - awesome stuff.
 
 ## How to:
-
-Here's an example of searching and replacing text in Bash:
-
-```Bash
-# Search for word "Hello" and replace it with "Hi"
-sed -i 's/Hello/Hi/g' example.txt
-```
-
-The `-i` flag is used to make the changes in the file itself. Without it, the changed text will only be displayed in the output. Similarly, we can use the `grep` command to search for specific words in a file:
+Here's how you can search and replace text in Bash. The `sed` command gets it done. Example:
 
 ```Bash
-# Search for lines containing word "apple" in example.txt
-grep "apple" example.txt
+echo "Hello World" | sed 's/World/Programmers/'
 ```
 
-This will return all the lines in the file that contain the word "apple". We can also use the `find` command to search for files with specific names or extensions:
+Output is:
 
 ```Bash
-# Find all files with ".txt" extension in current directory
-find . -name "*.txt"
+Hello Programmers
 ```
 
-## Deep Dive:
+It's done. We replaced `World` with `Programmers`.
 
-Searching and replacing text has been a common practice since the early days of computing. It was first introduced in the `ed` editor in the 1960s, and later popularized in `sed`, which stands for "stream editor". Nowadays, there are many tools and scripting languages that provide powerful search and replace capabilities, such as Perl, Python, and even plain old command line utilities like `awk`.
+If you have a file to work with, do this:
 
-One alternative to using command line tools is integrating text search and replace functionality into your text editor. Many modern editors come with this feature built-in or offer plugins that can do it. This can be especially useful when making changes to large projects with multiple files.
+```Bash
+sed -i 's/foo/bar/g' filename
+```
 
-In terms of implementation, text searching and replacing is usually done using regular expressions, also known as "regex". Regular expressions define a pattern that the search phrase must match, making the search more flexible and accurate.
+It replaces all 'foo' with 'bar' in the file named 'filename'. `-i` edits files in place and 'g' applies it globally on every line.
 
-## See Also:
+## Deep Dive
+We used `sed` - short for stream editor - included in Unix systems since 1974. There are alternatives: like 'awk', 'perl', and 'grep'. The choice depends on your exact needs and personal preference. Simple text replacements work great with `sed`. For more complex tasks, `awk` or `perl` might suit you better.
 
-- [ed: The Standard Text Editor](https://www.gnu.org/fun/jokes/basics.plus-joke)
-- [sed: Unix Sed utility](https://www.gnu.org/software/sed/)
-- [Regular Expressions in Bash](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
+On the implementation side, `sed` scans the file line by line, checking each line for the search term. When found, it gets replaced. This is why `sed` shines in large text files. For small files where performance doesn't matter much, any method will do.
+
+## See Also
+Explore further with these handy links:
+
+1. [GNU sed documentation](https://www.gnu.org/software/sed/manual/sed.html)
+2. [AWK - A Tutorial and Introduction](https://www.grymoire.com/Unix/Awk.html)
+3. [Perl documentation](https://perldoc.perl.org/)

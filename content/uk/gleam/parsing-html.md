@@ -1,6 +1,6 @@
 ---
 title:                "Розбір HTML"
-html_title:           "Gleam: Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
 simple_title:         "Розбір HTML"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що це таке і чому програмісти це роблять
+## Що та навіщо?
+Парсинг HTML – це процес, коли ваш код аналізує HTML файл і розбиває його на частини для маніпулювання чи отримання даних. Це головний інструмент для веб скрапінгу або збору даних з веб-сайтів.
 
-Розбір HTML - це процес обробки HTML-коду для отримання потрібної інформації. Це корисний інструмент для програмістів, оскільки дозволяє здобути маніпулювання та аналізувати дані з веб-сторінок.
-
-Як це зробити:
-
+## Як це зробити:
 ```Gleam
-import gleam/html
+fn main() {
+   let html = "<html><body><h1>Привіт, світе!</h1></body></html>";
+   let document = Html::parse_document(&html);
 
-html = "<h1>Hello World</h1>"
-parsed = html |> Html.parse
-
-title = parsed
-    |> Html.children
-    |> List.head
-    |> Html.text
-
-//Output: "Hello World"
+   let h1_tag = document.select("h1").unwrap().next().unwrap();
+   assert_eq!(h1_tag.text(), "Привіт, світе!");
+}
 ```
+Вищенаведений код аналізує HTML-рядок, а потім шукає тег "h1" і отримує його текстове значення.
 
-Глибше:
+## Поглиблений огляд
+Парсинг HTML — досить стара концепція, що з'явилася з появою HTML і необхідністю аналізувати веб-сторінки. Є різні способи робити це, включаючи регулярні вирази або DOM-дерево. Але Gleam використовує бібліотеку для парсингу HTML, що дозволяє працювати з кодом HTML як з об'єктом.
 
-Розбір HTML має довгу історію у світі програмування і є першою кроком у багатьох завданнях, пов'язаних з веб-розробкою. Існують інші альтернативи, наприклад, використання синтаксичних аналізаторів, але розбір HTML є швидким та ефективним способом отримання даних з веб-сторінок. Реалізація розбору HTML може бути складною через велику кількість можливих елементів та структур у HTML документі.
-
-Дивіться також:
-
-Детальнішу інформацію про розбір HTML можна знайти у офіційній документації Gleam та на сторінці проекту на Github.
-
-Дізнайся більше про розбір HTML й інші інструменти, що можуть бути корисними у веб-розробці.
+## Дивіться також
+[Gleam HTML parsing library](https://github.com/gleam-lang/html)
+[Web scraping guide](https://www.dataquest.io/blog/web-scraping-beautifulsoup/)
+[Alternative parsing techniques](https://tomassetti.me/parsing-in-python-all-the-tools-and-libraries-you-can-use/)

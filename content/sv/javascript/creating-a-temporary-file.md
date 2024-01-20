@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en tillfällig fil"
-html_title:           "Javascript: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,42 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
+## Vad & Varför?
+Skapa en tillfällig fil innebär att tillfälligt lagra data I en fil, som sedan raderas när den inte längre behövs. Programmerare gör detta för att undvika att överbelasta minnet, eller när dataintegritet behövs på en disk vid senare tillfället.
 
-Skapandet av en temporär fil i Javascript refererar till att skapa en kortlivad fil som endast finns för en begränsad tidsperiod. Detta kan användas av programmerare för att temporärt lagra data eller utföra en specifik funktion inom ett program.
-
-Detta koncept är vanligt inom datorprogrammering för att hantera data på ett effektivt sätt och för att undvika eventuella permanenta förändringar som kan orsaka problem i framtiden.
-
-## Hur man:
-
-För att skapa en temporär fil i Javascript kan du använda inbyggda funktioner som `fs.mkdir()`och `fs.mkdtemp()`i Node.js. Här är ett exempel på hur du kan använda dessa funktioner för att skapa en temporär katalog och fil:
+## Hur gör man:
+Här är ett sätt att skapa en tillfällig fil i Javascript genom att använda Node.js `fs` modul:
 
 ```Javascript
-const fs = require('fs');
+var fs = require('fs');
 
-// Skapar en temporär katalog
-fs.mkdtemp('temp-', (err, folder) => {
-    if (err) throw err;
-
-    // Skapar en temporär fil inom katalogen
-    fs.writeFile(`${folder}/tempfile.js`, 'console.log("Det här är en temporär fil!")', function (err) {
-        if (err) throw err;
-
-        console.log('Temporär fil skapad!');
-    });
+fs.mkdtemp('/tmp/foo-', (err, folder) => {
+  if (err) throw err;
+  console.log(folder);
 });
 ```
 
-Efter att ha kört detta kodexempel kommer en temporär fil med namnet "tempfile.js" att skapas inuti en temporär katalog som har prefixet "temp-". Du kan sedan använda denna fil för att temporärt lagra information eller utföra en specifik uppgift.
+I skriptet ovan skapar `mkdtemp`-metoden en unik tillfällig mapp i `/tmp` mappen. ‘Foo-‘ prefixet ger oss en lätt identifierbar fil. Om det inte finns några fel, skriver mappen ut dess väg i konsolen.
 
-## Djupdykning:
+## Deep Dive 
+Historiskt sett, tillfälliga filer uppstod i unix-baserade system, där de vanligtvis lagras i `/tmp` eller '/var/tmp' mappar. JavaScript erbjuder `fs` modul genom Node.js för att arbeta direkt med filsystemet, som inkluderar skapandet av temporära filer.
 
-Att skapa temporära filer är ett vanligt koncept inom datorprogrammering och har funnits sedan tidigare språk som C och Unix. Det finns också alternativ för att skapa temporära filer i Javascript, såsom att använda en databashanterare som SQLite eller lagra data i minnet istället för på en fysisk fil.
+Ett alternativ till `mkdtemp` vore att använda `tmp-promise` paket, som använder `promises` i stället för "callbacks", vilket gör att du kan använda `async / await` syntax.
 
-När en temporär fil skapas i Javascript, skapas den i det temporära systemets specifika mapp. Detta kan vara `/tmp`på Linux-system eller `C:\Users\[ditt användarnamn]\AppData\Local\Temp`på Windows.
+När det gäller implementationsdetaljer, skapas en tillfällig fil eller mapp med unik namn genom att lägga till sex slumpmässiga tecken till prefixet som du har angett. Filerna raderas inte automatiskt, så det är viktigt att ta bort dem när de inte längre behövs.
 
-## Se även:
-
-- [Node.js dokumentation om `fs.mkdir()`](https://nodejs.org/api/fs.html#fs_fs_mkdir_path_options_callback)
-- [Node.js dokumentation om `fs.mkdtemp()`](https://nodejs.org/api/fs.html#fs_fs_mkdtemp_prefix_options_callback)
-- [W3Schools tutorial om Node.js `fs` modul](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)
+## Se också
+1. Node.js `fs` module docs: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
+2. `tmp-promise` paket: [https://www.npmjs.com/package/tmp-promise](https://www.npmjs.com/package/tmp-promise)
+3. Article on In-depth File System in Node.js: [https://www.sitepoint.com/understanding-module-exports-exports-node-js/](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)

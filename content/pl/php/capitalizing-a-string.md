@@ -1,7 +1,7 @@
 ---
-title:                "Zmienianie litery początkowej w ciągu znaków"
-html_title:           "PHP: Zmienianie litery początkowej w ciągu znaków"
-simple_title:         "Zmienianie litery początkowej w ciągu znaków"
+title:                "Zamiana małych liter na wielkie w ciągu znaków"
+html_title:           "PHP: Zamiana małych liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana małych liter na wielkie w ciągu znaków"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Capitalizowanie (ang. capitalizing) jest procesem zmiany pierwszej litery w słowie na dużą literę. Programiści często to robią, ponieważ jest to standardowa konwencja pisania kodu, co ułatwia czytanie i zrozumienie kodu dla innych programistów.
+Zbiór znaków, nazywany stringiem, można przekształcić tak, aby każde słowo zaczynało się wielką literą. Robi się to w PHP, żeby podkreślić ważne informacje, ulepszyć czytelność lub spełnić specyficzne wymagania formatowania.
 
 ## Jak to zrobić:
 
-### W PHP:
+W PHP użyjemy funkcji `ucwords()`, która konwertuje pierwszą literę każdego słowa w stringu na wielką literę. Przyjrzyjmy się temu:
 
-```php
-$string = "witaj świecie!";
-
-echo ucfirst($string); // Wyświetli: "Witaj świecie!"
-
-echo ucwords($string); // Wyświetli: "Witaj Świecie!"
+```PHP
+$str = 'witaj, świecie';
+$capitalizedStr = ucwords($str);
+echo $capitalizedStr;
 ```
 
-## Głębszy Zanurzenie:
+Powyższy kod wypisze: 'Witaj, Świecie'
 
-### Kontekst Historyczny:
+## Deep Dive:
 
-W starszych wersjach PHP zmienną globalną ini_ucfirst można było ustawić na true, aby włączyć automatyczne capitalizowanie pierwszej litery. Jednak w aktualnej wersji PHP nie jest to już dostępna opcja.
+Funkcja `ucwords()` pojawiła się w PHP od początku, czyli od wersji 4.0. Każda nowa wersja ją doskonaliła.
 
-### Alternatywy:
+Alternatywą dla `ucwords()` jest funkcja `mb_convert_case()`, która jest lepszym rozwiązaniem, jeśli pracujesz z multibyte stringami.
 
-Istnieje wiele innych funkcji w PHP umożliwiających manipulowanie tekstem, takich jak strtolower(), strtoupper() czy strrev(). Jednakże, jeśli chodzi o capitalizowanie pierwszej litery, najlepszym wyborem są funkcje ucfirst() lub ucwords().
-
-### Szczegóły Implementacji:
-
-Funkcja ucfirst() zmienia pierwszą literę w stringu na dużą, natomiast ucwords() capitalizuje wszystkie pierwsze litery w każdym słowie w stringu. Funkcje te są wywoływane na zmiennej typu string i zwracają nowy string z zmienionymi literami. Obie funkcje są dostępne od PHP w wersji 4.
+Co do szczegółów implementacji, `ucwords()` w PHP używa reguł podobnych do 'C'. To znaczy, uważa za początek słowa każdą pozycję, która nie jest poprzedzona literą.
 
 ## Zobacz też:
 
-- Oficjalna dokumentacja PHP dotycząca funkcji ucfirst(): https://www.php.net/manual/en/function.ucfirst.php
-- Oficjalna dokumentacja PHP dotycząca funkcji ucwords(): https://www.php.net/manual/en/function.ucwords.php
+- Dokumentacja PHP ucwords(): https://www.php.net/manual/pl/function.ucwords.php
+- Dokumentacja PHP mb_convert_case(): https://www.php.net/manual/pl/function.mb-convert-case.php
+- Szczegółowe omówienie różnic między wielkością liter: https://www.geeksforgeeks.org/php-ucwords-function/

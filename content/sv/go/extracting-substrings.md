@@ -1,7 +1,7 @@
 ---
-title:                "Utvinna delsträngar"
-html_title:           "Go: Utvinna delsträngar"
-simple_title:         "Utvinna delsträngar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -12,34 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-När vi pratar om att extrahera substrängar i programmeringsspråket Go, menar vi att hämta en del av en befintlig sträng och lagra den som en egen variabel. Detta är användbart när vi behöver hantera större strängar och endast behöver arbeta med vissa delar av dem. Programmerare använder detta till exempel när de ska sortera, filtrera eller jämföra data.
+Extrahera substrängar innebär att hämta ut en del av en ursprunglig sträng. Programmerare gör detta för att använda specifika portioner av data, likt att segmentera en större mängd information i hanterbara bitar.
 
-## Så här gör du:
+## Hur till:
 
 ```Go
 package main
-
-import (
-	"fmt"
-)
+import "fmt"
 
 func main() {
-	str := "Detta är en sträng för att demonstrera substrängsextraktion."
-	substr := str[5:18]
-	fmt.Println(substr)
+    str := "Jag älskar att programmera i Go."
+    substr := str[0:9]
+    fmt.Println(substr)
 }
 ```
-Output: ```är en sträng```
+`Output: Jag älskar`
 
-Här visar vi ett exempel på hur man extraherar en substräng från en befintlig sträng i Go. Vi deklarerar en variabel ```str``` med en längre sträng som innehåller texten vi vill arbeta med. Sedan får vi tillgång till en del av denna sträng genom att använda index och kolon för att markera vilka tecken vi vill extrahera. I det här fallet vill vi ha tecken från den sjätte positionen (där index 0 är den första positionen) till den artonde positionen, vilket ger oss substrängen "är en sträng".
+Exemplet ovan visar hur man extraherar en substräng från en given sträng. Här tar vi de 9 första tecknen från strängen "Jag älskar att programmera i Go."
 
-## Djupdykning:
+## Fördjupning:
 
-Historiskt sett har substrängsextraktion ansetts vara en av de mer ineffektiva manipulationerna av textsträngar. Detta på grund av att det är en relativt dyr operation jämfört med andra textmanipulationsmetoder. Det finns dock alternativ till substrängsextraktion, som till exempel att använda reguljära uttryck eller att dela upp strängen i mindre delar med hjälp av t.ex. split-funktionen.
+(1) Extrahering av substrängar har en lång historik inom programmeringsvärlden och används flitigt inom de flesta språk, inklusive Go. 
 
-I Go implementerades substrängsextraktion genom att låta index- och long operatorn fungera på strängar. Det finns även en inbyggd standardbiblioteksfunktion för substrängsextraktion, ```strings.SubString()```, som kan användas för att extrahera substrängar på olika sätt.
+(2) Go erbjuder inbyggda metoder för att bearbeta strängar, men du kan även använda paket som "strings" eller "strconv" för mer komplexa uppgifter. 
+
+(3) I Go, substrängar extraheras med hjälp av index. Språket antar en 0-baserad indexering, vilket innebär att det första tecknet i strängen är index 0.
 
 ## Se även:
 
-- [Officiell dokumentation för Go om substrängsextraktion](https://golang.org/ref/spec#Slice_expressions)
-- [En guide om Go strängoperationer](https://www.golang-book.com/books/intro/7#section2)
+1. Go's officiella dokumentation om strängar:  https://golang.org/pkg/strings/
+2. Mer om Go's indexbaserade strängmanipulationer: https://gobyexample.com/string-functions
+3. Utförlig guide om att arbeta med strängar i Go: https://www.callicoder.com/go-string/

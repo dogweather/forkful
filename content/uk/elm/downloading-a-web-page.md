@@ -1,6 +1,6 @@
 ---
 title:                "Завантаження веб-сторінки"
-html_title:           "Elm: Завантаження веб-сторінки"
+html_title:           "Gleam: Завантаження веб-сторінки"
 simple_title:         "Завантаження веб-сторінки"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,31 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що та для чого?
 
-Завантаження веб-сторінки - це процес отримання веб-сторінки з сервера і відображення її на екрані користувача. Програмісти виконують це, щоб отримати доступ до вмісту сторінки та використати його для подальшого використання в програмі.
+Завантаження веб-сторінки включає отримання вмісту веб-сторінки через Інтернет. Програмісти роблять це, щоб отримати дані з веб-сайтів або виконати операції на стороні сервера.
 
 ## Як це зробити:
 
+В Elm ми можемо використовувати модуль `Http` для завантаження веб-сторінки. Ось приклад:
+
+```Elm
+import Http
+import Json.Decode as Decode
+
+getWebsiteContent : String -> Cmd Msg
+getWebsiteContent url =
+    Http.get
+        { url = url
+        , expect = Http.expectString GotWebsiteContent
+        }
+
+type Msg = GotWebsiteContent (Result Http.Error String)
+
+update : Msg -> Model -> (Model, Cmd Msg)
+update msg model =
+    case msg of
+        GotWebsiteContent result ->
+            case result of
+                Ok response ->
+                    ...
+
+    Http.send GotWebsiteContent (getWebsiteContent "http://example.com")
 ```
-Elm.Http.get "https://www.example.com/" 
-    |> Task.perform handleResponse
 
-handleResponse : Result Http.Error String -> Cmd msg
-handleResponse result =
-    case result of
-        Ok body ->
-            -- тут ви можете обробити дані з отриманої сторінки
+## Більше деталей:
 
-        Err error ->
-            -- тут ви можете обробити помилку, якщо її було
-```
+### Історичний контекст
+Elm був розроблений Evan Czaplicki у 2012 році як безпечна, функциональна мова програмування для веб-розробки, зокрема для роботи з HTTP-запитами.
 
-## Вдивимося глибше:
+### Альтернативи
+У Elm основний спосіб роботи з HTTP - це через використання модуля `Http`. Однак, є інші JavaScript-бібліотеки, такі як `fetch` або `axios`, які можна використовувати через порти.
 
-Завантаження веб-сторінок стало необхідною частиною сучасного програмування, оскільки все більше додатків працюють з веб-даними. Окрім Elm, існують інші варіанти для завантаження сторінок, такі як JavaScript і Python. Elm пропонує простий та безпечний спосіб виконання цього завдання за допомогоюсь його вбудованих функцій Http та Cmd.
-
-## Дивіться також:
-
-Більше інформації про завантаження веб-сторінок можна знайти в офіційній документації Elm: https://guide.elm-lang.org/effects/http.html
-Також, вам може бути цікаво дізнатися про інші можливості Elm, такі як створення інтерактивних інтерфейсів або розробка ігор.
+### Деталі реалізації
+Зверніть увагу, що Elm використовує свій власний тип `Http.Error` для обробки помилок,

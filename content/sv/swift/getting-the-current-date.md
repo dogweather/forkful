@@ -1,7 +1,7 @@
 ---
-title:                "Hämta den aktuella datumet"
-html_title:           "Swift: Hämta den aktuella datumet"
-simple_title:         "Hämta den aktuella datumet"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,35 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Programmera med Swift: Så får du datumet för idag
+
 ## Vad & Varför?
-Att kunna få den nuvarande datumet är en viktig del av programmering eftersom det är en vanlig uppgift som måste utföras. Många gånger behöver vi använda det aktuella datumet för att hantera tidsrelaterade uppgifter, som att visa datumet på ett användargränssnitt eller beräkna tidsskillnader mellan två datum.
+
+Att få dagens datum är processen att hämta aktuellt datum och tid från systemet. Programmerare gör detta för att spåra händelseförlopp, logga data eller för rent visuella syften i en app.
 
 ## Så här gör du:
-För att få den nuvarande datumet i Swift kan du använda "Date()" -funktionen. Detta skapar en instans av "Date" -typen som innehåller det aktuella datumet och tiden. Exempelvis:
+
+Det är inte svårt att få dagens datum i Swift. Här är ett exempel på hur du gör:
+
 ```Swift
-let currentDate = Date()
-print(currentDate)
+let nu = Date()
+print(nu)
 ```
-Detta kommer att skriva ut något i stil med "2021-11-11 14:27:30 +0000".
 
-Om du vill formatera datumet på ett specifikt sätt kan du använda "DateFormatter" -klassen. Detta gör det möjligt att anpassa datum- och tidsformatet baserat på dina behov. Exempelvis:
+Koden ovan kommer att producera något liknande följande utmatning:
+
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-let currentDate = Date()
-print(dateFormatter.string(from: currentDate))
+2023-02-01 14:37:42 +0000
 ```
-Detta kommer att skriva ut dagens datum i formatet "11/11/2021".
 
-## Djupdykning:
-Historiskt sett var det mycket svårt att få den nuvarande datumet i programmeringsspråk, och det krävdes ofta mycket komplex kod. Men med införandet av inbyggda datum- och tidstyper i Swift har detta blivit mycket enklare och mer exakt.
+Denna kod kommer att producera dagens datum och tid i GMT format.
 
-Alternativ till att använda "Date()" är att använda tredjepartsbibliotek som "CoffeeScript", "SwiftDate" eller "Chronology". Dessa bibliotek ger mer avancerade funktioner för att hantera datum och tider, men de kräver extra installation och inlärning.
+## Djupdykning
 
-När det gäller implementation, använder "Date()" -funktionen en algoritm som bestämmer den nuvarande tidpunkten baserat på enhetens systemklocka. Det är dock viktigt att notera att om enhetens datum och tid inte är korrekt konfigurerad, kan detta påverka det aktuella datumet som returneras.
+Det har alltid varit viktigt för system och program att kunna hålla reda på tid och datum. I Swift, som släpptes av Apple 2014, kan detta uppnås med inbyggda metoder tillgängliga i `Date` klassen.
 
-## Se även:
-- [Apple Date Dokumentation](https://developer.apple.com/documentation/foundation/date)
-- [CoffeeScript Bibliotek](https://github.com/hebertialmeida/CoffeeScript)
-- [SwiftDate Bibliotek](https://github.com/malcommac/SwiftDate)
-- [Chronology Bibliotek](https://github.com/davedelong/Chronology)
+Alternativt kan du också använda `Calendar` klassen för mer komplexa datumoperationer. Till exempel:
+
+```Swift
+let nu = Date()
+let kalender = Calendar.current
+let komponenter = kalender.dateComponents([.year, .month, .day], from: nu)
+```
+
+Ovanstående kod kommer att ge dig året, månaden och dagen för dagens datum.
+
+Däremot kan enklare användningar, som att helt enkelt få dagens datum, uppnås med en enda linje kod genom klassen `Date`.
+
+## Se också:
+
+- Apple officiella dokumentation om Swifts `Date` och `Calendar` klasser: 
+  - [Date](https://developer.apple.com/documentation/foundation/date)
+  - [Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- Swift programmeringsspråkets historia: [här](https://en.wikipedia.org/wiki/Swift_(programming_language)).
+- Digital Trends djupdykningar i Swift: [här](https://www.digitaltrends.com/computing/what-is-swift/).

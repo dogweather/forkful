@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 到底是什么 & 为什么？
+# 什么 & 为什么? (What & Why?)
 
-在Elixir中，检查一个目录是否存在是一种常见的编程操作。这个操作可以让程序员确定某个特定的目录是否存在，从而执行相应的逻辑。它是一种保证可靠性和正确性的好方法，因为如果程序试图访问一个不存在的目录，就会发生错误。
+检查目录是否存在是程序中的操作，它能帮助你确定特定目录在文件系统中是否已存在。 程序员做这个的原因是为了防止错误，并在尝试访问或修改不存在的目录时提前处理问题。
 
-# 如何操作：
+# 如何操作? (How to) 
+在Elixir中，你可以使用File模块中的dir?函数来检查目录是否存在。看下面的例子。
 
-```elixir
-defp check_directory(directory) do
-  if File.dir?(directory) do
-    IO.puts "目录存在"
-  else
-    IO.puts "目录不存在"
-  end
+```Elixir
+# 引用 File 模块
+require File
+
+# 检查目录是否存在
+if File.dir?("/path/to/my/directory") do
+  IO.puts "The directory exists."
+else
+  IO.puts "The directory does not exist."
 end
-
-check_directory("/users/elixir/directory")
 ```
 
-本文使用File模块中的File.dir?函数来检查目录是否存在。该函数返回一个布尔值，如果目录存在，则为true，否则为false。程序员可以根据需要编写相应的逻辑，来处理目录存在或不存在的情况。
+运行上面的代码，如果路径 `"/path/to/my/directory"` 存在，将会输出 `"The directory exists."`。否则，输出 `"The directory does not exist."`.
 
-# 深入挖掘：
+# 深潜 (Deep Dive)
+在早期的编程中，检查目录是否存在的功能可能不像现在那么普遍。但随着文件系统的使用越来越频繁，这功能变得越来越重要。
 
-历史背景：检查目录是否存在是一种实用的编程操作，早在早期的操作系统中就已经存在。它的出现让程序员可以更方便地管理和操作文件系统。
+对于Elixir，这个功能由内部的 `:filelib` Erlang库实现。Erlang 是 Elixir 的母语言，Elixir 继承了 Erlang的许多功能和库。
 
-替代方案：除了使用Elixir的File模块，还可以使用操作系统特定的命令来检查目录是否存在。例如，在Linux上，可以使用`ls`命令来列出目录中的文件和目录。但是，使用Elixir的File模块更具可移植性，适用于多个操作系统。
+此外，你可以使用 `File.exists?/1` 函数来检查文件或目录是否存在。不过，`File.dir?/1` 函数提供了更明确的检查，专门针对目录。
 
-实现细节：Elixir中的File.dir?函数其实是调用了操作系统相关的函数来检查目录是否存在。这也是为什么它具有跨平台的特性。
+# 另请参阅 (See Also)
+欲了解更多相关信息，请访问：
 
-# 参考资料：
-
-- [Elixir官方文档](https://hexdocs.pm/elixir/File.html#dir?/1)
-- [Linux命令行介绍](https://linuxcommand.org/lc3_man_pages/ls1.html)
+Elixir对文件操作详解： https://learnku.com/elixir/t/2718
+Elixir的File模块官方文档： https://hexdocs.pm/elixir/File.html
+Erlang的filelib模块官方文档: http://erlang.org/doc/man/filelib.html

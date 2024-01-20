@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Lua: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärien vertaaminen tarkoittaa kahden eri päivämäärän arvojen vertaamista, jotta voidaan selvittää kumpi niistä on suurempi tai pienempi. Tätä tarvitaan usein ohjelmoinnissa esimerkiksi varmistaaksemme, että tietokone käsittelee päivämääriä oikeassa järjestyksessä ja näyttää oikeita tietoja käyttäjilleen.
+# Datat Vertailu Lua-ohjelmoinnissa
 
-## Miten:
-Vertaamme kahta päivämäärää käyttäen `os.time` ja `os.difftime` -funktioita, jotka muuttavat päivämäärät aikaleimoiksi ja laskevat niiden välillä olevan eron sekunneissa. Käytämme myös `if`-ehtolauseita vertailun tekemiseen ja `print`-komennon avulla tulostamme eri vaihtoehdot.
+## Mikä & Miksi?
+
+Datat vertailu tarkoittaa kahden päivämäärän suhteen analysoimista. Ohjelmoijat tekevät tämän arvioidakseen aikaleimojen järjestyksen tai laskemaan aikavälin.
+
+## Näin Se Tehdään:
+
+Lua tekee datat vertailun helpoksi `os.difftime` -funktiolla. Tässä on esimerkki.
 
 ```Lua
-local date1 = os.time({year = 2020, month = 11, day = 15})
-local date2 = os.time({year = 2020, month = 3, day = 10})
+local syntymapaiva1 = os.time({year=1990, month=5, day=15})
+local syntymapaiva2 = os.time({year=1980, month=5, day=15})
 
-if os.difftime(date1, date2) > 0 then
-    print("Päivämäärä 1 on suurempi kuin päivämäärä 2.")
-elseif os.difftime(date1, date2) < 0 then
-    print("Päivämäärä 2 on suurempi kuin päivämäärä 1.")
-else
-    print("Päivämäärät ovat samat.")
-end
-
---> Tulostaa: Päivämäärä 1 on suurempi kuin päivämäärä 2.
+local eroaika = os.difftime(syntymapaiva1, syntymapaiva2)
+print(tonumber(eroaika) / (24 * 60 * 60))  -- päivinä
 ```
 
-## Syvempi sukellus:
-Historiallisesti tietokoneissa päivämääriä on tallennettu sekunteina, jotka ovat kuluneet tietystä hetkestä, yleensä vuoden 1970 alusta. Tämä on nimeltään "epoch" ja se voi vaihdella eri käyttöjärjestelmissä. Myös erilaisia algoritmeja on kehitetty päivämäärien vertailuun, mutta `os.difftime`-funktio on yleisesti hyväksytty ja helppokäyttöinen ratkaisu.
+Tämä esimerkki antaa eroajan päivissä käyttäen `os.difftime` -funktiota.
 
-## Katso myös:
-- [Lua-käsikirja](https://www.lua.org/manual/5.4/)
-- [Vinkkejä päivämäärien käsittelyyn Lua:ssa](https://www.computercraft.info/wiki/Os.date_(function))
+## Syvempi Sukellus:
+
+Historiallisesti Lua ei ollut yhtä tehokas päivämäärän käsittelyssä. `os.difftime` -toiminto lisättiin sen versiossa 5.1. 
+
+Aikaleimojen vertailu voidaan toteuttaa myös muiden ohjelmointikielten, kuten Pythonin ja JavaScriptin avulla, jotka tarjoavat laajemmat funktiovalikoimat päivämäärien käsittelyyn.
+
+Lua:n osalta `os.date`, `os.time` ja `os.difftime` -funktiot ovat yleisesti käytössä aikaleimojen käsittelyssä. Ne tarjoavat kuitenkin vain perustoiminnot eivätkä vastaa kaikkia ohjelmoijan tarpeita.
+
+## Katso Myös:
+
+Seuraavat resurssit tarjoavat lisätietoja datat vertailusta:
+
+- [Keskustelu StackOverflow-sivustolla päivämäärien vertailusta Luan kanssa](https://stackoverflow.com/questions/3808902/comparing-dates-in-lua)
+- [Lua-käyttöohje päivämäärän ja ajan funktioiden käyttämisessä](https://www.lua.org/pil/22.1.html)
+- [Github-sivuston LuaDate-kirjasto, joka tarjoaa laajemman valikoiman funktioita päivämäärien ja aikojen käsittelyyn](https://github.com/tieske/date)

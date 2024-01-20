@@ -1,6 +1,6 @@
 ---
 title:                "Читання аргументів командного рядка"
-html_title:           "C#: Читання аргументів командного рядка"
+html_title:           "Arduino: Читання аргументів командного рядка"
 simple_title:         "Читання аргументів командного рядка"
 programming_language: "C#"
 category:             "C#"
@@ -10,56 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## Що і чому?
 
-У програмуванні існує поняття "читання аргументів командного рядка". Це означає отримання інформації, що вказана під час запуску програми в командному рядку. Програмісти читають аргументи командного рядка для отримання додаткової інформації або налаштувань для своїх програм.
+Считування аргументів командного рядка це процес, де програма отримує дані прямо при старті з командного рядка. Програмісти це роблять для підготовки програмного забезпечення до гнучкого використання, щоб налаштувати його поведінку або вхідні дані.
 
-Як це зробити?
-
-Нижче наведені приклади коду та виводу для читання аргументів командного рядка в C#.
+## Як це робити:
 
 ```C#
-using System;
-
-namespace CommandLineArguments
+static void Main(string[] args)
 {
-    class Program
+    Console.WriteLine("Arg Count: " + args.Length);
+    for (int i = 0; i < args.Length; i++)
     {
-        static void Main(string[] args)
-        {
-            // Приклад читання першого аргумента командного рядка
-            string firstArgument = args[0];
-            Console.WriteLine("Перший аргумент: " + firstArgument);
-
-            // Приклад читання всіх аргументів командного рядка
-            foreach (string arg in args)
-            {
-                Console.WriteLine("Аргумент: " + arg);
-            }
-        }
+        Console.WriteLine("Arg[" + i + "]: " + args[i]);
     }
 }
 ```
 
-Вивід:
-```
-Перший аргумент: Вітаю!
-Аргумент: Вітаю!
-Аргумент: Це
-Аргумент: код
-Аргумент: для
-Аргумент: виводу
-Аргумент: аргументів
-Аргумент: командного
-Аргумент: рядка
+Якщо ви спробуєте запустити цю програму з командного рядка (наприклад, `program.exe arg1 arg2 arg3`), вона виведе:
+
+```C#
+Arg Count: 3
+Arg[0]: arg1
+Arg[1]: arg2
+Arg[2]: arg3
 ```
 
-Детальніше про те, як читати аргументи командного рядка
+## Поглиблений погляд
 
-Читання аргументів командного рядка було довго часу єдиним способом передачі параметрів у програму. Проте з появою графічного інтерфейсу користувача, зростанням популярності веб-додатків та API, цей підхід втратив свою популярність. Існують інші способи передачі параметрів, такі як файл конфігурації або використання зовнішніх бібліотек. Якщо Ви все ж хочете читати аргументи командного рядка, ми радимо докладніше ознайомитися з класом `CommandLine` з простору імен `System.CommandLine` або розглянути використання готових зовнішніх бібліотек, наприклад `CommandLineParser`.
+Спочатку, считування аргументів командного рядка було основним способом, щоб програма могла взаємодіяти з користувачем або іншими програмами. Цей метод використовувався в Unix-like системах.
 
-Подивитися також:
+Як альтернативу, можна використовувати конфгураційні файли або GUI, але вони не надають такої гнучкості для автоматизації.
 
-- Microsoft Docs: [Читання аргументів командного рядка в C#](https://docs.microsoft.com/uk-ua/dotnet/csharp/programming-guide/main-and-command-args/command-line-arguments)
-- Microsoft Docs: [Клас `CommandLine`](https://docs.microsoft.com/uk-ua/dotnet/api/system.commandline.commandline)
-- NuGet: [CommandLineParser](https://www.nuget.org/packages/CommandLineParser/)
+У C#, аргументи командного рядка передаються в метод `Main()` як масив рядків, де кожний елемент масиву - це віддільний аргумент.
+
+## Скористайтесь також
+
+1. Документація Microsoft з аргументами командного рядка: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
+2. Туторіал з аргументами командного рядка в C#: [https://www.c-sharpcorner.com/UploadFile/570c05/console-application-and-command-line-arguments-at-a-glance/](https://www.c-sharpcorner.com/UploadFile/570c05/console-application-and-command-line-arguments-at-a-glance/)

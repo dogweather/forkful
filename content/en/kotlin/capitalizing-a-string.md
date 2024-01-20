@@ -12,36 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string means converting the first letter of each word in the string to uppercase, while leaving the rest of the letters unchanged. This is a common practice in programming to improve the readability and consistency of text. It is especially useful for titles, names, and display purposes.
+String capitalization is making the first letter of a string uppercase. It's useful for formatting data, especially when formal correctness matters, like names, places, and to start sentences correctly.
 
 ## How to:
 
-To capitalize a string in Kotlin, we can use the `capitalize()` function. This function takes no parameters and returns a new string with the first letter capitalized. Here's an example:
+In Kotlin, there are in-built functions: `capitalize()` and `replaceFirstChar()`. Here's how to do it:
 
 ```Kotlin
-val text = "hello world"
-val capitalizedText = text.capitalize()
-// Output: "Hello world"
+// Using capitalize function
+val str = "hello there!"
+val capitalizedStr = str.capitalize()
+println(capitalizedStr)  // Output: Hello there!
+
+// Using replaceFirstChar function on Kotlin 1.5 and above
+val newCapitalizedStr = str.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+println(newCapitalizedStr)  // Output: Hello there!
 ```
 
-We can also use the `capitalizeWords()` function from the `kotlin.text` package to capitalize each word in a string. This function takes a `Locale` parameter to specify the language rules for capitalization. Here's an example:
+## Deep Dive
+
+The `capitalize()` function was introduced in Kotlin 1.0. It does not follow Unicode titlecase rules, instead, it just converts ASCII characters. As of Kotlin 1.5, `capitalize()` is deprecated in favor of `replaceFirstChar()` function which now respects the Unicode rules for titlecasing characters.
+
+An alternative way for string capitalization in earlier versions of Kotlin could be using the `substring()` function. Here's how:
 
 ```Kotlin
-val text = "hello world"
-val capitalizedWords = text.capitalizeWords(Locale.ENGLISH)
-// Output: "Hello World"
+val str = "hello there!"
+val capitalizedStr = str[0].toUpperCase() + str.substring(1)
+println(capitalizedStr)  // Output: Hello there!
 ```
 
-## Deep Dive:
+Keep in mind that these string functions make a new string and do not modify the original string because strings in Kotlin are immutable.
 
-Capitalizing strings has been a common practice in the English language for centuries, with rules and styles varying across different languages and cultures. In programming, capitalizing strings is not only aesthetically pleasing, but also improves the consistency and legibility of code. It also helps in avoiding confusion and errors caused by inconsistent capitalization.
+## See Also
 
-An alternative to capitalizing strings is using the `toUpperCase()` function, which converts all letters in a string to uppercase. However, this is not suitable for cases where only the first letter needs to be capitalized.
+For more information, it would be beneficial to check out:
 
-In Kotlin, the `capitalize()` function uses `String.toCharArray()` and `Character.toUpperCase()` methods to manipulate the string. This function was introduced in Kotlin 1.4 and is available for use in all platforms - JVM, JS, and Native.
-
-## See Also:
-
-- [Kotlin Docs on Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Kotlin String API Reference](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
-- [Wikipedia on Capitalization](https://en.wikipedia.org/wiki/Capitalization)
+- [Kotlin’s Standard Functions](https://kotlinlang.org/docs/standard-library.html)
+- [Unicode Standard](https://unicode.org/standard/standard.html)
+- [Kotlin capitalize() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+- [Kotlin replaceFirstChar() function](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first-char.html)

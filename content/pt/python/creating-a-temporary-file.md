@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Python: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Python"
 category:             "Python"
@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O quê & Por quê?
 
-Criar um arquivo temporário é uma prática comum entre os programadores para armazenar dados temporariamente. Isso permite que eles executem operações facilmente, sem precisar salvar os dados permanentemente ou gerar conflitos com arquivos existentes.
+Criar um arquivo temporário é um processo onde um arquivo apenas para uso momentâneo é gerado por um programa. Programadores fazem isso para armazenar dados transientes que não são necessários após o uso do programa ou em situações em que o armazenamento permanente seria ineficiente.
 
 ## Como fazer:
 
-```Python
+Aqui está um exemplo simples de como criar um arquivo temporário usando a biblioteca `tempfile` no Python:
+
+```python
 import tempfile
 
-# Criar um arquivo temporário usando a biblioteca tempfile
-temp_file = tempfile.TemporaryFile()
-
-# Escrever dados no arquivo temporário
-temp_file.write(b"Hello, world!")
-
-# Ler e imprimir o conteúdo do arquivo temporário
-temp_file.seek(0)
-print(temp_file.read())
-
-# Fechar o arquivo temporário
-temp_file.close()
+temp = tempfile.TemporaryFile()
+print(temp)
+print(temp.name)
 ```
 
-**Saída:**
+Ao executar este código, você receberá um resultado assim:
+
 ```
-b"Hello, world!"
+<_io.BufferedRandom name=3>
+/tmp/tmpkj7tdk3y
 ```
 
-## Deep Dive:
+Isto mostra que um arquivo temporário foi criado na localização exibida.
 
-A criação de arquivos temporários é uma técnica antiga e amplamente utilizada em programação. Ela permite que o programador lide com dados temporários de forma eficiente sem prejudicar os arquivos existentes ou gerar sobrecarga de memória. Existem alternativas para a criação de arquivos temporários, como o uso de variáveis na memória, no entanto, isso pode causar problemas de gerenciamento de memória em casos de grandes quantidades de dados. A implementação da criação de arquivos temporários pode variar de acordo com a linguagem de programação utilizada.
+## Mergulho Profundo
 
-## Veja também:
+Na era inicial da computação, o espaço de armazenamento era precioso e caro. Por isso, o conceito de arquivos temporários nasceu como uma maneira de economizar no armazenamento. Hoje, mesmo com o abundante espaço de armazenamento, os arquivos temporários continuam sendo uma prática comum para gerenciar dados transientes de maneira eficiente.
 
-- [Documentação oficial do Python sobre tempfile](https://docs.python.org/3/library/tempfile.html)
-- [Tutorial sobre a criação de arquivos temporários em Python](https://realpython.com/python-tempfile/)
-- [Explicação sobre o uso de variáveis temporárias em programas](https://computer.howstuffworks.com/compare-variable-temporary.htm)
+Uma alternativa ao uso de arquivos temporários seria manter os dados em memória do seu programa. No entanto, para grandes volumes de dados, isso não é ideal. Há também as opções de usar bancos de dados ou outros meios de armazenamento persistente, mas esses são geralmente mais demorados e complicados.
+
+Ao criar um arquivo temporário no Python usando `tempfile`, você está não está apenas criando um arquivo em seu sistema operacional, mas também configurando-o para remoção automática quando ele for fechado. Adicionalmente, `tempfile` gerencia o arquivo de maneira segura, garantindo que não haja conflitos de nomes de arquivo ou questões de acessibilidade.
+
+## Ver Também
+
+Para mais detalhes, confira a documentação oficial do Python sobre a biblioteca `tempfile`: https://docs.python.org/3/library/tempfile.html
+
+Se você precisar de mais informações sobre gerenciamento de arquivos temporários em sistemas operacionais em geral, esta leitura pode ser útil: https://en.wikipedia.org/wiki/Temporary_folder
+
+E aqui está uma discussão StackOverflow sobre quando usar arquivos temporários versus manter os dados em memória: https://stackoverflow.com/questions/788411/check-if-a-python-list-item-contains-a-string-inside-another-string

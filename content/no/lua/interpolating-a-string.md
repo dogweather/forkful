@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Lua: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,47 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å interpolere en streng i Lua betyr å flette variabler eller uttrykk inn i en streng for å skape en dynamisk tekst. Dette gjøres ofte for å gjøre koden mer effektiv og lesbar, og for å unngå å skrive ut lange strenger med variasjoner.
+Strenginterpolering er prosessen med å bytte ut plassholdere i en streng med deres korresponderende verdier. Programvareutviklere bruker den for å bygge dynamiske strenger effektivt.
 
-## Slik gjør du det:
+## Slik gjør du:
 
-Interpolasjon av strenger i Lua er enkelt og kan gjøres på to måter. Den første metoden er å bruke ```..``` operatoren for å flette variabler eller uttrykk inn i en streng. For eksempel:
+Her er et eksempel i Lua:
 
-```
-local navn = "John"
-print("Hei, mitt navn er " .. navn)
-```
-
-Dette vil skrive ut følgende:
-
-```
-Hei, mitt navn er John
-```
-
-Du kan også bruke ```%``` symbolet for å interpolere variabler inn i en streng. For eksempel:
-
-```
-local alder = 25
-print("Jeg er %d år gammel.", alder)
+```Lua
+navn = "Ola"
+hilsen = "Hei, ".. navn .."!"
+print(hilsen)
 ```
 
 Dette vil skrive ut:
 
 ```
-Jeg er 25 år gammel.
+Hei, Ola!
 ```
 
-Merk at ```%``` symbolet må følges av en spesifisert konvertering, i dette tilfellet ```d``` for en numerisk verdi.
+## Dyp Dykk
 
-## Dypdykk:
+Strenginterpolering ble først innført i programmeringsspråk på 1960-tallet, og det er et vanlig trekk i mange moderne språk. Lua tilbyr ikke innebygd støtte til strenginterpolering som noen andre språk (som JavaScript eller Ruby) gjør. Men, den bruker ".."-operatoren for å oppnå lignende resultat. Dessuten kan du velge å bruke en funksjon som `string.format` for mer komplekse scenarier.
 
-Interpolasjon av strenger har vært en del av programmeringsverdenen i mange år og brukes i ulike språk som Lua, Python og Ruby. Alternativene til å interpolere strenger er å kombinere strenger manuelt eller å bruke formateringsfunksjoner, som kan være mer arbeidskrevende.
+## Se Også
 
-Når det kommer til implementasjonen av strenginterpolasjon i Lua, følger det enkle regler der variabler bare kan bli flettet i tekst og ikke matematiske uttrykk.
+For mer informasjon om strenginterpolering i Lua, sjekk ut disse kildene:
 
-## Se også:
-
-Hvis du vil lære mer om interpolasjon av strenger i Lua, kan du sjekke ut følgende lenker:
-
-- [Offisiell Lua-dokumentasjon om strenginterpolasjon](https://www.lua.org/manual/5.4/manual.html#3.4.6)
-- [Eksempler på interpolasjon i Lua](https://riptutorial.com/lua/example/18428/string-interpolation)
+- [Lua Users Wiki: String Interpolation](http://lua-users.org/wiki/StringInterpolation)
+- [Programming in Lua: Strings](https://www.lua.org/pil/2.4.html)

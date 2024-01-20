@@ -1,7 +1,7 @@
 ---
-title:                "Großschreibung eines Strings"
-html_title:           "Arduino: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "Einen String großschreiben"
+html_title:           "Arduino: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,31 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
- 
-Capitalizing a string is the act of changing the first letter of each word in a sentence or phrase to its uppercase form. Programmers often do this to make their code more readable and organized. It also helps to identify important words or variable names within the code. 
 
-## Wie man es macht:
+Ein String groß schreiben bedeutet, alle Buchstaben in Großbuchstaben umzuwandeln. Programmierer machen das meistens, um Text einheitlicher und leichter lesbbar zu machen.
 
-For this task, we will use the built-in ```toUpperCase()``` function in Arduino. This function takes in a string as an argument and returns the same string with all letters in uppercase. Let's see an example:
+## So geht's:
 
-```
-// Define a string variable
-String name = "arduino programming";
+Hier sind einige Codebeispiele mit dazugehöriger Ausgabe.
 
-// Capitalize the string
-name = name.toUpperCase();
-
-// Print the result
-Serial.println(name);
-
-// Output: ARDUINO PROGRAMMING
+```Arduino
+String str = "programmierung ist cool"; 
+str.toUpperCase();
+Serial.println(str); 
 ```
 
-## Tief tauchen:
+Ausgabe:
 
-This method of capitalizing strings has been used for a long time in programming languages. However, there are also alternative methods such as creating a custom function to capitalize strings. Additionally, it is important to note that this method only capitalizes letters based on their ASCII value, and may not work for all languages. For a more in-depth look, you can refer to the [Arduino documentation](https://www.arduino.cc/en/Reference/StringToUpper). 
+```Arduino
+PROGRAMMIERUNG IST COOL
+```
 
-## Siehe auch:
+## Vertiefung
 
-- [String data type in Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [ASCII table for character values](https://www.ascii-code.com/)
+Im historischen Kontext hat das Großschreiben von Zeichenstrings seine Wurzeln in der frühen Computergeschichte, als Großbuchstaben die Norm waren. Als Alternativen können Programmierer Funktionen wie `toUpperCase()` in anderen Programmiersprachen wie Java oder Python verwenden. Das Großschreiben eines Strings in Arduino passiert nicht in-place; eine Kopie des Strings wird erstellt und dann geändert. Dies bedeutet, dass der ursprüngliche String nicht verändert wird.
+
+## Siehe Auch
+
+Für weitere Informationen und verwandte Themen können Sie die folgenden Ressourcen besuchen:
+
+- [Arduino String Manipulation](https://www.arduino.cc/reference/de/language/variables/data-types/string/functions/touppercase)
+- [Arduino Strings](https://www.arduino.cc/reference/de/language/variables/data-types/stringobject/)
+- [Programming Languages: A Deep Dive](https://www.codecademy.com/learn/learn-programming)

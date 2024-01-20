@@ -1,7 +1,7 @@
 ---
-title:                "Tulevaisuuden tai menneen päivämäärän laskeminen"
-html_title:           "Kotlin: Tulevaisuuden tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen"
+title:                "Tulevan tai menneen päivämäärän laskeminen"
+html_title:           "Kotlin: Tulevan tai menneen päivämäärän laskeminen"
+simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärien laskeminen tulevaisuudessa tai menneisyydessä on yleinen tehtävä ohjelmoinnissa. Tämä voidaan tehdä esimerkiksi tilanteissa, joissa halutaan tarkistaa, kuinka monta päivää on jäljellä tiettyyn tapahtumaan tai laskea tulevan päivämäärän perusteella tulevien päivien sää. Ohjelmoijat tekevät tämän lisäämällä tai vähentämällä päiviä nykyisestä päivästä.
+## Mikä & Miksi?
+Lasketaan tulevaisuuden tai menneisyyden päivämäärät, eli selvitämme uuden päivämäärän lisäämällä tai vähentämällä päiviä, viikkoja, kuukausia tai vuosia tietystä päivämäärästä. Ohjelmoijat tekevät tämän usein esimerkiksi aikaleimojen käsittelyssä tai sovellusten aikaan liittyvissä toiminnoissa.
 
-## Näin teet sen:
-### Esimerkki 1:
+## Kuinka:
+Kotlinilla voit käyttää java.time.LocalDate-luokan metodeja 'plusDays', 'minusDays', 'plusMonths', 'minusMonths', 'plusYears' ja 'minusYears'. Huomaa, että metodit palauttavat uuden LocalDate-olion, eivät muuta nykyistä oliota.
+
 ```Kotlin
-val currentDate = LocalDate.now() // nykyinen päivämäärä
-val futureDate = currentDate.plusDays(30) // lisätään 30 päivää nykyiseen päivään
-println(futureDate) // tulostaa tulevan päivämäärän 30 päivää nykyisestä päivästä
-```
-Tulostus:
-```
-2021-08-19
-```
-### Esimerkki 2:
-```Kotlin
-val inputDate = "2021-12-25" // syötetty päivämäärä
-val christmas = LocalDate.parse(inputDate) // päivämäärän muuntaminen
-val currentDate = LocalDate.now() // nykyinen päivämäärä
-val daysUntilChristmas = ChronoUnit.DAYS.between(currentDate, christmas) // päivien välisen eron laskeminen
-println(daysUntilChristmas) // tulostaa päivien määrän jäljellä jouluun
-```
-Tulostus:
-```
-131
+import java.time.LocalDate
+
+fun main() {
+    var date = LocalDate.of(2021, 1, 1)
+    println("Alkuperäinen päivämäärä: $date")
+  
+    date = date.plusDays(15)
+    println("15 päivää myöhemmin: $date")
+  
+    date = date.minusMonths(2)
+    println("2 kuukautta aiemmin: $date")
+  
+    date = date.plusYears(5)
+    println("5 vuotta myöhemmin: $date")
+}
 ```
 
-## Syvemmälle:
-Päivämäärien laskeminen ei ole uusi asia ohjelmoinnissa. Jo 1700-luvulla matemaatikot ja astronoomit kehittelivät erilaisia kaavoja päivämäärien laskemiseen. Nykyään eri ohjelmointikielillä on valmiita kirjastoja, jotka helpottavat päivämäärien käsittelyä. Jos haluat tehdä päivämäärien laskemisen monimutkaisemmaksi, voit esimerkiksi ottaa huomioon karkausvuodet tai eri aikavyöhykkeet.
+## Sukellus syvyyksiin:
+Historiaan meneminen, 'java.util.Date'- ja 'java.util.Calendar'-luokat tarjosivat aiemmin nämä ominaisuudet Javassa, mutta ne olivat sekavia ja bugisia. Niiden tilalle tuli java.time-paketti Javassa 8.
+
+Vaihtoehtona on käyttää kirjastoa, kuten Joda-Time, jos sinun on työskenneltävä Javan versioissa, jotka eivät sisällä java.time-pakettia.
+
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on pohjimmiltaan suhteellisen aikayksikön lisäämistä tai vähentämistä. Kotlin / Java tekevät tämän sisäisesti päivän millisekunteina.
 
 ## Katso myös:
-- [LocalDate - Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/index.html)
-- [Date and Time API - Oracle](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+- [Kotlinin virallinen dokumentaatio päivämäärien ja ajan käsittelystä](https://kotlinlang.org/docs/dates-periods-in-standard-library.html)
+- [Java 8 Date Time API](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+- [Joda-Time -kirjasto](https://www.joda.org/joda-time/)

@@ -1,7 +1,7 @@
 ---
-title:                "Перетворення рядка на нижній регістр"
-html_title:           "Haskell: Перетворення рядка на нижній регістр"
-simple_title:         "Перетворення рядка на нижній регістр"
+title:                "Перетворення рядка в нижній регістр"
+html_title:           "Elixir: Перетворення рядка в нижній регістр"
+simple_title:         "Перетворення рядка в нижній регістр"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,22 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Конвертування рядка в нижній регістр означає, що всі літери в рядку будуть замінені на їх менші брати. Програмісти зазвичай виконують цю операцію для зручності порівняння рядків із самими собою або з іншими рядками.
+## Що і чому?
 
-## Як:
-У Haskell конвертувати рядок в нижній регістр можна за допомогою функції `toLower` з модуля `Data.Char`. Наприклад:
+Перетворення рядка в нижній регістр - це процес зміни всіх символів верхнього регістру на їх відповідники в нижньому регістрі. Програмісти роблять це, щоб спростити порівняння та пошук рядків.
+
+## Як це зробити:
+
 ```Haskell
 import Data.Char (toLower)
 
-toLower "HELLO WORLD!" -- "hello world!"
+lowerCaseStr :: String -> String
+lowerCaseStr = map toLower
 ```
 
-## Глибше: 
-Напередодні створення віртуальної клавіатури та комп'ютерів із можливістю введення не тільки латинських, а й інших алфавітів, рядки зазвичай використовувалися для передачі інформації. В той час, коли у багатьох мовах символи різних регістрів не були взаємозамінними, конвертування в нижній регістр допомагало уникнути плутанини та помилок при обробці даних.
+Приклад використання і виводу:
 
-Існують інші способи конвертування рядка в нижній регістр, такі як використання регулярних виразів або інших функцій, але за допомогою функції `toLower` ви можете швидко та просто отримати бажаний результат.
+```Haskell
+main = do
+    let upperStr = "HELLO, WORLD!"
+    print $ lowerCaseStr upperStr
+```
+Виведе:
+```
+"hello, world!"
+```
+## Поглиблений аналіз
 
-## Дивіться також:
-- [Документація по `Data.Char`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html)
-- [How to Convert String to Lowercase in Haskell](https://www.freecodecamp.org/news/how-to-convert-string-to-lowercase-in-haskell/)
+1. Історичний контекст: Методи перетворення рядків до нижнього регістру існують давно в багатьох мовах програмування, включаючи C, Java, Python та інші. Haskell, як функціональна мова, також підтримує цю функцію.
+
+2. Альтернативи: Ви також можете використовувати бібліотеку `Text` для обробки рядків та переводу їх в низький регістр.
+
+```Haskell
+import Data.Text (toLower, pack, unpack)
+
+lowerCaseStrT :: String -> String
+lowerCaseStrT = unpack . toLower . pack
+```
+3. Деталі реалізації: Функція `toLower` з модуля `Data.Char` визначає, як перетворюється кожен символ. Вона використовує відповідне відображення в таблиці Unicode, щоб знайти відповідний символ нижнього регістру.
+
+## Також дивіться
+
+1. Haskell Documentation: [Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+2. Learn You a Haskell for Great Good: [Modules](http://learnyouahaskell.com/modules)
+3. School of Haskell: [Working with Text](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/working-with-text)

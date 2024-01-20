@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen luominen"
-html_title:           "Ruby: Satunnaislukujen luominen"
-simple_title:         "Satunnaislukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,21 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Satunnaisia numeroita generoidaan satunnaislukugeneraattoreilla, jotka ovat algoritmeja, jotka tuottavat luvun, joka ei ole ennustettavissa tai toistettavissa. Tätä tarvitaan monissa ohjelmointitilanteissa, kuten pelien pelaamisessa, salausavaimien luomisessa tai testaamisessa.
+# Satunnaisten Numeroiden Generointi Rubyssa
 
-## Miten:
-Käytä Rubyn `rand`-metodia generoidaksesi satunnaisen kokonaisluvun tai liukuluvun. Voit myös määrittää haluamasi välialueen antamalla parametreiksi luvut, joista lukujen tulee olla. Esimerkiksi `rand(1..10)` generoi luvun väliltä 1-10. Tässä on esimerkki koodista ja sen tuottamasta tuloksesta:
+GENEROI RANDOM NUMEROITA RUBY-KIELELLÄ HELPOSTI!
+
+## Mitä & Miksi?
+
+Satunnaisten numeroiden generointi tarkoittaa numeroiden luomista, joilla ei ole mitään ennustettavaa järjestystä. Ohjelmoijat tarvitsevat niitä peleissä, salauksessa, algoritmien testauksessa ja monissa muissa käyttötapauksissa.
+
+## Kuinka:
+
+Satunnaisten numeroiden generointi Rubyssa on todella helppoa. Ruby tarjoaa `rand`-metodin juuri tätä varten.
 
 ```Ruby
-random_number = rand(1..10)
-puts random_number
+puts rand(10) # Tulostaa satunnaisen numeron väliltä 0...10
 ```
 
-Tässä tapauksessa tulostettu luku voisi olla esimerkiksi 7.
+Jos haluat generoida satunnaisia kokonaislukuja tietyltä väliltä, käytä `Random.new` yhdessä `rand`-metodin kanssa.
 
-## Syväsukellus:
-Satunnaislukuja on pyritty generoimaan jo vuosisatojen ajan ja algoritmeja on kehitetty jatkuvasti paremmiksi ja luotettavimmiksi. Monet ohjelmointikielet tarjoavat valmiita satunnaislukufunktioita, mutta ne eivät aina ole yhtä tehokkaita tai luotettavia kuin Rubyn `rand`-metodi.
+```Ruby
+random_generator = Random.new
+puts random_generator.rand(1..10) # Tulostaa satunnaisen numeron väliltä 1 – 10
+```
 
-## Katso myös:
-[Random numbers in computer science](https://en.wikipedia.org/wiki/Random_number_generation)
+## Syvällinen Tutkimus:
+
+### Historiallinen Konteksti: 
+
+Random numeroiden generointi on ollut tärkeä osa tietojenkäsittelytieteen historiaa. Alan pioneerit, kuten John von Neumann huomasi sen merkityksen algoritmin testauksissa.
+
+### Vaihtoehdot: 
+
+Erilaisia menetelmiä satunnaisten numeroiden generointiin on monia. Esimerkiksi Mersenne Twister tai Linear congruential generator (LCG) ovat populaarisia menetelmiä.
+
+### Toteutuksen Yksityiskohdat: 
+
+Ruby kääntää `rand`-funktion suoraan C-kielelle, joka tekee sen tehokkaaksi ja nopeaksi. Tarkemmin ottaen, se käyttää pseudorandom-numerogeneraattoria, nimeltään Mersenne Twister.
+
+Rubyssa on myös SecureRandom-moduuli, joka tuottaa salatun satunnaislukujoukon. Tätä käytetään yleisemmin turvallisuuskriittisissä tapauksissa, kuten salauksessa.
+
+```Ruby
+require 'securerandom'
+puts SecureRandom.hex(10) # Tulostaa 10 merkkiä pitkän satunnaisen heksadesimaalin.
+```
+
+## Katso Myös:
+
+1. [Ruby-Dokumentaatio: Kernel.rand](https://ruby-doc.org/core-3.0.0/Random.html)
+2. [Ruby-Dokumentaatio: SecureRandom](https://ruby-doc.org/stdlib-3.0.0/libdoc/securerandom/rdoc/SecureRandom.html)
+3. [Wikipedia: Mersenne Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)
+4. [Wikipedia: Linear congruential generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)

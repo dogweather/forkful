@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "Ruby: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Interpolacja ciągu znaków to proces wstawiania wartości zmiennych do tekstu w celu utworzenia nowego ciągu znaków. Programiści często używają go do tworzenia dynamicznych wiadomości lub szablonów, które dostosowują się do zmiennej zawartości.
+Interpolacja ciągu to proces zastępowania miejsca docelowego w łańcuchu znaków rzeczywistą wartością zmiennych. Programiści robią to, aby dynamicznie zmieniać treść ciągu, co zwiększa moc i adaptacyjność naszego kodu.
 
-## Jak: 
+## Jak zrobić:
 
-```Ruby
-name = "Jan"
-age = 30
+Zasada jest prosta. W ciele ciągu używamy symbolu `#{}` do otaczania zmiennych, które chcemy interpolować. 
+Zobaczmy to na przykładzie:
 
-"Twoje imię to #{name} i masz #{age} lat."
+```ruby
+imię = "Krzysztof"
+powitanie = "Cześć, #{imię}!"
+puts powitanie
 ```
 
-Output:
-`
-"Twoje imię to Jan i masz 30 lat."
-`
+Wyjście będzie wyglądać tak:
 
-## Gleboka Nurkowanie:
+```ruby
+"Cześć, Krzysztof!"
+```
 
-Interpolacja ciągu znaków jest od dawna wykorzystywana w językach programowania, aby ułatwić tworzenie dynamicznych i interaktywnych aplikacji. Alternatywą dla interpolacji jest konkatenacja, czyli łączenie wielu ciągów znaków w jeden, ale jest to mniej wygodne i niepraktyczne w przypadku dłuższych tekstów. Implementacja interpolacji w Ruby jest prosta i przejrzysta dzięki użyciu symbolu `#{}`.
+## Na głębokości:
 
-## Zobacz także:
+Interpolacja ciągu jest z nami od dawna i jest powszechnie stosowana w wielu językach programowania. W Ruby, jest to natywne zachowanie ciągu. Możemy używać interpolacji ciągu w dowolnym miejscu, gdzie potrzebujemy dynamicznie obsługiwać ciągi.
 
-- [Ruby String Interpolation](https://www.rubyguides.com/2016/04/ruby-string-interpolation/)
-- [Ruby Documentation: String Interpolation](https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-String+Interpolation)
+Różne są alternatywne metody, takie jak sklejanie łańcuchów za pomocą `+`, ale interpolacja ciągu jest zdecydowanie bardziej elegancka i wydajna.
+
+Szczególne jest to, jak Ruby interpretuje wartości w ramach `#{}`. Wywołuje metodę `.to_s` na wartości, aby przekształcić ją w ciąg. Niezależnie od typu wartości - czy to string, liczba, czy obiekt - zostanie prawidłowo zinterpretowana jako ciąg.
+
+## Zobacz też:
+
+1. Dokumentacja Ruby: [Interpolacja ciągu](https://ruby-doc.org/core-2.2.0/doc/syntax/literals_rdoc.html#label-Strings)
+2. [Interpolacja ciągów vs. konkatenacja](https://www.speedshop.co/2017/10/12/string-concatenation-vs-interpolation-in-ruby.html)
+ 
+Uczyć się, praktykować i kodować!

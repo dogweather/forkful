@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "Clojure: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "Clojure: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -12,34 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y por qué?
 
-Comprobar si un directorio existe es una forma de verificar si una determinada carpeta o directorio está presente en una ruta de archivos. Los programadores a menudo utilizan esta función para asegurar que un directorio necesario para la ejecución del código esté disponible antes de continuar con la ejecución del programa.
+Comprobar si un directorio existe es una tarea esencial en programación para prevenir errores y garantizar el flujo correcto del programa. Nos ayuda a evitar la creación de archivos o directorios duplicados o la lectura fallida de un directorio inexistente.
 
 ## Cómo hacerlo:
 
-```Clojure
-(require '[clojure.java.io :refer [file]])
+En Clojure, la biblioteca java.nio.file.Files se usa para verificar si un directorio existe. Aquí tienes código ejemplo:
 
-;; Verificar si el directorio "mi_carpeta" existe en la ruta "home/usuario"
-(println (file-exists? "home/usuario/mi_carpeta"))
+```clojure
+(import 'java.nio.file.Files 'java.nio.file.Paths)
 
-;; Output: false
-
-;; Crear el directorio "mi_carpeta"
-(java.io.File. "home/usuario/mi_carpeta").mkdirs()
-
-;; Verificar si el directorio ahora existe
-(println (file-exists? "home/usuario/mi_carpeta"))
-
-;; Output: true
-
+(defn directory-exists? [dir-path]
+  (Files/exists (Paths/get dir-path (into-array String []))))
 ```
+
+Uso de código:
+
+```clojure
+(directory-exists? "/home/user/Documents")
+```
+
+En caso de que el directorio exista, el código devolverá `true`; si no, será `false`.
 
 ## Inmersión profunda:
 
-En versiones anteriores de Clojure (antes de la versión 1.7), la función utilizada para verificar si un directorio existe era ```file-seq```. Sin embargo, esta función ha sido reemplazada por ```file-exists?``` en las versiones más recientes. Alternativamente, se puede utilizar la librería ```java.nio.file``` para realizar la misma acción.
+En los primeros días de Java, se usaba la clase 'File' para verificar la existencia de directorios. Sin embargo, java.nio.file, introducido en Java 7, es más versátil y eficiente.
+
+Una alternativa a `Files/exists` es la función `Files/notExists`. Esta devolverá `true` si el directorio no existe, y `false` en caso contrario.
+
+En la implementación real, `Files/exists` usa la función nativa `stat` en sistemas Unix e `GetFileAttributesEx` en Windows para verificar la existencia del directorio.
 
 ## Ver también:
 
-- Documentación oficial de Clojure sobre ```file-exists?```: https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/file-exists%3F
-- Ejemplos de uso de ```file-exists?``` en la comunidad Clojure: https://stackoverflow.com/questions/24126259/ensure-a-directory-exists-in-clojure
-- Más información sobre la librería ```java.nio.file``` : https://docs.oracle.com/javase/tutorial/essential/io/fileio.html
+- Documentación oficial de Oracle sobre `java.nio.file`: 
+[Oracle’s java.nio.file documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
+- Guía de inicio rápido de Clojure para Java Devs: 
+[Getting Started with Clojure for Java Developers](https://clojure.org/guides/getting_started)

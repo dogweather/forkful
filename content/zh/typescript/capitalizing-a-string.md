@@ -10,26 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是String大写（What & Why?）
-字符串大写是一种在程序设计中常见的操作，在字符串中，将第一个字符转换为大写表明该字符串的识别符号或变量是可显著的，而不是小写。程序员经常这样做，以使代码更具可读性，并且更容易理解程序的意图。
+## 什麼 & 為什麼?
+正規化字符串是把一個字符串的第一個字符轉換成大寫。編程時，這常常用來清洗數據或增強用戶界面的友好性。
 
-如何实施（How to：）
-要将字符串转换为大写形式，可以使用`toUpperCase`方法。让我们看看一个实例：
+## 如何操作:
+以下是在TypeScript中實現字串變大寫的編程例程:
+ ```TypeScript
+ function capitalizeString(str: string): string {
+   return str.charAt(0).toUpperCase() + str.slice(1);
+ }
+ 
+ console.log(capitalizeString("hello world!"));  //輸出:"Hello world!"
+ ```
 
-```Typescript
-let str: string = "hello world";
-let upperStr = str.toUpperCase();
+## 深入了解:
+1. 歷史背景：字符串轉換功能在許多程式語言之初就被建立，因為他們經常被用於基本數據操作和處理。
+2. 替代方案：有許多函式庫提供了字串首字母大寫的方法，例如lodash和Ramda。儘管如此，原生的JavaScript仍然可以很容易地實現字符串首字母大寫。
+3. 實現細節：首先，我們使用`charAt(0)`來獲取字符串的第一個字符，然後使用`toUpperCase()` 函數進行大寫轉換。接著，使用`slice(1)`取得從第2個字符到字符串末尾的所有字符，並將其與大寫的首字符相連接。
 
-console.log(upperStr);
-```
-
-这将输出`HELLO WORLD`，表示字符串已被转换为大写形式。注意，这并不改变原始字符串，它仍然是小写形式的。
-
-深入了解（Deep Dive）
-大写字符串在程序设计中起源于打字机时代，当时键盘只有大写字母。后来，当电脑成为主要的文本处理工具时，程序员开始使用大写字符串来提高代码的可读性。除了使用`toUpperCase`方法之外，您也可以使用`charAt`和`slice`方法来实现大写字符串的逻辑。
-
-另一种流行的方法是使用CSS来实现大写字符串的显示方式。通过设置CSS属性`text-transform: uppercase`，您可以使所有文本元素显示为大写形式。这种方法更适合于web开发，因为它可以应用于整个文档，而不仅仅是特定的字符串变量。
-
-参阅（See Also）
-1. [MDN web docs: String](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String)
-2. [W3Schools: JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
+## 參考資料:
+1. MDN字符串方法資料: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+2. TypeScript文檔: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)
+3. Ramda庫: [https://ramdajs.com/](https://ramdajs.com/)
+4. Lodash庫: [https://lodash.com/](https://lodash.com/)

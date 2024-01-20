@@ -1,7 +1,7 @@
 ---
-title:                "Analizowanie daty z ciągu znaków"
-html_title:           "Rust: Analizowanie daty z ciągu znaków"
-simple_title:         "Analizowanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści! Czy kiedykolwiek zdarzyło Ci się otrzymać datę jako ciąg znaków i miało problem z jej sparsowaniem? Nie martw się, nie jesteś sam! W dzisiejszym artykule dowiesz się, czym jest parsowanie daty z ciągu znaków i dlaczego jest to ważna umiejętność dla programistów. Będziemy również omawiać, jak to zrobić w języku Rust.
-
 ## Co i dlaczego?
-Parsowanie daty z ciągu znaków to proces konwertowania daty wyrażonej jako tekst na inny format lub typ danych. Jest to ważne, ponieważ wiele aplikacji musi obsługiwać daty w różnych formatach i trzeba umieć je przetwarzać, aby poprawnie wyświetlać lub porównywać. Bez tego umiejętności, manipulowanie danymi datowymi może być bardzo trudne i prowadzić do błędów.
+
+Parsowanie daty z napisu to konwersja przedstawienia date formatu tekstowego na strukturę danych łatwiej wykorzystywalną w programie. Programiści przeprowadzają tę operację, żeby można było wygodnie manipulować datami i czasem.
 
 ## Jak to zrobić:
-Aby sparsować datę z ciągu znaków w Rust, możemy wykorzystać pakiet "chrono". Wystarczy dodać go do pliku Cargo.toml i zaimportować do kodu:
+
+Instalujemy zewnętrzną bibliotekę chrono do naszego projektu. Dodaj to do twojego pliku Cargo.toml:
 
 ```Rust
 [dependencies]
-chrono = { version = "0.4", features = ["serde", "rustc-serialize"] }
+chrono = "0.4"
 ```
 
-W ten sposób możemy użyć biblioteki w naszym kodzie:
+Potem wprowadź poniższy kod w swoim programie:
 
 ```Rust
-use chrono::prelude::*;
+extern crate chrono;
+use chrono::{DateTime, Utc, NaiveDateTime};
 
-let date_str = "20-04-2021";
-let date = NaiveDate::parse_from_str(date_str, "%d-%m-%Y").unwrap();
+let date_string = "2022-01-01 00:01:02";
+let parsed_date = NaiveDateTime::parse_from_str(date_string, "%Y-%m-%d %H:%M:%S");
 
-println!("{}", date.format("%A, %B %e, %Y"));
+match parsed_date {
+    Ok(date) => println!("Data: {}", date),
+    Err(err) => println!("Błąd: {}", err),
+}
 ```
 
-Ten kod sparsuje datę z ciągu "20-04-2021" i wyświetli ją w formacie "Wtorek, Kwiecień 20, 2021". Jest to tylko przykład, możesz eksperymentować z różnymi formatami i funkcjami, aby uzyskać pożądane wyniki.
+Na wyjściu zobaczysz: `Data: 2022-01-01 00:01:02`
 
-## Pogłębione informacje:
-Parsowanie daty z ciągu znaków jest często ważnym elementem w aplikacjach, które wymagają manipulacji datami. W przeszłości, proces ten był bardziej skomplikowany i wymagał użycia specjalnych bibliotek lub ręcznego przetwarzania danych. W języku Rust, dzięki pakietowi "chrono", tworzenie i przetwarzanie dat jest znacznie prostsze.
+## Wgłębna analiza:
 
-Alternatywnym sposobem jest wykorzystanie pakietu "regex" do wielokrotnego porównywania ciągów znaków z różnymi formatami daty. Jednak używanie biblioteki "chrono" jest zazwyczaj łatwiejsze i bardziej intuicyjne.
+Historia parsowania daty z napisu sięga czasów, gdy komputery miały mało przestrzeni na dyskach i często zapisywano daty jako ciągi znaków, by oszczędzić miejsce. Obecnie to jest istotne dla przetwarzania dat i czasu z różną granulacją i formatami.
 
-Jeśli jesteś ciekawy, jak dokładnie działa biblioteka "chrono" i jakie inne funkcje oferuje, warto przejrzeć jej dokumentację dostępną na stronie internetowej Rust.
+Alternatywnie, można próbować parsować datę bez zewnętrznych bibliotek, ale jest to trudne ze względu na różne formaty dat i strefy czasowe.
 
-## Zobacz również:
-- [Dokumentacja pakietu "chrono"](https://docs.rs/chrono/0.4.19/chrono/)
-- [Przykładowy kod parsowania daty w języku Rust](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=180b7ba5220346bc0a3d8420422c0af2)
+Jeśli chodzi o szczegóły implementacji, metoda parse_from_str używa formatu, który określa jakie elementy i w jakiej kolejności są oczekiwane w napisie. Przykład "%Y-%m-%d %H:%M:%S" oznacza rok, miesiąc, dzień, godziny, minuty i sekundy.
+
+## Zobacz też:
+
+Sprawdź dokumentację chrono tutaj: https://docs.rs/chrono/0.4.0/chrono/
+
+Wypróbuj także inne biblioteki jak datetime: https://crates.io/crates/datetime
+
+Przejrzyj podejścia do formatowania i parsowania daty w Rust tutaj: https://dev.to/pauliuskupinis/handling-datetime-formatting-and-parsing-in-rust-1kbb

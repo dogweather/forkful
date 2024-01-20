@@ -1,6 +1,6 @@
 ---
 title:                "Leyendo un archivo de texto"
-html_title:           "PHP: Leyendo un archivo de texto"
+html_title:           "Arduino: Leyendo un archivo de texto"
 simple_title:         "Leyendo un archivo de texto"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué? 
+Leer un archivo de texto en programación significa extraer información de un archivo plano. Programadores lo hacen porque es una forma eficiente y sencilla de procesar y analizar datos almacenados en archivos rústicos para propósitos diversos. 
 
-La lectura de un archivo de texto es una tarea común en la programación, donde se utiliza para acceder y leer el contenido de un archivo de texto. Los programadores lo hacen para leer y manipular datos almacenados en un archivo de texto, como por ejemplo, configuraciones, registros, y cualquier otro tipo de información.
-
-## ¿Cómo hacerlo?
-
-Aquí hay dos formas diferentes de leer un archivo de texto en PHP. Primero, podemos usar la función `file_get_contents()` para leer el contenido completo del archivo y almacenarlo en una variable. Luego, podemos usar `echo` para imprimir el contenido en la pantalla. Por ejemplo:
+## ¿Cómo hacerlo? 
+Acá te muestro cómo puedes leer un archivo de texto en PHP:
 
 ```PHP
-$file_content = file_get_contents("archivo.txt");
-echo $file_content;
-```
+<?php
+$archivo = 'ruta/archivo.txt';
 
-Otra forma de hacerlo es mediante el uso de la función `fopen()` para abrir el archivo y luego `fgets()` para leer cada línea del archivo. Veamos un ejemplo:
+// Leer todo el archivo
+$contenido = file_get_contents($archivo);
+echo $contenido;
 
-```PHP
-$file = fopen("archivo.txt", "r");
-while(!feof($file)) {
-    $line = fgets($file);
-    echo $line;
+// Leer el archivo línea por línea
+$lineas = file($archivo);
+foreach ($lineas as $linea_num => $linea) {
+    echo 'Línea #<b>'.$linea_num.'</b> : ' . htmlspecialchars($linea) . "<br>\n";
 }
-fclose($file);
+?>
 ```
+Esto imprimirá el contenido del archivo 'archivo.txt', línea por línea.
 
-Este último método es útil si necesitamos realizar alguna manipulación en cada línea del archivo antes de imprimirlo en la pantalla.
+## Profundizando 
+- **Contexto histórico**: PHP se desarrolló en 1995, inventado por Rasmus Lerdorf. Desde sus inicios, PHP ha sido útil para gestionar archivos de texto. Su habilidad para leer y escribir archivos ha facilitado su uso en una amplia gama de aplicaciones, desde blogs y sitios web hasta sistemas de gestión de contenido y bases de datos.
 
-## Profundizando
+- **Alternativas**: Aunque `file_get_contents()` y `file()` son funciones utilitarias para leer archivos de texto en PHP, hay otras opciones. La función `fopen()` te permite abrir un archivo de texto y usar `fread()` para leerlo. Si necesitas más control sobre el flujo de datos, esta podría ser tu opción.
 
-La lectura de un archivo de texto es una tarea común en la programación ya que los archivos de texto son una forma fácil y legible de almacenar datos. Esta práctica ha sido utilizada desde los primeros días de la programación de computadoras, y sigue siendo una de las formas más populares de almacenamiento de datos en la actualidad.
+```PHP
+<?php
+$archivo = fopen("ruta/archivo.txt", "r");
+if ($archivo) {
+    while (($linea = fgets($archivo)) !== false) {
+        echo $linea;
+    }
+    fclose($archivo);
+} else {
+    echo 'Error al abrir el archivo.';
+} 
+?>
+```
+- **Detalles de implementación**: La función `file_get_contents()` lee todo el archivo en memoria a la vez, lo que puede ser un problema para archivos grandes. En cambio, `file()` divide el archivo en una matriz de líneas, mientras que el uso de `fopen()` y `fgets()` te permite controlar cuánto del archivo leer a la vez.
 
-Además de `file_get_contents()` y `fopen()`, también podemos usar la función `readfile()` para leer e imprimir un archivo de texto. Sin embargo, esta función no permite la manipulación del contenido del archivo antes de imprimirlo en la pantalla.
-
-Otra alternativa es usar la función `file()` para leer y almacenar cada línea del archivo en un array. De esta manera, podemos luego manipular cada línea individualmente antes de imprimirla en la pantalla.
-
-En cuanto a la implementación, los archivos de texto pueden contener diferentes tipos de caracteres, como espacios en blanco, saltos de línea, etc. Por lo tanto, es importante tener en cuenta estas posibles diferencias al realizar la lectura del archivo.
-
-## Ver también
-
-Si quieres aprender más sobre la manipulación de archivos de texto en PHP, puedes consultar la documentación oficial de PHP sobre funciones de manejo de archivos aquí: https://www.php.net/manual/en/ref.filesystem.php. Además, también puedes visitar la documentación de funciones específicas como `file_get_contents()`, `fopen()`, `fread()`, `fgets()`, entre otras. ¡Explora y diviértete programando en PHP!
+## Ver También 
+Asegúrate de revisar la [documentación oficial de PHP en español](https://www.php.net/manual/es/) sobre la gestión de archivos para una comprensión más profunda. También, puedes visitar [PHP: El camino correcto](https://phptherightway.com/#pdo_extension), que ofrece guías actualizadas en español de las mejores prácticas y estándares recomendados en PHP.

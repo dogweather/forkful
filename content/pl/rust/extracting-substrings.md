@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podciągów"
-html_title:           "Rust: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,48 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & dlaczego?
+## Co i dlaczego?
 
-Wycinanie podciągów (czyli małych fragmentów) z tekstu jest częstym zadaniem w programowaniu. Programiści często wykorzystują to do wyodrębnienia konkretnych informacji z dłuższych ciągów znaków, co ułatwia przetwarzanie danych.
+Aby wyodrębnić podłańcuch, rozdzielamy ciąg znaków na mniejsze części. Programiści robią to, aby wyłuskać określone dane z większych bloków tekstu.
 
 ## Jak to zrobić:
 
-### Wycinanie podciągów zaczynających się od konkretnego indeksu
-
 ```Rust
-let text = "To jest przykładowy tekst";
-let subtext = &text[8..];
-println!("{}", subtext);
+fn main() {
+    let slowo = "Programowanie";
+    let podlancuch = &slowo[3..6];
+    println!("{}", podlancuch);
+}
 ```
 
-Wynik: `przykładowy tekst`
-
-### Wycinanie podciągów o określonej długości
+Gdy uruchomimy ten kod, wydrukowany zostanie podłańcuch "gram", który jest z przedziału od 3 do 6.
 
 ```Rust
-let text = "12345";
-let subtext = &text[..2];
-println!("{}", subtext);
+fn main() {
+    let slowo = "Komputer";
+    let poczatek = &slowo[..4];
+    println!("{}", poczatek);
+}
 ```
 
-Wynik: `12`
+Po uruchomieniu tego kodu, wydrukowane zostanie słowo "Komp", które znajduje się na początku ciągu.
 
-## Głębsze spojrzenie:
+## Głębsze zanurzenie:
 
-### Kontekst historyczny
+Przy wyodrębnianiu podłańucha w Rust, odnosimy się do bajtów, nie indeksów znaków. To dlatego niektóre operacje mogą być trudne do przewidzenia. Jest to konsekwencja wykorzystania przez Rust kodowania UTF-8.
 
-Wycinanie podciągów jest powszechne w wielu językach programowania. Pierwsze algorytmy do przetwarzania tekstu i wyodrębniania podciągów pojawiły się już w latach 60. W dzisiejszych czasach jest to podstawowa operacja w praktycznie każdym języku programowania.
+Elegancką alternatywą dla wyżej przedstawionych metod jest użycie funkcji `char_indices()` która zwraca indeksy znaków, nie bajtów.
 
-### Alternatywy
+```Rust
+fn main() {
+    let kawalek = "Komputer".char_indices().nth(2..4);
+    println!("{:?}", kawalek); 
+}
+```
 
-W języku Rust wycinanie podciągów można również wykonać przy użyciu metody `split_at()` lub używając biblioteki `regex`.
+Jednak ta metoda ma swoje ograniczenia, na przykład nie poradzi sobie z wyodrębnianiem pojedynczych znaków z ciągu.
 
-### Szczegóły implementacji
+## Zobacz także:
 
-Wycinanie podciągów w języku Rust jest oparte na indeksach typu `usize`. Najważniejsze operacje, takie jak sprawdzenie poprawności indeksów czy zwrócenie fragmentu tekstu, są wykonywane poprzez wykorzystanie metod typu `slice`.
-
-## Zobacz też:
-
-- [Dokumentacja Rust](https://doc.rust-lang.org/std/primitive.slice.html)
-- [Tutorial o wycinaniu podciągów w języku Rust](https://www.tutorialspoint.com/rust/rust_string_slice.htm)
-- [Alternatywne metody wycinania podciągów w języku Rust](https://doc.rust-lang.org/std/primitive.slice.html#methods)
+1. Dokumentacja Rust na temat ciągów znaków: https://doc.rust-lang.org/std/string/index.html
+2. Szczegółowy artykuł o kodowaniu UTF-8 w Rust: https://www.ameyalokare.com/rust/2017/10/12/rust-str-vs-String.html
+3. Poradnik o manipulacji ciągami znaków w Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#strings

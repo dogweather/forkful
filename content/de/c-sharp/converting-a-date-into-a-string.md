@@ -1,7 +1,7 @@
 ---
-title:                "Umwandeln eines Datums in einen String"
-html_title:           "C#: Umwandeln eines Datums in einen String"
-simple_title:         "Umwandeln eines Datums in einen String"
+title:                "Ein Datum in einen String umwandeln"
+html_title:           "Java: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,40 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Umgang mit Datumskonvertierung in C# 
+
 ## Was & Warum?
+Die Konvertierung eines Datums in eine Zeichenkette (String) bedeutet einfach, das Datumsformat in eine lesbare Textform zu ändern. Programmierer tun dies häufig, um die Datumsausgabe nach Bedarf zu formatieren.
 
-Wenn wir als Programmierer mit Datumsangaben arbeiten, müssen wir manchmal diese Daten in einen String umwandeln. Das bedeutet, dass wir das Datum in eine lesbare Zeichenkette verwandeln, die wir dann beispielsweise in einer Benutzeroberfläche anzeigen können. Wir müssen dies tun, weil Computer in der Regel Datumsangaben in einem maschinellen Format speichern, das wir Menschen nicht gut lesen können. 
+## Wie macht man das:
+Wir verwenden die `ToString()` Methode, um ein Datum in einen String zu konvertieren. Hier ist ein einfacher Code zum Konvertieren eines Datums in einen String:
 
-## Wie geht es?
+```C# 
+using System;
 
-Um ein Datum in einen String umzuwandeln, können wir in C# die Methode `ToString()` benutzen. Hier ein Beispiel:
-
-```C#
-DateTime now = DateTime.Now; // current date and time
-string dateString = now.ToString(); // dateString is now "9/23/2021 10:21:00 AM"
+public class Program
+{
+    public static void Main()
+    {
+      DateTime currentDate = DateTime.Now; // Aktuelles Datum und Zeit
+      Console.WriteLine(currentDate.ToString("dd/MM/yyyy")); // Formatierung des Datums
+    }
+}
 ```
 
-Wir können auch ein bestimmtes Format für den String angeben, indem wir dem `ToString()` Aufruf einen Parameter übergeben:
+Die Ausgabe könnte so aussehen:
 
-```C#
-DateTime now = DateTime.Now; // current date and time
-string dateString = now.ToString("dd MMMM yyyy"); // dateString is now "23 September 2021"
+``` 
+27/10/2021
 ```
 
-Wir können verschiedene String-Formate ausprobieren und sehen, welches am besten zu unseren Anforderungen passt. Hier sind einige gängige Formate:
+## Deep Dive
+Historisch gesehen haben Programmierer immer nach Möglichkeiten gesucht, Daten auf eine für Menschen lesbare Weise darzustellen. Daher wurde das Konzept der Datumsformatierung eingeführt.
 
-- "dd/MM/yyyy" - 23/09/2021
-- "MM/dd/yyyy" - 09/23/2021
-- "dd MMMM yyyy" - 23 September 2021
-- "yyyy/MM/dd" - 2021/09/23
+Abgesehen von `ToString()`, bietet `.Net` die `Date` und `Time` Struktur an, die ebenfalls zur Formatierung eingesetzt werden kann. Hier ist eine alternative Möglichkeit:
 
-## Tiefer Einblick
+```C# 
+DateTime currentDate = DateTime.Now; 
+string dateString = $"{currentDate:dd MMMM yyyy}";
+```
 
-Die Umwandlung eines Datums in einen String hat eine lange Geschichte in der Programmierung. In früheren Programmiersprachen war dies eine komplexe Aufgabe, aber dank moderner Sprachen wie C# ist es jetzt viel einfacher geworden. Es gibt auch alternative Methoden, um Datums-Strings zu formatieren, wie zum Beispiel die`DateTime.ParseExact()`-Methode.
-
-Bei der Implementierung der `ToString()` Methode wird das verwendete Format durch die Systemeinstellungen des Computers bestimmt. Dies bedeutet, dass der gleiche Code auf unterschiedlichen Computern möglicherweise unterschiedliche Ergebnisse liefert. Um dies zu vermeiden, können wir das Format explizit angeben, wie wir im Beispiel oben gesehen haben.
+In Bezug auf die Implementierung ist es wichtig zu wissen, dass die `ToString()` Methode unterschiedliche Formate akzeptiert. Z.B. "MM/dd/yyyy" erstellt einen String in einem Format, das in den USA weit verbreitet ist, während "dd/MM/yyyy" in Ländern wie Deutschland verbreitet ist.
 
 ## Siehe auch
-
-- [Offizielle Dokumentation von Microsoft zu `ToString()`](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
-- [C#-Beispiele für die Verwendung von `ToString()`](https://www.c-sharpcorner.com/blogs/how-to-convert-a-datetime-to-string-format-in-c-sharp-programming1)
+- [Microsoft: Standard DateTimeFormat strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-datetime-format-strings)
+- [Microsoft: Custom DateTimeFormat strings](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)

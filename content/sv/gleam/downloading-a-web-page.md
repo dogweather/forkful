@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Gleam: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,33 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hämta en webbsida är en process där man laddar ner en kopia av en webbsida från internet till en dator eller annan enhet. Detta görs vanligtvis av programmerare för att kunna bearbeta och använda data från webbsidor i sina program.
+Att ladda ner en webbsida innebär att hämta dess data för lokal användning. Detta görs av programmerare för att analysera, ändra eller lagra information från sidan.
 
-## Så här gör du:
-För att hämta en webbsida i Gleam kan man använda funktionen `httpc.get(url)` från biblioteket `gleam/httpc`. Detta kommer att returnera en `Result` med antingen en `Ok` med en `HttpResponse` som innehåller den hämtade sidan, eller ett `Error` om något gick fel. Exempel:
+## Hur gör man:
+Vi kommer att visa ett enkelt exempel på hur du laddar ner en webbsida med Gleam. Se följande kod:
 
 ```Gleam
-import gleam/httpc
+import gleam/http.{client, Get}
+import gleam/string
 
-let result = httpc.get("https://www.example.com")
-
-case result {
-  Ok(response) ->
-    case response.body {
-      Ok(body) ->
-        // Gör något med body
-
-      Err(error) ->
-        // Hantera fel
-    }
-
-  Err(error) ->
-    // Hantera fel
-}
+try response
+    = client.get(uri.from_string("https://www.example.com") |> unwrap)
+response.status_code
+response.body
+        |> string.from_utf8
+        |> result.unwrap_string
 ```
+I det här exemplet hämtar vi en webbsida (`https://www.example.com`) och skriver ut statuskoden och sidans innehåll som en sträng.
 
-## Djupdykning:
-Att hämta webbsidor är en viktig del av många programmerares arbete, särskilt för webbutveckling och dataanalys. Det finns alternativa lösningar för att hämta webbsidor, såsom att använda verktyg som cURL eller bibliotek från andra programmeringsspråk. Implementeringen av `httpc.get` använder sig av ett bibliotek som heter Mochi, som hanterar HTTP-anrop och returnerar resultatet som en `Result`.
+## Djupdykning
+Historiskt sett involverade nedladdning av webbsidor ofta att skicka HTTP-begäran och sedan tolka svaret. Med Gleam är processen betydligt enklare, tack vare inbyggda bibliotek som `gleam/http`. 
+
+Bland alternativen finns andra programmeringsspråk och bibliotek. Också asynkrona begäran kan vara en alternativ metod att hämta data från webben.
+
+När det gäller implementation, är grundläggande idén att skicka en GET-begäran till den önskade URL:en, och sedan bearbeta svaret, omvandla bytes till en förståelig sträng med `string.from_utf8`.
 
 ## Se även:
-Läs mer om Gleam på deras officiella webbplats: https://gleam.run/
+- Gleam's officiella webbplats: [här](https://gleam.run/)
+- Gleam's http-klient dokumentation: [här](https://hexdocs.pm/gleam_http/gleam/http/0.9.0/) 
+- Mer information om HTTP-begäran: [här](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Overview)

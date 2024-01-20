@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Arduino: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,67 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Ymmärrä kahden päivämäärän vertailu Arduino-ohjelmoinnissa
+## Mikä ja Miksi?
 
-## Mitä ja miksi?
+Päivämäärien vertailu on prosessi, jossa kahden kalenteripäivän välinen suhde määritellään. Ohjelmoijat tekevät tämän, kun heidän täytyy tarkistaa tapahtumien suhteellinen esiintymisjärjestys tai määrittää aikajakso kahden tapahtuman välillä.
 
-Kahden päivämäärän vertailu on prosessi, jossa verrataan kahta päivämäärää ja selvitetään, kumpi niistä on suurempi tai pienempi. Tämä on tärkeää ohjelmoijille, jotka tarvitsevat tapoja hallita päivämäärätietoja ja tehdä päätöksiä niiden perusteella.
-
-## Miten:
-
-Seuraavassa on kaksi esimerkkikoodia vertailemaan kahta päivämäärää ja tulostamaan tulos:
-
-Arduino-koodiesimerkki 1:
+## Kuinka tehdä:
 
 ```Arduino
-int date1 = 20210805; // ensimmäinen päivämäärä muodossa vuosi, kuukausi, päivä
-int date2 = 20210810; // toinen päivämäärä muodossa vuosi, kuukausi, päivä
+// Luo DateTime-olioita käyttämällä vuotta, kuukautta, päivää, tuntia, minuuttia ja sekuntia
+DateTime dt1(2021, 7, 19, 12, 30, 45);
+DateTime dt2(2021, 7, 20, 8, 15, 0);
 
-if (date1 < date2) { // tarkistetaan, onko date1 pienempi kuin date   
-  Serial.println("Ensimmäinen päivämäärä on pienempi kuin toinen päivämäärä!");
-} else if (date1 == date2) { // tarkistetaan, ovatko päivämäärät samat
-  Serial.println("Päivämäärät ovat samat!");
-} else { // jos edelläolevat ehdot eivät täyty, date1 on suurempi kuin date2
-  Serial.println("Ensimmäinen päivämäärä on suurempi kuin toinen päivämäärä!");
+// Vertaile kahta päivämäärää
+if(dt1 < dt2){
+  Serial.println("dt1 on ennen dt2");  // Tulostaa, jos dt1 on ennen dt2 
+}else if(dt1 > dt2){
+  Serial.println("dt1 on jälkeen dt2");  // Tulostaa, jos dt1 on jälkeen dt2 
+}else{
+  Serial.println("dt1 ja dt2 ovat samat");  // Tulostaa, jos dt1 ja dt2 ovat samat
 }
 ```
 
-Tulostus:
+## Syvällisempi syöksy
 
-```
-Päivämäärät ovat samat!
-```
+Ennen Arduinon päivämäärä- ja aikakirjastoa, päivämäärien vertailu saattoi olla haastavaa. Tämä johtuu siitä, että monimutkaisten ajanhallintasäännösten, kuten karkausvuosien ja kesäajan, hallinta ei ole yksinkertainen tehtävä.
 
-Arduino-koodiesimerkki 2:
+Vaihtoehtoisesti voit käyttää millis() ja micros() -toimintoja, mutta ne ovat tehokkaita vain, jos haluat seurata aikaa suhteellisesti, ei absoluuttisesti.
 
-```Arduino
-String date1 = "2021-08-05"; // ensimmäinen päivämäärä merkkijonona
-String date2 = "2021-08-10"; // toinen päivämäärä merkkijonona
-
-if (date1 < date2) { // tarkistetaan, onko date1 pienempi kuin date2
-  Serial.println("Ensimmäinen päivämäärä on pienempi kuin toinen päivämäärä!");
-} else if (date1 == date2) { // tarkistetaan, ovatko päivämäärät samat
-  Serial.println("Päivämäärät ovat samat!");
-} else { // jos edelläolevat ehdot eivät täyty, date1 on suurempi kuin date2
-  Serial.println("Ensimmäinen päivämäärä on suurempi kuin toinen päivämäärä!");
-}
-```
-
-Tulostus:
-
-```
-Ensimmäinen päivämäärä on pienempi kuin toinen päivämäärä!
-```
-
-## Syvemmälle:
-
-Päivämäärän vertailu on ollut tärkeä osa ohjelmointia jo pitkään ja sitä on käytetty monilla eri ohjelmointikielillä. Arduino-kirjastot, kuten "Time" ja "RTCLib", tarjoavat valmiita toimintoja päivämäärien vertailuun.
-
-On myös olemassa muita tapoja vertailla päivämääriä, kuten käyttämällä Unix-timestamp-työkalua tai muuntamalla päivämäärät kokonaislukumuotoon ja vertailemalla niitä.
-
-Päivämäärien vertailuun voi vaikuttaa myös aikavyöhykkeet ja kesäaika, jotka on huomioitava vertaillessa päivämääriä.
+Päivämäärien vertailussa DateTime-luokan ylikuormitettua ”<”, ”>” ja ”==” operaattoria hyödynnetään. Nämä operaattorit tekevät vertailun dt1: n ja dt2: n välillä suoraan käytettäessä.
 
 ## Katso myös:
 
-1. [Time - Arduino-kirjasto päivämäärien hallintaan] (https://www.arduino.cc/en/reference/time)
-2. [RTCLib - Arduinon kirjasto RTC piirien käyttöön] (https://www.arduino.cc/en/reference/rtclib)
+1. Arduinon virallinen aika-kirjasto: [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
+2. Ajanhallinta Arduino-ohjelmoinnissa: [Arduino Time Management](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/time-management)
+3. Lisätietoja DateTime-luokasta: [Arduino DateTime Class](https://www.arduino.cc/reference/en/libraries/datetime/)

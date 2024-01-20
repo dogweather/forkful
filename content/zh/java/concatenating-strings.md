@@ -1,6 +1,6 @@
 ---
 title:                "连接字符串"
-html_title:           "Java: 连接字符串"
+html_title:           "C: 连接字符串"
 simple_title:         "连接字符串"
 programming_language: "Java"
 category:             "Java"
@@ -10,30 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是字符串连接，为什么程序员要这样做？
+## 什么 & 为什么？
+串联字符串就是将两个或多个字符串拼接到一起。程序员进行拼接主要是为了整合和处理文字信息。
 
-字符串连接是将多个字符串合并为一个更长的字符串的过程。程序员经常这样做是因为在程序中需要使用大量的文本信息，将它们连接起来可以使代码更简洁和可读。
+## 如何进行：
+以下是使用Java串联字符串的示例及其输出：
 
-## 如何实现：
-
+```java
+public class Test {
+    public static void main(String[] args) {
+        String str1 = "Hello, ";
+        String str2 = "World!";
+        String str3 = str1.concat(str2);
+        System.out.println(str3);
+    }
+}
 ```
-Java String firstName = "John";
-String lastName = "Doe";
-String fullName = firstName + " " + lastName;
+以上代码的输出为：
 
-System.out.println(fullName);
+```java
+Hello, World!
 ```
 
-输出结果：John Doe
+## 深度剖析
+从历史上看,字符串串联一直以来都是程序设计中常见的操作，它可以使代码清晰简洁，提高可读性。
 
-## 深入了解：
+然而,Java中的语句`String str3 = str1 + str2;`虽然看起来简单，但实际上在背后进行了很多操作。因为String是不可变的，每次你用"+"操作符连接字符串，Java实际上会创建一个新的字符串对象，这会显著地影响性能。因此，在处理大量字符串连接操作时，通常建议使用StringBuilder或StringBuffer。
 
-字符串连接是在早期的编程语言中出现的一项重要技术，比如C语言。它可以通过使用strcpy()函数来实现。除了"+"操作符外，Java中还有其他几种方式来实现字符串连接，比如使用StringBuffer和StringBuilder类。
+看看使用StringBuilder的例子：
 
-## 参考资料：
+```Java
+public class Test {
+    public static void main(String[] args) {
+        StringBuilder str = new StringBuilder("Hello, ");
+        str.append("World!");
+        System.out.println(str);
+    }
+}
+```
+你会看到相同的输出：“Hello, World!”
 
-了解更多关于Java中的字符串处理，可以参考以下链接：
-
-- [Java String 类](https://www.runoob.com/java/java-string.html)
-- [Java StringBuffer 类](https://www.runoob.com/java/java-stringbuffer.html)
-- [Java StringBuilder 类](https://www.runoob.com/java/java-stringbuilder.html)
+## 另请查阅
+1. Java字符串参考: https://docs.oracle.com/javase/tutorial/java/data/strings.html
+2. Java StringBuilder类: https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html
+3. Java StringBuffer class: https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuffer.html

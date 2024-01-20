@@ -1,6 +1,6 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "C: יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "C"
 category:             "C"
@@ -10,58 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זו קובץ זמני ולמה תוכניות מדביקים בזה?
+## מה ולמה?
+יצירת קובץ זמני הוא תהליך של הקמת קובץ מתוך א מרכז עיבוד נתונים שמשמש לאחסון נתונים באופן זמני. המתכנתים עושים זאת מרוב שיקולים: אילוץ של מערכת ההפעלה, עיבוד מראש של קבצים גדולים, או אפשרים לבצע עיבוד רב מקבילי.
 
-קובץ זמני הוא קובץ שנוצר במהלך ריצת תוכנית ומשמש כחלק מתהליך העבודה. תוכנת מחשב יכולה להשתמש בקבצים זמניים כדי לאחסן מידע זמני שדרוש למשימה מסוימת, למשל נתונים חשובים המיועדים לעיבוד או להדפסה. תוכניות משתמשות בקבצים זמניים בשילוב עם תוכנות אחרות כדי לשמור על השלמות והפרטיות של הנתונים שלהן.
-
-# כיצד ליצור קובץ זמני בשפת C?
-
-כדי ליצור קובץ זמני בשפת C, ניתן להשתמש בפונקציית `tmpfile()` אשר יוצרת קובץ זמני במקום קבוע במערכת הקבצים. לאחר הפעלת הפונקציה, ניתן להשתמש במשתנה המצביע לקובץ הזמני כדי לכתוב או לקרוא מידע אליו. למשל:
+## איך ליצור:
+הנה דוגמא חינם של קוד בשפת C ליצירת קובץ זמני:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    FILE *tmpfile;
-    
-    tmpfile = tmpfile();
-    if (tmpfile != NULL) {
-        fprintf(tmpfile, "Hello from temporary file!");
-        fputs("And hello again!", tmpfile);
-        
-        // הדפסת תוכן הקובץ הזמני
-        rewind(tmpfile);
-        char c = fgetc(tmpfile);
-        while (c != EOF) {
-            printf("%c", c);
-            c = fgetc(tmpfile);
-        }
-        
-        if (fclose(tmpfile) == EOF) {
-            perror("Error closing temporary file");
-        } 
-    } else {
-        perror("Error creating temporary file");
+    char temp_filename[] = "/tmp/tempfileXXXXXX";
+    int file_descriptor = mkstemp(temp_filename);
+
+    if(file_descriptor == -1) {
+        printf("Cannot create temporary file, do you have proper access rights?\n");
+        return 1;
     }
-    
-    return 0;
+
+    // Now the temporary file is open. You can write/read/erase it.
+    ...
 }
 ```
-פלט יחודי:
 
-```
-Hello from temporary file!
-And hello again!
-```
+## הצצה לעומק:
+הייתה בעבר תכנית C standard ששימשה ליצירת קבצים זמניים `tmpfile()`, אך חשיפה של חולשהית בטחון תפעולית גרמה לבניית `mkstemp()`. אפשרות חלופית היא שימוש ב-POSIX `mkstemp()`, שאף היא מספקת  יכולת החלפה של שם הקובץ במזהה מספרי מרחק משמש.
+היישום מאמן גלם תחילה את המחרוזת המועתקת `XXXXXX` במספרים עד שמספר הקובץ החדש לא יהיה מתנגש עם שם קובץ קיים.
 
-# לעומק - היסטוריה, אלטרנטיבות ופרטי יישום
-
-בעבודת מחשב קודמת, יצירת קבצים זמניים הייתה דרך פופולרית למימוש תוכניות. אולם בשנים האחרונות, תכונה נוספת הוספה למערכות ההפעלה המודרניות שחשפה אפשרות ליצירת קבצים זמניים באמצעות הפקודה `mkstemp()`. פקודה זו נועדה למנוע התנגשויות בכתיבת קבצים זמניים ולהגביל את גישתם לתוכניות שנכתבו על ידי משתמשים שונים.
-
-כמו כן, ישנן גם אפשרויות אלטרנטיביות ליצירת קבצים זמניים בשפת C, כגון שימוש בפקודות בשורת הפקודה או בממשק גרפי. אולם, המטרה העיקרית של יצירת קובץ זמני היא לאחסן מידע זמני בתוך קובץ נשמר, ולכן שימוש בפונקציית `tmpfile()` עדיין נחשב לאפשרות המועדפת על ידי מתכנתים.
-
-# ראה גם
-
-למידע נוסף על יצירת קבצים זמניים בשפת C ושימושיהם בתוכניות:
-- [מדריך נתונים בסיסיים של קבצים נשמרים](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [מאמר על אנטומיית קבצים זמ
+## ראה גם:
+הדף של האינטרנט של מסמכי POSIX [mkstemp()](http://man7.org/linux/man-pages/man3/mkstemp.3.html)
+נספח המילון של The GNU C Library, תחת ["Temporary Files"](https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html) במידע נוסף על קבצים זמניים.

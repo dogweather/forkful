@@ -1,6 +1,6 @@
 ---
 title:                "HTML 파싱"
-html_title:           "Haskell: HTML 파싱"
+html_title:           "Fish Shell: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+# Haskell로 HTML 파싱이란 무엇인가? 왜 필요한가?
 
-HTML 구문 분석이란 무엇일까요? 그것은 웹 페이지의 HTML 코드를 읽고 데이터를 추출하는 프로세스를 말합니다. 프로그래머들이 이것을 하는 이유는 웹 사이트에서 필요한 정보를 추출하여 데이터를 분석하고, 가공하고, 사용하기 위해서 입니다.
+## 무엇이며 왜 필요한가?
 
-## 하는 방법:
+HTML 파싱은 HTML 코드를 분석해서 그 구조를 이해하는 과정을 말합니다. 프로그래머들이 이를통해 웹 페이지의 데이터를 추출하고, 웹 크롤링, 웹 스크랩핑 등 다양한 작업을 수행합니다.
 
-우리는 ```Haskell ... ``` 코드 블록 내에서 예제 코드와 출력을 나타낼 것입니다. 그러나 직접 해 보기 전에, ```HTML-parser``` 라이브러리를 다운로드하고, 명시적으로 가져와야 합니다.
+## 도전:  
 
-```Haskell
-import Text.HTML.Parser
-```
-
-이제, ```parseTags``` 함수를 사용해 HTML 코드를 파싱할 수 있습니다. 예를 들어, 다음과 같이 간단한 HTML 코드를 사용해 봅시다:
+Haskell에서는 `tagsoup` 라이브러리를 사용하여 HTML을 파싱할 수 있습니다. 예제 코드는 아래와 같습니다:
 
 ```Haskell
-let html = "<html><body><h1>Hello World!</h1></body></html>"
+import Text.HTML.TagSoup
 
-let parsed = parseTags html -- [TagOpen "html" [], TagOpen "body" [], TagOpen "h1" [], TagText "Hello World!", TagClose "h1", TagClose "body", TagClose "html"]
-
+main :: IO ()
+main = do
+    html <- readFile "example.html"
+    let tags = parseTags html
+    print tags
 ```
+이 코드는 "example.html" 파일을 읽고 이를 파싱한 뒤, 결과를 콘솔에 출력합니다.
 
-예제 코드에서 볼 수 있듯이, HTML 코드는 태그를 기준으로 나눠져 있습니다. 이제 우리는 ```parsed``` 리스트에서 필요한 태그와 텍스트를 추출할 수 있습니다.
+## 깊이 들어가서 보기:
 
-## 깊게 파고들기:
+Haskell은 1990년에 발표된 순수 함수형 프로그래밍 언어입니다. 이 언어는 특히 빅 데이터와 복잡한 데이터 구조를 처리하는데 유용합니다.
 
-HTML 구문 분석은 인터넷의 시작과 함께 등장한 고전적인 문제입니다. 예전에는 정규식을 사용해 HTML 코드를 파싱하는 것이 일반적이었습니다. 하지만, 이것은 복잡하고 실수하기 쉬웠기 때문에 ```HTML-parser``` 라이브러리와 같은 도구가 도입되었습니다.
+HTML 파싱의 대안으로는 XML 파싱, JSON 파싱 등이 있지만, 웹 페이지의 데이터를 다루는 경우에는 HTML 파싱이 최적의 선택일 수 있습니다.
 
-대안으로, 최근에는 ```tagsoup```이라는 라이브러리가 인기를 얻고 있습니다. 이것은 더 유연하게 HTML 코드를 파싱할 수 있고, 어떤 종류의 HTML 코드든 처리할 수 있습니다.
+'parseTags' 함수를 사용하여 HTML을 파싱하면, 결과로 'Tag' 리스트가 반환됩니다. 이 리스트에는 열린 태그, 닫힌 태그, 텍스트 등이 포함됩니다.
 
-코드를 더 깊이 들여다보면, HTML 코드를 파싱하는데 사용되는 state machine 등의 다양한 논리를 볼 수 있습니다. 하지만, 이러한 세부 사항은 개발자의 관심사가 아니기 때문에 넘길 수 있습니다.
+## 참고 자료:
 
-## 더 알아보기:
+아래 참고 자료들로 더 깊게 공부해 보세요:
 
-- [Text.HTML.Parser documentation](https://hackage.haskell.org/package/html-parser/docs/Text-HTML-Parser.html)
-- [HTML-parser Hackage page](https://hackage.haskell.org/package/html-parser)
-- [tagsoup library official website](http://hackage.haskell.org/package/tagsoup)
+[Haskell 공식 페이지](https://www.haskell.org/)
+
+[TagSoup 라이브러리 문서](https://hackage.haskell.org/package/tagsoup)
+
+[Haskell로 웹 스크래핑하기](https://www.stackbuilders.com/tutorials/haskell/web-scraping-101/)

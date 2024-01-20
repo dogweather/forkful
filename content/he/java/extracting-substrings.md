@@ -1,7 +1,7 @@
 ---
-title:                "חילוץ יתרי מחרוזות"
-html_title:           "Java: חילוץ יתרי מחרוזות"
-simple_title:         "חילוץ יתרי מחרוזות"
+title:                "חילוץ תת-מחרוזות"
+html_title:           "Bash: חילוץ תת-מחרוזות"
+simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-הפעלת תת-מחרוזת היא תהליך שבו מתבצעת החלקה של חלק מהמחרוזת המקורית לפי תבנית ספציפית. תהליך זה נחשב חשוב בתכנות ונעשה בכדי למזער את כמות הקוד ולהפעיל עליו פעולות נדרשות.
+## What & Why? (מה ולמה?)
 
-# איך לבצע?
-באמצעות שימוש בפונקציית substring ניתן לבצע הפעלת תת-מחרוזת בשפת ג'אווה. בקוד המופיע למטה, נדגים דוגמאות של שימוש בפונקציה זו עם הפלט המתאים.
+יצירת מחרוזות תתי-מחרוזת היא הליך שבו מאחזרים חלק ממחרוזת מחשב. מתכנתים משתמשים בזה לתעד דינמיקאית את המידע הרלוונטי ממחרוזות גדולות או מורכבות.
+
+## How to: (איך ל:)
+
+הנה הדוגמה הבסיסית לאיך למשוך תת-מחרוזת ממחרוזת ב-Java.
 
 ```Java
-// כאן יש להכניס תבנית בשביל להשיג את התת מחרוזת הרצויה
-String str = "שלום עולם";
-String subStr1 = str.substring(0, 4); // פלט: שלום
-String subStr2 = str.substring(5, 9); // פלט: עולם
+public class Main {
+  public static void main(String[] args) {
+    String str = "Hello, World!";
+    String substring = str.substring(0, 5);
+    System.out.println(substring);
+  }
+}
+```
+תוצאה:
+```
+Hello
 ```
 
-# צילום מקיף
-פעולת תת-מחרוזת נוצרה בשנות השישים לשם מתן אפשרות למפתחים לעקוב אחרי מערכת תווים בצורה מחויבת יותר. פונקציות נוספות כמו substring מוצאות בשימוש עבור זרם חיצוני של מידע זמני וכן עבור מידע מבני נתונים.
+## Deep Dive: (צלילה עמוקה:)
 
-הדרכים האלטרנטיביות לתת-מחרוזת כוללות פונקציות דומות כמו split ו substring בשפות תכנות נוספות. כל אחת מהן מתכנתת לכם להפעיל תת-מחרוזת בשיטת זרימת עבודה שונה.
+Java הציגה את `substring()` בהשקה הראשונית. ניתן למנוע 
+מקרים של `IndexOutofBound` התרסה אם הגבלות האינדקס נמנעות בהתחלה. חלופה ל-`substring()` היא שימוש במחלקת `StringUtils` מ Apache Commons Lang, אם זמין.
 
-פירוט טכני:
-פונקציית substring מכילה שני פרמטרים: האינדקס של התו הראשון וסופי של התו האחרון של התת-מחרוזת הרצויה. הפרמטר הראשון הוא גדול מן הפרמטר השני.
+## See Also: (ראה גם:)
 
-מוצר: Java 1.0 ומעלה
-רישיון: כללי
-
-# ראו גם
- - [כללי על שפת ג'אווה](https://he.wikipedia.org/wiki/%D7%92%27%D7%90%D7%95%D7%95%D7%94)
- - [Java ספריה לחיבור מחרוזות](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [מסמך Oracle על `substring()`](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int))
+- [הספרייה Apache Commons Lang](https://commons.apache.org/proper/commons-lang/)

@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Elm recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,34 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Deleting characters matching a pattern is a commonly used technique in programming that involves removing certain characters from a given string based on a specific pattern or rule. Programmers use this method to manipulate strings and extract the desired information, making their code more efficient and concise.
+Deleting characters matching a pattern is a common operation in text processing. This helps in cleaning up data, removing unwanted parts, or prepping input for further parsing.
 
 ## How to:
 
-To delete characters matching a pattern in Elm, we can use the `filter` function from the `String` module. This function takes in two parameters: a boolean function that specifies the condition for filtering and a string to be filtered. Here's an example:
+Elm offers no built-in function to directly delete characters matching a pattern. Instead, you can use `String.split` and `String.join` functions to reach the same result. Let's say you want to remove all occurrences of the letter 'a' from a string:
 
 ```Elm
-import String exposing (filter)
+removeChar : Char -> String -> String
+removeChar char str =
+    str
+        |> String.split (String.fromChar char)
+        |> String.join ""
 
-myString = "Hello World!"
-
-filteredString = filter (\c -> c /= 'o') myString
-
--- filteredString = "Hell Wrld!"
+-- in usage
+removeChar 'a' "banana" 
+-- Returns "bnn"
 ```
 
-In this example, we use the `filter` function to remove all occurrences of the character 'o' from the string "Hello World!". We first define a boolean function that returns `True` if the given character is not equal to 'o', which is then used as the first parameter for `filter`. The result is a filtered string with all instances of 'o' removed.
+## Deep Dive
 
-## Deep Dive:
+Deleting characters matching a particular pattern is an operation going back as far as the earliest days of text processing and is ubiquitous in every high-level programming language. Elm, being a frontrunner for functional programming in the front-end world, takes a different approach, adhering closely to functional programming principles.
 
-- **Historical Context:** The concept of deleting characters from a string has been around since the early days of programming. In fact, the first high-level programming language, Fortran, had a built-in function for deleting characters from a string. The technique has since been used in various programming languages, including Elm, to manipulate and extract information from strings.
+An advantage of using `String.split` and `String.join` in place of a built-in replace function is that it lends itself well to function composition. It's a testament to Elm's philosophy of making data transformations a series of small, understandable steps.
 
-- **Alternatives:** In Elm, there are a few other methods for deleting characters from a string, such as using regular expressions or the `String.replace` function. However, these methods may not be as efficient or concise as using `filter` in certain situations.
+An interesting detail about Elm's `String.split` is that it doesn't treat the input pattern as a regular expression, but as a literal string. Elm intentionally lacks regex support in its core libraries, pushing developers toward a more declarative style of string processing.
 
-- **Implementation Details:** The `filter` function works by looping through the characters in a string and applying the given boolean function to each character. If the function returns `True`, the character is kept in the final string. However, if the function returns `False`, the character is skipped and not added to the final string. This process continues until all characters in the string have been checked.
+## See Also
 
-## See Also:
-
-- [Elm documentation on `String` module](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [W3Schools tutorial on filtering arrays](https://www.w3schools.com/jsref/jsref_filter.asp)
-- [MDN Web Docs on regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+1. String Processing in Elm: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)
+2. String functions in Elm: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
+3. More on Functional Programming in Elm: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)

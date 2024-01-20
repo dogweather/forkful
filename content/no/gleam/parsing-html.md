@@ -1,7 +1,7 @@
 ---
-title:                "Innføring i html-analysering"
-html_title:           "Gleam: Innføring i html-analysering"
-simple_title:         "Innføring i html-analysering"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,30 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----------------------------------------
-
 ## Hva & Hvorfor?
-Parsing HTML er prosessen med å strukturere og tolke informasjonen som finnes i HTML-kode, som er kodespråket som brukes for å lage nettsider. Programmerere bruker parsing for å kunne manipulere eller hente ut spesifikke data fra nettsider, som for eksempel å lese og manipulere brukerinput eller å automatisk generere innhold.
 
-## Hvordan:
-Gleam har innebygde funksjoner og biblioteker for å enkelt parse HTML. Et eksempel på dette er funksjonen `Html.parse`, som leser og strukturerer HTML-koden og returnerer et tre med alle elementer og deres attributter. Her er et eksempel på bruk av denne funksjonen:
+Å parse HTML betyr at vi konverterer tekstformet HTML til strukturerte data. Dette gjør vi fordi det lar oss trekke ut nyttig informasjon og manipulere dataene.
 
-```Gleam 
-let result = Html.parse("<p>Hello <b>world</b>!</p>")
+## Hvordan Gjøre: 
 
-Html.get_text(result) // output: "Hello world!"
-Html.get_children(result) // output: [ "<p>", "<b>world</b>", "!" ]
-Html.get_attributes(result) // output: { inner_text: "Hello world!" }
+La oss gi et eksempel ved å bruke `floki` pakken i Gleam.
+
+```Gleam
+import gleam/httpc
+import gleam/uri.uri
+import floki
+
+fn hent_html() {
+  let url = uri.parse("https://example.com").unwrap()
+  let response = httpc.get(url).unwrap()
+  response.body
+}
+
+fn parse_html(html: String) {
+  let parsed = floki.parse_document(html).unwrap()
+  parsed
+}
+
+fn main(_) {
+  let html = hent_html()
+  let parsed = parse_html(html)
+  gleam.io.println(parsed)  
+}
 ```
-I dette eksempelet ser vi at funksjonen `Html.parse` har analysert og strukturert HTML-koden og returnert et tre med informasjonen.
 
-## Dypdykk:
-Parsing av HTML har vært en viktig del av utvikling av nettsider siden det ble introdusert på 90-tallet. Tidligere ble dette gjort manuelt, men med innføring av programmeringsspråk som Gleam har denne prosessen blitt automatisert og mer effektiv.
+Denne koden blir brukt til å hente HTML fra en nettside og parse det. Den returnerte verdien vil være en strukturert versjon av HTML-dokumentet.
 
-En alternativ måte å parse HTML på er å bruke et tredjepartsbibliotek som f.eks. `htmlparser2` for Node.js. Dette biblioteket har et større utvalg av funksjoner og muligheter, men Gleams innebygde funksjoner kan være tilstrekkelig for enklere parsing.
+## Dyp Dykk
 
-Ved bruk av `Html.parse` funksjonen kan man også spesifisere en liste med tillatte og uønskede elementer, noe som gir større kontroll over hva som blir returnert fra parsingen.
+HTML-parsing- teknikker har utviklet seg mye gjennom årene. Fra å være en ren tekstprosessering, til å bruke komplekse biblioteker og verktøy som DOM-parser, SAX-parser og mer.
 
-## Se også:
-- Offisiell Gleam dokumentasjon: https://gleam.run/documentation/
-- Tutorial om bruk av Gleam og parsing av HTML: https://dev.to/raphaelbaude/learn-gleam-part-4-parsing-html-with-gleam-248l
+I Gleam har vi `floki`, en rask og fleksibel HTML-parser. Den konverterer HTML-tekst til en strukturert beyting. Du kan deretter filtrere, transformere eller inspisere dataene etter behov.
+
+Alternativer til parsing inkluderer screen scraping og bruk av APIer for databehandling. Disse kan være mer effektive i bestemte situasjoner, men gir ikke samme grad av fleksibilitet eller allsidig informasjonstilgang som parsing frembringer.
+
+## Se Også:
+
+1. `floki` dokumentasjon: 
+[https://docs.gleam.run/stdlib/floki.html](https://docs.gleam.run/stdlib/floki.html)
+2. HTML Parsing teknikker:
+[https://en.wikipedia.org/wiki/HTML_parsing](https://en.wikipedia.org/wiki/HTML_parsing)
+3. `gleam/httpc` dokumentasjon: 
+[https://docs.gleam.run/stdlib/httpc.html](https://docs.gleam.run/stdlib/httpc.html)
+4. `gleam/uri` dokumentasjon: 
+[https://docs.gleam.run/stdlib/uri.html](https://docs.gleam.run/stdlib/uri.html)

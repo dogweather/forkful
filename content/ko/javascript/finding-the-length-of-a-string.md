@@ -1,7 +1,7 @@
 ---
-title:                "문자열의 길이를 찾기"
-html_title:           "Javascript: 문자열의 길이를 찾기"
-simple_title:         "문자열의 길이를 찾기"
+title:                "문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
+simple_title:         "문자열의 길이 찾기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열의 길이를 찾는 것은 프로그래머들이 자주 해야 하는 작업 중 하나입니다. 이 작업은 특정 문자열 내에 포함된 문자의 수를 알고 싶을 때 사용됩니다. 이를 통해 우리는 인풋 데이터의 양을 파악하고, 유효성 검사를 할 수 있습니다.
+## 무엇이며 왜 사용하는가?
 
-## 하는 법:
+문자열의 길이를 찾는 것은 문자열에 포함된 문자 수를 세는 것입니다. 이는 문자열 조작, 검증, 그리고 데이터 처리와 같은 다양한 프로그래밍 상황에서 중요한 작업입니다. 
+
+## 어떻게 사용하는가:
+
 ```Javascript
-// 문자열의 길이를 찾는 함수
-var stringLength = function(string) {
-
-  // 문자열의 길이를 저장할 변수 선언
-  var length = 0;
-
-  // 문자열을 한 글자씩 순회하며 길이 증가
-  for (var i = 0; i < string.length; i++) {
-    length++;
-  }
-
-  // 최종 길이 값 반환
-  return length;
-};
-
-// 함수 실행
-console.log(stringLength("안녕하세요!"));
+let str = "안녕하세요";
+console.log(str.length); // 출력: 5
 ```
 
-출력 값: 6
+이 코드에서 `str.length`는 우리가 센 문자의 수를 반환합니다. 이 경우, "안녕하세요"라는 문자열에는 5개의 문자가 있으므로 5가 반환됩니다.
 
-## 딥 다이브:
-1. 과거: 문자열의 길이를 찾는 방법은 컴퓨터가 등장한 초기부터 사용되어 왔습니다. 단순하면서도 유용한 작업이기 때문에 여전히 자주 사용되고 있습니다.
-2. 대안: Javascript에서는 내장함수인 .length를 사용해 문자열의 길이를 찾을 수 있습니다. 또한 다른 프로그래밍 언어, 예를 들어 Python에서는 len()이라는 내장함수를 제공합니다.
-3. 구현 방법: 우리 코드에서 사용한 것처럼 문자열을 순회하며 길이를 증가시켜주는 방식으로 문자열의 길이를 찾을 수 있습니다. 또한 Javascript에서는 문자열 뿐만 아니라 배열, 객체 등의 길이도 쉽게 찾을 수 있습니다.
+## 깊이 들여다보기:
 
-## 더 알아보기:
-- [JavaScript 문자열의 길이 구하기](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [자바스크립트 문자열의 길이 구하기](https://velog.io/@kim-macbook/JavaScript)
-- [JavaScript 문자열, 배열, 객체 길이 구하기](https://goddaehee.tistory.com/52)
+### 역사적 맥락:
+
+Javascript에서 문자열 길이를 찾는 방법은 ECMA-262 표준에서 제대로 정의되었으며, 이는 자바스크립트의 개발 초기부터 존재했습니다.
+
+### 대체 방법 :
+
+대부분의 경우, `length` 속성을 사용하는 것이 최선의 방법입니다. 그러나 구식 브라우저에서는 array-like object를 사용하여 동일한 결과를 얻을 수 있습니다. 그러나 이 방법은 보통 권장되지 않습니다. 
+
+```javascript
+let str = "안녕하세요";
+let length = Array.prototype.slice.call(str).length;
+console.log(length); // 출력: 5
+```
+
+### 구현 세부 내용:
+
+`length` 속성은 문자열 내에서 실제 바이트 수에 관계없이 문자 수를 반환합니다. 주의 깊게 살펴보면, 이는 Unicode와 관련된 사항일 수 있습니다. 
+
+## 또한 참조하십시오 :
+
+1. [Mozilla Developer Network's Reference on 'String.length'](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+2. [W3Schools' Explanation of JavaScript String Length Property](https://www.w3schools.com/jsref/jsref_length_string.asp)

@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Gleam: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
+# Convertendo uma string para minúsculas em Gleam
 
-A conversão de uma string para caixa baixa é o processo de alterar todas as letras maiúsculas em uma string para letras minúsculas. Isso é feito por programadores para facilitar a comparação de strings, pois as letras maiúsculas e minúsculas são tratadas de forma diferente pelos computadores.
+## O que & Por quê?
 
-## Como Fazer:
+Converter uma string para minúsculas significa transformar todas as letras maiúsculas presentes na string em minúsculas. Isso auxilia na uniformização dos dados, facilitando a comparação e a busca de strings.
 
-Para converter uma string para caixa baixa em Gleam, use a função `String.to_lower`. Por exemplo:
+## Como fazer:
 
+Aqui está um exemplo de como você pode converter uma string para minúsculas em Gleam:
+
+```gleam
+import gleam/string
+
+let minha_string = "Olá Mundo!"
+let string_minuscula = string.to_lower(minha_string)
+
+assert string_minuscula == "olá mundo!"
 ```
-Gleam
+Basta importar o módulo `gleam/string` e usar a função `to_lower`. No exemplo acima, a variável `string_minuscula` receberá o valor "olá mundo!".
 
-let string = "Olá, Amigos!"
-let lower_case_string = String.to_lower(string)
+## Mergulho Profundo
 
-```
-Saída:
-```
-"olá, amigos!"
-```
+A função `to_lower` do módulo `gleam/string` existe desde a primeira versão da linguagem Gleam, demonstrando seu papel fundamental no trabalho com strings. Existem alternativas, como implementar sua própria função para converter strings em minúsculas, mas estas geralmente não são tão eficientes ou diretas quanto o método integrado.
 
-## Mergulho Profundo:
+Tecnicamente, a função `to_lower` examina cada caractere na string e, se for uma letra maiúscula, substitui pelo seu equivalente em minúscula. Este processo é baseado na tabela ASCII, que atribui números distintos a letras maiúsculas e minúsculas.
 
-A conversão de strings para caixa baixa é uma prática comum em programação, pois oferece uma maneira mais fácil de comparar strings que podem variar em letras maiúsculas e minúsculas. Existem muitos outros métodos para realizar essa tarefa, como usar expressões regulares ou funções de loop. No entanto, a função `String.to_lower` em Gleam é uma solução simples e eficaz.
+## Veja também:
 
-## Veja Também:
+Para obter mais informações sobre o trabalho com strings em Gleam, confira a documentação oficial [aqui](https://gleam.run/book/tour/strings.html).
 
-Para saber mais sobre o uso da função `String.to_lower` em Gleam, confira a documentação oficial em https://gleam.run/types/string.html#to-lower. Você também pode aprender mais sobre strings e suas operações em https://gleam.run/types/string.html.
+Para aprender mais sobre a tabela ASCII e como as letras maiúsculas e minúsculas são representadas, veja [este link](http://www.asciitable.com/).

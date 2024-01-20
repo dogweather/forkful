@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Kotlin recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,41 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading command line arguments is the process of getting user-provided values or options when executing a Kotlin program from the command line. This allows developers to make their programs more flexible and user-friendly.
+Reading command line arguments means picking up values passed to your program when it's started from the command line. It allows input to be provided without changing the program code, making it adaptable for different tasks.
 
 ## How to:
 
-To read command line arguments in Kotlin, we can use the `args` parameter available in the main function. This parameter is an array of strings that stores all the arguments passed from the command line.
+Acquiring command line arguments in Kotlin is straightforward. You do this via an array ('args') in the 'main' function. Here's a basic example:
 
-Sample code:
-```
+```Kotlin
 fun main(args: Array<String>) {
-    if (args.isNotEmpty()) { // checks if arguments were provided
-        println("The arguments are: ${args.joinToString()}") // prints all arguments separated by a comma
-    } else {
-        println("No arguments provided.") // if no arguments, prints this statement
+    for (arg in args) {
+        println(arg)
     }
 }
 ```
 
-Sample output when executing `kotlin Program.kt arg1 arg2 arg3`:
+To run it, save the program in a file (say 'ArgsDemo.kt'), compile it (`kotlinc ArgsDemo.kt -include-runtime -d ArgsDemo.jar`), and run it with arguments (`java -jar ArgsDemo.jar firstArg secondArg`).
+
+Output:
+
 ```
-The arguments are: arg1, arg2, arg3
+firstArg
+secondArg
 ```
 
-## Deep Dive:
+## Deep Dive
 
-1. Historical Context:
-Command line arguments have been used since the early days of programming to provide input to a program without needing to constantly recompile the code. Initially, they were used for basic options such as file paths or program modes, but now they are used for a wide variety of purposes.
+Command line arguments date back to the era where GUI was non-existent; it's the oldest way of parameterizing a program. Today, despite having much sophisticated options, it stands firm because of its simplicity.
 
-2. Alternatives:
-Another way to get user input in Kotlin is by using the `readLine()` function, which allows users to input data directly in the terminal while the program is running. However, this method is not suitable for passing multiple arguments and is limited to basic data types.
+Alternatively, you might interactively request data, read a file, or use a GUI form. Yet command line arguments remain in use, particularly in scripts or for testing. 
 
-3. Implementation Details:
-In Kotlin, the `args` parameter is of type `Array<String>`, which means it can hold multiple string values. Therefore, we can access individual arguments using their index in the array, similar to accessing elements in a regular array.
+Kotlin’s implementation lays its elegance. The ‘args’ is an array of Strings. Each command line argument is a separate String. This keeps it clean, quick, and easy to comprehend.
 
-## See Also:
+## See Also
 
-- [Kotlin Docs for Command Line Arguments](https://kotlinlang.org/docs/command-line.html)
-- [Stack Overflow Thread on Reading Command Line Arguments in Kotlin](https://stackoverflow.com/questions/27507719/kt-double-questionmark-and-star-sigil-notation-syntax)
-- [GeeksforGeeks Tutorial on Command Line Arguments in Kotlin](https://www.geeksforgeeks.org/command-line-argument-in-kotlin/)
+For more on Kotlin's command line programming, check its official [guide](https://kotlinlang.org/docs/tutorials/command-line.html). To deepen your knowledge about command line arguments, read this in-depth article [Command line arguments in Kotlin](https://zetcode.com/kotlin/cmdarguments/).

@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "PHP recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,43 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Sending an HTTP request means sending a message to a web server in order to request information or resources. Programmers do this in order to retrieve data from a web server, such as a website or an API.
+HTTP requests are the cornerstone of data exchange on the web, enabling your PHP script to communicate with a server. You send HTTP requests to post data to a server, fetch data for your app, or update existing data.
 
 ## How to:
+To send HTTP requests in PHP, we can use either cURL or file_get_contents. 
 
-To send an HTTP request in PHP, you can use the `file_get_contents()` or `curl()` functions. These functions accept a URL as the first parameter and return the response from the server. For example:
-
+Below is an example using cURL:
 ```PHP
-$response = file_get_contents('http://www.example.com');
-echo $response; // outputs the HTML of the website
+$url = "http://example.com";
+$ch = curl_init(); 
+curl_setopt($ch, CURLOPT_URL, $url); 
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$result = curl_exec($ch); 
+curl_close($ch);
+echo $result;
 ```
+The output will be the contents of the http://example.com page.
 
-If you need to add specific headers or set options for your request, you can use the `stream_context_create()` function with the `file_get_contents()` function. This allows for more customization of your request. For example:
-
+Here's an example using file_get_contents:
 ```PHP
-$context = stream_context_create([
-	'http' => [
-		'header' => "Accept: application/json\r\n",
-		'method' => 'GET'
-	]
-]);
-
-$response = file_get_contents('http://www.example.com/api', false, $context);
-echo $response; // outputs the JSON response from the API
+$url = "http://example.com";
+$result = file_get_contents($url);
+echo $result;
 ```
+Just like the cURL example, the output is the contents of http://example.com.
 
-## Deep Dive:
+## Deep Dive
+Historically, PHP developers used cURL to send HTTP requests. But with the introduction of file_get_contents in PHP 4.3.0, we got a more straightforward way to get the file contents, including HTTP data. 
 
-HTTP requests have been around since the early days of the internet and are a core functionality for web development. PHP offers several options for sending HTTP requests, including the `file_get_contents()` and `curl()` functions mentioned above.
+If your request is simple, use file_get_contents. For advanced options like specifying headers for the request or sending POST data, cURL is the way to go. 
 
-Other programming languages may have their own methods for sending HTTP requests, but PHP's built-in functions provide a simple and straightforward way to make requests. Additionally, there are many useful libraries and packages available for more advanced HTTP requests in PHP, such as Guzzle and Symfony HTTP Client.
+Implementation-wise, the cURL method brings overhead, initializing and configuring a cURL session with curl_init() and curl_setopt(). On the other hand, file_get_contents is a simple function call.
+ 
+There's also a fresh player in town: GuzzleHttp, a PHP HTTP client that makes HTTP requests much easier. Its best parts? Error handling and the ability to send asynchronous requests.
 
-Some things to keep in mind when sending HTTP requests are error handling and security. It's important to properly handle any potential errors that may occur during the request and to secure your requests by using HTTPS when sending sensitive data.
+## See Also
+*PHP.net cURL*: [https://www.php.net/manual/en/book.curl.php](https://www.php.net/manual/en/book.curl.php)
 
-## See Also:
+*PHP.net file_get_contents*: [https://www.php.net/manual/en/function.file-get-contents.php](https://www.php.net/manual/en/function.file-get-contents.php)
 
-- PHP `file_get_contents()` documentation: https://www.php.net/manual/en/function.file-get-contents.php
-- PHP `curl()` documentation: https://www.php.net/manual/en/book.curl.php
-- Guzzle HTTP Client: https://docs.guzzlephp.org/en/stable/
-- Symfony HTTP Client: https://symfony.com/doc/current/http_client.html
+*Guzzle Documentation*: [http://docs.guzzlephp.org/en/stable/](http://docs.guzzlephp.org/en/stable/)
+
+Short but juicy, that's it for HTTP requests in PHP. Happy coding!

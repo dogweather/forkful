@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "C recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "C"
 category:             "C"
@@ -10,57 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Reading a Text File in C Programming Language
+
 ## What & Why?
-Reading a text file in C is the process of opening and accessing the contents of a text file using the C programming language. Programmers often do this to read important data from a file or to perform operations on a file.
+
+Reading a text file in programming means retrieving and interpreting data from a text file. Programmers do this to source data, read configurations, or inventory resources like levels in a game.
 
 ## How to:
-To read a text file in C, we first need to include the standard input/output library, ```<stdio.h>```. Then, we declare a pointer to a file using the ```fopen()``` function, passing in the file name and the mode in which we want to open the file (e.g. "r" for reading). Once the file pointer is successfully created, we can use the ```fgets()``` function to read each line of the file until the end is reached. Finally, we close the file using the ```fclose()``` function.
 
-Example code:
+Reading a text file in C is a simple, efficient process. Below is an example of how to perform the operation:
 
-```
+```C
 #include <stdio.h>
 
-int main() {
+void main() {
+    FILE *file_to_read;
+    char ch;
 
-  FILE *fp; // declaration of file pointer
+    file_to_read = fopen("example.txt", "rt"); // Open the text file in read mode
 
-  fp = fopen("example.txt", "r"); // opening the file in "r" mode
-
-  char line[100]; // an array to store the current line
-
-  while (fgets(line, 100, fp) != NULL) { // reads each line until end of file
-    printf("%s", line); // printing out the contents of the line
-  }
-
-  fclose(fp); // closing the file
-
-  return 0;
+    if (file_to_read == NULL) {
+        printf("Cannot open file \n");
+    }
+    else {
+        ch = fgetc(file_to_read); // Read the first character
+        while (ch != EOF) {  // Continue reading till the end of file
+            printf ("%c", ch); // Print the read character
+            ch = fgetc(file_to_read); // Read the next character
+        }
+        fclose(file_to_read); // Close the file
+    }
 }
 ```
+Running this code with an 'example.txt' file that contains the text "Hello, World!", will output:
 
-Sample input (example.txt):
+```shell
+Hello, World!
 ```
-Hello
-This is a text file.
-It contains multiple lines.
-```
+## Deep Dive
 
-Output:
-```
-Hello
-This is a text file.
-It contains multiple lines.
-```
+Historically, reading text files has been a fundamental operation in programming. It dates back to when C was introduced in the 70s. 
 
-## Deep Dive:
-Reading text files in C has been a common practice since the early days of programming due to the widespread use of plain text files as a means of storing data. Prior to the advent of modern databases and file formats, text files were the main way of storing and sharing data.
+There are alternative ways to read a text file in C, such as using fgets() or fscanf(), but these methods may be more complex or less suited to certain tasks. 
 
-An alternative approach to reading text files is to use command-line tools such as ```cat``` or ```grep```. However, using C to read text files allows us to process the data in a more structured manner, making it easier to perform operations on the file.
+Reading a file involves three key steps: (1) opening the file, (2) reading the contents, and (3) closing the file. This is implemented via the fopen(), fgetc() and fclose() functions respectively in the C library.
 
-The ```fopen()``` function can open files in different modes, including "r" (read), "w" (write), and "a" (append). This allows us to not only read from but also write to or modify a text file using C.
+## See Also
 
-## See Also:
-- [C File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [Using files in C](https://github.com/victor-iyiola/using-files-in-c) by Victor Iyiola
-- [C File Handling](https://www.geeksforgeeks.org/basics-file-handling-c/) on GeeksforGeeks
+1. [File I/O in C](https://www.learn-c.org/en/File_IO)
+2. [Reading and Writing Files in C](https://www.geeksforgeeks.org/c-programming-file-io-character-wise/)
+3. [Text Files in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)

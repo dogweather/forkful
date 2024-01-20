@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "C++: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "C++"
 category:             "C++"
@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇과 왜 하나요?
-텍스트 파일을 읽는 것은 단순한 텍스트 문서의 내용을 메모리에 로드하는 것을 의미합니다. 프로그래머는 이 작업을 수행하는 이유는 메모리에 로드한 데이터를 프로그램에서 사용할 수 있기 때문입니다.
+## 무엇이며 왜필요한가요?
 
-# 방법:
-아래의 ```C++ ... ``` 코드 블록 안에 코딩 예제와 샘플 출력을 제공합니다.
+텍스트 파일 읽기는 컴퓨터 프로그램이 디스크에서 텍스트 파일을 읽어 데이터를 처리하는 과정입니다. 프로그래머들은 파일에서 입력을 받아와서 데이터를 분석하거나 재사용하기 위해 이를 사용합니다.
+
+## 참조 코드:
+
+C++에서 텍스트 파일을 읽는 가장 쉬운 방법은 ifstream 클래스를 사용하는 것입니다.. 아래의 코드는 이를 보여줍니다.
 
 ```C++
 #include <iostream>
 #include <fstream>
 #include <string>
 
-using namespace std;
-
 int main() {
-    ifstream input_file("input.txt"); // input.txt 파일 열기
-    string content; // 파일 내용을 저장할 변수 생성
-
-    if (input_file.is_open()) { // 파일이 열렸는지 확인
-        while (getline(input_file, content)) { // 파일 내용을 한 줄씩 읽어오기
-            cout << content << endl; // 파일 내용 출력
+    std::ifstream file("example.txt");
+    
+    if (file.is_open()) {
+        std::string line;
+        while (getline(file, line)) {
+            std::cout << line << std::endl;
         }
-    }
-    else {
-        cout << "파일을 열 수 없습니다." << endl; // 파일을 여는데 실패한 경우 에러 메시지 출력
+        file.close();
+    } else {
+        std::cerr << "Unable to open file" << std::endl;
     }
 
-    input_file.close(); // 파일 닫기
     return 0;
 }
 ```
 
-# 깊게 들어가보세요:
-(1) 읽기 전용으로 사용된 이산식 추가 언어의 첫 번째 버전은 1962년에 나온 JOVIAL 이었습니다. 오늘날, 다양한 종류의 텍스트 파일을 읽기 위해 C++이 주로 사용되고 있습니다. (2) 파일을 읽는 대안으로는 바이너리 파일을 읽는 것이 있습니다. 이 경우, 파일의 내용이 이진수로 저장되어 있으므로 이를 해석하기 위한 추가 작업이 필요합니다. (3) C++에서 파일을 읽는 방법에는 fgetc(), fgets(), fscanf() 등이 있습니다. 위의 코드에서는 getline()을 사용하였습니다.
+위 코드를 실행하면 "example.txt" 파일의 모든 줄이 순차적으로 출력됩니다.
 
-# 관련 자료:
-- [C++ 파일 입출력 레퍼런스](http://www.cplusplus.com/reference/fstream/)
-- [C++ 파일 읽기 및 쓰기 튜토리얼](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [C++ 파일 입출력으로 프로그램 데이터 관리하기](https://modoocode.com/271)
+## 깊게 살펴보기:
+
+1. 이러한 파일 입출력 기능은 C++가 처음 등장한 1985년부터 가지고 있었습니다. 그 이후로 이 기능은 계속해서 개선되어 왔습니다.
+2. ifstream 외에도 `fopen`, `fread` 등의 C 스타일 함수를 이용할 수 있습니다. 하지만 이들 함수는 사용하기 복잡하고 오류가 발생하기 쉬우므로 주의가 필요합니다.
+3. ifstream 클래스는 내부적으로 파일의 위치를 포인팅하기 위한 포인터와 버퍼 메모리를 사용합니다. 이는 성능을 최적화하고 효율적인 파일 읽기를 가능하게 합니다.
+
+## 참고 자료:
+
+더욱 심층적인 정보를 얻고 싶다면 아래 웹사이트의 정보를 참고하십시오.
+1. C++ 파일 입출력에 대한 자세한 설명: http://www.cplusplus.com/doc/tutorial/files/
+2. C++ ifstream 클래스: http://www.cplusplus.com/reference/fstream/ifstream/
+3. 파일 입출력에 관한 C++ 표준 문서: https://www.iso.org/standard/68564.html

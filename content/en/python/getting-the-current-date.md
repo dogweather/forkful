@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Python recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Python"
 category:             "Python"
@@ -11,44 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Getting the current date is a common task in programming. It simply means finding out what the current date is according to the system. Programmers often need to get the current date in order to perform various tasks such as timestamping, scheduling tasks, or displaying the current date to the user.
+
+Getting the current date in Python is about fetching the real-time date. It's used in timestamping data, tracking events, or performing operations based on the current date.
 
 ## How to:
-To get the current date in Python, we can use the built-in `datetime` module. We first import the module using `import datetime`. Then, we can use the `datetime.today()` method to get the current date. Here's an example:
 
-```python
+The `datetime` library makes it a breeze. Just import it and use `datetime.date.today()`. Like so:
+
+```Python
 import datetime
 
-current_date = datetime.today()
+current_date = datetime.date.today()
+
 print(current_date)
 ```
 
-This will output the current date and time in a `datetime` format, which looks like this: `2021-01-01 12:00:00`. If we want to display the current date in a specific format, we can use the `strftime()` method. Here's an example:
+If you run this, you'll see something like:
 
-```python
-import datetime
-
-current_date = datetime.today()
-formatted_date = current_date.strftime('%d/%m/%Y')
-print(formatted_date)
+```Output
+2022-02-22
 ```
 
-This will output the current date in the format `01/01/2021`. You can change the format by changing the string provided to the `strftime()` method. The table below shows some common format codes:
+And that's your current date!
 
-| Code | Meaning     |
-|------|-------------|
-| %d   | Day (01-31) |
-| %m   | Month (01-12)|
-| %Y   | Year (e.g. 2021) |
-| %H   | Hour (00-23) |
-| %M   | Minute (00-59) |
-| %S   | Second (00-59) |
+## Deep Dive
 
-## Deep Dive:
-The `datetime` module was introduced in Python 2.4 as a replacement for the outdated `time` module. It provides more functionality and is easier to use. Another alternative for getting the current date in Python is using the `date` module from the `datetime` package. 
+This way of getting the current date in Python leans on the `date` class of the `datetime` module, standard since Python 2.3. 
 
-Under the hood, the `datetime` module uses the C language's standard library `libc` to access the system's clock. This means that the accuracy of the current date and time depends on the operating system's clock. In some cases, the system clock can be affected by time drift or synchronization issues, so it's always a good practice to check the system's clock before relying on the current date.
+There's extra ways to get the same info. For instance, you can get the current date and time together using `datetime.datetime.now()`:
 
-## See Also:
-- [Python's datetime module documentation](https://docs.python.org/3/library/datetime.html)
-- [Python's strftime() documentation](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
+```Python
+import datetime
+
+current_datetime = datetime.datetime.now()
+
+print(current_datetime)
+```
+
+It will show something like:
+
+```Output
+2022-02-22 14:01:22.800600
+```
+
+In the output, '14:01:22.800600' represents the current time (in hours, minutes, seconds, and microseconds).
+
+Internally, `datetime` handles dates as a Gregorian calendar. This way, it supports dates from year 1 to 9999, which is more than enough for most of us!
+
+## See Also
+
+For more detail about the `datetime` module, scope out the [Python docs](https://docs.python.org/3/library/datetime.html). Also check out the official Python tutorial's chapter on [dates and times](https://docs.python.org/3/tutorial/stdlib.html#dates-and-times). Happy coding!

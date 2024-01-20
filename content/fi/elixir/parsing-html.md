@@ -1,7 +1,7 @@
 ---
-title:                "Html-parsiminen"
-html_title:           "Elixir: Html-parsiminen"
-simple_title:         "Html-parsiminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-HTML-parsiminen tarkoittaa web-sivun rakenteen analysointia ja siitä tietojen keräämistä. Ohjelmoijat tekevät sitä usein web-scrapingin yhteydessä, jotta he voivat automatisoida tiedon keräämistä ja käyttöä.
+## Mitä & Miksi?
 
-## Kuinka:
-```Elixir
-# Esimerkki HTML-sivun lataamisesta ja parsimisesta käyttäen Floki-kirjastoa
-html = Floki.parse(html_sivu)
-# Otsikoiden kerääminen
-otsikot = html
-          |> Floki.find("h1")
-          |> Enum.map(&(&1.children))
-          |> Enum.map(&(&1[0]))
+HTML:n jäsentäminen on prosessi, jossa raakamuotoinen HTML-muotoinen web-sivukoodi muunnetaan strukturoidummaksi muodoksi, jota ohjelmisto voi helpommin ymmärtää ja hallita. Ohjelmoijat tekevät tämän sisällön erittämiseksi ja käsittelemiseksi, verkko-ottimien kehittämiseksi tai datan hakemiseksi verkkosivustoilta.
+
+## Miten?
+
+```elixir
+defmodule MyParser do
+  def parse(html_code) do
+    {:ok, result, _} = Floki.find(html_code, ".my-class")
+    Enum.map(result, fn(elem) -> Floki.text(elem) end)
+  end
+end
+
+IO.puts MyParser.parse("<div class='my-class'>Hello, World!</div>")
 ```
 
-Tulostus:
+Edellä oleva koodi palauttaisi seuraavan:
+
 ```
-["Ensimmäinen otsikko"]
+Hello, World!
 ```
 
-## Syväluotaus:
-HTML-parsiminen alkoi jo 1990-luvulla, kun internet oli vasta kehittymässä ja koneet tarvitsivat tapoja kommunikoida keskenään. Nykyään on muitakin tapoja hakea tietoja websivuilta, kuten ScrapingHub ja Beautiful Soup. Elixirin Floki-kirjasto hyödyntää HXT-kirjastoa ja mahdollistaa HTML-rakenteen käsittelyn Elixirillä.
+## Syvemmälle
 
-## Katso myös:
-- https://scrapinghub.com/what-is-web-scraping/
-- https://ksxgithub.github.io/blog/2018/06/30/of-beautifulsoup4-scrapy-floki-hexlib-hxhtml-hxt-scrapinghub-'
-- https://github.com/elixirabs/hxt
+HTML:n jäsentämisen historia on pitkä ja se on ollut osa nousevia kieliä ja teknologioita, kuten Python, JavaScript ja PHP. Nykyään Elixir-tuen ansiosta voimme hyödyntää sen tehokkaita rinnakkaistamistoimintoja tähän tarkoitukseen.
+
+Erityisesti Elixirissa, `Floki` on voimakas ja suosittu vaihtoehto, joka helpottaa HTML:n jäsentämistä. On myös muita kirjastoja, kuten `Mochiweb` ja `html5ever_elixir`, mutta `Floki` on pysynyt tehokkaana työkaluna HTML:n jäsentämisessä.
+
+Elixir-koodi toimii eri tavalla kuin monissa muissa kielissä, koska se hyödyntää rinnakkaistamista hyvän suorituskyvyn saavuttamiseksi. Se kykenee käsittelemään useita HTML-dokumentteja samanaikaisesti ilman suorituskyvyn menetystä.
+
+## Katso Myös
+
+- [Floki GitHub](https://github.com/philss/floki)
+- [Mochiweb GitHub](https://github.com/mochi/mochiweb)
+- [html5ever_elixir GitHub](https://github.com/HuddleEng/html5ever_elixir)
+- [Parsing HTML with Elixir: A guide](https://hackernoon.com/parsing-html-with-elixir-a-how-to-guide-9eb07f7dde0c)

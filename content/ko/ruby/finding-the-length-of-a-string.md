@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Ruby: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## 무엇이며 왜 사용하는가?
+문자열의 길이를 찾는 것은 문자열에 포함된 문자 수를 알아내는 과정입니다. 프로그래머가 이를 사용하는 이유는 검증, 정렬, 다른 연산 등에 필요한 중요한 정보를 제공하기 때문입니다.
 
-문자열의 길이를 찾는 것은 문자열에 있는 문자의 개수를 결정하는 것입니다. 이것은 문자열의 크기 또는 길이를 알고 싶을 때 유용합니다. 프로그래머들은 이것을 자주 사용하는데, 예를 들어서 사용자의 입력값이 특정 길이와 일치하는지 확인할 때 사용할 수 있습니다.
+## 어떻게 사용하는가?
+```Ruby
+str = "Hello World"
+puts str.length
+```
+위 코드의 실행 결과는 `11`입니다. 여기서 `length` 메소드는 문자열에 있는 문자 수를 반환합니다.
 
-## 어떻게?
+## 자세한 설명
+문자열의 길이를 찾는 방법은 프로그래밍의 기본 개념입니다. 오래전부터 사용되어 왔으며, 대부분의 프로그래밍 언어에 내장된 기능입니다.
+
+대안 방식으로는 `size` 메소드를 사용할 수 있습니다. `length`와 `size`는 동일한 기능을 수행하지만, `size`는 일부 컬렉션 객체에 대해 사용할 수 있습니다.
 
 ```Ruby
-puts "Hello, world!".length # 13
+str = "Hello World"
+puts str.size
 ```
-위의 코드에서는 "Hello, world!" 문자열의 길이를 찾아서 출력하는 예제를 볼 수 있습니다.
+위 코드의 실행 결과는 또한 `11`입니다.
 
-```Ruby
-my_string = "This is a sample string"
-puts my_string.length # 23
-```
-또한 위의 예제와 같이 변수에 문자열을 할당하고 그 변수의 길이를 찾아서 출력할 수도 있습니다.
+이러한 메소드의 내부적인 작동 방식은 문자열에서 각 문자를 확인하며 카운트하는 형식입니다.
 
-## 깊이 파고들기
-
-**역사적 배경**: 문자열의 길이를 찾는 방법은 프로그래밍 언어에 따라 다를 수 있습니다. 오래된 프로그래밍 언어들은 문자열 길이를 찾기 위해서 여러가지 방법을 사용했습니다. 하지만 현재의 Ruby 언어에서는 쉽고 간단한 `.length` 메소드를 이용하여 문자열의 길이를 찾을 수 있습니다.
-
-**대안들**: Ruby 뿐만 아니라 다른 언어들에서도 문자열의 길이를 찾는 메소드 혹은 함수가 존재합니다. 예를 들어서 Python에서는 `len()` 함수를 이용하여 문자열의 길이를 찾을 수 있습니다.
-
-**구현 세부사항**: Ruby의 `String` 클래스 내부에서 `.length` 메소드가 어떻게 구현되었는지를 알고 싶다면, Ruby 소스 코드를 참고해보시길 바랍니다.
-
-## 관련 자료
-
-- [Ruby 문서 - String 클래스](https://ruby-doc.org/core-2.7.0/String.html)
-- [Ruby 소스 코드](https://github.com/ruby/ruby)
+## 참고 자료
+- Ruby 공식 문서: [String](https://ruby-doc.org/core-2.7.0/String.html) 
+- [Rubyist's Guide to String Methods](https://www.rubyguides.com/2018/01/ruby-string-methods/)
+- [Ruby in Twenty Minutes](https://www.ruby-lang.org/en/documentation/quickstart/)

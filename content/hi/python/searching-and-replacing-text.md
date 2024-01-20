@@ -1,7 +1,7 @@
 ---
-title:                "टेक्स्ट को खोजना और बदलना"
-html_title:           "Python: टेक्स्ट को खोजना और बदलना"
-simple_title:         "टेक्स्ट को खोजना और बदलना"
+title:                "पाठ की खोज और प्रतिस्थापन"
+html_title:           "Bash: पाठ की खोज और प्रतिस्थापन"
+simple_title:         "पाठ की खोज और प्रतिस्थापन"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यूँ?
+## क्या और क्यों?
 
-तेकस्ट सर्चिंग और रिप्लेसिंग हमारे टेक्स्ट दस्तावेजों में कोई विशेष शब्द या वाक्य को ढूंढने और बदलने की प्रक्रिया है। प्रोग्रामर्स इसे प्रोग्रामिंग में विभिन्न उदाहरणों को सुधारने और सुधार देने के लिए करते हैं।
+टेक्स्ट खोजना और बदलना (Searching and Replacing text) यहाँ में हम एक वाक्यांश (जैसे के एक शब्द) को खोजते हैं और इसे किसी अन्य वाक्यांश से बदल देते हैं। प्रोग्रामर्स इसे इसलिए करते हैं ताकि वे अनावश्यक डेटा को हटा सकें और इसे आवश्यक डेटा से बदल सकें। 
 
 ## कैसे करें:
 
-```Python
-# उदाहरण 1: सर्च और रिप्लेस करना
-text = "मैं एक अलग शब्द हूँ।"
-new_text = text.replace("अलग", "नया")
-print(new_text)
-# Output: मैं एक नया शब्द हूँ।
+Python में आप `str.replace()` इस्तेमाल करके एक स्ट्रिंग में टेक्स्ट को खोजने और बदलने का कार्य कर सकते हैं। 
 
-# उदाहरण 2: सारे वस्तुओं को रिप्लेस करें
-text = "प्यारी प्यारी बिल्लियाँ!"
-new_text = text.replace("प्यारी", "खूबसूरत")
+```python
+text = "मैं Python सीख रहा हूँ।"
+new_text = text.replace("Python", "Java")
 print(new_text)
-# Output: खूबसूरत खूबसूरत बिल्लियाँ!
 ```
 
-## गहराई में जाएँ:
+आउटपुट:
 
-सर्चिंग और रिप्लेसिंग की प्रक्रिया को पहली बार 1968 में डॉनाल्ड कन्नथ द्वारा निर्मित सेड (SED) संपादक में दिखाया गया था। आजकल, प्याथन के अलावा अन्य प्रोग्रामिंग भाषाओं में भी सर्चिंग और रिप्लेसिंग के लिए विभिन्न फंक्शन्स और तकनीक हैं। इसके अलावा, आप टेक्स्ट सर्च और रिप्लेस करने के लिए ऑनलाइन टूल्स भी उपयोग कर सकते हैं।
+```python
+"मैं Java सीख रहा हूँ।"
+```
 
-## इससे जुड़े स्रोत:
+## गहराई में:
 
-- [अलग-पलग शब्दों के लिए सर्चिंग और रिप्लेसिंग करें - Real Python आरंभिक श्रेणी](https://realpython.com/search-and-replace/)
-- [पाइथन में स्ट्रिंग ऑपरेशन](https://www.thepythoncode.com/article/string-methods-in-python)
-- [सेड का इतिहास](https://www.gnu.org/software/sed/manual/html_node/A-Brief-History-of-sed.html)
+टेक्स्ट खोजने और बदलने की क्रिया का इतिहास कॉम्प्यूटर साइंस के शुरुआती दिनों से ही जुड़ा हुआ है। आधुनिक प्रोग्रामिंग भाषाओं ने इसे और आसान बना दिया है, लेकिन यह समस्या पाठ्य संसाधनों (text resources) के साथ काम करने वाले लगभग सभी सॉफ्टवेयर प्रोजेक्ट्स में आम है। 
+
+Python के अलावा, अन्य भाषाओं में भी इस तरह के समान संरचना (structure) और कार्यक्षमता (functionality) पाए जाते हैं। जैसे कि JavaScript में `.replace()` और Java में `.replaceAll()`.
+
+यह  Python में टेक्स्ट को पता लगाने और बदलने का एक आसान तरीका है, लेकिन यदि आपको जटिल खोज बदलाव करने हों, तो आपको Python के रेगुलर एक्सप्रेशन मॉड्यूल `re` का इस्तेमाल करना होगा। 
+
+## अन्य स्रोतों के लिए देखें:
+
+1. Python डॉक्स स्ट्रिंग मेथड्स:
+   [https://docs.python.org/3/library/stdtypes.html#string-methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
+2. Python रेगुलर एक्सप्रेशन डॉक्स:
+   [https://docs.python.org/3/library/re.html](https://docs.python.org/3/library/re.html)
+3. Java `String.replace()` मेथड: 
+   [https://www.geeksforgeeks.org/replace-a-character-in-a-string-in-java/](https://www.geeksforgeeks.org/replace-a-character-in-a-string-in-java/)
+4. JavaScript `String.replace()` मेथड:
+   [https://www.w3schools.com/jsref/jsref_replace.asp](https://www.w3schools.com/jsref/jsref_replace.asp)

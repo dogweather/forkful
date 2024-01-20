@@ -1,6 +1,6 @@
 ---
 title:                "חיפוש והחלפת טקסט"
-html_title:           "C++: חיפוש והחלפת טקסט"
+html_title:           "Elm: חיפוש והחלפת טקסט"
 simple_title:         "חיפוש והחלפת טקסט"
 programming_language: "C++"
 category:             "C++"
@@ -11,38 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חיפוש והחלפת טקסט היא תהליך שבו אנחנו מחפשים מחרוזת תווים מסוימת ומחליפים אותה במחרוזת אחרת. לתכנתים זה נחוץ לעיבוד טקסטים, הקלה של שינויי קוד, ובצורה כללית, כל מקרה שבו המידע משתנה.
 
-חיפוש והחלפת טקסט היא פעולה נפוצה שבוצעת על קוד מחשב בצורה שיקולית. הרעיון הוא למצוא מחרוזות ספציפיות בקוד ולהחליף אותן במחרוזות אחרות. מתכנתים מבצעים פעולות כאלה רבות לצורך שימושיות והתאמת קוד לצרכי המטרה הסופית.
-
-## איך לבצע?
-
-שימוש בפונקציות הקיימות של C++ כמו `find` ו-`replace` יכול לעזור בביצוע פעולות חיפוש והחלפה בקוד. לדוגמה:
+## איך לעשות:
+אנחנו יכולים להשתמש בפונקציה replace של הספרייה string ב- C++. הקוד יראה כך:
 
 ```C++
-string myString = "Hello World!";
-string searchString = "Hello";
-string replaceString = "Hi";
+#include <iostream>
+#include <string>
 
-// מציאת המחרוזת "Hello" והחלפתה ב-"Hi"
-size_t found = myString.find(searchString);
-if (found != string::npos) {
-  myString.replace(found, searchString.length(), replaceString);
+int main() {
+    std::string s = "Hello, World!";
+    std::string old_val = "World";
+    std::string new_val = "C++";
+    size_t pos = s.find(old_val);
+
+    if (pos != std::string::npos)
+        s.replace(pos, old_val.length(), new_val);
+
+    std::cout << s << std::endl;
+
+    return 0;
 }
-
-cout << myString << endl;
 ```
+הפלט של הקוד הזה יהיה: "Hello, C++!"
 
-פלט: Hi World!
+## צלילה עמוקה
+חיפוש והחלפת טקסט בשפות תכנות הוא אספקט חשוב מאוד שהשתנה במהלך השנים. גרסאות מוקדמות של שפות תכנות אפשרו רק חיפושים פשוטים, אך בהמשך התפתחו שפות תכנות מתקדמות יותר כמו C++ שמאפשרות פעולות מורכבות יותר. 
 
-## קדימה לעומק
+חלופות לפונקציה replace של string הן תוספות כמו Boost (boost::algorithm::replace_all, עבור דוגמה) או שימוש ברגולרי אקספרשן. 
 
-- חיפוש והחלפת טקסט נהיה אדלט בתחומי התכנות כבר מאומה וכנראה יישאר ככה עד לנצח. טכנולוגיות חדשות כגון תיבת דו-קבוצתית (REGEX) מציעות פונקציונליות רבה יותר ביחס לחיפוש והחלפה של טקסט.
-- בנוסף לפונקציות שיש ל C++ בתור שפת תכנות ראשית, ישנן גם ספריות חיצוניות המתמחות בחיפוש והחלפת טקסט וכוללות אפשרויות מתקדמות יותר לפעולה זו.
-- על מנת למקסם את היעילות של חיפוש והחלפת טקסט, יש להתאים את האלגוריתם לצרכי היישום ולקחת בחשבון גם את המורכבות של המחרוזות.
+חשוב לזכור שפונקציה replace מבצעת חיפוש והחלפה היכן שהמחרוזת המועתקת מתחילה ומסתיימת, ולא מחפשת את המחרוזת בכל הטקסט.
 
 ## ראו גם
-
-- [מדריך פשוט לחיפוש והחלפת טקסט בלולאות בספריית שפות C++](https://www.geeksforgeeks.org/cpp-program-to-search-and-replace-text-in-a-file/)
-- [שימוש בפונקציות `find` ו-`replace` בתכנות מונוספי ב-C++](https://www.algosome.com/articles/monospace-find-replace.html)
-- [מדריך להשתמש בתיבת דו-קבוצתית (REGEX) לחיפוש והחלפת טקסט ב-C++](https://www.educative.io/m/regular-expressions-in-cpp)
-- [הספרייה הפופולרית Boost המציעה פתרונות יעילים לחיפוש והחלפת טקסט בסביבת C++](https://www.boost.org/doc/libs/1_75_0/libs/regex/doc/html/boost_regex/introduction.html)
+1. [מדריך Boost string algorithms library](https://www.boost.org/doc/libs/1_76_0/doc/html/string_algo.html)
+2. [מדריך פעולות מחרוזת ב-C++](http://www.cplusplus.com/reference/string/string/replace/)
+3. [מדריך לרגולרי אקספרשן](https://regexone.com/)

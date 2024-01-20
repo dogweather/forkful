@@ -1,7 +1,7 @@
 ---
-title:                "Majuscule d'une chaîne de caractères"
-html_title:           "Lua: Majuscule d'une chaîne de caractères"
-simple_title:         "Majuscule d'une chaîne de caractères"
+title:                "Mettre une chaîne en majuscules"
+html_title:           "Lua: Mettre une chaîne en majuscules"
+simple_title:         "Mettre une chaîne en majuscules"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Capitaliser une chaîne de caractères signifie mettre en majuscule la première lettre de chaque mot dans une phrase. Les programmeurs le font souvent pour améliorer la lisibilité et la cohérence du code.
+## Qu'est-ce que c'est & Pourquoi ?
 
-## Comment faire:
+Capitaliser une chaîne signifie transformer toutes ses lettres en majuscules. Les programmeurs le font pour des raisons d'esthétique, de lisibilité et pour gérer uniformément les entrées des utilisateurs.
+
+## Comment faire :
+
 ```Lua
--- Utiliser la méthode string.upper pour capitaliser une chaîne de caractères
+--Voici un code simple pour capitaliser une chaîne en Lua
+ma_chaine = "bonjour le monde"
+ma_chaine = ma_chaine:upper()
 
--- Exemple 1:
-local phrase = "bonjour tout le monde!"
-print(phrase:upper())
-
-Output: Bonjour Tout Le Monde!
-
--- Exemple 2:
-function capitalize(string)
-    local words = {}
-    for word in string:gmatch("%S+") do
-        table.insert(words, word:sub(1,1):upper()..word:sub(2))
-    end
-    return table.concat(words, " ")
-end
-
-print(capitalize("cette phrase sera capitalisée"))
-
-Output: Cette Phrase Sera Capitalisée
+print(ma_chaine) -- Affiche : BONJOUR LE MONDE
 ```
+Dans cet exemple, nous utilisons la fonction `upper()` intégrée à Lua. Elle convertit toute la chaîne en majuscules.
 
-## Plongée En Profondeur:
-La capitalisation de chaîne de caractères est un concept couramment utilisé en programmation depuis les premières versions de BASIC dans les années 1960. Bien qu'il existe des alternatives telles que l'utilisation de la fonction string.gsub pour remplacer la première lettre d'un mot par sa version en majuscule, cela peut être plus fastidieux et rendre le code plus difficile à lire. En Lua, la méthode string.upper est optimisée pour la performance et est donc préférée pour capitaliser une chaîne de caractères.
+## Approfondissement
 
-## Voir Aussi:
-Liens utiles pour en savoir plus sur la capitalisation de chaîne de caractères en Lua:
-- [Documentation de string.upper sur le site officiel de Lua](https://www.lua.org/manual/5.4/manual.html#pdf-string.upper)
-- [Différences entre string.upper et string.gsub sur Stack Overflow](https://stackoverflow.com/questions/1915406/what-is-the-difference-between-string-upper-and-string-gsub)
+1. **Contexte historique :**
+   Avant l'introduction des méthodes standard `upper()`, les programmeurs Lua devaient écrire des boucles manuelles pour parcourir chaque caractère d'une chaîne et le convertir en majuscule, une tâche qui pouvait être fastidieuse.
+
+2. **Alternatives :**
+   En plus de `upper()`, Lua fournit également `lower()` pour convertir une chaîne en minuscules. Il existe également des fonctions pour manipuler la casse des lettres dans les chaînes.
+
+3. **Détails d'implémentation :**
+   La fonction `upper()` est une méthode intégrée de la bibliothèque de chaînes de Lua. Elle fonctionne en parcourant toute la chaîne et en remplaçant chaque caractère par son équivalent en majuscules.
+
+## A Voir Aussi
+
+Voici quelques ressources pour en savoir plus sur Lua et la manipulation des chaînes de caractères :
+
+- [Manuel de référence Lua 5.4](https://www.lua.org/manual/5.4/manual.html#6.4)
+- [Guide LuaRocks sur les chaînes Lua](https://luarocks.org/modules/luarocks/lua-strings)
+- [Gestion des chaînes en Lua - Tutorialspoint](https://www.tutorialspoint.com/lua/lua_strings.htm)

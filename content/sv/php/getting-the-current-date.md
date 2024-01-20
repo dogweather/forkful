@@ -1,7 +1,7 @@
 ---
-title:                "Hämta nuvarande datum"
-html_title:           "PHP: Hämta nuvarande datum"
-simple_title:         "Hämta nuvarande datum"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att få den aktuella datumen är ett vanligt uppgift för många programmerare. Genom att hämta det aktuella datumet från systemet, kan man skapa dynamiska applikationer som visar exakta datum och tidsdata baserat på användarens lokala inställningar. Detta är särskilt användbart för skapande av online kalendrar, bokningssystem och andra webbapplikationer som är beroende av korrekt tidsdata.
+## Vad och varför?
+Att få det aktuella datumet i PHP innebär att ta reda på vilket datum det är just nu. Detta används ofta av programmerare för att spåra händelser, logga data och hantera tidsbegränsade funktioner.
 
-## Hur man gör:
-För att hämta den nuvarande datumen i PHP, används den inbyggda "date" funktionen. Detta är ett exempel på hur man använder funktionen och vad som skulle visas som utgång:
-
-```PHP
-$today = date("d/m/Y"); 
-echo "Idag är det: " . $today . "<br>"; 
-```
-Output: Idag är det 30/11/2020
-
-Du kan även ändra formatet på datumet baserat på dina behov genom att ändra parametrarna i "date" funktionen. Här är ett annat exempel där vi visar en tidsstämpel tillsammans med datumet:
+## Så här gör du:
+PHP erbjuder oss en inbyggd funktion, `date()`, för att få det aktuella datumet. Kolla in följande exempel:
 
 ```PHP
-$timestamp = time(); 
-$today = date("d/m/Y H:i:s", $timestamp); 
-echo "Datum och tid är: " . $today . "<br>"; 
+<?php
+    echo date("Y-m-d");
+?>
 ```
-Output: Datum och tid är: 30/11/2020 16:32:14
 
-## Djupdyka:
-För att ytterligare anpassa tidsdata från systemet, kan du använda funktionen "strtotime" för att konvertera datumet till en Unix-tidsstämpel. Detta gör det möjligt att utföra matematiska operationer med datum, som att lägga till eller ta bort dagar. Det finns också alternativa sätt att hämta den nuvarande datumen i PHP, som att använda funktionen "gmdate" för att hämta tid i GMT-format eller "strftime" för att anpassa utdataformatet.
+Ovanstående kod kommer att skriva ut datumet i formatet YYYY-MM-DD. Till exempel: `2021-12-01`. 
 
-## Se även:
-- [PHP.net Date function](https://www.php.net/manual/en/function.date.php)
-- [PHP.net Strtotime function](https://www.php.net/manual/en/function.strtotime.php)
-- [W3Schools Date function tutorial](https://www.w3schools.com/php/php_date.asp)
+## Djupdykning
+PHP:s `date()`-funktion har lång historia. Den har varit en del av PHP-kärnan sedan version 4 släpptes 2000. Det finns alternativ till `date()`, som `DateTime`-objektet introducerat i PHP 5.2. Denna klass ger fler metoder och mer flexibilitet vid hantering av datum och tid.
+
+Vad gäller implementationen returnerar `date()`-funktionen en sträng som representerar det aktuella datumet, baserat på serverns inställningar för tidszon och systemtid. Var försiktig när du använder `date()` i distribuerade system, serverns tid kanske inte alltid är vad du förväntar dig.
+
+## Se även
+För mer information om `date()` och datumhantering i PHP, se följande resurser:
+
+- PHP officiella dokumentation för datumfunktioner: [https://www.php.net/manual/en/book.datetime.php](https://www.php.net/manual/en/book.datetime.php)
+- PHP DateTime-klass: [https://www.php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
+- Guide till PHP:s datum- och tidsfunktioner: [https://www.w3schools.com/php/php_date.asp](https://www.w3schools.com/php/php_date.asp)

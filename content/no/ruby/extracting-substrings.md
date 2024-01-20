@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av substringer"
-html_title:           "Ruby: Utvinning av substringer"
-simple_title:         "Utvinning av substringer"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Ekstrahering av substrings er en måte å plukke ut en del av en tekststreng i programmering. Dette kan være nyttig når man trenger å hente ut spesifikke deler av en tekst for å bruke i videre beregninger eller manipulasjoner. Det er en vanlig oppgave blant programmerere som jobber med tekstbehandling og dataanalyse.
+## Hva & Hvorfor?
+
+Å trekke ut understrenger, eller 'substring extraction', er en prosess hvor vi henter spesifikke deler av en streng basert på kriteriene vi setter. Det er viktig for programmerere fordi det lar oss manipulere og håndtere data mer effektivt.
 
 ## Hvordan:
-Ekstrahering av substrings kan gjøres veldig enkelt i Ruby ved hjelp av en innebygd funksjon kalt "slice", som tar to parametere - start- og sluttposisjonen til den ønskede delen av tekststrengen. Her er et eksempel:
+
+Her er noen eksempler på hvordan du kan trekke ut under-strenger i Ruby:
 
 ```Ruby
-my_string = "Dette er en tekststreng"
-substring = my_string.slice(8, 2) # Starter på posisjon 8 og tar 2 tegn
-puts substring # Skriver ut "en"
+text = 'Velkommen til Ruby programmering!'
+  
+# Trekker ut de første 9 tegnene
+puts text[0, 9]
+
+# Trekker ut de siste 14 tegnene 
+puts text[-14, 14]
 ```
 
-Man kan også bruke "[]" og angi posisjoner med tall eller et "range" (et område av tall). Her er et eksempel på å hente ut en del av en tekststreng basert på området av tall:
+Eksempelutskrift:
 
 ```Ruby
-my_string = "Dette er en tekststreng"
-substring = my_string[8..10] # Henter alt fra posisjon 8 til og med 10
-puts substring # Skriver ut "en "
+Velkommen
+programmering!
 ```
 
 ## Dypdykk:
-Å kunne ekstrahere substrings har vært en viktig del av programmering siden de tidlige dagene med tekstbaserte programmer. Før i tiden måtte man bruke "substring" -funksjoner som var spesifikke for hver type programmeringsspråk. I dagens moderne språk som Ruby, er dette implementert som en standard funksjon og gjør det mye enklere.
 
-En alternativ metode til å ekstrahere substrings er ved hjelp av Regular Expression (regex), et kraftig verktøy for å finne og manipulere tekst. Dette kan være nyttig hvis man trenger å hente ut mer komplekse deler av en tekststreng.
+Historisk sett, under-strengs uttrekk har alltid vært en sentral del av programmering. Tekstbehandling og manipulasjon er en viktig oppgave i mange programmeringsoppgaver, spesielt de som behandlers dataanalyse eller web scrapping. 
 
-Når det kommer til implementeringsdetaljer, er "slice" -funksjonen i Ruby veldig effektiv siden den bare kopierer den delen av tekststrengen som blir ekstrahert i stedet for å lage en ny kopi av hele teksten.
+Alternativene til Ruby for å håndtere under-strengs uttrekk kan være andre programmeringsspråk som Python eller JavaScript, men Ruby gir en mer intuitiv syntaks for denne oppgaven.
 
-## Se også:
-- [Ruby dokumentasjon om slice](https://ruby-doc.org/core-2.7.2/String.html#method-i-slice)
-- [Regular Expression tutorial](https://www.regular-expressions.info/tutorial.html)
+Når vi snakker om detaljene i implementeringen, så bruker Ruby en null-indeksert, range-basert tilnærming når man trekker ut under-strenger. Det betyr at indeksering begynner ved 0, og ranges blir brukt til å spesifisere start- og sluttpunkter.
+
+## Se Også:
+
+1. Ruby Dokumentasjon: [Ruby Docs Strings](https://ruby-doc.org/core-2.7.3/String.html)
+2. En nyttig guide: [Ruby Substring Extraction Tutorial](https://www.educative.io/edpresso/how-to-extract-substrings-in-ruby)
+3. En annen guide med eksempler: [Ruby String Substring Examples](https://www.tutorialspoint.com/ruby-extract-string-between-two-strings)

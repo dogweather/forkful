@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को capitalizing करना"
-html_title:           "Kotlin: स्ट्रिंग को capitalizing करना"
-simple_title:         "स्ट्रिंग को capitalizing करना"
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "Kotlin: स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# शहरियाँ कयों और कैसे करें: स्ट्रिंग के प्रथम अक्षर को बड़ा करना
+## क्या है और क्यों?: 
 
-## क्या और क्यों?
-
-कब बात हो जाए कि हमारे Universal Tags की गोड़ कमजोरी होने से हम चप्पले ही उठा दिए जाते है? सोशल मीडिया समाज में अक्सर लोग सच्चाई का दावा करते हुए, लोगों के कैमरे और पोस्टिंगों को पलट कर वे 'देखिए' शब्द की गलत अवस्था लिखते हुए दिख जाते है। चेतावनी में हम उन के मन में सच को दिखाने के लिए डूड सासों का उपयोग करते हैं। बस इसी लिए, एक कम्युनिटी द्वारा रचित को कैपिटलाइज़ करने के लिए, दूर-द्वार उपलब्ध नहीं है।
+1. एक string को capitalize करने का मतलब होता है हर शब्द की पहली अक्षर को बड़े (Capital) अक्षर में परिवर्तित करना। 
+2. यह super user और basic user के बीच अंतर स्थापित करने में सहायक होता है, और यह user interface को व्यावसायिक और आकर्षक बनाता है। 
 
 ## कैसे करें:
 
-कोटलिन में स्ट्रिंग को कैपिटलाइज़ करने के लिए, हम उसके प्रथम अक्षर को कब जाता है और बाकी स्ट्रिंग को स्ट्रिंग के "Up" को बनाना स्राणित करते हैं। यदि हमारी स्ट्रबिग कब कभी करे तो जंत्र कोटलिन उसका ।
-
 ```Kotlin
-// Given string
-val string = 'new york'
-
-// Capitalize first letter
-val capital = string.capitalize()
-
-// Output
-print(capital) // New york
+fun main() {
+  val string = "hello, कैसे है आप?"
+  val result = string.split(" ").joinToString(" ") { it.capitalize() }
+  println(result)  
+}
 ```
 
-## गहराई में धाव:
+ऊपर दिए गए कोड से आपको निम्नलिखित आउटपुट मिलेगा
 
-इस प्रक्रिया को शुरू में स्क्रिप्ट भाषा प्रोग्रामर Ovid Tenteeci ने एं जाना। इसने एक #C समूह के रूप में उपचार किया और Ovid ने एक webzine लंग बाटका और अपने सत्री के समस्या का उपाय भूय है। आजकल यह एसड है, हम कइयों सुनाम है | Python के अतिरिक्त यह ख्यात लोगों द्वारा लिखा जाता है। यह API आभा मेटाछाच्चिका पर संदर्भ है यदि जितने स्चिंतपूचा संदर्भ योखरा भूयं हो तो, जेता मेई। यहाँ अन्यीति में अध्रेपुचा हैंड कुर्रुतिधामिकांको की अस्थिति है। इसे उन्हां ये "अन्यमिच्चा खा अभाभ ख्यात क्यों उपार्जन करते हैं।
+```Kotlin
+Hello, कैसे है आप?
+```
 
-## नेह:
+## गहराई का अध्ययन :
 
-अर्थात स्ट्रिंग कांपल छूटे में कोतलिन को अन्य भाषाओं में हितस और फोर्नाट्दिल्नृत आंतोआपेरता हैं: लिनीसोीपत्र और मॉन्एफरेज्म। कुछ अन्य विकल्प शाजा, शाजा उपाए वसीतर कमलि आप नालुगहसा स्ट्रिंग के इयोगा आ किंमजिछ के विद्यमान कांपल द्येते हैं। इस लिए, परितित्तो के बाय, व्यंज्ञ नकों परिदथसंजों द्वारा असेबैरी किया जाता है।
+1. string को capitalize करनेका अभ्यास 1970 के दशक के उत्कृष्ट computer user interfaces (UIs) के साथ आया था। 
+2. Kotlin में "capitalize" function के इलावा, आप "toUpperCase" और "toLowerCase" function का भी use कर सकते हैं। 
+3. string को capitalize करने के लिए, हम वाक्य में हर शब्द को अलग करने के लिए split() function का उपयोग करते हैं, और फिर हर शब्द को join करते हैं ।
 
-## है एक प्र
+## अधिक जानने के लिए:
+
+1. String capitalize documentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html 
+2. String toUpperCase function: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html 
+3. String toLowerCase function: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html

@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando uma string."
-html_title:           "PowerShell: Interpolando uma string."
-simple_title:         "Interpolando uma string."
+title:                "Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
+simple_title:         "Interpolando uma string"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,42 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Que & Porquê?
 
-Interpolação de string no PowerShell é a capacidade de inserir valores ou variáveis em uma string para criar uma mensagem personalizada dinamicamente. Isso é frequentemente usado pelos programadores para criar saídas mais claras e legíveis, em vez de ter que concatenar ou inserir manualmente os valores em uma string.
+A interpolação de strings é um processo de substituição de variables ou expressões embedidas dentro de strings por seus valores respectivos. Os programadores usam isso para tornar o código mais legível e também para melhor formatação e apresentação de mensagens de texto.
 
-## Como fazer:
+## Como Fazer:
 
-```PowerShell
-# Definindo uma variável com o valor a ser inserido na string
-$nome = "Ana"
-
-# Interpolação de uma string com o valor da variável
-"Olá $nome, bem-vinda ao meu artigo sobre PowerShell!"
-
-# Saída: Olá Ana, bem-vinda ao meu artigo sobre PowerShell!
-```
-
-Você também pode inserir valores de variáveis ou expressões dentro de strings usando o caractere de cifrão seguido por chaves `{}`. Isso é útil quando você precisa usar um operador no valor da variável, como neste exemplo usando uma lista:
+Você pode começar a explorar a interpolação de strings no PowerShell com o código abaixo:
 
 ```PowerShell
-# Definindo uma variável com uma lista
-$nomes = @("Ana", "João", "Maria")
-
-# Interpolação de uma string com o valor da variável e o operador de seleção (-join)
-"Alunos: $($nomes -join ', ')"
-
-# Saída: Alunos: Ana, João, Maria
+$nome = "Pedro"
+$idade = 23
+"$nome tem $idade anos."
 ```
 
-## Mergulho profundo:
+A saída seria:
 
-A interpolação de string é baseada na linguagem C# e foi introduzida no PowerShell 3.0. Antes disso, os programadores precisavam usar o método `StringBuilder` para criar strings interpoladas. Alguns outros métodos alternativos para realizar interpolação de string no PowerShell são o `Format-String`, `Out-String` e `String-Expand`.
+```PowerShell
+Pedro tem 23 anos.
+```
 
-A implementação da interpolação de string no PowerShell é feita usando o método `String.Format()` da linguagem C# e é executada pelo mecanismo de linguagem do PowerShell. No entanto, ao contrário do C#, o PowerShell usa a ordem de execução dos valores na string em vez de índices de formatação.
+Note que as variáveis `$nome` e `$idade` estão dentro das aspas duplas. Portanto, seus valores são interpolados na string.
 
-## Veja também:
+## Imersão Profunda:
 
-- [Microsoft Docs: Interpolação de string no PowerShell](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-5.1)
-- [Interpolação de string no C#](https://docs.microsoft.com/pt-br/dotnet/csharp/language-reference/tokens/interpolated)
-- [Alternativas para Interpolação de string no PowerShell](https://powershellexplained.com/2015-06-21-powershell-what-is-interpolation/)
+Historicamente, a interpolação de strings já existe há bastante tempo em muitas linguagens de programação, incluindo Perl, Ruby e, é claro, PowerShell, uma vez que melhora significativamente a legibilidade do código.
+
+Existem alternativas à interpolação de strings. Por exemplo, a concatenação de strings:
+
+```PowerShell
+$nome = "Pedro"
+$idade = 23
+$nome + " tem " + $idade + " anos."
+```
+
+Contudo, a interpolação de strings tende a ser mais limpa e fácil de ler.
+
+Informações importantes de implementação: no PowerShell, a interpolação de strings só ocorre com aspas duplas `" "`. As aspas simples `' '` tratam o conteúdo como string literal, nada é interpolado.
+
+## Veja Também:
+
+Para mais informações sobre a interpolação de strings no PowerShell, consulte os links abaixo:
+
+1. [String Interpolation in PowerShell](https://ss64.com/ps/syntax-operators.html)
+2. [Understanding strings in PowerShell](https://www.computerperformance.co.uk/powershell/powershell-3-about-strings)
+
+Lembre-se, a melhor maneira de aprender é praticando, então tente usar a interpolação de strings no seu próximo programa PowerShell.

@@ -1,6 +1,6 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "Elixir: Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-La recherche et le remplacement de texte sont des concepts couramment utilisés par les programmeurs dans leur processus de développement. Cela consiste à trouver une chaîne de caractères spécifique dans un texte et à la remplacer par une autre chaîne de caractères. Les programmeurs font cela pour améliorer l'efficacité et la précision de leur code, ainsi que pour automatiser des tâches répétitives.
+## Qu'est-ce & Pourquoi ?
+La recherche et le remplacement de texte sont des fonctions qui permettent de localiser spécifiquement des éléments dans une chaîne de caractères et de les modifier par un autre texte. Les programmeurs font cela pour la manipulation de données et l'automatisation des tâches de codage répétitives.
 
-## Comment:
-Voici un exemple simple de recherche et de remplacement de texte en utilisant Elixir:
+## Comment faire :
+Pour effectuer une recherche et un remplacement de texte dans Elixir, on utilise généralement la fonction `String.replace/3`. Par exemple,
 
 ```Elixir
-# Déclarer une chaîne de caractères à modifier
-texte = "Bonjour, je m'appelle Jean."
-
-# Utiliser la fonction `String.replace` pour remplacer le nom
-nouveau_texte = String.replace(texte, "Jean", "Pierre")
-
-# Afficher le nouveau texte
-IO.puts(nouveau_texte)
-
-# Output: Bonjour, je m'appelle Pierre.
+IO.puts String.replace("Bonjour le monde", "monde", "programmeur")
 ```
 
-## Approfondissement:
-La recherche et le remplacement de texte sont devenus courants grâce à l'utilisation de langages de programmation tels que Perl et Sed dans les années 1970. De nos jours, il existe plusieurs alternatives à Elixir, telles que Python ou Ruby, pour effectuer ces tâches.
+Cela produira :
 
-En Elixir, la fonction `String.replace` utilise l'algorithme de Boyer-Moore pour effectuer une recherche efficace dans le texte. Cela garantit des performances élevées même pour des chaînes de caractères très longues.
+```
+Bonjour le programmeur
+```
 
-## À voir aussi:
-- Documentation officielle sur la fonction `String.replace` en Elixir: https://hexdocs.pm/elixir/String.html#replace/4
-- Comparaison des performances de différents langages pour la recherche et le remplacement de texte: https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/python3.cython.html
+Sous Elixir, vous pouvez également utiliser les expressions régulières pour une recherche et un remplacement plus sophistiquée. Par exemple,
+
+```Elixir
+IO.puts Regex.replace(~r/world/i, "Bonjour le monde", "programmeur")
+```
+
+Produira :
+
+```
+Bonjour le programmeur
+```
+
+## Plongée Profonde
+Historiquement, la recherche et le remplacement de texte est une fonctionnalité héritée des éditeurs de texte et des langages de programmation primitifs. Aujourd'hui, sa mise en œuvre dans Elixir est basée sur le module Erlang :binary.
+
+Il existe diverses alternatives pour la recherche et le remplacement de texte dans Elixir:
+* Utiliser la fonction `String.split/2` pour diviser la chaîne en une liste de sous-chaînes, effectuer les modifications nécessaires et les réunir avec `Enum.join/2`. 
+* Appliquer une approche basée sur des motifs avec `String.splitter/3` et `Enum.map/2`.
+
+La fonction `String.replace/3` d'Elixir utilise un algorithme efficace pour la recherche et le remplacement. Elle scanne la chaîne de gauche à droite, recherche le motif, le remplace par le texte de remplacement et passe au prochain caractère après la fin du texte remplacé.
+
+## Voir Aussi
+Pour plus d'informations sur les chaînes de caractères et la manipulation de texte avec Elixir, consultez les ressources suivantes:
+
+* [Documentation officielle Elixir String](https://hexdocs.pm/elixir/String.html)
+* [Exploration des chaînes de caractères Elixir](https://elixirschool.com/fr/lessons/basics/strings/)
+* [Présentation des expressions régulières Elixir](https://elixirschool.com/fr/lessons/advanced/regular-expressions/)

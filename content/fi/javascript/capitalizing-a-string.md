@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi"
-html_title:           "Javascript: Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi"
-simple_title:         "Merkkijonon ensimmäisen kirjaimen muuttaminen isoksi"
+title:                "Merkkijonon pääkirjoitus"
+html_title:           "Javascript: Merkkijonon pääkirjoitus"
+simple_title:         "Merkkijonon pääkirjoitus"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
+Merkkijonon isoiksi kirjoittaminen tarkoittaa jokaisen merkkijonon sisältämän sanan ensimmäisen kirjaimen muuttamista isoiksi kirjaimiksi. Ohjelmoijat tekevät tämän tehdäkseen tekstistä helpommin luettavan tai korostaakseen tiettyjen sanojen merkitystä.
 
-Stringin muuttaminen isoiksi kirjaimiksi tarkoittaa, että jokaisen merkin ensimmäistä kirjoitusasua muutetaan tarpeen mukaan isoksi. Tätä tehdään usein esimerkiksi otsikoissa tai käyttäjänimen syöttökentissä, jotta ne näyttävät selkeämmiltä ja helpommin luettavilta. Ohjelmoijat käyttävät tätä toimintoa myös silloin, kun he haluavat vertailla kahta merkkijonoa, sillä pienten ja isojen kirjainten ero voi vaikuttaa vertailutuloksiin.
+## Kuinka näin:
+Yksinkertainen esimerkki merkkijonon alkukirjainten muuttamisesta isoiksi Javascriptissä.
 
-## Kuinka:
+```Javascript
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
 
-```javascript
-const string = "hei kaikki!";
-const capitalizedString = string.toUpperCase();
-console.log(capitalizedString); // TULOSTAA: HEI KAIKKI!
+console.log(capitalizeFirstLetter('javascript on upeaa!'));
+```
+Tämän palaute olisi seuraava:
+
+```Javascript
+'Javascript on upeaa!'
+```
+## Syvempi sukellus:
+Ison kirjaimen käyttö otsikoinnissa on peräisin kirjapainotavasta, jossa tärkeiden sanojen korostaminen tehtiin painamalla niiden alkukirjain isommalla fontilla. Javascriptissä kuin muissakin ohjelmointikielissä, merkkijonon kapitalisointiin on eri tapoja. Esimerkiksi voit käyttää `toUpperCase()` metodia koko merkkijonon muuttamiseen isoihin kirjaimiin.
+
+```Javascript
+function capitalizeAllLetters(string) {
+    return string.toUpperCase();
+}
+
+console.log(capitalizeAllLetters('Javascript on upeaa!'));
 ```
 
-Tai voit käyttää tätä funktiota stringin sisällä:
+Tämän palaute olisi seuraava:
 
-```javascript
-const string = "hello world!";
-console.log(string.toUpperCase()); // TULOSTAA: HELLO WORLD!
+```Javascript
+'JAVASCRIPT ON UPEAA!'
 ```
-
-## Syväsukellus:
-
-Historiallisessa kontekstissa, merkkijonon muuttaminen isoiksi kirjaimiksi oli paljon monimutkaisempaa verrattuna nykyiseen Javascript-vaihtoehtoon. Kehittäjien täytyi käyttää monimutkaisia algoritmeja ja toimintoja, jotta tämä pystyttiin tekemään. Nykyään Javascript tarjoaa helpomman ja nopeamman tavan tehdä tämä muunnos.
-
-Jos haluat muuttaa merkkijonon vain ensimmäisen kirjaimen isoksi ja jättää muut kirjaimet pieniksi, voit käyttää funktiota "slice" yhdistettynä "toUpperCase" funktioon.
-
-Esimerkiksi:
-
-```javascript
-const string = "hello world!";
-const firstLetter = string.slice(0, 1).toUpperCase();
-console.log(firstLetter + string.slice(1)); // TULOSTAA: Hello world! 
-```
-
 ## Katso myös:
-
-- [Javascript String Methods](https://www.w3schools.com/js/js_string_methods.asp)
-- [Slice vs Substring Javascript](https://www.javascripttutorial.net/strings/javascript-string-substring/)
-- [Captializing First Letter of a String in JavaScript](https://kodementor.com/captializing-first-letter-of-a-string-in-javascript/)
+Lisätietoja merkkijonojen muokkaamisesta Javascriptin avulla löytyy seuraavista lähteistä:
+1. [Mozilla Developer Network - String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+2. [Mozilla Developer Network - String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+3. [W3Schools - Javascript String Methods](https://www.w3schools.com/jsref/jsref_obj_string.asp)

@@ -1,7 +1,7 @@
 ---
-title:                "대문자를 소문자로 변환하기"
-html_title:           "Arduino: 대문자를 소문자로 변환하기"
-simple_title:         "대문자를 소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,23 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 하는가?
-문자열을 소문자로 변환하는 것은 프로그래머가 자주 하는 작업 중 하나입니다. 이를 통해 입력된 모든 문자를 연산하기 쉽게 만들어주기 때문입니다. 예를 들어, 사용자로부터 입력된 문자열을 대문자와 소문자를 구분하지 않고 처리하고자 할 때 이 기능을 사용하면 효율적으로 코드를 작성할 수 있습니다.
+## 무엇이고 왜합니까?
 
-## 어떻게 하나요?
-우선, 변환하고자 하는 문자열을 저장할 변수를 선언합니다. 그 다음, ```lowerCase()``` 함수를 사용하여 해당 변수의 값을 소문자로 변환합니다. 최종적으로, 변환된 문자열을 출력하거나 다른 변수에 저장할 수 있습니다.
+문자열을 소문자로 변환한다는 것은 모든 대문자를 소문자로 바꾸는 것을 의미합니다. 프로그래머는 이것을 일관성 확보와 데이터 비교를 용이하게 하기 위해 실행합니다.
 
-```Arduino
-String str = "Hello World";
-str = str.toLowerCase();
-Serial.println(str); // 출력: hello world
-```
+## 어떻게 합니까:
+```Arduino 
+String data = "Hello World";
+data.toLowerCase();
+Serial.println(data); // 출력: hello world
+``` 
+위의 코드는 문자열 "Hello World"를 모두 소문자로 변환하고, 
+알려진 디바이스에 출력합니다.
 
-## 더 깊게 알아보기
-사실, 문자열을 소문자로 변환하는 기능은 오래 전부터 사용되어왔습니다. 예를 들어, 1980년대부터 사용되던 C 프로그래밍 언어에서도 이 기능을 지원하고 있었습니다. 또한, 언어마다 다르지만 보통 대문자와 소문자를 구분하지 않고 문자열을 처리하는 기능을 제공하기도 합니다.
+## 깊게 알아보기:
+사실, 문자열을 소문자로 변환하는 것은 매우 오래된 컨셉입니다. 현대의 대부분 프로그래밍 언어에서 기본적으로 제공되는 기능 중 하나입니다. 단순 한 함수 호출로 쉽게 구현할 수 있습니다. 다른 대안적 방법으로 ASCII 코드를 이용하여 직접 구현하는 방법이 있으나, Arduino에서 기본적으로 제공하는 toLowerCase() 함수를 이용하는 것이 편리합니다.
+toLowerCase() 함수는 문자열 내의 모든 대문자를 ASCII 코드를 이용하여 소문자로 변환하며, 변환 후의 문자열을 원래의 변수에 다시 할당합니다.
 
-이러한 기능을 구현하는 방법은 여러 가지가 있지만, 대부분 문자열을 각 문자의 아스키 코드로 변환한 후 해당 값을 조작하는 방식을 채택합니다.
+## 참고:
 
-## 관련 자료
-- [String 클래스 공식 문서](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [ASCII 코드](https://en.wikipedia.org/wiki/ASCII)
+- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [ASCII Table](https://www.asciitable.com/)
+- [How to use strings in Arduino programming](https://create.arduino.cc/projecthub/harshmangukiya/how-to-use-strings-in-arduino-programming-2d479b)

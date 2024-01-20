@@ -1,6 +1,6 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Arduino: המרת מחרוזת לאותיות קטנות"
+html_title:           "Go: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,18 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה זה ולמה?
-המרה של מחרוזת לאותיות קטנות היא תהליך שבו נעביר את כל האותיות במחרוזת למצב של אותיות קטנות בלבד. תהליך זה נעשה על מנת להקל על השוואת מחרוזות ועיבודן, וכן להיות אחידים בכתיבת קוד.
+המרת מחרוזת לאותיות קטנות היא תהליך שמשנה את כל האותיות הגדולות במחרוזת לאותיות קטנות. מתכנתים משתמשים בכך כדי לקבל נתונים עקביים לשם בדיקה או מניפולציה.
 
 ## איך לעשות זאת:
-קובץ קוד הבא מראה דוגמאות של כיצד לממש את המרה של מחרוזת לאותיות קטנות בשפת ארדוינו:
-```arduino
-String str = "Hello World!";
-Serial.println(str.toLowerCase()); // פלט: hello world!
+```Arduino
+String MyString = "HELLO, WORLD!";
+MyString.toLowerCase();
+Serial.begin(9600);
+Serial.println(MyString);
 ```
+הפלט המצופה הוא: "hello, world!"
 
-## כיול עמוק:
-מרבית תכניות התכנות מכילות פונקציה מובנית להמרת מחרוזת לאותיות קטנות, כגון בשפת C++ שמקורה של שפת ארדוינו. עם זאת, דוגמאות של תוכניות מתכנתים צריכות להיות וריאציות של הקוד הנתון בכדי לשמש את המטרה האמורה.
+## עיון מעמיק:
+בשנים הראשונות של מדעי המחשב, לא הייתה הפרדה בין אותיות גדולות לאותיות קטנות, מה שהיווה בעיה בהקלדת שמות משתנים או מחרוזות טקסט. מאז, חלו הרבה שינויים. היום, מקודדים מרובים כמו UTF-8 מאפשרים המרה לאותיות קטנות בצורה יעילה ומהירה.
 
-## ראה גם:
-- [מדריך לשימוש בפונקציות מחרוזות בארדוינו](https://www.arduinolibraries.info/libraries/string)
-- [הספריה האופנה למיקרו קונטרולרים](https://www.arduino.cc/en/Reference/StringObject)
+אם יש צורך לביצוע המרת אותיות בעצמך, אפשר להשתמש בפונקציה `tolower`. ראה לדוגמה הבאה:
+```Arduino
+char c = 'H';
+c = tolower(c);
+Serial.begin(9600);
+Serial.println(c);
+```
+הפלט המצופה הוא: "h"
+
+## ראו גם:
+1. [תיעוד ה-API של Arduino עבור סטרינג](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+2. [דוגמאת קוד של תיעוד Arduino להמרת מחרוזת לאותיות קטנות](https://www.arduino.cc/en/Tutorial.BuiltInExamples.StringCaseChanges)
+3. [תיעוד C++ עבור 'tolower'](https://en.cppreference.com/w/cpp/string/byte/tolower)

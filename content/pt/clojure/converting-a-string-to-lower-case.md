@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Clojure: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,24 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porque?
-Conversão de uma string para letras minúsculas significa transformar todas as letras maiúsculas em letras minúsculas. Isso é feito para fins de padronização e facilitar a comparação de strings por programas ou algoritmos. 
+## O Que & Por Quê?
 
-## Como fazer:
-```Clojure
-;; Usando a função lower-case
-(lower-case "TEXTO EM MAIÚSCULAS")
-;; Saída: "texto em maiúsculas"
+Converter uma string em minúsculas é transformar todas as letras maiúsculas de uma string em letras minúsculas. Programadores fazem isso para padronizar os dados e facilitar as comparações entre as strings. 
 
-;; Usando a função to-lower-case do namespace clojure.string
-(require '[clojure.string :as str])
-(str/to-lower-case "OUTRA STRING MAIÚSCULA")
-;; Saída: "outra string maiúscula"
+## Como Fazer:
+
+Aqui temos um exemplo de como converter uma string em minúsculas em Clojure:
+
+```clojure
+(-> "Olá, Pessoas Lindas! Como Vocês Estão?"
+    (clojure.string/lower-case))
 ```
 
-## Mergulho Fundo:
-A conversão de strings para letras minúsculas é uma técnica amplamente utilizada em programação, principalmente em linguagens funcionais como Clojure. Isso se deve ao fato de que transformar todos os caracteres de uma string em letras minúsculas é uma operação mais simples e eficiente do que buscar correspondências entre caracteres maiúsculos e minúsculos. Alternativas para essa operação incluem usar expressões regulares ou criar sua própria função de conversão. A implementação da função lower-case no Clojure é feita através de um mapeamento dos códigos ASCII dos caracteres. 
+Ao executar o código acima, o resultado será:
 
-## Veja também:
-- Documentação oficial do Clojure sobre a função lower-case: https://clojuredocs.org/clojure.core/lower-case
-- Exemplo de uso da função lower-case: https://www.braveclojure.com/core-functions-in-depth/#Lowercase
+```
+"olá, pessoas lindas! como vocês estão?"
+```
+
+## Mergulho Profundo:
+
+Clojure, uma linguagem moderna na plataforma JVM, tem uma abordagem particular para o problema corriqueiro de converter uma string em minúsculas. Em sua essência, Clojure usa a função `clojure.string/lower-case` que internamente chama o método `toLowerCase` do Java. Isso faz com que o comportamento desta operação em Clojure seja dependente da implementação da JVM e também do locale da instância JVM atual.
+
+Uma alternativa seria usar uma biblioteca de manipulação de strings de terceiros, ou criar sua própria função, caso precisasse de um comportamento específico para sua aplicação.
+
+## Veja Também:
+
+1. [API de Strings em Clojure](https://clojure.github.io/clojure/clojure.string-api.html)
+2. [Documentação do Clojure](https://clojure.org/api/api)
+3. [Blogs de Programação em Clojure](http://planet.clojure.in/)
+  
+Lembre-se: a prática leva à perfeição. Mantenham a codificação!

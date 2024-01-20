@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostosta lukeminen"
-html_title:           "Javascript: Tiedostosta lukeminen"
-simple_title:         "Tiedostosta lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,59 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & miksi?
-Lukeminen tekstiasiakirjasta on prosessi, jossa tietokone järjestelmä lukee ja käsittelee tekstiä tallennettuna tiedostona. Tämä on tärkeä osa ohjelmoinnin maailmaa, sillä se mahdollistaa tiedon saannin ja käsittelyn ohjelmien käytössä.
+# Lukemalla Tekstitiedostot JavaScriptilla: Helppo Opas Programmoinnin Ystäville
+
+## Mikä & Miksi?
+Lukemalla tekstitiedosto tarkoittaa tulkkaukseen ja käsittelyyn tietojen eri riveiltä. Programmoinnissa teemme tämän automatisoitujen prosessien, kuten tiedon parsinnan ja analysoinnin, mahdollistamiseksi.
 
 ## Miten:
-Alla on kaksi esimerkkiä siitä, kuinka lukea yksinkertainen tekstiasiakirja käyttäen Javascriptia. Seuraa koodiesimerkkejä niiden koodeja asentaaksesi tai suorittaaksesi sitä omalla koneellasi.
+JavaScript-funktion Node.js `fs` (filesystem) avulla voimme lukea tekstitiedostoja. Seuraavassa on esimerkkinä.
 
-Esimerkki 1: Lukeminen ja tulostaminen yksinkertaisesta tekstiasiakirjasta:
+```Javascript 
+const fs = require('fs'); 
 
+fs.readFile('testi.txt', 'utf8', function(err, data){ 
+    if (err) throw err; 
+    console.log(data); 
+}); 
 ```
-const fs = require('fs');
- 
-fs.readFile('tekstiasiakirja.txt', 'utf8', function(error, data) {
-    let lines = data.split("\n");
-    lines.forEach(line => {
-        console.log(line);
-    });
-});
-```
+Tämä koodi lukee `testi.txt` tiedoston ja tulostaa sisällön konsoliin. Jos tiedostoa ei ole tai se ei voi avata syystä tai toisesta, se heittää virheen.
 
-Esimerkki 2: Tallentaminen tekstiasiakirjaan käyttäen käyttäjän syötettä:
+## Syvällinen Sukeltaminen
+Aikaisemmin, `XMLHttpRequest` -objektia käytettiin tiedostojen lukemiseen selaimessa. Nykyään Fetch API on suositumpi ja modernimpi. Sitä voidaan käyttää tekstitiedostoja lukemaan sekä palvelimelta että paikallisesta järjestelmästä, ja se tukee myös lupauksia. Node.js:n `fs`-moduuli on edelleen standardi tiedostojen lukuun ja kirjoitukseen Node.js-sovelluksissa.
 
-```
-const fs = require('fs');
-const readline = require('readline').createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+On myös vaihtoehtoja, kuten `readFileSync`, joka on synkroninen versio `readFile`:sta. Käyttö riippuu tarpeistasi. Asynkroninen luku on hyvä, kun et halua prosessin odottavan luvun päättymistä, mutta jos sinun on odotettava tiedoston lukemista, ennen kuin voit jatkaa, synkroninen versio voi olla parempi.
 
-readline.question('Kirjoita jotain: ', (userInput) => {
-  fs.appendFile('tekstiasiakirja.txt', userInput, (err) => {
-    if (err) throw err;
-    console.log('Tallennettu!');
-  });
-  readline.close();
-});
-```
+## Katso myös
+1. [Node.js FileSystem API documentation](https://nodejs.org/api/fs.html)
+2. [Utf8 -koodauksen ymmärtäminen JavaScriptissa](https://developer.mozilla.org/en-US/docs/Web/API/TextEncoder)
+3. [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch)
 
-### Syöte:
-```
-Tämä on esimerkki tekstiä.
-Tämä on toinen rivi.
-```
-
-### Tulos:
-```
-Tämä on esimerkki tekstiä.
-Tämä on toinen rivi.
-```
-
-## Syväsukellus:
-Tekstiasiakirjojen lukeminen ja kirjoittaminen on ollut osa ohjelmointia jo vuosikymmeniä. Aikaisemmin se tapahtui lähinnä käyttöjärjestelmän kautta, mutta nykyään ohjelmoijat voivat käyttää monia erilaisia kirjastoja ja työkaluja tähän tarkoitukseen. Joitakin vaihtoehtoja Javascriptillä lukemiseen ja kirjoittamiseen ovat muun muassa Node.js, fs-moduuli ja readline-kirjasto. Tekstiasiakirjat ovat myös osa monia tiedostonhallintajärjestelmiä ja verkkokäyttöliittymiä, joten niiden lukeminen ja kirjoittaminen on tärkeä taito jokaiselle ohjelmoijalle.
-
-## Katso myös:
-- Node.js: https://nodejs.org/en/
-- fs-moduuli: https://nodejs.org/api/fs.html
-- readline-kirjasto: https://nodejs.org/api/readline.html
+Loppujen lopuksi, JavaScriptin avulla voimme manipuloida tekstitiedostoja monin eri tavoin. Käytä yllä olevia lähteitä hyödyksi ja jatka koodaamista!

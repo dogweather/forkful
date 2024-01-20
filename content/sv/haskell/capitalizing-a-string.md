@@ -1,7 +1,7 @@
 ---
-title:                "Att skriva ut en sträng"
-html_title:           "Haskell: Att skriva ut en sträng"
-simple_title:         "Att skriva ut en sträng"
+title:                "Gör en sträng versal"
+html_title:           "Haskell: Gör en sträng versal"
+simple_title:         "Gör en sträng versal"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att "capitalize"-a en sträng betyder att förvandla den till en sträng där varje ord börjar med stor bokstav. Programmörer gör detta för att göra en sträng läsbar och tydlig för användare.
+## Vad och Varför?
+Kapitalisering av en sträng innebär att ändra varje tecken i början av varje ord till en stor bokstav. Programmerare gör detta för att förbättra läsbarheten och indikera viktiga ord och fraser.
 
-## Så här:
+## Hur gör man:
+Här är ett enkelt exempel på hur man kapitaliserar varje ord i en sträng i Haskell:
+
 ```Haskell
-import Data.Char  -- importerar Data.Char modul för att använda dess funktioner
+import Data.Char (toUpper)
 
-capitalize :: String -> String  -- funktion för att capitalize a sträng
-capitalize [] = []  -- om strängen är tom, returnera tom sträng
-capitalize (x:xs) = toUpper x : map toLower xs  -- omvandla första bokstaven till stor bokstav och resten till små bokstäver
-
--- exempel på användning
-capitalize "haskell"  -- "Haskell"
-capitalize "programming language"  -- "Programming language"
+capitalize :: String -> String
+capitalize [] = []
+capitalize (x:xs) = toUpper x : xs
 ```
+I det här exemplet konverterar ``toUpper`` varje enskilt tecken till stora bokstäver vilket resulterar i en huvudbokstav vid början av varje ord.
 
-## Djupdykning:
-Historiskt sett har att "capitalize"-a en sträng varit viktigt för att göra text läsbar och tydlig för läsare. Ett alternativ till att bara omvandla första bokstaven är att helt enkelt skapa ett nytt ord genom att lägga till ett mellanrum och en ny ord efter det gamla. Det kan också göras genom att använda "Title Case" där varje ord börjar med stor bokstav. I Haskell implementeras capitalize funktionen genom att använda Data.Char modulen som ger tillgång till funktioner för att konvertera bokstäver.
+## Fördjupning
+Kapitalisering av strängar går tillbaka till begynnelsen av programmeringsspråk. Dess primära användning är att främja läsbarhet och förståelse, särskilt inom områden som naturalspråksbehandling.
 
-## Se även:
-För mer information om att "capitalize"-a en sträng och andra string manipulationer i Haskell, besök följande länkar:
+I Haskell, till exempel, har vi "Data.Char" biblioteket, vilket ger oss funktionen `toUpper`. Haskell tillhandahåller också "words" och "unwords" funktioner som bryter upp och kombinerar strängar respektive.
 
-- [Haskell Data.Char Modul](https://www.geeksforgeeks.org/haskell-data-char-module/)
+Det är dock viktigt att notera att denna metod bara ändrar det första tecknet i varje sträng. Om du vill göra mer komplexa manipulationer, såsom att upprätthålla stavning med första bokstavsstorleken för specifika termer, kan du behöva skapa mer detaljerade funktioner eller använda mer avancerade bibliotek.
 
-- [Haskell Tutorial: String Operations and String Functions](https://www.tutorialspoint.com/haskell/haskell_string_operations.htm)
+## Se även 
+Om du är intresserad av att lära dig mer om Haskell och dess bibliotek, kan du kolla följande länkar:
 
-- [Real World Haskell: Strings and Characters](http://book.realworldhaskell.org/read/strings-and-characters.html)
+1. [Learn You a Haskell](http://learnyouahaskell.com/) : En gratis onlinebok för att lära sig Haskell från grunden.
+2. [Haskell Documentation](https://www.haskell.org/documentation/) : Officiella dokument för Haskell, inklusive detaljer om strängbearbetning och mer.
+3. [Hoogle](https://www.haskell.org/hoogle/) : En Haskell-specifik sökmotor som låter dig söka efter bibliotek, moduler och funktioner.

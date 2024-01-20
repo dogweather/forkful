@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikointia käyttävän http-pyynnön lähettäminen"
-html_title:           "Ruby: Perusautentikointia käyttävän http-pyynnön lähettäminen"
-simple_title:         "Perusautentikointia käyttävän http-pyynnön lähettäminen"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -12,30 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-HTTP-pyynnön lähettäminen perusautentikoinnin kanssa tarkoittaa sitä, että lähetämme pyynnön verkkopalvelimelle, joka vaatii todentamista käyttäjänimen ja salasanan avulla. Tämä on yleinen tapa lähettää turvallisia pyyntöjä ja se on tärkeää, koska se varmistaa, että vain oikeutetut käyttäjät voivat saada pääsyn palvelimen resursseihin.
+Lähettämällä HTTP-pyynnön perusautentikaation kanssa, saamme kommunikoida turvallisesti tietojen kanssa verkkosivuilla tai palvelimella. Ohjelmoijat turvautuvat tähän autentikoinnilla varustettuun lähestymistapaan tietojen eheyden, luottamuksellisuuden ja saatavuuden varmistamiseksi.
 
-## Kuinka tehdä:
+## Kuinka toimii:
 
-Käytämme Ruby-kieltä lähettääksemme HTTP-pyynnön perusautentikoinnin kanssa. Seuraavan esimerkin avulla näemme, miten se tehdään yksinkertaisella tavalla:
-
-```ruby
+```Ruby
 require 'net/http'
-uri = URI('http://esimerkkipalvelin.com/api')
-req = Net::HTTP::Get.new(uri)
-req.basic_auth('käyttäjänimi', 'salasana')
-res = Net::HTTP.start(uri.hostname, uri.port) {|http|
-  http.request(req)
-}
-puts res.body # tulosteessa näkyy vastauksen sisältö
+require 'uri'
+
+uri = URI("https://your-website.com")
+http = Net::HTTP.new(uri.host, uri.port)
+request = Net::HTTP::Get.new(uri.request_uri)
+request.basic_auth("username", "password")
+response = http.request(request)
+
+puts response.body
 ```
 
-## Syväsukellus:
+Esimerkissämme luomme uuden HTTP-pyynnön käyttäen Net:HTTP: olion ja URI: n. Lisäämme sitten perusautentikoinnin käyttäjänimen ja salasanan avulla. Lopuksi teemme pyynnön ja tulostamme vastauksen.
 
-Perusautentikoinnin käyttö on yleinen tapa turvallisten HTTP-pyyntöjen lähettämiseen, mutta on myös muita vaihtoehtoja, kuten Digest-autentikointi. Perusautentikoinnissa käytetään Base64-koodea, joka salaa käyttäjänimen ja salasanan, mutta tämä ei ole vahvin mahdollinen turvallisuusmenetelmä. Tämän vuoksi sitä suositellaan käytettäväksi vain, jos muutautentikoinnin vaihtoehdot eivät ole käytettävissä.
+## Syvällisempi Tietämys
 
-HTTP-pyynnön lähettämiseen perusautentikoinnin kanssa, tarvitsemme URI-osoitteen, käyttäjänimen ja salasanan. Voimme myös määrittää muita vaihtoehtoja, kuten pyyntötyypin (esimerkiksi GET, POST), päänimet ja pyynnön sisällön muodosti (esim. JSON).
+Perusautentikoinnissa yksinkertainen, mutta vankka suojausprotokolla joka on ollut läsnä HTTP:n varhaisista päivistä lähtien. Se ei ole turvallisin vaihtoehto tiedonsiirtoon, mutta tarjoaa käyttäjille helpon tavan autentikoida itsensä.
+
+Vaihtoehtona voimme käyttää monimutkaisempia autentikointimenetelmiä kuten Digest-autentikointi tai OAuth, jotka tarjoavat parannettua turvallisuutta.
+
+Itse toteutuksessa Ruby käyttää Net: HTTP: n ja URI: n yhdistelmää pyynnön luomiseen ja lähettämiseen. Perusautentikointitiedot lisätään pyynnön otsikkoon Base64-koodatun merkkijonon muodossa.
 
 ## Katso myös:
 
-- [Ruby Net::HTTP Dokumentaatio](https://ruby-doc.org/stdlib-2.6.4/libdoc/net/http/rdoc/Net/HTTP.html)
-- [HTTP-autentikointi Wikipediassa](https://en.wikipedia.org/wiki/Basic_access_authentication)
+1. [Net::HTTP Ruby Doc](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+2. [HTTP Autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
+3. [Digest-autentikointi](https://en.wikipedia.org/wiki/Digest_access_authentication)
+4. [OAuth](https://oauth.net/)

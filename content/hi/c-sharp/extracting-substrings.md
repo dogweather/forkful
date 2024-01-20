@@ -1,7 +1,7 @@
 ---
-title:                "सबस्ट्रिंग निकालना"
-html_title:           "C#: सबस्ट्रिंग निकालना"
-simple_title:         "सबस्ट्रिंग निकालना"
+title:                "सबस्ट्रिंग्स निकालना"
+html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,20 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# तो आपको क्या करना है?
-प्रोग्रामर्स को भी कुछ अक्सर किसी बड़े स्ट्रिंग से छोटे स्ट्रिंग को निकालने के लिए स्ट्रिंग से सबस्ट्रिंग को निकालना पड़ता है। यह उन्हें केवल अपनी आवश्यकताओं के अनुसार उपयोग करते हुए सबसे अधिक महत्वपूर्ण जानकारी को हासिल करने में मदद करता है।
+# C# में सबस्ट्रिंग्स निकालना (Extracting Substrings in C#)
 
-# कैसे करें:
+## क्या और क्यों? (What & Why?)
+सबस्ट्रिंग्स निकालना मतलब होता है, किसी बड़े स्ट्रिंग के कुछ हिस्सों का उपयोग करना। इसे प्रोग्रामर्स डाटा संसाधन और मुख्य रूप से विश्लेषण के लिए करते हैं।
+
+## कैसे: (How to:)
+चलिए देखते हैं कि कैसे हम C# में सबस्ट्रिंग निकाल सकते हैं:
+
 ```C#
-// स्ट्रिंग से सबस्ट्रिंग निकालने के लिए सिर्फ़ इस कोड का उपयोग करें:
-string str = "यह एक उदाहरण है।";
-string substr = str.Substring(4, 5); // "एक उदा"
-Console.WriteLine(substr); // Output: एक उदा
+string source = "नमस्ते, दुनिया!";
+string sub = source.Substring(0, 6);
+Console.WriteLine(sub);
 ```
 
-# गहराई में जिए:
-इस तकनीक का सुअवास्था में उपयोग किसे 1987 में माइक्रोसॉफ्ट डिजाइन किया गया और यह C भाषा में स्ट्रिंग ऑपरेशन्स का हिस्सा बन गया। इसका विकल्प कुछ भाषाओं में substring, substring, या mid आदि नाम से जाना जाता है। सबस्ट्रिंग का विवरण यह है कि यह लागू कैसे करता है। बहुत सारे प्रोग्रामिंग स्प्रैक्ट्रमोंसे हैं जिन्हें प्राथमिक तस्वीर से देखे जा सकते हैं, किसी दूसरे प्रोग्रामर को कोई अच्छा अभ्यास संबंध रखने के लिए ऐसे ही गुरू मुहैया हो सकते हैं।
+ऊपरी कोड स्निपेट का परिणाम आपको "नमस्ते," मिलेगा।
 
-# और भी देखें:
-- [Substring() मेथॉड डॉक्यूमेंटेशन (माइक्रोसॉफ्ट डॉक्यूमेंटेशन)](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-- [Substring की पाठ्य प्रक्रिया (विकिपीडिया)](https://en.wikipedia.org/wiki/Substring)
+## गहरी जानकारी (Deep Dive)
+1. Historical Context: Substring फ़ंक्शन की उत्पत्ति C++ से होती है, जहां यह std::string के एक सदस्य फ़ंक्शन के रूप में पाया जाता है।
+2. Alternatives: C# में, Substring का विकल्प है Split() ज ाएगा। विभाजन टोकन के साथ Split का उपयोग करके, हम एक बड़े string को छोटे हिस्सों में विभाजित कर सकते हैं।
+3. Implementation Details: Substring मेथड दो वेरिएंट्स में आता है, दोनों खरगोश और गोलू से:
+   
+   ```source.Substring(int start)``` और ```source.Substring(int start, int length)```
+
+## और भी देखें: (See Also)
+
+- Microsoft Official Documentation for Substring: [यहां क्लिक करें](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
+- Understanding Split(): [यहां क्लिक करें](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/parse-strings-using-split)
+- Guide to C# Strings: [यहां क्लिक करें](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)

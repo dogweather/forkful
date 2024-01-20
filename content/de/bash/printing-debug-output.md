@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Bash: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Testing and Debugging"
@@ -10,44 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Bash-Programmierung: Debug-Ausgabe Drucken
+
 ## Was & Warum?
-Debug-Ausgaben sind kurze und nützliche Textnachrichten, die beim Programmieren verwendet werden, um zu überprüfen, ob der Code wie erwartet funktioniert. Programmierer nutzen sie, um Fehler zu finden und zu beheben, sowie um die Funktionsweise des Codes besser zu verstehen.
 
-## Wie geht's?
-Um Debug-Ausgaben in Bash zu erstellen, kannst du das integrierte Kommando ```echo``` verwenden. Hier ist ein Beispiel:
+Beim Drucken einer Debug-Ausgabe, wird temporäre Information über das Programm und seinen Ablauf ausgegeben. Programmierer nutzen es, um Fehler (Bugs) zu identifizieren und diese zu beheben.
 
-```bash
-echo "Die Debug-Ausgabe wird hier angezeigt."
+## Wie macht man das:
+
+Hier sind einige einfache Beispiele:
+
+```Bash
+# Einfache Ausgabe
+echo "Hallo, das ist eine Debug-Ausgabe."
+
+# Ausgabe mit Umgebungsvariablen
+echo "Benutzer: $USER"
+
+# Ausgabe mit Zeilentrennung
+printf "Zeile 1\nZeile 2\n"
 ```
 
-Die Ausgabe sieht dann so aus:
+## Vertiefung:
 
-```
-Die Debug-Ausgabe wird hier angezeigt.
-```
+Historisch gesehen stammt die Praxis des Debug-Drucks aus den frühen Tagen der Programmierung, als dedizierte Debugging-Tools weniger weit verbreitet waren. Alternativen umfassen heute leistungsfähige Debugger wie GDB für C/C++ oder PDB für Python. In Bash sind `echo` und `printf` die effektivsten Wege, um Debug-Ausgaben zu drucken, wobei `printf` mehr Formatierungsoptionen bietet.
 
-Du kannst auch Variablen in die Ausgabe einfügen, um bestimmte Werte oder Informationen zu überprüfen. Hier ist ein Beispiel:
+## Siehe auch:
 
-```bash
-var1="Hallo!"
-var2=42
-echo "Das ist Variable 1: $var1 und das ist Variable 2: $var2"
-```
-
-Die Ausgabe sieht dann so aus:
-
-```
-Das ist Variable 1: Hallo! und das ist Variable 2: 42
-```
-
-## Tiefer Einblick
-Debug-Ausgaben gibt es schon seit den frühen Tagen der Programmierung. Früher wurden sie vor allem in textbasierten Programmiersprachen wie C verwendet, um zu überprüfen, ob der Code richtig ausgeführt wird. Heutzutage werden sie immer noch verwendet, aber auch moderne Programmiersprachen wie Bash haben integrierte Debugging-Tools, um dieses Verfahren zu erleichtern.
-
-Eine Alternative zu Debug-Ausgaben sind sogenannte Debugger-Tools, die es ermöglichen, den Code in Echtzeit zu überwachen und zu untersuchen. Diese können jedoch komplexer und schwieriger zu benutzen sein, vor allem für Anfänger.
-
-Die Implementierung von Debug-Ausgaben in Bash ist relativ einfach und erfordert keine speziellen Tools oder Kenntnisse. Es ist eine schnelle und effektive Methode, um den Code während der Entwicklung zu überprüfen.
-
-## Siehe auch
-- [Bash Debugging Basics](https://devhints.io/bash-debugging)
-- [Bash Scripting Best Practices – Debugging](https://betterprogramming.pub/bash-scripting-best-practices-debugging-1555154ce746)
-- [Debugging Shell Scripts](https://www.gnu.org/software/bash/manual/html_node/Debugging-Shell-Scripts.html) (offizielle Bash-Dokumentation)
+- GNU Bash-Dokumentation: https://www.gnu.org/software/bash/
+- Debugging mit Bash: https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO-12.html
+- Alternativen zu `echo` und `printf`: https://linuxhint.com/printf_vs_echo_in_bash/

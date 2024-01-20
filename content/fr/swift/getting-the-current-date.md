@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Swift: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,29 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Récupérer la date actuelle est une tâche courante en programmation, car cela permet de suivre le temps et la durée des opérations. Cela peut également être utile pour afficher la date dans une application ou pour effectuer des calculs basés sur la date actuelle.
+# Swift: Comment obtenir la date actuelle
+
+## Quoi & Pourquoi?
+
+Obtenir la date actuelle est une manière pour les programmeurs de marquer des événements ou des actions dans leurs scripts. Cela peut être utilisé pour le suivi des erreurs, les horodatages et la quantification du temps écoulé.
 
 ## Comment faire:
-Voici comment récupérer la date actuelle en utilisant Swift:
+
+La méthode standard d'obtention de la date courante en Swift implique l'utilisation de la classe `Date`. Regardez cet exemple:
 
 ```Swift
-let currentDate = Date() // En utilisant l'instance Date()
-print(currentDate) // Affiche la date et l'heure actuelles
+let maintenant = Date()
+print("Date et heure actuelles: \(maintenant)")
 ```
 
-Vous pouvez également personnaliser le format de date en utilisant un `DateFormatter`:
+Et l'affichage serait:
 
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
-let currentDate = Date()
-let dateString = dateFormatter.string(from: currentDate)
-print(dateString) // Affiche la date actuelle au format jour/mois/année
+Date et heure actuelles: 2022-01-15 15:37:30 +0000
 ```
 
-## Plongée en profondeur:
-Avant la sortie de Swift, les développeurs utilisaient principalement `NSDate` pour récupérer la date actuelle, mais cela a été remplacé par `Date` dans Swift. Dans certaines situations, vous pouvez également obtenir la date et l'heure du Fuseau horaire actuel en utilisant `TimeZone.current` en combinaison avec `Date()`, plutôt que d'utiliser directement `Date()`.
+## Plongée en profondeur
 
-## Voir aussi:
-Pour plus d'informations sur la récupération de la date actuelle en Swift, vous pouvez consulter la documentation officielle de Swift et la communauté des développeurs, ainsi que des tutoriels en ligne pour des exemples plus approfondis.
+Historiquement, Swift dérive la classe `Date` de sa bibliothèque de fondation. Autrefois, nous utilisions `NSDate` en Objective-C.
+
+Des alternatives existent, comme l'utilisation de `DateFormatter` pour personnaliser l'affichage de la date. Exemple:
+
+```Swift
+let maintenant = Date()
+
+let formatteur = DateFormatter()
+formatteur.dateStyle = .long
+
+let dateString = formatteur.string(from: maintenant)
+print("Date formatée: \(dateString)")
+```
+
+Cela afficherait:
+
+```Swift
+Date formatée: 15 janvier 2022
+```
+
+La classe `Date` enregistre le temps écoulé depuis une date de référence (1er janvier 2001, 00:00:00 GMT). Ainsi, lorsque vous créez une nouvelle instance de `Date`, vous obtenez l'intervalle de temps entre maintenant et cette date de référence.
+
+## Voir Aussi
+
+- Documentation Apple sur [Date](https://developer.apple.com/documentation/foundation/date)
+- How to format dates with [Swift DateFormatter](https://www.hackingwithswift.com/example-code/system/how-to-format-dates-with-dateformatter)
+- Swift by Sundell's article on [Dealing with dates](https://www.swiftbysundell.com/basics/dates/)

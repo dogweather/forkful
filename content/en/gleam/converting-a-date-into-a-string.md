@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "Gleam recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,47 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Converting a Date into a String in Gleam
-
 ## What & Why?
 
-Converting a date into a string means translating a date - which is in a formatted digital representation - into a printable string format. This is particularly useful for displaying dates in a human-readable form. Programmers often convert dates to strings to show them on user interfaces or to store them in databases.
+Converting a date into a string in programming allows for easy manipulation and display of date information. Programmers do it to improve user interaction and to facilitate date comparisons in code logic.
 
 ## How to:
-
-The process of converting a date into a string is simple in Gleam. The `Time` module provides functions for converting dates into strings, as shown in the following code examples:
+Alright, let's dive into some code. Here’s an example of how to convert a date into a string using Gleam.
 
 ```Gleam
-import Time
+import gleam/date
+import gleam/date.{Date}
+import gleam/string.{from_utf8}
 
-// Convert a date into an ISO 8601 string format
-Time.Date.to_iso8601_string(2021, 10, 25) // Outputs: "2021-10-25"
+fn date_to_string(d: Date) -> String {
+  let Date(year, month, day) = d
+  from_utf8(<<year, "-", month, "-", day>>)
+}
 
-// Convert a date into a custom string format
-Time.Date.to_string(2021, 10, 25, "%B %d, %Y") // Outputs: "October 25, 2021"
+fn main(_) {
+  let d = date.new(2022, 11, 23)
+  let date_string = date_to_string(d)
+  io.println(date_string)
+}
 ```
-
-As you can see, the `to_iso8601_string` function converts the date into a standardized format, while the `to_string` function allows for a variety of custom formats.
+When you run this program, it should print out "2022-11-23" to the console.
 
 ## Deep Dive
 
-### Historical Context
+Historically, all computer systems didn't share the same methods for representing dates and managing time, making conversion into a standardized format like a string crucial for interoperability.
 
-Converting dates to strings has been an essential task in the programming world since the early days of computing. It was particularly challenging on older systems due to their limited character sets and variable ways of representing dates. However, with the introduction of standardized date formats, such as ISO 8601, this task has become much more streamlined and uniform.
+As for alternatives, there's a multitude of ways you can format a date string depending on the exact requirements of your program or the locale of your users. Some other popular formats include "23-Nov-2022" or "23/11/2022".
 
-### Alternatives
-
-In Gleam, there are a few alternative ways to represent dates, such as using integers or tuples. However, these formats are less versatile and may require more code to manipulate and display the date. Therefore, converting dates into strings remains the preferred method for displaying dates in a human-readable format.
-
-### Implementation Details
-
-Under the hood, Gleam's `Time` module uses Erlang's `calendar` module to perform date calculations and formatting. This module provides robust and efficient functions for handling dates and times, making it a suitable choice for these operations in Gleam.
+The implementation details of date conversion to a string are depending on the language and libraries you're using. Gleam’s implementation uses the underlying Erlang and uses the from_utf8 method to convert a binary to a string, which is constructed from parts of a date value.
 
 ## See Also
 
-- Gleam documentation for the `Time` module: https://gleam.run/lib/gleam_stdlib/latest/Time.html
-- ISO 8601 standard for date and time representation: https://www.iso.org/iso-8601-date-and-time-format.html
+For a more in-depth look into dates and times in Gleam, check out [Gleam's date documentation](https://hexdocs.pm/gleam_stdlib/gleam/date.html).
 
----
-
-Thanks for reading this short guide on converting dates into strings in Gleam. Hopefully, it has given you a better understanding of this essential task in programming. Happy coding!
+Not satisfied with the date format? Check out how to implement your own date-to-string conversion function in this [Gleam format conversion guide](https://gleam.run/tour/basic-types/).

@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Python: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Genererer tilfeldige tall"
+html_title:           "PHP: Genererer tilfeldige tall"
+simple_title:         "Genererer tilfeldige tall"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å generere tilfeldige tall er en vanlig praksis blant programmører når de trenger tilfeldige elementer i koden sin. Dette kan være for å lage tilfeldige verdier for testing eller for å lage et variert utvalg av data. Det er også nyttig for å sikre at en algoritme eller program ikke blir forutsigbar og møter uventede situasjoner.
+## Hva & Hvorfor? 
 
-# Hvordan gjør man det?
-For å generere tilfeldige tall i Python, kan vi bruke funksjonen ```random()``` fra modulen ```random```. La oss se på et eksempel:
+Generere tilfeldige tall er prosessen med å få datasystemene til å produsere tall som er ubestemmelige av brukeren. Vi programmerere gjør dette for å introdusere enheter for variabilitet og uforutsigbarhet i designene våre.
 
-```Python
-import random
+## Hvordan: 
 
-print(random.random()) 
-```
-
-Dette vil gi ut et tilfeldig tall mellom 0 og 1. For å få et tilfeldig tall innenfor et bestemt område, kan vi bruke ```randint()```-funksjonen:
+Du kan generere tilfeldige tall ved hjelp av Python's innebygde `random`-bibliotek. Her er et eksempel på hvordan du genererer et tilfeldig tall mellom 1 og 10.
 
 ```Python
 import random
-
-print(random.randint(1, 10)) 
+tall = random.randint(1,10)
+print(tall)
 ```
+Når du kjører denne koden, vil du se et tall mellom 1 og 10.
 
-Dette vil gi ut et tilfeldig heltall mellom 1 og 10.
+## Deep Dive: 
 
-# Dykk ned i det
-Historisk sett har generering av tilfeldige tall vært en utfordring for matematikere og programmerere. I tidligere tider brukte man ofte fysiske fenomener som kast av mynter eller terninger for å få tilfeldige tall, men dette var ikke alltid nøyaktig og kunne være tidkrevende. I dag bruker de fleste programmeringsspråk, inkludert Python, algoritmer for å generere tilfeldige tall basert på en startverdi kalt en "seed". Dette gjør det mulig å gjenskape den samme rekkefølgen av tilfeldige tall ved å bruke samme seed, noe som kan være nyttig i testing og debugging.
+Generering av tilfeldige tall har en lang historie i informatikkens verden. Metoder har variert fra fysiske prosesser som termisk støy til matematiske metoder som Mersenne Twister.
 
-Et alternativ til å bruke ```random```-modulen i Python er å bruke den dedikerte modulen ```numpy```, som har flere funksjoner for å generere tilfeldige tall med spesifikk fordeling, for eksempel normalfordeling eller jevn fordeling.
+I Python har vi mange alternative måter å generere tilfeldige tall, inkludert `random.uniform` for et tilfeldig flyttall mellom to verdier, eller `random.choice` for å plukke et tilfeldig element fra en liste.
 
-# Se også
-- [Python Random Modul](https://docs.python.org/3/library/random.html)
-- [Numpy Random Modul](https://numpy.org/doc/stable/reference/random/index.html)
+Når det gjelder implementasjonsdetaljer, bruker Python's `random`-bibliotek en variant av Mersenne Twister kjent som MT19937. Dette er en såkalt "pseudorandom number generator", fordi mens tallene det produserer ser tilfeldige ut, vil de være nøyaktig de samme hver gang hvis generatorinitialiseringen (`seed`) er lik.
+
+## Se Også: 
+
+- Python's offisielle dokumentasjon for 'random'-modulen: https://docs.python.org/3/library/random.html
+- Wikipedia-artikkel om Mersenne Twister: https://no.wikipedia.org/wiki/Mersenne_twister

@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Ruby: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que c'est & pourquoi le faire?
- 
-L'envoi d'une requête HTTP avec une authentification de base est un moyen pour les programmeurs d'accéder à des ressources protégées sur un serveur Web. Cela implique de fournir un nom d'utilisateur et un mot de passe pour vérifier l'identité et autoriser l'accès à ces ressources.
+# Envoi d'une requête HTTP avec une authentification de base en Ruby
 
-Comment faire:
+## Quoi & Pourquoi ?
 
-```ruby
+L'envoi d'une requête HTTP avec une authentification de base est une façon de se connecter à des APIs sécurisées. Les programmeurs le font pour interagir avec des services en ligne, souvent pour récupérer des données.
+
+## Comment faire :
+
+La bibliothèque net/http intégrée à Ruby permet d'envoyer facilement des requêtes HTTP. Voici comment envoyer une requête GET avec une authentification de base :
+
+```Ruby
 require 'net/http'
+require 'uri'
 
-url = URI.parse('http://example.com/protected/resource')
-# Remplacez "username" et "password" par vos propres identifiants
-req = Net::HTTP::Get.new(url.request_uri)
-req.basic_auth 'username', 'password'
+uri = URI('https://api.exemple.com/data')
 
-res = Net::HTTP.start(url.host, url.port) {|http|
+req = Net::HTTP::Get.new(uri)
+req.basic_auth 'nom_utilisateur', 'mot_de_passe'
+
+res = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') {|http|
   http.request(req)
 }
 
 puts res.body
 ```
 
-Sortie:
+## Plongée profonde :
 
-Si les identifiants sont corrects, cela renverra le contenu de la ressource protégée. Sinon, cela renverra un code d'erreur.
+Historiquement, l'authentification HTTP de base est l'une des premières façons de sécuriser les connexions à des services en ligne. Cependant, elle n'est pas très sécurisée par elle-même et doit être utilisée en conjonction avec HTTPS.
 
-Deep Dive:
- 
-L'authentification de base a été introduite dans les spécifications HTTP en 1999. Elle est considérée comme une méthode d'authentification de base car les identifiants sont envoyés en texte clair et n'offrent donc qu'une sécurité minimale. Il existe des alternatives plus sécurisées, telles que l'authentification Digest, mais l'authentification de base est encore très utilisée aujourd'hui en raison de sa simplicité. 
+L'authentification de base consiste à envoyer un nom d'utilisateur et un mot de passe non chiffrés avec chaque requête, donc si quelqu'un pouvait intercepter la requête, il pourrait voir vos identifiants. C'est pour cette raison que vous devez toujours utiliser HTTPS quand vous utilisez l'authentification de base.
 
-Pour implémenter une authentification de base, les serveurs Web peuvent utiliser le header `Authorization` avec la valeur `Basic` suivie d'une chaîne encodée en base64 de la forme "username:password". Côté client, les bibliothèques de requête HTTP telles que `net/http` prennent en charge l'ajout de ces informations d'authentification dans la requête.
+Une alternative est l'authentification par jeton, qui est un peu plus sécurisée car elle ne nécessite pas l'envoi de vos identifiants à chaque fois.
 
-Voir aussi:
+## Voir aussi :
 
-Pour en savoir plus sur les différentes méthodes d'authentification HTTP et leurs avantages et inconvénients, consultez ces ressources:
+Pour plus d'informations sur l'utilisation de net/http dans Ruby, consultez la documentation officielle ici : [Ruby Doc](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
 
-- https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication
-- https://www.rfc-editor.org/info/rfc2068 (Spécification originale de l'authentification de base)
-- https://www.rfc-editor.org/info/rfc7617 (Spécification de la mise à jour de l'authentification de base)
+Et pour une discussion sur la sécurité de l'authentification de base, voir cet article sur StackOverflow : [Basic Auth Security](https://stackoverflow.com/questions/1240518/is-basic-auth-secure-if-done-over-https)

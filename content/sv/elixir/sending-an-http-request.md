@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "Elixir: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-förfrågan"
+html_title:           "Javascript: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,25 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-HTTP Begäran med Elixir
-
 ## Vad & Varför?
-Skicka en HTTP-begäran innebär att din dator begär information från en server på internet. Det är en viktig del av webbutveckling eftersom det låter dig hämta och kommunicera med andra webbsidor, program eller appar.
 
-## Hur gör man?
-För att skicka en HTTP-begäran i Elixir, kan du använda funktionen `HTTPoison.request/4` från HTTPoison-biblioteket. Du behöver bara ange vilken metod du vill använda (t.ex. `:get` eller `:post`), den fullständiga URL:en och eventuella ytterligare parametrar som krävs för begäran. Här är ett exempel på hur du skulle hämta information från Google:
+Att skicka en HTTP-förfrågan är en metod för att kommunicera data mellan klienten (datorn som ber om information) och servern (datorn som lagrar informationen). Programmerare gör detta för att hämta, skicka eller manipulera data på webbservern.
+
+## Hur gör man:
 
 ```Elixir
-response = HTTPoison.request(:get, "https://www.google.com")
-
-IO.puts(response.body) # Skriver ut sidans HTML-innehåll till terminalen
+{:ok, response} = HTTPoison.get("http://httpbin.org/get")
+IO.inspect(response.status_code)  # Visar statuskoden för HTTP-svaret, t.ex. 200
 ```
-I detta exemplet sparar vi begäran som en variabel `response` och sedan skriver vi ut innehållet i svarsobjektet med hjälp av `IO.puts`-funktionen.
+Denna kod skickar en GET-förfrågan till httpbin.org och visar statuskoden för svaret.
 
 ## Djupdykning
-HTTP (HyperText Transfer Protocol) är ett protokoll som används för att överföra data över internet. Det skapades ursprungligen för att låta webbsidor kommunicera med varandra, men används nu för att skicka olika typer av data och information över internet. Det finns olika sätt att skicka HTTP-begäran i Elixir, men HTTPoison är en populär och väldokumenterad lösning.
 
-## Se även
-- [Officiell Elixir Dokumentation för HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [En jämförelse av olika HTTP-klientbibliotek för Elixir](https://ohmybrew.com/posts/comparison-of-http-clients-for-elixir/)
-- [En översikt av HTTP-protokollet](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+Historiskt sett är metoden för att skicka HTTP-förfrågningar ett grundläggande koncept som utvecklats från det tidiga internets dagar. Alternativ till HTTPoison inkluderar andra bibliotek som Hackney eller HTTPotion. Implementeringsdetaljer omfattar sättet att sätta ihop och sända begäran, såväl som tolkningen av det mottagna svaret.
+
+## Se även:
+
+För mer information om HTTP-begäran, HTTPoison och liknande ämnen, besök följande källor:
+- Elixir officiella dokumentation: [https://hexdocs.pm/elixir/1.12/Kernel.html](https://hexdocs.pm/elixir/1.12/Kernel.html)
+- HTTPoison GitHub Repo: [https://github.com/edgurgel/httpoison](https://github.com/edgurgel/httpoison)
+- Hackney GitHub Repo: [https://github.com/benoitc/hackney](https://github.com/benoitc/hackney)

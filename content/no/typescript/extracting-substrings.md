@@ -1,7 +1,7 @@
 ---
-title:                "Hente ut delstrenger"
-html_title:           "TypeScript: Hente ut delstrenger"
-simple_title:         "Hente ut delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Extracting substrings er en prosess der utvalgte deler av en tekststreng blir isolert og hentet ut. Dette er en vanlig teknikk som brukes av programmere for å manipulere tekststrenger på en mer effektiv måte.
+## Hva & Hvorfor?
+
+Uttrekking av substrings er prosessen med å isolere spesifikke deler av en streng. Programmerere gjør det ofte for å manipulere, sammenligne eller analysere data.
 
 ## Hvordan:
-```TypeScript
-//Eksempel 1:
-let tekststreng = "Hei, dette er en tekststreng!";
-let delStreng = tekststreng.substring(4,8);
-console.log(delStreng);
-// Output: "dett"
 
-//Eksempel 2:
-let navn = "Kari Olsen";
-let etternavn = navn.substr(5);
-console.log(etternavn);
-// Output: "Olsen"
+Her er et enkelt eksempel på bruk av `substr()`-funksjonen i TypeScript.
+
+```typescript
+let tekst: string = "Hei, Verden!";
+let delTekst: string = tekst.substr(0, 3);
+console.log(delTekst);
 ```
 
-## Dypdykk:
-Historisk sett har substringer blitt brukt til å søke i store datasett og håndtere komplekse tekstmanipulasjoner. Det finnes også alternative metoder for å hente ut deler av en tekststreng, som for eksempel regular expressions. I TypeScript er substring-metoden en del av standard String-prototypen og tar imot to parametere: startindeks og sluttindeks. Det finnes også en relatert metode kalt substr som tar imot kun startindeks og henter ut resten av strengen fra dette punktet.
+Denne koden vil skrive ut følgende:
 
-## Se også:
-- MDN Dokumentasjon om substring: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
-- MDN Dokumentasjon om substr: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr
+```typescript
+"Hei"
+```
+Det tar to argumenter: den første er startindeksen, og den andre er antallet tegn du vil utvinne.
+
+## Dypdykk
+
+Uttrekking av substrings har vært en grunnleggende operasjon av mange programmeringsspråk, inkludert tidligere versjoner av JavaScript. I TypeScript, anbefaler vi bruk av `slice()` over `substr()` som det er mer forutsigbart.
+
+`substr()` kan gi uventet oppførsel med negative indekser, mens `slice()` håndterer dem mer konsekvent. Her er et eksempel:
+
+```typescript
+let tekst: string = "Hei, Verden!";
+console.log(tekst.slice(-1));   // utskrifter: "!",
+console.log(tekst.substr(-1));  // utskrifter: "Verden!"
+```
+
+## Se Også 
+
+- MDN Web Docs for detaljer om [`substr()`](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/String/substr) og [`slice()`](https://developer.mozilla.org/nb/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- Microsofts TypeScript Handbook for mer informasjon om [strenger i TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html#string).

@@ -1,7 +1,7 @@
 ---
-title:                "Reply with ONLY the translated title. 新しいプロジェクトを始める"
-html_title:           "Haskell: Reply with ONLY the translated title. 新しいプロジェクトを始める"
-simple_title:         "Reply with ONLY the translated title. 新しいプロジェクトを始める"
+title:                "新しいプロジェクトを始める"
+html_title:           "C: 新しいプロジェクトを始める"
+simple_title:         "新しいプロジェクトを始める"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## はじめに
+## 何となぜ？
 
-新しいプロジェクトを始めることは、プログラマーにとってよくあることです。これは、新しいアイデアや目標を実現するために、開発者が新しいコードを書き始めることを意味します。
+新規プロジェクトの開始とは、新しいアイディアや問題解決のためのコードを作り始めることです。プログラマーはこれを行うことで、ソフトウェアを改善し、新しい機能を開発します。
 
-## 使い方
+## どうやって？
 
-まず、新しいフォルダを作成し、その中に```haskell``` という名前のファイルを作成します。次に、そのファイルを開き、以下のコードを入力します。
+はじめに、まっさらなプロジェクトを作成します。例えば、次のように`stack new myproject`を実行します。
 
-```
-main = putStrLn "Hello World!"
-```
-
-このコードは、"Hello World!"というメッセージを出力するプログラムです。次に、ターミナルで新しいフォルダに移動し、以下のコマンドを入力します。
-
-```
-ghc haskell
+```Haskell
+$ stack new myproject
 ```
 
-これにより、コンパイラが```haskell```ファイルをコンパイルし、実行可能ファイル```haskell```が生成されます。そして、以下のコマンドを入力してプログラムを実行します。
+これで新しいHaskellプロジェクト`myproject`が作成されました。フォルダと必要なファイルが自動で生成されます。
 
+次に、生成されたプロジェクトフォルダに移動します。
+
+```Haskell
+$ cd myproject
 ```
-./haskell
+
+あとは`stack build`と入力し、プロジェクトをビルドします。
+
+```Haskell
+$ stack build
 ```
 
-すると、ターミナルに"Hello World!"というメッセージが表示されるはずです。
+これでプロジェクトの準備が整いました。
 
-## 詳細情報
+## ディープダイブ
 
-Haskellは純粋関数型プログラミング言語であり、静的型付け言語です。Haskellは豊富なライブラリやツールを備えており、複雑なプログラムを作成するのに最適な言語です。代表的な代替言語はPythonやScalaです。Haskellは1930年代にAlonzo Churchによって創設されたラムダ計算に基づいており、数学とプログラミングの両方の要素を兼ね備えています。
+新規プロジェクトの開始の背後には様々な要素があります。おそらく最も重要なのは、各プロジェクトが自分自身の独立した環境を持つという概念、つまり「sandboxing」です。これは、異なるプロジェクト間でライブラリのバージョンや設定が競合しないようにするためのものです。
 
-## 関連リンク
+これに対する代替手段としては、globalにライブラリをインストールし、全てのプロジェクトで同じライブラリを共有するというやり方もありますが、sandboxingの方が衝突のリスクを遥かに低減します。
 
-- 公式Haskellドキュメンテーション (https://www.haskell.org/documentation/)
-- Haskellのチュートリアル (https://wiki.haskell.org/Tutorials)
-- プログラミング初心者のためのHaskell入門ガイド (https://www.codewars.com/kata/haskell)
-- Haskellコミュニティフォーラム (https://www.reddit.com/r/haskell/)
+新規プロジェクトを作成するとき、`stack`はデフォルトで一連のディレクトリとファイルを生成します。もちろん、これらは後から調整やカスタマイズが可能です。
+
+## 参考リンク
+
+以下のリンクはさらに詳しい情報や関連リソースを提供します：
+
+- Stack公式ドキュメンテーション: [https://docs.haskellstack.org/](https://docs.haskellstack.org/)
+- Haskellプロジェクトの作成：[https://www.tutorialspoint.com/haskell/haskell_quick_guide.htm](https://www.tutorialspoint.com/haskell/haskell_quick_guide.htm)
+- Haskellのビルドツールについて: [https://tech.fpcomplete.com/haskell/tutorial/stack](https://tech.fpcomplete.com/haskell/tutorial/stack)

@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Fish Shell: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué y por qué iniciar un nuevo proyecto?
+## ¿Qué & Por qué?
 
-Iniciar un nuevo proyecto en programación es empezar a trabajar en un nuevo código para crear un programa o aplicación. Los programadores lo hacen para poder desarrollar nuevas ideas, solucionar problemas o mejorar sus habilidades.
+Empezar un nuevo proyecto de programación significa literalmente comenzar a escribir un código completamente nuevo, diseñado para completar una tarea específica. Los programadores lo hacen para desarrollar nuevas aplicaciones, resolver problemas o crear software de servidor de próxima generación.
 
-Cómo:
+## Cómo hacerlo:
 
-Para iniciar un nuevo proyecto en Fish Shell, simplemente debes seguir estos pasos:
+Vamos a iniciar un nuevo proyecto utilizando **Fish Shell**. Mira el siguiente bloque de código:
 
-1. Asegúrate de tener Fish Shell instalado en tu computadora.
-2. Abre una nueva terminal y entra al directorio donde quieres crear tu nuevo proyecto.
-3. Escribe el siguiente comando en la terminal:
-`fish_project` 
-4. Se creará automáticamente una nueva carpeta con el nombre del proyecto y se abrirá en tu editor de texto predeterminado.
+```Fish Shell
+> mkdir NuevoProyecto 
+```
 
-Profundizando:
+Este comando creará un nuevo directorio llamado `NuevoProyecto`.
 
-Si te interesa conocer más sobre cómo iniciar proyectos en Fish Shell, aquí hay algunos detalles adicionales:
+Ahora vamos a entrar en este directorio.
 
-1. Historical Context: Fish Shell es un tipo de shell (interfaz de línea de comandos) que se basa en las shell de otros sistemas operativos como bash y csh. Fue creado en 2005 por Axel Liljencrantz con el objetivo de ser más intuitivo y fácil de usar.
-2. Alternativas: Antes de Fish Shell, otros shells populares eran zsh y bash. Sin embargo, Fish Shell se destaca por su autocompletado inteligente y su mejor manejo de errores.
-3. Detalles de implementación: Fish Shell está escrito en C y se distribuye bajo la licencia GNU GPL.
+```Fish Shell
+> cd NuevoProyecto
+```
 
-Ver también:
+Desde aquí, puedes comenzar a desarrollar tu proyecto.
 
-- Documentación oficial de Fish Shell: https://fishshell.com/docs/current/
-- Guía práctica de inicio en Fish Shell: https://medium.com/swlh/getting-started-with-fish-shell-again-4ee17289890c
-- Tutorial de Fish Shell en español: https://codigofacilito.com/articulos/como-usar-fish-shell
+## Inmersión Profunda: 
+
+Históricamente, los programadores han usado una variedad de lenguajes y shells para crear proyectos. Fish Shell es uno relativamente nuevo, cuya popularidad está creciendo debido a su sintaxis amigable y a su auto-completado inteligente.
+
+Respecto a alternativas, tienes Bash, Zsh y muchos otros. Fish Shell destaca por su enfoque en la usabilidad y el escalado a proyectos más grandes.
+
+Hablando de implementación, cuando comienzas un nuevo proyecto, lo que realmente importa es establecer un buen directorio base y estructura del código, y Fish Shell puede ayudarte con eso.
+
+## Ver También:
+
+1. [Documentación oficial de Fish Shell](https://fishshell.com/docs/current/index.html)
+2. [Tutorial de la Terminal de Linux - Fish Shell](https://linux.die.net/man/1/fish)
+3. [Stack Overflow - Preguntas etiquetadas Fish](https://stackoverflow.com/questions/tagged/fish)
+
+Estos enlaces te proporcionarán una visión más completa de lo que es y cómo funciona Fish Shell.

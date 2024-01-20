@@ -1,7 +1,7 @@
 ---
-title:                "난수 생성하기"
-html_title:           "Python: 난수 생성하기"
-simple_title:         "난수 생성하기"
+title:                "임의의 숫자 생성하기"
+html_title:           "Elixir: 임의의 숫자 생성하기"
+simple_title:         "임의의 숫자 생성하기"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,38 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-난수 생성이란 무엇일까요? 간단히 말해, 난수 생성은 사람이 만들어내기 어려운 무작위 숫자를 프로그램을 통해 생성하는 것을 의미합니다. 여기에는 몇 가지 이유가 있는데, 예를 들면 게임에서 승리를 결정하기 위해 실제 무작위성을 재현하는 등의 목적이 있습니다. 
+## 왜 & 왜?
+랜덤 숫자 생성은 예측 가능한 코드흐름을 방해하는 데 사용될 수 있습니다. 프로그래머들은 테스트 데이터를 생성하거나, 간단한 게임을 제작하거나 사용자의 입력을 시뮬레이트하는 등 다양한 이유로 랜덤 숫자를 생성합니다.
 
-## 어떻게:
+## 사용법:
+Python에서 랜덤 숫자를 생성하는 대표적인 방법은 `random` 라이브러리를 사용하는 것입니다. 아래의 코드는 0과 10 사이에서 랜덤 정수를 생성하는 방법을 보여줍니다.
+
 ```Python
 import random
 
-# 1부터 10까지의 무작위 정수 생성
-print(random.randint(1, 10))
-
-# 0부터 1 사이의 무작위 실수 생성
-print(random.random())
-
-# 리스트에서 무작위 항목 선택
-numbers = [1, 2, 3, 4, 5]
-print(random.choice(numbers))
+random_number = random.randint(0, 10)
+print(random_number)
 ```
 
-출력:
+출력 예시는 아래와 같습니다.
 
-8
+```
+5
+```
 
-0.46236680138124066
+## 상세 분석:
+랜덤 숫자는 어떤 배열이나 패턴이 없는 이른바 '차수 없는' 숫자입니다. 랜덤 숫자 생성은 컴퓨팅에 고대부터 있었으며, 예를 들어, 사람들이 도박이나 복권 번호를 선택하는 데 사용한 것입니다.
 
-3
+Python에서는 `random`라는 기본 라이브러리를 제공합니다. 이 라이브러리는 메르센 트위스터라고 불리는 알고리즘을 사용하여 숫자를 생성합니다. 이 방법의 대안으로 numpy 라이브러리의 `numpy.random` 모듈을 사용할 수 있습니다. 이것은 더 복잡한 통계적 분포를 가진 랜덤 숫자를 생성하는 데 유용합니다.
 
-## 깊게 파헤치기:
-(1) 난수 생성의 역사적 배경: 난수 생성은 오래된 컴퓨팅 문제 중 하나입니다. 초기 컴퓨터에서는 속도와 비용 등의 제약으로 인해 무작위성을 재현하는 것이 매우 어려웠습니다. 
-(2) 대체 가능한 방법: PRNG (Pseudo-Random Number Generator)은 난수라기보다는 무작위성을 재현한 것으로 보기에는 적합하지 않습니다.
-(3) 구현 세부 정보: 파이썬의 random 모듈은 Mersenne-Twister 알고리즘을 사용하여 난수를 생성합니다. 이 알고리즘은 매우 빠르고, 통계적으로 안정적이며 사실적인 숫자를 생성하는 데에 적합합니다.
-
-## 관련 자료:
-- 파이썬 공식 문서: https://docs.python.org/3/library/random.html
-- PRNG에 대한 자세한 설명: http://mathworld.wolfram.com/PseudorandomNumber.html
-- 다른 난수 생성 알고리즘: https://www.geeksforgeeks.org/random-number-generator-generate-numbers-set-2/
+## 참고 자료:
+- Python 공식 문서: [random — Generate pseudo-random numbers](https://docs.python.org/3/library/random.html)
+- Numpy 공식 문서: [numpy.random — Generate random numbers](https://numpy.org/doc/stable/reference/random/index.html)

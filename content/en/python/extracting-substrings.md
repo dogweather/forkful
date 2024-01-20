@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Python recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Python"
 category:             "Python"
@@ -11,30 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Extracting substrings is the process of obtaining a smaller section of characters from a larger string. Programmers often do this in order to manipulate or analyze specific parts of a larger string without having to work with the entire string. This can make coding tasks more efficient and organized.
+
+Substring extraction refers to getting a smaller part of a string in Python. It's a must-know because it helps handle and manipulate data efficiently. 
 
 ## How to:
-```Python
-# To extract a substring using square brackets
-my_string = "Hello World"
-print(my_string[0:5]) # Output: Hello
 
-# To extract a substring using the slice() function
-print(my_string[slice(6, 11)]) # Output: World
+In Python, we use string slicing to extract substrings:
 
-# Extracting a substring with negative indexing
-print(my_string[-5:-1]) # Output: Worl
+```python
+# Here's an example:
 
-# Extracting a substring with a step
-print(my_string[::2]) # Output: HloWrd
+s = "Hello, World!"
+substring = s[7:12]
+print(substring)
+
+# Output: World
 ```
+In this standing example, we extracted "World" by using index positions. Python slicing starts from '0' (for the first element).
 
 ## Deep Dive:
-Extracting substrings has been a vital technique in computer programming since the early days of string manipulation. Before the introduction of built-in string methods, programmers used to write their own functions to extract substrings. Nowadays, there are alternative methods in Python such as using the re library for regular expressions or splitting strings by a specific delimiter.
 
-When extracting a substring, the syntax is [start_index:stop_index:step]. The start_index is inclusive while the stop_index is exclusive. This means that the character located at the stop_index will not be included in the extracted substring. If the step is not specified, it will default to 1. Negative indexes can also be used to extract substrings from the end of the string. If the step is negative, the substring will be reversed.
+Historically, strings in Python were implemented as arrays, making substring extraction fast and efficient. There have been modifications, but we still use slicing because it's effective, quick, and readable. 
+
+Python string slicing reads as follows: `s[start:stop:step]`. If `step` isn't mentioned, Python moves at a pace of 1.
+
+If you find slicing difficult or not suitable for your condition, you can use Python's built-in `split()` function. However, it splits using spaces or another delimiters and returns a list of substrings.
+
+```python
+s = "Hello, World!"
+substrings = s.split(',')
+print(substrings)
+
+# Output: ['Hello', ' World!']
+```
+It's essential that you remember Python uses zero-based indexing. This means that the first position in the string is `0`, not `1`. And don't forget, in Python, strings are immutable, which means they can't be modified once created.
+
+Python treats strings as an array of individual characters – so all of the array functionality applies to strings too.
 
 ## See Also:
-- [Python String Methods](https://www.geeksforgeeks.org/python-string-methods-set-1-find-rjust-split-replace/)
-- [Regular Expressions in Python](https://www.geeksforgeeks.org/regular-expressions-python-examples-set-1/)
-- [Python Slicing](https://www.geeksforgeeks.org/python-list-slicing/)
+
+Check out these additional resources for more information about slicing and other operations on strings:
+
+- [An A-Z of useful Python tricks](https://medium.freecodecamp.org/an-a-z-of-useful-python-tricks-b467524ee747)
+- [Python Official Docs on Strings](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [A Guide to Python's Slice Notation](https://towardsdatascience.com/a-guide-to-pythons-slice-notation-58674ee8d63d)
+
+Happy coding!

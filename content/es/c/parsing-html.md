@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "C: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,46 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-El análisis de HTML es cuando los programadores toman el código HTML de una página web y lo convierten en una estructura de datos que se puede manipular en su código. Esto es importante porque permite a los programadores interactuar con la web de forma programática, extrayendo información o realizando acciones automatizadas.
+## ¿Qué y Por qué?
 
-## ¡Cómo hacerlo!
-Aquí hay un ejemplo simple de cómo analizar HTML en C utilizando la biblioteca libxml2:
+La interpretación (parsing) del HTML es el proceso de analizar el código HTML para su manipulación y extracción de datos. Los programadores lo hacen para recolectar información o renderizar páginas web en un navegador.
+
+## ¿Cómo hacerlo?
+
+Ejemplo sencillo de cómo leer y parsear un archivo HTML usando la biblioteca Gumbo en C:
+
 ```C
 #include <stdio.h>
-#include <libxml/HTMLparser.h>
+#include <stdlib.h>
+#include <gumbo.h>
 
-int main()
-{
-    htmlDocPtr doc = htmlReadFile("mi_pagina.html", NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
-    xmlNodePtr root = xmlDocGetRootElement(doc);
-    
-    xmlNodePtr node = root->children;
-    while (node != NULL)
-    {
-        if (node->type == XML_ELEMENT_NODE)
-        {
-            printf("%s", node->name);
+void busqueda_textos(GumboNode* node) {
+    if (node->type == GUMBO_NODE_TEXT) {
+        printf("%s\n", node->v.text.text);
+    } else if (node->type == GUMBO_NODE_ELEMENT &&
+            node->v.element.tag != GUMBO_TAG_SCRIPT &&
+            node->v.element.tag != GUMBO_TAG_STYLE) {
+        GumboVector* children = &node->v.element.children;
+        for (unsigned int i = 0; i < children->length; ++i) {
+            busqueda_textos(children->data[i]);
         }
-        node = node->next;
     }
+}
 
-    xmlFreeDoc(doc);
-    xmlCleanupParser();
-
-    return 0;
+int main() {
+    GumboOutput* output = gumbo_parse("<h1>¡Hola Mundo!</h1>");
+    busqueda_textos(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 ```
-Este código utiliza la función `htmlReadFile` de libxml2 para crear una estructura de datos a partir del HTML en el archivo "mi_pagina.html". Luego, utiliza la función `xmlDocGetRootElement` para obtener el nodo raíz y, finalmente, recorre todos los nodos hijos imprimiendo sus nombres.
 
+La salida de este programa será simplemente:
+
+```C
+¡Hola Mundo!
+```
 ## Inmersión profunda
-El análisis de HTML ha sido una práctica común en la programación web desde los primeros días de la web. Anteriormente, se utilizaba principalmente para extraer información de páginas web, como precios de productos o resultados deportivos, para su almacenamiento en bases de datos. Sin embargo, hoy en día, también se utiliza para automatizar acciones en la web, como enviar formularios o hacer clic en botones.
 
-Además de libxml2, existen otras bibliotecas de análisis de HTML en C, como libtidy y gumbo-parser. También se pueden utilizar otras herramientas como Expressions regulares para realizar análisis de HTML, pero esto puede ser menos confiable ya que el HTML puede ser muy variable.
+La interpretación de HTML data desde los inicios de la web cuando los navegadores tenían que interpretarlo para renderizarlo. Existen varias bibliotecas de interpretación de HTML para diferentes lenguajes. En el caso de C, aparte de Gumbo, algunos otros son htmlcxx, MyHTML y libxml2.
 
-El análisis de HTML puede ser una tarea complicada, especialmente si el HTML en la página web no está bien estructurado o cumple con las normas. Es importante tener en cuenta que es posible que el código de HTML no se analice correctamente en estos casos, lo que puede llevar a resultados inesperados.
+La implementación de la interpretación del HTML implica la lectura y análisis del código, identificando etiquetas, atributos y texto. Después de este análisis, queda desglosado en un árbol de nodos (Dom Tree) facilitando su manipulación.
 
 ## Ver también
-- [Documentación de libxml2](http://www.xmlsoft.org/html/index.html)
-- [Documentación de libtidy](http://api.html-tidy.org/)
-- [Documentación de gumbo-parser](https://github.com/google/gumbo-parser)
+
+1. Gumbo: https://github.com/google/gumbo-parser
+2. MyHTML: https://github.com/lexborisov/myhtml
+3. libxml2: http://xmlsoft.org/examples/index.html
+4. htmlcxx: http://htmlcxx.sourceforge.net/

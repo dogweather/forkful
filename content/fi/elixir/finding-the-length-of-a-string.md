@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Elixir: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & miksi?
-Stringin pituuden löytäminen tarkoittaa yksinkertaisesti merkkien määrän laskemista annetusta merkkijonosta. Tätä taitoa tarvitaan useissa ohjelmointitehtävissä, kuten tietyn merkkijonon etsimisessä tai käsittelyssä.
+---
+## Mikä & Miksi?
 
-## Kuinka:
-Elixirissä stringin pituuden löytämiseen on useita tapoja. Voit käyttää sisäänrakennettua `String.length` funktiota tai `Enum.count` funktiota yhdessä split-toiminnon kanssa. Esimerkiksi:
+Merkkijonon pituuden määrittäminen tarkoittaa sen merkkien lukumäärän laskemista. Ohjelmoijat tekevät tämän yleensä tiedon käsittelyn ja logiikan rakentamisen helpottamiseksi.
 
-```Elixir
-stringi = "Tervetuloa Elixirin maailmaan!"
-String.length(stringi)
-# => 28
+## Näin se tehdään:
 
-toinen_stringi = "Elixir on hauskaa opetella"
-Enum.count(String.split(toinen_stringi, " "))
-# => 4
+Elixirissä `String.length/1` -funktio on suunniteltu merkkijonojen pituuden mittaamiseen. Tarkastellaanpa esimerkkiä:
+
+```elixir
+IO.puts String.length("Hei maailma!")
 ```
 
-## Syväsukellus:
-Stringin pituuden laskeminen on ollut tärkeä osa ohjelmointia jo pitkään. Aikaisemmin se saattoi olla haastavaa, mutta nykyään kieliemme sisäänrakennetut ominaisuudet tekevät siitä helppoa. Joissakin muissa ohjelmointikielissä, kuten C:ssä, täytyy toteuttaa oma funktio stringin pituuden laskemiseen.
+Koodin suorittaminen antaa sinulle tuloksen `12`, koska "Hei maailma!" sisältää 12 merkkiä (sisältäen välilyönnin ja huutomerkin).
 
-## Katso myös:
-- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/String.html#length/1)
-- [Elixir School - oppimisresurssi Elixirista](https://elixirschool.com/fi/lessons/basics/string-length/)
+## Syvemmälle
+
+- Historia: Merkkijonon pituuden määrittämisen logiikka on ollut ohjelmoinnin perusteena jo kauan. Elixir, 2011 julkaistu ohjelmointikieli, on ottanut hienosti käyttöön tämän logiikan.
+  
+- Vaihtoehdot: `byte_size/1` on toinen funktio, jota voidaan käyttää. Tämä ei kuitenkaan ole ideaalinen, koska se palauttaa merkkijonon bittikoon, eikä merkkien lukumäärää.
+  
+- Toteutus: Elixirin `String.length/1` -funktion taustalla on Binaries- ja Unicode-koodaus, mikä mahdollistaa monimutkaisten merkkijonojen pituuden mittaamisen.
+
+## Katso myös
+
+1. [Elixirin virallinen dokumentaatio merkkijonoista](https://hexdocs.pm/elixir/String.html#content)
+2. [Erlang/Elixir Binaries, Unicode-säädetty](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html) 
+3. [Elixirin koulutus: Merkkijonot](https://elixirschool.com/en/lessons/basics/strings/) 
+
+---

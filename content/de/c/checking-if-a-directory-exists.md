@@ -10,49 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist eine häufige Aufgabe für Programmierer. Es bezieht sich auf die Überprüfung, ob ein bestimmtes Verzeichnis auf Ihrem System vorhanden ist oder nicht. Programmierer führen diese Überprüfung aus, um sicherzustellen, dass ein durch das Programm benötigtes Verzeichnis vorhanden ist und um Fehler zu vermeiden.
+Prüfen, ob ein Verzeichnis existiert, ist eine grundlegende Funktion in der Programmierung, die es uns erlaubt, die Existenz eines spezifischen Verzeichnisses auf unserer Festplatte zu bestätigen. Programmierern ist dies wichtig, um eventuelle Fehler zu vermeiden, die auftreten können, wenn versucht wird, auf ein nicht existierendes Verzeichnis zuzugreifen oder Dateien darin zu speichern.
 
-# Wie geht's:
+## Wie es geht:
+
+In C können wir die Funktion `stat()` aus der Bibliothek `sys/stat.h` verwenden, um zu überprüfen, ob ein Verzeichnis existiert. Hier ist ein einfaches Beispiel:
 
 ```C
+#include <sys/stat.h>
 #include <stdio.h>
-#include <stdbool.h> //bool data type
-#include <sys/stat.h> //stat() function
 
-int main() {
-    //path to directory to be checked
-    char* path = "path/to/directory"; //change this to desired path
-    
-    //using the stat() function to check if directory exists
-    struct stat sb;
-    bool dir_exists = (stat(path, &sb) == 0);
-    
-    //checking the result
-    if (dir_exists) {
-        printf("%s directory exists!\n", path);
-    } else {
-        printf("%s directory does not exist!\n", path);
-    }
-    
+int main()
+{
+    struct stat stats;
+
+    if (stat("C:\\Verzeichnis", &stats) == 0 && S_ISDIR(stats.st_mode))
+        printf("Das Verzeichnis existiert.\n");
+    else
+        printf("Das Verzeichnis existiert nicht.\n");
+
     return 0;
 }
 ```
+Ausgabe:
 
-Output:
 ```
-path/to/directory directory exists!
+Das Verzeichnis existiert nicht.
 ```
 
-# Tief eintauchen:
+## Tiefer Tauchen:
 
-- **Historischer Kontext:** Das Überprüfen von Verzeichnissen wurde seit den frühen Tagen der Programmierung durchgeführt, um sicherzustellen, dass Programme auf die benötigte Datei- und Ordnerstruktur zugreifen können.
-- **Alternativen:** Statt der stat() Funktion können andere Methoden wie z.B. die opendir() und readdir() Funktionen verwendet werden, um ein Verzeichnis zu öffnen und dessen Inhalt zu lesen.
-- **Implementierungsdetails:** Die stat() Funktion gibt eine Struktur namens "stat" zurück, die Informationen über die Datei enthält. Die Methode, die verwendet wird, um ein Verzeichnis zu überprüfen, ist die Verwendung der "S_IFDIR" konstanten aus der "stat" Struktur.
+Die `stat()` Funktion wurde ursprünglich in der Unix-Betriebssystemfamilie eingeführt und ist seitdem Teil der meisten C-Standardbibliotheken geworden. Es gibt auch Funktionen wie `access()`, `fstat()`, oder `lstat()` die alternativ verwendet werden können. Die `stat()` Funktion allerdings, gibt detaillierte Informationen über das Verzeichnis oder die Datei, einschließlich des Zeitstempels der letzten Modifikation, Größe, und ob es sich um ein Verzeichnis oder eine Datei handelt.
 
-# Sieh auch:
+## Siehe Auch:
 
-- [stat() Funktion Dokumentation](https://en.cppreference.com/w/c/io/stat)
-- [opendir() Funktion Dokumentation](https://en.cppreference.com/w/c/io/opendir)
-- [Standard-Datei-Funktionen in C](https://www.programiz.com/c-programming/c-file-input-output)
+Für mehr Informationen schauen Sie diese Ressourcen an:
+
+- [C Library - <sys/stat.h>](https://www.tutorialspoint.com/c_standard_library/sys_stat_h.htm)
+- [C Programming Files I/O](https://www.programiz.com/c-programming/c-file-input-output)
+- [Directory in C](https://www.geeksforgeeks.org/directory-in-c/)

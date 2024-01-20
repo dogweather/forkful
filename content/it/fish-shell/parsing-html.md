@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di html"
-html_title:           "Fish Shell: Analisi di html"
-simple_title:         "Analisi di html"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,26 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
-Parsing HTML è il processo di analisi e interpretazione del codice HTML. I programmatori lo fanno per estrarre informazioni specifiche dai siti web o per manipolare il contenuto di una pagina.
+## Che Cos’è e Perché?
 
-## Come Fare:
-Per eseguire il parsing di HTML con Fish Shell, è possibile utilizzare il comando `curl` per scaricare il contenuto della pagina web e passarlo al comando `html`. Vediamo un esempio:
+L'analisi HTML (Parsing HTML) prende testo e lo traduce in elementi di un documento. Questo è utile perché permette ai programmatori di estrarre, manipolare e interagire con il contenuto di pagine web.
 
-```Fish Shell
-curl https://www.example.com | html
+## Come fare:
+
+Fish Shell rende facile lavorare con HTML. Ecco un esempio di come prendere un documento HTML e individuarne gli elementi con Fish.
+
+```Fish
+# installazione di pup, uno strumento per l'analisi HTML
+brew install pup
+
+function estrai-html
+    curl -s $argv | pup 'elemento selezionato'
+end
 ```
 
-Questo comando restituirà il codice HTML della pagina web in modo strutturato e facile da interpretare.
+Ecco un esempio di output di come potrebbe apparire:
 
-## Approfondimento:
-Il parsing di HTML è diventato sempre più importante con lo sviluppo del web e delle pagine dinamiche. In passato, i programmatori dovevano utilizzare librerie esterne o altri linguaggi di programmazione per eseguire questa operazione. Tuttavia, con Fish Shell, è possibile farlo in modo semplice e diretto.
+```Fish
+<p>
+    Questo è un esempio di estrazione di contenuto HTML.
+</p>
+```
 
-Un'alternativa al comando `html` di Fish Shell è l'utilizzo di strumenti esterni come BeautifulSoup o RegEx. Tuttavia, incorporare il parsing di HTML direttamente in Fish Shell rende il processo più veloce ed efficiente.
+## Approfondimento
 
-Per quanto riguarda l'implementazione, Fish Shell utilizza il linguaggio di programmazione Go per eseguire il parsing di HTML. Questo garantisce una maggiore velocità e stabilità.
+L'analisi HTML ha avuto un lungo viaggio dai primi giorni del web. Inizialmente, era un compito difficile e dispendioso in termini di tempo, ma strumenti come Fish Shell e pup hanno semplificato questo processo.
 
-## Vedi Anche:
-- [Fish Shell documentation](https://fishshell.com/docs/current/)
+Ci sono diverse alternative là fuori per l'analisi HTML. Alcuni programmatori preferiscono utilizzare Python o JavaScript, entrambi offrono ottime librerie per l'analisi HTML come BeautifulSoup e JSDOM.
 
-- [html command documentation](https://fishshell.com/docs/current/commands.html#html)
+Tuttavia, quello che rende Fish Shell unico è che è stato progettato per essere user-friendly. Ciò significa che funziona bene sia per il codice di scripting veloce che per gli script più grandi.
+
+## Approfondimento
+
+Per ulteriori informazioni sull'analisi HTML e sui diversi strumenti e tecniche disponibili, ecco alcuni link utili:
+
+1. [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+2. [Pup Tool on Github](https://github.com/ericchiang/pup)
+3. [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+4. [JSDOM Documentation](https://github.com/jsdom/jsdom)

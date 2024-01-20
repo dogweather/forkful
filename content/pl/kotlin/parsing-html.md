@@ -1,7 +1,7 @@
 ---
-title:                "Analizowanie html"
-html_title:           "Kotlin: Analizowanie html"
-simple_title:         "Analizowanie html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,23 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego? 
-Parsowanie HTML to proces analizowania kodu źródłowego strony internetowej w celu wydobycia informacji i danych, takich jak tekst, obrazy czy linki. Programiści używają tego procesu, aby automatycznie pozyskiwać potrzebne dane z wielu stron internetowych bez konieczności przeglądania ich ręcznie.
+## Co i dlaczego?
 
-## Jak to zrobić: 
-Kotlin jest świetnym językiem do parsowania HTML, ponieważ ma wbudowane narzędzia i biblioteki, które ułatwiają ten proces. Przykładowy kod poniżej pokazuje, jak użyć biblioteki Jsoup do pobrania tytułu strony internetowej:
+Parsowanie HTML, to proces analizowania kodu HTML, aby uzyskać strukturalne reprezentacje strony. Programiści robią to, by manipulować, wyodrębniać dane, a nawet symulować interakcje użytkownika z stroną.
+
+## Jak to zrobić?
 
 ```Kotlin
-val doc = Jsoup.connect("https://www.example.com").get()
-val title = doc.title()
-println(title)
+val document = Jsoup.connect("http://example.com").get()
+val title = document.title()
+println("Tytuł: $title")
 ```
-W powyższym przykładzie biblioteka Jsoup jest użyta do pobrania zawartości strony www.example.com, a następnie zapisania tytułu strony w zmiennej `title`. Następnie, używając polecenia `println`, tytuł jest wyświetlany na ekranie.
 
-## Głębsze spojrzenie: 
-Parsowanie HTML jest często stosowane w celu pozyskiwania danych z wielu stron internetowych na potrzeby skrajnych przypadków, takich jak analiza rynkowa lub zbieranie danych do analizy trendów. Istnieje wiele bibliotek i narzędzi w różnych językach programowania, takich jak Python i Java, które również umożliwiają parsowanie HTML. Można także używać narzędzi online, takich jak XPath lub regex, do wyodrębniania danych ze stron internetowych.
+Wyjście z tego kodu to:
+```
+Tytuł: Example Domain
+```
 
-## Zobacz także: 
-- Dokumentacja Jsoup: https://jsoup.org/
-- Inne popularne biblioteki do parsowania HTML: https://www.baeldung.com/java-html-parsers
-- Przykłady użycia XPath: https://www.w3schools.com/xml/xpath_intro.asp
+## Głębsze spojrzenie
+
+(1) Kod HTML, służy jako ramy dla stron internetowych od początku internetu. (2) Istnieją inne metody parsowania, takie jak wyrażenia regularne, jednak są one często bardziej skomplikowane i mniej niezawodne niż prostsze biblioteki, takie jak Jsoup. (3) Szczegóły implementacji mogą się różnić, ale zazwyczaj obejmują połączenie z witryną, pobranie kodu HTML, analizowanie go, a następnie przeszukanie wyników.
+
+## Zobacz także
+
+- [JSoup Documentation](https://jsoup.org/)
+- [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+- [HTML Parsing Wikipedia](https://en.wikipedia.org/wiki/HTML_parsing)

@@ -1,7 +1,7 @@
 ---
-title:                "Att läsa en textfil"
-html_title:           "PHP: Att läsa en textfil"
-simple_title:         "Att läsa en textfil"
+title:                "Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -11,27 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att läsa en textfil innebär att programmet hämtar innehållet från en fil och kan använda det i sin kod. Detta är en vanlig uppgift för programmers eftersom det tillåter dem att hantera och manipulera data från externa källor.
 
-## Hur man gör:
-Enklaste sättet att läsa en textfil i PHP är att använda funktionen `file_get_contents()`. Detta åstadkommer samma effekt som att använda kommandot `cat` i Linux. Här är ett exempel på hur man gör det:
+Att läsa en textfil innebär att använda programmering för att hämta information från en extern fil. Programmerare gör det för att behandla, analysera eller ändra fildatat utan att manuellt öppna och ändra filen.
 
+## Så här gör du:
+
+PHP levereras med flera praktiska funktioner för att läsa textfiler. Dessa är `file()`, `file_get_contents()`, och `fopen()`. Här är en snabb startguide om hur du använder `file_get_contents()`.
+
+```PHP
+<?php
+
+$filename = "testfile.txt";
+
+$fileContents = file_get_contents($filename);
+
+echo $fileContents;
+?>
 ```
-$text = file_get_contents("filnamn.txt"); 
-echo $text; 
-```
 
-Detta kommer att skriva ut innehållet av filen `filnamn.txt` på skärmen.
+Om "testfile.txt" innehåller texten "Hej Världen!", då kommer outputen vara just det.
 
-## Djupdykning:
-Att läsa en textfil är en grundläggande uppgift inom programmering, men det finns flera olika sätt att göra det på. En alternativ metod är att använda funktionen `fopen()` för att öppna filen och sedan läsa igenom den rad för rad med hjälp av en while-loop.
+## Deep Dive
 
-För mer komplicerade textfiler med olika format och strukturer finns det även specifika PHP-funktioner som kan hjälpa till med läsningen. Till exempel `fgetcsv()` för att läsa CSV-filer eller `xml_parse()` för XML-filer.
+Historiskt sett har det alltid varit nödvändigt för programmerare att läsa och skriva till filer, även från dagarna av forntalet maskinkod. PHP, trots sin uppstart som ett enkelt scriptspråk för att skapa dynamiska webbsidor, erbjuder robusta filhanteringsfunktioner.
 
-Det är också viktigt att komma ihåg att textfiler måste hanteras på rätt sätt för att undvika säkerhetsrisker, som till exempel injection attacker. Det är därför viktigt att sanitera och validera den information som hämtas från en textfil innan den används i applikationen.
+Alternativen till `file_get_contents()` är `fopen()`, som är mer lämplig för stora filer, eftersom den läser filen i ström och inte allt på en gång som `file_get_contents()`. `file()` är ett annat alternativ som läser filen i en array, vilket kan vara praktiskt om du behöver manipulera individuella linjer.
 
-## Se även:
-- [PHP-manualen för file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-- [PHP-manualen för fopen()](https://www.php.net/manual/en/function.fopen.php)
-- [PHP-manualen för fgetcsv()](https://www.php.net/manual/en/function.fgetcsv.php)
-- [PHP-manualen för xml_parse()](https://www.php.net/manual/en/function.xml-parse.php)
+Implementationen av att läsa textfiler i PHP är ganska enkel, men det finns några filöppningsinställningar att tänka på. Att läsa en fil kräver läsbehörigheter, så se till att din PHP-server har korrekta behörigheter för filen du vill läsa.
+
+## Se Även
+
+Här är några extra resurser:
+
+- PHP.net dokumentation på Filesystem Functions: https://www.php.net/manual/en/ref.filesystem.php
+- W3Schools: PHP File Open/Read/Close: https://www.w3schools.com/php/php_file_open.asp
+- Stack Overflow Discussion på `file_get_contents()` vs `fopen()`: https://stackoverflow.com/questions/555523/file-get-contents-vs-fopen-fread

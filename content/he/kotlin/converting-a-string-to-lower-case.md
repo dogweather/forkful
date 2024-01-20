@@ -1,6 +1,6 @@
 ---
 title:                "המרת מחרוזת לאותיות קטנות"
-html_title:           "Kotlin: המרת מחרוזת לאותיות קטנות"
+html_title:           "Go: המרת מחרוזת לאותיות קטנות"
 simple_title:         "המרת מחרוזת לאותיות קטנות"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,22 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה:
-המרת מחרוזת לאותיות קטנות היא תהליך בו נמיר מחרוזת משתנה לאותיות קטנות בלבד. תהליך זה נעשה בדרך כלל על מנת להקל על הפעולות השונות בין המחרוזת המקורית למחרוזת המומרת לאותיות קטנות.
+## מה ולמה?
+המרת מחרוזת לאותיות קטנות היא אחת מהפעולות הבסיסיות בתכנות, בה מפכילים את כל האותיות שבמחרוזת לאותיות קטנות. תכנתים מבצעים זאת כדי להקל על השוואת מחרוזות, במיוחד במקרים כשהמשתמש הזין טקסט שגוי או באופן לא עקבי.
 
-איך ל:
+## איך:
+נושאים מחרוזת ומשתמשים בפונקציה toLowerCase() כדי להמיר את כל האותיות הגדולות שבה לאותיות קטנות. הנה דוגמה:
+
 ```Kotlin
-val string = "HELLO WORLD"
-val lowerCaseString = string.toLowerCase()
-println(lowerCaseString)
+val str = "Hello, World!"
+val lowerCaseStr = str.toLowerCase()
+println(lowerCaseStr) // prints: "hello, world!"
 ```
-Output: "hello world"
 
-Deeper Dive:
-ההתחלת של העבודה עם מחרוזות ממוקדת על תחילתן של מחרוזות עם אותיות גדולות. המעקב שנעשה לעקב אחר התפתחות התכנים לאורך השנים הכולל הנקבעות המהלכים במחרוזת המקורית. אלטרנטיבות לתהליך המועדף בתכנות כוללות את השימוש בפונקציית מתאימות הפונקציות התיארחו במקרים שיש לנו בידי וערכות משתנים משוכללות לשימוש.
+## רקע עמוק יותר:
+העיקרון של המרת מחרוזת לאותיות קטנות הוא קיים בתכנות כבר מהימים הראשונים שלה. ב-Kotlin, אפשר לעשות זאת גם באמצעות שימוש ב- map ו- Character.toLowerCase(). יש לציין כי toLowerCase() משתמש בהגדרות של מערכת ההפעלה, כך שאם אתם מעוניינים בפלט קבוע, עדיף לשלוט על ה-Locale שלכם.
 
-ראה גם:
-למידע נוסף על מרת מחרוזת לאותיות קטנות ניתן למצוא במקורות הקשורים הבאים:
-- [המדריך הרשמי של Kotlin על מיתאות מחרוזות](https://kotlinlang.org/docs/reference/whatsnew13.html#string)
-- [הבלוג הרשמי של Kotlin - כתבה על כיצד לעשות המרת מחרוזת לאותיות קטנות](https://blog.jetbrains.com/kotlin/2013/01/kotlin-m3-1-is-out/#string)
-- [ויקיפדיה - מידע על מחרוזת ואפשרויות הקישורים שלה](https://en.wikipedia.org/wiki/String_(computer_science))
+```Kotlin
+val str = "Hello, World!"
+val lowerCaseStr = str.map { it.toLowerCase() }.joinToString("")
+println(lowerCaseStr) // prints: "hello, world!"
+```
+## ספריות ומשאבים נוספים:
+1. **Official Kotlin Documentation**: אתר התיעוד הרשמי של Kotlin מסביר המרת מחרוזת לאותיות קטנות בצורה מקיפה. ([לינק](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html))
+2. **Stack Overflow**: מני דיונים ושאלות שנעשו בנוגע לנושא. ([לינק](https://stackoverflow.com/questions/43409645/if-i-want-to-change-all-character-of-string-to-lower-case-using-kotlin-what-is))

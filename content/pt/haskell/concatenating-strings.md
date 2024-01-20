@@ -1,7 +1,7 @@
 ---
-title:                "Juntando strings"
-html_title:           "Haskell: Juntando strings"
-simple_title:         "Juntando strings"
+title:                "Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
+simple_title:         "Concatenando strings"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,50 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O que é & Porquê?
 
-Concatenar strings é o ato de unir duas ou mais strings em uma única string. É uma operação útil para combinar informações e criar novas strings a partir de strings existentes. Programadores geralmente realizam a concatenação de strings para criar saídas de texto mais complexas ou alterar dinamicamente strings em programas.
+Concatenar strings é o processo de juntar, ou ligar, duas ou mais strings, formando uma única string. Programadores fazem isso para manipular ou reformatar dados de texto.
 
 ## Como fazer:
 
-**Exemplo 1: Concatenando duas strings**
+Em Haskell, você pode usar o operador `++` para concatenar strings. Vamos a um exemplo:
 
 ```Haskell
-nome = "João"
-sobrenome = "Silva"
-nomeCompleto = nome ++ " " ++ sobrenome
-```
-Output:
-```
-"João Silva"
+main = do
+  let str1 = "Olá "
+  let str2 = "mundo!"
+  let str3 = str1 ++ str2
+  putStrLn str3
 ```
 
-**Exemplo 2: Concatenando strings e variáveis**
-```Haskell
-idade = 25
-mensagem = "Eu tenho " ++ show idade ++ " anos."
-```
-Output:
-```
-"Eu tenho 25 anos."
-```
+Neste código, `str3` irá conter "Olá mundo!". Quando executar `putStrLn str3`, irá imprimir "Olá mundo!" na tela.
 
 ## Mergulho Profundo:
 
-**Contexto histórico**
+A concatenação de strings é um conceito básico que existe desde o início da programação e está presente em todas as linguagens de programação.
 
-A concatenação de strings é uma operação comum em programação, usada desde os primeiros dias da linguagem de programação Haskell. Foi introduzida e popularizada pela linguagem de programação Lisp em 1958.
+No caso específico de Haskell, uma alternativa a `++` é a função `concat`. Esta função é útil quando temos uma lista de strings que queremos juntar em uma única string.
 
-**Alternativas**
+E sobre a implementação: Em Haskell, uma string é uma lista de caracters. Portanto, concatenar strings é o mesmo que concatenar listas.
 
-Em Haskell, a concatenação de strings com o operador `` `, entre outros métodos. No entanto, a concatenação de strings com o operador `++` é geralmente mais eficiente.
+Aqui está um exemplo usando `concat`:
 
-**Detalhes de implementação**
+```Haskell
+main = do
+  let strList = ["Olá ", "mundo!"]
+  let str = concat strList
+  putStrLn str
+```
 
-Internamente, a operação de concatenação de strings em Haskell é implementada como uma função simples que percorre as strings e as une uma a uma. Isso é feito de forma eficiente, com complexidade de tempo linear em relação ao tamanho das strings.
+Esta impressão resultará em "Olá mundo!".
 
-## Veja também:
+## Ver também:
 
-- [Documentação oficial do Haskell sobre strings](http://haskell.org/onlinereport/standard-prelude.html#t%3AString)
-- [Outras operações úteis com strings em Haskell](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-- [Introdução à linguagem Haskell](https://wiki.haskell.org/Learn_Haskell_in_10_minutes)
+- Guia de Cordas Haskell: hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html
+- Livro Learn You a Haskell for Great Good: learnyouahaskell.com/starting-out#an-intro-to-lists
+- Documentação de String na Biblioteca Haskell: www.haskell.org/onlinereport/prelude-index.html

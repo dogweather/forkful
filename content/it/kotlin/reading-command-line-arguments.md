@@ -1,6 +1,6 @@
 ---
 title:                "Lettura degli argomenti della riga di comando"
-html_title:           "Kotlin: Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
 simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Che cosa & Perché?
-Leggere gli argomenti della riga di comando è il processo di ottenere le informazioni inserite dall'utente durante l'esecuzione del programma attraverso la riga di comando. I programmatori spesso lo fanno per personalizzare il comportamento del programma o per ottenere input dall'utente più velocemente.
+## Che Cosa e Perché?
 
-# Come fare:
-Un esempio di codice Kotlin per leggere gli argomenti della riga di comando potrebbe essere il seguente:
+Leggere gli argomenti da linea di comando significa ricevere input durante l'esecuzione del tuo programma da parte dell'utente. I programmatori lo fanno per rendere i loro programmi più interattivi e flessibili, adattabili alle esigenze dell'utente.
+
+## Come si fa:
+
+In Kotlin, leggere gli argomenti da linea di comando è semplice. Gli argomenti sono disponibili nell'array dei parametri della funzione `main()`. Ecco un esempio:
+
 ```Kotlin
 fun main(args: Array<String>) {
-    println("I file inseriti sono ${args.size}")
-    for (arg in args) {
-        println(arg)
-    }
+   for (arg in args) {
+       println(arg)
+   }
 }
 ```
-Output:
+
+Nell'esempio sopra, il nostro programma stampa tutti gli argomenti passati da linea di comando. Ad esempio, se eseguiamo `kotlin Main.kt arg1 arg2`, l'output sarà:
+
 ```
-I file inseriti sono 3
-file1.txt
-file2.txt
-file3.txt
+arg1
+arg2
 ```
-Questo codice stampa il numero di argomenti inseriti e poi li stampa uno per uno. Possiamo quindi utilizzare gli argomenti ottenuti per eseguire azioni specifiche nel nostro programma.
 
-# Approfondimento:
-La lettura degli argomenti della riga di comando è stata una funzionalità importante sin dai primi sistemi operativi. È diventata ancora più comune con l'avvento dei linguaggi di programmazione della riga di comando, come Bash e Perl. Tuttavia, ci sono alcune alternative per ottenere input dall'utente, come l'input da tastiera o la lettura da file.
+## Approfondimento
 
-Per leggere gli argomenti della riga di comando in Kotlin, utilizziamo l'array `args` passato al metodo `main`. Possiamo anche utilizzare la libreria `kotlin-argparser` per gestire in modo più efficiente gli argomenti della riga di comando.
+Kotlin, come la maggior parte dei linguaggi di programmazione moderni, supporta gli argomenti da linea di comando sin dalla sua nascita. Questa è una funzionalità che viene ereditata dai linguaggi di programmazione C e Unix Shell.
 
-# Vedi anche:
-- Documentazione di Kotlin sulla lettura degli argomenti della riga di comando: https://kotlinlang.org/docs/command-line.html 
-- Esempi di utilizzo di Kotlin-argparser: https://github.com/xenomachina/kotlin-argparser-examples
+Esistono diverse alternative a questa funzionalità, ad esempio l'uso di file di configurazione o l'input da interfaccia grafica. Tuttavia, gli argomenti da linea di comando rimangono uno strumento potente, particolarmente utile per gli script e per l'automazione.
+
+Dal punto di vista dell'implementazione, gli argomenti da linea di comando sono passati al programma come stringhe all'interno dell'array `args`. È responsabilità del programma interpretare questi dati nel modo corretto.
+
+## Vedi Anche
+
+- Per un'introduzione a Kotlin, consulta [Kotlin for Beginners](https://kotlinlang.org/docs/home.html).
+- Per ulteriori informazioni su come lavorare con gli argomenti da linea di comando in Kotlin, consulta [Kotlin Documentation - Command Line Applications](https://kotlinlang.org/docs/command-line.html).

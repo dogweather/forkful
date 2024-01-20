@@ -1,7 +1,7 @@
 ---
-title:                "String in Kleinbuchstaben umwandeln"
-html_title:           "Ruby: String in Kleinbuchstaben umwandeln"
-simple_title:         "String in Kleinbuchstaben umwandeln"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und Warum?
+# Zeichenketten in Kleinbuchstaben umwandeln in Ruby 
 
-Das Konvertieren einer Zeichenkette in Kleinbuchstaben bedeutet, alle Großbuchstaben in einer Zeichenkette in entsprechende Kleinbuchstaben umzuwandeln. Programmierer tun dies, um einheitliche und konsistente Daten zu erhalten, insbesondere bei der Verarbeitung von Eingaben von Benutzern oder Daten aus externen Quellen.
+## Was und Warum?
+Die Umwandlung einer Zeichenkette in Kleinbuchstaben (oder auch 'lower case') ist ein häufiger Bedarf in der Programmierung. Sie hilft, die Datenkonsistenz zu bewahren und Vergleiche zwischen Zeichenketten, unabhängig von der ursprünglichen Eingabe, zu erleichtern.
 
-## Wie geht's:
-
-```Ruby
-"Hallo WELT".downcase
-# => "hallo welt"
-```
+## Wie?
+Ruby macht es uns leicht. Sie nutzt die Methode `.downcase` für diese Aufgabe. Sie wird direkt auf eine Zeichenkette angewendet. Probier es aus:
 
 ```Ruby
-"123 ABC".downcase
-# => "123 abc"
+text = "Hallo Welt"
+lower_text = text.downcase
+puts lower_text
+# Ausgabe: "hallo welt"
 ```
 
-### Ausgabe:
+## Tiefere Information
 
-```
-hallo welt
-123 abc
-```
+1. Historischer Kontext: Ruby hat diese Funktion immer angeboten, sie wurde nicht in späteren Versionen hinzugefügt.
+2. Alternativen: Es gibt keine native Alternativen zur Methode `.downcase` in Ruby, um eine Zeichenkette in Kleinbuchstaben zu konvertieren. Andere Sprachen bieten jedoch unterschiedliche Methoden an.
+3. Implementierungsdetails: Intern wird `.downcase` global auf die gesamte Zeichenkette angewendet und konvertiert alle Großbuchstaben in Kleinbuchstaben. Beachte, dass `.downcase` keine Änderungen an der Originalzeichenkette vornimmt. Stattdessen gibt sie eine neue Zeichenkette mit den Änderungen zurück.
 
-## Tief eintauchen:
+## Siehe auch
 
-### Historischer Kontext:
-Die Idee, Großbuchstaben in Kleinbuchstaben umzuwandeln, geht auf die frühen Tage des Computerprogrammierens zurück, als die Zeichenkodierung ASCII (American Standard Code for Information Interchange) verwendet wurde. In ASCII ist jeder Großbuchstabe durch ein entsprechendes kleines Pendant dargestellt, was zu der Konvention führte, alle Zeichen in Kleinbuchstaben umzuwandeln, um die Lesbarkeit zu verbessern.
+Für mehr Details:
 
-### Alternativen:
-Neben der Verwendung der `downcase` Methode gibt es auch andere Möglichkeiten, eine Zeichenkette in Kleinbuchstaben zu konvertieren. Zum Beispiel kann die Methode `capitalize` verwendet werden, um nur den ersten Buchstaben einer Zeichenkette in einen Großbuchstaben umzuwandeln.
-
-### Implementierungsdetails:
-In Ruby wird die `downcase` Methode durch die `String` Klasse bereitgestellt, die in der Standardbibliothek enthalten ist. Sie wird von allen String-Objekten aufgerufen und liefert eine neue Zeichenkette mit allen Buchstaben in Kleinbuchstaben zurück.
-
-## Siehe auch:
-
-- [Ruby String-Dokumentation](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
-- [ASCII Character Encoding](https://www.ascii-code.com/)
+- Ruby-Dokumentation: [String#downcase](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)
+- Anwendung von `.downcase` in Ruby-Programmen: [Praktische Beispiele](https://www.rubyguides.com/2018/08/ruby-downcase-method/)
+- Unterschieden zwischen `.downcase` und `.downcase!`: [Erläuterungen](https://stackoverflow.com/questions/3832261/what-is-the-difference-between-downcase-and-downcase-in-ruby)

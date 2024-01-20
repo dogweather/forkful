@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "Ruby: 텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-텍스트 검색 및 대체란 무엇인가요?
-텍스트 검색 및 대체는 프로그래머가 특정 문자나 단어를 다른 문자나 단어로 바꾸는 작업을 말합니다. 
-이를 통해 코드를 더 효율적이고 간결하게 만들 수 있습니다. 
+## 무엇이며 왜 사용하는가?
 
-## 어떻게:
-```Ruby
-# 대문자를 소문자로 바꾸는 예제
-text = "HELLO WORLD"
-puts text.downcase
-# output: hello world
+프로그래밍에서 텍스트 검색 및 교체는 문자열 내에서 특정 단어를 찾거나 다른 단어로 교체하는 과정입니다. 이를 통해 데이터 수정, 정리, 정규화 등을 쉽게 수행할 수 있습니다.
 
-# 문자를 다른 문자로 바꾸는 예제
-text = "I love Ruby"
-puts text.gsub("love", "like")
-# output: I like Ruby
+## 어떻게 사용하는가:
+
+Ruby에서는 `gsub` 메서드를 사용하여 텍스트 검색 및 교체를 할 수 있습니다. 
+
+```Ruby 
+text = '안녕하세요. 저는 Ruby 개발자입니다.'
+text.gsub('Ruby', '파이썬') 
+=> "안녕하세요. 저는 파이썬 개발자입니다."
 ```
 
-## 깊게 들어가기:
-1. 역사적 배경: 텍스트 검색 및 대체는 단순한 문자열 처리 방법이 아니라 프로그래밍 언어의 발전과 함께 발전해온 기능입니다.
-2. 대체 방법의 대안: 텍스트 검색 및 대체 외에도 정규 표현식, split/join 등 다양한 방법으로 문자열을 처리할 수 있습니다.
-3. 구현 세부사항: Ruby에서는 gsub 메소드를 사용하여 문자열을 대체할 수 있으며, 정규 표현식을 활용할 수도 있습니다.
+여기서 'Ruby'를 찾아서 '파이썬'으로 교체했습니다.
 
-## 관련 자료:
-- [Ruby Documentation](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub)
-- [Regular Expressions in Ruby](https://medium.com/@rameshdharan/regularexpressions-in-ruby-df79635c7dcc)
-- [Splitting and Joining Strings in Ruby](https://ruby-doc.org/core-2.7.0/String.html#method-i-split)
+## 깊이 파헤쳐보기
+
+텍스트 검색 및 교체는 고대 문자 처리시스템에서부터 존재한 기능입니다. 이 기능은 마이크로소프트 워드와 같은 프로그램에서도 많이 사용됩니다.
+
+Ruby 외의 다른 프로그래밍 언어에서도 이런 방법들이 존재합니다. JavaScript에서는 `replace()`, Python에서는 `replace()` 함수를 사용합니다.
+
+`gsub` 메서드는 내부적으로 정규 표현식을 사용합니다. 이는 텍스트 검색 및 교체를 정확하게 수행하기 위한 강력한 도구입니다. `gsub`는 'Global Substitution'의 줄임말로, 전체 텍스트에서 매칭되는 모든 항목을 교체합니다.
+
+## 참고 자료
+
+- [Ruby Documentation for String#gsub](https://ruby-doc.org/core-2.6.1/String.html#method-i-gsub)
+- [Ruby Guide on Regular Expressions](https://ruby-doc.org/core-2.6.1/Regexp.html)
+- [JavaScript String Replace Method](https://www.w3schools.com/jsref/jsref_replace.asp)
+- [Python String Replace Method](https://docs.python.org/3/library/stdtypes.html#str.replace)

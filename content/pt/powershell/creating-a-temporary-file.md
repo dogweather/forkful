@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "PowerShell: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,35 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Criar um arquivo temporário é o processo de criar um arquivo que será usado temporariamente para armazenar informações em um programa. Programadores geralmente fazem isso para economizar espaço de memória e aumentar a eficiência do programa.
+## O quê & Por quê?
+Criar um arquivo temporário significa gerar um arquivo que será usado apenas enquanto o programa estiver em execução. Programadores fazem isso para armazenar dados intermediários sem usar a memória.
 
 ## Como fazer:
-No PowerShell, você pode criar um arquivo temporário usando o cmdlet `New-TemporaryFile`. Aqui está um exemplo de como usá-lo:
+É fácil no PowerShell. Aqui está um código para criar um arquivo temporário:
 
 ```PowerShell
-# Criar um arquivo temporário e atribuir à variável $tempFile
-$tempFile = New-TemporaryFile
+# Criar um arquivo temporário
+$tempFile = [System.IO.Path]::GetTempFileName()
+```
 
-# Adicionar conteúdo ao arquivo temporário
-Add-Content -Path $tempFile -Value "Este é um arquivo temporário"
+Quando você executa isso, ele retorna o nome do arquivo temporário gerado:
 
-# Ver o conteúdo do arquivo temporário
+```PowerShell
+C:\Users\SeuNome\AppData\Local\Temp\tmpFFFF.tmp
+```
+
+Você pode escrever nesse arquivo temporário assim:
+
+```PowerShell
+"Olá, código temporário!" | Out-File -FilePath $tempFile
+```
+
+Depois disso, lendo o conteúdo do arquivo teríamos:
+
+```PowerShell
 Get-Content -Path $tempFile
+```
 
-# Remover o arquivo temporário
+Isso retorna 'Olá, código temporário!'
+
+Lembre-se de limpar e excluir o arquivo temporário após o uso!
+
+```PowerShell
 Remove-Item -Path $tempFile
 ```
 
-Output:
+## Aprofundando
+Os arquivos temporários têm sido utilizados por anos como uma maneira fácil de armazenar dados de curto prazo. Existem alternativas, como armazenamento em memória (mais rápido, mas limitado pelo tamanho da memória) e bancos de dados (mais robustos, mas mais complicados).
 
-```PowerShell
-Este é um arquivo temporário
-```
+Ao trabalhar com arquivos temporários no PowerShell, você está realmente interagindo com o sistema operacional subjacente. O PowerShell apenas fornece uma maneira fácil de fazer isso.
 
-## Mergulho profundo:
-Criar arquivos temporários é uma prática comum na programação e remonta aos primórdios da computação. Existem outras formas de armazenar informações temporariamente, como o uso de variáveis, mas criar arquivos temporários pode ser mais eficiente em alguns casos, especialmente quando se trabalha com grandes quantidades de dados. Ao criar um arquivo temporário, é importante lembrar de removê-lo após o uso para evitar a ocupação desnecessária de espaço de armazenamento.
+## Ver também
+Confira esses links para obter mais informações detalhadas sobre o trabalho com arquivos temporários:
 
-## Veja também:
-- Documentação oficial do cmdlet `New-TemporaryFile`: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-temporaryfile?view=powershell-7.1
-- Artigo sobre como criar e usar arquivos temporários no PowerShell: https://www.howtogeek.com/682770/how-to-create-and-use-temporary-files-in-powershell/
+1. Documentos do Microsoft PowerShell: https://docs.microsoft.com/pt-br/powershell/
+2. Artigo sobre arquivos temporários: https://www.codeproject.com/Articles/43438/Understanding-Temporary-Files

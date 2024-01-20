@@ -1,7 +1,7 @@
 ---
-title:                "Sjekk om en mappe eksisterer"
-html_title:           "Go: Sjekk om en mappe eksisterer"
-simple_title:         "Sjekk om en mappe eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "Go: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,39 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sjekke om en mappe eksisterer er en viktig del av programmering fordi det lar deg håndtere potensielle feil og unngå krasj i applikasjonen din. Det er også nyttig når du trenger å navigere gjennom mapper for å finne og behandle filer.
+Å sjekke om en mappe eksisterer i programmering er å bekrefte om en gitt filsti peker til en gyldig katalog. Dette er viktig for å unngå feil som kan oppstå når du prøver å manipulere mappen (for eksempel lese eller skrive til den) hvis den ikke finnes.
 
-## Hvordan:
-Du kan bruke Go sin innebygde "os" pakke for å sjekke om en mappe eksisterer. Her er et eksempel på hvordan du kan gjøre det:
+## Hvordan du gjør det:
+Her er en kortfattet Go kodebit som sjekker om en mappe eksisterer:
 
 ```Go
-import "os"
+package main
+
+import (
+    "fmt"
+    "os"
+)
 
 func main() {
-    dir := "./myFolder"
+    _, err := os.Stat("/path/to/directory")
 
-    if _, err := os.Stat(dir); err != nil {
-        if os.IsNotExist(err) {
-            fmt.Println("Mappen finnes ikke")
-        } else {
-            fmt.Println("Noe gikk galt")
-        }
+    if os.IsNotExist(err) {
+        fmt.Println("Mappen eksisterer ikke")
     } else {
-        fmt.Println("Mappen finnes")
+        fmt.Println("Mappen eksisterer")
     }
 }
 ```
+Utfører du denne koden, vil output være enten `Mappen eksisterer ikke` eller `Mappen eksisterer`, avhengig av om mappen eksisterer.
 
-I dette eksempelet bruker vi "os".Stat() -funksjonen for å sjekke om mappen eksisterer. Hvis det er en feil, sjekker vi om den er relatert til at mappen ikke eksisterer. Hvis det er tilfelle, skriver vi ut en melding som indikerer dette. Ellers antar vi at mappen eksisterer og skriver ut en melding som bekrefter dette.
+## Dyp Dykking
+Go-språket har en innebygget pakke kalt `os` for å håndtere operativsystemrelaterte funksjoner, som fil- og mappeoperasjoner. Metoden `os.Stat(path)` henter filinformasjonen. Hvis det oppstår en feil og den er av typen `os.IsNotExist`, indikerer det at mappen ikke eksisterer.
+En viktig detalj å merke seg er at denne metoden vil returnere `false` både når en fil eller mappe ikke finnes, og når det oppstår en feil av hvilken som helst annen grunn.
+Alternativer til denne metoden kan være å bruke tredjepartsbibliotek, men de bruker vanligvis samme metode bak kulissene og gir mer alvorlige feilhåndteringsfunksjoner.
 
-## Dykk ned:
-Sjekke om en mappe eksisterer kan være nyttig for å unngå unødvendige feil i applikasjonen din. Det kan også være nyttig å bruke "os" pakken for å utføre andre handlinger på mapper og filer, som å lage eller slette dem.
-
-I eldre versjoner av Go, måtte man bruke "fileutils" pakken for å sjekke om en mappe eksisterer. Men nå er denne funksjonaliteten en del av "os" pakken, noe som gjør det enklere å bruke og mer tilgjengelig.
-
-Når du sjekker om en mappe eksisterer, bruker du egentlig en systemkall til operativsystemet for å utføre denne oppgaven. Hvis du ønsker å dykke dypere ned i det tekniske aspektet av hvordan dette fungerer, kan du lese mer om systemkall og fil operasjoner i Go.
-
-## Se også:
-- [Go "os" pakke dokumentasjon](https://golang.org/pkg/os/)
-- [Go System Calls tutorial](https://www.geeksforgeeks.org/system-calls-in-golang/)
-- [Sammenlikning av systemkall mellom ulike operativsystemer](https://www.in.go/typesof-system-calls-for-file-management-in-linu/ux-file-management-system-calls/)
+## Se Også
+For mer detaljerte informasjon og relaterte ressurser, besøk følgende linker:
+1. Go offisiell dokumentasjon: [os Pakken](https://golang.org/pkg/os/)
+2. Go Blogg: [Error handling and Go](https://blog.golang.org/error-handling-and-go)
+3. Stack Overflow post: [How do you check if a directory exists in Go?](https://stackoverflow.com/questions/10510691/how-do-you-check-if-a-file-exists-without-opening-it-in-the-go-language)

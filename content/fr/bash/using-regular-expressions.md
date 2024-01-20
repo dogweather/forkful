@@ -1,6 +1,6 @@
 ---
 title:                "Utiliser les expressions régulières"
-html_title:           "Bash: Utiliser les expressions régulières"
+html_title:           "C: Utiliser les expressions régulières"
 simple_title:         "Utiliser les expressions régulières"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,18 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les développeurs l'utilisent-ils ?
-Les expressions régulières sont des séquences de caractères utilisées pour rechercher et manipuler des chaînes de caractères. Les développeurs les utilisent pour effectuer des opérations telles que la validation de données, l'extraction d'informations ou la manipulation de fichiers. Cela permet d'automatiser des tâches récurrentes et de gagner du temps lors de la manipulation de données.
+## Qu'est-ce que c'est & Pourquoi ?
 
-## Comment faire :
-Les expressions régulières peuvent être utilisées dans le terminal avec des commandes Bash telles que `grep`, `sed` et`awk`. Par exemple, pour trouver tous les fichiers contenant le mot "bonjour", vous pouvez utiliser la commande suivante :
+Les expressions régulières, aussi appelées "regex", sont des suites de caractères formant un motif de recherche. Elles sont utilisées pour manipuler des chaînes de caractères (le texte) en facilitant les tâches de recherche, d'extraction et de remplacement d'information. 
+
+## Comment faire:
+
+Voici des exemples simples pour démarrer.
+
+Pour trouver tous les fichiers dans un répertoire qui ont 'txt' dans leur nom:
+
 ```Bash
-grep -l "bonjour" *
+ls | grep 'txt'
 ```
-Cela affichera tous les fichiers contenant le mot "bonjour" dans leur nom ou leur contenu.
 
-## Plongez dans les détails :
-Les expressions régulières ont été développées dans les années 1950 et ont été popularisées dans les années 1970 par le langage de programmation Perl. Il existe également des alternatives comme les expressions rationnelles, qui sont plus simples à utiliser mais offrent moins de flexibilité. L'implémentation des expressions régulières implique l'utilisation d'opérateurs et de constructions spécifiques, tels que `*` pour représenter un nombre quelconque de caractères, ou `[]` pour représenter une classe de caractères.
+Pour trouver tous les chiffres dans une chaîne:
 
-## Voir aussi :
-Pour en savoir plus sur les expressions régulières et leur utilisation dans Bash, consultez la documentation officielle de GNU `grep` (https://www.gnu.org/software/grep/manual/grep.html#Regular-Expressions) et le tutoriel Bash du site LinuxCommand.org (https://linuxcommand.org/lc3_adv_les8.php). Vous pouvez également trouver des listes complètes d'opérateurs et de constructions dans la documentation en ligne de Perl (https://perldoc.perl.org/perlre.html) et de Python (https://docs.python.org/fr/3/library/re.html).
+```Bash
+echo "abc123xyz" | grep -o '[0-9]'
+```
+
+Affiche:
+
+```Bash
+1
+2
+3
+```
+
+## Approfondissement
+
+Historiquement, les regex ont été introduites dans les années 50 avec l'éditeur de texte QED. 
+
+Comme alternatives, certaines langages (comme Python) ont leurs propres bibliothèques pour manipuler des chaînes sans avoir besoin des regex, et les SGBD ont des fonctionnalités pour gérer directement les chaînes au niveau de la base de données.
+
+Les expressions régulières sont implémentées différemment selon les langages de programmation. En Bash, ils sont supportés depuis la version 3.0 grâce à l'opérateur `=~`. 
+
+## Voir aussi
+
+- Tutorial Bash : https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
+- Guide des expressions régulières : https://www.regular-expressions.info/tutorial.html
+- Documentation officielle de la commande `grep` : http://man7.org/linux/man-pages/man1/grep.1.html

@@ -1,7 +1,7 @@
 ---
-title:                "Virheenkorjaustulosteen tulostaminen"
-html_title:           "PHP: Virheenkorjaustulosteen tulostaminen"
-simple_title:         "Virheenkorjaustulosteen tulostaminen"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,50 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
+---
 
-Tulostaminen debug-tulostetta on tapa, jolla voit tarkastella ohjelman suorituskykyä ja virheitä koodin suorittamisen aikana. Useimmat ohjelmoijat käyttävät tätä tekniikkaa, koska se auttaa heitä tunnistamaan ja korjaamaan virheitä nopeammin ja tehokkaammin.
+## Mitä & Miksi?
 
-## Kuinka:
+Tulostusvälineet tekevät ohjelmistoon syötteitä ja tulosteita näkyviksi, mitä kutsutaan debug-tulostukseksi. Ne ovat kriittisen tärkeitä ohjelmointi-virheiden löytämisessä ja korjaamisessa.
 
-```php
-// Tulosta tekstiä konsoliin
-echo "Debug-tulostus on päällä!";
+---
 
-// Tulosta muuttujan arvo
-$muuttuja = "Tulosta tämä!";
-echo $muuttuja;
+## Näin se tehdään:
 
-// Tulosta taulukon sisällöt
-$taulukko = array("yksi", "kaksi", "kolme");
-print_r($taulukko);
+PHP:n käyttöön on saatavilla useita debug-tulostuksen työkaluja. Yksinkertaisin niistä on `echo` ja `print` funktiot.
 
-// Tulosta olio
-$laskuri = new Laskuri();
-var_dump($laskuri);
+```PHP
+<?php
+$muuttuja = "Moi Suomi!";
+echo $muuttuja; // Tulostaa: Moi Suomi!
+?>
 ```
 
-Esimerkkilähtö:
+Voimme myös käyttää `var_dump` funktiota tarkastellaksemme muuttujan tietoja.
 
-```
-Debug-tulostus on päällä!
-Tulosta tämä!
-Array
-(
-    [0] => yksi
-    [1] => kaksi
-    [2] => kolme
-)
-object(Laskuri)#1 (0) {
-}
+```PHP
+<?php
+$muuttuja = array("Helsinki", "Espoo", "Vantaa");
+var_dump($muuttuja);
+?>
+// Tulostaa: array(3) { [0]=> string(8) "Helsinki" [1]=> string(5) "Espoo" [2]=> string(6) "Vantaa" }
 ```
 
-## Syvään kaivautuminen
+Konsoliin voi tulostaa myös `print_r` funktiolla:
 
-Debug-tulostus on ollut osa PHP:ta lähes sen alkuajoista lähtien ja sitä käytetään edelleen yhtenä tärkeimmistä työkaluista virheiden löytämiseen ja korjaamiseen ohjelmointivaiheessa. Sitä voidaan käyttää myös apuna koodin tarkastelussa ja optimoinnissa. Vaihtoehtoisesti voit myös käyttää erillisiä debuggaustyökaluja, kuten Xdebug.
+```PHP
+<?php
+$muuttuja = array("Jyväskylä", "Turku", "Oulu");
+print_r($muuttuja);
+?>
+// Tulostaa: Array ( [0] => Jyväskylä [1] => Turku [2] => Oulu )
+```
+
+---
+
+## Syvempi sukellus
+
+PHP:n debug-tulostuksen työkalut ovat tulleet pitkän matkan. Ensimmäisissä PHP-versioissa `echo` ja `print` olivat yleisimmin käytössä. Saatavilla on monia muita työkaluja, kuten Xdebug ja PHP_Debug, jotka tarjoavat monipuolisia toimintoja ja ovat tehokkaita isojen projektien debuggauksessa.
+
+On olemassa myös muita PHP debug -teknologioita kuin printtaus. Esimerkiksi Interactive PHP Debugging (`php -a`) antaa sinun suorittaa koodia komentoriviltä, hyödyllinen esimerkiksi silloin kun haluat testata pienen koodinpätkän toimivuutta nopeasti. 
+
+---
 
 ## Katso myös
 
-- https://www.php.net/manual/en/function.print-r.php
-- https://www.php.net/manual/en/function.var-dump.php
-- https://xdebug.org/
+[Xdebug](https://xdebug.org/): Tehokas ja monipuolinen PHP debuggaustyökalu.
+
+[PHP_Debug](https://pear.php.net/package/PHP_Debug): PEAR paketin PHP debuggaustyökalu.
+
+[PHP virallinen dokumentaatio](https://www.php.net/manual/en/debugger.php): Lue lisää PHP:n sisäänrakennetuista debug-työkaluista.
+
+[PHPUnit](https://phpunit.de/): Yksikkötestaus on usein paras tapa debugata. PHPUnit on standardi Työkalu PHP:ssä.

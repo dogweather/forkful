@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i et streng"
-html_title:           "Swift: Store bokstaver i et streng"
-simple_title:         "Store bokstaver i et streng"
+title:                "Sette stor bokstav i en streng"
+html_title:           "Swift: Sette stor bokstav i en streng"
+simple_title:         "Sette stor bokstav i en streng"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,20 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Hva betyr det egentlig å "kapitalisere en streng" når vi snakker om programmering? Det kan vi tenke på som å gjøre den første bokstaven i en tekst stor. Programmere gjør dette for å gjøre tekst mer lesbar og enklere å skille mellom ord og setninger.
 
-## Hvordan:
-Vi kan enkelt kapitalisere en streng ved å bruke `.capitalized` metoden på en tekstvariabel. For eksempel:
+Kapitalisering av en streng betyr å gjøre den første bokstaven i hver eneste ord i strengen stor. Programmers gjør dette for å forbedre lesbarheten og legge til estetisk verdi til en tekst. 
+
+## Hvordan gjør man det:
+
+Her er et kodeeksempel i Swift:
+
 ```Swift
-let tekst = "velkommen til swift tips!"
-print(tekst.capitalized)
+let navn = "henrik ibsen"
+let kapitalisertNavn = navn.capitalized
+print(kapitalisertNavn)
 ```
-Dette vil gi outputen "Velkommen Til Swift Tips!".
 
-## Dyp Dykk:
-Historisk sett har kapitalisering av tekst vært en viktig del av skriving og lesing. I programmering, spesielt når vi arbeider med brukergrensesnitt, er det viktig å ha en konsistent formatering av tekst for å gjøre den mer lesbar for brukeren. Andre alternativer for å kapitalisere en streng inkluderer `.uppercased` og `.lowercased` metoder, som gjør hele teksten stor eller liten uavhengig av den opprinnelige formateringen. For implementasjonsdetaljer, kan vi se nærmere på hvilke regler som brukes for å bestemme hva som skal kapitaliseres og hva som ikke skal.
+En kjøringssekvens av koden ovenfor vil gi:
+
+```
+Henrik Ibsen
+```
+
+## Dypdykk:
+
+Historisk kontekst: kapitalisering av strenger har vært et vanlig verktøy i typografi i hundrevis av år. 
+
+Alternativer: Swift gir en alternativ metode, `uppercased()`, som gjør alle tegnene i strengen til store bokstaver. 
+
+Implementeringsdetaljer: I Swift skjer kapitalisering ved å gå gjennom strengen ord for ord, og konvertere det første tegnet i hvert ord til en stor bokstav.
 
 ## Se også:
-For mer informasjon om kapitalisering av strenger, kan du sjekke ut følgende ressurser:
-- [Apple official documentation - String Manipulation] (https://developer.apple.com/documentation/swift/string_manipulation)
-- [Swift By Sundell - Capitalizing Strings] (https://www.swiftbysundell.com/tips/capitalizing-strings/)
+
+For mer informasjon om strengmanipulasjon i Swift, ta en titt på disse lenkene:
+
+- [Offisiell Swift dokumentasjon](https://docs.swift.org)
+- [Strengmanipulasjon Guide fra Ray Wenderlich](https://www.raywenderlich.com/449-swift-string-manipulation-operators-and-more)
+- [Stack Overflow Diskusjon om Strengkapitalisering](https://stackoverflow.com/questions/26364914)

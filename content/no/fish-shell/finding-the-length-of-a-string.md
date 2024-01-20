@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden av en streng"
-html_title:           "Fish Shell: Å finne lengden av en streng"
-simple_title:         "Å finne lengden av en streng"
+title:                "Finne lengden på en streng"
+html_title:           "Arduino: Finne lengden på en streng"
+simple_title:         "Finne lengden på en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Fish Shell: Finn lengden av en streng
+# Lengde på en streng i Fish Shell
 
 ## Hva & Hvorfor?
 
-Hvis du jobber som programmerer, er du sannsynligvis vant til å jobbe med tekststrenger. Men noen ganger trenger du å finne ut hvor mange tegn en bestemt streng inneholder. Det er der "lengden av en streng" kommer inn i bildet. Det er rett og slett å finne ut hvor mange tegn en streng består av.
+Å finne lengden på en streng handler om å telle antall tegn i en gitt tekststreng. Dette er nyttig for programmerere for å håndtere strengen på en mer kontrollert og effektiv måte, som å trimme den, dele den, osv.
 
-## Slik gjør du det:
+## Hvordan:
 
-For å finne lengden av en streng i Fish Shell, kan du bruke "string lengde" kommandoen. Her er et eksempel på hvordan du kan bruke den:
+Her er koden og eksempelet:
 
-```
-Fish Shell> set streng "Hei alle sammen!"
-Fish Shell> string lengde $streng
-16
+```Fish Shell 
+string length -q "Hei Verden"
 ```
 
-Som du kan se, blir resultatet (16) skrevet ut ved hjelp av lengdekommandoen. Det er en rask og enkel måte å finne ut lengden på en streng på!
+Det gir ut:
 
-## Dypdykk
+```Fish Shell 
+11
+```
 
-Historisk sett har string lengde vært en viktig funksjon i datamaskinprogrammering. Det gir programmerere muligheten til å manipulere tekstdata på en effektiv måte. Selv om "lengden av en streng" er en vanlig funksjon i de fleste programmeringsspråk, finnes det noen alternative måter å finne lengden på en streng. For eksempel kan du bruke "count" kommandoen, som teller antall tegn i en streng.
+En lengde av 11 betyr at det er 11 tegn i strengen "Hei Verden".
 
-Når det gjelder implementeringen av "lengden av en streng" i Fish Shell, bruker den faktisk den samme metoden som andre programmeringsspråk. Det er fordi Fish Shell er kompatibelt med Bash Shell og bruker mye av de samme kommandoene og funksjonene.
+## Deep Dive:
 
-## Se også
+Historisk sett har lengden på en streng vært en grunnleggende funksjon i mange programmeringsspråk. I Fish shell, har `string length`-kommandoen vært i prioritert fokus for å støtte behandling av strenger på en enkel og intuitiv måte.
 
-Hvis du vil lære mer om Fish Shell og dens funksjoner, kan du sjekke ut disse ressursene:
+Alternativt, hvis du ønsker å telle antall tegn manuelt i en streng, kan du bruke en `for`-løkke og en tellervariabel, men dette er mer tidkrevende enn å bruke innebygde kommandoer.
 
-- [Fish Shell's offisielle nettside](https://fishshell.com/)
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
-- [Fish Shell på GitHub](https://github.com/fish-shell/fish-shell)
+Implementasjon av `string length` i Fish shell handler om å telle antall tegn, inkludert mellomrom og spesialtegn. Dette er annerledes enn noen andre språk hvor blanke tegn ignoreres.
+
+## Se også:
+
+For mer informasjon og hjelp på Fish Shell programmering, besøk følgende ressurser. 
+
+1. [Offisielle Fish Shell dokumentasjonen](https://fishshell.com/docs/current/index.html)
+2. [Fish Shell Wiki](https://github.com/fish-shell/fish-shell/wiki)
+3. [StackOverflow Fish Shell spørsmål](https://stackoverflow.com/questions/tagged/fish)

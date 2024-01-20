@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "Ruby: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,30 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Pesquisar e substituir texto é uma técnica comum entre os programadores. É essencialmente a ação de encontrar um determinado pedaço de texto em um arquivo ou código e substituí-lo por outro texto. Os programadores frequentemente usam essa técnica para corrigir erros de digitação, atualizar informações em grandes quantidades de dados ou fazer mudanças em seu código de maneira rápida e eficiente.
+## O que é & Por quê?
+
+A busca e substituição de texto são operações comuns na programação para encontrar padrões específicos em uma string e substituí-los por outro texto. Os programadores fazem isso para manipular e alterar dados de texto conforme necessário.
 
 ## Como fazer:
-```
-# Exemplo 1: Substituindo uma palavra específica por outra em uma string
-texto = "Olá, mundo!"
-novo_texto = texto.gsub("mundo", "Ruby")
-puts novo_texto
-=> "Olá, Ruby!"
 
-# Exemplo 2: Substituindo todas as ocorrências de uma string por outra dentro de um arquivo
-arquivo = File.read("arquivo.txt")
-novo_arquivo = arquivo.gsub("azul", "vermelho")
-File.write("arquivo.txt", novo_arquivo)
+Aqui está um exemplo de como você pode procurar e substituir texto no Ruby:
+
+```ruby
+frase = "Eu amo batatas."
+frase.gsub!("batatas", "chocolates")
+puts frase
 ```
 
-## Aprofundando:
-A técnica de pesquisar e substituir tem sido usada há anos em processamento de texto e edição de documentos. No passado, era comum usar um editor de texto como o Vim ou o Emacs para realizar essas ações. No entanto, com a introdução de linguagens de programação, como o Ruby, essa tarefa se tornou muito mais acessível e eficiente.
+A saída seria:
 
-Existem também alternativas para pesquisar e substituir texto no Ruby, como o método `sub` que substitui apenas a primeira ocorrência do texto ou o método `gsub!` que modifica diretamente a string em vez de criar uma nova.
+```ruby
+"Eu amo chocolates."
+```
 
-Em termos de implementação, o Ruby utiliza expressões regulares para realizar a pesquisa e substituição de texto. Essas são sequências de caracteres especiais utilizadas para encontrar ou validar padrões de texto em uma string. Saber como usar expressões regulares é um conhecimento valioso para ser um programador Ruby eficiente.
+## Aprofundamento:
+
+### Contexto histórico:
+
+A função de pesquisa e substituição tem sido uma parte fundamental da programação desde o início. Em termos de Ruby, o método `gsub` (substituição global) é um método incorporado na classe `String` que permite a substituição de todas as ocorrências de uma sequência especificada.
+
+### Alternativas:
+
+Ruby oferece mais de uma maneira de realizar a busca e substituição de texto. Além de `gsub`, você também pode usar `sub` para substituir apenas a primeira ocorrência de um padrão em uma string.
+
+```ruby
+frase = "Eu amo batatas. Batatas são ótimas."
+frase.sub!("Batatas", "Morangos")
+puts frase
+```
+
+A saída seria:
+
+```ruby
+"Eu amo batatas. Morangos são ótimas."
+```
+
+### Detalhes de implementação:
+
+Gsub e sub funcionam procurando um padrão especificado em uma string. Você pode especificar esse padrão como uma string ou uma expressão regular. Após encontrar o padrão, gsub ou sub substitui esse padrão com a substituição fornecida.
 
 ## Veja também:
-- [Documentação Ruby para `String#gsub`](https://ruby-doc.org/core-3.0.0/String.html#method-i-gsub)
-- [Tutorial sobre como usar expressões regulares em Ruby](https://www.rubyguides.com/ruby-tutorial/ruby-regular-expressions/)
+
+Para saber mais sobre busca e substituição de texto em Ruby, considere visitar estes links:
+
+- [Ruby Doc: String#gsub](https://ruby-doc.org/core-2.6.1/String.html#method-i-gsub)
+- [Ruby Doc: String#sub](https://ruby-doc.org/core-2.6.1/String.html#method-i-sub)
+- [Stackoverflow: Ruby gsub vs sub](https://stackoverflow.com/questions/19445003/using-ruby-gsub-vs-sub)

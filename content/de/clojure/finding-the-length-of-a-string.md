@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Texts finden"
-html_title:           "Clojure: Die Länge eines Texts finden"
-simple_title:         "Die Länge eines Texts finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,24 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Länge eines Strings in Clojure ermitteln
+
 ## Was & Warum?
-Wenn wir als Programmierer mit Text arbeiten, ist es oft wichtig zu wissen, wie viele Zeichen oder Buchstaben in einem String enthalten sind. Das Bestimmen der Länge eines Strings kann uns helfen, bestimmte Bedingungen in unserem Code zu überprüfen oder die Ausgabe eines Programms zu formatieren.
 
-## Wie geht's?
-Wir können die Funktion `count` verwenden, um die Länge eines Strings in Clojure zu bestimmen. Sehen wir uns ein Beispiel an:
-```Clojure
-(count "Hallo Welt!")
-```
-Dieses Code-Snippet gibt die Ausgabe `11` zurück, da der String `Hallo Welt!` 11 Zeichen enthält. Für eine weitere Veranschaulichung hier ein Beispiel mit einer Variablen:
-```Clojure
-(def text "Dies ist ein Beispiel")
-(count text)
-```
-Die Ausgabe ist hier `19`.
+Die Länge eines Strings zu ermitteln, bedeutet herauszufinden, wie viele Zeichen der String enthält. Dies wird häufig benötigt, um Dateneingaben zu überprüfen oder die Datenverarbeitung zu steuern.
 
-## Tiefentauchgang
-Die Funktion `count` wurde in Clojure bereits seit der Einführung der Sprache verwendet und ist somit Teil der Kernbibliothek. Eine andere Möglichkeit, die Länge eines Strings zu bestimmen, wäre die Verwendung der Methode `length` auf der Klasse `java.lang.String`. Jedoch wird die `count` Funktion empfohlen, da sie effizienter arbeitet und auch Zeichen wie Leerzeichen und Sonderzeichen zählt.
+## So geht's:
+
+Clojure stellt die eingebaute Funktion `count` bereit, die die Länge eines Strings ermitteln kann.
+
+```Clojure 
+(defn string-length [s]
+  (count s))
+
+(println (string-length "Hallo Welt"))
+```
+
+Beispiel:
+
+```Clojure 
+user=> (defn string-length [s] (count s))
+#'user/string-length
+user=> (string-length "Hallo Welt")
+10
+```
+
+## Vertiefung
+
+Die Funktion `count` wurde in Clojure 1.0 eingeführt und gibt die Anzahl der Elemente einer Kollektion zurück. In unserem Fall ist die Kollektion ein String, aber `count` kann auch für Listen, Vektoren und andere Kollektionen verwendet werden.
+
+Die Verwendung von `count` ist eine einfache und effiziente Methode, um die Länge eines Strings zu ermitteln, es gibt jedoch auch alternative Methoden. Eine davon ist die Verwendung der Java-Methode `length`:
+
+```Clojure 
+(.length "Hallo Welt")
+```
+ 
+Dies führt die native Java-Methode auf den String aus und gibt auch in diesem Fall die Anzahl der Zeichen zurück. Beide Implementierungen sind im Allgemeinen gleichwertig, obwohl die Nutzung der nativen Java-Methode für umfangreiche Operationen möglicherweise effizienter ist.
 
 ## Siehe auch
-- Offizielle Clojure Dokumentation zu `count`: https://clojuredocs.org/clojure.core/count
-- Alternative Methode `length` auf der Klasse `java.lang.String`: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#length()
+
+Weitere Informationen und zusätzliche Beispiele finden Sie unter:
+- Clojure-Dokumentation zu `count`: [link](https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/count)
+- Clojure-Dokumentation zur Interaktion mit Java: [link](https://clojure.org/reference/java_interop)

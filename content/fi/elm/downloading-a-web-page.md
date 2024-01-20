@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Elm: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,44 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja mikä?
-Lataaminen verkkosivulle tarkoittaa sivun tiedon tallentamista tietokoneelle tai muuhun laitteeseen sitä varten että sivustoa voidaan käyttää offline-tilassa tai että sen sisältöä voidaan käsitellä ohjelmallisesti. Ohjelmoijat voivat ladata verkkosivuja esimerkiksi tietojen keräämiseksi tai niiden käsittelyä varten.
+## Mitä & Miksi?
 
-## Miten tehdä se:
+Lataaminen web-sivulta on prosessi, jossa noudetaan tietoa, kuten HTML-sisältöä, verkkosivulta ohjelmaan. Ohjelmoijat tekevät näin analysoimaan ja hyödyntämään sisältöä ohjelmissaan.
+
+## Miten Toimia:
+
+Aloitamme HTTP-pyynnön tekemiselle Elm-ohjelmassa. Laitetaan tämä tapahtumaan kun koko ohjelma käynnistyy.
+
 ```Elm
+import Browser
+import Html exposing (Html)
 import Http
-import Json.Decode as Json
 
-type alias WebPage = 
-    { url : String
-    , content : String
-    }
+main =
+  Browser.sandbox { init = init, update = update, view = view }
 
-downloadWebPage : String -> Cmd Msg
-downloadWebPage url = 
-    Http.get 
-        { url = url
-        , expect = Http.expectString Response
-        }
+type alias Model =
+  { url: String
+  , response: String
+  }
 
-type Msg 
-    = Response (Result Http.Error String)
+init : Model
+init =
+  { url = "http://example.com"
+  , response = ""
+  }
 
-update : Msg -> WebPage -> WebPage
-update msg currentPage = 
-    case msg of 
-        Response res -> 
-            case res of 
-                Ok content -> 
-                    { currentPage | content = content }
-                Err error -> 
-                    currentPage 
+type Msg
+  = GotResponse (Result Http.Error String)
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    GotResponse result ->
+      case result of
+        Ok body ->
+          { model | response = body }
+
+        Err _ ->
+          model
+
+view : Model -> Html Msg
+view model =
+  Html.text model.response
+
+subscriptions : Model -> Sub Msg
+subscriptions _ =
+  Http.getString "http://example.com"
+    |> Http.send GotResponse
 ```
 
-## Syvempi sukellus:
-Lataaminen verkkosivulle on ollut tärkeä osa web-kehitystä alusta lähtien. Monet ohjelmointikielet tarjoavat työkaluja verkkosivujen lataamiseen, mutta Elm tarjoaa turvallisen ja käyttäjäystävällisen tavan tehdä sitä. Vaihtoehtoja lataamiseen ovat esimerkiksi JavaScript-bibliotekit ja selaimen sisäänrakennettu XMLHttpRequest-ominaisuus. Elmissä lataaminen tapahtuu käyttämällä sisäänrakennettua `Http` -moduulia, joka tarjoaa yksinkertaisen rajapinnan verkkosivujen lataamiselle. Tarkemmat tiedot `Http` -moduulin toteutuksesta ja käytöstä löytyvät Elm dokumentaatiosta.
+Tulosteessa näet ladatun www-sivun sisällön.
 
-## Katso myös:
-- Elm dokumentaatio [Http -moduulista](https://package.elm-lang.org/packages/elm/http/latest/)
-- [HttpRequest](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest) selaimen sisäänrakennettu ominaisuus 
-- Erilaisia JavaScript-kirjastoja verkkosivujen lataamiseen kuten [axios](https://github.com/axios/axios) ja [fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+## Sukellus Syvemmälle:
+
+Ohjelmistokehittäjät ovat lataamassa sivuja verkkosivuilta jo Internetin alkuaikoina. Elm tarjoaa sisäänrakennetun Http-paketin tätä tarkoitusta varten, joka on suoraviivaista käyttää.
+
+Alternatiivisia tapoja on, mukaan lukien kolmannen osapuolen kirjastot kuten `elm-http-extra`. Se on hyvä, jos tarvitset monimutkaisempaa logiikkaa tai konfiguraatiota pyynnöissäsi.
+
+Elmin implementaatio noudattaa tiukasti funktionaalista ohjelmointiparadigmaa. Http-pyyntöjen tulokset käsitellään viesteinä, mikä sopii hyvin Elmin arkkitehtuuriin.
+
+## Katso Myös:
+
+- [Elmin virallinen Http-paketti dokumentaatio](https://package.elm-lang.org/packages/elm/http/latest/)
+- [Elm-http-extra kirjasto](https://package.elm-lang.org/packages/lukewestby/elm-http-extra/latest/)
+- [Elmin virallinen opas](https://guide.elm-lang.org/)
+- [Elm-lang slack kanava](https://elmlang.herokuapp.com/) - Hyvä paikka kysyä neuvoja ja saada tukea
+- [Elm Discourse](https://discourse.elm-lang.org/) - Are we missing something? You can find more discussion about Elm here.

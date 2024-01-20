@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Elm: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,45 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-概要＆理由：
-Webページのダウンロードとは、インターネット上からコンピュータにデータを取得することです。プログラマーたちは、Webページをダウンロードすることで、ユーザーに情報を提供することができるようにしています。
+## 何と何故？
 
-方法：
+Webページのダウンロードは、アクセスしたサイトの内容を自身のコンピュータにコピーする行為を指します。プログラマーはそれを行うことで、オフラインでもそのコンテンツを参照することが可能になり、またデータ解析やスクレイピングのための原材料ともするためです。
+
+## 実行方法：
+
+以下は、ElmでWebページをダウンロードする簡単なコード例です：
+
 ```Elm
+module Main exposing (..)
+
 import Http
-import Json.Decode as Json
+import Json.Decode as Decode
 
-type alias Page =
-  { title : String
-  , content : String
-  }
-
-pageDecoder : Json.Decoder Page
-pageDecoder =
-  Json.map2 Page
-    (Json.field "title" Json.string)
-    (Json.field "content" Json.string)
-
-getPage : Cmd Msg
-getPage =
-  Http.get
-    { url = "https://example.com/page"
-    , expect = Http.expectJson pageDecoder PageReceived
-    }
+fetchUrl : String -> Cmd Msg
+fetchUrl url =
+    Http.get
+        { url = url
+        , expect = Http.expectString GotText
+        }
 
 type Msg
-  = PageReceived (Result Http.Error Page)
+    = GotText (Result Http.Error String)
 
+type alias Model =
+    String
+
+-- 更新部分
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        GotText (Ok text) ->
+            ( text, Cmd.none )
+
+        GotText (Err _) ->
+            ( "Error fetching data", Cmd.none )
 ```
+このコードは、指定したURLからWebページをダウンロードし、その内容をテキストとしてString型のモデルに格納します。ダウンロードが失敗すると、エラーメッセージがモデルに格納されます。
 
-詳細：
-Webページのダウンロードは、現代のWebアプリケーション開発において欠かせない機能です。HTTPプロトコルを使用して、サーバーからデータを取得し、クライアントのコンピュータに表示することができます。
+## ディープダイブ：
 
-代替手段としては、バックエンドプログラミング言語（例：PHP、Ruby、Python）を使用して、サーバー側でWebページを生成し直接クライアントに提供する方法があります。
+Webページのダウンロードは、初期のインターネットの主要な動作の一つで、ウェブクローラーやスクレイピングツールの基盤技術となっています。代替手段としてWeb APIを利用する方法もありますが、全てのサイトがAPIを提供しているわけではなく、また提供されているAPIが全てのデータをカバーしているわけでもありません。Elmでは、Httpパッケージを利用してこの操作を行います。
 
-WebページのダウンロードはElmでも非常にカンタンに実装できます。例えば、```Http.get```関数を使用することで、サーバーからデータを取得し、JSONフォーマットのレスポンスをデコードすることができます。
+詳細については、以下のリンクからElmのHttpパッケージとそのドキュメンテーションを参照してください ：(https://package.elm-lang.org/packages/elm/http/latest/)
 
-関連情報：
-- Elm Documentation (https://guide.elm-lang.org/effects/http.html)
-- HTTP Protocol (https://developer.mozilla.org/ja/docs/Web/HTTP)
-- JSON Data Format (https://www.json.org/)
+## 参考資料：
+
+- Elmの公式ウェブサイト：https://elm-lang.org/
+- ElmのHttpパッケージ： https://package.elm-lang.org/packages/elm/http/latest/
+- Json.Decodeモジュール：https://package.elm-lang.org/packages/elm/json/latest/Json-Decode

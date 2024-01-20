@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en dato til en streng"
-html_title:           "Gleam: Konvertere en dato til en streng"
+html_title:           "Arduino: Konvertere en dato til en streng"
 simple_title:         "Konvertere en dato til en streng"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,29 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Konvertering av en dato til en streng er en vanlig oppgave for programmerere. Dette betyr rett og slett å ta en dato-verdi og gjøre den om til en tekst-streng. Dette kan være nyttig for å presentere datoer på en mer lesbar måte, eller for å sammenligne og sortere dato-verdier.
 
-## Slik gjør du det:
-Gleam har innebygd støtte for å konvertere datoer til strenger ved hjelp av funksjonen `Date.to_string()`. Her er et eksempel som viser hvordan du bruker denne funksjonen og hvilket resultat du kan forvente:
+Å konvertere en dato til en streng innebærer å endre en datoverdi til en tekstrepresentasjon, en prosess kjent som formatering. Programmerere gjør dette for å lette menneskelig lesbarhet og datautveksling mellom ulike systemer og programmer.
 
-```Gleam
-// Definerer en dato-variabel:
-let my_date = Date.new(2021,1,1)
+## Hvordan:
 
-// Konverterer til streng og lagrer i en ny variabel:
-let my_string_date = Date.to_string(my_date)
+Her er hvordan du konverterer en dato til en streng i Gleam:
 
-// Skriver ut string-variabelen:
-Debug.todo(my_string_date)
-
-// Output: "2021-01-01T00:00:00.000000Z"
+```gleam
+import gleam/date
+let today = date.today()
+let formatted_date = date.to_string(today)
 ```
 
-Som du kan se blir datoen konvertert til en streng som følger ISO 8601-standarden, som er et vanlig format for å presentere datoer og tidspunkter.
+Dette vil produsere output som for eksempel:
 
-## Dykk dypere:
-Det å konvertere en dato til en streng er ikke en spesielt avansert oppgave, men det kan likevel være lurt å vite hvordan denne funksjonen fungerer og hvorfor det kan være nyttig. I eldre programmeringsspråk måtte man ofte bruke spesifikke funksjoner for å håndtere datoer og tidspunkter, mens Gleam gjør dette mye enklere med en dedikert `Date`-type og innebygd støtte for konverteringer. Det finnes også andre muligheter for å representere og arbeide med datoer og tidspunkter, som for eksempel å lagre det som tall eller bruke ulike formateringsmetoder. Utforsk gjerne flere alternativer og finn ut hva som fungerer best for ditt spesifikke prosjekt.
+```blekning
+"2022-03-07"
+```
 
-## Se også:
-- Offisiell Gleam dokumentasjon om datatyper og konverteringer: https://gleam.run/documentation/datatypes
-- En god oversikt over hvordan datoer og tidspunkter håndteres i ulike programmeringsspråk: https://en.wikipedia.org/wiki/Date_format_by_country
+## Dypdykk
+
+(1) Opprinnelig ble dataverdier ofte lagret og manipulert som strenger for å spare plass og tid. Dette resulterte i utallige problemer med konsistens, nøyaktighet og ytelse. I dag har vi spesialiserte datatyper og funksjoner for å håndtere datoer, men vi trenger fortsatt å konvertere dem til strenger for menneskelig lesbarhet og kompatibilitet.
+
+(2) Det finnes flere måter å formatere datoer til strenger på i Gleam. For eksempel, `date.to_string_iso8601()` gir en streng i ISO 8601-format, mens `date.to_string_rfc3339()` gir en streng i RFC 3339-format. 
+
+(3) Innunder hetten, konverterer `date.to_string` funksjonen en `Date` verdi til en streng ved å samle sammen de individuelle komponentene (år, måned, dag) og separator tegnene mellom dem.
+
+## Se også
+
+Du kan finne mer informasjon og eksempler i Gleam's offisielle dokumentasjon for [`Date`](https://hexdocs.pm/gleam_stdlib/gleam/date/) funksjonene. For mer generell informasjon om dato-håndtering i programmering, se dette artikkelen på [Computer Hope](https://www.computerhope.com/jargon/d/datatype.htm).

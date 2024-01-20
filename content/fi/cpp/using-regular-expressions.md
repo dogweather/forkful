@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "C++: Säännöllisten lausekkeiden käyttö"
+html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "C++"
 category:             "C++"
@@ -10,45 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & Miksi?
+## Mitä & Miksi?
+Säännölliset lausekkeet (regular expressions) ovat erityinen merkkijonojen käsittelyn tapa, jolla voit etsiä, sovittaa yhteen, vaihtaa ja jakaa merkkijonoja. Ohjelmoijat käyttävät niitä koodin tehostamiseksi ja jotta heidän ei tarvitsisi kirjoittaa manuaalisesti monimutkaisia merkkijonojen käsittelyfunktioita.
 
-Säännölliset lausekkeet ovat tapa suodattaa, hakea ja muokata tekstejä C++ -ohjelmoinnissa. Voit käyttää niitä esimerkiksi validoidaksesi käyttäjän syötteen, etsiäksesi tiettyjä sanoja tai muuttaaksesi merkkijonojen muotoa. Ohjelmoijat käyttävät säännöllisiä lausekkeita tehdäkseen tekstin käsittelystä nopeampaa, helpompaa ja tarkempaa.
-
-## Kuinka:
-
+## Näin se tehdään:
 ```C++
-#include <iostream>
 #include <regex>
+#include <iostream>
 
-int main() {
-    std::string teksti = "Tämä on esimerkki tekstistä, jonka haluamme käsitellä.";
-    
-    // Muodostetaan säännöllinen lauseke haettavalle sanalle
-    std::regex haku("esimerkki");
-    
-    // Käytetään regex_search -funktiota etsimään haettu sana tekstistä
-    if(std::regex_search(teksti, haku)) {
-        std::cout << "Haettu sana löytyi tekstistä!" << std::endl;
-    } else {
-        std::cout << "Haettua sanaa ei löytynyt tekstistä." << std::endl;
-    }
-    
+int main(){
+    std::string s = "Programming article!";
+    std::regex e ("\\b(sub)?\\w*");  
+
+    // using regex_replace()
+    std::cout << std::regex_replace(s,e,"C++");
     return 0;
 }
 ```
+Tämä koodi korvaa jokaisen sanan (\\b(sub)?\\w*) merkkijonossa "Programming article!" sanalla "C++". 
 
-Tuloste:
+## Syvä Sukellus
+Säännöllisillä lausekkeilla on pitkä historia, ne olivat olemassa jo ennen kuin C++ otti ne käyttöön. Niitä käytetään usein kun tarvitaan tehokasta tekstinkäsittelyä. Vaihtoehtoisia menetelmiä ovat mm. manuaalinen merkkijonojen käsittely ja kuviohaku. C++:ssa säännölliset lausekkeet on toteutettu <regex> kirjastossa. 
 
-```
-Haettu sana löytyi tekstistä!
-```
+## Katso Myös
+Jos haluat oppia lisää säännöllisistä lausekkeista, suosittelemme seuraavia linkkejä:
 
-## Syvä sukellus:
-
-Säännöllisiä lausekkeita keksittiin jo 1950-luvulla ja ne ovat siitä lähtien olleet olennainen osa monien ohjelmointikielten toiminnallisuutta. C++:ssa käytetään POSIX-säännöllisiä lausekkeita, joita voi olla hieman haastava ymmärtää aluksi. Jos haluat helpomman tavan käyttää säännöllisiä lausekkeita, voit kokeilla bibliotekkeja kuten Boost tai std::experimental, jotka tarjoavat käyttöä helpottavia rajapintoja.
-
-## Katso myös:
-
-- [C++:n regex-dokumentaatio](https://en.cppreference.com/w/cpp/regex)
-- [Boost-regex-dokumentaatio](https://www.boost.org/doc/libs/1_78_0/libs/regex/doc/html/boost_regex/ref/regex_token_iterator.html)
-- [std::experimental -regex-dokumentaatio](https://en.cppreference.com/w/cpp/header/regex)
+* [C++ Regular expressions](http://www.cplusplus.com/reference/regex/)
+* [Regular Expression Library](http://regexlib.com/)
+* [Wikipedia: Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression)

@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottelu merkkijonosta"
-html_title:           "Python: Päivämäärän erottelu merkkijonosta"
-simple_title:         "Päivämäärän erottelu merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -11,23 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Päivämäärän erottaminen merkkijonosta on prosessi, jossa päivämääräyksiköt tunnistetaan ja purkautuvat merkkijonosta. Tätä tehdään yleensä joko tiedon tallentamiseksi tai sen muuttamiseksi halutussa muodossa. Esimerkiksi kun käyttäjä syöttää päivämäärän tekstikenttään, se täytyy muuttaa tietokoneen ymmärtämään muotoon.
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärätiedon erottamista ja analysointia tekstidatasta. Ohjelmoijat tekevät sen usein datan esikäsittelyssä, jotta he voivat käsitellä päivämääriä matemaattisesti ja tehdä niistä vertailukelpoisia.
 
-## Kuinka tehdä:
-Näin tehdään päivämäärän erottaminen merkkijonosta Pythonissa:
+## Miten tehdä:
+Pythonin standardikirjasto tarjoaa `datetime` moduulin, jossa on apufunktioita päivämäärän jäsentämiseen. Tässä on esimerkki sen käyttämisestä:
 
 ```Python
 from datetime import datetime
-date_string = "12.5.2020"
-date = datetime.strptime(date_string, "%d.%m.%Y")
-print(date)
+
+date_string = "15/07/2021"
+date_format = "%d/%m/%Y"
+
+try:
+    parsed_date = datetime.strptime(date_string, date_format)
+    print(parsed_date)
+except ValueError:
+    print("Incorrect format")
 ```
 
-Tuloste: 2020-05-12 00:00:00
+Konsoli näyttää seuraavanlaisen tuloksen:
 
-## Syvemmälle:
-Päivämäärän erottaminen merkkijonosta ei ole uusi konsepti, ja sitä on tehty jo vuosikymmeniä. Alkuaikoina sitä tehtiin usein manuaalisesti käsin koodaamalla, mutta nyttemmin siihen löytyy monia valmiita kirjastoja Pythonissa, kuten datetime-moduuli. On myös olemassa muita tapoja tehdä päivämäärän erottaminen, kuten käyttämällä säännöllisiä lausekkeita, mutta datetime-moduuli on yleensä suositumpi vaihtoehto sen yksinkertaisemman käytön vuoksi.
+```Python
+2021-07-15 00:00:00
+```
 
-## Katso myös:
-- [Pythonin datetime-moduuli](https://docs.python.org/3/library/datetime.html)
-- [Säännölliset lausekkeet Pythonissa](https://docs.python.org/3/howto/regex.html)
+## Syvä sukellus
+Historiallisessa kontekstissa päivämäärän jäsentämistä on käytetty jo vuosikymmeniä, koska kaikki tieto on alkujaan ollut tekstistä. Erilaisia tekniikoita, kuten säännölliset lausekkeet ja leksikaalinen analyysi, on käytetty sen jälkeen.
+
+Vaihtoehtona Pythonille, JavaScript, Java ja monet muut kielet myös tarjoavat työkaluja päivämäärän jäsentämiseen merkkijonosta.
+
+Implementoinnin osalta, `strptime` funktio ottaa sisään kaksi merkkijonoa: päivämäärän tekstiversion ja muotoilumerkkijonon. Funktio selvittää miten päivämäärän tiedot vastaavat muotoilumerkkijonoa ja muodostaa vastaavan `datetime` objektin.
+
+## Katso myös
+- [Pythonin virallinen dokumentaatio](https://docs.python.org/3/library/datetime.html)
+- [W3Schoolsin päivämäärä- ja aikaoppitunti](https://www.w3schools.com/python/python_datetime.asp)
+- [Python datetimesta Stack Overflowssa](https://stackoverflow.com/questions/466345/converting-string-into-datetime)

@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Javascript: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是当前日期？为什么程序员要获取它？
+## 是什么？为什么？
+获取当前日期指的是在你的代码中获取和使用现在的日期和时间。 编程者之所以使用这个功能，是因为以实时的方式处理和记录信息对于数据跟踪、日志生成、日期比较和事件触发等任务来说至关重要。
 
-当前日期指的是当天的日期，程序员通常会使用相关函数来获取它。这样做的原因是因为在软件开发中，需要记录或处理日期和时间相关的数据，以便跟踪和记录事件的发生时间等。
-
-## 如何获取当前日期：
+## 怎么做:
+在JavaScript中，你可以使用 `Date` 对象来获取当前日期。让我们来看代码示范：
 
 ```Javascript
-const today = new Date();
-console.log(today);
+let currentDate = new Date();
+console.log(currentDate);
+```
+运行后的输出如下： 
+
+```Javascript
+2022-04-14T08:34:00.776Z
 ```
 
-这里我们使用了Date对象的构造函数来创建一个新的对象并将它赋值给变量today。然后使用console.log()函数来打印输出结果，即当前的日期。
+## 深入研究
+### 历史背景
+JavaScript的 `Date` 对象自1995年以来一直存在。随着ECMAScript规范的进化，它也经历了许多改进和增强。
 
-输出结果可能类似于：Sun Mar 28 2021 15:02:07 GMT+0800 (China Standard Time)
+### 可替代方案
+尽管 `Date` 是一个强大的对象，但是一些开发者可能会选择使用像 Moment.js 这样的第三方库，因为它们提供了使日期和时间管理更易用和灵活的方法。
 
-## 深入了解：
+### 实现细节
+当你创建 `new Date()` 时，你会得到表示当前日期和时间的对象。至于具体表示的时间，则取决于你的系统时区。
 
-1. 历史背景：在早期的计算机系统中，日期和时间通常是以固定格式存储的，因此编程人员需要编写复杂的代码来处理日期和时间数据。随着现代计算机系统的发展，内置的日期和时间函数使得获取当前日期变得更加简单和方便。
-
-2. 替代方法：除了使用Date对象，也可以使用其他第三方库来获取当前日期。例如，Moment.js是一个流行的专门用来处理日期和时间的库，它提供了更多的功能和选项。
-
-3. 实现细节：Date对象的构造函数可以接受参数来定义日期的格式。而输出的结果也可以通过调用不同的方法来改变日期的显示方式，如getDate()来获取具体的天数，getMonth()来获取月份等等。
-
-## 参考链接：
-
-- [JavaScript Date对象文档](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js官方网站](https://momentjs.com/)
+## 参考资料
+- [MDN Date Documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Handling dates in JavaScript](https://flaviocopes.com/javascript-dates/)
+- [Moment.js Documentation](https://momentjs.com/docs/#/parsing/now/)

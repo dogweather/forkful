@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Clojure: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Interpolar una cadena en Clojure significa insertar una o más variables dentro de una cadena de caracteres para crear una cadena final con valores específicos de esas variables. Los programadores lo hacen para crear cadenas dinámicas y personalizadas que contienen información específica en diferentes contextos.
+La interpolación de strings es un proceso para insertar variables en un string. Los programadores lo hacen para crear strings más dinámicos y legibles.
 
-## Cómo hacerlo:
+## Cómo Hacerlo:
 
-Para interpolar una cadena en Clojure, use la función `format` y especifique la cadena de formato seguida de las variables que desea insertar entre paréntesis.
+La interpolación de strings en Clojure se hace generalmente usando la función `format`, similar a `printf` de C. Aquí tienes un ejemplo básico:
 
-```
-Clojure (format "Hola %s, ¿cómo estás?" "Juan")
-
-; output: "Hola Juan, ¿cómo estás?"
-```
-
-También puede usar la sintaxis de cadena de interpolación con `` o la función `str`.
-
-```
-Clojure `(Hola ${nombre}, ¿cómo estás?)
-
-; output: "Hola Juan, ¿cómo estás?"
-
-Clojure (str "Hola " nombre ", ¿cómo estás?")
-
-; output: "Hola Juan, ¿cómo estás?"
+```clojure
+(let [nombre "Juan"]
+  (format "Hola, %s" nombre))
 ```
 
-## Profundizando:
+Resultado:
 
-Interpolar cadenas ha sido una técnica común en muchos lenguajes de programación durante mucho tiempo. Sin embargo, en Clojure, se alienta a los programadores a utilizar el concepto de "créditos léxicos" en su lugar, evitando así el uso del formato de cadena tradicional. Esto permite una mejor separación de código y datos, lo que a su vez puede mejorar el rendimiento y la comprensión del código. Alternativas como `str` y `print` también pueden ser más eficientes para crear cadenas en lugar de `format`.
+```clojure
+"Hola, Juan"
+```
 
-## Ver también:
+## Conociendo Más:
 
-- [Sintaxis de cadena de interpolación](https://clojure.org/reference/reader#_string_interpolation)
-- [Documentación de `format`](https://clojuredocs.org/clojure.core/format)
-- [Artículo sobre créditos léxicos en Clojure](https://coderwall.com/p/4fcreg/don-t-use-format-use-sequential-types)
+**Historia:** La interpolación de strings proviene de los primeros lenguajes de programación como ALGOL y ha sido adoptado por la mayoría de los lenguajes modernos.
+
+**Alternativas:** Puedes usar concatenación de strings (`str` en Clojure) pero suele ser menos legible cuando trabajas con múltiples variables.
+
+```clojure
+(let [nombre "Juan"]
+  (str "Hola, " nombre))
+```
+
+**Detalles de Implementación:** `format` en Clojure es una función variádica que acepta cualquier número de argumentos después de la cadena de formato. Estos argumentos se insertan en la cadena de caracteres de formato en los lugares donde se encuentran los especificadores de formato como `%s` para strings.
+
+## Ver También:
+
+1. Documentación oficial de Clojure: [format](https://clojuredocs.org/clojure.core/format)
+2. Página de Clojure de Wikipedia: [Clojure](https://es.wikipedia.org/wiki/Clojure)
+3. Guía práctica de Clojure: [Aprendiendo Clojure](https://www.learn-clojure.com/)
+4. `str` vs `format` en Clojure: [Debate en StackOverflow](https://stackoverflow.com/questions/46275278/string-concatenation-vs-format-performance-in-clojure)

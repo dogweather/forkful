@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Elm: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,17 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-שליחת בקשת HTTP היא פעולה נפוצה בתכנות, המאפשרת למכשירים ומגררים לתקשורת עם שרתים ולבצע פעולות. תכנים רבים משתמשים בשליחת בקשות HTTP ליצירת אפליקציות דינמיות ותצוגה של תוכן דרך האינטרנט.
+## מה ולמה?
+בקשת HTTP היא דרך לשלוח ולקבל מידע משרת באמצעות הפרוטוקול HTTP. תכניתאים משתמשים בזה לגשת למידע ממאגרים מרוחקים, לתקשר עם ממשקים תוכנה ציבוריים (APIs), ולביצוע פעולות אחרות שדורשות שיחה עם שרת.
 
-איך לעשות זאת:
-לעיל תוכלו למצוא דוגמאות קוד ופלט מתמטי של שליחת בקשת HTTP בשפת Elm.
+## כיצד ל:
+כאן יש דוגמא לשליחת בקשת HTTP באמצעות ביבליותקה המובנת `Http` של Elm, והצגת התוצאות.
 
-## רבדים עמוקים:
-תוכן המאמר מתמקד בשליחת בקשת HTTP עם שפת ברמת הליבה. כמו כן, ניתן להשתמש בספרית HTTP אחרות כדי להקל ולטפל בפעולת השליחה של הבקשה. לשם כך, כדאי להתמקד בכתיבת קוד כמו דוגמאות למעלה ולטפח את כישורי התכנות שלכם.
+```Elm
+module Main exposing (..)
 
-## ראו גם:
-- [ספרית HTTP בשפת Elm](https://package.elm-lang.org/packages/elm/http/latest/)
-- [API של שפת Elm](https://guide.elm-lang.org/webapps/)
-- [קוד המקור של Elm על GitHub](https://github.com/elm/compiler/tree/master/compiler/src)
-- [מדריכים לשפת Elm בעברית](https://elmprogramming.com/)
+import Http
+import Json.Decode as Decode
+
+type alias Result =
+    { name : String }
+
+decoder : Decode.Decoder Result
+decoder =
+    Decode.map Result (Decode.field "name" Decode.string)
+
+sendRequest : Cmd msg
+sendRequest =
+    Http.request
+        { method = "GET"
+        , url = "https://api.example.com"
+        , headers = []
+        , body = Http.emptyBody
+        , expect = Http.expectJson Msg decoder
+        , timeout = Nothing
+        , tracker = Nothing
+        }
+
+main =
+    sendRequest
+```
+התכנית עוברת על חלקים שונים של בקשת HTTP, כולל המתודה (במקרה זה, "GET"), ה- URL של השרת, כותרות (אם יש) והגוף של הבקשה.
+
+## צלילה עמוקה
+שליחת בקשת HTTP היא חלק אינטגרלי מן האינטרנט כפי שאנו מכירים אותו כיום. היא הופקה כחלק מתקן HTTP שנוצר ב- 1991.
+
+על אף שכמה שפות תכנות אחרות מציעות שיטות דומות לעיבוד בקשות HTTP, Elm ניהיליסט הגנטלי המציגת גישה יחודית באופן שהיא טסטית וחסונה במיוחד לשגיאות ריצה. 
+
+תכנים זה משתמש בממיר JSON תוך שימוש בגישה מבנית ומסוג של Elm לטיפול בנתונים החוזרים מהבקשה.
+
+## ראה גם
+למידה נוספת על שליחת בקשת HTTP באמצעות Elm:
+
+- [The official Elm guide on HTTP requests](https://guide.elm-lang.org/)
+- [A practical guide to Elm HTTP requests](https://korban.net/posts/elm/2018-02-18-practical-guide-elm-http-requests/)
+- [HTTP in Elm - video tutorial](https://www.youtube.com/watch?v=t2YWnZSFsg0)

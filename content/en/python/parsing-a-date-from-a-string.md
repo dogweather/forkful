@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Python recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Python"
 category:             "Python"
@@ -10,34 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Python Date Parsing: Getting More Out Of Strings
+
 ## What & Why?
-Parsing a date from a string in Python refers to extracting the date information (month, day, year) from a string of text. This is commonly done by programmers to convert user input or data from different sources into a standardized date format that can be used for calculations or comparisons.
+
+Date parsing is converting a date represented as a string into a Python `datetime` object. This essential task allows programmers to perform operations like date comparison, addition, subtraction, and more.
 
 ## How to:
-Parsing a date from a string in Python is made easy with the built-in datetime module. Here's a simple example:
+
+Python, with its `datetime` module, makes date parsing a walk in the park. Here's an example:
+
 ```Python
 from datetime import datetime
 
-date_string = "01/12/2021"
-date_object = datetime.strptime(date_string, "%m/%d/%Y")
-print(date_object.strftime("%Y-%m-%d"))
-```
-Output:
-```
-2021-01-12
-```
-The ```strptime()``` function takes in the date string and a format string that specifies the order of the date components. The ```strftime()``` function then formats the date object into the desired output format.
+# Date string
+date_string = "12-11-2021"
+date_format = "%m-%d-%Y"
 
-## Deep Dive:
-Parsing dates from strings has been a common task for programmers for a long time, especially in languages like Python which have a large number of date and time formats. Before the datetime module was introduced, programmers had to manually split the string and convert the date components into integers.
+# Convert string to date
+date_object = datetime.strptime(date_string, date_format)
 
-An alternative to the datetime module is the dateutil library, which provides a parser that can handle a wider range of date formats. However, this library is not included in the standard Python installation and requires additional installation.
+print(date_object)
+```
+When you run the code, you’ll get:
 
-The implementation of the datetime module for parsing dates uses a combination of the ```strptime()``` and ```strftime()``` functions, which are based on the C language's ```strptime()``` and ```strftime()``` functions.
+```Python
+2021-12-11 00:00:00
+```
+The `strptime` function does the job here, taking the string and format, and returning a `datetime` object.
+
+## Deep Dive
+
+Python's `datetime` module, introduced in version 2.3, built on earlier time modules to provide robust utility for manipulating dates and times. 
+
+One alternative to `datetime`'s `strptime` method is the `dateutil.parser.parse` function, which accepts date strings without needing a format, but can be less precise:
+
+```python
+from dateutil.parser import parse
+
+# Date string
+date_string = "12-11-2021"
+
+# Convert string to date
+date_object = parse(date_string)
+
+print(date_object)
+```
+This will also give you:
+
+```Python
+2021-12-11 00:00:00
+```
+
+When it comes to the actual implementation, `strptime` works by compiling the format string into a regular expression and matching it against the date string. It then uses the matched parts to create a datetime object.
 
 ## See Also:
-To learn more about parsing dates in Python, check out the official documentation for the datetime module: https://docs.python.org/3/library/datetime.html
 
-For more information on the dateutil library, visit their official website: https://dateutil.readthedocs.io/en/stable/
-
-To explore different date and time formats, take a look at the strftime reference: https://strftime.org
+1. [Python strptime documentation ](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
+2. [Full list of Python date directives](https://strftime.org/)
+3. [Dateutil documentation](https://dateutil.readthedocs.io/en/stable/parser.html)
+4. [Python Regular Expressions](https://docs.python.org/3/library/re.html) for understanding the underlying mechanism.

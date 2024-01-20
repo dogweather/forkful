@@ -1,7 +1,7 @@
 ---
-title:                "Rechercher et remplacer du texte"
-html_title:           "Bash: Rechercher et remplacer du texte"
-simple_title:         "Rechercher et remplacer du texte"
+title:                "Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
+simple_title:         "Recherche et remplacement de texte"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,25 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## C'est quoi & Pourquoi ?
 
-La recherche et le remplacement de texte est une pratique courante chez les programmeurs pour modifier rapidement et efficacement du texte dans un fichier ou un ensemble de fichiers. Cela permet de remplacer automatiquement des mots ou des phrases par d'autres sans avoir à le faire manuellement.
+La recherche et le remplacement de texte sont des fonctions qui permettent de localiser certaines chaînes de caractères dans un texte et de les remplacer par d'autres. Les programmeurs le font pour modifier les données, manipuler des fichiers de code et améliorer l'efficacité.
 
-## Comment faire:
+## Comment faire :
 
-Voici un exemple simple de recherche et remplacement de texte en utilisant la commande ```sed``` en Bash:
+Pour ce faire, on utilise principalement la commande `sed` dans Bash. `sed` est un éditeur de flux permettant de manipuler le texte.
 
 ```Bash
-sed -i 's/ancien_mot/nouveau_mot/g' fichier.txt
+# Pour remplacer 'ancient' par 'nouveau' dans un fichier
+sed 's/ancient/nouveau/' file.txt
 ```
-Cette commande remplacera toutes les occurrences de "ancien_mot" par "nouveau_mot" dans le fichier "fichier.txt". Notez que l'option "-i" modifie directement le fichier sans créer de nouveau fichier.
 
-## Plongée Profonde:
+Sortie attendue :
 
-Cette technique de recherche et remplacement de texte n'est pas nouvelle et a été utilisée dans les premiers langages de programmation tels que le langage de manipulation de chaînes SNOBOL en 1962. Dans Bash, il existe également d'autres méthodes pour effectuer des recherches et remplacements de texte, notamment en utilisant la commande ```grep```, le langage de script awk ou encore la fonction intégrée ```[[pattern]=replacement]]```.
+```Bash
+{nouveau texte remanié}
+```
 
-## Voir aussi:
+Et pour remplacer globalement dans le fichier, on utilise l'option 'g' :
 
-- Guide de référence pour les commandes Bash: https://devhints.io/bash
-- Manuel de référence de la commande sed: https://www.gnu.org/software/sed/manual/sed.html
-- Tutoriel sur l'utilisation des expressions régulières en Bash: https://www.2daygeek.com/regular-expression-regex-examples-with-sed-command-in-linux/
+```Bash
+# Pour remplacer toutes les occurrences de 'ancient' par 'nouveau' dans un fichier
+sed 's/ancient/nouveau/g' file.txt
+```
+
+Sortie attendue :
+
+```Bash
+{nouveau texte remanié avec toutes les occurrences remplacées}
+```
+
+## Plongée profonde :
+
+Historiquement, `sed` était largement utilisé pour la manipulation du texte dans les pipelines Unix dès les années 1970. C'est un outil puissant qui utilise des expressions régulières pour la correspondance et le remplacement de texte.
+
+Il existe d'autres alternatives pour rechercher et remplacer le texte en Bash, comme `awk` ou `perl -p -i -e`, mais `sed` est largement considéré comme le moyen le plus simple et le plus élégant de le faire.
+
+La commande `sed` fonctionne en lisant le fichier, en recherchant le texte à remplacer, puis en effectuant le remplacement. L'option 'g' indique que le remplacement doit être fait partout dans le fichier et pas seulement à la première occurrence.
+
+## Voir aussi :
+
+Pour approfondir la recherche et le remplacement de texte en Bash, vous pouvez consulter ces ressources :
+
+- [GNU Sed Documentation](https://www.gnu.org/software/sed/manual/sed.html)
+- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
+- [Bash scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial#h8-the-sed-stream-editor)

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को सम्मिलित करना"
-html_title:           "Swift: स्ट्रिंग्स को सम्मिलित करना"
-simple_title:         "स्ट्रिंग्स को सम्मिलित करना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,41 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Concatenating Strings in Swift: What and Why?
+## क्या और क्यों?
 
-Concatenating strings in Swift is the process of combining two or more strings into a single string. Programmers do this in various scenarios, such as creating dynamic text messages, combining user input with predefined text, or constructing complex sentences.
+स्ट्रिंग्स को कोनकेटनेट करने का मतलब होता है दो या दो से अधिक स्ट्रिंग्स को एक साथ जोड़ना। कोनकेटनेशन का उपयोग कोड को पढ़ने और समझने में आसानी के लिए स्ट्रिंग्स को उद्योगी तरीके से जोड़ने के लिए किया जाता है।
 
-# कैसे करें और क्यों करें?
+## कैसे करें:
 
-एस-स्विफ्ट में स्ट्रिंग्स को एक साथ जोड़ने की प्रक्रिया को कंकटेनेशन करना कहा जाता है। प्रोग्रामर इसे विभिन्न परिस्थितियों में करते हैं, जैसे कि डायनामिक टेक्स्ट मैसेज बनाना, उपयोगकर्ता इनपुट को पूर्वनिर्धारित पाठ के साथ जोड़ना, या जटिल वाक्य बनाना।
+Swift में, आप "+" ऑपरेटर का उपयोग करके स्ट्रिंग्स को कोनकेटनेट कर सकते हैं:
 
-## कैसे करें?
-
-```Swift
-var greeting = "नमस्ते"
-var name = "आप"
-var sentence = greeting + " " + name + ", कैसे हो?"
-
-print(sentence)
-// नमस्ते आप, कैसे हो?
+```Swift 
+let firstString = "Hello, "
+let secondString = "World!"
+let fullString = firstString + secondString
+print(fullString)
 ```
 
-यहां, हमने तीन अलग-अलग स्ट्रिंग्स को जोड़कर एक सिंगल स्ट्रिंग बनाई है और फिर उसे प्रिंट किया है।
+ऊपरी कोड का परिणाम "Hello, World!" प्रिंट होगा।
 
-## गहराई में जाएं
+## गहराई में:
 
-ककटेनेशन की विशाल विश्लेषण के साथ, हम अभिकल्पों के अन्य विकल्पों और इसके संचालन देखेंगे।
+1. ऐतिहासिक प्रसंग: Swift की पहली वर्शन में स्ट्रिंग्स को कोनकेटनेट करने के लिए केवल "+" ऑपरेटर का उपयोग किया जा सकता था। हालांकि, Swift 5 ने इंटरपोलेशन की सुविधा प्रदान की, जिसमें स्ट्रिंग्स को कोनकेटनेट करने के लिए एक और तरीका जोड़ा गया।
 
-### ऐतिहासिक पृष्ठभूमि
+2. विकल्प: स्ट्रिंग इंटरपोलेशन का उपयोग करके आप वेरिएबल्स और कंस्टेंट्स को सीधे स्ट्रिंग में जोड़ सकते हैं:
 
-पहले से ही, स्ट्रिंग्स को एक साथ जोड़ने का प्रक्रियाई समझने के लिए, स्ट्रिंग्स को बाइट-स्तर से एक साथ जोड़ा जाता था, तो इसे अंतरिक्ष के लिए एक करोड़ अलग स्ट्रिंग पूल के साथ होना पड़ता था। स्विफ्ट में, इस प्रक्रिया को सरल बनाने के लिए, एक अंतरिक्ष नियंत्रक है जो ग्राहक आवश्यक कम अपने अनुकूल विकास संस्करण नहीं देता। इसका परिणाम है कि स्विफ्ट ककटनेकेनिंग स्पेस हमेशा धन्यवाद होता है।
+```Swift
+let name = "Amit"
+let greeting = "Namaste, \(name)"
+print(greeting)
+```
 
-### वैकल्पिक
+ऊपरी कोड का परिणाम "Namaste, Amit" प्रिंट होगा।
 
-ककटेनेशन को बड़े संचारों की ऋण और सामान्य प्रक्रिया सामग्री में भगोड़ा होने के लिए देखा जाता है। इन परिस्थियों में, आमतौर पर स्विफ्ट में पसंदीदा स्ट्रिंग फॉर्मेटिंग विधि स्ट्रिंग बिल्ट-इन asoni. स्कलोन और देता है।
+3. लागू करने का विवरण: स्ट्रिंग्स को कोनकेटनेट करते समय, हमें ध्यान में रखना चाहिए कि स्ट्रिंग्स इम्यूटेबल होती हैं। इसका मतलब है कि जब हम एक स्ट्रिंग को दूसरे स्ट्रिंग से कोनकेटनेट करते हैं, तो हम वास्तव में एक नई स्ट्रिंग बना रहे होते हैं, पुरानी स्ट्रिंग को बदलने के बजाय।
 
-## इसके अलावा
+## देखने के लिए:
 
-स्ट्रिंग्स को एक साथ जोड़ने के संबंध में अन्य संसाधनों के लिए इस साइट पर जाएं  [Swift आधिकारिक रीफरेंस संज्ञान।](https://developer.apple.com/documentation/swift/string/)
-
-अगर आपको ऑडियो स्पेलिंग काम करने के लिए घंटे चाहिए, तो आपको यह धन्यवाद है ike recognize और हेराम game भी मदद।
+- [Apple's Swift Documentation](https://developer.apple.com/documentation/swift/string)
+- [Swift String Interpolation](https://www.hackingwithswift.com/quick-start/understanding-swift/how-does-string-interpolation-work-in-swift)
+- [Concatenating Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)

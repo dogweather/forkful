@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Kotlin: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,49 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
+Das Lesen von Kommandozeilenargumenten ist das Abfangen von Eingaben, die bei der Ausführung eines Programms in der Kommandozeile gegeben werden. Programmer nutzen diese Technik, um die Interaktion mit dem Nutzer zu ermöglichen und die Ausführung des Programms zu steuern.
 
-Das Einlesen von Befehlszeilenargumenten ist ein wichtiger Bestandteil der Programmierung in Kotlin. Dabei werden die vom Nutzer eingegebenen Argumente, die zusammen mit dem Programmnamen in der Kommandozeile ausgeführt werden, in Variablen gespeichert. Dies ermöglicht es, dass das Programm auf die Eingaben des Nutzers reagieren und entsprechende Aktionen ausführen kann.
-
-Programmierer nutzen das Einlesen von Befehlszeilenargumenten, um die Flexibilität ihrer Programme zu erhöhen. Durch die Verwendung von Variablen können Nutzer die Ausführung des Programms individuell anpassen, ohne jedes Mal den Quellcode ändern zu müssen.
-
-# Wie geht's?
-
-Um Befehlszeilenargumente in Kotlin einzulesen, muss zuerst eine ```main()``` Funktion erstellt werden. Innerhalb dieser Funktion kann die Methode ```args``` verwendet werden, um auf die Argumente zuzugreifen. Einzelne Argumente können dann durch Angabe der entsprechenden Indexposition ausgelesen werden.
-
-Beispielcode:
+## Anleitung:
+In Kotlin ist es ganz einfach, Kommandozeilenargumente zu lesen. Hier ist ein Schnellstart-Code:
 
 ```Kotlin
 fun main(args: Array<String>) {
-   val argument1 = args[0]
-   val argument2 = args[1]
-   println("Argument 1: $argument1")
-   println("Argument 2: $argument2")
+    for (arg in args) {
+        println(arg)
+    }
 }
 ```
 
-Eingabe in der Kommandozeile:
+Führen Sie dieses Programm aus und geben Sie Argumente im Kommandozeilenfeld ein. Z.B.:
 
-```
-kotlin-programm argument1 argument2
-```
-Ausgabe:
-
-```
-Argument 1: argument1
-Argument 2: argument2
+```Shell
+kotlin MainKt Hallo Welt!
 ```
 
-# Tiefgehende Einblicke
+Dies gibt aus: 
 
-Das Einlesen von Befehlszeilenargumenten ist eine grundlegende Funktion in vielen Programmiersprachen. Es ermöglicht die Interaktion mit dem Nutzer und die Anpassung des Programms. Alternativ kann auch über die Java-Klasse ```Scanner``` auf die Eingaben des Nutzers zugegriffen werden.
+```Shell
+Hallo
+Welt!
+```
 
-In Kotlin gibt es auch die Möglichkeit, benannte Argumente zu verwenden, indem vor dem Argumentname ein Doppelpunkt gesetzt wird, z.B. ```:argument1```. Dies kann die Lesbarkeit des Codes verbessern und das Einlesen von Argumenten erleichtern.
+## Vertiefung
+Historisch gesehen sind Kommandozeilenargumente ein altes Konzept, das von den ersten Unix-Shell-Interpreten stammt. In Kotlin ist das Standardarray `args` für die Eingabeaufforderungsargumente reserviert.
 
-Die Implementierung des Einlesens von Befehlszeilenargumenten in Kotlin ist einfach und unkompliziert. Es gibt jedoch einige Punkte zu beachten, zum Beispiel die Indexposition der Argumente. Auch sollte die Eingabe des Nutzers immer auf Korrektheit überprüft werden, um fehlerhafte Eingaben zu vermeiden.
+Es gibt auch Alternativen zum manuellen Parsen von Kommandozeilenargumenten, wie z.B. die Verwendung von Bibliotheken wie Apache Commons CLI oder JCommander.
 
-# Weitere Quellen
+Die interne Implementierung zum Lesen von Befehlszeilenargumenten in Kotlin geht von Java aus, da Kotlin auf der Java Virtual Machine (JVM) ausgeführt wird. Daher ähnelt der Zugriff auf die Befehlszeilenargumente dem in Java, nur mit mehreren sprachspezifischen Verknüpfungen zur Verbesserung des Benutzererlebnisses.
 
-- Offizielle Kotlin Dokumentation: https://kotlinlang.org/docs/command-line.html
-- Tutorial zum Einlesen von Befehlszeilenargumenten in Kotlin: https://www.javatpoint.com/kotlin-command-line-arguments
-- Vergleich zwischen der Verwendung von ```args``` und ```Scanner```: https://stackoverflow.com/questions/33469951/what-is-the-difference-between-args-and-a-scanner-for-reading-command-line-argu
+## Siehe auch
+Schauen Sie sich diese Quellen an für weitere Informationen:
+- Kotlin Dokumentation: https://kotlinlang.org/docs/tutorials/command-line.html
+- Apache Commons CLI: https://commons.apache.org/proper/commons-cli/
+- JCommander: http://jcommander.org/

@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "Java: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-String interpolation är en vanlig teknik som används av programmerare för att kombinera variabler och text på ett smidigt sätt. Istället för att behöva skriva ut variablerna och sedan manuellt lägga till text runtom, kan man istället interpolera variablerna direkt in i en sträng. Det gör koden lättare att läsa och minskar risken för felaktig formatering.
+## Vad och varför?
 
-## Så här:
+Att interpolera en sträng innebär att sätta in variabelvärden direkt in en sträng. Programmerare gör detta för att förenkla och snabba upp strängmanipulation, samt för att göra koden renare och lättare att läsa.
+
+## Hur man gör:
+
+Med Java 15 kan du enkelt interpolera strängar genom att använda formaterade strängar (Formatted Strings). Här är ett exempel:
+
 ```java
-// Skapa variabler att interpolera
-String name = "Anna";
-int age = 25;
-
-// Interpolera variablerna in i en sträng
-String message = String.format("Hej, mitt namn är %s och jag är %d år gammal.", name, age);
-
-// Skriv ut den interpolerade strängen
-System.out.println(message);
-
-// Output:
-// Hej, mitt namn är Anna och jag är 25 år gammal.
+String name = "Ingrid";
+int age = 30;
+String greeting = "Hej %s, du är %d år gammal.";
+System.out.printf(greeting, name, age);
 ```
 
-## Djupdykning:
-String interpolation är en slags syntaktisk sockersyrlösning (syntactic sugar) som först introducerades i programmeringsspråket Perl. Det finns flera alternativ för att interpolera strängar i Java, såsom `String.format()` som används i exemplet ovan, eller String concatenation (+ operatorn).
+Output:
+
+```
+Hej Ingrid, du är 30 år gammal.
+```
+
+## Fördjupning:
+
+Historiskt sett är stringinterpolering inte en ny idé, det har använts i årtionden av olika programmeringsspråk som Perl och Ruby. För Java, användes StringBuilder, String.format, eller concatenation innan införseln av stränginterpolation.
+
+Stränginterpolering är lättare och renare, men det finns fortfarande andra alternativ. Du kan fortfarande använda `String.format` eller `StringBuilder` om du vill.
+
+Notera att stränginterpolering i Java implementeras med hjälp av formaterade strängar, så det är ingen grundläggande del av språket.
 
 ## Se även:
-- [Java String documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Perl Interpolation article](https://perldoc.perl.org/perldata.html#Scalar-value-interpolation)
+
+För mer information om stränginterpolering och formaterade strängar, ta en titt på dessa resurser:
+
+- [Oracle Java Dokumentation](https://docs.oracle.com/)
+- [String Formatting in Java](https://dzone.com/articles/java-string-format-examples)
+- [Java String Formatter](http://www.javased.com/index.php?api=java.util.Formatter)
+- [Java String Interpolation Tutorial](https://www.baeldung.com/java-string-interpolation)

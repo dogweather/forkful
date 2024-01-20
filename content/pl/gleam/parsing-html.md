@@ -1,7 +1,7 @@
 ---
-title:                "Analiza html"
-html_title:           "Gleam: Analiza html"
-simple_title:         "Analiza html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czym jest parsowanie HTML i dlaczego programiści tego potrzebują?
+## Co to i dlaczego?
 
-Coderzy często muszą przetwarzać pliki HTML, aby wyciągnąć potrzebne informacje ze strony internetowej. Parsowanie HTML to proces analizowania pliku HTML w celu jego interpretacji i wykorzystania go w aplikacji lub narzędziu. Jest to ważne narzędzie w programowaniu, ponieważ umożliwia programistom dostęp do zawartości stron internetowych, aby tworzyć skryptowane lub automatyczne procesy.
+Analiza składniowa HTML to proces, dzięki któremu możemy "rozumieć" treść strony internetowej. Programiści robią to, aby pobierać, przetwarzać i manipulować danymi z intensywnością większą niż pozwala na to interfejs użytkownika.
 
-Jak to zrobić:
+## Jak to zrobić:
 
-Poniżej przedstawiamy przykładowy kod w języku Gleam, który pokazuje jak używać funkcji parsowania HTML (uwaga: kody są zapisane w formacie ```Gleam ... ```).
+Załóżmy prosty przykład w Gleam, gdzie tworzymy funkcję do analizy składniowej dokumentu HTML:
 
-```
-Gleam.import html
+```Gleam
+pub fn main(project: Project) {  
+  import gleam/httpc  
+  import gleam/bit_builder.{BitBuilder}  
+ 
+  httpc.get("https://www.example.com")  
+      |> ===================================  
+      |> bit_to_string  
+      |> html_doc_parse  
+ "")
+}  
 
-let doc = html.parse("<html><head><title>Hello World</title></head><body><p>Witaj Świecie!</p></body></html>")
+fn bit_to_string(bit: BitBuilder) -> String {  
+ to_string(bit)  
+}  
 
-let title = html.find(doc, "title")
-let body = html.find(doc, "body")
-let paragraph = html.find(body, "p")
+fn html_doc_parse(doc: String) -> HtmlElement {  
+  import gleam/html  
+ 
+  html.parse(doc)  
+}
+```  
+Po uruchomieniu tego kodu otrzymamy drzewo elementów HTML danego dokumentu.
 
-IO.print(html.text(title)) // Wydrukuje "Hello World"
-IO.print(html.text(paragraph)) // Wydrukuje "Witaj Świecie!"
-```
+## W głąb tematu 
 
-Pochylenie się:
+Pierwotnie, analiza składniowa HTML została wprowadzona dla przeglądarek internetowych, aby mogły one poprawnie wyświetlić strony. Dzisiaj, na skutek rosnącego zastosowania danych w sieci, jest elementem kluczowym dla wielu różnych dziedzin, takich jak dziedzin.
 
-Parsowanie HTML jest niezbędne w świecie internetowym, ponieważ umożliwia programistom dostęp do informacji na stronach internetowych, które mogą być wykorzystane w innych aplikacjach lub narzędziach. Proces ten jest również ważną częścią wytwarzania oprogramowania, ponieważ pozwala na automatyzację procesów, co zaoszczędza cenny czas programistów.
+Alternatywnie, istnieją inne biblioteki i języki, które mogą dokonać analizy składniowej HTML, takie jak BeautifulSoup w Pythonie, Nokogiri w Ruby, czy jsoup w Javie.
 
-Alternatywy dla parsowania HTML obejmują używanie bibliotek zewnętrznych lub samodzielne pisanie kodu do analizy pliku HTML. Istnieją również inne języki programowania, takie jak Python czy JavaScript, które są często wybierane do parsowania HTML.
+Szczegóły implementacji mogą się różnić w zależności od wykorzystywanej biblioteki, jednak na ogół polega to na konwersji ciągu znaków HTML na drzewo dokumentów, które następnie można przeszukiwać i manipulować.
 
-Gleam oferuje funkcje do parsowania HTML, które są łatwe w użyciu i mają wygodną składnię, dzięki czemu jest dobrym wyborem dla programistów.
+## Zobacz też
 
-Zobacz także:
+1) [Gleam HTTP client](https://hexdocs.pm/gleam_httpc/gleam/httpc/)
+2) [Gleam HTML parsing](https://hexdocs.pm/gleam_html/gleam/html/)
+3) [Gleam BitBuilder](https://hexdocs.pm/gleam_bit_builder/gleam/bit_builder/BitBuilder/) 
 
-- Dokumentacja Gleam dotycząca funkcji do parsowania HTML: https://gleam.run/modules/html
-- Przykładowy kod w języku Gleam dla funkcji parsowania HTML: https://github.com/llieyx/gleam-html/blob/master/examples/parse.gleam
-- Porównanie różnych języków programowania do parsowania HTML: https://www.scrapehero.com/what-is-the-best-web-scraping-language/
+Pamiętaj, że pisanie krateryzującego kodu jest kluczem do zrozumienia, jak działa analiza składniowa HTML. Próbuj różnych podejść, eksperymentuj i baw się dobrze!

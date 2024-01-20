@@ -1,6 +1,6 @@
 ---
 title:                "Eine Zeichenkette interpolieren"
-html_title:           "Gleam: Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
 simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,27 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Eine wichtige Aufgabe in der Programmierung ist das sogenannte "Interpolieren" von Strings. Dabei handelt es sich um die dynamische Ersetzung von Variablen oder Ausdrücken innerhalb eines Strings. Programmierer nutzen dies, um effizient und einfach Texte zu generieren, die Informationen aus verschiedenen Quellen enthalten.
+Die Interpolation von Zeichenketten ermöglicht es Programmierern, Variablen oder Ausdrücke in Zeichenketten einzufügen, um dynamischen Text zu erzeugen. Dies ist hilfreich, um lesbaren und wartbaren Code zu schreiben und um die Notwendigkeit manueller Zeichenkettenoperationen zu beseitigen.
 
-## Wie geht's?
+## So geht's:
 
-Um einen String in Gleam zu interpolieren, kannst du die "format!" Funktion verwenden. Sie erwartet zwei Parameter: einen String und eine Liste von Werten, die in den String eingefügt werden sollen. Zum Beispiel:
+Hier ist ein einfaches Beispiel für die Interpolation von Zeichenketten in Gleam:
 
-``` Gleam
-format!("Hallo, {}! Du bist {} Jahre alt.", ["Max", 25])
+```Gleam
+fn main() {
+  let name = "Gleam"
+  let message = "Willkommen bei {name}!"
+  io.println(message) 
+}
 ```
+Dieser Code gibt "Willkommen bei Gleam!" aus.
 
-Der Ausgang wäre:
+## Hintergrundinformationen
 
-``` Gleam
-"Hallo, Max! Du bist 25 Jahre alt."
-```
-## Tiefer Tauchgang
+1. Historischer Kontext: Interpolation von Zeichenketten ist kein neues Konzept. Es wurde in vielen Programmiersprachen wie Perl, Ruby, Python und nun auch in Gleam verwendet.
 
-Das Konzept des String-Interpolierens gibt es schon seit vielen Jahren und wird in verschiedenen Programmiersprachen, wie z.B. Python oder Ruby, verwendet. Eine Alternative zum String-Interpolieren wäre die Verwendung von String-Konkatenation. Allerdings kann dies mühsam und fehleranfällig sein, besonders bei längeren Strings.
+2. Alternativen: Man könnte die `++` Funktion verwenden, um Zeichenketten in Gleam zu verketten, die aber weniger lesbar ist und mehr Schreibarbeit erfordert.
 
-Das String-Interpolieren wird in Gleam mithilfe von Formatierungs-Spezifikationen realisiert, die es ermöglichen, die Art und Weise der Platzhalter-Ersetzung festzulegen. Es ist auch möglich, komplexere Datentypen, wie z.B. Zahlen oder Listen, mithilfe von Formatierungs-Spezifikationen in Strings einzufügen.
+3. Implementierungsdetails: Gleam verwendet die `{}` Platzhalter Syntax für die Interpolation von Zeichenketten und ersetzt diese Platzhalter dynamisch zur Laufzeit.
 
 ## Siehe auch
 
-Weitere Informationen zum String-Interpolieren in Gleam findest du in der offiziellen [Dokumentation](https://gleam.run/book/the-gleam-programming-language.html#string-interpolation). Eine Liste der verfügbaren Formatierungs-Spezifikationen und deren Verwendung findest du [hier](https://gleam.run/book/the-gleam-programming-language.html#formatting-specification).
+- Gleam Dokumentation: [Gleam String Interpolation](https://gleam.run/book/tour/strings.html)
+- Blogpost: [Introduction to Gleam](https://gleam.run/news/gleam-v0.8-released/)
+- Externer Leitfaden: [A Guide to String Interpolation in Programming Languages](https://stackabuse.com/a-guide-to-string-interpolation-in-programming-languages/)

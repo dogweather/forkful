@@ -10,22 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-Calcolare una data in futuro o in passato è un'operazione comune nella programmazione, e si riferisce al calcolo di una data basandosi su una data di partenza e un intervallo di tempo specificato. I programmatori lo fanno per una varietà di motivi, tra cui la pianificazione di eventi, la gestione di scadenze e il calcolo di valori temporali in un'applicazione.
+## Cos'è e Perché?
+Calcolare una data nel futuro o nel passato è una pratica comune che permette di manipolare oggetti temporali. Lo facciamo per diverse ragioni, dalle funzioni di pianificazione ai tracker di eventi.
 
-## Come:
-```Clojure
-(require '[clj-time.core :as time])
-(time/plus (time/now) (time/day-of 2)) ; calcola la data di oggi più due giorni
-=> #object[org.joda.time.DateTime 0x649218ad "2020-10-30T19:26:17.123Z"]
-(time/minus (time/now) (time/hour-of 3)) ; calcola la data di oggi meno tre ore
-=> #object[org.joda.time.DateTime 0x63817ca6 "2020-10-28T19:26:17.123Z"]
+## Come fare:
+L'aggiunta o la sottrazione di giorni a una data è piuttosto semplice in Clojure. Ecco un semplice esempio:
+
+```clojure
+(ns example.core
+  (:require [java-time :as jt]))
+
+(defn add-days [date days]
+  (jt/plus date (jt/days days)))
+
+(defn sub-days [date days]
+  (jt/minus date (jt/days days)))
+
+(defn -main []
+  (let [current-date (jt/local-date)
+        future-date (add-days current-date 20)
+        past-date (sub-days current-date 10)]
+    (println "Oggi è: " current-date)
+    (println "Tra 20 giorni sarà: " future-date)
+    (println "10 giorni fa era: " past-date)))
+```
+L'output del campione può essere il seguente:
+```clojure
+Oggi è: 2032-12-10
+Tra 20 giorni sarà: 2032-12-30
+10 giorni fa era: 2032-11-30
 ```
 
-## Deep Dive:
-Il calcolo di una data in futuro o in passato ha radici storiche nell'uso dei calendari per tenere traccia del tempo. Ci sono diversi modi per farlo, tra cui l'uso di librerie come "clj-time" o la creazione di funzioni personalizzate utilizzando le funzionalità di date fornite dal linguaggio. Inoltre, ci sono varie considerazioni da tenere a mente durante l'implementazione, come l'uso di fusi orari e la gestione di date in formato UTC.
+## Deep Dive
+Historicamente, il calcolo delle date era un processo più complesso. I programmatori dovevano fare i conti con le sfide come gli anni bisestili e le differenze tra i vari calendari. Clojure, come molti moderni linguaggi di programmazione, utilizza la libreria Java-Time che standardizza queste operazioni.
 
-## Vedi anche:
-- [Documentazione clj-time](https://github.com/clj-time/clj-time)
-- [Tutorial su come lavorare con le date in Clojure](https://practicalli.github.io/clojure/dates-and-time.html)
-- [Esplorazione dei fusi orari in Clojure](https://purelyfunctional.tv/guide/time-in-clojure/timezones/)
+Esistono alternative alla libreria Java-Time, come la libreria clj-time. Tuttavia, è generalmente consigliato utilizzare Java-time dato che è la libreria più aggiornata e supporta tutte le funzioni di Java 8.
+
+Dal punto di vista dell'implementazione, sia jt/plus che jt/minus creano una nuova istanza dell'oggetto data con la nuova data calcolata. Questo è dovuto all'immuteabilità delle date in Clojure, una caratteristica che aiuta a prevenire errori inaspettati nel codice.
+
+## Guarda Anche
+Per maggiori dettagli sulla manipolazione delle date in Clojure, vedi:
+
+1. La documentazione ufficiale di [Java-Time](https://cljdoc.org/d/org.clojure/java-time/0.3.2/doc/readme)
+2. La guida pratica al [manipolazione del tempo in Clojure](https://clojure-cookbook.com)
+3. Il tutorial su [Data e tempo in Clojure](https://www.learn-clojure.com/lessons/datetimes) per esplorare concepti vari.

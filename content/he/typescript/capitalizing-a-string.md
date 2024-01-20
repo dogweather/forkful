@@ -1,7 +1,7 @@
 ---
-title:                "העברת נתונים לכתיב קפיטלי"
-html_title:           "TypeScript: העברת נתונים לכתיב קפיטלי"
-simple_title:         "העברת נתונים לכתיב קפיטלי"
+title:                "הפיכת מחרוזת לאותיות ראשיות"
+html_title:           "TypeScript: הפיכת מחרוזת לאותיות ראשיות"
+simple_title:         "הפיכת מחרוזת לאותיות ראשיות"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -11,28 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+דילוג לאות הראשונה במחרוזת משרת להיכנס אל מצב כתוב. זה נחוץ למגוון של מצבים, אחת השימושים הנפוץ ביותר היא לקלוט שמות.
 
-לכתוב תווים גדולים בסדרה זה פעולה שמאפיינת את הטכנאיות שלנו. היא משנה את אופיו של התווים מהטקסט המקורי לטקסט גדול ומודגש. זאת פעולה שאנחנו עושים כדי להדגיש חלק מתוך הטקסט, לחלץ מידע חשוב או פשוט כדי לעצב את המראה שלנו.
-
-## איך לעשות?
+## כיצד ל:
+נבנה מחרוזת עם האות הראשונה לא באותיות ראשיות, ואז נשנה אותה. 
 
 ```TypeScript
-let str = "hello world";
-console.log(str.toUpperCase()); // Output: HELLO WORLD
+let str = 'hello world';
+str = str.charAt(0).toUpperCase() + str.slice(1);  
+console.log(str);  // Outputs: 'Hello world'
 ```
 
-הקוד לעיל מראה איך ניתן להשתמש בפונקציה `toUpperCase()` של שפת TypeScript כדי לכתוב תווים גדולים בסדרה. המלל המקורי של המשתנה `str` הוא "hello world" ולאחר השימוש בפונקציה הוא משתנה ל"HELLO WORLD". כך קיבלנו את הטקסט בתווים גדולים.
+## הצצה מעמיקה
+אם נהסטוריה של השפות התכנות משחקת כל שום דבר, הרעיון להפוך את האות הראשונה של מחרוזת לאותיות ראשיות הוא די חדשני. JavaScript, השפה שעליה TypeScript מתבססת, לא כללה את הפונקציה הזו לתחילה, כך שהפכה לדרך נפוצה להראות את היכולת שלך לפתור בעיות.
+ 
+תחליף מהיר אך פחות אלגנטי היה להפוך את כל המחרוזת לאותיות ראשיות:
 
-## Deep Dive
+```TypeScript
+let str = 'hello world';
+str = str.toUpperCase();  
+console.log(str);  // Outputs: 'HELLO WORLD'
+```
 
-מאז ומתמיד, השימוש בתווים גדולים היה דרך להצביע על חלק מהטקסט כלול וחשוב. בעבר, טכנאיות עשו את זה בעזרת כלי כתיבה והפעלה של צבעים. היום, עם שיפור הפיתוחים הטכנולוגיים, אנחנו משתמשים בתווים גדולים כדי להדגיש מידע חשוב ומשמעויות שונות.
+אם אתה רוצה להפוך רק את האות הראשונה של כל מילה במחרוד לאותיות גדולות, אתה יכול להשתמש בשיטה זו:
 
-בנוסף לפונקציות המובנות בשפת TypeScript, ישנן גם תוכניות שמאפשרות כתיבת תווים גדולים בסדרה ותוכניות שמאפשרות ליצור תמונות וסמלים כתיבתיים. בחירת האלמנטים הללו תלויה בסוג הפרויקט ובהעדפות המתכנתים.
+```TypeScript
+let str = 'hello world';
+str = str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.substring(1)).join(' ');
+console.log(str);  // Outputs: 'Hello World'
+```
 
-כאשר משתמשים בתווים גדולים במסגרת כתיבת טקסט, חשוב לקחת בחשבון את התמיכה בשפות נוספות ומבני קוד שונים. כדי להיות יצירתיים ולמקסם את ההשפעה שלנו, יש לבחור את התווים הגדולים בסדרה ביעילות.
-
-## ראה גם
-
-- [שינוי כתיבת טקסט לתווים גדולים ב-PHP](https://www.w3schools.com/php/func_string_strtoupper.asp)
-- [כתיבת טקסט בתווים גדולים ב-Python](https://www.tutorialspoint.com/python/string_upper.htm)
-- [כיצד להשתמש בתווים גדולים בסדרה בפרויקט JavaScript?](https://www.geeksforgeeks.org/javascript-string-prototype-uppercase/)
+## ראה גם:
+1. [TypeScript ב-Vscode](https://code.visualstudio.com/docs/languages/typescript)
+2. [המדריך הרשמי ל-TypeScript](https://www.typescriptlang.org/docs/handbook/basic-types.html)

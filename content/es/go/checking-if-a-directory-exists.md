@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "Go: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "Go: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,39 +10,72 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-
-Comprobar si un directorio existe es una tarea común en la programación. Permite a los programadores verificar si un directorio específico existe en una ubicación determinada y tomar las medidas correspondientes en consecuencia. Esta comprobación es especialmente útil cuando se trabaja con archivos y directorios en lugar de almacenamiento en línea.
+## ¿Qué y Por qué?
+Verificar si un directorio existe es una operación común utilizada en la programación para confirmar la existencia de un directorio en una ruta específica. Esto es útil para evitar errores al intentar acceder a un directorio que no existe.
 
 ## Cómo hacerlo:
 
-```Go
-func main() {
-	// Creamos un directorio ficticio para demostrar el proceso
-	err := os.Mkdir("mi_directorio", 0755)
-	if err != nil {
-		fmt.Println("Error al crear el directorio:", err)
-	} else {
-		fmt.Println("Directorio creado correctamente.")
-	}
+Aquí hay un ejemplo simple usando la función `Stat` del paquete `os` en Go:
 
-	// Comprobamos si el directorio existe utilizando la función "Exists" de la biblioteca "path/filepath"
-	existe, err := filepath.Exists("mi_directorio")
-	if err != nil {
-		fmt.Println("Error al comprobar si el directorio existe:", err)
-	} else if existe {
-		fmt.Println("El directorio existe.")
+```Go
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+     // cambiar a su directorio
+	dirPath := "./test-dir"
+
+	_, err := os.Stat(dirPath)
+
+	if os.IsNotExist(err) {
+		fmt.Printf("El directorio %v no existe. \n", dirPath)
 	} else {
-		fmt.Println("El directorio no existe.")
+		fmt.Printf("El directorio %v existe. \n", dirPath)
 	}
 }
 ```
 
-## Profundizando:
+Esto imprimirá "El directorio ./test-dir existe." si el directorio existe o "El directorio ./test-dir no existe." si no existe.
 
-Comprobar si un directorio existe es una tarea esencial para trabajar con archivos y directorios en Go. Anteriormente, se utilizaba la función "os.Stat" para este propósito, pero esta función solo funciona en sistemas Unix. Afortunadamente, la biblioteca "path/filepath" proporciona la función "Exists" que funciona en todos los sistemas operativos.
+## Deep Dive:
+Verificar si un directorio existe en Go ha sido una necesidad desde los primeros días del lenguaje. `os.Stat` y `os.IsNotExist` son las dos funciones más comunes para realizar este control.
 
-## Véase también:
+Históricamente es común también en otros lenguajes de programación, como Python y Java. Go lo hace de una manera más simplificada y directa.
 
-- Documentación oficial de Go sobre "os.Stat": https://golang.org/pkg/os/#Stat
-- Documentación oficial de Go sobre "path/filepath": https://golang.org/pkg/path/filepath/
+Una alternativa a `os.Stat` es usar `os.Open` y después `File.Stat` de esta manera:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+     // cambiar a su directorio
+	dirPath := "./test-dir"
+
+	_, err := os.Open(dirPath)
+
+	if os.IsNotExist(err) {
+		fmt.Printf("El directorio %v no existe. \n", dirPath)
+	} else {
+		fmt.Printf("El directorio %v existe. \n", dirPath)
+	}
+}
+```
+
+`os.Stat` retorna una estructura `FileInfo` que describe el archivo/directorio nombrado y un error, archivo/directorio es el que se pasó por parámetro. `os.IsNotExist` es una función que recibe un error como parámetro y nos dice si este corresponde a un archivo/directorio que no existe.
+
+## Ver también:
+
+Para más información y recursos en línea, echa un vistazo a los siguientes enlaces:
+
+1. Documentación oficial de Go: paquete os: [os package](https://golang.org/pkg/os/)
+2. Descripción detallada de la función os.Stat y los errores del paquete os: [os.Stat function](https://golang.org/pkg/os/#Stat) y [os package errors](https://golang.org/pkg/os/#IsNotExist)
+3. Foro oficial de Go: [forum Golang](https://forum.golangbridge.org/)

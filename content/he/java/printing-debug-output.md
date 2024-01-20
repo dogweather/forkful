@@ -1,6 +1,6 @@
 ---
 title:                "הדפסת פלט ניפוי שגיאות"
-html_title:           "Java: הדפסת פלט ניפוי שגיאות"
+html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
 simple_title:         "הדפסת פלט ניפוי שגיאות"
 programming_language: "Java"
 category:             "Java"
@@ -10,27 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-הדפסת פלט דיבאג היא פעולה שבה מתכנתים מדפיסים מידע נוסף בעת הרצת הקוד שלהם. הדבר הזה עוזר להבין כיצד הקוד פועל ותורם לזיהוי ותיקון באגים.
+## מה ולמה?
+הדפסת התראות לניפוי שגיאות (Debug Output) היא שיטה שמאפשרת למתכנתים לראות את הזרימה של התוכנית שלהם תוך כדי ריצה או לבחינת משתנים. מתכנתים משתמשים בזה כדי לנפות שגיאות ולקבוע את מקום הבעיה בקוד.
 
-# כיצד לעשות זאת:
-כדי להדפיס פלט דיבאג בקוד JavaScript, יש להשתמש בפעולת console.log(). למשל:
+## שימוש:
+בממשק `System.out` יש מספר שיטות שאנחנו יכולים להשתמש בהם: `print()`, `println()`, `printf()`. על ידי השתמש בהם, אנחנו יכולים להדפיס הודעות לניפוי שגיאות.
 
-```java
-int num1 = 5;
-int num2 = 10;
-System.out.println("The sum of " + num1 + " and " + num2 + " is: " + (num1 + num2));
+```Java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("This is a debug message");
+        
+        int x = 10;
+        System.out.println("The value of x is: " + x);
+    }
+}
 ```
 
-פלט:
+תוצאה:
 
-The sum of 5 and 10 is: 15
+```
+This is a debug message
+The value of x is: 10
+```
 
-# כיום ישנם גם אפשרויות נוספות להדפסת פלט דיבאג, כגון השתמשות במנוע חיפוש אינטרנט כדי למצוא באגים בקוד או בשימוש בתוכנות ספציפיות לכיוון זה. אך למרבה המזל, השיטה הקלאסית של הדפסת פלט דיבאג עדיין הולכת וטובה ומספקת למתכנתים מידע חשוב על הקוד שלהם.
+## צלילה עמוקה:
+הדפסת הודעות לניפוי שגיאות נמצאת בשימוש מפוארב בימינו, אך זו לא השיטה היחידה לניפוי שגיאות. אפשר להשתמש גם בדפיסת ההילה (tracing), במעקב-נקודה (breakpoints), במתנדים (watchpoints) ועוד. זה בהחלט עניין של טעם אישי ומסיבות איכות. אם ההודעה לא מסייעת באיתור הבעיה או שהיא מכבידה על הביצועים של המערכת, ייתכן ותרצה לשקול שיטות אחרות.
 
-# העמקה:
-עד לשנות ה-60 של המאה הקודמת, המתכנתים היו משתמשים בטכניקות מסורתיות יותר כדי למצוא ולתקן את באגיהם, כגון לתייג קטעי קוד עם תגיות או להדפיס מידע נוסף באמצעות מכתבים מיוחדים. אך עם התפתחות הטכנולוגיות, הדפסת פלט דיבאג צפתה בשיפורים והפכה למאפשרת למתכנתים לתקן באגים ולתחזק את הקוד שלהם בצורה יעילה יותר.
-
-# ראה גם:
-- https://www.geeksforgeeks.org/debugging-in-java/
-- https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javac.html
+## ראה גם:
+1. [Oracle Java Documentation](https://docs.oracle.com/en/java/)
+2. [Oracle’s Java Tutorials – Basic I/O](https://docs.oracle.com/javase/tutorial/essential/io/index.html)
+3. [Introduction to Java Debugging](http://www.cs.cf.ac.uk/Dave/PERL/node157.html)

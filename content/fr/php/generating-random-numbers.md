@@ -1,7 +1,7 @@
 ---
-title:                "La génération de nombres aléatoires"
-html_title:           "PHP: La génération de nombres aléatoires"
-simple_title:         "La génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -10,22 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire?
-Générer des nombres aléatoires est une fonctionnalité importante pour les programmeurs dans de nombreux cas différents. Cela leur permet de créer des jeux, de rendre des processus plus dynamiques ou de générer des données de test pour des applications.
+## Quoi & Pourquoi?
 
-# Comment faire:
-Voici un exemple de code en PHP pour générer un nombre aléatoire entre 1 et 10 et l'afficher à l'utilisateur:
+Générer des nombres aléatoires, c'est simplement créer des nombres qui ne suivent aucune séquence prévisible. Les programmeurs le font pour diverses raisons, y compris pour effectuer des simulations, des tests de stress, de la cryptographie, ou pour rendre les jeux plus intéressants.
+
+## Comment Faire:
+
+Voici comment générer des nombres aléatoires en PHP:
+
 ```PHP
-$number = rand(1,10); //génère un nombre aléatoire entre 1 et 10
-echo "Le nombre aléatoire généré est: " . $number; //affiche le résultat à l'utilisateur
-```
-Exemple de sortie:
-```
-Le nombre aléatoire généré est: 5
+<?php   
+   // générer un nombre aléatoire
+   $randomNumber = rand();
+   echo $randomNumber;
+
+   // générer un nombre aléatoire entre 10 et 30
+   $randomNumberBetween = rand(10, 30);
+   echo $randomNumberBetween;   
+?>  
 ```
 
-# Plongée profonde:
-La génération de nombres aléatoires est un concept qui existe depuis longtemps. À l'origine, cela se faisait à l'aide de méthodes manuelles telles que le lancer de dés ou la sélection de joueurs à pile ou face. Avec l'avènement de la technologie informatique, des algorithmes sophistiqués ont été développés pour générer des nombres aléatoires de manière plus efficace. Les programmeurs peuvent également utiliser des bibliothèques externes, telles que Mersenne Twister, pour obtenir des résultats plus fiables et aléatoires.
+Dans le code ci-dessus, la fonction  `rand()` génère des nombres aléatoires. Si vous fournissez les arguments `min` et `max`, cela générera un nombre aléatoire entre ces deux valeurs, inclusivement.
 
-# Voir aussi:
-Pour plus d'informations sur la génération de nombres aléatoires en PHP, vous pouvez consulter la documentation officielle sur la fonction rand() (https://www.php.net/manual/en/function.rand.php). Vous pouvez également explorer des alternatives telles que la fonction mt_rand() pour une meilleure qualité de génération de nombres aléatoires ou la classe rand_post dans WordPress pour générer des nombres aléatoires en utilisant le temps comme seed (https://codex.wordpress.org/Function_Reference/rand_post).
+## Dive Profond:
+
+Historiquement, la première fonction en PHP pour générer des nombres aléatoires était `rand()`. Cependant, elle n'a pas été conçue pour générer des nombres avec une bonne distribution aléatoire, mais seulement pour être rapide et légère.
+
+Une alternative sûre est l'utilisation de la fonction `random_int()`, introduite en PHP 7, qui génère un nombre entier aléatoire cryptographiquement sûr entre deux limites données, inclusivement.
+
+Pour plus de détails sur l'implémentation, consultez les documents officiels PHP sur [`rand()`](https://www.php.net/manual/fr/function.rand.php) et [`random_int()`](https://www.php.net/manual/fr/function.random-int.php).
+
+## Voir Aussi:
+
+Pour plus d'informations sur les nombres aléatoires en PHP, consultez ces ressources:
+
+- [Fonctions de génération de nombres aléatoires en PHP](https://www.php.net/manual/fr/ref.math.php)
+- [random_int() vs rand()](https://www.php.net/manual/fr/function.random-int.php)
+- [Génération de nombres aléatoires sécurisés](https://paragonie.com/blog/2015/07/how-safely-generate-random-strings-and-integers-in-php)

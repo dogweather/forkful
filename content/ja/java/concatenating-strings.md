@@ -1,6 +1,6 @@
 ---
 title:                "文字列の連結"
-html_title:           "Java: 文字列の連結"
+html_title:           "Bash: 文字列の連結"
 simple_title:         "文字列の連結"
 programming_language: "Java"
 category:             "Java"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？
-文字列を連結することは、複数の文字列を一つに結合することを意味します。プログラマーがこれをするのは、文字列を組み立てたり、出力を整形したりするためです。
+## 何となぜ？(What & Why?)
 
-## 方法：
+文字列の連結は、2つ以上の文字列をひとつにまとめるプロセスです。プログラマーにとって、これはデータを加工したり操作したりするための効率的な手段となります。
+
+## 手順 (How to)
+
+Javaで文字列を連結する一番基本的な方法は、`+` (プラス) 演算子を使用することです。
+
 ```Java
-public class ConcatenationExample {
-
-    public static void main(String[] args) {
-
-        // 例１：文字列の連結
-        String str1 = "Hello";
-        String str2 = "world";
-        String concatStr = str1 + str2;
-        System.out.println(concatStr); //Hello world
-
-        // 例２：数値と文字列の連結
-        String numStr = "1 + 2 = ";
-        int num1 = 1;
-        int num2 = 2;
-        String equation = numStr + (num1 + num2);
-        System.out.println(equation); //1 + 2 = 3
-    }
-}
+String hello = "こんにちは, ";
+String world = "世界!";
+String greeting = hello + world;
+System.out.println(greeting);
 ```
 
-## 詳細を掘り下げる:
-文字列の連結は、プログラミング言語の歴史が古く、基本的な機能の一つです。代替手段として、StringBuilderクラスがあります。しかし、文字列の数が少ない場合は、単純に連結演算子を使用する方が簡単です。文字列の連結は、メモリを一時的に消費するため、処理が重くなる可能性があります。
+このプログラムは、`こんにちは, 世界!`と出力します。
 
-## 関連情報:
-- [Javaで文字列を連結する方法](https://www.javatpoint.com/java-string-concatenation)
-- [StringBuilderクラスの使用法](https://www.geeksforgeeks.org/string-vs-stringbuilder-vs-stringbuffer-in-java/)
+## 深掘り (Deep Dive)
+
+Java初期のバージョンでは、`+` 演算子が文字列連結のための唯一の方法でした。しかし、大量の文字列連結操作を行う際には、効率的ではありませんでした。これは、文字列がイミュータブル（変更不可能）であるため、それぞれの連結操作で新しい文字列が生成されるためです。
+
+それを解決するための代替手段として、`StringBuilder`と`StringBuffer`があります。これらはミュータブル（変更可能）なオブジェクトで、文字列を効率的に連結します。
+
+```Java
+StringBuilder sb = new StringBuilder("こんにちは, ");
+sb.append("世界!");
+System.out.println(sb.toString());
+```
+
+このコードも、`こんにちは, 世界!`と出力します。しかし、`StringBuilder`を使用すると、新しい文字列インスタンスを生成せずに文字列を連結できます。
+
+## 参考資料 (See Also)
+
+- [Javaの文字列クラスのドキュメンテーション](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
+- [StringBuilderクラスのドキュメンテーション](https://docs.oracle.com/javase/8/docs/api/java/lang/StringBuilder.html)
+- [Oracleのチュートリアル: 文字列を連結する](https://docs.oracle.com/javase/tutorial/java/data/buffers.html)

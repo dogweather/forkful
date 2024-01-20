@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "C: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What et Pourquoi?
+## Quoi & Pourquoi?
 
-Interpoler une chaîne de caractères, ou plus simplement l'incorporation de variables ou de données dans une chaîne, est une technique couramment utilisée par les programmeurs en C. Cela permet de rendre les chaînes de caractères plus dynamiques et personnalisées, améliorant ainsi la lisibilité et l'utilité du code.
+L'interpolation de chaînes est le processus d'insertion de variables dans une chaîne. Les programmeurs l'utilisent pour créer des chaînes dynamiques et facile à lire.
 
 ## Comment Faire:
 
-La syntaxe de base pour interpoler une chaîne de caractères en C est la suivante :
-```c
-printf("Voici une chaîne de caractères formatée: %s", variable);
-```
-Dans cet exemple, le symbole %s est remplacé par la valeur de la variable fournie. Voici un exemple plus complet :
-```c
+Voici un exemple de code d'interpolation de chaîne en utilisant le format printf en C:
+
+```C
 #include <stdio.h>
-int main()
-{
-   int age = 27;
-   char *nom = "Jean";
-   printf("%s a %d ans.", nom, age);
-   return 0;
+
+int main() {
+    char nom[] = "Pierre";
+    printf("Bonjour, %s!\n", nom);
+    
+    return 0;
 }
 ```
-Ce code affichera: "Jean a 27 ans." Vous pouvez également utiliser la fonction sprintf() pour stocker une chaîne interpolée dans une variable.
 
-## Approfondissement:
+La sortie du code sera: `Bonjour, Pierre!`.
 
-L'interpolation de chaînes de caractères est une technique très répandue dans la programmation moderne, mais elle n'était pas disponible dans les premières versions du langage C. Auparavant, les programmeurs devaient utiliser des fonctions telles que strcat() pour combiner des chaînes de caractères. Bien qu'il existe d'autres méthodes pour formater et manipuler des chaînes, l'interpolation est souvent considérée comme la plus concise et la plus efficace.
+## Plongée Profonde
 
-## À Voir:
+Historiquement, l'interpolation de chaîne n'était pas disponible dans les versions antérieures du langage C, obligeant les développeurs à utiliser des méthodes comme strcat() ou sprint(). Avec C99, nous avons le privilège d'utiliser la fonction snprintf() qui est beaucoup plus sûre.
 
-Pour en savoir plus sur l'interpolation de chaînes en C, voici quelques ressources utiles:
-- [Documentation de la fonction printf](https://www.tutorialspoint.com/c_standard_library/c_function_printf.htm)
-- [Exemples d'interpolation de chaînes](https://www.geeksforgeeks.org/difference-strcat-printf/)
-- [Un aperçu de la manipulation de chaînes en C](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
+Une alternative à l'interpolation de chaîne en C est la concaténation de chaînes, mais cela peut être plus verbeux et sujet à des erreurs.
+
+En termes de mise en œuvre, le C utilise un tampon pour stocker les chaînes formatées avec printf(). Cette fonction écrit les valeurs des variables dans un tampon avant de le copier dans la chaîne de destination.
+
+## Voir Aussi
+
+Pour plus d'informations et de ressources sur l'interpolation de chaînes en C, vous pouvez consulter les liens suivants:
+- [Interpolation de chaîne en C](https://www.cprogramming.com/tutorial/c/lesson4.html)
+- [Documentation officielle sur les fonctions printf et sprintf](https://fr.cppreference.com/w/c/io/fprintf)
+- [Introduction à l'interpolation de chaînes](http://www.learn-chinese-mandarin-language.com/C-string-interpolation-and-variable-replacement.html)

@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "PHP: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜 하는가?
-문자열에서 일부분을 추출하는 것이 무엇인지 그리고 프로그래머들이 그것을 왜 하는지 설명해보겠습니다.
+## 무엇 & 왜?
 
-## 어떻게 해야 하나요?
-`PHP` 코드 블록 내부에서 코딩 예제와 출력 결과를 함께 볼 수 있습니다.
+서브스트링 추출은 주어진 문자열에서 특정 부분 문자열을 가져오는 것을 말합니다. 프로그래머들이 이를 사용하는 주요한 이유는 문자열 분석 및 처리 작업에서 특정 데이터를 선택할 필요성 때문입니다.
+
+## 방법:
 
 ```PHP
-// 문자열에서 일부분을 추출하는 방법
-$str = "Hello World";
-
-echo substr($str, 0, 5); // 출력 결과: "Hello"
-echo substr($str, 6); // 출력 결과: "World"
+<?php
+  $str = "Hello, World!";
+  echo substr($str, 7, 5);
+?>
 ```
 
-## 깊이 파고들기
-문자열에서 일부분을 추출하는 것은 언제부터 사용되었고, 대안은 무엇인지 그리고 구현에 대한 자세한 정보를 알아보겠습니다.
+위 코드의 결과는 "World"입니다. `substr` 함수는 첫 번째 매개변수로 전체 문자열을, 두 번째 매개변수는 시작 위치를, 세 번째 매개변수는 가져올 문자열의 길이를 나타냅니다.
 
-1. 역사적 맥락: 문자열에서 일부분을 추출하는 기능은 이미 오래 전부터 사용되었습니다. 이 기능은 문자열을 다루는 작업에서 필수적이기 때문에 거의 모든 언어에서 지원합니다.
-2. 대안: `substr()` 함수는 문자열에서 일부분을 추출하는 가장 많이 사용되는 메소드 중 하나입니다만, `preg_match()` 함수를 사용해서 정규식을 이용하여 문자열을 추출하는 방법이 있습니다.
-3. 구현 방법: `substr()` 함수는 `$start`와 `$length` 매개변수를 사용합니다. `$start`는 추출하고자 하는 문자열의 시작 위치를 나타내고, `$length`는 추출하고자 하는 길이를 나타냅니다. 또는 `$length` 대신 음수 값을 넣어서 문자열의 뒤에서부터 추출할 수도 있습니다.
+```PHP
+<?php
+  $str = "Hello, World!";
+  echo substr($str, -1);
+?>
+```
 
-## 관련 자료
-연관된 정보를 알아보기 위해 아래 링크를 확인해보세요.
+위 코드의 결과는 "!"입니다. 음수 인덱스는 문자열 끝에서 부터의 위치를 나타냅니다.
 
-- PHP `substr()` 함수 문서: https://www.php.net/manual/en/function.substr.php
-- PHP `preg_match()` 함수 문서: https://www.php.net/manual/en/function.preg-match.php
+
+## 깊이 들여다보기:
+
+서브스트링 추출은 문자열 처리에 있어 중대한 역할을 합니다. PHP에선 `substr` 함수를 사용해 이 작업을 달성했습니다. 2004년 PHP 5에서 처음 도입됐으며, 그 후로 개발자들에게 많은 편리함을 제공했습니다.
+
+대안으로 `mb_substr`, `substr_replace`, `strpos` 등의 함수가 있습니다. 이들은 다양한 문자열 조작과 관련된상황에서 사용됩니다.
+
+실제로, 강력한 라이브러리와 함수를 사용하여 PHP의 부분 문자열 추출은 그 구현이 단순하고 실행시간이 매우 빠릅니다.
+
+## 참고 자료:
+
+- PHP 공식 문서의 `substr` 함수 [링크](https://www.php.net/manual/en/function.substr.php)
+- `mb_substr`, `substr_replace`, `strpos` 함수에 대한 자세한 정보는 PHP 공식 문서 [링크](https://www.php.net/manual/en/book.mbstring.php)

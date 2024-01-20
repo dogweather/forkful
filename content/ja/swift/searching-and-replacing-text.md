@@ -1,7 +1,7 @@
 ---
-title:                "テキストの検索と置き換え"
-html_title:           "Swift: テキストの検索と置き換え"
-simple_title:         "テキストの検索と置き換え"
+title:                "テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
+simple_title:         "テキストの検索と置換"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何& なぜ？
-テキスト検索と置換とは、プログラマーがコードの中で特定の文字列を探し、別の文字列に置き換えることを指します。プログラマーがテキストの検索と置換を行う理由は、コードの修正や変更を効率的に行うためです。
+## 何であり、なぜ? (WHAT & WHY?)
 
-## 方法：
-以下の ```Swift ... ``` コードブロックに示したコーディング例と出力を参考にしてください。
+テキストの検索および置換とは、特定の文字列を見つけてそれを別のものに変えることです。プログラマがこれを行う理由は、大量のデータを迅速に処理するため、または特定種類のエラーを直すために通常です。
 
-```swift
-// 検索して置換する例
-let sentence = "今日はいい天気です。"
-let newSentence = sentence.replacingOccurrences(of: "いい", with: "素晴らしい")
-print(newSentence) // 出力：今日は素晴らしい天気です。
+## どうやって (HOW TO)
+
+以下にSwiftでのテキスト検索と置換の基本的なやり方を示します。これはあくまで基本的なやり方ですが、一般的なユースケースで十分に使えます。
+
+```Swift
+var string = "Hello, Swift"
+string = string.replacingOccurrences(of: "Swift", with: "World")
+print(string)  // prints "Hello, World"
 ```
 
-```swift
-// 複数の文字列を置換する例
-let codingLanguages = ["Swift", "Objective-C", "Java", "Kotlin"]
-let newCodingLanguages = codingLanguages.map { $0.replacingOccurrences(of: "C", with: "++") }
-print(newCodingLanguages) // 出力：["Swift", "Objective++", "Java", "Kotlin"]
-```
+上記のコードは、"Swift"という文字列を"World"に置換して出力します。
 
-## 深堀り：
-以下の内容を参考に、テキストの検索と置換についてさらに詳しく学んでください。
+## ディープダイブ (DEEP DIVE)
 
-1. 過去の文脈：テキストの検索と置換は古くから使われている技術であり、プログラミング言語だけでなく、テキストエディタの機能でもよく使われています。
-2. 代替手段：テキストの検索と置換には、プログラミング言語の標準関数だけでなく、正規表現などの機能を使った高度な方法もあります。
-3. 実装の詳細：Swiftでは、テキストの検索と置換に```String```クラスの```replacingOccurrences```メソッドを使うことができます。このメソッドには、テキストの一部分をパターンとして指定し、それを別の文字列に置換する機能が備わっています。
+テキストの検索および置換は計算の歴史と密接に関連しています。なぜなら、初期のコンピュータシステムがテキスト操作が中心だったからです。
 
-## 関連情報：
-テキストの検索と置換についてのさらなる情報を知りたい方は、以下のリンクを参考にしてください。
+Swiftでは、`replacingOccurrences(of: with:)`がもっとも一般的な方法ですが、ある特定の条件に合うものだけを置換したい場合などには、正規表現を使う方法もあります。詳しくは、Swiftのドキュメンテーションを参照してください。
 
-- [Swift公式ドキュメント](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [正規表現の使い方](https://qiita.com/shizuma/items/22c69371afe51672c6f2)
-- [テキストエディタの検索と置換](https://support.apple.com/kb/PH18638?locale=ja_JP&viewlocale=ja_JP)
+この`replacingOccurrences`メソッドは、内部的には全体の文字列をスキャンすることで実現しています。つまり、このメソッドの時間複雑度はO(n)で、nは文字列の長さを表します。
+
+## 関連資料 (SEE ALSO)
+
+- Swiftの公式ドキュメンテーション: [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [Regular Expressions in Swift](https://benscheirman.com/2014/06/regex-in-swift/)
+- [WWDC 2019](https://developer.apple.com/videos/play/wwdc2019/265/)

@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "C#: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -12,36 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Utskrift av felsökningsinformation är en vanlig praxis bland programmerare och det innebär i grund och botten att skriva ut information som hjälper till att förstå hur ett program körs och om det finns några problem som behöver åtgärdas. Det kan inkludera variabler, felmeddelanden och annan viktig information som kan hjälpa till att hitta och fixa fel i koden.
+Utskrift av felsökningsoutput är metoden för att visa värden, mätningar, eller tillstånd som är användbara för att kunna felsöka koden under utveckling. Programmerare gör detta för att underlätta identifiering och lösning av problem.
 
-Att skriva ut felsökningsinformation är en viktig del av utvecklingsprocessen eftersom det bidrar till att hitta och förstå problem i koden. Det är ett effektivt sätt att spåra och lösa buggar och det gör det möjligt för utvecklare att förbättra sina program och göra dem mer stabila.
+## Hur till:
 
-## Hur man gör:
-
+För att skriva ut felsökningsoutput i C#, kan du använda System.Diagnostics.Debug-klassen. Exempel nedan:
 ```C#
-Console.WriteLine("Detta är en utskrift av felsökningsinformation.");
-Console.WriteLine("Variabeln x = " + x);
+System.Diagnostics.Debug.WriteLine("Ditt meddelande här");
 ```
 
-Det är enkelt att skriva ut felsökningsinformation i C#. Genom att använda `Console.WriteLine()` -funktionen kan du skriva ut både text och variabler. Det är viktigt att inkludera lämpliga textmeddelanden för att hjälpa till att förstå vad som skrivs ut.
-
+Om du vill skicka med variabelvärden kan du göra det med `string.Format` eller interpolerade strängar.
+```C#
+string variabel = "Exempelvärde";
+System.Diagnostics.Debug.WriteLine($"Värdet på variabeln är {variabel}.");
 ```
-Detta är en utskrift av felsökningsinformation.
-Variabeln x = 5
+Detta kommer att generera följande utdata:
+```C#
+Värdet på variabeln är Exempelvärde.
 ```
 
-Som du kan se i exemplet ovan läggs variabeln `x` till i texten med hjälp av `+` -operatorn. Det är dock viktigt att notera att om variabeln är en sträng behöver den inte ha `+` -operatorn innan den skrivs ut.
+## Djupdykning
 
-## Deep Dive:
+Utskrift av felsökningsoutput har länge varit en standardmetod för att felsöka datorprogram, speciellt under utvecklingsstadiet. I C#, implementeras detta med System.Diagnostics.Debug klassen, men det finns alternativ. 
 
-Att skriva ut felsökningsinformation är en övergiven praxis som härstammar från en tid då det inte fanns avancerade felsökningsverktyg som idag. Det är fortfarande ett bra sätt att få insikt om hur koden körs och om det finns några problem som behöver åtgärdas.
+Ett alternativ är `System.Console.WriteLine`, som skriver till standardutdata i stället för felsökningsinstallationen. Ett annat är `System.Diagnostics.Trace`, som skriver både till felsöknings- och utsläppskonsolerna.
 
-Alternativet till att skriva ut felsökningsinformation är att använda ett felsökningsverktyg som kan spåra och analysera koden i realtid. Detta ger vanligtvis mer detaljerad information och gör det lättare att hitta och lösa problem. Men att skriva ut felsökningsinformation är fortfarande användbart i enklare utvecklingsmiljöer.
+När du använder `System.Diagnostics.Debug`, skrivs meddelanden endast ut när koden kompileras med `DEBUG`-symbolen. Detta innebär att felsökningsutskrifter inte kommer att visas i produktionen, vilket hjälper till att optimera prestanda och minska informationens exponering.
 
-En viktig sak att notera när det gäller att skriva ut felsökningsinformation är att det inte är lämpligt för produktionskoden. Det bör endast användas under utvecklingsprocessen och sedan tas bort innan koden skickas till produktion.
+## Se även
 
-## Se även:
-
-- [Microsofts dokumentation för felsökningsfunktioner i C#](https://docs.microsoft.com/en-us/visualstudio/debugger/welcome-to-the-visual-studio-debugger)
-- [En guide till felsökning i C#: Vanliga problem och lösningar](https://stackify.com/csharp-debugging-tips/)
-- [Skillnaden mellan att använda utskrift av felsökningsinformation och avancerade felsökningsverktyg](https://www.add-in-express.com/creating-addins-blog/2015/04/29/printing-debug-info-vs-debug-add-in/)
+- MSDN-dokumentation om System.Diagnostics.Debug: [Här](https://docs.microsoft.com/sv-se/dotnet/api/system.diagnostics.debug?view=net-5.0)
+- En grundlig jämförelse mellan `Debug` och `Trace`: [Här](https://stackoverflow.com/questions/519233/writing-to-output-window-of-visual-studio)
+- Microsofts guide om felsökning i Visual Studio: [Här](https://docs.microsoft.com/sv-se/visualstudio/debugger/?view=vs-2019)

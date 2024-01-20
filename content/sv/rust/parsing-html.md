@@ -1,7 +1,7 @@
 ---
-title:                "HTML-analys"
-html_title:           "Rust: HTML-analys"
-simple_title:         "HTML-analys"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,40 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+HTML-parsning handlar om att omvandla HTML-kod till en strukturerad representation, ofta ett syntaxträd. Programmerare gör detta för att hämta, ändra, eller extrahera information från webbsidor.
 
-Att parsra HTML är en viktig del av webbutveckling eftersom det är det språk som används för att skapa och strukturera webbsidor. Genom att parsra HTML kan programmerare bearbeta och manipulera innehållet på en webbsida för att göra den mer dynamisk och användarvänlig.
+## Hur man gör:
+Använd `html5ever`-biblioteket för att parsa HTML-kod. Installera det genom att lägga till detta till din Cargo.toml fil:
 
-## Så här gör du:
-
-För att parsra HTML i Rust kan du använda biblioteket `html5ever`. Nedan finns ett enkelt exempel på hur man kan använda detta bibliotek för att hitta och skriva ut länkarna på en webbsida:
 ```Rust
-// Ladda in biblioteket
+[dependencies]
+html5ever = "0.24.1"
+```
+
+Här är ett enkelt exempel:
+```Rust
 extern crate html5ever;
+use html5ever::driver::ParseOpts;
+use html5ever::rcdom::RcDom;
+use html5ever::tendril::TendrilSink;
 
-// Skapa en variabel med en webblänk
-let url = "https://example.com";
+fn main() {
+    let html = "<p>Hello World</p>";
+    let dom = parse_html(html);
 
-// Parsra HTML från länken
-let new_html = html5ever::parse(url);
+    // ... hantera dom-objektet
+}
 
-// Loopa igenom alla länkar på sidan och skriv ut dem
-for link in new_html.find_all(links) {
-    println!("{}", link);
+fn parse_html(html: &str) -> RcDom {
+    let opts = ParseOpts::default();
+    let dom = html5ever::parse_document(RcDom::default(), opts)
+        .from_utf8()
+        .read_from(&mut html.as_bytes())
+        .unwrap();
+
+    dom
 }
 ```
 
-Exempelutdata:
-```
-https://example.com/about
-https://example.com/contact
-https://example.com/products
-```
+## Fördjupning
+Historiskt sett var HTML-parsning ovanligt inom programmering, men eftersom webben har växt har behovet ökat avsevärt. Det finns alternativ till `html5ever`, som `lxml` i Python och `jsoup` i Java.
 
-## Djupdykning:
+HTML5ever, som vi använde här, är måhända det bästa valet i Rust. Det är en del av Servo-projektet och är utformat för att hantera den verkliga, icke-perfekta HTML som man ofta hittar i det vilda på webben.
 
-En intressant historisk kontext är att HTML utvecklades av Tim Berners-Lee på 1990-talet som en del av hans arbete på CERN. Alternativ till att parsra HTML är att använda andra språk som XHTML eller XML. En viktig del av att parsra HTML är att förstå DOM-trädet, som är den hierarkiska strukturen för hur HTML-dokumentet är uppbyggt.
-
-## Se även:
-
-- [Officiell dokumentation för html5ever](https://docs.rs/html5ever/0.22.0/html5ever/)
-- [Dokumentation för DOM-trädet i HTML](https://www.w3.org/TR/REC-DOM-Level-1/level-one-html.html)
+## Se även
+- Rust Programmering bok: [https://doc.rust-lang.org/book/](https://doc.rust-lang.org/book/)
+- HTML5ever dokumentation: [https://docs.rs/html5ever/0.24.1/html5ever/](https://docs.rs/html5ever/0.24.1/html5ever/)
+- Servo: [https://github.com/servo/servo](https://github.com/servo/servo)

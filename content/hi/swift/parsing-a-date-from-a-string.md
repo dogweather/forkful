@@ -1,7 +1,7 @@
 ---
-title:                "शब्द से तारीख निर्धारित करना"
-html_title:           "Swift: शब्द से तारीख निर्धारित करना"
-simple_title:         "शब्द से तारीख निर्धारित करना"
+title:                "एक स्ट्रिंग से तारीख पार्स करना"
+html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
+simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,25 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kya aur Kyon?
-Parsing a date from a string ek common programming task hai jahan programmer ek string ko ek date mein convert karna chahte hain. Iska reason yeh hai ki date ko string format mein store karne se uska manipulation aur comparison difficulty hota hai. Isliye, programmers date ko string se parsing karke date objects mein store karte hain taaki unka code more readable aur efficient ho. 
+## क्या और क्यों?
+डेट को स्ट्रिंग से पार्स करना मतलब है डेट को हमारी स्ट्रिंग से अलग करना। कोडर्स इसे तारीखों को कार्यान्वित करने और दृष्टांत करने के लिए करते हैं। 
 
-# Kaise Karein:
-Isko Swift mein parse karna bahut hi aasaan hai. Hum iske liye `DateFormatter` ka use karenge. Isko use karne ka basic syntax yeh hai: 
-```
+## कैसे
+स्विफ्ट में तारीख को स्ट्रिंग से पार्स करने के लिए `DateFormatter` का उपयोग करें। 
+
+```Swift 
 let dateFormatter = DateFormatter()
 dateFormatter.dateFormat = "yyyy-MM-dd"
-let date = dateFormatter.date(from: "2021-01-01")
-print(date)  // 2021-01-01 00:00:00 +0000 
+let date = dateFormatter.date(from: "2022-03-28")
+
+print(date)
 ```
-Humne pehle `DateFormatter` object banaya aur usko `dateFormat` property ke through humne specified format `yyyy-MM-dd` diya. Uske baad hum `date(from:)` method ko use karke string ko date object mein convert kiya. Output mein hum dekh sakte hain ki string successfully date object mein convert ho gaya hai. 
 
-# Deep Dive:
-Pehle, date parsing further complex bhi ho sakta hai jaise ki different time zones aur locale ko consider karna. Iske alawa, Swift ke alawa bhi bohot saare alternatives hain jaise ki `NSDateFormatter` aur `ISO8601DateFormatter` jo ki Objective-C aur ISO-8601 format ko respectively support karte hain. Date parsing ke liye more advanced techniques bhi hain jaise ki `Regular Expressions` aur `Natural Language Processing`. Inka use alag alag scenarios mein depend karta hai. 
+इसे चलाने पर यह आउटपुट देगा -
 
-# See Also:
-1. [Date Parsing in Swift Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
-2. [NSDateFormatter Documentation](https://developer.apple.com/documentation/foundation/nsdateformatter)
-3. [ISO8601DateFormatter Documentation](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
-4. [Regular Expressions Tutorial in Swift](https://www.raywenderlich.com/regex-swift)
-5. [Natural Language Processing in Swift Tutorial](https://www.raywenderlich.com/natural-language-processing-tutorial-for-ios-getting-started)
+```Swift
+Optional(2022-03-28 00:00:00 +0000)
+```
+
+## विस्तृत जानकारी
+स्ट्रिंग से डेट पार्सिंग को iOS 2.0 के लॉन्च के साथ डेट को अधिक सरल और विशेष ज्ञान के बिना प्रक्रिया करने के लिए शामिल किया गया है। इसके विकल्पों में रेगेलर एक्सप्रेशन विधायन शामिल है, लेकिन यह अधिक जटिल हो सकता है। इससे तारीख की तर्जजनक फॉर्मेट को प्रदर्शित करने में सहायता मिलती है। 
+
+## अन्य स्रोतों की जानकारी
+निम्नलिखित लिंक में Swift से संबंधित और अधिक जानकारी प्राप्त करें। 
+- [Swift Documentation](https://developer.apple.com/documentation/swift)
+- [Date and Time Programming Guide](https://developer.apple.com/documentation/foundation/date_and_time_programming_guide)
+- [Working with Dates and Time in Swift](https://www.hackingwithswift.com/articles/141/working-with-dates-and-time-in-swift)
+- [Formatting Dates and Times](https://www.swiftbysundell.com/basics/date-formatting/)

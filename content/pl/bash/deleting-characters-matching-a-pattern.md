@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "Bash: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Usuwanie znaków pasujących do wzorca jest jedną z funkcji, które programiści mogą wykonać w języku Bash. Polega to na wybraniu i usunięciu wszystkich wystąpień danego wzorca z tekstu. Jest to przydatne w wielu przypadkach, na przykład w filtracji danych lub przetwarzaniu tekstu.
+## Co i dlaczego?
+
+Usuwanie znaków pasujących do wzorca to proces usuwania określonych ciągów znaków z danych wejściowych za pomocą wzorca. Programiści robią to, żeby uporządkować, oczyścić i optymalizować swoje dane.
 
 ## Jak to zrobić:
-Bash jest językiem skryptowym, więc wbudowane polecenie sed może być wykorzystane do usuwania znaków pasujących do wzorca. Przykład może wyglądać następująco:
-```
-Teskst = "To jest przykładowy tekst."
-echo $Tekst | sed 's/e//g'
-```
-Wyjście powinno wyglądać tak:
-```
-To jst przykładowy txt.
-```
-Można także wykorzystać wbudowane polecenie awk do osiągnięcia tego samego efektu. Przykład:
-```
-Tekst="To jest przykładowy tekst."
-echo $Tekst | awk '{gsub("e","")}1'
-```
-Wyjście:
-```
-To jst przykładowy txt.
-```
 
-## Wgląd w głąb:
-Usuwanie znaków pasujących do wzorca jest możliwe dzięki regularnym wyrażeniom, które są częścią składni języka Bash. Polecenie sed jest popularne w tym kontekście, ale istnieją także inne narzędzia, takie jak grep czy tr, które mogą być wykorzystane do tego celu. Implementacja jest oparta na algorytmie skanowania tekstu i usuwaniu znalezionych pasujących znaków.
+```Bash
+# Używamy polecenia tr do usunięcia wszystkich liter 'a' z pliku input.txt
+tr -d 'a' < input.txt
+```
+Owynik może być na przykład taki:
+```Bash
+# Przykładowe wyjście; wszystkie litery 'a' zostały usunięte
+lorem lpsum is simply dummy text of the printing nd typesetting industry.
+```
+## Dogłębna wiedza
 
-## Zobacz też:
-- [Bash Guide for Beginners](http://tldp.org/Ldp/Bash-Beginners-Guide/html/sect_04_02.html)
-- [Regular Expression Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [UNIX Power Tools - Chapter 26: Manipulating Text Files](http://docstore.mik.ua/orelly/unix/upt/ch26_16.htm)
+Kiedyś, w erze przed komputerową, usuwanie znaków pasujących do wzorca odbywało się ręcznie lub za pomocą mechanicznych maszyn. Do cyfrowego procesu zobacz: wyrażenia regularne i sed. Z tych narzędzi, `tr` jest najprostsze i najbardziej wydajne do tych zastosowań. 
+
+Prowadzi to do szybkiego przetwarzania, ale dość ograniczonego, bo nie obsługuje wzorców wieloznakowych. Proces ten działa w czasie liniowym, co oznacza, że czas potrzebny do przetworzenia wzorca rośnie wraz ze wzrostem jego długości.
+
+## Zobacz także
+
+1. Detailed guide on `sed` and `awk`: https://likegeeks.com/sed-linux/
+2. Full tutorial on regular expressions: https://www.regular-expressions.info/tutorial.html
+3. More on `tr`: https://www.geeksforgeeks.org/tr-command

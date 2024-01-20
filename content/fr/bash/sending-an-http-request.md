@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "Bash: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-Envoyer une requête HTTP est un moyen pour les programmeurs d'interagir avec d'autres sites ou serveurs en utilisant le protocole HTTP. Cela leur permet d'accéder à des ressources, telles que des informations ou des données, disponibles sur ces sites ou serveurs.
+L'envoi d'une demande HTTP signifie communiquer avec un serveur web pour demander ou soumettre des informations. Les programmeurs le font pour échanger des données avec des services web et interagir avec des API.
 
 ## Comment faire:
 
-Voici un exemple de code Bash pour envoyer une requête HTTP à un site web spécifique et en afficher la réponse:
+Voici comment utiliser `curl` en Bash pour envoyer une requête GET:
 
 ```Bash
-curl -i https://www.example.com
+#!/bin/bash
+URL="http://monsite.com"
+curl $URL
 ```
 
-Ce code utilise la commande ```curl``` pour envoyer la requête et l'option ```-i``` pour afficher la réponse complète, y compris les en-têtes de la requête et de la réponse.
+Et voici comment envoyer une requête POST:
 
-Lorsque vous exécutez le code, vous devriez voir une réponse comme celle-ci:
-
-```
-HTTP/1.1 200 OK
-Server: nginx
-Date: Tue, 25 May 2021 19:12:50 GMT
-Content-Type: text/html; charset=UTF-8
-Content-Length: 29148
-Connection: keep-alive
+```Bash
+#!/bin/bash
+URL="http://monservice.com/api"
+curl -d "param1=value1&param2=value2" -X POST $URL
 ```
 
-La réponse contient des informations sur le serveur, la date, le type de contenu et la longueur du contenu. En dessous de ces en-têtes, vous trouverez le contenu du site web lui-même.
+La sortie ressemblera à quelque chose comme ceci:
 
-## Plongée en profondeur:
+```Bash
+{ "status": "success", "data": { ... } }
+```
 
-L'envoi de requêtes HTTP est une partie importante de la programmation en raison de la grande quantité de données disponibles sur le web. Avant les protocoles HTTP, les programmeurs devaient utiliser des protocoles plus anciens et plus limités pour communiquer avec des sites extérieurs.
+## Approfondissement
 
-Bien que la commande ```curl``` soit le moyen le plus courant d'envoyer une requête HTTP en Bash, il existe également d'autres options telles que ```wget``` et les bibliothèques spécialisées en Bash pour l'envoi de requêtes.
+Historiquement, le protocole HTTP est devenu omniprésent dans les interactions entre clients et serveurs web depuis son invention en 1991. 
 
-## Voir aussi:
+En ce qui concerne les alternatives à `curl`, il y a `wget`, bien que chaque outil ait ses propres avantages. `wget` est souvent préféré pour le téléchargement de fichiers en raison de sa capacité à gérer les téléchargements récursifs et à reprendre les téléchargements interrompus.
 
-Pour en savoir plus sur l'envoi de requêtes HTTP en Bash, consultez ces sources:
+Lors de l'envoi d'une requête HTTP via Bash, `curl` effectue un certain nombre de tâches en coulisse. Il résout l'URL spécifiée, établit une connexion TCP avec le serveur, et envoie une demande HTTP formatée selon les paramètres que vous avez spécifiés. Il attend ensuite la réponse du serveur et l'affiche sur la sortie standard.
 
-- [La documentation officielle de curl](https://curl.se/docs/manpage.html)
-- [Un tutoriel sur l'utilisation de curl en Bash](https://www.baeldung.com/curl-rest)
+## Voir aussi
+
+- La documentation officielle de `curl`: https://curl.se/docs/
+- Pour une compréhension avancée de HTTP : https://developer.mozilla.org/fr/docs/Web/HTTP
+- Guide `wget` : https://www.gnu.org/software/wget/manual/wget.html.

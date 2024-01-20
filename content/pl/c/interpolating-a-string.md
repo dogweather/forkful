@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "C: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "C"
 category:             "C"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-
-Interpolacja ciągów znaków to proces łączenia zmiennych z danymi tekstowymi w celu uzyskania końcowego ciągu znaków. Programiści używają jej, aby dynamicznie tworzyć ciągi znaków, których nie można z góry przewidzieć.
+## Co to jest i dlaczego?
+Interpolacja ciągu polega na wstawianiu wartości zmiennych bezpośrednio do ciągu znaków. Programiści robią to, aby efektywnie manewrować danymi i tworzyć ciągi, które są bardziej czytelne i zrozumiałe.
 
 ## Jak to zrobić:
+Poniższe kody pokazują, jak zrobić to w języku C.
 
 ```C
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-   char imie[] = "Anna";
-   int wiek = 23;
-   char miasto[] = "Warszawa";
-   char zyczenia[] = "Witaj %s, dzięki że jesteś z nami już %d lat w %s!";
-   printf(zyczenia, imie, wiek, miasto);
-
+   int a = 10;
+   printf("Wartość zmiennej a to: %d\n", a);
    return 0;
 }
 ```
-Wynik:
+Gdy uruchomisz ten kod, otrzymasz wynik:
+
 ```
-Witaj Anna, dzięki że jesteś z nami już 23 lata w Warszawie!
+Wartość zmiennej a to: 10
 ```
+To jest nasza interpolacja ciągu, gdzie wartość zmiennej `a` zostaje wprowadzona do ciągu przy użyciu funkcji `printf`.
 
-## Głębszy zanurzenie:
+## Pogłębione informacje
+1. **Historecznie**: Pierwotny język C nie obsługiwał interpolacji ciągów, co było jednym z większych ograniczeń języka. Jednak wprowadzenie `printf` i podobnych funkcji pozwoliło na osiąganie efektów podobnych do interpolacji.
 
-Interpolacja ciągów znaków jest popularną techniką programistyczną, która ma swoje korzenie jeszcze w języku C. Alternatywą dla niej może być łączenie ciągów znaków za pomocą funkcji strcat(), jednakże interpolacja jest uważana za bardziej czytelną i wygodniejszą. W C, do interpolacji używa się funkcji sprintf(), która działa podobnie do funkcji printf(). W celu uniknięcia błędów, ważne jest, aby upewnić się, że argumenty użyte w interpolacji są zgodne z formatem ciągu znaków.
+2. **Alternatywy**: Istnieją inne metody interpolacji ciągów, takie jak konkatenacja ciągów, ale wymagają one więcej kodu i są zazwyczaj mniej czytelne.
 
-## Zobacz też:
+3. **Szczegóły implementacji**: W C, interpolacja ciągu jest przeprowadzana przez funkcje takie jak `printf`, które używają symboli formatowania, takich jak `%d` dla całkowitych, `%f` dla float, itp., aby wprowadzić wartości do ciągu.
 
-- Dokumentacja języka C: https://www.cs.cf.ac.uk/Dave/C/node6.html
-- Inne metody łączenia ciągów znaków: https://www.youtube.com/watch?v=3DMlyp6zEh0
-- Przykładowe ćwiczenia z interpolacji w C: http://www.lukasz-socha.pl/kurs-c/c-05-03-interpolacja-ciagow-znakow
+## Zobacz także
+Zapoznaj się z innymi źródłami, które pomogą Ci lepiej zrozumieć i wykorzystać interpolacje ciągu w języku C:
+
+1. [Dokumentacja printf()](https://www.cplusplus.com/reference/cstdio/printf/)
+2. [Tutorial o interpolacji ciągów](https://www.programiz.com/c-programming/c-strings)
+3. [Przewodnik po formatowaniu ciągów](https://www.learn-c.org/en/String_Formatting_with_Printf)

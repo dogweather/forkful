@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo Substrings"
-html_title:           "Bash: Extraindo Substrings"
-simple_title:         "Extraindo Substrings"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Porquê?
 
-Extrair substrings é um processo em que um programador seleciona um pedaço específico de uma cadeia de caracteres (string). Isso pode ser útil para manipular dados de maneira mais precisa e eficiente em um programa.
+Extração de substrings é o processo de abstração de uma parte específica de uma string completa. Programadores utilizam isso para limpar, segmentar e manipular dados para atingir um objetivo específico.
 
-## Como fazer:
+##Como Fazer:
 
-Você pode extrair substrings em Bash usando a estrutura de comando "cut". Aqui está um exemplo simples:
+Extrair substrings em Bash é notavelmente simples. Tudo que você precisa conhecer é a posição inicial e o comprimento da subcadeia que você quer extrair. Confira uma implementação básica abaixo:
 
-```
-frutas="maça laranja banana uva"
-echo ${frutas:6:6}
-```
-
-Isso retornará "laranja", que é uma substring de 6 caracteres começando no sexto índice da variável de string "frutas". Você também pode usar o comando "grep" para extrair substrings com base em um padrão específico.
-
-```
-texto="Olá, meu nome é João"
-echo $texto | grep -o '[a-z]\+$'
+```Bash
+meu_texto="O amor é um pássaro rebelde"
+echo ${meu_texto:5:10}
 ```
 
-Isso retornará "João", a última palavra da variável "texto". Experimente diferentes opções de comandos para extrair diferentes substrings.
+A operação acima irá imprimir "é um pássa", pois é a substring começando na quinta posição e com comprimento de 10 caracteres.
 
-## Mergulho profundo:
+## Mergulho Profundo:
 
-Extrair substrings em Bash tem sido uma técnica comum desde os primeiros dias do shell Unix. Em linguagens de programação mais novas, como Python, existem funções específicas para extrair substrings, mas alguns programadores ainda preferem a simplicidade e familiaridade do Bash.
+O uso dessas substrings não é algo novo, elas são usadas desde os primeiros dias da programação para manipulação de dados. Alternativas para a extração de substrings em Bash incluem o uso de `cut`, `awk`, ou `sed`, cada um tendo suas próprias peculiaridades na sintaxe e implementação. O método que utilizamos aqui (`${string:position:length}`) é aceito nativamente pelo Bash sem a necessidade de invocar qualquer outra ferramenta externa.
 
-Além do "cut" e "grep", você também pode usar o comando "awk" para extrair substrings de maneira mais complexa. Ele permite que você selecione campos específicos de uma cadeia de caracteres com base em um delimitador.
+## Ver Também:
 
-## Veja também:
+Para mais profundidade no assunto, dê uma olha nestas fontes:
 
-- [Documentação oficial do Bash](https://www.gnu.org/software/bash/manual/)
-- [Tutorial de substring em Bash](https://www.linux.com/training-tutorials/how-use-awk-beginners-guide/)
-- [Outras maneiras de manipular strings em Bash](https://www.bash.academy/tema-strings/)
+1. [Guia Avançado de Scripting Bash](https://tldp.org/LDP/abs/html/string-manipulation.html): inclui todos os conceitos avançados sobre manipulação de strings em Bash.
+2. [Manual do Bash](https://www.gnu.org/software/bash/manual/bash.html): a documentação oficial do Bash é sempre o recurso mais confiável.
+3. [StackOverflow](https://stackoverflow.com/): Uma rica comunidade de programadores, onde você pode encontrar muitas discussões em torno da manipulação de cadeias de caracteres em Bash.

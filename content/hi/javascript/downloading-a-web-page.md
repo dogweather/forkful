@@ -1,7 +1,7 @@
 ---
-title:                "एक वेब पृष्ठ डाउनलोड करना"
-html_title:           "Javascript: एक वेब पृष्ठ डाउनलोड करना"
-simple_title:         "एक वेब पृष्ठ डाउनलोड करना"
+title:                "एक वेब पेज डाउनलोड करना"
+html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
+simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -11,29 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
+वेब पेज डाउनलोड करना मतलब है कि आप एक सरवर से विशिष्ट वेबसाइट की कॉपी अपने कंप्यूटर पर सहेज रहे हैं। प्रोग्रामर इसे तब करते हैं जब वे एक वेब पेज से अनुष्ठानात्मक डाटा प्राप्त करना चाहते हैं, या वेब पेज की स्थिर कॉपी की आवश्यकता होती है।
 
-वेब पेज डाउनलोड करना होता है जब हम इंटरनेट पर एक वेब पेज का संग्रहीत रूप डाउनलोड करते हैं। वेब पेज डाउनलोड करने के लिए प्रोग्रामर उस वेब पेज को अपने सिस्टम में संग्रहीत करते हैं ताकि वे उसका उपयोग शामिल कर सकें।
-
-## कैसे:
-
-वेब पेज डाउनलोड करने के लिए, हम पहले एक वेब पेज का यूआरएल लेते हैं और संग्रहीत करते हैं। नीचे दिए गए उदाहरण में, हम गूगल का होमपेज डाउनलोड करते हैं:
-
+## कैसे करें:
 ```Javascript
-let url = "https://www.google.com";
-let page = fetch(url);
-console.log(page);
+var https = require('https');
+var fs = require('fs');
+
+var options = {
+  host: 'example.com',
+  path: '/index.html'
+};
+
+var req = https.get(options, function(res) {
+  var bodyChunks = [];
+  
+  res.on('data', function(chunk) {
+    bodyChunks.push(chunk);
+  }).on('end', function() {
+    var body = Buffer.concat(bodyChunks);
+    fs.writeFile('index.html', body, function(err) {
+      if(err) 
+        console.error(err);
+      else
+        console.log('Data Saved!');
+    });
+  })
+});
+
+req.on('error', function(e) {
+  console.error('ERROR: ' + e.message);
+});
+```
+सैंपल आउटपुट:
+```
+Data Saved!
 ```
 
-यहां, हमने वेब पेज का यूआरएल दिया है और 'fetch' फंक्शन का उपयोग करके उस वेब पेज को संग्रहीत किया है। फिर हम उसे कंसोल पर प्रिंट करते हैं। जोड़ने के लिए, हम 'async' और 'await' की बहुत उपयोग करते हैं ताकि वह वेब पेज संग्रहीत होने के बाद हमारे प्रोग्राम को रोके और उसे स्थानांतरित कर सके।
+## गहरी गोता खोना
+वेब पेजों को डाउनलोड करना अभी भी मौजूदा वेब का महत्वपूर्ण हिस्सा है, जैसे योजनाबद्ध spidering/scraping/crawling के लिए। इससे उड़ाहरण स्वायत्त स्क्रिप्ट बना सकते हैं, जो डाटा एकत्र करते हैं और उसे महत्त्वपूर्ण तरीकों में प्रगत या विश्लेषण करते हैं। इसके विकल्प के रूप में, आप क्रोम या फ़ायरफ़ॉक्स जैसे ब्राउज़रों का उपयोग कर सकते हैं, जिनमें डेवलपर उपकरण बुइल्ट-इन होते हैं। यदि आपका केस इतना स्पेसिफिक नहीं है, तो आप APIs या अन्य धारणाओं का भी उपयोग कर सकते हैं। 
 
-## गहराई में जाएं:
-
-आजकल, वेब पेज डाउनलोड करने के लिए अन्य विकल्प भी हैं, जैसे Selenium और Puppeteer जैसे टूल्स। Selenium एक ऑटोमेशन टेस्टिंग टूल है जो वेब पेज को देखने और उसमे काम करने की क्षमता देता है, जबकि Puppeteer बाहरी टूल है जो ब्राउज़र में जाने और कॉन्ट्रोल करने के लिए बनाया गया है।
-
-वेब पेज डाउनलोड करने के लिए, प्रोग्रामर 'HTTP' और 'HTTPS' प्रोटोकॉल का उपयोग करते हैं। यह प्रोटोकॉल डाउनलोड की गई वेब पेज को अंतर्निहित अतिरिक्त सूचनाओं के साथ प्रस्तुत करता है। इसमें फाइल डाउनलोड, ऑथेंटिकेशन और अन्य समान कार्य हो सकते हैं।
-
-## और भी देखें:
-
-- JavaScript वेब पेज डाउनलोड के लिए आसान और सरल है।
-- और भी जानने के लिए, आप [MDN डॉक्यूमेंटेशन](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) को देख सकते हैं।
-- अगर आप वेब पेज डाउनलोड करने के लिए अन्य विकल्प ढूंढ रहे हैं तो आप [Puppeteer](https://github.com/puppeteer/puppeteer) और [Selenium](https://www.selenium.dev/) जैसे उपयोगी अन्य टूल्स का भी इस्तेमाल कर सकते हैं।
+## अन्य जानकारी
+- [HTTP.ClientRequest](https://nodejs.org/api/http.html#http_class_http_clientrequest)
+- [HTTP.IncomingMessage](https://nodejs.org/api/http.html#http_class_http_incomingmessage)
+- [Buffer.concat](https://nodejs.org/api/buffer.html#buffer_class_method_buffer_concat_list_totalength)
+- [fs.writeFile](https://nodejs.org/api/fs.html#fs_fs_writefile_file_data_options_callback)

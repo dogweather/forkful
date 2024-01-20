@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "Gleam: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que & Por quê?
+# Buscar e Substituir Texto em Gleam: Um Guia Conciso
 
-Substituir e buscar textos é uma tarefa comum entre os programadores. Isso envolve localizar determinado texto em um arquivo ou documento e substituí-lo por outro. Fazemos isso para economizar tempo e reduzir erros manuais.
+## O Que & Por Quê?
 
-# Como fazer:
+Buscar e substituir texto é o processo de encontrar certas palavras ou cadeias de caracteres dentro do texto e substituí-las por outros. Programadores fazem isso, por exemplo, para atualizar ou corrigir erros.
 
-Usando o Gleam, podemos facilmente substituir e buscar textos em arquivos. Primeiro, importamos o módulo "Text" e, em seguida, usamos as funções "replace" e "find" para localizar e substituir o texto desejado. Aqui está um exemplo de como fazer isso:
+## Como Fazer:
 
-```Gleam
+Abaixo está um exemplo básico de como buscar e substituir texto em Gleam.
 
-import Text
+```gleam
+import gleam/string
 
-let nome = "João"
-
-nome = Text.replace(nome, "João", "Pedro")
-// Output: Pedro
-Text.find("Pedro", "Isso é uma string contendo o nome Pedro.")
-// Output: true
-
+let text = "Olá, Mundo!"
+let newText = string.replace("Mundo", "Gleam", text)
 ```
 
-# Mergulho profundo:
+Executando o código acima, o resultado seria `"Olá, Gleam!"`.
 
-Substituir e buscar textos é uma tarefa comum na programação, especialmente quando estamos trabalhando com grandes quantidades de código ou lidando com múltiplos arquivos. Antes do surgimento de linguagens de programação e ferramentas de edição, essa tarefa era realizada manualmente, o que era demorado e propenso a erros. Com o avanço da tecnologia, surgiram ferramentas especiais para facilitar essa tarefa, como o Gleam.
+## Mergulhando Fundo:
 
-Existem diversas alternativas ao Gleam para substituir e buscar textos, como o Bash, Perl e Python. No entanto, o Gleam se destaca por sua simplicidade e facilidade de uso, além de ser uma linguagem de programação funcional pura. Além disso, o Gleam é altamente compatível com outras ferramentas e linguagens, o que facilita sua integração em projetos maiores.
+1. Contexto histórico: As funções de busca e substituição ganharam popularidade com os editores de texto, facilitando a edição de grandes blocos de texto. Eles foram posteriormente adotados em linguagens de programação.
+2. Alternativas: Em algumas linguagens, como o JavaScript, `String.prototype.replace()` é usado, enquanto no Python, `str.replace()`. Em Gleam, usamos `string.replace()`.
+3. Detalhes de implementação: Em Gleam, `string.replace()` é uma função pura que retorna uma nova string, ao invés de modificar a string original.
 
-Ao procurar e substituir textos com o Gleam, é importante ter em mente que ele é sensível a maiúsculas e minúsculas. Isso significa que se você estiver procurando por "João", ele não encontrará "joão". Além disso, o Gleam também pode trabalhar com expressões regulares, o que permite maior flexibilidade na busca por padrões específicos de texto.
+## Veja Também:
 
-# Veja também:
-
-Se você deseja aprender mais sobre como o Gleam pode ser usado para substituir e buscar textos, aqui estão alguns recursos úteis:
-
-- Documentação oficial do Gleam
-- Exemplos de código para buscar e substituir textos usando o Gleam
-- Um tutorial em vídeo sobre a utilização do Gleam para buscar e substituir textos em nossos projetos.
+- Para entender as funções de string em Gleam, confira a documentação de Gleam [aqui](https://gleam.run/documentation/tour/#strings).
+- Para aprender mais sobre a linguagem Gleam, dê uma olhada neste [guia prático](https://gleam.run/documentation/introduction/).
+- Para um curso mais detalhado sobre programação Gleam, confira este [curso gratuito](https://gleam.run/documentation/learning/).

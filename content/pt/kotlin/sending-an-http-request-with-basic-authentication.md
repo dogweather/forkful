@@ -1,7 +1,7 @@
 ---
-title:                "Enviando uma solicitação HTTP com autenticação básica."
-html_title:           "Kotlin: Enviando uma solicitação HTTP com autenticação básica."
-simple_title:         "Enviando uma solicitação HTTP com autenticação básica."
+title:                "Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
+simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-
-Enviar uma solicitação HTTP com autenticação básica é um procedimento comum em programação. Isso é usado para permitir que um usuário se conecte a um servidor protegido por senha. Os programadores realizam essa ação para garantir a segurança dos dados ao acessar uma aplicação.
+## O Que & Por Quê?
+Enviar um pedido HTTP com autenticação básica é a prática de transmitir um pedido para um servidor web enquanto se identifica através de um nome de usuário e uma senha. Programadores fazem isso para interagir com APIs protegidas que exigem credenciais válidas para aceitar pedidos.
 
 ## Como fazer:
+Aqui está um exemplo rápido de como enviar um pedido HTTP GET com autenticação básica usando a biblioteca Ktor em Kotlin.
 
 ```Kotlin
-val url = URL("https://example.com") // cria uma URL para o servidor
-val connection = url.openConnection() as HttpURLConnection // abre uma conexão HTTP
-connection.setRequestProperty("Authorization", "Basic " + "username:password".encodeBase64()) // define a autenticação básica
-val responseCode = connection.responseCode // obtém o código de resposta
-if (responseCode == HttpURLConnection.HTTP_OK) { // se o código de resposta for OK, a conexão foi bem sucedida
-    val input = connection.inputStream // obtém a entrada de dados do servidor
-    // processa os dados recebidos
-} else {
-    // lidar com erro de conexão
+val client = HttpClient() {
+    install(Auth) {
+        basic {
+            username = "nomeDeUsuario"
+            password = "senha"
+        }
+    }
 }
+
+val httpResponse: HttpResponse = client.get("https://meusite.com")
+println(httpResponse.status)  // Imprime o status do pedido HTTP no console
+client.close()  
 ```
 
-## Profundidade:
+## Aprofundando
+1. **Contexto Histórico:** A autenticação básica HTTP foi um dos primeiros métodos para controlar o acesso a recursos da web. Apesar de não ser a opção mais segura, pelo seu método simples de requisitar usuário e senha, é ainda bastante usada nos dias de hoje.
 
-A autenticação básica foi introduzida em 1996 como um meio de realizar a autenticação HTTP. No entanto, devido à vulnerabilidade de segurança, é recomendado usar a autenticação básica apenas em redes de servidor seguro ou em conjunto com outros sistemas de autenticação.
+2. **Alternativas:** Para segurança melhorada, muitos optam por autenticação digest ou por token, como o JWT (JSON Web Token).
 
-Existem muitos outros mecanismos de autenticação, como OAuth e Token Authentication, que são mais seguros e eficazes do que a autenticação básica. É importante que os programadores escolham o método de autenticação adequado para suas aplicações, levando em consideração a segurança e a praticidade.
+3. **Detalhes de Implementação:** Na autenticação básica, as credenciais são codificadas em Base64 e incluídas em cada pedido HTTP. Entretanto, isso não é seguro, pois se alguém interceptar a comunicação, pode decodificar facilmente as informações. É recomendado usar HTTPS para garantir que as informações do usuário sejam encriptadas durante a transmissão.
 
-Para implementar a autenticação básica em Kotlin, é necessário entender como funciona o processo de codificação Base64 e como enviar cabeçalhos personalizados nas solicitações HTTP. Além disso, é importante garantir que o servidor esteja configurado corretamente para aceitar autenticação básica.
-
-## Veja também:
-
-- [Documentação oficial do Kotlin](https://kotlinlang.org/docs/reference/)
-- [Tutorial sobre codificação Base64 em Kotlin](https://www.baeldung.com/java-base64-encode-and-decode)
-- [Explicação detalhada sobre autenticação básica em redes HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+## Veja Também:
+- Documentação Oficial do Ktor: https://ktor.io/clients/http-client/features/authentication.html
+- Autenticação Digest: https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication#autenticação_digest
+- Autenticação JWT: https://jwt.io/introduction/

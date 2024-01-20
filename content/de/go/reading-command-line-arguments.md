@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Go: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,30 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum? 
-Beim Lesen von Befehlszeilenargumenten geht es darum, Eingaben von Benutzern zu erhalten, die beim Starten eines Programms über die Kommandozeile eingegeben werden. Programmierer tun dies, um die Funktionalität ihrer Programme anzupassen und benutzerfreundlicher zu gestalten.
+## Was & Warum?
 
-## Wie geht's? 
-Eine Option in Go ist die Verwendung der "Args"-Funktion aus der "os"-Paketbibliothek. Hier ein Beispiel, wie man diese Funktion verwendet:
-```
-package main 
+Das Lesen von Befehlszeilenargumenten ist ein wesentlicher Teil der Programmiererfahrung. Es erlaubt Ihnen, Ihrem Programm beim Start Parameter zu übergeben. Dies ermöglicht mehr Flexibilität und eine interaktive Benutzerfahrung.
+
+## So geht's:
+
+In Go verwenden wir das Paket "os" zum Lesen von Befehlszeilenargumenten. Hier ist ein einfaches Beispiel:
+
+```Go
+package main
 
 import (
-   "fmt"
-   "os"
-) 
+	"fmt"
+	"os"
+)
 
-func main() { 
-   arguments := os.Args[1:] 
-   fmt.Println(arguments) 
-} 
+func main() {
+	arg := os.Args[1:]      // Argumente bekommen
+	fmt.Println(arg)        // Ausgabe der Argumente
+}
 ```
 
-Wenn wir dieses Programm mit dem Befehl "Go run main.go Hallo Welt" ausführen, wird "Hallo" und "Welt" als Strings zurückgegeben.
+Führen Sie das Programm mit zusätzlichen Argumenten aus:
 
-## Tieferes Eintauchen 
-Die Verwendung von Befehlszeilenargumenten in Programmiersprachen ist seit den Anfängen der Befehlszeilen-Interaktion gängige Praxis. Es gibt auch alternative Möglichkeiten, dies zu tun, wie zum Beispiel das Parsen von Argumenten mit einer Flaggen- oder Argumentenparser-Bibliothek. Die Implementierung von Go's "Args"-Funktion basiert auf der "getopt"-Funktion aus dem C-Standardbibliothek.
+```bash
+> go run main.go Hallo Welt
+```
 
-## Siehe auch 
-- [Die offizielle Go-Dokumentation zur Args-Funktion](https://golang.org/pkg/os/#Args) 
-- [Ein Tutorial, das zeigt, wie man Befehlszeilenargumente mit Go nutzt](https://www.digitalocean.com/community/tutorials/how-to-read-command-line-arguments-in-go-de)
+Ausgabe:
+
+```bash
+[Hallo Welt]
+```
+
+## Tiefgang
+
+Historisch gesehen wurden Befehlszeilenargumente in C eingeführt und sind seitdem in den meisten Programmiersprachen vorhanden. Go, welches stark von C und Unix beeinflusst ist, verfügt natürlich über ähnliche Funktionalität.
+
+Es gibt auch Alternativen zum Lesen von Argumenten mit der Bibliothek "flag", die eine umfassendere Funktionalität bietet, einschließlich der Vereinfachung der Parsierung von Argumenten in bestimmten Typen.
+
+Im Detail hat os.Args eine Liste von Strings, mit der das Programm ausgeführt wurde. Der erste Eintrag, os.Args[0], ist der Name, wie es aufgerufen wurde. Die nachfolgenden Einträge sind die Argumente, die tatsächlich auf der Befehlszeile übergeben wurden.
+
+## Siehe auch
+
+Mehr Info zu `os` Paket:
+- https://golang.org/pkg/os/#pkg-index
+
+Mehr Info zur Bibliothek 'flag':
+- https://golang.org/pkg/flag/
+
+Grundlagen der Befehlszeile:
+- https://de.wikipedia.org/wiki/Befehlszeile

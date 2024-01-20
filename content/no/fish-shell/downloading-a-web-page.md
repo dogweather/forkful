@@ -1,6 +1,6 @@
 ---
 title:                "Laste ned en nettside"
-html_title:           "Fish Shell: Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
 simple_title:         "Laste ned en nettside"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,26 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å laste ned en nettside betyr å hente innholdet på den, slik at du kan vise den på datamaskinen din. Programmere gjør dette for å automatisere prosesser og hente nyttig informasjon fra nettet, som for eksempel å hente ut data for å analysere eller bruke i sine egne programmer.
+Nedlasting av en webside innebærer å hente HTML-koden som webserveren sender når du ber om en side. Dette gjør programmerere for å analysere sidens data, lagre den for offline bruk, eller føre overvåkning på siden.
 
-## Hvordan:
+## Hvordan gjør man det:
 
-I Fish Shell kan du bruke kommandoen `curl` for å laste ned en nettside. Her er et eksempel på hvordan du laster ned Google sin hjemmeside og lagrer den i en fil kalt "google.html":
+I Fish Shell kan nedlasting av nettsider oppnås ved hjelp av `curl` eller `wget` kommandoene. Her er et eksempel som viser bruk av begge.
 
+```Fish Shell
+# Bruke curl
+curl -O http://eksempelside.no
+
+# Bruke wget
+wget http://eksempelside.no
 ```
-fish shell> curl "https://www.google.com" > google.html
+
+Hvis alt gikk bra, vil output være noe som dette:
+
+```Fish Shell
+# Curl output
+  % Total     % Received  % Xferd    Average Speed   Time    Time     Time  Current
+                                Dload   Upload  Total   Spent    Left   Speed
+100  178k  100  178k  0     0   197k      0 --:--:-- --:--:-- --:--:--  197k
+
+# Wget output
+--2022-01-01 12:00:00--  http://eksempelside.no/
+Resolving eksempelside.no (eksempelside.no)... 93.184.216.34, 2606:2800:220:1:248:1893:25c8:1946
+Connecting to eksempelside.no (eksempelside.no)|93.184.216.34|:80... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/html]
+Saving to: ‘index.html’
 ```
 
-Dette vil laste ned innholdet på Google sin nettside og lagre det i en fil. Du kan deretter åpne denne filen i en nettleser for å se resultatet.
+## Dypdykk
 
-## Dykke Dypere:
+Opp gjennom historien har vi utviklet mange måter å laste ned websider på. Selv før `curl` og `wget` ble standard kommandoer, brukte programmerere sockets og HTTP-protokoller til å gjøre dette manuelt.
 
-Å laste ned en nettside er ikke noe nytt, og det finnes flere alternativer til `curl` kommandoen som kan brukes i stedet. Noen programmerere foretrekker å bruke mer avanserte verktøy som for eksempel Python-biblioteker som Requests eller BeautifulSoup.
+Selv om `curl` og `wget` begge brukes til å laste ned innhold, har de noen forskjeller. `curl` støtter flere protokoller, mens `wget` kan laste ned hele nettsider rekursivt.
 
-Implementeringen av `curl` i Fish Shell er basert på et eksternt verktøy som er installert på datamaskinen din, så det kan være lurt å sjekke om det er installert på forhånd.
+Disse kommandoene sender en HTTP GET forespørsel til serveren og lagrer responsen – vanligvis en HTML-fil – i en lokal fil.
 
-## Se Også:
+## Se også 
 
-- [Fish Shell Docs: Curl](https://fishshell.com/docs/current/cmds/curl.html)
-- [Requests Python-bibliotek](https://requests.readthedocs.io/en/master/)
-- [BeautifulSoup Python-bibliotek](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+1. [Fish Shell Offisiell Dokumentasjon](https://fishshell.com/docs/current/index.html)
+2. [cURL Offisiell Dokumentasjon](https://curl.haxx.se/docs/manpage.html)
+3. [Wget Offisiell Dokumentasjon](https://www.gnu.org/software/wget/manual/wget.html) 
+4. [HTTP GET forespørsel](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET) på MDN Web Docs.

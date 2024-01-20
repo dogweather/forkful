@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "TypeScript: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,47 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇이며 왜?
 
-추출된 서브스트링이란 무엇인지, 그리고 왜 프로그래머들이 이를 하는지에 대해 2~3 문장으로 설명합니다.
+문자열 추출은 문자열의 일부를 선택하는 것을 의미합니다. 많은 프로그래밍 작업이 특정 문자열에서 일부 데이터를 가져와 데이터를 파싱하고 검사하는 것에 의존하기 때문에, 프로그래머들은 이 작업을 매우 자주 실행합니다.
 
-## 추출된 서브스트링이란?
+## 어떻게:
 
-추출된 서브스트링은 문자열에서 원하는 부분의 일부를 가져오는 것을 의미합니다. 예를 들어, 문자열 "Hello World"에서 "Hello"만 따로 추출할 수 있습니다.
-
-## 왜 프로그래머들은 이를 하는가?
-
-서브스트링을 추출하는 것은 문자열을 조작하고 처리하는 데 유용한 도구입니다. 이를 통해 원하는 부분만 따로 처리하거나, 특정 패턴을 가진 문자열을 쉽게 찾을 수 있습니다.
-
-## 사용 방법:
-
-다음은 추출된 서브스트링을 TypeScript에서 사용하는 예시 코드와 출력 결과입니다.
-
-### 기본 형식:
+TypeScript에서는 주로 두가지 방법으로 문자열을 추출할 수 있습니다. `substring()` 과 `slice()` 함수입니다.
 
 ```TypeScript
-let str = "Hello World";
-let subStr = str.substring(0, 5);
-console.log(subStr); // 출력 결과: "Hello"
+let str = "Hello World!";
+
+let substr = str.substring(1,4); //결과: "ell"
+let slic = str.slice(1,4);  // 결과: "ell"
 ```
+이 두 함수가 어떻게 동작하는지 변화된 결과값으로 확인해 볼 수 있습니다.
 
-`substring()` 메소드는 첫 번째 매개변수로 시작 위치를, 두 번째 매개변수로 끝 위치를 전달합니다. 이를 통해 문자열의 원하는 부분을 추출할 수 있습니다.
+## 깊게 알아보기:
 
-## 깊이 들어가기:
+`substring()` 과 `slice()` 두 함수는 자바스크립트에서 최초로 도입되었고, TypeScript에도 포함되어 있습니다. 둘 다 비슷한 기능을 제공하지만, 음수 인자 처리 방식에서 차이가 있습니다. `substring()`은 음수 인자를 0으로 처리하며, `slice()`는 문자열의 끝에서부터 세어집니다.
 
-### 역사적 배경:
+더 나아가, `substr()` 함수는 시작 인덱스와 알파벳 길이를 사용하는 또 다른 방법으로 문자열을 추출하는 데 사용될 수 있습니다. 하지만 ECMAScript 2015 이후로 이 함수는 비추천 상태(deprecated)이므로 가능한 `substring()`이나 `slice()`를 사용하는 것이 좋습니다.
 
-서브스트링 추출은 일반적인 프로그래밍 기법 중 하나입니다. 초기의 프로그래밍 언어에서부터 사용되어 왔고, 지금은 거의 모든 프로그래밍 언어에서 이 기능을 제공하고 있습니다.
+## 참조자료:
 
-### 대체 방법:
-
-서브스트링을 추출하는 다른 방법으로는 `slice()` 메소드를 사용하는 것이 있습니다. `substring()`과 마찬가지로 정해진 위치에 따라 문자열을 추출할 수 있습니다.
-
-### 구현 세부 사항:
-
-`substring()` 메소드는 정해진 위치의 문자열을 반환하기 때문에, 문자열의 길이에 상관 없이 항상 동일한 결과를 반환합니다. 하지만 `slice()` 메소드는 음수 값을 매개변수로 전달할 수 있고, 이를 통해 문자열의 뒤에서부터 추출할 수 있습니다.
-
-## 참고 자료:
-
-- [MDN - substring()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN - slice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [Mozilla Developer Network의 `substring()` 가이드](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+- [Mozilla Developer Network의 `slice()` 가이드](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/slice)
+- [W3Schools의 `substr()` 과 관련된 글](https://www.w3schools.com/jsref/jsref_substr.asp)

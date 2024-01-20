@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Rust: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e porque?
+## O Que & Por Quê?
 
-Download de uma página da web é o ato de baixar todo o código HTML e seus recursos associados (CSS, JavaScript, imagens, etc.) de uma página da web. Programadores geralmente fazem isso para analisar o código fonte de uma página da web, para automatizar tarefas como a coleta de dados ou para criar scripts personalizados para navegadores.
+Fazer o download de uma página web significa resgatar todos os seus dados e salvá-los localmente. Programadores fazem isso para analisar ou manipular o conteúdo de uma página web sem depender da conexão com a internet.
 
-## Como fazer:
+## Como Fazer:
+
+O exemplo em Rust abaixo usa a biblioteca popular `reqwest` para baixar uma página web:
 
 ```Rust
-use reqwest; // importando a biblioteca 'reqwest' para fazer a requisição HTTP
+use reqwest::Error;
 
-let response = reqwest::get("https://www.example.com").await?; // realizando a requisição e guardando a resposta em uma variável
+async fn download() -> Result<(), Error> {
+    let res = reqwest::get("https://www.rust-lang.org").await?;
+    let body = res.text().await?;
+    println!("corpo da página: {}", body);
+    Ok(())
+}
 
-let body = response.text().await?; // obtendo o código fonte da página da web
-
-println!("{}", body); // imprimindo o código fonte no console
+fn main() -> Result<(), Error> {
+    let downloaded = download();
+    Ok(())
+}
 ```
+O código primeiro solicita a página (linha 4), extrai o texto (linha 5) e imprime os conteúdos (linha 6).
 
-**Saída:** ```<!DOCTYPE html> <html> <head> ... </head> <body> ... </body> </html> ```
+## Mergulho Profundo
 
-## Mergulho profundo:
+Desde os primórdios da web, a necessidade de baixar páginas web tem sido um aspecto importante da programação. Todavia, Rust moderniza essa tarefa. Antes, as bibliotecas comuns em C, por exemplo, eram menos seguras e mais propensas a erros. 
 
-O download de uma página da web tem sido uma prática muito comum desde o início da internet. Antigamente, os programadores usavam bibliotecas como wget e cURL para fazer esse tipo de requisição. Atualmente, existem muitas bibliotecas em diversas linguagens de programação, incluindo o Rust, que tornam o processo mais simples e eficiente.
+Existem alternativas à `reqwest` em Rust, como a `hyper` e a `surf`. Cada uma tem suas próprias vantagens dependendo do caso de uso. 
 
-Existem também outras alternativas para fazer download de páginas da web, como o uso de APIs ou a raspagem de dados por meio de técnicas de web scrapping. No entanto, fazer uma requisição HTTP continua sendo uma das formas mais diretas e efetivas de obter o código fonte de uma página.
+Sobre a implementação, `reqwest` é construída sobre `hyper`, uma biblioteca HTTP de baixo nível, combinando a velocidade de `hyper` com uma API fácil de usar. A função `get` faz um pedido HTTP GET para a URL fornecida. O método `text()` lê todo o corpo da resposta e o retorna como uma string.
 
-No caso do Rust, a biblioteca mais comumente utilizada para fazer download de páginas da web é a `reqwest`. Ela permite fazer requisições síncronas e assíncronas, possui uma interface simples e é altamente configurável.
+## Ver Também
 
-## Veja também:
-
-- [Documentação da biblioteca reqwest](https://docs.rs/reqwest)
-- [Exemplo de script em Rust para baixar páginas da web](https://gist.github.com/nikomatsakis/94c29cb25df71d4a4c5694b30b775bc1)
-- [Outras opções para fazer download de páginas da web em Rust](https://rustrepo.com/catalog/rust-network-programming-downloader)
+1. Documentação `reqwest`: [https://docs.rs/reqwest/](https://docs.rs/reqwest/)
+2. Biblioteca `hyper`: [https://hyper.rs/](https://hyper.rs/)
+3. Biblioteca `surf`: [https://docs.rs/surf/](https://docs.rs/surf/)
+4. Tutoriais Rust: [https://www.rust-lang.org/pt-BR/tools/install](https://www.rust-lang.org/pt-BR/tools/install)

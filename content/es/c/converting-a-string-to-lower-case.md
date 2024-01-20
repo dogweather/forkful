@@ -1,6 +1,6 @@
 ---
 title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "C: Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "C"
 category:             "C"
@@ -10,50 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
 
-Convertir una cadena de texto a minúsculas es un proceso común en la programación. Consiste en transformar todas las letras mayúsculas de una palabra o frase a su equivalente en minúsculas. Los programadores lo hacen para asegurarse de que los datos que reciben sean uniformes y puedan ser comparados correctamente.
+Convertir una cadena a minúsculas significa cambiar todas las letras mayúsculas en una cadena de texto a sus equivalentes en minúscula. Los programadores lo hacen para lograr la uniformidad en los datos de texto al comparar o procesar cadenas.
 
-## Cómo:
+## ¿Cómo hacerlo?
 
-```
+En el lenguaje de programación C, puedes usar la función `tolower()` para convertir una cadena en minúsculas. Asegúrate de incluir la biblioteca `ctype.h`.
+
+```C
+#include <ctype.h>
 #include <stdio.h>
-#include <string.h>
+
+void convertir_a_minusculas(char* str) {
+    for(int i = 0; str[i]; i++){
+        str[i] = tolower(str[i]);
+    }
+}
 
 int main() {
-
-  char str[] = "PROGRAMACIÓN ES DIVERTIDO";
-  int i;
-
-  printf("Cadena original: %s\n", str);
-
-  for(i = 0; str[i]; i++) {
-    str[i] = tolower(str[i]);
-  }
-
-  printf("Cadena convertida a minúsculas: %s\n", str);
-
-  return 0;
+    char str[] = "Hola Mundo!";
+    convertir_a_minusculas(str);
+    printf("%s", str);  
+    return 0;
 }
 ```
 
-La salida de este programa sería:
+Cuando ejecutes este código, la salida será `hola mundo!`.
 
-```
-Cadena original: PROGRAMACIÓN ES DIVERTIDO
-Cadena convertida a minúsculas: programación es divertido
-```
+## Inmersión Profunda 
 
-## Detalles más profundos:
+El lenguaje de programación C se remonta a los años 70, durante mucho tiempo antes de que se establecieran las convenciones modernas de codificación. La función `tolower()` ha sido una parte integral de C desde entonces, proporcionando una manera simple y eficaz de convertir cadenas a minúsculas.
 
-Con la creciente popularidad de los lenguajes de programación que son sensibles a mayúsculas y minúsculas, como Python o JavaScript, la conversión a minúsculas se ha vuelto aún más importante. En el pasado, los programadores solían utilizar funciones como `toupper()` y `tolower()` para convertir manualmente cada carácter, pero ahora hay funciones específicas para la conversión de cadenas en la mayoría de los lenguajes, incluyendo C.
+Sin embargo, existen alternativas a `tolower()`. Por ejemplo, puedes implementar tu propia función para convertir cadenas a minúsculas, en especial si necesitas un comportamiento específico que `tolower()` no proporciona.
 
-En algunos casos, se puede utilizar una función de comparación que ignore las diferencias entre mayúsculas y minúsculas en lugar de convertir toda una cadena a minúsculas. Esto puede ser útil cuando se desea comparar cadenas sin importar si están escritas en mayúsculas o minúsculas.
+En cuanto a los detalles de implementación, `tolower()` trabaja en un solo carácter a la vez. Por eso, para convertir una cadena entera a minúsculas, necesitas recorrer cada carácter de la cadena y aplicar `tolower()` a cada uno de ellos.
 
-La implementación de la conversión de cadenas a minúsculas puede variar según el lenguaje y la plataforma utilizados. En C, por ejemplo, se puede utilizar la función `tolower()` de la biblioteca estándar `string.h`, como se muestra en el ejemplo anterior.
+## También Vea
 
-## Ver también:
+Para más detalles y explicaciones, visita los siguientes enlaces:
 
-- [Función tolower() en la documentación de C](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [Alternativas para la conversión de cadenas en otros lenguajes, como Python o JavaScript](https://www.programiz.com/python-programming/methods/string/startswith)
-- [Los beneficios de utilizar lenguajes de programación sin sensibilidad a mayúsculas y minúsculas](https://www.lifewire.com/case-sensitivity-in-computer-programming-373292)
+1. Documentación oficial de `tolower()`: [aquí](https://en.cppreference.com/w/c/string/byte/tolower)
+2. Análisis de la función `tolower()`: [aquí](https://www.programiz.com/c-programming/library-function/ctype.h/tolower)
+3. La biblioteca `ctype.h` y sus funciones: [aquí](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "Tiedostosta lukeminen"
-html_title:           "Bash: Tiedostosta lukeminen"
-simple_title:         "Tiedostosta lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,18 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Tekstikansion lukeminen on yksinkertaisesti tiedoston sisällön lukemista ohjelmakoodilla. Ohjelmoijat tekevät tätä usein saadakseen tietoa tiedostoista, jotka sisältävät tarvittavia tietoja heidän sovelluksilleen.
+Tekstitiedoston lukeminen tarkoittaa tiedoston sisällön tarkastelemista ohjelmointikielen avulla. Ohjelmoijat tekevät niin tiedon käsittelyä, analysointia tai manipulointia varten.
 
-## Miten tehdä?
+## Miten tehdä:
 
-Käyttäessäsi Bash-komentoriviä, voit avata tekstikansion komennolla ```cat tiedostonimi```. Tämä tulostaa kansion sisällön komentoriville. Voit myös määrittää tulostettavan tiedoston ja käyttää sitä myöhemmin, esimerkiksi ```tulostettava_tiedosto="tiedosto.txt"``` ja ```cat $tulostettava_tiedosto``` joka tulostaa tiedoston sisällön.
+Lukeminen tekstiedosto Bash:ssa on helppoa `cat`, `less` tai `more` komennon avulla.
 
-## Syväsukellus
+```Bash
+# Cat komento
+cat tiedosto.txt
 
-Tiedoston lukemisen historiallinen tausta liittyy tietokoneiden alkuaikoihin, jolloin tulostaminen paperille oli tärkeää. Nykyään monet muut vaihtoehdot ovat saatavilla, kuten tiedostojen lukeminen muilla ohjelmointikielillä tai eri ohjelmilla. Bashin tekstikansion lukeminen on kuitenkin edelleen suosittu tapa tiedostojen sisällön hankkimiseksi.
+# Less komento
+less tiedosto.txt
 
-## Katso myös
+# More komento
+more tiedosto.txt
+```
 
-Jos olet kiinnostunut oppimaan lisää Bash-komentorivin käytöstä, voit tarkastella [Bashin käyttöopasta](https://www.tutorialspoint.com/unix_commands/bash.htm). Lisätietoja tiedostojen lukemisesta ja manipuloinnista Bashilla löytyy myös [täältä](https://www.tecmint.com/13-basic-cat-command-examples-in-linux/).
+Tuloste näyttää sisällön tiedostosta `tiedosto.txt`.
+
+## Syvällisempi tieto:
+
+*Bash* eli *Bourne-Again shell* on syntynyt alkujaan 1980-luvulla, ja se on otettu laajasti käyttöön sen laajan yhteensopivuuden ja käytettävyyden takia. Vaihtoehtoja Bashille ovat esimerkiksi *Korn shell* (ksh) ja *C shell* (csh). Tekstitiedostojen lukeminen Bashilla on melko yksinkertaista, mutta sen toteutuksessa on kuitenkin joitakin yksityiskohtia. Esimerkiksi `cat`, `less` ja `more` -komennot lukevat tiedoston sisällön eri tavoin. `Cat` tulostaa koko tiedoston sisällön kerralla, kun taas `less` ja `more` tulostavat sivun kerrallaan.
+
+## Katso myös:
+
+Seuraavasta hakuosumasta löytyy lisätietoa aiheesta ja aiheeseen liittyvistä asioista:
+- GNU Bash official Documentation: [https://www.gnu.org/software/bash/manual/bash.html]
+- Advanced Bash-Scripting Guide: [http://www.tldp.org/LDP/abs/html/abs-guide.html]
+- Unix Shell Programming Books: [https://www.unix.com/answers-to-frequently-asked-questions/1373-books-on-shell-programming.html]

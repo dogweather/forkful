@@ -1,7 +1,7 @@
 ---
-title:                "חילוץ html"
-html_title:           "Fish Shell: חילוץ html"
-simple_title:         "חילוץ html"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה זה ולמה?:
+## מה ולמה?
+פרסון HTML הוא התהליך שבו נקרא קוד HTML ומפשטים אותו למבנה נתונים שמחשבים יכולים לעבוד איתו. מתכנתים מבצעים פעולה זו כשהם רוצים לאפשר לתוכניהם לתקשר או לשיפור עמוד רשת.
 
-למה תרצו לעקוב אחרי פעילות HTML של אתר כלשהו? אולי תרצו לבנות כלי ניתוח כדי להבין את יישום האתר שלכם או כדי לעקוב אחרי פעילות מנויים. בכל מקרה, ניתוח HTML הוא חלק חשוב מאוד מתהליך הפיתוח והמחקר בתחום האינטרנט.
+## איך לעשות:
+אם נרצה לפרסם HTML עם Fish Shell, נכתוב פונקציה שכך עובדת:
 
-כיצד לעשות זאת:
-
-```fish
-curl "https://en.wikipedia.org/wiki/Fish_(shell)" | html2text 
+```Fish Shell
+function parse_html
+    set html (curl -s $argv[1])
+    echo $html | pup 'p text{}'
+end
+```
+בריצה, הפונקציה תחזיר את הטקסט בתוך כל הפסקאות שבעמוד:
+```Fish Shell
+> parse_html https://he.wikipedia.org/wiki/HTML
+ה-HTML (HyperText Markup Language לשמו המלא באנגלית, בתרגום חופשי לעברית: שפת סימון היפר-טקסט) היא שפת סימון שמשמשת ל...
 ```
 
-במקרה הזה, אנו משתמשים בפקודת "curl" כדי להשיג את דף האינטרנט של ויקיפדיה בנושא "Fish Shell". לאחר מכן, אנחנו משתמשים בכלי html2text כדי להפוך את הקוד ה-HTML של הדף לטקסט רגיל שניתן לנתח ולהשתמש בו. ישנם כמה כלים לניתוח HTML זמינים לפיתוחים בשפת שרץ Fish.
+## צלילה עמוקה:
+הפרסון של HTML היה חשוב בהיסטוריה של המחשוב מאז שה-WWW נוצר ב-1989. בשפת פיש, אנו מתאימים את מנגנון הפרסינג שלנו ל-HTML לאמצעות ספריית `pup` שמפשטת את הפרסנים לאובייקטים JS.
 
-עומק נמוך:
+חלופות ל-Pup כוללות Jsoup, Beautiful Soup ו-lxml. אף אחת מהן אינה קיימת לפיש, אך כולן היו מתאימות אם כתבתם ב-Python או ב-Java.
 
-בעבר, ניתוח HTML היה מסובך יותר ודרש המון טכניקות מתמטיות כדי לשלוט במבנה הקוד. היום, הכלים המתקדמים יותר והקוד הנקי יותר מפשטים את התהליך למתכנתים. אם אתם לא מעוניינים להשתמש בכלי ניתוח כזה כמו html2text, יש גם אפשרות להשתמש בפונקציונליות של Fish ישירות כדי לנתח את הקוד HTML.
-
-ראו גם:
-
-אם אתם מתעניינים ללמוד עוד על HTML parsing וכלי ניתוח נוספים, אתם יכולים להציץ במקורות הבאים:
-
-- תיעוד Fish Shell לפונקציות HTML parsing
-- קוד פתוח של כלי HTML parsing נוסף, כמו pup ו-unhtml
-- ההסברים המפורטים יותר של w3schools על HTML parsing עם דוגמאות לשימוש של פקודת "curl"
-
-תודה שקראתם, ואנו מקווים שתמצאו את המידע הזה שימושי ומעניין!
+## ראה גם:
+- [דף הבית של Pup](https://github.com/ericchiang/pup)
+- [מדריך לשפת Pup](https://github.com/ericchiang/pup/blob/master/README.md)
+- [חמישה דרכים לפרסם HTML](https://www.scrapingbee.com/blog/five-ways-to-extract-data-from-html/)
+- [Fish Shell באתר הרשמי](https://fishshell.com/)

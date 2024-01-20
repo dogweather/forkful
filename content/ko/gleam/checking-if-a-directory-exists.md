@@ -1,6 +1,6 @@
 ---
 title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "Gleam: 디렉토리가 존재하는지 확인하기"
+html_title:           "Bash: 디렉토리가 존재하는지 확인하기"
 simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 그림(Gleam)에서 디렉토리가 있는지 확인하기
+## 무엇이며 왜?
 
-## 무엇인가요? 왜 하는 걸까요?
-디렉토리가 존재하는지 확인하는 것은 프로그래머들이 자주 하는 작업입니다. 여러분의 프로그램이 파일을 읽거나 쓰는 등의 작업을 할 때, 먼저 해당 파일이 어디에 있는지 확인해야하며, 그것은 가장 기본적인 과정입니다. 이것이 바로 디렉토리가 있는지 확인하는 이유입니다.
+디렉토리가 존재하는지 확인하는 것은 파일시스템에서 특정 경로가 이미 존재하는지 여부를 검사하는 것을 뜻합니다. 프로그래머들은 이를 통해 파일 작성 또는 디렉토리 수정 전에 오류를 방지할 수 있습니다.
 
 ## 방법:
-Gleam에서 디렉토리가 있는지 확인하는 방법은 간단합니다. 다음 코드를 참조하세요:
+
+Gleam에서는 'gleam/erlang' 라이브러리를 사용하여 어떤 디렉토리가 존재하는지 확인합니다.
 
 ```Gleam
-import os
+import gleam/erlang
 
-os.exists("my_directory") // 디렉토리가 있는지 확인하려면 디렉토리 이름을 적으면 됩니다.
+fn is_directory_exists(directory: String) -> Bool {
+  erlang.fs_element_type(directory) == Ok(#{"type": erlang.Directory})
+}
+
+fn main() {
+  let directory = "your/directory/path"
+  let result = is_directory_exists(directory)
+  
+  case result {
+    True -> erlang.print("디렉토리가 존재합니다")
+    False -> erlang.print("디렉토리가 존재하지 않습니다")
+  }
+}
 ```
 
-위 코드를 실행하면, 특정 디렉토리가 존재하는지 여부를 Boolean 값으로 반환합니다. True면 해당 디렉토리가 존재하고, False면 없는 것입니다.
+## 깊게 알아보기
 
-## 더 들어가보기:
-### 역사적 배경:
-디렉토리가 있는지 확인하는 기능은 여러 프로그래밍 언어에서 지원하고 있으며, 이는 운영 체제 내부의 파일 시스템을 다루는 과정에서 중요한 역할을 합니다. 그래서 우리는 프로그램에서 디렉토리를 다루기 위해 이 기능을 활용하는 것입니다.
+디렉토리의 존재 여부를 확인하는 것은 사실상 모든 파일 시스템 작업의 시작점입니다. 또한, 한 소프트웨어가 다른 소프트웨어와 효과적으로 통신하기 위해 파일을 사용하는 많은 레거시 시스템에서 중요합니다.
 
-### 대안:
-Gleam 외에도 다양한 언어에서 디렉토리가 존재하는지 확인하기 위한 함수를 제공하고 있으며, 해당 언어에 따라 다루는 방식이 다를 수 있습니다. 따라서 여러분의 선호 언어에서 해당 기능을 사용할 수 있으니 참고하시기 바랍니다.
+이와 같은 기능의 대안으로는 `filelib:is_directory/1`과 같은 다른 Erlang 함수를 사용하는 것이 있지만, Gleam의 타입 안전성 때문에 이 함수를 사용하는 것이 더 바람직하며, 에러를 방지할 수 있습니다.
 
-### 구현 세부사항:
-Gleam에서는 디렉토리가 있는지 확인하기 위해 운영 체제의 파일 시스템을 직접 읽지 않고, 파일의 경로를 적절히 가공하여 확인하는 방식을 사용합니다. 이는 파일 시스템에 접근하는 시간을 줄여서 성능 향상을 기대할 수 있습니다.
+## 관련 정보:
 
-## 관련 자료:
-- [Gleam 공식 문서](https://gleam.run/basics/directories/)
-- [Python에서 디렉토리가 있는지 확인하는 방법](https://stackabuse.com/python-check-if-a-file-or-directory-exists/)
-- [Java에서 디렉토리가 있는지 확인하는 방법](https://www.baeldung.com/java-check-directory-exists)
+다음 링크를 통해 추가 정보를 얻을 수 있습니다: 
+
+[Gleam documentation](https://hexdocs.pm/gleam_erlang/gleam/erlang/index.html)  
+[Erlang's filelib documentation](http://erlang.org/doc/man/filelib.html)

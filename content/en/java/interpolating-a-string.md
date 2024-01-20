@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Java recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Java"
 category:             "Java"
@@ -11,36 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Interpolating a string in Java is the process of combining multiple strings and variables into a single string. It allows programmers to dynamically create strings based on the values of variables, making code more versatile and efficient.
+
+String interpolation refers to substituting variables in a string. Developers do it to incorporate dynamic values or variables into strings without the hassle of concatenating or manually formatting them.
 
 ## How to:
-Interpolating a string in Java is done using the `String.format()` method. Here's an example of how it works:
 
-```java
+In Java, you can interpolate strings using `String.format()`, like this:
+```Java
 String name = "John";
-int age = 25;
-String message = String.format("My name is %s and I am %d years old.", name, age);
-System.out.println(message);
+String greeting = String.format("Hello, %s!", name);
+System.out.println(greeting);
 ```
-
-The output of the code above would be: `My name is John and I am 25 years old.` Notice how the `%s` and `%d` placeholders were replaced with the value of the `name` and `age` variables, respectively.
-
-Interpolation also supports formatting options, such as specifying the number of decimal places for a floating point variable. Here's an example:
-
-```java
-double price = 12.50;
-String message = String.format("The total cost is $%.2f", price);
-System.out.println(message);
+Output:
+```Java
+Hello, John!
 ```
+In particular, `%s` in `"Hello, %s!"` is a placeholder for `name`. You may use more placeholders for more variables:
+```Java
+String name = "John";
+String city = "London";
+String introduction = String.format("%s lives in %s.", name, city);
+System.out.println(introduction);
+```
+Output:
+```Java
+John lives in London.
+```
+## Deep Dive
 
-The output would be: `The total cost is $12.50` because we specified the `%.2f` format, which means to round the `price` variable to 2 decimal places.
+String interpolation came from old programming languages like Perl and became popular in newer languages like Ruby, Python, or JavaScript. Unfortunately, Java doesn't support string interpolation natively or as smoothly.
 
-## Deep Dive:
-Interpolating strings has been a popular feature in programming languages since the late 1970s, with the introduction of the `printf()` function in the C programming language. Java inherited this feature and added its own implementation using the `String.format()` method.
+But Java does have alternatives. Aside from `String.format()`, you can use `printf()` which is similar and more known from C++:
+```Java
+String name = "John";
+System.out.printf("Hello, %s!\n", name);
+```
+Output:
+```Java
+Hello, John!
+```
+Note that `\n` is to move to the next line.
 
-There are also alternatives to string interpolation in Java, such as using the `StringBuilder` class or concatenating strings using the `+` operator. However, string interpolation offers a cleaner and more concise way to format strings, which is especially useful when dealing with large amounts of data.
+As for implementation details, `String.format()` and `printf()` use Java's Formatter class under the hood. This class interprets the format specifiers (like `%s` for a string) and does the interpolation.
 
-## See Also:
-- [Java String.format() documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))
-- [Java StringBuilder documentation](https://docs.oracle.com/javase/7/docs/api/java/lang/StringBuilder.html)
-- [C printf() function history](https://en.wikipedia.org/wiki/Printf_format_string#History)
+## See Also
+
+Java uses Formatter for more than just interpolating strings. Learn more about it [here from the official Java documentation](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html). 
+
+For a thorough guide on format specifiers that you can use in `String.format()` or `printf()`, check out [this guide from Baeldung](https://www.baeldung.com/java-printstream-printf).

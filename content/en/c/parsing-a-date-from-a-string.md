@@ -11,52 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Parsing a date from a string is the process of taking a date in the form of a string and converting it into a format that a computer can understand. This is important for programmers as it allows them to manipulate and perform operations on dates, which are frequently used in many applications.
+Parsing a date from string in C is the process of converting a string that represents a date into a data structure that represents the date. This is done to facilitate calculations, sorting, and many other operations that are difficult to do on dates represented as strings.
 
 ## How to:
-
-To parse a date from a string in C, we can use the `strptime()` function from the standard library. This function takes in a string, a format string, and a pointer to a `tm` struct, and returns a pointer to that struct with the parsed date information.
+We can parse a date from a string by using the `strptime` function in `time.h`. Below is a basic example of how to use it:
 
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    // Input string and format
-    char str[] = "February 4, 2020";
-    char format[] = "%B %d, %Y";
+    struct tm tm;
+    char buf[255];
 
-    // Create tm struct
-    struct tm parsed_date;
+    strptime("2022-06-24 14:45", "%Y-%m-%d %H:%M", &tm);
+    strftime(buf, sizeof(buf), "%d %B %Y %H:%M", &tm);
 
-    // Parse string into tm struct
-    strptime(str, format, &parsed_date);
-
-    // Print parsed date information
-    printf("Month: %d\n", parsed_date.tm_mon + 1); // tm_mon is indexed from 0
-    printf("Day: %d\n", parsed_date.tm_mday);
-    printf("Year: %d\n", parsed_date.tm_year + 1900); // tm_year is in years since 1900
+    printf("Parsed date: %s\n", buf);
 
     return 0;
 }
 ```
 
-**Output:**
+When you run this program, it will output:
+
+```bash
+Parsed date: 24 June 2022 14:45
 ```
-Month: 2
-Day: 4
-Year: 2020
-```
 
-## Deep Dive:
+This indicates that the date string "2022-06-24 14:45" has been successfully parsed into a `struct tm` object.
 
-Parsing dates from strings can be tricky due to the many different date formats that exist. In the past, programmers had to manually write code to parse specific date formats, but the `strptime()` function makes this process much easier. Additionally, there are alternative libraries and functions available for date parsing, such as `strftime()` and `strptime_l()`, which provide more flexibility and options.
+## Deep Dive
+Historically, the parsing of dates has been a tedious process due to the varied date formats across different locales. Things got easier with the introduction of the `time.h` library in C89, which included the `strptime` function.
 
-When parsing a date from a string, it is important to match the format string to the input string exactly, otherwise the `strptime()` function will return an error. The `tm` struct used in the example above stores the parsed date information in its members, such as `tm_mon` for the month and `tm_mday` for the day.
+An alternative approach, albeit less portable, is to manually parse the string using other string manipulation functions like `strtok`. You then convert these individual string components into integers for the day, month, and year.
 
-## See Also:
+Take note that the `strptime` function takes a format string, similar to `printf` and `scanf`, to interpret the input string. The resulting `struct tm` struct can be further used to output the formatted date or for internal computations.
 
-- [`strptime()` documentation](https://www.man7.org/linux/man-pages/man3/strptime.3.html)
-- [`strptime_l()` documentation](https://www.man7.org/linux/man-pages/man3/strptime_l.3.html)
-- [`strftime()` documentation](https://www.man7.org/linux/man-pages/man3/strftime.3.html)
+## See Also
+- C Library - <ctime>: https://www.cplusplus.com/reference/ctime/
+- `strftime` function: https://www.cplusplus.com/reference/ctime/strftime/
+- `strptime` function: https://www.cplusplus.com/reference/ctime/strptime/

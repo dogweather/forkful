@@ -1,7 +1,7 @@
 ---
-title:                "Att göra om en sträng till versaler"
-html_title:           "Arduino: Att göra om en sträng till versaler"
-simple_title:         "Att göra om en sträng till versaler"
+title:                "Gör en sträng versal"
+html_title:           "Arduino: Gör en sträng versal"
+simple_title:         "Gör en sträng versal"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+# Arduino-programmering: Capitalize a String
 
-Att *kapitalisera en sträng* betyder helt enkelt att göra alla bokstäver i en sträng till versaler (stora bokstäver). Detta är en vanlig uppgift för programmerare när de behöver formatera data eller användarinmatning på ett enhetligt sätt. Genom att göra om alla bokstäver till versaler, ser strängen snyggare ut och blir lättare att läsa.
+## Vad och Varför?
 
-## Så här:
+Att göra om en sträng till stora bokstäver, eller "capitalizing", innebär att varje bokstav i strängen skrivs om till dess stora motsvarighet. Programmerare gör detta för att jämna ut textdata och för att möjliggöra jämförelser utan att behöva ta hänsyn till små och stora bokstäver.
 
-Här är ett enkelt exempel på hur man kapitaliserar en sträng i Arduino:
+## Så här gör du:
 
+Arduino erbjuder en funktion för att skifta till stora bokstäver i en sträng. Låt oss ta en titt på ett exempel.
+
+```Arduino
+String myStr = "hej världen!";
+myStr.toUpperCase();
+Serial.println(myStr); //Skriver ut: "HEJ VÄRLDEN!"
 ```
-// Deklarera en sträng som ska kapitaliseras
-String minStrang = "hej, detta är en sträng";
+I detta exempel gör `toUpperCase()`-metoden alla bokstäver i stringen stora.
 
-// Skriv ut den ursprungliga strängen
-Serial.println(minStrang);
+## Djupdykning
 
-// Använd metoden toUpperCase () för att göra alla bokstäver till versaler
-String kapitalStrang = minStrang.toUpperCase();
+Historiskt sett gällde behovet av att skifta mellan små och stora bokstäver tidiga datorsystem där skillnaden mellan stor och liten bokstav kunde vara skillnaden mellan två helt olika kommandon.
 
-// Skriv ut den kapitaliserade strängen
-Serial.println(kapitalStrang);
-```
+Ett alternativ till `toUpperCase()` skulle vara att använda ett "loop" för att gå igenom varje karaktär i strängen individuellt, men den inbyggda metoden är både snabbare och enklare att använda.
 
-**Output:**
+I Arduino är `toUpperCase()` implementerad så att den itererar över varje tecken i strängen, kontrollerar om det är en liten bokstav, och om det är, byter den till stora bokstäver.
 
-```
-hej, detta är en sträng
-HEJ, DETTA ÄR EN STRÄNG
-```
+## Se även
 
-## Djupdykning:
-
-Att kapitalisera en sträng är en vanlig uppgift inom programmering och finns tillgänglig i många programmeringsspråk, inklusive Arduino. Det finns dock också andra sätt att formatera strängar, till exempel genom att göra alla bokstäver till gemener (små bokstäver) eller genom att bara förändra den första bokstaven till versal och resten till gemener.
-
-För att implementera kapitalisering i Arduino använder vi den inbyggda metoden toUpperCase (), som är speciellt utformad för strängar. Denna metod kan användas på en befintlig sträng eller på en sträng som skapas i koden.
-
-## Se även:
-
-För mer information om strängmanipulering i Arduino, kolla in [Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/) för dokumentation om toUpperCase () metoden. Du kan också utforska fler sätt att formatera och manipulera strängar i Arduino genom att titta på andra inbyggda metoder som toLowerCase () och substring (). Lycka till med att kapitalisera dina strängar!
+För mer detaljer och alternativa metoder, se följande resurser:
+- [Arduino String Reference:](https://www.arduino.cc/en/Reference/String)
+- [Comparison of string methods:](https://www.arduino.cc/en/Tutorial/StringComparisonOperators)
+- [Arduino Forum Discussion on String Capitalization:](https://forum.arduino.cc/index.php?topic=181847.0)

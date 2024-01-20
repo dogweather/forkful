@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Javascript: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que & Pourquoi ?
 
-L'envoi d'une requête HTTP avec une authentification de base est une méthode utilisée par les programmeurs pour sécuriser les communications entre un client et un serveur. Cela permet de s'assurer que seules les personnes autorisées ont accès aux informations échangées.
+L'envoi d'une requête HTTP avec authentification de base se réfère à l'utilisation des identifiants (nom d'utilisateur et mot de passe) pour accéder à une ressource via HTTP. Les programmeurs y recourent pour protéger la confidentialité et l'intégrité des échanges entre le client et le serveur.
 
-## Comment faire:
+## Comment faire :
 
 ```Javascript
-fetch('https://mon-serveur.com/api/posts', { // l'url de l'API à appeler
-  headers: {
-    Authorization: 'Basic ' + btoa('utilisateur:mdp') // encodage en base64 du nom d'utilisateur et du mot de passe
-  }
-})
-.then((response) => {
-  return response.json(); // convertit la réponse en JSON
-})
-.then((data) => {
-  console.log(data); // affiche les données récupérées
-});
+let username = 'user';
+let password = 'password';
+
+let headers = new Headers();
+headers.set('Authorization', 'Basic ' + btoa(username + ":" + password));
+
+fetch('https://api.monsite.com/data', {headers: headers})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 ```
+Dans cet exemple, nous utilisons l'API Fetch pour envoyer une requête GET à 'https://api.monsite.com/data'. 'btoa' est une fonction JavaScript qui encode les identifiants en base64. En cas de réponse, les données sont affichées dans la console.
 
-L'exemple ci-dessus utilise la méthode [fetch()](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) pour envoyer une requête HTTP vers une API sécurisée par une authentification de base. Puisque les informations de connexion sont encodées en base64, il est important de souligner que cela ne constitue pas une méthode de sécurisation fiable et qu'il est recommandé d'utiliser une méthode plus robuste telle que l'authentification par jetons (token authentication).
+## Plongeons profondément :
 
-## Plongée en profondeur:
+En termes historiques, l'authentification de base HTTP a été l'une des premières méthodes pour contrôler l'accès aux ressources web. Cependant, elle présente des vulnérabilités évidentes : notamment, le fait qu'elle transmette les informations d'identification en texte clair (bien que codé en base64).
 
-L'authentification de base a été introduite dans la version 1.0 de HTTP en 1996 et continue d'être utilisée aujourd'hui. Cependant, de nombreuses méthodes d'authentification alternatives ont émergé, offrant une meilleure sécurité et plus de flexibilité. Parmi elles, on peut citer l'OAuth, l'OpenID Connect, et l'authentification par jetons. L'authentification de base fonctionne en encodant en base64 les informations de connexion, ce qui peut être facilement décodé par une application tierce.
+Il existe des alternatives comme l'authentification Digest, l'authentification par jeton et OAuth.Avec l'authentification Digest, les informations d'identification sont transmises sous forme de hachage MD5, qui représente un niveau de sécurité plus élevé. L'authentification par jeton et OAuth sont aujourd'hui largement adoptées dans le développement d'applications web modernes.
 
-## Voir aussi:
+Dans l'implémentation mentionnée précédemment, nous avons utilisé la méthode 'btoa' pour encoder les informations d'identification en base64, ce qui n'est pas sécurisé pour les applications de production. En pratique, vous devriez toujours utiliser HTTPS pour protéger vos informations d'identification lors de leur transmission.
 
-- [MDN Web Docs - fetch()](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
-- [Introduction à l'authentification HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+## Voir aussi :
+
+Pour en savoir plus sur l'authentification HTTP de base et ses alternatives, consultez :
+- [Authentification Basic sur MDN Web Docs](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+- [Authentification Basic sur Wikipedia](https://fr.wikipedia.org/wiki/Authentification_HTTP#Authentification_de_base)
+- [Alternatives à l'authentification Basic, sur Stack Overflow](https://stackoverflow.com/questions/549/the-definitive-guide-to-form-based-website-authentication#477579)

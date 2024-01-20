@@ -1,6 +1,6 @@
 ---
 title:                "读取文本文件"
-html_title:           "Elixir: 读取文本文件"
+html_title:           "Kotlin: 读取文本文件"
 simple_title:         "读取文本文件"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是文本文件和它的作用？
-文本文件指的是存储文本内容的文件，它通常是以`.txt` 格式结尾。在编程中，我们经常会读取文本文件来获取文件中的信息，比如配置文件、日志文件等。读取文本文件可以帮助我们在程序中使用外部数据，进而提升程序的灵活性和扩展性。
+## 什么和为什么？
 
-## 如何实现？
-在Elixir中，读取文本文件需要通过`File.read!/1` 函数来实现。这个函数会读取指定的文件路径并返回包含文件内容的二进制数据。我们可以通过以下方式来使用这个函数：
+读取文本文件基本上就是让你的代码能够获取并读取存在文本文件中的数据。程序员之所以会做这一功能，是为了能够操作、转换或利用这些数据来达成特定的预设目标。
 
-```Elixir
-file_path = "sample.txt"
-file_content = File.read!(file_path)
-IO.puts(file_content)
+## 如何做：
+
+要在Elixir中读取文本文件，你可以使用 `File.read/1` 函数。以下是一个示例，示例文件'example.txt'包含“Hello, World!”：
 ```
+Elixir
+{:ok, content} = File.read("example.txt")
+IO.puts(content)
+```
+你将会看到下面的输出:
+```
+Hello, World!
+```
+## 深入探讨
 
-上面的代码首先定义了一个文件路径，并通过`File.read!` 函数来读取该文件。然后，我们使用`IO.puts` 函数来打印文件内容。运行这段代码，可以看到对应文件中的文本被打印出来。
+1. 历史背景: 从早期的编程语言开始，读取文本文件已经是一个基本的功能。这是因为文本文件非常容易创建和编辑，而且他们是跨平台的。
 
-## 深入了解
-在早期的编程语言中，读取文本文件是一个相当复杂的过程，开发者需要手动处理文件的字节流。但在Elixir中，我们可以通过`File.read!/1` 函数轻松实现文件读取。此外，除了`File.read!/1` 函数外，还有其他一些读取文本文件的方法，比如使用流（Stream）来读取大型文件，或者使用`File.Stream` 模块来一次性读取多个文件的内容。
+2. 可选方案: 除了 `File.read/1` ，你也可以使用 `File.stream!/1` 来逐行读取文件。这在处理大型文件时非常有用，因为它可以降低内存使用量。
 
-## 相关链接
-- [Elixir文档中的File模块说明][1]
-- [关于文本文件的知识][2]
+3. 细节实现: `File.read/1` 是一个基于Beam VM原生文件操作功能的函数，其核心在于返回的元组。这个元组的第一个元素表述操作的成功与否，第二个元素则是所读取的文件内容。
 
-[1]: https://hexdocs.pm/elixir/File.html
-[2]: https://www.computerhope.com/issues/ch000969.htm
+## 参考链接
+
+Elixir官方文档(File模块): [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
+
+Elixir文件操作相关教程: [https://elixir-lang.org/getting-started/io-and-the-file-system.html](https://elixir-lang.org/getting-started/io-and-the-file-system.html)

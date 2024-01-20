@@ -1,7 +1,7 @@
 ---
-title:                "Злиття рядків"
-html_title:           "Swift: Злиття рядків"
-simple_title:         "Злиття рядків"
+title:                "Конкатенація рядків"
+html_title:           "PHP: Конкатенація рядків"
+simple_title:         "Конкатенація рядків"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,37 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що це та навіщо це потрібно?
 
-Стрічкове з'єднання (або конкатенація) полягає в об'єднанні двох або більше рядків тексту в один. Програмісти зазвичай використовують цей метод для створення більш складних рядків, об'єднання даних або форматування виводу.
+Стрічкове конкатенацию - це об'єднання двох або більше рядків. Програмісти роблять це для створення динамічного контенту або форматування виводу.
 
-## Як це зробити:
+## Як це робиться:
+
+У Swift основний спосіб конкатенувати рядки - використовувати оператора "+".
 
 ```Swift
-let name = "Марія"
-let greeting = "Привіт, "
-let message = greeting + name
-print(message)
+let firstName = "John"
+let lastName = "Doe"
+let fullName = firstName + " " + lastName
 
-// Вивід: Привіт, Марія
+print(fullName) // Outputs: John Doe
 ```
+Але можна також використовувати властивість "appending" або інтерполяцію рядків:
 
-У цьому прикладі ми створюємо різні рядки та об'єднуємо їх за допомогою оператора "+" для створення більш змістовного повідомлення.
+```Swift
+let message = "Hello, ".appending(fullName)
+print(message) // Outputs: Hello, John Doe
+```
+```Swift
+let intro = "My name is \(fullName)"
+print(intro) // Outputs: My name is John Doe
+```
+## Поглиблена інформація
 
-## Глибше погляд:
+1. **Історичний контекст**: Основа конкатенування рядків бере витоки з перших мов програмування, коли було потрібно об'єднувати символи за допомогою кодів ASCII.
 
-### Історичний контекст:
+2. **Альтернативи**: Окрім конкатенування, в Swift можна використовувати форматовані рядки або багаторядкові рядки.
 
-Конкатенація рядків є стандартною функцією багатьох мов програмування, включаючи Swift. Цей метод був спроектований для полегшення роботи з текстовими даними та створення більш зручного інтерфейсу для програмістів.
+```Swift
+let formattedString = String(format: "Hello, %@. I am %@", arguments: [lastName, firstName])
+```
+```Swift
+let multilineString = """
+  This is line 1.
+  This is line 2.
+  This is line \(3).
+  """ 
+```
+3. **Деталі реалізації**: Коли ви конкатенуєте рядки, Swift створює новий об'єкт рядка. Це важливо, якщо ви збираєтесь об'єднати декілька рядків в циклі, оскільки це може вплинути на продуктивність вашого коду.
 
-### Альтернативи:
+## Дивіться також
 
-Існують інші способи з'єднання рядків, такі як використання методу ```append()``` та оператора присвоєння ```+=```. Однак, конкатенація рядків за допомогою "+" є більш простою та зрозумілою для багатьох програмістів.
-
-### Деталі реалізації:
-
-Внутрішньо, при використанні оператору "+" для конкатенації рядків, Swift створює новий рядок шляхом об'єднання двох існуючих рядків та повертає результат. Це може бути більш ефективним, ніж використання методу ```append()```, оскільки Swift може зарезервувати достатньо пам'яті для нового рядка заздалегідь.
-
-## Дивіться також:
-
-Якщо ви зацікавлені в додаткових опціях для роботи з рядками, можете ознайомитися зі [Swift String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID293) та [NSMutableString](https://developer.apple.com/documentation/foundation/nsmutablestring).
+1. [Документація Swift: Strings and Characters](https://developer.apple.com/documentation/swift/string)
+2. [Stack Overflow: String concatenation vs. interpolation in Swift](https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language)
+3. [Swift Tutorial: Multiline String](https://learnappmaking.com/multiline-string-literals-swift-how-to/)
+4. [Swift by Sundell: String concatenation and interpolation](https://www.swiftbysundell.com/tips/string-concatenation-and-interpolation/)

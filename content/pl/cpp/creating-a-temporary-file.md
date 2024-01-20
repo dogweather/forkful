@@ -1,6 +1,6 @@
 ---
 title:                "Tworzenie tymczasowego pliku"
-html_title:           "C++: Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
 simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "C++"
 category:             "C++"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Tworzenie pliku tymczasowego jest popularną techniką w programowaniu, polegającą na tworzeniu pliku, który jest używany tylko w danym momencie i jest usuwany automatycznie po zakończeniu programu. Programiści stosują tę metodę, gdy chcą tymczasowo przechowywać dane lub zapisać wyniki danego procesu, a następnie nie potrzebują już tych informacji.
+## Co i dlaczego?
+
+Tworzenie pliku tymczasowego oznacza stworzenie pliku, który jest używany tylko do przechowywania danych w trakcie wykonywania programu. Programiści robią to po to, aby przechować dane, które nie są niezbędne po zakończeniu programu.
 
 ## Jak to zrobić:
-Przykład kodu w języku C++, który tworzy plik tymczasowy, a następnie otwiera go w celu zapisania danych:
+
+Tworzenie tymczasowego pliku w C++ jest proste i niewielokrotne. Oto jak:
 
 ```C++
-#include <iostream>
-#include <fstream>
+#include <cstdio>
 
 int main() {
-    std::ofstream tempFile; // utworzenie obiektu pliku tymczasowego
-    tempFile.open("temp.txt"); // otwarcie pliku o nazwie "temp.txt"
+    char tempname[L_tmpnam];
+    std::tmpnam(tempname);
+    
+    printf("Temporary file name: %s\n", tempname);
 
-    // użycie pliku tymczasowego do zapisu danych
-    tempFile << "To jest przykładowy tekst do zapisania w pliku tymczasowym.";
-
-    tempFile.close(); // zamknięcie pliku tymczasowego
-
-    return 0;
+    // Zastosuj plik tymczasowy jak chcesz
 }
 ```
 
-W wyniku wykonania tego kodu zostanie utworzony plik tymczasowy o nazwie "temp.txt" zawierający tekst "To jest przykładowy tekst do zapisania w pliku tymczasowym."
+Po uruchomieniu programu zostanie wygenerowany unikalny plik tymczasowy i wyświetlony na ekranie.
 
-## Głębsza analiza:
-Tworzenie pliku tymczasowego ma swoje korzenie w systemie UNIX, gdzie wykorzystywano tę technikę w celu zapisywania danych w pamięci podręcznej i unikania niepotrzebnego zapisu na dysku. Współcześnie jest to przydatna metoda w przypadku potrzeby przechowywania tymczasowych danych lub unikania konfliktów z nazwami plików.
+## Deep Dive 
 
-Alternatywą dla tworzenia plików tymczasowych jest użycie strumieni danych, takich jak "std::stringstream", które pozwalają na przechowywanie danych w pamięci podręcznej bez konieczności tworzenia pliku na dysku.
+Tworzenie plików tymczasowych było częścią programowania od zamierzchłych czasów. Chociaż C++ nie ma oczywistych alternatyw dla tworzenia plików tymczasowych, inne języki, takie jak Python, oferują różne metody do osiągnięcia tego samego celu.
 
-W języku C++, funkcja "tmpfile()" może być użyta do tworzenia plików tymczasowych w sposób bardziej systemowy, jednak wymaga to bardziej złożonej obsługi i nie jest zalecana dla początkujących programistów.
+Co więcej, warto pamiętać, że podczas tworzenia plików tymczasowych istnieje duże ryzyko konfliktów z równoczesnym dostępem do tych samych plików. Dlatego tak ważne jest korzystanie z funkcji generujących unikalne nazwy pliku, takich jak `std::tmpnam`.
 
-## Zobacz także:
-- Dokumentacja języka C++: https://en.cppreference.com/w/cpp/io/c/tmpfile
-- Przykład użycia strumieni danych: https://www.geeksforgeeks.org/c-string-hold-text-file-content/
+## Zobacz także 
+
+Dla szczegółów i przykładów z innych języków programowania, odwiedź:
+
+1. [Tworzenie i usuwanie plików tymczasowych w Pythonie](https://docs.python.org/3/library/tempfile.html)
+2. [Praca z plikami tymczasowymi w Java](https://www.journaldev.com/9481/java-temporary-file)
+3. [Tworzenie plików tymczasowych w Node.js](https://www.npmjs.com/package/tmp)

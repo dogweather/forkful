@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynając nowy projekt"
-html_title:           "C#: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Getting Started"
@@ -10,47 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Zaczynanie nowego projektu to proces tworzenia nowej aplikacji lub oprogramowania od podstaw. Programiści wykonują to, aby dostosować swoje projekty do konkretnych potrzeb lub wymagań. Zaczynanie od nowa daje im również możliwość wykorzystania najnowszych technologii i metod, aby stworzyć bardziej wydajne i funkcjonalne oprogramowanie.
+Rozpoczęcie nowego projektu w programowaniu oznacza tworzenie od podstaw nowej aplikacji lub oprogramowania. Programiści to robią, aby rozwiązać unikalne problemy lub stworzyć nowe funkcjonalności, które jeszcze nie istnieją.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-### Przykład 1: Tworzenie nowego projektu
+Uruchomienie nowego projektu w C# jest proste i można to zrobić za pomocą poniższego kodu:
 
 ```C#
-public class NewProject {
+using System;
 
-    // kod tworzący nowy projekt
-
-    public static void Main() {
-        Console.WriteLine("Witaj w moim nowym projekcie!");
+namespace NowyProjekt
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Cześć, Świecie!");
+        }
     }
 }
 ```
 
-### Przykład 2: Definiowanie wymaganych elementów
+Po uruchomieniu tego kodu, utworzy on prosty program wypisujący "Cześć, Świecie!".
 
-```C#
-const string projectName = "Moja aplikacja";
-DateTime projectStartDate = new DateTime(2020, 07, 01);
-int projectDuration = 6;
+## Deep Dive 
 
-Console.WriteLine("Nazwa projektu: " + projectName);
-Console.WriteLine("Data rozpoczęcia: " + projectStartDate);
-Console.WriteLine("Czas trwania w miesiącach: " + projectDuration);
-```
+Historia tworzenia nowych projektów jest długa i złożona - zaczęło się to dawno temu, kiedy programowanie było jeszcze w powijakach. 
 
-### Oczekiwany wynik:
+Alternatywą dla startu nowego projektu od zera jest sklonowanie istniejącego projektu i dopasowanie go do swoich potrzeb. To jest szybszy sposób, ale może prowadzić do problemów, jeśli źródłowy projekt nie jest dobrze zrozumiany.
 
-Nazwa projektu: Moja aplikacja
-Data rozpoczęcia: 01.07.2020
-Czas trwania w miesiącach: 6
+Głębsze informacje o implementacji dotyczą takich aspektów jak struktura projektu, wybór odpowiedniego IDE, i wybór bibliotek, które będą w projekcie wykorzystane. Jak zawsze, decyzje wyboru zależą od specyfiki projektu.
 
-## Głębszy zanurzenie
+## Zobacz Również 
 
-Tworzenie nowego projektu jest częstym zadaniem w pracy programisty. Pozwala ono na wykorzystanie najnowszych narzędzi i technologii do tworzenia oprogramowania wysokiej jakości. Alternatywami dla rozpoczęcia nowego projektu są modyfikowanie istniejącego kodu lub wykorzystanie gotowych szablonów. W C# możliwe jest również tworzenie projektów przy użyciu różnych frameworków, takich jak .NET Framework czy .NET Core.
+Jeśli chcesz dowiedzieć się więcej, oto kilka pomocnych linków:
 
-## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o tworzeniu nowych projektów w języku C#, polecamy zapoznać się z dokumentacją na oficjalnej stronie Microsoft: https://docs.microsoft.com/pl-pl/visualstudio/get-started/csharp/. Znajdziesz tam wiele przydatnych poradników i przykładów kodu. Możesz też skorzystać z różnych kursów online, takich jak ten na platformie Microsoft Learn: https://docs.microsoft.com/pl-pl/learn/paths/csharp-first-steps/. Pamiętaj, że im więcej wiesz o tworzeniu nowych projektów, tym łatwiej będzie Ci stworzyć oprogramowanie, które spełni oczekiwania użytkowników.
+- Dokumentacja Microsoft C#: https://docs.microsoft.com/pl-pl/dotnet/csharp/
+- Kreatywna online nauka programowania C#: https://www.codecademy.com/learn/learn-c-sharp
+- Przewodnik programowania na platformie .NET: https://docs.microsoft.com/pl-pl/dotnet/csharp/programming-guide/

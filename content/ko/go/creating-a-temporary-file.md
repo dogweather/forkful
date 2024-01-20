@@ -1,6 +1,6 @@
 ---
 title:                "임시 파일 생성하기"
-html_title:           "Go: 임시 파일 생성하기"
+html_title:           "Python: 임시 파일 생성하기"
 simple_title:         "임시 파일 생성하기"
 programming_language: "Go"
 category:             "Go"
@@ -10,59 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜 하나요?
+## 무엇과 왜?
 
-임시 파일 생성이란 무엇인지 간략히 말하자면, 프로그래머가 프로그램 실행 중에 사용할 수 있는 임시적인 파일을 만드는 것입니다. 이러한 임시 파일은 데이터를 저장하거나 임시적인 작업을 처리하는 등 다양한 용도로 사용될 수 있습니다.
+임시 파일 생성은 사용자의 데이터가 일시적으로 저장되는 파일을 만드는 것입니다. 프로그래머들은 디버깅이나 데이터를 일시적으로 저장하고 추후에 사용하기 위해 이를 사용합니다.
 
-## 하는 법:
+## 동작 방식:
 
-```
-Go ioutil.TempFile 함수를 사용하면 간단하게 임시 파일을 만들 수 있습니다. 
+임시 파일 생성은 Go의 `io/ioutil` 패키지에 `TempFile` 함수를 사용하여 수행할 수 있습니다. 다음은 간단한 예입니다.
 
-Go func main() {
-    // 아래 코드에서 /tmp 폴더는 실제로 존재하는 경로로 변경해주셔야 합니다.
-    dir, err := ioutil.TempDir("/tmp", "example")
-    if err != nil {
-        log.Fatal(err)
-    }
-    defer os.RemoveAll(dir)
+```Go
+package main
 
-    // 생성한 임시 폴더 내에 파일 이름을 지정해줍니다.
-    f, err := ioutil.TempFile(dir, "foo_*.txt")
-    if err != nil {
-        log.Fatal(err)
-    }
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+)
 
-    fmt.Println("임시 파일 경로:", f.Name())
+func main() {
+	tempFile, err := ioutil.TempFile("", "sample")
+	if err != nil {
+		log.Fatal(err)
+	}
 
-    // 파일에 데이터를 쓰고 저장합니다.
-    _, err = f.Write([]byte("임시 데이터"))
-    if err != nil {
-        log.Fatal(err)
-    }
+	fmt.Println(tempFile.Name())
 
-    f.Close()
-
+	// Use the file
 }
 ```
+이 샘플 코드는 임시 디렉토리에 'sample*' 이름을 가진 임시 파일을 생성합니다.
+출력:
 
-#### 출력:
-
-```
-임시 파일 경로: /tmp/example/foo_12345.txt
+```Go
+/tmp/sample437309879
 ```
 
 ## 딥 다이브:
 
-### (1) 역사적인 배경
-임시 파일 생성은 초기 운영체제에서부터 사용되던 기능입니다. 하지만 이전에는 자동적으로 삭제되지 않아 디스크에 고스란히 남아있는 경우도 있었습니다. 하지만 최근에는 운영체제 내에서 임시 파일을 관리하는 매커니즘이 발전하여 이러한 문제를 해결할 수 있게 되었습니다.
+임시 파일 생성은 오래전부터 사용되어 왔습니다. 하지만, 이는 프로그래밍 컨텍스트 내에서 항상 최선의 선택이 아닙니다. 데이터베이스 또는 키-값 저장소 같은 다른 매체들이 더 적합할 수 있습니다. 게다가, Go의 `ioutil.TempFile` 함수는 보안에 중점을 둔 디자인을 갖추고 있습니다. 즉, 동일한 이름을 가진 임시 파일을 만드는 경쟁 조건은 발생하지 않습니다.
 
-### (2) 대안
-Go에서는 임시 파일 생성을 위해 ```open``` 함수를 사용할 수도 있지만, 이는 보다 복잡한 구현을 필요로 합니다. 따라서 보다 편리한 임시 파일 생성을 위해 ```ioutil.TempFile``` 함수를 사용하는 것이 권장됩니다.
+## 참고:
 
-### (3) 구현 세부 사항
-Go에서는 임시 파일의 경로와 파일 이름을 랜덤하게 생성하며, 이는 내부적으로 UUID(Universally Unique Identifier)를 사용하여 구현됩니다. 또한 임시 파일 생성 시 지정한 폴더 내에서만 유효하며, 프로그램이 종료되면 자동적으로 삭제됩니다.
-
-## 참고 자료:
-- [Go 공식 문서 - ioutil.TempFile](https://golang.org/pkg/io/ioutil/#TempFile)
-- [The History of the Temporary File Concept](https://lwn.net/Articles/339188/)
+- Go 공식 문서: [ioutil.TempFile](https://golang.org/pkg/io/ioutil/#TempFile)
+- "Creating temporary files in Go": (https://www.calhoun.io/creating-temporary-files-in-go/)

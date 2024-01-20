@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "C: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,92 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi ?
+Comparer deux dates signifie déterminer quelle date est antérieure, postérieure ou si elles sont identiques. La comparaison des dates est essentielle pour la gestion des tâches ou événements dans les applications de programmation.
 
-Comparer deux dates en programmation est simplement le fait de vérifier si une date est chronologiquement antérieure ou postérieure à une autre. Les programmeurs le font souvent pour trier des événements chronologiquement ou pour vérifier la validité de données.
-
-## Comment faire:
-
-Voici deux façons simples de comparer deux dates en C:
-
+## Comment faire :
+Voici un exemple simple de comparaison de deux dates en utilisant la structure tm de la bibliothèque time.h en C:
 ```C
-// Exemple 1: Comparaison à l'aide de la fonction strcmp()
-#include <stdio.h>
-#include <string.h>
-
-int main()
-{
-    char date1[] = "12-05-2021";
-    char date2[] = "06-05-2021";
-
-    // Utilisation de la fonction strcmp() pour comparer les chaînes de caractères
-    int result = strcmp(date1, date2);
-
-    if(result > 0)
-    {
-        printf("%s est après %s\n", date1, date2);
-    }
-    else if(result < 0)
-    {
-        printf("%s est avant %s\n", date1, date2);
-    }
-    else
-    {
-        printf("Les dates sont les mêmes\n");
-    }
-    
-    return 0;
-}
-
-// Exemple 2: Comparaison à l'aide de variables de type struct tm
-
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    struct tm date1 = {0};
-    date1.tm_mday = 12;
-    date1.tm_mon = 4;
-    date1.tm_year = 121;
+int main(void) {
+    struct tm date1 = {0, 0, 12, 25, 10, 120}; // 12:00, 25 Novembre 2020
+    struct tm date2 = {0, 5, 12, 25, 10, 120}; // 12:05, 25 Novembre 2020
 
-    struct tm date2 = {0};
-    date2.tm_mday = 6;
-    date2.tm_mon = 4;
-    date2.tm_year = 121;
+    time_t t1 = mktime(&date1);
+    time_t t2 = mktime(&date2);
 
-    // Utilisation de la fonction difftime() pour calculer la différence entre les deux dates
-    double difference = difftime(mktime(&date1), mktime(&date2));
-
-    if(difference > 0)
-    {
-        printf("%d-%d-%d est après %d-%d-%d\n", date1.tm_mday, date1.tm_mon, date1.tm_year, date2.tm_mday, date2.tm_mon, date2.tm_year);
-    }
-    else if(difference < 0)
-    {
-        printf("%d-%d-%d est avant %d-%d-%d\n", date1.tm_mday, date1.tm_mon, date1.tm_year, date2.tm_mday, date2.tm_mon, date2.tm_year);
-    }
-    else
-    {
-        printf("Les dates sont les mêmes\n");
-    }
+    if(t1 < t2) printf("La date1 est antérieure à date2\n");
+    else if(t1 > t2) printf("La date1 est postérieure à date2\n");
+    else printf("La date1 est identique à date2\n");
 
     return 0;
 }
 ```
+L'exécution de ce programme affiche : "La date1 est antérieure à date2".
 
-La sortie pour les deux exemples sera:
-```
-12-05-2021 est après 06-05-2021
-```
+## Approfondissement :
+Comparer deux dates peut parfois être plus complexe que notre exemple simple. Vous devez tenir compte des fuseaux horaires, des secondes intercalaires et d'autres subtiles.
 
-## Plongée en profondeur:
+Dans l'histoire de la programmation, il existe de nombreux cas où une mauvaise comparaison de dates a provoqué des erreurs graves, par exemple, le célèbre bug de l'an 2000.
 
-En plus des méthodes présentées ci-dessus, il existe également d'autres moyens de comparer deux dates en C. Avant que la fonction `difftime()` soit introduite, les programmeurs utilisaient souvent la fonction `mktime()` pour convertir les dates en un format plus facilement comparable. Il est également important de noter que la comparaison de deux dates peut être différente en fonction de la précision requise. Par exemple, pour comparer des dates dans une application financière, il peut être nécessaire de prendre en compte les heures et les minutes, tandis que pour comparer des dates dans une application de planification, seule la date peut être importante.
+Une alternative à l'utilisation de la bibliothèque time.h pourrait être d'écrire votre propre fonction de comparaison de dates, mais cela pourrait conduire à des erreurs et des cas limites difficiles à gérer.
 
-## Voir aussi:
+Le code précédent compare simplement deux valeurs de type time_t en utilisant les opérateurs de comparaison standards de C.
 
-Vous pouvez en apprendre plus sur la comparaison de dates en C en consultant les sources suivantes:
+## Voir Aussi :
+Pour des informations supplémentaires sur la comparaison des dates en C ou d'autres fonctions de date et d'heure, consultez les liens suivants:
 
-- [La référence C](https://www.cplusplus.com/reference/ctime/)
-- [Le tutoriel sur les structures et les dates en C](https://www.tutorialspoint.com/cprogramming/c_date_time.htm)
+- Documentation de la bibliothèque time.h : 
+  [C library to handle date and time (time.h)](https://www.cplusplus.com/reference/ctime/)
+
+- Tutoriels et exemples de programmes C : 
+  [C programming examples](https://www.programiz.com/c-programming/examples) 
+
+- Comparaison des dates et heures dans différentes langues de programmation : 
+  [Comparing Dates and Times Across Programming Languages](https://dzone.com/articles/comparing-dates-and-times-across-programming-langu)

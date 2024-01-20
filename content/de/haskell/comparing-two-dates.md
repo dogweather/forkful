@@ -1,6 +1,6 @@
 ---
 title:                "Vergleich von zwei Daten"
-html_title:           "Haskell: Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
 simple_title:         "Vergleich von zwei Daten"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,38 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Vergleichen von zwei Daten ist eine gängige Aufgabe, die viele Programmierer in ihrem Code durchführen müssen. Dabei geht es darum, zu überprüfen, ob eine bestimmte Bedingung erfüllt ist, etwa ob ein Datum in der Zukunft liegt oder ob zwei Termine gleich sind. Das Vergleichen von Daten ist wichtig, um Entscheidungen im Code treffen zu können und Anwendungen zu steuern.
+Das Vergleichen von zwei Daten besteht darin, zu entscheiden, ob ein Datum vor, nach oder gleich einem anderen ist. Programmierer machen das, um zeitbasierte Logiken wie Terminplaner oder Historiker in ihren Anwendungen zu implementieren.
 
-## Anleitung:
+## So geht's:
 
-In Haskell ist es einfach, zwei Daten miteinander zu vergleichen, da es einen nativen Datentyp "Date" gibt. Hier ein Beispiel, wie man zwei Daten mit dem üblichen Vergleichsoperator ```<``` vergleicht:
+Im Folgenden finden Sie ein Beispiel, wie Sie two Dates in Haskell mithilfe des `Data.Time.Calendar`-Pakets vergleichen können. 
 
 ```Haskell
-import Data.Time
+import Data.Time.Calendar
 
-date1 = fromGregorian 2021 10 15
-date2 = fromGregorian 2021 12 25
-
-if date1 < date2 then
-  putStrLn "Das erste Datum liegt vor dem zweiten Datum"
-else
-  putStrLn "Das zweite Datum liegt vor dem ersten Datum"
+compareDates :: Day -> Day -> Ordering
+compareDates d1 d2 = compare d1 d2
 ```
 
-Die Ausgabe dieses Beispiels ist: "Das erste Datum liegt vor dem zweiten Datum".
+Nutzen Sie das obere Beispiel wie folgt:
 
-In Haskell gibt es auch Funktionen wie ```compare``` und ```equals``` für spezifischere Vergleiche.
+```Haskell
+main = do
+   let date1 = fromGregorian 2020 02 08
+   let date2 = fromGregorian 2020 12 31
+   print(compareDates date1 date2)  
+```
 
-## Tiefenblick:
+Es zeigt `LT` auf der Konsole, da das erste Datum, `date1`, weniger (früher) ist als das zweite Datum, `date2`.
 
-Das Vergleichen von Daten ist wichtig, um Algorithmen zu erstellen, die auf bestimmte Zeiträume oder Ereignisse reagieren. In der Vergangenheit war es schwierig, Daten in bestimmten Formaten zu vergleichen, da verschiedene Systeme und Sprachen unterschiedliche Datentypen verwendet haben. Dank des nativen "Date" Datentyps in Haskell ist es nun einfacher, Daten zu vergleichen.
+## Tiefgehende Informationen
 
-Alternativen zum Vergleichen von Daten gibt es keine, da dieser Teil der Programmierung unerlässlich ist. Jedoch sollte man sich bewusst sein, dass es bei bestimmten Anwendungen, wie z.B. Finanztransaktionen, wichtig ist, die Genauigkeit von Datumvergleichen zu gewährleisten und mögliche Fehlerquellen zu identifizieren.
+1. Historischer Kontext: Der `Data.Time.Calendar` ist ein essentieller Teil der `time` Bibliothek in Haskell, die ursprünglich im Jahr 2006 eingeführt wurde. Diese Bibliothek bietet umfangreiche Funktionen zur Datums- und Zeitmanipulation.
 
-Für die Implementierung des nativen "Date" Datentyps in Haskell wurden algorithmische Erweiterungen und Spezifikationen aus der Mathematik verwendet, um eine präzise und effiziente Vergleichsmöglichkeit zu gewährleisten.
+2. Alternativen: Falls Sie mehr Funktionalitäten benötigen, wie die Arbeit mit Zeitzonen, können Sie das `Data.Time`-Paket verwenden, das ergänzende Funktionen zur Verfügung stellt.
 
-## Siehe auch:
+3. Implementierungsdetail: Die `compare`-Funktion in Haskell ist eine polyforme Funktion, die Teil der `Ord` Klasse ist. Bei der Anwendung auf zwei Argumente gibt sie eine von drei möglichen Antworten zurück: `LT` (Less Than, d.h. kleiner), `EQ` (Equal, d.h. gleich) oder `GT` (Greater Than, d.h. größer).
 
-- Offizielle Haskell Dokumentation zu "Date": https://www.haskell.org/documentation/#date
-- Vergleichsoperatoren in Haskell: https://en.wikibooks.org/wiki/Haskell/Control_structures#Comparison_Operators
-- Einleitung in Datumsmanipulation in Haskell: https://wiki.haskell.org/Date_and_time_library
+## Siehe auch
+
+- Die offizielle Dokumentation für das `Data.Time.Calendar`-Paket bietet umfassende Informationen: [Hier klicken](https://hackage.haskell.org/package/time-1.10/docs/Data-Time-Calendar.html)
+
+- Ein lehrreicher Blog-Artikel über Datum und Zeit in Haskell: [Hier klicken](https://two-wrongs.com/haskell-time-library-tutorial)
+
+- Für tiefgründigere Diskussionen und Fragen können Sie die Haskell Community auf Stack Overflow besuchen: [Hier klicken](https://stackoverflow.com/questions/tagged/haskell)

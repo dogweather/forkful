@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Haskell: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何がそんなに面白いの？
+## 何となぜ？
 
-ウェブページをダウンロードすることは、インターネット上でデータを入手するために一般的に使用されている方法です。プログラマーにとって、ウェブページをダウンロードすることは、データの収集や処理に役立ちます。
+ウェブページのダウンロードとは、特定のウェブページの内容を自分のコンピュータに保存することです。プログラマーがこれを行う主な理由は、データの分析やアプリ内にコンテンツを取り込むためです。
 
-## 方法：
+## 使い方
 
-```Haskell
-{-# LANGUAGE OverloadedStrings #-}
-
--- ライブラリをインポート
-import Network.HTTP.Simple
-
--- 指定したURLからウェブページをダウンロード
-getResponse :: IO ()
-getResponse = do
-    response <- httpLBS "https://www.google.com"
-    putStrLn $ "Status code: " ++ show (getResponseStatusCode response)
-    print $ getResponseBody response
-```
-出力：
+HaskellのHTTPクライアントライブラリである`wreq`を使用してウェブページをダウンロードしてみましょう。
 
 ```Haskell
-Status code: 200
-<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="ja"><head><meta content="Google" itemprop="name"/><meta content="Google.co.jp は すぐにアクセスできる、無料のウェブサイトです。インターネットをもっと楽しく、便利に使いましょう。" name="description"><meta content="nocache" name="robots"><meta content="text/html; charset=UTF-8" http-equiv="Content-Type"><meta content="width=device-width,initial-scale=1" name="viewport"><title>Google</title><script nonce="kFM1USUziR6d5foEHDRKsg==">(function(){var aa=aa||{};...
+import Network.Wreq
+
+-- URLから内容を取得
+download :: String -> IO String
+download url = do
+    r <- get url
+    return (r ^. responseBody . to L.toString)
 ```
 
-## 深入り：
+上記のコードを使用すると、指定したURLのウェブページの内容を取得できます。
 
-ウェブページのダウンロードは、HTTPプロトコルを使用して行われます。このプロトコルは、クライアント（ウェブブラウザやプログラム）がサーバーとやり取りするためのルールを定めたものです。HTTPプロトコル以外にも、FTPやSFTPなどのプロトコルを使用してダウンロードすることもできます。
+```Haskell
+-- コードを試す
+main :: IO ()
+main = do
+    content <- download "http://example.com"
+    print content
+```
 
-## 関連情報：
+上記のコードを実行すると、http://example.comの内容が表示されます。
 
-[HTTPリクエストを取り扱うHaskellライブラリ](https://hackage.haskell.org/package/http-client)
+## 深掘り
+
+ウェブページのダウンロードは、インターネットが誕生した初期から行われていました。元々は単純なテキストファイルでしたが、今日ではHTML, CSS, JavaScriptなどの複雑な形式が使われています。
+
+`wreq`の代わりに`http-conduit`や`http-client`などの他のライブラリを使用することも可能です。各ライブラリには利点と欠点がありますので、プロジェクトの特定のニーズに基づいて最善の選択をすることが重要です。
+
+このコードの背後では、HTTP GETリクエストが送信され、レスポンスのボディが解析されています。複雑なユースケースでは、エラーハンドリングやリダイレクトの処理、さらには認証まで行うことがあります。
+
+## 参考資料
+
+以下は、今回のテーマに関連する資料へのリンクです。
+
+- [Haskell `wreq`ライブラリのドキュメンテーション](http://www.haskell.org/haddock/doc/html/Wreq.html)
+- [ウェブスクレイピングのためのHaskellライブラリ](https://github.com/sras/scrapegood)
+- [HTTPリクエストとレスポンスについての詳細な説明](https://developer.mozilla.org/ja/docs/Web/HTTP/Messages)

@@ -1,7 +1,7 @@
 ---
-title:                "Interprétation HTML"
-html_title:           "Arduino: Interprétation HTML"
-simple_title:         "Interprétation HTML"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que le parsing HTML et pourquoi les programmeurs le font-ils?
+## Quoi & Pourquoi?
 
-Le parsing HTML est le processus de séparation d'un document HTML en différents éléments ou balises pour en extraire les informations utiles. Les programmeurs le font pour pouvoir traiter et manipuler ces informations dans leur code.
+Le parsing HTML, ou l'analyse syntaxique HTML, c'est le processus d'extraction de données spécifiques d'une page Web. Les programmeurs le font pour automatiser la collecte d'informations à partir du Web, économisant ainsi du temps et des efforts.
 
 ## Comment faire :
 
-```
-Arduino code :
-#include <ESP8266HTTPClient.h>
-#include <ESP8266WiFi.h>
+Nous allons utiliser une bibliothèque appelée Arduino Http Client pour obtenir les données d'une page HTML. Voici un exemple de code pour illustrer le parsing HTML avec Arduino.
 
-WiFiClient client;
-HTTPClient http;
+```Arduino
+#include <ArduinoHttpClient.h>
 
-// Connexion à un réseau WiFi
-WiFi.begin("SSID", "Mot de passe");
+char server[] = "www.votre-serveur.fr";
+int port = 80;
 
-// Vérifie si la connexion est établie
-while (WiFi.status() != WL_CONNECTED) {
-  delay(500);
+EthernetClient client;
+HttpClient http = HttpClient(client, server, port);
+int status = http.get("/");
+
+if (status == 0) {
+  while (http.connected()) {
+    String line = http.readStringUntil('\n');
+    Serial.println(line);
+  }
+} 
+else {
+  Serial.println("Erreur lors de la connexion");
 }
-
-// Se connecte à une URL et récupère le contenu de la page
-http.begin(client, "www.example.com");
-int httpResponseCode = http.GET();
-String response = http.getString();
-
-// Trouve et stocke les informations de tags HTML spécifiques
-int start = response.indexOf("<h1>") + 4;
-int end = response.indexOf("</h1>");
-String title = response.substring(start, end);
-
-// Affiche le titre récupéré
-Serial.println(title);
 ```
 
-## Deep Dive :
+Lorsque vous exécutez ce code, vous verrez la sortie HTML de la page que vous avez demandée.
 
-Le parsing HTML est une technique courante utilisée dans la programmation, en particulier dans le domaine du web, où les données sont souvent stockées dans des documents HTML. Il existe plusieurs alternatives pour réaliser cette opération, telles que l'utilisation d'expressions régulières ou de bibliothèques spécialisées, mais l'utilisation de fonctions de manipulation de chaînes de caractères et la recherche de balises HTML spécifiques reste l'approche la plus simple et efficace pour Arduino.
+## Plongée en profondeur
 
-## Voir aussi :
+Historiquement, le parsing HTML était réalisé à l'aide de regex (expressions régulières), mais cette méthode a souvent prouvé ses limites. Aujourd'hui, des bibliothèques spéciales comme Arduino HttpClient sont utilisées à la place. L'alternative moderne à Arduino HttpClient est la bibliothèque ESP (pour des chipsets comme ESP32 ou ESP8266) qui fournit également une interface de parsing HTML. La mise en œuvre de l'analyse HTML avec ces bibliothèques repose sur le concept de Finite State Machine (FSM) ou Automate à États Finis en français.
 
-- [Tutorialspoint - HTML Parsing](https://www.tutorialspoint.com/html-parsing)
-- [HTML Dog - Introduction to the DOM](https://www.htmldog.com/guides/javascript/advanced/intro/)
-- [W3Schools - String Object Methods](https://www.w3schools.com/js/js_string_methods.asp)
+## Voir aussi
+
+Pour plus d'informations, consultez ces ressources:
+
+1. http://arduino.esp8266.com/ : Documentation sur la bibliothèque ESP et ses fonctionnalités relatives à l'analyse HTML.
+2. https://www.arduino.cc/en/Tutorial/HomePage : Tutoriels Arduino officiels qui détaillent divers aspects du codage avec Arduino.
+3. https://stackoverflow.com/questions/tagged/arduino?tab=Votes : Questions et réponses courantes sur l'Arduino, y compris la manipulation de HTML.

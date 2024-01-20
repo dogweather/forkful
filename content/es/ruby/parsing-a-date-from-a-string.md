@@ -1,7 +1,7 @@
 ---
-title:                "Extrayendo una fecha de una cadena."
-html_title:           "Ruby: Extrayendo una fecha de una cadena."
-simple_title:         "Extrayendo una fecha de una cadena."
+title:                "Analizando una fecha desde una cadena de texto"
+html_title:           "PHP: Analizando una fecha desde una cadena de texto"
+simple_title:         "Analizando una fecha desde una cadena de texto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,34 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Parsing de una fecha a partir de una cadena de texto es una tarea común en la programación. Consiste en convertir una cadena (string) que contiene una fecha en un formato específico, como "12 de mayo del 2020", en una estructura de datos que podamos manipular y utilizar en nuestro código. Los programadores realizan esta tarea porque a menudo necesitamos trabajar con fechas en nuestros programas, como calcular intervalos de tiempo o comparar fechas.
+## ¿Qué y por qué?
 
-## Cómo hacerlo:
-Podemos utilizar el método `Date.parse` de Ruby para realizar parsing de fechas a partir de una cadena de texto. Por ejemplo, si queremos convertir la fecha "12 de mayo del 2020" al objeto de fecha correspondiente, podemos hacer lo siguiente:
+La deconstrucción de una fecha a partir de una cadena de texto (parsing a date from a string) en programación se trata de convertir una cadena que representa una fecha en un objeto de fecha. Los programadores hacen esto para poder manipular y calcular fechas de una manera más precisa y fácil.
+
+## ¿Cómo se hace?
+
+Aquí te mostraré cómo hacerlo en Ruby:
 
 ```Ruby
 require 'date'
-Date.parse("12 de mayo del 2020")
+
+str_fecha = '2022-07-30'
+fecha = Date.parse(str_fecha)
+
+puts fecha
 ```
 
-El resultado será un objeto de fecha correspondiente al 12 de mayo del 2020. También podemos especificar formatos de fecha personalizados utilizando la función `strptime`. Por ejemplo, si tenemos una cadena con el formato "12-05-2020", podemos utilizar `Date.strptime` de la siguiente manera:
+Este programa tomará la cadena `str_fecha` y la convertirá en un objeto de fecha utilizando la función `Date.parse`. Si imprimimos la fecha, la salida sería:
 
 ```Ruby
-Date.strptime("12-05-2020", "%d-%m-%Y")
+2022-07-30
 ```
 
-El resultado será el mismo objeto de fecha correspondiente al 12 de mayo del 2020, pero esta vez especificando el formato de fecha que queríamos parsear.
+## Un vistazo más profundo
 
-## Profundizando:
-Parsing de fechas a partir de cadenas de texto ha sido un problema común en la programación, especialmente antes de que los lenguajes de programación incluyeran métodos para realizar esta tarea de manera sencilla. En el pasado, los programadores tenían que escribir funciones personalizadas o utilizar librerías externas para realizar esta tarea. Sin embargo, con el lenguaje Ruby y su método `Date.parse`, podemos realizar esta tarea de manera eficiente y sencilla.
+### Contexto histórico
+La capacidad de convertir una cadena de texto en una fecha existe desde los primeros días de la programación, ya que es una necesidad común trabajar con fechas.
 
-Otra alternativa es utilizar la librería `Chronic`, que nos permite parsear fechas en un lenguaje natural en lugar de tener que especificar un formato de fecha. Por ejemplo, podemos decir "mañana" o "hoy" y la biblioteca interpretará la fecha correspondiente.
+### Alternativas
+Hay otras maneras de hacer esto en Ruby, usando por ejemplo Time:
 
-En cuanto a la implementación, el método `Date.parse` de Ruby utiliza la clase `Date` y su función `parse` para realizar parsing de fechas a partir de una cadena de texto. También utiliza el estándar ISO 8601 para interpretar el formato de fecha por defecto.
+```Ruby
+require 'time'
 
-## Mira también:
-- Documentación del método `Date.parse` en la página oficial de Ruby
-https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html#method-c-parse
-- Documentación de la librería `Chronic` en la página oficial de RubyGems
-https://rubygems.org/gems/chronic
+str_fecha = '2022-07-30'
+fecha = Time.parse(str_fecha)
+
+puts fecha
+```
+
+### Detalles de implementación
+Bajo el capó, `Date.parse` y `Time.parse` utilizan expresiones regulares y la lógica interna para desglosar la cadena en componentes de fecha y luego construir un objeto de fecha a partir de esos componentes.
+
+## Ver también
+
+Para más detalles, puedes consultar los siguientes enlaces:
+
+- Método `Date.parse`: https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html#method-c-parse 
+- Método `Time.parse`: https://ruby-doc.org/stdlib-3.0.0/libdoc/time/rdoc/Time.html#method-c-parse

@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Go: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Go"
 category:             "Go"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## 무엇 & 왜?
+문자열을 소문자로 변환하는 것은 문자의 대소문자를 일관성있게 관리하기 위한 프로그래밍 기술입니다. 이것은 대소문자 구분 없이 데이터 검색 및 정렬 등을 진행할 때 유용합니다.
 
-문자열을 소문자로 변환하는 것은 문자열을 대소문자 구분 없이 비교하거나 일괄적으로 포맷팅할 때 유용합니다. 프로그래머들은 이를 사용하여 더욱 효율적으로 코드를 작성할 수 있습니다.
-
-## 방법:
+## 어떻게 하나요?
+밑의 Go 코드는 string을 소문자로 변환하는 방법을 보여줍니다:
 
 ```Go
-// strings.ToLower 함수를 사용하여 문자열을 소문자로 변환합니다.
-str := "HELLO WORLD"
-lowStr := strings.ToLower(str)
+package main
 
-fmt.Println(lowStr)
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	str := "Hello, Gopher!"
+	result := strings.ToLower(str)
+	fmt.Println(result)
+}
 ```
+이 프로그램을 실행하면, 출력으로 "hello, gopher!"를 볼 수 있습니다.
 
-**출력:** hello world
+## 깊은 곳으로: 
+1. **역사적 맥락**: Go 언어의 `strings` 패키지는 문자열을 소문자로 변환하는 `ToLower` 함수를 제공합니다. 이 함수는 문자열의 각 문자를 해당하는 소문자로 바꾸는 역할을 합니다.
 
-## 깊게 들어가보면:
+2. **대체 방법**: `ToLower` 함수 대신 Unicode point를 사용하여 소문자로 변환할 수도 있습니다. 하지만 일반적으로 `ToLower` 함수를 사용하는 것이 더 효율적입니다.
 
-- **역사적 배경:** 문자열을 소문자로 변환하는 기능은 컴퓨터에서 문자를 표현하는 방식이나 문자 집합의 변화와 함께 계속해서 발전해왔습니다.
-
-- **대체 기능:** 다른 프로그래밍 언어에서도 문자열을 소문자로 변환하는 기능을 지원합니다. 예를 들어, Java에서는 `toLowerCase()` 메서드를 제공합니다.
-
-- **구현 세부사항:** Go 언어에서 `strings.ToLower()` 함수는 문자열을 소문자로 변환하기 위해 모든 문자를 스캔하여 ASCII 범위에서 소문자로 변환하는 방식을 사용합니다.
+3. **구현 세부사항**: `ToLower` 함수는 Go 언어의 `unicode` 패키지를 사용하여 소문자로 변환을 수행합니다. 각 문자는 유니코드로 매핑되고, 해당 유니코드 값의 소문자가 출력됩니다.
 
 ## 참고 자료:
-
-- [Go 언어 공식 문서: strings.ToLower 함수](https://golang.org/pkg/strings/#ToLower)
-- [Java 공식 문서: toLowerCase 메서드](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
-- [유니코드와 문자 집합](https://ko.wikipedia.org/wiki/%EC%9C%A0%EB%8B%88%EC%BD%94%EB%93%9C%EC%99%80_%EB%AC%B8%EC%9E%90_%EC%A7%91%ED%95%A9)
+1. [Go 언어 공식 문서 – strings 패키지](https://golang.org/pkg/strings/)
+2. [Go 프로그래밍에서 소문자 변환에 대한 토론](https://stackoverflow.com/questions/47341278/how-to-convert-a-string-to-lower-case-in-golang)

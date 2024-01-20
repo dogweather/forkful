@@ -1,6 +1,6 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "Haskell recipe: Checking if a directory exists"
+html_title:           "C# recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,52 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Haskell How-To: Check If a Directory Exists
+
 ## What & Why?
 
-Checking if a directory exists is essentially a way for programmers to verify whether a certain directory or folder exists or not on their system. This can be useful in many scenarios, such as when a program needs to access files or folders stored in a specific directory, or when the program needs to create a new directory if it does not already exist.
+Checking if a directory exists in Haskell is simply querying the file system to determine whether a specified directory is present. This is important in programming scenarios where a read/write/update operation is to be performed, and can prevent errors caused by the directory not being present.
 
 ## How to:
 
-To check if a directory exists in Haskell, we can use the `doesDirectoryExist` function from the `System.Directory` module. This function takes in a path to the directory as an argument and returns a boolean value indicating whether the directory exists or not.
+Check if a directory exists with the `doesDirectoryExist` function in the `System.Directory` module.
 
 ```Haskell
 import System.Directory
 
 main = do
-  let path = "./mydirectory" -- replace with the path to your desired directory
-  exists <- doesDirectoryExist path
-  if exists
-    then putStrLn "Directory exists"
-    else putStrLn "Directory does not exist"
+  doesItExist <- doesDirectoryExist "/path/to/directory"
+  print doesItExist
 ```
 
-Sample output when the directory exists:
+Running the above program will return either `True` if the directory exists, or `False` if it doesn't.
 
-```
-> Directory exists
-```
+## Deep Dive
 
-Sample output when the directory does not exist:
+* Historical Context: The `System.Directory` module, where the `doesDirectoryExist` function resides, has been a part of the Glasgow Haskell Compiler (GHC) libraries since its early versions. It provides programmers with an easy-to-use interface for interacting with the file system.
 
-```
-> Directory does not exist
-```
+* Alternatives: Other than `doesDirectoryExist`, there are also functions for checking if a file exists (`doesFileExist`), or checking the type of an existing path (`pathIsSymbolicLink`, `pathIsRegularFile`, etc.). You can use them based on your specific needs.
 
-## Deep Dive:
+* Implementation Details: `doesDirectoryExist` uses system-specific calls deep in the GHC's internals to interact with the file system directly. The exact implementation may vary depending on the operating system.
 
-### Historical Context:
+## See Also
 
-The `System.Directory` module has been a part of the Haskell standard library since version 1.2.5. The `doesDirectoryExist` function was introduced in the 1.4.1 release, making it a relatively recent addition to the standard library.
+Study related sources to further understand the topic.
 
-### Alternatives:
-
-Besides using the `doesDirectoryExist` function, there are a few other ways to check if a directory exists in Haskell. One such alternative is the `findFile` function from the `Filesystem` module. This function searches for a file or directory with the given name in the specified directory, and if found, it returns the full path to the file or directory.
-
-### Implementation Details:
-
-The `System.Directory` module uses the `stat` system call to determine if a directory exists or not. It returns an `EitherIOError Bool` value, where `Left` represents an error and `Right` represents the boolean value indicating whether the directory exists.
-
-## See Also:
-
-- [Haskell System.Directory module documentation](https://hackage.haskell.org/package/directory/docs/System-Directory.html)
-- [Filesystem module documentation](https://hackage.haskell.org/package/Filesystem/docs/Filesystem.html)
+1. GHC System.Directory Module: [hackage.haskell.org/package/directory](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html)
+2. Real World Haskell, interacting with the file system: [book.realworldhaskell.org/read/interfacing-with-c-the-ffi.html](https://book.realworldhaskell.org/read/interfacing-with-c-the-ffi.html)
+3. Haskell Wiki, Input and Output: [wiki.haskell.org/IO_inside](https://wiki.haskell.org/IO_inside)
+4. Learn You a Haskell, Input and Output: [learnyouahaskell.com/input-and-output](http://learnyouahaskell.com/input-and-output)

@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "Javascript: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,22 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-L'envoi d'une requête HTTP est une action courante dans la programmation qui permet aux développeurs de récupérer des données depuis un serveur distant. Cela peut inclure des fichiers, des pages web, ou même des informations pour les applications mobiles. C'est une étape essentielle pour obtenir des informations en temps réel et améliorer l'expérience utilisateur.
+## Qu'est-ce que c'est & Pourquoi ?
 
-## Comment faire: 
-Voici un exemple simple de code Javascript pour envoyer une requête HTTP en utilisant la méthode GET:
+L'envoi d'une requête HTTP est un moyen pour votre application de communiquer avec un serveur web. C'est fondamental pour interagir avec des services web, récupérer des données, envoyer des données, et plus encore.
+
+## Comment faire :
+
+Pour envoyer une requête HTTP en Javascript, nous utiliserons la `fetch API`. Voici un exemple simple :
+
+```Javascript
+fetch('https://api.example.com/data', {
+  method: 'GET', 
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch((error) => {
+  console.error('Erreur:', error);
+});
 ```
-fetch('https://monsite.com/donnees') // remplacez "monsite.com" par l'URL de votre choix
-  .then(response => response.json()) // transforme la réponse en JSON
-  .then(data => console.log(data)) // affiche les données récupérées dans la console
-```
-Output: Les données récupérées seront automatiquement affichées dans la console de votre navigateur.
 
-## Plongée en profondeur: 
-L'envoi de requêtes HTTP est un processus qui existe depuis les débuts du web. Aujourd'hui, il existe différentes méthodes et outils pour le faire, tels que fetch, XMLHttpRequest, et axios. Les développeurs peuvent également utiliser ces outils pour personnaliser les en-têtes de leurs requêtes, définir des paramètres et gérer les erreurs. Cependant, il est important de toujours vérifier si l'API que vous utilisez est sécurisée pour éviter toute exploitation.
+Dans cet exemple, nous envoyons une requête GET à `https://api.example.com/data` et nous affichons les données reçues dans la console.
 
-## Voir aussi: 
-- [MDN Web Docs: Fetch API](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
-- [Introduction à Axios pour les développeurs JavaScript](https://blog.logrocket.com/introduction-to-axios-for-developers/) 
-- [XMLHttpRequest et Fetch API: les différences](https://www.opquast.com/blog/difference-entre-xmlhttprequest-et-fetch-api/)
+## Plongée en profondeur
+
+Historiquement, la méthode `XMLHttpRequest` était utilisée pour envoyer des requêtes HTTP en Javascript. Cependant, sa syntaxe peut être verbeuse et complexe, et la `Fetch API` est maintenant recommandée pour une utilisation plus moderne et plus claire.
+
+En ce qui concerne les alternatives, `axios` est une bibliothèque populaire qui offre une API similaire à `fetch`, mais avec quelques fonctionnalités supplémentaires comme l'interception de requêtes et de réponses et la possibilité de ne pas avoir à convertir la réponse en JSON.
+
+Le fonctionnement interne de l'envoi de requêtes HTTP peut être complexe, mais pour faire simple : votre application envoie une requête HTTP à un serveur, le serveur traite la requête et renvoie une réponse, que votre application peut ensuite traiter.
+
+## Voir aussi
+
+- [Fetch API sur MDN](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API)
+- [Axios sur Github](https://github.com/axios/axios)
+- [XMLHttpRequest sur W3Schools](https://www.w3schools.com/xml/ajax_xmlhttprequest_send.asp)

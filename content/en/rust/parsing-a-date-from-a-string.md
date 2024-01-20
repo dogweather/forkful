@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Rust recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Rust"
 category:             "Rust"
@@ -12,58 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string is the process of converting a date represented as a string into a date object that can be used in a program. This is commonly done in order to manipulate or compare dates in a more efficient manner. Programmers may need to parse dates in order to process user input, handle data from a database, or generate reports.
+Parsing a date from a string transforms a readable date format into a machine-understood date object. Programmers use this to convert and manipulate data when dates are initially in string format.
 
 ## How to:
 
-Parsing dates in Rust is made simple with the help of the `chrono` crate. First, we need to add the following line to our `Cargo.toml` file: 
+Here's a handy walk-through on how you can parse a date string in Rust:
 
 ```Rust
-[dependencies]
-chrono = "0.4"
+extern crate chrono;
+use chrono::*;
+
+let input = "2021-08-31 12:00:09";
+let parsed_date = NaiveDateTime::parse_from_str(input, "%Y-%m-%d %H:%M:%S").unwrap();
+
+println!("{:?}", parsed_date);
 ```
 
-Then, in our `main.rs` file, we can use the crate to parse a date from a string. Here's an example:
+With the output as follows:
 
 ```Rust
-use chrono::prelude::*;
-
-fn main() {
-    // Parse a date in ISO 8601 format
-    let date_str = "2020-06-15";
-    let date = NaiveDate::parse_from_str(date_str, "%Y-%m-%d").unwrap();
-
-    println!("Parsed date: {}", date);
-}
+NaiveDateTime(2021-08-31T12:00:09)
 ```
-
-Running this code will output: `Parsed date: 2020-06-15`.
-
-We can also specify a specific date and time format to parse from, like so:
-
-```Rust
-use chrono::prelude::*;
-
-fn main() {
-    // Parse a date and time in a custom format
-    let datetime_str = "December 25, 2020 12:00 PM";
-    let dt = NaiveDateTime::parse_from_str(datetime_str, "%B %d, %Y %I:%M %p").unwrap();
-
-    println!("Parsed datetime: {}", dt);
-}
-```
-
-The output will be: `Parsed datetime: 2020-12-25T12:00:00`.
 
 ## Deep Dive
 
-Parsing dates has been a crucial aspect of programming since the dawn of computer systems. In the early days, dates were often represented in different formats which made it difficult to compare and manipulate them. The ISO 8601 standard was established in order to provide a unified way to represent dates, and it is still widely used today.
+Historically, hand-coding a parsing mechanism to handle different date formats was a common thing. But bugs? Don't get me started. It was inefficient and error-prone which led to birth of libraries like `chrono`.
 
-Aside from using a crate like `chrono`, programmers can also opt to parse dates using regular expressions. However, this method may be less efficient and can require more code to handle different date formats.
+Now, you'd think, "Why not just use standard functions available in the language?" Well, Rust's standard library does not yet provide comprehensive date parsing and formatting capabilities. That's why `chrono` steps in. It's the de facto crate to manage dates and times in Rust. 
 
-As for parsing implementation, `chrono` uses a combination of parsing and formatting codes to convert a string into a date object. These codes specify the expected format of the date string and allow for more flexibility in handling various date formats.
+You could also go off the beaten path and use other crates like `time` or even `dateparser`, but `chrono` remains a strong favorite in the Rustacean's toolkit for its robustness and ease of use. 
 
-## See Also
+## See Also:
 
-- `chrono` crate [documentation](https://docs.rs/chrono/)
-- Rust [dates and times](https://doc.rust-lang.org/std/time/index.html) guide
+For a deep-dive into the chrono feature-set, check out: [Chrono on crates.io](https://crates.io/crates/chrono)  
+For more info about Rust's date and time handling, check out: [Rust Lang's documentation](https://doc.rust-lang.org/std/time/index.html)
+And for alternatives, you might find: [Dateparser crate](https://github.com/stevedonovan/dateparser) and [Time crate](https://github.com/time-rs/time) useful.

@@ -1,7 +1,7 @@
 ---
-title:                "एचटीएमएल का विश्लेषण"
-html_title:           "C#: एचटीएमएल का विश्लेषण"
-simple_title:         "एचटीएमएल का विश्लेषण"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,48 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-HTML को पार्स करना क्या है और प्रोग्रामर इसे क्यों करते हैं? 
-HTML, अर्थात HyperText Markup Language, एक भाषा है जो वेब पृष्ठों को दिखाने के लिए इस्तेमाल की जाती है। जब हम किसी वेब पृष्ठ को खोलते हैं तो उसमें हमें संरचित तरीके से इन टैगों का उपयोग दिखाई देता है। पार्सिंग का अर्थ है कि हम इन टैगों को पढ़ कर उसमें दिए गए संरचनाओं को समझते हैं। प्रोग्रामर इसको करते हैं ताकि वे वेब डेवलपमेंट में आसानी से बदलाव कर सकें और डाटा को वेब पृष्ठों से प्राप्त कर सकें।
+Title: HTML पर्सिंग के बारे में C# में जानें
 
-कैसे करें? 
-यहां मैं आपको सी# का उपयोग करके HTML पार्सिंग करने का एक उदाहरण बताऊंगा। इसके लिए हम HtmlAgilityPack नामक लाइब्रेरी का उपयोग करेंगे। सबसे पहले आपको हमारे प्रोग्राम में इस नामक नामस्थान (Namespace) को जोड़ना होगा:
+## क्या और क्यों ?
+HTML पार्सिंग वह प्रक्रिया है जिसके द्वारा हमें HTML डॉक्यूमेंट को उसके घटकों या element के रूप में विभाजित किया जाता है। प्रोग्रामर्स इसे वेबसाइट डाटा खोजने, मनिपुलेट करने और डाटा माइनिंग के लिए करते हैं। 
 
-```C#
-using HtmlAgilityPack; 
-```
-
-अपने वेब पृष्ठ के URL को स्ट्रिंग में निर्दिष्ट करें:
-```C#
-string url = "https://www.example.com";
-```
-
-फिर हम इस URL को इंस्टेंस के साथ HtmlWeb क्लास को भेजेंगे जो इसे डाउनलोड करेगा:
+## कैसे :
+यहाँ हम HtmlAgilityPack लाइब्रेरी का इस्तेमाल करेंगे।
 
 ```C#
+using HtmlAgilityPack;
 var web = new HtmlWeb();
-var doc = web.Load(url); 
+var doc = web.Load("https://example.com");
+
+// Html element की खोज
+var node = doc.DocumentNode.SelectSingleNode("//head/title");
+Console.WriteLine("Title: {0}", node.InnerHtml);
+
+// Output: Title: Example Domain
 ```
 
-इसके बाद हम XPath का उपयोग करके वेब पेज के जो भी एलिमेंट्स हमें चाहिए उन्हें चुनेंगे। 
+## गहरा शोध
+### ऐतिहासिक संदर्भ
+HTML पार्सिंग की आवश्यकता तब आई जब वेबसाइट्स का डाटा अधिक डाइनामिक हो गया था।
 
-```C#
-var nodes = doc.DocumentNode.SelectNodes("//h1");
-foreach(var node in nodes)
-{
-    Console.WriteLine(node.InnerText); 
-}
-```
+### विकल्प
+JavaScript के लिए jsoup, Python के लिए BeautifulSoup जैसे अलग-अलग भाषा में विभिन्न लाइब्रेरीज़ उपलब्ध हैं।
 
-इसका आउटपुट होगा:
+### क्रियान्वयन विवरण
+HtmlAgilityPack इसे आधिकारिक तरीके से DOM में बदलता है जो इसे प्रगतिशील और लचीला बनाता है।
 
-```C#
-My Website Title 
-```
-
-गहराई में जाएं: 
-पहले वेब पृष्ठों को पार्स करने के लिए लोग रूटरॉर्स (Regular Expressions) का उपयोग करते थे और इससे कई समस्याएं आ सकती थीं। लेकिन अब हम उनके बजाय XPath या CSS Selector का उपयोग करके पार्सिंग कर सकते हैं जो कि आसान होता है और अधिक पावरफुल है। HtmlAgilityPack बहुत लोकप्रिय है और आसानी से उपयोग किया जा सकता है। इसके अलावा, आप .NET के अन्य लाइब्रेरी को भी प्रयोग करके पार्सिंग कर सकते हैं जैसे जैसे AngleSharp या CsQuery।
-
-जुड़ाव: 
-अगर आप अपनी सी# क्षमता को और बढ़ाना चाहते हैं तो आप वेब संसाधन से सीख सकते हैं। यह आपको अपने कोड को बेहतर और अधिक प्रभावी बनाने में मदद करेगा। आप उनका उपयोग इनटरनेट से डेटा प्राप्त करने के लिए भी कर सकते हैं।
-
-सं
+## और भी देखें
+- [HtmlAgilityPack GitHub](https://github.com/zzzprojects/html-agility-pack)
+- [Jsoup: Java HTML Parser](https://jsoup.org)
+- [Beautiful Soup: Python Library](https://www.crummy.com/software/BeautifulSoup/)

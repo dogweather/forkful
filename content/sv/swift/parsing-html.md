@@ -1,7 +1,7 @@
 ---
-title:                "Hantera HTML"
-html_title:           "Swift: Hantera HTML"
-simple_title:         "Hantera HTML"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,44 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att parsa HTML är en process som innebär att läsa och tolka HTML-kod för att extrahera olika element och data. Detta är en vanlig uppgift för programmerare som arbetar med webbutveckling, automatisk webbskrapning eller dataanalys. Genom att parsa HTML kan man både automatisera och effektivisera många uppgifter som annars skulle vara mycket tidskrävande att utföra manuellt.
+# Parse HTML med Swift
 
-## Så här gör du: 
-Ett enkelt sätt att parsa HTML i Swift är att använda biblioteket SwiftSoup. Nedan följer ett exempel på hur man kan använda detta bibliotek för att hämta och skriva ut titlarna på alla länkar på en viss webbsida:
+## Vad & Varför?
+
+HTML-parning är processen att omvandla HTML-data till någon som programmet kan förstå. Programmerare gör detta för att interagera med och extrahera data från HTML-webbsidor.
+
+## Så här gör du:
+
+Med Swift kan vi använda SwiftSoup-biblioteket för att enkelt parsa HTML. Här är ett exempel:
 
 ```Swift
 import SwiftSoup
 
-// Hämta en HTML-sida som en sträng
-let html = "<html><head><title>Min hemsida</title></head><body><a href="https://www.example.com">Länk 1</a><a href="https://www.example.com">Länk 2</a></body></html>"
-
 do {
-    // Skapa ett SwiftSoup-document från HTML-strängen
-    let doc = try SwiftSoup.parse(html)
+    let html = "<html><head><title>Enkel webbsida</title></head><body>Välkommen till min webbsida</body></html>"
     
-    // Hämta alla länkar från HTML-dokumentet
-    let links = try doc.select("a")
-    
-    // Loopa igenom alla länkar och skriv ut titlarna
-    for link in links.array() {
-        print(try link.text())
-    }
-    
-} catch Exception {
+    let doc: Document = try SwiftSoup.parse(html)
 
-    print("Något gick fel: \(error)")
+    let title: Element = try doc.select("title").first()!
+    print(try title.text())
+    
+    let body: Element = try doc.select("body").first()!
+    print(try body.text())
+} catch Exception.Error(let type, let message) {
+    print(message)
+} catch {
+    print("catch error")
 }
 ```
 
-Detta exempel visar hur man kan använda SwiftSoup för att extrahera data från en HTML-sida. För mer avancerade användningsområden, som att filtrera och manipulera HTML-kod, finns det också andra bibliotek och verktyg tillgängliga.
+När du kör ovanstående kod skriver den ut:
 
-## Djupdykning: 
-Parsing av HTML är en vanlig uppgift inom webbutveckling eftersom det är ett enkelt och effektivt sätt att hämta och använda data från webbsidor. Historiskt sett har detta varit en ganska komplicerad uppgift i Swift, men med tillkomsten av olika bibliotek och ramverk, som SwiftSoup, har det blivit betydligt enklare att implementera.
+```Swift
+Enkel webbsida
+Välkommen till min webbsida
+```
 
-Det finns också andra sätt att hantera HTML-kod, som att använda reguljära uttryck (regular expressions) eller bygga ett eget parser från grunden. Men dessa metoder är oftast mer komplexa och tar längre tid att implementera jämfört med att använda ett färdigt bibliotek som SwiftSoup.
+## Fördjupning
 
-## Se även: 
-- [SwiftSoup dokumentation](https://github.com/scinfu/SwiftSoup)
-- [Web scraping med Swift: En guide](https://medium.com/@webdesign_team/introduction-to-web-scraping-with-swift-7884febea62d)
-- [Reguljära uttryck i Swift](https://medium.com/better-programming/regular-expressions-in-swift-b1fe5366a190)
+Historiskt sett var HTML parning inte lika enkel som det är idag. Utvecklare måste manuellt navigera i HTML-dokument, vilket var tidskrävande och öppen för fel. Idag, tack vare bibliotek som SwiftSoup, kan vi enkelt parsa HTML.
+
+Men det finns också alternativ till SwiftSoup, till exempel Kanna-biblioteket. Alternativen kan variera beroende på vad du prövar att uppnå. Förståelse av dina behov hjälper dig att välja det mest lämpliga biblioteket. 
+
+Vad gäller implementations detaljer, använder SwiftSoup CSS-väljare för att hjälpa dig att hitta elementen på HTML-sidan. Det gör det lättare att extrahera de data som du behöver.
+
+## Se även
+
+För mer information om SwiftSoup, inklusive dokumentation och mer exempel, se följande resurser:
+
+- [SwiftSoup GitHub](https://github.com/scinfu/SwiftSoup)
+- [Användning av SwiftSoup](https://medium.com/better-programming/swiftsoup-html-parsing-like-javascript-in-swift-1973d79ffb67)
+
+För alternativa bibliotek för HTML parsning i Swift, överväga att läsa om:
+
+- [Kanna-biblioteket](https://github.com/tid-kijyun/Kanna)

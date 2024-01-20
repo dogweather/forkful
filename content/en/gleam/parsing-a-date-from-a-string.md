@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Gleam recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,35 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing a date from a string is the process of extracting the date information (e.g. day, month, year) from a string of characters. This is useful for programmers as it allows them to convert date inputs in various formats to standardized values that can be easily manipulated and compared in their code.
+Parsing a date from a string is the process of converting textual data into a date object that a computer can understand and manipulate. This conversion is crucial for programmers dealing with user input or data from APIs where dates usually come in a string format.
 
 ## How to:
 
-To parse a date from a string in Gleam, we can use the `Date.from_text` function. This function takes in a string and returns a `Date` record with the corresponding date information.
+Working with date strings in Gleam requires the `gleam/calendar` library. Here's how you parse a date:
 
+```Gleam
+import gleam/calendar.{parse_date}
+
+fn main() {
+  let date_string = "2011-12-03"
+  let parsed_date = parse_date(date_string)
+  case parsed_date {
+    Ok(date) -> 
+      // use the date
+      date.month
+    Error(_) -> 
+      // handle parsing error
+      "Invalid date"
+  }
+}
 ```
-Gleam ... 
-let date = Date.from_text("10/12/2021")
-```
-The `date` variable will now hold a `Date` record with the day as `10`, month as `12`, and year as `2021`.
+After parsing, you can interact with the date using the returned date object. If the string is not a valid date, an error is returned.
 
-We can also use the `format` parameter to specify the format of the input string. For example:
-```
-let date = Date.from_text("Dec 03, 2021", "%b %d, %Y")
-```
-In this case, the `format` parameter follows the same rules as `strftime` in the C programming language.
+## Deep Dive
 
-## Deep Dive:
+The concept of parsing dates from strings originates from the necessity to work with human-readable dates in software development. Originally, dates were represented as strings as that was the format most familiar and readable to humans. With the rise of high-level programming languages, concrete date data types became prevalent and the need to convert between string and date representations became a common task. 
 
-Parsing a date from a string has been a common task for many programming languages, and it is no different in Gleam. In fact, many other programming languages have similar functionalities for parsing dates, such as `dateutil` in Python and `DateTime::parse` in Ruby.
+In Gleam, parsing a string date is performed using the `parse_date` function within the `gleam/calendar` library. It supports the ISO 8601 date format (YYYY-MM-DD). If needed, you could write your parsers using lower-level string processing functions or use external libraries for more complex formats.
 
-Besides the `format` parameter, the `Date.from_text` function in Gleam also has an optional `locale` parameter for dealing with different date formats in different languages.
+## See Also
 
-Internally, `Date.from_text` uses the `DateTime.Parse` library, which leverages the power of the `DateTime::parse` function in Ruby and Rust's `chrono` library.
+To delve more into Gleam's date parsing capabilities, check the official documentation at https://gleam.run/stdlib/calendar/
 
-## See Also:
-
-- [Gleam's Date module documentation](https://gleam.run/stdlib/date.html)
-- [Python's dateutil documentation](https://dateutil.readthedocs.io/en/stable/)
-- [Ruby's DateTime::parse documentation](https://ruby-doc.org/stdlib/libdoc/date/rdoc/DateTime.html#method-c-parse)
-- [Rust's chrono library documentation](https://docs.rs/chrono/latest/chrono/)
+Additionally, for broader insights into Gleam's overall characteristics, visit Gleam's GitHub page at: https://github.com/gleam-lang/gleam.

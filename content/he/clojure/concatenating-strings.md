@@ -1,7 +1,7 @@
 ---
-title:                "מחברים מחרוזות"
-html_title:           "Clojure: מחברים מחרוזות"
-simple_title:         "מחברים מחרוזות"
+title:                "חיבור מחרוזות"
+html_title:           "C++: חיבור מחרוזות"
+simple_title:         "חיבור מחרוזות"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,25 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+# מה זה ולמה?
+מקשר כלות או "concatenation" הוא למעשה הדבקה של מחרוזות יחד. נעשה זאת כדי ליצור מידע חדש או כדי לעבד מחרוזות בחישובים.
 
-שמירת מחרוזות היא תהליך שבו ניתן להפעיל מחרוזות כמילים אחת בתוך מחרוזת אחרת. בתור מתכנתים, נשתמש בפעולה זו כדי ליצור מחרוזות חדשות המשלבות מספר מחרוזות קיימות ותוכן נוסף.
+# איך לעשות את זה:
+להלן כמה דוגמאות של מינוח למקצוענים בשפת Clojure:
 
-## איך לעשות?
-
-```clojure
-(println (str "שלום " "לכולם!"))
+```Clojure
+(def str1 "שלום, ")
+(def str2 "עולם!")
+(str str1 str2)
 ```
-פלט: "שלום לכולם!"
 
-```clojure
-(def string1 "אני לומד/ת ")
-(def string2 "Clojure!")
-(println (str string1 string2))
+הפלט של הקוד הזה יהיה:
+
+```Clojure
+"שלום, עולם!"
 ```
-פלט: "אני לומד/ת Clojure!"
 
-## חקירה מעמיקה
+הפונקציה str מקשרת את המחרוזות str1 ו-str2 כדי ליצור מחרוזת חדשה.
 
-1. היסטוריה: הפעולה של שמירת מחרוזות הייתה קיימת מהנדס תוכנה ופרופסור רוסמורי נילסן מ-Norwegian Computing Center בשנת 1960.
-2. אלטרנטיבות: י
+# צלילה עמוקה
+אך מהן בדיוק הפרטים שאנחנו צריכים לדעת על צירוף מחרוזות ב-Clojure?
+
+1. בהקשר היסטורי: התכנות הפונקציונלי, בו הוא מתבצע Clojure, מתמקד בהסתפקות בערכים לעיבוד נתונים, דבר שמחשיב את צירוף המחרוזות לדי נפוצ בשפות תכנות אחרות.
+
+2. חלופות: אתה יכול להשתמש בפונקציית הצירוף של Clojure, אך אלהרנטיבה אחרת היא הפונקציה `clojure.string/join`.
+
+```Clojure
+(def list-of-strings ["שלום, " "עולם!"])
+(clojure.string/join "" list-of-strings)
+```
+
+הפונקציה `clojure.string/join` מבצעת יעילות גבוהה יותר בתוך רשימות מחרוזות ארוכות יותר.
+
+3. מידע על המימוש: הפונקציה `str` מתרגמת את המחרוזות שלה לפונקציית צירוף של ה-Java JVM הקיימת, מה שמביא לביצועים מהירים ואמינים.
+
+# ראה גם
+1. [הדרכת תחילה של Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
+2. [תיעוד Clojure](https://clojuredocs.org/)
+3. [Clojure - הצירוף של מחרוזות](https://www.learn-clojure.com/clojure-concatenation/)

@@ -1,7 +1,7 @@
 ---
-title:                "Pienentäminen merkkijonoksi"
-html_title:           "Gleam: Pienentäminen merkkijonoksi"
-simple_title:         "Pienentäminen merkkijonoksi"
+title:                "Merkkijonon pääkirjaintaminen"
+html_title:           "Gleam: Merkkijonon pääkirjaintaminen"
+simple_title:         "Merkkijonon pääkirjaintaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,35 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & miksi?
-Stringien isojen kirjainten käyttö tarkoittaa tekstin muuttamista niin, että jokaisen sanan ensimmäinen kirjain muutetaan isoksi. Tätä tehdään yleisesti ohjelmoinnissa, jotta teksti näyttäisi siistimmältä ja helpommin luettavalta.
+## Mikä & Miksi?
+Kirjainten muuttaminen isoiksi on ohjelmoinnissa käytetty toiminto, jolla muutetaan annetun merkkijonon kaikki kirjaimet isoiksi kirjaimiksi. Tämä on hyödyllistä esimerkiksi vakiomuotoistamisessa ja yhtenäisyyden luomisessa tiedon käsittelyssä.
 
-# Miten:
-### Gleam-koodiesimerkki:
-```Gleam
-"hei, kuka siellä?!" |> String.capitalize
-```
-### Tulos:
-```Gleam
-"Hei, kuka siellä?!"
-```
+## Näin se tehdään:
+Gleam kielen avulla merkkijonon voi muuttaa isoiksi kirjaimiksi käyttämällä `to_uppercase` funktiota. Tässä esimerkki ja sen tuottama tulos:
 
-### Gleam-koodiesimerkki:
-```Gleam
-"gleam is awesome" |> String.capitalize
+```GLEAM
+import gleam/str
+
+pub fn main() {
+  let kotona = "olen kotona"
+  let tulostus = str.to_uppercase(kotona)
+  io.println(tulostus)
+}
 ```
-### Tulos:
-```Gleam
-"Gleam is awesome"
+Tulostus:
+```
+OLEN KOTONA
 ```
 
-# Syvempi sukellus:
-Isoksi muuttaminen, eli kääntäminen, on ollut käytössä jo kauan ennen ohjelmointia ja sillä oli historiallisesti eri merkitys kuin nykypäivänä. Nykyään isojen kirjainten käyttö liittyy enemmän visuaaliseen ulkoasuun ja helpompaan lukemiseen, mutta historiallisesti sillä pyrittiin myös erottamaan erilaisia sanaluokkia, kuten nimisanoja ja verbejä.
+## Syvempi tarkastelu
+Historiallisessa kontekstissa kirjainten muuttaminen isoiksi on pitkäaikainen ohjelmointikäytäntö, joka juontaa juurensa aikoihin, jolloin tietokoneiden näytöt kykenivät tuottamaan vain suuria kirjaimia. Gleam tarjoaa helposti käytettävän `to_uppercase` funktion merkkijonojen muuttamiseen isoiksi kirjaimiksi. Vaihtoehtona on luoda oma funktio, mutta se on yleensä tarpeetonta, koska Gleam tarjoaa jo valmiin ja tehokkaan työkalun. 
 
-Vaihtoehtojakin löytyy, esimerkiksi pienentäminen eli merkkien muuttaminen pieniksi, mutta se ei ole yhtä yleistä kuin isoksi muuttaminen. Stringien käsittelyyn on myös muita tapoja, kuten pilkkominen tai yhdistäminen, mutta jokaisessa tapauksessa on tärkeää huomioida tietojen muotoilu ja oikeellisuus.
-
-Gleamissa stringien käsittelyyn käytetään apuna moduulia nimeltä String, joka tarjoaa erilaisia toimintoja, kuten capitalize, pienentäminen ja paljon muuta.
-
-# Katso myös:
-- [Gleam Language - dokumentaatio](https://gleam.run/documentation/)
-- [String Moduuli - Gleam Language dokumentaatio](https://gleam.run/documentation/stdlib/string)
+## Katso myös
+Gleam-koodin kirjoittamista ja ymmärtämistä voi oppia lisää seuraavista lähteistä:
+1. [Gleam's str module documentation](https://docs.gleam.run/stdlib/str.html): Auttaa ymmärtämään Gleam-kielen `str`-moduulin tarjoamia funktioita.
+2. [Functional programming in Gleam](https://gleam.run/book/tour/functional-programming.html): Tarjoaa perusteellisen katsauksen funktionaaliseen ohjelmointiin Gleam-kielellä.

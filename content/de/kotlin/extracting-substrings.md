@@ -1,7 +1,7 @@
 ---
-title:                "Extrahieren von Teilzeichenketten"
-html_title:           "Kotlin: Extrahieren von Teilzeichenketten"
-simple_title:         "Extrahieren von Teilzeichenketten"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und warum?
+## Was & Warum?
 
-Die Extraktion von Teilstrings, auch bekannt als Substring-Extraktion, ist ein häufig verwendetes Konzept bei der Programmierung. Dabei werden Teile von Texten oder Zeichenketten extrahiert, die benötigt werden, während der Rest ignoriert wird. Dies kann nützlich sein, um bestimmte Informationen aus längeren Texten herauszufiltern oder um Texte in kleinere Einheiten aufzuteilen.
+Das Extrahieren von Teilstrings ist die Methode, Ausschnitte aus einem größeren String zu entnehmen. Programmierer tun dies, um spezifische Informationen aus umfangreichen Textdaten abzurufen oder zu verarbeiten.
 
-## Wie geht's?
+## So geht's:
 
-Um Teilstrings in Kotlin zu extrahieren, kannst du die `substring()` Methode verwenden. Diese Methode hat zwei Parameter: den Startindex, an dem die Extraktion beginnen soll, und den endindex, an dem die Extraktion endet. Beide Indizes beziehen sich auf die Positionen der Zeichen in der Zeichenkette.
+In Kotlin kann ein Teilstring durch verschiedene Methoden extrahiert werden. Dazu gehören `substring()`, `subSequence()`, etc.
 
-Beispiel:
 ```Kotlin
-val text = "Hallo Welt"
-val sub = text.substring(0, 5) // "Hallo"
+val str = "Hallo Welt!"
+println(str.substring(6, 11)) // gibt "Welt" aus
+
+// oder
+
+val seq = str.subSequence(6, 11) // erzeugt eine CharSequence "Welt"
+println(seq)
 ```
 
-Der Startindex wird dabei inklusive der entsprechenden Zeichen der Zeichenkette enthalten, während der endindex exklusive der entsprechenden Zeichen ist.
+Die `substring()` Funktion in Kotlin extrahiert einen Teilstring ab einem gegebenen Startindex bis (aber nicht einschließlich) einem Endindex.
 
-## Tiefes Eintauchen
+## Vertiefung
 
-Die Extraktion von Teilstrings ist in vielen Programmiersprachen eine gebräuchliche Technik und ermöglicht es Entwicklern, Texte auf effiziente Weise zu bearbeiten. Eine alternative Methode in Kotlin wäre die Verwendung von regulären Ausdrücken (RegEx), die noch mehr Kontrolle über die Extraktion bieten können, aber auch komplexer zu verwenden sind.
+Historischer Kontext: Das Bedürfnis, Teilstrings zu extrahieren, existiert seit den frühen Tagen der Computerprogrammierung. Es wurde ursprünglich verwendet, um Textdateien zu analysieren oder Dateien mit bestimmten Schlüsselwörtern zu durchsuchen.
+
+Alternativen: Es gibt viele andere Methoden, um Teilstrings aus einer Zeichenkette in Kotlin zu extrahieren, z.B. `removeRange()` oder `replaceRange()`.
+
+Implementationsdetails: Bei der Extrahierung von Teilstrings in Kotlin ist zu beachten, dass die Indizes 0-basiert sind. Im Beispiel oben beginnt die Zeichenkette "Hallo Welt!" beim Index 0 mit "H" und endet beim Index 10 mit "!". Daher extrahiert `substring(6, 11)` den Teilstring "Welt".
 
 ## Siehe auch
 
-- [Kotlin String API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html)
-- [Java String substring() Method](https://www.w3schools.com/javaref/met_string_substring.asp) (ähnlicher Ansatz wie in Kotlin)
-- [Regular Expressions in Kotlin](https://kotlinlang.org/docs/regular-expressions.html)
+Weitere Informationen und Beispiele zur Extrahierung von Teilstrings in Kotlin finden Sie unter den folgenden Links:
+
+1. [Offizielle Kotlin-Dokumentation für substring()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
+2. [Offizielle Kotlin-Dokumentation für subSequence()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/sub-sequence.html)
+3. [Beispiel zur Verwendung von replaceRange() in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-range.html)

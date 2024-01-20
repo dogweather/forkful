@@ -1,7 +1,7 @@
 ---
-title:                "计算未来或过去的日期。"
-html_title:           "Kotlin: 计算未来或过去的日期。"
-simple_title:         "计算未来或过去的日期。"
+title:                "计算未来或过去的日期"
+html_title:           "Kotlin: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,35 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 是什么 & 为什么？
-在编程中，经常会遇到需要计算未来或过去某个日期的情况。比如，某个活动需要在下个月的第二个星期六举行，或者需要在十天后提醒用户某件事。为了方便处理这种日期相关的逻辑，程序员需要使用代码来计算日期。
+## 什么与为什么?
 
-# 怎么做：
-使用Kotlin内置的 `LocalDate` 类，可以很容易地进行日期计算。首先，我们需要导入 `java.time` 包，然后就可以使用 `now()` 方法获取当前日期，或者使用 `of()` 方法指定特定的日期。接下来，使用 `plus()` 方法来计算未来的日期，或者使用 `minus()` 方法来计算过去的日期。最后，我们可以使用 `format()` 方法来将日期格式化为我们需要的形式。
+未来或过去的日期计算是计算出从现在起指定天数之后或之前的日期。程序员经常需要做这个，例如用于计划未来的任务，或查找过去的日期。
+
+## 如何：
+
+Kotlin使用`java.time.LocalDate`类，通过调用`plusDays`或`minusDays`函数，我们能够实现计算未来或过去的日期。
 
 ```kotlin
-import java.time.*
+import java.time.LocalDate
 
 fun main() {
-    // 获取当前日期
-    val today = LocalDate.now()
+    val presentDate = LocalDate.now()
+    println("今天的日期是 : $presentDate")
 
-    // 计算未来日期，返回结果为2021-10-16
-    val futureDate = today.plus(Period.ofMonths(1)).with(TemporalAdjusters.next(DayOfWeek.SATURDAY))
+    val futureDate = presentDate.plusDays(10)
+    println("10天后的日期是 : $futureDate")
 
-    // 计算过去日期，返回结果为2021-09-25
-    val pastDate = today.minus(10L, ChronoUnit.DAYS)
-
-    // 格式化日期为yyyy/MM/dd形式
-    println(futureDate.format(DateTimeFormatter.ofPattern("yyyy/MM/dd")))
+    val pastDate = presentDate.minusDays(5)
+    println("5天前的日期是 : $pastDate")
 }
 ```
+这段程序会输出类似：
 
-# 深入了解：
-- 历史背景：在早期的计算机编程中，日期计算并不是那么容易，需要编写复杂的代码来处理。但随着现代编程语言的发展，日期计算变得更加简单，比如Kotlin就支持直接操作日期对象。
-- 其他替代方案：除了使用Kotlin内置的日期类，也可以使用第三方库来处理日期计算。比如 `Joda-Time` 和 `DateUtils` 等。
-- 实现细节：在 `LocalDate` 类中，日期是以 `Year-Month-Day` 的格式存储的，并且支持闰年的计算。使用 `plus()` 和 `minus()` 方法时，可以传入 `Period` 对象来指定想要增加或减少的时间单位，也可以使用 `TemporalAdjusters` 类来指定具体的日期，比如下一个周六。
-# 相关资源：
-- Kotlin官方文档：https://kotlinlang.org/docs/datetime.html
-- Joda-Time库：https://www.joda.org/joda-time/
-- DateUtils库：https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/time/DateUtils.html
+```kotlin
+今天的日期是 : 2022-03-25
+10天后的日期是 : 2022-04-04
+5天前的日期是 : 2022-03-20
+```
+
+## 深度解析 
+
+1) 历史背景：
+从JDK 8开始，Java开始使用新的日期、时间库`java.time`来替代原有的`java.util.Date`和`java.util.Calendar`。Kotlin是完全兼容Java的，因此对这些类的操作都是一致的。
+
+2) 其他做法：
+除此之外，使用`java.util.Calendar`也可以实现类似的功能，但对于新的代码，推荐用`java.time`。
+
+3) 实现细节：
+`plusDays`和`minusDays`函数会返回一个新的`LocalDate`实例，不会改变原有的实例。
+
+## 另见
+
+[Oracle Java文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html#plusDays-long-): `java.time.LocalDate`的官方文档，包括`plusDays`和`minusDays`的详细描述。
+
+[Kotlin官方文档](https://kotlinlang.org/docs/dates-and-times.html): Kotlin语言关于日期和时间操作的官方文档。

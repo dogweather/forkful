@@ -1,6 +1,6 @@
 ---
 title:                "提取子字符串"
-html_title:           "Java: 提取子字符串"
+html_title:           "Arduino: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是提取子字符串？为什么程序员要这么做？
+## 什么 & 为什么？
+子字符串提取是从现有字符串中抽出一部分的过程。程序员经常这么做，因为它可以截取重要信息，而且在处理文本时非常有用。
 
-提取子字符串是指从一个较长的字符串中截取出一段短的字符串。程序员通常会这么做是为了从一个大的字符串中获取特定的信息，或者对字符串进行处理和修改。
+## 如何：
+### 提取子字符串：
+在Java中，你可以使用字符串对象的`.substring()`方法来提取子字符串。在代码段`someString.substring(int beginIndex, int endIndex)`中，`beginIndex`是子字符串的开始位置，`endIndex`是结束位置。
 
-# 如何提取子字符串：
-
-Java中有几种方法可以提取子字符串，下面是两种常用的方法：
-
-1. 使用 `substring()` 方法。这个方法接受两个参数，第一个参数是起始索引（从0开始计数），第二个参数是结束索引（不包括该索引的字符）。例如，假设我们有一个字符串 `"Hello World"`，想要提取出 `"Hello"` 这个子字符串，可以使用如下代码：```Java
-String str = "Hello World";
-String subStr = str.substring(0, 5);
-System.out.println(subStr); // Output: Hello
-```
-
-2. 使用正则表达式。如果需要从字符串中提取符合某种规律的子字符串，可以使用正则表达式。例如，假设我们有一个包含不同邮件地址的字符串，想要提取出所有的用户名，可以使用如下代码：```Java
-String str = "john@example.com, lisa@example.com, tom@example.com";
-Pattern pattern = Pattern.compile("\\w+");
-Matcher matcher = pattern.matcher(str);
-while (matcher.find()) {
-    System.out.println(matcher.group()); // Output: john, lisa, tom
+```Java
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String substr = str.substring(7, 12);
+        System.out.println(substr); // 输出 "World"
+    }
 }
 ```
 
-# 深入了解：
+### 提取子字符串（不带结束索引）：
+如果想从某个位置开始，直到字符串末尾进行提取，只需要一个参数。
 
-提取子字符串在字符串处理中非常常见，它可以帮助我们简化代码，并且使得字符串的处理更加灵活。在Java中，我们可以使用更多的字符串处理方法，比如 `split()`、`replace()`、`startsWith()` 等等来达到类似的效果。另外，如果在使用 `substring()` 方法时，传入的索引超出了字符串的长度，会抛出 `IndexOutOfBoundsException` 异常。
+```Java
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello, World!";
+        String substr = str.substring(7);
+        System.out.println(substr); // 输出 "World!"
+    }
+}
+```
 
-# 参考资料：
+## 深探
+### 历史背景:
+`.substring()`方法是Java 1.0版本的一部分，被广泛接受和使用。这是因为字符串处理对于编程来说是核心任务之一，而提取子字符串是处理大量文本的常见需求。
 
-1. [Java String class documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-2. [Java Regex tutorial](https://www.javatpoint.com/java-regex)
-3. [Commonly used String methods in Java](https://www.geeksforgeeks.org/string-class-in-java/)
+### 可选方法：
+除了`.substring()`，还有其他方法可以完成相似的任务，如使用`StringBuilder`或`StringBuffer`类的`.delete()`函数。
+
+```Java
+public class Main {
+    public static void main(String[] args) {
+        StringBuffer str = new StringBuffer("Hello, World!");
+        str.delete(0, 7);
+        System.out.println(str); // 输出 "World!"
+    }
+}
+```
+
+注意，与`.substring()`方法不同，此操作会直接修改原始字符串缓冲区。
+
+### 实现细节：
+`substring()`函数的运行时间复杂度是O(1)，这是因为它在内部只返回字符串的一个引用，而不复制所有字符。这使得它比修改原始字符串或生成新的字符串更有效。
+
+## 另请参阅
+1. Oracle官方文档中的[String API](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)提供了清晰的`.substring()`方法说明。
+2. StackOverflow上的讨论，解释了[Java中.substring()的工作方式](https://stackoverflow.com/questions/4679746/how-does-string-substring-work-in-java)。

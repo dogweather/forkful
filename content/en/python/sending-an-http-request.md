@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Python recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Python"
 category:             "Python"
@@ -10,31 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Python HTTP Requests: A Simple Guide
+
 ## What & Why?
 
-Sending an HTTP request means making a request to a web server to retrieve information. Programmers use this to communicate with web servers and get data such as web pages, images, or files. It is an essential part of web development and allows us to access and use information from the internet.
+Sending an HTTP request is primarily about getting data from or sending data to a server. Programmers use it to interact with web services, fetch web pages, or even to update data on a web server.
 
 ## How to:
 
-To send an HTTP request in Python, we can use the built-in `requests` library. First, we import the library using `import requests`. Then, we use the `get()` method to make a GET request to a specific URL. For example:
+Python offers a few libraries to send HTTP requests, but for sheer simplicity, let's use 'requests' library.
 
-```Python
-import requests
-response = requests.get("https://www.example.com")
-print(response.text)
+First, install the library using pip if you haven't already.
+
+```python
+pip install requests
 ```
 
-This will send a request to the URL and print out the response data. We can also specify additional parameters such as headers or data to send with the request. For more information on the `requests` library, check out their official documentation.
+Now let's issue a GET request.
 
-## Deep Dive:
+```python
+import requests
 
-The Hypertext Transfer Protocol (HTTP) was created in 1989 and has since become the standard for communication between web servers and clients. In addition to GET requests, there are also other types of requests such as POST, PUT, and DELETE. These allow programmers to interact with web servers and update information, not just retrieve it.
+response = requests.get('http://httpbin.org/get')
 
-There are also alternative methods for sending HTTP requests in Python, such as using the `urllib` library or the `httplib` library. However, the `requests` library is generally preferred for its simpler syntax and more user-friendly interface.
+print(response.content)
+```
 
-When we send an HTTP request, we are using the client-server model, where the client (our program) sends a request to the server (the web server) and waits for a response. This process involves several steps, including establishing a TCP connection, sending the request, and receiving the response.
+You simply pass the URL you want to make a request to the GET function, and it will return a response. This output is just the raw HTML of the page.
 
-## See Also:
+## Deep Dive
 
-- [Requests library documentation](https://docs.python-requests.org/en/master/)
-- [Introduction to HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+Understanding HTTP requests goes back to the early stages of the Web. In the late 1990s, Roy Fielding, part of the team that wrote the HTTP specification, defined an architectural style of networked systems called REST. Now, most web services use RESTful APIs, thus the need to understand HTTP requests.
+
+Aside from the requests library, Python also provides other modules like httplib2, treq, and http.client for sending HTTP requests. Each has its own use-cases, strengths, and limitations.
+
+Behind the scenes, when you send an HTTP request, your client (the device you're using) sends a message to the server with request headers (to provide metadata about the kind of request being made) and sometimes a body (which carries the actual request data, if applicable).
+
+## See Also
+
+To delve deeper into Python's capability of managing HTTP requests, check out these resources:
+
+1. Python's requests library documentation: [Docs](https://requests.readthedocs.io/en/master/)
+2. http.client — HTTP protocol client: [Docs](https://docs.python.org/3/library/http.client.html)
+3. A deep dive into HTTP Requests with Python: [Real Python](https://realpython.com/python-requests/)  
+   
+Remember, the way to mastery is practice and research. So have fun experimenting and learning more about HTTP requests, and happy coding!

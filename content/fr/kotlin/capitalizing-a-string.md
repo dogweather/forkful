@@ -1,7 +1,7 @@
 ---
-title:                "Mettre une chaîne en majuscule."
-html_title:           "Kotlin: Mettre une chaîne en majuscule."
-simple_title:         "Mettre une chaîne en majuscule."
+title:                "Mettre une chaîne en majuscules"
+html_title:           "Kotlin: Mettre une chaîne en majuscules"
+simple_title:         "Mettre une chaîne en majuscules"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-Lorsqu'un programmeur capitalise une chaîne de caractères, il modifie la casse de la première lettre de chaque mot pour la rendre en majuscule. Cela peut être utile lors de l'affichage de noms ou de titres, afin de les rendre plus lisibles et cohérents. Les programmeurs le font généralement pour une question de convention et de bonnes pratiques de codage.
+## Qu'est-ce que c'est & Pourquoi ? 
+
+La mise en majuscule d'une chaîne consiste à transformer les premières lettres de chaque mot en majuscules. Les programmeurs le font souvent pour améliorer la lisibilité et la présentation des éléments textuels dans l'interface utilisateur.
 
 ## Comment faire:
-Un exemple simple de la méthode de capitalisation dans Kotlin peut être réalisé en utilisant la fonction ```capitalize()``` sur un objet de type String. Voici un exemple de code:
+
+En Kotlin, vous pouvez utiliser la fonction `capitalize()` pour mettre en majuscule une chaîne.
+```Kotlin
+val maChaine = "bonjour tout le monde"
+val resultat = maChaine.split(" ").joinToString(" ") { it.capitalize() }
+println(resultat)
 ```
-val str: String = "bonjour le monde"
-println(str.capitalize())
+Sortie échantillon
+```Kotlin
+Bonjour Tout Le Monde
 ```
-La sortie de ce code serait "Bonjour le monde".
 
-On peut également utiliser la fonction ```toUpperCase()``` pour mettre tous les caractères en majuscules, ou ```toLowerCase()``` pour les mettre en minuscules.
+## Plongée en profondeur
 
-## Plongée en profondeur:
-Historiquement, la casse des lettres a toujours eu de l'importance dans la programmation. Cela remonte aux anciens systèmes de codage tels que l'ASCII qui différenciait les majuscules et les minuscules. Bien que les conventions et les styles de codage aient évolué au fil du temps, il reste important de maintenir une certaine cohérence dans l'utilisation de la casse pour rendre le code plus facile à lire et à comprendre.
+1. _Contexte historique_ : À l'origine, les ordinateurs ne distinguaient pas les caractères minuscules des majuscules. Avec l'évolution de la technologie, la distinction entre les deux est devenue possible, améliorant ainsi la lisibilité et l'efficacité du traitement des chaînes.
 
-Alternativement, certains développeurs peuvent préférer utiliser la fonction ```replaceFirstChar``` pour capitaliser une chaîne sans avoir besoin d'une nouvelle chaîne.
+2. _Alternatives_ : En Kotlin, vous pouvez également utiliser la fonction `toUpperCase` pour convertir tous les caractères d'une chaîne en majuscules. Cependant, `capitalize` est préférée lorsque vous ne voulez mettre en majuscule que le premier caractère de chaque mot.
 
-Dans l'implémentation de la fonction ```capitalize()``` en Kotlin, la première lettre est mise en majuscule selon les règles linguistiques de la langue actuelle du système en cours d'exécution.
+3. _Détails de mise en œuvre_ : La fonction `capitalize` de Kotlin utilise l'algorithme Unicode pour déterminer quels caractères doivent être convertis en majuscules. Cela permet de gérer correctement même les langues non latines.
 
-## À voir aussi:
-Pour plus d'informations sur la manipulation des chaînes de caractères dans Kotlin, vous pouvez consulter la documentation officielle du langage ici: https://kotlinlang.org/docs/reference/basic-types.html#strings
+## Voir aussi
+
+1. Documentation officielle de Kotlin sur les chaînes : [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
+2. Guide de l'utilisateur Kotlin sur la gestion des chaînes : [https://kotlinlang.org/docs/basic-types.html#string-literals](https://kotlinlang.org/docs/basic-types.html#string-literals)
+3. Autres techniques de manipulation de chaînes en Kotlin : [https://www.programiz.com/kotlin-programming/string](https://www.programiz.com/kotlin-programming/string)

@@ -1,6 +1,6 @@
 ---
 title:                "Iniciando um novo projeto"
-html_title:           "Go: Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
 simple_title:         "Iniciando um novo projeto"
 programming_language: "Go"
 category:             "Go"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O que & por qué?
 
-Começar um novo projeto em programação é a criação de um novo conjunto de códigos para realizar uma certa tarefa ou desenvolver um novo programa. Programadores fazem isso para resolver problemas específicos, melhorar processos ou criar algo novo e inovador.
+Iniciar um novo projeto de programação é criar um esboço básico para o seu software futuro. Os programadores fazem isso para estruturar seu trabalho, definir metas e delinear a abordagem geral.
 
 ## Como fazer:
 
-Dê uma olhada em alguns exemplos simples de como começar um novo projeto em Go. Lembre-se de importar o pacote "fmt" para usar a função "Println" e ver o resultado de seu código.
+Criando um projeto simples "Olá, Mundo!" no Go:
+```Go
+package main
 
-```
-Go package main
-
-import (
-    "fmt"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Olá Mundo!")
+    fmt.Println("Olá, Mundo!")
 }
 ```
+A saída esperada:
+```
+Olá, Mundo!
+```
+Para compilar e executar:
+```Go
+go run hello.go
+```
 
-Você verá a saída "Olá Mundo!" no terminal após executar este código.
+## Mergulho profundo
 
-## Mergulho Profundo:
+1. Contexto histórico: Go, também conhecido como Golang, foi projetado no Google por Robert Griesemer, Rob Pike e Ken Thompson, lançado em 2009. Ele nasceu da necessidade de lidar com a escala e a complexidade que outras linguagens de programação não conseguiam resolver.
 
-Go foi criado em 2009 por Robert Griesemer, Rob Pike e Ken Thompson do Google. É uma linguagem de programação de código aberto que foi projetada para ser simples, eficiente e fácil de aprender. Uma das alternativas populares ao Go é a linguagem de programação Python, que também é conhecida por sua sintaxe simples e versatilidade. Ao começar um novo projeto em Go, é importante entender sua estrutura de pacotes e a eficácia de seu compilador.
+2. Alternativas: Existem alternativas incontáveis para iniciar um novo projeto de programação. Você poderia, por exemplo, usar Python para um script mais rápido ou Java para desenvolvimento android.
 
-## Veja Também:
+3. Detalhes da implementação: Ao iniciar um novo projeto em Go, é importante organizar corretamente o seu espaço de trabalho Go e a estrutura do diretório do projeto. Go utiliza uma árvore de diretórios única global chamada 'GOPATH'.
 
-Para mais informações sobre como iniciar um novo projeto em Go, confira a documentação oficial no site: https://golang.org/doc/ ou dê uma olhada em alguns tutoriais online no YouTube.
+## Veja também:
+
+1. Documentação oficial da linguagem de programação Go: https://golang.org/doc/
+2. Introdução à linguagem de programação Go no TutorialPoint: https://www.tutorialspoint.com/go/index.htm
+3. Introdução ao Go (em Português) no Medium: https://medium.com/collabcode/introdu%C3%A7%C3%A3o-%C3%A0-linguagem-de-programa%C3%A7%C3%A3o-go-af0a2f2a5fa2

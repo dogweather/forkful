@@ -1,7 +1,7 @@
 ---
-title:                "Ekstrakcja podciągów"
-html_title:           "C: Ekstrakcja podciągów"
-simple_title:         "Ekstrakcja podciągów"
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Czego i dlaczego?
-Wyodrębnianie podciągów to częsta praktyka programistów polegająca na uzyskiwaniu fragmentów tekstu z większego ciągu znaków. Ma to wiele zastosowań, w tym weryfikację poprawności wprowadzanych danych, przetwarzanie danych w formacie tekstowym oraz tworzenie właściwych wyświetleń i reprezentacji tekstowych.
+## Co i Dlaczego?
+
+Wyodrębnianie podciągów (ang. substring extraction) to proces pozyskiwania pewnej części ciągu znaków. Programiści robią to, aby manipulować danymi, analizować teksty lub filtrować wartości.
 
 ## Jak to zrobić:
-Wyodrębnianie podciągów jest stosunkowo proste za pomocą wbudowanych funkcji biblioteki C. Przykładowy kod dla tekstu "Hello World" i wyodrębnienia podciągu "World" jest następujący:
+
+Zobaczmy kod demonstrujący to zadanie. Wykorzystamy funkcję `strncpy`, która należy do biblioteki standardowej języka C:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-int main() {
-  char str[] = "Hello World";
-  char substr[] = "World";
-  char *ptr = strstr(str, substr);
-  if (ptr) {
-    printf("Podciąg znaleziony: %s\n", ptr);
-  } else {
-    printf("Podciąg nie został znaleziony.\n");
-  }
-  return 0;
+int main () {
+   char src[20] = "Programowanie w C";
+   char dest[15];
+   
+   strncpy(dest, src+5, 13);
+   dest[13] = '\0'; // End of string character
+
+   printf("Podciąg to: %s\n", dest);
+
+   return 0;
 }
 ```
 
-Wynik tego programu będzie wyglądać następująco:
+Wynik to:
 
+```C
+Podciąg to: amowanie w C
 ```
-Podciąg znaleziony: World
-```
 
-Można także wykorzystać funkcje takie jak `strncpy` lub `strtok` do bardziej zaawansowanych operacji na podciągach.
+## Pogłębione badanie
 
-## Zanurzenie w temat:
-Wyodrębnianie podciągów było powszechnie stosowane w językach programowania jeszcze przed pojawieniem się standardu języka C. W najnowszej wersji języka, wyodrębnianie podciągów jest jeszcze prostsze dzięki użyciu wbudowanych funkcji bibliotecznych. Alternatywnym sposobem na wyodrębnianie podciągów jest użycie wyrażeń regularnych, jednak wymaga to użycia dedykowanych bibliotek lub narzędzi zewnętrznych.
+Ekstrakcja podciągów ma swoje korzenie w manipulacji tekstem i przetwarzaniu danych. Ta technika jest powszechnie wykorzystywana w wielu dziedzinach, takich jak przeglądanie stron internetowych, analiza danych i uczenie maszynowe. 
 
-Implementacja wyodrębniania podciągów wykorzystuje algorytmy porównywania ciągów znaków, na przykład Knuth-Morris-Pratt lub Boyer-Moore, aby znaleźć wzorzec podciągu w tekście. Osoby zainteresowane tematem mogą zgłębić szczegóły tych algorytmów i eksperymentować z własnymi implementacjami.
+Istnieje wiele alternatyw dla `strncpy`, takich jak `memcpy`, `memmove` czy napisane przez użytkownika funkcje. Każda z nich ma swoje własne zastosowania w zależności od specyfiki problemu.
 
-## Zobacz również:
-Dla lepszego zrozumienia wyodrębniania podciągów w C, warto zapoznać się z dokumentacją funkcji bibliotecznych takich jak `strstr` czy `strncpy`. Można również przejrzeć przykładowe implementacje algorytmów porównywania ciągów znaków, aby głębiej zrozumieć jak wyodrębnianie podciągów jest realizowane w praktyce.
+Większość funkcji ekstrakcji podciągów działa na tych samych zasadach. Pobiera wskaźnik do źródłowego ciągu znaków i kopiuje zdefiniowaną liczbę znaków do ciągu docelowego.
+
+## Zobacz także:
+
+Sprawdź te linki, aby dowiedzieć się więcej:
+
+- Opracowanie na temat manipulacji tekstem w języku C: https://cboard.cprogramming.com/c-programming/154649-extract-substring-string-using-c.html
+- Stack Overflow dla dyskusji o związanym kodzie: https://stackoverflow.com/questions/4214314/get-a-substring-of-a-char
+- Dokumentacja języka C na temat funkcji `strncpy`: https://www.cplusplus.com/reference/cstring/strncpy/

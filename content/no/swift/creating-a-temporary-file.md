@@ -1,7 +1,7 @@
 ---
-title:                "Oppretting av en midlertidig fil"
-html_title:           "Swift: Oppretting av en midlertidig fil"
-simple_title:         "Oppretting av en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "Bash: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -11,24 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Oppretting av en midlertidig fil er en vanlig praksis blant programmerere for å midlertidig lagre data som er nødvendige for å utføre en bestemt operasjon. Dette kan være nyttig når man arbeider med store mengder data, eller når man bare trenger å lagre data midlertidig under utførelse av et program. 
+Å lage en midlertidig fil er prosessen der en programmerer skaper en fil som er ment for kortvarig bruk. Dette gjøres for problemløsing, midlertidig lagring av data eller for å ta backup av informasjon mens en jobb utføres.
 
 ## Hvordan:
-```Swift 
-let tempFile = try TemporaryFile()
-tempFile.write(string: "Dette er en midlertidig fil")
-tempFile.close()
+Her er en kodeeksempel for å lage en midlertidig fil i Swift:
+
+```Swift
+import Foundation
+
+let tempDirectoryURL = NSURL.fileURL(withPath: NSTemporaryDirectory(), isDirectory: true)
+let tempFileURL = tempDirectoryURL.appendingPathComponent(UUID().uuidString)
+
+do {
+    try "Midlertidig data".write(to: tempFileURL, atomically: true, encoding: .utf8)
+} 
+catch {
+    print("Det oppstod en feil: \(error)")
+}
 ```
+Utskriften vil ikke vise noe som er veldig spesifikt da UUID().uuidString genererer en unik streng hver gang koden kjøres. Det er faktisk den unike strengen som danner navnet på den midlertidige filen.
 
-Output: En midlertidig fil blir opprettet og teksten "Dette er en midlertidig fil" blir skrevet til filen før den blir lukket.
+## Dypdykk:
+Historisk sett har midlertidige filer blitt brukt av programmer siden tidlig i datamaskinens liv, og er fortsatt en kritisk del av de fleste systemer, spesielt når det kommer til feilsøking og dataintegritet. 
 
-## Dykk dypere:
-Opprettelsen av midlertidige filer har vært en vanlig praksis siden begynnelsen av databehandling. I gamle dager måtte man bruke kommandoer som "mktemp" for å opprette en midlertidig fil, men med dagens programmeringsspråk som Swift, er det mye enklere.
+Det er mange måte å lage midlertidige filer på. For eksempel kan det brukes biblioteker som FileManager, eller metoder som tmpfile(). I Swift foretrekkes NSTemporaryDirectory metoden, grunnet dens enkelhet og sikkerhet.
 
-Det finnes også alternative måter å midlertidig lagre data på, som for eksempel å bruke minnet (RAM) eller å lagre data i en buffer. Men midlertidige filer er ofte den mest effektive metoden, spesielt når man arbeider med store mengder data.
+Skapingen av midlertidige filer i Swift er en enkel og sikker affære. NSURL.fileURL(withPath: NSTemporaryDirectory(), isDirectory: true) koden brukes til å få tilgang til midlertidige kataloger, mens UUID().uuidString brukes for å sikre at filen har et unikt navn. Feilhåndtering blir brukt gjennom Swift sine do-try-catch blokker.
 
-Når man oppretter en midlertidig fil i Swift, vil filen automatisk bli slettet når programmet termineres eller når den siste referansen til filen blir frigitt. Dette gjør bruk av midlertidige filer både enkelt og trygt.
-
-## Se også:
-- Offisiell dokumentasjon for TemporaryFile i Swift: https://developer.apple.com/documentation/foundation/temporaryfile
-- En artikkel om hvorfor man bør bruke midlertidige filer: https://medium.com/@fountainhead/dont-use-temporary-files-use-in-memory-storage-or-buffers-instead-b3e28134b959
+## Se Også:
+1. Apple Developer Documentation: [NSTemporaryDirectory()](https://developer.apple.com/documentation/foundation/1413049-nstemporarydirectory)
+2. Swift Documentation: [Error Handling](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
+3. Stack Overflow: [How to create a temporary directory/folder in Swift?](https://stackoverflow.com/questions/37401342/how-to-create-a-temporary-directory-folder-in-swift)
+4. UUID: [UUID in Swift](https://developer.apple.com/documentation/foundation/uuid)

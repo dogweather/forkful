@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Clojure recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,35 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Sending an HTTP request with basic authentication means including a username and password in the request in order to authenticate and gain access to a protected resource. Programmers use this technique to restrict access to sensitive information and ensure that only authorized users can access it.
+Sending an HTTP request with basic authentication in Clojure means crafting an HTTP call that includes user credentials. It's usually done to secure access to web resources, ensuring that only authenticated users can interact with a given endpoint. 
 
 ## How to:
+
+Clojure's clj-http library simplifies the job. To send a GET request with Basic Authentication, you'll need to:
 
 ```Clojure
 (require '[clj-http.client :as client])
 
-(def url "https://example.com/api/v1/users") ; URL of the protected resource
-(def username "user123") ; replace with actual username
-(def password "pass456") ; replace with actual password
+(defn fetch-resource
+  [url username password]
+  (client/get url {:basic-auth [username password]}))
+```
 
-; Sending a GET request with basic authentication
-(client/get url :basic-auth [username password]) ; returns the response from the API
+Calling `fetch-resource` with URL, username, and password will return the response from the server:
 
-; Sending a POST request with basic authentication
-(client/post url :body {"name" "John Doe"} :basic-auth [username password]) ; returns the response from the API
+```Clojure
+(fetch-resource "http://example.com" "user" "pass")
 ```
 
 ## Deep Dive
 
-Sending an HTTP request with basic authentication dates back to the early days of the web when security was not a major concern. It involves sending the username and password encoded in base64 format in the 'Authorization' header of the request. This method is considered less secure as the credentials are transmitted in plaintext, making it vulnerable to malicious attacks.
+Basic Authentication has been a part of HTTP since the early days. Its simplicity made it popular: you send the username and password, base64 encoded, in the `Authorization` header of each request. However, encoding is not encryption, so it's not secure without use of HTTPS.
 
-An alternative to basic authentication is using OAuth, which uses a token-based system for authorization. This method is more secure as it does not require exchanging and storing sensitive credentials.
+Clojure offers tackle this through libraries like `clj-http` for providing options like basic authentication. Other options exist as well: OAuth and JWT implementations can also be found in the ecosystem, should your application need more advanced authentication features. 
 
-Implementation details for sending an HTTP request with basic authentication differ depending on the programming language and framework. Clojure has a built-in library - clj-http - specifically designed for making HTTP requests. It provides a simple and easy-to-use API for sending requests with basic authentication.
+Under the hood, `clj-http` is merely setting the `Authorization` header for you:
 
-## See Also:
+```Clojure
+{:headers {"Authorization" (str "Basic " (base64 (str username ":" password)))}}
+```
 
-- [clj-http library docs](https://www.http-kit.org/client.html)
-- [more info on basic authentication](https://www.ietf.org/rfc/rfc2617.txt)
-- [OAuth overview](https://oauth.net/2/)
+## See Also
+
+1. [clj-http library](https://github.com/dakrone/clj-http): Explore the Clojure library simplifying HTTP requests.
+2. [Clojure.org](https://clojure.org/): Resources, guides, and community for those engaged in Clojure.
+3. [HTTP Basic Access Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication): Deep-dive into the world of HTTP authentication.

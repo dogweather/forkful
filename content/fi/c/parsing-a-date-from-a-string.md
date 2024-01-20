@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erittely merkkijonosta"
-html_title:           "C: Päivämäärän erittely merkkijonosta"
-simple_title:         "Päivämäärän erittely merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Päivämäärän parsiminen merkkijonosta tarkoittaa päivämäärän muuntamista merkkijonoksi. Tämä on hyödyllistä ohjelmointissa esimerkiksi käyttäjän antaman päivämäärän tarkistamiseksi tai tallentamiseksi tietokantaan.
+Päivämäärän jäsennys merkkijonosta C-ohjelmointikielessä tarkoittaa päivämäärän lukemista merkkij perusta. Ohjelmoijat tekevät näin, kun heidän pitää käsitellä päivämääriä, jotka on syötetty ohjelmaan tekstimuodossa.
 
-## Kuinka:
+## Kuinka toimitaan:
+
+Parse päivämäärä merkkijonosta käyttäen `strptime` funktiota:
 
 ```C
-#include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
+#include <stdio.h>
 
-int main()
-{
-  char input[20];
-  struct tm date;
-  time_t epoch;
+int main(void) {
+    struct tm tm;
+    char buf[256];
 
-  printf("Anna päivämäärä (dd.mm.yyyy): ");
-  scanf("%s", input);
+    strptime("2021-09-05", "%Y-%m-%d", &tm);
+    strftime(buf, sizeof(buf), "%d-%m-%Y", &tm);
 
-  strptime(input, "%d.%m.%Y", &date);
-  epoch = mktime(&date);
-  printf("Päivämäärä muunnettuna aikaleimaksi: %ld", epoch);
+    puts(buf);
 
-  return 0;
+    return 0;
 }
 ```
 
-**Tulos:**
+Tämä programmi tulostaa päivämäärän uudessa formaatissa: `05-09-2021`.
 
-```
-Anna päivämäärä (dd.mm.yyyy): 01.01.2021
-Päivämäärä muunnettuna aikaleimaksi: 1609459200
-```
+## Syvällinen tarkastelu
 
-## Syvällisempi tarkastelu:
+Historiallinen konteksti: `strptime` funktio on osa POSIX-standardia, joka on ollut olemassa jo 1980-luvulta lähtien.
 
-Päivämäärän parsiminen merkkijonosta on ollut tarpeellista jo aikojen alusta lähtien, kun tietojenkäsittely aloitettiin. Nykyään tarjolla on useita tapoja suorittaa tämä tehtävä, kuten käyttämällä kirjastoja tai itse koodaamalla. Tärkeää on huomioida, että käytetty parsimistapa vaikuttaa myös suorituskykyyn.
+Vaihtoehtoja: Voit myös käyttää kolmannen osapuolen kirjastoja, kuten [Boost.Date_Time](https://www.boost.org/doc/libs/1_69_0/doc/html/date_time.html).
 
-## Katso myös:
+Jäsennyksen yksityiskohdat: `strptime` ottaa merkkijonon "2021-09-05", jäsentelee sen siihen sisältyvien - erikseen määriteltyjen - mallien mukaan ja tallentaa tiedot `tm`-rakenteeseen.
 
-- [strptime - The GNU C Library](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time-Parsing.html)
-- [mktime - The GNU C Library](https://www.gnu.org/software/libc/manual/html_node/Time-Types.html#Time-Types)
+## Katso myös
+
+Lue lisää päivämäärien jäsennyksestä merkkijonoista ja `strptime` funktion käytöstä näistä lähteistä:
+- [C Library - <time.h> (tutorialspoint.com)](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [Date and time functions (cplusplus.com)](http://www.cplusplus.com/reference/ctime/)
+- [C Date and Time (programiz.com)](https://www.programiz.com/c-programming/library-function/time.h/strptime)

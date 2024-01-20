@@ -1,7 +1,7 @@
 ---
-title:                "Impression de sortie de débogage"
-html_title:           "C#: Impression de sortie de débogage"
-simple_title:         "Impression de sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font-ils? 
-L'affichage des informations de débogage, également appelé "printf debugging" en référence à la fonction printf en C, est une technique couramment utilisée par les programmeurs pour comprendre le comportement d'un programme en affichant du texte ou des valeurs de variables lors de l'exécution du code. Cela peut aider à localiser et à résoudre les erreurs de façon plus efficace.
+# Imprimer la sortie de débogage en C#
 
-## Comment faire: 
-Voici un exemple en utilisant la console de sortie en C# pour afficher du texte et les valeurs de variables :
+## Quoi & Pourquoi?  
+
+Imprimer la sortie de débogage signifie envoyer des informations utiles du code en cours d'exécution vers une console ou un endroit similaire. Les programmeurs le font pour identifier et corriger les problèmes, ou pour comprendre ce que le programme fait à un moment précis.
+
+## Comment faire:
+
+Voici un exemple simple:
 
 ```C#
-string nom = "Bob";
-int age = 35;
-Console.WriteLine("Bonjour, je m'appelle " + nom);
-Console.WriteLine("J'ai " + age + " ans");
+using System.Diagnostics;
+
+public class Program
+{
+    public static void Main()
+    {
+        Debug.WriteLine("Ceci est une sortie de débogage.");
+    }
+}
 ```
 
-La sortie de ce code serait la suivante : 
-```
-Bonjour, je m'appelle Bob
-J'ai 35 ans
-```
+Après avoir exécuté ce code, vous verrez "Ceci est une sortie de débogage." dans votre fenêtre de sortie de Visual Studio ou dans votre console si vous déboguez en ligne de commande.
 
-## Plongée en profondeur: 
-Bien que l'affichage des informations de débogage soit souvent considéré comme une technique de débogage rudimentaire, cela reste un outil utile dans certaines situations. Avant l'apparition des debuggers, l'affichage de valeurs de variables était le seul moyen de comprendre le comportement du code. Aujourd'hui, il existe des alternatives plus avancées telles que le débogage pas à pas avec un debugger ou l'utilisation de points d'arrêt. Cependant, afficher des informations de débogage reste une méthode simple et efficace pour comprendre rapidement le fonctionnement d'un programme.
+## Plongée profonde 
 
-## Voir aussi: 
-Pour en savoir plus sur l'affichage des informations de débogage en C#, vous pouvez consulter la documentation officielle de Microsoft sur la console de sortie : https://docs.microsoft.com/fr-fr/dotnet/standard/io/troubleshoot-debug-console. Vous pouvez également trouver des conseils et astuces sur les techniques de débogage dans le livre "The Pragmatic Programmer" de Andrew Hunt et David Thomas.
+Historiquement, "imprimer" était utilisé car les premiers ordinateurs imprimaient vraiment sur du papier! De nos jours, nous l'utilisons pour afficher dans la console, les fichiers logs, etc.
+
+Il existe d'autres alternatives pour déboguer le code, comme les points d'arrêt, le débogage step-by-step, les inspecteurs de variables, etc. Cependant, l'impression de débogage reste un outil utile car elle est simple et rapide à utiliser.
+
+En interne, `Debug.WriteLine` en C# écrit dans une ou plusieurs "écoutes", qui sont des sorties telles que la fenêtre de sortie de Visual Studio, une trace de console, etc.
+
+## Voir aussi:
+
+1. [Documentation Microsoft sur System.Diagnostics.Debug](https://docs.microsoft.com/fr-fr/dotnet/api/system.diagnostics.debug?view=net-5.0)
+
+2. [Article sur les principes fondamentaux de la sortie de débogage](https://docs.microsoft.com/fr-fr/visualstudio/debugger/essential-debugging-guide?view=vs-2019)
+
+3. [Utilisation de la sortie de débogage dans Visual Studio](https://docs.microsoft.com/fr-fr/visualstudio/debugger/how-to-use-the-debugger-feature-of-the-output-window?view=vs-2019)

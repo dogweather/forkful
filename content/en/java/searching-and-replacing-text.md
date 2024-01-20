@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Java recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Java"
 category:             "Java"
@@ -11,37 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Searching and replacing text is a common task in programming where specific words or characters within a text string are identified and replaced with new ones. Programmers often do this to make changes to their code more efficient and expedient, saving time and reducing errors in the process. It is also useful for making large-scale changes to text files or documents.
 
-## How to:
-To search and replace text in Java, we can use the `replace()` method from the `String` class. Let's say we have a sentence, "I love programming," and we want to change "programming" to "coding." We would use the following code:
+Searching and replacing text is a commonplace task that involves looking for a specific string (the "needle") and, optionally, replacing it with another (the "new needle"). Why? Well, it's often used for data processing, file renaming, code refactoring, and more.
 
-```Java
-String sentence = "I love programming";
-String newSentence = sentence.replace("programming", "coding");
-System.out.println(newSentence);
-```
+## How To:
 
-The output would be: "I love coding."
-
-We can also use the `replaceAll()` method to replace multiple occurrences of a word or phrase. For example, if we have the sentence, "Java is the best programming language," and we want to replace "programming" with "coding" and "best" with "greatest," we would use the following code:
+Here's the simplest way to perform search and replace in Java using the `replace()` method of the `String` class.
 
 ```Java
-String sentence = "Java is the best programming language";
-String newSentence = sentence.replaceAll("programming|best", "coding|greatest");
-System.out.println(newSentence);
+String original = "A stitch in time saves nine.";
+String replaced = original.replace("nine", "a lot");
+System.out.println(replaced);
 ```
 
-The output would be: "Java is the greatest coding language."
+Output:
+
+```Java
+A stitch in time saves a lot.
+```
+
+Take note that `replace()` is case-sensitive. For a case-insensitive version, you have to use regex with `replaceAll()` instead:
+
+```Java
+String original = "A stitch in TIME saves nine.";
+String replaced = original.replaceAll("(?i)time", "life");
+System.out.println(replaced);
+```
+
+Output:
+
+```Java
+A stitch in life saves nine.
+```
 
 ## Deep Dive:
-In the early days of programming, searching and replacing text was done manually, which was a time-consuming and error-prone process. However, with the advent of text editors and integrated development environments (IDEs), this task has become much easier and quicker to accomplish.
 
-Apart from using the `replace()` and `replaceAll()` methods in Java, there are other ways to search and replace text, such as regex (regular expressions) and third-party libraries like Apache Commons. These provide more advanced and customizable options for searching and replacing text.
+This method of string manipulation has been a part of Java since its inception and has origins linking back to the early days of UNIX.
 
-The implementation details of searching and replacing text vary depending on the programming language, but the general concept remains the same. The string to be searched is scanned for the target word or phrase, and when a match is found, it is replaced with the specified replacement. This process continues until the entire string has been scanned.
+Alternate methods for search and replace exist such as using a `StringBuilder` or `StringBuffer` for better performance with larger text sizes. However, the `String` version often suffices for most uses due to its simplicity.
+
+In terms of implementation, the `replace()` method internally uses a variant of the Boyer-Moore-Horspool algorithm, while `replaceAll()` applies a regular expression match and substitution.
 
 ## See Also:
-- [Java String class documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Regular Expression in Java](https://www.geeksforgeeks.org/regular-expressions-in-java/)
-- [Apache Commons library for text manipulation](https://commons.apache.org/proper/commons-text/)
+
+- [Oracle Java String Documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html)
+- [Regular Expressions in Java](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Boyer-Moore-Horspool Algorithm](https://en.wikipedia.org/wiki/Boyer%E2%80%93Moore%E2%80%93Horspool_algorithm)

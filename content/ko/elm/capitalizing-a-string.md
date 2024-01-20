@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Elm: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화"
+html_title:           "Elm: 문자열 대문자화"
+simple_title:         "문자열 대문자화"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -12,32 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-문자열을 대문자로 변환하는 것은 여러 이유로 프로그래머들이 하는 일입니다. 첫째로, 대문자 문자열을 사용하면 일관된 양식으로 데이터를 표시할 수 있어 가독성을 높일 수 있습니다. 또한 기존 코드와 호환성을 유지하면서 코드를 더 간결하고 간단하게 만들 수도 있습니다.
+문자열을 대문자화하면, 문자열에서 모든 문자가 대문자로 변환됩니다. 이 작업은 프로그래머들이 텍스트 비교를 단순화하거나 사용자 인터페이스를 표준화하기 위해 자주 수행합니다.
 
-## 사용 방법:
+## 이렇게 합시다:
 
-아래 예시 코드를 참고하여 문자열을 대문자로 변환하는 방법을 알아보세요.
+Elm에서 문자열 대문자화는 'String.toUpper' 함수를 사용합니다.
 
+```Elm
+import Html exposing (Html, text)
+import String
+
+main =
+  Html.beginnerProgram { model = "hello, world!", view = view, update = identity }
+
+view model =
+  Html.div [] [ Html.text (String.toUpper model) ]
 ```
-Elm.toUpper "hello" -- 출력: "HELLO"
-```
 
-위 코드는 Elm 내장 함수인 'toUpper'를 이용하여 문자열 "hello"를 대문자로 변환한 결과를 출력합니다.
+위 프로그램을 실행하면, "HELLO, WORLD!"가 출력됩니다.
 
-또 다른 방법으로는 문자열을 직접 변경하는 것이 있습니다.
+## 심화 학습 
 
-```
-String.map Char.toUpper "hello" -- 출력: "HELLO"
-```
+문자열 대문자화의 이력은 컴퓨터 시스템의 초기부터 있었습니다. 대소문자가 동일한 문자로 간주되기 때문에 정렬이나 검색을 수행할 때 대소문자 구분이 복잡성을 증가시키기 때문입니다.
 
-위 코드는 Elm 내장 함수인 'map'을 이용하여 문자열을 각각의 문자로 나눈 뒤, 'toUpper' 함수를 각 문자에 적용하여 대문자로 변환한 결과를 출력합니다.
+대안으로, Elm에서는 각각의 문자에 대해 'Char.toUpper' 함수를 호출하고 결과를 다시 문자열로 결합하는 것이 가능합니다. 어느 경우에든, 표준 라이브러리를 사용하는 것이 코드 유지 관리를 쉽게 만듭니다.
 
-## 딥 다이브:
+'String.toUpper' 함수는 문자열을 반복하고 각 문자에 대해 'Char.toUpper' 함수를 호출합니다. 디테일한 내용과 소스 코드는 Elm 패키지 문서에서 찾을 수 있습니다.
 
-문자열을 대문자로 변환하는 방법은 간단하지만, 역사적으로는 애플리케이션에서 문자열을 처리하는데 많은 시간을 소비하는 이슈가 있었습니다. 최근에는 여러 개발자들이 소프트웨어를 더 효율적으로 만들기 위해 함수형 프로그래밍 언어를 사용하고 있습니다. Elm은 함수형 프로그래밍 언어로써, 문자열 처리를 위한 내장 함수들이 많이 포함되어 있어 개발자들이 더 쉽고 효율적으로 문자열을 다룰 수 있도록 도와줍니다.
+## 참고 링크
 
-추가적으로, 문자열을 대문자로 변환하는 대신에 어떤 방식으로 처리하는 것이 더 나은지 고민하는 방법도 있습니다. 예를 들어, 대문자로 변환 후 다시 원래 소문자로 돌릴 수도 있고, 정확한 대문자 변환 로직을 선택하는 것도 중요합니다.
-
-## 관련 정보 참고:
-
-Elm 공식 웹사이트 (https://elm-lang.org/)에서는 다양한 예제와 설명을 제공하고 있으며, Elm 내장 함수 중 문자열을 처리하는 함수들에 대한 정보를 찾을 수 있습니다. 또한 Elm 커뮤니티에서 활발하게 진행되는 논의를 통해 더 많은 정보를 얻을 수 있습니다.
+Elm 문자열 함수 : [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)  
+Elm 문자 함수 : [https://package.elm-lang.org/packages/elm/core/latest/Char](https://package.elm-lang.org/packages/elm/core/latest/Char)

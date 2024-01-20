@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av HTML"
-html_title:           "Elm: Analysering av HTML"
-simple_title:         "Analysering av HTML"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,48 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsing HTML i Elm: En Introduksjon
+
 ## Hva & Hvorfor?
 
-Å analysere HTML (Hypertext Markup Language) betyr å ta en tekst som beskriver et websideformat og gjøre om det til et leselig og manipulerbart format for datamaskiner. Programmører gjør dette for å kunne hente ut og bearbeide informasjon fra nettsider på en effektiv måte.
+Parsing av HTML handler om å forvandle brutt kode til noe som kan forstås og manipuleres av et dataprogram. Programmerere gjør dette for å hente data, manipulere websider, automatisere handlinger osv.
 
-## Slik gjør du:
+## Hvordan:
+
+La oss dykke rett i. Her er en enkel eksempel på hvordan du kan parse HTML i Elm.
 
 ```Elm
-import Html
-import Html.Attributes
+import Html exposing (Html)
+import Html.Parser exposing (..)
+import Html.Parser.Util exposing (..)
 
-parsetHtml : String -> Html msg
-parsetHtml htmlString =
+main =
     let
-        document = htmlString |> Html.parse
-    in
-        case document of 
-            Ok doc -> 
-                Html.div [] [ Html.text (Html.nodeToHtml doc) ]
-            Err erroMsg -> 
-                Html.div [] [ Html.text erroMsg ]
+        html = 
+            """
+            <html>
+                <head>
+                <title>Test</title>
+                </head>
+                <body>
+                <h1>Hello, world!</h1>
+                </body>
+            </html>
+            """
+        parser = tag "h1" (text)
+        result = run(parser, parse(html))
+    in 
+        Html.text <| case result of 
+            Ok val -> val
+            Err err -> toString err
 ```
 
-Merknader: For å analysere HTML i Elm, må du importere `Html` og `Html.Attributes` bibliotekene. Deretter kan du bruke funksjonen `parse` for å konvertere en streng av HTML-kode til et `document`-objekt. Ved å bruke `nodeToHtml` funksjonen, kan du få ut den konverterte HTML-koden og plassere den inn i et element, som i eksempelet over et `div`-element. 
+Kjør koden ovenfor og Elm vil skrive ut "Hello, world!"
 
-Eksempeloutput:
+## Dypdykk
 
-```Elm
-<div> 
-    <h1>Tittel</h1>
-    <p>Dette er en paragraf.</p>
-</div>
-```
+Elm er relativt nytt sammenlignet med andre språk som JavaScript, så støtte for HTML-parsing har måttet utvikle seg. Det er imidlertid fortsatt et noenlunde simpelt virkemiddel sammenlignet med noen andre språk. Andre alternativer for scraping av nettsider inkluderer språk som Python og JavaScript, men Elm tilbyr en mer sikker og pålitelig måte å gjøre det på.
 
-## Detaljert informasjon:
+Når du parser HTML i Elm, bruker du faktisk en funksjonell tilnærming til problemet. Du bygger opp parsefunksjoner som leser bestemte biter av HTML-kode og returnerer en verdi de representerer.
 
-HTML-analyse har vært en viktig del av nettutvikling siden starten av weben på 1990-tallet. Det har blitt gjort på forskjellige måter, for eksempel ved å bruke regex (regular expressions). Men med nye programmeringsspråk som Elm, kan dette gjøres enklere og mer pålitelig ved hjelp av funksjonsprogrammering.
+## Se Også
 
-Et alternativ til Elm for å analysere HTML er å bruke JavaScript, som også er mye brukt for frontend-utvikling. Men i motsetning til JavaScript, som er et multi-paradigme språk, er Elm spesielt designet for å håndtere funksjonell programmering, noe som gjør det til et kraftig verktøy for HTML-analyse.
+Her er noen nyttige lenker til relaterte ressurser:
 
-En interesant detalj ved Elm sin `parse`-funksjon er at den bruker et konvertibelt bibliotek som heter "elm-parser". Med dette biblioteket kan `parse` gjøre om tekst til data på en generisk måte, slik at det kan brukes til å konvertere andre formater i tillegg til HTML.
-
-## Se også:
-
-- Elm's offisielle dokumentasjon for HTML-analyse: https://package.elm-lang.org/packages/elm/html/latest/Html
-- En detaljert guide om Elm sin HTML-analysefunksjon: https://medium.com/@DevProgress/parse-html-in-elm-using-elm-parser-3e496e3bdd50
+- [Elm HTML Parser Docs](https://package.elm-lang.org/packages/elm-lang/html/latest/Html-Parser) - Den offisielle dokumentasjonen er alltid et bra sted å starte.
+- [Html Parser in Elm](https://becoming-functional.com/html-parser-in-elm-1-5efe4922a28d) - En god tutorial som går mer detaljert inn på hvordan du bruker `Html.Parser`.
+- [HTML Parsing in Elm](https://www.youtube.com/watch?v=Nf6a8ub9smM) - Om du foretrekker videoformat, presenterer denne YouTube-videoen parsing i Elm på en klar og forståelig måte.

@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "C# recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "C#"
 category:             "C#"
@@ -12,30 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request with basic authentication is a way for programmers to securely access web services using a username and password. This method is commonly used to authenticate users and grant access to protected resources on a server.
+Basic Authentication with HTTP requests gives us a way to protect our data by including a Username and Password in the request. As developers, we implement this in our applications when we want to interact with protected APIs or services.
 
-## How to:
+## How To:
 
-To send an HTTP request with basic authentication in C#, you can use the ```NetworkCredentials``` class along with the ```WebRequest``` class. Here's an example of how to make a GET request with basic authentication:
+Here's a quick and simple example:
+```C#
+using System;
+using System.Net.Http;
+using System.Text;
 
+class Program
+{
+    static void Main()
+    {
+        var httpClient = new HttpClient();
+        var byteArray = Encoding.ASCII.GetBytes("myusername:mypassword");
+        httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+        var response = httpClient.GetAsync("http://my_secure_api.com").GetAwaiter().GetResult();
+
+        Console.WriteLine(response.StatusCode);
+    }
+}
 ```
-var request = WebRequest.Create("https://example.com/api/resource");
-request.Credentials = new NetworkCredential("username", "password");
-var response = request.GetResponse();
-```
-
-This code sets the credentials using the ```NetworkCredential``` class and makes a request to the specified URL. The response will contain the data from the requested resource.
+In this snippet, "myusername:mypassword" are your credentials (replace them with your actual ones) and "http://my_secure_api.com" is the URL of the secured API you want to access. The status of the request will be displayed.
 
 ## Deep Dive
 
-Basic authentication has been around since the early days of the internet and is one of the simplest methods for authenticating users. It involves sending a base64-encoded string containing the username and password in the HTTP header. While this method is easy to implement, it has some security drawbacks, such as exposing the username and password in plain text.
+**Historical Context**: Basic Authentication is one of the simplest methods to enforce access controls to web resources, and it's been there since the early days of HTTP. However, because it involves transmitting plain credentials, it should always be used along with HTTPS.
 
-An alternative to basic authentication is OAuth, which is more secure and supports token-based authentication. However, basic authentication is still commonly used for its simplicity and compatibility with a wide range of servers.
+**Alternatives**: There are many modern alternatives available for authentication, such as OAuth, JWT (JSON Web Token), and API Key-based authentication. Each comes with its strengths and weaknesses and should be chosen according to the requirements.
 
-In C#, the ```WebRequest``` class handles all low-level HTTP operations such as sending and receiving requests. The ```NetworkCredential``` class provides a simple way to set the basic authentication credentials for a request.
+**Implementation Details**: Note that, by using the HttpClient `DefaultRequestHeaders.Authorization` property, we set the authorization header for all subsequent requests made with this HttpClient instance. 
 
 ## See Also
 
-- [NetworkCredential Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.networkcredential)
-- [WebRequest Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.webrequest)
-- [HTTP Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+[HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0) from Microsoft's official .NET docs offers key details about the HttpClient class and its methods.
+
+[Different forms of Authentications](https://www.loginradius.com/engineering/blog/different-forms-of-website-authentication/) is a good resource for understanding alternatives for Basic Authentication.

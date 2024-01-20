@@ -1,7 +1,7 @@
 ---
-title:                "कंप्यूटर प्रोग्रामिंग पर किसी भी संख्याओं को उत्पन्न करना"
-html_title:           "Java: कंप्यूटर प्रोग्रामिंग पर किसी भी संख्याओं को उत्पन्न करना"
-simple_title:         "कंप्यूटर प्रोग्रामिंग पर किसी भी संख्याओं को उत्पन्न करना"
+title:                "यादृच्छिक संख्याओं का निर्माण"
+html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
+simple_title:         "यादृच्छिक संख्याओं का निर्माण"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,54 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या और क्यों?
-प्रोग्रामर यादृच्छिक संख्याओं को उत्पन्न करते हैं। वे यह करते हैं क्योंकि यादृच्छिक संख्याओं को उपयोग करके वे अपनी प्रोग्रामों में विभिन्न जानकारी या प्रतिक्रियाएं बना सकते हैं।
+## क्या और क्यों?
 
-कैसे करें:
-यहां हम दो उदाहरण देखेंगे जिनमें हम "Math.random()" मेथड का उपयोग करके यादृच्छिक संख्याएं बना सकते हैं।
+रैंडम नंबर उत्पन्न करना मतलब होता है अनपेक्षितापूर्वक नंबर प्राप्त करना। यह उन स्थितियों में उपयोगी होता है जब किसी अनपेक्षित परिणाम की जरुरत होती है, जैसे कि कसीनो गेम में, या किसी सिमुलेशन के दरम्यान पढ़ने के लिए डाटा चुनने के लिए। 
 
-```java
-// यादृच्छिक दो संख्याओं को मुद्रित करें
-System.out.println(Math.random());
-System.out.println(Math.random());
-```
+## कैसे:
 
-इस स्क्रिप्ट को रन करने पर हमें कुछ इस तरह का आउटपुट मिलेगा:
+Java में रैंडम नंबर उत्पन्न करने के लिए, हम `java.util.Random` या `java.util.concurrent.ThreadLocalRandom` क्लास का उपयोग कर सकते हैं। 
 
-```
-0.7234
-0.156
-```
+ ```Java
+    import java.util.Random;
 
-गोल नंबर:
-अद्यतन करने के लिए यादृच्छिक संख्याओं को बनाने का एक अन्य उपाय "Random" ऑब्जेक्ट का उपयोग करना है।
+    public class Main {
+        public static void main(String[] args) {
+            Random rand = new Random();
+            int randomNumber = rand.nextInt(100);
+            System.out.println("Generated Random Number is : " + randomNumber);
+        }
+    }
+ ```
+ आउटपुट अनपेक्षित रूप से बदलेगा, लेकिन यह 0 से 99 के बीच का कोई एक नंबर होगा।
 
-```java
-// रैंडम ऑब्जेक्ट बनाएं
-Random rand = new Random();
+## गहरा डाइव:
 
-// यादृच्छिक एक संख्या प्राप्त करें
-int num = rand.nextInt();
+रैंडम नंबर उत्पन्न करने की आवश्यकता लकड़ी से चलकर कॉम्प्युटर साइंस तक है। `java.util.Random` क्लास 1997 में जावा 1.1 के साथ जारी किया गया, जबकि `java.util.concurrent.ThreadLocalRandom` क्लास 2004 में जावा 1.5 के साथ जारी किया गया।
 
-// प्रारंभिक और अंतिम सीमा द्वारा निर्धारित एक संख्या प्राप्त करें
-int numInRange = rand.nextInt(100) + 1;
-System.out.println(numInRange);
-```
+`java.util.Random` का उपयोग एकल थ्रेडे एनवायरनमेंट में, और `java.util.concurrent.ThreadLocalRandom` का उपयोग बहु थ्रेडे एनवायरनमेंट में होता है। जबकी `java.util.concurrent.ThreadLocalRandom` क्लास `java.util.Random` क्लास की संवर्धित श्रेणी है।
 
-इस स्क्रिप्ट को रन करने पर हमें कुछ इस तरह का आउटपुट मिलेगा:
+## देखने के लिए भी:
 
-```
-56
-```
-
-कहानी का समय:
-यादृच्छिक संख्याओं को परिभाषित करने का पहला तरीका एक सरल फार्मूला "यादृच्छिक नंबर तथ्यांक" उपयोग करना था। इसके बाद 1960 में IBM ने "RANDU" जेनरेटर को बनाया जो कि अब भी कुछ भविष्यवाणियों के लिए उपयोग में है।
-
-अल्टरनेटिव:
-यदि आप यादृच्छिक संख्याओं को उपयोग करने के लिए एक तीसरा तरीका चाहते हैं, तो आप एक "SecureRandom" ऑब्जेक्ट का उपयोग कर सकते हैं जो कि इसमें कुछ अतिरिक्त सुरक्षा सुविधाओं को शामिल करता है।
-
-नीचे देखें:
-अधिक जानकारी के लिए नीचे दी गई साइटें देखें:
-- https://www.geeksforgeeks.org/java-math-random-method-examples/
-- https://www.baeldung.com/java-generate-random-long-float-integer-double
-- https://www.tutorialspoint.com/java/lang/math_random.htm
+1. आधिकारिक जावा डॉक्युमेंटेशन ([`java.util.Random`](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Random.html), [`java.util.concurrent.ThreadLocalRandom`](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/concurrent/ThreadLocalRandom.html))
+2. Stack Overflow : ["जावा में एक रैंडम नंबर कैसे जनरेट करें?"](https://stackoverflow.com/questions/363681/how-do-i-generate-random-integers-within-a-specific-range-in-java)
+3. Baeldung tutorial : ["रैंडम नंबर जनरेट करने के लिए जावा का गाइड"](https://www.baeldung.com/java-generate-random-long-float-integer-double)

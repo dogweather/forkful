@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "TypeScript: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Stringien interpolointi on tekniikka, jossa ohjelmoijat sisällyttävät muuttujien arvoja osaksi merkkijonoja. Tämä tekee koodista luettavampaa ja vähentää tarvetta yhdistellä merkkijonoja "+" -merkeillä.
+# Miten merkkijonojen interpolointia käytetään TypeScriptin avulla?
+Tervetuloa oppimaan yhdessä merkkijonon interpoloinnista TypeScriptin (nykyversio) avulla yksinkertaisin, suoraviivaisin sanankääntein. Vältämme turhaa jaarittelua ja keskitymme asiaan. 
 
-Usein tarvitsemme merkkijonoja, jotka sisältävät muuttuvia arvoja, kuten käyttäjän syötteitä tai tietokannasta haettuja tietoja. Stringien interpoloiminen helpottaa näiden muuttujien lisäämistä merkkijonoihin ilman monimutkaisia operaatioita.
+## Mikä & Miksi?
+Merkkijonon interpolointi on tapa yhdistää muuttujia ja laskentaa suoraan merkkijonojen sisään. Tämä tekee koodin selkeämmäksi ja helpommin luettavaksi.
 
-## Miten?
-Ts._stringin_tehtävaisiin_rajoittaminen=function(kohde) {
-  palauta tsString + kohde + "tehtäväsi on rajallinen!";
-}
+## Näin se toimii:
+```TypeScript
+let nimi = "Pekka";
+let tervehdys = `Hei, ${nimi}!`;
 
-tsString = "Tervetuloa";
-tehtävä = "kirjoittaa";
+console.log(tervehdys); // tulostaa: "Hei, Pekka!"
+```
 
-Ts.tee_stringi(tsString,tehtävä);
+## Sukellus syvemmälle: 
+Merkkijonon interpolointi on ollut käytössä vuosikymmenten ajan eri kielissä, mutta se lisättiin JavaScriptiin (ja siten TypeScriptiin) vasta ES6-versiossa. 
 
-// Tulostaa "Tervetuloa kirjoittaa tehtäväsi on rajallinen!"
+Vaihtoehtoja interpoloinnille ovat muun muassa perinteinen merkkijonojen yhdistäminen sekä + -operaattori. Niiden käyttö voi kuitenkin olla monimutkaista ja altis virheille.
 
-## Syvempi sukellus
-Stringien interpolointia käytettiin alun perin C-kielen sprintf-funktiolla, mutta nykyään monet ohjelmointikielet, kuten TypeScript, tarjoavat sisäänrakennetun tavan interpoloida merkkijonoja.
+Interpoloinnin taustalla TypeScript luo uuden merkkijonon, johon se liittää välittömästi muuttujat ja lausekkeet. Sen ansiosta koodista tulee siistimpää.
 
-Vaihtoehtoisesti voimme käyttää myös merkkijonojen muotoilua, jossa käytetään %-merkkejä merkitsemään sijoituskohtia muuttujille merkkijonossa. Tämä vaihtoehto voi kuitenkin olla haastavampi ylläpidettävyyden kannalta, koska muuttujat tulee seurata tarkasti ja niiden järjestys merkkijonossa on tärkeä.
+## Katso myös:
+- [Merkkijonojen interpolointi MDN Web Docsissa](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Template_literals)
+- [TypeScriptin viralliset dokumentit](https://www.typescriptlang.org/docs/)
 
-Stringien interpolointi TypeScriptissä käyttää välimerkkiä $ avainarvojen edessä osoittamaan, että kyseessä on muuttuja ja ei osa merkkijonoa. Tämä tekee koodista selkeämpää ja vähentää mahdollisuutta virheille.
-
-## Katso myös
-[TypeScriptin dokumentaatio stringien interpoloinnista] (https://www.typescriptlang.org/docs/handbook/basic-types.html#string-interpolation)
+Muista yhtenäinen ja siisti koodaus!

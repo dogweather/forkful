@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Haskell: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi ?
 
-Obtenir la date actuelle peut sembler être une tâche simple, mais pour les programmeurs, cela peut être un défi intéressant. En termes simples, obtenir la date actuelle signifie récupérer la date et l'heure actuelles du système de l'ordinateur. Les programmeurs le font pour une variété de raisons, notamment pour suivre le temps, enregistrer l'heure à laquelle une tâche a été effectuée ou pour afficher la date dans une interface utilisateur.
+La récupération de la date actuelle est une tâche courante en programmation qui consiste à obtenir et à stocker la date du moment. C'est essentiel pour le suivi des événements, la journalisation et la gestion du temps dans les applications.
 
-## Comment faire:
+## Comment faire :
 
-Voici un exemple simple de code Haskell pour obtenir la date actuelle et l'afficher dans le format "AAAA-MM-JJ HH:MM:SS":
+Pour obtenir la date actuelle en Haskell, le module Data.Time est votre ami. Voici un simple morceau de code pour obtenir la date actuelle :
 
-```
-import Data.Time.Clock
-import Data.Time.Format
+```Haskell
+import Data.Time
 
+main :: IO ()
 main = do
-    time <- getCurrentTime
-    let formattedTime = formatTime defaultTimeLocale "%Y-%m-%d %H:%M:%S" time
-    putStrLn formattedTime
+    currentDay <- fmap utctDay getCurrentTime
+    putStrLn ("La date du jour est: " ++ show currentDay)
 ```
 
-Voici la sortie que vous devriez obtenir en exécutant le code ci-dessus:
+Lorsque vous exécutez ce code, il affiche la date actuelle sous la forme `aaaa-mm-jj`.
 
-```
-2020-06-14 11:05:23
-```
+## Plongée en profondeur :
 
-## Plongez en profondeur:
+Historiquement, obtenir la date et l'heure actuelles est une tâche basique mais indispensable en programmation, quel que soit le langage que vous utilisez.
 
-Historiquement, la façon de récupérer la date actuelle variait selon le système d'exploitation et le langage de programmation utilisés. Mais avec l'avènement de Haskell, il existe désormais une méthode standard pour le faire grâce au module "Data.Time". Cependant, il existe toujours d'autres alternatives, telles que l'utilisation de bibliothèques tierces ou l'accès aux programmes système via des appels de système.
+En Haskell, on peut aussi utiliser le module System.Time, mais il est obsolète. Data.Time est le module de choix pour gérer le temps et les dates en Haskell.
 
-En termes d'implémentation, le module "Data.Time" utilise une structure de données appelée UTCTime, qui contient les informations sur la date et l'heure, ainsi qu'une fonction getCurrentTime qui renvoie cet objet. Ensuite, la fonction formatTime est utilisée pour convertir cette structure en une chaîne de caractères dans le format souhaité.
+Il existe d'autres fonctions dans le module Data.Time pour gérer le format de la date et l'heure, comme formatTime, parseTimeM etc.
 
-## Voir aussi:
+## A voir aussi :
 
-Pour en savoir plus sur la manière d'obtenir la date actuelle en Haskell, voici quelques liens utiles:
-
-- [Documentation du module Data.Time de Haskell](https://hackage.haskell.org/package/time/docs/Data-Time.html)
-- [Exemples de code pour obtenir la date actuelle en Haskell](https://wiki.haskell.org/Date_and_time)
-- [Appels système en Haskell](https://hackage.haskell.org/package/unix/docs/System-Posix-Syscall.html)
+- Pour un aperçu complet du module Data.Time, consultez la [documentation officielle](http://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
+- Pour une discussion plus approfondie sur le temps et les dates en Haskell, vous pouvez lire l'[article sur School of Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time).

@@ -1,7 +1,7 @@
 ---
-title:                "Unterstrings extrahieren"
-html_title:           "PowerShell: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -11,31 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Extrahieren von Teilzeichenfolgen ist die Praxis des Extrahierens von bestimmten Zeichen aus einer längeren Zeichenfolge basierend auf bestimmten Regeln oder Kriterien. Programmierer nutzen diese Technik häufig, um Daten zu filtern oder zu bearbeiten, um sie für bestimmte Zwecke zu formatieren oder zu analysieren.
 
-## Wie geht's?
-Das Extrahieren von Teilzeichenfolgen ist in PowerShell einfach mit dem Befehl ```$string.SubString(startIndex, length)``` durchzuführen. Der Befehl gibt die Teilzeichenfolge zurück, die an der angegebenen Startposition beginnt und die angegebene Länge hat.
+Das Extrahieren von Teilstrings ist das Herausschneiden kleinerer Zeichenketten aus einer größeren Zeichenkette. Programmierer machen das, um spezifische Daten zu isolieren und zu vereinfachen.
 
-Beispiel:
+## Wie es geht:
+
+Mit PowerShell können wir Teilstrings auf verschiedene Weisen extrahieren. Hier sind einige Beispiele:
+
 ```PowerShell
-$string = "PowerShell ist der beste! 😎"
-$newString = $string.SubString(0, 9)
-$newString # Ausgabe: PowerShell
-
-$newString = $string.SubString(18, 3)
-$newString # Ausgabe: 😎
+# Ein Beispielstring
+$string = "Hallo Welt"
+ 
+# Extrahieren des ersten Teilstrings
+$teilstring1 = $string.Substring(0,5)
+Write-Output $teilstring1
 ```
+Output: `Hallo`
 
-## Tiefer Einblick
-Das Extrahieren von Teilzeichenfolgen ist eine gängige Methode in vielen programmierbaren Sprachen, einschließlich PowerShell. Es ist besonders nützlich bei der Manipulation von Zeichenfolgen und wird oft in Kombination mit anderen Befehlen verwendet, um komplexere Aufgaben zu erledigen.
+```PowerShell
+# Extrahieren des zweiten Teilstrings
+$teilstring2 = $string.Substring(6)
+Write-Output $teilstring2
+```
+Output: `Welt`
 
-Alternativen zum Extrahieren von Teilzeichenfolgen können Regex-Ausdrücke oder das Splitten von Zeichenfolgen basierend auf bestimmten Trennzeichen sein. In PowerShell gibt es auch spezielle Befehle wie ```Select-String```, die das Extrahieren von Teilzeichenfolgen in einer Zeichenfolge erleichtern können.
+## Vertiefung
 
-Bei der Implementierung des Extrahierens von Teilzeichenfolgen in PowerShell gibt es einige Dinge zu beachten, wie z.B. die Verwendung von Index 0 als Startposition, wenn die Nummerierung der Zeichenfolgen in PowerShell bei 0 beginnt.
+In historischer Hinsicht ist das Extrahieren von Teilstrings eine grundlegende Fähigkeit in der Programmierung und existiert bereits seit den frühen Tagen von COBOL und FORTRAN.
 
-## Sieh dir auch an
-Für weitere Informationen und Beispiele zum Extrahieren von Teilzeichenfolgen in PowerShell, sieh dir die folgenden Quellen an:
+Alternativ können wir das '-'Operator in Kombination mit dem `split`-Befehl verwenden, um einen String zu teilen und Teilstrings zu erstellen. Um die Implementierung zu optimieren, benutzen wir in den meisten Fällen jedoch die gängige Methode, die `Substring`-Methode.
 
-- [Microsoft Dokumentation: String.SubString Methode](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=netcore-3.1)
-- [SS64: Substring](https://ss64.com/ps/substring.html)
-- [TechNet: Powershell String Manipulation with Substring](https://social.technet.microsoft.com/wiki/contents/articles/26418.powershell-string-manipulation-with-substring.aspx)
+```PowerShell
+# Ein Beispiel mit dem '-'Operator und "split"-Befehl
+$string = "Hallo-Welt"
+$teilstrings = $string -split "-"
+Write-Output $teilstrings
+```
+Output: `Hallo`, `Welt`
+
+Beachte bitte, dass wir bei Verwendung der `Substring`-Methode mit 0-Anfangen zu zählen, während wir bei der '-split' Methode, jeden Teilstring als separates Element behandeln.
+
+## Siehe auch:
+
+- Mehr Anwendungsbeispiele für das Extrahieren von Teilstrings in PowerShell: https://docs.microsoft.com/de-de/dotnet/api/system.string.substring?view=net-5.0
+- Erläuterungen zum 'split'-Operator in PowerShell: https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.1
+- Microsoft Dokumentation zu PowerShell: https://docs.microsoft.com/de-de/powershell/

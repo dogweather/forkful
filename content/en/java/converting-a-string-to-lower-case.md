@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Java recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Java"
 category:             "Java"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? 
-Converting a string to lower case simply means changing all the characters in the string to their lower case equivalents. This is commonly done by programmers to improve string comparisons or to ignore capitalization in user input.
+## What & Why?
+
+Converting a string to lowercase means transforming every uppercase letter in a string to its lowercase equivalent. Developers often do this to compare strings without considering case differences and make data case-insensitive.
 
 ## How to:
-To convert a string to lower case in Java, we can use the `toLowerCase()` method from the `String` class. Here's an example:
+
+Here's the basic idea: Java's `String` class has a built-in `toLowerCase()` method. 
+
 ```Java
-String name = "JOHN DOE";
-String lowercaseName = name.toLowerCase();
-System.out.println(lowercaseName); // Output: john doe
+String str = "Hello Techies!";
+str = str.toLowerCase(); // Set str to the lowercase version
+System.out.println(str); // 'hello techies!'
 ```
-We can also convert individual characters to lower case using the `toLowerCase()` method from the `Character` class. Here's an example:
-```Java
-char letter = 'A';
-char lowercaseLetter = Character.toLowerCase(letter);
-System.out.println(lowercaseLetter); // Output: a
-```
+Then, your program prints `hello techies!`.
 
-## Deep Dive:
-Historically, case-insensitive string comparisons were done by converting the strings to upper case. However, this approach is not suitable for all languages, especially those with complex upper and lower case rules. Hence, the `toLowerCase()` method was introduced in Java version 1.0.
+Easy peasy, lemon squeezy.
 
-An alternative to using this method is to compare strings using the `equalsIgnoreCase()` method, which ignores case without changing the original string.
+Remember that strings in Java are immutable. So `toLowerCase()` doesn't change the string itself, but gives you a new one.
 
-The `toLowerCase()` method uses the default locale's rules for converting characters to lower case. This can cause discrepancies when used in different locales. To avoid this, we can use the `toLowerCase(Locale)` method, which allows us to specify the locale to be used for conversion.
+## Deep Dive
 
-## See Also:
-- [Java String Class](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Java Character Class](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html)
-- [Introduction to Locale in Java](https://docs.oracle.com/javase/tutorial/i18n/locale/index.html)
+String lowercase conversion isn't as modern as you might think. This needs tracing back to when computers were physically massive, and upper-case-only monitors were common due to technical limitations.
+
+Sure, `toLowerCase()` is the usual way, but you've got options:
+- `StringUtils.lowerCase()`: part of Apache's Commons Lang, and it's nicely null-safe.
+- `CharMatcher.javaUpperCase().replaceFrom()`: from Google's Guava, if you want to get fancy.
+
+Under the hood, `toLowerCase()` uses `Character.toLowerCase()`. It refers to Unicode to accurately change upper case to lower case. So, it's not just for English letters. It deals with Greek, Cyrillic and others too.
+
+## See Also
+
+Interested about `String` class and its methods, check Java docs [here](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html).
+
+For Apache's StringUtils, visit the [official documentation](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html).
+
+Want to catch the Guava wave? Go [here](https://guava.dev/releases/snapshot-jre/api/docs/com/google/common/base/CharMatcher.html).

@@ -1,7 +1,7 @@
 ---
-title:                "Tarkista onko hakemistoa olemassa"
-html_title:           "C++: Tarkista onko hakemistoa olemassa"
-simple_title:         "Tarkista onko hakemistoa olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C++: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Tiedoston hakemiston tarkistaminen on prosessi, jossa ohjelmoijat tarkistavat, onko tietyssä sijainnissa oleva tiedosto tai hakemisto olemassa. Tämä on erittäin tärkeä askel, koska se auttaa estämään virheitä ja toimintahäiriöitä, kun ohjelma käsittelee tiedostoja ja hakemistoja. Ohjelmoijat tekevät tämän varmistaakseen, että heidän ohjelmansa suorittaa oikeat toiminnot ja käsittelee tietoja oikein.
+Tarkistaminen, onko kansio olemassa, on menetelmä selvittää, löytyyko järjestelmästä tiettyä kansiota. Ohjelmoijat tekevät sen tavallisesti ennen kuin he kirjoittavat tiedostoja kyseiseen kansioon, jotta he voivat käsitellä virheitä paremmin.
 
-## Kuinka tehdä se:
+## Miten Tehdä:
+Voit tarkistaa, onko kansio olemassa, käyttäen `std::filesystem` kirjastoa. Tässä on esimerkki:
+
 ```C++
-#include <iostream>
 #include <filesystem>
 
+bool directoryExists(const std::string& dir) {
+    return std::filesystem::exists(dir);
+}
+
 int main() {
-    std::filesystem::path dirPath = "C:/Users/Käyttäjä/Tiedostot";
-    if (std::filesystem::exists(dirPath)) {
-        std::cout << "Hakemisto on olemassa." << std::endl;
-    }
-    else {
-        std::cout << "Hakemistoa ei löydy." << std::endl;
-    }
-    return 0;
+   std::string dir = "/path/to/directory";
+   if(directoryExists(dir)) {
+       std::cout << "Directory exists\n";
+   } else {
+       std::cout << "Directory doesn't exist\n";
+   }
+
+   return 0;
 }
 ```
-Esimerkissä käytetään ```<filesystem>``` kirjastoa, joka on uusi C++17 standardin mukainen tapa käsitellä tiedostoja ja hakemistoja. Funktio ```exists()``` tarkistaa, onko annettu polku olemassa ja palauttaa bool-arvon. Tämän jälkeen tulostetaan vastaava viesti.
+Jos kansio löytyy, ohjelma tulostaa "Directory exists". Jos kansiota ei löydy, tulostuu "Directory doesn't exist".
 
-Koodin tulos voisi olla seuraavanlainen:
-```
-Hakemisto on olemassa.
-```
+## Syvällinen Katsaus:
+Historiallisesti tarkistaaksemme, onko kansio olemassa, usein käytettiin `stat` funktiota POSIX standardista. C++17 lisäsi kuitenkin `std::filesystem` kirjaston, joka tarjoaa yksinkertaisen ja tehokkaan tavan tällaiseen toimintaan.
 
-## Syväsukellus:
-Tiedostojen ja hakemistojen käsittely on ollut osa ohjelmointia jo pitkään. Aiemmin ohjelmoijat joutuivat käyttämään mm. C:n ```<dirent.h>``` kirjastoa, joka ei ole yhtä käyttäjäystävällinen ja monimutkainen. Uudemmat C++ versiot ovat helpottaneet tätä prosessia kehittämällä uusia menetelmiä ja kirjastoja, kuten ```<filesystem>```.
+Vaihtoehtoisesti voit käyttää myös `boost::filesystem` -kirjastoa, joka on samanlainen kuin `std::filesystem`, mutta toimii vanhemmilla C++ standardeilla.
 
-On myös olemassa muita tapoja tarkistaa hakemistoja, kuten käyttää POSIX:n ```stat()``` funktiota tai antaa käyttäjän syöttää polku itsenäisesti ```cin``` komennolla. Nämä menetelmät eivät kuitenkaan ole yhtä tehokkaita ja suositeltavia kuin ```<filesystem>``` kirjasto.
+Toteuttaessa, `std::filesystem::exists` funktio tarkistaa tiedoston tai kansion olemassaolon polun avulla. Se palauttaa `false`, jos polku ei ole olemassa tai jos tapahtui virhe (esim. jos sinulla ei ole riittäviä oikeuksia).
 
-## Katso myös:
-- [C++17 <filesystem>](https://en.cppreference.com/w/cpp/filesystem)
-- [dirent.h kirjasto](https://www.gnu.org/software/libc/manual/html_node/Reading_002fClosing_002fRemoving-Directory.html)
+## Katso Myös:
+Lisätietoja voit löytää seuraavista lähteistä:
+- [std::filesystem::exists](http://www.cplusplus.com/reference/filesystem/exists/)
+- [Boost.Filesystem library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)

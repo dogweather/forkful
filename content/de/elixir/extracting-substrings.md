@@ -1,7 +1,7 @@
 ---
-title:                "Unterstrings extrahieren"
-html_title:           "Elixir: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Das Entnehmen von Teilstrings bezieht sich auf die Aktion, bestimmte Teile eines Strings aus einem größeren Text zu extrahieren. Programmierer verwenden dies, um einen bestimmten Teil eines Strings zu isolieren, der für die Ausführung ihres Codes benötigt wird.
+Das Extrahieren von Teilstrings (substrings) bedeutet, bestimmte Teile einer Zeichenkette auszuwählen und zu isolieren. Programmierer machen dies, um Informationen zu analysieren, zu filtern oder zu manipulieren.
 
-## Wie tue ich das?
+## So geht's:
 
-Hier sind einige Beispiele zur Verwendung von ```Elixir String.split```:
+In Elixir können wir die Funktion `String.slice/3` verwenden, um Teilstrings zu extrahieren. Hier ist ein einfaches Beispiel:
 
-```
-iex> String.split("Hallo Welt", " ") 
-["Hallo", "Welt"]
-
-iex> String.split("123-456-789", "-") 
-["123", "456", "789"]
-
-iex> String.split("Das ist ein längerer Satz", " ", trim: true) 
-["Das", "ist", "ein", "längerer", "Satz"]
-
-iex> String.split("Hund, Katze, Maus", [", ", ","]) 
-["Hund", "Katze", "Maus"]
-
+```elixir
+str = "Elixir ist toll"
+substring = String.slice(str, 0, 6)
+IO.puts substring # Ausgabe: "Elixir"
 ```
 
-## Tiefergehende Analyse
+Ein weiteres Beispiel zeigt, wie man den letzten Teil einer Zeichenkette extrahiert:
 
-Das Entnehmen von Teilstrings ist eine häufig verwendete Methode in der Programmierung, um eine bestimmte Anzahl von Zeichen aus einem längeren String auszuwählen. Beispielsweise kann dies für die Verarbeitung von Nutzereingaben oder für das Durchsuchen großer Textdateien nützlich sein.
+```elixir
+str = "Elixir ist toll"
+substring = String.slice(str, -4, 4)
+IO.puts substring # Ausgabe: "toll"
+```
 
-Alternativ zum Entnehmen von Teilstrings kann auch das Öffnen und Lesen von Dateien verwendet werden, um bestimmte Informationen zu extrahieren. In Elixir kann dies mit der Funktion "File.open" durchgeführt werden.
+## Deep Dive
 
-Es gibt auch mehrere Implementierungen des Entnehmens von Teilstrings in Elixir, z.B. die Funktionen "String.slice" und "String.replace".
+Die Extraktion von Teilstrings ist eine grundlegende Funktion jedes modernen Programmiersprachen. In Elixir wird sie durch das `:binary` Modul ermöglicht, das die binäre Datenstruktur der erlang Maschine nutzt.
+
+Alternativ zur `String.slice/3` Methode, können Sie auch die `:binary.part/2` Funktion verwenden. Sie kann etwas flexibler sein, erfordert aber ein bisschen mehr Code.
+
+In Sachen Implementierung wird das Extrahieren von Teilstrings in Elixir tatsächlich sehr effizient ausgeführt. Dies liegt größtenteils an der Art und Weise, wie erlang Binärdateien handhabt. Statt eine Kopie des Teilstrings zu erstellen, behält es einfach einen Verweis auf den ursprünglichen String und verschiebt die Start- und/oder Endzeiger.
 
 ## Siehe auch
 
-- [Elixir String.split-Dokumentation](https://hexdocs.pm/elixir/String.html#split/2)
-- [Elixir File.open-Dokumentation](https://hexdocs.pm/elixir/File.html#open/2)
-- [Elixir String.slice-Dokumentation](https://hexdocs.pm/elixir/String.html#slice/3)
-- [Elixir String.replace-Dokumentation](https://hexdocs.pm/elixir/String.html#replace/3)
+- Elixir offizielle Dokumentation: [String](https://hexdocs.pm/elixir/String.html) und [:binary](http://erlang.org/doc/man/binary.html) Modul
+- Erlang Dokumentation: [Einführung in Binärdateien](http://erlang.org/doc/programming_examples/bit_syntax.html)
+- Artikel: [Effiziente Zeichenkettenmanipulation in Erlang](https://medium.com/@jlouis666/efficient-string-handling-in-erlang-2d7e65ab0143)

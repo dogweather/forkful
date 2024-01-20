@@ -1,6 +1,6 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "Java: המרת תאריך למחרוזת"
+html_title:           "Bash: המרת תאריך למחרוזת"
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Java"
 category:             "Java"
@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה? 
-המרת תאריך למחרוזת היא פעולת תכנות המקבלת תאריך מסוים וממירה אותו למחרוזת בפורמט מסוים. תהליך זה נחוץ לצורך הצגת תאריך עבור משתמשים וליישומי ממשק משתמש. 
+## מה זה ולמה?
+המרת תאריך למחרוזת ב-Java, זו הפעולה של שינוי ערך מסוג תאריך לטקסט. תכנתים עושים את זה כאשר הם צריכים להציג את התאריך בצורה מסוימת או לשמור אותו בקובץ טקסט.
 
-כיצד לעשות: 
-שני דוגמאות קוד ותוצאות דוגמא יתקלו בתוך בלוק קוד ```Java ... ```. 
-- דוגמא 1: 
-```
-// Imports ייבואים 
-import java.time.LocalDate; 
-import java.time.format.DateTimeFormatter;
+## איך לעשות:
+להלן דוגמה של קטע קוד שמראה איך להמיר תאריך למחרוזת ב-Java.
 
-// תאריך קבוע 
-LocalDate date = LocalDate.of(2021, 11, 5); 
-
-// המרת תאריך למחרוזת בפורמט מבוקש 
-String stringDate = date.format(DateTimeFormatter.ofPattern("dd/MM/yyyy")); 
-
-// הדפסת התוצאה 
-System.out.println(stringDate); 
-// פלט צפוי: 05/11/2021
-```
-- דוגמא 2: 
-```
-// Imports ייבואים 
-import java.util.Calendar; 
+```Java
 import java.text.SimpleDateFormat;
+import java.util.Date;
 
-// תאריך מאתחל 
-Calendar date = Calendar.getInstance(); 
-date.set(2021, 3, 26);
-
-// המרת תאריך למחרוזת בפורמט מבוקש 
-SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy"); 
-String stringDate = sdf.format(date.getTime()); 
-
-// הדפסת התוצאה 
-System.out.println(stringDate); 
-// פלט צפוי: 26/04/2021
+public class DateToString {
+    public static void main(String[] args) {
+        Date date = new Date();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy");
+        String strDate = formatter.format(date);
+        System.out.println(strDate);
+    }
+}
 ```
 
-צלילה עמוקה: 
-ההמרה של תאריך למחרוזת היא פעולה חשובה בתכנות המאפשרת למנוע באגים ולהציג מידע למשתמשים בפורמט נוח וקריא. כמו כן, קיימות גם פתרונות אחרים להמרת תאריך כגון: להשתמש בכלי ניהול תאריכים מוכנים כמו Joda-Time או ליצור ממשק עצמאי שלנו. 
-בכניסת Java 8, נוספו מספר דפוסי תאריך חדשים למחלופים של דוגמאות המסופקות בכתב קוד שנמצא בחבילה ```java.time.*```. יישום קיים של הוראות ISO-8601 deals מאפשר להמיר תאריך למחרוזת וכן להתאים אותו לפונקציות שונות לדוגמא: השוואת תאריכים, הוספת וחיסור שני תאריכים ועוד. הדור הירושלמי של תקני תאריך שמאפשרת הגדרת תאריך מוכלל כמו Joda-Time ```java.util.Calendar```.
+הפלט של הקוד הזה יהיה התאריך שבו נעשה הרץ, לדוגמה: 
+```
+27-12-2021
+```
 
-ראו גם: 
-למידע נוסף על ההמרה של תאריך למחרוזת והחישובים השונים הקשורים לזה, ניתן לעיין במסמכי ייעוץ ומאמרי תופעה אחרים לגבי ניהול תאריכים בשפת Java. לדוגמא: [מסמכי זמן ותאריך בשפת Java](https://docs.oracle.com/javase/tutorial/datetime/index.html), [מדריך תאריכים ושעות ב-Javatpoint](https://www.javatpoint.com/java-date-time).
+## צלילה עמוקה
+המרת תאריך למחרוזת התחילה להשתמש יותר מאז ש-Java 1.1 חודשה. ה- API הישן לניהול תאריכים, java.util.Date, הוא מאוד פחות אינטואיטיבי מה- API החדש, java.time. ישנן ב-Java שיטות אחרות להמרת תאריך למחרוזת אבל השיטה עם SimpleDateFormat היא הרגילה יותר. יש להתחשב בעובדה שישנך ערכים מסוימים שאם הם לא יתמרגמו באופן נכון לטקסט, המקום שבו הם יתמרגמו עלול לא לשמידם.
+
+## ראו גם
+קישורים נוספים לקרוא על נושאים קשורים:
+1. היסטוריה של רכיבי התאריך והזמן ב-Java: https://en.wikipedia.org/wiki/Java_version_history#Java_8_.28Codename:_Spider.29
+2. דוגמאות לשימוש ב-Java SimpleDateFormat: https://www.javatpoint.com/java-simpledateformat
+3. מדריך ל-java.time, ה- API לניהול תאריכים וזמנים של Java 8: https://www.baeldung.com/java-8-date-time-intro

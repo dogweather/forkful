@@ -1,7 +1,7 @@
 ---
-title:                "הדפסת תוצאות ניתוח שגיאות"
-html_title:           "Rust: הדפסת תוצאות ניתוח שגיאות"
-simple_title:         "הדפסת תוצאות ניתוח שגיאות"
+title:                "הדפסת פלט ניפוי שגיאות"
+html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
+simple_title:         "הדפסת פלט ניפוי שגיאות"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -11,48 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+חפיפת Debug בראסט היא תהליך שבו מתכנת מציג מידע של התהליך בהוצאה לפועל, ומשמש כעזרה מכריעה בהבנת הקוד ופתרון בעיות. זה הכלי האידיאלי לדיאגנוסטיקה ותיקון בעיות בקוד שלך.
 
-הדפסת פלט דיבאג היא תהליך בו מפותחים מוסיפים פקודות בקוד שלהם כדי להדפיס מידע נוסף שיעזור להבין את תהליך הקוד ולזהות בעיות. תהליך זה נקרא גם "דיבאגינג" והוא חשוב בפיתוח תוכניות כדי לבצע תיקון תקלות ושיפורים.
-
-## איך לעשות זאת:
-
-דוגמאות קוד ופלט מסבירות יותר מידי מאלף מילים, לכן נשתמש בקוד ראסט (Rust) הבא כדי להדגים איך להדפיס פלט דיבאג כאשר מפתחים תוכניות בשפת ראסט.
-
-```Rust
-fn main() {
-    let num1 = 5;
-    let num2 = 10;
-    println!("Debug output: {} + {} = {}", num1, num2, num1 + num2);
-}
-```
-
-פלט הדיבאג של הקוד הנ"ל יוצא כך: 
-
-```
-Debug output: 5 + 10 = 15
-```
-
-ניתן להשתמש גם בפקודת `dbg!()` עבור פלט דיבאג קצר יותר, כך:
+## איך לעשות:
+עזרתו של סימן ```{:?}``` מאפשרת למשתמש להדפיס את הנתונים בפלט Debug. 
+קוד בדוגמה:
 
 ```Rust
-fn main() {
-    let num = 5;
-    dbg!(num);
-}
+let data = [1, 2, 3, 4, 5];
+println!("{:?}", data);
 ```
 
-התוכנית שלנו תדפיס:
-
+הפלט יהיה:
 ```
-[src/main.rs:3] num = 5
+[1, 2, 3, 4, 5]
+``` 
+בראסט גם מאפשרת לנו להדפיס את שלבי הביצוע של פונקציות באמצעות לוגים. 
+קוד נוסף:
+
+```Rust
+debug!("this is a debug message for {}", "function x");
+info!("this is an info message for {}", "function y");
+warn!("this is a warning message for {}", "function z");
+error!("this is an error message for {}", "function a");
 ```
 
-## העממה עמוקה:
+ניווט לאפשרות:
+```
+cargo run -- --verbosity debug
+```
 
-דיבאגינג הוא תהליך שמתבשל מאז שהיו בני אדם שמתחילים לתכנת. טכניקות נוספות לדיבאג כוללות פשוט כתיבת לוגים בקבצים, בדיקת תנאים ופונקציות שליטה רימוטיות על התוכנית שלנו. אם אתם מעוניינים לקרוא עוד על דיבאגינג בשפת ראסט, ניתן להתייעץ עם תיעוד הרישמי שלהם.
+## Deep Dive       
+1.בהקשר ההיסטורי, המאפיין הראשוני של Debug היה בתקן Algol-60 בשנת 1960. מאז, המאפיין התפתחות והתהדר עם תמיכה מתקדמת ושלמות למערכות בנייה מורכבות ודינמיות.
 
-## ראו גם:
+2. בראסט מחמיאה לגישת ה-Explicit over implicit עם Debug. שימוש במאפיין ```{:?}``` במקום ```{}``` הופך להיות ברור מאיפה המידע מגיע. 
 
-- התיעוד הרישמי של ראסט: https://www.rust-lang.org/he/documentation.html
-- עמוד ה-Wiki של ראסט ב-Reddit: https://www.reddit.com/r/rust/wiki/faq#wiki_what_are_some_good_resources_for_learning_more.2Fgoing_deeper.3F
-- כתבות ומדריכים מקוונים נוספים בנושא דיבאגינג בשפת ראסט.
+3. למעשה, מאפיין Debug הוא פונקצית מאקרו אשר מפענחת את הנתונים ומציגה אותם בצורת טקסט עם מידע מהקוד המקורי.
+
+## ראה גם: 
+[Rust's official documentation on the Debug trait](https://doc.rust-lang.org/std/fmt/#formatting-traits)  
+[The Rust Programming book chapter about debugging](https://doc.rust-lang.org/book/ch09-00-error-handling.html)  
+[Discussion about implementing formatting traits in Rust](https://users.rust-lang.org/t/why-do-we-need-to-manually-implement-display-and-debug-traits/30399)

@@ -1,7 +1,7 @@
 ---
-title:                "Analisando uma data a partir de uma string."
-html_title:           "Python: Analisando uma data a partir de uma string."
-simple_title:         "Analisando uma data a partir de uma string."
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
+# Parsing de datas em Python
 
-Parsear uma data a partir de uma string significa extrair informações de uma string que represente uma data, como "Janeiro 1, 2020" ou "20/01/2020". Os programadores geralmente precisam fazer isso para converter uma data em um formato legível para máquinas, como um objeto de data em Python, ou para realizar cálculos e comparações com datas.
+## O Que & Porquê?
 
-## Como fazer:
+Parsing é o processo de decompor uma string data/hora em seus elementos constituintes. Os programadores fazem isso para que possam manipular e analisar datas de maneira mais coerente e apropriada.
+
+## Como Fazer:
+
+Vamos usar o módulo `datetime` do Python. Abaixo, um exemplo de uma string data/hora sendo convertida para um objeto `datetime`.
 
 ```Python
-# Importar o módulo datetime
-import datetime
+from datetime import datetime
 
-# Criar uma string com a data
-data = "20/01/2020"
+minha_data_string = "20/10/2021"
+minha_data = datetime.strptime(minha_data_string, "%d/%m/%Y")
 
-# Utilizar o método strptime para parsear a data para um objeto datetime
-data_parseada = datetime.datetime.strptime(data, "%d/%m/%Y")
-
-# Imprimir o objeto de data parseada
-print(data_parseada)
-
-# Saída: 2020-01-20 00:00:00
+print(minha_data)
 ```
 
-## Profundando:
+Quando corre essa código, vai receber o seguinte output:
 
-Existem várias maneiras de fazer um parsing de data em uma string em Python. Antes do módulo `datetime` ser incluído na biblioteca padrão do Python, os programadores tinham que usar bibliotecas externas, como `dateutil` ou `calendar`, para lidar com datas. Além disso, é importante levar em consideração o formato da string de data ao utilizar o método `strptime` - a documentação do Python fornece uma lista completa de especificadores que podem ser usados para diferentes formatos de data.
+```Python
+2021-10-20 00:00:00
+```
 
-## Veja também:
+## Deep Dive
 
-- [Documentação do Python sobre o módulo datetime](https://docs.python.org/3/library/datetime.html)
-- [Tutorial sobre como trabalhar com datas em Python](https://realpython.com/python-datetime/)
-- [Módulo dateutil](https://dateutil.readthedocs.io/en/stable/)
+Historicamente, o parsing de datas tem sido um problema notório em muitas linguagens de programação, não apenas em Python. A necessidade de analisar datas de diferentes formatos exigiu o desenvolvimento de módulos robustos e versáteis como o `datetime`.
+
+Python oferece alternativas ao módulo `datetime`, como o módulo `dateutil`, que pode analisar datas de strings em formatos mais complexos.
+
+Em termos de implementação, o método `strptime` do objeto `datetime` usa uma string de formato para determinar a divisão dos elementos em uma string data/hora. Isso permite que ele lide com uma ampla variedade de formatos de data.
+
+## Veja Também
+
+Aqui estão alguns recursos adicionais para ajudá-lo a vice:
+
+1. [Python Datetime](https://docs.python.org/3/library/datetime.html)
+2. [Python Dateutil](https://dateutil.readthedocs.io/en/stable/)
+3. [Tutorial de datas e horários em Python](https://realpython.com/python-datetime/)
+4. [Aprendendo a lidar com datas e horários em Python](https://www.codecademy.com/learn/learn-python-3/modules/learn-python3-dates)

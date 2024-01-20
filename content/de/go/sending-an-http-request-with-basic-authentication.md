@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anfrage mit grundlegender Authentifizierung"
-html_title:           "Go: Senden einer http-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer http-Anfrage mit grundlegender Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was & Warum?
 
-Das Senden eines HTTP-Anforderung mit grundlegender Authentifizierung ist ein wichtiger Schritt beim Programmieren von Webanwendungen. Es ermöglicht den sicheren Austausch von Daten zwischen dem Client und dem Server. Programmierer nutzen grundlegende Authentifizierung, um sicherzustellen, dass die Daten, die sie senden, authentisch sind und nur von berechtigten Benutzern abgerufen werden können.
+Das Senden einer HTTP-Anfrage mit Basic Authentication ist ein Prozess, bei dem sich ein Client beim Server authentifiziert, indem er ein Benutzername-Passwort-Paar im Klartext übermittelt. Dieses Verfahren wird häufig verwendet, wenn ein zuverlässiger Übertragungskanal (z.B. HTTPS) vorhanden ist, um die Sicherheit der Daten zu gewährleisten.
 
-Wie geht das?
+## Wie geht's:
 
-Go macht es einfach, eine HTTP-Anforderung mit grundlegender Authentifizierung zu senden. Verwende einfach das Paket "net/http" und die "Request.BasicAuth" Methode, um die Anfrage mit Anmeldedaten zu versehen. Im folgenden Beispiel senden wir eine GET-Anforderung an die URL "http://example.com" mit dem Benutzernamen "user" und dem Passwort "password":
+Mit Go’s Standardbibliothek ist es einfach, eine HTTP-Anfrage mit Basic Authentication zu senden. Hier zeigt ein kurzes Codebeispiel, wie es funktioniert:
 
 ```Go
 package main
@@ -27,26 +27,38 @@ import (
 )
 
 func main() {
-	url := "http://example.com"
-	req, err := http.NewRequest("GET", url, nil)
-	req.SetBasicAuth("user", "password")
-	client := http.Client{}
-	resp, err := client.Do(req)
+	req, err := http.NewRequest("GET", "http://example.com", nil)
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
-	fmt.Println(resp.StatusCode)
+	req.SetBasicAuth("username", "password")
+	resp, err := http.DefaultClient.Do(req)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+	fmt.Println("Response status:", resp.Status)
 }
 ```
+Die Ausgabe dieses Programm wäre:
 
-Dies wird eine 200-Statuscode als Antwort zurückgeben, was bedeutet, dass die Anfrage erfolgreich war.
+```Go
+Response status: 200 OK
+```
 
-Tiefer tauchen
+## Tief tauchen:
 
-Grundlegende Authentifizierung ist ein Protokoll, das von HTTP verwendet wird, um Benutzernamen und Passwörter zu überprüfen. Es wird oft verwendet, um den Zugriff auf vertrauliche oder geschützte Informationen zu beschränken. Eine alternative Methode zur Authentifizierung ist die Verwendung von Tokens, bei denen ein einmaliger Code anstelle von Benutzername und Passwort verwendet wird. Beim Senden von HTTP-Anforderungen mit grundlegender Authentifizierung ist es wichtig, dass die HTTP-Verbindung über HTTPS gesichert ist, um zu verhindern, dass die Anmeldeinformationen von Dritten abgefangen werden.
+Historisch gesehen hat sich Basic Authentication als einfache Methode zur Authentifizierung von Clients gegenüber Servern etabliert. Trotz seiner Schwächen, insbesondere der Übermittlung von Kennwortinformationen im Klartext, bleibt es im Web weit verbreitet.
 
-Siehe auch
+Alternativen zu Basic Authentication gibt es viele, darunter OAuth, Cookie-Based Authentication und Token-Based Authentication. Jede dieser Methoden hat ihre eigenen Vor- und Nachteile.
 
-- [Das net/http Paket in der Go-Dokumentation](https://golang.org/pkg/net/http/)
-- [Ein Tutorial zur grundlegenden Authentifizierung in Go](https://www.sohamkamani.com/golang/basic-authentication/)
-- [Eine Einführung in Go von der offiziellen Website](https://golang.org/doc/tutorial/getting-started)
+Wenn Sie in Go eine HTTP-Anfrage mit Basic Authentication senden, sollten Sie beachten, dass die Anmeldeinformationen im Klartext gesendet werden. Daher sollten Sie immer eine sichere Verbindung (z.B. HTTPS) verwenden, um diese Anfragen zu senden.
+
+## Siehe auch:
+
+Für weiterführende Informationen können diese Links nützlich sein:
+
+- [Go Standardbibliothek - Netzwerk](https://golang.org/pkg/net/)
+- [HTTP-Authentifizierung](https://developer.mozilla.org/de/docs/Web/HTTP/Authentication)
+
+Obwohl Basic-Authentication seine Schwachstellen hat, kann es in sicheren Verbindungen durchaus nützlich und praktikabel sein. Bei unsicherer Verbindung sollten aber stets sicherere Alternativen in Erwägung gezogen werden. Die Go-Standardbibliothek bietet dennoch eine einfache und effektive Möglichkeit, HTTP-Anfragen mit Basic-Authentication zu senden.

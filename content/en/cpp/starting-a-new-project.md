@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "C++ recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "C++"
 category:             "C++"
@@ -11,44 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Starting a new project means beginning a new programming endeavor. Programmers do this to create new software or applications, to solve a problem, or to improve upon an existing project.
+At its core, starting a new project is about embarking on a creative journey to build a program from scratch or enhance existing ones. Programmers initiate new projects to bring innovative ideas to life, solve various industry-specific problems, or even to learn and acquire new skills.
 
 ## How to:
-To start a new project in C++, follow these simple steps:
+Here is an example of a simple "Hello, World!" program in C++:
 
 ```C++
-//Include the necessary libraries
+// Your First C++ Program
+
 #include <iostream>
 
-//Using the standard namespace
-using namespace std;
-
-//Start the main program
-int main()
-{
-    //Insert code here
-
-    //Output a message to the user
-    cout << "This is a new project in C++!" << endl;
-
+int main() {
+    std::cout << "Hello, World!";
     return 0;
 }
 ```
 
-Sample Output:
-```
-This is a new project in C++!
-```
+When this code is compiled and run, it displays "Hello, World!" on the terminal.
 
-## Deep Dive:
-Starting a new project in C++ has been a common practice since its creation in 1983 by Bjarne Stroustrup. This object-oriented programming language has been widely used in a variety of industries, making it a popular choice for programmers. There are also alternative languages that can be used for starting a new project, such as Java or Python, but C++ remains a powerful and versatile option.
+## Deep Dive
+1. **Historical Context**: The structure of C++ projects traces its origins back to the 70s. C++ was developed as an enhancement to the C programming language, with the initial motivation being to add object-oriented programming into the C language.
+2. **Alternatives**: Languages like Python, Java, and Rust are alternatives to C++, each with its own strengths and ideal use-cases. For instance, Python is great for beginners due to its readability while Java is platform-independent, and Rust provides memory safety guarantees.
+3. **Implementation details**: If you're using an Integrated Development Environment (IDE) like Visual Studio, starting a new C++ project involves creating a new project, configuring settings as per your requirements, and writing the code. It can vary based on the tools and platforms you're using.
 
-When starting a new project in C++, programmers have many implementation options to choose from, such as utilizing C++ standard library or using a specific framework like Qt or Boost. They also have the option to create a console application or a graphical user interface (GUI) for their project.
-
-## See Also:
-To further explore starting a new project in C++, check out these resources:
-
-- C++ for Beginners: [https://www.learncpp.com/](https://www.learncpp.com/)
-- C++ Standard Library: [https://en.cppreference.com/w/cpp/](https://en.cppreference.com/w/cpp/)
-- Qt Framework: [https://www.qt.io/](https://www.qt.io/)
-- Boost C++ Libraries: [https://www.boost.org/](https://www.boost.org/)
+## See Also
+- For a complete guide on C++, check out [The C++ Programming Language](https://www.stroustrup.com/C++.html) by the creator of C++, Bjarne Stroustrup.
+- Understanding how to structure your C++ code? Explore [this guide](https://www.learncpp.com/cpp-tutorial/best-practices-for-header-files/)
+- You might also find [C++ Core Guidelines](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines) helpful for recommendations about best practices in C++.

@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "Gleam: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,24 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Télécharger une page web, c'est récupérer le contenu d'une page web à partir d'une URL donnée. Les programmeurs font cela pour obtenir des données à utiliser dans leurs applications ou pour effectuer des analyses.
+## Qu'est-ce que c'est & Pourquoi?
 
-## Comment :
-Voici un exemple de code en Gleam pour télécharger une page web et afficher son contenu :
+Télécharger une page web consiste à récupérer le code HTML d'une page spécifique sur Internet pour une utilisation hors ligne ou pour une analyse ultérieure. Les programmeurs le font pour récupérer des données, pour le web scrapping, ou pour mémoriser des sites web pour une utilisation ultérieure.
+
+## Comment faire:
+
+Gleam, étant un langage fonctionnel statiquement typé, ne dispose pas encore d'une bibliothèque standard pour le téléchargement de pages web. Toutefois, nous pouvons interagir avec Erlang ou Elixir, qui ont des bibliothèques HTTP robustes, pour accomplir cette tâche. Voici un exemple de code:
 
 ```Gleam
-url := "https://example.com"
-response := Http.get(url)
-print(response.body)
+import gleam/httpc
+import gleam/uri
+
+fn download(url: String) {
+  let parsed_url = uri.parse(url)
+  case httpc.get(parsed_url) {
+    Ok(#(status_code, headers, body)) ->
+      body
+    Error(e) ->
+      e
+  }
+}
 ```
 
-Output : Le contenu de la page web récupéré sera affiché dans la console.
+Pour tester cet exemple de code, vous pourriez utiliser un URL de test, comme `https://httpbin.org/get`, et vous devriez obtenir le corps de la page web en retour.
 
-## Approfondissement :
-Les programmeurs utilisent souvent le téléchargement de pages web pour collecter des données à utiliser dans leurs applications ou pour effectuer des tâches telles que le web scraping. Il existe d'autres outils et langages pour effectuer cette tâche, tels que cURL en ligne de commande ou des bibliothèques en JavaScript. Dans Gleam, cela peut être réalisé à l'aide de la bibliothèque standard Http.
+## Deep Dive
 
-## À voir également :
-- La documentation de la bibliothèque Http en Gleam : https://gleam.run/packages/http/
-- Un tutoriel sur le web scraping en utilisant Gleam : https://medium.com/@perplexeus/using-gleam-to-scrape-the-web-e4897835351c
-- Des informations sur d'autres langages et outils pour télécharger des pages web : https://www.lifewire.com/how-to-download-a-website-3481617
+Historiquement, le téléchargement de pages web était la principale méthode par laquelle les contenus du web étaient accessibles hors ligne. Même aujourd'hui, cela reste une pratique courante pour le web scraping, l'archivage et, dans certains cas, le débogage.
+
+Il existe de nombreuses alternatives à cette méthode, notamment l'utilisation d'API (tels que RESTful ou GraphQL) pour récupérer directement les données de la source, ou bien des bibliothèques tierces spécialisées dans le téléchargement et le traitement de pages web.
+
+Le fonctionnement de cette fonction Gleam est assez simple. Il commence par analyser l'URL donnée en utilisant un parseur d'URI, puis il tente de récupérer les données à l'aide de la fonction `httpc.get`. Le corps de la réponse HTTP est ensuite retourné en cas de succès, et une erreur est retournée dans le cas contraire.
+
+## Voir Aussi
+
+1. [Documentation Gleam](https://gleam.run/docs/)
+2. [Module Gleam URI](https://gleam.run/docs/stdlib/uri/)
+3. [Module Gleam HTTPc](https://gleam.run/docs/stdlib/httpc/)
+4. [Autres ressources sur Erlang](https://www.erlang.org/docs)
+5. [Documentation sur Elixir](https://hexdocs.pm/elixir/Kernel.html)

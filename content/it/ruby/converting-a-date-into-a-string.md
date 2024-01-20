@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una data in una stringa"
-html_title:           "Ruby: Convertire una data in una stringa"
+html_title:           "Javascript: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,23 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa & Perché?
-Convertire una data in una stringa è un'operazione comune nella programmazione, in cui una data viene trasformata in una rappresentazione testuale leggibile per gli utenti. I programmatori fanno questo per facilitare la comunicazione delle informazioni riguardo al tempo e alle date ai loro utenti.
+## Che Cose? E Perche?
 
-## Come fare:
+La conversione di una data in una stringa in Ruby è un processo nel quale un oggetto `Date` viene trasformato in un formato testuale. Gli sviluppatori fanno questo per una comunicazione più semplice e per rappresentare meglio le date in un layout dell'interfaccia utente o in un output.
+
+## Come Fai:
+
+Convertire una data in una stringa in Ruby è abbastanza semplice grazie al metodo `strftime`. Ecco come si fa:
+
 ```Ruby
-time = Time.now
-puts time.to_s # output: 2021-02-25 17:30:00 +0900
+data = Date.new(2021, 8, 2)   # crea un oggetto data
+stringa = data.strftime("%d/%m/%Y")  # converti la data in una stringa
+
+puts stringa    # stampa la stringa
+# Output: "02/08/2021"
 ```
 
-```Ruby
-date = Date.today
-puts date.to_s # output: 2021-02-25
-```
+In questo esempio, `%d`, `%m`, e `%Y` rappresentano giorno, mese, e anno, rispettivamente.
 
 ## Approfondimento:
-La conversione di una data in una stringa ha origini storiche, poiché le prime lingue di programmazione non avevano un tipo di dato specifico per le date. Oggi, ci sono diverse alternative per questo tipo di operazione, come l'utilizzo di librerie esterne specializzate o l'utilizzo di formati specifici come ISO 8601. L'implementazione di questa conversione dipende dal linguaggio di programmazione utilizzato e dalle esigenze specifiche del progetto.
 
-## Vedi anche:
-- https://ruby-doc.org/core-3.0.0/Time.html#method-i-to_s
-- https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html#method-i-to_s
+Ruby ha introdotto il metodo `strftime` ispirandosi alla funzione omonima nel linguaggio di programmazione C. Come alternativa, Ruby offre il metodo `to_s`, che rappresenta una data in formato stringa, ma in un formato fisso (ISO 8601).
+
+Il metodo `strftime` accetta una serie di comandi specifici per dettagliare il formato della stringa di output. Ad esempio, `%B` rappresenta il nome completo del mese mentre `%b` lo rappresenta in forma abbreviata.
+
+## Vedi Anche:
+
+Per approfondire la conversione di date in stringhe in Ruby, visita i link seguenti:
+
+1. Documentazione Ruby per il metodo `strftime`: https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html#method-i-strftime
+2. Guida della community Ruby sulle date: https://www.rubyguides.com/ruby-tutorial/ruby-date-format/
+3. Documentazione Ruby per il metodo `to_s`: https://ruby-doc.org/core-2.7.3/Time.html#method-i-to_s

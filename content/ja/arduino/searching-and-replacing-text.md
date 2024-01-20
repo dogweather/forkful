@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Arduino: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何が & 何故？
-テキストの検索と置換が何か、それをプログラマーがする理由について2-3行で説明します。
+## 何となぜ？
 
-## 方法
+テキストの検索と置換は、特定の文字列を見つけて書き換えるというプログラミングの一部です。これにより、情報を効 efficiently、効果的に更新し、再利用することができます。
+
+## 実践
+
 ```Arduino
-// 文字列から特定の文字を置換する例
-String myString = "Hello World";
-myString.replace("World", "Japan"); // 出力は "Hello Japan"
-
-// 複数の文字を同時に置換する例
-String myString = "Hello World";
-myString.replace("Hello", "こんにちは")
-  .replace("World", "世界"); // 出力は "こんにちは 世界"
+String s = "Hello, world!";
+s.replace("world", "Arduino");
+Serial.println(s); // "Hello, Arduino!"が出力されます
 ```
 
-## 深堀り
-- 歴史的な文脈：文字の検索と置換は古くからプログラミングにおいて重要な概念でした。
-- 代替手段：正規表現やループ処理を用いても検索と置換は可能ですが、Arduinoを使用することでより簡単に実装できます。
-- 実装上の詳細：ArduinoのStringクラスには文字列を検索・置換するための便利なメソッドが用意されています。
+上記は、"world"を"Arduino"に置き換える簡単な例です。
 
-## 関連リンク
-- [Arduino Stringクラスのドキュメント（英語）](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-- [正規表現の概要（日本語）](https://qiita.com/jnchito/items/893c887fbf19e17e65c0)
+## ディープダイブ
+
+検索と置換の起源は、古くはワードプロセッサやテキストエディタに remontで、プログラマーやライターがテキストの修正を効率化できるようになりました。Arduinoでは、「replace」メソッドを使用してこれを実現しています。
+
+代替手段としては、「substring」や「toCharArray」などを利用した自己実装が考えられますが、組み込みメソッド使用の方が効率的です。
+
+実装上の詳細としては、"replace"メソッドは巡回検索を使用して対象文字列を探し、見つかった位置の文字列を新しい文字列で置換します。
+
+## 関連情報
+
+以下リンクでより深く学べます：
+- [Arduino String Reference（英語）](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
+- [Arduino Programming Guide（英語）](https://www.arduino.cc/en/main/howto)
+以上で、テキストの検索と置換については一通り理解できたはずです。これであなたもArduinoにおけるテキスト処理の達人に一歩近づいたはず！

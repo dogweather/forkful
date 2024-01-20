@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Python: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Python"
 category:             "Python"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Zaczęcie nowego projektu to proces, w którym programiści tworzą nowe programy lub rozszerzają istniejące o nowe funkcje. Przy okazji tworzą kod, rozwiązują problemy i uczą się nowych rzeczy. Robią to, aby rozwijać swoje umiejętności i przyczynić się do rozwoju technologicznego.
+## Co i dlaczego?
+
+Rozpoczęcie nowego projektu to nic innego jak uruchomienie nowego zadania programistycznego od podstaw. Programiści robią to w celu rozwijania nowych aplikacji, narzędzi czy systemów, które mają na celu rozwiązanie konkretnych problemów.
 
 ## Jak to zrobić:
+
+Zaczniemy od stworzenia nowego projektu. Niech to będzie prosta aplikacja do drukowania "Hello, World!"
+
 ```Python
-# Przykładowy kod do rozpoczęcia nowego projektu
-import os
-
-# Utworzenie nowego folderu dla projektu
-os.mkdir("Nowy_projekt")
-
-# Utworzenie nowego pliku z kodem
-with open("nowy_projekt.py", "w") as file:
-    file.write("print('Witaj w moim nowym projekcie!')")
-    
-# Uruchomienie nowego pliku z kodem
-os.system("python nowy_projekt.py")
+# To jest twój kod źródłowy
+print("Hello, World!")
 ```
 
-Przykładowy output:
-```
-Witaj w moim nowym projekcie!
+Po uruchomieniu tego kodu, output powinien wyglądać tak:
+
+```Python
+Hello, World!
 ```
 
-## Deep Dive:
-W przeszłości, tworzenie nowych projektów było bardziej czasochłonne i wymagało wielu działań, takich jak ręczna konfiguracja środowiska i tworzenia wszystkich plików od zera. Dzięki narzędziom jak Django czy Flask, można teraz szybko rozpocząć nowe projekty i skupić się na ich rozwoju. Alternatywą dla języka Python mogą być na przykład C++ lub Java. W celu rozpoczęcia nowego projektu należy mieć podstawową wiedzę na temat programowania w języku Python oraz umieć korzystać z narzędzi takich jak Git czy Virtualenv.
+## Głębsze spojrzenie
 
-## Zobacz też:
-- [Django](https://www.djangoproject.com/)
-- [Flask](https://flask.palletsprojects.com/)
-- [Virtualenv](https://virtualenv.pypa.io/en/latest/)
-- [Git](https://git-scm.com/)
+Historia pokazuje, że rozpoczynanie nowych projektów jest fundamentalną częścią postępu technologicznego. Od czasów pierwszych komputerów, programiści rozpoczynają nowe projekty aby rozwiązać nowe problemy, czy to poprzez tworzenie nowych algorytmów, czy rozwijanie nowych systemów operacyjnych.
+
+Istnieją różne alternatywy dla rozpoczynania nowego projektu w Pythonie,   takie jak sklonowanie istniejącego repozytorium Git lub użycie szablonu projektu. Wybór między tymi opcjami zależy od konkretnych potrzeb i wymagań projektu.
+
+Rozpoczynając nowy projekt, ważne jest, aby zrozumieć różne aspekty implementacji, takie jak organizacja kodu, zarządzanie zależnościami czy testy jednostkowe. Python oferuje wiele narzędzi (takie jak pip czy venv), które pomagają zarządzać tymi aspektami.
+
+## Zobacz też
+
+1. [Python Docs: Rozpoczynanie nowych projektów](https://docs.python.org/3/tutorial/appetite.html)
+2. [GitHub: Przykładowe projekty Python](https://github.com/topics/python)
+3. [Real Python: Jak tworzyć Python Package](https://realpython.com/tutorials/packages/)

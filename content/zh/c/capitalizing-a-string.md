@@ -1,7 +1,7 @@
 ---
-title:                "将字符串转换为大写字母"
-html_title:           "C: 将字符串转换为大写字母"
-simple_title:         "将字符串转换为大写字母"
+title:                "将字符串大写化"
+html_title:           "C: 将字符串大写化"
+simple_title:         "将字符串大写化"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 究竟是什么?为什么?
-首先，让我们来澄清一个问题：什么是“字符串大写化”？简而言之，这就是把一个字符串中的所有字母变成大写形式。为什么程序员要这么做呢？因为这可以让我们更容易地处理不区分大小写的数据，也可以让字符串的比较更准确。
+# 第一部分: 什么和为何？
 
-# 如何执行:
-让我们来看看如何使用C语言来大写化一个字符串。首先，我们要定义一个变量来存储这个字符串，然后使用一个循环来遍历这个字符串中的每一个字符。在循环中，我们可以使用库函数toupper()来把小写字母转换为大写字母。最后，我们将处理后的字符串打印出来。下面是一个例子：
+将字符串大写是指将字符串中的所有字符都转换为大写形式。开发者会这样做是因为在某些情况下，忽视大小写可以简化字符串的比较和搜索。
 
-```
-#include <stdio.h>
+# 第二部分：怎么做？
+
+```C
 #include <ctype.h>
+#include <stdio.h>
 
-int main() {
-    char str[] = "hello world";
-    int i;
-
-    for (i = 0; str[i] != '\0'; i++) {
+//函数：使字符串全部大写
+void capitalize(char* str)
+{
+    for(int i = 0; str[i] != '\0'; i++){
         str[i] = toupper(str[i]);
     }
+}
 
-    printf("%s", str); // 输出: HELLO WORLD
-
+int main()
+{
+    char str[] = "hello, world!";
+    capitalize(str);
+    printf("%s", str);  // 输出 "HELLO, WORLD!"
     return 0;
 }
 ```
 
-# 深入探索:
-现在让我们来看看一些关于字符串大写化的更深层次的信息。首先，这个概念在很多编程语言中都有，不仅仅局限于C语言。其次，在早期的电传打字机时代，因为没有小写字母，人们就一直在使用全部大写的形式。最后，除了使用循环和toupper()函数之外，还可以使用条件语句来判断字符是否为小写字母。但是使用库函数更简洁和高效。
+以上代码定义了一个名为`capitalize`的函数，用于将输入的字符串`str`转换为全大写形式。使用`ctype.h`库的`toupper`函数实现每个字符的转换。
 
-# 参考资料:
-- [C语言字符串大写化示例代码](https://www.programiz.com/c-programming/examples/uppercase-string)
-- [toupper()函数的使用文档](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
-- [字符串大小写转换的其他方法](https://stackoverflow.com/questions/3389728/what-is-the-best-way-to-char-to-uppercase-char-in-c)
+# 第三部分：深度剖析
+
+字符串大写化在早期的计算机科学中已广为使用，尤其在用户输入和文本数据处理之中。尽管这个操作在过去的编程语言中并不直观，但是在C语言等现代编程语言中已经变得很直观。
+
+大写化字符串的另一种方式是通过ASCII值的操作。我们知道，小写字母的ASCII值是其对应的大写字母的ASCII值加32。因此，对字符串中的每个字符，我们可以减去32，这样就可以得到对应的大写字母。
+
+另外，`toupper`函数在内部处理了大写转换。它接受一个`int`类型的参数。如果参数在ASCII中对应的字符为小写字母，那么它返回的结果将是对应的大写字母的ASCII值，否则返回原值。
+
+# 第四部分：参考资源
+
+- C库函数 - toupper() - http://www.cplusplus.com/reference/cctype/toupper
+- C Programming/Strings - https://en.wikibooks.org/wiki/C_Programming/Strings
+- C语言字符串处理 - https://www.runoob.com/cprogramming/c-string.html

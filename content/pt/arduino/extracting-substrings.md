@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subtrings"
-html_title:           "Arduino: Extraindo subtrings"
-simple_title:         "Extraindo subtrings"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,38 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+# Extrair Substrings no Arduino: Um Guia Prático
 
-Extrair substrings é a ação de separar uma parte específica de uma string maior. Isso é comumente feito por programadores para acessar informações específicas em uma string, como um código de identificação ou uma data. É uma forma eficiente de manipular e trabalhar com dados em um programa.
+## O Que & Por Quê?
 
-## Como fazer:
+Extrair substrings é o processo de selecionar um conjunto específico de caracteres de uma string. Programadores fazem isso para manipular, comparar ou analisar partes de uma string.
 
-```Arduino
-String myString = "Ola, mundo!"; // definir uma string
-String substring = myString.substring(0, 3); // extrair a substring "Ola"
+## Como Fazer:
 
-Serial.println(substring); // saída: "Ola"
-```
-
-Outro exemplo:
+Extrair substrings no Arduino é direto com a função `substring()`. Veja como fazer isso:
 
 ```Arduino
-String sentence = "O numero pi é 3.14";
-String pi = sentence.substring(12, 16);
-
-Serial.println(pi); // saída: "3.14"
+String meutexto = "Olá, Mundo!";
+String substr = meutexto.substring(0, 4);
+Serial.println(substr);
 ```
 
-## Mergulho Profundo:
+O acima vai imprimir:
 
-Extrair substrings tem suas raízes em linguagens de programação mais antigas, como C e BASIC. Em vez de usar a função substring, essas linguagens usavam operadores como ```substr``` em C e ```MID``` em BASIC. Hoje em dia, a função substring é amplamente usada em muitas linguagens de programação, incluindo Arduino.
+```Arduino
+Olá,
+```
 
-Existem algumas alternativas para a função substring, como a função ```split```, que divide uma string em um array de substrings com base em um caractere específico. No entanto, a função substring ainda é preferida por muitos programadores por sua simplicidade e eficiência.
+A função `substring()` recebe dois argumentos: o índice inicial e o final (exclusivo) da substring.
 
-A implementação da função substring em Arduino é baseada na biblioteca String padrão, que oferece uma variedade de funções para trabalhar com strings. A função substring é definida como ```String.substring(index, length)```, onde index é a posição inicial da substring e length é o comprimento da substring.
+## Mergulho Profundo
 
-## Veja também:
+Extrair substrings é um recurso amplamente utilizado na programação desde a sua concepção. No Arduino, além da `substring()`, você também pode extrair substrings usando ponteiros e arrays de char, mas esses métodos são mais complexos e menos eficientes.
 
-- [Documentação oficial da função substring em Arduino](https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/substring/)
-- [Tutorial sobre como usar a função substring em Arduino](https://www.arduino.cc/en/Tutorial/StringSubstring)
-- [Fonte de informações sobre strings em Arduino](https://maker.pro/arduino/tutorial/arduino-string-functions-split-find-indexof-concatenate)
+A função `substring()` cria uma nova string e copia os caracteres selecionados para ela. Este processo consome memória extra, então, se memória for uma preocupação para você, considere outras opções, como manipulação in-place dos dados.
+
+## Veja Também
+
+Para aprofundar seu conhecimento sobre strings e substrings no Arduino, confira os seguintes links:
+
+1. [Arduino String Reference](https://arduino.cc/reference/en/language/variables/data-types/string)
+
+2. [Arduino String Functions](https://arduino.cc/en/Tutorial/StringFunctions)
+
+3. [Arduino String Constructors](https://arduino.cc/reference/en/language/variables/data-types/string/constructors/)
+
+Lembre-se, a prática é o caminho para aperfeiçoamento, então continue programando e experimentando!

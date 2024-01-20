@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Swift: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שלום לקוראי הבלוג הנושם,
-בימים שבהם מפתחי תוכנה אינם מספיקים לכתוב קוד קשיח ומורכב, נדרש מהם גם להתמודד עם התקשורת עם שרתים ואתרי אינטרנט. כאן נכנסת לתמונה פעולת השליחת בקשות HTTP, שיטה שמאפשרת לסדר את התקשורת הנדרשת בין התוכנה לשרתים חיצוניים.
+## מהו שליחת בקשת HTTP ולמה אנחנו עושים זאת?
+שליחת בקשת HTTP היא פעולה בה אנו מבקשים משרת לשלוח מידע בחזרה אלינו. זו חלק חשוב מהתקשורת בין האפליקציה שלנו לשרתים, כך שאנחנו יכולים להוריד מידע מרחוק ולעדכן את ממשק המשתמש שלנו.
 
-## מה ולמה?
-שליחת בקשות HTTP היא פעולה דרושה לכתיבת תוכנה המשתמשת בתקשורת בין התוכנה לשרתים חיצוניים. זה עשוי להיות משהו כפשוט כמו קבלת עדכונים מתוך אתר אינטרנט או משהו מורכב יותר כמו פעולות בניה ועדכון של מאגרי נתונים.
-
-## איך לעשות זאת?
-כדי לשלוח בקשות HTTP בתוך קוד Swift ניתן להשתמש בפרוטוקול HTTP שהוכנס לכלי העבודה של אפל - Xcode. עבור מחברת אינטרנט כמו פייסבוק, אפשר פשוט ליצור בקשה GET לכתובת URL של פוסט ולקבל את התוצאה הנדרשת. לדוגמה:
+## איך משלחים בקשת HTTP?
+נלמד איך לשלוח בקשת HTTP באמצעות Swift. הנה דוגמה של איך לשלוח בקשת GET:
 
 ```Swift
-let postUrl = "https://www.facebook.com/1234567890/posts"
-let request = URLRequest(url: postUrl)
-let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-  if let data = data {
-    // התוכן של התגובות בפוסט
-    print(String(data: data, encoding: .utf8)!)
-  }
+let url = URL(string: "https://api.example.com/data")
+let task = URLSession.shared.dataTask(with: url!) {(data, response, error) in
+    if let error = error { print("Error: \(error)") }
+    else if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print("Received data:\n\(str!)")
+    }
 }
-// ביצוע הבקשה
 task.resume()
 ```
 
-## כיורד
-מקור נוסף למידע על השתלחת בקשות HTTP הוא מאמרים נוספים באינטרנט, וכמובן תיעוד רשמי מאת אפל עצמה המסביר איך לשלוח בקשות באמצעות פרוטוקול HTTPS.
+פלט של הדוגמה:
+```
+Received data:
+{
+    "key1": "value1",
+    "key2": "value2"
+}
+```
 
-## מקורות נוספים
-מאמרים ומדריכים נוספים מומלצים:
-- [מאמר מאת אפל עצמה](https://developer.apple.com/documentation/foundation/urlsession)
-- [מאמר בעברית בנושא שליחת בקשות HTTP בתוך קוד Swift](https://www.webmaster.org.il/dev/introduction-to-http-request-in-swift/)
+## צלילה עמוקה יותר
+HTTP הוא הפרוטוקול הראשי של האינטרנט מאז שנוצר בשנות ה-90. יישומי Swift לרוב משתמשים בספריית URLSession לביצוע בקשות HTTP, אך ישנן ספריות צד שלישי כמו Alamofire שמציעות אפשרויות נוספות.
+
+שימו לב שבחיבורים לא בטוחים המידע שלנו יכול להיחשף לגורמים פוגעניים. לכן, כאשר אנו שולחים בקשות HTTP, חשוב להשתמש בחיבור מאובטח (HTTPS).
+
+## קישורים למקורות נוספים
+במידה ותרצו לדעת עוד, ניתן לחפש מידע באתרים אלו:
+1. URLSession API - Apple Developer Documentation: https://developer.apple.com/documentation/foundation/urlsession
+2. W3Schools - Learn HTTP: https://www.w3schools.com/whatis/whatis_http.asp
+3. Swift HTTP networking with URLSession course: https://www.raywenderlich.com/3244963-urlsession-tutorial-getting-started

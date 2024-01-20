@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "Haskell: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,40 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-הורדת דף אינטרנט היא פעולה פשוטה בה נטען דף אינטרנט מהאינטרנט ונשמר כקובץ על המחשב. הפעולה הזו עשויה להיות מועילה לפתיחת אתרים מהירה יותר או לשימוש בתוכן שנשמר באינטרנט במקום גישה רגילה לרשת.
+## מה זה ולמה?
+הורדת דף אינטרנט היא הפעולה של משיכת מידע מתוך אתר אינטרנט ושמירתו על המחשב שלנו. מתכנתים משתמשים בכך בדרך כלל לצורך איסוף ועיבוד מידע אוטומטי מאתרי אינטרנט או API.
 
-## איך לעשות?
-הנה דוגמאות לכתיבת הורדת דף אינטרנט בקוד ה-Haskell באמצעות חבילת "HTTP":
+## שיטת מפעל
 ```Haskell
 import Network.HTTP
-main = do
-  response <- Network.HTTP.simpleHTTP (getRequest "https://www.example.com")
-  body <- getResponseBody response
-  putStrLn body
+import Network.URI (parseURI)
+
+downloadURL :: String -> IO (Either String String)
+downloadURL url = case parseURI url of
+    Nothing -> return $ Left ("Invalid URL " ++ url)
+    Just u  -> do
+        eresp <- simpleHTTP (mkRequest GET u)
+        return $ case eresp of
+          Left err -> Left (show err)
+          Right resp -> Right (rspBody resp)
 ```
-פלט:
-```Haskell
-<html>...</html>
-```
-כתיבה של קובץ מסוים עם תוכן הדף המורד:
-```Haskell
-import Network.HTTP
-main = do
-  response <- Network.HTTP.simpleHTTP (getRequest "https://www.example.com")
-  body <- getResponseBody response
-  writeFile "page.html" body
-```
+הפעלת הפונקציה תחזיר את התכנים של האתר, או הודעת שגיאה במקרה שהאתר לא יכול להשתלשל.
 
-## טביעה עמוקה
-### היסטוריה
-ההורדה של דפי אינטרנט נוצרה עם תחילת האינטרנט כדי לקלוט את התוכן הנמצא על המסך ולשמרו בקובץ, מאז נוצרו דרכים רבות לעשות זאת עם טכנולוגיות שונות כמו פרוטוקול ה-FTP.
+## עומק שם
+הרעיון להורדת דפים של אינטרנט התפתח לכנותה של האינטרנט כמקור עצום ומתעדכן של מידע. ישנם אלטרנטיבות אחרות ל-Haskell למשימה זו, כולל Python (עם BeautifulSoup) ו-JavaScript (עם Node.js). לעיתים מתכנתים משתמשים בסיפריות מיוחדות שמאפשרות להתממשק ישירות עם ה-API של אתר אינטרנט ולא להוריד את הדף שלם, ומאפשרות התממשקות הרבה יותר מהירה ויעילה.
 
-### אלטרנטיבות
-פעולת ההורדה ניתנת לביצוע גם באמצעות שפת תכנות אחרות כמו Python או Java עם השימוש בחבילות מתאימות.
-
-### פירוט המימוש
-פעולת ההורדה ניתנת לביצוע באמצעות פונקציות בסיסיות המאפשרות גישה לרשת כמו פונקציית "getRequest" ו-"simpleHTTP" המגיעות עם החבילה "HTTP".
-
-## ראש מעמד
-כדי לתרגם את הקוד לשפה אחרת או לקרוא עוד על הנושא, ניתן לבקר באתר הרשמי של החבילה "HTTP" ב-Hackage: https://hackage.haskell.org/package/HTTP
+## ראה גם
+דוקומנטציה רשמית של Network.HTTP: https://hackage.haskell.org/package/HTTP
+ספר עיון ל-Bash scripting: https://www.gnu.org/software/bash/manual/bash.html
+Python Beautiful Soup Documentation: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+Node.js Request Documentation: https://www.npmjs.com/package/request

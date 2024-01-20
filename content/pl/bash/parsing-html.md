@@ -1,7 +1,7 @@
 ---
-title:                "Analizowanie html"
-html_title:           "Bash: Analizowanie html"
-simple_title:         "Analizowanie html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,37 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi?
- Parsowanie HTML to proces odczytywania i interpretowania kodu HTML, który określa strukturę i zawartość strony internetowej. Programiści wykorzystują to narzędzie, aby dostosować lub wyświetlić wybrane elementy na stronie, w celu lepszego rozmieszczenia i wyglądu.
+## Co i dlaczego?
+
+Analiza HTML (parsing HTML) to proces wyodrębniania danych z kodu HTML. Robimy to, aby skutecznie manipulować, analizować i używać struktur danych zawartych w kodzie internetowego dokumentu.
 
 ## Jak to zrobić:
-Poniżej znajdziesz dwa przykłady kodu w Bash, które pokażą Ci, jak podstawowe parsowanie HTML jest realizowane w tym języku programowania:
 
-- Przykład 1: Pobranie tytułu strony internetowej za pomocą polecenia ```curl``` i ```grep```
-```
-$ curl -s example.com | grep "<title>.*</title>" | sed -E 's/<\/?title>//g'
-```
-Wynik:
-```
-Example Domain
-```
-- Przykład 2: Wypisanie wszystkich linków ze strony internetowej za pomocą polecenia ```lynx```
-```
-$ lynx -dump -listonly example.com
-```
-Wynik:
-```
-http://example.com
-https://www.iana.org/domains/example
-http://www.iana.org/domains/example
+Bash nie jest najbardziej odpowiedni do parsowania HTML, ale możemy uzyskać pewne wyniki z użyciem narzędzi jak `grep`, `sed` lub `awk`.
+
+```Bash
+$ echo '<div class="klasa">Cześć, Świecie!</div>' | grep -oP '(?<=class="klasa">).*(?=</div>)'
+Cześć, Świecie!
 ```
 
-## Wprowadzenie w temat:
-Parsowanie HTML jest istotną częścią tworzenia stron internetowych od czasów ich początku. Początkowo wykorzystywano to narzędzie, aby odczytać treść strony i pozyskać informację ze stron internetowych. W dzisiejszych czasach, programiści wykorzystują parsowanie HTML do automatyzacji procesów związanych z analizowaniem struktury i zawartości stron internetowych. Alternatywą dla Bash są języki specjalizujące się w parsowaniu i manipulowaniu tekstu, takie jak Perl, Python czy Ruby. W Bash używa się poleceń takich jak ```grep```, ```sed``` i ```awk``` do parsowania HTML.
+Lepiej uzyć specjalistycznych narzędzi jak `pup` lub `hxselect` z `HTML-XML-utils`.
 
-## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej o parsowaniu HTML w Bash, polecamy zapoznać się z poniższymi źródłami:
-- [Oficjalna strona dokumentacji Bash](https://www.gnu.org/software/bash/) - oficjalna strona dokumentacji języka Bash.
-- [Bash Guide for Beginners](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/index.html) - kompletne wprowadzenie do języka Bash dla początkujących.
-- [Three Reasons to Learn Bash Scripting](https://linuxacademy.com/blog/linux/three-reasons-to-learn-bash-scripting/) - artykuł omawiający zalety nauki Bash.
-- [Bash Scripting Tutorial for Beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners) - praktyczne instrukcje do nauki Bash.
+```Bash
+$ echo '<div class="klasa">Cześć, Świecie!</div>' | pup 'div.klasa text{}'
+Cześć, Świecie!
+```
+
+## Dogłębna analiza
+
+Parsowanie HTML w Bash jest nieortodoksyjne i trudne. Bash jest powłością (shellem) systemu Unix zaprojektowaną do uruchamiania poleceń, a nie do analizy dokumentów. 
+
+Histerycznie wiele narzędzi Bash-a, takich jak `grep`, `sed`, i `awk` były używane do analizy danych, ale nie są idealne do analizy HTML ze względu na skomplikowaną naturę języka HTML. 
+
+Alternatywą mogą być dedykowane narzędzia do parsowania HTML jak `pup` czy `hxselect` z `HTML-XML-utils`, które są dedykowane do analizy składniowej języka HTML. Utworzone specjalnie z myślą o HTML, od początku są projektowane, aby właściwie interpretować i manipulować tą skomplikowaną strukturą danych.
+
+## Zobacz też
+
+- Dokumentacja Bash: https://www.gnu.org/software/bash/manual/bash.html
+- Man page dla `grep`: https://man7.org/linux/man-pages/man1/grep.1.html
+- Dokumentacja `pup`: https://github.com/ericchiang/pup
+- Dokumentacja `HTML-XML-utils`: https://www.w3.org/Tools/HTML-XML-utils/README

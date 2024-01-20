@@ -1,6 +1,6 @@
 ---
 title:                "Порівняння двох дат"
-html_title:           "C#: Порівняння двох дат"
+html_title:           "Clojure: Порівняння двох дат"
 simple_title:         "Порівняння двох дат"
 programming_language: "C#"
 category:             "C#"
@@ -10,34 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Порівняння двох дат - це процес визначення взаємного ставлення між двома датами. Програмісти здійснюють такі порівняння для вирішення різноманітних задач, таких як перевірка правильності даних або сортування.
+## Що та навіщо?
 
-## Як виконати:
+Порівняння двох дат - це процедура, за допомогою якої ми можемо визначити, яка дата є раніше, пізніше чи обидві дати однакові. Програмісти роблять це, щоб обробляти або маніпулювати информацією, яка базується на датах, в різних сценаріях, такі як сортування відносно дати або обрахунок віків.
+
+## Як зробити:
+
 ```C#
-DateTime date1 = new DateTime(2020, 1, 1);
-DateTime date2 = new DateTime(2020, 2, 1);
+DateTime firstDate = new DateTime(2022, 1, 1);
+DateTime secondDate = new DateTime(2022, 12, 31);
 
-// Порівняння двох дат за допомогою методу CompareTo ()
-int result = date1.CompareTo(date2);
-// результат = -1, оскільки date1 менше, ніж date2
+int result = DateTime.Compare(firstDate, secondDate);
 
-// Порівняння двох дат за допомогою оператора >
-if (date1 > date2)
-{
-    // виконати певну дію
-}
-
-// Порівняння двох дат за допомогою методу Equals ()
-bool areEqual = date1.Equals(date2);
-// areEqual = false, оскільки date1 і date2 є різними датами
+if (result < 0)
+    Console.WriteLine("firstDate is earlier than secondDate.");
+else if (result == 0)
+    Console.WriteLine("firstDate is the same as secondDate");
+else
+    Console.WriteLine("firstDate is later than secondDate");
 ```
 
-## Глибше вдивіться:
-Окрім звичайного порівняння за допомогою операторів, існують деякі альтернативи, такі як метод Compare () і клас DateTime.Compare (). Ці альтернативи використовуються для більш складних порівнянь, наприклад, починаючи з рівняння днів тижня або здійснення перевірки на те, чи перебувають дати в одному місяці. Щоб реалізувати такі порівняння, програмісти повинні обережно переглянути документацію та знайти відповідні методи.
+У вихідних даних: "firstDate is earlier than secondDate."
 
-## Дивись також:
-- [How to Compare Two Dates in C#](https://www.c-sharpcorner.com/article/how-to-compare-two-dates-in-C-Sharp/)
-- [DateTime.CompareTo Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=netcore-3.1)
-- [DateTime.Compare Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=netcore-3.1)
-- [DateTime.Equals Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.equals?view=netcore-3.1)
+## Занурення вглиб
+
+Раніше, для порівняння дат, програмісти використовували звичайні оператори порівняння (>, < , ==). Проте, з впровадженням `DateTime.Compare` в .NET Framework, все стало набагато простішим та точнішим.
+
+Альтернативно, можна використовувати альтернативний метод `CompareTo(DateTime value)`, що виконує таку ж функцію.
+
+Детальніше, `DateTime.Compare` повертає значення менше нуля, якщо перша дата раніше другої, нуль якщо дати однакові, або значення більше нуля якщо перша дата пізніше другої.
+
+## Дивіться також:
+
+1. [Object.Equals метод (.NET Framework)](https://docs.microsoft.com/uk-ua/dotnet/api/system.object.equals?view=netframework-4.8): компаратори дат та часу в C#.
+2. [DateTime.CompareTo метод (.NET Framework)](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime.compareto?view=netframework-4.8): альтернативний спосіб порівняння двох дат.
+3. [DateTime.Compare метод (.NET Framework)](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime.compare?view=netframework-4.8): офіційна документація про метод порівняння дат від Microsoft.

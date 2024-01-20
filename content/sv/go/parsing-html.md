@@ -1,7 +1,7 @@
 ---
-title:                "Att tolka html"
-html_title:           "Go: Att tolka html"
-simple_title:         "Att tolka html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,65 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Att parsning av HTML är en process där man extraherar data från en HTML-webbsida. Detta kan vara användbart för webbskrapning eller datautvinning. Det är också användbart för att bygga verktyg som kan analysera och manipulera webbsidor.
+## Vad & Varför?
+HTML-parsing innebär att förvandla en sträng med HTML-kod till ett användbart objekt i ditt program. Genom att göra det kan programmerare manipulera, undersöka och extrahera information från webbsidor.
 
-## Hur man gör:
-```go
+## Hur gör man:
+Här är ett enkelt exempel på hur man kan använda `golang.org/x/net/html` paketet för att parse HTML.
+
+```Go
 package main
 
 import (
-    "fmt"
-    "net/http"
-    "strings"
-
-    "golang.org/x/net/html"
+	"fmt"
+	"golang.org/x/net/html"
+	"strings"
 )
 
 func main() {
-    resp, err := http.Get("https://www.example.com")
-    if err != nil {
-        fmt.Println("Error retrieving webpage:", err)
-        return
-    }
-    defer resp.Body.Close()
-
-    doc, err := html.Parse(resp.Body)
-    if err != nil {
-        fmt.Println("Error parsing HTML:", err)
-        return
-    }
-
-    var links []string
-    var findLinks func(*html.Node)
-    findLinks = func(n *html.Node) {
-        if n.Type == html.ElementNode && n.Data == "a" {
-            for _, attr := range n.Attr {
-                if attr.Key == "href" {
-                    links = append(links, attr.Val)
-                    break
-                }
-            }
-        }
-        for c := n.FirstChild; c != nil; c = c.NextSibling {
-            findLinks(c)
-        }
-    }
-
-    findLinks(doc)
-    fmt.Println("Links found on webpage:", links)
+	s := "<html><body><p>Hej världen!</p></body></html>"
+	doc, _ := html.Parse(strings.NewReader(s))
+	var f func(*html.Node)
+	f = func(n *html.Node) {
+		if n.Type == html.TextNode {
+			fmt.Println(n.Data)
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			f(c)
+		}
+	}
+	f(doc)
 }
 ```
 
-Output:
-```
-Links found on webpage: [/, /about, /contact, /products]
-```
+När du kör koden, kommer du att se "Hej världen!" skriven i din konsol.
 
-## Djupdykning:
-Parsning av HTML blev populärt under 90-talet då internet började ta fart. Det finns många andra språk och verktyg som också kan användas för att parsning av HTML, som Python's BeautifulSoup och Nokogiri för Ruby. Go har dock ett centralt paket för detta ändamål kallat "net/html" som gör parsning enkelt och effektivt. Det har också stöd för att ladda in HTML från både lokala filer och HTTP-förfrågningar.
+## Djupdykning
+HTML-parsing har funnits sedan HTML först skapades. Det finns många olika sätt att lösa problemet, men `golang.org/x/net/html` paketet i Go är en favorit på grund av dess enkelhet och effektivitet.
 
-## Se även:
-- [Go-paketet "net/html"](https://github.com/golang/net/tree/master/html)
-- [Python BeautifulSoup](https://pypi.org/project/beautifulsoup4/)
-- [Ruby Nokogiri](https://rubygems.org/gems/nokogiri)
+Ett annat alternativ är att använda `net/html/charset` paketet som är användbart om du behöver stöd för olika teckenuppsättningar.
+
+När det gäller implementation detaljer, utför Go-parsern en viss normalisering på HTML-koden, såsom att konvertera alla taggar och attribut till små bokstäver.
+
+## Se också
+Här är några bra källor för mer information och verktyg:
+
+- Mer om HTML parsing: https://www.golangprograms.com/golang-parsing-html.html
+- net/html paketet: https://godoc.org/golang.org/x/net/html
+- UTF-8 och Go: https://blog.golang.org/strings
+- Ett alternativ, `net/html/charset` paketet: https://godoc.org/golang.org/x/net/html/charset

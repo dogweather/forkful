@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "Lua: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,41 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När vi pratar om att skicka en HTTP-request, menar vi att vi skickar en förfrågan till en server för att få information. Det är en viktig del av programmering för att hämta och hantera data från internet.
+Att skicka en HTTP-begäran innebär att sätta igång en handling på en webbserver. Det är ett sätt för programmerare att interagera med webbplatser, appar eller API:er på distans, ofta för att få information eller utföra funktioner.
 
-## Hur man:
-### Enkel HTTP-förfrågan med Lua socket:
+## Hur Man Gör:
+Här är ett exempel på hur man skickar en GET HTTP-begäran i Lua med hjälp av biblioteket `socket.http`:
+
 ```Lua
--- Ladda in Lua socket biblioteket
-local socket = require("socket")
+-- Importera socket.http-biblioteket
+local http = require('socket.http')
 
--- Ange URL och port för förfrågan
-local url = "www.example.com"
-local port = 80
+-- URL för vår HTTP-begäran
+local url = 'http://httpbin.org/get'
 
--- Öppna en anslutning till servern
-local connection = socket.tcp()
-connection:connect(url, port)
+-- Skicka en GET-begäran
+local response, status, headers = http.request(url)
 
--- Ange HTTP-förfrågan
-local request = "GET / HTTP/1.1\r\nHost: " .. url .. "\r\n\r\n"
-
--- Skicka förfrågan och spara svaret
-connection:send(request)
-local response = connection:receive("*a")
-
--- Skriv ut svaret
+-- Skriv ut svarsdata
 print(response)
-
--- Stäng anslutning
-connection:close()
 ```
-Exempelutgång:
-`<!DOCTYPE html><html><head><title>Example Domain</title>...` (fortsätter med lång HTML-kod)
+Denna kod kommer att skicka en HTTP GET-begäran till "http://httpbin.org/get" och skriv sedan ut svaret från servern.
 
-## Deep Dive:
-Att skicka HTTP-förfrågningar har en lång historia och är en viktig del av internet. Det finns olika vägar att skicka förfrågningar och sätt att hantera svaren, men en populär metod idag är att använda sig av bibliotek som Lua socket eller LuaHTTP. Implementationen kan variera, men grundprincipen är densamma - skapa en anslutning till servern och skicka en förfrågan.
+## Djupdykning
+Historiskt sett, skickande av HTTP-begäran var en vital del i utvecklingen av World Wide Web. Det låter appar och webbplatser att "prata" med varandra genom att skicka och ta emot data. 
 
-## Se även:
-- [Lua socket](http://w3.impa.br/~diego/software/luasocket/)
-- [LuaHTTP](https://github.com/daurnimator/lua-http)
+Alternativt, förutom `socket.http`, finns det andra bibliotek i Lua för att skicka HTTP-begäran, som `luasocket` eller `lua-http`.
+
+Förståelse på lägre nivå för hur HTTP-begäran behandlas i Lua kräver kunskap om hur nätverksprotokoll, URL-syntax och HTTP-metadata fungerar. Bibliotek, som `socket.http`, hanterar dessa detaljer för oss.
+
+## Se även
+1. Lua Socket Programmeringsguide: http://w3.impa.br/~diego/software/luasocket/
+2. HTTP-begäran med Lua: http://lua-users.org/wiki/HttpLuaModule
+3. Officiell Lua-programmeringsdokumentation: https://www.lua.org/manual/5.4/

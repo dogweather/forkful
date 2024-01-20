@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "Python: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Python"
 category:             "Python"
@@ -10,27 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest interpolacja ciągu znaków i dlaczego programiści to robią?
+## Co i Dlaczego?
 
-Interpolacja ciągu znaków to proces wstawiania wartości zmiennych do wstępnie zdefiniowanego ciągu tekstowego. Programiści wykorzystują to narzędzie, aby upraszczać swoją pracę przy tworzeniu dynamicznych i bardziej złożonych ciągów tekstowych.
+Interpolacja napisów w Pythonie polega na wstawianiu wartości zmiennych bezpośrednio do napisów. Programiści korzystają z interpolacji napisów, aby utworzyć dynamiczne napisy, które ułatwiają debugowanie i tworzenie czytelnych wiadomości dla użytkowników.
 
 ## Jak to zrobić:
 
-```python
-Imie = "Maria"
-Wiek = 25
-print("Cześć, mam na imię {0} i mam {1} lat!".format(Imie, Wiek))
+Python oferuje kilka metod na interpolację napisów, ale skupmy się na dwóch najpopularniejszych: f-stringi (od Pythona 3.6) i metodzie `.format()`.
+
+Pierwszy sposób, f-stringi:
+
+```Python
+imie = "Jan"
+powitanie = f"Cześć, {imie}!"
+print(powitanie)
 ```
-**Wynik:**
-*Cześć, mam na imię Maria i mam 25 lat!*
 
-## Głębszy wgląd:
+W wyniku otrzymujemy:
 
-1. Kontekst historyczny: Interpolacja ciągu znaków została wprowadzona w języku programowania C w latach 70. XX wieku, a od tego czasu zyskała popularność w innych językach.
-2. Alternatywy: Inne sposoby tworzenia dynamicznych ciągów tekstowych to użycie operatora `%` lub f-stringów (dostępnych w wersji Python 3.6 i nowszych).
-3. Szczegóły implementacji: W Pythonie interpolacja ciągu znaków jest realizowana za pomocą metody `format()` lub operatora `%`. W obu przypadkach wykorzystywane są znaki specjalne (`{}` lub `%s`) do oznaczania miejsc, w których zostaną wstawione wartości zmiennych.
+```
+Cześć, Jan!
+```
 
-## Zobacz również:
+Drugim sposobem jest metoda `.format()`:
 
-[PEP 3101 - Advanced String Formatting](https://www.python.org/dev/peps/pep-3101/) - oficjalna dokumentacja interpolacji ciągu znaków w Pythonie.
-[Real Python - String Interpolation in Python](https://realpython.com/python-string-formatting/) - artykuł o różnych sposobach formatowania ciągów tekstowych w Pythonie.
+```Python
+imie = "Jan"
+powitanie = "Cześć, {}!".format(imie)
+print(powitanie)
+```
+
+Wynik jest taki sam:
+
+```
+Cześć, Jan!
+```
+
+## Pogłębione info:
+
+Interpolacja napisów istnieje od dawna w innych językach programowania, takich jak Perl czy Ruby. W Pythonie interpolacja napisów została wprowadzona w wersji 2.6 za pomocą metody `.format()`. Dopiero w wersji 3.6 dodano f-stringi, które są szybsze i bardziej czytelne.
+
+Istnieją też inne metody, takie jak stary sposób z użyciem operatora `%`, ale jest on rzadko stosowany i nie zalecamy go do nowych projektów. Co więcej, f-stringi oferują wiele zaawansowanych opcji, takich jak możliwość wykonywania wyrażeń w środku placeholderów.
+
+## Zobacz też:
+
+[Official Python Documentation on String Interpolation](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
+
+[Python String Formatting Best Practices](https://realpython.com/python-string-formatting/) 
+
+[The f-Strings in Python](https://realpython.com/python-f-strings/)

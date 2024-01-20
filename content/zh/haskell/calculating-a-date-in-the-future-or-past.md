@@ -1,7 +1,7 @@
 ---
-title:                "算出在未来或过去的日期"
-html_title:           "Haskell: 算出在未来或过去的日期"
-simple_title:         "算出在未来或过去的日期"
+title:                "计算未来或过去的日期"
+html_title:           "Haskell: 计算未来或过去的日期"
+simple_title:         "计算未来或过去的日期"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是日期计算？
+## 何为何？ (What & Why?)
+将来或过去的日期计算是通过某一日期加减天数以获取新日期。程序员进行此操作以精确控制和管理时间。
 
-日期计算是指根据给定的日期和时间，计算出未来或过去某一天的具体日期。这是程序员在日常工作中经常会遇到的问题，因为许多应用程序需要根据特定的日期来执行不同的操作。通过日期计算，程序员可以轻松地管理日期和时间，使得应用程序更加灵活和有效。
+## 如何操作: (How to)
+在哈斯克尔（Haskell）中，我们可以使用 `addDays` 和 `diffDays` 函数来进行日期计算。让我们看一下这些例子：
 
-# 如何进行日期计算？
-
-首先，我们需要导入模块`Data.Time`来使用日期和时间函数。接着，我们可以使用`addDays`函数来计算指定日期的未来或过去多少天后的日期。下面是一个使用`addDays`函数的示例代码：
-
-```
+```haskell
 import Data.Time
 
--- 计算今天往后10天的日期
-addDays 10 (fromGregorian 2021 10 15)
+-- 计算未来的日期
+futureDate :: Day -> Integer -> Day
+futureDate current days = addDays days current
 
--- 输出结果为：2021-10-25
+-- 计算过去的日期
+pastDate :: Day -> Integer -> Day
+pastDate current days = addDays (-days) current
+
+-- 例子
+main :: IO()
+main = do
+    let today = fromGregorian 2022 1 1 -- 设置当前日期
+    print $ futureDate today 365        -- 计算一年后的日期
+    print $ pastDate today 365          -- 计算一年前的日期
 ```
 
-# 深入探讨
+## 深入了解 (Deep Dive)
+日期运算的历史可以追溯到计算机编程的开始。在Haskell中，实现日期计算需要使用 `Data.Time` 库，它提供了跨越日期和时间的全面函数。
 
-历史背景：在计算机系统的早期，日期的表示和计算并不像现在这么简单，因此日期计算也是许多程序员必备的技能。随着计算机技术的发展，日期计算变得更加方便和精确。
+另一种替代方案是使用 `Day` 类型的 `diffDays` 方法计算两个日期之间的差异，然后通过加减法获取新日期。然而，在必要的情况下我们仍然可以手动来执行它。
 
-替代方案：除了使用`Data.Time`模块，还可以使用其他一些第三方库来进行日期计算，例如`hdate`和`timecalc`等。
+一些实现细节要注意的是，`addDays` 函数会正常处理闰年和其他的日历规则，一切都隐藏在幕后，使得代码更简洁和安全。
 
-实现细节：在Haskell中，日期和时间通常以`UTCTime`类型的形式表示，它是从格林威治标准时间（GMT）开始计算的秒数。因此，在进行日期计算时，需要将日期转换为`UTCTime`类型，再进行计算。
-
-# 参考链接
-
-- [Hackage: Data.Time](https://hackage.haskell.org/package/time)
-- [Hackage: hdate](https://hackage.haskell.org/package/hdate)
-- [Hackage: timecalc](https://hackage.haskell.org/package/timecalc)
+## 另请参阅 (See Also)
+为了更深入理解Haskell中的日期和时间，以下链接可能会有帮助：
+1. [Haskell日期和时间教程](http://learnyouahaskell.com/dates-and-times)
+2. [关于Haskell在Hackage的Data.Time库文档](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)

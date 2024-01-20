@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "TypeScript recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Reading Command Line Arguments with TypeScript
 
-Reading command line arguments is the process of retrieving data or parameters that are passed to a program through the command line interface. Programmers do this in order to make their programs more flexible and customizable by allowing users to input specific values when running the program.
+## What & Why? 
+Reading command line arguments is a method that allows programmers to input data directly into their scripts via the command line interface. It's beneficial in a variety of contexts such as altering script behavior without requiring code changes, and for passing necessary variables at runtime.
 
 ## How to:
 
-In TypeScript, command line arguments can be read using the `process.argv` array. Its first two elements are reserved for the program execution path and command used, so the actual arguments start at index 2. To access these arguments, we can simply loop through the array starting at index 2 and print out each argument. For example:
+Let's take a look at how we can read command line arguments with TypeScript:
 
 ```TypeScript
-for (let i = 2; i < process.argv.length; i++) {
-  console.log(`Argument ${i - 1}: ${process.argv[i]}`);
-}
+let args: string[] = process.argv.slice(2);
+console.log(args);
 ```
 
-Running the program with the command `node index.ts argument1 argument2` would result in the output:
-```
-Argument 1: argument1
-Argument 2: argument2
-```
+This script cuts off the first two arguments (node executable and script path) and returns the rest of the command line arguments. Run it with some arguments:
 
-Alternatively, we can use the `yargs` package to make command line argument parsing even easier. This package allows us to define options and flags for our program and automatically parse the arguments for us. For example:
-
-```TypeScript
-const argv = require('yargs').argv;
-
-console.log(`Name: ${argv.name}`);
-console.log(`Age: ${argv.age}`);
+```bash
+$ node script.ts arg1 arg2 arg3
 ```
 
-Running the program with the command `node index.ts --name John --age 25` would result in the output:
+The result will be:
+
+```bash
+[ 'arg1', 'arg2', 'arg3']
 ```
-Name: John
-Age: 25
-```
 
-## Deep Dive:
+## Deep Dive
 
-Reading command line arguments has been a common practice since the early days of programming, when command line interfaces were the main form of user interaction with computers. It provides a convenient way for programs to receive input from users without the need for a graphical user interface. In addition to using the `process.argv` array, some other popular packages for parsing command line arguments in TypeScript include `commander` and `argparse`.
+Historically, command line arguments have been used in UNIX systems, where small, concise command line utilities were common. Today, we use them to make our scripts more flexible and interactive.
 
-It is worth noting that command line arguments are not the only way to make programs customizable. Other methods include config files, environment variables, and interactive prompts. However, command line arguments are often preferred for their ease of use and simplicity.
+While using `process.argv` is the most straightforward method of getting command line arguments in TypeScript, there are alternative packages like `yargs` or `commander` that provide advanced features like flags, defaults, and richer error messages.
 
-## See Also:
+Reading command line arguments in TypeScript essentially boils down to how V8 engine (which underpins Node.js) deals with them. `process.argv` is just an array reflecting command line call structure, where each space-separated part becomes an array member.
 
-- [process.argv documentation](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
-- [yargs package](https://www.npmjs.com/package/yargs)
-- [commander package](https://www.npmjs.com/package/commander)
-- [argparse package](https://www.npmjs.com/package/argparse)
+## See Also
+
+Lightweight `minimist` npm package: https://www.npmjs.com/package/minimist
+
+yargs npm package for more complex cases: https://www.npmjs.com/package/yargs
+
+Node.js process.argv documentation: https://nodejs.org/docs/latest/api/process.html#process_process_argv

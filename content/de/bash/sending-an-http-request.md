@@ -1,7 +1,7 @@
 ---
-title:                "Eine http Anfrage senden"
-html_title:           "Bash: Eine http Anfrage senden"
-simple_title:         "Eine http Anfrage senden"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,22 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Versenden von HTTP-Anfragen ist ein wichtiger Bestandteil der Webentwicklung. Dabei wird eine Anfrage an einen Server geschickt, der dann entsprechend antwortet. Programmierer nutzen dieses Konzept, um Daten von einem Server abzurufen oder zu senden.
+## Was & Warum?
 
-Wie geht's?
-Im Bash gibt es verschiedene Möglichkeiten, um HTTP-Anfragen zu senden. Eine davon ist die Nutzung des Befehls ```curl```. Mit diesem Befehl kann eine URL angegeben werden, um eine entsprechende Anfrage an den Server zu senden. Zum Beispiel: ```curl www.example.com``` 
+Beim Senden einer HTTP-Anforderung kommuniziert man mit Web-Servern. Dies ist nützlich, um Daten zu übertragen, APIs anzusprechen oder Webseiten-Inhalte zu laden.
 
-Für eine genauere Kontrolle über die Anfrage, können auch Parameter hinzugefügt werden. Zum Beispiel, um eine POST-Anfrage zu senden: ```curl --data "name=John&age=30" www.example.com```
+## So geht's:
 
-Alternativ kann auch der Befehl ```wget``` benutzt werden, um eine Datei von einem Server herunterzuladen. Zum Beispiel: ```wget www.example.com/file.txt```
+Wirsenden ein HTTP GET Request mit `curl`. Das ist der Code:
+```Bash
+#!/bin/bash
+url='http://example.com'
+curl $url
+```
 
-Wenn Sie die Antwort des Servers in einer Variable speichern möchten, können Sie den Befehl ```$(curl www.example.com)``` verwenden. Dies ist besonders nützlich, wenn Sie die Antwort weiterverarbeiten möchten.
+Der Output kann so aussehen:
+```Bash
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+</html>
+```
 
-Tiefer Einblick
-Das Konzept des HTTP-Anforderungs-Antwort-Zyklus wurde bereits 1989 von Tim-Berners Lee vorgeschlagen und ist bis heute das Hauptprotokoll für den Austausch von Daten im Web. Neben den genannten Befehlen gibt es auch andere Tools wie ```wget```, ```httpie``` oder ```lynx```, die für die Durchführung von HTTP-Anfragen verwendet werden können.
+Ein POST Request mit Daten könnte so ausssehen:
+```Bash
+#!/bin/bash
+url='http://example.com'
+data='{"name":"John", "age":30}'
 
-Wenn Sie noch mehr Kontrolle über die Anfragen haben möchten, können Sie sich auch mit den verschiedenen Optionen des ```curl```-Befehls auseinandersetzen. Hier können Sie zum Beispiel verschiedene Header oder Authentifizierungsarten angeben.
+curl -X POST -d "$data" $url -H "Content-Type: application/json"
+```
 
-Siehe auch
-Weitere Informationen zur Verwendung von HTTP-Anfragen in Bash finden Sie in der offiziellen Dokumentation zu ```curl``` and ```wget```.
+## Vertiefung
+
+Erste HTTP Anfragen waren in den 90er Jahren möglich. `curl` und `wget` sind dafür beliebte, weil einfache Tools. Ein alternativer Weg ist die Verwendung von Bibliotheken in Programmiersprachen wie Python's `requests` oder Node.js `http`.
+
+Der `curl` Befehl sendet standardmäßig GET Requests. Mit `-X POST` ändern wir den HTTP Verbs zu POST. Der `-d` Parameter gibt die zu sendenden Daten an. `-H` setzt den Content-Type Header auf `application/json`.
+
+## Siehe Auch
+
+Weiterführende Infos:
+- `curl` Manpage: https://curl.se/docs/manpage.html
+- HTTP Spezifikation: https://tools.ietf.org/html/rfc2616

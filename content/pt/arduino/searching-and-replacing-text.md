@@ -1,7 +1,7 @@
 ---
-title:                "Procurando e substituindo texto"
-html_title:           "Arduino: Procurando e substituindo texto"
-simple_title:         "Procurando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,74 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Que & Por Quê?
 
-A busca e substituicao de texto e uma tecnologia utilizada por programadores para encontrar e alterar pedacos de texto dentro do codigo de forma automatica. E uma maneira eficiente de fazer alteracoes em massa sem ter que fazer manualmente, economizando tempo e esforco.
+Procurar e substituir texto é uma operação comum que permite localizar uma string específica em um texto e substituí-la por outra. Os programadores usam essa função para corrigir erros, mudar variáveis ou adaptar códigos para novas implementações.
 
 ## Como fazer:
 
-### Exemplo 1: Buscando e Substituindo em uma String
+Vamos usar o método `String::replace()` da biblioteca string do Arduino. Esse método analisa uma string, procura uma sub-string especificada e a substitui por outra.
 
-```Arduino
-// Declarando a string
-String texto = "Ola mundo!";
-
-// Buscando e substituindo o "Ola" por "Oi"
-texto.replaceAll("Ola", "Oi");
-
-// Impressao do texto alterado
-Serial.println(texto);
-// Output: Oi mundo!
+```
+String text = "Ola, mundo!";
+text.replace("mundo", "Arduino");
+Serial.println(text);
 ```
 
-### Exemplo 2: Buscando e Substituindo em um Array
+Esse código substituirá "mundo" por "Arduino", portanto, o resultado impresso no Serial Monitor será "Ola, Arduino!".
 
-```Arduino
-// Declarando o array
-String nomes[] = {"Joao", "Maria", "Pedro"};
+## Mergulho Profundo
 
-// Buscando e substituindo "Maria" por "Mariana"
-for(int i = 0; i < 3; i++){
-  nomes[i].replaceAll("Maria", "Mariana");
-}
+Esse método de busca e substituição é um truque útil e tem sua origem na programação adotada desde os primeiros compiladores. Existem alternativas, como o uso de expressões regulares para correspondência de padrões mais complexos, mas, por simplicidade e eficiência, o método de substituição de string é mais amplamente utilizado em pequenas aplicações, como aquelas destinadas ao Arduino.
 
-// Impressao do array alterado
-for(int i = 0; i < 3; i++){
-  Serial.println(nomes[i]);
-}
-// Output: Joao Mariana Pedro
-```
+### Implementação
 
-### Exemplo 3: Buscando e Substituindo com Expressoes Regulares
+Quando o `String::replace()` é chamado, ele percorre a string original da esquerda para a direita. Quando localiza a primeira ocorrência da sub-string de pesquisa, ele a substitui pela sub-string de substituição.
 
-```Arduino
-// Declarando a string
-String frase = "Gosto de gatos e cachorros!";
+Ao contrário de alguns outros sistemas de programação, o Arduino não possui funções nativas para expressões regulares. Portanto, se precisar de uma funcionalidade de pesquisa e substituição mais avançada, talvez precise implementar uma biblioteca adicional.
 
-// Usando uma expressao regular para substituir todas as vogais por "u"
-frase.replaceAll("[aeiou]", "u");
+## Veja também:
 
-// Impressao do texto alterado
-Serial.println(frase);
-// Output: Gusu du gutus u cuchurrus!
-```
-
-## Aprofundando:
-
-### Contexto Historico:
-
-A busca e substituicao de texto tem suas origens nos editores de texto do inicio da computacao. Com o crescimento da industria de software, essa tecnologia foi sendo adotada por linguagens de programacao, facilitando o processo de desenvolvimento de softwares e automacao de tarefas repetitivas.
-
-### Alternativas:
-
-Algumas alternativas para busca e substituicao de texto em programacao incluem o uso de expressoes regulares, linguagens de script como Python e ferramentas de edicao de texto avancadas, como o Vim e o Sublime Text.
-
-### Detalhes de Implementacao:
-
-A busca e substituicao de texto em Arduino e realizada utilizando o metodo `replaceAll()` da classe `String`, que procura por todas as ocorrencias do valor especificado e substitui por outro valor. E importante utilizar o metodo `replaceAll()` em vez de `replace()` para garantir que todas as ocorrencias sejam substituidas.
-
-## Veja Tambem:
-
-- [Documentacao Oficial Arduino - Metodo `replace()`](https://www.arduino.cc/reference/pt/language/variables/data-types/string/functions/replace/)
-- [Wikipedia - Expressoes Regulares](https://pt.wikipedia.org/wiki/Express%C3%A3o_regular)
-- [Tutorial de Expressoes Regulares em Python](https://www.tutorialspoint.com/python/python_reg_expressions.htm)
+1. Documentação oficial da biblioteca String no Arduino:[String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
+2. Um tutorial mais aprofundado sobre a manipulação de strings no Arduino: [Arduino String Manipulation](https://learn.adafruit.com/adafruit-arduino-lesson-17-email-sending-movement-detector/string-manipulation)
+3. Se estiver interessado em expressões regulares, confira: [Regex on the Arduino](https://arduinoregex.com/)

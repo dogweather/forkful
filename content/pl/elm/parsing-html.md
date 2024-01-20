@@ -1,7 +1,7 @@
 ---
-title:                "Analiza html"
-html_title:           "Elm: Analiza html"
-simple_title:         "Analiza html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,52 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsing HTML (parsowanie HTML) to proces analizowania kodu HTML w celu wydobycia informacji z niego. Programiści często wykonują tę czynność, aby pobrać konkretne dane ze stron internetowych, np. tytuły, obrazy lub linki.
+## Co i dlaczego?
+
+Rozbieranie HTML, to proces, który pozwala na wyodrębnienie konkretnych danych i informacji z kodu HTML. Programiści robią to, aby przeanalizować struktury stron internetowych, pozyskać potrzebne dane lub przekształcić je w inny, bardziej użyteczny format.
 
 ## Jak to zrobić:
-Przykłady kodowania i wyników znajdują się w blokach kodu ```Elm ...```
-
-1. Przy użyciu modułu `Html.Parser` możemy łatwo sparsować kod HTML i uzyskać go w formie drzewa. W przykładowym kodzie wykorzystano płynny operator `<!>` do oznaczania jednowierszowych wyrażeń.
 
 ```Elm
-import Html
-import Html.Parser exposing (..)
+import Html.Parser
+import Html.Parser.Util
 
-main =
-    let
-        html = "<h1>Hello, World!</h1><a href="https://example.com">Link</a>"
-        parsedHtml = parse html
-    in
-        Html.text (firstChild parsedHtml)
+exampleHtml : String
+exampleHtml =
+    """
+    <p>Witaj Świecie!</p>
+    """
+
+parseHello : String -> Maybe String
+parseHello htmlText =
+    Html.Parser.parse htmlText
+        |> Result.andThen (Html.Parser.Util.select "p")
+        |> Result.toMaybe
+        |> Maybe.andThen List.head
+        |> Maybe.andThen .innerHtml
 ```
 
-**Output:** `Hello, World!` (tytuł jest zwracany jako element HTML)
+Naszym wynikiem po zastosowaniu `parseHello exampleHtml` będzie `Just "Witaj Świecie!"`.
 
-2. Możemy także użyć modułu `Html.Attributes` do parsowania atrybutów elementów. W poniższym kodzie uzyskamy adres URL linku z poprzedniego przykładu.
+## Deep Dive
 
-```Elm
-import Html
-import Html.Parser exposing (..)
-import Html.Attributes exposing (..)
+Rozbieranie HTML ma swoje korzenie w początkach internetu, kiedy to statyczne strony HTML były podstawą komunikacji sieciowej. Dziś, z nadejściem dynamicznych aplikacji internetowych, możemy pracować z HTML na bardzo różne sposoby.
 
-main =
-    let
-        html = "<h1>Hello, World!</h1><a href="https://example.com">Link</a>"
-        parsedHtml = parse html
-    in
-        Html.text (getAttribute "href" (firstChild parsedHtml))
-```
+Alternatywą dla Html.Parser jest `Html.Parser2`, który oferuje więcej elastyczności, ale jest mniej intuicyjny.
 
-**Output:** `https://example.com`
-
-## Głębsze Zagłębianie:
-1. Parsowanie HTML jest powszechnie używane w programowaniu internetowym, aby szybko i łatwo uzyskać potrzebne informacje z wybranej strony internetowej.
-
-2. Alternatywne metody parsowania HTML to korzystanie z innych języków programowania, takich jak JavaScript czy Python, lub z użyciem zewnętrznych bibliotek.
-
-3. W Elm, parsowanie HTML jest zintegrowane z innymi modułami i narzędziami, dzięki czemu jest szybkie i wydajne. 
+Podczas implementacji "parsing" HTML w Elm, ważne jest zrozumienie, jak działa monad `Maybe` i `Result`. Te typy danych mają centralne znaczenie dla obsługi błędów w czasie parsowania, a doświadczenie z nimi jest bezcenne podczas pracy z Html.Parser.
 
 ## Zobacz także:
-- [Dokumentacja Elm - Parsowanie HTML](https://package.elm-lang.org/packages/elm/parser/latest/Html-Parser)
-- [Przykładowy kod parsowania HTML w Elm](https://dev.to/choonkeat/parsing-html-in-elm-3582)
+
+- Dokumentacja Elm: https://elm-lang.org/docs
+- Html.Parser w Elm: https://package.elm-lang.org/packages/elm/html/latest/Html-Parser
+- Html.Parser2 w Elm: https://package.elm-lang.org/packages/eeue56/elm-html-parser/latest/

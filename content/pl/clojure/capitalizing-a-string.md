@@ -1,7 +1,7 @@
 ---
-title:                "Zapisywanie dużej litery ciągu znaków"
-html_title:           "Clojure: Zapisywanie dużej litery ciągu znaków"
-simple_title:         "Zapisywanie dużej litery ciągu znaków"
+title:                "Zamiana liter w ciągu na wielkie"
+html_title:           "Clojure: Zamiana liter w ciągu na wielkie"
+simple_title:         "Zamiana liter w ciągu na wielkie"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Kapitalizacja łańcuchów znaków w Clojure 
+
 ## Co i dlaczego?
 
-Kapitalizowanie stringów jest procesem zmiany pierwszej litery każdego słowa w ciągu znaków na wielką literę. Programiści robią to, aby stringi wyglądały czytelniej i poprawniej, szczególnie w kontekście wyświetlania wyjścia użytkownikowi.
+Kapitalizacja łańcuchów znaków polega na zmianie pierwszego znaku w łańcuchu znaków na duży literę. Programiści robią to, by poprawić prezentację tekstu, np. przy wywietlaniu imion i nazwisk.
 
 ## Jak to zrobić:
 
-```Clojure
-;; Dzięki funkcji clojure.string/capitalize możemy przekształcić stringa:
-(clojure.string/capitalize "witaj świecie!")
-;; zwraca "Witaj świecie!"
+Clojure (wersja obecna to 1.10) posiada wbudowaną funkcję `capitalize` w bibliotece `clojure.string`. Oto przykład:
 
-;; Można również skorzystać z funkcji re-find do odnalezienia słów w stringu i zmienić ich pierwszą literę:
-(defn capitalize-words [str]
-  (clojure.string/join " " (map #(clojure.string/capitalize %) (re-find #"\w+" str))))
-(capitalize-words "witaj świecie!")
-;; zwraca "Witaj Świecie!"
+```clojure
+(require '[clojure.string :as str])
+
+(defn show-capitalized [s]
+   (str/capitalize s))
+
+(println (show-capitalized "jan kowalski"))
 ```
 
-## Pogłębiona analiza:
+Wynik:
 
-Kapitalizowanie stringów ma swoje korzenie w sztuce pisania, gdzie stosuje się wielkie litery na początku zdań i nazw własnych. Alternatywą dla tej praktyki jest używanie wszystkich małych liter lub tzw. "camelCase" - którego pierwsza litera jest wielka a kolejne małe. W implementacji Clojure, funkcja capitalize korzysta z biblioteki Java, która używa standardowych reguł języka angielskiego do kapitalizacji stringów.
+```clojure
+"Jan kowalski"
+```
+
+## Głębokie zanurzenie:
+
+Kapitalizacja łańcuchów znaków jest praktyką stosowaną od początku informatyki. W Clojure jest to realizowane przez funkcje biblioteki `clojure.string`, która jest częścią standardowej dystrybucji Clojure.
+
+Jest kilka alternatyw dla funkcji `capitalize`. Dwie wartościowe to `upper-case` i `lower-case`, które zmieniają wszystkie litery łańcucha znaków na duże lub małe litery.
+
+Detale implementacji funkcji `capitalize` są dość proste. Funkcja dzieli łańcuch na dwa łańcuchy: pierwszy znak i resztę łańcucha. Następnie zamienia pierwszy znak na wielką literę i łączy go z resztą.
 
 ## Zobacz też:
 
-[Dokumentacja funkcji clojure.string/capitalize](https://clojuredocs.org/clojure.string/capitalize)
-
-[Porównanie różnych sposobów kapitalizacji stringów w języku Clojure](https://gist.github.com/Raynes/69339)
+Dokumentacja funkcji `capitalize` Clojure: [tutaj](https://clojuredocs.org/clojure.string/capitalize)
+Blog na temat operacji na łańcuchach znaków w Clojure: [tutaj](https://www.braveclojure.com/core-functions-in-depth/)

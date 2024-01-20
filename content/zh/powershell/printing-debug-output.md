@@ -1,6 +1,6 @@
 ---
 title:                "打印调试输出"
-html_title:           "PowerShell: 打印调试输出"
+html_title:           "Clojure: 打印调试输出"
 simple_title:         "打印调试输出"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是打印调试输出？为什么程序员要这么做？
+## 什么 & 为什么？
 
-打印调试输出是在代码中插入特殊语句来输出程序执行过程中的详细信息，以帮助程序员定位和解决错误。程序员通常会这么做是因为调试是编程过程中必不可少的一部分，尤其是在处理复杂的代码时。
+控制台打印调试输出是在控制台打印出程序运行过程的各种信息。程序员做这件事的目的是更好地了解并调试程序的运行情况。
 
-# 如何使用 PowerShell 打印调试输出？
+## 如何操作：
 
-在 PowerShell 中，使用 ```Write-Output``` 命令来打印调试输出信息。下面是一个示例代码和输出结果：
-
+```PowerShell
+Write-Debug "Debug info here" -Debug
+Write-Verbose "Verbose info here" -Verbose
 ```
-Write-Output "正在执行调试中..."
-Write-Output "当前变量值为: $variable"
-```
+当你运行上述代码时，调试和详细信息将会显示出来。
 
-输出结果：
-```
-正在执行调试中...
-当前变量值为: 10
-```
+## 深入学习：
 
-# 深入探讨
+#### 历史背景：
+Print语句的历史可以追溯到早期的编程语言，如Fortran和C。PowerShell改进了这个概念，提供了丰富多样的输出选项。
 
-## 历史背景
+#### 替代品：
+除了Write-Debug, Write-Verbose之外，还有Write-Warning、Write-Error、Write-Output、Write-Host等命令, 它们分别用于输出不同级别的信息。
 
-打印调试输出的历史可以追溯到早期的编程语言，如 C 和 BASIC。当时，程序员需要通过输出变量或语句来调试程序，以便查看程序执行过程中的变量值和语句输出情况。
+#### 实现细节：
+Write-Debug并不像其它的Write语句那样直接进行打印，需要 -Debug 开关，而不仅仅是依赖$DebugPreference变量。类似地, Write-Verbose也需要 -Verbose 开关。
 
-## 可替代方法
+## 参看:
 
-除了打印调试输出外，程序员还可以使用调试器工具来查看程序执行过程中的变量值和语句情况。这些工具提供了更全面的调试功能，但使用起来可能需要更多的学习和配置。
-
-## 实现细节
-
-在 PowerShell 中，打印调试输出可以使用多种方式，如使用 ```Write-Output```、```Write-Host```、```Write-Verbose``` 等命令。每种命令都有自己的特点和用途，可以根据实际情况选择使用。
-
-# 参考链接
-
-- [PowerShell Write-Output 文档](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/write-output?view=powershell-7.1)
-- [PowerShell 调试文档](https://docs.microsoft.com/zh-cn/powershell/scripting/debugging/debugging?view=powershell-7.1)
-- [PowerShell 调试技巧](https://adamtheautomator.com/powershell-debugging-tips/)
+1. 更多的关于Write-Debug和Write-Verbose的学习资源可以访问PowerShell文档: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/write-debug
+2. 想要掌握更多的关于PowerShell的元数据命令，可以查阅这篇文章: https://docs.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-string-comparisons
+3. 想要掌握更多的关于调试PowerShell脚本的知识，可以查阅这篇文章：https://docs.microsoft.com/powershell/scripting/learn/debugging-from-command-line

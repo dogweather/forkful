@@ -1,6 +1,6 @@
 ---
 title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "Elm: स्ट्रिंग्स को जोड़ना"
+html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
 simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,20 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya aur Kyun?
-Ek samay tha jab strings ko jodne ke liye keval "+" operator ka upyog hota tha, lekin ab iska asli maqsad", string concatenation" ke roop me jaana jaata hai. Ismein ek ya adhik strings ko sath milkar ek hi string banaaya jaata hai. Programmers iska upyog generally texts, log messages aur APIs mein deta hai.
+## क्या और क्यों?
 
-## Kaise karen?
-Elm mein strings ko join karne ke liye "+" operator ka prayog kar sakte hain. Iske alawa, hum `append` function bhi use kar sakte hain.
+स्ट्रिंग को कोनकेटिनेट करना यानी दो या दो से अधिक स्ट्रिंग्स को एक साथ जोड़ना। कोड में मेसेज साझा करने, डाटा फॉर्मैट करने, और नई जानकारी उत्पन्न करने के लिए, प्रोग्रामर्स इसे उपयोग करते हैं।
+
+## कैसे करें:
 
 ```Elm
-"Hello " + "World!"  -- output: "Hello World!"
+import Html exposing (text)
 
-append "Hello" "World!" -- output: "HelloWorld!"
+main =
+    text (String.concat ["नमस्ते, ", "दुनिया!"])
 ```
 
-## Gahare Jahaj
-Is feature ki shuruwat C++ aur Java jaise languages mein hui aur aaj kal almost sabhi programming languages me aapko iska support mil jaayega. Alag alag languages mein thoda sa difference ho sakta hai ki kaunsa operator ya function upyog karna hai. Elm mein "+" operator ke alawa, hum `append` function bhi use kar sakte hain jo do strings ko join karke ek naya string bana deta hai.
+यह कोड "नमस्ते, " और "दुनिया!" को कोनकेटिनेट करता है, और "नमस्ते, दुनिया!" आउटपुट देता है।
 
-## Aur Bhi Dekhein
-Agar aapko strings ko manipulate karna ya join karna pasand hai toh aap [Elm documentation](https://guide.elm-lang.org/types/strings.html) se aur jankari prapt kar sakte hain. Iske alawa, aap `concat` aur `join` jaise functions ke bare mein bhi adhik jaan sakte hain.
+## गहान जानकारी
+
+स्ट्रिंग कोंकेनेशन की आवश्यकता और उसके प्रयोग के सावधानियां कहीं-कहीं इसे परंपरागत इसीलिए नहीं बनती हैं। Elm में `String.concat` हमें फ़्लेक्सिबिलिटी देता है कि हम कई स्ट्रिंग्स को एकत्रित कर सकते हैं। वैकल्पिक तरीके में, आप `String.append` भी उपयोग कर सकते हैं जो केवल दो स्ट्रिंग्स को मिलाता है।
+
+## भी देखें:
+
+1. Elm का अधिकारिक दस्तावेज़ीकरण: [String.concat](https://package.elm-lang.org/packages/elm/core/latest/String#concat) और [String.append](https://package.elm-lang.org/packages/elm/core/latest/String#append) 
+2. [Elm का एक प्रारंभिक हाथों-पे ट्यूटोरियल](https://www.elm-tutorial.org/en/)
+3. [Elm का सम्पूर्ण गाइड इन हिन्दी](https://www.learnxinyminutes.com/docs/hi-hi/elm/)

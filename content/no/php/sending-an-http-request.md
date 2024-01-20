@@ -1,7 +1,7 @@
 ---
-title:                "Sending en HTTP forespørsel"
-html_title:           "PHP: Sending en HTTP forespørsel"
-simple_title:         "Sending en HTTP forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -12,29 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å sende en HTTP-forespørsel betyr å be om informasjon fra en nettside eller webserver. Dette er en vanlig oppgave for programmerere når de vil hente data fra et annet nettsted eller nettjeneste. Det kan være for å integrere funksjonalitet fra en tredjeparts tjeneste, eller for å hente oppdateringer fra en ekstern kilde.
+Å sende en HTTP forespørsel er prosessen med å be en spesiell ressurs (som en HTML-fil, bilde eller annet) fra en server. Programmerere gjør dette for å hente, slette, oppdatere eller sende informasjon til en server.
 
-## Slik gjør du det:
+## Hvordan:
 
-Å sende en HTTP-forespørsel i PHP er enkelt og kan gjøres med funksjonen ```file_get_contents()```. Med denne kan du sende en forespørsel og få tilbake svaret som en streng. Her er et eksempel på å hente informasjon fra en API-tjeneste og vise resultatet:
+Her er et grunnleggende PHP-eksempel på en GET-forespørsel ved hjelp av cURL:
 
 ```PHP
-$json = file_get_contents('https://api.example.com/user/123');
-$obj = json_decode($json);
-echo 'Brukernavn: ' . $obj->username;
-echo 'E-post: ' . $obj->email;
+<?php
+// Initialiserer en ny sesjon og returnerer cURL håndtaket til bruk med curl_setopt()
+$ch = curl_init("http://example.com");
+
+// Setter en cURL overføring mulighet
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+// Utfører en cURL økten du har håndtaket
+$output = curl_exec($ch);
+
+// Lukk en cURL økt 
+curl_close($ch);
+
+// Vis utdata
+echo $output;
+?>
 ```
 
-Dette vil hente data om bruker nummer 123 og vise brukernavn og e-postadresse.
+I output, vil du få innholdet på http://example.com
 
 ## Dypdykk
 
-I tidligere versjoner av PHP var det vanlig å bruke funksjonene ```fopen()``` og ```fgets()``` for å sende en HTTP-forespørsel og lese svaret. Dette var en mer omstendelig og upraktisk måte, og derfor ble ```file_get_contents()``` introdusert. Det finnes også andre alternativer for å sende HTTP-forespørsler, som for eksempel biblioteker som cURL og Guzzle.
+### Historisk kontekst
+HTTP-forespørsler er en grunnleggende del av moderne nettbrowsing og ble definert tidlig i webens historie av Tim Berners-Lee ved CERN.  
 
-Når du sender en HTTP-forespørsel med ```file_get_contents()```, er standardmetoden GET, men du kan også spesifisere andre metoder som POST og PUT. Du kan også legge til tilpassede HTTP-headerfelt for å sende ekstra informasjon med forespørselen.
+### Alternativer
+Selv om cURL er veldig vanlig, er det andre biblioteker å vurdere for å sende HTTP-forespørsler i PHP, som GuzzleHttp og HTTPful.
 
-## Se også
+### Implementasjonsdetaljer
+For det første, når du bruker cURL, er det viktig å alltid lukke cURL ressursen etter bruk for å frigjøre systemressurser. Dernest, hvis webserveren du henter fra bruker noe enn standard port (80 for http og 443 for https), må du spesifisere den i URL-en.
 
-- Dokumentasjon for ```file_get_contents()```: https://www.php.net/manual/en/function.file-get-contents.php
-- Alternativet cURL: https://www.php.net/manual/en/book.curl.php
-- Alternativet Guzzle: https://docs.guzzlephp.org/
+## Se også:
+
+- Lær mer om PHP cURL biblioteket i [PHP dokumentasjonen](https://www.php.net/manual/en/book.curl.php)
+- Les hva [Mozilla har å si](https://developer.mozilla.org/no/docs/Web/HTTP/Overview) om HTTP.
+- Bli kjent med alternative biblioteker: [GuzzleHttp](http://docs.guzzlephp.org/en/stable/), [HTTPful](http://nategood.com/httpful/)

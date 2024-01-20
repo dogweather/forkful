@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Kotlin: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,18 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
+# Päivämäärän jäsentäminen merkkijonosta Kotlin-ohjelmointikielessä
 
-Päivämäärän parsiminen merkkijonosta tarkoittaa päivämäärän muuttamista merkkijonoksi, jotta sitä voidaan käsitellä tietokoneohjelmassa. Ohjelmoijat tekevät tätä, koska usein tarvitaan toimintoja, jotka toimivat päivämäärien kanssa ja joskus päivämäärä tulee käyttäjältä merkkijonona.
+## Mitä ja Miksi?
+Merkkijonosta päivämäärän jäsentäminen tarkoittaa tekstissä olevan päivämäärän siirtämistä ymmärrettäväksi päivämäärä-objektiksi. Käytämme tätä tekniikka yleisesti tiedostojen luennassa, käyttäjän syötetietojen analysoinnissa, ja päivämäärätiedon manipuloinnissa.
 
-Miten:
+## Kuinka toimin:
+Jäsentäminen on yksinkertaista Kotlinissa:
+```Kotlin
+    import java.time.LocalDate
+    import java.time.format.DateTimeFormatter
 
-Kotlinin avulla päivämäärän parsiminen merkkijonoksi on helppoa. Alla on esimerkki, jossa aikaleima muunnetaan päivämääräksi ```Kotlin val dateString = "7/1/2021" val date = LocalDate.parse(dateString, DateTimeFormatter.ofPattern("M/d/yyyy")) println(date) ``` Tämä koodi tulostaa "2021-07-01". 
+    fun main() {
+        val formatter = DateTimeFormatter.ofPattern("d.MM.yyyy")
+        val dateString = "23.12.2021"
+        val date = LocalDate.parse(dateString, formatter)
+        println(date) // Tulostaa: 2021-12-23
+    }
+```
+Tässä ohjelmassa muunnamme merkkijonon "23.12.2021" päivämääräksi ja tulostamme päivämäärän.
 
-Syvempi sukellus:
+## Syvä Sukellus:
+Varhaisissa ohjelmointikielissä päivämäärätiedot käsiteltiin usein merkkijonoina. Nykyaikaiset ohjelmointikielet, kuten Kotlin, tarjoavat helpompia ja tehokkaampia tapoja käsittellä päivämääriä. Alternatiiveista parhaita ovat Joda-Time ja ThreeTenABP-kirjastot.
 
-Päivämäärän parsiminen merkkijonosta on ollut tärkeä osa ohjelmointia jo pitkään. Aiemmin tämä tehtiin pääasiassa manuaalisesti, mutta nyt on olemassa valmiita funktioita ja kirjastoja, kuten Kotlinin ```LocalDate.parse```, jotka tekevät sen helpommaksi. Vaihtoehtoja päivämäärän muotoilulle on myös useita, esimerkiksi "d/M/yy" tai "yyyy-MM-dd". Tärkeintä on valita sellainen muotoilu, joka sopii parhaiten oman sovelluksen tarpeisiin.
+`LocalDate.parse` perustuu java.time-paketin toiminnallisuuteen. Jos haluat mukautetun muodon, voit luoda `DateTimeFormatter` -objektin ja määrittää oman muodon stringinä. Muoto "d.MM.yyyy" tarkoittaa päivää (d), kuukautta (M) ja vuotta (y). 
 
-Katso myös:
+## Katso myös:
+[Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/dates-and-times.html)
+[Joda-Time](https://www.joda.org/joda-time/)
+[ThreeTenABP](https://github.com/JakeWharton/ThreeTenABP)
 
-Lisätietoja päivämäärän parsimisesta merkkijonosta löytyy Kotlinin viralliselta verkkosivustolta sekä eri ohjelmointiyhteisöjen foorumeilta. Hyödyllisiä kirjastoja ja työkaluja ovat esimerkiksi ```DateTimeFormatter``` ja ```SimpleDateFormat```.
+Huomioithan, että valinta riippuu paljon tarpeista ja tilanteestasi. Jotkut kirjastot voivat paremmin tukea erityistarpeitasi kuin toiset.

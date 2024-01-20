@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av en nettside"
-html_title:           "TypeScript: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Nedlasting av en nettside betyr å hente HTML-, CSS- og JavaScript-koden som utgjør nettsiden og vise den i nettleseren din. Programmerere gjør dette for å analysere nettsider, endre informasjon eller lage web scraping-verktøy som kan samle informasjon fra flere nettsteder.
+## Hva & Hvorfor?
 
-## Hvordan: 
+Å laste ned en nettside er prosessen med å hente all data fra en spesifikk URL, som ofte inkluderer HTML, CSS, JavaScript, bilder, osv. Programmerere gjør dette for å analysere og jobbe med nettsidens data offline.
+
+## Hvordan gjøre det:
+
+I TypeScript kan du bruke Node.js-biblioteket `axios` for å laste ned en nettside. Her er en enkel kodeblokk:
+
 ```TypeScript
 import axios from 'axios';
 
-// Hente en nettside
-axios.get('https://www.eksempelnettsted.com/')
-  .then(response => console.log(response.data))
-  .catch(error => console.log(error));
+async function last_ned_nettside(url: string): Promise<string> {
+    const respons = await axios.get(url);
+    return respons.data;
+}
 
-// Endre brukeragenten
-axios.get('https://www.eksempelnettsted.com/', {
-  headers: {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36'}
-})
-  .then(response => console.log(response.data))
-  .catch(error => console.log(error));
+// Eksempel bruk:
+last_ned_nettside("https://google.com")
+    .then(data => console.log(data))
+    .catch(err => console.error(err));
 ```
 
+Når du kjører denne koden, vil du se innholdet i Google-hjemmesiden skrive ut i konsollen.
+
 ## Dypdykk:
-Nedlasting av nettsider har blitt vanlig med den økende bruken av automatiserte og datadrevne løsninger på nettet. Det finnes også andre metoder for å hente nettsider, for eksempel gjennom nettleser-automatisering med verktøy som Puppeteer. Implementeringen av nedlasting av nettsider i TypeScript er enkel takket være eksterne biblioteker som axios og node-fetch.
+
+**Historisk kontekst:** Nedlasting av websider har vært en viktig del av programmering siden internettets spede begynnelse. Det tillater datamaskiner å hente og bearbeide informasjon fra nettet.
+
+**Alternativer:** `axios` er et populært bibliotek, men det er mange andre metoder for å laste ned en nettside i TypeScript, som `node-fetch` og den innebyggede `http`-modulen i Node.js.
+
+**Implementeringsdetaljer:** Når du laster ned en nettside, gjør du faktisk en HTTP GET forespørsel til en server. Serveren returnerer deretter en respons, som inneholder nettsidens data.
 
 ## Se også:
-- [Axios documentation](https://github.com/axios/axios)
-- [Node-fetch documentation](https://www.npmjs.com/package/node-fetch)
+
+- Axios dokumentasjon: [https://axios-http.com/docs/intro](https://axios-http.com/docs/intro)
+- Node.js HTTP Modul: [https://nodejs.org/api/http.html](https://nodejs.org/api/http.html)
+- Tutorial om hvordan gjøre HTTP forespørsler i Node.js: [https://www.twilio.com/blog/2017/08/http-requests-in-node-js.html](https://www.twilio.com/blog/2017/08/http-requests-in-node-js.html)

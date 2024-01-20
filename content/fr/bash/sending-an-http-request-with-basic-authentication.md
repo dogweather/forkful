@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une demande http avec une authentification de base"
-html_title:           "Bash: Envoyer une demande http avec une authentification de base"
-simple_title:         "Envoyer une demande http avec une authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Bash: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,22 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-L'envoi d'une requête HTTP avec une authentification de base est une méthode utilisée par les programmeurs pour sécuriser leurs requêtes HTTP. Cela permet d'ajouter un niveau de protection en demandant aux utilisateurs de s'authentifier avant d'accéder à une ressource ou une API spécifique.
+La requête HTTP avec authentification de base est un moyen pour les programmes d'envoyer des informations à travers le Web avec une sécurité élémentaire. Les programmeurs l'utilisent pour communiquer avec des serveurs qui nécessitent une authentification simple, comme celui d'une API REST.
 
-## Comment faire : 
-Voici un exemple d'un envoi de requête HTTP avec une authentification de base en utilisant Bash :
+## Comment faire :
+Pour envoyer une requête HTTP avec authentification de base en Bash, on utilisera souvent l'outil curl. Le format est le suivant :
 
+```Bash
+curl -u utilisateur:motdepasse http://url-du-serveur
 ```
-curl -u username:password URL
+
+L'utilisateur et le mot de passe sont inclus dans la commande. Voici un exemple avec de faux identifiants pour une API imaginaire :
+
+```Bash
+curl -u azerty:123456 http://mon-api.imaginaire.com
 ```
 
-Le résultat devrait afficher le contenu de la ressource ou l'état de la requête si elle a réussi ou échoué.
+Vous devriez voir une réponse du serveur dans la console. Si vous voyez une erreur 401, c'est que vos identifiants sont incorrects.
 
-## Plongée en profondeur :
-L'authentification de base est une méthode d'authentification HTTP très simple et largement utilisée depuis sa première implémentation en 1996. Bien qu'elle soit facile à mettre en place, elle ne garantit pas une sécurité optimale car les informations d'identification sont envoyées en clair. Des alternatives telles que l'authentification Digest ou l'utilisation de certificats sont souvent préférées pour une meilleure protection des données.
+## Plongée en profondeur
+Historiquement, l'authentification de base HTTP est l'une des formes d'authentification les plus anciennes sur le Web. Cependant, elle est considérée comme peu sécurisée car elle ne chiffre pas les identifiants en eux-mêmes. C'est pourquoi elle est souvent utilisée en combinaison avec un protocole sécurisé comme HTTPS.
 
-Côté programmation, l'envoi d'une requête avec une authentification de base peut être réalisé à l'aide d'un script Bash ou en utilisant une librairie tierce telle que cURL.
+Il existe des alternatives, comme l'authentification par jeton ou l'authentification OAuth, qui sont plus sécurisées mais aussi plus complexes à mettre en place.
 
-## Voir aussi :
-- [Documentation cURL](https://curl.se/docs/auth.html)
-- [Article sur l'authentification HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+En terme d'implémentation, notons que curl cache vos identifiants le temps de la session, ce qui peut être à la fois pratique et potentiellement risqué. C'est une chose à garder en tête lorsque vous utilisez ce type d'authentification.
+
+## À voir également
+[Aperçu des méthodes d'authentification HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+[Manuel du curl en français](https://curl.se/docs/manpage.html)
+[Cours en ligne sur la sécurité des APIs](https://openclassrooms.com/fr/courses/6573231-design-your-restful-api-with-uml)

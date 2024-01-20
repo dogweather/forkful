@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando una cadena"
-html_title:           "Bash: Capitalizando una cadena"
-simple_title:         "Capitalizando una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Bash: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por Qué?
 
-Capitalizar una cadena de texto simplemente significa convertir la primera letra de cada palabra a mayúscula. Los programadores a menudo lo hacen para mejorar la legibilidad de su código y para seguir convenciones de codificación establecidas.
+Capitalizar una cadena de texto es el proceso de transformar todas las letras minúsculas de la misma en mayúsculas. Los programadores suelen hacerlo para estandarizar su salida de texto o para comparar cadenas sin tener en cuenta si son minúsculas o mayúsculas.
 
-## Cómo:
+## ¿Cómo hacerlo?
+
+Para capitalizar una cadena en Bash, puedes usar el comando `tr`. Aquí te muestra cómo:
 
 ```Bash
-# Ejemplo 1: Usando el comando tr para capitalizar una cadena
-echo "hola mundo" | tr '[:lower:]' '[:upper:]'
-# Salida: HOLA MUNDO
-
-# Ejemplo 2: Usando la función "capitalize" de Bash
-texto="esto es una cadena"
-texto="${texto^}"
-echo $texto
-# Salida: Esto es una cadena
+echo 'hola mundo' | tr '[:lower:]' '[:upper:]'
 ```
 
-## Profundizando:
+El resultado será:
 
-### Contexto histórico:
-Capitalizar una cadena de texto puede ser una práctica común en muchos lenguajes de programación, pero en realidad proviene de la imprenta y la tipografía. En la época de los tipos móviles, los mayúsculas eran más grandes y se encontraban en una posición más alta que las minúsculas, por lo que se utilizaban al principio de las oraciones y para destacar ciertas palabras.
+```Bash
+HOLA MUNDO
+```
 
-### Alternativas:
-Además de las opciones mencionadas en la sección "Cómo", también existen otras formas de capitalizar una cadena de texto en Bash. Algunas de ellas incluyen utilizar expresiones regulares con el comando sed y utilizar la función "tr" con variables de entorno.
+El comando `tr` se usa para transformar caracteres. Aquí, transforma todos los caracteres de minúsculas a mayúsculas.
 
-### Detalles de implementación:
-En lenguajes de programación más complejos, como JavaScript o Python, hay funciones específicas para capitalizar cadenas de texto. Pero en Bash, no hay una función dedicada para esto. En su lugar, se pueden utilizar comandos como "tr" o "awk", o aprovechar las secuencias de escape de Bash para realizar la capitalización.
+## Análisis Profundo
 
-## Ver también:
+La historia de capitalizar cadenas es bastante simple: se ha hecho desde que se inventaron las primeras computadoras. En Bash, la manera más común de hacerlo es con el comando `tr`, pero hay otras formas de hacerlo. Por ejemplo, podrías usar `awk`, `sed` o incluso `perl` con un one-liner:
 
-- Documentación de Bash sobre el uso de expresiones regulares con "sed": https://www.gnu.org/software/sed/manual/html_node/Regular-Expressions.html
-- Stack Overflow: ¿Cómo capitalizar una cadena en Bash?: https://stackoverflow.com/questions/2264428/how-do-i-capitalize-the-first-letter-of-a-string-in-bash
-- Historia de la tipografía: https://www.lifewire.com/typography-origin-and-history-1078277
+```Bash
+echo 'hola mundo' | awk '{print toupper($0)}'
+echo 'hola mundo' | sed -e 'y/abcdefghijklmnopqrstuvwxyz/ABCDEFGHIJKLMNOPQRSTUVWXYZ/'
+echo 'hola mundo' | perl -ne 'print uc'
+```
+
+Todas estas líneas de código capitalizarán el string 'hola mundo'. Sin embargo, `tr` es el comando más común por su simplicidad.
+
+## Ver También
+
+* [Guía de Bash](https://tldp.org/LDP/abs/html/abs-guide.html)
+* [AWK - Manual](https://www.gnu.org/software/gawk/manual/gawk.html)
+* [SED - Manual](https://www.gnu.org/software/sed/manual/sed.html)
+* [Perl - Manual](https://perldoc.perl.org/index-language.html)
+
+Recuerda, también puedes visitar las páginas de manuales de `awk`, `sed`, `perl` y `tr` en tu computadora para aprender más sobre esas herramientas en Bash.

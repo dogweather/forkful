@@ -1,7 +1,7 @@
 ---
-title:                "L'analyse de HTML"
-html_title:           "C: L'analyse de HTML"
-simple_title:         "L'analyse de HTML"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,49 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing HTML en utilisant C
+## Qu'est-ce que c'est & Pourquoi ?
 
-## Qu'est-ce que c'est et pourquoi le programmer?
+Le parsing HTML est l'action de décomposer et d'analyser un document HTML pour le transformer en un format utilisable pour votre programme. C'est essentiel pour les programmeurs qui souhaitent automatiquement extraire, manipuler ou utiliser des informations à partir de pages Web.
 
-Le parsing HTML est le processus de traitement et d'analyse du code HTML pour extraire des informations spécifiques à partir des balises et des attributs. Les programmeurs le font souvent pour extraire des données pertinentes à partir de pages web, pour créer des outils de scraping ou pour analyser des documents HTML pour détecter des erreurs.
+## Comment faire :
 
-## Comment faire?
+Alors, comment pouvons-nous analyser du HTML en C ? Le code ci-dessous montre une façon simple d'accomplir cela en utilisant une bibliothèque populaire appelée « gumbo-parser ».
 
-Afin de comprendre comment programmer le parsing HTML en utilisant C, voici un exemple de code qui extrait le titre d'une page web en utilisant la bibliothèque libxml:
 ```C
-// Inclure la bibliothèque libxml
-#include <libxml/HTMLparser.h>
-#include <libxml/xpath.h>
+// Inclure la bibliothèque gumbo-parser
+#include <gumbo.h>
 
-int main() {
-    // Charger le document HTML
-    htmlDocPtr doc = htmlReadFile("example.html",NULL,0);
-    // Utiliser XPath pour extraire le titre
-    xmlChar* xpath_title = "//title";
-    xpathContextPtr context = xpathNewContext(doc);
-    xmlXPathObjectPtr result = xmlXPathEvalExpression(xpath_title, context);
-    // Afficher le titre
-    printf("Title: %s\n", xmlNodeListGetString(doc, result->nodesetval->nodeTab[0]->xmlChildrenNode, 1));
-    // Libérer la mémoire
-    xmlFreeDoc(doc);
-    xmlCleanupParser();
-    // Terminer le programme
-    return 0;
+// Fonction pour parse le HTML
+void parse_html(const char* html) {
+    GumboOutput* output = gumbo_parse(html);
+
+    // Print le titre de la page, si existant
+    GumboNode* title = find_title(output->root);
+    if (title) {
+        printf("Titre : %s\n", GumboNode->v.text.text);
+    }
+
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
+}
+
+// Fonction pour trouver le titre de la page
+static GumboNode* find_title(const GumboNode* root) {
+    // implémentation dépendante de vous
 }
 ```
-###Output:
-```
-Title: Example Page
-```
 
-## Plongée en profondeur
+En supposant que vous avez correctement installé gumbo-parser, le code ci-dessus va lire le HTML donné, et si existant, imprimera le titre de la page.
 
-Le parsing HTML est essentiel pour extraire des données à partir de pages web, notamment pour le web scraping, l'analyse de données et le test de sites. Il a été initialement développé pour le langage de programmation Perl, mais il existe maintenant de nombreuses bibliothèques pour une variété de langages, y compris C. Certaines alternatives populaires pour le parsing HTML en C sont Gumbo et HTML Agility Pack.
+## Approfondissement :
 
-L'implémentation du parsing HTML en C peut être complexe en raison de la structure complexe des documents HTML et de la nécessité de gérer les erreurs. Cependant, en utilisant des bibliothèques telles que libxml, il devient plus facile de traiter et d'extraire les données souhaitées.
+Historiquement, le parsing HTML en C était un processus complexe et précaire, due à la nature flexible du HTML. Les bibliothèques telles que gumbo-parser ont été développées pour simplifier ce processus.
 
-## Voir aussi
+En ce qui concerne les alternatives, libxml2 est une autre bibliothèque populaire pour le parsing HTML en C. Cependant, elle peut être considérée comme plus complexe à utiliser.
 
-- [Gumbo](https://github.com/google/gumbo-parser)
-- [HTML Agility Pack](https://html-agility-pack.net/)
-- [libxml](http://www.xmlsoft.org/html/libxml-parser.html)
+Concernant les détails d'implémentation, le processus de parsing HTML est un processus à deux étapes : la construction de l'arbre DOM et le rendu de l'arbre. Dans notre exemple, gumbo-parser fait simplement la phase de construction DOM. Le rendu est laissé à votre discrétion.
+
+## Voir Aussi :
+
+- Documentation de Gumbo : https://github.com/google/gumbo-parser
+- Tutoriel de libxml2 : http://www.xmlsoft.org/html/libxml-HTMLparser.html
+- W3C HTML DOM : https://www.w3schools.com/js/js_htmldom.asp

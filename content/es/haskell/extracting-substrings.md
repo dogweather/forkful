@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "Haskell: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,38 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+# Extracción de subcadenas en Haskell
 
-Extraer subcadenas es una técnica común utilizada por los programadores para obtener una parte específica de una cadena de texto. Esto puede ser útil en situaciones en las que solo se necesita una parte de la información contenida en una cadena más larga. Por ejemplo, al trabajar con datos de una base de datos, a menudo es necesario extraer valores individuales o campos de una cadena que representa una entrada completa.
+## ¿Qué y por qué?
 
-## Cómo hacerlo:
+La extracción de subcadenas es el proceso de obtener segmentos específicos de una cadena más grande. Los programadores la utilizan para manipular y analizar datos en formato de texto con mayor eficacia.
 
-Para extraer una subcadena en Haskell, se puede utilizar la función `take` que toma dos argumentos: el número de elementos que se desean extraer y la cadena original. Por ejemplo, si queremos extraer los tres primeros caracteres de la cadena "Hola mundo", escribiríamos lo siguiente:
+## ¿Cómo se hace?
 
+In Haskell, puedes utilizar las funciones de biblioteca estándar para extraer subcadenas de manera eficiente. Diferentes funciones te permiten extraer por posiciones, extraer prefijos o sufijos y más.
+
+Aquí tienes algunas funciones de subcadena útiles:
+
+Para extraer del principio de una cadena:
+
+```Haskell
+Prelude> take 5 "Hola mundo"
+"Hola "
 ```
-take 3 "Hola mundo"
+
+Para descartar del principio de una cadena:
+
+```Haskell
+Prelude> drop 5 "Hola mundo"
+"mundo"
 ```
 
-Esto devolvería "Hol" como resultado. También se puede utilizar la función `drop` para eliminar una determinada cantidad de elementos al principio de una cadena.
+Para extraer del final de una cadena:
 
-Otra forma de extraer subcadenas es utilizando la función `takeWhile` que toma un predicado y una lista y devuelve una lista con los elementos que cumplen con ese predicado. Por ejemplo, si queremos obtener todos los números pares de una lista de números, podríamos usar lo siguiente:
-
+```Haskell
+Prelude> reverse (take 5 (reverse "Hola mundo"))
+"mundo"
 ```
-takeWhile even [2, 4, 7, 10, 11, 12]
-```
 
-Esto devolvería [2, 4] como resultado.
+## Deep Dive
 
-## Profundizando:
+La extracción de subcadenas ha sido una capacidad útil en la programación durante décadas y variable en todos los idiomas. Los primeros lenguajes de programación como COBOL y FORTRAN tenían capacidades integradas para extraer subcadenas.
 
-La técnica de extraer subcadenas es comúnmente utilizada en lenguajes de programación y no se limita solo a Haskell. Otros lenguajes, como Java y C++, también tienen funciones y métodos para extraer subcadenas de una cadena.
+Las alternativas a la extracción de subcadenas generalmente involucran el uso de expresiones regulares, que pueden ser más potentes pero también más complejas. Haskell soporta tanto la extracción de subcadenas como el uso de expresiones regulares.
 
-Además de la función `take`, también se puede utilizar la función `substring` en Haskell para extraer una subcadena. La diferencia es que `substring` toma tres argumentos: la cadena original, el índice de inicio y el índice final. Este enfoque permite una mayor flexibilidad al especificar qué parte exacta de la subcadena deseamos extraer.
+Debajo del capó, la extracción de subcadenas en Haskell es extremadamente eficiente. Por supuesto, debes tener cuidado al hacerlo en cadenas muy grandes, ya que podría consumir demasiada memoria.
 
-Por último, también es importante tener en cuenta que la mayoría de los lenguajes de programación indexan las cadenas a partir de 0, lo que significa que el primer carácter de una cadena tiene el índice 0, el segundo el índice 1, y así sucesivamente.
+## Ver también
 
-## Ver también:
+Para más detalles y tutoriales sobre la extracción de subcadenas en Haskell, puedes consultar estos recursos (en inglés):
 
-- Documentación oficial de Haskell: [https://www.haskell.org/documentation/](https://www.haskell.org/documentation/)
-- Artículo sobre extracción de subcadenas en Java: [https://www.geeksforgeeks.org/java-string-substring/](https://www.geeksforgeeks.org/java-string-substring/)
-- Página de referencia para la función `take` en Haskell: [https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:take](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:take)
+- Real World Haskell, capítulo 8: Manipulación de texto (http://book.realworldhaskell.org/read/text.html)
+- Learn You a Haskell for Great Good!: String (http://learnyouahaskell.com/starting-out#strings)
+- Hoogle - Buscador de funcionalidad Haskell (https://hoogle.haskell.org/)

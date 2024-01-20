@@ -1,7 +1,7 @@
 ---
-title:                "Söka och byta ut text"
-html_title:           "Rust: Söka och byta ut text"
-simple_title:         "Söka och byta ut text"
+title:                "Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att söka och ersätta text är en vanlig uppgift för programmerare. Genom att använda specifika sökmönster kan man hitta och ersätta specifika delar av en text på ett effektivt sätt. Detta är särskilt användbart när man behöver göra stora ändringar i en textfil eller kod.
+# **Sök och ersätt text i Rust: En snabb guide**
 
-## Hur man gör:
-För att söka och ersätta text i Rust kan man använda funktionen `replace()` från standardbiblioteket `std::string::String`. Nedan finns ett exempel på hur man kan använda denna funktion för att ersätta alla förekomster av ett visst ord i en text med ett annat ord:
+## **Vad & Varför?**
+
+I programmering, söker och ersätter vi text för att trasiga, felstavade eller oönskade teckensträngar kan omvandlas till korrekta eller önskade. Denna teknik är oumbärlig för dataframställning och -rensning.
+
+## **Hur Man Gör:**
+
+Här är ett grundläggande exempel på hur vi använder "str::replace" funktionen i Rust:
 
 ```Rust
-let text = "Hej världen!";
-let ersatt = text.replace("Hej", "Hallå");
-println!("{}", ersatt);
+fn main() {
+    let gammal_text = "Hej, jag heter Sekret.";
+    let ny_text = gammal_text.replace("Sekret", "Mysterium");
+    println!("{}", ny_text);
+}
 ```
 
-Detta kodexempel kommer att skriva ut "Hallå världen!" eftersom `replace()` söker efter alla förekomster av "Hej" i texten och ersätter dem med "Hallå". Detta är ett enkelt sätt att utföra en sök-och-ersätt-operation i Rust.
+Utförandet av ovanstående kod ger:
 
-## Fördjupning:
-Sök- och ersättningsfunktioner har funnits i programmeringsvärlden i många år och är en nödvändig del av textbehandling och bearbetning. Det finns dock också andra sätt att utföra dessa operationer, som att använda ett reguljärt uttryck eller ett textredigeringsprogram. Implementeringen av sök- och ersättningsalgoritmer kan också variera beroende på programmeringsspråk.
+```
+Hej, jag heter Mysterium.
+```
 
-## Se även:
-Här är några resurser som kan vara användbara för att lära sig mer om sökning och ersättning i Rust:
+## **Djupdykning:**
 
-- Rust Dokumentation för `replace()` funktionen: [https://doc.rust-lang.org/std/string/struct.String.html#method.replace](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- Regex-Cheat-Sheet för att lära dig att använda reguljära uttryck i Rust: [https://cheats.rs/#regex](https://cheats.rs/#regex)
-- "Learn Rust With Entirely Too Many Linked Lists" - en resurs för att lära sig mer om Rusts streckade listor och sökning och ersättning: [https://rust-unofficial.github.io/too-many-lists/](https://rust-unofficial.github.io/too-many-lists/)
+*Historisk kontext:* Tekniken för att söka och ersätta text i programmering har dess rötter i tidiga textbehandlingsprogram som Sed och Emacs. Rusts metoder för textmanipulation är mycket inspirerade av dessa historiska verktyg, men med en modern twist.
+
+*Alternativ:* Förutom `str::replace`, Rust tillhandahåller också "str::replacen" för att ersätta ett visst antal förekomster, och `str::chars` tillsammans med `collect::<String>()` för att göra mer invecklade substitutioner.
+
+*Implementeringsdetaljer:* `str::replace` metoden i Rust söker igenom texten enligt mängden som ges, och byter ut varje förekomst av det gamla värdet med det nya värdet. Detta sker igenom varje karaktär i strängen, vilket gör operationen följdriktig men möjligtvis en aning långsammare för stora mängder text.
+
+## **Se Även:**
+
+För mer detaljerad information, se de officiella dokumenten:
+
+1. [Rust Docs: str::replace](https://doc.rust-lang.org/std/primitive.str.html#method.replace)
+2. [Rust Docs: str::replacen](https://doc.rust-lang.org/std/primitive.str.html#method.replacen)
+3. [Rust Docs: str::chars](https://doc.rust-lang.org/std/primitive.str.html#method.chars)

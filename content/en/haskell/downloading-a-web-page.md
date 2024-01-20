@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Haskell recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Grabbing the Web with Haskell: A Quick Guide
 
-Downloading a web page refers to the process of retrieving the content of a webpage from the internet. Programmers often do this to extract information or data from a webpage for use in their own applications or systems.
+## What & Why?
+Downloading a web page involves saving HTML content from the internet onto local storage. Programmers do this to mine data, automate human browsing activity, or test websites.
 
 ## How to:
+In Haskell, we achieve this by using the `http-conduit` library. The code becomes quite simple:
 
 ```Haskell
-import Network.HTTP.Conduit (simpleHttp)
+import Network.HTTP.Simple
 
--- Download webpage
-pageContent <- simpleHttp "https://www.example.com"
+main :: IO ()
+main = do
+    response <- httpBS "http://example.com"
+    putStrLn $ B.unpack $ getResponseBody response
 ```
 
-Output: The variable `pageContent` will contain the content of the webpage as a `ByteString` data type.
+Run the code, and voila! You have the HTML content in your command line.
 
-## Deep Dive:
+## Deep Dive
+Downloading a web page from Haskell has come a long way. Early on, Haskell programmers had to interface with C libraries to accomplish this task.
 
-Downloading web pages has been a common practice since the early days of the internet. It has evolved over the years with various libraries and tools available to facilitate the process in different programming languages. Some alternatives to `simpleHttp` in Haskell include `curl` and `wget`. The `simpleHttp` function is part of the `http-conduit` package, which provides a high-level interface for making HTTP requests. Under the hood, it uses `http-client`, a low-level HTTP client library.
+Today, `http-conduit`, part of the robust Conduit library, handles HTTP requests like a charm. It provides high-level and low-level tools for making requests, leaves options for extensibility and customization, and even provides HTTPS support!
 
-## See Also:
+Apart from `http-conduit`, there are many alternatives in the Haskell ecosystem, like `wreq` and `http-client`, depending on the use case and personal preference.
 
-- [http-conduit package documentation](https://hackage.haskell.org/package/http-conduit)
-- [http-client library documentation](https://hackage.haskell.org/package/http-client)
-- [Alternatives to simpleHttp in Haskell](https://wiki.haskell.org/Network.HTTP.Conduit-Alternatives)
+Remember, when you download a web page, you're essentially making a GET request and storing the response. The server responds to the request with a status line, headers, and a message body - which typically contains the HTML of the web page.
+
+## See Also 
+1. Conduit Library: https://hackage.haskell.org/package/conduit
+2. http-conduit documentation: https://hackage.haskell.org/package/http-conduit
+3. A great comparison of web scraping libraries in Haskell: https://www.fpcomplete.com/blog/2015/04/web-scraping-haskell

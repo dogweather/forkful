@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstav i en streng"
-html_title:           "Ruby: Stor bokstav i en streng"
-simple_title:         "Stor bokstav i en streng"
+title:                "Gjøre en streng stor"
+html_title:           "Ruby: Gjøre en streng stor"
+simple_title:         "Gjøre en streng stor"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Innholdsfortegnelse:
+## Hva & hvorfor?
 
-## Hva & Hvorfor?
-Hvis du noensinne har sett en Ruby-kode, har du kanskje lagt merke til at noen strenger har store bokstaver, mens andre ikke gjør det. Dette kalles å "kapitalisere en streng" og er en vanlig praksis blant programmerere for å gjøre koden enklere å lese og forstå.
+Kapitalisering av en streng, på programmeringsspråket, betyr å gjøre den første bokstaven i strengen stor. Programmerere gjør dette for å forbedre lesbarheten og for brukergrensesnittring (GUI).
 
-## Hvordan:
+## Hvordan gjøre det:
+
+I Ruby kan vi kapitalisere en streng ved å bruke `.capitalize` metode. Her er et enkelt eksempel:
+
+```Ruby
+streng = "hej verden"
+puts streng.capitalize
 ```
-navn = "lisa"
-puts navn.upcase
+
+Når du kjører koden ovenfor, vil du se denne utdataen: 
+
+`Hej verden`
+
+Om du vil gjøre første bokstav i hvert ord stort, bruk `.titleize` i stedet:
+
+```Ruby
+streng = "hej verden"
+puts streng.titleize
 ```
-Dette vil gi følgende utgang:
-```
-LISA
-```
-I dette eksemplet har vi brukt #upcase-metoden for å konvertere strengen "lisa" til store bokstaver og deretter skrivd den ut ved hjelp av puts-kommandoen.
 
-## Dykk dypere:
-Det er flere grunner til at programmerere velger å kapitalisere strenger i kode. En av de viktigste er at det gjør det enklere å skille mellom variabler og metoder, noe som er spesielt nyttig når man jobber med store kodeprosjekter. 
+Resultatet vil da se slik ut: 
 
-Det finnes også alternative måter å kapitalisere strenger på, som for eksempel å bruke metodene #capitalize eller #titleize. Disse metodene vil kapitalisere den første bokstaven i en streng eller alle ord i en streng, henholdsvis.
+`Hej Verden`
 
-I tillegg er det viktig å merke seg at noen språk, som for eksempel Java, krever at alle variabelnavn skal skrives med små bokstaver, mens andre, som for eksempel C++, tillater både store og små bokstaver. Derfor kan det være viktig å følge en konvensjon for kapitalisering i koden din, avhengig av hvilket programmeringsspråk du bruker.
+## Dypdykk
 
-## Se også:
-- [Offisiell Ruby-dokumentasjon om strenger](https://ruby-doc.org/core-3.0.1/String.html)
-- [Mer om kapitalisering i koden](https://www.ruby-forum.com/t/titleize/112975)
-- [Diskusjon om variabelnavngivning i Java](https://stackoverflow.com/questions/3414388/java-variable-naming-convention-using-all-capital-letters-for-a-variable-name)
+Historisk sett, stammer konseptet om å kapitalisere bokstavene fra typografibransjen. I programmeringens verden, hjelper denne funksjonen med å gjøre innholdet mer leselig og tiltalende.
+
+Et alternativ til `.capitalize` og `.titleize` kan være å bruke metoden `.upcase` på den første bokstaven selv, men dette krever ekstra kode.
+
+I Ruby, tilsvarer `.capitalize` metoden fungerer ved å bruke den innebygde `CHRUPCASE`-funksjonen til Ruby, noe som gjør den både enkel og effektiv.
+
+## Se Også
+
+For mer informasjon og ressurser angående dette emnet, kan du se på følgende lenker:
+
+Rubys Dokumentasjon for Streng-metoder: https://ruby-doc.org/core-2.7.1/String.html
+Detaljert blogginnlegg om strengkapitalisering: https://www.rubyguides.com/2018/10/ruby-capitalization/
+Tutorial for Ruby streng-manipulering: https://www.tutorialspoint.com/ruby/ruby_strings.htm

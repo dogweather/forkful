@@ -1,6 +1,6 @@
 ---
 title:                "Analysering av html"
-html_title:           "C++: Analysering av html"
+html_title:           "C#: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "C++"
 category:             "C++"
@@ -11,47 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å parse HTML er prosessen med å analysere og forstå HTML-kode som brukes til å lage nettsider. Dette gjøres av programvare for å kunne vise nettsider korrekt på en enhet. Programvareutviklere gjør dette for å sørge for at deres nettsider fungerer som de skal, uavhengig av enheten det blir vist på.
+Å parse HTML handler om å konvertere HTML-koden til et format en applikasjon lettere kan jobbe med (f.eks. et trestrukturert objekt). Programmerere gjør dette for å manipulere, hente data fra, eller generere HTML-dokumenter på en mer strukturert og grei måte.
 
 ## Hvordan:
- Slik ser enkel HTML-kode ut:
-```C++
-<html>
-<head>
-<title>Min Nettside</title>
-</head>
-<body>
-<h1>Velkommen!</h1>
-<p>Dette er min første nettside.</p>
-</body>
-</html>
-```
- 
-Til å begynne med, kan vi bruke et parser-bibliotek som heter **libxml** for å lese og tolke HTML-koden. Vi må først inkludere header-filen ```<libxml/HTMLParser.h>``` for å bruke dette biblioteket. Deretter kan vi bruke funksjonen ```htmlParseDoc``` for å lese og tolke HTML-koden. Her er et eksempel på hvordan man kan hente ut tittelen fra HTML-koden:
- 
+Her er et grunnleggende eksempel på hvordan du bruker "htmlcxx" -biblioteket for å parse HTML i C++:
 ```C++
 #include <iostream>
-#include <libxml/HTMLParser.h>
+#include <htmlcxx/html/ParserDom.h>
 
-int main(){
-  htmlDocPtr doc = htmlParseDoc("<html><head><title>Min Nettside\
-</title></head><body></body></html>", NULL);
-  xmlChar* title = xmlNodeGetContent(doc->children->children->children->next->children->children);
-  std::cout << "Tittelen på nettsiden er: " << title;
-  xmlFreeDoc(doc);
-  return 0;
+int main() {
+    std::string html = "<html><body><h1>Hei, Verden!</h1></body></html>";
+    htmlcxx::HTML::ParserDom parser;
+    tree<htmlcxx::HTML::Node> dom = parser.parseTree(html);
+
+    // Utforsk DOM-treet:
+    for(auto it = dom.begin(); it != dom.end(); ++it)
+    {
+        if(!it->isTag() && !it->isComment())
+        {
+            std::cout << it->text() << std::endl;
+        }
+    }
+    return 0;
 }
 ```
+Når du kjører dette programmet, vil outputtet være: `Hei, Verden!`
 
-**Output:**
-```
-Tittelen på nettsiden er: Min Nettside
-```
+## Dyp Dykk
+1) Historisk kontekst: Parsing av HTML har vært nødvendig siden det første HTML-dokumentet ble opprettet. Den tidligste form av parsing var kanskje ved hjelp av regulære uttrykk, men dette er upraktisk og feilutsatt for mer komplekse dokumenter.
 
-## Dypdykk:
-Parsing av HTML har vært en viktig del av webutvikling helt siden starten av internett og HTML. Det finnes flere alternativer til **libxml**, som for eksempel **pugixml** og **TinyXML**, som også kan brukes for å lese og tolke HTML-kode. Disse alternativene kan ha forskjellige funksjoner og ytelse, så det er viktig å finne den som passer best for ditt prosjekt.
+2) Alternativer: Det finnes mange bibliotek for parsing av HTML i C++. Noen av disse er "htmlcxx", "Gumbo" (utviklet av Google), og "MyHtml". Hver av disse har sine fordeler og ulemper og man bør velge den som best passer prosjektets behov.
 
-En viktig del av å parse HTML er å forstå hvordan HTML-koden er strukturert og å kunne navigere gjennom tags og elementer. Dette kan være utfordrende, spesielt for mer kompleks HTML-kode. Derfor er det viktig å bli kjent med de forskjellige parser-metodene som finnes og å øve seg på å lese og manipulere HTML-kode.
+3) Implementeringsdetaljer: Parsing av HTML går ut på å lese en HTML-tekst, forstå dens struktur, og deretter lage en representasjon av denne strukturen (oftest et DOM-tre). prosessen kan deles opp i to deler: lexical analyse (å bryte opp teksten i "tokens"), og syntaktisk analyse (å forstå hvordan disse "tokens" går sammen for å lage en struktur).
 
-## Se også:
-https://github.com/leffavp/HTML-Parser - et komplett eksempelprosjekt for å lære mer om parsing av HTML i C++.
+## Se Også
+Her er noen lenker til biblioteker og ressurser som kan være hjelpsomme: 
+1) htmlcxx: http://htmlcxx.sourceforge.net/
+2) Gumbo: https://github.com/google/gumbo-parser
+3) MyHtml: https://github.com/lexborisov/myhtml
+4) W3C's HTML5 spesifikasjon (Detaljert info om HTML syntax): http://www.w3.org/TR/html5/syntax.html

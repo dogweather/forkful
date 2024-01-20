@@ -1,6 +1,6 @@
 ---
 title:                "Ein neues Projekt starten"
-html_title:           "Go: Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
 simple_title:         "Ein neues Projekt starten"
 programming_language: "Go"
 category:             "Go"
@@ -10,40 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Das Erstellen eines neuen Projekts ist der erste Schritt, um eine Softwarelösung mit Go zu entwickeln. Programmierer starten neue Projekte, um eine bestimmte Aufgabe oder Funktion zu lösen und/oder um bestehenden Code effizienter zu gestalten.
+Ein neues Projekt zu starten, bedeutet, von Null wegzugehen und zu beginnen, eine neue Software zu entwerfen und zu entwickeln. Programmierer tun dies, um Lösungen für spezifische Probleme zu schaffen oder neue Funktionen einzuführen.
 
-# Wie gehts?
+## So geht's:
 
-Um ein neues Projekt in Go zu starten, folgen Sie einfach diesen Schritten:
+Ein neues Go-Projekt zu starten ist einfach. Wir erstellen ein neues Verzeichnis und initialisieren es als Go-Modul:
 
-1. Öffnen Sie Ihr bevorzugtes Textbearbeitungsprogramm.
-2. Erstellen Sie eine neue Datei mit der Endung `.go`.
-3. Schreiben Sie Ihren Code in dieser Datei und speichern Sie sie ab.
-4. Öffnen Sie die Kommandozeile und navigieren Sie zum Speicherort der Datei.
-5. Geben Sie den Befehl `go run [Dateiname].go` ein, um Ihr Programm auszuführen.
-
-Eine einfache "Hello World"-Anwendung in Go könnte beispielsweise folgendermaßen aussehen:
-
+```Go
+mkdir hello
+cd hello
+go mod init example.com/hello
 ```
+
+Dann schreiben wir unseren ersten Code in einer Datei namens `main.go`:
+
+```Go
 package main
 
 import "fmt"
 
 func main() {
-	fmt.Println("Hallo Welt!")
+    fmt.Println("Hallo Welt")
 }
 ```
 
-Die Ausgabe wäre dann `Hallo Welt!`.
+Um unseren Code auszuführen, verwenden wir `go run`:
 
-# Tiefergehende Informationen
+```Go
+go run .
+```
 
-Go wurde 2009 von Google entwickelt und ist eine Open-Source-Programmiersprache. Es wurde entworfen, um einfache aber leistungsstarke Softwarelösungen zu erstellen. Eine Alternative zu Go ist beispielsweise die Programmiersprache Python. Der Vorteil von Go gegenüber anderen Sprachen ist, dass es kompiliert wird, was bedeutet, dass der Code zu ausführbarem Maschinencode übersetzt wird und somit in der Regel schneller läuft.
+Die Ausgabe sollte "Hallo Welt" sein.
 
-# Siehe auch
+## Tiefgang:
 
-Weitere Informationen und Tutorials zu Go finden Sie auf der offiziellen Website: https://golang.org/
+### Historischer Hintergrund
 
-Für eine interaktive Einführung in Go können Sie auch das Go-Tutorial unter https://tour.golang.org/ ausprobieren.
+Go, auch bekannt als Golang, wurde ab 2007 von Google entwickelt und 2009 veröffentlicht. Es wurde erstellt, um die Effizienz und Produktivität beim Schreiben von Software zu steigern, insbesondere im Zusammenhang mit großen Software-Systemen.
+
+### Alternativen zu Go
+
+Obwohl Go beliebt ist, gibt es auch andere Sprachen wie Python, Java und C#, die ebenfalls verwendet werden können, um neue Projekte zu starten. Die Wahl hängt meist von verschiedenen Faktoren wie Projektanforderungen, verfügbarem Fachwissen und persönlichen Vorlieben ab.
+
+### Implementierungsdetails
+
+In Go ist `main` die Funktion, bei der die Ausführung beginnt. `fmt.Println` wird verwendet, um auf den Standardausgabe-Stream zu drucken. `go mod init` initialisiert das aktuelle Verzeichnis als Go-Modul, wodurch wir Pakete in unserem Projekt ordnen und Versionskontrolle hinzufügen können.
+
+## Weiterführende Ressourcen:
+
+- Go-Webseite für Tutorials und Dokumentationen: https://golang.org/
+- Go-Community: https://gophers.slack.com/
+- Go-Playground zum Testen und Teilen von Go-Code: https://play.golang.org/

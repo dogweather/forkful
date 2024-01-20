@@ -1,7 +1,7 @@
 ---
-title:                "מציאת אורך של מחרוזת"
-html_title:           "Kotlin: מציאת אורך של מחרוזת"
-simple_title:         "מציאת אורך של מחרוזת"
+title:                "מציאת אורך המחרוזת"
+html_title:           "Elm: מציאת אורך המחרוזת"
+simple_title:         "מציאת אורך המחרוזת"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,27 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# מציאת אורך שלמיטה ב-Kotlin
+
 ## מה ולמה?
-למצוא את אורך המחרוזת הוא פעולה פשוטה ונפוצה במתכנתים. זה משמש לנו לדעת כמה תווים יש במחרוזת כדי להתאים אותה כאחת הכניסות לאלגוריתם או להציג בממשק משתמש.
+מציאת אורך של מחרוזת היא התוצאה המספרית של מספר התווים בתוך המחרוזת. מתכנתים עשויים לזקוק לכך בשביל לבצע גילוף מחרוזת, לבדוק תקינות קלט או לבצע ריכוז שפתים.
 
-## איך לעשות זאת:
-הנה כמה דוגמאות למחשבון אורך מחרוזת ולפלט הנובע מהתכנית:
+## איך לעשות:
+הקוד הפשוט הבא ממומש ב-Kotlin:
 ```Kotlin
-// דוגמא ראשונה: נקבל את אורך המחרוזת באמצעות פעולת length
-val text = "מחרוזת לדוגמא"
-println(text.length) // הארך הצפוי: 15
-
-// דוגמא שנייה: ממצע אורך של שני מחרוזות עם השימוש בפעולת count
-val text1 = "מחרוזת ראשונה"
-val text2 = "מחרוזת שנייה"
-val averageLength = (text1.length + text2.length)/2
-println(averageLength) // האורך הממוצע: 20.5
+fun main(args: Array<String>) {
+    val str = "אני אוהב לתכנת ב-Kotlin"
+    val length = str.length
+    println("אורך המחרוזת: $length")
+}
 ```
+מוצא את אורך המחרוזת ומדפיס את התוצאה.
 
-## צלילה מעמיקה:
-השיטות המונחות כאן הן רק כמה מהדרכים לקבל את אורך המחרוזת בKotlin. ישנן גם המון פעולות נוספות כמו indexOf ו-substring שיכולות לעזור לנו לעבוד עם מחרוזות בצורה מדויקת יותר. על מנת לקבל פלט נוסף אנו יכולים להשתמש בתוכנות ליידי לעטוף את פעולת length כדי לקבל את המידע על מותאם למשתמש.
+## ביצוע עמוק יותר:
+בהיסטוריה, הוגים מגוונים של שפת תכנות בצ’אלט קדימה להספק למתכנתים דרכים שונות למצוא את אורך של מחרוזת. Kotlin עצמה מרה ושלה על התוסף `.length`, שמספק את אורך המחרוזת בצורה ישירה ואינטואיטיבית. חלופות אחרות כוללות שימוש בלולאה לספירת התווים או שימוש בפונקציות מובנות בשפות אחרות. 
 
-## ראה גם:
-- [פעולת length שלKotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/length.html)
-- [מדריך מתחילים למחרוזות בKotlin](https://www.baeldung.com/kotlin/strings)
-- [תיעוד מפורט שלKotlin](https://kotlinlang.org/docs/reference/strings.html)
+מבחינת עלות המילואה, `.length` אינו יעיל יותר בהכרח מאשר חלופות אחרות בעבודה עם מחרוזות הקיימות ברשימות נתונים חסרות סמנים או בעבודה עם מחרוזות גדולות במיוחד.
+
+## לקריאה נוספת:
+1. [דוקס הרשמי של Kotlin על מחרוזות](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+2. [רשימת שיעורים מסודרת על מחרוזות ב-Kotlin](https://www.programiz.com/kotlin-programming/string)
+3. [StackOverflow: איך למצוא את אורך מחרוזת בקוטלין](https://stackoverflow.com/questions/36894315/how-to-find-a-string-length-in-kotlin)

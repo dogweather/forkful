@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Lua recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,45 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+String interpolation is much like a placeholder job, where variables within a string are swapped out. Coders use it to improve readability and efficiency, finding spaces filled with variable values clear-cut and concise.
 
-Interpolating a string in Lua refers to the process of inserting a variable's value into a string. This allows programmers to dynamically construct strings using variables, making code more flexible and readable.
-
-## How to:
-
-To interpolate a string in Lua, use the `string.format()` function. This function takes a format string and a list of arguments, replacing any formatting placeholders in the format string with the corresponding values from the arguments list. For example:
+## How To: 
+Lua doesn't really offer native string interpolation; instead, we use the 'format' function. Let's check out some examples.
 
 ```Lua
-local name = "John"
-local age = 25
-
-local intro = string.format("Hello, my name is %s and I am %d years old.", name, age)
-print(intro)
+name = "John"
+print(string.format("Hi %s!", name))  --> Hi John!
 ```
-
-This will output `"Hello, my name is John and I am 25 years old."` By using `%s` and `%d` in the format string, we tell `string.format()` where to insert the values of `name` and `age`.
-
-You can also use numbered placeholders in the format string to specify the order in which the arguments are used. For example:
-
+Using multiple variables isn't an issue:
 ```Lua
-local num1 = 10
-local num2 = 5
-
-local result = string.format("%2$d + %1$d = %d", num1, num2, num1 + num2)
-print(result)
+age = 25
+print(string.format("Hi %s! You are %d years old.", name, age))  --> Hi John! You are 25 years old.
 ```
+## Deep Dive
+1. Lua's lack of in-built string interpolation taps back to its history. Built in 1993 by a pair of Brazilian programmers, Lua was designed to be lightweight and efficient, skimping on many built-in functions other languages have.
+2. There are workarounds if Lua's string.format isn't your cup of tea. You could use a custom function or libraries like LStringLib.
+3. string.format uses the C library function 'sprintf', indicating Lua's C roots and its focus on streamlining performance.
 
-This will output `"5 + 10 = 15"`, with `num1 + num2` being the third argument and thus using the third placeholder in the format string.
+## See Also
+For more about Lua's minimalistic design and the history, hit up "Programming in Lua" by Roberto Lerusalimschy: https://www.lua.org/pil/
 
-## Deep Dive:
+If you're interested in Lua string libraries, have a glance at LStringLib on GitHub: https://github.com/LuaDist/lstringlib
 
-Interpolating strings is not a new concept and has been used in programming languages like C and Python for a long time. The `string.format()` function in Lua is based on the `sprintf()` function from the C standard library.
-
-Alternatives to interpolating strings in Lua include using string concatenation and the `string.gsub()` function. However, using `string.format()` is generally considered the most efficient and readable method.
-
-Internally, `string.format()` uses a formatting string similar to the one used in C, with `%` representing a placeholder and a letter indicating the data type of the argument. For example, `%s` for strings and `%d` for integers.
-
-## See Also:
-
-- Lua string library: https://www.lua.org/manual/5.3/manual.html#6.4
-- C sprintf() function: https://www.cplusplus.com/reference/cstdio/sprintf/
-- Python string formatting: https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting
+For more best practices with string formatting, check out: https://www.lua.org/manual/5.3/manual.html#6.4.2

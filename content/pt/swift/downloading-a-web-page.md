@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Swift: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e porquê?
-Fazer o download de uma página web significa baixar o conteúdo de uma URL para que possa ser visualizado em um dispositivo. Os programadores fazem isso para acessar informações necessárias para suas aplicações, ou para criar scrapers que coletam dados de várias páginas web.
+# Baixando uma Página Web com Swift: Guia passo a passo
 
-## Como fazer:
-```
-let url = URL(string: "https://www.example.com") //criando um objeto URL
-let session = URLSession.shared //criando uma sessão compartilhada
-let task = session.dataTask(with: url!, completionHandler: {data, response, error in //configurando a tarefa para obter o conteúdo da URL
-  if let content = data { //verificando se há dados baixados
-    print(String(data: content, encoding: .utf8)) //convertendo os dados em string e imprimindo o conteúdo na codificação UTF-8
-  }
-})
+## Por quê e para quê?
 
-task.resume() //iniciando a tarefa
-```
-### Saída:
-```
-<!doctype html>
-<html>
-<head>
-  <title>Exemplo de página</title>
-  <meta charset="UTF-8">
-  <meta name="description" content="Esta é uma página de exemplo">
-</head>
-<body>
-  <h1>Olá, mundo!</h1>
-  <p>Esta é uma página de exemplo que demonstra o uso de Swift para baixar e mostrar o conteúdo de uma página web.</p>
-</body>
-</html>
+Baixar uma página da web significa adquirir seu conteúdo codificado em HTML. Os programadores fazem isso para analisar, extrair dados, verificar alterações ou fazer uma versão offline.
+
+## Como:
+
+Swift torna isso fácil. Podemos usar o Data para baixar o conteúdo HTML:
+
+```Swift
+let url = URL(string: "https://www.example.com")!
+let htmlData = try! Data(contentsOf: url)
+let htmlString = String(data: htmlData, encoding: .utf8)!
+print(htmlString)
 ```
 
-## Aprofundando:
-1. Contexto histórico: Antes do surgimento de Swift, a linguagem Objective-C era mais comumente usada para fazer o download de páginas web em dispositivos iOS/macOS.
-2. Alternativas: Além do método mostrado acima usando `URLSession`, também é possível usar a biblioteca de terceiros Alamofire para fazer o download de páginas web em Swift.
-3. Detalhes de implementação: A tarefa `dataTask` é executada de forma assíncrona, o que significa que o código continuará a ser executado enquanto o download está em andamento. O bloco `completionHandler` é chamado depois que o download for concluído, e nele podemos acessar os dados baixados, a resposta do servidor e possíveis erros.
+E para baixar uma página da internet de forma assíncrona, preferencialmente usando URLSession:
 
-## Veja também:
-- Documentação da Apple para URLSession: https://developer.apple.com/documentation/foundation/urlsession
-- Documentação da biblioteca Alamofire: https://github.com/Alamofire/Alamofire
+```Swift
+let url = URL(string: "https://www.example.com")!
+let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+    if let data = data {
+        let htmlString = String(data: data, encoding: .utf8)!
+        print(htmlString)
+    }
+}
+task.resume()
+```
+
+## Mergulho Profundo
+
+Swift não é a única linguagem que você pode usar para isso, nem foi a primeira. Perl, por exemplo, foi amplamente utilizada para web scraping antes do Swift. Swift oferece vantagens, como melhor desempenho em comparação com Perl.
+
+Usando bibliotecas externas, como AlamoFire ou SwiftyHTMLParser, você pode melhorar e simplificar suas operações de download do HTML.
+
+Lembre-se, baixar páginas da web deve ser feito de maneira responsável e sempre respeitando os termos de serviço do site.
+
+## Veja também
+
+1. Documentação URLSession: https://developer.apple.com/documentation/foundation/urlsession
+2. Guia da Stanford sobre Swift: http://web.stanford.edu/class/cs193p/
+3. AlamoFire no GitHub: https://github.com/Alamofire/Alamofire
+4. SwiftyHTMLParser no GitHub: https://github.com/touren/SwiftyHTMLParser

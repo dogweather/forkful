@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma data em uma string."
-html_title:           "Elixir: Convertendo uma data em uma string."
-simple_title:         "Convertendo uma data em uma string."
+title:                "Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,39 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Convertendo uma data para uma string em Elixir
 
-Converter uma data em uma string é um processo comum na programação, onde uma data é transformada em uma sequência de caracteres legível para os seres humanos. Isso é feito para facilitar a visualização e compreensão da data, que pode ser armazenada em um formato diferente no código.
+## O que é e por quê?
+
+Converter uma data em uma string em Elixir significa transformar um objeto de data para uma representação legível de texto. Programadores fazem isso para formatar datas de maneiras específicas ou para imprimir datas de forma amigável.
 
 ## Como fazer:
 
-```
-Elixir Date.to_string!(~D[2020-01-01])
+Vamos fazer isso em algumas linhas de código usando a biblioteca padrão de Elixir.
+
+```elixir
+data = Date.new(2021, 12, 31)
+
+IO.puts Date.to_string(data)
 ```
 
-Saída:
-```
-"2020-01-01"
-```
+Resultado no console:
 
-```
-Elixir Date.to_string!(~D[2020-01-01], format: "{YYYY}-{MM}-{DD}")
+```elixir
+"2021-12-31"
 ```
 
-Saída:
+Pela biblioteca Timex:
+
+```elixir
+{:ok, data} = Date.new(2023, 5, 23)
+
+Timex.format!(data, "{YYYY}-{0M}-{0D}", :strftime)
 ```
-"2020-01-01"
+
+Resultado no console:
+
+```elixir
+"2023-05-23"
 ```
 
-## Profundidade:
+## Mergulho Profundo:
 
-A conversão de uma data em uma string é uma tarefa bastante simples em Elixir, graças ao módulo `Date` da biblioteca padrão. Isso permite que os programadores escolham o formato em que desejam exibir a data, usando a função `to_string!` e passando uma opção de formato.
+Em Elixir, a conversão de datas para strings era uma tarefa desafiadora em versões anteriores devido à falta de bibliotecas padrão. Com o lançamento da versão 1.3, Elixir introduziu a funcionalidade de trabalhar com datas através de módulos nativos.
 
-Outra alternativa para converter uma data em uma string é usando o módulo `Calendar`, que possui mais opções de formatação e suporta diferentes calendários, como o calendário islâmico e hebraico.
+Como alternativa à função padrão, também podemos usar a biblioteca Timex que fornece um conjunto mais completo e flexível de funcionalidades para o tratamento de datas.
 
-Internamente, a conversão de uma data em uma string é feita através de operações matemáticas para obter o ano, mês e dia correspondentes e depois juntando-os em uma string formatada. Isso é feito de forma otimizada para garantir a eficiência e precisão.
+Falando sobre os detalhes de implementação, a função `Date.to_string/1` converte uma data para um formato ISO 8601: "YYYY-MM-DD". Já com a biblioteca Timex, podemos definir nosso próprio formato de data.
 
 ## Veja também:
 
-- [Documentação do módulo `Date` em Elixir](https://hexdocs.pm/elixir/Date.html)
-- [Documentação do módulo `Calendar` em Elixir](https://hexdocs.pm/elixir/Calendar.html)
+Para aprender mais sobre manipulação de datas em Elixir, veja os seguintes links:
+
+1. Documentação oficial Elixir Date: [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
+2. Documentação oficial Timex: [https://hexdocs.pm/timex/Timex.html](https://hexdocs.pm/timex/Timex.html)
+3. StackOverflow de perguntas frequentes sobre datas em Elixir: [https://stackoverflow.com/questions/tagged/elixir+date](https://stackoverflow.com/questions/tagged/elixir+date)

@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "C: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,35 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skapandet av en tillfällig fil är en vanlig händelse inom programmering. En tillfällig fil är en temporär fil som skapas och används under körningen av ett program, men som sedan raderas när programmet avslutas. Detta används ofta för att lagra data eller utföra vissa operationer som inte behöver sparas permanent.
 
-## Så här gör du:
-För att skapa en tillfällig fil i C kan du använda funktionen "tmpfile()". Detta returnerar en pekare till en ny temporär fil och öppnar den för skrivning. Du kan då skriva data till filen med hjälp av till exempel funktionen "fprintf()". När programmet avslutas kommer filen automatiskt att raderas.
-```
-C
+Att skapa en temporär fil innebär att programmeraren ger programmet ett utrymme för att lagra data tillfälligt under körning. Detta används ofta för att minska minnesanvändningen och hantera stora datamängder som kanske inte behöver lagras permanent.
+
+## Hur du gör det:
+
+I C programmeringsspråk, vi använder funktionen `tmpfile()` för att skapa en temporär fil. Koden ser ut något så här:
+
+```C 
 #include <stdio.h>
-int main() {
+
+int main () {
    FILE *fp;
-   fp = tmpfile();      // skapar en temporär fil
-   fprintf(fp, "%s", "Hej världen!");
-   fclose(fp);          // stänger filen och raderar den
-   return 0;
+
+   fp = tmpfile();
+   
+   fprintf(fp, "%s", "En tillfällig sträng.");
+   rewind(fp);
+   
+   char buff[50];
+   
+   while(fgets(buff, sizeof(buff), fp) != NULL){
+       printf("%s", buff);
+   }
+   
+   fclose(fp);
+   
+   return(0);
 }
 ```
-Output:
-```
-$ cat /tmp/tmp.abc2468
-Hej världen!
-```
+Efter att ha kört programmet kommer du att se utdata: `En tillfällig sträng.`
 
-## Djupdykning:
-Anledningen till att skapa en tillfällig fil är oftast för att spara data under körningen av ett program utan att behöva skriva till en permanent fil. Detta kan vara användbart när man vill testa eller experimentera utan att riskera permanenta förändringar på filer eller databaser.
+## Djup dykning:
 
-En annan vanligt förekommande metod för att skapa tillfälliga filer är genom att använda funktionen "mkstemp()". Denna funktion tillåter användaren att välja namn på den temporära filen och dess placering.
+Historiskt sett användes temporära filer för att hantera minnesbegränsningar på äldre datorsystem. Idag hjälper de till att hantera stora mängder data i program som inte bör ändra de permanenta lagrade data, såsom loggvisare eller textredigeringsprogram.
 
-När en tillfällig fil skapas, lägger operativsystemet till en slumpmässig sträng som prefix till filnamnet. Detta garanterar att filen har ett unikt namn och undviker konflikter om flera program samtidigt skapar tillfälliga filer.
+Det finns alternativ till `tmpfile()`, inklusive `mkstemp()` och `tmpnam()`. Valet mellan dessa beror oftast på de specifika användningsfallen och systemets begränsningar.
+
+Implementeringen av `tmpfile()` skapar en unik fil med ett unikt namn i systemets standardkatalog för temporära filer. Denna fil är öppen för skrivning och raderas automatiskt när filen stängs eller programmet avslutas.
 
 ## Se även:
-- [tmpfile()](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
-- [mkstemp()](https://www.tutorialspoint.com/c_standard_library/c_function_mkstemp.htm)
-- [Filmanipulation i C](https://www.codementor.io/@bhidesagar551/filhantering-i-c-eenwy53q3)
+
+För mer information och detaljerad förklaring, här finns några användbara länkar:
+
+- "Temporary File Functions" från GNU Library: www.gnu.org/savannah-checkouts/gnu/libc/manual/html_node/Temporary-Files.html
+- "tmpfile function" från Microsoft Developer Network: https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/tmpfile-tmpfile-tmpfile-s-tmpfile-s?redirectedfrom=MSDN&view=msvc-160

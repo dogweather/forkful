@@ -1,7 +1,7 @@
 ---
-title:                "Видалення символів, що відповідають шаблону"
-html_title:           "Swift: Видалення символів, що відповідають шаблону"
-simple_title:         "Видалення символів, що відповідають шаблону"
+title:                "Видалення символів, що відповідають патерну"
+html_title:           "C: Видалення символів, що відповідають патерну"
+simple_title:         "Видалення символів, що відповідають патерну"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,23 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
- Видалення символів, що відповідають певному шаблону, є важливою задачею для багатьох програмістів. Вона полягає у видаленні символів з рядка, які відповідають певному критерію, такому як кількість повторень або певний символ. Це може бути корисно для очищення даних перед їх подальшою обробкою або для перетворення рядка у більш зрозумілу форму. 
+## Що та навіщо?
+Щодо видалення символів, які відповідають шаблону - це процес фільтрації рядка, в умовах якого ми видаляємо певні символи на основі заданих критеріїв. Програмісти роблять це для очищення, модифікації та керування даними - важливі аспекти багатьох програмних задач.
 
-Як видаляти символи, що відповідають шаблону:
-Ви можете використовувати вбудований метод `filter` для видалення символів з рядка, які задовольняють певному умові. Наприклад, якщо ви хочете видалити всі голосні літери з рядка, ви можете написати наступний код: 
-```Swift 
-let input = "Hello world"
-let output = input.filter { !"aeiou".contains($0) }
-print(output) // Hll wrld
+## Як це зробити:
+За допомогою Swift, ми можемо легко видалити певний набір символів із рядка за допомогою методу `filter()`. Ось простий приклад:
+
+``` Swift
+let oldString = "Hello, World!"
+let charactersToRemove: [Character] = [",", "!", " "]
+let newString = oldString.filter { !charactersToRemove.contains($0) }
+print(newString)
 ```
+Виходить:
 
-Глибоке занурення:
-- Історичний контекст: Задача видалення символів з рядка виникла ще в перших мовах програмування, таких як FORTRAN та COBOL, де не було вбудованих методів для цього. В деяких мовах, таких як Perl, існують спеціальні оператори для виконання цієї задачі. 
-- Альтернативи: Окрім використання методу `filter`, ви також можете видалити символи, що відповідають шаблону, за допомогою регулярних виразів або шаблонів. 
-- Деталі реалізації: Метод `filter` використовує замикання для перевірки кожного символу у рядку та видаляє його, якщо воно відповідає умові. 
+``` Swift
+"HelloWorld"
+```
+У цьому сценарію ми видаляємо коми, знак оклику та пробіли.
 
-Дивіться також:
-- [Apple Documentation on Filtering] (https://developer.apple.com/documentation/swift/sequence/2906569-filter)
-- [Ray Wenderlich Tutorial on Regular Expressions in Swift] (https://www.raywenderlich.com/267-regular-expressions-tutorial-getting-started-with-nsregularexpression
-)
+## Поглиблений занурення
+Історично, можливість видалити символи з рядка, які відповідають певному шаблону, була важливою частиною багатьох мов програмування, але Swift робить це набагато простіше з допомогою методу `filter()`. Альтернативно, ви могли б використовувати регулярні вирази для більш складних шаблонів, але для простих випадків це зазвичай не потрібно. Щодо деталей впровадження, Swift `filter()` працює шляхом ітерації кожного символу в рядку та перевірки, чи відповідає він зазначеному критерію.
+
+## Дивіться також
+1. Apple Swift Documentation: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
+2. Swift String and Characters: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+3. Swift Standard Library: [https://developer.apple.com/documentation/swift/swift_standard_library](https://developer.apple.com/documentation/swift/swift_standard_library)

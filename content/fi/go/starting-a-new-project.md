@@ -1,7 +1,7 @@
 ---
-title:                "Aloittamassa uutta projektia"
-html_title:           "Go: Aloittamassa uutta projektia"
-simple_title:         "Aloittamassa uutta projektia"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -10,23 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?:
-Aloittavan uuden projektin luominen on prosessi, jossa ohjelmoija luo uuden ohjelmiston tai sovelluksen. Tämä voi olla tarpeen esimerkiksi silloin, kun ohjelmaa tarvitaan uuden ongelman ratkaisemiseen tai vanhan parantamiseen.
+## Mikä & Miksi?
 
-Miten:
-Esimerkiksi uuden projektin luomiseen Go-kielellä tarvitaan vain muutamia yksinkertaisia askelia. Ensimmäiseksi tulee määrittää tarvittavat paketit käyttämällä "import" -komentoa. Sitten voidaan luoda uusi tiedosto käyttäen "main" -funktiota. Lopuksi ohjelmaa voidaan suorittaa käyttämällä "go run" -komentoa. Tässä on esimerkki:
+Uuden projektin aloittaminen merkitsee uuden ohjelmointitehtävän tai -sovelluksen käynnistämistä alusta alkaen. Ohjelmoijat aloittavat uusia projekteja oppimisen, uusien ratkaisujen löytämisen tai jopa oman tuotteen kehittämisen takia.
+
+## Näin se tehdään:
+
+Go-projektin aloittaminen on suoraviivaista. Seuraavat koodiesimerkit näyttävät, kuinka Go-perusteet tukevat uutta projektia:
 
 ```Go
+package main
+
 import "fmt"
 
 func main() {
     fmt.Println("Hei maailma!")
 }
 ```
-Tämä tulostaa "Hei maailma!" konsoliin.
 
-Syväsukellus:
-Go-kieli kehitettiin vuonna 2009 Googlella ja se on nopeasti kasvattanut suosiotaan ohjelmointikielenä. Sen tarkoituksena on olla tehokas ja helppokäyttöinen vaihtoehto esimerkiksi C-kielen tilalle. Muita suosittuja vaihtoehtoja uuden projektin aloittamiseen ovat esimerkiksi Python, Java ja C++.
+Kun suoritat tämän koodin, tulostuu:
 
-Katso myös:
-Lisätietoja Go-kielestä löytyy viralliselta verkkosivustolta osoitteessa https://golang.org. Sieltä löytyvät myös ohjeet asennukseen ja lisätarvikkeisiin, kuten text editor -ohjelma. Lisäksi suosittelemme tutustumaan Go-yhteisöön Githubissa https://github.com/golang/go, josta löytyy paljon hyödyllistä tietoa ja vinkkejä aloittelijoille.
+```
+Hei maailma!
+```
+
+## Syvempi katsaus
+
+Historiallisessa merkityksessä Go (tunnetaan myös nimellä Golang) luotiin Googlella vuonna 2007 Robert Griesemerin, Rob Piken ja Ken Thompsonin toimesta. Go:n suunnittelun tärkein tavoite oli luoda kieli, joka mahdollistaa suurten järjestelmien kehittämisen tehokkaasti.
+
+Vaihtoehtoina uudelle Go-projektille voisivat olla kieliä, kuten Python tai JavaScript. Suurin ero on siinä, että Go on staattisesti kirjoitettu ja suorituskykyinen kieli, joka soveltuu erityisesti rinnakkaisten ja jakautuneiden järjestelmien kehittämiseen.
+
+Go:lla uuden projektin aloitus merkitsee usein moduulin luomista. Moduuli on paketti tai useita paketteja, jotka jakavat saman `go.mod` -tiedoston. Se määrittelee moduulin nimen (usein repositorion polku), sen vaatimat go-versions and its dependencies.
+
+## Katso myös:
+
+1. [Go:n virallinen dokumentaatio](https://golang.org/doc/)
+2. [Go:n projektin moduulien luominen](https://blog.golang.org/using-go-modules)
+3. [Go Tutorial: Aloita Go](https://www.tutorialspoint.com/go/index.htm)
+
+Onnea uuden Go-projektisi kanssa!

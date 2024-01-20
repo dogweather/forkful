@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Clojure: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是转换字符串为小写，为什么程序员要这样做？
+## 什么 & 为什么？
+将字符串转换为小写就是把字符串的所有字母都变为小写。程序员这样做主要是为了便于文本比较和搜索。
 
-转换字符串为小写是指将字符串中的所有字母转换为小写形式。程序员通常这样做是因为在编程中，对于比较和处理字符串来说，大小写通常是无关紧要的，因此将字符串统一转换为小写可以简化比较和处理的过程。
+## 如何操作：
+Clojure 提供了易于使用的函数 `clojure.string/lower-case` 来将字符串转换为小写。看看下面的例子：
 
-如何进行转换？
+```clojure
+(ns example.core
+  (:require [clojure.string :as str]))
 
-在Clojure中，可以使用下面的代码将字符串转换为小写并打印出来：
-
-```Clojure
-(def str "Hello World")
-(.toLowerCase str)  ; 输出 "hello world"
+(defn -main
+  [& args]
+  (println (str/lower-case "Hello, World!")))
+```
+运行这段程序，将打印：
+```clojure
+hello, world!
 ```
 
-另外，可以使用Clojure中的字符串函数 `clojure.string/lower-case` 来进行转换，如下所示：
+## 深入挖掘
+在早期的计算机系统中，大写字符和小写字符被认为是完全不同的字符，这会导致混乱和不一致。所以，
+程序员发明了组编程语言的方法来统一字符，其中一种就是将字符串转换为小写。早期的 Lisp 语言就没有这个功能，但后来 Clojure，作为一种现代化的 Lisp 方言，加入了这个功能。这样做可以减少错误并提高程序的鲁棒性。
 
-```Clojure
-(str "HELLO WORLD")   ; 输出 "hello world"
-(clojure.string/lower-case "HELLO WORLD")  ; 输出 "hello world"
-```
+你也可以创建自定义函数来对字符串的每个字符进行操作。但是使用 `clojure.string/lower-case` 通常更加简单且高效。
 
-深入了解
+关于在 Clojure 中如何将字符串转为小写的更多细节，`clojure.string/lower-case` 函数在内部使用 `java.lang.String.toLowerCase()`，它考虑到了国际化和特殊字符。
 
-转换字符串为小写的历史背景：在早期的编程语言中，大小写并不是无关紧要的，因此需要程序员手动进行大小写的转换。但随着现代编程语言的发展，许多语言都提供了内置的函数来进行大小写转换，从而简化了程序员的工作。
-
-替代方法：除了使用上面提到的内置函数外，程序员也可以自己实现一个函数来进行大小写转换。另外，也可以使用正则表达式来匹配和替换字符串中的大写字母。
-
-实现细节：在Clojure中，字符串是不可变的，因此在进行大小写转换时，会创建一个新的字符串对象。同时，底层使用的是Java中的 `toLowerCase` 或 `toUpperCase` 方法来实现大小写转换。
-
-相关链接
-
-更多关于Clojure字符串函数的信息，请参考官方文档：https://clojure.org/reference/strings
-
-如果想要深入了解字符串和正则表达式的知识，可以查阅相关书籍或在线资源。
+## 另请参阅
+* Clojure 官方文档关于 `clojure.string/lower-case` 的描述：https://clojuredocs.org/clojure.string/lower-case
+* Oracle 对 `java.lang.String.toLowerCase()` 的文档：https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--

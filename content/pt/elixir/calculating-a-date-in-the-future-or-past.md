@@ -10,36 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+## O que e por que?
 
-Calcular uma data no futuro ou no passado é o processo de determinar uma data especifica com base em uma data de referência e um intervalo de tempo. Os programadores realizam esse processo para automatizar tarefas que envolvem datas, como agendar eventos ou calcular a idade de uma pessoa.
+Calcular uma data no futuro ou no passado é simplesmente uma maneira de adicionar ou subtrair um certo período de tempo de uma data específica. Os programadores fazem isso para manipular datas para várias finalidades - monitoramento do tempo, agendamento, etc.
 
-## Como Fazer:
+## Como Faz:
 
-Um exemplo simples de como calcular uma data no futuro usando Elixir é usando a função ```DateTime.add/3```. Vamos supor que queremos saber a data daqui a 10 dias a partir de hoje. Podemos escrever o seguinte código:
+Aqui está um exemplo simples de como calcular datas futuras ou passadas em Elixir.
 
-```elixir
-DateTime.add(DateTime.utc_now(), 10, :day)
-```
-
-O resultado seria uma data no futuro, 10 dias a partir de hoje, no formato de data e hora UTC. Também podemos calcular uma data no passado usando a função ```DateTime.add/3```, usando um número negativo como o segundo argumento. Por exemplo, para saber a data de 10 dias atrás, podemos escrever o seguinte código:
+- Adicionando dias a uma data
 
 ```elixir
-DateTime.add(DateTime.utc_now(), -10, :day)
+date = Date.new(2021, 12, 1)
+new_date = Date.add(date, 7)
+IO.puts(new_date)
+
+# Saída:
+# 2021-12-08
 ```
 
-O resultado seria uma data no passado, 10 dias antes da data atual, no formato de data e hora UTC.
+- Subtraindo dias de uma data
 
-## Imersão Profunda:
+```elixir
+date = Date.new(2021, 12, 1)
+new_date = Date.add(date, -7)
+IO.puts(new_date)
 
-Calcular datas no futuro ou no passado tem sido uma tarefa importante para os programadores desde o início da computação. Antes da existência de linguagens de programação, as pessoas precisavam fazer esses cálculos manualmente, o que era um processo demorado e propenso a erros. Com o avanço da tecnologia e o desenvolvimento de linguagens de programação, calcular datas no futuro ou no passado se tornou muito mais fácil e preciso.
+# Saída:
+# 2021-11-24
+```
 
-Além do Elixir, existem várias outras linguagens de programação que podem ser usadas para calcular datas no futuro ou no passado, como Python, JavaScript e Ruby. No entanto, o Elixir tem uma sintaxe simples e elegante para manipulação de datas e tem o benefício adicional de ser executado na máquina virtual de Erlang, tornando-o extremamente rápido e com alta capacidade de escalabilidade.
+## Aprofundando:
 
-O processo de calcular uma data no futuro ou no passado no Elixir envolve o uso de uma série de funções integradas, como ```DateTime.utc_now/0``` para obter a data atual em UTC e ```DateTime.add/3``` para adicionar ou subtrair um intervalo de tempo de uma data. É importante sempre verificar a documentação de cada função para garantir que o código esteja correto e que a data calculada seja a desejada.
+- **Contexto histórico:** 
+A capacidade de calcular datas no futuro ou no passado tem sido uma parte essencial de muitos sistemas desde os tempos antigos. Ela é usada em tudo, desde o agendamento de tarefas até a formulação de previsões baseadas no tempo.
 
-## Veja Também:
+- **Alternativas:**
+Existem várias outras bibliotecas e pacotes que você pode usar para manipular datas em Elixir, como a biblioteca 'Timex'.
 
-- Documentação oficial do Elixir sobre manipulação de datas: https://hexdocs.pm/elixir/DateTime.html
-- Perguntas frequentes sobre manipulação de datas no Elixir: https://stackoverflow.com/questions/tagged/elixir+datetime
-- Tutorial em vídeo sobre como usar o Elixir para calcular datas futuras e passadas: https://www.youtube.com/watch?v=lzu1Q1WJ_O8
+```elixir
+{:ok, date} = Date.new(2021, 12, 01)
+Timex.shift(date, days: 10)
+
+# Saída:
+# #Date<2021-12-11>
+```
+
+- **Detalhes de implementação:**
+Em Elixir, a data é lidada como uma estrutura, o que significa que é imutável. Adicionar ou subtrair dias cria uma nova estrutura de data em vez de modificar a original.
+
+## Veja também:
+
+Se você quer estudar mais sobre o trabalho com datas no Elixir, aqui estão alguns recursos-chave:
+
+- Documentação oficial do Elixir para módulo 'Date': https://hexdocs.pm/elixir/Date.html
+- Timex, uma biblioteca rica de funções relacionadas ao tempo no Elixir: https://hexdocs.pm/timex/readme.html
+- Curso de Elixir na Pluralsight: https://www.pluralsight.com/courses/elixir-getting-started

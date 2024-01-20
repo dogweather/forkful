@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Lua: Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Enviar uma solicitação HTTP com autenticação básica é uma maneira de enviar informações para um servidor web de forma segura através de uma conexão HTTP. Os programadores fazem isso para autenticar usuários e garantir que eles tenham permissão para acessar determinados recursos no servidor.
+## O que é & Porquê?
+Enviar um pedido HTTP com autenticação básica é o processo de fazer um pedido a um servidor web usando um nome de usuário e senha. Programadores fazem isso para acessar recursos protegidos em servidores web.
 
-## Como fazer:
+## Como Fazer:
+Vamos realizar este processo usando a biblioteca Lua 'http' e 'ltn12'. O código a seguir demonstra como enviar uma solicitação HTTP básica com autenticação:
+
 ```Lua
--- Importar a biblioteca "socket" para fazer uma conexão HTTP
-local socket = require("socket")
--- Definir o formato de autenticação básica
-local basicAuth = "Basic " .. mime.b64(username .. ":" .. password)
--- Definir as informações da solicitação, incluindo o URL, o método (GET, POST, etc.) e o cabeçalho de autenticação básica
-local request = {
-  url = "https://example.com/api/resource",
-  method = "POST",
-  headers = {
-    ["Authorization"] = basicAuth
-  }
+-- Importa as bibliotecas necessárias
+local http = require('socket.http')
+local ltn12 = require('ltn12')
+
+-- Define o URL, nome de usuário e senha
+local url = 'http://seu-servidor.com'
+local auth = 'Basic ' .. (mime.b64('usuario:senha'))
+
+-- Protocolo HTTP GET com autenticação básica
+local response_body, http_status, http_headers, http_status_line = http.request {
+    url = url,
+    method = 'GET',
+    headers = {
+        Authorization = auth
+    },
+    sink = ltn12.sink.table(response_body_table)
 }
--- Enviar a solicitação e receber a resposta do servidor
-local response = socket.http.request(request)
--- Imprimir a resposta do servidor
-print(response.body)
+
+-- Imprime os detalhes da resposta
+print(http_status)
+print(http_headers)
+print(http_status_line)
+print(table.concat(response_body_table, ''))
 ```
+Quando você executa este script, receberá a resposta do servidor, o status HTTP, os cabeçalhos HTTP e linha de status de HTTP.
 
-## Deep Dive:
-Uma das principais vantagens de usar a autenticação básica é sua simplicidade e ampla compatibilidade com diferentes linguagens de programação e servidores web. No entanto, a segurança da autenticação básica é limitada, pois as informações de autenticação são enviadas em texto simples no cabeçalho da solicitação HTTP. Alternativas mais seguras incluem a autenticação Digest ou o uso de protocolos mais avançados, como o OAuth. A implementação detalhada pode variar dependendo da linguagem de programação e dos frameworks utilizados.
+## Aprofundando
+Enviar uma solicitação HTTP com autenticação básica é um procedimento comum, mas nem sempre tem sido assim. Nos primeiros dias da web, a autenticação não era comum e nem mesmo uma prática padrão. No entanto, com o aumento da necessidade de segurança, a autenticação básica tornou-se uma prática comum.
 
-## Veja também:
-- [Tutorial de autenticação básica em Lua](https://www.lua.org/cgi-bin/demo?http)
-- [Documentação da biblioteca "socket" em Lua](https://w3.impa.br/~diego/software/luasocket/reference.html#request)
-- [Comparação de diferentes tipos de autenticação em HTTP](https://www.geeksforgeeks.org/http-authentication/)
-- [Mais informações sobre a segurança da autenticação básica em HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+Existem várias alternativas para a autenticação básica, incluindo a autenticação Digest e a autenticação baseada em token. Cada uma tem suas próprias vantagens e desvantagens.
+
+Sobre a implementação em Lua, usamos a biblioteca socket.http que fornece funções para fazer solicitações HTTP e a biblioteca ltn12 para tratar o corpo da resposta. Codificar a string de autenticação em Base64 é feito pela biblioteca mime.
+
+## Veja Também
+Para mais informações, consulte os seguintes recursos:
+- Documentação do LuaSocket: http://w3.impa.br/~diego/software/luasocket/http.html
+- Documentação do Lua MIME: https://luarocks.org/modules/luarocks/mime
+- RFC 7617 (Autenticação Básica HTTP): https://tools.ietf.org/html/rfc7617
+Por favor, note que a segurança na web é um campo grande e em constante evolução, por isso é importante se manter atualizado com as melhores práticas e desenvolvimentos recentes.

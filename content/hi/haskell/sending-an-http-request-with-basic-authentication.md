@@ -1,7 +1,7 @@
 ---
-title:                "आधारभूत प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-html_title:           "Haskell: आधारभूत प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-simple_title:         "आधारभूत प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-क्या और क्यों?
+## क्या और क्यों? (What & Why?)
 
-HTTP अनुरोध संदेश में आधारभूत प्रमाणीकरण के साथ एक HTTP अनुरोध भेजना क्या है और क्यों करते हैं। एक HTTP अनुरोध भेजने से हम संचार करते हैं और सुरक्षित तरीके से डेटा को स्थानांतरित कर सकते हैं। यह प्रोग्रामर्स द्वारा उपयोग किया जाता है ताकि सुरक्षित डेटा ट्रांसफर हो सके।
+HTTP अनुरोध के साथ बुनियादी प्रमाणीकरण भेजना क्या है? यह एक विशेष तरीका है जिसमें एक प्रोग्राम सर्वर से जानकारी मांगता है, लेकिन उससे पहले उसे खुद को प्रमाणित करता है। प्रोग्रामर इसे क्यों करते हैं? यह सुरक्षित और प्रामाणिक डाटा एक्सेस की आवश्यकता होती है। 
 
-कैसे करें:
+## कैसे करें (How to)
 
-```Haskell
-import Network.HTTP.Simple
-
-request <- parseRequest "http://www.example.com"
-response <- withBasicAuth "username" "password" request
-print $ getResponseBody response
-```
-
-आउटपुट:
+यहां है कि आप Haskell में इसे कैसे कर सकते हैं। 
 
 ```Haskell
-"Response body"
+import Network.HTTP
+import Network.Browser
+import Network.URI
+
+main = do
+ resp <- Network.Browser.browse $ do
+ setAllowBasicAuth True
+ request $ Request {rqURI = uri, rqMethod = GET, rqHeaders = [], rqBody = ""}
+ print resp
+ where uri = fromJust $ parseURI "http://username:password@mysite.com"
 ```
+उपयोगकर्तानाम और पासवर्ड को आपके प्रमाणीकरण की जरूरतों के साथ बदलें।
 
-गहराई तक:
+## गहन अध्ययन (Deep Dive)
 
-अतीत संदर्भ, विकल्प और एचटीटीपी अनुरोध भेजने के साथ भेजने के लिए अनुरोध करने के तरीकों का संदर्भ दिया जाता है। आपको इस तरह की रिक्ति का उपयोग न करना चाहिए जो कोई अनुचित संदेश संदेश संदेश का प्रमाण द्वारा प्रोग्रामिंग करता है।
+1. ऐतिहासिक संदर्भ: इसमें HTTP Basic Authentication भेजने की विधि शामिल है जो 1990 के दशक में W3C द्वारा विकसित की गई थी। 
+2. विकल्प: इससे अधिक सुरक्षित ओएसआईएमएल और Digest Access Authentication प्रमाणीकरण विधाएं भी हैं।
+3. कार्यान्वयन विवरण: यह कार्यान्वयन पुनः प्रयोग करने योग्य क्लास तत्व तैयार करता है जिसे आप ब्राउज़र सेटिंग्स में प्रयोग कर सकते हैं। यह सुनिश्चित करता है कि प्रमाणीकरण हमेशा सेट किया जाता है जब भी आवश्यक हो।
 
-अनुरोध भेजने के लिए HTTP बेसिक प्रमाणीकरण का प्रमाण है। यह सुरक्षा स्तर का एक उच्चतम स्तर प्रदान करता है जो अनुरोध को सुरक्षित रूप से कॉल करता है। इसका उपयोग करने के लिए रिक्ति में अनुमोदन द्वारा अनुरोध प्रवेदन किया जाता है।
+## अधिक देखें (See Also)
 
-देखें भी:
+अधिक आपके संदर्भ के लिए, निम्नलिखित संसाधनों की जांच करें:
 
-- [HTTP सिमपल](https://hackage.haskell.org/package/http-simple)
-- [एक स्थान पर पेशेवर ब्लॉग पोस्ट](https://arjuna-v.github.io/blog/extending-http-simple.html)
-- [एचटीटीपी सुरक्षा प्रोटोकॉल विवरण](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+ हैस्कल HTTP पैकेज डॉक्यूमेंटेशन: http://hackage.haskell.org/package/HTTP
+ 
+ हैस्कल नेटवर्क ब्राउज़र पैकेज डॉक्यूमेंटेशन: http://hackage.haskell.org/package/network-browser
+
+वेब प्राधिकरण के तकनीकी विवरण के लिए, आप W3C की मानकों की जांच कर सकते हैं।

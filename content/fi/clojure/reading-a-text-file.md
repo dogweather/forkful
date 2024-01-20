@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "Clojure: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,31 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Lukeminen teksti-tiedostosta tarkoittaa tiedon lukemista tiedostosta, joka sisältää tekstiä. Ohjelmoijat tekevät tätä saadakseen pääsyn tiedostossa olevaan tietoon ja käyttävät sitä sitten lukuisiin tarkoituksiin.
+
+Tekstitiedoston lukeminen tarkoittaa kykyä työstää tekstiä sisältävää tiedostoa koodiohjelman kautta. Se on ohjelmistokehittäjille tärkeää, koska sen avulla he voivat käsitellä tallennettua dataa ja tuottaa mielekkäitä tuloksia.
 
 ## Kuinka:
-Esimerkki koodia teksti-tiedoston lukemisesta ja tulostamisesta käyttäen Clojurea:
+
+Clojuren version ollessa 1.10.1, voidaan teksti-tiedostoa lukea seuraavalla tavalla:
+
 ```Clojure
-(with-open [reader (clojure.java.io/reader "tiedostonimi.txt")]
-  (doseq [line (line-seq reader)]
-    (println line)))
-```
-Esimerkki tulostuksesta, kun tiedostossa on seuraava teksti:
-```
-Tervetuloa Clojure-maailmaan!
-Tämä on teksti-tiedosto.
-```
-(Output)
-```
-Tervetuloa Clojure-maailmaan!
-Tämä on teksti-tiedosto.
+(require '[clojure.java.io :as io])
+
+(defn read-file [file]
+  (with-open [reader (io/reader file)]
+    (doseq [line (line-seq reader)]
+      (println line))))
+      
+(read-file "path/to/your/file.txt")
 ```
 
-## Syvemmälle:
-Teksti-tiedostojen lukemisen taustalla on tietokoneiden kyky käsitellä ja tallentaa teksti-pohjaista tietoa. Clojuren lisäksi myös muut ohjelmointikielet, kuten Java, tarjoavat mahdollisuuden lukea teksti-tiedostoja. Tämä voi olla hyödyllistä esimerkiksi tiedon tallentamiseen ja käsittelyyn ohjelmien sisällä. Tiedostojen lukemisen lisäksi niitä voidaan myös muokata ja tallentaa takaisin alkuperäiseen tiedostoon.
+Esimerkkikoodi tulostaa jokaisen rivin erikseen tiedostosta, jonka polku annetaan argumenttina.
+
+## Syvällisempi sukellus:
+
+Clojure, julkaistu vuonna 2007, periytyy Lisp-perheen kielistä, ja sen tarkoituksena on tarjota robusti, käytännöllinen ja nopea lähestymistapa ohjelmointiin. Vaikka Clojuren IO-kirjasto tarjoaa vaivattoman tavan lukea tiedostoja, on olemassa myös vaihtoehtoisia tapoja kuten käyttää Java-luokkia kuten FileReader ja BufferedReader.
+
+Clojure pitää avoimen tiedoston resurssit näköpiirissä 'with-open':in avulla, joka varmistaa, että tiedosto suljetaan asianmukaisesti kun tiedoston käsittely on päättynyt. Tämä on erityisen hyvä käytäntö, koska voit välttää resurssivuodot ja järjestelmän liiallisen kuormituksen.
 
 ## Katso myös:
-Lisätietoa lukemisen teksti-tiedostoista ja niiden sisältämän tiedon käsittelemisestä löytyy seuraavista lähteistä:
-- [Clojure - lukeminen tiedostosta](https://clojure.org/reference/java_interop#_reading_from_a_file)
-- [Java - luokka InputStreamReader](https://docs.oracle.com/javase/8/docs/api/java/io/InputStreamReader.html)
-- [Muut ohjelmointikielet - teksti-tiedostojen lukeminen](https://en.wikibooks.org/wiki/Programming:Fundamental_Programming_Concepts/Files)
+
+Kehittääksesi taitojasi lisää, tutustu seuraaviin lähteisiin:
+
+1. Clojure Documentation: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
+2. Open-Source Clojure Projects: [https://github.com/trending/clojure](https://github.com/trending/clojure)
+3. Clojure Style Guide: [https://guide.clojure.style/](https://guide.clojure.style/)

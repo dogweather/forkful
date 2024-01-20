@@ -1,7 +1,7 @@
 ---
-title:                "Перетворення дати у рядок"
-html_title:           "Javascript: Перетворення дати у рядок"
-simple_title:         "Перетворення дати у рядок"
+title:                "Перетворення дати в рядок"
+html_title:           "Lua: Перетворення дати в рядок"
+simple_title:         "Перетворення дати в рядок"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -11,28 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Що і чому?
-Конвертація дати у рядок є процесом перетворення дати в розуміння людини на роздільний формат, який можна легко зчитати та використовувати в програмах. Це особливо корисно для збереження дати у файловій системі або передачі її через мережу. Інша причина, чому програмісти роблять це, - це для того, щоб виводити дату у зручному для користувача форматі.
 
-## Як зробити:
+Конвертування дати в рядок - це процес, при якому береться об'єкт дати та перетворюється в інший формат, зокрема в рядок. Програмісти роблять це, щоб полегшити відображення, зберігання або передачу інформації про дату.
+
+## Як це зробити:
+
+У JavaScript для конвертування дати в рядок ми використовуємо метод `.toString()`. Ось приклад:
+
 ```Javascript
-// Вхідна дата
-var date = new Date();
-
-// Використання методу toDateString() для конвертації в рядок
-var dateString = date.toDateString();
-console.log(dateString); // "Fri Apr 16 2021"
-
-// Використання методу toISOString() для отримання формату ISO
-var isoString = date.toISOString();
-console.log(isoString); // "2021-04-16T04:00:00.000Z"
+let today = new Date();
+console.log(today.toString());
 ```
 
-## Глибокий занурення:
-Історично конвертація дати в рядок була досить складним процесом, оскільки різні країни та мови мали різні формати для виведення дати. Тому було розроблено стандартизовані формати, такі як ISO 8601, які використовуються до цього дня. Існують також альтернативні методи конвертації дати, наприклад, використання бібліотеки moment.js. У Javascript, є багато методів для отримання різних форматів дати, таких як toLocaleDateString() та toTimeString(), які можуть бути корисними в різних ситуаціях.
+Виходьте виконає виведення поточної дати і часу як рядка, наприклад: 
+`Wed Jul 28 2021 12:10:33 GMT+0200 (Eastern European Standard Time)`
 
-## Дивіться також:
-- [MDN Javascript Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [MDN Date toDateString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toDateString)
-- [MDN Date toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Moment.js](https://momentjs.com/)
+## Більш глибоке занурення
+
+(1) Історичний контекст: Конвертування дат у рядки існує з перших днів програмування, адже рядки - це гнучкий та універсальний спосіб представлення данних.
+
+(2) Альтернативи: JavaScript також надає методи, як `.toISOString()`, щоб отримати рядок в форматі ISO, або `.toDateString()`, щоб отримати рядок дати без часу.
+
+(3) Деталі реалізації: Внутрішньо, метод `.toString()` конвертує об'єкт Date в рядок, використовуючи стандартний формат дати JavaScript.
+
+## Дивитись також
+
+1. [JavaScript Date toString() Method](https://www.w3schools.com/jsref/jsref_tostring_date.asp) - детальніше про метод `.toString()` в JavaScript.
+2. [JavaScript Date Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) - докладний посібник по датам в JavaScript з документації Mozilla.
+3. [An Overview of JavaScript Dates](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-javascript) - гарний огляд роботи з датами в JavaScript від DigitalOcean.

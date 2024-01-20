@@ -1,6 +1,6 @@
 ---
 title:                "HTML parsen"
-html_title:           "Fish Shell: HTML parsen"
+html_title:           "Arduino: HTML parsen"
 simple_title:         "HTML parsen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Das Parsen von HTML ist der Prozess des Analyse von HTML Code, um Text, Bilder und andere Inhalte zu extrahieren. Programmierer verwenden das Parsen von HTML, um Daten aus Websites zu extrahieren und sie für andere Anwendungen zugänglich zu machen.
+HTML-Parsing ist das Lesen und Verstehen einer HTML-Datei durch Programme. Wir machen das, um Informationen wie Text, Links und Bilder aus Webseiten zu extrahieren.
 
-# So geht's:
+## Wie es geht:
 
-Ein Beispiel dafür, wie man mit Fish Shell HTML parsen kann:
-
-```Fish Shell
-set url "https://www.example.com"
-curl -s $url | hxselect 'h1'
-```
-
-Ergebnis:
+Hier ist ein einfacher HTML-Parser mit Fish Shell, unter Verwendung von `grep`:
 
 ```Fish Shell
-<h1> Willkommen auf www.example.com </h1>
+function parse_html
+    set file $argv[1]
+    grep -oP '(?<=<title>).*(?=</title>)' $file
+end
 ```
 
-# Tief einsteigen:
+In diesem Beispiel extrahieren wir den Inhalt aus dem HTML-`<title>` Tag. Angenommen, wir haben eine HTML-Datei `example.html` mit `<title>Beispiel</title>`, so wird diese Code-Ausgabe so aussehen:
 
-## Historischer Kontext
-Das Parsen von HTML wurde bereits in den Anfangszeiten des World Wide Web angewendet, als es noch keine Standardisierungen für Webseiten gab. Es war eine Möglichkeit, Webseiteninhalte zu extrahieren und zu formatieren, um sie auf anderen Plattformen wie Mobilgeräten oder der frühen Desktopversion von Internet Explorer anzuzeigen.
+```Fish Shell
+> parse_html example.html
+Beispiel
+```
 
-## Alternativen
-Es gibt mehrere Alternativen zum Parsen von HTML, wie zum Beispiel das Scrapen von Daten aus Websites oder das Verwenden von APIs, die von den Betreibern der Website bereitgestellt werden. Diese Methoden sind jedoch oft eingeschränkt und bieten nicht so viel Flexibilität wie das Parsen von HTML.
+## Vertiefung:
 
-## Implementierungsdetails
-Fish Shell verwendet die Bibliothek `hxselect`, die auf `libxml2` basiert, um HTML zu parsen und zu selektieren. Diese Bibliothek ist eine effiziente und zuverlässige Möglichkeit, um mit HTML-Code umzugehen.
+Beim HTML-Parsing gab es historisch viele Ansätze. Frühe Shell-Skripte haben oft Reguläre Ausdrücke (Regex) verwendet, aber das hat seine Einschränkungen. Komplexere HTML-Dokumente lassen sich mit Regex nicht einfach abbilden.
 
-# Siehe auch:
+Als Alternative gibt es dedizierte HTML-Parser-Bibliotheken in fast jeder Programmiersprache. Sie sind genau gemacht für diese Aufgabe. Aber manchmal will man einfach nur schnell etwas extrahieren, und da wird `grep` in der Shell genutzt.
 
-- Offizielle Fish Shell Dokumentation zum Parsen von HTML: https://fishshell.com/docs/current/cmds/hxselect.html
-- Ein Tutorial zum Parsen von HTML mit Fish Shell: https://dev.to/username/how-to-parse-html-in-fish-shell-using-libxml2-2ka4
+In unseren Fish Shell Beispiel nutzen wir das Perl-kompatible Regex von `grep` (`-P` Flag), um zwischen den `<title>` Tags zu suchen. Diese Lösung ist minimal, aber möglicherweise flüchtig bei komplexen HTML-Dokumenten.
+
+## Siehe auch:
+
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Grep in Perl-kompatibles Regex](https://www.gnu.org/software/grep/manual/html_node/Perl_002dCompatible-Regular-Expressions.html)
+- [HTML Parsing in Python](https://docs.python.org/3/library/html.parser.html)
+- [HTML Parsing in JavaScript](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)

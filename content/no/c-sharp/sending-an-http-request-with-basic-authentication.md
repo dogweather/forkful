@@ -1,7 +1,7 @@
 ---
-title:                "Sending et http-request med grunnleggende autentisering"
-html_title:           "C#: Sending et http-request med grunnleggende autentisering"
-simple_title:         "Sending et http-request med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,41 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Å sende en HTTP-forespørsel med Basic Authentication i C#
+
 ## Hva & Hvorfor?
-En av de vanligste måtene å kommunisere med en nettside er ved å sende en HTTP-forespørsel. Dette lar deg hente informasjon fra nettsiden og sende informasjon tilbake til den. Programmerere bruker ofte basic authentication når de sender HTTP-forespørsler for å sikre at bare autoriserte brukere har tilgang til dataene.
+Vi sender en HTTP forespørsel med grunnleggende autentisering for å interagere med en netttjeneste som krever brukeridentifikasjon. Dette lar programmerere tilgang til beskyttede ressurser.
 
-## Slik gjør du det:
+## Hvordan:
+For å sende en HTTP forespørsel med Basic Authentication i C#, kan vi bruke `HttpClient` klassen, som er inkludert i `System.Net.Http` navneområdet. Her er et eksempel:
+
 ```C#
-// Setter opp en HTTP-forespørsel med basic authentication
-var request = (HttpWebRequest)WebRequest.Create("nettside.com/api/data");
-request.Method = "GET";
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
 
-// Legger til brukerinformasjon 
-request.Headers["Authorization"] = "Basic " + Convert.ToBase64String(Encoding.Default.GetBytes("brukernavn:passord"));
-
-// Henter responsen fra serveren
-var response = (HttpWebResponse)request.GetResponse();
-
-// Leser data fra responsen
-using (var stream = response.GetResponseStream())
+class Program
 {
-    var reader = new StreamReader(stream);
-    var responseText = reader.ReadToEnd();
-    
-    // Skriver ut dataene
-    Console.WriteLine(responseText);
+    static async Task Main(string[] args)
+    {
+        using HttpClient client = new HttpClient();
+        string userName = "username";
+        string password = "password";
+
+        string encoded = Convert.ToBase64String(Encoding.GetEncoding("ISO-8859-1").GetBytes(userName + ":" + password));
+        client.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", encoded);
+
+        HttpResponseMessage response = await client.GetAsync("http://example.com");
+        string responseString = await response.Content.ReadAsStringAsync();
+        
+        Console.WriteLine(responseString);
+    }
 }
 ```
+I ovenstående kode, setter vi `Authorization` hodet til en `Basic` autentiseringstreng bestående av brukernavn og passord kodet til Base64.
 
-### Output:
-```
-[{ "id": 1, "navn": "John", "age": 27 }, { "id": 2, "navn": "Jane", "age": 33 }]
-```
+## På Dypet
+Historisk sett, ble Basic Authentication implementert som en del av HTTP/1.0-standarden i 1996. Selv om det er en gammel teknikk, forblir den relevant og mye brukt.
 
-## Dykk ned:
-HTTP basic authentication har eksistert siden begynnelsen av World Wide Web og er en enkel måte å autentisere brukere for tilgang til ressurser på en nettside. Alternativene til basic authentication inkluderer OAuth og API-nøkler. Implementeringen av basic authentication innebærer å inkludere brukerens autentiseringsinformasjon i headeren av en HTTP-forespørsel ved å base64-kode informasjonen.
+Det er alternativer til Basic Authentication. Bearer token (oftest brukt med OAuth 2.0) og Digest Access Authentication er to av dem. Valget mellom disse teknikkene avhenger av bruksområdet.
+
+En viktig ting å merke seg når vi sender en HTTP-forespørsel med Basic Authentication er at brukernavn og passord blir sent som ren tekst kodet i Base64. Dette betyr at hvis kommunikasjonen ikke er sikret med HTTPS, så kan den dekodes og lese av ondsinnede parter.
 
 ## Se også:
-- [HTTP basic authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [Implementering av basic authentication i .NET](https://docs.microsoft.com/en-us/dotnet/framework/network-programming/how-to-authenticate-with-a-web-server)
-- [OAuth vs Basic Authentication](https://www.guru99.com/difference-oauth-basic-authentication.html)
+1. [HttpClient Class Documentation](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+2. [Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+3. [Other HTTP Authentication Methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

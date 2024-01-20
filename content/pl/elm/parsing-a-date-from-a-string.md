@@ -1,7 +1,7 @@
 ---
-title:                "Przetwarzanie daty z ciągu znaków"
-html_title:           "Elm: Przetwarzanie daty z ciągu znaków"
-simple_title:         "Przetwarzanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,23 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robić?
-Parsowanie daty z tekstu to proces przekształcania ciągu znaków na obiekt daty, który można wykorzystać w programowaniu. Programiści stosują to, aby ułatwić sobie pracę z datami i uniknąć błędów w ich przetwarzaniu.
+## Ale co to i dlaczego?
+
+Parsowanie daty z ciągu to przekształcanie tekstu reprezentującego datę względem określonego formatu w obiekt daty, umożliwiający łatwiejszą manipulację. Programiści to robią, aby uprościć przetwarzanie danych i interakcję użytkownika.
 
 ## Jak to zrobić:
-Parsowanie daty w Elm jest proste i wygodne dzięki modułowi `Date.String` i funkcji `fromString`. Wystarczy podać format daty oraz tekst, a wynikiem będzie obiekt daty.
 
-```Elm
-import Date.String exposing (fromString)
+W Elm stosowany jest następujący sposób na parsowanie daty z ciągu:
 
-fromString "yyyy.MM.dd" "2020.02.14"
--- Output: { year = 2020, month = 2, day = 14, hour = 0, minute = 0, second = 0, millisecond = 0, weekday = Friday, timezone = Nothing }
+```elm
+import Time
+import Time.Extra
+
+parseDate: String -> Maybe Time.Posix
+parseDate dateString =
+    Time.fromString dateString |> Maybe.andThen Time.Extra.dateTime
+
+main =
+    parseDate "2020-05-12T10:45:00Z"
+        |> Maybe.map Time.toIsoString
+        |> Maybe.withDefault "Niepoprawna data"
 ```
 
-## Wgląd w detale:
-Parsowanie dat jest powszechną czynnością w programowaniu, szczególnie w aplikacjach, które obsługują daty lub przetwarzają dane z różnych źródeł. Wcześniej było to trudne i czasochłonne, jednak dzięki narzędziom takim jak Elm, jest to proste i efektywne. Alternatywne metody, takie jak stosowanie bibliotek zewnętrznych lub pisane własne funkcje, mogą być bardziej skomplikowane i mniej niezawodne.
+Output:
 
-## Zobacz także:
-- Dokumentacja modułu `Date.String` w Elm: https://package.elm-lang.org/packages/elm/core/latest/Date-String
-- Poradnik dotyczący pracy z datami w Elm: https://guide.elm-lang.org/dates.html
-- Dodatkowe informacje na temat formatowania dat: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+```elm
+"2020-05-12T10:45:00Z"
+```
+
+## Głębsze spojrzenie
+
+Elm jest młodym językiem, ale w jego bibliotece do zarządzania czasem można znaleźć metody do parsowania dat. Alternatywą dla tego jest używanie biblioteki third-party, takiej jak elm-date-extra, która oferuje wiele dodatkowych funkcji, ale może wprowadzać dodatkowe zależności.
+
+Parsowanie daty z ciągu jest zwykle operacją niezawodną, ale w Elm jest ono typu `Maybe`, co oznacza, że może się nie udać i może zwrócić `Nothing`, jeśli format ciągu wejściowego jest niepoprawny. To jest zgodne z filozofią Elm, aby unikać błędów w czasie wykonywania.
+
+## Zobacz też:
+
+- Elm Time -> https://package.elm-lang.org/packages/elm/time/latest/
+- Elm Date Extra -> https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/

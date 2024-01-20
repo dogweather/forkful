@@ -1,7 +1,7 @@
 ---
-title:                "Créer un fichier temporaire"
-html_title:           "Rust: Créer un fichier temporaire"
-simple_title:         "Créer un fichier temporaire"
+title:                "Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
+simple_title:         "Création d'un fichier temporaire"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Créer un fichier temporaire en Rust
+## Pourquoi & Quoi ?
+Créer un fichier temporaire consiste à générer un fichier que vous pouvez utiliser brièvement pendant l'exécution de votre programme. Les développeurs le font souvent pour conserver les données intermédiaires ou pour partager des données entre différents processus.
 
-## Quoi & Pourquoi?
-Créer un fichier temporaire est un moyen pour les programmeurs de générer un fichier qui sera utilisé temporairement pendant l'exécution d'un programme. Cela peut être utile lorsque vous avez besoin d'un fichier pour stocker des données temporaires ou pour réaliser des opérations de manière sécurisée.
-
-## Comment faire:
-Pour créer un fichier temporaire en Rust, vous pouvez utiliser la fonction `tempfile::tempfile()` de la bibliothèque standard. Cela renvoie un `Result<File>` qui peut être utilisé pour lire et écrire des données dans le fichier temporaire. Voici un exemple de code qui crée un fichier temporaire et y écrit une chaîne de caractères:
+## Comment faire :
+Voici comment vous créeriez et utiliseriez un fichier temporaire dans Rust :
 
 ```Rust
 use std::fs::File;
-use std::io::prelude::*;
+use std::io::Write;
+use tempfile::tempfile;
 
-let mut temp_file = tempfile::tempfile().expect("Impossible de créer le fichier temporaire");
-write!(temp_file, "Ceci est un fichier temporaire créé en Rust").expect("Impossible d'écrire dans le fichier temporaire");
+let mut temp = tempfile().expect("Impossible de créer un fichier temporaire");
+write!(temp, "Salut Monde !").expect("Impossible d'écrire dans le fichier temporaire");
+
+// Utilisez ici le fichier temporaire
 ```
 
-## Plongée en profondeur:
-La création de fichiers temporaires a été un sujet de discussion dans le monde de la programmation depuis un certain temps. Les programmeurs ont longtemps cherché des moyens de stocker des données de manière temporaire sans avoir à créer de fichier physique. En plus de la méthode mentionnée ci-dessus, il existe d'autres façons de créer des fichiers temporaires en Rust, comme l'utilisation de la bibliothèque `tempdir` ou en utilisant des bibliothèques tierces telles que `rusty-machine`.
+## Plongée en profondeur
+Historiquement, la création de fichiers temporaires a été une partie importante de la gestion de l'espace disque dans des langages comme C. Mais dans Rust, cela a été rendu beaucoup plus simple et sûr grâce au sûreté de la mémoire et des abstractions de gestion des fichiers. 
 
-## Voir aussi:
-- [Documentation de la fonction tempfile() dans la bibliothèque standard](https://doc.rust-lang.org/std/fs/fn.tempfile.html)
-- [Bibliothèque tempdir pour créer des répertoires temporaires en Rust](https://crates.io/crates/tempdir)
-- [Bibliothèque rusty-machine pour la création de fichiers temporaires de manière sécurisée](https://crates.io/crates/rusty-machine)
+En alternative, vous pouvez aussi créer des dossiers temporaires avec le crate `tempdir`. Mais `tempfile` est généralement plus rapide et plus sûr car il garantit que le nom de fichier est unique et que le fichier est supprimé lorsque l'objet est abandonné.
+
+L'implémentation de 'tempfile' en Rust utilise les appels systèmes spécifiques à chaque OS pour assurer la plus grande efficacité et sécurité possible. Par exemple, sur les systèmes Unix, il utilise `mkstemp` qui crée et ouvre le fichier en une seule opération atomique, évitant ainsi les attaques de type TOCTOU (time of check to time of use).
+
+## Voir également
+Pour plus d'informations et de ressources concernant les fichiers temporaires en Rust, consultez ces liens :
+- Documentation Rust : https://doc.rust-lang.org/book/
+- tempfile crate : https://docs.rs/tempfile/3.0.5/tempfile/
+- Deuxième édition du livre Rust : https://doc.rust-lang.org/book/second-edition/

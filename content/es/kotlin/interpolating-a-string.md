@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Kotlin: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,24 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
-Interpolar una cadena es una forma de insertar valores variables en una cadena de texto. Los programadores lo hacen porque les permite construir cadenas dinámicas con valores que pueden cambiar durante la ejecución del programa.
+## ¿Qué & Por qué?
 
-## Cómo:
-```kotlin
+La interpolación de cadenas es un proceso por el cual inyectamos variables directamente dentro de una cadena. Los programadores lo hacen para simplificar la concatenación de cadenas y hacer el código más legible.
+
+## ¿Cómo se hace?
+
+Aquí se muestra un ejemplo simple de interpolación de cadenas en Kotlin. Observe cómo las variables se incluyen directamente en la cadena.
+
+```Kotlin
 val nombre = "Juan"
-val edad = 25
-val mensaje = "Hola, mi nombre es $nombre y tengo $edad años."
-println(mensaje)
-```
-Output:
-```
-Hola, mi nombre es Juan y tengo 25 años.
+val saludo = "¡Hola, $nombre!"
+println(saludo) // imprimirá: ¡Hola, Juan!
 ```
 
-## Deep Dive:
-En el pasado, los programadores tenían que concatenar manualmente cadenas de texto y valores, lo que resultaba en código largo y confuso. Con la interpolación de cadenas, se simplifica el proceso de construir cadenas dinámicas en Kotlin. Otras alternativas a la interpolación de cadenas incluyen el uso de la función "format" o el uso de la clase "StringBuilder". En cuanto a la implementación, Kotlin utiliza la función especial "toString()" para convertir los valores a cadenas y luego los inserta en la cadena interpolada.
+Si deseas incluir una expresión más compleja, debes usar llaves `{}` alrededor de ella, así:
 
-## Ver también:
-- [Documentación oficial de interpolación de cadenas en Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#string-interpolation)
-- [Artículo sobre interpolación de cadenas en Kotlin de Ray Wenderlich](https://www.raywenderlich.com/380-test-kotlin-text-input-kotlin-string-interpolation)
+```Kotlin
+val horas = 7
+val mensaje = "Han pasado ${horas * 60} minutos desde la medianoche"
+println(mensaje) // imprimirá: Han pasado 420 minutos desde la medianoche
+```
+
+## Más allá
+
+La interpolación de cadenas, aunque más comúnmente usada en lenguajes modernos como Kotlin, no es un concepto nuevo. Se originó en lenguajes de programación como Perl y Python hace mucho tiempo.
+
+Ten en mente que hay otras formas de manejar la concatenación de cadenas en Kotlin, como el uso de la función `plus()` o el operador `+`
+
+```Kotlin
+val str1 = "Hola, "
+val str2 = "Juan"
+println(str1.plus(str2)) // imprimirá: Hola, Juan
+println(str1 + str2) // imprimirá: Hola, Juan
+```
+Pero la interpolación de cadenas es mucho más legible y preferida en la mayoría de los casos.
+
+## Ver más
+
+Si deseas seguir aprendiendo sobre Kotlin y la interpolación de cadena, aquí puedes visitar estos enlaces:
+
+- Kotlin Language Documentation: [String Templates](https://kotlinlang.org/docs/string-templates.html)
+- Kotlin koans: [Work with Strings](https://play.kotlinlang.org/byExample/01_introduction/05_String%20Templates)

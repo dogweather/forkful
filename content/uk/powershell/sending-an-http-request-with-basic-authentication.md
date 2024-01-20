@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http-запиту з основною аутентифікацією."
-html_title:           "PowerShell: Надсилання http-запиту з основною аутентифікацією."
-simple_title:         "Надсилання http-запиту з основною аутентифікацією."
+title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
+html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
+simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що та навіщо?
 
-Відправлення HTTP-запиту з базовою автентифікацією - це процес взаємодії між програмістами та сховищем даних за допомогою протоколу HTTP з додатковим рівнем захисту. Коли програми отримують доступ до віддаленого сховища, вони повинні підтвердити свою ідентичність, щоб забезпечити безпеку обміну даними.
+Відправлення HTTP-запиту з базовою аутентифікацією — це процес обміну даними між клієнтом та сервером, де ідентичність вичерпно перевіряється. Програмісти роблять це для забезпечення безпеки даних та захисту від несанкціонованого доступу.
 
 ## Як це зробити:
 
 ```PowerShell
-# Встановлення змінних для базової автентифікації
-$username = "ім'я користувача"
-$password = "пароль"
+#Встановлюємо ім'я користувача та пароль
+$userName = 'Your UserName'
+$password = 'Your Password'
 
-# Код для створення нового HTTP-запиту з базовою автентифікацією
-$request = [System.Net.WebRequest]::Create("URL")
-$request.Method = "GET"
-$request.Credentials = New-Object System.Net.NetworkCredential($username, $password)
-$response = $request.GetResponse()
+#Кодуємо в Base64
+$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(("{0}:{1}" -f $userName,$password)))
+
+#Create HTTP Request
+$httpRequest = New-Object System.Net.HttpWebRequest
+$httpRequest.Method = 'POST'
+$httpRequest.Headers.Add('Authorization',('Basic {0}' -f $base64AuthInfo))
+
+#Відправляємо запит та отримуємо відповідь
+$response = $httpRequest.GetResponse()
+$status = $response.StatusCode
+$responseData = new-object System.IO.StreamReader $response.GetResponseStream()
+$responseData.ReadToEnd()
 ```
 
-Результат:
+## Поглиблений аналіз
 
-```
-StatusCode          : 200
-StatusDescription   : OK
-ContentLength       : 1234
-ContentType         : text/html; charset=utf-8
-```
+1. Історичний контекст: Базова аутентифікація є одним з найперших методів аутентифікації, впроваджених в HTTP протоколі. Її простота і легкість впровадження є причиною її широкого застосування.
+ 
+2. Альтернативи: Kerberos, Digest же і OAuth це декілька з багатьох доступних альтернатив. Вони більш безпечні, але вимагають більш складної конфігурації. 
 
+3. Деталі імплементації: Імена користувачів та паролі кодуються ще перед надсиланням до сервера. Це підвищує безпеку, але не робить процес абсолютно недоступним для вторгнень.
 
-## Глибоке погруження:
+## Дивіться також
 
-1. Історичний контекст: у перших версіях протоколу HTTP автентифікація не була передбачена, але з часом було розроблено кілька способів захисту даних, в тому числі базову автентифікацію.
-
-2. Альтернативи: існують інші методи автентифікації, такі як шифрування SSL, Token автентифікація або OAuth.
-
-3. Деталі реалізації: для того, щоб передати базову автентифікацію в HTTP-запиті, необхідно встановити заголовок Authorization з Base64-кодированным ім'ям користувача та паролем. Важливо також враховувати, що базова автентифікація не є надійним методом захисту даних і може бути легко розшифрована зловмисником.
-
-## Дивіться також:
-
-- Повне посібник з HTTP-запитів з базовою автентифікацією в PowerShell: [посилання](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-webrequests-from-windows-powershell-with-basic-authentication)
-- Додаткова інформація про HTTP-запити та безпеку даних: [посилання](https://www.oreilly.com/library/view/secure-programming-cookbook/0596003943/ch08s14.html)
+[Official Documentation](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
+[Basic Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+[PowerShell HTTP Programming](https://www.computerperformance.co.uk/powershell/powershell-invoke-webrequest/)

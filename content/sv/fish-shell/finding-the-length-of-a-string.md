@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden av en sträng"
-html_title:           "Fish Shell: Att hitta längden av en sträng"
-simple_title:         "Att hitta längden av en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,22 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hitta längden på en sträng är en vanlig uppgift för programmerare. Det innebär helt enkelt att räkna antalet tecken i en sträng, inklusive mellanslag och specialtecken. Detta är användbart för att manipulera och hantera strängar på ett effektivt sätt i våra program.
 
-## Så här:
-```Fish Shell
-set sträng = "Hej världen!"
-echo "(count $sträng)"
-```
-Output:
-```
-13
-```
+Hitta längden på en sträng avser operationen att räkna antalet tecken i en specifik sträng. Programmerare gör detta när de behöver behandla data beroende på dess storlek, till exempel att trimma eller utöka text.
 
-## Djupdykning:
-Att räkna längden på en sträng har varit en del av programmering sedan de tidiga dagarna av datorer. Det finns många olika sätt att göra det, men i Fish Shell använder vi kommandot ```count``` för att göra det på enklaste sätt. Alternativet är att använda inbyggda funktioner i ditt programmeringsspråk, som till exempel ```len()``` i Python eller ```length()``` i JavaScript.
+## Så här gör du:
 
-## Se även:
-- [Fish Shell dokumentation för count command](https://fishshell.com/docs/current/cmds/count.html)
-- [Skillshare kurs: Introduction to Fish Shell](https://www.skillshare.com/classes/Introduction-to-Fish-Shell-An-Interactive-Command-Line-Utility/1678268081)
-- [Youtube tutorial: String Length in Programming Languages](https://www.youtube.com/watch?v=UoSqUJpXfJY)
+Fish Shell gör det lätt för oss att hitta längden på en sträng med hjälp av strlength-funktionen. Låt oss titta på ett exempel.
+
+```
+Fish Shell
+$ set sträng "Hej, värld!"
+$ echo (string length -q $sträng)
+```
+Exemplet ovan sätter strängen till "Hej, värld!" och visar sedan längden på strängen, som är 12.
+
+## Fördjupning
+
+Historiskt sett har olika programmeringsspråk tillhandahållit olika metoder för att hitta längden på en sträng. I Fish Shell introducerades string length-funktionen för att förenkla den här uppgiften.
+
+Ett alternativ till string length i Fish Shell är att använda wc -m funktionen. Dock kan detta returnera olika resultat om strängen innehåller speciella tecken.
+
+När du hittar längden på en sträng är det viktigt att förstå att Fish Shell faktiskt räknar antalet tecken, inte bytes. Så för strängar med multi-byte karaktärer kan detta vara särskilt användbart.
+
+## Se också
+
+För mer information om strängmanipulation i Fish Shell, se följande länkar:
+1. [Fish Shell: string length](https://fishshell.com/docs/current/cmds/string-length.html)
+2. [Fish Shell: wc -m](https://fishshell.com/docs/current/cmds/wc.html)
+3. [Fish Shell: set](https://fishshell.com/docs/current/cmds/set.html)

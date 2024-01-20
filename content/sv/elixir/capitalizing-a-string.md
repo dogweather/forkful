@@ -1,7 +1,7 @@
 ---
-title:                "Stora första bokstaven i en sträng"
-html_title:           "Elixir: Stora första bokstaven i en sträng"
-simple_title:         "Stora första bokstaven i en sträng"
+title:                "Gör en sträng stor bokstav"
+html_title:           "Elixir: Gör en sträng stor bokstav"
+simple_title:         "Gör en sträng stor bokstav"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,23 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Använda Versaler i en String i Elixir
+
 ## Vad & Varför?
-Att kapitalisera en sträng innebär att göra alla bokstäver i strängen stora. Programmers gör det för att göra strängar mer läsbara och för att följa konventionella namngivningsstandarder.
+Att använda versaler i en textsträng (string) innebär att förvandla tecken till stor bokstav. Programmerare gör det för olika anledningar, som exempelvis program som behöver formell output eller för att jämföra data.
 
-## Hur man gör:
-```Elixir
-String.to_uppercase("hej, världen")
+## Hur:
+I Elixir gör du det med hjälp av `String.upcase/1` funktionen. Titta på dessa exempel:
+
+```elixir
+IO.puts String.upcase("hej världen")
+# Output: "HEJ VÄRLDEN"
+
+IO.puts String.upcase("Elixir är roligt")
+# Output: "ELIXIR ÄR ROLIGT"
 ```
-Aktiverar utmatningen: "HEJ, VÄRLDEN"
+Med `String.upcase/1` blir alla små bokstäver omvandlade till stora bokstäver i den angivna strängen.
 
-```Elixir
-String.upcase("hej, världen")
+## Djup Dykning:
+Historiskt sett har utvecklare använt versalfunktioner för att standardisera data, särskilt i äldre datorsystem som inte skiljde på små och stora bokstäver. 
+
+Ett alternativ till `String.upcase/1` är `String.capitalize/1` som gör om första bokstaven i varje ord till versal men lämnar resten av strängen som den är. 
+
+```elixir
+IO.puts String.capitalize("hej världen")
+# Output: "Hej Världen"
 ```
-Aktiverar också utmatningen: "HEJ, VÄRLDEN"
+Implementeringsdetaljer: `String.upcase/1` och `String.capitalize/1` använder Elixirs inbyggda Unicode-stöd för att korrekt hantera en mängd olika tecken från olika språk, inte bara engelska. Detta gör dessa funktioner robusta och tillförlitliga vid internationell användning.
 
-## Djupdykning:
-Att kapitalisera en sträng är en vanlig operation i programmering och finns i flera olika språksyntaxer. Det är vanligtvis en del av en strängbehandlingsmodul och tar emot en sträng som argument. Det finns också alternativ för att bara kapitalisera första bokstaven eller för att kapitalisera specifika tecken. Det kan vara användbart när man hanterar användarinput eller jämför strängar.
-
-## Se även:
-[w3schools tutorial](https://www.w3schools.com/python/ref_string_upper.asp) 
-[Elixir Docs](https://hexdocs.pm/elixir/String.html#upcase/1)
+## Se Även:
+- Elixir officiella dokumentation om [String.upcase/1](https://hexdocs.pm/elixir/String.html#upcase/1) och [String.capitalize/1](https://hexdocs.pm/elixir/String.html#capitalize/1)
+- En bra [tutorial](https://elixircasts.io/string-upcase-and-downcase) om `String.upcase` och `String.downcase` i Elixir
+- Artikel om [Elixirs Unicode-stöd](https://www.cogini.com/blog/working-with-unicode-in-elixir/)

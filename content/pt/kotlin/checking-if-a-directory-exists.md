@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e Por que Fazer?
-Verificar se um diretório existe é simplesmente garantir que um caminho fornecido de arquivo ou diretório é válido e corresponde a uma pasta existente no sistema. Os programadores fazem isso para evitar erros e garantir que seus programas possam acessar e manipular os arquivos e diretórios necessários para o seu funcionamento.
+## O Que & Porquê?
+Verificar se um diretório existe se refere a conferir se um determinado caminho de arquivo aponta para um diretório ou localização que realmente exista no sistema. Os programadores fazem isso para evitar erros de arquivos ausentes, que podem fazer com que o programa falhe ou se comporte de forma imprevisível.
 
-## Como Fazer:
+## Como fazer:
+Aqui estão alguns exemplos de como verificar se um diretório existe usando a linguagem de programação Kotlin:
+
+Primeiro, importe o pacote necessário:
+
+```Kotlin
+import java.nio.file.*
 ```
-Kotlin
-fun main() {
-    val path = "C:/Users/username/Documents"
-    val directory = File(path)
-    if(directory.exists()){
-        println("O diretório existe!")
-    } else {
-        println("O diretório não existe!")
-    }
+
+Em seguida, você pode utilizar a função `Files.exists()` para verificar se um diretório já existe:
+
+```kotlin
+val diretorio = Paths.get("/caminho/para/o/diretorio")
+if(Files.exists(diretorio)){
+    println("O diretório existe.")
+} else {
+    println("O diretório não existe.")
 }
 ```
-Output: O diretório existe!
 
-## Mergulho Profundo:
-Verificar a existência de um diretório pode parecer uma tarefa simples, mas é uma etapa importante no desenvolvimento de qualquer aplicativo ou programa que lida com arquivos e diretórios. Antes do lançamento da linguagem Kotlin, os programadores tinham que recorrer a bibliotecas externas ou utilizar um método mais complexo envolvendo a classe Path da linguagem Java para realizar essa tarefa. Felizmente, com Kotlin, temos um método simples e fácil de usar para verificar a existência de um diretório. Além disso, também é importante ressaltar que verificar a existência de um diretório é diferente de verificar se um arquivo existe, pois os métodos e as classes utilizadas são diferentes. 
+Se o diretório existir, o output será `O diretório existe`. Caso contrário, o output será `O diretório não existe`.
 
-## Veja Também:
-- [Documentação do Kotlin sobre a classe File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Documentação do Java sobre a classe Path](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html)
+## Mergulhando Mais a Fundo
+Até o Java 7, a verificação da existência de um diretório era feita usando o método `File.exists()`. No entanto, com a introdução do pacote `java.nio.file` no Java 7, muitos preferem usar as funções deste pacote, como `Files.exists()`, por serem mais completas e eficientes.
+
+Existem algumas alternativas ao uso do `Files.exists()`. Por exemplo, você pode usar a função `File.isDirectory()` que retornará `true` se o caminho do arquivo existir e for um diretório.
+
+Ao verificar a existência de um diretório em Kotlin, a JVM é a responsável por lidar com os detalhes específicos do sistema operacional, como a padronização dos separadores de caminhos. Portanto, o mesmo código funcionará sem problemas em qualquer sistema operacional que suporte a JVM.
+
+## Veja Também
+1. Documentação oficial da classe Files no Kotlin: [Files (Java Platform SE 8 - Oracle docs)](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/Files.html)
+2. Documentação oficial da classe Path no Kotlin: [Path (Java Platform SE 8 - Oracle docs)](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Path.html)
+3. Documentação oficial da classe File no Kotlin: [File (Java Platform SE 8 - Oracle docs)](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)

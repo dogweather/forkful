@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Clojure: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,30 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
-Démarrer un nouveau projet est le processus de création d'un nouveau logiciel, application ou programme à partir de zéro. Les programmeurs le font pour répondre à un nouveau besoin, étudier de nouvelles technologies ou simplement pour le plaisir de coder.
+## Quoi & Pourquoi?
 
-## Comment faire :
-Voici un exemple simple de comment démarrer un nouveau projet en utilisant Clojure :
+Démarrer un nouveau projet de programmation en Clojure c'est comme peindre une toile vierge: c'est l'opportunité de créer quelque chose de unique à partir de zéro. Les programmeurs le font pour résoudre des problèmes, explorer de nouvelles idées, ou simplement pratiquer leurs compétences.
 
-```Clojure
-(defn start-project [name]
-  "Créer un nouveau projet avec le nom donné"
-  (println "Nouveau projet créé :" name))
+## Comment faire:
+Commençons par installer [Leiningen](https://leiningen.org/#install) - un outil populaire pour gérer les projets Clojure. Ensuite, vous pouvez créer un nouveau projet Clojure avec la commande:
 
-(start-project "Mon super projet")
+```clojure
+lein new mon-projet
 ```
 
-Sortie :
-```
-Nouveau projet créé : Mon super projet
+Ce qui génère un répertoire de projet avec une structure de fichiers de base. Vous pouvez compiler et exécuter le projet avec:
+
+```clojure
+lein run
 ```
 
-## Plongée en profondeur :
-Clojure a été créé en 2007 par Rich Hickey et est basé sur le langage de programmation Lisp. Il vise à permettre un développement de logiciel concis et efficace en utilisant des structures de données immuables. D'autres langages populaires pour le démarrage de projets sont Python, Java et JavaScript.
+Dans un fichier de source, vous pouvez écrire une fonction comme celle-ci:
 
-## Voir aussi :
-Pour plus d'informations sur Clojure et comment démarrer un projet, voici quelques ressources utiles :
-- [Site officiel de Clojure](https://clojure.org/)
-- [Guide de démarrage de Clojure](https://clojure.org/guides/getting_started)
-- [Introduction à Clojure sur Codecademy](https://www.codecademy.com/learn/learn-clojure)
+```clojure
+(defn saluer [nom]
+  (str "Bonjour, " nom "!"))
+```
+
+Et l'appeler en utilisant:
+
+```clojure
+(saluer "Pierre") => "Bonjour, Pierre!"
+```
+
+## Deep Dive:
+Clojure a été créé en 2007 par Rich Hickey comme une version moderne de Lisp pour la JVM. C'est une solution efficace pour ceux qui aiment le style de programmation fonctionnel et qui ont besoin de la puissance de la JVM.
+
+Alternativement, vous pouvez utiliser des outils comme `boot` ou `depstar` pour gérer vos projets Clojure mais Leiningen reste l'outil le plus largement utilisé.
+
+Lorsqu'on commence un nouveau projet, Leiningen génère une structure de fichiers de base qui as un fichier `project.clj`. Ce fichier contient des informations sur votre projet, y compris les dépendances requises.
+
+## Voir Aussi:
+Pour plus d'informations, consultez ces ressources:
+
+- [Leiningen et Clojure: Introduction](https://www.learn-clojure.com/leiningen-and-clojure-introduction)
+- [Documentation officielle de Clojure](https://clojure.org/guides/getting_started)
+- [Guide: Créer des projets Clojure avec Leiningen](https://www.freecodecamp.org/news/clojure-projects-with-leiningen/)
+- [Clojure for the Brave and True (livre en ligne gratuit)](https://www.braveclojure.com/)

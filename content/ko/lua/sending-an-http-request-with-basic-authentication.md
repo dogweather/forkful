@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증을 사용하여 http 요청 보내기"
-html_title:           "Lua: 기본 인증을 사용하여 http 요청 보내기"
-simple_title:         "기본 인증을 사용하여 http 요청 보내기"
+title:                "기본 인증을 이용한 HTTP 요청 보내기"
+html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
+simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## 무엇 & 왜"
+## 무엇 & 왜?
 
-기본 인증이 포함된 HTTP 요청을 보내는 것은 프로그래머들이 서버로부터 안전하게 데이터를 받아오기 위해 사용하는 방법입니다. 기본 인증은 사용자 이름과 비밀번호를 포함하여 요청을 보낼 때 인증 절차를 거쳐서 서버에 접근할 수 있게 해줍니다.
+HTTP 요청을 기본 인증으로 보내는 것은 웹 서비스와 통신하는 방법입니다. 프로그래머들이 이 작업을 수행하는 이유는 사용자 이름과 비밀번호를 이용해 웹 서비스에 접근하기 위해서입니다.
 
-"## 하는 방법"
+## 어떻게:
+
+아래에 Lua 코드 예제를 주었습니다.
 
 ```Lua
--- HTTP 요청 라이브러리 불러오기
 local http = require("socket.http")
--- 인증 정보를 포함한 URL 설정
-local url = 'http://example.com/'
--- 사용자 이름과 비밀번호 설정
-local username = "사용자 이름"
-local password = "비밀번호"
--- 인증 헤더 생성
-local headers = {Authorization = "Basic " .. (mime.b64(username .. ":" .. password))}
--- HTTP 요청 보내기
-local body, status, headers = http.request {
-  url = url,
-  headers = headers
-}
+local ltn12 = require("ltn12")
 
--- 결과 출력
-if status == 200 then
-  print("요청 성공")
-  print("받아온 데이터:")
-  print(body)
-else
-  print("요청 실패")
-  print("에러 메시지:")
-  print(body)
-end
+local url = 'http://example.com'
+local user = 'username'
+local password = 'password'
+local response = {}
+
+http.request{
+  url = url,
+  user = user,
+  password = password,
+  sink = ltn12.sink.table(response)}
+
+print(table.concat(response))
 ```
 
-"## 깊이 살펴보기"
+## 깊게 들어가보기:
 
-1. 역사적 맥락: 기본 인증은 브라우저가 등장하기 전에 네트워크에서 사용되던 인증 방식이었습니다. 하지만 현재는 보안 취약성이 많고 다른 인증 방식들이 많이 개발되었습니다.
-2. 대안: HTTPS 프로토콜을 사용하거나 OAuth와 같은 다른 인증 방식을 고려할 수 있습니다.
-3. 구현 세부 사항: 인증 헤더를 생성할 때 암호화된 문자열을 사용하는 것이 중요합니다. 또한 네트워크 연결이 안전하지 않은 경우에는 기본 인증을 사용하는 것이 적절하지 않을 수 있습니다.
+서버에 대한 HTTP 요청을 보내는 방법은 여러 가지가 있지만, 기본 인증을 이용한 방법은 가장 간단하고 일반적인 방법 중 하나입니다. 이 방법은 웹이 처음 개발되었을 때부터 있었으며, 사용자가 자신을 인증하고 서버에 대한 접근 권한을 갖게하는 주요 방법 중 하나였습니다.
 
-"## 관련 링크"
+하지만 오늘날에는 기본 인증 방식보다 더 많은 보안기능을 갖춘 방법들, 예를 들어 OAuth나 JWT 등이 많이 사용되고 있습니다. 이 알고리즘이 더 복잡하긴 하지만, 더 나은 보안성을 제공합니다.
 
-- [소켓 라이브러리 설명서](https://w3.impa.br/~diego/software/luasocket/reference.html)
-- [Lua: RFC 2617](https://www.rfcreader.com/#rfc2617)
-- [HTTPS와 SSL의 차이점에 대한 자세한 설명](https://medium.freecodecamp.org/https-and-ssl-the-good-the-bad-and-the-ugly-22da5cce98fd)
+## 참고 자료:
+
+* [Lua 소켓 라이브러리 문서](http://w3.impa.br/~diego/software/luasocket/http.html)
+* [HTTP Basic Authentication에 대한 위키 백과의 설명](https://ko.wikipedia.org/wiki/HTTP_%EA%B8%B0%EB%B3%B8_%EC%9D%B8%EC%A6%9D)
+* [새로운 인증 방식에 대한 명세: OAuth](https://oauth.net/2/)

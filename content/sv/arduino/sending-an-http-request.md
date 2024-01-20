@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-förfrågan"
-html_title:           "Arduino: Sända en http-förfrågan"
-simple_title:         "Sända en http-förfrågan"
+title:                "Skicka en http-förfrågan"
+html_title:           "Javascript: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,62 +10,67 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att skicka en HTTP-förfrågan innebär att skicka en begäran till en webbserver för att hämta data. Det är ett vanligt sätt för programutvecklare att få åtkomst till data från externa källor.
+## Vad & Varför?
 
-Hur man gör:
+Att skicka en HTTP-begäran handlar om att begära data från en server. Programmerare gör detta för att kommunicera med externa system, exempelvis för att hämta väderdata, styra enheter på distans, eller upprätthålla realtidsuppdateringar.
+
+## Så här gör du:
+
+Kodexempel som demonstrerar hur du skickar en HTTP-begäran med Arduino:
+
 ```Arduino
-#include <WiFiClient.h>
-#include <WiFiEsp.h>
-
-char server[] = "www.example.com";  //server som förfrågan ska skickas till
-WiFiClient client;  //skapa ett WiFiClient objekt
-int status = WL_IDLE_STATUS;  //variabel för att hålla reda på WiFi-status
-
-void setup() {
-  Serial.begin(115200);
-  WiFi.init(&Serial);
+#include <ESP8266WiFi.h>
   
-  //anslut till WiFi-nätverket
-  while (status != WL_CONNECTED) {
-    Serial.print("Försöker ansluta till nätverket...");
-    status = WiFi.begin("SSID", "lösenord"); //ersätt med ditt nätverks SSID och lösenord
-    delay(5000);
-  }
-  Serial.println("Ansluten till nätverket!");
-}
+const char* ssid = "ditt_wifi_namn";
+const char* password = "ditt_wifi_lösenord";
 
+WiFiClient client;
+  
+void setup() {
+  Serial.begin(9600);
+  WiFi.begin(ssid, password);
+ 
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(1000);
+    Serial.println("Connecting...");
+  }
+}
+  
 void loop() {
-  //ansluta till servern
-  if (client.connect(server, 80)) {
-    Serial.println("Ansluten till servern!");
-    
-    //skicka förfrågan
-    client.println("GET /data/ HTTP/1.1");
-    client.println("Host: www.example.com");
+  if (client.connect("httpbin.org", 80)) {
+    client.println("GET /status/418");
+    client.println("Host: httpbin.org");
     client.println("Connection: close");
     client.println();
-    
-    //läs och skriv ut svaret
-    while (client.available()) {
-      char c = client.read();
-      Serial.print(c);
-    }
-    
-    Serial.println("Stäng anslutningen när alla data har tagits emot.");
-    client.stop(); //stänga anslutningen när all data har tagits emot
-  } 
-  else {
-    Serial.println("Anslutningen misslyckades :(");
+  } else {
+    Serial.println("Connection failed...");
+    delay(1000);
   }
   
-  delay(5000); //vänta 5 sekunder innan du skickar en ny förfrågan
+  while(client.available()){
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
+
+  client.stop();
+  delay(3000);
 }
 ```
 
-Utforska vidare:
-HTTP-förfrågan är en del av HTTP-protokollet, vilket hänvisar till hur data kommuniceras mellan en klient och en server på World Wide Web. Det finns andra sätt att hämta data från externa källor, som t.ex. FTP eller SMTP, men HTTP är det vanligaste och mest lättanvända sättet.
+När programmet har kopplat upp mot WiFi-nätverket, skickas en HTTP GET-begäran till `httpbin.org`. Svaret skrivs sedan ut på seriella monitorn.
 
-Se även:
-- Arduino WiFi bibliotekets dokumentation: https://www.arduino.cc/en/Reference/WiFiClient
-- HTTP-protokollets officiella dokumentation: https://www.w3.org/Protocols/rfc2616/rfc2616.html
+## Djupdykning
+
+Historiskt sett formally introduced in 1991, har HTTP-begäran blivit den universella metoden för att hämta data över internet. Alternativ till HTTP-begäran inkluderar WebSockets, vilka tillåter tvåvägskommunikation mellan klient och server, eller MQTT, som är en lättviktig publikations-/prenumerationbaserad protokoll som ofta används för Internet of Things-projekt.
+
+När det gäller implementering av HTTP-begäran i Arduino, är det viktigt att notera att olika varianter av Arduino-kort kräver olika bibliotek. I exemplet ovan använde vi `ESP8266WiFi.h` biblioteket specifikt för ESP8266-baserade kort. Andra Arduino-kort kan kräva andra bibliotek, till exempel `WiFiNINA.h` för Arduino Nano 33 IoT.
+
+## Se även
+
+För mer information om HTTP-begäran och implementationer, se följande resurser:
+
+- [HTTP: The Protocol Every Web Developer Must Know](https://www.tutorialspoint.com/http/index.htm)
+
+- [Arduino ESP8266 Tutorial: Getting Started](https://randomnerdtutorials.com/esp8266-web-server-with-arduino-ide/)
+
+- [Arduino HTTP Client Library](https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)

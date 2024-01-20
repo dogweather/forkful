@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目"
-html_title:           "Elixir: 开始一个新项目"
-simple_title:         "开始一个新项目"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,43 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是开始一个新项目是什么和为什么程序员会这样做
+## 什么 & 为什么?
+启动新项目是指创建一个新的编程工程，开始一个全新的创作过程。程序员之所以这样做，是为了解决新问题，提供新的产品或服务。
 
-开始一个新项目指的是开始一个新的软件开发项目。程序员经常开始新项目是为了解决某些问题，创建新的功能或者更新旧的代码。这样做可以帮助他们提高技能和知识，并为用户提供更好的体验。 
+## 如何:
+使用Elixir中的mix工具，可以轻松创建新的项目。如下是创建新项目的代码示例。
 
-# 如何开始一个新项目：
-
-下面是一个简单的Elixir代码示例，展示如何创建一个新的项目：
-
-```
-Elixir mix new my_project
-```
-输出：
-```
-* creating README.md
-* creating .formatter.exs
-* creating .gitignore
-* creating mix.exs
-* creating lib
-* creating lib/my_project.ex
-* creating test
-* creating test/test_helper.exs
-* creating test/my_project_test.exs
-
-Your mix project was created successfully.
+```Elixir
+# 启动新的Elixir项目
+mix new my_new_project
+cd my_new_project
 ```
 
-# 深入探讨：
+执行这个命令后，你的新项目文件夹中包含以下内容:
 
-- 历史背景：
-Elixir是一种函数式编程语言，基于Erlang虚拟机，由Jose Valim于2011年创立。它被设计用于构建可扩展、可靠的分布式应用程序。
-- Alternatives：
-除了Elixir，还有其他语言可以用于开始一个新的项目，比如Python，JavaScript，Java等。每种语言都有自己的特点和适用场景，程序员可以根据自己的需求来选择适合的语言。
-- 实现细节：
-Elixir的项目管理工具是Mix，它可以帮助程序员创建新的项目、管理依赖和构建应用程序。Elixir还提供了许多有用的模块和库，可以帮助程序员更轻松地开始和完成一个项目。
+```Elixir
+#_ls
+lib  mix.exs  README.md  test
+```
 
-# 参考资料：
+其中“lib”目录用于存放源代码，“test”目录用于存放测试代码，“mix.exs”则是项目配置文件。
 
-- Elixir官方网站：https://elixir-lang.org/
-- Elixir中文文档：https://elixir-lang.cn/
-- Elixir教程：https://elixirschool.com/
+## 深度挖掘:
+Elixir自从其创立之初，就以并发或分布式编程和容错性为其主要目标，因此使得Elixir极度适合云计算和web开发。
+还有其他一些工具可以创建新项目，例如Phoenix是构建在Elixir基础上的一个Web框架，你可以使用Phoenix创建一个新的web应用程序。
+至于实现细节，Elixir的原则是让每个项目都被组织成小的，独立的应用，从而能更好的组织你的代码。
+
+## 参考链接:
+1. [Elixir官方文档](https://elixir-lang.org/docs.html)
+2. [Phoenix框架创建新项目](https://hexdocs.pm/phoenix/up_and_running.html#content)
+3. [《编程Elixir》](https://pragprog.com/book/elixir16/programming-elixir-1-6)

@@ -1,7 +1,7 @@
 ---
-title:                "Analizando una fecha de una cadena"
-html_title:           "Elixir: Analizando una fecha de una cadena"
-simple_title:         "Analizando una fecha de una cadena"
+title:                "Analizando una fecha a partir de una cadena de texto"
+html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
+simple_title:         "Analizando una fecha a partir de una cadena de texto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,25 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### ¿Qué y por qué?
-El análisis de una fecha a partir de una cadena de texto es el proceso de convertir una fecha escrita en formato de texto en un objeto de fecha válido en un lenguaje de programación. Los programadores a menudo lo hacen para poder utilizar y manipular fechas en sus aplicaciones.
+## ¿Qué y Por Qué?
 
-### Cómo hacerlo:
-Vamos a ver cómo podemos analizar una fecha a partir de una cadena de texto en Elixir. Primero, necesitamos la librería `Calendar` para trabajar con fechas. Luego, utilizaremos la función `Date.from_iso8601/1` para pasarle una cadena de texto en formato ISO 8601 y obtener una fecha en formato Elixir.
+El análisis de una fecha desde una cadena de texto consiste en convertir una representación de texto de una fecha y hora en un tipo de dato manejable por Elixir, como `Date`, `Time` o `DateTime`. Los programadores hacen esto para manipular, evaluar y usar las fechas de formas que no podrían si se mantuvieran como cadenas de texto.
 
+## Cómo hacerlo:
+
+Presentaremos un ejemplo simple de análisis de fecha utilizando la función `Date.from_iso8601/2` de Elixir. Para nuestro caso, comenzaremos con una cadena de texto que sigue el formato ISO 8601.
+
+```elixir
+fecha_str = "2021-11-23"
+{:ok, fecha} = Date.from_iso8601(fecha_str)
+IO.inspect(fecha)
 ```
-Elixir Calendar
-Date.from_iso8601("2021-06-15")
+
+La salida será:
+
+```elixir
+~D[2021-11-23]
 ```
 
-Esto nos devolverá un objeto de fecha en formato Elixir que podemos utilizar en nuestra aplicación.
+Si nuestra cadena no sigue el formato correcto, recibiremos un error.
 
-### Inmersión profunda:
-El análisis de fechas de cadenas de texto es una tarea común en programación. Antes de la introducción de la librería `Calendar` en Elixir, los programadores tenían que usar otras librerías o escribir su propio código para analizar fechas. Sin embargo, al utilizar la función `Date.from_iso8601/1` en Elixir, podemos obtener una fecha válida de manera fácil y sencilla.
+```elixir
+fecha_str = "23-11-2021"
+{:error, _} = Date.from_iso8601(fecha_str)
+IO.inspect("Cadena con formato incorrecto")
+```
 
-Si bien la función `Date.from_iso8601/1` es útil para analizar fechas en formato ISO 8601, existen otras librerías y funciones en Elixir que pueden ser útiles para otros formatos de fecha, como `Date.from_iso8601!/1` para analizar fechas sin manejo de errores o `Date.from_erl!/1` para convertir fechas de Erlang.
+Esto nos dará:
 
-### Véase también:
-- [Documentación de Elixir: Fechas y Horas](https://hexdocs.pm/elixir/1.12/Calendar.html)
-- [Librería de Elixir para análisis de fechas: Timex](https://hex.pm/packages/timex)
-- [Repositorio de GitHub de Elixir: Ejemplos de análisis de fechas](https://github.com/elixir-lang/elixir)
+```elixir
+"Cadena con formato incorrecto"
+```
+
+## Inmersión Profunda
+
+Dentro de la biblioteca estándar de Elixir, `DateTime`, `Date` y `NaiveDateTime` proporcionan funciones para analizar fechas desde cadenas de texto. Este análisis basado en texto es crucial debido a la amplia utilización de la representación de texto para las fechas en las comunicaciones entre sistemas.
+
+Alternativamente, si las fechas no siguen el formato ISO 8601, podemos considerar el uso de la biblioteca Timex que es muy flexible y maneja múltiples formatos de fechas.
+
+La implementación específica de `from_iso8601/2` en Elixir implica el uso de expresiones regulares para analizar la cadena de texto y convertirla a una forma manipulable por Elixir. Estos detalless subyacentes están encapsulados dentro de la función y no necesitan ser entendidos para su uso diario.
+
+## Ver También
+
+- Documentación sobre `Date.from_iso8601/2`: [https://hexdocs.pm/elixir/Date.html#from_iso8601/2](https://hexdocs.pm/elixir/Date.html#from_iso8601/2)
+- Documentación sobre `NaiveDateTime`: [https://hexdocs.pm/elixir/NaiveDateTime.html](https://hexdocs.pm/elixir/NaiveDateTime.html)
+- Documentación sobre `DateTime`: [https://hexdocs.pm/elixir/DateTime.html](https://hexdocs.pm/elixir/DateTime.html)
+- Biblioteca Timex en Hex: [https://hex.pm/packages/timex](https://hex.pm/packages/timex)

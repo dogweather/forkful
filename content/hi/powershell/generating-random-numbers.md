@@ -1,7 +1,7 @@
 ---
-title:                "रैंडम नंबर्स उत्पन्न करना"
-html_title:           "PowerShell: रैंडम नंबर्स उत्पन्न करना"
-simple_title:         "रैंडम नंबर्स उत्पन्न करना"
+title:                "यादृच्छिक संख्याओं का निर्माण"
+html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
+simple_title:         "यादृच्छिक संख्याओं का निर्माण"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -10,42 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya aur Kyu?
+## क्या और क्यों?
 
-Random numbers generate karne ka matlab hai ki hum kisi bhi tarah ke numbers ko randomly generate kar rahe hain, jisse ki hum un numbers ko predict na kar sakein. Programmers iska use tabhi karte hain jab unhe unpredictable data ki zaroorat hoti hai jaise password generate karna ya game development mein.
+अनुचित संख्याएँ उत्पन्न करना मतलब होता है कोई भी संख्या उत्पन्न करना जो मिलीजुली और अप्रत्याशित हो। प्रोग्रामर इसे करते हैं ताकि उनके कार्यक्रम तर्क, अनुमानित क्रियाएँ और प्रयोगात्मक परिणाम सिम्युलेट कर सकें।
 
-## Kaise Karein?
+## कैसे करें:
+
+`Get-Random` PowerShell cmdlet उत्पन्न कर सकती है एक अनुचित संख्या।
 
 ```PowerShell
-# Sampoorn sankhya generate karna
-Get-Random
-
-# Kuchh niymit sankhya generate karna
-Get-Random -Minimum 1 -Maximum 10
-
-#  Shaamil hote hue sankhya ko rahe
-Get-Random -InputObject 1, 2, 3, 4, 5
-
-# Random password generate karna
-GeneratePassword -Length 10 -Symbols
-
-# Random color generate karna
-Get-Random -InputObject "Red", "Blue", "Green", "Yellow"
-```
-Output:
-```
-6
-7
-3
-h5%9K3$x@&
-Blue
+$randomNumber = Get-Random -Minimum 0 -Maximum 100
+Write-Output $randomNumber
 ```
 
-## Gehri Jankari
+इसका आउटपुट हो सकता है कोई भी संख्या 0 से 100 के बीच।
 
-Random numbers ko generate karne ka tarika bahut purana hai aur iska use cryptography mein bhi hota hai. Agar kisi ko random numbers generate karne ke liye Microsoft .NET Framework ki zaroorat hai toh ve powershell ko use kar sakte hain. Aur agar aapko specific type ke random numbers chahiye toh aap ```System.Random``` class ka use kar sakte hain.
+## गहरा डाइव:
 
-## Zaroor Dekhein
+"Get-Random" cmdlet `.Net` framework के `System.Random` वर्ग का उपयोग करता है। यह एक सुदृढ़ अनुचित संख्या जनक है जो कि अन्य भाषाओं, जैसे C#, में भी उपलब्ध है।
 
-https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0
-https://www.powershellguru.com/random-numbers-generation-in-powershell/
+विकल्पतः, "System.Security.Cryptography.RNGCryptoServiceProvider" वर्ग उपयोग कर सकते हैं अधिक गोपनीयता सुरक्षित करने के लिए, लेकिन इसका उपयोग आपसे अधिक सतर्कता की आवश्यकता होती है तथा इसमें प्रोग्रामिंग ज्ञान की जरूरत होती है।
+
+## देखें भी:
+
+- Microsoft's PowerShell "Get-Random" सहायता पृष्ठ: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1
+- `.Net` मार्गदर्शिका पर `System.Random` वर्ग: https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0
+- `System.Security.Cryptography.RNGCryptoServiceProvider` वर्ग पर अधिक जानकारी: https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0

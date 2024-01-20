@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Swift: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,50 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest tworzenie tymczasowych plików i dlaczego programiści to robią?
+## O co chodzi i dlaczego?
 
-Tworzenie tymczasowych plików jest to proces tworzenia i usuwania plików, które są przeznaczone tylko na chwilę. Programiści często tworzą tymczasowe pliki, gdy potrzebują tymczasowo przechować pewne dane lub gdy potrzebują tymczasowego miejsca do pracy nad kodem lub eksperymentów.
+Tworzenie tymczasowego pliku to proces, w którym program tworzy plik o krótkim czasie życia, służący do przechowywania danych na czas działania programu. Programiści robią to, aby efektywnie manipulować danymi i zminimalizować użycie pamięci.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-### Przykład 1:
+Siegnijmy po domyślny menedżer plików w Swift:
+
 ```Swift
-let fileName = NSTemporaryDirectory().appending("test.txt") 
-FileManager.default.createFile(atPath: fileName, contents: "Hello World".data(using: .utf8))
-// Tworzy pusty plik o nazwie "test.txt" i zapisuje w nim string "Hello World".
+let fileManager = FileManager.default
 ```
 
-Po wykonaniu tego kodu, w folderze tymczasowym zostanie utworzony plik "test.txt" z zawartością "Hello World".
+Teraz, tworzymy ścieżkę dla naszego tymczasowego pliku:
 
-### Przykład 2:
+```Swift
+let tempDirectory = NSTemporaryDirectory()
+let tempFile = tempDirectory.appending("temp.txt")
+```
+Możemy teraz zapisać jakiś tekst do naszego tymczasowego pliku:
+
 ```Swift
 do {
-    let tempDir = NSTemporaryDirectory()
-    let tempURL = URL(fileURLWithPath: tempDir).appendingPathComponent("image.jpg")
-    let imageData = try Data(contentsOf: URL(string: "https://example.com/image.jpg")!)
-    try imageData.write(to: tempURL)
+    try "Cześć, Świecie!".write(toFile: tempFile, atomically: true, encoding: .utf8)
 } catch {
-    print("Nie udało się utworzyć tymczasowego pliku.")
+    print("Nie udało się zapisać do pliku: \(error)")
 }
-// Pobiera obraz z adresu URL, tworzy w folderze tymczasowym plik "image.jpg" i zapisuje w nim pobrane dane.
 ```
+## Pogłębione informacje
 
-## Głębokie zanurzenie
+Historia: Pliki tymczasowe są z nami od dawna, używane są w każdym rodzaju systemów operacyjnych. Idea stworzenia tymczasowego pliku pochodzi z konieczności minimalizowania użycia pamięci i zasobów systemu.
 
-### Kontekst historyczny:
+Alternatywy: Można również używać innych metod przechowywania danych, takich jak bazy danych czy pamięć Cache, jednak każda z nich ma swoje plusy i minusy.
 
-Tworzenie tymczasowych plików jest powszechnie stosowaną praktyką w programowaniu od lat. Wcześniej, gdy pamięć komputera była ograniczona, tworzenie tymczasowych plików było szczególnie ważne, ponieważ pozwalało zachować zasoby pamięci i uniknąć błędów.
+Szczegóły implementacji: Waistliwe jest tworzenie pliku tymczasowego w Swift. Tworzymy tymczasowy katalog, a potem dodajemy do niego nasz plik. Zastosowanie metody `NSTemporaryDirectory` zapewnia nam ścieżkę do katalogu tymczasowego.
 
-### Alternatywy:
+## Zobacz też:
 
-Alternatywą dla tworzenia tymczasowych plików może być wykorzystanie innych sposobów przechowywania danych, takich jak zmienne czy tablice. Jednak w niektórych przypadkach tworzenie tymczasowych plików jest preferowane ze względu na jego prostotę i wygodę.
-
-### Szczegóły implementacji:
-
-W języku Swift, najprostszym sposobem utworzenia tymczasowego pliku jest użycie metody ```createFile(atPath:contents:attributes:)``` z klasy ```FileManager```. Ta metoda tworzy pusty plik w podanej ścieżce i nadaje mu określone atrybuty. Aby uzyskać dostęp do folderu tymczasowego, można wykorzystać metodę ```NSTemporaryDirectory()```, która zwraca ścieżkę do tego folderu.
-
-## Zobacz też
-
-- Dokumentacja Swift na temat tworzenia tymczasowych plików: https://developer.apple.com/documentation/foundation/filemanager/1415241-createfile
-- Artykuł na temat wykorzystywania folderu tymczasowego w aplikacjach iOS: https://www.raywenderlich.com/832-apriltagesture-swift-tutorial-getting-started
-- Przewodnik po tworzeniu i zarządzaniu plikami w języku Swift: https://www.hackingwithswift.com/read/10/0/introduction
+1. [Podręcznik: Zarządzanie plikami w Swift](https://developer.apple.com/documentation/foundation/filemanager)
+2. [Poradnik: Tworzenie plików tymczasowych](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Files/Articles/UsingTempFiles.html)
+3. [Poradnik: Pliki i foldery tymczasowe](https://www.swiftbysundell.com/articles/temporary-files-and-folders-in-swift/)

@@ -1,7 +1,7 @@
 ---
-title:                "Beregning av datoer i fremtiden eller fortiden"
-html_title:           "Javascript: Beregning av datoer i fremtiden eller fortiden"
-simple_title:         "Beregning av datoer i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "Javascript: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-Beregning av en dato i fremtiden eller fortiden handler om å bestemme en spesifikk dato basert på et gitt antall dager fremover eller bakover. Dette er en vanlig oppgave for programmører når de jobber med tidspunkt og datoer i applikasjoner og systemer. Ved hjelp av disse beregningene kan vi enkelt planlegge og håndtere hendelser og brukere.
+## Hva & Hvorfor?
 
-## Hvordan:
-For å beregne en dato i fremtiden eller fortiden i Javascript, kan du bruke Date-objektet og dets metoder. La oss si at vi vil finne ut hvilken dato som er 100 dager etter dagens dato. Da kan vi bruke følgende kode:
+Beregning av en dato i fremtiden eller fortiden er prosessen hvor en programvareutvikler manipulerer datoer for å flytte dem frem eller tilbake i tid. Dette er nyttig i mange scenarioer, for eksempel for å planlegge påminnelser, beregne forfallsdatoer og tidslinjer.
+
+## Hvordan gjør man det:
+
+Her er en grunnleggende kode som viser hvordan dette kan gjøres i JavaScript. Vi tar utgangspunkt i dagens dato, og legger til syv dager for å få en dato i fremtiden, og trekker deretter syv dager for å få en dato i fortiden:
 
 ```Javascript
-let today = new Date(); // Oppretter et Date-objekt for dagens dato
-let futureDate = new Date(today.getTime() + 100 * 24 * 60 * 60 * 1000); // Legger til 100 dager i millisekunder på dagens dato
-console.log(futureDate); // Skriver ut datoen for 100 dager etter dagens dato
+let today = new Date();
+let futureDate = new Date();
+let pastDate = new Date();
+
+futureDate.setDate(today.getDate() + 7);
+pastDate.setDate(today.getDate() - 7);
+
+console.log(`Dagens dato er: ${today}`);
+console.log(`Datoen om syv dager er: ${futureDate}`);
+console.log(`Datoen for syv dager siden var: ${pastDate}`);
 ```
 
-Dette vil gi oss følgende output:
-
-```
-Sat Sep 25 2021 19:45:11 GMT+0200 (Central European Summer Time)
-```
-
-På samme måte kan vi beregne en dato i fortiden ved å trekke fra et gitt antall dager i millisekunder fra dagens dato.
+Merk at `new Date()` gir oss dagens dato, og `setDate()` metoden lar oss manipulere denne datoen.
 
 ## Dypdykk:
-Beregning av datoer har vært en viktig del av programmeringen siden gamle dager, og det finnes mange forskjellige måter å håndtere det på avhengig av programmeringsspråket. I Javascript kan vi bruke Date-objektet, som er en del av ECMAScript-standarden. Dette gir oss en enkel og pålitelig måte å håndtere datoer på i våre applikasjoner. Andre språk kan ha sine egne innebygde funksjoner eller biblioteker for å håndtere datoer.
 
-## Se også:
-- Mer informasjon om Date-objektet i Javascript: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date 
-- En alternativ måte å håndtere datoer på i Javascript ved hjelp av biblioteket Moment.js: https://momentjs.com/
+Det å beregne en dato i fremtiden eller fortiden er noe som har vært gjort så lenge vi har hatt datamaskiner. Før JavaScript kom på banen, brukte utviklere språk som C++ og Java for å gjøre dette. Alternativt til `Date()` finnes også mer kraftfulle biblioteker, som for eksempel `moment.js` eller `date-fns`, som gir en mer fullstendig løsning for dato- og tidsmanipulering.
+
+Utførelsen av dette i JavaScript er basert på ECMAScript `- Date`-objektet, som gjør det mulig for oss å jobbe med datoer og tider. Vi bruker `new Date()` for å lage et nytt datoobjekt, og så kan vi bruke forskjellige metoder, som `setDate()`, for å manipulere det.
+
+## Se Også:
+
+For mer informasjon om håndtering av datoer og tider i Javascript, kan disse ressursene være nyttige:
+
+1. [JavaScript Date Objects (W3Schools)](https://www.w3schools.com/js/js_date_methods.asp)
+2. [Working with JavaScript Date (MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Numbers_and_dates#date_object)
+3. [moment.js](https://momentjs.com/)
+4. [date-fns](https://date-fns.org/)

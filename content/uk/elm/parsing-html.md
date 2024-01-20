@@ -1,7 +1,7 @@
 ---
-title:                "Розбір html"
-html_title:           "Elm: Розбір html"
-simple_title:         "Розбір html"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,65 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## Що і для чого?
 
-Розбір HTML - це процес перетворення рядка HTML-коду у структуровану форму, яка може бути оброблена комп'ютером. Програмісти використовують це для отримання необхідних даних з веб-сторінок, таких як заголовки, текст або посилання.
+Парсинг HTML - це процес, при якому програма (парсер) розбирає HTML-код і перетворює його на зрозумілі для неї структури. За його допомогою програмісти можуть отримувати специфічну інформацію з веб-сторінок або модифікувати їх.
 
-## Як зробити:
+## Як?
 
-``` Elm
-module Main exposing (main)
+Мова Elm має вбудований інструмент для парсингу HTML, візьміть цей приклад:
 
-import Html exposing (..)
+```Elm
 import Html.Parser as Parser
-import Http exposing (..)
+import Html.Parser.Util as ParserUtil
+import Char
 
-main : Program () Model Msg
+html = "<div><h1>Elm</h1><p>Вивчаємо парсинг HTML</p></div>"
+
 main =
-  Html.beginnerProgram
-    { model = initialModel
-    , update = update
-    , view = view
-    }
+  case Parser.run ParserUtil.document html of
+    Ok elements ->
+      String.concat (List.map show elements)
 
-type alias Model =
-  { data : List String
-  }
-
-type Msg
-  = ReceiveResult (Result Http.Error String)
-
-initialModel : Model
-initialModel =
-  { data = [] }
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    ReceiveResult result ->
-      case result of
-        Ok result ->
-          ( { model | data = result }, Cmd.none )
-        Err _ ->
-          ( model, Cmd.none )
-
-view : Model -> Html Msg
-view model =
-  let
-    parser =
-      Parser.text
-        |> Parser.collect1
-        |> Parser.run "<h1>Hello, World!</h1>"
-  in
-    Html.div [] [ Html.text (String.join " " (List.map toString (parser model.data))) ]
+    Err message ->
+      "Помилка: " ++ message
 ```
-Вивід: Hello, World!
 
-## Вглиб
+Результат виконання програми:
 
-Розбір HTML був створений для полегшення отримання даних з веб-сторінок та уникнення непотрібного повторення коду. Існують інші способи обробки HTML, такі як використання інших мов програмування або ручне створення парсерів. Розбір HTML в Elm базується на граматиці HTML, тому є високо ефективним та надійним.
+```
+[Element "div" [] [Element "h1" [] [Text "Elm"],Element "p" [] [Text "Вивчаємо парсинг HTML"]]]
+```
+
+## Поглиблений огляд
+
+Історично парсинг HTML використовувався для скрапінгу веб-сторінок, але з розвитком веб-програмування його використовують для програмного взаємодії з веб-сторінками.
+Альтернативами парсингу HTML є використання API чи JSON. Однак, не всі веб-сторінки мають API, а JSON не завжди є доступний.
+
+Elm використовує інтуїтивно зрозумілий, але потужний алгоритм парсингу, який робить впевнене і безпечне видобування даних з HTML-коду.
 
 ## Дивіться також
 
-- Офіційна документація Elm: https://guide.elm-lang.org/
-- Використання парсерів в Elm: https://www.elm-tutorial.org/uk/07-parsers/
+* [Elm HTML Parser](https://package.elm-lang.org/packages/elm/html/latest/)
+* [Парсінг HTML в Elm](https://korban.net/posts/elm/2018-12-15-parsing-html-in-elm/)
+* [Застосування парсерів в Elm](https://www.elm-spa.dev/guide/parsers)

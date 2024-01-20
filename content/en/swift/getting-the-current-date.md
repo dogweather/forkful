@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Swift recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,38 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Getting the current date is a common task in programming that involves retrieving the current date and time from a device or server. It is important for various applications such as scheduling, data tracking, and creating time-sensitive features. Programmers often use this data to ensure accuracy and consistency in their code.
+
+Getting the current date in Swift is a common programming task. This is useful in applications where you need time-stamping, or to program processes based on a time schedule, for example, an alarm or a reminder system.
 
 ## How to:
-To get the current date in Swift, we can use the Date class and its corresponding static methods. Here's a simple example:
+
+Below is a simple piece of code to get the current date:
 
 ```Swift
+import Foundation
+
 let currentDate = Date()
+print("Current date and time: \(currentDate)")
 ```
 
-This creates a new Date instance with the current date and time. You can also get the current date in a specific time zone by using the Date's initializer with a time zone parameter:
+This may output something like:
 
-```Swift
-let currentDate = Date(in: TimeZone.current)
+``` 
+Current date and time: 2023-04-17 12:06:45 +0000
 ```
 
-To print the current date, we can use a DateFormatter to format it into a readable string:
+If you just want the date, you can use:
 
 ```Swift
+import Foundation
+
 let formatter = DateFormatter()
-formatter.dateFormat = "MM/dd/yyyy"
-let currentDateString = formatter.string(from: currentDate)
-print(currentDateString) // Output: 01/01/2022
+formatter.dateStyle = .long
+let dateString = formatter.string(from: Date())
+print("Current date: \(dateString)")
 ```
 
-## Deep Dive:
-In the past, getting the current date required complex calculations and conversions. However, with the introduction of the Date class in Swift, this task became much easier. Before Swift 3, developers used the NSDate class to handle dates.
+This will output the date in a long format such as:
 
-There are also alternative ways to get the current date in Swift, such as using the Calendar class or the NSDateComponents class. However, these are usually used for more specific purposes, and the Date class remains the most straightforward and widely used method.
+``` 
+Current date: April 17, 2023
+```
 
-Under the hood, the Date class is a thin wrapper over a Double value representing the time interval since January 1, 2001, at 00:00:00 UTC. This is known as the Unix epoch, a standard system for representing dates and times in computing.
+## Deep Dive
 
-## See Also:
-- Apple's official documentation on the Date class: https://developer.apple.com/documentation/foundation/date
-- Tutorial on Date and Time in Swift: https://www.ralfebert.de/ios-examples/date-pickers/ios-date-and-time-pickers/
-- Understanding Epoch Time: https://www.epochconverter.com/
+Swift uses the `Date` class, a part of Foundation, to manage date and time data. It's been in Swift since its birth in 2014. Before Swift, Objective-C developers relied on `NSDate`.
+
+Getting the current date is simple, but date-time manipulation can get more complex. Be cautious with time zones and daylight-saving times. If you run services in different countries, it's essential to consider these.
+
+There are alternatives like third-party libraries (e.g., SwiftDate), but sticking to Foundation tools is sometimes best to keep your project lightweight.
+
+## See Also
+
+1. [Apple Documentation – Date](https://developer.apple.com/documentation/foundation/date)
+
+2. [Apple Documentation – DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+
+3. [SwiftDate Github](https://github.com/malcommac/SwiftDate)

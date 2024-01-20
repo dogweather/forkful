@@ -1,7 +1,7 @@
 ---
-title:                "Análise de HTML"
-html_title:           "Elixir: Análise de HTML"
-simple_title:         "Análise de HTML"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,39 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que & Por quê?
+## O Que & Porquê?
+Extrair dados de HTML, ou parsing HTML, é o processo de analisar o código HTML para extrair informações específicas. Essa tarefa é frequentemente usada por programadores quando eles precisam interagir com websites e analisar os seus conteúdos.
 
-A análise de HTML é o processo de extrair informações de um documento HTML. Os programadores fazem isso para automatizar o processo de obtenção de dados a partir de sites ou para processar configurações personalizadas para páginas da web.
+## Como Fazer:
+O módulo `Floki` é um dos pacotes mais populares para processar HTML em Elixir. Ele também possui uma sintaxe CSS para selecionar elementos HTML. Vamos fazer uma tentativa:
 
-## Como fazer:
-
-### Analisando HTML usando a biblioteca Floki:
-
-```elixir
-html = "<html><body><h1>Título</h1><p>Parágrafo</p></body></html>"
-
-Floki.find(html, "h1")
-# output: "Título"
-
-Floki.find(html, "p")
-# output: "Parágrafo"
+Para instalar o Floki, adicione a seguinte linha no seu arquivo mix.exs:
+```Elixir
+defp deps do
+  [
+    {:floki, "~> 0.30"}
+  ]
+end
 ```
-
-### Usando a biblioteca Meeseeks para analisar HTML de forma simplificada:
-
-```elixir
-html = "<html><body><a href="https://exemplo.com">Link</a></body></html>"
-
-Meeseeks.cast_ex(html)
-# output: "Link"
+Agora você pode usá-lo para extrair dados de um documento HTML:
+```Elixir
+html = "<div><p>Hello, World!</p></div>"
+{:ok, document} = Floki.parse_document(html)
+Floki.find(document, "p")
+# => [{"p", [], ["Hello, World!"]}]
 ```
+Neste exemplo, extraímos o conteúdo do elemento `<p>` do HTML.
 
-## Mergulho Profundo:
+## Aprofundando
+Extrair dados de HTML não é uma prática nova. Historicamente, bibliotecas como BeautifulSoup em Python têm servido a esse propósito. Em Elixir, além de Floki, existem outras alternativas como o `Meeseeks` e o `Crawly`.
 
-A análise de HTML é uma técnica importante para a extração de dados da web, mas pode ser difícil e demorado quando feita manualmente. Existem várias bibliotecas em Elixir que facilitam esse processo, como o Floki e Meeseeks mencionados anteriormente, além do HTMLParser e Beautiful Soup.
+Floki usa uma implementação baseada em árvore, lidando com o HTML como uma árvore de nós onde cada tag é representada como uma tupla Elixir. O Floki pode identificar, percorrer e modificar estas árvores de nós de uma maneira eficiente.
 
-## Veja Também:
+Além disso, Floki é amplamente implementado em Elixir puro, o que lhe permite aproveitar a alta concorrência e tolerância a falhas fornecidas pelo Elixir e pela máquina virtual Erlang.
 
-- [Documentação oficial do Floki](https://hexdocs.pm/floki/)
-- [HTMLParser](https://hexdocs.pm/htmlparser/)
-- [Beautiful Soup](https://hexdocs.pm/beautifulsoup/)
+## Veja Também
+1. Documentação do Floki: https://hexdocs.pm/floki/readme.html
+2. Repositório do GitHub para Meeseeks: https://github.com/mischov/meeseeks
+3. Documentação do Crawly: https://hexdocs.pm/crawly/readme.html

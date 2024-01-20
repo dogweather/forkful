@@ -1,7 +1,7 @@
 ---
-title:                "Löschen von Zeichen, die einem Muster entsprechen"
-html_title:           "Ruby: Löschen von Zeichen, die einem Muster entsprechen"
-simple_title:         "Löschen von Zeichen, die einem Muster entsprechen"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -12,36 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Wenn man Charaktere löschen möchte, die einem bestimmten Muster entsprechen, spricht man in der Welt der Programmierung von "Deleting characters matching a pattern". Programmierer nutzen diese Funktion, um schnell und effizient unerwünschte Zeichen aus einem Text zu entfernen.
+Das Löschen von Zeichen, die einem Muster entsprechen, bezeichnet das Entfernen spezifischer Zeichen aus einer Textsequenz basierend auf einem bestimmten Muster. Programmierer tun dies, um unerwünschte Zeichen zu entfernen oder die Textdaten zu bereinigen.
 
-## Wie geht's?
+## So geht's:
 
-Hier sind ein paar Beispiele, wie man in Ruby Charaktere löschen kann, die einem bestimmten Muster entsprechen.
+Hier ein einfacher Code, wie man in Ruby Zeichen aus einem String entfernt, die einem Muster entsprechen.
 
-```
-# Beispiel 1: Löschen von Zahlen aus einem String
-str = "abc123def456"
-str.gsub!(/\d/, "")
-puts str # Output: abcdef
-
-# Beispiel 2: Löschen von Sonderzeichen aus einem String
-str = "Hello! It's #Monday!"
-str.gsub!(/[!#]/, "")
-puts str # Output: Hello It's Monday
-
-# Beispiel 3: Löschen von Leerzeichen aus einem String
-str = "This is a string with spaces"
-str.gsub!(/\s+/, "")
-puts str # Output: Thisisastringwithspaces
+```Ruby
+str = "Hallo, Welt!"
+str.delete!(",!")
+puts str
 ```
 
-## Tiefere Einblicke
+Ausgabe:
 
-Das Löschen von Charakteren basierend auf einem Muster ist nichts Neues in der Programmierung. Schon in frühen Programmiersprachen, wie zum Beispiel C, konnte man ähnliche Funktionen nutzen. Alternativ kann man auch reguläre Ausdrücke nutzen, um gezielt nach Mustern in einem String zu suchen.
+```Ruby
+Hallo Welt
+```
 
-Die Implementierung einer Funktion zum Löschen von Charakteren ist relativ einfach. Man vergleicht jeden einzelnen Charakter im String mit dem angegebenen Muster und entfernt ihn, falls es übereinstimmt. Dadurch können unnötige Schleifen vermieden werden, was die Effizienz erhöht.
+In diesem Beispiel werden die Zeichen `,` und `!` aus dem String entfernt.
+
+## Vertiefung
+
+In der Geschichte von Ruby können `gsub` und `tr` als Alternativen zur `delete`-Methode angesehen werden. Während `gsub` den String ersetzt, wird `tr` hauptsächlich zum Ersetzen von Zeichenfolgen verwendet. `delete`,` gsub` und `tr` sind alle eingebaute Funktionen und wirken sich nicht auf die Leistungsfähigkeit des Codes aus.
+
+Hier ist ein Beispiel dafür, wie `gsub` zum Entfernen von Zeichen verwendet werden kann:
+
+```Ruby
+str = "Hallo, Welt!"
+str.gsub!(/[,!]/, '')
+puts str
+```
+
+Ausgabe:
+
+```Ruby
+Hallo Welt
+```
 
 ## Siehe auch
 
-- [Ruby-Dokumentation zum Befehl `gsub`](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
-- [Einführung in reguläre Ausdrücke in Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
+Für mehr Informationen, siehe die Ruby-Dokumentation:
+
+- [delete](https://ruby-doc.org/core-2.7.1/String.html#method-i-delete)
+- [gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+- [tr](https://ruby-doc.org/core-2.7.1/String.html#method-i-tr)

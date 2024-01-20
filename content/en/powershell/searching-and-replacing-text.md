@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "PowerShell recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,36 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Searching and replacing text is the process of finding specific words or strings within a document or file and replacing them with other text. Programmers often use this technique to make changes in a large amount of code or data with minimal effort, as it can be much more efficient than manually editing each instance.
+Searching and replacing text is a common task in many programming and data processing scenarios. It involves finding a particular string (sequence of characters) within a larger string or set of data and replacing it with a different string. This is a staple task when dealing with files, user inputs, or data cleaning.
 
 ## How to:
-To search and replace text in PowerShell, we will be using the ```-replace``` operator. This operator allows us to specify the text we want to replace, as well as the replacement text. Let's look at an example:
+PowerShell offers an easy and efficient way to perform search and replace text operations. The most common way is to use the `-replace` operator. Here is an example of how to replace 'Hello' with 'Hi' in a string:
 
+```PowerShell
+$string = "Hello, World"
+$string -replace 'Hello', 'Hi'
 ```
-$myString = "Hello World"
-$myString -replace "World", "Universe"
+The output would be: 
+```PowerShell
+"Hi, World"
+```
+Multiple replacements in a string can be done by chaining `-replace` operations:
+```PowerShell
+$string = "Hello, Hello World!"
+$string -replace 'Hello', 'Hi' -replace 'World', 'Everyone'
+```
+Output:
+```PowerShell
+"Hi, Hi Everyone!"
 ```
 
-In this code, we first declare a variable, ```$myString```, with the value of "Hello World". Then, we use the ```-replace``` operator to search for the string "World" within the variable and replace it with "Universe". The output of this code would be: "Hello Universe".
+## Deep Dive
 
-We can also use regular expressions with the ```-replace``` operator to search for more complex patterns within a string. Here's an example:
+Historically search and replace operations have been performed using Regular Expressions, a sequence of characters that forms a search pattern. PowerShell's `-replace` operator supports using regular expressions for complex search patterns. An example with regular expression to replace any number with 'Num' will look like this:
 
+```PowerShell
+$string = "Order 5 apples and 7 oranges"
+$string -replace '\d+', 'Num'
 ```
-"Hello 123 World" -replace "[\d]+", "456"
+Output:
+```PowerShell
+"Order Num apples and Num oranges"
 ```
 
-In this code, we are replacing any sequence of numbers with the number 456. The output would be: "Hello 456 World".
+Alternatives exist as well. The 'System.String' `.Replace()` method in PowerShell is another option that can be handy, especially when you don't need the complexity of a regular expression. However, note that `.Replace()` is case-sensitive, unlike `-replace`.
 
-## Deep Dive:
-The ability to search and replace text has been a fundamental tool for programmers since the early days of computing. Prior to the invention of high-level programming languages and text editors, searching and replacing text was done manually using typewriters or printing presses.
+```PowerShell
+$string = "Hello, World"
+$string.Replace('Hello', 'Hi')
+```
+Output:
+```PowerShell
+"Hi, World"
+```
 
-There are also alternative methods for searching and replacing text, such as using the ```Replace()``` method in C# or using regular expressions in other languages like Python or Perl. However, PowerShell's ```-replace``` operator offers a simple and efficient solution for text manipulation within the PowerShell environment.
+## See Also
+For more insights and details on search and replace text in PowerShell, you can refer to the following resources:
 
-Under the hood, the ```-replace``` operator uses the .NET Regular Expression (Regex) engine, which is a powerful tool for matching and manipulating text based on patterns. This allows for more complex text replacements and enhances the flexibility of this feature in PowerShell.
-
-## See Also:
-To learn more about the ```-replace``` operator and regular expressions, check out the following resources:
-
-- [About Regular Expressions - Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [PowerShell Basics: Searching and Replacing Text - Adam the Automator](https://adamtheautomator.com/powershell-replace/)
-- [PowerShell One-Liners: Operators - TechNet Magazine](https://technet.microsoft.com/en-us/library/ff730947.aspx)
+1. [Microsoft - About Comparison Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1)
+2. [Microsoft - Replace Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
+3. [Regular Expressions in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-lessons-learned/)

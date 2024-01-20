@@ -1,7 +1,7 @@
 ---
-title:                "패턴에 일치하는 문자 삭제하기"
-html_title:           "Rust: 패턴에 일치하는 문자 삭제하기"
-simple_title:         "패턴에 일치하는 문자 삭제하기"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자가 패턴과 일치하는 것을 삭제한다는 것은 무엇을 의미할까요? 프로그래머들이 이를 하는 이유는 무엇일까요? 
+## 무엇이며 왜 사용하는가?
 
-이 기능은 문자열에서 특정한 패턴에 매칭되는 문자들을 삭제하는 것을 의미합니다. 보통, 프로그래머들은 이 기능을 사용해 특정한 문자를 필터링하거나 삭제함으로써 문서나 데이터를 정리하고 다루기 쉽게 만듭니다.
+문자열에서 패턴에 일치하는 문자를 삭제하는 작업은 파싱, 데이터 정리 및 변환 등에서 중요합니다. 이를 통해 불필요한 문자를 제거하고, 오직 필요한 데이터만을 가질 수 있습니다.
 
 ## 방법:
-아래의 ```Rust ... ``` 코드 블록을 사용해 예제 코드와 출력 결과를 확인해보세요.
+
+Rust에서 문자열에서 특정 패턴에 일치하는 모든 문자를 제거하는 방법은 `replace()` 함수를 사용하는 것입니다. 예를들어 아래의 코드를 봅시다:
 
 ```Rust
-let input_string = String::from("Hello, World!");
-let output_string = input_string.replace("l", "");
-println!("{}", output_string);
-
-// Output: Heo, Word!
+fn main() {
+    let s = "Hello, World!";
+    let s = s.replace(",", "");
+    println!("{}", s);
+}
 ```
 
-## 깊이 파고들기:
-문자 삭제 기능은 프로그래밍 언어에서 오랜 시간 동안 사용되어왔습니다. 예전에는 문자를 삭제하거나 수정하기 위해 자주 사용되는 방법이었지만, 오늘날에는 보편적으로 정규표현식을 사용하게 되었습니다.
+이 코드를 실행하면, 아래와 같은 출력을 얻게 됩니다:
 
-또한, 더 나은 성능과 다양한 기능을 제공하는 여러 다른 라이브러리들도 있습니다. 예를 들어, ```regex``` 라이브러리는 정규표현식을 조작하는 더 강력한 방법을 제공합니다.
+```
+Hello World!
+```
 
-## 관련 자료:
-- Rust 언어 공식 홈페이지: https://www.rust-lang.org
-- ```regex``` 라이브러리 공식 문서: https://docs.rs/regex/latest/regex/
+## 깊게 알아보기
+
+문자열에서 일치하는 패턴 삭제는 텍스트 정리 및 처리에 사용되는 전통적인 방법입니다. Rust는 이 작업을 매우 직접적이면서도 강력한 방법으로 수행할 수 있게 해줍니다.
+
+Rust 이외에도 Python의 `replace()`, JavaScript의 `replace()` 등 다른 언어에서도 이런 기능을 지원합니다. 하지만 Rust가 더 높은 성능과 메모리 안전성, 그리고 타입 안전성을 제공한다는 점이 강점입니다.
+
+`replace()` 함수의 실행 과정은 대략 다음과 같습니다: 함수는 문자열을 순회하면서 찾고자 하는 패턴이 있는지 검사합니다. 패턴을 찾으면 새로운 문자열에 패턴을 제외한 나머지 부분을 추가하고, 패턴을 찾지 못하면 그대로 문자열을 추가합니다.
+
+## 참고자료
+
+- [Rust Documentation: replace()](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- [Rust by Example: String](https://doc.rust-lang.org/rust-by-example/std/str.html)
+- [Stack Overflow: How to remove all matching characters from a string in Rust](https://stackoverflow.com/questions/52488549/how-do-i-remove-all-matching-characters-from-a-string-in-rust)

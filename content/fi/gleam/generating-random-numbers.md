@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten numeroiden generointi"
-html_title:           "Gleam: Sattumanvaraisten numeroiden generointi"
-simple_title:         "Sattumanvaraisten numeroiden generointi"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Numbers"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Satunnaislukujen generoiminen on tapa luoda satunnaisia numeroita tietokoneella. Tämä on hyödyllistä monissa eri ohjelmoinnin sovelluksissa, kuten pelien luomisessa tai tietokantojen täyttämisessä testidatailla.
+## Mikä & Miksi?
+
+Satunnaislukujen generoiminen tarkoittaa uniikkien, ennakoimattomien lukujen tuottamista. Ohjelmoijat tekevät tämän luodakseen satunnaista dataa tai simuloimaan satunnaisia tapahtumia.
 
 ## Kuinka:
+
+Alla on esimerkkikoodi ja tuloste Gleamilla:
+
+```gleam
+import gleam/should
+import gleam/random.{generator, int}
+
+fn test() {
+  let gen = generator.new_seed()
+  let (gen, number) = int(1, 6, gen)
+  
+  should.equal(should.be_in([1, 2, 3, 4, 5, 6], number), Ok(Nil))
+}
 ```
-Gleam.Random.int(1, 10)  // generoi satunnaisen kokonaisluvun väliltä 1-10, esim. 7
-Gleam.Random.float(0.0, 1.0)  // generoi satunnaisen liukuluvun väliltä 0.0-1.0, esim. 0.834
-Gleam.Random.boolean()  // generoi satunnaisen totuusarvon, joko true tai false
-```
 
-## Syväsukellus:
-Satunnaislukujen generointi on ollut olennainen osa tietojenkäsittelytieteitä jo pitkään. Aiemmin tämä tehtiin pääasiassa satunnaisten fyysisten tapahtumien avulla, kuten kolikon heittämällä tai noppaa pyörittämällä. Nykypäivänä tämä tehdään yleisesti algoritmeilla tietokoneella.
+Tässä koodissa luodaan uusi satunnaislukugeneraattori, jonka jälkeen tuotamme satunnaisen kokonaisluvun. Sitten testaamme, että tuotettu luku kuuluu annettuun väliin.
 
-On myös muita tapoja generoida satunnaisia lukuja tietokoneella, kuten pseudosatunnaislukugeneraattorit, jotka perustuvat matemaattisiin algoritmeihin tai satunnaisuutta hyödyntäviin laitteistoihin, kuten hiiren liikkeisiin. Jokaisella lähestymistavalla on omat etunsa ja haittansa.
+## Syvä sukellus
 
-Gleamissa satunnaislukujen generointi perustuu tietokoneen sisäiseen satunnaislukugeneraattoriin. Tämä tarkoittaa, että luodut numerot eivät ole täysin satunnaisia, mutta ne ovat silti riittävän satunnaisia moniin käyttötarkoituksiin.
+1. Historiallinen konteksti: 1900-luvulla, tietokoneiden alkuaikoina, oikeiden satunnaislukujen tuottaminen oli haastavaa. Nykyisin ohjelmoijille on tarjolla monimutkaisia satunnaislukualgoritmeja, joita voidaan käyttää turvallisesti.
+2. Vaihtoehdot: Valinnanvaraa on paljon. Esimerkiksi SecureRandom tuottaa satunnaislukuja, jotka ovat turvallisia kryptografisiin tarkoituksiin.
+3. Toteutuksen yksityiskohdat: Gleam käyttää Erlangin `rand`-moduulia satunnaislukujen luomiseen. Se käyttää melko monimutkaista algoritmia, mutta tarjoaa hyvän tasapainon suorituskyvyn ja luotettavuuden välillä.
 
-## Katso myös:
-- Gleam Random kirjasto: https://gleam.run/modules/gleam/random/latest/
+## Katso myös
+
+1. Erlang `rand`-moduuli: [linkki](http://erlang.org/doc/man/rand.html)
+2. Gleam API documentation for random: [linkki](https://docs.gleam.run/stdlib/random/)
+3. Understanding Random number generator: [linkki](https://www.geeksforgeeks.org/understanding-random-number-generators-and-their-implementation-in-c/) 
+
+---

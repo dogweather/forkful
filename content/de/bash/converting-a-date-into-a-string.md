@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Datums in einen String"
-html_title:           "Bash: Umwandlung eines Datums in einen String"
-simple_title:         "Umwandlung eines Datums in einen String"
+title:                "Ein Datum in einen String umwandeln"
+html_title:           "Java: Ein Datum in einen String umwandeln"
+simple_title:         "Ein Datum in einen String umwandeln"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,25 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Konvertieren eines Datums in eine Zeichenfolge ist ein häufiges Problem bei der Programmierung. Dabei geht es darum, ein Datum, das möglicherweise in einer variablen Form gespeichert ist, in eine lesbare und einheitliche Zeichenfolge umzuwandeln. Programmierer verwenden dies oft, um Daten in einer bestimmten Formatierung auszugeben oder um sie für bestimmte Berechnungen zu verwenden.
+# Bash-Programmierung: Ein Datum in einen String umwandeln
+Heute werden wir uns ansehen, wie wir ein Datum in Bash in einen Zeichenkette (String) umwandeln und warum das überhaupt wichtig ist.
 
-# Wie geht das?
+## Was & Warum?
+Ein Datum in einen String zu konvertieren bedeutet im Grunde, das Datum in eine lesbare Form zu bringen. Warum machen wir das? Weil wir oft die Ausgabe von Datum und Zeit formatieren müssen, um sie für bestimmte Aufgaben, wie zum Beispiel Berichterstattung und Protokollierung, geeignet zu machen.
+
+## So geht's:
+
+In Bash können wir das `date` Befehl verwenden, um ein Datum zu erzeugen und es mit Hilfe von Formatierungsoptionen in eine Zeichenkette umzuwandeln. Hier sind einige Beispiele:
+
 ```Bash
-date '+%d-%m-%y'
+# Aktuelles Datum in einem String
+datum=$(date +"%d-%m-%Y")
+echo $datum
 ```
-Dieser Befehl verwendet die `date`-Funktion zusammen mit der Formatierungsoption `+%d-%m-%y`, um das aktuelle Datum im Format Tag-Monat-Jahr auszugeben.
-
-Die Ausgabe sieht beispielsweise so aus: `24-08-21`
+Ausgabe:
+```Bash
+01-07-2021
+```
 
 ```Bash
-date -d "1 month" '+%d-%m-%y'
+# Aktuelle Uhrzeit in einem String
+zeit=$(date +"%H:%M:%S")
+echo $zeit
 ```
-Hier wird das Datum für einen Monat in der Zukunft ausgegeben, indem der Parameter `+1 month` verwendet wird. Die Ausgabe sieht ähnlich aus wie im vorherigen Beispiel, mit dem Unterschied, dass der Monat um eins erhöht wurde.
+Ausgabe:
+```bash
+14:30:00
+```
 
-# Tief einsteigen
-Die Idee, ein Datum in eine lesbare Zeichenfolge umzuwandeln, ist nicht neu. Seit den Anfängen der Programmierung haben Programmierer immer neue Methoden zur Formatierung von Datum und Zeit erfunden. Heutzutage gibt es viele Alternativen zum `date`-Befehl, wie zum Beispiel Bibliotheken wie `strftime` in C oder Funktionen in anderen Programmiersprachen. Die Implementierung dieses Befehls basiert auf der seit langem bewährten `C time library` und wird mit jeder neuen Version von Bash ständig verbessert.
+Die Formatierungsoptionen sind sehr flexibel, und du kannst sie nach deinen Anforderungen anpassen.
 
-# Siehe auch
-- [Bash-Dokumentation für `date` Befehl](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Wikipedia-Artikel zur Zeitdarstellung und -berechnung](https://en.wikipedia.org/wiki/Date_and_time_notation_by_country)
+## Vertiefung:
+
+Historisch gesehen ist das `date` Befehl eine der ältesten Methoden in Unix und Linux, um Datum und Zeit zu manipulieren und anzuzeigen. Es bietet viele Flexibilität und daher ist es bis heute in Gebrauch.
+
+Alternative Methoden zur Datums- und Zeitformatierung in der Bash sind die Nutzung von eingebauten Funktionen in Programmiersprachen wie awk oder perl. Diese können mehr Leistung bieten, erfordern jedoch ein tieferes Verständnis der jeweiligen Sprache.
+
+Die Umwandlung eines Datums in einen String in Bash geschieht im Wesentlichen durch die Formatierung der Ausgabe des `date` Befehls. Mit verschiedenen Platzhaltern kannst du bestimmen, welche Teile des Datums und in welchem Format angezeigt werden.
+
+## Siehe auch:
+
+Für eine detailliertere Anleitung zur Formatierung von Datum und Zeit in Bash, siehe: 
+- [Bash by example - Date and Time](https://www.ibm.com/developerworks/library/l-bash2/index.html)
+- [Conquering Dates with UNIX](https://www.linuxjournal.com/content/conquering-dates-unix)
+
+Für Alternativen zur Datumsformatierung in awk oder perl, siehe:
+- [Date Manipulation in Awk](http://www.awk.info/?date)
+- [Date manipulation in Perl](https://perlmaven.com/how-to-get-the-current-date-and-time-in-perl)

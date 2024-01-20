@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonojen yhdistäminen"
-html_title:           "Bash: Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
 simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,24 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Stringien yhdistäminen on silloin, kun yhdistät useita tekstipätkiä yhdeksi kokonaisuudeksi. Tämä on yleinen ohjelmoinnin tehtävä, koska se antaa meille mahdollisuuden luoda dynaamisia ja muuttuvia viestejä tai tiedostoja.
+## Mitä ja Miksi?
 
-## Miten:
-Bash-kielellä meillä on mahdollisuus helposti yhdistää merkkijonoja yhdessä komennolla "concat" tai käyttämällä "+" operaattoria.
+Merkkijonojen yhdistäminen (string concatenation) tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi. Tämä on tärkeää mm. dynaamisten syötteiden, viestien ja komentojen käsittelyssä.
+
+## Näin käytät:
+
+Bashissa merkkijonojen yhdistäminen on yksinkertaista. 
+Katsele seuraavaa koodiesimerkkiä:
 
 ```Bash
-sana1="Tervetuloa"
-sana2="Finnish"
-kokonainen_lause=$sana1$sana2
-echo $kokonainen_lause
+#!/bin/bash
+tervetuloa="Tervetuloa, "
+nimi="Pekka"
+tervetuloviesti=$tervetuloa$nimi
+echo $tervetuloviesti
 ```
 
-Tulostaa: "TervetuloaFinnish".
+Ja tässä on esimerkin tulostus:
 
-## Deep Dive:
-Stringien yhdistäminen on ollut osa koodausta jo melko pitkään. Alunperin se tehtiin useilla koodiriveillä, mutta nykyään monet kielet, kuten Bash, tarjoavat valmiita toimintoja tähän tehtävään. On myös olemassa muita tapoja yhdistää merkkijonoja, kuten käyttämällä formatointitoimintoja tai liittämällä merkkijonot yhteen eri tavoin.
+```Bash
+Tervetuloa, Pekka
+```
 
-## Katso myös:
-- [Bash-kongurointi](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-- [Stringien manipulointi Bash:ssa](https://ryanstutorials.net/bash-scripting-tutorial/bash-string-manipulation.php)
+## Syvempi Tutkiskelu
+
+Alkuperäisessä Bourne-shellissä merkkijonojen yhdistäminen vaati usein käyttämään erityisiä komentoja tai kikkoja. Bash, joka on Bourne-shelliin perustuva, tekee merkkijonojen yhdistämisestä yksinkertaisempaa.
+
+Yksi vaihtoehto merkkijonojen yhdistämiselle on `printf`-funktion käytöllä. Sen avulla voidaan tulostaa muotoiltu viesti:
+
+```Bash
+#!/bin/bash
+tervetuloa="Tervetuloa, "
+nimi="Pekka"
+printf "%s%s" $tervetuloa $nimi
+```
+
+Bashissa merkkijonoja voidaan yhdistää myös suoraan ilman välimuuttujaa:
+
+```Bash
+#!/bin/bash
+nimi="Pekka"
+echo "Tervetuloa, $nimi"
+```
+
+## Katso Myös
+
+Bash-skriptauksen dokumentaatio: [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+
+Bash merkkijonojen käsittely: [The Linux Documentation Project](https://tldp.org/LDP/abs/html/string-manipulation.html)
+
+Bash-skriptauksen jatko-oppimateriaalia: [Awesome Bash](https://awesomeopensource.com/project/awesome-lists/awesome-bash)

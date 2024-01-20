@@ -1,7 +1,7 @@
 ---
-title:                "तिथि को स्ट्रिंग में परिवर्तित करना"
-html_title:           "Java: तिथि को स्ट्रिंग में परिवर्तित करना"
-simple_title:         "तिथि को स्ट्रिंग में परिवर्तित करना"
+title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
+simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+## क्या और क्यों?
 
-Date conversion is the process of changing a date from its original format to a string, or a sequence of characters. This is important for programmers because it allows us to manipulate and display dates in a more user-friendly way.
+डेटा को स्ट्रिंग में बदलना का मतलब होता है तारीख को एक ऐसे स्वरूप में बदलना जिसे हम पठन या प्रदर्शन के लिए उपयोग कर सकते हैं। यह तब जरूरी होता है जब हमें तारीख को उपयोगकर्ता को प्रदर्शित करने की आवश्यकता होती है, या जब हमें डेटा को एक विशेष स्वरूप (जैसे ययांमद्दद - YYYY/MM/DD) में सहेजना होता है। 
 
-## How to:
+## कैसे:
 
-Converting a date into a string in Java is a simple process. Let's take a look at a few examples.
+नीचे दिए गए कोड उदाहरण देखें:
 
-```java
-// Current date
-Date date = new Date(); 
+```Java
+import java.text.SimpleDateFormat;  
+import java.util.Date;  
 
-// Conversion using predefined format
-DateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy"); 
-String stringDate = dateFormat.format(date); 
-System.out.println(stringDate); 
+public class Example {  
+  public static void main(String[] args) {  
+    SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");  
+    Date date = new Date();  
+    System.out.println(formatter.format(date));  
+  }  
+}  
+```
+सैंपल आउटपुट:
+
+```Java
+06/01/2022 14:35:15
 ```
 
-Output: 21/05/2021
+## गहराई में:
 
-```java
-// Custom date format
-SimpleDateFormat dateFormat2 = new SimpleDateFormat("dd MMMM, yyyy"); 
-String stringDate2 = dateFormat2.format(date); 
-System.out.println(stringDate2); 
-```
+1. हिस्टोरिकल कांटेक्स्ट: जावा प्रोग्रामिंग भाषा में डेट और समय को स्ट्रिंग में बदलने की क्षमता की मांग हमेशा से रही है।
 
-Output: 21 May, 2021
+2. विकल्प: `SimpleDateFormat `विकल्प ही नहीं, बल्कि `java.time.format.DateTimeFormatter` श्रेणी का उपयोग भी कर सकते हैं। यह जावा 8 के साथ आता है और ISO 8601 मानक का समर्थन करता है।
 
-## Deep Dive
+3. आवेग विवरण: `SimpleDateFormat` वर्ग का `format` विधि `Date` वर्ग के ऑब्जेक्ट को एक स्ट्रिंग में बदलती है, जिसका प्रारूप आपने निर्धारित किया है।
 
-Converting dates to strings was not always a simple task in programming. In the past, developers had to write their own code to manipulate and format dates. The introduction of the Java class SimpleDateFormat in Java 1.1 made this process much easier.
+## देखें भी: 
 
-There are also alternatives to using SimpleDateFormat, such as the Calendar class which allows for more flexibility in date manipulation. However, SimpleDateFormat is still widely used due to its simplicity and ease of use.
+1. Java Documentation: [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) 
 
-When converting dates to strings, it's important to pay attention to the format string used. Any changes to the format can result in unexpected output or errors. It's also useful to know that the Date class in Java stores dates as a long integer representing milliseconds since January 1, 1970.
+2. Java Documentation: [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) 
 
-## See Also
-
-To learn more about converting date to string in Java, check out the official documentation: https://docs.oracle.com/javase/8/docs/api/index.html
+3. [HowToDoInJava: Java Convert Date to String](https://howtodoinjava.com/java/date-time/java-convert-date-to-string/)

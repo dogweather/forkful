@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Swift: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,27 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 简介
-获取当前日期是一个编程任务，它允许程序员在代码中使用当前的日期和时间信息。这对于管理时间相关的应用程序或记录数据的应用程序非常重要。
+## 什么与为什么？
 
-## 如何：
-要在 Swift 中获取当前日期，我们可以使用内置的 Date 类。下面是一个简单的例子：
+获取当前日期是在程序中获取并使用当前的日期和时间。程序员用它来记录事件，标记时间戳，或对时间敏感的数据进行排序和管理。
 
-```Swift
+## 如何做：
+
+下面我们来介绍如何在Swift中获取当前日期：
+
+```Swift 
+import Foundation
+
 let currentDate = Date()
-print(currentDate) // 输出当前日期和时间信息
+print("当前日期和时间：\(currentDate)")
 ```
 
+执行代码，你将看到如下输出：
+
+```Swift
+// "当前日期和时间：2022-09-13 12:23:34 +0000"
+```
+
+这就是当前的日期和时间，按照“年-月-日 时:分:秒 时区”格式显示。
+
 ## 深入探讨
-#### 历史背景
-在过去，程序员可能需要使用操作系统的功能来获取当前日期。但是，这可能比较复杂并且依赖于操作系统的不同。因此，Swift 语言引入了内置的 Date 类来简化这项任务。
 
-#### 替代方法
-除了使用内置的 Date 类，程序员还可以使用第三方库来获取当前日期。比如，第三方库 [SwiftyDate](https://github.com/jemmons/swiftydate) 提供了更多的方法来处理日期和时间。
+从历史角度来看，获取日期和时间在各种编程语言中都有一定的实现方案。像早期的C语言就提供了`time.h`库来获取日期和时间。
 
-#### 实现细节
-Date 类是 Swift 中日期和时间的基本类型。它使用格林威治标准时间（GMT）来表示日期和时间信息，但是可以通过设置时区来调整显示的日期和时间。此外，Date 类还提供了一些方法来处理日期和时间，比如计算两个日期之间的差值。
+在Swift中，还有其他一些获取日期的方式。例如你可以使用 `Calendar.current.dateComponents()` 获取更具体的信息，像年、月、日、小时、分钟等。
 
-## 参考链接
-- [Date - Apple Developer Documentation](https://developer.apple.com/documentation/foundation/date)
-- [SwiftyDate - GitHub Repository](https://github.com/jemmons/swiftydate)
+```Swift
+let components = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
+print("当前年份：\(components.year!)")
+print("当前月份：\(components.month!)")
+print("当前日期：\(components.day!)")
+print("当前时间： \(components.hour!):\(components.minute!):\(components.second!)")
+```
+
+而在Swift背后的实现原理，是基于Unix Epoch时间（1970年1月1日开始的秒数）来计算出当前的日期和时间。
+
+## 参看：
+
+为了更多关于Swift的日期和时间操作，可以参看以下链接：
+
+- Apple官方文档关于Date的介绍: [Apple Date Documentation](https://developer.apple.com/documentation/foundation/date)
+- Swift日期和时间详解: [Working with Dates and Times in Swift](https://www.swiftbysundell.com/basics/dates-and-times/)
+- Swift时间操作库: [SwiftDate](https://github.com/malcommac/SwiftDate)

@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "Ruby: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que l'interpolation de chaîne en Ruby et pourquoi les programmeurs l'utilisent-ils ?
+# Interpolation de chaîne en Ruby
 
-L'interpolation de chaîne en Ruby est une fonction qui permet d'insérer des variables dans une chaîne de caractères. Les programmeurs l'utilisent pour simplifier le processus d'affichage de données dans leurs programmes et pour rendre les chaînes de caractères plus dynamiques.
+## Qu'est-ce que c'est et pourquoi ?
 
-Comment faire:
+L'interpolation de chaînes en Ruby est un moyen de remplacer une variable ou une expression dans une chaîne de caractères. Elle permet de simplifier l'écriture et la lecture du code.
 
-```Ruby
-name = "Alice"
-puts "Bonjour #{name}!" 
-```
-
-Output: Bonjour Alice!
-
-Vous pouvez également utiliser l'interpolation de chaîne pour effectuer des opérations arithmétiques ou appeler des méthodes sur des variables. Par exemple :
+## Comment faire:
 
 ```Ruby
-age = 27
-born_year = "Vous êtes né en #{Time.now.year - age}."
-puts born_year
+nom = 'Alice'
+
+# Voici comment faire une interpolation de chaîne en Ruby
+puts "Bonjour #{nom}"
 ```
 
-Output: Vous êtes né en 1994.
+Cela affiche:
 
-Plongée plus profonde :
+```
+Bonjour Alice
+```
 
-L'interpolation de chaîne a été introduite en Ruby en 1993 par Yukihiro Matsumoto. Avant cela, les programmeurs utilisaient l'opérateur de concaténation (symbole +) pour insérer des variables dans des chaînes de caractères. Cependant, cela rendait le code plus difficile à lire et à maintenir. Aujourd'hui, il existe d'autres alternatives à l'interpolation de chaîne, telles que la méthode string format, mais elle est toujours largement utilisée en raison de sa simplicité et de sa facilité d'utilisation.
+## Plongée en profondeur:
 
-Voir aussi :
+Historiquement, l'interpolation de chaînes existait avant même Ruby, dans des langues comme Perl et Shell scripting. En Ruby, nous avons également des alternatives comme l'utilisation de la méthode `+` ou `concat` pour concaténer des chaînes. Cependant, l'interpolation est plus efficace et plus lisible.
 
-Si vous souhaitez en savoir plus sur l'interpolation de chaîne en Ruby, vous pouvez consulter la documentation officielle de Ruby (https://ruby-doc.org/core-3.0.1/doc/syntax/literals_rdoc.html#label-Percent+Strings) ou des tutoriels en ligne. Vous pouvez également explorer d'autres fonctionnalités de Ruby telles que les boucles, les méthodes et les classes pour améliorer vos compétences en programmation.
+Détails d'implémentation - Ruby reconnaît l'interpolation de chaîne en utilisant des guillemets doubles `" "`. Dans les guillemets simples `' '`, Ruby ne fera pas d'interpolation.
+
+## Voir aussi:
+
+- Documentation Ruby sur l'interpolation de chaînes: https://ruby-doc.org/core-2.7.0/doc/syntax/literals_rdoc.html#label-Strings
+- Guide d'utilisation des chaînes en Ruby: https://www.rubyguides.com/2018/01/ruby-string-methods/
+- Comparaison de l'interpolation et de la concaténation de chaînes: http://ruby-for-beginners.rubymonstas.org/bonus/string_interpolation_vs_concatenation.html.

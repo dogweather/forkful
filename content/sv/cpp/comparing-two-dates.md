@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "C++: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -11,42 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Jämföra två datum kan vara användbart för programmörer när man behöver identifiera skillnaden mellan två olika datum eller för att se om ett datum ligger före eller efter ett annat. Detta kan vara särskilt viktigt när man arbetar med tidsberoende algoritmer eller behöver sortera data baserat på datum.
+Att jämföra två datum innebär att bestämma om ett datum förekommer före, efter eller sammanfaller med ett annat datum. Programmerare gör detta för att hantera och beräkna tid och datum i deras program och applikationer.
 
-## Hur?
-För att jämföra två datum i C++ använder man sig oftast av funktionen ```std::chrono::time_point```, som representerar ett specifikt tidspunkt i tiden. Här är ett exempel på hur man kan jämföra två datum och skriva ut resultatet:
+## Så gör du:
+Här är ett enkelt sätt att jämföra två datum med C++:
 
 ```C++
 #include <iostream>
-#include <chrono>
+#include <ctime>
 
-int main() {
-  auto datum1 = std::chrono::system_clock::now(); //första datumet
-  auto datum2 = std::chrono::system_clock::now(); //andra datumet
+int main () {
+  std::time_t t = std::time(0);  // get time now
+  std::tm* now = std::localtime(&t);
+
+  std::tm a = {0,0,0,5,10,121}; //Set a to Nov 5, 2021
+  std::tm b = {0,0,0,now->tm_mday,now->tm_mon,now->tm_year}; //Set b to today's date
+  std::time_t x = std::mktime(&a);
+  std::time_t y = std::mktime(&b);
   
-  if (datum1 > datum2){
-    std::cout << "Datum 1 är senare än datum 2" << std::endl;
-  } else if (datum1 < datum2) {
-    std::cout << "Datum 1 är tidigare än datum 2" << std::endl;
-  } else {
-    std::cout << "Datum 1 är samma som datum 2" << std::endl;
+  if (x != (std::time_t)(-1) && y != (std::time_t)(-1)) {
+    double difference = std::difftime(y, x) / (60 * 60 * 24);
+    std::cout << "Difference in days : " << difference << "\n";
   }
-  
   return 0;
 }
 ```
 
-Output:
-```
-Datum 1 är samma som datum 2
-```
+I ovanstående kod beräknar vi skillnaden mellan dagens datum och ett specifikt datum i dagar. Om du kör denna kod, kommer utmatningen vara antalet dagar mellan de två datumen.
 
-## Djupdykning
-Jämförelse av datum har blivit enklare med introduktionen av ```std::chrono``` biblioteket i C++. Före detta var man tvungen att använda sig av tidsfunktioner som till exempel ```time.h``` eller ```ctime``` för att hantera datum. Detta bibliotek ger exakta tidsenheter och är som standard inställd på koordinerad universell tid (UTC).
+## Djup Dykning:
+(1) I den tidiga tiden av programmering fanns det inte någon standardiserad funktion för att jämföra datum, vilket ledde till en rad olika metoder och kodstycken för att utföra denna enkla uppgift. Men med C++ standardbiblioteket, kan vi nu jämföra datum lätt och effektivt.
 
-Som alternativ till ```std::chrono::time_point``` finns också ```std::chrono::duration``` som kan användas för att beräkna tidsdifferenser.
+(2) Alternativa sätt att jämföra datum inkluderar att omvandla datum till Julian datum, eller att använda tredjepartsbibliotek som "boost" eller "date.h". Men för de flesta användningsområden är C++ standardbiblioteket mer än tillräckligt.
 
-## Se även
-- [C++ reference - <chrono>](https://en.cppreference.com/w/cpp/chrono)
-- [C++ Foundation - Jämföra tider](https://isocpp.org/blog/2015/07/jaring-tider)
-- [Time and date utilities in C++](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
+(3) I termer av implementationsdetaljer, beräknar `difftime()` funktionen skillnaden i sekunder mellan två `time_t` värden och konverterar sedan detta till dagar.
+
+## Se Även:
+1. [`std::time` definition på cppreference.com](https://en.cppreference.com/w/cpp/chrono/c/time)
+
+2. [`std::tm` strukturen på cppreference.com](https://en.cppreference.com/w/cpp/chrono/c/tm)
+
+3. [Deep Dive into C++ Date and Time på stackoverflow.com](https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c)
+
+4. [Alternatives for handling dates and times in C++](Https://stackabuse.com/how-to-get-the-current-date-and-time-in-c/)

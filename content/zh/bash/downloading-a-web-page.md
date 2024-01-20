@@ -1,6 +1,6 @@
 ---
 title:                "下载网页"
-html_title:           "Bash: 下载网页"
+html_title:           "Arduino: 下载网页"
 simple_title:         "下载网页"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是网页下载? 
-网页下载是指通过计算机程序从互联网上下载网页的过程。程序员经常会下载网页来获取网络上的信息，以便于分析、处理和展示。
+## 什么和为什么？
+访问和下载网页是在互联网中获取具体网页内容的过程。程序员通常这样做以获取、分析和利用网页数据。
 
-## 如何实现: 
-在Bash中，你可以使用curl命令来下载网页。它以命令行的形式接受一个网页的URL作为输入，并将其内容保存到本地文件中。以下是一个示例代码和输出：
-
-```Bash 
-curl https://example.com > output.html 
+## 如何做：
+Bash中最基础的命令之一是curl。这是一个简单的使用curl下载网页的例子：
+```Bash
+curl https://www.example.com -O index.html
 ```
-
-假设我们要下载[百度首页](https://www.baidu.com)，我们可以这样写：
+这将会下载名为'index.html'的文件到你的当前目录下。注意，使用-O参数时，这将保留服务器提供的文件名。如果你想要自己命名，可以使用-o参数，如：
 
 ```Bash
-curl https://www.baidu.com > baidu.html
+curl https://www.example.com -o my_page.html
 ```
+这样就会在你的当前目录下载一个名为'my_page.html'的文件。
 
-这将会在当前目录下创建一个名为"baidu.html"的文件，其中包含着百度首页的内容。
+## 深入理解：
+在互联网的早期，下载网页主要是浏览器的职责。但是，随着时间的推移，各种编程语言和工具，如Python、Ruby、Bash等，开始为此功能提供内置的库和命令。
 
-## 深入了解: 
-网页下载作为一项技术已经存在了很久。在早期的互联网时代，人们使用FTP（文件传输协议）来下载网页。但随着技术的发展，出现了更加方便和实用的下载工具，如HTTP（超文本传输协议）和curl命令。除了curl命令，还有其他一些工具也可以在Bash中实现网页下载，如wget命令和Python的urllib模块。
+Bash通过curl和wget提供了下载网页的功能。curl是一个轻量级的命令行工具，主要用于下载和上传数据。wget则是一个更强大的工具，可以用于下载整个网站或者镜像。
 
-## 参考资料: 
-- [curl命令文档](https://curl.haxx.se/docs/) 
-- [wget命令文档](https://www.gnu.org/software/wget/manual/wget.html) 
-- [urllib模块文档](https://docs.python.org/3/library/urllib.html)
+这两种工具基本上使用了相同的方法：通过HTTP或HTTPS请求来获取服务器的响应，然后将响应内容保存到文件中。
+
+在某些情况下，你可能遇到需要登陆才能访问的页面，curl和wget都提供了处理这种情况的方法。你可以在你的命令中提供用户名和密码，或使用存储在文件中的cookie。
+
+## 另外参阅：
+- [在Bash中使用curl的官方资源](https://curl.se/docs/manpage.html)
+- [在Bash中使用wget的官方资源](https://www.gnu.org/software/wget/manual/wget.html)
+- [Bash编程的相关教程](https://www.tutorialspoint.com/unix/unix-using-variables.htm)
+- [关于HTTP/HTTPS请求的相关信息](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

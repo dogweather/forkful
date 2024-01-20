@@ -1,6 +1,6 @@
 ---
 title:                "Wyszukiwanie i zastępowanie tekstu"
-html_title:           "Rust: Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
 simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i Dlaczego?
+Zastępowanie tekstu polega na identyfikacji ciągów znaków lub wzorców w tekście i zamianie ich na inne ciągi. Programiści robią to m.in. do czyszczenia danych, transformowania formatów lub naprawiania błędów.
 
-Wyszukiwanie i wymienianie tekstu jest jednym z podstawowych zadań każdego programisty, które może być wymagane podczas tworzenia oprogramowania. Polega to na wyszukiwaniu określonego ciągu znaków w tekście i zastępowaniu go innym, co pozwala na automatyczne modyfikowanie kodu lub dokumentów.
-
-## Jak to zrobić?
-
-Rust ma wbudowane funkcje do wyszukiwania i zastępowania tekstu, dzięki którym zadanie to staje się łatwe i efektywne. Oto prosty przykład kodu, który wyszukuje i zastępuje tekst w zmiennej ```my_string```:
+## Jak to zrobić:
+Podstawowe wyszukiwanie i zastępowanie w Rust poprzez funkcję `replace` dla `String`. Przykładowy kod wygląda tak:
 
 ```Rust
-let my_string = "Hello World!";
-let replaced_string = my_string.replace("World", "Poland");
-
-println!("{}", replaced_string);
+fn main() {
+    let tekst = String::from("Cześć, Świecie!");
+    let tekst_nowy = tekst.replace("Świecie", "Programisto");
+    println!("{}", tekst_nowy);
+}
 ```
+Po uruchomieniu kodu, wynik będzie następujący:
 
-To wydrukuje ```Hello Poland!``` w konsoli.
+```
+Cześć, Programisto!
+```
+## Głębsze zanurzenie
+Wyszukiwanie i zastępowanie tekstu w świecie informatyki nie jest nowym konceptem, ale Rust podchodzi do niego w unikalny sposób, dając programistom większą kontrolę nad procesem. Istnieją także alternatywne metody, takie jak korzystanie z wyrażeń regularnych dla bardziej skomplikowanych wzorców.
 
-## Głębsza analiza
-
-Wyszukiwanie i zastępowanie tekstu jest ważnym elementem w wielu językach programowania i narzędziach, które są wykorzystywane w codziennej pracy programisty. Niektóre z alternatywnych sposobów na to zadanie to użycie wyrażeń regularnych lub zastosowanie biblioteki do automatyzacji tego procesu. W Rust, funkcja do zastępowania tekstu jest częścią standardowej biblioteki i jest często wykorzystywana przez programistów do łatwego modyfikowania tekstu w plikach źródłowych.
+Co do szczegółów implementacji, funkcja `replace` działa na dane niezmienne i tworzy nowy `String`, zamiast modyfikować istniejący. To oznacza, że stare dane nie są uszkodzone, co może być bardzo ważne w wielu przypadkach.
 
 ## Zobacz także
-
-Dla więcej informacji o funkcji wyszukiwania i zastępowania tekstu w Rust, zapoznaj się z dokumentacją oficjalnej strony języka Rust: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
-
-Więcej o wyrażeniach regularnych i ich zastosowaniach można przeczytać w artykule na temat tego tematu: https://www.regular-expressions.info/
+1. Dokumentacja Rust Strings: https://doc.rust-lang.org/stable/rust-by-example/std/str.html
+2. Wprowadzenie do wyrażeń regularnych w Rust: https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html
+3. Wyszukiwanie i zastępowanie tekstu w Rust za pomocą 'regex': https://stevedonovan.github.io/rustifications/2017/09/09/common-regex-macros.html

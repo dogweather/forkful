@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaisten lukujen luominen"
-html_title:           "Swift: Satunnaisten lukujen luominen"
-simple_title:         "Satunnaisten lukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
-Sattumanvaraisten numeroiden generoiminen on yksinkertaisesti prosessi, jossa ohjelma tuottaa satunnaisia numeroita. Tätä tarvitaan usein ohjelmoinnissa, esimerkiksi pelien luomisessa tai satunnaisten elementtien lisäämisessä sovelluksiin.
+# Luodaan satunnaislukuja Swift-ohjelmointikielessä
 
-Miten se tehdään:
-Swiftissä sattumanvaraisten numeroiden generoiminen on helppoa. Alla on esimerkki, kuinka generoida satunnaisia kokonaislukuja ja liukulukuja.
+## Miksi & Miksi?
+Satunnaislukujen tuottaminen on prosessi, jossa luodaan ennakoimaton luku valitulta lukuväliltä. Tätä tarvitaan usein ohjelmointipeleissä, tietoturva-sovelmuksissa ja tilastollisissa analyysiohjelmissa.
 
-```
-Swift 
-// Generoi satunnainen kokonaisluku väliltä 1-100
-var randomNumber = Int.random(in: 1...100)
+## Kuinka:
+Seuraava esimerkki näyttää, kuinka luodaan satunnaisluku Swiftissä.
 
-// Generoi satunnainen liukuluku väliltä 0-1
-var randomFloat = Float.random(in: 0...1)
+```Swift
+import Swift
 
-print(randomNumber)
-print(randomFloat)
+let randomInt = Int.random(in: 1..<10)
+print(randomInt)
 ```
 
-Tämä voisi tuottaa esimerkiksi seuraavan tulosteen:
+Kun ajat tämän koodiesimerkin, se tulostaa satunnaisen kokonaisluvun lukujen 1 ja 10 välillä.
 
-```
-83
-0.7324816
-```
+## Syvempi sukellus:
+Ennen Swift 4.2 -versiona, satunnaislukujen luominen vaati usein suoran pääsyn C-standardeihin, kuten `arc4random_uniform()`. Swift 4.2 ja uudemmat versiot ovat tehneet satunnaislukujen luomisesta huomattavasti yksinkertaisempaa and ja turvallisempaa `random(in:)` -funktion avulla.
 
-Syvemmälle aiheeseen:
-Sattumanvaraisten numeroiden generoiminen on ollut osa ohjelmointia jo pitkään. Ennen Swiftiä siihen käytettiin usein C-kieleen kuuluvaa ```rand()``` -funktiota. Nykyään käytetään yleisesti algoritmeja, kuten Mersenne Twister, jotka pystyvät tuottamaan satunnaisia numerosekvenssejä ennustettavalla tavalla. Swiftissä käytetään tällaista algoritmia sisäisesti ```Int.random``` ja ```Float.random``` funktioissa.
+Vaikka `random(in:)` onkin useimmissa tapauksissa kätevä, kannattaa silti ymmärtää sen rajoitukset. Sen toistettavuus ja ennustamattomuus voivat vaihdella käytetyn alustan ja Swift-version mukaan.
 
-Katso myös:
-Jos haluat tietää lisää sattumanvaraisten numeroiden generoinnista, tässä on muutama hyödyllinen lähde:
-- [Swiftin virallinen dokumentaatio sattumanvaraisista numeeroista](https://developer.apple.com/documentation/swift/Int/random/)
-- [Kattava opas satunnaislukujen generoimiseen Swiftissä](https://www.hackingwithswift.com/example-code/system/generating-random-numbers-in-swift)
-- [Mersenne Twister algoritmin esittely](https://en.wikipedia.org/wiki/Mersenne_Twister)
+Joissakin tapauksissa saatat tarvita myös muita satunnaislukugeneraattoreita. Esimerkiksi `GameplayKit` tarjoaa useita erityyppisiä satunnaislukugeneraattoreita, jotka voivat olla hyödyllisiä tietyissä pelisovelluksissa.
+
+## Katso Myös:
+- Swiftin virallinen dokumentaatio satunnaislukujen luomisesta: [https://developer.apple.com/documentation/swift/int/2995648-random](https://developer.apple.com/documentation/swift/int/2995648-random)
+- GameplayKitin dokumentaatio eri satunnaislukugeneraattorityypeistä: [https://developer.apple.com/documentation/gameplaykit/gkrandomsource](https://developer.apple.com/documentation/gameplaykit/gkrandomsource)

@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Lua: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,54 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O Que & Por Que?
+## O quê e por quê?
 
-Enviar uma solicitação HTTP significa realizar um pedido para acessar um recurso em um servidor remoto. Programadores fazem isso para obter informações ou enviar dados entre diferentes sistemas.
+Enviar uma solicitação HTTP em Lua é o método pelo qual seu programa pode se comunicar com outros programas via web. Isso é útil para obter dados de APIs web, enviar informações para servidores e interagir com outros serviços na internet.
 
-# Como Fazer:
+## Como fazer:
 
-```
--- Exemplo de código para enviar uma solicitação HTTP usando a biblioteca LuaSocket
+Para realizar uma solicitação HTTP em Lua, você precisará do módulo `socket.http`. Aqui está um exemplo simples:
 
-local http = require("socket.http") -- Importa a biblioteca LuaSocket
+```Lua
+local http = require('socket.http')
+local url = "http://httpbin.org/get"
 
--- Faz uma solicitação GET para o site da NASA para obter as notícias mais recentes
-local response_body, response_code, response_headers = http.request("https://www.nasa.gov/rss/dyn/breaking_news.rss")
-
--- Imprime o código de resposta e o conteúdo da resposta
-print(response_code)
-print(response_body)
-
--- Saída esperada: 200 (Código de resposta OK) e o RSS feed com as notícias mais recentes da NASA
-```
-
-```
--- Exemplo de código para enviar uma solicitação HTTP utilizando a biblioteca Lua HTTPClient
-
-local http_client = require("http_client") -- Importa a biblioteca Lua HTTPClient
-
--- Define as opções para a solicitação
-local options = {
-    url = "https://jsonplaceholder.typicode.com/posts", -- URL do recurso a ser acessado
-    method = "POST", -- Método da solicitação (GET, POST, PUT, DELETE, etc.)
-    headers = { ["Content-Type"] = "application/json"}, -- Cabeçalhos da requisição
-    body = "{ \"title\": \"Minha primeira postagem\", \"body\": \"Olá Mundo\", \"userId\": 1 }" -- Dados a serem enviados
-}
-
--- Realiza a solicitação
-local response = http_client(options)
-
--- Imprime o corpo da resposta
-print(response.body)
-
--- Saída esperada: "{ \"title\": \"Minha primeira postagem\", \"body\": \"Olá Mundo\", \"userId\": 1 }" (Dados enviados no corpo da solicitação)
+-- Enviando uma solicitação GET
+local response, status = http.request(url)
+if status == 200 then
+    print(response)
+else
+    print("Erro: "..status)
+end
 ```
 
-# Mergulho Profundo:
+Neste exemplo, o código envia uma solicitação GET para 'http://httpbin.org/get'. Se a solicitação for bem-sucedida (status HTTP 200), imprime a resposta.
 
-Enviar solicitações HTTP é uma técnica amplamente utilizada na programação para acessar recursos remotos. Existem diversas bibliotecas disponíveis para realizar essa tarefa no Lua, como a LuaSocket e a Lua HTTPClient. Além disso, muitas frameworks e ferramentas também possuem recursos para realizar solicitações HTTP, facilitando ainda mais o processo.
+## Mergulho profundo:
 
-# Veja Também:
+O módulo `socket.http` usado no exemplo acima faz parte da biblioteca LuaSocket, que fornece funcionalidades de rede de baixo nível para Lua desde 2004. Ele é um dos muitos pacotes disponíveis que tornam as solicitações HTTP possíveis em Lua, embora seja um dos mais populares e amplamente usados.
 
-- [Documentação da Biblioteca LuaSocket] (https://w3.impa.br/~diego/software/luasocket/http.html)
-- [Documentação da Biblioteca Lua HTTPClient] (https://github.com/Mashape/lua-httpclient)
+Há algumas alternativas ao LuaSocket. Por exemplo, o módulo 'http' do framework Turbo.lua é uma excelente escolha se você estiver trabalhando nesse framework. Você também pode optar por bibliotecas como lua-http ou lua-resty-http se estiver procurando algo mais atual ou específico.
+
+Quando você envia uma solicitação HTTP usando LuaSocket, o que acontece em segundo plano é que LuaSocket abre um soquete TCP, envia uma solicitação HTTP formatada corretamente pelo soquete e, em seguida, lê a resposta antes de fechá-lo.
+
+## Veja também:
+
+- Documentação LuaSocket: http://w3.impa.br/~diego/software/luasocket/http.html
+- Documentação Turbo.lua: https://turbo.readthedocs.io/en/latest/
+- lua-http no GitHub: https://github.com/daurnimator/lua-http
+- lua-resty-http no GitHub: https://github.com/ledgetech/lua-resty-http

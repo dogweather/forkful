@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Ruby: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -11,38 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skapandet av en temporär fil är en vanlig praxis inom programmering för att skapa en tillfällig fil som endast används under en begränsad tidsperiod. Detta kan vara användbart för att till exempel lagra temporära data eller för att skapa ett mellansteg inom en större process.
 
-## Hur?
-För att skapa en temporär fil i Ruby kan du använda dig av standardbiblioteket `Tempfile`. Detta ger dig möjlighet att skapa en temporär fil med ett unikt namn, som sedan automatiskt raderas när programmet avslutas.
+Att skapa en temporär fil innebär att du tillfälligt lagrar data i en filtext. Programmerare gör detta när de behöver manipulera data utan att påverka den ursprungliga filen.
+
+## Hur Man Gör:
+
+Här är en hur du kan skapa och använda en temporär fil i Ruby.
 
 ```ruby
 require 'tempfile'
 
 # Skapa en temporär fil
-tempfile = Tempfile.new('example')
+temp_file = Tempfile.new('my_temp_file')
 
 # Skriv till filen
-tempfile.write("Detta är en temporär fil.")
+temp_file.puts("Hello, Sweden!")
 
-# Läsa från filen
-tempfile.read
-# => "Detta är en temporär fil."
+# Stäng och ta bort filen
+temp_file.close
+temp_file.unlink
+``` 
 
-# Stäng filen
-tempfile.close
+Uppskrivning till ditt program blir så här:
+
+```ruby
+Hello, Sweden!
 ```
 
-När `tempfile` stängs kommer filen automatiskt att raderas från din dator. Genom att använda `Tempfile` kan du också visa en fil för ett visst syfte och sedan återställa den till sitt ursprungliga tillstånd när användningen är klar.
-
 ## Djupdykning
-Skapandet av temporära filer har varit en del av programmering sedan lång tid tillbaka, då det var en viktig del av hanteringen av datafiler på hårddiskar. Idag används det fortfarande inom många programmeringsspråk, inte bara Ruby.
 
-En alternativ metod för att skapa en temporär fil i Ruby är att använda det inbyggda `File`-klassen och dess `.open`-metod. Detta ger dig mer kontroll över filen, men kräver också att du manuellt raderar den när den inte längre behövs.
+Historiskt sett var skapandet av temporära filer en nödvändighet för att tillåta data manipulering i situationer där minnet var begränsat. Nu används det som ett sätt att säkra dataintegritet eller för att dela data mellan olika program.
 
-Implementeringen av temporära filer i Ruby är optimerad för effektiv prestanda, vilket innebär att de skapas och raderas snabbt. Du kan också ange olika parametrar när du skapar en temporär fil, som till exempel prefix för filnamnet och den temporära mapp där filen ska sparas.
+Alternativt kan du också använda `StringIO`-objekt om du bara behöver en tillfällig lagringsplats och inte en faktisk fil. Men, kom ihåg att dessa objekt endast existerar i minnet, inte på disk.
+
+Implementeringsdetaljer att komma ihåg inkluderar att `Tempfile.new` skapar filen i ditt systems temp-katalog. Därför får den automatiskt rättigheterna för det katalogen. Dessutom om du glömmer att ta bort filen kommer Ruby att göra det när objektet blir garbage collected.
 
 ## Se även
-- [Ruby dokumentation för Tempfile](https://ruby-doc.org/stdlib-3.0.2/libdoc/tempfile/rdoc/Tempfile.html)
-- [Ruby dokumentation för File-klassen](https://ruby-doc.org/core-3.0.2/File.html)
-- [Jämförelse av olika metoder för att skapa en temporär fil i Ruby](https://www.dotnetperls.com/tempfile-ruby)
+
+För att få ytterligare information och kunskap, se följande länkar:
+
+1. Officiell dokumentation för Tempfile-klass: https://ruby-doc.org/stdlib/libdoc/tempfile/rdoc/Tempfile.html
+2. Ruby IO Guide, inklusive StringIO-detaljer: https://ruby-doc.org/core/io.html

@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Clojure: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
+# Parseo HTML en Clojure para principiantes
 
-El análisis de HTML es el proceso de analizar y extrapolar información de código HTML. Los programadores lo hacen para extraer datos de documentos en línea de manera eficiente y automatizada. Esto es especialmente útil para proyectos que requieren la extracción regular de información de páginas web.
+## ¿Qué & Por qué?
 
-## Cómo:
+El parseo HTML implica el proceso de decodificar y entender la estructura de una página web. Como programadores, lo hacemos para extraer información útil y manipular, analizar o presentar los datos de la web de una manera más manejable.
 
+## Cómo hacerlo:
+
+Usaremos la biblioteca `clj-tagsoup` para parsear HTML en Clojure. Sigue estos pasos:
+
+### Paso 1: Añadir clj-tagsoup a tu archivo project.clj
 ```Clojure
-(ns parsing-html.core
-  (:require [clojure.string :as str]
-            [net.cgrand.enlive-html :as html]))
-
-;; Seleccionar un elemento específico
-(def document (html/html-snippet "<h1>Título</h1>"))
-(html/select document [:h1])
-
-;; Extraer texto de un elemento
-(html/attr (-> document
-                  (html//[:h1])
-                  (html/first))
-           :content)
-
-;; Extraer atributos de un elemento
-(html/attr (-> document
-                  (html//[:a])
-                  (html/first))
-           :href)
+:dependencies [[clj-tagsoup "0.3.0"]]
 ```
 
-El código de ejemplo muestra cómo seleccionar elementos específicos de un documento HTML y extraer su contenido o atributos. Utilizando la librería `enlive-html`, podemos manipular fácilmente el código y extraer la información deseada.
+### Paso 2: Importar clj-tagsoup
+```Clojure
+(ns my.ns
+  (:require [clj-tagsoup.core :as soup]))
+```
 
-## Deep Dive:
+### Paso 3: Parsear HTML
+```Clojure
+(def page (soup/parse "https://www.paginaweb.com/"))
+```
 
-El análisis de HTML ha sido una herramienta importante para los desarrolladores web desde los primeros días de la web 2.0. Antes de las librerías como `enlive-html`, los programadores tenían que escribir su propio código personalizado para extraer información de código HTML. Esta tarea era tediosa y consumía mucho tiempo. Ahora, con herramientas como `enlive-html`, el análisis de HTML se ha vuelto mucho más fácil y eficiente.
+Aquí podría ser el resultado:
+```Clojure
+{:tag :html, :attrs {}, :content [{:tag :head...}{:tag :body...}]}
+```
 
-Existen algunas alternativas para realizar el análisis de HTML en Clojure, como `clj-webdriver` y `hiccup`. Mientras que `clj-webdriver` se enfoca en la simulación de acciones en el navegador, `hiccup` se enfoca en la generación de código HTML. Sin embargo, `enlive-html` sigue siendo una de las opciones más populares y fáciles de usar para el análisis de HTML en Clojure.
+## Inmersión profunda
 
-## See Also:
+Históricamente, el parseo de HTML ha sido problemático debido a la flexibilidad y tolerancia de errores de HTML. Afortunadamente, `clj-tagsoup` facilita este proceso.
 
-- Documentación oficial de `enlive-html`: https://github.com/cgrand/enlive
-- Tutorial de `enlive-html`: https://github.com/waylay-io/clojure-scraping-tutorial#enlive-html-library
-- Otros recursos para el análisis de HTML en Clojure: https://github.com/razum2um/awesome-clojure#html-parsing
+A pesar de que `clj-tagsoup` es una herramienta fantástica, hay varios métodos alternativos para parsear HTML en Clojure. Por ejemplo, `Enlive` y `Hickory` son también soluciones viables, pero pueden tener una curva de aprendizaje más empinada.
+
+`clj-tagsoup` opera tomando HTML mal formado y generando un árbol de sintaxis abstracta (AST). Una vez que tenemos este AST, podemos recorrerlo y buscar los datos que nos interesan.
+
+## Ver también
+
+- Documentación de clj-tagsoup: https://github.com/nathell/clj-tagsoup
+- HTML simple parseo con Enlive: https://github.com/cgrand/enlive
+- Introducción a Hickory: https://github.com/davidsantiago/hickory

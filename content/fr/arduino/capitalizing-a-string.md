@@ -1,7 +1,7 @@
 ---
-title:                "Majusculation d'une chaîne de caractères"
-html_title:           "Arduino: Majusculation d'une chaîne de caractères"
-simple_title:         "Majusculation d'une chaîne de caractères"
+title:                "Mettre en majuscules une chaîne de caractères"
+html_title:           "Arduino: Mettre en majuscules une chaîne de caractères"
+simple_title:         "Mettre en majuscules une chaîne de caractères"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,28 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi et Pourquoi?
-
-Capitaliser une chaîne de caractères signifie mettre en majuscule la première lettre de chaque mot dans une phrase donnée. Les programmeurs le font souvent pour améliorer la lisibilité et la présentation de leurs codes.
+## Quoi & Pourquoi?
+Mettre une chaîne en majuscules signifie transformer toutes ses lettres en majuscules. Les programmeurs le font pour diverses raisons comme normaliser les entrées des utilisateurs ou pour l'affichage des informations.
 
 ## Comment faire:
+Pour transformer une chaîne en majuscules en Arduino, on utilise la méthode `toUpperCase()`. Voici un exemple simple:
 
-Utiliser la fonction `capitalize()` pour capitaliser une chaîne de caractères dans un code Arduino.
-
-```
-Arduino.prompt("Entrez une phrase à capitaliser ");
-String phrase = Serial.readString(); // lire l'entrée de l'utilisateur
-String phraseCapitalize = phrase.capitalize(); // utiliser la fonction capitalize()
-Serial.print("La phrase capitale est : ");
-Serial.print(phraseCapitalize);
+```Arduino
+String maChaine = "bonjour, monde";
+maChaine.toUpperCase();
+Serial.println(maChaine); // Affichera "BONJOUR, MONDE"
 ```
 
-## Plongez en profondeur:
+## APPROFONDISSEMENT
+Historiquement, la mise en majuscule a été utilisée pour rendre le texte plus visible ou important. Aussi, dans certaines situations, il faut éviter les problèmes de correspondance de cas dans la comparaison des chaînes.
 
-Dans le passé, les programmeurs utilisaient souvent des boucles et des conditions pour capitaliser les chaînes de caractères, mais avec l'émergence de bibliothèques de fonctions prédéfinies, cela devient beaucoup plus simple. Il existe également d'autres façons de capitaliser une chaîne de caractères, telles que l'utilisation de fonctions de bibliothèque tierces ou la création de sa propre fonction. Dans le code ci-dessus, la fonction `capitalize()` utilise la règle de la langue anglaise pour capitaliser les lettres et ignore les articles et les prépositions.
+Une alternative à l'utilisation de `toUpperCase()` est de parcourir chaque caractère de la chaîne et de le convertir individuellement en majuscules. Cependant, la méthode `toUpperCase()` est préférée car elle est plus rapide et plus facile à utiliser.
 
-## Voir aussi:
+Les détails de mise en œuvre pour `toUpperCase()` en Arduino reposent sur la définition de la bibliothèque String. Le code examine chaque caractère, vérifie s'il est en minuscules, puis le convertit en majuscules si nécessaire.
 
-- [Documentation officielle d'Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/capitalize/)
-- [Forum d'aide pour les débutants d'Arduino](https://forum.arduino.cc/index.php?topic=304561.0)
-- [Tutoriel vidéo sur la capitalisation de chaîne de caractères dans Arduino](https://www.youtube.com/watch?v=Yn3eHxrMQEE)
+## VOIR AUSSI
+Pour plus d'informations sur la manipulation de chaînes en Arduino, consultez les ressources suivantes:
+- Manuel de référence Arduino "StringObject" (https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- Site tutorial "Arduino and Strings" (https://startingelectronics.org/articles/arduino/strings/)

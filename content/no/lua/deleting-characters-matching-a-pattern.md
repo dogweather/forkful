@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som matcher et mønster"
-html_title:           "Lua: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,20 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å slette tegn som matcher et mønster er en vanlig oppgave for programmerere. Dette kan gjøres for å fjerne uønsket tekst fra en string, eller for å implementere en form for tekstbehandling i et program.
+Å slette tegn som matcher et mønster, betyr å fjerne spesifikke tegn fra en streng basert på et forhåndsbestemt mønster. Dette er viktig for programmerere for å rengjøre, standardisere og manipulere data effektivt i programmer.
 
 ## Hvordan:
-For å slette tegn som matcher et mønster i Lua kan du bruke funksjonen `string.gsub(pattern, replacement, string)`. Patternet er det mønsteret du ønsker å matche, replacement er hva du ønsker å erstatte det matchede tegnet med, og string er den aktuelle teksten. Her er et eksempel på å slette alle bokstaver fra teksten "Hei, dette er et eksempel!" og bare beholde tallene.
 
+Her er et enkelt eksempel der vi sletter alle alfabetiske tegn fra en tekststring:
+
+```Lua
+s = "abc123"
+s = s:gsub("%a", "")
+print(s) -- Output: 123
 ```
-Lua
-local text = "Hei, dette er et eksempel!"
-local new_text = string.gsub("[a-zA-Z]", "", text)
-print(new_text) --> , 12345 !
+
+Men vi kan også slette mer komplekse mønstre. Her er et eksempel der vi sletter alt mellom, inkludert klammene {}:
+
+```Lua
+s = "Hei {Norwegian} Venner"
+s = s:gsub("{.-}", "")
+print(s) -- Output: Hei  Venner
 ```
 
-## Dypdykk:
-Å slette tegn som matcher et mønster er en vanlig oppgave innenfor tekstbehandling og databehandling. Det er en enkel og effektiv måte å manipulere tekst på, og brukes ofte for å filtrere ut uønskede tegn eller for å formatere teksten på en spesifikk måte. Alternativer til `gsub`-funksjonen er `string.match` og `string.gmatch`, som gir litt forskjellig funksjonalitet, men også kan brukes for å slette tegn som matcher et mønster. Implementasjonen av `gsub`-funksjonen er basert på regEx-mønstre og er inspirert av lignende funksjoner i andre programmeringsspråk.
+## Dypdykk 
 
-## Se også:
-Hvis du ønsker å lære mer om sletting av tegn som matcher et mønster i Lua, kan du ta en titt på Lua dokumentasjonen eller andre programmeringsressurser som dekker regEx-mønstre. Det finnes også mange nyttige verktøy og biblioteker som kan hjelpe deg med å håndtere tekstbehandling i Lua.
+Lua bruker mønstersammenligning inspirert av de regulære uttrykkene i POSIX og Perl, men Lua sitt mønstersystem er mer begrenset og har færre regler. 
+
+Alternativene for å slette tegn som matcher et mønster inkluderer flere biblioteker og verktøy som Regular Expressions (Regex), men Lua’s innebygde `gsub` funksjon er enkel og lett å bruke for de fleste tilfeller.
+
+Når det kommer til implementering, erstatter `gsub` funksjonen i Lua alle tilfeller av et mønster i en streng med en annen streng (eller fjerner det helt hvis den andre strengen er tom), og returnerer den reviderte strengen.
+
+## Se Også:
+
+-[Lua manual (5.4): Mønstersammenligning](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+-[Grunnleggende strengmanipulasjoner i Lua](https://learnxinyminutes.com/docs/lua/)
+-[Lua Patterns](http://lua-users.org/wiki/PatternsTutorial)
+-[Lua-Users: The power of patterns in Lua](http://lua-users.org/wiki/PatternsTutorial) 
+
+Vennligst referer til disse kildene for ytterligere informasjon og bedre forståelse i bruk av mønstre i Lua.

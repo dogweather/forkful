@@ -1,6 +1,6 @@
 ---
 title:                "ウェブページのダウンロード"
-html_title:           "Clojure: ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
 simple_title:         "ウェブページのダウンロード"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,22 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
-Webページをダウンロードすることは、インターネットからローカルコンピューターにファイルをコピーすることを意味します。プログラマーは、Webページをダウンロードすることによって、そのページの情報を取得し、処理することができます。
+## 何となぜ？
 
-## 方法：
-```Clojure
-(require '[clojure.java.io :as io])
-(def url "https://www.example.com")
-(io/copy (java.net.URL. url) (io/file "example.html"))
+ウェブページのダウンロードとは、ウェブサーバからクライアントマシンへのファイルのコピーです。プログラマはこれを行うことで、オフラインでの閲覧、データ分析、ウェブスクレイピングなどを可能にします。
+
+## 手順は以下の通り：
+
+以下に、Clojureを使用してウェブページをダウンロードする例を示します。
+
+```clojure
+(ns my-app.core
+    (:require [clj-http.client :as client]))
+
+(defn download-page [url]
+  (let [response (client/get url)]
+    (if (= 200 (:status response))
+      (:body response)
+      (throw (Exception. "Failed to download")))))
 ```
-上記のコードはClojureを使用してWebページをダウンロードする方法の一例です。ダウンロードしたページは、"example.html"という名前のファイルとして保存されます。
 
-## 深く掘り下げる
-Webページをダウンロードする方法として、上記のコード以外にも様々な手法があります。その中でも最も一般的な方法は、HTTPリクエストを使用する方法です。また、ClojureにはHTTPリクエストをより簡単に扱うことができるライブラリがあります。
+この関数は、引数としてURLを受け取り、そのURLの内容を返します。ダウンロードが失敗すると例外をスローします。
 
-Clojureでは、java.net.URLクラスを使用することで、Webページをダウンロードすることができます。このクラスはJavaプログラミング言語の一部であり、Clojureでも使用することができます。
+## ディープダイブ:
 
-## 関連リンク
-- [Clojureのjava.net.URLクラスのドキュメント](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [HTTPリクエストを取り扱うためのClojureライブラリ「clj-http」](https://github.com/dakrone/clj-http)
+久しい過去から、プログラマーは独自のHTMLパーサーやダウンローダーを作成してきました。しかし、これらのツールは時間とともに同様の過ちを繰り返し、ベストプラクティスはライブラリの形で確立されました。Clojureのclj-httpはその一つでHTTPリクエストの送受信を簡易化します。
+
+ダウンロードする方法は他にもあります。例えば、java.net.URLや java.nio.fileを使用するなど。しかし、clj-httpはシンプルさと拡張性で優れています。
+
+具体的な実装としては、clj-httpライブラリは内部でJavaのApache HttpClientライブラリを使用しています。これにより、高度なHTTP通信機能がClojureから直接利用可能になっています。
+
+## また見てみましょう:
+
+以下のリンクで更に詳細な情報を得ることができます：
+
+- clj-httpリポジトリ（英語）: https://github.com/dakrone/clj-http
+- Clojureでのウェブスクレイピングについての詳細なチュートリアル（英語）: https://realpython.com/python-web-scraping-practical-introduction/
+- Apache HttpClientの公式ドキュメンテーション（英語）: https://hc.apache.org/httpcomponents-client-ga/index.html

@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit bezieht sich auf die Manipulation von Datumsangaben, um ein bestimmtes Datum in der Zukunft oder Vergangenheit zu erhalten. Programmierer verwenden dies häufig, um automatisierte Aufgaben wie die Planung von Ereignissen oder die Überprüfung von Ablaufdaten durchzuführen.
+## Was & Warum?
+Das Berechnen eines zukünftigen oder vergangenen Datums beinhaltet die Manipulation oder Umwandlung von Datumswerten. Programmierer tun dies, um Zeitrahmen zu organisieren oder um Ereignisse zu planen.
 
-# So geht's:
-Alle unten stehenden Beispiele können in der Bash-Ausführungsumgebung eingegeben werden. Beachten Sie, dass das aktuelle Datum für alle Beispiele der 24. Oktober 2021 ist.
+## Wie macht man das:
+Die Bash-Funktion `date` kann verwendet werden, um ein zukünftiges oder vergangenes Datum zu berechnen. Zum Beispiel:
 
-#### Berechnen eines Datums in der Zukunft:
-```
-Bash
-date -d "next week" +%Y-%m-%d
-2021-10-31
-```
+Übersetze "+3 Tage" oder "-1 Jahr":
+```Bash
+# 3 Tage in die Zukunft
+date -d "+3 days"
 
-#### Berechnen eines Datums in der Vergangenheit:
+# 1 Jahr in der Vergangenheit
+date -d "-1 year"
 ```
-Bash
-date -d "2 days ago" +%A
-Friday
-```
+Die Ausgabe:
+```Bash
+# Zum Beispiel heute ist der 12. April
+Fri Apr 15 12:34:56 CEST 2023
 
-#### Berechnen eines Datums mit einem bestimmten Format:
-```
-Bash
-date -d "next month" +"Heute ist %B %d, %Y"
-Heute ist November 24, 2021
+# Und wieder zurück zum 12. April voriges Jahr
+Mon Apr 12 12:34:56 CEST 2022
 ```
 
-# Tiefenschärfe:
-- Das Berechnen von Datumsangaben in der Bash-Umgebung ist eine Funktion des Befehls "date". Dieser Befehl kann auch verwendet werden, um die aktuelle Zeit und andere Zeitformate anzuzeigen.
-- Eine alternative Möglichkeit, Datumsangaben in der Zukunft oder Vergangenheit zu berechnen, besteht darin, die Programmbibliothek "datetime" in Python zu verwenden.
-- Die Implementation erfolgt durch Verwendung von Unix-Zeitstempeln und mathematischen Operationen, um zu dem gewünschten Datum zu gelangen.
+## Tiefgreifende Infos
+Historisch gesehen wurde das Berechnen von vergangenem oder zukünftigem Datum bereits von den frühesten Prozessorsystemen verwendet, und hat seinen Weg in moderne Skriptsprachen wie Bash gefunden.
 
-# Siehe auch:
-- Offizielle Dokumentation des Befehls "date": https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
-- Einführung in die Verwendung von Unix-Zeitstempeln: https://www.epochconverter.com/
+Es gibt auch alternative Methoden, wie zum Beispiel die Verwendung von "GNU Coreutils" oder Shell-Skripten.
+
+Im Zusammenhang mit der Implementierung verwendet Bash eine interne Function, um Datum und Uhrzeit zu manipulieren. Diese Funktion ermöglicht es uns, eine Vielzahl von Berechnungen mit Datumswerten vorzunehmen.
+
+## Weiterführende Informationen
+1. Bash Man Page: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
+2. GNU Coreutils: [https://www.gnu.org/software/coreutils/coreutils.html](https://www.gnu.org/software/coreutils/coreutils.html)
+3. Erweiterte Datumsfunktionen: [https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html]( https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)

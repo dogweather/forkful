@@ -1,7 +1,7 @@
 ---
-title:                "Eine http-Anfrage mit Basisauthentifizierung senden"
-html_title:           "Lua: Eine http-Anfrage mit Basisauthentifizierung senden"
-simple_title:         "Eine http-Anfrage mit Basisauthentifizierung senden"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Eine HTTP-Anfrage mit Basic Authentication in Lua senden
+
 ## Was & Warum?
-Das Senden einer HTTP-Anfrage mit einfacher Authentifizierung ist eine Möglichkeit für Programmierer, sich bei einer Website oder API zu authentifizieren. Dies bedeutet, dass sie sich als autorisiertes Benutzerkonto ausweisen, um Zugriff auf geschützte Inhalte oder Funktionen zu erhalten.
+Die Abfrage einer HTTP-Anfrage mit Basic Authentication in Lua ist ein Prozess, bei dem Benutzername und Passwort in einem Standard HTTP-Header gesendet werden. Unsere Anwendungen brauchen dies oft, um Daten von sicheren Servern abzurufen.
 
 ## So geht's:
+Sie können die Lua-HTTP-Bibliothek, `lua-http`, verwenden, um Anfragen mit Basic Authentication zu senden. Hier ist ein einfaches Beispiel, wie Sie dies tun können:
+
+```Lua
+-- Bibliothek importieren
+local http_request = require "http.request"
+
+-- HTTP-Anfrage erstellen
+local req = http_request.new_from_uri("http://meinwebsite.com/resource")
+
+-- Basic Authentication hinzufügen
+req.headers:upsert(":authorization", "Basic " .. ("benutzername:passwort"):base64())
+
+-- Die Anfrage senden
+local headers, stream = req:go()
+print(headers)
 ```
-local username = "Benutzername"
-local password = "Passwort"
-local url = "https://www.example.com/api"
-local request = http.request {
-    url = url,
-    method = "POST",
-    headers = {
-        ["Authorization"] = "Basic " .. mime.b64(username .. ":" .. password)
-    },
-    data = "payload=Hello"
-}
 
-local response = request()
-print(response.statuscode)
-print(response.content)
-```
+## Tiefere Erkenntnisse
+Basic Authentication ist eines der ältesten und einfachsten Methoden zur Authentifizierung von HTTP-Anforderungen, aber es hat seine Nachteile, wie die Übertragung von Anmeldeinformationen in Klartext. Alternativen sind OAuth und Token-basierte Authentifizierung, die sicherer sind. Die Implementationdetails für Basic Authentication in Lua verwenden einen einfachen `base64`-Encoded-String der Form "username:password".
 
-Erklärung: Zunächst werden die Login-Daten des Benutzers sowie die zielgerichtete URL festgelegt. Dann wird eine HTTP-Anfrage mit der Methode "POST" erstellt und die erforderlichen Authentifizierungs-Header hinzugefügt. Der Parameter "data" ermöglicht das Hinzufügen von Inhalt zur Anfrage. Schließlich wird die Anfrage ausgeführt und die Statuscode- und Inhaltsinformationen des Ergebnisses werden ausgegeben.
-
-## Tiefentauchen:
-Bevor das Konzept der einfachen Authentifizierung eingeführt wurde, wurde die Authentifizierung über HTTP-Digest verwendet. Im Vergleich dazu ist die einfache Authentifizierung weniger sicher, da die Login-Daten im Klartext übertragen werden.
-Es gibt auch alternative Methoden wie die OAuth-Authentifizierung, die speziell für APIs entwickelt wurde und eine bessere Sicherheit bietet.
-Bei der Implementierung der einfachen Authentifizierung müssen die Login-Daten in einen Base64-String kodiert und mit dem "Basic" Prefix im HTTP-Header gesendet werden.
-
-## Siehe auch:
-- Lua Anleitung zur HTTP-Bibliothek: https://www.lua.org/pil/22.3.html
-- Informationen zu Basic Authentifizierung: https://developer.mozilla.org/de/docs/Web/HTTP/Authentication
-- Weitere Details zur OAuth-Authentifizierung: https://oauth.net/about/introduction/
+## Siehe auch
+- [Lua HTTP-Bibliothek (lua-http)](http://daurnimator.github.io/lua-http/)
+- [Dokumentation zur HTTP-Authentifizierung](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Einen Überblick über OAuth 2.0](https://oauth.net/2/)

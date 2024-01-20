@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Javascript: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Enviar una solicitud HTTP con autenticación básica es una forma de comunicarse con un servidor web protegido mediante un usuario y contraseña. Los programadores lo hacen para verificar la identidad del usuario y acceder a recursos restringidos.
+## ¿Qué y Por Qué?
 
-## Cómo:
-```
-// Ejemplo de código en Javascript para enviar una solicitud HTTP con autenticación básica
+Enviar una solicitud HTTP con autenticación básica es un método simple para confirmar la identidad de un usuario antes de permitir acceso a ciertos datos. Los programadores lo hacen para proteger los datos sensibles y mantener un nivel básico de seguridad.
 
-// Crear un objeto XMLHttpRequest
-const request = new XMLHttpRequest();
+## Cómo se hace:
 
-// Especificar el método HTTP y la URL del servidor
-request.open('GET', 'https://www.ejemplo.com/recurso-protegido');
+Para esto, necesitarás la biblioteca `axios`. Aquí hay un ejemplo rápido:
+ 
+```Javascript
+const axios = require('axios');
 
-// Agregar los encabezados de autenticación básica
-request.setRequestHeader('Authorization', 'Basic usuario:contraseña');
-
-// Enviar la solicitud
-request.send();
-
-// Obtener la respuesta del servidor
-request.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    // Hacer algo con los datos recibidos
-    console.log(this.responseText);
+axios({
+  method: 'get',
+  url: 'http://api.algunlugar.com/datos',
+  auth: {
+    username: 'usuario',
+    password: 'contraseña'
   }
-}
+})
+.then(response => {
+  console.log(response);
+})
+.catch(error => {
+  console.log(error);
+});
 ```
+Este código envía una solicitud HTTP GET a la URL especificada. En la respuesta, obtendrás los datos solicitados.
 
-La salida de este código podría ser una respuesta en formato JSON, XML o simplemente un mensaje de éxito o error, dependiendo de la implementación del servidor.
+## Iniciando:
 
-## Profundizando:
-La autenticación básica es un método de autenticación de HTTP que ha existido desde los inicios de la web en 1999. Aunque sigue siendo utilizado, se considera menos seguro que otros métodos más recientes como OAuth o JWT (JSON Web Tokens). Sin embargo, sigue siendo una opción común para aplicaciones internas o en casos donde la seguridad no sea una preocupación tan importante. Además, es fácil de implementar y no requiere librerías adicionales.
+Aunque la autenticación básica es antigua y simple, ha sido una parte integral del protocolo HTTP desde sus inicios. Sin embargo, no es la más segura. Otras alternativas incluyen la autenticación por tokens, OAuth y JWT.
 
-## Ver también:
-- [Introducción a la autenticación HTTP básica](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
-- [Alternativas a la autenticación básica](https://www.moesif.com/blog/technical/api-authentication-methods/)
-- [Especificación de autenticación básica en HTTP](https://tools.ietf.org/html/rfc2617)
+En la autenticación básica, las credenciales son codificadas en Base64 pero no están encriptadas. Esto significa que tu información puede ser interceptada y descifrada. Es por eso que solo debes usarla sobre conexiones HTTPS.
+
+## Ver También:
+
+Por favor, échale un vistazo a estos recursos para más detalles y alternativas:
+
+1. [Autenticación HTTP en MDN](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication)
+2. [Autenticación JWT](https://jwt.io/introduction/)
+3. [OAuth 2.0](https://oauth.net/2/)

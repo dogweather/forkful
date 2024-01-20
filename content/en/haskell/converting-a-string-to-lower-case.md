@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Haskell recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Lowercasing Strings in Haskell
-
 ## What & Why?
-Converting a string to lower case is simply the process of changing all uppercase letters in a given string to their corresponding lowercase letters. This is a common operation in programming, as it allows for an easier and more efficient way to compare, search, and manipulate strings.
+
+Converting a string to lowercase is a common task in text processing when we want to make a string case-insensitive for comparisons, searches, or other operations. It streamlines the user input and eliminates arbitrary differences.
 
 ## How to:
-In Haskell, the `toLower` function from the `Data.Char` module can be used to convert a string to lower case. This function takes a single `Char` as input and returns the lowercase version of that character. To apply it to an entire string, we can use the `map` function, which applies a given function to each element in a list.
 
-```Haskell
+In Haskell, we use the `Data.Char` library, specifically the `toLower` function. Here's a sample:
+
+```haskell
 import Data.Char (toLower)
 
 lowercase :: String -> String
-lowercase str = map toLower str
-
-main = do
-  let str = "Hello, WORLD!"
-  putStrLn (lowercase str)
+lowercase = map toLower
 ```
 
-Output:
-```
-hello, world!
-```
+Let's try it out:
 
-## Deep Dive:
-In Haskell, strings are represented as lists of characters, with type `String` being equivalent to `[Char]`. This means that the `lowercase` function above can also be written as a simple `map` operation on a list of characters. Another alternative is to use list comprehension, which provides a more readable and concise way to perform the conversion.
-
-```Haskell
-lowercase' :: String -> String
-lowercase' str = [toLower ch | ch <- str]
+```haskell
+print (lowercase "HELLO HASKELL")
 ```
 
-Another important thing to note is that the `toLower` function only works on ASCII characters. For Unicode support, the `Data.Text` module provides a `toLower` function that works on any Unicode character.
+The output will be:
 
-## See Also:
-- [Haskell String Library](https://hackage.haskell.org/package/base/docs/Data-String.html)
-- [Haskell Unicode Support](https://www.haskell.org/tutorial/strings.html#unicode)
+```
+"hello haskell"
+```
+
+## Deep Dive
+
+The concept of lowercasing isn't unique to Haskell; it exists in almost every language. Early programming languages like FORTRAN and COBOL recognized the need to manipulate text data efficiently. 
+
+In Haskell, the simplicity of lowercasing a string lies in its functional programming paradigm. Each character in the string is an element in a list. Mapping the `toLower` function over the list modifies each character independent of others.
+
+There are other ways to convert a string to lowercase. For instance, using list comprehension:
+
+```haskell
+import Data.Char (toLower)
+
+lowercase :: String -> String
+lowercase str = [toLower c | c <- str]
+```
+
+But mapping a function is more idiomatic and a bit faster due to built-in optimizations in Haskell's compiler (GHC).
+
+## See Also
+
+Take a look at these sources for further learning:
+
+* [Haskell - Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+* [Learn you a Haskell for great good - A Fistful of Monads](http://learnyouahaskell.com/a-fistful-of-monads)
+* [Real world Haskell - Chapter on Text processing](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)

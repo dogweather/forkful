@@ -12,32 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Bei der Programmierung kann es sehr nützlich sein, zu überprüfen, ob ein Verzeichnis existiert. Dies kann zum Beispiel verwendet werden, um sicherzustellen, dass bestimmte Dateien in einem bestimmten Verzeichnis vorhanden sind, bevor sie weiterverarbeitet werden. Es ist auch hilfreich, um sicherzustellen, dass das Programm auf die benötigten Ressourcen zugreifen kann.
+Das Überprüfen, ob ein Verzeichnis existiert, ist im wesentlichen eine Methode, mit der ein Programm bestimmt, ob ein bestimmter Pfad in einem Dateisystem zu einem Verzeichnis führt oder nicht. Programmierer verwenden diese Methode, um sicherzustellen, dass sie nicht versuchen, Dateioperationen in einem nicht vorhandenen Verzeichnis durchzuführen, was zu Fehlern führen würde.
 
-## Wie geht's?
+## So geht's
 
-Fish Shell bietet eine einfache Möglichkeit, mit der "test" Befehl zu überprüfen, ob ein Verzeichnis existiert. Hier ist ein Beispiel:
+In der Fish Shell machen Sie das folgendermaßen:
 
-```
-test -d <Verzeichnisname>
-```
-
-Dieser Befehl gibt "wahr" zurück, wenn das Verzeichnis existiert und "falsch", wenn nicht. Man kann auch eine Bedingung hinzufügen, um zu überprüfen, ob das Verzeichnis tatsächlich lesbar ist:
-
-```
-test -d <Verzeichnisname> -a -r
+```Fish Shell
+if test -d /dein/pfad
+    echo 'Das Verzeichnis existiert!'
+else
+    echo 'Das Verzeichnis existiert nicht!'
+end
 ```
 
-Dieser Befehl gibt nur "wahr" zurück, wenn das Verzeichnis existiert und lesbar ist. Andernfalls wird "falsch" zurückgegeben.
+Ein Beispiel für die Ausgabe könnte sein:
 
-## Tiefes Eintauchen
+```Fish Shell
+Das Verzeichnis existiert!
+```
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Bestandteil der Dateiverwaltung und Sicherstellung der korrekten Programmabläufe. Es ist Teil der POSIX-Standards und wird von den meisten Shell-Kommandos unterstützt.
+Prüfen Sie es selbst. Ersetzen Sie "/dein/pfad" durch den Pfad, den Sie überprüfen möchten.
 
-Eine alternative Möglichkeit, um zu überprüfen, ob ein Verzeichnis existiert, ist die Verwendung des "stats" Befehls. Dieser Befehl liefert detaillierte Informationen über eine Datei oder ein Verzeichnis, einschließlich der Existenz über einen bestimmten Dateipfad.
+## Hintergrund
 
-Die Implementierung des "test" Befehls in Fish Shell basiert auf der "test" Funktion des POSIX-Standards. Es gibt auch verschiedene Funktionen, die in Shell-Skripten verwendet werden können, um das Überprüfen, ob ein Verzeichnis existiert, zu erleichtern.
+Historisch betrachtet stammt die Methode zur Überprüfung der Existenz eines Verzeichnisses von Unix- und Linux-Systemen. "test" ist ein Builtin-Befehl in unixoiden Betriebssystemen wie Linux, macOS und BSD.
 
-## Siehe auch
+Als Alternative könnten Sie auch den Builtin-Befehl `stat` verwenden. Allerdings ist der "test" -Befehl leichter zu nutzen und der Standard in den meisten Skripten.
 
-Weitere Informationen und Beispiele zur Verwendung des "test" Befehls in Fish Shell finden Sie in der offiziellen Dokumentation unter https://fishshell.com/docs/current/cmds/test.html. Für weitere Informationen zur Verwendung von "stats" können Sie die man-Page unter https://fishshell.com/docs/current/cmds/stat.html aufrufen.
+Die Implementierung dieser Methode in der Fish Shell überprüft einfach, ob das Betriebssystem den Pfad als ein Verzeichnis anerkennt. 
+
+## Siehe Auch
+
+Um mehr über die Fish Shell und ihre verschiedenen Funktionen zu erfahren:
+
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Unix test Befehl](https://man7.org/linux/man-pages/man1/test.1.html)
+- [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)

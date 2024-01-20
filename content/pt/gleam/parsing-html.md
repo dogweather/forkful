@@ -1,7 +1,7 @@
 ---
-title:                "Parsing HTML"
-html_title:           "Gleam: Parsing HTML"
-simple_title:         "Parsing HTML"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# O Que & Porquê?
 
-Fazer o parsing (análise) de HTML é essencial para manipular informações em páginas da web. Isso permite que os programadores extraiam dados específicos de uma página e os utilizem em seus aplicativos. Além disso, o parsing de HTML é necessário para fornecer uma experiência interativa ao usuário e realizar tarefas automatizadas em sites.
+O parsing de HTML é o processo de leitura e análise de um documento HTML para criar um modelo estruturado. Os programadores fazem isso para extrair dados, modificar conteúdo, ou até para fazer web scraping.
 
-## Como fazer:
+# Como Fazer:
 
-Para fazer o parsing de HTML no Gleam, você pode usar a biblioteca `html_parser`, que permite a extração de dados de uma página HTML de forma fácil e eficiente. Aqui está um exemplo de como utilizar essa biblioteca:
+Vamos usar o pacote Gleam `gleam/httpc` para buscar uma página HTTP e o `gleam/decode` para analisar o conteúdo.
 
+```Gleam
+import gleam/httpc
+import gleam/decode.{field, string}
+
+let response = httpc.get("http://example.com").await
+let body = response.body
+let tag = field("html", string)
+
+match(decode.body(body, tag)) {
+  Error(e) -> io.println(e)
+  Ok(tag_value) -> io.println(tag_value)
+}
 ```
-Gleam.import_html.parser
+Execute o código acima para ver o conteúdo da tag HTML.
 
-let html = "
-<html>
-  <body>
-    <h1>Olá, Gleam!</h1>
-    <p>Este é um exemplo de página HTML.</p>
-  </body>
-</html>
-"
+# Mergulho Profundo
 
-let doc = html_parser.parse(html)
+A análise de HTML chegou a ser um problema desafiador no passado, devido à falta de ferramentas adequadas, mas a situação melhorou muito.
 
-let header = html_parser.find_one(doc, "h1")
-let paragraph = html_parser.find_one(doc, "p")
+Existem alternativas ao uso do Gleam, tais como Beautiful Soup em Python, ou Cheerio em Node.js. No entanto, Gleam pode ser uma escolha sólida devido ao seu forte sistema de tipos e concorrência eficiente, entre outros benefícios.
 
-```
+Os detalhes de implementação específicos para análise de HTML no Gleam envolvem a utilização de combiners e funções de decodificação. Estes criam uma representação estruturada do conteúdo de HTML, que pode então ser manipulada conforme necessário.
 
-O código acima importa a biblioteca `html_parser`, define uma variável com o conteúdo HTML, faz o parsing desse conteúdo e utiliza a função `find_one` para extrair o conteúdo do `h1` e do `p` da página.
+# Veja Também
 
-## Explorando mais:
-
-Apesar de ser uma tarefa comum no desenvolvimento web, o parsing de HTML pode ser um desafio para muitos programadores. Além disso, existem alternativas ao uso de bibliotecas externas, como o uso de expressões regulares, por exemplo. No entanto, a biblioteca `html_parser` do Gleam oferece uma implementação simples e robusta para essa tarefa.
-
-## Veja também:
-
-[Repositório do html_parser no GitHub](https://github.com/gleam-lang/html_parser)
-
-[Tutorial sobre parsing de HTML em Gleam](https://gleam.run/news/html-parsing-tutorial/)
+- Documentação oficial do Gleam: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
+- Bibliotecas relevantes de Gleam: [https://hex.pm/packages?search=gleam](https://hex.pm/packages?search=gleam) 
+- Tutorial de Beautiful Soup para parsing de HTML em Python: [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- Tutorial de Cheerio para parsing de HTML em Node.js: [https://cheerio.js.org/](https://cheerio.js.org/)

@@ -1,6 +1,6 @@
 ---
 title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "C++: स्ट्रिंग्स को जोड़ना"
+html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
 simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "C++"
 category:             "C++"
@@ -10,35 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-बहुत सारे प्रोग्रामर पूरे दिन कंप्यूटर पर व्यवस्थित तरीके से काम करते हैं। वे अपने कोड को आसानी से समझने और संशोधित करने के लिए अलग अलग टेक्निक्स का उपयोग करते हैं। एक ऐसा तकनीक है कंकटनेटिंग स्ट्रिंग्स जिसके बारे में हम आज बात करेंगे और जानेंगे कि इसका प्रोग्रामिंग में क्या उपयोग होता है।
+## क्या और क्यों?
 
-## What & Why?
-कंकटनेटिंग स्ट्रिंग्स क्या होता है? कंकटनेटिंग स्ट्रिंग्स एक प्रोग्रामिंग तकनीक है जिसमें हम एक से ज्यादा स्ट्रिंग्स को आपस में जोड़ते हैं। यह प्रोग्रामिंग में उपयोग होता है क्योंकि इससे हम आसानी से एक से ज्यादा डेटा को एक साथ प्रबंधित कर सकते हैं।
+वचन संयोजन (string concatenation) से अभिप्रेत है कि हम दो या दो से अधिक वचनों (strings) को जोड़ते हैं। प्रोग्रामर इसे करते हैं ताकि वे डाटा को कस्टम फॉर्मैट में प्रस्तुत कर सकें।
 
-## How to:
+## कैसे:
+
+वचन संयोजन के लिए सीपीपी उदाहरण⇩:
+
 ```C++
-#include <iostream> 
-using namespace std;
-  
-int main() 
-{   
-    string sentence1 = "मेरा";
-    string sentence2 = "नाम";
-    string sentence3 = "हिन्दी में है।";    
-    string fullSentence = sentence1 + " " + sentence2 + " " + sentence3;
-    
-    cout << fullSentence << endl;
-    
-    return 0; 
-} 
+#include <iostream>
+#include <string>
 
-// Output: मेरा नाम हिन्दी में है।
+int main() {
+    std::string str1 = "नमस्ते ";
+    std::string str2 = "दुनिया!";
+    std::string finalStr = str1 + str2;
+
+    std::cout << finalStr;  // "नमस्ते दुनिया!"
+    return 0;
+}
+```
+आउटपुट:
+
+```C++
+नमस्ते दुनिया!
 ```
 
-## Deep Dive:
-कंकटनेटिंग स्ट्रिंग्स का इतिहास क्या है? इस तकनीक की शुरुआत से ही इसका उपयोग स्ट्रिंग्स को मेमोरी में आसानी से स्टोर करने के लिए किया जाता था। इसके अलावा, दूसरे तकनीक जैसे की एरे, स्ट्रक्चर्स और फंक्शन्स का भी इस्तेमाल किया जाता है। इसमें स्ट्रिंग्स को मेमोरी में संग्रहीत करने के लिए कुछ सुनिश्चित किए गए steps होते हैं जिससे प्रोग्राम का और efficient बनाया जा सकता है।
+## गहरी दुश्यांत:
 
-## See Also:
-- [C++ Strings: concat() vs '+' operator](https://www.geeksforgeeks.org/c-strings-concat-vs-operator/)
-- [String Concatenation in C++](https://www.programiz.com/cpp-programming/library-function/cplusplus-string-concat)
-- [Why is string::append faster than operator+?](https://stackoverflow.com/questions/12540381/why-is-stringappend-faster-than-operator)
+1. ऐतिहासिक दृष्टिकोण: C भाषा के अग्रणी बनने से पहले, वचन संयोजन केवल अल्पविराम ऑपरेटर ('+'), जैसा कि FORTRAN में देखने को मिलता था, का इस्तेमाल करके किया जा सकता था।   
+2. विकल्प: C++ ने वचनों के संयोजन के लिए अधिक प्रवद्ध और घटिया 'वचन केन्द्रित' पद्धतियों की पेशकश की है, जैसे कि '+=' ऑपरेटर।  
+3. कार्यान्वयन विवरण: C++ में, वचन संयोजन जब हम '+' ऑपरेटर का इस्तेमाल करते हैं, तो वचन संयोजन वास्तव में एक नये अनुकरण का निर्माण करता है जिसमें दोनों वचनों की प्रतिलिपि होती है।  
+
+## इसके अलावा देखें:
+
+- सीपीपी रेफरेंस (वचन संयोजन):
+https://en.cppreference.com/w/cpp/string/basic_string/operator%2B
+- वचन संयोजन के उचित तरीकों का परिचय: 
+https://stackoverflow.com/questions/18892281/most-idiomatic-way-to-concatenate-strings-in-c/18892333

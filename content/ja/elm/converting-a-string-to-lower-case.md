@@ -1,7 +1,7 @@
 ---
-title:                "「文字列を小文字に変換する」"
-html_title:           "Elm: 「文字列を小文字に変換する」"
-simple_title:         "「文字列を小文字に変換する」"
+title:                "文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をし、なぜ?
+## 何となぜ？
 
-文字列を小文字に変換することは、プログラマーにとって非常に重要なタスクです。これを行う主な理由は、データの整合性を保つためです。例えば、ユーザーから入力された文字列が大文字であった場合でも、データベースに保存される前に小文字に変換することで、同じ文字列であってもデータベース内の検索がスムーズに行われるようになります。
+文字列を小文字に変換するとは、文字列内の全ての大文字を対応する小文字に置換することです。これは、プログラマーが文字列マッチングや検索などを大文字と小文字を区別せずに行うために行います。
 
-## 方法:
+## やり方：
 
-Elmでは、文字列を小文字に変換するために `String.toLower` 関数を使用します。以下の例をご覧ください。
+Elmでは、`String.toLower`関数を用いて文字列を小文字に変換します。例えば：
 
 ```Elm
-import String exposing (toLower)
+import Html exposing (text)
+import String 
 
-name = "ELM PROGRAMMING"
-lowercaseName = toLower name
-
--- output: "elm programming"
+main =
+ text (String.toLower "Elm IS AWESOME!")
 ```
 
-## さらに詳しく:
+出力結果：
+```
+"elm is awesome!"
+```
 
-### 歴史的背景:
+## ディープダイブ
 
-文字列を小文字に変換するというアイディアは、古くから存在していました。プログラム言語やデータベースの中で、文字列を比較する際に大文字と小文字を区別しないという考え方は、効率的なデータ処理の重要な要素となっています。
+`String.toLower`の背後にあるのはUnicodeの原則で、大文字と小文字のマッピングを管理します。伝統的に、この機能は大文字小文字を区別しない文字列の比較や検索を実現するために利用されてきました。
 
-### 代替手段:
+また、この操作の代替手段としては、個々の文字を手動で小文字に変換することが可能ですが、これは複雑さが増し、エラーを生む可能性があります。
 
-Elmでは `String.toLower` 関数以外にも、文字列を小文字に変換するための様々なツールがあります。例えば、正規表現やパターンマッチングを使用する方法もあります。
+この機能の実装内容としては、実際のところ、ElmはブラウザのJavaScriptエンジンの機能を使用しているため、詳細はブラウザの実装に依存します。
 
-### 実装の詳細:
+## その他の参考情報：
 
-Elmで `String.toLower` 関数を使用する際、内部的にはUTF-8コードポイントに基づいて文字列を変換しています。このため、言語や文字系によらず正確な変換が行われることが保証されています。
+以下に関連するリンクを提供します。
 
-## 関連情報:
-
-- [Elm Documentation: Strings](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
-- [Elm Guide: Strings](https://guide.elm-lang.org/strings/)
+ - [Elmの文字列操作](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
+ - [文字列とUnicode](https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/)
+ - [JavaScriptの toLowerCase メソッド](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

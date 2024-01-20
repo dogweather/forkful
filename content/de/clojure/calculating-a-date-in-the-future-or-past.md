@@ -1,7 +1,7 @@
 ---
-title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
-html_title:           "Clojure: Berechnung eines Datums in der Zukunft oder Vergangenheit"
-simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+title:                "Berechnung eines zukünftigen oder vergangenen Datums"
+html_title:           "Clojure: Berechnung eines zukünftigen oder vergangenen Datums"
+simple_title:         "Berechnung eines zukünftigen oder vergangenen Datums"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,21 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Berechnung von Datum in Clojure
+
 ## Was & Warum?
-Die Berechnung eines Datums in der Vergangenheit oder Zukunft bezieht sich auf die Bestimmung eines Datums, das eine bestimmte Anzahl von Tagen, Monaten oder Jahren vor oder nach einem angegebenen Datum liegt. Programmierer nutzen dies häufig, um beispielsweise Fristen oder Ereignisse zu berechnen.
+Berechnungen von Daten in der Zukunft oder Vergangenheit helfen dabei, Ereignisse zeitlich zu ordnen oder zu planen. Als Programmierer tun wir das, um Zeitabläufe zu koordinieren, Zeitraum-gesteuerte Analysen durchzuführen oder um Benachrichtigungen zu planen.
 
-## So geht's:
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit ist in Clojure einfach dank der Funktion `clj-time`, die Teil der Bibliothek `clj-time-lite` ist. Hier ist ein Beispiel, um das Datum von heute plus 30 Tagen zu berechnen:
+## Wie macht man das:
+Mit der Clojure Bibliothek `clj-time`, lässt sich das ganz einfach realisieren. Im Folgenden finden Sie Codebeispiele:
+
 ```Clojure
-(require '[clj-time.core :as time])
-(time/plus (time/today) 30 :days)
+(ns my-namespace
+  (:require [clj-time.core :as t]
+            [clj-time.format :as f]
+            [clj-time.coerce :as c]))
+
+(defn add-days [date-str days]
+  (let [fmt (f/formatters :date-time-no-ms)
+        date-time (c/from-string date-str)]
+    (-> date-time
+        (t/plus (t/days days))
+        (f/unparse fmt))))
+
+(println (add-days "2022-02-01T00:00:00Z" 7))
 ```
-Das Ausgabeformat ist ein `DateTime` Objekt, das durch das `clj-time` Modul bereitgestellt wird.
+Die Ausgabe des Beispiels wäre: `2022-02-08T00:00:00Z`
 
-## Tiefer Einblick:
-Das Berechnen von Datumsangaben ist ein wichtiger Bestandteil in der Programmierung, insbesondere im Zusammenhang mit Datum und Zeit. Es gibt auch andere Möglichkeiten, um das Datum in der Zukunft oder Vergangenheit zu berechnen, wie z.B. die Verwendung von Java's `java.util.Calendar` Klasse. Jedoch ist die Verwendung von `clj-time` in Clojure eine effizientere und einfachere Methode. Die `clj-time-lite` Bibliothek bietet auch weitere nützliche Funktionen und Arten, um mit Datum und Zeit umzugehen.
+## Deep Dive
+Berechnungen für zukünftige oder vergangene Daten wurden lange vor Computern benötigt, alternativ wurden sie mit komplizierten Algorithmen durchgeführt. Mit der Erfindung von Computern und Programmiersprachen wie Clojure ist dies leichter geworden. Einige fassen diese Aufgabe mit Java's `LocalDate` oder `DateTime` an, andere verwenden `java.util.Date`, `java.util.Calendar` oder Jodatime. Die Bibliothek `clj-time` verwendet Jodatime und bietet eine funktionale und umgangssprachliche Syntax für die Arbeit mit Daten und Zeiten.
 
-## Siehe auch:
-- [Dokumentation für `clj-time`](https://github.com/clj-time/clj-time)
-- [Offizielle Clojure Webseite](https://clojure.org/)
-- [Andere nützliche Clojure Bibliotheken](https://github.com/razum2um/awesome-clojure)
+## Siehe auch
+- Clojure [official documentation](https://clojure.org/api/api)
+- [clj-time's Github page](https://github.com/clj-time/clj-time)
+- [Java 8 Date & Time API tutorial](http://www.baeldung.com/java-8-date-time-intro)

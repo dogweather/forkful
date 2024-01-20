@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Lua: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que e por que?
+## O que e por quê?
 
-Ler argumentos da linha de comando em Lua significa obter informações inseridas através do terminal ao executar um programa. Isso é importante para programadores, pois permite que eles capturem e utilizem dados do usuário no seu código.
+Lendo argumentos da linha de comando em Lua é uma forma de passar informações adicionais para um programa quando ele é iniciado. É muito útil para alterar o comportamento do programa sem ter que mudar o código.
 
-# Como fazer:
+## Como fazer:
 
-```lua
--- O argumento a seguir é inserido após o nome do arquivo Lua no terminal
-local argumento = arg[1] 
-print("Seu argumento foi: " .. argumento)
+Aqui está um exemplo de como ler argumentos da linha de comando em Lua. Se você executar isso com `lua script.lua arg1 arg2`, verá dois argumentos sendo impressos.
+
+```Lua
+-- script.lua
+for i, arg in ipairs(arg) do
+    print("arg[" .. i .. "]: " .. arg)
+end
 ```
 
-**Exemplo de saída:**
+Isso imprimirá:
+
 ```
-Seu argumento foi: argumento_inserido_pelo_usuario
+arg[0]: script.lua
+arg[1]: arg1
+arg[2]: arg2
 ```
 
-# Profundidade:
+## Mergulho profundo
 
-- Contexto histórico:
-Ler argumentos da linha de comando é uma técnica que existe desde os primeiros sistemas operacionais de linha de comando. Foi originalmente desenvolvido para permitir que os usuários personalizassem a execução de programas com diferentes configurações e opções.
+Historicamente, a leitura de argumentos da linha de comando é um recurso fornecido por muitos sistemas operacionais. Isso permite que os programas sejam mais versáteis em seus usos, com comportamento personalizável de fora.
 
-- Alternativas:
-Uma alternativa para ler argumentos da linha de comando em Lua é usando a biblioteca `argparse`, que oferece uma maneira mais sofisticada de gerenciar e analisar argumentos de linha de comando.
+Lua implementa isso através da tabela global `arg`. Esta tabela contém todos os argumentos passados, com índices de 0 até `#arg`. O índice 0 é sempre o nome do script e os índices positivos são os argumentos passados. Índices negativos contém os argumentos que precedem o nome do script.
 
-- Detalhes de implementação:
-Ao executar um programa Lua, os argumentos da linha de comando são armazenados em uma tabela chamada `arg` e podem ser acessados ​​utilizando índices numéricos. O primeiro argumento é armazenado no índice 1, o segundo no índice 2, e assim por diante.
+Uma alternativa à maneira que Lua lê argumentos da linha de comando pode ser encontrada em bibliotecas como `lapp`, que oferece uma interface mais amigável para definir e ler argumentos.
 
-# Veja também:
+## Veja também
 
-- [Documentação oficial do Lua sobre os argumentos da linha de comando](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [Biblioteca `argparse` para análise de argumentos de linha de comando em Lua](https://github.com/mpeterv/argparse)
+- [Refêrencia oficial Lua 5.4](https://www.lua.org/manual/5.4/manual.html#6.1)
+- [Biblioteca lapp para Lua](https://github.com/stevedonovan/Lapp)

@@ -1,7 +1,7 @@
 ---
-title:                "用基本身份验证发送http请求"
-html_title:           "Python: 用基本身份验证发送http请求"
-simple_title:         "用基本身份验证发送http请求"
+title:                "使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
+simple_title:         "使用基本认证发送http请求"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-
-使用基本认证发送HTTP请求是指在发送HTTP请求时提供用户名和密码以确保安全性。程序员这样做的原因是为了在与服务器通信时保护敏感数据。
+## 什么和为什么？
+发送带Basic认证的HTTP请求是指用用户名和密码进行身份验证然后发送HTTP请求。程序员通过它来确保数据安全性，防止未经授权的访问。
 
 ## 如何：
+在Python中，我们可以使用内置库`requests`进行HTTP请求和身份验证。以下是代码示例和输出：
 
-下面是使用Python发送带有基本认证的HTTP请求的示例代码：
-
-```
+```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-url = 'https://example.com/api'
-username = 'username'
-password = 'password'
-
-response = requests.get(url, auth=(username, password))
-print(response.text)
+response = requests.get('https://api.github.com/user', auth=HTTPBasicAuth('user', 'pass'))
+print(response.status_code)
 ```
 
-输出如下：
+程序输出将是`200`，意味着请求已成功接收并理解。
 
-```
-{"message": "Success"}
-```
+## 深入探讨
+**历史背景**：HTTP Basic 认证是一种用于HTTP协议的简单身份认证技术。这种技术最早于1999年在RFC 2617文档中描述。
 
-## 深入探讨：
+**替代方案**：虽然Basic认证简单易用，但并不一定安全，因为它将用户名和密码编码为Base64，易被破解。现在更安全的替代方案是使用OAuth，JWT或Bearer tokens进行身份验证。
 
-历史背景：基本认证是HTTP协议早期版本中的一种身份验证方式，在互联网发展初期使用较为广泛。
+**实现细节**：在发送带有Basic身份验证的HTTP请求时，客户端将用户名和密码组合成一个字符串，然后用Base64对其进行编码，并将它放入HTTP header的`Authorization`字段。
 
-替代方案：除了基本认证，还有其他更安全的身份验证方式，如摘要认证和OAuth。
-
-实现细节：使用Python的requests库可以方便地在HTTP请求中添加基本认证信息，提高程序的安全性和可靠性。
-
-## 参考链接：
-
-1. [Requests官方文档](https://docs.python-requests.org)
-2. [HTTP 认证方法简介](https://www.ruanyifeng.com/blog/2011/11/http_authentication.html)
-3. [网络安全：基本认证、摘要认证与SSL](https://www.cnblogs.com/vamei/archive/2012/06/03/2532182.html)
+## 另请参阅
+1. Python `requests`库文档：http://docs.python-requests.org/
+2. Python 所有 HTTP 请求类型： http://tools.ietf.org/html/rfc2616
+3. HTTP Basic 认证详情：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Authorization

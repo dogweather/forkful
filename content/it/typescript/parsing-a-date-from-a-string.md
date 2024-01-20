@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di una data da una stringa"
-html_title:           "TypeScript: Analisi di una data da una stringa"
-simple_title:         "Analisi di una data da una stringa"
+title:                "Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
+simple_title:         "Analizzare una data da una stringa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,30 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
-Il parsing di una data da una stringa è il processo di conversione di una data espressa come stringa in un formato di data comprensibile per il computer. I programmatori lo fanno perché spesso devono manipolare e calcolare con le date all'interno del loro codice.
 
-## Come fare:
-Ecco un esempio di come effettuare il parsing di una data da una stringa in TypeScript:
+La trasformazione di una data da stringa, o parsing, consiste nel leggere un testo (stringa) che rappresenta una data e convertirlo nel formato data utilizzato dai linguaggi di programmazione. I programmatori spesso hanno bisogno di eseguirla quando manipolano dati temporali trasmessi attraverso API, database, o letti tramite input dell'utente.
+
+## Come si fa:
+
+Ecco un esempio di come parsare una data utilizzando TypeScript:
 
 ```TypeScript
-const stringData = '11/09/2021';
-const parsedDate = new Date(stringData);
-console.log(parsedDate);
+let dataStringa = "2021-07-06";
+let data = new Date(dataStringa);
+console.log(data);
 ```
-Output:
+
+Questo codice interpreterà la stringa come una data nel formato ISO 8601 e la stampa avrà il seguente output:
+
 ```TypeScript
-2021-11-09T00:00:00.000Z
+Tue Jul 06 2021 02:00:00 GMT+0200 (Ora legale dell’Europa centrale)
 ```
 
-Il codice usa la classe Date di TypeScript per creare un nuovo oggetto data a partire dalla stringa fornita. In questo caso, il risultato è una data nel formato ISO 8601. È possibile ottenere una data in un formato diverso utilizzando i metodi della classe Date, come ad esempio `toDateString()` o `toISOString()`.
+## Approfondimento
 
-## Approfondimento:
-Il parsing di una data da una stringa può essere un'operazione complessa a causa della varietà di formati di data utilizzati in tutto il mondo. In passato, i programmatori dovevano scrivere il proprio codice per gestire queste differenze, ma ora la maggior parte dei linguaggi di programmazione, compreso TypeScript, fornisce strumenti per facilitare questo processo.
+(1) In termine di contesto storico, il parsing della data è una necessità di lunga data nelle applicazioni software. Molte applicazioni necessitano di convertire stringhe di testo in oggetti data per poter effettuare operazioni come la comparazione, il calcolo della durata, e l'ordinamento.
 
-Un'alternativa al parsing di una data da una stringa è l'utilizzo di librerie di terze parti come Moment.js, che semplificano la gestione delle date e dei loro formati. Tuttavia, queste librerie possono aggiungere un sovraccarico al codice e alcune di esse sono state dichiarate obsolete poiché le funzionalità sono ora supportate direttamente dai linguaggi di programmazione.
+(2) Esiste un'ampia varietà di metodi alternativi che possono essere usati per parsare date in TypeScript (e JavaScript), come `Date.parse()` o usando librerie come Moment.js.
 
-Per quanto riguarda l'implementazione di TypeScript, la classe Date utilizza una matrice di traduzione interna per gestire i diversi formati di input delle date. Inoltre, TypeScript supporta anche l'utilizzo della libreria standard di JavaScript, chiamata moment.js, che offre diverse funzionalità avanzate per la manipolazione delle date.
+(3) A livello di implementazione, `new Date(string)` in TypeScript fa affidamento sul metodo `Date.parse()`, il quale da il parsing della stringa fornita asseconda le regole della specifica ECMAScript.
 
-## Vedi anche:
-- [Documentazione ufficiale di TypeScript sulla classe Date](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-7.html#more-accurate-constructors-for-date)
-- [Moment.js](https://momentjs.com/)
+## Guarda anche
+
+Per ulteriori dettagli, consultare le seguenti risorse:
+
+1. [Documentazione ufficiale ECMAScript](https://tc39.es/ecma262/#sec-date.parse)
+2. [Libreria Moment.js](https://momentjs.com/)
+3. [Formato data ISO 8601 - Wikipedia](https://it.wikipedia.org/wiki/ISO_8601).

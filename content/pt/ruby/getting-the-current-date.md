@@ -1,6 +1,6 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "Ruby: Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+## O Que & Porquê?
 
-Obter a data atual é uma tarefa comum em programação que envolve a obtenção da data atual do sistema em que o programa está sendo executado. Isso pode ser útil para registrar informações de data e hora em arquivos, manter registros de atualizações ou agendar certas tarefas no código.
+Obter a data atual significa acessar e utilizar a data de hoje de acordo com o sistema operacional do seu computador. É uma tarefa comum em programação para marcar eventos, gerar registros de atividades ou mesmo controlar processos que exigem informação temporal.
 
-## Como fazer:
+## Como Fazer:
 
-Para obter a data atual em Ruby, podemos usar o método `Time.now`, que retorna um objeto Time representando a data e hora atual. Podemos então formatar o objeto para exibir a data em diferentes formatos usando o método `strftime` e passando um argumento de formatação. Por exemplo:
+A maneira mais simples de obter a data atual em Ruby é utilizando o método `Date.today` da biblioteca padrão de Ruby (stdlib) "date". Aqui está um exemplo:
 
-```
-Ruby Time.now.strftime("%d/%m/%Y")
-# saída: 05/10/2021
-```
+```Ruby
+require 'date'
 
-Podemos também usar o método `Date.today` para obter a data atual em formato de objeto Date. Isso pode ser útil ao lidar com cálculos e comparações de datas. Por exemplo:
+hoje = Date.today
 
-```
-Ruby Date.today.month
-# saída: 10
+puts "A data de hoje é #{hoje}"
 ```
 
-## Mergulho profundo:
+Ao executar o código acima, você verá uma saída semelhante à seguinte:
 
-Obter a data atual é uma tarefa que tem sido feita pelos programadores há muito tempo. No entanto, antes do advento das linguagens de programação modernas, muitas vezes era necessário escrever código específico para cada sistema operacional ou máquina. Hoje em dia, a maioria das linguagens de programação tem métodos incorporados para facilitar essa tarefa.
+```Ruby
+A data de hoje é 2021-12-29
+```
 
-Além dos métodos `Time.now` e `Date.today`, também há outras maneiras de obter a data atual em Ruby. Por exemplo, podemos usar a classe `DateTime`, que oferece mais opções de formatação e manipulação de datas. Além disso, podemos usar a biblioteca `Date.parse` para converter uma string em um objeto Date e, em seguida, formatá-lo usando o método `strftime`.
+## Mergulhando Mais Fundo: 
 
-## Veja também:
+Historicamente, Ruby sempre simplificou o trabalho com datas e horas. Assim, se você está utilizando uma versão mais antiga de Ruby, `Time.now.to_date` fará o mesmo que `Date.today`.
 
-- [Documentação oficial do Ruby sobre a classe Time](https://ruby-doc.org/core-3.0.2/Time.html)
-- [Documentação oficial do Ruby sobre a classe Date](https://ruby-doc.org/stdlib-3.0.2/libdoc/date/rdoc/Date.html)
-- [Tutorial sobre manipulação de datas em Ruby](https://www.rubyguides.com/2015/05/ruby-date-time-and-datetime/)
-- [Mais informações sobre formatos de data em Ruby](https://apidock.com/ruby/DateTime/strftime)
+Existem algumas alternativas dependendo dos detalhos de implementação que você precisa. Se você deseja a data e a hora exatas agora, use `DateTime.now` ou `Time.now`. 
+
+Observe que os objetos de tempo em Ruby são diferentes dos objetos de data -- eles incluem informações sobre a hora, minutos e segundos, além de fuso horário.
+
+## Veja Também:
+
+- [Documentação oficial Ruby para a classe Date](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
+- [Documentação oficial Ruby para a classe Time](https://ruby-doc.org/stdlib-2.5.1/libdoc/time/rdoc/Time.html)
+- [Um ótimo post no Stack Overflow comparando Date, Time e DateTime em Ruby](https://stackoverflow.com/questions/5941612/what-is-the-difference-between-date-time-and-datetime-in-ruby)

@@ -1,6 +1,6 @@
 ---
 title:                "下载网页"
-html_title:           "Go: 下载网页"
+html_title:           "Arduino: 下载网页"
 simple_title:         "下载网页"
 programming_language: "Go"
 category:             "Go"
@@ -10,46 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-下载网页是指从互联网上获取一个网页文件的过程。程序员们通常会通过下载网页来获取需要的信息，或者用于网页解析和数据提取等操作。
+## 什么 & 为什么?
 
-下载网页的过程可以通过使用Go语言的内置包```net/http```来实现。该包中包含了可以发送HTTP请求并获取响应的函数，非常方便快捷。
+网页下载是获取网站 HTML 源代码的过程，通常会用于数据处理或内容生成. 程序员这么做是为了利用该网页的信息，或者备份网页内容等等。
 
 ## 如何做：
+
 ```Go
-// 导入net/http包
-import "net/http"
+package main
 
-// 使用http.Get函数发送HTTP请求
-response, err := http.Get("https://example.com")
+import (
+	"fmt"
+	"io/ioutil"
+	"net/http"
+)
 
-// 检查是否出错
-if err != nil {
-    // 处理错误
+func main() {
+	response, err := http.Get("https://example.com")
+	if err != nil {
+		panic(err)
+	}
+	defer response.Body.Close()
+
+	bytes, err := ioutil.ReadAll(response.Body)
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println("HTML:\n\n", string(bytes))
 }
-
-// 在函数结束时关闭响应体
-defer response.Body.Close()
-
-// 读取响应体内容
-body, err := ioutil.ReadAll(response.Body)
-
-// 检查是否出错
-if err != nil {
-    // 处理错误
-}
-
-// 输出网页内容
-fmt.Println(string(body))
 ```
 
-以上代码示例使用```http.Get()```函数发送了一个HTTP请求，并通过```ioutil.ReadAll()```函数读取响应体的内容。最后使用```fmt.Println()```函数打印出网页内容。
+运行上面的代码，你会看到： ```HTML:\n\n``` 后面跟着你请求网页的用户可读形式的 HTML。
 
-## 深入探讨：
-下载网页在互联网的发展历史中扮演着重要的角色。在过去，程序员们需要手动下载网页并进行解析，非常繁琐，但随着技术的发展，现在可以通过编程自动完成这一过程。
+## 深入研究
 
-除了使用Go语言的内置包，也可以使用第三方库如```GoQuery```来简化网页解析的过程。
+网页下载基于 HTTP 或 HTTPS 协议，并且已经使用多年。在下载之前，你可以通过一些特定的 HTTP 头部来定制你的请求，例如 "User-Agent"，"Accept-Language" 等。不同的网络库或工具，如 cURL，Wget，或 Python 的 requests 库提供了下载网页的功能。然而，直接在 Go 语言中使用 `net/http` 包是很直接的。
 
-## 参考资料：
-- [Go官方文档](https://golang.org/pkg/net/http/)
-- [GoQuery文档](https://godoc.org/github.com/PuerkitoBio/goquery)
+## 更多参考
+
+我推荐以下链接给你，以便你可以更深入地理解和掌握这个话题：
+
+Go 网络编程教程：https://books.studygolang.com/gopl-zh/
+Go 语言 net/http 包文件手册：https://pkg.go.dev/net/http
+处理 HTTP 请求的 Go 语言实践：https://www.alexedwards.net/blog/a-recap-of-request-handling

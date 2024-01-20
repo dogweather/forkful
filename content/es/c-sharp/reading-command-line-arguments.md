@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comando"
-html_title:           "C#: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,57 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
+## ¿Qué y Por qué? 
+Leer los argumentos de la línea de comandos implica acceder a la información que se pasa a un programa cuando se ejecuta. Los programadores lo hacen para proporcionar parámetros adicionales sin tener que modificar el código.
 
-Leer argumentos de línea de comandos es una técnica que permite a los programadores recibir información desde la línea de comandos al ejecutar un programa. Esto es útil para ajustar el comportamiento de un programa o proporcionar datos de entrada.
+## Cómo hacerlo: 
 
-# Cómo:
-
-Para leer argumentos de línea de comandos en C#, primero debes incluir el espacio de nombres ``` System ```, y luego utilizar la clase ``` Environment ``` y su propiedad ``` GetCommandLineArgs ```. Esta propiedad devuelve un arreglo de cadenas que contiene todos los argumentos ingresados en la línea de comandos al ejecutar el programa.
-
-Veamos un ejemplo:
-
-``` c#
-using System;
-
-namespace CommandLineArguments
+```C#
+class Program
 {
-    class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
+        // Si se proporcionan argumentos, se imprimen en la consola
+        if (args.Length > 0)
         {
-            // Obtener los argumentos de línea de comandos
-            string[] arguments = Environment.GetCommandLineArgs();
-
-            // Mostrar cada argumento en una línea separada
-            Console.WriteLine("Argumentos de línea de comandos:");
-
-            foreach (string argument in arguments)
+            Console.WriteLine("Los argumentos de la línea de comandos son:");
+            foreach (string arg in args)
             {
-                Console.WriteLine(argument);
+                Console.WriteLine(arg);
             }
+        }
+        else
+        {
+            Console.WriteLine("No se proporcionaron argumentos de línea de comandos.");
         }
     }
 }
 ```
 
-Si compilamos y ejecutamos el programa con los argumentos ``` primero segundo tercer ```, el resultado será el siguiente:
+Salida de muestra:
 
+```bash
+> dotnet run arg1 arg2 arg3
+Los argumentos de la línea de comandos son:
+arg1
+arg2
+arg3
 ```
-Argumentos de línea de comandos:
-CommandLineArguments.exe
-primero
-segundo
-tercer
-```
 
-# Profundizando:
+## Inmersión profunda 
 
-Esta técnica ha existido desde los primeros días de la informática, cuando los programas eran ejecutados a través de una línea de comandos. Sin embargo, aunque sigue siendo una práctica común, hoy en día existen alternativas más avanzadas, como interfaces gráficas de usuario o configuración de archivos de texto.
+1. Contexto histórico: El uso de argumentos de línea de comandos es una práctica que se remonta a los días en que se interactuaba principalmente con las computadoras a través de interfaces de línea de comandos.
+2. Alternativas: Si los argumentos de la línea de comandos no se ajustan a tus necesidades, las entradas del usuario, la lectura de archivos, las variables de entorno o intercambiar información a través de una base de datos, también son opciones viables.
+3. Detalles de implementación: los argumentos de la línea de comandos en C# se representan como una matriz de strings. La plataforma .NET las pasa al método `Main` cuando se inicia una aplicación.
 
-Para implementar la lectura de argumentos de línea de comandos en un proyecto de C#, se pueden utilizar librerías especializadas que ofrecen funciones adicionales, como manejo de errores o validación de los argumentos ingresados.
+## Ver también 
 
-# Ver también:
-
-- Documentación oficial de Microsoft sobre argumentos de línea de comandos en C#: https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs
-- Ejemplos de código más avanzados de lectura de argumentos de línea de comandos en C#: https://www.c-sharpcorner.com/article/using-command-line-arguments-in-C-Sharp/
+1. Documentación oficial de Microsoft sobre cómo usar args [] en Main: https://docs.microsoft.com/es-es/dotnet/csharp/programming-guide/main-and-command-args/
+2. Publicación del blog sobre el uso de argumentos de la línea de comandos en C#: https://www.c-sharpcorner.com/article/command-line-arguments-in-c-sharp/

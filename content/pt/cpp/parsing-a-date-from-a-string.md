@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo uma data de uma string."
-html_title:           "C++: Extraindo uma data de uma string."
-simple_title:         "Extraindo uma data de uma string."
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,57 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e Por Que?
+# Análise e Conversão de Datas em Strings no C++: O Que, Por Que e Como?
 
-A análise de uma data a partir de uma string é o processo de extrair informações de uma string que representa uma data e transformá-la em um formato que possa ser facilmente manipulado pelo programa. Isso é útil para realizar cálculos ou comparações de datas em programas, como em um aplicativo de calendário ou para verificar se uma data é válida. 
+## O Quê e Por Quê?
+A análise de datas a partir de strings envolve reconhecer e converter valores de data e hora em um formato de texto. Programadores fazem isso para manusear e manipular dados de data e hora de maneira mais fácil e eficiente.
 
-## Como fazer:
-
-Veja abaixo um exemplo de como realizar a análise de uma data a partir de uma string em C++:
+## Como Fazer:
+Aqui está um exemplo simples usando a biblioteca Chrono do C++:
 
 ```C++
 #include <iostream>
-#include <chrono> // biblioteca para lidar com datas e tempo
-#include <ctime>
-#include <string>
-
-using namespace std;
+#include <sstream>
+#include <iomanip>
+#include <chrono>
 
 int main() {
-    // uma string representando uma data
-    string data = "10/02/2020";
+    std::istringstream ss("2021-09-23 15:45:10");
+    std::chrono::system_clock::time_point tp;
+    ss >> std::get_time(&tp, "%Y-%m-%d %H:%M:%S");
 
-    // variáveis para armazenar os valores da data
-    int dia, mes, ano;
-
-    // utilizando a função sscanf para extrair os valores da string
-    sscanf(data.c_str(), "%d/%d/%d", &dia, &mes, &ano);
-
-    // imprimindo os valores extraídos
-    cout << "Dia: " << dia << endl;
-    cout << "Mês: " << mes << endl;
-    cout << "Ano: " << ano << endl;
+    if (ss.fail()){
+        std::cout << "Erro na análise da string." << std::endl;
+    } else {
+        std::cout << "Análise bem-sucedida." << std::endl;
+    }
 
     return 0;
 }
 ```
 
-Saída:
+A saída será: `Análise bem-sucedida.`
 
-```
-Dia: 10
-Mês: 02
-Ano: 2020
-```
+## Aprofundando
 
-## Aprofundamento:
+Historicamente, a análise de datas a partir de strings tem sido uma operação comum na programação. Ela é frequentemente usada quando se lida com bancos de dados, arquivos de log, e os dados recebidos de diferentes APIs, entre outros.
 
-A análise de uma data a partir de uma string é um processo importante na programação para lidar com informações de data e tempo. Antes do padrão de data ISO 8601 ser adotado, os formatos de data e hora variavam de acordo com o país e o sistema operacional, o que tornava necessário ter ferramentas para analisar esses diferentes formatos. Atualmente, existem bibliotecas e funções disponíveis para facilitar esse processo, como a função ```sscanf``` do C++ ou a biblioteca ```datetime``` do Python.
+Existem alternativas às bibliotecas built-in do C++, tais como a biblioteca de data e hora do Boost. No entanto, a biblioteca Chrono do C++ moderno apresenta funcionalidades avançadas e é mais user-friendly, evitando a necessidade de recursos de terceiros na maioria dos casos.
 
-Além disso, a análise de uma data a partir de uma string pode ser considerada um exemplo da utilização de expressões regulares em programação. As expressões regulares são padrões de texto utilizados para buscar e manipular strings, sendo muito úteis para extrair informações de uma string no formato de data.
+Em relação aos detalhes de implementação, a análise de uma data a partir de uma string no C++ occur através da leitura da string que representa a data e hora, e então emprega a função `get_time` para converter essa string em um formato de data e hora que o programa possa manipular.
 
-## Veja Também:
+## Veja Também
 
-- [Documentação da Função ```sscanf``` do C++](https://www.cplusplus.com/reference/cstdio/sscanf/)
-- [Documentação da Biblioteca ```datetime``` do Python](https://docs.python.org/3/library/datetime.html)
-- [Tutorial sobre Expressões Regulares em C++](https://www.geeksforgeeks.org/regular-expressions-in-c-with-examples/)
+Para continuar aprendendo sobre este tópico, confira estes links úteis:
+1. Documentação Oficial da Biblioteca Chrono do C++ (https://en.cppreference.com/w/cpp/chrono)
+2. Documentação da Biblioteca Boost Date_Time (https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+3. Tutorial de Como Trabalhar com Datas e Horas no C++ (https://www.geekhideout.com/urlcode.shtml)
+4. Funções de Data e Hora no C++ (https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)

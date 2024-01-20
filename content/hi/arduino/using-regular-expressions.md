@@ -1,7 +1,7 @@
 ---
-title:                "रेगुलर एक्सप्रेशन्स का प्रयोग"
-html_title:           "Arduino: रेगुलर एक्सप्रेशन्स का प्रयोग"
-simple_title:         "रेगुलर एक्सप्रेशन्स का प्रयोग"
+title:                "नियमित अभिव्यक्तियों का उपयोग करना"
+html_title:           "Arduino: नियमित अभिव्यक्तियों का उपयोग करना"
+simple_title:         "नियमित अभिव्यक्तियों का उपयोग करना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,56 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## आप क्या कर सकते हैं और क्यों?
-आप ऋण्मुखी अभिव्यक्ति का उपयोग तो करते ही होंगे, लेकिन क्या आप इसके बारे में सुने हैं? इसका उपयोग यूजरस के द्वारा इनपुट के साथ कुछ विशेषता को मिलाने के लिए और एक प्रोग्रामर की जाँच करने के लिए प्रोग्रामर्स द्वारा किया जाता है।
+## क्या और क्यों ("What & Why?")
 
-## कैसे करें:
-आप अपने आर्डुईनो स्केच में एक सरल विषयमात्र लिंखी होगी, जो उसके लिए इस विशेषता का उपयोग करेगी। [Serial Monitor](https://www.arduino.cc/reference/en/language/functions/communication/serial/) के माध्यम से इसे उपयोग लौटा सकता हैं।
+रेगुलर एक्सप्रेशन्स यानि सामान्य अभिव्यक्तियाँ, विभिन्न पैटर्न्स की पहचान करने का तरीका होती हैं। प्रोग्रामर इसका उपयोग तेजी से और सरल ढंग से डाटा में पैटर्न्स ढूंढने, संशोधित करने और बदलने के लिए करते हैं। 
 
-API: गुणवत्ताओं के साथ मेल का विवरण।
-```arduino
-#include <regex>
-#include <iostream>
-using namespace std;
+## कैसे ("How to:")
 
+निम्नलिखित एक आर्डुइनो कोड ब्लॉक है, जिसमें एक रेगुलर एक्सप्रेशन द्वारा एक पैटर्न खोजा जा रहा है.
+
+```Arduino
+#include <regex.h>
 void setup() {
   Serial.begin(9600);
-  
-  regex re("(\\w+) (\\d+)");
-  smatch match;
-  
-  while (Serial.available() == 0) {
-    ;
-  }
-  
-  String data = Serial.readStringUntil('\n');
-  
-  if (regex_search(data, match, re)){
-     cout << "शब्द: " << match[1].str() << endl;
-     cout << "संख्या: " << match[2].str() << endl;
-  } else{
-    cout << "कुछ मिला नहीं!" << endl;
-  }
-  
+  regex_t regex;
+  int retval = regcomp(&regex, "o[0-9]?", 0);
+  if (retval != 0) {
+    Serial.println("Could not compile regular expression.");
+  } 
 }
 
 void loop() {
+  char msg[100];
+  strcpy(msg, "Checking pattern o1 in Arduino");
+  regmatch_t matches;
+  if (regexec(&regex, msg, 1, &matches, 0) == 0) {
+    Serial.println("Pattern found.");
+  } else {
+    Serial.println("Pattern not found.");
+  }
 }
 ```
+इस कोड का आउटपुट होता है:
+```
+Pattern found.
+```
+इस उदाहरण में, हमने "o1" पैटर्न की खोज की है जिसे "Pattern found" के साथ पाया गया है।
 
-उनाजमान फीचर:
-- आप मुख्य व्यक्तीओं और हिसाब केकुतुब कर सकते हैं।
-- बिना आवश्यक नुकसान के डिटोग्राम का समसर्य करें।
-- तुरंत प्रतिसपादन करें।
+## गहरा अध्ययन ("Deep Dive")
 
-## गहरायी की खुदाई:
-अपनी देखभाल के! अपने द्वारा इसका उपायोग करने का कोई मानस नहीं और आपके पास गहरायी मीठाक के बिना आर्डुईनो के साथ खेले सकते हो। [लेकिन क्या आप कुछ दूसरा कर रये हो?](https://www.arduino.cc/en/Tutorial/Knit) नितांतांतांतांतं! एक वज्ञान आपिलेटीक परीक्षण निकले। फ्रैक कर गएं। यह सब आर्डुईनो के साथ कंजने करने के लिए अपने सनक्षत सुसासि हैं किए जे सेकेंट्रे के मद्धमें सेट। अग्रग्रगग वाश के तह! आप फलतू न्ही मुँझ देंगे!
+रेगुलर एक्सप्रेशन का इतिहास 1956 में केन थंपसन के द्वारा Unix ऑपरेटिंग सिस्टम के साथ शुरू हुआ था। इसके विकल्प के रूप में स्ट्रिंग फ़ंक्शन्स भी हैं, लेकिन वे अक्सर अधिक कोड और कम त्वरिता की आवश्यकता होती है। रेगुलर एक्सप्रेशन का उपयोग करना सीखना शुरू में कठिन हो सकता है, लेकिन यह अत्यंत शक्तिशाली उपकरण होता है जिसका अभ्यास करने से अच्छा परिणाम मिलता है।
 
-## इस तरह से देखें।
-- <https://github.com/arduino-libraries/Regex>
-- <https://www.arduino.cc/en/Tutorial/RegexCharacterSearch>
-- <https://github.com/davetcc/arduino_regex>
+## देखें भी ("See Also")
 
-## Learn more:
-- <https://www.arduino.cc/en/Reference/SerialReadStringUntil>
-- <https://www.arduino.cc/reference/en/language/functions/communication/serial/readstringuntil/>
+रेगुलर एक्सप्रेशन को आर्दुइनो में उपयोग करने के बारे में और जानकारी के लिए, निम्नलिखित स्रोतों का संदर्भ लें:
+
+1. [Arduino Regular Expression Library](https://playground.arduino.cc/Main/Regexp)
+2. [Regular Expressions in Arduino](https://stackoverflow.com/questions/9072320/split-string-with-delimiters-in-c)
+3. [Nikhil Arya's Arduino Lessons](https://nikhilaryan.com/tag/arduino)

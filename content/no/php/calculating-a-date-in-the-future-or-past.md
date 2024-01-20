@@ -1,7 +1,7 @@
 ---
-title:                "Å beregne en dato i fremtiden eller fortiden"
-html_title:           "PHP: Å beregne en dato i fremtiden eller fortiden"
-simple_title:         "Å beregne en dato i fremtiden eller fortiden"
+title:                "Beregning av en dato i fremtiden eller fortiden"
+html_title:           "PHP: Beregning av en dato i fremtiden eller fortiden"
+simple_title:         "Beregning av en dato i fremtiden eller fortiden"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -11,43 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden er en vanlig oppgave for programmerere. Dette kan være nyttig for å vise datoer i en kalender, lage alderskalkulatorer og mye mer.
 
-## Slik gjør du det:
-Det er flere måter å beregne en dato i PHP. En enkel måte er å bruke funksjonen `strtotime`, som tar et datostreng og returnerer en dato. For eksempel:
+Beregning av en dato i fremtiden eller fortiden er en prosess hvor du tilføyer eller trekker tid fra en gitt dato. Programmere gjør dette ofte for å håndtere begivenheter som abonnementsfornyelser, oppgavevarslinger, osv.
 
-```PHP
-<?php
-echo date('d.m.Y', strtotime('+1 day')); // Skriver ut datoen i morgen
-echo date('d.m.Y', strtotime('-1 week')); // Skriver ut datoen for en uke siden
-```
+## Hvordan gjør man det:
 
-Dette vil gi output som følger:
-
-```01.01.2022
-25.12.2021
-```
-
-En annen måte å beregne datoer på er å bruke `DateTime`-klassen. Denne gir mulighet for å utføre mer komplekse operasjoner med datoer, som å legge til eller trekke fra flere dager. Her er et eksempel:
+PHP funksjonen `strtotime` kombinert med `date` kan brukes til å manipulere datoer. Her er et enkelt eksempel for hvordan du kan legge til 5 dager til dagens dato:
 
 ```PHP
-<?php
-$today = new DateTime();
-$futureDate = $today->modify('+2 months'); // Legger til to måneder til dags dato
-echo $futureDate->format('d.m.Y'); // Skriver ut den fremtidige datoen
+$dato_idag = date('m-d-Y');
+$dato_fremtid = date('m-d-Y', strtotime($dato_idag . ' + 5 days'));
+echo "Dagens dato: " . $dato_idag;
+echo "\nFremtid dato: " . $dato_fremtid;
 ```
-
-Dette vil gi output som følger:
-
-```03.03.2022
+Output vil bli:
+```PHP
+Dagens dato: 12-01-2022
+Fremtid dato: 12-06-2022
 ```
+## Dypdykk:
 
-## Grundigere forklaring:
-Beregning av datoer i programmering har sin opprinnelse i kalenderen. Tidligere ble dette gjort manuelt, men med utviklingen av datamaskiner ble dette automatisert. Alternativer til å beregne datoer i fremtiden eller fortiden i PHP inkluderer å bruke `mktime`-funksjonen og `DateTimeImmutable`-klassen.
+`strtotime` er en mektig funksjon introdusert i PHP 4, og har vært videreutviklet siden. Til tross for at det er fantastiske biblioteker som Carbon som kan brukes for mer komplekse dato- og tidsoperasjoner, er det for de fleste formål mer enn nok å bruke innebygde PHP funksjoner.
 
-Når du beregner en dato i PHP, kan du også bruke forskjellige formater for å få ønsket utseende på resultatet. Dette kan du gjøre ved å bruke `date`-funksjonen. For mer informasjon og flere eksempler, kan du se dokumentasjonen for PHP om dette emnet.
+Bruken av `strtotime` er ofte å foretrekke fremfor tidsstempel manipuleringer på grunn av dens håndtering av sommertid og skuddår. I tillegg, ved bruk av `strtotime`, kan du angi tidsperioden ved å bruke naturlig språk (for eksempel '+1 day'), som gjør koden mer lesbar.
 
-## Se også:
-- [PHP date funksjon](https://www.php.net/manual/en/function.date.php)
-- [PHP DateTime klasse](https://www.php.net/manual/en/class.datetime.php)
-- [Alternative måter å beregne datoer i PHP](https://www.php.net/manual/en/datetime.formats.date.php)
+## Se Også:
+
+1. PHP manual på [strtotime](https://www.php.net/manual/en/function.strtotime)
+2. [Date/Time PHP Extensions](https://www.php.net/manual/en/refs.calendar.php)
+3. [Carbon biblioteket](https://carbon.nesbot.com/docs/) for komplekse dato- og tidsoperasjoner

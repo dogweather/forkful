@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Por Quê?
+Na programação, capitalizar uma string significa alterar todas as primeiras letras de cada palavra para maiúsculas. Programadores fazem isso principalmente para questões de apresentação e formatação de dados.
 
-Capitalizar uma string em Go significa transformar a primeira letra de cada palavra em maiuscula. Programadores geralmente fazem isso para padronizar a formatacao de textos e torna-los mais legiveis.
+## Como Fazer:
+Com Go, podemos capitalizar uma string usando a função `strings.Title()`. Aidna assim, essa função pode não funcionar corretamente para palavras em português com acentos. Vamos ver um exemplo:
 
-## Como fazer:
-
-Para capitalizar uma string em Go, podemos usar a funcao ```strings.Title()```. Veja o exemplo abaixo para entender como funciona:
-
-```
+```Go
 package main
 
 import (
-    "fmt"
-    "strings"
+	"fmt"
+	"strings"
 )
 
 func main() {
-    texto := "ola, mundo!"
-    fmt.Println(strings.Title(texto))
+	texto := "olá, mundo!"
+	
+	textoCapitalizado := strings.Title(texto)
+	
+	fmt.Println(textoCapitalizado)
 }
-
 ```
 
-Output:
-```
-Ola, Mundo!
-```
+Esse código retornará: "Olá, Mundo!".
 
-## Profundando:
+## Aprofundamento
+Na maioria dos idiomas, a capitalização de strings é uma questão trivial. Entretanto, em idiomas como o português que utilizam acentos e cedilhas, pode não ser tão simples. Por esse motivo, Go tem suporte incorporado para converter caracteres UTF-8, tornando-o adequado para lidar com idiomas complexos.
 
-Historicamente, a capitalizacao de strings era feita manualmente, com a conversao de letras para maiusculas usando as funcoes ```strings.ToUpper()``` ou ```strings.Title()```. No entanto, com a introducao do pacote ```unicode```, agora e possivel capitalizar strings de forma mais precisa, levando em consideracao caracteres especiais e acentuacao.
+Se a função `strings.Title()` não for suficiente, você pode usar bibliotecas de terceiros, como a "go-humanize".
 
-## Veja tambem:
+A implementação de capitalização de strings em Go é baseada na tabela de caracteres Unicode. Para cada ponto de código Unicode em uma string, a função verifica se o ponto de código é o início de uma nova palavra. Se for, a função converterá o ponto de código para maiúsculo.
 
-[Documentacao da funcao strings.Title() em Go](https://golang.org/pkg/strings/#Title)
-
-[Exemplos de uso do pacote unicode em Go](https://www.geeksforgeeks.org/unicode-package-in-go-lang-with-examples/)
+## Veja Também
+1. Documentação oficial Go para a biblioteca `strings`: https://golang.org/pkg/strings/
+2. Tutorial Go: Strings, bytes, runes e characters em Go: https://blog.golang.org/strings
+3. Biblioteca "go-humanize" no GitHub: https://github.com/dustin/go-humanize

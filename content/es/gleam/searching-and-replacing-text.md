@@ -1,7 +1,7 @@
 ---
-title:                "Búsqueda y reemplazo de texto"
-html_title:           "Gleam: Búsqueda y reemplazo de texto"
-simple_title:         "Búsqueda y reemplazo de texto"
+title:                "Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
+simple_title:         "Buscando y reemplazando texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola programadores! En este artículo vamos a hablar de una de las tareas básicas de programación: buscar y reemplazar texto. ¿Qué es buscar y reemplazar? Es simplemente la acción de encontrar un patrón de texto en un archivo y reemplazarlo con otro texto. Los programadores hacen esto para ahorrar tiempo y para hacer cambios rápidos en sus programas.
+## ¿Qué & Por Qué?
+La búsqueda y reemplazo de texto son acciones fundamentales en programación. Los programadores las hacen para modificar el texto de una forma controlada, por ejemplo, cambiar nombres de variables, eliminar espacios en blanco, o corregir errores tipográficos.
 
-## ¿Qué & Por qué?
+## Cómo hacer:
+A continuación, un ejemplo simple de cómo buscar y reemplazar texto en Gleam.
 
-La búsqueda y el reemplazo de texto es una técnica comúnmente utilizada en el desarrollo de software. Permite a los programadores hacer modificaciones rápidas en su código sin tener que cambiar manualmente cada instancia de un patrón de texto.
-
-## Cómo:
 ```Gleam
-// Ejemplo:
-let texto = "Hola mundo"
-texto = replace("mundo", "amigos", texto)
+import gleam/string
+
+let mi_cadena = "Hola Mundo!"
+let nuevo_texto = string.replace(mi_cadena, "Hola", "Adiós")
+```
+La salida sería:
+
+```Gleam
+"Adiós Mundo!"
 ```
 
-El código de ejemplo muestra cómo se puede utilizar la función `replace` en Gleam para buscar el texto "mundo" y reemplazarlo con "amigos". El resultado final sería "Hola amigos". Esta es una forma simple de buscar y reemplazar texto en un archivo utilizando Gleam.
+## Inmersión Profunda
+La búsqueda y reemplazo de texto han sido parte integral de la programación desde su inicio. En el contexto histórico, la capacidad de buscar y reemplazar texto fue una mejora significativa en la eficiencia de la codificación.
 
-## Profundizando:
+Existen alternativas a la función `string.replace`, como utilizar expresiones regulares para un reemplazo más complejo.
 
-Historia: La búsqueda y el reemplazo de texto ha sido una herramienta útil para los programadores desde los primeros días de la informática. Antes de que existieran herramientas de búsqueda y reemplazo automatizadas, los programadores tenían que hacer cambios manuales en el código, lo cual era un proceso tedioso y propenso a errores.
+En cuanto a la implementación, básicamente, `string.replace` busca todas las ocurrencias de una subcadena y las reemplaza con una nueva subcadena.
 
-Alternativas: Aunque Gleam ofrece una forma fácil y eficiente de buscar y reemplazar texto, hay otras herramientas disponibles, como Visual Studio Code, que también proporcionan funciones de búsqueda y reemplazo.
-
-Detalles de implementación: La función `replace` en Gleam utiliza expresiones regulares para encontrar y reemplazar patrones de texto. Esto permite una mayor flexibilidad en la búsqueda y el reemplazo de diferentes patrones.
-
-## Vea también:
-
-¡Ya está! Ahora tienes una comprensión básica de cómo buscar y reemplazar texto en Gleam. ¡Éxito en tus proyectos de codificación! Si quieres profundizar en el tema, aquí tienes algunos recursos adicionales:
-
-- [Documentación de Gleam](https://gleam.run/documentation/)
-- [Visual Studio Code - Búsqueda y reemplazo](https://code.visualstudio.com/docs/getstarted/tips-and-tricks#_find-and-replace)
+## Ver También
+Para más información acerca de la búsqueda y reemplazo de texto en Gleam, y usos más complejos de `string.replace`, consulte estos enlaces:
+- Documentación oficial de Gleam: [link](https://gleam.run/)
+- Manual de la biblioteca de cadenas Gleam: [link](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/string.gleam)
+- Discusión en el foro de Gleam sobre búsqueda y reemplazo de texto: [link](https://discuss.gleam-lang.org/)

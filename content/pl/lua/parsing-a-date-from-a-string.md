@@ -1,7 +1,7 @@
 ---
-title:                "Parsowanie daty z ciągu znaków"
-html_title:           "Lua: Parsowanie daty z ciągu znaków"
-simple_title:         "Parsowanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i Dlaczego?
+## Co i dlaczego?
 
-Parsowanie daty z ciągu znaków jest procesem, który polega na przekształcaniu daty w postaci tekstu na dane, które mogą być wykorzystane przez program do dalszej obróbki. Jest to ważne dla programistów, ponieważ pozwala na przekształcenie daty w bardziej przydatny i zrozumiały format.
+Parsowanie daty z ciągu to proces, w którym ciąg tekstowy jest analizowany i przekształcany na strukturę daty. Programiści robią to, aby móc manipulować i operować na datach w bardziej logiczny i efektywny sposób.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-Aby przeprowadzić parsowanie daty w Lua, można użyć funkcji `os.date()` oraz odpowiedniej specyfikacji formatu daty. Przykładowy kod wyglądałby następująco:
-
-```Lua
-date = "2020-05-31"
-format = "%Y-%m-%d"
-
-parsed_date = os.date(format, date)
-
-print(parsed_date)
-```
-
-Output: `2020-06-31`
-
-Można również parsować datę w przeciwnym kierunku, czyli przekształcać dane liczbowe na tekstowe daty. Aby to zrobić, można użyć funkcji `os.time()` i `os.date()` w następujący sposób:
+Możemy użyć wbudowanej funkcji `os.date`. Ta funkcja przyjmuje format daty i ciąg do przetworzenia. Przykład poniżej pokazuje jak to zrobić:
 
 ```Lua
-year = 2020
-month = 5
-day = 31
-
-parsed_date = os.date("%Y-%m-%d", os.time({year = year, month = month, day = day}))
-
-print(parsed_date)
+dateString = "07/27/2021"
+format="%m/%d/%Y"
+result = os.date("*t", os.time{year=string.sub(dateString, 7, 10), month=string.sub(dateString, 1, 2), day=string.sub(dateString, 4, 5)})
+print(result.day.."/"..result.month.."/"..result.year)
 ```
+Wyjście:
 
-Output: `2020-05-31`
+```Lua
+27/7/2021
+```
+## Głębsze zanurzenie:
 
-# Głębsze Wprowadzenie
+1. Kontekst historyczny: Lua, stworzona w 1993 r., ma wiele wbudowanych funkcji do manipulacji na datach. Podczas gdy wiele języków ma biblioteki do obsługi tego zadania, Lua ma wbudowane funkcjonalności.
+2. Alternatywy: Można użyć innych funkcji, takich jak `os.time` lub `os.difftime`, aby przekształcić ciąg na datę lub porównać dwie daty.
+3. Detale implementacji: `os.date` zwraca ciąg lub tabelę, w zależności od użytego formatu. `"%t"` zwraca tabelę, `"%s"` zwraca ciąg.
 
-Idea przeprowadzania parsowania daty z ciągów znaków nie jest nowa i jest używana już od dawna w wielu językach programowania. Alternatywą dla używania specyfikacji formatu daty jest także użycie biblioteki `date` w Lua, która oferuje bardziej zaawansowane możliwości przetwarzania dat.
+## Zobacz także:
 
-Ważne jest, aby pamiętać o tym, że prawidłowe parsowanie daty może być zależne od ustawień regionalnych i formatu użytego w danym kraju. Dlatego też zawsze należy dokładnie sprawdzić odpowiednie specyfikacje i algorytmy dla swojego środowiska.
+1. [Dokumentacja Lua: os.date](https://www.lua.org/manual/5.3/manual.html#pdf-os.date)
+2. [Poradnik Obsługi Dat i Czasu w Lua](https://riptutorial.com/lua/topic/4040/date-and-time)
 
-# Zobacz także
-
-- Dokumentacja Lua o funkcji `os.date`: https://www.lua.org/manual/5.4/manual.html#6.9
-- Biblioteka `date` dla Lua: https://github.com/Tieske/date
-- Przydatny poradnik o parsowaniu daty w Lua: https://www.tutorialspoint.com/lua/lua_date_time.htm
+Uwaga: W tym artykule podane przykłady kodu są dla Lua 5.3.

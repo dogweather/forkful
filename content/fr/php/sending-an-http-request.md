@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "PHP: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,43 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-L'envoi d'une requête HTTP est une action courante dans la programmation qui permet aux développeurs de communiquer avec d'autres serveurs Web et d'obtenir des données ou des informations. Cela peut être utile pour accéder à des API, récupérer des données de bases de données et bien plus encore.
+## Quoi & Pourquoi?
+
+Envoyer une requête HTTP c'est simplement demander à un serveur Web d'obtenir ou d'envoyer des données. Nous, les développeurs, faisons cela pour interagir avec des services Web, récupérer des données, envoyer des données, etc.
 
 ## Comment faire:
-Voici un exemple de code PHP pour envoyer une requête HTTP à l'API de Twitter et afficher le contenu de la réponse:
+
+Pour envoyer une requête HTTP en PHP, nous utilisons la bibliothèque cURL ou file_get_contents. Voici un exemple simple :
+
+Avec cURL:
+
+```PHP
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL,"http://www.exemple.com");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+$server_output = curl_exec($ch);
+curl_close ($ch);
+
+echo $server_output;
 ```
-<?php
-// Initialisation de la requête cURL
-$curl = curl_init();
 
-// Configuration de l'URL à requêter et d'autres options
-curl_setopt_array($curl, [
-  CURLOPT_URL => "https://api.twitter.com/1.1/statuses/home_timeline.json",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_HTTPHEADER => [
-    "Authorization: Bearer YOUR_BEARER_TOKEN_HERE"
-  ]
-]);
+Avec file_get_contents:
 
-// Exécution de la requête et stockage de la réponse dans une variable
-$response = curl_exec($curl);
-
-// Fermeture de la requête cURL
-curl_close($curl);
-
-// Affichage du contenu de la réponse
-echo $response;
+```PHP
+$url = 'http://www.exemple.com';
+$data = file_get_contents($url);
+echo $data;
 ```
 
 ## Plongée en profondeur:
-Historiquement, les requêtes HTTP étaient envoyées en utilisant la fonction `file_get_contents()` ou `fopen()`, mais ces méthodes sont maintenant obsolètes et la méthode recommandée est d'utiliser la librairie cURL.
 
-Il existe des alternatives à cURL telles que la librairie Guzzle ou l'extension HTTP PHP, mais cURL est généralement préférée en raison de sa bonne documentation et de ses performances élevées.
+Historiquement, PHP n'avait pas de support intégré pour les requêtes HTTP. Aujourd'hui, cURL et file_get_contents sont les façons les plus courantes de le faire.
 
-Pour implémenter une requête HTTP avec cURL, il est important de comprendre les différentes options telles que `CURLOPT_URL`, `CURLOPT_RETURNTRANSFER` et `CURLOPT_HTTPHEADER` qui sont utilisées dans l'exemple ci-dessus. Vous pouvez trouver plus d'informations sur ces options et d'autres dans la documentation officielle de cURL.
+Il existe d'autres manières (comme PECL_HTTP ou httpful), mais elles nécessitent l'installation de modules supplémentaires.
+
+Le choix entre ces options dépend de votre projet spécifique. Par exemple, cURL offre plus de flexibilité et de contrôle sur vos requêtes HTTP, tandis que file_get_contents est une solution plus simple et plus rapide à mettre en œuvre.
 
 ## Voir aussi:
-- [Documentation officielle de cURL](https://www.php.net/manual/en/book.curl.php)
-- [Guzzle documentation](http://docs.guzzlephp.org/)
-- [Extension HTTP PHP](https://www.php.net/manual/en/book.http.php)
+
+Pour plus d'informations, vérifiez ces excellentes ressources :
+
+- Documentation officielle PHP pour cURL: https://www.php.net/manual/fr/book.curl.php
+- Documentation officielle PHP pour file_get_contents: https://www.php.net/manual/fr/function.file-get-contents.php
+- Un guide pratique de StackOverflow sur les requêtes HTTP en PHP (en anglais) : https://stackoverflow.com/questions/5647461/how-do-i-send-a-post-request-with-php

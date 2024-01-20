@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "PowerShell: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co i Dlaczego?
+# Pobieranie Stron Internetowych za pomocą PowerShell
 
-Pobieranie strony internetowej to proces odczytywania i zapisywania zawartości strony internetowej do lokalnego komputera. Programiści często pobierają strony internetowe w celu analizy zawartości lub wykorzystania jej w swoich programach.
+## Co i dlaczego?
 
-Jak to zrobić:
+Pobieranie stron internetowych to proces zapisywania ich treści lokalnie. Programiści robią to przede wszystkim dla przetwarzania danych (web scraping), testowania lub archiwizacji.
+
+## Jak to zrobić:
+
+W PowerShell możemy to zrobić bardzo prosto. Poniżej znajduje się przykładowy kod:
 
 ```PowerShell
-$client = New-Object System.Net.WebClient
-$url = "https://www.example.com"
-$path = "C:\Users\Example\Website.html"
-$client.DownloadFile($url,$path)
+$url = "http://przyklad.pl"
+$response = Invoke-WebRequest -Uri $url
+$response.Content | Out-File -FilePath C:\ścieżka\do\pliku.html
 ```
 
-W powyższym przykładzie jest tworzony nowy obiekt WebClient, który jest następnie używany do pobrania zawartości strony internetowej poprzez podanie adresu URL oraz ścieżki do zapisania pliku na lokalnym komputerze.
+Wynik tego kodu to zapisanie całej strony http://przyklad.pl jako plik HTML na dysku lokalnym.
 
-Scala do głębszych wód:
+## Więcej szczegółów:
 
-1. Kontekst historyczny: Pobieranie stron internetowych jest powszechną praktyką w programowaniu od czasów początku Internetu.
-2. Alternatywy: Oprócz użycia PowerShell, możliwe jest również pobranie zawartości strony internetowej przy użyciu innych języków programowania takich jak Python czy Java.
-3. Szczegóły implementacyjne: W przypadku bardziej skomplikowanych stron internetowych, które wymagają logowania lub obsługi ciasteczek, może być konieczne użycie specjalnych modułów lub bibliotek dla PowerShell.
+Pobieranie stron internetowych to stara praktyka, która istnieje od początków internetu. PowerShell z winęłością .NET oferuje dużą elastyczność w tej materii.
 
-Zobacz też:
+Alternatywą jest korzystanie z innych narzędzi, takich jak wget w Linux. Można również stosować specjalistyczne biblioteki w językach programowania, takie jak 'requests' w Python.
 
-- Dokumentacja dla klasy WebClient w PowerShell: https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest?view=powershell-7.1
-- Przykłady pobierania stron internetowych z użyciem innych języków programowania: https://realpython.com/python-web-scraping-practical-introduction/
+Podczas korzystania z PowerShell warto pamiętać o pewnych szczegółach implementacyjnych: 
+- `Invoke-WebRequest` korzysta z sesji web, co pozwala na obsługę ciasteczek i autentykacji.
+- Aby obsługiwać strony z dużą ilością treści JS, można potrzebować dodatkowych narzędzi, takich jak Selenium.
+
+## Zobacz też:
+
+1. Szerokie omówienie `Invoke-WebRequest`: [Link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+2. Przetwarzanie stron internetowych w PowerShell: [Link](https://4sysops.com/archives/use-powershell-to-download-a-file-with-http-get-and-ssl/)
+3. Obsługa stron z dużą ilością JavaScriptu: [Link](https://stackoverflow.com/questions/46372116/powershell-invoke-webrequest-and-javascript)

@@ -1,6 +1,6 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "Clojure: Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Obter a data atual é uma tarefa comum em programação, pois permite que os desenvolvedores acessem informações relevantes do sistema, como registros e agendamentos. Além disso, pode ser usado para criar recursos como relógios e calendários.
+# Trabalhando Com a Data Atual em Clojure
 
-## Como fazer:
+## O Que & Por Que?
+Identificar a data atual se trata de obter a data e a hora precisas do momento na execução do programa. Isso é crucial para os programadores, pois permite rastrear eventos, gerar registros de data e hora e realizar tarefas baseadas em tempo.
+
+## Como Fazer:
+Aqui está um exemplo de como obter a data e hora atual em Clojure:
+
 ```Clojure
-(require '[clojure.java-time :as t])
+(ns myapp.core)
 
-; Data atual
-(def current-date (t/local-date)) 
-
-; Data atual em formato específico
-(def formatted-date (t/formatter "MMMM dd, yyyy" (t/local-date)))
-
-; Data atual com fuso horário
-(def current-date-and-time (t/local-date-time (t/time-zone :default)))
-
-; Data atual por país e cidade
-(def local-date (-> gmt t/time-zone (t/local-date-time)))
-
-; Data atual por continente e cidade
-(def london-date (-> gb/europe t/time-zone (t/local-date-time)))
+(defn -main
+  []
+  (println (java.util.Date.)))
+```
+Ao executar, deve imprimir algo como:
+```Clojure
+Thu Jan 13 22:13:46 BRST 2022
 ```
 
-### Saída de exemplo:
-```
-current-date => 2021-10-11
-formatted-date => October 11, 2021
-current-date-and-time => #object[java.time.LocalDateTime 0x5e69c971 "2021-10-11T14:26:47.57"]
-local-date => #object[java.time.LocalDateTime 0x261c23b2 "2021-10-11T05:26:47.57"]
-london-date => #object[java.time.LocalDateTime 0x21d868be "2021-10-11T16:26:47.57"]
-```
+## Mergulho Profundo
+Na verdade, a manipulação de datas remonta aos primeiros dias da computação. No passado, tal tarefa era notoriamente difícil devido às várias idiossincrasias associadas a fusos horários e calendários da vida real.
 
-## Análise detalhada:
-Obter a data atual é uma tarefa simples em Clojure, graças à biblioteca java-time integrada. Esta biblioteca é uma API para o java.time, que fornece recursos como conversão de fuso horário e formatação de data. Alternativamente, também é possível usar a biblioteca de terceiros clj-time para trabalhar com datas em Clojure.
+Existem alternativas para obter a data atual em Clojure. Você pode usar a biblioteca `clj-time` que fornece uma interface rica para lidar com datas e horários.
 
-## Leia também:
-- [java-time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [clj-time library](https://github.com/clj-time/clj-time)
+Quando `(java.util.Date.)` é chamado, ele retorna um objeto `java.util.Date` que representa o instante atual até o milissegundo mais próximo. Clojure, sendo uma linguagem que roda na JVM, pode interagir com código e classes do Java.
+
+## Veja Também:
+- Documentação Java para `java.util.Date`: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
+- Biblioteca `clj-time`: https://github.com/clj-time/clj-time
+- Tutorial Clojure para manipulação de datas: https://www.tutorialspoint.com/clojure/clojure_date_time.htm

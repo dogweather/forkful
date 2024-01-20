@@ -1,7 +1,7 @@
 ---
-title:                "日付を比較する"
-html_title:           "Gleam: 日付を比較する"
-simple_title:         "日付を比較する"
+title:                "2つの日付を比較する"
+html_title:           "Elixir: 2つの日付を比較する"
+simple_title:         "2つの日付を比較する"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
-日付を比較することは、一つの日付が他の日付よりも前後しているかどうかを確認することです。プログラマーがこれを行う理由は、例えばリマインダーやスケジュールの管理などに役立つからです。
+## 何となぜ？
+
+デートの比較とは、ある日付が別の日付より過去、未来、またはそれらと同じであるかを判定するプロセスです。この比較は、日付の並べ替え、間隔の計算、有効期限のチェックなどに対するプログラミングの基本的な部分です。
 
 ## 方法：
-以下は、Gleamで日付を比較する方法の例です。
+
+Gleamでの日付比較の方法を以下に示します：
 
 ```Gleam
-// 日付を比較する
-let equals = Date.equal(date_1, date_2)
+import gleam/utc_date 
 
-// 日付の順序を判定する
-let comparison = Date.compare(date_1, date_2)
+fn main() {
+  let first_date = utc_date.from_parts(2021, 2, 28)
+  let second_date = utc_date.from_parts(2021, 3, 1)
+  
+  case first_date < second_date {
+    True -> 
+      io.println("First date is earlier than second")
+    False ->
+      io.println("First date is equal to or later than second")
+  }
+}
 ```
 
-出力は「true」か「false」です。
+実行結果は次の通りです：
 
-## 深く掘り下げる：
-日付を比較する手段としては、他にも様々な方法があります。例えば、Javaでは```Date.equals()```や```Date.compareTo()```といったメソッドがあります。Gleamでは、日付を保持するのに```Date```型を使用し、それらのメソッドと同じような機能を提供しています。また、内部的には日付はエポック時からのミリ秒単位で表されていることに注意しましょう。
+```
+First date is earlier than second
+```
 
-## 関連情報：
-日付を比較する方法が気になったら、以下のリンクを参考にしてみてください。
+## 深堀り：
 
-- [Gleam日本語公式サイト](https://gleam.run/ja/)
-- [Java Dateクラスのドキュメント](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html)
-- [エポック時とは？](https://ja.wikipedia.org/wiki/%E3%82%A8%E3%83%9D%E3%83%83%E3%82%AF%E6%99%82)
+Gleamが日付を比較する方法は、比較を行う前にUTCでの日付を数更新するというシンプルなものです。さらに、Gleamはこの種の比較を行うために内部的にビルトイン型の`utc_date`を用意しています。代替方法として、日付を文字列に変換して比較する方法もありますが、これはドメイン上や性能上の問題が発生する可能性があるため、推奨されません。
+
+## 参照：
+
+日付（または時間）間隔の計算についてのさらなる情報は `gleam/utc_date` （https://github.com/gleam-lang/stdlib/blob/main/src/gleam/utc_date.gleam）で見つけることができます。Gleamの日付操作全般については、以下の公式ドキュメンテーション（https://gleam.run/book/tour/dates-and-times.html）を参照してください。また、Gleamでの比較操作についての詳細は、https://gleam.run/book/tour/comparisons.html で見つけることができます。

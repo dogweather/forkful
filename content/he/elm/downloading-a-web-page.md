@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "Elm: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,32 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+הורדת דף אינטרנט היא תהליך שבו תוכנית מחשב מאחסנת גרסת מקומית של דף אינטרנט. תכנתים משתמשים בזה כדי לעבד מידע מהאינטרנט כהמשך לעבודה או לאחסון לשימוש עתידי.
 
-הורדת דף אינטרנט היא פעולה שמאפשרת לקוד לטעון ולהציג תוכן מקוון באמצעות תצוגת דפים. תהליך זה חשוב מאוד עבור מפתחי תוכנה, מכיוון שזה מאפשר להציג תוכן מגוון ומגוון רחב של דפי אינטרנט.
+## כיצד לעשות:
+אני מצטער שאני לא מצליח לספק דוגמה לוגית של קוד 'Elm' שאמור להוריד דף אינטרנט כיוון שהשפה 'Elm' מביאה איתה אבטחת נתונים מאוד חזקה שהיא לא מאפשרת לבצע הורדה ישירה של מידע מהאינטרנט. 
 
-## איך לעשות זאת:
+במקום זאת, 'Elm' משתמשת ברעיון של 'קריאות HTTP'. 
 
+```Elm
+import Http
+import Json.Decode as Decode
+
+getWebPage : String -> Cmd Msg
+getWebPage url =
+    Http.get { url = "https://www." ++ url, expect = Http.expectString GotWebPage }
+
+type Msg = GotWebPage (Result Http.Error String)
 ```
-Elm.Http.send handleHttpResponse (
-    Elm.Http.get "https://example.com"
-)
-```
 
-פלט:
+אם היינו יוצרים תוכנית שמקבילה לדף אינטרנט, המידע שנקרא באמצעות שימוש בקריאה ל HTTP ישמש אותנו כגרסה המקומית של הדף.
 
-```
-handleHttpResponse (Result Result (Data String "Hello, world!") (Redirect "https://example.com"))
-```
+## צלילה עמוקה
+הורדת דפי אינטרנט התחילה בגיל האחרון של אינטרנט (HTTP). בשפות שונות, ישנן שיטות ורעיונות שונים להורדת הדפים, גאווה ההורדה שאנו משתמשים באיבוד הזמן מאפשרת. 'Elm' מאפשרת accessing לאינטרנט באופן בטוח ומבנה, תוך שמירה מוחלטת על אבטחת המידע.
 
-## חפירה עמוקה:
+אלטרנטיבות להורדת דפי אינטרנט ב- 'Elm' כוללות שימוש ב Ajax לעבודה עם בקשות HTTP או Node.js להורדת דף אינטרנט מהשרת. ברבים נמצאים מעל הבחירה בברחינו.
 
-תהליך זה קיים מזה עשרות שנים ומשמש כיום כמעט בכל אתר אינטרנט. האלטרנטיבות הן שיטות מסורבלות יותר כמו טבלאות, נכתב מחדש עבור כל תצוגה.
-
-בניגוד למספר רב של שפות תכנות המשתמשות בתצוגה סיכום, תהליך זה מיועד לטפל בכמות גדולה של תוכן ולתת יכולות רחבות יותר.
-
-זה מתבצע על ידי שימוש בHTTP תקן, שמאפשר על תקשורת בין שרתים ולקוחות על ידי בעזרת מונחים כמו GET ו POST תטען את הדף ו נתונים חוזרים.
-
-## ראו גם:
-
-- [HTTP על ידי MDN] (https://developer.mozilla.org/en-US/docs/Web/HTTP)
-- [להוריד דף אינטרנט עם אלם] (https://package.elm-lang.org/packages/elm/http/latest/Http)
+## ראה גם
+1. Http - https://package.elm-lang.org/packages/elm/http/latest/
+2. Elm's Web Standards - https://elm-lang.org/guide/web-apps
+3. README на Elm - https://github.com/evancz/elm-lang.org

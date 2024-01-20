@@ -1,7 +1,7 @@
 ---
-title:                "Розбір html"
-html_title:           "Haskell: Розбір html"
-simple_title:         "Розбір html"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,41 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Чому?
-Розбір HTML є процесом отримання структурованої інформації з HTML-коду. Програмісти зазвичай використовують розбір HTML для отримання необхідних даних з веб-сторінок, таких як ціни на товари, розклади подій або звіти про статистику.
+### Що та чому?
+Аналіз HTML - це процес розбиття коду HTML на його складові для подальшої обробки в програмі. Це допомагає програмістам витягувати, маніпулювати та використовувати дані з HTML-документів.
 
-## Як це зробити:
-Розбір HTML можна зробити за допомогою багатьох бібліотек для Haskell, таких як "html-conduit", "html-tagsoup" або "htmlparser". Нижче подано приклад використання бібліотеки "html-tagsoup" для отримання всіх посилань на сторінці і їх відображення в консолі.
-
+### Як зробити:
+Ми можемо використовувати бібліотеку `tagsoup` в Haskell для аналізу HTML. Подивимося на невеликий приклад:
 ```Haskell
-import Text.HTML.TagSoup -- імпорт бібліотеки
+import Text.HTML.TagSoup
 
 main :: IO ()
 main = do
-    -- завантаження HTML-сторінки з використанням "curl"
-    html <- readProcess "curl" ["http://www.example.com"] []
-    
-    -- розбір HTML і отримання всіх тегів "a" (посилання) зі сторінки
-    let links = filter (\(TagOpen _ attrs) -> "a" `elem` attrs) (parseTags html)
-    
-    -- виведення посилань в консоль
-    mapM_ print ([fromAttrib "href" tag | tag <- links] :: [String]) 
+    let html = "<html><body><p>Hello, World!</p></body></html>"
+    let tags = parseTags html
+    print tags
 ```
-
-Результат:
-
+Виведе:
+```Haskell
+[TagOpen "html" [],TagOpen "body" [],TagOpen "p" [],TagText "Hello, world!",TagClose "p",TagClose "body",TagClose "html"]
 ```
-"http://www.example.com/page1"
-"http://www.example.com/page2"
-...
-```
+Вище ми подали строку HTML до функції `parseTags` та вивели результати.
 
-## Глибокий занурення:
-Розбір HTML був популярним засобом отримання даних з веб-сторінок ще до появи API. Існує кілька альтернативних підходів до розбору HTML, таких як використання регулярних виразів або парсерів, які можна знайти в бібліотеках програмування мовою Python або Ruby.
+### Поглиблений розгляд:
+Основним способом аналізу HTML в Haskell є бібліотека `tagsoup`. Вона бере неправильний HTML та повертає список тегів, які можна легко проаналізувати. Слід пам'ятати, що є й інші бібліотеки для аналізу HTML, такі як `html-conduit` та `hxt`, але `tagsoup` дає більше гнучкості при аналізі невідповідного HTML.
 
-У бібліотеці "html-tagsoup" для розбору HTML використовується подібна до XPath система запитів, яка дозволяє отримувати необхідні елементи зі сторінки з використанням коротких шаблонів.
-
-## Дивитися також:
-- [Hackage](https://hackage.haskell.org/package/html-conduit) - документація "html-conduit"
-- [Official Haskell Website](https://www.haskell.org/) - офіційний сайт мови Haskell
-- [Learn You a Haskell](http://learnyouahaskell.com/chapters) - безкоштовна онлайн-книга з навчання мові Haskell.
+### Дивіться також:
+1. Офіційна документація: http://hackage.haskell.org/package/tagsoup
+2. Інші методи аналізу HTML в Haskell: http://www.yesodweb.com/book/xml
+3. Гайд по Tagsoup (англійською): https://www.fpcomplete.com/blog/2015/04/scraping-html-using-tagsoup

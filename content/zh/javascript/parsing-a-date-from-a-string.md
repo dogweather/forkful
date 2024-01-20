@@ -1,7 +1,7 @@
 ---
-title:                "从字符串中解析日期"
-html_title:           "Javascript: 从字符串中解析日期"
-simple_title:         "从字符串中解析日期"
+title:                "从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
+simple_title:         "从字符串解析日期"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,23 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-日期字符串分析是指将字符串中包含的日期信息转换为可读的日期格式。程序员这么做的原因是为了能够更容易地处理日期数据，并将其用于各种计算和比较操作。
+## 什么和为什么?
 
-## 怎样操作：
-下面是一个简单的例子，展示了如何使用 `Date.parse()` 方法将日期字符串转换为日期对象，并输出转换后的结果。 
+解析日期是将字符串转换为日期对象的过程。程序员这样做是因为它们经常需要从用户输入或数据源获取日期，并用它们进行各种操作和计算。
+
+## 如何操作:
+
+在Javascript中，可以使用内置的`Date`对象和它的`parse`方法来解析日期字符串。看看下面的例子:
 
 ```Javascript
-let dateString = "2020-06-15";
-let dateObject = new Date(Date.parse(dateString));
-console.log(dateObject);
-// 输出结果：Mon Jun 15 2020 00:00:00 GMT+0800 (China Standard Time)
+let dateString = "2021-11-22";
+let parsedDate = new Date(Date.parse(dateString));
+console.log(parsedDate);
 ```
 
-## 深入了解：
-日期字符串分析在计算机编程领域已经存在了很长一段时间。在早期，程序员们需要手动处理日期数据，这往往导致了各种错误和混乱。现在，使用 `Date.parse()` 方法可以方便地将字符串中的日期信息提取出来，并转换为标准的日期对象。在某些特殊情况下，也可以使用其他方法来解析日期字符串，例如正则表达式。
+运行上面的代码，你将看到如下输出:
 
-## 参考链接：
-- [MDN - Date.parse() 方法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-- [W3School - Date.parse() 方法](https://www.w3school.com.cn/jsref/jsref_parse.asp)
-- [阮一峰 - JavaScript日期对象简介](https://www.ruanyifeng.com/blog/2011/11/javascript_date_time.html)
+```Javascript
+2021-11-22T00:00:00.000Z
+```
+
+## 深度探索:
+
+- 历史背景: 早在Javascript诞生之前，日期解析就已经存在了。在那个时期，程序员需要手动分析日期字符串，这是一个繁琐且容易出错的过程。后来，Javascript和许多其他语言提供了内置的方法来处理这个问题。
+
+- 选择方案: `Date.parse`并不是唯一的选择，你可以使用如`moment.js`等第三方库进行更复杂的日期解析和操作。
+
+- 实现细节：`Date.parse`函数实际上将日期字符串转换为数值表示的时间戳，然后`Date`对象用这个时间戳来创建一个日期对象。
+
+## 参考资料:
+
+1. [Mozilla Developer Network—Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [Moment.js—Parsing](https://momentjs.com/docs/#/parsing/)

@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання HTTP-запиту"
-html_title:           "TypeScript: Надсилання HTTP-запиту"
-simple_title:         "Надсилання HTTP-запиту"
+title:                "Відправлення HTTP-запиту"
+html_title:           "Bash: Відправлення HTTP-запиту"
+simple_title:         "Відправлення HTTP-запиту"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,40 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що & Чому?
- Висилання HTTP запиту - це процес взаємодії між програмою та веб-сервером. Програмісті надсилають HTTP запити для отримання інформації з серверу або виконання певних дій на сервері.
+## Що і чому?
 
- # Як: 
- Приклад коду для відправлення GET запиту:
- ```TypeScript 
- axios.get("https://example.com")
-    .then(response => {
-        console.log(response.data);
-    })
-    .catch(error => {
-        console.log(error);
-    })
+HTTP-запит - це процес, який веб-клієнт (наприклад, браузер) використовує, щоб отримати дані з сервера. Ми відправляємо HTTP-запити для збору даних з API, щоб надати користувачам необхідний вміст або функціональність.
 
-/* Виводить в консоль відповідь від серверу. */
-```
+## Як це зробити:
 
-Приклад коду для відправлення POST запиту:
+Використовуючи TypeScript, ви можете використовувати бібліотеку `axios` для відправки HTTP-запитів. Ось основний приклад:
+
 ```TypeScript
-axios.post("https://example.com", {name: "John"})
-    .then(response => {
-        console.log(response.data);
-    })
-    .catch(error => {
-        console.log(error);
-    })
+import axios from 'axios';
 
-/* Виводить в консоль відповідь від серверу, включаючи дані, які були надіслані. */
+async function getData(){
+    try {
+        const response = await axios.get('https://api.example.com/data');
+        console.log(response.data);
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+getData();
 ```
 
- # Глибше волю:
- Висилання HTTP запиту є важливою частиною розробки додатків та веб-сайтів, оскільки дозволяє обмінюватися інформацією з сервером. Цей процес став можливим завдяки створенню протоколу HTTP в 1991 році. Існують інші способи взаємодії з сервером, такі як WebSocket та GraphQL, але HTTP залишається найбільш популярним і простим для використання.
+В цьому коді `axios.get()` відправляє HTTP GET-запит на URL, а потім ми обробляємо відповідь та виводимо дані.
 
-При відправленні HTTP запиту, програма спочатку створює об'єкт запиту з необхідною інформацією, такою як URL та тип запиту (GET, POST, PUT, DELETE тощо). Потім запит надсилається на сервер за допомогою мережевої бібліотеки або вбудованої функції. Після цього, сервер обробляє запит та повертає відповідь з необхідними даними або повідомленням про помилку. 
+## Поглиблений розділ 
 
- # Дивіться також:
- Детальніше про стандартну бібліотеку TypeScript для взаємодії з сервером можна дізнатися з документації: https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html#support-for-old-apis. Також, ви можете вивчати інші способи роботи з сервером, наприклад, за допомогою WebSocket, у офіційній документації: https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API.
+HTTP-запити є основою веб-спілкування. Вони були винайдені у 1990-х роках як частина протоколу HTTP. Існує багато методів HTTP-запитів, включаючи GET, POST, DELETE, UPDATE та інші.
+
+Альтернативою `axios` є вбудований в Node.js модуль `http`, хоча його використання може бути складнішим. Також доступні інші бібліотеки, наприклад `fetch` та `request`.
+
+Щодо деталей реалізації, `axios` використовує проміси, що спрощує асинхронне програмування. Также працює в браузерах та Node.js, що робить його універсальним вибором.
+
+## Дивись також:
+
+1. [Робота з HTTP-запитами з допомогою Axios в JavaScript](https://www.digitalocean.com/community/tutorials/working-with-axios-as-a-http-client-in-javascript)
+2. [Node.js HTTP-документація](https://nodejs.org/api/http.html)
+3. [Вивчення асинхронного програмування](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)

@@ -1,7 +1,7 @@
 ---
-title:                "Fehlerausgabe drucken"
-html_title:           "Arduino: Fehlerausgabe drucken"
-simple_title:         "Fehlerausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Testing and Debugging"
@@ -10,65 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was und Warum?
 
-Beim Programmieren gibt es oft Fehler, die schwer zu finden sind. Um diese zu beheben, können wir unsere Programme mit sogenannten "Debug Outputs" versehen. Das bedeutet, dass wir unser Programm dazu bringen, während der Ausführung Informationen auszugeben, die uns dabei helfen können, Fehler zu finden und zu beheben.
+Das Drucken von Debug-Ausgaben ist ein Prozess, bei dem Programmierer Daten auf eine Konsole oder serielle Schnittstelle ausgeben, um den Zustand und das Verhalten ihres Code zu überwachen. Es ist nützlich, um unbeabsichtige Fehler im Code zu entdecken und den Fluss der Logik besser zu verstehen.
 
-Warum machen wir das? Nun, wie der Name schon sagt, ist es eine Möglichkeit, Bugs und Fehler in unserem Code zu finden. Durch die Ausgabe von Informationen können wir sehen, wie unser Code ausgeführt wird und wo mögliche Probleme auftreten. Das kann uns eine Menge Zeit und Frustration ersparen!
+## So geht's:
 
-# Wie geht's?
+In Arduino können wir die Funktion `Serial.println()` verwenden, um Debug-Ausgaben zu drucken. Sie müssen zuerst die serielle Kommunikation mit `Serial.begin() `initialisieren.
 
-Es ist ganz einfach, Debug Outputs in unseren Arduino Programmen zu integrieren. Hier ist ein Beispiel für eine einfache Ausgabe von Text auf dem Seriellen Monitor:
-
-```
-Arduino.println("Hello World!");
-```
-
-Wenn wir diesen Code ausführen, wird "Hello World!" auf dem Seriellen Monitor angezeigt. Wir können jedoch auch Variablen und Werte ausgeben, um genauere Informationen über unseren Code zu erhalten. Hier ist ein Beispiel:
-
-```
-int x = 10;
-int y = 5;
-int z = x + y;
-Arduino.print("The value of x is: ");
-Arduino.println(x);
-Arduino.print("The value of y is: ");
-Arduino.println(y);
-Arduino.print("The value of z is: ");
-Arduino.println(z);
-```
-
-In diesem Beispiel werden wir die Werte von x, y und z ausgeben und sehen, wie sie berechnet werden. Wir können auch bedingte Anweisungen verwenden, um nur unter bestimmten Bedingungen Debug-Outputs auszugeben, zum Beispiel:
-
-```
-int buttonState = 0;
-int buttonPin = 2;
+```Arduino
 void setup() {
-  pinMode(buttonPin, INPUT);
+  // Starten der seriellen Kommunikation.
+  Serial.begin(9600);
 }
 
 void loop() {
-  buttonState = digitalRead(buttonPin);
-  if (buttonState == HIGH) {
-    Arduino.println("Button pressed!");
-  }
+  // Wert an seriellen Port senden.
+  Serial.println("Hallo Welt");
+  delay(1000); // Pause von 1 Sekunde.
 }
 ```
 
-Diese Ausgabe wird nur auf dem Seriellen Monitor angezeigt, wenn der Schalter auf Pin 2 gedrückt wird.
+In diesem Beispiel sendet der Arduino jede Sekunde "Hallo Welt" an den Seriellen Port.
 
-# Tiefer einsteigen
+## Vertiefung
 
-Debug Outputs gibt es schon seit den Anfängen des Programmierens. Früher wurden spezielle Geräte wie Drucker und Konsolenterminals verwendet, um die Ausgabe anzuzeigen. Heutzutage verwenden wir häufig den Seriellen Monitor, der in der Arduino-IDE integriert ist, um unsere Ausgabe zu betrachten.
+Das Drucken von Debug-Ausgaben hat eine lange historische Tradition im codierungsdominierten Umfeld und wurde verbessert und angepasst, um auf Mikrocontroller wie Arduino zu passen. Alternativen zum Drucken von Debug-Ausgaben auf Arduino könnten das Schreiben auf einen SD-Karten-Logger oder das Senden von Daten über Netzwerkanforderungen beinhalten, abhängig von der spezifischen Anwendung und den vorhandenen Ressourcen.
 
-Es gibt auch alternative Methoden, um Debug-Outputs zu integrieren, wie z.B. das Schreiben in eine Datei oder das Debuggen mit externen Tools. Diese können jedoch komplexer sein und erfordern oft spezielle Kenntnisse.
+In Bezug auf Implementierungsdetails sollte die Geschwindigkeit von `Serial.begin()` auf die Baudrate des Serial Monitor eingestellt sein. Andernfalls können die Ausgaben Sie in verwirrende Charaktergruppen führen.
 
-Die Implementierung von Debug Outputs kann auch Auswirkungen auf die Performance unseres Codes haben. Deshalb sollten wir sie in unseren finalen Programmen deaktivieren oder entfernen, um die Ausführungsgeschwindigkeit nicht zu beeinflussen.
+## Siehe auch:
 
-# Weitere Informationen
-
-Für weitere Informationen und Beispiele zu Debug Outputs empfehle ich die offizielle Arduino-Dokumentation auf ihrer Website https://www.arduino.cc/reference/en/language/functions/communication/serial/.
-
-Zusätzlich gibt es auch viele hilfreiche Tutorials und Diskussionen in der Arduino-Community, die sich mit diesem Thema beschäftigen. Eine kurze Google-Suche kann viele nützliche Ergebnisse liefern.
-
-Viel Spaß beim Debuggen!
+1. Offizielle Arduino-Referenz zur `Serial` Klasse: [Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+2. Weitere Informationen zum Debuggen von Arduino mit serieller Ausgabe: [Link](https://maker.pro/arduino/tutorial/how-to-debug-your-arduino-projects-with-serial-monitor)
+3. Verwenden von Alternativen zum Drucken von Debug-Ausgaben auf Arduino: [Link](https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/arduino-code)

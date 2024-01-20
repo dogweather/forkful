@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dell'html"
-html_title:           "Elm: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,66 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Il parsing HTML è il processo di analisi del codice HTML per estrarre le informazioni contenute in una pagina web. I programmatori lo fanno per ottenere i dati di una pagina web e utilizzarli per creare o modificare un'applicazione.
+## Cos'è & Perché?
+
+1. Il parsing di HTML è l'atto di analizzare un documento HTML per estrarre dati e struttura. 
+2. I programmatori lo fanno per recuperare informazioni dai siti web e manipolarle a loro piacimento.
 
 ## Come fare:
+
+Elm, essendo una lingua funzionale, offre modi eleganti per eseguire il parsing HTML. Prendiamo come esempio questo codice che estrae il testo da un documento HTML:
+
 ```Elm
-import Html exposing (..)
-import Html.Attributes exposing (..)
-import Html.Parser as Parser
+import Html exposing (text)
+import Html.Parser exposing (..)
+import Html.Parser.Util
 
--- Definire una funzione per il parsing di una pagina web
-parsePage : String -> Html msg
-parsePage htmlString =
-    case Parser.parse htmlString of
-        Ok html ->
-            div []
-                [ h1 [] [ text "Titolo della pagina" ]
-                -- Utilizzare la funzione find per trovare un elemento specifico
-                , text <| find "p" html |> extractText
-                ]
+parseHtml : String -> String
+parseHtml html = 
+  case parse html of
+    Ok nodes ->
+      toString <| Html.text nodes
+    Err _ ->
+      "Parsing errato."
 
-        Err err ->
-            div []
-                [ h1 [] [ text "Errore" ]
-                , p [] [ text <| toString err ]
-                ]
-
--- Funzione per estrarre il testo da un elemento HTML
-extractText : List (Html.Attribute msg, Html) -> String
-extractText element =
-    case element of
-        [] ->
-            ""
-
-        ( _, Html.text str ) :: _ ->
-            str
-
-        _ :: rest ->
-            extractText rest
-
--- URL della pagina web da analizzare
-url : String
-url = "https://www.esempio.com"
-
--- Funzione di visualizzazione dell'output
-view : Html msg
-view =
-    parsePage <| Http.getString url
-
+main =
+  text <| parseHtml "<span>Ciao mondo</span>"
 ```
 
-L'output dell'esempio sopra sarà:
-```Elm
-<h1>Titolo della pagina</h1>
-<p>Contenuto della pagina</p>
-```
+Quando esegui questo codice, otterrai l'output "Ciao mondo". Questo è un esempio molto semplice, ma la bellezza di Elm si nota soprattutto quando si affrontano problemi più complessi.
 
-## Approfondimento:
-Il parsing HTML è diventato una pratica comune negli ultimi anni con lo sviluppo di tecnologie come il web scraping e il web crawling. Esistono diversi strumenti e linguaggi di programmazione che consentono di fare il parsing HTML, come ad esempio Python con la libreria Beautiful Soup o JavaScript con jQuery.
+## Approfondimento
 
-In Elm, il parsing HTML viene effettuato utilizzando una libreria esterna, Html.Parser, che fornisce funzioni utili per trovare e analizzare gli elementi di una pagina web. Inoltre, Elm ha la capacità di gestire ed elaborare dati in modo efficiente, rendendolo un'ottima scelta per il parsing HTML.
+1. Nel contesto storico, la necessità di parsing HTML è diventata predominante con la crescita del web scraping, la pratica di estrarre dati dai siti web.
+2. Esistono numerose alternative. Ogni linguaggio di programmazione tende ad avere le proprie librerie per il parsing HTML. Ad esempio, ci sono Beautiful Soup per Python o Jsoup per Java.
+3. Elm ha una libreria di analisi molto consistente. La cosa interessante di Elm è che, a differenza di altre lingue, non ti permette di realizzare un parser che può fallire senza gestire l'errore. Questa è una grande particolarità di Elm che ti costringe a scrivere codice robusto e sicuro.
 
-## Vedi anche:
-Per ulteriori informazioni sul parsing HTML in Elm, puoi consultare la documentazione ufficiale della libreria Html.Parser (https://package.elm-lang.org/packages/elm/parser/latest/) e il tutorial "Parsing HTML in Elm" su Medium (https://medium.com/tech-non-tech/parsing-html-in-elm-df833b663541).
+## Vedi anche
+
+Se sei interessato ad approfondire il parsing HTML in Elm, ecco alcuni link utili che potrebbero aiutarti: 
+1. [Documentazione ufficiale del modulo Html.Parser di Elm](https://package.elm-lang.org/packages/elm/elm-markup/latest/Html-Parser)
+2. [Un esempio complesso di parsing HTML in Elm](https://korban.net/posts/elm/2019-11-12-complex-example-parsing-html-elm/)  
+3. [Web Scraping e Parsing HTML con Elm](https://becoming-functional.com/web-scraping-in-elm-part-1-7fc2b9dde867)

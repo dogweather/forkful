@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Ruby: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,46 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Uuden projektin aloittaminen tarkoittaa uuden ohjelman tai sovelluksen luomista. Ohjelmoijat tekevät tätä, jotta he voivat kehittää uutta toiminnallisuutta tai parantaa olemassa olevaa ohjelmaa.
+Uuden projektin aloittaminen tarkoittaa uuden ohjelman tai ohjelmiston kehittämisen aloittamista tyhjästä. Ohjelmoijat tekevät tämän ratkaistakseen uuden ongelman tai luodakseen jotakin uutta.
 
-## Miten:
+## Kuinka:
 
-```ruby
-# Luodaan uusi projekti nimeltä "Esimerkki"
-mkdir Esimerkki
+Aloitetaan luomalla uusi tiedosto ja määritellään funktio Rubyssa seuraavasti:
 
-# Siirrytään Esimerkki-kansioon
-cd Esimerkki
+```Ruby
+# luo uusi tiedosto 'hello.rb'
+$ touch hello.rb
 
-# Alustetaan uusi Ruby-projekti
-bundle init
-
-# Luodaan uusi tiedosto nimeltä "app.rb"
-touch app.rb
+# avaa tiedosto ja kirjoita seuraava funktio:
+def tervehdi(nimi)
+  puts "Hei, #{nimi}!"
+end
 ```
 
-Projektin alustuksen jälkeen voimme aloittaa koodaamisen uuteen tiedostoon. Tämä antaa meille mahdollisuuden luoda uutta toiminnallisuutta ja testata sitä.
+Suoritetaan funktio komentoriviltä:
 
-```ruby
-#Lisätään koodia tiedostoon "app.rb"
-puts "Tervetuloa uuteen projektiin!"
-
-# Suoritetaan tiedosto
-ruby app.rb
+```Ruby
+# suorita funktio
+$ ruby -e 'require "./hello"; tervehdi("Maailma")'
 ```
 
-Tämä tulostaa konsoliin viestin "Tervetuloa uuteen projektiin!".
+Tulostuu "Hei, Maailma!"
 
-## Syvenny:
+## Syventävä osuus:
 
-Projektien luominen on yksi ohjelmoijien tärkeimmistä tehtävistä. Se mahdollistaa uuden toiminnallisuuden luomisen ja olemassa olevan koodin parantamisen. On myös olemassa muita työkaluja, kuten Ruby on Rails, jotka auttavat kehittämään projekteja nopeasti ja tehokkaasti.
+Aivan ensimmäiset ohjelmat tehtiin suoraan konekielellä, joka on erittäin työlästä ja virhealtista. Sittemmin on kehitetty erilaisia ohjelmointikieliä, kuten Ruby, jotka mahdollistavat ohjelmointitehtävien suorittamisen helpommin ja nopeammin.
 
-Projektin luominen Rubylla tapahtuu Bundlerin avulla. Tämä työkalu auttaa hallinnoimaan projektin riippuvuuksia ja asennuksia. Tämä tekee projektin siirtämisestä eri ympäristöihin helpompaa ja estää riippuvuuksien aiheuttamia ongelmia.
+Uuden projektin aloittamiseen on muitakin vaihtoehtoja. Voit esimerkiksi käyttää Ruby on Rails -kehystä, joka automatisoi monia tehtäviä ja nopeuttaa kehitystä.
+
+Aloitimme projektin luomalla uuden tiedoston ja määrittämällä yksinkertaisen funktion. Tämä on yksinkertaisin tapa aloittaa. Suuremmissa projekteissa tarvitset todennäköisesti useita tiedostoja ja luokkia.
 
 ## Katso myös:
 
-- [Bundlerin virallinen dokumentaatio](https://bundler.io/)
-- [Vuoruperäinen ohjelmointi Rubylla](https://fi.wikipedia.org/wiki/Vuoroper%C3%A4inen_ohjelmointi)
-- [Ruby on Rails](https://rubyonrails.org/)
+1. [Ruby-ohjelmointiopas](http://ruby-doc.org/)
+2. [Ruby on Rails -opas](https://guides.rubyonrails.org/)
+3. [GitHub-sivusto, jossa on Ruby-esimerkkejä](https://github.com/ruby/ruby)

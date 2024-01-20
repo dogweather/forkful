@@ -1,7 +1,7 @@
 ---
-title:                "Le téléchargement d'une page Web"
-html_title:           "C++: Le téléchargement d'une page Web"
-simple_title:         "Le téléchargement d'une page Web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,46 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi ?
 
-Télécharger une page web signifie simplement récupérer son contenu à partir d'Internet. Les programmeurs le font souvent pour extraire des informations utiles à partir d'une page web et les utiliser dans leurs programmes.
+Télécharger une page web, c'est récupérer et stocker son contenu HTML. Les programmeurs le font pour analyser les données, extraire des informations ou encore automatiser des tâches.
 
-## Comment faire:
+## Comment faire :
+
+Voici comment utiliser la bibliothèque C++ `cURL` pour télécharger une page web.
 
 ```C++
 #include <iostream>
-#include <curl/curl.h> // Bibliothèque pour le téléchargement
+#include <curl/curl.h>
 
-using namespace std;
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* s) {
+    size_t newLength = size*nmemb;
+    s->append((char*)contents, newLength);
+    return newLength;
+}
 
-int main()
-{
-    CURL *curl; 
-    CURLcode res; 
-    string url = "https://www.example.com"; // URL à télécharger
+int main() {
+    CURL* curl;
+    CURLcode res;
+    std::string s;
 
-    curl = curl_easy_init(); // Initialiser l'objet curl
-    if(curl) 
-    {
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str()); // Définir l'URL à télécharger
-        res = curl_easy_perform(curl); // Exécuter la requête
-        curl_easy_cleanup(curl); // Nettoyer l'objet curl
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
+
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &s);
+
+        res = curl_easy_perform(curl);
+
+        if(res != CURLE_OK)
+            std::cout << "curl_easy_perform() failed: " << curl_easy_strerror(res) << std::endl;
+        else
+            std::cout << s << std::endl;
+
+        curl_easy_cleanup(curl);
     }
-    
+
+    curl_global_cleanup();
+
     return 0;
 }
 ```
 
-**Résultat:**
+## Plongée en profondeur :
 
-<img src="https://user-images.githubusercontent.com/73485858/119124235-07ec5e00-ba31-11eb-89cc-8651029d1535.png" width="450">
+Historiquement, télécharger une page web a toujours été nécessaire pour interagir avec elle sans navigateur. Il existe plusieurs manières de le faire en C++, et cURL est l'une des plus populaires. Elle offre une grande flexibilité et de nombreuses options pour personnaliser le téléchargement.
 
-## Plongée en profondeur:
+En alternative à cURL, vous pouvez utiliser des bibliothèques comme libSoup ou POCO HTTP Client. Chaque bibliothèque a ses propres avantages et inconvénients, il est donc important de choisir celle qui répond à vos besoins.
 
-Les programmeurs ont souvent besoin de télécharger des pages web pour extraire des données ou automatiser certaines tâches, telles que la mise à jour de leur base de données avec des informations récentes. Le téléchargement de pages web peut également être utilisé pour créer des "bots" ou des outils de surveillance basés sur le web. Il existe plusieurs bibliothèques disponibles en plus de cURL pour effectuer des téléchargements en C++, telles que libcurl et boost::asio.
+En ce qui concerne les détails d'implémentation, le code ci-dessus initialise cURL, définit l'URL à télécharger, associe une fonction de rappel pour enregistrer les données et enfin exécute l'opération. Quelques détails à noter : `CURLOPT_WRITEFUNCTION` définit la fonction de rappel, `CURLOPT_WRITEDATA` définit l'endroit où les données sont écrites, et curl_easy_perform() réalise l'opération de téléchargement.
 
-## Voir aussi:
+## Voir aussi :
 
-- [Curl documentation](https://curl.se/docs/)
-- [libcurl documentation](https://curl.se/libcurl/)
-- [boost::asio documentation](https://www.boost.org/doc/libs/1_76_0/doc/html/boost_asio.html)
+Pour approfondir le sujet, voici des liens vers des ressources connexes :
+
+1. Documentation de cURL : [Lien](https://curl.haxx.se/libcurl/c/)
+2. Tutoriel sur libSoup : [Lien](https://developer.gnome.org/libsoup/stable/)
+3. Documentation de POCO HTTP Client : [Lien](https://pocoproject.org/docs/Poco.Net.HTTPClientSession.html)

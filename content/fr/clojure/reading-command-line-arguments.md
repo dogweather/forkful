@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "Clojure: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que c'est et pourquoi le font-ils ?
-La lecture des arguments de la ligne de commande consiste à récupérer les informations saisies par l'utilisateur lorsqu'il exécute un programme en utilisant la ligne de commande. Les programmeurs le font pour pouvoir personnaliser le comportement de leur programme en fonction des arguments fournis par l'utilisateur.
+# Lire les Arguments de la Ligne de Commande en Clojure
 
-Comment faire :
+## Pourquoi et Quoi ?
+
+Lire les arguments de la ligne de commande en Clojure, c'est obtenir les options et paramètres fournis à votre programme lors de son lancement via le terminal. C'est une tâche commune en programmation pour personnaliser le comportement du programme selon les besoins de l'utilisateur.
+
+## Comment faire :
+
+Voici un exemple basique d'un programme qui lit et imprime les arguments de la ligne de commande.
+
 ```Clojure
-(defn read-args []
-  (vec *command-line-args*))
-
-(defn print-args [args]
-  (println "Les arguments saisis sont :" args))
-
-;; Exemple d'utilisation
-(def args (read-args))
-(print-args args)
-```
-Sortie :
-```
-Les arguments saisis sont : ["argument1" "argument2"]
+(defn -main
+  [& args]
+  (println "Arguments: " args))
 ```
 
-Plongée en profondeur :
-Dans le passé, les programmes étaient principalement exécutés en utilisant des interfaces utilisateur graphiques (GUI). Cependant, avec l'avènement des langages de script et des systèmes d'exploitation en ligne de commande, lire les arguments de la ligne de commande est devenu une pratique courante pour les programmeurs. Il existe également des alternatives telles que l'utilisation de fichiers de configuration ou l'interaction avec l'utilisateur via des menus.
+Si vous lancez le programme avec des arguments tels que "foo" et "bar", voici la sortie.
 
-Implémentation :
-En Clojure, la fonction `*command-line-args*` retourne une séquence d'arguments saisis par l'utilisateur lors de l'exécution du programme en ligne de commande. La fonction `vec` est utilisée pour convertir la séquence en un vecteur pour faciliter la manipulation. La fonction `println` est utilisée pour afficher les arguments saisis par l'utilisateur.
+```Clojure
+Arguments : [foo bar]
+```
 
-Voir aussi :
-Pour plus d'informations sur la lecture des arguments de la ligne de commande en Clojure, consultez la documentation officielle : https://clojure.org/reference/command_line_tools
+## Plongée en profondeur: 
+
+Historiquement, les arguments de ligne de commande étaient le moyen principal pour les utilisateurs d'interagir avec les programmes. Bien que les interfaces utilisateur graphiques soient plus populaires aujourd'hui, les arguments de ligne de commande restent essentiels pour les applications sans interface graphique, les scripts et l'automatisation.
+
+En alternative, on peut lire les entrées utilisateur avec les fonctions `read-line` ou `read`, ou lire des fichiers de configuration. Chacune a ses propres avantages et inconvénients.
+
+Le système ‘parse-opts’ de Clojure vous permet de décortiquer facilement les arguments en options attendues et arguments positionnels, rendant la gestion des arguments de ligne de commande plus conviviale et moins sujette à erreurs.
+
+## Voir Aussi:
+
+- Documentation officielle Clojure sur les espaces de noms, qui explique comment les arguments de la ligne de commande sont passés à la fonction `-main`: [https://clojure.org/reference/namespaces#_the_namespace](https://clojure.org/reference/namespaces#_the_namespace)
+- Guide pratique Clojure sur l'utilisation de ‘parse-opts’: [https://clojure.org/guides/cli_options](https://clojure.org/guides/cli_options)

@@ -1,7 +1,7 @@
 ---
-title:                "Capitaliser une chaîne de caractères."
-html_title:           "Haskell: Capitaliser une chaîne de caractères."
-simple_title:         "Capitaliser une chaîne de caractères."
+title:                "Mettre en majuscule une chaîne"
+html_title:           "Haskell: Mettre en majuscule une chaîne"
+simple_title:         "Mettre en majuscule une chaîne"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est ce que c'est & Pourquoi?
+## Qu'est-ce que c'est & Pourquoi?
 
-Capitaliser une chaîne de caractères consiste à mettre la première lettre en majuscule tandis que les autres lettres restent en minuscule. Les programmeurs utilisent cette technique pour améliorer la lisibilité de leur code, notamment pour les noms de variables ou les messages affichés à l'utilisateur.
+Capitaliser une chaîne signifie transfomer la première lettre de chaque mot en majuscule. Les développeurs le font généralement pour des raisons esthétiques, pour mettre l'accent sur les noms propres, les titres etc.
 
 ## Comment faire:
 
-Voici un exemple de code en Haskell qui utilise la fonction `toUpper` pour capitaliser une chaîne de caractères:
+La façon habituelle de capitaliser une chaîne en Haskell est d'utiliser la fonction `toUpper`, fournie par `Data.Char`. Voici un exemple précis:
 
 ```Haskell
-import Data.Char
-capitalize :: String -> String
-capitalize str = toUpper (head str) : tail (map toLower str)
+import Data.Char (toUpper)
+
+capitaliser :: String -> String
+capitaliser [] = []
+capitaliser (premier:reste) = toUpper premier : map toLower reste
 ```
+Cela transforme la première lettre en majuscule, et garantit que le reste de la phrase est en minuscule.
 
-Si nous appliquons cette fonction à la chaîne `"hello"`, nous obtiendrons `"Hello"` en sortie. Nous pouvons également utiliser la fonction `words` pour capitaliser chaque mot d'une phrase:
-
+Exemple de sortie:
+ 
 ```Haskell
-capsWords :: String -> String
-capsWords str = unwords (map capitalize (words str))
+capitaliser "bonjour, monde!"
+"Bonjour, monde!"
 ```
 
-Ainsi, si nous appliquons `capsWords` à la phrase `"hello world"`, nous obtiendrons `"Hello World"` en sortie.
+## Approfondissement:
 
-## Plongée en profondeur:
+L'idée de capitaliser les chaînes est assez ancienne dans l'histoire de la programmation. En Haskell, `Data.Char` fournit une gamme de fonctions pour manipuler les caractères. L'utilisation de `toUpper` et de `map toLower` est une méthode courante pour capitaliser les chaînes.
 
-L'utilisation de la capitalisation dans le développement logiciel remonte aux premiers langages de programmation tels que le COBOL et le Fortran. Cependant, cela a été popularisé avec l'émergence de langages fonctionnels comme Haskell qui mettent l'accent sur la manipulation de données immuables.
+Il existe aussi d'autres façons de capitaliser une chaîne. Par exemple, vous pourriez utiliser une approche récursive pour cela. Cependant, dans les cas courants, le code démontré ci-dessus est suffisant et efficace.
 
-Il existe également d'autres méthodes pour capitaliser une chaîne de caractères en fonction de certains critères comme la première lettre de chaque mot ou la première lettre après un espace.
-
-En termes d'implémentation, la fonction `toUpper` utilise la table ASCII pour convertir une lettre en minuscule en majuscule en ajoutant ou en soustrayant la constante correspondant à la différence entre les valeurs des lettres.
+À l'intérieur de la fonction `capitaliser`, la structure `(premier:reste)` est utilisée pour diviser la chaîne d'entrée en son premier caractère (la tête) et le reste de la chaîne (la queue). Le premier caractère est transformé en majuscules tandis que le reste de la chaîne est mis en minuscules.
 
 ## Voir aussi:
 
-Pour en savoir plus sur les fonctions de manipulation de chaînes de caractères en Haskell, consultez la [documentation officielle](https://hackage.haskell.org/package/base/docs/Prelude.html#t:String). Vous pouvez également découvrir d'autres méthodes de capitalisation en explorant la [bibliothèque de fonctions de manipulation de caractères](https://hackage.haskell.org/package/base/docs/Data-Char.html).
+Les références suivantes sont utiles pour une étude plus approfondie de ce sujet :
+
+- Documentation officielle de Haskell sur Data.Char : http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html
+- Un excellent article sur la manipulation de chaînes en Haskell : https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/string

@@ -1,7 +1,7 @@
 ---
-title:                "HTML-Parsing."
-html_title:           "Arduino: HTML-Parsing."
-simple_title:         "HTML-Parsing."
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,53 +11,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Parsing HTML ist der Prozess des Lesens und Interpretierens von HTML-Code, um seine Struktur und Inhalte zu verstehen. Programmierer nutzen dies häufig, um Websites zu analysieren oder Daten daraus zu extrahieren.
 
-## Wie Geht's?
-Um HTML mit Arduino zu parsen, gibt es verschiedene Bibliotheken wie beispielsweise "ArduinoJson" oder "HtmlParser". Hier ist ein Beispielcode, der die Website "www.google.com" liest und die Überschrift ausgibt:
-```
-#include <ArduinoJson.h>
+HTML-Parsing ist der Prozess, durch den ein Programm Informationen aus HTML-Daten extrahiert. Programmierer tun dies, um Daten aus Webseiten zu sammeln, die dann in ihren eigenen Anwendungen verwendet werden können.
+
+## So geht's:
+
+Mit Arduino und der Ethernet-Bibliothek ist HTML-Parsing einfach. Nehmen wir an, wir möchten die Überschrift (H1) einer Webseite extrahieren:
+
+```Arduino
+#include <Ethernet.h>
 
 void setup() {
-  Serial.begin(9600); //initialisiere serielle Kommunikation
-
-  StaticJsonDocument<200> doc; //erstelle ein leeres JsonDocument mit 200 Bytes Speicherplatz
-  String html = ""; //erstelle eine leere String-Variable
-
-  WiFi.begin("SSID", "Password"); //verbinde mit dem WLAN-Netzwerk
-  while (WiFi.status() != WL_CONNECTED) { //warte auf Verbindung
-    delay(500);
-    Serial.println("Connecting to WiFi..");
-  }
-
-  HTTPClient http; //erstelle ein HTTP-Objekt
-  http.begin("http://www.google.com"); //starte die Verbindung mit der Website
-  int httpCode = http.GET(); //führe ein GET-Request aus
-  if (httpCode > 0) { //wenn Verbindung erfolgreich
-    html = http.getString(); //lese den HTML-Code in die String-Variable
-  }
-  else { //sonst
-    html = ""; //setze die String-Variable auf leer
-  }
-  
-  deserializeJson(doc, html); //parsen des HTML-Codes
-  String headline = doc["head"]["title"]; //extrahieren der Überschrift
-  Serial.println(headline); //Ausgabe der Überschrift
+  Ethernet.begin(...);
+  Serial.begin(9600);
 }
 
 void loop() {
-  //nichts hier
+  EthernetClient client = Ethernet.connect("beispielwebseite.de", 80);
+
+  while (client.connected()) {
+    if (client.available()) {
+      char c = client.read();
+
+      if (c == '<') {
+        String tag = "";
+        while (c != '>') {
+          c = client.read();
+          tag += c;
+        }
+        if (tag.startsWith("h1")) {
+          String title = "";
+          while (!tag.endsWith("/h1")) {
+            c = client.read();
+            title += c;
+          }
+          Serial.println(title);
+        }
+      }
+    }
+  }
+  delay(5000);
 }
 ```
 
-Die Ausgabe des Beispiels wird in der seriellen Monitor angezeigt und sollte in etwa so aussehen:
-```
-Google
-```
+Der obige Code extrahiert alle Überschriften (H1) von der Webseite `beispielwebseite.de` und druckt sie auf der Konsole aus.
 
-## Tief Tauchen
-Parsing HTML wurde ursprünglich entwickelt, um das World Wide Web zu ermöglichen. Heutzutage gibt es jedoch viele Alternativen wie JSON oder XML, die jeweils ihre eigenen Vor- und Nachteile haben. Bei der Implementierung von HTML-Parsing ist es wichtig, auf die Performance zu achten, da HTML oft sehr umfangreich sein kann.
+## Tiefgang:
 
-## Siehe Auch
-- [ArduinoJson Bibliothek](https://github.com/bblanchon/ArduinoJson)
-- [HtmlParser Bibliothek](https://github.com/johnnyb/HtmlParser)
+1. Historischer Kontext: Der Begriff "parsing" stammt aus dem lateinischen "pars" für "Teil" und wurde im Kontext von grammatikalischer Analyse verwendet, bevor er in der Informatik Anklang fand.
+
+2. Alternativen: Andere Bibliotheken wie BeautifulSoup in Python oder Jsoup in Java, erlauben es Ihnen, HTML zu parsen. Sie sind jedoch komplexer und benötigen mehr Rechenleistung, was in einem Arduino-System selten zur Verfügung steht.
+
+3. Implementierungsdetails: Das obige Beispiel ist sehr rudimentär und nicht gegen Fehler robust. In der Praxis ist es ratsam, eine eigene HTML-Parsing-Bibliothek zu erstellen oder eine fertige, geeignete Bibliothek zu verwenden.
+
+## Siehe auch:
+
+1. Arduino Ethernet-Bibliothek: [link](https://www.arduino.cc/en/Reference/Ethernet)
+2. Weitere Information zum Parsing: [link](https://en.wikipedia.org/wiki/Parsing)
+3. BeautifulSoup in Python: [link](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+4. Jsoup in Java: [link](https://jsoup.org/)

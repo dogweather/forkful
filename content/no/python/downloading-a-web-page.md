@@ -1,6 +1,6 @@
 ---
 title:                "Laste ned en nettside"
-html_title:           "Python: Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
 simple_title:         "Laste ned en nettside"
 programming_language: "Python"
 category:             "Python"
@@ -10,22 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Nedlasting av en nettside er prosessen med å få tak i all informasjonen som utgjør nettsiden og lagre den på datamaskinen din. Dette er en vanlig oppgave for programmerere fordi det lar dem hente data fra ulike nettsider og bruke disse til å utvikle applikasjoner og automatisere oppgaver.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
-Bruk ```Python requests``` biblioteket for å laste ned en nettside ved å bruke følgende kode:
-```
+Å laste ned en nettside er prosessen med å hente data fra en internettserver og lagre den på brukerens enhet. Programmerere gjør dette for å kunne analysere, manipulere og hente data fra nettsiden for videre bruk.
+
+## Hvordan:
+
+Her er en grunnleggende kodeeksempel som bruker `requests` biblioteket i Python for å hente data fra en nettside:
+
+```Python
 import requests
-response = requests.get("https://www.example.com")
-print(response.text) 
+
+url = 'http://www.google.no'
+response = requests.get(url)
+
+print(response.text)
 ```
-Dette vil skrive ut alt innholdet på nettsiden i tekstformat. Du kan også bruke ```BeautifulSoup``` for å analysere eller søke gjennom det nedlastede innholdet.
 
-## Dypere dykk:
-Lignende alternativer for nedlasting av nettsider inkluderer ```urllib``` og ```urllib2```, men requests er den mest brukte løsningen på grunn av dens brukervennlighet og omfattende støtte fra utviklermiljøer. Det finnes også spesialiserte biblioteker som Scrapy for å utføre web scraping oppgaver.
+Output:
 
-## Se også:
-- Offisiell requests dokumentasjon: https://requests.readthedocs.io/en/master/
-- Beautiful Soup dokumentasjon: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
-- Scrapy dokumentasjon: https://docs.scrapy.org/en/latest/
+```Python
+<!doctype html>...
+...Google-linkene
+</html>
+```
+
+## Dypdykk:
+
+Historisk sett har nedlastning av nettsider blitt brukt til mange formål, inkludert data mining, backup av nettsteder og offline lesning. Men, det er alltid viktig å overholde nettstedets robots.txt-fil og servicevilkår for å unngå å være på feil side av loven.
+
+Alternativer for `requests` biblioteket inkluderer `httplib`, `treq`, og `http.client`; men `requests` forblir det mest populære valget på grunn av dets brukervennlighet og rike funksjoner.
+
+Nedlastningen skjer over HTTP eller HTTPS protokoller. Når en GET forespørsel er gjort, serveren svarer med data som da blir lest av Python-koden.
+
+## Se Også:
+
+- [Python Requests Dokumentasjon](https://docs.python-requests.org/en/latest/)
+- [W3School: Python Requests Tutorial](https://www.w3schools.com/python/ref_requests_get.asp)
+- [Mozilla Developer Network HTTP Oversikt](https://developer.mozilla.org/nb/docs/Web/HTTP/Overview)
+
+Husk at informatisk etikk og databehandlingslover bør alltid overholdes når du laster ned og behandler data fra internett.

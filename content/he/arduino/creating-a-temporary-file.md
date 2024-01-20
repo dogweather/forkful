@@ -1,6 +1,6 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "Arduino: יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,43 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-יצירת קובץ זמני הוא פעולה שתיוגרמה למחשב לאחסן מידע זמני בזמן ריצת התוכנית. פעולה זו חשובה לתכנותנים לצורך שמירת מידע זמני שיכול לשמש במהלך התכנית.
+## מה זה ולמה? 
 
-## איך לעשות זאת:
-כדי ליצור קובץ זמני ב-Arduino, יש להשתמש בפונקציות `File tempFile = SPIFFS.open("/tempFile.txt", "w+");` ו-`tempFile.close();` כדי ליצור ולסגור את הקובץ הזמני בהתאמה. להלן דוגמא פשוטה של קוד ופלט תוצאה עבור קובץ זמני ב-Arduino: 
-```
-// יצירת קובץ זמני בספריית SPIFFS
-#include <SPIFFS.h> 
+יצירת קובץ זמני היא פעולה שבה מכינים קובץ שנמחק בתום השימוש. מתכנתים משתמשים בקבצים זמניים כאשר הם רוצים לשמור מידע מעבר בלתי קבוע, ללא צורך בשמירתו לאורך זמן.
+
+## איך לעשות:
+
+הנה דוגמה ליצירת קובץ זמני באמצעות קוד Arduino:
+
+```Arduino
+#include <SD.h>
+
+File tempFile;
 
 void setup() {
-  Serial.begin(9600); // הפעלת הכנסת נתונים למשתנה זמני
-  File tempFile = SPIFFS.open("/tempFile.txt", "w+"); // יצירת קובץ זמני בשם "tempFile.txt"
-  tempFile.print("מידע זמני של התכנית"); // הקלדת המידע הזמני בקובץ
-  tempFile.close(); // סגירת הקובץ
-  tempFile = SPIFFS.open("/tempFile.txt", "r"); // פתיחת הקובץ לצורך קריאת המידע הזמני
-  if (tempFile) {
-    while (tempFile.available()) { // כל עוד יש מידע זמין בקובץ
-      Serial.write(tempFile.read()); // הצגת המידע הזמני בטיחות גלישה
-    }
-    tempFile.close(); // סגירת הקובץ
-  } 
-  else {
-    Serial.println("לא מצליח לפתוח את הקובץ הזמני");
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Initialization failed!");
+    while (1);
   }
+
+  tempFile = SD.open("temp.txt", FILE_WRITE);
+  if (!tempFile) {
+    Serial.println("File creation failed!");
+    while (1);
+  }
+  Serial.println("File creation successful!");
 }
 
 void loop() {
-  // פעולות נוספות לאחר הצגת המידע הזמני
+  // write to the file
+  tempFile.println("Temporary file data.");
+  tempFile.close();  // close the file
+  
+  // delete the file
+  if (SD.remove("temp.txt")) {
+    Serial.println("File deletion successful!");
+  } else {
+    Serial.println("File deletion failed!");
+  }
 }
 ```
 
-פלט תוצאה: `מידע זמני של התכנית`
+פלט דוגמה:
 
-## מעמד עמוק:
-פעולת היצירה של קובץ זמני נמצאת בשימוש מזה עשורים רבים והיא נחשבת לפעולה יסודית בתכנות. פעולה זו ניתנת לשימוש גם בסביבות תכנות אחרות כמו Python ו-C++. במקום ליצור קובץ זמני, ניתן לעבוד עם משתנים זמניים כדי לשמור על מידע זמני בתוך התוכנית.
+```
+File creation successful!
+File deletion successful!
+```
 
-## ראו גם:
-למידע נוסף על פעולת קובץים זמניים ב-Arduino, מומלץ לעיין במקורות הבאים:
-- דוגמאות נוספות ליצירת קבצים זמניים: https://learn.sparkfun.com/tutorials/write-data-to-a-file/
-- מידע נוסף על פעולת קבצים ואיך לנהל אותם ב-Arduino: https://www.arduino.cc/en/Tutorial/ReadWrite
+## צלילה עמוקה:
+
+1) היסטוריה: במערכות ההפעלה המודרניות, קבצים זמניים יכולים להיות נוצרים בקלות לצרכים של האפליקציה. זה מאפשר למתכנתים להשתמש בקבצים זמניים לצורך ריבוי פעולות.
+
+2) אלטרנטיבות: לחיסכון במקום ניתן לשמור מידע מעבר בזיכרון ה-RAM, אך לכך יש את החסרון בחשיף של המידע לאובדן במידה וקורה התרעה כלשהי.
+
+3) פרטי המימוש: כאשר אנו מוחקים קובץ מה-SD, המחיצה מסמנת את המקום שעליו הקובץ היה כשלילי לשימוש חוזר.
+
+## ראה גם:
+
+1) [תיעוד המחלקה File של SD ב- Arduino](https://www.arduino.cc/en/Reference/SD)
+2) [הסבר מפורט על שימוש בקבצים ב- Arduino](https://www.dummies.com/programming/arduino/how-to-save-a-file-to-an-sd-card-with-arduino/)
+3) [פורום Arduino עם דיונים ושאלות נפוצות](https://community.arduino.cc/)

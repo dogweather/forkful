@@ -1,6 +1,6 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Lua: HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？　なんで？
+## 何となぜ？
 
-HTTPリクエストを送るとはどういうことかを、2〜3文で説明します。また、プログラマーがなぜそのようなことをするのかも説明します。
+HTTPリクエストの送信はWebサーバーに対する要求の送信を指します。これはWebサイトのコンテンツを取得したり、データを更新したりするためにプログラマーが使用します。
 
-HTTPリクエストを送るとは、インターネット上の他のコンピュータにデータを要求することです。例えば、ウェブページを閲覧する際に、HTTPリクエストを送ってサーバーからデータを取得します。プログラマーは、自分のプログラムと他のシステム間でデータをやり取りする際に、HTTPリクエストを利用することがあります。
+## 使い方：
 
-## 使い方
-
-下のCode blockを参考にして、LuaでHTTPリクエストを送る方法を確かめてみましょう。
+Luaを用いてHTTPリクエストを送信する例を以下に示します。
 
 ```Lua
--- 必要なライブラリを読み込み
-local http = require("socket.http")
+http = require('socket.http')
 
--- URLとリクエストタイプを定義
-local url = "https://example.com/api/users"
-local method = "GET"
+url = 'http://httpbin.org/post'
 
--- リクエストを送信
-local body, code, headers = http.request(url, method)
+response_body, response_status, response_headers, response_status_line = http.request{
+  url = url,
+  method = 'POST',
+  headers = {
+    ['Content-Type'] = 'application/x-www-form-urlencoded'
+  },
+  source = ltn12.source.string('key=value'),
+  sink = ltn12.sink.table(respbody)
+}
 
--- リクエストが成功したかチェック
-if code == 200 then
-    -- レスポンスボディを出力
-    print(body)
-else 
-    -- エラーコードを出力
-    print("Error code: " .. code)
-end 
+print(response_status)  -- 出力：200
 ```
+このコードは`http://httpbin.org/post`に`POST`リクエストを送信します。レスポンスステータスは`200`を出力します。
 
-上のコードでは、[Luasocket](https://github.com/diegonehab/luasocket)というライブラリを利用してHTTPリクエストを送っています。このライブラリには、リクエストボディを作成したり、レスポンスヘッダーを取得するための便利な関数が含まれています。
+## 深掘り：
 
-## 深堀り
+Webプログラミングの初期では、HTTPリクエストは手動ですべてのヘッダーとともに構築し、送信する必要がありました。しかし、現在ではバージョン5.1から共有ライブラリとして利用できるLuaSocketライブラリのようなツールにより、このプロセスが大幅に簡素化されました。
 
-- HTTPリクエストは、Webの通信プロトコルであるHTTPの基本的な機能の一つです。HTTPは、1990年代に世界初のWebサーバーである[NCSA HTTPd](https://en.wikipedia.org/wiki/NCSA_HTTPd)を開発したティム・バーナーズ＝リーによって策定されました。
-- Lua以外にも、PythonやNode.jsなど様々なプログラミング言語でHTTPリクエストを送ることができます。それぞれの言語によって、実装方法やライブラリの選択方法が異なりますので、自分のプロジェクトに最適なものを選びましょう。
-- HTTPリクエストを送る際には、本文以外にリクエストヘッダーと呼ばれる情報も併せて送ることができます。ヘッダーには、コンテンツのタイプやセキュリティなどの情報が含まれています。
+Lua以外にも多くの言語でHTTPリクエストを送信する方法が存在します。Pythonでは`requests`ライブラリ、JavaScriptでは`fetch`APIが一般的です。
 
-## 関連リンク
+LuaではHTTPリクエストを送信するためにコルーチンを使用することも可能です。これは非同期操作を行うための方法で、プログラムの他の部分がレスポンスを待つ間に実行を続けることができます。
 
-- [Luasocket公式ドキュメント](http://w3.impa.br/~diego/software/luasocket/)
-- [HTTPリクエストとは？ | MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
-- [HTTPプロトコルについて学ぼう | Qiita](https://qiita.com/takeshiyako2/items/c0807a44341d55c33a7a)
+## 参考リンク：
+
+1. [LuaSocket Tutorial](http://w3.impa.br/~diego/software/luasocket/tutorial.html): チュートリアルではLuaSocketを用いたより詳細なネットワークプログラミングについて解説しています。
+
+2. [HTTP made really easy](http://www.jmarshall.com/easy/http/): HTTPプロトコルの基本から詳細まで説明している資料です。
+
+3. [Lua JIT](https://luajit.org/): LuaのJITコンパイラの公式ページ。Luaのパフォーマンスを向上させるためのツールです。

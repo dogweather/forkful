@@ -1,7 +1,7 @@
 ---
-title:                "将来または過去の日付の計算"
-html_title:           "Lua: 将来または過去の日付の計算"
-simple_title:         "将来または過去の日付の計算"
+title:                "未来または過去の日付を計算する"
+html_title:           "Lua: 未来または過去の日付を計算する"
+simple_title:         "未来または過去の日付を計算する"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
+## 何と何故？
+未来や過去の日付を計算するとは、ある日から特定の期間を足し引きして新しい日付を導く事を指します。プログラマーがこれを行う理由は、イベントの日程計画、残り時間の計算、年齢の確認、などの機能をアプリケーションに提供するためです。
 
-未来や過去の日付を計算するとは、特定の日付から一定期間進んだり戻ったりすることを指します。プログラマーがこれを行う理由は、アプリケーションやゲームなどの特定のイベントや機能を起動するために必要な日付を自動的に生成したり、現在の日付から一定期間後の日付を計算する必要がある場合があるためです。
+## 実装方法：
+Luaではos.dateとos.time関数を使用して日付の計算を行います。以下に簡単なコードを示します。
 
-## 使い方：
+```Lua
+local now = os.time() -- 現在の日付と時間を取得
+print(os.date('%Y-%m-%d', now)) -- 現在の日付を表示
 
+local days = 3*24*60*60 -- 3日後を秒単位で計算
+local future_date = now + days -- 未来の日付を計算
+
+print(os.date('%Y-%m-%d', future_date)) -- 未来の日付を表示
 ```
---未来の日付を計算する
-local future_date = os.date("%Y/%m/%d", os.time() + 86400)
-print(future_date) --出力：明日の日付（YYYY/MM/DDの形式）
-
---過去の日付を計算する
-local past_date = os.date("%Y/%m/%d", os.time() - (86400*7))
-print(past_date) --出力：一週間前の日付（YYYY/MM/DDの形式）
+このコードを実行すると以下のような出力が得られます：
 ```
+2022-04-16
+2022-04-19
+```
+## さらに深く見る：
+日付計算はコンピュータ科学の中で歴史的に重要なテーマとなっています。複雑なカレンダーシステムや、グレゴリオ暦とユリウス暦の切り替えによる日付のずれなど、さまざまな課題を解決するために様々なアルゴリズムが開発されてきました。
 
-## 詳細：
+Luaでは、os.dateとos.time関数以外にも、os.difftime関数を使った日付の計算方法もあります。また、日付と時間を扱うためのライブラリ、たとえばluadateやchronosも存在します。
 
-1. 歴史的文脈：日付の計算は、プログラムが開発される初期の時点から重要な機能として使用されてきました。特に、コンピューターが普及する前の計算機では、日付の計算を行うプログラムが多数開発されました。
+os.time関数は、1970年1月1日からの経過秒数を返すため、未来や過去の日付を計算する場合はその限界を考慮する必要があります。
 
-2. 代替手段：Luaには、日付の計算を行うための組み込みのモジュールがありますが、他のプログラミング言語やライブラリも使用することができます。マイクロソフトのVisual Basicなど、ある特定のプログラミング言語には、日付の計算を行うための専用の関数が用意されています。
-
-3. 実装の詳細：未来や過去の日付を計算するためには、Luaのos.time()関数を使用します。この関数は、指定した日付から1970年1月1日までの経過秒数を返します。この値を使って、先ほどのコードのように、未来や過去の日付を計算することができます。
-
-## 関連リンク：
-
-- [Lua - 日付と時刻の操作](https://www.lua.org/manual/5.3/manual.html#6.9)
-- [Microsoft - Visual Basicでの日付と時刻の操作](https://docs.microsoft.com/en-us/dotnet/visual-basic/language-reference/functions/date-and-time-functions)
+## 参考記事：
+1. Lua 5.3 リファレンスマニュアル - os.date: [リンク](https://www.lua.org/manual/5.3/manual.html#pdf-os.date)
+2. Lua 5.3 リファレンスマニュアル - os.time: [リンク](https://www.lua.org/manual/5.3/manual.html#pdf-os.time)
+3. Lua 5.3 リファレンスマニュアル - os.difftime: [リンク](https://www.lua.org/manual/5.3/manual.html#pdf-os.difftime)
+4. luadate : [リンク](https://github.com/Tieske/date)
+5. chronos : [リンク](https://github.com/prapin/chronos)

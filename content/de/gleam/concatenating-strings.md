@@ -1,7 +1,7 @@
 ---
-title:                "Zusammenführen von Zeichenketten"
-html_title:           "Gleam: Zusammenführen von Zeichenketten"
-simple_title:         "Zusammenführen von Zeichenketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,28 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Verkettung von Zeichenfolgen ist eine häufig verwendete Technik in der Programmierung. Sie ermöglicht es, mehrere Textelemente miteinander zu verbinden, um eine längere Folge von Zeichen zu erstellen. Programmierer nutzen dies, um zum Beispiel Text für Benutzer auszugeben oder Strings für spezielle Berechnungen zu erstellen.
 
-## Wie geht's?
-Die Verkettung von Zeichenfolgen in Gleam ist einfach und unkompliziert. Ein Beispielcode könnte wie folgt aussehen:
+Das Zusammenfügen von Zeichenketten oder "String-Konkatenation" erlaubt es uns, zwei oder mehr Strings zu einem einzigen String zusammenzuführen. Programmierer nutzen dies, um dynamische Inhalte zu erzeugen oder Informationen aus verschiedenen Quellen zu kombinieren.
+
+## So geht's:
+
+Betrachten wir einige Beispiele mit Gleam:
 
 ```Gleam
-fn double_greet(name1: String, name2: String) {
-  // Verketten von Zeichenfolgen mit dem `++` Operator
-  let greeting = "Hallo " ++ name1 ++ " und " ++ name2 ++ "!";
-  // Ausgabe des Ergebnisses
-  GreetingPrinter.print(greeting);
-}
-
-pub fn start() {
-  double_greet("Anna", "Ben");
-}
+let str1 = "Hallo, "
+let str2 = "Welt!"
+io.println(str1 ++ str2)
+// Ausgabe: '"Hallo, Welt!"'
 ```
 
-Die Ausgabe dieses Codes würde "Hallo Anna und Ben!" sein.
+In Gleam fügen wir Zeichenketten mit `++` zusammen. Die obige Funktion wird `"Hallo, Welt!"` zur Konsole ausgeben.
 
-## Tiefere Einblicke
-Die Idee der Zeichenfolgenverkettung wurde bereits in den 1960er Jahren mit dem Aufstieg der Programmiersprache COBOL populär. Heutzutage gibt es viele verschiedene Möglichkeiten, String-Verkettung in verschiedenen Programmiersprachen zu implementieren. Gleam verwendet den Operator `++`, um Strings zu verketten, aber es gibt auch andere Optionen wie zum Beispiel die `concat()` Funktion in Java. In der Gleam-Dokumentation werden weitere Details zur Implementierung der String-Verkettung erklärt.
+## Genauer betrachtet
 
-## Sieh dir auch an
-Wenn du mehr über Zeichenfolgenverkettung lernen möchtest, empfehlen wir dir die offizielle Gleam-Dokumentation unter https://gleam.run/. Dort findest du auch weitere spannende Informationen zu allen Aspekten der Programmierung mit Gleam.
+Historisch gesehen ist das Verknüpfen von Zeichenketten in fast allen Sprachen weit verbreitet, obwohl der genaue Mechanismus variiert. Alternativ könnten Sie auch Funktionen wie `String.join` verwenden, wenn Sie mehrere Strings zusammenfügen möchten. Allerdings ist `++` in Gleam die gängige Methode.
+
+Unter der Haube erzeugt Gleam bei der Verwendung von `++` eine neue Zeichenkette, anstatt die ursprünglichen Zeichenketten zu ändern. Dies sichert die Unveränderlichkeit von Daten, ein Grundpfeiler von funktionaler Programmiersprachen wie Gleam.
+
+## Weiterführende Literatur
+
+Weitere Informationen und Beispiele zum Arbeiten mit Zeichenketten in Gleam finden Sie in der offiziellen Gleam-Dokumentation:
+
+1. Strings in Gleam: [https://gleam.run/tour/strings](https://gleam.run/tour/strings)
+2. String.join: [https://hexdocs.pm/gleam_stdlib/gleam/string](https://hexdocs.pm/gleam_stdlib/gleam/string)

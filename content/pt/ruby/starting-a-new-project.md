@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Ruby: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,34 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Por Quê?
+Começar um novo projeto de programação significa partir de uma ideia para criar algo novo. Fazemos isso para resolver problemas, inovar ou melhorar as coisas existentes.
 
-Comecando um novo projeto em programacao significa iniciar um novo trabalho com um objetivo especifico em mente, como a criacao de um novo aplicativo ou a resolucao de um problema. Os programadores fazem isso para explorar ideias e tecnologias, ampliar suas habilidades e criar algo novo que possa ser usado por eles ou por outras pessoas.
-
-## Como fazer:
-
-Para criar um novo projeto em Ruby, siga estes passos simples:
+## Como Fazer:
+Vamos começar com um 'Hello, World' simples em Ruby.
 
 ```Ruby
-# 1. Crie um novo diretorio para o seu projeto
-mkdir novo_projeto
+puts "Olá, Mundo"
+```
+Ao executar este programa, você verá o seguinte output:
 
-# 2. Entre no diretorio recem-criado
-cd novo_projeto
+```Ruby
+Olá, Mundo
+```
 
-# 3. Inicie um novo projeto usando o gem bundler
+Para começar um novo projeto Ruby maior, você pode usar o Bundler. Primeiro instale o Bundler se você ainda não o fez.
+
+```Ruby
+gem install bundler
+```
+
+Então você pode começar um novo projeto:
+
+```Ruby
 bundle init
 ```
 
-Apos seguir esses passos, voce tera um novo projeto criado com um Gemfile padrao.
+Esses passos criaram um novo arquivo 'Gemfile' no seu projeto.
 
-## Profundando na questao:
+## Mergulho Profundo:
 
-Historicamente, a criacao de novos projetos em Ruby era feita manualmente, criando uma estrutura de pasta e instalando manualmente as dependencias desejadas. No entanto, com o surgimento do bundler, isso se tornou muito mais facil e padronizado. Alternativas ao bundler incluem o RubyGems e o Rake.
+O Ruby foi concebido em 1995 por Yukihiro "Matz" Matsumoto. Foi projetado para tornar a programação mais agradável para os desenvolvedores. Ele ganhou popularidade em todo o mundo e serviu como base para o Rails, que revolucionou o desenvolvimento web.
 
-Para personalizar ainda mais o processo de criacao de um novo projeto, voce pode especificar as dependencias necessarias em seu Gemfile antes de executar o comando `bundle init`. Isso garantira que todas as dependencias necessarias sejam instaladas automaticamente ao iniciar um novo projeto.
+O Ruby não é a única opção; existem muitos outros idiomas como Python, JavaScript e C#. A escolha da linguagem de programação depende das suas necessidades específicas do projeto e da sua familiaridade com a linguagem.
 
-## Veja tambem:
+Arquivos 'Gemfile' são específicos para o ecossistema Ruby. Eles listam as dependências do seu projeto e permitem instalar todas elas com um comando, tornando fácil para outras pessoas colaborarem no seu projeto.
 
-- [RubyGems](https://rubygems.org/)
-- [Rake](https://ruby.github.io/rake/)
+## Veja Também:
+
+Para aprender mais sobre Ruby, confira a documentação oficial [aqui](https://www.ruby-lang.org/pt/documentation/).
+
+Para obter mais detalhes sobre como iniciar um projeto em Ruby, visite este [link](https://bundler.io/v2.0/guides/creating_gem.html)
+
+Existem muitos cursos online disponíveis para aprender Ruby e desenvolvimento web, como na [Codecademy](https://www.codecademy.com/learn/learn-ruby) ou [Udemy](https://www.udemy.com/topic/ruby/).

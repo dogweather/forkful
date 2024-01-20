@@ -1,7 +1,7 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères"
-html_title:           "C++: Analyser une date à partir d'une chaîne de caractères"
-simple_title:         "Analyser une date à partir d'une chaîne de caractères"
+title:                "Analyser une date à partir d'une chaîne"
+html_title:           "Clojure: Analyser une date à partir d'une chaîne"
+simple_title:         "Analyser une date à partir d'une chaîne"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,50 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+Analyser une date à partir d'une chaîne de caractères consiste à convertir un texte contenant des informations de date (par exemple, "31/12/2021") dans un format de date informatique compréhensible. Les programmeurs le font pour faciliter le traitement, l'affichage et la sauvegarde des informations de date.
 
-Le "parsing" d'une date à partir d'une chaîne de caractères est une fonctionnalité courante dans la programmation. Cela permet aux programmeurs de convertir une date sous la forme d'une chaîne de caractères en un objet de date reconnaissable par l'ordinateur. Cela est utile pour manipuler, comparer ou afficher des dates dans des applications.
+## Comment faire :
+En C++, vous pouvez utiliser la bibliothèque `chrono` pour analyser une date à partir d'une chaîne de caractères.
 
-## Comment Faire:
-
-Voici un exemple de code en C++ pour illustrer le parsing d'une date à partir d'une chaîne de caractères. Assurez-vous d'inclure la bibliothèque <string>:
 
 ```C++
-#include <string>
-
-using namespace std;
+#include <chrono>
+#include <sstream>
 
 int main() {
-	string date = "12/31/2021"; // Chaîne de caractères contenant la date
-	int day, month, year;
+    std::istringstream ss("2022/01/01 12:00:00");
 
-	sscanf(date.c_str(), "%d/%d/%d", &month, &day, &year); // Parsing de la date à l'aide de sscanf
+    std::chrono::system_clock::time_point tp;
+    ss >> date::parse("%Y/%m/%d %H:%M:%S", tp);
 
-	cout << "Jour: " << day << endl;
-	cout << "Mois: " << month << endl;
-	cout << "Année: " << year << endl;
+    auto time_t = std::chrono::system_clock::to_time_t(tp);
 
-	return 0;
+    std::cout << std::ctime(&time_t) << std::endl;
+    return 0;
 }
 ```
 
-Voici la sortie de ce programme:
+Le résultat de ce code sera `Sat Jan  1 12:00:00 2022`.
 
-```
-Jour: 31
-Mois: 12
-Année: 2021
-```
 
-Ce snippet montre comment utiliser la fonctionsscanf pour extraire les valeurs de jour, mois et année de la chaîne de caractères et les stocker dans des variables.
+## Plongeons plus profondément :
+Historiquement, l'analyse des dates à partir de chaînes de caractères a été gérée de différentes manières en C++. Avant `chrono`, on avait tendance à utiliser `strptime` ou `sscanf`, mais ces fonctions avaient leurs limites et n'étaient pas robustes.
 
-## Deep Dive:
+Il existe plusieurs alternatives à la fonction `chrono`, telles que la bibliothèque `date` de Howard Hinnant ou la bibliothèque `boost::date`.
 
-La fonctionsscanf que nous avons utilisée dans l'exemple ci-dessus est une fonction héritée du C, qui permet de lire une chaîne de caractères formatée pour extraire les valeurs souhaitées. Il existe également d'autres fonctions utiles pour le "parsing" de dates en C++, telles que `stoi` ou `atoi` pour convertir des chaînes de caractères en valeurs numériques.
+En termes de détails d'implémentation, la fonction `date::parse` fonctionne en analysant la chaîne de date/heure à partir de l'entrée d'après un format spécifié. Les spécificateurs de format sont les mêmes que ceux de `strftime` et `strptime`.
 
-De plus, il existe des bibliothèques tierces qui proposent des solutions plus élaborées pour le "parsing" de dates, comme la bibliothèque open-source Boost.Date_Time.
+## Voir aussi :
+Pour approfondir vos connaissances et explorer des alternatives, voici quelques liens utiles :
 
-## Voir Aussi:
-
-- [Documentation C++](https://en.cppreference.com/w/cpp/io/c/fscanf)
-- [Boost.Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+1. [Bibliothèque de dates de Howard Hinnant](https://github.com/HowardHinnant/date)
+2. [Bibliothèque Boost Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+3. [Documentation C++ sur la bibliothèque Chrono](https://fr.cppreference.com/w/cpp/chrono)

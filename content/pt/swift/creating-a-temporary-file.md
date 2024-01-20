@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Swift: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Criar um arquivo temporário, como o nome sugere, é criar um arquivo que só é necessário por um curto período de tempo e será deletado assim que a tarefa for concluída. Programadores geralmente criam arquivos temporários para armazenar dados temporários que serão usados ​​em seu código. Isso ajuda a manter o código organizado e evita a sobrecarga de dados desnecessários.
+# Criando um arquivo temporário em Swift
+
+## O que e Por que?
+Os arquivos temporários oferecem um espaço seguro para armazenar e manipular dados que não precisam ser mantidos indefinidamente. Geralmente são usados para armazenar dados de operações grandes ou complexas, onde manter tudo na memória não seria eficiente.
 
 ## Como fazer:
-````Swift 
-let temporaryURL = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("meuArquivoTemporario.txt")
+Aqui está o código de exemplo em Swift para criar um arquivo temporário:
+
+```Swift
+import Foundation
+
+func criarArquivoTemporario() throws -> URL {
+    let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+    let temporaryFilename = ProcessInfo().globallyUniqueString
+    let temporaryFileURL = temporaryDirectoryURL.appendingPathComponent(temporaryFilename)
+
+    try "Hello, Swift".write(to: temporaryFileURL, atomically: true, encoding: .utf8)
+    return temporaryFileURL
+}
 
 do {
-  try "Hello World".write(to: temporaryURL, atomically: true, encoding: .utf8)
-  print("Arquivo temporário criado com sucesso!")
+    let temporaryFileURL = try criarArquivoTemporario()
+    print("Arquivo temporário criado: \(temporaryFileURL)")
 } catch {
-  print("Erro ao criar arquivo temporário: \(error.localizedDescription)")
+    print("Erro ao criar arquivo temporario: \(error)")
 }
-````
- Output: Arquivo temporário criado com sucesso!
+```
+Quando você executar esse código, será impresso o caminho completo do arquivo temporário que contém a string "Hello, Swift".
 
-## Deep Dive:
-Criar arquivos temporários é comum na programação desde os primeiros dias da computação. Antes da existência de sistemas de arquivos de alto nível, programadores criavam arquivos temporários diretamente em memória. Hoje em dia, existem alternativas para a criação de arquivos temporários, como o uso de caches e bancos de dados. Em Swift, também é possível criar diretamente um arquivo temporário sem a necessidade de especificar seu caminho completo.
+## Mergulho Profundo
+Historicamente, a criação de arquivos temporários era feita usando funções de sistema de baixo nível, mas as APIs modernas de alto nível tornaram isso muito mais fácil e seguro.
 
-## See Also:
-Para mais informações sobre a criação de arquivos temporários em Swift, consulte a documentação oficial em: https://developer.apple.com/documentation/foundation/nsfilemanager/1407737-
-url_forcreatesubdirectory
+Alternativas à criação de arquivos temporários incluem o uso de banco de dados em memória (como SQLite com :memory:) ou tipos de dados em memória (como Array ou Dictionary), mas isso pode rapidamente consumir muita memória para operações realmente grandes.
+
+Quando você cria um arquivo temporário desta maneira, o arquivo físico é adicionado ao sistema imediatamente, mas o arquivo em si não é apagado automaticamente. Você deve gerenciar a exclusão de arquivos temporários que você cria.
+
+## Veja também:
+1. <a href="https://developer.apple.com/documentation/foundation/" target="_blank"> Documentação oficial da Fundação Swift na Apple Developer </a>
+2. <a href="https://stackoverflow.com" target="_blank"> Stack Overflow para dúvidas gerais sobre programação Swift </a>.

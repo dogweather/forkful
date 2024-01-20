@@ -1,7 +1,7 @@
 ---
-title:                "Patten को मैच करने वाले characters को हटाना"
-html_title:           "Elixir: Patten को मैच करने वाले characters को हटाना"
-simple_title:         "Patten को मैच करने वाले characters को हटाना"
+title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
+html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
+simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,24 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-मैचिंग पैटर्न के साथ अक्षरों को हटाना क्या है, और क्यों प्रोग्रामर इसे करते हैं। 
+## क्या और क्यों? 
 
-जब प्रोग्रामरों को अपने कोड से अनावश्यक या अनुपयुक्त अक्षरों को हटाना होता है तो वे पैटर्न मैचिंग का उपयोग करते हैं। इससे कोड की साफ और समझदारी बनी रहती है।
+किसी पैटर्न से मिलते अक्षरों को हटाना एक कॉडिंग प्रासंगिक क्रिया है जिसमें, एक विशिष्ट पैटर्न या शृंखला से मेल खाने वाले characters को हटाया जाता है। कार्यक्रमकर्ताओं इसे करने की आवश्यकता तब होती है जब उन्हें रिकॉर्डबार डाटा से कुछ विशेष वर्ण हटाना होता है, जैसे की नकरात्मक चिन्ह या अनुपयोगी व्हाइटस्पेस।
 
-## कैसे करें?
-जब हमें किसी स्ट्रिंग से कुछ अक्षर हटाने की आवश्यकता होती है, तो हम पैटर्न मैचिंग के साथ प्रिंट कोड का उपयोग कर सकते हैं। यहां हमारे पास एक स्ट्रिंग "Hello World!" है और हमें इससे वर्ण या स्पेस हटाने हैं। तो हम निम्नलिखित कोड का उपयोग करेंगे:
+## कैसे करें:
 
-```elixir
-string = "Hello World!"
-IO.puts String.replace(string, "[aeiou]", "")
+Elixir में String.replace/3 function का उपयोग करके पैटर्न से मिलने वाले characters को हटाया जा सकता है।
+
+```Elixir
+defmodule Example do
+  def remove_matching_chars(str, pattern) do
+    String.replace(str, pattern, "")
+  end
+end
+
+iex> Example.remove_matching_chars("नमस्ते, दुनिया!", "न")
+"मस्ते, दुिया!"
 ```
-उपरोक्त कोड का आउटपुट "Hll Wrld!" होगा। इसमें "e, o, o" यह सभी छोटे वर्ण हैं जो हमने हटाना चाहा था।
+इसमें, हमने "न" अक्षर को हटाया है।
 
-## गहराई से जांच
-कुछ नए पाठकों के लिए, पैटर्न मैचिंग कॉन्सेप्ट नया हो सकता है। लेकिन यह Elixir में बहुत उपयोगी और आसान है। Elixir का यूजर इंटरफ़ेस चरण पैटर्न मैचिंग का पूर्ण उदाहरण है। आप आधिकारिक Elixir डॉक्यूमेंटरी से और अन्य संसाधनों से और पैटर्न मैचिंग की गहराई समझ सकते हैं।
+## डीप डाइव:
 
-## देखें भी
-- [पैटर्न मैचिंग कानून](https://elixir-lang.org/getting-started/pattern-matching.html)
-- [पैटर्न मैचिंग ट्यूटोरियल](https://elixir-lang.org/getting-started/pattern-matching.html#working-with-patterns)
-- [Elixir रीलेस नोट्स](https://github.com/elixir-lang/elixir/releases/tag/v1.11.2)
+इस तकनीक का इस्तेमाल करके, हम एक string के अनुपयोगी characters को हटा सकते हैं। हालांकि, यह लगातार बदल रहे डाटा के साथ कुछ अश्वस्त कर सकता है क्योंकि प्रत्येक बार जब डाटा बदलता है, हमें पैटर्न को अपडेट करने की आवश्यकता हो सकती है। 
+
+इसके विकल्प के रूप में, हम रेगेक्स (Regular Expressions) का उपयोग कर सकते हैं जो हमें व्यापक शृंखलाएँ तैयार करने की क्षमता देती हैं।
+
+## देखने के लिए:
+
+- String.replace/3: https://hexdocs.pm/elixir/String.html#replace/3
+- Regular Expressions in Elixir: https://elixir-lang.org/getting-started/regex.html

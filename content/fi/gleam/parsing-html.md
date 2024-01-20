@@ -1,7 +1,7 @@
 ---
-title:                "Html:n jäsentäminen"
-html_title:           "Gleam: Html:n jäsentäminen"
-simple_title:         "Html:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -12,27 +12,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-HTML:n jäsentäminen on prosessi, jossa HTML-koodia luetaan ja analysoidaan ohjelmallisesti. Tämä on tärkeää, koska se mahdollistaa tietojen poiminnan ja käsittelyn web-sivuilta automaattisesti. Ohjelmoijat käyttävät jäsentämistä esimerkiksi web-skrapingiin ja tietojen keräämiseen.
+HTML:n jäsennys viittaa siihen, kuinka ohjelma interprettaa HTML-koodin rakenteen ja tietojen suhteen. Tämä on tärkeää, jotta voimme hakea, muokata ja manipuloida sivuston tietoja tehokkaasti.
 
-## Miten:
+## Miten tehdään:
 
-Gleam tarjoaa helpon tavan jäsentää HTML:ää. Alla on yksinkertainen esimerkki, johon voit lisätä oman HTML-koodisi:
+Katsotaanpa esimerkkiä siitä, kuinka Gleamilla voidaan jäsennellä HTML. Tässä me käytämme `gleam/regex` kirjastoa.
 
 ```Gleam
-import gleam/html
-html = "<div><h1>Hello World!</h1><p>This is a paragraph.</p></div>"
-parsed_html = Html.parse(html)
+import gleam/regex.{self as regex}
+
+
+fn main() {
+  let html = "<div><h1>Hello, world!</h1></div>"
+  let re = regex.from_string("<h1>(.*?)</h1>")
+  
+  case re {
+    Ok(re) ->
+      case regex.find(re, html) {
+        Some(found) ->
+          let data = found.group(1)
+          // Tulostaa: "Hello, world!"
+          print(data)
+          
+        None ->
+          // Tulostaa: Ei löytynyt otsikkoa
+         print("Ei löytynyt otsikkoa")
+      }
+     Error(_) ->
+       print("Virheellinen regex")
+  }
+}
 ```
-Tämän esimerkin tulosteena tulisi olla HTML-objekti, jolla pääset käsittelemään ja poimimaan tietoa haluamallasi tavalla.
 
-## Syvempi sukellus:
+## Syvempi sukellus
 
-Jäsentäminen HTML:ää ei aina ollut yhtä helppoa kuin Gleam tarjoaa. Aiemmin ohjelmoijat joutuivat käyttämään monimutkaisempia kirjastoja, kuten Regular Expression, jäsentääkseen HTML:ää. Näiden kirjastojen käyttö oli hankalaa ja virhealtista.
+HTML-jäsennyksen historia juontaa juurensa WWW:n alkuaikoihin. Sen merkitys on kasvanut eksponentiaalisesti, koska verkkosivustot ovat muuttuneet yksinkertaisista staattisista sivuista monimutkaisiksi dynaamisiksi sovelluksiksi.
 
-Gleam tekee jäsentämisestä yksinkertaista ja voit luottaa siihen, että tulokset ovat tarkkoja. Jos huomaat, että tällä hetkellä Gleam ei tarjoa tiettyjä toimintoja, voit aina käyttää muita kirjastoja kuten HtmlParser tai Jsoup.
+Vaihtoehtoja Gleamille HTML:n jäsentämisessä ovat esimerkiksi Pythonin Beautiful Soup tai JavaScriptin Cheerio. Ne saattavat olla sopivampia tiettyjen vaatimusten tai erityisosaamisen mukaan.
 
-Myös Gleam itse käyttää parse_transform -prosessia käännettäessä jäseniksi osaksi koodia, mikä parantaa suorituskykyä ja tekee siitä tehokkaampaa.
+Gleamin regex-kirjasto käyttää Elixirin regex kirjastoa taustalla, jolloin saadaan hyödynnettyä Erlangin tehokasta säännöllisten lausekkeiden toteutusta.
 
-## Katso myös:
+## Katso myös
 
-Jos haluat oppia lisää, tutustu Gleamin viralliseen dokumentaatioon ja GitHub-repositorioon. Voit myös löytää hyödyllistä tietoa jäsentämisestä ja web-skrapingista muista lähteistä, kuten Stack Overflow ja Medium. Happy coding!
+- Gleam Regex kirjaston dokumentaatio[https://hexdocs.pm/gleam_regex/readme.html]
+- Erlang regex käyttöohje[http://erlang.org/doc/man/re.html]
+- JavaScriptin Cheerio kirjasto GitHub[https://github.com/cheeriojs/cheerio]
+- Pythonin Beautiful Soup dokumentaatio[https://www.crummy.com/software/BeautifulSoup/bs4/doc/]

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को लोअर केस में बदलना"
-html_title:           "Fish Shell: स्ट्रिंग को लोअर केस में बदलना"
-simple_title:         "स्ट्रिंग को लोअर केस में बदलना"
+title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या व क्यों?
 
-String को lower case में convert करना एक programming technique है, जिससे हमें string के साथ और आसान तरीके से काम करने में मदद मिलती है। Programmers कई बार strings को search करने और उन्हें case-insensitive तरीके से compare करने के लिए lower case में convert करते हैं।
+(What & Why?)
 
-## कैसे करें?
+स्ट्रिंग को लोअर केस में परिवर्तित करना ऐसा कार्य है जिसमें आपको यथासंभव सभी अक्षरों को छोटे होने का यकीन करना होता है। प्रोग्रामर्स इसे सामान्यतः टेक्स्ट तुलना जैसे कामों के लिए करते हैं, जहां मामूली केपिटलाइजेशन अंतर महत्वपूर्ण नहीं होता है।
 
-```Fish Shell``` का उपयोग करके string को lower case में convert करने के लिए आपको ```string tolower``` command का उपयोग करना होगा। निम्नलिखित उदाहरण देखें:
+## कैसे करें
+
+(How to:)
+
+ीश शेल का उपयोग करके, string को lowercase में कन्वर्ट करने के लिए आप 'string lower' कमांड का उपयोग कर सकते हैं।
+
+उदाहरण:
+```fish
+string lower -a 'तुम्हारा नाम क्या है'
 ```
-string tolower "HELLO EVERYONE" # output: hello everyone
-string tolower "MaGiC sTrInG" #output: magic string
+
+और इसका आउटपुट होगा:
+
+```fish
+'तुम्हारा नाम क्या है'
 ```
 
-## गहराई में जाएं
+## गहरी बातचीत
 
-(1) Lower case string convert करने की technique 1970s से प्रभावी तरीके से उपयोग की जा रही है। (2) इसके अलावा, आप ```string tolower``` के स्थान पर अन्य programming languages के माध्यम से भी string को lower case में कन्वर्ट कर सकते हैं। (3) ```string tolower``` का अंतिम परिणाम एंक्रिप्शन के लिए एक शकल रूप देता है, जो डाटा सुरक्षित रूप से रखने में मदद करता है।
+(Deep Dive)
 
-## देखें
+"string lower" आदेश आधिकारिक रूप से Fish 3.1.0 में जोड़ा गया था। अल्पसंख्यक अक्षरों को बड़े करने के विकल्प रूप में, आप `string lower -u` का उपयोग कर सकते हैं। Fish का उपयोग करने वाले डेवलपर्स इसे सुविधाजनक ढंग से स्ट्रिंग्स को मानकीकृत/समान बनाने के पब्लिक एपीआईस के रूप में पसंद करते हैं।
 
-यदि आपको और गहराई की जानकारी चाहिए तो आप निम्नलिखित से संबद्ध स्रोतों को देख सकते हैं:
-- [Fish Shell documentation](https://fishshell.com/docs/current/)
-- [GeeksforGeeks article on string to lower case](https://www.geeksforgeeks.org/string-tolower-in-cpp/)
-- [Stack Overflow thread on alternatives to string to lower case](https://stackoverflow.com/questions/2139856/string-to-lower-in-c)
+## देखें भी
+
+(See Also)
+
+अधिक जानकारी के लिए, आप Fish Shell के आधिकारिक दस्तावेज़ [यहां](https://fishshell.com/docs/current/cmds/string_lower.html) देख सकते हैं। अधिक अद्वितीय केसहेडलिंग से जुड़े कमांडों के लिए, [String Operations in Fish](https://fishshell.com/docs/current/commands.html#string) को देखें।

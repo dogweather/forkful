@@ -1,7 +1,7 @@
 ---
-title:                "基本認証付きのhttpリクエストの送信"
-html_title:           "Rust: 基本認証付きのhttpリクエストの送信"
-simple_title:         "基本認証付きのhttpリクエストの送信"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,29 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-HTTPリクエストを基本認証付きで送信するとは、ユーザー名とパスワードを入力してWebサービスにアクセスすることを意味します。プログラマーがこの方法を使用する理由は、安全性を確保し、権限を持つユーザーのみがサービスにアクセスできるようにするためです。
+# Rustでの基本認証付きHTTPリクエストの送信
+---
+## 何となぜ?
 
-## 方法：
-```Rust
-use reqwest::blocking;
+HTTPリクエストに基本認証を付けるとは、ユーザー名とパスワードを使ってウェブページにアクセスする手段です。これは、特定のリソースに対する不正なアクセスを防ぐために行われます。
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let client = blocking::Client::new();
-    let res = client
-        .get("https://example.com")
-        .basic_auth("username", Some("password"))
+## 手順:
+
+Rustでは、`reqwest`というクレートを使用して基本認証付きHTTPリクエストを簡単に送信できます。
+
+```Rust 
+use reqwest::blocking::Client;
+use reqwest::Error;
+
+fn main() -> Result<(), Error> {
+    let client = Client::new();
+    let res = client.get("http://httpbin.org/basic-auth/user/pass")
+        .basic_auth("user", Some("pass"))
         .send()?;
-    println!("Response Status: {}", res.status());
-    println!("Response Body: {}", res.text()?);
+        
+    println!("{}", res.status());
+        
     Ok(())
 }
 ```
 
-## 深堀り：
-基本認証は、1999年にHTTPの標準仕様の一部として導入されました。代替手段として、OAuthやOpenIDなどの認証プロトコルがあります。基本認証の実装には、認証ヘッダーをHTTPリクエストに追加する必要があります。RustのReqwestライブラリは、この処理を簡単にする便利なメソッドを提供しています。
+これは、基本認証付きのGETリクエストを `http://httpbin.org/basic-auth/user/pass` に送信し、その結果を出力します。
 
-## 関連サイト：
-- [HTTP Basic認証のドキュメンテーション](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
-- [RustのReqwestライブラリのドキュメント](https://docs.rs/reqwest)
-- [OAuthやOpenIDについての詳細](https://www.oauth.com/)
+## 深堀り:
+
+歴史的な背景としては、基本認証が初めて RFC 7617 で定義され、その後、HTTP/1.0とHTTP/1.1で広く使用されました。 
+
+基本認証には利点と欠点があります。そのシンプルさゆえに、実装も簡単な反面、パスワードが暗号化されずに平文で送信されるため、安全性の面で弱点があります。
+
+Rustの世界では、基本認証はユーザー名とパスワードを含む `Authorization `ヘッダーをHTTPリクエストに追加する事で可能になります。そして、これには先ほど紹介した `reqwest`の他にも、`hyper`,`actix-web`,`warp`などのクレートが使用可能です。
+
+## 参考資料:
+
+- [Reqwest クレートの公式ドキュメント](https://docs.rs/reqwest)
+- [RFC 7617 - Basic Authentication](https://tools.ietf.org/html/rfc7617)
+- [RustでのHTTPリクエストの送信方法についての詳しいチュートリアル](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-an-io-introduction.html)

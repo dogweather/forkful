@@ -1,7 +1,7 @@
 ---
-title:                "現在の日付を取得する"
-html_title:           "C: 現在の日付を取得する"
-simple_title:         "現在の日付を取得する"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かをするってどういうこと？ 
-現在の日付を取得することは、プログラマーにとって非常によく行われるタスクです。コンピューター上で操作する日付や時間を特定するために使用されることがあります。 
+# 現在の日付の取得：C言語による実装ガイド
 
-## 方法： 
-C言語で現在の日付を取得する方法は非常にシンプルです。以下のコードを使用することができます。
+## 何と何のため？
 
-```
-#include <stdio.h> 
-#include <time.h> 
+現在の日付の取得は、システムの現在時刻を日付形式で示す処理です。これにより、日付や時間ベースの重要な操作（ログ生成、エンティティのタイムスタンプ付けなど）をプログラムで制御できます。
 
-int main()
-{
-   // 現在の日付を取得する 
-   time_t now;
-   time(&now);
+## 実装方法：
 
-   // 日付をフォーマットする 
-   char* dateTime = ctime(&now);
+```C
+#include <stdio.h>
+#include <time.h>
 
-   // 結果を出力する 
-   printf("現在の日付は: %s\n", dateTime);
-    
-   return 0;
-}
+int main(){
+    time_t t = time(NULL);
+    struct tm tm = *localtime(&t);
+
+    printf("今日の日付:%d-%d-%d ", tm.tm_year + 1900, tm.tm_mon + 1, tm.tm_mday);
+
+    return 0;
+    }
 ```
 
-出力は以下のようになります。
+サンプルの出力：
 
+```C
+今日の日付:2022-3-10 //現在の日時に応じて結果が変わります
 ```
-現在の日付は: Mon Oct 11 15:37:00 2021
-```
 
-## 深く潜る： 
-現在の日付を取得する方法は、C言語で使用可能な様々な関数を使って行うことができます。代表的なものには、`time()`関数や`localtime()`関数があります。また、コンピューター内部で使われている「エポック秒」というものがあり、1970年1月1日からの経過秒数を表すものです。
+## ディープダイブ
 
-## 関連リンク： 
-- [`time()`関数のドキュメンテーション](https://www.c-tutorial-language.com/time-time_t/)
-- [`localtime()`関数のドキュメンテーション](https://www.c-tutorial-language.com/localtime-struct-tm/)
+1. **歴史的な背景**: C言語は1970年代初めにUnixシステムのために開発されました。そのため、`time.h`ライブラリがUNIX時間（UNIXエポック）で日時を管理するための複数の関数を提供しています。UNIX時間は、1970年1月1日0時00分00秒（UTC）から現在までの経過秒数です。
+
+2. **代替方法**: POSIX準拠のシステムでは、`gettimeofday`関数を使用しても日時を取得できますが、この関数は非推奨とされ、将来的には廃止される可能性があります。
+
+3. **実装に関する詳細**: `time()`関数は現在のカレンダー時間を秒単位で返し、`localtime()`関数はその秒数をローカル時間に変換します。次に、`printf`を使って年、月、日を表示します。注意が必要な点として、年は1900年から開始し、月は0から開始しますので、適切な日付表示の為に年には1900を加え、月には1を加えています。
+
+## 参照リンク：
+
+- [公式C11規格ドキュメント](http://www.open-std.org/jtc1/sc22/wg14/www/docs/n1570.pdf)
+- [time.h](https://en.cppreference.com/w/c/chrono)
+- [`gettimeofday`](http://man7.org/linux/man-pages/man2/gettimeofday.2.html)関数についての詳細

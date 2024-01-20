@@ -1,7 +1,7 @@
 ---
-title:                "Conversión de una cadena a minúsculas"
-html_title:           "Rust: Conversión de una cadena a minúsculas"
-simple_title:         "Conversión de una cadena a minúsculas"
+title:                "Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-La conversión de una cadena de texto a minúsculas simplemente significa convertir todas las letras de la cadena a su versión en minúscula. Los programadores lo hacen como una forma de normalizar o estandarizar la entrada de usuario, ya que puede haber diferentes formas de escribir una palabra pero todas deberían ser tratadas de la misma manera.
+---
 
-## Cómo:
+## ¿Qué y por qué?
+
+Convertir una cadena de texto (`string`) a minúsculas implica cambiar todas sus letras mayúsculas en minúsculas. Los programadores lo hacen para normalizar los datos de entrada y facilitar las comparaciones entre cadenas.
+
+## ¿Cómo hacerlo?
+
+Aquí se muestra cómo convertir una cadena en Rust a minúsculas utilizando el método `to_lowercase()`.
+
 ```Rust
-// Ejemplo de código para convertir una cadena de texto a minúsculas
 fn main() {
-    let palabra = "Hola Mundo";
-    println!("La palabra en minúsculas es: {}", palabra.to_lowercase()); // Salida: hola mundo
+    let frase = "HOLA, MUNDO!";
+    let frase_en_minusculas = frase.to_lowercase();
+    println!("{}", frase_en_minusculas);
 }
 ```
+Este código producirá:
 
-## Profundizando:
-La conversión de una cadena de texto a minúsculas es una operación muy común en la programación, ya que ayuda a evitar errores en la entrada de usuario y a simplificar la comparación de cadenas. Antes de que existieran los métodos integrados en los lenguajes de programación, los programadores tenían que implementar sus propias funciones para convertir cadenas a minúsculas o mayúsulas.
+```Rust
+"hola, mundo!"
+```
 
-Existen diferentes formas de realizar la conversión, como usar métodos integrados como en el ejemplo anterior, usar bibliotecas externas o implementar un algoritmo específico para la conversión. En Rust, existen paquetes externos como "strcase" o "caseconv" que proporcionan funciones para convertir cadenas a diferentes formatos.
+## Un poco más de fondo
 
-En cuanto a la implementación en Rust, la función "to_lowercase()" es parte de la biblioteca estándar del lenguaje y utiliza el estándar Unicode para realizar la conversión, lo que significa que es capaz de manejar todos los caracteres de cualquier idioma.
+1. **Contexto histórico** : El concepto de convertir las letras mayúsculas a minúsculas ha existido desde que se crearon las primeras computadoras, aunque el método exacto ha variado en función del tipo de programación y el idioma en cuestión. 
+   
+2. **Alternativas** : En la mayoría de los lenguajes de programación existe un método equivalente para convertir una cadena a minúsculas. En Python, por ejemplo, también se utiliza el método `.lower()`, mientras que en JavaScript se utiliza `.toLowerCase()`.
+   
+3. **Detalles de implementación** : Rust utiliza Unicode para el manejo de caracteres y cadenas de texto, lo que significa que el método `to_lowercase()` de Rust también funciona con caracteres que no son del alfabeto inglés. Sin embargo, ten en cuenta que el método no cambia la cadena original, sino que devuelve una nueva cadena convertida a minúsculas.
 
 ## Ver también:
-- Documentación oficial de Rust sobre la función "to_lowercase()" en la biblioteca "std": https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
-- Paquete "strcase" en crates.io: https://crates.io/crates/strcase
-- Paquete "caseconv" en crates.io: https://crates.io/crates/caseconv
+
+Estos son algunos enlaces útiles para seguir estudiando este tema:
+
+- Documentación oficial de Rust, sección 'str': https://doc.rust-lang.org/std/str/
+- Guía de Rust para cadenas de texto: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
+- Documentación de Rust sobre métodos en 'str': https://doc.rust-lang.org/std/str/trait.StrExt.html
+---

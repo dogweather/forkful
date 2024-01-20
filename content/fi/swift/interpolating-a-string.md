@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Swift: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,30 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Interpoloiminen on menetelmä, jota käytetään merkkijonojen yhdistämiseen muuttujien arvoihin. Tämä tekee merkkijonojen käsittelystä helpompaa ja säästää aikaa, kun ei tarvitse käyttää useita merkkijonoja erikseen. Ohjelmoijat käyttävät interpolointia, koska se tekee koodista luettavampaa ja helpottaa muuttujien arvojen lisäämistä merkkijonoon.
 
-## Kuinka?
+Merkkijonojen interpolointi Swift-ohjelmoinnissa tarkoittaa muuttujan tai arvon liittämistä suoraan merkkijonoon. Se tekee koodista selvempää ja luettavampaa, vähentäen virheiden mahdollisuutta.
+
+## Kuinka:
+
+Swiftilla merkkijonoihin voi lisätä muuttujia tai arvoja suoraan käyttämällä kenoviivoja ja sulkeita \(). Katso alla olevaa esimerkkiä:
+
 ```Swift
-let name = "Matti"
-let age = 25
-print("Hei, nimeni on \(name) ja olen \(age) vuotta vanha.")
+let hedelma = "omena"
+let kpl = 5
+let lause = "Mina syon \(kpl) \(hedelma)a paivassa."
+print(lause)
 ```
-Tulostus: "Hei, nimeni on Matti ja olen 25 vuotta vanha."
 
-Merkkijonojen interpolointi tapahtuu käyttämällä kenoviivaa ja sulkeita (\\(muuttuja\\)) merkkijonon sisällä. Tällä tavalla muuttujan arvo yhdistetään merkkijonoon ja tuloksena on yhdistetty merkkijono.
+Tuotos:
+
+```Swift
+"Mina syon 5 omenaa paivassa."
+```
 
 ## Syvä sukellus
-Historiallisessa kontekstissa interpolointi syntyi ensimmäisen kerran C-kielen makroissa, mutta se tuli suosituksi Swiftin ja muiden modernien ohjelmointikielten ansiosta. Vaikka interpolointi on suosittu tapa yhdistää merkkijonoja, muita vaihtoehtoja ovat esimerkiksi merkkijonojen yhdistäminen plussamerkillä (+) tai käyttämällä merkkijonon muodostamisfunktiota (String(format: "Moi, nimeni on %s", name)).
 
-Jos haluat lisätä erikoismerkkejä (kuten kenoviiva ja sulkeet) itse merkkijonoon, voit käyttää tuplakenoviivamerkkejä (\\\\) päästäksesi evakkoon.
+Merkkijonon interpolointi Swiftissa tuli iOS 9:n myötä, joka julkaisiin vuonna 2015. Aikaisemmissa versioissa oli käytettävä "+" -operaattorilla, joka oli sekavaa ja kömpelöä. Muissa ohjelmointikielissä, kuten Pythonissa tai Javassa, on vastaavia mekanismeja, mutta ne voivat vaihdella syntaxiltaan.
 
-Simpukka-kirjaston avulla voit lisätä HTML-merkkejä suoraan Stringiin. Esimerkki:
+Swiftin merkkijonon interpolointi on tehokas ja joustava. Voit esimerkiksi kutsua funktioita tai tehdä laskentoja suoraan sulkeiden sisällä:
+
 ```Swift
-let html = "<b>Tervetuloa</b>"
-print(html.bold())
+let hinta = 2.5
+let lause = "Yhdella omenalla maksaa \(hinta * Double(kpl)) euroa."
+print(lause)
 ```
-Tulostus: "<b>Tervetuloa</b>"
+
+Tuotos:
+
+```Swift
+"Yhdella omenalla maksaa 12.5 euroa."
+```
 
 ## Katso myös
-- [Apple:n dokumentaatio merkkijonon interpoloinnista Swiftissä](https://developer.apple.com/documentation/swift/string/interpolation)
-- [Stack Overflow-ketju merkkijonon interpoloinnista](https://stackoverflow.com/questions/38929293/interpolation-in-swift)
+
+Lisätietoja Swift-merkkijonojen interpoloinnista voit lukea seuraavista lähteistä:
+- [Apple's Swift Documentation: String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
+- [Swift String Interpolation - Hacking with Swift](https://www.hackingwithswift.com/example-code/strings/how-to-use-string-interpolation-to-make-custom-strings)
+- [Swift by Sundell: "Tips & Tricks about String Interpolation"](https://www.swiftbysundell.com/articles/string-interpolation-in-swift/)

@@ -1,6 +1,6 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Gleam: 문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
 simple_title:         "문자열 보간하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gleam 프로그래밍: 스트링 삽입하기
+## 무엇 & 왜?
 
-## What & Why?
-스트링 삽입(interpolation)이란 무엇인가요? 이는 쉽게 말해서 문자열 안에 변수나 표현식을 삽입하는 것입니다. 이를 통해 프로그래머는 코드를 더 간결하고 유지보수하기 쉽게 만들 수 있습니다.
+스트링 인터폴레이션은 변수나 표현식을 문자열 안에 직접 삽입하는 것입니다. 이를 통해 개발자들은 문자열 내용으 유동적으로 변경하며, 코드의 가독성도 높일 수 있습니다.
 
-## How to:
+## 실행 방법:
+
 ```Gleam
-let name = "Alice";
-let age = 25;
-let message = `Hi, my name is ${name} and I am ${age} years old.`;
+let name = "송혜교"
+let greeting = "안녕하세요, ${name}님!"
+```
+위 코드를 실행하면 결과는 다음과 같습니다:
+```Gleam
+"안녕하세요, 송혜교님!"
 ```
 
-위의 예시에서처럼, `` ` ``를 사용하여 문자열을 감싸고 삽입할 변수나 표현식을 `${}` 안에 넣으면 됩니다. 이렇게 하면 Gleam에서 문자열 삽입을 사용할 수 있습니다. 출력 결과는 다음과 같습니다:
+## 디테일:
 
-```
-Hi, my name is Alice and I am 25 years old.
-```
+스트링 인터폴레이션은 원래 PerL Language에서 처음 도입되었으며, 편리함과 가독성 때문에 많은 언어로 확산되었습니다. Gleam에서는 `$` 기호를 사용해 변수나 표현식을 문자열에 삽입할 수 있습니다. 
 
-## Deep Dive:
-스트링 삽입의 역사적 배경은 JavaScript의 문자열 템플릿 리터럴에서 차용되었습니다. 이를테면, 다른 언어에서는 문자열 삽입을 위해 별도의 함수를 사용해야 했지만, JavaScript에서는 템플릿 리터럴을 사용하여 간편하게 삽입할 수 있었습니다.
+Gleam에는 Python의 f-string방식이나 C#의 string.Format 방식과 같은 대체 방법이 마련되어 있습니다. 그러나 이들 대체 방법들은 보다 복잡하며, 경우에 따라 보다 많은 컴퓨팅 리소스를 필요로 합니다.
 
-다른 대안으로는 문자열 포맷팅(Formatting)이 있습니다. 이는 문자열에 변수나 표현식을 삽입하는 것이 아닌, 이를 포맷하여 출력하는 방식입니다. 하지만 이는 복잡한 코드를 만들기 쉽고, 실수로 변수나 표현식의 순서를 바꾸거나 누락할 수 있는 단점이 있습니다.
+스트링 인터폴레이션은 단순히 변수를 문자열로 대체하는 것이 아닙니다. 구현 상세 측면에서, 컴파일러는 문자열과 변수를 설명하는 문장의 복잡한 템플릿을 구성해야 합니다. 이는 문자열 병합보다는 고비용의 작업이지만, 효율적인 인터폴레이션 구현으로 인해 극복할 수 있습니다.
 
-Gleam에서는 문자열 삽입을 구현하기 위해 특별한 기능이 추가되지 않았습니다. 그 대신, 문자열 삽입을 위한 표준 라이브러리 함수로 `String.sprintf()`가 제공됩니다.
+## 참고 자료:
 
-## See Also:
-- [JavaScript Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [String Formatting in Python](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
-- [Gleam Documentation on String.sprintf()](https://gleam.run/documentation/stdlib/string#String.sprintf)
+- [Gleam Documentation](https://gleam.run/docs/)
+- [String interpolation on Wikipedia](https://en.wikipedia.org/wiki/String_interpolation)
+- [Comparison of string interpolation methods in various languages](https://en.wikibooks.org/wiki/Comparison_of_programming_languages_(string_functions)#Interpolation)

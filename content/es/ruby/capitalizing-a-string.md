@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizar una cadena"
-html_title:           "Ruby: Capitalizar una cadena"
-simple_title:         "Capitalizar una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Ruby: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué & Por qué?
-Capitalizar una cadena significa convertir la primera letra de cada palabra en mayúscula. Los programadores hacen esto para mejorar la legibilidad y hacer que el texto se vea más organizado y profesional.
+## ¿Qué y Por Qué?
 
-## Cómo:
-Puedes utilizar el método `capitalize` en una cadena de texto para capitalizarla. Por ejemplo:
+Capitalizar una cadena de texto en programación se refiere a convertir su primera letra a mayúscula. Los programadores lo hacen para mejorar la legibilidad y el formato de la salida.
 
-```
-texto = "hola, soy una cadena de texto"
-puts texto.capitalize
-```
-Output:
-```
-Hola, soy una cadena de texto
-```
+## Cómo hacerlo:
 
-También puedes utilizar el método `titleize` para capitalizar cada palabra en una cadena de texto, incluso si no están separadas por espacios. Por ejemplo:
+Aquí hay un ejemplo en Ruby de cómo capitalizar una cadena:
 
-```
-texto = "holaSoyUnaCadenaDeTexto"
-puts texto.titleize
-```
-Output:
-```
-Hola Soy Una Cadena De Texto
+```Ruby
+string = "¡hola mundo!"
+capitalized_string = string.capitalize
+puts capitalized_string
 ```
 
-## Profundizando:
-La capitalización de cadenas es una convención de estilo que se ha utilizado desde los primeros días de la programación para mejorar la legibilidad del código. También existen otras técnicas para capitalizar cadenas, como el método `upcase` que convierte todas las letras en mayúscula o el método `downcase` que las convierte en minúscula.
+Salida esperada:
+```Ruby
+"¡Hola mundo!"
+```
 
-## Ver también:
-- [Documentación oficial de Ruby sobre strings](https://ruby-doc.org/core-2.7.1/String.html)
-- [Método `capitalize` vs `titleize` en Ruby](https://www.rubyguides.com/2017/04/string-capitalization-ruby/)
+## Profundizamos
+
+Historiamente, las cadenas han sido capitalizadas por necesidades de formato y presentación visual. Sin embargo, en Ruby, hay alternativas a la función .capitalize. Por ejemplo, puedes usar .upcase para convertir toda la cadena en mayúsculas.
+
+Los detalles de implementación para capitalizar una cadena en Ruby son bastante sencillos. La función .capitalize es uno de los muchos métodos incorporados disponibles para las cadenas. Solo afecta a la primera letra de la cadena y deja el resto tal cual.
+
+```Ruby
+string = "¡hola mundo!"
+uppercased_string = string.upcase
+puts uppercased_string
+```
+
+Salida esperada:
+```Ruby
+"¡HOLA MUNDO!"
+```
+
+## Ver También:
+
+1. Documentación oficial de Ruby para el método String.capitalize: https://ruby-doc.org/core-2.7.0/String.html#method-i-capitalize
+2. Una lista de métodos de String en Ruby: https://ruby-doc.org/core-2.7.0/String.html
+3. Más ejemplos y uso de métodos de cadena en Ruby, como .capitalize y .upcase: https://www.rubyguides.com/2018/01/ruby-string-methods/

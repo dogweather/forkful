@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "Python: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "Python"
 category:             "Python"
@@ -10,45 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+## O que & Por quê?
 
-Fazer o download de uma página da web significa obter o conteúdo de uma página da internet para uso em um programa. Os programadores geralmente fazem isso para realizar tarefas como análise de dados, automação de processos ou obter informações valiosas.
+Baixar uma página da internet significa extrair o conteúdo HTML de um site utilizando algum programa. Os programadores fazem isso para analisar, alterar ou utilizar o conteúdo da página em seus próprios programas.
 
 ## Como fazer:
 
+Para baixar uma página da web em Python, utilizamos o módulo 'requests'. Aqui está um exemplo simples:
+
 ```Python
-# Importando a biblioteca necessária
 import requests
 
-# Definindo a URL da página a ser baixada
-url = "https://www.dados.gov.br/"
+url = "https://www.google.com"
+req = requests.get(url)
 
-# Fazendo o download da página usando o método get() do Requests
-response = requests.get(url)
-
-# Imprimindo o conteúdo da página
-print(response.text)
-```
-Saída de exemplo:
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Dados.gov.br</title>
-  ...
-</head>
-<body>
-  ...
-</body>
-</html>
+print(req.text)
 ```
 
-## Mergulho profundo:
+Quando executar esse código, você receberá como saída todo o conteúdo HTML da página inicial do Google.
 
-Fazer o download de páginas da web é uma técnica comum usada pelos programadores desde o início da internet. Existem várias bibliotecas e ferramentas disponíveis para fazer isso em várias linguagens de programação. Além do método get(), o Requests também possui os métodos post() e put() para enviar dados para a web. Alguns sites podem exigir autenticação ou consentimento para fazer o download, o que pode ser tratado no código.
+## Mergulho Profundo
 
-## Veja também:
+O ato de baixar páginas da web tem suas origens no início da internet, quando os navegadores de internet precisavam exibir o conteúdo de um site. Hoje em dia, isso é especialmente útil para a mineração de dados da web ou para criar bots.
 
-- [Documentação do Requests](https://docs.python-requests.org/en/master/)
-- [Tutorial do Real Python sobre fazer o download de páginas da web](https://realpython.com/python-requests/)
-- [Artigo sobre as melhores bibliotecas do Python para fazer o download de páginas da web](https://www.pknowhow.com/blog/python-web-scraping-libraries/)
+Você pode também utilizar bibliotecas alternativas como urllib, httplib, treq, etc. Cada uma tem suas próprias vantagens e peculiaridades.
+
+Ao baixar uma página da web, em muitos casos é importante lidar com as respostas de status HTTP. Por exemplo, o código 200 significa 'sucesso', enquanto que o código 404 indica que a página não foi encontrada.
+
+## Veja Também
+
+Se você quiser aprofundar seus conhecimentos em Python ou na Web Scraping, aqui estão alguns links úteis:
+
+- W3Schools Python Tutorial: https://www.w3schools.com/python/
+- Scrapy (uma biblioteca Python para web scraping): https://scrapy.org/
+- Tutorial de requests do Python: https://requests.readthedocs.io/
+- Documentação oficial do Python: https://docs.python.org/pt-br/3/

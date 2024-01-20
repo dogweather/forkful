@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को निचे केस में बदलना"
-html_title:           "Kotlin: स्ट्रिंग को निचे केस में बदलना"
-simple_title:         "स्ट्रिंग को निचे केस में बदलना"
+title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,22 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-कोटलिन में स्ट्रिंग को लोअर केस में बदलने का मतलब है कि हम स्ट्रिंग के सभी अक्षरों को छोटे अक्षरों में बदलते हैं। यह प्रोग्रामर्स किसी भी स्ट्रिंग को केस सेंसिटिविटी के साथ हंडल करने के लिए करते हैं।
+## क्या और क्यों? 
+एक String को Lower Case में बदलना ऐसा नियंत्रण है जिसमें सभी अक्षरों को उनके छोटे (लोअरकेस) संस्करण में बदला जाता है। यह इसलिए किया जाता है ताकि हम पाठ की तुलना कर सकें, उद्घाटन कर सकें एवं अन्य सामान्य कार्रवाई रूप में उपयोग कर सकें, बिना बड़े-छोटे अक्षरों की चिंता किए।
 
 ## कैसे:
 ```Kotlin
-fun main(){
-  val str1 = "Hello, Kotlin!"
-  val str2 = "WORLD!"
-  
-  println(str1.toLowerCase())  // output: hello, kotlin!
-  println(str2.toLowerCase())  // output: world!
-}
+val str = "Hello World!"
+val lowercaseStr = str.lowercase()
+
+println(lowercaseStr) // prints "hello world!"
 ```
 
-## गहराई में जाएं:
-कई प्रोग्रामिंग भाषाओं में स्ट्रिंग का केस बदलने के लिए फ़ंक्शन या मेथोड उपलब्ध हैं। कोटलिन में, ```toLowerCase()``` निर्दिष्ट फ़ंक्शन केस सेंसिटिविटी को मध्यम रूप से हाथियाने के लिए है। इसके अलावा, आप स्ट्रिंग को ```toUpperCase()``` फ़ंक्शन के माध्यम से अपर केस में बदल सकते हैं। स्ट्रिंग पर फ़ंक्शन के इन दो आदेशों को एक साथ लगाकर आप इसे पूरी तरह से केस सेंसिटिविटी से बचा सकते हैं।
+यहाँ, `lowercase()` फ़ंक्शन सभी अक्षरों को निचले मामले में बदल देती है। उसके बाद हम उसे print करते हैं।
 
-## इसके अलावा देखें:
-कोटलिन रिफ़रेंस आपको स्ट्रिंग को लोअर केस और अपर केस में बदलने के लिए अन्य विकल्पों के बारे में जानने की सुविधा उपलब्ध कराता है। आप इनका अध्ययन करके अपने कोड को और बेहतर बना सकते हैं। यहां अन्य कोडिंग संस्कप्तों में स्ट्रिंग को लोअर केस और अपर केस में बदलने का निर्धारित करने के तरीके दिए गए हैं: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+## गहराई में: 
+String को lowercase में कन्वर्ट करने के विचारण का इतिहास समय समय पर बदलता रहा है। पहले `toLowerCase()` फ़ंक्शन का उपयोग किया जाता था, लेकिन अब `lowercase()` Kotlin 1.5.0 के साथ आया है। वैकल्पिक तंत्र डिफ़ॉल्ट के रूप में `Locale` आधारित कार्य कर सकते हैं, जैसे `str.lowercase(Locale.getDefault())`। आंतरिक रूप में, यह फ़ंक्शन अक्षरों के यूनिकोड मान को मोडिफ़ाई करके काम करता है।
+
+## अतिरिक्त जानकारी:
+- [Kotlin Documentation : String functions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/lowercase.html)
+- [GeeksforGeeks : Kotlin String Methods](https://www.geeksforgeeks.org/kotlin-string/)
+- [Stackoverflow Thread on toLowerCase()](https://stackoverflow.com/questions/11520244/kotlin-string-tolowercase-locale-is-mailformed)

@@ -1,6 +1,6 @@
 ---
 title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
-html_title:           "Kotlin: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# एचटीटीपी अनुरोध के साथ बुनियादी प्रमाणीकरण का उपयोग करना एक Kotlin application में
+
 ## क्या और क्यों?
-HTTP अनुरोध को बेसिक प्रमाणीकरण के साथ भेजना, यह क्या है और प्रोग्रामर्स ऐसा क्यों करते हैं, इसके बारे में दो तीन वाक्यों में समझाया जाएगा।
+
+HTTP अनुरोध के साथ Basic Authentication का उपयोग सुरक्षा का एक स्तर प्रदान करता है, जिससे केवल विशिष्ट उपयोगकर्ताओं को ही विशेष संसाधनों तक पहुंच प्राप्त होती है। यह प्रमाणिकरण की रूपरेखा निर्धारित करता है जिसे वेब सर्वर प्रमाणित करेंगे।
 
 ## कैसे करें:
-कोटलिन के माध्यम से एक विशेष HTTP अनुरोध को भेजने के लिए इम्प्लीमेंटेशन का एक उदाहरण दिया गया है। आप अपनी पसंद अनुसार इसका उपयोग कर सकते हैं।
+
+आइए देखें कैसे हम एक HTTP अनुरोध को Kotlin में बुनियादी प्रमाणीकरण के साथ भेजते हैं।
 
 ```kotlin
-val url = "https://example.com"
-val credentials = Credentials.basic("username", "password")
-val request = Request.Builder()
-                .url(url)
-                .header("Authorization", credentials)
-                .build()
-val client = OkHttpClient()
-val response = client.newCall(request).execute()
-println(response.body?.string())
+import java.net.URL
+import java.net.HttpURLConnection
+import java.util.Base64
+
+fun main() {
+    // सर्वर का URL
+    val url = URL("http://your.server.com")
+
+    // HTTP connection खोलें
+    val connection = url.openConnection() as HttpURLConnection
+
+    // यूज़रनेम और पासवर्ड
+    val userCredentials = "username:password"
+
+    // Basic Authentication Header में encode करें
+    val basicAuth = "Basic " + String(Base64.getEncoder().encode(userCredentials.toByteArray()))
+
+    // Header को set करें
+    connection.setRequestProperty ("Authorization", basicAuth)
+
+    // कनेक्शन का प्रयोग करें
+    connection.inputStream.bufferedReader().use {
+        println(it.lines().collect(Collectors.joining("\n")))
+    }
+}
 ```
 
-आउटपुट:
-```html
-<html>
-    <body>
-        <h1>Hello, World!</h1>
-    </body>
-</html>
-```
+इस कोड का उद्धरण दे रहा है की कैसे एक Basic Authentication Header को set किया जाता है और URL को call कैसे किया जाता है।
 
-## डीप डाइव:
-इस तकनीक को HTTP बेसिक प्रमाणीकरण के बारे में इतिहास और इसके वैकल्पिक तकनीकों का विस्तृत विवरण दिया गया है। इसके साथ ही, HTTP अनुरोध को भेजने के लिए इस तकनीक के अंतर्मुखी माहिती की भी बात की गई है।
 
-## सी भी:
-आप और अधिक जानकारी के लिए नीचे दिए गए स्रोतों पर जा सकते हैं:
-- [HTTP Basic Authentication documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [OkHttp library](https://square.github.io/okhttp/)
-- [Kotlin programming language](https://kotlinlang.org/)
+## गहरी डाइव:
+
+HTTP Basic Authentication का एक सरल लेकिन उपयोगी उपकरण है जिसे 1990s द्वारा विकसित किया गया था। यह तभी कार्य करता है जब एक वेब सर्वर और एक ग्राहक (मामले में, हमारे कोड) के बीच SSL / TLS एन्क्रिप्टेड कनेक्शन हो। यदि आवश्यक हो तो Digest Access Authentication जैसे अन्य विकल्प भी हैं जो Basic Authentication की कमजोरियों को दूर कर सकते हैं। हालांकि, बेहतर सुरक्षा की आवश्यकता होने पर, आपको OAuth जैसी अधिक सुरक्षित प्रमाणीकरण रणनीतियों का अन्वेषण करना चाहिए। कठिनाई इस बात की हो सकती है कि आपको प्रत्येक सर्वर के लिए Header को Customise करना चाहिए।
+
+## यह भी देखें:
+
+1. [Mozilla's Web Docs: HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+2. [Oracle's Java HttpUrlConnection Docs](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
+3. [Baeldung's Guide to Basic Authentication with HttpClient 4](https://www.baeldung.com/httpclient-basic-authentication)

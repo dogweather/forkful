@@ -1,7 +1,7 @@
 ---
-title:                "Borrando caracteres que coinciden con un patrón"
-html_title:           "Python: Borrando caracteres que coinciden con un patrón"
-simple_title:         "Borrando caracteres que coinciden con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+**## ¿Qué y Por Qué?**
 
-Eliminar caracteres que coinciden con un patrón es una técnica utilizada por programadores para eliminar caracteres específicos de una cadena de texto. Esto es necesario cuando se trabaja con datos no deseados o en la limpieza de datos antes de procesarlos.
+Eliminar caracteres que coinciden con un patrón permite limpiar nuestros datos en Python, excluyendo cualquier carácter innecesario o no deseado. Los programadores lo hacen para mejorar la precisión de los resultados y minimizar los errores.
 
-## ¿Cómo hacerlo?
+**## Cómo hacerlo:**
 
-Para eliminar caracteres que coinciden con un patrón en Python, se puede utilizar la función "re.sub()" del módulo "re". Por ejemplo, si queremos eliminar todas las vocales de una cadena de texto, podemos usar el siguiente código:
+Podemos utilizar la función `re.sub()` que ofrece la biblioteca `re` (regular expression) de Python para eliminar caracteres. Aquí hay algunos códigos de ejemplo:
 
 ```Python
 import re
 
-texto = "Hola mundo"
-texto_sin_vocales = re.sub("[aeiou]", "", texto)
+# Eliminar todos los números de una cadena
+cadena = 'ABC123, ¡Hola Mundo!456'
+resultado = re.sub('\d', '', cadena)
+print(resultado) # Salida: ABC, ¡Hola Mundo!
 
-print(texto_sin_vocales)
+# Eliminar todas las letras de una cadena
+cadena = 'ABC123, ¡Hola Mundo!456'
+resultado = re.sub('[a-zA-Z]', '', cadena)
+print(resultado) # Salida: 123, !456
 ```
 
-Esto imprimirá "Hl mnd" como resultado.
+**## Inmersión profunda:**
 
-## Profundizando
+Históricamente, las expresiones regulares se han utilizado ampliamente en ciencias de la computación para el manejo de cadenas de texto. Python proporciona la biblioteca `re` para trabajar con ellas.
 
-Eliminar caracteres que coinciden con un patrón es una técnica común en programación y es especialmente útil en tareas de limpieza de datos. La función "re.sub()" de Python utiliza expresiones regulares para buscar y eliminar los caracteres que coinciden con el patrón especificado.
+Otra alternativa es usar el método `translate()` junto con `maketrans()`. Sin embargo, `re.sub()` es más flexible al trabajar con patrones en lugar de caracteres individuales.
 
-En lugar de usar la función "re.sub()", también se puede utilizar un bucle para recorrer la cadena de texto y eliminar manualmente cada caracter no deseado. Sin embargo, esto puede ser más tedioso y propenso a errores.
+Al utilizar `re.sub()`, Python compila la expresión regular y la utiliza para aplicar la sustitución de texto. Esto puede consumir recursos computacionales, así que si vas a hacerlo muchas veces, es recomendable precompilar la expresión regular con `re.compile()`.
 
-## Ver también
+**## Ver También:**
 
-- [La documentación oficial de Python sobre el módulo "re"](https://docs.python.org/es/3/library/re.html)
-- [Una guía completa de expresiones regulares en Python](https://realpython.com/regex-python/)
-- [Ejemplos de uso de la función "re.sub()"](https://www.programiz.com/python-programming/regex)
+1. [Libreria re](https://docs.python.org/es/3/library/re.html) en la documentación oficial de Python.
+2. [RegEx Module](https://www.w3schools.com/python/python_regex.asp) en W3Schools.
+3. [Python - Eliminar caracteres no deseados](https://stackoverflow.com/questions/5843518/remove-all-special-characters-punctuation-and-spaces-from-string) en Stack Overflow.

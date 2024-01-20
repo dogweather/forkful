@@ -1,7 +1,7 @@
 ---
-title:                "Teilstrings extrahieren"
-html_title:           "Bash: Teilstrings extrahieren"
-simple_title:         "Teilstrings extrahieren"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,14 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Extrahieren von Teilstrings ist eine Technik, um Teile eines Strings zu isolieren und zu verwenden. Diese Methode wird von Programmierern verwendet, um Daten aus bestimmten Bereichen oder Formaten zu extrahieren und zu verarbeiten.
+## Was und Warum?
 
-## Wie geht's?
-Extrahieren von Teilstrings kann in Bash mit dem Befehl `cut` durchgeführt werden, indem man den gewünschten Teil des Strings angeben. Zum Beispiel: `cut -c 1-5 input.txt` wird die ersten fünf Zeichen jeder Zeile in der Datei "input.txt" ausgeben. Dies kann auch mit regulären Ausdrücken mithilfe des Befehls `grep` durchgeführt werden. Zum Beispiel: `grep -o '[0-9]\{3\}' input.txt` wird alle dreistelligen Zahlen in der Datei "input.txt" ausgeben.
+Eine Teilzeichenkette (Substring) ist ein kleiner Teil einer gröszeren Zeichenkette (String). Substring-Extraktion in Bash ermöglicht das Isolieren bestimmter Bereiche des Strings. Dies ist nützlich zum Manipulieren von Dateipfaden, Parsing von Zeichenketten oder zur Suche nach bestimmten Mustern in Strings.
 
-## Tief tauchen
-Das Extrahieren von Teilstrings hat eine lange Geschichte und wird in vielen Programmiersprachen verwendet. Es gibt auch Alternativen zu `cut` und `grep`, wie zum Beispiel `sed` und `awk`, die noch mehr Funktionen bieten. Die Implementierung dieser Methoden kann je nach Programmiersprache variieren, aber das Konzept bleibt das gleiche: Teilstrings werden isoliert und verwendet.
+## Wie geht das:
+
+Extrahieren von Substrings in Bash ist einfach, und es geht so:
+
+```Bash
+# Substring beginnend bei Index 0 mit Länge 5
+string="Hallo, Welt!"
+substring=${string:0:5}
+echo $substring
+```
+
+Ausgabe:
+
+```Bash
+Hallo
+```
+
+Aber was, wenn wir vom Ende des Strings extrahieren wollen? Kein Problem:
+
+```Bash
+# Substring beginnend bei Index -5 (5 Zeichen vom Ende) mit Länge 5
+string="Hallo, Welt!"
+substring=${string:-5:5}
+echo $substring
+```
+
+Ausgabe:
+
+```Bash
+Welt!
+```
+
+## Tiefer tauchen
+
+Die Fähigkeit, Substrings in Bash zu extrahieren, ist seit der Bash-Version 2.0, veröffentlicht im Dezember 1996, verfügbar. Das Extrahieren von Substrings ist eine Standardfunktion in den meisten modernen Programmiersprachen, einschliesslich Python, Java und C++. 
+
+Alternativen zur Substring-Extraktion in Bash können die Verwendung von `awk`, `sed` oder `cut` Linux/Unix-Befehlen sein. Diese können bei komplexeren Operationen nützlicher sein, erfordern jedoch zusätzliche Aufrufe zu externen Programmen, was die Effizienz beeinträchtigen kann.
+
+Das Extrahieren von Substrings in Bash erfolgt über eine eingebaute Funktion, d.h. es werden keine externen Programme aufgerufen. Daher ist es in der Regel schneller als die Verwendung von `awk`, `sed`, oder `cut`.
 
 ## Siehe auch
-Weitere Informationen und Beispiele zum Extrahieren von Teilstrings können in der offiziellen Dokumentation von Bash gefunden werden unter https://www.gnu.org/software/bash/manual/html_node/Bash-Examples.html#Bash-Examples. Weitere Ressourcen und Tutorials finden Sie auf Websites wie https://linuxize.com/post/bash-extract-substring/.
+
+Die offizielle GNU Bash-Dokumentation liefert weitere Details zur Zeichenkettensyntax und Substring-Extraktion:
+[Gnu Bash Handbuch](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)  
+
+Für diejenigen, die mehr über das Finden und Extrahieren von Substrings lernen möchten, bietet StackOverflow interessante Diskussionen:
+[StackOverflow Bash Substring](https://stackoverflow.com/questions/428109/extract-substring-in-bash)

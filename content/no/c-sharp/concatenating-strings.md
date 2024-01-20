@@ -1,7 +1,7 @@
 ---
-title:                "Sammenkobling av tekststrenger"
-html_title:           "C#: Sammenkobling av tekststrenger"
-simple_title:         "Sammenkobling av tekststrenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,27 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Concatenating, eller å kombinere tekststrenger, er en måte å sette sammen flere tekststrenger til én enkelt streng. Dette er nyttig fordi det gir programmerere muligheten til å lage dynamiske tekststrenger som endrer seg basert på forskjellige variabler og data. Dette gir også mer leservennlig og effektiv kode.
+Streng-sammenføyning er en prosedyre for å koble sammen/enhetliggjøre flere strenger (sentenser, ord etc.) til en enkelt streng. Dette gjør vi for å lage dynamiske strenger, manipulere data eller tilpasse resultater til spesifikke formater.
 
-## Hvordan:
-I C# kan du enkelt kombinere tekststrenger ved å bruke operatoren "+" mellom strengene. Du kan også bruke metoden "Concat" for å kombinere flere strenger. Her er et eksempel:
+## Hvordan?
+Her er eksempelkode som demonstrerer strengsammenføying i C#:
+```csharp
+string s1 = "Hallo, ";
+string s2 = "Verden!";
+string s3 = s1 + s2;
+Console.WriteLine(s3);
 ```
-string navn = "Lars";
-string alder = "25";
-string info = navn + " er " + alder + " år gammel.";
-
-Console.WriteLine(info);
-
-// Output:
-// Lars er 25 år gammel.
+Produksjonen av koden vil være:
 ```
+Hallo, Verden!
+```
+C# tilbyr også String.Concat()-metoden for å lage strengkombinasjoner:
+```csharp
+string s1 = "Hallo, ";
+string s2 = "Verden!";
+string s3 = String.Concat(s1, s2);
+Console.WriteLine(s3);
+```
+Og produksjonen vil være det samme: 
+```
+Hallo, Verden!
+```
+## Dyp Dykk
+Historien for strengsammenføying går tilbake til de tidlige dager med programmering. Det var alltid behov for å sette sammen flere biter av tekst.
 
-Flere alternativer inkluderer å bruke "StringBuilder" for å øke ytelsen når man kombinerer en stor mengde tekststrenger, og "String.Format" for å formatere strenger med variabler på en enklere måte.
+I C# er det mange måter å administrere strengsammenføyning på. Den tradisjonelle operatøren (+) og String.Concat()-metoden er de mest kjente, men det er også andre løsninger, for eksempel String.Join() og StringBuilder.Append().
 
-## Dypdykk:
-Konseptet med å kombinere tekststrenger har eksistert siden de tidlige dagene av programmering, og er fortsatt en viktig del av utvikling i dag. Mens operatoren "+" er enkel å bruke, kan det føre til at koden blir uleselig og ineffektiv når man kombinerer mange strenger. Derfor er det viktig å også vurdere alternativer som Stringbuilder når man håndterer store mengder strenger.
+Når det gjelder ytelse, avhenger det av mengden data som skal behandles. For mindre volumer gir de forskjellige teknikkene omtrent lik ytelse. Men for store volumer kan StringBuilder være mer effektiv siden det ikke lager unødvendige mellomliggende strenger og derfor bruker mindre minne.
 
-## Se også:
-For mer informasjon om tekstbehandling i C#, sjekk ut disse ressursene:
-- [Microsoft - Kombinering av tekststrenger](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
-- [W3Schools - C# - Strings](https://www.w3schools.com/cs/cs_strings.asp)
+## Se også
+[Microsofts dokumentasjon om Streng-sammenføyning](https://docs.microsoft.com/en-us/dotnet/csharp/how-to/concatenate-multiple-strings)
+[String.Join-metoden](https://docs.microsoft.com/en-us/dotnet/api/system.string.join?view=net-5.0)
+[StringBuilder-klassen](https://docs.microsoft.com/en-us/dotnet/api/system.text.stringbuilder?view=net-5.0)

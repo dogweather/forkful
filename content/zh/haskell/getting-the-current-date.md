@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Haskell: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 简介
-Haskell是一个优秀的编程语言，在当前版本中，它提供了强大的功能来获取当前日期。对于程序员来说，获取当前日期是一个常见的需求，因为它可以帮助我们跟踪时间并将其与其他数据相关联。
+## 什么 & 为什么?
+获取当前日期意味着让计算机告诉我们今天是几号。开发人员用这个来跟踪事件，记录日志，或者只是显示日期给用户。
 
-# 什么及为什么
-获取当前日期意味着获取当天的日期和时间。它是一个常见的需求，因为它可以帮助我们跟踪事件发生的时间，例如启动一个程序、保存数据等等。程序员通常会使用它来记录日志或调试错误。
+## 办法:
+在Haskell中，我们可以使用 `Data.Time.Clock` 和 `Data.Time.Calendar` 库来得到当前日期。先让我们引入这些库。
 
-# 如何
-要在Haskell中获取当前日期，我们可以使用Data.Time库中的getCurrentTime函数。首先，我们需要导入Data.Time库：
+```Haskell
+import Data.Time.Clock
+import Data.Time.Calendar
 ```
-import Data.Time
-```
-然后，我们可以使用getCurrentTime函数来获取当前日期：
-```
-currentDate <- getCurrentTime
-```
-最后，我们可以使用formatTime函数来格式化日期的显示方式，例如：
-```
-let formattedDate = formatTime defaultTimeLocale "%Y-%m-%d" currentDate
-```
-这将返回一个带有年份、月份和日期的字符串，例如“2021-04-20”。
+然后我们可以写一个函数来获取今天的日期:
 
-# 深入探讨
-历史背景：在早期版本的Haskell中，并没有提供内置的方法来获取当前日期。直到最新版本，Haskell才提供了Data.Time库来满足这一需求。
+```Haskell
+getCurrentDate :: IO (Integer, Int, Int) -- Year, Month, Day
+getCurrentDate = getCurrentTime >>= return . toGregorian . utctDay
+```
+这个函数先获取当前的UTC时间，然后从中提取出日期，最后转为公历（格里高利历）格式。
 
-其他选择：除了使用getCurrentTime函数，我们也可以使用其他外部库来获取当前日期，例如Data.Time.Clock.System库和Data.Time.Clock.POSIX库。
+运行这个函数会显示当前的年，月，日:
 
-实现细节：getCurrentTime函数会返回当前日期和时间的UTCTime类型。我们可以使用formatTime函数来格式化日期的显示方式。除了上述示例中提到的默认格式外，我们还可以使用自定义的格式来显示日期和时间的不同部分。
+```Haskell
+main = do
+    (year, month, day) <- getCurrentDate
+    putStrLn $ "Today is " ++ show day ++ "." ++ show month ++ "." ++ show year
+```
+## 深入探究
+获取当前日期是一个常见操作。大部分语言都有自己获取当前日期的方法。在Haskell的早期版本中，日期和时间是由操作系统提供的，所以具体实现在不同的平台上会有所不同。现在，Haskell有了一个全新的、跨平台兼容的日期和时间库。
 
-# 相关链接
-- [Haskell官方网站](https://www.haskell.org/)
-- [Data.Time文档](https://downloads.haskell.org/)
+此外，当前日期的实现依赖于你的机器所在的时区，所以在有些情况下，你可能需要吧UTC时间转为本地时间。
+
+## 另请参见
+* Haskell的`Data.Time`文档 [Data.Time](https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time.html)
+* 了解更多关于时间和日期的知识 [Time and Date](https://www.timeanddate.com/)

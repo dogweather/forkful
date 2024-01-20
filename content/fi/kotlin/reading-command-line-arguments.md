@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Kotlin: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
 
-Komentoriviargumenttien lukeminen on tapa, jolla ohjelmoijat voivat lukea syötteitä, joita käyttäjä antaa suoraan ohjelmalle komentorivillä. Tämä voi olla hyödyllistä esimerkiksi ohjelmassa, joka käsittelee tiedostoja, sillä käyttäjä voi antaa tiedoston nimen komentorivillä sen sijaan, että sen täytyisi kirjoittaa se ohjelman käyttöliittymään.
+Komentoriviparametrien lukeminen tarkoittaa käyttäjän syöttämien parametrien käsittelyä ohjelmaa suoritettaessa. Programmeeraajien on tehtävä tämä voidakseen muokata ohjelman käyttäytymistä lennossa.
 
-## Kuinka:
+## Miten tehdä:
+
+Kotlinissa komentoriviparametrien lukeminen on suoraviivaista. Käynnistysparametrit sisältyvät `main`-funktion argumentteihin, jotka ovat String-taulukon muodossa. Tarkastele esimerkkiä:
 
 ```Kotlin
 fun main(args: Array<String>) {
-    println("Ensimmäinen argumentti: ${args[0]}")
-    println("Toinen argumentti: ${args[1]}")
+   if(args.isNotEmpty()){
+       println("Hei, ${args[0]}!")
+   } else {
+       println("Hei, tuntematon!")
+   }
 }
 ```
 
-```
-kotlin run tiedosto.kt argumentti1 argumentti2
-```
+Jos tämän ohjelman suorittaa komennolla `kotlin HelloWorld.kt Mikko`, ohjelma tulostaa `Hei, Mikko!`. Jos ohjelman suorittaa ilman argumentteja, tulostuu `Hei, tuntematon!`.
 
-Tässä esimerkissä ohjelma tulostaa ensimmäisen ja toisen komentoriviargumentin arvon. Vaikka tässä esimerkissä käytetään vain kahta argumenttia, samaa logiikkaa voi soveltaa mihin tahansa määrään argumentteja.
+## Syvällisempi sukellus:
 
-## Syvällinen kaivelu:
+Historiallisesti komentoriviparametreja on käytetty antamaan ohjelmalle tietoja sen suorituksen alussa. Vaikka nykyään on kehittyneempiä tapoja saada tietoja ohjelmaan (esimerkiksi käyttöliittymien tai verkkopalveluiden kautta), komentoriviparametreja käytetään silti yleisesti käsikirjoituksissa ja työkaluissa.
 
-Komentoriviargumenttien lukeminen on ollut käytössä jo vuosikymmenten ajan, ja se on edelleen yksi yleisimmistä tavoista käsitellä käyttäjän syötteitä ohjelmissa. On myös muita tapoja lukea syötteitä, kuten esimerkiksi graafinen käyttöliittymä, mutta komentoriviargumentit ovat edelleen kätevä tapa hoitaa yksinkertaisia tehtäviä.
+Myös muita tapoja komentoriviparametrien käsittelyyn on olemassa. Esimerkiksi `CommandLine`-kirjasto tarjoaa paljon toimintoja kuten lippuargumentteja ja argumenttien validointia.
 
-Kotlinissa komentoriviargumentit ovat saatavilla `args` muuttujan kautta `main` funktion parametreina. Tämä muuttuja on taulukko, joka sisältää kaikki komentoriviargumentit, joita ohjelmaan on annettu.
+Kotlinin `main`-funktiolle komentoriviparametrien syöttäminen perustuu Javalle tuttuun tyyliin. Käynnistysparametrit syötetään String-taulukkoon, joka toimitetaan `main`-funktolle.
 
 ## Katso myös:
 
-- [Kotlin Doc - Command Line Arguments](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [Baeldung - Command Line Arguments in Kotlin](https://www.baeldung.com/kotlin/command-line-arguments)
+- [Kotlinin viralliset dokumentit komentorivisovellusten luomisesta](https://kotlinlang.org/docs/command-line.html)
+- [CommandLine-kirjasto](https://picocli.info/)
+- [Hyvä artikkeli komentoriviparametrien käsittelystä](https://www.baeldung.com/kotlin-command-line-args)

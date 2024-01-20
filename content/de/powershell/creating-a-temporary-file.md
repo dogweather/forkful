@@ -1,7 +1,7 @@
 ---
-title:                "Ein temporäres Datei erstellen"
-html_title:           "PowerShell: Ein temporäres Datei erstellen"
-simple_title:         "Ein temporäres Datei erstellen"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Creating a temporary file ist eine nützliche Technik, die Programmierer anwenden, um temporäre Dateien zu erstellen, die während der Ausführung eines Skripts oder Programms verwendet werden. Dies ermöglicht es ihnen, temporäre Daten effizient zu speichern und zu verwalten und sie später wieder zu löschen.
+## Was und Warum?
+Das Erstellen einer temporären Datei ist das Erzeugen einer Datei, die zur kurzfristigen Lagerung von Daten dient, meistens für den Bereich eines einzelnen Laufausdrucks bzw. einer Programmsitzung. Programmierer machen dies, wenn sie Daten zwischenspeichern oder temporäre Arbeitsspeicher-Objekte erzeugen müssen, die groß genug sind, dass die Daten nicht einfach in eine Variable geladen werden können.
 
-## How to:
-Um eine temporäre Datei in PowerShell zu erstellen, kannst du das `New-TemporaryFile` Cmdlet verwenden, das Teil des `PowerShellGet` Moduls ist. Hier ist ein Beispiel, das eine temporäre Textdatei erstellt und ihren Inhalt ausgibt:
+## So geht's:
 
+Erstell eine temporäre Datei mit PowerShell ist nur eine Zeile Code. Die `New-TemporaryFile` cmdlet erstellt eine temporäre Datei und gibt den vollständigen Pfad zur Datei zurück.
+
+Erstellen die temp-Datei:
 ```PowerShell
-$tempFile = New-TemporaryFile -Suffix ".txt"
-Set-Content $tempFile "Das ist eine temporäre Datei."
-Get-Content $tempFile
+$tempFile = New-TemporaryFile
+```
+Sie können den vollständigen Pfad zur Datei anzeigen:
+```PowerShell
+Write-Output $tempFile.FullName
+```
+Dies führt zu einer Ausgabe ähnlich wie:
+```PowerShell
+C:\Users\YourUser\AppData\Local\Temp\tmp1BF0.tmp
+```
+Und nachdem Sie fertig sind, können Sie die Datei löschen:
+```PowerShell
+Remove-Item -Path $tempFile.FullName
 ```
 
-Dies könnte die folgende Ausgabe erzeugen:
+## Vertiefung:
 
-```PowerShell
-Das ist eine temporäre Datei.
-```
+Das Konzept temporärer Dateien stammt aus den alten Zeiten, als Computer noch nicht über ausreichend RAM verfügten und man große Datenmengen auf die Festplatte auslagern musste.
 
-## Deep Dive:
-Die Verwendung von temporären Dateien ist keine neue Technik und wird seit langem von Programmierern in verschiedenen Sprachen und Umgebungen verwendet. Früher mussten Programmierer manuell temporäre Dateien erstellen und verwalten, was zeitaufwendig und fehleranfällig sein konnte. Mit der Einführung von speziellen Temporärdatei-Funktionalitäten, wie dem `New-TemporaryFile` Cmdlet in PowerShell, wird die Erstellung und Verwaltung dieser Dateien deutlich vereinfacht.
+Es gibt alternative Möglichkeiten, temporäre Dateien zu erstellen; Sie können beispielsweise die .NET-Klasse `[System.IO.Path]::GetTempFileName()` verwenden, die im Grunde dasselbe tut, aber etwas flexibler ist.
 
-Als Alternative zur Verwendung von `New-TemporaryFile` können Programmierer auch `System.IO.Path.GetTempFileName()` verwenden, um eine temporäre Datei in C# zu erstellen. Dies erzeugt eine Datei-Plattform-unabhängige temporäre Datei.
+Beim Umgang mit temporären Dateien sollten Sie immer sicherstellen, dass Sie diese löschen, nachdem Sie mit ihnen fertig sind. Einer der Gründe, warum es den `New-TemporaryFile` cmdlet gibt, ist die Notwendigkeit, diesen Aspekt der Ressourcenverwaltung auf niedriger Ebene zu handhaben.
 
-Bei der Implementierung von `New-TemporaryFile` in PowerShell wird standardmäßig der Ordner `%TEMP%` als Speicherort für die Datei verwendet. Programmierer können jedoch auch einen anderen Speicherort durch Angabe des Parameters `-Path` auswählen.
+## Siehe Auch:
 
-## Siehe auch:
-Weitere Informationen über das `New-TemporaryFile` Cmdlet und das PowerShellGet Modul findest du in der offiziellen Microsoft-Dokumentation unter [docs.microsoft.com/en-us/powershell/module/powershellget/new-temporaryfile?view=powershell-7](https://docs.microsoft.com/en-us/powershell/module/powershellget/new-temporaryfile?view=powershell-7).
-
-Für C#-Programmierer gibt es weitere Möglichkeiten zur Erstellung temporärer Dateien, die in der offiziellen Microsoft-Dokumentation zu `Path.GetTempFileName()` beschrieben sind: [docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0).
+1. [New-TemporaryFile auf Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-temporaryfile?view=powershell-7.1)
+2. [Remove-Item auf Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.1)
+3. [System.IO.Path::GetTempFileName auf Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)

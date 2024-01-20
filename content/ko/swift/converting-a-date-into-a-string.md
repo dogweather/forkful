@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Swift: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-날짜를 문자열로 변환하는 것은 프로그래머들이 날짜와 시간 정보를 표현하고 조작하는 데 도움이 됩니다. 이를 통해 사용자들은 쉽게 읽고 이해할 수 있는 형식으로 날짜를 표시할 수 있습니다.
+## 무엇이고 왜 필요한가? 
 
-## 어떻게:
+날짜를 문자열로 변환하는 것은 정해진 형식의 문자열로 날짜를 표현하는 작업입니다. 이를 통해 개발자들은 원하는 형식으로 날짜와 시간을 쉽게 표현하고, 사용자와의 상호작용을 더욱 풍부하게 할 수 있습니다. 
+
+## 어떻게 해야하는가?
+
+Swift의 DateFormatter 클래스를 사용하면 간단히 해결할 수 있습니다. 다음은 사용 예제와 결과 출력입니다.
+
 ```Swift
-let date = Date() //현재 날짜와 시간
-let dateFormatter = DateFormatter()
-// DateFormatter 객체를 생성하여 날짜를 원하는 형식에 맞게 변환할 준비를 합니다.
+import Foundation
 
-dateFormatter.dateFormat = "EEEE, MMM dd, yyyy"
-// 알파벳 'E'는 요일, 알파벳 'M'은 월, 숫자 'd'는 일, 그리고 숫자 'y'는 년도를 나타냅니다. 이렇게 DateFormat을 설정하면 날짜가 다음과 같이 표시됩니다.
-// "Friday, Aug 13, 2021"
+let date = Date()
+let formatter = DateFormatter()
 
-let stringDate = dateFormatter.string(from: date)
-print(stringDate) // "Friday, Aug 13, 2021"
+formatter.dateStyle = .short
+let shortDate = formatter.string(from: date)
+print(shortDate)
 ```
 
-## 깊게 파헤치기:
-날짜를 문자열로 변환하는 방법은 오랜 역사를 가지고 있습니다. 예를 들어 과거에는 매우 복잡한 방식으로 날짜를 표현했지만 지금은 훨씬 간단하고 유연한 방식으로 가능합니다. 또한 다양한 프로그래밍 언어에서도 비슷한 기능을 제공합니다. Swift에서는 DateFormatter를 사용하여 날짜를 원하는 형식에 맞게 변환할 수 있습니다. 또한 다른 방법으로는 날짜와 관련된 라이브러리를 사용하는 것이 있습니다.
+위 코드의 실행 결과는 시스템 설정에 따라 다를 수 있지만, 일반적을 예를 들면 '11/3/21'와 같이 출력됩니다.
 
-## 같이 보기:
-- [NSDateFormatter](https://developer.apple.com/documentation/foundation/nsdateformatter)
-- [날짜 값 다루기 - Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/DatesAndTimes.html)
+## 심화 학습
+
+1) 날짜를 문자열로 변환하는 작업은 프로그래밍의 초창기부터 있었던 작업입니다. 기계와 사람이 이해할 수 있는 방식 간의 간극을 줄이기 위한 방법이죠.
+
+2) Swift 외에도 JavaScript, Python, Java 등 다양한 프로그래밍 언어에서 날짜를 문자열로 변환하는 방법을 제공하고 있습니다. 각 언어에 대한 사용법을 따로 알아보는 것이 좋습니다.
+
+3) Swift의 'DateFormatter'는 국제 표준에 따라 날짜와 시간 정보를 다룹니다. 사용자의 지역과 언어 설정에 따라 결과값이 다르게 출력될 수 있습니다.
+
+## 참고 자료
+
+1) [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+   
+2) [Stack Overflow: Convert Date to String format in Swift](https://stackoverflow.com/questions/35700281/date-format-in-swift)
+
+위 두 링크로 가면 Swift에서 날짜를 문자열로 변환하는 방법에 대해 더 자세한 정보와 예제를 볼 수 있습니다. 이를 바탕으로 더 많은 학습을 이어가보세요.

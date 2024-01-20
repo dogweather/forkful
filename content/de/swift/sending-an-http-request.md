@@ -1,7 +1,7 @@
 ---
-title:                "Eine http-Anfrage senden"
-html_title:           "Swift: Eine http-Anfrage senden"
-simple_title:         "Eine http-Anfrage senden"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-HTTP Anfragen zu senden ist ein wichtiger Teil des Web-Entwicklungsprozesses und ermöglicht es Programmierern, Daten von Servern abzurufen. Dies kann beispielsweise genutzt werden, um Inhalte dynamisch auf einer Webseite zu aktualisieren oder um mit APIs anderer Dienste zu kommunizieren.
+# Sende eine HTTP-Anforderung in Swift
 
-## Wie geht's?
-Um eine HTTP Anfrage in Swift zu senden, verwenden wir die `URLSession` und `URLRequest` Klassen. Zuerst erstellen wir eine `URLRequest` Instanz und definieren die URL, zu der wir eine Anfrage senden wollen. Dann erstellen wir eine `URLSession` und nutzen die `dataTask` Methode, um eine HTTP Anfrage durchzuführen und die Antwort in einem Closure zu verarbeiten. Zum Beispiel:
+## Was & Warum?
+
+Ein HTTP-Anforderung senden bedeutet, mit Webservern zu kommunizieren und Ressourcen (wie Webseiten oder API-Daten) anzufordern. Als Programmierer tun wir dies, um mit externen Servern zu kommunizieren und so dynamischen Inhalt oder Webservices zu nutzen.
+
+## How to:
+Hier ist ein einfaches Beispiel, wie man eine HTTP GET-Anforderung in Swift sendet:
 
 ```Swift
-let url = URL(string: "https://mywebsite.com/api/data")
-var request = URLRequest(url: url)
-request.httpMethod = "GET"
-let session = URLSession.shared
-let task = session.dataTask(with: request) { (data, response, error) in
-    if let error = error {
-        print("Error: \(error)")
-        return
+import Foundation
+
+let url = URL(string: "http://DeineWebseite.de/")!
+let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+    if let data = data {
+        print(String(data: data, encoding: .utf8)!)
     }
-    // Verarbeite die Antwort
 }
 task.resume()
 ```
 
-Die Antwort wird in diesem Beispiel in der `data` Variable gespeichert und kann dann weiter verarbeitet werden.
+Die Antwort von diesem Code wäre der HTML-Inhalt der angegebener Webseite.
 
-## Tiefer Einblick
-HTTP (Hypertext Transfer Protocol) ist ein Protokoll, das für die Kommunikation zwischen Clients und Servern im Web verwendet wird. Es wurde 1991 entwickelt und ist seitdem das grundlegende Protokoll für den Austausch von Informationen im Internet. Eine Alternative zum Senden von HTTP Anfragen in Swift wäre die Verwendung von Drittanbieter-Frameworks wie Alamofire oder RestKit.
+## Deep Dive
 
-Die Implementierung von HTTP Anfragen in Swift basiert auf der `URLSession` API, die es uns ermöglicht, HTTP Anfragen zu senden und zu empfangen. Dabei können wir verschiedene HTTP Methoden wie GET, POST, PUT und DELETE verwenden, um unterschiedliche Aktionen auf dem Server auszuführen.
+HTTP steht für "HyperText Transfer Protocol", und es wurde ursprünglich 1991 eingeführt. Es ist das Protokoll, das vom World Wide Web zur Kommunikation genutzt wird. Alternativen zum Senden von HTTP-Anforderungen können Websockets oder GraphQL sein, die beide andere Methoden zum Abrufen von Daten von einem Server bieten.
 
-## Weitere Informationen
-- [Apple Dokumentation zu URLSessions](https://developer.apple.com/documentation/foundation/urlsession)
-- [HTTP auf Wikipedia](https://de.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-- [Alamofire Framework](https://github.com/Alamofire/Alamofire)
+In Swift sind `URLSession` und `URLRequest` die wichtigsten Klassen, die wir zum Senden von HTTP-Anforderungen nutzen. Indem wir eine `URL` an eine `URLSession` übergeben, können wir eine `URLSessionDataTask` erstellen, die dann mit `.resume()` gestartet werden kann.
+
+## Siehe auch
+
+Weitere Informationen zum Senden von HTTP-Anforderungen in Swift finden Sie in der [Apple-networking Dokumentation](https://developer.apple.com/documentation/foundation/url_loading_system) und auf [SwiftAPI](https://swiftapi.dev).
+
+---
+Hinweis: Denken Sie daran, den Netzwerkcode immer auf einem Hintergrundthread und nicht auf dem Hauptthread auszuführen. Islands Vorsicht ist die Mutter der Sicherheit!

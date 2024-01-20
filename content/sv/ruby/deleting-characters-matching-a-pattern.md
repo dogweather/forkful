@@ -1,7 +1,7 @@
 ---
-title:                "Radera tecken som matchar ett mönster"
-html_title:           "Ruby: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,29 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster är en användbar funktion inom programmering. Det innebär att vi kan välja vilka tecken som ska tas bort från en sträng baserat på ett specifikt mönster. Detta sparar tid och gör koden mer effektiv.
+## Vad & Varför? 
+Att radera tecken som matchar ett mönster innebär att få bort specifika karaktärer från en sträng i Ruby. Programmerare gör det för att manipulera data för specifika behov; kanske för att rensa oönskade tecken eller hantera formatering.
 
-## Hur man:
-För att ta bort tecken som matchar ett mönster i Ruby, använder vi metoden `.gsub!` tillsammans med en regex (regular expression) för att söka efter mönstret. Här är ett exempel som tar bort alla siffror från en sträng:
+## Hur man gör:
+Här är hur du kan radera tecken med Ruby's inbyggda 'delete' metoden:
 
 ```Ruby
-str = "ABC123def456"
-str.gsub!(/\d/, "")
-puts str #=> ABCdef
+str = "Hej, Världen!"
+ny_str = str.delete('!')
+puts ny_str
+# Output: "Hej, Världen"
 ```
 
-Här kan vi se att alla siffror (1, 2, 3, 4 och 5) har tagits bort från strängen och endast bokstäverna kvarstår. Vi kan också specificera vilka tecken vi vill ta bort genom att ändra regex-mönstret.
+'Match' ger oss möjlighet att använda reguljära uttryck för mer avancerade mönster:
 
-## Djupdykning:
-Att ta bort tecken som matchar ett mönster är en viktig del av regex-programmering, då det möjliggör mer avancerad manipulation av strängar. Regex används ofta för att hitta och ersätta specifika delar av texter eller för att strukturera data på ett snabbare sätt. Alternativt kan metoden `.delete` i Ruby användas för att ta bort tecken baserat på ett visst mönster.
+```Ruby
+str = "Varför, varför, varför?"
+ny_str = str.gsub(/varför/i, '')
+puts ny_str
+# Output: ", , "
+```
 
-När mönstret matchar flera tecken kan det vara fördelaktigt att använda `.gsub!` istället för `.sub!`, eftersom `.gsub!` kommer ta bort alla förekomster av mönstret medan `.sub!` bara tar bort den första förekomsten.
+## Djupdykning
+Historiskt sett har behovet av att manipulera strängar varit en central del av datahantering. Det är därför Ruby, som skapades på mitten av 90-talet, redan hade metoder för hantering av strängmanipulation.
 
-## Se också:
-För mer information om regex och dess användning i Ruby, se följande länkar:
+Du kan också använda 'tr' metoden som ett alternativ till 'delete':
 
-- [The Ruby Programming Language by Yukihiro Matsumoto](https://www.amazon.com/Ruby-Programming-Language-Yukihiro-Matsumoto/dp/0596516177)
-- [RubyMonk - Regular Expressions](https://rubymonk.com/learning/books/1-ruby-primer/problems/158-validation-using-regular-expressions)
-- [Ruby Doc - Regexp](https://ruby-doc.org/core-2.7.0/Regexp.html)
-- [Ruby Doc - String](https://ruby-doc.org/core-2.7.0/String.html)
+```Ruby
+str = "Hej, Världen!"
+ny_str = str.tr('!', '')
+puts ny_str
+# Output: "Hej, Världen"
+```
+
+Huruvida du ska använda 'delete', 'gsub', eller 'tr' beror mycket på vilken typ av problemlösning du står inför och personlig preferens.
+
+## Se Även
+För mer läsning, kolla in dessa källor:
+- [Ruby's Officiella Dokumentation om Strängar](https://ruby-doc.org/core/String.html)
+- [TutorialsPoint's Ruby Tutorial](https://www.tutorialspoint.com/ruby/index.htm)
+- [RubyGuides on String Manipulation](https://www.rubyguides.com/2015/06/ruby-string-methods/)

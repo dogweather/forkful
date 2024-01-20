@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "C++: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "C++"
 category:             "C++"
@@ -10,47 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co to i dlaczego?
 
-Długość ciągu znaków to liczba znaków wewnątrz danego ciągu. Programiści często muszą znaleźć długość ciągu znaków w swoich programach, ponieważ jest to ważna informacja, która pomaga im zrozumieć i manipulować danymi.
+Długość ciągu to liczba znaków, które go tworzą. Programiści potrzebują tej informacji, na przykład, do alokacji pamięci, porównywania ciągów, czy iterowania po zawartości ciągu.
 
 ## Jak to zrobić:
 
 ```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
+#include<iostream>
+#include<string>
 
 int main() {
-  string str = "Hello World";
-  int len = str.length();
-  
-  cout << "Długość ciągu znaków: " << len << endl;
-  
-  return 0;
+    std::string mojString = "C++ dla Polaków";
+    std::cout << "Długość ciągu: "<< mojString.length() << "\n";
+    return 0;
 }
 ```
 
-Output:
+Działa to tak:
 
 ```
-Długość ciągu znaków: 11
+Długość ciągu: 14
 ```
 
-## Głębszy zanurzenie:
+## Głębsze spojrzenie
 
-1. Kontekst historyczny:
-Pierwszym językiem programowania, który wprowadził funkcję do znajdowania długości ciągu znaków, był język programowania BCPL, który został stworzony w latach 60. przez Martina Richardsa. Od tego czasu funkcja ta została wzięta pod uwagę przez inne języki programowania, w tym przez C++, co czyni ją jednym z podstawowych elementów tego języka.
+Dawniej w C, aby znaleźć długość ciągu, używano funkcji `strlen()`, która skanowała ciąg aż do znaku końca oznaczonego przez '\0'. Teraz w C++, używa się metody `length()` klasy `std::string`, która zwraca długość ciągu w sposób bardziej efektywny i bezpieczny.
 
-2. Alternatywy:
-Oprócz użycia funkcji length(), istnieją również inne sposoby na znalezienie długości ciągu znaków w C++, takie jak użycie pętli for lub wbudowanej funkcji strlen().
+Alternatywą dla `length()` jest metoda `size()`, która zwraca dokładnie to samo. Wybór między nimi to kwestia stylistyczna.
 
-3. Szczegóły implementacji:
-Funkcja length() w C++ jest zaimplementowana w bibliotece standardowej jako metoda klasy string. Wewnątrz funkcji następuje iteracja przez wszystkie elementy stringa i zliczanie ich liczby. W przypadku pustego stringa, funkcja zwraca wartość 0.
+Pod kątem implementacji, `std::string` to klasa, która przechowuje długość ciągu i zwraca ją podczas wywoływania `length()`. Nie ma więc potrzeby skanowania ciągu, co czyni operację szybką i o stałym czasie.
 
-## Zobacz także:
+## Zobacz także
 
-- [Dokumentacja funkcji length() w C++](https://www.cplusplus.com/reference/string/string/length/)
-- [Różne sposoby na znajdowanie długości ciągu znaków w C++](https://www.geeksforgeeks.org/length-of-a-string-using-pointer-and-array-both/)
-- [Porównanie wydajności funkcji length() i strlen() w C++](https://stackoverflow.com/questions/8710719/what-is-the-difference-between-strlen-and-length-for-stdstring)
+- Dokumentacja `std::string::length`: http://www.cplusplus.com/reference/string/string/length/
+- Dokumentacja `std::string::size`: http://www.cplusplus.com/reference/string/string/size/
+- Jak działa `strlen`: https://stackoverflow.com/questions/29200635/compare-strlen-and-string-length-in-c

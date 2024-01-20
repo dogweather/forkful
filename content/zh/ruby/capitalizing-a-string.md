@@ -1,7 +1,7 @@
 ---
-title:                "将字符串转换为大写"
-html_title:           "Ruby: 将字符串转换为大写"
-simple_title:         "将字符串转换为大写"
+title:                "将字符串大写化"
+html_title:           "Ruby: 将字符串大写化"
+simple_title:         "将字符串大写化"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##什么是资本化字符串及为什么要这么做？
+## 啥 & 为何?
 
-资本化字符串是指将某个字符串中的每个字母首字母改为大写形式。程序员这样做的原因是为了让字符串的显示更加美观和易于阅读。
+字符串的大写化，是让字符串第一个字母变成大写的操作。程序员做这个主要是为了强制遵循文本显示的规则。
 
-##如何实现：
+## 怎么做:
 
-以下是使用Ruby编程语言实现资本化字符串的两种方式，以及样本输出：
-
-```ruby
-#方法一：使用capitalize方法
-#输入字符串
-str = "hello, world!"
-#将字符串的首字母大写
-str.capitalize
-#输出结果为 "Hello, world!"
-
-#方法二：使用upcase和slice方法
-#输入字符串
-str = "hello, world!"
-#将字符串的首字母大写
-str[0] = str[0].upcase
-#输出结果为 "Hello, world!"
+在Ruby中，你可以使用`capitalize`方法来实现。下面是一些使用示例和结果：
+```Ruby
+"hello world".capitalize # => "Hello world"
+"HELLO WORLD".capitalize # => "Hello world"
+"123abc".capitalize # => "123abc"
 ```
+此方法将字符串的首字母转换为大写，其余的转为小写。
 
-##深入了解：
+## 深入了解
 
-1. 历史背景：资本化字符串的概念最初来源于编程语言内部的函数，用于处理字符串的格式。随着时代的发展，它也被广泛应用于文本编辑和文档处理软件中。
+在历史中，电报以及早期的计算机使用全部大写字母，因此变现的时候往往都会采用全部大写。而现在，大多的语标明将首字母大写作为区标题或者人名。
 
-2. 其他替代方案：除了Ruby中的capitalize方法和upcase、slice组合，也可以使用正则表达式来实现资本化字符串。
+而在Ruby中，除了`capitalize`方法之外，还有一些其他方法：
 
-3. 实现细节：当资本化一个字符串时，Ruby会根据当前字符串中所有的单词首字母进行大写转换，并将其他字母转换为小写形式。因此，如果要实现特定单词的大写形式，需要使用capitalize方法；如果要实现全大写形式，可使用upcase和slice方法。
+- `upcase`：全部字母变为大写。比如`"hello".upcase # => "HELLO"`
+- `downcase`：全部字母变为小写。比如`"HELLO".downcase # => "hello"`
+- `swapcase`：大写字母变小写，小写字母变大写。比如`"Hello".swapcase # => "hELLO"`
 
-##相关阅读：
+## 参考资料
 
-- [Ruby String#capitalize method](https://rubyapi.org/3.0/o/string#method-i-capitalize)
-- [Ruby String#upcase method](https://rubyapi.org/3.0/o/string#method-i-upcase)
-- [Ruby String#slice method](https://rubyapi.org/3.0/o/string#method-i-slice)
-- [Regular Expressions in Ruby](https://www.rubyguides.com/ruby-tutorial/ruby-regex/)
+你可以参阅下列链接以更全面地了解Ruby的字符串处理：
+
+- [Ruby官方字符串文档](https://www.ruby-lang.org/zh_cn/documentation/tutorial/strings/)
+- [Ruby字符串方法大全](https://ruby-doc.org/core-2.7.2/String.html)
+- [Ruby学习笔记: 字符串处理](https://www.w3cschool.cn/ruby/ruby-string-methods.html)

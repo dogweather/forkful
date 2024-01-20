@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "Ruby: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,21 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 현재 날짜
-날짜를 가져오는 것은 프로그래머들에게 중요한 일입니다. 왜냐하면 현재 날짜를 알고 있다면, 무슨 일이 벌어지고 있는지를 알 수 있기 때문입니다.
+## 무엇인가 & 왜 필요한가? 
+현재 날짜를 가져오는 것은 프로그램이 현재 어떤 날짜인지 알 수 있게 하는 기능입니다. 이는 로그 기록, 데이터 타임스탬픙, 또는 날짜에 따른 기능 제어 등 다양한 목적으로 프로그래머들에게 사용됩니다.
 
-## 방법:
+## 어떻게 하는가:
+간단한 코딩 예제와 출력입니다:
+
 ```Ruby
-puts Date.today
-```
-코드 블록 안에 위와 같이 입력하면, 오늘의 날짜가 출력됩니다.
-```
-2021-03-18
-```
+require 'date'
 
-## 깊게 파고들기:
-날짜를 가져오는 것은 오래된 컴퓨터 프로그래밍 기법 중 하나입니다. 예전에는 매우 복잡한 방법으로 날짜를 구했지만, 현재는 Ruby처럼 간편한 코드로도 날짜를 얻을 수 있습니다. 또한 날짜는 시스템 외부 API를 통해 가져올 수도 있습니다.
+# 현재 날짜를 가져옵니다.
+today = Date.today
+puts today
+```
+ 
+이 명령어를 실행하면 아래와 같은 결과를 볼 수 있습니다:
+  
+```Ruby
+2022-04-01
+```
+## 심층 분석:
+**역사적 배경:** Ruby에서 'Date' 클래스는 날짜 관련 작업을 단순화하기 위해 1990년대 후반에 도입되었습니다. 이전에는 이러한 작업을 수행하는 것은 상당히 복잡했습니다.
 
-## 관련 자료:
-- [Ruby Date 클래스 문서](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
-- [Ruby의 시간과 날짜 처리에 대한 정리 문서](https://m.blog.naver.com/PostView.nhn?blogId=jhleefree&logNo=221221900746&proxyReferer=https:%2F%2Fwww.google.com%2F)
+**대안:** 'Time' 클래스를 사용하여 현재 날짜를 얻을 수도 있습니다. 다음과 같이 사용할 수 있습니다:
+
+```Ruby
+require 'time'
+
+# 현재 날짜를 가져옵니다.
+currentTime = Time.new
+puts currentTime.strftime("%Y-%m-%d")
+```
+**구현 세부 정보:** 'Date.today'는 내부적으로 'Time.new'를 호출하여 현재 시스템 시간을 얻습니다. 그런 다음 그 시간 정보를 'Date' 객체로 변환하여 날짜 정보를 제공합니다.
+
+## 참고하기:
+- Ruby 공식 문서: Date 클래스 (https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
+- Ruby 공식 문서: Time 클래스 (https://ruby-doc.org/stdlib-3.0.1/libdoc/time/rdoc/Time.html)

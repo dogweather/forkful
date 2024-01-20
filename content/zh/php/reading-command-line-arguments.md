@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "PHP: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,49 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是读取命令行参数？为什么程序员要这么做？
+## 什么 & 为什么？
+命令行参数读取是程序获取命令行中输入信息的方式。程序员需要使用命令行参数来允许用户定义程序的运行方式。
 
-读取命令行参数是指通过命令行获取用户输入的信息。这对于程序员来说非常重要，因为它允许他们根据用户输入的不同参数来执行不同的操作，从而使程序更加灵活和可控。
-
-# 怎么做？
-
-在PHP中，有两种主要的方式来读取命令行参数。首先是使用全局变量`$argv`，它是一个包含所有命令行参数的数组。以下是一个简单的示例：
-
-```
+## 如何实现：
+```PHP
 <?php
-// 获取第一个参数
-$parameter = $argv[1];
-
-// 输出
-echo $parameter;
+$arguments = $argv;
+array_shift($arguments); 
+foreach($arguments as $key => $value) {
+    echo "参数$key 是 $value . \n";
+}
+?>
 ```
 
-如果你在命令行中输入`php example.php hello`，那么输出将会是`hello`。
-
-另一种方式是使用`getopt()`函数，它允许你指定期望的参数以及它们的简写形式。以下是一个示例：
+在命令行中运行它，比如 `php file.php A B C`，你将看到以下输出：
 
 ```
-<?php
-// 定义所需的参数和选项
-$options = getopt("p:ht:");
-
-// 输出
-echo $options['p'] . ", " . $options['h'] . ", " . $options['t'];
+参数1 是 A . 
+参数2 是 B . 
+参数3 是 C .
 ```
 
-如果你在命令行中输入`php example.php -p hello -h -t 123`，那么输出将会是`hello, 1, 23`。
+## 深入解析:
+早在命令行界面（CLI）主导计算机操作的年代，命令行参数就已经被广泛使用。尽管现在图形用户界面已经大规模普及，但命令行参数在许多场景中依然十分重要，例如在脚本、自动化任务或服务器环境中。
 
-# 深入探讨
+在PHP中，除了 `$argv` 之外还有一些获取命令行参数的方法。例如可以使用 getopt 函数来以更加灵活的方式处理命令行参数。
 
-从历史的角度来看，命令行参数在早期的操作系统中非常重要，因为它是唯一的用户和操作系统交互的方式。随着图形界面的发展，它的重要性有所下降，但仍然是程序员不可或缺的工具。
+而 `$argv` 是一个内置数组，它的第一个元素总是包含自身脚本的名称。对于其他的命令行参数，PHP会将它们当作字符串存储在此数组中的后续元素里。
 
-除了使用全局变量`$argv`和`getopt()`函数，还有其他一些第三方库可以帮助读取和解析命令行参数，比如`Symfony Console`和`GetOptionKit`。
+## 相关资源：
+这些是一些有关PHP命令行参数的其他资源：
 
-在实现命令行参数的过程中，需要注意处理用户错误输入的情况，以及如何处理多个参数和选项的组合。
-
-# 参考链接
-
-- PHP官方文档：https://www.php.net/manual/en/reserved.variables.argv.php
-- PHP官方文档：https://www.php.net/manual/en/function.getopt.php
-- Symfony Console库：https://symfony.com/doc/current/components/console.html
-- GetOptionKit库：https://github.com/c9s/GetOptionKit
+1. PHP官方文档中关于命令行用法的页面: [https://php.net/manual/cli.php](https://php.net/manual/cli.php)
+2. PHP官方文档中关于 `getopt` 函数的页面：[https://php.net/manual/function.getopt.php](https://php.net/manual/function.getopt.php)
+3. 一个关于PHP命令行参数处理的细致教程：[https://www.sitepoint.com/php-command-line-1/](https://www.sitepoint.com/php-command-line-1/)

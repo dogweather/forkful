@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "Kotlin: Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & varför?
-Konvertera ett datum till en sträng innebär att omvandla ett datum från dess standardiserade format till en text som kan visas för användaren. Programutvecklare gör detta för att göra det lättare för användare att förstå och tolka datum på ett visuellt sätt.
+## Vad & Varför?
+Konvertering av ett datum till en sträng innebär att förvandla ett datumobjekt till en läsbar textsträng. Programmerare gör detta för att göra det lättare att presentera och använda datuminformation på olika sätt.
 
-# Hur:
-**Exempel 1:** Konvertera ett datum till en textsträng i det ytterligare sammansatta formatet "yyyy-MM-dd HH:mm:ss":
+## Hur gör du:
+Här är ett exempel på hur du konverterar ett Datum-objekt till sträng i Kotlin.
+
 ```Kotlin
-val now = LocalDateTime.now()
-val formattedDate = now.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"))
-print(formattedDate) // Output: "2021-02-11 15:45:32"
+import java.text.SimpleDateFormat
+import java.util.Date
+
+fun main() {
+    val d = Date()
+    val sdf = SimpleDateFormat("dd/M/yyyy")
+    val dateAsString = sdf.format(d)
+
+    println(dateAsString)  // Output: The current date in "dd/M/yyyy" format
+}
 ```
+Detta kodavsnitt tar dagens datum, formaterar det i formatet "dd/M/yyyy" och skriver ut det.
 
-**Exempel 2:** Konvertera ett datum till en veckodag i det förkortade formatet "EE":
-```Kotlin
-val date = LocalDate.parse("2021-02-11")
-val formattedDate = date.format(DateTimeFormatter.ofPattern("EE"))
-print(formattedDate) // Output: "Thu"
-```
+## Djupare ner:
+1. Historisk Kontext: Datumkonvertering har alltid varit en central del av programmering, särskilt för applikationer som behöver manipulera, lagra eller visa datuminformation på olika sätt.
+ 
+2. Alternativ: I Kotlin kan du också använda andra funktioner som `toString()`, vilket kommer ge en mer detaljerad strängrepresentation av datum.
 
-# Deep Dive:
-Historiskt sett användes olika kalendrar och datumformat runt om i världen, vilket skapade förvirring och inkompatibilitet i digital kommunikation. För att lösa detta utvecklades standardiserade datumformat, som ISO 8601, som används för att konvertera datum till en textsträng. Alternativa sätt att hantera datum i programmering inkluderar att konvertera det till en timestamp eller att använda speciella bibliotek för att hantera tidszoner och datumformat.
+3. Implementationsdetaljer: `SimpleDateFormat` använder specifika bokstäver för att beteckna delarna av datumet, till exempel "dd" för dagen, "MM" för månaden och "yyyy" för året. Detta gör att vi kan anpassa formatet för det önskade utseendet.
 
-# See Also:
-- Kotlins officiella dokumentation om [Date and Time](https://kotlinlang.org/docs/datetime.html)
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) - standard för datum och tid
-- [Java Time API](https://docs.oracle.com/javase/tutorial/datetime/) - används för hantering av datum och tid i Java och Kotlin
+## Se även:
+1. [Kotlin's SimpleDateFormat documentation for Date Formatting](https://kotlinlang.org/api/latest/jvm/stdlib/java.text/-simple-date-format/)
+   
+2. [Java's Date and Time tutorial to understand more about date conversions](https://docs.oracle.com/javase/tutorial/datetime/iso/index.html) 
+
+Notera att även om de angivna länkarna är för Java, är konceptet likadant för Kotlin, eftersom Kotlin är baserat på JVM.

@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kya Aur Kyu?
-Ek naya project shuru karne ka arth kya hota hai aur kyu programmers ise karte hain? Jab hum ek naya project shuru karte hain, hum ek naye code base ko banate hain jahan hum apni code aur functionality ko organize kar sakte hain. Programmers iska istemal karte hain taaki unke projects ki coding aur debugging process asan ho sake.
+## क्या और क्यों?
 
-## Kaise Karein:
-```
+नयी प्रोजेक्ट शुरू करना मतलब एक नई सॉफ्टवेयर सृजन का आरम्भ होता है। प्रोग्रामर इसे इसलिए करते हैं ताकि वे कस्टम सॉल्युशन बना सकें जो एक स्पेसिफिक कार्य के लिए अनुकूलित हो।
+
+## कैसे:
+
+सी (C) प्रोग्रामिंग में 'हेलो, वर्ल्ड!' की उदाहरण संग्रहित करें।
+
+```C
 #include <stdio.h>
-
-int main()
-{
-    printf("Hello, world!");
-    return 0;
+int main() {
+   // printf() displays the string inside quotation
+   printf("Hello, World!");
+   return 0;
 }
 ```
-Yahan humne ek naya C project shuru kiya hai aur simple "Hello, world!" code ko output ke roop mein diya hai. Humne ```main()``` function ko define kiya hai jo program ka entry point hota hai aur ```printf()``` function ko istemal kiya hai taaki hum kuch print kar sakein. Jab aap is code ko compile aur run kareinge, aapke screen par "Hello, world!" message dikhayi dega.
 
-## Isske Pechhe Ki Gehrai:
-Agar hum iss topic ka pura depth dekhein, toh hume pata chalta hai ki starting a new project ka concept C programming language mein bohot purana hai. C language ka development 1970s mein hua tha aur tab se hi iska istemal projects ki coding ke liye kiya jata hai. Lekin aaj kal, bahut sare alternatives jaise C++, Java, ya Python ki popularity badh rahi hai aur yeh bhi ek option hai naye projects ke liye shuruat karne ka. Starting a new project mein hume code base se lekar tools aur libraries tak ki bohot sari cheezo par dhyan dena hota hai.
+जब आप इस प्रोग्राम को चलाते हैं, तो आपको निम्न आउटपुट मिलता है:
 
-## Aur Bhi Padhein:
-- [C Programming Tutorial for Beginners](https://www.programiz.com/c-programming)
-- [Introduction to C Programming Language](https://www.guru99.com/c-programming-language.html)
-- [7 Tips for Starting a New Project in C](https://www.thoughtco.com/starting-a-new-project-in-c-programming-958928)
+```C
+Hello, World!
+```
+
+## गहरी डाइव:
+
+**ऐतिहासिक संदर्भ**: C प्रोग्रामिंग भाषा का विकास 1970 के दशक में केन थॉम्सन, डेनिस रिची, और उनकी टीम द्वारा बेल लैब्स में हुआ था। यह संप्रदायिक सॉफ्टवेयर प्रोजेक्ट्स के लिए लोकप्रिय भाषा बन गई थी।
+
+**विकल्प**: आप Python, Java, और JavaScript जैसी अन्य भाषाओं का उपयोग कर सकते हैं, जो सी की तुलना में उच्च स्तर की भाषाएं हैं।
+
+**कार्यान्वयन विवरण**: नई प्रोजेक्ट शुरू करते समय, आपको प्रशासन, प्रशिक्षण, और प्रमुख विकास प्रक्रियाओं पर विचार करना होगा। 
+
+## देखने के लिए भी:
+
+- ['सी' प्रोग्रामिंग ट्यूटोरियल](https://www.learn-c.org/) 
+- ['सी' भाषा ट्यूटोरियल — GeeksForGeeks](https://www.geeksforgeeks.org/c-programming-language/)
+- [सी - विकिपीडिया](https://en.wikipedia.org/wiki/C_(programming_language))

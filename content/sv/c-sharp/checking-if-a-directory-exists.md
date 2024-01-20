@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "C#: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "C#: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,28 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp existerar betyder helt enkelt att man tittar på en specifik plats i datorn och ser om det finns en mapp med det namnet som man anger. Detta är en vanlig uppgift för programmerare eftersom det kan vara viktigt att veta om en mapp existerar innan man försöker använda den i sitt program.
 
-## Så här gör du:
+Att kontrollera om en katalog existerar i programmering innebär att verifiera att en filväg leder till en fysiskt närvarande mapp på en enhet. Programmerare gör detta för att undvika fel och undantag som uppstår när man försöker att läsa från, skriva till, eller interagera med en icke-existerande katalog.
+
+## Hur man gör:
+
+C# ger oss en elegant och robust metod `Directory.Exists` för att verifiera existensen av en katalog. Kodexemplet nedan visar hur man använder den.
+
 ```C#
+using System.IO;
+
+string path = @"C:\example\directory\path";
+
 if (Directory.Exists(path))
 {
-    Console.WriteLine("Mappen existerar!");
+    System.Console.WriteLine("Directory exists.");
 }
 else
 {
-    Console.WriteLine("Mappen existerar inte!");
+    System.Console.WriteLine("Directory does not exist.");
 }
 ```
-I detta exempel visar vi hur man med en enkel if-sats kan kontrollera om en mapp existerar på en specifik sökväg (path) och sedan skriver ut ett meddelande beroende på om mappen existerar eller inte.
 
-## Djupdykning:
-Historiskt sett har det funnits olika sätt att kontrollera om en mapp existerar i C#, men sedan .NET Framework 2.0 introducerades så har Directory-klassen funnits tillgänglig och det har blivit det vanligaste sättet att göra detta.
+Produktionen av denna kod kommer att vara antingen "Directory exists." eller "Directory does not exist." beroende på status för `'path'`.
 
-Ett alternativ till att använda Directory-klassen är att använda metoden File.Exists(), som kan ta både en fil- och mapp-sökväg som argument. Detta kan vara användbart om man vill kontrollera både filer och mappar i sitt program.
+## Fördjupning:
 
-När det kommer till implementation kan man även använda sig av try-catch-block för att hantera eventuella fel som kan uppstå när man kontrollerar om en mapp existerar. Det finns även andra sätt att implementera detta, men det viktigaste är att använda en pålitlig och effektiv metod för att kontrollera om en mapp faktiskt existerar.
+`Directory.Exists` i C#, introducerades med .NET Framework 1.1. Alternativen till `Directory.Exists` inkluderar att hantera undantag som uppstår när man interagerar med en icke-existerande katalog, men detta är ingen bra praxis och undvikt bäst. `Directory.Exists` har intern implementering med hjälp av Win32 API-funktionen `GetFileAttributesW` för att säkerställa snabb och effektiv verifikation av katalognärvaro.
 
 ## Se även:
-- [Directory-klassen i .NET documentation](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0)
-- [File.Exists() metoden i .NET documentation](https://docs.microsoft.com/en-us/dotnet/api/system.io.file.exists?view=net-5.0)
+
+1. Microsoft officiella dokumentation om Directory.Exists: [https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+2. Diskussionsforum för C#-utvecklare, där liknande ämnen diskuteras: [https://stackoverflow.com/questions/tagged/c%23](https://stackoverflow.com/questions/tagged/c%23)

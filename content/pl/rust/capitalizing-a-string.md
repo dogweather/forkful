@@ -1,7 +1,7 @@
 ---
-title:                "Zapisanie wielkich liter w ciągu znaków"
-html_title:           "Rust: Zapisanie wielkich liter w ciągu znaków"
-simple_title:         "Zapisanie wielkich liter w ciągu znaków"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Rust: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Co i dlaczego?"
-Kapitalizacja ciągu znaków to proces zmiany pierwszego znaku w każdym wyrazie w ciągu na wielką literę. Programiści często wykonują tę akcję w celu poprawienia czytelności tekstu.
+## Co i Dlaczego?
 
-"## Jak to zrobić?"
-Aby kapitalizować ciąg znaków w Rust, można użyć metody ```to_uppercase()```. Przykład:
+Zmiana rozkładu liter na duże (tzw. wielkie litery) to proces, w którym pierwsza litera każdego słowa w ciągu jest zamieniana na wielką literę. Programiści robią to, aby dane wejściowe były bardziej czytelne dla użytkowników.
+
+## Jak to zrobić:
+
+Rust ma wiele metod do przekształcania ciągów w wielkie litery. Najprostszy to `.to_uppercase()` na ciągu. Sprawdźmy to.
 
 ```Rust
-let string = "witajcie programiści";
-let capitalized_string = string.to_uppercase();
+fn main() {
+    let small_str = "cześć, świecie";
+    let big_str = small_str.to_uppercase();
+    println!("{}", big_str);
+}
+```
+Po uruchomieniu powyższego kodu, wyjście powinno wyglądać tak:
 
-println!("{}", capitalized_string);```
+```Rust
+"CZEŚĆ, ŚWIECIE"
+```
 
-Wyjście:
-WITAJCIE PROGRAMIŚCI
+## W Głąb:
 
-"## Deep Dive"
-W przeszłości, kapitalizacja znaków była powszechnie stosowana w celu oznaczenia ważnych wyrazów lub tytułów. Jednak obecnie jest to częściej używane do poprawy czytelności i estetyki tekstu.
+Innym sposobem manipulacji wielkością liter na dużą w Rust jest użycie standardowej biblioteki `unicode_segmentation` i metody `to_titlecase`, która pozwala zamieniać pierwszą literę każdego wyrazu na duże litery, zamiast konwertować cały ciąg. 
 
-Alternatywnym podejściem jest używanie metody ```to_capitalized()``` lub używanie modułu ```unicode_normalization``` do kapitalizacji znaków. Wewnętrznie, kapitalizacja znaków w Rust jest oparta na funkcji ```to_uppercase()```, która przekształca znaki na ich odpowiednie duże odpowiedniki zgodnie z ustandaryzowanymi regułami dla języka utf8.
+```Rust
+use unicode_segmentation::UnicodeSegmentation;
 
-"## Zobacz również"
-- Dokumentacja Rust dla metody ```to_uppercase()```: https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase
-- Przykład z użyciem modułu ```unicode_normalization```: https://gist.github.com/wezm/5418291
+fn main() {
+    let s = "witaj, świecie".to_string();
+    let title_s = s.unicode_words().map(|w| w.chars().next().unwrap().to_uppercase() + &w.chars().skip(1).collect::<String>()).collect::<Vec<_>>().join(" ");
+    println!("{}", title_s);
+}
+```
+
+## Zobacz Też:
+
+1. Dokumentacja Rust do metody `to_uppercase`: https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase
+
+2. Dokumentacja Rust do metody `to_titlecase`: https://unicode-rs.github.io/unicode-segmentation/unicode_segmentation/trait.UnicodeSegmentation.html#method.unicode_words

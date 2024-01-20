@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Elixir: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -11,36 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å generere tilfeldige tall er prosessen med å produsere tall uten et gjenkjennelig mønster eller rekkefølge. Programmerere gjør det for å opprette simuleringer, kryptografiske nøkler, generere unike IDer, og mange andre oppgaver som krever uforutsigbarhet.
 
-Generering av tilfeldige tall er en viktig del av programvareutvikling. Det refererer til prosessen med å skape tall som ikke følger en spesifikk sekvens eller mønster. Programmere gjør dette for å introdusere usikkerhet og variasjon i sine applikasjoner, noe som kan være nyttig for spill, kryptografi og simuleringer.
+## Hvordan gjøre det:
+Her er et eksempel på hvordan du kan generere et tilfeldig tall i Elixir:
 
-## Hvordan å:
-
-Elixir har en innebygd funksjon som gjør det enkelt å generere tilfeldige tall. Her er et eksempel på hvordan du kan bruke Elixir sin `:rand` modul til å generere et tilfeldig tall mellom 1 og 10:
-
-```Elixir
-:rand.uniform(1..10)
+```elixir
+:rand.uniform(100)
 ```
+Den ovennevnte koden returnerer et tilfeldig tall mellom 1 og 100. Her er et annet eksempel:
 
-Her er et annet eksempel som viser hvordan du kan generere en liste med tilfeldige tall ved hjelp av `:rand` modulen:
-
-```Elixir
-:rand.seed(:os.system_time(:nano))
-:rand.uniform([1, 2, 3, 4, 5], 10)
+```elixir
+Enum.random(1..10)
 ```
+Dette vil generere et tilfeldig tall mellom 1 og 10. 
 
-Dette vil generere en liste med 10 tilfeldige tall fra listen gitt som første parameter.
+## Dypdykk
+Historisk sett har tilfeldige tall vært vanskelige å generere fordi datamaskiner er designet for å utføre presise og deterministiske operasjoner. I Elixir bruker vi Erlang's `:rand.uniform/1` funksjonen til å generere tilfeldige tall.
 
-## Dykke dypere
+Alternativer til Elixirs innebygde metoder inkluderer bruk av tredjeparts biblioteker som `exs1024`, som tilbyr et høyere nivå av tilfeldighet.
 
-Generering av tilfeldige tall har vært en viktig del av datavitenskap siden begynnelsen. En av de første metodene for å generere tilfeldige tall var gjennom bruk av en tabelloppslag. Denne metoden ble senere erstattet av pseudorandom-generering, en teknikk som bruker en algoritme for å produsere en pseudo-tilfeldig sekvens av tall basert på en gitt inngang. I dag brukes en kombinasjon av flere forskjellige teknikker, inkludert hardware-random-nummergenerering og kryptografiske random-nummergenereringsalgoritmer, for å sikre høy kvalitet på tilfeldige tall.
-
-Det finnes også alternative biblioteker og moduler for å generere tilfeldige tall i Elixir, for eksempel `:crypto` og `:os`. Det er viktig å velge riktig metode avhengig av applikasjonen, da noen algoritmer kan være mer passende for spesifikke bruksområder.
+Når det gjelder gjennomføring, bruker `:rand.uniform/1` en sofistikert algoritme kjent som et Mersenne Twister for å generere sine tall. Denne algoritmen er designet for å produsere tall som er jevnt fordelt over sitt område og har en veldig lang periode før det gjentar seg.
 
 ## Se også
+Du kan finne mer informasjon om generering av tilfeldige tall og Elixir programmering på følgende lenker:
 
-For mer informasjon om tilfeldig tallgenerering i Elixir, sjekk ut disse ressursene:
-
-- Elixir's offisielle dokumentasjon: https://elixir-lang.org/docs.html
-- Elixir Forum: https://elixirforum.com/
-- Elixir's GitHub-repository: https://github.com/elixir-lang/elixir
+- Elixir's Offisielle Dokumentasjon: https://elixirs-lang.org/docs.html
+- Erlang's :rand Modul Dokumentasjon: https://erlang.org/doc/man/rand.html
+- EXS1024 Bibliotek: https://hex.pm/packages/exs1024

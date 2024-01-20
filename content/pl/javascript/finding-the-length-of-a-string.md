@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Javascript: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co to i dlaczego?
 
-W programowaniu, "długość" odnosi się do liczby znaków w ciągu znaków. Programiści często muszą obliczyć długość ciągu, aby wykonać różne zadania, takie jak określenie liczby znaków w wyrazie lub tworzenie pętli opartych na długości ciągu.
+Znalezienie długości ciągu polega na ustaleniu liczby znaków w tym ciągu. Programiści robią to, szczególnie kiedy muszą przetwarzać, zmieniać lub walidować dane tekstowe.
 
 ## Jak to zrobić:
 
+Znalezienie długości ciągu w JavaScriptu jest proste. Wygląda to tak:
+
 ```Javascript
-// Przykładowy string
-let string = "To jest przykładowy string.";
-
-// Wykorzystanie wbudowanej funkcji 'length' aby obliczyć długość stringa
-console.log(string.length);
-
-// Wynik: 27
+let tekst = "Programowanie w JavaScript";
+console.log(tekst.length);
 ```
 
-W tym przykładzie, wykorzystujemy wbudowaną funkcję ```length``` w Javascript, aby obliczyć długość naszego stringa. Funkcja ta zwraca liczbę znaków w naszym stringu.
+Gdy uruchomimy powyższy kod, otrzymamy:
 
-## Głębsza analiza:
+```Javascript
+25
+```
 
-### Kontekst historyczny:
-W starszych wersjach języka Javascript, nie było wbudowanej funkcji ```length```, a programiści musieli wykorzystywać pętle lub zewnętrzne biblioteki, aby obliczyć długość ciągu.
+Co oznacza, że ciąg zawiera 25 znaków.
 
-### Alternatywy:
-W niektórych przypadkach, programiści mogą wykorzystać metody takie jak ```split``` lub ```slice```, aby obliczyć długość ciągu. Jednak, wbudowana funkcja ```length``` jest zwykle najprostszym i najszybszym sposobem.
+## Dogłębna analiza
 
-### Szczegóły implementacyjne:
-W Javascript, wbudowana funkcja ```length``` jest właściwością obiektu ```String```, a programiści mogą również dostosowywać funkcję ```length``` dla własnych obiektów, aby zwracała liczbę właściwych elementów.
+Za koncept długości ciągu stoją historyczne decyzje o implementacji. Wcześniejsze języki programowania, jak C, wymagały ręcznego zliczania znaków, podczas gdy JavaScript i inne nowoczesne języki uproszczały tę operację za pomocą wbudowanych właściwości.
+
+Alternatywą do użycia `length` jest iterowanie przez ciąg i zliczanie znaków. Ale to jest dłuższe i bardziej skomplikowane, dlatego właściwość `length` jest zdecydowanie preferowana.
+
+Nie musisz się martwić szczegółami implementacji `length` w JavaScript. Jest to natywna funkcja systemu, która jest zoptymalizowana do szybkiego zliczania znaków, nawet w bardzo długich ciągach.
 
 ## Zobacz także:
-- [Dokumentacja Javascript - wbudowana funkcja 'length'](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/length)
+
+Szczegółowe informacje na temat operacji na ciągach w JavaScript znajdziesz na stronach:
+
+- [MDN Web Docs - Ciąg znaków](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [W3Schools - JavaScript String length Property](https://www.w3schools.com/jsref/jsref_length_string.asp) 
+
+Harmonogram szkoleń oraz kursy, w których omawiane są podobne tematy znajdują się na stronach:
+
+- [Codecademy - JavaScript](https://www.codecademy.com/learn/introduction-to-javascript)
+- [JavaScript dla początkujących – kurs dostępny na platformie Udemy.](https://www.udemy.com/topic/javascript/)

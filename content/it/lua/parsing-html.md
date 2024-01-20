@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di HTML"
-html_title:           "Lua: Analisi di HTML"
-simple_title:         "Analisi di HTML"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,74 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa e Perché?
+## Che Cos'è & Perché?
 
-Parsing HTML è il processo di analizzare un documento HTML estrarre le informazioni incorporate. I programmatori spesso lo fanno per manipolare e visualizzare le informazioni in modo più user-friendly.
+L'analisi del HTML (parsing) consiste nel decomporre il codice HTML in elementi più piccoli per manipolarli. I programmatori lo fanno per estrarre dati, modificare il contenuto del sito web, testare l'accessibilità e molto altro.
 
-## Come fare:
+## Come Fare:
 
-### Esempio 1:
-Input:
+Ecco un esempio su come fare parsing di HTML in Lua utilizzando il modulo LuaHtml:
+
 ```Lua
+local LuaHtml = require 'LuaHtml'
+
 local html = [[
 <html>
   <head>
-    <title>Titolo della Pagina</title>
+    <title>Mio Titolo</title>
   </head>
   <body>
-    <h1>Benvenuti!</h1>
-    <p>Questo è un paragrafo di testo.</p>
+    <p>Paragrafo del mio sito web.</p>
   </body>
 </html>
 ]]
-local dom = require("dom")
-local document = dom.parse(html)
 
-print(document.head.title) -- output: Titolo della Pagina
-print(document.body.children[1].textContent) -- output: Benvenuti!
-print(document.body.children[2].textContent) -- output: Questo è un paragrafo di testo.
+local document = LuaHtml.parse(html)
+
+print(document:select('title')[1]:get_content())
+print(document:select('p')[1]:get_content())
 ```
+Questo script stampa:
 
-### Esempio 2:
-Input:
 ```Lua
-local html = [[
-<html>
-  <head>
-    <title>Titolo della Pagina</title>
-  </head>
-  <body>
-    <h1>Sali</h1>
-    <ul>
-      <li>Mangia</li>
-      <li>Dormi</li>
-      <li>Ripeti</li>
-    </ul>
-  </body>
-</html>
-]]
-local dom = require("dom")
-local document = dom.parse(html)
-
-print(document.head.title) -- output: Titolo della Pagina
-print(document.body.children[1].textContent) -- output: Sali
-print(document.body.children[2].children[2].textContent) -- output: Dormi
-print(document.body.children[2].children[3].textContent) -- output: Ripeti
+'Mio Titolo'
+'Paragrafo del mio sito web.'
 ```
 
-## Deep Dive:
+## Approfondimenti:
 
-### Contesto Storico:
-Parsing HTML è stato introdotto nel 1993 da Tim Berners-Lee, l'inventore del World Wide Web. Inizialmente, questo processo era fatto manualmente dai programmatori, ma con l'avanzamento della tecnologia, sono stati sviluppati strumenti appositi per automatizzarlo.
+L'analisi del HTML è un concetto storico nel web scraping e nel web testing. Una volta si usava il parsing Regex, ma è diventato poco pratico a causa della sua complessità.
 
-### Alternative:
-Un'alternativa al parsing HTML è l'utilizzo di librerie come BeautifulSoup in Python o jsdom in JavaScript. Invece, nelle applicazioni web basate su Lua, spesso viene utilizzata la libreria Lua HTML che offre funzionalità simili.
+Una alternativa al parsing del HTML in Lua è l'utilizzo di altri linguaggi di programmazione come Python con BeautifulSoup. Ogni strumento ha i suoi punti di forza e di debolezza.
 
-### Dettagli di Implementazione:
-Il processo di parsing di solito viene fatto in tre fasi: analisi, costruzione dell'albero e manipolazione dell'albero. La libreria dom implementa queste fasi e permette di accedere alle informazioni tramite la struttura ad albero dell'HTML.
+In termini di implementazione, la libreria LuaHtml crea un Document Object Model (DOM) dall'HTML, permettendo ai programmatori di manipolare gli elementi del DOM usando la sintassi CSS.
 
-## Vedi anche:
+## Vedi Anche:
 
-- [Lua HTML](https://github.com/msva/lua-html)
-- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
-- [jsdom](https://github.com/jsdom/jsdom)
+Per saperne di più sul parsing del HTML e le sue applicazioni, consulta:
+
+1. Tutti gli aspetti del web scraping: [link](https://realpython.com/tutorials/web-scraping/)
+2. Documentazione completa di LuaHtml: [link](https://luarocks.org/modules/tailhook/htmlua)
+3. Elementi fondamentali dell'HTML per programmatori: [link](https://developer.mozilla.org/it/docs/Web/HTML)

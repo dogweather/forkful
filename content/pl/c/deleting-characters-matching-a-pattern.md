@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków odpowiadających wzorcowi."
-html_title:           "C: Usuwanie znaków odpowiadających wzorcowi."
-simple_title:         "Usuwanie znaków odpowiadających wzorcowi."
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -12,61 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co & Dlaczego?
 
-Usuwanie znaków pasujących do wzorca jest jedną z podstawowych operacji w programowaniu. Polega ona na usunięciu wszystkich znaków z ciągu znaków, które pasują do danego wzorca. Programiści często wykonują tę operację, aby przetwarzać dane i filtrować niepotrzebne informacje.
+Czasami w programowaniu, trzeba usunąć znaki pasujące do określonego wzorca z ciągu znaków. Programiści robią to, aby optymalizować dane wejściowe, np. usuwając niepotrzebne spacje, tabulacje lub znaki nowego wiersza.
 
-## Jak to zrobić:
+## Jak to Zrobić:
+
+Poniżej jest kod w C, pokazujący jak usunąć określone znaki z ciągu:
 
 ```C
 #include <stdio.h>
 #include <string.h>
 
-// funkcja do usuwania znaków pasujących do danego wzorca z ciągu znaków
-// przykład użycia: delete_chars("programming is fun", "mfi");
-// wynik: progrng s un
-void delete_chars(char *str, char *pattern) {
-    int i, j, k;
-    int n = strlen(str);
-    int m = strlen(pattern);
-    char temp[n];
-    int temp_index = 0;
-    for (i = 0; i < n; i++) {
-        int flag = 0;
-        for (j = 0; j < m; j++) {
-             if (str[i] == pattern[j]) {
-                flag = 1;
-             }
+void usun_znaki(char *zrodlo, char *do_usuniecia) {
+    int strIndex = 0;
+    int resIndex = 0;
+    int i;
+    while (zrodlo[strIndex]) {
+        for (i = 0; i<strlen(do_usuniecia); i++) {
+            if (zrodlo[strIndex] == do_usuniecia[i]) break;
         }
-        if (flag == 0) {
-             temp[temp_index++] = str[i];
-        }
+        if (i == strlen(do_usuniecia)) zrodlo[resIndex++] = zrodlo[strIndex];
+        strIndex++;
     }
-    temp[temp_index] = '\0';
-    strcpy(str, temp);
-    printf("%s\n", str);
+    zrodlo[resIndex] = '\0';
 }
 
 int main() {
-    // przykład użycia
-    char str[] = "programming is fun";
-    char pattern[] = "mfi";
-    delete_chars(str, pattern);
+    char str[] = "Cześć, świat!";
+    char znaki[] = ",";
+    usun_znaki(str, znaki);
+    printf("%s\n", str);
     return 0;
 }
 ```
 
-**Output: progrng s un**
+Powyższy kod usunie przecinki z ciągu "Cześć, świat!" i wyświetli "Cześć świat!".
 
-## Deep Dive:
+## Deeper Dive
 
-Usuwanie znaków pasujących do wzorca jest popularnym zadaniem w programowaniu i jest wykorzystywane w różnych zastosowaniach, takich jak przetwarzanie danych, filtrowanie tekstu i analiza języka naturalnego. Metoda usuwania znaków pasujących do wzorca została wprowadzona w języku C i od tego czasu jest wykorzystywana w wielu innych językach programowania.
+Powyższy kod jest skutecznym sposobem na usunięcie określonych znaków, ale jest kilka rzeczy, które są ważne do zapamiętania.
 
-Alternatywne metody usuwania znaków pasujących do wzorca obejmują użycie pętli i struktur danych, takich jak tablice i listy, aby przechowywać i przetwarzać dane. Jednak metoda usuwania znaków jest prostsza i szybsza, ponieważ wykorzystuje gotowe funkcje biblioteczne, takie jak funkcja `strcpy()` w C.
+Po pierwsze, trzeba pamiętać, że kod działa na oryginalnym ciągu znaków. To znaczy, że oryginalny ciąg zostanie zmieniony, co może być problematyczne, gdy jest to niepożądane. 
 
-Implementacja algorytmu usuwania znaków pasujących do wzorca może być dostosowana do różnych zastosowań. Na przykład, w powyższym przykładzie, funkcja `delete_chars()` została napisana dla przejrzystości, ale może być zoptymalizowana dla wydajniejszego wykonywania lub dostosowana do obsługiwania różnych typów danych.
+Alternatywna strategia to utworzenie nowego ciągu, który nie zawiera niechcianych znaków. Wybór pomiędzy tymi dwiema strategiami zależy od specyficznych wymagań programu.
 
-## See Also:
+Dodatkowo, warto zauważyć, że ten kod używa funkcji `strlen()` w pętli, co sprawia, że jest mniej wydajny. W bardziej złożonych programach, optymalizacje takie jak przechowywanie długości ciągu znaków w zmiennej byłyby korzystne.
 
-Dla dalszego pogłębienia tematu, zapoznaj się z poniższymi źródłami:
+## Zobacz Też
 
-- Wprowadzenie do języka C: https://www.tutorialspoint.com/cprogramming/
-- Przykłady usuwania znaków pasujących do wzorca w innych językach programowania: https://www.geeksforgeeks.org/remove-characters-from-the-first-string-which-are-present-in-the-second-string/
+- Dokumentacja GNU C Library: [String and Array Utilities](https://www.gnu.org/software/libc/manual/html_node/String-and-Array-Utilities.html)
+- StackOverflow: [How to delete certain character from a string using C](https://stackoverflow.com/questions/5457608/how-to-remove-the-character-at-a-given-index-from-a-string-in-c)
+- Kursy Programowania C: [Operacje na ciągach znaków](https://www.learn-c.org/pl/Strings)

@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Elm: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,25 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Empezar un nuevo proyecto en Elm es crear un nuevo programa de computadora en este lenguaje de programación funcional. Los programadores lo hacen para desarrollar aplicaciones web interactivas y robustas, aprovechando las ventajas de una sintaxis simple y un enfoque orientado a la escalabilidad.
+## ¿Qué es y Por qué?
 
-## Cómo:
+Iniciar un nuevo proyecto es simplemente construir una nueva aplicación o programa desde cero. Los programadores lo hacen por varias razones: para resolver problemas únicos, para aprender nuevas habilidades o lenguajes, o para crear un producto o servicio.
+
+## ¿Cómo se hace?: 
+
+Para empezar con Elm, necesitas instalarlo. Puedes hacerlo con npm:
+
+``` Elm 
+npm install -g elm
 ```
- Elm init 
+
+Luego crea tu primer proyecto:
+
+``` Elm 
+elm init
 ```
-Este comando inicia un nuevo proyecto en Elm y crea una estructura de directorios básica con los archivos necesarios. También establece la configuración inicial y descarga las dependencias del proyecto.
+
+Este comando creará una nueva carpeta con todo lo necesario para iniciar un proyecto de Elm, incluso un archivo 'elm.json'.
+
+Aquí tienes un sencillo programa en Elm:
+
+``` Elm
+import Html exposing (div, text, beginnerProgram)
+
+main =
+  beginnerProgram { model = "Hola Mundo!", view = Html.text, update = \_ _ -> "Hola Mundo!" }
+
 ```
- Elm make Main.elm 
+
+Para ejecutarlo, escribes:
+
+``` Elm
+elm reactor
 ```
-Una vez creado el proyecto, este comando compila el archivo Main.elm y genera un archivo HTML con el código de JavaScript necesario para ejecutar la aplicación en un navegador web.
 
-## Inmersión Profunda:
-Elm fue creado en 2012 por Evan Czaplicki con el objetivo de facilitar el desarrollo de aplicaciones web complejas y reducir errores. Este lenguaje se basa en el modelo de arquitectura de la vista del modelo (MVVM por sus siglas en inglés) y es similar a otros lenguajes como Haskell y ML.
+Ahora, abre localhost:8000 en tu navegador. Verás "Hola Mundo!".
 
-Una alternativa popular a Elm es React, que utiliza JavaScript en lugar de un lenguaje funcional. Sin embargo, Elm ofrece características adicionales como comprobaciones de tipo estático para ayudar a los programadores a detectar errores temprano en el proceso de desarrollo.
+## Buceo Profundo
 
-En cuanto a la implementación, Elm compila a JavaScript y puede integrarse fácilmente con otros lenguajes en una aplicación web. También cuenta con una comunidad activa que ofrece soporte y recursos para los desarrolladores.
+El lenguaje Elm es relativamente joven y fue creado por Evan Czaplicki en 2012 como una alternativa más segura y fácil de usar a JavaScript. Su comprensión más profunda requiere estudiar su arquitectura y sintaxis, principalmente la arquitectura Model-View-Update (MVU).
 
-## Ver también:
-Sitio oficial de Elm: https://elm-lang.org/
+Se podría utilizar JavaScript o TypeScript en lugar de Elm, pero Elm ofrece ventajas tales como una garantía de ausencia de errores en tiempo de ejecución.
+
+Cuando inicias un nuevo proyecto Elm, en realidad se está creando un entorno de programación funcional que compila a JavaScript.
+
+## Ver Además
+
+1. [Elm Guide](https://guide.elm-lang.org) - Guía oficial de Elm.
+2. [Elm Tutorial](https://elmprogramming.com) - Un tutorial completo para Elm.
+3. [Try Elm](http://elm-lang.org/examples) - Un lugar para escribir y probar código Elm.
+
+Nota: Todos los enlaces están en inglés.

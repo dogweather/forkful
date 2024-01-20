@@ -1,6 +1,6 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Python: 웹 페이지 다운로드하기"
+html_title:           "Bash: 웹 페이지 다운로드하기"
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Python"
 category:             "Python"
@@ -12,45 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-웹 페이지 다운로드란 무엇인가요?: 
-웹 페이지 다운로드란 웹 사이트에서 컴퓨터로 파일을 다운로드하는 것입니다.
+웹페이지 다운로드란 서버에서 파일을 클라이언트의 컴퓨터로 전송하는 것을 의미합니다. 프로그래머는 이를 통해 웹사이트의 데이터를 분석하거나, 서비스를 개선하는 데 필요한 정보를 모으기 위해서 웹페이지를 다운로드합니다.
 
-프로그래머들이 웹 페이지를 다운로드하는 이유는 무엇일까요?:
-웹 페이지 다운로드는 웹 사이트에서 정보를 가지고 오는데에 사용되며, 이 정보는 데이터 분석, 스크래핑, 또는 소프트웨어 개발에 활용될 수 있습니다. 프로그래머들은 웹 페이지를 다운로드하여 이러한 정보를 사용할 수 있게 됩니다.
+## 어떻게 하는가:
 
-## 어떻게:
-
-웹 페이지를 다운로드하는 방법은 다양합니다. 
-여기서는 파이썬의 라이브러리 중 하나인 `requests`를 사용하여 쉽고 빠르게 웹 페이지를 다운로드하는 방법을 알아보겠습니다.
+Python을 사용하여 웹페이지를 다운로드 해보겠습니다. `requests` 라이브러리를 사용하여 손쉽게 할 수 있습니다.
 
 ```Python
 import requests
-r = requests.get('https://www.example.com')
-print(r.text)
+
+url = "http://www.example.com"
+response = requests.get(url)
+
+print(response.text)
 ```
 
-위의 코드는 예제 웹 사이트에서 웹 페이지를 다운로드하고, 다운로드한 페이지의 내용을 출력합니다.
+이 코드는 "http://www.example.com"의 웹페이지를 다운로드하고, 그 내용을 출력합니다.
 
-```Python
-import requests
-r = requests.get('https://www.example.com')
-with open('example.html', 'w') as f:
-    f.write(r.text)
-```
+## 깊이 들어가기:
 
-위의 코드는 다운로드한 웹 페이지를 파일로 저장하는 예제입니다.
+웹페이지 다운로드는 원래 컴퓨터 네트워크가 등장한 이후로 시작되었으며, 초기에는 FTP(File Transfer Protocol)를 주로 사용하였습니다. 그러나 시간이 지나면서 HTTP가 웹페이지의 표준 데이터 전송 프로토콜로 널리 사용되게 되었습니다.
 
-## 깊이 알아보기:
-
-웹 페이지 다운로드는 웹의 발전과 함께 발전해왔습니다. 
-과거에는 텍스트 기반의 웹 페이지만 다운로드할 수 있었지만, 현재는 다양한 형식의 웹 페이지를 다운로드할 수 있습니다. 
-또한, requests 외에도 `urllib`이나 `urllib2`를 사용하여 웹 페이지를 다운로드할 수 있습니다. 
-이러한 라이브러리들은 다양한 기능을 제공하므로, 자신에게 맞는 방식으로 사용할 수 있습니다.
+다운로드를 실행할 때는 라이브러리를 사용하면 편리합니다. Python에서는 `urllib`, `httplib`, `http.client` 등의 라이브러리도 사용할 수 있지만, `requests`는 사용하기 간편하여 가장 널리 사용되는 라이브러리입니다.
 
 ## 참고 자료:
 
-웹 페이지 다운로드에 대한 자세한 정보는 다음 링크를 참고하세요.
-
-- requests library: https://requests.readthedocs.io/
-- urllib library: https://docs.python.org/3/library/urllib.html
-- urllib2 library: https://docs.python.org/2/library/urllib2.html
+더 많은 정보를 얻고 이해를 심화하기 위해 다음의 링크를 참조하시기 바랍니다.
+1. Requests: HTTP for Humans - https://requests.readthedocs.io/en/master/
+2. HTTP - https://www.w3.org/Protocols/
+3. Python’s requests module - https://docs.python-requests.org/en/latest/

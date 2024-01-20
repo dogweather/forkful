@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 프린트하기"
-html_title:           "Elm: 디버그 출력 프린트하기"
-simple_title:         "디버그 출력 프린트하기"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -12,37 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-프로그래머들이 디버그 출력을 하는 이유에 대해 알아보기 전에 우선 디버그 출력이 무엇인지 알아보겠습니다. 디버그 출력은 일반적으로 코드 실행 중에 프로그램의 상태를 확인하기 위해 사용되는 코드입니다. 사용자가 원하는 결과를 출력하는지, 어떤 값이 할당되었는지 등을 확인할 수 있습니다. 이렇게 상태를 확인하고 디버그하는 것은 프로그래밍 과정에서 매우 중요합니다.
+디버그 출력을 인쇄하는 것은, 프로그램 동작을 확인하고 오류를 찾기 위해 한 행동입니다. 프로그래머들은 이를 통해 프로그램에서 수행되는 작업을 이해하거나 실행 중인 문제점을 식별합니다.
 
-## 방법:
+## 어떻게 하는가:
 
-Elm에서 디버그 출력을 하는 방법은 매우 간단합니다. 아래 예시를 따라해보세요.
+Elm programming language에서, `Debug.log` 함수를 사용하여 손쉽게 디버그 메세지를 출력할 수 있습니다.
 
 ```Elm
--- 문자열 출력
-Debug.log "문자열" "안녕하세요!"
+import Debug
 
--- 숫자 출력
-Debug.log "숫자" 123
-
--- 리스트 출력
-Debug.log "리스트" [1, 2, 3]
+main =
+    Debug.log "Debug message" "Hello, World!"
 ```
 
-출력 결과는 다음과 같이 터미널에 표시됩니다.
+위 코드를 실행하면, 콘솔에 다음과 같이 출력됩니다:
 
-```
-문자열: "안녕하세요!"
-숫자: 123
-리스트: [1, 2, 3]
+```Elm 
+"Debug message": "Hello, World!"
 ```
 
-## 깊이 살펴보기:
+`Debug.log` 함수의 첫 번째 인자는 디버그 메세지의 태그이고, 두 번째 인자는 출력할 메세지입니다.
 
-디버그를 위해 다른 언어에서는 프린트 문을 사용하곤 했습니다. 하지만 Elm에서는 리스트나 튜플 등과 같은 복잡한 데이터를 자동으로 표시 가능하도록 최적화되어 있습니다. 또한, 디버그 출력을 사용하는 대신에 디버거를 활용할 수도 있습니다. Elm의 디버거는 더 많은 정보를 제공하며 디버깅 과정을 보다 쉽게 만들어줍니다. 또한, Elm's console 라이브러리를 사용하면 웹 브라우저의 개발자 도구 콘솔에서 디버그 출력을 확인할 수 있습니다.
+## 심층 탐색:
 
-## 더 보기:
+Elm에서 디버그 출력은 신중하게 사용해야 하는 강력한 도구입니다. 이것은 오랫동안 존재하는 프로그래밍 방법으로, 시스템의 실행 상태를 이해하고 버그를 추적하는 데 도움이 됩니다.
 
-- [Elm 디버깅 가이드](https://guide.elm-lang.org/debugging/)
-- [Elm 디버거](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Debugger)
-- [Elm's console 라이브러리](https://package.elm-lang.org/packages/elm/browser/latest/Browser-Console)
+그러나, 디버그 출력은 Elm에서 최적화된 프로덕션 코드에서 제거해야 합니다. 왜냐하면, 이는 앱의 성능에 영향을 미칠 수 있기 때문입니다. 다행히, Elm 컴파일러는 이를 자동으로 처리해줍니다.
+
+Elm은 `Debug.log`이외에도 `Debug.todo`나 `Debug.toString` 같은 다른 디버그 함수들을 제공합니다. 다른 방법으로는, 개발자 도구의 console.log를 사용할 수도 있습니다.
+
+## 참고 자료:
+
+Elm 프로그래밍에 관한 더 많은 정보는 다음 사이트에서 찾을 수 있습니다:
+
+1. [Elm 공식 문서](https://elm-lang.org/docs)
+2. [Elm Debugging guide](https://guide.elm-lang.org/error_handling/debug.html)
+3. [Elm에서의 디버깅 방법](https://korhner.github.io/elm/elm-debugging/)

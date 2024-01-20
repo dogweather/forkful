@@ -1,6 +1,6 @@
 ---
 title:                "Tekstin etsiminen ja korvaaminen"
-html_title:           "Swift: Tekstin etsiminen ja korvaaminen"
+html_title:           "Arduino: Tekstin etsiminen ja korvaaminen"
 simple_title:         "Tekstin etsiminen ja korvaaminen"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,20 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä se on ja miksi?
-Etsiminen ja tekstin korvaaminen on tärkeä osa ohjelmointia. Kun koodaamme, me käsittelemme suurta määrää tekstiä, joka voi olla virheellistä tai muuttua usein. Joskus meidän täytyy etsiä tiettyjä sanoja tai lausekkeita ja korvata ne toisilla. Tämä auttaa meitä vähentämään virheitä ja tekee koodin muokkauksen helpommaksi.
+## Mikä & Miksi?
 
-## Kuinka tehdä se:
-Voit etsiä ja korvata tekstiä Swiftissä käyttäen `replacingOccurrences(of:with:)` -metodia. Tämä metodi ottaa ensimmäisenä parametrina etsittävän tekstin ja toisena parametrina korvaavan tekstin. Esimerkiksi, jos haluat korvata kaikki "hello" -sanat "hei" -sanalla, käyttäisit seuraavaa koodia:
+Tekstin etsiminen ja korvaaminen on toiminto, jota ohjelmoijat käyttävät, kun heidän pitää paikallistaa ja muuttaa tietokoneohjelman osia. Tekstin haku ja korvaaminen on välttämätöntä, kun tietyn koodikentän muuttaminen on aiheellista sen eri esiintymisillä.
+
+## Kuinka Näin:
+
+Koodiesimerkkejä ja testitulostetta Swift-koodilohkoissa:
+
 ```Swift
-let teksti = "Tervetuloa maailmaan!"
-let muokattuTeksti = teksti.replacingOccurrences(of: "Tervetuloa", with: "Hei")
-print(muokattuTeksti) // tulostaa "Hei maailmaan!"
+// Tekstin korvaaminen Swiftissä
+var myString = "Hello, Swift World!"
+myString = myString.replacingOccurrences(of: "Swift", with: "Programming")
+
+print(myString) // Tulostaa "Hello, Programming World!"
 ```
-Voit myös käyttää `replacingOccurrences(of:with:options:)` -metodia, joka antaa sinulle enemmän vaihtoehtoja, kuten isot ja pienet kirjaimet huomioiminen. Voit lukea lisää näistä vaihtoehdoista [Swiftin dokumentaatiosta](https://developer.apple.com/documentation/foundation/nsstring/1410083-replacingoccurrences).
 
-## Syvemmälle:
-Etsiminen ja korvaaminen on ollut osa ohjelmointia jo kauan ennen Swiftiä. Nykyään on olemassa myös muita tapoja etsiä ja korvata tekstiä, kuten käyttämällä säännöllisiä lausekkeita. Joissakin tapauksissa voit myös käyttää `replaceSubrange(_:with:)` -metodia, joka korvaa tietyn osan merkkijonosta toisella osalla.
+Tämä Swift-koodi etsii ensin "Swift"-sanan myString-muuttujasta ja korvaa sen "Programming"-sanalla. Tämän jälkeen tulostetaan muokattu lause.
 
-## Katso myös:
-Swiftin [virallinen dokumentaatio](https://developer.apple.com/documentation/swift/string) sisältää lisätietoa tekstin etsimisestä ja korvaamisesta. Voit myös tutustua [säännöllisiin lausekkeisiin Swiftissä](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift).
+## Sukellus Syvyyksiin
+
+Tekstin etsimisen ja korvaamisen historia on pitkä, ja siitä on tullut oleellinen osa modernia ohjelmistokehitystä. Ajatus on peräisin komentorivin unix-työkaluista, kuten grep ja sed.
+
+Vaihtoehtoisesti Swiftissä voidaan käyttää NSRegularExpression-luokkaa, joka tarjoaa joustavampia työkaluja monimutkaisiin tekstinkäsittelytilanteisiin. Se voisi olla hyödyllinen, jos tarvitset toteuttaa monimutkaisempia haku- ja korvaustilanteita.
+
+Tekstinkäsittely Swiftissä on yksinkertainen ja helppokäyttöinen, koska Swiftin Standard Library tarjoaa useita metodeja tätä varten. Erityisesti `replacingOccurrences(of:with:)` -metodi on tehokas ja yleiskäyttöinen tapa etsiä ja korvata tekstin osia.
+
+## Katso Myös
+
+Kun haluat perehtyä syvemmin Swiftin keinoihin käsitellä tekstejä, tai kun tarvitset inspiraatiota koodisi kirjoittamiseen, nämä lähteet ovat hyviä perehtymiskohteita:
+
+1. [Apple Developer Documentation: String](https://developer.apple.com/documentation/swift/string) - Applen virallinen asiakirjaopas tarjoaa syvällistä tietoa Swiftin merkkijonoista.
+2. [The Swift Programming Language (Swift 5.4): Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) - Swiftin virallisen ohjelmointikielen opas kertoo lisätietoja merkkijonoista ja merkkiluokista.
+3. [Swift by Sundell: Working with strings in Swift](https://www.swiftbysundell.com/basics/strings/) - John Sundell tarjoaa käytännön esimerkkejä ja hyödyllisiä vinkkejä tekstin käsittelyyn Swiftissä. 
+
+Tiedon etsiminen, jakaminen ja hyödyntäminen on ohjelmoinnin ydin. Tämä tekstinkäsittelyn aiheinen artikkeli on toivottavasti auttanut sinua hyväksymään tämän prosessin osana työtäsi Swift-kehittäjänä.

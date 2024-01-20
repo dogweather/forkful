@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Clojure recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,35 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Concatenating strings in Clojure is the process of combining two or more strings into a single string. Programmers use this technique to create new strings from existing ones, allowing for more flexibility in data manipulation and text formatting.
+Concatenating strings is about merging different pieces of text into one. It is crucial to customize messages, form paths, generate outputs, and more.
 
 ## How to:
 
-Concatenating strings in Clojure is done using the `str` function. This function takes in any number of string arguments and returns a new string with all the arguments combined.
+```Clojure
+(let [str1 "Hello"
+      str2 ", world!"]
+  (str str1 str2))
+```
+This script outputs: `"Hello, world!"`
+
+String concatenation is a piece of cake in Clojure, thanks to the `str` function. It accepts any number of string arguments, merges them, and gives you a brand new string. You can even throw numbers into the mix as `str` automatically converts them.
 
 ```Clojure
-(str "Hello, " "world!")
-;; Output: "Hello, world!"
+(let [str1 "2 + 2 = "
+      num 4]
+  (str str1 num))
 ```
+The result: `"2 + 2 = 4"`
 
-Concatenation can also be used with variables or other data types, as long as it can be converted to a string.
+## Deep Dive
+
+String concatenation is as old as programming itself, with many languages implementing it differently. Clojure simplifies it by giving us a versatile `str` function.
+
+Other ways to concatenate strings in Clojure include using `clojure.string/join` function which allows you to join a collection of strings:
 
 ```Clojure
-(def name "John")
-(str "My name is " name ".")
-;; Output: "My name is John."
+(require '[clojure.string :as str])
+(str/join "-" ["Welcome" "to" "Clojure"])
 ```
 
-## Deep Dive:
+Output: `"Welcome-to-Clojure"`
 
-In historical context, string concatenation has been an important technique in programming since the early days. In Clojure specifically, the `str` function has been a core part of the language since its release in 2007.
+Under the hood, `str` uses StringBuilder for concatenation, which is more efficient than the naive method of repeatedly creating new strings.
 
-Alternatives to `str` for concatenating strings include the `format` function, which allows for more control over formatting the resulting string, and the `join` function, which can concatenate a collection of strings with a specified delimiter.
+## See Also
 
-In terms of implementation, Clojure's `str` function uses a `StringBuilder` under the hood, which efficiently handles the combination of strings. This results in better performance compared to other string concatenation methods.
-
-## See Also:
-
-- [Clojure docs on str](https://clojuredocs.org/clojure.core/str)
-- [Format strings in Clojure](https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Adding-Formatting-to-Clojure-Strings)
-- [Joining strings in Clojure](https://www.clojure.com/blog/2016/12/27/joining-strings.html)
+1. [Clojure - Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
+2. [Concatenate Strings in Clojure](http://benhowell.github.io/coding/2015/05/16/concatenate-strings-in-clojure.html)
+3. [Clojure Docs - str](https://clojuredocs.org/clojure.core/str)

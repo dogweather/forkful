@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Javascript: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-날짜를 문자열로 변환하는 것은 프로그래머들이 날짜를 다루는 방법 중 하나입니다. 날짜를 문자열로 변환하는 이유는 보다 쉽게 날짜를 저장하고 다룰 수 있기 때문입니다.
+## 무엇이며 왜 필요한가?
+날짜를 문자열로 변환하는 것은 날짜 데이터를 텍스트 형태로 표현하는 방법입니다. 이를 통해, 프로그래머들은 사용자에게 날짜를 더 쉽게 이해할 수 있는 형태로 제공하거나, 파일 이름 또는 로그에 날짜를 간결하게 적용할 수 있습니다.
 
-## 하는 방법:
+## 어떻게 하면 되는가:
 ```Javascript
-// 날짜를 문자열로 변환하는 기본적인 방법
-let today = new Date();
-let dateString = today.toString();
+// 새로운 Date 객체를 생성합니다.
+let date = new Date();
 
-console.log(dateString); // "Thu Jul 09 2020 09:30:41 GMT+0900 (GMT+09:00)"
+// 날짜를 문자열로 변환합니다.
+let dateString = date.toString();
+
+// 결과를 출력합니다.
+console.log(dateString);
 ```
-```Javascript
-// 원하는 형식으로 날짜를 문자열로 변환하는 예시
-let today = new Date();
-let options = { year: 'numeric', month: 'long', day: 'numeric' };
-let dateString = today.toLocaleDateString('ko-KR', options);
+이 코드를 실행하면, 현재의 날짜와 시간을 포함한 줄이 출력됩니다.
 
-console.log(dateString); // "2020년 7월 9일"
-```
+## 깊이 들여다보기
+과거에는 날짜를 문자열로 변환하는 것이 JavaScript에서 직접적으로 지원되지 않았습니다. 대신, 각 날짜 구성 항목(예: 연도, 월, 일)을 수동으로 문자열로 변환하고 이를 합쳤습니다.
 
-## 깊게 들어가보기:
-1. 과거에는 컴퓨터의 시간은 1970년 1월 1일 이후로만 계산할 수 있었습니다. 이후에 추가된 기능으로 문자열을 다루는 메서드들이 나오게 되었고, 날짜를 문자열로 변환하는 메서드 역시 그 중 하나입니다.
-2. 날짜를 문자열로 변환하는 다양한 방법이 존재합니다. 위에서 소개한 ```toString()``` 메서드 이외에도, ```toDateString()```, ```toLocaleDateString()``` 등의 메서드들이 있습니다. 각각의 메서드는 다른 형식으로 문자열을 반환하기 때문에, 사용 목적에 따라 맞는 메서드를 선택하여 사용하세요.
-3. LocalDate가 도입되며, 날짜와 시간을 다루는 방식이 바뀌게 되었습니다. 따라서 날짜를 문자열로 변환할 때에도 LocalDate 객체의 메서드들을 이용해 원하는 형식으로 문자열을 반환할 수 있습니다.
+하지만, 현재는 Date 객체의 ‛toString()’ 메소드를 사용해 날짜를 문자열로 손쉽게 변환할 수 있습니다. 여기에는 브라우저 간의 일관성을 보장하는 여러가지 표준화된 포맷이 포함되어 있습니다.
 
-## 관련 자료:
-- [JavaScript의 Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [날짜를 다루는 다양한 메서드의 사용법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/prototype)
-- [Locale에 따라 다른 날짜와 시간 형식을 사용하는 방법](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
+또한, 다른 구현 방법으로 ‛toLocaleString()’ 메소드를 사용하여 날짜를 사용자의 로케일에 적합한 문자열로 변환하는 방법도 있습니다.
+
+## 참고 자료
+- [MDN Web Docs: Date](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScript Info: Date and Time](https://javascript.info/date)
+- [Stack Overflow: How to convert JavaScript Date to String format?](https://stackoverflow.com/questions/3066586/get-string-in-yyyymmdd-format-from-js-date-object)

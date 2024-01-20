@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "Swift: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,32 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なぜ？
-文字列の補間とは何かを説明する時間です。プログラマーがそのような作業をする理由もお話ししましょう。
+## 何となぜ？
+文字列のエンベッドは変数、定数やリテラルなどの値を文字列に直接組み込むことです。プログラマがこれを行う理由は、コードをきれいに読みやすくするためと、表示用の文字列の更新や修正を容易に行うためです。
 
-文字列の補間とは、変数や定数の値を文字列の中に埋め込むことです。例えば、"私の名前は\(name)です"という文字列の中に、実際の名前を代入することができます。これにより、繰り返し使用される文字列を簡潔に作成できるようになります。プログラマーがこの作業をする理由は、コードをより読みやすく、効率的にするためです。
-
-## やり方：
-以下のコードブロック内に、コード例と実際の出力を記載しています。
-
+## 使い方:
+以下にSwiftでの文字列のインターポレーションを示します。
 ```Swift
-let name = "John"
-print("私の名前は\(name)です")
-// 出力：私の名前はJohnです
+let studentName = "Kento"
+let studentAge = 20
+let studentInfo = "My name is \(studentName) and I'm \(studentAge) years old."
+print(studentInfo)
 ```
 
-文字列補間では、バックスラッシュと丸括弧を使用して、変数や定数を文字列の中に埋め込みます。このように、コード内に変数や定数の値を直接記述することなく、文字列を動的に作成することができます。
+上記のコードは次の出力を生成します。
+```Swift
+My name is Kento and I'm 20 years old.
+```
+変数に自由に値を設定でき、この方法を使用すると文字列内に値を動的に挿入できます。
 
-## 深く掘り下げる：
-文字列補間の歴史的背景や代替手段、実装の詳細についてお話しします。
+## 深層探検 
+文字列のインターポレーションは、Swiftが登場する以前から数多くの言語に実装されていました。しかし、Swiftはこの機能をより直感的で使いやすいものにアップグレードしました。代替策としては、文字列の連結やフォーマット指定文字列がありますが、これらはコードの見通しを悪くしたり、型安全性を損なう可能性があります。Swiftの文字列インターポレーションはこのような問題を解決し、型安全性を保ちつつ、見通しの良いコードを書くことが可能です。
 
-文字列補間は、Swiftの前身であるObjective-Cから受け継がれた機能です。Objective-Cでは、文字列の中に変数や定数を埋め込む際に、プレースホルダーとして%を使用していました。しかし、Swiftでは記法が変更され、より簡単に変数や定数を文字列に埋め込むことができるようになりました。
-
-文字列補間の代替手段としては、文字列連結やフォーマット指定子、文字列フォーマット化メソッドなどがあります。しかし、文字列補間を使用すれば、より簡潔で読みやすいコードを作成できるでしょう。
-
-## 関連情報：
-文字列補間についてさらに学ぶための参考文献をリンクします。
-
-- [Appleのドキュメント - 文字列補間](https://developer.apple.com/documentation/swift/string_interpolation)
-- [Swiftレシピ - 文字列補間](https://swift-ref.herokuapp.com/string-interpolation)
-- [【実践Swift】文字列を簡単に作成する方法 - 文字列補間](https://dev.classmethod.jp/articles/swift-string-interpolation/)
+## 参考資料
+- Swift公式ドキュメント - 字句構造: [https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html](https://docs.swift.org/swift-book/ReferenceManual/LexicalStructure.html)
+- スタックオーバーフロー- Swiftの文字列インターポレーション: [https://stackoverflow.com/questions/24051314/whats-the-string-format-specifier-for-a-string-in-swift](https://stackoverflow.com/questions/24051314/whats-the-string-format-specifier-for-a-string-in-swift)

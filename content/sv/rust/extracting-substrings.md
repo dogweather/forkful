@@ -1,7 +1,7 @@
 ---
-title:                "Utvinna substrängar"
-html_title:           "Rust: Utvinna substrängar"
-simple_title:         "Utvinna substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,25 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att extrahera substrängar är en process där en delsträng av en större sträng tas ut och används separat. Programmörer använder sig ofta av detta för att hantera och manipulera data på ett effektivt sätt.
+
+Delsträng-extrahering är processen att dra ut en del av en sträng baserat på bestämda index (placeringar i strängen). Det är viktigt för programmerare eftersom det möjliggör manipulering och analys av specifika delar av stora strängar av data.
 
 ## Så här gör du:
-Exempel på hur man extraherar substrängar i Rust, tillsammans med förväntat resultat:
-```rust
-let str = "Hej världen!";
-let substr = &str[4..9]; // extraherar "värld"
-println!("{}", substr); // förväntat resultat: "värld"
-```
-```rust
-let str = "Rust är bäst!";
-let substr = &str[0..4]; // extraherar "Rust"
-println!("{}", substr); // förväntat resultat: "Rust"
+
+Låt oss titta på några exempel med Rust:
+
+```Rust
+fn main() {
+    let s = "Hej världen!";
+    let delstrang_s = &s[0..3];
+    println!("{}", delstrang_s);
+}
 ```
 
-## Djupdykning:
-Extrahering av substrängar har funnits med sedan de tidiga versionerna av programmeringsspråket Rust. Det finns också andra sätt att extrahera substrängar, till exempel genom att använda metoder som "split" och "slice". Implementeringen av detta skiljer sig också beroende på vilken datatyp som används för substrängen.
+Output:
 
-## Se även:
-- [Rust String Documentation](https://doc.rust-lang.org/std/string/)
-- [Rust Slice Documentation](https://doc.rust-lang.org/std/primitive.slice.html)
-- [Rust Split Method Documentation](https://doc.rust-lang.org/std/primitive.str.html#method.split)
+```Rust
+"Hej"
+```
+
+I exempel koden ovan, extraherar vi delsträngen "Hej" från strängen "Hej världen!" genom att specificera indexintervall[0..3].
+
+## Djup Dykning
+
+I historisk sammanhang har delsträngsextraktion alltid varit en kärnkomponent i strängmanipulation. I Rust, är det vanligtvis gjort med "slice" syntax, som påminner mycket om användning av index i matematiska intervall.
+
+Några alternativ till den här metoden kan inkludera användning av bibliotek som `regex` för mer komplexa behov.
+
+När det gäller genomförande, använder Rust en `byte_offset` funktion för indexering, vilket betyder att varje Unicode-kodpunkt räknas och i sin tur förklarar behovet av att specifiera både början och slutet av en subträng extraktion.
+
+## Se Även
+
+För mer djupgående lärande, se följande länkar:
+
+1. [The Rust Book: The Slice Type](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices)
+2. [Rust By Example: Primitives](https://doc.rust-lang.org/rust-by-example/primitives/tuples.html)
+3. [Understanding String Slicing in Rust](https://www.forrestthewoods.com/blog/understanding-rust-string-string-slicing/)

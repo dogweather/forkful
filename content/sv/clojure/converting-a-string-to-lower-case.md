@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till små bokstäver"
-html_title:           "Clojure: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,24 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+title: "Konvertera sträng till små bokstäver i Clojure"
+---
+
 ## Vad & Varför?
-När vi pratar om att konvertera en sträng till små bokstäver, så menar vi att göra alla bokstäver i strängen till gemena. Detta är ett vanligt arbetssätt för programmerare när de behöver hantera strängar på ett mer enhetligt sätt.
 
-## Så här gör du:
-```Clojure
-;; Definiera en sträng
-(def string "Hej alla ProgProffs!")
+Att konvertera en sträng till små bokstäver innebär att omvandla alla stora bokstäver i en given sträng till motsvarande små bokstäver. Programmerare gör detta ofta för att jämföra strängar utan att behöva ta hänsyn till skillnader i stora och små bokstäver.
 
-;; Använd funktionen lower-case för att konvertera strängen till små bokstäver
-(lower-case string)
+## Hur gör man:
 
-;; Resultat:
-;; "hej alla progproffs!"
+Här är ett exempel på hur du konverterar en sträng till små bokstäver i Clojure:
+
+```clojure
+(defn str-to-lower [s]
+  (.toLowerCase s))
+  
+(str-to-lower "Hej VÄRLDEN!")
+```
+När du kör ovanstående kod kommer utmatningen att vara:
+
+```clojure
+"hej världen!"
 ```
 
-## Djupdykning:
-Att konvertera strängar till små bokstäver har funnits sedan tidigt 1900-tal, då många skrivmaskiner bara hade gemena bokstäver. Alternativ till att använda lower-case funktionen är att iterera över strängen och konvertera varje bokstav separat eller att använda inbyggda Java-metoder. I Clojure implementeras lower-case med hjälp av Java's Character-klass, som har en metod för just detta ändamål.
+## Djupdykning
 
-## Se även:
-- Clojure's dokumentation för lower-case funktionen: https://clojuredocs.org/clojure.core/lower-case
-- Java's Character-klass: https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html
+Clojures `.toLowerCase` funktion är en direkt åtkomst till Javas inbyggda metod för att konvertera textsträngar till små bokstäver, vilket är en standardmetod som finns tillgänglig för alla strängar i Java.
+
+Originalet till denna metod går tillbaka till början av teckenformateringsstandarder, när behovet upstod att kunna jämföra och manipulera teckenbaserad information på ett enhetligt sätt.
+
+Ett alternativ till `.toLowerCase` är att använda funktionen `clojure.string/lower-case`, vilket är den idiomatiske Clojure-sättet att konvertera en sträng till små bokstäver.
+
+Här är ett exempel på hur du använder `clojure.string/lower-case` funktionen:
+
+```clojure
+(require '[clojure.string :as str])
+
+(str/lower-case "Hej VÄRLDEN!")
+```
+
+Utmärkande för `str/lower-case` funktionen är att den returnerar en ny sträng där alla karaktärer har konverterats till små bokstäver, vilket innebär att ursprungssträngen inte påverkas.
+
+## Se även
+
+Om du vill ha ytterligare referenser och resurser om detta ämne, kolla in följande länkar:
+
+* Officiell Clojure dokmentation: [https://clojure.org/reference/strings](https://clojure.org/reference/strings)
+* Clojure `.toLowerCase` metoden på ClojureDocs: [https://clojuredocs.org/clojure.core/lower-case](https://clojuredocs.org/clojure.core/lower-case)
+* Javas `toLowerCase` metod i Oracle Docs: [https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)

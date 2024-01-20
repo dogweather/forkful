@@ -1,7 +1,7 @@
 ---
-title:                "Interpolação de uma string"
-html_title:           "Fish Shell: Interpolação de uma string"
-simple_title:         "Interpolação de uma string"
+title:                "Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
+simple_title:         "Interpolando uma string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+Título: Interpolação de Strings com o Fish Shell
 
-Interpolar uma string é simplesmente inserir o valor de uma variável em uma string. Isso é útil para concatenação de strings e torna o código mais legível e conciso.
+## O Que e Por Que?
 
-Os programadores costumam usar interpolação de strings para facilitar a manipulação de dados e tornar o código mais fácil de entender. Também economiza tempo de digitação, pois não há necessidade de concatenar várias strings manualmente.
+A interpolação de strings é a incorporação de variáveis dentro de uma string. Programadores fazem isso para tornar o código mais limpo e menos propenso a erros.
 
-## Como fazer:
+## Como Fazer:
 
+Você pode usar aspas simples para strings não interpoladas (sem variáveis), e aspas duplas para strings interpoladas. Veja abaixo:
+```Fish Shell
+set nome "Dev"
+echo "Olá, $nome"  # Olá, Dev
+echo 'Olá, $nome'  # Olá, $nome
 ```
-Fish Shell:
-
-# Exemplo 1:
-set nome "João"
-echo "Olá, $nome" # output: "Olá, João"
-
-# Exemplo 2:
-set numero 42
-echo "A resposta para a vida, o universo e tudo mais é $numero" # output: "A resposta para a vida, o universo e tudo mais é 42"
-
+E se a variável não estiver definida?
+```Fish Shell
+echo "Olá, $sobrenome"  # Olá,
 ```
+Nenhum erro é disparado. O valor não definido simplesmente desaparece.
 
 ## Aprofundando:
 
-Embora a interpolação de strings seja uma prática comum em linguagens de programação, ela se originou na linguagem de template Perl. Alternativas para interpolar strings incluem concatenação manual com o sinal de adição (+) ou a função de formatação de strings (sprintf).
+Interpolação de strings é uma ideia antiga que vem de linguagens mais antigas como Perl e Ruby. As alternativas em Shell incluem a concatenação de strings ou o uso de `printf`, mas a interpolação tende a ser mais legível.
 
-No Fish Shell, a interpolação de strings é realizada usando o caractere $ seguido pelo nome da variável a ser interpolada. Também é possível executar expressões aritméticas dentro de uma string interpolada, cercando a expressão com chaves ({}) para diferenciá-la do restante da string.
+Internamente, o Fish substitui a variável pela string logo após o analisador identificar que ele está dentro de aspas duplas. Isso é antes da execução dos comandos.
 
-## Veja também:
+## Veja Mais:
 
-Para mais informações sobre o uso de strings no Fish Shell, consulte a [documentação oficial do Fish Shell](https://fishshell.com/docs/current/tutorial.html#variables) e [outros recursos úteis](https://www.computerhope.com/unix/fish.htm).
+Dive in to the wonderful world of Fish Shell with the following resources:
+
+- Documentação oficial do Fish Shell: [link](https://fishshell.com/docs/current/index.html)
+- Como trabalhar com Strings no Fish: [link](https://fishshell.com/docs/current/tutorial.html#tut_strings)
+- Guia de introdução ao Fish Shell: [link](https://fishshell.com/docs/current/tutorial.html)

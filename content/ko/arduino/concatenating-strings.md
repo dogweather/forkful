@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-문자열 결합이란 무엇이고, 프로그래머들이 왜 이것을 하는지에 대해 간략히 설명합니다.
+## 무엇이며 왜 그런가요?
 
-문자열 결합은 두 개 이상의 문자열을 하나의 문자열로 결합하는 것을 말합니다. 이는 한 문자열에 여러 가지 정보를 함께 표현할 수 있어 프로그래밍에서 자주 사용됩니다.
+문자열 연결(Concatenating Strings)은 두 개 이상의 문자열을 하나로 결합하는 것을 말합니다. 프로그래머들은 이를 사용하여 여러 segment의 데이터를 한 줄의 메시지나 코드로 변환하는 데 사용합니다.
 
-## How to:
-아래의 코드 블록을 참고하여 코드 예제와 결과를 확인할 수 있습니다.
+## 어떻게 하나요:
 
-```Arduino
-// 문자열 "Hello"와 "world"를 결합하는 예제
-String first = "Hello";
-String second = "world";
-String result = first + second;
-Serial.println(result);
-```
-결과: ```Helloworld```
+사용법을 이해하기 위해 아래의 아두이노 코드 예시를 살펴보세요.
 
 ```Arduino
-// 숫자와 문자열을 결합하는 예제
-int number = 10;
-String word = "apples";
-String result = String(number) + " " + word;
-Serial.println(result);
+String stringOne = "Hello";
+String stringTwo = "Arduino";
+stringOne += stringTwo;     // stringOne에 stringTwo를 연결
+Serial.println(stringOne);  // "HelloArduino"를 출력
 ```
-결과: ```10 apples```
+위 코드는 "Hello"라는 문자열과 "Arduino"라는 문자열을 사용하여 "HelloArduino"라는 문자열을 생성하고 Serial Monitor에 출력하는 데 사용됩니다.
 
-## Deep Dive:
-(1) 문자열 결합은 1960년대 중반에 탄생한 언어인 ALGOL에서 처음 사용되었습니다.
+## 깊게 알아보기:
 
-(2) 문자열 결합의 대안으로는 문자열 포맷팅이 있습니다. 문자열 포맷팅은 문자열 내에 변수나 값을 삽입하여 보다 복잡한 문자열을 생성할 수 있습니다.
+문자열 연결은 1970년대부터 사용되어 왔으며, 이를 사용하면 저장 공간의 최적화와 코딩의 효율성을 높일 수 있습니다. 중요한 것은 문자열 연결은 메모리를 많이 사용하므로 아두이노 같은 하드웨어에서는 주의해야 합니다. 대안으로 `snprintf`과 같은 함수를 사용하여 메모리 사용량을 최소화하면서 문자열을 연결할 수 있습니다.
 
-(3) 문자열 결합 기능은 아두이노에서 제공하는 String 라이브러리를 통해 사용할 수 있습니다. 이 라이브러리는 매우 쉬운 문법을 가지고 있어 사용자 편의성이 높습니다.
+## 참고해 볼 만한 것:
 
-## See Also:
-문자열 포맷팅: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/formatstring/
+원한다면 아래의 관련 자료를 확인하세요:
+- 아두이노 공식 사이트의 문자열 수업(https://www.arduino.cc/en/Tutorial/StringAdditionOperator)
+- C ++에 대한 문자열 연결에 대한 Stack overflow 토론(https://stackoverflow.com/questions/18892281/most-idiomatic-way-to-concatenate-strings-in-c-c11)

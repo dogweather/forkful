@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller i det förflutna"
-html_title:           "Java: Beräkning av ett datum i framtiden eller i det förflutna"
-simple_title:         "Beräkning av ett datum i framtiden eller i det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Java: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,37 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift som programmerare behöver hantera. Det kan vara användbart för att bestämma utgångsdatum för projekt eller att göra beräkningar baserat på ett specifikt datum.
 
-## Så här gör du:
-För att beräkna ett datum i Java, används Date-klassen och dess metoder. Här är ett exempel där vi räknar ut datumet som ligger 10 dagar efter ett givet startdatum:
+Beräkning av ett datum i framtiden eller förflutet är en process där vi skjuter framåt eller bakåt i tiden med en viss period. Programmerare gör detta för funktioner som påminnelser, tidslinjer, kalenderfunktioner och mer.
+
+## Hur gör man:
+
+Java tillhandahåller `java.time` biblioteket för datum och tidoperationer. Här är några exempel på hur du kan manipulera datum:
 
 ```Java
-import java.util.Date;
+import java.time.LocalDate;
 
-public class DateCalculator {
+public class Main {
+    public static void main(String args[]) {
+        LocalDate idag = LocalDate.now();  // dagens datum
+        System.out.println("Idag: " + idag);
 
-    public static void main(String[] args) {
-        // Skapa ett startdatum
-        Date startDate = new Date();
+        LocalDate framtiden = idag.plusDays(10);  // tio dagar in i framtiden
+        System.out.println("Framtiden: " + framtiden);
 
-        // Använd Date-klassens .setTime-metod för att lägga till 10 dagar till startdatumet
-        startDate.setTime(startDate.getTime() + (10 * 24 * 60 * 60 * 1000));
-
-        // Skriv ut resultatet
-        System.out.println("Datumet som ligger 10 dagar efter startdatumet är: " + startDate);
+        LocalDate forflutet = idag.minusWeeks(2);  // två veckor tillbaka
+        System.out.println("Förfluten: " + forflutet);
     }
 }
-
-/* Output:
-Datumet som ligger 10 dagar efter startdatumet är: Mon Jul 19 14:33:35 CEST 2021
-*/
 ```
 
-## Djupdykning:
-Att beräkna datum i framtiden eller det förflutna är en vanlig uppgift inom programmering, och detta har varit en viktig funktion sedan de tidiga dagarna av datorer. Alternative metoder för att beräkna datum i Java inkluderar att använda Calendar-klassen eller att använda tredjeparts bibliotek som Joda-Time. När det gäller implementationen av detta i Java, används "Unix timestamp" som är antalet millisekunder från 1 januari 1970.
+Provkörning producerar:
+
+```Java
+Idag: 2022-01-15
+Framtiden: 2022-01-25
+Förfluten: 2022-01-01
+```
+
+## Djupare dyk:
+
+Historiskt sett var datum och tidsberäkningar svåra i Java innan java.time-paketet introducerades i Java 8. Tidigare användes `java.util.Date` och `java.util.Calendar`, men de hade brister som brist på trådsäkerhet och obekväma API:er. 
+
+Alternativ till Java-standarden inkluderar Joda-Time-biblioteket, men sedan Java 8-förbättringarna rekommenderas java.time starkt.
+
+Implementation av datumsberäkning i Java hanterar alla komplexiteter som skottår, olika månadslängder, tidszoner, etc.
 
 ## Se även:
-- [Java Date-klassen](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
-- [Alternativ för datumberäkning i Java](https://stackify.com/how-to-get-current-date-time-in-java/)
-- [Joda-Time biblioteket](https://www.joda.org/joda-time/)
+
+1. Oracle Java Docs for java.time: [https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+2. Joda-Time library: [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)
+3. Baeldung guide to date/time manipulation: [https://www.baeldung.com/java-8-date-time-intro](https://www.baeldung.com/java-8-date-time-intro)

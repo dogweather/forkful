@@ -1,7 +1,7 @@
 ---
-title:                "Uso de expresiones regulares"
-html_title:           "Clojure: Uso de expresiones regulares"
-simple_title:         "Uso de expresiones regulares"
+title:                "Usando expresiones regulares"
+html_title:           "Go: Usando expresiones regulares"
+simple_title:         "Usando expresiones regulares"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Usar expresiones regulares es una forma de buscar, encontrar y manipular patrones de texto en una cadena de caracteres. Los programadores las utilizan para realizar tareas como validar datos de entrada y transformar cadenas de texto en un formato específico. 
+Las expresiones regulares (RegExp por sus siglas en inglés) son patrones que se utilizan para coincidir combinaciones de caracteres en cadenas. Los programadores las usan para buscar, reemplazar y desglosar datos de manera compleja y eficiente.
 
-## ¿Cómo hacerlo?
+## Cómo hacerlo:
 
-Utiliza el operador `re-find` y el operador `re-matches` para encontrar coincidencias en una cadena de texto según un patrón establecido. 
+Clojure proporciona una serie de funciones para trabajar con RegExp, tales como re-find, re-seq, replace, etc. Aquí hay un ejemplo simple.
 
-```Clojure 
-(re-find #"hola" "hola mundo") ; => "hola"
-(re-find #"adiós" "hola mundo") ; => nil 
-
-(re-matches #"he(l+)o" "hello") ; => ["hello" "ll"]
+```Clojure
+(defn example-regexp []
+  (let [pattern #"(?i)clojure"
+        string "Clojure es un lenguaje de programación."]
+    (re-find pattern string)))
 ```
-
-Puedes utilizar el operador `cond` para realizar una acción según una coincidencia encontrada. 
-
-```Clojure 
-(cond
-  (re-find #"perro" "Me gusta mi perro") "¡Me encantan los perros!"
-  (re-find #"gato" "Me gusta mi perro") "¿Gatos? ¡No, gracias!"
-  :else "No encontré ningún animal")
-; => "¡Me encantan los perros!" 
+Salida:
 ```
+"Clojure"
+```
+En este ejemplo, "#(?i)clojure" es nuestro patrón RegExp. Esto buscará la palabra "clojure" sin importar el caso.
 
-## Profundizando
+## Inmersión profunda:
 
-Las expresiones regulares fueron desarrolladas por el matemático Stephen Cole Kleene en la década de 1950 y popularizadas por el informático Ken Thompson en la década de 1960. Son una herramienta poderosa pero pueden resultar difíciles de leer y mantener en patrones complejos. En lugar de utilizar expresiones regulares, también puedes considerar el uso de funciones de cadena de texto como `replace` o `split` para lograr resultados similares. 
+Las RegExp se originaron en los años 50 y han sido parte de la mayoría de los lenguajes de programación. En Clojure, la api RegExp está diseñada para ser simple y eficiente. Sin embargo, existen alternativas como los operadores de secuencias si los patrones RegExp se vuelven demasiado complejos.
 
-## Ver también
+Las RegExp en Clojure son cautelosas y retornan la primera coincidencia que encuentran, por lo que podrías necesitar iterar sobre una cadena si buscas todas las coincidencias. También es importante recordar escapar caracteres especiales correctamente si planeas usarlos en tus patrones.
 
-Para obtener más información sobre el uso de expresiones regulares en Clojure, consulta la documentación oficial en [clojure.github.io](https://clojure.github.io/clojure/)
+```Clojure
+(defn escape-example-regexp []
+  (let [pattern #"\\d+"
+        string "El precio es $20."]
+    (re-find pattern string)))
+```
+Salida:
+```
+"20"
+```
+En este ejemplo, "\\d+" es nuestro patrón RegExp que busca uno o más dígitos.
+
+## Ver también:
+
+Para más información, puedes referirte a la [documentación oficial de Clojure](https://clojure.org/api/api) y a las [guías de aprendizaje de Clojure](https://clojure.org/guides/getting_started), o puedes leer más sobre las [expresiones regulares en general.](https://en.wikipedia.org/wiki/Regular_expression)

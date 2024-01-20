@@ -1,7 +1,7 @@
 ---
-title:                "פירוק של html"
-html_title:           "Clojure: פירוק של html"
-simple_title:         "פירוק של html"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -11,40 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+פיענוח HTML הוא הפעולה של תיאורמט, ניתוח והמרת מסמך HTML לצורה מבנית que אחרת, נמשך Lisz st למשל. מתכנתים מפענחים HTML כדי לשלוט במידע, לשנות או לנתח את המסמך.
 
-הניתוח של HTML הוא תהליך שמאפשר לקודמים לקרוא ולהבין את קודים האתרים באופן ממוחשב. ניתוח זה משמש כדי להפוך את תוכן האתר לנתונים מבניים יותר נגישים ונוחים לעיבוד על ידי תוכניות תכנות כגון Clojure.
+## כיצד:
+הבדיקה הבאה מדגימה איך לפענח HTML, שימוש בספריה Enlive של Clojure.
 
-## כיצד ל:
+```Clojure
+(require '[net.cgrand.enlive-html :as e])
 
-כדי להפעיל את ניתוח ה-HTML בתכנית Clojure שלך, ניתן להשתמש בפונקציות של מודול Clojure "hiccup" כדי לטפל בקידוד של ה-HTML. לדוגמה, הנה פקודות שיכולות לעזור לך לקרוא את קוד ה-HTML ולהדפיס את התוכן המבני שלו:
+(defn parse-html [html-string]
+  (-> html-string
+      java.io.StringReader.
+      e/html-resource
+      e/select [:body :p]))
 
-```
-;; הגדרת קוד HTML
-(def my-html "<div><h1>Hello World!</h1></div>")
-
-;; שימוש בפונקציות של hiccup
-(require '[hiccup.core :as hiccup])
-
-;; ניתוח קוד ה-HTML והדפסת התוכן המבני
-(println (hiccup/html-to-str my-html))
-```
-
-פלט הקוד הזה יהיה:
-
-```
-<h1>Hello World!</h1>
+(parse-html "<html><body><p>Clojure rules!</p></body></html>")
+;=> ({:tag :p, :attrs nil, :content ["Clojure rules!"]})
 ```
 
-## טיול עמוק:
+## צלילה עמוקה
+## 
+היסטוריה: פיענוח HTML מאוד נפוץ בתכנות, וראה מגוון רחב של פתרונות לאורך השנים. Clojure בחר בלהציע ספריה לצורך זה, כמו Enlive.
 
-הניתוח של HTML נחשב למקורי ולא יעיל, כך שתכונת המודול "hiccup" היא שמייצרת קוד HTML באופן יעיל וקריא. ישנם גם תוכניות תכנות אחרות כמו "Enlive" ו"Jericho" המשמשות לטיפול וניתוח גמישים יותר של קודי HTML.
+אלטרנטיבות: ספריות נוספות כמו Hickory ו Jsoup מספקות יכולות דומות.
 
-עוד פופולריות יתר של פתרונות לניתוח ה-HTML כוללים שימוש בתוכנת ה-Java "JSoup" או בספרייה של ניתוח הנתונים החדשה "ClojureQL".
+פרטי המימוש: Enlive מצליח להפעיל כל JavaScript המובנה בעמוד האינטרנט, בנוסף לפיענוח ה-HTML עצמו, מה שהופך אותו לכלי עוצמתי.
 
-מבחינה מבנית, האלגוריתם של ניתוח ה-HTML מדרג כל קוד HTML לתצורה עץ של תגיות ותוכן, וכך מאפשר לתכניות לקרוא ולעבד את תוכן האתר בקלות.
+## ראה גם
+- [Enlive GitHub page](https://github.com/cgrand/enlive)
+- [Jsoup Library](https://jsoup.org/)
+- [Hickory GitHub page](https://github.com/davidsantiago/hickory)
 
-## ראו גם:
-
-- ניתוח קוד HTML עם Clojure "Enlive": https://github.com/cgrand/enlive
-- ניתוח קוד HTML עם ClojureQL: https://github.com/LauJensen/clojureql
-- תיעוד על תוכניות תקשורת כגון "JSoup" ו-"Jericho": https://github.com/clojure-cookbook/clojure-cookbook/tree/master/02_advjava/2-12_html-parsing
+אין הסכמה.

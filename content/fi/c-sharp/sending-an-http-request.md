@@ -1,6 +1,6 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "C#: HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "C#"
 category:             "C#"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
 
-HTTP-pyyntöjen lähettäminen on tärkeä osa nykyaikaista ohjelmointia. Se on tapa, jolla ohjelmoijat voivat kommunikoida verkkopalveluiden kanssa ja hakea tietoa. Ohjelmoijat lähettävät HTTP-pyyntöjä esimerkiksi silloin, kun he haluavat saada tietoa verkosta tai päivittää tietokantoja.
+HTTP-pyyntöjen lähettäminen on tapa, jolla ohjelmat kommunikoivat verkon yli, hakevat tietoja tai lähettävät tietoa palvelimelle. Ohjelmoijat tekevät tämän, koska se on tärkeä osa modernia, verkottunutta ohjelmointia.
 
-## Näin teet sen:
+## Näin teet:
+
+C#-kielellä me voimme lähettää HTTP-pyyntöjä `HttpClient` luokan avulla. Alla on yksinkertainen esimerkki GET-pyynnöstä:
 
 ```C#
-// Lähetetään HTTP GET -pyyntö osoitteeseen www.example.com
-WebRequest pyynto = WebRequest.Create("http://www.example.com");
-WebResponse vastaus = pyynto.GetResponse();
-
-// Luetaan vastauksen sisältö
-Stream dataVirta = vastaus.GetResponseStream();
-StreamReader lukija = new StreamReader(dataVirta);
-string sisalto = lukija.ReadToEnd();
-
-// Tulostetaan vastauksen sisältö konsoliin
-Console.WriteLine(sisalto);
-
-// Suljetaan vastaus
-vastaus.Close();
+HttpClient client = new HttpClient();
+string url = "http://example.com";
+HttpResponseMessage response = await client.GetAsync(url);
+string result = await response.Content.ReadAsStringAsync();
+Console.WriteLine(result);
 ```
+Tämä ohjelma lähettää GET-pyynnön `http://example.com` -sivustolle, lukee vastauksen ja tulostaa sen konsoliin.
 
-Esimerkkilähdön tuloste:
+## Syvempi Katsaus
 
-`<!doctype html><html lang="fi"><head><title>Esimerkki</title></head><body><h1>Tervetuloa!</h1></body></html>`
+HTTP-pyynnöt ovat olleet olemassa vuodesta 1991 lähtien, jolloin HTTP/1.0 spesifikaatio julkaistiin. C# kehittäjänä sinulla on useita vaihtoehtoja HTTP-pyyntöjen lähettämiseen, kuten `HttpClient`, `WebRequest`, `RestSharp`, jne. `HttpClient` on kuitenkin nykyinen suositus, koska se on tehokas ja joustava työkalu monenlaisiin tilanteisiin.
 
-## Syväsukellus:
+HTTP-pyynnön lähettämiseen liittyvät yksityiskohdat saattavat hieman vaihdella eri kirjastojen kesken, mutta yleensä ne noudattavat samaa perusprosessia: luodaan yhteys palvelimeen, lähetetään pyyntö ja tulkitaan vastaus.
 
-HTTP-pyyntöjen lähettäminen sai alkunsa jo 1990-luvulla, kun ensimmäiset verkkopalvelut alkoivat yleistyä. Siitä lähtien käytössä on ollut myös muita tapoja lähettää pyyntöjä, kuten esimerkiksi SOAP ja REST. C#:ssa HTTP-pyyntöjen lähettämiseen voi käyttää esimerkiksi WebRequest- tai HttpClient-olioita. On myös mahdollista säätää pyyntöön erilaisia parametreja, kuten käyttäjätunnusta ja salasanaa.
+## Katso Myös
 
-## Katso myös:
-
-- [C#:n WebRequest-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.net.webrequest?view=net-5.0)
-- [HttpClient-luokan käyttöohjeet](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
-- [HTTP-pyyntöjen lähettäminen: GET ja POST](https://www.w3schools.com/tags/ref_httpmethods.asp)
+1. [`HttpClient` luokan dokumentaatio](https://docs.microsoft.com/fi-fi/dotnet/api/system.net.http.httpclient?view=net-5.0)
+2. [HTTP-pyyntöjen lähetys C#-kielellä](https://docs.microsoft.com/fi-fi/aspnet/web-api/overview/advanced/calling-a-web-api-from-a-net-client)
+3. [HTTP:n historia](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP)

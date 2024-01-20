@@ -1,7 +1,7 @@
 ---
-title:                "두 날짜를 비교하는 방법"
-html_title:           "PowerShell: 두 날짜를 비교하는 방법"
-simple_title:         "두 날짜를 비교하는 방법"
+title:                "두 날짜 비교하기"
+html_title:           "C#: 두 날짜 비교하기"
+simple_title:         "두 날짜 비교하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?: 
-두 날짜를 비교하는 것은 프로그래머가 하게 되는 작업입니다. 이를 통해 특정 날짜를 전달받아 다른 날짜와 비교하여 필요한 조건을 만족하는지 확인할 수 있습니다.
+## 무엇이며 왜필요한가?
 
-## 방법:
-```powershell
-# 두 날짜를 변수로 지정
-$date1 = Get-Date -Year 2021 -Month 05 -Day 15
-$date2 = Get-Date -Year 2021 -Month 05 -Day 17
+날짜 비교는 두 날짜 간의 차이를 확인하는 일입니다. 프로그래머들이 이 기능을 사용하는 주요 이유는 특정 기간동안 어떤 작업을 스케줄링하거나, 두 개의 사건이 얼마나 떨어져 있는지를 확인하기 위해서입니다.
 
-# 비교 연산자를 사용하여 날짜 비교
-if($date1 -gt $date2){
-    Write-Output "첫 번째 날짜가 두 번째 날짜보다 늦습니다."
-}
-elseif($date1 -lt $date2){
-    Write-Output "첫 번째 날짜가 두 번째 날짜보다 이전입니다."
-}
-else{
-    Write-Output "두 날짜가 같습니다."
-}
+## 사용방법:
+
+PowerShell을 사용해서 두 날짜를 비교하는 방법은 아래 코드를 참고해주세요.
+
+```PowerShell
+$date1 = Get-Date
+$date2 = Get-Date -Date '2023-12-01'
+$diff = New-TimeSpan -Start $date1 -End $date2
+$diff.Days
 ```
 
-```powershell
-# 날짜 비교 결과
-첫 번째 날짜가 두 번째 날짜보다 이전입니다.
+위의 코드는 $date1이 현재 날짜를, $date2는 2023년 12월 1일을 표현하는 예시입니다. 마지막 줄에서 Days 속성을 호출하면 두 날짜 간의 차이를 일단위로 확인할 수 있습니다.
+
+## 깊이있게 알아보기:
+
+날짜 비교는 프로그래밍의 처음부터 존재하던 기능 중 하나입니다. 이미 고안된 수많은 방법들이 있지만, PowerShell에서는 New-TimeSpan 커맨드를 이용하여 간단하게 계산 가능합니다.  
+
+하나의 대안적인 방법으로, .net의 DateTime 구조를 사용해 두 날짜를 직접 비교할 수도 있습니다.
+
+```PowerShell
+$date1 = [DateTime]::Now  
+$date2 = [DateTime]'2023-12-01'
+$diff = $date2 - $date1
+$diff.Days
 ```
 
-## 깊게 들어가기:
-(1) 두 날짜를 비교하는 방법은 시간의 흐름을 파악하고 다양한 작업을 수행하는 데 중요한 역할을 합니다. (2) PowerShell에서는 비교 연산자 외에도 날짜 형식을 파싱하고 계산할 수 있는 다양한 기능을 제공합니다. (3) 두 날짜를 정확히 비교하기 위해서는 날짜 형식의 표기법과 비교 연산자의 사용 방법에 대해 자세히 알아야 합니다.
+위 코드에서는 .NET의 DateTime 객체를 이용하여 날짜 차이를 계산하였습니다.
 
-## 참고 자료:
-- [PowerShell Get-Date cmdlet 문서](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Get-Date?view=powershell-7.1)
-- [PowerShell Comparison Operators 문서](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1)
-- [자바와 PowerShell 날짜 비교 예제](https://www.javatpoint.com/powershell-datetime-comparison)
+## 참조 링크:
+
+날짜 비교에 대한 추가적인 정보는 아래의 링크를 참조하시면 좋을 것 같습니다.
+
+1. [Microsoft Official Documentation on New-TimeSpan](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/new-timespan?view=powershell-7.2)
+2. [Microsoft Official Documentation on Get-Date](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2)
+3. [Stackoverflow Discussion on Comparing Dates in PowerShell](https://stackoverflow.com/questions/2743732/how-to-compare-two-dates-with-powershell)

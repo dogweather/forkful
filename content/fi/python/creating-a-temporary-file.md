@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaistiedoston luominen"
-html_title:           "Python: Väliaikaistiedoston luominen"
-simple_title:         "Väliaikaistiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
+Tilapäisen tiedoston luominen on prosessi, jossa ohjelmoija luo väliaikaisen tallennuspaikan tietokonejärjestelmäänsä. Ohjelmoijat tekevät sen usein välttääkseen tarpeettoman tallennustilan käytön ja parantaakseen ohjelman suorituskykyä.
 
-Väliaikaisten tiedostojen luominen on yksi tapa, jolla ohjelmoijat voivat työskennellä tiedostojen kanssa väliaikaisesti. Tämä tarkoittaa, että tiedosto on luotu vain tilapäisesti ja se poistetaan automaattisesti käytön jälkeen. Tätä tekniikkaa käytetään usein esimerkiksi silloin, kun ohjelma tarvitsee tallentaa jonkinlaisia tietoja, mutta ei halua pysyvästi tallentaa niitä järjestelmään.
+## Näin teet:
+Python's `tempfile`-moduulilla voidaan luoda väliaikaisia tiedostoja. Tässä on esimerkki:
 
-## Kuinka tehdä?
-
-Väliaikaisen tiedoston luominen Pythonissa on yksinkertaista. Voit käyttää `tempfile`-kirjastoa ja sen `NamedTemporaryFile()`-funktiota. Tämän toiminnon avulla voit luoda väliaikaisen tiedoston ja siihen liittyvän tiedostonimen. Voit myös määrittää, haluatko kirjoittaa tiedostoon, lukea siitä tai molempia.
-
-```python
+```Python
 import tempfile
-# Luodaan väliaikainen tiedosto 
-with tempfile.NamedTemporaryFile() as temp_file:
-    print(temp_file.name)
-    # Voit tehdä haluamiasi toimintoja tiedostolla
-    # Tiedosto poistetaan automaattisesti
+
+# Luo tilapäinen tiedosto
+temp = tempfile.TemporaryFile()
+
+# Kirjoita jotain siihen
+temp.write(b'Taman on testi text')
+temp.seek(0)  # Siirry tiedoston alkuun
+
+# Lue tiedosto
+print(temp.read())
+# Output: b'Taman on testi text'
+
+# Sulje tiedosto, se poistetaan automaattisesti
+temp.close()
 ```
 
-Tässä esimerkissä `temp_file`-muuttuja sisältää tiedostonimen, johon voit viitata halutessasi käyttää tiedostoa.
+## Syvällisempi tarkastelu
+Historiallisesti ohjelmoijat luo manuaalisesti tilapäisiä tiedostoja, mutta riski on, että tiedostot jäävät järjestelmään, mikäli ne eivät poista niitä ohjelman suorituksen päätyttyä. Pythonin `tempfile`-moduuli ratkaisee tämän ongelman automatisoimalla tiedoston poistamisen, kun tiedostoon viitannut objekti ei ole enää käytössä.
 
-## Syvempi sukellus
+Vaihtoehtoisesti voidaan käyttää `NamedTemporaryFile`-funktiota, jos tarvitaan tilapäinen tiedosto, jolla on nimi. Käytäntö on sama kuin `TemporaryFile`-funktion kanssa, vain tiedostonimi on tarjolla.
 
-Väliaikaisia tiedostoja on käytetty jo pitkään tietokoneohjelmoinnissa. Ne ovat erityisen hyödyllisiä silloin, kun ohjelma tarvitsee tallentaa dataa lyhyeksi ajaksi, mutta ei ole tarvetta säilyttää sitä pysyvästi. Tämän lisäksi, väliaikaiset tiedostot auttavat välttämään turhia tiedostoja järjestelmässä.
-
-Vaikka Pythonin `tempfile`-kirjasto on yksinkertainen ja tehokas tapa luoda väliaikaisia tiedostoja, on myös muita vaihtoehtoja, kuten `os`-kirjaston `mkstemp()`-funktio.
-
-Tiedostonimen ja tiedoston avaamisen lisäksi, `NamedTemporaryFile()`-funktio tarjoaa myös muita parametreja, joiden avulla voit tarkemmin määrittää haluamasi tiedoston ominaisuudet.
+Moduuli luottaa alhaisen tason toteutusyksityiskohtiin, kuten `os`-moduuliin ja `O_TMPFILE`-lippuun Linuxissa, joilla tiedosto voidaan luoda ja pitää se salassa muilta prosesseilta.
 
 ## Katso myös
+[Dokumentaatio: Python tempfile](https://docs.python.org/3/library/tempfile.html)
 
-- [Pythonin tempfile-dokumentaatio](https://docs.python.org/3/library/tempfile.html)
-- [Ohjeet tiedostojen käsittelyyn Pythonilla](https://www.pythonforbeginners.com/files/working-with-files-in-python)
+[Keskustelu: Stack Overflow 'Python, how to create a temporary file?'](https://stackoverflow.com/questions/15169101/how-to-create-a-temp-file-in-python)
+
+[Tutorial: Real Python 'Working With Files in Python'](https://realpython.com/working-with-files-in-python/)

@@ -1,6 +1,6 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "Javascript: יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,29 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-יצירת קובץ זמני היא פעולה שמאפשרת למתכנתים ליצור קובץ שמשמש רק לצורך זמני ואינו נשמר בצורה קבועה. פעולה זו נחשבת חשובה בהינתן שהיא מאפשרת למתכנתים לבצע פעולות שונות בצורה נקייה ואינה משאבת מקומות תוכנה על המערכת.
+פניה לקובץ זמני ב-JavaScript היא ביצוע של שמירה זמנית של מידע נתון בקובץ הנוסף וחסר אבטחה. מתכנתים משתמשים בזה כדי למנוע את צורך בשמירה של מידע רגיש במסד נתונים או בזיכרון הראשי של המחשב.
 
-## כיצד ל:
-```javascript
-// Create a temporary file using the fs module
-const fs = require('fs');
+## איך ל:
+הנה כיצד אתה יוצר קובץ זמני ב-Javascript. יש להתקין את npm fs ו-os.
+```Javascript
+const fs = require('fs')
+const os = require('os')
 
-// Use the fs.mkdtemp() method to generate a temporary directory
-fs.mkdtemp('/temp/', (err, folder) => {
-    if (err) throw err;
-
-    // Create a new file inside the temporary directory
-    fs.writeFile(`${folder}/tempFile.txt`, 'This is a temporary file', (err) => {
-        if (err) throw err;
-        console.log('Temporary file created!');
-    });
-});
-
+let tempDir = os.tmpdir()
+let tempFile = fs.mkdtempSync(`${tempDir}/`)
 ```
+מריצה של קוד מעלה תיצור קובץ זמני בתיקייה הזמנית של המערכת.
 
-## העמקה:
-פעולות כגון יצירת קבצים זמניים נעשו נפוצות יותר כשהיה צורך לבצע פעולות בין כמה פלטפורמות ומערכות הפעלה. פעולה זו נותנת למתכנתים את היכולת לחלץ מידע מקובץ זמני ולהתאים אותו לגדרים נכונים בפלטפורמת המערכת הנבחרת. פתרונות אלטרנטיביים כוללים ביצוע פעולות בזמן אמת על קבצים קיימים או שימוש בספריות ניהול קבצים זמניים.
+## צוללים עמוק
+במסגרת ההיסטוריה, קבצים זמניים נוצרו מאז הימים הראשונים של המחשב האישי, כדי לאפשר שמירה מהירה של מידע ללא הפרעה לביצועים. ההתרסה הנוכחית ל-Javascript מאפשרת גמישות רבה יותר ביצירת קבצים זמניים. חלופות לקובצים זמניים כוללות את השמירה של מידע ב-memcached או במסד נתונים Redis, אך אלה מתאימים יותר לשמירה של מאגר מידע גדול.
 
-## לצפות ב:
-- https://nodejs.org/api/fs.html#fs_fs_mkstemp_prefix_options_callback הספריה הרשמית של Node.js על פעולות קבצים זמניים.
-- https://www.codementor.io/@danielchinedu/temporary-files-in-node-js-9guobop93 עצות והנחיות ליצירת קבצים זמניים ב-Node.js
+## ראה גם
+- [נושא המתחיל של Node.js File System](https://nodejs.org/api/fs.html)
+- [מקום העבודה של גיטהב mkdtemp](https://github.com/nodejs/node/blob/master/test/parallel/test-fs-mkdtemp.js)
+
+עריכה אחרונה: אחרי גרסת Node.js@16.2.0

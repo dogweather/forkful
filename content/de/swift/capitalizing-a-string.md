@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette großschreiben"
-html_title:           "Swift: Eine Zeichenkette großschreiben"
-simple_title:         "Eine Zeichenkette großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Swift: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,23 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# Warum? Und Wofür?
 
-Beim Capitalizing einer Zeichenkette handelt es sich um die Umwandlung des ersten Buchstabens jedes Wortes in einem Satz in einen Großbuchstaben. Programmierer nutzen diese Funktion, um den Text übersichtlicher zu gestalten und die Lesbarkeit zu erhöhen.
+Kapitalisieren eines Strings bedeutet, den ersten Buchstaben eines Satzes oder Wortes groß zu schreiben. Programmierer machen dies oft, um Benutzereingaben zu formatieren oder Text für die Ausgabe angemessen darzustellen.
 
-## So geht's:
+# Wie man:
+In Swift können wir den ersten Buchstaben eines Strings mit der Funktion `capitalized` groß schreiben. Hier ist ein einfacher Code und seine Ausgabe:
 
 ```Swift
-let string = "ich gehe gerne spazieren."
-let capitalizedString = string.capitalized
-
-print(capitalizedString) // "Ich Gehe Gerne Spazieren."
+let title = "swift programmierung"
+let capitalizedTitle = title.capitalized
+print(capitalizedTitle)
 ```
+Ausgabe:
+```Swift
+Swift Programmierung
+```
+So einfach ist das, Strings in Swift zu kapitalisieren!
 
-## Tiefpunkt:
+# Mehr Einzelheiten
 
-Das Capitalizing von Strings wird oft als "Title Case" bezeichnet und wurde früher in der Typographie verwendet, um Überschriften hervorzuheben. Neben der Nutzung des `capitalized`-Befehls gibt es auch alternative Methoden, um Strings zu kapitalisieren, wie zum Beispiel die Verwendung von `uppercased` oder die manuelle Manipulation über Schleifen.
+Historisch gesehen wurde das Kapitalisieren von Strings in der Programmierung verwendet, um das einheitliche Format von Text zu gewährleisten. Kapitalisierte Wörter werden oft verwendet, um Überschriften, Titel und den Beginn neuer Sätze zu kennzeichnen.
 
-## Siehe auch:
+Es gibt auch alternative Methoden zur Kapitalisierung von Strings in Swift, wie das Durchlaufen des Strings und das Kapitalisieren jedes ersten Zeichens, obwohl dies weniger effizient ist. Die `capitalized` Methode ist jedoch die einfachste und am besten geeignete Methode für die meisten Situationen.
 
-[Die Dokumentation des `capitalized`-Kommandos](https://developer.apple.com/documentation/swift/string/2998327-capitalized)
+Unter der Haube verwendet `capitalized` die Unicode-Informationen jedes Zeichens, um zu bestimmen, ob eine Kapitalisierung erforderlich ist. Dies gewährleistet die Genauigkeit und Effizienz der Funktion.
+
+# Weitere Informationen
+
+Hier sind einige weitere Quellen, die Sie möglicherweise hilfreich finden:
+
+- [Apple's Swift String Dokumentation](https://developer.apple.com/documentation/swift/string/)
+- [Verwendung von `capitalized` in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-capitalize-words-in-a-string)
+- [Swift String-Handling Guide](https://developer.apple.com/documentation/swift/string/)

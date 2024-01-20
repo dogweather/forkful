@@ -1,6 +1,6 @@
 ---
 title:                "文字列の連結"
-html_title:           "Rust: 文字列の連結"
+html_title:           "Bash: 文字列の連結"
 simple_title:         "文字列の連結"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で？なぜ？
-文字列を連結するとは、プログラマーが2つ以上の文字列を一つに結合することを指します。プログラマーがこれを行う理由は、一つの文字列で複数の情報を表現したり、複数の文字列を統合したりするためです。
+# プログラミングにおける文字列の連結とRust
 
-## 方法：
+## 必要性と理由
+文字列の連結は、二つ以上の文字列を結合し一つの新しい文字列を生成するプロセスです。プログラマーがこれを行う理由は、より詳細や複雑な文字列を作成したり、データを整理するためです。
+
+## 実装方法
+Rustにはいくつかの方法がありますが、ここでは `+` 演算子と `format!` マクロを使います。
+
 ```Rust
-//文字列を連結するには、+演算子を使用します
-let string1 = "こんにちは";
-let string2 = "、私の名前は";
-let string3 = "太郎です";
-let combined_string = string1 + string2 + string3;
-print(combined_string);
-```
-```
-こんにちは、私の名前は太郎です
+let a = "Hello, ".to_string();
+let b = "World!";
+let c = a + b; 
+println!("{}", c);
 ```
 
-## 深堀り
-1. 歴史的な文脈：文字列の連結は、古くからプログラミングで使われてきました。しかし、昔の言語では文字列の結合に特別な関数を使用する必要がありました。Rustでは、+演算子を使用することで簡単に文字列を結合することができます。
-2. 代替手段：Rustでは、文字列の結合には+演算子の他にも、format!マクロやpush_strメソッドなどの方法があります。
-3. 実装の詳細：Rustでは、文字列はデフォルトで不変(immutable)であるため、結合する際には元の文字列の変更が行われず、新しい文字列が生成されます。そのため、長い文字列を結合する場合は、メモリの使用量が増える可能性があります。また、Rustでは文字列の結合には様々な最適化が行われ、最終的な結合結果の最適なアルゴリズムが選択されます。
+出力は次のとおりです：`Hello, World!`。
 
-## 関連情報
-- 文字列の結合の詳しい使い方や注意点は、[Rust公式ドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.push_str)を参照してください。
-- [Rustの文字列処理について](https://qiita.com/omiita/items/85f31753141baa1e3499)では、文字列の連結以外にも文字列の分割や置換などの処理方法を解説しています。
+また `format!` マクロを使っても同じ結果を得ることができます。
+
+```Rust
+let a = "Hello, ";
+let b = "World!";
+let c = format!("{}{}", a, b);
+println!("{}", c);
+```
+
+出力は次のとおりです：`Hello, World!`。
+
+## 詳細な解説
+Rustで文字列を連結するまでには深い歴史があります。`+`演算子は旧式な方法ですが、`format!`マクロはより現代的です。特に、 `format!` マクロは複数の文字列を連結する際に効率的です。
+
+また、文字列の連結には他の方法もあります。 `push_str` メソッドや `concat!` マクロなどが含まれます。これらのメソッドやマクロは使用状況や要求によります。
+
+内部的には、Rustは文字列連結を行う際にメモリのエフィシエンシーを重視します。つまり、新しいメモリの割り当てを最小限に抑えることを目指しています。
+
+## 参考資料
+1. [Rust Documentation](https://www.rust-lang.org/tools/install)
+2. [Rust String Concatenation - Stackoverflow](https://stackoverflow.com/questions/30154541/string-concatenation-in-rust)
+3. [Rust Programming By Example](https://www.packtpub.com/product/rust-programming-by-example/9781788390637)

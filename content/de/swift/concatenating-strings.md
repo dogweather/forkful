@@ -1,6 +1,6 @@
 ---
 title:                "Strings verketten"
-html_title:           "Swift: Strings verketten"
+html_title:           "Bash: Strings verketten"
 simple_title:         "Strings verketten"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Bei der Konkatenation von Strings geht es darum, zwei oder mehr Zeichenketten zusammenzufügen, um eine einzige zusammenhängende Zeichenkette zu erstellen. Programme tun dies, um effizienter mit Texten und Nachrichten zu arbeiten.
 
-## Wie geht das?
-Du kannst Strings in Swift einfach durch das Pluszeichen (+) verbinden. Du kannst auch die Methode ```.append()``` verwenden, um eine Zeichenkette an eine andere anzuhängen. Hier ist ein Beispiel:
+Als Programmierer verwenden wir die Zeichenkettenzusammenführung (String-Konkatenation), um zwei oder mehrere Zeichenketten zu einer einzigen Zeichenkette zusammenzusetzen. Es hilft uns dabei, dynamische Daten sauber zu formatieren und zu präsentieren.
 
+## So geht's:
+
+In Swift machst du die Zeichenkettenzusammenführung folgendermaßen:
+
+```Swift
+let string1 = "Hallo"
+let string2 = "Welt"
+let zusammen = string1 + " " + string2
+print(zusammen)  // Ausgabe: "Hallo Welt"
 ```
-let vorname = "Max"
-let nachname = "Mustermann"
+Du kannst auch den zusammengesetzten Operator `+=` wie folgt verwenden:
 
-let vollerName = vorname + " " + nachname
-// vollerName = "Max Mustermann"
-
-vorname.append("imilian")
-// vorname = "Maximilian"
+```Swift
+var willkommen = "Willkommen"
+willkommen += " in Berlin"
+print(willkommen)  // Ausgabe: "Willkommen in Berlin"
 ```
-Der Operator "+" verbindet Strings, während ```.append()``` eine Zeichenkette an eine vorhandene anhängt. Beachte, dass die Methode ```.append()``` den ursprünglichen String selbst ändert, während der "+"-Operator eine neue Zeichenkette erstellt.
+## Hintergrundwissen:
 
-## Tieferer Einblick
-Die Konkatenation von Strings ist ein grundlegender und häufig verwendeter Prozess, der in vielen Programmiersprachen vorhanden ist. Es kann auch als Strings-Verkettung, Zeichenkettenverbindung oder Strings-Kombination bezeichnet werden. Alternativ kannst du auch die Methode ```.joined()``` verwenden, um mehrere Zeichenketten mithilfe eines Trennzeichens zu verbinden.
+Frühere Versionen von Swift verwendeten die `stringByAppendingString:` Methode zur Zeichenkettenzusammenfügung, aber Swift hat diesen Prozess mit dem Operator '+' und '+=' für eine intuitivere und lesbarere Codeerfahrung vereinfacht. Es gibt jedoch immer Alternativen, wie die String-Interpolation, bei der Variablen direkt in Zeichenketten eingebettet werden können:
 
-In Swift werden Strings nicht nur durch das Pluszeichen verbunden, sondern auch durch den Verkettungs-Operator "compound assignment operator" (+=). Außerdem gibt es in Swift auch Möglichkeiten, mit mehr als nur zwei Strings zu arbeiten, wie z.B. mit Arrays und der "join"-Methode.
+```Swift
+let name = "Hans"
+let begrüßung = "Hallo, \(name)"
+print(begrüßung)  // Ausgabe: "Hallo, Hans"
+```
+Bei der String-Konkatenation in Swift ist zu beachten, dass jede Konkatenation von Zeichenketten tatsächlich eine neue Zeichenkette generiert. Swift's Strings sind vielzahlunabhängig (Unicode-compliant), was bedeutet, dass sie mehrere Zeichenarten, einschließlich Emoji, unterstützen.
 
-## Weitere Quellen
-Um mehr über die Konkatenation von Strings und die Verwendung in Swift zu erfahren, schau dir folgende Links an:
+## Weiterführende Informationen:
 
-- [Offizielle Swift Dokumentation über Strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Swift Tutorial: Strings verketten](https://www.tutorialspoint.com/swift/swift_strings_concatenation.htm)
-- [Swift Strings Crashkurs](https://zingswift.com/blog/swift-strings-cheat-sheet/)
+- Die offizielle Swift-Dokumentation zu Strings und Zeichen findest du unter: [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Für eine tiefere Diskussion über die Effizienz von String-Konkatenationen in Swift, sieh dir diesen Beitrag auf StackOverflow an: [Stack Overflow Discussion](https://stackoverflow.com/questions/24200888/any-performance-benefit-to-constant-strings-in-swift) 
+- Um mehr über die verschiedenen Methoden zur Arbeit mit Strings in Swift zu erfahren, sieh dir diesen Leitfaden an: [Raywenderlich Swift Strings Guide](https://www.raywenderlich.com/4492-strings-in-swift-4)

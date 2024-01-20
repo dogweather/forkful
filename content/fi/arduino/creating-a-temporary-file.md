@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "Arduino: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Files and I/O"
@@ -10,26 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
-Luota minuun, kyllä sinä tarvitset tilapäistiedostoja, vaikka et vielä tiedäkään sitä. Tilapäistiedosto on lyhytaikainen tiedosto, jota ohjelma luo ja käyttää jonkin tietyn tehtävän suorittamiseen. Tämä voi olla esimerkiksi tallennetun tiedon lataaminen, jota ei enää tarvita lopputulokseen.
+# Mitä & Miksi?
+Väliaikaisten tiedostojen luonti merkitsee väliaikaismuotoisen tiedostorakenteen, kuten datan, luomista käyttöjärjestelmässä. Tämä tehdään tyypillisesti silloin, kun tarvitset tilapäisen varaston dataa varten, jotta voidaan säästää muistia tai välttyä lopullisten tiedostojen turmeltumiselta.
 
-# How to:
-#### Luomme tilapäistiedoston nimen "example.txt" ja kirjoitamme siihen "Tämä on tilapäistiedosto".
+# Kuinka se tehdään:
+Seuraava koodi luo väliaikaisen tiedoston SD-kortille:
 
-Arduino (".txt", "w");  
-Arduino.println ("Tämä on tilapäistiedosto");
+```Arduino
+#include <SD.h>
+ 
+File tempFile;
 
-#### Tulostus näyttää seuraavalta:
+void setup() {
+  Serial.begin(9600);
+  if (!SD.begin(4)) { 
+    Serial.println("Card Failure");
+    return;
+  }
+  tempFile = SD.open("temp.txt", FILE_WRITE);
+  tempFile.println("Testing 1, 2, 3");
+  tempFile.close();
+  Serial.println("File created");
+}
 
-Tämä on tilapäistiedosto
+void loop() {
+  // Put your main code here.
+}
+```
 
-# Deep Dive:
-Tilapäistiedostojen käyttö on ollut välttämätöntä ohjelmoinnissa jo pitkään. Kyseisillä tiedostoilla voidaan säilyttää tietoa hetkellisesti ohjelman suorituksen aikana. Tämä auttaa välttämään liiallista muistin käyttöä pysyvien tiedostojen käsittelyssä.
+Tämä luonnos luo  "temp.txt" -nimisen tiedoston SD-kortille ja kirjoittaa sen "Testing 1, 2, 3".
 
-On myös olemassa vaihtoehtoja tilapäistiedostoille, kuten dynaamisen muistin käyttö. Kuitenkin tilapäistiedostot ovat yleisesti käytettyjä ja helppokäyttöisiä ratkaisuja.
+# Syvempi tutkimus:
+Historiallinen tausta: Väliaikaisten tiedostojen käyttöä tietokoneohjelmissa on tehty lähes niin kauan kuin tietokoneita on ollut olemassa.
 
-Tilapäistiedostot luodaan usein ohjelman "tmp" hakemistoon, joka on varattu tällaisten tiedostojen käyttöön. On tärkeää muistaa poistaa tilapäistiedostot käytön jälkeen, jotta ne eivät jätä jälkeä muistiin tai täytä levytilaa.
+Vaihtoehdot: Voit myös luoda väliaikaisia tiedostoja EEPROM-muistiin tai muulle tallennustilalle.
 
-# See Also:
--https://www.arduino.cc/reference/en/language/functions/filesystem/tmpfile/  
--https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm
+Toteutuksen yksityiskohdat: Arduino ei sisällä suoraa tukea väliaikaisten tiedostojen luontiin, mutta voit helposti luoda sellaisen avattavalla tiedostolla, kirjoittamalla sen johonkin muotoon ja sitten lopettamalla sen.
+
+# Katso myös:
+- Arduino SD-kirjasto: [Arduino-SD Library](https://www.arduino.cc/en/Reference/SD)
+- SPIFFS, toinen tapa käsitellä tiedostoja ESP8266/ESP32: [SPIFFS](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/api-reference/storage/spiffs.html)
+- EEPROM-kirjasto, jolla on mahdollista luoda muistitiedostoja Arduinossa: [EEPROM Library](https://www.arduino.cc/en/Reference/EEPROM)

@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de HTML"
-html_title:           "Haskell: Analyse de HTML"
-simple_title:         "Analyse de HTML"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,56 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
-
-Parser (analyser) du HTML est une pratique courante dans la programmation. Le HTML est le langage de balisage standard utilisé pour créer des pages web. Les programmeurs utilisent le parsing HTML pour extraire des données spécifiques d'une page web et les manipuler dans leur code.
+## Qu'est-ce que c'est & pourquoi?
+L'analyse HTML consiste à décomposer et à comprendre le code HTML. Les programmeurs le font pour extraire des données spécifiques, modéliser les données sous-jacentes ou manipuler la structure d'un site Web.
 
 ## Comment faire:
-
-**Exemple 1: Extraire le titre d'une page web en utilisant le module Text.HTML.TagSoup**
-
-```Haskell
-import Text.HTML.TagSoup
-
-main = do
-  -- Charger une page web
-  tags <- getTags "https://www.exemple.com/"
-  -- Extraire le contenu de la balise <title>
-  let title = fromTagText $ head $ dropWhile (~/= "<title>") tags
-  print title
-```
-Output: "Exemple - Site officiel"
-
-**Exemple 2: Récupérer une liste de liens à partir d'une page web en utilisant le module Text.HTML.TagSoup**
+Pour ce faire, on peut utiliser la librairie "tagsoup" en Haskell. Voyons un exemple:
 
 ```Haskell
 import Text.HTML.TagSoup
 
+extraireLien :: String -> [String]
+extraireLien html = [lien | TagOpen "a" atts <- parseTags html, 
+                      ("href", lien) <- atts ]
+
 main = do
-  -- Charger une page web
-  tags <- getTags "https://www.exemple.com/links"
-  -- Extraire les balises <a> contenant les liens
-  let links = [fromAttrib "href" tag | tag <- tags, tag ~== "<a>"]
-  print links
+  contenu <- readFile "test.html"
+  print $ extraireLien contenu
 ```
-Output: ["https://www.exemple.com/page1", "https://www.exemple.com/page2", "https://www.exemple.com/page3"]
 
-## Profondeur:
+Lorsqu'on exécute cela sur un fichier `test.html`, on obtient une liste de tous les liens contenus dans le fichier.
 
-**Contexte historique:**
+## Plongée Profonde
+L'analyse HTML était plus couramment utilisée avant l'arrivée des API modernes qui fournissent des données JSON plus faciles à manipuler. Cependant, il reste encore d'énormes quantités de données disponibles uniquement en HTML. La librairie "tagsoup" est l'un des outils en Haskell pour l'analyse HTML, mais il y a aussi "html-conduit" et "hxt" qui fournissent des fonctionnalités plus avancées. En ce qui concerne les détails de mise en œuvre, "tagsoup" ignore délibérément les erreurs de syntaxe HTML pour faciliter le travail avec du HTML mal formé, ce qui est très fréquent sur le web.
 
-Le parsing HTML a été présent dès les premiers navigateurs web, mais il a évolué avec le temps. À l'origine, les navigateurs étaient moins stricts en matière de syntaxe HTML et pouvaient donc parser des pages web avec une grande variété de balises. Mais avec l'avènement des normes web et des balises plus complexes, le parsing HTML est devenu un défi pour les programmeurs.
-
-**Alternatives:**
-
-Il existe plusieurs outils et bibliothèques en Haskell pour effectuer le parsing HTML. Outre le module Text.HTML.TagSoup, on peut également utiliser le module Text.XML.Light pour parser des documents XML ou XHTML, ou encore le module Text.HTML.Parser pour une approche plus bas niveau.
-
-**Détails de mise en œuvre:**
-
-Le parsing HTML en Haskell utilise généralement des expressions régulières pour filtrer les balises et les attributs des pages web. Le module Text.HTML.TagSoup fournit également des fonctions pour manipuler facilement les données extraites, comme la recherche de balises spécifiques ou la modification du contenu des balises.
-
-## Voir aussi:
-
-- [Documentation officielle du module Text.HTML.TagSoup](https://hackage.haskell.org/package/tagsoup-0.14.8/docs/Text-HTML-TagSoup.html)
-- [Tutoriel pour le parsing HTML en Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/tagsoup)
-- [Comparatif de différentes bibliothèques de parsing en Haskell](https://wiki.haskell.org/XML/Introduction)
+## Voir aussi
+- [Documentation de TagSoup](https://hackage.haskell.org/package/tagsoup)
+- [Librairie html-conduit](https://hackage.haskell.org/package/html-conduit)
+- [Librairie HXT](https://hackage.haskell.org/package/hxt)

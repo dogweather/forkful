@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "C: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Korzystanie z wyrażeń regularnych"
+html_title:           "Arduino: Korzystanie z wyrażeń regularnych"
+simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,72 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Po co?:
+## Co i Dlaczego?
 
-Regular expressions są to wyrażenia wykorzystywane w języku programowania C do wyszukiwania i manipulowania tekstem. Umożliwiają one szybsze i bardziej precyzyjne odnajdowanie wzorców w tekście, co jest szczególnie przydatne w przypadku przetwarzania dużych ilości danych.
-
-Programiści często korzystają z wyrażeń regularnych w celu weryfikacji poprawności wprowadzonego tekstu lub wyciągania określonych informacji z tekstu wejściowego. Jest to także popularne narzędzie w automatyzacji procesów, np. w parsowaniu logów czy zamianie formatów danych.
+Regularne wyrażenia to skuteczne narzędzie do przeszukiwania i podmieniania tekstów. Programiści używają ich przede wszystkim ze względu na ich potężne możliwości i efektywność.
 
 ## Jak to zrobić:
-
-Fragmenty kodu poniżej ilustrują podstawowe przykłady użycia wyrażeń regularnych w języku C.
-
-```
-#include <stdio.h>
-#include <string.h>
+```C
 #include <regex.h>
 
-int main()
-{
-    // Przykład 1: Wyszukiwanie słowa "regular" w tekście
-    char *text = "Regular expressions are awesome!";
-    char *regex = "regular";
+int main() {
+   regex_t regex;
+   char msgbuf[100];
 
-    // Kompilacja wyrażenia regularnego
-    regex_t regex_compiled; 
-    regcomp(&regex_compiled, regex, 0);
+   regcomp(&regex, "abc", 0);
+   if (regexec(&regex, "abcdef", 0, NULL, 0) == 0) {
+      printf("Dopasowano\n");
+   } else {
+      regerror(reti, &regex, msgbuf, sizeof(msgbuf));
+      printf("Dopasowanie nie powiodło się: %s\n", msgbuf);
+   }
 
-    // Wyszukiwanie wzorca w tekście
-    if (regexec(&regex_compiled, text, 0, NULL, 0) == 0)
-    {
-        printf("Znaleziono dopasowanie!");
-    }
-    else
-    {
-        printf("Dopasowanie nie znalezione.");
-    }
-
-    // Zwolnienie pamięci
-    regfree(&regex_compiled);
-
-    // Przykład 2: Zamiana tekstu
-    char *quote = "You are confined only by the walls you build yourself.";
-    regex = "walls";
-    char *replacement = "limitations";
-
-    // Kompilacja wyrażenia regularnego z flagą REG_EXTENDED
-    // Pozwala na użycie wyrażeń regularnych w drugim argumencie funkcji regexec
-    regcomp(&regex_compiled, regex, REG_EXTENDED);
-
-    // Zamiana wzorca na podaną wartość
-    char *formatted = regreplace(text, &regex_compiled, replacement);
-
-    // Wyświetlenie wyniku
-    printf("%s", formatted);
-
-    // Zwolnienie pamięci
-    regfree(&regex_compiled);
-
-    return 0;
+   regfree(&regex);
+   return 0;
 }
+```
 
-## Głębszy zanurzenie:
+Przykładowe wyjście:
+```
+Dopasowano
+```
 
-Wyrażenia regularne powstały w latach 50. wraz z pojawieniem się pierwszych języków do przetwarzania tekstu. Współcześnie istnieje wiele alternatywnych metod przetwarzania i manipulacji tekstu, np. funkcje string z biblioteki standardowej C. Jednak wyrażenia regularne pozostają popularnym wyborem ze względu na swoją potężną funkcjonalność i wszechstronność.
+## Pogłębienie
 
-Pod maską, wyrażenia regularne są kompilowane do automatów skończonych i wykorzystują algorytm Thompsona w celu wyszukiwania wzorców w tekście. Jest to szybka i wydajna metoda, pozwalająca na przetwarzanie dużych ilości danych w krótkim czasie.
+Pierwsze regularne wyrażenia zostały opracowane w laboratoriach AT&T Bell w latach 50. i 60. XX wieku. Wprowadzenie ich do C dość długo trwało, ale ostatecznie znalazły swoje miejsce w bibliotece POSIX.
 
-## Zobacz także:
+Alternatywą dla standardowych wyrażeń regularnych w C jest użycie bibliotek zewnętrznych, takich jak PCRE (Perl Compatible Regular Expressions).
 
-- [Dokumentacja biblioteki regex.h w języku C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Przydatny kalkulator wyrażeń regularnych online](https://regex101.com/)
+Ważne jest, że mimo iż potentat w swojej domenie, regularne wyrażenia nie są panaceum na wszystko. Większość problemów "pasuje do" regularnych wyrażeń, ale niektóre są poza ich zasięgiem — na przykład parsing zagnieżdżonych struktur.
+
+## Zobacz również
+- [Manual GNU](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Regular Expressions in C](https://www.lemoda.net/c/unix-regex/) 
+- [Tutorial on Regex in C](https://www.tutorialspoint.com/cprogramming/c_regular_expressions.htm)

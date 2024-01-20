@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp existerar"
-html_title:           "Clojure: Kontrollera om en mapp existerar"
-simple_title:         "Kontrollera om en mapp existerar"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Bash: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,21 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp existerar är en viktig del av programmering eftersom det hjälper till att hantera filer och strukturera koden på ett effektivt sätt. Detta är särskilt användbart när man arbetar med stora projekt som har många filer och mappar.
+Att kontrollera om en katalog finns innebär att vi avgör om en specifik mappläge existerar i filsystemet. Programmerare gör detta för att undvika fel som uppstår när de försöker läsa, skriva eller manipulera icke-existerande kataloger.
 
 ## Hur man gör:
-För att kontrollera om en mapp existerar i Clojure kan du använda funktionen "exists?" från standardbiblioteket "clojure.java.io". Här är ett exempel på hur den kan användas:
+I Clojure, vi kan använda `java.nio.file` för att kontrollera om en katalog finns.
 
+Först, importera nödvändiga klasser:
 ```Clojure
-(require '[clojure.java.io :as io])
-(io/exists? "/mapp_namn")
+(import '[java.nio.file Files Paths])
 ```
 
-Om mappen existerar kommer funktionen att returnera sann, annars returneras falskt.
+Sedan, skapa en Path-objekt av katalogen:
+```Clojure
+(def my-path (Paths/get "/example/directory" (into-array String [])))
+```
 
-## Djupdykning:
-I äldre versioner av Clojure användes funktionen "file-exists?" från "clojure.contrib.io" för att kontrollera mappar, men den har nu ersatts av "exists?" från standardbiblioteket. Det finns också alternativ som "file-seq" och "walk" som kan användas för att iterera genom en mapp och dess undermappar. Funktionen "exists?" använder sig av Java-biblioteket "File" för att utföra kontrollen.
+Till sist, använd `Files/exists` för att kontrollera om katalogen finns:
+```Clojure
+(defn directory-exists? [path]
+  (Files/exists path))
+```
 
-## Se också:
-Officiell dokumentation för "clojure.java.io" - https://clojure.github.io/clojure/clojure.java.io-api.html  
-Exempel på användning av "exists?" från Clojure for the Brave and True - https://www.braveclojure.com/files-directories/
+Prova denna funktion:
+```Clojure
+(directory-exists? my-path)
+```
+
+Om katalogen existerar, resultatet kommer att vara `true`. Annars, kommer det att vara `false`.
+
+## Djupdykning
+Historiskt sett, kontroll av om en katalog finns var inte alltid ett inbyggt koncept i tidiga programmeringsspråk. I Unix baserade system, till exempel, utvecklare var tvungna att försöka skapa eller öppna den angivna katalogen och fånga ett undantag om det misslyckades.
+
+Alternativt, i Clojure kan du använda `clojure.java.io/file` och ` .exists` metoden:
+```Clojure
+(import '[clojure.java.io file])
+
+(defn directory-exists? [dir]
+  (.exists (file dir)))
+```
+Men, `java.nio.file` paketet ger en mer robust lösning för att hantera filsystemet.
+
+## Se också
+Se "Java Platform, Standard Edition File I/O Tutorial" för mer detaljer om `java.nio.file`: https://docs.oracle.com/javase/tutorial/essential/io/fileio.html
+
+För mer om Clojure och Java interoperation, se den officiella Clojure-dokumentationen: https://clojure.org/reference/java_interop

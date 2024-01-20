@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Go: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Getting Started"
@@ -11,34 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-
-Lancer un nouveau projet en programmation est le fait de commencer un nouveau programme à partir de zéro. Les programmeurs le font souvent pour créer quelque chose de nouveau ou pour améliorer leur compétences en codage.
+Démarrer un nouveau projet en programmation Go c'est comme dessiner un plan pour un bâtiment. C'est essentiel car sans cela, nous ne saurions pas où aller et comment le rendre réel.
 
 ## Comment faire:
+Voici comment vous pouvez initialiser un nouveau projet Go :
 
-Voici un exemple de code en Go pour démarrer un nouveau projet:
-
-```
+```Go
 package main
 
 import "fmt"
 
 func main() {
-	fmt.Println("Bonjour les programmeurs!")
+    fmt.Println("Bonjour, nouveau projet!")
 }
 ```
 
-Résultat:
+Exécutez le fichier, vous verrez ce qui suit en sortie :
 
+```Go
+Bonjour, nouveau projet!
 ```
-Bonjour les programmeurs!
-```
 
-## Plongée en profondeur:
+## Plongée en profondeur
+Historiquement, les projets Go étaient tous dans un même espace de travail ce qui causaient des conflits de dépendances. Vers Go 1.11, "Go modules" est devenu la nouvelle norme pour la gestion de projet - ses concurrents étant GB et Godep. Les modules ont permis d'avoir de multiples versions d'un même package dans un même espace de travail.
 
-Le Go est un langage de programmation créé par Google en 2009. Il a été conçu pour être simple, rapide et efficient. Il existe d'autres alternatives pour débuter un nouveau projet telles que Python ou Java. Pour implémenter un nouveau projet en Go, vous avez besoin d'un compilateur Go installé sur votre ordinateur et d'un éditeur de code tel que Visual Studio Code.
-
-## Voir aussi:
-
-- [Tutoriel Go pour débutants](https://ahmet.im/blog/golang-tutorial-part-1-intro/)
-- [Documentation officielle Go](https://golang.org/doc/)
+## Voir Également
+1. [Le guide 'Starting a Go project'](https://golang-standards.github.io/project-layout/)
+2. [Gérer les dépendances avec Go modules](https://blog.golang.org/using-go-modules)
+3. [Initier un nouveau projet Go avec VSCode](https://medium.com/@san40u/setting-up-golang-in-vscode-8ea79b2106fb)

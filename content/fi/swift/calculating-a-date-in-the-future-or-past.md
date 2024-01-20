@@ -1,7 +1,7 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
-html_title:           "Swift: Tulevan tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Swift: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Swiftin Ajanlasku: Miten Ligsiät tai Menneet Päivät Määritellään? 
+
 ## Mitä & Miksi?
 
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen tarkoittaa päivämäärän lisäämistä tai vähentämistä tiettyyn ajanjaksoon nykyisestä päivämäärästä. Ohjelmoijat tekevät tätä tarpeen mukaan esimerkiksi laskemalla työpäivien määrän tulevaa tapahtumaa varten tai laskemalla paljonko aikaa on kulunut jostain tietystä päivämäärästä.
+Ajanlaskulla viitataan tulevaisuuden tai menneisyyden päivän määrittämiseen. Ohjelmoijat tekevät tämän esim. lomakkeiden voimassaolon, aikajänneestimaattien tai aikataulujen luomiseksi.
 
-## Kuinka:
+## Miten se tehdään:
 
+Alla Swift-koodi joka näyttää, miten määritellään 5 päivää tulevaisuudessa:
 ```Swift
-let currentDate = Date()
-
-// Lisätään 10 päivää nykyiseen päivämäärään
-let futureDate = Calendar.current.date(byAdding: .day, value: 10, to: currentDate)
-
-// Vähennetään 5 viikkoa nykyisestä päivämäärästä
-let pastDate = Calendar.current.date(byAdding: .weekOfMonth, value: -5, to: currentDate)
-
-// Tulostetaan tuleva ja mennyt päivämäärä
-print("Tuleva päivämäärä: \(futureDate)")
-print("Menenyt päivämäärä: \(pastDate)")
+let now = Date()
+let fiveDaysLater = Calendar.current.date(byAdding: .day, value: 5, to: now)
+print(fiveDaysLater)
 ```
-
-**Tulos:**
-
+Ja vastaavasti 5 päivää menneisyydessä:
+```Swift
+let fiveDaysBefore = Calendar.current.date(byAdding: .day, value: -5, to: now)
+print(fiveDaysBefore)
 ```
-Tuleva päivämäärä: Optional(2020-12-24 01:44:02 +0000)
-Menneyt päivämäärä: Optional(2020-11-14 01:44:02 +0000)
-```
+Kummassakin esimerkissä päivämäärä luodaan nykyhetkestä (`now`), ja siihen lisätään tai siitä vähennetään päiviä käyttäen `Calendar.current.date(byAdding:value:to:)` -funktiota.
 
-## Syväsukellus:
+## Syventyminen
 
-Päivämäärän laskemisen tarve on ollut olemassa jo pitkään ja siihen on olemassa useita erilaisia ratkaisuja ohjelmointikielistä riippuen. Swiftissä päivämäärän laskemiseen käytetään Calendar-luokkaa, jonka avulla voi lisätä tai vähentää päiviä, viikkoja, kuukausia tai vuosia nykyiseen päivämäärään. Lisäksi on olemassa muitakin käteviä työkaluja kuten DateComponents ja DateFormatter.
+1. Historiallinen Konteksti: Ennen tietokoneita ajanlasku tehtiin käsin, kalenterin avulla, joka oli aikaa vievää ja virhealtista. Ohjelmoinnissa kuitenkin, voidaan laskea päiviä, kuukausia tai vuosia tarkasti ja vaivattomasti.
 
-## Katso myös:
+2. Vaihtoehdot: Swiftin lisäksi voit tehdä ajanlaskun missä tahansa ohjelmointikielessä, kuten JavaScript tai Python. Jokaisella kielellä on oma tapansa ja syntaksinsa.
 
-- [Swiftin virallinen dokumentaatio päivämäärän laskemisesta](https://developer.apple.com/documentation/foundation/calendar)
-- [Stack Overflow viisi tapaa lisätä päiviä nykyiseen päivämäärään Swiftillä](https://stackoverflow.com/questions/34075675/add-days-to-nsdate-date-in-swift)
-- [Swiftille tehty kirjasto päivämäärän laskemista varten](https://github.com/malcommac/SwiftDate)
+3. Toteutuksen Yksityiskohdat: Huomaa, että koska Swift käyttää Gregoriaanista kalenteria, se ottaa huomioon karkauspäivät automaattisesti. Se myös käsittelee aikavyöhykkeet ja kesäaika asetukset.
+
+## Katso Myös
+
+- [Apple Developer Documentation: Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple Developer Documentation: Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- [Swift.org - Swiftin virallinen dokumentaatio](https://swift.org/documentation/)
+
+Muistathan, että ohjelmoinnin oppiminen on jatkuvaa prosessia. Aina on jotain uutta ja jännittävää opittavaa. Onnea matkaan Swiftin maailmaan!

@@ -1,6 +1,6 @@
 ---
 title:                "Ausgabe von Debugging-Informationen drucken"
-html_title:           "Clojure: Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
 simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,41 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist das & Warum?
-Debug-Ausgaben sind Textnachrichten, die von Programmierern in ihrem Code platziert werden, um bei der Fehlerbehebung und Verfolgung von Programmabläufen zu helfen. Sie können eine nützliche Methode sein, um herauszufinden, was ein Programm zu einem bestimmten Zeitpunkt macht und wo mögliche Fehler auftreten könnten.
+# Programmierung in Clojure: Debug-Ausgaben in Kürze
 
-Wie geht das?
-Es gibt verschiedene Möglichkeiten, Debug-Ausgaben in Clojure zu machen. Eine einfache Möglichkeit ist die Verwendung von ```(println "Debug message")```, um die gewünschte Nachricht auf der Konsole auszugeben. Eine andere Möglichkeit ist die Verwendung von Clojure's integrierter Logging-Bibliothek, ```clojure.tools.logging```, um genauere Steuerung über die Ausgabe zu haben.
+## Was & Warum?
 
-Ein Beispiel mit println:
+Beim Drucken von Debug-Ausgaben handelt es sich im Grunde genommen darum, Informationen während der Ausführung eines Programms auf der Konsole oder in Log-Dateien auszugeben. Es hilft uns, das Verhalten des Programms zu überwachen und Fehler in unserem Code zu identifizieren und zu beheben.
+
+## Wie geht's:
+
+In Clojure verwenden wir meistens die Funktion `println` um Debug-Ausgaben zu drucken.
+
 ```Clojure
-(defn add [a b]
-  (println "Adding" a "and" b)
-  (+ a b))
+(defn hello [name]
+  (println "Debug: bevor wir grüßen")
+  (println (str "Hallo, " name))
+  (println "Debug: nachdem wir gegrüßt haben"))
 
-(add 2 3)
+(hello "Clojure")
 ```
 
-Dieses Beispiel wird die Ausgabe ```Adding 2 and 3``` produzieren.
-
-Ein Beispiel mit Logging:
-```Clojure
-(require '[clojure.tools.logging :as log])
-
-(defn subtract [a b]
-  (log/debug "Subtracting" a "from" b)
-  (- b a))
-
-(subtract 5 2)
+Die Ausgabe wird sein:
+```
+Debug: bevor wir grüßen
+Hallo, Clojure
+Debug: nachdem wir gegrüßt haben
 ```
 
-Dieses Beispiel wird die Debug-Nachricht ```Subtracting 2 from 5``` produzieren.
+## Tiefer Eintauchen
 
-Tiefer tauchen
-Debug-Ausgaben sind eine häufig verwendete Methode, um bei der Entwicklung von Software zu helfen. Früher war es üblich, sich dauerhaft auf Debug-Ausgaben zu verlassen, um Fehler zu finden. In der heutigen Zeit gibt es jedoch leistungsfähigere Tools wie Debugger und Testframeworks, die bei der Fehlerbehebung helfen können. Trotzdem kann es immer noch nützlich sein, Debug-Ausgaben zu machen, um zum Beispiel die Ausführungsreihenfolge von Funktionen zu überprüfen oder zu sehen, welche Werte bestimmte Variablen annehmen.
+Historisch gesehen, war das Drucken von Debug-Ausgaben eine der ersten Methoden zur Fehlersuche in Programmen. Its simplicity and straightforwardness have made it a long-standing tool in every programmer's arsenal.
 
-Eine Alternative zum Ausdrucken von Debug-Nachrichten ist das Einrichten eines Debuggers, der es einem ermöglicht, Schritt für Schritt durch den Code zu gehen und Variablenwerte anzuzeigen. Einige Entwickler bevorzugen auch die Verwendung von Clojure's dynamischen Typsystem, um während der Laufzeit Informationen über Variablen zu erhalten.
+Es gibt jedoch Alternativen zum Drucken von Debug-Ausgaben in Clojure, wie zum Beispiel das Hinzufügen von Logging-Funktionen durch Bibliotheken wie `clojure.tools.logging`.
 
-Siehe auch
-- Die offizielle Dokumentation zu Clojure's Debugging-Tools: https://clojure.org/guides/tools_logging
-- Eine Einführung in Clojure's dynamisches Typsystem: https://clojure.org/reference/types#dynvars
+Ein tiefere Überlegung ist, dass die Verwendung von `println` in mehreren Threads zu Konflikten führen kann aufgrund von Buffers. Es ist also oft besser, auf spezielle Logging-Libraries auszuweichen, die für solche Situationen vorbereitet sind.
+
+## Siehe Auch
+
+- Official Clojure Documentation: https://clojure.org/guides/getting_started
+- Clojure's println function: https://clojuredocs.org/clojure.core/println
+- Clojure.tools.logging library: https://github.com/clojure/tools.logging
+
+Viel Spaß beim Programmieren!

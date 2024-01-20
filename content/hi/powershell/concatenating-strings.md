@@ -1,6 +1,6 @@
 ---
 title:                "स्ट्रिंग्स को जोड़ना"
-html_title:           "PowerShell: स्ट्रिंग्स को जोड़ना"
+html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
 simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,27 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## क्या & क्यों?
 
-कंकेटनेटिंग स्ट्रिंग क्या है, और प्रोग्रामर्स इसे क्यों करते हैं? कंकेटनेटिंग स्ट्रिंग है जहाँ हम विभिन्न स्ट्रिंग को एक साथ जोड़ते हैं और एक बड़ी स्ट्रिंग बनाते हैं। यह एक आसान तरीका है स्ट्रिंग्स को मेमोरी में स्टोर करने का और प्रोग्रामों में टेक्स्ट को व्यवस्थित और अधिक पढ़ने योग्य बनाने का।
+Vastuk (Strings) ko jodne ko hum 'Concatenating Strings' kehte hain. Yah vastukon (strings) ko ek saath jodne ka tareeka hai jo programmer ko kisi ek saath anek sootra (strings) ko prastut karne mein madad karta hai.
 
-## कैसे करे:
+## कैसे:
 
-कंकेटनेटिंग स्ट्रिंग को पावरशेल में कैसे किया जाता है? पहला तरीका है स्ट्रिंग इंटरपोलेशन का उपयोग करके, जो स्ट्रिंग के अंदर भी कोड द्वारा परिभाषित परिमाणों को डालने की अनुमति देता है। आप इसका उपयोग ब्रैकेट द्वारा भी कर सकते हैं, जो आपको स्ट्रिंग के प्रत्येक भाग को अलग से निर्दिष्ट करने की अनुमति देता है। कुछ उदाहरण:
+पावरशेल में, आप '+' या '-f' उपयोग करके वस्तुओं (strings) को जोड़ सकते हैं। यहां कुछ उदाहरण दिए गए हैं :
 
 ```PowerShell
-$name = "जासून"
-"नमस्ते, $name" # नमस्ते, जासून
-$greeting = "हिन्दी!"
-[char[]]$greeting[0] # ह 
+$name = "World"
+$message = "Hello, " + $name
+$message
 ```
+आउटपुट:
+```
+Hello, World
+```
+या फिर, आप '-f' ऑपरेटर का उपयोग कर सकते हैं:
+```PowerShell
+$name = "World"
+$message = "Hello, {0}" -f $name
+$message
+```
+आउटपुट:
+```
+Hello, World
+```
+## गहरा अवलोकन:
 
-## गहराई में:
+Vastuk (Strings) को jodne (concatenating) ka upyog 1970 k decade se kiya jaa raha hai. Python aur JavaScript jaise aur programming languages mein bhi isi tarah ka upyog hota hai.
 
-कंकेटनेटिंग स्ट्रिंग का प्रथम प्रयोग १९६० के दशक में फोर्ट्रान में किया गया था, जहाँ स्ट्रिंग को एक साथ जोड़ने के लिए पहला फंक्शन CATE निर्मित किया गया था। आजकल, बहुत सारे भाषाओं में कंकेटनेटिंग स्ट्रिंग के अल्टरनेटिव्स मौजूद हैं, जैसे StringBuilder क्लास जो अधिक शानदार प्रदर्शन के साथ कंकेटनेटिंग स्ट्रिंग का समर्थन करता है।
+वैकल्पिक तरीके में, आप concatenate के बजाय PowerShell में `-join` ऑपरेटर का उपयोग कर सकते हैं:
 
-अगर आप प्रोग्रामिंग के मध्यम से कंकेटनेटिंग स्ट्रिंग के अंदर देखना चाहते हैं, तो आपको यह जानना जरूरी होगा कि स्ट्रिंग्स प्रोग्रामिंग भाषाओं में जो कुछ अंतर होते हैं। पावरशेल में, स्ट्रिंग को इंटर्नली स्टोर व्यवस्थापित किया जाता है, हालांकि अन्य भाषाओं में, यह तर्कों को भी मेमोरी में स्टोर करता है। सो, यह आपके कोड के शेष भाग पर निर्भर करता है कि कैसे आपका स्ट्रिंग जारीब शुरू होगा।
+```PowerShell
+$strings = "Hello", "World"
+$message = $strings -join ', '
+$message
+```
+आउटपुट:
+```
+Hello, World
+```
+यह तरीका आपको एक array की सभी वस्तुओं (वस्त्रों) को एक साथ जोड़ने की अनुमति देता है, जिससे कोड का स्वच्छता और पढ़ने में आसानी होती है।
 
 ## अधिक जानकारी के लिए:
 
-कंकेटनेटिंग स्ट्रिंग के अलावा, आप और भी तरीके से स्ट्रिंग्स को प्रोग्रामिंग में इस्तेमाल कर सकते हैं। आप [यहाँ](https://www.tutorialspoint.com/powershell
+- [Concatenation Operators in PowerShell](https://www.powershellmagazine.com/2012/07/23/pstip-concatenation-operators-in-powershell/)
+- [About Join Operator](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_join?view=powershell-7.1)

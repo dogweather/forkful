@@ -1,7 +1,7 @@
 ---
-title:                "Parsa ett datum från en sträng"
-html_title:           "Go: Parsa ett datum från en sträng"
-simple_title:         "Parsa ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,24 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför? 
-Att "parsa" ett datum från en sträng innebär att konvertera en textrepresentation av ett datum till ett datatyp som kan hanteras av datorn. Detta är användbart för programmerare eftersom det gör det möjligt att utföra beräkningar eller jämföra datum på ett enkelt sätt.
+## Vad & Varför?
 
-# Hur man gör: 
+Att tolka ett datum från en sträng i programmering handlar om att omvandla en textrepresentation av ett datum till ett standardiserat datumformat. Detta är vanligtvis nödvändigt när vi behöver manipulera, jämföra, eller utföra operationer på data baserade på datum.
+
+## Så här gör du:
+
+För att tolka ett datum från en sträng i Go, använd den inbyggda ```time```-paketen funktionen ```Parse```. 
+
 ```Go
-dateString := "3 december 2021"
-layout := "2 January 2006" // Anger det specifika datumformatet som behövs
-parsedDate, _ := time.Parse(layout, dateString) // Parsar datumet från strängen
+package main
+  
+import (
+    "fmt"
+    "time"
+)
 
-fmt.Println(parsedDate) // Skriver ut det formaterade datet som ett objekt av typen time.Time
-// Output: 2021-12-03 00:00:00 +0000 UTC
+func main() {
+    const datumFormat = "2006-01-02"
+    datumSträng := "2021-09-15"
+  
+    datum, fel := time.Parse(datumFormat, datumSträng)
+    if fel != nil {
+       fmt.Println(fel)
+    }
+  
+    fmt.Println(datum)
+}
 ```
 
-# Djupdykning:
-Parsering av datum från strängar har varit en nödvändig funktion för programmerare i många år. I äldre språk var det en ganska komplicerad process, men moderna språk som Go har inbyggda funktioner, som time.Parse (), som gör det enkelt och effektivt.
+Detta kommer att skriva ut:
 
-En alternativ metod för att använda date.Parse () är att använda date.ParseExact (), som låter oss specificera det exakta formatet för datumet som ska parsas. Detta kan vara användbart för att hantera olika lokala format eller om strängen innehåller mer än bara ett datum.
+```Go
+2021-09-15 00:00:00 +0000 UTC
+```
 
-# Se även:
-Officiell dokumentation för time.Parse () - https://golang.org/pkg/time/#Parse
-Video tutorial på YouTube: "Parsar datum i Go" - https://www.youtube.com/watch?v=VyZHxMkzUXo
+## Djupdykning
+
+Historiskt sett har datumtolkning varit ett svårt problem för programmerare på grund av skillnader i datumformat över länder och regioner. Som ett alternativ till ```time.Parse```, kan man använda ```time.ParseInLocation``` för att tolka ett datumsträng med hänsyn till en specifik tidszon.
+
+Implementationsdetaljerna för datumtolkning i Go handlar om att använda layoutsträngar för att kommunicera önskat format. Go använder en unik, men intuitiv, representation: den använder faktiska tider (specifikt den UTC-tiden för måndagen 2 januari kl. 15:04:05 2006) för att skapa strängformat.
+
+## Se också:
+
+- Go Docs: [The `time` package](https://golang.org/pkg/time/)
+- Go Blog: ["The Go time package"](https://blog.golang.org/two-go-talks-unicode-shebang)
+- StackOverflow: [Parsing dates from strings in Go](https://stackoverflow.com/questions/14106541/parsing-date-string-in-go)

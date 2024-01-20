@@ -1,6 +1,6 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "PowerShell: המרת תאריך למחרוזת"
+html_title:           "Bash: המרת תאריך למחרוזת"
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-המרת תאריך למחרוזת היא פעולה שמאפשרת לקוד להציג תאריך ושעה בפורמט שנוח יותר למשתמש הסופי. מפתחים מבוקשים לבצע פעולה זו בשביל נוחות ופונקציונליות גבוהה יותר.
 
-## כיצד לבצע:
-הגבלה מיותרת של תאריך למחרוזת היא מאפשרת בפשטית לחלץ את התאריך המבוקש בפורמט הרצוי באמצעות פקודות מסומנות. הנה דוגמא מינימלית של כיצד לבצע את הפלט:
+המרת תאריך למחרוזת זהו תהליך שבו משנים את הצורה שבה מייצגים תאריך (אשר באופן טבעי הוא משתנה) לצורה סטטית של מחרוזת. בתכנות זה משמש בעיקר לדוגמה לתיעוד, לשמירה על התאימות בין מערכות, או למשתמש הסופי בממשק המשתמש.
 
-```PowerShell
-(Get-Date).ToString("dd/MM/yyyy HH:mm:ss")
-```
 
-תוצאה:
+## איך:
+
+הנה קוד דוגמה של חלק מהדרכים להמיר תאריך למחרוזת ב-PowerShell:
 
 ```PowerShell
-23/08/2021 14:55:10
+$date = Get-Date
+$dateStr1 = $date.ToString() # פורמט ברירת מחדל
+$dateStr2 = $date.ToString("yyyy/MM/dd") # פורמט מותאם אישית
+
+Write-Host $dateStr1
+Write-Host $dateStr2
 ```
 
-כמו כן, ניתן להשתמש בפקודה אחת לכל התאריכים בפורמט מבוקש מתוך קובץ:
+וצפוי שתראה הפלט כמו:
 
 ```PowerShell
-Get-Content data.txt | ForEach-Object { [DateTime]::Parse($_) } | ForEach-Object { $_.ToString("dd/MM/yyyy HH:mm:ss") } | Out-File output.txt
+01/01/2022 00:00:00
+2022/01/01
 ```
 
-תוצאה:
+## צלילה עמוקה
 
-```PowerShell
-23/08/2021 14:55:10
-24/08/2021 15:00:00
-25/08/2021 16:27:45
-```
+(1) PowerShell, שכינויה ".NET Framework", מאפשרת המרה של תאריך למחרוזת מאז הגרסה הראשונה שלה ב-2006.
 
-## צינורות - תיאור מעמיק:
-מרת תאריך למחרוזת הוא פעולה שנמצאת בשימוש כבר מאז תחילת תיכנות המחשבים. השימוש במרת תאריך למחרוזת יכול לחסוך זמן רב כאשר משתמשים בפקודות מרוכזות ומתוחכמות.
+(2) ישנם שיטות חלופיות ב-PowerShell להמרת תאריך למחרוזת, כולל שילוב של הפונקציות Get-Date ו-Format-Date.
 
-אלטרנטיבות למרת תאריך למחרוזת כוללות שימוש בפקודה [Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1) המאפשרת להציג תאריך ושעה בפורמט רגיל של PowerShell ושימוש בפקודה [Format-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-date?view=powershell-7.1) המאפשרת להתאים את התאריך לסוג המבוקש.
+(3) בהינתן הפונקציה ToString(), פונקציית המרה זו מגיעה עם גמישות רבה. אתה יכול להגדיר בעצמך את הפורמט שאליו תהליך ההמרה מתבצע.
 
-מימוש המרת תאריך למחרוזת איננו טריוויאלי ויכול להיות מאתגר במקרים מסוימים כגון חישוב זמן מלאי או התמודדות עם פורמטים מיוחדים.
+## ראה גם
 
-## ראו גם:
-* [Get-Date פקודת PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
-* [Format-Date פקודת PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-date?view=powershell-7.1)
-* [תאריך ושעה בפורמט מבוקש עם PowerShell](https://www.petri.com/powershell-format-datetime)
+1. [תיעוד המרת מחרוזת ב-Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convert-to-date?view=powershell-7.1)
+2. [פורמטים מותאמים אישית להמרת תאריך למחרוזת](https://www.gngrninja.com/script-ninja/2016/5/24/powershell-getting-a-handle-on-dates-and-times) 
+3. [הבנת מחרוזות בפורמט תאריך ושעה ב-PowerShell](https://ss64.com/ps/syntax-f-operator.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http avec une authentification de base"
-html_title:           "TypeScript: Envoi d'une requête http avec une authentification de base"
-simple_title:         "Envoi d'une requête http avec une authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,41 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-L'envoi d'une requête HTTP avec une authentification de base est un moyen pour les programmeurs d'envoyer des informations sensibles de manière sécurisée. Cela permet de s'assurer que seuls les utilisateurs autorisés peuvent accéder aux données.
+L'envoi d'une requête HTTP avec authentification de base est un moyen pour une application web de valider l'identité d'un utilisateur. Généralement, c'est fait en passant des identifiants d'utilisateur par le header de la requête. C'est crucial pour sécuriser les données sensibles des utilisateurs.
 
 ## Comment faire:
-Voici un exemple de code TypeScript montrant comment envoyer une requête HTTP avec une authentification de base:
+Voici un exemple rapide de la façon dont vous pouvez réaliser cela en TypeScript en utilisant l'API fetch.
 
+```TypeScript
+import fetch from 'node-fetch';
+
+const url = 'https://your-api-url.com';
+const headers = {
+    'Authorization': 'Basic ' + Buffer.from('username:password').toString('base64')
+}
+
+fetch(url, { headers })
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.log('Erreur:', error));
 ```
-import axios from 'axios';
+Lorsqu'on commence, on obtient des données brutes émulées.
 
-const username = 'username';
-const password = 'password';
+## Plongeon profond
+Historiquement, l'authentification de base était parmi les premières méthodes pour valider les utilisateurs sur le web. C'est encore largement utilisé, malgré l'existence d'autres options plus sécurisées comme l'authentification à deux facteurs.
 
-axios.get('https://exemple.com', {
-  auth: {
-    username,
-    password
-  }
-})
-.then(response => {
-  console.log(response.data);
-})
-.catch(error => {
-  console.log(error.message);
-});
-```
+Des alternatives à l'authentification de base incluent l'authentification de porteur de token, l'authentification OAuth, et l'authentification Digest. Chaque option a ses avantages et inconvénients, alors il est important de choisir le meilleur pour votre application.
 
-L'exemple ci-dessus utilise la bibliothèque axios pour effectuer la requête HTTP et passe les informations d'authentification sous forme de paramètres dans l'objet de configuration de la requête.
+Concernant les détails d'implémentation, l'authentification de base est simple, n'exigeant que l'ajout d'un header 'Authorization' à votre requête HTTP. En TypeScript, on peut utiliser l'API intégrée fetch qui fait cela facilement.
 
-## Plongée en profondeur:
-L'authentification de base dans les requêtes HTTP est un concept qui a été introduit dans le standard de base HTTP en 1996. Elle est considérée comme plutôt simple et peu sécurisée en comparaison à d'autres méthodes d'authentification. Une alternative populaire et plus sécurisée est l'authentification par token.
-
-Cependant, l'authentification de base reste utilisée dans certains cas où un niveau de sécurité moins élevé est acceptable.
-
-Dans l'exemple de code ci-dessus, les informations d'authentification sont transmises en clair dans la requête, ce qui peut être un risque pour les données sensibles. Il est donc important d'utiliser des certificats SSL pour chiffrer les données lors de leur transmission.
-
-## Voir aussi:
-- [MDN Web Docs - Basic Authentication](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication#Authentification_de_base)
-- [Axios Documentation](https://axios-http.com/docs/intro)
-- [Utiliser SSL pour sécuriser les connexions HTTP](https://developer.mozilla.org/fr/docs/Glossaire/SSL)
+## Voir aussi
+Pour des informations plus détaillées sur l'implémentation de l'authentification de base en TypeScript, vous pouvez consulter ces articles :
+- [MDN - Basic authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [Typescript - Fetch API Usage](https://www.typescriptlang.org/docs/handbook/2/classes.html#instance-methods)
+- [Node.js - HTTP Request with Basic Authentication](https://nodejs.org/api/http.html#http_http_request_options_callback)

@@ -1,7 +1,7 @@
 ---
-title:                "产生随机数"
-html_title:           "C#: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "Go: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,50 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 这是什么 & 为什么要这么做？
+## 什么 & 为什么？(What & Why?)
 
-生成随机数是指在程序中使用代码来产生一个随机的数字。程序员们通常会使用这种方法来增加程序的灵活性和变化性，使其更加有趣和具有挑战性。
+生成随机数是通过编程创建任意数字的过程。程序员通常这样做来模拟不确定性，或给用户提供难以预测的结果。
 
-## 如何实现：
+## 如何实现：(How to:)
 
-### 生成随机整数：
-
-```C#
-Random random = new Random(); //创建一个随机对象
-int randomNum = random.Next(1, 10); //生成介于1到10之间的随机整数
-Console.WriteLine($"随机整数：{randomNum}"); //打印输出结果
-```
-
-输出结果可能是：随机整数：7
-
-### 生成随机小数：
+在C#中，你可以使用System的Random类来生成随机数。以下代码演示了如何实现生成1到100之间的随机整数。
 
 ```C#
-Random random = new Random(); 
-double randomNum = random.NextDouble(); //生成介于0到1之间的随机小数
-Console.WriteLine($"随机小数：{randomNum}");
+using System;
+
+public class Program {
+    public static void Main() {
+        Random rnd = new Random();
+        int randomNumber = rnd.Next(1, 101);
+        Console.WriteLine(randomNumber);
+    }
+}
 ```
+运行这段代码的输出将是1到100之间的任何数字，这取决于生成随机数的瞬间。
 
-输出结果可能是：随机小数：0.526849463272571
+## 深入理解(Deep Dive)
 
-## 深入探讨：
+在早期的计算机科学中，生成真正的随机数是相当困难的，因为计算机是建立在可预测和一致性的基础上的。因此，我们通常使用伪随机数，而非真随机数。上述代码示例就是这样：每次程序启动都会生成相同的数列，除非你提供不同的种子值。
 
-### 历史背景：
+C#中的Random类使用线性同余生成器（LCG）算法。但该算法并非最佳选择，尤其在需要高随机性应用中。有许多随机数生成器的替代方案如Mersenne Twister。
 
-生成随机数在计算机科学领域已经存在很长时间了。早期的计算机并没有内置随机数生成的功能，程序员们不得不自己编写代码来实现这一功能。
+在实践中，因为Random类不是线程安全的，所以在高度并行的程序中，你可能会需要在每个线程中创建新的Random实例。
 
-### 替代方法：
+## 另请参阅(See Also)
 
-除了使用Random类来实现随机数生成外，还可以使用Guid类或者CryptographicRandom类来获得更加随机和安全的随机数。
+如需更多信息，请参见以下文档：
 
-### 实现细节：
+- [MSDN: Random Class](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netframework-4.8)
+- [Understanding Random Number Generators, and Their Limitations](https://www.codeproject.com/articles/43408/understanding-random-number-generators-and-their-l)
+- [A Statistical Test Suite for Random and Pseudorandom Number Generators for Cryptographic Applications](https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-22r1a.pdf) 
 
-在C#中，Random类是基于伪随机算法实现的，即程序员可以通过指定种子值来控制生成的随机数，从而达到重复生成相同序列的目的。
-
-## 参考资料：
-
-- [Microsoft Docs上的Random类文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.random)
-- [C#教程中关于随机数生成的部分](https://www.w3schools.com/cs/cs_random.asp)
-- [详细介绍CryptographicRandom类的一篇文章](https://www.codeproject.com/Tips/1212069/Csharp-Secure-Random-Numbers-using-CryptoServiceProvider)
-
-整理者：[你的名字]
+以上就是在C#中生成随机数的入门知识。最重要的是实践和在各种应用程序中尝试和改进。

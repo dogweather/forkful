@@ -1,7 +1,7 @@
 ---
-title:                "Eliminazione di caratteri corrispondenti a un pattern"
-html_title:           "Swift: Eliminazione di caratteri corrispondenti a un pattern"
-simple_title:         "Eliminazione di caratteri corrispondenti a un pattern"
+title:                "Eliminazione dei caratteri corrispondenti a un modello"
+html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,21 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-L'eliminazione di caratteri corrispondenti a uno schema è l'azione di rimuovere dal testo qualsiasi carattere che soddisfi una specifica condizione. I programmatori spesso lo fanno per pulire il testo da caratteri indesiderati o per formattarlo in un modo specifico.
+# Cancellare i caratteri corrispondenti a un modello in Swift
+
+## Che cosa e perché?
+
+Cancellare caratteri corrispondenti a un modello significa eliminare specifici caratteri da una stringa basandosi su una regola o un "modello". I programmatori lo fanno per pulire o manipolare i dati.
 
 ## Come fare:
-```Swift
-let testo = "Questo è un esempio!@@ di testo^ con caratteri non desiderati$$$"
-let caratteriIndesiderati = CharacterSet(charactersIn: "!@#$%^&*()_+{}:\"<>?[]',.\\/")
 
-let testoPulito = testo.components(separatedBy: caratteriIndesiderati).joined()
-print(testoPulito) // Stampa "Questo è un esempio di testo con caratteri non desiderati"
+Ecco un esempio di come cancellare i caratteri corrispondenti a un modello in Swift:
+
+```Swift
+let string = "Ciao Mondo123"
+let modello = "[0-9]" // vogliamo eliminare tutti i numeri
+let risultato = string.replacingOccurrences(of: modello, with: "", options: .regularExpression)
+print(risultato) // Stampa: "Ciao Mondo"
 ```
 
-## Approfondimento:
-L'eliminazione di caratteri corrispondenti a uno schema è stata una pratica comune fin dai primi tempi della programmazione, in particolare nei linguaggi di basso livello come il C. Esistono anche altri modi per ottenere lo stesso risultato, ad esempio utilizzando espressioni regolari.
+In questo caso, il modello sta cercando qualsiasi numero da 0 a 9 nella stringa. Quindi, tutti i numeri vengono eliminati dalla stringa.
 
-## Vedi anche:
-- [La documentazione di Swift su CharacterSet](https://developer.apple.com/documentation/foundation/characterset)
-- [Un articolo di Medium con altri esempi su come rimuovere caratteri da una stringa in Swift](https://medium.com/@shubhammehrotra/working-with-characters-in-swift-3-3082c1ddf58)
+## Approfondimento
+
+**Contesto storico**: la possibilità di eliminare caratteri corrispondenti a un modello è una funzione che esiste da molto tempo nei linguaggi di programmazione, derivata dal concetto di espressioni regolari (o regex).
+
+**Alternative**: Swift fornisce altre funzioni per la manipolazione delle stringhe, come `removeAll(where:)` che può essere usato per ottenere un risultato simile se non è necessario un pattern specifico.
+
+**Dettagli implementativi**: La funzione `replacingOccurrences(of:with:options:)` ricerca tutte le occorrenze del modello e le sostituisce con la stringa fornita. Se non si desidera sostituire con nulla, è possibile fornire una stringa vuota "".
+
+## Vedere anche:
+
+- Espressioni regolari in Swift: [NSRegularExpression](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- Funzioni di manipolazione delle stringhe in Swift: [String](https://developer.apple.com/documentation/swift/string)
+- Modelli di caratteri in regex: [Character Classes in Regular Expressions](https://www.regular-expressions.info/charclass.html)

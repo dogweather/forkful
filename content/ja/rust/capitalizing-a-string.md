@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "Rust: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列を大文字にする"
+html_title:           "Rust: 文字列を大文字にする"
+simple_title:         "文字列を大文字にする"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Rustにおける大文字化（Capitalization）
+# Rustによる文字列の最初の文字を大文字に変換する（キャピタライズする）
 
-## What & Why?
+## 何となぜ？
 
-大文字化とは、文字列をすべて大文字に変換することを指します。プログラマーがこれを行う理由は、文字列を比較するために使われるケースインセンシティブ性（大文字と小文字を区別しない性質）を実現するためです。
+文字列キャピタライズとは、文字列の最初の文字を大文字に変換することを指します。プログラマーはこれを行うことで、タイトルや文章の初めなどでエイリアスを正しく表示するために使用します。
 
-## How to:
+##やり方:
+
+Rustでは、文字列の最初の文字を大文字にするには、`to_uppercase()`と`chars()`を使用します。以下に例を示します。
+
 ```Rust
-let string = "hello world";
-let capitalized_string = string.to_uppercase();
-println!("Capitalized string is: {}", capitalized_string);
+fn main() {
+    let s = "hello world";
+    let capitalized = s.chars().enumerate()
+        .map(|(i,c)| if i == 0 { c.to_uppercase().collect::<String>() } else { c.to_string() })
+        .collect::<String>();
+    println!("{}", capitalized);
+}
+```
+上記のコードを実行すると、出力として"Hello world"を得ることができます。
+
+## 深層
+
+文字列のキャピタライズは、プログラミングの歴史の初期段階から存在する機能の一つです。この操作を行ったり、他の文字列操作を行ったりするためのさまざまな方法が歴史的に存在します。
+
+Rustでは他の方法も試すことができます。例えば、`match`文を使用する方法です。
+
+```Rust
+fn main() {
+    let s = "hello world";
+    let capitalized = match s.chars().next() {
+        None => String::new(),
+        Some(first_char) => first_char.to_uppercase().collect::<String>() + &s[1..],
+    };
+    println!("{}", capitalized);
+}
 ```
 
-出力結果：
-```
-Capitalized string is: HELLO WORLD
-```
+上記のコードも同様に"Hello world"を出力します。
 
-## Deep Dive:
+ただし、Rustでは文字列のインデクシングが一筋縄ではいかないため、この方法には注意が必要です。
 
-### ヒストリカルコンテキスト
+## さらに詳しく
 
-文字列の大文字化は、元々は印刷物で使用される英語の大文字と小文字の変換方法に影響を受けています。印刷機の主な文字は大文字であり、小文字は手書きの文字として扱われていました。しかし、コンピューターの普及により、大文字と小文字の区別が重要になりました。その結果、プログラムやウェブサイトなどでは大文字と小文字を区別せずに文字列を扱うことが一般的になりました。
-
-### 代替手段
-
-Rustでは、文字列の大文字化には`to_uppercase()`メソッドが使用できますが、他にも様々な方法があります。例えば、`to_ascii_uppercase()`メソッドを使うとASCII文字のみを大文字化することができます。また、正規表現を使って自分で大文字化する方法もあります。
-
-### 実装の詳細
-
-Rustでは、`to_uppercase()`メソッドは`std::ascii::AsciiExt`トレイトに定義されています。このトレイトはASCII文字列専用のメソッドを提供しており、非ASCII文字の大文字化には`std::unicode::UnicodeExt`トレイトを使用します。
-
-## See Also:
-- [Rust documentation on string methods](https://doc.rust-lang.org/std/string/struct.String.html#method.to_uppercase)
-- [Comparison of string methods in different languages](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(string_functions)#Case_conversions)
+- [Wikipedia文章: 文字列関数](https://ja.wikipedia.org/wiki/%E6%96%87%E5%AD%97%E5%88%97%E9%96%A2%E6%95%B0)
+- [Rustの文字列ドキュメンテーション](https://doc.rust-lang.org/std/string/index.html)
+- [Rustのcharメソッドドキュメンテーション](https://doc.rust-lang.org/std/primitive.char.html)

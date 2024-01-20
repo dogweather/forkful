@@ -1,6 +1,6 @@
 ---
 title:                "Interpolando uma string"
-html_title:           "TypeScript: Interpolando uma string"
+html_title:           "Java: Interpolando uma string"
 simple_title:         "Interpolando uma string"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,38 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazemos isso?
-Interpolar uma string pode parecer uma tarefa complicada, mas é simplesmente a ação de inserir dinamicamente uma variável em uma string. Isso é útil para criar strings mais dinâmicas e personalizadas em nosso código.
+# String Interpolation em TypeScript 
 
-## Como fazer:
-Aqui está um exemplo simples de como interpolar uma string em TypeScript:
+## O que & Por quê?
 
-```TypeScript
-let name = "Maria";
-let greeting = `Olá ${name}, bem-vinda!`;
-console.log(greeting);
-```
+Interpolação de strings é um método para substituir variáveis dentro de strings. Por quê? Para moldar cadeias de caracteres de maneira mais limpa e flexível. 
 
-Isso irá imprimir "Olá Maria, bem-vinda!" no console. Como você pode ver, usamos o símbolo de cifrão e chaves dentro da string delimitada por acentos graves para inserir a variável `name` dentro da string. É importante notar que esse recurso só funciona com strings delimitadas por acentos graves.
+## Como Fazer:
 
-Podemos também utilizar a interpolação de strings em outras situações, como por exemplo, em uma função:
+Aqui estão alguns exemplos de como fazer interpolação de string no TypeScript:
 
 ```TypeScript
-function calculatePrice(quantity: number, price: number) {
-  return `O preço total é ${quantity * price} reais.`;
-}
+let nome = "Ricardo";
+console.log(`Olá, ${nome}!`);   // Olá, Ricardo!
 
-console.log(calculatePrice(5, 10));
+let x = 10;
+let y = 20;
+console.log(`O resultado de x + y é ${x + y}`);   // O resultado de x + y é 30
 ```
 
-Isso irá imprimir "O preço total é 50 reais." no console.
+Nesses exemplos, usamos a sintaxe `${...}` dentro de strings de template para interpolar variáveis.
 
-## Detalhes mais profundos:
-A interpolação de strings não é uma novidade, ela já existe em outras linguagens de programação, como por exemplo em Ruby. Além disso, é uma alternativa mais eficiente e legível do que a concatenação de strings.
+## Aprofundamento
 
-Ao usar a interpolação de strings, o TypeScript irá compilar o código para utilizar o método `String.raw`, que é responsável por tratar as variáveis representadas pelas chaves dentro da string acentuada.
+A interpolação de string foi introduzida no ECMAScript 6 (também conhecido como ES2015) e é uma adição bem-vinda ao JavaScript e, por extensão, ao TypeScript.
 
-## Veja também:
-- [Documentação do TypeScript sobre String Interpolation](https://www.typescriptlang.org/docs/handbook/basic-types.html#template-strings)
-- [Artigo sobre String Interpolation no Medium](https://medium.com/@julianobattisti/javascript-o-que-%C3%A9-a-interpola%C3%A7%C3%A3o-de-strings-ca2417a55f3f)
-- [Tutorial de TypeScript no YouTube (português)](https://www.youtube.com/watch?v=iAJPksAAS3Y)
+Alternativas para interpolação de string incluem o uso de string concatenation (usando o `+` operador) ou a função `concat()`. Bem:
+
+```TypeScript
+let nome = "Ricardo";
+console.log("Olá, " + nome + "!"); 
+
+let x = 10;
+let y = 20;
+console.log("O resultado de x + y é " + (x + y));
+```
+
+Embora essas alternativas possam ser usadas, a interpolação de strings tende a ser mais fácil de ler, especialmente quando se trabalha com múltiplas variáveis.
+
+## Veja Também
+
+Para um entendimento mais profundo da interpolação de strings em TypeScript, consulte os links abaixo:
+
+- Documentação oficial do TypeScript sobre [Template Strings](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- Artigo do Mozilla sobre [Literal de modelo](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Template_literals)

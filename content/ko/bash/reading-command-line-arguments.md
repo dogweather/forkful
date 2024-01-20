@@ -1,7 +1,7 @@
 ---
-title:                "명령 줄 인수 읽기"
-html_title:           "Bash: 명령 줄 인수 읽기"
-simple_title:         "명령 줄 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,25 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜?:
-커맨드라인 인자를 읽는 것은 프로그래머가 사용자로부터 입력받은 데이터를 읽어오는 것을 말합니다. 이를 통해 우리는 프로그램을 실행할때 다양한 입력 값을 전달할 수 있습니다. 그리고 이러한 기능은 사용자의 요구에 맞는 커스터마이징된 프로그램을 만드는 데에 도움이 됩니다.
+## 무엇이며 왜 사용하는가?
 
-## 하우 투:
+명령 줄 인자 읽기는 스크립트 실행 시 사용자로부터 추가적인 정보를 전달하는 방법입니다. 이를 통해 프로그램의 동작을 유동적으로 조절할 수 있습니다.
+
+## 어떻게 사용하는가?
+
+아래는 Bash에서 명령 줄 인자를 읽는 방법에 대한 예제 코드입니다.
+
 ```Bash
-echo "Hello $1!"
+#!/bin/bash
+echo "첫 번째 인자: $1"
+echo "두 번째 인자: $2"
 ```
-위 코드는 "Hello" 다음에 오는 첫 번째 인자를 받아서 출력하는 예제입니다. 예를 들어, "bash example.sh world"를 실행하면 "Hello world!"라는 결과가 나옵니다.
+이 스크립트를 실행하면 첫 번째와 두 번째 입력 인자가 각각 출력됩니다. 예를 들어, `./myscript.sh Hello World` 명령어를 실행하면 아래와 같은 출력을 볼 수 있습니다.
 
 ```Bash
-echo "The sum of $1 and $2 is $(($1+$2))"
+첫 번째 인자: Hello
+두 번째 인자: World
 ```
-이 코드는 첫 번째와 두 번째 인자를 받아서 그 값을 더한 후 출력하는 예제입니다. 예를 들어, "bash example.sh 3 5"를 실행하면 "The sum of 3 and 5 is 8"라는 결과가 나옵니다.
+## 깊게 알아보기
 
-## 깊이 들어가보기:
-커맨드라인 인자를 읽는 것은 일반적으로 C언어나 자바를 비롯한 다양한 프로그래밍 언어에서 가능합니다. 이는 입력값을 전달하는 간편한 방법이기 때문에 매우 흔한 기능입니다. 그러나 이 방법보다 더 복잡한 입력 값 처리가 필요한 경우, 사용자가 직접 입력하는 대화형 명령어를 받는 전용 라이브러리를 사용하는 것도 가능합니다.
+**역사적 맥락:** Bash는 1989년, Brian Fox에 의해 만들어졌습니다. 이후 번들이네 와일드카드, 파일 완성 등 다양한 기능이 추가되었습니다.
 
-## 참고 자료:
-- [Bash command line arguments](https://www.tutorialspoint.com/unix_commands/bash.htm)
-- [Reading command line arguments in Bash](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html)
-- [Command line arguments in Bash scripting](https://www.shell-tips.com/bash/command-line-arguments-in-bash-scripting/)
-- [Bash scripting cheatsheet](https://devhints.io/bash)
+**대안:** Bash 외에도 Python, Ruby, Perl 등 다양한 스크립팅 언어에서 명령 줄 인자를 읽을 수 있습니다. 각 언어마다 사용자 친화적인 인터페이스를 제공하므로 개발자의 선호도에 따라 선택할 수 있습니다.
+
+**구현 세부사항:** Bash는 인자를 배열로 처리하여 접근을 용이하게 합니다. `$0`은 스크립트 이름, `$1`부터 `$n`까지는 각각의 인자를 나타냅니다. 또한, `$*` 혹은 `$@`를 사용하면 모든 인자를 한 번에 확인할 수 있습니다.
+
+## 참고자료
+
+* Bash Reference Manual: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
+* Linux Command Line Arguments Tutorial: [https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php](https://ryanstutorials.net/bash-scripting-tutorial/bash-input.php)

@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Clojure: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Elm: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,48 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Miten lukea komentoriviparametreja Clojuressa
+## Mikä ja Miksi?
 
-## Mitä & Miksi?
+Komentoriviparametrien lukeminen on prosessi, jossa ohjelmisto ottaa käyttäjän syöttämät argumentit tai parametrit suoraan käytettäviksi ohjelmassa. Tätä tehdään yleensä, koska se antaa joustavuutta ohjelman käyttöön, mahdollistaen sen, että samaa koodia voidaan käyttää eri tarkoituksiin ilman, että sitä tarvitsee uudelleenkirjoittaa.
 
-Komentoriviparametrien lukeminen tarkoittaa sitä, että ohjelma pystyy ottamaan vastaan käyttäjältä komentorivillä annettuja lisäparametreja, joita voidaan käyttää ohjelman suorittamisessa. Tällä tavoin ohjelma voidaan muokata erilaisiin tarpeisiin sopivaksi. Kehittäjät käyttävät tätä toimintoa, jotta ohjelmasta saataisiin joustavampi ja monipuolisempi.
+## Näin se tehdään:
 
-## Miten:
+Voit lukea Clojuressa komentoriviparametreja käyttämällä 'clojure.core/*command-line-args* -muuttujaa. Katsotaan esimerkkiä:
 
-Clojuressa komentoriviparametrien lukeminen on helppoa ja suoraviivaista. Voit käyttää funktiota ```clojure.core/command-line``` saadaksesi komentoriviparametreista hajautetun rakenteen. Tämän jälkeen voit käyttää normaaleja Clojure-lausujeita käsitelläksesi parametreja.
+```Clojure
+(defn -main
+  [& args]
+  (println "Tervetuloa! Tässä ovat syöttämäsi argumentit:" args))
 
-Esimerkki:
-
-```clojure
-(ns komentoriviparametrit)
-
-(let [parametrit (command-line)] ; tallennetaan parametrit muuttujaan
-    (println "Tämä ohjelma ottaa vastaan seuraavat parametrit:") ; tulostetaan viesti
-    (doseq [[parametri arvo] parametrit] ; käydään läpi parametrit yksi kerrallaan
-        (println parametri ": " arvo))) ; tulostetaan parametri ja sen arvo
-```
-
-Kun suoritat tämän esimerkin komentoriviltä, voit antaa sille erilaisia parametreja ja näet, kuinka ohjelma tulostaa ne kaikki.
-
-Esimerkkituloste:
-
-```
-$ java -jar komentoriviparametrit.jar --nimi John --ika 25
-
-Tämä ohjelma ottaa vastaan seuraavat parametrit:
---nimi : John
---ika : 25
+;; Käynnistä ohjelma komentoriviltä argumenteilla 'Hei' ja 'Maailma'
+;; Tulostaa "Tervetuloa! Tässä ovat syöttämäsi argumentit: (Hei Maailma)"
 ```
 
 ## Syvällinen sukellus:
 
-Komentoriviparametrien lukemisen historia ulottuu aina ensimmäisten tietokoneiden ajoista, kun ohjelmia suoritettiin päätermillä käyttäen käsin annettuja parametreja. Nykypäivänä suurin osa ohjelmista pystyy lukemaan komentoriviparametreja, ja Clojure ei ole poikkeus.
-
-On olemassa myös muita vaihtoehtoja kuin ```command-line```-funktio, kuten esimerkiksi kirjasto ```tools.cli```, joka tarjoaa vieläkin suuremman joustavuuden parametrien käsittelyyn.
-
-Komentoriviparametrien lukeminen Clojuressa perustuu alustariippuvaisiin tietoihin, joten tarkista Clojure-dokumentaatiosta mitä vaihtoehtoja sinulla on koneellasi saatavilla.
+Historiallisesti komentoriviparametrin lukeminen on ollut oleellinen osa komentoriviohjelmistojen suunnittelua Unix-järjestelmistä lähtien. Vaikka nykyaikaisilla ohjelmointikielillä on useita vaihtoehtoja parametrien käsittelyyn, Clojure vaalii yksinkertaisuutta ja minimalismia, ja midnightship/java käytetään. Huomaathan, että '*'clojure.core/*command-line-args**'- muuttuja on saatavilla vain ohjelmasi käynnistämisen aikana.
 
 ## Katso myös:
 
-- [Clojure-dokumentaatio](https://clojure.org/reference/repl_and_main#_command_line_arguments)
-- [tools.cli](https://github.com/clojure/tools.cli)
+- Hyvä perehdytys komentoriviparametrien lukemisen perusteisiin on saatavilla [Clojure Doc](https://clojure.org/guides/getting_started#_command_line_arguments) sivuilla.
+- Lisätietoja komentoriviparametrien käsittelystä Midnightship/javan kanssa löydät seuraavasta [linkistä](https://github.com/bhauman/lein-figwheel/wiki/Node.js-development-with-figwheel).
+- Edistyneempiä aiheita, kuten komentoriviparametrit bibliografianjaksoista, voit tutkia JUXTin [blogissa](https://juxt.pro/blog/posts/gnuplot-in-clojure.html).

@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "Fish Shell: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,20 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Interpolowanie ciągu znaków to podstawowa umiejętność, którą każdy programista powinien posiadać. Polega ono na wstawianiu zmiennych lub wyrażeń do tekstu w celu uzyskania gotowego, spersonalizowanego wyniku. Jest to często wykorzystywane w skryptach i programach, aby upewnić się, że użytkownik otrzymuje dokładnie te informacje, które są dla niego ważne.
+## Co i dlaczego?
+
+Interpolacja ciągu to sposób na wbudowanie wartości zmiennej bezpośrednio wewnątrz ciągu znaków. Programiści to robią, aby zwiększyć czytelność i elastyczność kodu, eliminując konieczność ciągłego łączenia ciągów i zmiennych.
 
 ## Jak to zrobić:
-Użycie interpolacji ciągu znaków w Fish Shell jest bardzo proste. Wystarczy umieścić symbol dolara przed nawiasem klamrowym, a w środku podać nazwę zmiennej lub wyrażenia, które chcemy wstawić. Na przykład:
-```
-Fish Shell > set imie "Anna"
-Fish Shell > echo "Witaj $imie!"
-Witaj Anna!
-```
-Kod ten spowoduje wyświetlenie tekstu "Witaj Anna!", ponieważ nazwa zmiennej "imie" zostanie wstawiona w odpowiednie miejsce.
 
-## Wnikliwe Spostrzeżenia:
-Interpolacja ciągu znaków jest wykorzystywana od dawna w różnych językach programowania, a Fish Shell nie jest tutaj wyjątkiem. W innych powłokach, takich jak Bash czy Zsh, używa się podobnych metod do uzyskania tego samego efektu. Jednak Fish Shell poprawia tę funkcjonalność, czyniąc ją prostszą i bardziej intuicyjną dzięki swojej wygodnej składni.
+```fish
+set napis "Shell"
+echo "Lubię programować w Fish $napis"
+```
+
+Dajmy output:
+
+```fish
+Lubię programować w Fish Shell
+```
+
+## Głębsze zanurzenie:
+
+1. Historyczny kontekst: Interpolacja stringów jest powszechna we wielu językach programowania, zaczynając od Perl w 1988 roku.
+
+2. Alternatywy: W Fish Shell możemy także użyć konkatenacji, ale wygląda na nieco mniej czytelne:
+
+   ```fish
+   set napis "Shell"
+   echo "Lubię programować w Fish " + $napis
+   ```
+
+3. Szczegóły implementacji: W Fish Shell, do interpolacji ciągu używamy "$" zmiennych. Pamiętaj, nie występuje on pomiędzy cudzysłowami.
 
 ## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej o interpolacji ciągu znaków w Fish Shell, możesz przeczytać dokumentację dostępną na oficjalnej stronie: https://fishshell.com/docs/current/index.html#string-expansion
+
+1. [Oficjalny dokument Fish Shell](https://fishshell.com/docs/current/index.html)
+2. ["Poradnik dotyczący interpolacji stringów w różnych językach"](https://www.digitalocean.com/community/tutorials/how-to-work-with-string-interpolation-in-ruby)

@@ -1,7 +1,7 @@
 ---
-title:                "פיענוח HTML"
-html_title:           "PowerShell: פיענוח HTML"
-simple_title:         "פיענוח HTML"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,36 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה?
+## מה ולמה?
 
-Parsing HTML הוא תהליך של קריאת קוד HTML והמרתו לנתונים ישירות. תהליך זה חשוב לתוכניות המשתמשות בנתונים מאתרי אינטרנט, כמו למשל חיפושי אינטרנט.
+פענוח HTML הוא פעולת ניתוח של קוד HTML לצורך שימוש או מטרה מסויימת. התכנתים עושים את זה כדי לקרוא, לשפר או לאחזר מידע מאתרי אינטרנט.
 
-## איך לבצע?
+## איך:
 
 ```PowerShell
-# התקנת המודול הדרוש
-Install-Module HtmlAgilityPack
+# התקנה של Invoke-WebRequest
+Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
+Install-Module -Name Invoke-WebRequest -Force
 
-# יצירת אובייקט HTML וטעינתו מאתר אינטרנט
-$html = Invoke-WebRequest -URI "www.example.com"
+# פענוח HTML עם PowerShell
+$URL = 'https://www.example.com'
+$HTML = Invoke-WebRequest -Uri $URL
+$ParsedHTML = $HTML.ParsedHtml
 
-# קריאת תוכן האתר ושמירתו במשתנה $content
-$content = $html.Content
-
-# שימוש בפונקציה המתאימה כדי למצוא את הנתונים הרצויים
-$links = $content | Select-String -Pattern '<a href="(.*?)">' -AllMatches
+$ParsedHTML.getElementsByTagName('tag_name') | foreach {$_.innerText}
+```
+פלט דוגמה:
+```PowerShell
+Element text 1
+Element text 2
+Element text 3
 ```
 
-כמו בדוגמה הנ"ל, קוד PowerShell ניתן לשימוש בכדי לטעון את קוד HTML ולמצוא את הנתונים הרצויים באמצעות שימוש בפונקציות כגון "Select-String" ו-"Regular Expressions". 
+## הצוללת המעמיקה:
 
-## חפירה מעמיקה
+### ההקשר ההיסטורי
 
-החפירה בקוד HTML היא חלק חשוב מתהליך פיתוח תוכנות. כיום, ישנם מספר מודולים וספריות פופולריים שניתן להשתמש בהם כדי לקרוא ולנתח קוד HTML בכל שפה שתבחרו. חשוב לדעת שישנם גם אפשרויות אחרות כמו לדוגמה גישת API לאתרים יחד עם גדול מופעי האתר, על מנת לקבל גישה מהירה יותר לנתונים.
+PowerShell הושקה ב-2006 כאמצעי ממוחשב לניהול ואוטומציה של משימות בעזרת סריפטים.
 
-המודול המצוין בדוגמה הנ"ל הוא האינטגרציה של HtmlAgilityPack בפקודות PowerShell בכדי לספק ממשק נוח למציאת, התייחסות ועבודה עם קוד HTML.
+### חלופות
 
-## למידע נוסף
+עוד שפות תכנות שיכולות לפענח HTML הן Python (עם BeautifulSoup) וJavaScript (עם Node.js).
 
-למידע נוסף על parsing HTML ב-PowerShell מומלץ לקרוא את המדריך המצוין באתר הרשמי של PowerShell ואת חומרי הלימוד השונים ברשת.
+### פרטים בנוגע ליישום
 
-שימושים נוספים של קוד PowerShell כוללים יכולת ליצור סקריפטים מתוחכמים יותר ולתפעול על מכשירים מרוחקים. למתחילים, כדאי להתחיל עם הקורס המקוון הנ"ל - https://www.youtube.com/watch?v=KA9pzla8JWE.
+הפקודה `Invoke-WebRequest` משתמשת ב-object מסוג HTMLDocument של MSHTML - COM object של Microsoft המספק את אפשרות הפענוח.
+
+## ראה גם:
+
+- [Invoke-WebRequest official documentation](https://docs.microsoft.com/he-il/powershell/scripting/learn/deep-dives/everything-about-html-parsing?view=powershell-7.1)
+- [HTML parsing in Python](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [HTML parsing in Node.js](https://cheerio.js.org/)

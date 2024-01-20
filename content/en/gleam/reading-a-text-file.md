@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Gleam recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,30 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading text files is a common task for programmers. It involves reading text data from a file, which can then be processed or manipulated within a program. Programmers often need to read text files to access large amounts of data, such as log files or configuration files, for their applications.
+Reading a text file is the act of extracting content from a file stored in a text format. Programmers do this for a multitude of reasons like analyzing data, checking logs, or using configuration values that need to be read at runtime.
 
-## How to:
+## How To:
 
-Reading a text file in Gleam is straightforward. First, we need to import the standard library module `gleam/io` which provides functions for working with files. Then, we can use the `read_file` function to read the contents of a file and store it in a string variable. Let's see an example:
+Reading files in Gleam is done using the built-in `file` module's 'read' function. Here's how it's done:
 
 ```Gleam
-import gleam/io
+import gleam/ok
+import gleam/file.{Error}
 
-let file_contents = read_file("my_file.txt")
 
-_ = println(file_contents)
+pub fn read_my_file() {
+ ok.with(file.read("path_to/my_file.txt")) 
+ |> result.or_else(|e| case e {
+   Error.NotFound -> Ok("> File not found")
+   _ -> Ok("> Unexpected error") 
+ })
+}
 ```
 
-Running this code will print the contents of the file `my_file.txt` to the console. We can also specify an encoding while reading the file, for example, `read_file("my_file.txt", "UTF-8")`.
+Let's test it:
+
+```Gleam
+read_my_file() == Ok("> File content here...")
+```
 
 ## Deep Dive
 
-Reading text files has been a fundamental task for programmers since the early days of computing. In the past, the process was more complex as different operating systems had their own file formats and encodings. However, with the advent of standardized encoding formats like ASCII and UTF-8, reading text files has become much simpler and more consistent across different systems.
+Historically, file I/O was not a trivial task and many programming languages make it complex. Gleam simplifies this process, making it straightforward and easy to handle errors.
 
-There are alternatives to reading text files, such as using databases or storing data in specialized formats. However, reading from text files is still a common approach, especially for simpler projects or when working with legacy systems.
+Alternatives to reading a text file in Gleam include using other languages like Erlang or Elixir which run on the BEAM, the same runtime system as Gleam, but it's noteworthy that Gleam offers stronger type safety.
 
-When reading a text file, it is important to consider the encoding in which the file was saved. This can affect the accuracy of the data and how it is interpreted by the program. Gleam's `read_file` function allows for specifying the encoding to ensure that the data is correctly read.
+Implementation-wise, Gleam's `file.read` function uses the underlying file reading functionality provided by Erlang. This encapsulates the complexity and provides a user-friendly, type-safe method of reading files.
 
 ## See Also
 
-For more information on reading text files in Gleam, you can refer to the official Gleam documentation on file I/O: https://gleam.run/book/tour/files. Additionally, you can also check out the `gleam/io` module's source code for a deeper understanding of the implementation details: https://github.com/gleam-lang/gleam_stdlib/blob/main/gleam/src/io.gleam.
+1. [Gleam's file module documentation](https://hexdocs.pm/gleam_stdlib/gleam/file/read/1)
+2. [Gleam - Getting started guide](https://gleam.run/getting-started/)
+3. [Elixir - File docs](https://hexdocs.pm/elixir/File.html)
+4. [Erlang - File docs](http://erlang.org/doc/man/file.html)
+5. [File I/O in BEAM languages](https://fazibear.me/elixir-erlang-io-performance/)

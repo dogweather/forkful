@@ -1,7 +1,7 @@
 ---
-title:                "Jämförande av två datum"
-html_title:           "Arduino: Jämförande av två datum"
-simple_title:         "Jämförande av två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,48 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att jämföra två datum är en process som används för att avgöra vilket av två givna datum som är senare eller tidigare. Detta kan vara användbart för programmerare när man behöver sortera eller filtrera data baserat på datum. Det är ett vanligt förekommande problem inom programmering och kan lösas på olika sätt beroende på språk och plattform.
+Jämförelse av två datum är en funktion där man ser om ett datum kommer före, efter eller är samma som ett annat datum. Programmerare använder det för att skapa logik där tidsförlopp är viktigt, som kalenderappar.
 
-## Så här:
-Det finns flera sätt att jämföra två datum i Arduino, men ett vanligt sätt är att använda funktionen ```time_t difftime(time_t t1, time_t t2)```. Detta returnerar antalet sekunder mellan de två givna tidpunkterna. Nedan följer ett exempel på hur du kan använda denna funktion för att jämföra två datum och utskriva resultatet i seriell monitor.
+## Hur Kan Man:
+Här är ett exempel på hur du jämför två datum i Arduino:
 
-```
-#include <Time.h>
-#include <TimeLib.h>
+```Arduino
+// Definiera två datum
+int year1 = 2022, month1 = 5, day1 = 20;
+int year2 = 2022, month2 = 5, day2 = 21;
 
-void setup(){
-  Serial.begin(9600);
-  time_t date1 = now(); //hämtar nuvarande datum
-  time_t date2 = date1 + (24*60*60); //lägger till en dag till date1 
-  //omvandlar sekunder till datum
-  Serial.print("Datum 1: ");
-  Serial.println(asctime(localtime(&date1)));
-  Serial.print("Datum 2: ");
-  Serial.println(asctime(localtime(&date2)));
-  Serial.print("Skillnaden i sekunder: ");
-  Serial.println(difftime(date2, date1)); //jämför de två datum och skriver ut resultatet
+if(year1 < year2){ 
+  Serial.println("Det första datumet är tidigare");
 }
-
-void loop(){
-  //ingen kod behövs för det här exemplet
+else if (year1 > year2){
+  Serial.println("Det andra datumet är tidigare");
+}
+else { // Samma år
+  if(month1 < month2){
+     Serial.println("Det första datumet är tidigare");
+  }
+  else if(month1 > month2){ 
+    Serial.println("Det andra datumet är tidigare");
+  }
+  else { // Samma månad
+    if(day1 < day2){
+      Serial.println("Det första datumet är tidigare");
+    }
+    else if(day1 > day2){ 
+      Serial.println("Det andra datumet är tidigare");
+    }
+    else{
+      Serial.println("Datumen är samma");
+    }
+  }
 }
 ```
 
-När du laddar upp koden till ditt Arduino-kort och öppnar seriell monitor, kommer du se följande output:
+Utskriften blir: `Det första datumet är tidigare`
 
-```
-Datum 1: Tue Dec 08 12:00:00 2020
-Datum 2: Wed Dec 09 12:00:00 2020
-Skillnaden i minuter: 86400
-```
+## Djupdykning
+Arduino är inte känt för sin datumanvändning, då mycket av dess applikationer ligger utanför traditionell dators datahantering. De ovannämnda kodstyckena är enkla och funktionaliteten är inbyggd. Men det finns också bibliotek, till exempel TimeLib, som kan hantera mycket av tids- och dataknepigheterna för dig. 
 
-## Djupdykning:
-Att jämföra två datum är ett vanligt förekommande problem inom programmering, och därför finns det många olika metoder och funktioner för att lösa det. En annan vanlig metod är att använda tidsstämplar, som är en numerisk representation av datum och tid. Det finns också bibliotek som kan göra mer avancerade jämförelser, som att kolla om ett datum kommer före, efter eller är samma som ett annat.
+Det finns många sätt att jämföra datum på. Du kan konvertera båda till UNIX-tidsstämplar och jämföra heltalen, eller så kan du använda specifika bibliotek som kan jämföra datumen för dig.
 
-Det är också viktigt att vara uppmärksam på tidszoner och sommartid, som kan påverka resultatet av jämförelsen. Se till att ha korrekta inställningar för detta innan du utför din jämförelse.
+Detaljer: Arduino lagrar inte datatyperna `date` eller `time` prydligt, så du kan förvänta dig att lagra varje komponent av ett datum (år, månad, dag) som en heltalsvariabel. Jämförelse sker sedan på vanlig sätt med selection (`if`) statements.
 
-## Se även:
-- Arduino Time Library: https://www.arduino.cc/reference/en/libraries/time/
-- Arduino Date and Time functions: https://www.arduino.cc/en/Tutorial/BuiltInExamples/Time
-- Time and Date Functions for Arduino: https://playground.arduino.cc/Code/Time/
-- Time Comparison in Arduino: https://forum.arduino.cc/index.php?topic=394654.0
+## Se Även
+Det finns några källor för mer information om jämförelse av datum i Arduino:
+
+1. [Arduino documentation](https://arduino.cc)
+2. [TimeLib Library](https://github.com/PaulStoffregen/Time)
+3. [A detailed guide on Arduino Time technique](https://www.makerguides.com)

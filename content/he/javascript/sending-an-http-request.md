@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Javascript: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,37 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-שליחת בקשת HTTP היא פעולה חשובה בתכנות ומשמשת לשליחת דרישה לשרת כדי לקבל תגובה בחזרה. זהו עבודה נפוצה בתכנות והיא מאפשרת לנו לקבל נתונים מהשרת המארח את האתר או האפליקציה שלנו.
+שליחת בקשת HTTP היא התרחיש בו מנגנון או יישום יוצרים בקשה אל שרת בשרת עבור מרכיב של מידע, ערך או תוכנה. מתכנתים שולחים בקשות HTTP כדי ליצור דיאלוג דינמי עם יישום דינמי שנמצא על שרת.
 
-## כיצד לעשות זאת:
+## איך לבצע:
 
-- על מנת לשלוח בקשת HTTP ב-Javascript, ניתן להשתמש בפונקציות כמו fetch() או XMLHttpRequest().
+הנה דוגמה לשליחת בקשת HTTP באמצעות Javascript, באמצעות אובייקט XMLHttpRequest:
 
-- לדוגמה, כדי לשלוח בקשה GET לכתובת URL ספציפית, ניתן להשתמש במשתנה fetch() ולעצור את התוצאה ב-mid1 בעזרת הפקודה .then():
-
-```javascript
-fetch('https://www.example.com') 
-  .then(mid1 => {
-    // ניתן לגשת לתוצאה כאן
-  })
+```Javascript 
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'https://api.example.com/data', true);
+xhr.onreadystatechange = function () {
+  if (xhr.readyState == 4 && xhr.status == 200)
+    console.log(JSON.parse(xhr.responseText));
+}
+xhr.send();
 ```
 
-- כתוצאה מהבקשה, ניתן לקבל נתונים כמו טקסט, JSON, מידע גרפי ועוד.
+בדוגמה זו, אנו שולחים בקשה "GET" אל 'https://api.example.com/data'. 
 
-## חקירה עמוקה:
+אם הבקשה מתבצעת בהצלחה (כלומר, אם הקוד החזרה ב-200 והבקשה הושלמה), אנו מחזירים את התגובה כאובייקט JSON.
 
-- השליחת בקשת HTTP נעשתה בדרך כלל עם מטרה לפנות לשרת כדי לקבל תוצאה או לבצע פעולה. מטרת הנגישות העם עולמנו החברתי גנראטיבי עקב הצורך בשליחת דרישות בן החורף.
+## שיעור עמוק:
 
-- ישנן אלטרנטיבות לשליחת בקשת HTTP, כמו להשתמש בספריות כמו axios ו- Request במקום להשתמש בפונקציות המובנות.
+מאז שוליים המאה ה-20, בקשות HTTP היו חלק מהאינטרנט. ההיסטוריה הארוכה שלהן הביאה למספר אלטרנטיבות (כמו fetch API, jQuery AJAX, Axios) שמציעות לעתים קרובות קוד מרוכז יותר.
 
-- מימוש מסוים של שליחת HTTP נעשה על ידי שימוש ב- XMLHttpRequest() ביחד עם טכנולוגיות כמו AJAX, שמאפשר לנו לשלוח בקשות לשרת ברקע ולקבל נתונים בזמן אמת.
+כאשר אנו שולחים בקשת HTTP, אנו מתארים את סוג הבקשה (POST, GET, PUT, DELETE, וכו'), את הכתובת (URL), ונתונים נוספים.
 
-## ראה גם:
+זכור שבקשות HTTP הן לא מוגנות מבחינת הפרטיות, ותמיד תלך למשתמש דרך שרת, אז לא היידה לשם מידע שאתה לא רוצה שנמסר.
 
-כדי ללמוד עוד על שליחת HTTP ב-Javascript ניתן לבדוק את המקורות הבאים:
+## ראו גם:
 
-- התיעוד הרשמי של fetch() ו- XMLHttpRequest() באתר MDN.
-
-- ספריות פופולריות כמו axios ו- Request שמאפשרות לנו לבצע שלל פעולות קשורות לשליחת בקשת HTTP.
-
-- מדריכים מקוונים וסרטוני הדרכה שמסבירים כיצד לשלוח בקשת HTTP ב-Javascript כמו לעשות בתרחישים שונים.
+- [HTTP | MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [XMLHttpRequest | MDN](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
+- [Fetch API | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

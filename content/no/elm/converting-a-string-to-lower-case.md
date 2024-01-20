@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en streng til små bokstaver"
-html_title:           "Elm: Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
 simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
+## Hva & Hvorfor?
 
-Konvertering av en tekststreng til små bokstaver er en vanlig handling som utføres av programmører for å behandle og sammenligne tekst på en mer enhetlig måte. Dette kan være nyttig når man ønsker å sammenligne to tekster, uavhengig av om de er skrevet med store eller små bokstaver.
+Å konvertere en streng til lavere tilfelle (lowercase) innebærer å endre alle bokstavene i strengen til små bokstaver. Dette er ypperlig for å unngå feil ved sammeligning av strenger, siden "Elm" og "elm" behandles som forskjellige verdier uten konvertering.
 
 ## Hvordan:
 
-Elm har en innebygd funksjon som heter `String.toLower`, som kan brukes til å konvertere en tekststreng til små bokstaver. Se på følgende eksempel:
+Her er en enkel måte å gjøre dette på i Elm:
 
 ```Elm
-tekst = "ELM ER AWESOME"
-konvertertTekst = String.toLower tekst
+import String
 
--- Output:
-konvertertTekst = "elm er awesome"
+lowercaseString : String -> String
+lowercaseString str =
+    String.toLower str
 ```
 
-I dette tilfellet er teksten "ELM ER AWESOME" konvertert til små bokstaver ved hjelp av `String.toLower`-funksjonen. Dette gjør det enklere å sammenligne teksten med andre tekststrenger som kanskje er skrevet med ulike bruk av store og små bokstaver.
-
-En annen måte å konvertere en tekststreng til små bokstaver på, er ved å bruke `String.map`-funksjonen. Dette involverer å gå gjennom hver enkelt bokstav i tekststrengen og forandre den til en liten bokstav ved hjelp av `Char.toLower`-funksjonen. Se på følgende eksempel:
+Hvis du har strengen "ELM", vil output være "elm".
 
 ```Elm
-tekst = "ELM ER AWESOME"
-konvertertTekst = String.fromList (List.map Char.toLower (String.toList tekst))
-
--- Output:
-konvertertTekst = "elm er awesome"
+lowercaseString "ELM"
+"elm"
 ```
 
-Begge disse metodene gir det samme resultatet, men ved å bruke `String.toLower`-funksjonen kan man oppnå dette med færre linjer kode.
+## Dypdykk:
 
-## Dykk dypere:
+- **Historisk kontekst:** Det har alltid vært behov for å konvertere strenger til lavere tilfelle i programmering. Funnet i mange språk som JavaScript, Java, Python og nå Elm.
+- **Alternativer:** Du kan skrive din egen funksjon for å konvertere strenger til lowercase, men det er mer effektivt og mindre feilutsatt å bruke innebygde funksjoner som `String.toLower`.
+- **Implementeringsdetaljer:** `String.toLower` i Elm utfører ikke bare en enkel ASCII konvertering. Den tar hensyn til unicodetegn i strengen og utfører dermed en full unicode-til-lavere-tilfelle-konvertering.
 
-Konvertering av tekst til små bokstaver er en vanlig operasjon innenfor programmering, og er tilgjengelig i de fleste programmeringsspråk. Det gjør det lettere å håndtere tekster på en konsistent måte og å sammenligne dem uavhengig av bruken av store og små bokstaver.
+## Se Også:
 
-I tillegg til å bruke `String.toLower`-funksjonen eller `String.map`-funksjonen, kan man også bruke `String.toUpper`-funksjonen for å konvertere en tekst til store bokstaver. 
-
-## Se også:
-
-- Offisiell Dokumentasjon for `String`-modulen i Elm: https://package.elm-lang.org/packages/elm/core/latest/String
+For mer informasjon om strenger i Elm, sjekk ut [String - Elm Documentation](https://package.elm-lang.org/packages/elm/core/latest/String) for mer detaljert forklaring. Du kan også finne flere eksempler og brukstilfeller for `String.toLower` på [Learn Elm: String.toLower](https://www.learn-elm.org/exercise/Strings).

@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "Haskell: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Imprimindo saída de debug"
+html_title:           "C#: Imprimindo saída de debug"
+simple_title:         "Imprimindo saída de debug"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,49 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por quê?
+## O quê & Por quê?
 
-Impressão de saída de depuração é o processo de mostrar mensagens, variáveis ​​e outros dados durante a execução de um programa. Os programadores fazem isso para verificar o estado do programa e detectar possíveis erros.
+Imprimir a saída de depuração é um meio pelo qual os programadores rastreiam e corrigem problemas em seu código. Esse processo auxilia na identificação de partes específicas do código que não funcionam conforme o esperado.
 
 ## Como fazer:
 
-```
--- Exemplo 1:
-debug :: String -> IO ()
-debug msg = putStrLn ("DEBUG: " ++ msg)
+Aqui está um pequeno exemplo de como imprimir a saída de depuração em Haskell com a função `debug`.
 
-main :: IO ()
-main = do
-  let x = 5
-  debug ("O valor de x é " ++ show x)
-  putStrLn ("O dobro de x é " ++ show (x*2))
-
--- Saída:
-DEBUG: O valor de x é 5
-O dobro de x é 10
-
--- Exemplo 2:
+```Haskell
 import Debug.Trace
 
-main :: IO ()
-main = do
-  let list = [1,2,3,4,5]
-  debug ("A lista original é " ++ show list)
-  let newList = trace "Mapeando a lista..." (map (+1) list)
-  debug ("A nova lista é " ++ show newList)
+main = print $ debug "Valor de x :" (2+2)
 
--- Saída:
-DEBUG: A lista original é [1,2,3,4,5]
-Mapeando a lista...
-DEBUG: A nova lista é [2,3,4,5,6]
+debug msg v = trace (msg ++ " " ++ show v) v
 ```
 
-## Deep Dive:
+Neste exemplo, estamos importando a função `trace` do módulo `Debug.Trace` e criando uma função denominada `debug` que toma uma mensagem e um valor. Concatena a mensagem com o valor e o imprime na saída.
 
-A impressão de saída de depuração tem sido usada por muito tempo pelos programadores como uma maneira rápida e fácil de verificar o estado de um programa durante a execução. No entanto, em casos mais complexos, pode ser necessário utilizar uma ferramenta de depuração mais avançada. Algumas alternativas populares incluem o GHCi e o GNU Debugger (GDB). Além disso, é importante ter cuidado ao utilizar a impressão de saída de depuração em código de produção, pois pode prejudicar o desempenho da aplicação.
+## Aprofundando
+
+Imprimir a saída de depuração é prática comum na programação desde os primeiros dias do desenvolvimento de software. Enquanto em Haskell, tendemos a evitar efeitos colaterais e manter a pureza funcional, existem certos módulos como `Debug.Trace` que fornecem funcionalidades imperativas, como imprimir para a saída padrão, o que nos ajuda na depuração da mesma maneira que em outras linguagens imperativas.
+
+Existem alternativas à função `trace`. Outras funções como `traceShow`, `traceShowId ` e `traceShowM` são variações da função `trace` que podem ser usadas dependendo das necessidades específicas.
+
+A função `trace` funciona enviando mensagens de debug para a saída de erro padrão (stderr), e não para a saída padrão (stdout). É importante ter isso em mente ao depurar programas em Haskell.
 
 ## Veja também:
 
-- [Documentação oficial do GHC](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Tutorial de depuração em GHCi](https://www.fpcomplete.com/blog/step-by-step-guide-to-debugging-haskell-in-ghci)
-- [Tutorial de depuração com GDB](https://www.tutorialspoint.com/haskell/haskell_debugging.htm)
+Além do `Debug.Trace`, existem outros pacotes disponíveis para depuração em Haskell. Um deles é o `Debug.SimpleReflect` que fornece funções para 'visualizar' expressões. Você pode encontrar mais informações sobre este pacote na [documentação do Hackage](https://hackage.haskell.org/package/simple-reflect).
+
+Outra ótima ferramenta para ajudar na depuração de programas Haskell é o GHCi, o ambiente interativo do GHC. Informações mais detalhadas sobre como usar o GHCi para depuração podem ser encontradas na [documentação do GHC](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/ghci.html#ghci-debug).

@@ -1,7 +1,7 @@
 ---
-title:                "Leser kommandolinjeargumenter"
-html_title:           "C#: Leser kommandolinjeargumenter"
-simple_title:         "Leser kommandolinjeargumenter"
+title:                "Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
+simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Kommandolinje argumenter lesing er når et program mottar og behandler parameterne som brukes for å kjøre det fra kommandolinjen. Dette er nyttig fordi det lar programmene være mer fleksible og brukervennlige, og tillater brukerne å tilpasse hvordan programmet kjører ved å gi forskjellige argumenter.
+## Hva og hvorfor?
+
+Kommandolinjeargumenter er parametere som sendes til programmet ved oppstart. Disse lar en bruker påvirke hvordan programmet fungerer uten å endre koden, noe som er spesielt hensiktsmessig for programmer med varierte funksjoner og innstillinger.
 
 ## Hvordan:
-```C#
-using System;
 
-class Program
+Reglene er enkle. I C# mottas kommandolinjeargumenter gjennom et argument til Main()-funksjonen, vanligvis kalt 'args'. La oss gjøre et eksempel:
+
+```C# 
+static void Main(string[] args)
 {
-	static void Main(string[] args)
-	{
-		Console.WriteLine("Hei, " + args[0] + "!"); // For eksempel, hvis "Hei, verden!" er skrevet på kommandolinjen, vil utskriften være "Hei, verden!" 
-	}
+    for (int i = 0; i < args.Length; i++)
+    {
+        Console.WriteLine($"Argument {i}: {args[i]}");
+    }
 }
-
-// Kommandolinjen argumenter kan også være numeriske verdier, og kan brukes for å utføre forskjellige handlinger i programmet basert på disse verdiene.
 ```
 
-## Dykk dypere:
-Kommandolinje argumenter lesing har eksistert siden starten av operativsystemer, og er fortsatt en svært vanlig praksis i utviklingen av programmer. En alternativ måte å få inndata til et program på er ved å bruke standardinndata, men dette kan være mindre fleksibelt enn å lese kommandolinjen argumenter. I C#, er det flere biblioteker og metoder som kan brukes til å forenkle lesingen av argumentene, for eksempel Environment.GetCommandLineArgs() metoden.
+I dette eksempelet vil programmet skrive ut hvert kommandolinjeargument på en ny linje. Hvis du kjører programmet med argumentene 'Hello', 'World', vil du se:
+
+``` 
+Argument 0: Hello
+Argument 1: World
+```
+
+## Dypere dykk:
+
+Historien til kommandolinjeargumenter strekker seg tilbake til de eldste dagene for programmering. Selv om moderne grafiske grensesnitt nå dominerer, er kommandolinjeparametere fortsatt et kraftig verktøy.
+
+Alternativt, hvis du trenger en mer avansert behandling av kommandolinjeargumenter som flagg eller nøkkel/verdi-par, kan du vurdere å bruke et bibliotek som `CommandLineParser`.
+
+Implementeringsdetaljer er ganske rett frem. Kommandolinjeargumenter sendes som en serie strenger, der hvert argument er adskilt av et mellomrom. Hvis et argument skal inneholde et mellomrom, må det omsluttes med anførselstegn.
 
 ## Se også:
-- [Microsofts dokumnetasjon for kommandolinje argumenter i C#](https://docs.microsoft.com/en-us/dotnet/api/system.environment.getcommandlineargs?view=netframework-4.8)
-- [En guide for å lese kommandolinje argumenter i forskjellige programmeringsspråk](https://www.mysysadmintips.com/windows/other/524-get-command-line-arguments-in-c-cpython-and-ruby)
+
+* Microsoft C# Programmering Guide: https://docs.microsoft.com/en-us/dotnet/csharp/
+* CommandLineParser bibliotek: https://github.com/commandlineparser/commandline

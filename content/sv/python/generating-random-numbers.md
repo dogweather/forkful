@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga nummer"
-html_title:           "Python: Generering av slumpmässiga nummer"
-simple_title:         "Generering av slumpmässiga nummer"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Numbers"
@@ -10,25 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
-Att generera slumpmässiga nummer är en viktig del av programmering, och det handlar helt enkelt om att skapa nummer som inte följer ett förutbestämt mönster eller regel. Programrerare använder slumpmässiga nummer för att skapa variation och realistiska simuleringar, samt för att öka säkerheten i kryptering och spelapplikationer.
+## Vad & Varför?
+Att generera slumpmässiga nummer innebär att skapa nummer som inte är förutsägbara och inte heller följer någon känd mönster. Programmerare gör det för att lägga till slumpmässighet i deras program, vilket är användbart för allt från spel till säkerhetsprotokoll.
 
-## Hur gör man:
-Här är ett enkelt exempel på hur man kan använda sig av den inbyggda funktionen "random" i Python för att generera ett slumpmässigt heltal mellan 1 och 10:
+## Så här gör du:
+Python erbjuder `random` modulen för att generera slumpmässiga nummer. Se nedanstående exempel:
 
 ```Python
 import random
-num = random.randint(1, 10)
-print(num)
+
+print(random.randint(1, 100))  # Skriver ut ett slumpmässigt heltal mellan 1 och 100.
 ```
+När du kör koden ovan kan utfallet ändras varje gång, vilket är tecknet på ett slumpmässigt nummer.
 
-Den här kodraden kommer att producera ett slumpmässigt heltal varje gång den körs, vilket kan vara användbart för att skapa variation i spel eller simuleringar.
+## Djupdykning
+iPython:s `random` modul lanserades i mitten på 90-talet. Innan dess var de vanligaste sätten att generera slumpmässiga nummer att använda tidsstämplar eller hårdvaruinmatningar.
 
-## Djupdykning:
-Slumpmässiga nummer har använts inom matematiken under lång tid, men det var först på 1900-talet som man började utveckla datorprogram för att skapa dem. En alternativ metod för att generera slumpmässiga nummer är att använda sig av "pseudoslump", vilket skapar mönsterade nummer genom en matematisk beräkning. Dock är dessa nummer inte helt slumpmässiga utan följer en viss ordning.
+Alternativt till `random` finns andra Python-moduler som `numpy.random` eller `secrets`, beroende på dina behov. Exempelvis` secrets` är mer inriktat på kryptografisk säkerhet.
 
-I Python använder man sig av en algoritm kallad "Mersenne Twister" för att skapa slumpmässiga nummer. Denna algoritm är väldigt effektiv och genererar högkvalitativa slumpmässiga nummer med få upprepningar.
+När det gäller att generera slumpmässiga nummer, är det viktigt att notera entropi och seeds. "Seeds” används för att inleda en rad av slumpmässiga nummer och entropi hänvisar till osäkerhetsmängden eller slumpmässigheten.
 
-## Se också:
-- [Dokumentation för "random" i Python](https://docs.python.org/3/library/random.html)
-- [Artikel om pseudoslump i Wall Street Journal (engelska)](https://www.wsj.com/articles/the-pseudo-random-method-in-computer-science-analogous-to-modernism-1423813258)
+## Se också
+För mer information om Python:s `random` modul, se [Random - Generating random numbers](https://docs.python.org/3/library/random.html). För att lära dig mer om alternativ till `random` modulen, se [numpy.random](https://numpy.org/doc/stable/reference/random/index.html) och [secrets](https://docs.python.org/3/library/secrets.html).

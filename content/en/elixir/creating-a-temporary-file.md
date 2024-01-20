@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "Elixir recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,34 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Temporary files are temporary files created by programmers to store data temporarily during the execution of a program. These files are used to store data that is only needed for a short period of time and can be discarded once the program is finished.
+Creating a temporary file involves generating a file that is only needed for a limited period, typically for an ongoing process or session. Programmers create these files to provision writable space for temporary data, preserve system memory, and prevent potential data losses during a recalculation or rerunning process.
 
 ## How to:
 
-To create a temporary file in Elixir, we can use the [File] module's [open!] function. This function takes in a file path as a parameter and returns a tuple containing the file's handle and a temporary file path. The temporary file will automatically be deleted once the file handle is closed. 
+In Elixir, you can create a temporary file using Erlang's `:file` module. Here's how to create such a file and write content to it:
 
-Sample code:
-
-```Elixir
-{file_handle, temp_file_path} = File.open!( "my_temp_file.txt" )
-File.write!(file_handle, "This is a temporary file created using Elixir!")
-File.close(file_handle)
+```elixir
+{:ok, file} = :file.mktemp() # Creates a temporary file
+:file.write(file, "Temporary file content") # Writes to the file
 ```
 
-Sample output:
+And you can read content from the file like this:
 
-No output will be printed, but the temporary file "my_temp_file.txt" will be created in the current directory and will contain the text "This is a temporary file created using Elixir!".
+```elixir
+{:ok, content} = :file.read_file(file) # Reads content from the file
+IO.puts(content) # Outputs the content
+```
 
-## Deep Dive:
+This will output:
 
-Temporary files have been a common practice in programming for a long time. They are commonly used for situations where data needs to be stored temporarily, such as caching, logging, or file transfers. 
+```elixir
+"Temporary file content"
+```
 
-An alternative to creating a temporary file is to use in-memory data structures such as Maps or Lists, which are faster but have limited capacity. Another alternative is to utilize a database, although this may introduce unnecessary complexity and potential performance issues.
+## Deep Dive
 
-The [File] module in Elixir handles the creation and management of temporary files. It uses the underlying OS's file system to create and delete temporary files. Additionally, the [Path] module can be used to manipulate file paths if needed.
+Historically, temporary files provide an efficient way to store auxiliary data that doesn't need to permanently exist. They were especially important in older systems with limited memory resources. 
 
-## See Also:
+Elixir doesn't have a native method for generating temporary files, thus we use Erlang's `:file.mktemp()`. However, there are alternative approaches. For example, you might manually create a new file in the system's temporary directory.
 
-- [File Module](https://hexdocs.pm/elixir/File.html)
-- [Path Module](https://hexdocs.pm/elixir/Path.html)
-- [Temporary Files in Programming](https://www.baeldung.com/java-temporary-files)
+Implementation-wise, `:file.mktemp()` creates the file with a unique name in the temporary directory (usually `/tmp` on Unix or Linux systems). The default permissions set the file to read-write for the current user, and no permissions for others.
+
+Lastly, remember to delete the file when you're done. You can do this with `:file.delete(file)`.
+
+## See Also
+
+For more details, refer to Erlang's documentation on the `:file` module. 
+
+1. ["Erlang's :file module documentation"](http://erlang.org/doc/man/file.html)
+2. ["How to create a temporary file in Elixir?" StackOverflow Discussion ](https://stackoverflow.com/questions/43367559/how-to-create-a-temporary-file-in-elixir)
+3. ["Working with files and IO"](https://elixir-lang.org/getting-started/io-and-the-file-system.html) in Elixir's Getting Started guide.

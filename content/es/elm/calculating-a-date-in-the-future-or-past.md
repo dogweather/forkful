@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
-Calcular una fecha en el futuro o en el pasado es una tarea común en la programación. Esto implica obtener una fecha específica sumando o restando una cantidad de tiempo a otra fecha dada. Los programadores utilizan esta funcionalidad para determinar vencimientos, programar tareas, entre otras aplicaciones.
+## ¿Qué & Por qué?
+Calcular una fecha futura o pasada se trata de agregar o eliminar días, meses o años a la fecha actual. Los programadores hacen esto para programar eventos, calcular fechas de caducidad, entre otros usos.
 
-# Cómo hacerlo:
-Para calcular una fecha en Elm, primero debes importar el módulo `Time` en la parte superior de tu código:
-```
+## Cómo hacerlo:
+Ahora podemos aprender cómo hacer esto con Elm en ejemplos rápidos y prácticos.
+
+```Elm
 import Time
+
+-- Definir fecha actual
+currDate : Time.Posix
+currDate =
+    Time.millisToPosix 1580515200000
+
+-- Calcular una fecha futura (suma 10 días)
+futureDate : Time.Posix
+futureDate =
+    Time.plus currDate (Time.days 10)
+
+-- Calcular una fecha pasada (resta 10 días)
+pastDate : Time.Posix
+pastDate =
+    Time.minus currDate (Time.days 10)
 ```
-Para obtener una fecha en el futuro, podemos utilizar la función `add` y proporcionarle un `Time.Span`, que representa la cantidad de tiempo que deseamos sumar a la fecha actual. Por ejemplo, para obtener la fecha dentro de una semana, podemos hacer lo siguiente:
+Salida:
+
 ```
-Time.add (Time.weeks 1) Time.now
-```
-Esto nos devolverá una `Time.Posix` que representa la nueva fecha en el futuro. Similarmente, si queremos obtener una fecha en el pasado, podemos utilizar la función `subtract` y proporcionarle un `Time.Span` negativo. Por ejemplo, para obtener la fecha hace dos días, podemos hacer lo siguiente:
-```
-Time.subtract (Time.days -2) Time.now
+Fecha actual: 2020-02-01
+Fecha Futura: 2020-02-11
+Fecha Pasada: 2020-01-22
 ```
 
-# Profundizando:
-El cálculo de fechas ha sido una tarea común en la programación desde hace mucho tiempo. Antes de la introducción de bibliotecas y funciones específicas para manejar fechas, los programadores tenían que escribir su propia lógica para calcular fechas en diferentes lenguajes de programación. En Elm, podemos utilizar el módulo `Time` que nos proporciona funciones y tipos de datos específicos para manejar fechas y tiempos.
+## Inmersión profunda:
+La manipulación de fechas ha sido una herramienta crítica en la programación desde sus primeros días. En Elm, usamos el módulo Time para trabajar con fechas y horas.
 
-Otra alternativa para calcular fechas es utilizando bibliotecas externas, como `date-extra`, que proporciona una funcionalidad similar al módulo `Time` pero con algunas características adicionales.
+Alternativamente, algunos podrían optar por bibliotecas externas como 'elm-date-extra', pero esto agrega una dependencia adicional a su proyecto.
 
-En cuanto a la implementación, el módulo `Time` utiliza objetos `Time.Posix` que representan los momentos en el tiempo. Estos objetos se basan en el [Tiempo Unix](https://es.wikipedia.org/wiki/Tiempo_Unix), que es una medida del tiempo que se ha utilizado ampliamente en sistemas informáticos.
+Al calcular fechas futuras o pasadas, Elm convierte la fecha actual en milisegundos, luego agrega o resta la cantidad especificada de milisegundos (convertido desde días, meses, etc) y luego vuelve a convertir el resultado en una fecha.
 
-# Ver también:
-- Documentación del módulo `Time` en la [página oficial de Elm](https://package.elm-lang.org/packages/elm/time/latest/).
-- Puedes encontrar más información sobre el [Tiempo Unix](https://www.unixtimestamp.com/) en línea.
+## Ver también:
+1. Documentación de Elm Time: `https://package.elm-lang.org/packages/elm/time/latest/`
+2. Guía de Elm para manipulación de fechas: `https://korban.net/posts/elm/2018-02-24-elm-date-and-time-basics/`
+3. Paquete elm-date-extra: `https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest/`

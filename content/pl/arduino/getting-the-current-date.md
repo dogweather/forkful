@@ -1,7 +1,7 @@
 ---
-title:                "Uzyskiwanie bieżącej daty"
-html_title:           "Arduino: Uzyskiwanie bieżącej daty"
-simple_title:         "Uzyskiwanie bieżącej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,35 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Getting the Current Date in Arduino
-
-Często w programowaniu konieczne jest pobranie aktualnej daty i godziny. W przypadku Arduino może to być przydatne przy tworzeniu systemów zegarowych, rejestracji danych czy zarządzania czasem wykonania pewnych czynności. W tym artykule dowiesz się, jak pobrać aktualną datę w Arduino i dlaczego programiści to robią.
-
 ## Co i dlaczego?
+Pobieranie aktualnej daty to proces, który pozwala twojemu programowi na poznanie teraźniejszego dnia, miesiąca i roku. Programiści korzystają z tej funkcji, aby dodawać znaczniki czasu do danych, kontrolować zdarzenia oparte na czasie i monitorować okresy aktywności.
 
-Pobieranie aktualnej daty polega na odczytaniu informacji o dniu, miesiącu, roku i godzinie w danym momencie. Programiści wykorzystują tę funkcjonalność do śledzenia czasu, wykonywania określonych zadań w konkretnych momentach lub do rejestracji danych ze znacznikiem czasowym.
+## Jak to zrobić:
+Aby uzyskać aktualną datę w Arduino, możemy korzystać z biblioteki `TimeLib.h`. Poniżej znajduje się kod źródłowy:
 
-## Jak to zrobić?
+```Arduino
+#include <TimeLib.h>
 
-W Arduino do pobrania aktualnej daty służy funkcja ```now()``` z biblioteki Time. Można ją wykorzystać do zapisania aktualnej daty do zmiennej lub jej wyświetlenia na ekranie. Przykład użycia:
+void setup() {
+  Serial.begin(9600);
+}
 
-```arduino
-time_t currentTime = now(); // zapisanie aktualnej daty do zmiennej
-Serial.println(year(currentTime)); // wyświetlenie aktualnego roku
+void loop() {
+  time_t t = now();
+  
+  Serial.print("Dzisiaj jest: ");
+  
+  // Wyświetla dzień
+  Serial.print(day(t));
+  
+  // Wyświetla miesiąc
+  Serial.print("/");
+  Serial.print(month(t));
+  
+  // Wyświetla rok
+  Serial.print("/");
+  Serial.println(year(t));
+
+  delay(1000);
+}
 ```
+Gdy odpalisz powyższy kod, otrzymasz wynik w formacie DD/MM/RRRR, co odpowiada aktualnej dacie.
 
-Wynik będzie wyglądał podobnie do tego:
+## Szeroki kontekst
+Pobieranie aktualnej daty jest powszechne w programowaniu, ma swoje korzenie w początkach telekomunikacji, kiedy to była konieczność zapisywania nie tylko informacji, ale i czasu jej otrzymania. Istnieją różne metody na pobieranie daty, a wybór zależy od specyfikacji projektu. W Arduino możemy korzystać z funkcji RTC (Real Time Clock) lub połączyć się z serwerem NTP (Network Time Protocol) za pomocą Ethernet lub WiFi, aby uzyskać dokładniejszy czas. Głębsze szczegóły techniczne działania biblioteki `TimeLib.h` obejmują używanie unix timestamp dla reprezentacji czasu, co pozwala na łatwą konwersję i manipulację czasu.
 
-```
-2021
-```
-
-## Głębsza analiza
-
-Pobieranie aktualnej daty na Arduino jest możliwe dzięki zastosowaniu biblioteki Time, która dostarcza funkcjonalności związanych z obsługą czasu. Jest ona dostępna jako standardowa biblioteka w środowisku Arduino lub można ją pobrać z oficjalnej strony internetowej. Alternatywnie, można samodzielnie napisać funkcję do odczytu aktualnego czasu, korzystając ze zmiennych systemowych dostępnych w Arduino.
-
-## Zobacz też
-
-- [Dokumentacja bibilioteki Time w Arduino](https://www.arduino.cc/reference/en/libraries/time/)
-- [Oficjalna strona biblioteki Time](https://github.com/PaulStoffregen/Time)
-- [Przykład pobierania aktualnej daty na Arduino](https://www.circuitbasics.com/arduino-getting-current-date-time/)
+## Zobacz także
+1. Dokumentacja biblioteki `TimeLib.h`: https://github.com/PaulStoffregen/Time
+2. Alternatywne rozwiązanie z użyciem czasu rzeczywistego (RTC): https://create.arduino.cc/projecthub/MisterBotBreak/how-to-use-a-real-time-clock-module-ds3231-bc90fe
+3. Korzystanie z NTP dla uzyskania czasu przez WiFi: https://lastminuteengineers.com/esp8266-ntp-server-date-time-tutorial/

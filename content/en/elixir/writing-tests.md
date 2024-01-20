@@ -11,25 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing tests in Elixir is the process of creating automated test cases to check the functionality and correctness of your code. Programmers do this to ensure that their code works as expected and to catch any potential bugs or errors before they become larger issues.
+
+Writing tests is a coding practice that involves creating specific scenarios to check if your code behaves as expected. As programmers, we do this to verify our code's functionality, prevent bugs, and streamline debugging.
 
 ## How to:
-Writing tests in Elixir is a simple and straightforward process. First, you need to create a test file with the `.exs` extension. Within this file, you can define your test cases using the `test` macro. For example:
 
+In Elixir, we write tests using a tool named ExUnit. Let's create a small Elixir application for demonstrations. We'll write tests to confirm that a function correctly adds two numbers.
+
+1. Let's begin by initiating a new Mix project named `addition`:
+```elixir
+mix new addition
 ```
-Elixir
-test "adding 2 and 2 equals 4" do
-  result = Calculator.add(2, 2)
-  assert result == 4
+2. Now, in the `lib/addition.ex` file, define the `Addition.add` function:
+```Elixir
+defmodule Addition do
+  def add(x, y) do
+    x + y
+  end
 end
 ```
+3. Now, let's write our tests in the `test/addition_test.exs`:
+```elixir
+defmodule AdditionTest do
+  use ExUnit.Case, async: true
 
-This code block creates a test case for a `Calculator` module, where we expect the add function to return 4 when given the numbers 2 and 2. The `assert` statement checks if the result is equal to the expected value. You can run this test file using the `mix test` command and see the output of each test case.
+  test "adding positive numbers" do
+    assert Addition.add(2, 2) == 4
+  end 
 
-## Deep Dive:
-Writing tests is not a new concept in programming. It is a fundamental part of the Test Driven Development (TDD) approach, where tests are written before the actual code to guide the development process. Other alternatives to this approach include Behavior Driven Development and Acceptance Test Driven Development. Elixir provides a built-in testing framework called ExUnit, which makes writing tests even easier. You can also use external libraries like ExSpec to write more expressive and descriptive tests.
+  test "adding negative numbers" do
+    assert Addition.add(-2, -3) == -5
+  end
+end
+```
+4. Finally, run your tests with:
+```elixir
+mix test
+```
+Your tests have passed if your terminal returns:
+```elixir
+..
+Finished in 0.05 seconds
+2 tests, 0 failures
+```
 
-## See Also:
-- Official Elixir documentation for [ExUnit](https://hexdocs.pm/ex_unit/ExUnit.html)
-- [Elixir School](https://elixirschool.com/en/lessons/advanced/testing/) lesson on testing in Elixir
-- [ExSpec](https://github.com/antonmi/exspec) library for more readable tests in Elixir
+## Deep Dive
+
+This testing approach took root during the TDD (Test-Driven Development) wave in the late '90s. The concept argues for writing tests before actual code. In Elixir, alternative testing libraries like `Espec`, `ExCheck`, and `ShouldI` exist, though `ExUnit` remains the most commonly used due to its simplicity and powerful assertion capabilities. The `async: true` in the `use ExUnit.Case, async: true` line allows Elixir to run tests concurrently, significantly speeding up the testing process.
+
+## See Also
+
+- Elixir's official ExUnit documentation: [https://hexdocs.pm/ex_unit/ExUnit.html](https://hexdocs.pm/ex_unit/ExUnit.html)
+- Tutorial on Test-Driven Development (TDD) with Elixir: [https://code.tutsplus.com/tutorials/test-driven-development-in-elixir--cms-31234](https://code.tutsplus.com/tutorials/test-driven-development-in-elixir--cms-31234)
+- Comparison of Elixir testing libraries: [https://www.amberbit.com/blog/2018/9/4/comparison-of-elixir-testing-libraries/](https://www.amberbit.com/blog/2018/9/4/comparison-of-elixir-testing-libraries/)

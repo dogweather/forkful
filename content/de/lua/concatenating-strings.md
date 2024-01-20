@@ -1,7 +1,7 @@
 ---
-title:                "Zeichenfolgen zusammenfügen"
-html_title:           "Lua: Zeichenfolgen zusammenfügen"
-simple_title:         "Zeichenfolgen zusammenfügen"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,26 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das & Warum?
-Das Zusammenfügen von Zeichenketten ist ein häufig verwendetes Konzept in der Programmierung. Es bezieht sich auf das Verbinden von zwei oder mehr Zeichenketten zu einer einzigen Zeichenkette. Programmierer nutzen diese Technik, um dynamische Texte zu erstellen, die auf bestimmte Bedingungen oder Eingaben reagieren können.
+## Was & Warum?
+In der Programmierung ist das Zusammenfügen von Zeichenketten, auch als "String-Konkatenation" bekannt, ein Prozess, bei dem wir mehrere Zeichenketten zu einer einzigen Zeichenkette kombinieren. Programmierer nutzen diese Methode, um dynamische Inhalte zu erstellen oder Daten in einer für Menschen lesbaren Format auszugeben.
 
-## So geht's:
+## Wie zu:
+Lua ermöglicht das einfache Verbinden von Zeichenketten mit dem `..` Operator. Hier sehen Sie ein typisches Beispiel und sein Ausgabewert:
+
 ```Lua
--- Beispiel 1: Einfache Konkatenation
-local str1 = "Hallo"
-local str2 = "Welt"
-print(str1 .. str2) -- Ausgabe: HalloWelt
-
--- Beispiel 2: Verwendung von Variablen und Konkatenation
-local name = "Marie"
-local gruss = "Hallo, " .. name .. "! Willkommen zurück."
-print(gruss) -- Ausgabe: Hallo, Marie! Willkommen zurück.
+str1 = "Hallo"
+str2 = "Welt"
+ergebnis = str1 .. " " .. str2
+print(ergebnis)
 ```
 
-## Tiefere Einblicke:
-Um eine Zeichenkette in Lua zu verkettungen, kann der Operator ".." verwendet werden. Dieser Operator kann auch verwendet werden, um andere Datentypen wie Zahlen oder Booleans zu verketten, da Lua automatisch eine Zeichenkettenrepräsentation davon erstellt. Eine alternative Methode wäre die Verwendung der string.format-Funktion, um eine formatierte Zeichenkette zu erstellen. Bei der Konkatenation von großen Zeichenketten ist es effizienter, den Konstruktor table.concat zu verwenden.
+Ausgabe:
 
-## Siehe auch:
-- [Lua 5.4 Referenzhandbuch](https://www.lua.org/manual/5.4/)
-- [Code Academy: Python String Concatenation](https://www.codecademy.com/articles/string-concatenation)
-- [Wikipedia: Zeichenkettenverkettung](https://de.wikipedia.org/wiki/Zeichenkettenverkettung)
+```Lua
+Hallo Welt
+```
+
+## TiefTauchen
+Die String-Konkatenation war in Lua bereits seit seiner ersten Veröffentlichung im Jahr 1993 vorhanden, was die Lesbarkeit und Bedienbarkeit von Lua-Code verbessert hat. Alternativen zur Konkatenation sind die Verwendung von Formatierungsstrings oder das Aufteilen und späteres Zusammenfügen von Zeichenketten, jedoch ist die einfache Konkatenation häufig die benutzerfreundlichste Option. Unter der Haube verwendet Lua Buffer, um Zeichenketten effizient zusammenzuführen.
+
+## Siehe auch
+Die offizielle Lua-Dokumentation () bietet umfassende Infos zu Zeichenketten und ihren Manipulationen. Stack Overflow () ist ein guter Ort, um spezifischere Fragen zu stellen und Lösungen zu finden.

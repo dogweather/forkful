@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av HTML"
-html_title:           "TypeScript: Analysering av HTML"
-simple_title:         "Analysering av HTML"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Parsing av HTML er en prosess der programvare blir brukt til å analysere og tolke koden til et HTML-dokument. Dette gjøres vanligvis for å få tilgang til og manipulere innholdet i et dokument på en strukturert måte. Programmører bruker parsing for å automatisere behandlingen av store mengder data eller for å utvikle verktøy som forenkler nettutvikling.
+## Hva & Hvorfor?
+
+Å parse HTML handler om å tolke og bryte ned HTML-kode til forståelig datastruktur. Dette gjør programmerere for å hente, manipulere og analysere data fra websider på en mer effektiv måte.
 
 ## Slik gjør du det:
+
+I TypeScript kan vi bruke biblioteket `parse5` for å parse HTML. Her er et grunnleggende eksempel:
+
 ```TypeScript
-// Eksempel på kode for å parse HTML ved hjelp av et tredjepartsbibliotek som kalles "cheerio"
+import * as parse5 from 'parse5';
 
-import * as cheerio from 'cheerio';
+const html = `<body><p>Hello, verden!</p></body>`;
+const document = parse5.parse(html);
 
-// Hente og lagre HTML-koden fra et nettsted
-const html = await fetch('https://www.nettside.com');
-
-// Bruke cheerio til å laste HTML-koden og gjøre den tilgjengelig for å kunne jobbe med
-const $ = cheerio.load(html);
-
-// Eksempel på en parsing-forespørsel for å hente tittelen på en nettside
-const title = $('h1').text();
-console.log(title);
-// Resultat: Utskrift av tittel fra nettsiden vår "Min nettside"
+console.log(document.childNodes[0].nodeName); // utskrift: "#document"
 ```
 
-## Dykk dypere:
-Parsing av HTML har blitt brukt siden de tidlige dagene av Internett og er fortsatt en vanlig metode for å behandle webinnhold. I tillegg til cheerio, finnes det også andre tredjepartsbiblioteker og innebygde funksjoner i TypeScript som kan brukes til parsing, som for eksempel "DOMParser" - et innebygd API for å analysere XML og HTML-dokumenter.
+Kjøring av dette programmet vil parse `<body><p>Hello, verden!</p></body>`, og deretter skrive ut nodenavnet til den første child noda. 
+
+## Dyp dykk:
+
+Parsing av HTML har vært relevant siden webens oppstart, da det gir programmører muligheten til å interagere med internett på en strukturert måte. Tidligere metoder for parsing HTML har blant annet omfattet regulære uttrykk, men dette kan bli raskt komplisert med komplekse HTML-strukturer. TypeScript gir en mer moderne og robust løsning.
+
+Alternativer til `parse5` inkluderer biblioteker som `htmlparser2` eller `cheerio`, som har forskjellige funksjoner og prestasjonsnivåer basert på dine behov. 
+
+Når vi snakker om implementeringsdetaljer, er det viktig å merke seg at parsing ikke nødvendigvis vil gi akkurat samme resultater på tvers av forskjellige plattformer eller nettlesere. Dette er grunn til `quirks mode` og variasjoner i hvordan ulike nettlesere tolker HTML.
 
 ## Se også:
-https://cheerio.js.org/ - Offisiell nettside for cheerio biblioteket
-https://developer.mozilla.org/en-US/docs/Web/API/DOMParser - Mer informasjon om DOMParser APIet i JavaScript
+
+1. [Parse5 API Dokumentasjon](https://parse5.github.io/parse5/api.html)
+
+2. ["HTML Parsing" på MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Parser)
+
+3. [Cheerio.js API Dokumentasjon](https://cheerio.js.org/)

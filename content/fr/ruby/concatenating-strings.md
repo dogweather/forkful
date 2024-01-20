@@ -1,6 +1,6 @@
 ---
 title:                "Concaténation de chaînes"
-html_title:           "Ruby: Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
 simple_title:         "Concaténation de chaînes"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,25 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi? 
-Concaténer des chaînes de caractères en programmation consiste à joindre différentes chaînes de caractères en une seule. Les programmeurs le font souvent pour créer du texte dynamique en combinant des variables, des nombres ou des constantes avec des chaînes de caractères. Cela peut être utile pour l'affichage à l'écran, la création de rapports ou la manipulation de données.
+## Qu'est-ce que c'est & Pourquoi?
 
-## Comment faire: 
-Voici un exemple de code en Ruby pour concaténer des chaînes :
-***
+La concaténation de chaînes est l'action de joindre deux ou plusieurs chaînes de caractères en une seule. Les programmeurs le font pour manipuler et afficher du texte de manière efficace et pratique.
+
+## Comment faire:
+
+En Ruby, il y a plusieurs façons de concaténer des chaînes. On peut utiliser l'opérateur `+` ou la méthode `.concat`. Je vais montrer les deux façons.
+
 ```Ruby
-nom = "Jean"
-age = 25
-puts "Bonjour, je m'appelle " + nom + " et j'ai " + age.to_s + " ans."
-```
-***
-Cela produira l'output suivant:
-```
-Bonjour, je m'appelle Jean et j'ai 25 ans.
+ # Utiliser l'opérateur +
+chaine1 = "Bonjour "
+chaine2 = "monde!"
+resultat = chaine1 + chaine2
+puts resultat
+#sortie: "Bonjour monde!"
 ```
 
-## Plongée en profondeur: 
-Concaténer des chaînes de caractères est une technique courante en programmation et remonte aux premiers jours de langages comme le C et le Fortran. Les alternatives pour le concaténation incluent l'utilisation de modèles de texte ou de méthodes spécifiques de langage telles que `sprintf` en Ruby. Cependant, la concaténation reste souvent la méthode la plus simple et la plus efficace pour combiner des chaînes de caractères.
+```Ruby
+ # Utiliser la méthode .concat
+chaine1 = "Bonjour "
+chaine2 = "monde!"
+chaine1.concat(chaine2)
+puts chaine1
+#sortie: "Bonjour monde!"
+```
 
-## À voir également: 
-Pour en savoir plus sur la concaténation de chaînes en Ruby, consultez la documentation officielle sur les chaînes [ici](https://www.ruby-lang.org/fr/documentation/). Vous pouvez également découvrir d'autres techniques utiles pour manipuler les chaînes de caractères en explorant les fonctions de base de Ruby telles que `gsub` et `reverse`. Amusez-vous à expérimenter avec la concaténation de chaînes et voyez comment cela peut améliorer votre code !
+## Plongeon Profond:
+
+Historiquement, la concaténation de chaînes est une technique assez ancienne, présente dans de nombreux langages de programmation.
+
+En ce qui concerne les alternatives, outre l'opérateur `+` et la méthode `.concat`, en Ruby, il existe l'interpolation de chaînes. Vous pouvez intégrer une variable directement dans une chaîne avec #{}.
+
+```Ruby
+chaine1 = "monde"
+puts "Bonjour #{chaine1}!"
+#sortie: "Bonjour monde!"
+```
+
+Cependant, notez que les différentes techniques de concaténation peuvent avoir un impact sur les performances de votre code. En général, l'interpolation est plus rapide que la concaténation avec l'opérateur `+` dans Ruby.
+
+(N'oubliez pas que l'opérateur `+` crée une nouvelle chaîne alors que `.concat` et l'interpolation modifient la chaîne d'origine.)
+
+## Voir Aussi:
+
+Pour plus d'informations sur la concaténation des chaînes et d'autres techniques associées à Ruby, consultez ces liens utiles:
+
+1. [La Documentation Officielle de Ruby](https://ruby-doc.org/core-2.7.0/String.html)
+2. [Le Guide de Ruby sur les Chaînes de Caractères](http://rubylearning.com/satishtalim/ruby_strings.html)
+3. [Discussion Stackoverflow sur la Concaténation de Chaînes](https://stackoverflow.com/questions/4684446/why-is-string-concatenation-faster-than-array-join)

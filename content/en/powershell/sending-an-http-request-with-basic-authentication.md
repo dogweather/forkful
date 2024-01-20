@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "PowerShell recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,30 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-
-Sending an HTTP request with basic authentication is a way for a programmer to securely communicate with a server over the internet. It involves including a username and password in the request, which is then verified by the server before granting access. This is a common method used to protect sensitive data and ensure only authorized users have access.
+## What & Why? 
+Sending an HTTP request with basic authentication is using a simple authentication scheme of the HyperText Transfer Protocol (HTTP) to protect data transfer between systems. Programmers do it to ensure that only authorized individuals can access certain data or features of a web application.
 
 ## How to:
-
-To send an HTTP request with basic authentication in PowerShell, you can use the `Invoke-WebRequest` cmdlet. Here is an example of how to send a request to a website that requires basic authentication:
+Below is a step-by-step guide on sending an HTTP request with basic authentication.
 
 ```PowerShell
-$request = Invoke-WebRequest -Uri "https://example.com" -Credential (Get-Credential)
-$request.Content
+# Supply your credentials
+$Username = 'YourUsername'
+$Password = 'YourPassword'
+ 
+# Create a credentials object
+$SecPass = ConvertTo-SecureString $Password -AsPlainText -Force
+$Cred = New-Object System.Management.Automation.PSCredential ($Username, $SecPass)
+ 
+# Define the URL to send the request to
+$URL = 'http://your-url.com'
+ 
+# Use Invoke-WebRequest to send the HTTP request
+$Response = Invoke-WebRequest -Uri $URL -Method Get -Credential $Cred
+ 
+# Print the response
+$Response.Content
 ```
 
-The `Invoke-WebRequest` cmdlet will prompt you for a username and password, which you can provide through the `Get-Credential` cmdlet. The output of the request can be accessed through the `.Content` property.
+After running this script, you should see an output similar to this:
 
-## Deep Dive:
+```PowerShell
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <title>Your Website Title</title>
+  <!-- other meta tags -->
+</head>
+<body>
+  <!-- your website content -->
+</body>
+</html>
+```
+## Deep Dive
+Basic authentication is a part of HTTP protocol since its inception in 1991. It simply transmits the credentials in clear text, base64 encoded. This doesn't provide strong security as it can be decoded easily.
 
-HTTP basic authentication has been around since the early days of the World Wide Web and is still widely used today. Although it is a simple and straightforward method of authentication, it does have some drawbacks. For example, the username and password are sent in plain text, making it vulnerable to interception.
+If you're looking for alternatives, you might want to consider Digest Access Authentication, an extension to HTTP that applies MD5 cryptographic hashing with usage of nonces to prevent replay attacks. Another alternative is token-based authentication which uses tokens for clients to enter their information in a secure way.
 
-There are alternative methods of authentication, such as OAuth and token-based authentication, that provide a more secure way of communicating with a server. However, basic authentication is still commonly used due to its simplicity and compatibility with older systems.
+In the PowerShell example, we're using `Invoke-WebRequest` cmdlet which sends an HTTP or HTTPS request to a RESTful web service. `-Uri` parameter specifies the Uniform Resource Identifier (URI) of the Internet resource to which the web request is sent. `-Method` parameter represents the method used for web request. `-Credential` contains the credential object that authorizes the connection to the remote computer. 
 
-When sending an HTTP request with basic authentication, the username and password are encoded and included in the request header. The server then decodes this information and verifies it before allowing access. It is important to note that this method is only effective over an encrypted connection, such as HTTPS.
+## See Also
+For further reading, do check out these sources:
 
-## See Also:
-
-- [Invoke-WebRequest documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-- [Understanding HTTP Basic Authentication](https://www.digitalocean.com/community/tutorials/understanding-http-basic-authentication)
+- [About Authentication](https://docs.microsoft.com/en-us/aspnet/core/security/authentication/?view=aspnetcore-5.0)
+- [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+- [PowerShell Basic Authentication](https://adamtheautomator.com/powershell-basic-authentication/)
+- [Understanding HTTP Authentication](https://www.loginradius.com/engineering/blog/understanding-http-authentication-scheme/)

@@ -1,7 +1,7 @@
 ---
-title:                "Ein Textdokument lesen"
-html_title:           "C++: Ein Textdokument lesen"
-simple_title:         "Ein Textdokument lesen"
+title:                "Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,40 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Textdateien sind einfache Dateien, die Text als fortlaufende Zeichenfolge speichern. Programmierer verwenden Textdateien, um Daten zu speichern oder als Eingabequelle für ihre Programme zu nutzen.
+# Eine Einführung in das Einlesen von Textdateien in C++
 
-## Wie geht's:
-Die C++ Standardbibliothek enthält die Funktion "ifstream", die das Lesen von Textdateien ermöglicht. Sie muss in den Header `<fstream>` eingebunden werden. Mit dieser Funktion können Sie eine Verbindung zu einer Textdatei herstellen und dann Zeile für Zeile auslesen.
+## Was & Warum?
+
+Einlesen von Textdateien in C++ ist, den Inhalt einer Textdatei in deinem Programm zu lesen und zu verwenden. Als Programmierer tun wir dies, um Daten zu verarbeiten oder als Eingabe für unsere Algorithmen zu verwenden.
+
+## Wie man:
+
+Zur Veranschaulichung, wie man eine Textdatei liest, nutzt man den `fstream` Bibliothek in C++. Hier ist ein einfacher Code zum Einlesen einer Textdatei.
+
 ```C++
-#include <fstream> 
-#include <iostream> 
-using namespace std; 
-int main() { 
-   ifstream datei("textdatei.txt"); // Verbindung zur Datei herstellen 
-   if (!datei) { 
-     cout << "Fehler beim Öffnen der Datei!" << endl; 
-   } else { 
-     string line; 
-     while (!datei.eof()) { // solange die Datei nicht zu Ende ist 
-       getline(datei, line); // Zeile auslesen und in "line" speichern 
-       cout << line << endl; // Zeile ausgeben 
-     } 
-   } 
-   datei.close(); // Verbindung zur Datei schließen 
-   return 0; 
+#include <iostream>
+#include <fstream>
+#include <string>
+
+int main() {
+    std::ifstream file("beispiel.txt");
+    std::string str;
+    while (std::getline(file, str)) {
+        std::cout << str << "\n";
+    }
+    return 0;
 }
 ```
-### Output:
-```
-Hello, world!
-This is a text file.
-Here are some numbers: 1, 2, 3.
-```
-## Tief eintauchen:
-Textdateien existieren schon seit den Anfängen der Computersprachen und werden immer noch häufig verwendet. Eine alternative Möglichkeit, Text zu speichern, ist die Verwendung von Datenbanken. Beim Lesen einer Textdatei muss beachtet werden, dass die Formatierung der einzelnen Zeilen wichtig ist. Die meisten Textdateien verwenden ein bestimmtes Trennzeichen (z.B. ein Komma), um Daten in Spalten zu unterteilen.
 
-## Siehe auch:
-- [C++ Referenz - ifstream](http://www.cplusplus.com/reference/fstream/ifstream/)
-- [TutorialsPoint - Lesen von Dateien in C++](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
-- [Wikipedia - Textdatei](https://de.wikipedia.org/wiki/Textdatei)
+Dieser Code wird `beispiel.txt` öffnen und jede Zeile einzeln lesen und auf dem Bildschirm ausgeben.
+
+Wenn Ihre Textdatei beispielsweise folgendes enthält:
+
+```
+Hallo, Welt!
+Ich lerne C++.
+```
+
+Dann wird Ihre Ausgabe genau dasselbe sein.
+
+## Tiefgang
+
+Historisch gesehen begann die Praxis des Einlesens von Textdateien in den frühen Tagen der Computerprogrammierung, wo es eine der wenigen Möglichkeiten war, Informationen in ein Computerprogramm zu bekommen.
+
+Alternativ könnten wir 'mmap', 'fread' oder 'read' in C++ verwenden, um Textdateien zu lesen, diese Methoden sind jedoch komplexer und eher auf low-level Operationen ausgerichtet.
+
+Die Implementierung des Einlesens einer Datei in C++ erfordert das Verständnis von Input/Output-Streams und File-Handling. Die `fstream` Bibliothek bietet die `ifstream` Klasse, die zum Lesen von Dateien verwendet wird. Mit dem `getline()` Befehl können wir jede Zeile der Datei lesen.
+
+## Siehe Auch
+
+1. [Offizielle Dokumentation zu fstream](http://www.cplusplus.com/reference/fstream/)
+2. [fstream Tutorial](https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm)
+3. [Beispiel für die Verwendung von ifstream](https://www.geeksforgeeks.org/readwrite-class-objects-fromto-file-c/)

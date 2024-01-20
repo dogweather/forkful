@@ -1,6 +1,6 @@
 ---
 title:                "HTMLの解析"
-html_title:           "C++: HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "C++"
 category:             "C++"
@@ -10,60 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#何かとなぜ
-HTMLをパースするとは何かと言うと、プログラマーがウェブページを読み込んで、その中に含まれるタグやデータを抽出することです。ウェブスクレイピングやデータマイニングなど、さまざまなアプリケーションでHTMLパースが必要となるため、プログラマーにとって重要なスキルです。
+# C++によるHTMLのパース: 一歩ずつ学ぼう
 
-#方法
-```C++ 
-#include <iostream>
-#include <string>
-#include <vector>
+## 何と何故？
+HTMLのパースとは、HTMLの書き方と構造を解析することです。この技能はウェブクローラーやウェブスクレイパーの製作、またはHTML文書の自動的な修正や操作等、プログラマーに様々な可能性を開くために求められます。
 
-using namespace std;
+## 実践: 
+我々のためにGumboというライブラリが用意されています。HTMLを解析して、いかなるタグや属性も簡単にアクセスできるようにします。 例えば、次のようになります:
+
+```C++
+#include <gumbo.h>
 
 int main() {
-  // サンプルHTML
-  string html = "<div>
-                  <h1>Hello, world!</h1>
-                  <p>This is a paragraph.</p>
-                </div>"
+    const char* html = "<html><body><h1>はじめまして、世界！</h1></body></html>";
+    GumboOutput* output = gumbo_parse(html);
 
-  vector<string> tags; // タグを格納するためのベクトル
+    GumboNode* root = output->root;
+    // rootから情報を探索
 
-  // パース処理
-  while (html.length() > 0) {
-    int start = html.find("<"); // タグの開始位置を探す
-    if (start != string::npos) { // もしタグが見つかったら
-      int end = html.find(">"); // タグの終了位置を探す
-      tags.push_back(html.substr(start, (end-start)+1)); // ベクトルにタグを追加
-      html = html.substr(end+1); // 残りのHTMLを更新
-    }
-    else {
-      html = ""; // タグが見つからなかったら処理を終了
-    }
-  }
-
-  // 抽出されたタグの表示
-  for (int i = 0; i < tags.size(); i++) {
-    cout << tags[i] << endl;
-  }
-
-  return 0;
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
+    return 0;
 }
 ```
 
-出力:
-``` 
-<div>
-<h1>Hello, world!</h1>
-<p>This is a paragraph.</p>
-</div>
-```
+## 掘り下げ
+**歴史的文脈:** HTMLパーサーはウェブの歴史と深く結びついており、最初のパーサーはテキストベースのブラウザであるLynxで使用されていました。しかし、現代のHTMLはそのサイズ、複雑性、そして互換性の問題により、特殊なツールが必要としています。
 
-#ディープダイブ
-HTMLパースの歴史は長く、ウェブの発展とともに進化してきました。1990年代の初め、ティム・バーナーズ＝リーによって設計されたHTMLは、その後も様々なバージョンが作られ、現在もリビジョンが進められています。また、HTMLパースの代替手段としては、正規表現やパースライブラリなどがありますが、それぞれに利点と欠点があり、使用する場合は注意が必要です。HTMLパースは、ウェブスクレイピングやデータマイニングなどのアプリケーションにおいて、重要な手段として利用されています。
+**代替手段:** HTMLのパースには他の方法もあります。例えば、PythonのBeautifulSoup、JavaのJsoup、そしてJavaScriptのJSDOMなどが挙げられます。選択は主にプログラムの要件とパーソナルな好みによるものです。
 
-#参考リンク
-- [HTMLパースの基本方法](https://www.w3schools.com/html/html_parsing.asp)
-- [HTMLパースについてのブログ記事](https://css-tricks.com/the-simplest-ways-to-handle-html-in-c/)
-- [正規表現を使ったHTMLパースの例](https://www.regular-expressions.info/examples.html)
+**実装の詳細:** HTMLパーサーの実装は、文法解析とDOMツリーの構築の両方を含め、非常に複雑です。例えば、GumboはHTML5の仕様に完全に準拠していますが、他のパーサーでは互換性や実用性のために仕様から逸脱することもあります。
+
+## 参考文献
+- [GumboライブラリのGitHubページ](https://github.com/google/gumbo-parser)
+- [HTML5パーサーの比較](https://html5test.com/)
+- [BeautifulSoupの公式ドキュメンテーション](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+- [Jsoupの公式ドキュメンテーション](https://jsoup.org/)
+- [JSDOMの公式ドキュメンテーション](https://github.com/jsdom/jsdom)

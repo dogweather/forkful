@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Gleam: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Kun puhutaan verkkosivun lataamisesta, tarkoitetaan sitä, että tietokone hakee ja näyttää tietyn verkkosivun sisällön käyttäjälle. Tähän voi sisältyä esimerkiksi kuvien, tekstien ja HTML-koodin lataaminen. Näin verkkosivuilla oleva tieto saadaan näkyviin ja käsiteltäväksi.
+## Mitä & Miksi?
+Web-sivun lataaminen tarkoittaa tietokoneesi yhdistämistä www-palvelimeen kiinteän internet-yhteyden kautta nähdäksesi sen sisällön omassa selaimessasi. Ohjelmoijat tekevät tämän tutkiakseen, muokatakseen tai kerätäkseen tietoja verkkosivun koodista.
 
-Ohjelmoijat lataavat verkkosivuja useista eri syistä. Se voi auttaa heitä keräämään dataa, kuten uutisia, ja työstämään sitä edelleen. Lisäksi se voi myös auttaa heitä testaamaan sivujen toimivuutta ja tarkistamaan virheitä. Yleisesti ottaen verkkosivujen lataaminen on välttämätöntä monille ohjelmointitoiminnoille, jotka liittyvät uusimpien tietojen käyttämiseen ja käsittelemiseen.
+## Näin se tehdään:
+Gleamilla web-sivun lataaminen on melko suoraviivaista. Seuraavassa on yksinkertainen koodiesimerkki:
 
-## Miten:
-Jos haluat ladata verkkosivun Gleamilla, sinun tulee käyttää moduulia `http_` ja sen toimintoa `get`. Tämä lähettää HTTP GET -pyynnön määrittämäsi URL-osoitteeseen ja palauttaa vastauksen sekä mahdollisen virhekoodin. Seuraava koodi esimerkki näyttää, miten tämä tapahtuu:
-```
-Gleam import http_
+```gleam
+import gleam/http.{client, get}
 
-let response =
-    http_.get("https://www.example.com")
+fn download_page(url: String) {
+  let Ok(response) = client.default()
+    |> get("https://www.example.com")
+    |> http.send()
 
-case response {
-    Ok(resp) -> {
-        // käsittele vastaus tässä
-    }
-    Error(code) -> {
-        // käsittele virhekoodi tässä
-    }
+  let body = response.body
+  io.println(body)
+}
+
+fn main(args: List(String)) {
+  download_page(args.0)
 }
 ```
 
-Jos kaikki onnistuu, vastauksena saat `Ok` -arvon mukana kaikki tarvittavat tiedot, kuten HTTP-tilakoodin, otsikot ja vastauksen rungon. Sen sijaan, jos vastaanotat virhekoodin, se tulee `Error` -arvon mukana ja voit käsitellä sen haluamallasi tavalla.
+Kun suoritat tämän koodin, näet www.example.com-sivun HTML-lähtökoodin.
 
-## Syvällinen sukellus:
-HTTP-pyyntöjen lähettämiseen on olemassa useita vaihtoehtoja, kuten `httpc` ja `hackney` -moduulit. Nämä tarjoavat lisäominaisuuksia ja mukavampia tapoja käsitellä vastauksia.
+## Syvä sukellus
+Web-sivun lataaminen ei ole uusi käytäntö; se on itse asiassa ollut mahdollista jo Internetin alkupäivistä lähtien. Tässä asiayhteydessä on tärkeää muistaa, että teet sen vastuullisesti ja kunnioitat verkkosivustojen käyttöehtoja ja yksityisyydensuojaa.
 
-Verkkosivujen lataamiseen voi myös käyttää muita tekniikoita, kuten web-skrapingia ja REST APIen kutsumista. Näitä on kuitenkin hyvä käyttää harkiten ja vastuullisesti, jotta ei aiheuteta liikaa kuormitusta ja häiriöitä kyseisellä verkkosivustolla.
+Vaihtoehtoisesti, voit kokeilla muita ohjelmointikieliä web-sivun lataamiseksi, esimerkiksi Pythonin `requests`-kirjasto tai JavaScriptin `axios`-kirjasto.
 
-HTTP-kielen tausta on hyödyllistä ymmärtää syvemmin, jotta voit hyödyntää sitä tehokkaasti. HTTP on protokolla, jota käytetään kommunikoimaan tietokoneiden välillä, jotta tiedot voidaan välittää selaimillemme. Se on myös perusta monille muille internetin tekniikoille, kuten web-selainohjelmoinnille ja web-sivustojen toiminnalle.
+Gleamissa `http.send()` -metodi antaa vastauksen, johon sisältyy palvelimen lähettämä vastauskoodi, otsikot ja vastauksen runko. Rungon (body) tyyppi on bitstring, joka edustaa vastauksen raakatekstiä.
 
-## Katso myös:
-- HTTP-moodulin dokumentaatiot: https://gleam.run/modules/http.
-- Katso esimerkkejä HTTP-pyyntöjen lähettämisestä: https://github.com/gleam-lang/gleam_stdlib_examples/tree/master/http.
+## Katso myös
+Jos haluat tutkia Gleam-ohjelmointikieltä lisää, seuraavat resurssit voivat olla hyödyllisiä:
+- [Gleam kotisivu](https://gleam.run/)
+- [Gleam GitHub repo](https://github.com/gleam-lang/gleam)
+- [HTTP-kirjaston dokumentointi](https://hexdocs.pm/gleam_http/readme.html)
+- [Gleam-yhteisön Discord-chat](https://discord.gg/Fm8Pday2Jg)

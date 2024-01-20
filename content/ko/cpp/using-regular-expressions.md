@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용"
-html_title:           "C++: 정규 표현식 사용"
-simple_title:         "정규 표현식 사용"
+title:                "정규 표현식 사용하기"
+html_title:           "Bash: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
-정규식을 사용하는 것은 문자열 패턴을 찾고 매칭시키는 강력한 도구입니다. 프로그래머들은 이를 통해 데이터 처리, 문자열 검색, 유효성 검사 등에 유용하게 활용할 수 있습니다. 
+## 무엇인가 & 왜 사용하는가?
 
-# 하는 법:
+정규 표현식은 텍스트 패턴을 일치시키는 코드 작성 방법입니다. 이는 복잡한 검색 및 변환 작업을 간결하게 만들기 때문에 프로그래머들이 많이 사용합니다.
+
+## 이렇게 사용하자:
+
+C++에서 정규 표현식을 사용하려면 `<regex>` 라이브러리를 참조해야 합니다. 아래에 기본적인 예시를 보여드리겠습니다:
+
 ```C++
-#include <iostream>
-#include <regex>
-using namespace std;
+#include<iostream>
+#include<regex>
 
-int main(){
-    // 문자열 생성
-    string data = "Hello, my name is John.";
-    
-    // 정규식 사용하여 매칭
-    regex re("John");
-    
-    // data에서 패턴 매칭
-    if(regex_search(data, re)){
-        cout << "John을 찾았습니다." << endl;
-    } else{
-        cout << "John이 없습니다." << endl;
-    }
-    
-    return 0;
+int main() {
+  std::string s = "I love programming";
+  std::regex e ("(programming)");
+
+  // 패턴을 찾아 변환합니다.
+  std::cout << std::regex_replace(s,e,"coding") << std::endl;
 }
 ```
-**출력 결과:**
-```C++
-John을 찾았습니다.
-```
+이 코드는 "I love programming"이란 문장에서 "programming"을 찾아 "coding"으로 바꿉니다. 그래서 출력 결과는 "I love coding"이 됩니다.
 
-# 깊은 곳:
-정규식은 1950년대부터 사용되고 있으며, 당시 새로운 컴퓨터 언어로써 소개되었습니다. 대부분의 프로그래밍 언어에 정규식 라이브러리가 내장되어 있지만, 알고리즘의 효율성이 좋지 않을 수 있습니다. 따라서 대안으로 문자열 메소드를 사용할 수도 있습니다. 
+## 깊은 탐색
 
-# 참고:
-- [C++ regex library](https://www.cplusplus.com/reference/regex/)
-- [History of Regular Expressions](https://www.regular-expressions.info/history.html)
+정규 표현식은 1950년대에 개발된 알고리즘으로, 크게 사용 방식이 변하지 않고 있습니다. C++에도 이전 버전에서 사용했던 것과 크게 다르지 않게 사용됩니다. 
+
+정규 표현식의 대안으로는 문자열 검색 함수를 직접 만드는 것이 있지만, 이렇게 하면 코드가 복잡해지고 유지보수가 어려워집니다. 
+
+C++의 정규 표현식 구현은 Perl과 매우 비슷합니다. 그래서 Perl에 익숙한 사람들이라면 C++에서도 쉽게 사용할 수 있습니다.
+
+## 참고 자료
+
+C++의 정규 표현식을 더 깊게 이해하려면 아래의 자료를 참고하세요:
+
+1. [C++의 정규 표현식 라이브러리 문서](http://www.cplusplus.com/reference/regex/)
+2. [정규 표현식에 관한 Wikipedia](https://ko.wikipedia.org/wiki/%EC%A0%95%EA%B7%9C_%ED%91%9C%ED%98%84%EC%8B%9D)
+3. [정규 표현식을 이해하고 사용하는 방법](https://regexr.com/)

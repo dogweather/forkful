@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "C#: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "C#"
 category:             "C#"
@@ -10,38 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e porque?
+# Download de uma página da web com C#
 
-Baixar uma página da web é o ato de transferir o conteúdo de uma página da web da internet para o seu dispositivo pessoal ou para um servidor de aplicativos. Os programadores fazem isso para acessar informações específicas de uma página da web, como dados de um formulário ou informações de contato, para serem usadas em seus próprios aplicativos.
+## O Que & Porquê?
+
+Fazer download de uma página da web é basicamente obter o código-fonte HTML para análise ou processamento posterior. Os programadores fazem isto para scrappear dados, testar interfaces e implementar bots automatizados.
 
 ## Como fazer:
 
+Se estivermos a usar o `HttpClient`, um código simples poderia ser:
+
 ```C#
-using System.Net;
-
-// Criar um objeto de solicitação da web
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://www.example.com");
-
-// Obter a resposta e ler o conteúdo
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-string content = new StreamReader(response.GetResponseStream()).ReadToEnd();
-
-// Imprimir o conteúdo da página
-Console.WriteLine(content);
+using (var cliente = new HttpClient())
+{
+    var html = await cliente.GetStringAsync("http://google.com");
+    Console.WriteLine(html);
+}
 ```
 
-**Resultado:**
+Este é o output:
 
-HTML, CSS, JavaScript e outros códigos da página da web serão impressos no console.
+```C#
+<!doctype html>...
+```
 
-## Mergulho profundo:
+Se utilizarmos o `WebClient`:
 
-A prática de baixar páginas da web tem sido comum entre os programadores desde o surgimento da internet. No passado, isso era feito principalmente para armazenar informações em um computador local para uso offline. No entanto, hoje em dia, isso é amplamente utilizado para a integração de dados entre aplicativos e para automatizar tarefas.
+```C#
+using (var cliente = new WebClient())
+{
+    cliente.Encoding = System.Text.Encoding.UTF8;
+    var html = cliente.DownloadString("http://google.com");
+    Console.WriteLine(html);
+}
+```
+A saída será semelhante:
 
-Existem várias maneiras de baixar uma página da web em uma linguagem de programação, como C#. Além da biblioteca HTTP padrão, também existem bibliotecas externas disponíveis, como o HttpClient. Além disso, as APIs de web scraping podem ser usadas para baixar e extrair dados específicos de uma página da web com mais facilidade.
+```C#
+<!doctype html>...
+```
 
-## Veja também:
+## Aprofundando
 
-- [Microsoft Docs on HttpWebRequest class](https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=net-5.0)
-- [HttpClient library on GitHub](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Net.Http/src)
-- [Web scraping APIs for C#](https://www.scrapingbee.com/blog/top-5-web-scraping-api-for-c-sharp/)
+A técnica de download de páginas da web tem sido usada desde os primeiros dias da internet, com uma série de métodos e bibliotecas a serem introduzidos ao longo do tempo para facilitar o processo.
+
+Existem diversas alternativas ao `HttpClient` e ao `WebClient`, incluindo `HttpWebRequest`, `RestSharp`, `Flurl` e muitos outros. A escolha depende de fatores como as necessidades específicas do projeto, as preferências pessoais, a experiência anterior, etc.
+
+No que diz respeito à implementação, ao usar `HttpClient` ou `WebClient` estamos a enviar um pedido HTTP GET para o servidor. O servidor então responde com o HTML da página que o nosso código posteriormente pode analisar e processar.
+
+## Veja também
+
+Para mais informações consulte os seguintes links:
+- [HttpClient na Microsoft Docs](https://docs.microsoft.com/pt-br/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [WebClient na Microsoft Docs](https://docs.microsoft.com/pt-br/dotnet/api/system.net.webclient?view=net-5.0)

@@ -1,6 +1,6 @@
 ---
 title:                "Trovare la lunghezza di una stringa"
-html_title:           "Swift: Trovare la lunghezza di una stringa"
+html_title:           "Haskell: Trovare la lunghezza di una stringa"
 simple_title:         "Trovare la lunghezza di una stringa"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,22 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché viene utilizzato?
-Trovare la lunghezza di una stringa è una operazione comune in programmazione che permette di determinare il numero di caratteri all'interno di una stringa. I programmatori utilizzano questa funzione per svolgere operazioni come il controllo di validità di input utente o il conteggio dei caratteri in una parola o frase.
+## Cos'è & Perché?
 
-## Come si fa?
-Per trovare la lunghezza di una stringa in Swift, è possibile utilizzare il metodo `count` su una variabile di tipo `String` o su una costante di tipo `String`. Ad esempio:
+Il trovare la lunghezza di una stringa è l'operazione di conteggio dei caratteri presenti nella stessa. Questa operazione è molto utile per i programmatori, per esempio, nel validare gli input utente.
+
+## Come fare:
+
+In Swift, possiamo trovare la lunghezza di una stringa usando la proprietà `count`. L'esempio seguente mostra come farlo:
 
 ```Swift
-let stringa = "Ciao amici"
-print(stringa.count)
+let s = "Oggi è bello"
+let lunghezza = s.count
+print(lunghezza)  // Stampa: 11
 ```
-Output: 11
 
-## Approfondimento
-La funzione per trovare la lunghezza di una stringa è stata introdotta per la prima volta nel linguaggio di programmazione C nel 1972 da Dennis Ritchie. In passato, i programmatori dovevano scrivere manualmente il codice per contare i caratteri in una stringa, ma grazie alla funzione incorporata nei linguaggi moderni come Swift, questa operazione è diventata molto più semplice e veloce.
+La stringa "Oggi è bello" contiene 11 caratteri incluse le spaziature, quindi l'output sarà 11.
 
-Un'alternativa per trovare la lunghezza di una stringa in Swift è utilizzare il metodo `characters.count`, ma questo metodo è obsoleto a partire dalla versione 4 del linguaggio e si consiglia di utilizzare il metodo `count` al suo posto.
+## Approfondimento:
+Anche se potrebbe sembrare una cosa semplice, in realtà la misurazione della lunghezza delle stringhe ha avuto una certa evoluzione nel corso del tempo. Infatti, in passato, i programmatori dovevano fare i conti con i byte invece dei caratteri. Con l'avvento di Unicode e gli standard successivi, la situazione è diventata molto più gestibile. 
 
-## Vedi anche
-Per ulteriori informazioni su come utilizzare il metodo `count` per trovare la lunghezza di una stringa in Swift, si consiglia di consultare la documentazione ufficiale del linguaggio disponibile su [Swift.org](https://docs.swift.org).
+Come alternativa alla proprietà `count`, in Swift è possibile accedere ai dati grezzi dei byte utilizzando la proprietà `utf8`. Questo però, non restituisce il conteggio corretto dei caratteri per le stringhe che contengono emoji o altri caratteri multibyte.
+
+In termini di prestazioni, `count` è un'operazione di costo O(1), grazie all'implementazione di Swift delle stringhe. Questo significa che non importa quanto sia lunga la stringa, il tempo per trovare la sua lunghezza è costante.
+
+## Vedere anche:
+
+Per saperne di più su come gestire le stringhe in Swift, consulta i seguenti link:
+
+- La documentazione ufficiale di Swift sulle Stringhe e i Caratteri: [Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html).
+
+- Un tutorial dettagliato sulle stringhe in Swift: [Swift Strings](https://www.hackingwithswift.com/read/0/5/string-interpolation).
+
+- Un articolo woospeak pieno di esempi su come utilizzare le stringhe in Swift: [String Manipulation In Swift](https://www.woospeak.com/string-manipulation-in-swift/).

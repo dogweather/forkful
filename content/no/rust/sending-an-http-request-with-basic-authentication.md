@@ -1,7 +1,7 @@
 ---
-title:                "Sending en http-forespørsel med grunnleggende autentisering"
-html_title:           "Rust: Sending en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Sending en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,38 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sende en HTTP forespørsel med grunnleggende autentisering betyr å inkludere brukernavn og passord i en forespørsel til en webside eller tjeneste. Dette gjøres for å sikre at kun autoriserte brukere får tilgang til informasjonen som blir forespurt. Programmere bruker dette for å legge til sikkerhet i sine applikasjoner.
 
-## Hvordan:
-Kodingseksempel:
+Å sende en HTTP-forespørsel med grunnleggende autentisering er en prosess hvor en bruker verifiserer sin identitet til serveren ved hjelp av brukernavn og passord. Programmerere gjør dette for å sørge for sikker dataoverføring og hindre uautorisert tilgang.
+
+## Slik gjør du:
+
+Å bruke `reqwest`-biblioteket er en enkel måte å gjøre dette på i Rust. Du kan legge til dette i dine `Cargo.toml`-avhengigheter:
 ```Rust
-let username = "brukernavn";
-let password = "passord";
-
-let auth = base64::encode(format!("{}:{}", username, password));
-
-let client = reqwest::Client::new();
-let resp = client
-    .get("https://nettside.com/api")
-    .header("Authorization", format!("Basic {}", auth))
-    .send()
-    .await?;
+[dependencies]
+reqwest = { version = "0.11", features = ["blocking", "json"] }
+base64 = "0.10.1"
 ```
-Eksempel på resultat:
+Og her er et eksempel på hvordan du kan sende en HTTP-forespørsel med basic autentisering.
+
+```Rust
+use reqwest::blocking::Client;
+use base64::encode;
+
+fn main() -> Result<(), Box<dyn std::error::Error>> {
+     let client = Client::new();
+
+     // Brukernavn og passord
+     let user = "brukernavn";
+     let password = "passord";
+     let auth = encode(&format!("{}:{}", user, password));
+
+     // Send forespørsel
+     let res = client.get("https://eksempel.no")
+                     .header("Authorization", format!("Basic {}", auth))
+                     .send()?;
+
+     println!("{}", res.status());
+     Ok(())
+}
 ```
-Status: 200 OK
-Body: {"username": "brukernavn", "message": "Hei, velkommen!"}
-```
 
-## Dykk Dypere:
-Historisk kontekst: Grunnleggende autentisering har vært en vanlig måte å legitimere seg på siden HTTP ble utviklet på 1990-tallet. I dag er det fortsatt mye brukt, men det finnes også alternative autentiseringsmetoder som OAuth og API-tokens.
+Dette programmet vil sende en GET-forespørsel til "https://eksempel.no" med brukernavn og passord. Svaret vil være statuskoden for forespørselen.
 
-Alternativer: Som nevnt ovenfor, er OAuth og API-tokens populære alternativer til grunnleggende autentisering når det kommer til å sikre websider og applikasjoner.
+## Dypdykk 
 
-Implementasjonsdetaljer: Når man sender en HTTP forespørsel med grunnleggende autentisering, må brukernavnet og passordet sendes kryptert i Base64-format i headeren til forespørselen.
+Å sende en HTTP-forespørsel med grunnleggende autentisering er ikke en ny oppfinnelse. Denne teknologien har vært tilgjengelig siden tidlige dager av world wide web for å hindre uautoriserte brukere i å få tilgang til hel eller delvis reservert informasjon.
 
-## Se Også:
-- [Rust Offisiell Nettside](https://www.rust-lang.org/)
-- [Rust Dokumentasjon](https://doc.rust-lang.org/)
-- [Base64 Rust Bibliotek](https://crates.io/crates/base64)
-- [Reqwest Rust Bibliotek](https://crates.io/crates/reqwest)
+På Rust-plattformen kan man også bruke `hyper` eller `actix-web` som alternativer til `reqwest`. Men `reqwest` er bredt akseptert som 'go-to'-valget på grunn av dets enkle syntaks og høye ytelse.
+
+I et dypdykk i implementeringsdetaljer finner vi at HTTP Basic Auth bruker Base64-kodning. Dette er imidlertid ikke et kryptografisk sikkert system, så det er avgjørende å bruke HTTPS for å forsikre sikker overføring av brukerens legitimasjon.
+
+## Se også
+
+- Rust 'reqwest'-biblioteket: https://docs.rs/reqwest
+- HTTP autentiseringsmetoder: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication 
+- 'hyper' i Rust: https://hyper.rs/
+- 'actix-web' i Rust: https://actix.rs/

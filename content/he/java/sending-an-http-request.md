@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Java: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Java"
 category:             "Java"
@@ -10,44 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
+## מה ולמה?
 
-שלושת המלים הללו - "שליחת בקשת HTTP" נשמעות כמו משהו מורכב וקשה, אבל בעצם זה פשוט מאוד. כשברשותנו יש צורך לגשת ולקבל מידע מאתר אינטרנט, כמו למשל לשלוח פורמטים עבור הרשמה או לקבל תוצאות מחיפוש גוגל, אנחנו משתמשים בבקשת HTTP. זהו דרך של "לדבר" עם האתר הזה ולבקש ממנו מידע מסוים. מתוך כך בקשת HTTP מאפשרת למתכנתים ליצור אפליקציות מתקדמות יותר וליישם פונקציות מיוחדות על מספר אתרים שונים.
+שליחת בקשת HTTP היא דרך שבאמצעותה מחשב או אפליקציה "דוברת" עם שרת ברשת. מפתחים משתמשים בכך כדי לגשת למידע, לעבוד עם ממשקים של שירותים אינטרנטיים ולשלוט במערכות מרוחקות.
 
-איך לעשות זאת?
+## איך עושים את זה:
 
-```java
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+Java 11 מציעה את חבילת `java.net.http` שמאפשרת לנו לקבל מידע מאתר אינטרנט באמצעות בקשת HTTP. הנה דוגמה:
 
-URL url = new URL("https://www.example.com"); //כתובת האתר שבו אנחנו רוצים לשלוח בקשת HTTP
-HttpURLConnection con = (HttpURLConnection) url.openConnection(); //פתיחת חיבור עם האתר
-con.setRequestMethod("GET"); //קביעת שיטת הבקשה כמו GET, POST או PUT כמו שרוצים
-InputStream is = con.getInputStream(); //הקבלת המידע מהאתר בסוג הטקסט המתאים
-BufferedReader br = new BufferedReader(new InputStreamReader(is));
-String line;
-StringBuilder response = new StringBuilder();
-while ((line = br.readLine()) != null) { //קריאת המידע בקוד ושמירתו בתוך משתנה
-    response.append(line);
+```Java
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+              .uri(new URI("http://example.com"))
+              .build();
+
+        HttpResponse<String> response =
+              client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
+    }
 }
-br.close();
-System.out.println(response.toString()); //הדפסת התוצאה בקונסול
 ```
 
-כאן נראה דוגמה של כיצד לשלוח בקשת HTTP באמצעות קוד Java. נשתמש בספריות מובנות כדי לפתוח חיבור עם האתר הרלוונטי ולקבל את המידע שבו. כמו בדוגמה לעיל, נשתמש בבקשת HTTP מסוג GET בכדי לקבל את התוכן של האתר. כמו כן, נדפיס את התוצאה בקונסול כדי לוודא שהכל עבד כראוי.
+זה מראה את תגובת השרת מאתר example.com. 
 
-עכשיו נסתכל על מה באמת קורה מאחורי הקלעים ביצירת בקשת HTTP.
+## Deep Dive:
 
-מעמק נראה דרך ותולדות:
+שליחת בקשות HTTP אינה בהכרח דבר חדש - Java 8 כבר הכילה את HttpUrlConnection, אך היישום היה קשה יותר. עם מהדורת Java 11, ביצעה Oracle שדרוג משמעותי בתוספתו של HttpClient.
 
-מתעלם מכך שתחת כל יישום רשת שאתה משתמש בתוכנית שלך, יש פעולות רשת ברקודאונים. רקודאונים זהו דרך בה תוכנית העובד העם (או יותר מדוייקת הפרוטוקול של רשת ניידת) מתחברת לשרת ברשת ברקודאונים הנו פתח חזית העבודה הנמיכה שדרכו היינו מחברים באינטרנט.
+בנוסף, ישנם שירותים דרישים כמו OkHttp וApache HttpClient שעושים את אותה העבודה, אך ללא דרישה לשדרוג לגרסה החדשה ביותר של Java. 
 
-נראה לדוגמה דרך מובן כדי לתקשור עם האתר בדיוק עם שתי ויזעוי רשת אכטו אומת ברקודאונים אחורי רבינות אתרי איגרות. הפתיחת רשת ברקודאנית עם אתר אכטו אומת עוזב את הפרוטוקול של Nieve או מתחבר עם כל הנותני שירות שקיימים עודפים שלא-עהתרים ה-2008RON / UFLUX או ה-	controller之外עשתיות.
+אפשר לשנות את פרטי הבקשה כדי להתאים לדרישות מסוימות - כולל שינוי של הכותרות, שליחת מידע בגוף הבקשה, וכו'.
 
-ראה גם:
+## ראה גם:
 
-- https://www.w3.org/Protocols/HTTP
-- https://developer.mozilla.org/en-US
+* המדריך השלם ל- HttpClient של [Baeldung](https://www.baeldung.com/java-11-http-client)
+* דוקומנטציה רשמית של [Oracle](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html) 
+* מרכז למידה חינמי ל-[OkHttp](https://square.github.io/okhttp/)
+* מדריך ל-[Apache HttpClient](https://hc.apache.org/httpcomponents-client-ga/tutorial/html/)

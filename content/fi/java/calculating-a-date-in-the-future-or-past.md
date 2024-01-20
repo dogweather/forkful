@@ -1,7 +1,7 @@
 ---
-title:                "Määritetään päivämäärä tulevaisuudessa tai menneisyydessä"
-html_title:           "Java: Määritetään päivämäärä tulevaisuudessa tai menneisyydessä"
-simple_title:         "Määritetään päivämäärä tulevaisuudessa tai menneisyydessä"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Java: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Tulevaisuuden tai menneisyyden päivämäärän laskeminen: Java-ohjelmointi
+
 ## Mitä & Miksi?
-Päivämäärän laskeminen tulevaiseen tai menneeseen on tavallinen tehtävä ohjelmoinnissa. Se tarkoittaa tietyn päivämäärän lisäämistä tai vähentämistä tietyn aikamäärän verran. Ohjelmoijat tekevät tätä esimerkiksi pysyvien muistutusten luomiseksi tai tietokantaan tallennettujen päivämäärien käsittelyä varten.
+Tulevaisuuden tai menneisyyden päivämäärän laskeminen tarkoittaa tietyn ajanjakson lisäämistä tai vähentämistä päivämäärästä. Ohjelmoijat tekevät tätä erilaisten sovellusten, kuten kalenterien, muistutusten tai tehtävien aikataulutuksen, tarpeisiin.
 
-## Näin teet:
-```Java
-// Esimerkki päivämäärän lisäämisestä 5 päivää eteenpäin
-LocalDate tanaan = LocalDate.now();
-LocalDate viidenPaivanPaasta = tanaan.plusDays(5);
-System.out.println(viidenPaivanPaasta); // 2021-04-20
+## Kuinka tehdä:
+```java
+import java.time.LocalDate;
+import java.time.Period;
+
+public class PvmLaskur {
+	public static void main(String[] args) {
+		LocalDate tänään = LocalDate.now();
+		Period viikko = Period.ofWeeks(1);
+
+		LocalDate tulevaisuus = tänään.plus(viikko);
+		System.out.println("Viikon päästä on: " + tulevaisuus);
+
+		LocalDate menneisyys = tänään.minus(viikko);
+		System.out.println("Viikko sitten oli: " + menneisyys);
+	}
+}
+```
+Tulostus: 
+```
+Viikon päästä on: 2022-09-02
+Viikko sitten oli: 2022-08-19
 ```
 
-```Java
-// Esimerkki päivämäärän vähentämisestä 2 kuukautta taaksepäin
-LocalDate tanaan = LocalDate.now();
-LocalDate kaksiKuukauttaTaakse = tanaan.minusMonths(2);
-System.out.println(kaksiKuukauttaTaakse); // 2021-02-20
-```
+## Syvempi sukellus
+Idea päivämäärän laskemiseen tuli jo ennen digitaalista aikakautta, jolloin ihmiset suunnittelivat aikataulujaan kalentereissa. Java-ohjelmointikielessä tätä helpottamaan on luotu LocalDate-luokka ja Period-luokka.
 
-## Syvällisempi sukellus:
-Päivämäärän laskemisen käyttö on ollut osa ohjelmointia jo pitkään, mutta nykyaikaisilla ohjelmointikielillä, kuten Javalla, siitä on tullut yksinkertaisempaa. On myös muita tapoja käsitellä päivämääriä, kuten käyttämällä kalenteriluokkia tai kolmannen osapuolen kirjastoja.
+Muut menetelmät kuin Java's Period ja LocalDate ovat esimerkiksi Joda-Time kirjasto ja vanhempi Calendar-luokka, mutta ne ovat monimutkaisempia ja vähemmän intuitiivisia.
 
-Päivämäärien laskemiseen käytetään usein päivämääräolioita, jotka sisältävät päivämäärän ja ajan tiedot. Java 8 toi mukanaan uuden LocalDate-luokan, joka mahdollistaa päivämäärän käsittelyn ilman aikatietoja. Tämä helpottaa monia yleisiä päivämäärämanipulaatioita ja on myös suorituskykyisempi kuin vanhemmat kalenteriin perustuvat ratkaisut.
+LocalDate- ja Period-luokkien käyttö on suoraviivaista. Tämä johtuu siitä, että ne on suunniteltu seuraamaan ISO-8601-kalenterisysteemin standardeja, joka on maailmanlaajuisesti tunnustettu päivämäärän ja ajan esitysmuoto.
 
-## Katso myös:
-Java 8 LocalDate-dokumentaatio: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+## Katso myös
+1. [Oracle's Java Documentation: LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+2. [Oracle's Java Documentation: Period](https://docs.oracle.com/javase/8/docs/api/java/time/Period.html)
+3. [ISO-8601 Standard](https://www.iso.org/iso-8601-date-and-time-format.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Clojure recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,69 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date is a common task in programming, especially when building applications that require time-based functionality. It allows us to display the current date and time to users, track when events occur, and perform calculations based on dates and times. It is important for creating dynamic and relevant user experiences.
+Getting the current date and time is a common operation in programming. It is used for recording when certain events happen, for timestamping entries, and coordinating activities in real-time apps.
 
-## How to:
+## How to?
 
-To get the current date in Clojure, we can use the `java.util.Date` class and the `java.util.Calendar` class. First, we will import the necessary libraries:
-
-```Clojure
-(require '[java.util.Date :as date])
-(require '[java.util.Calendar :as cal])
-```
-
-Next, we can use the `Date` class to create a new date object representing the current date:
+In Clojure, the Java interop functionality gives us access to date-time libraries of Java. Here's how to get the current date:
 
 ```Clojure
-(def current-date (date.))
+(import 'java.util.Date)
+(def current-date (Date.))
+
+;; Let's print the date
+(println current-date)
 ```
 
-To get more information about the current date, we can use the `Calendar` class to manipulate the date object:
+This will output the current date and time, something like:
 
 ```Clojure
-(def calendar (cal/getInstance))
-(.setTime calendar current-date)
+Wed Sep 01 17:29:56 BST 2021
 ```
 
-We can then retrieve specific information such as the year, month, and day:
-
-```clojure
-(.get calendar cal/YEAR)
-;; => 2021
-
-(.get calendar cal/MONTH)
-;; => 6 (Note: Clojure uses zero-based indexing, so January is represented as 0)
-
-(.get calendar cal/DAY_OF_MONTH)
-;; => 29
-```
-
-We can also use the `Date` class to get the current time:
+In addition, the `clj-time` library, a Clojure simple wrapper of the Joda-Time library, is often used:
 
 ```Clojure
-(def current-time (.getTime current-date))
+(ns my-namespace
+  (:require [clj-time.core :as t]))
+
+;; Get current date-time
+(def now (t/now))
+
+;; Print the current date-time
+(println now)
 ```
 
-And to get the current time in milliseconds:
+The output will be similar to:
 
 ```Clojure
-(def current-time-millis (.getTimeInMillis calendar))
+2021-09-01T17:30:00.023Z
 ```
 
-Finally, we can use the `printf` function to format the current date and time in a specific way:
+## Deep Dive
 
-```Clojure
-(printf "Current Date: %tc" current-time)
-;; => Current Date: Tue Jun 29 16:40:32 EDT 2021
-```
+Clojure being a dialect of Lisp that runs on the Java Virtual Machine (JVM), uses the date-time library of Java. Historically, Java's old date and time classes (`java.util.Date` and `java.util.Calendar`) had many shortcomings which were addressed in java.time, part of Java 8 and later. 
 
-## Deep Dive:
+In addition to the built-in Java libraries, many Clojure developers use the `clj-time` library, a wrapper around the Joda-Time library for handling dates and times. `clj-time` is popular due to its simplicity and its rich set of functionalities, and it fits more naturally into Clojure's functional programming style.
 
-Clojure is a modern functional programming language that runs on the Java Virtual Machine (JVM). As a result, it can easily access Java libraries and classes, making it straightforward to get the current date. However, it is not the only way to get the current date in Clojure. Another option is to use the `clj-time` library, which provides more advanced date and time manipulation functions.
+Java interop in Clojure is rather direct but can be verbose, and using Java classes directly can lead to unclear code. Therefore, it's often preferred to use Clojure libraries that wrap Java libraries and provide a more idiomatic Clojure interface.
 
-In terms of implementation, the `Date` class in Clojure is a wrapper for the `java.util.Date` class in Java. It represents a specific point in time, with millisecond precision. The `Calendar` class is also a wrapper for the `java.util.Calendar` class in Java, which allows for manipulation and retrieval of specific date and time information.
+## See Also
 
-## See Also:
+[1] [Clojure Date and Time - Baeldung](https://www.baeldung.com/clojure-date-time)
 
-- [Clojure API Documentation](https://clojure.github.io/clojure/)
-- [clj-time library](https://github.com/clj-time/clj-time)
+[2] [Working with date time in Clojure - adit.io](http://adit.io/posts/2012-04-24-working_with_dates_and_times_in_clojure.html)
+
+[3] [clj-time Github page](https://github.com/clj-time/clj-time)
+
+[4] [Official clojure.java-time docs](https://clojure.github.io/java-time/)

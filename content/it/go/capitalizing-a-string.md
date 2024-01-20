@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Capitalizzare una stringa significa modificare la prima lettera della stringa in maiuscolo, mentre tutte le altre lettere rimangono in minuscolo. I programmatori spesso fanno ciò per dare una maggiore leggibilità al testo o per uniformare la formattazione delle stringhe all'interno di un programma.
+# Capitalizzare una stringa in Go
+
+## Cos'è e perché?
+Capitalizzare una stringa significa convertire la prima lettera di ogni parola in maiuscolo e lasciare inalterate le altre lettere. Questo è utile per formattare correttamente il testo nei programmi, come i nomi propri, titoli, ecc.
 
 ## Come fare:
+Il pacchetto `strings` di Go fornisce la funzione `Title()` che può essere usata per capitalizzare una stringa. Ecco come funziona:
+
 ```Go
-stringa := "ciao mondo"
+package main
+import (
+	"fmt"
+	"strings"
+)
 
-// Utilizzando la funzione strings.ToUpper() per capitalizzare la stringa
-stringaCapitalizzata := strings.ToUpper(stringa)
+func main() {
+	var s string = "ciao mondo! è una bella giornata oggi."
+	s = strings.Title(s)
+	fmt.Println(s)
+}
+```
+Il risultato sarà:
 
-// Output: "CIAO MONDO"
-
-// Utilizzando una combinazione di funzioni per capitalizzare la stringa
-stringaCapitalizzata := strings.ToUpper(stringa[:1]) + stringa[1:]
-
-// Output: "Ciao mondo"
+```Go
+Ciao Mondo! È Una Bella Giornata Oggi.
 ```
 
-## Approfondimento:
-La pratica di capitalizzare una stringa è comunemente usata in molti linguaggi di programmazione e deriva dall'ortografia e dalla grammatica della lingua inglese, dove i nomi propri e le prime parole delle frasi sono scritte con la lettera maiuscola.
+## Approfondimento
+La funzionalità di capitalizzazione delle stringhe era piuttosto rara nei linguaggi di programmazione storici, ma è diventata più comune con la crescente enfasi sulle interfacce utente amichevoli e l'internazionalizzazione.
 
-Ci sono anche altre varianti di capitalizzazione delle stringhe, come ad esempio la "title case" dove ogni parola nella stringa inizia con una lettera maiuscola.
+Come alternativa alla funzione `Title()`, si può anche usare la funzione `ToTitle()` del pacchetto `unicode` di Go. Non cambierà solo la prima lettera di ogni parola in maiuscolo, ma anche tutte le altre lettere della parola.
 
-In Go, la funzione strings.Title() è disponibile per capitalizzare una stringa secondo la "title case".
+Per quanto riguarda i dettagli di implementazione, la funzione `Title()` di Go utilizza l'Unicode per capire dove si trovano i confini delle parole.
 
-## Vedi anche:
-- Documentazione ufficiale di Go sulle stringhe: https://golang.org/pkg/strings/
-- Altri metodi per manipolare le stringhe in Go: https://golang.org/pkg/strings/#pkg-overview
+Pertanto, la funzione è in grado di gestire correttamente la capitalizzazione in stringhe al di là dell'Inglese, a patto che siano formattate correttamente secondo le regole Unicode.
+
+## Vedi anche
+- [Documentazione ufficiale del pacchetto `strings` di Go](https://golang.org/pkg/strings/)
+- [Documentazione ufficiale del pacchetto `unicode` di Go](https://golang.org/pkg/unicode/)
+- [Stack Overflow: Come capitalizzare una stringa in Go](https://stackoverflow.com/questions/38554353/how-to-make-a-string-uppercase-in-go)

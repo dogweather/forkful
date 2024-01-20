@@ -1,7 +1,7 @@
 ---
-title:                "Leitura de um arquivo de texto"
-html_title:           "Kotlin: Leitura de um arquivo de texto"
-simple_title:         "Leitura de um arquivo de texto"
+title:                "Lendo um arquivo de texto"
+html_title:           "Bash: Lendo um arquivo de texto"
+simple_title:         "Lendo um arquivo de texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que? 
-Ler um arquivo de texto é simplesmente ler o conteúdo de um arquivo que contém texto, como um arquivo .txt ou .csv. Os programadores geralmente precisam ler arquivos de texto para obter dados ou configurar um programa.
+## O Que e Porquê?
 
-## Como fazer:
-O processo básico para ler um arquivo de texto em Kotlin é o seguinte:
-```
-val arquivo = File("nome_do_arquivo.txt")
-val linhas = arquivo.readLines()
-for (linha in linhas) {
-    println(linha)
+Ler um arquivo de texto é o processo pelo qual um programa recupera e interpreta informações armazenadas num arquivo texto. Os programadores fazem isso para, por exemplo, processar dados disponíveis em arquivos ou obter configurações armazenadas.
+
+## Como Faz:
+
+Vamos ler um arquivo em Kotlin em cujas linhas contêm números.
+
+```Kotlin 
+import java.io.File
+
+fun main() {
+    val linhas = File("numeros.txt").readLines()
+    linhas.forEach { println(it) }
 }
 ```
+Se nosso arquivo contém os números de 1 a 5, cada um numa nova linha:
 
-Isso cria um objeto `File` que aponta para o arquivo desejado, e então lê todas as linhas do arquivo usando o método `readLines()`. Em seguida, percorremos as linhas com um loop e as imprimimos no console.
+```output
+1
+2
+3
+4
+5
+```
+Isso imprimi cada linha do arquivo.
 
-## Deep Dive:
-Ler arquivos de texto é uma tarefa comum na programação e é feita com muita frequência. Existem várias formas de ler arquivos de texto em Kotlin, como usando `BufferedReader` ou `InputStream`. Além disso, existem bibliotecas externas, como o Apache Commons IO, que oferecem funcionalidades mais avançadas para leitura de arquivos de texto.
+## Mergulho Profundo:
 
-Uma coisa a ter em mente é a codificação do arquivo de texto. Dependendo do idioma e da configuração do sistema, pode ser necessário especificar a codificação ao ler o arquivo para garantir que os caracteres sejam lidos corretamente.
+Historicamente, a leitura de arquivos é uma prática comum em programação desde o início dos tempos dos primeiros computadores. O Kotlin simplifica esse processo, fornecendo várias funções para lidar com a entrada e a saída de arquivos.
 
-## Veja também:
-- Documentação oficial do Kotlin sobre leitura de arquivos: https://kotlinlang.org/docs/tutorials/kotlin-for-py/read-write-files.html
-- Tutorial de vídeo sobre leitura de arquivos em Kotlin: https://www.youtube.com/watch?v=HBSHdI2IZ3A
-- Biblioteca Apache Commons IO: https://commons.apache.org/proper/commons-io/index.html
+Existem alternativas para a função `readLines()`, como `readText()` que lê todo o conteúdo do arquivo numa String, ou `bufferedReader().use { it.readText() }`, que é útil para arquivos grandes, dado que lê o conteúdo sem armazenar tudo na memória.
+
+As funções de leitura de arquivo em Kotlin, como `readLines()`, trabalham internamente com exceções Java. Caso o arquivo não possa ser lido, uma exceção será lançada. Essa implementação facilita a localização e o manuseio de erros.
+
+## Veja Também:
+
+* Documentação oficial do Kotlin em leitura e escrita de arquivos: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-lines.html)
+* Introdução à programação de arquivos em Kotlin: [link](https://www.baeldung.com/kotlin-file-read)
+* Tratando exceções durante a leitura de arquivos: [link](https://thdev.tech/kotlin/2020/05/11/Kotlin-Effective-Reading-File/)

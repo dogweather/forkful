@@ -1,7 +1,7 @@
 ---
-title:                "特定のパターンに一致する文字を削除する"
-html_title:           "Swift: 特定のパターンに一致する文字を削除する"
-simple_title:         "特定のパターンに一致する文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をしているの？ (What & Why?)
-文字列内で特定のパターンに一致する文字を削除するとは、プログラマーが特定の文字を手動で削除する代わりに、より効率的に複数の文字を一度に削除することを意味します。プログラマーは、コードをより洗練されたものにするために、または文字列の処理をより簡単にするために、文字列内の不要な文字を削除する必要があります。
+# Swiftでパターンに一致する文字を削除する
 
-## やり方 (How to:)
-文字列内で特定のパターンに一致する文字を削除するには、正規表現を使用します。以下のコードを参考にしてください。
+## 何となぜ？
+
+パターンに一致する文字の削除とは、特定の文字列パターンを見つけてそれを削除することです。これは無駄なスペースを取り除いたり、不要な記号を削除したりするために行います。
+
+## ハウツー：
+
+以下の例では、ある文字列から全ての数字を削除する方法を示します。
 
 ```Swift
-let str = "Hello World!"
-let pattern = "[aeiou]"
-let result = str.replacingOccurrences(of: pattern, with: "", options: .regularExpression)
-print(result)
+let originalString = "Hello123World456"
+let removedDigits = originalString.filter { !("0"..."9").contains($0) }
+print(removedDigits)
 ```
 
-このコードは、文字列"Hello World!"から母音を削除し、"Hll Wrld!"という結果を出力します。
+出力は以下のようになります。
 
-## 深堀り (Deep Dive)
-文字を削除する方法はいくつかありますが、正規表現は最も一般的で効率的な方法です。正規表現は、規則的なパターンを指定し、そのパターンに一致する文字を一度に複数削除することができます。また、文字列内で特定の文字を検索し、置換することもできます。
+```Swift
+HelloWorld
+```
 
-他の代替方法としては、ループを使用して文字を一つずつチェックし、不要な文字を削除する方法があります。しかし、この方法は複雑で時間がかかります。
+## ディープダイブ：
 
-## 関連リンク (See Also)
-- [正規表現チートシート](https://cheatography.com/davechild/cheat-sheets/regular-expressions/)
-- [Apple Developer Documentation - 正規表現](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [正規表現を使用した文字列処理の例](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift)
+この操作の歴史的な文脈によって、RegExpまたは正規表現がしばしばこのタスクに使われます。しかしSwiftでは、`filter`関数と文字の範囲を使った方法が提供されています。
+
+代替手段としては、正規表現を使用する方法がありますが、その場合はより複雑なパターンの一致を扱うことが可能になります。
+
+具体的な実装については、`filter`関数は配列または集合の各要素に対してテストを行い、そのテストをパスした要素だけを新しい配列に追加します。この場合、テストは指定した範囲内に文字が存在するかどうかです。
+
+## 参考資料：
+
+* [Swiftの公式ドキュメンテーション](https://developer.apple.com/documentation/swift)
+* [SwiftのStringの操作](https://www.hackingwithswift.com/articles/141/8-examples-of-swift-strings)
+* [正規表現についての詳細](https://developer.apple.com/documentation/foundation/nsregularexpression)

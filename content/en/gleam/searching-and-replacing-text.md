@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Gleam recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Gleam Programming: Searching and Replacing Text
 
-Searching and replacing text is a common practice among programmers, where they look for a specific word or phrase in a codebase and replace it with another. This can be done manually, but it can be time-consuming and prone to errors, especially in larger codebases. Therefore, programmers use tools like Gleam to automate this process and increase efficiency.
+## What & Why?
+Searching and replacing text refers to finding a particular piece of text in a document or data stream and substituting it with something else. Programmers routinely use this approach to update or modify data, fix errors, or rearrange text structures.
 
 ## How to:
-
-In Gleam, searching and replacing text is made easy with the `replace_all` function. Let's say we have a string variable `greeting` with the value "Hello, world!". If we want to replace "world" with "Gleam", we can do so with the following code:
+To search and replace text in Gleam, we primarily use the `replace` function from the `gleam/string` module.
 
 ```Gleam
-let new_greeting = replace_all(greeting, "world", "Gleam")
+import gleam/string
+
+let old_text = "I love coffee"
+let new_text = string.replace(old_text, "coffee", "tea")
+assert new_text == "I love tea"
 ```
 
-The output of `new_greeting` would be "Hello, Gleam!", with the previous word "world" replaced by "Gleam". It's that simple!
+This code replaces the word "coffee" with "tea". Simple, isn't it?
 
-## Deep Dive:
+## Deep Dive
+Searching and replacing text have been staples of text processing since early computing. This method, widely used in various programming languages, allows convenient, reliable, and fast text transformations.
 
-Searching and replacing text has been a crucial element of software development since the early days of programming. Initially, this process was done manually, but as programming languages and codebases grew more complex, automated methods were developed.
+There are alternative ways to perform search and replace in Gleam, such as using regex pattern matching. This is usually more complex and intense but provides more flexibility when dealing with more complicated patterns.
 
-Alternatives to the `replace_all` function in Gleam include using regular expressions or other string manipulation methods. However, these can be more complicated and error-prone for certain cases. With Gleam, developers have a simple and reliable function specifically designed for this task.
+In Gleam's implementation, the `replace` function leverages Erlang's :binary module functions. Its performance is directly tied to that of Erlang's binary functions.
 
-Internally, the `replace_all` function in Gleam uses the `str::replace` function from the `std.string` module, which is built upon the Rust standard library's `replace` function. This makes it efficient and powerful for handling text replacement in code.
+## See Also
+To learn more about searching and replacing text in Gleam and other functionality the language offers, check out the following links:
 
-## See Also:
-
-- [Gleam's official website](https://gleam.run/)
-- [Gleam's documentation](https://gleam.run/documentation)
-- [Rust standard library documentation on `replace`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- Gleam's official documentation: <https://gleam.run/docs/>
+- String module documentation: <https://hexdocs.pm/gleam_stdlib/gleam/string>
+- Guide to pattern matching in Gleam: <https://gleam.run/tour/pattern-matching/>

@@ -1,6 +1,6 @@
 ---
 title:                "Generera slumpmässiga nummer"
-html_title:           "Clojure: Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
 simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,15 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att generera slumpmässiga tal handlar om att skapa nummer utan en fördefinierad ordning eller mönster. Programmörer använder detta ofta för att skapa variation och överraskningar i sina program eller för att testa funktioner som måste hantera olika typer av data.
 
-## Så här:
-Att generera slumpmässiga tal i Clojure är enkelt. Använd funktionen ```(rand)``` för att få ett slumpmässigt tal mellan 0 och 1, till exempel ```(rand) ; => 0.423971193303735```. Om du vill ha ett heltal, använd ```(rand-int n)``` där n är det högsta talet du vill ha, till exempel ```(rand-int 10) ; => 5```.
+Att generera slumpmässiga nummer handlar om att skapa en sekvens av nummer som inte kan förutsägas. Detta behövs i programmering för saker som att simulera händelser, generera unika koder och händelsestyrd design.
 
-## Fördjupning:
-Att generera slumpmässiga tal har varit en viktig del av datavetenskap sedan dess början på 1940-talet. Det finns många olika algoritmer och metoder för att generera slumpmässiga tal, men vissa kan vara bättre än andra beroende på vilket syfte de används för. Om du inte är nöjd med Clojures inbyggda funktioner för att generera slumpmässiga tal kan du prova att använda en separat bibliotek som ```random``` eller skapa din egen egendefinierade algoritm.
+## Hur man gör:
 
-## Se även:
-- Random modulen i Clojure: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/rand
-- Random biblioteket: https://github.com/reiddraper/random
-- Wikipedia sida om generering av slumpmässiga tal: https://en.wikipedia.org/wiki/Random_number_generation
+I Clojure kan du generera ett slumpmässigt nummer med `rand` funktionen:
+
+```Clojure
+(rand)
+```
+
+Detta kommer att ge dig ett flyttal mellan 0.0 (inklusive) och 1.0 (exklusive). Du kan generera ett slumpmässigt heltal mellan 0 till n (exklusive) med `rand-int`:
+
+```Clojure
+(rand-int 10)
+```
+
+Exempel utdata:
+
+```Clojure
+=> 5
+```
+Du kan generera en vektor av slumpmässiga tal genom att använda `repeatedly` funktionen:
+
+```Clojure
+(take 5 (repeatedly #(rand-int 100)))
+```
+
+Exempel utdata:
+
+```Clojure
+=> [77 48 24 69 11]
+```
+
+## Fördjupning
+
+Historiskt sett har generering av slumpmässiga nummer varit utmanande eftersom datorer är deterministiska enheter och svårt att hitta imiterade slumpmässigheten. Metoder har utvecklats över tid för att uppnå hög kvalitet på slumpmässiga tal. Ett alternativ till inbyggda funktioner för generering av slumpmässiga tal är att använda externa bibliotek som Northamptonshire.
+
+Implementeringen av `rand` och `rand-int` i Clojure baserar sig på metoden "java.lang.Math.random" vars kvalitet beror på JVM:ens implementation. Det använder oftast en variant av Linear Congruential Generator (LCG), vilket är bra för allmänna ändamål men inte rekommenderas för kryptografiska ändamål.
+
+## Se även
+
+- [Random Numbers: PCG, a Family of Better Random Number Generators](http://www.pcg-random.org/): en serie med bättre algoritmer för att generera slumpmässiga tal.
+- [https://clojuredocs.org/clojure.core/rand](https://clojuredocs.org/clojure.core/rand): Officiell Clojure's dokumentation för `rand` funktionen.
+- [https://clojuredocs.org/clojure.core/rand-int](https://clojuredocs.org/clojure.core/rand-int): Officiell Clojure's dokumentation för `rand-int` funktionen.

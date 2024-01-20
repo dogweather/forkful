@@ -1,7 +1,7 @@
 ---
-title:                "Joukon merkkien interpolointi"
-html_title:           "PowerShell: Joukon merkkien interpolointi"
-simple_title:         "Joukon merkkien interpolointi"
+title:                "Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
+simple_title:         "Merkkijonon interpolointi"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mikä & Miksi?
 
-Merkkijonon interpolaatio on tekniikka, jossa merkkijonojen muotoilusääntöjä käytetään merkkijonon sisällön lisäämiseen toiseen merkkijonoon. Tätä käytetään usein ohjelmoinnissa, kun halutaan yhdistää dynaamisia tai muuttuvia arvoja staattisiin teksteihin. Esimerkiksi voimme haluta tulostaa jonkin laskennallisen arvon välilyönnillä ja tekstillä varustettuna.
+Interpoloiminen on tapa muotoilla merkkijonoja yhdistämällä staattisia merkkijonoja ja dynaamisia arvoja sujuvasti yhdeksi merkkijonoksi. Ohjelmoijat käyttävät sitä saadakseen selkeämmän koodin ja välttääksensä merkkijonojen yhdistämisen virheet.
 
-# Miten:
+## Kuinka tehdä:
 
-Interpolaatio voidaan toteuttaa PowerShell:ssa kahdella tavalla: joko käyttämällä jo valmiiksi muodostettua merkkijonoa tai luomalla se kokonaan uudestaan.
+Katsotaan esimerkkiä:
 
 ```PowerShell
-# Muodostettu merkkijono
-$num = 5
-Write-Host "Tulos on: $num" // Tulostaa "Tulos on: 5"
-
-# Luotu merkkijono
-Write-Host "Tulos on: $($num + 2)" // Tulostaa "Tulos on: 7"
+$hahmo = "Kissa"
+$toiminta = "hypätä"
+Write-Output "Näen $hahmo:n, joka yrittää $toiminta:a."
 ```
 
-# Syväsukellus:
+Tämän suorittaminen tulostaa tuloksen:
 
-Merkkijonon interpolaatio ei ole uusi tekniikka, vaan se on saanut inspiraatiota jo varhaisista ohjelmointikielistä kuten PL/I ja Algol. Nykyään sitä käytetään laajasti eri ohjelmointikielillä, kuten C#, Java ja tietenkin PowerShell. Vaihtoehtoisesti interpolaation sijaan voimme käyttää myös merkkijonon formatointia tai konkatinointia saavuttaaksemme saman tuloksen.
+"Näen Kissa:n, joka yrittää hypätä:a."
 
-# Katso myös:
+Stringin interpolointi PowerShellissä käyttää $-merkkiä muuttujien nimeämiseen merkkijonon sisällä.
 
-- https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7 - Lisätietoa operaattoreista PowerShell:ssa.
-- https://stackoverflow.com/questions/43353680/what-is-interpolating-a-string - Aiheeseen liittyvä keskustelu Stack Overflow:ssa.
-- https://www.w3schools.com/python/gloss_python_string_interpolation.asp - Interpolaation toteutus Pythonissa.
+## Syventävä sukellus:
+
+Historiallisesti merkkijonojen yhdistämistä varten on ollut useita metodeja, kuten + -operaattorin tai `String.Format`-metodin käyttö. Nämä voivat kuitenkin olla kömpelöitä ja johtaa virheisiin. Stringin interpolointi PowerShellissä tarjoaa selkeämmän ja vähemmän virhealttiin tavan.
+
+Alternatiiveille, `StringBuilder` on varteenotettava vaihtoehto suurille merkkijonoille, ja `-f` -operaattorille, joka on samanlainen kuin `String.Format`.
+
+PowerShellissä merkkijonojen interpolointi käyttää kaksoislainauksia (""). Yksittäiset lainaukset ('') eivät toimi, koska ne käsittävät merkkijonon kirjaimellisesti.
+
+## Katso myös:
+
+[Microsoftin dokumentaatio stringin interpoloinnista](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1)
+
+[Keskustelu stringin interpoloinnista StackOverflow:issa](https://stackoverflow.com/questions/37320296/string-interpolation-vs-format-string-in-powershell)

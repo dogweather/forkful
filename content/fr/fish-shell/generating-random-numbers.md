@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "Fish Shell: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Pourquoi & Comment? 
+## Quoi & Pourquoi?
 
-Générer des nombres aléatoires est un processus où nous pouvons produire des nombres aléatoires sur notre ordinateur. Les programmeurs le font souvent pour simuler des situations aléatoires ou pour ajouter de l'imprévisibilité aux programmes.
+La génération de nombres aléatoires consiste à créer une série de chiffres qui ne présente aucun schéma prévisible. Les développeurs l'utilisent souvent pour les jeux, les simulations, et l'ensemble du code où l'incertitude est nécessaire.
 
-Comment faire? 
+## Comment faire:
 
-Utilisons Fish Shell pour générer des nombres aléatoires! Dans l'exemple ci-dessous, nous utiliserons la commande ```math (random)`` pour générer un nombre aléatoire entre 0 et 1. 
+Dans Fish Shell, la génération d'un nombre aléatoire est aussi simple que `random`. Voici quelques exemples.
 
-```
-Fish Shell
-
-math (random)
-
-Output: 0.426902
+```Fish Shell
+# Si vous voulez un nombre aléatoire entre 1 et 10
+set randomNumber (random 1 10)
+echo $randomNumber
 ```
 
-Pour générer un nombre aléatoire entre un minimum et un maximum spécifié, nous pouvons utiliser la commande ```random``` suivie du minimum et du maximum séparés par un espace. Dans cet exemple, nous allons générer un nombre aléatoire entre 1 et 10. 
-
-```
-Fish Shell
-
-random 1 10
-
-Output: 7
+```Fish Shell
+# Pour un nombre aléatoire entre 100 et 200
+set anotherRandom (random 100 200)
+echo $anotherRandom
 ```
 
-plongée en profondeur 
+Cela produira une sortie comme celle-ci:
+```
+7
+167
+```
 
-La génération de nombres aléatoires est un concept important en informatique et a un usage courant dans de nombreux domaines tels que les jeux, les simulations et la cryptographie. Avant l'invention des ordinateurs, les nombres aléatoires étaient générés en utilisant des phénomènes aléatoires tels que le lancer de dés ou la roue de la roulette. Cependant, avec les ordinateurs, nous pouvons générer des nombres aléatoires de manière plus efficace et précise. 
+## Plongée profonde
 
-Alternatives possibles 
+Historiquement, la génération de nombres aléatoires dans les systèmes Unix est basée sur `/dev/random` ou `/dev/urandom`. Cependant, Fish Shell simplifie cette tâche avec la commande `random`.
 
-Outre la méthode que nous avons utilisée avec Fish Shell, il existe d'autres façons de générer des nombres aléatoires en utilisant d'autres langages de programmation tels que Python, C et Java. Cependant, ces langages peuvent être plus verbeux et nécessitent parfois l'importation de bibliothèques supplémentaires. Avec Fish Shell, c'est une solution simple et rapide pour générer des nombres aléatoires. 
+Une alternative possible est d'utiliser `jot` dans certaines versions de Unix. Cependant, Fish Shell n'utilise pas `jot` pour la commande `random`.
 
-Voir aussi 
+Concernant les détails de mise en œuvre, Fish utilise une combinaison de l'horloge du système et du générateur congruent linéaire pour donner des nombres pseudo-aléatoires. Il convient de noter que ce n'est pas une méthode cryptographiquement sûre pour la génération de nombres aléatoires.
 
-Pour en savoir plus sur la génération de nombres aléatoires avec Fish Shell, vous pouvez consulter la page man de Fish et découvrir d'autres commandes utiles telles que ```random```, ```pick``` et ```seq```. Vous pouvez également consulter des tutoriels en ligne pour découvrir des façons créatives d'utiliser ces commandes dans vos programmes.
+## Voir aussi
+
+1. Documentation officielle de `random`: https://fishshell.com/docs/current/cmds/random.html
+2. Discussion sur `jot` vs `random` dans Fish: https://github.com/fish-shell/fish-shell/issues/2394
+3. How computers generate random numbers: https://www.howtogeek.com/183051/htg-explains-how-computers-generate-random-numbers/

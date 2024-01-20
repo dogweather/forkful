@@ -1,7 +1,7 @@
 ---
-title:                "La lecture des arguments de ligne de commande"
-html_title:           "Java: La lecture des arguments de ligne de commande"
-simple_title:         "La lecture des arguments de ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Quoi & Pourquoi?
 
-Lire les arguments de ligne de commande est une façon pour les programmeurs de donner des instructions spécifiques au programme sans avoir à les coder directement dans le code source. Cela permet une plus grande flexibilité et personnalisation pour les utilisateurs finaux du programme.
+Les arguments de la ligne de commande sont les entrées que vous donnez à votre programme lors de son exécution. Ils sont essentiels pour rendre votre programme modulable et interactif.
 
-# Comment faire:
-
-Voici un exemple simple de lecture des arguments de ligne de commande en Java:
-
+## Comment Faire:
 ```java
-public class CommandLineArguments {
+public class Main {
+
     public static void main(String[] args) {
-        System.out.println("Le premier argument est: " + args[0]);
-        System.out.println("Le deuxième argument est: " + args[1]);
+        // Boucle à travers les arguments de la ligne de commande
+        for(String str: args) {
+            System.out.println(str);
+        }
     }
 }
 ```
-
-Supposons que nous exécutons ce programme avec les arguments suivants:
-
-```bash
-java MyProgramme arg1 arg2
+Si vous exécutez ce programme avec `java Main bonjour monde`, l'output sera:
+```
+bonjour
+monde
 ```
 
-La sortie sera:
+## Plongée en Profondeur
 
-```bash
-Le premier argument est: arg1
-Le deuxième argument est: arg2
-```
+1. **Contexte historique**: L'utilisation des arguments de ligne de commande remonte aux débuts de l'informatique quand les interfaces graphiques n'existaient pas. Il est toujours en vigueur en raison de sa simplicité et efficacité.
+   
+2. **Alternatives**: Vous pouvez également utiliser BufferedReader ou Scanner pour lire les entrées, mais ils sont utilisés pour obtenir des entrées de l'utilisateur en cours d'exécution plutôt qu'au démarrage du programme.
 
-# Plongée profonde:
+3. **Détails d'implémentation**: Les arguments de la ligne de commande sont passés sous forme de tableau de string (String[]) à la méthode main(). Chaque chaîne dans le tableau correspond à un argument.
 
-Lire les arguments de ligne de commande existe depuis les débuts du langage Java. Cela permet aux utilisateurs de personnaliser les instructions pour le programme sans avoir à recompiler le code source. D'autres alternatives pour transmettre des instructions à un programme comprennent l'utilisation de fichiers de configuration ou d'interfaces graphiques.
+## Voir Aussi
 
-La syntaxe pour lire les arguments de ligne de commande en Java est la suivante:
+- Oracle Java Docs: [Command-Line Arguments](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
 
-```java
-public static void main(String[] args)
-```
-
-où ```args``` est un tableau de type ```String``` contenant les arguments de la ligne de commande passés par l'utilisateur lors de l'exécution du programme.
-
-# Voir aussi:
-
-Pour plus d'informations sur la lecture des arguments de ligne de commande en Java, consultez les liens suivants:
-
-- [Documentation officielle Java: Lire les arguments de ligne de commande](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-- [Définir des arguments de ligne de commande en Java](https://www.baeldung.com/java-command-line-arguments)
-- [Exemples de code pour lire les arguments de ligne de commande en Java](https://www.tutorialspoint.com/java/java_command_line_arguments.htm)
+- StackOverflow: [How are parameters passed in Java main method?](https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java)

@@ -1,6 +1,6 @@
 ---
 title:                "读取文本文件"
-html_title:           "Clojure: 读取文本文件"
+html_title:           "Kotlin: 读取文本文件"
 simple_title:         "读取文本文件"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是文本文件读取及其重要性？
+## 什么与为什么?
+读取文本文件是将存储在本地或云端的文本文件内容提取到程序中的过程。程序员读取文本文件的原因包括，但不限于，数据输入、配置设置和日志分析。
 
-文本文件读取是指将文本文件中的内容提取出来并转换为程序可读的形式。程序员通常需要读取文本文件来获取数据、配置程序或进行数据分析等任务。
+## 如何操作:
+在Clojure中，你可以用以下几行代码读取文本文件：
 
-如何实现文本文件读取：
-
-```Clojure 
-(with-open [file (clojure.java.io/reader "example.txt")] 
-    (doseq [line (line-seq file)] 
-        (println line))) 
+```Clojure
+(with-open [rdr (java.io.BufferedReader. 
+            (java.io.FileReader. "文件路径"))]
+  (doseq [line (line-seq rdr)]
+    (println line)))
 ```
 
-上述代码将以每行的形式打印出文本文件example.txt中的内容。
+当你运行这段代码时，它会将指定文件路径中的所有行打印到屏幕。
 
-深入探讨：
+## 深入理解:
+Clojure的这种文本读取方法源于它的Java根源，利用了Java的'BufferedReader'和'FileReader'类。尽管有其他方法可以读取文本文件，如使用'clojure-csv'库进行CSV文件读取，但上述方法是最基本的哦，应用广泛。
 
-文本文件读取在编程领域有着广泛的应用。它可以帮助程序员快速处理大量数据，从而提高程序的效率和性能。除了使用Clojure提供的clojure.java.io库，程序员还可以使用其他语言类似的工具如Java的FileReader和BufferedReader来进行文本文件读取。
+读取文件的实现细节中，'with-open'宏使用了Java的 try-finally 语义来确保文件在读取结束后能够被正确关闭，防止资源泄露。
 
-相关资源：
+## 扩展阅读:
+要了解更多关于Clojure处理文件和IO的内容，请参考以下链接:
 
-- [Clojure文档：clojure.java.io库](https://clojure.github.io/clojure/clojure.java.io-api.html)
-- [Java文档：FileReader](https://docs.oracle.com/javase/7/docs/api/java/io/FileReader.html)
-- [Java文档：BufferedReader](https://docs.oracle.com/javase/7/docs/api/java/io/BufferedReader.html)
+1. Clojure的官方文档: 
+   [File IO](https://clojure.org/reference/reader)
+2. Clojure for the Brave and True的教程: 
+   [File IO](https://www.braveclojure.com/core-functions-in-depth)
+
+请注意这些链接中的内容可能用的是英文。

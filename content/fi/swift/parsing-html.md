@@ -1,7 +1,7 @@
 ---
-title:                "Html:n jäsentäminen"
-html_title:           "Swift: Html:n jäsentäminen"
-simple_title:         "Html:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-HTML parsing tarkoittaa HTML-koodin lukemista ja sen sisältämien tietojen muokkaamista. Ohjelmoijat tekevät tätä usein tietojen esittämiseksi tai käsittelemiseksi, kuten hakukoneiden indeksoinnissa tai web-sovellusten kehittämisessä.
+## Mikä & Miksi?
+HTML-jäsentäminen on prosessi, jossa HTML-teksti muutetaan rakenteelliseksi näkymäksi, jota ohjelmat ja skriptit voivat ymmärtää. Tekijät hyödyntävät sitä informaation ja datan skrapaamiseksi verkkosivustoilta tai HTML-pohjaisten tiedostojen käsittelemiseksi.
 
-# Ohjeet:
-Swift-koodia käyttämällä voit helposti parsia HTML-koodia ja käsitellä sen sisältämät tiedot. Tässä on esimerkki, joka hakee osoitteeseen https://www.google.com/piilota olevasta HTML-koodista Title-elementin sisällön ja tulostaa sen konsoliin:
+## Kuinka?
+Voimme käyttää Swift pakettia nimeltä `SwiftSoup` helposti jäsentämään HTML-tekstin Swiftillä. Ensin sinun tulee asentaa paketti CocoaPods avulla seuraavalla koodilla:
+
+```Swift
+pod 'SwiftSoup'
 ```
-Swift
-let html = "https://www.google.com"
-if let url = URL(string: html),
-let data = try? Data(contentsOf: url),
-let htmlString = String(data: data, encoding: .utf8),
-let title = htmlString.slice(from: "<title>", to: "</title>") {
-print(title)
+
+Tämän jälkeen voimme käyttää `SwiftSoup` jäsentääksemme HTML-tiedostoja. Tässä esimerkki:
+
+```Swift
+import SwiftSoup
+
+do {
+    let html = "<html><head><title>Sivunimi</title></head><body>Tervetuloa!</body></html>"
+    let doc: Document = try SwiftSoup.parse(html)
+    let title: Element =  try doc.select("title").first()!
+    print(try title.text())
+} catch Exception.Error(_, let message) {
+    print(message)
+} catch {
+    print("catch-all")
 }
 ```
-Tulostus: Google
 
-# Syvälle tarinassa:
-HTML-parsing ei ole uusi käsite, sillä sen historia ulottuu Internetin alkuaikoihin. Alun perin HTML-parsing tehtiin manuaalisesti ja toivottiin suosiollista tulosta, mutta nykyään kehittyneet ohjelmistot tekevät sen automaattisesti. On myös olemassa muita ratkaisuja, kuten XML-parsing, mutta HTML on edelleen suosituin tekniikka web-sivujen sisällön muokkaamiseen.
+Kun ajat tämän koodin, näet tulostuksen:
 
-# Katso myös:
-- [Swiftin virallinen dokumentaatio HTML-parsingista](https://developer.apple.com/documentation/foundation/xmlparser)
-- [HTML-parsingin merkitys hakukoneiden toiminnassa](https://www.searchenginejournal.com/html-parsing-seo/261735/)
-- [HTML-parsingin mahdollisuudet web-sovellusten kehittämisessä](https://www.apriorit.com/dev-blog/403-swift-html-parsing-tutorial)
+```
+Sivunimi
+```
+
+## Syväsukellus
+HTML-jäsentämisen historia ulottuu aina 1990-luvun alkuvuosille, jolloin kehitettiin ensimmäisiä WWW-selaimia. Vaihtoehtoisia metodeja HTML:n jäsentämiselle ovat esimerkiksi jäsentimen itse kirjoittaminen tai valmiiden kirjastojen (kuten SwiftSoupin) käyttäminen. On kuitenkin tärkeää huomata, että HTML-jäsentämistä ei aina kannata tehdä itse, sillä se voi olla aikaa vievää ja monimutkaista. Lisäksi, pakettien kuten `SwiftSoup` avulla voi saada hyödyllisiä toiminnallisuuksia, kuten virheidenkäsittelyn ja tehokkaan suorituskyvyn.
+
+## Katso Myös
+1. SwiftSoup GitHub repo: [https://github.com/scinfu/SwiftSoup](https://github.com/scinfu/SwiftSoup)
+2. Swift ja HTML-jäsentäminen: [https://www.swiftbysundell.com/articles/parsing-html-in-swift-with-swiftsoup](https://www.swiftbysundell.com/articles/parsing-html-in-swift-with-swiftsoup)
+3. HTML-jäsentämisen historia ja tekniikat: [https://stackoverflow.com/questions/432992/technique-and-tools-for-parsing-html-documents](https://stackoverflow.com/questions/432992/technique-and-tools-for-parsing-html-documents)

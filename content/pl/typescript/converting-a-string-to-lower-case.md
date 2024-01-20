@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "TypeScript: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,27 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i Dlaczego? 
+Konwersja łańcucha (stringa) na małe litery to proces zamiany wszystkich liter w danym łańcuchu na małe litery. Programiści robią to za każdym razem, gdy potrzebują upewnić się, że dane są spójne i niezależne, np. przy porównaniu łańcuchów.
 
-Konwertowanie ciągów znaków na małe litery jest częstym zadaniem dla programistów. Polega to na zamianie wszystkich wielkich liter w ciągu na odpowiadające im małe litery. Robimy to zazwyczaj ze względu na jednolitość lub łatwiejsze porównywanie danych.
+## Jak to zrobić: 
+Aby skonwertować łańcuch na małe litery w TypeScript, używamy metody `toLowerCase()`. Przyjmuje ona nie ma parametrów i zwraca nowy łańcuch, w którym wszystkie litery zostały zastąpione małymi literami.
 
-## Jak to zrobić:
+```TypeScript
+let tekst: string = "Hello, World!";
+let tekstNaMaleLitery: string = tekst.toLowerCase();
 
-```typescript
-let string = "TEKST DO KONWERTOWANIA";
-console.log(string.toLowerCase());
-// Output: tekst do konwertowania
+console.log(tekstNaMaleLitery);  // "hello, world!"
 ```
+Jak widać, metoda `toLowerCase()` zmieniła wszystkie litery na małe.
 
-## Głębsze wyjaśnienia:
+## Głębsze zanurzenie
+Pierwsze wdrożenia konwersji znaków na małe litery datują się na lata 70. XX wieku z pojawieniem się pierwszych języków programowania wysokiego poziomu.
+Alternatywnie można również użyć metody `toLocaleLowerCase()`, ktróra działa podobnie do `toLowerCase()`, ale jest bardziej przyjazna dla międzynarodowych znaków.
 
-1. Konwersja ciągów znaków na małe litery jest powszechnie stosowaną techniką w programowaniu. Początkowo wynikało to z ograniczeń sprzętowych, gdzie używanie tylko jednego rozmiaru liter ułatwiało przechowywanie i porównywanie danych.
+Jednakże, zarówno `toLowerCase()` jak i `toLocaleLowerCase()` nie zmieniają oryginalnego łańcucha. Tworzą one nowy łańcuch z literami przekształconymi na małe litery. Jest to spowodowane tym, że w JavaScript i TypeScript, łańcuchy są niezmienne.
 
-2. Alternatywną metodą jest użycie funkcji upperCase(), która zamienia wszystkie litery w ciągu na wielkie. Jednak nie jest to zalecane ze względu na zmianę oryginalnego ciągu.
+```TypeScript
+let tekst: string = "Hello, World!";
+tekst.toLowerCase();
 
-3. Implementacja konwersji ciągu znaków na małe litery jest różna w zależności od języka programowania. W języku TypeScript możemy użyć funkcji toLowerCase(), która jest wbudowana w obiekt String.
+console.log(tekst);  // "Hello, World!"
+```
+Jak widać, mimo użycia metody `toLowerCase()`, oryginalny łańcuch pozostał niezmieniony.
 
-## Zobacz także:
-
-- [Dokumentacja TypeScript o toLowerCase()](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-5.html#built-in-operator-o-a-works-on-string)
-- [Funkcja String.prototype.toLowerCase() w języku JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## Zobacz również
+[Agnostic functions - To Lower Case](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) 
+[MDN Web Docs - toLocaleLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase) 
+[Mozilla Hacks - A crash course in just-in-time (JIT) compilers](https://hacks.mozilla.org/2017/02/a-crash-course-in-just-in-time-jit-compilers/)

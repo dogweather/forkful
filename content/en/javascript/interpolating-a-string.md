@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Javascript recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,43 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Let's Talk JavaScript String Interpolation
+
 ## What & Why?
 
-Interpolating a string in Javascript refers to the process of dynamically inserting values into a string at runtime. This allows programmers to create dynamic, customizable strings by incorporating variables or other string values into their code. It is a useful technique for creating user-friendly output and reducing code duplication.
+String interpolation is the process of injecting variables or expressions into a piece of text - "String". Why the fuss? It's a shortcut to concatenate or organize strings without all the plus signs, spaces and quotes - makes code easier to write and read.
 
 ## How to:
 
-To interpolate a string in Javascript, you can use the template literals syntax introduced in ES6. This involves using backticks (`) instead of single or double quotes and adding placeholders ${variable} inside the string where you want to insert values. For example:
+In JavaScript, you can perform string interpolation with back-ticks and `${}`. Here's how:
 
 ```Javascript
-let name = "John";
-let age = 25;
-let message = `Hello, my name is ${name} and I am ${age} years old.`;
-console.log(message);
+let planet = "World";
+console.log(`Hello, ${planet}!`);
 ```
-
-This will output: `Hello, my name is John and I am 25 years old.`
-
-You can also use more complex expressions within the placeholders, such as calculations or function calls. For example:
+Output: 
+```
+Hello, World!
+```
+But not just variables, you can interpolate expressions. Watch this:
 
 ```Javascript
-let a = 5;
-let b = 10;
-let message = `The result of ${(a+b)*2} is twice the sum of ${a} and ${b}.`
-console.log(message);
+let quantity = 5;
+let fruit = "apples";
+console.log(`I bought ${quantity * 2} ${fruit} today.`);
 ```
+Output: 
+```
+I bought 10 apples today.
+```
+Voila! No fuss of `+` and `" "`, but tidy outputs. 
 
-This will output: `The result of 30 is twice the sum of 5 and 10.`
+## Deep Dive
 
-## Deep Dive:
+Javascript introduced string interpolation, AKA template literals, in ES6 (ECMAScript 2015) to make life easier for developers. Before that, we used clumsy concatenation:
 
-The concept of interpolating strings has been around for a long time, with various implementations in different programming languages. In Javascript, it was first introduced in ES6 as part of the template literals syntax. Before that, programmers had to use string concatenation or formatting functions to achieve a similar result.
+```Javascript
+var fruit2 = "oranges";
+console.log("I bought some " + fruit2 + " today.");
+```
+Output: 
+```
+I bought some oranges today.
+```
+Alternative ways do exist. For instance, we have the `concat()` method. Yet, string interpolation is the prevailing practice because of simplicity and readability.
 
-Some alternative methods to interpolate strings in Javascript include using string concatenation with the + operator or string formatting methods like `String.format()`. However, these methods can be more cumbersome and less readable than template literals.
+Implementing string interpolation involves HTML-like coding, but don't worry - the curly brackets and dollar signs `${}` never confuse with your HTML. They tell JavaScript to interpret its content as a variable or expression.
 
-When using template literals, the expressions within the placeholders are evaluated at runtime, allowing for dynamic and customizable output. However, this also means you should be careful when including user-input variables to avoid potential security risks.
+Glad to know, right? Now go sprinkle some magic on your string world.
 
-## See Also:
 
-- [Template literals on Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-- [ES6 Features: Template literals on W3Schools](https://www.w3schools.com/js/js_es6.asp)
+## See Also
+
+For more details about string interpolation in JavaScript:
+
+- [Mozilla Developer’s Network (MDN) - Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
+- [W3Schools - Using backticks (` `) in JavaScript](https://www.w3schools.com/js/js_string_templates.asp)
+- [JavaScript.info - Template literals (back-ticks)](https://javascript.info/string#template-literals)

@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Elixir: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,27 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest czytanie pliku tekstowego i dlaczego to robimy?
-Czytanie pliku tekstowego to proces, w którym dane zapisane w pliku są odczytywane i przetwarzane przez program. Programiści często wykorzystują tę funkcję, aby uzyskać dostęp do danych lub konfiguracji, które są przechowywane w plikach tekstowych.
+## Co i Dlaczego?
+
+Czytanie plików tekstowych to proces odczytywania danych z plików, które są zapisane jako tekst. Programiści wykonują to do załadowania danych z plików do swojego kodu, co umożliwia pracę na tych danych lub ich użycie do generowania wyników.
 
 ## Jak to zrobić:
-```Elixir
-File.read("nazwa_pliku.txt")
-|> IO.puts 
+
+Elixir nadaje się świetnie do odczytywania plików tekstowych. Przyjrzyjmy się krótkiemu przykładowi:
+
+```elixir
+{:ok, zawartosc} = File.read("moj_plik.txt")
+IO.puts zawartosc
 ```
-W tym przykładzie wykorzystujemy funkcję `File.read` do odczytania zawartości pliku tekstowego o nazwie `nazwa_pliku.txt`. Następnie za pomocą funkcji `IO.puts` wyświetlamy odczytane dane w konsoli.
+W wyniku tego kodu, otrzymasz zawartość twojego pliku tekstowego 'moj_plik.txt' wydrukowaną w konsoli.
 
-### Przykładowe wyjście:
-```
-To jest zawartość pliku tekstowego.
-Wszystkie linijki zostaną wyświetlone w konsoli.
-```
+## W Głębi Tematu:
 
-## Głębszy przegląd:
-Odczytywanie plików tekstowych jest powszechną praktyką w programowaniu. Wcześniej funkcja ta była wykorzystywana głównie w językach programowania takich jak C czy Java, ale dzięki Elixirowi mamy prostsze i bardziej wygodne rozwiązanie.
+Historia: Odczytywanie plików tekstowych to jedna z najstarszych funkcji komputerowych, która była kiedyś kluczowym elementem programowania.
 
-Alternatywnym sposobem na odczytanie pliku tekstowego jest użycie funkcji `IO.read_file`, która zwraca dane w postaci binarnej lub zmienia typ danych na string za pomocą funkcji `IO.inspect`.
+Alternatywy: W Elixirze, możemy również odczytywać pliki używając strumieni, co jest szczególnie użyteczne przy obsłudze dużych plików, które mogą nie pasować do pamięci. 
 
-## Zobacz także:
-Oficjalna dokumentacja Elixir: https://elixir-lang.org/docs.html
-Przykłady wykorzystania funkcji File.read: https://hexdocs.pm/elixir/File.html#read/1
+Szczegóły Implementacji: Elixir korzysta z :file Erlang’a do obsługi I/O operacji na plikach. Również, Elixir korzysta z podejścia obsługi I/O opartego na procesach, co umożliwia łatwe i wydajne zarządzanie plikami.
+
+## Zobacz Również:
+
+1. Dokumentacja Elixir: odczytywanie plików: https://hexdocs.pm/elixir/File.html#read/1
+2. Kurs Elixira z poziomu podstawowego do zaawansowanego, gdzie jednym z tematów jest odczyt plików: https://elixirschool.com/en/
+3. Blog o zaawansowanych technikach odczytywania plików w Elixirze: https://medium.com/@n2o/reading-large-files-in-elixir-revisited-8b959799e374

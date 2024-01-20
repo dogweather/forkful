@@ -1,6 +1,6 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "PowerShell: Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
 simple_title:         "Interpolera en sträng"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
+# PowerShell: Stränginterpolationens kraft
 
-Att interpolera en sträng innebär att man inkluderar variabler eller uttryck i en textsträng. Detta gör det lättare och mer flexibelt att skapa dynamiska strängar med variabelt innehåll. Programerare använder detta för att till exempel skriva ut resultatet av beräkningar eller visa information från användare i ett meddelande.
+## Vad och Varför?
+Stränginterpolation är en teknik för att ersätta platsbevarare i en sträng med deras motsvarande värden. Programmerare använder det för att infoga variabler eller uttryck direkt i en strängtext, det gör koden mer läsbar och underhållbar.
 
-## Hur gör man?
-
-Det finns flera sätt att interpolera strängar i PowerShell. Det enklaste sättet är att använda en $-tecken följt av variabelnamnet eller uttrycket som önskas inkluderas i strängen. Exempelvis:
-
-```PowerShell
-$namn = "Lisa"
-$"Hej $namn, välkommen!"
-```
-
-Detta kommer att resultera i att "Hej Lisa, välkommen!" skrivs ut i konsolfönstret. Man kan även använda operatorn `-f` för att interpolera strängar, där variabler eller uttryck placeras inom klammerparenteser och separeras med kommatecken. Exempel:
+## Hur du gör:
+Här är några exempel på hur du använder stränginterpolation i PowerShell:
 
 ```PowerShell
-$förnamn = "Karl"
-$efternamn = "Johansson"
-"Välkommen {0}, {1}!" -f $efternamn, $förnamn
+$name = "Alice"
+echo "Hej, $name"
 ```
+Output: `Hej, Alice`
 
-Detta kommer att skriva ut "Välkommen Johansson, Karl!".
-
-## Djupdykning
-
-Interpolation av strängar är en vanlig teknik inom programmering och har funnits sedan tidigt 1970-tal. Det finns även alternativa sätt att inkludera variabler i strängar, som till exempel konkatenering, där variabler sätts ihop med hjälp av operatorn `+`. Detta kan dock göra koden svårläst och mindre effektiv jämfört med stränginterpolation.
-
-I PowerShell finns även möjligheten att använda sig av utvidgad stränginterpolation, som innebär att man kan inkludera uttryck som beräknas inuti strängen. Detta görs genom att placera uttrycken inom parenteser och följa dessa med operatorn `-is` följt av en `s` för att indikera att uttrycken ska evalueras som strängar. Exempel:
+Vill du göra mer komplexa saker med stränginterpolation? Kolla in följande exempel:
 
 ```PowerShell
-$antal = 5
-"Jag har totalt $(($antal * 2) - 5)s äpplen kvar."
+$hour = (Get-Date).Hour
+echo "Klockan är nu: $hour"
 ```
+Output: `Klockan är nu: [Aktuell timme här]` 
 
-Detta kommer att resultera i att "Jag har totalt 5 äpplen kvar." skrivs ut.
+## Fördjupning
+Powershell stränginterpolation introducerades ursprungligen med unix-skalskript och har sedan dess integrerats i många programmeringsspråk. Ett alternativ till stränginterpolation är att använda sammanfogningsoperatorer eller formateringsfunktioner, men de kan göra koden mindre läsbar. När det kommer till prestanda, tänk på att omfattande stränginterpolation kan sakta ner ditt script, eftersom varje interpolation kräver ytterligare CPU-cykler för att tolka och ersätta platsbevararen.
 
 ## Se även
+Om du vill lära dig mer om PowerShell stränginterpolation, rekommenderar jag följande resurser: 
 
-För mer information om interpolering av strängar i PowerShell kan du läsa dokumentationen på Microsofts hemsida: https://docs.microsoft.com/sv-se/powershell/scripting/samples/creating-slide-show.aspx
+- [Microsoft Docs: About String Interpolation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1)
+- [Stack Overflow: How to use string interpolation in PowerShell](https://stackoverflow.com/questions/3919755/how-to-format-strings-in-powershell)
+- [PowerShell GitHub Repository](https://github.com/PowerShell/PowerShell)

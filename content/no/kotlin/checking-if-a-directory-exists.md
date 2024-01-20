@@ -1,7 +1,7 @@
 ---
-title:                "Sjekke om en katalog eksisterer"
-html_title:           "Kotlin: Sjekke om en katalog eksisterer"
-simple_title:         "Sjekke om en katalog eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "Kotlin: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,37 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## Hva & Hvorfor?
+Sjekke om en mappe eksisterer betyr å bestemme om en spesifikk mappe allerede er på plass på et gitt datafil-system. Programmers gjør dette for å unngå feil som kan oppstå når du prøver å opprette eller får tilgang til en mappe som ikke eksisterer.
 
-Å sjekke om en mappe eksisterer er en måte å verifisere om en bestemt mappe finnes på datamaskinen. Dette er nyttig for programmerere fordi det lar dem utføre spesifikke handlinger avhengig av om mappen eksisterer eller ikke.
-
-## Hvordan:
+## Hvordan til:
+I Kotlin kan vi enkelt sjekke om en mappe eksisterer ved å bruke `exists()` funksjonen. Funksjonen returnerer "true" hvis mappen eksisterer, og "false" hvis den ikke gjør det.
 
 ```Kotlin
-fun main() {
+import java.nio.file.Files
+import java.nio.file.Paths
 
-    val dir = File("example/directory/")
-    if (dir.exists()) {
-        println("Mappen finnes!")
+fun main(args: Array<String>) {
+    val path = Paths.get("/sti/til/mappen")
+    val eksisterer = Files.exists(path)
+
+    if (eksisterer) {
+        println("Mappen eksisterer")
     } else {
-        println("Mappen finnes ikke.")
+        println("Mappen eksisterer ikke")
     }
 }
 ```
+Hvis mappen er til stede vil dette skriptet skrive ut "Mappen eksisterer". Hvis mappen ikke er til stede vil det skrive ut "Mappen eksisterer ikke".
 
-Eksempelutgang:
-```
-Mappen finnes ikke.
-```
+## Dyp Dykk
+Historisk sett, før introduksjonen av NIO API i Java 7 og i koden deretter Kotlin, ble filsystemoperasjoner utført ved hjelp av `File` klassen, som også har en `exits()` funksjon. Alternativt kan du også bruke `File().isDirectory` funksjonen i Kotlin, men denne vil returnere "true" selv om den angitte stien er en fil og ikke en mappe. Så det er enda bedre å bruke `Paths.get()` og `Files.exists()` funksjonene som vi gjorde i eksemplet vårt.
 
-## Dypdykk:
+Den underliggende implementeringen av `exists()` går gjennom katalogindeksen på filsystemet, noe som gjør det mye raskere enn å manuelt skanne gjennom hele filsystemet.
 
-1. Historisk kontekst: Sjekking av mapper begynte å bli mer vanlig på 1980-tallet med utviklingen av grafiske brukergrensesnitt, og har siden blitt et vanlig prosedyre i mange programmeringsspråk.
-2. Alternativer: I stedet for å bruke innebygde funksjoner, kan utvidelser eller tredjepartsbiblioteker brukes til å få tilgang til mapper og utføre handlinger.
-3. Implementeringsdetaljer: I Kotlin er det vanlig å bruke File-klassen for å sjekke om en mappe eksisterer. Dette gjøres ved å opprette et File-objekt med banen til mappen og bruke funksjonen exists() for å sjekke om den finnes.
-
-## Se også:
-
-- [File API documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-- [Kotlin for Android development](https://developer.android.com/kotlin/)
-- [Alternative libraries for file operations in Kotlin](https://kotlinresources.com/libraries/file-operations/)
+## Se Også
+1. Kotlin Dokumentasjon på Path API: [Link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io.-paths/index.html)
+2. Java Dokumentasjon på Path API: [Link](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
+3. Stack Overflow Diskusjoner: [Link](https://stackoverflow.com/questions/46561458/how-to-check-if-folder-exists-if-not-the-folders-should-be-created-in-kotlin)

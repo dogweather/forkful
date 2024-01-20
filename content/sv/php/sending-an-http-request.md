@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "PHP: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-När du använder en webbplats, skickar din webbläsare kontinuerligt HTTP-förfrågningar till servern för att få åtkomst till innehållet på sidan. HTTP-förfrågan är vad som gör det möjligt för dig att klicka på länkar, fylla i formulär och ladda ner filer. Det är en viktig del av webbutveckling och används av programmerare för att hämta eller skicka data till en server.
+## Vad & Varför?
+Att skicka en HTTP-begäran handlar om att be servrar om att få eller ändra data. Programmerare gör detta för att interagera med webbtjänster, API:er och mer.
 
-Så här gör du:
-För att skicka en HTTP-förfrågan från din PHP-kod, använder du funktionen 'file_get_contents ()'. Denna funktion tar en URL som argument och returnerar innehållet på den sidan som en sträng. Se nedan för ett exempel och den resulterande utmatningen.
-
-``` PHP
-$url = "https://www.example.com/";
+## Hur man gör:
+Låt oss börja med `file_get_contents`. Det är enkelt att förstå och kräver ingen extra installation.
+```PHP
+<?php
+$url = 'http://example.com';
 $response = file_get_contents($url);
 echo $response;
+?>
 ```
+En `file_get_contents`-förfrågan skickar slutresultatet till användaren. Undvik detta för stora filer!
 
-Utskrift:
-``` HTML
-<html>
-<head>
-<title>Exempelsida</title>
-</head>
-<body>
-<h1>Välkommen till exempelsidan</h1>
-<p>Detta är en enkel sida som visar vad som är möjligt med HTTP-förfrågningar i PHP.</p>
-</body>
-</html>
+Nu, låt oss gå vidare till `cURL`, ett mer avancerat verktyg tillgängligt i PHP.
+```PHP
+<?php
+$url = 'http://example.com';
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$response = curl_exec($ch);
+curl_close ($ch);
+echo $response;
+?>
 ```
+Med `cURL` kan vi anpassa begäran mycket mer, till exempel skicka POST data eller använda olika HTTP-metoder.
 
-Djupdykning:
-HTTP-förfrågan är en del av HTTP-protokollet som används för kommunikation mellan webbservrar och webbläsare. Det finns också alternativ till funktionen 'file_get_contents ()' som också kan användas för att skicka HTTP-förfrågningar, som till exempel funktionerna 'curl_init ()' och 'fopen ()'.
+## Djupdykning
+Här är lite historisk kontext och alternativ. PHP inkluderade `file_get_contents` i version 4.3.0, och det är överallt idag. Emellertid har `cURL` varit standarden sedemot PHP 4.0.2. Den har mer funktionalitet - men det kan vara lite knepigt för nybörjare eftersom det har fler alternativ.
 
-När det gäller implementation i PHP, så är 'file_get_contents ()' den enklaste funktionen att använda, men det kan finnas situationer där andra funktioner är mer lämpliga. Det är viktigt att ha en god förståelse för HTTP-protokollet för att effektivt kunna använda dessa funktioner.
+Vad gäller alternativen, kolla in `fopen`, `fsockopen` och `stream_context_create` för lokala filoperationer. `Guzzle` och `Requests` är också utmärkta bibliotek.
 
-Se även:
-- Dokumentation för funktionen 'file_get_contents ()' i PHP: https://www.php.net/manual/en/function.file-get-contents
-- Mer information om HTTP-protokollet: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+Dessa funktioner bearbetar HTTP-prokollen för dig. När du ber om en webbadress, öppnar det en anslutning till servern, skickar HTTP-begäran och väntar på svaret. Det är precis vad dessa funktioner gör tyst i bakgrunden.
+
+## Se också
+- [PHP: HTTP context options - Manual](https://www.php.net/manual/en/context.http.php)
+- [PHP: file_get_contents - Manual](https://www.php.net/manual/en/function.file-get-contents.php)
+- [PHP: cURL - Manual](https://www.php.net/manual/en/book.curl.php)
+- [Guzzle, PHP HTTP client](http://guzzlephp.org)
+- [Requests for PHP](http://requests.ryanmccue.info)

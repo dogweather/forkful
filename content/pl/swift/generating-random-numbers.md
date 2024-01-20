@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie liczb losowych"
-html_title:           "Swift: Tworzenie liczb losowych"
-simple_title:         "Tworzenie liczb losowych"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest generowanie losowych liczb i dlaczego programiści to robią?
-Generowanie losowych liczb jest procesem tworzenia liczb bez określonego porządku. Programiści używają tego do różnych zastosowań, takich jak gry losowe, testowanie oprogramowania i szyfrowanie danych.
+## Co i Dlaczego?
+
+Generowanie liczb losowych oznacza tworzenie wartości, które nie mogą być przewidziane logicznie. Programiści robią to, aby dodać nieprzewidywalność i pseudowybór do swoich aplikacji i gier.
 
 ## Jak to zrobić:
-```swift
-//generowanie losowej liczby z przedziału 1-10
-let randomNumber = Int.random(in: 1...10)
-print(randomNumber) //możesz dostosować zakres i użyć Float.random lub Double.random dla liczb ułamkowych
-//przykładowy wynik: 8
+
+Podstawowa implementacja w Swift byłaby taka:
+
+```Swift
+let randomValue = Int.random(in: 0..<10)
+print(randomValue)
 ```
 
-```swift
-//generowanie losowego elementu z listy
-let fruits = ["jabłko", "banan", "truskawka", "pomarańcza"]
-let randomFruit = fruits.randomElement()
-print(randomFruit) //przykładowy wynik: truskawka
+W wyniku czego może pokazać się dowolna liczba od 0 do 9.
+
+Zaawansowane generowanie liczb losowych z użyciem zaawansowanych funkcji:
+
+```Swift
+import GameplayKit
+
+let randomDistribution = GKRandomDistribution(lowestValue: 0, highestValue: 100)
+let number = randomDistribution.nextInt()
+print(number)
 ```
 
-## Głębsze nurkowanie:
-Generowanie losowych liczb miało początki w matematyce, ale stało się popularne w programowaniu pojawieniem się komputerów. Istnieją również alternatywne metody generowania liczb losowych, takie jak generator liczb pseudolosowych, który wykorzystuje algorytmy do symulowania przypadkowego wyboru.
+Tutaj także możemy otrzymać dowolną liczbę od 0 do 100.
 
-## Zobacz również:
-Dowiedz się więcej o bibliotece Swift do losowych liczb [tutaj](https://developer.apple.com/documentation/swift/int/2995640-random) i sprawdź alternatywne podejścia [tutaj] (https://developer.apple.com/documentation/swift/int/2923548-arc4random).
+## Głębsze Zrozumienie
+
+Generowanie liczb losowych to starodawna koncepcja, od czasów greckich filozofów do maszyn Enigma używanych podczas II wojny światowej. W języku Swift jest to dość proste z użyciem wbudowanych funkcji, ale takie rozwiązanie ma swoje ograniczenia, na przykład możliwe jest generowanie tylko liczb całkowitych.
+
+Alternatywą jest użycie frameworka GameplayKit, który oferuje więcej możliwości, takich jak dystrybucje nieliniowe, losowość z nasionem i wiele innych.
+
+Podczas wprowadzania dużych liczb losowych w aplikacjach, ważne jest zapewnienie bezpieczeństwa. Swift ma mechanizmy bezpieczeństwa na to, takie jak brak przepełnienia i samoobrona przed błędami.
+
+## Zobacz również
+
+Swift.org - Generowanie liczb losowych: https://docs.swift.org/swift-book/LanguageGuide/Numbers.html
+
+Tutorial Apple Developer dla GameplayKit: https://developer.apple.com/tutorials/swift/wwdc2016/603-introduction-to-gameplaykit
+
+Framework Swift Numerics: https://github.com/apple/swift-numerics

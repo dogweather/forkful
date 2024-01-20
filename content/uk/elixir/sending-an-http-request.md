@@ -1,6 +1,6 @@
 ---
 title:                "Надсилання http-запиту"
-html_title:           "Elixir: Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
 simple_title:         "Надсилання http-запиту"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,20 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
-Відправлення HTTP-запиту - це процес взаємодії з веб-сервером для отримання або відправлення даних. Програмісти використовують це для отримання інформації з інших джерел або для відправлення даних на сервер.
+## Що та навіщо?
 
-Як це зробити:
-```Elixir
-{:ok, response} = HTTPoison.get("https://www.example.com")
-IO.puts response.body
+Надсилання HTTP-запиту - це процес взаємодії з сервером за допомогою HTTP-протоколу. Програмісти роблять це, щоб отримати, відправити або оновити дані на сервері. 
 
-# Вихідний код:
-{"<!DOCTYPE html>\n<html>\n<head>\n<title>Example Domain</title>\n<meta charset=\"UTF-8\" />\n<meta http-equiv=\"Content-type\" content=\"text/html; charset=utf-8\" />\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n<style type=\"text/css\">\nbody {\n background-color: #f0f0f2;\n margin: 0;\n padding: 0;\n font-family: \"Open Sans\", \"Helvetica Neue\", Helvetica, Arial, sans-serif;\n}\ndiv {\n width: 600px;\n margin: 5em auto;\n padding: 5px;\n}\na:link {\n color: #38488f;\n text-decoration: none;\n}\na:visited {\n color: #38488f;\n text-decoration: none;\n}\na:hover {\n color: #f0f0f2;\n background-color: #30a1d1;\n text-decoration: none;\n}\nid \"main-section\" {\n background-color: white;\n text-align: center;\n}\nid \"main-title\" {\n font-weight: bold;\n font-size: 200%;\n margin: 0px;\n}\nid \"description\" {\n text-align: left;\n font-weight: normal;\n color: #000000;\n font-size: 120%;\n}\n</style>\n</head>\n<body>\n<div id=\"main-section\">\n<h1 id=\"main-title\">Example Domain</h1>\n<p id=\"description\">This domain is for use in illustrative examples in documents. You may use this\n domain in literature without prior coordination or asking for permission.</p>\n<div id=\"main-section\"></div>\n</body>\n</html>\n", %{"Server" => "Golfe2.0/1.7.3", "Cache-Control" => "max-age=0, private, must-revalidate", "Strict-Transport-Security" => "max-age=31536000"}}
+## Як це робити:
+
+У Elixir ви можете використовувати бібліотеку `HTTPoison`. Встановіть її, додавши в `mix.exs`:
+
+``` Elixir
+defp deps do
+  [{:httpoison, "~> 1.8"}]
+end
 ```
 
-Глибокий аналіз:
-Відправлення HTTP-запиту було створено для полегшення обміну даними між клієнтськими програмами і веб-серверами. Існують інші способи обміну даними, такі як FTP або SMTP, але HTTP зараз є найпоширенішим. У Elixir для відправлення HTTP-запиту можна використовувати різні бібліотеки, такі як HTTPoison, Finch або Tesla.
+Потім ви можете надіслати HTTP-запит так:
 
-Дивіться також:
-Подальшу інформацію про відправлення HTTP-запитів можна знайти на офіційному сайті Elixir (https://elixir-lang.org/) та на сторінках документації для бібліотек HTTPoison (https://hexdocs.pm/httpoison/HTTPoison.html), Finch (https://hexdocs.pm/finch/Finch.html), та Tesla (https://hexdocs.pm/tesla/Tesla.html).
+``` Elixir
+{:ok, response} = HTTPoison.get("http://example.com")
+IO.inspect(response.status_code) # наприклад, 200
+IO.inspect(response.body) # Вміст сторінки
+```
+
+І ось ви отримали відповідь від сервера!
+
+## Поглиблений матеріал
+
+1. **Історичний контекст**. Взаємодія за допомогою HTTP запитів виникла з появою WWW у 1991 році. Elixir, яким ми користуємося сьогодні, був створений в 2011 році і з того часу активно використовуєтсья для створення розподілених, відмовостійких систем.
+
+2. **Альтернативи**. В Elixir є інші бібліотеки для роботи з HTTP-запитами, наприклад, `Tesla`. Вибір залежить від ваших потреб та вимог.
+
+3. **Деталі впровадження**. Коли ви використовуєте HTTPoison, Elixir відправляє запрос до серверу, а потім очікує відповіді. Після отримання відповіді, Elixir візьме відповідь та поверне її до вашого коду.
+
+## Дивіться також
+
+1. [HTTPoison документація](https://hexdocs.pm/httpoison/HTTPoison.html)
+2. [Еліксир документація](https://elixir-lang.org/docs.html)
+3. [HTTP запити: вступ для новачків ](https://uk.wikipedia.org/wiki/HTTP)
+   
+Якщо ви хочете глибше зануритися в тему, відвідайте посилання, зазначені вище. Успіхів у вивченні Elixir!

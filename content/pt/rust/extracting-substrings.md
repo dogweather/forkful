@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias"
-html_title:           "Rust: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por quê?
+# Extração de Substrings em Rust
 
-Extrair substrings é uma técnica muito útil em programação que permite separar uma string em partes menores. Isso pode ser útil para manipular apenas uma parte específica de uma string ou para realizar operações em diferentes partes de uma string.
+## O Que? E Por quê? 
 
-Os programadores geralmente fazem isso para tornar seu código mais legível e organizado, ou para realizar operações mais precisas em uma string.
+Extrair substrings é um método comum de manipular strings em programação, onde removemos uma "sub" string de uma string maior. Programadores fazem isso para filtrar a informação e tornar os dados mais fáceis de manipular ou entender.
 
 ## Como fazer:
 
-Para extrair substrings em rust, você pode utilizar o método "slice" nativo da linguagem. Veja um exemplo de como isso pode ser feito:
+Extrair uma substring de uma string em Rust é direto.
 
+```Rust
+fn main() {
+    let string = "Olá, Mundo!";
+    let substring = &string[0..4]; // Extrair substring
+    println!("{}", substring); // Imprime: "Olá,"
+}
 ```
-let my_string = "Olá Rust!";
-let substring = &my_string[4..8];
-println!("{}", substring); // Saída: Rust
-```
+No exemplo acima, extraímos a substring "Olá," da string "Olá, Mundo!".
 
-Neste exemplo, utilizamos o método "slice" para obter apenas a parte da string que vai do índice 4 ao 8. O resultado é a substring "Rust" que será impressa no console.
+## Mergulho Profundo 
 
-## Profundando:
+Rust usa UTF-8 para encoding de strings. Originalmente, Rust usava um método diferente onde substrings eram baseadas em bytes, mas isso criou problemas com encodings multibyte como UTF-8.
 
-Extrair substrings não é uma técnica nova e é amplamente utilizada em várias linguagens de programação. No entanto, em alguns casos, pode ser necessário utilizar outras abordagens, como usar expressões regulares, para obter substrings mais complexas.
+Alternativas para extrair substrings no Rust incluem Method Chaining e usando bibliotecas terceiras como o `substring` crate, que fornece um método `substring` para o tipo de dados String.
 
-Em Rust, é importante observar que o método "slice" retorna uma referência à substring original, o que torna o código mais eficiente, mas também pode apresentar alguns desafios em relação à propriedade de mutabilidade.
+A implementação atual de extração de substring em Rust agora faz uso de um índice de caracteres em vez de um índice de bytes como era no passado. Isso significa que agora suporta strings multibyte sem problemas de caráteres multibyte sendo divididos.
 
-## Veja também:
+## Veja também
 
-- [Documentação oficial do Rust sobre Manipulação de strings](https://doc.rust-lang.org/stable/std/string/struct.String.html#method.slice)
-- [Mais informações sobre expressões regulares em Rust](https://docs.rs/regex/1.3.9/regex/)
-- [Guia de estilo informal para escrever em Rust](https://cheats.rs/#style)
+- Documentação oficial do Rust em manipulação de strings: https://doc.rust-lang.org/book/ch08-02-strings.html
+- `substring` crate: https://crates.io/crates/substring
+- Método Chaining em Rust: https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html
+- Informações sobre o padrão UTF-8: http://www.utf8everywhere.org/

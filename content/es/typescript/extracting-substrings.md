@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "TypeScript: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,28 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Extraer subcadenas es una operación común en programación que implica obtener una parte de una cadena de texto más larga. Los programadores hacen esto para manipular y obtener información específica de una cadena, lo que ahorra tiempo y simplifica el proceso de manipulación de datos.
+## ¿Qué y Por qué?
 
-## Cómo hacerlo:
-Los siguientes ejemplos muestran cómo extraer subcadenas en TypeScript utilizando el método ```.substring()```.
+Extraer subcadenas implica seleccionar y copiar una parte específica de una cadena existente. Los programadores hacen esto para aislar y trabajar en segmentos de datos sin cambiar la cadena completa.
+
+## ¿Cómo hacerlo?
+
+Veamos cómo extraer una subcadena con TypeScript. Usaremos el método `substring()`:
 
 ```TypeScript
-let texto = "Este es un ejemplo de cadena";
-console.log(texto.substring(0, 4)); // Salida: "Este"
-console.log(texto.substring(8, 10)); // Salida: "un"
-console.log(texto.substring(17)); // Salida: "ejemplo de cadena"
+let cadena = "Hola, Mundo de TypeScript";
+let subcadena = cadena.substring(7, 13);
+console.log(subcadena);  
 ```
-En el primer ejemplo, especificamos los índices para extraer desde el inicio (0) hasta el final del primer espacio (4), lo que nos devuelve la primera palabra "Este". En el segundo ejemplo, especificamos los índices para extraer desde el segundo espacio (8) hasta el tercer espacio (10), lo que nos devuelve la segunda palabra "un". Y en el tercer ejemplo, solo especificamos el índice inicial (17) y nos devuelve todo el texto a partir de ese índice hasta el final.
 
-## Profundizando:
-El método ```.substring()``` es un método heredado de JavaScript y también está disponible en otros lenguajes de programación. Sin embargo, en TypeScript, también podemos utilizar la sintaxis de "slice" para extraer subcadenas. Por ejemplo:
+El código anterior genera la siguiente salida:
+
+```shell
+Mundo
+```
+Explicación: `substring(7, 13)` extrae la parte de la cadena desde el índice 7 hasta 12 (el índice 13 no se incluye).
+
+## Análisis Profundo
+
+**1) Contexto histórico**
+
+El concepto de extraer subcadenas ha estado en la programación desde el principio. Sin embargo, los métodos para hacerlo han evolucionado con el tiempo y los lenguajes de programación modernos como TypeScript ofrecen maneras más eficientes.
+
+**2) Alternativas**
+
+En TypeScript puedes usar el método `substr()` además de `substring()`. La principal diferencia es que `substr()` utiliza la longitud del substring como segundo argumento en lugar de un índice final.
+
 ```TypeScript
-let texto = "Este es otro ejemplo de cadena";
-console.log(texto.slice(-6)); // Salida: "cadena"
+let cadena = "Hola, Mundo de TypeScript ";
+let subcadena = cadena.substr(7, 5);
+console.log(subcadena); 
 ```
-Aquí, utilizamos números negativos para contar desde el final de la cadena. También es importante tener en cuenta que tanto ```.substring()``` como "slice" no modifican la cadena original, sino que devuelven una nueva cadena.
 
-## Ver también:
-- Documentación oficial de TypeScript sobre el método ```.substring()``` (https://www.typescriptlang.org/docs/handbook/working-with-strings.html#substrings)
-- Comparación entre el método ```.substring()``` y "slice" en TypeScript (https://www.baeldung.com/substring-vs-slice-typescript)
+Salida:
+
+```shell
+Mundo
+```
+
+**3) Detalles de Implementación**
+
+Tanto `substring()` como `substr()` no modifican la cadena original. Son no destructivas. No hay limitación en cuanto al tamaño de la subcadena que puedes extraer.
+
+Por eficiencia, es mejor usar estos métodos en lugar de dividir y recomponer la cadena original.
+
+## Ver también
+
+Para más información sobre extracción de subcadenas, consulta:
+
+1. [Documentación de TypeScript: metodo substring()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substring)
+2. [Documentación de TypeScript: método substr()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr)
+3. [Substrings en TypeScript: Comprender con Ejemplos](https://www.geekhideout.com/dir/index.php)

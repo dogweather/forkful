@@ -1,7 +1,7 @@
 ---
-title:                "Interpolación de una cadena"
-html_title:           "Java: Interpolación de una cadena"
-simple_title:         "Interpolación de una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué es y por qué lo hacemos? 
-Interpolar una cadena en Java es cuando insertamos valores variables dentro de una cadena de texto. Los programadores hacen esto para crear cadenas dinámicas que pueden cambiar con los valores de las variables.
+# Interpolación de Strings en Java
 
-# Cómo hacerlo: 
-Podemos interpolar una cadena en Java utilizando el operador "+" para concatenar la cadena con las variables. También podemos utilizar la función "String.format()" para especificar el formato de salida de la cadena interpolada. Aquí hay un ejemplo de código y su salida:
+## ¿Qué y Por Qué?
 
+La interpolación de strings es una técnica que permite insertar valores de variables en los strings. Los programadores lo hacen para construir strings dinámicamente y mejorar la legibilidad del código.
+
+## Cómo se hace:
+En Java actualmente usamos la clase `String.format()`. Aquí tienes un ejemplo sencillo.
 ```Java
-// Usando el operador de concatenación "+"
-String nombre = "María";
-int edad = 28;
-System.out.println("Hola, mi nombre es " + nombre + " y tengo " + edad + " años.");
-```
-Salida: Hola, mi nombre es María y tengo 28 años.
-
-```Java
-// Usando la función "String.format()"
 String nombre = "Juan";
-double altura = 1.78;
-System.out.println(String.format("Hola, soy %s y mido %.2f metros.", nombre, altura));
+int edad = 25;
+String saludo = String.format("Hola %s, tienes %d años.", nombre, edad);
+System.out.println(saludo); 
 ```
-Salida: Hola, soy Juan y mido 1.78 metros.
+Este código imprime: `Hola Juan, tienes 25 años.`
 
-# Profundizando: 
-Interpolar cadenas en Java no siempre fue una opción. Antes de la versión 8 de Java, se utilizaba el método "concat()" de la clase String para concatenar cadenas. Otra alternativa es el método "StringBuilder.append()" que permite construir cadenas dinámicamente. En cuanto a la implementación, Java utiliza el método "String.format()" para formatear la cadena interpolada según los valores de las variables.
+## Inmersión profunda
 
-# Ver también: 
-- [Oracle - Documentación de la clase String en Java] (https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [W3Schools - Tutorial sobre cómo interpolar cadenas en Java] (https://www.w3schools.com/java/java_strings_concatenation.asp)
-- [Java Code Geeks - Artículo sobre la interpolación de cadenas en Java 8] (https://www.javacodegeeks.com/2015/02/string-interpolation-in-java.html)
+La interpolación de strings ha sido popular en otros lenguajes como Ruby y JavaScript mucho antes que en Java. Pero en las versiones más recientes de Java se incorporó la función `String.format()` para facilitar esta tarea.
+
+En alternativa, puedes usar la concatenación de strings con el operador `+`, pero la interpolación proporciona un código más limpio y menos propenso a errores.
+
+En cuanto a los detalles de implementación, cuando usas `String.format()`, internamente, Java utiliza la clase `Formatter` para procesar el string y reemplazar los lugares donde deberían ir los valores de las variables.
+
+## Consulta también 
+Para los que quieren profundizar en el tema, os dejo unos enlaces de interés:
+
+- [El manejo de strings en Java](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/String.html)
+- [Interpolación de strings en otros lenguajes](https://en.wikipedia.org/wiki/String_interpolation)
+- [Otras técnicas de formateo de strings en Java](https://www.baeldung.com/java-string-formatter)

@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstav i en streng"
-html_title:           "C: Stor bokstav i en streng"
-simple_title:         "Stor bokstav i en streng"
+title:                "Sette stor bokstav i en streng"
+html_title:           "C: Sette stor bokstav i en streng"
+simple_title:         "Sette stor bokstav i en streng"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,47 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å kapitalisere en streng betyr å gjøre den første bokstaven stor, mens resten av bokstavene forblir små. Dette gjøres vanligvis for å følge konvensjoner og standarder i programmeringsspråket, og for å gjøre koden mer leselig for andre utviklere.
+
+Bytting av små til store bokstaver i en streng innebærer å endre hver liten bokstav til en stor bokstav. Programmerere gjør dette for å standardisere datainngang, noe som gjør det lettere å sammenligne og sortere strenger.
 
 ## Hvordan:
-Eksempel 1:
-```C
-#include <stdio.h>
-#include <string.h>
-int main(){
-    char str[] = "hallo verden";
-    // bruker funksjonen toupper for å kapitalisere første bokstav i strengen
-    str[0] = toupper(str[0]);
-    printf("%s", str); // Output: Hallo verden
-    return 0;
-}
-```
 
-Eksempel 2:
+Her gir vi deg en kodeeksempel og eksempelutdata:
+
 ```C
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
+
+void capitalize(char str[]){
+  int len = strlen(str);
+  for(int i=0; i<len; i++){
+    str[i] = toupper(str[i]);
+  }
+}
+
 int main(){
-    char str[] = "dette er en setning";
-    for(int i=0; i<strlen(str); i++){
-        // bruker funksjonen islower for å sjekke om bokstaven er liten
-        if(islower(str[i])){
-            // bruker funksjonen toupper for å kapitalisere bokstaven
-            str[i] = toupper(str[i]);
-        }
-    }
-    printf("%s", str); // Output: Dette er en setning
-    return 0;
+  char str[] = "hello world!";
+  printf("Original String: %s\n", str);
+  capitalize(str);
+  printf("Capitalized String: %s\n", str);
+  return 0;
 }
 ```
 
-## Dypdykk:
-I eldre versjoner av C var det vanlig å bruke funksjoner som toupper eller toupper_l for å kapitalisere en streng. Men i den nyeste versjonen av C har funksjonen toupper blitt erstattet av isupper for å gjøre koden mer effektiv og brukervennlig.
+Eksempel utdata:
+```
+Original String: hello world!
+Capitalized String: HELLO WORLD!
+```
 
-Et alternativ til å bruke en løkke og to funksjoner for å kapitalisere en streng, er å bruke funksjonen strupr, som også finnes i C. Denne funksjonen tar inn en streng og kapitaliserer alle bokstavene i den.
+## Dypdykk
 
-Implementeringen av strupr-funksjonen vil variere fra programmeringsspråk til programmeringsspråk, men konseptet er det samme. Den går gjennom hver bokstav i strengen og bruker en innebygd funksjon for å kapitalisere den.
+(1) Historisk vinkling: C programmeringsspråk ble opprettet på begynnelsen av 1970-tallet. Funksjonen `toupper()` er en innebygd funksjon inkludert i C standardbiblioteket som brukes for å konvertere små bokstaver til store bokstaver.
 
-## Se Også:
-- [2 måter å kapitalisere en streng i C](https://www.hackerearth.com/practice/notes/capitalize-first-character-of-string-in-c/)
-- [MarkDown av formell til uformell skriving](https://softwareengineering.stackexchange.com/questions/41614/markdown-for-formal-to-informal-writing)
+(2) Alternativer: Du kan også lage din egen funksjon for å konvertere små bokstaver til store bokstaver ved å bruke ASCII-verdier.
+
+(3) Gjennomføringsdetaljer: Funksjonen `toupper()` gjør bruk av ASCII-verdiene til bokstavene. Den subtraherer 32 fra ASCII-verdien av en liten bokstav for å få dens tilsvarende store bokstav.
+
+## Se også
+
+1. [Standard C Library Functions](https://en.cppreference.com/w/c/string/byte)
+2. [C Programming/Strings](https://en.wikibooks.org/wiki/C_Programming/Strings)

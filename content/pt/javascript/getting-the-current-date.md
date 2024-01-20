@@ -1,6 +1,6 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "Javascript: Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
-Obter a data atual é uma tarefa comum na programação. Isso permite que os programadores obtenham informações precisas sobre o tempo atual, seja para rastrear eventos, agendar tarefas ou exibir dados em um formato legível para humanos.
+# Obtendo a Data Atual em Javascript
 
-## Como fazer:
-Obter a data atual no Javascript é simples e podemos utilizar o objeto `Date`. Podemos criar uma nova instância do objeto `Date` e usar seus métodos para obter diferentes informações sobre a data. Por exemplo:
+## O Que é e Por Que?
+
+Obter a data atual em Javascript é o processo de pegar e exibir a data e a hora correntes. Os programadores fazem isso para rastrear eventos, carimbar datas e horários em arquivos de log e manipular dados baseados em tempo.
+
+## Como Fazer:
+
+Em Javascript, você pode pegar a data atual através do objeto `Date`. Aqui está um exemplo:
 
 ```Javascript
-// Criando uma nova instância do objeto Date
-let currentDate = new Date();
-
-// Obtendo o dia atual do mês
-let day = currentDate.getDate();
-
-// Obtendo o mês atual (começando em 0 para Janeiro)
-let month = currentDate.getMonth() + 1;
-
-// Obtendo o ano atual
-let year = currentDate.getFullYear();
-
-// Exemplo de saída: Dia 25 do mês 8 de 2021
-console.log(`Dia ${day} do mês ${month} de ${year}`);
+var dataAtual = new Date();
+console.log(dataAtual);
 ```
 
-## Mergulho Profundo:
-A obtenção da data atual é suportada pelo Javascript desde sua origem, sendo uma das funcionalidades mais básicas da linguagem. Além disso, existem outros métodos que podem ser usados, como `toLocaleDateString()`, que permite obter a data em um formato de idioma específico. Além disso, com a introdução do ES6, também podemos usar a biblioteca `Moment.js` para lidar com datas e horários de forma mais eficiente e com mais recursos.
+Quando você executa isso, a saída seria algo como isto:
 
-## Veja também:
-- [Documentação MDN: Objeto Date no Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
+```Javascript
+Tue Sep 07 2021 10:45:38 GMT+0800
+```
+
+## Mergulho Profundo
+
+Historicamente, a obtenção da data atual em Javascript vem desde a sua criação. A linguagem já tinha o objeto Date incorporado, permitindo aos programadores trabalhar facilmente com datas e horas.
+
+Se você está procurando alternativas, uma opção popular é a biblioteca Moment.js. Ela fornece uma API mais rica para manipular datas e tem melhor suporte para fuso horário.
+
+Na implementação do JavaScript, o objeto Date é baseado no valor do tempo, que é o número de milissegundos desde a meia-noite UTC em 1º de janeiro de 1970. Este é um sistema comum usado na computação chamado Unix Time.
+
+## Veja Também
+
+Para obter mais informações e exemplos de como trabalhar com a data atual em Javascript, você pode consultar os seguintes links:
+
+- Documentação do Mozilla Developer Network sobre o objeto Date: [https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Moment.js, uma biblioteca de manipulação de data e hora para Javascript: [https://momentjs.com/](https://momentjs.com/)

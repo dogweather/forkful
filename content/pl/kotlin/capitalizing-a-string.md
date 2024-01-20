@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana tekstu na wielkie litery"
-html_title:           "Kotlin: Zmiana tekstu na wielkie litery"
-simple_title:         "Zmiana tekstu na wielkie litery"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Kotlin: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,24 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
+## Co i Dlaczego?
 
-W programowaniu, "kapitalizacja" oznacza zmianę pierwszej litery w zdaniu na dużą literę. Programiści często to robią, aby poprawić czytelność tekstu lub aby spełnić pewne wymagania w systemach informatycznych.
+Zamiana tekstu na duże litery to proces przekształcania wszystkich liter małych w stringu na duże. Programiści robią to aby ułatwić odczyt i sortowanie tekstów, czy też do normalizacji danych.
 
 ## Jak to zrobić:
 
-Kotlin ma wbudowaną funkcję, która umożliwia kapitalizację tekstu. Aby tego dokonać, wystarczy użyć funkcji "capitalize()" na zmiennej typu String.
+W Kotlinie, operację tę wykonujemy za pomocą funkcji `toUpperCase()`. 
 
-```Kotlin
-val text = "witaj, świecie"
-println(text.capitalize())
-// Output: Witaj, świecie
+```kotlin
+fun main() {
+    val s = "witaj, świecie"
+    val result = s.toUpperCase()
+
+    println(result) // Wypisuje: WITAJ, ŚWIECIE
+}
 ```
 
-## Głębszy zanurzenie:
+Prosty i skuteczny sposób, prawda?
 
-Niektórzy programiści stosują również inne sposoby na kapitalizację tekstu, np. zmieniając wszystkie litery na wielkie lub korzystając z różnych bibliotek zewnętrznych. Jednak wbudowana funkcja "capitalize()" w Kotlin jest prostym i wygodnym sposobem na to.
+## Pogłębiamy temat
 
-## Zobacz też:
+1. Kontekst historyczny: Przeważnie w starszych językach programowania istniały podobne funkcje. Często nazywały się `uppercase()` lub `toUpper()`.
+2. Alternatywy: Jeśli chcesz tylko kapitalizować pierwszą literę w stringu, użyj `capitalize()`. W przypadku pierwszej litery każdego słowa - `capitalizeEachWord()`.
+3. Szczegóły Implementacji: `toUpperCase()` w Kotlinie korzysta z metody `Character.toUpperCase(int codePoint)` której działanie jest zgodne z Unicode Case Mapping.
 
-- Dokumentacja Kotlin o funkcji "capitalize()": https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html
+```kotlin
+fun main() {
+    val s = "witaj, świecie"
+    val firstLetterCap = s.capitalize()
+    val eachWordCap = s.split(" ").joinToString(" ") { it.capitalize() }
+
+    println(firstLetterCap) // Wypisuje: Witaj, świecie
+    println(eachWordCap) // Wypisuje: Witaj, Świecie
+}
+```
+
+## Zobacz również 
+
+Jest dużo źródeł na temat operacji na stringach w Kotlinie. 
+
+1. [Dokumentacja Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
+2. [Unicode Case Mapping](https://unicode.org/reports/tr21/)
+3. [Dokumentacja Kotlin na temat `capitalize()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+4. [Dokumentacja Kotlin na temat `toUpperCase()`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
+
+Pamiętaj! Znajomość operacji na stringach jest kluczowa dla każdego programisty. Sprawdź powyższe linki!

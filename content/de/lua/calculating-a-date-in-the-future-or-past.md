@@ -10,50 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Berechnen von Datumswerten in der Zukunft oder Vergangenheit ist eine nützliche Funktion in der Programmierung. Es ermöglicht uns, effektiv mit Terminen und Zeiträumen umzugehen und somit zeitbasierte Aktionen in unseren Programmen zu planen und auszuführen.
+## Was & Warum?
 
-# Wie Geht's?
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, benötigen wir das aktuelle Datum, einen Zeitraum und eine Richtung (zukünftig oder vergangen). Wir können dies in Lua einfach mit Hilfe von mathematischen Operationen und eingebauten Funktionen wie `os.date()` und `os.time()` erreichen.
+Beim Berechnen eines Datums in der Zukunft oder Vergangenheit wird eine Zeitspanne zu einem spezifischen Datum hinzugefügt bzw. davon abgezogen. Programmeure machen dies, um historische Daten zu analysieren oder Ereignisse in der Zukunft vorauszuahnen.
 
-Beispiel für das Berechnen eines Datums in der Zukunft:
+## So geht's:
+
+Hier ein einfaches Beispiel, wie man mith hilfe von Lua ein Datum in der Zukunft berechnet:
+
 ```Lua
--- Aktuelles Datum
-local now = os.time()
+-- Laden des os Moduls
+local os = require("os")
 
--- Zeitraum von 1 Tag
-local timeDiff = 24 * 60 * 60
+-- Aktuelles Datum in Sekunden seit 1970
+local jetzt = os.time()
 
--- Berechnung des Datums in der Zukunft (in Sekunden)
-local futureDate = now + timeDiff
+-- Hinzufügen von 7 Tagen (in Sekunden gerechnet)
+local in_einer_woche = jetzt + (7 * 24 * 60 * 60)
 
--- Konvertierung in ein lesbares Datum
-print(os.date("%d.%m.%Y", futureDate)) -- Output: 17.05.2021
+-- Umwandlung in lesbares Datum
+local datum_in_einer_woche = os.date("%d.%m.%Y", in_einer_woche)
+
+print("In einer Woche ist es: " .. datum_in_einer_woche)
 ```
 
-Beispiel für das Berechnen eines Datums in der Vergangenheit:
-```Lua
--- Aktuelles Datum
-local now = os.time()
+Die Ausgabe könnte so aussehen:
 
--- Zeitraum von 1 Woche
-local timeDiff = 7 * 24 * 60 * 60
-
--- Berechnung des Datums in der Vergangenheit (in Sekunden)
-local pastDate = now - timeDiff
-
--- Konvertierung in ein lesbares Datum
-print(os.date("%d.%m.%Y", pastDate)) -- Output: 10.05.2021
+```
+In einer Woche ist es: 29.08.2023
 ```
 
-# Tieferes Eintauchen
-Das Berechnen von Datumsangaben in der Zukunft oder Vergangenheit ist eine weit verbreitete Funktion in der Programmierung und ist besonders nützlich bei der Planung von wiederkehrenden Aufgaben oder beim Einhalten von Fristen.
+## Tiefgang
 
-Alternativ können wir auch Lua-Bibliotheken wie [Lua-date](https://github.com/Tieske/date) verwenden, die erweiterte Funktionen für die Arbeit mit Datumswerten anbieten.
+Historisch gesehen war die Berechnung von Datumsangaben nicht Teil der frühen Programmierversionen. Dies wurde mit der Zeit eingeführt, da immer mehr Anwendungen eine Zeithandhabung benötigten. In Lua verlassen wir uns auf das os-Modul, das viele Funktionen zur Zeithandhabung bietet.
 
-Im Hintergrund verwendet Lua die [Epoche](https://de.wikipedia.org/wiki/Epoche_(Informatik)) als Referenzpunkt für Zeitangaben, basierend auf dem [UNIX-Zeitstempel](https://de.wikipedia.org/wiki/Unix-Zeit). Die Funktionen `os.date()` und `os.time()` arbeiten damit, indem sie die Anzahl der vergangenen bzw. vergangenen Sekunden seit der Epoche zurückgeben. 
+Es gibt auch andere Wege, um zukünftige oder vergangene Daten zu berechnen. Einige Programmiersprachen haben eingebaute Funktionen für diese Berechnungen, während andere auf externe Bibliotheken angewiesen sind. Eine Alternative in Lua könnte die Nutzung der os.difftime Funktion sein.
 
-# Sieh Dir Auch An
-- [Tutorialspoint - Lua Datum und Zeit](https://www.tutorialspoint.com/lua/lua_date_time.htm)
-- [Lua-Dokumentation - os.date() Funktion](https://www.lua.org/manual/5.4/manual.html#pdf-os.date)
-- [Deine Anwendung - Einfaches Beispiel für das Berechnen von Datumsangaben](https://deineanwendung.de/blog/berechnung-von-datumswerten-in-lua)
+Bei der Implementierung ist zu beachten, dass Lua die Zeit in Sekunden seit dem 01.01.1970 berechnet. Addieren oder Subtrahieren wir eine Zeitspanne, tun wir das daher in Sekunden.
+
+## Siehe auch
+
+Für mehr Informationen und weiterführende Themen ans Herz gelegt:
+
+- Die offizielle Lua-Dokumentation zum os-Modul: [https://www.lua.org/manual/5.3/manual.html#6.9](https://www.lua.org/manual/5.3/manual.html#6.9)
+- Eine umfassende Erklärung zu Datum und Zeit in Lua: [http://lua-users.org/wiki/DateAndTime](http://lua-users.org/wiki/DateAndTime)
+- Ein Vergleich verschiedener Programmiersprachen und ihrer Handhabung von Datum und Zeit: [https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(date_and_time)](https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(date_and_time))
+
+Dranbleiben und weitercoden! Du machst das schon klasse.

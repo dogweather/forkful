@@ -1,7 +1,7 @@
 ---
-title:                "לבדיקה האם תיקייה קיימת"
-html_title:           "Javascript: לבדיקה האם תיקייה קיימת"
-simple_title:         "לבדיקה האם תיקייה קיימת"
+title:                "בדיקה אם ספרייה קיימת"
+html_title:           "Elixir: בדיקה אם ספרייה קיימת"
+simple_title:         "בדיקה אם ספרייה קיימת"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-בדיקה אם תיקייה קיימת היא פעולה שמאפשרת למתכנתים לבדוק אם תיקייה מסוימת קיימת במחשבם. מתכנתים מבצעים פעולת זו כדי לוודא שהם מבצעים פעולות על תיקייה שקיימת ולא על תיקייה שלא קיימת.
+## מה ולמה?
 
-## איך לבצע?
-הנה כמה דוגמאות קוד ופלט כדי להבין איך לבדוק אם תיקייה קיימת באמצעות קוד Javascript.
+בעת כתיבת קוד תכנות ב-Javascript, יתכן ונצטרך לבדוק האם ספרייה מסוימת קיימת. זה מתבצע כדי למנוע שגיאות בעת ניסיון לגשת לקבצים או ספריות שאינם קיימים.
+
+## איך לעשות:
+
+אנו משתמשים באובייקט `fs` של Node.js:
+
 ```Javascript
 const fs = require('fs');
-const path = '/home/user/my_folder';
 
-// לבדוק אם התיקייה קיימת
-if (fs.existsSync(path)) {
-  console.log('התיקייה קיימת');
+if (fs.existsSync('/your/path')) {
+    console.log('The directory exists!');
 } else {
-  console.log('התיקייה לא קיימת');
-}
-
-// לבדוק אם התיקייה תחת תיקיית מסוימת קיימת
-if (fs.existsSync('/home/user/my_folder/my_subfolder')) {
-  console.log('התיקייה קיימת בתוך התיקייה הנתונה');
-} else {
-  console.log('התיקייה לא קיימת בתוך התיקייה הנתונה');
+    console.log('The directory does not exist.');
 }
 ```
 
-## חקירה עמוקה
-בעבר, בדיקה אם תיקייה קיימת הייתה עיקרונית חלק ממגוון שפות תכנות, אך עכשיו בפעילות המתודולוגיה, פעולה זו נחשבת לפעולה סטנדרטית בכללות. יתר על כן, ישנן גם אפשרויות נוספות לבדוק אם תיקייה קיימת, כגון באמצעות פקודת ה-Terminal או בכלי פתוח כמו Node.js. כאשר מבצעים פעולות על קבצים או תיקיות בקוד, חשוב לוודא שהם קיימים על מנת למנוע שגיאות בזמן ריצת התכנית.
+כאשר מסבירים את הקוד מסויים, הוא פשוט יחזיר "הספרייה קיימת!" אם הנתיב קיים, ואחרת הוא יחזיר "הספרייה לא קיימת".
 
-## ראי גם
-כתב העת זה מציע מידע נרחב יותר על בדיקת קיום תיקיות ב-Javascript. ניתן למצוא גם דוגמאות נוספות והסברים על מנגנונים נוספים לבדיקה זו. אתר זה מכיל גם מידע על כלים נוספים שניתן להשתמש בהם כדי לבדוק קיום תיקיות בקוד עבור פלטפורמות שונות. https://www.digitalocean.com/community/tutorials/how-to-check-if-a-directory-exists-in-a-filesystem-in-node-js
+## צלילה עמוקה:
+
+הגישה שהצגנו כאן היא של Node.js, פלטפורמה שנוצרה ב-2009, שמאפשרת לנו לבצע תכנות משורת הפקודה. יתכנו אלטרנטיבות אחרות, אבל זוהי הגישה מועדפת ביותר כאשר מדובר ב-Javascript.
+
+מתחת לשורה, `fs.existsSync` מפעילה את הקוד המקומי של המערכת שמשתמשת ב-Node.js לבדוק האם הנתיב קיים - זה לא חלק מהתכנית שלך, אלא מהמערכת המקומית שלך.
+
+## ראה גם:
+
+- [הדוקומנטציה של Node.js על fs.existsSync](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
+- [מדריך מדוברקס](https://dev.to/zhiwehu/node-js-check-if-a-path-exists-1joj)
+- [Stack Overflow: איך לבדוק האם ספרייה / קובץ קיים עם Node.js](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)

@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Javascript recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,42 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Article: Searching and Replacing Text in JavaScript
+
 ## What & Why?
 
-Searching and replacing text is a common task in programming, which involves finding specific words or characters within a piece of text and replacing them with different ones. This is often done to make changes or corrections to large amounts of text without having to manually edit each instance. It saves time and helps ensure accuracy in the code.
+Searching and replacing text in JavaScript is all about finding specific characters, words, or patterns in a string and substitifying them with different ones. And why do we do it? It's handy for everything from cleaning up user inputs to converting data formats and more.
 
 ## How to:
 
-One way to search and replace text in Javascript is by using the `replace()` method. This method takes two parameters: the text to be searched and the text to replace it with. For example:
+The simplest way to search and replace text in JavaScript is with the `replace()` method:
 
 ```Javascript
-let str = "Hello world!";
-
-let newStr = str.replace("world", "universe");
-
-console.log(newStr); // output: Hello universe!
+let str = 'Hello, World!';
+let newStr = str.replace('World', 'JavaScript');
+console.log(newStr);
+// Output: 'Hello, JavaScript!'
 ```
 
-In the code above, the `replace()` method finds the word "world" within the string and replaces it with "universe". The `replace()` method also has another useful feature where it can accept a regular expression as the first parameter to search for a pattern instead of a specific word. For example:
+`replace()` only changes the first match it finds. To replace all occurrences of a substring, use a regular expression with the `g` (global) flag:
 
 ```Javascript
-let str = "Hello world!";
-
-let newStr = str.replace(/world/, "universe");
-
-console.log(newStr); // output: Hello universe!
+let str = 'Apple, apple, I love apple!';
+let newStr = str.replace(/apple/gi, 'banana');
+console.log(newStr);
+// Output: 'Banana, banana, I love banana!'
 ```
 
-## Deep Dive:
+The `i` flag makes the search case-insensitive.
 
-The `replace()` method has been a part of Javascript since its first edition in 1995. There are other methods in Javascript that can be used for searching and replacing text, such as `indexOf()`, `search()`, and `split()`. However, the `replace()` method is the most versatile and commonly used.
+## Deep Dive
 
-Other alternative ways to search and replace text in Javascript include using libraries such as jQuery or Lodash, which provide more advanced and efficient functions for searching and replacing text.
+In ye olden days, JavaScript didn't have the global (`g`) flag. You'd have to write a loop and call `replace()` multiple times.
 
-The `replace()` method can also accept a callback function as the second parameter, which is executed for each match found. This allows for more complex operations to be performed during the replacement process.
+Luckily for us, JavaScript now supports regular expressions. They're powerful and flexible, but can be confusing if you're a beginner. They also get complex if you're dealing with special characters or searching for whole words.
 
-## See Also:
+To search for whole words, you need to include the word boundaries `\b` in your regex:
 
-- [MDN web docs on replace() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-- [jQuery documentation on text manipulation](https://api.jquery.com/category/manipulation/)
-- [Lodash documentation on string methods](https://lodash.com/docs/4.17.15#string)
+```Javascript
+let str = 'Assess an assessment with sass.';
+let newStr = str.replace(/\bass\b/gi, 'class');
+console.log(newStr);
+// Output: 'Assess an assessment with class.'
+```
+
+JavaScript doesn't have a built-in method for replacing strings by index. But with substring manipulation:
+
+```Javascript
+let str = 'Hello, Friend!';
+let newStr = str.substring(0, 7) + 'World' + str.substring(12);
+console.log(newStr);
+// Output: 'Hello, World!'
+```
+
+## See Also
+
+If you'd like more detailed guides, MDN has great docs on [replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) and [RegExr](https://regexr.com/) is an interactive tool to learn, build, and test regular expressions. And for the brave of heart, [JavaScript.info](https://javascript.info/regexp-introduction) goes deep into regular expressions in JavaScript, no holds barred.

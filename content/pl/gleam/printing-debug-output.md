@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie wyników debugowania"
-html_title:           "Gleam: Wydrukowanie wyników debugowania"
-simple_title:         "Wydrukowanie wyników debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest wyjście debugowania i dlaczego programiści go używają?
+## Co i dlaczego?
 
-Wyjście debugowania to narzędzie, które pomaga programistom w śledzeniu i zrozumieniu kodu, szczególnie w celu naprawiania błędów. Pozwala ono na wyświetlenie informacji podczas wykonywania programu, co ułatwia identyfikację problemów oraz zrozumienie, jak kod działa.
+Drukowanie informacji diagnostycznych to proces rejestrowania informacji na temat działania programu dla jego analizy. Programiści robią to, aby zrozumieć i rozwiązać problemy z programem.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Możesz użyć funkcji `debug!`, aby wyświetlić dane lub zmienne do konsoli podczas wykonywania kodu. Na przykład:
+W języku Gleam drukowanie informacji diagnostycznych można wykonać za pomocą funkcji `debug`. Oto przykład:
 
 ```Gleam
-fn print_example() {
-  let name = "John"
-  let age = 30
-  debug!("Hello", name)
-  debug!("He is", age, "years old")
+import gleam/io.{println, stdout}
+
+fn main(args: List(String)) {
+  let _ = stdout()
+  |> println(args)
 }
 ```
 
-Wyżej wymieniony kod wyświetli w konsoli tekst `Hello John` oraz `He is 30 years old` podczas wykonania programu.
+Wynikowa informacja wyjściowa:
 
-## W pogłębionej perspektywie
+```
+["argument1", "argument2"]
+```
 
-Wyjście debugowania jest popularną techniką, która jest stosowana przez programistów od wielu lat. Alternatywnym sposobem na wyświetlanie informacji jest użycie specjalnych narzędzi do debugowania, takich jak debugery. Jednakże, w wielu przypadkach użycie `debug!` jest szybszym i prostszym rozwiązaniem.
+## Wgłąb tematu
 
-## Zobacz również
+(1) Historycznie, drukowanie informacji diagnostycznych zawsze było kluczową techniką w programowaniu. Działa na każdym systemie operacyjnym i nie wymaga żadnych dodatkowych narzędzi czy bibliotek. 
 
-Jeśli chcesz dowiedzieć się więcej o wyjściu debugowania w języku Gleam, możesz przejrzeć dokumentację lub przeczytać artykuły na ten temat. Możesz także sprawdzić alternatywne metody wyświetlania informacji, aby znaleźć najlepsze rozwiązanie dla swoich potrzeb.
+(2) Alternatywy dla drukowania informacji diagnostycznych to tworzenie na dysku plików z dziennikami lub użycie debuggera. 
+
+(3) W Gleam, `println` wykorzystuje funkcję `display` do konwersji wartości na ciągi znaków. W rezultacie wartości są zapisywane w reprezentacji, która jest użyteczna dla debugowania, ale nie zawsze jest czytelna dla człowieka. 
+
+## Zobacz też:
+
+- [Dokumentacja do `gleam/io`](https://hexdocs.pm/gleam_stdlib/gleam/io)
+- [Gleam: Introduction to Error Handling](https://gleam.run/tour/error-handling.html)

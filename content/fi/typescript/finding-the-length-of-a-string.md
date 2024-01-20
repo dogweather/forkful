@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "TypeScript: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,21 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Merkkijonon pituuden löytäminen on yksi yleisimmistä tehtävistä ohjelmoinnissa. Se tarkoittaa yksinkertaisesti merkkijonon sisältämien merkkien kokonaismäärän laskemista. Tämä on tärkeää monissa ohjelmointitehtävissä, kuten tietokantojen hakutoiminnoissa ja datan analysoinnissa.
+## Mikä & Miksi?
 
-## Näin teet sen:
+Merkkijonojen pituuden määrittäminen TypeScriptissä tarkoittaa merkkien lukumäärän laskemista merkkijonossa. Tämä on oleellista, kun haluamme esimerkiksi käsitellä merkkijonoa osissa tai verrata eri merkkijonojen pituuksia.
+
+
+## Miten toimia:
+
+Voit saada merkkijonon pituuden TypeScriptissä käyttämällä `.length` ominaisuutta. Tässä on esimerkki:
+
 ```TypeScript
-const sana = "Hei!"
-console.log(sana.length);
+let sana: string = "Moi maailma";
+console.log(sana.length); // Tulostaa: 11
 ```
-Tämä koodinpätkä tulostaa konsoliin numeron 4, koska "Hei!"-merkkijonossa on neljä merkkiä.
 
-## Syväsukellus:
-Merkkijonojen pituuden laskeminen on ollut osa ohjelmointia jo pitkään. Alun perin tämä oli hieman monimutkaisempaa, sillä merkkijonot tallennettiin muistissa tiiviinä merkkijonomuuttujina, joihin piti käydä läpi symboli kerrallaan. Nykyisin tämä hoituu kätevästi valmiilla .length -ominaisuudella.
+Yllä olevassa koodissa `sana` on merkkijono, ja `sana.length` palauttaa merkkijonojen määrän, joka tässä tapauksessa on 11.
 
-On myös olemassa muita tapoja laskea merkkijonon pituus, kuten käyttämällä looppeja ja muuttujia. Tällainen lähestymistapa voi olla hyödyllinen, jos haluat esimerkiksi tarkistaa merkkijonon sisältämien tiettyjen merkkien määrän.
+
+## Syvempi sukellus:
+
+Merkkijonon pituuden määrittäminen on ollut perusominaisuutena monissa ohjelmointikielissä vuosikymmenten ajan. TypeScriptissä, niin kuin monissa muissakin nykykielissä, on tämä ominaisuus sisäänrakennettuna, eli ei tarvitse käyttää mitään ulkopuolista funktiota.
+
+On olemassa myös vaihtoehtoisia tapoja laskea merkkijonon pituus, kuten `.split('')` ja `.join('')` metodien käyttö, mutta `.length` on tehokkain ja suoraviivaisin tapa.
+
+Merkkijonon pituuden määrittämisen yksityiskohtaisempi toteutus riippuu itse kielestä. TypeScriptissä `.length` ominaisuus palauttaa UTF-16 koodausyksiköiden määrän, joka ei välttämättä vastaa merkkien määrää jos merkkijonossa on esimerkiksi emoji, joka vaatii kaksinkertaisen koodausyksikön.
+
 
 ## Katso myös:
-- [Mozilla Developer Network: String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [Stack Overflow: How do you get the string length in TypeScript?](https://stackoverflow.com/questions/48567168/how-do-you-get-the-string-length-in-typescript)
+
+- MDN Web Docs, String.length: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length
+- TypeScriptin virallinen dokumentaatio: https://www.typescriptlang.org/docs/

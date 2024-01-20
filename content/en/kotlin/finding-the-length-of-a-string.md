@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Kotlin recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# An Uncluttered Guide to Getting String Length in Kotlin
+
 ## What & Why?
 
-Finding the length of a string simply means determining the number of characters in a string. Programmers often do this to validate user input, count the number of characters in a text, or manipulate strings to perform certain operations.
+Finding the length of a string means getting the number of characters it contains. That's handy when you want to make sure that inputs meet length requirements, or if you need to iterate over each character in a string.
 
-## How to:
+## How To:
 
-```
-Kotlin val myString = "Hello World!"
+In Kotlin, getting the length of a string is a piece of cake. All you need is the `length` property. Have a look at this code:
+
+```kotlin
+val myString = "Hello, World!"
 println(myString.length)
 ```
 
-Output: 12
-
-```
-Kotlin fun findLength(str: String): Int{
-    return str.length
-}
-
-println(findLength("Goodbye")) 
-```
-
-Output: 7
+Running this gives us `13` as the output because the string "Hello, World!" contains 13 characters.
 
 ## Deep Dive
 
-The concept of finding the length of a string has been around since the early days of programming languages and is still a crucial practice in modern programming. In Kotlin, the ```length``` property is available on all string variables and returns the number of characters in the string. 
+Historically, calculating the length of a string varied depending on the language. For example, in C, you'd have to manually iterate over each character until hitting null.
 
-However, in some cases, finding the length of a string may not be the optimal solution. For example, if you only need to check if a string is empty, using the ```isEmpty()``` function would be a more efficient approach.
+Thankfully, Kotlin makes it easier with the built-in `length` property – a feature it shares with many high-level languages like Python, Ruby, etc.
 
-It is also important to note that when using the ```length``` property, spaces and special characters are also counted as characters. This may affect your results if you are expecting a certain number of characters without considering these.
+What about alternatives? Although `length` is the default go-to, you could use a manual approach using Kotlin's `forEach` function like this:
+
+```kotlin
+var cnt = 0
+myString.forEach { cnt++ }
+println(cnt)
+```
+
+But keep in mind, there's an extra overhead in using the `forEach` approach than using `length` directly.
+
+Without going too in-depth, implementation-wise, `length` in Kotlin is just a property that returns the size of the underlying `CharArray` the string is based on. 
 
 ## See Also
 
-- Kotlin Strings documentation: https://kotlinlang.org/docs/reference/basic-types.html#strings
-- Alternative ways to find string length: https://www.geeksforgeeks.org/ways-to-find-length-of-strings-in-java/
-- String manipulation techniques in Kotlin: https://www.baeldung.com/string-manipulation-in-kotlin
+Here are few other places you might want to check out:
+
+- The [official Kotlin documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html) on strings, especially the `length` property.
+- This [Kotlin string guide by TutorialsPoint](https://www.tutorialspoint.com/kotlin/kotlin_strings.htm) covers a lot more than just the `length` property.
+- For deep-dives into more complex Kotlin topics, you might like this [Kotlin cookbook by Ken Kousen](https://www.oreilly.com/library/view/kotlin-cookbook/9781492046672/).

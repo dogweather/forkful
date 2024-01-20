@@ -1,7 +1,7 @@
 ---
-title:                "文字列の結合"
-html_title:           "Fish Shell: 文字列の結合"
-simple_title:         "文字列の結合"
+title:                "文字列の連結"
+html_title:           "Bash: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##なに? & なぜ?
+## 何となぜ？
 
-文字列を連結することは、プログラマーがよく行う作業の一つです。文字列を連結すると、一つの長い文字列にすることができます。これにより、より使いやすいコードを書くことができます。
+文字列の連結は、二つ以上の文字列を一つに結合する真ん中の項目です。プログラマはこれを使って情報を組み合わせます。
 
-## 使い方:
+## 手順
 
-```Fish Shell```のコードブロック内で、文字列を連結する方法を示します。
+Fish Shellコード例と出力を見てみましょう:
 
-```fish
-set str1 "Hello"
-set str2 "World"
-echo $str1$str2
 ```
+>set str1 "フィッシュ"
+>set str2 "シェル"
+>set concatenated $str1$str2
+>echo $concatenated  
+```
+出力:
+```
+フィッシュシェル
+```
+上記の例では、実行結果が"フィッシュシェル"という新たな文字列です。
 
-上記のコードを実行すると、```HelloWorld```という文字列が出力されます。
+## より深く 
 
-## 詳細を掘り下げる:
+Fish Shell は歴史的にも新しいコマンドラインシェルで、他のシェルと比較するといくつかの特性があります。文字列の連結の方法は例外ではありません。 連結に特定の演算子が必要なシェルもありますが、Fishでは変数名とその次の文字列や変数の間にスペースが無い限り自動で連結します。
 
-文字列を連結する方法は、プログラミング言語によって異なります。Fish Shellでは、```echo```コマンドの後に```$```記号を付けることで、文字列を連結できます。他のプログラミング言語でも、同様の構文を使用することで文字列を連結できることが多いです。
+もし他に対処方法が必要なら、`string join`関数を使うこともできます。とても有用な機能で、配列の各要素を一つの文字列に連結することができます。
 
-他にも、文字列を連結する方法としては、```concat()```関数を使用する方法や、```+```演算子を使用する方法などがあります。
+## 参考資料
 
-## 参考リンク:
+更なる情報は、以下のリンクをご覧ください：
 
-- [Concatenation (programming)](https://en.wikipedia.org/wiki/Concatenation_(programming))
-- [Fish Documentation](https://fishshell.com/docs/current/index.html)
-- [Programming with Strings in Fish Shell](https://medium.com/@xirone011/programming-with-strings-in-fish-shell-552d6b6e8cf)
+- [公式Fishドキュメンテーション](https://fishshell.com/docs/current/index.html)
+- [Fish Shellチュートリアル](https://fishshell.com/docs/current/tutorial.html)
+
+このように、Fish Shellは簡単な操作で文字列の連結が可能であり、様々な仕事の流れを合理化することができます。

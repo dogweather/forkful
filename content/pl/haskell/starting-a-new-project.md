@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynając nowy projekt"
-html_title:           "Haskell: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,22 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Rozpoczęcie nowego projektu odnosi się do stworzenia nowego programu lub aplikacji od podstaw. Programiści często decydują się na rozpoczęcie nowego projektu z powodów takich jak ulepszenie istniejącego kodu, dodanie nowych funkcji lub optymalizacja wydajności. 
+Tworzenie nowego projektu oznacza start od zera, definiowanie nowych celów, planów i funkcji. Programiści to robią, aby rozwiązać unikalne problemy, zrealizować innowacyjne pomysły lub nauczyć się nowych umiejętności.
 
-## Jak Stworzyć Nowy Projekt:
+## Jak to zrobić:
 
-~~~Haskell
-main = putStrLn "Witaj, świecie!"
-~~~
+Rozpoczniemy od zainstalowania pakietu Cabal, który jest systemem budowy i pakietowania dla Haskell. Użyjemy go do utworzenia nowego projektu:
 
-W powyższym przykładzie wykorzystujemy funkcję `putStrLn`, aby wyświetlić napis "Witaj, świecie!". Aby uruchomić nasz program, wystarczy go skompilować i uruchomić.
+```Haskell
+cabal update
+cabal install cabal-install
+```
 
-## Głębsza Analiza
+Teraz jesteśmy gotowi do stworzenia nowego projektu. Tutaj nazwiemy go "HelloHaskell".
 
-W przeszłości, rozpoczynanie nowego projektu wymagało więcej pracy, ponieważ należało napisać cały kod od podstaw. Obecnie istnieje wiele narzędzi i bibliotek w języku Haskell, które mogą ułatwić ten proces. Alternatywą dla rozpoczynania nowego projektu może być również modyfikacja istniejącego kodu, zwłaszcza jeśli jest on dobrze udokumentowany i łatwy w modyfikacji.
+```Haskell
+cabal init -n --is-executable -p HelloHaskell
+```
+Czytajmy tę komendę: `init` mówi Cabal, że chcemy utworzyć nowy projekt, `-n` oznacza, że chcemy projekt "minimalny", `--is-executable` oznacza, że chcemy program wykonywalny, a `-p HelloHaskell` jest nazwą naszego projektu.
 
-## Zobacz Również
+W swoim nowym projekcie zobaczysz plik `HelloHaskell.hs`. Wklej w nim tę linię kodu, aby wydrukować "Hello, Haskell!".
 
-Jeśli szukasz więcej informacji o rozpoczynaniu nowego projektu w języku Haskell, warto przeczytać dokumentację i tutoriale dostępne online. Możesz także zapoznać się z innymi artykułami o tym temacie, aby poznać różne podejścia i techniki używane przez innych programistów.
+```Haskell
+main :: IO ()
+main = putStrLn "Hello, Haskell!"
+```
+
+Uruchom program:
+
+```Haskell
+cabal run HelloHaskell
+```
+
+Powinieneś zobaczyć `Hello, Haskell!` na swoim ekranie.
+
+## Deep Dive 
+
+Kiedy piszesz w Haskellu, pracujesz na bazie wieloletniej historii rozwoju języków funkcyjnych. Haskellowi poprzednicy, tacy jak ML i Lisp, służyli jako fundamenty dla tego potężnego języka.
+
+Inne alternatywne narzędzia do rozpoczęcia nowego projektu Haskell to Stack lub używanie GHC (Glasgow Haskell Compiler) bezpośrednio. Wybór narzędzia zależy od preferencji, potrzeb projektowych i złożoności.
+
+Szczegóły implementacji, takie jak struktura projektu, testowanie jednostkowe, dokumentacja kodu, są określane przez preferencje programisty i wymagania projektu.
+
+## Zobacz również
+
+- Cabal User Guide: https://cabal.readthedocs.io/
+- "Learn You a Haskell" (naucz się Haskell'a): http://learnyouahaskell.com/
+- Oficjalna dokumentacja Haskell'a: https://www.haskell.org/documentation/

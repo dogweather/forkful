@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Kotlin: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是获取当前日期？为什么程序员要这么做？
+## 什么 & 为什么?
+获取当前日期是指编程返回当期读时间的过程。程序员这样做是因为各种操作，例如记录事务发生的实际时间，跟踪程序运行的时间，或只是显示当前日期给用户。
 
-获取当前日期是指从计算机系统中获取当前的日期和时间的操作。程序员经常需要使用当前日期来记录程序的创建时间、交易时间或者记录事件发生的时间。因此，获取当前日期对于程序员来说是非常重要的。
+## 怎么做：
+在 Kotlin 中，你可以这样获取当前日期：
 
-# 如何获取当前日期？
+```Kotlin
+import java.time.LocalDate
 
+fun main() {
+    val currentDate = LocalDate.now()
+    println("当前日期是: $currentDate")
+}
 ```
-Kotlin val currentDate = LocalDate.now()
+当运行此代码时，输出将会是：
+```Kotlin
+当前日期是: 2022-12-15 //根据当前日期的变化而变化
 ```
 
-这个简单的代码可以帮助你获取当前的日期。你也可以使用其他的日期格式，例如：
+## 深度解析
+Java 8 之前，你需要使用 `java.util.Date`，但这个类的可用性并不好。因此，在 Java 8 中，引入了新的日期时间 API，其中包括 `LocalDate` 类，你可以用它来获取当前日期。
 
-```
-Kotlin val currentDate = LocalDateTime.now()
-val formattedDate = currentDate.format(DateTimeFormatter.BASIC_ISO_DATE)
-```
+Kotlin 允许 Java 中所有类型的代码，所以我们可以使用 Java 的 `LocalDate.now()` 来获取当前日期。你也可以通过使用 `java.util.Calendar.getInstance()` 得到更多详细的日期和时间信息。
 
-这样可以将当前日期转换为基本的ISO格式，也就是“yyyymmdd”。
+请注意，如果你需要显示给用户，那么须根据用户的时间偏好或者时区偏好进行格式化日期。
 
-# 深入了解
-
-## 历史背景
-
-在编程的早期，程序员们需要手动编写代码来获取当前日期。随着计算机技术的发展，现在已经有很多内置的函数和库来帮助程序员简便地获取当前日期。
-
-## 其他方法
-
-除了使用内置函数来获取当前日期，程序员还可以使用第三方库。例如，Joda-Time是用于处理日期和时间的流行开源库。
-
-## 实现细节
-
-在计算机系统中，时间是以整数来表示的。从1970年1月1日开始，每秒钟会增加一个整数值，这就是我们所说的“时间戳”。程序员可以通过获取时间戳来计算当前日期。
-
-# 参考文献
-
-- [Java Doc - LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Joda-Time Docs](https://www.joda.org/joda-time/)
-- [Timestamps Explained](https://www.digitalocean.com/community/tutorials/understanding-date-and-time-in-java)
+## 查阅资料
+1. [官方文档-LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+2. [关于 Kotlin 的日期和时间的更多信息](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)
+3. [关于古老的 java.util.Date 的更多信息](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)

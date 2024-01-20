@@ -1,7 +1,7 @@
 ---
-title:                "未来や過去の日付を計算する"
-html_title:           "Kotlin: 未来や過去の日付を計算する"
-simple_title:         "未来や過去の日付を計算する"
+title:                "未来または過去の日付の計算"
+html_title:           "Kotlin: 未来または過去の日付の計算"
+simple_title:         "未来または過去の日付の計算"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,40 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何でも？: 
+## 何それ？ & なぜ？  (What & Why?)
+日付計算は、未来や過去の特定の日付を見つける技術です。プログラマーは、締め切りを管理するため、数日後の日付を決定するため、有効期限をチェックするためなどの理由でこれを行います。
 
-日付の未来や過去の計算とは、指定した日付から一定の日数を加算または減算して得られる日付のことです。プログラマーがこのような計算を行うのは、日付を操作する必要があるさまざまなアプリケーションやゲームなどを開発する際に便利だからです。
-
-## 方法: 
-
+## 使い方： (How to:)
+以下は、未来の日付を計算するKotlinのコード例です。
 ```Kotlin
-//今から1日後
-val today = LocalDate.now()
-val tomorrow = today.plusDays(1)
-println(tomorrow)
+import java.time.LocalDate
 
-//今から1年前
-val today = LocalDate.now()
-val lastYearToday = today.minusYears(1)
-println(lastYearToday)
+fun main() {
+    val today = LocalDate.now()
+    val futureDate = today.plusDays(10)
+
+    println("Today is: $today")
+    println("10 days from now will be: $futureDate")
+}
+```
+このコードを実行すると以下のような出力が得られます。
+```Kotlin
+Today is: 2022-05-18
+10 days from now will be: 2022-05-28
 ```
 
-出力結果：
+過去の日付を計算するには、次のように `minusDays` 関数を使用します。
+```Kotlin
+import java.time.LocalDate
+
+fun main() {
+    val today = LocalDate.now()
+    val pastDate = today.minusDays(10)
+
+    println("Today is: $today")
+    println("10 days ago was: $pastDate")
+}
 ```
-2021-10-10 //今日の次の日付
-2019-10-10 // 一年前の今日の日付
+このコードの出力は以下のようになります。
+``` Kotlin
+Today is: 2022-05-18
+10 days ago was: 2022-05-08
 ```
 
-## もっと詳しく: 
+## より詳しい情報 (Deep Dive)
+日付計算に関する詳細：
 
-日付の計算は、古代から計算機の発明前まで遡ることができます。人々は、自然現象や季節の変化に対する調整として、日付を計算する必要がありました。しかし、計算機が発明されると、人々はより正確かつ迅速に日付の計算を行うことができるようになりました。
+1. 歴史的な背景： かつて、日付計算はほとんど手動で行わなければなりませんでした。しかし、Java 8を元にしたKotlinではLocalDateクラスによって簡単に処理できます。
 
-代替として、日付の計算には多くのライブラリやアプリケーションがあります。しかし、最近のプログラミング言語は、日付や時間の操作に特化した便利なメソッドや組み込み関数を提供しており、より簡単に日付の計算を行うことができます。
+2. 代替案： Java 8以前の場合、CalendarまたはDateクラスを使用します。これらのクラスには多くの問題点がありましたがKotlinのLocalDateクラスはこれらの問題点を解消しました。
 
-Kotlinでは、日付や時間を扱うための標準ライブラリがあります。また、Javaの日付と時刻に関するAPIを使用することもできます。
+3. 実装詳細： KotlinのLocalDateクラスには、plusDays、minusDays、plusMonths、minusMonthsなどのメソッドがあり、これを使うことにより日付の計算が容易になります。
 
-## 他に見るもの: 
+## 関連記事・参考情報セクション (See Also):
+関連リンクをご覧ください：
 
-- [Kotlin 公式ドキュメント](https://kotlinlang.org/docs/reference/datetime.html)
-- [Java 日付と時刻 API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [時計アプリケーションの作成チュートリアル](https://kotlinlang.org/docs/tutorials/java-date-time-api.html)
+1. Kotlin公式ドキュメンテーション (Kotlin official documentation): [https://kotlinlang.org/docs/reference/](https://kotlinlang.org/docs/reference/)
+
+2. LocalDateクラス (LocalDate Class): [https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/)
+
+3.  JavaのDateとCalendarクラスについて (About Java's Date and Calendar Classes): [https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html)

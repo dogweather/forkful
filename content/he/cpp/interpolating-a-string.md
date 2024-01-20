@@ -1,7 +1,7 @@
 ---
-title:                "מינתאור תווית"
-html_title:           "C++: מינתאור תווית"
-simple_title:         "מינתאור תווית"
+title:                "אינטרפולציה של מחרוזת"
+html_title:           "Arduino: אינטרפולציה של מחרוזת"
+simple_title:         "אינטרפולציה של מחרוזת"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,59 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה?
+## מה ולמה?
 
-התמתנות של מחרוזות היא פעולה נפוצה בתכנות ומאפשרת למפענחים להכניס מבני דפוס משתנים לתוך מחרוזות. זה מאפשר לקוד להיות יותר דינמי וקריא יותר על ידי הפיכת המחרוזת לגמישה יותר ולהתאמה למגוון של מצבים שונים במהירות.
+אינטרפולציה של מחרוזת היא הכנסת משתנים ישירות לתוך מחרוזת. מתכנתים עושים זאת כדי לחסוך בדיכאון גבוה של מחרוזות ולהפוך את הקוד ליותר קריא ונוח לכתיבה.
 
-# איך לעשות:
+## איך לעשות:
 
-### דוגמה 1:
+נשתמש בשפת C++20 בו הוצגה תכונה חדשה שמאפשרת אינטרפולציה של מחרוזת באמצעות מחרוזות מעוצבות. נניח, לדוגמה, בשם דוגמאית ובמספר של כדורים.
+
 ```C++
-#include <iostream>
 #include <string>
-
-using namespace std;
+#include <format>
 
 int main() {
-    string name = "מיכאל";
-    cout << "שלום " << name << "!" << endl;
+    std::string name = "Yosi";
+    int balls = 5;
+
+    std::string message = std::format("Hello {}, you have {} balls.", name, balls);
+    std::cout << message << std::endl;
     return 0;
 }
 ```
-פלט: שלום מיכאל! 
+הפלט של הקוד הוא: `Hello Yosi, you have 5 balls.`
 
-### דוגמה 2:
+## הסבר מעמיק
+
+אינטרפולציה של מחרוזת התחילה להינות מודעות רחבה בשנת 1980 עם שפת Perl, ומאז נפוצה בשפות כמו Python, Ruby ו- JavaScript. לפני שהוצעה התכונה החדשה ב- C++20, אפשר היה להשתמש בספריות צד שלישי כמו fmt או boost. 
+
+אם אתה לא משתמש ב-C++20 עליך שרשרת `to_string` ו- `+` למרכיבים שונים של המחרוזת או להשתמש בספריות צד שלישי.
+
 ```C++
-#include <iostream>
-#include <string>
-
-using namespace std;
-
-int main() {
-    string language = "C++";
-    int version = 11;
-    cout << "זהו " << language << " הגרסה הנוכחית של השפה היא " << version << "." << endl;
-    return 0;
-}
+std::string name = "Yosi";
+int balls = 5;
+std::string message = "Hello " + name + ", you have " + std::to_string(balls) + " balls.";
+std::cout << message << std::endl;
 ```
-פלט: זהו C++ הגרסה הנוכחית של השפה היא 11.
+הפלט של הקוד הוא: `Hello Yosi, you have 5 balls.`
 
-# טיול עמוק:
+## לקריאה נוספת:
 
-כיצד פועלת התמתנות של מחרוזות?
-
-תקופת המחשבים הקלאסית לא הייתה כל כך יעילה, ועבור כמה לשדר מידע למשתמש, צידםם התקנו מיצירת סדרות של תווים בפקודות פתרונות למשתמשים. לכן, התמתנות של מחרוזות היא פיתוח פתרונות באמצעות תוכניות לסדרות תווים בפתרונות למפענחים.
-
-חלופות לתמתנות של מחרוזות:
-
- - תמתנות של תווים - תכנון, התמתנות של שפות תכנובות נוכחיות.
- - למתנות של מחרוזות (החזרת כלוכלות וטבעיות) - תכנון פתוח.
- - תמתנות של מחרוזות ניורות גדולות, תאוונתר הקטנות ודגימה - תפיסה ומכלים קודם־גדולים.
-
-פרוח, מילונו הירוק עם דבריים וואלידס, אכלי מאברליני, ומתנות למפענך, התבאנה בלחיצת הכפתורים שבהם להנות למפתח.
-
-# ראה גם:
-
-- [תמתנות של שפות תכנובות נוכחיות בסדר תעודתי](https://www.geeksforgeeks.org/string-interpolation-language-format-identical-document-spread/).
-- [תמתנות של מאמצים הרצים מהר](http://www.pythontutor.com/wfc/lang/Ябябодной-г.Ст-прод-ѡне-гўду/track/pablo/).
-- [תוכנות של אפליצייות של ליגת ברירות בריטי**)](https://medium.com/archive/coding-2019/introduction-to-string-interpolation-in-javascript-eb246a8fc0ad).
+זה רק סקיצה של תכונה כה רחבה וחדשה בשפת התכנות שלנו ואני ממליץ לך לשקול להעמיק:
+- שפת מסמך C++20 עצמה: https://isocpp.org/std/the-standard
+- ספרייה FMT: https://fmt.dev/latest/index.html
+- ספריית Boost Format: https://www.boost.org/doc/libs/1_76_0/libs/format/doc/format.html

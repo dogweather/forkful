@@ -1,6 +1,6 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "C#: Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "C#"
 category:             "C#"
@@ -10,40 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faisons-nous?
+## Qu'est-ce et Pourquoi ?
 
-L'extraction de sous-chaînes est une pratique courante dans la programmation en C#. Cela consiste à extraire une partie spécifique d'une chaîne de caractères, généralement en fonction d'un motif ou d'un index déterminé. Les programmeurs utilisent cette technique pour manipuler des données ou pour obtenir des informations précises à partir de grandes chaînes de texte.
+L'extraction de sous-chaînes est l'action de prendre une partie d'une chaîne de caractères. Les programmeurs le font pour manipuler et utiliser des données à l'intérieur d'une chaîne plus grande.
 
 ## Comment faire :
 
-Voici deux façons de procéder pour extraire une sous-chaîne en C# :
+Voici un exemple d'extraction d'une sous-chaîne en utilisant C# :
 
 ```C#
-string chaine = "Bonjour tout le monde !";
-
-// Méthode 1 : en utilisant la méthode Substring
-string sousChaine = chaine.Substring(8, 4);
+string phrase = "Bonjour tout le monde";
+string sousChaine = phrase.Substring(8, 4); // Résultat: "tout"
 Console.WriteLine(sousChaine);
-// Output : tout
-
-// Méthode 2 : en utilisant l'opérateur de sélection []
-string autreSousChaine = chaine[8..12];
-Console.WriteLine(autreSousChaine);
-// Output : tout
 ```
 
-Dans ces exemples, nous extrayons les quatre caractères à partir du huitième index de la chaîne initiale. Les deux méthodes produisent le même résultat, mais la méthode Substring offre une plus grande flexibilité pour spécifier un motif ou une longueur de sous-chaîne, tandis que l'opérateur de sélection [] nécessite une manipulation manuelle de l'index.
+Dans cet exemple, 'Substring' est utilisé pour extraire le mot entre la position 8 et la position 12 de la phrase, et le résultat est affiché dans la console.
 
-## Plongée profonde :
+## Deep Dive
 
-L'extraction de sous-chaînes est une pratique courante depuis les débuts de la programmation, car elle permet de manipuler et de traiter des données plus facilement et efficacement. En C#, il existe également d'autres options pour extraire des sous-chaînes, telles que l'utilisation des expressions régulières ou de la classe Regex.
+Historiquement, l'extraction de sous-chaînes existe depuis les premiers jours de la programmation pour travailler avec des chaînes de caractères. En C#, la méthode 'Substring' est fournie pour cette tâche, mais vous pouvez également utiliser les méthodes 'Indexof' et 'LastIndexOf' pour localiser la position d'un caractère ou d'une sous-chaîne dans une chaîne.
 
-En ce qui concerne les performances, utiliser l'opérateur de sélection [] est généralement plus efficace que d'utiliser la méthode Substring, mais cela peut varier en fonction de la complexité du motif ou de la longueur de la chaîne initiale.
+Il existe des alternatives à 'Substring', comme 'Split' si vous voulez diviser une chaîne en plusieurs parties ou 'Replace' pour changer certains éléments de la chaîne. L'option la plus appropriée dépend du problème que vous voulez résoudre.
 
-## Voir aussi :
+L'implémentation de la méthode 'Substring' est assez simple. Elle utilise le tableau de caractères sous-jacent de la chaîne, et renvoie une nouvelle chaîne qui commence à l'index spécifié et a une longueur spécifiée.
 
-Pour en savoir plus sur l'extraction de sous-chaînes en C# :
+## Voir Aussi
 
-- [Documentation Microsoft sur la méthode Substring](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.substring)
-- [Documentation Microsoft sur l'opérateur de sélection](https://docs.microsoft.com/fr-fr/dotnet/csharp/language-reference/proposals/csharp-8.0/range)
-- [Documentation Microsoft sur les expressions régulières en C#](https://docs.microsoft.com/fr-fr/dotnet/standard/base-types/regular-expression-language-quick-reference)
+Pour plus d'informations sur l'extraction de sous-chaînes et les chaînes de caractères en C#, consultez les liens suivants:
+
+- Documentation Microsoft sur les chaînes de caractères en C#: https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/strings/
+- Guide de programmation C# sur les sous-chaînes: https://www.tutorialsteacher.com/csharp/csharp-string-substring
+- Les méthodes de chaîne en C#: https://www.codingame.com/playgrounds/27940/les-methodes-de-chaine-en-c

@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti della linea di comando"
-html_title:           "Swift: Lettura degli argomenti della linea di comando"
-simple_title:         "Lettura degli argomenti della linea di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Leggere gli argomenti della riga di comando è una pratica comune tra i programmatori, che consente al software di accettare input direttamente dalla riga di comando anziché da un'interfaccia utente. Questo può essere utile per automatizzare processi, testare il software o fornire un'esperienza più avanzata agli utenti.
+# Leggere gli Argomenti della Riga di Comando in Swift
+
+## Cos’è e perché?
+
+Leggere gli argomenti della riga di comando significa interpretare i dati inseriti quando si esegue un programma da terminale. I programmatori lo fanno per passare argomenti ai loro programmi al momento dell'esecuzione, rendendoli più flessibili e riutilizzabili.
 
 ## Come fare:
-Per leggere gli argomenti della riga di comando in Swift, possiamo utilizzare la variabile globale ```CommandLine.arguments```, che restituisce un array contenente tutti gli argomenti passati al programma. Possiamo quindi accedere a ogni argomento tramite l'indice dell'array, con il primo elemento che corrisponde al nome del programma stesso. Di seguito un esempio di codice e il relativo output:
+
+Per leggere gli argomenti della riga di comando in Swift, usiamo la costante globale `CommandLine.arguments`. Ecco un esempio semplice:
 
 ```Swift
-let arguments = CommandLine.arguments
-print(arguments[0]) //nome del programma
-print(arguments[1]) //primo argomento
-print(arguments[2]) //secondo argomento
+// File: main.swift
+for arg in CommandLine.arguments {
+    print(arg)
+}
 ```
-
-Output:
-```
-programma
-argomento1
-argomento2
-```
+Eseguendo il programma con l'argomento "ciao", vedrai "ciao" stampato sul terminale.
 
 ## Approfondimento:
-L'abilità di leggere gli argomenti della riga di comando è stata introdotta in Swift 3, in precedenza era necessario utilizzare la libreria Foundation. In alternativa, possiamo anche utilizzare librerie di terze parti come Commander o SwiftCLI.
 
-Per implementare un'interfaccia utente da riga di comando più avanzata, possiamo anche utilizzare il framework di Apple CommandLineKit, che fornisce funzionalità come la gestione delle opzioni e dei comandi.
+### Contesto storico
+
+Gli argomenti della riga di comando esistono sin dai primi giorni dei sistemi operativi. Insegnare a Swift come leggerli ci torna indietro alle origini dei principi di programmazione.
+
+### Alternative:
+
+Per usi più complessi, potrebbe essere necessario utilizzare un parser di argomenti della riga di comando, come Swift Argument Parser.
+
+### Implementazione:
+
+`CommandLine.arguments` è un array di stringhe. Il primo elemento dell'array è il nome del programma che è in esecuzione. Gli elementi successivi sono gli argomenti passati alla riga di comando.
 
 ## Vedi anche:
-- Documentazione ufficiale di Swift sull'accesso agli argomenti della riga di comando: https://developer.apple.com/documentation/swift/commandline/arguments
-- Commander: https://github.com/kylef/Commander
-- SwiftCLI: https://github.com/jakeheis/SwiftCLI
-- CommandLineKit: https://github.com/GuillaumeSabran/CommandLineKit
+
+Se vuoi saperne di più, dai un'occhiata a queste risorse:
+
+1. [Apple's Documentation on CommandLine](https://developer.apple.com/documentation/swift/commandline)
+2. [Swift Argument Parser](https://github.com/apple/swift-argument-parser)
+3. [Example of CommandLine arguments in Swift](https://www.hackingwithswift.com/example-code/language/how-to-read-command-line-arguments-using-commandline)

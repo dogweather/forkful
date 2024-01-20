@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller det förflutna"
-html_title:           "Rust: Beräkna ett datum i framtiden eller det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Rust: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -11,29 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att räkna ut ett datum i framtiden eller förflutet är en vanlig uppgift för programmerare. Det kan vara användbart för att planera scheman, beräkna åldrar eller helt enkelt för att få en överblick över tidsramar. 
 
-## Så här gör du:
-Låt oss säga att vi vill beräkna datumet 30 dagar framåt från idag. I Rust kan vi göra detta med hjälp av funktionen ```chrono::Utc::today()``` och ```chrono::Duration::days()```. Vi behöver först importera biblioteket chrono och sedan definiera en variabel med dagarnas räkna:
+Att beräkna ett datum i framtiden eller förflutna är processen att lägga till eller dra ifrån ett specifikt tidsspann från ett givet datum. Det används av programmerare för att hantera tid-relaterade logik i applikationer som databas sökning, händelseplanering m.m.
 
+## Hur man gör:
+
+Här är ett enkelt exempel som visar hur man kan räkna ut ett datum i framtiden med Rust.
 ```Rust
-use chrono::{Utc, Duration};
-let days = Duration::days(30);
+use chrono::{DateTime, Duration, Utc};
+
+fn main() {
+    let nuvarande_datum: DateTime<Utc> = Utc::now();
+    println!("Nuvarande datum och tid: {}", nuvarande_datum);
+    
+    let framtida_datum: DateTime<Utc> = nuvarande_datum + Duration::days(30);
+    println!("Framtida datum och tid: {}", framtida_datum);
+}
 ```
-Sedan kan vi använda funktionen ```datedate()``` för att få dagens datum och lägga till antalet dagar som valts: 
-
+För att beräkna ett datum i det förflutna kan vi dra av tidsintervallet från det aktuella datumet, på detta sätt:
 ```Rust
-let future_date = Utc::today() + days;
-``` 
-Vi kan också göra samma sak för att beräkna ett datum i förflutet genom att använda en negativt antal dagar.
+let tidigare_datum: DateTime<Utc> = nuvarande_datum - Duration::days(30);
+println!("Tidigare datum och tid: {}", tidigare_datum);
+```
 
-## Djupdykning:
-Att beräkna datum i ett datorsystem kan vara en knepig uppgift. Det kräver noggrann hantering av tidszoner, sommar- och vintertid, och andra detaljer. Lyckligtvis gör biblioteket chrono det enkelt för oss att hantera dessa komplexiteter och räkna ut korrekta datum.
+## Djupare inblick
 
-Det finns även andra sätt att räkna ut datum i Rust, till exempel genom att använda biblioteket ```time```. Det är viktigt att välja det bibliotek som passar bäst för ditt specifika projekt och behov.
+Historiskt sett, hade programmerare att räkna med komplexiteten hos tid och datum behandling, inklusive skottår, tidzoner och mycket mer. Rust förenklar detta genom `chrono`biblioteket, som tillhandahåller en mängd funktioner för att hantera tid och datum.
 
-## Se även:
-Här är några användbara länkar för att utforska mer om hur man beräknar datum i Rust:
+Alternativa sätt att beräkna datum i framtiden eller förflutna kan innefatta användning av andra Rust bibliotek som `time` eller `date`. Men `chrono` förblir att vara ett populärt val till följd av dess omfattande funktionalitet och enkelhet.
 
-- Den officiella dokumentationen för biblioteket [chrono](https://docs.rs/chrono).
-- En tutorial om hur man beräknar datum i Rust med hjälp av olika bibliotek [här](https://betterprogramming.pub/dates-and-times-in-rust-eb8661377eb8).
+Implementationen av att beräkna ett datum i framtiden eller förflutna i Rust baseras på användningen av `Duration` för att representera ett tidsintervall, som sedan kan läggas till eller dras av från en `DateTime`.
+
+## Se Även:
+
+- Rust's officiella dokumentation: [chrono](https://docs.rs/chrono/0.4.0/chrono/index.html)
+- Rust's officiella dokumentation: [Duration](https://doc.rust-lang.org/std/time/struct.Duration.html)
+- Nybörjarguide till Rust: [Hantera datum och tid i Rust med Chrono](https://www.section.io/engineering-education/rust-date-and-time-manipulation-with-chrono/)

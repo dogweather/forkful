@@ -1,7 +1,7 @@
 ---
-title:                "「現在の日付を取得する」"
-html_title:           "PowerShell: 「現在の日付を取得する」"
-simple_title:         "「現在の日付を取得する」"
+title:                "現在の日付を取得する"
+html_title:           "PowerShell: 現在の日付を取得する"
+simple_title:         "現在の日付を取得する"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 今何&なぜ？
+## 何となぜ?
+日付を取得することは、現在の日付と時間を取得することを指します。プログラマは、ログ付け、日付依存の機能を制御、または時間に基づく計算を行うためにこれを行います。
 
-現在の日付を取得するとは、プログラマーが現在の日付情報を得るための方法です。プログラマーがこれを行う理由は、日付情報がポータブルで再利用可能な方法で取得できるため、時にはプログラムの動作に必要な特定の日付を取得するためです。
-
-## 方法：
+## 実装方法:
+現在の日付を取得するのはとても簡単です。以下は、具体的なコード例と出力です：
 
 ```PowerShell
-# 現在の日付を取得するコマンドレット
-Get-Date
-
-# 現在の日付だけでなく、時刻や曜日も表示する場合
-Get-Date -Format "yyyy/MM/dd, ddd HH:mm:ss"
-
-# 別のタイムゾーンで現在の日付を取得する場合
-Get-Date -TimeZone "Central Standard Time"
-
-# 変数に現在の日付を格納する
-$currentDate = Get-Date
+$現在日 = Get-Date
+Write-Output $現在日
 ```
 
-出力例：
+このコードを実行すると、現在の日付と時間が表示されます。
+
+## 深掘り:
+### 1.歴史的なコンテキスト:
+PowerShellはWindowsの組み込みスクリプトであり、UNIXのシェルと似たコマンドライン環境を提供します。`Get-Date` というコマンドは、このシステムの一部としてこの早い段階で存在しました。
+
+### 2.他の代替方法:
+別の方法としては、.NETの `DateTime` オブジェクトを直接利用することです：
+
+```PowerShell
+$現在日 = [DateTime]::Now
+Write-Output $現在日
 ```
-2020/07/22, Wed 14:51:22
-```
 
-## 深堀り：
+### 3.実装の詳細:
+`Get-Date` コマンドレットは、単純に .NET の `DateTime` クラスの `Now` メソッドへのラッパーです。それにより、現在の日付と時間のインスタンスが得られます。
 
-この機能は、 Unixオペレーティングシステムの `date` コマンドや、他のプログラミング言語で使用される `DateTime` クラスと似ています。また、PowerShellでは `.NET` フレームワークの `DateTime` クラスが使用されており、より高度な操作が可能です。
+## 関連資料:
+PowerShellと`Get-Date`についてさらに学ぶには以下のリンクを参照してください：
 
-## 参考：
+1. [Microsoft公式ドキュメンテーション](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+2. [Windows PowerShellチュートリアル](https://www.tutorialspoint.com/powershell/index.htm)
 
-- [Microsoft Docs - Get-Date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
-- [TechNet - 日期和時間命令碼](https://docs.microsoft.com/zh-tw/powershell/scripting/scripts/date-and-time/overview-of-date-and-time-commands-in-powershell)
+以前のバージョンのPowerShellについて学ぶには、以下を参照してください：
+
+3. [Windows PowerShell Wiki](https://en.wikipedia.org/wiki/PowerShell)
+
+これらのリソースを通じて、あなたのPowerShellの知識を向上させてください。

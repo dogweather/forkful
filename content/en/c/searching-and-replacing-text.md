@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "C recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "C"
 category:             "C"
@@ -12,49 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Searching and replacing text is the act of finding and changing specific words, phrases, or characters within a larger body of text. Programmers often use this technique to quickly make changes to their code, saving time and reducing manual error.
+Searching and replacing text is exactly what it sounds like – locating snippets of text within a string or a file and changing them into something else. This task is key in various programming scenarios, from simple data cleaning to complex data manipulation techniques. 
 
 ## How to:
 
-To search and replace text in C, we can use the `strchr()` function. This function searches for a specific character within a string and returns a pointer to its location. We can then use this pointer to replace the character with a new one.
+Here's a simple, straightforward code example in C to demonstrate the replace operation.
 
+```C
+#include<stdio.h>
+#include<string.h>
+
+void replace(char * str, char oldCh, char newCh) {
+    for(int i = 0; i<strlen(str); i++) {
+        if(str[i] == oldCh) str[i] = newCh;
+    }
+}
+
+int main() {
+    char str[] = "Hello, World!";
+    replace(str, 'o', '0');
+    printf("%s\n", str);
+
+    return 0;
+}
 ```
-//Example code
-char str[] = "Hello World";
-char *ptr;
-ptr = strchr(str, 'o');
-*ptr = 'e';
-printf("%s", str);
+In the sample code above, we've implemented a simple replace function that replaces every occurrence of an old character with a new one. We then test this function with the string "Hello, World!" – replacing 'o' with '0'.
 
-//Output
-Helle World
+When you run this C program, the following output is produced:
 ```
-
-We can also use the `strstr()` function to search for a specific string within another string. This function works similarly to `strchr()`, but searches for the entire string instead of just one character.
-
+Hell0, W0rld!
 ```
-//Example code
-char str[] = "Hello World";
-char *ptr;
-ptr = strstr(str, "World");
-strcpy(ptr, "Universe");
-printf("%s", str);
+## Deep Dive
 
-//Output
-Hello Universe
-```
+Historically, replacement in strings relates closely to the development of text editors and the desire to automate tasks. Sed, or the Stream EDitor, introduced in the early Unix days, was one of the first programs to do search and replace. 
 
-## Deep Dive:
+In modern programming, there are several alternatives for string replacement in C. These include using built-in functions like `strncpy()` or `memmove()`, or using third-party libraries like regex, which provide more options for string manipulation.
 
-Before the advent of computers, searching and replacing text was a manual and time-consuming process. With the rise of programming languages, this task became much easier and more efficient.
+The basic implementation of replace, like the one we've given above, has a time complexity of O(n), since we're looping over each character of the string. But replacing a substring with another requires a time complexity of O(n*m) where m is the size of the original string and n is the size of the substring we're replacing. Remember to consider time complexity when choosing your implementation approach!
 
-Some alternatives to the `strchr()` and `strstr()` functions include `strtok()` and `regex`. `strtok()` breaks a string into smaller tokens, while `regex` allows for more complex matching patterns.
+## See Also 
 
-The implementation of `strchr()` and `strstr()` may differ slightly in different versions of C, but their fundamental purpose remains the same. It is important to remember to always check for error conditions and handle them appropriately when using these functions.
+1. C library function - **[strncpy()](https://www.tutorialspoint.com/c_standard_library/c_function_strncpy.htm)**
 
-## See Also:
+2. C library function - **[memmove()](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm)**
 
-- [C Strchr() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)
-- [C Strstr() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm)
-- [C Strtok() function documentation](https://www.tutorialspoint.com/c_standard_library/c_function_strtok.htm)
-- [C Regex tutorial](https://www.tutorialspoint.com/cprogramming/c_regular_expressions.htm)
+3. Info on time complexity of algorithms - **[Big-O Notation](https://www.interviewcake.com/article/java/big-o-notation-time-and-space-complexity)**
+
+4. Unix's Sed command - **[Sed Stream Editor](https://www.gnu.org/software/sed/manual/sed.html)**
+
+Exploring these resources will support your understanding and ability to implement searching and replacing text in C. Happy Coding!

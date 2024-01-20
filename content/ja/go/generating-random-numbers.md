@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数字を生成する"
-html_title:           "Go: ランダムな数字を生成する"
-simple_title:         "ランダムな数字を生成する"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-アーティクル
+## 何となぜ？
 
-Goでランダムな数字を生成する方法
+ランダムナンバー生成は、望む範囲内で予測不能な数字を作出するプロセスです。これはテストデータを作ったり、ゲームプログラミングで非決定性を導入したりするためにプログラマーによく利用されます。
 
-## 何 & 何のため？
+## 実装方法:
 
-ランダムな数字を生成するとは、プログラマーがコード内でランダムな値を作成することです。ランダムな数字を使用する理由はさまざまですが、ゲームや暗号化、テストデータの生成などによく使われます。
-
-## 方法：
-
-Go言語では、math/randパッケージを使用してランダムな数字を生成することができます。下記のコード例を参考にしてください。
+以下のコードは Go でランダムな整数を生成する方法の一つです。
 
 ```Go
 package main
+
 import (
-  "fmt"
-  "math/rand"
-  "time"
+    "fmt"
+    "math/rand"
+    "time"
 )
+
 func main() {
-  // 現在の時刻をシード値として設定する
-  rand.Seed(time.Now().UnixNano())
-  
-  // 0から10の範囲でランダムな整数を生成する 
-  fmt.Println(rand.Intn(11))
-  
-  // float64型のランダムな数字を生成する
-  fmt.Println(rand.Float64())
+    rand.Seed(time.Now().UnixNano())
+    randomNum := rand.Intn(100) // 0から99までのランダムな数
+    fmt.Println(randomNum)
 }
 ```
 
-上記のコードを実行すると、それぞれの実行ごとに異なるランダムな数字が出力されることがわかります。
+このプログラムを実行すると、0 から 99 までのランダムな数字が出力されます。例: 42, 69, 23 など。
 
-## 詳細情報：
+## ディープダイブ:
 
-ランダムな数字を生成する方法にはいくつかの方法がありますが、Go言語では標準でmath/randパッケージが提供されています。他の言語では、乱数生成器や暗号グラフを使用するなどの方法があります。
+ランダム数値生成の歴史は古く、それらのアルゴリズムはコンピュータの初期段階から使われてます。Goでの乱数生成には主に "math/rand" パッケージと "crypto/rand" パッケージが利用されますが、後者はより高度なセキュリティが求められる場合に使用されます。
 
-ランダムな数字の生成には、それぞれに異なるアルゴリズムが使用されますが、一般的には擬似乱数が使用されます。擬似乱数は、予測不能でありながらも再現可能な数字のことです。
+また、Goでは乱数生成器のシード値を設定することが重要であり、これが決定的なランダム値を作成します。上記の例では `time.Now().UnixNano()`をシードとして使用しています。
 
-## 関連情報：
+## 参考資料:
 
-Go言語のmath/randパッケージのドキュメント: https://golang.org/pkg/math/rand/
+以下のリンクは、Goのランダム数値生成に関連する更なる情報を提供します。
 
-擬似乱数の詳細な解説: https://en.wikipedia.org/wiki/Pseudorandom_number_generator
+1. Go公式ドキュメンテーション: [rand package - math/rand](https://golang.org/pkg/math/rand/)
+2. Go公式ドキュメンテーション: [rand package - crypto/rand](https://golang.org/pkg/crypto/rand/)
+3. The Go Playground: [Random number generator example](https://play.golang.org/p/_Z4koiVmrFQ)

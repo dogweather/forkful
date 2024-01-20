@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie i zamiana tekstu"
-html_title:           "Haskell: Wyszukiwanie i zamiana tekstu"
-simple_title:         "Wyszukiwanie i zamiana tekstu"
+title:                "Wyszukiwanie i zastępowanie tekstu"
+html_title:           "Javascript: Wyszukiwanie i zastępowanie tekstu"
+simple_title:         "Wyszukiwanie i zastępowanie tekstu"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Zamiana tekstu to proces polegający na zastępowaniu określonego tekstu innym tekstem w danym pliku lub tekście. Programiści często wykonują to zadanie, aby szybko zaktualizować lub zmienić wiele wystąpień tekstu w jednym miejscu.
+## Co i Dlaczego?
 
-## Jak to zrobić:
-Zamianę tekstu w Haskellu można przeprowadzić za pomocą funkcji `replace` z pakietu `Data.Text`. W poniższym przykładzie wykorzystamy tę funkcję do zamiany wszystkich wystąpień słowa "kot" na "pies" w tekście.
+Wyszukiwanie i zamiana tekstu to proces lokalizowania i modifikowania określonego ciągu znaków w tekście. Programiści dokonują tego, przede wszystkim, aby pozbyć się niechcianych znaków lub zastąpić je innymi.
+
+## Jak to zrobić?
+
+W Haskellu, możemy skorzystać z funkcji `subRegex` z biblioteki `Text.Regex`, aby przeprowadzić wyszukiwanie i zastąpić text. Oto jak to zrobić:
+```Haskell
+import Text.Regex
+
+replaceText :: String -> String -> String -> String
+replaceText old new = subRegex (mkRegex old) new
+
+main = print $ replaceText "Haskell" "Python" "I love Haskell!" -- Wyjście: "I love Python!"
+```
+Jako pierwszy argument wprowadzamy wartość, którą chcemy zastąpić, jako drugi - tekst, którym chcemy zastąpić, a trzeci to tekst, w którym wykonujemy operację.
+
+## Dokładne zrozumienie
+
+Haskell może nie być pierwszym językiem, który przychodzi na myśl, gdy myślimy o operacjach na tekście, ale jest on niezwykle potężny dzięki swoim funkcjom i bibliotekom. Przykładem jest funkcja `subRegex`, która wykorzystuje wyrażenia regularne do wyszukiwania i zamieniania tekstu.
+
+Alternatywą jest wykorzystanie biblioteki `Data.Text`, która posiada funkcje `replace`. Ważnym jest, że nie korzysta ona z wyrażeń regularnych, ale może być pomocna w prostszych przypadkach.
 
 ```Haskell
-import Data.Text (replace)
+import Data.Text as T
 
-myText :: Text
-myText = "Lubię koty, ale uważam, że pies jest lepszy."
+replaceText :: String -> String -> String -> String
+replaceText old new txt  = T.unpack $ T.replace (T.pack old) (T.pack new) (T.pack txt)
 
-replacedText = replace "kot" "pies" myText
-
-main :: IO ()
-main = do
-    putStrLn replacedText
-
---OUTPUT:
---Lubię psy, ale uważam, że pies jest lepszy.
+main = print $ replaceText "Haskell" "Python" "I love Haskell!" -- Wyjście: "I love Python!"
 ```
+Chodź `Data.Text.replace` nie obsługuje wzorców, jest ona znacznie szybsza i efektywniejsza niż `subRegex`, szczególnie dla dużych tekstów.
 
-Funkcja `replace` przyjmuje trzy argumenty - szukany tekst, tekst zastępujący oraz cały tekst. Następnie zwraca nowy tekst z zamienionymi wystąpieniami.
+## Zobacz także
 
-## Głębsze spojrzenie:
-Funkcja `replace` została wprowadzona w wersji 0.11.0.0 pakietu `Data.Text` i jest dostępna od września 2011 roku. Alternatywne podejście do zamiany tekstu w Haskellu to użycie funkcji `replaceAll` z pakietu `Regex`. Jednak funkcja `replace` z pakietu `Data.Text` jest uważana za szybszą i bardziej wydajną, ponieważ dokonuje zamiany bez użycia wyrażeń regularnych.
-
-## Zobacz także:
-- Dokumentacja `Data.Text` - https://hackage.haskell.org/package/text/docs/Data-Text.html
-- Pakiet `Regex` - https://hackage.haskell.org/package/regex
+- ["Text processing in Haskell"](https://wiki.haskell.org/Text_processing_in_Haskell): Podstawowe informacje o przetwarzaniu tekstu w Haskellu.
+- [Tutorial: Regular Expressions in Haskell](https://wiki.haskell.org/Tutorial:Regular_expressions_in_Haskell): Wstęp do użycia wyrażeń regularnych w Haskellu.
+- ["Data.Text Documentation"](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html): Dokumentacja biblioteki `Data.Text`.

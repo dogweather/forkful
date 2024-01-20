@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Elixir: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,22 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
-Comparar duas datas é uma tarefa comum na programação, que envolve verificar se duas datas são iguais, anteriores ou posteriores uma à outra. Os programadores geralmente fazem isso para garantir que as informações estejam organizadas corretamente e para tomar decisões baseadas em datas, como definir prazos ou agendar eventos.
+---
 
-## Como Fazer:
-A linguagem de programação Elixir possui um módulo Date que oferece funções para comparar datas. Abaixo está um exemplo de como comparar duas datas usando esse módulo:
+## O Que e Porquê?
 
-```Elixir 
-date1 = ~D[2020-01-01] 
-date2 = ~D[2020-01-15]
-Date.compare(date1, date2)
+Comparar duas datas é verificar a diferença entre elas. Isso é importante para os programadores pois permite avaliar o tempo decorrido entre eventos, ajudando na gestão de tarefas, lembretes, temporizadores, etc.
+
+## Como fazê-lo:
+
+Aqui está um exemplo de comparação de duas datas no Elixir:
+
+```Elixir
+defmodule Comparacao do
+  def compare(datas) do
+    Data.diff(datas.data1, datas.data2, :second)
+  end
+end
+
+datas = %{data1: ~U[2019-01-01T00:00:00Z], data2: ~U[2019-01-02T00:00:00Z]}
+IO.inspect(Comparacao.compare(datas))
 ```
 
-O resultado será -1, indicando que a primeira data é anterior à segunda. Também podemos usar as funções `===` para verificar se as datas são iguais ou o operador `>` para verificar se uma data é posterior à outra.
+A saída será:
 
-## Mergulho Profundo:
-Comparar datas é uma tarefa complexa que envolve lidar com diferenças entre calendários e anos bissextos. Ao usar o módulo Date em Elixir, essas diferenças são tratadas automaticamente, tornando a comparação mais precisa e confiável. Outras linguagens de programação, como Javascript, podem exigir bibliotecas externas para lidar com essas questões.
+```Elixir
+86400
+```
+
+O resultado é a diferença em segundos entre as duas datas.
+
+## Deep Dive:
+
+A função `diff/3` foi introduzida no Elixir 1.8.0 e faz parte do módulo de "Data". Permite calcular a diferença entre duas datas com base em várias unidades (segundos, minutos, dias, etc.). Antes disso, os programadores tinham que calcular manualmente subtraindo os diferentes componentes da data (ano, mês, dia, etc.).
+
+Existem outras formas de comparar datas - uma abordagem comum é converter ambos para um formato comum, como um 'timestamp', e depois comparar esses valores. No entanto, a função `diff/3` é uma maneira conveniente e legível de fazer isso.
+
+Esse recurso permite uma comparação precisa mesmo através dos fusos horários. A função `diff/3` lida implicitamente com as diferenças de fuso horário quando compara as datas, além de levar em consideração coisas como mudanças de horário de verão.
 
 ## Veja Também:
-Para mais informações sobre o módulo Date em Elixir, confira a documentação oficial em: https://hexdocs.pm/elixir/Date.html
+
+* [Documentação oficial do Elixir](https://elixir-lang.org/docs.html): uma excelente fonte para ler mais sobre a linguagem de programação Elixir e suas funcionalidades.
+  
+* [Comparando datas e horários em Elixir](https://pragmaticstudio.com/tutorials/comparing-dates-and-times-in-elixir): um guia mais aprofundado sobre a comparação de datas e horários em Elixir. 
+
+* [Como trabalhar com datas e horários em Elixir](https://www.tutorialspoint.com/elixir/elixir_date_and_time.htm): mais exemplos de código e explicações em torno do tópico.

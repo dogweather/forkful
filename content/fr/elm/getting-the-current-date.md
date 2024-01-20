@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Elm: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,31 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-
-Obtenir la date actuelle est une fonctionnalité utile pour de nombreux programmes. Cela permet aux programmeurs de travailler avec des informations basées sur le temps, telles que des rappels, des délais ou des enregistrements de données. Cela peut également aider à garder une piste de l'historique des activités d'une application.
+## Qu'est-ce que c'est & Pourquoi?
+Obtenir la date actuelle dans un programme consiste à récupérer et à utiliser la date et l'heure système. Les développeurs le font pour diverses raisons, dont notamment le suivi des événements, les timestamps et la périodisation des données.
 
 ## Comment faire:
-
-Pour obtenir la date actuelle en Elm, nous pouvons utiliser la fonction `Date.now` de la bibliothèque `Time`, qui renvoie un `Time.Posix` représentant l'instant présent en tant que nombre de millisecondes depuis le 1er janvier 1970 00:00:00 GMT.
+Voici comment obtenir la date actuelle en Elm
 
 ```Elm
-import Time exposing (..)
+import Time
+import Task
+import Browser
 
-currentDate : Time.Posix
-currentDate = Date.now
+type alias Model =
+    { time : Time.Posix }
+
+init : flags -> ( Model, Cmd Msg )
+init _ =
+    ( Model Time.millisToPosix 0
+    , Task.perform NewTime Time.now
+    )
+
+type Msg
+    = NewTime Time.Posix
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        NewTime newTime ->
+            ( { model | time = newTime }
+            , Cmd.none
+            )
+
+main =
+    Browser.element
+        { init = init
+        , update = update
+        , view = \_ -> Html.text ""
+        , subscriptions = \_ -> Sub.none
+        }
 ```
 
-Le résultat sera un nombre tel que `1517987890000`, qui peut être converti en une forme plus lisible avec d'autres fonctions de la bibliothèque `Time` si nécessaire.
+Cette section de code va obtenir la date et l'heure système.
+        
+## Approfondissement
+Historiquement, Elm n'avait pas de moyen natif d'obtenir la date actuelle, mais avec l'introduction de l'API Time, cette fonctionnalité est désormais disponible.
 
-## Plongée plus profonde:
+Une alternative à l'utilisation de `Time.now` serait de faire appel à une API externe ou à un serveur pour obtenir l'heure, bien que ce ne soit pas très pratique ou efficace.
 
-La prise en charge du temps et de la date dans les langages de programmation est apparue pour la première fois avec FORTRAN IV en 1962, avec la fonction `DATE` qui renvoie la date actuelle dans un format spécifié. Depuis lors, de nombreux langages ont implémenté leurs propres fonctions pour gérer la date et l'heure.
+En interne, Elm utilise la fonction `Date.now()` de JavaScript pour obtenir la date et l'heure actuelles, puis il les convertit en un format compatible avec l'architecture Elm.
 
-Dans Elm, outre la fonction `Date.now`, vous pouvez également utiliser la fonction `Date.fromTime` pour convertir un `Time.Posix` en une représentation de date lisible. Vous pouvez également utiliser la bibliothèque [chrono](https://package.elm-lang.org/packages/elm/time/latest/Time-Chrono) pour des manipulations de date plus avancées.
-
-## Voir aussi:
-
-- [Documentation Elm - Date.now](https://package.elm-lang.org/packages/elm/time/latest/Time#now)
-- [Documentation Elm - Date.fromTime](https://package.elm-lang.org/packages/elm/time/latest/Time#fromTime)
-- [Documentation Elm - Chrono](https://package.elm-lang.org/packages/elm/time/latest/Time-Chrono#Date)
+## À Voir Aussi
+[Documentation Elm Time](https://package.elm-lang.org/packages/elm/time/latest/) : Celui-ci est le package officiel Elm qui vous permet d'obtenir le temps POSIX.
+[Elm Guide](https://guide.elm-lang.org/) : Le guide officiel d'Elm qui couvre une grande variété de sujets en lien avec ce langage de programmation.

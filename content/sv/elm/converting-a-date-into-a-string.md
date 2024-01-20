@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "Elm: Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att konvertera ett datum till en sträng betyder att man omvandlar ett datum format (t.ex. 2021-05-12) till en text (t.ex. "12 maj 2021"). Programerare gör detta för att kunna visa datumet i ett mer läsbart format för användaren.
 
-## Hur:
-Det är enkelt att konvertera ett datum till en sträng i Elm. Använd funktionen `Date.toDayString` för att få datumet i formatet "dd mm yyyy". Om du vill ha en specifik månadsnamn så kan du använda funktionen `Date.toFormattedString` tillsammans med en viss formatteringssträng. Se exempel nedan.
+Att konvertera ett datum till en sträng i programmering innebär att omvandla det numeriska värdet av ett datum till en läsbar tekststräng. Programmerare gör detta för att förbättra användarupplevelsen och presentera information på ett mer begripligt sätt.
+
+## Så här gör du:
+
+I Elm, vi kan använda `Date.toIsoString` funktion att konvertera datum till sträng. Vi kan också använda `Date.fromTime` för att skapa datum från tidsstämpel. Här är ett exempel:
 
 ```Elm
 import Date exposing (Date)
-import Time exposing (hour, minute, second)
+import Time exposing (Posix)
 
--- Konvertera datumet till "dd mm yyyy"
-Date.toDayString <|
-  Date.fromTime 0
-  |> Date.month 5
-  |> Date.day 12
-  |> Date.year 2021
---> "12 maj 2021"
-
--- Konvertera datumet till en annan format
-Date.toFormattedString "%d. %B %Y" <|
-  Date.fromTime 0
-  |> Date.month 5
-  |> Date.day 12
-  |> Date.year 2021
---> "12 maj 2021"
+toIsoStringExample : Posix -> String
+toIsoStringExample time =
+    time
+        |> Date.fromTime
+        |> Date.toIsoString
 ```
 
-## Djupdykning:
-Att kunna konvertera datum till strängar är ett vanligt behov inom programmering. Det är särskilt användbart när man ska visa datum i en användargränssnitt. Innan så var det vanligt att man var tvungen att skriva egna funktioner för datumkonvertering, men tack vare funktioner som `Date.toDayString` är det nu enklare och effektivare att göra detta i Elm.
+Om vi till exempel kör `toIsoStringExample` med värde `1590497541000`, får vi `2020-05-26`.
 
-En alternativ metod för att konvertera datum till strängar är att använda funktionen `Time.toString` tillsammans med `Time.now` för att få datumet och sedan använda `String.split` för att dela upp datumet i sina olika delar och sedan sätta ihop dem i ett önskat format.
+## Fördjupning
 
-För de som är intresserade av implementationen bakom funktionen `Date.toDayString` så är den baserad på ISO 8601-standard och använder sig av `Date.toString` för att få datumet i formatet "yyyy-mm-dd" innan det sedan delas upp och sätts ihop enligt ett visst format.
+I tidiga versioner av Elm, sättet att behandla datum var knepigt eftersom det inte fanns någon inbyggd funktion för detta. Med introduktionen av `Date.toIsoString` i Elm 0.19, blev det mycket enklare.
 
-## Se även:
-- Officiell dokumentation för Date-modulen: https://package.elm-lang.org/packages/elm/time/latest/Time-Date
-- ISO 8601-standard: https://sv.wikipedia.org/wiki/ISO_8601
-- Elm's inbyggda funktioner för datumkonvertering: https://package.elm-lang.org/packages/elm/time/latest/
+Alternativt kan programmerare också använda `DateFormat` bibliotek för mer avancerade formateringar, till exempel att ange datumets format själv.
+
+En sak att notera med Elm är att den behandlar datum konvertering på ett mycket strikt sätt. Detta innebär att det är säkert från vanliga buggar och problem som kan uppstå i andra språk när man arbetar med datum och tid.
+
+## Se också
+
+Om du vill veta mer om datumkonvertering och hantering i Elm, kolla in dessa länkar:
+
+- [Elm Date Tutorial](https://elmprogramming.com/dates.html)
+- [Elm Date Library Documentation](https://package.elm-lang.org/packages/elm/time/latest)
+- [DateFormat Library](https://package.elm-lang.org/packages/rtfeldman/elm-iso8601-date-strings/latest)

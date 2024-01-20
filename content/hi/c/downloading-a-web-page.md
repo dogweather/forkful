@@ -1,7 +1,7 @@
 ---
-title:                "वेब पृष्ठ डाउनलोड करना"
-html_title:           "C: वेब पृष्ठ डाउनलोड करना"
-simple_title:         "वेब पृष्ठ डाउनलोड करना"
+title:                "एक वेब पेज डाउनलोड करना"
+html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
+simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,52 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों?
-वेब पृष्ठ को डाउनलोड करना दो चीजों का अर्थ है - प्रथम, आप उस पृष्ठ को अपने कंप्यूटर में डाउनलोड करते हैं जिससे आप उसे ऑफलाइन दौरान पेश कर सकें। और द्वितीय, प्रोग्रामर्स उस पृष्ठ के संबंध में जानकारी एकत्र करने के लिए उसको अपने सॉफ्टवेयर में उपयोग कर सकते हैं।
+## व्हाट एंड वाय? [What & Why?]
 
-## कैसे करें:
+वेब पेज डाउनलोड करना क्या होता है और क्यों प्रोग्रामर्स इसे करते हैं?
+वेब पेज को डाउनलोड करना मतलब उसे इंटरनेट से अपने कंप्यूटर पर कॉपी करना। प्रोग्रामर्स इसे करते हैं ताकि उन्हें वेबसाइट की जानकारी और डाटा को प्रोसेस करने के लिए लोकली उपलब्ध हो सके। 
+
+## कैसे [How to:]
+
+C लैंग्वेज में, आप libcurl का उपयोग करके वेब पेज को डाउनलोड कर सकते हैं। यहाँ एक सादा उदाहरण है:
+
 ```C
 #include <stdio.h>
+#include <curl/curl.h>
 
-// URL से डेटा डाउनलोड करने की फ़ंक्शन
-void download_page(char* url) {
-    // अलग-अलग ढंग से लेने से संबंधित मोजिलाया डाउनलोडिंग लाइब्रेरी
-    // विभिन्न संस्करणों में उपलब्ध है
-    // इस उदाहरण में हम libcurl का उपयोग करेंगे
-    // URL को पकड़ने के लिए सक्रिय करें
-    CURL *curl;
-    CURLcode res;
-    
-    // प्रथम आवेदन केंद्रित करें
-    curl = curl_easy_init();
-    if(curl) {
-        // प्रविष्ट इनपुट URL
-        curl_easy_setopt(curl, CURLOPT_URL, url);
-        
-        // डाउनलोड का नक्शा लागू करें
-        // वे बैफर वितरित हो जाएगी
-        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
-        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &chunk);
-        
-        // संकेत दर्शान करें
-        // डाउनलोड करें
-        res = curl_easy_perform(curl);
-        
-        // समाप्त हो गया
-        // अपना स्टेटस जाँचें
-        if(res != CURLE_OK)
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
 
-        // कहेंगे, अब CURL विनिर्देश अक्रेसीफीडबैग दुबारा प्रायोग करें
-        curl_easy_cleanup(curl);
-    }
+  curl_global_init(CURL_GLOBAL_DEFAULT);
+
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+
+    /* if redirect is needed */
+    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
+
+    res = curl_easy_perform(curl);
+
+    /* error handling */
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+
+    /* cleanup */
+    curl_easy_cleanup(curl);
+  }
+
+  curl_global_cleanup();
+
+  return 0;
 }
 ```
 
-## विस्तृत निरीक्षण:
-पहले, पृष्ठ डाउनलोडिंग का प्रथम उपभोक्ता, World Wide Web, 1989 में जन्मदिन मनाया गया था। एक दशक में, विश्वव्यापी वेब ने लाखों और एक सेवा को अपनाया है जो समस्याएं समाधान करती हैं और लोगों को उपयोगकर्ता अनुभव में सुधार करती हैं। और भारी वेब अधिकारियों के सबसे अधिक महत्वपूर्ण है, उनके बिना इंटरनेट की दुनिया अधूरी होती है।
+जब आप इस कोड को चलाते हैं, तो example.com का होमपेज डाउनलोड होता है। 
 
-उदधरण, जब आप अपने वेब ब्राउज़र में स्थानीय फाइलों तक पहुंचने अखरों का उपयोग करते हैं, यह अमल एक प्रदूषकत निकासी होता है - और यह आपके निजी नेटवर्क सुरक्षा का ध्यान रखता है। इस प्रदर्शन से और अधिक बढ़िया प्रदर्शन से आप अपने वेब साइट को स्थानान्तरित कर सकते है।
+## डीप डाइव [Deep Dive]
 
-## संबंधित स्रोतों:
-1. [libcurl आधिकारिक वेबसाइट](https://curl.haxx.se
+वेब पेज को डाउनलोड करने की सोच को HTTP (HyperText Transfer Protocol) के अविष्कार के साथ ही जन्म दिया गया था। इसके विकल्प में वेब स्क्रेपिंग और API (Application Programming Interface) कॉल्स शामिल हैं।
+
+C प्रोग्रामिंग का उपयोग करके वेब पेज डाउनलोड करने का कार्य libcurl बिल्बोर्धीयन, नेटवर्क-अधारित कार्यों को आसान करने के लिए तैयार की गई एक खुली स्रोत पुस्तकालय के माध्यम से होता है। 
+
+## देखने के लिए यह देखें [See Also]
+
+1. [CURL का डॉक्युमेंटेशन](https://curl.haxx.se/libcurl/c/) 
+2. [वेब स्क्रेपिंग ट्यूटोरियल](https://www.datacamp.com/community/tutorials/web-scraping-using-python)
+3. [HTTP प्रोटोकॉल का इतिहास](https://www.w3.org/History.html)

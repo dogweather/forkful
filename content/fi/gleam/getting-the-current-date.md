@@ -1,7 +1,7 @@
 ---
-title:                "Nykyisen päivämäärän saaminen"
-html_title:           "Gleam: Nykyisen päivämäärän saaminen"
-simple_title:         "Nykyisen päivämäärän saaminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,46 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Saa päivämäärästä on prosessi, jossa tietokonejärjestelmä hakee ja näyttää nykyisen päivämäärän. Ohjelmoijat tekevät tämän saadakseen tarkkaa tietoa ajasta, jota he voivat käyttää esimerkiksi tapahtumien seuraamiseen ja aikaleimojen tallentamiseen.
+# Hae päivämäärää Gleamilla
 
-## Miten:
-### Gleam:ssa
-```Gleam
-import gleam/time
+## Mikä & Miksi?
+Päivämäärän hakeminen viittaa siihen, kun ohjelmoija saa selville nykyisen päivämäärän. Sitä tarvitaan useissa sovelluksissa, kuten lokienseurannassa, aikaleimojen luomisessa, tai dynaamisissa tehtävissä, jotka perustuvat päivän aikaan.
 
-fn get_current_date() {
-  let today = time.now() // hakee nykyisen päivämäärän
-  time.format(today, "%d.%m.%Y") // muotoilee sen suomalaiseen muotoon päivä.kuukausi.vuosi
+## Näin se tehdään:
+Gleam-ohjelmointikielessä päivämäärän hakeminen tapahtuu seuravasti:
+
+```gleam
+import gleam/locale.{month, second, day, year}
+import gleam/date_time.now
+
+fn main() {
+  let nyt = now()
+  let paiva = day(now)
+  let kuukausi = month(now)
+  let vuosi = year(now)
+  let sekunti = second(now)
+  
+  io.println("Tämän hetkinen päivämäärä on " ++ paiva ++ "/" ++ kuukausi ++ "/" ++ vuosi)
+  io.println("Tämän hetkinen sekunti on " ++ sekunti)
 }
-
-show(get_current_date())
 ```
+Se tulostaa nykyisen päivämäärän ja sekunnin.
 
-[Try it online](https://gleam.run/?code=import%20gleam%2Ftime%0A%0Afn%20get_current_date()%20%7B%0A%20%20let%20today%20%3D%20time.now()%0A%20%20time.format(today%2C%20%22%25d.%25m.%25Y%22)%0A%7D%0A%0Ashow(get_current_date()))
+## Syvempi sukellus
+Historiallisesti päivämäärän hakeminen on ollut tärkeä osa ohjelmointia ja sen merkitys on vain kasvanut. Gleam tarjoaa selkeän ja intuitiivisen tavan hakea nykyistä päivämäärää ja aikaa. 
 
-### Muilla kielillä
-```JavaScript
-const today = new Date()
-const day = today.getDate()
-const month = today.getMonth() + 1
-const year = today.getFullYear()
+Vaihtoehtoisesti, voit käyttää myös muita Gleam-kirjastoja kuten `time`-kirjastoa. Kummassakin tapauksessa, päivämäärä ja aika lasketaan senhetkisen järjestelmän ajasta, jossa koodi suoritetaan.
 
-console.log(day + "." + month + "." + year)
-```
+Gleamissa päivämäärän haku perustuu Erlangin kerrosalustaan, joka antaa hyvän tarkkuuden ja suorituskyvyn.
 
-```Python
-import datetime
-
-today = datetime.date.today()
-print(today.strftime("%d.%m.%Y"))
-```
-
-## Syväsukellus:
-Päivämäärän saaminen on tärkeä osa monien ohjelmien toimintaa, esimerkiksi kalentereissa ja tapahtumaseurannassa. Nykyään on helppoa ja nopeaa hakea nykyinen päivämäärä ja muotoilla se haluttuun muotoon, kuten suomalaiseen päivä-kuukausi-vuosi -muotoon.
-
-On myös muita tapoja saada nykyinen päivämäärä, kuten käyttämällä komentoriviä tai käyttöjärjestelmän kehitystyökaluja. Kuitenkin Gleam:n tarjoama `time` moduuli tekee tästä tehtävästä erittäin yksinkertaista ja selkeää.
-
-## Katso myös:
-- [Gleam:n `time` moduuli](https://gleam.run/libraries/time/)
-- [Stack Overflow:n vastaukset nykyisen päivämäärän saamiseen eri kielillä](https://stackoverflow.com/questions/2949957/get-current-time-in-python)
+## Katso myös
+1. Gleam's DateTime dokumentaatio: [https://hexdocs.pm/gleam_datetime/readme.html](https://hexdocs.pm/gleam_datetime/readme.html)
+2. Gleam's Locale dokumentaatio: [https://hexdocs.pm/gleam_locale/readme.html](https://hexdocs.pm/gleam_locale/readme.html)
+3. Gleamin opas: [https://gleam.run/book/tour/dates-and-time.html](https://gleam.run/book/tour/dates-and-time.html)
+4. Erlangin DateTime-moduuli: [https://erlang.org/doc/man/calendar.html](https://erlang.org/doc/man/calendar.html)

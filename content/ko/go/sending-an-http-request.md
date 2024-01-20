@@ -1,6 +1,6 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Go: HTTP 요청 보내기"
+html_title:           "Clojure: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Go"
 category:             "Go"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무슨 & 왜?
+## 무엇이고 왜요?
+HTTP 요청을 보내는 것은 웹 서버와 통신하기 위한 방법입니다. 프로그래머들은 웹 서비스와 데이터를 송수신하거나 API와 상호 작용하기 위해 이를 사용합니다.
 
-HTTP 요청을 보내는 것은 서버에게 데이터를 요청하거나 전송하기 위해 사용되는 것입니다. 프로그래머들은 이를 통해 웹 애플리케이션을 만들거나 데이터를 가져와서 사용할 수 있습니다.
-
-# 어떻게:
-
-```Go 
-resp, err := http.Get("https://www.example.com")
-``` 
-
-위의 코드는 Go 언어에서의 기본적인 HTTP 요청 방법을 보여줍니다. 이를 통해 "www.example.com"에서 데이터를 가져오는 요청을 보내고, 서버로부터의 응답과 오류를 처리할 수 있습니다.
+## 어떻게 하나요:
+Go에서는 `net/http` 패키지를 사용하여 HTTP 요청을 쉽게 보낼 수 있습니다. 아래는 간단한 예시입니다:
 
 ```Go
-fmt.Println(resp.StatusCode) // 200
-fmt.Println(resp.Header) // map[Content-Type:[text/html; charset=utf-8] Date:[Wed, 18 Nov 2020 00:00:00 GMT]]
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+	"log"
+	"net/http"
+)
+
+func main() {
+	resp, err := http.Get("http://example.com")
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer resp.Body.Close()
+
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(string(body))
+}
 ```
+이 코드를 실행하면 "http://example.com"의 HTML 내용을 출력합니다.
 
-위의 코드는 서버로부터의 응답에서 상태 코드와 헤더 정보를 출력하는 방법을 보여줍니다. 이를 통해 프로그래머들은 서버로부터의 응답을 받고, 그에 따라 적절한 로직을 수행할 수 있게 됩니다.
+## 깊이 들어가보기:
+HTTP 요청은 웹 프로토콜이 메인스트림이 되기 전의 1990년대부터 사용되었습니다. Go는 HTTP 요청을 손쉽게 처리할 수 있도록 `net/http` 패키지를 제공합니다. 이 외에도 `net/url` 패키지를 사용해 URL을 파싱하거나, `http.Client` 를 사용해 요청을 사용자 정의 할수도 있습니다. 
 
-# 자세히 들어가기:
-
-HTTP 요청은 웹의 발전과 함께 등장한 개념입니다. 웹 애플리케이션을 개발하거나 데이터를 가져오려면 서버에게 요청을 보내야만 합니다. 이를 위해 여러 가지 언어와 프레임워크에서 HTTP 요청을 보내는 방법들을 제공하고 있으며, Go 언어에서는 기본적으로 제공하는 라이브러리를 사용하여 간단하게 요청을 보낼 수 있습니다.
-
-또한, HTTP 요청 외에도 웹 소켓과 같은 다른 방식의 통신도 존재합니다. 하지만 많은 경우에 HTTP 요청으로 충분하고 간편하게 데이터를 주고받을 수 있습니다. 
-
-어떤 언어와 프레임워크를 사용하더라도 HTTP 요청 방식은 기본적으로 비슷합니다. 위에서 소개한 Go 언어의 ```http.Get()``` 함수 대신에 다른 언어에서는 ```GET``` 메서드를 사용하는 방법이 일반적입니다. 또한, 서버로 데이터를 보내는 경우에는 ```POST``` 메서드를 주로 사용합니다.
-
-# 관련 자료:
-
-- [더 자세한 HTTP 요청 예제](https://golang.org/pkg/net/http/#Request)
-- [웹 개발을 위한 Go 언어 공식 문서](https://golang.org/doc/)
-- [HTTP 요청에 대한 기본적인 개념 설명](https://www.cloudflare.com/learning/ddos/glossary/http-request/)
+## 또 보기:
+- Go Documentation: [net/http](https://golang.org/pkg/net/http/) 패키지
+- Go by Example: [HTTP 클라이언트](https://gobyexample.com/http-clients) 제작
+- Go Blog: [Go에서 http 요청 생성하기](https://blog.golang.org/making-http-requests-in-go)

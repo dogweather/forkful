@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Go recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Go"
 category:             "Go"
@@ -11,31 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Generating random numbers in programming refers to the creation of random values or sequences of values. Programmers use this feature to add uncertainty or unpredictability to their code, which can be helpful in various applications, such as games, simulations, and security systems.
+Generating random numbers is the process of producing numbers in an unpredictable pattern. Programmers do this primarily for tasks like creating unique identifiers, adding unpredictability in games, or for security and encryption purposes.
 
 ## How to:
+Here's a simple example of generating random integers and floats in Go.
 
-To generate a random number in Go, we can use the `math/rand` package and its `Intn` function. This function takes an integer as an argument and returns a random number between 0 (inclusive) and the provided integer (exclusive).
+```Go
+package main
 
+import (
+    "fmt"
+    "math/rand"
+    "time"
+)
+
+func main() {
+    // Seed the random number generator
+    rand.Seed(time.Now().UnixNano())
+    
+    // Generate a random integer
+    randomInt := rand.Int()
+    fmt.Println(randomInt)
+    
+    // Generate a random float
+    randomFloat := rand.Float64()
+    fmt.Println(randomFloat)
+}
 ```
-Go rand.Intn(10)
-```
-
-The above code will generate a random number between 0 and 9. We can also use the `math/big` package to generate random numbers with a higher range or precision.
-
-```
-Go rand.Int(bn.NewInt(100))
-```
-
-In this example, we use the `Int` function to generate a random integer with a range of 0 to 99.
+This will generate and print out one random integer and one random float every time you run the program.
 
 ## Deep Dive
+Historically, pseudo-random number generation was a common strategy. But these are detereministic and repeat after a period. Modern times require more randomness, hence systems like `/dev/random` in Unix-based systems or CryptGenRandom in Windows were born. 
 
-Random number generation has been an essential feature of computer programming since its early days. Initially, computers used pseudo-random number generators, which produced a sequence of values based on a fixed initial value called a seed. However, these generators were not truly random as they followed a predictable pattern. Today, most programming languages, including Go, use a cryptographically secure algorithm to generate truly random values.
+In Go, `math/rand` package is often used. The function `rand.Int()` generates a pseudo-random number but the sequence would be the same every time you run the program. Hence, always use `rand.Seed()` to initialize the generator to a distinct state. The seed value usually comes from the current time, via `time.Now().UnixNano()`.
 
-There are also other methods for generating random numbers, such as using physical processes or mathematical formulas. However, these methods may not be suitable for all applications as they can be slow or introduce bias. Programmers must also be cautious when using random numbers to ensure they are not compromising the security or accuracy of their code.
+For crypto-strong random numbers, we use the `crypto/rand` package. But this comes with a performance trade-off.
+
+Alternatives include using third-party libraries such as `gosecure/vose`.
 
 ## See Also
-
-To learn more about generating random numbers in Go, you can check out the official documentation for the `math/rand` and `math/big` packages. You can also explore other sources, such as tutorials or forums, to see how other programmers are using random number generation in their code.
+- The math/rand package https://pkg.go.dev/math/rand
+- A good article on Go rand: https://yourbasic.org/golang/generate-random-number/
+- For crypto-strong randomness: https://pkg.go.dev/crypto/rand
+- The gosecure/vose library: https://github.com/gosecure/vose

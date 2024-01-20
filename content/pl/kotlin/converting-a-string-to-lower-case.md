@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu znaków na małe litery"
-html_title:           "Kotlin: Konwertowanie ciągu znaków na małe litery"
-simple_title:         "Konwertowanie ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czego i dlaczego?
+## Co i dlaczego?
 
-Konwertowanie ciągu znaków na małe litery jest częstym zadaniem w programowaniu. Polega na zamianie wszystkich znaków w ciągu na ich odpowiedniki w małych literach. Robimy to, aby ułatwić sobie pracę z danymi i uniknąć problemów wynikających z błędów typograficznych.
+Konwertowanie tekstu na małe litery to proces zmiany wszelkich dużych liter w łańcuchu na ich małe odpowiedniki. Robimy tak, kiedy chcemy porównać dwa ciągi bez uwzględniania ich wielkości liter.
 
-## Jak to zrobić:
+## Jak tego dokonać:
 
-Do konwertowania ciągu znaków na małe litery w języku Kotlin używamy metody `toLowerCase()`. Przykładowa implementacja może wyglądać tak:
+Żeby to zrobić, wykorzystamy wbudowaną funkcję Kotlin `toLowerCase()`. Przyjmuje ona stringa i zwraca kopię stringa z wszystkimi literami zamienionymi na małe.
 
 ```Kotlin
-val text = "PRZYKŁADOWY CIĄG ZNAKÓW"
-val convertedText = text.toLowerCase()
-println(convertedText)
+fun main() {
+    val text = "KOTLin ProGrAmming"
+    val lowerCaseText = text.toLowerCase()
+    println(lowerCaseText)
+}
+```
+Wyjście:
+
+```Kotlin
+kotlin programming
 ```
 
-W powyższym przykładzie wykorzystujemy zmienną `text`, która zawiera ciąg znaków w wielkich literach. Następnie, dzięki wywołaniu metody `toLowerCase()`, przypisujemy konwertowany ciąg do zmiennej `convertedText`. W rezultacie, po wywołaniu metody `println()`, otrzymujemy w konsoli konwertowany ciąg znaków z małymi literami.
+## Szeroki kontekst:
 
-## Głębsze spojrzenie:
-
-Konwertowanie ciągu znaków na małe litery jest popularnym zadaniem zarówno w języku Kotlin, jak i w innych językach programowania. Przez lata wykształciło się wiele różnych technik i metod tego procesu, jednak najbardziej powszechną i efektywną jest metoda `toLowerCase()`. Alternatywne sposoby takie jak użycie funkcji `toUpperCase()` lub zamiana pojedynczych znaków przy pomocy pętli for, mogą być mniej wydajne i skuteczne.
-
-Implementacja metody `toLowerCase()` w języku Kotlin opiera się na standardowej funkcji dostępnej w języku Java, która przekształca wszystkie litery na małe za pomocą odpowiedniego algorytmu. Jest to także ułatwienie dla programistów, którzy muszą pracować z danymi pobranymi z różnych źródeł i w różnych formatach.
+1. **Kontekst historyczny**: funkcja `toLowerCase()` istnieje od pierwszych wersji języków programowania, takich jak Java, co pokazuje jej trwałe znaczenie.
+2. **Alternatywy**: w Kotlinie jest także `toLowerCase(Locale)`, który pozwala przekształcić string na  małe litery zgodnie z lokalnymi ustawieniami np. dla różnych języków.
+3. **Szczegóły implementacji**: `toLowerCase()` działa na zasadzie przeglądania każdego znaku ciągu i sprawdzania, czy jest literą dużą - jeśli tak, jest zamieniany na małą literę.
 
 ## Zobacz także:
 
-- Dokumentacja języka Kotlin: https://kotlinlang.org/docs/reference/
-- Porównanie metody `toLowerCase()` z innymi sposobami konwersji: https://medium.com/@olegnikitinworking/comparing-tostring-method-in-java-and-kotlin-de59a7871376
-- Przykładowe użycie metody `toLowerCase()` w praktyce: https://blog.ippon.tech/converting-string-to-lower-case-in-kotlin/
+1. Oficjalna dokumentacja Kotlin (toLowerCase()): https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html
+2. StackOverflow (discussing toLowerCase()): https://stackoverflow.com/questions/5054995/how-to-convert-lower-case-to-upper-case-while-ignore-non-alphabetic-characters
+3. Kotlin String API: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/index.html

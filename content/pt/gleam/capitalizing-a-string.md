@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O Que & Porquê?
+## O Que e Por Quê?
+Capitalizar um string é tornar a primeira letra da sentença em maiúsculo. Programadores fazem isso principalmente para melhorar a apresentação dos dados do usuário final e garantir consistência nos dados de aplicativos.
 
-Capitalizar uma string significa alterar a primeira letra de cada palavra para maiúscula. Os programadores costumam fazer isso para melhorar a legibilidade e padronização do código.
+## Como Fazer:
+Criar string capitalizado em Gleam é uma tarefa muito fácil. Vamos passar por um exemplo:
 
-# Como Fazer:
+```Gleam
+import gleam/string
 
+fn main() {
+  let texto = "istö é gleam"
+  let capitalized = string.capitalise(texto)
+
+  io.println(capitalized) // Imprime "Istö é gleam"
+}
 ```
-Gleam.Utils.to_title_case("ola, mundo") // Ola, Mundo
-Gleam.Utils.to_title_case("o código é capitalizado") // O Código É Capitalizado
-```
+Neste exemplo, o método `string.capitalise` é usado para capitalizar a string. Ele transforma o primeiro caractere da string em maiúsculo.
 
-# Profundidade:
+## Mergulhando Profundamente
+1. Contexto Histórico: A capitalização de string existe desde o início da programação e é amplamente utilizada em todos os idiomas. Na prática, ajuda a tornar o código mais legível e compreensível.
+2. Alternativas: Gleam permite capitalizar uma string de várias maneiras. Além da função `string.capitalise`, também existem funções embutidas em bibliotecas de terceiros que permitem capitalizar uma string.
+3. Detalhes de Implementação: No Gleam, a função `string.capitalise` mapeia a primeira letra do string para maiúsculo. Caso a string esteja vazia, o programa retorna a própria string sem nenhuma alteração.
 
-1. Contexto histórico: A prática de capitalizar strings vem da língua inglesa, onde é comum escrever nomes de pessoas, lugares e títulos de forma capitalizada.
-2. Alternativas: Além de utilizar bibliotecas de terceiros, é possível criar uma função personalizada para capitalizar strings em outras linguagens de programação.
-3. Detalhes de implementação: Em Gleam, é utilizada a função ```String.to_title_case/1``` que realiza a capitalização de acordo com as regras da língua inglesa.
-
-# Veja Também:
-
-- [Referência de Funções da Biblioteca Gleam](https://gleam.run/modules/gleam-stdlib.html#toc13)
-- [Artigo sobre Padronização de Código em Gleam](https://dokku.com/blog/gleam-code-styling/)
+## Veja Também
+-Algumas fontes para aprender mais sobre Gleam e suas funções de string:
+1. Documentação Oficial do Gleam: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)
+2. Tutorial Gleam para iniciantes: [https://dev.to/alisinabh/a-tour-of-gleam-5f0m](https://dev.to/alisinabh/a-tour-of-gleam-5f0m)
+3. API de string Gleam: [https://hexdocs.pm/gleam_stdlib/gleam/string.html](https://hexdocs.pm/gleam_stdlib/gleam/string.html)

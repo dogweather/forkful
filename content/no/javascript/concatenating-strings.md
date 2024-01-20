@@ -1,7 +1,7 @@
 ---
-title:                "Sammenføyning av strenger"
-html_title:           "Javascript: Sammenføyning av strenger"
-simple_title:         "Sammenføyning av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
- 
-String-sammenslåing, også kjent som string-konkatenasjon, er en prosess der man kombinerer to eller flere strenger for å lage en enkelt streng. Dette er en viktig teknikk for å kunne samle forskjellige data og informasjon på en effektiv måte innen programmering.
+## Hva og Hvorfor?
+Strengsammensetning, eller strengkonkatenasjon, er produksjon av en ny streng ved å sette flere strenger sammen. Programmerere bruker det for å manipulere tekstdata enkelt og effektivt.
 
 ## Hvordan:
- 
-I Javascript er det flere måter å konkatenere strenger på. Den enkleste metoden er å bruke "+" operatøren til å slå sammen to strenger, for eksempel:
+Her er noen grunnleggende eksempler for å vise hvordan strengkonkatenasjon fungerer i Javascript:
 
 ```Javascript
-var navn = "Per";
-var etternavn = "Hansen";
-
-var fulltNavn = navn + etternavn;
-
-console.log(fulltNavn);
+let streng1 = "Hei, ";
+let streng2 = "verden!";
+let sammensattStreng = streng1 + streng2; 
+console.log(sammensattStreng); // Output: "Hei, verden!"
 ```
 
-Det vil resultere i output "PerHansen". Man kan også bruke metoden "concat()", som tar imot flere argumenter og returnerer en sammenslått streng.
+Eller bruk ES6's template literals for mer kompleks sammensetning:
 
-## Dypdykk:
- 
-String-sammenslåing har vært en grunnleggende funksjon i programmering siden starten av datamaskinens tid. Det har blitt brukt i en rekke forskjellige språk, inkludert det populære språket C. Alternativene til å konkatenere strenger inkluderer å bruke ferdigdefinerte funksjoner og biblioteker, som ofte har bedre ytelse og funksjonalitet enn standard string-konkatenasjon.
+```Javascript
+let navn = "Ola";
+let hilsen = `Hei, ${navn}!`;
+console.log(hilsen); // Output: "Hei, Ola!"
+```
 
-I Javascript er implementasjonen av string-konkatenasjon en del av standardbiblioteket, som gir en enkel og effektiv løsning for å håndtere strenger.
+## Dyp Dykk
+Strengkonkatenasjon har vært en del av programmeringsspråk siden de tidligste dagene. Faktisk var many av de tidligste programmeringsspråkene streng-baserte språk, som COBOL.
 
-## Se også:
+Det er flere måter å gjøre strengkonkatenasjon på i Javascript, som vi så over. Du kan også bruke metoden `.concat()`, selv om dette er mindre vanlig i moderne kode:
 
-- [MDN String.concat()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [CIS 698 - String Concatenation](https://www.cis.upenn.edu/~matuszek/cit594-2012/Pages/03-understanding-strings.html#string-concatenation)
+```Javascript
+let streng1 = "Hei, ";
+let streng2 = "verden!";
+let sammensattStreng = streng1.concat(streng2);
+console.log(sammensattStreng); // Output: "Hei, verden!"
+```
+
+Det grunnleggende konseptet bak strengkonkatenasjon er det samme i de fleste programmeringsspråk, selv om den nøyaktige implementeringen kan variere.
+
+## Se Også
+For mer om Javascript-strenger, sjekk ut disse ressursene:
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) 
+- [W3Schools JavaScript String Reference](https://www.w3schools.com/jsref/jsref_obj_string.asp)

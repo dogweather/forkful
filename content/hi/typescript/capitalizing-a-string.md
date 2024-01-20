@@ -11,25 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-कोडिंग में, दक्षता और स्टाइल को सुरक्षित बनाने के लिए, हम पूर्ण स्ट्रिंग को अपरकेस में लिखते हैं। यह भावुकतापूर्ण होने के अलावा, प्रोग्रामर्स अपने कोड को साफ और स्पष्ट लिखने के लिए भी स्ट्रिंग को अपरकेस में रखते हैं।
 
-## कैसे:
-```TypeScript
-let greeting: string = "hello world";
-console.log(greeting.toUpperCase());
-```
-आपको अपनी स्ट्रिंग की मान द्वारा `toUpperCase()` फ़ंक्शन को कॉल करके अपरकेस में उसे बदलना होगा। यदि आप आउटपुट के रूप में "HELLO WORLD" देखना चाहते हैं, तो आपको इस तरह से कोडिंग करनी चाहिए।
+स्ट्रिंग को कैपिटलाइज करने से हमारे मोड्यूल, चर, या किसी भी वाक्यांश के पहले अक्षर को बड़ा अक्षर (Uppercase) में बदला जा सकता है। कार्यक्रमकर्ता इसे चीजों की पहचान को बेहतर और पठनीयता को बढ़ाने के लिए करते हैं।
+
+## कैसे करें:
 
 ```TypeScript
-let lowercaseString: string = "fOO BAR";
-let uppercaseString: string = lowercaseString.toUpperCase();
-console.log(uppercaseString);
+function capitalize(s: string): string {
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+console.log(capitalize("typescript"));
 ```
-इस तरह, आप एक स्ट्रिंग को पहले लोअरकेस में बनाएं और फिर उसे अपरकेस में बदलें। आप वर्तमान मान की जगह अलग स्ट्रिंग भी प्रयोग कर सकते हैं। जो कि आपको `toUpperCase()` फ़ंक्शन द्वारा लौटाई जाएगी।
 
-## गहराई में खोजें:
-पहली स्थिति में, कोडिंग के प्रारंभ के समय स्ट्रिंग को अपरकेस में लिखने की आवश्यकता पैदा हुई थी। नए उपकरण और लॅंग्वेजों ने इसे सरल बनाने का प्रयास किया है, किन्तु अपरकेस में स्ट्रिंग लिखना आज भी काफी लोकप्रिय है। यदि आप इसे सामान्य स्ट्रिंग की तरह ही लिखना चाहते हैं, तो आप `toUpperCase()` को स्ट्रिंग क्लास के साथ कॉल करके बदली हुई स्ट्रिंग को प्राप्त कर सकते हैं। इस तरह से, आपको अन्य चिरप्रतीक या तरीकों की तुलना में स्ट्रिंग को अपरकेस में लिखने के लिए कम प्रोग्राम कोड का उपयोग करना होगा।
+Output:
 
-## इससे जुड़े लिंक:
-- अपनी स्ट्रिंग को अपरकेस में बदलने के लिए [MDN डॉक्यूमेंटेशन](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [TutorialsPoint](https://www.tutorialspoint.com/typescript/typescript_string_to_uppercase.htm) पर स्ट्रिंग को अपरकेस में कैसे बदलें
+```
+TypeScript
+```
+
+## गहरी चर्चा
+
+अक्सर capitalization का उपयोग वाक्यों, शीर्षकों और उपयोगकर्ता नामों को प्रमुख बनाने के लिए किया जाता है। इसका लोगों में यह धारना पैदा करने का इतिहासिक प्रयोग होता है कि बड़े अक्षर की उपेक्षा की जा सकती है।
+JavaScript method `.toUpperCase()` या Lodash जैसी बाहरी लाइब्रेरियों का इस्तेमाल करने का वैकल्पिक तरीका भी है, लेकिन TypeScript में हमें स्थायी टाइप सुरक्षा मिलती है। 
+यह सुनिश्चित करता है कि केवल स्ट्रिंग्स को ही capitalize किया जा सकता है, और उन्हें सही ढंग से handling किया जाता है।
+
+## देखें भी
+
+- TypeScript डॉक्युमेंटेशन: [https://www.typescriptlang.org/docs/](https://www.typescriptlang.org/docs/)
+- MDN Web Docs (JavaScript .toUpperCase()): [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- Lodash Library: [https://lodash.com/](https://lodash.com/)

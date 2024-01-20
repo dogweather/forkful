@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer http-Anfrage"
-html_title:           "PHP: Senden einer http-Anfrage"
-simple_title:         "Senden einer http-Anfrage"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,37 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Senden einer HTTP-Anfrage ist ein zentraler Bestandteil der Programmierung in PHP. Es ermöglicht es Programmierern, Daten von anderen Servern abzurufen oder mit APIs zu interagieren. Dies ist besonders nützlich, um dynamische Inhalte auf Websites zu generieren.
+## Was & Warum?
 
-# So geht's:
-Um eine HTTP-Anfrage in PHP zu senden, verwenden wir die Funktion `file_get_contents()`. Wir geben dabei die URL der gewünschten Webseite oder API an und speichern die Rückgabewerte in einer Variable. Beispiel:
+Ein HTTP-Request ist ein Anforderungsprotokolldetail, das ein Client an einen Server sendet, um spezifische Informationen zu erhalten. Programmierer senden HTTP-Requests, um datengetriebene Operationen wie das Abrufen, Senden oder Aktualisieren von Daten auf einem Server durchzuführen.
+
+## So geht's:
+
+Mit PHP können Sie mithilfe der Funktion `file_get_contents` einen einfachen HTTP-GET-Request senden. Hier ist ein Beispiel:
 
 ```PHP
-$response = file_get_contents('https://example.com/api/data');
-echo $response; // Gibt die Daten als Text aus
+<?php
+$response = file_get_contents('http://example.com');
+echo $response;
+?>
 ```
+In diesem Code sendet `file_get_contents` einen HTTP-GET-Request an `http://example.com` und gibt die Antwort zurück. 
 
-Die `file_get_contents()` Funktion gibt standardmäßig die Daten als String zurück, aber wir können auch ein assoziatives Array erhalten, indem wir den Parameter `true` hinzufügen. Beispiel:
-
-```PHP
-$response = file_get_contents('https://example.com/api/data', true);
-print_r($response); // Gibt die Daten als Array aus
-```
-
-# Tief eintauchen:
-Das Senden von HTTP-Anfragen in PHP ist seit langem eine gängige Methode, um mit externen Datenquellen zu kommunizieren. Eine alternative Methode ist die Verwendung der cURL-Bibliothek, die jedoch etwas komplexer ist. Um eine HTTP-Anfrage mit cURL zu senden, müssen wir eine Ressource erstellen, die Einstellungen festlegen und die Anfrage ausführen. Zum Beispiel:
+Für komplexere Anfragen können Sie die cURL-Bibliothek verwenden:
 
 ```PHP
+<?php
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, 'https://example.com/api/data');
+
+curl_setopt($ch, CURLOPT_URL, 'http://example.com');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
 $response = curl_exec($ch);
-curl_close($ch);
-echo $response; // Gibt die Daten als Text aus
+
+curl_close ($ch);
+
+echo $response;
+?>
 ```
+Dieser Code sendet ebenfalls einen HTTP-GET-Request an `http://example.com`, ermöglicht aber eine größere Kontrolle und Anpassungsmöglichkeiten.
 
-In der Regel wird die Verwendung von `file_get_contents()` jedoch bevorzugt, da sie einfacher zu verwenden ist und keine zusätzlichen Bibliotheken erfordert.
+## Vertiefung:
 
-# Siehe auch:
-- Offizielle PHP-Dokumentation zu [file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-- Offizielle PHP-Dokumentation zu [cURL](https://www.php.net/manual/en/book.curl.php)
+HTTP-Requests sind der Kern der Kommunikation im Web und wurden erstmals im HTTP/1.0-Standard von 1996 definiert. Neben GET gibt es noch eine Reihe anderer HTTP-Request-Methoden, darunter POST, PUT und DELETE, die verschiedene Arten von Interaktionen mit einem Server ermöglichen.
+
+Es gibt viele Alternativen zu `file_get_contents` und cURL in PHP, einschließlich fsockopen, fopen und das Http-Paket von PECL. Welche Sie verwenden, hängt von Ihren spezifischen Bedürfnissen und Präferenzen ab. 
+
+Die Implementierung von HTTP-Requests in PHP ist recht einfach, da die meisten Funktionen intern abstrahiert sind. Die Funktion `file_get_contents` beispielsweise verbirgt den tatsächlichen Prozess der Erstellung einer Socket-Verbindung, des Sendens eines HTTP-Requests und des Wartens auf die Antwort.
+
+## Siehe auch:
+
+1. PHP-Dokumentation: [file_get_contents](https://www.php.net/manual/de/function.file-get-contents.php) und [cURL](https://www.php.net/manual/de/book.curl.php)
+2. W3Schools: [PHP Ajax Request](https://www.w3schools.com/php/php_ajax_php.asp)
+3. [HTTP/1.0-Spezifikation](https://www.w3.org/Protocols/HTTP/1.0/spec.html)

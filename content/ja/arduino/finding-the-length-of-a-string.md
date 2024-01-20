@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "Arduino: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,32 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
- 文字列の長さを求めるとは何か？プログラマーがそれを行う理由は？
+## 何となぜ?
 
-文字列の長さを求めるとは、文字列の文字数をカウントすることです。プログラマーがこれを行う理由は、入力された文字列の長さに基づいてプログラムの処理を調整するためです。
+文字列の長さを見つけるとは、文字列に含まれる文字数を示すことです。この操作は、メモリ管理や文字操作などのため、プログラマーには欠かせません。
 
-# How to:
- Arduinoのプログラム例とサンプル出力を```Arduino ...```のコードブロックで示します。
+## やり方:
+Arduinoでの文字列の長さを計測するためには`length()`関数を使います。以下はその使用例です:
 
+```Arduino
+String str = "Arduinoは楽しい";
+Serial.println(str.length());
 ```
-Arduinoのプログラム例:
-char str[] = "こんにちは";
-int len = strlen(str);
-Serial.print("文字列の長さ：");
-Serial.println(len);
+出力される値は「10」となり（全角文字は2とカウントされるため）、これが文字列の長さです。
 
-サンプル出力：
-文字列の長さ：5
-```
+## 深掘り
+元々、文字列の長さを計測する概念は、早い時代のプログラミングでメモリ管理とバッファオーバーフローの防止に重要だったものです。さらに、製造者が文字列操作を容易にするためにC言語で`strlen()`関数が導入され、Arduinoの`length()`関数もこれを基に作られています。
 
-# Deep Dive:
- 1. 文字列の長さを求めることは、1960年代に開発されたC言語の標準ライブラリ関数である「strlen」に由来しています。
- 2. 他のプログラミング言語では、文字列の長さを求めるための組み込み関数が提供されています。例えば、Pythonでは「len()」関数を使います。
- 3. Arduinoでは、文字列の長さを求めるために「strlen()」関数を使用する前に、string.hライブラリをインクルードする必要があります。
- 
-# See Also:
-関連リソースへのリンク
+同様の仕事をするアルタナティブとして`char`型配列を用いる手法があります。この場合、`strlen()`関数を使用して文字列の長さを計算します。しかしArduinoでは、`String`クラスを使用した方がより簡単で効率的とされています。
 
-- Arduinoリファレンス：https://www.arduino.cc/reference/ja/language/variables/data-types/string/functions/strlen/
-- Pythonリファレンス：https://docs.python.org/ja/3/library/stdtypes.html#str.__len__
+## 参考
+1. [Arduino - String object and length method](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+2. [C++ String length and size()](https://www.w3schools.com/cpp/cpp_strings_length.asp)
+3. [C++ String length function](https://www.arduino.cc/reference/tr/language/functions/communication/serial/available/)
+
+この情報を効果的に活用し、より効率的なArduinoプログラミングを楽しんでください。

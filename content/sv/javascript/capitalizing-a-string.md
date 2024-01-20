@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstavering av en sträng"
-html_title:           "Javascript: Stor bokstavering av en sträng"
-simple_title:         "Stor bokstavering av en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Javascript: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,28 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-Att kapitalisera en sträng i Javascript betyder att göra den första bokstaven i strängen stor. Detta är en vanlig praxis för att göra texten mer läsbar och för att hålla en enhetlig stil i koden.
+## Vad & Varför?
 
-## Hur gör man:
-Du kan kapitalisera en sträng på flera olika sätt i Javascript. Ett enkelt sätt är att använda inbyggda metoder som `toUpperCase()` och `charAt()`. Se exempel nedan:
+Att kapitalisera en sträng i programmering innebär att ändra alla bokstäver i strängen till stora bokstäver. Programmerare gör detta för att förbättra läsbarheten och för att standardisera textdata.
+
+## Så här gör du:
+
+I Javascript kan du kapitalisera en sträng med `toUpperCase()` funktionen. Det är en inbyggd funktion i JavaScript som gör alla bokstäver i en sträng till stora bokstäver.
+
+Här är några exempel:
+
 ```Javascript
-let namn = "anna";
-console.log(namn.charAt(0).toUpperCase() + namn.slice(1)); //Output: Anna
+let myString = "hej världen";
+let upperCaseString = myString.toUpperCase();
+
+console.log(upperCaseString);
 ```
 
-En annan metod är att använda regex (regular expressions) för att hitta och ersätta den första bokstaven i en sträng. Se exempel nedan:
+Output:
+
 ```Javascript
-let mening = "jag gillar javascript";
-console.log(mening.replace(/^\w/, c => c.toUpperCase())); //Output: Jag gillar javascript
+"HEJ VÄRLDEN"
 ```
 
-## Djupdykning:
-Kapitalisering av text har varit en viktig del av programmering sedan de tidiga dagarna av datorer. En tidig standard var att alla variabler i ett program skulle skrivas i stora bokstäver för att göra det lättare att läsa och förstå koden. Idag är detta mer en fråga om personlig stil och preferens.
+## Djupdykning
 
-Det finns också andra metoder för att kapitalisera en sträng i Javascript, såsom att använda en tredjepartsbibliotek eller att skapa en egen funktion. Det viktiga är att välja en metod som passar din kod och din stil.
+Historiskt sett har skapandet av kapitalbokstäver varit en enkel uppgift eftersom ASCII-värdet för bokstäver skiljer sig med 32 enheter mellan små och stora bokstäver. Moderna JavaScript-motorer implementerar metoder som `toUpperCase()` för att underlätta för oss.
 
-## Se även:
-- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [Regular Expressions in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+Ett alternativ till `toUpperCase()` är att iterera genom varje tecken i strängen och ändra det manuellt. Men det är mer komplicerat och ineffektivt.
+
+JavaScript-motorn bakom `toUpperCase()` tar hand om många detaljer som vi annars skulle behöva hantera själva, som diakritiska tecken och dubbelbyte-bokstäver.
+
+Se även metoden `toLocaleUpperCase()` som tar hänsyn till inställningarna för den aktuella platsen för att omvandla tecken till versaler.
+
+## Se också
+
+1. [Mozillas `toUpperCase()` dokumentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase) 
+
+2. [Jag vill veta mer om `toLocaleUpperCase()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleUpperCase)
+
+3. [Mer information om ASCII-tabellen](http://www.asciitable.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "Java: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,24 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
 ## Vad & Varför?
-Att skriva ut debuggade utdata är ett sätt för programmerare att se vad som händer i sin kod medan den körs. Detta gör det möjligt att identifiera felaktigheter och spåra koden för att lösa problem.
 
-## Så här:
-För att skriva ut debuggade utdata i Java, används metoden `System.out.println()`. Detta låter dig skriva ut en sträng av text eller värdet på en variabel. Till exempel:
+Att skriva ut debug-utdata är mekanismen att visa programmerarens tempinformation när de behöver spåra och fixa kodfel. Det hjälper till att förstå hur programkoden fungerar och får sitt jobb att fungera effektivt.
 
-```java
-String namn = "Anna";
-int ålder = 25;
-System.out.println("Hej, mitt namn är " + namn + " och jag är " + ålder + " år gammal.");
+## Så här gör du:
+
+Här är ett exempel för att skriva ut debug-meddelanden i Java: 
+
+```Java
+public class DebugDemo {
+    public static void main(String[] args) {
+        int sum = 0;
+        for (int i = 0; i < 5; i++) {
+            sum += i;
+            System.out.println("Debug: i = " + i + ", sum = " + sum);
+        }
+    }
+}
 ```
 
-Detta skulle producera utdatan "Hej, mitt namn är Anna och jag är 25 år gammal." i din terminal eller console.
+När du kör detta program, är output:
 
-## Djupdykning:
-Att skriva ut debuggade utdata är ett grundläggande felsökningsverktyg som används av programmerare över hela världen. Det finns dock också andra metoder som kan användas, som att använda ett speciellt debuggerverktyg eller loggning av utdata till en fil.
+```Java
+Debug: i = 0, sum = 0
+Debug: i = 1, sum = 1
+Debug: i = 2, sum = 3
+Debug: i = 3, sum = 6
+Debug: i = 4, sum = 10
+```
+På detta sätt kan vi se var exakt i loopen saker förändrades.
 
-För att implementera utskrift av debuggad utdata i en mer effektiv och organiserad form, kan man skapa en egen loggningsfunktion som tar in specifika parametrar och formaterar utdatan på ett önskat sätt.
+## Djupdykning 
 
-## Se även:
-[Java API Documentation for System.out.println()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/io/PrintStream.html#println())
+Historiskt sett har programmet ‘printf’-debbuging, där ‘printf’ är ett inbyggt bibliotek i många programmersspråk, varit en vanlig lösning. Detta är dock inte alltid den bästa lösningen, särskilt för större programkod där utmatningen kan bli för överväldigande.
+
+Alternativ innefattar att använda debuggare, som också kan ge mer detaljerad information om tillståndet för din kod vid givna punkter. Dessa verktyg kan dock vara tunga och i många fall är en enkel utskrift av debugdata den bästa lösningen.
+
+Implementationen av debug-utdata i Java är ganska enkel, med `System.out.println()`-metoden som används för att skriva ut meddelanden till konsolen.
+
+## Se också
+
+1. [Oracle Java Tutorial](https://docs.oracle.com/javase/tutorial/): Ursprungliga Java-tutorials som gör att du kan förstå programmeringsspråket djupt.
+
+2. [Java Debugging with Eclipse Tutorial](https://www.vogella.com/tutorials/EclipseDebugging/article.html): Detaljerad handledning om hur du använder Eclipse-verktyget för att debugga dina Java-program.
+
+3. [Introduction to Java debugging](https://stackify.com/java-debugging-tips/): Mer information om debugging i Java.
+
+---

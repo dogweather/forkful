@@ -1,7 +1,7 @@
 ---
-title:                "Att göra en sträng stor bokstav"
-html_title:           "PowerShell: Att göra en sträng stor bokstav"
-simple_title:         "Att göra en sträng stor bokstav"
+title:                "Gör om en sträng till versaler"
+html_title:           "PowerShell: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att "capitaliza" en sträng betyder helt enkelt att ändra den första bokstaven till en stor bokstav och behålla resten av strängen som den är. Detta är vanligtvis gjort av programmörer för att göra utskrifter och visuella presentationer av sina koder mer lättlästa och organiserade.
+## Vad & Varför?
 
-# Hur man gör:
+Att kapitalisera en sträng innebär att ändra alla dess tecken till stora bokstäver. Programmerare gör detta för standardisering och för att göra sträng jämförelser oberoende av skiftläge.
+
+## Hur man gör:
+
+Här kommer vi att se hur vi kapitaliserar en sträng i PowerShell med hjälp av metoden `ToUpper()`:
+
 ```PowerShell
-$sträng = "det här är en sträng som behöver ett stort begynnelsebokstav"
-
-# Metod 1: Använda .NET-metoden
-$sträng = $sträng.Substring(0,1).ToUpper() + $sträng.Substring(1)
-
-# Metod 2: Använda inbyggd PowerShell-funktion
-$sträng = $sträng -replace "^.",{$sträng[0].ToString().ToUpper()}
-
-echo $sträng
-
-# Output: Det här är en sträng som behöver ett stort begynnelsebokstav
+$str = 'hej världen'
+$capitalizedStr = $str.ToUpper()
+Write-Output $capitalizedStr
 ```
 
-# Djupdykning:
-Historiskt sett har "capitaliza" eller "title case" använts för att förbättra läsbarheten och formateringen av text, särskilt i tryckta material. I programmering används detta koncept för att göra kod mer lättläst och strukturerad. Det finns också alternativ som att helt konvertera en sträng till versala bokstäver eller små bokstäver. I PowerShell kan detta åstadkommas med inbyggda metoder som .ToUpper() eller .ToLower().
+När du kör ovanstående skript blir utdata:
 
-# Se även:
-För mer information om att manipulera strängar i PowerShell, se dessa länkar:
-- [PowerShell String manipulation](https://blog.netwrix.com/2018/01/03/how-to-manipulate-strings-in-powershell/)
-- [Effective PowerShell: 48 Ways to Capitalize Your String with PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2014/01/16/effective-powershell-48-ways-to-capitalize-your-string-with-powershell/)
+```PowerShell
+HEJ VÄRLDEN
+``` 
+
+## Djup Dykning:
+
+Historiskt sett har datorprogram skrivits för att vara skiftkänsliga som ett sätt att spara på processorkraft och minne. Kapitalisering av strängar blev ett vanligt sätt att förhindra problem med detta. 
+
+Som ett alternativ till `ToUpper()` kan du använda `.ToString().ToUpperInvariant()` om du vill göra konverteringen oberoende av tidsinställningar och kultur. 
+
+Vid implementering, `ToUpper()`-metoden i PowerShell använder .NET ramverket under huven för att konvertera alla tecken i en sträng till stora bokstäver. 
+
+## Se Också:
+
+- [Microsoft .NET Documentation - ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
+- [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
+- [String Capitalization Methods in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/string-formatting-with-powershell/)

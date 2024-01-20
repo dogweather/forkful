@@ -1,7 +1,7 @@
 ---
-title:                "לקבלת התאריך הנוכחי"
-html_title:           "Javascript: לקבלת התאריך הנוכחי"
-simple_title:         "לקבלת התאריך הנוכחי"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,31 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+---
+## מה זה ולמה?
 
-קבלת התאריך הנוכחי היא פונקציה חשובה בתכנות המאפשרת לנו לקבל תאריך מדויק באופן אוטמטי. התאריך הנוכחי משמש כבסיס למגוון רחב של יישומים מתאימים, כמו יצירת לוגים, תזמון משימות ועוד.
+לקבלת תאריך נוכחי ב JavaScript היא תוכנה לאחזור ותצוגה של תאריך ושעה כרגע. מתכנתים משתמשים בזה במגוון של שימושים, כולל אודיט, תיעוד, תיעוד ועוד.
 
-## איך לעשות זאת?
+## איך לעשות:
 
-קבלת התאריך הנוכחי ב-Javascript נעשית באמצעות פונקציית התאריך (Date). הנה כמה דוגמאות:
+קודים לדוגמה:
 
-``` Javascript
-var currentDate = new Date(); //תאריך מלא כולל שעה ותאריך
-var currentDay = currentDate.getDay(); //יום בשבוע בצורה מספרית (ראשון-0, שני-1 וכן הלאה)
-var currentMonth = currentDate.getMonth(); //חודש בשנה בצורה מספרית (ינואר-0, פברואר-1 וכן הלאה)
-var currentYear = currentDate.getFullYear(); //שנה מלאה
+```Javascript
+let currentDate = new Date();
+console.log(currentDate);
 ```
 
-תוכלו להתאמן ולצפות בתוצאות של קוד כזה כדי להבין טוב יותר את הערכים שנייבאים.
+התוצאה המרשמת:
 
-## חקירה עמוקה
+```Javascript
+// "2022-03-14T21:12:31.001Z"
+```
 
-ישנן כמה אפשרויות אלטרנטיביות לקבלת התאריך הנוכחי, כמו שימוש בספריות צד שלישי או כתיבה של פונקציה ייעודית משלכם. בכל זאת, פונקציית התאריך ב-Javascript היא פשוטה ויעילה ולכן נהוג להשתמש בה במידת הצורך.
+אם אתה רוצה רק את התאריך ללא הזמן:
 
-אם אתם מעוניינים לקרוא עוד על היסטוריית פונקציית התאריך ב-Javascript ועל השימושים הנפוצים שלה, תוכלו למצוא מידע נוסף בקישורים המופיעים בסיום המאמר.
+```Javascript
+let currentDate = new Date();
+console.log(currentDate.toDateString());
+```
 
-## ראו גם
+תוצאה:
 
-* [MDN Web Docs על פונקציית התאריך ב-Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-* [W3Schools על פונקציית התאריך ב-Javascript](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-* [ManualsLib על כתיבת פונקציה ייעודית לקבלת התאריך הנוכחי ב-Javascript](https://www.manualslib.com/manual/67990/Sanyo-Cft2085d.html?page=88#manual)
+```Javascript
+// "Tue Mar 14 2022"
+```
+
+## עומק ראייה:
+
+אחיזה של התאריך הנוכחי הוא חלק מהיסטוריה של תיכנות הקוד פתוח. מאז הימים הראשונים של תיכנות, מתכנתים היו זקוקים למעקב היסטורי לעסקאות ואירועים אחרים. לחלופין, אפשר להשתמש בספריות צד שלישי כמו Moment.js או Date-fns לניהול אחיזת תאריך וזמן. אבל עם השיפורים ב JavaScript, אתה יכול כעת להשתמש ברוב המערכות עם המובנה new Date(). 
+
+## ראה גם:
+
+1. [MDN Web Docs - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [Moment.js](https://momentjs.com/)
+3. [Date-fns - Modern JavaScript date utility library](https://date-fns.org/)

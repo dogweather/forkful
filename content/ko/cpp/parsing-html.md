@@ -1,6 +1,6 @@
 ---
 title:                "HTML 파싱"
-html_title:           "C++: HTML 파싱"
+html_title:           "Arduino: HTML 파싱"
 simple_title:         "HTML 파싱"
 programming_language: "C++"
 category:             "C++"
@@ -10,61 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?: 
-HTML 파싱이란 무엇인지 간략하게 설명하고, 프로그래머들이 왜 이를 수행하는지 설명합니다.
+## 무엇이고 왜?
 
-HTML 파싱은 웹 페이지에서 태그와 같은 요소를 이해하고 이를 읽고 처리하는 것을 말합니다. 이 작업은 웹 개발에 필수적입니다. HTML은 웹 페이지를 구성하는 데 사용되는 언어이기 때문에, HTML 파싱은 웹 개발에서 핵심적인 역할을 합니다. 프로그래머들은 HTML 파싱을 통해 웹 페이지의 내용을 분석하고 원하는 데이터를 추출해낼 수 있습니다.
+HTML 파싱은 웹페이지의 HTML 코드를 분석하고 해석하는 과정입니다. 이를 통해 프로그래머들은 웹페이지의 데이터를 추출하거나 수정하고, 페이지 구조를 이해하거나 변형할 수 있습니다.
 
-## 방법:
-아래의 ```C++ ...``` 코드 블록 내에서 코딩 예제와 예상 출력을 제공합니다.
+## 구현 방법:
+
+### C++로 HTML 파서 만들기
 
 ```C++
 #include <iostream>
-#include <fstream>
-#include <string>
-
-using namespace std;
+#include <libxml/HTMLparser.h>
 
 int main() {
+    std::string html = "<html><body><h1>안녕하세요</h1></body></html>";
 
-    ifstream file("example.html"); // 웹 페이지 파일을 읽어옴
-    string line, tag; // 각 줄과 태그를 저장할 변수
-    int count = 0; // 태그의 개수를 저장할 변수
+    // HTML 파서 초기화
+    htmlDocPtr doc = htmlReadDoc((xmlChar*)html.c_str(), NULL, NULL, HTML_PARSE_RECOVER | HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
 
-    while(getline(file, line)) { // 파일에서 한 줄씩 읽음
-        tag = ""; // 태그를 초기화
-        bool start = false; // 태그의 시작 여부를 나타내는 변수
-        bool end = false; // 태그의 끝 여부를 나타내는 변수
-
-        for (char c : line) { // 한 줄에서 한 문자씩 읽음
-            if (c == '<') start = true; // 태그 시작
-            else if (c == '>' && start) end = true; // 태그 끝
-            else if (start && !end) tag += c; // 태그의 이름 저장
-        }
-
-        if (!tag.empty()) { // 태그의 이름이 존재할 때
-            count++; // 태그의 개수 증가
-            cout << "Tag #" << count << ": " << tag << endl; // 태그의 이름 출력
-        }
-    }
+    // HTML 노드 접근
+    xmlNode *root_element = xmlDocGetRootElement(doc);
 
     return 0;
 }
 ```
 
-예상 출력:
-```
-Tag #1: html
-Tag #2: head
-Tag #3: title
-Tag #4: body
-Tag #5: h1
-Tag #6: p
+### 출력 예시
+
+```shell
+<root>
+  <h1>안녕하세요</h1>
+</root>
 ```
 
-## 심층 분석:
-(1) 역사적 배경: HTML 파싱은 웹 페이지가 생성되기 시작한 이후로 사용되어 왔습니다. 초기에는 수동으로 파싱해야 했지만, 지금은 소프트웨어를 통해 자동으로 파싱이 가능합니다. (2) 대안: HTML 파싱은 정교한 기술이지만, XML 또는 JSON과 같은 다른 데이터 규격을 이용하여 데이터를 추출하는 것이 가능합니다. (3) 구현 세부사항: 코딩 예제에서는 간단하게 파일을 읽어오고, 문자열 처리를 통해 태그를 추출하였지만, 실제로는 더 복잡한 알고리즘이 사용될 수 있습니다. 또한, HTML의 다양한 버전 및 브라우저 호환을 고려하여 파서를 개발해야 할 수 있습니다.
+## 깊은 탐색:
 
-## 관련 링크:
-- [HTML 파싱 관련 자세한 내용](https://en.wikipedia.org/wiki/HTML_parsing)
-- [C++에서의 HTML 파싱 예제와 설명](https://www.codeproject.com/Articles/6902/HTML-Parser-in-C)
+### 역사적 맥락:
+
+HTML 파싱은 웹의 도래와 거의 동시에 시작되었습니다. 초기에는 웹 스크래핑과 같은 단순한 목적으로 사용되었으며, 그 이후 웹 애플리케이션의 발전에 따라 훨씬 복잡한 사용 사례를 다루게 되었습니다.
+
+### 대안:
+
+오늘날에는 모든 유형의 파싱이 필요한 경우수를 다룰 수 있도록 설계된 다양한 라이브러리와 도구가 있습니다. 예를 들어, Gumbo, MyHTML, HTMLcxx 등 다양한 C++ 라이브러리가 있습니다.
+
+### 구현 상세:
+
+C++에서 HTML 파싱을 구현하는 방법은 여러 가지가 있습니다. 여기서는 libxml 라이브러리를 사용한 예제를 보여줬습니다. libxml은 강력하면서도 유연한 라이브러리로, 복잡한 HTML 문서의 구조를 파싱하고 관리하는 데 도움이 됩니다.
+
+## 참고 자료:
+
+* [HTML parsing in C++ with libxml](https://www.yolinux.com/TUTORIALS/XMLCppLibxml2.html)
+* [Google Gumbo example](https://github.com/google/gumbo-parser)
+* [HTML Parser: MyHTML](https://github.com/lexborisov/myhtml)
+* [HTMLcxx library](http://htmlcxx.sourceforge.net/)

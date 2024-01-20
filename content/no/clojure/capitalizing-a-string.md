@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en streng"
-html_title:           "Clojure: Store bokstaver i en streng"
-simple_title:         "Store bokstaver i en streng"
+title:                "Gjør en streng stor"
+html_title:           "Clojure: Gjør en streng stor"
+simple_title:         "Gjør en streng stor"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,20 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å kapitalisere en streng betyr å gjøre den første bokstaven stor bokstav, mens de resterende bokstavene er små. Dette brukes vanligvis for å gi tydelighet og konsistens i kode, spesielt når det kommer til funksjonsnavn og variabler.
+Store bokstaver i en tekststreng handler om å endre alle begynnelsesbokstaver i ordene til store bokstaver. Programmerer gjør dette for lesbarhet og data normalisering.
 
-## Hvordan:
-```Clojure 
-(clojure.string/capitalize "clojure");
-;; => "Clojure"
+## Hvordan til:
+Her er hvordan vi gjør det i Clojure, med en kodeeksempel:
 
-(clojure.string/capitalize "code is cool");
-;; => "Code is cool"
+```clojure
+(require '[clojure.string :as str])
+
+(defn capitalize
+  [text]
+  (->> (str/split text #" ")
+       (map str/capitalize)
+       (str/join " ")))
 ```
 
-## Dypdykk:
-Å kapitalisere strenger er et vanlig konsept i programmering og brukes ofte for å følge konvensjoner og standarder. Alternativet til å bruke `capitalize` -funksjonen er å manuelt endre strengen ved å konvertere første tegn til stor bokstav ved hjelp av `string/upper-case` funksjonen. Implementasjonen av `capitalize` i Clojure er basert på Unicode-standarden, noe som betyr at den ikke bare støtter engelske bokstaver, men også internasjonale bokstaver og symboler.
+La oss teste det ut:
 
-## Se Også:
-* [Clojure Offisiell Dokumentasjon](https://clojure.org/api/clojure.string#clojure.string/capitalize)
-* [Unicode Standard](https://unicode.org/standard/standard.html)
+```clojure
+(println (capitalize "Hallo, verden!")) 
+```
+
+Dette vil skrive ut:
+
+```clojure
+"Hallo, Verden!"
+```
+
+## Dypdykk
+Store bokstaver i strenger har en lang historie, med røtter fra eldre programmeringsspråk som Cobol og Fortran. 
+
+Clojure tilbyr mange alternative måter å takle denne oppgaven, takket være sin fleksible syntaks og fokus på funksjonell programmering. Du kan også bruke regulære uttrykk for å matche og erstatte små bokstaver, eller utnytte Java Bibliotek funksjoner som Java's 'java.lang.Character/toTitleCase'.
+
+Fordi Clojure kjører på JVM (Java Virtual Machine), bruker vår funksjon underliggende Java-metode `java.lang.Character/toTitleCase` for å utføre selve kapitaliseringen.
+
+## Se også:
+For et dypere dykk inn i tekstmanipulasjon i Clojure, sjekk ut disse kildene:
+
+1. [Clojure String Cookbook](https://clojure-cookbook.com): Et omfattende oppslagsverk for strengoperasjoner i Clojure, inkludert oppskrifter på alt fra grunnleggende manipulasjoner til avansert regulært uttrykk og Unicode-håndtering.
+
+2. [Clojure Docs](https://clojuredocs.org): En omfattende kilde til dokumentasjon som dekker Clojure's mange innebygde funksjoner, inkludert de for tekstmanipulasjon.
+
+3. [Official Clojure API Reference](https://clojure.github.io/clojure/): Den offisielle API-referansen for Clojure, inkludert detaljerte beskrivelser av funksjonene i string-biblioteket.

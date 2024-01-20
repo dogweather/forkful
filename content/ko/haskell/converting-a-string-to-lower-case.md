@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Haskell: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-스트링을 소문자로 변환한다는 것은 무엇인지 그리고 왜 프로그래머가 이를 하는지에 대해 간단히 설명합니다.
+## 뭐와 왜?
 
-스트링을 소문자로 변환하는 것은 문자열의 대소문자를 구분하지 않는 비교나 처리를 위해 필요한 작업입니다. 이를 통해 입력된 값의 형식을 통일하여 정보를 처리하고 결과를 추론하기 쉽게 만들 수 있습니다. 게다가 일부 프로그래밍 언어에서는 대소문자를 모두 허용하지 않기 때문에, 소문자로 문자열을 바꾸는 것은 반드시 필수적인 작업입니다.
+문자열을 소문자로 변환한다는 것은 모든 대문자를 소문자로 바꾸는 프로세스를 말합니다. 프로그래머들은 코드의 일관성을 유지하고, 검색이나 비교 연산을 간편하게 하기 위해 이를 사용합니다.
 
-## 어떻게:
-Haskell에서 이 작업을 수행하는 방법을 코드 예시와 함께 살펴봅니다. 
+## 사용 방법:
 
+`toLower` 함수와 `map` 함수를 이용해서 문자열의 모든 문자를 한 번에 소문자로 바꿀 수 있습니다.
+
+```Haskell
+import Data.Char
+
+toLowerString :: String -> String
+toLowerString = map toLower
 ```
--- 문자열의 모든 문자를 소문자로 변환하는 함수
-toLower :: String -> String
-toLower str = [toLowerChar c | c <- str]
-
--- 문자 하나를 소문자로 변환하는 함수
-toLowerChar :: Char -> Char
-toLowerChar c
-  | isUpper c = chr (ord c + 32) -- ASCII 코드를 이용해 대문자를 소문자로 변환
-  | otherwise = c
+보시는 대로, 문자열 `"HELLO"` 를 소문자로 변환하는 예제입니다.
+```Haskell
+main = print (toLowerString "HELLO")
 ```
 
-위 코드를 실행하면, "HASKELL"이라는 문자열이 "haskell"로 변환된 것을 확인할 수 있습니다.
+이 코드의 출력 결과는 다음과 같습니다.
+```Haskell
+"hello"
+```
 
-## 깊이 파고들기:
-스트링을 소문자로 변환하는 과정은 이전에 ASCII 코드를 이용했던 방식을 바탕으로 만들어졌습니다. 그러나 이는 현대 프로그래밍 언어에서도 여전히 널리 사용되고 있습니다. 다른 언어들에서는 대소문자를 구분하지 않는 문자열 타입을 제공하기도 합니다. 더 나아가, 고급 프로그래밍 언어에서는 함수형 프로그래밍과 같은 패러다임을 통해 간편한 문자열 처리를 위해 파생된 함수도 제공하고 있습니다. 이를 이용하면 더욱더 손쉽게 문자열을 소문자로 변환할 수 있습니다.
+## 깊게 보기:
 
-## 참고 자료:
-스트링을 소문자로 변환하는 더 많은 정보를 알고 싶다면 아래 링크를 참고하세요.
+문자열을 소문자로 변환하는 기능이 필요했던 초기 이유는, 습관적인 텍스트 검색과 비교를 기능성과 속도 측면에서 효율적으로 만드는 것이었습니다. 특히 대소문자가 다르면 다른 문자로 인식하므로, 동일한 단어의 대소문자 형태를 매칭시키기 위해 사용되었습니다.
 
-- [Haskell에서 제공하는 문자열 처리 함수](https://hoogle.haskell.org/)
-- [파이썬과 같은 다른 프로그래밍 언어에서 문자열 처리하기](https://www.w3schools.com/python/ref_string_lower.asp)
-- [자바스크립트에서 문자열을 소문자로 변환하는 방법](https://www.w3schools.com/js/js_string_lower.asp)
+Haskell에서는 기본적으로 제공하는 `toLower` 함수 외에도, 패키지 "text"를 사용해서 이 기능을 활용할 수 있습니다. 
+
+`toLower` 함수는 Unicode 캐릭터의 소문자 변환을 지원하므로, 대부분의 경우 이 함수를 사용하면 됩니다. 이 함수는 문자를 하나씩 처리하므로, 문자열 전체를 변환하려면 `map` 함수와 함께 사용합니다.
+
+## 연관된 정보:
+
+- [Haskell 'toLower' 공식 문서](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html#v:toLower)
+- [Haskell 'map' 함수와의 시너지](https://www.schoolofhaskell.com/school/starting-with-haskell/lists-and-types)
+- [텍스트 패키지 사용 방법](https://hackage.haskell.org/package/text)
+- [코드의 일관성을 위한 대소문자 변환의 중요성](http://www.drdobbs.com/architecture-and-design/normalization-in-programming-languages/240168319)

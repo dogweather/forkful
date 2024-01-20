@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Ruby recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,43 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Extracting substrings in Ruby refers to the process of retrieving a specific set of characters from a larger string. This is a common task in programming, as it allows for efficient manipulation and analysis of string data.
+
+Extracting substrings is the act of pulling out smaller strings from a larger one using specific indexes. Programmers do this to manipulate, analyze, or segment relevant parts of data within larger text bodies.
 
 ## How to:
-To extract a substring in Ruby, we can use the built-in `slice` method. This method takes in two values, the starting index and the ending index, and returns the corresponding substring. For example:
+
+Ruby provides several methods to extract substrings, let's dive into some.
+
 ```Ruby
-string = "Hello world"
-substring = string.slice(0, 5)
-puts substring
-```
-Output:
-```
-Hello
-```
-If the ending index is omitted, the method will return all characters starting from the specified starting index. For instance:
-```Ruby
-string = "Goodbye world"
-substring = string.slice(3..)
-puts substring
-```
-Output:
-```
-dbye world
-```
-We can also use negative indexes to start counting from the end of the string. For example:
-```Ruby
-string = "Hello world"
-substring = string.slice(-5..)
-puts substring
-```
-Output:
-```
-world
+str = 'WelcometoRubyProgramming'
+
+# Using slice method
+puts str.slice(8, 4)  # output: "toRu"
+
+# Using [] method
+puts str[8..11]  # output: "toRu"
+
+# Using slice() with a range
+puts str.slice(8..11)  # output: "toRu"
 ```
 
-## Deep Dive:
-The `slice` method was introduced in Ruby version 1.8, and it is also aliased as `[]`. This method can also accept a range of indexes instead of just two values, allowing for even more flexibility in extracting substrings. Additionally, the `slice!` method can be used to delete the extracted substring from the original string. Alternatives to the `slice` method include using the `scan` method with a regular expression or using the `split` method with a delimiter.
+Note: Ruby counts from zero, so the 8th character is 't'.
 
-## See Also:
-- [Ruby Documentation on String Extraction](https://ruby-doc.org/core-2.7.1/String.html#method-i-slice)
-- [Different Ways to Extract Substrings in Ruby](https://medium.com/@joelaguiar/different-ways-to-extract-substrings-in-ruby-47d56b3b2836)
+## Deep Dive
+
+Extracting substrings has long been a fundamental aspect of programming, tracing back to when manipulation of raw text data became viable. Besides the methods shown, Ruby offers `.substring()`, which behaves similarly. 
+
+Alternatives depend on necessity. Regular expressions could be used to match patterns instead of direct indices. 
+
+When picking a method, consider usage context. `.slice()` modifies the original string and could be risky. `.substring()` doesn't alter the source but requires more memory as it generates a new string. Choose wisely!
+
+## See Also
+
+1. Ruby Doc String slice : [https://ruby-doc.org/core-2.7.0/String.html#method-i-slice](https://ruby-doc.org/core-2.7.0/String.html#method-i-slice)
+2. Ruby Doc Regex: [https://ruby-doc.org/core-2.7.1/Regexp.html](https://ruby-doc.org/core-2.7.1/Regexp.html)
+3. Substrings in Ruby: [https://www.rubyguides.com/2015/03/ruby-strings/](https://www.rubyguides.com/2015/03/ruby-strings/)

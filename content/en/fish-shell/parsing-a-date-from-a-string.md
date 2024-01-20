@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Fish Shell recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,50 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Parsing a date from a string is the process of extracting a specific date value from a given string. This can be useful for programmers who need to work with date data in their code, such as converting a string input into a more usable format or performing calculations based on specific dates.
+Parsing a date from a string means converting written or typed text into a datetime object a program can understand. We do this because sometimes the only way to get a date out of certain systems is via text.
 
 ## How to:
 
-The Fish Shell, like many other programming languages, has built-in functions that allow for easy parsing of dates from strings. Here are a few examples of how to use them:
+Fire up your Fish Shell and let's get parsing!
 
-```
-Fish Shell 2.7.1
-```
-### Parsing a date from a string in ISO format
-```
-> set my_date (date -f %Y-%m-%d "2022-01-01")
-> echo $my_date
-January 1, 2022
-```
+```fish
+# Define the date string
+set dateString "2022-03-25 14:20:00"
 
-### Parsing a date from a custom string
-```
-> set custom_date (date -f "I was born on %B %d, %Y" "I was born on March 12, 1990")
-> echo $custom_date
-March 12, 1990
-```
+# Parse the date string into a Unix timestamp
+set parsedDate (date -u -d $dateString +%s)
 
-### Converting a parsed date into a specific format
+# Echo the parsed date
+echo $parsedDate
 ```
-> set original_date "03/12/2020"
-> set converted_date (date -f "%B %d, %Y" $original_date)
-> echo $converted_date
-March 12, 2020
-```
+When you run this, you will see the converted Unix timestamp spit out. Pretty neat, huh?
 
 ## Deep Dive
+Historically, date parsing was a necessity because legacy systems often relied on human-readable date strings. With Fish Shell, parsing dates is easy, but there are alternatives, like Python’s `dateutil.parser.parse()` or JavaScript’s `Date.parse()`.
 
-Parsing dates from strings has been a common task for many programmers since the early days of computing. In those days, it was often a tedious and error-prone process, requiring manual string manipulations and conversions. However, with the advancement of programming languages and tools, it has become a much simpler and more streamlined process.
+Different systems or programming languages may store and manage dates differently, but most will convert to a Unix timestamp when parsing. This is a numerical representation of a date as the number of seconds that have passed since the "Unix Epoch", 00:00:00 Coordinated Universal Time (UTC), Thursday, 1 January 1970, not counting leap seconds.
 
-Besides using built-in functions in programming languages, there are also alternative ways to parse dates from strings, such as using regular expressions or third-party libraries and modules. However, the built-in functions provided by Fish Shell are usually more efficient and reliable.
-
-As for the implementation details, parsing a date from a string usually involves identifying and extracting the relevant date components (such as day, month, and year) from the input string and converting them into a standardized format. This process can become more complex when dealing with different date formats or when incorporating localization for different languages.
+In Fish Shell, the `-d` option is fed the date string and the `+%s` option is used to specify the output format which, in this case, is a Unix timestamp. This makes it possible to work with the parsed date.
 
 ## See Also
 
-If you're interested in learning more about parsing dates from strings, here are some helpful resources:
+For more details on the Fish Shell, check out these resources:
 
-- [Fish Shell documentation](https://fishshell.com/docs/current/cmds/date.html) for more information on the `date` command and its options.
-- [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html) standard for date and time representation.
-- [MDN web docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date) for date-related functions and methods in JavaScript, a commonly used programming language for web development.
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Dates and Times in Unix](https://www.eecis.udel.edu/~bmiller/UNIXandC/UNIX02.html)
+- [Python dateutil Library](https://dateutil.readthedocs.io/en/stable/)
+- [JavaScript Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)

@@ -1,7 +1,7 @@
 ---
-title:                "Obtener la fecha actual"
-html_title:           "Haskell: Obtener la fecha actual"
-simple_title:         "Obtener la fecha actual"
+title:                "Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
+simple_title:         "Obteniendo la fecha actual"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Obtener la fecha actual es una tarea común para los programadores. Permite a las aplicaciones registrar el momento en que se realizan ciertas acciones, como guardar un archivo o hacer una transacción. También puede ser útil para mostrar información actualizada, como la fecha de hoy en una página web.
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo:
-Para obtener la fecha actual en Haskell, podemos usar la función `getCurrentTime` del módulo `Data.Time`. Esta función devuelve un valor del tipo `UTCTime`, que representa la fecha y hora en formato universal coordinado (UTC). Luego, podemos convertirlo a un formato más legible usando la función `show` y especificando el formato deseado.
+Obtener la fecha actual en tu programa es básicamente pedirle a tu ordenador que te dé el día de hoy. Los programadores hacen esto para registrar cuándo ocurre un evento, para programar tareas futuras, entre otras razones.
+
+## Cómo se hace:
+
+Primero, hay que importar el módulo `Data.Time`. Para obtener la fecha actual, utilizamos la función `getCurrentTime`.
 
 ```Haskell
 import Data.Time
 
 main = do
-  currentTime <- getCurrentTime
-  putStrLn $ "La fecha actual es: " ++ show (utctDay currentTime)
-  putStrLn $ "La hora actual es: " ++ show (utctDayTime currentTime)
+    current <- getCurrentTime
+    print current
 ```
+El resultado de ejecutar este programa será la fecha y hora actuales, con formato `AAAA-MM-DD HH:MM:SS UTC`.
 
-Output:
-```
-La fecha actual es: 2020-10-22
-La hora actual es: 46336.233797s
-```
+## Profundizando
 
-## Profundizando:
-Obtener la fecha actual es una tarea que ha evolucionado con el tiempo. Antiguamente, los sistemas operativos proporcionaban funciones específicas para este propósito, pero ahora, con la popularidad de lenguajes como Haskell, muchas bibliotecas ofrecen formas más elegantes de manejar fechas y horas. Algunas alternativas a la función `getCurrentTime` son `System.Posix.Time.clock_gettime` y `System.Posix.Files.modificationTime`.
+`getCurrentTime` proviene del paquete `time`, que se agregó en GHC 6.12. Antes de eso, los programadores tenían que usar librerías del sistema operativo, que eran mucho más complicadas.
 
-## Ver también:
-Si estás buscando más información sobre fechas y horas en Haskell, puedes revisar la documentación de los módulos `Data.Time` y `System.Posix.Time`. También puedes explorar otras bibliotecas como `time`, `time-locale-compat`, y `date`.
+Hay otras formas de obtener la fecha actual. Por ejemplo, puedes usar `getZonedTime` para obtener la fecha y hora locales en lugar de UTC.
+
+En cuanto a los detalles de implementación, `getCurrentTime` en realidad se comunica con tu sistema operativo para obtener la fecha actual. Dado que las fechas pueden variar dependiendo de la zona horaria, se usa UTC (Tiempo Universal Coordinado) para evitar confusiones.
+
+## Ver También
+
+Para más información y ejemplos, puedes visitar las siguientes páginas:
+
+- Documentación del paquete `time`: https://hackage.haskell.org/package/time
+- Tutorial sobre fechas y horas en Haskell: https://www.schoolofhaskell.com/user/utdemir/haskell-getting-current-time
+- GHC, el compilador de Haskell que usamos en este artículo: https://www.haskell.org/ghc/
+- Documentación del módulo `Data.Time`: https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html

@@ -1,7 +1,7 @@
 ---
-title:                "Enviando una solicitud http."
-html_title:           "Arduino: Enviando una solicitud http."
-simple_title:         "Enviando una solicitud http."
+title:                "Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
+simple_title:         "Enviando una solicitud http"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,33 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Enviar una solicitud HTTP es una forma en la que los programadores pueden comunicarse con servidores en la web. Es una forma de que su programa reciba información o realice acciones a través de Internet.
+Una solicitud HTTP es un protocolo que permite a tu Arduino comunicarse con la web. Los programadores lo usan para interactuar con APIs, descargar información, y enviar datos a servidores.
 
-## Cómo:
+## Cómo hacerlo:
 
-Escribir una solicitud HTTP en Arduino es fácil. Primero, asegúrate de tener la biblioteca WiFiClient.h incluida en tu programa. Luego, crea un objeto de tipo WiFiClient y usa su método .connect() para conectarte a la URL deseada. A continuación, escribe tu solicitud usando el formato de solicitud HTTP adecuado y usa el método .print() para enviarla al servidor. Por último, usa el método .read() para recibir la respuesta del servidor y procesarla en tu programa.
+Asegúrate de que tu Arduino esté conectado a la red con el módulo WiFi. Aquí, usaremos el WiFiClient de la biblioteca ESP8266WiFi.
 
 ```Arduino
-#include <WiFiClient.h>
+#include <ESP8266WiFi.h>
+ 
+const char* ssid     = "tuSSID";
+const char* password = "tuPASSWORD";
+ 
+const char* host = "ejemplo.com";
+ 
+void setup() {
+  
+  Serial.begin(115200);
+  
+  delay(10);
+ 
+  // Conexión a la red WiFi.
+  Serial.println();
+  Serial.println();
+  Serial.print("Conectando a ");
+  Serial.println(ssid);
 
-WiFiClient client;
-client.connect("www.ejemplo.com", 80); //conexión a la URL y puerto 80
-client.print("GET /index.html HTTP/1.1\r\n"); //solicitud GET para la página "index.html"
-client.print("Host: www.ejemplo.com\r\n"); //se proporciona el nombre del servidor
-client.print("Connection: close\r\n\r\n"); //se cierra la conexión después de recibir la respuesta
-String respuesta = client.readString(); //lee y almacena la respuesta del servidor
+  WiFi.begin(ssid, password);
+  
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+ 
+  Serial.println("");
+  Serial.println("WiFi conectado");  
+  Serial.println("Dirección IP: ");
+  Serial.println(WiFi.localIP());
+}
+ 
+void loop() {
+ 
+  WiFiClient client;
+  
+  const int httpPort = 80;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("Conexión fallida");
+    return;
+  }
+  
+  client.println("GET / HTTP/1.1");
+  client.println("Host: " + String(host));
+  client.println("Connection: close");
+  client.println();
+  
+  while(client.available()){
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
+}
 ```
 
-## Profundizando:
+## Buceo profundo:
 
-Las solicitudes HTTP se han utilizado desde los inicios de la web para facilitar la comunicación entre servidores y clientes. Aunque ahora existen otras alternativas, como las solicitudes HTTPS más seguras, las solicitudes HTTP siguen siendo una forma eficaz de comunicarse con servidores.
-
-Además de enviar solicitudes GET, como se muestra en el ejemplo anterior, también se pueden enviar solicitudes POST, PUT y DELETE utilizando el mismo formato de solicitud y los métodos .print() y .write() adecuados. También es importante tener en cuenta que algunos servidores pueden requerir ciertos encabezados en la solicitud para que funcione correctamente.
+El Protocolo de Transferencia de Hipertexto (HTTP) se introdujo en 1991 como un estándar para la comunicación en el internet y se ha ido actualizando desde entonces. Existen bibliotecas alternativas para Arduino como EthernetClient y GSMClient para diferentes formas de conectividad. Además, al enviar una solicitud HTTP, considera los detalles de implementación, como los encabezados HTTP y la formación de la URL.
 
 ## Ver también:
 
-- [Documentación oficial de Arduino sobre WiFiClient] (https://www.arduino.cc/en/Reference/WiFiClient/)
-- [Tutorial de Adafruit sobre cómo usar solicitudes HTTP en Arduino] (https://learn.adafruit.com/adafruit-io-basics-simple-internet-of-things-dashboard/arduino-http-requests)
-- [Especificación de HTTP por World Wide Web Consortium] (https://www.w3.org/Protocols/rfc2616/rfc2616-sec5.html)
+Para más información y ejemplos detallados sobre peticiones HTTP con Arduino, consulta las siguientes fuentes:
+
+- Documentación oficial de Arduino: http://arduino.cc/en/Reference/EthernetClient
+
+- Tutorials para peticiones web con Arduino: https://randomnerdtutorials.com/esp8266-web-client/
+
+- Esp32 HTTP Requests: https://techtutorialsx.com/2017/12/09/esp32-arduino-http-server-getting-query-parameters/

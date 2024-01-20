@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pieneksi kirjoituksesi"
-html_title:           "Java: Merkkijonon muuntaminen pieneksi kirjoituksesi"
-simple_title:         "Merkkijonon muuntaminen pieneksi kirjoituksesi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,46 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & Miksi?
+## Mikä & Miksi?
 
-Miksi muuttaa merkkijono pienaakkosiksi? Merkkijonon muuttaminen pienaakkosiksi on yleinen tehtävä ohjelmoinnissa, jossa merkkijonoja käsitellään. Pienaakkosiksi muuttamalla merkkijonoja voidaan helpommin vertailla ja käsitellä, sillä pienet ja isot kirjaimet eivät enää häiritse vertailua.
+Merkkijonon muuttaminen pieniksi kirjaimiksi on tehtävä, jossa muunnetaan kaikki merkkijonon kirjaimet pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän usein tekstin normalisoimiseksi ja vertailun helpottamiseksi, koska järjestelmät erottelevat usein isot ja pienet kirjaimet.
 
-Miten tehdään:
+## Miten se tehdään:
 
-```Java
-String s = "TÄMÄ ON MERKKIJONO"; // Luodaan merkkijono s
-
-System.out.println(s.toLowerCase()); // Tulostetaan merkkijono pienaakkosina
-```
-
-Tuloste:
+Alla on koodiesimerkkejä Java-ohjelmointikielellä:
 
 ```Java
-tämä on merkkijono
+String isoKirjain = "Moi Moikka!";
+String pieniKirjain = isoKirjain.toLowerCase();
+System.out.println(pieniKirjain);
 ```
 
-Oletetaan, että merkkijono sisältää jo alunperinkin pieniä kirjaimia, eikä niiden muuttuminen pienaakkosiksi ole tärkeää. Silloin voidaan käyttää metodia **toLowerCase()** varmuuden vuoksi ja varmistaa, että kaikki kirjaimet ovat pieniä.
+Tämän koodin tuloste on:
 
-```Java
-String s = "tämä on pieni merkkijono";
-
-System.out.println(s.toLowerCase()); // Tulostetaan merkkijono pienaakkosina
+```
+moi moikka!
 ```
 
-Tuloste:
+## Syväsukellus:
 
-```Java
-tämä on pieni merkkijono
-```
+Historiallisesti merkkijonojen pienten kirjainten käyttö on juurtunut ajatukseen, että tekstien vertaaminen olisi helpompaa ilman isoja kirjaimia. Tämä on järkevää, koska esimerkiksi käyttäjätunnukset ja salasanat ovat yleensä case-sensitive, eli otetaan huomioon isojen ja pienten kirjainten ero.
 
-Deep Dive:
+Vaihtoehtoisesti, `toUpperCase()` -metodi muuttaa kaikki merkkijonon kirjaimet isoiksi kirjaimiksi. Tämä voi olla hyödyllistä joissakin tilanteissa, riippuen sovelluksen käytännöistä ja vaatimuksista.
 
-Historiallisessa kontekstissa merkkijonon muuttaminen pienaakkosiksi ei ole ollut aina niin yksinkertaista. Esimerkiksi ASCII-koodissa ei ole ollut erillisiä koodiarvoja pienille ja isoille kirjaimille, jolloin muuttaminen on vaatinut erillisiä toimenpiteitä. Nykyään Java-kielessä tämä prosessi on paljon helpompaa, sillä kielessä on valmiina metodi **toLowerCase()**.
+Java'n `toLowerCase()` ja `toUpperCase()` metodit käyttävät UnicodeData-tiedostoa määrittämään, onko merkki kirjain ja jos on, mikä on sen vastine isolla tai pienellä kirjaimella.
 
-On myös olemassa muita tapoja muuttaa merkkijono pienaakkosiksi, kuten käyttämällä **CharSequence**-rajapintaa tai käyttämällä esimerkiksi **for**-silmukkaa. Kuitenkin metodi **toLowerCase()** on yksi helpoimmista ja tehokkaimmista tavoista tehdä tämä toimenpide.
+## Katso myös:
 
-Tarkemmat tiedot muuttamisprosessista löytyvät Java-dokumentaatiosta.
+Jos haluat tutkia lisää merkkijonojen käsittelyä ja manipulointia Javassa, tarkista seuraavat linkit:
 
-Katso myös:
-
-[Java - String toLowerCase() Method](https://www.tutorialspoint.com/java/java_string_tolowercase.htm)
+1. Oracle Java Docs for String: [Linkki](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+2. Java String toLowerCase() -metodi: [Linkki](https://www.javatpoint.com/java-string-tolowercase)
+3. Java String toUpperCase() -metodi: [Linkki](https://www.javatpoint.com/java-string-touppercase)

@@ -1,6 +1,6 @@
 ---
 title:                "Suppression de caractères correspondant à un motif"
-html_title:           "Kotlin: Suppression de caractères correspondant à un motif"
+html_title:           "C: Suppression de caractères correspondant à un motif"
 simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-Supprimer des caractères correspondant à un motif est un moyen de supprimer des éléments spécifiques d'une chaîne de caractères en utilisant un motif de correspondance. Cela peut être utile pour nettoyer ou modifier une chaîne de caractères selon un certain critère. Les programmeurs font souvent cela pour traiter les données et les rendre plus lisibles ou utilisables.
+Supprimer des caractères correspondant à un modèle de données dans la programmation est une méthode d'ajustement, de nettoyage ou de conformité des données. On le fait principalement pour faciliter le traitement de ces données ou pour respecter certaines règles spécifiques.
 
-## Comment faire:
+## Comment:
 
-Voici quelques exemples de code en Kotlin pour supprimer des caractères correspondant à un motif:
+Voici un exemple simple utilisant une expression régulière pour supprimer tous les chiffres d'une chaîne dans Kotlin:
 
 ```Kotlin
-// Supprimer les lettres "a" et "b" d'une chaîne de caractères
-val str = "abracadabra"
-val result = str.filterNot { it == 'a' || it == 'b' }
-println(result) // imprime "rcdrcd"
-
-// Supprimer tous les chiffres d'une chaîne de caractères
-val str = "1a2b3c4d"
-val result = str.filterNot { it.isDigit() }
-println(result) // imprime "abcd"
-
-// Supprimer tous les caractères spéciaux d'une chaîne de caractères
-val str = "!@#$%abcd*()"
-val result = str.filterNot { it.isLetterOrDigit() }
-println(result) // imprime "!@#$%*()"
+val pattern = "[0-9]".toRegex()
+val sentence = "Mon numéro est 1234567890"
+val result = sentence.replace(pattern, "")
+println(result) // Résultat: "Mon numéro est "
 ```
 
-## Plongée en profondeur:
+Cela affichera "Mon numéro est ", supprimant tous les chiffres de la chaîne.
 
-L'utilisation de motifs de correspondance pour supprimer des caractères peut sembler nouvelle, mais c'est en fait une technique couramment utilisée par les programmeurs depuis de nombreuses années. Les alternatives les plus courantes incluent l'utilisation de boucles et de conditions pour parcourir la chaîne de caractères et supprimer les caractères un par un, ce qui peut être fastidieux et moins efficace.
+## Plongée Profonde:
 
-En termes d'implémentation, les motifs de correspondance sont généralement basés sur des expressions régulières, qui sont des motifs utilisés pour rechercher des combinaisons de caractères spécifiques dans une chaîne. Les expressions régulières offrent une grande flexibilité dans la suppression des caractères et peuvent être utilisées dans de nombreux autres cas de traitement de chaînes.
+Comme toute autre fonction dans la programmation, la suppression de caractères correspondant à un motif a ses origines et alternatives. Historiquement, cela a été fait en utilisant des boucles et des conditions, parcourant chaque caractère de la chaîne.
 
-## Voir aussi:
+Cependant, avec la croissance des expressions régulières, la suppression par modèle est devenue beaucoup plus facile et plus directe. Par exemple, en Kotlin, nous utilisons la méthode `.replace()`, qui peut être plus efficace, mais connaître les alternatives peut être utile pour certains cas spécifiques.
 
-Si vous souhaitez en savoir plus sur l'utilisation de motifs de correspondance pour supprimer des caractères en Kotlin, voici quelques liens utiles:
+Gardez à l'esprit qu'il y a des nuances concernant l'utilisation des expressions régulières, par l'exemple l'ordre dans lequel les remplacements sont effectués peut affecter les résultats. En particulier, il faut être prudent lorsqu'on supprime des caractères à l'aide d'un modèle qui peut se chevaucher.
 
-- [Documentation officielle de Kotlin sur les motifs de correspondance](https://kotlinlang.org/docs/reference/properties.html#string-templates)
-- [Tutoriel en ligne sur les expressions régulières en Kotlin](https://kotlinlang.org/docs/reference/regular-expressions.html)
-- [Vidéo tutoriel sur l'utilisation de motifs de correspondance en Kotlin](https://www.youtube.com/watch?v=cSKYPtY3lIs)
+## Voir Aussi:
+
+Visiter ces ressources pour plus d'informations:
+
+- [Documentation officielle de Kotlin sur les expressions régulières](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Une excellente explication des modèles d'expressions régulières](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Plus de détails sur le fonctionnement des chaînes de caractères en Kotlin](https://kotlinlang.org/docs/character-strings.html)

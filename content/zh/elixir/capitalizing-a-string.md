@@ -1,7 +1,7 @@
 ---
-title:                "字符串大写化"
-html_title:           "Elixir: 字符串大写化"
-simple_title:         "字符串大写化"
+title:                "将字符串大写"
+html_title:           "Elixir: 将字符串大写"
+simple_title:         "将字符串大写"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,24 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-字符串大写是指将字符串中的所有字符都转换为大写形式。程序员这样做的原因是为了方便比较和匹配字符串，因为大写和小写字母是不同的。
+# 什麼 & 為什麼？
+首字母大寫字串是指將文字串中的每個單詞的首字母變成大寫。程序員這麼做主要是為了格式設定和權限管理。
 
-## 如何：
+# 如何跑？
+用Elixir語言完成首字母大寫字串的功能，你可以用到\`String.capitalize/2\`這個函數。
 ```Elixir
-String.upcase("hello world") 
-IO.puts("HELLO WORLD")
+IO.puts String.capitalize("elixir")
+```
+輸出結果就會是：
+```
+Elixir
 ```
 
-结果:
-
+# 更深層次的探索
+首字母大寫字串的概念可以追溯至古老的打字機時代，為了讓文字更清楚易讀，人們將重要的字詞首字母大寫。在Elixir中，除了`String.capitalize/2`我們還可以用`String.upcase/1`和`String.downcase/1`結合起來創造首字母大寫字串的功能。
+例如：
 ```Elixir
-"HELLO WORLD"
-HELLO WORLD
+IO.puts String.upcase(String.slice("elixir", 0)) <> String.slice("elixir", 1..-1)
 ```
+這樣輸出結果還是會是：
+```
+Elixir
+```
+這兩種方法的實現，底層都依賴於Erlang的字串操作函數。
 
-## 深入了解：
-字符串大写的概念在计算机编程中已经存在了很长时间。在早期计算机中，由于存储空间有限，只能使用大写字母来表示字符。但随着计算机技术的发展，我们现在可以使用小写字母来表示字符。不过，许多编程语言仍然支持字符串大写操作，因为它仍然是一种有效的方法来处理字符串。
-
-## 参考：
-了解更多关于字符串大写的知识：https://yoongkang.com/blog/string-case-conversions-in-elixir/
+# 更多資源
+如果你想深入學習Elixir的String模型和函數操作，我推薦給你下面幾個是學習資源：
+- [Elixir 官方String模組文檔](https://hexdocs.pm/elixir/String.html)
+- [Erlang 字串操作函數列表](http://erlang.org/doc/man/string.html)
+- [Elixir 學習手冊:字串操作](https://elixirschool.com/zh-hans/lessons/basics/strings/)

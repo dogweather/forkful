@@ -1,7 +1,7 @@
 ---
-title:                "Аналізування HTML"
-html_title:           "TypeScript: Аналізування HTML"
-simple_title:         "Аналізування HTML"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і чому?
-Parsing HTML - це процес аналізування інформації, що міститься у веб-сторінках. Це часто робиться програмістами для отримання потрібної інформації з веб-сайту для подальшого використання.
+## Що таке & Навіщо?
 
-# Як:
+Розбір HTML, або парсинг HTML, - це процес аналізу HTML-коду, щоб отримати структуровані дані й взаємодіяти з ними. Програмісти роблять це для автоматичної обробки, маніпуляції даними або витягування інформації з веб-сторінок.
+
+## Як це зробити:
+
 ```TypeScript
-// Приклад парсингу HTML за допомогою бібліотеки Cheerio
-import * as cheerio from 'cheerio';
+import { parse } from 'node-html-parser';
 
-const html = '<ul><li>Пункт 1</li><li>Пункт 2</li><li>Пункт 3</li></ul>';
-const $ = cheerio.load(html); // ініціалізація об’єкта Cheerio
+const html = `<ul id="list"><li class="item">Item One</li><li class="item">Item Two</li></ul>`;
+const root = parse(html);
 
-$('li').each((index, element) => { // знаходимо всі елементи <li> та виконуємо функцію для кожного
-    console.log($(element).text()); // виводимо вміст кожного елементу
-});
-
-// Результат:
-// Пункт 1
-// Пункт 2
-// Пункт 3
+console.log(root.querySelector("#list").text);  // "Item OneItem Two"
 ```
 
-# Глибокий погляд:
-Parsing HTML був особливо актуальним у минулому, коли браузери не могли коректно відображати веб-сторінки без наявності вбудованого парсера. Сьогодні є також альтернативні способи отримання потрібної інформації з веб-сайту, такі як використання API або регулярних виразів. У TypeScript, на додаток до використання бібліотеки Cheerio, можливо використовувати інші бібліотеки, наприклад jsdom, для парсингу HTML.
+Вищенаведений код вихоплює текст з елементів у списку HTML.
 
-# Подивитися також:
-- [Документація по бібліотеці Cheerio](https://github.com/cheeriojs/cheerio)
-- [Інструкція для використання jsdom](https://www.npmjs.com/package/jsdom)
-- [Корисна стаття на тему парсингу HTML за допомогою TypeScript](https://blog.bitsrc.io/web-scraping-with-node-js-c93dcf76fe2b)
+## Пірнаємо глибше
+
+Розбір HTML виник у 1990-их роках з появою перших веб-сторінок. Є багато альтернатив (бібліотек і модулів), щоб робити це, залежно від мови програмування. Зазвичай, вони будують DOM-дерево з HTML-коду, тобто модель сторінки, яку можна проаналізувати і змінити. Наприклад, в JavaScript можна використовувати JSDOM або Cheerio, а в Python - Beautiful Soup.
+
+## Дивіться також 
+
+1. [Node HTML Parser на GitHub](https://github.com/taoqf/node-html-parser)
+2. [Стаття на MDN про DOM](https://developer.mozilla.org/uk/docs/Web/API/Document_Object_Model)
+3. [Python Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/)
+4. [JSDOM GitHub Repo](https://github.com/jsdom/jsdom)
+5. [Cheerio на GitHub](https://github.com/cheeriojs/cheerio)

@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使う"
-html_title:           "C++: 正規表現を使う"
-simple_title:         "正規表現を使う"
+title:                "正規表現の使用"
+html_title:           "Bash: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-正規表現を使用するとは何でしょうか？それは、文字列のパターンを簡単に検索・置換・抽出するための方法です。プログラマーは、このような機能を利用して、コード内のテキストを効率的に処理することができます。
+## 何となぜ？
 
-## 方法：
-以下のように、C++で正規表現を使用する方法を示します。 ```C++
+正規表現とは、一連の文字列をマッチングするためのパターンです。プログラマーがこのテクニックを使用するのは、コード内の特定の文字列を見つけたり、検証したり、置き換えたりするためです。
+
+## 使い方：
+
+正規表現を使用するC++の基本的な例を以下に示します。
+
+```C++
 #include <regex>
-using namespace std;
+#include <iostream>
 
 int main() {
-  string text = "こんにちは、私の名前は太郎です。";
-  regex pattern("私の名前は([a-zA-Z]+)です");
-  smatch match;
+    std::string s = "I love 123 programming languages";
+    std::regex e ("\\d+");  // 注意：数字を表す正規表現
 
-  if (regex_search(text, match, pattern)) {
-    cout << match.str(1) << endl; // 太郎 が出力されます
-  }
+    // s内の数字がマッチするかどうか判断
+    if (std::regex_search (s,e))
+        std::cout << "There are some digits in the string\n";
 }
 ```
-上記のコードでは、文字列 `text` の中から、正規表現 `私の名前は([a-zA-Z]+)です` にマッチする部分を探し、マッチした部分の一つ目のグループを出力しています。
+このコードを実行すると、「There are some digits in the string」と表示されます。このメッセージは、指定したパターン("\\d+")が文字列の中で見つかったことを示しています。
 
-## 詳細：
-正規表現は、1960年代から使われているパターンマッチングの手法です。他の言語にも同様の機能がありますが、C++の場合は `<regex>` ライブラリを利用することで実現できます。代替手段としては、文字列操作を行う関数を自作する方法もありますが、正規表現を使うことでより簡単かつ高速に処理できる可能性があります。
+## 深掘り：
+
+正規表現は、1950年代に開発されたもので、UNIXパイプラインのgrepコマンドなど、初期のコンピューティング環境で一般的に使用されていました。それらは現在でもその価値が認められ、あらゆる高レベルプログラミング言語に採用されています。
+
+一方で、正規表現の代わりにワイルドカードを使用することも可能ですが、正規表現の方がはるかに強力であるため、より複雑なパターンマッチングが求められる場合には正規表現を用いることが一般的です。
+
+また、C++の正規表現は、内部的には無限オートマトンとして実装されています。これにより、さまざまな複雑なパターンマッチングを効率良く行うことが可能となります。
 
 ## 関連情報：
-より詳しい使い方やアドバンスドなトピックについては、以下のリンクを参考にしてみてください。
-- [正規表現チュートリアル (C++)](https://www.cplusplus.com/reference/regex/regex/)
-- [正規表現オンラインテストツール](https://regex101.com/)
-- [Boost Regex Library](https://www.boost.org/doc/libs/1_76_0/libs/regex/doc/html/index.html)
+
+以下のリンクでは、正規表現の詳細や使い方、さらに進んだトピックなどについて学ぶことができます。
+
+- C++のregexライブラリ（https://www.cplusplus.com/reference/regex/）
+- 正規表現のチュートリアル（https://regexone.com/）
+- 正規表現クイックリファレンス（http://www.rexegg.com/regex-quickstart.html）

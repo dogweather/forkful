@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Lua recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,36 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Concatenating strings in Lua means combining multiple strings into one. Programmers do this to create larger and more complex strings that can then be used for various purposes such as outputting information or building user interfaces.
+Concatenating strings involves connecting two or more strings into one, akin to joining sentences. It is essential for programmers to make informative outputs, weave together sentences, format data, or build command strings.
 
 ## How to:
 
-To concatenate strings in Lua, use the `..` operator between two or more strings. Here's an example:
+String concatenation in Lua uses the `..` operator. Here's a straightforward example.
 
 ```Lua
--- Define two strings
-local str1 = "Hello "
-local str2 = "world!"
-
--- Concatenate the strings
-local result = str1 .. str2
-
--- Output the result
-print(result)
+string1 = "Hello, "
+string2 = "world!"
+concatenated_string = string1 .. string2
+print(concatenated_string)
 ```
 
-The output of the above code will be `Hello world!`.
+The output will be:
 
-## Deep Dive:
+```Lua
+Hello, world!
+```
 
-- Historical Context: Concatenation comes from the Latin word "concatenare" meaning "to link together". In early programming languages, concatenating strings was a complex and tedious process, but with Lua, it has become much easier and more efficient.
+Notice that we had to include a space after "Hello," in the string1 to get the right output format. Otherwise, there would be no space between "Hello," and "world!".
 
-- Alternatives: In Lua, there are other ways to combine strings such as using the `string.format` function or the `gsub` function. However, using the `..` operator is the most common and efficient method.
+## Deep Dive
 
-- Implementation Details: In Lua, strings are immutable, meaning they cannot be changed. So, when strings are concatenated, a new string is created instead of modifying the existing ones. To avoid creating unnecessary strings, it is recommended to use the `table.concat` function when working with large amounts of data.
+Historically, Lua's simplicity was geared for embedding in applications. It's still the case with its '..' operator for concatenation, providing an alternative to '+' which usually means addition in most programming languages.
 
-## See Also:
+Alternatives to concatenation in Lua are functions like 'string.format' and 'table.concat'. 'string.format' is similar to printf in C, and 'table.concat' deals with concatenation of table elements.
 
-- [Lua String Manipulation](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [Learn Lua in 15 Minutes](https://learnxinyminutes.com/docs/lua/)
-- [Lua Concatenation Tutorial](https://www.tutorialspoint.com/lua/lua_concatenation.htm)
+From an implementation perspective, string concatenation can be slightly costly, especially when done in large volumes. Lua creates a new string when two strings are concatenated, as Lua strings are immutable, similar to Python and Java. Efficient concatenation can be achieved through StringBuffer pattern (like in Java) or table-structured strings to avoid constantly creating new strings.
+
+## See Also
+
+For more in-depth knowledge, refer to the official Lua documentation:
+- String usage: https://www.lua.org/pil/2.5.html
+- Lua's functions: https://www.lua.org/pil/2.4.html
+- Efficient string concatenation: https://www.lua.org/gems/sample.pdf

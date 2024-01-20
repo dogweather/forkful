@@ -1,6 +1,6 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "Gleam: Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,17 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å starte et nytt prosjekt er å skape en ny kodebase for å utvikle et nytt program eller en ny funksjon. Det kan være nødvendig når du ønsker å utvide funksjonaliteten til et eksisterende program eller når du begynner å arbeide med et helt nytt prosjekt. Programmører gjør dette for å organisere og strukturere koden sin på en mer effektiv måte, og for å sikre seg at alt fungerer som det skal.
+---
+title: Starte ditt første prosjekt med Gleam
+---
 
-# Slik gjør du:
-For å starte et nytt prosjekt i Gleam, kan du bruke kommandoen `gleam new project_name`, hvor `project_name` er navnet du ønsker å gi ditt nye prosjekt. Dette vil opprette en ny mappe med navnet du har valgt, og fylle den med alle nødvendige filer og mapper for å komme i gang. Deretter kan du åpne prosjektmappen i din foretrukne teksteditor og begynne å skrive din første kode.
+## Hva & Hvorfor?
 
-# Dyptdykk:
-I starten ble Gleam utviklet som et funksjonelt programmeringsspråk spesielt egnet for samtidige og distribuerte systemer. Dette gjør det til et kraftig valg for å skrive høytytende og pålitelige programmer. Alternativene til Gleam inkluderer andre funksjonelle programmeringsspråk som for eksempel Elixir og Erlang. Implementeringen av Gleam er basert på Erlang-plattformen som gir det muligheten til å dra nytte av alle de avanserte funksjonene og bibliotekene som er tilgjengelige i Erlang.
+Å starte et nytt prosjekt er prosessen med å initialisere et nytt sett med kodefiler som er organisiert på en spesifikk måte. Programmerere gjør dette for å bygge en ny applikasjon eller et verktøy.
 
-# Se også:
-For mer informasjon om å starte et nytt prosjekt i Gleam og for å få inspirasjon til å komme i gang med ditt eget prosjekt, anbefaler vi følgende ressurser:
-- [Gleam offisiell dokumentasjon](https://gleam.run/)
-- [Gleam-tutorials](https://gleam-lang.org/tutorials/)
-- [Eksempler fra Gleam-samfunnet](https://github.com/gleam-lang/awesome-gleam)
+## Hvordan:
+
+Å starte et nytt Gleam-prosjekt er enkelt. Bare bruk `gleam new` kommandoen og gi det et navn. 
+
+```Gleam
+$ gleam new mitt_prosjekt
+```
+Da får du en mappenstruktur som dette:
+
+```Gleam
+mitt_prosjekt
+├── gleam.toml
+├── README.md
+├── src
+│   ├── mitt_prosjekt.gleam
+│   ├── mitt_prosjekt.app.src
+├── test
+│   ├── mitt_prosjekt_test.gleam
+```
+
+## Dyp Dykk
+
+Gleam språket, selv om det er relativt nytt, har røtter i Erlang og Rust programmeringsspråk. Det er designet for å være svært uttrykksfullt og effektivt for både små og store prosjekter. 
+
+Alternativene til å starte et nytt Gleam prosjekt kan være å klonere et eksisterende prosjekt, eller å bruke en boilerplate eller mal. 
+
+Når du starter et nytt Gleam prosjekt, opprettes en rekke filer og kataloger som hjelper deg med å organisere koden din. Gleam bruker en modulær struktur for å organisere koden, noe som gjør det enkelt å strukturere din applikasjon eller bibliotek.
+
+## Se Også:
+
+- [Gleam's GitHub repo](https://github.com/gleam-lang/gleam)
+- [Gleam koekkbok](https://github.com/gleam-lang/gleam-cookbook)
+- [Offisiell dokumentasjon](https://gleam.run/docs/)

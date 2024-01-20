@@ -1,6 +1,6 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Haskell: Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
 simple_title:         "Extraindo substrings"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Por Que?
 
-Extrair substrings significa pegar uma parte de uma string maior, geralmente com base em um padrão específico. Programadores fazem isso para manipular dados de forma mais eficiente, facilitando tarefas como busca e substituição em textos.
+Extrair substrings é a ação de obter partes específicas de uma string. Programadores fazem isso frequentemente para manipular dados de string complexos ou grandes.
 
-## Como fazer:
+## Como:
 
-Extrair uma substring em Haskell é simples e pode ser feito de várias formas. Veja um exemplo usando a função ```take```, que pega os primeiros n elementos de uma lista:
-
-```Haskell
-take 3 "Exemplo de substring" 
-```
-A saída seria "Exe". No entanto, isso só funciona para extrair uma quantidade fixa de caracteres. Para extrair com base em um padrão, podemos usar a função ```dropWhile```, que remove elementos enquanto o predicado fornecido for verdadeiro:
+Aqui está um exemplo simples de como extrair substrings em Haskell.
 
 ```Haskell
-dropWhile (/='a') "Exemplo de substring"
+substring :: Int -> Int -> String -> String
+substring start end = take (end - start) . drop start
 ```
-A saída seria "a substring".
 
-## Mergulho profundo:
+Uso e saída:
 
-Extrair substrings é uma técnica antiga e amplamente utilizada em programação de computadores, com muitas funções e métodos dedicados a essa tarefa em diferentes linguagens. Em Haskell, existem outras funções além de ```take``` e ```dropWhile``` para extrair substrings, como ```substring``` e ```slice```. Além disso, é importante lembrar que strings em Haskell são tratadas como listas de caracteres, permitindo o uso de funções genéricas como ```filter``` e ```map``` para extrair substrings com base em uma condição.
+```Haskell
+substring 0 5 "Ola, mundo de Haskell!"  -- Resultado será "Ola, "
+```
 
-## Veja também:
+## Aprofundando
 
-- [Funções de manipulação de strings em Haskell](https://www.haskell.org/hoogle/?hoogle=string)
-- [Documentação oficial da linguagem Haskell](https://www.haskell.org/documentation/)
-- [Tutorial prático sobre manipulação de strings em Haskell](https://wiki.haskell.org/Strings)
+* Histórico: Em Haskell, o ato de extrair substrings tem sido feito usando as funções `drop` e `take` desde seus primórdios. As funções são combinadas para selar a substring dentro do intervalo desejado.
+* Alternativas: Outro método é usar a função `splitAt` que divide a string em duas no índice especificado. Mas, dificilmente é preferível em relação à abordagem `take` e `drop` por causa de sua complexidade.
+* Detalhes da implementação: Uma coisa importante a notar é que os índices estão baseados em zero e o último índice não está incluso na substring extraída.
+
+## Ver Também
+
+Aprenda mais sobre substrings e strings em Haskell aqui:
+* https://wiki.haskell.org/Substring
+* https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-String.html

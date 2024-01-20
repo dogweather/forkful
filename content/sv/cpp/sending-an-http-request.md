@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "C++: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Skicka en http-förfrågan"
+html_title:           "Javascript: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,50 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-När vi pratar om att skicka en HTTP-begäran i C++, menar vi att skicka en förfrågan från vår C++-kod till en webbplats eller webbtjänst. Detta är vanligtvis gjort för att hämta eller skicka data till och från en webbserver.
+## Vad & Varför?
 
-Det är en vanlig uppgift för programmerare, eftersom många applikationer nu integrerar med webbtjänster för att hämta information eller utföra olika uppgifter.
+Att skicka en HTTP-begäran innebär att man skickar en request till en server för att interagera med en webbplats eller ladda ner data. Programmerare gör detta för att hämta, sända eller uppdatera information över internet.
 
-# Så här gör du:
-För att skicka en HTTP-begäran i C++, måste vi först använda ett bibliotek som kan hantera HTTP-kommunikation. Ett populärt val är cURL biblioteket, som vi kan inkludera i vår kod med hjälp av <curl/curl.h> filen.
+## Hur man gör:
 
-Här är ett exempel på hur en GET-begäran kan se ut med cURL biblioteket:
+Vi kommer att använda biblioteket `C++ REST SDK (Casablanca)` för detta. Installationsinstruktioner finns [här](https://github.com/Microsoft/cpprestsdk).
 
 ```C++
-#include <curl/curl.h>
+    #include <cpprest/http_client.h>
+    #include <cpprest/filestream.h>
 
-// Skapa en variabel för att lagra utdatan från begäran
-std::string output;
+    using namespace utility; // Common utilities like string conversions
+    using namespace web; // Common features like URIs.
+    using namespace web::http; // Common HTTP functionality
+    using namespace web::http::client; // HTTP client
+    using namespace concurrency::streams; // Asynchronous streams
 
-// Ange den URL som du vill hämta data från
-CURL* curl = curl_easy_init();
-curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_callback);
-curl_easy_setopt(curl, CURLOPT_WRITEDATA, &output);
+    int main(int argc, char *argv [])
+    {
+        http_client client(U("http://example.com"));
 
-// Utför GET-begäran
-CURLcode res = curl_easy_perform(curl);
+        http_request request(methods::GET);
 
-// Stäng cURL session
-curl_easy_cleanup(curl);
-
-// Skriv ut datan som returnerades från webbplatsen
-std::cout << output << std::endl;
+        client.request(request)
+        .then([](http_response response){
+            return response.extract_string();
+        }).then([](std::string body){
+            printf("%s", body.c_str());
+        }).wait();
+       
+        return 0;
+    }
 ```
 
-I det här fallet använder vi functionen `write_callback` för att skicka datan som returneras från GET-begäran till vår `output`-variabel.
+Kodrutan ovan skickar en GET-begäran till "http://example.com" och skriver ut responsdata som en sträng.
 
-# Djupdykning:
-CURL biblioteket introducerades 1997 och har sedan dess blivit en viktig del av kommunikationen över webben. Det erbjuder också stöd för en mängd andra protokoll som HTTPS, FTP och SCP.
+## Djupdykning
 
-Ett annat populärt alternativ för HTTP-kommunikation är biblioteket Boost.Beast. Detta bibliotek är en del av Boost C++ libraries och ger ett mer abstrakt API för att skicka och hantera HTTP-begäran.
+HTTP-begäranden har använts sedan tidigt 90-tal då HTTP/1.0-protokollet först definierades. Alternativ till `C++ REST SDK (Casablanca) `inkluderar bibliotek som `CURL` och `Boost.Asio`.
 
-Skicka en HTTP-begäran är en process som vanligtvis innehåller flera steg, inklusive att skapa en session, ange URL och HTTP-metod, sätta headers och kroppsdata och sedan utföra begäran. Både cURL och Boost.Beast biblioteken hanterar dessa steg för oss, vilket gör det enklare för oss att integrera med webbtjänster i vår C++ kod.
+Oftast måste de HTTP-begäranden skickas asynkront för att inte blockera programflödet, vilket gör att svar kan hanteras när de kommer in istället för att vänta på att de ska komma tillbaka innan du kan fortsätta. Detta är mycket viktigt i program som är beroende av användarinteraktion, såsom webbläsare.
 
-# Se även:
-Om du är intresserad av att lära dig mer om att skicka HTTP-begäran i C++, finns det många resurser tillgängliga online. Här är några länkar som kan vara användbara:
+## Se även
 
-- cURL bibliotekets officiella hemsida: https://curl.se/
-- En tutorialsida om cURL: https://curl.haxx.se/libcurl/c/
-- Boost.Beast bibliotekets dokumentation: https://www.boost.org/doc/libs/1_76_0/libs/beast/doc/html/index.html
+Läs mer om C++ REST SDK (Casablanca) [här](https://github.com/Microsoft/cpprestsdk/wiki).
+För alternativa bibliotek, titta på [CURL](https://curl.haxx.se/libcurl/c/) eller [Boost.Asio](https://think-async.com/Asio/).
+För mer om HTTP-begäranden och dess historia, se [här](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview).

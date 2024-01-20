@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "Kotlin: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué y por qué?
+## ¿Qué y Por Qué?
 
-Extraer subcadenas es una técnica común en la programación en la que se toma una parte de una cadena más grande y se almacena como una cadena separada. Los programadores hacen esto para manipular y analizar datos más específicos en sus programas.
+Extraer substrings es separar una parte de una cadena existente. Los programadores lo hacen para analizar datos, redistribuir piezas de texto y manipular cadenas.
 
-## ¡Cómo hacerlo!
+## ¿Cómo se hace?
 
-``` kotlin
-// Crear una cadena
-val frase = "¡Hola a todos mis amigos!"
+En Kotlin, tenemos la función `substring`. Aquí están los ejemplos:
 
-// Usando el método "substring", extraemos la subcadena "todos mis"
-val subcadena = frase.substring(11, 19)
-
-// Imprimimos la subcadena
-println(subcadena)
-
-// Output: todos mis
+```Kotlin
+val texto = "Hola, Mundo Kotlin"
+val substring = texto.substring(0, 4)  // "Hola"
 ```
 
-## Un poco más profundo
+La función `substring` toma el inicio y el fin del substring que queremos. Devuelve el substring entre estos índices.  
 
-La extracción de subcadenas ha existido desde los primeros días de la programación de computadoras. Es una forma fácil y rápida de acceder a partes específicas de una cadena sin tener que manipularla directamente. Alternativamente, también se puede lograr utilizando la función "slice" en Kotlin. La implementación de la extracción de subcadenas en Kotlin es eficiente y optimizada para manejar grandes volúmenes de texto.
+Otra opción es usar rangos:
 
-## Ver también
+```Kotlin
+val substring = texto.substring(0..4)  // "Hola,"
+```
 
-Enlaces a fuentes relacionadas:
+## Detalles Adicionales
 
-- [Documentación oficial de la función "substring" en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
-- [Documentación oficial de la función "slice" en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/slice.html)
+Kotlin adopta el enfoque de otras lenguajes como JavaScript y Java para extraer substrings, facilitando a los desarrolladores aprender y aplicar este concepto.
+
+Aunque la función `substring` es ampliamente utilizada, podrías usar la expresión regular si los escenarios son complejos. La biblioteca de Kotlin también suministra la función `slice` que toma un rango como parámetro.
+
+Para el rendimiento, cuando extraes un substring, Kotlin no crea un nuevo objeto de cadena, sino que simplemente apunta a la cadena original y usa un par de índices para indicar el inicio y el fin del substring. Esto hace que la operación de extracción sea extremadamente eficiente.
+
+## Ver También
+
+1. La documentación oficial de Kotlin sobre el [trabajo con cadenas](https://kotlinlang.org/docs/idioms.html#working-with-collections)
+2. Un tutorial más detallado sobre [substrings y rangos en Kotlin](https://www.baeldung.com/kotlin-substring)
+3. Para los nuevos en Kotlin, comienza con el [Tutorial oficial de Kotlin para principiantes](https://kotlinlang.org/docs/tutorials/)

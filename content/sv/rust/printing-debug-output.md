@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsresultat"
-html_title:           "Rust: Utskrift av felsökningsresultat"
-simple_title:         "Utskrift av felsökningsresultat"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
-Att skriva ut debug-utdata är när man som programmerare skriver ut relevant och användbar information för att underlätta felsökning och förbättra kodens prestanda.
+# Rust-programmering: Så här skriver du ut felsökningsresultat ("Debug Output")
 
-Det är vanligtvis användbart när man vill se vad som händer i ett program under körning och för att hitta eventuella buggar eller ineffektiv kod.
+## Vad & Varför?
+Att skriva ut felsökningsresultat är processen att visa interna datakällor i koden för felsökning. Programmerare gör detta för att spåra och lösa buggar effektivt.
 
-## Hur man gör det:
+## Hur man gör:
 
-Här är ett enkelt exempel på hur man skriver ut en textsträng i Rust:
+Använd `println!` och `{:?}` eller `{:#?}` för att skriva ut felsökningsresultat i Rust. Exempel:
 
-```rust
-println!("Hej världen!");
+```Rust
+fn main() {
+    let v = vec![1, 2, 3];
+    println!("Debug: {:?}", v);
+    println!("Pretty Debug: {:#?}", v);
+}
 ```
 
-Detta kommer att skriva ut "Hej världen!" i terminalen eller i konsolen när programmet körs.
+Detta kommer att skriva ut:
 
-Här är ett mer avancerat exempel som visar hur man kan använda formatmallar för att skriva ut variabler tillsammans med text:
-
-```rust
-let num1 = 5;
-let num2 = 10;
-
-println!("Summan av {} och {} är {}", num1, num2, num1 + num2);
+```Rust
+Debug: [1, 2, 3]
+Pretty Debug: [
+    1,
+    2,
+    3,
+]
 ```
 
-Detta kommer att skriva ut "Summan av 5 och 10 är 15".
+## Djupdykning
 
-## Djupdykning:
+1. Historisk context: Rust introducerade `{:?}` för att skriva ut Debug-trait i stället för `fmt` gränssnittet, vilket ger en mer detaljerad utförlig utskrift.
+2. Alternativ: Utöver `println!` kan du också använda `debug!` från loggbiblioteket för att kontrollsystemets loggnivåer.
+3. Implementeringsdetaljer: Var medveten om att inte alla typer kan skrivas ut med `{:?}`. Din typ behöver implementera Debug-traiten.
 
-Att skriva ut debug-utdata har funnits länge inom programmering och är en vanlig metod för att felsöka kod. Innan det fanns moderna debugging-verktyg var det vanligt att skriva ut information om variabler och programflöde för att hitta problem.
+## Se också
 
-Ett alternativ till att skriva ut debug-utdata är att använda en debugger, en speciell typ av program som hjälper dig att spåra och fixa fel i din kod. Detta kan vara mer effektivt än att bara skriva ut information, men vissa föredrar fortfarande att använda printf-debugging då det ger en bättre överblick av koden.
+- [Rusts dokumentation för `fmt` ](https://doc.rust-lang.org/std/fmt/)
+- [Loggbiblioteket `log`](https://docs.rs/log/0.4.14/log/) 
 
-I Rust finns det flera sätt att skriva ut debug-utdata. Det vanligaste är att använda makron som ```println!``` och ```eprintln!```, men det finns också andra alternativ som t.ex. ```dbg!``` och ```format!``` som ger mer kontroll över utdataformatet.
-
-## Se även:
-
-- [Rust bok](https://doc.rust-lang.org/book/ch05-01-defining-structs.html#debugging-with-println)
-- [Rust RFC om debugging-makron](https://github.com/rust-lang/rfcs/blob/master/text/2329-custom-print-formatters.md)
-- [Rust dokumentation om formatmakron](https://doc.rust-lang.org/std/fmt/#formatting-traits)
+Kom ihåg, skriv ut felsökningsresultat hjälper dig att lättare hitta och lösa problem i din kod. Använd denna teknik klokt och effektivt för din Rust-programmering.

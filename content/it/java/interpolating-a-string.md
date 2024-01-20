@@ -1,7 +1,7 @@
 ---
-title:                "Interpolare una stringa"
-html_title:           "Java: Interpolare una stringa"
-simple_title:         "Interpolare una stringa"
+title:                "Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
+simple_title:         "Interpolazione di una stringa"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,44 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos'è & Perché?
 
-L'interpolazione di una stringa è un modo per inserire valori dinamici all'interno di una stringa fissa. Questo è utile per creare stringhe personalizzate in base a variabili o input dall'utente. I programmatori utilizzano l'interpolazione di stringhe per rendere il loro codice più flessibile e dinamico.
+L'interpolazione delle stringhe è un processo che sostituisce segnaposti all'interno di una stringa con i loro valori corrispondenti. Lo facciamo per creare stringhe dinamiche, migliorare la leggibilità del codice e ridurre il rischio di errori.
 
 ## Come fare:
 
-Ecco un esempio di interpolazione di stringa in Java:
+La versione corrente di Java non supporta nativamente l'interpolazione delle stringhe, ma possiamo usare `String.format()`, come mostrato:
 
 ```Java
-String nome = "Mario";
-int eta = 30;
-
-System.out.println("Ciao, mi chiamo ${nome} e ho ${eta} anni.");
+int eta = 26;
+String nome = "Luca";
+String messaggio = String.format("Ciao, il mio nome è %s e ho %d anni", nome, eta);
+System.out.println(messaggio);
 ```
 
-Questo codice produce l'output: "Ciao, mi chiamo Mario e ho 30 anni." Come puoi vedere, il valore delle variabili viene inserito all'interno della stringa tra parentesi graffe.
-
-Puoi anche utilizzare l'interpolazione di stringa per concatenare più variabili o eseguire operazioni all'interno della stringa. Ecco un altro esempio:
+L'output sarà:
 
 ```Java
-int numero1 = 5;
-int numero2 = 10;
-int risultato = numero1 + numero2;
-
-System.out.println("La somma di ${numero1} e ${numero2} è ${risultato}.");
+Ciao, il mio nome è Luca e ho 26 anni
 ```
-
-L'output sarà: "La somma di 5 e 10 è 15."
 
 ## Approfondimento:
 
-L'interpolazione di stringa è stata introdotta in Java 15 come alternativa alla concatenazione di stringhe con l'operatore `+`. Questo rende il codice più leggibile e facile da mantenere. Inoltre, è possibile utilizzare l'interpolazione di stringa anche con caratteri speciali o stringhe di formato.
+L'interpolazione delle stringhe è un concetto comune in molti linguaggi di programmazione come JavaScript e Python. Prima di Java 5, si ricorreva alla concatenazione di stringhe o a `StringBuffer` o `StringBuilder`.
 
-Un'altra alternativa all'interpolazione di stringa è l'utilizzo della classe `String.format()`, che consente di impostare un formato specifico per ogni argomento della stringa.
+Un'alternativa all'uso di `String.format()` è utilizzare una libreria esterna, come `MessageFormat` di Apache Commons.
 
-Per quanto riguarda l'implementazione, l'interpolazione di stringa utilizza una combinazione di metodi `StringBuilder` e `String.format()` per creare la stringa finale con i valori inseriti al loro posto.
+Dettagli implementativi: `String.format()` utilizza internamente `Formatter` che interpreta il formato della stringa. Ogni volta che si chiama `String.format()`, viene creato un nuovo oggetto `Formatter`, il che può portare a un overhead importante nell'utilizzo della memoria se la chiamata avviene in un ciclo pesante.
 
 ## Vedi anche:
 
-- [Java String.format() documentation] (https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#format(java.lang.String,java.lang.Object...))
-- [Java 15 release notes] (https://www.oracle.com/java/technologies/javase/15-relnote-issues.html#JDK-8240594)
+- Documentazione ufficiale di Java su [String.format()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
+- Documentazione di [MessageFormat](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/MessageFormat.html) da Apache Commons.

@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistaakko hakemisto on olemassa"
-html_title:           "Gleam: Tarkistaakko hakemisto on olemassa"
-simple_title:         "Tarkistaakko hakemisto on olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Gleam: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -12,26 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mikä & Miksi?
 
-Tarkistaa onko hakemisto olemassa. Tämä on tärkeä askel monissa ohjelmoinnin projekteissa, koska luoja määritelmän täytyy tietää onko hakemisto olemassa tai ei.
+Tarkistetaan, onko hakemisto olemassa selventääksemme, löytyykö hakemisto filejärjestelmästämme. Ohjelmoijat tekevät tämän virheiden välttämiseksi, jos he yrittävät lukea tai kirjoittaa hakemistoon, jota ei ole olemassa.
 
-## Miten:
+## Miten tehdä:
 
 ```Gleam
-let exists = os.fs.exists("hakemisto")
+import gleam/filesystem.{File}
+
+let file_handle = File.open("path/to/dir", [])
+IO.puts(File.exists?(file_handle)
 ```
+Jos yllä oleva koodiajona ajetaan ja hakemisto on olemassa, se tulostaa `True` konsoliin. Ellei, se palauttaa `False`.
 
-Tässä yksinkertaisessa esimerkissä käytämme Gleamin `os.fs` -pakettia tarkistamaan, onko hakemisto nimeltään "hakemisto" olemassa. Tulos tallennetaan muuttujaan `exists`, joka on joko `true` tai `false`.
+## Syvällinen sukellus:
 
-## Syvemmälle:
+Tarkistamalla, onko hakemisto olemassa, on suhtellisen uusi käsite, kun tarkastellaan ohjelmoinnin pitkää historiaa. Vain viime vuosikymmenillä, kun tiedostojärjestelmät ovat kasvaneet massiivisesti, tällainen toiminnallisuus on tullut välttämättömäksi.
 
-Hakemistojen olemassaolon tarkistaminen on tullut tärkeäksi nykyaikaisissa ohjelmoinnin projekteissa, joissa tarvitaan tiedostojen ja hakemistojen käsittelyä. Se auttaa varmistamaan, että halutut tiedostorakenteet ovat olemassa ennen kuin niihin yritetään viitata.
+Vaihtoehtoisena lähestymistapana, jotkut ohjelmoijat saattavat yrittää avata hakemistoa ja nähdä, palautetaanko virhe. Tämä on kuitenkin harvinaista ja saattaa johtaa hämmentäviin virheviesteihin.
 
-Vaihtoehtoisesti hakemiston olemassaolon voi tarkistaa myös käyttämällä operatiivijärjestelmän komentoja, kuten `ls` tai `dir`. Gleam tarjoaa kuitenkin yksinkertaisen ja suoraviivaisen tavan tehdä tämä suoraan ohjelmassa.
-
-Tämän toteuttamiseksi Gleam käyttää operatiivijärjestelmän `stat` -komentoa, joka palauttaa tiedon tiedostosta tai hakemistosta. Tämän tiedon avulla Gleam voi tarkistaa onko hakemisto olemassa vai ei.
+Gleam-kielessä, hakemiston olemassaolon tarkistaminen tehdään `filesystem`-moduulissa, esimerkiksi käyttämällä `File.exists?` -funktiota. Tämä funktio avaa sille syötetyn filePath merkkijonon ja palauttaa arvon `True`, jos hakemisto on olemassa. Muussa tapauksesssa se palauttaa `False`.
 
 ## Katso myös:
 
-- [Gleamin virallinen dokumentaatio](https://gleam.run/)
-- [Gleam `os.fs` -paketin dokumentaatio](https://gleam.run/news/0.15.0-released.html)
-- [Operatiivijärjestelmän `stat` -komennon dokumentaatio](https://en.wikipedia.org/wiki/Stat_(system_call))
+- [Gleam Filesystem documentation](https://hexdocs.pm/gleam_stdlib/gleam/filesystem/)
+- [Understanding file systems](https://developer.mozilla.org/en-US/docs/Web/API/File_and_Directory_Entries_API)
+- [Gleam introduction](https://gleam.run/introduction/)

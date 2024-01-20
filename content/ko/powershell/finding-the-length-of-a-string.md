@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "PowerShell: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜? 
-문자열의 길이를 파악하는 것은 프로그래머에게 중요한 작업입니다. 문자열의 길이를 알면 자료를 보다 효율적으로 다룰 수 있고, 오류를 방지할 수 있기 때문입니다.
+## 무엇인가요 & 왜?
 
-## 하는 법:
-```PowerShell
-$str = "안녕하세요!"
-Write-Host "문자열의 길이는" $str.Length "입니다."
-```
+문자열의 길이를 찾는 것은 해당 문자열에 포함된 문자 수를 계산하는 것입니다. 프로그래머들은 이를 통해 데이터 유효성 검사, 문자열 변형, 등 동작의 실행 조건을 설정하는 데 필요합니다.
+
+## 어떻게 하나요:
 
 ```PowerShell
-$str = "Hello World!"
-Write-Host "The length of the string is" $str.Length "."
+# PowerShell에서 문자열 정의
+$s = "PowerShell"
+
+# ```.Length``` 속성을 사용하여 문자열 길이 확인
+$s.Length
 ```
+위의 코드 실행 결과는 10을 출력합니다. 이는 "PowerShell"이라는 문자열이 총 10개의 문자로 구성되어 있음을 나타냅니다.
 
-```PowerShell
-$str = "Hola Mundo!"
-Write-Host "La longitud de la cadena es" $str.Length "."
-```
+## 디프다이브:
 
-## 더 깊게 들어가기:
-문자열의 길이를 알아내는 것은 매우 기본적이고 기본적인 프로그래밍 작업입니다. 모든 프로그래밍 언어에서 사용할 수 있으며, 자료의 길이를 파악하는 다양한 방법이 있습니다. 예를 들어, 문자열의 길이를 파악하는 다른 방법으로는 ‘substring’ 함수를 사용하는 방법이 있습니다. 이 함수는 원하는 위치에서 소스 문자열로부터 지정된 길이만큼의 문자열을 추출하는 역할을 합니다. 
+1. 문자열의 길이를 찾으려는 이론은 컴퓨터 과학의 최소한의 기초입니다. 이것은 문자열을 조작하고, 데이터를 설명하고, 알고리즘을 실행하는데 중요합니다. 
 
-## 관련 정보:
-- [Microsoft PowerShell 문서](https://docs.microsoft.com/ko-kr/powershell/scripting/learn/ps101/05-text?view=powershell-7.1)
-- [DevDojo: String Length in PowerShell](https://devdojo.com/mattspaulding/string-length-in-powershell)
+2. PowerShell 외의 다른 프로그래밍 언어에서도 문자열의 길이를 찾는 방법이 있습니다. 예를 들어, Python에서는 ```len()``` 함수, Java에서는 ```.length()``` 메서드를 사용하게 됩니다.
+
+3. PowerShell의 ```.Length```는 문자열 객체의 속성으로 내장되어 있습니다. 이는 문자열 내의 문자 수를 직접 세서 구하는 게 아닌, 문자열 생성 시점에 결정되는 값입니다. 따라서 이 방법은 문자열의 길이를 찾을 때 매우 효율적입니다.
+
+## 참고자료:
+
+- [PowerShell의 문자열 사용법](https://docs.microsoft.com/ko-kr/powershell/module/microsoft.powershell.core/about/about_string?view=powershell-7.1)
+- [Python에서 문자열의 길이 찾기](https://www.w3schools.com/python/ref_func_len.asp)
+- [Java에서 문자열의 길이 찾기](https://www.tutorialspoint.com/java/java_string_length.htm)

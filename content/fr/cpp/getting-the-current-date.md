@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "C++: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "C++"
 category:             "C++"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+# Date du jour en C++ : Pourquoi et Comment 
 
-Obtenir la date actuelle est un élément important de la programmation en C ++. Cela permet aux programmeurs de connaître l'heure et la date exactes, ce qui peut être utile pour suivre le temps écoulé depuis le démarrage du programme ou pour afficher la date dans des messages ou des journaux.
+## Qu'est-ce et Pourquoi ?
+
+Obtenir la date courante dans un programme C++ implique la récupération de l'information sur l'année, le mois et le jour exacts pendant l'exécution du programme. C'est essentiel pour enregistrer des événements, générer des horodatages et gérer les opérations dépendantes du temps.
 
 ## Comment faire:
 
-Pour obtenir la date actuelle en C ++, vous pouvez utiliser la fonction "time" de la bibliothèque standard de C ++. Voici un exemple de code:
+C++ propose plusieurs façons d'obtenir la date et heure courantes. Voici un exemple courant utilisant `<chrono>` et `<iomanip>`:
 
 ```C++
-//include la bibliothèque de temps
-#include <ctime>
+#include <iostream>
+#include <chrono>
+#include <iomanip>
 
-//déclare une variable pour stocker la date et l'heure actuelles
-time_t now = time(0);
-
-//convertit la date et l'heure en une chaîne de caractères lisible par les humains
-char* dt = ctime(&now);
-
-//affiche la date et l'heure actuelles
-cout << "La date et l'heure actuelles sont: " << dt << endl;
+int main() {
+    auto now = std::chrono::system_clock::now();
+    std::time_t now_time = std::chrono::system_clock::to_time_t(now);
+    std::cout << std::put_time(std::localtime(&now_time), "%F") << '\n';
+    return 0;
+}
 ```
-
-Voici un exemple de sortie:
-
+Ce code affiche la date courante en format AAAA-MM-JJ. Exemple de sortie :
 ```
-La date et l'heure actuelles sont: Ven Mai 28 15:46:58 2021
-```
+2023-07-01
+``` 
 
-## Plongée en profondeur:
+## Plongée profonde
 
-Historiquement, la fonction "time" utilise un nombre de secondes écoulées depuis le 1er janvier 1970 pour représenter la date et l'heure. Cependant, elle peut également utiliser d'autres représentations en fonction du système d'exploitation.
+Historiquement, les développeurs C++ s'appuyaient sur `time.h` (ou `ctime` en C++) pour obtenir la date courante. Cependant, `<chrono>` est devenu le choix préféré depuis C++11 en raison de sa précision et de sa portabilité.
 
-Il existe également d'autres moyens d'obtenir la date et l'heure actuelles en C ++, tels que la bibliothèque boost et la bibliothèque chrono. Cependant, la fonction "time" reste la méthode la plus courante.
+Comme alternative, on peut aussi utiliser `localtime_s` (pour Windows) ou `localtime_r` (pour Unix) pour une stratégie thread-safe, car `std::localtime` n'est pas thread-safe.
 
-## Voir aussi:
+L'implémentation interne de l'obtention de la date courante dépend de l'API de l'OS sous-jacent. En général, celle-ci interagit avec l'horloge du système pour obtenir les informations actuelles de date et d'heure.
 
-- [Documentation de la fonction "time" en C ++](https://www.cplusplus.com/reference/ctime/time/)
-- [Documentation de la bibliothèque boost](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
-- [Documentation de la bibliothèque chrono en C ++](https://en.cppreference.com/w/cpp/chrono)
+## Voir aussi :
+
+- La documentation officielle de C++ pour [chrono](https://en.cppreference.com/w/cpp/chrono)
+- Des informations supplémentaires sur [time.h](http://www.cplusplus.com/reference/ctime/)
+- Un aperçu des [alongements de durée](https://en.cppreference.com/w/cpp/chrono) en C++

@@ -1,7 +1,7 @@
 ---
-title:                "Das Herunterladen einer Webseite"
-html_title:           "Rust: Das Herunterladen einer Webseite"
-simple_title:         "Das Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -11,29 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Herunterladen einer Webseite ist ein gebräuchlicher Vorgang, bei dem eine Webseite von einem Server im Internet auf den eigenen Computer heruntergeladen wird. Programmierer Laden Webseiten aus verschiedenen Gründen herunter, wie zum Beispiel das Extrahieren von Daten oder das Durchführen von Tests.
+Webseiten herunterzuladen bedeutet, die gesamten Daten einer Webseite auf die Festplatte zu kopieren, um sie offline zu betrachten oder zu analysieren. Programmierer machen das, um die Seitenlayouts zu testen, Daten zu sammeln oder einfach Webinhalte zu archivieren.
 
 ## So geht's:
-Um eine Webseite in Rust herunterzuladen, gibt es verschiedene Optionen. Eine Möglichkeit ist die Verwendung der Bibliothek reqwest, die eine einfache und intuitive API anbietet. Ein Beispiel für die Verwendung dieser Bibliothek ist:
+Hier ist ein einfaches Beispiel, wie man mithilfe der Rust-Bibliothek "Reqwest" eine Webseite herunterlädt.
 
 ```Rust
-use reqwest::get;
+extern crate reqwest;
 
-let response = get("https://www.example.com").unwrap();
+fn main() -> Result<(), reqwest::Error> {
+    let body = reqwest::get("https://www.example.com")
+        .await?
+        .text()
+        .await?;
 
-let body = response.text().unwrap();
+    println!("body = {:?}", body);
 
-println!("{}", body);
+    Ok(())
+}
 ```
+Das obige Programm sendet eine GET-Anforderung an "https://www.example.com", liest den Text und gibt ihn in der Konsole aus.
 
-Dieser Code lädt die Webseite von "www.example.com" herunter und gibt den Inhalt der Seite aus.
+## Tiefgang
+Obwohl wir diese Technik heute oft verwenden, war das Herunterladen von Webseiten historisch gesehen nicht immer üblich. In erster Linie erforderten ältere Internetverbindungen eine konstante Verbindung zum Netz, um auf Websites zugreifen zu können.
 
-## Tiefere Einblicke:
-Das Herunterladen von Webseiten hat eine lange Geschichte in der Programmierung. Früher war es oft komplexer und fehleranfälliger, da die HTML-Dateien manuell verarbeitet werden mussten. Heutzutage gibt es zahlreiche Bibliotheken und Frameworks, die den Prozess erleichtern.
+Es gibt eine Reihe von Alternativen zum Herunterladen von Webseiten. Einige bevorzugen Tools wie `wget` oder `curl`, während andere Bibliotheken wie `HttpClient` in .NET oder `Jsoup` in Java verwenden.
 
-Als Alternative zu reqwest gibt es beispielsweise die Bibliothek hyper, die eine ähnliche Funktion bietet. Eine interessante Implementierungsdetail ist, dass die meisten HTTP-Anfragen asynchron ablaufen, was bedeutet, dass der Programmfluss nicht blockiert wird, während auf die Antwort des Servers gewartet wird.
+Die genauen Einzelheiten der Implementierung hängen von der verwendeteten Technologie ab. Bei Rust-Bibliothek "Reqwest" beispielsweise besteht der Hauptteil der Implementierung im Wesentlichen aus einer Reihe von asynchronen Operationen.  
 
-## Siehe auch:
-- [reqwest Dokumentation](https://docs.rs/reqwest/0.11.0/reqwest/)
-- [hyper Dokumentation](https://docs.rs/hyper/0.12.35/hyper/)
-- [HTTP-Anfragen in Rust](https://developers.redhat.com/blog/2017/01/13/http-requests-in-rust/)
+## Siehe auch
+Haben Sie Lust auf mehr? Schauen Sie sich diese Quellen an:
+- [Offizielle Rust-Dokumentation](https://doc.rust-lang.org/book/)
+- [Reqwest-Dokumentation](https://docs.rs/reqwest/)
+- [Webseiten herunterladen mit Python](https://python-requests.org)
+- [Webseiten herunterladen mit Java](https://jsoup.org/)

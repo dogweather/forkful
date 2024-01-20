@@ -1,7 +1,7 @@
 ---
-title:                "Utvinning av understrenger"
-html_title:           "Gleam: Utvinning av understrenger"
-simple_title:         "Utvinning av understrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -11,27 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Ekstrahering av substrings er en vanlig operasjon i programmering som innebærer å isolere en del av en streng basert på et gitt sett med regler eller kriterier. Dette gjøres for å håndtere tekstbaserte data mer effektivt og gjøre det enklere å manipulere og analysere dem.
+
+Å trekke ut delstrenger er en operasjon hvor vi lager en ny streng fra en del av en eksisterende streng. Dette er nyttig for å manipulere og analyser data inni strenger.
 
 ## Hvordan:
-Hvis du for eksempel har en streng med et fullstendig navn, kan du bruke Gleam for å trekke ut bare etternavnet ved å bruke et spesifikt tegn eller indeks som markør for hvor du vil at substringsen skal starte og slutte. I koden under viser vi et eksempel på hvordan man kan bruke ```substring``` funksjonen i Gleam for å ekstrahere etternavnet fra en fullstendig navnestreng og deretter skrive det ut til konsollen.
+
+Her er hvordan du trekker ut understrenger i Gleam:
 
 ```Gleam
-let fullt_navn = "John Doe"
+import gleam/substring.{slice}
 
-let etternavn = String.substring(fullt_navn, 5, 8)
+fn main() {
+  let string = "Hallo, Verden!"
 
-IO.println("Etternavn: " ++ etternavn)
+  let hello = slice(string, 0, 5)
+  let world = slice(string, 7, 13)
+
+  println(hello)  // "Hallo"
+  println(world)  // "Verden!"
+}
 ```
-
-Output:
-```
-Etternavn: Doe
-```
-
 ## Dypdykk:
-Ekstrahering av substrings har vært en viktig del av programmering siden begynnelsen, da mange operativsystemer brukte tegnbaserte grensesnitt. Alternativer til å bruke substring funksjoner inkluderer regex, som kan være mer fleksibel, men også være mer komplisert i form av utforming og implementering. Når det gjelder Gleam, er ```substring``` funksjonen implementert ved hjelp av standardbiblioteket, slik at du ikke trenger å installere noe annet for å bruke den.
+
+Substring ekstraksjon er en vanlig streng-operasjon siden tidlige programmeringsspråk som C. Alternativer til `slice` funksjonen inkluderer `substring` og `substr` i andre språk, men de kan ha litt forskjellige parametere og oppførsel. `Slice` i Gleam bruker null-indeksering og 'start' og 'end' parameterne for å bestemme hvilken del av streng å beholde.
 
 ## Se også:
-- [Offisiell Gleam Dokumentasjon](https://gleam.run/documentation)
-- [Github Repo for Gleam prosjektet](https://github.com/gleam-lang/gleam)
+
+For flere detaljer og relaterte emner, sjekk ut disse kildene:
+
+- Gleam's String modul (https://hexdocs.pm/gleam/gleam/string.html)
+- Gleam's Substring modul (https://hexdocs.pm/gleam/gleam/substring.html)
+- W3Schools String Methods (https://www.w3schools.com/js/js_string_methods.asp)

@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Fish Shell recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,31 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
- Sometimes, when writing code, you need to extract a specific part of a larger string. This is called "extracting substrings" and it is a common task for programmers. It allows you to manipulate and use smaller sections of a string instead of the entire thing.
+Extracting substrings means fetching specific parts of a string, based on start and end positions or patterns. We do it to manipulate and derive pertinent data from more extensive text information.
 
 ## How to:
+Let's dive into examples in Fish Shell. 
+Say we have a string `greet` with the value "Hello, welcome to Fish Shell tutorial!".
 
-To extract substrings with the Fish Shell, use the `string sub -s index -l length` command. The `-s` flag specifies the starting index and the `-l` flag specifies the length of the substring. Here's an example:
-
+Define the string:
+```Fish Shell
+set greet "Hello, welcome to Fish Shell tutorial!"
 ```
-Fish Shell > set my_string "hello world"
-Fish Shell > string sub -s 0 -l 5 $my_string
-hello
+
+Extract the substring "welcome to Fish Shell" using the classic `string sub`:
+```Fish Shell
+string sub -s 8 -l 23 -- $greet
+```
+Output:
+```Fish Shell
+welcome to Fish Shell
 ```
 
-This will extract the first five characters of the string "hello world" and output it as "hello".
+## Deep Dive
+Historically, Fish Shell has borrowed techniques for string manipulations from legacy Unix tools, spawning a healthier and more modern alternative. 
 
-You can also combine the `-s` and `-l` flags to extract specific parts of a string. For example, if you wanted to extract the word "world" from "hello world", you would use the command `string sub -s 6 -l 5 $my_string`.
+Alternatives like native POSIX string manipulations in bash or zsh can often involve complex, convoluted syntax. In comparison, Fish strives for user-friendliness, providing a dedicated `string` built-in command with a range of sub-commands, including our focus `sub`.
 
-## Deep Dive:
+Under the hood, the `string sub` operates by considering strings as arrays of characters. It takes a start index `-s` and a length `-l` to extract the required substring. Bear in mind, Fish Shell's indices are 1-based, unlike 0-based as in many other languages.
 
-Extracting substrings has been a common task since the early days of programming. It provides a way to work with smaller, more manageable pieces of data. While you can still extract substrings with other programming languages like Python or JavaScript, using a shell like Fish can make it quicker and easier.
-
-There are also other ways to extract substrings with Fish Shell. You can use regular expressions with the `string sub -r regex` command, or use specialized functions such as `string trim` to remove certain characters from the string before extracting the substring.
-
-## See Also:
-
-- [Official Fish Shell Documentation](https://fishshell.com/docs/current/cmds/string.html)
-- [Fish Shell Regular Expressions Tutorial](https://fishshell.com/docs/current/tutorial.html?doc=refextract.html#refextract)
-- [Fish Shell Function Reference](https://fishshell.com/docs/current/commands.html#appendix-function-summary)
+## See Also
+Get more grip on Fish Shell Strings:
+1. [Official Fish Documentation on Strings](https://fishshell.com/docs/current/cmds/string.html)
+2. [Fish Shell String Operations](https://www.baeldung.com/linux/fish-shell-string-operations)
+3. [Getting Started with Fish Shell](https://opensource.com/article/19/11/getting-started-fish-shell)

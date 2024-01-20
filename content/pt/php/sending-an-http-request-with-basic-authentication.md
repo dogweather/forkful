@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "PHP: Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,39 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & porquê?
-Enviar uma solicitação HTTP com autenticação básica é um processo que permite que os programadores façam uma requisição para um servidor com um par de credenciais básicas, geralmente um nome de usuário e uma senha. Isso é feito para verificar a identidade do usuário e permitir o acesso a determinados recursos protegidos. Programadores fazem isso para garantir a segurança das suas aplicações e controlar o acesso dos usuários a recursos sensíveis.
+## O que é e Por quê?
+
+O envio de um pedido HTTP com autenticação básica é uma forma de garantir que apenas os usuários autorizados possam acessar determinados dados em seu programa. Os programadores usam isso para proteger informações sensíveis e manter a segurança do aplicativo.
 
 ## Como fazer:
-```php
+Vamos começar com um exemplo básico de como enviar um pedido HTTP com autenticação básica usando PHP.
+
+```PHP
 <?php
-$username = "exemplo";
-$password = "segredo";
+$ch = curl_init();
 
-$url = "https://www.exemplo.com/api/dados";
+curl_setopt($ch, CURLOPT_URL,"http://meusite.com/dados");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_USERPWD, 'usuario:senha'); 
+curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
 
-// Cria um contexto com as credenciais básicas
-$context = stream_context_create([
-    'http' => [
-        'method' => 'GET',
-        'header' => 'Authorization: Basic ' . base64_encode($username . ':' . $password)
-    ]
-]);
+$output = curl_exec($ch);
 
-// Envia a requisição com o contexto criado
-$response = file_get_contents($url, false, $context);
+if (curl_errno($ch)) {
+    echo 'Falha: ' . curl_error($ch);
+} else {
+    echo 'Sucesso:' . $output;
+}
 
-// Imprime o resultado da requisição
-echo $response;
+curl_close($ch);
+?>
 ```
+Aqui, estamos usando a função cURL do PHP. Primeiro, inicializamos o pedido cURL com `curl_init()`. Em seguida, definimos várias opções para o pedido usando `curl_setopt()`. Isso inclui o URL do pedido, as credenciais de autenticação e o tipo de autenticação (neste caso, BASIC).
 
-O código acima mostra como enviar uma solicitação HTTP com autenticação básica utilizando a função `file_get_contents()` do PHP. O parâmetro `header` é utilizado para adicionar o cabeçalho de autorização com as credenciais codificadas em base64. O resultado da requisição é armazenado na variável `$response` e pode ser usado da forma que for necessário.
+## Mergulho profundo
 
-## Deep Dive:
-A autenticação básica é um método de autenticação amplamente utilizado na web, sendo suportado pela maioria dos servidores e navegadores. No entanto, possui algumas vulnerabilidades de segurança, como a possibilidade de interceptação das credenciais durante a comunicação. Por esse motivo, é recomendado o uso de protocolos de segurança mais robustos, como a autenticação OAuth.
+A autenticação HTTP básica é uma técnica antiga, mas ainda amplamente utilizada. No entanto, ela não é quebra a segurança, já que as credenciais são enviadas como texto claro (base64 codificado e não criptografado). Por causa disso, é sempre recomendado usar HTTPS quando estiver trabalhando com autenticação básica.
 
-Existem diversas formas de enviar uma solicitação HTTP com autenticação básica em PHP, como através da função `curl_exec()` ou criando manualmente o cabeçalho de autorização no código. Cada método possui suas vantagens e desvantagens, por isso é importante escolher o mais adequado para a sua situação.
+Existem outras formas de autenticação disponíveis também, como OAuth, que pode oferecer maior segurança, mas são mais complexas de implementar.
 
-## Veja também:
-- [Documentação oficial do PHP sobre autenticação básica em requisições HTTP](https://www.php.net/manual/pt_BR/features.http-auth.php)
-- [Artigo sobre segurança em autenticação HTTP](https://www.padillaio.com/seguranca/http-basic-authentication/)
+Em PHP, a maneira mais comum de enviar uma solicitação HTTP com autenticação básica é usando a biblioteca cURL, como mostrado acima. No entanto, você também pode usar outras bibliotecas como Guzzle ou até mesmo a extensão HTTP nativa do PHP.
+
+## Ver também
+
+Para obter mais informações, confira os seguintes recursos:
+
+- Documentação oficial do PHP sobre a biblioteca cURL: (https://www.php.net/manual/pt_BR/book.curl.php)
+- Autenticação com OAuth em PHP: (https://oauth.net/code/php/)
+- Biblioteca Guzzle para PHP: (http://docs.guzzlephp.org/)
+- Extensão PHP HTTP pecl: (https://pecl.php.net/package/pecl_http)
+- Autenticação HTTP Básica: (https://tools.ietf.org/html/rfc7617)

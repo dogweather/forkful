@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di HTML"
-html_title:           "Java: Analisi di HTML"
-simple_title:         "Analisi di HTML"
+title:                "Analisi sintattica dell'HTML"
+html_title:           "C++: Analisi sintattica dell'HTML"
+simple_title:         "Analisi sintattica dell'HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Il parsing di HTML è il processo attraverso il quale un programma legge e interpreta il linguaggio di marcatura utilizzato per creare pagine web. I programmatori lo fanno per estrarre informazioni specifiche dalle pagine web, come ad esempio il contenuto di un articolo o il prezzo di un prodotto.
+## Che Cos'è e Perché?
 
-## Come?
-Di seguito viene mostrato un esempio di codice Java per eseguire il parsing di HTML utilizzando la libreria Jsoup. In questo esempio, si sta cercando di ottenere il contenuto di un elemento con un determinato ID all'interno di una pagina web.
+L'analisi HTML è la pratica di interpretare una pagina web e suddividerla nei suoi elementi fondamentali. I programmatori la eseguono per estrarre dati specifici, manipolare gli elementi HTML o monitorare le modifiche al contenuto della pagina web.
+
+## Come Fare:
+
+Iniziamo con un esempio di base utilizzando la libreria Jsoup. Assicurati che il tuo progetto includa questa dipendenza per poterla usare.
 
 ```Java
+//Includi la dipendenza Jsoup
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-public class HtmlParser {
-
+public class HtmlParsing {
     public static void main(String[] args) {
-        // Specifica l'URL della pagina web da analizzare
-        String url = "https://www.esempio.com/pagina.html";
-
-        try {
-            // Utilizza Jsoup per connettersi alla pagina web e ottenere il suo contenuto
-            Document doc = Jsoup.connect(url).get();
-
-            // Utilizza il metodo getElementById per ottenere l'elemento desiderato
-            Element elemento = doc.getElementById("idElemento");
-
-            // Stampa il contenuto dell'elemento
-            System.out.println("Contenuto dell'elemento: " + elemento.text());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        String html = "<p>Un semplice <a href='https://www.google.com'>link</a>.</p>";
+        Document doc = Jsoup.parse(html);
+        Element link = doc.select("a").first();
+        
+        String text = doc.body().text(); // "Un semplice link."
+        String linkHref = link.attr("href"); // "https://www.google.com"
+        
+        System.out.println(text);
+        System.out.println(linkHref);
     }
 }
 ```
 
-Output:
-`Contenuto dell'elemento: Questo è il testo dell'elemento desiderato.`
+Ecco l'output del nostro esempio:
 
-## Approfondimento
-Il parsing di HTML è diventato necessario con lo sviluppo delle pagine web e il loro aumentare di complessità. In passato, i programmatori dovevano scrivere il loro parser personalizzato per ogni sito web che volevano analizzare. Oggi, è possibile utilizzare librerie come Jsoup o JsoupXpath per semplificare e automatizzare questo processo.
+```
+Un semplice link.
+https://www.google.com
+```
 
-## Vedi anche
-- [Jsoup](https://jsoup.org/)
-- [JsoupXpath](https://jsoupxpath.com/)
+## Approfondimento:
+
+(1) L'analisi HTML è stata implementata fin dai primi giorni del web per consentire ai browser di visualizzare correttamente le pagine web. (2) Se Jsoup non è l'ideale per il tuo progetto, ci sono molte alternative come HtmlCleaner e Jericho HTML Parser. (3) L'implementazione dell'analisi HTML può diventare molto complessa quando si tratta di pagine web pesantemente annidate o mal formattate.
+
+## Guarda Anche:
+
+- Documentazione ufficiale Jsoup: [https://jsoup.org/](https://jsoup.org/)
+- Alternativa HtmlCleaner: [https://htmlcleaner.sourceforge.io/](https://htmlcleaner.sourceforge.io/)
+- Alternativa Jericho HTML Parser: [http://jericho.htmlparser.net/docs/index.html](http://jericho.htmlparser.net/docs/index.html)

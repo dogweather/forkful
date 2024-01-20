@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "PHP: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,24 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#什么是「toLowerCase」？ 
-「toLowerCase」是一种在编程中将字符串转换为小写的操作。这通常用于比较字符串的值时，可以忽略大小写，使得比较更加精确。由于字符串可以包含不同大小写的相同字母，所以将其统一为小写可以避免不必要的错误。
+## 什么是字符串转换为小写？为什么要这么做？
 
-#为什么程序员要这么做？ 
-程序员使用「toLowerCase」可以简化代码，使得字符串比较更简单，从而提高效率。此外，许多编程语言中都有类似的功能，在学习和使用其他语言时，也可以快速掌握。
+字符串转换为小写即将字符串中的所有大写字母转换为小写。程序员通常这样做是为了比较，排序和搜索等需要字符串大小写一致的操作。
 
-#如何使用： 
+## 如何操作：
+
+我们可以使用PHP中的 `strtolower()` 函数来将字符串转换为小写。看代码例子：
+
 ```PHP
-$string = "HeLLo WOrlD"; //定义一个字符串 
-echo strtolower($string); //输出字符串的小写版本：hello world
+<?php
+$str = "Hello World!";
+echo strtolower($str);
+?>
 ```
 
-#深入了解： 
-「toLowerCase」这一概念可以追溯到早期的计算机操作系统，当时字符仅能以大写格式被储存。随着计算机的发展，字符的大小写区分也变得可行。除了「toLowerCase」，一些编程语言也有类似的函数，如「strtoupper」和「ucfirst」等。
+这段代码的输出会是：
 
-此外，有些编程语言使用「toLower」来实现相同的功能，只是命名不同。无论是哪种形式，都可以达到将字符串转换为小写的目的。
+```PHP
+"hello world!"
+```
 
-#参考链接： 
-- PHP官方文档：https://www.php.net/manual/en/function.strtolower.php 
-- Java中文网：https://docs.ruanjiadeng.com/java-tutorial/PHP/String-to-Lowercase-with-strtolower.htm 
-- Python中文网：https://www.runoob.com/python/att-string-lower.html
+## 深度解析
+
+在 PHP 的历史发展中，`strtolower()` 一直是用来转换字符串为小写的标准方式。它具有可靠性和简洁性，使程序员们依赖于它。
+
+如果你需要替代方案，`mb_strtolower()` 是一个可以考虑的函数。它是多字节字符串函数，可以处理包括非拉丁字符在内的更广泛的字符集。优点在于它支持国际化，但是它要求安装并启动 mbstring 扩展库：
+
+```PHP
+<?php
+$str = "Hello World!";
+echo mb_strtolower($str);
+?>
+```
+
+以 `strtolower()` 函数为例，其具体实现细节包括读取字符串中的每一个字符，检测它们是否为大写，如果是，则替换为对应的小写字符。
+
+## 参考信息
+
+- PHP官方文档中的 `strtolower()` 函数页面: http://php.net/manual/en/function.strtolower.php
+- `mb_strtolower()` 函数在 PHP 文档中的页面： http://php.net/manual/en/function.mb-strtolower.php
+- 在 StackOverflow 上关于 `strtolower()` 和 `mb_strtolower()` 的讨论： https://stackoverflow.com/questions/1725252/php-strtoupper-vs-mb-strtoupper

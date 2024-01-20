@@ -1,7 +1,7 @@
 ---
-title:                "Zufallszahlen erzeugen"
-html_title:           "Go: Zufallszahlen erzeugen"
-simple_title:         "Zufallszahlen erzeugen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Numbers"
@@ -12,11 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Generieren von zufälligen Zahlen ist ein wichtiger Bestandteil der Programmierung. Dabei geht es darum, Zahlen zu erzeugen, die ohne erkennbares Muster erscheinen und somit für verschiedene Anwendungen verwendet werden können. Programmierer nutzen diese Funktion, um zufällige Daten zu simulieren, Passwörter zu generieren, Spiele zu erstellen und vieles mehr.
+Die Generierung von Zufallszahlen ist ein Prozess, bei dem eine Reihe von Zahlen generiert wird, die keiner wahrnehmbaren Musterfolge folgen. Programmierer generieren oft Zufallszahlen, um verschiedene Aufgaben wie beispielsweise Tests, Spiele oder Simulationen zu bewältigen.
 
 ## So geht's:
 
-Um zufällige Zahlen in Go zu generieren, können wir die `rand`-Bibliothek nutzen. Mit der Funktion `Intn(n)` können wir eine ganze Zahl zwischen 0 und n-1 erhalten. Zum Beispiel:
+Hier ist ein einfaches Beispiel, wie man in Go Zufallszahlen generieren kann:
 
 ```Go
 package main
@@ -24,38 +24,26 @@ package main
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 func main() {
-	fmt.Println(rand.Intn(100)) // gibt eine Zufallszahl zwischen 0 und 99 aus
+	rand.Seed(time.Now().UnixNano())
+	fmt.Println(rand.Intn(100))
 }
 ```
 
-Um eine zufällige Gleitkommazahl zwischen 0 und 1 zu erhalten, können wir die Funktion `Float64()` nutzen:
+Wenn Sie dieses Programm ausführen, gibt es eine Zufallszahl zwischen 0 und 99 aus.
 
-```Go
-package main
+## Tiefere Einblicke
 
-import (
-	"fmt"
-	"math/rand"
-)
+Historisch wurde die Generierung von Zufallszahlen durch physische Prozesse durchgeführt, wie das Rollen von Würfeln oder Ziehen von Karten. Heutzutage wird dieser Prozess meistens durch Computerprogramme realisiert.
 
-func main() {
-	fmt.Println(rand.Float64())
-}
-```
+In Go werden Zufallszahlen mit dem `rand` Paket generiert. Es gibt Alternative wie das `crypto/rand` Paket, das für kryptografische Verwendungen besser geeignet ist, da es stärkere Zufallszahlen erzeugt.
 
-## Tiefer Einblick:
+Die Generierung von Zufallszahlen in Go ist weitgehend deterministisch. Durch die Initialisierung des Zufallszahl-Generators mit `rand.Seed(time.Now().UnixNano())` ermöglichen wir es dem Programm, bei jeder Ausführung unterschiedliche Zahlen zu generieren.
 
-Das Generieren von Zufallszahlen hat in der Informatik eine lange Geschichte. Früher wurden dafür physische Geräte wie Würfel oder Roulette-Räder verwendet. Heutzutage werden vor allem Pseudozufallszahlengeneratoren (PRNGs) verwendet, die auf bestimmte Algorithmen basieren. Es gibt auch andere Methoden wie Hardware-Zufallszahlengeneratoren, die auf physikalischen Phänomenen wie Wärmerauschen beruhen. Allerdings sind PRNGs aufgrund ihrer Effizienz und Vorhersehbarkeit die am häufigsten genutzte Methode.
+## Siehe auch
 
-Es gibt auch andere Möglichkeiten, um in Go zufällige Zahlen zu generieren, wie zum Beispiel die Nutzung von Crypto-Random-Generatoren aus der `crypto/rand`-Bibliothek. Diese verwenden kryptographische Algorithmen, um eine hohe Güte von Zufallszahlen zu gewährleisten.
-
-Die `rand`-Funktion in Go basiert auf dem Mersenne Twister-Algorithmus, der als einer der besten PRNGs gilt. Es kann jedoch nur eine begrenzte Anzahl von Zufallszahlen generieren, bevor es sich wiederholt. Um dieses Problem zu umgehen, wird empfohlen, die Zufallszahl mit einer anderen Variable zu kombinieren, beispielsweise mit der aktuellen Systemzeit, um eine bessere Zufälligkeit zu erreichen.
-
-## Siehe auch:
-
-[Funktion `rand` in der Go-Dokumentation](https://golang.org/pkg/math/rand/)
-
-[Alternative Methoden zur Generierung von Zufallszahlen in Go](https://medium.com/@deckarep/the-beast-of-responsibility-be888c255c75)
+Für weitere Informationen, siehe die offizielle Go Dokumentation: https://golang.org/pkg/math/rand/
+ sowie weitere Beispiele und Erklärungen in der Go by Example Webseite: https://gobyexample.com/random-numbers

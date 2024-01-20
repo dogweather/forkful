@@ -1,6 +1,6 @@
 ---
 title:                "Lendo um arquivo de texto"
-html_title:           "C#: Lendo um arquivo de texto"
+html_title:           "Bash: Lendo um arquivo de texto"
 simple_title:         "Lendo um arquivo de texto"
 programming_language: "C#"
 category:             "C#"
@@ -10,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+# Lendo um arquivo de texto em C#
 
-Ler um arquivo de texto é simplesmente acessar e extrair informações de um arquivo contendo texto legível. Usando a linguagem de programação C#, os programadores podem facilmente ler e manipular arquivos de texto para obter dados importantes do arquivo.
+## O que e porque?
+
+Ler um arquivo de texto implica acessar e interpretar os dados contidos em um arquivo de texto. Programadores fazem isso para manipular, analisar ou reformatar informações armazenadas em formato textual.
 
 ## Como fazer:
 
-Para ler um arquivo de texto usando C#, podemos seguir os seguintes passos:
-
-1. Usar o namespace `System.IO` para acessar as funções de entrada e saída.
-2. Usar o método `File.ReadAllText()` para ler o conteúdo do arquivo e armazená-lo em uma variável.
-3. Em seguida, podemos manipular os dados de acordo com nossas necessidades.
-
-Aqui está um exemplo de código que mostra como ler um arquivo de texto e imprimir seu conteúdo no console:
+A leitura de um arquivo de texto em C# pode ser feita de várias maneiras. Vamos olhar para o método mais simples usando a classe 'StreamReader'.
 
 ```C#
-using System.IO;
 using System;
+using System.IO;
 
-class Program
-{
-    static void Main()
-    {
-        string texto = File.ReadAllText("arquivo.txt");
-        Console.WriteLine(texto);
+class LeituraArquivoTexto {
+    static void Main() {
+        using (StreamReader leitor = new StreamReader("arquivo.txt")) {
+            string linha;
+            
+            while((linha = leitor.ReadLine()) != null) {
+                Console.WriteLine(linha);
+            }
+        }
     }
 }
 ```
+Esse código simplesmente abre o arquivo "arquivo.txt", lê todas as linhas uma a uma e imprime no console.
 
-A saída seria o conteúdo do arquivo de texto `arquivo.txt` impresso no console.
+## Aprofundando-se
 
-## Deep Dive:
+A classe 'StreamReader' faz parte do namespace 'System.IO' e tem sido usada para ler arquivos desde as primeiras versões do .NET Framework, tornando-a uma das classes mais antigas dentro do C#.
 
-Ler um arquivo de texto é uma tarefa comum para os programadores, pois os arquivos de texto são amplamente usados ​​para armazenar dados simples em um formato legível. Ele pode ser usado para armazenar nomes de usuários, senhas, configurações do software e muito mais. Além disso, é uma forma rápida e fácil de compartilhar dados entre diferentes sistemas.
+Você tem várias alternativas para ler um arquivo em C#. 'File' e 'Fileinfo' são duas classes que você pode usar para ler um arquivo de texto. Usar a classe 'File' é mais fácil em termos de menos linhas de código, porém menos versátil.
 
-No passado, os arquivos de texto eram lidos usando comandos do sistema operacional específicos da plataforma. Com o surgimento da linguagem de programação C# e o uso do namespace `System.IO`, esse processo se tornou mais padronizado e fácil para os desenvolvedores. Além disso, existem outras alternativas para ler arquivos de texto, como o uso de bibliotecas de terceiros.
-
-Para implementar a leitura de arquivos de texto em um aplicativo C#, é importante entender a estrutura básica dos arquivos de texto, como a codificação de caracteres usada e a diferença entre arquivos de texto e arquivos binários.
+Vale ressaltar que o método ReadLine da classe 'StreamReader' lê uma linha de texto até que uma nova linha seja encontrada ou até o final do arquivo, retornando 'null' neste último caso.
 
 ## Veja também:
 
-- [Documentação da classe System.IO](https://docs.microsoft.com/pt-br/dotnet/api/system.io.file)
-- [Tutorial sobre leitura de arquivos de texto em C#](https://www.tutorialsteacher.com/csharp/csharp-read-text-file)
-- [Manipulando arquivos de texto com C#](https://www.c-sharpcorner.com/UploadFile/1bf814/reading-and-writing-text-file-in-C-Sharp/)
+1. Documentação oficial 'StreamReader': [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader?view=net-5.0)
+2. Classe 'File': [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0)
+3. Classe 'FileInfo': [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.fileinfo?view=net-5.0)
+4. Método 'ReadLine': [Link](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader.readline?view=net-5.0)

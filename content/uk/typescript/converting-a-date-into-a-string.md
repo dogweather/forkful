@@ -1,7 +1,7 @@
 ---
-title:                "Перетворення дати у рядок"
-html_title:           "TypeScript: Перетворення дати у рядок"
-simple_title:         "Перетворення дати у рядок"
+title:                "Перетворення дати в рядок"
+html_title:           "Lua: Перетворення дати в рядок"
+simple_title:         "Перетворення дати в рядок"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і Чому?
-Конвертування дати в рядок - це процес перетворення дати в текстовий формат. Це часто використовується програмістами для збереження інформації про дату в зручному для читання форматі.
+## Що і чому?
+Перетворення дати в рядок — це процес «перекладу» об'єктів дати на рядкове представлення. Програмісти роблять це для зручного показу дат користувачам або для зберігання дати в текстовому форматі.
 
-Як?
-Ось декілька прикладів коду на TypeScript для конвертування дати в рядок та виводу результату:
-
+## Як це зробити:
+Нижче наведено приклади коду та приклади виводу:
 ```TypeScript
-// Дзеркальне відображення дати у форматі року-місяця-дня
-const date = new Date();
-const stringDate = date.toLocaleDateString();
-console.log(stringDate); // Output: 2021-09-01
-
-// Довільне відображення дати у форматі дня/місяця/року
-const date = new Date();
-const day = String(date.getDate()).padStart(2, '0');
-const month = String(date.getMonth() + 1).padStart(2, '0');
-const year = date.getFullYear();
-const stringDate = `${day}/${month}/${year}`;
-console.log(stringDate); // Output: 01/09/2021
-
-// Відображення дати з годиною та хвилиною у форматі день/місяць/рік година:хвилина
-const date = new Date();
-const year = date.getFullYear();
-const month = String(date.getMonth() + 1).padStart(2, '0');
-const day = String(date.getDate()).padStart(2, '0');
-const hours = String(date.getHours()).padStart(2, '0');
-const minutes = String(date.getMinutes()).padStart(2, '0');
-const stringDate = `${day}/${month}/${year} ${hours}:${minutes}`;
-console.log(stringDate); // Output: 01/09/2021 01:20
+let currentDate = new Date();
+let dateStr = currentDate.toISOString();
+console.log(dateStr);
+// Виведення: 2021-08-06T14:12:27.612Z
 ```
+В цьому коді є об'єкт `currentDate` типу `Date`, який перетворюється на рядок за допомогою методу `.toISOString()`.
+ 
 
-Глибокий занурення:
-Конвертування дати в рядок використовується для забезпечення зручного збереження та відображення дати в програмах. Історично, першими методами конвертування були використання числових форматів та вручну складені шаблони для відображення дати. Проте, з появою сучасних мов програмування, таких як TypeScript, стало можливим використовувати вбудовані функції для зручного конвертування дати в рядок.
+## Глибоке занурення
+**Історичний контекст**: Метод `toISOString()` в JavaScript/TypeScript був стандартизований ще в ES5 і є одним із найпопулярніших для перетворення дат в рядок.
 
-Додатково:
-Ви можете дізнатися більше про конвертування дати в рядок в офіційній документації TypeScript (https://www.typescriptlang.org/docs/handbook/datetime.html) або використовувати інші альтернативні бібліотеки, такі як Moment.js, для більш розширених можливостей конвертування дати.
+**Альтернативи**: Javascript/TypeScript пропонує різні методи перетворення дати в рядок. Окрім `.toISOString()`, є методи як `.toString()`, `.toLocaleString()`, `.toDateString()`, `.toTimeString()` і інші.
+
+**Деталі реалізації**: Метод `.toISOString()` повертає дату в форматі ISO, тобто `YYYY-MM-DDTHH:mm:ss.sssZ`, де `Z` позначає UTC-час.
+
+## Дивіться також
+1. [MDN Web Docs: Date.prototype.toISOString()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString) - довідка MDN щодо `toISOString()`.
+2. [Сайт TypeScript](https://www.typescriptlang.org/docs/) - Документація TypeScript.
+3. [Кращі практики з JavaScript/TypeScript](https://github.com/airbnb/javascript) - База знань від Airbnb з наголосом на кращі практики.

@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "PowerShell: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,44 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi i dlaczego?
+# Interpolacja łańcuchów w PowerShell: Krótkie wprowadzenie
 
-Jeśli jesteście programistami lub pracujecie z językami programowania, na pewno słyszeliście o interpolacji stringów. Czym dokładnie jest ta operacja i po co ją stosujemy? Interpolacja polega na łączeniu wartości zmiennych lub wyrażeń z danym tekstem, tworząc w ten sposób nowy string. Jest to przydatne w przypadku, gdy chcemy dynamicznie dostosować tekst do aktualnych warunków, bez konieczności ciągłej zmiany całego kodu.
+## Co to i po co?
+Interpolacja łańcuchów to proces, który umożliwia wstawianie wartości zmiennych bezpośrednio do łańcuchów. Dzięki temu programiści mogą tworzyć dynamiczne łańcuchy znaków, co zwiększa czytelność i efektywność kodu.
 
-## Jak to zrobić?
-
-Interpolacja stringów w PowerShell jest bardzo prosta – wystarczy użyć znaku dolara ($) przed nazwą zmiennej lub wyrażenia wewnątrz cudzysłowu (""). Przykładowo:
-
-```PowerShell
-$imie = "Jan"
-"Hello, $imie" # wynik: Hello, Jan
-```
-
-Warto zauważyć, że interpolacja działa również wewnątrz innych znaków, takich jak apostrofy czy nawiasy kwadratowe. Możemy także łączyć kilka zmiennych lub wyrażeń, korzystając z operatora plus (+):
+## Jak to zrobić:
+Interpolację łańcuchów w PowerShell możemy zrealizować na dwa sposoby. Używając podwójnych cudzysłowów (`"`) lub specjalnego operatora `-f`. Oto przykłady:
 
 ```PowerShell
-$imie = "Jan"
-$nazwisko = "Kowalski"
-"Hello, $imie $nazwisko" # wynik: Hello, Jan Kowalski
-"Pierwsza litera twojego imienia to $($imie[0])" # wynik: Pierwsza litera twojego imienia to J
-"Twoje inicjały to $imie[0]. $nazwisko[0]." # wynik: Twoje inicjały to J. K.
+# Przykład 1: Podwójne cudzysłowy
+$name = "Jan"
+$welcomeMessage = "Witaj, $name"
+Write-Output $welcomeMessage
 ```
 
-Oczywiście, możemy także interpolować zmienne z innymi typami danych, na przykład liczbami czy tablicami:
+Wynik:
+```
+Witaj, Jan
+```
 
 ```PowerShell
-$liczba = 21
-"Dzisiaj jest $liczba dzień października" # wynik: Dzisiaj jest 21 dzień października
-$kolory = @("niebieski", "zielony", "czerwony")
-"Mam na sobie koszulkę w kolorze $($kolory[0])" # wynik: Mam na sobie koszulkę w kolorze niebieski
+# Przykład 2: Operator -f
+$name = "Jan"
+$welcomeMessage = "Witaj, {0}" -f $name
+Write-Output $welcomeMessage
 ```
 
-## Głębszy zanurzenie
+Wynik:
+```
+Witaj, Jan
+```
 
-Interpolacja stringów to bardzo popularna operacja w wielu językach programowania, a jej historia sięga lat 70. Przez lata powstało wiele różnych metod interpolacji, takich jak konkatenacja, formatowanie printf czy użycie znaków specjalnych, lecz w PowerShell interpolacja jest wygodniejsza i bardziej czytelna dzięki wykorzystaniu znaku dolara. Jedną z alternatyw dla interpolacji w PowerShell jest użycie operatora join, który pozwala na łączenie elementów tablicy z danym znacznikiem.
+## Szczegółowa analiza:
+Interpolacja łańcuchów jest techniką powszechnie stosowaną nie tylko w PowerShell, ale także w wielu innych językach programowania, takich jak JavaScript czy C#. Przed wprowadzeniem interpolacji łańcuchów w PowerShell, najczęściej korzystano z operatora formatującego `-f`.
 
-Jeśli chodzi o implementację, PowerShell wykorzystuje mechanizm nazywany "Subexpression syntax", dzięki któremu możemy łączyć wyrażenia z innymi wyrażeniami, zmiennymi czy funkcjami. Jest to bardzo użyteczne i pozwala na tworzenie bardziej rozbudowanych i elastycznych skryptów.
+Alternatywą dla interpolacji łańcuchów może być sklejanie łańcuchów za pomocą operatora `+` , ale nie jest to zalecana metoda, gdyż jest mniej efektywna, zwłaszcza przy większej ilości danych.
 
-## Zobacz też
+Interpolacja łańcuchów w PowerShell jest obsługiwana poprzez zastosowanie mechanizmu parsera kodu, który odczytuje wartości zmiennych pomiędzy cudzysłowami i umożliwia ich dynamiczne zastępowanie w łańcuchach.
 
-Jeśli chcecie dowiedzieć się więcej o interpolacji stringów w PowerShell, zapraszam do zapoznania się z [oficjalną dokumentacją Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules). Koniecznie także wypróbujcie różne kombinacje i zastosowania interpolacji w swoich skryptach PowerShell.
+## Zobacz również:
+1. [Wsparcie dla interpolacji łańcuchów w dokumentacji Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1#string-expansion-within-double-quotes)
+2. [Poradnik dotyczący operatora -f na stronie SS64](https://ss64.com/ps/syntax-f-operator.html)
+3. [Porównanie różnych metod manipulacji łańcuchami w PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/string-formatting-in-powershell/)

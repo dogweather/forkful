@@ -1,7 +1,7 @@
 ---
-title:                "Oversette en streng til små bokstaver"
-html_title:           "TypeScript: Oversette en streng til små bokstaver"
-simple_title:         "Oversette en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,28 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## Hva & Hvorfor?
-Å konvertere en streng til små bokstaver betyr å endre alle bokstavene i en tekst til deres tilsvarende små bokstaver. Programmerere gjør dette for å sikre konsistens i koden sin og for å lettere kunne sammenligne strenger.
+
+Å konvertere en streng til småbokstaver innebærer å endre alle tekstens store bokstaver til småbokstaver. Programmerere gjør dette for å standardisere datainput, unngå feil med mellomstore data, og forenkle tekstbehandling.
+
+---
 
 ## Hvordan:
-TypeScript har en innebygd funksjon som heter ```toLowerCase()```, som gjør det mulig å konvertere en streng til små bokstaver. Her er et eksempel på hvordan man kan bruke denne funksjonen i koden:
 
-```TypeScript
-let navn: string = "John Doe";
+I TypeScript kan vi bruke metoden `toLowerCase()` for å konvertere en streng til småbokstaver.
+
+Her er en kodeeksempel:
+
+```
+let navn: string = "Henrik";
+
 console.log(navn.toLowerCase());
 ```
 
-Outputen vil være:
+Og dette er output:
+
 ```
-john doe
+henrik
 ```
 
-## Dypdykk:
-Å konvertere strenger til små bokstaver har vært vanlig praksis i programmering i lang tid, og har sin opprinnelse fra ASCII-standarden som ble utviklet tidlig på 1960-tallet. Det finnes også alternative måter å gjøre dette på, som for eksempel å bruke regex-uttrykk. Implementasjonen av ```toLowerCase()```-funksjonen i TypeScript følger Unicode-standarden, som betyr at språk som ikke bare bruker latinske tegn også blir konvertert til små bokstaver.
+---
+
+## Dyp Dykk:
+
+Historisk sett har behovet for å konvertere en streng til småbokstaver eksistert for å normalisere data og sørge for at en datamaskin kan forstå og utføre operasjoner riktig uavhengig av inndataskrivemåten.
+
+Alternativt finnes det andre funksjoner som `toLocaleLowerCase()`. Denne metoden konverterer også en tekst til småbokstaver, men tar hensyn til lokale skriveregler. For eksempel, i den tyrkiske alfabet er det små bokstaver som ikke tilsvarer de engelske.
+
+For å konvertere en streng til småbokstaver i TypeScript, lik mange andre programmeringsspråk, utfører `toLowerCase()` -metoden egentlig en iterasjon gjennom hver bokstav i strengen og erstatter den med sin lavere tilsvarende hvis den finnes.
+
+---
 
 ## Se også:
-Hvis du ønsker å lære mer om strenger og hvordan man manipulerer dem i TypeScript, kan du sjekke ut disse kildene:
 
-- Offisiell dokumentasjon for ```toLowerCase()```-funksjonen: https://www.typescriptlang.org/docs/handbook/reference/functions.html#strings-and-regular-expressions
-- En tutorial på YouTube om strenger i TypeScript: https://www.youtube.com/watch?v=9tIom3xv8-k
-- En bloggpost som diskuterer forskjellige metoder for å konvertere strenger til små bokstaver: https://www.thoughtco.com/javascript-to-case-of-a-string-2037702
+1. [TypeScript String toLowerCase()](https://www.tutorialsteacher.com/typescript/typescript-string-tolowercase)
+2. [JavaScript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)

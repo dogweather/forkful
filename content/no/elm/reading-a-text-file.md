@@ -1,7 +1,7 @@
 ---
-title:                "Lesing av en tekstfil."
-html_title:           "Elm: Lesing av en tekstfil."
-simple_title:         "Lesing av en tekstfil."
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"Hva og hvorfor?"
+## Hva & Hvorfor?
 
-Lesing av tekstfiler er en måte for programmerere å få tilgang til og manipulere data lagret som tekst i et filformat på datamaskinen. Det kan være nyttig for å håndtere store mengder data eller for å håndtere informasjon på en strukturert måte.
+Å lese en tekstfil betyr å programmere programvaren for å hente og tolke data fra en ekstern fil. Dette er nødvendig for å lagre, hente og manipulere data effektivt.
 
-"Hvordan:"
+## Hvordan gjør man det:
 
-```Elm 
-import File 
+Desverre og det er et resultat av Elm's filosofi om renhet og enkelhet, den tillater ikke lesing fra filsystemet direkte. Dette er fordi Elm er ment å brukes hovedsakelig i nettlesermiljøer, der direkte filsystemtilgang er begrenset av sikkerhetshensyn. Men for å lese tekstfiler, kan du bruke en omvei ved å bruke Elm med NPM pakker som inneholder andre Elm biblioteker.
 
--- Funksjon for å lese og utskrive innholdet i en tekstfil.
-File.read "input.txt" 
-    |> Task.attempt handleResult
+```Elm
+-- Forutsatt at du har lastet ned og importert 'elm/file' via NPM
+import File exposing (File)
 
--- Funksjon for å håndtere resultatet og skrive ut teksten.
-handleResult : Result File.Error String -> Cmd msg 
-handleResult result = 
-    case result of 
-        -- Hvis filen leses riktig, skriv ut innholdet.
-        Ok content -> 
-            content 
-                |> String.lines
-                |> List.map (\line -> 
-                    div [] [ text line ]
-                    )
-                |> div [] 
-                
-        -- Hvis det oppstår en feil når filen leses, skriv ut feilmelding.
-        Err error -> 
-            text ("Noe gikk galt: " ++ (File.errorToString error))
+type Msg
+    = GotFile (Result File.Error String)
+
+selectFile : Cmd Msg
+selectFile =
+    File.Select.text GotFile
 ```
 
-## Dypdykk:
+## Dyp Dykk:
 
-Å lese tekstfiler har vært en viktig del av programmering siden de første datamaskinene ble utviklet. Det finnes også andre måter å håndtere tekstfiler på, som å bruke en database, men å lese dem direkte er ofte den enkleste og raskeste måten.
+Historisk sett har Elm lagt vekt på renhet og enkelhet, hvilket har ført til at mange tradisjonelle operasjoner (eksempelvis fillesing) utelates eller begrenses. Alternativer til Elm for lesing av tekstfiler inkluderer andre programmeringsspråk som har full tilgang til filsystemet, som Python eller JavaScript.
 
-Lesing av tekstfiler i Elm er basert på funksjoner fra "File"-modulen, som gjør det enkelt å håndtere selv store filer. Det er også mulig å skrive til og slette tekstfiler ved hjelp av denne modulen.
+Når det gjelder implementeringsdetaljer, er Elm's manglende filsystemfunksjonalitet utformet for å øke robustheten mot sikkerhetstrusler. I nettlesermiljøer er direkte filsystemtilgang begrenset for å hindre at skadelig kode får tilgang til sensitive data.
 
-## Se også:
+## Se Også:
 
-For mer informasjon om "File"-modulen og hvordan du kan bruke den til å håndtere tekstfiler, kan du sjekke ut Elm sin offisielle dokumentasjon (https://guide.elm-lang.org/).
-
-Du kan også utforske forskjellige funksjoner og muligheter for å lese og håndtere tekstfiler i Elm ved å se på eksempler og bidrag fra andre utviklere på nettsteder som GitHub (https://github.com/elm/file) og Stack Overflow (https://stackoverflow.com/questions/tagged/elm).
+- [Elm's 'elm/file' NPM-pakke](https://www.npmjs.com/package/elm/file)
+- [Python File I/O](https://docs.python.org/3/tutorial/inputoutput.html)
+- [Node.js Filesystem Modul](https://nodejs.org/api/fs.html)

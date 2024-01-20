@@ -1,7 +1,7 @@
 ---
-title:                "Порівняння двох дат."
-html_title:           "C: Порівняння двох дат."
-simple_title:         "Порівняння двох дат."
+title:                "Порівняння двох дат"
+html_title:           "Clojure: Порівняння двох дат"
+simple_title:         "Порівняння двох дат"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що & Чому?
+## Що & Чому?
+Порівняння двох дат - це процес встановлення, яка з двох дат відбулася раніше, чи вони співпадають. Програмісти роблять це для організації подій, відслідковування часу або розрахунку віку.
 
-Порівнювання двох дат - це процес, який дозволяє програмістам порівнювати дві дати і визначати, яка з них є більшою або меншою. Це важливо, оскільки це допомагає здійснювати різні операції з датами, такі як сортування або визначення часових інтервалів.
-
-Як це зробити:
-
+## Як це робиться:
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    // Створюємо дві структури для представлення дат
-    struct tm first_date = { .tm_year = 2020, .tm_mon = 9, .tm_mday = 1 };
-    struct tm second_date = { .tm_year = 2021, .tm_mon = 3, .tm_mday = 5 };
+    struct tm date1 = {0}, date2 = {0};
+    // 2022-11-14
+    date1.tm_year = 2022 - 1900;
+    date1.tm_mon = 11 - 1;
+    date1.tm_mday = 14;
+    // 2023-11-14
+    date2.tm_year = 2023 - 1900;
+    date2.tm_mon = 11 - 1;
+    date2.tm_mday = 14;
 
-    // Використовуємо функцію difftime для порівняння дат
-    double result = difftime(mktime(&first_date), mktime(&second_date));
-
-    if (result > 0) {
-        printf("Перша дата пізніше за другу дату\n");
-    } else if (result < 0) {
-        printf("Перша дата раніше за другу дату\n");
-    } else {
-        printf("Дати рівні\n");
-    }
-
+    double seconds = difftime(mktime(&date2), mktime(&date1));
+    printf("Дні між датами: %.f\n", seconds / (60 * 60 * 24));
     return 0;
 }
 ```
+Вихідне значення:
+```
+Дні між датами: 365
+```
 
-Вихідний код надає такий результат: "Перша дата пізніше за другу дату". В цьому прикладі ми використовуємо стандартні функції time.h для роботи з датами, але існує також багато інших способів зробити це.
+## Поглиблений погляд
+1. **Історичний контекст**: Функція `difftime` була вперше внесена у стандарт ISO C в 1989 році, щоб полегшити порівняння значень часових змінних в форматі `time_t`.
+2. **Альтернативи**: Для більш складних операцій, таких як розрахунок кількість днів у високосному році, можна використовувати бібліотеки, такі як `Boost.Date_Time` або `Howard Hinnant's date library`.
+3. **Деталі реалізації**: При порівнянні дат, ми конвертуємо структуру `struct tm` у значення `time_t` отриманим з функції `mktime`, надаючи нам можливість порівняти дати у форматі секунд з початку епохи Unix (це 00:00:00 UTC, 1 січня 1970 року).
 
-Глибокий погляд:
-
-У минулому програмісти мусили надто часто працювати з різними форматами дат, що утруднювало порівняння дат. Однак, з появою стандартів як стандарту IEEE 754, таких джерел дат, як POSIX, і бібліотек, як, наприклад, time.h, порівняння дат стало простіше. Також існує багато інших альтернатив, які дозволяють робити подібну роботу.
-
-Дивіться також:
-
-- Документація по бібліотеці time.h: [https://www.tutorialspoint.com/c_standard_library/time_h.htm](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-- Порівняння дат в С: [https://www.geeksforgeeks.org/compare-two-dates-c/](https://www.geeksforgeeks.org/compare-two-dates-c/)
-- Стандарт IEEE для роботи з датами: [https://ieeexplore.ieee.org/abstract/document/34587](https://ieeexplore.ieee.org/abstract/document/34587)
+## Дивіться також
+1. [Стандарт ISO C (1989)](https://www.iso.org/standard/17782.html)
+2. [Бібліотека Boost.Date_Time](https://www.boost.org/doc/libs/1_72_0/doc/html/date_time.html)
+3. [Бібліотека дати Howard Hinnant](https://github.com/HowardHinnant/date)

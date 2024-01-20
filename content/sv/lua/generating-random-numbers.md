@@ -1,6 +1,6 @@
 ---
 title:                "Generera slumpmässiga nummer"
-html_title:           "Lua: Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
 simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## Vad & Varför?
-Generering av slumpmässiga nummer är en viktig del av programmering. Det är processen med att skapa nummer som verkar slumpmässiga och används ofta för spel, simuleringar och kryptering. Programmerare använder slumpmässiga nummer för att skapa variation och osäkerhet i sina program och för att utföra uppgifter som kräver slumpmässighet.
 
-## Hur man:
-Lua har inbyggda funktioner som gör det enkelt att generera slumpmässiga nummer. Här är två exempel på hur du kan använda dessa funktioner:
+Att generera slumpmässiga nummer i programmering används för att skapa oförutsägbara data. Programmerare gör det för att simulera slumpmässiga händelser, till exempel i spel och kryptering.
 
+## Hur Man Gör:
+
+Här är hur man genererar ett slumpmässigt nummer i Lua.
+
+```Lua
+math.randomseed(os.time())
+
+random_number = math.random()
+
+print(random_number)
 ```
--- Generera ett slumpmässigt heltal mellan 1 och 10
-local nummer = math.random(1,10)
-print(nummer)
--- Output: Slumpmässigt tal mellan 1 och 10, t.ex. 7
+Exempel på output kan vara `0.0012512588889884` eller något annat slumpmässigt nummer mellan 0 och 1.
 
--- Generera ett slumpmässigt decimaltal mellan 0 och 1
-local decimaltal = math.random()
-print(decimaltal)
--- Output: Slumpmässigt decimaltal mellan 0 och 1, t.ex. 0.492624338
+## Djupdykning
 
-```
+Historiskt sett både mjukvara och hårdvara har använts för att generera slumpmässiga nummer. Till exempel, tidiga datorer använde brus från radiofrekvenser. 
 
-## Djupdykning:
-Generering av slumpmässiga nummer har funnits i många år och har utvecklats mycket. Tidigare använde programmerare fysiska enheter, som tärningar eller kort, för att skapa slumpmässiga nummer. Idag använder vi datorer och algoritmer för att skapa dem, vilket är mycket snabbare och mer pålitligt.
+Alternativen till `math.random` i Lua inkluderar externa bibliotek som har mer avancerade funktioner. JavaScript, till exempel, har `Math.random()` och Python har `random.random()`.
 
-Det finns också olika alternativ för att generera slumpmässiga nummer i Lua. En mer avancerad metod är att använda Pseudoslumpgeneratorer, som använder en algoritm för att skapa nummer som verkar slumpmässiga. Du kan också ställa in en "frö"-värde för dessa algoritmer för att skapa olika sekvenser av slumpmässiga nummer.
+Implementationen av `math.random` i Lua baseras på C-funktionen `rand`, vilket innebär att dess kapacitet och begränsningar är samma som för `rand`.
 
-Identitetsmatriser är också ett alternativ och används ofta inom datavetenskap för att skapa slumpmässiga matriser. I Lua kan du använda funktionen ```math.randomseed()``` för att generera identitetsmatriser.
+## Se Även
 
-## Se även:
-- [Lua dokumentation om slumpmässiga nummer](https://www.lua.org/pil/20.2.html)
-- [Wikipedia artikel om RNG](https://sv.wikipedia.org/wiki/Slumpgenerator)
+För vidare läsning och mer ingående förståelse, här är några länkar:
+1. Official Lua Documentation: [math.random](https://www.lua.org/manual/5.3/manual.html#6.7)
+2. Tutorialspoint: [Lua - Math.random function](https://www.tutorialspoint.com/lua/lua_math_random.htm)
+
+---

@@ -1,6 +1,6 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Lua: Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,25 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å lese kommandolinjeargumenter er en måte for programmerere å få innspill fra brukere når et program kjøres. Dette gjør det mulig å gjøre programmet mer interaktivt og tilpasse det til brukerens behov.
+## Hva & Hvorfor?
+Å lese kommandolinjeargumenter er prosessen der programmer mottar data fra brukeren gjennom kommandolinjen. Programmerere gjør dette for å kontrollere programflyten og manipulere data uten brukergrensesnitt.
 
-# Hvordan:
-I Lua kan vi lese kommandolinjeargumenter ved hjelp av standardbiblioteket "arg". Dette biblioteket har en funksjon kalt "arg" som lar oss få tilgang til de ulike argumentene som er gitt ved å kjøre programmet.
+## Hvordan:
+Hvis du skriver et Lua-program som trenger å lese kommandolinjeargumenter, f.eks. filnavn eller innstillinger, kan du bruke den innebygde globale tabellen `arg`.
+
 ```Lua
--- Eksempel på å sjekke om et bestemt argument er gitt:
-if arg[1] == "-h" then
-    print("Velkommen til hjelpesiden!")
+for i, v in ipairs(arg) do
+  print("arg[" .. i .. "]", v)
 end
 ```
-Dette vil sjekke om det første argumentet gitt er "-h" (for hjelp) og gi en beskjed til brukeren om det er tilfellet. Hvis programmet ble kjørt med "lua program.lua -h", vil det skrives ut "Velkommen til hjelpesiden!".
+Hvis du kjører programmet ditt med `lua test.lua arg1 arg2 arg3`, vil dette skrive ut:
 
-# Dykk dypere:
-Historisk sett, var kommandolinjeargumenter den eneste måten å samhandle med datamaskiner på. Fordi det var begrensede grafiske grensesnitt, var det vanlig å kjøre programmer fra kommandolinjen ved å gi ulike argumenter som bestemte hvordan programmet skulle kjøre.
+```Lua
+arg[0] test.lua
+arg[1] arg1
+arg[2] arg2
+arg[3] arg3
+```
 
-Alternativt, kan man også samhandle med brukeren ved hjelp av brukerinput underveis i programmet. Dette gjøres vanligvis med funksjoner som "io.read()" i Lua.
+## Dyp Dykk
+Historisk har handlingen med å lese kommandolinjeargumenter vært et viktig aspekt for programmering og scriptspråk. Før grafiske brukergrensesnitt var kommandolinjen det primære brukergrensesnittet, og selv i dag er det kritisk for skripting og automatisering.
 
-Implementasjonsmessig, tar "arg" biblioteket inn kommandolinjeargumentene og lagrer de i en tabell. Dette gjør det enkelt å få tilgang til og behandle argumentene i programmet.
+Alternativt, i noen tilfelle, kan man bruke en kommando-linjeargument-parser, som er litt mer komplisert, men gir større fleksibilitet og mer avanserte funksjoner.
 
-# Se også:
-For mer informasjon om å lese kommandolinjeargumenter i Lua, kan du se dokumentasjonen til Lua sin "arg" funksjon: https://www.lua.org/manual/5.4/manual.html#6.9. Også, her er en artikkel som gir en god forklaring på ulike måter å samhandle med brukeren i Lua: https://learnxinyminutes.com/docs/no-no/lua-no/.
+Detaljer om implementering: I Lua er alle kommandolinjeargumenter lagret i tabellen `arg`. `arg[0]` er alltid navnet på skriptet, og `arg[n]` (n> 0) er argumentene.
+
+## Se Også
+1. Lua 5.4 Referanse Manual: https://www.lua.org/manual/5.4/
+2. Lua-Users Wiki, Command Line Arguments: http://lua-users.org/wiki/CommandLineArguments
+3. Penlight Lua, Modul for behandling av argumenter: https://github.com/stevedonovan/Penlight

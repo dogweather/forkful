@@ -1,7 +1,7 @@
 ---
-title:                "Analys av ett datum från en sträng"
-html_title:           "Arduino: Analys av ett datum från en sträng"
-simple_title:         "Analys av ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -12,32 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad och Varför?
 
-Att "parsa" ett datum från en sträng innebär i princip att omvandla en textrepresentation av ett datum till ett datumobjekt som kan användas av en dator. Programmers behöver ofta parsadetum från strängar för att kunna behandla datum i sina program, till exempel för att räkna ut tidsintervall eller jämföra datum.
+Att tolka ett datum från en sträng innebär att extrahera eller omvandla texten till ett datumformat. Programmerare gör detta för att behandla och utföra operationer med datum i sina program.
 
-## Så här gör du:
+## Såhär gör du:
+
+Här är ett exempel på hur du kan omsätta "DD-MM-YYYY" format till ett datumsobjekt med Arduino.
 
 ```Arduino
-// Exempelkod för att parsadetum från en sträng
-String strDatum = "2021-01-01"; // Strängen som ska parsas, i formatet ÅÅÅÅ-MM-DD
-int ar = strDatum.substring(0, 4).toInt(); // Plockar ut året från strängen och konverterar det till ett heltal
-int manad = strDatum.substring(5, 7).toInt(); // Plockar ut månaden från strängen
-int dag = strDatum.substring(8, 10).toInt(); // Plockar ut dagen från strängen 
-// Nu kan vi skapa ett datumobjekt med hjälp av de tre variablerna
-tmElements_t datum = {0, 0, 0, dag, manad, ar};
+#include <Time.h>
 
-// Exempel på hur datumet kan utskrivas som text
-Serial.println("Parsat datum: " + String(datum.Day) + "." + String(datum.Month) + "." + String(datum.Year));
+void setup() {
+  Serial.begin(9600);
+}
 
+void loop() {
+  String dateString = "21-02-2021";
+  int Day = dateString.substring(0,2).toInt();
+  int Month = dateString.substring(3,5).toInt();
+  int Year = dateString.substring(6,10).toInt();
+
+  tmElements_t tm;
+
+  tm.Day = Day;
+  tm.Month = Month;
+  tm.Year = Year - 1970;
+  
+  time_t t = makeTime(tm);
+  Serial.println(year(t));
+  Serial.println(month(t));
+  Serial.println(day(t));
+  delay(10000);
+}
 ```
 
-Output: `Parsat datum: 1.1.2021`
+Programmet lista ut år, månad och dag från den ursprungliga strängen, omvandla dem till ett datum.
 
-## Djupdykning:
 
-Parsning av datum från strängar är en vanlig uppgift inom programmering. Det är särskilt användbart när man behöver behandla datum i olika format eller när man samarbetar med system som använder olika datumformat. Det finns också olika sätt att parsadetum från strängar, till exempel genom att använda inbyggda funktioner eller tredjepartsbibliotek. Implementeringen kan också variera beroende på vilket programmeringsspråk eller plattform man använder.
+## Djupdykning
 
-## Se även:
+Historiskt sett handlar datumtolkning från strängar om att förstå och hantera olika datumformat som används globalt. Det finns olika sätt att göra detta i Arduino som att använda TimeLib biblioteket eller andra tredjepartsbibliotek. 
 
-Här är några länkar till andra källor som kan vara intressanta för dig som vill lära dig mer om parsning av datum från strängar:
-- [Dokumentation för Arduino's `toInt()` funktion](https://www.arduino.cc/reference/en/language/functions/conversion/toint/)
-- [En guide om olika sätt att arbeta med datum i Arduino](https://www.instructables.com/Arduino-Dates/)
+Användandet av `String.substring()` och `String.toInt()` funktioner är en av de mycket grundläggande sätten att tolka datum från strängar i Arduino. Dessa funktioner är inbyggda och behöver inte några extra bibliotek. Dock kan de vara begränsade när det gäller att hantera olika datumformat, tidzoner och skottår.
+
+## Se även
+
+- För mer info om 'Time' biblioteket, besök: [TimeLib bibliotek](https://www.pjrc.com/teensy/td_libs_Time.html)
+- GitHub: [String.substring()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/)
+- GitHub: [String.toInt()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/toint/)
+- För fler liknande exempel och tutorials, besök: [Arduino offiell hemsida](https://www.arduino.cc/)

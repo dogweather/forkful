@@ -1,7 +1,7 @@
 ---
-title:                "Laddar ner en webbsida"
-html_title:           "PowerShell: Laddar ner en webbsida"
-simple_title:         "Laddar ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -11,31 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att ladda ner en webbsida är att hämta dess innehåll från internet och spara det på din dator. Programmerare gör detta för att hämta och bearbeta data från olika webbplatser för att lösa olika problem eller uppgifter.
+
+Att ladda ner en webbsida innebär att få tillgång till och spara dess HTML-kod till ett lokalt system. Programmerare gör detta för att analysera eller manipulera webbsidans data.
 
 ## Hur man gör:
-För att ladda ner en webbsida i PowerShell, använd kommandot "Invoke-WebRequest" följt av webbadressen eller URL:en.
+
+Här är ett grundläggande exempel med PowerShell:
 
 ```PowerShell
-Invoke-WebRequest www.example.com
+$pageUrl = 'https://www.example.com'
+$webClient = New-Object System.Net.WebClient
+$pageData = $webClient.DownloadString($pageUrl)
+$pageData
 ```
 
-Detta kommer att hämta innehållet på den angivna webbplatsen och visa resultatet på skärmen, inklusive HTML-koden. Om du vill spara resultatet i en fil kan du använda kommandot "Out-File" följt av en filnamn och dess filtyp.
+Utför den här koden så laddas HTML-koden för 'https://www.example.com' ner och visas.
 
-```PowerShell
-Invoke-WebRequest www.example.com | Out-File example.html
-```
+## Djupdykning 
 
-Nu kommer resultatet att sparas i en HTML-fil på din dator. För att snygga upp resultatet och visa det endast som text, kan du använda "ConvertTo-HTML" kommandot.
+Hämtning av webbsidor är inget nytt, redan från tidigt 90-tal har utvecklare hämtat webbsidor för att analysera dess data. Det finns också alternativ till PowerShell för detta, exempelvis Python, Java eller Curl.
 
-```PowerShell
-Invoke-WebRequest www.example.com | ConvertTo-HTML -As String
-```
+På låg nivå använder PowerShell .NET-biblioteket System.Net.WebClient för att utföra HTTP-förfrågan och få svaret. Dess 'DownloadString' metod används för att hämta HTML-svaret som en sträng.
 
-Detta kommer att konvertera resultatet till vanlig text och visa det på skärmen. Du kan också använda "Out-File" för att spara den konverterade texten i en fil.
+## Se Även 
 
-## Djupdykning:
-Historiskt sett så har det funnits andra sätt att ladda ner webbsidor, såsom att använda speciella program eller skript. Men med PowerShell kan du sömlöst utföra detta utan att behöva lämna det digitala ekosystemet. Du kan också använda PowerShell för att automatisera processen med att ladda ner och bearbeta webbdata för att effektivisera ditt arbete.
+Du kan lära dig mer om PowerShell med dessa länkar:
 
-## Se även:
-Läs mer om Invoke-WebRequest på [Microsofts dokumentationssida](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest). Du kan också utforska andra sätt att hämta webbdata med PowerShell på [PowerShell Gallery](https://www.powershellgallery.com/packages?q=web+request).
+1. Officiella Microsoft PowerShell Documentation: https://docs.microsoft.com/en-us/powershell/
+2. WebClient .NET Class: https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netframework-4.8
+3. HTTP Protocol: https://developer.mozilla.org/en-US/docs/Web/HTTP

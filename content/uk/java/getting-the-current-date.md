@@ -1,7 +1,7 @@
 ---
-title:                "Отримання поточної дати."
-html_title:           "Java: Отримання поточної дати."
-simple_title:         "Отримання поточної дати."
+title:                "Отримання поточної дати"
+html_title:           "Bash: Отримання поточної дати"
+simple_title:         "Отримання поточної дати"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого?
-Отримання поточної дати - це процес отримання поточної дати та часу на вашому комп'ютері. Це дозволяє програмістам організувати свої програми відповідно до поточної дати та часу, що є важливим для функцій, які виконуються в певний час або для ведення журналів.
+## Що й навіщо?
+Отримання поточної дати в Java - це спосіб отримати інформацію про дату та час в момент виконання програми. Це важливо для логування, відстеження подій або виведення дати на екран.
 
 ## Як це зробити:
-```java
-// Імпортуємо необхідний пакет
+Щоб отримати поточну дату і час в Java, використовуйте клас `LocalDateTime` з пакету `java.time`.
+
+```Java
 import java.time.LocalDateTime;
 
-// Використовуємо метод now() для отримання поточної дати та часу
-LocalDateTime now = LocalDateTime.now();
-
-// Виводимо поточну дату та час
-System.out.println(now);
+public class Main {
+    public static void main(String[] args) {
+        LocalDateTime current = LocalDateTime.now();
+        System.out.println("Поточна дата та час: " + current);
+    }
+}
 ```
-**Вихідний результат:** `2019-07-18T14:08:34.674`
 
-## Глибоке дослідження:
-* Історичний контекст: у попередні версії Java, для отримання поточної дати використовувався клас `Date`, але він був має вади, які були виправлені в пакеті `java.time` у Java 8.
-* Альтернативи: можна також отримати поточну дату та час з використанням сторонніх бібліотек, наприклад, `Joda-Time`.
-* Деталі реалізації: Java використовує так званий "нульовий мередіан", який представляє собою кількість мілісекунд, що минули з 00:00:00 UTC 1 січня 1970 року, для отримання поточної дати та часу.
+Коли ви виконуєте цей код, вихід буде подібний до:
 
-## Дивись також:
-* [Офіційна документація Java - LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
-* [Стаття про отримання поточної дати в Java](https://www.geeksforgeeks.org/java-program-to-display-current-date-time-in-12-hour-format/)
-* [Joda-Time бібліотека](https://www.joda.org/joda-time/)
+```Shell
+Поточна дата та час: 2020-12-05T10:15:30.908873
+```
+
+## Занурення в деталі:
+Перші версії Java надавали доступ до поточної дати через клас `Date`. Однак цей клас був важким для розуміння і використання, тому в Java 8 було додано новий API часу, зокрема клас `LocalDateTime`.
+
+Ви також можете використовувати `ZonedDateTime` або `Instant` для отримання дати і часу з урахуванням часового поясу.
+
+Наявність кількох варіантів може бути збентежливою, але вибір між ними залежить від вимог до вашої програми. Виберіть той, який найкраще підходить для ваших потреб.
+
+## На сторінках інших джерел:
+1. Oracle Java Documentation: [LocalDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+2. Oracle Java Documentation: [ZonedDateTime](https://docs.oracle.com/javase/8/docs/api/java/time/ZonedDateTime.html)
+3. Oracle Java Documentation: [Instant](https://docs.oracle.com/javase/8/docs/api/java/time/Instant.html)
+4. [Java - Getting Current Date and Time](https://www.javatpoint.com/java-get-current-date)

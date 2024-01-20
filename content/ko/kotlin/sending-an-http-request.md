@@ -1,7 +1,7 @@
 ---
-title:                "http 요청 보내기"
-html_title:           "Kotlin: http 요청 보내기"
-simple_title:         "http 요청 보내기"
+title:                "HTTP 요청 보내기"
+html_title:           "Clojure: HTTP 요청 보내기"
+simple_title:         "HTTP 요청 보내기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇이며 왜 필요할까?
+HTTP 요청을 보내는 것은 서버에게 정보를 요청하거나 전송하는 프로세스입니다. 프로그래머들은 이를 통해 웹 사이트 또는 API로부터 데이터를 가져오거나 데이터를 보낼 수 있습니다.
 
-HTTP 요청 전송이란 무엇일까요? 간단히 말해서, 이것은 서버로부터 리소스를 요청하는 것입니다. 예를 들어, 인터넷 브라우저에서 웹 페이지를 불러오는 것이 HTTP 요청 전송의 한 예입니다. 프로그래머들은 이것을 사용하는 이유는 서버로부터 데이터를 얻고, 자신들이 개발한 애플리케이션에 이를 적용하기 위해서입니다.
-
-## 어떻게:
+## 사용 방법
+Kotlin에서 HTTP 요청을 보내려면 Ktor 라이브러리를 이용하는 방법이 있습니다. 간단한 HTTP GET 요청 보내는 코드를 살펴봅시다.
 
 ```Kotlin
-// 코틀린에서의 HTTP 요청 전송 예제
-val url = URL("https://example.com")
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-// 요청을 보내고 응답을 받아옴
-val responseCode = connection.responseCode
-println("응답 코드: $responseCode")
+import io.ktor.client.*
+import io.ktor.client.request.*
+
+suspend fun main() {
+    val client = HttpClient()
+
+    val response: String = client.get("https://jsonplaceholder.typicode.com/posts/1")
+
+    println(response)
+    client.close()
+}
 ```
+위의 예제에서는 JSONPlaceholder라는 테스트용 API로부터 정보를 가져오고 있습니다.
 
-위의 코드 예제는 코틀린에서 HTTP 요청 전송을 하는 방법을 보여줍니다. 우선 요청을 보낼 URL을 정의하고, 그 URL을 기반으로 HttpURLConnection 인스턴스를 생성합니다. 그리고 요청 메소드를 정의한 후 요청을 보내고 응답 코드를 받아옵니다.
+## 본문
+웹에 연결할 수 있는 기능을 가진 언어 중 하나로, Kotlin은 HTTP 요청 작업에 적합합니다. 초기에는 Java를 기반으로 개발되었기 때문에, 이전의 Java 라이브러리를 활용하거나, 더 현대적인 방식으로 Ktor 또는 Fuel과 같은 라이브러리를 사용할 수 있습니다.
 
-## 심층 분석:
+HTTP 요청은 다양한 방식으로 보낼 수 있으며 GET, POST, PUT, DELETE 등의 메소드가 있습니다. 이를 통해, 프로그래머는 서버와의 데이터 교환을 유연하게 관리할 수 있습니다.
 
-HTTP 요청 전송은 웹 개발에서 매우 중요한 역할을 합니다. 이것은 웹 서버로부터 데이터를 받아오는 가장 기본적인 방법이기 때문입니다. 따라서 이를 구현할 수 있는 여러 가지 방법들이 존재합니다. 오늘날에는 코틀린 뿐만 아니라 다른 프로그래밍 언어들에서도 이를 구현하는 방법들이 널리 사용되고 있습니다. 예를 들어, 자바에서는 HttpURLConnection을 사용하거나, 서드 파티 라이브러리인 OkHttp를 사용할 수도 있습니다.
+Kotlin에서 사용하는 라이브러리는 내부적으로 소켓을 사용하여 서버와 통신합니다. 이 과정에서 생기는 다양한 에러를 잘 처리하여 안전하고 안정적인 데이터 요청과 전송이 가능합니다.
 
-## 관련 자료:
-
-- [코틀린 공식 문서: HTTP 요청 전송](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
+## 참고 자료
+- Ktor 공식 문서: [https://ktor.io/clients/http-client.html]
+- HTTP 메소드에 대한 자세한 설명: [https://developer.mozilla.org/ko/docs/Web/HTTP/Methods]
+- 서버와 클라이언트 통신에 대한 이해: [https://developer.mozilla.org/ko/docs/Learn/Server-side/First_steps/Client-Server_overview]

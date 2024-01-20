@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Lua recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,22 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Extracting substrings is the process of retrieving a part of a string, or a sequence of characters, from a larger string. This allows programmers to work with specific portions of a string, rather than the entire string at once. It is commonly used in text processing, parsing, and data manipulation.
+
+Extracting substrings is the task of grabbing specific pieces, or "substrings," from a larger piece of text or "string." Programmers do it to manipulate, parse, or otherwise examine bytes of textual data.
 
 ## How to:
-To extract substrings, the `string.sub` function can be used in Lua. It takes in three arguments: the string to extract from, the starting index, and the optional ending index. The starting index is the position of the first character to be included in the extracted substring. The optional ending index is the position of the last character to be included, and if not specified, it defaults to the end of the string. Here is an example of extracting a substring from the string "Hello World":
+
+Lua uses the `string.sub` function to extract a substring from a string. The function accepts three parameters: the string and the start and end positions of the substring.
+
+Here's how to extract 'world' from 'Hello, world!':
+
 ```Lua
-local str = "Hello World"
-print(string.sub(str, 7)) --> Outputs "World"
-print(string.sub(str, 1, 5)) --> Outputs "Hello"
+s = 'Hello, world!'
+print(string.sub(s, 8, 12))  -- Output: world
 ```
 
-## Deep Dive:
-The concept of extracting substrings has been around since the early days of programming, and it is commonly used in many programming languages, including Lua. In Lua, there are a few alternative ways to extract substrings, such as using a combination of `string.find` and `string.sub` or using pattern matching with `string.match`.
+It also works with negative indices, which count from the end of the string:
 
-The `string.sub` function also has an interesting implementation detail. In Lua, strings are indexed starting from 1, unlike many other programming languages where indexing starts at 0. This means that the first character of a string has an index of 1, and the last character has an index of the string's length. So when using `string.sub`, the starting and ending indexes follow this convention as well.
+```Lua
+s = 'Hello, world!'
+print(string.sub(s, -6, -2))  -- Output: world
+```
 
-## See Also:
-- [Official Lua Documentation for string.sub](https://www.lua.org/manual/5.4/manual.html#6.4.1)
-- [Tutorial on Lua Substring Extraction](https://www.guru99.com/lua-string-library.html#11)
-- [Wikipedia article on Substring](https://en.wikipedia.org/wiki/Substring)
+## Deep Dive
+
+In historical context, Lua has always embraced the simplicity of string manipulation. This is reflected in the straightforward functionality of `string.sub`.
+
+An alternative to `string.sub` is `string.match`. It extracts the substring that matches a pattern:
+
+```Lua
+s = 'Hello, world!'
+print(string.match(s, 'world'))  -- Output: world
+```
+However, `string.match` provides flexibility to extract more complex patterns, making it a heavier tool to use.
+
+From an implementation perspective, Lua optimises the `string.sub` function to avoid copying strings when possible. This optimisation has made Lua a preferred language for string handling tasks.
+
+## See Also
+
+- Official Lua 5.4 Manual: [String Manipulation](http://www.lua.org/manual/5.4/manual.html#6.4)
+- An Introduction to Lua: [The String Library](https://tylerneylon.com/a/learn-lua/)
+- Lua-users: [String Library Tutorial](http://lua-users.org/wiki/StringLibraryTutorial)

@@ -1,6 +1,6 @@
 ---
 title:                "Läsa en textfil"
-html_title:           "Javascript: Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,23 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att läsa en textfil betyder att man tar in innehållet från en textfil och gör det åtkomligt för ditt program att bearbeta. Detta är användbart för att till exempel läsa in en lista över användarnamn eller importera data från en annan källa. Det kan användas för att automatisera uppgifter och göra processer mer effektiva för programmerare.
+Att läsa en textfil är processen att extrahera data från en befintlig fil i textformat. Programmerare gör detta för att använda eller manipulera data i dessa filer i sina applikationer.
 
-## Hur man gör:
-Det finns flera sätt att läsa en textfil i Javascript, men en vanlig metod använder sig av inbyggda funktioner som "fs" (file system). Här är ett enkelt exempel på hur man kan läsa innehållet från en textfil och skriva ut det till konsolen:
-```javascript
-const fs = require('fs');
-const data = fs.readFileSync('document.txt', 'utf8');
+## Hur man Gör:
+För att läsa en textfil i JavaScript, används vanligtvis File System (fs) modul. Här är ett enkelt exempel:
 
-console.log(data);
+```Javascript
+var fs = require('fs');
+
+fs.readFile('test.txt', 'utf8', function(err, data){
+    if (err) throw err;
+    console.log(data);
+});
 ```
+När du kör det här scriptet, kommer det att läsa innehållet i 'test.txt' filen och skriva det till konsolen.
 
-Detta kodblock använder "fs" för att läsa in filen med namnet "document.txt" och lagrar innehållet i en variabel som heter "data". Sedan skrivs innehållet ut till konsolen med hjälp av console.log().
+## Djupdykning
+De metoder vi använder för att läsa textfiler idag i JavaScript har sina rötter i C-programmering, varifrån konceptet för filhantering först kom. Utöver 'readFile' finns det också 'readFileSync' som låser eventloopen tills den är klar att läsa filen, vilket kan vara användbart i vissa situationer men kan hämma prestandan.
 
-## Djupdykning:
-Läsning av textfiler i programmering har funnits sedan långt tillbaka och är en fundamental del av filhantering. Idag finns det flera alternativ till att använda inbyggda funktioner som "fs", såsom att använda externa bibliotek eller webbläsarens FileReader API. Det är även viktigt att tänka på olika filformat och hur man hanterar eventuella fel som kan uppstå vid läsning av en textfil.
+Det är viktigt att veta att metoden 'readFile' returnerar bufferten vid default om ingen teckenkodning (t.ex. 'utf8') anges. Om du vill ha en framgångsrik utdata utan att specificera 'utf8', måste du omvandla bufferten till en sträng:
 
-## Se även:
-- [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-- [https://developer.mozilla.org/en-US/docs/Web/API/FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
-- [https://javascript.info/file](https://javascript.info/file)
+```Javascript
+var fs = require('fs');
+
+fs.readFile('test.txt', function(err, data){
+    if (err) throw err;
+    console.log(data.toString());
+});
+```
+Det finns många andra språk och bibliotek med olika implementeringar av textfilsläsning. Att välja det bästa verktyget beror på dina specifika behov och projektets krav.
+
+## Se Även
+För vidare läsning och ytterligare resurser, kolla in följande länkar:
+
+1. Node.js fs (File System) Module: [Node.js dokumentation](https://nodejs.org/api/fs.html)
+2. JavaScript Basics: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript)
+3. File I/O in C: [Cprogramming.com](https://www.cprogramming.com/tutorial/cfileio.html)

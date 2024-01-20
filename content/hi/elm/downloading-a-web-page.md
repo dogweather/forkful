@@ -1,7 +1,7 @@
 ---
-title:                "वेब पेज डाउनलोड करना"
-html_title:           "Elm: वेब पेज डाउनलोड करना"
-simple_title:         "वेब पेज डाउनलोड करना"
+title:                "एक वेब पेज डाउनलोड करना"
+html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
+simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,55 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?:
+## क्या और क्यों?
 
-वेब पृष्ठ डाउनलोड क्या है और इसे क्यों प्रोग्रामर्स करते हैं? वेब पृष्ठ डाउनलोड से तात्पर्य है कि हम एक वेब पृष्ठ को अपने स्थानीय मशीन पर संग्रहीत करते हैं। यह प्रोग्रामर्स को विभिन्न उदाहरणों और अवसरों में उनके कूद को प्रदर्शित करने में मदद करता है।
+वेब पेज को डाउनलोड करना उसकी सामग्री को अपने कंप्यूटर पर डाउनलोड करने का कार्य होता है। प्रोग्रामर इसे करते हैं क्योंकि यह उन्हें डेटा के साथ काम करने में मदद करता हैतौर कंप्यूटर की लोकल कॉपी बनाकर हमें बाद में उसे ऑफ़लाइन पड़ने की सुविधा देता है।
 
 ## कैसे करें:
 
+Elm में, आप `Http` पैकेज का उपयोग करके वेब पेज को डाउनलोड कर सकते हैं। नीचे एक सरल उदाहरण दिया गया है:
+
 ```Elm
-import Html
+
+import Html exposing (Html, text)
 import Http
 
-type Msg = Fetched (Result Http.Error String)
-
-getWebPage : Cmd Msg
-getWebPage =
-  let
-    request =
-      Http.getString "https://www.example.com"
-  in
-    Http.send Fetched request
-
-view : Model -> Html Msg
-view model =
-  Html.button
-    [ onClick model.getWebPage ]
-    [ Html.text "Get the Web Page!" ]
-
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
-
-main : Program Never
 main =
-  Html.beginnerProgram
-    { model = initialModel
-    , view = view
-    , update = update
-    , subscriptions = subscriptions
-    }
+  Http.get { url = "http://example.com", expect = Http.expectString GotResponse }
+
+type Msg = GotResponse (Result Http.Error String)
+
+update msg model =
+  case msg of
+    GotResponse result ->
+      case result of
+        Ok body -> 
+          ( body, Cmd.none )
+        
+        Err _ -> 
+          ( "Something went wrong", Cmd.none )
+          
+display model =
+  Html.div [] [ Html.text model ]
+
+main = 
+  Html.beginnerProgram { model = "", view = display, update = update }
+
 ```
 
-निष्कर्ष:
-"Get the Web Page!" बटन पर क्लिक करें, इससे एक HTTP GET अनुरोध भेजा जाएगा और वेब पृष्ठ का सामग्री मॉडल में संग्रहीत होगी।
+## गहरी डाइव:
 
-## गहराई तक:
+1. **ऐतिहासिक प्रसंग:** वेब पेज डाउनलोडिंग की क्षमता की मांग हमेशा से रही है। एचटीटीपी (HTTP) प्रोटोकॉल ईंटरनेट की मांग की पूर्ति के लिए डिज़ाइन की गई थी।
 
-वेब पृष्ठ डाउनलोड को समझने के लिए इतिहास, वैकल्पिक विकल्प और प्रगति की विवरण शामिल होते हैं। चरणों को कई भाषाओं में संसाधित किया गया है और हम डाउनलोड के साथ ही अन्य वेब घटकों को भी प्राप्त कर सकते हैं। Elm, प्रोग्रामिंग भाषा है जो फ़ंक्शनल और लक्षित समझ का उपयोग करती है और जो भारतवर्ष के भाषाओं को पूर्णतः समर्थित करती है।
+2. **विकल्प:** `Http` पैकेज के अलावा, आप `elm-fetch` जैसे पैकेज का भी उपयोग कर सकते हैं।
 
-## जरूर देखें:
+3. **कार्यान्वयन विवरण:** `Http.get` का उपयोग करते समय, आप एक यूआरएलऔर 'Http.expectString' फंक्शन का उपयोग करके एक `Http.Request` बनाते हैं। यह अनुरोध सर्वर को भेजा जाता है और सर्वर की प्रतिक्रिया को `Msg` टाइप के रूप में हैंडल किया जाता है।
 
-- Elm वेबसाइट: https://elm-lang.org/
-- Elm वेबसाइट के कोड: https://github.com/elm/elm-website
-- Elm वेब पृष्ठ डाउनलोड के लिए Http आईओ आइडेंटिटी: https://github.com/elm/http/blob/master/src/Http.elm
+## भी देखें:
+
+1. [Elm के आधिकारिक डॉक्यूमेंटेशन](https://guide.elm-lang.org/) 
+2. [Elm के साथ HTTP अनुरोध](https://korban.net/posts/elm/2018-11-28-elm-http-request) 
+3. [GitHub पर Elm-Http पैकेज](https://github.com/elm/http)

@@ -1,6 +1,6 @@
 ---
 title:                "Tworzenie tymczasowego pliku"
-html_title:           "Rust: Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
 simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co to i dlaczego?
 
-Tworzenie pliku tymczasowego jest procesem tworzenia tymczasowego pliku w systemie operacyjnym, który służy jako tymczasowe miejsce przechowywania danych. Programiści często wykonują tę operację, ponieważ wymaga to przechowywania danych w krótkim czasie, na przykład podczas testowania lub przetwarzania danych tymczasowych.
+Tworzenie tymczasowego pliku, to proces, w którym program tworzy plik na krótki okres, aby doraźnie przechowywać dane. Programiści robią to, gdy potrzebują tymczasowego miejsca do przechowywania i manipulowania danymi, które nie są wymagane długoterminowo.
 
 ## Jak to zrobić?
 
+W języku Rust możliwe jest tworzenie tymczasowych plików za pomocą biblioteki standardowej.
+
 ```Rust
-use std::fs::File; // importowanie modułu File z biblioteki standardowej
+use std::fs::File;
+use std::io::Write;
+use std::env;
 
-let temp_file = File::create("example.txt")?; // tworzenie pliku tymczasowego o nazwie "example.txt" i zwracanie błędu, jeśli operacja się nie powiedzie
-
-temp_file.write_all(b"Hello, world!")?; // zapisywanie danych do pliku tymczasowego
+fn main() {
+    let mut output = File::create(env::temp_dir().join("temp_file.txt")).expect("failed to create file");
+    write!(output, "Hello, world!").expect("failed to write to file");
+}
 ```
+Wywołanie powyższego kodu utworzy plik o nazwie `temp_file.txt` w katalogu tymczasowym z tekstem `Hello, world!`.
 
-## Wnikliwa analiza
+## Deep Dive
 
-W przeszłości, programiści często używali plików tymczasowych do przechowywania danych, które nie potrzebowały długotrwałego przechowywania lub były potrzebne tylko w krótkim czasie. Jednak w dzisiejszych czasach, z wykorzystaniem pamięci RAM i innych technologii, korzystanie z plików tymczasowych nie jest już tak powszechne.
-
-Alternatywą dla tworzenia plików tymczasowych w systemie operacyjnym są struktury danych w pamięci, takie jak tablice lub listy. Jednak w niektórych przypadkach tworzenie plików tymczasowych może być wydajniejsze lub niezbędne.
-
-Implementacja tworzenia plików tymczasowych jest różna w zależności od systemu operacyjnego i języka programowania. W języku Rust, możemy skorzystać z modułu `std::fs`, który zawiera metody do tworzenia i obsługi plików.
-
-## Zobacz także
-
-- Dokumentacja dla modułu `std::fs` w języku Rust: https://doc.rust-lang.org/std/fs/index.html
-- Poradnik dotyczący zarządzania plikami w języku Rust: https://doc.rust-lang.org/1.1.0/book/files.html
-- Inne możliwe sposoby przechowywania danych tymczasowych w systemie operacyjnym: np. korzystanie z pamięci RAM, plików cookie w przeglądarkach internetowych.
+Tworzenie plików tymczasowych jest praktyką rozpowszechnioną od początków informatyki. To sprawdzone rozwiązanie, ale nie jedno z możliwych. Alternatywą może być użycie bazy danych lub przechowywanie danych w pamięci.
+ 
+Rust używa internych API systemu operacyjnego do tworzenia i zarządzania tymczasowymi plikami. Ta implementacja jest bardziej wydajna i bezpieczna, ponieważ Rust automatycznie zarządza i zamyka te pliki po skończeniu z nich korzystać.
+ 
+## Zobacz też
+ 
+- Dokumentacja Rust na temat `File`: [https://doc.rust-lang.org/std/fs/struct.File.html]
+- Dokumentacja Rust na temat `env::temp_dir()`: [https://doc.rust-lang.org/std/env/fn.temp_dir.html]
+- Informacje na temat zarządzania plikami i katalogami w Rust: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html]

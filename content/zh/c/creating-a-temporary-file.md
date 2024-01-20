@@ -1,6 +1,6 @@
 ---
 title:                "创建临时文件"
-html_title:           "C: 创建临时文件"
+html_title:           "Kotlin: 创建临时文件"
 simple_title:         "创建临时文件"
 programming_language: "C"
 category:             "C"
@@ -10,57 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 创建临时文件
+## 什么 & 为什么? | What & Why?
 
-为了更有效地编写程序，程序员经常创建临时文件。临时文件是在计算机上临时存储数据的文件，它们被用来解决许多编程问题。在这篇文章中，我们将一起探讨如何创建临时文件以及为什么程序员会这样做。
+临时文件是在程序运行过程中而产生的临时存储数据的文件。程序员创建它是因为当处理大量数据或者想在重新运行程序时避免数据丢失的情况的时候。
 
-## 什么是创建临时文件，为什么要这么做？
+## 如何做 | How to:
 
-创建临时文件就是在计算机上临时存储数据的文件。程序员需要这么做的原因有很多，例如：
-
-- 临时存储大量数据：当程序需要处理大量数据时，使用临时文件可以帮助节省内存空间。
-- 临时存储数据结构：某些情况下，程序员可能需要在程序运行过程中创建临时数据结构来解决某个问题。
-- 避免数据丢失：有些程序在运行过程中会产生临时数据，但这些数据并不需要长久保留，因此将它们存储到临时文件中可以避免数据丢失。
-
-## 如何创建临时文件
-
-要创建临时文件，我们可以使用C语言中的`tmpfile()`函数。这个函数将自动创建一个唯一的临时文件，并返回一个指向该文件的指针。
-
+创建临时文件的简单示例：
 ```C
 #include <stdio.h>
-
-int main() {
-  FILE *fp; 
-  char c;
-
-  // 创建临时文件并向其中写入数据
-  fp = tmpfile();
-  fputc('H', fp); 
-  fputc('i', fp);
-  fputc('!', fp);
-  
-  // 读取临时文件中的数据，并输出
-  rewind(fp);
-  while ((c = fgetc(fp)) != EOF) {
-    putchar(c);
-  }
-  
-  // 关闭临时文件
-  fclose(fp);
-  return 0;
+ 
+int main()
+{
+    char tmpname[L_tmpnam];
+    char *filename;
+    FILE *tmpfp;
+ 
+    filename = tmpnam(tmpname);
+    
+    printf("Temporary file name is: %s\n", filename);
+    tmpfp = fopen(filename, "w+b");
+    if (tmpfp) {
+        printf("Opened a temporary file OK\n");
+        fclose(tmpfp);
+        if (remove(filename) == 0)
+            printf("Temporary file removed OK\n");
+        else
+            perror("remove");
+    } else {
+        perror("tmpfile");
+    }
+    return 0;
 }
 ```
+这个代码会生成临时文件并显示其名字。如果成功，将会显示已经打开和删除临时文件的信息。
 
-输出结果将会是`Hi!`。临时文件将在程序运行结束后自动删除。
+## 深入探究 | Deep Dive:
 
-## 深入探讨
+临时文件的创建有些历史背景。早期的程序设计者们发现，当处理大量数据时，使用临时文件可以防止内存溢出，提高程序效率。
+除了`tmpnam`之外，`mkstemp`和`tmpfile`也是创建临时文件的常用函数。`tmpnam`生成一个唯一的文件名，`mkstemp`创建一个唯一的临时文件，并返回一个可用于读写的文件描述符。`tmpfile`函数，会创建一个用于更新模式(w+)的临时二进制文件。
 
-- 历史上，程序员经常使用临时文件来解决内存不足的问题。随着计算机硬件技术的发展，这种情况变得越来越少，但仍然有些特殊情况下仍会使用临时文件。
-- 除了使用`tmpfile()`函数，程序员还可以使用`tmpnam()`函数来创建临时文件。但由于这个函数并不是线程安全的，因此建议使用`tmpfile()`。
-- 在某些操作系统中，临时文件会被存储在`/tmp`或者`/var/tmp`目录下，我们可以通过`tmpfile()`函数的返回值来获取临时文件的路径。
+具体实现上，临时文件通常在`/tmp`或`/var/tmp`中创建。每个临时文件都有一个唯一的名称，通常是在进程ID后附加随机字符生成的。
+使用完毕后，临时文件应该被删除以释放系统资源。
 
-## 相关阅读
+## 参看 | See Also:
 
-- [C语言中的文件操作](https://www.runoob.com/cprogramming/c-file-io.html)
-- [tmpfile()函数的文档](https://www.cplusplus.com/reference/cstdio/tmpfile/)
-- [tmpnam()函数的文档](https://www.cplusplus.com/reference/cstdio/tmpnam/)
+C 库函数 tmpnam() - http://www.cplusplus.com/reference/cstdio/tmpnam/
+创建临时文件的更多方式 - https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html
+在C中实现临时文件 - https://www.tutorialspoint.com/c_standard_library/c_function_tmpnam.htm

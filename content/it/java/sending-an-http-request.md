@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "Java: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "Java"
 category:             "Java"
@@ -11,52 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cosa e Perché?
-L'invio di una richiesta HTTP è un concetto importante nella programmazione Java. Si tratta di una comunicazione tra il tuo programma e un altro server o risorsa web. I programmatori utilizzano questa tecnologia per scambiare dati e informazioni tra diverse fonti.
 
-## Come Fare:
-Per inviare una richiesta HTTP in Java, è necessario utilizzare la classe java.net.HttpURLConnection. Questa classe fornisce metodi per impostare l'URL di destinazione, il metodo di richiesta e gestire le eventuali risposte. Ecco un esempio di codice:
+L'invio di una richiesta HTTP è un modo per piantare una bandiera di dialogo tra il tuo computer (il client) e un server web. I programmatori lo fanno per comunicare con le API web, scaricare file e molto altro.
 
-```java
-import java.net.HttpURLConnection;
-import java.net.URL;
+## Come fare:
 
-public class HTTPRequestExample{
-    public static void main(String[] args){
-        try{
-            //Imposta l'URL di destinazione
-            URL url = new URL("https://www.example.com");
-            
-            //Crea una nuova istanza di HttpURLConnection
-            HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            
-            //Imposta il metodo di richiesta
-            con.setRequestMethod("GET");
-            
-            //Ottieni la risposta dalla richiesta
-            int responseCode = con.getResponseCode();
-            
-            //Stampa la risposta
-            System.out.println("Codice di risposta: " + responseCode);
-            
-            //Chiudi la connessione
-            con.disconnect();
-        } catch(Exception e){
-            System.out.println("Errore durante la richiesta: " + e);
-        }
+Ecco un esempio semplice di come inviare una richiesta GET usando la libreria java.net.http di Java 11.
+
+```Java
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+              .uri(new URI("http://example.com"))
+              .build();
+
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
     }
 }
-
 ```
 
-Output:
+Quando esegui questo codice, vedrai un output di stringa nel terminale.
 
-Codice di risposta: 200
+## Approfondimento:
 
-## Deep Dive:
-L'invio di richieste HTTP è una tecnologia fondamentale nella comunicazione web. È stato introdotto per la prima volta nel 1991 e da allora è diventato uno standard per lo scambio di dati tra diversi sistemi. Ci sono anche altre opzioni per inviare richieste HTTP in Java, come la libreria Apache HttpClient.
+Java offre supporto per l'invio di richieste HTTP da molto tempo, inizialmente con l'antiquato `java.net.URLConnection`, poi con `java.net.HttpURLConnection` e ora con il più recente `java.net.http.HttpClient`. 
+
+Se non stai utilizzando Java 11 o una versione successiva, potresti dover utilizzare una libreria esterna come Apache HttpClient o OkHttp per avere le stesse capacità. 
+
+Quando si invia una richiesta HTTP, è possibile modificare una serie di dettagli come tipo di richiesta (GET, POST, etc.), intestazioni, payload del corpo e molto altro.
 
 ## Vedi Anche:
-Ulteriori informazioni su come inviare richieste HTTP in Java possono essere trovate su questi siti:
-- Documentazione ufficiale Java: https://docs.oracle.com/javase/tutorial/networking/urls/readingWriting.html
-- Tutorial su Come Fare: https://www.baeldung.com/java-http-request
-- Apache HttpClient: https://hc.apache.org/httpcomponents-client-ga/index.html
+
+- La documentazione API ufficiale di Java per HttpClient: https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html
+- Un tutorial più completo sull'utilizzo di HttpClient: https://www.baeldung.com/java-11-http-client
+- Un confronto tra le diverse librerie HTTP in Java: https://www.baeldung.com/java-9-http-client

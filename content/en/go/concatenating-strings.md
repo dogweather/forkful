@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Go recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Go"
 category:             "Go"
@@ -12,32 +12,75 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Concatenating strings in programming means combining two or more strings into one. This is a common practice among programmers as it allows for the creation of dynamic and customized output by joining different pieces of text together.
+Concatenating strings is the process of joining multiple strings together to create a larger string. This is handy when you need to build sentences dynamically or handle pieces of text.
 
-## How to:
+## How To:
 
-To concatenate strings in Go, there are a few simple steps to follow. First, declare the strings you want to combine using the `var` keyword. Then, use the `+` operator to join the strings together in the desired order. Let's see an example:
+Here's a straight-ahead way to concatenate strings in Go:
 
-```
-Go func main() {
-    name := "John"
-    greeting := "Hello"
-    message := greeting + " " + name
-    fmt.Println(message) // Output: Hello John
-}
+```Go
+str1 := "Hello"
+str2 := "World"
+str3 := str1 + " " + str2
+fmt.Println(str3) // Output: "Hello World"
 ```
 
-In this code, the string variables `name` and `greeting` are combined with the `+` operator to create the string variable `message`, which is then printed to the console.
+In Go you can also use `fmt.Sprintf`, a way to format strings:
+
+```Go
+str1 := "Hello"
+str2 := "World"
+str3 := fmt.Sprintf("%s %s", str1, str2)
+fmt.Println(str3) // Output: "Hello World"
+```
+
+Another way is by using the `strings.Join` function for an array of strings:
+
+```Go
+strs := []string{"Hello", "World"}
+result := strings.Join(strs, " ")
+fmt.Println(result) // Output: "Hello World"
+```
 
 ## Deep Dive:
 
-Concatenating strings has been a fundamental operation in programming languages for a long time. However, in some languages such as Java, concatenating strings can be inefficient as it creates a new string every time it is performed. In contrast, Go's string concatenation operator `+` is optimized to use strings efficiently and avoid this performance issue.
+Historically, + operator is used for concatenating strings in many languages, and Go also preserves this feature. Using + is simple and intuitive, but you should be aware of performance issues when concatenating large amounts of strings or large sized strings.
 
-An alternative to using the `+` operator is the `fmt.Sprintf()` function, which uses placeholders to format and combine strings. This can be useful for more complex string concatenation operations.
+Go suggests using the strings.Builder or bytes.Buffer which provides an efficient way to concatenate strings.
 
-Internally, concatenating strings in Go is implemented using a byte array, which ensures efficient memory usage. To avoid creating unnecessary copies of strings, the Go compiler optimizes string concatenation operations at compile time.
+Here's an example using `strings.Builder`:
+
+```Go
+var str strings.Builder
+
+str.WriteString("Hello")
+str.WriteString(" ")
+str.WriteString("World")
+
+fmt.Println(str.String()) // Output: "Hello World"
+```
+
+For `bytes.Buffer` the approach is similar:
+
+```Go
+var str bytes.Buffer
+
+str.WriteString("Hello")
+str.WriteString(" ")
+str.WriteString("World")
+
+fmt.Println(str.String()) // Output: "Hello World"
+```
 
 ## See Also:
 
-- [The official Go documentation on strings](https://golang.org/pkg/strings/)
-- [An in-depth explanation of string concatenation in Go](https://www.ardanlabs.com/blog/2017/05/language-mechanics-on-strings.html)
+For more details and examples, check the official Go documentation:
+- [fmt package](https://golang.org/pkg/fmt/)
+- [strings package](https://golang.org/pkg/strings/)
+- [bytes package](https://golang.org/pkg/bytes/)
+
+Also, see these articles for a deeper understanding:
+1. [String concatenation in Go](https://yourbasic.org/golang/string-concatenation/)
+2. [Go by Example: String Functions](https://gobyexample.com/string-functions)
+
+Remember, choosing the correct way to concatenate depends on your scenario. Always keep performance in mind when working with large amounts of data.

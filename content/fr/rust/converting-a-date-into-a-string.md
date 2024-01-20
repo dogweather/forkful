@@ -1,6 +1,6 @@
 ---
 title:                "Convertir une date en chaîne de caractères"
-html_title:           "Rust: Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
 simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust: Convertir une date en chaîne de caractères
+# Convertir une Date en String avec Rust
+Il est souvent essentiel de faire des manipulations de dates et heures en programmation. Que vous travailliez sur un site de réservation, un calendrier personnel d'événements, ou simplement afficher des timestamps, la conversion de dates en chaînes de caractères est une tâche courante dans cet écosystème. 
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
 
-Convertir une date en chaîne de caractères est le processus de transformer une date en une forme lisible pour les humains. Les programmeurs font souvent cela lorsqu'ils ont besoin d'afficher une date pour les utilisateurs finaux ou lorsqu'ils doivent stocker une date dans une base de données en tant que chaîne de caractères.
+La conversion d'une date en une chaîne de caractères consiste à transformer une valeur de date en format texte. Les développeurs le font pour afficher les informations de date de manière lisible par l'homme, cela permet aussi une meilleure portabilité des données entre différents systèmes.
 
-## Comment faire:
+## Comment faire :
 
-Voici un exemple de code montrant comment convertir une date en chaîne de caractères en utilisant la bibliothèque standard de Rust. Nous allons utiliser la fonction `format!` pour formater notre date dans le format souhaité puis la convertir en chaîne de caractères à l'aide de la méthode `to_string()` :
+Voici comment convertir rapidement une date en chaîne de caractères en Rust :
 
-```rust
-use std::time::SystemTime;
+```Rust
+extern crate chrono;
+
+use chrono::offset::Utc;
+use chrono::DateTime;
 
 fn main() {
-    let date = SystemTime::now();
+    let now: DateTime<Utc> = Utc::now();
 
-    let formatted_date = format!("{}", date);
-
-    let date_string = formatted_date.to_string();
-
-    println!("La date actuelle est: {}", date_string);
+    let s = now.to_string();
+    
+    println!("{}", s);
 }
 ```
+Cela convertira la date et l'heure actuelles en une chaîne de caractères lisible. 
 
-Cet exemple utilise la date actuelle en tant que point de départ, mais vous pouvez également spécifier une date spécifique en utilisant la structure `SystemTime` et en utilisant la méthode `now()` pour obtenir la date actuelle.
+## Plongée en Profondeur :
 
-Voici la sortie attendue pour cet exemple :
+1. **Contexte historique :** L'encodage des dates est une fonctionnalité essentielle dans presque tous les types d'applications depuis l'ère des mainframes jusqu'à l'heure actuelle.
 
-```
-La date actuelle est: Sun Sep 05 12:01:34 2021
-```
+2. **Alternatives :** Il existe de nombreuses méthodes pour encoder une date en string, dépendant du langage de programmation. En Rust, nous utilisons le crate `chrono` pour cette tâche. On pourrait aussi coder manuellement la conversion, mais cela est moins pratique et moins sûr.
 
-## Plongée en profondeur:
+3. **Détails d'implémentation :** Dans le morceau de code ci-dessus, nous utilisons `Utc::now()` pour obtenir la date et l'heure actuelles. Ensuite, on utilise `to_string()` sur le DateTime pour le convertir en une chaîne de caractères.
 
-Historiquement, la conversion de dates en chaînes de caractères a été un sujet difficile pour les programmeurs, car cela impliquait souvent de manipuler manuellement le format de la date et de la convertir en une chaîne de caractères. Mais avec l'avènement de bibliothèques modernes telles que `datetime` en Python ou le module `chrono` en Rust, cette tâche est devenue beaucoup plus simple.
+## Voir Aussi :
 
-Une alternative à la conversion de dates en chaînes de caractères est de les stocker sous forme de nombres entiers dans une base de données, ce qui peut être plus efficace. Cependant, cela nécessite de convertir ces nombres en dates lisibles pour les utilisateurs finaux lors de l'affichage.
+Pour plus d'informations, consultez les ressources suivantes :
 
-En termes d'implémentation, les langages de programmation modernes, y compris Rust, ont des bibliothèques puissantes qui prennent en charge la conversion de dates en chaînes de caractères de manière efficace et facile à utiliser.
-
-## Voir aussi:
-
-- [Documentation sur la bibliothèque standard de Rust pour les dates](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
-- [Exemple d'utilisation de la bibliothèque `chrono` en Rust](https://docs.rs/chrono/0.4.19/chrono/)
-- [Article sur la conversion de dates en chaînes de caractères en Python](https://realpython.com/python-string-formatting/#2-the-old-way-using-the-format-method)
+1. [La documentation officielle de Rust](https://doc.rust-lang.org/).
+2. [Le crate chrono sur crates.io](https://crates.io/crates/chrono).
+3. [Les spécifications ISO pour la représentation des dates et des heures](https://www.iso.org/standard/40874.html).

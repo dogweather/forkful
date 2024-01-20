@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "TypeScript recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,42 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Converting a string to lowercase in TypeScript is the process of changing all uppercase letters in a string to lowercase letters. Programmers do this to standardize data input or to implement case-insensitive comparisons.
 
-Converting a string to lower case means changing all of the letters in a string to their lowercase equivalents. This is a common task in programming because it allows for consistency in data and makes it easier to compare strings without worrying about capitalization differences.
 
-## How to:
-
-### Method 1: Using the toLowerCase() method
-
-```TypeScript
-let string = "Hello World";
-let lowerCaseString = string.toLowerCase();
-
-console.log(lowerCaseString);
-// Output: "hello world"
-```
-In this example, we use the built-in `toLowerCase()` method to convert the string to lowercase. This method will return a new string with all lowercase letters, while leaving the original string unchanged.
-
-### Method 2: Using the spread operator and map() method
+## How To:
+In TypeScript, you can convert a string to lower case using the `toLowerCase()` method. This method does not modify the original string, but returns a new string where all uppercase characters are converted to lowercase.
+Here's an example:
 
 ```TypeScript
-let string = "Hello World";
-let lowerCaseString = [...string].map((c) => c.toLowerCase()).join('');
-
-console.log(lowerCaseString);
-// Output: "hello world"
+let upperCaseString : string = "HELLO, TYPESCRIPT!";
+let lowerCaseString : string = upperCaseString.toLowerCase();
+console.log(lowerCaseString);  // Outputs: "hello, typescript!"
 ```
-In this example, we use the spread operator `...` to split the string into an array of individual characters, then use the `map()` method to iterate through the array and convert each character to lowercase. Finally, we use the `join()` method to combine the characters back into a single string.
 
-## Deep Dive:
+## Deep Dive
+Historically, transforming a string's case has been a necessary procedure in various programming languages, including TypeScript's precursor, JavaScript. 
 
-There are a few different approaches to converting a string to lowercase, each with their own advantages and disadvantages. The `toLowerCase()` method is the simplest and most widely used, but it can be less efficient when dealing with larger strings. The spread operator and `map()` method approach provides more flexibility, but it may also be harder to read for beginner programmers.
+Instead of the toLowerCase method, some languages like Python use the `lower()` function. But the concept remains the same across languages: convert all uppercase characters in a string to lowercase.
 
-Historically, uppercase and lowercase letters have been used in different ways in various writing systems. In the English language, capital letters were traditionally used for proper nouns and the beginning of sentences. However, in modern programming languages, capitalization is often ignored in favor of creating consistent and predictable code.
+In TypeScript, the `toLowerCase()` method is not the only method for manipulating string casing. There's also `toUpperCase()`, which converts all string characters to uppercase, useful when needing to standardize inputs to uppercase.
 
-Some alternatives to the `toLowerCase()` method include `String.prototype.toLocaleLowerCase()` and `String.prototype.toLowerCase()` in JavaScript. For TypeScript, we can also use `string.toLocaleLowerCase()` or `string.toLowerCase()`, as strings in TypeScript are just extensions of strings in JavaScript.
+Implementation-wise, the `toLowerCase()` function works character by character, checking if they are within the ASCII range of uppercase letters (`65 - 90` for `A-Z`). If they fall within this range, it adds 32 to their ASCII value to get the corresponding lowercase letter.
 
-## See Also:
-
-- [String.prototype.toLowerCase() documentation on Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Strings in TypeScript documentation on TypeScript website](https://www.typescriptlang.org/docs/handbook/2/types-from-types.html#strings)
+## See Also
+- [MDN Documentation on toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Stackoverflow Discussion on String Case Conversion](https://stackoverflow.com/questions/2140627/how-to-do-case-insensitive-string-comparison)

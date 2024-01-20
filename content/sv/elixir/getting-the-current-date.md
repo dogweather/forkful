@@ -1,7 +1,7 @@
 ---
-title:                "Att få den aktuella datumen"
-html_title:           "Elixir: Att få den aktuella datumen"
-simple_title:         "Att få den aktuella datumen"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,30 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att få den aktuella datumet är en viktig del av programmering, eftersom det låter oss hantera och spåra tidsbaserade händelser i våra program. Detta inkluderar allt från schemaläggning av uppgifter till att beräkna ålder och hantera tidszoner.
+## Vad & Varför
+Att hämta dagens datum innebär att programmerare får exakt tid och datum info. Detta är nödvändigt för att logga händelser, tidstämpa data eller anpassa användarupplevelser.
 
-## Hur du gör:
-För att få den aktuella datumet i Elixir kan du använda funktionen `:calendar.local_time()`. Det är en inbyggd funktion som returnerar ett tupel med det aktuella datumet som första element och klockslaget som andra element. Exempelvis:
+## Hur man gör
+Här är ett sätt att få aktuell tid och datum i Elixir:
 
-```Elixir
-{:ok, date_time} = :calendar.local_time()
-IO.puts("Idag är det #{date_time.date}")
+```elixir
+iex> DateTime.utc_now()
+~U[2022-01-01T12:00:00Z]
 ```
 
-Detta kommer att skriva ut den aktuella datumet i formatet DD/MM/YYYY. Om du behöver ett specifikt datum kan du också använda funktionen `:calendar.date_to_gregorian_days()` som tar emot ett datum som argument och returnerar det som antal dagar sedan det gregorianska kalendariet startade. Exempelvis:
+Notera att `DateTime.utc_now()` återger aktuell tid i UTC-format.
 
-```Elixir
-today = Date.utc_today()
-days_since_epoch = :calendar.date_to_gregorian_days(today)
-IO.puts("Idag är det #{days_since_epoch} dagar sedan det gregorianska kalendariet startade.")
-```
+## Djupdykning
 
-## Djupdykning:
-För att få en bättre förståelse av hur den aktuella datumet fungerar i Elixir, är det viktigt att förstå bakgrunden. Elixir är byggt på Erlang som i sin tur är inspirerat av språket Prolog. I Prolog används datumet som ett sätt att matcha och söka efter data. Elixir har ärvt denna funktionalitet genom pattern matching, vilket låter oss jämföra datum på ett enkelt sätt.
+Att få aktuellt datum är ett gammalt koncept som går tillbaka till tidiga dagar av programmering. I Elixir används `DateTime` modulen, som lanserades i version 1.3, för att hantera datum och tid. 
 
-En annan metod för att få den aktuella datumet är att använda biblioteket `Calendar` som erbjuder ett brett utbud av funktioner för att hantera datum och tider. Detta kan vara användbart om du behöver göra mer avancerade beräkningar eller arbeta med olika tidszoner.
+Alternativ till `DateTime` inkluderar `Date` och `NaiveDateTime` modulerna. `Date` ger endast datuminformation, medan `NaiveDateTime` ger datum och tid utan tidszoninformation.
 
-## Se även:
-- Officiell dokumentation för Elixir's `Calendar` bibliotek: https://hexdocs.pm/elixir/Calendar.html 
-- En tutorial om hur man hanterar datum och tider i Elixir: https://elixirschool.com/sv/lessons/basics/dates/
+Detaljer om implementation: När `DateTime.utc_now()` kallas, hämtas det aktuella datumet och tiden från datorns systemklocka och konverteras till ett `DateTime`-struktur i UTC.
+
+## Se också
+
+1. [`DateTime` dokumentation](https://hexdocs.pm/elixir/DateTime.html) - Fullständig dokumentation för DateTime modulen.
+2. [`Date` dokumentation](https://hexdocs.pm/elixir/Date.html) - Användbart om du bara vill hantera datum.
+3. [`NaiveDateTime` dokumentation](https://hexdocs.pm/elixir/NaiveDateTime.html) - Utforska detta om du inte behöver tidszonsinfo.
+4. [Tidszonsdatabas i Elixir](https://hexdocs.pm/elixir/TimeZoneDatabase.html) - Lär dig om hur Elixir hanterar tidszoner.

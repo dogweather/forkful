@@ -1,7 +1,7 @@
 ---
-title:                "Textsuche und -ersetzung"
-html_title:           "Gleam: Textsuche und -ersetzung"
-simple_title:         "Textsuche und -ersetzung"
+title:                "Suchen und Ersetzen von Text"
+html_title:           "C#: Suchen und Ersetzen von Text"
+simple_title:         "Suchen und Ersetzen von Text"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was & Warum?
+Die Suche und Ersetzung von Text ist eine grundlegende Operation in der Programmierung - sie ermöglicht das Auffinden spezifischer Zeichenketten innerhalb eines Textes und ihre mögliche Ersetzung mit etwas Anderem. Programmierer nutzen es ständig, zum Beispiel bei der Bearbeitung von Textdaten oder bei der modernisierung veralteten Codes.
 
-Suchen und Ersetzen von Text ist ein häufiges Werkzeug in der Programmierung, mit dem Programmierer bestimmte Zeichenketten in einem Text finden und ersetzen können. Dies kann nützlich sein, um Fehler zu beheben, Variablen- oder Funktionsnamen anzupassen oder den Code für verschiedene Anforderungen anzupassen.
+## Wie es geht:
+In Gleam können Sie die eingebaute `replace` Funktion nutzen, um Text zu suchen und zu ersetzen. Hier ist ein einfacher Beispielcode und seine Ausgabe:
 
-Wie geht's?
+```gleam
+import gleam/string
 
-Um in Gleam Text zu suchen und zu ersetzen, können wir die integrierte Funktion `String.replace` verwenden. Hier ist ein Beispiel, wo wir alle Vorkommen von "Hund" in einem Satz durch "Katze" ersetzen:
+fn main() {
+  let original = "Hallo Welt!"
+  let replaced = string.replace(original, "Welt", "Gleam")
 
-```Gleam
-let ersetzt = String.replace("Ich habe einen Hund", "Hund", "Katze")
+  assert replaced == "Hallo Gleam!"
+}
 ```
 
-Das Ergebnis wird "Ich habe eine Katze" sein. Beachte, dass `String.replace` die geänderte Zeichenkette zurückgibt und die ursprüngliche Zeichenkette unverändert lässt. Falls wir mehr als ein Vorkommen ersetzen möchten, können wir den optionale Parameter `limit` verwenden:
+Führen Sie es aus und Sie werden "Hallo Gleam!" als Ausgabe sehen.
 
-```Gleam
-let ersetzt = String.replace("Ich habe einen Hund und noch einen Hund", "Hund", "Katze", limit: 1)
-```
+## Tiefen Tauchgang
+Textersetzungen sind nichts Neues in der Programmierung. Bereits in den allererst Line-Editors aus den 1960er Jahren gab es Funktionen für Textsuche und -ersatzung. Heutzutage gibt es zahlreiche Methoden und Bibliotheken für solche Operationen, von regex-basierten Funktionen bis hin zu umfassenden textverarbeitungsbibliotheken.
 
-Das Ergebnis hier wäre "Ich habe eine Katze und noch einen Hund". Der zweite Hund bleibt also unverändert.
+In Gleam wird `replace` als native Funktion in der `gleam/string` Bibliothek geliefert, die aus Leistungssicht optimiert ist. Sie ist effizient und einfach zu bedienen, was sie zu einer idealen Wahl für Gleam-Entwickler macht.
 
-Tiefentauchen
+## Siehe auch
+Weitere relevante Ressourcen für das Arbeiten mit Text in Gleam sind:
 
-Das Suchen und Ersetzen von Text ist seit den frühen Tagen der Programmierung ein wichtiges Werkzeug und wird in vielen Programmiersprachen unterstützt. In manchen Fällen, wie z.B. bei regulären Ausdrücken, ist es jedoch etwas komplexer und erfordert zusätzliche Kenntnisse. Alternativ können auch externe Tools oder Bibliotheken genutzt werden, um bestimmte Such- und Ersatzfunktionen anzubieten.
-
-Siehe auch
-
-Hier sind einige hilfreiche Links, um mehr über die Bearbeitung von Text in Gleam zu lernen:
-
-- Die offizielle Gleam-Dokumentation: https://gleam.run/documentation
-- Ein Tutorial zu Strings in Gleam: https://github.com/gleam-lang/gleam/blob/master/docs/tutorials/string.md#replace
-- Die offizielle Gleam-Community auf Discord: https://discord.gg/3SvYqYJ
+1. Die vollständige [Gleam String API Dokumentation](https://hexdocs.pm/gleam_stdlib/gleam/string/)
+2. Mehr über Textverarbeitung in der Informatik auf [Wikipedia](https://de.wikipedia.org/wiki/Textverarbeitung_(Informatik))

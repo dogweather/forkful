@@ -1,6 +1,6 @@
 ---
 title:                "Lendo argumentos de linha de comando"
-html_title:           "TypeScript: Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
 simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que é importante?
+## O Que é e Porquê?
 
-Ler argumentos da linha de comando é uma habilidade fundamental para qualquer programador que trabalhe com linguagens compiladas, como TypeScript. Esta habilidade permite que você passe informações ao seu programa enquanto ele está rodando, para que ele possa tomar decisões e executar tarefas específicas de acordo com esses argumentos.
+Ler argumentos da linha de comando é o processo de passar informações para um programa quando você o executa. Os programadores fazem isso para controlar o comportamento do programa durante a execução, permitindo uma maior flexibilidade e complexidade.
 
-## Como fazer:
+## Como Faz:
+
+Vamos ver um exemplo de como ler argumentos da linha de comando em TypeScript. Vamos criar um programa simples que soma dois números que são passados como argumentos.
 
 ```TypeScript
-// Exemplo de código para ler argumentos da linha de comando
+// argumentos.ts
+let num1 = parseInt(process.argv[2]);
+let num2 = parseInt(process.argv[3]);
 
-// Importando o módulo "process" do Node.js
-import * as process from 'process';
+let soma = num1 + num2;
 
-// Atribuindo os argumentos a uma variável
-const args = process.argv;
-
-// Imprimindo os argumentos para a saída do console
-console.log(`Os argumentos foram: ${args}`);
-
-// Resultado:
-// Os argumentos foram: [node, index.ts, argumento1, argumento2, ...]
+console.log(`A soma é ${soma}`);
 ```
 
-## Profundidade:
+Para executar este programa, usamos os elementos `num1` e `num2` do array `process.argv`. A saída será a soma dos dois números.
 
-A leitura de argumentos da linha de comando não é uma técnica nova, ela é usada há décadas em várias linguagens de programação. No entanto, com o aumento da popularidade do Node.js e do uso do TypeScript para desenvolvimento web, essa habilidade se tornou ainda mais importante. Existem também várias bibliotecas e módulos disponíveis que podem facilitar ainda mais a leitura e manipulação de argumentos da linha de comando.
+```bash 
+$ ts-node argumentos.ts 4 5
+A soma é 9
+```
 
-## Veja também:
+## Mergulhando Fundo: 
 
-- [Documentação oficial do TypeScript sobre o módulo "process"](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-0.html#the-process-return-is-gone)
-- [Tutorial sobre como ler argumentos da linha de comando em TypeScript](https://stackabuse.com/reading-command-line-arguments-in-typescript/)
+Historicamente, a maneira de passar argumentos para programas em muitos sistemas operacionais é através da linha de comando. Embora existam outras alternativas, como por exemplo, fazer com que o programa leia de um arquivo ou de uma fonte de entrada padrão, a leitura de argumentos da linha de comando ainda é a maneira mais flexível e direta. Detalhes da implementação podem variar, mas em Node.js e, por extensão, TypeScript, usamos o objeto `Process`, e especificamente a propriedade `argv` deste objeto, para acessar os argumentos da linha de comando.
+
+## Veja também: 
+
+- [Processo Node.js](https://nodejs.org/api/process.html#process_process_argv)
+- [Argumentos da Linha de Comando em Node.js](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)
+- [Documentação TypeScript](https://www.typescriptlang.org/docs/)

@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Go: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Go"
 category:             "Go"
@@ -10,42 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Co i dlaczego?
+## Co i dlaczego?
 
-Wysyłanie żądania HTTP jest często używaną metodą programistyczną, polegającą na przesyłaniu żądania do serwera w celu pobrania lub przetworzenia danych. Programiści często korzystają z tej metody w swoich projektach, ponieważ pozwala ona na interakcję z serwerem i przesyłanie danych.
+Wysyłanie żądania HTTP to proces, w którym komputer wysyła żądanie do serwera za pomocą protokołu HTTP. Programiści robią to, aby nawiązać komunikację między klientem a serwerem i przetwarzać dane.
 
-### Jak to zrobić:
+## Jak to zrobić:
+
+Poniżej znajduje się przykładowy kod Go, który wysyła żądanie GET do określonego URL.
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"net/http"
+    "fmt"
+    "net/http"
+    "io/ioutil"
 )
 
 func main() {
-	url := "https://example.com"
-	req, _ := http.NewRequest("GET", url, nil)
-
-	res, _ := http.DefaultClient.Do(req)
-
-	defer res.Body.Close()
-	body, _ := ioutil.ReadAll(res.Body)
-
-	fmt.Println(string(body))
+    response, err := http.Get("http://example.com")
+    if err != nil {
+        fmt.Printf("The HTTP request failed with error %s\n", err)
+    } else {
+        data, _ := ioutil.ReadAll(response.Body)
+        fmt.Println(string(data))
+    }
 }
 ```
 
-W powyższym przykładzie wykorzystujemy paczkę `net/http` oraz funkcję `NewRequest` do utworzenia żądania HTTP typu GET do strony internetowej "example.com". Następnie używamy klienta `http.DefaultClient`, aby wysłać żądanie i otrzymać odpowiedź. Za pomocą `ioutil` przetwarzamy odpowiedź i wyświetlamy ją na ekranie.
+Gdy uruchomisz ten kod, zobaczysz odpowiedź HTML z powyższego URL.
 
-### Wnikliwe spojrzenie:
+## Deep Dive:
 
-Wysyłanie żądania HTTP jest często stosowane w programowaniu, zwłaszcza do komunikacji między klientem a serwerem. Alternatywą dla biblioteki standardowej `net/http` jest popularna paczka `curl`, która oferuje więcej funkcjonalności i opcji konfiguracji, ale wymaga instalacji zewnętrznego oprogramowania. Wszystkie szczegóły dotyczące wysyłania żądań HTTP są dokładnie opisane w dokumentacji paczki `net/http`, więc warto zapoznać się z nią w celu lepszego zrozumienia tego procesu.
+Wysyłanie żądań HTTP, jest praktykowane od wprowadzenia protokołu HTTP w 1991 r., co było rewolucją w sposobie, w jaki dane są przesyłane przez internet. 
 
-### Zobacz również:
+W języku Go można użyć pakietu "net/http" do wysyłania żądań HTTP, ale istnieją również inne biblioteki, takie jak "fasthttp" i "goreq", które oferują więcej funkcji i są wydajniejsze pod różnymi względami.
 
-- [Dokumentacja paczki net/http w języku polskim](http://golang.org/pkg/net/http/)
-- [Oficjalny poradnik Go](https://tour.golang.org/welcome/1) dla początkujących programistów
-- [Porównanie bibliotek net/http i curl w języku angielskim](https://medium.com/@nate510/don-t-use-go-s-default-http-client-4804cb19f779)
+W przeciwieństwie do niektórych innych języków, Go obsługuje żądania HTTP na niskim poziomie, co oznacza, że musisz obsługiwać wiele szczegółów samodzielnie. To jednak daje większą kontrolę nad tym, jak Twoje żądania są obsługiwane i przetwarzane.
+
+## Zobacz też:
+
+- Dokumentacja Go na temat pakietu net/http: https://golang.org/pkg/net/http/
+- Porównanie różnych bibliotek HTTP dla Go: https://medium.com/@jenchikito/http-requests-in-golang-57e8a2721cbb
+- Wprowadzenie do protokołu HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP/Overview

@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Java recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Java"
 category:             "Java"
@@ -12,51 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page involves retrieving the code and content of a webpage from the internet. This is typically done through a connection request using a URL. Programmers often download web pages to extract specific information or to analyze the code for testing or debugging purposes.
+Downloading a web page means fetching its HTML content via the internet. Programmers do it for tasks like web scraping, monitoring site changes, or offline browsing.
 
 ## How to:
 
-To download a web page in Java, we can use the `URL` and `URLConnection` classes from the `java.net` package. Here's an example of how we can retrieve the HTML code of a page:
+Here's an easy way using Java.io package and Java.net package. Make sure your imports look something like this:
 
 ```Java
-// Import necessary classes
+import java.io.BufferedInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.URL;
-import java.net.URLConnection;
-
-// Create a URL object for the page we want to download
-URL url = new URL("https://www.example.com");
-
-// Open a connection to the URL
-URLConnection connection = url.openConnection();
-
-// Retrieve the HTML code from the page
-InputStream in = connection.getInputStream();
-
-// Create a BufferedReader to read the input stream
-BufferedReader reader = new BufferedReader(new InputStreamReader(in));
-
-// Read the HTML code line by line and print it to the console
-String inputLine;
-while ((inputLine = reader.readLine()) != null) {
-    System.out.println(inputLine);
-}
-
-// Close the connection and reader resources
-reader.close();
-in.close();
 ```
 
-The output of the above code will be the HTML code of the webpage, which we can then manipulate as needed for our purposes.
+And your download function look something like this:
 
-## Deep Dive:
+```Java
+public static void downloadPage(String webpage, String output) throws IOException {
+    BufferedInputStream in = null;
+    FileOutputStream out = null;
+    try {
+        in = new BufferedInputStream(new URL(webpage).openStream());
+        out = new FileOutputStream(output);
+        byte data[] = new byte[1024];
+        int count;
+        while ((count = in.read(data, 0, 1024)) != -1) {
+            out.write(data, 0, count);
+        }
+    } finally {
+        if (in != null) {
+            in.close();
+        }
+        if (out != null) {
+            out.close();
+        }
+    }
+}
+```
 
-Downloading web pages has been a common practice in web development since the early days of the internet. It allows developers to access the code and content of a webpage for various purposes such as data scraping, testing, and debugging.
+Remember to call the function with your desired webpage and output file name:
 
-Apart from using the `java.net` package, there are other alternatives for downloading web pages in Java. One popular option is to use the Apache HttpComponents library, specifically the `HttpClient` class, which provides a more comprehensive API for making HTTP requests.
+ ```Java
+downloadPage("https://example.com", "downloaded.html");
+```
 
-In the example above, we used the `URLConnection` class to establish a connection to the URL and retrieve the webpage's code. Under the hood, Java uses the HTTP protocol to make the connection. This also means that we can use the same code to retrieve data from other types of URLs, such as API endpoints or FTP servers, by simply changing the URL object.
+This will create a file named "downloaded.html" with webpage content. You might need to handle exceptions according to your specific use-case.
 
-## See Also:
+## Deep Dive
 
-- [Oracle's official documentation on the `java.net` package](https://docs.oracle.com/javase/10/docs/api/java/net/package-summary.html)
-- [How to use the Apache HttpClient library for downloading web pages in Java](https://www.baeldung.com/java-http-client)
+Getting data from the web is fundamental to the internet’s function since its inception. However, web page downloading in Java wasn't always this straightforward. Earlier versions of the JDK didn't have support for BufferedInputStream or URL classes, making the process more complex.
+
+An alternative to the java.io package method is the use of HttpClient library added in JDK 11 for HTTP requests. Some third-party libraries like Jsoup or HtmlUnit can also handle web page downloading besides their primary function of parsing HTML.
+
+BufferedInputStream in the code example makes use of a buffer to store data. This buffering allows it to make fewer, but larger, reads from the source, which can be more efficient when reading from slow sources like a network.
+
+## See Also
+
+For additional HTTP methods and features, consider looking into the HttpClient library (JDK 11 onwards): [HttpClient Documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
+
+For scrapers or parser libraries, check out Jsoup: [Jsoup Documentation](https://jsoup.org/) and HtmlUnit: [HtmlUnit Documentation](http://htmlunit.sourceforge.net/)

@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av dato fra en streng"
-html_title:           "PHP: Analysering av dato fra en streng"
-simple_title:         "Analysering av dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+# Å Analysere en Dato fra en Streng i PHP 
 
-Parsing av datoer fra en streng er en vanlig oppgave for PHP-programmering. Det innebære å konvertere en streng (tekst) til en datoobjekt, slik at vi kan manipulere og bruke datoen i vårt script. Denne prosessen er nødvendig for å kunne håndtere og lagre datoer på en mer strukturert måte.
+## Hva & Hvorfor?
 
-## Hvordan:
+Å analysere en dato fra en streng er prosessen å konvertere en datostreng til et mer håndterbart format som et `DateTime`-objekt. Programmerere gjør dette for å kunne manipulere og utføre operasjoner med datoen.
+
+## Hvordan til:
+
+La oss dykke rett inn i hvordan vi kan gjøre dette i PHP:
 
 ```PHP
-// Eksempel 1:
-$stringDate = "20/10/2021";
-$date = date_create_from_format("d/m/Y", $stringDate);
-echo date_format($date, "l, jS F Y"); // Utgang: Wednesday, 20th October 2021
+<?php
+$datostreng = '21-10-2021';
+$dato = DateTime::createFromFormat('d-m-Y', $datostreng);
 
-// Eksempel 2:
-$stringDate = "10-20-2021";
-$date = date_create_from_format("m-d-Y", $stringDate);
-echo date_format($date, "l, F jS, Y"); // Utgang: Wednesday, October 20th, 2021
+echo $dato->format('Y-m-d');
+?>
 ```
 
-## Dypdykk:
+Når du kjører koden over vil det utskrifte `2021-10-21`.
 
-Parsing av datoer fra en streng er en viktig oppgave, spesielt i webutvikling. Dette skyldes ofte at data kommer inn som ustrukturerte tekster. PHP tilbyr en rekke funksjoner og metoder for å håndtere datoer, inkludert "date_create_from_format()" og "date_format()", som ble brukt i eksemplene ovenfor. Det finnes også flere alternative metoder for å parse datoer, som å bruke regex-mønster eller spesialiserte parser-biblioteker. Implementering av denne funksjonen kan variere avhengig av typen datoformat og koding av din applikasjon.
+## Dyp Dykk 
 
-## Se også:
+Parse en dato fra en streng i PHP er ganske greit takket vært `DateTime::createFromFormat` funksjon. Denne funksjonen ble introdusert i PHP 5.3.0, forenklet prosessen med å jobbe med datoer i stor grad. Før det, måtte kodere stole på `strtotime()`, som kunne være unøyaktig og uforutsigbar. 
 
-- PHP: [date_create_from_format()](https://www.php.net/manual/en/function.date-create-from-format.php)
-- PHP: [date_format()](https://www.php.net/manual/en/function.date-format.php)
-- W3Schools: [How to parse a date from a string in PHP](https://www.w3schools.com/php/php_date.asp)
-- PHP.net: [Date and Time Functions](https://www.php.net/manual/en/ref.datetime.php)
+Som alternativer til PHP, tilbyr mange andre programmeringsspråk, som Python og Javascript, også deres egne metoder for datoparsering, som `strptime()` og `Date.parse()` henholdsvis. 
+
+Husk at når du bruker PHP's `DateTime::createFromFormat`, må du spesifisere formatet til datostrengen du prøver å analysere. Hvis strengen ikke samsvarer med formatet du har gitt, vil PHP returnere `false`.
+
+## Se Også
+
+Hvis du ønsker ytterligere informasjon om håndtering av datoer og tider i PHP, sjekk ut følgende ressurser: 
+
+1. PHP Manual: DateTime (https://www.php.net/manual/en/class.datetime.php) 
+2. PHP: Dates - Manual (https://www.php.net/manual/en/datetime.formats.compound.php)
+3. Understanding Date and Time in PHP - PHPBuilder (https://www.phpbuilder.com/columns/date-time-php/)

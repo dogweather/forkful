@@ -1,7 +1,7 @@
 ---
-title:                "Concatenando cadenas"
-html_title:           "Elm: Concatenando cadenas"
-simple_title:         "Concatenando cadenas"
+title:                "Concatenando cadenas de texto"
+html_title:           "Arduino: Concatenando cadenas de texto"
+simple_title:         "Concatenando cadenas de texto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Concatenar cadenas es básicamente unir dos o más cadenas de texto en una sola. Los programadores lo hacen para evitar que el código sea repetitivo y para construir mensajes personalizados para el usuario.
+## Qué y Por Qué?
 
-## Cómo:
-En Elm, esto se puede lograr de diferentes maneras dependiendo de la situación. A continuación, se presentan algunos ejemplos y su respectiva salida:
+La concatenación de cadenas es situar una cadena de texto junto a otra para formar una sola. Los programadores lo hacen para combinar texto de manera dinámica, a menudo al interactuar con datos de usuario.
 
-```
-Elm.concat ["¡Hola, ", "mundo!"] 
--- Salida: "¡Hola, mundo!" 
+## Cómo se hace:
 
-Elm.append "Elm " "es genial" 
--- Salida: "Elm es genial" 
+Elm proporciona el operador (++) para concatenar cadenas de texto. Aquí tienes un ejemplo:
 
-Elm.concat ["Elm", " " , "es", " ", "genial"] 
--- Salida: "Elm es genial"
+```Elm
+nombre = "Juan"
+saludo = "Hola, " ++ nombre ++ "!"
 ```
 
-## Profundizando:
-La concatenación de cadenas se ha utilizado desde los inicios de la programación. Es una técnica común en muchos lenguajes de programación, incluyendo Elm. Alternativas a la concatenación en Elm incluyen el uso de string interpolation y el uso de listas de caracteres.
+Salida:
 
-## Ver también:
-- [Documentación oficial de Elm sobre strings](https://package.elm-lang.org/packages/elm-lang/core/latest/String)
-- [Ejemplos de concatenación en Elm](https://github.com/fpangburn/Elm-String-Examples)
+```Elm
+"Hola, Juan!"
+```
+
+El ++ toma dos argumentos de tipo String y los une juntos.
+
+## Un Vistazo Más de Cerca:
+
+La concatenación de cadenas ha sido una funcionalidad básica en lenguajes de programación desde sus inicios. En Elm, la concatenación de cadenas se realiza a través del operador (++) en lugar de utilizar algún tipo de función de concatenación en comparación con otros lenguajes.
+
+En cuanto a alternativas, Elm proporciona la función `String.concat` para unir una lista de cadenas en una sola cadena.
+
+Elm maneja cadenas como listas de caracteres bajo el capó. Entonces, cuando concatenas cadenas, Elm está esencialmente uniendo estas listas internas.
+
+```Elm
+String.concat ["Hola, ", "Juan", "!"]
+```
+
+Salida:
+
+```Elm
+"Hola, Juan!"
+```
+
+## Ver También:
+
+Para más detalles, consulta la [documentación oficial de String](https://package.elm-lang.org/packages/elm/core/latest/String) de Elm. Para una visión más completa de las capacidades de las cadenas de texto en Elm, te recomiendo que consultes [Guía Práctica de Elm: Cadenas de Texto](https://practical-elm.com/strings).

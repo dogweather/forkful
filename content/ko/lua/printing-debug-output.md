@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 출력하기"
-html_title:           "Lua: 디버그 출력 출력하기"
-simple_title:         "디버그 출력 출력하기"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇과 왜?
+## 무엇 & 왜?
+디버그 출력을 'print'라는 것은 어떤 값을, 예를 들어 문자열이나 숫자, 그리고 보통 이들에 대한 계산 결과를 콘솔에 출력하는 것을 의미합니다. 프로그래머들이 이것을 하는 이유는 코드의 동작을 분석하고 문제를 찾아내기 위해서입니다.
 
-디버그 출력을 찍는다는 것은 무엇을 의미할까요? 프로그래머들이 이것을 하는 이유는 무엇일까요? 
+## 어떻게:
+Lua에서 디버그 출력을 사용하는 가장 간단한 방법은 'print' 함수를 사용하는 것입니다. 이것이 어떻게 동작하는지 아래의 예제들을 통해 살펴보겠습니다.
 
-디버그 출력은 프로그램의 실행 중에 발생하는 중간 결과나 오류 메시지 등을 확인하기 위해 사용됩니다. 따라서 디버그 출력을 통해 프로그래머들은 프로그램의 동작을 쉽게 추적하고 버그를 발견하여 해결할 수 있습니다. 
-
-# 방법:
-
-아래는 Lua에서 디버그 출력을 하는 방법의 예시 코드입니다.
 ```Lua
--- 디버그 출력 함수 선언
-function print_debug(message)
-    print("[DEBUG]: " .. message) -- "DEBUG"라는 문자열을 포함하여 메시지 출력
-end
+-- 문자열 출력
+print("안녕하세요, Lua!")
 
--- 함수 호출 및 메시지 출력
-print_debug("Hello, world!")
-```
-출력 결과:
-```
-[DEBUG]: Hello, world!
+-- 숫자값 출력
+local num = 10
+print(num)
+
+-- 계산 결과 출력
+print(5 * num)
 ```
 
-# 깊이 탐구:
+출력:
 
-디버그 출력은 프로그래밍에서 오랜 역사를 가지고 있으며 오늘날에도 널리 사용되고 있습니다. 하지만 다른 방법으로도 디버그를 할 수 있는데, 예를 들어 디버거(Debugger)를 사용하거나 예외 처리(Exception Handling)를 통해 프로그램을 디버그할 수도 있습니다.
+```
+안녕하세요, Lua!
+10
+50
+```
 
-Lua는 ```print``` 함수를 통해 디버그 출력을 지원합니다. 이 함수는 표준 라이브러리에 포함되어 있기 때문에 따로 설치할 필요가 없습니다.
+## 깊은 탐색:
+Lua에서 디버그 출력, 즉 'print'는 Lua 프로그래밍 언어가 처음 만들어질 때부터 있었습니다. 이것은 프로그래머들이 쉽게 자신의 코드를 디버그할 수 있게 만들어주는 기본적이고 강력한 도구입니다.
 
-# 관련 정보:
+그러나 'print' 조차도 종종 복잡한 문제를 해결하는데는 한계가 있습니다. 이 경우, 디버거 도구를 사용하는 것이 더 낫습니다. 디버거는 더 정밀한 제어를 가능하게 하며, 특별한 경우에 대한 디버그 출력을 가능하게 합니다.
 
-- 여러 가지 디버그 출력 방법에 대한 자세한 정보는 [위키백과 문서](https://ko.wikipedia.org/wiki/%EB%94%94%EB%B2%84%EA%B7%B8)를 참고하세요.
-- Lua의 표준 라이브러리에 대한 보다 자세한 내용은 [공식 문서](https://www.lua.org/manual/5.3/manual.html#6.9)를 확인해보세요.
+'print'의 구현은 Lua의 소스코드에서 찾을 수 있습니다. Lua 가상 머신이 'print'함수를 호출할 때, 이는 내부적으로 C 라이브러리 함수인 'printf'를 호출합니다.
+
+## 참조 자료:
+- Lua 공식 문서: https://www.lua.org/manual/5.4/
+- Lua 디버거 도구: https://studio.zerobrane.com/doc-lua-debugger
+- Lua 소스코드: https://github.com/lua/lua
+
+참조 자료를 통해 더욱 깊이 있는 정보와 도움을 얻을 수 있습니다. Happy debugging!

@@ -1,7 +1,7 @@
 ---
-title:                "Mallia vastaavien merkkien poistaminen"
-html_title:           "Fish Shell: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -11,25 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-"Poista merkkejä vastaava kuvio" on ohjelmointitehtävä, jossa etsitään ja poistetaan merkkijonosta kaikki merkit, jotka vastaavat tiettyä kuvioita tai sääntöjä. Tämä on yleinen tehtävä ohjelmoinnissa esimerkiksi tiedon käsittelyn tai muokkaamisen yhteydessä, ja se auttaa säästämään aikaa ja vaivaa manuaalisen työn sijaan.
 
-## Miten:
-```Fish Shell``` koodiesimerkki:
+Poistaminen merkkien mukaan on menetelmä, jolla ohjelmointi kielellä poistetaan merkkejä, jotka vastaavat tiettyä mallia. Ohjelmoijat käyttävät sitä tiedostojen ja koodin siistimiseen tai tärkeiden tietojen erottamiseen.
 
+## Miten Näin:
+
+Voit käyttää Fish Shell -koodia merkkien poistamiseen. Katsotaanpa esimerkkiä:
+
+```Fish Shell
+set muuttuja "Hei, Fish Shell on hauskaa!"
+echo $muuttuja | string replace -r 'Fish Shell' ''
 ```
-echo "Tervetuloa Suomeen" | tr -d "aoueiy"
+
+Tulostuu:
+
+```Fish Shell
+"Hei,  on hauskaa!"
 ```
 
-Tulostus:
-```
-Trvlm Snm 
-```
-Tässä esimerkissä käytetään ```tr```-komentoa (lyhenne sanasta "translate"), joka poistaa kaikki merkit "a", "o", "u", "e" ja "i" tulosteesta. Huomaa, että ```|```-merkki yhdistää kaksi komentoa: ensimmäinen komento tuottaa syötteen ja toinen komento käsittelee syötettä.
+Tässä esimerkissä 'Fish Shell' -merkkijono poistettiin muuttujasta.
 
-## Syväsukellus:
-Tämä toiminto perustuu Unix-käyttöjärjestelmän perinteiseen ```tr```-komennon toimintaan, joka on tarjolla myös muissa käyttöjärjestelmissä kuten Linuxissa ja macOS:ssä. Lisäksi on olemassa muita komentoja, kuten ```sed``` ja ```awk```, jotka voivat suorittaa samanlaisia tehtäviä. Joissakin kielissä, kuten Pythonissa, tällainen toiminto voidaan suorittaa myös sisäänrakennetuilla ominaisuuksilla ilman erillistä komentoa. Fish Shellissä tämä toiminto tehdään käyttämällä komentoa ```tr```, joka on yksi useista sisäänrakennetuista komennoista.
+## Syvällisempi Sukellus:
 
-## Katso myös:
-- [Kuinka käyttää `tr` -komentoa Fish Shellissä](https://fishshell.com/docs/current/cmds/tr.html)
-- [Youtube-video: Fish Shell aloittelijoille](https://www.youtube.com/watch?v=sKmt6XR7xd8)
-- [StackOverflow: Poistetaan merkkejä merkkijonosta Pythonissa](https://stackoverflow.com/questions/3939361/remove-specific-characters-from-a-string-in-python)
+Fish Shell, syntyi 2005, on yksi nuoremmista Unix-komentotulkeista. Sen ainutlaatuiset ominaisuudet, kuten tehtävien automaattinen täydentäminen ja kattavat toiminnot merkkijonojen käsittelyyn, tekivät siitä suositun.
+
+Vaihtoehtona voit käyttää `sed` tai `awk` Unix-työkaluja, mutta Fish Shell on erittäin mukava työkalu, erityisesti aloittelijoille.
+
+Mallia vastaavien merkkien poistamisen toteutus perustuu säännöllisten lausekkeiden (regex) käsitteeseen. Fish Shell tukee täydellisesti regexiä, mikä tekee koodista tehokkaampaa ja joustavampaa.
+
+## Katso Myös:
+
+1. Fish Shell ohjekirja: https://fishshell.com/docs/current/index.html
+2. Unix Sed-työkalun ohjekirja: https://www.gnu.org/software/sed/manual/sed.html
+3. Unix Awk-työkalun ohjekirja: https://www.gnu.org/software/gawk/manual/gawk.html
+4. Säännöllisten lausekkeiden oppaan: https://www.rexegg.com/regex-quickstart.html

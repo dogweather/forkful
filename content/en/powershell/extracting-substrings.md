@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "PowerShell recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,36 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Extracting substrings is the process of retrieving a sequence of characters from within a larger string. Programmers often do this to manipulate and extract specific data from a larger dataset, making it easier to process and analyze. This allows for more efficient and specific string manipulation, reducing the need for manual input. 
+Ever found yourself needing a smaller piece of a larger string in your code? It's a situation we all encounter, and that's where extracting substrings comes in handy. It allows us to pick out specific portions of a string for a variety of purposes- parsing file paths, pulling out bits of user input, or checking for certain word patterns, among other uses. 
 
 ## How to:
-Coding examples and output using PowerShell:
-```
-#Extracting a single substring
-$string = "Hello, world!"
-$result = $string.Substring(7,5)
-$result
-#Output: world
+In PowerShell, use the `substring()` method to extract substrings. It needs two arguments: 
 
-#Extracting multiple substrings
-$string = "Welcome to PowerShell!"
-$result = $string.SubString(0,7) + " " + $string.SubString(11,9)
-$result
-#Output: Welcome PowerShell
+- the start index (first character is 0)
+- the length of the substring. 
 
-#Extracting a substring using a pattern match
-$string = "Today's date is 12/25/2020"
-$result = $string -match "\d{2}\/\d{2}\/\d{4}"
-$result
-#Output: 12/25/2020
+Here's an example. Suppose we have a string, "PowerShell Rocks!" and we want to extract the word "Rocks". 
+
+```PowerShell
+$string = "PowerShell Rocks!"
+$substr = $string.Substring(12, 5)
+$substr 
 ```
 
-## Deep Dive:
-- **Historical context:** Extracting substrings has been a common practice in programming languages since the early days of computing. In earlier programming languages, such as Fortran and BASIC, substring extraction was achieved through the use of specific substring functions. 
-- **Alternatives:** While extracting substrings remains a common practice, there are now alternative ways to manipulate strings, such as using regular expressions, which can provide more complex pattern matching capabilities. However, substring extraction remains a simple and efficient method for specific extraction needs.
-- **Implementation details:** In PowerShell, substrings can be extracted using the Substring() method, with the first parameter representing the starting index and the second parameter representing the length of the substring. Alternatively, the -match operator can be used with regex patterns to extract substrings based on matching criteria.
+You'll see that the output is:
 
-## See Also:
-- [PowerShell documentation on substring extraction](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_substrings?view=powershell-7.1)
-- [Regular Expressions in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
+```PowerShell
+Rocks
+```
+
+We started at the 12th character and went five characters long, giving us "Rocks".
+
+## Deep Dive
+In PowerShell’s formative years, extracting substrings was less straightforward because it borrowed heavily from the .NET Framework. As developers sought simpler and smoother methods, the `substring()` method became a common tool in the PowerShell toolkit. 
+
+Alternatives to this method exist. For example, you could use regex (regular expressions), which are more versatile but also more complex. When it comes to implementation details, keep in mind that indexing in PowerShell starts from 0, not 1. Also, if the length parameter exceeds the remaining characters, PowerShell will return all characters until the end of the string.
+
+## See Also
+If you want to delve further into manipulating strings in PowerShell, check out these resources:
+
+- [Working with Strings](https://docs.microsoft.com/powershell/scripting/samples/working-with-strings?view=powershell-7.1): A practical guide to strings on the official PowerShell documentation.
+- [About Regular Expressions](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1): If you fancy learning regex, this article is a good place to start.
+- [Mastering everyday XML tasks in PowerShell](https://docs.microsoft.com/previous-versions//dd878284(v=vs.85)): Learn about handling XML, a situation where substring extraction often comes in handy.

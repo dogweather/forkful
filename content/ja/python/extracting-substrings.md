@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "Python: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,48 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？なぜそうするのか？
+## 何となぜ？
 
-抽出した文字列の取得とは、文字列の一部分を切り出すことを指します。プログラマーがこの作業を行うのは、与えられた文字列から特定の情報を取り出す場合や、文字列を処理するために必要な部分を取り出す場合などがあります。
+部分文字列の抽出はある文字列から特定の範囲の文字を裁切り取り出すことです。この技術は、データの分析や検証に大いに役立つため、プログラマーがよく使用します。
 
-## 方法：
+## 方法:
 
-実際にコードを書く前に、Pythonで文字列を抽出する方法を説明します。まず、抽出したい文字列を指定します。例えば、次のように記述します。
-
-```Python
-string = "Pythonプログラミングが好きです"
-```
-
-次に、抽出したい文字列が何文字目から何文字目までなのかを指定します。例えば、次のように記述します。
+以下にPythonでの部分文字列の抽出の例を示します:
 
 ```Python
-substring = string[6:14]
+str = "Pythonプログラミング"
+print(str[0:6])
 ```
 
-最後に、取得したい部分の長さを指定する方法もあります。
+実行結果:
 
 ```Python
-substring = string[6:len(string)]
+Python
 ```
+０から６番目までの位置の文字列が抽出されました。Pythonのインデックスは0から始まるため、位置6は実際には7文字目になります。
 
-抽出した文字列を取得することができます。
+## 更なる探求
 
-## 深堀り：
+部分文字列の抽出は古くからあり、Pythonでも使われ続けています。代替手段としては正規表現が有りますが、単純な部分文字列の抽出では普通にスライスが使われます。
 
-抽出した文字列を取得する方法は、Pythonのビルトインの機能の一つであり、よく使われています。しかし、他の方法もあります。例えば、正規表現を使用することで、より強力な文字列の抽出が可能です。
+Pythonのスライス工法は内部的には高速かつ効率的に動作します。メモリ上の特定範囲を直接参照するため、余分なメモリや処理時間を消費しません。
 
-また、Pythonの文字列はイミュータブルであり、各文字は個別にアクセスできるので、抽出方法が柔軟になります。
+## 参照
 
-さらに、抽出した文字列を変更することもできます。例えば、次のように記述します。
+- Python公式ドキュメンテーション: 文字列
+  (https://docs.python.org/ja/3/library/stdtypes.html#text-sequence-type-str)
 
-```Python
-# 文字列の一部を大文字に変更
-string = string[6:14].upper()
-print(string) # 出力: プログラミング
-```
-
-## 関連リンク：
-
-- [Pythonの文字列操作](https://docs.python.org/ja/3/library/stdtypes.html#text-sequence-type-str)
-- [正規表現のチュートリアル](https://docs.python.org/ja/3/howto/regex.html)
-- [Pythonの文字列のイミュータブル性について](https://www.geeksforgeeks.org/g-fact-98/)
+- Python公式チュートリアル: 文字列の操作
+  (https://docs.python.org/ja/3/tutorial/introduction.html#strings)

@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "C: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Odczytywanie argumentów linii poleceń to proces, w którym programy pobierają dane przekazane przez użytkownika podczas uruchamiania z wiersza poleceń. Programiści wykonują tę czynność, aby dostosować zachowanie swojego programu do różnych scenariuszy lub aby uzyskać informacje od użytkownika.
+## Co To Jest I Dlaczego?
 
-## Jak to zrobić:
+Czytanie argumentów linii komend to proces, w którym program w języku C interpretuje argumenty przekazywane podczas uruchamiania. Programiści robią to, aby dostosować zachowanie programu na podstawie wprowadzonych przez użytkownika danych zewnętrznych.
+
+## Jak To Zrobić:
+
 ```C
 #include <stdio.h>
 
 int main(int argc, char *argv[]) {
-    printf("Liczba argumentów: %d\n", argc);
-    printf("Argumenty:\n");
-    for (int i=0; i<argc; i++) {
-        printf("%s\n", argv[i]);
+    int number;
+    if (argc > 1) {
+        sscanf(argv[1], "%d", &number);
+        printf("Wprowadzona liczba to: %d\n", number);
+    } else {
+        printf("Nie dodano argumentu.\n");
     }
     return 0;
 }
 ```
-Przykładowe wyjście:
-```bash
-$ ./program arg1 arg2 arg3
-Liczba argumentów: 4
-Argumenty:
-./program
-arg1
-arg2
-arg3
-```
 
-## Wnikliwszy Przegląd:
-Odczytywanie argumentów linii poleceń ma swoje korzenie w systemach operacyjnych UNIX, gdzie programy są uruchamiane z wiersza poleceń i mogą otrzymywać argumenty od użytkownika. Istnieje kilka alternatywnych sposobów na odczytywanie argumentów w języku C, w tym korzystanie z funkcji getopt lub argv[]. Programista może również zaimplementować własne rozwiązanie, jeśli chce dostosować sposób przekazywania argumentów do swoich potrzeb.
+Na przykład, gdy program jest uruchamiany w ten sposób: `./program 5`, wydrukuje: `Wprowadzona liczba to: 5`.
 
-## Zobacz również:
-- [Dokumentacja funkcji getopt w języku C](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
-- [Przykłady odczytywania argumentów linii poleceń w C](https://www.cprogramming.com/tutorial/c/lesson14.html)
+## Szerzej:
+
+- Kontekst historyczny: W dziwnych, przestarzałych językach, jak na przykład B, funkcja main nie miała argumentów. Powstanie C, które wprowadziło wsparcie dla argumentów linii komend było przełomem.
+
+- Alternatywy: Możemy korzystać również z bibliotek zewnętrznych, takich jak `getopt` lub `argp`, które oferują rozbudowane funkcje do obsługi argumentów linii komend.
+
+- Szczegóły implementacyjne: argv to tablica wskaźników do ciągów znaków, które reprezentują argumenty przekazane do programu. argc to liczba tych argumentów. argv[0] zawsze jest nazwą programu.
+
+## Zobacz Również:
+
+- [Dokumentacja GNU Getopt](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+- [Dokumentacja GNU Argp](https://www.gnu.org/software/libc/manual/html_node/Argp.html)
+- [Informacje o C od Software Preservation Group](http://www.softwarepreservation.org/projects/c_lang/)

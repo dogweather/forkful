@@ -1,7 +1,7 @@
 ---
-title:                "Analyser une date à partir d'une chaîne de caractères"
-html_title:           "Clojure: Analyser une date à partir d'une chaîne de caractères"
-simple_title:         "Analyser une date à partir d'une chaîne de caractères"
+title:                "Analyser une date à partir d'une chaîne"
+html_title:           "Clojure: Analyser une date à partir d'une chaîne"
+simple_title:         "Analyser une date à partir d'une chaîne"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-Parsing une date à partir d'une chaîne de caractères, c'est le processus de prendre une date sous forme de texte et de la convertir en un format que l'ordinateur peut comprendre. Les programmeurs font cela pour pouvoir utiliser et manipuler les dates dans leurs programmes de manière plus efficace.
+## Qu'est-ce que & Pourquoi ?
 
-## Comment:
-Ci-dessous, vous trouverez un exemple de code montrant comment parser une date à partir d'une chaîne de caractères en Clojure.
+Parser une date à partir d'une chaîne de caractères consiste à extraire et interpréter les informations de date et d'heure d'un texte formaté. Les programmeurs le font pour pouvoir manipuler et utiliser ces informations dans leur code.
+
+## Comment faire :
+
+En Clojure, nous utilisons généralement la bibliothèque `clj-time` pour parser des dates. Voici un exemple de la façon de le faire :
 
 ```Clojure
-(require '[java-time :as jt])
-
-(defn parse-date [str]
-  ;; utilisez la méthode parse de java-time pour convertir la chaîne en une date
-  (let [date (jt/parse (jt/of-pattern "dd/MM/yyyy") str)]
-    (println date)))
-
-(parse-date "23/09/2021")
+(require '[clj-time.format :as f])
+(def formatter (f/formatter "dd/MM/yyyy"))
+(def date (f/parse formatter "31/12/2021"))
 ```
-Output: #object["java.time.LocalDate" "2021-09-23"]
 
-Dans cet exemple, nous utilisons la bibliothèque java-time pour accéder à la méthode de parsing. Nous spécifions également le format de la date dans laquelle la chaîne est écrite, dans ce cas "dd/MM/yyyy". La méthode parse renvoie un objet date, que nous pouvons ensuite utiliser dans notre programme.
+Lorsque vous exécutez cette code, `date` sera une instance de la classe `org.joda.time.DateTime` qui représente le 31 décembre 2021.
 
-## Plongée en profondeur:
-Le parsing de dates à partir de chaînes de caractères est un problème courant en informatique, et il existe de nombreuses bibliothèques et méthodes différentes pour le résoudre. L'utilisation de java-time est l'une des options les plus courantes en Clojure, mais d'autres bibliothèques telles que clj-time sont également populaires.
+## Exploration en profondeur :
 
-L'utilisation de bibliothèques pour le parsing de dates est une solution plus robuste que l'écriture de votre propre algorithme de parsing à partir de zéro. Les bibliothèques ont souvent des fonctionnalités avancées telles que la prise en charge de différents formats de date et la gestion des fuseaux horaires.
+Historiquement, `clj-time` est une très ancienne bibliothèque de dates en Clojure. Elle est construite sur `Joda-Time`, qui était la principale bibliothèque de dates et heures pour Java avant l'introduction de l'API `java.time` dans Java 8.
 
-L'implémentation exacte du parsing de dates peut varier en fonction de la bibliothèque utilisée, mais elle implique généralement de définir un modèle de pattern pour représenter le format de la date prévu et de le fournir à une méthode de parsing.
+En ce qui concerne les alternatives, `java.time` a de facto remplacé `Joda-Time` en Java et de nombreuses nouvelles bibliothèques Clojure, comme `clojure.java-time`, sont construites sur `java.time`. En fonction de votre situation, vous pourriez préférer utiliser une de ces autres bibliothèques.
 
-## Voir aussi:
-- [Documentation officielle de java-time](https://clojure.org/api/java.time)
-- [Documentation officielle de clj-time](https://github.com/clj-time/clj-time)
+En ce qui concerne les détails de l'implémentation, il est important de noter que le parsing de chaînes de date peut échouer. Par exemple, si le format de la chaîne ne correspond pas au formatteur spécifié, une exception sera levée. Il est donc judicieux de gérer ces situations avec un bloc `try/catch`.
+
+## Voir aussi :
+
+Pour plus d'informations sur la manipulation des dates en Clojure, consultez les liens suivants :
+
+- La documentation de clj-time : [ici](https://github.com/clj-time/clj-time)
+- Un excellent tutoriel sur le parsing de date en Clojure : [ici](https://www.baeldung.com/clojure-date-time-parsing)
+- La documentation de `java.time` pour plus d'informations sur l'évolution moderne du traitement de la date et l'heure : [ici](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)

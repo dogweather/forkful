@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Gleam: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 뭔가요? 왜요?
 
-날짜를 문자열로 변환하는 것은 우리가 일상적으로 하는 작업 중 하나입니다. 예를 들어, 생일 카드를 작성하거나 약속 시간을 기록할 때, 날짜를 문자열로 만들어서 다른 사람들과 공유합니다. 프로그래머들은 이 작업을 컴퓨터가 날짜를 이해할 수 있는 형식으로 변환하기 위해 수행합니다.
+날짜를 문자열로 변환하는 것은 사용자가 이해하기 쉬운 형식으로 날짜를 표시하는 프로그래밍 방법입니다. 프로그래머들이 이를 수행하는 주된 이유는 사용자 인터페이스에서 일관적이고 사용자 친화적인 날짜 표현을 제공하기 위해서입니다.
 
-## 하는 방법:
+## 어떻게 해요?
 
-```Gleam
-let date = Time.now()
-let string = Time.to_string(date, "%Y-%m-%d")
+아래의 Gleam 코드를 통해 날짜를 문자열로 변환하는 방법을 알아봅시다.
+
+```gleam
+import gleam/date.{Date, format}
+import gleam/option.{unwrap}
+
+fn main() {
+  let today: Date = Date.new(2021, 12, 31)
+  let today_string: Result(String, Nil) = format("{YYYY}-{MM}-{DD}", today)
+  let result = unwrap(today_string)
+    
+  assert result == Ok("2021-12-31")
+}
 ```
 
-위 코드를 실행하면, 오늘 날짜를 `2021-08-04`와 같은 형식으로 출력할 수 있습니다.
+실행 결과로 "2021-12-31"가 출력됩니다. 
 
-```Gleam
-let long_string = Time.to_string(date, "%A, %B %d, %Y")
+## 깊게 들여다보기
+
+날짜를 문자열로 변환하는 기능은 아주 오래전부터 관례로 존재하였습니다. 이러한 변환은 날짜를 사람이 읽을 수 있는 형태로 표현하거나, 저장 공간을 절약하기 위해 이용됩니다.
+
+다른 언어에서도 비슷한 기능을 찾을 수 있습니다. 예를 들어 JavaScript에서는 `toISOString` 함수, Python에서는 `strftime` 함수 등이 있습니다.
+
+Gleam에서 날짜를 문자열로 변환하는 구현은 `gleam/date.format` 함수를 사용합니다. 이 함수는 날짜 형식을 결정하는 문자열과 선택한 날짜를 인수로 받아 문자열을 반환합니다.
+
+```gleam
+format(pattern: String, date: Date) -> Result(String, Nil)
 ```
+반환된 결과는 문자열 또는 오류(Nil)입니다. 
 
-이렇게 실행하면 오늘 날짜를 `Wednesday, August 04, 2021`과 같은 긴 형식으로 출력할 수 있습니다.
+## 참고资料
 
-## 깊게 파고들기:
-
-날짜를 문자열로 변환하는 방법은 시간의 흐름과 컴퓨터 과학의 발전과 무관하지는 않습니다. 예를 들어, 1582년은 그레고리력이 도입된 첫 해인데, 이 때부터 현재 사용되는 날짜 형식이 정립되었습니다. 또한, 사람들은 오랫동안 날짜와 시간을 컴퓨터가 이해할 수 있는 숫자로 표현하려고 노력해 왔는데, 이를 위해 다양한 날짜 형식과 알고리즘이 개발되었습니다.
-
-날짜를 문자열로 변환하는데 사용할 수 있는 대안으로는 날짜를 데이터베이스에 저장하거나, 인간이 이해하기 쉬운 날짜 형식으로 변환하는 것이 있습니다. 그러나, 컴퓨터가 날짜를 이해하고 연산하기에 가장 효율적인 방법은 숫자 형식으로 변환하는 것입니다.
-
-## 더 알아보기:
-
-- [Gleam 공식 문서](https://gleam.run/documentation/standard_library#time-date-to_string)에서 `Time.to_string`의 자세한 정보를 확인할 수 있습니다.
-- [ISO 8601](https://ko.wikipedia.org/wiki/ISO_8601)는 날짜와 시간에 대한 국제 표준을 정의한 문서입니다.
-- [Date & Time formats in programming](https://www.codecademy.com/articles/fwd-js-date-and-time-formats)에서 날짜와 시간 형식에 대한 더 많은 정보를 얻을 수 있습니다.
+- Gleam 언어 공식 홈페이지: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
+- Gleam 언어 Github: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

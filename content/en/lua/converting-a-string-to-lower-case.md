@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Lua recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,25 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a string to lower case in Lua simply means changing all the capital letters in a string to their lowercase counterparts. This can be helpful for data validation, string comparisons, and formatting consistency. Programmers often do this to ensure data integrity and efficient coding.
+String conversion to lower case is changing all the alphabetic characters in a string from upper case to lower case. Developers do this to ensure data consistency and to facilitate case-insensitive comparisons.
 
 ## How to:
 
-To convert a string to lower case in Lua, we can use the `string.lower()` function. Let's see how it works with an example:
+Lua makes it easy to convert strings to lower case. Here is an example:
 
 ```Lua
-local string = "HeLLo WoRLd"
-print(string.lower(string))
+str = "Hello, World!"
+lower_str = string.lower(str)
+print(lower_str)
 ```
 
-This code will output `"hello world"`, with all the letters in lowercase.
+Run this, and you'll see: `hello, world!` 
 
 ## Deep Dive
 
-Historically, the `string.lower()` function was introduced in Lua 5.1 and has remained a standard function since then. However, there are alternative methods of converting a string to lowercase, such as using the `string.gsub()` function with a pattern, or using the `string.byte()` and `string.char()` functions.
+Firstly, case conversions are as old as ASCII, which assigned separate codes to lower-case and upper-case letters. To handle text without regard to case, humans devised lower/upper case string conversions.
 
-It's worth noting that the `string.lower()` function only works with ASCII characters, so it may not produce the desired result for strings with non-English characters. In that case, using the `string.gsub()` function with a Unicode pattern might be a better choice.
+In terms of alternatives, you don't have many in Lua. It's `string.lower` or manual char-to-char conversion. Needless to say, this built-in function is far easier and cleaner.
+
+While Lua doesn't expose implementation details for `string.lower`, it likely implements a simple ASCII conversion. It'd iterate through the input and, for each upper-case ASCII character (A-Z or 65-90), minus 32 to get its lower-case equivalent (a-z or 97-122).
 
 ## See Also
 
-To learn more about string manipulation in Lua, check out the [official Lua documentation](https://www.lua.org/pil/20.2.html) or this [tutorial on string manipulation](https://riptutorial.com/lua/example/9680/string-manipulation) in Lua. Additionally, you can explore the different functions available for string manipulation in the [Lua strlib library](https://www.lua.org/manual/5.3/manual.html#6.4).
+For more on Lua string manipulation, visit the official Lua 5.4 manual: [https://www.lua.org/manual/5.4/manual.html#6.4](https://www.lua.org/manual/5.4/manual.html#6.4) .
+
+If you want to know more about ASCII, this is a decent guide: [https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html](https://www.cs.cmu.edu/~pattis/15-1XX/common/handouts/ascii.html) .

@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "PHP: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,52 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא פעולה נפוצה בתכנות המאפשרת לצד מתכנת להתחבר לשרת תוך שימוש בשם משתמש וסיסמה. הסיבה לכך היא כי אימות בסיסי מספק שכבת אבטחה נוספת כדי להגן על נתוני המשתמש ולמנוע גישה ללא מורשה לשרת.
+## מה & למה?
+שליחת בקשת HTTP עם אימות בסיסי הוא תהליך שבו אנו שולחים בקשת HTTP ומתוך הבקשה מסמנים את הדרישה לאימות, בדעיך של שם משתמש וסיסמה. מתכנתים בוחרים לבצע זאת כדי להאבטח גישה למשאבים או גישה למסלולים מסוימים באפליקציה שלהם.
 
 ## איך לעשות:
-דוגמאות קוד ופלט מוצגים בכבודת `PHP…` 
+נוכל לבצע את זה ב-PHP באמצעות ספריית cURL. להלן דוגמה על כיצד לשלוח בקשת HTTP עם אימות בסיסי.
 
-```php
-// הגדרת משתנים לשילוח הבקשה
-$url = 'http://www.example.com/api/users';
-$username = 'myusername';
-$password = 'mypassword';
-
-// ייצור בקשת HTTP עם אימות בסיסי
+```PHP
 $ch = curl_init();
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, $username . ':' . $password);
 
-// שליחת הבקשה והצגת התוצאה
-$response = curl_exec($ch);
+curl_setopt($ch, CURLOPT_URL, 'http://example.com');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_USERPWD, 'username:password');
+
+$result = curl_exec($ch);
+
+if(curl_errno($ch)){
+    echo 'Error:' . curl_error($ch);
+}
 curl_close($ch);
-echo $response;
 ```
+בקוד זה, אנחנו משתמשים ב-`curl_setopt` כדי להגדיר את שם המשתמש והסיסמה לבקשת ה-HTTP. התשובה מהשרת מאוחסנת ב-`$result`.
 
-פלט:
-```
-[
-  {
-    "id": 1, 
-    "name": "John Smith", 
-    "email": "johnsmith@gmail.com"
-  }, 
-  {
-    "id": 2, 
-    "name": "Jane Doe", 
-    "email": "janedoe@gmail.com"
-  }
-]
-```
+## דיפ דייב:
+שימוש באימות בסיסי הוא נפוץ במהלך ההיסטוריה של הפרודקול HTTP. זוהי טכניקה בסיסית אך יעילה לאבטחת גישה, אך לא תמיד היא הבחירה הטובה ביותר. ראוי לשקול שימוש בשיטות אחרות, המחייבות יישומים כמו OAuth או מחזיקי מפתח API. שימו לב שבשיטה זו, שם המשתמש והסיסמא משוגרים בצורה בלתי מוצפנת, שמזעזעת במקרים שבהם המידע אינו מוגן בצורה מוצפנת.
 
-## כיווץ עמוק:
-- היסטוריה: אימות בסיסי נוצר עבור פרוטוקול האינטרנט Telnet בשנות ה-70 כדי לאפשר למשתמשים להתחבר לסיסטם אווירוע עם שם משתמש וסיסמה.
-- אלטרנטיבות: אימות בסיסי הוא רק אחת ממגוון האפשרויות לאימות שרתים באינטרנט, כולל OAuth, JWT ו- HTTPS. כל אחת מהאלטרנטיבות מספקת רמות שונות של אבטחה ויעילות.
-- פירוט היישום: שליחת בקשת HTTP עם אימות בסיסי ב-PHP יכולה להתבצע באמצעות שימוש בפונקציה `curl_setopt()`, תוכניות צד שלישי כמו Guzzle והשתמשויות כמו Basic Auth for WordPress.
-
-## ראו גם:
-- [שליחת בקשת HTTP ב-PHP עם CURL](https://www.php.net/manual/en/curl.examples-basic.php)
-- [מדריך לאימות בסיסי באמצעות CURL עבור מתכנתים](https://developer.okta.com/blog/2019/05/31/basic-http-authentication-with-curl)
+## ראה גם:
+1. [HTTP Authentication](https://tools.ietf.org/html/rfc7235)
+2. [PHP: Hypertext Preprocessor - Official Documentation](https://www.php.net/manual/en/book.curl.php)
+3. [Understanding Basic HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).

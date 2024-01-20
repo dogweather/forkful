@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Haskell: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-שליחת בקשת HTTP היא פעולה שמאפשרת לתכנתנים ליצור תקשורת בין יישומים. היא מאפשרת לשלוח בקשות מכלל אינטרנט כמו אינטרנט או ​HTTP
+## מה & למה?
+שליחת בקשת HTTP היא פעולה שבה המחשב שלך מבקש מידע או שינוי משרת אינטרנט. מתכנתים עושים זאת כדי לאפשר לאפליקציה שלהם להתכתב עם שאר הרשת.
 
-כלומר, זהו כלי מועיל לתכנתנים שמאפשר להשאיר את קוד התיקשורת למכונה. זה מאפשר לתכנתנים לפתר את בעיות התקשורת ולתפשר עם קוד אחר.
+## כיצד ל:
+באמצעות מעטפת HTTP Simple, אתה יכול לשלוח בקשות HTTP בפשטות:
 
-## איך לעשות זאת?
-הנה דוגמא של שליחת דרך בקשת HTTP בהשתמשות בשפת Haskell.
 ```Haskell
-import Network.HTTP
+ghci> import Network.HTTP.Simple -- ייבא את המעטפת
 
-main :: IO ()
-main = do
-    response <- simpleHTTP (getRequest "http://google.com")
-    html <- getResponseBody response
-    putStrLn html
-```
-פלט:
-```Haskell 
-<html>...</html>
+ghci> let request = "http://httpbin.org/get?key=value" -- הגדרת הבקשה
+
+ghci> response <- httpJSON $ parseRequest_ request -- שולחת את הבקשה ומבצעת פענוח JSON
+
+ghci> print $ getResponseBody response -- הדפסת התגובה
 ```
 
-## נכנסים לעומק
-זה שליחת בקשת HTTP היא כלי שקיים כבר למעלה מז' 30 שנים ומשמש לפתרון בעיות בתגובה של תיקשורת של העץ של המערכת. למעשה, קוד התקשורת הוא הרבה יותר פשוט וקל לתחזר, בעזרת זכרונות כלי הכמלול המכיל בקשת תקשורת.
+פלט דוגמה:
 
-יש גם חפשת בעל דרך חשוב לתקשורת עם המערכת שאינו תגובה ולא בהתאם לבעיה. המערכת זו כלל כלים בני שליחת תקשורת ובסופו של כל יום לעבוד בצורה האחרונה כל יום. לכן, ככל יום הם יכוחים וככל יום הם יכוחים על עליו.
+```Haskell
+("/{\"url\":\"http://httpbin.org/get?key=value\",\"headers\": ... ,\"args\":{\"key\":\"value\"}}")
+```
 
-## ראה גם
-- [Haskell בוויקיפדיה](https://he.wikipedia.org/wiki/Haskell)
-- [Network.HTTP בהובהאב](https://hackage.haskell.org/package/HTTP)
-- [שליחת בקשת HTTP בשפת התיכונה](https://www.geeksforgeeks.org/http-request-in-middle-of-network-programming-c/)
+## צלילה עמוקה:
+אחרי שחרור Haskell בשנת 1990, אנשים התחילו להשתמש בקוד HTTP המותאם אישית, אך בגלל הקשיים עם אבטחה וניהילת חיבורים, ציוד בליבות אינטראקטיביות הפך להולך ונפוץ יותר. היום, ישנם ארבעה מעטפות HTTP מרכזיים ב- Haskell: http-client, http-simple, http-conduit, ו req. כל אחד מהם מספק התממשות שונה ואפשרויות שונות, אך המדגם למעלה משתמש מטפת HTTP Simple עקב פשטות שלה.
+
+## ראה גם:
+וויקיפדיה: [HTTP Requests](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
+תיעוד Haskell: [SimpleHTTP](https://hackage.haskell.org/package/http-conduit/docs/Network-HTTP-Simple.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Java: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,37 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Vertailu java-päivämäärässä
+
 ## Mitä & Miksi?
 
-Vertaaminen kahden päivämäärän välillä on ohjelmoinnissa yhteinen tehtävä. Se tarkoittaa yksinkertaisesti kahden päivämäärän vertailua selvittääkseen kumpi niistä on ennen tai jälkeen toisen päivämäärän. Ohjelmoijat tekevät tätä usein esimerkiksi tarkistaakseen, onko asiakkaan sopimus voimassa tai onko tietty päivämäärä tulevaisuudessa.
+Päivämäärien vertailu on tarkistusprosessi, jossa määritetään kahden päivämäärän suhde. Ohjelmoijat tekevät tämän esimerkiksi aikajärjestyksen, aikavälien tai päivämääräsarjoissa olevien puutteiden määrittämiseksi.
 
-## Kuinka tehdä se:
+## Kuinka:
 
-```Java 
-// Oletetaan, että haluamme verrata kahta päivämäärää: 01/01/2020 ja 05/01/2020
-LocalDate date1 = LocalDate.of(2020, 1, 1);
-LocalDate date2 = LocalDate.of(2020, 5, 1);
+Tässä on yksinkertainen esimerkki päivämäärien vertailusta Java 17:ssä `java.time.LocalDate`-luokan ja sen `isBefore()`, `isAfter()` ja `isEqual()` -metodien avulla:
 
-// Verrataan päivämääriä käyttäen compareTo() metodia
-int result = date1.compareTo(date2);
+```Java
+import java.time.LocalDate;
 
-if (result < 0) {
-    System.out.println("date1 on ennen date2");
-} else if (result > 0) {
-    System.out.println("date1 on jälkeen date2");
-} else {
-    System.out.println("date1 ja date2 ovat samat");
+public class Main {
+    public static void main(String[] args) {
+        // Luo päivämäärät
+        LocalDate date1 = LocalDate.of(2020, 12, 1);
+        LocalDate date2 = LocalDate.of(2021, 12, 1);
+
+        // Vertaile päivämääriä
+        if(date1.isBefore(date2)){
+            System.out.println(date1 + " tulee ennen " + date2);
+        }
+
+        else if(date1.isAfter(date2)){
+            System.out.println(date1 + " tulee jälkeen " + date2);
+        }
+
+        else{
+            System.out.println("Päivämäärät ovat yhtä suuret");
+        }
+    }
 }
-
-// Output: date1 on ennen date2
+```
+Tämä koodi tulostaa:
+```
+2020-12-01 tulee ennen 2021-12-01
 ```
 
-## Syväsukellus:
+## Syvällisempi tarkastelu
 
-Päivämäärien vertailu on ollut tärkeä tehtävä jo pitkään, ja Java tarjoaa monia tapoja tehdä se. Yksi vaihtoehto on käyttää compareTo() metodia, kuten yllä olevassa esimerkissä. Toinen vaihtoehto on käyttää isEqual() tai isBefore() ja isAfter() metodeja. Näillä metodeilla voit tarkistaa, ovatko päivämäärät samat tai ovatko ne ennen tai jälkeen toisiaan.
+Päivämäärien vertailumekaniikat ovat olleet osa Javaa version 1.0.2 julkaisusta lähtien, ja ne olivat osa `java.util.Date`-luokkaa. Tätä mekanismia on kuitenkin kritisoitu monimutkaisuuden ja epäjohdonmukaisuuden vuoksi. Tämän takia versiossa Java 8 otettiin käyttöön `java.time`-paketti, joka tarjoaa intuitiivisemman ja tehokkaamman tavan käsitellä päivämääriä ja aikaa.
 
-## Katso myös:
+On olemassa myös muita tapoja päivämäärien vertailemiseksi, esimerkiksi `java.time.Period`-luokkaa käyttämällä, jos haluat tietää päivämäärien välisten päivien, kuukausien tai vuosien määrän.
 
-- [Java LocalDate API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Ohjeita päivämäärän vertailuun Java:ssa](https://www.baeldung.com/java-date-compare)
-- [Java 8 DateTime API opetusohjelma](https://www.baeldung.com/java-8-date-time-intro)
+Java päivämäärän vertailutoimintojen toteutus liittyy `compareTo()` -metodiin, joka perustuu `java.lang.Comparable` -rajapintaan.
+
+## Katso myös
+
+- `java.time.LocalDate`: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/LocalDate.html
+- `java.util.Date`: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/Date.html
+- `Comparable`: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html
+- `java.time.Period`: https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Period.html

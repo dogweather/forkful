@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "Haskell: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co i dlaczego?
+## Co i dlaczego?
 
-Tworzenie pliku tymczasowego jest nieodłączną częścią programowania w Haskellu. Jest to plik, który jest tworzony i używany tylko na chwilę, a następnie usuwany. Programiści tworzą tymczasowe pliki w celu przechowywania tymczasowych danych, takich jak kawałki kodu, pliki tymczasowe do przetwarzania, itp.
+Tworzenie tymczasowego pliku polega na stworzeniu pliku, który jest używany na czas określonej operacji lub sesji, i który zwykle jest usuwany po zakończeniu. Programiści tworzą takie pliki, aby tymczasowo przechowywać dane bez potrzeby zapisywania ich w stałej pamięci.
 
-Jak to zrobić:
+## Jak to zrobić:
 
-Kodowanie w Haskellu jest proste i intuicyjne, a tworzenie plików tymczasowych nie jest wyjątkiem. Użyjemy funkcji ```openTempFile```, która przyjmuje dwa argumenty: ścieżkę do katalogu tymczasowego i nazwę pliku tymczasowego. Oto przykładowe użycie tej funkcji:
+W Haskellu możesz użyć `System.IO.Temp` do stworzenia tymczasowego pliku. Zobaczmy szybki przykład:
 
-```Haskell
+```haskell
+import System.IO.Temp
 import System.IO
 
-main :: IO ()
-main = do
-  (path, tempFileHandle) <- openTempFile "/tmp" "example.txt"
-  hPutStrLn tempFileHandle "To jest przykładowy tekst."
-  hClose tempFileHandle
-  putStrLn ("Stworzono tymczasowy plik w: " ++ path)
+main = withSystemTempFile "mytemp.txt" $ \_ handle -> hPutStr handle "Cześć, jestem tymczasowy!"
+
 ```
 
-Po uruchomieniu tego programu, zobaczysz na ekranie wyjściowym komunikat o stworzeniu tymczasowego pliku w podanym katalogu, a w tym katalogu pojawi się plik "example.txt". Plik ten zostanie automatycznie usunięty po zakończeniu programu.
+Oto wysyłane dane:
 
-Głębsze zagadnienia:
+```txt
+Cześć, jestem tymczasowy!
+```
 
-Sposoby tworzenia plików tymczasowych w Haskellu mogą się różnić w zależności od używanej biblioteki lub modułu. Inne dostępne funkcje to na przykład ```createTempFile```, ```withTempFile```, czy też ```withSystemTempFile```. Istnieją również alternatywne sposoby umieszczania tymczasowych danych, takie jak korzystanie z strumieni lub innych struktur danych w Haskellu. 
+## W głąb:
+ 
+Tworzenie tymczasowych plików w programowaniu ma kilku dekad historii. Znaczenie tego wzrosło wraz z pojawieniem się systemów operacyjnych z wielozadaniowością i rosnącym zapotrzebowaniem na pamięć podręczną.
 
-Warto wspomnieć, że plik tymczasowy może również być dostępny w pamięci RAM, a nie tylko na dysku twardym. Wówczas będziemy mówić o "plikach tymczasowych w pamięci". W Haskellu możemy to osiągnąć przy użyciu funkcji ```openTempFile```, podając ścieżkę do katalogu w pamięci.
+Alternatywą dla lokalnych plików tymczasowych mogą być pliki tymczasowe przechowywane w pamięci, z której korzystają niektóre bazy danych i systemy plików, ale mogą one być mniej wydajne.
 
-Zobacz też:
+Zgodnie z dokumentacją `System.IO.Temp`, Haskell tworzy tymczasowy plik w folderze określonym przez środowisko. Plik zostaje usunięty gdy uchwyt do pliku zostanie zamknięty, chyba że podasz wyraźnie inną instrukcję.
 
-Jeśli chcesz dowiedzieć się więcej o tworzeniu plików tymczasowych w Haskellu, warto zapoznać się z dokumentacją biblioteki ```System.IO```. Możesz również przeczytać o użyciu strumieni lub innych alternatywnych sposobów przechowywania danych w Haskellu.
+## Zobacz również:
+
+Haskell ma wiele bibliotek do zarządzania plikami i folderami. Sprawdź je:
+
+- `System.IO.Temp`: [Biblioteka Temp](https://www.haskell.org/ghc/docs/latest/html/libraries/temporary-1.3/System-IO-Temp.html)
+- `System.Directory`: [Biblioteka Directory](https://www.haskell.org/ghc/docs/latest/html/libraries/directory-1.3.6.0/System-Directory.html)

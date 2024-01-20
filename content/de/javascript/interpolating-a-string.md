@@ -1,6 +1,6 @@
 ---
 title:                "Eine Zeichenkette interpolieren"
-html_title:           "Javascript: Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
 simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
 
-Beim Programmieren bezieht sich das Interpolieren einer Zeichenfolge auf das Einsetzen von Variablen oder Ausdrücken in einen String. Es ist eine einfache und effektive Möglichkeit, Texte dynamisch zu gestalten und Daten in eine formatierte Zeichenfolge zu integrieren. Programmierer nutzen die Interpolation, um ihre Codes übersichtlicher und flexibler zu gestalten und um potenzielle Fehler zu vermeiden.
+Die String-Interpolation in Javascript ist eine Technik, bei der Werte dynamisch in einen String eingefügt werden. Es ermöglicht einen saubereren, lesbareren Code und erleichtert die Manipulation von Zeichenketten.
 
-# Wie geht es:
+## So geht's:
 
-Ein einfaches Beispiel für die String Interpolation wäre:
-
-```Javascript
-const name = "Lisa";
-console.log(`Hallo ${name}, wie geht es dir?`);
-```
-
-Dieser Code würde die Ausgabe "Hallo Lisa, wie geht es dir?" erzeugen, da die Variable "name" in die Zeichenfolge eingefügt wird. Dabei wird der Variablenname in geschweiften Klammern innerhalb des Strings markiert und mit einem Dollarzeichen eingeleitet.
-
-Ein weiteres Beispiel könnte die dynamische Erstellung von HTML-Elementen sein:
+Mit den Template Literalen, bietet Javascript eine einfache Art der String-Interpolation. Hier ein Beispiel:
 
 ```Javascript
-const title = "Interpolation";
-const subtitle = "in Javascript";
-const html = `<h1>${title}</h1><p>${subtitle}</p>`;
-document.querySelector("#container").innerHTML = html;
+let name = 'Max';
+let begruessung = `Hallo ${name}!`;
+console.log(begruessung);  // Ausgabe: "Hallo Max!"
 ```
+In diesem Code wird der Wert der Variablen `name` dynamisch in den String `begruessung` eingefügt.
 
-Dieses Beispiel würde ein HTML-Dokument mit einem Titel und Untertitel erstellen, die jeweils aus den vorher definierten Variablen interpoliert werden.
 
-# Tiefes Eintauchen:
+## Vertiefung:
 
-Die String Interpolation ist ein relativ neues Konzept in der Javascript-Programmierung. Früher wurde sie durch das Verketten von Strings und Variablen mit dem Pluszeichen erreicht, was jedoch umständlicher und fehleranfälliger war. Alternativen zu String Interpolation in anderen Programmiersprachen sind beispielsweise der printf-Befehl in C oder das f-String-Format in Python.
+Die String-Interpolation wurde erst mit ES2015/ES6 eingeführt. Vorher musste man noch umständlich "+" verwenden um Strings und Variablen zu verknüpfen, was leicht zu Fehlern führen kann.
 
-Die Implementierung von String Interpolation erfolgt in der Regel durch die Verwendung von Backticks anstelle von Anführungszeichen und der Verwendung von geschweiften Klammern und Dollarzeichen innerhalb der Zeichenfolge. Dabei sollte beachtet werden, dass es sich bei dem Ausdruck innerhalb der geschweiften Klammern um eine JavaScript-Expression handeln muss.
+Alternativen zur String-Interpolation sind die bereits genannte Methode mit "+", oder Funktionen wie `.concat()`, oder `.join()`, die allerdings weniger intuitiv und schwerer zu lesen sind.
 
-# Weitere Informationen:
+Bei der Umsetzung der String-Interpolation ist zu beachten, dass nur innerhalb der Backticks (` `) Variablen und Ausdrücke verwendet werden können. Diese werden dann in den String interpoliert. Weiterhin sind auch Ausdrücke wie `Hallo ${1+1}!` möglich, was "Hallo 2!" ausgeben würde.
 
-Weitere Informationen zur String Interpolation in Javascript können unter folgenden Links gefunden werden:
+## Siehe auch:
 
-- [MDN Web Docs](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings)
-- [W3Schools](https://www.w3schools.com/js/js_string_interpolation.asp)
-- [Codecademy](https://www.codecademy.com/learn/introduction-to-javascript/modules/learn-javascript-strings/cheatsheet)
+[MDN Web Docs - Template Literale](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Template_literals)
+
+[Javascript.info - Template Literale](https://javascript.info/string#template-literals)
+
+[Freecodecamp - A Deep Dive Into ES6 Template Literals](https://www.freecodecamp.org/news/template-literals-in-es6-new-features-and-polymorphic-strings-84129283d377/)

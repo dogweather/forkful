@@ -1,7 +1,7 @@
 ---
-title:                "Erzeugung von Zufallszahlen"
-html_title:           "Arduino: Erzeugung von Zufallszahlen"
-simple_title:         "Erzeugung von Zufallszahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,22 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Generieren von zufälligen Zahlen ist ein wichtiger Teil des Programmierens, da es ermöglicht, unvorhersehbare Ergebnisse zu erzeugen. Das kann nützlich sein, um beispielsweise Spiele zu entwickeln oder Sicherheitscodes zu erstellen.
+## Was & Warum? 
 
-## Wie geht's?
-Das Arduino-Board verfügt über eine integrierte Funktion namens ```random()```, die zufällige Zahlen zwischen 0 und 1 zurückgibt. Sie kann auf verschiedene Arten verwendet werden, um Zahlen mit einem bestimmten Bereich oder Format zu generieren. Hier ist ein Beispiel, um eine zufällige Ganzzahl zwischen 1 und 10 zu erhalten:
+Die Generierung zufälliger Zahlen ist der Prozess, den Programmierer verwenden, um zufällige, nicht vorhersehbare Werte zu erzeugen. Wir machen das, um Fälle von Zufälligkeit in unsere Programme zu implementieren, z. B. ein Würfelspiel oder eine eindeutige Benutzer-ID.
 
-```Arduino 
-int x = random(1, 11); 
+## Wie geht das?
+
+In Arduino könnten Sie die `random()` Funktion nutzen, um Zufallszahlen zu generieren. Hier ist ein einfacher Code-Snippet, der eine Zufallszahl zwischen 0 und 100 ausgibt:
+
+```Arduino
+void setup(){
+  Serial.begin(9600);
+  randomSeed(analogRead(0));
+}
+
+void loop(){
+  int zufallszahl = random(0, 101);
+  Serial.println(zufallszahl);
+  delay(1000);
+}
 ```
 
-Die Ausgabe könnte zum Beispiel ```5``` sein.
+In diesem Fall, könnte die Ausgabe so aussehen:
 
-## Tiefer Tauchen
-Zufallszahlen spielen in vielen Bereichen der Informatik eine wichtige Rolle. Sie werden nicht nur in Spielen, sondern auch in Kryptographie und statistischen Analysen verwendet. Es gibt auch verschiedene Algorithmen und Methoden, um zufällige Zahlen zu generieren, wie zum Beispiel der Middle-Square-Algorithmus oder der Mersenne-Twister.
+```Arduino
+45
+28
+89
+12
+57
+```
+
+## Tiefgreifende Informationen
+
+Die Generierung zufälliger Zahlen hat eine lange Geschichte in der Programmierung. Ursprünglich wurden sie mit speziellen Algorithmen erzeugt, die sogenannte Pseudozufallszahlen erzeugen - sie sehen zufällig aus, folgen aber tatsächlich einem vorbestimmten Muster. 
+
+In der Arduino-Umgebung können Sie die `random()` Funktion oder die `randomSeed()` Funktion verwenden, um Zufallszahlen zu erzeugen. Die `randomSeed()` Funktion wird typischerweise verwendet, um den Ausgangspunkt des Zufallszahlengenerators zu initialisieren und so jede Sequenz von Zahlen einzigartig zu machen.
+
+Alternativ könnten Sie eine externe Bibliothek wie `Entropy` verwenden, die Zufallszahlen durch Hardware-Rauschen erzeugt.
 
 ## Siehe auch
-- [Arduino Referenz zu random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
-- [Erklärvideo zu Zufallszahlen in der Informatik (auf Deutsch)](https://www.youtube.com/watch?v=TdPL-cAOq8M)
-- [Wikipedia-Artikel über Zufallszahlen](https://de.wikipedia.org/wiki/Zufallszahl)
+
+Für weitere Informationen über die Generierung von Zufallszahlen, können Sie die folgenden Ressourcen besuchen:
+
+- Arduino Reference: [Random Numbers](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- Arduino Forum: [Best Practices for Random Numbers](https://forum.arduino.cc/index.php?topic=503368.0)
+- Arduino Project Hub: [Random Number Generator](https://create.arduino.cc/projecthub/projects/tags/random%20number%20generator)

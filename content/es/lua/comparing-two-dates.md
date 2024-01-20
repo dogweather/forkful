@@ -1,6 +1,6 @@
 ---
 title:                "Comparando dos fechas"
-html_title:           "Lua: Comparando dos fechas"
+html_title:           "C#: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,51 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué y Por Qué?
 
-Comparar dos fechas en programación significa verificar si una fecha es mayor, menor o igual a otra. Los programadores necesitan hacer esto para ordenar y filtrar datos, o para determinar si se ha pasado una fecha límite. Es una tarea común en muchas aplicaciones.
+Comparar dos fechas en programación significa determinar si una fecha es mayor, menor o igual a otra. Los programadores realizan esta acción para ordenar eventos, filtrar información basada en el tiempo, entre otras tareas.
 
-## Cómo:
+## Cómo se hace:
+
+Lua no tiene una biblioteca estándar para manejar fechas y horas, pero puedes usar la biblioteca `os`. Aquí hay un simple ejemplo de cómo comparar dos fechas:
 
 ```Lua
--- Ejemplo 1: Comparando dos fechas utilizando operadores lógicos
-if fecha1 > fecha2 then
-  print("La fecha 1 es después de la fecha 2")
-elseif fecha1 < fecha2 then
-  print("La fecha 1 es antes de la fecha 2")
+d1 = os.time({year=2022, month=5, day=10})
+d2 = os.time({year=2023, month=5, day=10})
+
+if(d1 > d2) then
+    print("La fecha 1 es mayor que la fecha 2")
+elseif (d1 < d2) then
+    print("La fecha 1 es menor que la fecha 2")
 else
-  print("Las dos fechas son iguales")
+    print("Las dos fechas son iguales")
 end
-
--- Ejemplo 2: Utilizando funciones para convertir fechas en segundos desde la época y luego compararlos
--- Esta técnica es útil cuando las fechas están en diferentes formatos
--- Fuente: https://www.lua.org/pil/22.1.html
-function fechaEnSegundos(fecha)
-  local dateTable = os.date("*t", fecha)
-  return os.time(dateTable)
-end
-
--- Comparando dos fechas 
-if fechaEnSegundos(fecha1) > fechaEnSegundos(fecha2) then
-  print("La fecha 1 es después de la fecha 2")
-elseif fechaEnSegundos(fecha1) < fechaEnSegundos(fecha2) then
-  print("La fecha 1 es antes de la fecha 2")
-else
-  print("Las dos fechas son iguales")
-end
-
 ```
 
-## Inmersión profunda:
+En este caso, deberías ver "La fecha 1 es menor que la fecha 2" como resultado.
 
-En la programación, las fechas se almacenan y se manipulan como valores numéricos que representan segundos desde la "época". La época es un punto de referencia desde el cual se cuenta el tiempo. En Lua, la época es el 1 de enero de 1970 a las 00:00:00 UTC. A partir de allí, se pueden utilizar operadores lógicos como <, > y == para comparar fechas. Otra técnica es convertir las fechas en segundos y luego compararlos, como se muestra en el ejemplo 2.
+## Inmersión Profunda  
 
-Una alternativa a la comparación de fechas es el uso de librerías especiales de fecha y hora, como `luatz` o `date`. Estas librerías ofrecen funciones más avanzadas para operaciones con fechas y pueden ser más útiles en casos de uso complejos.
+Históricamente, Lua se diseñó para ser un lenguaje pequeño y ligero, por lo que la biblioteca `os` tiene una funcionalidad limitada para fechas y horas. Sin embargo, hay bibliotecas de terceros para manejar fechas de manera más flexible, como `luadate` y `Penlight`.
 
-## Vea también:
+La función `os.time` utilizada en el ejemplo anterior convierte una tabla de fecha en segundos pasados desde una época, que es 1° de enero de 1970 por defecto. Esto nos da un valor numérico que podemos usar para comparar fácilmente dos fechas.
 
-[Documentación de Lua sobre fechas y hora](https://www.lua.org/manual/5.3/manual.html#6.9)
+Antes de usar la función `os.time`, por favor, asegúrate de entender los límites de su uso. Para fechas antes de 1970 o después de 2038, `os.time` puede tener un comportamiento inconsistentes en diferentes sistemas.
 
-[`luatz`]: https://github.com/daurnimator/luatz
+## Vea También:
 
-[`date`]: http://tichy.tv/php/datebook/
+Para más información sobre comparación de fechas en Lua:
+
+1. Documentación oficial de Lua `os.date` y `os.time`: https://www.lua.org/pil/22.1.html
+2. Biblioteca 'luadate': https://github.com/Tieske/date
+3. Biblioteca 'Penlight': http://stevedonovan.github.io/Penlight/api/index.html

@@ -1,6 +1,6 @@
 ---
 title:                "Wydobywanie podciągów"
-html_title:           "Ruby: Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
 simple_title:         "Wydobywanie podciągów"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wyciąganie podciągów to proces wyodrębniania fragmentów danych z większego ciągu znaków. Programiści często wykorzystują tę technikę, aby uporządkować i manipulować tekstami w swoich programach.
+## Co i Dlaczego?
+
+Wyciągając podciągi (substrings), pobieramy konkretny fragment tekstu z ciągu znaków. Robimy to, aby łatwiej manipulować danymi, analizować tekst, lub tworzyć nowe ciągi znaków.
 
 ## Jak to zrobić:
+
+Ruby oferuje kilka metod do wyciągania podciągów. Zobaczmy kilka przykładów:
+
 ```Ruby
-example_text = "Witaj w świecie programowania!"
-puts example_text[6..-1] # Output => w świecie programowania!
+str = "Witaj, świecie programowania!"
+
+str[7,9] 
+# Zwróci "świecie"
+
+str[0..4] 
+# Zwróci "Witaj"
+
+str.slice(16, 14) 
+# Zwróci "programowania!"
 ```
 
-W powyższym przykładzie użyto metody ```[]```, która pozwala na wycięcie fragmentu tekstu z wybranego zakresu. Warto zauważyć, że w Ruby indeksy zaczynają się od zera, a ```-1``` oznacza ostatni element w tekście.
+## Pogłębione informacje
 
-## Wnikliwe spojrzenie:
-1. Kontekst historyczny: Wyciąganie podciągów jest powszechną częścią języka Ruby, który został stworzony w 1993 roku przez Yukihiro Matsumoto.
-2. Alternatywy: Istnieje wiele innych metod operujących na tekstach w Ruby, takich jak: ```slice```, ```substring```, ```scan```. Każda z nich ma jednak swoje specyficzne zastosowanie.
-3. Szczegóły implementacji: Wyciąganie podciągów wykorzystuje indeksy zamiast iteracji po każdym znaku, co pomaga oszczędzić czas i zasoby programu.
+1) Kontekst historyczny: Wyciąganie podciągów jest często używane w różnych językach programowania, i Ruby to tradycję kontynuuje, oferując wiele pomocnych metod.
+
+2) Alternatywy: Możesz też użyć `slice!` do usunięcia i zwrócenia podciągu lub `index` do znajdowania miejsca, gdzie zaczyna się konkretny podciąg.
+
+3) Szczegóły implementacji: W Ruby indeksowanie zaczyna się od 0. Jeżeli użyjesz ujemnego indeksu, zaczyna on liczyć od końca ciągu.
 
 ## Zobacz też:
-[Oficjalna dokumentacja Ruby o metodzie '[]'](https://ruby-doc.org/core-2.7.1/String.html#method-i-5B-5D)
 
-[Blokwisko o wyciąganiu podciągów w Ruby](https://www.blokwisko.agh.edu.pl/post/ruby-wyrazenia-regularne-i-wyciaganie-duzych-ciagow-znakow)
+- Dokumentacja Ruby na temat metod ciągów znaków: https://ruby-doc.org/core-2.7.1/String.html
+- Przewodnik po Ruby dla początkujących: https://www.ruby-lang.org/pl/documentation/quickstart/
+- Zadania do ćwiczenia operacji na ciągach znaków w Ruby: https://www.w3resource.com/ruby-exercises/string/index.php

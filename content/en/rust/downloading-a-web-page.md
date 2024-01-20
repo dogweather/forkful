@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Rust recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,42 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Downloading a Web Page Using Rust
+
 ## What & Why?
 
-Downloading a web page refers to the process of retrieving the contents of a webpage from the internet and storing it on a local device. Programmers often do this to access and extract specific information from the webpage, such as text, images, or data. This allows them to use the acquired information in their own applications or projects.
+Downloading a web page means capturing its contents as an offline file. Programmers download web pages to extract data, test site performance, or archive content.
 
 ## How to:
 
-To download a web page in Rust, we can use the standard library's "reqwest" crate, which provides the necessary functions and methods for making HTTP requests and receiving responses.
+First, you'll need to add the reqwest library to your `Cargo.toml` file:
 
+```Rust
+[dependencies]
+reqwest = "0.10.9"
+tokio = {version = "^0.2", features = ["full"]}
 ```
-Rust
-use reqwest;
-use std::fs::File;
-use std::io::prelude::*;
 
-fn main() -> Result<(), Box<dyn std::error::Error>> {
-        // make a GET request to the specified URL
-        let response = reqwest::blocking::get("https://www.example.com")?;
-        // save the response body to a file
-        let mut file = File::create("example.html")?;
-        response.copy_to(&mut file)?;
-        Ok(())
+Then, use the `reqwest` and `tokio` libraries to fetch a web page:
+
+```Rust
+use reqwest::Error;
+
+#[tokio::main]
+async fn main() -> Result<(), Error> {
+    let response = reqwest::get("https://www.rust-lang.org/")
+        .await?
+        .text()
+        .await?;
+
+    println!("{}", response);
+
+    Ok(())
 }
 ```
 
-Running this code will create a file named "example.html" in the local directory and save the contents of the webpage to it.
+This basic example fetches the HTML content of "https://www.rust-lang.org/" and prints it to the console.
 
 ## Deep Dive
 
-Before the "reqwest" crate, the most commonly used library for HTTP requests in Rust was "hyper", which is still a widely used alternative. However, "hyper" requires more manual configuration and handling, whereas "reqwest" aims to provide a simpler interface for making requests.
+Historically programmers used `wget` or `curl` command-line tools to download HTML content. But for modern tasks, tools like `reqwest` in Rust provide more flexibility and power.
 
-When making a GET request with "reqwest", the response is automatically decompressed if it is gzip or deflate encoded. It also handles redirects and follows them automatically.
+Alternatives to `reqwest` include the lower-level `hyper` and `surf` libraries. These can provide more control over HTTP requests, but at the cost of added complexity.
 
-To improve performance, "reqwest" also supports async/await functionality, making it easier to asynchronously make multiple requests at once.
+When it comes to the nitty-gritty, `reqwest::get` fetches a webpage by making a GET HTTP request. The `await` calls are needed as these operations are asynchronous - they can run at the same time as other parts of your program.
 
 ## See Also
 
-- [reqwest GitHub page](https://github.com/seanmonstar/reqwest)
-- [hyper GitHub page](https://github.com/hyperium/hyper)
-- [Rust standard library documentation](https://doc.rust-lang.org/std/)
+- [Reqwest documentation](https://docs.rs/reqwest)
+- [Tokio documentation](https://docs.rs/tokio/)
+- [Hyper library](https://hyper.rs/)
+- [Surf library introduction](https://rust-lang-nursery.github.io/rust-cookbook/web/scraping.html)

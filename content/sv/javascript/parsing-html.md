@@ -1,7 +1,7 @@
 ---
-title:                "Avkoda html"
-html_title:           "Javascript: Avkoda html"
-simple_title:         "Avkoda html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -11,34 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Parsing HTML är processen att analysera och extrahera information från HTML-kod. Det är vanligtvis en del av att bygga webbapplikationer för att bearbeta och visa webbsidor. Detta görs vanligtvis med hjälp av ett speciellt programmeringsspråk som kallas Javascript.
 
-## Hur du gör:
-Här är ett exempel på hur du kan använda Javascript för att parsa HTML-kod och extrahera text från en specifik HTML-element. I detta exempel använder vi JQuery, ett populärt Javascript-bibliotek, för att enkelt hitta och manipulera HTML-elementet.
+Att tolka (parse) HTML innebär att omvandla HTML-kod, vilket är text, till strukturerade data. Programmerare gör detta för att kunna interagera med webbsidor, analysera strukturen, manipulera innehållet och extrahera data.
+
+## Så här gör du:
+
+Med hjälp av JavaScripts inbyggda `DOMParser` kan vi enkelt tolka (parse) HTML. Se följande exempel:
 
 ```Javascript
-// HTML kod:
-<body>
-  <div id="example">
-    <p>Välkommen till vårt blogginlägg!</p>
-  </div>
-</body>
+// Skapa ett nytt DOMParser objekt
+let parser = new DOMParser();
 
-// Javascript kod:
-const $example = $("#example"); // Väljer HTML-elementet med id "example"
-const $text = $example.find("p").text(); // Extraherar texten från p-elementet
-console.log($text); // Output: "Välkommen till vårt blogginlägg!"
+// HTML-text som ska tolkas
+let htmlString = "<ul><li>Exempel 1</li><li>Exempel 2</li></ul>";
+
+// Använd parseFromString metoden
+let doc = parser.parseFromString(htmlString, "text/html");
+
+console.log(doc.body);
+```
+
+Efter att ha kört koden kommer outputten se ut som följer:
+
+```Javascript
+// Output
+<ul><li>Exempel 1</li><li>Exempel 2</li></ul>
 ```
 
 ## Djupdykning:
-Parsning av HTML har funnits sedan webbens början då HTML var det enda sättet att skapa webbsidor. Med tillkomsten av nya webbtekniker och språk, som XML och JSON, har det kommit alternativ till att använda Javascript för att parse HTML. Men tack vare Javascripts popularitet och flexibilitet används det fortfarande ofta för att parsing HTML.
 
-HTML-parsing kan göras på flera olika sätt, beroende på vilka verktyg och bibliotek som används. Det finns även andra språk som specialiserat sig på att parse HTML, som till exempel Python.
+Att tolka HTML går tillbaka till tidigt 90-tal där det ursprungligen utvecklades för att strukturera och tolka webbinnehåll. Det finns andra alternativ för att tolka HTML, till exempel `jquery's $() funktion` och `cheerio library` för Node.js, men DOMParser anses mer robust och säkrare då det inte utför script-taggar.
 
-För att implementera HTML-parsing i dina egna projekt, kan du använda dig av så kallade DOM-metoder och DOM-händelser som finns tillgängliga i Javascript. Dessa metoder och händelser ger dig möjlighet att läsa och manipulera HTML-kod på ett effektivt sätt.
+När det gäller implementation, så skapar DOMParser ett nytt `Document` objekt. Metoden `parseFromString` tolkar HTML-string och returnerar sedan detta objekt för vidare interaktion eller manipulation.
 
 ## Se även:
-För mer information om parsing av HTML med Javascript, rekommenderar vi att du kollar in följande källor:
 
-- Vanliga DOM-förfrågningar: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Examples
-- JQuery: https://jquery.com/
+För ytterligare information, refererar jag till följande källor:
+1. [MDN Web Docs - DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+2. [JavaScript Info - Parsing HTML](https://javascript.info/dom-parsing)
+3. [Stack Overflow - Parse HTML string with JavaScript](https://stackoverflow.com/questions/3103962/converting-html-string-into-dom-elements)

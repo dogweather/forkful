@@ -1,6 +1,6 @@
 ---
 title:                "HTMLの解析"
-html_title:           "Bash: HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,35 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
+---
 
-HTMLの解析とは、ウェブページの構造やコンテンツを理解することであり、プログラマーがより効率的にウェブページを扱うために行われます。
+## 1.何となぜ?
 
-## 方法：
+HTMLパースとは、HTML文書のデータ構造を解析して操作しやすい形式に変換することです。プログラマーは、ウェブスクレイピングやウェブコンテンツの自動化操作などに使用するデータを抽出するためにこれを行います。
 
-```Bash
-# HTMLファイルのパース方法
-extract_html.sh index.html
-```
-実行結果：
-```
-<html>
-  <head>
-    <title>タイトル</title>
-  </head>
-  <body>
-    <h1>こんにちは</h1>
-    <p>これはサンプルのウェブページです。</p>
-  </body>
-</html>
+---
+
+## 2.やり方:
+
+以下は、Bashを使ったHTMLパージングの基本例です：
+
+```Bash 
+$ echo "<h1>こんにちは、世界！</h1>" | grep -oP '(?<=<h1>).*(?=</h1>)'
 ```
 
-## 深堀り：
+このコードは出力に`こんにちは、世界！`を返します。
 
-HTMLの解析は、Webの歴史において重要な役割を果たしてきました。他の方法としては、DOMパーサーやCSSセレクターなどがあります。HTMLの解析は、シェルスクリプトや他のプログラミング言語を使用して行うことができます。
+しっかりとしたHTML解析には、xsoupやpupのような専用のツールを使うことを推奨します。
 
-## 関連情報：
+---
 
-- [HTML解析の基本](https://qiita.com/watagazi/items/0c9129ad9388f5823ab5)
-- [BashでHTMLをパースする方法](https://www.shellscript.sh/intermediate/files.html)
-- [DOMパーサーとCSSセレクターの使い方](https://qiita.com/ka1ne/items/ce272d482b4b7ab339aa)
+## 3.深掘り:
+
+1. 歴史的な文脈：
+
+      Bashは元々1971年にはじめて実装されたsh（Bourne Shell）の後継として1990年代に生み出されました。  
+   
+2. 代替手段：
+
+      Bash以外にも、PythonのBeautifulSoupやRubyのNokogiriなど、他の言語のライブラリを用いることでより強固なHTMLパージングが可能です。
+   
+3. 実装詳細：
+
+      BashでのHTMLパージングは、基本的には正規表現を使用しています。しかし複雑なパージングには向かず、その場合は目的に合わせたツールの利用を推奨します。
+
+---
+
+## 4. 詳細資料:
+
+- Bash Scripting Tutorial: [https://ryanstutorials.net/bash-scripting-tutorial/](https://ryanstutorials.net/bash-scripting-tutorial/)
+   
+- xsoup: [https://github.com/code4craft/xsoup](https://github.com/code4craft/xsoup)
+
+- pup: [https://github.com/ericchiang/pup](https://github.com/ericchiang/pup)
+   
+- BeautifulSoup: [https://www.crummy.com/software/BeautifulSoup/](https://www.crummy.com/software/BeautifulSoup/)
+   
+- Nokogiri: [https://nokogiri.org/](https://nokogiri.org/)
+
+---

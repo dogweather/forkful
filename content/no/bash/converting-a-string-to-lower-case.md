@@ -1,7 +1,7 @@
 ---
-title:                "Konverterer en streng til små bokstaver"
-html_title:           "Bash: Konverterer en streng til små bokstaver"
-simple_title:         "Konverterer en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+# Bash programmering: Konverter strenger til små bokstaver
 
-Konvertering av en streng til små bokstaver er en vanlig operasjon i programmering. Dette betyr rett og slett å endre alle store bokstaver i en streng til små bokstaver. Dette gjøres ofte for å sammenligne to strenger med ulik casing, eller for å få en mer enhetlig formatering.
+## Hva & Hvorfor?
+Å konvertere en streng til små bokstaver betyr å endre alle store bokstaver i strengen til deres tilsvarende små bokstaver. Dette er nyttig når vi vil normalisere data, for eksempel for å gjøre en case-insensitiv sammenligning.
 
 ## Hvordan:
+Å konvertere en streng til små bokstaver i Bash er så enkelt som å bruke `tr` kommandoen:
 
 ```Bash
-# Bruk kommandoen "tr" for å konvertere en streng til små bokstaver
-# Eksempel:
-echo "DIg It??" | tr 'A-Z' 'a-z'
-
-# Output:
-dig it??
+tekst="Jeg Liker Å Kode"
+echo $tekst | tr '[:upper:]' '[:lower:]'
+```
+Produksjon:
+```Bash
+jeg liker å kode
 ```
 
-## Dypdykk:
+## Dypdykk
+`tr` kommandoen i Bash har en lang historie som strekker seg tilbake til Unix-operativsystemene på 1970-tallet. Den ble utviklet som et verktøy for å translitere eller slette karakterer.
 
-Historisk sett har casing av tekst vært en utfordring i programmering. Tidligere var det vanlig å bruke store bokstaver for variabelnavn og funksjonsnavn, men dette kunne føre til forvirring og feil siden casing var viktig. Derfor har mange programmeringsspråk nå støtte for å konvertere en streng til små bokstaver for å unngå slike problemer.
+Et alternativ til `tr` er `awk` kommandoen:
+```Bash
+tekst="Jeg Liker Å Kode"
+echo $tekst | awk '{print tolower($0)}'
+```
 
-Det finnes også alternative måter å konvertere en streng til små bokstaver på, som for eksempel å bruke innebygde funksjoner i programmeringsspråket eller å bruke regex-uttrykk. Implementasjonen av denne operasjonen varierer også fra språk til språk, så det kan være lurt å se på dokumentasjonen til det aktuelle språket for nøyaktig syntaks og funksjonalitet.
+Utførelsen av å konvertere en streng til små bokstaver avhenger av det underliggende operativsystemet og dets standard C-bibliotek. `tr` bruker C-bibliotekets tolower() -funksjon for å konvertere individuelle tegn til små bokstaver.
 
 ## Se også:
-
-- [Dokumentasjon for "tr" kommandoen i Bash](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [Diskusjon om hvorfor casing er viktig i programmering](https://stackoverflow.com/questions/777416/why-should-javas-string-to-lowercase-method-not-be-used-when-converting-from-fo)
+- `tr` man side: [Link](http://man7.org/linux/man-pages/man1/tr.1.html)
+- `awk` man side: [Link](http://man7.org/linux/man-pages/man1/awk.1p.html)
+- GNU C Library dokumentasjon på tolower(): [Link](https://www.gnu.org/software/libc/manual/html_node/Case-Conversion.html)

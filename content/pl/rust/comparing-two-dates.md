@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Rust: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i Dlaczego? 
-Porównywanie dwóch dat jest niezwykle ważnym aspektem programowania. Pozwala to na sprawdzenie, czy jedna data jest większa lub mniejsza od drugiej, co pozwala na sortowanie, filtrowanie i inne operacje na danych. Programiści wykorzystują to narzędzie, aby pracować z różnymi typami danych, w tym również datami.
+## Co i Dlaczego? 
 
-## Jak to zrobić: 
-Aby porównać dwie daty w języku Rust, możemy wykorzystać funkcję `cmp()` oraz operator porównania `==`, `<` lub `>`. Na przykład:
+Porównywanie dwóch dat to sposób na ustalenie, która data jest wcześniejsza lub późniejsza, albo czy są takie same. Programiści robią to, aby zarządzać i manipulować chronologią eventów i działań w aplikacjach.
+
+## Jak To Zrobić:
+
+W Rust, używamy typu `std::time::SystemTime` do przechowywania punktów w czasie. Sprawdźmy, jak porównać dwie daty:
 
 ```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
- 
+use std::time::SystemTime;
+
 fn main() {
-    let now = SystemTime::now(); //pobiera aktualną datę
-    let epoch = UNIX_EPOCH; //zwraca 1 stycznia 1970 r.
-    println!("{:?}", now.cmp(&epoch)); //porównuje daty
-    //output: Greater
+    let date1 = SystemTime::now();
+    let date2 = SystemTime::now();
+    
+    match date1.duration_since(date2) {
+        Ok(_) => println!("date1 jest późniejsza"),
+        Err(_) => println!("date1 jest wcześniejsza lub taka sama jak date2"),
+    }
 }
 ```
+Wypisze "date1 jest wcześniejsza lub taka sama jak date2", ponieważ date1 i date2 są inicjalizowana praktycznie w tym samym czasie. 
 
-## Głębsza analiza:
-Porównywanie dat jest powszechne w programowaniu i jest to niezbędne do wielu operacji na danych. Wcześniej, w językach programowania, daty były przechowywane jako liczby i wymagały skomplikowanych obliczeń, aby je porównać. Dzięki językom nowoczesnym, takim jak Rust, porównywanie dat jest prostsze i bardziej intuicyjne. Jednym z alternatywnych sposobów porównywania dat w języku Rust jest użycie funkcji `eq()`, `lt()` lub `gt()`.
+## Deep Dive:
 
-## Zobacz również:
-Jeśli chcesz dowiedzieć się więcej o porównywaniu dat w języku Rust, możesz sprawdzić oficjalną dokumentację wraz z przykładowymi kodami (https://doc.rust-lang.org/std/time/struct.SystemTime.html). Możesz również przeczytać blogi lub artykuły dotyczące tego tematu, aby lepiej zrozumieć jego znaczenie i zastosowania w programowaniu.
+Porównywanie dat jest istotną operacją, która ma swoje korzenie jeszcze w erze przed-komputerowej. Ta operacja jest używana w różnych kontekstach, od zarządzania bazami danych po tworzenie harmonogramów i planów.
+
+Rust oferuje kilka alternatyw dla `SystemTime`, takich jak biblioteki zewnętrzne, np. `chrono` albo `time`, które umożliwiają więcej operacji na datach.
+
+Główna zaleta `SystemTime` to prostota i wbudowanie w standardową bibliotekę języka. Jednak, nie obsługuje różnych stref czasowych ani formatów dat. Jeżeli jest to wymagane, warto skorzyć z zewnętrznej biblioteki.
+
+## Zobacz Też:
+
+1. [Dokumentacja Rust na SystemTime](https://doc.rust-lang.org/std/time/struct.SystemTime.html)
+2. [Dokumentacja na chrono](https://docs.rs/chrono/0.4.0/chrono/)
+3. [Dokumentacja na time](https://docs.rs/time/0.3.3/time/)

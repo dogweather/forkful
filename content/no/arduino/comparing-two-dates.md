@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Arduino: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,50 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Comparing to datoer betyr å sjekke om de er like eller om en er større eller mindre enn den andre. Dette er viktig for programvareutviklere for å kunne sammenligne datoer og utføre forskjellige handlinger avhengig av resultatet.
+## Hva & Hvorfor?
 
-# Hvordan:
-Arduino har innebygd funksjonalitet for å sammenligne to datoer. Her er et eksempel på hvordan du kan gjøre det:
+Å sammenligne to datoer er en prosess hvor man bestemmer hvilken dato som er tidligere eller senere, eller om de er identiske. Programmerere gjør dette for å utføre funksjoner som sortering av data, beregning av tidsintervaller, eller utløse hendelser basert på dato.
 
-```Arduino
-#include <RTClib.h>
-RTC_DS3231 rtc;
+## Hvordan:
 
+Her er et eksempel på hvordan man sammenligner to datoer i Arduino ved hjelp av TimeLib biblioteket:
+
+```Arduino 
+#include <TimeLib.h>
+  
 void setup() {
   Serial.begin(9600);
-  rtc.begin();
-}
+  
+  tmElements_t tm1, tm2;
 
-void loop() {
-  DateTime dato1(2021, 05, 01, 11, 30, 00);
-  DateTime dato2(2021, 05, 05, 15, 45, 00);
-
-  // Sammenlign datoer og skriv ut resultatet
-  if (dato1 < dato2) {
-    Serial.println("Dato 1 er mindre enn dato 2");
-  } else if (dato1 == dato2) {
-    Serial.println("Dato 1 er lik dato 2");
-  } else {
-    Serial.println("Dato 1 er større enn dato 2");
-  }
-
-  // Vent i 5 sekunder
-  delay(5000);
+  tm1.Year = 2021 - 1970; tm1.Month = 7; tm1.Day = 21;
+  tm2.Year = 2021 - 1970; tm2.Month = 8; tm2.Day = 10;
+  
+  time_t t1 = makeTime(tm1), t2 = makeTime(tm2);
+  
+  if(t1 > t2)
+    Serial.println("Dato 1 er senere enn Dato 2");
+  else if(t1 < t2)
+    Serial.println("Dato 2 er senere enn Dato 1");
+  else
+    Serial.println("Datoene er identiske");
 }
 ```
 
-Output:
+Dette vil skrive ut enten "Dato 1 er senere enn Dato 2", "Dato 2 er senere enn Dato 1" eller "Datoene er identiske" avhengig av datoene som er satt.
 
-```
-Dato 1 er mindre enn dato 2
-```
+## Dypdykk:
 
-# Dykk dypere:
-- Historisk kontekst: Før moderne programmeringsspråk hadde innebygd funksjonalitet for å sammenligne datoer, måtte utviklere skrive egne algoritmer for å gjøre dette.
-- Altenativer: Det finnes også biblioteker som kan brukes for å sammenligne datoer på en mer avansert måte.
-- Implementeringsdetaljer: Datoene i eksempelet er satt manuelt, men du kan også hente datoer fra systemet for å sammenligne de med den nåværende datoen.
+Sammenligning av to datoer er en tidstestet programmeringsfunksjon, som har vært nødvendig siden de første kalender-applikasjonene. Det er imidlertid mange måter å utføre denne operasjonen på, avhengig av behovene til ditt spesifikke prosjekt.
 
-# Se også:
-- [DateTime Library for Arduino](https://www.arduino.cc/reference/en/libraries/datetime/)
-- [How to Compare Two Dates in Arduino](https://www.tutorialspoint.com/arduino/arduino_comparing_dates.htm)
+For eksempel, i tillegg til TimeLib biblioteket, kan man også bruke DateTime biblioteket for lignende oppgaver. Valget av bibliotek kan avhenge av flere faktorer, som minnebruk og prosessorkrav.
+
+I vår implementering bruker vi `makeTime()` funksjonen for å konvertere vår strukturdata til `time_t` format. Denne formen for tid er mer egnet for sammenligning.
+
+## Se Også:
+
+Følgende lenker inneholder mer informasjon om sammenligning av datoer og tid i Arduino:
+1. [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
+2. [DateTime Library For Arduino](https://www.arduino.cc/reference/en/libraries/rtc-datetime/)
+3. [Arduino Time Manipulation](https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/troubleshooting)

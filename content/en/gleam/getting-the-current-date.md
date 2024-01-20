@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Gleam recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Gleaming the Current Date: Why and How
-
 ## What & Why?
 
-Getting the current date is a common task in programming, as it allows us to keep track of time and create timestamped data. By using Gleam's built-in Date module, we can easily retrieve the current date and time in any desired format. This helps programmers accurately record and manipulate data, making their code more efficient and reliable.
+Getting the current date refers to a program retrieving the system's present date. Programmers often do this to track real-time events, deadlines, and as tags for logging errors or activities. 
 
-## How to:
+## How To:
 
-To get the current date in Gleam, we will use the `Date.now` function from the Date module. This function returns a tuple containing the date and time in the ISO 8601 format, which is widely used in data storage and transfer. Let's take a look at a simple code example:
+As of the time of writing, the Gleam language is on version 0.14 which doesn't have native support for date and time. A workaround is interfacing with Erlang's date library. Here's how:
 
 ```Gleam
-import Date
+import erlang/time.{Now as now}
 
-fn main() {
-  current_date = Date.now()
-  io.print(current_date)
+fn get_current_date() {
+  let {y, m, d} = now()
+  y + "-" + m + "-" + d
 }
+
+// Prints: "2022-03-14"
+io.println(get_current_date())
 ```
+Notice how `now()` gives us the year, month, and day. We concatenate them using "+".
 
-This code will output the current date and time in the format: `{year-}{month}-{day}T{hour}:{minute}:{second}.000{timezone}`. For example, the output may look like this: `2020-09-09T13:27:35.000+0000`.
+## Deep Dive 
 
-## Deep Dive
+Historically, virtually every programming language has incorporated the ability to fetch the current date because it's a widespread need. Erlang is no different: the 'time' library is the go-to resource in the Erlang world, which Gleam uses heavily in its operation.
 
-Historically, getting the current date in programming has been a more complicated task, often involving complex date libraries and manual calculations. However, with the advancement of programming languages and frameworks, it has become much simpler and more standardized.
+Alternative methods are often library-dependent. So, you could say that the Erlang time library is Gleam's "alternative." Plus, various external datetime libraries can work across different languages that support interaction with Gleam.
 
-Some alternatives to using Gleam's built-in Date module include using a third-party library, such as Moment.js or Day.js, or using the system's built-in functions to retrieve the current date. However, these options may require additional setup and can be less efficient than using Gleam's native Date functionality.
-
-Internally, Gleam uses the Erlang standard library's `calendar` module for handling dates and times. This module provides functions for creating, converting, and manipulating dates and times in various formats.
+Last but not least, implementation relies on fetching the system's present datetime, then processing that data into a more palatable date format such as year-month-day.
 
 ## See Also
 
-For more information on Gleam's built-in Date module and its functions, check out the official documentation. You can also explore the `calendar` module in the Erlang standard library for a deeper dive into handling dates and times in programming. Happy coding!
+For more details on date manipulation in Gleam and interacting Gleam with Erlang, check out these valuable resources:
+
+- Gleam's official GitHub repo: https://github.com/gleam-lang/gleam
+- Gleam's guide to calling Erlang: https://gleam.run/book/tour/erlang.html
+- Erlang’s time module Doc: http://erlang.org/doc/man/erlang.html#type-time

@@ -10,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cos'è e Perché?
 
-Leggere gli argomenti dalla riga di comando è un'operazione comune nel linguaggio di programmazione Java. Gli argomenti dalla riga di comando sono gli input che un programma riceve da un utente durante l'esecuzione. I programmatori spesso utilizzano questa funzionalità per rendere i propri programmi più interattivi e personalizzabili per l'utente finale.
+Gli argomenti della riga di comando sono stringhe di informazioni che vengono trasmesse a un programma Java quando viene avviato. La gestione di questi argomenti consente agli sviluppatori di personalizzare il comportamento del programma in base a specifiche esigenze dell'utente alla esecuzione.
 
 ## Come fare:
 
-Per leggere gli argomenti dalla riga di comando in Java, è possibile utilizzare la classe ```Scanner```, che permette di leggere input da diverse fonti, inclusi gli argomenti dalla riga di comando. Di seguito è riportato un esempio di codice che legge un argomento dalla riga di comando e lo stampa a schermo:
+Ecco un esempio di base su come leggere gli argomenti della riga di comando in Java:
 
-```java
-import java.util.Scanner;
-
+```Java
 public class Main {
-
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        // Legge il primo argomento dalla riga di comando
-        String input = scanner.next();
-        // Stampa l'argomento letto
-        System.out.println("Il tuo input è: " + input);
+        for (String arg : args) {
+            System.out.println("Argomento: " + arg);
+        }
     }
 }
 ```
 
-Esempio di esecuzione del programma con input "Ciao mondo!" dalla riga di comando:
+Dovresti eseguire il programma con argomenti da riga di comando aggiuntivi:
 
+```shell
+java Main Ciao Mondo
 ```
-$ java Main Ciao mondo!
-Il tuo input è: Ciao
+
+E guarda l'uscita:
+
+```shell
+Argomento: Ciao
+Argomento: Mondo
 ```
 
-## Approfondimento:
+## Approfondimento
 
-La possibilità di leggere gli argomenti dalla riga di comando è stata introdotta in Java nella versione 1.0, pubblicata nel 1996. Oltre all'uso della classe ```Scanner```, è anche possibile utilizzare la classe ```BufferedReader``` o l'interfaccia ```CommandListener``` per leggere gli argomenti dalla riga di comando.
+Gli argomenti da riga di comando sono una caratteristica storica essenziale dell'interazione tra utente e software, risalente ai primi giorni della programmazione.
+
+Come alternativa alla lettura diretta degli argomenti da riga di comando, è possibile utilizzare librerie Java come Apache Commons CLI o JCommander che forniscono API più ricche per l'analisi degli argomenti.
+
+Gli argomenti della riga di comando sono rappresentati come un array di stringhe (String[] args) nel metodo main di Java. Java suddivide automaticamente gli argomenti forniti sulla riga di comando in base agli spazi e li assegna all'array args.
 
 ## Vedi anche:
 
-- [Java Scanner Class](https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html)
-- [Java BufferedReader Class](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-- [Java CommandListener Interface](https://docs.oracle.com/javase/8/docs/api/java/io/CommandListener.html)
+Per un'analisi più dettagliata e completa, dai un'occhiata a questi link:
+- [Oracle Docs - argomenti della riga di comando](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- [Jenkov - Java Command Line Arguments](http://tutorials.jenkov.com/java/command-line-arguments.html)
+- [Baeldung - Guida agli argomenti della riga di comando in Java](https://www.baeldung.com/java-command-line-arguments)

@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Lua: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么和为什么？
-Lua是一种流行的编程语言，通常用于游戏开发和嵌入式系统。在Lua中，将字符串转换为小写是一种常见的操作，它允许程序员将字符串转换为其所有字母都是小写的格式。这样做有助于标准化字符串，并允许程序员更轻松地比较字符串的内容。
+## 什么&为什么？
 
-# 如何：
- ```Lua
- -- 示例1：将字符串转换为小写
- local str = "Hello World!"
- print(string.lower(str))  -- 输出：hello world!
- 
- -- 示例2：使用for循环将字符串的每个字符转换为小写
- local str = "Hello World!"
- for i = 1, #str do  -- #操作符用于获取字符串的长度
-   local char = str:sub(i, i)  -- 使用:sub()方法获取字符串的指定索引处的字符
-   print(char:lower(), end="")  -- 使用:lower()方法转换字符为小写并输出，end参数用于在同一行打印
- end
- -- 输出：hello world!
- ``` 
+在Lua编程中，将字符串转换为小写的过程是指将字符串中的所有大写英文字母转换为对应的小写字母。程序员之所以这样做，主要是为了实现字符串的统一格式，使其能够适应不区分大小写的字符比较。
 
-# 深入探讨：
-- 历史背景：字符串转换为小写的需求在早期计算机系统中很常见。在ASCII编码中，小写字母和大写字母的ASCII码是连续的，因此只需将大写字母的ASCII码加上32即可转换为小写字母的ASCII码。Lua也继承了这一特性。
-- 其他替代方法：除了使用Lua内置的string.lower()方法，还可以使用string.gsub()方法将字符串内的大写字母替换为小写字母，或者使用string.lower()方法配合string.gsub()方法来实现更复杂的转换。
-- 实现细节：Lua的string.lower()方法通过对字符串中的每个字符进行ASCII码加32操作来实现转换。在一些语言中，对于特定语言的字符，转换为小写可能需要更复杂的处理。
+## 如何实现：
 
-# 参考资料：
-1. Lua官方文档：https://www.lua.org/docs.html
-2. ASCII编码表：http://www.asciitable.com/
-3. Lua string库：https://www.lua.org/pil/20.html
+在Lua中，我们使用 `string.lower()` 方法来将字符串转换为小写。
+
+示例代码和输出：
+
+```Lua
+str = "Hello World!"
+print(string.lower(str))
+```
+
+输出:
+
+```Lua
+hello world!
+```
+
+这段代码表示，我们首先定义了一个字符串"Hello World!"，然后使用`string.lower()`将其转换为小写，并输出到控制台。
+
+## 深入：
+
+1. 历史背景：在Lua的早期版本中（如Lua 5.0），`string.lower()`函数使用的是C库函数`tolower()`来进行转换。随着Lua版本的升级，该函数的实现算法进行了优化以提高性能。
+
+2. 替代方案：除了`string.lower()`外，我们也可以使用`utf8.lower()`函数处理包含非ASCII字符的字符串。
+
+3. 实现细节：`string.lower()`函数的实现并不局限于ASCII字符集。它可以处理任何遵循Lua字符集规则的字符串。
+
+## 参阅：
+
+这里有一些链接是与字符串转换相关的资源：
+
+1. [Lua字符串函数](http://www.runoob.com/lua/lua-string.html) — runoob.com
+
+2. [Lua`string`库](http://lua-users.org/wiki/StringLibraryTutorial) - lua-users.org
+
+3. [在Lua中处理字符串](https://stackoverflow.com/questions/tagged/lua+string) - StackOverflow
+
+希望这篇文章能帮助你理解和掌握Lua中将字符串转化为小写的方法和相关知识。

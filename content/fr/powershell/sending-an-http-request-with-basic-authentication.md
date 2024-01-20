@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "PowerShell: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,48 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Réaliser une requête HTTP avec une authentification de base en PowerShell
+---
+articleTitle: Comment envoyer une requête HTTP avec une authentification de base en PowerShell
+---
 
-## Quoi et Pourquoi?
-Envoyer une requête HTTP avec une authentification de base consiste à inclure dans la requête un en-tête d'authentification de base contenant un nom d'utilisateur et un mot de passe encodés en base64. Les programmeurs le font pour permettre l'accès à des ressources protégées par une authentification.
+## Qu'est-ce que c'est et pourquoi?
 
-## Comment faire:
-Voici un exemple de code PowerShell pour réaliser une requête GET avec une authentification de base:
+En programmation, l'envoi d'une requête HTTP avec authentification de base est le processus permettant à une application client de fournir son identité à un serveur via un en-tête HTTP. C'est couramment utilisé pour accéder à des ressources nécessitant une connexion sécurisée.
 
+## Comment faire : 
 ```PowerShell
-# Importer le module d'authentification de base
+# Import le module
 Import-Module BitsTransfer
 
-# Définir les informations d'authentification
-$username = "utilisateur"
-$password = "motdepasse"
-$secrets = "${username}:${password}"
+# Définir les informations d'identification
+$user = "votre_identifiant"
+$pwd = ConvertTo-SecureString "votre_mot_de_passe" -AsPlainText -Force
+$credential = New-Object System.Management.Automation.PSCredential ($user, $pwd)
 
-# Encoder les informations en base64
-$encodedSecrets = [System.Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes($secrets))
+# Envoyer la requête
+$uri = "https://adresse.de/votre/serveur"
+$response = Invoke-WebRequest -Uri $uri -Method Get -Credential $credential
 
-# Créer une requête HTTP avec l'en-tête d'authentification de base
-$url = "https://www.example.com"
-$webRequest = [System.Net.WebRequest]::Create($url)
-$webRequest.Headers.Add("Authorization", "Basic $encodedSecrets")
-
-# Envoyer la requête et récupérer la réponse
-$webResponse = $webRequest.GetResponse()
-$webResponse.StatusCode
-$webResponse.StatusDescription
+# Afficher le corps de la réponse
+$response.Content
 ```
 
-La sortie devrait ressembler à ceci:
+En lançant ce script, vous enverrez une requête GET à l'adresse spécifiée, avec l'authentification de base, et vous afficherez le corps de la réponse HTTP obtenue.
 
-```
-OK
-200
-OK
-```
+## Plongée en profondeur
 
-## Plongée en profondeur:
-L'authentification de base a été définie dans la première version du protocole HTTP en 1996. Elle est considérée comme peu sécurisée car les informations d'identification sont envoyées en clair dans la requête. Des alternatives plus sécurisées, comme l'authentification digest, ont été développées mais l'authentification de base reste largement utilisée en raison de sa simplicité d'implémentation.
+Historiquement, l'authentification de base HTTP est l'une des premières méthodes d'authentification, définie par le protocole HTTP lui-même. Cependant, elle présente des inconvénients en termes de sécurité, car elle transmet les identifiants en clair (bien que codés en base64).
 
-## Voir aussi:
-- [Documentation officielle de l'authentification de base en HTTP](https://tools.ietf.org/html/rfc2617)
-- [Comparaison entre l'authentification de base et l'authentification digest](https://developer.mozilla.org/fr/docs/Web/Security/HTTP_Authentication)
+Les alternatives communes à l'authentification de base comprennent l'authentification par jeton (comme JWT) et l'authentification par défi-réponse (comme Digest). Ces méthodes offrent davantage de sécurité mais sont plus difficiles à mettre en œuvre.
+
+En PowerShell, l'envoi d'une requête HTTP avec authentification de base est géré par la fonction Invoke-WebRequest. Cette fonction utilise les paramètres `-Uri`, `-Method` et `-Credential` pour construire la requête. 
+
+## Voir aussi 
+[Documentation officielle Microsoft sur Invoke-WebRequest](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+[Tutoriel sur l'authentification de base HTTP (en anglais)](https://www.tutorialspoint.com/http/http_authentication.htm)
+[Tutoriel sur l'authentification JWT (en anglais)](https://jwt.io/introduction/)

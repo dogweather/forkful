@@ -1,6 +1,6 @@
 ---
 title:                "文字列の連結"
-html_title:           "Kotlin: 文字列の連結"
+html_title:           "Bash: 文字列の連結"
 simple_title:         "文字列の連結"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,42 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、なぜ?
+## 何となぜ？
 
-文字列を連結するとは、複数の文字列を一つにまとめることです。プログラマーは、文字列を連結することで、より複雑な文字列を作成できます。
+文字列の連結とは、2つ以上の文字列を1つに結合することです。プログラムにおいて、これは情報を整形したり、ユーザーに提示するためによく行われます。
 
-## 方法:
+## 使い方：
 
-```Kotlin
-// 文字列を連結する方法
-val name = "田中"
-val age = 25
-val message = "私の名前は" + name + "です。年齢は" + age + "歳です。"
-println(message)
-
-// Output:
-// 私の名前は田中です。年齢は25歳です。
-```
-
-## 詳細:
-
-文字列の連結は、一つの文字列を作成するための一番簡単な方法です。実際、多くのプログラミング言語で、文字列を連結するための専用の演算子が用意されています。Kotlinでは、プラス記号（+）を使用して文字列を連結することができます。
-
-Kotlinでは、文字列の連結に加えて、テンプレート文字列を使用することもできます。テンプレート文字列では、変数や式を文字列の中に埋め込むことができます。例えば、先ほどのコードをテンプレート文字列を使って書くと次のようになります。
+Kotlinでは、「+」演算子を使って文字列を連結できます。または、 `String.concat` メソッドを使うことも可能です。
 
 ```Kotlin
-// テンプレート文字列を使った文字列の連結
-val name = "田中"
-val age = 25
-val message = "私の名前は$nameです。年齢は$age歳です。"
-println(message)
+val str1 = "Hello, "
+val str2 = "World"
+val str3 = str1 + str2
+println(str3)
+```
+実行すると、出力は次のようになります：
 
-// Output:
-// 私の名前は田中です。年齢は25歳です。
+``` 
+Hello, World
+```
+また、`String.concat`メソッドを使う例：
+```Kotlin
+val str1 = "Hello, "
+val str2 = "World"
+val str3 = str1.concat(str2)
+println(str3)
+```
+出力は以下の通り：
+
+```
+Hello, World
 ```
 
-## 参考:
+## ディープダイブ：
 
-- [Kotlin Documentation](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Kotlin String Concatenation with Examples](https://www.opentechguides.com/how-to/article/kotlin/106/kotlin-string-concatenation.html)
-- [Kotlin String Templates](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
+文字列の連結は非常に古い概念で、プログラミング言語が誕生した当初から存在しています。Kotlinにおいては、`x + y`や`x.concat(y)`以外に、sprintf関数やStringBuilderクラスを使って文字列連結を実現することもできます。しかし、通常、 `+` 演算子または `concat` メソッドが使用されます。
+
+## 参考資料：
+
+[公式ドキュメンテーション：String](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)  
+[公式ドキュメンテーション：StringBuilderクラス](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string-builder/)

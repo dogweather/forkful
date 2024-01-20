@@ -1,6 +1,6 @@
 ---
 title:                "Création d'un fichier temporaire"
-html_title:           "Java: Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "Java"
 category:             "Java"
@@ -10,40 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+---
 
-Créer un fichier temporaire en programmation signifie créer un fichier qui ne durera que pendant l'exécution du programme. Les programmeurs utilisent des fichiers temporaires pour stocker des données temporaires ou pour effectuer des opérations intermédiaires sans polluer leur système de fichiers.
+## Qu'est-ce que c'est & Pourquoi?
+
+La création d'un fichier temporaire consiste simplement à créer un fichier qui ne doit exister que pendant une courte période. Les programmeurs le font surtout pour un stockage provisoire de données ou pour un transfert entre deux applications ou systèmes.
 
 ## Comment faire:
 
-```java
-// Importer la classe File pour créer un fichier
+Voici comment vous pouvez créer un fichier temporaire en Java:
+
+```Java
 import java.io.File;
+import java.io.IOException;
 
-// Utiliser la méthode createTempFile() pour créer un fichier temporaire
-File tempFile = File.createTempFile("monfichier", ".txt");
+public class Main {
+    public static void main(String[] args) {
+        try {
+            File tempFile = File.createTempFile("tempFileExample", ".txt");
 
-// Utiliser la méthode getName() pour obtenir le nom du fichier temporaire
-System.out.println("Nom du fichier temporaire: " + tempFile.getName());
+            System.out.println("Temp file : " + tempFile.getAbsolutePath());
 
-// Utiliser la méthode write() pour écrire dans le fichier temporaire
-PrintWriter writer = new PrintWriter(tempFile);
-writer.write("Ceci est un exemple de texte dans le fichier temporaire.");
-writer.close();
+            boolean exists = tempFile.exists();
+
+            System.out.println("Does file exist? : " + exists);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+```
+Et la sortie sera:
+
+```Java
+Temp file : C:\Users\Username\AppData\Local\Temp\tempFileExample1234567890.txt
+Does file exist? : true
 ```
 
-Output:
-```
-Nom du fichier temporaire: monfichier1234567890.txt
-```
+## Plongée profonde
 
-## Plongée en profondeur:
+Historiquement, la création de fichiers temporaires en Java a commencé avec Java 2. Avant, les programmeurs devaient généralement manipuler le système d'exploitation pour obtenir le même résultat.
 
-1. Contexte historique: La création de fichiers temporaires est devenue plus courante depuis la popularité des applications Web, où les fichiers temporaires sont utilisés pour stocker des sessions de navigation ou des téléchargements temporaires.
-2. Alternatives: Les programmmeurs peuvent également utiliser la méthode deleteOnExit() pour demander au système de supprimer automatiquement le fichier temporaire à la fin du programme.
-3. Détails de mise en oeuvre: Les fichiers temporaires sont généralement stockés dans le répertoire temporaire par défaut du système d'exploitation, mais il est également possible de spécifier un autre emplacement en utilisant la méthode createTempFile() avec les paramètres appropriés.
+En termes d'alternatives, vous pourriez utiliser les bibliothèques externe et très populaires comme Apache Commons IO.
 
-## Voir aussi:
+En tout état de cause, il est important de savoir que `File.createTempFile` crée le fichier dans le répertoire temporaire du système. Vous pouvez modifier cela en provided votre propre chemin lors de la création du `File` si vous le souhaitez.
 
-- [Java Docs pour File](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
-- [Tutoriel sur les fichiers temporaires en Java](https://www.baeldung.com/java-temporary-file)
+## Pour en savoir plus
+
+Pour en savoir plus sur la création de fichiers temporaires en Java:
+
+- [Oracle Java Documentation: File (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+- [Baeldung: Guide to File.createTempFile()](https://www.baeldung.com/java-create-temporary-file)
+- [StackOverflow: Java Create Temp File](https://stackoverflow.com/questions/16624982/java-create-temp-file)

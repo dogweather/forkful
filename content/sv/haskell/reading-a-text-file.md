@@ -1,6 +1,6 @@
 ---
 title:                "Läsa en textfil"
-html_title:           "Haskell: Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,30 +12,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Läsning av en textfil är en process där en datorprogram läser och hämtar information från en textfil. Detta är användbart för programmerare eftersom det tillåter dem att läsa och analysera information från externa källor, vilket kan användas i deras program.
+Att läsa en textfil i programmering innebär att extrahera data från en fil för att sedan manipulera den i koden. Vi gör det för att lagra och använda data på ett effektivt sätt.
 
-## Hur man gör:
+## Hur gör man:
+
+I Haskell kan vi läsa en textfil med hjälp av `readFile` funktionen. Här är ett exempel:
 
 ```Haskell
-import System.IO
-
-main = do
-    handle <- openFile "textfil.txt" ReadMode
-    contents <- hGetContents handle
-    putStr contents
-    hClose handle
+main = do  
+    content <- readFile "test.txt"  
+    putStrLn content  
 ```
+I det här exemplet läses filen "test.txt" och skriver ut innehållet i terminalen.
 
-## Djupdykning:
+## Fördjupa sig
 
-Det är inte ovanligt att behöva läsa information från en textfil i ett programmeringsprojekt. Det finns också andra sätt att läsa filer, till exempel med hjälp av inbyggda funktioner i Haskell som `readFile` eller `Data.Text` biblioteket.
+`readFile` funktionen kom till Haskell under 1997, vilket visar på språkets starka fokus på I/O-interaktioner redan tidigt. Ett alternativ till `readFile` är att använda `hGetContents`, som ger mer flexibilitet men också kräver en större kodinsats.
 
-Implementeringen av att läsa en textfil kan också vara olika beroende på vilken plattform och operativsystem som används. Det är därför viktigt att se till att koden är kompatibel med olika system.
+För att förstå hur `readFile` fungerar internt, är det viktigt att notera att det i Haskell är en ”lazy” funktion. Det innebär att den bara läser delar av filen när data behövs, istället för att läsa hela filen direkt. Detta kan vara mycket effektivt för stora filer.
 
-## Se även:
+## Visa även
 
-För mer information om att läsa textfiler i Haskell, se följande resurser:
+För mer information om I/O i Haskell, kolla in följande länkar:
 
-- [Haskell dokumentation om IO-operations](https://www.haskell.org/tutorial/io.html)
-- [Haskell biblioteket "System.IO"](https://hackage.haskell.org/package/base-4.15.1.0/docs/System-IO.html)
-- [Haskell biblioteket "Data.Text"](https://hackage.haskell.org/package/text-1.2.4.1/docs/Data-Text.html)
+- [Real World Haskell: Input and Output](http://book.realworldhaskell.org/read/io.html)
+- [Learn You a Haskell for Great Good: Input and Output](http://learnyouahaskell.com/input-and-output)
+
+Kodexempel för `hGetContents` kan hittas [här](https://www.haskell.org/tutorial/io.html).

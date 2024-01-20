@@ -1,7 +1,7 @@
 ---
-title:                "तारीख को स्ट्रिंग में रूपांतरण करना।"
-html_title:           "C#: तारीख को स्ट्रिंग में रूपांतरण करना।"
-simple_title:         "तारीख को स्ट्रिंग में रूपांतरण करना।"
+title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
+simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Wat & Kyu?
-Jab hum kisi tareekh ko ek string mein badal dete hain, to hum usko stringification kehte hain. Programmers isko karne ke liye islie karte hain taki ve date ko alag alag tarike se display kar sakein ya fir use storage ya communication ke liye ready bana sakein. 
+# तारीख को स्ट्रिंग में बदलना: C# का इस्तेमाल करना
 
-##Kaisay Karain?
+## क्या और क्यों?
+
+तारीख को स्ट्रिंग में बदलना का मतलब है कि हम किसी तारीख को एक केवल-पाठ के रूप में दर्शाने में सक्षम होते हैं। हम इसे करते हैं ताकि हम तारीखों को सबसे अधिक लचीले ढंग से प्रदर्शित और मनिपुलेट कर सकें। 
+
+## कैसे:
+
 ```C#
-// Sabse pehle, hum ek DateTime variable banaen
-DateTime date = new DateTime(2021, 10, 31);
-
-// Phir, hum is date ko string mein convert karenge
-string dateString = date.ToString();
-
-// Aap chahein toh apni marzi se date ka format bhi specify kar sakte hain
-string customFormat = date.ToString("dd/MM/yyyy");
-
-// Isko hum output mein dekh sakte hain
+DateTime date = DateTime.Now; 
+string dateString = date.ToString("dd-MM-yyyy"); 
 Console.WriteLine(dateString);
-Console.WriteLine(customFormat);
-
-// Output:
-// 10/31/2021 12:00:00 AM
-// 31/10/2021
 ```
 
-##Gahraai Mein Jana
-Date ko string mein badalne ka concept shuru se hi bahut important raha hai. Pehle, dates ko sirf numerical format mein store kiya jata tha, jaise 31/10/2021. Par jab computers aur programming languages mein Internationalization (I18N) ki concept aayi, tab date ka format aur display tarike bhi badal gaye. Ab programmers apni marzi se date ka format specify kar sakte hain aur various cultures aur languages mein alag alag format mein display kar sakte hain.
+उत्तर:
 
-Ek aur alternative hai ki hum har date ke components ko alag alag variable mein store karke display kar sakein. Par ye zyada complexity aur space requirements ka kaaran banta hai.
+```
+04-05-2022 //आज की तारीख
+```
 
-Ek interesting baat ye hai ki stringification sirf dates ke liye hi nahi hota hai, hum kisi bhi data type ko ek string mein convert kar sakte hain, jaise numbers, booleans, ya objects. Isse hum apne data ko easily manipulate aur communicate kar sakte hain.
+## गहराई जांच:
 
-##Aur Parhain
-Agar aapko C# programming aur stringification ke bare mein aur detailed information chahiye, toh ye links aapke kaam aa sakte hain:
-- [Microsoft Docs: String Format for DateTime](https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings)
-- [GeeksforGeeks: C# | String Concatenation and Overloading of string](https://www.geeksforgeeks.org/c-sharp-string-concatenation-and-overloading-of-string/)
+(1) ऐतिहासिक संदर्भ: C# में दिनांकों को स्ट्रिंग में बदलने की क्षमता .NET फ्रेमवर्क के पहले संस्करण के साथ ही आ गई थी। 
 
-Happy stringifying! 🚀
+(2) विकल्प: `String.Format` मेथड का उपयोग करके भी तारीखों को स्ट्रिंग में परिवर्तित किया जा सकता है:
+
+```C#
+string dateString = String.Format("{0:dd-MM-yyyy}", date); 
+Console.WriteLine(dateString);
+```
+(3) कार्यान्वयन विवरण: `ToString()` और `String.Format` मेथड `IFormattable` इंटरफ़ेस का उपयोग करते हैं जो ऑब्जेक्ट को विशिष्ट स्वरूप में प्रस्तुत करने की क्षमता प्रदान करती है। 
+
+## यह भी देखें:
+
+- C# DateTime वर्ग (http://msdn.microsoft.com/en-us/library/system.datetime)
+
+- IFormattable इंटरफ़ेस (http://msdn.microsoft.com/en-us/library/system.IFormattable)
+
+- तारीखों और समय के स्ट्रिंग प्रारूप (http://msdn.microsoft.com/en-us/library/az4se3k1.aspx)

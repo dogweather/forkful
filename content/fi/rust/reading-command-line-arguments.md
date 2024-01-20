@@ -1,7 +1,7 @@
 ---
-title:                "Lukemalla komentoriviparametrit"
-html_title:           "Rust: Lukemalla komentoriviparametrit"
-simple_title:         "Lukemalla komentoriviparametrit"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,24 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Lue komentorivi argumentteja on tekniikka, joka mahdollistaa käyttäjien syöttämien tietojen lukemisen ohjelmaan komentoriviltä. Tämä antaa ohjelmoijille mahdollisuuden muokata ohjelmiaan käyttäjän tarpeiden mukaan.
+# Rust-ohjelmointi: Komentoriviparametrien Luku
 
-## Kuinka tehdä:
-Esimerkiksi, voit lukea komentorivi argumentteja Rust-ohjelmassa käyttämällä vakioa ```args```. Tämä vakio sisältää vektorin komentorivi argumenteista ja sen avulla voit käsitellä saatuja tietoja.
-```
-use std::env;
+## What & Why?
+
+Komentoriviparametrien luku on data-annin keino, jossa käyttäjä syöttää tiedon suoraan ohjelman ajettaessa. Se antaa ohjelmalle joustavuutta ja tarkkuutta sovellusten suorittamiseen ja datan käsittelyyn.
+
+## Miten:
+
+Rustissa käytetään std::env:n funktiota args, joka palauttaa iteroinnin, joka sisältää ohjelman argumentit. Tässä on yksinkertainen esimerkki:
+
+```Rust
 fn main() {
-    let args: Vec<String> = env::args().collect();
+    let args: Vec<String> = std::env::args().collect();
 
-    println!("Ensimmäinen argumentti on: {}", args[1]);
+    println!("{:?}", args);
 }
 ```
-Kun käyttäjä antaa komentorivi argumentin, kuten ```rust ohjelma.rs argumentti```, ohjelma tulostaa: "Ensimmäinen argumentti on: argumentti".
 
-## Syvä sukellus:
-Komentorivi argumenttien lukeminen on ollut tärkeä osa ohjemointia jo pitkään. Ennen kuin komentoriviohjelmia kehitettiin, käyttäjien piti luoda ja tallentaa syötteet erilliseen tiedostoon ja sitten antaa ohjelmalle tiedoston nimi parametrina. Toinen tapa lukea käyttäjän syötteitä on käyttää standardeja tietovirtoja (```stdin``` ja ```stdout```), mutta nämä eivät anna mahdollisuutta ohjelman käytön mukauttamiseen komentorivillä.
-Rust-kieltä käytetään usein järjestelmien ohjelmointiin, jossa käyttäjän syötteet ja parametrit voivat olla erittäin vaihtelevia. Siksi komentorivi argumenttien lukeminen on tärkeä osa Rustin kanssa työskentelyä.
+Suorita ohjelma komennolla `cargo run arg1 arg2`, ja saat tulokseksi: `["target/debug/program", "arg1", "arg2"]`.
 
-## Katso myös:
-Rustin dokumentaatio args-vakion käytöstä: https://doc.rust-lang.org/std/env/fn.args.html
+## Syvällisempi tarkastelu
+
+Historiallisesti, komentoriviparametrien luku on ollut alusta saakka osa ohjelmoinnin perustoimintoja. Näiden argumenttien avulla voidaan ohittaa oletusasetukset, määrittää tiedostopolkuja ja asettaa erilaisia suoritusparametreja.
+
+Rustissa on useita erilaisia tapoja komentoriviparametrien lukemiseen. esim. käyttöön `getopts` tai `clap` kirjastoja, jotka antavat laajemmat mahdollisuudet kuten vaikkapa virheenkäsittelyyn ja lippujärjestelmän rakentamiseen.
+
+Rustin `std::env::args` funktion tekeminen on yksinkertaista: alustaa Vec<String>:n, johon kerätään argumentit suoritettavasta ohjelmasta.
+
+## Katso myös
+
+- [Rustin virallinen dokumentaatio komentoriviparametreistä](https://doc.rust-lang.org/std/env/fn.args.html)
+- [`getopts`-kirjaston dokumentaatio](https://doc.rust-lang.org/getopts/getopts/index.html)
+- [`clap`-kirjaston dokumentaatio](https://docs.rs/clap/2.33.3/clap/)

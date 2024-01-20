@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "TypeScript: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,24 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なぜ？
-文字列をインターポレーションするのは、文字列中に変数を埋め込むことです。プログラマーがこれを行う理由は、コードを簡潔に保ち、可読性を高めるためです。
+# 文字列の補間とは何ですか? - TypeScriptの視点から見る
 
-## 方法：
+## なぜ&何のために？
+
+文字列の補間（String Interpolation）は、文字列の中に変数や式を埋め込む処理を指します。プログラマーがこれを行う理由は、動的な文字列の作成が容易になるからです。
+
+## どうやって行いますか？
+
+TypeScriptではバッククオート(``)を用いて、変数や式を${...}内に書くことで文字列補間を行えます。
+
+以下に例を示します：
+
 ```TypeScript
-const name = "太郎";
-const message = `こんにちは、${name}さん！`;
+let name = "Yamada";
+console.log(`Hello, ${name}`);  
 ```
-出力：こんにちは、太郎さん！
 
-## ディープダイブ：
-(1) インターポレーションが導入された背景
-インターポレーションは、ES6以降のJavaScriptで導入されました。これにより、以前は行なえなかった変数を文字列内に埋め込むことができるようになりました。
-(2) 代替手段
-インターポレーション以外にも、文字列連結やテンプレートリテラルを使用して変数を文字列に組み込むことができます。
-(3) 実装の詳細
-バッククォート「`」で囲まれた文字列内で、${}を使用することで変数をインターポレーションすることができます。
+出力結果：
 
-## 関連リンク
-- [MDN web docs - 文字列の基礎](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/string)
-- [公式TypeScriptハンドブック](https://www.typescriptlang.org/docs/home.html)
+```
+Hello, Yamada
+```
+このように、文字列内に直接値を展開することができます。
+
+## 詳細な情報
+
+補間という概念は古いものであり、多くのプログラミング言語で既に採用されています。TypeScript以外にもPerlやRubyなどではすでに使われています。
+
+替わりに、伝統的な連結操作子+を使用することもできますが、補間は可読性と書きやすさで勝ると考えられています。
+
+TypeScriptでは、内部的にはテンプレートリテラルを使用して文字列補間が実装されています。
+
+## 参考になる情報
+
+以下に、文字列補間の詳細な情報についてのリンクを添付します：
+
+1. [MDN Web Docs - テンプレートリテラル](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Template_literals)
+
+2. [Stack Overflow - 文字列の補間(TypeScript)](https://stackoverflow.com/questions/31079081/typescript-string-interpolation)

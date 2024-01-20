@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Arduino recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -12,33 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Starting a new project in Arduino is essentially creating a new program or project using the Arduino programming language. This involves writing code in a specific format to control electronic components and create interactive devices. Programmers use it as a way to bring their ideas to life and create functional and fun projects.
+Starting a new project in Arduino is like setting up a fresh canvas for a masterpiece in coding. It's a programmer's way of creating a practical solution from scratch, molding innovative ideas, fixing problems, or simply learning new things.
 
-## How to:
+## How To:
 
+Let's start a basic Arduino UNO project - Blinking LED.
+
+Here's the sketch you're gonna use:
+
+```Arduino
+void setup() {
+   pinMode(LED_BUILTIN, OUTPUT); // Initializes digital pin LED_BUILTIN as an output.
+}
+
+void loop() {
+   digitalWrite(LED_BUILTIN, HIGH); // Turns the LED on
+   delay(1000); // Wait for a second
+   digitalWrite(LED_BUILTIN, LOW); // Turns the LED off
+   delay(1000); // Wait for a second
+}
 ```
-Arduino
-```
+Run this sketch. You'll see the inbuilt LED on your Arduino UNO board turning on and off every second.
 
-In order to start a new project in Arduino, follow these simple steps:
+## Deep Dive
 
-1. Open the Arduino IDE (Integrated Development Environment). This is where you will write your code and upload it to the Arduino board.
-2. Click on File > New to create a new sketch.
-3. Give your project a name by clicking on File > Save As.
-4. Write your code using the Arduino syntax and commands. For example, to turn on an LED light connected to pin 13, you would write ```digitalWrite(13, HIGH);```.
-5. To upload your code to the Arduino board, click on Sketch > Upload.
-6. If there are no errors in your code, the project will be successfully uploaded to the board and you will see your project come to life!
+The project we just waded into roots back to the BASIC language. It was in the '60s when the idea of turning a pin HIGH and LOW to control devices was introduced and adopted in many programming systems, including Arduino.
 
-## Deep Dive:
+If you are not comfortable with onboard LEDs, you can consider alternatives like using an external LED, a Relay, or even a Motor, and connecting it to other digital pins. Just remember to replace `LED_BUILTIN` with the pin number your device is connected to.
 
-Arduino was created in 2005 by a team in Italy as a way to provide an inexpensive and easy-to-use platform for creating interactive projects. It is a popular choice among hobbyists, students, and professionals due to its user-friendly interface and affordable price.
+And yes, the delay function! It's not just your regular 'wait and do nothing' command. During this 'delay', Arduino interrupts are still checked, millis() and micros() values get increased, and Serial data can still be sent and received. 
 
-While there are other alternatives for programming microcontrollers such as Raspberry Pi and MicroPython, Arduino has a large and active community and a vast library of tutorials and resources. This makes it a great choice, especially for beginners.
+## See Also
 
-Arduino projects can also be enhanced by using various shields, which are add-on boards that provide additional features and functionalities. These shields can be easily connected to the Arduino board, making it a versatile and customizable platform.
+Dig more into Arduino projects? Make yourself at home through these: 
 
-## See Also:
-
-- [Official Arduino Website](https://www.arduino.cc/)
-- [Arduino Stack Exchange](https://arduino.stackexchange.com/)
-- [Arduino Projects Hub](https://create.arduino.cc/projecthub)
+1. [Arduino Project Hub](http://create.arduino.cc/projecthub): A platform to share and get inspired by Arduino projects.
+2. [Arduino Forum](https://forum.arduino.cc/): Troubleshoot your problems, discuss, and learn.
+3. [Arduino Documentation](https://www.arduino.cc/reference/en/): The ultimate guide to all things Arduino.

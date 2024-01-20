@@ -1,7 +1,7 @@
 ---
-title:                "基本認証でhttpリクエストを送信する"
-html_title:           "Ruby: 基本認証でhttpリクエストを送信する"
-simple_title:         "基本認証でhttpリクエストを送信する"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,43 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
+## 何と何のために？
+HTTPリクエストの基本認証とは、ユーザー名とパスワードを提供することでサーバーとの通信を認証する方法です。これは、特定のリソースへの許可付きアクセスや、安全な情報交換を行うためにプログラマーによって行われます。
 
-基本認証を使用してHTTPリクエストを送信するとは何か、そしてなぜプログラマーがこれを行うのかを説明します。
+## どのように：
+RubyにはNet::HTTPライブラリが用意されており、これを使用してHTTPリクエストを送信しましょう。以下に簡単なコード例を示します：
 
-基本認証を使用してHTTPリクエストを送信するとは、サーバーに直接アクセスしてユーザー名とパスワードを送信することを意味します。プログラマーは、クライアントとサーバー間の通信を確立するためにこの方法を使用します。
-
-## 方法：
-
-以下のコードブロックを使用して、基本認証を使用してHTTPリクエストを送信する方法を示します。
-
-```Ruby 
+```ruby
 require 'net/http'
 require 'uri'
 
-uri = URI.parse("https://example.com")
-req = Net::HTTP::Get.new(uri.request_uri)
+uri = URI.parse("http://example.com/")
 
-req.basic_auth 'username', 'password'
-
-response = Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') do |http|
-  http.request(req)
+Net::HTTP.start(uri.host, uri.port) do |http|
+  request = Net::HTTP::Get.new(uri.request_uri)
+  request.basic_auth('username', 'password')
+  response = http.request(request)
+  puts response.body
 end
-
-puts response.body
 ```
 
-上記の例では、`example.com` というサイトにユーザー名とパスワードを使用してHTTPリクエストを送信しています。レスポンスから返されたデータを `puts` を使用してコンソールに出力します。
+この例ではHTTPのGETリクエストを行い、ユーザー名とパスワードを認証として設定しています。
 
-## ディープダイブ：
+## ディープダイブ
+基本認証はHTTP/1.0の時代から存在しており、シンプルさと理解しやすさから幅広く利用されています。しかし、これは情報を暗号化せずに送信するため安全性に欠け、HTTPSなど他の認証方法への移行が推奨されています。
 
-基本認証は、1999年に最初にRFCによって定義された古い認証プロトコルです。しかし、まだ多くのWebサイトで使用されています。代替手段としては、よりセキュアな認証方式であるOAuthやOpenIDがあります。
+また、上記のコードは最も基本的な形で、エラーハンドリングやリダイレクトの取扱いなどは未実装のままです。実際には、これらの機能を追加したり、サードパーティ製のライブラリ（Rest-Client等）を利用したりすることも多いです。
 
-上記のコードはRubyの基本的な例ですが、実際にはさまざまなライブラリやフレームワークを使用して実装することができます。また、基本認証はユーザー名とパスワードを平文で送信するため、セキュリティ上のリスクがあります。そのため、HTTPSを使用することをお勧めします。
-
-## 関連リンク：
-
-- [RFC2617 - HTTP Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
-- [OAuth公式サイト](https://oauth.net/)
-- [OpenID公式サイト](https://openid.net/)
-- [Ruby Net::HTTPドキュメント](https://ruby-doc.org/stdlib-2.6.3/libdoc/net/http/rdoc/Net/HTTP.html)
+## 参考文献
+* [RubyのNet::HTTPについて](https://docs.ruby-lang.org/ja/latest/library/net=2fhttp.html)
+* [HTTP Basic Authentication](https://www.ietf.org/rfc/rfc2617.txt)
+* [Upgrading HTTP to HTTPS](https://developers.google.com/web/fundamentals/security/encrypt-in-transit/enable-https)

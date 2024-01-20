@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfen ob ein Verzeichnis existiert"
-html_title:           "TypeScript: Überprüfen ob ein Verzeichnis existiert"
-simple_title:         "Überprüfen ob ein Verzeichnis existiert"
+title:                "Überprüfung, ob ein Verzeichnis existiert"
+html_title:           "Lua: Überprüfung, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfung, ob ein Verzeichnis existiert"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,55 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und Warum?
+# Ein Blick auf die Directory Existenzüberprüfung in TypeScript
 
-Das Überprüfen, ob ein Verzeichnis vorhanden ist, bedeutet, zu überprüfen, ob ein bestimmter Ordnernpfad auf Ihrem Computer existiert. Programmierer führen diese Überprüfung aus, um sicherzustellen, dass der Pfad korrekt ist und dass sie auf die Dateien innerhalb dieses Verzeichnisses zugreifen können.
+## Was und Warum?
+Die Überprüfung, ob ein Verzeichnis existiert, ist ein Verfahren in der Programmierung, bei dem wir feststellen, ob ein Verzeichnis (ein Ordner auf der Festplatte) vorhanden ist oder nicht. Wir machen dies, um Fehler zu vermeiden, die auftreten können, wenn wir versuchen, auf ein nicht existierendes Verzeichnis zuzugreifen.
 
-## Wie man es macht:
+## So geht's:
 
-```TypeScript
-if (fs.existsSync(path)) {
-  // Führe hier deine Aktionen aus, wenn das Verzeichnis existiert
-} else {
-  // Führe hier deine Aktionen aus, wenn das Verzeichnis nicht existiert
-}
-```
-
-### Ausgabe-Beispiel:
-
-Angenommen, wir überprüfen, ob das Verzeichnis "Dokumente" auf unserem Computer existiert:
+In TypeScript prüfen wir die Existenz eines Verzeichnisses mit dem File System (fs) Modul, welches in Node.js eingebaut ist. Wir verwenden die `existsSync()` Funktion, die ein boolean zurückgibt.
 
 ```TypeScript
 import * as fs from 'fs';
-const path = 'C:/Benutzer/Dein_Benutzername/Dokumente';
 
-if (fs.existsSync(path)) {
-  console.log(`Das Verzeichnis ${path} existiert.`);
+let dirPath: string = '/pfad/zum/verzeichnis';
+if (fs.existsSync(dirPath)) {
+  console.log('Das Verzeichnis existiert.');
 } else {
-  console.log(`Das Verzeichnis ${path} existiert nicht.`);
+  console.log('Das Verzeichnis existiert nicht.');
 }
 ```
 
-Ausgabe:
+Auf Ihrem Terminal werden Sie dann sehen:
 
-Das Verzeichnis C:/Benutzer/Dein_Benutzername/Dokumente existiert.
+```Terminal
+Das Verzeichnis existiert.
+```
+oder
+```Terminal
+Das Verzeichnis existiert nicht.
+```
 
-## Tiefergehende Informationen:
+## Vertiefung
 
-### Historischer Kontext:
+Historisch gesehen haben Programmierer oft Zugriffsfehler bekommen, weil sie versucht haben, auf ein nicht existierendes Verzeichnis zuzugreifen. Daher ist die Existenzüberprüfung ein unabdingbarer Bestandteil in der Programmierung geworden.
 
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein wichtiger Teil der Dateiverwaltung in Computersystemen. Es wurde in den frühen Tagen der Computertechnologie entwickelt und wird immer noch in aktuellen Programmiersprachen wie TypeScript verwendet.
+Alternativ können wir auch die `access()` Funktion innerhalb des fs Moduls verwenden, die mehr Einzelheiten über den Zugriff liefert.
 
-### Alternativen:
+```TypeScript
+import * as fs from 'fs';
 
-Eine Alternative zur Überprüfung, ob ein Verzeichnis existiert, ist das Erstellen eines neuen Verzeichnisses, wenn es nicht vorhanden ist. Dies ist jedoch nicht immer die beste Lösung, da dies den Dateisystem-Workflow ändern kann.
+let dirPath: string = '/pfad/zum/verzeichnis';
+fs.access(dirPath, fs.constants.F_OK, (err) => {
+  console.log(`${dirPath} ${err ? 'existiert nicht.' : 'existiert.'}`);
+});
+```
 
-### Implementierungsdetails:
+Diese Implementierung ist etwas komplexer, bietet jedoch mehr Flexibilität.
 
-Die `fs.existsSync()` Methode in TypeScript verwendet das File System Modul, um zu überprüfen, ob der angegebene Pfad ein gültiges Verzeichnis ist. Wenn dies der Fall ist, gibt sie `true` zurück, andernfalls `false`.
+## Siehe auch
 
-## Siehe auch:
+1. Node.js fs Modul Dokumentation: [Link](https://nodejs.org/api/fs.html)
+2. TypeScript Dokumentation: [Link](https://www.typescriptlang.org/docs/) 
 
-[Das File System Modul in TypeScript](https://www.typescriptlang.org/docs/handbook/file-system.html).
-
-[Wie man Verzeichnisse in TypeScript erstellt](https://www.digitalocean.com/community/tutorials/nodejs-working-with-folders).
+Mit diesen Werkzeugen ausgestattet, sollten Sie bereit sein, sicher mit Verzeichnissen in TypeScript zu arbeiten.

@@ -1,7 +1,7 @@
 ---
-title:                "Geração de números aleatórios"
-html_title:           "Fish Shell: Geração de números aleatórios"
-simple_title:         "Geração de números aleatórios"
+title:                "Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
+simple_title:         "Gerando números aleatórios"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O quê e por quê?
 
-Gerar números aleatórios é um processo importante na programação, pois permite que os desenvolvedores criem programas que requerem valores imprevisíveis. Isso pode ser útil em jogos, sorteios, criptografia e outras áreas da tecnologia.
+Gerar números aleatórios é a prática de criar sequências de números que não têm padrão discernível. Os programadores fazem isso para qualquer situação em que a aleatoriedade seja necessária, como para simulações, criptografia e jogos.
 
 ## Como fazer:
 
-```
-# Gere um número inteiro aleatório entre 1 e 100
-fish -c "echo (random 1 100)"
+Aqui está um exemplo de como você pode gerar um número aleatório entre 1 e 100 no Fish Shell:
 
-# Gere um número decimal aleatório entre 0 e 1
-fish -c "echo (math random)"
-
-# Gere uma string aleatória de 10 caracteres
-fish -c "echo (pwgen -1 10)"
+```Fish Shell
+set -l range_start 1
+set -l range_end 100
+math (random % ($range_end + 1 - $range_start)) + $range_start"
 ```
 
-O primeiro comando usa a função `random` para gerar um número inteiro aleatório entre 1 e 100. O segundo comando usa a função `math random` para obter um número decimal aleatório entre 0 e 1. Por fim, o terceiro comando utiliza o utilitário `pwgen` para gerar uma string aleatória de 10 caracteres.
+Quando você executa o código acima, o shell retorna um número aleatório no intervalo especificado. Por exemplo, poderia retornar `78` ou `21`.
 
-## Profundidade:
+## Aprofundando
 
-Gerar números aleatórios é uma técnica antiga na programação. Antes do advento dos computadores, dados como cartas de baralho e dados eram usados para criar resultados aleatórios. Hoje em dia, existem outras opções além da função `random` do Fish Shell, como o módulo `random` da linguagem Python e o utilitário `shuf` do UNIX. Essas alternativas oferecem funções e recursos adicionais para gerar números aleatórios em diferentes formatos e intervalos.
+O conceito de números aleatórios tem uma longa história na computação, mas o que é importante saber é que os números gerados por computadores não são verdadeiramente aleatórios. Eles são determinados por algoritmos e, portanto, são chamados de "pseudo-aleatórios". 
+
+Existem alternativas no Fish Shell para gerar números aleatórios, por exemplo, usando o comando `jot -r`.
+
+```Fish Shell
+jot -r 1 1 100
+```
+
+No entanto, a função `math` com o módulo `random` é geralmente mais rápida e preferida para a geração de números aleatórios.
 
 ## Veja também:
 
-- [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/cmds/random.html)
-- [Módulo `random` do Python](https://docs.python.org/3/library/random.html)
-- [Utilitário `shuf` do UNIX](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
+- [Fish Shell Documentation](https://fishshell.com/docs/current/commands.html#random)
+- [StackOverflow: How to generate a random number in Fish?](https://stackoverflow.com/questions/55656492/how-to-generate-a-random-number-in-fish)
+- [Unix & Linux Stack Exchange: How to get a random number in Fish Shell?](https://unix.stackexchange.com/questions/140750/how-do-you-get-a-random-number-in-fish)

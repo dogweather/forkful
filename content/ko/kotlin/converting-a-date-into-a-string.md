@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "Kotlin: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 뭐하고 왜?
 
-날짜를 문자열로 변환하는 것은 날짜 데이터를 사용하기 쉽게 하기 위한 프로그래밍 기술입니다. 프로그래머들이 이를 하는 이유는 우리가 일상에서 다루는 날짜 형식과 컴퓨터가 이해하는 형식 사이의 차이 때문입니다.
+날짜를 문자열로 변환하는 것은 날짜 또는 시간 정보를 사람이 읽기 쉬운 형식의 문자열로 변경하는 과정입니다. 프로그래머들이 이를 수행하는 주된 이유는 사용자 친화적인 형식으로 날짜 정보를 표시하고, 로그를 추적하거나 사건을 쉽게 시간별로 정렬하기 위함입니다.
 
-## 방법:
+## 이렇게 하세요:
 
-**예제 1:** `LocalDate` 객체를 생성한 후 `toString()` 메서드를 사용하여 문자열로 변환하는 방법:
 ```Kotlin
-val date = LocalDate.parse("2021-01-01")
-println(date.toString())
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    val current = LocalDateTime.now()
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")
+    val formatted = current.format(formatter)
+
+    println("현재 날짜 및 시간: " + current)
+    println("포매팅 된 날짜 및 시간: " + formatted)
+}
 ```
-**결과:** `"2021-01-01"`
+예시 실행 결과는 다음과 같습니다:
 
-**예제 2:** 현재 날짜를 `Date` 객체로 가져와서 `SimpleDateFormat`을 사용하여 원하는 포맷으로 문자열로 변환하는 방법:
-```Kotlin
-val currentDate = Date()
-val dateFormat = SimpleDateFormat("yyyy-MM-dd")
-println(dateFormat.format(currentDate))
 ```
-**결과:** `"2021-08-25"`
+현재 날짜 및 시간: 2022-06-25T15:23:01.123
+포매팅 된 날짜 및 시간: 2022-06-25 15:23:01
+```
 
-## 심층 분석:
+## 깊게 들어가보기
 
-(1) 날짜를 문자열로 변환하는 기술은 컴퓨터의 발전과 함께 시작되었습니다. 이전에는 컴퓨터가 날짜를 이해할 수 있는 형식으로 데이터를 입력해야 했기 때문에 이러한 기술은 필수적이었습니다. (2) 다른 대안으로는 날짜 형식을 변경하지 않고도 날짜 정보를 추출하는 것이 있지만, 이는 날짜 데이터의 가독성을 높여주는 이점이 있습니다. (3) 문자열로 변환하는 과정에서 잘못된 형식의 데이터가 입력되면 예외가 발생할 수 있기 때문에 오류 처리가 중요합니다.
+이제 우리는 날짜를 문자열로 변환하는 기본 개념을 이해했습니다. 하지만 이 주제는 그 이상의 이해를 요구합니다. 
 
-## 관련 자료:
+### 역사적 맥락
 
-- [Kotlin Date and Time](https://kotlinlang.org/docs/datetime/)
-- [Java Date and Time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [SimpleDateFormat JavaDoc](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
+주요 시간 관련 라이브러리가 제공하는 클래스와 기능은 시간의 표현에 관한 역사적 경험을 바탕으로 개발되었습니다.
+
+### 대안
+
+각 프로그램 언어는 대다수가 날짜와 시간 변환 방식을 제공합니다. Python에는 strftime라는 유용한 메소드가 있고, JavaScript에는 toLocaleString이 있습니다.
+
+### 구현 세부사항
+
+날짜를 문자열로 변환하는 것은 간단할 수 있지만, 주의해야 할 점들이 있습니다. 원하는 출력 결과가 어떤 것인지, 특히 날짜와 시간의 표시 방식이 국가 및 문화에 따라 다르기 때문에 항상 명확해야 합니다.
+
+## 참고자료
+
+유용한 추가 정보를 찾을 수 있는 몇 가지 링크를 제공합니다:
+
+1. Kotlin 공식 날짜 및 시간 처리 가이드: <https://kotlinlang.org/docs/dates-times.html>  
+
+2. Java 8 에서 도입된 새로운 날짜 및 시간 API 대해 이해하기: <https://www.baeldung.com/java-8-date-time-intro>
+
+3. 공식 Java 문서에서 DateTimeFormatter 클래스 배우기: <https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html>

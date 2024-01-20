@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Haskell: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,43 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## Mikä & Miksi?
+Merkkijonon interpolointi on prosessi, jossa muuttujia tai ilmauksia lisätään suoraan merkkijonoihin. Ohjelmoijat tekevät sen koodin selkeyden ja ylläpidettävyyden parantamiseksi.
 
-Interpoloiminen on prosessi, jossa merkkijonoa muokataan lisäämällä siihen dynaamisesti tietoa. Tämä on hyödyllistä, kun halutaan luoda merkkijonoja, jotka sisältävät muuttuvia arvoja. Ohjelmoijat tekevät tätä usein esimerkiksi tulostettaessa tietokannasta haettuja tietoja tai luotaessa HTML-tiedostoja.
-
-# Kuinka tehdä:
-
-Käytä Haskellin ```printf``` funktiota interpolointiin. Se ottaa ensimmäisenä parametrina merkkijonon, jossa haluat sisällyttää arvot ja sen jälkeen tarvittavat arvot pilkulla eroteltuna. Esimerkiksi:
+## Näin se tehdään:
+Haskellissa voimme käyttää `Text.Printf` kirjastoa merkkijonon interpolointiin. Katsotaan esimerkkiä:
 
 ```Haskell
-printf "Hei, minun nimeni on %s ja olen %d vuotta vanha!" "Sara" 25
+import Text.Printf (printf)
+
+let x = 7
+let y = 3
+printf "Summa on: %d\n" (x + y)
 ```
 
-Tämä tulostaa:
-
-```
-"Hei, minun nimeni on Sara ja olen 25 vuotta vanha!"
-```
-
-Voit myös käyttää Haskellin ```strcat``` funktiota yhdistelemään merkkijonoja. Esimerkiksi:
+Tämä antaa tulosteen: 
 
 ```Haskell
-strcat "Tämä viesti sisältää " "useita " "erillisiä " "sanoja!"
+"Summa on: 10\n"
 ```
 
-Tämä tulostaa:
+## Syvemmälle
+Merkkijonon interpolointi on ratkaisu, joka löytyy useimmista moderneista ohjelmointikielistä. Haskellissa, alternatiivina `printf` funktiolle, voidaan käyttää `formatting` kirjastoa, joka tukee lazy ja strict-tyylisiä merkkijonoja. On hyvä huomioida, että vaikka merkkijonon interpolointi lisää koodin luku- ja ymmärrettävyyttä, se saattaa tehdä koodista hieman hitaamman suorituskyvyltään.
 
-```
-"Tämä viesti sisältää useita erillisiä sanoja!"
-```
-
-# Syvenny:
-
-Interpoloimisen juuret ovat C-korkean tason ohjelmointikielessä, jossa oli käytössä ```printf```-funktio. Muita vaihtoehtoja interpoloimiseen ovat esimerkiksi Pythonin ```format``` funktio ja JavaScriptin ```template literals```.
-
-Optimaalisen suorituskyvyn saamiseksi Haskellin ```strcat``` käyttää sisäisesti ```StringBuffer```-taulukkoa, jossa muutokset tapahtuvat tehokkaasti tilan varastamisen sijaan.
-
-# Katso myös:
-
-- [Haskellin virallinen dokumentaatio](https://www.haskell.org/documentation/)
-- [C-kielen perusmuotoilu ja tulostus](https://www.gnu.org/software/make/manual/html_node/Formatcmd.html)
+## Katso myös
+Lisää koodiesimerkkejä ja merkkijonon interpolointia Haskellissa:
+- [Haskell Printf](https://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html)
+- [Haskell Formatting](https://hackage.haskell.org/package/formatting)
+- [Real World Haskell, Chapter 7: I/O](https://book.realworldhaskell.org/read/io.html)

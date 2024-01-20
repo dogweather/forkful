@@ -1,7 +1,7 @@
 ---
-title:                "Sammanfogning av strängar"
-html_title:           "Elixir: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad är concatenating strings och varför gör programmerare det?
+## Vad & Varför?
+Att sammanfoga strängar, eller "konkatenering", innebär att sätta två eller flera strängar ihop som en. Programmerare gör detta för att bygga upp och manipulera text på dynamiska sätt.
 
-Concatenating strings refererar till att slå samman två eller flera strängar till en enda sträng. Detta kan vara användbart när du vill kombinera olika texter eller variabler för att skapa en längre sträng.
+## Hur man gör:
+I Elixir finns flera sätt att sammanfoga strängar, men det vanligaste sättet är att använda `<>` operanden. Nedan är några exempel:
 
-Detta är ett vanligt förekommande koncept inom programmering eftersom det ger oss möjligheten att manipulera text på ett användbart sätt. Genom att dela upp en sträng i mindre delar och sedan sätta ihop dem på ett specifikt sätt kan vi skapa önskad output.
-
-Hur man gör det:
 ```Elixir
-sträng1 = "Hej "
-sträng2 = "världen!"
+s1 = "Hej, "
+s2 = "världen!"
 
-concat_sträng = sträng1 <> sträng2
-
-IO.puts concat_sträng
+s3 = s1 <> s2 
+IO.puts(s3) # Skriver ut "Hej, världen!"
 ```
-Output: "Hej världen!"
+Du kan även använda `String.concat/2` funktionen:
 
-Det finns flera sätt att concatenating strings i Elixir, men det vanligaste är att använda operatören `<>` (kan också skrivas som `<>`). Detta sätter ihop två strängar till en och returnerar ett nytt värde, medan de ursprungliga strängarna förblir oförändrade.
+```Elixir
+s1 = "Hej, "
+s2 = "världen!"
 
-Mer avancerade funktioner som `String.concat/1` och `String.joint/1` finns också tillgängliga i Elixir för att göra concatenating strings ännu enklare.
+s3 = String.concat(s1, s2)
+IO.puts(s3) # Skriver ut "Hej, världen!"
+```
 
-Djupdykning:
-Concatenating strings är en vanlig koncept inom programmering och är inte unikt för Elixir. Det finns flera andra programmeringsspråk som också erbjuder liknande funktioner, till exempel JavaScripts `+` operator och Pythons `+` operator.
+## Djupdykning
+String konkatenering har historiskt använts i alla programmeringsspråk och är en grundläggande del av att interagera med text. I tidiga språk, som C, kunde detta vara klurigt och potentiellt farligt på grund av direkt minneshantering.
 
-När du jobbar med mycket långa strängar och behöver prestanda, kan det vara mer fördelaktigt att använda metoder som `String.joint/1` istället för `<>` operatorn. Detta beror på hur Elixir implementerar referenser och garbage collection.
+Elixir är vänligare, men det finns alternativ till `<>` och `String.concat/2`. Till exempel, kan vi ansluta listor av strängar med `Enum.join/2`:
 
-Se även:
-- Elixir dokumentation för `String` module: https://hexdocs.pm/elixir/String.html
-- En bra bloggpost om förbättringar i strängmanipulering i Elixir 1.3: https://lostechies.com/iancooper/2016/06/14/improvements-in-string-manipulation-in-elixir-1-3/
-- En artikel om strängkonkatenering i andra programmeringsspråk: https://en.wikipedia.org/wiki/String_append
+```Elixir
+delar = ["Hej, ", "världen!"]
+
+hela = Enum.join(delar) 
+IO.puts(hela) # Skriver ut "Hej, världen!"
+```
+
+Det är nödvändigt att notera att `<>` lättare förstås av läsaren att sammanfogning av två strängar sker, medan `String.concat/2` och `Enum.join/2` är mer uttrycksfulla för sammanfogning av flera strängar.
+
+## Se även
+1. Elixir officiella dokumentation på strängar: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
+2. Elixir School för mer djupgående guide om strängar i Elixir: [https://elixirschool.com/en/lessons/basics/strings/](https://elixirschool.com/en/lessons/basics/strings/)

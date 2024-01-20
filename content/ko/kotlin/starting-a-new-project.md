@@ -1,6 +1,6 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "Kotlin: 새 프로젝트 시작하기"
+html_title:           "Arduino: 새 프로젝트 시작하기"
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,21 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-새로운 프로젝트를 시작한다는 것은 간단히 말해 새로운 소프트웨어를 만드는 것을 의미합니다. 프로그래머들은 새로운 프로젝트를 시작하는 이유는 다양합니다. 대부분의 경우, 새로운 아이디어를 구현하기 위해 새로운 프로젝트를 시작합니다. 또는 기존의 소프트웨어를 개선하고 확장하기 위해서일수도 있습니다.
 
-## 시작하는 방법:
+새로운 프로젝트를 시작한다는 것은 코딩을 통해 새로운 소프트웨어나 기능을 만드는 첫 단계입니다. 이를 통해 프로그래머는 사용자에게 가치를 제공하거나 개인 능력을 향상시키기 위해 필요한 부분을 구현합니다.
+
+## 방법:
+
+새로운 Kotlin 프로젝트를 생성하는 방법을 보여주겠습니다.
 ```Kotlin
-fun main() {
-    println("새로운 프로젝트를 시작해보세요!")
+// IntelliJ에서 새 Kotlin 프로젝트를 만드는 방법
+// 1) File > New > Project 클릭
+// 2) Kotlin > Kotlin/JVM 선택
+// 3) 프로젝트의 이름과 위치를 설정, 나머지는 기본값으로 남겨둠
+// 4) Finish 클릭
+```
+이것은 단순한 "Hello World" 프로그램을 출력하는 코틀린 프로그램입니다.
+```Kotlin
+fun main(args: Array<String>) {
+    println("Hello, World!")
 }
 ```
+이 프로그램을 실행하면 콘솔창에 "Hello, World!" 출력됩니다.
 
-코틀린 언어로 새로운 프로젝트를 시작하는 것은 매우 간단합니다. 먼저, 새로운 프로젝트 디렉토리를 만듭니다. 그리고 그 디렉토리로 이동해서 코틀린 소스 코드 파일을 만들고 코드를 작성한 후, 컴파일하고 실행하면 됩니다. 이제 새로운 프로젝트가 실행되는 것을 볼 수 있을 것입니다.
+## Deep Dive:
 
-## 깊이 파고들기:
-새로운 프로젝트를 시작하는 것은 소프트웨어 개발의 첫 단계이지만, 이 과정에서 여러가지 선택을 할 수 있습니다. 예를 들어, 다른 언어를 사용해도 되지만, 코틀린을 선택한 이유는 그만큼 코틀린이 뛰어나기 때문입니다. 코틀린은 자바를 대체하는 언어로 개발되었으며, 자바보다 간결하고 생산적이며 안전한 언어라는 장점을 가지고 있습니다.
+프로젝트를 새로 시작하는 것은 프로그래밍의 기본적인 특성입니다. 자바언어 기반으로 만들어진 Kotlin은 새로운 프로젝트에 대한 접근부터 JVM과 호환성까지 고려되었습니다. 시작하기에 대한 다른 방법으로는 직접 코드를 작성하거나, 템플릿을 사용하는 방법이 있습니다. 프로젝트의 초기 설정은 기본 디렉토리 구조, 프로젝트 설정, 빌드 설정 등을 포함하며, 이는 프로젝트의 규모와 복잡성에 따라 달라집니다.
 
-## 참고 자료:
-- 코틀린 공식 홈페이지 (https://kotlinlang.org/)
-- 다른 언어와의 비교 (https://kotlinlang.org/docs/reference/comparison-to-java.html)
-- 코틀린 기초 문법 (https://kotlinlang.org/docs/reference/basic-syntax.html)
+## 참고:
+
+- Kotlin 공식 문서: [https://kotlinlang.org/docs/home.html](https://kotlinlang.org/docs/home.html)
+- InnovationM blog의 Kotlin 프로젝트 시작 방법 가이드: [https://www.innovationm.com/creating-kotlin-project-in-intellij-idea/](https://www.innovationm.com/creating-kotlin-project-in-intellij-idea/)
+- Stack Overflow에서 Kotlin 관련 질문 참고: [https://stackoverflow.com/questions/tagged/kotlin](https://stackoverflow.com/questions/tagged/kotlin)

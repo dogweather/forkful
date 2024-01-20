@@ -1,7 +1,7 @@
 ---
-title:                "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-html_title:           "Java: Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
-simple_title:         "Senden einer HTTP-Anfrage mit grundlegender Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -12,49 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Senden einer HTTP-Anfrage mit grundlegender Authentifizierung bedeutet, dass der Benutzername und das Passwort als Teil einer HTTP-Anfrage gesendet werden, um auf eine geschützte Ressource zuzugreifen. Programmierer tun dies, um sicherzustellen, dass nur autorisierte Benutzer Zugang zu sensiblen Daten oder Funktionen haben.
+HTTP-Anfragen mit Basic-Authentifizierung sind eine typische Methode, um sich gegenüber einer API oder einem Webdienst auszuweisen, indem Benutzername und Passwort in der Header-Anfrage gesendet werden. Entwickler nutzen diese Methode, um den Zugang zu bestimmten Ressourcen zu kontrollieren und die Datensicherheit zu gewährleisten.
 
-## Wie geht's:
+## Wie es geht:
+
+Wir verwenden die Java Standardbibliothek `java.net`. Hier ist ein kurzes Code-Beispiel:
 
 ```Java
-// Bevor wir eine Anfrage senden können, müssen wir ein URL-Objekt erstellen
-URL url = new URL("https://www.beispiel.com/geschützte-ressource");
+import java.net.URL;
+import java.net.HttpURLConnection;
+import java.util.Base64;
 
-// Dann erstellen wir die Verbindung und öffnen einen OutputStream, um Daten zu senden
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setDoOutput(true);
-OutputStream os = con.getOutputStream();
+public class Main {
+    public static void main(String[] args) throws Exception {
+        URL url = new URL("http://www.example.com");
+        String encoding = Base64.getEncoder().encodeToString(("username:password").getBytes());
 
-// Jetzt setzen wir die grundlegende Authentifizierung für unsere Anfrage
-String username = "meinBenutzername";
-String password = "meinPasswort";
-String credentials = username + ":" + password;
-String encodedCredentials = Base64.getEncoder().encodeToString(credentials.getBytes());
-con.setRequestProperty("Authorization", "Basic " + encodedCredentials);
-
-// Wir können nun unsere Anfrage senden und die Antwort erhalten
-os.write("Dies ist der Körper der Anfrage".getBytes());
-InputStream is = con.getInputStream();
-
-// Wir können die Antwort auslesen und anzeigen
-InputStreamReader reader = new InputStreamReader(is);
-BufferedReader in = new BufferedReader(reader);
-String inputLine;
-while((inputLine = in.readLine()) != null) {
-    System.out.println(inputLine);
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+        connection.setRequestMethod("POST");
+        connection.setDoOutput(true);
+        connection.setRequestProperty("Authorization", "Basic " + encoding);
+        System.out.println(connection.getResponseCode());
+    }
 }
-
-// Vergessen Sie nicht, die Verbindung zu schließen und die Streams zu leeren
-in.close();
-os.close();
-con.disconnect();
 ```
+Die Ausgabe dieses Codebeispiels sollte der HTTP-Antwortcode sein. Bei erfolgreicher Authentifizierung sollte `200` zurückgegeben werden.
 
-## Tief tauchen:
+## Vertiefung:
 
-Nicht immer ist es sicher, Benutzername und Passwort als Teil einer HTTP-Anfrage zu senden. Alternativ können digitale Zertifikate verwendet werden, um die Authentifizierung zu ermöglichen. Die Implementierung der grundlegenden Authentifizierung variiert auch je nach Programmiersprache und Framework.
+Die Basic-Authentifizierung war eine der ersten Authentifizierungsmethoden, die ins Internetprotokoll eingeführt wurde. Sie ist einfach zu implementieren, bietet aber nur eine minimale Sicherheitsstufe.
+
+Alternativen zur Basic-Authentifizierung sind beispielsweise OAuth, JWT oder API-Schlüssel. Diese Methoden bieten stärkere Sicherheiten, sind aber auch komplexer in der Implementierung.
+
+Bei der Implementierung der Basic-Authentifizierung ist die Kodierung wichtig. Das Benutzerpasswort muss in Base64 kodiert sein und im Header als Zeichenkette im Format `username:password` gesendet werden.
 
 ## Siehe auch:
 
-- https://developer.mozilla.org/de/docs/Web/HTTP/Authentication
-- https://docs.oracle.com/javase/tutorial/networking/urls/authenticate.html
+Wenn du tiefer in die HTTP-Authentifizierung eintauchen möchtest, empfehle ich folgende Quellen:
+
+- [Java Docs - HttpURLConnection](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/HttpURLConnection.html)
+- [MDN Docs - HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- [RFC 7617 - The 'Basic' HTTP Authentication Scheme](https://tools.ietf.org/html/rfc7617)
+
+Hinweis: Behandle deine Anmeldeinformationen und anderen vertraulichen Informationen immer mit Vorsicht, um Sicherheitslücken zu vermeiden. Wähle die Authentifizierungsmethode basierend auf den Anforderungen und der Sicherheitsstufe deines Projekts.

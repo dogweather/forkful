@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Kotlin: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,25 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Web-sivun lataaminen on prosessi, jossa ohjelmoija ottaa kopion verkkosivun sisällöstä ja tallentaa sen paikalliseen tietokoneeseensa. Tätä tehdään yleensä joko sisällön käyttämiseksi myöhemmin tai tiedon keräämiseksi analysointia varten.
+## Mitä & Miksi?
+Verkkosivun lataamisella tarkoitetaan sen tietosisällön hakemista internetistä. Ohjelmoijat lataavat verkkosivuja päästäkseen käsiksi sen dataan ja käsittelemään sitä.
 
-## Miten:
+## Näin teet: 
 ```Kotlin
-val url = "https://www.esimerkki.fi"
-val conn = URL(url).openConnection() as HttpURLConnection
-val input = conn.inputStream.bufferedReader().use { it.readText() }
-println(input)
-```
-Tämä koodi lataa verkkosivun sisällön `url` muuttujassa määritetystä URL-osoitteesta käyttäen `HttpURLConnection` luokkaa ja tulostaa sen konsolille. Koodissa käytetään myös `bufferedReader` ja `use` metodeja helpottamaan lukuoperaatiota.
+import java.net.URL
 
-## Syvällisempi sukellus:
-Verkkosivun lataamisella on pitkä historia internetin alkuaikojen jälkeen. Aiemmin sitä käytettiin lähinnä tiedonkeruuseen web-skrapingin avulla, mutta nykyään se on tärkeä osa monia sovelluksia, kuten verkkoselaimia ja mobiilisovelluksia.
+fun main(args: Array<String>) {
+    println(URL("https://www.example.com").readText())
+}```
 
-On myös muita tapoja ladata verkkosivun sisältöä, kuten käyttämällä kirjastoja kuten `OkHttp` tai `HttpUrlConnection`, mutta Kotlinin `HttpURLConnection` on helppo tapa aloittaa ja soveltuu hyvin yksinkertaisten operaatioiden suorittamiseen.
+Tämä esimerkki näyttää kuinka ladataan verkkosivun teksti. Koodi luo URL-olion, joka osoittaa tiettyyn verkkosivuun, ja käyttää 'readText'-metodia hakeakseen verkkosivun sisällön. Tulosteessa näet sivun HTML-koodin.
 
-Verkkosivun lataamisen toteutus riippuu käytetystä protokollasta, mutta perusperiaate on sama: luodaan yhteys verkkosivun osoitteeseen ja vastaanotetaan sen sisältö. Tämän jälkeen sisältöä voidaan käsitellä halutulla tavalla, esimerkiksi tallentaa paikallisesti tai analysoida.
+## Syvä Sukellus
+Verkkosivujen lataaminen juontaa juurensa WWW:n alkutaipaleelle, jolloin verkkosivujen sisältöä käytettiin pääasiassa staattisen tiedon esittämiseen. Nykypäivänä sen avulla voidaan esimerkiksi hakea API:en kautta ajantasaisia tietoja, tai analysoida ja helpottaa digitaalista tiedon keruuta.
 
-## Katso myös:
-- [Kotlin virallinen dokumentaatio](https://kotlinlang.org/docs/reference/)
-- [HTTP ja Kotlin: Creating Data Requests With URlConnection](https://www.baeldung.com/kotlin-httpurlconnection)
+Vaihtoehtoisesti, tausta- tai palvelinohjelma voisi tehdä saman työn, mutta Kotlinin käyttö on suosittu valinta monestakin syystä. Sen tiiviys, tehokkuus ja yhteensopivuus Java-pohjaisten ohjelmistojen kanssa tekevät siitä houkuttelevan vaihtoehdon.
+
+Kotlinin sisäänrakennettu `readText`-metodi tekee verkkosivun lataamisesta helppoa, mutta monimutkaisimmissa sovelluksissa saatetaan tarvita lisäkirjastoja, kuten JSoup, joka mahdollistaa tarkemman HTML-koodin käsittelyn.
+
+## Katso Myös
+- [Kotlinin verkkosivu](https://kotlinlang.org/)
+- [JSoup-dokumentaatio](https://jsoup.org/)
+- [Kotlinin IO-opas](https://kotlinlang.org/docs/io-operations.html)
+
+Hyödynnä näitä resursseja syventyäksesi aiheeseen tai selvittääksesi mahdollisesti eteen tulevia ongelmia.

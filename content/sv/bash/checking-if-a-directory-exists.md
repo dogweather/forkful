@@ -10,24 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att kontrollera om en mapp existerar är en viktig del av programmering eftersom det hjälper till att säkerställa att ditt program fungerar korrekt. Genom att kontrollera om mappen redan finns kan du undvika att skriva över viktig data eller orsaka fel i ditt program.
+## Vad och Varför?
+Att verifiera om en katalog existerar i Bash sammanhang innebär att kontrollera om en särskild mapp finns i systemet innan en operation utförs på den. Det är viktigt för att förhindra fel, som kan orsakas av att försöka kopiera filer in i en icke-existerande katalog.
 
 ## Så här gör du:
-För att kontrollera om en mapp existerar i Bash kan du använda kommandot "test" tillsammans med flaggan "-d" och ange sökvägen till mappen du vill kontrollera. Om mappen existerar kommer kommandot att returnera sanning (0). Annars kommer det att returnera falskt (1).
-
+Att kolla upp om en katalog finns i Bash är lätt. Se koden nedan:
 ```Bash
-test -d /sökväg/till/mapp
-echo $?
+if [ -d "$DIRECTORY" ]; then
+  echo "Katalogen existerar."
+else
+  echo "Katalogen finns inte."
+fi
 ```
+Om `DIRECTORY` finns, kommer skriptet att skriva ut "Katalogen existerar". Om det inte gör det, visar skriptet "Katalogen finns inte".
 
-Om mappen finns kommer ovanstående kod att skriva ut "0" som betyder sanning. Om mappen inte finns kommer den istället att skriva ut "1" för falskt.
+## Djupgående:
+Detta kommando går tillbaka till de tidiga dagarna av UNIX. Det är en del av en större grupp testkommandon som förkortas med ett enda hakparentes. Alternativa kommandon, som `test` och `[[...]]`, bjuder också på mer avancerade syntaxer och funktioner. Detta inkluderar strängjämförelse, regex matchning, och mer.
 
-## Djupdykning:
-Historiskt sett har kontroll av en mapp i Bash gjorts med hjälp av "ls" kommandot tillsammans med flaggan "-d". Detta har dock visat sig vara mindre tillförlitligt eftersom kommandot även listar innehållet i en mapp, vilket kan orsaka problem om mappen är tom.
-
-Alternativ till att använda "test" kommandot är att använda "if" villkorsuttryck eller "stat" kommandot för att kontrollera en mapp i Bash.
+För att komma ihåg det lättare, tänk på -d som "directory exists".
 
 ## Se även:
-- [Bash Getting Started Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/)
-- [Bash Test Command](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)
+- `man test`: UNIX manualen för testkommandon. [Länk här](http://man7.org/linux/man-pages/man1/test.1.html).
+- `man bash`: Den fullständiga manualen för Bash. [Länk här](http://man7.org/linux/man-pages/man1/bash.1.html).
+- Bash Scripting Guide: En helfruktig guide till Bash programmering. [Länk här](https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html).

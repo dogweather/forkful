@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comando"
-html_title:           "Lua: Leyendo argumentos de línea de comando"
-simple_title:         "Leyendo argumentos de línea de comando"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -11,30 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Leer argumentos de línea de comando es una forma de obtener información del usuario a través de la línea de comandos o terminal mientras se ejecuta un programa. Los programadores suelen utilizar esta técnica para personalizar el comportamiento de sus programas, permitiendo al usuario ingresar opciones o datos específicos durante la ejecución.
 
-## ¡Cómo hacerlo!
-La lectura de argumentos de línea de comando en Lua se realiza a través de la función "arg", la cual almacena los argumentos ingresados por el usuario en un arreglo de tipo string. A continuación, se muestra un ejemplo de cómo imprimir los argumentos ingresados por el usuario:
+Leer los argumentos de la línea de comandos es simplemente tomar información ingresada por el usuario después de que se ejecutó el programa. Los programadores lo hacen para hacer que los programas sean más flexibles y efectivos.
+
+## ¿Cómo hacerlo?
 
 ```Lua
-for i, v in ipairs(arg) do
-  print(i, v)
+-- Guarda los argumentos de la línea de comandos
+arg_com = {...}
+
+-- Recorre y muestra los argumentos
+for i, v in ipairs(arg_com) do
+   print("Arg " .. i .. " es " .. v)
 end
 ```
 
-Supongamos que ejecutamos nuestro programa con los siguientes argumentos: "hola", "mundo", "123". La salida sería:
-
-```
-1 hola
-2 mundo
-3 123
+Ejecute el script de arriba en su línea de comando de la siguiente manera:
+```Lua
+$ lua test.lua argumento1 argumento2
 ```
 
-## Profundizando
-La capacidad de leer argumentos de línea de comando es una característica útil que ha sido parte de Lua desde sus inicios. Sin embargo, también existen alternativas como el uso de archivos de configuración o la interacción con el usuario a través de una interfaz gráfica.
+Y obtendrá esta salida:
+```Lua
+Arg 1 es argumento1
+Arg 2 es argumento2
+```
 
-Internamente, la función "arg" utiliza la variable global "arg", la cual es creada al inicio de la ejecución del programa y contiene la lista de argumentos ingresados por el usuario. Es importante mencionar que el primer argumento siempre es el nombre del programa en sí.
+## Detalle
 
-## Vea también
-- La documentación oficial de Lua sobre la función "arg": https://www.lua.org/manual/5.3/manual.html#pdf-arg
-- Una guía detallada sobre cómo utilizar argumentos de línea de comando en Lua: https://www.tutorialspoint.com/lua/lua_command_line_arguments.htm
+Los argumentos de la línea de comandos existen desde hace mucho tiempo. Usados en los sistemas operativos más antiguos como UNIX, han demostrado un método poderoso y flexible para interactuar con programas.
+
+Alternativas para este método son los archivos de configuración o la interfaz gráfica de usuario (GUI). Sin embargo, los argumentos de la línea de comandos ofrecen ventajas en los casos que deseamos automatizar procesos o cuando desplegamos aplicaciones en ambientes sin GUI.
+
+El uso de los argumentos de línea de comandos en Lua es bastante directo. La tabla "{...}" almacena los argumentos introducidos, que luego pueden ser iterados y utilizados como se necesite. Lua los indexa comenzando desde 1, a diferencia de otros lenguajes como C que empiezan con 0.
+
+## Ver también
+
+[Manual de Referencia de Lua](http://www.lua.org/manual/5.3/), [Tutorial Interactivo de Lua](https://www.learn-lua.org/), [Lectura de argumentos de línea de comando en Lua](https://www.tutorialspoint.com/lua/lua_command_line_arguments.htm)

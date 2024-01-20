@@ -1,7 +1,7 @@
 ---
-title:                "명령 줄 인수 읽기"
-html_title:           "Java: 명령 줄 인수 읽기"
-simple_title:         "명령 줄 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,37 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐 & 왜?
+## 무엇이며 왜 사용하는가?
 
-명령 줄 인수를 읽는 것이 무엇인지와 프로그래머들이 왜 이를 하는지에 대해 설명합니다.
+커맨드 라인 인수 읽기는 사용자가 프로그램을 실행할 때 전달한 인수를 프로그램에서 사용할 수 있도록하는 프로세스입니다. 프로그래머들이 이를 통해 동적으로 프로그램을 제어하고 사용자 지정을 하기 위해 이것을 사용합니다.
 
-## 어떻게:
+## 사용 방법:
 
-```java
-public class CommandLineArguments {
+```Java
+public class Main {
     public static void main(String[] args) {
-        for(int i = 0; i < args.length; i++) {
-            System.out.println("인수 " + (i+1) + " : " + args[i]);
+        for(String arg : args){
+            System.out.println("인수: " + arg);
         }
     }
 }
 ```
-
-이 코드는 입력된 모든 인수를 차례대로 출력하는 간단한 Java 프로그램입니다. 예를 들어, 명령 줄에서 `java CommandLineArguments argument1 argument2 argument3`를 실행하면 다음과 같이 출력됩니다.
-
-```
-인수 1 : argument1
-인수 2 : argument2
-인수 3 : argument3
+예시실행 결과:
+```bash
+> java Main 안녕하세요 세상
+인수: 안녕하세요
+인수: 세상
 ```
 
-## 깊이 들어가보면:
+## 심화학습
 
-명령 줄 인수를 읽는 것은 프로그래밍에서 자주 사용되는 기술입니다. 이 기술은 특정 프로그램을 실행할 때 프로그램에 필요한 값들을 외부에서 전달해주는 방법으로 사용됩니다. 예를 들어, 웹 서버를 구축할 때 사용되는 매개변수를 전달하는 데에도 명령 줄 인수를 사용할 수 있습니다. Java에서는 명령 줄 인수를 `args`라는 이름의 String 배열로 전달합니다. 이 배열을 사용하여 프로그램 내에서 인수들을 읽을 수 있습니다.
+커맨드 라인 인수는 가장 오래된 프로그래밍 인테페이스 중 하나이며, 사용자가 프로그램 실행 시 행동을 제어할 수 있게 합니다. 이것이 가능한 대안으로 사용자 입력, 구성 파일 또는 환경 변수가 있습니다. Java에서는 `main` 메소드의 인수(즉, 문자열 배열인 `args`)로 전달되어 구현됩니다.
 
-다른 대안으로는 프로그램 내에서 직접 값을 지정하는 방식이 있습니다. 하지만 이 경우에는 매번 프로그램을 수정해야 하기 때문에 유연성이 떨어집니다. 따라서 명령 줄 인수를 읽는 방식을 사용하는 것이 좋습니다.
+## 관련 참고자료
 
-## 참고 자료:
-
-- [Command Line Arguments in Java](https://www.baeldung.com/java-command-line-arguments)
-- [Java Command Line Arguments Example](https://javarevisited.blogspot.com/2012/10/parse-int-parseint-to-convert-string-to-integer-java-example-tutorial-program-code-example.html)
+- [Java 공식 도큐멘트](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html): `args` 배열에 대한 자세한 정보와 예제를 제공합니다.
+- [Stack Overflow](https://stackoverflow.com/questions/367706/how-to-get-arguments-into-a-java-application-from-outside-it): 외부에서 Java 애플리케이션으로 인수를 가져오는 방법에 대한 토론.

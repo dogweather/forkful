@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 수 생성"
-html_title:           "Java: 랜덤 수 생성"
-simple_title:         "랜덤 수 생성"
+title:                "임의의 숫자 생성하기"
+html_title:           "Elixir: 임의의 숫자 생성하기"
+simple_title:         "임의의 숫자 생성하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,59 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇 & 왜?
 
-랜덤 숫자를 생성한다는 것은 무엇인지 2-3문장으로 설명하고, 프로그래머들이 왜 이 작업을 하는지에 대해 설명합니다.
+랜덤 넘버 생성은 예측할 수 없는 수를 생성하는 프로세스입니다. 프로그래머들은 이를 통해 데이터 보안, 암호 생성, 게임 및 시뮬레이션에서의 불규칙성을 구현합니다.
 
-## 무엇이란?
+## 어떻게:
 
-랜덤 숫자를 생성하는 것은 컴퓨터에서 임의의 수를 만드는 것을 말합니다. 이를 통해 프로그래머들은 세상의 다양한 일들을 모델링하고 예측하고 창조할 수 있게 됩니다.
+다음은 Java에서 랜덤 넘버를 생성하는 방법입니다:
 
-## 왜하는가?
+```Java
+import java.util.Random;
 
-랜덤 숫자 생성은 프로그래밍에서 매우 중요한 작업입니다. 이 작업을 통해 우리는 다양한 알고리즘과 데이터 구조를 테스트할 수 있고, 더 흥미로운 프로그램을 작성할 수 있습니다.
+public class Main {
+  public static void main(String[] args) {
+    // Random 객체를 생성
+    Random rand = new Random();
 
-## 방법:
-
-앞으로의 예시와 결과는 모두 Java 언어를 기준으로 합니다. 다른 언어를 사용할 경우 해당 언어의 문법에 따라 조금씩 다르게 작성하셔야합니다.
-
-### 예시 1) 랜덤 숫자 생성
+    // 0보다 크거나 같고 50보다 작은 정수를 생성
+    int num = rand.nextInt(50); 
+    System.out.println("생성된 랜덤 넘버: " + num);
+  }
+}
+```
+이 코드를 실행 시키면 다음과 같은 결과가 나옵니다:
 
 ```
-java.util.Random rand = new java.util.Random(); //랜덤 인스턴스 생성
-int num = rand.nextInt(100); //0에서 100 사이의 랜덤 정수 생성
-System.out.println(num); //결과: 34
+생성된 랜덤 넘버: 37
 ```
 
-위 코드에서는 Random 클래스의 nextInt() 메소드를 사용해 0에서 100 사이의 랜덤 정수를 생성합니다.
+## 알아두기:
 
-### 예시 2) 랜덤 문자열 생성
+Java에서의 랜덤 넘버 생성은 오랫동안 `java.util.Random` 클래스를 사용하여 처리되어 왔습니다. 그러나 Java 1.7 이후부터는 `java.util.concurrent.ThreadLocalRandom` 클래스를 사용하는 것이 더 좋은 선택입니다. 이 클래스는 다중 스레드 환경에서의 랜덤 넘버 생성을 더 효율적으로 처리합니다.
 
-```
-String[] names = {"James", "John", "Sarah", "Emily"}; //최댓값 정함
-java.util.Random rand = new java.util.Random();
-int index = rand.nextInt(names.length);
-String name = names[index];
-System.out.println(name); //결과: Emily
-```
+대안으로 `Math.random()` 메소드도 사용할 수 있습니다. 이 메소드는 0.0에서 1.0 사이의 double 값으로 랜덤 넘버를 반환합니다. 하지만 주어진 범위 내의 정수 랜덤 넘버를 생성할 때에는 `Random` 또는 `ThreadLocalRandom` 클래스가 더 유용합니다.
 
-위 코드에서는 랜덤 정수를 이용해 배열에서 랜덤으로 값을 가져오는 방법을 보여줍니다.
+## 참고 링크:
 
-## 딥 다이브:
-
-### 역사적 배경:
-
-1980년대 이전까지 랜덤 숫자 생성은 매우 복잡한 작업이었습니다. 하지만 1987년에 나온 메르센 트위스터 알고리즘을 통해 랜덤 숫자를 더 쉽게 만들 수 있게 되었습니다.
-
-### 대안:
-
-Java에서는 Random 클래스 외에도 SecureRandom 클래스를 사용해 더 보안적인 랜덤 숫자를 생성할 수 있습니다.
-
-### 구현 세부 사항:
-
-Java의 Random 클래스는 난수 생성을 위해 선형 취합기 방식을 사용합니다. 이 방식은 이전에 생성된 숫자를 바탕으로 새로운 숫자를 만들어냅니다.
-
-## 관련 자료:
-
-- [Java 8 API 문서 - Random](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [메르센 트위스터 알고리즘 (Wikipedia)](https://ko.wikipedia.org/wiki/%EB%A9%94%EB%A5%B4%EC%84%BC_%ED%8A%B8%EC%9C%84%EC%8A%A4%ED%84%B0_%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98)
+- [Java의 Random 클래스 공식 문서](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/Random.html)
+- [Java의 ThreadLocalRandom 클래스 공식 문서](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/concurrent/ThreadLocalRandom.html)
+- [Java의 Math 클래스 공식 문서](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/Math.html)

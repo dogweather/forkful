@@ -1,6 +1,6 @@
 ---
 title:                "Iniziare un nuovo progetto"
-html_title:           "Python: Iniziare un nuovo progetto"
+html_title:           "Arduino: Iniziare un nuovo progetto"
 simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Python"
 category:             "Python"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché
+## Cos'è e Perché?
+Iniziare un nuovo progetto in Python significa creare un nuovo codice per risolvere un problema specifico o per implementare una nuova idea. I programmatori lo fanno per sviluppare soluzioni personalizzate, migliorare le competenze o creare prodotti/software utili.
 
-In un progetto di programmazione, si tratta di creare qualcosa di nuovo, utilizzando il codice Python. I programmatori lo fanno per realizzare idee innovative, risolvere problemi specifici o migliorare progetti esistenti.
+## Come fare:
+Per cominciare un progetto in Python, ti serve prima di tutto un ambiente di sviluppo Python. Dopo averlo installato, sarà possibile creare un nuovo file Python usando un editor di codice. Ecco un esempio di un semplice script Python che stampa "Ciao, mondo!":
 
-## Come fare
-
-Per avviare un nuovo progetto, si può utilizzare l'istruzione ```Python start```. Qui di seguito un esempio di codice e la relativa output:
-
+```Python
+print("Ciao, mondo!")
 ```
-# Codice di esempio
 
-# Creare una lista di numeri pari
-lista_pari = [x for x in range(1, 11) if x % 2 == 0]
+Lo puoi eseguire sul tuo terminale e otterrai questo output:
 
-# Stampa la lista
-print(lista_pari)
-
-# Output: [2, 4, 6, 8, 10]
+```Python
+Ciao, mondo!
 ```
 
 ## Approfondimento
+La creazione di un nuovo progetto può variare, a seconda del contesto storico e delle esigenze dello sviluppatore. In passato si è molto affidati su editor di testo basici, ma oggi abbiamo molte alternative come PyCharm, Jupyter Notebook, e Visual Studio Code.
 
-In passato, i programmatori dovevano iniziare un progetto da zero, creando tutto il codice da soli. Ora esistono diverse alternative, come utilizzare framework o librerie già esistenti per accelerare il processo di sviluppo. L'implementazione di un nuovo progetto dipenderà dalle esigenze specifiche e dalla scelta delle migliori risorse da utilizzare.
+Quando inizi un nuovo progetto, può essere utile organizzare il tuo codice in moduli e utilizzare un sistema di controllo delle versioni come Git. Inoltre, potresti voler utilizzare strumenti di gestione dei pacchetti (come pip) per gestire le dipendenze del tuo progetto. 
 
-## Vedi anche
+Ecco un esempio di come potresti organizzare il tuo progetto:
 
-Per ulteriori informazioni su come iniziare un nuovo progetto in Python, puoi consultare questi link:
+/progetto_python
+  /modulo1  
+    __init__.py  
+    file1.py
+  /modulo2  
+    __init__.py  
+    file2.py
+  main.py
+  requirements.txt
 
-- [Documentazione ufficiale di Python](https://docs.python.org/3/tutorial/), che contiene tutorial e guide sul linguaggio Python.
-- [Real Python](https://realpython.com/), un sito con numerosi tutorial e risorse per Python.
-- [GitHub](https://github.com/), una piattaforma di condivisione e collaborazione di progetti di codice sorgente, dove è possibile trovare esempi di progetti in Python.
+## Consulta anche
+1. Documentazione Python: https://docs.python.org/3/
+2. Libro di Python gratuito per principianti: https://www.python.it/doc/Howtothink/HowToThink_ITA.pdf
+3. Video Tutorial Python: https://www.youtube.com/watch?v=Z1Yd7upQsXY
+4. Tutorial interattivo Python: https://www.learnpython.org/it/Hello,%20World!

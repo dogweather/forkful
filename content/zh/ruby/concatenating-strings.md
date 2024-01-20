@@ -1,6 +1,6 @@
 ---
 title:                "连接字符串"
-html_title:           "Ruby: 连接字符串"
+html_title:           "C: 连接字符串"
 simple_title:         "连接字符串"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# #什么是字符串拼接？为什么程序员要这样做？
+## 什么和为什么？
+**字符串的连接** 是将两个或更多的字符串组合成一个较大的字符串。程序员之所以这么做，是因为它允许他们从小块文本中创建复杄的信息或接受用户输入。
 
-字符串拼接指的是将多个字符串连接在一起，形成一个新的更长的字符串。程序员经常这样做是因为在处理文本和数据的时候，经常需要将多个文本片段合并成一条完整的信息。
+## 怎么做？
+连接字符串有很多方式，我们将介绍两种常用的方法：操作符 `+` 和 `<<` ，以及 `concat` 方法。
 
-## #如何操作：
+#### 使用 `+` 和 `<<` 操作符
+```Ruby
+str1 = "你好，"
+str2 = "世界！"
 
-`` `Ruby
-puts "Hello" + " " + "World"
-`` `
+result = str1 + str2
+puts result  # => "你好，世界！"
 
-输出： "Hello World"
+str1 << str2
+puts str1  # => "你好，世界！"
+```
+#### 使用 `concat` 方法
+```Ruby
+str1 = "你好，"
+str2 = "世界！"
 
-`` `Ruby
-greeting = "Hello"
-name = "Ruby"
-puts greeting + " " + name
-`` `
+str1.concat(str2)
+puts str1  # => "你好，世界！"
+```
+## 深度探讨
+数十年前，字符串连接在古老的B编程语言中就已经存在。在Ruby语言中我们有多种加强版实现。
 
-输出： "Hello Ruby"
+除了上述方法，Ruby还提供 `join` 方法用于拼接数组中的所有字符串。
 
-## #深入探讨：
+```Ruby
+str_array = ["你好，", "世界！"]
+puts str_array.join  # => "你好，世界！"
+```
+`+` 和 `concat` 会创建新的字符串对象，但 `<<` 和 `concat` 方法则会直接在原字符串对象上进行操作。这有助于在内存管理方面提高程序性能。
 
-1. 历史背景：字符串拼接是编程世界中常见的操作，早期的编程语言如C和Java都有相应的拼接函数。Ruby中使用+操作符来实现字符串拼接，使得代码更加简洁易读。
-2. 其他方法：除了+操作符，Ruby还提供了几种其他方法来实现字符串拼接，如<<操作符和concat()函数。
-3. 实现细节：在Ruby中，字符串是不可变的，意味着一旦被创建，就无法被修改。因此，当我们对字符串进行拼接操作时，实际上是创建了一个新的字符串，而原来的字符串仍然存在于内存中。
+## 另请参阅
+更多有关于Ruby字符串连接和其他相关主题的信息，可以参考以下链接：
 
-## #相关链接：
-
-- Ruby官方文档：https://www.ruby-lang.org/zh_cn/documentation/
-- 关于字符串拼接的更多信息：https://zh.wikipedia.org/wiki/%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%8E%A5%E8%BD%AC
+- [Ruby中的字符串连接](https://www.rubyguides.com/2018/06/ruby-string-concatenation/)
+- [Ruby中的字符串方法文档](https://ruby-doc.org/core-2.7.0/String.html)
+- [Ruby中关于性能的话题](https://www.fastruby.io/blog/ruby/performance/a-faster-hash.html)

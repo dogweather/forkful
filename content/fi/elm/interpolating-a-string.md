@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Elm: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,34 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä ja miksi?
+Stringin interpolaatio on tapa liittää muuttujien arvoja suoraan merkkijonojen sisälle. Koodaajat turvautuvat tähän yksinkertaistamaan ja selkiyttämään koodia.
 
-Stringin interpolointi tarkoittaa muuttujan arvon lisäämistä merkkijonoon. Tämä on kätevä tapa yhdistää dynaamisia arvoja staattisiin merkkijonoihin. Ohjelmoijat käyttävät sitä lisäämään muuttuvuutta ja joustavuutta ohjelmien luomiseen.
-
-## Miten?
-
-Elm-kielessä stringin interpolointi tehdään käyttämällä `String.format` -funktiota, joka ottaa vastaan merkkijonon ja listan arvoja, jotka halutaan lisätä siihen. Alla on esimerkki käytöstä:
+## Miten:
+Elm-kieli ei tue suoraan stringin interpolaatiota, mutta sen voi saavuttaa liitännäisfunktioiden, kuten `++`(concatenation) kautta. Tässä on esimerkki:
 
 ```Elm
-String.format "Tervehdys %s!" ["maailma"] 
--- Output: "Tervehdys maailma!" 
+tervehdys : String -> String
+tervehdys nimi =
+    "Hei, " ++ nimi ++ "! Kuinka voit?"
+
+main = 
+    print (tervehdys "Pekka")
 ```
+Kun tämä koodi ajetaan, se tulostaa: `Hei, Pekka! Kuinka voit?`
 
-Voit myös käyttää `%d` merkkiä lisätäksesi numeron merkkijonoon, kuten seuraavassa esimerkissä:
+## Syvempi sukellus:
+Vaikka stringin interpolaatio on ollut mukana useimmissa ohjelmointikielissä aina alkuajoista lähtien, Elm-päättäjät ovat päättäneet olla toteuttamatta sitä kielen yksinkertaisuuden takia. Sen sijaan Elm tarjoaa '++' operaattorin, joka liittää yhteen kaksi stringiä.
 
-```Elm
-String.format "Minulla on %d omenaa." [5] 
--- Output: "Minulla on 5 omenaa." 
-```
+Elm:n lisäksi jotkut muut kielet, kuten Python ja JavaScript, tukevat stringin interpolaatiota käyttäen erityistä syntaksia, esim. `'Hei ${nimi}! Kuinka voit?'`.
 
-## Syväsukellus
-
-Stringin interpolointi on yleinen tekniikka monissa ohjelmointikielissä. Se antaa mahdollisuuden luoda joustavia ja dynaamisia merkkijonoja, jotka voivat sisältää vaihtelevia arvoja. Tämä vähentää tarvetta staattisten merkkijonojen luomiseen ja lisää mahdollisuuksia muokata ja muuttaa tekstin sisältöä helposti.
-
-On olemassa myös muita tapoja lisätä muuttuvia arvoja merkkijonoon, kuten käyttämällä muotoilumuotoilua tai stringien konkatenointia. Näihin vaihtoehtoihin voi tutustua lisää Elm-dokumentaatiossa.
-
-## Katso myös
-
-- [Elm-dokumentaatio stringin interpoloinnista](https://package.elm-lang.org/packages/elm/core/latest/String#format)
-- [Elm-dokumentaatio stringien muotoilumuotoilusta](https://package.elm-lang.org/packages/elm/core/latest/String#format1)
-- [Elm-dokumentaatio stringien konkatenoinnista](https://package.elm-lang.org/packages/elm/core/latest/String#concat)
+## Katso myös:
+- Strings in Elm: [https://elmprogramming.com/strings.html]
+- Elm Concatenation: [https://elm-lang.org/docs/syntax#operators]

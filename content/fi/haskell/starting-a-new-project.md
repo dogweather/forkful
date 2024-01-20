@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Haskell: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,24 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Miksi ja mitä?
-Aloittaa uusi projekti on kun aloitat työstää uutta ohjelmaa tyhjästä. Ohjelmoijat tekevät näin, jotta he voivat luoda uusia ja innovatiivisia ohjelmia, jotka vastaavat tarpeita ja ratkaisevat ongelmia.
+## Mitä & Miksi?
+Aloitetaan uusi projekti? Saatat miettiä mikä se on? Tietokoneohjelmoinnissa tarkoitamme uutta sovellusta tai ohjelmakirjastoa, jonka aiomme kehittää. Ja miksi me teemme sen? Luomme uusia projekteja, jotta voimme ratkaista ongelmia, tarjota uusia palveluita tai parantaa olemassa olevia järjestelmiä.
 
-## Miten toimii:
-Haskell tarjoaa monia tehokkaita työkaluja ja ominaisuuksia, jotka helpottavat uuden projektin aloittamista. Aloitusprosessi on melko yksinkertainen: sinun tulee ensin luoda uusi projektikansio ja sitten lisätä siihen tarvittavat tiedostot. Tässä esimerkki, miten luodaan uusi projekti "Hei maailma" Haskellilla:
-
+## Kuinka tehdä:
+Haskellilla projekti aloitetaan yleensä käyttämällä "stack" työkalua. Katsotaanpa esimerkkiä:
 ```Haskell
-mkdir HelloWorld 
-cd HelloWorld
-touch hello.hs 
+-- Asennetaan ensin stack:
+$ curl -sSL https://get.haskellstack.org/ | sh
+
+-- Aloitetaan uusi projekti nimeltä "awesomeProject":
+$ stack new awesomeProject simple
 ```
+Nämä komennot asentavat stackin ja luovat uuden projektin. Projekti koostuu useista tiedostoista ja hakemistoista. Tärkein on "awesomeProject.cabal", joka määrittää projektin rakenteen ja riippuvuudet.
 
-Nyt voit aloittaa koodaamisen `hello.hs` tiedostossa ja suorittaa sen komennolla `runghc hello.hs`. Tämä tulostaa "Hei maailma" konsoliin.
+## Sudenkuoppia:
+Aloitetaanko uusi projekti nollasta, ei ole aina itsestään selvää. Edeltäjäkoodien käyttö voi säästää aikaa, mutta sen on oltava huolellisesti suunniteltu ja testattu. Historiallisesta näkökulmasta Haskellin kehitystyökalut, kuten "stack", ovat kuuluneet kielen standardipakettiin vuodesta 2015. 
 
-## Syvempi sukellus:
-Haskell on funktionaalinen ohjelmointikieli, joka perustuu matemaattiseen logiikkaan ja lambda-laskennan käsitteisiin. Se on suunniteltu olemaan eksplisiittinen, tyyppiturvallinen ja puhtaasti funktionaalinen kieli, mikä tekee siitä erittäin tehokkaan ja helposti ylläpidettävän. Alternatiivina Haskellille on muita ohjelmointikieliä, kuten Java, Python ja C++, mutta Haskellin puhtaasti funktionaalinen lähestymistapa tekee siitä erottuvan ja sopivan monipuoliseen käyttöön erilaisten ohjelmistojen kehittämisessä.
+On muitakin tapoja aloittaa projekti Haskellilla, esimerkiksi "Cabal". Mutta useimmat Haskellers suosivat "stackia", koska se pitää projektin riippuvuudet eristettyinä ja hallittavissa. 
+
+Uuden Haskell-projektin toteutuksessa pitää varoa monimutkaisten tyyppejä - modularisoi koodisi oikein ja pidä riippuvuudet minimalilla.
 
 ## Katso myös:
-- [Haskellin viralliset dokumentaatiot](https://www.haskell.org/documentation/)
-- [Haskell-kirjallisuus ja resurssit](https://www.haskell.org/haskell-resources/)
-- [Ohjelmoijien yhteisö Haskellilla](https://www.haskell.org/community/)
+Jos haluat oppia lisää Haskellista ja projektien aloittamisesta, tässä on joitakin linkkejä:
+
+1.  Haskellin viralliset sivut: http://www.haskell.org/
+2.  Stackin dokumentaatio: https://docs.haskellstack.org/
+3.  "Real World Haskell" kirja: http://book.realworldhaskell.org/
+4.  Haskellin opiskeluoppaat: https://learn.haskell.org/
+
+Hyvää koodaamista!

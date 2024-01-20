@@ -1,7 +1,7 @@
 ---
-title:                "Afficher la sortie de débogage"
-html_title:           "Ruby: Afficher la sortie de débogage"
-simple_title:         "Afficher la sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Testing and Debugging"
@@ -10,23 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire? 
-L'affichage des sorties de débogage consiste à imprimer des messages à des fins de diagnostic lors de l'exécution d'un programme informatique. Les programmeurs le font pour comprendre le comportement de leur code et pour identifier les erreurs.
+## Quoi & Pourquoi?
 
-## Comment faire: 
-Voici un exemple simple pour afficher le contenu d'une variable: 
+L'impression de sortie de débogage est une méthode utilisée pour tracer le déroulement d'un programme pour repérer les erreurs. Les programmeurs le font pour comprendre comment le code fonctionne (ou ne fonctionne pas) et pour localiser les erreurs plus facilement.
+
+## Comment faire :
+
+Pour imprimer une sortie de débogage dans Ruby, utilisez la méthode `p`. Cette méthode imprime la valeur de l'expression fournie et retourne cette valeur.
 
 ```Ruby
-variable = "Bonjour!"
-puts "La valeur de la variable est #{variable}."
-```
-Cela devrait afficher dans la console: 
-```
-La valeur de la variable est Bonjour!
+debug_variable = "Test de débogage."
+p debug_variable
+#=> "Test de débogage."
 ```
 
-## Plongée en profondeur: 
-L'affichage de sorties de débogage est une pratique courante en programmation. Elle remonte aux débuts de l'informatique pour aider les développeurs à résoudre les problèmes dans leur code. Bien qu'il existe d'autres techniques de débogage, comme le pas-à-pas et l'utilisation de débogueurs, l'affichage de sorties reste un moyen simple et efficace pour comprendre le fonctionnement interne d'un programme. 
+## Regard approfondi
 
-## Voir aussi: 
-Pour en savoir plus sur l'affichage de sorties de débogage avec Ruby, vous pouvez consulter la documentation officielle de Ruby, [ruby-lang.org](https://www.ruby-lang.org/fr/documentation/). Vous pouvez également trouver des ressources utiles sur des sites de programmation tels que [Stack Overflow](https://stackoverflow.com/). N'hésitez pas à explorer et à expérimenter pour améliorer vos compétences en débogage avec Ruby!
+(1) Historiquement, l'impression de sortie de débogage été l'une des premières méthodes utilisées pour le débogage. Elle est toujours largement utilisée en raison de sa simplicité et de son efficacité. 
+
+(2) Il existe d'autres méthodes pour le débogage en Ruby, tels que l'usage des débogueurs tels que "byebug" ou "pry".
+
+(3) L'implémentation `p` dans Ruby est en fait une méthode de classe `Kernel`, donc disponible dans tous les objets Ruby. Elle est semblable à la méthod `puts`, mais `p` retourne également la valeur, ce qui est utile pour le débogage.
+
+## Voir aussi
+
+Pour plus d'informations sur le débogage dans Ruby :
+
+1. http://ruby-doc.org/core-2.6.3/Kernel.html#method-i-p
+2. https://guides.rubyonrails.org/debugging_rails_applications.html
+3. http://ruby.bastardsbook.com/chapters/debugging/

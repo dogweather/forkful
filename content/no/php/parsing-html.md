@@ -1,6 +1,6 @@
 ---
 title:                "Analysering av html"
-html_title:           "PHP: Analysering av html"
+html_title:           "C#: Analysering av html"
 simple_title:         "Analysering av html"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+# Å parse HTML med PHP
 
-Parsing av HTML er prosessen med å lese og analysere HTML-koden i en nettside. Dette er et viktig verktøy for webutviklere for å hente ut spesifikke data eller informasjon fra en nettside. Det kan også brukes til å omforme HTML-koden for å tilpasse den til ulike formater eller til å lagre den for senere bruk.
+## Hva og hvorfor?
 
-# Hvordan:
+Å parse HTML er prosessen der vi dekoder HTML-koden for å forstå dens struktur og innhold. Programmerere gjør dette for å ekstrahere data, manipulere strukturen, eller integrere innhold fra nettsider.
+  
+## Slik gjør du
 
-For å utføre enkel HTML parsing i PHP kan du bruke funksjonene `file_get_contents()` og `strpos()`. Her er et eksempel på hvordan du kan hente ut tittel og beskrivelse fra en nettside:
+Vi bruker `DOMDocument`-klassen i PHP for å parse HTML. Først oppretter vi en ny instans av `DOMDocument`.
 
 ```PHP
-$url = "https://www.example.com";
-$html = file_get_contents($url);
-
-$title_start = strpos($html, '<title>') + 7;
-$title_end = strpos($html, '</title>');
-$title = substr($html, $title_start, $title_end - $title_start);
-
-$desc_start = strpos($html, '<meta name="description" content="') + 34;
-$desc_end = strpos($html, '"', $desc_start);
-$desc = substr($html, $desc_start, $desc_end - $desc_start);
-
-echo "Tittel: $title <br>";
-echo "Beskrivelse: $desc";
+$dom = new DOMDocument;
 ```
 
-Dette eksempelet viser hvordan du kan hente ut tittel og beskrivelse fra en nettside ved å finne start- og sluttpunktene for elementene i HTML-koden. Resultatet vil være:
+Deretter laster vi inn HTML-koden vi vil parse.
 
+```PHP
+$dom->loadHTML($html);
 ```
-Tittel: Nettside Tittel
-Beskrivelse: Dette er en beskrivelse av nettsiden.
+
+Vi kan nå få tilgang til HTML-elementene.
+
+```PHP
+$headings = $dom->getElementsByTagName('h1');
+foreach ($headings as $heading) {
+    echo $heading->nodeValue, PHP_EOL;
+}
 ```
+  
+## Dypdykk
 
-# Dypdykk:
+**Historisk kontekst**: PHP startet ut som en templating motor og har over tid utviklet seg til å bli en fullverdig programmeringsspråk med mange funksjoner, inkludert HTML-parsing.
 
-HTML parsing har vært en viktig del av webutvikling siden begynnelsen av internettets levetid. Det finnes også alternativer til å bruke PHP for parsing, som for eksempel JavaScript eller tredjeparts biblioteker som Simple HTML DOM.
+**Alternativer**: Andre biblioteker som `phpQuery` og `simplehtmldom` gir mer brukervennlige grensesnitt for HTML parsing, men kan være overkill for enkle oppgaver.
 
-Det er viktig å være klar over at parsing av HTML kan være en kompleks oppgave, spesielt med tanke på at nettsider kan variere i oppbygning og struktur. Det er derfor viktig å ha god kjennskap til HTML og ulike parser-teknikker for å få best mulig resultat. 
+**Implementeringsdetaljer**: `DOMDocument`-klassen bruker libxml2 til å parse HTML. libxml2 er en XML parser og toolkit skrevet i C for Gnome prosjektet.
 
-# Se også:
+## Se også
 
-- [PHP - file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
-- [PHP - strpos()](https://www.php.net/manual/en/function.strpos.php)
-- [Simple HTML DOM](https://simplehtmldom.sourceforge.io/)
+- [PHP DOMDocument Manual](https://www.php.net/manual/en/class.domdocument.php)
+- [phpQuery on GitHub](https://github.com/phpquery/phpquery)
+- [Simple HTML DOM Parser Manual](https://simplehtmldom.sourceforge.io/manual.htm)
+- [libxml2](http://xmlsoft.org/)

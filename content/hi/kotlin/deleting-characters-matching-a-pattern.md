@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न से मेल खाते हुए अक्षरों को हटाना"
-html_title:           "Kotlin: पैटर्न से मेल खाते हुए अक्षरों को हटाना"
-simple_title:         "पैटर्न से मेल खाते हुए अक्षरों को हटाना"
+title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
+html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
+simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,42 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-character matching pattern को हटाना क्या है और programming में इसे क्यों किया जाता है।
+## क्या एवं क्यों?
 
-कई बार programming में हमे एक विशिष्ट पैटर्न के अनुसार characters को हटाना होता है। इससे हमे दूसरे characters को ढूंढने में सहायता मिलती है जो कि एक लंबे समय तक खोज के लिए जरूरी हो सकते हैं। 
+पैटर्न मैच करने वाले वर्णों को डिलीट करना एक आम कार्य होता है जहां हम एक निश्चित पैटर्न मैच करने वाले वर्णों को एक String से हटा देते हैं। प्रोग्रामर्स इसे डाटा क्लीनिंग के उद्देश्य से करते हैं, जैसे की अनवांछित वर्णों को हटाना हो सकता है।
 
 ## कैसे करें:
-कोटलिन में character matching pattern को हटाने का प्रोग्राम निम्न तरीके से संचालित किया जा सकता है।
 
-```
-fun main() {
-   val str = "Hello World"
-   val pattern = "[a-z]".toRegex()
-   val result = str.replace(pattern, "")
-   println(result) 
+आइए देखें कि Kotlin में यह कैसे किया जा सकता है:
+
+```Kotlin 
+fun main() { 
+    val str = "Hello, World!"
+    val pattern = "[, ]"   // हमें कौन से वर्ण हटाने हैं उन्हें यहाँ निर्दिष्ट करें
+    val removed = str.replace(Regex(pattern), "")
+    println(removed)
 }
-
-// Output: H W
 ```
 
-इसके अलावा, जिस character को हम हटाना चाहते हैं, उसके साथ और operations भी किये जा सकते हैं। जैसे की अगर हम अभिव्यक्ति में एक एक्स्ट्रा स्पेस भी हटाना चाहते हैं तो निम्न तरीके से कर सकते हैं। 
+ऊपरी कोड का आउटपुट निम्नलिखित होगा:
 
 ```
-val result = str.replace(pattern, "").trim()
-// Output: H W
+HelloWorld!
 ```
+
+"Hello, World!" String से हमने comma और space वर्णों को हटा दिया है।
 
 ## गहराई में:
-character matching pattern को हटाने का काम कई दशकों से हमने pay किया है। कोटलिन में भी इसे अनगिनत तरीकों से संचालित किया जा सकता है जैसे builtin function ```removeIf```, ```dropWhile``` और ```filterNot```। कई अन्य programming languages में इसे regular expressions के साथ भी किया जाता है। 
 
-इसके अलावा, हम character matching pattern को हटाने में glob patterns भी प्रयोग करते हैं। इनकी मदद से हम अनुकूलन को भी कर सकते हैं जैसे कि case sensitivity में अंतर। 
+इतिहासकारी में यह कार्य पाठ एडिटिंग सिस्टम्स, जैसे अक्स और सेड, का भाग था। Kotlin में, `replace()` फंक्शन Regex और replacement String का उपयोग करती है।
 
-## इससे जुड़े:
-- [Kotlin RemoveSpecificCharacter][1]
-- [Kotlin String documentation][2]
-- [Kotlin Collection operations][3]
+विकल्प स्वरूप, आपके पास अन्य लाइब्रेरीज या फंक्शन्स का उपयोग करने का विकल्प हो सकता है, जैसे जावा का `replaceAll()` या कस्टम कोड। याद रखें, `replace()` केवल पहले से निर्दिष्ट पैटर्न को हटाता है, इसलिए इसका उपयोग करते वक्त सतर्क रहें।
 
-[1]: https://kotlinbyshivank.blogspot.com/2017/04/kotlin-remove-specific-character.html
-[2]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/
-[3]: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.collections/index.html
+## अन्य स्रोतों के लिए:
+
+1. [Kotlin Official Documentation on Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
+2. [Java String replaceAll()](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String))
+
+इन स्रोतों में आपको String के साथ काम करते समय नियमबद्धताओं और विस्तार की जानकारी मिलेगी।

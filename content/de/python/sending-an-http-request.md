@@ -1,7 +1,7 @@
 ---
-title:                "Eine HTTP-Anfrage senden"
-html_title:           "Python: Eine HTTP-Anfrage senden"
-simple_title:         "Eine HTTP-Anfrage senden"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Python HTTP-Anfragen verstehen und erstellen
 ## Was & Warum?
-Das Senden von HTTP-Anfragen ist ein wichtiger Aspekt beim Programmieren, da es es ermöglicht, Informationen von einer Website oder einem Server abzurufen. Programmer nutzen es, um Daten zu erhalten und sie in ihre Programme zu integrieren.
+HTTP-Anfragen sind eine Methode, mit der ein Programm oder eine Anwendung Informationen von einem Server abruft. Programmierer verwenden dies, um Daten aus APIs zu extrahieren, Inhalte dynamisch zu laden oder Strukturdaten für Scraping-Aufgaben zu holen.
 
-## So funktioniert's:
-Das Senden von HTTP-Anfragen kann mit Hilfe von Python sehr einfach durchgeführt werden. Hier ist ein Beispiel, wie man eine GET-Anfrage an die Website "www.example.com" senden kann:
-
-```Python
-import requests
-response = requests.get("http://www.example.com")
-print(response.text)
-```
-
-Die Ausgabe wird den HTML-Code der Website enthalten. Man kann auch Parameter an die Anfrage anhängen, um bestimmte Informationen zu erhalten:
+## Wie geht das:
+Es gibt viele Methoden, um eine HTTP-Anfrage in Python zu senden. Eine der beliebtesten ist die Bibliothek `requests`. Hier ist, wie man es macht:
 
 ```Python
 import requests
-params = {'key': 'value'}
-response = requests.get("http://www.example.com", params=params)
+
+response = requests.get('http://www.example.com')
 print(response.text)
 ```
 
-Die Ausgabe könnte in diesem Beispiel zum Beispiel eine Liste von Suchergebnissen sein.
+Ausgabe:
 
-## Tiefergehende Informationen:
-Das Senden von HTTP-Anfragen hat eine lange Geschichte. Früher wurde es vor allem für einfache HTML-Seiten genutzt, aber heutzutage wird es für die Kommunikation zwischen Servern und die Integration von Web-Services in Programme verwendet.
+```Python
+<!doctype html>
+<html>
+<head>
+    <title>Beispiel Website</title>
+</head>
+<body>
+    <h1>Beispiel Website</h1>
+    <p>Hallo, Willkommen auf www.example.com!</p>
+</body>
+</html>
+```
+## Deep Dive
+Historisch gesehen war das Senden von HTTP-Anfragen keine einfache Aufgabe in Python. Bevor `requests` eingeführt wurde, mussten Entwickler komplizierte Bibliotheken wie `urllib2` verwenden. Heute ist `requests` die bevorzugte Methode, da sie einfach zu verwenden und gut dokumentiert ist.
 
-Es gibt auch alternative Methoden, um Daten von Websites abzurufen, wie z.B. das Scraping von HTML oder die Nutzung von APIs. Diese können je nach Anwendungsbereich möglicherweise bessere Optionen sein.
+Alternativen zu `requests` umfassen `http.client` (Standardbibliothek), `httplib2`, `treq` und `pycurl`. Diese bieten unterschiedliche Verwendungsmuster und Eigenschaften an, können aber überwältigend sein und sind oft übermütig für grundlegende Aufgaben.
 
-Um HTTP-Anfragen in Python zu senden, gibt es verschiedene Bibliotheken, die genutzt werden können, wie z.B. Requests, Urllib oder httplib. Jede Bibliothek hat ihre eigenen Vor- und Nachteile, daher ist es wichtig, die Dokumentation zu lesen und die beste Option für das jeweilige Projekt auszuwählen.
+Auf unterster Ebene öffnet eine HTTP-Anfrage einfach eine Netzwerkverbindung zu einem Webserver und sendet eine standardisierte Nachricht, die eine "GET"- oder "POST"-Operation anfordert. Der Server entschlüsselt diese Nachricht und sendet eine Antwort, die der Client dann interpretiert.
 
-## Siehe auch:
-- [Requests Library Documentation](https://requests.readthedocs.io/en/master/)
-- [Urllib Library Documentation](https://docs.python.org/3/library/urllib.html)
-- [httplib Library Documentation](https://docs.python.org/3/library/http.client.html)
+## Siehe auch
+Für weitere Informationen und Tutorials über HTTP-Anfragen in Python, besuchen Sie bitte die folgenden Seiten:
+
+1. Dokumentation der `requests` Bibliothek: https://docs.python-requests.org/en/latest/
+2. HTTP-Anfragen in Python, Einführung: https://realpython.com/python-requests/
+3. Schnelle Anfängereinführung von Mozilla: https://developer.mozilla.org/de/docs/Learn/Python/Quickly_Learn_Object_Oriented_Programming

@@ -1,7 +1,7 @@
 ---
-title:                "Einen Textdatei lesen"
-html_title:           "Elm: Einen Textdatei lesen"
-simple_title:         "Einen Textdatei lesen"
+title:                "Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -12,29 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Lesen einer Textdatei ist die Methode, um den Inhalt einer Datei in einem Computerprogramm zu lesen. Programmierer tun dies, um den Inhalt einer Datei zu verarbeiten und zu manipulieren, um bestimmte Aufgaben auszuführen oder Informationen zu extrahieren. 
+Das Lesen einer Textdatei bedeutet, die darin gespeicherten Daten auszulesen und für das Programm verfügbar zu machen. Programmierer machen das, um Zugang zu externen Informationen zu haben und diese innerhalb ihrer Anwendungen zu verwenden.
 
-## Wie geht das?
+## So geht’s:
 
-Elm bietet eine einfache Möglichkeit, eine Textdatei zu lesen. Verwenden Sie einfach die `readFile` Funktion und übergeben Sie den Pfad der Textdatei, die Sie lesen möchten. Hier ist ein Beispiel:
+Elm (Version 0.19.1 und höher) ist eine funktionale Sprache, die noch keine direkten Möglichkeiten bietet, Dateien zu lesen. Aber sie interagiert gut mit JavaScript. Daher könnten wir die JavaScript-Funktion für das Lesen einer Datei verwenden und dann die Daten an Elm übergeben. 
+
+Erstens, fügen wir einige JavaScript-Code hinzu:
+
+```JavaScript
+var app = Elm.Main.init(); 
+var reader = new FileReader();
+
+reader.onload = function(){
+  app.ports.readFile.send(reader.result); 
+};
+
+function readfile(e) {
+  var file = e.target.files[0];
+  if(!file) return;
+  reader.readAsText(file);
+}
+```
+
+Der obige JS-Code ermöglicht das Lesen von Dateien und sendet dann die Daten über einen Port an unser Elm-Programm. Dann fügen wir den Port zu unserem Elm-Programm hinzu:
 
 ```Elm
-import File
+port module Main exposing (..)
 
-main =
-  File.readFile "/path/to/file.txt"
-    |> File.map (\contents -> contents)
+type alias Model = 
+     { file : Maybe String 
+     }
+     
+port readFile : (String -> msg) -> Sub msg
 ```
-Und hier ist das Ergebnis, was wir bekommen, wenn wir die Datei `file.txt` mit dem Inhalt "Hallo Welt!" lesen:
+Jetzt erhält die Anwendung alle Dateidaten auf der Elm-Seite.
 
-```
-"Hello World!"
-```
+## Vertiefung:
 
-## Tieferer Einblick
+Historisch gesehen waren die Möglichkeiten zum Ein- und Auslesen von Dateien in funktionalen Programmiersprachen wie Elm immer etwas komplizierter. Das liegt daran, dass die meisten funktionalen Sprachen versuchen, Nebenwirkungen wie Dateioperationen zu vermeiden.
 
-Das Lesen von Textdateien ist eine gängige Aufgabe in der Programmierung, die seit langem verwendet wird. Alternative Ansätze können die Verwendung von Bibliotheken oder Frameworks zur Verarbeitung von Dateien sein. Die `readFile` Funktion in Elm verwendet die nativen Dateioperationen des Betriebssystems, um die Textdateien zu lesen.
+Es gibt auch andere Möglichkeiten, Dateien in Elm zu lesen, wie zum Beispiel das Einbetten der Dateidaten zur Kompilierzeit durch Webpack oder ähnliche Werkzeuge. Letztendlich interessieren uns jedoch die Daten, die wir aus der Datei erhalten können, und durch welches Medium wir auf sie zugreifen, ist nebensächlich.
 
-## Siehe auch
+## Siehe auch:
 
-Weitere Informationen zu anderen Dateioperationen in Elm finden Sie in der offiziellen Elm-Dokumentation.
+- Elm Ports Tutorial: https://guide.elm-lang.org/interop/ports.html
+- FileReader API-Methode in JavaScript: https://developer.mozilla.org/de/docs/Web/API/FileReader
+- Einbetten von Assets mit Webpack: https://webpack.js.org/guides/asset-management/

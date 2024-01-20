@@ -11,29 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Kapitalisieren einer Zeichenkette ist ein üblicher Schritt in der Programmierung, bei dem der erste Buchstabe eines jeden Wortes großgeschrieben wird. Dies wird gemacht, um die Lesbarkeit und Ästhetik der Zeichenkette zu verbessern und es einfacher zu machen, Schlüsselwörter oder Variablennamen zu identifizieren. 
 
-## Wie geht's?
-Die Verwendung von C# macht das Kapitalisieren einer Zeichenkette sehr einfach. Hier ist ein Beispielcode:
+Großbuchstaben in einer Zeichenkette (engl. "string") bedeutet, alle kleingeschriebenen Zeichen in Großbuchstaben zu konvertieren. Programmierer verwenden es, um die Lesbarkeit zu verbessern oder Zeichenkettenvergleiche zu vereinfachen.
+
+## Wie geht das?
+
+Mit C# können Sie eine Zeichenkette einfach mit der `ToUpper()` Methode in Großbuchstaben konvertieren. Hier ist ein einfaches Beispiel:
 
 ```C#
-// Eingabezeichenkette
-string eingabe = "hallo welt";
-// Ausgabezeichenkette
-string ausgabe = eingabe.ToUpper();
-Console.WriteLine(ausgabe);
+  string kleingeschrieben = "hallo welt";
+  string großgeschrieben = kleingeschrieben.ToUpper();
+
+  Console.WriteLine(großgeschrieben);
+  // Ausgabe: HALLO WELT
 ```
 
-Dieser Code wird die Zeichenkette "hallo welt" in "HALLO WELT" umwandeln.
+In diesem Code wird unser ursprünglicher kleingeschriebener Text zur "Hallo-Welt"-Zeichenkette und dann in Großbuchstaben umgewandelt.
 
-## Tiefer Einblick
-Das Prinzip der String-Kapitalisierung wurde erstmals in den Programmiersprachen COBOL und BASIC eingeführt, um die Dateinamen im Dateisystem zu formatieren. Obwohl es nicht zwingend notwendig ist, wird das Kapitalisieren einer Zeichenkette in der Programmierung allgemein als bewährte Methode angesehen, um die Lesbarkeit und Konsistenz des Codes zu verbessern.
+## Tieferer Einblick
 
-Alternativ können auch andere Methoden wie z.B. die Verwendung von Unterstrichen oder CamelCase verwendet werden, um Wörter in Variablennamen zu trennen. Es ist jedoch wichtig, dass innerhalb eines bestimmten Projekts eine einheitliche Methode verwendet wird, um die Lesbarkeit und Verständlichkeit des Codes zu gewährleisten.
+Die `ToUpper()` Methode ist in C# seit .NET Framework 1.1 enthalten und ist seitdem die grundlegende Methode zur Konvertierung von Zeichenketten in Großbuchstaben. 
 
-In C# wird die String-Kapitalisierung durch einen eingebauten Befehl ("ToUpper") ermöglicht, der jede Zeichenkette in Großbuchstaben umwandelt. Dieser Befehl kann jedoch nicht angewendet werden, wenn Sonderzeichen oder Zahlen in der Zeichenkette vorhanden sind.
+Es gibt Alternativen, wie die `TextInfo.ToTitleCase()` Methode, die jedoch nur das erste Zeichen jedes Wortes groß macht und nicht wirklich dasselbe ist. 
 
-## Siehe auch
-- [MSDN-Dokumentation zu String.ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
-- [Alternative Methoden zur Formatierung von Zeichenketten](https://stackoverflow.com/questions/3035338/c-sharp-how-to-set-title-case)
-- [Begriffe und Konventionen in der Programmierung](https://en.wikipedia.org/wiki/Naming_convention_(programming))
+Die `ToUpper()` Methode verwendet im Hintergrund eine Zuordnungstabelle, um die entsprechenden Großbuchstaben aus kleinen Zeichen zu ermitteln.  Sie ist auch kulturgebunden, d.h., sie konvertiert Zeichen basierend auf den kulturspezifischen Regeln der aktuellen oder angegebenen Kultur.
+
+```C#
+  string kleingeschrieben = "hallo welt";
+  string großgeschrieben = kleingeschrieben.ToUpper(new CultureInfo("de-DE"));
+
+  Console.WriteLine(großgeschrieben);
+  // Ausgabe: HALLO WELT
+```
+
+## Weiterführende Links
+
+[Microsoft Dokumentation zur ToUpper Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.toupper?view=net-5.0)
+
+[Microsoft Dokumentation zur TextInfo.ToTitleCase Methode](https://docs.microsoft.com/de-de/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)

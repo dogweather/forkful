@@ -10,46 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇과 왜?
+## 뭘 & 왜? 
 
-날짜를 미래나 과거로 계산하는 것은 프로그래머들이 일반적으로 하는 작업입니다. 이는 미래나 과거의 특정 날짜를 계산하기 위해 사용될 수 있기 때문입니다. 예를 들어, 이 기능은 패턴을 기반으로 7일 후의 날짜를 계산하거나 지난 주 월요일의 날짜를 찾는 데 사용할 수 있습니다.
+미래나 과거 날짜 계산은 특정 기간 후 또는 전의 날짜를 찾는 프로세스를 의미합니다. 프로그래머들은 이를 통해 스케줄링, 예약, 경과 시간 계산 등 다양한 기능을 구현합니다.
 
-# 어떻게:
+## 구현 방법: 
 
-프로그래밍에서 날짜를 계산하는 것은 전체적으로 간단한 작업이지만, 많은 방법이 있을 수 있습니다. 다음은 PHP에서 날짜를 계산하는 데 사용할 수 있는 두 가지 예제입니다.
-
-### 예제 1:
+PHP에서 미래나 과거의 날짜를 계산하는 방법은 매우 간단합니다.
 
 ```PHP
-// 7일 후의 날짜 계산
-$date = date("Y-m-d", strtotime("+7 days"));
-echo $date; // 예시 출력: 2021-09-28
+ <?php
+    // 현재 날짜를 가져옵니다.
+    $today = new DateTime();
+    echo $today->format('Y-m-d H:i:s');
+   
+    // 일주일 후의 날짜를 계산합니다.
+    $oneWeek = new DateInterval('P7D');
+    $futureDate = $today->add($oneWeek);
+    echo $futureDate->format('Y-m-d H:i:s');
+?>
 ```
 
-### 예제 2:
+출력 결과는 다음과 같습니다:
+
+```
+2022-02-26 08:00:00
+2022-03-05 08:00:00
+```
+
+## 깊은 탐색:
+
+과거의 PHP 버전에서는 `strtotime()` 함수를 이용했으나 더욱 발전된 `DateTime` 클래스를 사용하면 더욱 강력한 기능을 수행할 수 있습니다. 
 
 ```PHP
-// 지난 주 월요일의 날짜 계산
-$lastMonday = date("Y-m-d", strtotime("last Monday"));
-echo $lastMonday; // 예시 출력: 2021-09-20
+<?php
+  $pastDate = strtotime("-1 week");
+  echo date('Y-m-d', $pastDate);
+?>
 ```
 
-# 심층 분석:
+그러나 DateTime 클래스를 사용하면 시간대 지원 및 날짜 간격 계산 등의 추가적인 기능을 제공합니다.  
 
-### 역사적 맥락:
+현재 버전에서는 더 간편하고 읽기 쉬운 코드를 작성할 수 있도록 `DateInterval` 클래스를 사용하여 날짜를 처리하는 방법이 제공됩니다.
 
-PHP의 날짜 계산 기능은 프로그래밍 언어 혁신으로 볼 수 있습니다. 이 기능은 이전의 다른 언어에 비해 간편한 문법을 제공합니다. 이것은 프로그래머들이 날짜나 시간 관련 작업을 더 쉽게 할 수 있도록 해주었습니다.
+## 추가 정보:
 
-### 대안:
+아래는 PHP 날짜 계산에 관한 추가 리소스 링크입니다:
 
-날짜를 계산하는 또 다른 방법으로는 PHP의 DateTime 클래스를 사용하는 것이 있습니다. 이 클래스는 날짜와 시간을 다루는 더 많은 기능을 제공합니다.
-
-### 구현 세부 정보:
-
-PHP에서 날짜를 계산하는 함수의 구현은 내부적으로 복잡하게 되어 있습니다. 그렇기 때문에 문제 발생 시 디버깅이 어려울 수 있습니다. 따라서 날짜 계산을 수행할 때는 다른 함수와의 조합을 최소화하여 가능한 한 단순한 코드를 유지하는 것이 좋은 관행입니다.
-
-# 관련 정보:
-
-1. PHP 공식 문서: [날짜 함수와 타임존](https://www.php.net/manual/en/function.date.php)
-2. PHP DateTime 클래스 문서: [PHP DateTime 클래스](https://www.php.net/manual/en/class.datetime.php)
-3. 날짜 함수를 사용한 날짜 계산 예제: [날짜 계산 예제](https://www.w3schools.com/php/php_date.asp)
+1. [PHP Manual: DateTime 클래스](https://www.php.net/manual/en/class.datetime.php): 현재의 PHP 날짜와 시간에 대한 공식 매뉴얼.
+2. [PHP Manual: DateInterval 클래스](https://www.php.net/manual/en/class.dateinterval.php): PHP 날짜 간격 계산에 대한 공식 문서입니다.
+3. [Stack Overflow: PHP Date Time 관련 질문](https://stackoverflow.com/questions/tagged/php+datetime): 프로그래머 간의 질 답 게시판 입니다.

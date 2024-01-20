@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
-html_title:           "Bash: コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
-simple_title:         "コンピュータプログラミングにおける「コマンドライン引数の読み込み」"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,36 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なにそれ？なんでやるの？
+## 何となぜ？
 
-コマンドライン引数とは、Bashプログラムを実行する際に、プログラムに与える情報のことです。例えば、「ls」コマンドの後ろに「-l」をつけて実行すると、ファイルの詳細情報が表示されます。プログラマーはコマンドライン引数を使うことで、プログラムをより柔軟に動作させることができます。
+コマンドライン引数の読み取りは、ユーザーがプログラムに情報を提供する方法です。これにより、プログラムは動的に動作し、多くの状況で使用することができます。
 
-## 方法：
+## どのように:
+
+以下にコマンドライン引数の読み取りの基本的な例を示します。
 
 ```Bash
 #!/bin/bash
-# コマンドライン引数を取得する例
-echo "今日の日付は$1です。"
-echo "私の名前は$2です。"
-echo "あなたの名前は$3です。"
+echo "スクリプト名: $0"
+echo "最初の引数: $1"
+echo "二つ目の引数: $2"
 ```
+
+引数を次のように提供し、スクリプトを実行します:
 
 ```Bash
-$ bash script.sh 2021-10-01 John Jane
-今日の日付は2021-10-01です。
-私の名前はJohnです。
-あなたの名前はJaneです。
+./myscript.sh arg1 arg2
 ```
 
-## 深掘り：
+出力は次のようになります:
 
-ここまでの例は、コマンドライン引数が必要な場合のみを想定していますが、プログラムの実行時に入力を必要とする場合は、対話的な入力よりもコマンドライン引数を使った方が効率的です。また、プログラム内で条件分岐を使うことで、複数のコマンドライン引数を柔軟に受け入れることができます。
+```Bash
+スクリプト名: ./myscript.sh
+最初の引数: arg1
+二つ目の引数: arg2
+```
 
-代わりに、環境変数を使ってプログラムを実行することもできますが、環境変数はプログラム間で共有されるため、セキュリティ上の懸念があります。
+すべての引数を読み取るには、"$@"を使用します:
 
-コマンドライン引数は、標準の入力方法である「標準入力」と「パイプ」に比べるとあまり使用されることはありませんが、重要なツールとして覚えておくことが大切です。
+```Bash
+#!/bin/bash
+for arg in "$@"; do
+    echo "引数: $arg"
+done
+```
 
-## 関連情報：
+## 深掘り
 
-[Bashのドキュメント](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-[コマンドライン引数と環境変数の違い](https://stackoverflow.com/questions/35006383/differences-between-environment-variables-and-command-line-arguments-in-bash)
+コマンドライン引数の概念は、Unixの初期から存在していました。これはプログラムが汎用性を持つことを可能にし、パイプラインで他のプログラムと組み合わせることができます。
+
+他の方法としては、環境変数の使用がありますが、これは限定的なケースで使用され、一般的にはコマンドライン引数の方が優先されます。
+
+## 参考文献
+
+- Advanced Bash-Scripting Guide: [http://tldp.org/LDP/abs/html/](http://tldp.org/LDP/abs/html/)
+- Bash Manual: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)

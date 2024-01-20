@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Elm: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -11,69 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Odczytywanie argumentów wiersza poleceń to proces w programowaniu, który polega na tym, że program przyjmuje informacje przekazane wraz z jego uruchomieniem za pomocą wiersza poleceń. Programiści używają tej techniki, ponieważ pozwala ona na przekazywanie wartości lub opcji do programu, aby modyfikować jego działanie w zależności od potrzeb.
 
-## Jak to zrobić:
-Korzystając z języka programowania Elm, odczytywanie argumentów wiersza poleceń jest proste. Można to zrobić wykorzystując funkcję `Platform.worker` oraz moduł `Platform.Cmd`.
+Czytanie argumentów wiersza poleceń polega na wejściu w dania dostarczone dla twojego programu poprzez terminal. Programiści robią to, aby umożliwić użytkownikom spersonalizowanie działania programu.
+
+## Jak to robić:
+
+W Elm (aktualna wersja), nie ma natywnej obsługi dla czytania argumentów z linii poleceń, ale możemy to osiągnąć za pomocą JavaScript.
 
 ```Elm
-import Platform
-import Platform.Cmd exposing (..)
+port module Main exposing (..)
+
+port toJS : String -> Cmd msg
 
 main =
-    Platform.worker
-        { init = init
-        , update = update
-        , view = view
-        , subscriptions = \model ->
-            Sub.batch
-                [ onUrlChange UrlChange
-                , onBeginEnter Cmd.onBeginEnter
-                ]
-        }
-
-init =
-    let
-        config =
-            Platform.ArgParser.init Config
-    in
-    ( config, Cmd.none )
-
-type Msg
-    = UrlChange Url String
-    | EnterBegin
-
-type alias Config =
-    { url : String
-    , shouldBegin : Bool
-    }
-
-update msg model =
-    case msg of
-        UrlChange url ->
-            { model | url = url }, Cmd.none
-
-        EnterBegin ->
-            { model | shouldBegin = True }, Cmd.none
-
-view model =
-    Html.text "Odczytanie url i opcji uruchomienia"
-
+    toJS "Hello JavaScript!"
 ```
 
-Przykładowe wyjście po odczytaniu argumentów wiersza poleceń może wyglądać następująco:
+Gdzie "toJS" to port, który wysyła komunikaty z Elm do JavaScript.
 
-```Elm
-Config
-    { url = "www.example.com"
-    , shouldBegin = True
-    }
+W pliku html, który uruchamia kod Elm:
+
+```JavaScript
+<script>
+var app = Elm.Main.init();
+
+app.ports.toJS.subscribe(function(data) {
+  console.log(data);  // Prints: "Hello JavaScript!"
+});
+</script>
 ```
 
-## Głębsze przyjrzenie się:
-Odczytywanie argumentów wiersza poleceń jest wykorzystywane przez programistów od dawna, od czasów konsolowych programów w stylu DOS-a. Alternatywą dla tej metody jest korzystanie z plików konfiguracyjnych lub interaktywnego dialogu z użytkownikiem. W przypadku języka Elm, odczytywanie argumentów wiersza poleceń jest możliwe dzięki modułowi `Platform.Cmd`, który dostarcza funkcje do obsługi poleceń.
+## Deep Dive
 
-## Zobacz również:
-* Oficjalna dokumentacja języka Elm: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)
-* Kurs programowania w języku Elm: [https://egghead.io/learn/elm](https://egghead.io/learn/elm)
-* Forum społeczności programistów Elm: [https://elmlang.slack.com/](https://elmlang.slack.com/)
+Elm, będący językiem osadzonym w środowisku przeglądarki, nie ma bezpośredniej możliwości interakcji z wierszem poleceń. Dlatego, aby przekazać argumenty z linii poleceń do Elm, będziesz musiał wykorzystać JavaScript.
+
+Alternatywą jest wykorzystanie języka, który ma natywną obsługę takich argumentów, na przykład Node.js, a następnie komunikować się z Elm za pomocą portów.
+
+Szczegółowa implementacja może zależeć od specyfiki twojego projektu, ale generalnie polegać będzie na wczytaniu argumentów w JavaScript, a następnie przesłaniu ich do Elm.
+
+## Zobacz też
+
+- [Elm Guide - Interoperability](https://guide.elm-lang.org/interop/)
+- [Node.js - Process.argv](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line)

@@ -1,6 +1,6 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "Javascript: הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-להוריד עמוד ווב הוא פעולה שמאפשרת למשתמשים לשמוע קבצים מן האינטרנט בצורה נוחה יותר. במהלך פיתוח אתרים ווב, פעולת ההורדה משמשת כדי להציג לקוחות את המידע הרצוי בצורה מהירה ויעילה. מתכנתים משתמשים בתהליך ההורדה כדי ליצור אפליקציות אינטראקטיביות ואתרי ווב מתקדמים.
+## מה ולמה?
+
+הורדת דף באינטרנט היא תהליך של שליפת קובץ HTML של דף אינטרנט. מתכנתים עושים את זה בדרך כלל כדי לנתח נתונים מהדף או לשמור עותק מקומי.
 
 ## איך לעשות:
-היישום ב-Javascript להורדת עמודי ווב הוא פשוט למדי. הנה כמה דוגמאות:
-```Javascript
-fetch('https://www.example.com')
-  .then(response => response.text())
-  .then(data => console.log(data));
+
+```JavaScript
+// דוגמא ב-Javascript 
+const https = require('https');
+const fs = require('fs');
+const url = 'https://www.example.com';
+
+https.get(url, res => {
+  res.pipe(fs.createWriteStream('example.html'));
+});
 ```
-הקוד הזה יבקש מהשרת להחזיר את התוכן של עמוד ה- "example.com" וידפיס אותו בטוחלג.
+זה ישמור את הדף המתואר ב- 'https://www.example.com' לקובץ 'example.html' בספרייה הנוכחית.
 
-En deeper נייד:
-לפני כמה שנים רחוקות, לעתים קרובות עמודי ווב נוצרו באמצעות טכנולוגיות עתיקות כמו ה- "XMLHttpRequest". עם זאת, בשנים האחרונות, מתכנתים מעדיפים להשתמש ב- "fetch" כי הוא מציע ביצוע יותר טוב ושימוש נוח יותר.
+## צלילה עמוקה:
 
-## עיון עמוק:
-מעבר להורדת עמודי ווב, ישנן אפשרויות אלטרנטיביות נוספות כמו פרוטוקול HTTP ישן, בשימוש AJAX וישנן כמה ספריות כמו Axios ו- request שגם מציעות אפשרויות להורדת תמונות וקבצי וידאו.
+### היסטוריה: 
+הורדת דפי אינטרנט הייתה חלק מתכנות המחשבים מאז ימי האינטרנט הראשונים.
+
+### אלטרנטיבות: 
+ישנן ספריות JavaScript אחרות, כמו `axios` ו-`request`, שיכולות להוריד דפים מהאינטרנט.
+
+### הרחבה: 
+ההבנה של מה שקורה מאחורי הקלעים (כמו שליחת בקשות HTTP וקבלת תגובות) חשובה כדי למנוע בעיות ולשמן את הריצה של הקוד.
 
 ## ראה גם:
-למד נוסף על להורדת עמודי ווב בידיוק על ידי כתיבת קודי שאלות נפוצות מותאמים ומצריכי פעולה נוספים. כאן תוכל למצוא קוד בסיסי להורדת עמודי ווב ב-Javascript: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
+
+- [Node.js הסברים](https://nodejs.org/api/https.html)
+- [MDN Web Docs - HTTP](https://developer.mozilla.org/he/docs/Web/HTTP)
+- [השוואת ביבליות Node.js HTTP Request](https://www.npmtrends.com/axios-vs-download-vs-request-vs-superagent)

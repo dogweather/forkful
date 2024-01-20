@@ -1,6 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
-html_title:           "Go: HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,45 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+#Golangilla HTML:n jäsentäminen: Miksi ja miten?
 
-HTML-analysointi on prosessi, jossa HTML-muotoista koodia luetaan ja puretaan tietorakenteiksi. Tämä on tärkeä osa web-kehitystä, sillä se mahdollistaa tietojen keräämisen ja manipuloinnin verkkosivuilta. Ohjelmoijat käyttävät tätä työkalua esimerkiksi verkkosivujen datan keräämiseen tai skriptien suorittamiseen automaattisesti.
+## Mikä & Miksi?
 
-# Kuinka?
+HTML-jäsentäminen on prosessi, jossa muunnetaan HTML-koodi rakenteelliseksi representaatioksi. Ohjelmoijat tekevät tämän, jotta voivat helposti hakea, lisätä, muokata tai poistaa HTML-elementtejä ohjelmallisesti.
+
+## Miten:
+ 
+**Go:ssa** HTML:n jäsentäminen on yksinkertaista. Esimerkkinä jäsennämme Go:n standardikirjaston **net / html** -paketin avulla alla olevan HTML-koodin.
 
 ```Go
-// Tässä esimerkissä käytetään Go:n sisäänrakennettua HTML-pakettia
 package main
 
 import (
-    "fmt"
-    "strings"
-    "code.google.com/p/go.net/html"
+	"fmt"
+	"golang.org/x/net/html"
+	"strings"
 )
 
 func main() {
-    // Luetaan HTML-koodi merkkijonona
-    htmlString := "<html><head><title>Otsikko</title></head><body><h1>Tervetuloa</h1><p>Tämä on esimerkki sivu.</p></body></html>"
-    
-    // Muutetaan merkkijonosta lukija
-    reader := strings.NewReader(htmlString)
-    
-    // Käydään läpi HTML-koodi ja tulostetaan otsikko ja p-lauseke
-    doc, err := html.Parse(reader)
-    if err != nil {
-        panic(err)
-    }
-    fmt.Println(doc.FirstChild.FirstChild.LastChild.FirstChild.FirstChild.Data) // Tulostaa: Otsikko
-    fmt.Println(doc.LastChild.FirstChild.LastChild.FirstChild.FirstChild.Data) // Tulostaa: Tämä on esimerkki sivu.
+	s := `<p>Hei maailma!</p>`
+	doc, _ := html.Parse(strings.NewReader(s))
+	var f func(*html.Node)
+	f = func(n *html.Node) {
+		if n.Type == html.ElementNode && n.Data == "p" {
+			fmt.Println(n.FirstChild.Data)
+		}
+		for c := n.FirstChild; c != nil; c = c.NextSibling {
+			f(c)
+		}
+	}
+	f(doc)
 }
 ```
+Suoritettaessa tämä koodi, tulostuu seuraava:
 
-# Deep Dive
+`Hei maailma!`
 
-HTML-analysoinnilla on pitkät juuret, alkaen ensimmäisten web-sivujen luomisesta 90-luvulla. Tänä päivänä on olemassa muitakin tapoja analysoida HTML-sisältöä, kuten CSS-selektorit ja XPath-kyselyt. Go:n sisäänrakennettu HTML-paketti tarjoaa kuitenkin helpon ja tehokkaan tavan käsitellä HTML-koodia.
+Tässä me luomme HTML-dokumentin, jolla on vain yksi alue-elementti ja tulostetaimme sen sisällön.
 
-# Katso myös
+## Syvällisemmin
 
-- https://golang.org/pkg/html/ - Go:n HTML-paketti
-- https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics - Perusteet HTML:stä
-- https://www.edureka.co/blog/web-scraping-with-golang/ - Web-scraping Go:lla
+HTML-jäsentämisen historia juontaa juurensa WWW:n alkuaikoihin. Aluksi HTML-dokumentit luotiin ja muokattiin manuaalisesti, mutta kun web kasvoi, tämä kävi yhä vaikeammaksi. Tämä johti ohjelmallisen HTML-jäsentämisen kehitykseen.
+
+HTML-jäsentämisen vaihtoehtoina on monia muita menetelmiä, kuten regexien käyttö tai jopa manuaalinen merkkijonojen käsittely. Kuitenkin, nämä ovat yleensä virhealttiimpia ja vaikeammin kuin olisi suotavaa. Siksi strukturoitu jäsentäminen, kuten Go:ssa `html / parse` paketin avulla, on suositeltavin tapa.
+
+Go:n `html / parse` -paketti toteuttaa jäsentämisen luomalla puurakenteita, joista kukin solmu vastaa HTML-dokumentin eri osaa. Liikutaan puun läpi käyttämällä syvyyssuuntaista ensinnäkijän hakua.
+
+## Katso myös
+
+- Go:n HTML Parse paketti: https://godoc.org/golang.org/x/net/html
+- w3c:n HTML Parse algoritmi: https://www.w3.org/TR/html50/parsing.html
+- Matala XML-vastaava: https://golang.org/pkg/encoding/xml/

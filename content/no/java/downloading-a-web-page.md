@@ -1,7 +1,7 @@
 ---
-title:                "Nedlasting av en nettside"
-html_title:           "Java: Nedlasting av en nettside"
-simple_title:         "Nedlasting av en nettside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -12,35 +12,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Det å laste ned en nettside handler om å hente informasjon fra internett og lagre den på vår egen datamaskin eller enhet. Dette gjøres vanligvis av programmere for å kunne behandle og manipulere dataen på en mer effektiv måte.
+Å laste ned en nettside betyr å hente data (som HTML, CSS, bilder) fra en server til din egen datamaskin. Programmerere gjør dette for å analysere data, utføre webskraperi, eller skape en offline versjon for senere bruk.
 
-## Slik gjør du det:
+## Hvordan
 
-For å laste ned en nettside i Java, kan du bruke klassen URL og metoden openConnection() for å få en tilkobling til nettsiden. Deretter kan du lese dataen ved å bruke en InputStreamReader og BufferedReader. Her er et eksempel på hvordan du kan hente ut kildekoden på en nettside:
+I Java kan vi bruke `java.net.HttpURLConnection` for å laste ned en nettside. La oss se på en grunnleggende kodeblokk:
 
-```java
-URL url = new URL("https://www.example.com");
-URLConnection connection = url.openConnection();
-InputStreamReader input = new InputStreamReader(connection.getInputStream());
-BufferedReader br = new BufferedReader(input);
-String line;
-while ((line = br.readLine()) != null) {
-    System.out.println(line);
+```Java
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String urlStr = "http://www.example.com";
+        URL url = new URL(urlStr);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+        // Request setup
+        conn.setRequestMethod("GET");
+        conn.setConnectTimeout(5000);
+        
+        BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String line;
+		
+        // Reading lines of the page
+        while ((line = reader.readLine()) != null) {
+            System.out.println(line);
+        }
+        reader.close();
+    }
 }
 ```
 
-Dette eksempelet vil skrive ut kildekoden til nettsiden i konsollen.
+Når du kjører dette, bør du se HTML-koden til "www.example.com" i konsollen.
 
-## Dypdykk:
+## Deep Dive
 
-Å laste ned en nettside har vært en viktig funksjonalitet for programmere helt siden internett ble tilgjengelig. Det gir oss muligheten til å hente ut informasjon og bruke den i våre applikasjoner. Det finnes også alternative måter å gjøre dette på, som for eksempel ved hjelp av tredjepartsbiblioteker som Jsoup som gjør det enklere å håndtere HTML-kode.
+Da Internett var i sin spede begynnelse, var nedlasting av en nettside like enkelt som å hente en fil fra en server. Med økende kompleksitet av nettsteder og bruken av dynamisk innhold, er prosessen mer kompleks. 
 
-Når man laster ned en nettside i Java, kreves det at man også behandler eventuelle feil som kan oppstå under tilkoblingen. Det er også viktig å være forsiktig med å laste ned store mengder data, da dette kan føre til at programmet vårt blir tregt og potensielt krasjer.
+Alternativene til `HttpURLConnection` inkluderer `java.net.URL`, `org.apache.http.client.methods.HttpGet` (fra Apache HttpClient library), og Jsoup (en tredjepartsbibliotek spesialisert for webscraping).
 
-## Se også:
+Valget av hvilken tilnærming å bruke avhenger av behovene dine. Hvis du skal skrape store mengder data fra en nettside, kan det være verdt å vurdere den mer spesialiserte Jsoup.
 
-Her er noen ekstra ressurser om hvordan man kan laste ned en nettside i Java:
+Implmenteringsdetaljer involverer hvordan du behandler forskjellige typer media på nettsiden (ikke bare tekst), og hvordan håndtere error codes (som 404 Not Found eller 500 Internal Server Error).
 
-- [URL-klassen Java dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [Lesing av nettside i Java med BufferedReader](https://www.javacodegeeks.com/2012/09/reading-from-url-in-java.html)
-- [Jsoup biblioteket](https://jsoup.org/)
+## Se også
+
+- [Java HttpURLConnection documentation](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/net/HttpURLConnection.html)
+- [Apache HttpClient library](https://hc.apache.org/httpcomponents-client-4.5.x/quickstart.html)
+- [Jsoup documentation](https://jsoup.org/)
+  
+Undersøk for mer eksplisitt informasjon og flere kjøre eksempler.

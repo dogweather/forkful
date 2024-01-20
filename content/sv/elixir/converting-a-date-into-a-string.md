@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "Elixir: Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att konvertera en datum till en sträng är i grunden att omvandla en specifik tidsstämpel till en läsbar textrepresentation. Detta är viktigt eftersom det gör det möjligt för datorer att visa datum och tider på ett visuellt tilltalande sätt för användare. Programmörer gör det ofta när de behöver visa datuminformation i sin kod, till exempel i en användargränssnitt eller i en loggfil.
+# Vad & Varför?
+Att konvertera ett datum till en sträng i programmering handlar om att ändra hur datat visas, utan att ändra själva informationen. Vi gör detta för att göra datat mer lättillgängligt och läsbart för användarna.
 
-## Hur man gör:
-Det finns flera sätt att konvertera ett datum till en sträng i Elixir. Här är två exempel:
+# Hur man gör:
+Här är ett exempel på hur du konverterar ett `Date`-objekt till en sträng i Elixir:
 
 ```Elixir
-# Exempel 1: Använda Date.to_string-funktionen
-date = ~D[2021-01-01]
-Date.to_string(date) # "2021-01-01"
+date = Date.UTC(2021, 12, 25)
+date_string = to_string(date)
 
-# Exempel 2: Använda Frmt.fmt_date-funktionen från timex biblioteket
-date = ~D[2021-01-01]
-Timex.format(date, "{YYYY}-{MM}-{DD}") # "2021-01-01"
+IO.puts(date_string)
 ```
-Som du kan se är det ganska enkelt. Det enda du behöver göra är att använda en inbyggd funktion eller en funktion från ett bibliotek.
+Utskriften kommer vara: `2021-12-25`
 
-## Utforska djupare:
-Konvertering från datum till sträng är en vanlig uppgift i programmering, och det finns många sätt att göra det på. Det används ofta i webbapplikationer för att visa datum i olika tidszoner eller format, och är också användbart för loggning och datahantering. Elixir har flera inbyggda funktioner för att hantera datum och tider, och det finns även användbara bibliotek som timex för mer avancerad funktionalitet.
+# Djupdykning
+Historiskt sett har olika programmeringsspråk hanterat datums omvandling till strängar på olika sätt. Elixir använder `to_string` funktionen för att konvertera datumet till en ISO 8601-kompatibel sträng. 
 
-## Se även:
-- Elixir's officiella dokumentation om datumanalys och formattering: https://hexdocs.pm/elixir/1.12.1/Calendar.html
-- Timex biblioteket för mer avancerad tidsfunktionalitet: https://github.com/bitwalker/timex
-- En djupgående diskussion om datumanalys i Elixir: https://www.reinteractive.com/posts/199-making-date-time-stamp-handling-easy-and-fun-with-elixir
+Alternativt kan du använda `Date.to_iso8601/1` funktionen, vilket också ger samma resultat:
+
+```Elixir
+date = Date.UTC(2021, 12, 25)
+date_string = Date.to_iso8601(date)
+
+IO.puts(date_string)
+```
+
+Implementationen av konverteringen mellan datum och strängar i Elixir är snabb, standardiserad och pålitlig, vilket gör den till ett bra verktyg för daglig programmering.
+
+# Se även:
+För mer om att jobba med datum och tider i Elixir, checka in följande länkar: 
+- Elixir offciella dokumentation på `Date`: https://hexdocs.pm/elixir/Date.html
+- Elixir School's lektion om datum och tider: https://elixirschool.com/en/lessons/basics/date-time/ 
+- A deep dive into Elixir's new calendar types: https://blog.appsignal.com/2019/02/19/elixir-almanac-date-time-and-calendar.html

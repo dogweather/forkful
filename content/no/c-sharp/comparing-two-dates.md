@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "C#: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,31 +10,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
+## Hva og Hvorfor?
 
-Sammenligning av to datoer er en vanlig oppgave for programvareutviklere. Dette gjøres for å sammenligne tidsdata og identifisere forskjeller eller likheter mellom dem. Dette kan være nyttig for å håndtere dato- og klokkeslettbaserte funksjoner i applikasjoner, som for eksempel å beregne hvor lenge det har gått siden en hendelse eller å sortere data etter dato.
+Å sammenligne to datoer i programmering betyr å bestemme hvilken som er tidligere, senere eller meget mulig at de er de samme. Vi gjør dette i scenarioer hvor vi vilgradere data etter tid, eller når vi vil kontrollere tidsdifferansen mellom to datoer.
 
-## Slik gjør du det:
+## Hvordan:
 
-For å sammenligne to datoer i C# kan du bruke metoden `Compare` i klassen `DateTime`. Denne metoden sammenligner to datoer og returnerer en hel verdi som indikerer om den første datoen er tidligere, senere eller lik den andre datoen. Her er et eksempel på hvordan du kan bruke denne metoden:
+For å sammenligne datohendelser i C#, så bruker vi normalt DateTime.Compare() metoden. 
 
 ```C#
-DateTime dato1 = new DateTime(2021, 3, 15);
-DateTime dato2 = new DateTime(2021, 3, 20);
-
-int resultat = DateTime.Compare(dato1, dato2);
-
-// Resultatet vil være et negativt tall, et positivt tall eller 0 avhengig av datoene
+DateTime date1 = new DateTime(2021, 11, 1);
+DateTime date2 = new DateTime(2022, 11, 1);
+ 
+int result = DateTime.Compare(date1, date2);
+               
+if (result < 0)
+  Console.WriteLine("date1 er tidligere enn date2.");
+else if (result == 0)
+  Console.WriteLine("date1 og date2 er det samme.");
+else 
+  Console.WriteLine("date1 er senere enn date2.");
 ```
 
-Du kan også bruke `CompareTo`-metoden i stedet for `Compare`. Denne metoden fungerer på samme måte, men returnerer en boolean-verdi (`true` eller `false`) i stedet for en hel verdi.
+Koden over vil output:
 
-## Dypdykk:
+```C#
+date1 er tidligere enn date2.
+```
 
-I eldre versjoner av C# måtte utviklere sammenligne datoer ved å kalle `ToUniversalTime()`-metoden på hver dato før de kunne sammenlignes. Dette skyldtes noen forskjeller i hvordan datoer ble lagret og behandlet internt i .NET Platform. Men i nyere versjoner, som C# 8.0, er dette problemet løst, og de nye metoden `Compare` og `CompareTo` tar hensyn til dette selv.
+## Dyp Dykk
 
-En alternativ måte å sammenligne datoer på er ved å bruke `Equals()`-metoden i stedet for `Compare`. Denne metoden sjekker kun om to datoer er like, og returnerer en boolean-verdi. Dette kan være nyttig hvis du ikke trenger å vite om en dato er tidligere eller senere enn en annen, kun om de er like.
+Historisk sett har sammenligning av datoer i C# blitt håndtert med DateTime.Compare()-metoden - som sammenligner to forekomster av DateTime og returnerer en heltall som indikerer om den første forekomsten er tidligere, den samme, eller senere enn den andre forekomsten. 
 
-## Se også:
+En alternativ måte er å bruke CompareTo()-metoden:
 
-For mer informasjon og eksempler på hvordan du kan sammenligne datoer i C#, kan du se Microsofts dokumentasjon [her](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0) og [her](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compareto?view=net-5.0).
+```C#
+int result = date1.CompareTo(date2);
+```
+
+Eller rett og slett sammenligne dem direkte:
+
+```C#
+if (date1 > date2)
+{
+  Console.WriteLine("date1 er senere enn date2.");
+}
+else if (date1 < date2)
+{
+  Console.WriteLine("date1 er tidligere enn date2.");
+}
+else
+{
+  Console.WriteLine("date1 og date2 er det samme.");
+}
+```
+
+Når det kommer til implementeringsdetaljer, så blir datoer lagret som et 64-bits heltall som representerer antall ticks siden 1. januar 0001 kl 00:00:00 UTC.
+
+## Se Også 
+
+For en mer detaljert oversikt over hvordan du jobber med datoer og klokkeslett i C#, sjekk ut Microsofts offisielle dokumentasjon: [DateTime-strukturen i .NET](https://docs.microsoft.com/nb-no/dotnet/api/system.datetime) og [Working with dates and times in .NET](https://docs.microsoft.com/nb-no/dotnet/standard/datetime/).

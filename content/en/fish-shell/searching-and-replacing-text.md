@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Fish Shell recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,31 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Searching and replacing text is the process of finding specific strings of characters and replacing them with new ones. This is a common task for programmers who need to make changes to a large amount of code or data quickly and efficiently.
+Searching and replacing text in code is a common operation that lets you find specific strings and swap them out with others. Programmers do it to modify code quickly, correct errors, or update variables throughout a codebase.
 
-## How to:
-To search and replace text using the Fish Shell, you can use the `sed` and `awk` commands. These commands can be used within a `for` loop to iterate through multiple files, making it easier to make changes in bulk.
+## How to?
+Bon voyage! You'll explore manipulating text using `string replace` command in Fish Shell.
 
+```Fish Shell
+# searching and replacing the first instance of text 'red' to 'blue' in a string
+> echo "My dress is red" | string replace -r -f 'red' 'blue'
+My dress is blue
+# replacing all instances
+> echo "Cherry is red. Roses are red." | string replace -r 'red' 'blue'
+Cherry is blue. Roses are blue.
 ```
-Fish Shell:
+Nailed it? Now, continue with a multiline string example.
 
-for file in *.txt
-sed -i 's/old_text/new_text/g' $file
-awk '{gsub("old_text", "new_text")}' $file
-echo "Changes made in $file"
-done
+```Fish Shell
+# replacing all instances in a multiline string
+> echo "Cherry is red.\nRoses are red." | string replace -r 'red' 'blue'
+Cherry is blue.
+Roses are blue.
 ```
 
-The first line of code sets up a `for` loop to iterate through all files with a `.txt` extension. The `sed` command then finds and replaces all instances of "old_text" with "new_text" in each file, using the `-i` flag to make changes in the original file. The `awk` command does the same, but using a different syntax. Finally, an `echo` statement is included to show which file the changes were made in.
+## Deep Dive
+Understanding your tool's past can kick up your expertise a level. `string` became part of Fish in version 2.3. It acts as an all-in-one-text shop bundling operations like search, replace, length count, and more.
 
-## Deep Dive:
-The `sed` and `awk` commands have been around since the 1970s and are commonly used for text processing. There are other alternatives like `perl` and `grep`, but `sed` and `awk` are typically faster and more efficient.
+But, you're not stuck on the fish rod. Other languages offer text replacements, usually via functions or methods (`str_replace` in PHP, `replace()` in JavaScript, etc.). Some shells also have their "string replace" mechanisms, like `sed` command in Bash.
 
-Searching and replacing text can also be accomplished using regular expressions, which allow for more advanced search patterns. These can be used instead of a specific text string in the `sed` and `awk` commands.
+Now peek under the hood of Fish's `string replace`. It uses the Boost library's `regex_replace` function, performing substitutions based on regex matches. Don't worry if "Boost" and "regex" made you raise an eyebrow. That's another topic, folks.
 
-In the Fish Shell, `sed` and `awk` are implemented as external commands, meaning they are not built into the shell itself. This allows for flexibility and the ability to use other tools for searching and replacing text if needed.
+## See Also
+Want more? Check links below.
 
-## See Also:
-- [Fish Shell Documentation](https://fishshell.com/docs/current/)
-- [sed command tutorial](https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/)
-- [awk command tutorial](https://www.geeksforgeeks.org/awk-command-unixlinux-examples/)
+- Dive into [Fish documentation](http://fishshell.com/docs/current/index.html) on the `string` command.
+- Get your hands dirty with [Boost library](https://www.boost.org/doc/libs).
+- Remember [regular expressions](https://en.wikipedia.org/wiki/Regular_expression)? Learn'em, they are powerful.
+- If Bash is your thing, catch up with `sed` on [GNU docs](http://www.gnu.org/software/sed/manual/sed.html).

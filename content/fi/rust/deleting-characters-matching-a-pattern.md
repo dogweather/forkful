@@ -1,7 +1,7 @@
 ---
-title:                "Kaavamukaisesti vastaavien merkkien poistaminen"
-html_title:           "Rust: Kaavamukaisesti vastaavien merkkien poistaminen"
-simple_title:         "Kaavamukaisesti vastaavien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,29 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Poistaessa merkkejä, jotka vastaavat tiettyä kuvioa, ohjelmoijat pystyvät suorittamaan nopeita ja tarkkoja muokkauksia tekstiin. Tämä on hyödyllistä esimerkiksi virheiden korjaamisessa tai tiettyjen tietojen etsimisessä tekstistä.
+## Mitä & Miksi?
 
-## Kuinka:
+Hahmojen poistaminen määrätyllä kuvioilla tarkoittaa joukkoa ohjelmointitekniikoita, joita käytetään tietyn kriteerin täyttävien merkkijonojen tunnustamiseen ja poistamiseen. Ohjelmoijat tekevät tämän puhdistaakseen tai muokatakseen dataa.
+
+## Näin se toimii:
+
+Käytämme Rustin sisäänrakennettua `replace`-funktiota näissä esimerkeissä. Seuraava koodi poistaa kaikki "a"-kirjaimet merkkijonosta:
+
 ```Rust
-let teksti = "Hello world!";
-let uusi_teksti = teksti.replace("o", "");
-println!("{}", uusi_teksti);
+let s = "Tämä on testi".to_string();
+let result = s.replace("a", "");
+println!("{}", result);
 ```
-> Tulostus: "Hell wrld!"
 
-Tässä esimerkissä käytämme Rustin `replace`-funktiota poistaaksemme kaikki `o`-merkit annetusta tekstistä ja tulostamme uuden tekstin konsoliin.
+Tuloste on:
 
-## Syvempi sukellus:
-1. Historiallinen konteksti:
-Poistamisen algoritmit ovat olleet käytössä jo 1960-luvulta asti tekstinkäsittelyssä ja ohjelmoinnissa.
+```
+"Tämä on testi"
+```
 
-2. Vaihtoehdot:
-Rustin lisäksi myös monet muut ohjelmointikielet tarjoavat sisäänrakennettuja toimintoja merkkien poistamiseen, kuten Pythonin `replace`-metodi.
+Voimme myös käyttää säännöllisiä lausekkeita poistamaan määrätyt kuviot. Katso seuraava koodi:
 
-3. Toteutus:
-Rustin `replace`-funktio käyttää Rustin sisäänrakennettua `Pattern`-tyyppiä vertailemaan merkkejä ja korvaamaan ne tarvittaessa uudella merkillä.
+```Rust
+use regex::Regex;
 
-## Katso myös:
-- [Rustin dokumentaatio merkkijonojen manipuloinnista](https://doc.rust-lang.org/std/string/)
-- [Pythonin `replace`-metodi](https://www.w3schools.com/python/ref_string_replace.asp)
+let re = Regex::new("a").unwrap();
+let s = "Tämä on toinen testi".to_string();
+let result = re.replace_all(&s, "");
+println!("{}", result);
+```
+Tuloste on:
+
+```
+"Tämä on toinen testi"
+```
+
+## Syvä sukellus
+
+Historiallisesti merkkijonojen poistaminen määrätyllä kuvioilla on ollut yleinen tehtävä ohjelmoijille. Se on tapa virheenkorjaukselle, datan puhdistukselle ja tiedon erottamiselle.
+Rustissa, `replace`- ja `regex`-kirjastojen avulla tämä on suhteellisen yksinkertaista. `regex`-kirjasto on erittäin tehokas, mutta se voi olla hidas suurilla datamassoilla. Joissakin tapauksissa voi olla nopeampaa käyttää muita menetelmiä, kuten `str::replacen`.
+
+Rustissa on monia tapoja toteuttaa hahmojen poistaminen määrätyillä kuvioilla. `replace`-funktion lisäksi voit käyttää `regex`-kirjastoa, joka antaa sinulle monipuolisen ja voimakkaan suodatinmekanismin kuvioiden poistamiseen.
+
+## Katso myös
+
+- Rustin virallinen dokumentaatio: https://doc.rust-lang.org/std/string/struct.String.html#method.replace
+- RegEx-kirjaston dokumentaatio: https://docs.rs/regex/1.3.9/regex/

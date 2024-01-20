@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "PHP: Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,38 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Tekstitiedoston lukeminen tarkoittaa tiedon lukemista tekstimuodossa olevasta tiedostosta. Ohjelmoijat käyttävät tätä toimintoa usein, kun he haluavat käsitellä tai tallentaa tietoa, joka ei ole tietokannassa.
+
+Tekstifilin lukeminen tarkoittaa sen sisällön saamista merkkijonona tai datapalasena. Ohjelmoijat tekevät tämän tiedon tallentamiseksi, käsitelläkseen sitä tai kommunikoidakseen toisten ohjelmien kanssa.
 
 ## Kuinka:
+
+PHP:n sisäänrakennettu funktio `file_get_contents()` tekee tekstifilin lukemisen helpoksi. Katso esimerkki alla:
+
 ```PHP
-$file = fopen("tiedosto.txt", "r"); // Avataan tiedosto lukutilassa
-
-if($file){ // Tarkistetaan, että tiedoston avaaminen onnistui
-
-  while(($line = fgets($file)) !== false){ // Luetaan tiedosto rivi kerrallaan, kunnes saavutetaan tiedoston loppu
-    echo $line; // Tulostetaan rivi
-  }
-
-  fclose($file); // Suljetaan tiedosto
-
-} else{
-  echo "Tiedoston avaaminen epäonnistui.";
-}
+<?php
+$file = 'example.txt';
+$content = file_get_contents($file);
+echo $content;
+?>
 ```
-Esimerkkitiedosto (tiedosto.txt):
+Oletetaan, että `example.txt` sisältää tekstin "Hello, World!". Yllä oleva skripti tulostaa:
 ```
-Tämä on esimerkkilause.
-Tämä on toinen esimerkkilause.
-```
-Esimerkkituloste:
-```
-Tämä on esimerkkilause.
-Tämä on toinen esimerkkilause.
+Hello, World!
 ```
 
-## Syvemmälle:
-Tekstitiedoston lukeminen on ollut osa ohjelmointia jo pitkään. Ennen PHP:n suosiota, CGI-skripteissä käytettiin usein Shell-skriptejä tekstitiedostojen lukemiseen ja käsittelyyn. Toinen vaihtoehto tekstitiedoston lukemiseen on käyttää PHP:n file()-funktiota, joka palauttaa tekstitiedoston sisällön taulukkona, jossa jokainen rivi on omassa indeksissään.
+## Syvä Sukellus:
 
-## Katso myös:
-- PHP:n virallinen dokumentaatio tiedostojen käsittelyyn liittyen: https://www.php.net/manual/en/ref.filesystem.php
-- Tiedostojen käsittely Shell-skripteissä: https://www.shellscript.sh/tips/file_read.html
+Tekstifilin lukeminen on perusosa ohjelmoinnin historiaa, ja se on ollut mukana ohjelmoinnissa alusta alkaen. PHP:ssä on useita tapoja lukea tiedostoja, esim. `fopen()`, `fread()`, mutta `file_get_contents()` on helpoin ja kompaktin koodauksen vuoksi usein suositeltu.
+
+Valittu menetelmä riippuu usein kyseisestä sovelluksesta ja sen erityistarpeista. Esimerkiksi, jos tiedoston koko on erittäin suuri, 'fread()' saattaa olla parempi vaihtoehto, koska se lukee tiedoston pienissä palasissa, vähentäen muistin käyttöä.
+
+Kuten useimmissa ohjelmointikielissä, PHP:llä lukiessa tiedosto on avattava ennen kuin sitä voidaan lukea ja suljettava sen jälkeen.
+
+## Katso Myös:
+
+1. PHP Official Documentation: file_get_contents() - [https://www.php.net/manual/en/function.file-get-contents.php](https://www.php.net/manual/en/function.file-get-contents.php)
+
+2. PHP Official Documentation: fopen() - [https://www.php.net/manual/en/function.fopen.php](https://www.php.net/manual/en/function.fopen.php)
+
+3. PHP Official Documentation: fread() - [https://www.php.net/manual/en/function.fread.php](https://www.php.net/manual/en/function.fread.php)

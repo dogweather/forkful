@@ -1,7 +1,7 @@
 ---
-title:                "Få den nuvarande datumet"
-html_title:           "TypeScript: Få den nuvarande datumet"
-simple_title:         "Få den nuvarande datumet"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -11,21 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att få den nuvarande datumet är en grundläggande funktion inom programmering. Det låter dig hämta och hantera det aktuella datumet och tiden för användning i dina applikationer. Detta är särskilt användbart för att hålla koll på tidsstämplar för händelser eller för att visa nuvarande datum till användare.
 
-## Så här:
-För att få det nuvarande datumet i TypeScript kan du använda Date-objektet och dess metoder. Här är ett exempel på hur du kan få det nuvarande datumet och tiden i ISO-format:
+Att hämta det aktuella datumet är processen att få den exakta tiden just nu från systemklockan. Det är relevant för programmerare eftersom det används i många situationer, som att tidsstämpla databasposter eller mäta prestanda.
+
+## Hur man gör:
+
+Man kan enkelt hämta det aktuella datumet i Typescript med `Date`-objektet. Här är ett exempel där vi skapar ett nytt `Date`-objekt och loggar det till konsolen:
+
 ```TypeScript
-let currentDate = new Date();
-console.log(currentDate.toISOString()); // 2021-01-01T00:00:00.000Z
+let nuvarandeDatum = new Date();
+console.log(nuvarandeDatum);
 ```
-Du kan också använda Date-objektets andra metoder som .getDate(), .getMonth() och .getFullYear() för att få enskilda delar av datumet.
 
-## Djupdykning:
-Datumhåntering har funnits i många år inom programmering och det finns flera olika sätt att få det nuvarande datumet. Tidigare var det vanligt att använda JavaScripts Date-objekt direkt, men med TypeScript får vi tillgång till datatyper och strikta kontroller för att hantera datum.
+När du kör den här koden kommer output att se ut något i stil med:
 
-För att få ett mer precist datum kan du använda tredjepartsbiblioteket moment.js, som ger flera olika metoder och möjligheter för att manipulera datum och tid.
+```
+2022-03-12T12:34:56.789Z
+```
 
-## Se även:
-- [Date-objektet på MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js dokumentation](https://momentjs.com/docs/)
+## Djupdykning
+
+Hämta det aktuella datumet har varit en del av programmering språk sedan början. I Typescript, och dess överordnade språk JavaScript, görs detta genom `Date`-objektet, som är en del av det inbyggda objektet API.
+
+Det finns alternativ till `Date`-objektet, som `moment.js`, som erbjuder mer flexibilitet och bättre hantering av datum och tider.
+
+En viktig detalj att notera: när man skapar ett nytt `Date`-objekt utan några argument, kommer det att returnera det aktuella datumet och tiden enligt systemets tidszon. Men, `Date`-objektet omvandlar sedan detta till en ISO-sträng (som vi såg i koden ovan), vilket representerar datum och tid i UTC.
+
+## Se även
+
+För mer information eller alternativa metoder, se följande resurser:
+- MDN web docs on the Date object: [Link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Moment.js documentation: [Link](https://momentjs.com/)
+- An article about date and time handling in JavaScript: [Link](https://javascript.info/date)

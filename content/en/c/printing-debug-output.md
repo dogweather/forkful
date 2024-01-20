@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "C recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "C"
 category:             "C"
@@ -10,46 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Debug Output in C: A Practical Guide
+
 ## What & Why?
 
-Printing debug output is a common technique used by programmers during the development and testing phase of their code. It involves printing out specific information about the state of the program or its variables to help identify and fix any errors or issues.
+Printing debug output in C is the practice of using print functions to track the flow of a program and inspect variables. Programmers do this for easier troubleshooting and code validation.
+  
+## How To:
 
-Debug output is helpful because it allows programmers to see what is happening behind the scenes of their code and to track the flow of execution. This can be especially useful for finding and fixing hard-to-detect bugs.
+C uses several functions for debug printing, the most popular being `printf()`. Let's dive into an example:
 
-## How to:
-
-To print debug output in C, we use the ```printf()``` function. Let's look at a simple example:
-
-```
+```C
 #include <stdio.h>
 
-int main()
-{
-    int num = 5;
-    printf("The value of num is: %d\n", num);
-
+int main() {
+    for(int i = 0; i < 10; i++) {
+        printf("Iteration No.: %d\n", i);
+    }
     return 0;
 }
 ```
 
-In this code, the ```printf()``` function is used to print the value of the variable ```num``` to the console. The format specifier ```%d``` is used to specify that we want to print an integer value.
+Here, we're simply printing out the number of iteration happening each time our loop runs. When you run this, you'll typically see:
 
-The output of this code would be:
-
+```C
+Iteration No.: 0
+Iteration No.: 1
+Iteration No.: 2
+... up to 9
 ```
-The value of num is: 5
-```
 
-## Deep Dive:
+## Deep Dive
 
-Debug output has been used since the early days of programming and has become an essential tool for debugging code. It allows programmers to track the values and changes in variables during program execution, as well as identify potential issues with logic or algorithms.
+Historically, debug output traces back to assembly language programming and software diagnostics. It offers a quick and effective way of tracking bugs in code. 
 
-An alternative to using ```printf()``` for debug output is the use of a debugger tool, such as GDB. However, debug output can be more convenient for quickly checking specific values without having to go through a full debugging process.
+There are other alternatives to printf, such as `fprintf()`, which prints to a file, and `sprintf()`, which prints to a string.
 
-In terms of implementation, debug output can be inserted directly into the code at specific points, or it can be triggered by certain conditions using conditional statements. Additionally, advanced techniques such as logging can also be used for more detailed and persistent debug output.
+C does not inherently support debug levels like other languages do (e.g., DEBUG, ERROR, WARN); however, you could create your own logging function that supports levels.
 
-## See Also:
+As an implementation detail, keep in mind that `printf()` function has a return type. It returns the number of characters printed or a negative value if an error occurs. 
 
-- [C Debugging: Tips, Types and Tools](https://stackify.com/c-debugging-tips/)
-- [GDB - The GNU Project Debugger](https://www.gnu.org/software/gdb/)
-- [The Power of Printing in Debugging](https://blog.acolyer.org/2015/03/24/the-power-of-printing-in-debugging/)
+## See Also
+
+Interested in other debugging methods in C? Here are a few additional resources:
+
+- [Programming Debugging Techniques In C](https://www.softwaretestinghelp.com/debugging-techniques-in-c/)
+- [How to Debug C Program using gdb in 6 Simple Steps](https://www.thegeekstuff.com/2010/03/debug-c-program-using-gdb/)
+- [Mastering printf Debugger](https://beej.us/guide/bgc/html/#the-printf-debugger)

@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "Elixir recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,43 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request is a fundamental aspect of web development that allows communication between a client (such as a web browser) and a server. Programmers use this process to retrieve data, send information, and perform other actions within web applications.
+Sending an HTTP request is the act of asking a server for specific data. Programmers do this to interact with APIs or retrieve web content programmatically.
 
 ## How to:
 
-To send an HTTP request in Elixir, we can use the `HTTPoison` library, which provides a simple API for making HTTP requests.
+Elixir uses the HTTPoison library for making HTTP requests. Here's a small example:
 
-First, we need to add `HTTPoison` as a dependency in our `mix.exs` file:
 ```Elixir
-defp deps do
-  [
-    {:httpoison, "~> 1.7"}
-  ]
-end
+HTTPoison.start()
+
+{:ok, response} = HTTPoison.get("http://httpbin.org/get")
+
+IO.puts response.body
 ```
 
-Then, we can make a GET request by calling the `get/4` function from the `HTTPoison` module and passing in the URL we want to request from:
-```Elixir
-response = HTTPoison.get("https://example.com")
-```
-
-We can also make a POST request by passing in additional parameters in the `get/4` function:
-```Elixir
-response = HTTPoison.post("https://example.com", body: "Hello World") 
-```
-
-The `response` variable will contain the result of our HTTP request, which we can access through its `body` attribute. We can then manipulate and process the data as needed for our application.
+The output will be the HTTP response body from httpbin.org.
 
 ## Deep Dive
 
-HTTP (Hypertext Transfer Protocol) was first created in the 1990s as a way to transfer data between clients and servers on the World Wide Web. It has since evolved to become the standard protocol for communication on the internet.
+Elixir didn't always have HTTPoison. Elixir's http support evolved from Erlang's http modules. There are other libraries available like Tesla or Mint if HTTPoison doesn't float your boat.
 
-While `HTTPoison` is a popular library for making HTTP requests in Elixir, there are also other options such as `Mint` and `HTTPotion`.
+HTTPoison is built on Hackney, a versatile HTTP library for Erlang. This shows how Elixir taps into the rich ecosystem of its parent language.
 
-Under the hood, `HTTPoison` uses Elixir's `HTTP` module, which in turn uses Erlang's `Inets` library to handle the underlying network communication. This allows for a fast, efficient, and reliable way to send HTTP requests in Elixir.
+Under the hood, when you make a request with HTTPoison, it creates a process for handling that request. This leverages Erlang’s lightweight processes, allowing for many concurrent HTTP requests if your application requires it.
 
 ## See Also
 
-- [Official HTTPoison documentation](https://github.com/edgurgel/httpoison)
-- [Alternative HTTP libraries for Elixir](https://elixir.libhunt.com/categories/122-http)
-- [Elixir HTTP module documentation](https://hexdocs.pm/elixir/HTTP.html)
+- [HTTPoison Documentation](https://hexdocs.pm/httpoison/HTTPoison.html)
+- [Another useful article on using HTTPoison](https://medium.com/@n2oh/using-httpoison-to-make-http-requests-in-elixir-171a833e9508)
+- [Hackney on GitHub](https://github.com/benoitc/hackney)
+- [Comparison of HTTP clients in Elixir (Tesla vs HTTPoison)](https://pdgonzalez872.medium.com/comparing-http-clients-in-elixir-9e8a8b1f2f8f)

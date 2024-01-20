@@ -1,7 +1,7 @@
 ---
-title:                "Å gjøre en streng stor bokstav"
-html_title:           "Go: Å gjøre en streng stor bokstav"
-simple_title:         "Å gjøre en streng stor bokstav"
+title:                "Stor bokstav i en streng"
+html_title:           "Go: Stor bokstav i en streng"
+simple_title:         "Stor bokstav i en streng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,13 +11,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å kapitalisere en streng er å endre alle bokstaver i en streng til store bokstaver. Dette gjøres for å av og til gjøre teksten mer lesbar eller for å følge en bestemt konvensjon i programmeringsspråket.
+Kapitalisering av en streng innebærer å endre første bokstav i en streng til en stor bokstav. Programmerere gjør dette for å forbedre lesbarheten og for å skille mellom forskjellige ord som funksjonsnavn og variabler.
 
-## Hvordan:
-```
-Go 'strings' pakken har en innebygd funksjon kalt 'ToUpper' som kan brukes til å kapitalisere en streng.
-Eksempel:
-Go
+## Hvordan gjøre det:
+Her er en rask skisse over hvordan du kapitaliserer en streng i Go:
+
+```Go
 package main
 
 import (
@@ -26,17 +25,42 @@ import (
 )
 
 func main() {
-	str := "hallo verden"
-	kapitalisert := strings.ToUpper(str)
-	fmt.Println(kapitalisert)
+	str := "hei, verden!"
+	capStr := strings.Title(str)
+	fmt.Println(capStr)
 }
+```
+Når du kjører koden ovenfor, vil output være:
 
-// Output: HALLO VERDEN
+```Go
+"Hei, Verden!"
 ```
 
-## Dypdykk:
-Det å kapitalisere en streng er ikke et nytt konsept, og det er ofte brukt i mange programmeringsspråk. I eldre programmeringsspråk som C ble dette gjort manuelt ved å bruke ASCII-tabellen. I dag finnes det mange andre måter å konvertere strenger til store bokstaver, som for eksempel å bruke regex eller Unicode.
+## Et dypdykk 
+#### Historisk kontekst:
+Konseptet med strengkapitalisering har faktisk en ganske lang historie. Det stammer fra dager da datamaskiner var begrenset til tekstbaserte grensesnitt.
 
-## Se Også:
-- https://golang.org/pkg/strings/#ToUpper
-- https://en.wikipedia.org/wiki/Capitalization#Computing
+#### Alternativer:
+Go's innebygde `strings` pakke tilbyr flere metoder for å manipulere strenger, ikke bare `Title`. Du kan for eksempel bruke `ToUpper`, som vil gjøre alle bokstavene i strengen store, ikke bare den første.
+
+```Go
+str := "hei, verden!"
+upperStr := strings.ToUpper(str)
+fmt.Println(upperStr)
+```
+Output vil være:
+
+```Go
+"HEI, VERDEN!"
+```
+
+#### Implementasjonsdetaljer:
+`strings.Title` i Go bruker `unicode.ToTitle` funksjonen for å konvertere den første bokstaven i hvert ord til en tittelbokstav (som er identisk med en stor bokstav for de fleste språk)
+
+## Se også:
+For ytterligere lesing, ta en titt på følgende kilder:
+
+1. Go's offisielle dokumentasjon om strenger: https://golang.org/pkg/strings/
+2. Go's innebygde funksjon `ToUpper`: https://golang.org/pkg/strings/#ToUpper
+3. Go's innebygde funksjon `Title`: https://golang.org/pkg/strings/#Title
+4. Utforsk utfyllende innhold rundt strengmanipulasjon i Go på nettstedet GoByExample: https://gobyexample.com/string-functions.

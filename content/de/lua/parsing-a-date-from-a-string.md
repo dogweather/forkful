@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum aus einem String auslesen"
-html_title:           "Lua: Ein Datum aus einem String auslesen"
-simple_title:         "Ein Datum aus einem String auslesen"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-Das Parsen eines Datums aus einem String ist der Prozess, bei dem ein Datum in einem bestimmten Format aus einem Text extrahiert wird. Programmierer tun dies, um Daten, die als Text vorliegen, in ein verarbeitbares Format umzuwandeln.
+## Was & Warum?
 
-## Wie geht's?
-Das Datum kann mithilfe von Lua's `os.date()` Funktion geparst werden. Zum Beispiel:
+Das Parsen eines Datums aus einem String ist der Prozess, einen Datumsstring in eine formatierte Datumsstruktur umzuwandeln. Programmierer machen dies, um Daten zu sortieren, zu filtern und einfacher mit ihnen zu arbeiten.
+
+## Wie geht das?
+
+In Lua wird das Parse-Funktion in der `os.date` Funktion gefunden. Hier ist ein einfaches Beispiel:
 
 ```Lua
-local date_string = "12.03.2021"
-local parsed_date = os.date("%d.%m.%Y", date_string)
+datumstring = "20/04/2022"
+tag, monat, jahr = datumstring:match("([^/]+)/([^/]+)/([^/]+)")
 
-print(parsed_date) -- Output: 12.03.2021
+parsed_datum = os.date("*t", os.time{year=jahr, month=monat, day=tag})
+
+print(parsed_datum.day, parsed_datum.month, parsed_datum.year) 
 ```
 
-Das erste Argument der `os.date()` Funktion ist das gewünschte Format des Datums, das zweite Argument ist der Textstring aus dem das Datum geparst werden soll. In diesem Beispiel verwenden wir das Format `"%d.%m.%Y"`, um das Datum in dem in Deutschland üblichen Format "Tag.Monat.Jahr" auszugeben.
+Wenn Sie das obige Programm ausführen, wird die Ausgabe wie folgt angezeigt:
 
-Um das Datum in verschiedene andere Formate zu parsen, können verschiedene Formatierungszeichen verwendet werden. Eine vollständige Liste aller Formatierungszeichen und deren Bedeutung kann in Lua's offizieller Dokumentation gefunden werden.
+```Lua
+20  4  2022
+```
 
-## Tiefere Einblicke
-Das Parsen von Daten aus Strings ist ein gängiger Prozess in der Programmierung, da Daten oft als Text vorliegen und in ein strukturiertes Format umgewandelt werden müssen. Es gibt auch alternative Möglichkeiten, ein Datum aus einem String zu parsen, zum Beispiel mit regulären Ausdrücken oder durch den Gebrauch von Bibliotheken.
+## Tauchen wir tiefer ein
 
-Um Datumsangaben aus anderen Ländern oder Regionen zu parsen, müssen oft unterschiedliche Formatierungszeichen verwendet werden, um das Datum korrekt darzustellen. Einige Programmiersprachen, wie Java oder Python, bieten eingebaute Funktionen für die Datumsverarbeitung mit mehr Flexibilität bei der Formatierung.
+Die `os.date` Funktion in Lua geht auf die Unix-Ära zurück, als die Umwandlung von Zeichenketten in Daten eine häufige Aufgabe war. Es gibt auch Alternativen wie das `date-parser` Modul in der LuaRocks Bibliothek, das erweiterte Optionen bietet. Die Implementierungsdetails des `os.date` beinhalten die Verwendung von Musterabgleich in Lua, um die verschiedenen Teile des Datums aus dem String zu extrahieren.
 
 ## Siehe auch
-- [Lua Referenzhandbuch](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [Date Parsing in anderen Programmiersprachen](https://en.wikipedia.org/wiki/Date_parsing_in_different_programming_languages)
+
+1. Lua String Library Dokumentation: [https://www.lua.org/manual/5.3/manual.html#6.4](https://www.lua.org/manual/5.3/manual.html#6.4)
+2. LuaRocks Date Parser Modul: [https://luarocks.org/modules/Tieske/date](https://luarocks.org/modules/Tieske/date)
+3. Lua OS Library Dokumentation: [https://www.lua.org/manual/5.4/manual.html#6.9](https://www.lua.org/manual/5.4/manual.html#6.9)

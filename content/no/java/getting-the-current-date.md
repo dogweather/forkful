@@ -1,7 +1,7 @@
 ---
-title:                "Hente gjeldende dato"
-html_title:           "Java: Hente gjeldende dato"
-simple_title:         "Hente gjeldende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,31 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å hente den nåværende datoen i Java betyr at du får datoen og klokkeslettet i det øyeblikket programmet ditt kjører. Vi bruker dette ofte å spore tidpunktet for hendelser, som når en bruker gjør en handling, eller for å legge til en tidsstempel i en loggfil.
 
-Når vi snakker om "dagens dato", refererer vi til den nåværende datoen på kalenderen. Dette er en vanlig oppgave for programmerere, da det er nødvendig å håndtere datoer og tidspunkter i mange applikasjoner.
-
-## Slik gjør du det:
-
-Java tilbyr en innebygget klasse kalt "LocalDate" som lar deg få tak i dagens dato. Du kan bruke metoden "now()" for å få tak i dagens dato-objekt, og deretter bruke metoder som "getDayOfMonth" eller "getMonth" for å få tak i spesifikke data. Her er et eksempel:
+## Hvordan:
+Her er en måte å få den nåværende datoen i Java på:
 
 ```Java
-LocalDate dagensDato = LocalDate.now();
-System.out.println("Dagens dato er " + dagensDato.getDayOfMonth() + "/" + dagensDato.getMonthValue() + "/" + dagensDato.getYear());
+import java.time.LocalDate;
+...
+LocalDate currentDate = LocalDate.now();
+System.out.println("Dagens dato er: " + currentDate);
 ```
 
-Dette vil gi følgende utdata:
+Når du kjører denne koden vil den utskrifte:
 
-```Text
-Dagens dato er 06/10/2021
+```Java
+Dagens dato er: 2022-03-17
 ```
 
-## Dykke dypere:
+## Dypdykk
+Historisk sett har Java-programmerere brukt `java.util.Date` for å håndtere datoer. Men `java.time.LocalDate` (introdotusert i Java 8) er nå mer foretrukket på grunn av sin overlegenhet i formatering og tidszonehåndtering.
 
-Før Java 8, var det ikke så enkelt å få tak i dagens dato. Utviklere måtte bruke Date og Calendar-klassene, noe som kunne være ganske kronglete og ressurskrevende. Med introduksjonen av LocalDate-klassen i Java 8, ble dette mye enklere.
+Som et alternativ, hvis du trenger både dato og klokkeslett, kan du bruke `java.time.LocalDateTime`:
 
-Det finnes også alternative biblioteker som Joda Time for å håndtere datoer og tidspunkter i Java. Disse bibliotekene gir mer funksjonalitet og fleksibilitet, men det kan være overflødig for enkle oppgaver som å få tak i dagens dato.
+```Java
+import java.time.LocalDateTime;
+...
+LocalDateTime currentDateTime = LocalDateTime.now();
+System.out.println("Dato og tidspunkt er nå: " + currentDateTime);
+```
 
-## Se også:
+Å forstå hvordan Java mottar den nåværende datoen innebærer å vite litt om systemets klokke. Java vil spørre systemets klokke, som fungerer med det interne klokkesignalet, om den nåværende tiden.
 
-- [Oracle's LocalDate-dokumentasjon](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Joda Time dokumentasjon](https://www.joda.org/joda-time/)
+## Se Også
+For mer informasjon eller å lese mer om emnet, se på linkene nedenfor:
+
+- [Java LocalDate Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Java LocalDateTime Documentation](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDateTime.html)
+- [Oracle Tutorial on Date Time](https://docs.oracle.com/javase/tutorial/datetime/)
+- [Baeldung article on how to get the current date in Java](https://www.baeldung.com/java-8-date-time-intro)

@@ -1,7 +1,7 @@
 ---
-title:                "Entfernen von Zeichen mit passendem Muster"
-html_title:           "Elixir: Entfernen von Zeichen mit passendem Muster"
-simple_title:         "Entfernen von Zeichen mit passendem Muster"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist das Löschen von Zeichen passend zu einem Muster und warum machen Programmierer das?
+## Was & Warum?
+Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist ein häufig in der Programmierung verwendeter Ansatz zum Bereinigen oder Manipulieren von Daten-String. Es ist nützlich, um unerwünschte Zeichen aus Textdaten zu entfernen, und ermöglicht eine akkurate Datenanalyse und -verarbeitung.
 
-Das Löschen von Zeichen passend zu einem Muster ist ein gängiges Konzept in der Programmierung, bei dem ein Programm Teile eines Text- oder Zeichenstrings entfernt, die einem bestimmten Muster entsprechen. Dies kann nützlich sein, um unerwünschte Zeichen oder Wörter aus einem Text zu entfernen oder um eine bestimmte Formatierung aufrechtzuerhalten. Programmierer nutzen diese Funktion, um Texte zu manipulieren und Daten zu filtern oder zu bereinigen.
+## Wie man es macht:
+Um Zeichen entsprechend einem Muster in Elixir zu löschen, nutzen wir die `Regex.replace/3` Funktion. Hier ist ein einfaches Beispiel:
 
-Wie geht es weiter?
-
-In Elixir gibt es verschiedene Möglichkeiten, um Zeichen passend zu einem Muster zu löschen. Eine Möglichkeit ist die Verwendung der String-Modul-Funktion "replace". Hier ist ein Beispiel, um alle Vokale aus einem String zu entfernen:
-
-```Elixir 
-  str = "Hallo Welt"
-  new_str = String.replace(str, ~r/[aeiou]/, "")
-  IO.puts new_str
+```Elixir
+text = "Dies ist ein Beispiel. \n Ein ziemlich einfaches Beispiel."
+neuer_text = Regex.replace(~r/\s+/, text, "")
+IO.puts neuer_text
 ```
-Das Ergebnis wäre "Hll Wlt".
-
-Eine andere Option ist die Verwendung von regulären Ausdrücken in Kombination mit der in Elixir integrierten Funktion "String.replace". Hier ist ein Beispiel, um alle Sonderzeichen aus einem String zu entfernen:
-
-```Elixir 
-  str = "H@llo W#lt"
-  new_str = String.replace(str, ~r/[^[:alnum:][:space:]]/, "")
-  IO.puts new_str
+Die Ausgabe wäre:
+```Elixir
+"DiesisteinBeispiel.EinziemlicheinfachesBeispiel."
 ```
-Das Ergebnis wäre "Hallo Welt".
+Das `~r/\s+/` ist das Muster, das alle Arten von Leerzeichen (einschließlich Zeilenumbrüche und Tabs) innerhalb des Strings erfasst und entfernt.
 
-Tiefere Einblicke
+## Tiefere Einblicke
+Historisch gesehen war das durch Muster übereinstimmende Löschen von Zeichen schon immer ein wichtiger Bestandteil von Textverarbeitungs- und Programmiersprachen, eine Funktion, die Traditionen aus Perl und Java aufgreift. 
 
-Das Konzept des Löschens von Zeichen passend zu einem Muster hat seinen Ursprung in der String-Manipulationstechnik. Es wurde erstmals in UNIX-Systemen verwendet und hat sich seitdem zu einem Standard-Workflow in der Programmierung entwickelt. In Elixir gibt es auch andere Möglichkeiten, um Zeichen passend zu einem Muster zu löschen, wie z.B. die Funktion "clean" im Modul "String". Es ist wichtig zu beachten, dass das Löschen von Zeichen passend zu einem Muster nicht nur für Texte, sondern auch für andere Datentypen wie Listen und Maps verwendet werden kann.
+In Elixir erfolgt die Implementierung dieses Feature durch den `:re` Erlang Modul, welcher auf dem PCRE (Perl Compatible Regular Expressions) aufbaut.
 
-Weitere Quellen
+Alternativ dazu kann man auch die `String.replace/3` Funktion für einfache Zeichenersetzungen verwenden, aber `Regex.replace/3` bietet durch seine Nutzung von Regulären Ausdrücken eine weitaus größere Flexibilität und Kontrolle.
 
-Elixir-Dokumentation: https://hexdocs.pm/elixir/String.html#replace-expect:2
-Reguläre Ausdrücke in Elixir: https://elixir-lang.org/getting-started/regex.html
-Erweiterte String-Manipulation in Elixir: https://devhints.io/elixir-string
+## Siehe auch
+Erlang `:re` Modul Dokumentation: http://erlang.org/doc/man/re.html
+Elixir `Regex` Modul Dokumentation: https://hexdocs.pm/elixir/Regex.html
+Elixir `String` Modul Dokumentation: https://hexdocs.pm/elixir/String.html
+PCRE Dokumentation: https://www.pcre.org/original/doc/html/index.html

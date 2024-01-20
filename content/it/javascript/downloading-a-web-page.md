@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Javascript: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perchè?
+# Scaricare una pagina web con Javascript
 
-Scaricare una pagina web è il processo di acquisizione di un file HTML da un server remoto e visualizzarlo sul proprio dispositivo locale. I programmatori spesso eseguono questa operazione per ottenere dati da un sito web o per automatizzare determinate attività, come il web scraping.
+## Che cosa & Perché?
+
+Scaricare una pagina web significa recuperare i dati di quella pagina dal server al tuo computer. Lo facciamo per visualizzare il contenuto della pagina, analizzarlo o conservarlo per utilizzi futuri.
 
 ## Come fare:
 
+Il modulo "axios" è un metodo popolare per scaricare pagine web. Puoi installarlo con `npm install axios`.
+
 ```Javascript
-// Esempio di download di una pagina web
-const fetch = require("node-fetch"); // Importa il modulo "node-fetch" 
+const axios = require('axios');
+const fs = require('fs');
 
-fetch("https://www.google.com") // Esegue una richiesta GET all'URL specificato
-  .then((response) => response.text()) // Converte la risposta in testo
-  .then((data) => console.log(data)); // Stampa il contenuto della pagina web scaricata
+axios.get('https://www.google.it')
+  .then(response => {
+    fs.writeFileSync('pagina.html', response.data);
+    console.log('Pagina scaricata con successo!');
+  })
+  .catch(error => {
+    console.error('Si è verificato un errore!', error);
+  });
 ```
 
-Output: 
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Google</title>
-  <script nonce="lNkgbQ2SYFCfcDyJhiWngg==">(function(){window.google={kEI:'...',kEXPI:'...'};
+Ecco un esempio di output:
 
-// Resto del codice HTML della pagina scaricata
+```Javascript
+Pagina scaricata con successo!
 ```
 
-## Approfondimento:
+## Approfondimento
 
-- Contesto storico: Nel passato, i programmatori scaricavano le pagine web utilizzando linguaggi di programmazione come Perl e Python. Con l'avvento di Javascript come linguaggio di scripting lato client, scaricare una pagina web è diventato più semplice e veloce.
-- Alternative: Oltre all'uso del modulo "node-fetch", esistono anche altri modi per scaricare una pagina web in Javascript, come l'utilizzo del framework "axios" o delle API del browser.
-- Dettagli di implementazione: Il modulo "node-fetch" è basato sulla specifica Fetch API, che fornisce un'interfaccia per recuperare risorse da un server remoto utilizzando promesse. È possibile specificare diverse opzioni nella richiesta, come i parametri della richiesta e gli header.
+Historicamente, si usavano le librerie come `http` o `https` built-in di Node.js per scaricare pagine web, ma queste librerie sono verbose e complesse da utilizzare.
 
-## Vedi anche:
+Un'alternativa è usare `fetch`, che è uno standard moderno e più semplice rispetto a `axios`, ma richiede polifilling su Node.js.
 
-- Documentazione del modulo "node-fetch": https://www.npmjs.com/package/node-fetch
-- Fetch API su MDN: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-- Documentazione di axios: https://axios-http.com/
+In termini di implementazione, quando scarichi una pagina web, stai effettivamente inviando una richiesta HTTP GET al server che ospita quella pagina. Il server risponde con i dati della pagina, che il tuo codice può poi utilizzare.
+
+## Vedi anche
+
+- Documentazione axios: <https://github.com/axios/axios>
+- Documentazione fetch: <https://developer.mozilla.org/it/docs/Web/API/Fetch_API>
+- Documentazione HTTP di Node.js: <https://nodejs.org/api/http.html>

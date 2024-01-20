@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "C++ recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "C++"
 category:             "C++"
@@ -10,50 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Sending HTTP Requests in C++
 
-Sending an HTTP request is the process of making a request to a web server using the HTTP protocol. Programmers do this to retrieve data or information from a server, such as accessing a web page or retrieving data from an API.
+## What & Why?
+Sending an HTTP request involves a client (your application) asking a server for specific resources. Programmers do this to communicate with web servers, APIs, and other web-based services.
 
 ## How to:
-Sending an HTTP request in C++ can be done using the built-in library called "curl". Here's a simple example of sending a GET request:
+C++ doesn't offer in-built support for HTTP requests, but we can use popular libraries, like cURL or Boost Beast. Let's proceed with cURL for simplicity. First, install the library if you haven't yet.
+
+```C++
+sudo apt-get install libcurl4-openssl-dev
+```
+
+Here's a basic example of how to send an HTTP GET request:
 
 ```C++
 #include <iostream>
-#include <curl/curl.h> // include the curl library
+#include <curl/curl.h>
+
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp) {
+    userp->append((char*)contents, size * nmemb);
+    return size * nmemb;
+}
 
 int main()
 {
-    // initialize a CURL object
-    CURL *curl;
-    // set the URL to send the request to
+    CURL* curl;
+    CURLcode res;
+    std::string readBuffer;
+
     curl = curl_easy_init();
-    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
-    // send the request and print the response
-    CURLcode res = curl_easy_perform(curl);
-    if (res == CURLE_OK)
-    {
-        std::cout << "Request sent successfully!";
+    if (curl) {
+      curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+      curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+      curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+      res = curl_easy_perform(curl);
+      curl_easy_cleanup(curl);
+
+      std::cout << readBuffer << std::endl;  
     }
-    else
-    {
-        std::cout << "Error sending request: " << curl_easy_strerror(res);
-    }
-    // clean up the CURL object
-    curl_easy_cleanup(curl);
     return 0;
 }
 ```
 
-This example uses the "curl_easy_init" function to create a CURL object, sets the URL using the "curl_easy_setopt" function, and then uses "curl_easy_perform" to send the request. This function also returns a CURLcode, which we can check to see if the request was successful or not. Finally, we clean up the CURL object using "curl_easy_cleanup".
+Output will be HTML from example.com.
 
-## Deep Dive:
-In the early days of the internet, the protocol used for retrieving data from a server was called "FTP" (File Transfer Protocol). However, as the need for more sophisticated and complex web applications arose, HTTP (HyperText Transfer Protocol) was developed to allow for more flexible communication between clients and servers. Today, HTTP is the most widely used protocol for retrieving data from web servers.
+## Deep Dive
+C++, unlike Python or JavaScript, doesn't have built-in HTTP request functions. Early C++ use was low-level system tasks, not web-based work.
 
-An alternative to using the "curl" library for sending HTTP requests would be to create a TCP connection and manually send the request using sockets. However, this would require more code and would not be as user-friendly as using a library like "curl". Additionally, there are other HTTP libraries available for C++ such as "libhttp" and "cpp-httplib".
+Alternatives to cURL are Boost Beast and POCO, offering more comprehensive libraries.
 
-Sending an HTTP request involves creating a connection, sending the request, and receiving the response. The request typically contains a method (such as GET or POST), a URL, and optional request headers and body. The response will also have headers, status code, and a body.
+cURL works by setting up an easy handle, attaching options (url, method, etc.), and executing. It's critical to cleanup afterwards, releasing system resources.
 
-## See Also:
-- [libcurl docs](https://curl.haxx.se/libcurl/)
-- [cpp-httplib](https://github.com/yhirose/cpp-httplib)
-- [libhttp](https://github.com/brainboxdotcc/libhttp)
+## See Also
+[cURL library](https://curl.haxx.se/libcurl/)  
+[Boost Beast](https://www.boost.org/doc/libs/1_75_0/libs/beast/doc/html/index.html)  
+[POCO](https://pocoproject.org/)

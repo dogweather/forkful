@@ -1,7 +1,7 @@
 ---
-title:                "Löschen von Zeichen mit einem Muster übereinstimmen"
-html_title:           "Elm: Löschen von Zeichen mit einem Muster übereinstimmen"
-simple_title:         "Löschen von Zeichen mit einem Muster übereinstimmen"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -12,17 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist ein häufiges Problem für Programmierer. Es bezieht sich auf das Entfernen von Zeichen aus einer Zeichenkette, die einem bestimmten Muster entsprechen. Das kann hilfreich sein, wenn man beispielsweise bestimmte Symbole oder Zeichen aus einer Textdatei entfernen möchte.
+Musterlöschung ist das Löschen von Zeichen, die einer bestimmten Regel oder einem Muster entsprechen. Programmierer nutzen diese Technik, um unnötige oder störende Daten aus Texten zu entfernen.
 
-Programmierer nutzen das Löschen von Zeichen, die einem Muster entsprechen, um Daten zu bereinigen oder Texte für die Weiterverarbeitung vorzubereiten. In manchen Fällen kann es auch verwendet werden, um Sicherheitslücken in Programmen zu schließen.
+## So geht's:
 
-## Wie geht's?
-
-Das Löschen von Zeichen, die einem Muster entsprechen, wird in Elm durch die Funktion `String.filter` ermöglicht. Diese Funktion nimmt zwei Argumente entgegen: ein Prädikat und eine Zeichenkette. Das Prädikat gibt an, welche Zeichen entfernt werden sollen, während die Zeichenkette die zu bereinigenden Daten enthält.
-
-Ein Beispiel:
+Um Zeichen in Elm zu entfernen, die einem Muster entsprechen, verwenden wir die Funktion `String.replace`. Hier sehen Sie, wie Sie alle Vorkommen des Buchstabens 'a' aus einer Zeichenkette entfernen:
 
 ```Elm
 import String
 
-String.filter (\char -> char /= 'a') "example string"
+removeCharacter : String -> String
+removeCharacter s = 
+    String.replace "a" "" s
+
+main = 
+    removeCharacter "Banana" |> Debug.toString
+    -- Output: "Bnn"
+```
+
+## Tiefer Einblick
+
+Die Möglichkeit, Muster in einer Zeichenkette zu löschen, reicht bis in die frühesten Tage der Textverarbeitung zurück, als es wichtig war, maschinell lesbare Daten von Rauschen zu trennen. Es gibt mehrere Alternativen zum Löschen von Mustern, einschließlich regulärer Ausdrücke, die jedoch von Elm bewusst nicht unterstützt werden, um die einfache Arbeitsweise und Ausführungsgeschwindigkeit des Codes zu verbessern. Bei der Implementierung beachten Sie, dass `String.replace` in Elm jedes Vorkommnis des Musters in der Zeichenkette ersetzt.
+
+## Siehe auch
+
+- [Offizielle Elm-Dokumentation über String.replace](https://package.elm-lang.org/packages/elm/core/latest/String#replace)
+- [Elm-Diskussionsforum zur Bearbeitung von Zeichenketten](https://discourse.elm-lang.org/t/simple-string-manipulation/6478)

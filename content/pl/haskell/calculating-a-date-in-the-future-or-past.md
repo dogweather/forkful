@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Obliczanie daty w przyszłości lub przeszłości to proces, w którym programista używa bieżącej daty jako podstawy do obliczenia nowej daty, która jest położona kilka dni, miesięcy lub lat w przyszłości lub przeszłości. 
-
-Programiści często potrzebują takiej funkcjonalności, aby zbadać różne scenariusze lub przewidywać przyszłe wydarzenia w swoim kodzie.
+Obliczanie daty w przyszłości/późniejszej to proces wyznaczania konkretnego dnia, miesiąca i roku, który występuje po lub przed zadaną datą. Programiści robią to, aby przewidzieć lub zrekonstruować daty i wydarzenia w aplikacjach takich jak kalendarze, planery czy systemy zarządzania projektami.
 
 ## Jak to zrobić:
 
-```Haskell
-addDays :: Int -> Day -> Day
-subDays :: Int -> Day -> Day
+Użyjąc modułu Data.Time dostarczanego przez bibliotekę time w Haskellu (aktualna wersja), możemy łatwo obliczyć datę w przyszłości lub przeszłości. Oto przykład:
 
-addDays 10 (fromGregorian 2021 11 20) -- 30 listopada 2021
-subDays 5 (fromGregorian 2021 12 1)  -- 26 listopada 2021
+```haskell
+import Data.Time
+
+main :: IO ()
+main = do 
+    czas <- getCurrentTime
+    let dzien = utctDay czas
+    print (addDays 5 dzien) -- Dodaje 5 dni do bieżącej daty
+    print (addDays (-7) dzien) -- Odejmuje 7 dni od bieżącej daty
 ```
+Wejście programu jest aktualnym datą i godziną, a wyjście to przyszła lub przeszła data.
 
-W powyższym przykładzie używamy funkcji ```addDays``` i ```subDays``` z biblioteki standardowej ```Data.Time.Calendar``` w celu dodania lub odjęcia określonej liczby dni od danej daty. Możemy również użyć innych funkcji, takich jak ```addMonths``` lub ```addYears```, aby dodać lub odjąć miesiące lub lata od daty.
+## Deep Dive
 
-## Głębsze zagłębienie:
+Obliczanie daty w przyszłości lub przeszłości ma wiele zastosowań, nie tylko w obliczeniach, ale także w historii i prognozowaniu. Na przykład w systemach bankowych, potrzeba prognozowania dat przyszłych płatności.
 
-Obliczanie daty w przyszłości lub przeszłości jest niezbędnym elementem w wielu aplikacjach, takich jak kalendarze, systemy rezerwacji i prognozy pogody. Dlatego programiści często używają gotowych rozwiązań, takich jak biblioteka ```Data.Time.Calendar```, która dostarcza funkcji do obliczania dat.
+Alternatywą dla wbudowanej funkcji `addDays` w Haskellu jest ręczne dodawanie lub odejmowanie dni od daty. To jednak może prowadzić do błędów, jak na przykład nieuwzględnienie roku przestępnego.
 
-Alternatywnie, możemy również użyć funkcji ```addUTCTime``` z biblioteki ```Data.Time.Clock```, aby dodać lub odjąć czas od daty, co może być wygodniejsze w niektórych przypadkach.
+## Zobacz też
 
-W przypadku obliczania daty w przeszłości musimy również wziąć pod uwagę czas letni i czas standardowy, co wymaga zaawansowanej implementacji w celu uniknięcia błędów.
-
-## Zobacz także:
-
-- Dokumentacja biblioteki ```Data.Time.Calendar``` dla więcej funkcji i przykładów: https://hackage.haskell.org/package/time-1.9/docs/Data-Time-Calendar.html
-- Poradnik dotyczący dat i czasu w Haskellu: https://markkarpov.com/tutorial/datetime.html
+"Haskell/Date and Time" - podręcznik dostępny na Wikibooks: [https://en.wikibooks.org/wiki/Haskell/Date_and_Time](https://en.wikibooks.org/wiki/Haskell/Date_and_Time)
+"Dodatek do czasu" - dokumentacja funkcji `addDays` w Haskellu: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:addDays](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Calendar.html#v:addDays)

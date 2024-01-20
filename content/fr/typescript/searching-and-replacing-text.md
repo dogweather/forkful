@@ -1,6 +1,6 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "TypeScript: Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,35 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-
-La recherche et le remplacement de texte sont des tâches courantes pour les programmeurs. Cela consiste à trouver un certain mot ou motif dans un texte et à le remplacer par un autre. Les programmeurs utilisent cette technique pour effectuer des modifications rapides et massives dans leur code.
+La recherche et le remplacement de texte est une opération qui permet d'identifier et de substituer de manière spécifique du texte dans une chaîne de caractères. Les programmeurs l'utilisent pour modifier des textes, des codes, et pour manipuler des données rapidement et efficacement.
 
 ## Comment faire:
-
-Voici un exemple simple de recherche et de remplacement en TypeScript:
+Voici un exemple simple d'utilisation de la méthode replace() pour rechercher le mot 'maison' et le remplacer par 'appartement'. 
 
 ```TypeScript
-let phrase = "Bonjour le monde!";
-let nouvellePhrase = phrase.replace("Bonjour", "Salut");
-
-console.log(nouvellePhrase);
+let texte = 'Je vis dans une maison.'
+let texteModifié = texte.replace('maison', 'appartement')
+console.log(texteModifié) // output: 'Je vis dans un appartement.'
 ```
 
-Résultat:
+Pour un remplacement plus générique et complexe, nous pouvons utiliser l'expression régulière comme ceci:
 
+```TypeScript
+let texte = 'Bienvenue, Pierre et Jean.'
+let texteModifié = texte.replace(/Pierre|Jean/g, 'Claude')
+console.log(texteModifié) // output: 'Bienvenue, Claude et Claude.'
 ```
-Salut le monde!
-```
 
-Dans cet exemple, nous avons remplacé le mot "Bonjour" par "Salut" dans la variable "phrase".
+## Plongée plus profonde:
+Historiquement, la possibilité de rechercher et de remplacer du texte fait partie intégrante de l'édition de texte depuis son invention. Les éditeurs de texte classiques comme Vi et Emacs offrent ce type de fonctionnalité.
 
-## Plongée en profondeur:
+En TypeScript, il existe des alternatives à la méthode replace(). La bibliothèque Lodash, par exemple, offre une méthode appelée `_.replace()` qui peut faire le même travail.
 
-La recherche et le remplacement de texte ont une longue histoire dans le développement informatique. Avant l'utilisation de langages de programmation modernes, des outils tels que sed et awk étaient utilisés pour effectuer ces tâches. De nos jours, il existe également des alternatives telles que les expressions régulières pour des modifications plus complexes.
-
-L'implémentation de ces fonctionnalités peut varier en fonction du langage de programmation utilisé et des bibliothèques disponibles. TypeScript offre des méthodes pratiques pour effectuer des recherches et des remplacements, telles que la méthode "replace" utilisée dans l'exemple ci-dessus.
+De plus, il faut savoir que la méthode `replace()` ne change pas la chaîne de caractères originale, mais retourne une nouvelle chaîne. C'est parce que les chaînes de caractères en TypeScript sont immuables.
 
 ## Voir aussi:
+Voici quelques ressources qui pourraient vous être utiles:
 
-- Documentation officielle de TypeScript sur les chaînes de caractères: https://www.typescriptlang.org/docs/handbook/basic-types.html#string
-- Tutoriel sur les expressions régulières en TypeScript: https://www.tutorialspoint.com/typescript/typescript_regular_expressions.htm
+- Documentation officielle de TypeScript: https://www.typescriptlang.org/docs/
+- Guide Lodash: https://lodash.com/docs/
+- Documentation MDN sur les Expressions régulières: 
+  https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res

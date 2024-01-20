@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+# Calcolare una data nel futuro o nel passato in C
+**Calcolare una data nel futuro o nel passato**: un'operazione comune nelle applicazioni software che coinvolgono la gestione del tempo, come calendari, promemoria, o pianificatori. Consente ai programmatori di determinare un periodo di tempo relativo a una data specifica.
 
-Calcolare una data nel futuro o nel passato è un'operazione comune in programmazione quando è necessario gestire eventi temporali o pianificare attività. I programmatori spesso usano questa funzione per determinare scadenze, pianificare azioni ripetitive o gestire i turni di lavoro.
-
-## Come fare:
-
-Utilizzando il linguaggio di programmazione C, è possibile calcolare una data specificando una data di riferimento e un numero di giorni da aggiungere o sottrarre. Ad esempio, per ottenere la data che cade tra 30 giorni a partire da oggi, si può utilizzare la seguente sintassi:
+## Come si fa
+Per calcolare una data nel futuro o nel passato, possiamo utilizzare la funzione `mktime` e la struttura `struct tm` in C. Nota che puoi aggiungere o sottrarre giorni come desideri. Ecco un esempio:
 
 ```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-  // imposto una data di riferimento come oggi
-  time_t oggi = time(NULL);
-  // calcolo il numero di secondi in 30 giorni
-  int giorni = 30 * 24 * 60 * 60; 
-  // aggiungo i secondi alla data di riferimento
-  time_t data_nel_futuro = oggi + giorni;
-  // stampo la data nel futuro
-  printf("La data tra 30 giorni sarà %s\n", ctime(&data_nel_futuro));
-  return 0;
+int main() {
+    time_t now;
+    struct tm new_date;
+
+    time(&now);
+    new_date = *localtime(&now);
+
+    new_date.tm_mday += 5;
+    mktime(&new_date);
+
+    printf("La data tra 5 giorni sarà %s", asctime(&new_date));
+
+    return 0;
 }
 ```
 
-L'output sarà una stringa che rappresenta la data nel futuro, come ad esempio:
+In questo esempio, stiamo calcolando la data che sarà tra 5 giorni. Il risultato sarà stampato in formato: `gio   mese   giorno   ora   anno\n`
 
-```
-La data tra 30 giorni sarà Mon Oct 11 13:33:37 2021
-```
+## Approfondimento
+Le funzioni `time`, `localtime`, `mktime` e la struttura `struct tm` derivano dai primi giorni del linguaggio di programmazione C. Queste funzioni e strutture sono state la soluzione per gestire il tempo poiché UNIX, uno dei primi sistemi operativi su cui C è stato largamente utilizzato, ha iniziato a diventare popolare.
 
-## Approfondimento:
+Molte alternative sono disponibili per calcolare una data futura o passata, come l'uso di librerie di terze parti come `<date.h>` di Howard Hinnant o tecniche aritmetiche per calcolare il giorno successivo. Tuttavia, l'approccio sopra menzionato è generalmente adottato per la sua semplicità e compatibilità con il C standard.
 
-La gestione delle date nei sistemi informatici ha una lunga storia e possono esserci diverse alternative per calcolare una data nel futuro o nel passato. Alcune librerie di terze parti offrono funzionalità più avanzate e permettono di manipolare le date in modi diversi. Inoltre, è importante considerare il fuso orario e i vari formati di rappresentazione delle date in diverse lingue e nazionalità.
+## Per Saperne di Più
+Per saperne di più sul calcolo delle date future e passate e sulla gestione del tempo in generale in C, alcuni link utili includono:
 
-## Vedi anche:
-
-- [La libreria di sistema time.h](https://en.wikipedia.org/wiki/Time.h)
-- [Funzioni matematiche di base in C](https://it.wikipedia.org/wiki/stdlib.h)
-- [Alternaive a C per la gestione delle date](https://www.geeksforgeeks.org/alternatives-for-time-function-in-c-c/)
+- [The GNU C Library: Date and Time](https://www.gnu.org/software/libc/manual/html_node/Date-and-Time.html)
+- [C Programming - Date and Time, Tutorials Point](https://www.tutorialspoint.com/c_standard_library/c_function_localtime.htm)
+- [Time library functions in C++](https://www.geeksforgeeks.org/time-library-c-set-1/)

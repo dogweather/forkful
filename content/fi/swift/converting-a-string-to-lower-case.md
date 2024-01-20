@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen pienaakkosiksi"
-html_title:           "Swift: Merkkijonon muuttaminen pienaakkosiksi"
-simple_title:         "Merkkijonon muuttaminen pienaakkosiksi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,22 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
+## Mikä & Miksi?
 
-Konversio merkkijonon pienaakkosiksi on prosessi, jossa muutetaan kaikki merkit merkkijonossa pienaakkosiksi. Tätä tehdään yleensä siksi, että ohjelmassa on tarve vertailla merkkijonoja keskenään, eikä kirjainkokoerojen haluta vaikuttavan vertailun tulokseen.
+Vaihtamalla merkkijonon pikkukirjaimiksi, voimme muuttaa kaikki tekstin kirjaimet yhtenäiseksi. Tämä auttaa välttämään monenlaisia ​​sekaannuksia ohjelmoinnissa, kuten esimerkiksi identtisten merkkijonjen vertailussa.
 
-## Miten:
+## Kuinka:
+
+Swift tarjoaa suoran metodin merkkijonojen muuntamiseen pikkukirjaimiksi, nimeltään 'lowercased()'. Käytämme esimerkkiä havainnollistamaan tätä:
 
 ```Swift
-let sana = "Tervetuloa maailma"
-print(sana.lowercased())
-// tulostaa: tervetuloa maailma
+let alkuMerkkijono = "Ohjelmointi ON HaUsKAA"
+let pieniMerkkijono = alkuMerkkijono.lowercased()
+
+print(pieniMerkkijono)  // Tulostaa: "ohjelmointi on hauskaa"
 ```
+Tämä menetelmä muuntaa JOKAISEN ison kirjaimen merkkijonossa pikkukirjaimeksi.
 
-## Syväsukellus:
+## Syvemmälle:
 
-Merkkijonojen konversio pienaakkosiksi on ollut tarpeellista jo alkuaikoina, kun käyttöjärjestelmissä ei ollut tukia erilaisille kirjainkokoille. Nykyäänkin se on hyödyllistä esimerkiksi ohjelman saamiseksi palvelimella suoritettavaksi, sillä useimmat palvelimet käyttävät Linux-käyttöjärjestelmää, joka ei tue automaattisesti erilaisia kirjainkokoja. Toisena vaihtoehtona merkkijonon pienaakkosiksi muuttamiselle on käyttää `uppercased()`-metodia, joka muuttaa kaikki merkit isoiksi kirjaimiksi.
+Historiallisesti merkkijonon muuntaminen pieniksi kirjaimiksi on ollut olennainen osa ohjelmistokehitystä, mahdollistaen vertailut ja käsittelyn riippumatta alkuperäisestä kirjainkoosta.
+
+Vaihtoehtoisesti, Swift tarjoaa menetelmän 'caseInsensitiveCompare', joka mahdollistaa kirjainkoon huomiotta jättävän vertailun. Tämä ei kuitenkaan muuta merkkijonon alkuperäistä muotoa.
+
+```Swift
+let alkuMerkkijono = "Ohjelmointi"
+let vertailuMerkkijono = "oHJeLMoInTi"
+
+if alkuMerkkijono.caseInsensitiveCompare(vertailuMerkkijono) == .orderedSame {
+    print("Merkkijonot ovat samat!")
+} else {
+    print("Merkkijonot eivät ole samat!")
+}
+```
+Mutta `lowercased()`-metodia käyttämällä, saamme yhtenäisen muodon, joka helpottaa jatkokäsittelyä.
 
 ## Katso myös:
 
-Voit lukea lisää merkkijonojen käsittelystä Swiftissä [Swift official docs](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html) ja [Hacking with Swift](https://www.hackingwithswift.com/quick-start/understanding-swift/why-does-swift-have-so-many-string-types).
+- Swift-koodausoppaat: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+- Stack Overflow -keskustelut: https://stackoverflow.com/questions/25111064/swift-convert-string-to-lower-case-and-upper-case 
+- Algoritmien opas: https://www.algoexpert.io/blog/convert-string-to-lowercase-swift

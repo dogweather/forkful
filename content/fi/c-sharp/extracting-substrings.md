@@ -1,7 +1,7 @@
 ---
-title:                "Alirivien erottaminen"
-html_title:           "C#: Alirivien erottaminen"
-simple_title:         "Alirivien erottaminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,26 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Mikä on substringien erottelu ja miksi ohjelmoijat tekevät sitä? Substringien erottelu tarkoittaa merkkijonojen tietyn osan erottelua merkkijonoista. Tämä tehdään yleensä tietyn datan etsimiseksi ja käsittelemiseksi. Esimerkiksi voit erottaa sähköpostiosoitteen tietyn osan, kuten käyttäjänimen, ja käyttää sitä tietokannassa tai lähettää viestiä.
+# Leikkaa & Opettele: Kuinka otetaan alijonot irti C#-kielellä
 
-## Kuinka tehdä?
-Tässä on yksinkertainen esimerkki substringien erottelusta C# -ohjelmointikielellä:
+## Mitä & Miksi?
+Alijonojen poiminta tarkoittaa merkkijonon osan ottamista itsenäiseen käyttöön. Ohjelmoijat tekevät tätä usein käsitelläkseen tai muokatakseen osia suuremmasta tietomassasta.
+
+## Kuinka:
+C#-kielellä alijonojen poiminta on helppoa. Pieneen osaan ohjelmaa voi sisällyttää seuraavan toimintalogiikan:
 
 ```C#
-string s = "Tämä on esimerkki merkkijonosta";
-string sub = s.Substring(5, 8); //5 on aloituskohdan indeksi ja 8 on substringin pituus
-Console.WriteLine(sub); //tulostaa "on esime"
+string lauseessa = "Tervetuloa Suomeen";
+string alijono = lauseessa.Substring(0, 11);
+Console.WriteLine(alijono);
 ```
 
-Saatu tuloste riippuu päätettiin aloituskohdan ja substringin pituuden arvoista. Voit myös käyttää muita substringien erottelufunktioita, kuten `Split` tai `Regex.Match`, riippuen tarpeistasi.
+Näytölle tulostuu:
 
-## Syvemmälle
-Substringien erottelu ei ole jotain uutta, vaan se on ollut käytössä jo pitkään. Alun perin se tehtiin manuaalisesti, mutta nykyään on olemassa monia kirjastoja ja valmiita toimintoja, jotka helpottavat substringien erottelua. Voit myös käyttää muita tekniikoita, kuten regular expression, erottamaan tietynlaisia substringejä.
+```C#
+"Tervetuloa "
+```
 
-Joskus substringien erottelu voi aiheuttaa haasteita, etenkin jos merkkijonossa on monimutkaisia merkkejä tai koodaustapoja. Tässä tapauksessa kannattaa tarkistaa eri kirjastojen ja toimintojen dokumentaatio, jotta löydät parhaan ratkaisun tarpeisiisi.
+## Syvä sukellus
+Historiallisessa kontekstissa String-luokan Substring-metodi on ollut C#-kielen työkaluista käytössä varhaisesta vaiheesta lähtien, ja se on säilyttänyt paikkansa erittäin hyödyllisenä työkaluna.
+
+Vaihtoehtona Substring-metodille C#-kielellä voidaan käyttää myös juoksukykyä tai LINQ-kyselyä, mutta käytännön tehokkuuden kannalta Substring on useimmiten parempi vaihtoehto.
+
+Substring-metodin toteutuksen osalta, se ottaa kaksi parametria: aloitusindeksin (0-pohjainen) ja pituuden. Se palauttaa uuden merkkijonon, joka alkaa aloitusindeksistä ja jatkuu määritellyn pituuden verran.
 
 ## Katso myös
-- [Substringien erottelu C# -dokumentaatiossa] (https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-- [Regex.Match-funktio C# -dokumentaatiossa] (https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.match?view=net-5.0)
-- [Regular expressions 101 -sivusto] (https://regex101.com/), joka tarjoaa interaktiivisen tavan harjoitella regular expressionien käyttöä
+- Microsoftin ohjelmointioppaassa: [Ohjeita merkkijonojen käsittelyyn](https://docs.microsoft.com/fi-fi/dotnet/csharp/programming-guide/strings/) 
+- Stack Overflow: [Miten voin leikata merkkijonon C#-kielellä?](https://stackoverflow.com/questions/308629/how-to-use-c-sharp-substring-c-sharp-net-substring-syntax)

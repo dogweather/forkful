@@ -1,7 +1,7 @@
 ---
-title:                "एक पाठ फ़ाइल को पढ़ना"
-html_title:           "Java: एक पाठ फ़ाइल को पढ़ना"
-simple_title:         "एक पाठ फ़ाइल को पढ़ना"
+title:                "एक पाठ फ़ाइल पढ़ना"
+html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
+simple_title:         "एक पाठ फ़ाइल पढ़ना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,51 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-पाठ फ़ाइल पढ़ना क्या होता है और क्यों कोडर्स इसे करते हैं? पाठ फ़ाइल एक साधारण टेक्स्ट फाइल होती है जिसमें पाठ के अलावा कोई अन्य जानकारी नहीं होती है। कोडर्स इन फाइलों को पढ़कर और उसमें दिए गए डाटा को प्रोग्राम में उपयोग करके अपने कोड को और सुधार सकते हैं।
+## क्या और क्यों (What & Why?)
+एक टेक्स्ट फ़ाइल को पढ़ना मतलब उसकी सामग्री को कम्प्यूटर प्रोग्राम में लोड करना है। अक्सर, प्रोग्रामर्स इसे करते हैं ताकि वे इनपुट डाटा को प्राप्त कर सकें एवं इसे प्रसंस्करण कर सकें। 
 
-## कैसे?
+## कैसे (How to):
+जावा में, हम BufferedReader का उपयोग करके टेक्स्ट फ़ाइल पढ़ सकते हैं| निम्नलिखित उदाहरण में यह दिखाया गया है:
+
 ```Java
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.*;
 
-public class TextFileReader {
-
-  public static void main(String[] args) {
-    // फ़ाइल नाम और उसका पथ दर्ज करें
-    File file = new File("/Users/MyDocuments/example.txt");
-
-    try {
-      // FileReader का इस्तेमाल करके फाइल खोलें
-      Scanner sc = new Scanner(file);
-
-      // उपलब्ध टेक्स्ट फ़ाइल पढ़ें
-      while (sc.hasNextLine()) {
-        String data = sc.nextLine(); // प्रत्येक लाइन को स्ट्रिंग में रखने के लिए
-        System.out.println(data); // लाइन प्रिंट करें
-      }
-      // स्कैनर बंद करें
-      sc.close();
-    } catch (FileNotFoundException e) {
-      System.out.println("फ़ाइल नहीं मिली!");
-      e.printStackTrace();
+public class ReadFile {
+    public static void main(String[] args) {
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader("test.txt"));
+            String line = null;
+            while ((line = reader.readLine()) != null) {
+                System.out.println(line);
+            }
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
-  }
 }
 ```
+यदि test.txt में "नमस्ते दुनिया" होता, तो आउटपुट होता:
 
-उपरोक्त कोड रन करने पर निम्नलिखित प्रिंटआउट होगा:
+```Shell
+नमस्ते दुनिया
 ```
-Hello World!
-This is a sample text file.
-```
 
-## गहराई में
-इतिहास के संदर्भ में, पाठ फ़ाइल पढ़ने की तकनीक हाल के वर्षों में काफी बदल चुकी है। पहले, फ़ाइलें कुछ व्यक्तिगत डेटा को स्टोर करने के लिए उपयोग की जाती थीं। परंतु आजकल कई बड़े फ़ाइल प्रोग्राम्स डेटा को प्रोसेस करने के लिए तीसरे पक्ष को स्टोर करने के लिए पाठ फ़ाइलों का उपयोग करते हैं। पाठ फ़ाइलें बहुत सरल होती हैं और इसलिए कोडर्स को अपने प्रोग्राम को पढ़ना और प्रोसेस करना आसान होता है।
+## और अधिक जानकारी (Deep Dive)
+तो, फ़ाइल रीडिंग का इतिहास अपार है, क्योंकि यह सॉफ्टवेयर डेवलपमेंट का हिस्सा बनी हुई है |
+वैकल्पिक रूप से, आप Scanner क्लास का उपयोग करके भी फ़ाइल पढ़ सकते हैं, जो कि एक शक्तिशाली और विस्तृत विकल्प है। 
+"BufferedReader" आसानी से प्रबंधित करने वाली बड़ी फ़ाइलों के लिए प्रभावी तरीका है, क्योंकि यह एक पूरी लाइन को एक समय में पढ़ता है। 
 
-यदि आपको एक धीमी उपकरणा चाहिए हो या अधिक कंप्लेक्स तकनीकों का उपयोग करना हो, तो आप अलग-अलग फ़ाइल पढ़ने की तकनीकों को अपने कोड में इम्प्लीमेंट कर सकते हैं। अपनी जरूरतों के अनुसार आप टेक्स्ट फाइल को स्ट्रिंग के रूप में पढ़ सकते हैं या अलग-अलग डेटा टाइप्स की समीकरण कर सकते हैं।
+## इससे भी देखें (See Also)
+जवा द्वारा फ़ाइल पढ़ने तथा लिखने के बारे में और विस्तृत जानकारी के लिए, नीचे दिए गए स्रोतों पर विचार करें:
 
-## देखें भी
-- [जावा रीडिंग ए टेक्स्ट फाइल (हिंदी)](https://www.w3schools.com/java/java_files_read.asp)
-- [java.io.FileReader क्लास (हिंदी)](https://docs.oracle.com/javase/8/docs/api/java/io/FileReader.html)
+जवापोइंट (Javapoint): https://www.javapoint.com/java-file-io
+
+टुटोरिअल्स प्वाइंट (Tutorials Point): https://www.tutorialspoint.com/java/java_files_io.htm
+
+गीक्स फॉर गीक्स (Geeks for Geeks): https://www.geeksforgeeks.org/java-io-file-class-java/

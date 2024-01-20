@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Elixir: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,46 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+#  Parsing HTML con Elixir  
 
-La lectura y análisis de HTML es un proceso importante para los programadores que desarrollan aplicaciones web. Esto implica tomar un código HTML y convertirlo en una estructura de datos que pueda ser procesada por una aplicación. La razón por la que los programadores lo hacen es para poder extraer información específica de un sitio web o para manipular el contenido de una manera determinada.
+
+## ¿Qué y Por qué?
+
+El Análisis (parsing) de HTML implica interpretar una string de HTML y trabajarla para su manipulación y extracción de datos. Los programadores lo hacen para consumir contenido web programáticamente y automatizar tareas en línea.
 
 ## Cómo hacerlo:
 
-La librería de Elixir `Floki` proporciona una manera simple y poderosa de analizar HTML. Primero, instalamos la librería en nuestro proyecto y luego la importamos en nuestro módulo:
+En Elixir, el paquete Floki es una excelente opción para analizar HTML. Primero, instalemos la dependencia Floki agregándola en ```mix.exs```.
 
 ```Elixir
 defp deps do
-  [{:floki, "~> 0.26"}]
+  [
+    {:floki, "~> 0.30.0"}
+  ]
 end
 ```
 
-```Elixir
-import Floki
-```
+No olvidemos ejecutar ```mix deps.get``` para instalar.
 
-A continuación, podemos usar la función `html_to_iodata/1` para convertir el código HTML en una estructura de datos que podemos manipular:
+Ahora, usemos Floki para analizar un simple documento HTML.
 
 ```Elixir
-html = "<h1>Hello World</h1>"
-parsed = html |> Floki.parse |> Floki.html_to_iodata
-IO.puts(inspect(parsed))
+defmodule HtmlParser do
+  def parse do
+    html_string = ~s(<div><p>¡Hola, Mundo!</p></div>)
+    parsed_html = Floki.parse_document(html_string)
+    IO.inspect parsed_html
+  end
+end
 ```
 
-Esto nos dará el siguiente resultado:
+Ejecuta la función ```parse``` y obtendrás una salida de la estructura de árbol almacenada como una tupla en Elixir.
 
-```Elixir
-{:html, [], [{:h1, [], ["Hello World"]}]}
-```
+## Inmersión Profunda
 
-Ahora podemos acceder a la información que necesitemos y hacer cualquier manipulación que deseemos en la estructura de datos.
+Históricamente, el análisis de HTML ha sido un desafío en cualquier lenguaje de programación debido a la naturaleza flexible del HTML, que es más una característica que un error. Así se hizo con la intención de que los navegadores pudieran interpretar HTML incluso si los desarrolladores cometieran errores.
 
-## Profundizando:
+Existen alternativas a Floki en Elixir como ```Meeseeks``` y ```Sweet_xml```, aunque Floki tiende a ser la opción popular dada su facilidad de uso y rendimiento.
 
-La lectura y análisis de HTML ha sido una práctica común en el desarrollo web desde los inicios de la web. Antes de herramientas como `Floki`, los programadores tenían que escribir su propio código para manipular el HTML en bruto. Aunque todavía existen otras opciones para analizar HTML como `mechanize` o `hpricot`, `Floki` se destaca por su uso de patrones de búsqueda y su integración con el lenguaje funcional de Elixir.
+Floki implementa un proceso de dos pasos en el análisis de HTML: primero, utiliza un analizador llamado Moebius para desglosar la string de HTML en tokens. Luego, estos tokens se envían a un proceso de 'árbol de construcción'.
 
-## Vea también:
+## Ver También
 
-- Página de [Elixir](https://elixir-lang.org/) para obtener más información sobre el lenguaje de programación.
-- [Documentación de Floki](https://hexdocs.pm/floki/Floki.html) para una referencia detallada de la librería.
-- [Elixir School](https://elixirschool.com/en/) para aprender más sobre Elixir y otros conceptos de programación funcional.
+Aquí hay algunos enlaces a fuentes relacionadas que pueden ser de interés:
+
+[Floki en Hex](https://hex.pm/packages/floki)
+
+[Documentación de Floki](https://hexdocs.pm/floki)
+
+[Artículo comparativo: Floki vs Meeseeks](https://medium.com/@kenmazaika/elixir-html-parsing-with-floki-vs-meeseeks-27f67d22b17d)
+
+¡Vamos a programar!

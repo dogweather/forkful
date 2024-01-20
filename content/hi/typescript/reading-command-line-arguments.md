@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
-html_title:           "TypeScript: कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर लेख: कमांड लाइन आर्ग्यूमेंट्स पढ़ना"
+title:                "कमांड लाइन तर्कों को पढ़ना"
+html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
+simple_title:         "कमांड लाइन तर्कों को पढ़ना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,21 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## क्या और क्यों?"
-कॉमांड लाइन आर्ग्यूमेंट पढ़ना क्या है, और प्रोग्रामर्स यह क्यों करते हैं? कॉमांड लाइन आर्ग्यूमेंट पढ़ना एक अहम टैस्क है जो किसी भी टाइपस्क्रिप्ट प्रोग्राम को चलाने से पहले किया जाता है। यह उन आर्ग्यूमेंट्स को रूपांतरित करता है जो यूजर कमांड लाइन से देता है और उन्हें प्रोग्राम में उपयोग किया जाता है। 
+## क्या और क्यों? 
 
-"## कैसे करें:"
-```TypeScript 
-const args: string[] = process.argv;
-console.log(`यूजर द्वारा दिए गए आर्ग्यूमेंट्स: ${args}`);
+Command line arguments क्या होते हैं? ये कुछ परिवर्तनशील मान होते हैं जिन्हे हम एक script को run करते समय पास कर सकते हैं। प्रोग्रामर्स इसे क्यों करते हैं? प्राथमिकता का सम्पादन, प्रवेशि डेटा को customize करने के लिए और अन्य टॉस्क्स को अनुकूलित करने के लिए। 
+
+## कैसे करें:
+
+```TypeScript
+// index.ts
+let myArgs: string[] = process.argv.slice(2);
+console.log('myArgs: ', myArgs);
+```
+उपरोक्त कोड को run करने पर, यदि आपके उस कोड के command line पर `node index.js arg1 arg2 arg3` इत्यादि input देते हैं, तो आपको निम्नलिखित output मिलेगा:
+
+```Shell
+myArgs:  [ 'arg1', 'arg2', 'arg3' ]
 ```
 
-यह कोड `process.argv` को युक्ति क्षेत्र में आर्ग्यूमेंट्स के जांच के लिए इस्तेमाल करता है और अपने आर्ग्यूमेंट्स को एक एरे में संग्रहीत करता है। हम उसे अपनी कन्सोल में प्रिंट करते हैं।
+## Deep Dive:
 
-## डीप डाइव:
-कॉमांड लाइन आर्ग्यूमेंट पढ़ने का इतिहास बहुत पुराना है। यह कंप्यूटर प्रोग्रामिंग के शुरुआती दौर से ही मौजूद है। क्योंकि यूजर को संचित डेटा को प्रोग्राम में भेजने के लिए इस्तेमाल किया जाता है। अगर आपको किसी अन्य भाषा में आर्ग्यूमेंट पढ़ना नहीं आता है, तो आप टाइपस्क्रिप्ट में `process.argv` के साथ संबंधित लाइब्रेरी या पैकेज का उपयोग कर सकते हैं। इसके अलावा, यदि आपको बात समझने में कोई दिक्कत हो रही है, तो आप निम्नलिखित स्रोतों को देख सकते हैं:
+हमेशा से ही प्रोग्रामर्स ने shell script और अन्य text-based programs में command line arguments का उपयोग किया है। यह ट्रेडिशनल तरीका है किसी script को बाहरी inputs प्रदान करने का। 
 
-"## देखें:"
-- [डेनो कमांड लाइन आर्ग्यूमेंट पढ़ने के बारे में अधिक जानकारी](https://dinacconet.com/blog/reading-command-line-arguments-using-deno/)
-- [जावास्क्रिप्ट कमांड लाइन आर्ग्यूमेंट पढ़ने के बारे में विस्तृत गाइड](https://www.dashingd3js.com/command-line-arguments)
-- [नोड जेएस कमांड लाइन आर्ग्यूमेंट पढ़ने का विस्तारित ट्यूटोरियल](https://stackabuse.com/command-line-arguments-in-node-js/)
+कुछ स्थानों पर आप optargs नामक library का उपयोग करके जटिल command line arguments के साथ काम कर सकते हैं। 
+
+TypeScript में, `process.argv` array का उपयोग करके command line arguments पढ़ें। "process" एक Global object है जो Node.js environment के बारे में जानकारी प्रदान करता है, और `argv` एक array है जो command line आर्ग्युमेंट्स को माल्टी प्लैटफार्म तरीके से सहेजता है। 
+
+## अधिक देखें:
+
+1. [Node.js documentation for Command Line Options](https://nodejs.org/api/cli.html) 
+2. [Stack Overflow on Parsing Command Line Arguments](https://stackoverflow.com/questions/4351521/how-do-i-pass-command-line-arguments) 
+3. [Understanding Process in Node.js](https://nodejs.org/api/process.html)
+
+ध्यान दें अगर आपको और विस्तृत साहित्य की आवश्यकता है, तो आप अधिक स्रोतों का अन्वेषण कर सकते हैं।

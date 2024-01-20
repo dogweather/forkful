@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Elixir recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# String Interpolation in Elixir: A Quick Guide
+
 ## What & Why?
 
-Interpolating a string in Elixir simply means inserting data into a string. Instead of manually concatenating strings and variables, this method allows for easier and cleaner string manipulation. It is a common practice among programmers to make their code more readable and maintainable.
+String interpolation is a process where placeholders in a string are replaced by the values of variables. Programmers use it to weave variable values into strings in a clean, easy-to-read manner.
 
-## How to:
+## How To:
 
-To interpolate a string in Elixir, use the `#{...}` syntax within a double-quoted string. The expression within the brackets will be evaluated and the result will be inserted into the string. Let's look at an example:
-
-```Elixir
-name = "John"
-age = 28
-"Hello, my name is #{name} and I am #{age} years old."
-```
-
-The output would be: `Hello, my name is John and I am 28 years old.`
-
-You can also use interpolation with function calls, as shown below:
+In Elixir, string interpolation is accomplished using `#{}` inside a string (which Elixir calls a `binary`). Here's a brief example:
 
 ```Elixir
-"Today is #{Date.utc_today()}."
+name = "Jane"
+IO.puts "Hello, #{name}!"  
+```
+The output will be:
+
+```
+Hello, Jane!
 ```
 
-Output: `Today is 2019-11-14`.
+As you can see, the `#{}` acts as a placeholder for the value of the `name` variable.
 
 ## Deep Dive
 
-Interpolating strings is a feature that originated from the Ruby programming language, which inspired the creators of Elixir. This helpful feature also exists in other popular languages such as JavaScript and Python.
+String interpolation in Elixir (and Erlang, the language Elixir is built upon) has its roots in so-called "formatted output functions" of languages like C.
 
-An alternative to interpolation in Elixir is the `<>` concatenation operator. It works similarly but can become cumbersome for longer strings and multiple variables.
+But unlike C, Elixir's string interpolation is more flexible and expressive. You can use it with any data type—not just strings—and you can put arbitrary Elixir code inside the `#{}` sequence.
 
-Internally, Elixir makes use of the `String.Chars` protocol to convert any data type into a string, making it possible to interpolate any type of data.
+Instead of string interpolation, you could use concatenation (`<>`) to stitch together strings and variable values. However, for long strings with many variables, interpolation is often more readable.
+
+Under the hood, Elixir's string interpolation works by converting the entire string to be interpolated into a list of smaller strings and variable values. It then joins everything together into the final interpolated string.
 
 ## See Also
 
-To learn more about string interpolation in Elixir, check out the [official documentation](https://hexdocs.pm/elixir/String.html#interpolation) and [ElixirSchool](https://elixirschool.com/en/lessons/basics/string-interpolation/). You can also explore other useful features of Elixir such as pattern matching and concurrency. Happy coding!
+You can go through these resources for a much deeper understanding:
+
+1. [Elixir Getting Started](https://elixir-lang.org/getting-started/io-and-the-file-system.html#iodots)
+2. [Elixir School](https://elixirschool.com/en/lessons/basics/strings/)
+3. [Stack Overflow: What is String Interpolation in Elixir?](https://stackoverflow.com/questions/48592674/what-is-string-interpolation-in-elixir)

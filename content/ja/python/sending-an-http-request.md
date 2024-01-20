@@ -1,7 +1,7 @@
 ---
-title:                "「HTTPリクエストの送信」"
-html_title:           "Python: 「HTTPリクエストの送信」"
-simple_title:         "「HTTPリクエストの送信」"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をし、なぜ？
-HTTPリクエストを送ることは、わかりやすく言えばウェブサーバーに「何か」を言ってそのサーバーが「何か」を返してくれるプロセスです。プログラマーがHTTPリクエストを送る理由はさまざまですが、例えばウェブアプリケーションでデータを取得したり、外部のAPIと通信したりするために使います。
+## 何となぜ? - What & Why?
 
-## 方法：
-Pythonのリクエストライブラリを使ってHTTPリクエストを送る方法はとても簡単です。例えば、下記のコードを使うことでウェブサイトからHTMLコンテンツを取得することができます。
+HTTPリクエストの送信は、インターネット上に存在するリソースへの要求を構築し、送信するプロセスです。プログラマーがこれを行う主要な理由は、ウェブページやAPIからデータを取得または送信するためです。
 
+## どうやって: - How to:
 
-```Python
+PythonでHTTPリクエストを送信する基本的な方法を示します。ここでは、`requests`ライブラリを使用します。
+
+```Python 
 import requests
 
-r = requests.get('https://example.com')
-print(r.text) # ウェブサイトのコンテンツを表示
+response = requests.get('http://example.com')
+print(response.status_code)
+print(response.text)
 ```
 
-このように、```requests```ライブラリの```get```関数を使うことで、指定したURLからGETリクエストを送り、その結果を取得することができます。また、POSTやPUTなどの異なるタイプのリクエストも同じように送ることができます。
+上記のスクリプトを実行すると、次のような出力が得られます。
 
-## 詳細を掘り下げる：
-HTTPリクエストは、1990年代の初めにWorld Wide Webの成立に伴い開発されました。それ以前のプロトコルでは、情報の交換は「一方向」でしたが、HTTPは「双方向」の通信を可能にしました。代替手段としては、telnetやFTPなどがありますが、それらは一般的にはより複雑で、セキュリティの問題もあります。
+```Python 
+200
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
+```
+'requests.get'関数はHTTP GETリクエストを送信します。`status_code`はHTTPステータスコードを、`text`はレスポンスの本文を返します。
 
-HTTPリクエストの実装に関して、Pythonの```requests```ライブラリ以外にも様々な選択肢があります。例えば、```urllib```や```http.client```モジュールなどがありますが、それらはより低レベルのインターフェースを提供しています。
+## ディープダイブ - Deep Dive
 
-## 関連情報：
-- [HTTPリクエストとは？初心者向けに分かりやすく解説](https://www.sejuku.net/blog/79896)
-- [PythonリクエストライブラリでHTTPリクエストの送信方法を学ぶ](https://www.sejuku.net/blog/122053)
+HTTPリクエストは、HTTP（Hypertext Transfer Protocol）の一部であり、1991年のWebの誕生とともに導入されました。Pythonの`requests`ライブラリは、HTTP通信を行うための便利な方法を提供しますが、他のライブラリ、例えば`http.client`（Pythonの標準ライブラリ）や`httplib2`、`treq`などもあります。
+
+内部的には、`requests`が行うことは、TCP/IP接続を開き、HTTPリクエストを構築し、そのリクエストを送信し、サーバからのレスポンスを待つ、という事です。
+
+## 参照リンク - See Also
+
+以下のリンクでは、関連する情報をさらに詳しく学ぶことができます。
+
+- [Python の requests 公式ドキュメンテーション](http://docs.python-requests.org/en/latest/)
+- [HTTP についての MDN ガイド](https://developer.mozilla.org/ja/docs/Web/HTTP)
+- [Python標準ライブラリ: http.client](https://docs.python.org/3/library/http.client.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten lukujen luominen"
-html_title:           "Elixir: Sattumanvaraisten lukujen luominen"
-simple_title:         "Sattumanvaraisten lukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Satunnaislukujen generoiminen on prosessi, jossa tietokone luo numeroita sattumanvaraisesti. Tämä on tärkeä osa ohjelmointia monella eri tavalla - se voi olla hyödyllistä esimerkiksi arpajaisten tai pelien luomisessa tai testidatan tuottamisessa.
+## Mikä & Miksi?
+
+Satunnaislukujen luominen on prosessi, jossa luodaan luku tai numeroryhmä, jolla ei ole mitään ennalta määrättyä järjestystä tai mallia. Ohjelmoijat käyttävät satunnaislukuja monissa tilanteissa, kuten simulointien, pelien jne. tekemisessä, jossa tarvitaan odottamattomia tuloksia.
 
 ## Miten:
-Esimerkkejä ohjelmoinnista sekä näytöskuvia:
-```
-Elixir Enum.shuffle([1, 2, 3]) # => [2, 3, 1]
+
+Voit generoida satunnaislukuja seuraavasti Elixirissä:
+
+```elixir
+random_number = :rand.uniform(10)
+IO.inspect(random_number)
 ```
 
-```
-Elixir :random.uniform() # => 0.47548163296987905
+Tämä koodi tuottaa satunnaisen kokonaisluvun väliltä 1 ja 10.
+
+## Syvä sukellus:
+
+Historiallisesti tietokoneet ovat aina tuottaneet pseudosatunnaislukuja, joita ei voida ennustaa. Itse asiassa tietokoneet eivät koskaan todella luo satunnaisia lukuja, mutta lukuja, jotka näyttävät tarpeeksi satunnaisilta, jotta niitä voida käyttää.
+
+Elixir käyttää Erlangin :rand-moduulia satunnaisliukujen luomiseksi. Se on nopea ja alkaa tuottaa lukuja heti, kun se on käynnistetty ilman tarvittavaa erityistä alustusta.
+
+Vaihtoehtoisesti, jos tarvitset tiukempaa satunnaisuutta, voit myös käyttää :crypto.strong_rand_bytes -toimintoa. Muista kuitenkin, että tämä käyttää enemmän laskentatehoa.
+
+```elixir
+random_bytes = :crypto.strong_rand_bytes(4)
+:binary.decode_unsigned(random_bytes)
 ```
 
-```
-Elixir Math.pow(2,3) # => 8
-```
-
-## Syväsukellus:
-Satunnaislukujen generoiminen on ollut tärkeä osa tietokoneiden historiaa jo pitkään, ja siihen liittyy monia mielenkiintoisia algoritmeja ja tekniikoita. Toimintaympäristöjen lisäksi on myös muita tapoja generoida satunnaislukuja - esimerkiksi käyttämällä ulkoisia laitteita, kuten hiirtä tai satelliittisignaaleja.
+Tässä tapauksessa koodi luo satunnaisen 4 tavun pituisen arvon ja muuntaa sen kokonaisluvuksi.
 
 ## Katso myös:
-- [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/Kernel.html#random-number-generation)
-- [Satunnaislukujen generoiminen pelien koodauksessa](https://www.gamasutra.com/blogs/HermanTulleken/20161014/282737/Random_number_generators_in_game_design.php)
-- [Random data generation with Elixir](https://pragmaticstudio.com/tutorials/random-data-generation-with-elixir)
+
+1. Virallinen Elixir-dokumentointi: https://hexdocs.pm/elixir/Kernel.html#rand/0
+2. Erlangin :rand:n dokumentointi: https://erlang.org/doc/man/rand.html
+3. Erlangin :crypto:n dokumentointi: https://erlang.org/doc/man/crypto.html

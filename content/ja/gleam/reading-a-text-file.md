@@ -1,6 +1,6 @@
 ---
 title:                "テキストファイルの読み込み"
-html_title:           "Gleam: テキストファイルの読み込み"
+html_title:           "Bash: テキストファイルの読み込み"
 simple_title:         "テキストファイルの読み込み"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
+# Gleamでテキストファイルの読み込み: コードリーディーガイド
 
-テキストファイルを読み込むとは、プログラマーがコンピューターに書かれたテキストを読み取ることです。プログラマーは、テキストファイルを読むことで、データを取得し、処理して、プログラムをより有用にすることができます。
+## なんで＆なぜ？
+テキストファイルの読み込みとは、コンピュータに格納されたテキスト情報をコードで取得することを指します。これによって、プログラマーはさまざまな情報を操作し、分析することができます。
 
-## 方法：
+## 使い方
+Gleamでは、テキストファイルの読み込みは非常に短い行で行うことができます。
 
-Gleamを使用してテキストファイルを読み込むには、まずファイルを開く必要があります。次に、```read_file```という関数を使用して、ファイルを読み込みます。この関数は、ファイル名を引数として受け取り、ファイルを開いて、コンテンツを返します。
+```Gleam
+import gleam/otp/process
+import gleam/otp/mailbox
+import gleam/io
 
-Gleamコードの例：
+fn read_file(file_path: String) -> Result(String, Nil) {
+  let mailbox = mailbox.new()
+  process.start_link(
+    fn() {
+      let result = io.file.read_to_string(file_path)
+      mailbox.send(result)
+    },
+  )
+  mailbox.receive()
+}
+```
+ファイルパスを指定して関数を呼び出すと、以下のような出力が得られます。
 
-```gleam
-let file = File.open("example.txt")
-let content = read_file(file)
-print(content)
+```Gleam
+let result = read_file("path_to_file.txt")
+assert Ok(file_contents) = result
+io.println(file_contents)
 ```
 
-出力：
+## ディープダイブ
+テキストファイルの読み込みは、プログラミングの基本的なタスクで、歴史的にはファイルシステムが発明された時から存在します。Gleamでは、Erlang/OTP のプロセスとメールボックスを使用して、ファイルの読み込みを並行して実行することができます。これは、大量のファイルを読み込む際にパフォーマンスを向上させます。ただし、ファイルが存在しない場合や読み込みに失敗した場合は、エラーを返すようにします。
 
-```
-これは例です
-```
+他の言語では、異なるライブラリや機能を使って同じタスクを行います。例えば、Pythonなら`open()`関数、Javaなら`Scanner`クラスや`FileReader`クラスを利用します。Gleamの場合，最も顕著な違いは，並行プログラミングをファーストクラスの機能としてサポートしていることです。
 
-## 奥深いところ：
-
-テキストファイルを読み込む方法は、プログラミングにおいて非常に重要です。長年にわたって、プログラミング言語やアプリケーションは、テキストファイルの処理においてさまざまな改善を行ってきました。
-
-テキストファイルを読み込む方法の代替手段として、データベースを使用することもできます。ただし、データベースは複雑であり、小さなデータ処理には適していません。
-
-テキストファイルを読み込む方法の実装詳細について知りたい場合は、Gleamのドキュメンテーションを参照してください。
-
-## 関連リンク：
-
-- Gleamドキュメンテーション: https://gleam.run/
-- テキストファイルの基本知識: https://ja.wikipedia.org/wiki/テキストファイル
+## 関連リンク
+* [gleam/otp ドキュメンテーション](https://hexdocs.pm/gleam_otp/)
+* [gleam/io ドキュメンテーション](https://hexdocs.pm/gleam_io/)
+* [Erlang/OTPドキュメンテーション](https://erlang.org/doc/apps/stdlib/io_protocol.html)

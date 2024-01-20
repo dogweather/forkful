@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias"
-html_title:           "Javascript: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+---
 
-A extração de subcadeias de texto, também conhecida como substrings, é um processo em que se seleciona uma parte específica de uma string maior. Os programadores fazem isso para manipular e obter apenas as informações necessárias de um texto mais extenso.
+## O Quê & Por quê?
+Extrair substrings é uma técnica essencial para manipular strings em JavaScript. Em resumo, extraímos substrings para separar um pedaço de texto de uma string maior, o que pode ser útil para a implementação de funcionalidades como pesquisas de texto e formatação de dados.
 
 ## Como fazer:
 
-Para extrair uma substring em Javascript, você pode utilizar o método `substr()` ou `substring()`, que aceitam dois parâmetros: o índice inicial e o comprimento da subcadeia.
-
-Por exemplo: 
+JavaScript oferece várias maneiras de extrair substrings. As mais comuns são `.substring()`, `.slice()` e `.substr()`. Aqui estão alguns exemplos:
 
 ```Javascript
-let texto = "O trabalho nunca termina";
-let substring = texto.substr(2, 7); // retorna "trabalh"
-let outraSubstring = texto.substring(0, 6); // retorna "O traba"
+let textoCompleto = "Olá, Mundo da Programação!";
+
+let subTexto1 = textoCompleto.substring(0,3); 
+console.log(subTexto1);   // Saída: "Olá"
+
+let subTexto2 = textoCompleto.slice(5, 10);
+console.log(subTexto2);   // Saída: ", Mun"
+
+let subTexto3 = textoCompleto.substr(11, 12);
+console.log(subTexto3);   // Saída: "Programação!"
 ```
 
-## Profundando:
+## Mergulho profundo
 
-A extração de substrings é uma técnica muito comum em programação e tem sido usada há anos para manipular strings. No entanto, hoje em dia existem alternativas como expressões regulares ou funções de alto nível, como `slice()` e `substring()`.
+Extrair substrings tem raízes na programação desde os primeiros dias, e não apenas em JavaScript. Cada um dos métodos citados acima tem pequenas nuances em sua implementação e uso.
 
-Na implementação de `substr()`, o primeiro argumento é o índice inicial e o segundo é a quantidade de caracteres a serem retornados. Já em `substring()` o primeiro argumento é o índice inicial e o segundo é o índice final, que não é incluído na subcadeia.
+- `.substring(startIndex, endIndex)`: Este método retorna parte da string entre os índices inicial e final. Os índices são baseados em zero. Se omitir o segundo argumento, ele extrairá até o final da string. Se os índices for invertidos, ele os ajustará automaticamente.
+- `.slice(startIndex, endIndex)`: Este método é bastante similar ao `.substring()`. A principal diferença é que `.slice()` pode aceitar índices negativos, indicando uma posição começando do final da string.
+- `.substr(startIndex, length)`: Este método extrai uma substring do índice inicial por um número especificado de caracteres. Ele também aceita um índice inicial negativo.
 
-## Veja também:
+É importante ter em mente que todas essas funções não modificam a string original, elas retornam uma nova string.
 
-- [Documentação de substr() na MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [Documentação de substring() na MDN](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [Tutorial de Strings em Javascript na W3Schools](https://www.w3schools.com/js/js_strings.asp)
+## Veja também
+
+- Documentação oficial JavaScript MDN para [substring](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substring), [slice](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/slice), e [substr](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/substr).
+- Post no blog Explorando [JavaScript for...of vs for...in Loops](https://www.alura.com.br/artigos/javascript-for-of-vs-for-in)
+- Tutorial em vídeo: [JavaScript String Functions](https://www.youtube.com/watch?v=09Bw3_ODGLs)

@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana tekstu na wielkie litery"
-html_title:           "Java: Zmiana tekstu na wielkie litery"
-simple_title:         "Zmiana tekstu na wielkie litery"
+title:                "Zamiana liter na wielkie w ciągu znaków"
+html_title:           "Java: Zamiana liter na wielkie w ciągu znaków"
+simple_title:         "Zamiana liter na wielkie w ciągu znaków"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -12,21 +12,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Podczas programowania często spotykamy się z pojęciem kapitalizacji ciągów znaków. Kapitalizacja oznacza konwersję wszystkich pierwszych liter w łańcuchu znaków na wielkie litery. Programiści stosują tę technikę w celu poprawy czytelności i spójności swojego kodu.
+Zmiana pierwszej litery w łańcuchu znaków (string) na wielką w języku Java to tzw. *kapitalizacja*. Programiści stosują to do poprawienia formatowania tekstu, na przykład nazw własnych, tytułów książek i artykułów.
 
-## Jak to zrobić:
+## Jak to zrobić?
+
+Metoda na kapitalizację to proste zadanie w Javie. Możemy skorzystać ze wbudowanej metody `substring()`, jak pokazano poniżej:
 
 ```Java
-String str = "hello world";
-String capitalized = str.toUpperCase();
-System.out.println(capitalized);
+public class Main {
+    public static void main(String[] args) {
+
+        String tekst = "jestem programistą java";
+        String kapitalizowanyTekst = tekst.substring(0, 1).toUpperCase() + tekst.substring(1);
+
+        System.out.println(kapitalizowanyTekst);
+    }
+}
 ```
-Output: HELLO WORLD
 
-## Zanurz się:
+Wynik:
 
-Kapitalizacja ciągów znaków jest powszechnie stosowana w programowaniu, ponieważ ułatwia czytanie i zrozumienie kodu. Alternatywnym sposobem na kapitalizację jest użycie klasy `Character` i jej metody `toUpperCase()`. Implementacja kapitalizacji może być również dostosowywana przez programistów do swoich indywidualnych potrzeb poprzez użycie różnych metod dostępnych w języku Java.
+```Java
+Jestem programistą java
+```
 
-## Zobacz także:
+## Przyjrzyjmy się bliżej
 
-Więcej informacji na temat kapitalizacji ciągów znaków w języku Java można znaleźć w oficjalnej dokumentacji: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toUpperCase--. Istnieje również wiele narzędzi i bibliotek, które można wykorzystać do kapitalizacji tych ciągów. Przykładem jest biblioteka Apache Commons Text: https://commons.apache.org/proper/commons-text/apidocs/org/apache/commons/text/WordUtils.html#capitalize-java.lang.String...
+Historia back-endu jest pełna sytuacji, w których kapitalizacja łańcuchów była koniecznością. W przeszłości, zanim HTML i CSS pozwoliły na kontrolowanie wielkości liter, zależało to od języka back-endowego. 
+
+Alternatywą do powyższego rozwiązania jest użycie biblioteki Apache Commons Lang, która ma bezpośrednią metodę do kapitalizacji.
+
+```Java
+import org.apache.commons.lang3.text.WordUtils;
+public class Main {
+    public static void main(String[] args) {
+
+        String tekst = "jestem programistą java";
+        String kapitalizowanyTekst = WordUtils.capitalize(tekst);
+
+        System.out.println(kapitalizowanyTekst);
+    }
+}
+```
+
+Wynik:
+
+```Java
+Jestem Programistą Java
+```
+
+Niektóre detale implementacji to, że metoda `substring()` w Javie tworzy nowy łańcuch, co może prowadzić do nieefektywności przy dużej ilości danych.
+
+## Zobacz również
+
+* Dokumentacja Java na temat `substring()`: [https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#substring(int))
+* Apache Commons Lang: [https://commons.apache.org/proper/commons-lang/](https://commons.apache.org/proper/commons-lang/)
+* Dokumentacja WordUtils.capitalize(): [https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html#capitalize-java.lang.String-](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/text/WordUtils.html#capitalize-java.lang.String-)

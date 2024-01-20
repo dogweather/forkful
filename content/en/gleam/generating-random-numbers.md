@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "Gleam recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,31 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Generating random numbers is a common task in programming, where a program needs to generate a series of numbers that appear to be chosen randomly. This can be useful for simulations, games, and encryption. Programmers use random numbers to add unpredictability and variety to their programs.
+Generating random numbers means creating a number that can't be reasonably predicted. Programmers utilize this for a variety of purposes like creating unique session IDs, building randomized algorithms, and adding unpredictability in games.
 
 ## How to:
 
-To generate a random number in Gleam, we can use the `random` module, specifically the `int` function. This function takes in a minimum and maximum value, and returns a random integer between those two values. For example, ```Gleam
-random.int(1, 10)
-``` 
-would produce a random number between 1 and 10. 
+Here's how you generate random numbers in Gleam:
 
-If we want to generate a random floating-point number, we can use the `float` function in the `random` module. This function also takes in a minimum and maximum value, and returns a random decimal number between them. For example, ```Gleam
-random.float(0.0, 1.0)
+```Gleam
+import gleam/random.{int}
+
+pub fn dice() {
+  let roll = random.int(1, 6)
+  case roll {
+    Ok(value) -> io.println(value)
+    Error(Nil) -> io.println("Something went wrong!")
+  }
+}
 ```
-would generate a random number between 0.0 and 1.0.
 
-We can also use the `bool` function in the `random` module to generate a random boolean value. This function takes no arguments and returns either `true` or `false`. For example, ```Gleam
-random.bool()
-```
-would generate either `true` or `false` at random.
+Running `dice()` a few times will give you random numbers between 1 and 6.
 
-## Deep Dive:
+## Deep Dive
 
-Random number generation has been around since the early days of computing, with early algorithms using equations and patterns to generate seemingly random numbers. However, these algorithms were eventually found to not be completely random, leading to the development of more robust and cryptographically secure random number generators. Gleam's `random` module uses the Mersenne-Twister algorithm, which is a widely used and trustworthy method for generating random numbers.
+Historically, true randomness is impossible in computers, hence we use pseudorandom number generators, simulating randomness. 
 
-While Gleam's `random` module is a convenient way to generate random numbers, there are other approaches such as using external sources of randomness like physical dice or coin flips. Additionally, some programming languages have built-in functions for generating random numbers, but Gleam's `random` module offers more control and versatility in choosing the range and type of numbers.
+Alternatives to the `random.int` function in Gleam include the `random.float` function for random floating-point numbers, and `random.bits` for a series of random bits.
 
-## See Also:
+Gleam's `random.int` function uses the OS-provided random number generator to avoid predictable number sequences, enhancing the security of the random numbers generated. 
 
-To learn more about Gleam's `random` module and its functions, check out the official documentation here: https://gleam.run/modules/random. You can also explore other modules and features of Gleam on the official website: https://gleam.run/.
+## See Also
+
+For more information on random numbers in Gleam, check out the Gleam documentation at https://hexdocs.pm/gleam_stdlib/gleam/random.html. For broader understanding, refer to the Gleam Language website at https://gleam.run/.

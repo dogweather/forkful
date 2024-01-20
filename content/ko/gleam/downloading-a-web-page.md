@@ -1,7 +1,7 @@
 ---
-title:                "웹 페이지 다운로드"
-html_title:           "Gleam: 웹 페이지 다운로드"
-simple_title:         "웹 페이지 다운로드"
+title:                "웹 페이지 다운로드하기"
+html_title:           "Bash: 웹 페이지 다운로드하기"
+simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,48 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 이게 뭐고 왜 하는 거야?:
-웹 페이지를 다운로드한다는 것이 무엇인지 알 수 있는가? 개발자들은 왜 이런 작업을 하는지 궁금하지 않은가?
+## 무엇이며 왜?
 
-## 하는 방법:
-```Gleam ... ``` 코드 블록 안에 코딩 예제와 출력 결과를 제공한다.
+웹 페이지 다운로드는 인터넷에서 웹 페이지의 내용을 사용자의 컴퓨터에 불러오는 것을 말합니다. 프로그래머들이 이를 수행하는 이유는 웹 크롤링, 데이터 스크래핑 등 다양한 목적으로 웹 페이지의 정보가 필요하기 때문입니다.
 
-```Gleam
-// 예제 1: Gleam의 내장 함수인 httpc를 사용하여 웹 페이지 다운로드
-response := httpc.get("https://www.example.com")
-html := String.from_bytes(response.body)
-```
-출력 결과:
-```
-<!doctype html>
-<html>
-  <head>
-    <title>Example Domain</title>
-    ...
-```
+## 어떻게 하나요:
+
+Gleam을 이용해 웹 페이지를 다운로드하는 코드와 그 결과를 아래에 보여드립니다.
 
 ```Gleam
-// 예제 2: Gleam의 extlib를 사용하여 웹 페이지 다운로드
-response := extlib.httpc_get("https://www.example.com")
-html := String.from_bytes(response.body)
+pub fn download() {
+  let url = "https://www.example.com";
+  let response = httpc::send(method::Get, url, [], [], default())
+                      .await
+                      .gleam_expect("Failed to download the web page");
+  log(response.body)
+}
 ```
-출력 결과:
-```
-<!doctype html>
-<html>
-  <head>
-    <title>Example Domain</title>
-    ...
+위 코드의 실행 결과는 다음과 같습니다:
+
+```Gleam
+"<html>... 웹 페이지의 HTML 내용 ...</html>"
 ```
 
-## 깊이 파헤치기:
-(1) 역사적 배경, (2) 대안, (3) 웹 페이지 다운로드의 구현 세부사항과 같은 깊이 있는 정보를 제공한다.
-- Gleam은 Erlang 가상 머신 위에서 동작하는 병렬성과 상호작용성에 강점이 있는 함수형 프로그래밍 언어이다. 그래서 웹 요청과 응답을 처리하는데 있어서도 뛰어난 성능을 발휘한다.
-- 다운로드 외에도 웹 페이지를 표시하는 방법으로는 Scrapping, Crawling과 같은 기술이 있다. 이러한 기술들은 큰 규모의 데이터를 수집하거나 웹 페이지의 특정 컨텐츠를 추출하는 데에 사용된다.
-- Gleam에서 웹 페이지를 다운로드하는 방법은 여러 가지가 있지만 가장 간단한 방법은 httpc를 사용하는 것이다. 이 외에도 extlib를 이용하거나 Rust 라이브러리인 reqwest를 사용할 수도 있다.
+## 딥다이브:
 
-## 관련 자료:
-관련 자료를 참고할 수 있는 링크를 제공한다.
-- [Gleam 공식 홈페이지](http://www.gleam.run/)
-- [Gleam의 HTTP 클라이언트 문서](http://gleam.run/stdlib/Http.Client.html)
-- [Scrapping과 Crawling의 차이점에 대한 설명](https://www.scrapehero.com/scraping-vs-crawling-whats-difference/)
+웹 페이지 다운로드는 웹의 초기 시절부터 있던 기능으로, 웹의 역사와 발전과 함께 성장해왔습니다. 현재는 다양한 언어와 라이브러리를 이용해 비교적 간단히 웹 페이지를 다운로드할 수 있습니다. 
+
+Gleam에서 기본 httpc 모듈을 통해 제공하는 get 메서드를 사용해서 웹 페이지를 다운로드하고 있습니다. 이 방법 외에도, 직접 HTTP 요청을 만들어 보내는 방법 등 다양한 대안적 방법이 존재합니다. 
+
+다운로드의 구현 세부 사항은 비동기를 활용하여 서버로부터 응답을 기다리는 동안 다른 작업을 수행할 수 있도록 되어있습니다.
+
+## 참조:
+
+- [Gleam Documentation](https://gleam.run/docs)
+- [Gleam HTTP Library](https://github.com/gleam-lang/http)

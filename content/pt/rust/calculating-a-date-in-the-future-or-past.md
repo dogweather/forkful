@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou passado."
-html_title:           "Rust: Calculando uma data no futuro ou passado."
-simple_title:         "Calculando uma data no futuro ou passado."
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "Rust: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,46 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Calcular uma data no futuro ou no passado é uma função comum em muitos programas, especialmente em projetos relacionados a calendários e agendamentos. Os programadores usam essa funcionalidade para automatizar tarefas e garantir que as datas sejam corretamente calculadas e apresentadas aos usuários.
+# Cálculo de Datas: Futuro e Passado com Rust
+Neste artigo, vamos tratar do "cálculo de datas" em Rust. Vamos compreender como calcular uma data futura ou passada, além de aprofundar os conceitos envolvidos.
 
-## Como fazer:
-### Exemplo 1: Calculando uma data no futuro
+## O Que e Por Quê?
+O cálculo de datas é útil para resolver problemas comuns no mundo da programação, como calcular prazos, verificar a validade de um certificado, ou qualquer situação que envolva a manipulação de datas e horas.
+
+## Como Fazer
+Abordaremos dois cenários comuns: calcular uma data futura e calcular uma data passada. Para esses casos, vamos usar a biblioteca `chrono` do Rust.
+
 ```Rust
+// Adicionando a biblioteca chrono ao seu projeto
+[dependencies]
+chrono = "0.4"
+```
+Para calcular uma data futura:
+
+```Rust
+extern crate chrono;
 use chrono::{DateTime, Duration, Utc};
 
-let now: DateTime<Utc> = Utc::now();
-let future_date = now + Duration::days(30);
+fn main() {
+    let agora = Utc::now();
+    let futuro = agora + Duration::days(10);
+    
+    println!("{}", futuro);
+}
+```
+E para calcular uma data passada:
 
-println!("A data de hoje é {}", now);
-println!("Daqui a 30 dias será {}", future_date);
-```
-Saída:
-```
-A data de hoje é 2021-10-04 18:27:07.685025 UTC
-Daqui a 30 dias será 2021-11-03 18:27:07.685025 UTC
-```
-
-### Exemplo 2: Calculando uma data no passado
 ```Rust
+extern crate chrono;
 use chrono::{DateTime, Duration, Utc};
 
-let now: DateTime<Utc> = Utc::now();
-let past_date = now - Duration::weeks(2);
-
-println!("A data atual é {}", now);
-println!("Há duas semanas a data era {}", past_date);
-```
-Saída:
-```
-A data atual é 2021-10-04 18:27:07.685025 UTC
-Há duas semanas a data era 2021-09-20 18:27:07.685025 UTC
+fn main() {
+    let agora = Utc::now();
+    let passado = agora - Duration::days(10);
+    
+    println!("{}", passado);
+}
 ```
 
-## Deep Dive:
-Existem várias bibliotecas disponíveis em Rust para ajudar com o cálculo de datas, incluindo a popular biblioteca chrono. No passado, muitas linguagens de programação tinham dificuldade em lidar com datas devido à variedade de formatos e sistemas de calendário em todo o mundo. No entanto, com o uso do padrão ISO 8601 para a representação de datas, tornou-se mais fácil para as linguagens de programação manipularem datas de forma consistente. Em Rust, o tipo de dados DateTime da biblioteca chrono é baseado nesse padrão e pode ser facilmente utilizado para calcular datas futuras e passadas.
+## Aprofundamento 
+Em termos de contexto histórico, a abordagem de cálculo de datas que usamos aqui está em linha com muitas outras linguagens de programação, como Python e Java, que fornecem bibliotecas semelhantes para manipulação de datas e horas.
 
-## Veja também:
-- Documentação da biblioteca chrono: https://docs.rs/chrono/
-- Artigo sobre como lidar com datas em Rust: https://dev.to/ejrqrust/dates-and-times-in-rust-5l1
-- Exemplos adicionais de cálculo de datas em Rust: https://stackoverflow.com/questions/29982598/how-do-i-add-30-days-to-a-given-date-in-rust
+Falando sobre alternativas, sempre é possível trabalhar diretamente com timestamps. No entanto, a abordagem com a `chrono` é geralmente preferida por ser mais legível e menos propensa a erros.
+
+Quanto aos detalhes de implementação, a `chrono` utiliza uma estrutura de dados para consolidação de informações de data e hora. O método `now` retorna a data e hora atual, enquanto os métodos `Duration::days`, somado ou subtraído de uma data, permitem calcular uma data no futuro ou no passado.
+
+## Veja Também
+Para mais recursos sobre o tópico, consulte:
+
+* A documentação oficial da biblioteca `chrono`: [Chrono](https://docs.rs/chrono/0.4.19/chrono/)
+* A seção de datas e horas do 'The Rust Programming Language': [Rust Book](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)

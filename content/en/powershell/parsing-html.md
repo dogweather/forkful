@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "PowerShell recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,39 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##What & Why?
-Parsing HTML is the skill of extracting information from HTML code, which is the language used to create web pages. Programmers often need to parse HTML in order to gather data from websites or automate tasks. This can save a lot of time and effort by eliminating the need to manually copy and paste data from a website.
+# HTML Parsing in PowerShell: A Practical Guide
 
-##How to:
-To parse HTML in PowerShell, we can use the `Invoke-WebRequest` cmdlet. This cmdlet creates a web request to a specified URL and returns the HTML code. We can then use the `Select-String` cmdlet to extract the desired information using regular expressions.
+## What & Why?
+HTML Parsing lets you extract specific data from a webpage. Programmers do it for web scraping, to mechanically process data, automate tasks, or gather information from the web.
 
-Example code:
+## How to:
+PowerShell, along with the Html Agility Pack, makes HTML parsing easy. First, you need to install the 'HtmlAgilityPack' module.
 
-```
-$url = "https://www.example.com"
-$request = Invoke-WebRequest $url
-$request.Content | Select-String -Pattern '<div class="title">(.+?)</div>' -AllMatches |
-ForEach-Object {$_.Matches} | ForEach-Object {$_.Groups[1].Value}
+```PowerShell
+Install-Package HtmlAgilityPack
 ```
 
-This code will retrieve the titles of all the articles on the website "www.example.com" by selecting the strings that match the specified pattern. It uses regular expressions to locate the desired information within the HTML code.
+Then you can load a webpage into an 'HtmlDocument' object, as follows:
 
-Sample output:
+```PowerShell
+# Load HtmlAgilityPack
+Add-Type -Path 'path-to-HtmlAgilityPack.dll'
 
+# Load a webpage
+$Web = New-Object HtmlAgilityPack.HtmlWeb
+$Doc = $Web.Load('https://your-target-website.com')
+
+# Extract all Paragraphs
+$Paragraphs = $Doc.DocumentNode.SelectNodes('//p')
+
+# Print out the InnerText of each Paragraph
+$Paragraphs | ForEach-Object { Write-Output $_.InnerText }
 ```
-Article 1 Title
-Article 2 Title
-Article 3 Title
-```
 
-##Deep Dive:
-Parsing HTML has been a common programming skill since the early days of the internet, when websites were simple and primarily used for displaying text and images. As websites have become more complex, the need for parsing HTML has only increased.
+This code will output the text contained in all paragraphs ('<p>') on the specified webpage.
 
-There are several alternatives to parsing HTML in PowerShell, such as using a third-party HTML parsing library or using other programming languages like Python. However, PowerShell's native web cmdlets make it a convenient and efficient option for parsing HTML.
+## Deep Dive
+HTML Parsing has been around since the early days of the internet. Early implementations were often crude, relying on Regular Expressions, which can be error-prone and difficult for complex HTML structures.
 
-When parsing HTML, it is important to have a basic understanding of regular expressions. These are patterns used to identify specific strings within a larger string of text, and they are commonly used in web scraping and data extraction.
+PowerShell, combined with the robust Html Agility Pack, provides a more powerful and flexible solution. The Html Agility Pack is an open-source .NET library that can parse malformed HTML, like the real-world kind!
 
-##See Also:
-- Microsoft Docs: [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest)
-- Microsoft Docs: [Select-String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string)
-- Regular-Expressions.info: [Regular Expressions Tutorial](https://www.regular-expressions.info/tutorial.html)
+An alternative to Html Agility Pack is using the native .NET `System.Xml.XmlDocument` object. However, it's often less forgiving of non-standard or incorrect HTML code.
+
+Furthermore, the implementation of HTML Parsing in PowerShell uses .NET's Document Object Model (DOM). DOM allows developers to traverse and modify the HTML as if it's a tree-like database of the elements on the page. 
+
+## See Also
+For more in-depth knowledge on HTML Parsing with PowerShell, check out these useful resources:
+
+1. [Html Agility Pack GitHub](https://github.com/zzzprojects/html-agility-pack)
+2. [Microsoft's guide on XmlDocument](https://docs.microsoft.com/en-us/dotnet/api/system.xml.xmldocument?view=net-5.0)
+4. [Introduction to the DOM](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
+
+Embrace HTML Parsing in PowerShell! It's an invaluable skill when you need to handle web data, and there's ample help and resources out there.

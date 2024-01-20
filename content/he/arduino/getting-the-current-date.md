@@ -1,6 +1,6 @@
 ---
 title:                "קבלת התאריך הנוכחי"
-html_title:           "Arduino: קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
 simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,63 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה? 
-מקבל התאריך הנוכחי היא הפעולה של קבלת התאריך הנוכחי ממחשב או מכשיר אלקטרוני והצגתו. מתכנתים מבצעים אותה על מנת להשתמש בזמן נוכחי עבור יישומים שונים, כגון תזכורות יומניות ושעון חכם.
+## מה ולמה?
+מקבלים את התאריך הנוכחי כדי לדעת מתי נערך פעולה מסוימת. בעזרתו, ניתן לנתח מדדים של היישום שלנו ולשפר את הביצועים.
 
-## איך לבצע: 
-באמצעות כרטיס הקעקוע Arduino, ניתן לקבל את התאריך הנוכחי בקלות. ניתן לעשות זאת באמצעות המודול RTC (ריאל טיים מכניסה), שמאפשר לקרוא ולרשום את התאריך הנוכחי וטמפרטורת הסביבה. להלן דוגמה של קוד כיצד לקבל את התאריך הנוכחי:
-
-```arduino
+## איך?
+הקוד שלך יהיה דומה לדבר הבא:
+```Arduino
+#include <Wire.h>
 #include <RTClib.h>
 
-RTC_DS3231 rtc;
+RTC_DS1307 rtc;
 
-void setup() {
-  Serial.begin(9600);
-  
+void setup () {
+  Serial.begin(57600);
+
   if (! rtc.begin()) {
     Serial.println("Couldn't find RTC");
     while (1);
   }
-  
-  if (rtc.lostPower()) {
-    Serial.println("RTC lost power, let's set the time!");
+  if (! rtc.isrunning()) {
     rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   }
 }
 
-void loop() {
+void loop () {
   DateTime now = rtc.now();
-  
-  Serial.print(now.year(), DEC);
-  Serial.print('/');
-  Serial.print(now.month(), DEC);
-  Serial.print('/');
-  Serial.print(now.day(), DEC);
-  Serial.print(" (");
-  Serial.print(daysOfTheWeek[now.dayOfTheWeek()]);
-  Serial.print(") ");
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
-  
-  delay(5000);
+
+  Serial.println(now.day());
+  Serial.println(now.month());
+  Serial.println(now.year());
 }
 ```
 
-כאשר הקוד יורץ, תוצג הודעה של התאריך הנוכחי בפורמט הבא:
+הקוד משתמש בספריית RTClib לשליטה על השעון האמיתי. תאריך היום מתעדכן בכל ריצה של הלולאה.
 
-2021/8/16 (Monday) 14:01:25
+## צלילה מעמיקה
+התאריך הנוכחי נעשה באמצעות השעון האמיתי. בעבר, השעונים האמיתיים היו פיסיים ואפשר היה לקבוע אותם ידנית. כיום, עם התפתחות הטכנולוגיה, הם הפכו דיגיטליים יותר ונקלטים אוטומטית. חלופות לספריית RTClib היו יכולות להיות ספריות שעון אמיתי דיגיטלי אחרות או שרתי זמן רשת.
 
-## חקירה מעמיקה: 
-כבר מאז תחילת תקופת המחשבים, התאריכים והשעות היו נחשבים לחלק חשוב בתוכניות ויישומים. בתחילתם של מחשבים אלקטרוניים, הייתה צורך לקבל תאריך נכון על מנת לבצע תהליכי תאי דגימה. בשנים האחרונות, עם עלייתם של שעונים חכמים וכרטיסי קעקוע כמו Arduino, קבלת התאריך הנוכחי הפכה לנוחה ופשוטה יותר.
+הפרט החשוב ביותר לביצוע הקוד הוא לוודא שהשעון רץ. אם השעון לא מריץ, מתבצעת התאמת תאריך ושעה ע״י 'rtc.adjust'. פונקציה זו מתקבלת את התאריך והשעה מהקומפילר כאשר הקוד מתורגם, כך שהשעון האמיתי יהיה מעודכן.
 
-## ראה גם: 
-ראה את הקישורים הבאים למידע נוסף על כיצד לקבל את התאריך הנוכחי בכלי תכנות Arduino: 
-
-- [תיעוד של פונקציות DateTime באתר Arduino](https://www.arduino.cc/en/Reference/DateTime)
-- [מדריך למודול RTC באתר Random Nerd Tutorials](https://randomnerdtutorials.com/guide-to-ds3231-real-time-clock-rtc-with-arduino/)
-- [מדריך להשתמש בזמן נוכחי עם כרטיס קעקוע באתר Howduino](https://howduino.tumblr.com/post/13538877476/545-kicking-it-all-off-disscussion-main-title)
+## ראה גם  
+- ספריית ה RTClib: https://adafruit.github.io/RTClib/html/index.html  
+- ניתוח זמנים ותאריכים עם ספריית ה-TimeLib: https://www.arduino.cc/reference/en/libraries/timelib/  
+- עבודה עם שרתי זמן רשת NTP: https://lastminuteengineers.com/esp8266-ntp-server-date-time-tutorial/

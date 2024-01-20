@@ -10,25 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
+## O Quê & Porquê?
 
-Enviar uma requisição HTTP é quando um programa envia uma mensagem para um servidor, solicitando uma ação ou informação. Programadores fazem isso para interagir com APIs, obter dados de um servidor, ou enviar informações.
+Enviar um pedido HTTP é basicamente solicitar e obter dados de um servidor web. Programadores fazem isso para interagir com APIs, pegar informações e, em alguns casos, enviar dados para serem processados.
 
 ## Como fazer:
 
-Para enviar uma requisição HTTP, você pode usar o comando curl no terminal Bash. Por exemplo: 
+Usaremos o comando `curl` em Bash para enviar um pedido HTTP GET. Aqui está um exemplo que pega dados do servidor web example.com.
 
+```Bash
+$ curl http://www.example.com
 ```
-curl -X GET https://www.example.com
+Output:
+```Bash
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...
 ```
 
-Isso enviará uma requisição GET para o servidor em www.example.com e retornará o código de resposta, cabeçalhos e corpo da resposta.
+Para enviar um pedido POST, podemos adicionar mais opções ao comando `curl`.
 
-## Mergulho Profundo:
+```Bash
+$ curl -X POST -d "username=user&password=pass" http://www.example.com/login
+```
 
-O protocolo HTTP foi criado em 1991 e tem sido amplamente utilizado para comunicação entre computadores em redes. Existem outras ferramentas de linha de comando, como o wget, que também podem ser usadas para enviar requisições HTTP. A implementação de uma requisição HTTP pode envolver adicionar cabeçalhos específicos, como Content-Type e Authorization, para autenticar e enviar conteúdo ao servidor.
+## Mergulho Profundo
 
-## Veja também:
+O protocolo HTTP foi introduzido em 1991 e é o pilar da comunicação de dados na web. Alternativamente, você pode utilizar `wget` ao invés de `curl` para enviar pedidos HTTP em bash. `curl` oferece mais opções e flexibilidade, mas `wget` é mais fácil para casos de uso simples.
 
-- Documentação do cURL: https://curl.se/docs/
-- Introdução ao HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview
+O `curl` é na verdade uma biblioteca e uma ferramenta de linha de comando. Ele suporta uma variedade de protocolos além de HTTP, incluindo FTP, IMAP, POP3 e outros. Quando você envia um pedido HTTP, o `curl` cria uma conexão de socket com o servidor, envia um texto formatado representando o pedido e, em seguida, lê a resposta.
+
+## Ver Também
+
+- Documentação oficial do cURL: https://curl.se/doc/
+- Tutorial de `wget`: https://www.gnu.org/software/wget/manual/wget.html
+- API REST explicada: https://codewithmosh.com/p/build-web-apis-with-asp-net-and-entity-framework

@@ -1,6 +1,6 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "C++: קריאת קובץ טקסט"
+html_title:           "Go: קריאת קובץ טקסט"
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "C++"
 category:             "C++"
@@ -10,50 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-קריאת קובץ טקסט היא פעולה חשובה ושגרתית בתכנות. זהו תהליך של קריאת טקסט מתוך קובץ והמרתו לנתונים שניתן לעבד על ידי התוכנה. התכנותים עושים זאת בכדי לקבל או לעדכן מידע בצורה יעילה וממוחשבת.
+## מה & למה?
+קריאת קבצי טקסט הינה פעולת השגת המידע המאוחסן בתוך קובץ טקסט והצגתו. מתכנתים עושים את זה כדי לעבד ולנתח מידע, לדוגמא: קריאת הגדרות, נתונים לתכנית, וכו'.
 
-## כיצד לבצע זאת?
-בכדי לקרוא קובץ טקסט בשפת תכנות C++ ישנם כמה צעדים בסיסיים שעלינו לדעת:
-כדי לקרוא קובץ טקסט נשתמש בפקודה פתוחה, שתאפשר לנו לפתוח קובץ ולקרוא ממנו את הנתונים. לאחר מכן, נשתמש בלולאת while כדי לקרוא את כל הקבצים עד שנגיע לסוף. כל פעם שנקראת שורת טקסט, נוכל לעבד אותה ולהדפיס אותה למסך.
+## איך לעשות:
+הנה דוגמה של איך לקרוא קובץ טקסט באמצעות C++:
 
 ```C++
 #include <iostream>
 #include <fstream>
+#include <cstring>
 
-using namespace std;
-
-int main()
+int main ()
 {
-    string line;
-    ifstream myfile ("example.txt");
+    std::ifstream inputFile("example.txt");
 
-    if (myfile.is_open())
+    if(inputFile)
     {
-        while (getline(myfile,line))
+        std::string line;
+        while(std::getline(inputFile, line))
         {
-            cout << line << '\n';
+            std::cout << line << '\n';
         }
-        myfile.close();
     }
-    else cout << "Unable to open file";
+    else
+    {
+        std::cerr << "Failed opening file\n";
+    }
+
+    
+    inputFile.close();
     return 0;
 }
 ```
 
-פלט התוכנית יהיה:
+## צלילה עמוקה
+אפשר לקרוא קבצים ב-C++ על ידי שימוש ב-iostreams, שהוא מנגנון שנוצר מאז מהדורת ANSI C++ לתמיכה בעבודה עם נתונים תחת הגדרות משתמש. חלופה לזה היא פונקציות סטנדרטיות של C, כמו fopen ו-fread. אפשר לבחור את השיטה המתאימה התלויה בתחילה, קוד ייחודי, ופרמטרים ספציפיים אחרים.
 
-```C++
-This is a line of text.
-This is another line of text.
-This is a third line of text.
-```
+## עיין גם 
+מסמכי יחס על C++ iostreams והיסטוריה שלהם:
+1. [Cppreference - Input/output with files](https://en.cppreference.com/w/cpp/io/c)
+2. [Learn Cpp - 27.9 A Brief Introduction to C++ File I/O](https://www.learncpp.com/cpp-tutorial/279-a-brief-introduction-to-c-file-io/)
 
-## חפירה עמוקה
-- היסטוריה: קריאת קבצים טקסט לידי תכנותים הייתה פעולה מסורתית וחשובה עבור פיתוח תוכנה. הדרך בה זהוי הנתונים מובאים למחשב השתנתה ושינתה תוך כדי התפתחות הטכנולוגיות החדשות.
-- אלטרנטיבות: חוץ מקריאת קובץ דרך קוד, ניתן להשתמש בממשקי גרפיקה של עורך תוכנה או שימוש באותו קובץ בכלי אחר כגון Excel או Notepad++.
-- פרטי המימוש: קריאת קבצים היא פתרון יעיל ומהיר לעיבוד מידע גדול. ישנם כמה הגבלות ותקנות המגדירות את המתאימות של הקובץ כשכלי התכנות. כלי התכנות מטפתמים בכדי לטפל בקבצים בגדרי התקנות נוספים ובניסיונם של עורך התוכנה לנטרל כל אפשרות לטעות או לשגיאה.
-
-## ראו גם
-למידע נוסף על קריאת קבצים טקסט בשפת C++ ניתן למצוא באתר הבא:
-https://www.tutorialspoint.com/cplusplus/cpp_files_streams.htm
+מסמכים על שיטות קריאת קבצים בשפות אחרות:
+1. [Python File Reading](https://docs.python.org/3/tutorial/inputoutput.html)
+2. [Java File Reading](https://docs.oracle.com/javase/tutorial/essential/io/file.html)

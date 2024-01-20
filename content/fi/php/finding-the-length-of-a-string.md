@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "PHP: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,27 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & miksi?
+## Mitä & Miksi?
 
-Miksi ohjelmoijat etsivät merkkijonon pituutta? Merkkijonon pituuden määrittäminen on tärkeää, sillä se auttaa ohjelmoijia käsittelemään tietoa ja suorittamaan tarkkoja laskutoimituksia. Esimerkiksi käyttäjän antama teksti voidaan tallentaa merkkijonona ja sen pituus voidaan tarkistaa koodin toimivuuden varmistamiseksi.
+Merkkijonon pituuden löytäminen tarkoittaa sen merkkien lukumäärän laskemista. Ohjelmoijat tekevät tämän arvioidakseen tietyn tekstin tai datan pituuden - esimerkiksi, varmistaakseen, että teksti mahtuu tiettyyn tilaan.
 
-# Miten tehdä:
+## Näin se tehdään:
 
-PHP:ssä merkkijonon pituus voidaan helposti määrittää käyttämällä `strlen()` -funktiota. Alla on esimerkkikoodi, jossa koodi ensin tallentaa käyttäjän antaman syötteen muuttujaan ja sitten tulostaa merkkijonon pituuden:
+Seuraava PHP-koodiesimerkki näyttää, kuinka löytää merkkijonon pituus käyttämällä `strlen()` -funktiota:
 
 ```PHP
 <?php
-$syote = "Tämä on esimerkki!";
-echo strlen($syote); //tulostaa 18
+$merkkijono = 'Hei, maailma!';
+$merkkijono_pituus = strlen($merkkijono);
+echo $merkkijono_pituus;
 ?>
 ```
 
-# Syväsukellus:
+Tulostuu: `13`
 
-Merkkijonon pituuden määrittäminen on ollut tärkeä osa ohjelmointia jo pitkään, sillä seurataan jo vuosikymmeniä vanhojen koodikieltäisten käsikirjoitusten aikakautta. Nykyään PHP:ssä on monia muita tapoja määrittää merkkijonon pituus, mutta `strlen()` -funktio on edelleen yksi nopeimmista ja luotettavimmista tavoista.
+## Syvällä asian ytimessä
 
-On myös muita tapoja määrittää merkkijonon pituus, kuten `mb_strlen()` -funktio, joka on hyödyllinen, kun käsitellään monikielisiä tekstejä. Lisäksi merkkijonon pituuden voi laskea myös `count()` -funktiolla, jos merkkijono on tallennettu taulukkona.
+Pituuden laskemisella on historiallisia juuria muinaisissa tekstinkäsittelyjärjestelmissä. PHP-kielessä `strlen()` -funktiota käytetään usein; se laskee merkkijonon pituuden olettamalla, että merkkijono koostuu ASCII-merkeistä. Kuitenkin UTF-8-merkkijonoa käytettäessä suositellaan `mb_strlen()` -funktion käyttöä:
 
-# Katso myös:
+```PHP
+<?php
+$merkkijono = 'Hei, maailma!';
+$merkkijono_pituus = mb_strlen($merkkijono, 'UTF-8');
+echo $merkkijono_pituus;
+?>
+```
 
-Tässä artikkelissa käsiteltiin vain yksi tapa määrittää merkkijonon pituus PHP:ssä. Tarkempia tietoja ja esimerkkejä löytyy PHP:n virallisesta dokumentaatiosta [täältä] (https://www.php.net/manual/en/function.strlen.php). Jos haluat oppia lisää merkkijonojen käsittelystä PHP:ssä, voit tarkistaa myös [tämän artikkelin] (https://www.php.net/manual/en/language.types.string.php) PHP:n merkkijonojen käsittelystä.
+Tämä on tärkeää, koska `strlen()`-funktio laskee merkkijonon tavujen määrän, ei varsinaisia merkkejä, mikä saattaa aiheuttaa ongelmia monimerkkijärjestelmissä, kuten UTF-8:ssa.
+
+## Katso myös
+
+Lisätietoja merkkijonojen pituuden löytämisestä PHP:ssä voit löytää seuraavista lähteistä:
+
+- [PHP strlen() Function](https://www.w3schools.com/php/func_string_strlen.asp) W3Schools-artikkeli strlen()-funktiosta
+- [PHP mb_strlen() Function](https://www.w3schools.com/php/func_string_mb_strlen.asp) W3Schools-artikkeli mb_strlen()-funktiosta
+- [PHP: strlen - Manual](https://php.net/manual/en/function.strlen.php) PHP:n virallinen manuaali `strlen()`-funktiosta
+- [PHP: mb_strlen - Manual](https://php.net/manual/en/function.mb-strlen.php) PHP:n virallinen manuaali `mb_strlen()`-funktiosta.

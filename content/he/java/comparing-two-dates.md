@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שתי תאריכים"
-html_title:           "Java: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,29 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-השוואת שתי תאריכים היא תהליך שמשווה בין שני תאריכים כדי לקבוע מה אחד מתקרב לאחד ומי מהם גדול יותר. תהליך זה נחשב חשוב לתכנתנים מכיוון שניתן להשתמש בו במגוון רחב של מטרות, כגון מיון, חשבון גיל ועוד.
 
-## איך לעשות זאת:
-בכדי להשוות שתי תאריכים בתוך קוד ג'אבה, ניתן להשתמש בפונקציות מובנות כמו `isEqual()` או `compareTo()`. הנה כמה הדגמות לשימוש בפונקציות אלו ולקבלת תוצאות מתאימות:
+השוואה בין שני תאריכים היא פעולה בה משווים בין שני תאריכים כדי לראות איזה מהם מגיע לפני השני, או האם שני התאריכים הם אותו תאריך. מתכנתים מבצעים את הפעולה הזאת בשלל סיטואציות, כולל בדיקת תוקף של תוקף, ביצוע כמה פעולות על ידי תאריך או שעה מסויימים, ועוד.
+
+## איך לעשות:
+
+חלק זה מדגים איך ניתן להשוות בין שני תאריכים ב-Java. הקוד בתחתית מחפש הבדל בימים בין שני תאריכים:
 
 ```Java
-// השווה שני תאריכים גם כאשר נתונים כפרמטרים מסוג Date
-Date date1 = new Date(118, 8, 27); // 27/09/2018
-Date date2 = new Date(118, 8, 30); // 30/09/2018
-System.out.println(date1.compareTo(date2)); // הדפס את התוצאה שמחזירה אם התאריכים שווים או לא
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 
-// השווה שני תאריכים מוגדרים כמחרוזות בתבנית של 'yyyy-MM-dd'
-String dateStr1 = "2021-12-01";
-String dateStr2 = "2021-12-15";
-System.out.println(dateStr1.compareTo(dateStr2)); // הדפס את התוצאה שמחזירה אם התאריכים שווים או לא
+public class Main {
+    public static void main(String[] args) {
+        LocalDate date1 = LocalDate.of(2022, 1, 1);
+        LocalDate date2 = LocalDate.of(2022, 1, 15);
+
+        long daysBetween = ChronoUnit.DAYS.between(date1, date2);
+        System.out.println("ימים בין התאריכים: " + daysBetween);  
+    }
+}
 ```
-
-## טיפול עמוק:
-בעבר, התהליך של השוואת תאריכים היה נכתב באופן ידני ולא היה קיימת אפשרות להשתמש בפונקציות מובנות. היום, מגוון כלים זמינים שיכולים לפשט את התהליך ולתת תוצאות מדוייקות יותר, כמו רבע תאריך, שאינו יעדר מידע על יום השבוע או כנסים של ימים ספורים בחציות.
+פלט:
+```Java
+ימים בין התאריכים: 14
+```
+## צלילה עמוקה:
+    
+המנגנון להשוואת תאריכים ב-Java הוא חלק מ-API הזמן שנוסף ב-Java 8. קודם לכן, היית צריך להשתמש ב-`java.util.Date` או `java.util.Calendar` שהם גסים לשימוש ולא אינטואיטיביים. ניתן להשוות תאריכים גם על פי שנה, חודש, יום, שעה, דקה, שנייה, מילישנייה ורבות אחרות. 
 
 ## ראה גם:
-אם אתה מעוניין לקרוא עוד על השוואת תאריכים וכלים נוספים לניהול תאריכים בג'אבה, ניתן לקרוא את המקורות הבאים:
 
-- מדריך Java לניהול תאריכים: https://www.javatpoint.com/java-date
-- הנחיות לשימוש בכלים מובנים לניהול תאריכים בג'אבה: https://www.java67.com/2012/12/how-to-compare-dates-in-java.html
-- תיעוד רשמי על ממשק הפונקציות של Date בג'אבה: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html
+- מדריך Oracle Java ל-API הזמן: [Oracle Java Date-Time Guide](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
+- רשימת כל היחידות שאפשר להשתמש בהן בכאורה `ChronoUnit`: [Java ChronoUnit enums](https://docs.oracle.com/javase/8/docs/api/java/time/temporal/ChronoUnit.html)
+- מאמר טוב מאוד שמתאר את השימוש ב-API החדש: [Using Java's DateTime API](https://www.baeldung.com/java-8-date-time-intro)

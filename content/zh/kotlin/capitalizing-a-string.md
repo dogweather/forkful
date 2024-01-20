@@ -1,7 +1,7 @@
 ---
-title:                "将一个字符串变换成大写"
-html_title:           "Kotlin: 将一个字符串变换成大写"
-simple_title:         "将一个字符串变换成大写"
+title:                "将字符串大写化"
+html_title:           "Kotlin: 将字符串大写化"
+simple_title:         "将字符串大写化"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,21 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么和为什么？
-首先，将字符串中的字母改为大写是一种常见的编程技巧。程序员会这样做是为了让字符串在输出时更容易阅读，并且在比较和匹配字符串时更加准确。
+## 什么是字符串首字母大写？为什么程序员要做这件事？
+将首字母大写，即使字符串的第一个字母变为大写形式。程序员经常这么做，因为在很多情况下，语法规则要求句子的第一个单词或每个单词的首字母大写。
 
-## 如何：
+## 如何操作：
+在Kotlin中，`capitalize()`函数可以满足我们的需求。下面的代码示例印证了我的论点：
 ```Kotlin
-  val str = "hello world"
-  val capitalizedStr = str.toUpperCase()
-  println(capitalizedStr)
+fun main() {
+    val lowerCase = "hello, world!"
+    val result = lowerCase.capitalize()
+    println(result)  // 输出: "Hello, world!"
+}
 ```
-输出结果：HELLO WORLD
-上面的代码展示了如何用Kotlin将一个字符串全部转换为大写。首先，我们需要声明一个字符串变量str并赋值为"hello world"，然后通过调用toUpperCase()函数，将该变量中的所有字母转换为大写形式。最后，使用println()函数打印出转换后的字符串。
 
 ## 深入了解：
-将字符串中的字母改为大写实际上是一种格式化字符串的方法，可以使字符串更加统一，易于处理。在早期的编程语言中，如C和Java，通常需要使用循环和条件语句来实现这一操作。但是在Kotlin中，我们可以直接使用toUpperCase()函数来实现，更加简洁高效。
+1. 历史背景：首字母大写作为语法规则之一，由古老的西方语言传来。在计算机编程中，这个规则通常应用于标识符（比如变量名、函数名）和用户接口（比如文本显示）的规范和美观。
 
-## 参考资料：
-- [Kotlin文档](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [C语言中的字符串处理](https://www.programiz.com/c-programming/c-strings)
+2. 其他选择： 在某些情况下，`capitalize()`可能无法满足需求。比如，当我们想对字符串中的每个单词首字母大写时，我们可以使用`split(" ").map { it.capitalize() }.joinToString(" ")`来实现。
+
+3. 实现细节： Kotlin中的`capitalize()`函数首先会检查字符串的第一个字符，如果它是小写的，就转换为大写。其余的字符串字符不变。
+
+## 延伸阅读：
+* Kotlin官方文档对`capitalize()`的详细解释： [官方文档链接（英文）](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/capitalize.html)
+
+* 更多处理字符串的Kotlin函数： [详细函数列表（英文）](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
+
+* 文字规范和美学在编程中的重要性： [阅读链接（英文）](https://medium.com/@s.a.khan/importance-of-coding-style-and-standards-41941d8225c0)

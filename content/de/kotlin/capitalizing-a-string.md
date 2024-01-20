@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette großschreiben"
-html_title:           "Kotlin: Eine Zeichenkette großschreiben"
-simple_title:         "Eine Zeichenkette großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Kotlin: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist Capitalizing und warum wird es von Programmierern genutzt?
+# Großschreibung von Zeichenketten in Kotlin
 
-Capitalizing ist der Prozess, bei dem der erste Buchstabe eines Strings in Großbuchstaben umgewandelt wird. Programmierer nutzen dies häufig, um Strings in einer konsistenten und lesbaren Form darzustellen, insbesondere bei der Darstellung von Benutzeroberflächen oder bei der Formatierung von Texten.
+## Was und Warum?
+Großschreibung der Zeichenkette (oder das Capitalizing) bedeutet, den ersten Buchstaben jedes Wortes in einer Zeichenkette in Großbuchstaben zu konvertieren. Programmierer machen das oft, um Texte menschenlesbar zu machen, z.B. in Titeln oder am Anfang von Sätzen.
 
 ## So geht's:
+In Kotlin verwenden wir die Methode `capitalize()` oder `replaceFirstChar()`, um den ersten Buchstaben eines Strings zu großzuschreiben. Hier sind einige Beispiele:
 
 ```Kotlin
-val name = "max mustermann"
-println(name.capitalize())
+val kleinerText = "hallo Welt"
+println(kleinerText.capitalize()) // Ausgabe: "Hallo Welt"
+
+val meinText = "kotlin macht Spaß"
+val meinGroßerText = meinText.replaceFirstChar { if (it.isLowerCase()) it.titlecase(Locale.getDefault()) else it.toString() }
+println(meinGroßerText) // Ausgabe: "Kotlin macht Spaß"
 ```
 
-Ausgabe: 
-Max mustermann
+## Vertiefung
+Die Großschreibung von Zeichenketten ist ein gängiges Konzept in vielen Programmiersprachen und gibt es schon seit den frühen Tagen der Informatik. In Kotlin gab es vor der Version 1.5 die Methode `capitalize()`, die jedoch als veraltet gekennzeichnet und durch die Methode `replaceFirstChar()` ersetzt wurde, um mehr Klarheit zu schaffen.
 
-## Tiefer Einblick:
+Als Alternativen zur Großschreibung des gesamten Strings können Sie nur den ersten Buchstaben großschreiben oder die Methode `toUpperCase()` verwenden, um jeden Buchstaben des Strings in Großbuchstaben zu konvertieren.
 
-Capitalizing wird oft als Teil des String-Formats angesehen und ist in vielen Programmiersprachen verfügbar. Es gibt jedoch auch alternative Methoden, um Strings in Großbuchstaben umzuwandeln, z.B. `toUpperCase()` oder `replace`.
+Wenn Sie scharfsinnig auf die Implementierungsdetails achten: `capitalize()` und `replaceFirstChar()` verwenden intern `Char.titlecase()`, was bedeutet, dass sie den Unicode-Standard für die Großschreibung von Zeichen respektieren.
 
-Die Implementierung von `capitalize()` variiert je nach Programmiersprache, aber in der Regel wird der erste Buchstabe des Strings erkannt und in Großbuchstaben umgewandelt, während der Rest des Strings unverändert bleibt.
+## Siehe auch
+- [Kotlin Dokumentation: String Funktionen](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
+- [Blog-Post: Kotlin 1.5: Neue String-APIs](https://blog.jetbrains.com/kotlin/2021/02/new-string-api)
 
-## Weitere Quellen:
-
-- [Kotlin Dokumentation zu Strings](https://kotlinlang.org/docs/reference/whatsnew13.html#extended-jvm-library)
-- [Alternative Methoden zum Formatieren von Strings](https://www.baeldung.com/java-string-capitalize)
-- [GitHub Issue zum Thema `capitalize()` Implementierung in Kotlin](https://youtrack.jetbrains.com/issue/KT-10035)
+Durch den Einsatz sinnvoller Funktionen wie `capitalize()` und `replaceFirstChar()` können Sie die Qualität Ihres Kotlin-Codes erheblich verbessern und sowohl Ihre Arbeitskollegen als auch Ihre Nutzer glücklich machen.

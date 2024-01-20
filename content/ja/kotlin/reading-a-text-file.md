@@ -1,6 +1,6 @@
 ---
 title:                "テキストファイルの読み込み"
-html_title:           "Kotlin: テキストファイルの読み込み"
+html_title:           "Bash: テキストファイルの読み込み"
 simple_title:         "テキストファイルの読み込み"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ？
+## 何となぜ？ (What & Why?)
 
-テキストファイルを読むこととは、コンピューターに保存されているテキストをプログラムで読み取ることを意味します。プログラマーがテキストファイルを読む理由は、そのファイルに保存されているデータを処理し、プログラムの機能を向上させるためです。
+テキストファイルの読み取りは、データを読み取ってプログラムに取り込むプロセスです。プログラマーはこれを行うのは、ファイルからのデータを分析、操作、変換するためです。
 
-## やり方：
+## どうやって： (How to:)
 
-テキストファイルを読む方法は簡単です。まず、ファイルを変数に割り当て、ファイルからデータを読み取ります。コードの一例をご紹介します。
+Kotlinでは、`readText()`関数を使用してテキストファイルを読み取るのが一般的です。以下にその例を示します。
 
 ```Kotlin
-// ファイルを変数に割り当てる
-val file = File("example.txt")
+import java.io.File
 
-// ファイルからデータを読み取る
-file.forEachLine { line ->
-    println(line) // 読み取ったデータを表示
+fun main() {
+    val fileContent = File("example.txt").readText()
+    println(fileContent)
 }
 ```
 
-上記のコードは、ファイルを1行ずつ読み取って、読み取ったデータを表示するものです。もちろん、実際のプログラムではさらに処理を行うことが可能です。
+上記のプログラムは`example.txt`ファイルの内容を読み取り、それをコンソールに出力します。
 
-## 深堀り：
+## ディープダイブ (Deep Dive)
 
-テキストファイルを読む方法にはいくつかのオプションがあります。上記の例では、`forEachLine`メソッドを使用しましたが、`readLines`メソッドや`bufferedReader`クラスを使用することもできます。また、テキストファイルのエンコーディングを指定することで、日本語のようなマルチバイト文字を正しく読み取ることが可能です。
+歴史的なコンテキストでは、テキストファイルの読み取りは古くから存在するプログラミング技術で、様々なプログラミング言語で利用可能です。
 
-また、テキストファイルの他にも、バイナリファイルを読み取る方法もあります。バイナリファイルを読み取る際には、`inputStream`クラスを使用します。
+代替手段としては、`forEachLine`や`useLines`などの関数を使用する方法もありますが、それぞれが特定のユースケースに最適です。たとえば、大きなファイルを読み取る場合、`readText()`はメモリを大量に消費する可能性があるため、`forEachLine`または`useLines`の使用が推奨されます。
 
-## 関連リンク：
+実装の詳細を見てみましょう。`readText()`関数は、指定した文字セット（デフォルトではUTF-8）でファイル全体を読み込み、その結果を文字列として戻します。
 
-- Kotlinの公式ドキュメント：https://kotlinlang.org/
-- ファイルの読み書きについての記事：https://qiita.com/kyota/items/dc022650c708b6b31115
+## 関連情報 (See Also)
+
+詳しくは以下のリンクをご覧ください：
+
+- Kotlin公式ドキュメンテーション：[Reading and Writing Files with Kotlin](https://kotlinlang.org/docs/whatsnew13.html#improvements-for-working-with-io)
+- StackOverflow：[How to Read a File Line-by-Line in Kotlin](https://stackoverflow.com/questions/46366160/how-to-read-a-file-line-by-line-in-kotlin)

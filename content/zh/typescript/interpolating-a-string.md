@@ -1,6 +1,6 @@
 ---
 title:                "插值字符串"
-html_title:           "TypeScript: 插值字符串"
+html_title:           "Arduino: 插值字符串"
 simple_title:         "插值字符串"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串内插？为什么程序员会这么做？
-字符串内插是一种通过将变量或表达式嵌入到字符串中来创建动态字符串的方法。这使得程序员可以更方便地构建包含动态内容的字符串，而不需要手动拼接多个字符串和变量。
+## 什么和为什么?
 
-在过去，程序员经常使用字符串拼接来实现动态字符串，这不仅繁琐，还容易出错。但现在有了字符串内插的功能，程序员可以更快速、更简洁地创建动态字符串，极大地提高了代码的可读性和可维护性。
+字符串插值是一种插入、替换文本或表达式到字符串中的技巧。程序员使用它详细，清晰地记录他们的意图，让代码更简单，易读。
 
-## 如何实现字符串内插：
+## 怎么做:
+
+在 TypeScript 中，您可以使用反引号（`）和 ${} 来插入表达式。示例如下：
+
 ```TypeScript
-const name = '小明';
-const age = 20;
-const greeting = `你好，我是 ${name}，我今年 ${age} 岁。`;
-console.log(greeting);
-// 输出：你好，我是小明，我今年20岁。
+let name = 'World';
+console.log(`Hello, ${name}!`);  // 输出 "Hello, World!"
 ```
 
-字符串内插使用反引号（ `）来包裹整个字符串，变量或表达式则使用`${}`来嵌入。在执行时，变量或表达式会被替换为实际的值，从而生成最终的字符串。
+或者更复杂一些的情况：
 
-## 深入了解：
-1. 字符串内插最初是由C#语言引入的，随后许多其他编程语言也陆续加入了此功能，如ES6新增了模板字符串，也就是我们常用的字符串内插。
-2. 在某些语言中，如Java和PHP，字符串内插使用的是不同的符号，分别是`%`和`$`。这些细节差异需要注意。
-3. 字符串内插的实现原理是通过将字符串拆分为多个部分，然后用变量或表达式的值来连接。这也是为什么在性能方面，字符串内插比字符串拼接更高效的原因。
+```TypeScript
+let x = 10;
+let y = 20;
+console.log(`The sum of ${x} and ${y} is ${x + y}.`);  // 输出 "The sum of 10 and 20 is 30."
+```
 
-## 更多参考：
-- [TypeScript官方文档-字符串内插](https://www.typescriptlang.org/docs/handbook/basic-types.html#template-strings)
-- [MDN文档-模板字面量](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/template_strings)
+## 深入探讨
+
+1. 历史背景: 字符串插值有很长的历史，但在 JS ES6/TypeScript 中被引入，让程序员能用更自然的方式将表达式和字符串结合。
+
+2. 可选方法: 除了字符串插值，你也可以使用 '+' 运算符或 String.concat() 方法连接字符串和变量，但这两种方法都不如字符串插值直观和灵活。
+
+```TypeScript
+let x = 10;
+let y = 20;
+console.log('The sum of ' + x + ' and ' + y + ' is ' + (x + y) + '.');
+```
+
+3. 实现细节: 当你使用 `${expression}` 时, TypeScript 编译器将表达式转换为字符串并插入到所在位置。
+
+## 另请参阅
+
+- [MDN 文档: 模板文字](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Template_literals)
+- [TypeScript 官方文档: 字符串](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string)

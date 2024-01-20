@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Clojure: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
+## Was und Warum?
 
-Das Lesen von Kommandozeilenargumenten ist eine Methode, mit der Programmierer Informationen aus der Eingabeaufforderung erhalten. Dies ermöglicht es ihnen, interaktive Programme zu erstellen und Benutzereingaben zu berücksichtigen.
+Beim Lesen von Befehlszeilenargumenten greifen wir auf die Parameter zu, die an ein Programm beim Start übergeben wurden. Es ermöglicht unseren Programmen, flexibel und dynamisch in Bezug auf ihre Konfiguration und Verwendung zu sein.
 
-Wie geht's?
+## So geht's:
 
-Um Kommandozeilenargumente in Clojure zu lesen, können Sie den Befehl `*command-line-args*` verwenden. Im Folgenden finden Sie ein Beispiel, wie Sie die Argumente ausgeben können:
+In Clojure verwenden wir die `*command-line-args*` Variable zur Verarbeitung von Befehlszeilenargumenten. Hier ein einfaches Beispiel:
 
 ```Clojure
-(def args *command-line-args*)
-(prn "Eingegebene Argumente:" args)
+(defn -main
+  [& args]
+  (println "Command line arguments: " args))
 ```
 
-Ausgabe:
+Wenn Sie das Programm mit `lein run Hello World` ausführen, würden Sie folgende Ausgabe erhalten:
 
+```Clojure
+Command line arguments:  (Hello World)
 ```
-Eingegebene Argumente: [arg1 arg2 arg3]
-```
 
-Der Befehl `*command-line-args*` gibt eine Liste von Zeichenketten zurück, die die eingegebenen Argumente darstellen. Diese können dann in Ihrem Programm verwendet werden, um Entscheidungen zu treffen oder Berechnungen durchzuführen.
+## Vertiefung
 
-Tiefer tauchen
+Befehlszeilenargumente waren eine Methode zur Datenkommunikation mit Programmen seit den frühesten Tagen der Computernutzung.
 
-Das Lesen von Kommandozeilenargumenten ist eine gängige Praxis in der Programmierung und wird seit langem verwendet. Es gibt auch alternative Methoden, wie z.B. das Erstellen von interaktiven Menüs oder die Verwendung von Einstellungen in einer Konfigurationsdatei.
+Alternativ könnten Sie Möglichkeiten überprüfen, wie Java`s 'public static void main(String[] args)' oder Python`s 'sys.argv' in Clojure verwendet werden können. Dies könnte aufwendiger sein, da Sie die Java Interoperabilität oder Jython verwenden müssten.
 
-In Clojure wird die `clojure.main`-Funktion verwendet, um Kommandozeilenargumente zu lesen und an das eigentliche Programm weiterzugeben. Diese Funktion ist Teil der Kernbibliothek von Clojure und daher immer verfügbar.
+Die `*command-line-args*` Variable ist ein dynamischer Var in Clojure, die eine Liste aller Argumente enthält, die ihr beim Start übergeben wurden.
 
-Siehe auch
+## Siehe auch
 
-Für weitere Informationen über `*command-line-args*` und andere nützliche Funktionen in Clojure, können Sie die offizielle Dokumentation unter https://clojure.org/api/cheatsheet und https://clojure.github.io/clojure/clojure.main-api.html besuchen.
+1. Clojure-Dokumentation: [Command Line Arguments](https://clojure.org/guides/deps_and_cli)
+2. Stack Overflow: [Passing command-line arguments in Clojure](https://stackoverflow.com/questions/2977898/passing-command-line-arguments-in-clojure)
+
+Jetzt haben Sie eine praktische Möglichkeit zu verstehen, wie Sie Befehlszeilenargumente in Ihrem Clojure-Programm verwenden können. Frohes Codieren!

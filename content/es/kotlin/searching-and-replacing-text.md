@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Kotlin: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,31 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Reemplazar y buscar texto en un programa es una tarea común para los programadores. Esto implica encontrar una palabra o frase específica en un documento de texto y reemplazarla con otra. Los programadores realizan esta tarea para corregir errores tipográficos, actualizar información y mejorar el rendimiento en el código fuente.
+## ¿Qué y por qué?
 
-## Cómo hacerlo:
-Aquí hay un ejemplo de cómo buscar y reemplazar texto en Kotlin:
+La búsqueda y reemplazo de texto se refiere a la localización de cadenas de texto específicas en el código y la sustitución de estás por otras. Los programadores lo hacen para modificar valores, nombres o corregir errores de manera rápida y eficiente.
 
+## Como hacerlo:
+
+En Kotlin, las funciones `replace()` y `replaceFirst()` nos permiten realizar estas tareas. Aquí te mostramos un ejemplo sencillo:
+```Kotlin
+fun main() {
+    var texto = "Amo el café en la mañana y el café en la noche"
+    println(texto.replace("café", "té"))
+}
 ```
-val texto = "Hola a todos"
-val textoReemplazado = texto.replace("todos", "mundo")
-
-println(textoReemplazado)
+Salida:
+```
+Amo el té en la mañana y el té en la noche
 ```
 
-La salida de este código será: "Hola a mundo".
+Y si solo queremos reemplazar la primera coincidencia usamos `replaceFirst()` así:
+```Kotlin
+fun main() {
+    var texto = "Amo el café en la mañana y el café en la noche"
+    println(texto.replaceFirst("café", "té"))
+}
+```
+Salida:
+```
+Amo el té en la mañana y el café en la noche
+```
 
-## Profundizando en el tema:
-La búsqueda y reemplazo de texto ha sido una de las tareas básicas del desarrollo de software desde los primeros días de la programación. Antiguamente, esto se hacía manualmente y podía ser una tarea tediosa y propensa a errores. Actualmente, hay herramientas disponibles que facilitan esta tarea, como editores de texto avanzados y programas específicos para buscar y reemplazar texto.
+## Análisis más profundo
 
-Aunque Kotlin tiene una función de ```replace()``` integrada, también existen otras alternativas en otros lenguajes de programación como Python y JavaScript. Estas alternativas pueden tener diferentes sintaxis y funcionalidades, por lo que es importante estar familiarizado con ellas si se trabaja en varios lenguajes de programación.
+Históricamente, la búsqueda y reemplazo de texto ha sido una herramienta valiosa en la programación desde sus inicios. Las herramientas habituales son la búsqueda de expresiones regulares y los comandos de sustitución de texto.
 
-En términos de implementación, el algoritmo de búsqueda y reemplazo implica encontrar la posición exacta del texto a reemplazar y luego sustituirlo con el nuevo texto deseado. Este proceso puede variar dependiendo del lenguaje de programación y de la herramienta utilizada.
+En Kotlin, el método `replace()` es muy versátil, ya que pueden usarse expresiones regulares como argumentos para buscar y reemplazar contenido de manera más especifica.
 
-## Ver también:
-Si quieres profundizar más en el tema de búsqueda y reemplazo de texto en Kotlin, aquí te dejamos algunos recursos útiles:
+Alternativamente podrías usar el método `substring()`, pero es más limitado y requiere más trabajo para obtener resultados similares. 
 
-- [Documentación oficial de Kotlin sobre la función replace] (https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-- [Video tutorial de Kotlin sobre búsqueda y reemplazo] (https://www.youtube.com/watch?v=Z0mQ7KQPMto)
-- [Programa gratuito para buscar y reemplazar texto en archivos] (https://www.sublimetext.com/)
+El `replace()` trabaja devolviendo una nueva cadena basada en la original, sustituyendo todas las coincidencias para `replace()` o la primera para `replaceFirst()`.
+
+## Ver también
+
+Para profundizar más en este tema puedes visitar estos enlaces:
+- Documentación oficial de Kotlin [replace()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- Guía de estudio de investigación sobre el uso de [expresiones regulares en Kotlin](https://www.baeldung.com/kotlin-regex) 
+- Comparación de métodos de búsqueda y reemplazo en Kotlin [replace() vs substring()](https://www.geeksforgeeks.org/kotlin-string-replace-method/)

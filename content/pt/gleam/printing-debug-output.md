@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "Gleam: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Imprimindo saída de debug"
+html_title:           "C#: Imprimindo saída de debug"
+simple_title:         "Imprimindo saída de debug"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
---------------------------------------------------
-## O que e Porque?
+## O Que & Porquê?
+Imprimir saída de depuração é a ação de gerar valores internos de um programa que nos permitem monitorar o seu comportamento. Os programadores fazem isso para identificar, rastrear e corrigir erros ou bugs em um programa.
 
-Imprimir a saída de depuração é uma técnica frequentemente usada por programadores para visualizar o estado do código durante a execução. Isso é útil para identificar e corrigir erros, bem como para entender melhor o comportamento do programa.
-
-## Como fazer:
-
-As impressões de depuração no Gleam podem ser feitas usando a macro `debug!` seguida de uma expressão a ser impressa. Por exemplo:
+## Como Fazer:
+Aqui está um exemplo simples de como imprimir a saída de depuração no Gleam.
 
 ```Gleam
-debug! 2 + 3
+import gleam/io.{println}
+
+fn main() {
+  let x = 10
+  _ = println("O valor de x é: ", x)
+  // Este comentário imprime "O valor de x é: 10" no terminal
+}
 ```
+No código acima, estamos usando a função builtin `println` para imprimir no terminal o valor da variável `x`.
 
-Isso imprimirá `5` no console durante a execução do programa.
+## Aprofundando-se
+Imprimir a saída de depuração é uma prática comum desde os primórdios da programação. O Gleam, que inicialmente foi projetado para fazer a ponte entre a simplicidade funcional do Erlang e a tipagem estática, fornece funções de depuração semelhantes a outras linguagens de programação com `{println}`.
 
-Você também pode adicionar uma mensagem à sua impressão, usando a forma `debug!("Sua mensagem", expressão)`. Por exemplo:
+Alternativas para imprimir a saída de depuração incluem o uso de depuradores e de sondas (probes) dinâmicas.
 
-```Gleam
-debug!("O resultado é:", 2 + 3)
-```
+Quando você utiliza `{println}`, a função envia sua saída para `stdio`, especificamente para o fluxo `stdout`. Em um ambiente de produção, pode ser melhor considerar enviar a saída de depuração para arquivos de log ou para um sistema de logging centralizado.
 
-A saída seria `O resultado é: 5`.
-
-## Aprofundando:
-
-Imprimir a saída de depuração não é exclusivo do Gleam, mas é uma técnica amplamente utilizada em programação. Está disponível em várias linguagens de programação e é uma das maneiras mais rápidas e eficazes de rastrear bugs em um programa.
-
-Algumas alternativas para imprimir a saída de depuração incluem o uso de um depurador, como o GDB ou o LLDB, ou a utilização de ferramentas de rastreamento de chamadas, como o strace.
-
-As impressões de depuração no Gleam são implementadas usando macros, que permitem que o código seja gerado dinamicamente em tempo de compilação. Isso torna as impressões de depuração muito eficientes e não afeta o desempenho do programa em tempo de execução.
-
-## Veja também:
-
-- [Documentação do Gleam sobre impressões de depuração](https://gleam.run/book/concurrency-debugging)
-- [Artigo sobre impressões de depuração em Rust](https://docs.rs/log/0.4.8/log/)
-- [Tutoriais sobre o depurador GDB](https://www.gnu.org/software/gdb/documentation/)
+## Veja Também
+Para mais informações sobre depuração no Gleam, visite:
+* [Guia Oficial de Gleam](https://gleam.run/book/tour/debugging.html)
+* [Documentação do io.println](https://hexdocs.pm/gleam_io/gleam/io/#println)

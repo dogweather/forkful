@@ -1,7 +1,7 @@
 ---
-title:                "Konvertering av en streng til små bokstaver"
-html_title:           "Clojure: Konvertering av en streng til små bokstaver"
-simple_title:         "Konvertering av en streng til små bokstaver"
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,26 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Konvertering av en streng til små bokstaver er en vanlig oppgave for programmerere. Dette innebærer å endre alle bokstavene i en streng til små bokstaver. Dette kan være nyttig for å sikre at brukerens inntasting er i riktig format eller for å sammenligne to strenger uavhengig av store og små bokstaver.
 
-## Hvordan:
-Convert en streng til små bokstaver er enkelt i Clojure. Du kan bruke funksjonen `lower-case`eller metoden `.toLowerCase()` på en streng. Se eksemplene nedenfor for å se hvordan dette gjøres:
+Å konvertere en streng til små bokstaver er prosessen med å endre store bokstaver i en tekststreng til små bokstaver. Programmerere gjør dette for å standardisere tekstdata, spesielt når de sammenligner, sorterer eller søker etter tekst.
+
+## Hvordan gjør vi det:
+Å konvertere en streng til små bokstaver i Clojure er rett fram med `clojure.string/lower-case` funksjonen. Her er et eksempel:
 
 ```Clojure
-; Ved hjelp av lower-case-funksjonen
-(lower-case "HELLO") ; Output: "hello"
+(require '[clojure.string :as str])
 
-; Ved hjelp av .toLowerCase() -metoden
-(.toLowerCase "HELLO") ; Output: "hello"
+(str/lower-case "Clojure RULES!") 
 ```
 
-## Dypdykk:
-Konvertering av en streng til små bokstaver har vært en viktig del av programmering i mange år. Før moderne programmeringsspråk som Clojure, ble dette gjort ved å bruke ulike metoder for å endre bokstaver til små bokstaver, som å trekke fra 32 fra ASCII-verdien eller utføre XOR-operasjoner.
+Koden ovenfor vil gi følgende utskrift:
 
-Alternativene til å bruke `lower-case`-funksjonen i Clojure inkluderer også å bruke en løkke for å gå gjennom hver enkelt bokstav i en streng og endre til små bokstaver ved hjelp av `char-utils` biblioteket.
+```Clojure
+"clojure rules!"
+```
 
-`lower-case`-funksjonen er implementert ved hjelp av Java-metoden `toLowerCase()` som er en del av `String`-klassen. Dette betyr at du også kan bruke denne metoden på Java-strenger i Clojure.
+##Dypdykk
 
-## Se også:
-- Clojure.org: [lower-case](https://clojuredocs.org/clojure.core/lower-case)
-- Java API: [String.toLowerCase()](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toLowerCase())
+Historisk sett var det ikke noe behov for å konvertere en streng til små bokstaver i tidlige datasystemer som behandlet strengdata som tall. Men, med økningen i databehandlingsbehov og tekstbehandling, har behovet for tekstmanipulasjonsfunksjoner som dette blitt mer tydelig.
+
+Alternativt kan vi bruke `map` funksjonen sammen med `Character/lowerCase` for å oppnå det samme. Her er et eksempel:
+
+```Clojure
+(let [s "Clojure RULES!!"]
+ (apply str (map clojure.lang.Character/lowerCase s)))
+```
+
+Når det gjelder implementasjonsdetaljer, bruker Clojure's innebygde `clojure.string/lower-case` funksjonen Java's `Character.toLowerCase` under hetta. Den tar en streng, itererer gjennom hver karakter i strengen, konverterer karakteren til små bokstaver om nødvendig, og returnerer en ny streng.
+
+##Se Også
+
+Mens denne implementasjonen er grei, vil du kanskje vite mer om funksjonene vi har brukt. For det kan du sjekke ut følgende:
+
+- Clojure.string dokumentasjon [her](https://clojuredocs.org/clojure.string/lower-case)
+
+- Clojure.lang.Character dokumentasjon [her](https://clojuredocs.org/clojure.core/Character) 
+
+- Java's `Character.toLowerCase` dokumentasjon [her](https://docs.oracle.com/javase/8/docs/api/java/lang/Character.html#toLowerCase-char-)

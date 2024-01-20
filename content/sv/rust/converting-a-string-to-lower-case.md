@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla en sträng till gemener"
-html_title:           "Rust: Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
 simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att konvertera en sträng till gemener innebär att göra alla bokstäver i strängen små bokstäver istället för stora. Detta är en vanlig operation inom programmering för att göra jämförelser av strängar case-insensitiva, vilket betyder att stora och små bokstäver behandlas som samma.
+## Vad och Varför?
+
+Att konvertera en sträng till gemener involverar att ändra alla versaler i en sträng till gemener. Detta är vanligt när programmerare vill jämföra strängar utan att ta hänsyn till skiftläge.
 
 ## Hur man gör:
-Ett enkelt sätt att göra detta i Rust är att använda funktionen `to_lowercase()`, som är en del av standardbiblioteket. Här är ett exempel på hur man kan använda den:
+
+I Rust kan du enkelt konvertera en sträng till gemener med `to_lowercase` funktionen. Här är ett exempel:
 
 ```Rust
-let sträng = "Hej Värld!";
-let lowercase_sträng = sträng.to_lowercase();
-println!("{}", lowercase_sträng);
-```
-
-Resultatet blir "hej värld!".
-
-En annan möjlighet är att använda `chars()` funktionen för att iterera över varje tecken i strängen och sedan använda `to_lowercase()` på varje enskilt tecken. Detta kan vara användbart om man vill göra andra operationer på strängen samtidigt. Här är ett exempel:
-
-```Rust
-let mut sträng = String::from("Hej Värld!");
-for c in sträng.chars() {
-    let lowercase_c = c.to_lowercase().to_string();
-    // Gör något med det lowercase tecknet här
+fn main() {
+    let s = "HEJ, VÄRLDEN!";
+    let lower_s = s.to_lowercase();
+    println!("{}", lower_s);
 }
 ```
 
-## Djupintervju:
-Att konvertera en sträng till gemener har varit en viktig del av programmering sedan tidiga datorer. I Unicode-standarderna behandlas gemener och versaler som olika tecken, vilket innebär att konverteringen av bokstäver är mer komplicerad än bara att göra dem små.
+När du kör ovanstående program får du följande utdata:
 
-Det finns flera alternativ för att konvertera en sträng till gemener i Rust, inklusive `make_ascii_lowercase()` och `make_ascii_lowercase_inplace()` som enbart fungerar på ASCII-tecken och är därför snabbare. Det finns också externa bibliotek som kan användas för att göra konverteringen eller för att göra den snabbare för stora mängder data.
+```Rust
+hej, världen!
+```
 
-Implementeringen av `to_lowercase()` i standardbiblioteket använder Unicode-standardernas regler för att identifiera tecken som kan ha en gemensam gemena form, och sedan konverterar dem enligt dessa regler. Det är också möjligt att ange ett språkkodargument till funktionen för att använda språkspecifika regler för konverteringen.
+## Djup Dykning:
 
-## Se även:
-För mer information om olika sätt att hantera strängar i Rust, se "The Rust Programming Language" bokens kapitel om strängar (https://doc.rust-lang.org/book/ch08-02-strings.html). För en djupare förståelse av Unicode-standarderna, se Unicode-konsortiets hemsida (https://unicode.org/).
+För det första, `to_lowercase` är inget nytt: det har funnits i programmeringsspråk sedan början för att hantera skillnader i skiftläge.
+
+Sommiga språk, som Python och JavaScript, har också liknande funktioner. Det finns dock inga direkta alternativ till `to_lowercase` i Rust. Funktionen använder Unicode Character Database för att korrekt konvertera strängar, även de med icke-engelska tecken.
+
+Dessutom, `to_lowercase` skapar en ny `String` som resultatet. Originalsträngen är oförändrad. Detta är viktigt i Rust eftersom det är ett systemspråk som värderar minneshantering.
+
+## Se Även:
+
+För mer information om `to_lowercase` och andra stränghanteringsfunktioner i Rust, besök den officiella dokumentationen [här](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase). För att lära dig mer om strängjämförelser och skiftlägeskänslighet, kolla in denna [artikel](https://www.ietf.org/rfc/rfc3454.txt).

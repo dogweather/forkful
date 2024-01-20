@@ -1,7 +1,7 @@
 ---
-title:                "「文字列を小文字に変換する」"
-html_title:           "C: 「文字列を小文字に変換する」"
-simple_title:         "「文字列を小文字に変換する」"
+title:                "文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ 何となぜ？
+## 何となぜ？
+文字列を小文字に変換するとは、与えられた文字列内の全ての大文字を対応する小文字に変換するプロセスのことです。プログラマーがこれを行う主な理由は、一般的に文字列の比較や検索を容易にするためです。
 
-文字列を大文字から小文字に変換することは、プログラマーがテキストを操作するときに非常に便利です。大文字と小文字を区別することで、文字列を比較したり、特定の形式に整形したりすることができます。プログラマーは通常、使用する言語に応じて、文字列を大文字から小文字に変換する方法を学びます。
-
-＃＃ 方法：
-
-以下のコードブロックを使用して、文字列を大文字から小文字に変換する方法を説明します。
+## 方法：
+以下に小文字への変換を行うCプログラムのサンプルコードとその出力を示します。
 
 ```C
 #include <stdio.h>
 #include <ctype.h>
 
-int main()
-{
-    char str[] = "HELLO WORLD!";
-    int i = 0;
-
-    // 文字列を大文字から小文字に変換するループ
-    while (str[i])
-    {
-        putchar(tolower(str[i]));
-        i++;
+int main() {
+    char text[] = "Hello, World!";
+    
+    for(int i = 0; text[i]; i++){
+      text[i] = tolower(text[i]);
     }
-
+    
+    printf("%s\n", text);
+    
     return 0;
 }
 ```
+このプログラムの出力は以下のとおりです:
+```C
+"hello, world!"
+```
 
-出力：hello world!
+## 深堀り：
+### 歴史的背景
+小文字変換の概念は、コンピューティングが成長し、パフォーマンス要求が増すにつれて発展してきました。C言語は成熟した言語で、その設計が始まった1970年代からプログラマーがこのタスクを容易に実行できるようになりました。
+### 代替案
+ `tolower`関数以外にも、大文字を小文字に変換するためのいくつかの方法があります。ASCII値を直接操作することで実現可能ですが、`tolower`関数は綺麗で直感的なソリューションを提供します。
+### 実装の詳細
+上記のプログラムでは、`tolower`関数を使用して文字列を小文字に変換しています。この関数はctype.hライブラリに含まれており、大文字の文字が渡されると、それを対応する小文字に変換します。
 
-＃＃ 深堀り：
-
-文字列を大文字から小文字に変換する方法は、古いコンピューターのプログラマーにとって重要な基本的なスキルでした。その当時、コンピューターは大文字と小文字を区別せず、すべてのコマンドは大文字で入力する必要がありました。しかし、現代では、大文字と小文字を区別することでテキストをより柔軟に操作できるようになりました。
-
-文字列を大文字から小文字に変換する方法は、プログラミング言語ごとに異なります。C言語では、```tolower```関数を使用して、文字列を小文字に変換します。ただし、他の言語では、異なるメソッドや関数を使用する必要があるかもしれません。
-
-＃＃ 関連情報：
-
-- https://www.programiz.com/c-programming/library-function/ctype.h/tolower
-- https://www.geeksforgeeks.org/c-program-find-lowercase-string/
-- https://www.tutorialspoint.com/c_standard_library/ctype_h.htm
+## 参考情報
+- [Wikipedia: Case Folding](https://en.wikipedia.org/wiki/Case_folding)
+- [cplusplus.com: tolower](http://www.cplusplus.com/reference/cctype/tolower/)
+- [ASCII Table: lower case conversion](https://asciitable.xyz)

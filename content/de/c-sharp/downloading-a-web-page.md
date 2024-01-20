@@ -1,7 +1,7 @@
 ---
-title:                "Webseite herunterladen"
-html_title:           "C#: Webseite herunterladen"
-simple_title:         "Webseite herunterladen"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,43 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Herunterladen einer Webseite in C#
+
 ## Was & Warum?
-Webseiten herunterzuladen bedeutet, den Inhalt einer Internetseite auf deinen Computer zu übertragen. Programmierer machen dies, um den Quellcode einer Seite zu analysieren, Daten abzurufen oder Inhalte auf einer Webseite zu bearbeiten.
+Das Herunterladen einer Webseite ist der Prozess, bei dem der Inhalt einer Webseite abgerufen und auf dem lokalen System gespeichert wird. Programmierer machen das, um Daten für die Datenanalyse zu sammeln, Offline-Navigation zu ermöglichen oder die Website-Inhalte zu archivieren.
 
-## Wie geht's?
-Das Herunterladen einer Webseite in C# ist relativ einfach. Du kannst die `HttpClient` Klasse verwenden, um eine Verbindung mit der Webseite herzustellen und dann die `GetStringAsync()` Methode aufrufen, um den Inhalt der Seite als String zu erhalten.
+## Anleitung
+In C# können wir die Klasse `HttpClient` aus der Namespace `System.Net.Http` verwenden, um eine Webseite herunterzuladen. 
+
 ```C#
+using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
-var client = new HttpClient();
-var response = await client.GetStringAsync("https://www.beispielwebseite.com");
-Console.WriteLine(response);
+class Program {
+    private static readonly HttpClient client = new HttpClient();
+
+    static void Main(string[] args){
+        DownloadPageAsync();
+        Console.ReadLine();
+    }
+
+    private static async Task DownloadPageAsync() {
+        var response = await client.GetAsync("http://example.com");
+        string content = await response.Content.ReadAsStringAsync();
+        Console.WriteLine(content);
+    }
+}
 ```
-Dieser Code wird den gesamten HTML-Code der Webseite auf der Konsole ausgeben.
 
-Du kannst auch den `HttpWebRequest` und `HttpWebResponse` verwenden, um eine Verbindung herzustellen und den Inhalt der Seite als Stream zu erhalten.
-```C#
-var request = (HttpWebRequest)WebRequest.Create("https://www.beispielwebseite.com");
-var response = (HttpWebResponse)request.GetResponse();
-var stream = response.GetResponseStream();
+Wenn wir das Programm ausführen, erhalten wir die HTML-Ausgabe der angegebenen Webseite auf der Konsole.
 
-StreamReader reader = new StreamReader(stream);
-Console.WriteLine(reader.ReadToEnd());
-```
-Dieser Code wird ebenfalls den gesamten HTML-Code auf der Konsole ausgeben, funktioniert aber etwas anders als der vorherige Ansatz.
+## Tiefere Einsichten
+Historisch gesehen benutzten wir `WebClient` für solche Aufgaben, aber `HttpClient` ist die modernere und flexiblere Alternative. Das Singleton-Muster ist auch in der obigen Implementierung zu sehen, das hilft, unnötige Instanzen und damit verbundene kostspielige Ressourcenzuweisungen zu vermeiden.
 
-## Tiefer tauchen
-Das Herunterladen von Webseiten hat in der Vergangenheit oft illegale Zwecke gehabt, wie das Spiegeln von Inhalten oder das Umgehen von Zugriffsbeschränkungen. Daher kann es sein, dass du bei deinem Versuch, eine Webseite herunterzuladen, auf eine Anti-Scraping-Technik stößt, die das Herunterladen von Inhalten erschwert oder sogar blockiert.
+Eine Alternative zum Herunterladen von Webseiten könnte die Nutzung von APIs sein, wenn diese verfügbar sind. APIs liefern oft datenintensivere und strukturierte Daten.
 
-Eine Alternative zum direkten Herunterladen einer Webseite ist die Verwendung von Web Scraping Frameworks wie Scrapy oder BeautifulSoup. Diese Frameworks bieten eine Vielzahl von Funktionen, die es dir ermöglichen, spezifische Teile von Webseiten zu extrahieren oder ganze Webseiten herunterzuladen.
-
-Um Webseiten in deinem Code herunterzuladen, solltest du dich auch mit den Themen Cookies, Authentifizierung und HTTP-Header vertraut machen. Diese spielen oft eine wichtige Rolle beim Zugriff auf Webseiten und können bei fehlerhafter Implementierung zu Problemen führen.
-
-Beim Herunterladen von Webseiten solltest du auch darauf achten, dass du nicht gegen die Nutzungsbedingungen der Seite verstößt. Manche Webseiten verbieten das Scrapen ihrer Inhalte und können rechtliche Schritte einleiten, wenn du trotzdem ihre Inhalte herunterlädst.
+Beim Herunterladen von Webseiten ist zu beachten, dass der Zugriff auf bestimmte Seiten durch Nutzungsbedingungen geregelt sein kann. Daher ist es wichtig, alle relevanten rechtlichen Aspekte zu berücksichtigen.
 
 ## Siehe auch
-Für weitere Informationen zum Herunterladen von Webseiten in C# kannst du folgende Quellen besuchen:
+Für weitere Informationen, siehe die offizielle Dokumentation:
 
-- [MSDN - HttpClient Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.net.http.httpclient)
-- [Codeburst - A Beginner's Guide to Web Scraping in C#](https://codeburst.io/a-beginners-guide-to-web-scraping-in-c-40ec4770e125)
-- [GeeksforGeeks - Web Scraping Using BeautifulSoup in C#](https://www.geeksforgeeks.org/web-scraping-using-beautifulsoup-in-c-sharp/)
+- [`HttpClient` Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [Asynchrone Programmierung](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/concepts/async/)
+- [`WebClient` Klasse](https://docs.microsoft.com/de-de/dotnet/api/system.net.webclient?view=net-5.0)
+
+Bitte beachte, dass es wichtig ist, sich mit den Nutzungsbedingungen der Webseite vertraut zu machen, bevor du versuchst, ihre Inhalte herunterzuladen.

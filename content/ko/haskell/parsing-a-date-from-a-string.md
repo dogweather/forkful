@@ -1,7 +1,7 @@
 ---
-title:                "문자열에서 날짜 구문 분석하기"
-html_title:           "Haskell: 문자열에서 날짜 구문 분석하기"
-simple_title:         "문자열에서 날짜 구문 분석하기"
+title:                "문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
+simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## 무엇이며 왜 필요한가?
+문자열에서 날짜를 파싱하는 것은 문자열 형태의 날짜를 프로그램이 이해할 수 있는 날짜 데이터 형식으로 변환하는 것입니다. 프로그래머들이 이를 사용하는 이유는 다양한 원본에서 받은 날짜 정보를 프로그램 내에서 일관되게 처리하기 위해서입니다.
 
-날짜를 문자열에서 추출하기는 프로그래머들이 자주 하는 일입니다. 이것은 개발자가 사용자로부터 날짜 형식을 문자열로 입력받은 경우, 정보를 추출하고 이를 다른 형식으로 변경하기 위해 필요합니다.
-
-## 어떻게:
-
-Haskell에서 날짜를 문자열에서 추출하는 방법을 살펴보겠습니다. 아래의 코드 예제를 보면서 동작 방식을 이해해보세요.
+## 다음과 같이 해보세요:
+날짜 파싱은 `Data.Time` 라이브러리를 활용할 수 있습니다. 다음은 "DD-MM-YYYY" 형식의 문자열을 `Day` 오브젝트로 파싱하는 간단한 예입니다:
 
 ```Haskell
-module Main where
-import Data.Time.Format
-import Data.Time.Clock
+import Data.Time
+
+parseDate :: String -> Maybe Day
+parseDate input = parseTimeM True defaultTimeLocale "%d-%m-%Y" input
+```
+예시를 실행해봅시다:
+
+```Haskell
 main :: IO ()
-main = do
-  -- 문자열로 표현된 날짜
-  let dateStr = "2021-01-01"
-  -- 날짜 형식을 지정 (ISO-8601)
-  let dateFormat = iso8601DateFormat (Just "%H:%M:%S")
-  -- 문자열에서 날짜 추출
-  let parsedDate = parseTimeOrError True dateFormat dateStr :: UTCTime
-  -- 추출된 날짜 출력
-  putStrLn (show parsedDate)
+main = print $ parseDate "21-01-2021"
 ```
 
-위의 코드를 실행하면 "2021-01-01 00:00:00 UTC"라는 결과가 출력됩니다.
+이 경우 출력의 결과는 `Just 2021-01-21`이 됩니다.
 
-## 깊이 들어가기:
+## 깊이 알아보기
+사실, 문자열에서 날짜를 파싱하는 방법은 많이 있습니다.
 
-날짜를 문자열에서 추출하는 것은 매우 유용한 기능이지만, 이전에는 복잡한 작업이었습니다. 하지만 Haskell에서는 Data.Time.Format 모듈을 사용하여 쉽게 구현할 수 있습니다. 또한, 여러 형식을 지원하므로 자신에게 적합한 날짜 형식을 선택할 수 있습니다. 또한 라이브러리를 통해 다양한 날짜 연산도 가능합니다.
+1. **역사적 맥락**: 프로그래밍의 초기 단계에서는 이러한 날짜 변환을 수동으로 수행했지만, 복잡성과 에러 가능성이 높아진 라이브러리가 개발되기 시작했습니다.
 
-## 관련 자료:
+2. **대안**: Haskell에서는 `Data.Time` 외에도 `time` 라이브러리나 `date` 라이브러리 등 다양한 라이브러리가 있습니다. 그러나 `Data.Time` 라이브러리는 표준 라이브러리로 가장 널리 사용됩니다.
 
-- https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html
-- https://www.tutorialspoint.com/haskell/haskell_date_time.htm
+3. **구현 세부사항**: 위의 코드에서 `parseTimeM` 함수는 문자열을 파싱하고 `Just Day` 또는 `Nothing`을 반환합니다. 이는 실패할 수 있는 파싱 작업을 수행하기 때문입니다. 만일 주어진 문자열이 유효한 날짜가 아니라면 `Nothing`을 반환합니다.
+
+## 참고자료
+- `Data.Time` 라이브러리의 Haskell hackage: [https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
+- Haskell에서 날짜와 시간 다루기: [https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time#parsing-and-formatting-dates-and-times](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/time#parsing-and-formatting-dates-and-times)

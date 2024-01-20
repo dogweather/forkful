@@ -1,6 +1,6 @@
 ---
 title:                "יצירת קובץ זמני"
-html_title:           "TypeScript: יצירת קובץ זמני"
+html_title:           "C#: יצירת קובץ זמני"
 simple_title:         "יצירת קובץ זמני"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,35 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
+# כיצד ליצור קובץ זמני ב- TypeScript 
 
-יצירת קובץ זמני היא פעולה שמאפשרת למתכנתים ליצור ולשלוח קובץ זמני בזמן ריצת התוכנית. זה נעשה על מנת לשמור על מצב זמן מסוים בכדי למנוע בעיות תחבורה וחוסר אבטחה.
+## מה זה? ולמה?
 
-איך לעשות?
+יצירת קובץ זמני היא קובץ שנמחק לאחר שהמשימה שלו מושלמת. מתכנתים משתמשים בקבצים זמניים כדי לאחסן נתונים באופן זמני לצרכי עיבוד, גיבוי או העברה.
 
-עבור הדוגמה הבאה, נשתמש בפונקציה המובנית `fs` בתוך Typescript כדי ליצור קובץ זמני ולהדפיס את נתוניו:
+## איך לעבוד עם זה:
+
+הנה דוגמה על איך ליצור קובץ זמני ב- TypeScript:
 
 ```TypeScript
-import * as fs from 'fs';
+const fs = require('fs');
+const tmp = require('tmp');
 
-let tempFile = fs.writeFileSync('temp.txt', 'Temp file created!');
+let tmpobj = tmp.fileSync({ template: 'tmp-XXXXXX.txt' });
 
-console.log(tempFile);
+fs.writeSync(tmpobj.fd, "Hello World!");
+
+console.log("File: ", tmpobj.name);
+console.log("File content: ", fs.readFileSync(tmpobj.name, 'utf8'));
 ```
 
-תוצאה:
+עם הקוד הזה, אנו יוצרים קובץ זמני וכותבים לו "שלום עולם!". לאחר מכן, אנו מדפיסים את שם הקובץ ואת התוכן שלו.
 
-```
-Temp file created!
-```
+## צלילה עמוקה:
 
-להמשך קריאה על איך לעבוד עם קבצי טקסט זמניים בכדי להיות יצירתיים עם הקוד שלכם, אני ממליץ לך לבדוק את [מדריך JavaScript זמני של Mozilla](https://developer.mozilla.org/he/docs/Learn/JavaScript/Client-side_web_APIs/Client-side_storage) ואת תיעוד המפורט של `fs` עבור פייתון.
+אם אנחנו באמת רוצים להבין את זה:
+1. ההקשר ההיסטורי - קבצים זמניים הם ממשק עם מערכת ההפעלה שנוצר בשנות ה-60 של המאה ה-20.
+2. אלטרנטיבות - ניתן לשמור נתונים במאגר מידע או בזיכרון ה- RAM של המחשב.
+3. פרטי המימוש - קבצים זמניים מבוססים על איך מערכת ההפעלה מנהלת את הקבצים. זה יהיה שונה בין מערכות ההפעלה השונות.
 
-מעמקים עמוקים
 
-יצירת קובץ זמני היא קידום עצמי של יצירת קבצים תחת מחשב נתונים על מנת לשמור עותקים עבור המתמשים המאושרים בכוח המחשב. הישנון של שיטת יצירת קובץ נפרדים זמנה הוא נושא בו התפתחה ההיסטוריה של קבצי תחבורה במטרה להאצן את יכולת קבוצות העבודה לעבוד עם המאפיינים שנדרשים בקובץ זמני. ישנם דברים רבים שאנחנו יכולים ללמוד על יצירת קבצים זמניים, במקום לנסות לכתוב את הכל בצורה הזו, אי אפשר לבטל את התובנה הבסיסית של שימוש בקבצי טקסט זמניים כשאנו עובדים עם נתונים בתוך פורמט ספציפי וסטניאלי.
+## ראו גם:
 
-ראה גם
+1. בדוק את מסמכי ה- API של 'fs' ו- 'tmp' באתר הרשמי של Node.js: 
+https://nodejs.org/api/fs.html
+https://www.npmjs.com/package/tmp
 
-- [תוכניות ממוחשב של Microsoft](https://docs.microsoft.com/en-us/windows/text/temporary-files)
-- [תיעוד Python של FileSystem](https://docs.python.org/3/library/os.html)
+2. עיין בסדרת הטוטוריאלים של Mozilla על ג'אווהסקריפט:
+https://developer.mozilla.org/he/docs/Web/JavaScript
+
+3. קרא את הספר "You Don't Know JS" של Kyle Simpson:
+https://github.com/getify/You-Dont-Know-JS
+
+אז זהו, עכשיו אתה יודע איך ליצור קובץ זמני ב- TypeScript.מקווה שזה היה שימושי!

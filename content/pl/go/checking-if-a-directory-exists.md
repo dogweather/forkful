@@ -1,7 +1,7 @@
 ---
-title:                "Sprawdzanie czy istnieje katalog"
-html_title:           "Go: Sprawdzanie czy istnieje katalog"
-simple_title:         "Sprawdzanie czy istnieje katalog"
+title:                "Sprawdzanie, czy katalog istnieje"
+html_title:           "Go: Sprawdzanie, czy katalog istnieje"
+simple_title:         "Sprawdzanie, czy katalog istnieje"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,11 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co chodzi i dlaczego?
-W Go (aktualna wersja), sprawdzanie czy dany katalog istnieje jest procesem, w którym programista stwierdza, czy dana ścieżka do katalogu jest dostępna w systemie plików. Jest to ważne w celu zapewnienia poprawnego działania programu, np. przy odczytywaniu lub zapisywaniu plików.
+## Co i Dlaczego?
+
+Sprawdzenie, czy dany folder istnieje, to zasadnicza czynność wykonywana przez programistów. Jest to niezbędne w przypadkach, kiedy nasz kod chce przeczytać plik z folderu lub zapisać do niego, ze szczególnym uwzględnieniem dzielenia danych między różnymi uruchomieniami programu.
 
 ## Jak to zrobić:
-Sprawdzenie czy katalog istnieje w Go jest bardzo proste. Można to zrobić przy użyciu funkcji `os.Stat()` i sprawdzenia czy występuje błąd przy próbie dostępu do ścieżki. Poniżej przedstawiony jest przykład kodu oraz ewentualne wyjście.
+
+Za pomocą wbudowanej biblioteki os w Go, możemy łatwo sprawdzić, czy dany katalog istnieje czy nie. Oto prosty przykład:
 
 ```Go
 package main
@@ -25,30 +27,30 @@ import (
 )
 
 func main() {
+	_, err := os.Stat("/ścieżka/do/folderu")
 
-	// podaj ścieżkę do sprawdzenia
-	path := "ściezka/do/katalogu"
-
-	// sprawdź czy ścieżka istnieje przy użyciu os.Stat()
-	if _, err := os.Stat(path); err == nil {
-		// katalog istnieje
-		fmt.Println("Katalog istnieje!")
+	if os.IsNotExist(err) {
+		fmt.Println("Folder nie istnieje.")
 	} else {
-		// wystąpił błąd lub katalog nie istnieje
-		fmt.Println("Katalog nie istnieje lub wystąpił błąd.")
+		fmt.Println("Folder istnieje.")
 	}
 }
 ```
 
-### Przykładowe wyjście:
-```
-Katalog istnieje!
-```
+Gdy uruchomisz ten kod, otrzymasz odpowiedź "Folder nie istnieje." lub "Folder istnieje." w zależności od tego, czy ścieżka, którą podałeś, prowadzi do istniejącego folderu.
 
-## Pogłębione zagadnienia:
-Sprawdzanie czy katalog istnieje to stosunkowo prosta operacja, ale warto mieć na uwadze trochę pogłębionych informacji na ten temat. Przede wszystkim, funkcja `os.Stat()` ma także swoje odpowiedniki w innych językach programowania, np. `file_exists()` w PHP czy `exists()` w Pythonie. Ponadto, można także użyć innej funkcji w Go, mianowicie `os.IsNotExist()`, która sprawdzi czy dany błąd jest spowodowany brakiem istnienia pliku lub katalogu. Warto także pamiętać, że nie tylko katalogi można sprawdzać w ten sposób, ale także pliki.
+## Głębsze zrozumienie:
+
+Funkcja `os.Stat` zwraca informacje o pliku. W przypadku błędu, czyli gdy plik lub folder nie istnieje, zwraca wartość `error`. `os.IsNotExist` to funkcja, która zwróci `true`, jeśli błąd wskazuje, że plik/coś nie istnieje.
+
+Go (wcześniej nazywane Golang), stworzone przez Google, koncentruje się na prostocie i niezawodności. Różne metody były używane do sprawdzania, czy katalog istnieje w różnych językach programowania, ale Go zapewnia jedno z najprostszych rozwiązań.
+
+Jeśli chcesz sprawdzić, czy coś, co może być plikiem lub folderem, istnieje bez wskazania konkretnego typu, ten sam kod działa bez zarzutu. Jeśli jednak chciałbyś sprawdzić tylko foldery, musisz posprawdzać typ pliku, który otrzymujesz z `os.FileInfo`.
 
 ## Zobacz także:
-- Dokumentacja funkcji `os.Stat()` w języku Go: https://golang.org/pkg/os/#Stat
-- Inne sposoby na sprawdzanie istnienia katalogów w Go: https://golang.org/pkg/os/#example_File_nameIsDirectory
-- Poradnik na temat operacji na plikach i katalogach w języku Go: https://golang.org/doc/tutorials/io/
+
+1. Dokumentacja Go dla 'os' - https://golang.org/pkg/os/
+
+2. Jak używać pakietu 'os' w Go - https://go.dev/blog/using-go-modules
+
+3. Opis funkcji 'os.Stat' - https://pkg.go.dev/os#Stat

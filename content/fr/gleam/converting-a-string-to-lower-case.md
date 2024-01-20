@@ -1,7 +1,7 @@
 ---
-title:                "Conversion d'une chaîne de caractères en minuscules"
-html_title:           "Gleam: Conversion d'une chaîne de caractères en minuscules"
-simple_title:         "Conversion d'une chaîne de caractères en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Arduino: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,27 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que & pourquoi ?
+## Quoi & Pourquoi?
+La conversion d'une chaîne en minuscules signifie changer toutes les lettres majuscules de la chaîne en minuscules. Les programmeurs le font pour faciliter les comparaisons de chaînes, en évitant des différences due à la casse.
 
-La conversion d'une chaîne de caractères en minuscules est une opération courante dans la programmation. Cela signifie simplement changer tous les caractères en majuscules d'une chaîne en leurs équivalents en minuscules. Les programmeurs le font généralement pour uniformiser les données et rendre la recherche et le tri plus faciles.
-
-## Comment faire :
-
-Pour convertir une chaîne en minuscules en utilisant Gleam, vous pouvez utiliser la fonction `String.to_lower`. Elle prend une chaîne en tant qu'argument et renvoie la même chaîne avec tous les caractères en minuscules. Voici un exemple de code :
+## Comment faire:
+Voici comment le faire en Gleam:
 
 ```Gleam
-let string = "HELLO WORLD"
-let lower_case_string = String.to_lower(string)
+import gleam/string
+
+string.to_lower("SALUT MONDE")
 ```
 
-Lorsque vous exécutez ce code, la valeur de `lower_case_string` sera "hello world".
+En sortie, vous obtiendrez "salut monde".
 
-## Plongée en profondeur :
+## Approfondissement
+Historiquement, la conversion de caractères de majuscules à minuscules est un concept qui a pris naissance avec l'évolution des langues écrites. En programmation, c'est une fonctionnalité présente depuis l'invention des premiers langages.
 
-La conversion de chaîne en minuscules n'est pas une fonction spécifique à Gleam, elle est disponible dans la plupart des langages de programmation. Cela remonte à l'ASCII, un codage de caractères utilisé pour représenter les symboles de texte. Dans l'ASCII, les codes numériques pour les lettres majuscules et minuscules ont une différence de 32. C'est pourquoi la conversion de chaîne en minuscules est également appelée "baisser la casse" ou "changer la casse".
+Il existe toujours des alternatives à la fonction `string.to_lower()`, par exemple en itérant à travers chaque lettre et en transformant manually chaque majuscule en minuscule. Mais cette technique est beaucoup plus lente et moins efficace que d'utiliser une fonction intrinsèque comme celle fournie par Gleam.
 
-Dans Gleam, il existe également la fonction `String.to_upper` pour convertir une chaîne en majuscules. Si vous voulez ignorer les accents lors de la conversion, vous pouvez utiliser `String.to_ascii_upper` et `String.to_ascii_lower`.
+En interne, la méthode `string.to_lower()` en Gleam parcourt chaque caractère de la chaîne et utilise la table de correspondance Unicode pour trouver l'équivalent en minuscule. 
 
-## À voir aussi :
-
-Si vous voulez en savoir plus sur les fonctionnalités disponibles pour les chaînes de caractères en Gleam, consultez la documentation officielle sur les chaînes. Vous pouvez également apprendre différentes façons de modifier le cas des chaînes dans d'autres langages de programmation, tels que Python ou JavaScript.
+## Voir également
+Pour des informations plus détaillées, consultez les liens suivants:
+1. Documentation officielle de Gleam: https://gleam.run/documentation/
+2. Guide sur Unicode et les chaînes de caractères: https://www.joelonsoftware.com/2003/10/08/the-absolute-minimum-every-software-developer-absolutely-positively-must-know-about-unicode-and-character-sets-no-excuses/
+3. Répertoire Github de Gleam : https://github.com/gleam-lang/gleam

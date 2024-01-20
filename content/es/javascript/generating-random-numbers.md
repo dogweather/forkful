@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Javascript: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y por qué?
+## ¿Qué y Por qué?
 
-Generar números aleatorios es una técnica comúnmente utilizada por los programadores para generar valores aleatorios en un programa. Esto puede servir para simular situaciones de la vida real, generar datos de prueba o mejorar la aleatoriedad de un juego. 
+Generar números aleatorios es un proceso por el cual se producen números sin ningún patrón previsible. Los programadores los utilizan para tareas como simular comportamientos naturales, crear variabilidad en sus aplicaciones o para realizar tests con casos aleatorios.
 
-## Cómo:
+## Cómo hacerlo:
 
-```Javascript 
-// Ejemplo 1: Generar un número aleatorio entre 1 y 10
-let randomNumber = Math.floor(Math.random() * 10) + 1;
-console.log(randomNumber); // Output: 7
+Aquí tienes un código simple para generar un número aleatorio en Javascript entre 0 (incluido) y 1 (excluido).
 
-// Ejemplo 2: Generar un número aleatorio entre 50 y 100
-let min = 50;
-let max = 100;
-let random = Math.floor(Math.random() * (max - min + 1) + min);
-console.log(random); // Output: 87
+```Javascript
+var aleatorio = Math.random();
+console.log(aleatorio);
 ```
-Código de ejemplo: https://codepen.io/manuquerty/full/LYpzLxB
 
-## Profundizando:
+Para generar un número aleatorio dentro de un rango específico, utiliza este cálculo:
 
-La generación de números aleatorios es un concepto ampliamente utilizado en la informática, que tiene sus raíces en el campo de la probabilidad y la estadística. Antiguamente, los programadores utilizaban algoritmos que no eran realmente aleatorios, sino pseudoaleatorios, es decir, que siguen un patrón predecible. Sin embargo, hoy en día, los lenguajes de programación modernos cuentan con funciones y librerías que permiten generar números verdaderamente aleatorios.
+```Javascript
+var min = 10;
+var max = 20;
+var aleatorio = Math.floor(Math.random() * (max - min)) + min;
+console.log(aleatorio);
+```
 
-Existen también otras técnicas para generar números aleatorios, como usar variables de tiempo o datos externos como fuente de entropía. Sin embargo, la función Math.random() en JavaScript es la forma más sencilla y común de obtener valores aleatorios.
+## Profundización:
 
-## Vea también:
-- Documentación oficial de la función Math.random() en MDN: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-- Más ejemplos de generación de números aleatorios en JavaScript: https://stackabuse.com/javascript-generate-random-string/
+Históricamente, JavaScript ha confiado en la función Math.random() para generar números aleatorios. Sin embargo, este método es pseudoaleatorio, lo que significa que utiliza un algoritmo inicial y predecible.
+
+Alternativamente, algunos desarrolladores recurren a la API criptográfica Web Crypto para generar números aleatorios más robustos. Como ejemplo:
+
+```Javascript
+var array = new Uint32Array(1);
+window.crypto.getRandomValues(array);
+console.log(array[0]);
+```
+Este método es generalmente seguro pero carece de compatibilidad con navegadores más antiguos.
+
+## Ver también: 
+
+[MDN Web Docs - Math.random()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Math/random)
+
+[MDN Web Docs - Web Crypto API](https://developer.mozilla.org/es/docs/Web/API/Window/crypto)

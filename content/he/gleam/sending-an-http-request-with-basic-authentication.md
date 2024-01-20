@@ -1,7 +1,7 @@
 ---
-title:                "שליחת בקשת http עם אימות בסיסי בתכנות מחשבים"
-html_title:           "Gleam: שליחת בקשת http עם אימות בסיסי בתכנות מחשבים"
-simple_title:         "שליחת בקשת http עם אימות בסיסי בתכנות מחשבים"
+title:                "שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
+simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,24 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא פעולה שמאפשרת למתכנתים לשלוח בקשות לשרתים עם זיהוי משתמש וסיסמה. זה מאפשר למתכנתים להשתמש בשיטת אימות מעולה עבור יישומים דיגיטליים שמעוניינים לשמור על אבטחת המידע של משתמשים.
+## מה ולמה?
 
-איך לעשות:
-כאשר משלחים בקשת HTTP עם אימות בסיסי, עליכם להוסיף כותרת מתאימה לבקשה שלכם, שמכילה את שם המשתמש והסיסמה. הנה דוגמא:
+שליחת בקשת HTTP עם אימות בסיסי היא תהליך שבו תכנית נותנת מידע אימות לשרת. התכניתות משתמשות בכך כדי להבטיח שהן מתקשרות עם השרת הנכון ובאופן בטוח.
+
+## כיצד ל:
+
+הנה דוגמה של שליחת בקשת HTTP עם אימות בסיסי באמצעות שפת התכנות Gleam:
 
 ```Gleam
-let headers = List.of(("Authorization", "Basic dXNlcjpwYXNzd29yZA=="))
-let request = Http.request()
-                  |> Http.with_method("GET")
-                  |> Http.with_url("https://api.example.com/users")
-                  |> Http.with_headers(headers)
+import gleam/http.{Get, basic_auth}
+import gleam/uri.Uri
+import gleam/httpc
+
+let request = Get
+  |> basic_auth("username", "password")
+  |> httpc.request(Uri.parse("http://example.com")?)
+let response = httpc.send(request)
+
+assert Ok(response) = response
 ```
+הקוד הזה משלח בקשת GET לכתובת `"http://example.com"` באמצעות שם המשתמש `"username"` והסיסמה `"password"` כאימות בסיסי.
 
-בכתובת של האתר, פשוט החליפו "user" עם המשתמש שלכם ו"password" עם הסיסמה שלכם. אתם יכולים לקבל את הצורה המעודפת של כותרת Authorization בהתאם לדרישות ה-HTTP שלכם.
+## צלילה עמוקה
 
-מעומק:
-שיטת האימות הבסיסית היא שיטה ישנה לזיהוי משתמש וסיסמה, שנוצרה עבור התקשורת HTTP הראשונית. המיוחד בשיטת אימות זו הוא שהיא משתמשת במידע גלוי לפני שהוא מוצפן, לכן לעתים קרובות נמצאת מחסור באבטחת המידע. אחד הבידולים הפופולריים לשיטת אימות בסיסית הוא OAuth, המאפשר שיתוף מידע בצורה מאובטחת יותר.
+אימות בסיסי ב-HTTP הוא שיטה יחסית ישנה שנוצרה בשנות ה-90. היא מאוד משובשת ולא מאוד בטוחה, אך היא עדיין מצויה בשימוש. ישנן חלופות יותר מודרניות ובטוחות, כמו OAuth ו-Token Based Authentication. כאשר אתה שולח בקשת HTTP עם אימות בסיסי, השם משתמש והסיסמה שלך מאוחדים למחרוזת אחת, שמועברת בבקשת ה-HTTP כחלק מכותרת ה-Authorization.
 
-קישורים נוספים:
-למידע נוסף על שליחת בקשת HTTP עם אימות בסיסי, ניתן להצטרף לקהילת הג'לאם Gleam Discord server או לעיין במדריך הרשמי של הג'לאם.
+## ראה גם
+
+[המסמך המקורי של Basic Authentication Schema](https://tools.ietf.org/html/rfc7617)
+
+[מסמך Gleam HTTP](https://hexdocs.pm/gleam_http/gleam/http/)

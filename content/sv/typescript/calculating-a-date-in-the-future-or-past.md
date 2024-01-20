@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller i det förflutna"
-html_title:           "TypeScript: Beräkning av ett datum i framtiden eller i det förflutna"
-simple_title:         "Beräkning av ett datum i framtiden eller i det förflutna"
+title:                "Beräkna ett datum i framtiden eller förfluten tid"
+html_title:           "TypeScript: Beräkna ett datum i framtiden eller förfluten tid"
+simple_title:         "Beräkna ett datum i framtiden eller förfluten tid"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,32 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Beräkning av ett datum i framtiden eller det förflutna är en process som används för att hitta ett datum som är antingen framåt eller bakåt i tiden från ett givet startdatum. Programmerare använder detta för att hantera datum inom program, till exempel att schemalägga uppgifter, visa tidslinjer eller hantera åldersberäkningar.
+##_ Vad & Varför?
 
-## Hur gör man:
-```TypeScript
-// Beräkna datumen för en vecka framåt
-let startDatum = new Date();
-let veckaSenare = startDatum.getDate() + 7; 
-let nyttDatum = new Date(startDatum.setDate(veckaSenare)); 
+Att beräkna ett datum i framtiden eller förflutna handlar om att lägga till eller dra ifrån specifika tidsintervaller från ett givet datum. Detta är viktigt för programmerare för att hantera olika tidsrelaterade scenarier, som schemaläggning av händelser eller jämförelser av datum.
 
-console.log(nyttDatum); // sample output: 2021-07-14T15:35:37.590Z
-```
+##_ Hur man gör:
+
+I TypeScript kan du skapa en ny `Date` instans och sedan använda metoden `setDate` för att ändra den. Här är ett exempel:
 
 ```TypeScript
-// Beräkna tiden innan ett visst datum
-let startDatum = new Date('2021-07-01');
-let tidsintervall = 30; // antal dagar
-let datumInnan = startDatum.getDate() - tidsintervall; 
-let nyttDatum = newDate(startDatum.setDate(datumInnan)); 
-
-console.log(nyttDatum); // sample output: 2021-06-01T07:00:00.000Z
+let today = new Date();
+let futureDate = new Date();
+futureDate.setDate(today.getDate() + 5);
+console.log(futureDate);
 ```
 
-## Djupdykning:
-Beräkning av datum har varit en viktig del av programmeringen sedan början. Det är en vanlig uppgift som ofta används inom olika applikationer. Det finns olika sätt att beräkna datum, till exempel genom att använda inbyggda funktioner i ett programmeringsspråk eller använda speciella bibliotek. Det är också viktigt att tänka på olika tidszoner och hur de kan påverka beräkning av datum.
+Detta program kommer att skriva ut ett datum fem dagar i framtiden.
 
-## Se även:
-- [JavaScript Date object](https://developer.mozilla.org/sv/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js](https://momentjs.com/)
+##_ Fördjupning
+
+Att räkna ut framtidiga och förflutna datum är inte en ny idé, utan har rötter i gammal tidmätningsteori. I modern programmering finns det flera metoder för att göra detta, och vilken metod du väljer beror på ditt specifika behov. Det kan till exempel vara bättre att använda bibliotek som date-fns eller moment.js om ditt projekt har mycket komplexa datumoperationer.
+
+När du beräknar datum gör JavaScript (och TypeScript) justeringar för månader med olika antal dagar och skottår automatiskt. Om du till exempel säger `setDate(32)` på en datuminstans från januari, får du den första februari.
+
+##_ Se även
+
+- [MDN Web Docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [date-fns](https://date-fns.org/)
+- [moment.js](https://momentjs.com/)

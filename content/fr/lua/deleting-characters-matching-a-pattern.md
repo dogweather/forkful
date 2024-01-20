@@ -1,7 +1,7 @@
 ---
-title:                "Supprimer les caractères correspondant à un motif"
-html_title:           "Lua: Supprimer les caractères correspondant à un motif"
-simple_title:         "Supprimer les caractères correspondant à un motif"
+title:                "Suppression de caractères correspondant à un motif"
+html_title:           "C: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi?
-L'effacement de caractères correspondant à un modèle est simplement le fait de supprimer des caractères spécifiques dans une chaîne de caractères en fonction d'un motif prédéfini. Les programmeurs le font souvent pour nettoyer ou modifier des données en vrac de manière plus efficace.
+## Quoi & Pourquoi ?
 
-## Comment faire:
-Voici un exemple de code en Lua pour montrer comment effacer des caractères correspondant à un motif donné:
+Supprimer des caractères correspondant à un motif est un moyen efficace de nettoyer ou de manipuler des données en programmation. C'est parfait pour simplifier les chaînes de caractères, filtrer des informations inutiles, etc.
 
-```Lua 
--- Définir une chaîne de caractères
-local str = "8hLi34Az%&"
+## Comment faire :
 
--- Supprimer tous les caractères non numériques de la chaîne
-str = string.gsub(str, "%D", "")
+Voici comment vous pouvez supprimer des caractères correspondant à un motif en Lua :
 
--- Afficher la chaîne après l'effacement
-print(str)
-
--- Sortie: 834
+```Lua
+texte = "Bonjour les programmeurs !"
+texte = texte:gsub("%s", "") -- supprime les espaces
+print(texte) 
 ```
 
-## Plongée en profondeur:
-Ce concept n'est pas nouveau et provient en grande partie des expressions régulières dans les langages de programmation. Cependant, Lua offre une syntaxe plus simple et plus lisible pour effectuer cette opération. Il existe également des alternatives telles que l'utilisation de boucles pour parcourir la chaîne de caractères et la supprimer caractère par caractère, mais cela peut être fastidieux et moins efficace. En termes d'implémentation, Lua utilise l'algorithme de recherche de Knuth-Morris-Pratt pour trouver le motif donné dans la chaîne.
+Dans cet exemple, `%s` est le motif qui correspond à tous les espaces. La fonction `gsub` remplace tous les caractères correspondant à ce motif par rien, supprimant ainsi tous les espaces.
 
-## Voir aussi:
-- [Documentation officielle de Lua](https://www.lua.org/manual/5.4/manual.html#6.4)
-- [Expressions régulières en Lua](https://www.techotopia.com/index.php/Regular_Expressions_in_Lua)
-- [Algorithme de recherche de Knuth-Morris-Pratt](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
+Ce code affiche:
+
+```Lua
+Bonjourlesprogrammeurs!
+```
+
+## Exploration profonde
+
+Historiquement, la possibilité de supprimer des caractères correspondant à un motif est apparue avec les premiers langages de programmation. Dans le contexte de Lua (inventé en 1993), les expressions régulières nous facilitent la tâche pour cette tâche.
+
+Vous pouvez également utiliser la fonction `string.gsub` avec d'autres motifs pour supprimer différents types de caractères. Par exemple, `%w` correspond à tous les caractères alphanumériques, `%p` correspond à tous les signes de ponctuation, etc.
+
+Il est également possible d'implémenter ce type de fonctionnalité récursive, bien qu'en Lua, utiliser `gsub` est généralement plus rapide et plus facile à lire.
+
+## Voir aussi
+
+Pour en savoir plus sur la manipulation de chaînes en Lua, vous pouvez consulter les liens suivants :
+
+- [Programmation en Lua](https://www.lua.org/manual/5.3/manual.html#6.4)
+- [Expressions Régulières en Lua](https://www.lua.org/pil/20.2.html)
+- [Guide d'AllPatterns Lua](https://www.lua.org/pil/20.1.html)

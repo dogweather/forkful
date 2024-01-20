@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання http запиту"
-html_title:           "C++: Надсилання http запиту"
-simple_title:         "Надсилання http запиту"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,53 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## Що та Навіщо?
+Надсилання HTTP-запиту - це процес взаємодії програми з веб-сервером для отримання або відправлення даних через протокол HTTP. Програмісти роблять це для взаємодії з API, структурованої взаємодії з веб-сторінками, або для отримання даних з веб-ресурсів.
 
-Відправлення HTTP-запиту означає відправлення запиту до веб-сервера за допомогою протоколу HTTP. Це один зі способів зв'язку програм зі світом Інтернету. Програмісти виконують це для отримання даних з веб-сервера або для взаємодії з веб-додатками.
-
-## Як:
+## Як зробити:
+Використовуючи бібліотеку cURL в C++. Переконайтесь, що встановили cURL на вашу систему і підключили його до свого проекту.
 
 ```C++
-// Приклад відправлення HTTP GET запиту за допомогою бібліотеки curl
 #include <curl/curl.h>
 
-int main() 
-{
+int main() {
   CURL *curl;
   CURLcode res;
   
-  // Створення нового об'єкту для виконання запитів
+  curl_global_init(CURL_GLOBAL_DEFAULT);
   curl = curl_easy_init();
-  if(curl) 
-  {
-    // Встановлення адреси запиту 
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com");
-    // Встановлення параметрів запиту
-    curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-    
-    // Виконання запиту та отримання результату
+
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+ 
     res = curl_easy_perform(curl);
+    
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+ 
+    curl_easy_cleanup(curl);
   }
   
-  // Перевірка результату виконання
-  if(res != CURLE_OK)
-    fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
-  
-  // Закриття об'єкту
-  curl_easy_cleanup(curl);
+  curl_global_cleanup();
   
   return 0;
 }
 ```
+Цей код відправляє GET HTTP-запит до example.com.
 
-Вихідний код цього прикладу відправляє GET запит на адресу `https://www.example.com` та виводить на екран отриманий результат.
+## Поглиблений матеріал:
+Надсилання HTTP-запитів з'явилося майже одночасно з виникненням всесвітньої мережі. Раніше було не так багато альтернатив, але зараз, крім cURL, є багато інших бібліотек, таких як Boost.Asio, POCO і Qt Network. Велика частина цих бібліотек задіяна в асинхронному вводі/виводі і наданні більш високого рівня абстракції.
 
-## Глибше:
-
-HTTP (Hypertext Transfer Protocol) був розроблений для обміну даними між клієнтами та серверами у мережі Інтернет. На сьогоднішній день існують кілька альтернативних способів взаємодії програм з веб-серверами, таких як REST та WebSocket. Однак, HTTP-запити все ще використовуються для багатьох завдань, таких як отримання інформації з веб-сторінок або взаємодії з API веб-додатків. Для відправлення HTTP-запитів, програмістам зазвичай потрібно встановити спеціальні бібліотеки, такі як curl чи HTTP Client.
-
-## Дивись також:
-
-- [Документація з бібліотеки curl](https://curl.haxx.se/libcurl/)
-- [Офіційна специфікація протоколу HTTP](https://tools.ietf.org/html/rfc7230)
-- [Огляд REST та WebSocket протоколів](https://www.oreilly.com/library/view/developing-restful-web/9781449359737/ch01.html)
+## Дивіться також:
+1. [cURL офіційний сайт](https://curl.haxx.se)
+2. [Boost.Asio](https://www.boost.org/doc/libs/1_65_1/doc/html/boost_asio.html)
+3. [POCO Net](https://pocoproject.org/docs/Poco.Net.html)
+4. [Qt Network](https://doc.qt.io/qt-5/qtnetwork-index.html)

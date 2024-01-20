@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "Kotlin: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,30 +12,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Interpolowanie ciągów tekstowych w Kotlinie to metoda umożliwiająca łączenie fragmentów tekstu z różnych źródeł w celu utworzenia finalnego ciągu tekstowego. Programiści wykorzystują tę technikę, aby uprościć tworzenie i edycję ciągów tekstowych, unikając jednocześnie potrzeby tworzenia wielu zmiennych.
+Interpolacja ciągów w Kotlinie polega na wstawianiu wartości zmiennych bezpośrednio do ciągów. Programiści używają jej, aby zwiększyć czytelność i utrzymanie kodu.
 
 ## Jak to zrobić:
 
 ```Kotlin
-val imie = "Jan"
-val wiek = 30
-
-val powitanie = "Cześć, mam na imię $imie i mam $wiek lat."
-println(powitanie)
+fun main() {
+   val imie = "Jan"
+   val wiek = "22"
+   
+   println("Moje imię to $imie, a mój wiek to $wiek lat.")
+}
 ```
+Wyjście to: "Moje imię to Jan, a mój wiek to 22 lat."
 
-**Wyjście:**
->Cześć, mam na imię Jan i mam 30 lat.
+## Głębsza analiza
 
-## Głębszy wgląd:
+Interpolacja ciągów jest funkcją dostępną w wielu językach programowania, choć z różnym składnią. W Kotlinie korzystamy ze znaku `$` do interpolacji. Alternatywą dla interpolacji jest konkatenacja ciągów, ale jest to mniej czytelne i może być bardziej kosztowne pod względem wydajności. Co do szczegółów implementacji, Kotlin konwertuje interpolowane ciągi na konkatenację ciągów podczas kompilacji.
 
-Interpolowanie ciągów tekstowych jest popularną techniką używaną przez programistów już od dawna. Początkowo, w języku C, ta metoda nazywana była "zastąpieniem znacznika" i wymagała złożonej składni.
+## Zobacz też
 
-Alternatywnym rozwiązaniem dla interpolowania ciągów tekstowych w Kotlinie jest wykorzystanie operatora plus (+) do łączenia różnych ciągów. Jednakże, interpolowanie jest preferowane ze względu na czytelniejszą i prostszą składnię.
+[Interpolacja ciągów w Kotlinie - Dokumentacja Oficjalna](https://kotlinlang.org/docs/whatsnew12.html#string-interpolation)
 
-Wewnętrznie, operacja interpolacji ciągu tekstowego w Kotlinie wykorzystuje klasę `StringBuilder`, która jest bardziej wydajnym sposobem tworzenia i łączenia ciągów tekstowych.
+[Tekst ciągów - Kotlin Programming Language](https://kotlinlang.org/docs/reference/basic-types.html#string-literals)
 
-## Zobacz również:
-
-- Dokumentacja Kotlina na temat interpolacji ciągów tekstowych: <https://kotlinlang.org/docs/strings.html#string-interpolation>
-- Przykłady kodów z interpolacją ciągów tekstowych: <https://github.com/Kotlin/kotlin-examples/tree/master/functional/src/main/kotlin/functional>
+[Porównanie wydajności interpolacji ciągów i konkatenacji w Kotlinie](https://medium.com/@krpiotrek/string-interpolation-vs-concatenation-3ae7922b491e)

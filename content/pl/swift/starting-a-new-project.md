@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczynając nowy projekt"
-html_title:           "Swift: Rozpoczynając nowy projekt"
-simple_title:         "Rozpoczynając nowy projekt"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -10,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Założenie nowego projektu to nic innego jak rozpoczęcie pracy nad nowym programem lub aplikacją. Programiści często podejmują się tego zadania, aby zaspokoić potrzeby rynkowe lub poprawić swoje umiejętności. 
+# Rozpoczynanie Nowego Projektu w Swift 
+## Co i Dlaczego? 
+Rozpoczęcie nowego projektu w programowaniu jest jak rozpoczęcie nowego rozdziału w tworzeniu historii. Programiści robią to, aby zacząć od zera, zbudować nowe aplikacje, rozwinąć nowe pomysły lub rozwiązać nowe problemy.
 
 ## Jak to zrobić:
-Jeśli chcesz rozpocząć nowy projekt w Swift, wykonaj następujące kroki:
+Zaczynamy od utworzenia nowego projektu w Xcode. Oto prosty przykład jak zacząć:
 
-1. Utwórz nowy projekt w Xcode.
-2. Wybierz szablon aplikacji i dostosuj go do swoich potrzeb.
-3. Dodaj wymagane funkcje i biblioteki.
-4. Uruchom i przetestuj swój kod.
-5. Zapisz projekt i zarządzaj nim zgodnie z potrzebami.
-
-Przykładowy kod:
 ```Swift
-let message = "Witaj, świecie!"
-print(message)
+// Otwieramy Xcode, klikamy w "Create a new Xcode project"
+// Wybieramy typ "App" po czym klikamy "Next"
+// Dajemy naszemu projektowi nazwę, np. "MojaPierwszaAplikacja" i klikamy "Next"
+// Wybieramy miejsce gdzie chcemy zapisać nasz projekt i klikamy "Create"
 ```
-Output:
-```
-Witaj, świecie!
-```
+Po wykonaniu tych kroków, nasz projekt jest gotowy do działania!
 
-## Wnikliwe spojrzenie:
-Założenie nowego projektu jest kluczowym etapem w procesie tworzenia oprogramowania. Jest to również okazja do nauki nowych umiejętności i rozwoju w dziedzinie programowania iOS. Alternatywą dla korzystania z Xcode jest użycie narzędzi takich jak Xamarin lub React Native, które pozwalają na tworzenie aplikacji z użyciem języków innych niż Swift.
+## Dokładniejsza Analiza:
+Jak wiele języków programowania, Swift ma swoje korzenie w obiektowym języku programowania Objective-C, który był podstawą rozwoju aplikacji na platformy Apple. Swift jednak jest bardziej nowoczesny, oferuje więcej funkcji i jest łatwiejszy do nauczenia, szczególnie dla początkujących.
 
-## Zobacz również:
-- [Dokumentacja Swift](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
-- [Tutorial "Tworzenie pierwszej aplikacji w Swift"](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/)
+Rozpoczęcie nowego projektu to wiele więcej niż tylko kliknięcie kilku przycisków. Oznacza to także planowanie architektury aplikacji, zrozumienie przepływu danych, wybór wzorców projektowych i bibliotek, które pomogą osiągnąć zamierzony rezultat.
+
+Alternatywą dla rozpoczęcia projektu od zera może być sklonowanie istniejącego projektu lub użycie startowego zestawu (boilerplate), który oferuje podstawową strukturę projektu i często dołącza niezbędne biblioteki. To może zaoszczędzić czas, ale warto zrozumieć, jak wszystko działa, zanim zdecydujesz się na taki krok.
+
+## Zobacz Również:
+- [Swift: Rozpoczynanie](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html)
+- [Jak zacząć z Xcode](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/)
+- [Przewodnik po Swift dla początkujących](https://code.tutsplus.com/series/learn-swift-from-scratch--cms-1153)

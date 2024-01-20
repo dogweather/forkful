@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "C: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "C"
 category:             "C"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜? 
-문자열을 소문자로 변환하는 것은 프로그래머가 문자열을 간단하게 처리하고 비교할 수 있도록 하기 위한 방법입니다. 예를 들어, 문자열 "HELLO"를 모두 대문자로 쓸 때와 소문자로 쓸 때를 다루는 두 가지 다른 기능을 구현해야 할 때 매우 유용합니다.
+## 무엇이며 왜 사용하는가?
+문자열을 소문자로 변경하는 것은 모든 철자를 소문자로 변환하는 것입니다. 프로그래머들은 텍스트를 비교하거나 정렬할 때 대소문자 구분 없이 작업하기 위해 이를 사용합니다.
 
-## 방법: 
+## 어떻게 사용하나요:
 ```C
-#include <stdio.h>
 #include <ctype.h>
-
-int main()
-{
-  char str[] = "Hello, World!";
+#include <stdio.h>
   
-  // lowercase conversion using tolower() function
-  int i = 0;
-  while (str[i])
-  {
-    str[i] = tolower(str[i]);
-    i++;
+void lower_string(char s[]) {
+  int c = 0;
+   
+  while (s[c] != '\0') {
+    if (s[c] >= 'A' && s[c] <= 'Z') {
+       s[c] = s[c] + 32;
+    }
+    c++;
   }
+}
+
+int main() {
+  char string[] = "HELLO WORLD!";
   
-  printf("%s", str);
-  
+  lower_string(string);
+  printf("%s\n", string);
+
   return 0;
 }
 ```
-출력: hello, world!
+위 코드를 실행하면 출력 결과는 `hello world!`입니다.
 
-## 깊이 파고들기: 
-문자열을 소문자로 변환하는 아이디어는 프로그램 언어마다 다르지만, 대부분의 프로그래밍 언어에서 문자열 처리를 위한 내장 함수를 제공합니다. C에서는 tolower() 함수를 사용해 문자를 소문자로 변환할 수 있고, 문자가 대문자인지 소문자인지 확인하는 isupper() 함수를 제공합니다. 또한 문자열을 복사하고 비교하는 등 다양한 방법으로 문자열을 대소문자 구분 없이 처리할 수 있습니다.
+## 심화정보
+문자열의 소문자 변환 기능은 오래전부터 존재했으며, 텍스트 처리에 광범위하게 사용되고 있습니다. 이 과정은 컴퓨터 프로그래밍에서 흔히 발생하는 대소문자 문제를 해결하기 위해 사용되곤 합니다. 그 외에도 다른 대안들이 있다. 예를 들어, `tolower()` 함수를 각 문자에 적용하거나, 문자열 조작 라이브러리를 사용하는 등의 방법이 있습니다. 위의 코드 예제에서는 ASCII 값을 이용하여 대문자를 소문자로 변경하는 방법을 보였습니다. `A-Z`까지의 대문자 ASCII 값에 32를 더하면 소문자 ASCII 값이 됩니다.
 
-## 관련 자료: 
-- [C 문자열 함수 - tolower()](https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm)
-- [C 문자열 함수 - isupper()](https://www.tutorialspoint.com/c_standard_library/c_function_isupper.htm)
-- [Ambitious Coder - 문자열에 대소문자 변환 기능 구현하기](https://www.ambitiouscoder.com/c-string-case-conversion/)
+## 참고 자료
+* [C 언어에서 문자열을 소문자로 변환하는 방법](https://www.programiz.com/c-programming/examples/lowercase-string)
+* [C 표준 라이브러리 `ctype.h`에 대한 정보](https://en.cppreference.com/w/c/string/byte)

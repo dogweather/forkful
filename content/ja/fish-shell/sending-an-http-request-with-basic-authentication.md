@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用してHTTPリクエストを送信する"
-html_title:           "Fish Shell: 基本認証を使用してHTTPリクエストを送信する"
-simple_title:         "基本認証を使用してHTTPリクエストを送信する"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が & なぜ？
-HTTPリクエストを基本認証で送信するとはどういうことか、そしてなぜプログラマーがそれを行うのかを説明します。
+## 何となぜ？
 
-プログラマーがHTTPリクエストを基本認証で送信するのは、サイトやアプリケーションにアクセスする際に認証を必要とする場合があるからです。基本認証を使用すると、ユーザーのユーザー名とパスワードを使用して認証することができます。
+HTTPリクエストを認証付きで送信するとは、コンピュータがウェブサーバーに対して情報を要求するための手段です。プログラマはこれを使用して、特定のユーザーがアクセスできるリソースにアクセスします。
 
-## やり方：
-```Fish Shell```のコードブロック内にコーディング例とサンプル出力を含めます。
+## 実施方法:
+
+```Fish Shell
+
+# 必要なパッケージをインストールします。
+fisher install jethrokuan/fzf
+
+# ベーシック認証でHTTPリクエストを送信します。
+set url "http://your-url.com"
+set username "your-username"
+set password "your-password"
+curl -u $username:$password $url
 
 ```
-# HTTPリクエストを基本認証で送信するコマンド
-curl -u "ユーザー名:パスワード" URL
-```
 
-```
-# サンプル出力
-{
-  "title": "こんにちは、世界！"
-}
-```
+あなたは以上の構文を使って、認証情報を含むHTTPリクエストを送信することができます。
 
-## 詳細説明：
-HTTPリクエストを基本認証で送信するとは、実際にはどのようなことを意味するのでしょうか？基本認証は、Webサイトやアプリケーションにアクセスする際に使用される最も古典的な認証方法の一つです。ただし、それ以外の認証方法もあります。たとえば、OAuthやAPIキーなどがあります。
+## ディープダイブ：
 
-基本認証を使用することで、ユーザーのプライバシーが保護されると同時に、セキュアなアクセスが可能になります。しかし、ユーザーのパスワードがHTTPSで送信されない限り、ユーザーのプライバシーは守られません。
+初期のインターネットでは、HTTPリクエストはデータ交換の基盤でした。基本認証は、この通信をセキュアに保つための早期の手段であり、一部の情報を伝えるために依然として使用されています。
 
-## 関連サイト：
-- [curlコマンドのマニュアル](https://curl.haxx.se/docs/manual.html)
-- [基本認証の詳細説明](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
-- [HTTP認証の別のタイプ](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Other_authentication_methods)
+しかし現在では、OAuthなどのより高度な認証メカニズムが主流となっています。それでも基本認証は簡単であるため、プライベートネットワークや開発環境など、対外的に公開しない場所ではまだ活用されています。
+
+基本的に、基本認証を使用してHTTPリクエストを送信する際の短所は、認証情報が平文（エンコードされているものの暗号化されていない）で送信されるため、ネットワーク上でそれを取り扱うすべての人々によって見ることができることです。
+
+## 関連リンク：
+
+HTTPリクエストの詳細:
+http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+
+基本認証の詳細:
+https://ja.wikipedia.org/wiki/Basic認証
+
+より高度な認証メカニズム (OAuth):
+https://ja.wikipedia.org/wiki/OAuth

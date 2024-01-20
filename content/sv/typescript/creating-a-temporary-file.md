@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "TypeScript: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,44 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad och Varför?
+Skapandet av en temporär fil innebär att programmerare skapar en fil för tillfällig användning. Vi gör detta för att lagra data som är avsedd att användas kortsiktigt och sedan släppas, vilket kan minska belastningen på minnet.
 
-Skapandet av temporära filer är en vanlig praxis bland programmerare för att hantera data eller information på ett tillfälligt sätt. Det innebär att skapa en fil som endast finns tillfälligt under körningen av ett program och sedan tas bort när programmet stängs av. Detta kan vara användbart för att hantera temporära data som behövs för en specifik uppgift eller för att förhindra att onödiga filer ligger och tar upp utrymme på hårddisken.
-
-## Hur man:
-
+## Hur gör man:
+Hantera temporära filer i TypeScript kan bli klättrigt, men här är ett exempel:
+   
 ```TypeScript
-// Skapar en temporär fil med hjälp av fs modulen
-import * as fs from 'fs';
+import { fileSync } from 'tmp-promise';
 
-// Skapa en unik filnamn med hjälp av en timestamp
-const filename = `${Date.now()}.txt`;
+async function createTempFile() {
+    const { path, cleanup } = fileSync();
+    console.log('Temporär fil skapad:', path);
 
-// Skapar en tom textfil
-fs.writeFileSync(filename, '');
+    // Rensa upp temporära filen när du är klar
+    await cleanup();
+}
 
-// Om filen behöver fyllas med data
-fs.appendFileSync(filename, 'Detta är en sample text.');
+createTempFile().catch(console.error);
 
-// Stäng filen när den inte längre behövs
-fs.closeSync();
-
-// När programmet är klart, radera filen 
-fs.unlinkSync(filename); 
 ```
+Detta skapar en temporär fil och skriver ut stigen till den. När du är klar med filen kan du bara kalla `cleanup` för att ta bort den.
 
-I det här exemplet skapas en temporär fil med hjälp av fs modulen. Vi använder funktionen `writeFileSync()` för att skriva en tom fil och `appendFileSync()` för att fylla filen med data. Sedan stängs filen och raderas när programmet är klart. 
+## Djup Dykning
+Historiskt sett används temporära filer i datorprogram för att lagra information som programmet behöver tillgå till endast en kort tid. Alternativen till temporära filer inkluderar användning av minne (RAM), vilket kan vara snabbare men också mer kostsamt.
 
-## Djupdykning:
+När det gäller typiska implementationer, använder vi ofta bibliotek som `tmp-promise` eftersom det hanterar mycket av komplexiteten åt oss. Dock, det finns något att säga för att förstå bakomliggande tekniker som systemanrop och filhämtning.
 
-Skapandet av temporära filer har funnits länge inom programmering, men det är fortfarande en viktig praxis idag. Tidigare användes det oftast för att hantera temporära data på hårddisken, men med framväxten av molnteknologier har det även blivit populärt för att hantera temporära filer i molnet. 
+## Se även
+För mer information, här är några länkar:
 
-Alternativ till att skapa temporära filer inkluderar att spara data i minnet eller att använda temporära databaser. Dessa alternativ kan vara användbara i vissa situationer, men att skapa en temporär fil är fortfarande det mest effektiva sättet att hantera temporära data, särskilt när det gäller större datamängder.
+1. [Officiell dokumentation för typskrift](https://www.typescriptlang.org/docs/)
+2. [tmp-promise på npm](https://www.npmjs.com/package/tmp-promise)
+3. [Historien om temporära filer](https://en.wikipedia.org/wiki/Temporary_folder) 
 
-Det finns olika sätt att implementera skapandet av temporära filer i TypeScript, men de flesta använder sig av fs modulen som i exemplet ovan. Det finns också paket som kan användas för att skapa temporära filer på ett enklare sätt, som till exempel `tmp` eller `temp`. 
-
-## Se även:
-
-- [Dokumentation för fs modulen](https://nodejs.org/api/fs.html)
-- [Tmp npm paket](https://www.npmjs.com/package/tmp)
-- [Temp npm paket](https://www.npmjs.com/package/temp)
+Note that TypeError can be thrown if the cleanup function is called while the file is still being used. Make sure you always finish operations before you dispose of the file.

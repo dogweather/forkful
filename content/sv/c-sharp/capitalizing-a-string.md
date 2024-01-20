@@ -1,7 +1,7 @@
 ---
-title:                "Att göra en sträng med stor bokstav"
-html_title:           "C#: Att göra en sträng med stor bokstav"
-simple_title:         "Att göra en sträng med stor bokstav"
+title:                "Gör en sträng storstilad"
+html_title:           "C#: Gör en sträng storstilad"
+simple_title:         "Gör en sträng storstilad"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad och varför?
 
-Att kapitalisera en sträng betyder att göra den första bokstaven stor i varje ord. Detta är en vanlig konvention inom programmering för att göra koden mer läsbar och förståelig. Det hjälper också till att skilja mellan variabler och funktioner.
+Att göra om en sträng till versaler innebär att förvandla alla tecken i strängen till stora bokstäver. Programmerare gör detta för att förbättra läsbarheten och för att få jämförelser mellan strängdata att bli okänsliga för utseendet på tecknen.
 
-## Hur man gör:
+## Hur gör man:
 
-För att kapitalisera en sträng i C# kan du använda metoden ```ToUpper()```. Här är ett exempel:
+Nedan är ett exempel på hur du kan använda C# för att förvandla en sträng till versaler.
 
 ```C#
-string str = "hello world";
-Console.WriteLine(str.ToUpper());
+string SträngInMatning = "hej världen!";
+string SträngUtMatning = SträngInMatning.ToUpper();
+Console.WriteLine(SträngUtMatning);
+```
+Utskriften blir:
+
+```C#
+"HEJ VÄRLDEN!"
 ```
 
-Detta kommer att producera outputen "HELLO WORLD".
+## Mer i detalj
 
-## Djupdykning:
+Historiskt sett användes text i versaler för att visa makt och auktoritet. I programmering används det nu för att förbättra läsbarheten och göra kod mer robust genom att göra det enklare att jämföra strängar. Ett alternativ till att använda metoden ToUpper() är att skapa en slinga som går igenom varje tecken i strängen och konverterar det individuellt. Implementationen av metoden ToUpper() är dock ofta effektivare och ger mer läsbar kod.
 
-Konventionen att kapitalisera strängar härstammar från det engelska språket där det används för att skilja mellan ord som börjar med stor eller liten bokstav. Det finns också andra sätt att få en sträng kapitaliserad, som att använda ```Substring()``` och ```String.Format()```.
+## Se även
 
-Det är viktigt att komma ihåg att metoder som ```ToUpper()``` inte ändrar själva strängen, utan returnerar en ny kapitaliserad sträng. Om du vill ändra den ursprungliga strängen måste du tilldela det nya värdet till den ursprungliga variabeln.
+För mer information om hur du använder versaler i C#, se Microsofts officiella dokumentation:
 
-## Se även:
+[Microsoft .NET dokumentation om ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
 
-- [Officiell dokumentation för C# String.ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netcore-3.1)
-- [Alternativa sätt att kapitalisera strängar i C#](https://stackoverflow.com/questions/9645731/substring-first-letter-of-each-word-of-a-string-in-c-sharp)
+Och här är ett bra inlägg på StackOverflow om ämnet:
+
+[StackOverflow diskussion om att göra om en sträng till versaler](https://stackoverflow.com/questions/4673398/how-do-i-make-all-text-upper-case-in-c-sharp)
+
+Observera att det är viktigt att tänka på att metoden ToUpper() kan bete sig olika beroende på aktuell kulturinställning.

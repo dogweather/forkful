@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングの記事「コマンドライン引数の読み込み」"
-html_title:           "Clojure: コンピュータプログラミングの記事「コマンドライン引数の読み込み」"
-simple_title:         "コンピュータプログラミングの記事「コマンドライン引数の読み込み」"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 読み込みコマンドライン引数
+## 何となぜ？
 
-コマンドライン引数の読み込みは、プログラマーが実行中のコマンドラインから情報を受け取ることを意味します。プログラマーは、コマンドライン引数を使用してアプリケーションの動作をカスタマイズしたり、特定の条件を指定したりすることができます。
+コマンドライン引数の読み取りとは、プログラムに引数やパラメータを渡す方法です。プログラマーがそれを行う理由は、プログラムの動的な振る舞いを制御するためです。
 
-## 方法：
+## どうやって行うか:
 
-Clojureでは、``` *command-line-args* ```を使用してコマンドライン引数を読み込むことができます。以下は、コマンドライン引数を読み込んで出力するためのコード例です。
+Clojureでコマンドライン引数を読み取る最も簡単な方法は、「clojure.core/*command-line-args*」変数を使用することです。
 
-```clojure
-(defn -main
-  "コマンドライン引数を読み込んで出力する"
-  []
-  (println "読み込まれたコマンドライン引数: ")
-  (println *command-line-args*))
+```Clojure
+(defn -main [& args]
+  (println "コマンドライン引数:" args))
 
+$ lein run arg1 arg2 arg3
+コマンドライン引数: [arg1 arg2 arg3]
 ```
 
-コマンドラインでアプリケーションを実行する際に、引数を追加することでコマンドライン引数を渡すことができます。例えば、 ```java -cp myapp.jar myapp.core arg1 arg2```のように実行すると、コマンドライン引数として``` arg1 ```と``` arg2 ```が渡されます。
+この例では、-main関数はコマンドライン引数を受け取り、それを印刷します。
 
-## 詳細情報：
+## 深めの情報
 
-Javaが登場する前は、コマンドライン引数を読み込むために、Unixシステムで使用されていたC言語の```argv```メソッドが使用されていました。また、Clojure以外の言語でも、同様の機能を持つ```sys.argv```メソッドが利用されています。
+コマンドライン引数の読み取りは、UNIXの初期から存在しています。それはプログラムが自分自身を構成するための基礎的な方法です。
 
-Clojureでは、```command-line-args```の他にも、```command-line-args-count```や```command-line-args-str```のような関数も利用できます。
+他のClojureのライブラリー、例えば`tools.cli`もコマンドライン引数の読み取りをサポートしています。これらは、より高度なパースオプションやフォーマッティング機能を提供します。
 
-## 関連リンク：
+具体的な実装については、基本的にClojureプログラムはJavaプログラムであり、Javaのmainメソッドからコマンドライン引数を取得します。したがって、これらの引数は「clojure.core/*command-line-args*」変数に直接マッピングされます。
 
-- [Clojure公式ドキュメント](https://clojuredocs.org/clojure.core/command-line-args)
-- [Unix-argvメソッドの詳細](https://man7.org/linux/man-pages/man3/argv.3.html)
-- [Python-sys.argvメソッドの詳細](https://docs.python.org/3/library/sys.html)
+## 参考資料
+
+- Clojure公式ドキュメンテーション：https://clojure.org/guides/repl/command_line_args
+- Tools.cliライブラリー：https://github.com/clojure/tools.cli
+- コマンドライン引数についての詳細な情報：https://stackoverflow.com/questions/30543191/clojure-standalone-program-command-line-argument-parsing

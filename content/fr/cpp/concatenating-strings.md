@@ -1,7 +1,7 @@
 ---
-title:                "La concaténation de chaînes de caractères"
-html_title:           "C++: La concaténation de chaînes de caractères"
-simple_title:         "La concaténation de chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Qu'est-ce que? Et pourquoi?
 
-La concaténation de chaînes est une opération couramment utilisée en informatique qui consiste à fusionner plusieurs chaînes de caractères en une seule. Les programmeurs font cela pour manipuler et créer des chaînes plus complexes, souvent dans le but de créer du texte dynamique à afficher à l'utilisateur.
+La concaténation de chaînes est la pratique consistant à combiner deux chaînes ou plus en une seule. Les programmeurs utilisent cette méthode pour manipuler les données textuelles et rendre le code plus concis et lisible.
+ 
+## Comment faire:
 
-# Comment faire?
+La concaténation de chaînes en C++ peut être réalisée à l'aide de l'opérateur '+'. Voici un exemple:
+```C++
+#include<iostream>
+#include<string>
 
-Voici un exemple de code en C++ montrant comment concaténer des chaînes de caractères:
-
-```
-#include <iostream>
-
-using namespace std;
-
-int main() {
-  string nom = "John";
-  string prenom = "Doe";
-  string nom_complet = nom + prenom;
-  
-  cout << "Nom complet: " << nom_complet << endl;
-  
-  return 0;
+int main(){
+    std::string str1 = "Bonjour, ";
+    std::string str2 = "monde!";
+    std::string str3 = str1 + str2;
+    std::cout << str3;
+    return 0;
 }
 ```
-**Output:** Nom complet: JohnDoe
+Résultat: `Bonjour, monde!`
 
-# Plongée en profondeur
+## Approfondissement
 
-La concaténation de chaînes existe depuis les premiers jours de la programmation informatique, et elle est encore largement utilisée aujourd'hui. Les alternatives à la concaténation de chaînes incluent l'utilisation de tableaux de caractères ou de classes de chaînes de caractères spécifiques pour manipuler des chaînes plus complexes. C++ propose également des méthodes spécifiques telles que `append()` et `substr()` pour effectuer des opérations de concaténation.
+Historiquement, la concaténation de chaînes remonte aux premiers jours de la programmation, bien avant la création du C++. Au fil du temps, diverses méthodes de concaténation de chaînes ont été développées pour différentes langues.
 
-# Voir aussi
+Alternativement, en C++, vous pouvez également utiliser la méthode `append()` de la classe `std::string` pour concaténer des chaînes.
 
-- [Les opérateurs C++ de manipulation de chaînes de caractères](https://www.cplusplus.com/reference/string/operators/)
-- [La concaténation de chaînes en C++11](https://en.cppreference.com/w/cpp/string/basic_string/operator%2B)
-- [Des exemples pratiques de concaténation de chaînes en C++](https://www.geeksforgeeks.org/stdstring-class-in-c/)
+```C++
+std::string str4 = "Comment ";
+str4.append("ça va?");
+std::cout << str4;
+```
+Résultat : `Comment ça va?`
+
+En ce qui concerne les détails de mise en œuvre, l'opérateur '+' et la méthode `append()` alloueront tous deux un nouvel espace mémoire pour accueillir la nouvelle chaîne combinée et copieront les données de la chaîne source dans ce nouvel emplacement. Cette opération a une complexité temporelle en O(n), n étant le nombre total de caractères dans la chaîne cible.
+
+## À voir également
+
+- Cours détaillé sur `std::string` en C++ : https://www.cplusplus.com/reference/string/string/
+- Different ways to concatenate strings in C++ : https://www.geeksforgeeks.org/concatenating-strings-in-c-cpp/
+- Comparaison des performances des méthodes de concaténation de chaînes : https://baptiste-wicht.com/posts/2012/12/cpp-benchmark-string-concatenation.html

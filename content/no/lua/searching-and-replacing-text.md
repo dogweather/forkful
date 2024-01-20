@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "Lua: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,22 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Søking og erstatting av tekst er en vanlig oppgave for programmerere. Det innebærer å finne et bestemt stykke tekst i en større streng og erstatte det med et annet stykke tekst. Dette kan være nyttig når man trenger å endre en bestemt del av en kode eller tekst, og gjør det enklere og mer effektivt å gjøre større endringer.
+Å søke og erstatte tekst er en måte å finne spesifikt innhold i en string, og deretter endre det for noe annet. Programmerere gjør dette for å manipulere, organisere og oppdatere data effektivt.
 
-## Slik gjør du det:
-For å søke og erstatte tekst i Lua, kan vi bruke funksjonen string.gsub(). Det første argumentet i denne funksjonen er strengen du vil gjøre endringer i, det andre argumentet er teksten du vil søke etter og det tredje argumentet er teksten du vil erstatte det med.
+## Hvordan:
+Her er noen enkle eksempler på bruk av `gsub` funksjonen i Lua for å søke og erstatte tekst. 
 
 ```Lua
--- Eksempel:
-local tekst = "Hei, mitt navn er Lua."
-local ny_tekst = string.gsub(tekst, "Lua", "Nora")
-print(ny_tekst) -- Output: "Hei, mitt navn er Nora."
+local str = "Hei, verden!"
+local newstr, n = string.gsub(str, "verden", "Lua")
+print(newstr)  -- Output: Hei, Lua!
 ```
+Denne koden søker etter ordet "verden" i strengstr og erstatter det med "Lua". Output vil være "Hei, Lua!"
 
-## Dykk dypere:
-Søking og erstatting av tekst er en vanlig oppgave i mange programmeringsspråk. I Lua er string.gsub() en av de mest effektive måtene å gjøre dette på, men det finnes også andre metoder som kan brukes, som for eksempel string.find() og string.match(). Det som skiller disse metodene er hvor nøyaktig søket etter tekst er, og hvordan resultatet blir behandlet.
 
-## Se også:
-Lær mer om string.gsub() og andre nyttige funksjoner i Lua her: https://www.lua.org/manual/5.3/manual.html#6.4
+## Dypdykk
+Lua's `gsub` funksjon stammer fra tidligere programmeringsspråk som Perl og C, hvor ideen om å søke og erstatte tekst først ble implementert. Til tross for sin enkelhet, er det en rekke alternativer for å oppnå lignende funksjoner i Lua, som `match` og `find`.
 
-Les mer om søking og erstatting av tekst i programmering her: https://www.programiz.com/c-programming/library-function/string/strspn
+Selv om `gsub` er rett frem, er dens interne implementasjon avansert. Den bruker en teknikk kalt "backtracking" for å finne alle forekomster av søkestrengen, noe som gjør den svært effektiv, selv for store strenger.
+
+## Se også
+For mer informasjon, se følgende ressurser:
+
+1. Lua 5.3 referansehåndbok: String manipulasjon (https://www.lua.org/manual/5.3/manual.html#6.4)
+2. Lua-Guide: Å jobbe med strenger i Lua (https://www.tutorialspoint.com/lua/lua_strings.htm)
+3. StackOverflow: Vanlige spørsmål om Lua strengmanipulasjon (https://stackoverflow.com/questions/tagged/lua+string)

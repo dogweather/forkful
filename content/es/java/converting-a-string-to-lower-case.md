@@ -1,6 +1,6 @@
 ---
 title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "Java: Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Java"
 category:             "Java"
@@ -10,44 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué y por qué?
+## ¿Qué y por qué?
 
-Convertir una cadena de texto a minúsculas es un proceso común en la programación de Java. Este proceso implica cambiar todas las letras mayúsculas en una cadena de texto a letras minúsculas. Los programadores hacen esto por varias razones, incluyendo la comparación de cadenas de texto de manera más precisa y la facilidad de manipulación de datos.
+La conversión de una cadena a minúsculas en Java significa transformar todas las letras mayúsculas de una cadena a su equivalente en minúsculas. Los programadores a menudo lo hacen para la normalización de datos o cuando la comparación de cadenas debe ser insensible a la capitalización.
 
-¿Cómo hacerlo?
+## ¿Cómo hacerlo?
 
-Aquí hay dos ejemplos de código en Java para convertir una cadena de texto a minúsculas:
+Aquí hay un simple ejemplo de cómo convertir una cadena a minúsculas en Java.
 
-```Java
-// Ejemplo 1: Utilizando el método toLowerCase()
-String texto = "HOLA";
-String textoMinusculas = texto.toLowerCase();
-System.out.println(textoMinusculas); // Output: hola
-
-// Ejemplo 2: Utilizando un bucle for
-String texto = "HOLA";
-char[] array = texto.toCharArray();
-for (int i = 0; i < array.length; i++) {
-    if (Character.isUpperCase(array[i])) {
-        array[i] = Character.toLowerCase(array[i]);
-    }
-}
-String textoMinusculas = new String(array);
-System.out.println(textoMinusculas); // Output: hola
+```Java 
+String cadena = "HOLA, MUNDO!";
+String cadenaEnMinusculas = cadena.toLowerCase();
+System.out.println(cadenaEnMinusculas);
 ```
 
-Profundizando
+La salida será: "hola, mundo!".
 
-La conversión de cadenas de texto a minúsculas ha sido una característica incorporada en Java desde su versión inicial. Antes de esto, los programadores tenían que escribir su propio código para realizar esta tarea.
+## Inmersión Profunda
 
-Además de los métodos mencionados anteriormente, también existen otras formas de convertir cadenas de texto a minúsculas en Java, como utilizar la clase StringBuilder o la librería Apache Commons Lang.
+Históricamente, el método toLowerCase() se ha utilizado en Java desde su primera versión, lo que demuestra su importancia en la manipulación de cadenas. A lo largo de los años, este método ha permanecido relativamente constante, con sólo pequeñas optimizaciones y mejoras.
 
-Es importante tener en cuenta que la conversión de cadenas de texto a minúsculas depende del idioma en el que se está trabajando. Algunos idiomas tienen letras mayúsculas y minúsculas específicas que no pueden ser convertidas de manera directa.
+Durante la ejecución del método toLowerCase(), Java crea una nueva cadena (ya que las cadenas son inmutables en Java). Entonces, por cada carácter en la cadena original, si es una letra mayúscula, la reemplaza por su versión en minúscula utilizando el estándar Unicode.
 
-¡Consulta estos enlaces para obtener más información sobre cómo realizar una conversión de cadenas de texto a minúsculas en Java!
+Hay otras maneras de convertir una cadena a minúsculas sin usar toLowerCase(), aunque no son tan eficientes ni limpias. Por ejemplo, podríamos hacer un bucle a través de cada carácter en la cadena, comprobar si es una letra mayúscula utilizando el método Character.isUpperCase(), y si es así, convertirla a minúsculas con Character.toLowerCase().
 
-Ver también
+```Java
+String cadena = "HOLA, MUNDO!";
+StringBuilder sb = new StringBuilder();
 
-https://www.geeksforgeeks.org/converting-all-letters-of-a-string-to-lowercase-in-java/
-https://docs.oracle.com/javase/tutorial/java/data/manipstrings.html 
-https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html
+for (char c : cadena.toCharArray()) {
+    if (Character.isUpperCase(c)) {
+        sb.append(Character.toLowerCase(c));
+    } else {
+        sb.append(c);
+    }
+}
+String cadenaEnMinusculas = sb.toString();
+System.out.println(cadenaEnMinusculas);
+```
+
+## Ver También
+
+Para obtener más información sobre la manipulación de cadenas en Java, consulte los siguientes enlaces:
+
+- [La clase String en Java (Oracle Docs)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
+- [La clase Character en Java (Oracle Docs)](https://docs.oracle.com/javase/7/docs/api/java/lang/Character.html)
+- [Java String toLowerCase() Method (Java T Point)](https://www.javatpoint.com/java-string-tolowercase)

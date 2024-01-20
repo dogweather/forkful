@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en tillfällig fil"
-html_title:           "PowerShell: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -11,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Skapandet av en temporär fil är en vanlig programmeringsuppgift som handlar om att tillfälligt lagra data på en enhet. Detta görs oftast för att undvika att permanent förändra eller skriva över befintliga filer, eller för att hantera data som behöver lagras temporärt utan att ta upp utrymme på hårddisken.
-Programmerare utför denna uppgift för att effektivt hantera och hantera data under exekvering på ett system. Detta kan till exempel inkludera att skapa temporära konfigurationsfiler, cache-data eller tillfälliga loggfiler i processen för att utföra en uppgift.
 
-## Hur man:
-```powershell
-# Skapa en ny temporär fil
-$TempFile = New-TemporaryFile
+Skapa en tillfällig fil innebär att man gör en icke-varaktig lagringsenhet, ofta för att hålla data under en pågående process. Programmerare gör det för att undvika minnesbelastning och för effektiv datahantering.
 
-# Skriv data till filen
-Out-File -InputObject "Det här är ett exempel på data som lagras i den temporära filen." -FilePath $TempFile.FullName
+## Hur:
 
-# Läs innehållet i filen
-Get-Content -Path $TempFile.FullName
+Här är ett exempel på hur du skapar och skriver till en tillfällig fil i PowerShell.
 
-# Radera den temporära filen
-Remove-Item -Path $TempFile.FullName
+```PowerShell
+# Skapa en tillfällig fil
+$tempFile = [System.IO.Path]::GetTempFileName()
+
+# Skriv till den tillfälliga filen
+Set-Content -Path $tempFile -Value "Hej, världen!"
+
+# Kontrollera innehållet i den tillfälliga filen
+Get-Content -Path $tempFile
 ```
 
-Output:
+När du kör det, här är vad du kan förvänta dig att se:
+
+```PowerShell
+Hej, världen!
 ```
-Det här är ett exempel på data som lagras i den temporära filen.
-```
 
-## Deep Dive:
-Historiskt sett använde programmerare ofta temporära filer för att minska hanteringen av fysiska filer på enheten, speciellt i äldre operativsystem. Alternativ till att använda en temporär fil inkluderar att skapa ett nytt objekt eller en variabel i minnet som håller det tillfälliga datat som behövs.
+## Djupdykning:
 
-Modernt sett är skapandet av temporära filer fortfarande relevant, särskilt vid hantering av stora datamängder eller vid uppgifter som kräver att data ska tillfälligt lagras för senare användning. Det finns också inbyggda metoder och funktioner i PowerShell för att hantera temporära filer som ger programmerare mer kontroll och flexibilitet när det gäller att skapa och hantera dem.
+Historiskt sett har skapandet av tillfälliga filer varit ett fundamentalt sätt att hantera temporär data för ett brett spektrum av språk och plattformar, från C till Java till Shell-skript.
 
-## Se även:
--[New-TemporaryFile](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/new-temporaryfile?view=powershell-7.1)
--[Remove-Item](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/remove-item?view=powershell-7.1)
--[Get-Content](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+Ett alternativ till att skapa en tillfällig fil är att använda in-memory lagringsmetoder som variabler, vilka kan vara snabbare men är begränsade till tillgängligt RAM.
+
+När du använder [System.IO.Path]::GetTempFileName() för att skapa en tillfällig fil i PowerShell, skapas faktiskt filen i systemet under det anropet. Funktionen ger sedan tillbaka sökvägen till den nyskapade filen.
+
+## Se Också:
+
+* Microsoft dokumentation för [GetTempFileName()](https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
+* Microsofts guide till [PowerShell](https://docs.microsoft.com/sv-se/powershell/scripting/overview?view=powershell-7.1)

@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "PowerShell: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Getting Started"
@@ -12,53 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Wenn wir als Programmierer ein neues Projekt starten, beginnen wir damit eine neue Idee in die Realität umzusetzen. Das kann ein neues Programm, eine Anwendung oder ein Skript sein. Wir starten ein neues Projekt, um unsere Fähigkeiten zu verbessern, kreative Ideen umzusetzen oder auch um einfach nur Spaß an der Programmierung zu haben.
+Ein neues Projekt zu starten bedeutet, den ersten Schritt in die Entwicklung einer neuen Softwareanwendung zu machen. Programmierer machen das, um eine spezifische Problemstellung zu lösen oder um eine neue Idee zu realisieren.
 
-## Wie geht's?
+## Wie mache ich das:
 
-Um ein neues Projekt mit PowerShell zu starten, gibt es mehrere Schritte, die wir befolgen können:
-
-  - Zuerst müssen wir PowerShell auf unserem Computer öffnen.
-  - Anschließend erstellen wir einen neuen Ordner für unser Projekt und navigieren zu diesem in PowerShell.
-  - Nun können wir ein neues PowerShell-Skript erstellen, indem wir "New-Item -Type File script.ps1" ausführen.
-  - Um unser Skript zu bearbeiten, können wir einen Texteditor wie Notepad++ verwenden.
-  - Sobald wir mit unserem Code zufrieden sind, können wir das Skript ausführen, indem wir ".\script.ps1" in PowerShell eingeben.
-
-Ein Beispiel für die Erstellung und Ausführung eines einfachen "Hallo Welt!"-Programms in PowerShell:
+Hier sind einige grundlegende PowerShell-Befehle, um ein neues Projekt zu starten. 
 
 ```PowerShell
-New-Item -Type File hello.ps1
-notepad hello.ps1
+# Navigieren Sie zu Ihrem Projektverzeichnis
+cd 'C:\Ihr_Projektverzeichnis'
+
+# Erstellen Sie einen neuen Ordner für Ihr Projekt
+mkdir 'Neues_Projekt'
+
+# Navigieren Sie in den neuen Projektordner
+cd 'Neues_Projekt'
+
+# Erstellen Sie eine neue Datei
+New-Item 'MeineDatei.ps1'
 ```
 
-In Notepad++:
+Der obige Code erstellt einen Ordner namens 'Neues_Projekt' und darin eine Datei namens 'MeineDatei.ps1'.
 
-```PowerShell
-Write-Host "Hallo Welt!"
-```
+## Tiefere Einblicke:
 
-In PowerShell:
+Historisch gesehen hat PowerShell seinen Ursprung im Jahr 2006, als eine Alternative zu CMD und anderen Shell-Skriptsprachen. 
 
-```PowerShell
-.\hello.ps1
-```
+Als Alternative kann man Git verwenden, um ein neues Projekt zu erstellen, wenn man mit einem verteilten Team arbeitet und Versionskontrolle benötigt.
 
-Output:
+Bei der Implementierung eines neuen Projekts unterscheiden sich die Details je nach Anwendung und den spezifischen Anforderungen des Projekts. In der Regel werden jedoch Ordner und Dateien zur Strukturierung und Organisation des Codes erstellt.
 
-```
-Hallo Welt!
-```
+## Siehe auch:
 
-## Tiefere Einblicke
+Microsoft PowerShell-Dokumentation: https://docs.microsoft.com/de-de/powershell/
 
-PowerShell wurde von Microsoft entwickelt und ist eine Skriptsprache und Kommandozeilen-Tool für die Windows-Plattform. Es wurde ursprünglich als Ersatz für die veraltete Windows-Befehlszeile eingeführt, bietet aber nun viel mehr Funktionalität und Flexibilität beim Automatisieren von Aufgaben.
-
-Es gibt auch andere Möglichkeiten, ein neues Projekt zu starten, z.B. mit einer integrierten Entwicklungsumgebung (IDE) wie Visual Studio oder mit anderen Programmiersprachen wie Python oder Java. Allerdings bietet PowerShell den Vorteil, dass es bereits auf jedem Windows-Computer vorhanden ist und somit schnell und einfach verwendet werden kann.
-
-Wenn wir tiefer in die Implementierung von Projekten mit PowerShell eintauchen wollen, gibt es viele Ressourcen online, die uns helfen können. Wir können auch die offizielle Dokumentation von Microsoft konsultieren oder uns in Foren und Communities mit anderen PowerShell-Programmierern austauschen.
-
-## Siehe auch
-
-- [Microsoft PowerShell-Dokumentation](https://docs.microsoft.com/en-us/powershell/)
-- [PowerShell für Anfänger: Einsteiger-Tutorial](https://www.youtube.com/watch?v=E9jlI_aK08o)
-- [PowerShell-Community auf Reddit](https://www.reddit.com/r/PowerShell/)
+So verwenden Sie Git für Ihr Projekt: https://www.git-scm.com/book/de/v2/Erste-Schritte-Git-Basiskonzepte

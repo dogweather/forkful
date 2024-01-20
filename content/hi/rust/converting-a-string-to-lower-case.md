@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को लोअर केस में रूपांतरण करना"
-html_title:           "Rust: स्ट्रिंग को लोअर केस में रूपांतरण करना"
-simple_title:         "स्ट्रिंग को लोअर केस में रूपांतरण करना"
+title:                "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+html_title:           "Kotlin: एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
+simple_title:         "एक स्ट्रिंग को लोअर केस में परिवर्तित करना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya Aur Kyun?
-String ko lower case mein convert karna ek common programming task hai. Isme, hum ek string ko lowercase letters mein badal dete hai taaki use alag se handle kiya ja sake. Jaise ki, agar koi user input uppercase letters mein deta hai toh hum input ko lower case mein convert kar sakte hai aur phir usko compare ya manipulate kar sakte hai. Is prakar, hume apne code ko flexible aur robust banane ke liye string ko lower case mein convert karna zaruri hota hai.
+## क्या और क्यों?
+स्ट्रिंग को लोअर केस में परिवर्तित करना का अर्थ है कि हम उसे छोटे अक्षरों में बदल रहे हैं। यह तब किया जाता है जब हमे स्ट्रिंग का comparison या searching के दौरान case-sensitivity से बचना होता है। 
 
-## Kaise Karein?
+## कैसे:
+Rust में, हम इंस्टेंस method `to_lowercase` का उपयोग करके यह आसानी से कर सकते हैं।
+
 ```Rust
-let input: String = String::from("HELLO WORLD");
-let lowercase: String = input.to_lowercase();
-
-println!("Input: {}", input); // Output: HELLO WORLD
-println!("Lowercase: {}", lowercase); // Output: hello world
+fn main() {
+    let s = "HELLO WORLD";
+    println!("{}", s.to_lowercase());
+}
 ```
 
-Is coding example mein hum dekh sakte hai ki hum ek string variable ko `to_lowercase()` function ka use karke lower case mein convert kar sakte hai. Yaha `String::from()` hume ek string value create karne ka tareeka deta hai aur `println!` function hume terminal mein output print karne ka tareeka deta hai.
+यह code निम्नलिखित output उत्पन्न करेगा:
+```
+hello world
+```
 
-## Gehri Jhaanki
-Jab hum strings ko lowercase mein convert karte hai, hum ek ASCII table ka use karte hai. ASCII table ek character encoding scheme hai jisme har character ko ek numerical value assign kiya gaya hai. Ye values strings ko compare aur manipulate karne mein bahut helpful hote hai. Ek aur tareeka string ko lower case mein convert karne ka hai `chars()` function ka use karna aur phir unn characters ko lower case mein convert karke ek nayi string bana lena.
+## गहराई से अध्ययन:
+`to_lowercase` इंस्टेंस method हमें Unicode scalar values के साथ काम करने का समर्थन प्रदान करता है। इसका उपयोग करके, हम गैर-Latin scripts जैसे ग्रीक और सिरिलिक (मैंगीलियन भाषाओं) के characters को भी लोअरकेस में परिवर्तित कर सकते हैं।
 
-## Aur Dekhen
-Agar aapko string manipulation aur character encoding scheme jaise concepts mein aur gahrai se jaan na hai, toh aap niche diye gaye links ko check kar sakte hai:
-- [Amanuscript](https://amanuscript.com/blog/programming-basics-strings/)
-- [Rust Documentation on `to_lowercase()`](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+स्ट्रिंग को लोअर केस में बदलने का वास्तविक implementation, Rust के लाइब्रेरी `std::char` में होता है। यह लाइब्रेरी `to_lowercase` method को उपयोग करती है। 
 
-Dhanyavaad! Happy coding!
+इसका एक वैकल्पिक तरीका हो सकता है - character by character iteration και lower casing of each character, लेकिन यह अधिक जटिल और time-consuming हो सकता है।
+
+## नजर डालें:
+अधिक जानकारी के लिए इन लिंकों को देखें:
+- [Rust std::char Documentation](https://doc.rust-lang.org/std/char/index.html)
+- [A deep dive into Unicode](https://diveintounicode.com/)

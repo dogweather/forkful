@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Bash: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,28 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
-이 글에서는 문자열의 길이를 찾는 것이 무엇인지 그리고 프로그래머들이 왜 이를 하는지에 대해 설명합니다.
+# 문자열 길이 찾기: Bash 프로그래밍 꿀팁
 
-## 방법:
-다음은 Bash에서 문자열의 길이를 찾는 방법에 대한 코딩 예제와 출력 결과입니다. 
+## 무엇이고 왜 필요한가?
+문자열의 길이를 찾는 것은 주어진 문자열에 포함된 문자의 수를 구하는 작업입니다. 프로그래머들이 이 작업을 수행하는 이유는 문자열 조작, 인코딩 검사, 버퍼 크기 계산 등 다양한 자료 처리와 효율적인 메모리 관리를 위해 필요하기 때문입니다.
+
+## 어떻게 하나요?
+Bash에서는 `{$#변수명}` 형태로 문자열의 길이를 쉽게 찾을 수 있습니다. 이런 간단한 예시를 봅시다.
 
 ```Bash
-# 변수에 문자열 할당하기
-str="Hello World"
-
-# 문자열의 길이 찾기
-echo "문자열의 길이: ${#str}"
-
-# 출력 결과:
-# 문자열의 길이: 11
+my_string="안녕하세요, 베시!"
+echo ${#my_string}
 ```
+이 코드를 실행하면 출력 결과로 `15`가 나옵니다.
 
-## 깊이 파고들기:
-- 역사적 배경: 문자열의 길이를 찾는 기능은 오래전부터 프로그래밍 언어의 기본 기능으로 존재해왔습니다.
-- 대안: Bash에서는 다른 방법으로도 문자열의 길이를 찾을 수 있지만, 위의 예제처럼 변수와 문자열의 길이를 함께 사용하는 것이 가장 간단한 방법입니다.
-- 구현 세부사항: Bash에서 문자열의 길이는 ```${#str}``` 형식을 사용하여 찾을 수 있습니다. 이때 변수의 앞에 "$"를 붙이고 중괄호 {} 안에 #을 포함시켜주면 됩니다.
+## 딥 다이브
+Bash에서 문자열 길이를 찾는 방법은 간단히는 ${#변수명} 구문을 사용하는 것이지만, 이는 POSIX 쉘 프로그래밍 표준에는 포함되어 있지 않습니다. 이 방법은 Bash나 Korn 쉘에서 지원하는 확장 기능입니다.
 
-## 관련 정보:
-- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html) - 변수와 문자열의 길이 관련 공식 설명서입니다.
-- [Bash 쉘 스크립트 튜토리얼](https://www.shellscript.sh/index.html) - 문자열의 길이를 찾는 것뿐만 아니라 Bash에서의 기초적인 쉘 스크립트에 대해 배울 수 있는 사이트입니다.
+대안으로 `wc -m` 명령을 사용하여 문자열 길이를 구할 수 있지만, 이 방법은 개행 문자도 개수에 포함합니다. 따라서 실제 문자열 길이와 1 차이가 날 수 있습니다.
+
+원하는 문자열의 길이를 찾는 데 있어서는 명확한 정답이 없습니다. 문맥과 응용 프로그램의 요구에 따라 적합한 방법을 선택하는 것이 중요합니다.
+
+## 참조 자료
+1. [GNU Bash Manual : Shell Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+2. [How to find length of string in bash](https://www.cyberciti.biz/faq/unix-linux-bash-find-out-length-of-string/)
+3. [Using wc command in Linux](https://www.geeksforgeeks.org/wc-command-linux-examples/)

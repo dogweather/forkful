@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "Rust: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,37 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是日期转换成字符串?
-日期转换字符串是指将日期对象转换为可读的字符串格式。程序员通常会这样做是因为他们需要向用户显示日期或将日期存储为字符串格式。
+# Rust 程式設計: 日期轉換成字串
 
-## 如何实现:
-有几种不同的方法可以将日期转换为字符串。下面是使用Rust语言的两个例子，分别使用标准库和第三方库。
+## 1. 什麼和為什麼？
+日期轉换成字串是一種將日期整理成可讀格式的方法。程式設計師進行此操作，以便在用戶界面、數據輸出或日誌檔中清楚地顯示日曆日期。
 
-```
-use std::time::SystemTime;
+## 2. 怎麼做？
+在Rust中, 你可以使用 chrono 庫將日期轉換成字串。以下是一個範例：
 
-let now = SystemTime::now();
-let string = format!("{}", now); // 将当前时间转换为字符串
-println!("{}", string);
-```
+```Rust
+use chrono::{ DateTime, Utc};
 
-```
-use chrono::{Utc, DateTime, Timelike};
-
-let now: DateTime<UTC> = Utc::now();
-let string = now.format("%Y%m%d").to_string(); // 将当前日期转换为字符串，格式为年月日
-println!("{}", string);
+fn main() {
+    let now = DateTime::<Utc>::from_utc(Utc::now().naive_utc(), Utc);
+    println!("{}", now.to_rfc3339());
+}
 ```
 
-输出:
-```
-2021-09-21 22:15:25.385983 UTC
-20210921
+執行上述的程式後，你的輸出將會是如此（相應的當前日期和時間）：
+
+```Rust
+2022-04-10T12:34:56.7890+00:00
 ```
 
-## 深入了解:
-日期转换字符串有一个长期的历史。在早期的计算机系统中，并没有内置的日期转换功能，程序员必须自己实现。现在，几乎所有的编程语言都提供了日期转换的内置函数或库，使得程序员的工作更加简单。除了使用标准库和第三方库，还可以使用字符串处理函数将日期转换为指定格式的字符串。
+## 3. 深入探討
+- **歷史脈絡**：最初的程式語言並無法處理日期和時間。隨著程式語言的演進，開發者們開始創建多種函式庫以處理日期和時間，其中之一就是 Rust 中的 chrono。
+- **替代選擇**：Rust中除了 chrono 之外，你也可以使用其他函式庫如 time 或 date-format 等。
+- **實作細節**：在轉換日期到字串時，程式實際上是在進行序列化。日期被分解為其組成部分（年、月、日、時、分、秒），然後以特定格式的字串進行表示。
 
-## 相关链接:
-- [Rust标准库文档](https://doc.rust-lang.org/std/) 
-- [Chrono库文档](https://crates.io/crates/chrono)
+## 4. 參考資源
+- Rust 的日期和時間處理，你可以參考 [Chrono 函式庫](https://crates.io/crates/chrono)。
+- 更深入的日期和時間轉換，請參閱 [RFC 3339](https://tools.ietf.org/html/rfc3339)。
+- 另一款處理日期時間的函式庫 [Time](https://crates.io/crates/time)。

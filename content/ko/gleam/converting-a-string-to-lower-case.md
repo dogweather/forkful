@@ -1,7 +1,7 @@
 ---
-title:                "스트링을 소문자로 변환하기"
-html_title:           "Gleam: 스트링을 소문자로 변환하기"
-simple_title:         "스트링을 소문자로 변환하기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-안녕, 프로그래머 여러분!
+# 소문자로 문자열 변환하기: 잠수하고, 탐색하고, 배워보자!
 
-Gleam 프로그래밍 언어에서는 문자열을 소문자로 변환하는 기능이 있습니다. 이 기능에 대해서 잠깐 알아보고, 왜 프로그래머들이 이것을 하는지에 대해 알아봅시다.
+## 무엇이고 왜 그렇게 하는가?
+소문자로 문자열 변환은 대문자로 구성된 문자열을 소문자로 바꾸는 프로그래밍 작업을 말합니다. 이는 대소문자 구분 없이 텍스트를 일관되게 비교하고 처리하려는 프로그래머들에게 유용합니다.
 
-## 무엇 & 왜?
+## 어떻게 하는가:
+Gleam 프로그래밍에서, String 모듈의 `to_lower` 함수를 사용하여 문자열을 소문자로 변환할 수 있습니다.
 
-문자열을 소문자로 변환하는 것은, 문자열의 모든 대문자를 소문자로 변환하는 것을 의미합니다. 프로그래머들은 이 기능을 사용하여 문자열을 단순하게 만들고, 정확성을 보장하기 위해 사용합니다.
+```gleam
+import gleam/string
 
-## 사용 방법:
-
-```Gleam
-let my_string = "HeLLo"
-my_string |> String.to_lower_case
+fn lowercased_string() {
+  string.to_lower("HELLO, WORLD!")
+}
 ```
-위의 코드는 "hello"를 출력합니다.
 
-문자열이 아닌 다른 객체들을 변환할 수 있습니다. 예를 들어, 숫자나 불린값들도 소문자로 변환할 수 있습니다.
+이 코드를 실행하면, 모든 문자열 "HELLO, WORLD!"가 소문자로 변환되어, 출력 결과는 "hello, world!"가 됩니다.
 
-## 더 깊게 들어가보기:
+## 깊게 파보기
+이전 프로그래밍 언어에서는 소문자 변환을 직접 구현해야 했지만, modern languages like Gleam에서는 미리 제공되는 `to_lower` 함수를 사용하여 이러한 작업을 단순화했습니다.
 
-이 기능은 미국의 인코딩 규칙인 ASCII 코드에서 시작되었습니다. 이러한 규칙을 따라야 다른 사람들이 쉽게 이해하고 사용할 수 있기 때문입니다. 다른 언어와는 다르게, Gleam에서는 이 기능이 기본적으로 내장되어 있기 때문에, 별도로 라이브러리를 불러오지 않아도 됩니다.
+이 함수는 각 문자를 해당하는 소문자 코드 포인트로 매핑함으로써 동작합니다. 이 방법은 효율적이며 다양한 언어와 문자셋을 지원하게 해줍니다.
 
-때때로, 대문자를 소문자로 변환하는 대안으로는, 문자열을 모두 소문자로 입력하는 방법이 있습니다. 그러나, 이렇게 하게 되면 코드의 길이가 더 길어지고, 가독성이 떨어지게 됩니다.
+물론, 필요하다면 사용자 정의 변환 함수를 작성할 수도 있습니다. 하지만 대부분의 경우 표준 라이브러리를 사용하는 것이 더 효율적일 것입니다.
 
-## 관련 소스 보기:
-
-확인해볼 만한 다른 자료들을 아래 링크를 통해 확인해보세요.
-- [Gleam 공식 문서](https://gleam.run)
-- [Gleam의 String 라이브러리](https://gleam.run/libraries/standard-library/#string)
+## 참고 자료
+- Gleam에서 문자열을 변경하는 다른 방법에 대해서는 [Gleam String Documentation](https://gleam.run/documentation/data-types/strings-functions)을 참고하십시오.
+- 다른 문자열 변환 작업에 대해서는 [Unicode Transformation Formats](http://unicode.org/reports/tr15/)를 참고하세요.
+- 전반적인 문자열 처리에 대한 연구를 원한다면 [Practical Unicode](http://unicodebook.readthedocs.io/)가 좋은 출발점이 될 것입니다.

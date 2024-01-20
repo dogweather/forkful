@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en dato til en streng"
-html_title:           "Go: Konvertere en dato til en streng"
+html_title:           "Arduino: Konvertere en dato til en streng"
 simple_title:         "Konvertere en dato til en streng"
 programming_language: "Go"
 category:             "Go"
@@ -10,26 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Konvertering av dato til en streng betyr å endre datoen til tekstformat, for eksempel fra "22/10/2021" til "22. oktober 2021". Dette er nyttig for å presentere datoer på en mer lesbar måte for brukere. Programmere gjør dette for å øke brukervennligheten og for å unngå feil ved presentasjon av datoer.
+# Konvertere en Dato til en Streng i Go
 
-## Hvordan:
-For å konvertere en dato til streng i Go, bruker vi funksjonen `format()` fra `time` pakken. Vi gir funksjonen en dato og en ønsket strengformat som argumenter, og den vil returnere datoen i strengformatet. Her er et eksempel:
+## Hva & Hvorfor?
+Konvertering av en dato til en streng i programmering betyr å endre en dato fra dens opprinnelige datatype til en lesbar streng (tekst). Dette er nyttig for å vise datoer på en brukervennlig måte, eller for å lagre dato / tid i databaser som tekst.
+
+## Hvordan gjør man det:
+Her er et eksempel på hvordan man kan konvertere en dato til en streng i Go.
 
 ```Go
-import "time"
+package main
+
+import (
+	"fmt"
+	"time"
+)
 
 func main() {
-    date := time.Date(2021, 10, 22, 0, 0, 0, 0, time.UTC)
-    strDate := date.Format("2. January 2006")
-    fmt.Println(strDate)
+	t := time.Now()
+	fmt.Println(t.Format("2006-01-02"))
 }
 ```
-Output: `22. October 2021`
+Når du kjører koden vil den skrive ut dagens dato i formatet "YYYY-MM-DD".
 
-## Dypdykk:
-Konvertering av dato til streng er ikke en ny konsept, og har vært en vanlig oppgave i programmering i lang tid. Alternativt kan også `strconv` pakken brukes til å konvertere datoer til strenger i Go. Det finnes også ulike formateringsmuligheter for datoer i Go, som kan utforskes nærmere i Go-dokumentasjonen.
+## Dypdykk
+I Go bruker vi `Format` metoden fra `time` pakken for å konvertere datoer til strenger. Funksjonen tar en layout streng som argument, som definerer ønsket format av datoen.
 
-## Se også:
-- https://gobyexample.com/string-formatting
-- https://pkg.go.dev/time#pkg-overview
+Historisk sett bruker Go en uvanlig dato layout på grunn av dens høy kompatibilitet og fleksibilitet. "2006-01-02" er Go sin layout for å representere formatet "YYYY-MM-DD". Dette systemet tillater en mer intuitiv tilnærming enn mange andre programmeringsspråk.
+
+Et alternativ er å bruke `Sprint` eller `Sprintf` fra `fmt` pakken, men `Format` gir mer kontroll over det endelige formatet av datoen.
+
+## Se Også
+For mer informasjon om emnet, ta en titt på følgende ressurser:
+- Offisiell Go dokumentasjon på pakken 'time': [https://pkg.go.dev/time](https://pkg.go.dev/time)
+- Go sin tutorial om dato og tid formatering: [https://yourbasic.org/golang/format-parse-string-time-date-example/](https://yourbasic.org/golang/format-parse-string-time-date-example/)
+- Stack Overflow tråd om emnet: [https://stackoverflow.com/questions/20234104/how-to-format-current-time-using-a-yyyymmddhhmmss-format](https://stackoverflow.com/questions/20234104/how-to-format-current-time-using-a-yyyymmddhhmmss-format)

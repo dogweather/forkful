@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Fish Shell: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Fiskeskallet: Hvordan Skrive Ut Debug Informasjon
+
 ## Hva & Hvorfor?
 
-Å skrive ut feilsøkingsutdata betyr i hovedsak å vise informasjon om hva som skjer i programmet ditt når det kjører. Dette kan være nyttig for å forstå hvordan programmet fungerer og for å finne og fikse feil. Programmerere bruker dette for å løse problemer og forbedre koden sin.
+Debug-utskrift er utskrivning av variabler eller tilstandsdata til konsollen for feilsøking. Dette gjør det lettere for programmerere å oppdage og rette feil i koden.
 
-## Slik gjør du det:
+## Hvordan:
 
-```
-Fish Shell har et enkelt og effektivt kommando for å skrive ut feilsøkingsutdata: `echo`. Her er et eksempel:
+Hvis du vil skrive ut debugmeldinger i Fish Shell, kan du bruke `echo` kommandoen.
 
-$ set var1 'hello'
-$ set var2 'world'
-$ echo var1 var2
-hello world
+```Fish Shell
+set variabel "Dette er en test"
+echo "Debug: $variabel"
 ```
 
-## Dykk dypere:
+Når du kjører dette skriptet, vil det skrive ut følgende på konsollen:
 
-Feilsøkingsutdata har blitt brukt av programmerere siden kodetidens begynnelse. I dag er det flere alternativer for å skrive ut feilsøkingsutdata, som for eksempel å bruke loggingbiblioteker eller å bruke utviklerverktøy i nettleseren. Å bruke `echo` kommandoen i Fish Shell er raskt og enkelt, men det kan også være nyttig å undersøke andre alternativer hvis du har et større prosjekt eller en mer kompleks feilsøking.
+```Fish Shell
+Debug: Dette er en test
+```
 
-## Se også:
+## Dyp Dykk
 
-[Fish Shell dokumentasjon](https://fishshell.com/docs/current/)
+Debugging har vært grunnleggende for programmering siden oppstarten. Det gjør det mulig for utviklere å raskt identifisere og rette feil i koden.
 
-[Debugging med Echo](
-https://www.hostinger.no/tutorials/how-to-debug-in-fish-shell/)
+I Fish Shell, som i mange andre skall, brukes `echo` kommandoen for å uttrykke variabler eller tilstandsdata. Mer avanserte alternativer kan være `printf` for mer komplekse formateringer, og `stderr` for utskrift av feil til konsollen.
+
+For implementert debugprint, husk å fjern eller kommenter ut disse linjene når du er ferdig. Hvis du ikke gjør det, vil endelige brukere se disse debugmeldingene, noe som kan forvirre dem.
+
+## Se Også:
+
+1. [Fiskeskalldokumentasjon for `echo`](https://fishshell.com/docs/current/cmds/echo.html)
+2. [Fiskeskalldokumentasjon for `printf`](https://fishshell.com/docs/current/cmds/printf.html)
+3. [Fiskeskalldokumentasjon for `stderr`](https://fishshell.com/docs/current/tutorial.html#tut_redirects)

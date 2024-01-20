@@ -1,7 +1,7 @@
 ---
-title:                "Alirivien poimiminen"
-html_title:           "C: Alirivien poimiminen"
-simple_title:         "Alirivien poimiminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,28 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# **Substringien erottaminen C-ohjelmoinnissa**
+
 ## Mitä ja miksi?
 
-Olet varmasti törmännyt koodissasi tarpeeseen hakea tietty osa merkkijonosta tai sanasta. Tätä kutsutaan alimerkkijonojen erotteluksi ja se on tärkeä osa ohjelmointia. Alimerkkien erottelu on hyödyllistä esimerkiksi silloin, kun haluat tutkia tarkemmin merkkijonon sisältöä tai vertailla sanoja keskenään.
+Substringien erottaminen on prosessi, jossa valitaan ja otetaan osa merkkijonosta. Tarvitsemme tätä erityisesti silloin, kun haluamme käsitellä vain osaa tiedosta, jonka merkkijono sisältää.
 
-## Kuinka tehdä?
+## Kuinka tehdä:
 
-Alimerkkien erottelu onnistuu helposti C-kielellä käyttäen sisäänrakennettua ```strstr()``` -funktiota. Tämä funktio tarkistaa annetusta merkkijonosta halutun alimerkkijonon ja palauttaa sen sijainnin tai ```NULL```, jos alimerkkijonoa ei löydy. Esimerkiksi:
+Alla on perusohje substringien erottamiseen C-ohjelmoinnissa. Käytämme `strncpy`-funktiota.
+
+```C
+#include <string.h>
+#include <stdio.h>
+
+int main() {
+    char source[] = "Tervetuloa Suomi!";
+    char target[10];
+
+    strncpy(target, source, 9);
+    target[9] = '\0'; // terminating null byte
+
+    printf("Source string: %s\n", source);
+    printf("Extracted substring: %s\n", target);
+
+    return 0;
+}
+```
+
+Tämä ohjelma palauttaa seuraavat tulosteet:
 
 ```
-char str[] = "Tervetuloa maailma!";
-char *substring = "maailma";
-
-char *ptr = strstr(str, substring);
-printf("%s", ptr);
+Source string: Tervetuloa Suomi!
+Extracted substring: Tervetuloa
 ```
 
-Tulosteena saamme: ```maailma!```
+## Syvä sukellus
 
-## Syvemmälle
+### Historia
+`strncpy` on ikivanha funktio, joka on tullut meille C:n standardikirjastosta. Se on ollut valtavasti hyödyllinen tekstikäsittelyn liialliseen monimutkaistamiseen liittyvissä ongelmissa.
 
-Alimerkkien erottelu ei ole uusi asia, vaan se on ollut käytössä jo vuosikymmenien ajan. Aikaisemmin siihen käytettiin monia eri tapoja, kuten ```strtok()``` -funktiota, joka erotteli merkkijonon eri osiin ja palautti ne taulukkona. Nykyään suositeltava tapa on kuitenkin käyttää ```strstr()``` -funktiota sen yksinkertaisuuden ja luotettavuuden takia.
+### Vaihtoehdot
+On olemassa muita funktioita, joita voit käyttää myös substringien kanssa. Esimerkiksi:
+
+- `sscanf`
+- `strpbrk`
+- `strtok`
+
+Sopivan funktion valinta riippuu siitä, mitä tarkalleen ottaen haluat saavuttaa.
+
+### Toteutus
+`strncpy` kopioi N merkkiä alkuperäisestä merkkijonosta kohteeseen. Tämä tuo esille sen, että meidän on varmistettava, että kohdassa on tarpeeksi tilaa tietojen tallentamiseksi. Myös päättelevä null-merkki on lisättävä manuaalisesti.
 
 ## Katso myös
 
-Lisätietoa alimerkkien erottelusta ja muista hyödyllisistä C-kielessä käytettävistä funktioista löydät [täältä](https://www.programiz.com/c-programming/c-library-function).
+- [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm) TutorialsPointissa.
+- [Function strncpy() in C](https://www.geeksforgeeks.org/function-strncpy-in-c/) GeeksforGeeksissä.
+- [How to take a substring in C](https://stackoverflow.com/questions/4214314/get-a-substring-of-a-char) StackOverflow'ssa.

@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Ruby recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,41 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Searching and replacing text is a common task for programmers, allowing them to quickly make changes to their code. This involves finding a specific string of text within a larger body of text and replacing it with a different string. Programmers do this to fix typos, refactor code, or make global changes throughout a project.
+Searching and replacing text is almost self-explanatory: you look for specific sequences in a text and exchange them for another. This is crucial in programming for data cleaning, regex matching, and refactoring. 
 
 ## How to:
+Let's roll with Ruby to search and replace text in a string. It's a cakewalk with the `gsub()` method.
 
-To search and replace text in Ruby, you can use the `gsub` method. It takes in two arguments: the text to search for and the replacement text. Here's an example:
-
-```
-text = "Hello World! Welcome to Ruby!"
-new_text = text.gsub("Hello", "Hi")
-puts new_text
-
+```Ruby
+txt = "Love me, love my code."
+puts txt.gsub("code", "dog")
 ```
 
-This code will print out: `Hi World! Welcome to Ruby!` as it replaces the word "Hello" with "Hi".
-
-You can also use regular expressions with `gsub` to make more complex replacements. For example, if we wanted to replace all vowels with "*" in a string, we could do:
+Output:
 
 ```
-text = "Ruby is the best programming language!"
-new_text = text.gsub(/[aeiou]/, "*")
-puts new_text
-
+Love me, love my dog.
 ```
 
-This will output: `R*by *s th* b*st pr*gr*mm*ng l*ng**g*!`
+For a more refined search and replace, we use regular expressions (regex). Let's cast off any non-alphanumeric characters.
+
+```Ruby
+txt = "C0d1ng++>>^R0ck$!"
+puts txt.gsub(/[^0-9a-zA-Z]/, '')
+```
+
+Output:
+
+```
+C0d1ngR0ck
+```
 
 ## Deep Dive:
 
-Searching and replacing text has been a crucial tool for programmers since the early days of programming. In Ruby, the `gsub` method is based on the Unix `sed` and `ed` commands. However, there are other methods and regular expression options available in Ruby for more specific or advanced replacements.
+The `gsub` method has been a part of Ruby's String class from the early days, a testament to the importance of search and replace. 
 
-Alternatively, there are also programs and tools specifically designed for searching and replacing text, such as REPLika or Sublime Text. These can often have more features and a user-friendly interface for managing and organizing text replacements.
+Alternatives? Sure. There's `sub()` which replaces only the first occurrence, unlike `gsub()` which replaces all occurrences. 
+
+You can also pass a block to `gsub()`, causing it to replace each match with the result of invoking the block with the match. For example:
+
+```Ruby
+txt = "C++ Ruby Java Python"
+puts txt.gsub(/\w+/) { |word| word.upcase }
+```
+
+Output:
+
+```
+C++ RUBY JAVA PYTHON
+```
 
 ## See Also:
 
-- [Ruby `gsub` method documentation](https://ruby-doc.org/core-3.0.0/String.html#method-i-gsub)
-- [Regular expressions in Ruby](https://ruby-doc.org/core-3.0.0/Regexp.html)
-- [Text editing software like REPLika](https://tuple.app/replika) or [Sublime Text](https://www.sublimetext.com/)
+Ruby has a lot to offer with text manipulation. Dive deeper with these links:
+- Ruby Documentation [`gsub`](https://ruby-doc.org/core-2.7.0/String.html#method-i-gsub): A detailed explanation of the method.
+- RegexOne [`Ruby`](https://regexone.com/references/ruby): Tutorial on handling Regex in Ruby.
+- StackOverflow [`ruby-regex`](https://stackoverflow.com/questions/tagged/ruby+regex): Need help? Use the tag `ruby-regex`.
+- Ruby Tuesday [`Method: String#gsub`](http://www.rubyfleebie.com/method-stringgsub/): Explores implementation details and performance.

@@ -1,6 +1,6 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "C#: Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "C#"
 category:             "C#"
@@ -10,27 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Sökning och ersättning av text är en viktig del av programmering. Det är en process där vi söker efter en viss bit text och ersätter den med en annan. Detta kan vara användbart för att göra stora ändringar i kod eller för att hitta och korrigera fel.
+# Sökning och ersättning av text i C#: En hands-on guide
 
-## Så här gör du:
-Här är ett enkelt exempel på hur man kan använda C# för att söka och ersätta text i en sträng:
-```
-string text = "Hej världen!";
-string ersattning = text.Replace("Hej", "Hello");
-Console.WriteLine(ersattning);
+## Vad & varför?
+Sökning och ersättning av text hjälper till att identifiera och ändra specifika textsträngar i data. Detta är en grundläggande operation inom programmering för att modifiera och korrigera data, skapa dynamiskt innehåll och mycket mer.
+
+## Hur görs det:
+
+Här är en grundläggande C# kodbit som demonstrerar text sökning och ersättning:
+
+```C#
+string text = "Hello, user!";
+string correctedText = text.Replace("user", "John");
+Console.WriteLine(correctedText);
 ```
 Output:
 ```
-Hello världen!
+Hello, John!
 ```
 
-## Djupdykning:
-Historiskt sett var sökning och ersättning av text en manuell och tidskrävande process. Men idag kan vi använda olika program eller funktioner inbyggda i våra programmeringsspråk för att göra detta enklare och snabbare.
+Ovanstående kod söker strängen "user" i den ursprungliga strängen och ersätter den med "John". Sedan skriver den ut den ändrade strängen på konsolen.
 
-Alternativ till att använda `Replace` -funktionen inkluderar att använda regex-uttryck eller att använda en loop för att söka efter och ersätta text i en sträng. Implementeringen av dessa alternativ kan dock vara mer komplicerad.
+## Djupdykning
 
-## Se även:
-- [C# - String.Replace() - Dokumentation](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace)
-- [C# Regular Expressions - Tutorial](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [C# Loops - Tutorial](https://www.tutorialspoint.com/csharp/csharp_loops.htm)
+* **Historisk kontext**: I tidiga programmeringsspråk, som Assembly och C, var sökning och ersättning av text mer komplicerade processer som krävde flera steg och djup förståelse. Moderna språk som C# har inbyggda metoder för att förenkla processen, vilket sparar utvecklare tid och minskar antalet fel.
+
+* **Alternativ**: Förutom Replace-metoden, erbjuder C# flera andra sätt att arbeta med strängar, inklusive split, substring och concat. Dessutom har .NET Framework andra alternativ som Regex.Replace för komplexa sök- och ersättningsmönster.
+
+* **Implementation detaljer**: C#'s Replace-metod fungerar genom att först söka igenom varje tecken i strängen tills den hittar matchande text. Sedan ersätter den matchande texten med den angivna strängen. Detta sker i en enda iteration, vilket gör metoden effektiv.
+
+## Se också
+
+Vill du lära dig mer? Nedan finns några relaterade resurser:
+
+* [Microsofts dokumentation om stränghantering i .NET](https://docs.microsoft.com/sv-se/dotnet/csharp/programming-guide/strings/)
+* [Microsofts dokumentation om Regex-klassen](https://docs.microsoft.com/sv-se/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
+* [En handledning om effektiv stränghantering i C# på C# Station](https://www.csharp-station.com/tutorial/csharp/lesson13)

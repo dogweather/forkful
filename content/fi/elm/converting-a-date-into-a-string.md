@@ -1,6 +1,6 @@
 ---
 title:                "Päivämäärän muuttaminen merkkijonoksi"
-html_title:           "Elm: Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
 simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,27 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Päivämäärän muuntaminen merkkijonoksi on yksinkertainen tapa näyttää päivämäärät käyttäjälle ymmärrettävässä muodossa. Ohjelmoijat käyttävät tätä esimerkiksi verkkosivuilla, sovelluksissa ja tietokoneohjelmissa.
+Päivämäärän muuttaminen merkkijonoksi on prosessi, jossa päivämääräobjekti muunnetaan luettavampaan formaattiin. Ohjelmoijat tekevät tämän tiedon esittämiseksi käyttäjille ymmärrettävämmässä muodossa.
 
-## Kuinka tehdä?
 
-Elm-kielellä päivämäärän muuntaminen merkkijonoksi on helppoa. Seuraavassa esimerkissä käytämme avuksi Date-moduulia ja sen funktiota `toIsoString`:
+## Näin se tehdään:
+
+Elm tarjoaa erinomaisen paketin tätä varten: 'elm/time'. Katsotaan esimerkkiä:
 
 ```Elm
-import Date
+import Time exposing (..)
 
-Date.toIsoString (Date.fromCalendarDate 2021 8 23)
+muunnaPäivämäärä : Posix -> String
+muunnaPäivämäärä aika =
+    let
+        päivä = toGregorianDate aika
+    in
+    (toString päivä.day) ++ "." ++ (toString päivä.month) ++ "." ++ (toString päivä.year)
 ```
 
-Tämä koodi tuottaa merkkijonon `2021-08-23`, joka vastaa päivämäärää 23.8.2021. Voit myös muuttaa muodostettavan merkkijonon formaattia lisäämällä halutut välimerkit `toIsoString`-funktion parametreihin.
+Tämän funktion avulla voimme muuntaa Posix-ajan tyylikkääksi merkkijonoksi. Testataan tätä funktiota:
 
-## Syvemmälle
+```Elm
+main =
+    let
+        nyt = fromMillis 1577833200000
+    in
+    text (muunnaPäivämäärä nyt)
+```
+Tulostaessa saamme merkkijonon "1.1.2020".
 
-Päivämäärän muuntaminen merkkijonoksi on tärkeä osa tietokoneohjelmointia, joten siihen on olemassa useita eri tapoja eri ohjelmointikielillä. Elm-kielessä tämä on kuitenkin mahdollista vain Date-moduulilla, sillä kieli on suunniteltu välttämään ylimääräisiä riippuvuuksia.
+## Syventävä tarkastelu:
 
-## Katso myös
+Historiallisesti erilaisia tapoja on ollut päivämäärä-esitysten muuntamiseksi merkkijonoiksi, joista jokainen antaa hieman erilaisen tuloksen. Elm:ssä olemme päättäneet käyttää 'elm/time' pakettia sen joustavuuden ja vaivattoman käytön takia. 
 
-- [Date-moduulin dokumentaatio](https://package.elm-lang.org/packages/elm/time/latest/Date)
-- [Elm-kielen kotisivut](https://elm-lang.org/)
+Vaihtoehtoisesti, voit käyttää 'elm/regex' pakettia ja luoda oman regular expressionin, joka muuntaa ajan merkkijonoksi. Tämä on varsin teknistä ja aikaa vievää, mutta antaa sinulle täyden kontrollin.
+
+Mikäs siinä on myös hyvää, että Elm:n päivämäärän muuntofunktiot palaavat Maybe-tyypin. Tämä tarkoittaa, että funktiot huolehtivat virheen tarkastuksesta sinun puolestasi!
+
+## Katso myös:
+
+Lisää tietoa ja apua muusta Elm:n ajan käsittelystä voit löytää seuraavien linkkien kautta:
+
+- [Elm Time](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Elm GregorianDate](https://package.elm-lang.org/packages/elm/time/latest/Time-Gregorian)

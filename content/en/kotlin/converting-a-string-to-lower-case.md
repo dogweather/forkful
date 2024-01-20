@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Kotlin recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,36 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Converting a string to lower case is the process of transforming all uppercase letters in a string to their lowercase equivalents. This is often done by programmers to ensure consistency in data, as well as for easier data manipulation and comparison.
+Converting a string to lower case means transforming all the alphabetic characters in a string from uppercase to lowercase. Programmers do this to normalize data for comparison, search, sort, or to meet specific casing requirements in text processing.
 
 ## How to:
-To convert a string to lower case in Kotlin, you can use the `toLowerCase()` function. Here's an example:
+In Kotlin, you can convert a string to lower case using the `toLowerCase()` function. Here's how:
 
+```Kotlin
+fun main() {
+    val str = "HeLLo WoRLD"
+    val lowerCaseStr = str.toLowerCase()
+    println(lowerCaseStr) 
+}
 ```
-val string = "HELLO WORLD"
-val loweredString = string.toLowerCase()
-println(loweredString)
-```
+Sample output:
 
-This will output: `hello world`.
-
-You can also use the `toLowerCase()` function directly on the string itself:
-
-```
-val string = "HELLO WORLD"
-println(string.toLowerCase())
+```Kotlin
+hello world
 ```
 
-This will produce the same output as the first example.
+## Deep Dive
+The `toLowerCase()` function in Kotlin is not a recent development; it's been part of many programming languages, tracing back to older languages like C and Java. While it's generally the go-to method for converting a string to lower case, alternatives exist. For instance, you could manually iterate over each character in the string and convert it using `Char.toLowerCase()`.
 
-## Deep Dive:
-Converting strings to lower case is a common programming practice that has been around for a long time. In the early days of computing, keyboards did not have both uppercase and lowercase letters, so developers had to manually convert strings to lowercase for consistent data.
+Implementation-wise, Kotlin's `toLowerCase()` function simply calls Java's `toLowerCase(Locale.ROOT)`. This means the conversion is locale-insensitive, behaving consistently across different locales. 
 
-There are alternative ways to convert strings to lower case, such as using regular expressions or ASCII codes. However, the `toLowerCase()` function in Kotlin is the most straightforward and efficient method.
+```Kotlin
+val str = "ÇİĞ"
+println(str.toLowerCase())  // çiğ
+```
 
-Under the hood, the `toLowerCase()` function uses the Unicode Character Database to map all uppercase letters to their lowercase equivalents. This ensures that the conversion is accurate and supports all languages and characters.
+Instead of producing "Çiğ", a Turkish user might expect, it produces "çiğ".
 
-## See Also:
-- [Kotlin documentation on String Manipulation](https://kotlinlang.org/docs/strings.html)
-- [Unicode Character Database](https://unicode.org/)
-- [Regular Expressions in Kotlin](https://kotlinlang.org/docs/regular-expressions.html)
+## See Also
+For more information:
+
+- [Kotlin's toLowerCase documentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
+- [Char.toLowerCase() in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case-char.html) 
+- [Locale sensitivity in string conversion](https://docs.oracle.com/javase/tutorial/i18n/locale/defLocale.html)

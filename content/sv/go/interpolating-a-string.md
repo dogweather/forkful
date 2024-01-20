@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "Go: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad och Varför? 
 
-Interpolering av strängar är en metod som används inom programmering för att bygga en sträng med text och variabler. Det är ett effektivt sätt att sammanfoga olika delar till en dynamisk sträng, vilket är användbart för att skapa mer flexibla och anpassningsbara program.
+Att interpolera en sträng i Go-programmering innebär att du infogar en variabels värde direkt i en sträng. Detta gör det möjligt för programmerare att smidigt och dynamiskt manipulera textoutput.
 
-## Så här:
+## Hur Man Gör: 
 
-Go har inbyggda funktioner för att interpolera strängar, det vill säga skapa en sträng genom att sammanfoga text och variabler. Detta görs med hjälp av en punkt och ett likamedstecken inuti en sträng, följt av variabelnamnet som ska interpoleras inom måsvingar. Se nedan för ett exempel på hur man kan använda interpolering i Go:
-
-```Go
-name := "Lisa"
-age := 25
-fmt.Printf("Hej, mitt namn är %s och jag är %d år gammal.", name, age)
-```
-Output:
-`Hej, mitt namn är Lisa och jag är 25 år gammal.`
-
-Det går även att interpolera flera variabler i en och samma sträng genom att lägga till fler %tecken och tillhörande variabler inom måsvingar. Se det här exemplet:
+Här är en grundläggande exemplar på stränginterpolation i Go:
 
 ```Go
-title := "Go programming"
-year := 2009
-fmt.Printf("%s skapades år %d.", title, year)
+package main
+import "fmt"
+func main() {
+    namn := "Viktor"
+    fmt.Println(fmt.Sprintf("Hej, %s!", namn))
+}
 ```
+
 Output:
-`Go programming skapades år 2009.`
+'''Go
+"Hej, Viktor!"
+```
+'Efter att ha satt värde av "namn" till "Viktor", skriver vi ut en hälsning med hjälp av fmt.Sprintf funktionen, vilket interpolerar "namn" -variabeln in i strängen.' 
 
-## Djupdykning:
+## Djupdykning: 
 
-Interpolering av strängar har funnits sedan början av 70-talet och används i många programmeringsspråk, även om syntaxen kan skilja sig åt. Ett alternativ till att interpolera strängar är att använda strängformatering, där variabler placeras i en sträng enligt ett särskilt mönster (som t.ex. %s och %t i Go). Båda metoderna har sina egna fördelar och nackdelar, men interpolering av strängar anses ofta vara enklare och mer lättläst.
+Stränginterpolation har varit en del av programmeringsspråk i årtionden, vilket gör det möjligt att infoga variabler direkt i en sträng över just flera språk. I Go använder vi `fmt.Sprintf` för att uppnå detta, även om liknande metoder finns i andra språk, som `${}` i JavaScript eller `#{}` i Ruby. 
 
-I Go så byggs själva interpoleringsfunktionen upp av flera mindre delar, bland annat genom användning av buffer-objekt och Formatter-interface. Detta gör att Go kan hantera och interpolera olika typer av variabler, även komplexa datatyper som structs och arrays.
+En alternativ metod för att interpolera strängar i Go är att använda `fmt.Printf`,`fmt.Fprintf` eller `fmt.Errorf`. Dessa funktioner skriver till en io.Writer i stället för att de returnerar en sträng.
 
-## Se även:
+Ett intressant drag att notera är att Go faktiskt kompilerar stränginterpolation i syntaxträdet som en serie av konkateneringar. Detta innebär att `fmt.Sprintf("Hej %s!", "Viktor")` faktiskt blir `"Hej " + "Viktor" + "!"` under huven.
 
-- [Go Language Specification - String Interpolation](https://golang.org/ref/spec#String_interpretation)
-- [String Formatting in Go](https://www.digitalocean.com/community/tutorials/how-to-use-string-formatters-in-go)
-- [Go Template Package documentation](https://golang.org/pkg/text/template/)
+## Se Också:
+
+För mer läsning om stränginterpolation i Go, kolla in dessa länkar:
+
+[Go by Example: String Formatting](https://gobyexample.com/string-formatting)
+[Go Lang Spec: Package fmt](https://golang.org/pkg/fmt/)

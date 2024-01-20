@@ -1,7 +1,7 @@
 ---
-title:                "发送一个 http 请求"
-html_title:           "Java: 发送一个 http 请求"
-simple_title:         "发送一个 http 请求"
+title:                "发送http请求"
+html_title:           "C#: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,58 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hello 揭金
+## 什么以及为何？
+HTTP请求只是一个互联网上的消息，它发送给特定的服务器来获取或提交数据。这个功能在编程中非常重要，因为它允许不同的应用程序或服务间进行通信和数据交换。
 
-## 什么是HTTP请求？为什么程序员要这么做？
-HTTP请求是一种客户端向服务器发送请求的通信协议，它可以用来获取数据、发送表单数据等。程序员通常会使用HTTP请求来与服务器进行交互，获取所需的数据或实现特定的功能。
-
-## 如何发送HTTP请求？
-Java提供了许多方法来发送HTTP请求，其中最常用的是使用HttpURLConnection类。以下是一个简单的例子，演示如何使用HttpURLConnection类发送GET请求并获取服务器的响应数据：
+## 怎么做：
+Java内置包java.net.http作为HTTP客户端，用来发送HTTP请求。下面是我们的一个例子。
 
 ```Java
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
-public class HTTPRequestExample {
-
+public class HttpClientExample {
     public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+              .uri(URI.create("http://example.com/"))
+              .build();
 
-        // 创建URL对象
-        URL url = new URL("https://www.example.com/api/users");
+        HttpResponse<String> response =
+              client.send(request, HttpResponse.BodyHandlers.ofString());
 
-        // 打开和服务器的连接
-        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-
-        // 设置请求方法为GET
-        connection.setRequestMethod("GET");
-
-        // 读取服务器的响应数据
-        BufferedReader in = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-        String inputLine;
-        StringBuffer response = new StringBuffer();
-        while ((inputLine = in.readLine()) != null) {
-            response.append(inputLine);
-        }
-        in.close();
-
-        // 打印服务器的响应数据
-        System.out.println(response.toString());
+        System.out.println(response.body());
     }
 }
 ```
+输出:
+```
+<html>
+<head>
+<title>Example Domain</title>
+...
+</html>
+```
 
-运行以上代码将输出服务器返回的JSON数据。
+## 深度探讨：
+在Java 11之前，JDK没有提供官方的HTTP客户端。这迫使许多开发者转向第三方库，例如Apache HttpClient等。Java 11更新了内置HTTP客户端，使其更具现代性，支持HTTP/2，并异步或同步处理请求和响应。
 
-## 深入了解
-*历史背景：HTTP请求最早是在1991年由蒂姆·伯纳斯·李提出的，用于分享文档和资源。
-*其他方法：除了使用HttpURLConnection类，还有许多第三方库可以用来发送HTTP请求，例如Apache HttpComponents和OkHttp等。
-*发送POST请求：如果要发送POST请求，可以使用HttpURLConnection类的setRequestMethod()方法将请求方法设置为POST，并使用getOutputStream()方法发送表单数据。
-*实现细节：发送HTTP请求时，必须指定请求的URL、请求方法、请求头、请求体等信息，每个请求都会通过一个URLConnection对象来处理。
+虽然Java的内置HTTP客户端非常实用，但当你需要更复杂功能（如代理设置、Cookies管理和多种身份验证方式）时，Apache HttpClient可能是更好的选择。
 
-## 参考文献
-更多关于Java发送HTTP请求的信息，可以参考以下文档：
-- [Java HTTP请求教程](https://www.tutorialspoint.com/http/index.htm)
-- [Java发送HTTP请求的代码示例](https://www.baeldung.com/java-http-request)
-- [Java发送HTTP请求的官方文档](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/URLConnection.html)
+至于实施细节，当使用内置HTTP客户端发送POST或PUT请求时，你需要创建一个HttpRequest.BodyPublisher实例来发送请求体。你可以使用HttpRequest.BodyPublishers类中的工厂方法来创建。
+
+## 归纳参考：
+- Oracle官方Java HTTP客户端教程: http://docs.oracle.com/en/java/javase/11/net/httpclient-overview.html
+- Apache HttpClient库：https://hc.apache.org/httpcomponents-client-4.5.x/index.html
+- Java 11 HttpClient的异步示例：https://www.callicoder.com/java-11-http-client-api-tutorial-examples/

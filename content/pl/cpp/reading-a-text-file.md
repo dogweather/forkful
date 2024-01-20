@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "C++: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -12,53 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i Dlaczego?
 
-Odczyt pliku tekstowego jest procesem, w którym programista wczytuje zawartość pliku tekstowego do swojego programu. Programiści robią to w celu uzyskania dostępu do danych przechowywanych w pliku i wykorzystania ich w swoim kodzie.
+Czytanie pliku tekstowego to proces, w którym program komputerowy odczytuje dane z pliku zapisanego w formacie tekstowym. Programiści robią to, aby obsłużyć informacje zapisane w plikach, takie jak konfiguracje, dane wejściowe lub zapisy dzienników.
 
 ## Jak to zrobić:
 
-```C++
+Zacznijmy od podstaw. Oto proste czytanie pliku w języku C++.
+
+```c++
 #include <iostream>
 #include <fstream>
-
-using namespace std;
+#include <string>
 
 int main() {
-
-    // Otwieranie pliku do odczytu
-    ifstream plik("tekst.txt");
-
-    // Sprawdzanie czy plik istnieje
-    if (!plik) {
-        // Obsługa błędu jeśli plik nie istnieje
-        cout << "Nie udalo sie otworzyc pliku!";
-        return 1;
-    }
-
-    // Wczytywanie danych do zmiennej typu string
-    string linijka;
-    getline(plik, linijka);
-
-    // Wypisanie zawartości pliku na ekranie
-    cout << linijka;
-
-    // Zamykanie pliku
-    plik.close();
-
-    return 0;
+   std::ifstream plik("plik.txt");
+   std::string linia;
+   while (getline(plik, linia)) {
+      std::cout << linia << '\n';
+   }
+   return 0;
 }
 ```
+Wyjście programu to zawartość pliku `plik.txt`, wydrukowana linia po linii.
 
-**Wynik:**
-"Przykładowy tekst w pliku."
+## Deep Dive
 
-## Deep Dive:
+Czytanie plików tekstowych to podstawa operacji I/O w wielu językach programowania, a C++ nie jest wyjątkiem. Pioneerskie języki, takie jak FORTRAN i COBOL, już miały wsparcie na poziomie języka dla operacji I/O na plikach.
 
-Historia odczytu pliku tekstowego sięga początków programowania. Wcześniej, gdy programy były wykonywane na kartach perforowanych, programiści wczytywali dane do swoich programów, wkładając karty do czytników kart. Obecnie, odczyt pliku tekstowego jest jedną z najczęstszych operacji wykonywanych przez programistów, ponieważ pozwala im na pracę z różnymi typami danych przechowywanymi w pliku.
+Alternatywą dla metody pokazanej powyżej jest użycie bibliotek zewnętrznych, które mogą oferować funkcje odczytu plików zaawansowane lub lepiej dostosowane do Twojego przypadku użytkowania.
 
-Alternatywą dla odczytu pliku tekstowego może być odczyt pliku binarnego, w którym dane są zapisane w postaci binarnej zamiast tekstowej. Odczyt plików tekstowych jest bardziej czytelny i łatwiejszy w implementacji, dlatego jest częściej stosowany.
+Pod kątem implementacji, kiedy otwierasz plik w C++, tworzony jest strumień, który jest abstrakcją umożliwiającą operacje wejścia/wyjścia. Możliwe jest również otwarcie pliku w trybie binarnym, co jest bardziej wydajne, ale nie jest to odpowiednie dla ludzko-czytelnych plików tekstowych.
 
-Implementacja odczytu pliku tekstowego w języku C++ jest możliwa dzięki zestawowi bibliotek standardowych takich jak ```<fstream>``` i ```<iostream>```, które dostarczają funkcje i metody do wczytywania oraz zamykania pliku.
+## Zobacz też
 
-## Zobacz też:
-
-Dla głębszego zrozumienia odczytywania plików tekstowych w języku C++, warto zapoznać się z dokumentacją biblioteki standardowej ```<fstream>```. Link do dokumentacji: https://en.cppreference.com/w/cpp/header/fstream
+1. [I/O Stream Library](https://en.cppreference.com/w/cpp/io): Więcej informacji o bibliotece strumieniowej C++.
+2. [File I/O in C++](http://www.cplusplus.com/doc/tutorial/files/): Tutorial do pierwszych kroków w I/O plików w C++.
+3. [Boost Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm): Zaawansowana biblioteka do operacji na plikach.
+4. [C++ I/O Streams and File I/O](https://www.programiz.com/cpp-programming/file-io): Więcej przykładów i szczegółów na temat obsługi plików w C++.

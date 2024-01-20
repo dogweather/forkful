@@ -1,7 +1,7 @@
 ---
-title:                "Transformer une date en chaîne de caractères"
-html_title:           "C++: Transformer une date en chaîne de caractères"
-simple_title:         "Transformer une date en chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
+simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi ?
-Convertir une date en chaîne de caractères consiste à prendre une date, généralement représentée sous forme de nombre, et la transformer en une chaîne de caractères qui peut être lue et interprétée par un humain. Les programmeurs font cela pour pouvoir afficher ou utiliser des dates dans un format plus convivial pour les utilisateurs, ou pour les manipuler dans certaines opérations.
+## Quoi & Pourquoi?
+Convertir une date en chaîne est le processus de transformation d'une date en texte. Les programmeurs s'en servent pour rendre les dates plus lisibles et pour faciliter le stockage et l'échange de données de date dans divers formats.
 
-## Comment faire :
+## Comment faire:
+
+Voici comment on fait en C++ :
+
 ```C++
 #include <iostream>
 #include <ctime>
 
 int main() {
-    //Création d'un objet temps 
-    time_t now = time(0);
-
-    //Conversion de la date en chaîne de caractères en utilisant la fonction ctime 
-    char* date = ctime(&now);
-
-    //Afficher la date convertie 
-    std::cout << "La date est : " << date << std::endl; 
+    time_t maintenant = time(0);
+    char* dt = ctime(&maintenant);
+    
+    std::cout << "La date et l'heure locales sont : " << dt << std::endl;
 
     return 0;
 }
 ```
-Output : La date est : Wed Apr 21 16:28:03 2021
 
-## Plongée en profondeur :
-1) Contexte historique : Avant l'utilisation de la programmation informatique, les dates étaient souvent écrites en chiffres, ce qui les rendait difficiles à lire pour les personnes qui n'étaient pas habituées à ce format. Les premiers programmeurs ont donc créé des fonctions pour convertir les dates en chaînes de caractères afin de les rendre plus compréhensibles pour les utilisateurs.
-2) Alternatives : Il existe d'autres façons de convertir une date en chaîne de caractères, telles que l'utilisation de bibliothèques externes ou la définition de fonctions personnalisées.
-3) Détails de l'implémentation : La fonction ctime utilise un objet temps pour représenter la date, et la convertit en une chaîne de caractères en utilisant un format standard. La bibliothèque <ctime> doit être incluse pour pouvoir utiliser cette fonction.
+Le code ci-dessus affichera quelque chose comme ça : `La date et l'heure locales sont : Wed Apr 7 12:34:56 2021`
 
-## À voir aussi :
-- La documentation de la fonction ctime : https://www.cplusplus.com/reference/ctime/ctime/
-- Des exemples de conversion de dates en chaînes de caractères en utilisant différentes méthodes : https://www.programiz.com/cpp-programming/library-function/ctime/ctime
+## Plongée en profondeur
+
+Le format de date et d'heure en C++ est basé sur la norme de l'heure et de la date UNIX, conçue pour rendre les dates et heures interopérables entre tous les systèmes d'exploitation. Une alternative à `ctime()` est `strftime()`, qui a beaucoup plus d'options de formatage.
+
+Dans l’exemple ci-dessus, `ctime(&maintenant)` est une fonction qui convertit une variable `time_t` en format de date et d'heure. Cependant, c'est juste la pointe de l'iceberg car vous pourriez vouloir exploiter les bibliothèques spécifiques à C++ telles que `chrono` ou `date` qui offrent une plus grande flexibilité et une meilleure conformité avec les normes modernes.
+
+## Voir aussi 
+
+Voici certains liens connexes pour vous aider à comprendre plus sur ce sujet. 
+
+1. Documentation de ctime: www.cplusplus.com/reference/ctime/
+2. Documentation de strftime: www.cplusplus.com/reference/ctime/strftime/
+3. Bibliothèque Chrono: en.cppreference.com/w/cpp/header/chrono
+4. Bibliothèque Date (non-standard mais largement utilisée): github.com/HowardHinnant/date

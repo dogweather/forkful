@@ -1,7 +1,7 @@
 ---
-title:                "HTML パース"
-html_title:           "Gleam: HTML パース"
-simple_title:         "HTML パース"
+title:                "HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,56 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 何となぜ？
-パーシングHTMLとは、HTMLを分析して必要なデータを取り出すことです。プログラマーがこれを行うのは、例えばWebサイトから情報を収集したり、自動化したりするためです。
+HTMLの解析とは何か、それによりプログラマが何をすることができるか説明します。HTMLの解析とは、マークアップされたHTMLテキストを把握し、その内容を操作できる内部データ構造へと変換することです。これはウェブスクレイピングやウェブコンテンツの改変、さらには動的ウェブアプリケーションの作成などに不可欠です。
 
-## 方法：
-```Gleam ... ```のコードブロック内に、コーディング例とサンプルの出力を示します。
-
-**例1：HTMLから特定のテキストを抽出する**
-
-```Gleam 
-let input_html = "
-<html>
-<head>
-<title>Gleam Parsing Article</title>
-</head>
-<body>
-<h1>This is a title</h1>
-<p>This is a paragraph</p>
-</body>
-</html>
-"
-
-let parsed = Html.parse(input_html)
-let h1 = Html.get_element(parsed, "h1")
-let p = Html.get_element(parsed, "p")
-
-Debug.assert_equal("This is a title", Html.get_text(h1))
-Debug.assert_equal("This is a paragraph", Html.get_text(p)) 
-```
-
-**例2：HTMLをフォーマットする**
-
+## 手順：
 ```Gleam
-let input_html = "
-<html>
-<body>
-<h1>This is a title</h1>
-</body>
-</html>
-"
+import gleam/httpc
+import gleam/bit_builder.{BitBuilder}
+import gleam/otp/process.{Cast}
+import gleam/html.{start_link, to_html, parse}
+import gleam/regex
 
-let formatted = Html.format(input_html)
-Debug.assert_equal(
-  "<html>\n<body>\n  <h1>This is a title</h1>\n</body>\n</html>",
-  formatted
-)
+fn fetch_and_parse(url: String) {
+  let resp = httpc.get(url)
+  let body = resp.body
+  let parsed_html = parse(body)
+  parsed_html
+}
+
+fn main(args: List(String)) {
+  let url = list.head(args)
+  let parsed_html = fetch_and_parse(url)
+  show(parsed_html)
+}
 ```
+このコードは指定されたURLからHTMLを取得し、それを解析して表示します。解析後は内部のデータ構造として扱うことができます。
 
-## 深く掘り下げる：
-パーシングHTMLは、Web開発の歴史や現在のWebスクレイピングやデータ収集の手法の一つです。他にも、パーシングHTMLの代替手法としてXMLパーサーや正規表現があります。また、GleamでのHTMLパーシングは、一般的なHTMLパーサーよりもシンプルで柔軟な実装が特徴です。
+## 深掘り
+HTML解析の歴史はウェブの歴史と並行して進化してきました。初期のウェブページは静的で単純だったため、解析の要求もそれほど複雑ではありませんでした。しかし、時間とともにウェブはより動的で複雑なものになりました。その結果、より洗練されたHTML解析の手段とツールが求められるようになりました。
 
-## 関連情報：
-- [Gleam公式ドキュメント](https://gleam.run/)
-- [HTMLパーサーの一覧](https://github.com/zbjornson/awesome-html-parsing)
-- [正規表現を使ったテキスト抽出の例](https://regexr.com/)
+Gleamでの解析は頑健性と保守性の観点から優れていますが、解析の速度やメモリ使用量に敏感な場合は、言語組み込みの解析器、例えばPythonのBeautifulSoupやJavaScriptのDOMParserを検討することもできます。
+
+GleamでのHTML解析は、イベントベースのパースとツリー構築からなる2つのステージで行われます。最初のステージでは、HTMLテキストがトークン化され、それらのトークンがイベントに変換されます。2つ目のステージでは、これらのイベントがツリー構造に組み立てられ、プログラマが操作できるようになります。
+
+## 参考文献
+- Gleam公式ドキュメンテーション：https://docs.gleam.run/
+- Gleam HTMLパーサのソースコード：https://github.com/gleam-lang/html
+- BeautifulSoupドキュメント：https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- Mozilla Developer NetworkのDOMParserドキュメント：https://developer.mozilla.org/en-US/docs/Web/API/DOMParser

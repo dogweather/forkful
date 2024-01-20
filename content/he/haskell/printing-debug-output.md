@@ -1,7 +1,7 @@
 ---
-title:                "הדפסת פלט נקודת תיקון"
-html_title:           "Haskell: הדפסת פלט נקודת תיקון"
-simple_title:         "הדפסת פלט נקודת תיקון"
+title:                "הדפסת פלט ניפוי שגיאות"
+html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
+simple_title:         "הדפסת פלט ניפוי שגיאות"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,55 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-כתיבת פלט דיבאג בפונקציות ב הסקל - טון לא יפוקס ובסגנון לא פורמלי
-
 ## מה ולמה?
 
-תעודת הוצאה דיבוג היא כאשר מתכנתים מדפיסים פלט מידע לצורך ניתוח בעת מפתחת כוללות כגון מצב התוכנית, ערך המשתנים, וכו '. היא שיטה נפוצה למציאת באגים ושיפור ביצועים של קוד. 
+הדפסת פלט ניפוי שגיאות היא דרך שבה המתכנת יוצר "הדפסה" של מצב התוכנה בזמן ריצה. הכוונה לכך שזו דרך למצוא ולאתר שגיאות בקוד, מאחר וזה מאפשר להבחין במצב הפנימי של התוכנה בזמן שהיא מריצה.
 
 ## איך לעשות:
 
-דוגמאות קוד ופלט להלן בלוקים ```Haskell ...```
-
-קוד:
 ```Haskell
-factorial :: Int -> Int
-factorial 0 = 1
-factorial n = n * factorial (n - 1)
+import Debug.Trace
 
-main :: IO ()
-main = do
-  putStrLn "Enter a number: "
-  n <- readLn
-  let result = factorial n
-  putStrLn ("The factorial of " ++ show n ++ " is " ++ show result)
-  putStrLn "Debug output:"
-  print [n-2, n-1]
+main = print (debug "Debugging" factorial 5)
+    where factorial 0 = 1
+          factorial n = n * factorial (n-1)
+          debug str val = trace (str ++ show val) val
 ```
+לדוגמה, הפלט של התוכנית הזאת יוצא להיות: "Debugging120"
 
-פלט:
-```
-Enter a number:
-5
-The factorial of 5 is 120.
-Debug output:
-[3,4]
-```
+## הטבלה בעומק:
 
-## העמקה:
+(1) בהקשר היסטורי, במרבית השפות התכנותית המודרניות, ניתן להשתמש במפענחים כדי לגבש את המצב הנוכחי של התוכנה. אך ב-Haskell, שהיא שפה פונקציונלית נקיים, לא קיימים תמיכה טבעית לעוקבים. על כן, ביביאה לעולם של ה-Haskell הפלט של ניפוי שגיאות נתפש כאלגחס נצח.
 
-### היסטוריה:
-תעודת הוצאה דיבוג הייתה נפוצה כאשר בתורה פותחה בשנות ה 70 כאשר טכנולוגיות פיתוח כדי לקבוע את נקודות השגיאה. מאז, זה הפך מנפוצה יותר כאשר טכנולוגיות מתוקשבות השתמשו בתעודת הוצאה דיבוג כמיוחד בתכנות קצר. 
+(2) בנוגה לאלטרנטיבות, פעמים רבות משתמשים מתכנתים בפונקציות מוינפות כמו "traceShowId" או "traceShowM" שמתחבאות תחת ה-Debug.Trace., כדי להראות את הערכים או החישובים לניף שגיאה.
 
+(3) מבחינת ביצועים, אולי לא תיהנו תמיכה טבעית לעקובים ו sculpters, אך אם אתה שמים בשיקול דעת את הרוויחים להשתמש בהם במהלך תהליך הפיתוח, הם יכולים להפוך ניפוי השגיאות להרבה יותר נוח ואפקטיבי.
 
-### אלטרנטיבות:
-ישנם כמה אלטרנטיבות לתעודת הוצאה דיבוג, כמו שימוש במתכנתי שאילתות להתאמת תנאים ומבחן יחידות (באנגולית: unit testing). כמו כן, יש כלים ספציפיים לתעודת הוצאה דיבוג כגון (באנגולית: debuggers) שמשמשים לניתוח כולל, אבל הם לא מתאימים לכל הפשע בגלל עלויות נקיון הקוד.
+## ראה גם:
 
-### פירטי עיבוד:
-בדרך כלל, תעודת הוצאה דיבוג יתווספו את הפן האדם מלהשלים את הקוד. כמו כן, באמצעות כלי תעודת הוצאה דיבוג מתבצע בזמן אמת, זה אנן אפטים לפשע אחר-תהליך מתוך תוקן הקוד.
+[הפלט של ניפוי שגיאות במערכת ה-Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debug-info.html)
 
-## ראו גם:
+[Trace Debugging in Haskell](https://wiki.haskell.org/Debugging)
 
-- [The Power of Debugging in Haskell](https://www.schoolofhaskell.com/user/commercial/content/the-power-of-debugging-in-haskell)
-- [Debugging Tips for Haskell](https://www.reddit.com/r/haskell/comments/1g39jr/debugging_tips_for_haskell/)
-- [Haskell Debug Adapter for Visual Studio Code](https://github.com/JustusAdam/vscode-haskell-debug)
+[Debugging Haskell Code](https://typeclasses.com/techniques/debugging)

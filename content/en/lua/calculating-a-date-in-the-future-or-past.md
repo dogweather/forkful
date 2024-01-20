@@ -12,32 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating a date in the future or past means determining a date that is a certain number of days, weeks, months, or years away from a given date. This is often used by programmers in applications that involve scheduling, time tracking, or event planning.
+Caclulating a date in the future or past involves maneuvering dates by adding or subtracting days, months, or years. Programmers do it to process tasks such as setting up reminders, calculating due dates, or creating time-based analytics.
 
 ## How to:
 
-To calculate a date in the future or past in Lua, we can use the built-in os.date() function along with the os.time() function to convert a specific date into a timestamp. Then, we can use the os.date() function again to convert the adjusted timestamp back into a date format.
+Lua does not natively support date manipulation beyond its `os.date` and `os.time` functions. Fortunately, we can roll our own implementation or use libraries like Date.lua.
+
+It's easy to get started with Date.lua. Here's how to add and subtract days from a date:
+
+```Lua
+local date = require("date")
+
+local d = date(true) -- today's date
+
+print(d) -- today's date in yyyy-mm-dd format
+
+-- Adding 10 days
+newDate = d:adddays(10)
+print(newDate) -- New date after 10 days in yyyy-mm-dd format
+
+-- Subtracting 7 days
+pastDate = newDate:adddays(-7)
+print(pastDate) -- past date 7 days before new date
 
 ```
-Lua
--- Calculate a date 7 days from today
-local timestamp = os.time()
-local future_date = os.date("%m/%d/%Y", timestamp + (7 * 86400)) -- 86400 seconds in a day
+## Deep Dive:
 
-print(future_date) -- Outputs the date 7 days from today in mm/dd/yyyy format
-```
-In this example, we first use os.time() to get the current timestamp, which represents the current date and time in seconds. We then add 7 days worth of seconds (86400 seconds * 7) to the timestamp and use os.date() to convert it back into a date format, using the "%m" for month, "%d" for day, and "%Y" for year placeholders.
+Historically, dealing with date & time in programming languages has always been tricky due to variances in calendars, timezones, and daylights saving time. Lua's simplistic built-in date/time handling reflects its mission to stay lightweight and lean.
 
-We can also calculate a date in the past by subtracting a certain number of seconds from the timestamp. For example, to calculate a date 30 days in the past, we would use "timestamp - (30 * 86400)".
+As for alternatives, Lua doesn't have direct support for dates like Python’s datetime or Java’s Calendar, but there are several libraries available. Apart from Date.lua, other popular libraries include LuaDate and Chronic.
 
-## Deep Dive
+In terms of implementation, the os.date function returns a table with the current date and time, by default. With this function, you can also format the date and time in many different ways. The os.time function returns the current time since the epoch (1970-01-01 UTC) in seconds.
 
-There are other ways to calculate dates in the future or past, such as using libraries or third-party packages, but the built-in os.date() function in Lua is a simple and efficient option. It is worth mentioning that the calculation is based on the Gregorian calendar, which is the most commonly used calendar today.
+It should also be noted that Lua, being an extension programming language, provides these capabilities so that it can be embedded into applications which require such manipulations. 
 
-In addition to calculating dates based on seconds, we can also use the os.time() function to adjust dates based on weeks, months, or years. For example, "timestamp + (2 * 7 * 86400)" would add 2 weeks to the current date, while "timestamp + (6 * 30 * 86400)" would add 6 months.
+## See Also:
 
-## See Also
-
-- [Lua Date and Time functions](https://www.lua.org/pil/22.1.html)
-- [os.date() function documentation](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [os.time() function documentation](https://www.lua.org/manual/5.4/manual.html#6.8)
+- Lua’s os library: https://www.lua.org/manual/5.3/manual.html#6.9
+- Date and Time in Lua: http://lua-users.org/wiki/DateAndTime
+- Lua libraries for date and time handling: https://luarocks.org/modules/tieske/date, https://github.com/truemedian/lua-date, https://github.com/leafo/chronic.lua

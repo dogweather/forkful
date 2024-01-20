@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "C: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "C"
 category:             "C"
@@ -10,62 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が & なぜ？
-検索と置換は、プログラマーにとって欠かせない作業です。検索とは、特定の文字列を検索することであり、置換は、検索された文字列を別の文字列に置き換えることです。これらの作業を行うことでコードの変更や修正が可能になり、より効率的なプログラミングが可能になります。
+## 何となぜ?
 
-## 方法
-以下の例では、文字列の検索と置換を行う方法を示します。```C ... ```コードブロック内で、コーディングの例と出力結果が示されます。
+テキストの検索と置換は、特定の文字列を探し、必要に応じて新しい文字列で置き描えます。そしてプログラマは、コードの更新、デバッグ、およびデータの操作に役立つためこれを実施します。
 
-#### 文字列の検索
-まずは、検索したい文字列と、その中から検索したい文字を指定します。その後、検索したい文字列を含む文字列の位置を表示します。
+## ハウツー:
 
 ```C
-// 文字列の宣言
-char *str = "こんにちは！";
-// 検索する文字列
-char c = 'に';
-// 文字列の中から文字を検索
-char *pch = strchr(str, c);
-// 検索文字の位置を表示
-printf("文字の位置: %d\n", pch - str);
+#include <string.h>
+#include <stdio.h>
+
+void replace_char(char *str, char find, char replace){
+    for(int i = 0; i < strlen(str); i++){
+        if(str[i] == find)
+            str[i] = replace;
+    }
+}
+
+int main(){
+    char str[] = "Hello, World!";
+    printf("Before: %s\n", str);
+    replace_char(str, 'o', '0');
+    printf("After: %s\n", str);
+    return 0;
+}
 ```
 
-出力結果:
-```
-文字の位置: 3
-```
-
-#### 文字列の置換
-検索した文字列と、置換したい文字列を指定します。その後、置換したい文字列で元の文字列を置き換えます。
+出力:
 
 ```C
-// 文字列の宣言
-char *str = "明日は晴れるかな？";
-// 検索する文字列
-char *search = "晴れ";
-// 置換する文字列
-char *replace = "雨";
-// 文字列の置換
-char *new_str = strstr(str, search);
-strcpy(new_str, replace);
-printf("置換後の文字列: %s\n", str);
+Before: Hello, World!
+After: Hell0, W0rld!
 ```
 
-出力結果:
-```
-置換後の文字列: 明日は雨るかな？
-```
+## ディープダイブ:
 
-## 詳細な説明
-#### 歴史的背景
-検索と置換は、プログラムの開発において重要な作業として認識されています。以前は、検索と置換は手作業で行われていましたが、コンピューターの普及により自動化が可能になりました。
+検索と置換は古くから存在し、古代の機械式コンピュータからデジタル時代に至るまで用いられてきました。C言語では、`strchr()` や `strstr()` のような組み込み関数を使用して検索を行うことがよくありますが、置換のための組み込み関数は存在しないため、自作することが一般的です。
 
-#### 代替手段
-今では、検索と置換はプログラミング言語やエディターに組み込まれている機能として利用することができます。また、シェルスクリプトや正規表現を使用することでも検索と置換を行うことができます。
+また、正規表現を用いた検索や置換もよく用いられます。これらはより高度なパターンマッチングを可能にしますが、その複雑性から初学者には難解に映るかもしれません。
 
-#### 実装の詳細
-検索と置換は、長い文字列を簡単に検索することができるように専用のアルゴリズムが開発されています。検索の際は、先頭から順に文字を一致させ、一致した文字列を返します。置換の際は、一致した文字列を別の文字列に置き換えます。
+C言語でのテキスト検索や置換の実装では、メモリ管理に注意が必要です。不適切なメモリ管理はバグの一因となりえますので、文字列を扱う際には常に十分に注意を払うようにしましょう。
 
-## 関連情報を見る
-- [C言語の文字列の検索と置換について](https://www.ibm.com/docs/ja/aix/7.2?topic=functions-str-or-strcpy-copy-one-string-another)
-- [正規表現による文字列の検索と置換](https://www.javadrive.jp/cstart/str/index11.html)
+## 参照リンク:
+
+- C Library - <string.h>: [http://www.cplusplus.com/reference/cstring/](http://www.cplusplus.com/reference/cstring/)
+- Regular Expressions in C: [https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- Memory Management in C: [https://www.geeksforgeeks.org/memory-management-in-c/](https://www.geeksforgeeks.org/memory-management-in-c/)

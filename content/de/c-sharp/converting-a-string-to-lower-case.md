@@ -1,7 +1,7 @@
 ---
-title:                "String in Kleinbuchstaben umwandeln"
-html_title:           "C#: String in Kleinbuchstaben umwandeln"
-simple_title:         "String in Kleinbuchstaben umwandeln"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,22 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Beim Konvertieren einer Zeichenfolge in Kleinbuchstaben wird die Großschreibung aller Buchstaben in der Zeichenfolge entfernt. Das kann hilfreich sein, wenn man zum Beispiel die Eingabe des Benutzers standardisieren oder Vergleiche zwischen Zeichenfolgen durchführen möchte.
+Die Konvertierung von Zeichenketten (Strings) in Kleinbuchstaben ist eine gängige Operation in der Programmierung. Sie ermöglicht es, irrelevante Unterschiede im Schriftbild zu eliminieren und vereinfacht z. B. den Textvergleich.
 
-## Wie geht's?
-Um eine Zeichenfolge in Kleinbuchstaben umzuwandeln, verwendet man in C# die `ToLower()`-Funktion. Hier ist ein Beispiel:
+## Wie es geht:
+```C#
+string originalText = "Hallo Welt!";
+string lowercaseText = originalText.ToLower();
 
+Console.WriteLine(lowercaseText);
 ```
-string str = "Hello World!";
-Console.WriteLine(str.ToLower());
-```
+Bei Ausführung gibt dieses Programm "hallo welt!" aus.
 
-Die Ausgabe lautet: `hello world!`
+## Tiefgang:
+Die Funktion ToLower() hat eine lange Geschichte, die bis in die Anfänge der C#-Sprache zurückreicht. Es gibt Alternativen wie `ToLowerInvariant()`, die jedoch subtile Unterschiede in der Handhabung von Sprachspezifikationen aufweisen. Für die meisten Anwendungsfälle ist `ToLower()` jedoch die richtige Wahl. 
 
-## Tief tauchen
-Die Umwandlung von Zeichenfolgen in Kleinbuchstaben gibt es schon seit den Anfängen der Programmierung. Heute gibt es jedoch auch andere Methoden, um dies zu erreichen, wie zum Beispiel die Verwendung von regulären Ausdrücken oder die Verwendung von `ToLowerInvariant()`, um die Kultur des Systems nicht zu berücksichtigen.
+Bei der Umsetzung speichert die Methode `ToLower()` zuerst die ursprüngliche Zeichenkette und wandelt dann jeden Buchstaben einzeln in einen Kleinbuchstaben um. Dies macht sie zu einer sicheren, wenn auch nicht sehr effizienten, Methode für diese Umwandlung.
 
-## Siehe auch
-- [Microsoft Dokumentation zu ToLower()](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-- [C# Zeichenfolgenmethoden](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-- [Reguläre Ausdrücke in C#](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+## Siehe auch:
+1. [Microsoft Dokumentation zur ToLower()-Methode](https://docs.microsoft.com/de-de/dotnet/api/system.string.tolower?view=net-5.0)
+2. [Diskussion über ToLower() vs ToLowerInvariant()](https://stackoverflow.com/questions/2801508/string-tolowerstring-tolowerinvariant)
+3. [Detaillierte Analyse der ToLower()-Implementierung](https://referencesource.microsoft.com/#mscorlib/system/string.cs,1975)

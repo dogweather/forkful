@@ -1,7 +1,7 @@
 ---
-title:                "Rozpoczęcie nowego projektu"
-html_title:           "Rust: Rozpoczęcie nowego projektu"
-simple_title:         "Rozpoczęcie nowego projektu"
+title:                "Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
+simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Getting Started"
@@ -10,33 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i Dlaczego?
 
-Zaczynanie nowego projektu to proces tworzenia nowego kodu lub aplikacji od podstaw. Programiści robią to zazwyczaj w celu rozwiązania określonego problemu lub spełnienia określonych wymagań.
+Rozpoczynanie nowego projektu to proces, gdzie programiści tworzą nowy plik lub zestaw plików z kodem programu. Robimy to, aby zbudować nowy produkt lub doświadczenie.
 
-## Jak to zrobić:
+## Jak To Zrobić?
 
-Rust jest językiem programowania, w którym można łatwo zacząć nowy projekt. W poniższym przykładzie mamy funkcję, która dodaje dwie liczby i wypisuje wynik na ekranie:
+W Rust, nowy projekt tworzymy korzystając z Cargo, wbudowanego systemu zarządzania pakietami. Poniżej znajdziesz kroki i przykładowy kod.
+
+```Rust
+cargo new mój_projekt
+cd mój_projekt
+```
+
+Po uruchomieniu tych poleceń, Cargo utworzy nowy katalog z nazwą `mój_projekt` i kilka plików w środku.
+
+Twój nowy projekt Rust wygląda mniej więcej tak:
+
+```Rust
+mój_projekt
+├── Cargo.toml
+└── src
+    └── main.rs
+```
+
+W `main.rs` znajdziesz prosty "Hello, world!" program:
 
 ```Rust
 fn main() {
-    let x = 5;
-    let y = 10;
-    let sum = x + y;
-    println!("Suma wynosi: {}", sum);
+    println!("Hello, world!");
 }
 ```
-Wynik:
+
+Uruchom swoją aplikację za pomocą Cargo:
+
+```Rust
+cargo run
 ```
-Suma wynosi: 15
-```
 
-## Głębokie zanurzenie:
+Twoja aplikacja powinna wydrukować "Hello, world!".
 
-Rust został stworzony przez firmę Mozilla Research i wydany w roku 2010. Jest on rozwijany w celu dostarczenia programistom bezpiecznego i wydajnego języka programowania. Alternatywami dla Rusta są języki takie jak C++, Java czy Python. Główną zaletą Rusta jest jego system typów, który zapobiega wielu potencjalnym błędom i zapewnia bezpieczeństwo pamięci. Ponadto, ten język jest wysoce skalowalny i może być używany do tworzenia różnorodnych aplikacji.
+## Pogłębione Spostrzeżenia 
 
-## Zobacz także:
+Historia: Rust został stworzony przez Mozilla Research w 2010 roku z myślą o bezpieczeństwie, prędkości i równoległości.
 
-- Dokumentacja Rust: https://www.rust-lang.org/learn
-- Strona domowa Rust: https://www.rust-lang.org/
-- Rust na GitHubie: https://github.com/rust-lang/rust
+Alternatywy: Możesz rozpocząć projekt w Rust inaczej, używając innych narzędzi niż Cargo, takich jak `rustc` bezpośrednio, ale Cargo jest zalecane dla większości przypadków.
+
+Szczegóły implementacji: Gdy tworzysz nowy projekt rust, `cargo new` tworzy dla ciebie szkielet aplikacji. Plik `Cargo.toml` jest konfiguracją twojego projektu, a `src/main.rs` to główny plik źródłowy.
+
+## Zobacz Również
+
+- [Dokumentacja Rust] (https://www.rust-lang.org/pl/learn)
+- [Książka o Rust] (https://doc.rust-lang.org/book/)
+- [Podręcznik Cargo] (https://doc.rust-lang.org/cargo/)

@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstavsättning av en sträng"
-html_title:           "Swift: Stor bokstavsättning av en sträng"
-simple_title:         "Stor bokstavsättning av en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Swift: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,29 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-At capitalizing en sträng betyder helt enkelt att göra den första bokstaven till en stor bokstav och resten av bokstäverna till små bokstäver. Programmers brukar göra detta för att göra text mer läsbar och för att följa konventioner inom programmering.
+
+Att förstora en sträng innebär att konvertera alla bokstäver i en text till stora bokstäver. Programmerare gör detta för att standardisera inmatning och för att göra text jämförbar oavsett format.
 
 ## Så här gör du:
-Det är enkelt att capitalizing en sträng i Swift med hjälp av metoden `capitalized`. Se nedan för exempel på kod och det genererade output:
+
+I Swift, vi kan förstora en sträng genom att använda `uppercased()` funktion.
 
 ```Swift
-let sträng = "det här är en teststräng"
-print(sträng.capitalized)
+let sentence = "hej världen"
+let capitalizedSentence = sentence.uppercased()
+print(capitalizedSentence)
 ```
-Output:
-`Det här är en teststräng`
 
-Du kan också använda `prefix(1)` för att göra första bokstaven till en stor bokstav och `suffix(from: 1)` för att göra resten av bokstäverna till små:
+Detta kommer att producera: 
+
 ```Swift
-let sträng = "det här är en annan teststräng"
-print(sträng.prefix(1).capitalized + sträng.suffix(from: 1).lowercased())
+"HEJ VÄRLDEN"
 ```
-Output:
-`Det här är en annan teststräng`
 
-## Djupdykning:
-Att capitalizing en sträng är en vanlig konvention inom programmering, särskilt när man namnger variabler eller funktioner. Det finns dock alternativ som t.ex. att använda snake_case där ord separeras med understreck istället för att ha alla ord ihopslagna med stor eller liten bokstav. Det finns också möjlighet att anpassa capitalization efter språkregler med hjälp av metoden `capitalized(with: Locale)`. Själva implementationen av capitalization är beroende av språket som används.
+## Fördjupning:
+
+Historiskt sett används förstoring av strängar för att ta bort inkonsekvenser vid jämförelse av strängar. Alternativt, om du bara vill förstora den första bokstaven i varje ord, kan du använda `capitalized` egenskap.
+
+```Swift
+let sentence = "hej världen"
+let capitalizedSentence = sentence.capitalized
+print(capitalizedSentence)
+```
+
+Och resultatet blir:
+
+```Swift
+"Hej Världen"
+```
+
+Förstoring av en sträng i Swift använder Unicode-skalningar, vilket gör att den fungerar med alla språk som stöds av Unicode, inte bara engelska.
 
 ## Se även:
-- [Swift String Documentation](https://developer.apple.com/documentation/swift/string) 
-- [Capitalization in Programming](https://www.benjaminwiederkehr.com/explained/capitalization-in-programming/)
+
+För mer information om strängmanipulation i Swift, se dokumentationen: [Apple Swift String Documentation](https://developer.apple.com/documentation/swift/string). Om du är intresserad av att lära dig mer om Unicode, läs denna artikel: [Unicode Explained](https://www.joelonsoftware.com/2003/10/08/unicode-explained/).

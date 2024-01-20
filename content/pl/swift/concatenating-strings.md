@@ -1,6 +1,6 @@
 ---
 title:                "Łączenie ciągów znaków"
-html_title:           "Swift: Łączenie ciągów znaków"
+html_title:           "Arduino: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
+## Co i Dlaczego?
 
-Kiedy piszesz kod, może się zdarzyć, że chcesz połączyć wiele ciągów znaków w jeden. W języku Swift, nazywa się to "konkatenacją" i jest to powszechna praktyka w programowaniu. Używając konkatenacji, możesz łatwo i szybko łączyć różne elementy w jeden łańcuch tekstowy.
+Łączenie stringów to proces łączenia dwóch lub więcej ciągów znaków w jeden dłuższy. Programiści wykonują to, aby tworzyć dynamiczne wiadomości i wyniki w programach.
 
 ## Jak to zrobić:
 
-```Swift
-let imie = "Anna"
-let nazwisko = "Kowalska"
-let pelneImie = imie + " " + nazwisko
-print(pelneImie) // wyświetli "Anna Kowalska"
+W Swift, łatwo łączy się stringi za pomocą operatora "+". Poniżej przedstawiam przykładowy kod:
+```swift
+let ciag1 = "Cześć, "
+let ciag2 = "jaki jest twój numer telefonu?"
+let polaczonyCiag = ciag1 + ciag2
+print(polaczonyCiag)
 ```
-
-Możesz również użyć metody `append` aby dodać ciąg znaków do już istniejącego łańcucha:
-
-```Swift
-var opis = "Mam "
-let wiek = 25
-opis.append(String(wiek))
-print(opis) // wyświetli "Mam 25"
+Po wykonaniu tego kodu na wyjściu otrzymasz:
+```swift
+"Cześć, jaki jest twój numer telefonu?"
 ```
+Możesz również interpolować stringi, co pozwala na ich łączenie na bieżąco, jak w poniższym przykładzie:
+```swift
+let imie = "Jan"
+let powitanie = "Cześć, \(imie)"
+print(powitanie)
+```
+Wynik:
+```swift
+"Cześć, Jan"
+```
+## Głębszy Wgląd
 
-## Zagłębienie:
+Łączenie stringów jest koncepcją, która sięga początków programowania. Wszystkie języki mają swoje sposoby na realizację tej funkcji, ale Swift robi to w bardziej syntetyczny i czytelny sposób.
 
-W językach programowania takich jak C i Java, nie ma wbudowanej funkcjonalności konkatenacji i programiści muszą tworzyć specjalne funkcje, aby osiągnąć ten sam efekt. W Swift, konkatenacja jest wbudowana i może być używana bez dodatkowego kodu. Możesz również użyć operatora `+=` jako skróconej wersji metody `append`.
+Alternatywą dla łączenia stringów mogłby być tworzenie kompleksowych struktur danych stringów, ale jest to zazwyczaj bardziej pracochłonne i złożone.
 
-Inną opcją jest użycie struktury `Joiner`, która jest dostępna od Swift 4.2. Pozwala ona na bardziej wydajne łączenie wielu ciągów znaków, szczególnie w przypadku dużej ilości danych.
+Szczegół implementacji: pod spodem, kiedy łączysz stringi, Swift efektywnie tworzy nową instancję stringu, która zawiera obie łączone wartości. To jest różne od niektórych innych języków, które mogą po prostu wskazywać na oryginalne stringi.
 
-Na koniec, warto zwrócić uwagę, że konkatenacja nie jest efektywna w przypadku dużej ilości danych i może powodować problemy wydajnościowe. W takich przypadkach lepiej użyć struktury `StringBuilder` lub `StringBuffer` w językach takich jak Java lub C#, która pozwala na dodawanie danych w sposób bardziej wydajny.
-
-## Zobacz również:
-
-- [Dokumentacja Swift: Konkatenacja i mutowanie łańcuchów znaków](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID284)
-- [Porównanie wydajności konkatenacji w różnych językach programowania](https://softwareengineering.stackexchange.com/questions/117848/why-is-string-concatenation-overhead-big)
-- [Dokumentacja Swift: Struktura Joiner](https://developer.apple.com/documentation/swift/joiner)
+## Zobacz również
+- Oficjalna dokumentacja Swift:'String' (https://developer.apple.com/documentation/swift/string)
+- Artykuł Swifts' String Manifesto' (https://github.com/apple/swift/blob/master/docs/StringManifesto.md)
+- Interpolacja Stringów (https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)

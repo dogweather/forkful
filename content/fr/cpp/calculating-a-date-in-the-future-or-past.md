@@ -10,49 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce et pourquoi?
+## Quoi & Pourquoi ?
 
-Calculer une date dans le passé ou le futur est une tâche courante dans la programmation. Cela consiste à trouver une nouvelle date en ajoutant ou en soustrayant un certain nombre de jours, de semaines, de mois ou d'années à une date existante. Les programmeurs le font souvent pour planifier des événements, pour suivre des délais ou pour effectuer des tâches récurrentes à une date spécifique.
+Calculer une date dans le futur ou dans le passé est une tâche fréquente en programmation qui permet de manipuler et de prédire le temps. C'est essentiel pour les planificateurs d'événements, les rappels, les logs système, et beaucoup plus d'applications.
 
-# Comment faire:
+## Comment faire :
 
-Voici un exemple de code simple en ```C++``` pour calculer une date dans le futur en ajoutant 10 jours à la date actuelle:
+Voici un exemple simple de calcul d'une date future en utilisant la bibliothèque `<chrono>` de C++.
 
-```
+```C++
 #include <iostream>
 #include <chrono>
+#include <ctime>
 
-using namespace std;
+int main() {
+  using namespace std::chrono;
 
-int main()
-{
-    // Date actuelle
-    chrono::system_clock::time_point now = chrono::system_clock::now();
+  // Obtenir l'heure actuelle
+  system_clock::time_point now = system_clock::now();
+  // Durée de deux semaines
+  weeks span(2);
 
-    // Ajout de 10 jours à la date actuelle
-    chrono::hours hrs(24 * 10);
-    chrono::system_clock::time_point future_date = now + hrs;
+  // Calculer la date dans le futur
+  system_clock::time_point future_date = now + span;
 
-    // Conversion en forme lisible
-    time_t tt = chrono::system_clock::to_time_t(future_date);
-    tm *ptm = localtime(&tt);
-    cout << "La date dans 10 jours sera : " << ptm->tm_mday << "/" << (ptm->tm_mon+1) << "/" << (ptm->tm_year+1900) << endl;
-
-    return 0;
+  // Convertir en time_t pour une meilleure visibilité
+  time_t tt = system_clock::to_time_t(future_date);
+  
+  std::cout << "Dans deux semaines, on sera le : " << ctime(&tt);
+  
+  return 0;
 }
 ```
-**Sortie:**
+
+Exemple de sortie : 
+
 ```
-La date dans 10 jours sera : 2/9/2020
+Dans deux semaines, on sera le : Thu Feb 11 12:37:23 2023
 ```
 
-# Plongeons plus profondément:
+## Deep Dive 
 
-- Contexte historique: Calculer une date dans le futur ou le passé a été une tâche difficile avant l'invention des ordinateurs. Les gens utilisaient des calendriers et des formules mathématiques pour le faire.
-- Alternatives: En plus des opérations arithmétiques, les programmeurs peuvent également utiliser des bibliothèques spéciales pour la manipulation de dates, telles que ```boost::date_time```.
-- Détails d'implémentation: Le code ci-dessus utilise la bibliothèque standard ```chrono``` pour effectuer des opérations sur les dates. Il utilise également la fonction ```localtime``` pour convertir la date en une forme lisible.
+Historiquement, les programmeurs utilisaient des fonctions intégrées comme `gmtime` ou `localtime` pour calculer les dates futures ou passées. Cependant, avec l'introduction de `<chrono>` dans C++11, une manière plus robuste et typiquement sûre de manipuler le temps est disponible.
 
-# Voir également:
+Pour des calculs de date plus complexes ou si on travaille avec des fuseaux horaires, on peut regarder du côté de bibliothèques tiers comme [date](https://github.com/HowardHinnant/date) ou [libical](https://github.com/libical/libical).
 
-- [Tutorial sur la manipulation de dates en C++](https://www.learncpp.com/cpp-tutorial/51-working-with-dates-and-times/)
-- [Documentation sur la bibliothèque standard «chrono»](https://en.cppreference.com/w/cpp/chrono)
+L'implémentation derrière `<chrono>` est basée sur l'horloge système de l'ordinateur. Il est donc important de prendre en compte la possibilité d'un changement d'heure dû au passage à l'heure d'été ou d'hiver.
+
+## Voir aussi :
+
+1. [Documentation officielle de `<chrono>`](http://www.cplusplus.com/reference/chrono/)
+2. [Bibliothèque "date" de Howard Hinnant](https://github.com/HowardHinnant/date)
+3. [Bibliothèque libical](https://github.com/libical/libical)

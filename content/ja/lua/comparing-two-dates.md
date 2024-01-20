@@ -1,7 +1,7 @@
 ---
-title:                "「日付の比較」"
-html_title:           "Lua: 「日付の比較」"
-simple_title:         "「日付の比較」"
+title:                "2つの日付を比較する"
+html_title:           "Elixir: 2つの日付を比較する"
+simple_title:         "2つの日付を比較する"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,36 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何として何故?
-日付の比較とは、2つの日付を比較して、どちらがより新しいか、古いかを判断する作業を指します。プログラマーたちが日付の比較を行うのは、日付データを正確に処理するために必要だからです。
+## どういうこと？なぜ？
 
-## 方法:
-日付の比較は、Luaの標準ライブラリである「os」モジュールを使って行うことができます。以下のコードは、2つの日付を比較し、結果を出力する例です。
+日付を比較するとは、二つの日付が同じか、またはその一方が他方よりも前もしくは後であるかを確認するプロセスです。プログラマは、イベントの順序を決定したり、日付に基づく決定を行うためにこの手法を使います。
+
+## どうやって：
+
+Luaには日付の操作をサポートする多くのライブラリがありますが、ここではosライブラリを使います。
 
 ```Lua
--- 日付の比較
-local date1 = os.time{year = 2019, month = 9, day = 20}
-local date2 = os.time{year = 2021, month = 5, day = 12}
+local t1 = os.time({year=2023, month=7, day=10})
+local t2 = os.time({year=2023, month=7, day=15})
 
-if date1 < date2 then
-    print("date1はdate2よりも古い")
-elseif date1 > date2 then
-    print("date1はdate2よりも新しい")
+if t1 < t2 then
+  print("July 10, 2023 is before July 15, 2023")
 else
-    print("date1とdate2は同じ日付")
+  print("July 10, 2023 is not before July 15, 2023")
 end
 ```
 
-この例では、Luaの「os.time」関数を使って、それぞれの日付を数値の形式に変換し、比較しています。そして、条件分岐を使って、より新しい日付か、古い日付か、等しい日付かを判断しています。
+出力結果は、
+```
+July 10, 2023 is before July 15, 2023
+```
 
-## 深堀り:
-日付の比較は、プログラムで日付を扱う際に非常に重要です。たとえば、ユーザーが入力した日付が有効なものかどうかを確認する際に利用することができます。
+## 詳解
 
-また、Luaの「os.time」関数以外にも、日付の比較を行うためのライブラリが存在します。たとえば、「lua-date」や「os.date」などが挙げられます。
+### 歴史 
 
-日付の比較を行う際には、タイムゾーンや夏時間などの考慮が必要になります。そのため、プラットフォームやライブラリの設定をチェックすることが重要です。
+Lua语言は1993年にリリースされ、日付の比較をするための組み込み関数がありませんでした。しかし、時間経過とともに、osライブラリのos.time関数が使われるようになりました。
 
-## 関連情報:
-- [Luaの公式ドキュメント（osモジュール）](https://www.lua.org/manual/5.3/manual.html#6.9)
-- [lua-date - 日付操作を行うためのライブラリ](http://luaforge.net/projects/date/)
-- [os.date - 日付を表現する文字列を生成する関数](http://lua-users.org/wiki/OsDate)
+### 代替法
+
+日付比較を別の方法で行いたい場合は、Luaで使用できる日付操作をサポートする外部ライブラリを用いることができます。例えば、luadateやlua-tzライブラリなどがいます。
+
+### 実装詳細
+
+os.time関数は、指定した日付をUNIXエポック（1970年1月1日0時0分0秒からの秒数）に変換します。この関数により、簡単に二つの日付を比較し、一つが他方より前または後であるかを確認できます。
+
+## 参照資料
+
+[公式Lua 5.4 マニュアル - osライブラリ](http://www.lua.org/manual/5.4/manual.html#6.9)
+
+[日付操作ライブラリ LuaDate](https://github.com/Tieske/date)
+
+[Luaで時間を扱うライブラリ lua-tz](https://github.com/daurnimator/lua-tz)

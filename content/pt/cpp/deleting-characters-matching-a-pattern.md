@@ -1,6 +1,6 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "C++: Excluindo caracteres que correspondem a um padrão"
+html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "C++"
 category:             "C++"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+## O Que & Porquê?
 
-A exclusão de caracteres que correspondem a um determinado padrão é o processo de remover caracteres específicos dentro de uma string ou sequência de texto de acordo com um padrão predefinido. Isso é útil para manipular e limpar dados em programas de processamento de texto, como corrigir erros de digitação ou remover caracteres indesejados. Os programadores realizam essa tarefa para criar strings mais limpas e padronizadas que possam ser processadas por seus programas de forma mais eficiente.
+O processo de excluir caracteres correspondentes a um padrão é uma operação frequente na manipulação de strings em programação. Programadores fazem isso para fazer limpeza de dados, otimizar strings, e implementar funcionalidades de busca.
 
 ## Como fazer:
 
-Para excluir caracteres que correspondam a um determinado padrão em C++, você pode usar a biblioteca "regex" para trabalhar com expressões regulares. Primeiro, importe a biblioteca no início do seu código. Em seguida, crie um objeto de expressão regular usando o padrão desejado e passe-o como argumento para a função "regex_replace". Por exemplo, para excluir todos os números de uma string, o código seria semelhante ao seguinte:
+Aqui está um exemplo de como remover todos os caracteres 'a' de uma string usando a biblioteca padrão C++.
 
 ```C++
-#include <regex>
-using namespace std;
+#include <string>
+#include <algorithm>
 
-string original_str = "123abc456def789";
-regex pattern("\\d+");
-string cleaned_str = regex_replace(original_str, pattern, "");
-cout << cleaned_str << endl;
-// Output: abcdef
+int main() {
+    std::string str = "banana";
+    str.erase(std::remove(str.begin(), str.end(), 'a'), str.end());
+    std::cout << str;
+
+    return 0;
+}
 ```
 
-## Mergulho Profundo:
+Saída:
 
-A exclusão de caracteres que correspondam a um padrão foi uma das principais funcionalidades introduzidas na biblioteca <regex> do C++11. Anteriormente, os programadores precisavam usar bibliotecas de terceiros ou implementar suas próprias soluções para trabalhar com expressões regulares em suas aplicações.
+```C++
+bnn
+```
 
-Além disso, existem outras formas de lidar com a exclusão de caracteres que correspondam a um padrão em C++. Por exemplo, pode-se usar a biblioteca "string" e seus métodos para percorrer a string e remover manualmente os caracteres desejados. Entretanto, a utilização de expressões regulares é uma opção mais avançada e poderosa, uma vez que permite maior flexibilidade e abrange uma variedade maior de padrões.
+## Mergulho Profundo
 
-A implementação da exclusão de caracteres que correspondam a um padrão em C++ é feita através da adoção do paradigma de expressões regulares. Isso envolve a criação de objetos de expressão regular, a definição de padrões por meio de símbolos e metacaracteres, e a utilização de funções específicas da biblioteca "regex" para manipular strings.
+O método mostrado acima utiliza a biblioteca STL (Standard Template Library) que vem sendo parte do C++ desde a sua implementação inicial, e é altamente otimizado para eficiência. Além do STL, há várias bibliotecas de terceiros que podem ser usadas para manipular strings, cada qual com suas próprias vantagens e desvantagens.
 
-## Veja também:
+A maneira como o código acima funciona é, primeiro, usando a função `std::remove`. Essa função apenas move os elementos que não são iguais a 'a' para a frente na string e retorna um iterador para a nova 'fim' da string. Em seguida, a função `std::string::erase` é usada para remover fisicamente o restante da string.
 
-- [String and Characters - C++ Documentation](https://www.cplusplus.com/reference/string/)
-- [Regular Expressions - C++ Reference](https://en.cppreference.com/w/cpp/regex)
+## Veja Também
+
+1. Documentação da função erase: http://www.cplusplus.com/reference/string/string/erase/
+2. Documentação da função remove: http://www.cplusplus.com/reference/algorithm/remove/
+3. Informação adicional sobre manipulação de strings: https://pt.wikibooks.org/wiki/Programar_em_C%2B%2B/As_strings

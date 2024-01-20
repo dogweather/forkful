@@ -1,7 +1,7 @@
 ---
-title:                "Oppretting av midlertidig fil"
-html_title:           "Go: Oppretting av midlertidig fil"
-simple_title:         "Oppretting av midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -10,26 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & hvorfor?
-En midlertidig fil er en fil som opprettes midlertidig av en datamaskinprosess og slettes automatisk når prosessen avsluttes. Programmere bruker midlertidige filer for å lagre midlertidig data eller utføre operasjoner som krever en fil som ikke skal lagres permanent.
+# Opprette midlertidige filer i Go: En rask guide
 
-Hvordan:
-Go har en innebygd funksjon, "ioutil.TempFile", som lar deg opprette midlertidige filer. Her er en kodeeksempel som viser hvordan du kan bruke denne funksjonen:
+## Hva & Hvorfor?
+Å opprette en midlertidig fil er en tom fil laget for kortsiktig bruk ofte under en unik filnavn. Dette brukes av programmerere for å lagre data midlertidig uten å belaste minnet.
+
+## Hvordan gjøre det:
+Lag en midlertidig fil i Go ved å bruke `ioutil.TempFile` funksjonen. 
 
 ```Go
-f, err := ioutil.TempFile("", "mytempfile")
-if err != nil {
-    panic(err)
+package main
+
+import (
+    "io/ioutil"
+    "log"
+    "os"
+)
+
+func main() {
+    tempFile, err := ioutil.TempFile("", "sample")
+    if err != nil {
+        log.Fatal(err)
+    }
+    defer os.Remove(tempFile.Name())
+    
+    log.Println("Temp file created:", tempFile.Name())
 }
-defer os.Remove(f.Name())
 ```
 
-Denne koden vil opprette en midlertidig fil i det gjeldende arbeidsområdet med prefikset "mytempfile" i filnavnet. Ved å bruke "defer" vil filen automatisk bli slettet når funksjonen er ferdig.
+Når du kjører dette scriptet, vil du se noe slik som:
 
-Dypdykk:
-Opprettelse av midlertidige filer har vært en vanlig praksis i mange programmeringsspråk lenge før det ble innlemmet i Go. Et alternativ til å bruke "ioutil.TempFile" i Go, er å bruke "os.CreateTemp" som også tilbyr mer kontroll over stien og navn på den midlertidige filen.
+```sh
+2022/02/12 13:31:27 Temp file created: /tmp/sample865445024
+```
 
-See Also:
-Du kan lære mer om opprettelse og bruk av midlertidige filer i Go ved å lese dokumentasjonen iGoDocs(https://golang.org/pkg/io/ioutil/#TempFile) og iGoRepo's kildekode(https://github.com/golang/go/tree/master/src/io).
+## Dypdykk
+Historisk sett har midlertidige filer blitt brukt i de fleste programmeringsspråk for å håndtere store datamengder uten å overbelaste internminnet. Go følger denne tradisjonen.
 
-Takk og god kodet! 🚀
+Det finnes flere alternativer for å håndtere midlertidig data lagring, som f.eks. memcached eller Redis, men midlertidige filer er enkel å bruke og trenger ingen eksterne avhengigheter.
+
+`ioutil.TempFile` funksjonen i Go skaper faktisk en unik filnavn hver gang den blir kalt, noe som eliminerer kollisjonsproblemet vanlig i midlertidig filopprettelse. Dette skjer ved å tilføye et tilfeldig tall til filnavnet.
+
+## Se også
+For mer informasjon om dette emnet, se følgende lenker:
+1. Offisiell Go dok: [ioutil.TempFile](https://pkg.go.dev/io/ioutil#TempFile)
+2. Go blog: [File handling in Go](https://go.dev/blog/defer-panic-and-recover)
+3. Tutorial: [How to Create Temp Files in Go](https://flaviocopes.com/go-tmp-files/)

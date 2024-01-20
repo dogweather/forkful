@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Kotlin: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -10,21 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Uuden projektin aloittaminen on prosessi, jossa ohjelmoija luo uuden ohjelmiston tai sovelluksen. Tämä on tärkeää, koska se antaa ohjelmoijalle mahdollisuuden aloittaa puhtaalta pöydältä ja luoda jotain uutta ja innovatiivista.
+## Mikä & Miksi? 
+Uuden projektin aloittaminen tarkoittaa uuden ohjelmointitehtävän luomista tyhjästä. Ohjelmoijat tekevät tämän tarpeiden mukaan, oli kyseessä sitten uuden sovelluksen kehittäminen tai vanhan päivittäminen.
 
-## Miten:
+## Kuinka:
 ```Kotlin
+// Uuden projektin aloittaminen Kotlinilla:
+
 fun main() {
-    println("Hello World!")
-}
+    print("Hei Kotlin!")
+} 
 ```
+Kun ajat tämän koodipätkän, näet tulostuksen: "Hei Kotlin!".
 
-Tämä on yksinkertainen esimerkki uuden Kotlin-projektin aloittamisesta. Ensimmäisellä rivillä määritetään päätoiminto, joka määrittää koodin aloituskohdan. Toisella rivillä ensimmäinen rivi tulostaa "Hello World!" konsoliin. Voit muokata tätä koodia luodaksesi oman projektisi.
 
-## Syvemmälle:
-Kotlin julkaistiin ensimmäisen kerran vuonna 2011, ja se on noussut suosituksi ohjelmointikieleksi sen jälkeen. Se yhdistää Java-ohjelmoinnin tehokkuuden ja JavaScriptin dynaamisuuden, joten se sopii hyvin sekä backend- että frontend-kehitykseen. Lisäksi Kotlinilla on selkeä ja yksinkertainen syntaksi, joten sen oppiminen on helppoa.
+## Syvempi tarkastelu
+Historiallisen kontekstin kannalta Kotlin on suhteellisen nuori kieli, joka on kehitetty vuonna 2011. Vaihtoehtoina uuden projektin aloittamiselle voivat olla esimerkiksi Java tai Python, mutta Kotlin tarjoaa monia parannuksia näihin verrattuna, kuten vähemmän kirjoitettavaa koodia, null-safety ja integraation Android Studion kanssa.
 
-## Katso myös:
-Lisätietoja Kotlinista ja uusista ominaisuuksista löydät osoitteesta https://kotlinlang.org/.
-Voit myös tutustua muihin ohjelmistopohjaisiin projekteihin ja saada inspiraatiota luomalla omia projektejasi.
+Kun aloitat uuden projektin Kotlinissa, luot uuden kokonaisuuden, joka koostuu luokista, funktioista ja muuttujista. Tämä kokonaisuus voidaan sitten suorittaa, jolloin se tulostaa koodissa määritellyn tehtävän tai tehtävät.
+
+## Katso myös
+[Viralliset Kotlin-dokumentit](https://kotlinlang.org/docs/home.html)
+[Aloittelijan opas Kotlinin kanssa](https://developer.android.com/kotlin/learn)
+
+Käy nämä lähteet läpi saadaksesi hyvän ymmärryksen Kotlinista ja sen käytöstä uusien projektien aloittamiseen.

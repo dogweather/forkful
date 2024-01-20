@@ -1,7 +1,7 @@
 ---
-title:                "从字符串解析日期。"
-html_title:           "Gleam: 从字符串解析日期。"
-simple_title:         "从字符串解析日期。"
+title:                "从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
+simple_title:         "从字符串解析日期"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是解析字符串中的日期？为什么程序员要这么做？
-解析字符串中的日期是将日期从字符串中提取出来的过程。程序员这样做的原因是因为在编写代码的过程中，需要使用日期的特定格式，但是有时候这些日期是以字符串的形式存在的。因此，将日期从字符串中解析出来是必要的，以便在代码中对日期进行操作和格式化。
+## 什么 & 为什么？
+解析字符串中的日期是把字符串转换成日期形式。编程人员进行这个操作为了更有效地处理和比较日期。
 
 ## 如何操作：
-下面是使用Gleam编写的解析日期的代码示例及其输出：
-```Gleam
-let str = "2021-06-01T10:45:00"
-let date = str |> Date.parse_iso8601
+你可以使用Gleam的内置函数来解析日期。以下是一个基础例子。
+
 ```
-输出：
-```Gleam
-Ok({year: 2021, month: 6, day: 1, hour: 10, minute: 45, second: 0, microsecond: 0})
+Gleam
+import gleam/datetime
+let date = datetime.from_iso8601("2021-06-01T19:32:17Z")
+println(date)
 ```
 
-## 深入了解：
-解析字符串中的日期在现代编程中非常常见，特别是在处理来自不同地区和格式的数据时。在过去，程序员可能需要手动解析日期，使用复杂的算法来提取日期和时间的不同部分。而今天，许多编程语言都提供了内置的日期解析方法，大大简化了解析日期的过程。
+你运行这个例子后，输出应该为：`Ok(#DateTime<2021-06-01T19:32:17Z>)`。
 
-除了Gleam提供的解析方法外，还有其他替代方案，如使用正则表达式或第三方日期处理库。这些替代方案可能会提供更多的定制和功能，但也可能会增加代码的复杂性和学习成本。
+这个例子展示了如何使用Gleam的`datetime`库的`from_iso8601`函数来解析ISO 8601格式的日期和时间字符串。
 
-关于解析日期的更多实现细节，涉及到时间戳、时区、日历等概念，需要进一步的学习和研究。但是在大多数情况下，使用Gleam提供的简单方法就可以满足日常编程的需求。
+## 深入探讨：
+在计算早期，日期是以各种格式存储和表示的。为了标准化这一切，ISO 8601被创建出来，并且后来成为了解析日期中最常见的用法。
 
-## 查看更多：
-了解Gleam中日期处理的更多信息，请参考官方文档：https://gleam.run/core/module/Date.html
+除了使用Gleam内置的函数以外，也有类似的库可以使用，例如`rustdatetime`。
+
+实施日期解析有两个主要步骤。首先，函数读取并分析字符串中的每个字符。一旦发现匹配ISO 8601格式的字符序列，函数就会把它们装换成日期对象。
+
+## 另请参阅：
+1. Gleam官方文档的“DateTime”的部分：[https://hexdocs.pm/gleam_stdlib/gleam/datetime.html](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html)。
+2. 关于ISO 8601的详细信息：[https://en.wikipedia.org/wiki/ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)。
+3. 基于Rust的日期和时间库：[https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)。

@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "C#: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "C#"
 category:             "C#"
@@ -10,23 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
-문자열의 길이를 찾는 것은 프로그래머들이 코딩을 할 때 매우 중요한 기술입니다. 문자열의 길이를 찾는 것은 특정 데이터나 변수가 얼마나 긴지를 알아내는 것을 도와줍니다. 이것은 데이터를 처리하고 조작하는 프로그래밍에서 핵심 기능 중 하나입니다.
+## 무엇과 왜?
 
-## 방법:
+문자열의 길이를 찾는 것은 특정 문자열이 얼마나 많은 문자로 이루어져 있는지 확인하는 것을 의미합니다. 이는 데이터 유효성 검사, 문자열 처리, 또는 문서 생성에서 중요한 기능을 수행하기 때문에 프로그래머들이 자주 사용합니다.
+
+## 바로 실행하기:
+
+문자열의 길이를 찾기 위해 C#에서는 'Length' 프로퍼티를 사용합니다. 아래 코드를 확인해보세요.
+
+```C#
+string sampleString = "안녕하세요!";
+int lengthOfString = sampleString.Length;
+
+Console.WriteLine(lengthOfString); //output: 6
 ```
-C# string str = "Hello, world!";
-int strLength = str.Length;
-Console.WriteLine(strLength);
+이 예제에서, '안녕하세요!'라는 문자열의 길이는 6임을 알 수 있습니다.
+
+## 깊이 파고들기:
+
+**역사적 맥락:** 문자열 길이의 개념은 프로그래밍 언어의 초기부터 존재했습니다. 문장이나 메시지를 구성하는 글자의 수를 셀 때 사용되었습니다. C#도 이 트레디션을 계승하였습니다.
+
+**대체 방법:** C#에서는 'Length' 프로퍼티 외에도 Linq를 사용하여 문자열의 길이를 찾을 수 있습니다. 하지만 'Length' 프로퍼티가 효율적이므로 굳이 이 방법을 사용할 필요는 없습니다.
+
+```C#
+int length = "안녕하세요!".Count();
 ```
-위 코드는 문자열의 길이를 찾는 가장 간단하고 기본적인 방법입니다. 변수 뒤에 ```.Length```를 붙여주면 해당 변수의 길이를 반환하는 기능을 가지고 있는 것을 확인할 수 있습니다. 위 코드를 실행하면 ```13```이라는 결과가 나옵니다.
+**실행 세부 사항:** C#에서 문자열의 'Length' 프로퍼티는 O(1) 시간복잡도를 가집니다. 이는 문자열의 길이를 알아내는데 있어서 효율적이며, 복잡한 계산이나 추가 메모리를 필요로하지 않습니다.
 
-## 더 깊이 알아보기:
-1. 초기에는 문자열의 길이를 찾는 것은 매우 간단한 작업이었습니다. 하지만 컴퓨터의 발전으로 인해 문자열의 길이뿐만 아니라 문자열 내부에 있는 각 문자의 바이트 수까지도 알아내는 것이 가능해졌습니다.
-2. 다른 언어에서도 문자열의 길이를 찾는 방법은 비슷합니다. 하지만 그 언어마다 조금씩 차이가 있을 수 있으니 주의해야 합니다.
-3. 문자열의 길이를 찾는 다른 방법으로는 ```foreach```문을 사용하는 것이 있습니다. 이 방법은 문자열의 각 문자를 순차적으로 접근하는데 유용합니다.
+## 참고자료:
 
-## 관련 자료:
-- [Microsoft Docs - String.Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)
-- [C# Program Structure](https://www.telerik.com/blogs/c-program-structure)
-- [GeeksforGeeks - Finding Length of String in C#](https://www.geeksforgeeks.org/finding-length-of-string-in-c-sharp/)
+1. [MSDN : String.Length 속성](https://docs.microsoft.com/ko-kr/dotnet/api/system.string.length?view=net-5.0): Microsoft의 공식 문서에서는 'Length' 프로퍼티에 대하여 더욱 자세히 설명하고 있습니다.
+2. [stackoverflow : C# 문자열 길이 구하기](https://stackoverflow.com/questions/30863157/how-to-get-the-length-of-a-string-in-c): 이 Stack Overflow 질문에서는 문자열의 길이를 구하는 여러 가지 방법에 대해 토론하고 있습니다.

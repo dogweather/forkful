@@ -1,7 +1,7 @@
 ---
-title:                "Tilapäistiedoston luominen"
-html_title:           "C: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & miksi?
-Temporaalitiedostojen luominen on yksi yleisimpiä ohjelmointitekniikoita, jota käytetään tallentamaan tietoja väliaikaisesti ohjelman suorituksen aikana. Tämä auttaa saavuttamaan paremman suorituskyvyn ja toiminnallisuuden, ja siksi se on suosittu valinta monien ohjelmoijien keskuudessa.
+## Mitä & Miksi?
 
-## Kuinka:
-```
+Väliaikaistiedostojen luominen on prosessi, jossa ohjelmisto tallentaa tiedot väliaikaisesti tiedostoon, jonka se myöhemmin poistaa. Tämä on hyödyllistä, kun käsitellään suuria tietoja, joiden tallennusta pysyvästi ei tarvita.
+
+## Miten Tehdä:
+
+Tässä on yksinkertainen esimerkkikoodi väliaikaisen tiedoston luomiseksi C-ohjelmoinnissa.
+
+```C
 #include <stdio.h>
-#include <stdlib.h>
 
-int main(){
-  FILE *temp_file; //luodaan tiedoston osoitin
-  char temp_file_name[20]; // luodaan merkkijono nimelle
-  temp_file = tmpfile(); // luodaan väliaikainen tiedosto
-  if(temp_file == NULL) { // tarkistetaan onko tiedoston luominen onnistunut
-    printf("Tiedoston luominen epäonnistui!");
-    exit(1);
-  }
-  printf("Väliaikaisen tiedoston nimi on: %s", temp_file_name);
-  fclose(temp_file); // suljetaan tiedosto
-  return 0;
+int main() {
+    FILE * tmpf = tmpfile();
+    fprintf(tmpf, "Hei, Suomi!\n");
+    rewind(tmpf);
+    char buf[20];
+    fgets(buf, sizeof(buf), tmpf);
+    printf("%s", buf); // Tulostaa: Hei, Suomi!
+    return 0;
 }
 ```
-```
-Väliaikaisen tiedoston nimi on: /tmp/tmpyoeHSM
+Kun tämän ohjelman suoritus päättyy, se myös automaattisesti poistaa luomansa väliaikaisen tiedoston.
 
-```
+## Syvä Sukellus:
 
-## Syväsukellus:
-Temporaaliset tiedostot kehitettiin alun perin käyttöjärjestelmien, kuten Unixin, yhteydessä. Ne ovat edelleen tärkeä osa modernia ohjelmointia, ja niitä käytetään usein muun muassa tietokantojen väliaikaisena tallennustilana. Vaihtoehtoisia tapoja luoda temporaalisia tiedostoja ovat esimerkiksi ```tempnam``` ja ```mktemp``` funktiot, mutta ```tmpfile``` on yleisesti pidetty ohjelmointitekniikka.
+Väliaikaisten tiedostojen luomiskäytäntö on peräisin ajalta, jolloin tietokoneen muisti oli rajallinen. Ohjelmat käyttävät sitä yhä tänään, erityisesti suurien tiedostojen käsittelyssä tai tiedostojen luonnissa, joita ei tarvitse säilyttää pitkään.
 
-## Katso myös:
-[Unix-tiedostotyypit ja niiden käyttöönotto C:ssä](https://www.tutorialspoint.com/unix/unix-file-types.htm)
-[C-kielet ja tiedostonhallinta](https://www.programiz.com/c-programming/c-file-input-output)
-[Kuinka luodaan väliaikaisia tiedostoja C:ssä](https://www.geeksforgeeks.org/temporary-files-c-programming/)
+Myös muita vaihtoehtoja on olemassa. In-memory -tiedostojärjestelmät, kuten `/dev/shm` Linuxissa, ovat yksi esimerkki.
+
+Suurten tiedostojen käsittelyssä väliaikaistiedostoa tulisi käyttää joko luomalla ainutlaatuisia tiedostonimiä `mkstemp` -funktiolla tai käyttämällä `tmpfile` -funktiota, joka luo anonyymin väliaikaistiedoston, kuten ylläolevassa esimerkissämme.
+
+## Katso Myös:
+
+1. [ISO C -standardin dokumentaatio tmpfile](https://www.cplusplus.com/reference/cstdio/tmpfile/)
+2. [Man-sivut: tmpfile (3) - Linux-manuaalinen sivu](https://man7.org/linux/man-pages/man3/tmpfile.3.html)
+3. [C Standard Library](https://en.wikipedia.org/wiki/C_standard_library)

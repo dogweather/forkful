@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Elixir: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,42 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
+La impresión de salida de depuración se refiere a la generación de información adicional que permite a los programadores rastrear y entender cómo está funcionando su código. Es útil para encontrar y solucionar errores, además de ayudar a optimizar el rendimiento de tu código.
 
-Imprimir mensajes de depuración o debug output es una técnica utilizada por programadores para mostrar información relevante durante la ejecución de un programa. Esto es especialmente útil para identificar errores o entender qué está sucediendo en el código.
+## Cómo hacer:
+En Elixir, suele utilizar la función `IO.inspect/2` para imprimir la salida de depuración. Aquí tienes un ejemplo:
 
-## Cómo hacerlo:
+```elixir
+defmodule Ejemplo do
+  def funcion_debug do
+    data = [1,2,3,4]
+    IO.inspect(data, label: "mi data")
+  end
+end
+```
+El `label:` es optativo. Si utilizas este código, verás la siguiente salida:
 
-En Elixir, podemos imprimir mensajes de depuración utilizando la función ```IO.inspect``` seguida de la variable o valor que queremos imprimir. Por ejemplo:
-
-```Elixir
-IO.inspect "Hola"
+```elixir
+mi data: [1,2,3,4]
 ```
 
-Esto imprimirá "Hola" en la consola. También podemos imprimir valores en una estructura de datos, como una lista o un mapa:
+## Profundizando
 
-```Elixir
-IO.inspect ["rojo", "azul", "verde"]
-```
+Elixir ha adoptado la simplicidad de Erlang para imprimir la salida de depuración, la cual ha sido de gran ayuda para los programadores de Erlang durante décadas. A su vez, existen librerías como `dbg` de Erlang y `IEx` de Elixir que dan opciones avanzadas.
+Como alternativa al método `IO.inspect/2`, puedes utilizar funciones parecidas provistas por otras librerías, como `Logger.debug/2`. La ventaja de `Logger.debug/2` es que puedes dirigir tus mensajes de depuración a diferentes backends y configurarlos para que sólo se muestren bajo ciertas condiciones.
+En cuanto a su implementación, `IO.inspect/2` simplemente toma tus datos y los transforma en una cadena usando el protocolo `Inspect` de Elixir, luego imprime esa cadena en la salida estándar.
 
-Esto imprimirá la lista completa. Además, podemos usar patrones de coincidencia para imprimir solo ciertos valores:
-
-```Elixir
-IO.inspect [name: "Juan", age: 30, location: "Madrid"], [:name, :age]
-```
-
-Esto imprimirá solo el nombre y la edad en lugar de toda la estructura de datos.
-
-## Profundizando:
-
-La impresión de mensajes de depuración no es una técnica nueva, ya que ha sido utilizada por programadores desde los primeros días de la programación. Sin embargo, es importante usarla con moderación y solo cuando sea necesario, ya que puede hacer que el código se vuelva más difícil de leer y mantener.
-
-Además, existen otras técnicas de depuración más avanzadas, como el uso de herramientas específicas para seguimiento de errores. Sin embargo, la impresión de mensajes de depuración sigue siendo una herramienta útil para entender qué está sucediendo en el código en tiempo real.
-
-En Elixir, también podemos usar el módulo ```Logger``` para imprimir mensajes de depuración, lo que nos permite controlar el nivel de detalle y el formato del mensaje.
-
-## Ver también:
-
-- [Documentación oficial de Elixir sobre depuración](https://elixir-lang.org/getting-started/debugging.html)
-- [Tutorial de depuración en Elixir](https://dockyard.com/blog/2018/06/28/troubleshooting-in-elixir-using-binaries-pattern-matching-and-IO-inspect)
-- [Librería Pry para Ruby, una herramienta de depuración poderosa](https://pryrepl.org/)
+## Ver también 
+Para más información sobre la depuración en Elixir, consulta estas fuentes:
+- [Guía oficial de Elixir](https://elixir-lang.org/getting-started/debugging.html)
+- [Módulo IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Módulo Logger](https://hexdocs.pm/elixir/Logger.html)

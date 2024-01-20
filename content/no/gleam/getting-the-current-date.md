@@ -1,7 +1,7 @@
 ---
-title:                "Få dagens dato"
-html_title:           "Gleam: Få dagens dato"
-simple_title:         "Få dagens dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva er det å få nåværende dato, og hvorfor gjør programmerere det?
+# Få dagens dato med Gleam programmeringsspråk: En Rask Guide!
 
- Å få nåværende dato i et program betyr å hente og vise den nåværende datoen på datamaskinen eller enheten som kjører programmet. Dette kan være nyttig for å vise når et program ble kjørt, laget eller når en hendelse skjedde. Det er også en viktig del av å lage dynamiske og presise applikasjoner.
+## Hva & Hvorfor?
+Å få dagens dato betyr å hente den nåværende datoen fra systemets interne klokke. Dette er viktig for programmerere fordi det tillater å logge hendelser, sette tidfrister, måle tidsbruk, og mer.
 
-## Hvordan gjør man det:
+## Hvordan til:
+Dessverre, Gleam har ikke innebygd funksjonalitet for å få dagens dato ennå. Men, du kan bruke Erlang's 'date' funksjon:
 
- ```Gleam
-import time
- 
-let nåværende_dato = time.now()
- 
-io.println(some_date)
- 
-// Eksempel på utskrift: 2021-09-22T12:34:56Z
+``` Gleam
+import erlang
+
+fn current_date() {
+  erlang.date()
+}
 ```
 
-Denne koden importerer "time" biblioteket og bruker så "now" funksjonen for å få den nåværende datoen. Deretter printer den datoen ved hjelp av "io.println" funksjonen. Output vil være i ISO-8601 datoformat som er standard for datorepresentasjon.
+Dette returnerer en tuple `(År, Måned, Dag)`. Du kan kjøre dette i Gleam's repl: 
 
-Mer kompliserte formateringsalternativer er også tilgjengelige med "strftime" funksjonen:
-
-```Gleam
-import time
- 
-let nåværende_dato = time.now()
- 
-io.println(time.strftime("%A, %e %B %Y", nåværende_dato))
- 
-// Eksempel på utskrift: Wednesday, 22 September 2021
+``` Gleam
+> current_date()
+#(2022 1 4)
 ```
 
-## Dykke dypere:
+## Dypdykk
+Å få dagens dato er en grunnleggende funksjon i de fleste programmeringsspråk, og Gleam er intet unntak selv om det delegerer denne funksjonen til Erlang. Selv om det er andre metoder for tidsmåling (f.eks. Unix tid), gir datoformatet et menneskelig leselig format og er lettere å forstå.
 
-Funksjonen for å få nåværende dato er ikke bare begrenset til Gleam, men er en del av språket og globale standarder. I tillegg til ISO-8601 formatet, brukes alternativer som Unix timestamp (antall sekunder siden 1. januar 1970) og klokkeslett formatene AM/PM og 24-timers format.
+Implementeringen av 'date' funksjonen i Erlang er basert på Gregorian kalenderen, som er den kalenderen mest brukt internasjonalt for sivile formål. Den fungere ved å hente tidspunktet (i sekunder) fra det lokale operativsystemet og konverterer det til et datoformat (År, Måned, Dag).
 
-Alternativt kan man bruke eksterne biblioteker for å håndtere datoer og klokkeslett, for eksempel "chronos" biblioteket for Gleam.
-
-## Se også:
-
-- [Gleam dokumentasjon om "time" biblioteket](https://gleam.run/documentation#time)
-- [ISO-8601 datoformat](https://en.wikipedia.org/wiki/ISO_8601)
-- [Chronos biblioteket for Gleam](https://github.com/gleam-lang/chronos)
+## Se Også
+For mer informasjon om Gleam og Erlang, besøk følgene kilder:
+1. [Offisiell Gleam dokumentasjon](https://gleam.run/docs/)
+2. [Erlang 'date' funksjon dokumentasjon](http://erlang.org/doc/man/erlang.html#date-0)

@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "C: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
-Generering av tilfeldige tall er en viktig del av programmering som lar oss lage en slags "tilfeldighet" i våre programmer. Dette kan være nyttig for å forhindre forutsigbarhet og skape variasjon i resultatene.
+## Hva & Hvorfor?
 
-# Hvordan:
-Vi kan generere tilfeldige tall i C ved å bruke standardbiblioteket "stdlib.h". Her er et eksempel på hvordan vi kan generere et tilfeldig tall mellom 1 og 10:
+Tilfeldige tallgenerering er prosessen med å produsere tall som ikke kan forutsis bedre enn ved tilfeldig sjanse. Programmerere gjør dette for mange formål, som å simulere data, implementere spill og til crypto.
 
-```
+## Hvordan:
+
+Her er et grunnleggende eksempel på hvordan du genererer et tilfeldig tall i C:
+
+```C
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
-int main()
-{
-    // initialiserer en variabel for å holde det tilfeldige tallet
-    int tilfeldig_tall;
-
-    // bruker funksjonen rand() fra stdlib.h for å generere et tilfeldig tall
-    // begrenser også tallet til å være mellom 1 og 10 ved hjelp av modulus-operatoren
-    tilfeldig_tall = (rand() % 10) + 1;
-
-    // skriver ut det tilfeldige tallet
-    printf("Det tilfeldige tallet er: %d\n", tilfeldig_tall);
-
+int main() {
+    srand(time(0)); 
+    int num = rand(); 
+    printf("Generated Random Number is: %d\n", num);
     return 0;
 }
 ```
-Dette eksempelet bruker også "stdio.h" for å kunne skrive ut resultatet til konsollen. Kjører vi dette programmet flere ganger, vil vi se at det genererte tallet endrer seg hver gang.
+Når du kjører programmet, produserer det et tilfeldig tall hver gang.
 
-# Dypdykk:
-Generering av tilfeldige tall har vært en del av programmering siden de tidlige dager. I starten brukte man ofte fysiske fenomener som radioaktiv stråling eller støy for å lage tilfeldige tall. I moderne tid bruker vi derimot matematiske algoritmer for å generere disse tallene.
+## Dyp Dykk:
 
-Det finnes også alternative metoder for å generere tilfeldige tall i C, som for eksempel å bruke tilfeldige bit-mønstre fra brukerinput eller fra operativsystemet. Dette kan være nyttig i visse tilfeller der man trenger en høy grad av tilfeldighet.
+Tallgenerering med `rand()`-funksjonen i C har en interessant historisk kontekst. Denne funksjonen ble først introdusert i den opprinnelige ANSI C-standarden fra 1989 (C89). Derimot er verdien den returnerer ikke veldig tilfeldig, da den produserer en sekvens av tall som vil begynne å gjenta seg etter et visst antall kall.
 
-Implementasjonen av generering av tilfeldige tall kan variere mellom ulike datamaskiner og operativsystemer. Det er derfor viktig å være klar over eventuelle forskjeller dersom man trenger å generere tilfeldige tall for å kunne replikere resultatene på en annen maskin.
+Det er flere alternativer for å generere tilfeldige tall. I nyere C-standarder som C11, kan du bruke `rand_s()` eller `random()` for å få en bedre distribusjon av tilfeldige tall.
 
-# Se også:
-- Mer informasjon om rand() funksjonen i C: https://www.tutorialspoint.com/c_standard_library/c_function_rand.htm
-- Andre metoder for å generere tilfeldige tall i C: https://www.geeksforgeeks.org/generating-random-number-range-c/
+Når det gjelder implementeringsdetaljer, bruker `rand()` en pseudotilfeldig algoritme basert på en startverdi eller 'seed'. `srand(time(0));` brukes for å sette seed-verdien til det gjeldende systemtiden, noe som gir forskjellige resultater hver gang programmet kjøres.
+
+## Se Også:
+
+For en mer utfyllende studie av tilfeldige tallgenerering i C, ta en titt på følgende ressurser:
+
+1. GNU C Library: [Random Numbers](https://www.gnu.org/software/libc/manual/html_node/Random-Numbers.html)
+
+2. StackOverflow: [Why do I always get the same sequence of random numbers with rand() ?](https://stackoverflow.com/questions/4768180/why-do-i-always-get-the-same-sequence-of-random-numbers-with-rand)

@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "C#: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "C#"
 category:             "C#"
@@ -10,43 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+---
 
-Enviar una solicitud HTTP es una forma de comunicarse con servidores web para obtener datos o realizar acciones específicas. Los programadores a menudo envían solicitudes HTTP para crear, leer, actualizar o eliminar información en una base de datos o en una aplicación web.
+## ¿Qué & Por qué?
 
-## Cómo:
+Enviar una solicitud HTTP es establecer una comunicación entre un cliente y un servidor en la web. Los programadores la hacen para recoger, crear, actualizar o eliminar datos de un servidor web.
+
+---
+
+## Cómo hacerlo
+
+Para enviar una solicitud HTTP, utilizamos la clase HttpClient que encontráis en el espacio de nombres System.Net.Http.
+
+Aquí unos ejemplos básicos de cómo hacerlo en C#:
 
 ```C#
-// Ejemplo de envío de solicitud GET con la clase HttpClient.
-
 using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 
-namespace HttpExample
+class Program
 {
-    class Program
+    static readonly HttpClient client = new HttpClient();
+
+    static async Task Main()
     {
-        static async Task Main(string[] args)
+        try
         {
-            HttpClient client = new HttpClient();
-            HttpResponseMessage response = await client.GetAsync("https://www.ejemplo.com/api/user/1");
-            response.EnsureSuccessStatusCode();
-            string responseBody = await response.Content.ReadAsStringAsync();
+            string responseBody = await client.GetStringAsync("https://api.github.com");
+
             Console.WriteLine(responseBody);
+        }
+        catch(HttpRequestException e)
+        {
+            Console.WriteLine("\nExcepción detectada!");
+            Console.WriteLine("Mensaje : {0} ", e.Message);
         }
     }
 }
 ```
-Resultado:
-```
-{"name": "Juan", "age": 25, "city": "Madrid"}
-```
 
-## Inmersión Profunda:
+Cuando ejecutes este programa, deberías ver una respuesta del servidor en la consola.
 
-Históricamente, las solicitudes HTTP se usaban principalmente para acceder a documentos HTML en la web. Sin embargo, con el auge de las aplicaciones web, ahora también se utilizan para realizar acciones y obtener datos de una API. Algunas alternativas a las solicitudes HTTP incluyen el protocolo FTP para transferir archivos y el protocolo SMTP para enviar correos electrónicos. Para implementar una solicitud HTTP, se pueden utilizar diferentes librerías y herramientas, como la clase HttpClient en .NET o la librería Requests en Python.
+---
 
-## Vea también:
+## En profundidad
 
-- Documentación oficial sobre solicitudes HTTP en C#: https://docs.microsoft.com/es-es/dotnet/api/system.net.http.httpclient?view=net-5.0
-- Tutorial sobre cómo hacer solicitudes HTTP en C#: https://www.freecodecamp.org/news/using-httpclient-to-consume-webapi-in-net/
+Enviar una solicitud HTTP es una forma fundamental de interactuar con los recursos de la web, una práctica que se encuentra en los cimientos de Internet como lo conocemos. Existen alternativas como las solicitudes FTP o SMTP, pero las solicitudes HTTP son la norma para la mayoría de las aplicaciones web.
+
+En cuanto a los detalles de implementación, la clase HttpClient maneja todas las peticiones y respuestas HTTP de manera eficiente. Es reutilizable y soporta varias solicitudes concurrentes. Puede manejar redirecciones automáticas, enviar solicitudes JSON, y mucho más.
+
+Además, HttpClient es una clase de alto nivel que encapsula las funcionalidades de las clases de más bajo nivel como HttpWebRequest y HttpWebResponse.
+
+---
+
+## Ver también
+
+- [Documentación oficial de HttpClient](https://docs.microsoft.com/es-es/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [Más información sobre solicitudes HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Methods)
+- [Tutorial completo sobre HttpClient en C#](https://www.tutorialsteacher.com/articles/send-http-request-from-csharp)

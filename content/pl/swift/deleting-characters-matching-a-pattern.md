@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "Swift: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Usuwanie znaków pasujących do wzorca w Swift: Jak? Dlaczego? I inne szczegóły
+
 ## Co i dlaczego?
 
-Usuwanie znaków pasujących do wzorca jest procesem, w którym programiści usuwają określone znaki z tekstu. Jest to przydatna umiejętność, ponieważ pozwala na szybkie i łatwe porządkowanie i przetwarzanie danych tekstowych. Programiści często wykonują ten krok w celu filtrowania danych lub przetwarzania tekstów.
+Usuwanie znaków pasujących do wzorca to metoda usunięcia pewnego zbioru znaków z ciągu znaków, bazując na zdefiniowanym wzorcu. Programiści robią to, aby manipulować danymi tekstowymi, na przykład, aby oczyścić dane wejściowe lub usunąć niepotrzebne informacje.
 
 ## Jak to zrobić:
 
-```Swift
-let text = "ABC123DEF456GHI789"
-let pattern = "[0-9]+"
-let regex = try! NSRegularExpression(pattern: pattern, options: [])
-let modifiedText = regex.stringByReplacingMatches(in: text, options: [], range: NSRange(text.startIndex..., in: text), withTemplate: "")
-print(modifiedText)
+Swift oferuje wiele metod, które pozwalają usunąć znaki dopasowane do wzorca. Oto przykład:
 
-// Output: ABCDEFGHI
+```Swift
+var str = "Witaj, Swift!"
+let disallowedChars = CharacterSet(charactersIn: ",!")
+str = str.components(separatedBy: disallowedChars).joined()
+print(str) // "Witaj Swift"
+```
+W tym kodzie, używamy metody 'components(separatedBy:)' żeby rozdzielić nasz ciąg 'str' na podciągi, które są potem połączone bez separatorów, co daje nam nasz oczyszczony ciąg.
+
+## Deep Dive:
+
+* **Kontekst historyczny**: Swift, od momentu swojego powstania w 2014 roku przez Apple, zadbał o dostarczenie programistom wydajnych i elastycznych narzędzi do pracy z ciągami znaków.
+
+* **Alternatywy**: Swift oferuje również inne metody manipulacji ciągami znaków, takie jak zamiana znaków pasujących do wzorca na inne. Na przykład, można użyć metody 'replacingOccurrences(of:with:)':
+
+```Swift
+var str = "Witaj, Swift!"
+str = str.replacingOccurrences(of: ",", with: "")
+str = str.replacingOccurrences(of: "!", with: "")
+print(str) // "Witaj Swift"
 ```
 
-## Duże zmiany:
+* **Szczegóły implementacji**: Gdy manipulujemy ciągami znaków w Swift, ważne jest, aby zwrócić uwagę na kwestie wydajności. Operacje na ciągach mogą być kosztowne pod względem zużycia pamięci i czasu procesora, szczególnie dla dużych ciągów danych.
 
-Koncepcja usuwania znaków pasujących do wzorca ma swoje korzenie w programowaniu funkcyjnym, w którym funkcje są często wykorzystywane do przetwarzania danych. Alternatywą dla wykorzystania wyrażeń regularnych do usuwania znaków jest użycie metod wbudowanych w język Swift, takich jak `filter`. Implementacja tego procesu jest także umożliwiona przy użyciu innych bibliotek do wyrażeń regularnych, takich jak `RegularExpressionKit`.
+## Zobacz też:
 
-## Zobacz także:
-
-- Dokumentacja Swift o wyrażeniach regularnych: https://developer.apple.com/documentation/foundation/nsregularexpression#//apple_ref/doc/uid/TP40008757
-- Przykładowe użycie wyrażeń regularnych w języku Swift: https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift
+* [Praca z ciągami w Swift](https://developer.apple.com/documentation/swift/working_with_strings)
+* [Zbiór znaków w Swift](https://developer.apple.com/documentation/swift/characterset)

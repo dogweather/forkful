@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "Go: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,32 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Quoi & Pourquoi?
+L'interpolation de chaîne consiste à insérer des valeurs de variables dans une chaîne de caractères. Les programmeurs le font pour rendre le code plus lisible, faciliter le formatage de texte et éviter les erreurs causées par la concaténation complexe.
 
-Interpoler une chaîne de caractères (ou "string" en anglais) est un moyen de concaténer dynamiquement des variables ou des valeurs dans une chaîne de caractères. Les programmeurs le font pour rendre leurs chaînes de caractères plus flexibles et facilement modifiables en y incluant des valeurs variables.
-
-Comment le faire:
+## Comment faire:
+Voici un exemple simple d'interpolation de chaîne en Go. 
 
 ```Go
-name := "Bob"
-age := 25
-fmt.Printf("Salut, je m'appelle %s et j'ai %d ans.", name, age)
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	name := "Jean"
+	message := fmt.Sprintf("Bonjour, %s!", name)
+
+	fmt.Println(message) 
+}
+```
+Cela affiche:
+
+```Go
+Bonjour, Jean!
 ```
 
-Résultat:
+L'interpolation s'effectue en utilisant `Sprintf` de `fmt` et `%s` est le spécificateur de format pour une chaîne.
 
+## Plongée plus profonde
+Historiquement, Go n'a pas offert l'interpolation de chaînes comme d'autres langages. C'était intentionnel, afin d'encourager la clarté et de minimiser les erreurs. cependant, avec `Sprintf`, vous pouvez intercaler sans souci.
+
+Les alternatives à l'interpolation incluent la concaténation (+) et la jointure (strings.Join). Cependant, elles peuvent devenir verbeuses et difficiles à lire. Par exemple:
+
+```Go
+name := "Jean"
+message := "Bonjour, " + name + "!"
 ```
-Salut, je m'appelle Bob et j'ai 25 ans.
+ou
+```Go
+parts := []string{"Bonjour, ", name, "!"}
+message := strings.Join(parts, "")
 ```
 
-Des détails approfondis:
+Utiliser `Sprintf` est souvent plus clair, concis, et plus efficace en termes de mémoire.
 
-L'interpolation de chaîne de caractères a été introduite dans Go en tant que fonctionnalité expérimentale dans la version 1.12. Elle est rapidement devenue populaire parmi les programmeurs pour sa simplicité et sa convivialité. Avant cela, les programmeurs devaient utiliser la fonction de formatage de chaîne de caractères "Sprintf" pour concaténer des variables avec une chaîne de caractères.
-
-Pour les alternatives, certaines langues utilisent une syntaxe similaire pour interpoler des chaînes de caractères telles que Ruby et JavaScript avec la syntaxe " #{variable}" pour inclure une variable dans une chaîne de caractères.
-
-En ce qui concerne l'implémentation technique, l'interpolation de chaîne de caractères utilise la fonction "Sprintf" dans les coulisses et est donc une simplification syntaxique pour les programmeurs.
-
-Voir aussi:
-
-Pour plus d'informations sur l'interpolation de chaîne de caractères en Go, vous pouvez consulter la documentation officielle de Go : https://golang.org/pkg/fmt/#pkg-overview
+## Voir aussi
+Pour plus d'informations sur l'interpolation de chaîne en Go, consultez:
+1. Documents officiels de Go: https://golang.org/pkg/fmt/
+2. Écriture efficace avec `sprintf` : https://yourbasic.org/golang/fmt-printf-sprintf-fprintf-print-println/
+3. Spécificateurs de format: https://dave.cheney.net/2019/07/09/annotating-log-strings.

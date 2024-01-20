@@ -1,7 +1,7 @@
 ---
-title:                "Å dekode html"
-html_title:           "PowerShell: Å dekode html"
-simple_title:         "Å dekode html"
+title:                "Analysering av html"
+html_title:           "C#: Analysering av html"
+simple_title:         "Analysering av html"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+---
 
-Parsing av HTML er en prosess der man ekstraherer informasjon fra en HTML-kode for å få tilgang til innholdet i en nettside. Dette gjøres ofte av programmerere for å automatisere oppgaver, hente data eller analysere informasjon fra nettsider.
+# Parsing HTML med PowerShell: En Trinnsvis Veiledning
 
-Hvordan:
+---
 
-I PowerShell kan man bruke Invoke-WebRequest cmdlet for å laste ned en nettside og så bruke Select-XML cmdlet for å parse gjennom HTML-koden og finne ønsket informasjon.
+## Hva & Hvorfor?
 
-Eksempel:
+Parsing HTML betyr å analysere HTML-koden for å forstå dens struktur og innhold. Programmerere gjør dette for å trekke ut informasjon eller manipulere websider.
+
+## Hvordan gjør mån det:
+
+Her er en grunnleggende eksempel på hvordan du kan parse HTML ved bruk av PowerShell:
 
 ```PowerShell
-$url = "https://www.example.com/"
-$response = Invoke-WebRequest $url
-$html = [xml]$response.Content
-$title = Select-XML -Xml $html -XPath "//title" | Select-Object -ExpandProperty Node | Select-Object -ExpandProperty InnerText
+$webpage = Invoke-WebRequest -Uri "https://example.com"
+$parsedHTML = New-Object -ComObject "HTMLFile"
+$parsedHTML.IHTMLDocument2_write($webpage.Content)
+```
+Dette utdraget henter HTML kodene fra `"https://example.com"` og lager et HTML Document objekt med innholdet, noe som gjør det lettere å manipulere.
+
+For eksempel kan du hente tittelen på en nettside med følgende kode:
+
+```PowerShell
+$title = $parsedHTML.title
+Write-Output $title
 ```
 
-I dette eksempelet har vi brukt Invoke-WebRequest til å laste ned nettsiden til variabelen $response. Deretter har vi konvertert innholdet til HTML ved å bruke [xml] typecast. Vi har deretter brukt Select-XML og XPath for å finne tittelen på siden, og lagret den i variabelen $title.
+Disse kodene vil skrive ut tittelen på nettsiden til konsollen.
 
-Dypdykk:
+---
 
-Parsing av HTML er et viktig verktøy for å automatisere og effektivisere oppgaver for programmerere. Det finnes også alternative måter å parse HTML i PowerShell ved å bruke tredjepartsmoduler som HtmlAgilityPack eller AngleSharp.
+## Dypdykk
 
-Implementeringen av parsing i PowerShell er basert på XML-teknologi og kan følge vanlige HTML-regler som å angi tagger og attributter i XPath og bruke selectors som i CSS.
+Historisk sett ble HTML parsing opprinnelig håndtert med lavnivåspråk som C, men moderne programmeringsspråk som PowerShell kan gjøre det samme med mindre kode og mindre kompleksitet. 
 
-Se også:
+Det er flere alternative metoder for parsing av HTML, inkludert bruk av regex eller spesialiserte biblioteker som HtmlAgilityPack i .NET. Velg den metoden som passer best til dine spesifikke behov.
 
-- Microsofts dokumentasjon om Invoke-WebRequest og Select-XML cmdlets: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7
-- Mer informasjon om XPath: https://www.w3schools.com/xml/xpath_intro.asp
-- HtmlAgilityPack dokumentasjon: https://github.com/zzzprojects/html-agility-pack
-- AngleSharp dokumentasjon: https://anglesharp.github.io/
+Ved implementering, bør du alltid huske på at strukturen på en nettside kan endres uten varsel, og din parsingkode må håndtere disse endringene pent for å unngå feil.
+
+---
+
+## Se også
+
+- `Invoke-WebRequest` og `New-Object` cmdlets i PowerShell dokumentasjon:  
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest  
+https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-object
+
+- Innføring i HtmlAgilityPack:  
+https://html-agility-pack.net/
+
+---

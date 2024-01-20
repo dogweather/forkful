@@ -1,7 +1,7 @@
 ---
-title:                "Radera tecken som matchar ett mönster"
-html_title:           "Elm: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,28 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att ta bort tecken som matchar ett mönster är att identifiera och ta bort en sekvens av tecken baserat på ett specifikt mönster eller regel från en textsträng. Detta hjälper programmerare att manipulera data mer effektivt och rensa upp onödig information.
 
-Att ta bort tecken som matchar ett mönster, även känt som "deleting characters matching a pattern" på engelska, är en vanlig operation bland programmerare. Det gör att man kan filtrera eller rensa bort vissa tecken från en textsträng baserat på ett visst mönster. Detta kan vara användbart när man vill manipulera data eller extrahera information från en textsträng.
-
-## Så här gör du:
+## Hur man gör:
+Här är kodexempel och output på hur man utför detta i Elm.
 
 ```Elm
-import String
+import Regex exposing (contains, regex)
 
--- Ta bort alla förekomster av bokstaven "a" i en sträng
-resultat = String.repeatedly (String.dropLeft 1 >> String.contains "a") "bana" -- "bn"
+deleteMatchingChars : String -> String -> String
+deleteMatchingChars pattern text = 
+  let
+    re = regex pattern
+  in
+    if contains re text then
+      String.replace pattern "" text
+    else
+      text
 ```
-## Fördjupning:
+Låt oss prova det här med följande:
+```Elm
+deleteMatchingChars "choco" "I love chocolate"
+```
+Output:
+```Elm
+"I love late"
+```
+## Fördjupning
+Radera tecken baserat på matchande mönster spårar tillbaka till de tidiga dagarna av programmering där datamanipulering var nödvändig för att optimera minnesanvändning.
 
-### Historisk kontext:
-Att ta bort tecken som matchar ett visst mönster är en vanlig funktion i många programmeringsspråk och har funnits sedan tidiga dagar av datoranvändande. I moderna språk, som Elm, är det ofta implementerat som en del av standardbiblioteket.
+Elm utelämnar inbyggda metoder för textmanipulering, så vi har skapat en funktion med hjälp av "Regex" för att ersätta matchande tecken med en tom sträng, vilket i grunden tar bort dem.
 
-### Alternativ:
-En annan metod för att ta bort tecken som matchar ett mönster är att använda en reguljär uttrycksökning, vilket ofta är mer kraftfullt men också mer komplicerat. Ett exempel på detta i Elm skulle vara att använda funktionen `Regex.replace` från `elm/regex`-paketet.
+Alternativt kan detta uppnås genom att använda en annan funktion som granskar varje tecken i strängen och bara behåller de som inte matchar mönstret, men denna metod kan vara långsammare när det gäller stora datamängder.
 
-### Implementeringsdetaljer:
-I Elm används funktionen `String.repeatedly` tillsammans med funktionerna `String.dropLeft` och `String.contains` för att ta bort tecken som matchar ett mönster. Först används `String.dropLeft` för att ta bort de första tecknen i strängen baserat på ett angivet antal, och sedan kontrolleras om de borttagna tecknen innehåller mönstret med hjälp av `String.contains`. Om mönstret finns i de borttagna tecknen, så tas de bort från strängen helt till dess att det inte finns fler förekomster av mönstret i strängen.
-
-## Se även:
-- [Dokumentation för `elm/core`-paketet](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Dokumentation för `elm/regex`-paketet](https://package.elm-lang.org/packages/elm/regex/latest/)
+## Se även
+För mer information kring ämnet, ta gärna en titt på följande källor:
+- [Elm Guide](https://guide.elm-lang.org/)
+- [Introduction to Elm](https://elmprogramming.com/)
+- [Elm Regex library](https://package.elm-lang.org/packages/elm/regex/latest/)
+- [String manipulation in Elm](https://korban.net/posts/elm/2018-02-27-string-manipulation-in-elm/)

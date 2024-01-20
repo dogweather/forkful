@@ -1,6 +1,6 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "Elm: Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Starter et nytt prosjekt betyr å skape en ny eller videreutvikle en eksisterende programvare eller applikasjon. Dette gjøres vanligvis av-programmerere for å møte nye behov, forbedre eksisterende koder eller implementere nye funksjoner.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
+Å starte et nytt prosjekt handler om å sette opp en grunnleggende struktur for koden din, et skall for å bygge din applikasjon på. Programmerere gjør dette for å organisere sine ideer og lette vedlikehold av koden.
+
+## Hvordan:
+
+Her er noen grunnleggende kodesnutter og eksempler for Elm:
+
 ```Elm
-module Main exposing (..)
--- Importer alle nødvendige moduler og funksjoner
--- Ved å bruke "exposing (..)" inkluderer du alle funksjoner
--- som er tilgjengelige i den importerte modulen
-import Html exposing (..)
--- En enkel "Hello World" funksjon
--- som skriver ut en hilsen til brukeren
--- koden nedenfor vil bli utført ved å kjøre 
--- `elm reactor` eller `elm make` kommandoen
-main : Program () () ()
+import Html exposing (text)
+
 main =
-    Html.text "Hei verden!"
+  text "Hei, Verden!"
+
 ```
 
-## Dypdykk:
-Historisk sett, var det å starte et nytt prosjekt en lang og kompleks prosess som krevde mye planlegging og ressurser. Med dagens programmeringsspråk som Elm, kan det nå gjøres raskt og effektivt. Det finnes også andre programmeringsspråk og verktøy som kan brukes til å starte et nytt prosjekt, men Elm tilbyr et elegant og funksjonelt alternativ.
+Når du kjører dette, vil du se "Hei, Verden!" utskrevet i nettleseren din.
 
-## Se også:
-- Elm dokumentasjon: https://guide.elm-lang.org/
-- Elm forum: https://discourse.elm-lang.org/
-- Elm pakker: https://package.elm-lang.org/
+For å starte et nytt Elm-prosjekt, trenger du elm compiler. Du kan installere det ved å kjøre kommandoen 'npm install -g elm' i terminalen din. Deretter, bare opprett en ny mappe og initialiser et nytt Elm-prosjekt med 'elm init'-kommando.
+
+
+## Dypdykk
+
+Elm, som ble lansert i 2012 av Evan Czaplicki, er en funksjonell programmeringsspråk for frontend utvikling. Det gir utviklere en robust, sikker og vedlikeholdbar kodebase. Alternativene til Elm inkluderer JavaScript og dens forskjellige biblioteker som React, Vue, og Angular. Men, Elm tilbyr fordeler som null runtime errors og innebygd pakkesystem. I Elm, hver eneste fil er en egen modul som kan importeres inn i en annen fil, noe som muliggjør en strukturert og modulerbar tilnærming til prosjektene dine.
+
+## Se Også
+
+1. Elm Offisielt Dokumentasjon: https://guide.elm-lang.org/
+2. Elm GitHub Repository: https://github.com/elm/
+3. ELM: En introduksjon - https://elm-lang.org/blog/blazing-fast-html-round-two

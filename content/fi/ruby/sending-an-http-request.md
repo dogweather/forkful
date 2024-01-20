@@ -1,7 +1,7 @@
 ---
-title:                "Http-pyynnön lähettäminen"
-html_title:           "Ruby: Http-pyynnön lähettäminen"
-simple_title:         "Http-pyynnön lähettäminen"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,46 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+## Mikä & Miksi?
 
-Kun ohjelmoijat lähettävät HTTP-pyyntöjä, he pyytävät tietoa tai toimintaa toiselta verkkosivustolta tai palvelimelta. Tämä on yleinen keino kommunikoida verkkoyhteyksien välillä ja mahdollistaa esimerkiksi tiedon haun, käyttäjän kirjautumisen tai sivuston päivityksen.
+HTTP-pyynnön lähettäminen on prosessi, jossa tietokoneesi pyytää tietoa tai toimintoja verkkosivustolta. Ohjelmoijat tekevät tämän hakeakseen tai manipuloidakseen verkkosisältöä, kuten esimerkiksi noutaakseen tiedot API:sta tai lähettääkseen tiedot palvelimeen.
 
-## Miten:
+## Miten se toimii:
+
+Saadaksemme HTTP-pyynnön toimimaan Rubyssa, tarvitsemme `net/http` -kirjaston. Tässä on yksinkertainen esimerkki HTTP GET -pyynnöstä.
 
 ```Ruby
-# Lähetetään GET-pyyntö ja tulostetaan vastaus
-response = Net::HTTP.get(URI('https://www.example.com'))
-puts response
+require 'net/http'
+require 'uri'
 
-# Lähetetään POST-pyyntö ja tulostetaan vastaus
-params = {username: 'bob', password: 'secret'}
-response = Net::HTTP.post_form(URI('https://www.example.com/login'), params)
+uri = URI.parse("http://www.example.com/search")
+response = Net::HTTP.get_response(uri)
+
 puts response.body
 ```
 
-Output:
-```
-<!doctype html>
-<html>
+Tässä esimerkissä luomme URI-olion ja käytämme sitä `Net::HTTP.get_response` -metodin argumenttina. Tämän jälkeen tulostetaan pyynnön vastauksen sisältö.
 
-<head>
-  <title>Esimerkkisivusto</title>
-</head>
+## Tarkempi tutkinta:
 
-<body>
-  <h1>Tervetuloa!</h1>
-</body>
+HTTP-pyynnön lähettäminen on olennainen osa web-ohjelmointia ja se kehitettiin osana HTTP-protokollaa 1990-luvun alussa. Rubyssa sisäänrakennettu `net/http` -kirjasto on yleisin tapa lähettää pyyntöjä, mutta on olemassa muitakin vaihtoehtoja, kuten `httparty` tai `rest-client`.
 
-</html>
+`Net/http` toimii tekemällä TCP-yhteyden ja lähettämällä raakapyynnön palvelimelle. Voit hallita myös muita HTTP-ominaisuuksia, kuten yhteyden aikakatkaisua tai ohjata pyyntösi proxy-palvelimen kautta.
 
-```
+## Lue lisää:
 
-## Syväsukellus:
+Jos haluat syventää osaamistasi HTTP-pyynnöissä Rubyn kanssa, seuraavat linkit voivat olla hyödyllisiä:
 
-HTTP-pyyntöjen lähettämisellä on pitkä historia ja se on yhä tärkeä osa web-kehitystä. Tämä voidaan toteuttaa myös monilla muilla kielillä, kuten JavaScriptillä tai Pythonilla. Pyyntöjen sisältö ja parametrit vaihtelevat ja niitä käytetään muun muassa REST API:en kanssa kommunikointiin.
-
-## Katso myös:
-
-Lisätietoa HTTP-pyyntöjen lähettämisestä:
-- [Net::HTTP dokumentaatio](https://docs.ruby-lang.org/en/3.0.0/Net/HTTP.html)
-- [AJAX ja HTTP-pyyntöjen lähettäminen](https://www.tutorialspoint.com/ajax/ajax_and_http_requests.htm)
+- Ruby Documentation: Net::HTTP (https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- HTTParty Gem (https://github.com/jnunemaker/httparty)
+- RestClient Gem (https://github.com/rest-client/rest-client)

@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "Lua: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Numbers"
@@ -10,45 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est & Pourquoi ?
+La génération de nombres aléatoires est un processus d'obtention de chiffres qui ne sont pas prévisibles, et pour lesquels tous les nombres ont une probabilité égale d'être obtenus. Les programmeurs le font pour des usages tels que les jeux, les simulations, et même pour la sécurité.
 
-La génération de nombres aléatoires est une technique utilisée par les programmeurs pour créer des valeurs aléatoires dans un programme. Cela permet de simuler des situations aléatoires, d'améliorer la sécurité des mots de passe, et bien plus encore.
-
-# Comment faire:
-
-Voici un exemple simple de code en Lua pour générer un nombre aléatoire entre 1 et 10:
-
-```
-math.randomseed(os.time()) -- initialiser la graine pour la génération aléatoire
-print(math.random(1,10)) -- afficher un nombre aléatoire entre 1 et 10
-```
-
-Output: 5
-
-Vous pouvez également utiliser ```math.random()``` pour des valeurs aléatoires entre 0 et 1:
-
-```
+## Comment faire :
+```Lua
 math.randomseed(os.time())
-print(math.random()) -- afficher un nombre aléatoire entre 0 et 1
+local randomNumber = math.random(1, 100)
+print(randomNumber)
 ```
+Cela génèrera et affichera un nombre aléatoire entre 1 et 100 à chaque fois que vous exécutez le script.
 
-Output: 0.6550
+## Plongeon en profondeur
+La fonction `math.random` a été introduite dans Lua 3.0. Avant cela, les programmeurs avaient besoin d'implémenter leurs propres générateurs de nombres aléatoires.
 
-Si vous souhaitez générer plusieurs nombres aléatoires en une seule fois, vous pouvez utiliser une boucle:
+It y a plusieurs alternatives à `math.random`. Par exemple, vous pouvez utiliser des bibliothèques externes pour obtenir des nombres aléatoires plus sophistiqués. L'une d'entre elles est pouvoir utiliser l'API `love.math.random` de LÖVE, si vous faites du développement avec ce framework.
 
-```
-math.randomseed(os.time())
-for i=1,5 do -- générer 5 nombres aléatoires
-    print(math.random(1,10))
-end
-```
+La fonction `math.random` de Lua utilise l'algorithme de génération de nombres pseudo-aléatoires appelé Mersenne Twister, qui est réputé pour sa vitesse et sa qualité de nombres aléatoires.
 
-Output: 7 2 9 4 8
-
-# Plongée en profondeur:
-
-La génération de nombres aléatoires est utilisée depuis longtemps dans le domaine des jeux de hasard, mais elle est également utile pour de nombreux autres cas d'utilisation. Les autres langages de programmation ont également leurs propres fonctions pour générer des nombres aléatoires, tels que ```random()``` en Python ou ```rand()`` en C. Il est important de noter que les nombres générés par les ordinateurs ne sont pas vraiment aléatoires, mais ils sont calculés à partir d'une "graine" initiale et d'un algorithme de génération.
-
-# Voir aussi:
-
-Pour en savoir plus sur la génération de nombres aléatoires en Lua, vous pouvez consulter la documentation officielle sur la fonction ```math.random()``` ainsi que d'autres ressources en ligne telles que des tutoriels et des forums communautaires.
+## Voir aussi
+[La documentation officielle de LUA pour math.random](https://www.lua.org/manual/5.1/manual.html#pdf-math.random)
+[Le lien vers LÖVE, un framework de développement de jeux en Lua](https://love2d.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "Transformer une date en chaîne de caractères"
-html_title:           "Bash: Transformer une date en chaîne de caractères"
-simple_title:         "Transformer une date en chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
+simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
+## Qu'est-ce & Pourquoi?
+Convertir une date en chaîne de caractères permet de manipuler et d'afficher cette date sous différentes formes. Les programmeurs le font pour faciliter la comparaison de dates, l'internationalisation et la personnalisation de l'affichage d'une date.
 
-Convertir une date en une chaîne de caractères, c'est simplement prendre une date écrite sous forme numérique (par exemple 25/09/2021) et la convertir en une chaîne de caractères avec un format pré-défini (par exemple 2021-09-25). Les programmeurs le font souvent pour des raisons de lisibilité, d'affichage ou de stockage de données.
+## Comment faire:
+Bash fournit la commande `date` pour ça. 
 
-## Comment faire :
+Voici quelques exemples:
 
-``` Bash
-# Afficher la date du jour au format AAAA-MM-JJ
-date +"%Y-%m-%d"
-# Output : 2021-09-25
-
-# Afficher l'année et le mois actuels en lettres
-date +"%B %Y"
-# Output : September 2021
-
-# Convertir une date en timestamp (nombre de secondes écoulées depuis le 1er janvier 1970)
-date -j -f "%d/%m/%Y" "25/09/2021" +%s
-# Output : 1632537600
-
-# Afficher la date actuelle en utilisant strftime
-# Note : La commande "man strftime" peut être utile pour voir tous les formats disponibles
-strftime "%Y/%m/%d" $(date +%s)
-# Output : 2021/09/25
+Pour obtenir la date actuelle :
+```
+Bash
+$ date
 ```
 
-## Plongée en profondeur :
+Format de sortie par défaut : 
+```
+Mar 15 Mar 2022 12:34:56 UTC
+```
 
-La conversion d'une date en une chaîne de caractères est un concept assez simple, mais cela peut être un peu plus complexe à mettre en œuvre dans la programmation. En effet, l'utilisation de différents formats et la prise en compte des fuseaux horaires peuvent parfois être nécessaires. Heureusement, Bash offre des options pratiques et flexibles pour effectuer cette tâche, telles que la commande `date` et les options `+%x` et `+%X`.
+Pour obtenir la date sous forme de chaîne de caractères :
+```
+Bash
+$ date +"%m/%d/%Y"
+```
 
-Il existe également d'autres langages de programmation tels que Python, PHP ou Java qui ont leurs propres méthodes pour convertir une date en une chaîne de caractères. À vous de trouver celui qui convient le mieux à votre projet !
+Format de sortie : 
+```
+03/15/2022
+```
 
-## Voir aussi :
+## Plongée en profondeur
+Historiquement, avant UNIX et POSIX, convertir une date en chaîne de caractères était un processus difficile et complexe. Ces normes ont défini la commande `date`, simplifiant considérablement cette tâche.
 
-- La documentation officielle de `date` pour en savoir plus sur les options de format : https://www.unix.com/man-page/mojave/1/date/
-- Un tutoriel sur la conversion de dates en chaînes de caractères en Python : https://realpython.com/python-datetime/
-- Une explication détaillée sur la conversion de dates en PHP : https://www.w3schools.in/php-programming/datetime/
+Il existe d'autres alternatives comme strftime() en C et des méthodes dans de nombreux autres langages de programmation.
+
+En ce qui concerne les détails de l'implémentation, la commande `date` utilise l'heure système pour obtenir l'heure actuelle, puis formatte cette date en fonction des paramètres qu'elle reçoit. C'est un outil très flexible qui permet d'obtenir la date et l'heure sous presque n'importe quelle forme.
+
+## Voir aussi
+- man date : Pour plus d'informations, consultez [la page du manuel date](https://man7.org/linux/man-pages/man1/date.1.html)
+- strftime() : Plus sur cette alternative C sur [cette page](https://www.cplusplus.com/reference/ctime/strftime/)
+- DateTime en Python : Pour une approche Python, consultez [cette ressource](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior)
+- Date en JavaScript : Pour une version JavaScript, regardez [ici](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)

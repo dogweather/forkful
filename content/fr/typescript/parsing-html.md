@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'html"
-html_title:           "TypeScript: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyser le HTML"
+html_title:           "Kotlin: Analyser le HTML"
+simple_title:         "Analyser le HTML"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que le parsing HTML et pourquoi les programmeurs le font-ils?
+# Analyse HTLM avec TypeScript: Un guide simple et clair
 
-Le parsing HTML est le processus de lecture et d'analyse d'un document HTML pour le transformer en une structure de données utilisable par un programme informatique. Les programmeurs utilisent le parsing HTML pour extraire des informations spécifiques d'une page Web, telles que des titres, des images ou du texte, afin de les utiliser pour des besoins ultérieurs tels que la création de sites dynamiques.
+## Quoi & Pourquoi?
+
+L'analyse de HTML, c'est le processus de transformer le code HTML en une structure de données plus facile à manipuler pour votre programme. Nous faisons cela pour extraire des informations, manipuler des éléments ou interagir de manière plus sophistiquée avec nos pages Web.
 
 ## Comment faire:
 
-```TypeScript 
-// Importation de la bibliothèque de parsing HTML dans TypeScript
-import { parseHTML } from 'HTMLParser';
+Avec TypeScript, nous allons utiliser une bibliothèque appelée `jsdom`. Voici comment on peut l'utiliser pour analyser un fragment de HTML.
 
-// Définition de la chaîne HTML à parser
-let htmlString = "<h1>Titre de la page</h1><p>Paragraphe de contenu</p>";
+```TypeScript
+import { JSDOM } from 'jsdom';
 
-// Utilisation de la fonction parseHTML pour extraire les balises et le contenu
-let parsedHTML = parseHTML(htmlString);
-
-// Accès aux balises et au contenu
-let title = parsedHTML.tags[0].content;
-let paragraph = parsedHTML.tags[1].content;
-
-console.log(title); // Titre de la page
-console.log(paragraph); // Paragraphe de contenu
+let dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p>`);
+console.log(dom.window.document.querySelector("p").textContent); // "Hello world"
 ```
 
-## Plongée en profondeur:
+Dans cet exemple, nous avons créé un nouveau JSDOM et recherché un élément paragraphe à travers `querySelector`. Le `textContent` nous donne le contenu de cet élément.
 
-Le parsing HTML a évolué depuis les premiers jours du World Wide Web et est devenu un élément essentiel du développement Web moderne. Les programmeurs peuvent utiliser différentes bibliothèques et outils pour parser le HTML, tels que jQuery ou AngularJS. Le parsing HTML peut également être réalisé côté serveur avec des langages tels que PHP ou Python.
+## Plongée Profonde
 
-## Voir aussi:
+Historiquement, l'analyse de HTML était beaucoup plus compliquée et moins flexible. Il y avait un besoin d'outils plus sophistiqués et modernes, et c'est pourquoi `jsdom` a été créé.
 
-- [Introduction au parsing HTML avec TypeScript](https://www.typescriptlang.org/docs/handbook/htmlparser.html)
-- [jQuery - méthode de parsing HTML](https://api.jquery.com/jquery.parsehtml/)
-- [AngularJS - fonction de parsing HTML](https://docs.angularjs.org/api/ng/service/$sce/html)
+Il existe d'autres alternatives à `jsdom`, comme `cheerio`, qui est plus rapide mais ne prend en charge que le sous-ensemble de jQuery. Si vous n'avez pas besoin d'une simulation de navigateur complète (que `jsdom` offre), `cheerio` pourrait être une meilleure option.
+
+En parlant de l'implémentation, `jsdom` utilise document.implementation.createHTMLDocument() pour parser le HTML en un objet DOM. Cette fonction est une API standard du navigateur, ce qui rend notre code beaucoup plus fiable.
+
+## Voir Aussi
+
+1. Documentation de Jsdom: [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
+2. Articles sur le parsing de HTML avec jsdom: [https://dev.to/thawkin3/jsdom-vs-cheerio-15ic](https://dev.to/thawkin3/jsdom-vs-cheerio-15ic)
+3. API de CreateHTMLDocument() : [https://developer.mozilla.org/fr/docs/Web/API/DOMImplementation/createHTMLDocument](https://developer.mozilla.org/fr/docs/Web/API/DOMImplementation/createHTMLDocument)

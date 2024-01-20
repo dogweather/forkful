@@ -1,7 +1,7 @@
 ---
-title:                "Das Versenden einer http-Anfrage."
-html_title:           "Kotlin: Das Versenden einer http-Anfrage."
-simple_title:         "Das Versenden einer http-Anfrage."
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,26 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was & Warum?
-Das Senden einer HTTP-Anfrage ist ein wichtiger Prozess in der Webentwicklung, der es Programmierern ermöglicht, Daten von einer Website zu empfangen. Durch das Senden von HTTP-Anfragen können Programmierer auf Ressourcen wie Webseiten, Bilder oder Dateien zugreifen. Es ist ein unverzichtbares Werkzeug, um dynamische Inhalte auf Websites zu erstellen.
+## Was & Warum?
 
-Wie geht's?
-Kotlin hat eine integrierte Bibliothek zur Verarbeitung von HTTP-Anfragen, die sehr einfach zu bedienen ist. Zuerst müssen Sie die Bibliothek importieren, indem Sie ```import java.net.URL``` eingeben. Dann können Sie eine URL-Verbindung erstellen und eine Anfrage senden, indem Sie die Methode ```openConnection()``` aufrufen. Sie können die Verbindung konfigurieren und bestimmte Parameter setzen, bevor Sie die Anfrage senden. Hier ist ein Beispiel für das Senden einer einfachen HTTPS-Anfrage und das Empfangen der Antwort:
+Beim Senden einer HTTP-Anfrage fragt ein Client-Computer (oder Browser) Informationen oder Dienste von einem Server an. Programmierer tun dies häufig, um API-Daten abzufragen, Seiten zu laden oder Daten an eine Datenbank zu senden.
+
+## Wie man:
+
+Mit Kotlin und der Ktor-Bibliothek sieht das Senden einer HTTP-Anfrage folgendermaßen aus:
 
 ```Kotlin
-import java.net.URL
+import io.ktor.client.*
+import io.ktor.client.request.*
 
-val url = URL("https://example.com")
-val connection = url.openConnection()
-connection.requestMethod = "GET"
-val responseCode = connection.responseCode
-println("Response code: $responseCode")
+val client = HttpClient()
+val httpResponse = client.get<String>("https://example.com")
+client.close()
 ```
 
-Tiefentauchen
-Das Senden von HTTP-Anfragen ist seit den Anfängen des World Wide Web ein grundlegender Prozess. Es ermöglichte die Zusammenarbeit von Websites und die Übertragung von Informationen zwischen ihnen. Obwohl Kotlin eine integrierte Bibliothek zur Verarbeitung von HTTP-Anfragen hat, gibt es auch andere Bibliotheken und Frameworks wie Retrofit und OkHttp, die bei der Verarbeitung von HTTP-Anfragen in komplexen Webanwendungen helfen können.
+Hier ist die Ausgabe beispielhaft:
 
-Schau dir auch an
-- Offizielle Dokumentation von Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.net.-u-r-l.-open-connection.html
-- Retrofit: https://square.github.io/retrofit/
-- OkHttp: https://square.github.io/okhttp/
+```Kotlin
+"<!doctype html>\n<html>\n<head>\n    <title>Example Domain</title>\n   ...
+```
+
+## Tiefer Einblick:
+
+HTTP-Anfragen begannen 1991 mit der Veröffentlichung des HTTP/0.9-Protokolls und haben sich seitdem stetig weiterentwickelt. Alternativ kann man HTTP-Anfragen in Kotlin auch mit Bibliotheken wie OkHttp oder Retrofit senden. Beim Senden einer HTTP-Anfrage mit Ktor öffnet der Client eine Verbindung zum gewünschten Server, sendet ein Anforderungspaket und wartet auf die Serverantwort, die zurückgeschickt wird und den angeforderten Inhalt oder Statuscodes enthält.
+
+## Siehe auch:
+
+- Http-Client Dokumentation: [https://ktor.io/docs/http-client.html](https://ktor.io/docs/http-client.html)
+- OkHttp: [https://square.github.io/okhttp](https://square.github.io/okhttp)
+- Retrofit: [https://square.github.io/retrofit](https://square.github.io/retrofit)

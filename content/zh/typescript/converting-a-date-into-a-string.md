@@ -1,6 +1,6 @@
 ---
 title:                "将日期转换为字符串"
-html_title:           "TypeScript: 将日期转换为字符串"
+html_title:           "Bash: 将日期转换为字符串"
 simple_title:         "将日期转换为字符串"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-将一个日期转换为字符串是指将一个日期值转换为可读的文本格式。程序员通常这么做是为了方便阅读和比较不同的日期。
+## 是什么 & 为什么？
+日期转字符串是将日期的表示方式从日期对象变为文本格式的过程。程序员经常需要这么做，因为字符串便于显示和存储，对于用户接口和数据库操作有很大的便利性。
 
-## 如何：
-```TypeScript
-const date = new Date();
-console.log(date.toString());
-// Output: Wed Mar 10 2021 12:00:00 GMT+0800 (中国标准时间)
-```
+## 如何操作：
+在 TypeScript 中，使用 `toISOString()` 方法可以很容易地将日期转换为字符串。定义一个日期，然后使用 `toISOString()` 就可以了，代码如下：
 
 ```TypeScript
-const options = { year: 'numeric', month: 'numeric', day: 'numeric' };
-const date = new Date();
-console.log(date.toLocaleDateString('zh-CN', options));
-// Output: 2021/3/10
+let currentDate: Date = new Date();
+let stringDate: string = currentDate.toISOString();
+
+console.log(stringDate);
 ```
 
-## 深入探讨：
-转换日期为字符串的历史可以追溯到计算机编程的早期。在早期计算机系统中，日期和时间通常以数字表示，不便于理解和比较。随着计算机技术的发展，日期转换为字符串可以使用不同的格式来满足不同的需求。另外，除了使用内置的 `toString()` 和 `toLocaleDateString()` 方法，也可以使用第三方库来完成这个功能。
+你会在控制台看到如下格式的输出：
+```Output
+"2021-05-10T14:48:00.000Z"
+```
 
-## 参考链接：
-- [TypeScript Documents](https://www.typescriptlang.org/docs)
-- [MDN Web Docs - Date](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## 深入了解
+早在计算机发展初期，有关日期的处理就存在。原始的 Unix 时间戳就是以字符串的形式存储的，例如 "1577865600"。使用字符串可以方便在不同的程序和系统间共享数据。
+
+Javascript 的 Date 对象提供了多种将日期转换为字符串的方法。除了 `toISOString()` 之外，还有 `toDateString()`, `toJSON()` 等。你可以根据需要选择不同的方法。
+
+使用 `toISOString()` 方法会将日期转换为 ISO 8601 格式的字符串，这是一个国际标准。这是最常用的日期字符串格式，也是大部分编程语言和系统默认的日期字符串格式。
+
+## 另请查看
+- 详细了解 JavaScript 的 Date 对象：https://www.w3schools.com/js/js_date_methods.asp
+- ISO 8601 标准：https://www.iso.org/iso-8601-date-and-time-format.html
+- Unix 时间戳：https://en.wikipedia.org/wiki/Unix_time

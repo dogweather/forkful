@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거의 날짜 계산하기"
-html_title:           "Elixir: 미래나 과거의 날짜 계산하기"
-simple_title:         "미래나 과거의 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "Elixir: 미래 또는 과거의 날짜 계산하기"
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇인가요?
+## 뭐고 왜?
 
-미래나 과거의 날짜를 계산하는 것은 프로그래머들이 특정한 날짜를 예측하거나 처리하는 데에 도움이 됩니다. 예를 들어, 특정한 날짜의 부정적인 영향을 미리 감지하고 이에 대한 대비책을 세울 수 있습니다. 또한 미래의 날짜를 계산하여 리소스를 효율적으로 관리하고 작업을 예약하는 데에도 도움이 됩니다.
+날짜 계산은 미래나 과거의 특정 날짜를 산출하는 것을 의미합니다. 이는 주기적인 작업 스케줄링, 이벤트 기록, 한 해의 경과 일 등을 계산할 때 프로그래머들이 사용합니다.
 
-# 방법:
+## 이렇게 해보세요:
 
+```Elixir
+# 미래의 날짜를 계산하는 방법:
+{:ok, future_date} = Date.add(Date.utc_today(), 10)
+IO.inspect(future_date)
+
+# 과거의 날짜 계산:
+{:ok, past_date} = Date.add(Date.utc_today(), -5)
+IO.inspect(past_date)
 ```
-Elixir.DateTime.add(date, days) 
+Sample Output:
+```Elixir
+~D[2023-12-13]
+~D[2023-11-28]
 ```
-위의 코드는 특정 날짜에 일정한 일수(days)를 더해 미래의 날짜를 계산합니다. 예를 들어, 오늘 날짜에 7일을 더하면 일주일 뒤의 날짜를 얻을 수 있습니다. 또한 음수 값을 넣으면 과거의 날짜를 계산할 수도 있습니다. 이 외에도 사칙연산을 사용하여 날짜를 계산하는 다양한 방법이 존재합니다.
+## 깊게 들어가보기:
 
-# 깊이 들어가보기:
+날짜 계산은 컴퓨터 프로그래밍의 중요한 요소 중 하나입니다. 특히, 날짜 및 시간에 기반한 소프트웨어에서는 이것이 굉장히 중요합니다. Elixir 등의 프로그래밍 언어들은 이러한 작업을 위해 내장 함수를 제공하므로 사용자가 본인이 원하는 날짜를 쉽게 계산할 수 있을 것입니다.
 
-1. 과거에는 날짜를 계산하기 위해서 수학적인 계산이 사용되었지만, 현재는 컴퓨터를 활용하여 더 쉽고 정확하게 날짜를 계산할 수 있습니다.
-2. 다른 언어들에서도 날짜를 계산할 수 있는 다양한 라이브러리들이 존재하지만, Elixir는 고성능과 높은 확장성을 제공하여 더 많은 작업을 가능하게 합니다.
-3. Elixir의 날짜 계산 방식은 Erlang VM의 칼렌다(calenda) 라이브러리를 기반으로 합니다. 당신의 애플리케이션의 요구사항에 따라서 직접 날짜 계산을 구현할 수도 있습니다.
+잘 알려진 대안으로는 Python의 datetime 라이브러리와 같은 외부 라이브러리들을 사용하는 것이 있습니다. 또한, Elixir에서 날짜 계산을 구현하는 방식은 Erlang의 calendar 모듈을 기반으로 하며, 이 모듈은 사용자가 직접 날짜 계산을 수행할 수 있도록 함께 제공됩니다.
 
-# 관련 자료:
+## 참고 자료:
 
-- 공식 Elixir 문서에서는 다양한 날짜 관련 함수들에 대한 상세한 정보를 제공합니다. (https://hexdocs.pm/elixir/DateTime.html)
-- Elixir의 날짜 관련 라이브러리인 Timex를 사용하면 더 다양한 계산이 가능합니다. (https://hex.pm/packages/timex)
-- 날짜 이외에도 타임존을 다루는 타임존 라이브러리 또한 존재합니다. (https://hex.pm/packages/tzdata)
+- Official Elixir Date documentation: [https://hexdocs.pm/elixir/Date.html](https://hexdocs.pm/elixir/Date.html)
+- Elixir programming examples: [https://github.com/elixir-lang/elixir](https://github.com/elixir-lang/elixir)
+- Erlang's calendar module: [http://erlang.org/doc/man/calendar.html](http://erlang.org/doc/man/calendar.html) 
+- Python's datetime library for comparison: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)

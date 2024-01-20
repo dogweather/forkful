@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "Fish Shell: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,32 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-שליחת בקשת HTTP עם אימות בסיסי היא פעולה שמאפשרת לנו להתחבר לשרתים שונים ולקבל מהם מידע. מתכנתים מבצעים פעולה זו כדי לגשת למידע או לשלוח מידע לשרתים כגון APIs.
+## מה ולמה? 
+שליחת בקשת HTTP עם אימות בסיסי היא דרך שבה תוכנה יכולה לשלוח בקשה לשרת כאשר פרטי כניסה הם שימושיים. תכנתים משתמשים בכך כדי להבטיח כי השרת מאמת את מי ששולח ומקבל את הבקשה לפני שעובד איתה.
 
-## כיצד לעשות זאת:
-דוגמאות לקוד ופלט דוגמה נמצאים בתוך חסרוני הקוד של "Fish Shell" (Fish Shell ```)ʼʼʼ.
+## איך לעשות:
+דוגמא לקוד ב־Fish Shell שעובר לאימות מול שרת HTTP:
+```Fish Shell
+# הגדרת שם המשתמש והסיסמה
+set username myUsername
+set password myPassword
 
-שליחת בקשת GET עם אימות בסיסי:
+# שליחת בקשה עם אימות בסיסי
+curl -u $username:$password "http://my.servers.address"
 ```
-curl -u user:password http://example.com/api
-```
-כאשר "user" הוא שם המשתמש ו-"password" הוא הסיסמה שמופרדים בסימן ":". ניתן להשתמש גם בצורה זו:
-```
-curl --basic -u user:password http://example.com/api
-```
-הכינוי "--basic" מגלה לפקודה שאנו מבצעים אימות בסיסי.
+אם האימות הצליח, תקבל מענה מהנתיב שביקשת. אם לא - תקבל שגיאה.
 
-## טיול עמוק:
-הקשר היסטורי, אלטרנטיבות ופרטים מבואקשרים לשליחת בקשת HTTP עם אימות בסיסי. תוכלו למצוא את כל המידע שאתם צריכים ברשת.
+## צלילה לעומק: 
+אימות בסיסי נוצר כדי להקל על תקשורת לא מאובטחת עם שרתים. זה לא הכי בטוח, אך הוא נ־שים וקל לשימוש. חלופות - אימות digest (הקשה ולא כה נפוץ), או אימות Bearer (שמשתמש בטוקנים, נפוץ יותר). דרך שליחת הבקשה היא בהחלפת שמות המשתמשים והסיסמאות לבסיס 64 והוספתם לכותרת `Authorization` של הבקשה.
 
-כדי להגן על הפרטיות ולמנוע גישה למידע ללא הרשאות, מתכנתים משתמשים במספר כלים נוספים כדי לבצע אימות בתוך בקשת HTTP. אחד הכלים הפופולריים ביותר הוא OAuth והוא מספק ערכת כלים מקיפה לבצע אימות באתרים ויישומים מגוונים.
-
-מימוי ישיר של בקשת HTTP עם אימות בסיסי עונה למצבים מסוימים ומאפשר לנו להיישם מידע מתוך אתרים ויישומים המאפשרים אימות בסיסי.
-
-## ראו גם:
-להלן קישורים למקורות נוספים המספקים מידע נוסף על שליחת בקשת HTTP עם אימות בסיסי:
-
-- פקודת curl לשליחת בקשת HTTP עם אימות בסיסי: https://curl.haxx.se/docs/manpage
-- דף הויקי של Fish Shell שמספק מידע על שליחת בקשת HTTP עם אימות בסיסי: https://fishshell.com/docs/current/cmds/curl.html
-- המאמר "HTTP Authentication" באתר Mozilla Developer Network המסביר מקור וכיצד לבצע אימות בבקשות HTTP: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+## ראה גם: 
+1. מדריכים לשימוש ב-Fish Shell - [קישור](https://fishshell.com/docs/current/index.html)
+2. מדריך לשימוש ב-cURL - [קישור](https://curl.se/docs/manual.html)
+3. מידע על אימות בסיסי ב-HTTP - [קישור](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) 
+4. חלופות לאימות בסיסי - [קישור](https://oauth.net/2/bearer-tokens/), [קישור](https://tools.ietf.org/html/rfc7616)

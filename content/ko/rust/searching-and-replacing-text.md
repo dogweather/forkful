@@ -1,7 +1,7 @@
 ---
-title:                "텍스트 검색 및 대체하기"
-html_title:           "Rust: 텍스트 검색 및 대체하기"
-simple_title:         "텍스트 검색 및 대체하기"
+title:                "텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
+simple_title:         "텍스트 검색 및 교체"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,14 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-문자열을 검색하고 바꾸는 것은 프로그래머들이 자주 사용하는 작업입니다. 이것은 특정 문자열을 찾아낸 후 원하는 새 문자열로 바꾸는 것을 말합니다. 이는 작업의 효율성을 높이고 오류를 수정하기 위해 사용됩니다.
+
+텍스트 검색 및 교체는 특정 문자열을 찾아 다른 문자열로 대체하는 것입니다. 이것은 데이터 정제, 자동화, 기타 다양한 태스크를 수행하기 위하여 프로그래머들이 자주 사용하는 방법입니다.
 
 ## 방법:
-Rust에서 문자열을 검색하고 바꾸는 방법은 간단합니다. 가장 일반적인 방법은 문자열에서 원하는 패턴을 찾아내는 정규표현식을 사용하는 것입니다. 예를 들어, ```Rust let re = Regex::new("rust"); ```을 사용하여 "Hello, I love Rust!"라는 문자열에서 "Rust"라는 단어를 검색할 수 있습니다. 그런 다음 ```Rust re.replace_all("Hello, I love Rust!", "Python"); ```을 사용하여 "Hello, I love Python!"이라는 새 문자열로 바꿀 수 있습니다.
 
-## 깊게 파고들기:
-검색하고 바꾸는 작업은 프로그래밍에서 매우 중요합니다. 원하는 결과를 얻기 위해 코드에서 특정 문자열을 찾아내고 바꾸는 것은 매우 유용하기 때문입니다. 또한 많은 언어에서는 정규표현식을 사용하여 문자열을 검색하고 바꾸는 기능을 제공합니다. 다른 언어에서는 문자열 메소드를 활용하여 검색하고 바꾸는 작업을 수행할 수 있습니다.
+Rust에서 텍스트를 검색하고 교체하는 기본적인 방법을 알아보겠습니다.
+```Rust
+ fn main() {
+    let before = "안녕하세요 Rust입니다!";
+    let after = before.replace("Rust", "세계");
+    println!("{}", after);
+ }
+```
+이 코드가 실행되면 출력은 다음과 같습니다:
 
-## 관련 자료:
-- Rust 정규표현식 공식 문서: https://doc.rust-lang.org/std/str/struct.Regex.html
-- Rust 문자열 메소드 공식 문서: https://doc.rust-lang.org/std/string/struct.String.html
+```Rust
+"안녕하세요 세계입니다!"
+```
+
+위의 예제에서는 `replace` 함수를 사용하여 문자열 "Rust"를 "세계"로 교체하였습니다.
+
+## 심화학습
+
+### 역사적인 맥락
+텍스트 검색 및 교체는 오래전부터 존재해 왔습니다. 이것은 프로그래밍의 중요한 요소로, 다양한 언어에서 그 방법과 구현이 달리하여 계속 발전해 왔습니다.
+
+### 대안
+Rust에서는 정규 표현식(Regex)을 이용하여 더 복잡한 문자열 검색 및 교체를 수행할 수 있습니다.
+
+```Rust
+use regex::Regex;
+fn main() {
+    let re = Regex::new("Rust").unwrap();
+    let result = re.replace("안녕하세요 Rust입니다!", "세계");
+    println!("{}", result);
+}
+```
+### 구현 디테일
+Rust의 .replace는 입력받은 문자열에서 모든 인스턴스를 찾아서 교체합니다.
+
+## 추가정보
+
+더 많은 정보를 찾아볼 수 있는 웹사이트 링크입니다:
+- Rust 문서: Replace: [Rust Doc: Replace](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
+- Rust 정규 표현식: [Rust Regex](https://docs.rs/regex/)

@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Elixir: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,39 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä ja Miksi?
 
-Merkittävä osa ohjelmoinnista on tekstin käsittely ja manipulointi. Stringien interpoloiminen on yksi tapa tehdä tekstinkäsittelystä helpompaa ja tehokkaampaa. Interpolointi tarkoittaa muuttujien, arvojen tai ilmaisujen lisäämistä tekstin sekaan. Ohjelmoijien käyttäessä tätä tekniikkaa, he voivat helposti yhdistää dynaamista dataa ja kiinteitä tekstejä luomalla lopulta yhdistettyä dataa. Tämä on erityisen hyödyllistä tietojen visualisoinnissa ja raportoinnissa.
+Merkkijonojen interpolointi tarkoittaa muuttujien arvojen lisäämistä suoraan merkkijonoihin. Ohjelmoijat käyttävät sitä koodin lyhentämiseksi ja lukemisen helpottamiseksi.
 
-## Miten tehdä?
+## Kuinka toimii:
 
-Elixirissä stringien interpolointi tapahtuu lähettämällä merkkijono ```#{arvo}``` -muodossa käytetty muuttujan nimi. Aina kun Elixir tapaa tämän rakenteen, se korvaa sen muuttujan arvolla. Tämä on yksinkertainen esimerkki interpoloinnista:
+Käytä `"#{}"` syntaksia muuttujien lisäämiseksi merkkijonoihin.
 
-```Elixir
-nimi = "Kati"
-"Iltaa, #{nimi}"
+```elixir
+name = "Jorma"
+IO.puts "Hei, #{name}!"
 ```
 
-Tämä tuottaa seuraavan tulosteen:
-
-```Elixir
-"Iltaa, Kati"
-```
-
-Voit myös käyttää interpolointia aritmeettisiin laskutoimituksiin. Esimerkiksi:
-
-```Elixir
-"Iästäsi 10 vuotta plussaat #{age + 10}"
-```
-
-Tämä tulostaa "Iästäsi 10 vuotta plussaat 20", jos age-muuttuja on arvoltaan 10.
+Tuo tulostaa `Hei, Jorma!` konsoliin.
 
 ## Syvempi sukellus
 
-Interpolointi ei ole vain Elixirin ominaisuus, se on laajalti käytetty tekniikka erilaisissa ohjelmointikielissä. Joissakin kielissä interpolointi tapahtuu käyttämällä %-merkkiä. Esimerkiksi Rubyssa stringit interpoloidaan seuraavasti: ```"Iltaa, %s" % nimi```. Tämäntyyppinen interpolointi on myös mahdollista Elixirissä, mutta sen suositteleminen ei ole suositeltavaa, koska se ei ole yhtä tehokas kuin yllä kuvattu tapa.
+Merkkijonojen interpolointi on ollut ohjelmoinnissa jo pitkään, ja sitä käytetään lähes kaikissa moderneissa ohjelmointikielissä, Elixir mukaan lukien. Elixirissä interpolointi on toteutettu käyttämällä Erlangin binääri- ja murtolukukirjastoa, mikä mahdollistaa tehokkaan suorituskyvyn.
 
-Elixir käyttää `__interpolate__`-funktiota stringien manipuloinnissa. Kun interpolointi otetaan käyttöön, Elixir luo uuden version merkkijonosta, joka sisältää merkinnät muuttujien sijoittamisesta. Tämä tekee interpoloinnista turvallisen toimenpiteen, sillä muuttujien arvot muunnetaan automaattisesti merkkijonoiksi, estäen injektiohyökkäykset.
+Vaihtoehtoina merkkijonojen interpoloinnille voit käyttää `<>` operaattoria tai `IO.inspect` funktiota. Kuitenkin `"#{}"` on suositeltavaa, koska se on suoraviivaisempi ja selkeämpi.
 
 ## Katso myös
 
-Lisätietoa interpoloinnista ja muista tapauksista, joissa se voi olla hyödyllinen, löydät [Elixirin viralliselta sivustolta](https://elixir-lang.org/getting-started/string-interpolation.html). Kannattaa myös tutustua [interpoloinnin erotuksiin eri ohjelmointikielillä](https://stackoverflow.com/questions/2546097/what-is-string-interpolation) ja siihen, [miten turvallista interpolointia voidaan tehdä muissa kielissä](https://mixedmath.wordpress.com/2012/10/10/string-interpolation-in-python-r-elisp-c-c-c-java-erlang-javascript-ruby-and-the-kitchen-sink/).
+1. Elixir-lang sivusto stringien käsittelystä: https://elixir-lang.org/getting-started/basic-types.html#strings
+2. Elixir School merkkijonojen interpoloinnista: https://elixirschool.com/en/lessons/basics/strings/

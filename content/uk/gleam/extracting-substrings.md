@@ -1,7 +1,7 @@
 ---
-title:                "Видобування підрядків."
-html_title:           "Gleam: Видобування підрядків."
-simple_title:         "Видобування підрядків."
+title:                "Видобування підрядків"
+html_title:           "C++: Видобування підрядків"
+simple_title:         "Видобування підрядків"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,28 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
-Вирізання зазначень - це процес вибору певної частини рядка або рядка із великої текстової змінної. Програмісти часто зазначають підрядки для подальшої обробки або використання у своїх програмах.
+# ## Що це & навіщо?
+Видобування підрядків (substring) - це процес вилучення ділянки з більшого рядка. Зазвичай, програмісти цим користуються для обробки або аналізу конкретних частин даних, представлених рядками.
 
-## Як це зробити:
+# ## Як це зробити:
 ```Gleam
-// Оскільки Gleam побудований на основі Erlang, ми можемо використовувати функції бібліотеки String для виділення зазначень.
-let main = fn() {
-  let original_string = "Привіт світ, це Gleam";
-  let extracted_string = String.slice(6, 11, original_string);
-  // Витягнута строка буде "світ"
-  // Також, ми можемо використовувати RegExp для знаходження підрядків.
-  let extracted_regex = RegExp.match(~r/world/, original_string);
-  // Витягнута строка буде "світ"
-  play extracted_string;
-  // Результат виведений на екран буде "світ"
-}
+import gleam/string
+
+// Оригінальний рядок
+let my_string = "Привіт, світ!"
+
+// Видобування підрядка
+let hello = string.slice(my_string, 0, 6)
+
+assert hello == "Привіт"
 ```
+У цьому прикладі ми витягаємо перші 6 символів з рядка my_string.
 
-## Глибоке погруження:
-Вирізання зазначень можна вважати одним з частин синтаксису рядків. Для цього завдання також можна використовувати інші мови, такі як Java чи Python. Однак, на відміну від цих мов, Gleam має простий та зрозумілий синтаксис для вирізання зазначень. Також, у Gleam є вбудована підтримка регулярних виразів, щоб знаходити підрядки за певним шаблоном.
+## Поглиблено:
+Історично, в сфері програмування завжди було потребу в обробці і аналізі текстових даних. Завдяки видобуванню підрядків, ми можемо працювати із конкретними частинами тексту, не змінюючи оригінал.
 
-## Дивись також:
-- [Документація Gleam](https://gleam.run/)
-- [Стаття про регулярні вирази в Gleam](https://gleam.run/book/tutorials_and_extras/regex.html)
-- [Огляд Gleam на ресурсі Medium](https://medium.com/@hayo_rijnders/gleam-the-most-exciting-new-programming-language-in-the-erlang-ecosystem-10f353711ad8)
+Зазвичай, видобування підрядків реалізується через функції рівня мови, наприклад, як slice в Gleam. Але можливе й використання регулярних виразів, уточнених пошукових алгоритмів тощо.
+
+Якщо говорити про деталі імплементації, Gleam використовує Erlang VM і Erlang рядки, тому висока продуктивність і надійність операцій із рядками гарантована.
+
+## Див. також:
+1. Документація Gleam про рядки: [https://hexdocs.pm/gleam_stdlib/gleam/string.html](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
+2. Огляд основ обробки тексту: [https://www.tutorialspoint.com/computer_programming/computer_programming_text_processing.htm](https://www.tutorialspoint.com/computer_programming/computer_programming_text_processing.htm)
+3. Як працювати з рядками в Erlang: [https://erlang.org/doc/man/erl_syntax.html](https://erlang.org/doc/man/erl_syntax.html)

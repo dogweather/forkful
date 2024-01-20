@@ -1,7 +1,7 @@
 ---
-title:                "Affichage de sortie de débogage"
-html_title:           "Rust: Affichage de sortie de débogage"
-simple_title:         "Affichage de sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,53 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Qu'est-ce et Pourquoi?
 
-Imprimer des sorties de débogage est une technique qui permet aux programmeurs de voir des informations utiles pendant l'exécution d'un programme. Cela peut les aider à identifier et à résoudre les erreurs plus facilement.
+Imprimer des traces de débogage, c'est afficher des informations qui aident à comprendre le déroulement et l'état d'un programme. Les programmeurs l'utilisent souvent pour dépister et résoudre les bugs, valider le comportement attendu du logiciel.
 
 ## Comment faire :
 
-Utilisez la macro ``eprintln!`` pour imprimer une sortie de débogage sur la sortie d'erreur standard :
+Vous pouvez implémenter la capacité de débogage dans Rust avec le macro dbg!. Ainsi, il affiche une trace de l'expression et de sa valeur. Voici un exemple basique:
 
-```
+```Rust
 fn main() {
-    let a = 5;
-    eprintln!("La valeur de a est {}", a);
+    let l = (1..5).collect::<Vec<_>>();
+    dbg!(l);
 }
 ```
 
-Cela produira une sortie de débogage comme celle-ci :
+Ce code générera l'affichage suivant :
 
-```
-La valeur de a est 5
-```
-
-Vous pouvez également utiliser la macro ``dbg!`` pour faire la même chose, mais cette fois-ci, la sortie de débogage sera imprimée sur la sortie standard :
-
-```
-fn main() {
-    let a = 5;
-    dbg!(a);
-}
+```Rust
+[src/main.rs:3] l = [
+   1,
+   2,
+   3,
+   4
+]
 ```
 
-Résultat :
+## Plongée en profondeur:
 
-```
-[src/main.rs:3] a = 5
-```
+En Rust, le debug a toujours été au cœur de la conception. Historiquement, l'équipe de développement de Rust a mis l'accent sur l'importance du débogage pratique et informatif, ce qui a conduit à l'introduction du macro dbg!.
 
-## Plongée en profondeur :
+Des alternatives existent, comme le module `log` qui fournit un ensemble de macros pour le journalisation, du niveau d'erreur à celui d'information. Cependant, pour le débogage simple, dbg! est souvent plus pratique.
 
-Avant la version 1.32 de Rust, il n'y avait pas de solution standard pour imprimer des sorties de débogage. Les programmeurs devaient donc utiliser des astuces telles que les macros personnalisées ou les fonctions spéciales pour y parvenir.
+L'implémentation courante de '`dbg!`’ forme une chaîne de caractères contenant le nom du fichier source, le numéro de ligne et le résultat de l'expression. L'expression est évaluée une seule fois.
 
-La macro ``dbg!`` a été ajoutée dans la version 1.32, facilitant ainsi l'impression de sorties de débogage en utilisant une syntaxe plus simple et plus intuitive. De plus, la macro ``eprintln!`` est également disponible pour ceux qui préfèrent imprimer leurs sorties de débogage sur la sortie d'erreur standard.
+## Pour en savoir plus:
 
-Il existe également d'autres alternatives pour imprimer des sorties de débogage en Rust, telles que la bibliothèque ``log`` qui propose des fonctionnalités avancées pour gérer les niveaux de débogage et la journalisation.
+Pour plus d'informations sur le débogage avec Rust, consultez les liens suivants :
 
-En termes d'implémentation, la macro ``dbg!`` utilise la fonction interne ``format!`` pour formater la sortie de débogage. Quant à la macro ``eprintln!``, elle utilise la fonction interne ``eprint!`` pour imprimer sur la sortie d'erreur standard.
-
-## Voir aussi :
-
-- Guide officiel de Rust sur la sortie de débogage : https://doc.rust-lang.org/rust-by-example/hello/print/print_debug.html
-- Bibliothèque ``log`` pour la gestion des niveaux de débogage : https://docs.rs/log/0.4.14/log/
+- Documentation officielle de Rust : https://doc.rust-lang.org/std/macro.dbg.html
+- Guide de débogage de Rust : https://github.com/rust-lang/rls/blob/master/debugging.md

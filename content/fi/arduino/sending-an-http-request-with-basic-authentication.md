@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnin lähettäminen http-pyynnön avulla"
-html_title:           "Arduino: Perusautentikoinnin lähettäminen http-pyynnön avulla"
-simple_title:         "Perusautentikoinnin lähettäminen http-pyynnön avulla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,154 +10,76 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Lähettämällä HTTP-pyynnön perusautentikoinnin kanssa, voit hakea tietoja verkosta ja suojata niitä samalla salasanalla. Tämä on hyödyllistä, sillä se parantaa tietoturvaa ja antaa sinulle mahdollisuuden saada tietoa ulkopuolisista lähteistä.
+## Mitä & Miksi?
 
-## Miten:
-Esimerkkejä ohjelmoinnista ja tulosteista ```Arduino ... ``` koodilohkoilla.
+HTTP-pyyntö perusautentikoinnilla on web-sovellusten tapa siirtää tietoja verkossa turvallisesti. Ohjelmoijat käyttävät sitä, jotta tiedot eivät eksyisi ulkopuolisille.
 
-Esimerkki hakee tietoja Google Maps API:sta autentikoinnin avulla:
+## Näin se tehdään:
+
+HTTP-pyynnön lähettäminen Arduino-levyltä vaatii Ethernet-kirjaston. 
+
+Aloitamme määrittämällä verkon asetukset:
 
 ```Arduino
-#include <WiFiClient.h>
-#include <ESP8266HTTPClient.h>
+#include <Ethernet.h>
 
-// Replace with your network credentials
-const char *ssid = "YourNetworkName";
-const char *password = "YourNetworkPassword";
+byte mac[] = {  
+  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED
+};
 
-// Replace with your Google Maps API key
-String apiKey = "YourAPIKey";
+IPAddress server(74,125,232,128); // Google
 
+EthernetClient client;
+```
+Seuraavaksi luomme `setup()`-funktion, jossa aloitamme Ethernet-yhteyden ja tulostamme Ethernet-asetukset:
+
+```Arduino
 void setup()
 {
-  Serial.begin(115200);
-  WiFi.begin(ssid, password);
+  Ethernet.begin(mac);
+  Serial.begin(9600);
 
-  while (WiFi.status() != WL_CONNECTED)
-  {
-    delay(1000);
-    Serial.println("Connecting to WiFi...");
-  }
-  Serial.println("Connected to WiFi!");
-
-  // Set up HTTP request
-  HTTPClient http;
-  http.begin("https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=" + apiKey);
-  http.addHeader("Content-Type", "application/json");
-
-  // Send request with basic authentication
-  http.setAuthorization("username", "password");
-  int statusCode = http.sendRequest();
-
-  // Check for successful response
-  if (statusCode > 0)
-  {
-    // Read response and print to serial monitor
-    String response = http.getString();
-    Serial.println(response);
-  }
-  else
-  {
-    Serial.println("Error in HTTP request");
+  while (!Serial) {
+    ;
   }
 
-  // Close connection
-  http.end();
+  delay(1000);
+  
+  Serial.println(Ethernet.localIP());
 }
 
+```
+Lopuksi luomme `loop()`-funktion, jossa lähetämme HTTP-pyynnön:
+
+```Arduino
 void loop()
 {
+  if (client.connect(server, 80)) {
+    client.println("GET /search?q=arduino HTTP/1.1");
+    client.println("Host: www.google.com");
+    client.println("Authorization: Basic ");
+    client.println("Connection: close");
+    client.println();
+  } 
+  else {
+    Serial.println("connection failed");
+  }
+
+  delay(10000);
 }
 ```
+## Syvällisempi sukellus
 
-Tulostus serial monitoriin:
+HTTP-pyynnön perusautentikointi on ollut järjestelmien sisäänkirjautumisen selkäranka jo vuosikymmenten ajan. Se on vanha, mutta edelleen suosittu tapa siirtää tietoja verkossa auktorisoidun käyttäjän toimesta. Vaikka monitahoisemmat autentikointiin perustuvat järjestelmät, kuten OAuth, ovat näinä päivänä enemmän normi, perusautentikointi pysyy edelleen yksinkertaisena ja tehokkaana vaihtoehtona.
 
-```
-HTTP/1.1 200 OK
-Content-Type: application/json; charset=UTF-8
-Date: Wed, 14 Aug 2019 00:00:00 GMT
-Expires: Thu, 15 Aug 2019 00:00:00 GMT
-Cache-Control: public, max-age=86400
-Server: ESF
-Content-Encoding: gzip
-X-XSS-Protection: 0
-X-Frame-Options: SAMEORIGIN
-Alt-Svc: quic=":443"; ma=2592000; v="46,43,39"
-Transfer-Encoding: chunked
-Connection: close
-
-{
-  "results" : [
-    {
-      "address_components" : [
-        {
-          "long_name" : "1600",
-          "short_name" : "1600",
-          "types" : [ "street_number" ]
-        },
-        {
-          "long_name" : "Amphitheatre Parkway",
-          "short_name" : "Amphitheatre Pkwy",
-          "types" : [ "route" ]
-        },
-        {
-          "long_name" : "Mountain View",
-          "short_name" : "Mountain View",
-          "types" : [ "locality", "political" ]
-        },
-        {
-          "long_name" : "California",
-          "short_name" : "CA",
-          "types" : [ "administrative_area_level_1", "political" ]
-        },
-        {
-          "long_name" : "United States",
-          "short_name" : "US",
-          "types" : [ "country", "political" ]
-        },
-        {
-          "long_name" : "94043",
-          "short_name" : "94043",
-          "types" : [ "postal_code" ]
-        }
-      ],
-      "formatted_address" : "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA",
-      "geometry" : {
-         "location" : {
-            "lat" : 37.4219999,
-            "lng" : -122.0839589
-         },
-         "location_type" : "ROOFTOP",
-         "viewport" : {
-            "northeast" : {
-               "lat" : 37.4233488802915,
-               "lng" : -122.0826099197085
-            },
-            "southwest" : {
-               "lat" : 37.4206509197085,
-               "lng" : -122.0853078802915
-            }
-         }
-      },
-      "place_id" : "ChIJ2eUgeAK6j4ARbn5u_wAGqWA",
-      "plus_code" : {
-         "compound_code" : "CWC8+W5 Mountain View, California",
-         "global_code" : "849VCWC8+W5"
-      },
-      "types" : [ "street_address" ]
-    }
-  ],
-  "status" : "OK"
-}
-```
-
-## Syvempi sukellus:
-Perusautentikointi on yksi vanhimmista ja yksinkertaisimmista tavoista varmistaa tietoturva HTTP-pyynnöissä. Sitä käytetään edelleen monissa sovelluksissa, mutta monet suosivat nyt turvallisempia menetelmiä, kuten Token-autentikointia.
+HTTP-pyynnöt perusautentikoinneilla on helppo toteuttaa Arduino-laitteissa kämin Ethernet-kirjastoa. Kun se on määritelty, voit ohjata verkkoliikennettä helposti. Vaikka on tärkeää huomata, että perusautentikointi lähetetään Base64-koodauksessa eikä se ole salattu. Siksi se ei ole ihanteellinen ratkaisu herkkien tietojen käsittelyyn.
 
 ## Katso myös:
-Tässä on muutamia linkkejä aiheeseen liittyviin lähteisiin:
 
-- [HTTPClient library in Arduino](https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient)
-- [Google Maps API documentation](https://developers.google.com/maps/documentation)
-- [Basic Authentication in HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+Jos haluat lukea lisää HTTP-pyynnöstä perusautentikointia ja muita tapoja käsitellä verkkoliikennettä Arduinolla, voit tutustua seuraaviin resursseihin:
+
+1. Arduino Ethernet Library: https://www.arduino.cc/en/Reference/Ethernet
+2. HTTP Basic Authentication: https://tools.ietf.org/html/rfc7617
+3. Miten käyttää Arduinon Ethernet Shield: http://www.circuitbasics.com/how-to-set-up-the-dht11-humidity-sensor-on-an-arduino/
+4. Miten salata HTTP-pyynnöt: https://www.arduino.cc/en/Tutorial/WebClientRepeating
+5. Arduino Ethernet Shieldin ohjelmointi: https://www.instructables.com/Programming-the-Arduino-Ethernet-Shield

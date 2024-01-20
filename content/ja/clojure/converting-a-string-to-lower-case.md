@@ -1,6 +1,6 @@
 ---
 title:                "文字列を小文字に変換する"
-html_title:           "Clojure: 文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,23 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、なぜ？
-文字列を小文字に変換することは、単純に文字列のすべての文字を小文字に変換することです。プログラマーは、大文字と小文字を区別しない比較を行いたい場合や、文字列の外観を統一したい場合など、さまざまな理由でこれを行います。
+## 何となぜ？
 
-## 方法：
-以下のコード例を使用して、文字列を小文字に変換する方法を示します。```Clojure
-(.toLowerCase "Hello World")
-;;=> "hello world"
+文字列を小文字に変換するとは、基本的に大文字を小文字にする操作です。これは、一致テスト、ソート、または他の比較操作を実行する前の文字列の正準化が必要な際にプログラマーが行います。
 
-(.toLowerCase "APPLE")
-;;=> "apple"
-``` 
+## 使い方：
 
-## 深く掘り下げる：
-- 歴史的な文脈：文字列を大文字と小文字に分ける方法は、意外と難しい問題でした。コンピューター上で大文字と小文字を区別するのは、印刷機械の登場以前の古い印刷方法に遡ることができます。
-- 代替案：他のプログラミング言語では、文字列を小文字に変換するために専用のメソッドが利用可能です。Clojureでは、Javaのメソッドを使用することで文字列を小文字に変換することができます。
-- 実装の詳細：Clojureでは、Javaの文字列クラスのメソッド `.toLowerCase` を使用して、文字列を小文字に変換しています。
+以下のようなコード例とその結果を参考にしてください：
 
-## 関連情報へのリンク：
-- [Clojureドキュメント - `.toLowerCase`](https://clojuredocs.org/clojure.core/to-lower-case)
-- [Java文字列クラス - `.toLowerCase`](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--)
+```Clojure
+(defn to-lower-case [str]
+  (.toLowerCase str))
+```
+
+この関数は、指定された文字列をすべて小文字に変換します。以下に例を示します。
+
+```Clojure
+(println (to-lower-case "HELLO WORLD")) ;; => hello world
+```
+
+## 深堀り：
+
+文字列の小文字化はコンピューティングの歴史の初期から存在していました。最初は機械語やアセンブリ言語レベルで操作が行われていましたが、現在ではほぼすべての高級プログラミング言語で組み込み関数として使用できます。
+
+代替手段としては、特定の状況（例えば、特定のキャラクタセットでの使用）で自分で関数を書くか、または異なる方法で大文字と小文字を無視することなどがあります。
+
+`toLowerCase`メソッドの内部実装により、無視してよい詳細な差異が存在します。在り方としては、特定の状況下での特別な文字の変換（例えば、トルコ語の"ı"のような）をうまく処理します。
+
+## 参考資料：
+
+- Clojure String API - https://clojuredocs.org/clojure.string/lower-case
+- UnicodeとCase Mapping - http://www.unicode.org/versions/Unicode7.0.0/ch03.pdf#G33902
+- 他のプログラミング言語での文字列の小文字化 - https://rosettacode.org/wiki/String_case

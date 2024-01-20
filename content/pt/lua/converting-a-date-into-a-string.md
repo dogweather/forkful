@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma data em uma sequência de caracteres"
-html_title:           "Lua: Convertendo uma data em uma sequência de caracteres"
-simple_title:         "Convertendo uma data em uma sequência de caracteres"
+title:                "Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,38 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O quê & Por quê?
 
-Converter uma data em uma string é uma tarefa comum na programação, em que uma data é transformada em uma representação visual legível para humanos. Isso é necessário para que as datas possam ser exibidas e manipuladas de forma mais intuitiva.
-
-Os programadores geralmente fazem isso porque a linguagem de programação pode ter uma forma de armazenar datas internamente, mas é mais conveniente exibi-las em uma forma mais legível para os usuários.
+Converter uma data para uma string é o processo de transformar um objeto de data em uma sequência de caracteres. Programadores fazem isso para tornar a data mais legível ou para usá-la em um contexto que exige uma string.
 
 ## Como fazer:
 
+Aqui está um exemplo simples de como converter uma data para uma string no Lua:
+
 ```Lua
--- Primeiro, precisamos importar a biblioteca padrão de datas do Lua:
-local date = require "date"
-
--- Em seguida, criamos uma instância da data que queremos converter:
-local minhaData = date(2020, 05, 20)
-
--- Agora, usamos o método tostring () para converter a data em uma string:
-print(tostring(minhaData))
--- Output: "2020-05-20"
+os.time()
+data = os.date('*t')
+dataFormatada = string.format('%02d/%02d/%04d', data.day, data.month, data.year)
+print (dataFormatada)
 ```
 
-## Mergulho profundo:
+E a seguir, o output do código acima será:
 
-Historicamente, a conversão de datas em strings costumava ser feita manualmente, usando operações aritméticas para obter o dia, mês e ano e depois juntá-los em uma string no formato desejado. Felizmente, com o avanço da tecnologia, a maioria das linguagens de programação agora possui métodos embutidos ou bibliotecas específicas para converter datas em strings.
+```Lua
+09/07/2022
+```
 
-Alternativamente, os programadores também podem optar por manipular as datas em um formato de timestamp, que é uma representação numérica do tempo decorrido desde uma data específica. Isso pode ser útil para cálculos mais complexos com datas, mas não é tão intuitivo para os usuários finais.
+## Aprofundando:
 
-No Lua, a biblioteca "date" suporta uma variedade de formatos de data e hora, incluindo RFC 3339 e ISO 8601. Além disso, os usuários podem personalizar a representação de datas usando o método newformat () e especificando o formato desejado.
+- **Contexto histórico**: Lua foi criado em 1993 e desde então tem sido uma ferramenta útil para converter datas em strings. Isso sempre ajudou os programadores a manipular e apresentar datas de uma forma mais compreensível.
+- **Alternativas**: Além do método `os.date`, Lua também oferece a função `os.time`, permitindo converter a data atual para um timestamp. No entanto, essa não retorna a data como string.
+- **Detalhes de implementação**: Quando você chama a função `os.date` com o argumento `'*t'`, Lua retorna uma tabela representando a data e o tempo atuais. Depois, a função `string.format` é usada para formatar a data no formato desejado.
 
 ## Veja também:
 
-- Documentação oficial da biblioteca "date" do Lua: https://keplerproject.github.io/date/
+- Documentação oficial do Lua: [https://www.lua.org/manual/5.4/manual.html](https://www.lua.org/manual/5.4/manual.html)
+- String Format: [http://lua-users.org/wiki/StringLibraryTutorial](http://lua-users.org/wiki/StringLibraryTutorial)
 
-- Tutorial sobre como lidar com datas em Lua: https://www.lua.org/pil/22.1.html
-
-- Guia abrangente sobre o padrão ISO 8601 para formatação de datas: https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso8601-2004e.pdf
+Este artigo foi destinado a ser uma introdução rápida e sucinta ao tema de converter datas para strings no Lua. Para informações mais detalhadas, consulte a documentação oficial do Lua.

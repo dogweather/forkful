@@ -1,6 +1,6 @@
 ---
 title:                "Tworzenie tymczasowego pliku"
-html_title:           "Javascript: Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
 simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
+Tworzenie tymczasowego pliku polega na generowaniu krótkotrwałego miejsca do przechowywania danych, które są użyteczne tylko przez ograniczony czas. Programiści robią to, gdy potrzebują miejsca na tymczasowe przechowywanie informacji, które są niezbędne dla bieżącego zadania, ale nie są potrzebne na stałe.
 
-Tworzenie tymczasowych plików jest popularną praktyką wśród programistów, ponieważ pozwala na przechowywanie danych tymczasowych lub tworzenie plików konfiguracyjnych w trakcie wykonywania programu. Jest to szczególnie przydatne w przypadku, gdy dane nie są potrzebne po zakończeniu działania programu i nie chcemy utrudniać pracy naszemu systemowi poprzez pozostawienie niepotrzebnych plików.
-
-## Jak to zrobić?
+## Jak to zrobić:
+W JavaScript możemy użyć modułu `tmp`, który dostarcza wygodne funkcje do tworzenia plików tymczasowych. Oto prosty przykład:
 
 ```Javascript
-const fs = require('fs');
-const path = require('path');
+var tmp = require('tmp');
 
-// Tworzenie pliku tymczasowego w folderze projektowym
-const tempFile = path.join(__dirname, 'temp.txt');
-// Zapis do pliku
-fs.writeFileSync(tempFile, "To jest tymczasowy plik!");
-// Odczyt z pliku
-let tempData = fs.readFileSync(tempFile, 'utf-8');
-console.log(tempData); //Output: To jest tymczasowy plik!
+tmp.file(function errCreate(err, path, fd, cleanupCallback) {
+  if (err) throw err;
 
-// Usuwanie pliku tymczasowego
-fs.unlinkSync(tempFile);
+  console.log("Scieżka tymczasowego pliku: ", path);
+  console.log("Deskryptor pliku: ", fd);
+
+  // Czyść po sobie
+  cleanupCallback();
+});
 ```
 
-## Głębsze zanurzenie
+Po uruchomieniu powyższego kodu możemy zobaczyć ścieżkę do tymczasowego pliku i jego deskryptor pliku.
 
-Tworzenie tymczasowych plików jest praktykowane od lat i jest wykorzystywane w różnych językach programowania. W JavaScript możemy użyć wbudowanej biblioteki fs do operacji na plikach, takich jak odczytywanie i zapisywanie danych. Jedną z alternatywnych metod jest wykorzystanie biblioteki os-tmpdir do generowania ścieżki do folderu tymczasowego.
+## W głębi tematu:
+Historia JavaScript nie jest pełna informacji na temat tworzenia plików tymczasowych, ponieważ większość operacji przetwarzania plików jest zazwyczaj realizowana na poziomie serwera, na przykład z wykorzystaniem Node.js. Alternatywą dla tworzenia plików tymczasowych jest korzystanie z pamięci podręcznej lub sesji. Wybór metody zależy od specyfiki zadania. Twórzenie plików tymczasowych jest szczególnie użyteczne, gdy mamy do czynienia z dużymi ilościami danych, które przekraczają pojemność pamieci podręcznej lub sesji.
 
-## Zobacz również
+## Zobacz również:
+Aby dowiedzieć się więcej, zajrzyj na poniższe strony:
 
-- Dokumentacja Node.js dotycząca wbudowanej biblioteki fs: https://nodejs.org/api/fs.html
-- Moduł npm os-tmpdir: https://www.npmjs.com/package/os-tmpdir
+1. Oficjalna dokumentacja `tmp` [dostępna tutaj](https://www.npmjs.com/package/tmp)
+2. Post na temat różnic pomiędzy przechowywaniem danych w plikach, pamięci podręcznej i sesji [dostępny tutaj](https://stackoverflow.com/questions/47833664/when-to-use-cache-vs-session-vs-temporary-file-in-a-web-application)

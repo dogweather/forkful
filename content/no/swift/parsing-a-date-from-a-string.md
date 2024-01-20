@@ -1,7 +1,7 @@
 ---
-title:                "Analysering av dato fra en streng"
-html_title:           "Swift: Analysering av dato fra en streng"
-simple_title:         "Analysering av dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,35 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Å parsere en dato fra en streng er en prosess der et programmeringsprogram tar en dato, skrevet som en streng med tall og symboler, og konverterer den til et format som kan behandles av programmet. Dette gjøres vanligvis for å kunne bruke datoen til å utføre spesifikke oppgaver i koden.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
-For å parse en dato fra en streng i Swift kan du bruke ```DateFormatter``` klassen. Først må du spesifisere formatet som datoen er skrevet i, for eksempel "dd-MM-yyyy" for en dato skrevet i formatet dag-måned-år. Deretter kan du bruke ```date(from: String)``` metoden for å konvertere strengen til en ```Date```-instans. Se eksempelet under:
+Å parse en dato fra en streng handler om å konvertere en tekstrepresentasjon av en dato til en faktisk datoobjekt. Dette gjøres for at programmerere skal kunne manipulere og utføre operasjoner på datoen, som ikke ville vært mulig med en enkel tekststreng.
 
-```
-// Definer datoformatet
-let format = "dd-MM-yyyy"
+## Hvordan gjøre det:
 
-// Opprett en DateFormatter-instans
-let formatter = DateFormatter()
+Her er et Swift-eksempel på hvordan du kan parse en datostreng:
 
-// Konfigurer formatteren med datoformatet
-formatter.dateFormat = format
+```Swift
+import Foundation
 
-// Parse datoen fra en streng
-let dateString = "31-12-2020"
-let date = formatter.date(from: dateString)
+let dateString = "2021-09-15T17:30:00Z"
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+let date = dateFormatter.date(from: dateString)
 
-// Skriv ut datoen
 print(date)
-// Output: Optional(2020-12-31 00:00:00 +0000)
 ```
 
-## Dykk dypere:
-Å kunne parsere datoer fra strenger har vært en viktig del av programmering siden tidlig på 1900-tallet. I tillegg til å bruke ```DateFormatter``` kan du også bruke andre metoder, som å bruke regex-uttrykk eller en tredjeparts bibliotek som "NSDateFormatterExtensions". Det kan også være nyttig å lese dokumentasjonen for ```DateFormatter```-klassen for å lære mer om de forskjellige formatene og mulighetene for formatering.
+Hvis du kjører koden, vil dette være output:
 
-## Se også:
-- [Apple Developer - DateFormatter Documentation](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Swift by Sundell - Working With Dates in Swift](https://www.swiftbysundell.com/basics/dates/)
-- [NSHipster - DateFormatter](https://nshipster.com/nsformatter/)
+```Swift
+Optional(2021-09-15 17:30:00 +0000)
+```
+
+## Dypdykk:
+
+Parsing av datostrenger har en lang historie, da dette er en vanlig operasjon i mange programmeringsspråk. Historisk sett, har forskjellige språk og biblioteker benyttet forskjellige metoder og formater for å parse datostrenger, noe som kan skape forvirring og inkonsistens.
+
+Det finnes flere alternative måter å parse datostrenger på i Swift, inkludert bruk av `DateComponents` eller `ISO8601DateFormatter` avhengig av strengformatet.
+
+Når du parser en datostreng i Swift, er det viktig å være klar over enkelte detaljer. DateFormatter tar hensyn til både tidsstempel og tidssone, så sørg for at datoformatet ditt matcher strengen du prøver å parse. Hvis det ikke gjør det, returnerer metoden `nil`.
+
+## Se Også:
+
+Du kan lese mer om date parsing og relaterte emner på følgende lenker:
+- [Apple's Date and Time Programming Guide](https://developer.apple.com/documentation/foundation/date_and_time_programming/) 
+- [Swift Date Formats From String](https://nsdateformatter.com/)
+- [Parsing ISO-8601 DateTime with Swift](https://useyourloaf.com/blog/parsing-iso-8601-dates-with-swift/)

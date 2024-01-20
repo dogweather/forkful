@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Fish Shell: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -10,28 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
+## O Que & Por Que?
+Começar um novo projeto de programação é como iniciar uma nova aventura, onde você dá vida às suas idéias por meio de código. Os programadores o fazem para solucionar problemas, aprender novas habilidades e fazer contribuições significativas para a comunidade.
 
-Começar um novo projeto é o ato de iniciar um novo desenvolvimento de software, criando um espaço limpo e organizado para escrever e testar seu código. Os programadores fazem isso para garantir que seu código seja bem estruturado e tenha um bom fluxo de trabalho durante o desenvolvimento.
+## Como Fazer:
+Aqui está um exemplo básico de como criar um novo diretório e iniciar um projeto no Fish Shell
 
-## Como fazer:
+```Fish Shell
+mkdir meu_novo_projeto
+cd meu_novo_projeto
+```
+Após isso, você pode criar e editar seu arquivo de código usando uma ferramenta de edição de texto de sua escolha. Aqui está como abrir um novo arquivo no vim.
 
-```Fish Shell``` torna o processo de iniciar um novo projeto extremamente fácil e eficiente. Aqui estão os passos simples para começar:
+```Fish Shell
+vim main.fish
+```
+No arquivo main.fish, você pode escrever seu código. Aqui está um exemplo de código 'Hello World' em Fish Shell.
 
-1. Crie um novo diretório para o seu projeto: ``` mkdir meu_projeto ```;
-2. Navegue até o novo diretório: ``` cd meu_projeto ```;
-3. Inicie o ambiente virtual: ``` source venv/bin/activate ```;
-4. Instale as dependências necessárias: ``` pip install requisitos.txt ```;
-5. Comece a escrever seu código!
- 
-## Deep Dive:
+```Fish Shell
+echo "Olá, Mundo!"
+```
+Agora, para rodar o seu código, você só precisa chamá-lo da seguinte maneira:
 
-O processo de começar um novo projeto tem sido feito há muito tempo por programadores, mas a Fish Shell trouxe uma nova abordagem com sua simplicidade e eficiência. Alternativas para iniciar um novo projeto em outras shells incluem comandos mais complicados e demorados.
+```Fish Shell
+fish main.fish
+```
+A saída será:
 
-Além disso, a Fish Shell possui uma implementação inteligente ao criar diretórios e ativar ambientes virtuais. Isso economiza seu tempo e esforço, permitindo que você se concentre na escrita de código de qualidade.
+```Fish Shell
+Olá, Mundo!
+```
 
-## Veja também:
+## Mergulho Profundo
+O Fish Shell é um shell Unix criado com o objetivo de ser mais interativo e user-friendly que os shells tradicionais. Ele incorpora recursos como destaque de sintaxe e auto-completar de comandos. Embora existam alternativas como Bash e Zsh, o Fish Shell se destaca pela sua facilidade de uso, especialmente para novatos.
 
-- [Documentação oficial da Fish Shell](https://fishshell.com/docs/current/index.html)
-- [GitHub oficial da Fish Shell](https://github.com/fish-shell/fish-shell)
-- [Tutorial de como começar um novo projeto com o Fish Shell](https://medium.com/@hafizshafiei/starting-new-project-using-fish-shell-93cdc8a5df6c)
+Quando você inicia um novo projeto, está praticamente criando um novo ambiente de trabalho. Este ambiente é completamente isolado, o que permite evitar conflitos entre diferentes projetos que possam estar usando diferentes versões de pacotes e bibliotecas.
+
+## Veja Também
+Aqui estão alguns links úteis para aprender mais sobre o Fish Shell e desenvolvimento de projetos:
+1. Documentação oficial do Fish Shell: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+2. Um rápido tutorial em português sobre Fish Shell: [https://medium.com/@bruno.krebs/fish-shell-uma-alternativa-ao-bash-e-zsh-349b869e244d](https://medium.com/@bruno.krebs/fish-shell-uma-alternativa-ao-bash-e-zsh-349b869e244d)
+3. Stack Overflow: [https://stackoverflow.com/questions/tagged/fish](https://stackoverflow.com/questions/tagged/fish) para diversas perguntas e respostas sobre o uso do Fish Shell.

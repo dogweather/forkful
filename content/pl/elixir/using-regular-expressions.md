@@ -1,6 +1,6 @@
 ---
 title:                "Korzystanie z wyrażeń regularnych"
-html_title:           "Elixir: Korzystanie z wyrażeń regularnych"
+html_title:           "Arduino: Korzystanie z wyrażeń regularnych"
 simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,36 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest wyrażenie regularne (ang. Regular expression)?
+## Co i Dlaczego?
 
-Wyrażenie regularne jest ciągiem znaków, który działa jako szablon do dopasowania pewnych wzorców tekstu. Jest to często wykorzystywane narzędzie przez programistów do wykonywania operacji na tekście, takich jak wyszukiwanie, zastępowanie i filtrowanie.
+Regularne wyrażenia są to wzorce pomagające odnaleźć określone sekwencje znaków w tekście. Programiści wykorzystują je do walidacji danych, wyszukiwania, dzielenia tekstu i zastępowania fragmentów tekstu.
 
-## Jak używać wyrażeń regularnych w Elixirze?
+## Jak to zrobić:
 
-Wykorzystując wbudowany moduł `Regex`, możesz używać wyrażeń regularnych w swoim kodzie Elixir. Poniżej znajdują się przykłady kodu, które pokazują, jak użyć wyrażeń regularnych w Elixirze:
+Chcesz znaleźć wszystkie liczby w tekście? Spójrz na następujący kod:
 
-```
-# Wyszukuje wszystkie wystąpienia ciągu 'Elixir' w tekście
-Regex.run(~r/Elixir/, "Uczymy się Elixir'a")
-
-# Sprawdza, czy dany tekst zawiera liczbę
-Regex.scan(~r/\d+/, "Elixir 1.10.0")
-
-# Zastępuje wystąpienia 'Elixir' przez 'Ruby' w tekście
-Regex.replace(~r/Elixir/, "Uczymy się Elixir'a", "Uczymy się Ruby'ego")
-
-# Dopasowuje jedynie duże litery w tekście
-Regex.scan(~r/[A-Z]+/, "Elixir")
+```elixir
+tekst = "Cena jabłek to 6 zł, gruszki kosztują 8 zł."
+:re.run(tekst, ~r/\b\d+\b/, capture: :all_but_first) |> elem(1)
 ```
 
-## Głębszy wgląd
+Wynik to:
 
-Wyrażenia regularne istnieją już od wielu lat i są szeroko wykorzystywane w programowaniu.  Są one również dostępne w innych językach programowania, takich jak Perl, Python czy JavaScript.
+```elixir
+["6", "8"]
+```
 
-Alternatywą dla wyrażeń regularnych w Elixirze jest użycie funkcji z modułu `String`, takich jak `contains?` czy `replace`. Jednak dla bardziej złożonych operacji na tekście, użycie wyrażeń regularnych może być wygodniejsze i szybsze.
+Wzorzec \b\d+\b oznacza dowolną liczbę całościową.
 
-Implementacja wyrażeń regularnych w Elixirze opiera się na języku Erlang i wzorcu "bezpiecznej sekstrakcji" (ang. safe extraction). Dzięki temu, operacje te są bezpieczne i nie powinny powodować błędów w Twoim kodzie.
+## Więcej Wiedzy:
 
-## Zobacz również
+Regularne wyrażenia (regex) powstały w latach 50. ubiegłego stulecia i wciąż są popularne, pomimo alternatyw, takich jak biblioteki do analizy tekstu. Regexy są wszechstronne, ale mogą być trudne do odczytania.
 
-Więcej informacji na temat wyrażeń regularnych w Elixirze możesz znaleźć w [dokumentacji oficjalnej](https://hexdocs.pm/elixir/Regex.html) oraz [poradniku Elixir School](https://elixirschool.com/pl/lessons/advanced/pattern-matching/).
+Elixir używa silnika regexów opartego o bibliotekę PCRE, która posiada takie funkcje jak lookahead i lookbehind.
+
+Alternatywą dla regexów mogą być funkcje dostępne w Elixir, takie jak `String.split/1` czy `String.replace/3`.
+
+## Zobacz także:
+
+1. Dokumentacja Elixir'a o regexach: [Erlang :re](https://hexdocs.pm/elixir/1.12/regex.html)
+2. Tutorial o regularnych wyrażeniach: [RexEgg](http://www.rexegg.com/)
+3. Weryfikacja poprawności regularnego wyrażenia: [RegExr](https://regexr.com/)

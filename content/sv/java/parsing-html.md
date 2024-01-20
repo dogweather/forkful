@@ -1,6 +1,6 @@
 ---
 title:                "Analysera html"
-html_title:           "Java: Analysera html"
+html_title:           "Arduino: Analysera html"
 simple_title:         "Analysera html"
 programming_language: "Java"
 category:             "Java"
@@ -10,26 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-När vi pratar om att "parsa HTML" så menar vi att konvertera HTML-kod till ett strukturerat format som en dator kan förstå och bearbeta. Detta är användbart för programmerare eftersom det ger dem möjlighet att automatisera processer som involverar HTML, till exempel att söka efter specifika element eller extrahera data från en webbsida.
+## Vad & Varför?
+Att tolka (parse) HTML handlar om att konvertera HTML-data till ett mer "hanterbart" format, såsom ett trädstruktur. Det är viktigt för programmerare att gör detta för att kunna bearbeta, analysera, och manipulera webbinnehåll på ett effektivt sätt.
 
-Hur fungerar det?
-I Java kan vi använda verktyget Jsoup för att parsa HTML. Detta verktyg gör om HTML-koden till ett trädliknande strukturerat format, vilket gör det lättare att navigera och hämta data från. Här är ett exempel på hur vi kan använda det för att hämta innehållet i en <h1> tagg:
+## Hur man gör:
+I Java kan du använda biblioteket JSoup för att göra detta. JSoup är en robust och flexibel bibliotek för att arbeta med HTML-data. Till exempel:
 
 ```Java
-Document doc = Jsoup.connect("https://www.example.com").get();
-Element h1 = doc.selectFirst("h1");
-System.out.println(h1.text());
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String html = "<html><head><title>Test</title></head>"
+                    + "<body><p>Testparagraf.</p></body></html>";
+        Document doc = Jsoup.parse(html);    
+        System.out.println(doc.title());
+        System.out.println(doc.body().text());
+    }
+}
 ```
+Kör du den här koden, så skulle output bli:
+```
+Test
+Testparagraf.
+```
+## Djupdykning
+För historisk kontext, HTML-tolkning, eller parsing, har funnits sedan vi började använda webben. Men med Java och bibliotek som Jsoup, har det aldrig varit enklare. 
 
-I det här fallet så hämtar vi in hela HTML-koden från webbsidan example.com och använder sedan selectFirst-metoden för att välja den första <h1> taggen som vi hittar. Vi använder sedan metoden .text() för att få ut texten som finns mellan <h1> taggen.
+Det finns andra alternativ förutom Jsoup, till exempel HtmlCleaner och jHtml, men många anser att Jsoup är mer intuitivt och kraftfullt tack vare dess stöd för CSS-selektor syntax.
 
-Djupdykning:
-Parsning av HTML har funnits sedan de tidiga dagarna av webben, när webbsidor först började skapas med HTML-kod. Innan verktyg som Jsoup fanns tillgängliga, var detta en mycket mer komplicerad process som ofta innebar att man behövde skriva mycket kod för att extrahera och bearbeta data från en webbsida.
+För implementation, Html-tolkning fungerar genom att programmet går igenom HTML-koden från början till slut, tolkar varje tagg och skapar överensstämmande noder i det resulterande dokumentträdet.
 
-Alternativ till Jsoup inkluderar verktyg som HTML Parser och TagSoup. Dessa har liknande funktioner som Jsoup, men de har olika fördelar och nackdelar beroende på vad man behöver göra med HTML-koden.
-
-Se även:
-- Officiell dokumentation för Jsoup: https://jsoup.org/
-- HTML Parser: https://htmlparser.sourceforge.io/
-- TagSoup: https://github.com/veithen/tagsoup
+## Se också
+Här är några relaterade källor för mer detaljerade studier:
+- JSoup API dokumentation: https://jsoup.org/apidocs/
+- Officiell Java dokumentation: https://docs.oracle.com/javase/tutorial/
+- ‘HtmlCleaner’ biblioteket: http://htmlcleaner.sourceforge.net/
+- ‘jHtml’ biblioteket: https://jhy.io/jHtml

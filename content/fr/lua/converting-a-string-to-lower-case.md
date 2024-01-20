@@ -1,7 +1,7 @@
 ---
-title:                "Conversion d'une chaîne de caractères en minuscules"
-html_title:           "Lua: Conversion d'une chaîne de caractères en minuscules"
-simple_title:         "Conversion d'une chaîne de caractères en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "Arduino: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
 
-Convertir une chaîne de caractères en minuscules est un processus de conversion de tous les caractères d'une chaîne en utilisant les mêmes caractères mais en minuscules. Les programmeurs font souvent cela pour faciliter la comparaison de chaînes de caractères et pour s'assurer que les données entrées par les utilisateurs sont uniformes.
+La conversion d'une chaîne en minuscules est une tâche répandue en programmation. C'est utile pour uniformiser les données, éviter les erreurs de casse et faciliter le tri ou la comparaison.
 
-## Comment faire:
+## Comment Faire :
 
+En Lua, nous utilisons la méthode ``` string.lower()```. Voilà comment ça marche :
+
+```Lua
+-- Initialiser une chaîne en majuscules
+local str = "Bonjour, Comment ça va?"
+
+-- Convertir la chaîne en minuscules
+local lowerStr = string.lower(str)
+
+-- Afficher le résultat
+print(lowerStr)
 ```
-local str = "Bonjour, LUA!"
-local lower_str = str:lower()
 
-print(lower_str) -- Output: bonjour, lua!
+La sortie sera :
+
+```Lua
+"bonjour, comment ça va?"
 ```
 
-Dans cet exemple, nous définissons d'abord une variable contenant notre chaîne de caractères, puis nous utilisons la méthode ```:lower()``` pour la convertir en minuscules. Finalement, nous imprimons le résultat en utilisant la fonction ```print()```.
+Facile, non?
 
-## Plongée en profondeur:
+## Plus de détails
 
-La conversion de chaînes en minuscules est une fonctionnalité courante dans de nombreux langages de programmation, y compris LUA. Il existe également d'autres façons de réaliser cette tâche, telles que l'utilisation de fonctions intégrées comme ```string.lower()``` ou en utilisant des expressions régulières.
+Lua a hérité de la fonction ```string.lower()``` de la bibliothèque C standard, qui a été introduite dans les premières versions de C. Bien qu'il existe des alternatives, comme la transformation de chaque caractère individuellement, utiliser la méthode intégrée est le moyen le plus efficace et le plus simple de convertir une chaîne en minuscules.
 
-L'implémentation de la conversion en minuscules dans LUA utilise une table de correspondance pour remplacer chaque caractère majuscule par son équivalent en minuscule. Il est également possible de personnaliser cette table de correspondance pour prendre en compte les caractères spéciaux ou les langues étrangères.
+C'est important de noter que ```string.lower()``` fonctionne avec les chaînes ASCII. Si vous travaillez avec des caractères non-ASCII (comme des accents, des umlauts, etc.), vous pourriez rencontrer des problèmes.
 
-## Voir aussi:
+## Voir Aussi :
 
-Pour en savoir plus sur les différentes fonctions liées aux chaînes de caractères en LUA, consultez la documentation officielle sur les fonctions de chaînes: https://www.lua.org/manual/5.4/manual.html#6.4.
-
-Si vous recherchez des alternatives à la conversion en minuscules, vous pouvez également explorer les autres méthodes de comparaison de chaînes telles que l'utilisation de la méthode ```:find()``` ou l'utilisation de la bibliothèque externe ```lstring``` pour des fonctionnalités plus avancées.
+- Docs Lua sur string.lower : https://www.lua.org/manual/5.4/manual.html#6.5
+- Cours sur les chaînes de caractères en Lua : https://learnxinyminutes.com/docs/fr-fr/lua-fr/

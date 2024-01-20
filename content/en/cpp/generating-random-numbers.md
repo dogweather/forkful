@@ -1,6 +1,6 @@
 ---
 title:                "Generating random numbers"
-html_title:           "C++ recipe: Generating random numbers"
+html_title:           "Arduino recipe: Generating random numbers"
 simple_title:         "Generating random numbers"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Generating Random Numbers in C++
+
 ## What & Why?
-Generating random numbers is a process where a computer program generates a seemingly random sequence of numbers. Programmers do this for a variety of reasons such as creating randomized passwords, simulating realistic scenarios in games, or testing the performance of algorithms.
+Generating random numbers means producing sequences that have no discernible patterns. Programmers use this for creating test datasets, gaming, simulations, cryptography, and even in programs that need unique IDs.
 
 ## How to:
-To generate random numbers in C++, we can use the ```rand()``` function from the ```cstdlib``` library. This function takes no arguments and returns a pseudo-random integer between 0 and ```RAND_MAX```. We can also use the ```srand()``` function to set a seed value for the random number generator.
-
-Example code:
-```
-#include <cstdlib> // including the necessary library
+```C++
+#include <random>
 #include <iostream>
 
 int main() {
-  // setting the seed value to 42
-  srand(42);
-  
-  // generating a random number
-  int num = rand();
-  
-  // printing the number
-  std::cout << "A random number: " << num << std::endl;
-  
-  return 0;
+    std::random_device rd; //Creating random_device object
+    std::mt19937 gen(rd()); //Seed mt19937 generator
+    std::uniform_int_distribution<> distr(1,6); //Defining the range
+
+    for (int i = 0; i < 10; ++i) {
+        std::cout << distr(gen) << " "; //Generating and printing random numbers in range 1-6
+    }
+    
+    return 0;
 }
 ```
 
-Sample output:
+Example of possible output:
+
+```C++
+3 6 1 1 5 2 6 3 4 4 
 ```
-A random number: 465
-```
 
-## Deep Dive:
-The ```rand()``` function uses a pseudo-random number generator (PRNG) algorithm to generate the sequence of numbers. This means that the numbers are not truly random, but they appear to be random for most purposes. The algorithm used by ```rand()``` is not specified by the C++ standard, so it may vary depending on the compiler and implementation.
+## Deep Dive
+Historically, programmers would use the rand() function in C++, but it's not truly random, repeating its sequence every 32767 numbers. In modern C++, `<random>` library provides better tools, like `std::mt19937` generator that gives us a pretty good 'random' generator with period 2^19937-1. Large period and ability to produce numbers in the required range directly helps reduce pitfalls of traditional methods.
 
-There are also other ways to generate random numbers in C++, such as using the ```random``` library or using third-party random number generator libraries. These may provide different and potentially more robust methods for generating random numbers.
+Another worthy mention is `std::random_device`. It's much more random than `std::mt19937`, but typically slower and could be non-random on some systems, so it's used to seed an `mt19937` generator.
 
-## See Also:
-- [C++ Reference for rand() function](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [C++ Reference for srand() function](https://www.cplusplus.com/reference/cstdlib/srand/)
-- [C++ Reference for random library](https://www.cplusplus.com/reference/random/)
-- [Third-party random number generator libraries for C++](https://www.slant.co/topics/1792/~c-libraries-for-random-number-generation)
+Programmers can choose to generate random integers or floating-point numbers, vary the distribution, or even create custom distributions, based on their use case.
+
+## See Also
+Use these resources for more:
+- Visit [CPP Reference](https://en.cppreference.com/w/cpp/numeric/random) for more details on `<random>`.
+- Use [this guide](https://www.codespeedy.com/generating-random-float-numbers-in-cpp/) to generate random floating-point numbers.
+- Check out [this](https://www.cplusplus.com/reference/random/) for a detailed explanation on random number distributions in C++.

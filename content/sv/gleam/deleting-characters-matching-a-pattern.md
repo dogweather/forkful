@@ -1,7 +1,7 @@
 ---
-title:                "Att ta bort tecken som matchar ett mönster"
-html_title:           "Gleam: Att ta bort tecken som matchar ett mönster"
-simple_title:         "Att ta bort tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,20 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Att ta bort tecken som matchar ett mönster är en vanlig programmeringsteknik för att filtrera och rensa data. Genom att använda detta kan du skapa mer specifika och effektiva sökningar, samt hantera och manipulera data på ett mer precist sätt.
+# Ta bort tecken som matchar ett mönster i Gleam
 
-## Hur gör man?
-För att ta bort tecken som matchar ett mönster i Gleam använder du funktionen "delete_characters_matching" tillsammans med det önskade mönstret. Exempelvis:
+## Vad & Varför?
+Att ta bort tecken som matchar ett mönster innebär att definiera ett schema och avlägsna alla tecken som passar in på det. Programmerare använder den här tekniken för att rensa upp data och minska komplexiteten.
 
-```Gleam
-let str = "Hej Gleam!";
-let result = delete_characters_matching(str, "jo");
+## Hur man gör det:
+Här är ett enkelt exempel på det i Gleam:
+
+```gleam
+import gleam/regex.{replace}
+
+fn main() {
+  let pattern = regex.from_string("[a-z]") |> result.unwrap
+  let input = "abc123 def456"
+  let output = replace(pattern, input, "", _)
+  
+  case output {
+    Ok(v) -> io.println(v)  // will print '123 456'
+    Error(_) -> io.println("Något gick fel") 
+  }
+}
 ```
-Detta skulle resultera i strängen "He Glea!" eftersom båda bokstäverna j och o har tagits bort från strängen.
+I det här exemplet ersätter vi alla små bokstäver i strängen med ingenting, vilket effektivt tar bort dem.
 
 ## Djupdykning
-Att ta bort tecken som matchar ett mönster har funnits länge inom programmering och har traditionellt använts för att hantera textbaserade data. Alternativ till denna teknik inkluderar att använda reguljära uttryck eller att använda inbyggda funktioner i string-modulen i Gleam. Implementationen av funktionen "delete_characters_matching" utnyttjar både det funktionella och imperativa paradigmet för att ge en både flexibel och snabb lösning för att ta bort karaktärer i en given sträng.
+Metoden att ta bort tecken som matchar ett mönster har använts sedan tidigt i programmeringshistorien som ett sätt att bearbeta textdata effektivt. Det finns många sätt att implementera det, och i Gleam gör vi det med hjälp av inbyggda regex-verktyg. Ett historiskt alternativ är att använda iterativ bearbetning av strängar, men detta har tenderat att vara mer kodtungt och mindre effektivt.
+
+Gleam implementerar detta genom att först skapa ett RegExp-objekt med det önskade mönstret och sedan använda detta till att ersätta matchande tecken i den givna strängen. Operationen är icke-destruktiv och ger en ny sträng som kan användas på önskat sätt.
 
 ## Se även
-För mer information om Gleam kan du besöka den officiella hemsidan på [gleam.run](https://gleam.run/) och ansluta dig till deras community på [Slack](https://gleam-slack.herokuapp.com/). Om du vill lära dig mer om reguljära uttryck kan du ta en titt på Mozillas [guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions).
+För mer information, se följande länkar:
+- [Gleam's regex documentation](https://gleam.run/stdlib/regex/)
+- [A Gentle Introduction to Regex](https://www.rubyguides.com/2015/06/ruby-regex/)
+- [Mozilla's Regex guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

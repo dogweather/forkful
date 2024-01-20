@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Ruby recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -12,61 +12,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading a text file in Ruby refers to the process of accessing and manipulating the content of a plain text file using Ruby code. This can be useful for tasks such as extracting data, parsing information, or performing text-based operations. Programmers often read text files in order to automate repetitive tasks or to handle large amounts of data in a more efficient and organized manner.
+Reading a text file involves scanning a file on the disk to retrieve its contents and bring it into your program. Programmers do this to manipulate data for various uses like analysis, transformation, feeding into another system, etc.
 
 ## How to:
 
-To read a text file in Ruby, we can use the File class and its methods. Let's say we have a file called "data.txt" in our current directory, containing the following text:
-
-```
-Hello world!
-This is a sample file.
-```
-
-We can use the `open` method to open the file and access its contents:
+Reading a text file in Ruby is straightforward. The `File` class in Ruby's standard library helps us do just that.
 
 ```Ruby
-file = File.open("data.txt")
-
-# read the entire file
-puts file.read #=> Hello world!\nThis is a sample file.
-
-# read the first line
-puts file.readline #=> Hello world!
-
-# read all lines as an array
-puts file.readlines #=> ["Hello world!\n", "This is a sample file."]
-
-# close the file
-file.close
+# Read an entire text file 
+entire_file = File.read('myfile.txt')
+puts entire_file
 ```
 
-We can also use a block to automatically close the file once we are done with it:
+This will output the entire contents of "myfile.txt" as a single string. If you're looking to read line by line:
 
 ```Ruby
-File.open("data.txt") do |file|
-  # read the entire file
-  puts file.read #=> Hello world!\nThis is a sample file.
+# Read an entire text file line by line
+File.foreach('myfile.txt') do |line|
+  puts line
 end
 ```
 
-## Deep Dive
+The `foreach` method takes a block of code to execute for each line in the file.
 
-Reading text files has been a fundamental part of programming since the early days of computing. In Ruby, the `File` class was introduced in version 1.9.3 and has since been the go-to method for reading and manipulating text files.
+## Deep Dive:
 
-Aside from using methods such as `read`, `readline` and `readlines`, we can also use the `foreach` method to iterate over each line in a file:
+Historically, reading files was a low-level task involving system calls and plenty of room for error. Modern languages like Ruby provide higher-level, safer and friendlier ways to read files.
 
-```Ruby
-File.foreach("data.txt") do |line|
-  # print each line
-  puts line #=> Hello world!\nThis is a sample file.
-end
-```
+There are several other ways to skin this cat. For instance, we can use `File.open` method to open a file and read its contents. However, `File.read` and `File.foreach` are widely recommended due to their simplicity.
 
-There are other methods that can be used to read from a file, such as `gets` and `getc`, but these are not commonly used for reading text files.
+On OS-level implementation, Ruby internally uses buffered I/O operations. It reads a chunk of data into a buffer, and then serves future read requests from this buffer. This is significantly faster than making a system call for each read operation.
 
-## See Also
+## See Also:
 
-Check out the official Ruby documentation on the `File` class for more information and examples on reading text files: https://ruby-doc.org/core-2.6.1/File.html
+Great articles to further your reading:
 
-To learn more about manipulating text files in Ruby, you can also refer to the "Ruby File Handling" guide on tutorialspoint: https://www.tutorialspoint.com/ruby/ruby_file_handling.htm
+- Ruby file I/O: [link](https://www.tutorialspoint.com/ruby/ruby_input_output.htm)
+- Buffered and unbuffered I/O: [link](https://www.ionos.com/digitalguide/server/know-how/buffered-vs-unbuffered-io/)
+- API documentation for Ruby File class: [link](https://ruby-doc.org/core-3.0.0/File.html)

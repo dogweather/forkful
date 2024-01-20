@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie html"
-html_title:           "PowerShell: Odczytywanie html"
-simple_title:         "Odczytywanie html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć programiści!
+## Co i dlaczego?
 
-Jeśli kiedykolwiek próbowaliście pobierać informacje z internetu, na pewno spotkaliście się z językiem HTML. Jest to język używany do tworzenia stron internetowych i składający się z różnych znaczników, atrybutów i wartości. Ale jak można wykorzystać te informacje w programowaniu? Tutaj właśnie przychodzi z pomocą parsing HTML w PowerShell.
+Analiza składniowa HTML polega na przetwarzaniu kodu HTML do zrozumiałego formatu dla programów. Programiści robią to, aby ekstrahować dane, manipulować zawartością strony internetowej lub testować interoperacyjność.
 
-## Co to jest i po co to robić?
+## Jak to zrobić:
 
-Parsing HTML to proces analizowania kodu HTML w celu pobrania interesujących nas informacji. Dzięki temu możemy w prosty sposób pobierać i przetwarzać informacje z różnych stron internetowych bez potrzeby przepisywania całego kodu HTML. Jest to szczególnie przydatne, gdy chcemy przetwarzać dużą ilość danych.
-
-## Jak to zrobić?
+Można to zrobić z pomocą innej mocy PowerShell, jak `Invoke-WebRequest`. Uruchom poniższy kod, aby pobrać i przeanalizować stronę internetową.
 
 ```PowerShell
-$url = "https://www.example.com"
-$response = Invoke-WebRequest -Uri $url #pobieranie zawartości strony
-$parsedHTML = [System.Xml.XmlDocument]$response.Content #parsowanie kodu HTML
-$targetElement = $parsedHTML.selectSingleNode("//div[@class='example']") #wyszukiwanie elementu o określonym atrybucie
-$targetElement.InnerText #wyświetlenie zawartości elementu
+# Get the website content
+$pageContent = Invoke-WebRequest -Uri "http://twojasuperstrona.pl"
+
+# Parse the HTML content
+$parsedContent = $pageContent.ParsedHtml
+
+# Output the parsed HTML content
+$parsedContent
 ```
 
-Powyższy kod wyświetli zawartość elementu o klasie "example" ze strony o podanym adresie. Dzięki temu możemy w łatwy sposób pobierać tylko te informacje, które nas interesują.
+## Głębsze zagłębienie:
 
-## Głębsza analiza
+Historia analizy składniowej HTML rozciąga się od czasów, gdy internet był jeszcze młody. Choć PowerShell stanowi efektywne narzędzie, istnieje wiele alternatyw takich jak BeautifulSoup dla Pythona czy jsdom dla JavaScript.
 
-Parsing HTML jest procesem używanym od dawna w programowaniu, gdyż jest niezbędny do pobierania i przetwarzania informacji z internetu. Alternatywą dla parsingu HTML może być na przykład scrapping, jednak jest to bardziej złożone i nie zawsze możliwe. W PowerShell istnieje również moduł "HTMLAgilityPack", który ułatwia parsing kodu HTML.
+Szczegółowo, PowerShell korzysta z COM interfejsu HTML Document, który reprezentuje całą stronę HTML. Można go użyć do odnalezienia, dodania czy usunięcia elementów HTML.
 
-Jeśli chcesz dowiedzieć się więcej o funkcjach dostępnych przy użyciu parsingu HTML w PowerShell, polecam zapoznać się z oficjalną dokumentacją: https://docs.microsoft.com/en-us/previous-versions/windows/it-pro/windows-powershell-1.0/ee156811(v=technet.10)
+## Zobacz również:
 
-## Zobacz także
-
-Jeśli interesuje Cię temat pobierania informacji z internetu, warto również poznać bibliotekę "Invoke-Webrequest", która jest często używana razem z parsingiem HTML: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7
-
-Mam nadzieję, że ten krótki artykuł pomógł Ci zrozumieć, czym jest parsing HTML w PowerShell i jak wykorzystać go w codziennej pracy. Powodzenia w programowaniu!
+1. [Podstawowe nasłuchiwacze DOM](https://developer.mozilla.org/pl/docs/Web/API/Document_Object_Model)
+2. [Parsowanie zawartości strony internetowej z PowerShell](https://4sysops.com/archives/parsing-html-webpages-with-powershell/)
+3. [Dokumentacja `Invoke-WebRequest`](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)

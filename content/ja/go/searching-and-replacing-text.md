@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Go: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Go"
 category:             "Go"
@@ -10,44 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何がどうして？
+## 何となぜ？
 
-テキストの検索と置換とは何かを説明し、プログラマーがそれを行う理由を説明します。 
+テキストの検索と置換は、特定の文字列を見つけてそのマッチとなる部分を新しいテキストで置き換えるプロセスです。プログラマーは新規機能を追加するため、エラーを修正するため、またはコードを最適化するためにしばしばこれを行います。
 
-テキストの検索と置換は、特定のテキストを探してプログラマーがそのテキストを別のものに変えることを意味します。プログラマーは、コード内の間違いを修正したり、特定のデータを更新したりするために検索と置換を行います。 
+## 方法
 
-## 使い方： 
+以下に、Goでテキストの検索と置換を行う簡単な例を示します。
 
 ```Go
-// テキストの検索と置換の例
-package main 
+package main
 
-import "fmt"
-import "strings"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
-    //変数に文字列を格納
-    str := "Hello, world！"
+	str := "Hello, world!"
+	newStr := strings.Replace(str, "world", "Go", -1)
 
-    // strings.Replace()を使用して文字列を置換
-    newStr := strings.Replace(str, "Hello", "こんにちは", 1)
-
-    // 結果を出力する
-    fmt.Println(newStr)
+	fmt.Println(newStr)
 }
 ```
 
-このコードを実行すると、実行結果は以下のようになります。
+上記のコードを実行すると、以下の出力が表示されます。
 
-`こんにちは、世界！`
+```
+Hello, Go!
+```
 
-## 深堀り： 
+`strings.Replace` 機能は、指定した文字列（この場合は "world"）を新しい文字列（この場合は "Go"）で置き換えます。
 
-- **歴史的背景**：検索と置換は、古くからプログラム言語における重要な機能でした。最初のプログラミング言語であるFortranでは、文字列の置換は非常に限定的であり、パターンマッチングにも適用されませんでした。
-- **代替手段**：検索と置換は、ループやif文を使用して手動で行うこともできますが、stringパッケージ内のReplace()関数を使用することでより簡単に行うことができます。
-- **実装の詳細**：Go言語は、非常に高速でパフォーマンスが良く、並列処理にも適した言語です。そのため、stringsパッケージ内のReplace()関数も非常に高速に動作するように設計されています。
+## より深く
 
-## 関連リンク： 
+テキストの検索と置換は、最初のプログラミング言語が開発されたころから存在します。これはコード管理と更新を簡単にし、重要なエラーを早期に見つけ出すための助けになります。
 
-- [Go言語公式ドキュメント - stringsパッケージ](https://golang.org/pkg/strings/)
-- [Golang.jp - stringsパッケージの解説書](http://golang.jp/pkg/strings)
+置換機能は多くの代替案と共に存在します。例えば正規表現を使用する replacer function の設定も可能です。
+
+`strings.Replace`は、源の各インデックスに対してパターンが一致するかどうかを確認しながら linear scan を使用して実装されています。置き換えるテキストが見つける文字列よりも長い場合、Goは新しいバッファーを作成し、そこに結果をビルドします。
+
+## 関連情報
+
+- Go公式ドキュメンテーション: [strings package](https://golang.org/pkg/strings/)
+- Learn Go: [String Manipulation](https://www.learn-go.dev/topics/string-manipulation)
+- Go playground: 練習や実験のための [サンドボックス環境](https://play.golang.org/)

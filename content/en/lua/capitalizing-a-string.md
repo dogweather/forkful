@@ -12,35 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Capitalizing a string refers to converting the first letter of each word in a string to uppercase. This is commonly done in programming to improve readability and consistency. It can also be helpful when comparing strings, as capitalization can affect the outcome of the comparison.
+Capitalizing a string means changing the first letter of each word to uppercase and all other letters to lowercase. Programmers do this for text normalization and readability, especially in user interfaces.
 
 ## How to:
 
-To capitalize a string in Lua, we can use the `string.upper()` function. This function takes a string as input and returns a new string with all characters converted to uppercase.
+Lua doesn't have a built-in function to capitalize strings. So we'll use the `gsub` function along with a pattern to achieve it. Here's an example:
 
 ```Lua
--- Example 1
-local str = "hello world"
-print(string.upper(str)) -- Output: HELLO WORLD
+function capitalize(str)
+    return (str:gsub("^%l", string.upper))
+end
 
--- Example 2
-local name = "john smith"
-local capitalizedName = string.upper(name)
-print(capitalizedName) -- Output: JOHN SMITH
+print(capitalize("hello, world")) -- Prints "Hello, world" 
 ```
 
-In the first example, we simply pass the string "hello world" as an argument to `string.upper()` and it returns the capitalized version. In the second example, we store the capitalized string in a variable and then print it.
+In this example, `gsub` function changes the first character if it's a lowercase letter (`^%l`) to uppercase using `string.upper`.
 
-## Deep Dive:
+## Deep Dive
 
-Capitalizing strings has been a common convention in programming for decades. In the early years of computing, computers were not able to distinguish between uppercase and lowercase letters, so using only uppercase letters made it easier for them to process text. Even though modern computers can handle both cases, it has become a standard practice to capitalize strings for better readability and consistency among different languages.
+Lua, first appeared in 1993, has been a lightweight yet versatile language for scripting. It's been flexible but the compromise often comes as lack of some built-in string manipulation functions, like capitalizing strings. But, the powerful pattern-matching functions provided in Lua easily compensate for it.
 
-An alternative to using `string.upper()` is the `string.gsub()` function. This function allows us to replace specific characters in a string with new characters. We can use it to replace the first character of each word with its uppercase version. However, this method can be more tedious and not as efficient.
+Alternate ways of capitalizing can be using ASCII values or the `utf8` library. Also note that our example only capitalizes the first letter of the string, not each word. To capitalize each word, use `"%w+"` instead of `"^%l"` in our function:
 
-It is worth noting that `string.upper()` only converts the characters to uppercase according to the current locale. This means that it will not necessarily convert all characters to their uppercase equivalent, as different languages have different lowercase and uppercase letters.
+```Lua
+function capitalize(str)
+  return (str:gsub("%w+", function(word)
+    return word:sub(1,1):upper()..word:sub(2):lower()
+  end))
+end
 
-## See Also:
+print(capitalize("hello, world"))  -- Prints "Hello, World"
+```
 
-To learn more about string manipulation in Lua, check out the official Lua documentation on strings: https://www.lua.org/manual/5.3/manual.html#6.4 
+## See Also
 
-For more information on Lua's `string.upper()` function, visit: https://www.lua.org/manual/5.3/manual.html#pdf-string.upper
+Learn more about Lua strings from its official documents, "Programming in Lua" is also a great resource. Also, dive deep into string patterns in this [Lua-Users Wiki](http://lua-users.org/wiki/PatternsTutorial).

@@ -1,7 +1,7 @@
 ---
-title:                "Leser en tekstfil"
-html_title:           "Rust: Leser en tekstfil"
-simple_title:         "Leser en tekstfil"
+title:                "Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
+simple_title:         "Lese en tekstfil"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -10,30 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Lesing av tekstfiler i Rust
+
 ## Hva & Hvorfor?
-Lesing av en tekstfil er en vanlig operasjon i programmering der man henter informasjon fra en tekstfil og behandler den på en eller annen måte. Dette gjøres vanligvis for å få tilgang til data som er lagret i en tekstfil eller for å behandle store mengder data på en effektiv måte.
+Å lese en tekstfil betyr å hente innholdet i filen for manipulering eller visning. Programmerere gjør dette for å behandle data, konfigurere systemer, og for mange andre nytteverdige formål.
 
-## Hvordan:
+## Hvordan Gjør Jeg Det:
+Å lese en tekstfil i Rust er ganske rett frem. Her er enkel kode for å gjøre det:
+
 ```Rust
-use std::fs::File;
+use std::fs;
 
-// Åpner en tekstfil og leser innholdet som en String
-let mut file = File::open("tekstfil.txt").expect("Kunne ikke åpne fil");
-let mut contents = String::new();
-file.read_to_string(&mut contents).expect("Kunne ikke lese fil");
+fn main() {
+    let innholdet = fs::read_to_string("sti/til/din/fil.txt")
+        .expect("Kunne ikke lese filen.");
 
-// Skriver ut innholdet i filen
-println!("{}", contents);
+    println!("Innholdet i filen er: \n{}", innholdet);
+}
+```
+Kjører du denne koden på en fil som inneholder teksten "Hei, verden!", får du følgende utskrift:
+
+```Rust
+Innholdet i filen er: 
+Hei, verden!
 ```
 
-For å lese en tekstfil, må vi først åpne filen ved å bruke `File::open` funksjonen fra standardbiblioteket `std::fs`. Deretter oppretter vi en variabel for å lagre filinnholdet og bruker `read_to_string` funksjonen for å lese innholdet som en `String`. Til slutt skriver vi ut innholdet ved å bruke `println!` makroen.
+## Dybdeplunging:
+Historisk har innLesing av filer vært sentralt i datasystemer. For eksempel kom UNIX med kommandoen 'cat' allerede i 1971 for å lese filinnhold.
 
-## Dypdykk:
-Lesing av tekstfiler har vært en del av programmering siden de første programmeringsspråkene ble utviklet. I dag finnes det mange alternative måter å lese tekstfiler på, for eksempel ved å bruke `io::BufReader` fra Rusts standardbibliotek eller ved å bruke tredjepartsbiblioteker som `serde` for å lese innholdet og konvertere det til andre datatyper.
+Alternativt kan Rust også lese filer linje for linje ved bruk av `BufRead` og `lines()`. Denne metoden er nyttig når du arbeider med veldig store filer:
 
-Når man leser en tekstfil i Rust, vil filinnholdet bli lagret som en `String`. Dette kan føre til problemer hvis filen er veldig stor, da dette kan føre til at programmet bruker mye minne. Derfor kan det være lurt å vurdere alternative måter å lese filen på, avhengig av hva slags informasjon man ønsker å hente ut fra filen.
+```Rust
+use std::io::{self, BufRead};
+use std::fs::File;
 
-## Se også:
-- https://doc.rust-lang.org/std/fs/struct.File.html
-- https://doc.rust-lang.org/std/io/struct.BufReader.html
-- https://serde.rs/
+fn main() -> io::Result<()> {
+    let file = File::open("sti/til/din/fil.txt")?;
+    let reader = io::BufReader::new(file);
+
+    for line in reader.lines() {
+        println!("{}", line?);
+    }
+    Ok(())
+}
+```
+Rusts `std::fs` og `std::io` moduler gir enkel og robust tilgang til filsystemfunksjoner. Å optimalisere for leseytelse eller minnebruk vil avhenge av dine spesifikke behov.
+
+## Se Også:
+1. Rusts offisielle dokumentasjon for [`std::fs`](https://doc.rust-lang.org/std/fs/index.html) og [`std::io`](https://doc.rust-lang.org/std/io/index.html).
+2. En mer omfattende guide om filbehandling i Rust på [Rust Cookbook](https://rust-lang-nursery.github.io/rust-cookbook/file/read-write.html).
+3. Diskusjon om fillesing i Rust på [Stack Overflow](https://stackoverflow.com/questions/31192956/whats-the-de-facto-way-of-reading-and-writing-files-in-rust-1-x).

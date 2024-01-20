@@ -1,7 +1,7 @@
 ---
-title:                "Lähettää http-pyyntö"
-html_title:           "Fish Shell: Lähettää http-pyyntö"
-simple_title:         "Lähettää http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Fish Shell ja HTTP Pyyntöjen Lähettäminen
+## Mikä & Miksi?
 
-## Mitä & Miksi?
-HTTP-pyyntöjen lähettäminen on tärkeä osa monien ohjelmoijien työtä. Se on tapa kommunikoida eri verkkosivustojen ja palveluiden kanssa ja saada haluttuja tietoja tai suorittaa tiettyjä toimintoja. Tämä on hyödyllistä esimerkiksi silloin, kun haluat luoda sovelluksia, jotka hakevat dataa ulkopuolisilta lähteiltä tai lähettävät tietoja sinne.
+HTTP-pyyntö on tapa, jolla selain (tai muu asiakasohjelma) pyytää tietoja palvelimelta. Ohjelmoijat lähettävät näitä pyyntöjä datan saamiseksi tai lähettämiseksi palvelimille tai API:ille. 
 
-## Kuinka tehdä se?
-Fish Shell tarjoaa helpon tavan lähettää HTTP-pyyntöjä suoraan terminaalissa. Voit tehdä sen käyttämällä `curl` -komentoa, joka on sisäänrakennettu Fish Shelliin. Tässä on esimerkki lähettää GET-pyyntö GitHubin API:lle ja näyttää vastauksen sisältö terminaalissa:
+## Näin se tapahtuu:
 
-```
-fish shell curl -X GET https://api.github.com
-```
+Fish Shell tarjoaa helpon tavan lähettää HTTP-pyyntöjä käyttäen `curl`-työkalua. Tässä on esimerkki:
 
-Tämä tuottaa vastauksen, jossa on kaikki GitHubin API:n saatavilla olevat tiedot.
-
-```
-{
-  "current_user_url": "https://api.github.com/user",
-  "authorizations_url": "https://api.github.com/authorizations",
-  "api_endpoint": "https://api.github.com",
-  ...
-}
+```Fish Shell
+curl "http://www.example.com" -o "output.html"
 ```
 
-Voit myös lisätä erilaisia parametreja pyyntöön, kuten otsikoita tai lomakedataa, oman tarpeesi mukaan.
+Tämä lähettää GET-pyynnön http://www.example.com:iin ja tallentaa vastauksen tiedostoon nimeltä output.html.
 
 ## Syvemmälle
-HTTP-pyyntöjen lähettämisen tarve syntyi, kun internetin käyttö alkoi yleistyä ja käyttäjät halusivat tehdä enemmän kuin vain lukea sisältöä. Tämä johti HTTP-protokollaan, joka sallii asiakkaiden lähettää pyyntöjä palvelimille ja vastaanottaa vastauksia.
 
-Fish Shell tarjoaa myös muita tapoja lähettää HTTP-pyyntöjä, kuten käyttämällä `fetch` -komennon, joka on osa Fish Shelliin ladattavaa `fish-fetch` -laajennusta. Voit myös käyttää muita kehitystyökaluja, kuten Postman tai Insomnia, lähettääksesi ja testataksesi HTTP-pyyntöjä.
+HTTP-pyynnön lähettäminen kehitettiin webin varhaisessa vaiheessa, joten kaikkein ensimmäiset HTTP-pyynnöt lähetettiin tekstipohjaisesta selaimesta nimeltä Lynx. Vaihtoehtoisesti voit lähettää HTTP-pyynnön myös `wget`-työkalulla, joka toimii samankaltaisesti kuin `curl`, tai voit käyttää HTTP-kirjastoja kielissä, kuten Python tai Javascript.
 
-HTTP-pyyntöjen lähettäminen Fish Shellilla on nopeaa ja kätevää, mutta on tärkeää varmistaa, että käytät sitä vastuullisesti ja kunnioitat muiden palveluiden käyttöehtoja.
+HTTP-pyynnön toiminnallisuus liittyy lähinnä TCP/IP-protokollan rakenteeseen. HTTP-pyyntö luodaan, lähetetään ja vastaanotetaan tämän protokollan avulla.
 
 ## Katso myös
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [GitHubin API-dokumentaatio](https://docs.github.com/en/rest)
-- [Fish-fetch-laajennus](https://github.com/Kovah/fish-fetch)
-- [Insomnia](https://insomnia.rest/)
-- [Postman](https://www.postman.com/)
+
+Jos haluat lisätietoa, katso seuraavat linkit:
+
+1. [Fish Shell -dokumentaatio](https://fishshell.com/docs/current/index.html)
+2. [Curl-käyttöohje](https://curl.haxx.se/docs/manpage.html)
+3. [HTTP-protokollan työnkulku](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+4. [Wget-työkalun dokumentaatio](https://www.gnu.org/software/wget/manual/wget.html)

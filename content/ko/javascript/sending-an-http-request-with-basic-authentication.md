@@ -1,7 +1,7 @@
 ---
-title:                "기본 인증을 사용하여 http 요청 보내기"
-html_title:           "Javascript: 기본 인증을 사용하여 http 요청 보내기"
-simple_title:         "기본 인증을 사용하여 http 요청 보내기"
+title:                "기본 인증을 이용한 HTTP 요청 보내기"
+html_title:           "Arduino: 기본 인증을 이용한 HTTP 요청 보내기"
+simple_title:         "기본 인증을 이용한 HTTP 요청 보내기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,49 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+## 무엇이며 왜 사용하나요?
 
-HTTP 요청에 기본 인증을 함께 보내는 것은 인터넷을 통해 정보를 안전하게 전송하는 방법 중 하나입니다. 프로그래머들은 이 방법을 사용하여 웹사이트나 앱에 로그인할 때 사용자의 개인 정보를 보호하고 보안을 유지할 수 있습니다. 
+HTTP 요청을 기본 인증과 함께 보내는 것은 사용자 이름과 비밀번호를 포함하는 요청을 보내는 방법입니다. 개발자들이 이를 사용하는 이유는 서버로부터 보호된 리소스를 안전하게 요청하기 위해서입니다.
 
-# How to:
+## 어떻게 사용하나요:
 
-```Javascript
-// 이 함수는 username과 password를 인자로 받아 기본 인증을 사용하여 HTTP 요청을 보냅니다.
+다음 예시는 자바스크립트로 기본 인증을 사용하여 HTTP 요청을 보내는 방법을 보여줍니다. 
 
-function sendHttpRequest(username, password) {
-  let xhr = new XMLHttpRequest();
-  let url = "https://example.com/api";
+```Javascript 
+const axios = require('axios');
 
-  // username과 password를 이용하여 인증 헤더를 생성합니다.
-  let authString = `${username}:${password}`;
-  let encodedAuth = btoa(authString);
-
-  // 인증 헤더를 설정합니다.
-  xhr.setRequestHeader("Authorization", "Basic " + encodedAuth);
-
-  xhr.onreadystatechange = function() {
-    // 요청이 성공적으로 완료되면 응답을 출력합니다.
-    if (xhr.readyState === 4 && xhr.status === 200) {
-      console.log(xhr.responseText);
-    }
-  };
-
-  // 요청을 보냅니다.
-  xhr.open("GET", url);
-  xhr.send();
-}
-
-sendHttpRequest("username", "password");
+axios({
+  method: 'get',
+  url: 'http://example.com',
+  auth: {
+    username: 'username',
+    password: 'password'
+  }
+})
+.then((response) => {
+  console.log(response.data);
+})
+.catch((error) => {
+  console.error(error);
+});
 ```
 
-# Deep Dive:
+이 예제에서, auth 객체는 사용자 이름과 비밀번호를 포함하며, axios는 이를 사용하여 HTTP 요청을 보냅니다.
 
-기본 인증은 HTTP/1.0에서 처음 소개되었습니다. 이 방식은 매우 간단하지만 보안 측면에서 안전하지 않다는 단점이 있었습니다. 따라서 더 나은 보안 수단을 제공하는 다른 인증 방법들도 나오게 되었습니다. 그러나 여전히 많은 웹사이트들이 기본 인증을 사용하고 있으며, 여전히 많은 경우에 충분한 수준의 보안을 제공할 수 있습니다.
+## 깊게 알아보기:
 
-기본 인증은 사용자 이름과 비밀번호를 인코딩하여 인증 헤더에 추가하여 요청을 보냅니다. 이러한 인증 방식은 여전히 업계 표준이 아닙니다. 서드파티 라이브러리를 사용하여 보다 강력한 인증 방식을 구현하는 것도 좋은 대안입니다.
+기본 인증을 사용하여 HTTP 요청을 보내는 것은 웹의 초기 시절부터 사용해온 방법입니다. 그러나 이 방법은 비밀번호를 본문에 포함하므로, 해당 요청이 전송 중에 중간에서 가로채일 수 있다는 단점이 있습니다. 
 
-# See Also:
+또한, 대안으로서 다른 인증 메커니즘, 예를 들어 OAuth, Bearer Token, JWT 등도 종종 사용됩니다. 
 
-- [HTTP 기본 인증: MDN 웹 문서](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [인증에 대한 HTTP 스펙 RFC2617](https://tools.ietf.org/html/rfc2617)
-- [NPM을 이용한 인증 라이브러리](https://www.npmjs.com/package/authentication)
+구현에 있어서는, 기본 인증을 사용하는 경우, 사용자 이름과 비밀번호는 Base64 형식으로 인코딩되어 'Authorization' 헤더에 포함됩니다. 이는 암호화가 아닌, 단순히 텍스트 형식의 변환에 불과하므로 주의가 필요합니다.
+
+## 참고 자료:
+
+Btoa() 함수에 대한 자세한 내용은 MDN 웹 문서를 참조하십시오: [MDN Web Docs - btoa()](https://developer.mozilla.org/ko/docs/Web/API/WindowOrWorkerGlobalScope/btoa)
+
+Axios와 관련한 자세한 정보는 공식 문서를 참조하십시오: [Axios Documentation](https://axios-http.com/docs/intro)
+
+또한 어떤 인증 메커니즘이 가장 적합한지 결정하는데 도움이 될 수 있는 IETF의 인증 체계에 대한 문서도 참조하십시오: [IETF - HTTP Authentication](https://datatracker.ietf.org/doc/html/rfc2617)

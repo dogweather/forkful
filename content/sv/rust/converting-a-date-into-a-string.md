@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "Rust: Omvandla ett datum till en sträng"
+html_title:           "Bash: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,28 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att konvertera ett datum till en sträng är en vanlig uppgift för programmerare. Det innebär att omvandla ett datumvärde till en läsbar textsträng, ofta i ett specifikt format. Detta är viktigt för att visa datumet i en användbar form för användare eller för att spara och skicka datum som data i en fil eller databas.
+---
+title: "Datatypomvandling i Rust: Datum till Sträng"
+---
 
-# Hur gör man?
-I Rust finns ett inbyggt sätt att konvertera datum till strängar med hjälp av standardbiblioteket DateTime. Inkludera detta bibliotek genom att lägga till ```use std::time::DateTime``` i början av din kod. Sedan kan du konvertera ett datum till en sträng genom att använda DateTime-objektet och anropa dess ```format()``` -metod. Detta kräver två parametrar: ett datumformat och det datum som ska konverteras. Se nedan för kodexempel och tillhörande utdata.
+## Vad & Varför?
+Att omvandla ett datum till en sträng är processen att skapa en läsbar strängrepresentation av ett datum. Vi gör detta för att på ett mänskligt läsbart sätt visa datum och tid.
 
-```Rust 
-use std::time::DateTime; 
+## Så här gör du:
+I Rust kan du använda `chrono`-biblioteket för att enkelt konvertera ett `DateTime`-objekt till en sträng. Här är ett exempel:
 
-let datum = DateTime::parse_from_rfc3339("2021-04-01T12:00:00+00:00").unwrap(); 
-println!("Datumet som sträng: {}", datum.format("%d-%m-%Y")); 
+```Rust
+use chrono::{DateTime, Utc};
 
+fn main() {
+    let nu: DateTime<Utc> = Utc::now();
+    println!("{}", nu.to_string());
+}
 ```
 
-Output: Datumet som sträng: 01-04-2021
+När du kör detta skrivs nuvarande datum och tid ut som en sträng, t.ex. "2022-03-01T13:43:22.133366Z".
 
-# Djupdykning
-Detta sätt att konvertera datum till strängar är baserat på en standard som kallas RFC 3339, vilken definierar ett format för datum och klockslag i Internetprotokoll. Detta är ett vanligt sätt att representera datum och används ofta i webbapplikationer eller API:er.
+## Fördjupning
+Rust, sedan sitt utfärdande 2010, har alltid prioriterat tydlighet och säkerhet, vilket betyder att datatypomvandlingarna är enkla och säkra.
 
-Alternativt kan programmerare använda en tredjepartsbibliotek som chrono för att konvertera datum till strängar. Detta bibliotek har fler funktioner och formatalternativ, men kräver också att det installeras och integreras i din kod.
+Som alternativ till `DateTime<Utc>::to_string()`, kan du använda `format!`-makro för mer anpassade datumsträngformat. Till exempel:
 
-När det gäller implementationen så konverterar metoden ```format()``` från DateTime-objektet datumet till UTC-tid och sedan till ett valt format. Detta ger en textsträng som kan användas på olika plattformar och enheter.
+```Rust
+let fmt = nu.format("%Y-%m-%d %H:%M:%S").to_string();
+println!("{}", fmt);
+```
 
-# Se även
-För mer information om konvertering av datum till strängar i Rust, se dokumentationen för DateTime-modulen: https://doc.rust-lang.org/std/time/struct.SystemTime.html#method.format
+Ovanstående kod skriver ut datum- och tidssträngen i formatet "2022-03-01 13:43:22".
+
+För att genomföra denna konvertering behöver Rust fånga den aktuella tiden, översätta det till en intern representation, och använda sedan strängformateringsverktyget för att konvertera den interna representationen till en sträng som kan visas.
+
+## Se också
+För mer detaljerad information, kolla in följande resurser:
+
+- Rusts officiella dokumentation för [`DateTime`](https://docs.rs/chrono/0.4.19/chrono/struct.DateTime.html)
+- `chrono`-bibliotekets [GitHub-sida](https://github.com/chronotope/chrono)
+- Rusts officiella dokumentation för [`to_string`](https://doc.rust-lang.org/std/string/trait.ToString.html)
+- Rusts officiella dokumentation för [`format!`](https://doc.rust-lang.org/std/macro.format.html)
+
+Allt omfattat ovan borde ge dig en klar idé om hur du konverterar datumobjekt till strängar i ditt Rust-program. Lycka till!

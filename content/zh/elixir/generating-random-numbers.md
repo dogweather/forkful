@@ -1,7 +1,7 @@
 ---
-title:                "产生随机数"
-html_title:           "Elixir: 产生随机数"
-simple_title:         "产生随机数"
+title:                "生成随机数"
+html_title:           "Go: 生成随机数"
+simple_title:         "生成随机数"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是随机数生成？ 为什么程序员要做随机数生成？
+## 什么 & 为什么?
+-生成随机数是生成不确定的编号过程。
+-程序员生成随机数来测试函数，模拟偶然事件，或创建唯一的ID。
 
-随机数生成是指在程序中产生随机数的过程。程序员经常需要使用随机数来模拟真实世界中的随机事件，例如游戏中的骰子投掷或抽奖活动。它也可以用于密码学中生成安全的随机数，以确保数据的保密性和完整性。
-
-## 如何做？
-
-以下是使用 Elixir 语言生成随机数的代码示例：
-
-```Elixir
-# 生成一个介于0和100之间的随机整数
-rand_num = Enum.random(0..100)
-IO.puts(rand_num)
-
-# 生成一个包含5个随机元素的列表（使用 Kernel模块中定义的 :rand.uniform/0 方法）
-rand_list = List.new(fn -> :rand.uniform() end, 5)
-IO.inspect(rand_list)
-```
-
-运行以上代码，将会输出类似以下结果：
+## 如何：
+在Elixir中生成随机数，可以用`Enum.random/1`, `:rand.uniform/1` 和 `:rand.uniform/0` 方法。
 
 ```Elixir
+iex> Enum.random(1..100) 
 47
-[0.18369, 0.82039997, 0.473719, 0.022033, 0.911895]
+
+iex> :rand.uniform(5)  
+2
+
+iex> :rand.uniform()
+0.44358461744572024
 ```
 
-## 深入了解
+## 深度探讨
+###历史背景
+过去，Elixir使用了`:random`模块来生成随机数，但在Erlang 19中被`:rand`模块取代。
+### 替代方法
+你也可以使用 `:crypto.strong_rand_bytes/1` 和 `:binary.decode_unsigned/1` 来创建一个更安全的随机数。
 
-随机数生成已经存在很久了，并且有许多不同的实现方法。在计算机科学领域，有一种称为“伪随机数生成器”的算法，它们可以按照一定的规则生成看起来随机的数。然而，这些数并不是真正的随机数，因为它们的生成过程是可预测的。
+```Elixir
+iex> :binary.decode_unsigned(:crypto.strong_rand_bytes(4))
+1031283771
+```
 
-除了 Elixir 内置的随机数生成方法外，还有一些第三方库可以实现不同种类的随机数生成，例如 [`:rand32`](https://hex.pm/packages/rand32) 和 [`:murmur`](https://hex.pm/packages/murmur)。
+### 实现细节
+Elixir在底层使用了Erlang对随机数的实现。`:rand.uniform/1` 返回1到N的随机数, `:rand.uniform/0` 返回0到1的浮点随机数。
 
-在 Elixir 中，随机数生成依赖于 [`:rand`](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#rand/0) 和 [`:math`](https://hexdocs.pm/elixir/Math.html#functions) 模块，它们提供了各种用于生成随机数的方法，包括生成整数、浮点数、布尔值和字符。
-
-## 参考链接
-
-- [Elixir 官方文档中关于随机数的介绍](https://hexdocs.pm/elixir/Kernel.SpecialForms.html#rand/0)
-- [其他随机数生成库的介绍](https://hexdocs.pm/elixir/random-libraries.html)
+## 参考来源
+- Erlang `:rand` 模块文档: http://erlang.org/doc/man/rand.html
+- Elixir Enum.random: https://hexdocs.pm/elixir/Enum.html#random/1
+- Elixir 在编程的实践中生成随机数的讨论: https://elixirforum.com/t/how-do-you-generate-a-random-number-in-elixir/1983

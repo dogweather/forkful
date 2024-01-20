@@ -1,6 +1,6 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "Gleam recipe: Checking if a directory exists"
+html_title:           "C# recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,40 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Checking if a directory exists is a common task in programming where we want to verify whether a given directory exists on the file system or not. This is essential because it allows us to handle situations where the directory may have been deleted or moved. This check is necessary for the smooth functioning of our code and to ensure that we are accessing the correct directory.
+Checking if a directory exists is a crucial task in programming where you verify whether a specific file path points to an existing directory. Programmers do this to avoid errors caused by non-existent directories and to establish that a location is ready to be accessed or manipulated.
 
 ## How to:
-
-To check if a directory exists in Gleam, we can use the `dir::exists` function from the `gleam/file` module. This function takes in a path to the directory as its argument and returns a boolean value indicating whether the directory exists or not.
-
-Let's see an example:
+Let's walk through a simple way to do this in Gleam. Currently, Gleam doesn't have built-in support for file system operations, but you can use Erlang's `:filelib` module to do this:
 
 ```Gleam
-import gleam/file
+let directory_exists = :filelib.is_dir("your_directory_path")
+```
 
-pub fn main() {
-  let dir = "path/to/directory/"
-  if dir::exists(dir) {
-    println("Directory exists!")
-  } else {
-    println("Directory does not exist!")
-  }
+Next, you can handle as per the `directory_exists` value. For instance:
+
+```Gleam
+case directory_exists {
+  True -> "Directory exists"
+  False -> "Directory does not exist"
 }
 ```
 
-If the directory exists, the output will be `Directory exists!`. Otherwise, it will print `Directory does not exist!`.
+The output will be either "Directory exists" or "Directory does not exist", based on the actual scenario.
 
-## Deep Dive:
+## Deep Dive
+Historically, Gleam, like many functional languages, has relied heavily on the underlying language or runtime for I/O operations. In Gleam's case, that's the Erlang BEAM virtual machine.
 
-In the earlier days of programming, directory checking was usually done by trying to open the directory and checking for any errors. However, this approach was not efficient as it involved a lot of back and forth communication with the file system. Newer languages and libraries like Gleam have built-in functions for this task, making it more efficient and convenient.
+There are a few alternatives for checking if a directory exists. For instance, if you are open to direct system commands, you can use `os.cmd`:
 
-An alternative approach to checking if a directory exists is by using the `std::fs` module from the standard library. This module provides the `metadata` function which can be used to retrieve information about a file or directory. However, the approach using `gleam/file` is more straightforward and recommended.
+```Gleam
+let output = os.cmd("test -d your_directory_path && echo Exists || echo Does not exist")
+```
 
-When implemented, the `dir::exists` function uses the `Path.exists` method from the Rust standard library, which ultimately uses the `access` system call to check if the directory exists.
+However, remember that system commands heavily rely on the underpinning OS and can be a potential security risk.
 
-## See Also:
+In the context of the `:filelib.is_dir` function, the actual implementation exists within Erlang. It's a blocking function, meaning that it'll block the process until it retrieves the result, essentially making it synchronous.
 
-- [`gleam/file` module documentation](https://gleam.run/libraries/file/)
-- [Gleam standard library `std::fs` module documentation](https://gleam.run/stdlib/fs/)
-- [Rust `Path.exists` method documentation](https://doc.rust-lang.org/std/path/struct.Path.html#method.exists)
+## See Also
+For more insights on Erlang's `:filelib` module, visit http://erlang.org/doc/man/filelib.html
+
+Gleam program construction: https://gleam.run/book/tour/modules.html 
+
+Erlang's handling of system commands: http://erlang.org/doc/man/os.html#cmd-1

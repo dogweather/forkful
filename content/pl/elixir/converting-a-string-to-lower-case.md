@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja ciągu znaków na małe litery"
-html_title:           "Elixir: Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
 simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest konwersja ciągu znaków na małe litery i dlaczego programiści to robią?
+## Co i dlaczego?
 
-Konwersja ciągu znaków na małe litery polega na zamianie wszystkich wielkich liter na odpowiadające im małe litery. Jest to przydatna technika, gdyż pozwala na łatwiejsze porównywanie i analizowanie tekstu. Programiści często stosują tę metodę przy przetwarzaniu danych wejściowych i przy tworzeniu algorytmów wyszukiwania.
+Konwersja tekstu na małe litery to proces, który zamienia każdą dużą literę w ciągu na jej odpowiednik z małej litery. Programiści używają tego, aby porównywać ciągi w sposób niezależny od wielkości liter, co jest przydatne przy np. sortowaniu ciągów lub porównywaniu haseł.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-W Elixirze istnieje prosty sposób na konwersję ciągu znaków na małe litery - wykorzystując funkcję `String.downcase/1`. Przykładowy kod wygląda następująco:
+Elixir ma wbudowaną funkcję `String.downcase/1` do konwersji tekstu na małe litery. Oto prosty przykład:
 
-```Elixir
-iex> String.downcase("ELIXIR")
-"elixir"
+```elixir
+tekst = "Przykład Tekstu"
+IO.puts String.downcase(tekst)
 ```
 
-Wynikiem jest przekonwertowany na małe litery ciąg znaków "elixir". Można również wykorzystać tę samą funkcję do przetwarzania całego tekstu, zawierającego wiele słów:
+Wynikiem powyższego kodu będzie:
 
-```Elixir
-iex> String.downcase("GRAMY W ELIXIR")
-"gramy w elixir"
+```elixir
+"przykład tekstu"
 ```
 
-## Dogłębna analiza
+## Głębsze zrozumienie
 
-Konwersja ciągu znaków na małe litery jest stosunkowo prosta i powszechnie wykorzystywana w wielu językach programowania. W większości przypadków, programiści wykorzystują wbudowane funkcje, takie jak `String.downcase/1` w Elixirze, do wykonania operacji. Jednym z alternatywnych sposobów jest wykorzystanie funkcji `String.to_lower/1`, jednak w praktyce nie ma to większego znaczenia, ponieważ obie funkcje działają w podobny sposób.
+Konwersja tekstu na małe litery nie jest nowym pojęciem w programowaniu, jest dostępna we wszystkich popularnych językach programowania w pewnej formie. W Elixirze używamy `String.downcase/1`, ale w innych językach programowania może to wyglądać nieco inaczej. Na przykład, w JavaScript konwersję na małe litery wykonuje się za pomocą metody `toLowerCase()`.
 
-Jednym z ważniejszych aspektów konwersji ciągu znaków na małe litery jest uwzględnienie różnic kulturowych i językowych. Na przykład, języki takie jak turecki czy duński posiadają znaki diakrytyczne, które również muszą być uwzględnione podczas konwersji na małe litery. Dlatego też, przy tworzeniu aplikacji, ważne jest aby uwzględnić specyfikę danego języka lub kultury.
+Jeśli chcesz przekształcić ciąg na małe litery, zwracając uwagę na specyficzne dla języka zasady, jak np. traktowanie polskich liter, możesz to zrobić za pomocą `String.downcase/2`. Przyjmuję dodatkowy argument, którym jest język do użycia przy konwersji. Dowiedz się więcej o `String.downcase/2` w [dokumentacji Elixir](https://hexdocs.pm/elixir/String.html#downcase/2).
 
 ## Zobacz także
 
-Więcej informacji na temat funkcji wbudowanych do konwersji ciągu znaków w Elixirze można znaleźć w [dokumentacji języka](https://hexdocs.pm/elixir/String.html). Warto również zapoznać się z innymi funkcjami wbudowanymi, takimi jak `String.downcase/1`, ponieważ mogą one być przydatne przy przetwarzaniu tekstu w różnych kontekstach.
+- [Dokumentacja Elixir: String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
+
+- [Jak Elixir porównuje ciągi](http://learning-elixir.joekain.com/comparing-elixir-strings/)
+
+- [Przetwarzanie tekstu w Elixir](https://www.tutorialspoint.com/elixir/elixir_strings.htm)
+
+Pamiętaj, że dobrą praktykę programistyczną jest zapoznanie się z dokumentacją i nauka o możliwościach dostępnych funkcji.

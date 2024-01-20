@@ -12,40 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating a date in the future or past is a common task among programmers. It involves manipulating dates to determine a specific date and time in the future or past based on a given initial date. This is useful in a variety of applications, such as scheduling events or generating reports.
+Calculating a date in the future or past is all about shifting dates forward or backward in time. Programmers do it for a variety of reasons, typically related to scheduling, tracking, or predicting events. 
 
-## How to:
+## How to
 
-Calculating a date in the future or past can be accomplished using the built-in functions provided by the ```java.util.Calendar``` class in Kotlin. These functions allow us to add or subtract a specific number of years, months, days, hours, minutes, or seconds from a given date. For example, to calculate the date two years from now, we can use the ```add()``` function like this:
-
-```Kotlin
-val calendar = Calendar.getInstance() //get current date
-calendar.add(Calendar.YEAR, 2) //add 2 years
-println("Two years from now is on ${calendar.time}") //print the calculated date
-```
-
-This will output: ```Two years from now is on Sun Apr 18 15:42:55 EDT 2021```
-
-For calculating a date in the past, we can use the ```roll()``` function instead of ```add()```. The ```roll()``` function only adjusts the specified fields without changing the larger fields. For example, to calculate the date one month ago, we can use the ```roll()``` function like this:
+Kotlin, with its robust standard library, makes this a breeze. Let's see how:
 
 ```Kotlin
-val calendar = Calendar.getInstance() //get current date
-calendar.roll(Calendar.MONTH, false) //roll back 1 month
-println("One month ago was on ${calendar.time}") //print the calculated date
+import java.time.LocalDate
+import java.time.temporal.ChronoUnit
+
+fun main() {
+    val today = LocalDate.now()
+
+    // calculcate a date 5 days in the future
+    val futureDate = today.plus(5, ChronoUnit.DAYS)
+    println("Future date: $futureDate")
+
+    // calculate a date 3 months in the past
+    val pastDate = today.minus(3, ChronoUnit.MONTHS)
+    println("Past date: $pastDate")
+}
 ```
 
-This will output: ```One month ago was on Fri Feb 18 15:42:55 EST 2021```
+Running this, you'll get output along the lines:
 
-## Deep Dive:
+```Kotlin
+Future date: YYYY-MM-DD
+Past date: YYYY-MM-DD
+```
 
-Programmers have been calculating dates for centuries, long before the advent of computers. In the past, it was done manually or with the help of a calendar. Fortunately, with advancements in technology, we now have built-in functions and libraries to make date calculations easier and more accurate.
+The exact dates will depend on the current date when you run the code.
 
-Apart from using the ```java.util.Calendar``` class, developers can also use other libraries like Joda Time or Java 8's new Date and Time API to perform date calculations. These libraries provide more extensive and precise methods for calculating dates.
+## Deep Dive
 
-When working with dates, it is important to consider time zones and daylight saving time to ensure accurate calculations. Different programming languages and libraries may handle these factors differently, so it's essential to understand the implementation details when using them.
+Historically, programmers had to manually calculate date offsets using cumbersome routines, considering leap years, time zones, etc. Fortunately, modern languages like Kotlin offer in-built classes and methods to make these calculations simple.
 
-## See Also:
+There are alternatives. For instance, the Joda-Time library in Java provides more comprehensive date/time manipulation capabilities. However, using Kotlin's standard library suffices for most needs and compromises no efficiency.
 
-- [java.util.Calendar documentation](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Joda Time library](https://www.joda.org/joda-time/)
-- [Java 8 Date and Time API](https://www.baeldung.com/java-8-date-time-intro)
+Implementation-wise, Kotlin's date/time classes like `LocalDate` employ the widely-adopted ISO-8601 calendar system. They make use of `ChronoUnit`, an enumeration representing temporal units such as 'Days', 'Months', 'Hours', etc., to perform date/time arithmetic.
+
+## See Also
+
+For more details, you might like to explore:
+
+1. Kotlin's date/time classes in standard library: [Kotlin Date & Time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date/)
+2. An overview on using Joda-Time with Java: [Joda Time library](https://www.joda.org/joda-time/)
+3. ISO-8601 calendar system: [ISO 8601 - Wikipedia](https://en.wikipedia.org/wiki/ISO_8601)

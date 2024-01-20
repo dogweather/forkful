@@ -1,7 +1,7 @@
 ---
-title:                "Розділення рядка"
-html_title:           "Python: Розділення рядка"
-simple_title:         "Розділення рядка"
+title:                "Приголосний рядок"
+html_title:           "Python: Приголосний рядок"
+simple_title:         "Приголосний рядок"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,32 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Що і чому?
+## Що це & навіщо? 
 
-Капіталізація рядків є процесом зміни рядка таким чином, щоб перша літера кожного слова була велика. Це часто використовується для покращення вигляду тексту або для відображення заголовків. Програмісти часто використовують цей процес для приведення рядка до стандартної форми або для полегшення роботи з даними.
+Створення великої літери у рядку – це перетворення першої букви рядка в верхній регістр. Програмісти використовують це, наприклад, для нормалізації даних під час обробки тексту.
 
-### Як це зробити:
+## Як виконати:
 
-```Python
-# Простий приклад
-s = "привіт світе"
-print(s.capitalize())
+Просто використовуйте рядковий метод `.capitalize()`. Ось два приклади:
 
-# Вивід: "Привіт світе"
+```Python 
+s = "hello, python world!"
+capitalized_s = s.capitalize()
+print(capitalized_s)
 ```
 
+Це дасть такий результат:
 ```Python
-# Приклад з юникод-символами
-s = "гєрманія"
-print(s.capitalize())
+"Hello, python world!"
+```
+Цей метод робить лише першу букву великою, решту букв в рядку переводить у нижній регістр.
 
-# Вивід: "Гєрманія"
+```Python 
+s = "HELLO, PYTHON WORLD!"
+capitalized_s = s.capitalize()
+print(capitalized_s)
 ```
 
-### Глибші інформації:
+Це дасть такий результат:
+```Python
+"Hello, python world!"
+```
 
-Капіталізація рядків була створена ще в 1950-ті роки і використовувалась для відображення заголовків в текстових документах. Сьогодні, її використовують для багатьох різних цілей, включаючи стандартизацію даних, покращення зрозумілості тексту та полегшення роботи з рядками. У Python є інші методи для обробки рядків, такі як `upper()` та `lower()`, які теж можуть бути корисні залежно від потреб.
+## Поглиблено:
 
-### Дивіться також:
+Історично, велику букву використовували на початку речень або для імені особи. В Python метод `capitalize()` був включений у початкову версію (Python 1.0). Як альтернатива, ви можете використовувати функцію `title()`, яка робить великою першу букву кожного слова. Метод `capitalize()` працює шляхом перетворення рядка в Unicode, змінення першого символу і повернення його назад у рядок.
 
-Для отримання додаткової інформації про капіталізацію рядків у Python, дивіться [документацію Python](https://docs.python.org/3/library/stdtypes.html#str.capitalize). Також можете ознайомитися з [різними методами для роботи з рядками](https://www.programiz.com/python-programming/methods/string) у Python.
+```Python 
+s = "hello, python world!"
+title_s = s.title()
+print(title_s)
+```
+
+Це дасть такий результат:
+```Python
+"Hello, Python World!"
+```
+
+## Дивіться також:
+
+1. [Python Strings](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) (документація про рядки Python)
+2. [How To Capitalize a String in Python](https://realpython.com/python-capitalize-string/) (детальний туторіал на Real Python) 
+3. [Difference between str.title() and str.capitalize()](https://stackoverflow.com/questions/23877049/difference-between-str-title-and-str-capitalize) (обговорення на StackOverflow)

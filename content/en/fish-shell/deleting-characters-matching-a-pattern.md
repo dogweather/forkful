@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Fish Shell recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,43 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Deleting characters matching a pattern, also known as regular expression, is a powerful feature that allows programmers to manipulate text in a specific way. It helps in finding and manipulating multiple instances of characters in any given text, saving time and effort for programmers. 
+Deleting characters matching a pattern is a common text manipulation task in programming. It helps you massage your data into the format you need, making it easier for your code to process.
 
 ## How to:
 
-Coding examples in Fish Shell: 
+In Fish Shell, you can use the `string match` command to find patterns and the `string replace` command to delete them. Here is an example:
 
+```fish
+# Let's say we have a variable with some text
+set text 'This is a pattern and a pattern to delete'
+
+# Use string replace to delete the word 'pattern'
+set modified_text (string replace -r 'pattern' '' -- $text)
+
+# Print the modified text
+echo $modified_text
 ```
-# To delete a specific character from a string
-set my_string "hello!"
-echo $my_string | tr -d 'l'
-# Output: heo!
-
-# To delete a range of characters from a string
-set my_string "hello!"
-echo $my_string | tr -d 'l-o'
-# Output: he!
-
-# To delete multiple instances of a character from a string
-set my_string "hello!"
-echo $my_string | tr -d 'l'
-# Output: heo!
-
-# To delete a specific pattern from a string
-set my_string "fish_shell_123"
-echo $my_string | tr -d '_[0-9]'
-# Output: fishshell
-
+Sample Output:
 ```
+This is a  and a  to delete 
+```
+
+The `-r` option makes 'pattern' act as a regular expression. The `--` is used to specify the source string to process.
 
 ## Deep Dive:
 
-- **Historical Context**: Regular expressions were first introduced by computer scientist Stephen Cole Kleene in the 1950s as a notation for describing patterns in formal language theory. They were later popularized by Unix tools such as grep, sed, and awk, and have since become an essential tool for text processing.
-- **Alternatives**: Other shell languages such as Bash and Zsh also have regular expression capabilities, but the syntax and functions might differ.
-- **Implementation details**: Fish Shell uses the tr command for its delete functionality. This command is short for "translate" and is used to delete or change characters in a given string according to the specified pattern.
+The `string match` and `string replace` commands in Fish Shell provide a powerful way for programmers to manipulate text. They are based on regular expressions, a concept that originated in the 1950s and has been adopted by many programming languages.
+
+There are lots of alternatives in Fish Shell for pattern matching. For example, you could use the `string match` command to find all matches and then loop over them to make modifications.
+
+However, `string replace` provides a straightforward way to modify all instances at once and is often more efficient. 
+
+Under the hood, `string replace` uses the PCRE2 (Perl Compatible Regular Expressions) library. This provides a rich set of features for pattern matching, including lookaheads, lookbehinds, and other advanced regex features.
 
 ## See Also:
 
-- [Fish Shell Official Website](https://fishshell.com/): For more information on Fish Shell, including installation and usage guides.
-- [Regular Expressions Tutorial](https://www.regular-expressions.info/tutorial.html): A comprehensive tutorial on regular expressions for beginners.
-- [Unix Shell Commands](https://www.maths.tcd.ie/~michal/UNIX.html): A list of common Unix shell commands, including tr.
+For more details, check out these great resources:
+
+- [Fish Shell Documentation: string replace](https://fishshell.com/docs/current/cmds/string-replace.html)
+- [Fish Shell Documentation: string match](https://fishshell.com/docs/current/cmds/string-match.html)
+- [PCRE2 Documentation](https://www.pcre.org/current/doc/html/)

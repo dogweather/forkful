@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstavering av en streng"
-html_title:           "Python: Stor bokstavering av en streng"
-simple_title:         "Stor bokstavering av en streng"
+title:                "Å sette en streng i store bokstaver"
+html_title:           "Python: Å sette en streng i store bokstaver"
+simple_title:         "Å sette en streng i store bokstaver"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,30 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Hva & Hvorfor? 
-Når vi snakker om å kapitalisere en streng, mener vi å konvertere den første bokstaven i hvert ord til en stor bokstav. Dette gjøres vanligvis for å gjøre teksten mer leselig og estetisk tiltalende.
+## Hva & Hvorfor?
 
-Programmerere bruker ofte denne funksjonen for å formatere tekst som skal vises til brukeren, for eksempel navn og titler.
+Gjøre store bokstaver i en streng, eller "string", er å endre det første bokstavet i en tekststreng til en stor bokstav. Programmerere gjør dette for å forbedre lesbarhet og for gnistrende tekstbehandling.
 
-## Slik gjør du det:
-```Python
-navn = 'andrea johansen'
-print(navn.capitalize())
+## Hvordan det gjøres:
+
+Du kan gjøre dette i Python ved hjelp av innebygd `capitalize()` funksjonen. Her er et eksempel på bruken av det:
+
+```python
+text = "heisann, verden!"
+capitalized_text = text.capitalize()
+
+print(capitalized_text)
 ```
-Output: Andrea Johansen
+Når du kjører dette, vil utdata være:
 
-```Python
-navn = 'john smith'
-print(navn.title())
 ```
-Output: John Smith
+Heisann, verden!
+```
 
-## Dypdykk:
-Å kapitalisere en streng er ikke en ny praksis - det har vært brukt gjennom historien for å fremheve viktige navn og titler. I moderne programmering finnes det alternativer som ```str.upper()``` som konverterer hele strengen til store bokstaver og ```str.lower()``` som gjør det motsatte. 
+Som du kan se, har det første bokstavet i strengen blitt endret til en stor bokstav.
 
-Implementeringen av ```str.capitalize()``` i Python følger Unicode-spesifikasjonen og vil kun endre den første bokstaven i hvert ord, uavhengig av språket som brukes. Det er også mulig å kapitalisere en tekststreng i HTML ved hjelp av CSS.
+## Dypere inn i detaljene:
+
+Historisk sett har programmerere søkt å forbedre lesbarhet og presentasjon av tekst ved bruk av slike metoder som "capitalization". Imidlertid har noen programmeringsspråk forskjellige tilnærminger til dette.
+
+I Python brukes `capitalize()` funksjonen, men du må være oppmerksom på at den kun gjør det første bokstavet til en stor bokstav. Den gjør alle andre bokstaver om til små bokstaver. For eksempel:
+
+```python
+text = "hEISeNN, VeRDeN!"
+capitalized_text = text.capitalize()
+
+print(capitalized_text)
+```
+Resultatet er:
+
+```
+Heisann, verden!
+```
+
+Hvis du trenger å beholde de opprinnelige store bokstavene i teksten, bør du vurdere å bruke `title()` funksjonen.
 
 ## Se også:
-- [Unicode karaktertabell](https://unicode-table.com/no/)
-- [Python string methods dokumentasjon](https://docs.python.org/3/library/stdtypes.html#string-methods)
-- [CSS text-transform](https://developer.mozilla.org/en-US/docs/Web/CSS/text-transform)
+
+For mer informasjon og relaterte ressurser, sjekk ut følgende lenker:
+1. Python offisielle dokumentasjon på streng metoder: https://docs.python.org/3/library/stdtypes.html#string-methods
+2. Detaljert guide om `capitalize()` og `title()` funksjoner: https://www.w3schools.com/python/ref_string_capitalize.asp
+3. Tips og triks for å arbeide med strenger i Python: https://realpython.com/courses/working-python-strings/

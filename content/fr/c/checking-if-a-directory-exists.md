@@ -10,41 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce-que et Pourquoi?
+## Quoi et Pourquoi?
 
-Vérifier si un répertoire existe est un moyen pour les programmeurs de s'assurer qu'un chemin d'accès spécifié mène à un répertoire valide. Cela permet de s'assurer que le programme peut accéder aux fichiers et dossiers nécessaires pour son exécution sans rencontrer d'erreurs.
+Contrôler l'existence d'un répertoire consiste simplement à vérifier si un certain emplacement de fichier spécifié existe déjà ou non. Les programmeurs le font généralement pour éviter les erreurs au moment de l'exécution du programme, comme tenter d'accéder à un répertoire inexistant.
 
-## Comment faire:
+## Comment Faire :
 
-Il est possible de vérifier si un répertoire existe en utilisant la fonction stat() de la bibliothèque standard en C. Elle prend en entrée le nom du répertoire et renvoie une structure stat contenant des informations sur le fichier ou le répertoire spécifié. Si le répertoire existe, la structure sera remplie et la fonction renverra 0 en tant que valeur de retour. Sinon, elle renverra -1.
+En C, vous pouvez utiliser des fonctions comme `stat()` ou `opendir()` pour vérifier l'existence d'un répertoire. Voici comment vous pouvez le faire :
 
 ```C
-#include <stdio.h>
+#include <sys/types.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
-int main()
-{
-    char* directory = "path/to/directory";
+int directoryExists(const char* path) {
     struct stat info;
-    if(stat(directory, &info) == 0)
-    {
-        printf("%s existe. \n", directory);
-    }
+
+    if(stat(path, &info) != 0)
+        return 0;
+    else if(info.st_mode & S_IFDIR)
+        return 1;
     else
-    {
-        printf("%s n'existe pas. \n", directory);
-    }
-    return 0;
+        return 0;
 }
 ```
+Lorsque vous exécutez ce bloc de code avec le chemin correct, il retournera 1 si le répertoire existe, et 0 s'il n'existe pas.
 
-## Plongée en profondeur:
+## Plongée Profonde :
 
-Avant la version actuelle du langage C, il n'y avait pas de fonction spécifique pour vérifier si un répertoire existait. Les programmeurs devaient utiliser d'autres méthodes telles que opendir() et readdir() pour parcourir les fichiers et répertoires et vérifier s'ils correspondaient au chemin d'accès spécifié. Cependant, ces méthodes n'étaient pas aussi efficaces et fiables que la fonction stat() actuelle.
+La méthode mentionnée ci-dessus a des origines historiques dans le système d'exploitation Unix, où la commande `stat` a d'abord été utilisée pour vérifier les informations de fichier.
 
-Il existe également d'autres méthodes pour vérifier si un répertoire existe, telles que l'utilisation de POSIX (Portable Operating System Interface) et la fonction access(), qui renvoie également 0 si le répertoire existe. Cependant, la fonction stat() reste la méthode recommandée pour sa fiabilité et sa compatibilité avec les systèmes d'exploitation.
+En termes d'alternatives, vous pouvez également utiliser la fonction `opendir()` qui ouvre un flux de répertoire pour lire. Cette fonction renvoie un pointeur non nul si le répertoire existe.
 
-## Voir aussi:
+Dans le détail de l'implémentation, `stat()` renvoie un enregistrement de structure avec information détaillée sur le fichier. `S_IFDIR` est une macro qui est vraie si le fichier est un répertoire.
 
-- La documentation officielle de la fonction stat() en C: https://www.gnu.org/software/libc/manual/html_node/File-Status-Test-Macros.html#File-Status-Test-Macros
-- Un guide détaillé sur la manipulation de fichiers et répertoires en C: https://www.geeksforgeeks.org/c-programming-language/.
+```C
+#include <dirent.h>
+
+int directoryExists(const char* path) {
+    DIR* dir = opendir(path);
+
+    if (dir) {
+        closedir(dir);
+        return 1;
+    } else {
+        return 0;
+    }
+}
+```
+## Voir Aussi :
+
+Pour plus d'information sur les détails et alternatives pour vérifier l'existence d'un répertoire en C :
+
+- [Documentation de la fonction `stat`](https://man7.org/linux/man-pages/man2/stat.2.html) 
+- [Documentation de la fonction `opendir`](https://man7.org/linux/man-pages/man3/opendir.3.html)
+- [Forum StackOverflow sur le sujet](https://stackoverflow.com/questions/4553012/checking-if-a-file-is-a-directory-in-c)

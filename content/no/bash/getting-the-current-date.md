@@ -1,7 +1,7 @@
 ---
-title:                "Å få dagens dato"
-html_title:           "Bash: Å få dagens dato"
-simple_title:         "Å få dagens dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,38 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å få den nåværende datoen er en vanlig oppgave for Bash-programmering. Dette er viktig for å kunne spore når en bestemt hendelse eller operasjon ble utført, og for å automatisk generere filnavn basert på datoen.
+Å hente nåværende dato i programmering betyr å få informasjon om det eksakte tidspunktet nå i form av dato. Vi gjør dette for å loggføre tidspunkt for hendelser, generere tidspesifikke data, eller å måle tid mellom operasjoner.
 
-## Hvordan:
-For å få den nåværende datoen, kan du bruke kommandoen `date` i Bash. Dette vil gi deg den nåværende datoen og klokkeslettet i standardformatet. Her er et eksempel på koden og resultatet:
-
-```Bash
-date
-```
-
-Output:
-
-`Tir Sep 28 19:29:47 CEST 2021`
-
-Dette vil variere avhengig av tidssone og systeminnstillinger.
-
-Du kan også formatere utgangen ved å legge til en formatstreng som et argument til kommandoen `date`. For eksempel, for å få datoen i ISO-format (YYYY-MM-DD), kan du bruke følgende kode:
+## Hvordan gjøre det:
+Her er noen Bash-kodeeksempler for å vise hvordan du henter den nåværende datoen:
 
 ```Bash
-date +%F
+# Få dagens dato
+dato=$(date)
+echo "Dagens dato er: $dato"
+
+# Få dato i bestemt format
+formatertDato=$(date '+%d-%m-%Y')
+echo "Dagens dato i DD-MM-YYYY format: $formatertDato"
 ```
+Typisk utdata:
 
-Output:
+```Bash
+Dagens dato er: Tue Mar 9 14:34:51 CET 2021
+Dagens dato i DD-MM-YYYY format: 09-03-2021
+```
+## Dypere Dykk
+Å hente nåværende dato i programmering ble brukt i de første operative systemene. Unix, mor til Linux, introduserte `date` kommando på 70-tallet.
 
-`2021-09-28`
+Det er forskjellige metoder for å hente datoen, avhengig av programmeringsspråket. For eksempel, i Python, vil vi bruke datetime biblioteket (`import datetime; datetime.datetime.now()`). 
 
-For mer informasjon og mulige formateringsvalg kan du se `man date`.
+Når Bash tolker din `date` kommando, kaller den opp en systemfunksjon som heter `gettimeofday`(eller lignende), som tar språkets interne tidsstruktur, og gir den tilbake fylt med nåværende tid.
 
-## Dykk dypere:
-Å få den nåværende datoen er enkelt, men det kan være nyttig å vite litt om historisk kontekst. Datoen ble først introdusert i UNIX-systemet på 1970-tallet og har utviklet seg siden da. Alternativt kan du også bruke kommandoen `cal` for å få et kalenderoversikt over en bestemt måned eller år.
-
-Implementering av `date`-kommandoen er avhengig av systemet ditt og kan variere. På noen systemer bruker den faktisk `libcore` biblioteket for å beregne datoen.
-
-## Se også:
-- [`man date`](https://linux.die.net/man/1/date)
-- [UNIX-dato og tid](https://en.wikipedia.org/wiki/Unix_time)
+## Se Også
+- [`date` Man Page](https://linux.die.net/man/1/date): Komplett beskrivelse av `date` kommandoen og dens alternativer.
+- [Bash Programming in Linux](https://www.linux.org/forums/bash-programming.54/): Forum dedikert til Bash-programmering.

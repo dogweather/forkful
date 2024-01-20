@@ -1,6 +1,6 @@
 ---
 title:                "Gerando números aleatórios"
-html_title:           "Java: Gerando números aleatórios"
+html_title:           "C: Gerando números aleatórios"
 simple_title:         "Gerando números aleatórios"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que? 
-Gerar números aleatórios é um processo muito importante na programação em Java. Ele permite que os programadores criem jogos, simulações e outros programas que precisam de uma fonte de aleatoriedade para funcionar corretamente.
+## Por quê & Para quê?
 
-## Como fazer: 
-Para gerar números aleatórios em Java, usamos a classe "Random" que já está incluída na linguagem. Primeiro, importe a classe usando ```import java.util.Random;```. Em seguida, crie um objeto desta classe com ```Random gerador = new Random();```. Agora, você pode usar métodos como ```nextInt()``` ou ```nextDouble()``` para gerar números inteiros e decimais, respectivamente. Por exemplo, para gerar um número inteiro aleatório entre 1 e 10, podemos usar ```int num = gerador.nextInt(10) + 1;``` e para um número decimal entre 0 e 1, podemos usar ```double num = gerador.nextDouble();```. Veja abaixo um exemplo completo:
+Gerar números aleatórios significa criar uma sequência de números cujo padrão não pode ser previsto logicamente. Programadores fazem isso para introduzir aleatoriedade em suas aplicações, seja para imitar a realidade (como em jogos de azar) ou para segurança (como na geração de senhas).
 
-```
+## Como fazer:
+
+O Java tem uma classe `java.util.Random` que possuí vários métodos para gerar tipos diferentes de números aleatórios. Aqui estão alguns exemplos:
+
+```Java
 import java.util.Random;
 
-public class GeradorNumerosAleatorios {
-  public static void main(String[] args) {
-    Random gerador = new Random();
-    int numInteiro = gerador.nextInt(10) + 1;
-    double numDecimal = gerador.nextDouble();
-    System.out.println("Número inteiro gerado: " + numInteiro);
-    System.out.println("Número decimal gerado: " + numDecimal);
-  }
+public class Main {
+    public static void main(String[] args) {
+        // criação de objeto
+        Random rand = new Random();
+
+        // Gera um número aleatório inteiro
+        int numeroInteiro = rand.nextInt();
+        System.out.println("Número inteiro aleatório: " + numeroInteiro);
+
+        // Gera um número aleatório de ponto flutuante (float)
+        float numeroFloat = rand.nextFloat();
+        System.out.println("Número float aleatório: " + numeroFloat);
+    }
 }
 ```
 
-Saída:
-```
-Número inteiro gerado: 7
-Número decimal gerado: 0.522995
+E o output será diferente cada vez que você rodar este código.
+
+## Mergulho Profundo
+
+Os primeiros computadores a gerar números aleatórios foram criados na década de 1940. No entanto, a classe `java.util.Random` foi despertada no Java 1.0. É uma classe que usa um algoritmo linear congruente, o que significa que não é segura para criptografia.
+
+Uma alternativa é a classe `java.security.SecureRandom`, que fornece um gerador de números aleatórios (RNG) que tem um nível de segurança mais alto. Apesar de ser mais lento, ele é ideal para situações que exigem alta segurança.
+
+```Java
+import java.security.SecureRandom;
+
+public class Main {
+    public static void main(String[] args) {
+        // Criação de objeto
+        SecureRandom rand = new SecureRandom();
+
+        // Gera um número aleatório seguro 
+        int secureInt = rand.nextInt();
+        System.out.println("Número inteiro aleatório seguro: " + secureInt);
+    }
+}
 ```
 
-## Mergulho Profundo:
-A geração de números aleatórios é uma técnica amplamente utilizada na computação e pode ser encontrada em diversas linguagens de programação. Em Java, a classe "Random" foi introduzida na versão 1.0 da linguagem e possui diversos métodos para gerar diferentes tipos de números aleatórios. Além disso, existem outras formas de obter números aleatórios em Java, como usando a classe "Math" ou a classe "ThreadLocalRandom".
+## Ver Também
 
-## Veja também:
-- [Overview da classe Random em Java (em inglês)](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
-- [Tutorial sobre geração de números aleatórios em Java (em português)](https://www.w3schools.com/java/java_random.asp)
+1. [Documentação do java.util.Random](https://docs.oracle.com/javase/7/docs/api/java/util/Random.html)
+2. [Documentação do java.security.SecureRandom](https://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html)
+3. [Gerando números aleatórios em Java](https://www.baeldung.com/java-random)
+4. [Como usar o SecureRandom](https://www.mkyong.com/java/java-securerandom-examples/)

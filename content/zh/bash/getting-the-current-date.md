@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Bash: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
-获取当前日期是指从计算机系统中获取当前的日期和时间。程序员在编程中经常需要使用当前日期，并且通常会根据不同的需求来格式化日期和时间，比如将日期显示为特定格式或者计算两个日期之间的时间差。因此，获取当前日期对于程序员来说是非常重要的。
+## 是什么 & 为什么？
 
-## 如何：
-这里提供两种在Bash中获取当前日期的方法。
+获取当前日期是检索系统当前日期和时间的过程。程序员之所以需要做这个，主要是为了记录时间戳，跟踪错误，产生特定的日期/时间，或者用在定时任务等等。
 
-### 方法一：
+## 如何操作：
+
+在Bash中，我们可以使用`date`命令来获取当前的日期和时间。代码和样例输出如下：
+
 ```Bash
-echo $(date)
+#!/bin/bash
+date
 ```
-#### 输出：
-Thu Apr 29 19:23:44 EDT 2021
 
-### 方法二：
+这将返回当前的日期和时间。
+
 ```Bash
-echo $(date +%m-%d-%Y)
+Sat Sep 19 21:16:06 UTC 2021
 ```
-#### 输出：
-04-29-2021
 
-## 深入了解：
-获取当前日期这个概念是从计算机中出现的，特别是在许多操作系统支持的。它可以追溯到1970年，当时的Unix操作系统开发人员首先引进了一个UNIX时间戳，用于跟踪系统中过去和现在的时间。在Bash中，也可以使用其他命令来获取日期，如`cal`和`date +%s`，它们可以分别显示日历和时间戳。
+## 深入研究：
 
-除了使用Bash命令外，还可以使用其他编程语言来获取当前日期，如Python中的`datetime`模块和Java中的`Date`类。这些语言也提供了更多日期和时间的处理功能。
+在古老的UNIX系统和Shell编程中，`date`就已经存在了。这种命令用于在程序中处理和格式化日期和时间。除了`date`命令，你也可以选择其他命令像`printf`或者特定的语言构造方式（像Python的datetime模块）来实现。
 
-## 参考链接：
-- [Bash文档](https://www.gnu.org/software/bash/manual/bash.html)
-- [Unix时间戳](https://en.wikipedia.org/wiki/Unix_time)
-- [Python datetime模块](https://docs.python.org/3/library/datetime.html)
-- [Java Date类](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+在Bash中，`date`命令接受`+`后接格式指示符参数，来控制显示的时间和日期的格式。例如：
+
+```Bash
+#!/bin/bash
+date "+%Y-%m-%d"
+```
+
+将返回以下的格式:
+
+```Bash
+2021-09-19
+```
+
+## 查看其他：
+
+在编程中获取当前日期是一个非常常见的需求，以下链接提供了更多的相关信息和样例：
+- Bash `date` 命令手册：
+    `https://man7.org/linux/man-pages/man1/date.1.html`
+- `printf` 命令手册：
+    `https://man7.org/linux/man-pages/man1/printf.1p.html`
+- Python `datetime` 模块文档：
+    `https://docs.python.org/3/library/datetime.html`
+- 阮一峰的网络日志：Linux 命令行教程 - `date`命令：`http://www.ruanyifeng.com/blog/2015/05/date.html`

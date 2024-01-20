@@ -1,6 +1,6 @@
 ---
 title:                "文字列を小文字に変換する"
-html_title:           "Javascript: 文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と なぜ？
+日本の皆さん、こんにちわ！
+今日はJavascriptで文字列を小文字に変換するやり方についてお話しましょう。簡潔で実用的なスタイルであまり難しくないから安心して読んでください。
 
-文字列を小文字に変換するとは、文字列に含まれるすべての英字を小文字に変換することです。プログラマーがこれを行う理由は、大文字と小文字を区別しなくても、同じ文字列として処理したい場合があるからです。
+## 何となぜ？
+文字列を小文字に変換するとは、すべての大文字を対応する小文字に置き換える処理のことです。なぜこれをやるかというと、比較、検索、整列などの操作を大文字と小文字を区別しないで行いたいとき、この方法が役立ちます。
 
-## 方法：
+## こうやる
+こちらが一番ですぐ活用できる方法とコード例です。
 
 ```Javascript
-let str = "Hello World";
-let lowerStr = str.toLowerCase();
-
-console.log(lowerStr); //output: "hello world"
+var str = "Hello World!";
+var lowerCaseString = str.toLowerCase();
+console.log(lowerCaseString);
+// 输出: hello world!
 ```
 
-## 詳しい情報：
+`toLowerCase()`関数を使って文字列中の大文字を全て小文字に変換します。
 
-文字列を小文字に変換する方法は、最近のバージョンのJavascriptでは組み込みの機能として提供されていますが、昔はプログラマーが自分で実装する必要がありました。代替手段として、正規表現を使用して文字列を小文字に変換する方法もありましたが、多くの場合、組み込み機能を使用することが推奨されています。実装の詳細については、ECMAScript仕様書を参照してください。
+## ディープダイブ
+`toLowerCase()` はJavaScriptで初めて導入され、その後多くのプログラミング言語でも利用できるようになりました。ただし、同じ目的を果たす他の方法もあります。例えば、ASCIIコードを直接操作すれば大文字を小文字に変換できます。しかし、これは多くのエッジケースを扱うのが困難であるため、通常は `toLowerCase()` を利用します。
 
-## 関連リンク：
+この関数は文字列の各文字に対してUnicode値に基づいた変換を行うため、特殊文字でも問題なく小文字に変換できます。
 
-- [ECMAScript仕様書](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)
-- [MDNのString.prototype.toLowerCase()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+## 関連リンク
+- [MozillaのtoLowerCase文書](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [JavaScriptで文字列を操作しよう](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Text_formatting)
+
+今回は以上です。次回もJavaScriptについて簡潔にシェアしますので、お楽しみに！

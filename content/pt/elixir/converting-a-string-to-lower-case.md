@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma string para letras minúsculas"
-html_title:           "Elixir: Convertendo uma string para letras minúsculas"
-simple_title:         "Convertendo uma string para letras minúsculas"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê? 
-Converter uma string para letras minúsculas é o processo de transformar todas as letras maiúsculas em uma frase em letras minúsculas. Programadores geralmente fazem isso para padronizar o texto, facilitar comparações e evitar erros de digitação.
+## O Que & Por Quê?
 
-## Como fazer:
-Converter uma string para letras minúsculas é muito simples em Elixir. Basta usar a função `String.downcase/1` que recebe a string como argumento e retorna a string em letras minúsculas. Veja um exemplo abaixo:
+Converter uma string para letras minúsculas é transformar todos os caracteres maiúsculos da string em seus equivalentes minúsculos. Os programadores fazem isso para normalizar as entradas de dados e evitar erros de comparação sensíveis a maiúsculas e minúsculas.
 
-```
-Elixir iex> String.downcase("ELIXIR")
-"elixir"
-```
+## Como Fazer:
 
-Você também pode utilizar a sintaxe de pipe operator para encadear funções e converter a string de forma mais legível, como mostrado abaixo:
+Em Elixir, a solução mais direta é usar a função `String.downcase/1`. Aqui está um exemplo simples:
 
-```
-Elixir iex> "ELIXIR" |> String.downcase()
-"elixir"
+```elixir
+s = "Eu Amo Programar com Elixir"
+IO.puts String.downcase(s)
 ```
 
-## Mais Informações:
-Historicamente, o conceito de maiusculização e minusculização de letras em strings era mais relevante para linguagens que não possuíam o conceito de tipos de dados, como o Assembly. Em Elixir, esse processo pode ser feito de forma mais simples e eficiente usando funções da biblioteca padrão, como a `String.downcase/1`.
+A saída é
 
-Se você estiver trabalhando com texto em português, é importante lembrar que a função `String.downcase/1` pode não funcionar corretamente para caracteres acentuados. Nesse caso, uma alternativa é utilizar a função `String.to_lower/1` do módulo `Unicode`, que lida com caracteres acentuados corretamente.
+```elixir
+"eu amo programar com elixir"
+```
 
-## Veja também:
-- [Documentação oficial da função String.downcase/1](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [Documentação oficial da função String.to_lower/1](https://hexdocs.pm/elixir/Unicode.html#to_lower/1)
+Perfeito - essa string está agora toda em letras minúsculas.
+
+## Deep Dive
+
+Elixir é uma linguagem relativamente nova, tendo sido criada em 2011, mas os conceitos de conversão de strings para letras minúsculas datam do início da computação. A abordagem de Elixir para isso é altamente influenciada por sua linguagem pai, Erlang, e enfatiza a simplicidade e a clareza de propósito.
+
+Existem alternativas para 'String.downcase/1' em Elixir, como 'String.to_charlist/1' seguido de 'Enum.map/2'. Mas a maioria das situações em Elixir simplesmente exigiria o uso de 'String.downcase/1', pois é o mais eficiente e direto.
+
+A implementação de 'String.downcase/1' é baseada na tabela Unicode. Isto é, para todos os caracteres aplicáveis, essa função mapeia o caractere para a versão minúscula correspondente na tabela Unicode. Portanto, a função trabalha não apenas com o script latino, mas também com qualquer script que tenha noções de letras maiúsculas e minúsculas.
+
+## Veja Também:
+
+Elixir tem uma excelente documentação online que cobre a módulo de strings em detalhes. Aqui estão alguns links relevantes:
+- [Funções auxiliares para trabalhar com strings unicode e binárias](https://hexdocs.pm/elixir/String.html)
+- [Tutorial do Elixir para iniciantes](https://elixirschool.com/pt/)
+- [Elixir no Exercism, um recurso prático para aprender com exercícios](https://exercism.io/tracks/elixir)

@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "Fish Shell: Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,38 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad och varför?
+Att konvertera ett datum till en sträng i programmering innebär att man ändrar representationen av datumet till textform. Detta gör man för att enklare kunna visa och manipulera datumet i programmet.
 
-Att konvertera en datum till en sträng är en vanlig uppgift för programmerare. Det gör att datumet kan läsas och hanteras på ett enkelt sätt av programmet eller användaren. Det kan också behövas för att jämföra datum eller för att visa datumet i en önskad format.
-
-# Hur man gör:
+## Så här gör du:
+Med Fish Shell tog funktionen att skriva ut datum i strängformat precis så här:
 
 ```Fish Shell
-# Skapa en variabel med det aktuella datumet
-set idag (date)
-
-# Visa datumet i standardformatet YYYY-MM-DD
-echo $idag
-
-# Visa datumet i ett anpassat format
-echo (strftime "%d/%m/%Y" $idag) 
+set datum (date "+%Y-%m-%d")
+echo $datum
 ```
-Resultat:
-```
-2020-10-28
-28/10/2020
+Detta ger tillbaka något i stil med: "2021-09-02"
+
+Ett mer kompakt sätt att skapa datumsträngen:
+
+```Fish Shell
+echo (date "+%Y-%m-%d")
 ```
 
-# En djupare titt:
+## Djupdykning
+Det historiska sammanhanget för att skriva om datum som strängar kommer ifrån ett behov hos gamla textbaserade gränssnitt att visa datum på ett läsbart sätt. I dagens grafiska gränssnitt finns fortfarande detta behov för att hantera och visa datum i vissa former.
 
-- Att konvertera datum till strängar har varit ett problem sedan de första programmeringsspråken skapades. Det finns olika metoder för att hantera det, men i Fish Shell använder vi inbyggda funktioner som `date` och `strftime`.
-- Alternativ till Fish Shell för att konvertera datum till strängar är till exempel Bash, Python och Ruby. Varje språk har sina egna inbyggda funktioner eller metoder för att utföra uppgiften.
-- Fish Shell använder sig av C-programmeringsspråket för implementationen av sina inbyggda funktioner för datum- och tidsbehandling.
+Alternativ till att använda `date` i Fish Shell kan vara att använda `strftime` funktionen i språk som Python eller Java för att konvertera ett datum till en sträng.
 
-# Se även:
+För implementeringsdetaljer betraktas datakonvertering som en process att omvandla data från ett format till ett annat. Som nämnts sker datatransformering i Fish Shell enligt följande format `"+%Y-%m-%d"`. Här står "+" för output-beteende, "Y" för fyrsiffrigt år, "m" för tvåsiffrig månad och "d" för tvåsiffrig dag.
 
-- [Fish-Shell dokumentation om date](https://fishshell.com/docs/current/cmds/date.html)
-- [Wikipedia artikel om datum- och tidsrepresentation](https://en.wikipedia.org/wiki/Date_and_time_representation_by_country)
-- [Bash's inbyggda funktion `date`](https://www.gnu.org/software/bash/manual/html_node/Bash-Builtins.html#Bash-Builtins)
-- [Python's modul datetime](https://docs.python.org/3/library/datetime.html)
-- [Ruby's inbyggda funktion `time`](https://ruby-doc.org/core-2.5.0/Time.html)
+## Se Också
+Du kan läsa mer om Fish Shell och dess användning på nedan webbplatser:
+- Fish Shell official documentation: https://fishshell.com/docs/current/index.html
+- Stack Overflow Q&A on Fish Shell: https://stackoverflow.com/questions/tagged/fish
+- GitHub repository for Fish Shell: https://github.com/fish-shell/fish-shell

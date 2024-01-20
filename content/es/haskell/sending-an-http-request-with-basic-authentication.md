@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Haskell: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¡Hola Programadores!
+# Enviando una solicitud HTTP con autenticación básica en Haskell
 
-## ¿Qué y Por Qué?
+## ¿Qué y por qué?
+Enviar una solicitud HTTP con autenticación básica es un método para acceder a recursos de un servidor que requieren un usuario y una contraseña. Los programadores lo hacen para interactuar con APIs protegidas.
 
-Enviar una solicitud de HTTP con autenticación básica es la forma en que los programadores se aseguran de que solo usuarios autorizados pueden acceder a un recurso o servicio en línea. Es una medida de seguridad común en aplicaciones web, ya que requiere que los usuarios ingresen credenciales como nombre de usuario y contraseña antes de acceder a una página o realizar una acción.
-
-## Cómo:
-
-```Haskell
-import Network.HTTP
-import Network.HTTP.Auth
-import Network.HTTP.Headers
-```
-
-Para enviar una solicitud de HTTP con autenticación básica en Haskell, necesitaremos importar los módulos necesarios mencionados anteriormente. Luego, podemos utilizar la función ```simplyHTTP``` para enviar una solicitud de GET con autenticación básica. Aquí hay un ejemplo de cómo se vería el código:
+## ¿Cómo hacerlo?
+Para enviar una solicitud HTTP con autenticación básica en Haskell, vamos a utilizar la biblioteca `http-conduit`. Necesitarás instalarla con `cabal install http-conduit`. Aquí hay un código de muestra:
 
 ```Haskell
-simplyHTTP (getRequest "www.ejemplo.com") >>= sendW ⟩> 
-putStr . rspBody
+import Network.HTTP.Simple
+import Network.HTTP.Client (applyBasicAuth)
+
+main :: IO ()
+main = do
+    let request = setRequestPath "/resource" $
+                  setRequestHost "www.example.com" $
+                  setRequestPort 443 $
+                  setRequestSecure True $ 
+                  applyBasicAuth "username" "password" $
+                  defaultRequest
+
+    response <- httpLBS request
+    putStrLn $ "Status: " ++ show (getResponseStatusCode response)
+    print $ getResponseBody response
 ```
 
-En este ejemplo, estamos enviando una solicitud de GET al sitio web "www.ejemplo.com" con autenticación básica y luego imprimiendo la respuesta en la consola utilizando la función ```putStr```.
+Este programa hace una petición a `www.example.com/resource` con autenticación básica y luego imprime el estado de la respuesta y el cuerpo de la respuesta.
 
-## Profundizando:
+## Profundizando
+La autenticación básica fue parte de la especificación original de HTTP creada en 1992. Envía nombre de usuario y contraseña en claro (base64) sobre la red, por lo que por razones de seguridad, siempre debe usarse junto con HTTPS, que cifra el tráfico.
 
-La autenticación básica de HTTP fue introducida en la especificación de HTTP/1.0 en 1996 como una forma simple de autenticar usuarios en aplicaciones web. Sin embargo, debido a que las credenciales se envían en texto plano, no es una medida de seguridad confiable y es vulnerable a ataques de hackers. Por lo tanto, se recomienda utilizar otras formas de autenticación más seguras, como OAuth o JSON Web Tokens (JWT).
+Una alternativa a la autenticación básica es la autenticación de portador de token, a menudo utilizada junto con OAuth 2.0. En lugar de enviar un nombre de usuario y una contraseña, envías un token, que puede ser revocado en cualquier momento.
 
-Si quieres saber más sobre cómo implementar la autenticación básica en Haskell, te recomiendo leer más sobre las funciones ```simplyHTTP``` y ```sendW```. Estas funciones se pueden usar para enviar diferentes tipos de solicitudes HTTP y también permiten especificar encabezados de autenticación adicionales.
+La función `applyBasicAuth` en `http-conduit` toma un nombre de usuario y una contraseña, los codifica en Base64, y los pone en el encabezado de autorización. ¿Quieres ver los detalles detallados? Observa el código fuente de la función: https://hackage.haskell.org/package/http-client-0.7.3/docs/src/Network-HTTP-Client.html#applyBasicAuth
 
-## Vea También:
-
-- [Documentación de Network.HTTP] (https://hackage.haskell.org/package/HTTP-4000.3.12/docs/Network-HTTP.html)
-- [Solicitudes HTTP en Haskell] (https://mmhaskell.com/blog/2017/5/9/practical-haskell-making-http-requests)
-- [Biblioteca de autenticación de red de Haskell] (https://hackage.haskell.org/package/authHTTP-1.0.7/docs/src/Network.HTTP.Auth.html)
+## Ver también
+- Documentación de http-conduit: https://hackage.haskell.org/package/http-conduit
+- Especificación original de HTTP: https://www.w3.org/Protocols/HTTP/AsImplemented.html
+- Autenticación Bearer Token: https://tools.ietf.org/html/rfc6750
+- Detalles sobre base64: https://en.wikipedia.org/wiki/Base64

@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser des expressions régulières"
-html_title:           "Gleam: Utiliser des expressions régulières"
-simple_title:         "Utiliser des expressions régulières"
+title:                "Utiliser les expressions régulières"
+html_title:           "C: Utiliser les expressions régulières"
+simple_title:         "Utiliser les expressions régulières"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## C'est quoi et pourquoi?
 
-L'utilisation d'expressions régulières est une pratique courante parmi les programmeurs. Cela leur permet de rechercher et de manipuler des motifs spécifiques dans du texte, ce qui peut s'avérer très utile lors de la validation de données ou du traitement de chaînes de caractères.
+Les expressions régulières (regular expressions) sont des séquences de caractères utilisées pour définir des modèles de recherche dans des chaînes de caractères. Les programmeurs les utilisent pour la manipulation de chaînes de caractères, le filtrage de données, et d'autres tâches de traitement du texte.
 
-## Comment:
+## Comment faire :
 
-Voici un exemple simple d'utilisation des expressions régulières en Gleam:
+Voici comment utiliser les expressions régulières dans Gleam.
 
-```Gleam
-let regex = Regex.compile("\\d{3}-\\d{2}-\\d{4}")
-let ssn = "123-45-6789"
+```gleam
+import gleam/regex
 
-match regex.match(ssn) {
-  Some(_) -> 
-    // Code exécuté lorsque le numéro de sécurité sociale est valide
-    //...
-  None -> 
-    // Code exécuté en cas d'erreur
-    //...
+let phrase = "Salut tout le monde!"
+let pattern = regex.from_string("tout").unwrap() // créer un motif à partir d'une chaîne
+
+case regex.find(pattern, phrase) {
+  Ok(match) ->
+    io.println(match) // Output: ["tout"]
+  Error(_) ->
+    io.println("Rien trouvé")
 }
 ```
 
-Dans cet exemple, nous définissons une expression régulière pour vérifier si un numéro de sécurité sociale est valide. Ensuite, nous faisons correspondre le numéro de sécurité sociale fourni à cette expression régulière. Si la correspondance est réussie, le code à l'intérieur du bloc "Some" est exécuté, sinon le code à l'intérieur du bloc "None" est exécuté.
+## Plongée en profondeur :
 
-## Plongée en profondeur:
+Historiquement, les expressions régulières sont apparues dans le langage Perl, mais ont depuis été adoptées par de nombreux autres langages de programmation. Dans Gleam, les expressions régulières sont supportées par le module `gleam/regex`.
 
-Les expressions régulières ont été initialement développées dans les années 1950 et sont devenues un outil essentiel pour les programmeurs dans de nombreux langages, y compris dans Gleam. Bien qu'elles puissent sembler intimidantes au premier abord, les expressions régulières peuvent être très puissantes une fois que l'on en comprend les bases.
+Les alternatives aux expressions régulières incluent la recherche simple de chaînes et le parsing de chaînes, bien que ces méthodes soient généralement moins puissantes et flexibles.
 
-Il existe également d'autres alternatives aux expressions régulières, comme les analyseurs lexicaux et syntaxiques, qui peuvent être plus adaptés à certains scénarios. Cependant, les expressions régulières restent un outil très utile et polyvalent pour manipuler et valider des données.
+Quant à l'implémentation, Gleam utilise la bibliothèque Erlang pour fournir une interface d'expressions régulières à la fois riche et performante.
 
-Pour comprendre comment les expressions régulières sont mises en œuvre en interne, vous pouvez jeter un coup d'œil au code source de Gleam qui utilise la bibliothèque Rust à cet effet.
+## Voir aussi :
 
-## Voir aussi:
+Pour plus d'informations, consultez les sources suivantes :
 
-- Documentation sur les expressions régulières en Gleam: https://gleam.run/book/tour/regular-expressions.html
-- Documentation officielle sur les expressions régulières en général: https://www.regular-expressions.info/
+1. Documentation officielle Gleam : [Regex Module](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
+2. RegexOne, un excellent tutoriel interactif pour apprendre les expressions régulières : [RegexOne](https://regexone.com/)
+3. Erlang Regular Expressions: [Erlang Regex](https://erlang.org/doc/man/re.html)

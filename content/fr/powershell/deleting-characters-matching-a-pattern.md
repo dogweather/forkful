@@ -1,7 +1,7 @@
 ---
-title:                "Suppression de caractères correspondant à un motif"
-html_title:           "PowerShell: Suppression de caractères correspondant à un motif"
-simple_title:         "Suppression de caractères correspondant à un motif"
+title:                "Supprimer les caractères correspondant à un modèle"
+html_title:           "Ruby: Supprimer les caractères correspondant à un modèle"
+simple_title:         "Supprimer les caractères correspondant à un modèle"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Supprimer des caractères correspondant à un modèle est une opération courante dans la programmation où l'on souhaite supprimer certaines parties d'une chaîne de caractères selon des critères spécifiés. Cela peut être utile lors du traitement de données ou pour formater correctement une chaîne avant de l'afficher.
+Supprimer des caractères correspondant à un motif, c'est simplement faire disparaitre les éléments d'une chaîne qui correspondent à un motif spécifique. Les programmeurs le font pour manipuler et nettoyer les données.
 
-## Comment faire:
+## Comment faire :
 
-Voici quelques exemples de code en PowerShell pour supprimer des caractères correspondant à un modèle et le résultat correspondant:
-
+En PowerShell, il est assez simple de supprimer des caractères d'une chaîne. Voici comment :
 ```PowerShell
-# Supprimer tous les nombres d'une chaîne de caractères
-$string = "Hello123World"
-$string -replace "[0-9]" 
-
-# Résultat: Helloworld
-
-# Supprimer les caractères spéciaux d'une chaîne
-$string = "Hello$#@World"
-$string -replace "[^a-zA-Z0-9]"
-
-# Résultat: Helloworld
+$chaine = "Bonjour le Monde!"
+$motif = "o"
+$chaine = $chaine -replace $motif,""
+```
+Ici, tous les "o" de la chaîne seront supprimés. Vous obtiendrez :
+```PowerShell
+"Bnjur le Mnde!"
 ```
 
-## Plongée en profondeur:
+## Plongée en profondeur :
 
-### Contexte historique:
-Le remplacement de caractères correspondant à un modèle existe depuis longtemps dans de nombreux langages de programmation populaires tels que Perl, Awk ou Unix. En PowerShell, cela peut être fait à l'aide de l'opérateur de remplacement de chaîne `-replace` qui accepte un motif (pattern) en entrée.
+Historiquement, le PowerShell a été créé pour automatiser les tâches système et pour la gestion de configuration. La suppression des caractères correspondant à un motif est un cas d'utilisation parmi d'autres, familier de la manipulation de chaînes.
 
-### Alternatives:
-Il existe d'autres moyens de supprimer des caractères correspondant à un modèle en utilisant des méthodes telles que `Trim()` ou `Substring()` en combinant avec des expressions régulières. Cependant, l'utilisation de l'opérateur `-replace` est généralement plus simple et plus efficace.
+En regard des alternatives, dans d'autres langages de scripting comme Python ou Javascript, vous trouveriez des méthodes similaires pour effectuer cette tâche. Cependant, dans PowerShell, la clarté et la concision de la syntaxe font la différence.
 
-### Détails de mise en œuvre:
-L'opérateur `-replace` utilise les expressions régulières pour trouver et remplacer des parties d'une chaîne de caractères selon un motif spécifique. Les expressions régulières sont des séquences de caractères qui permettent de définir des motifs complexes à rechercher dans une chaîne.
+Côté mise en œuvre, la suppression des caractères se fait à l'aide de l'opérateur `-replace`. En interne, cet opérateur utilise les expressions régulières du .NET pour correspondre et remplacer les chaînes.
 
-## Voir aussi:
+## Voir aussi :
 
-- [Microsoft Docs - Opérateur -replace](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7#replace)
-- [Tutorialspoint - PowerShell -replace](https://www.tutorialspoint.com/PowerShell/PowerShell_replace_operators.htm)
-- [Rédiger des expressions régulières en PowerShell](https://blog.netwrix.com/2018/09/12/how-to-create-regular-expressions-for-powershell/)
+Pour approfondir vos connaissances sur PowerShell et les manipulations de chaînes de caractères, vous pouvez consulter les sources suivantes :
+
+- Tutoriel sur les opérations de chaînes de caractères sous PowerShell : https://ss64.com/ps/syntax-operators.html
+- Documentation Microsoft sur l’opérateur `-replace` : https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#replacement-operator-replace
+- Cours de manipulation des chaînes de caractères sur PowerShell : https://www.guru99.com/powershell-string-manipulation.html

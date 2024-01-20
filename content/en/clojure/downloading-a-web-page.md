@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Clojure recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -12,28 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page simply means retrieving a webpage from the internet and storing it on your local machine. It is commonly done by programmers to extract information from a webpage that can be used for various purposes such as data analysis and content scraping.
+Downloading a web page means fetching its content over the internet - taking all its HTML, CSS, and JavaScript data, and pushing it down to your local machine. Programmers do this mainly to process or analyze that page's data.
 
 ## How to:
 
-The `clojure.java.io` library provides a simple and efficient way to download a web page in Clojure. Here's an example:
+Clojure offers `clj-http` library for HTTP requests. This is how we download a page:
 
 ```Clojure
-(require '[clojure.java.io :as io])
-(io/copy (io/input-stream "https://www.example.com") (io/output-stream "example.html"))
+(ns my-namespace
+  (:require [clj-http.client :as client]))
+
+(let [response (client/get "http://example.com")]
+  (println (:status response)
+           (:body response)))
 ```
-The above code will download the web page from `https://www.example.com` and save it as `example.html` in your current directory.
 
-## Deep Dive:
+We require `clj-http.client`, make a GET request and print the status and body of the response. 
 
-Downloading web pages has been a common practice since the early days of the internet. In the past, it was done manually by copying and pasting the HTML code. However, with the advancement of technology, developers have created various tools and libraries to make the process more efficient and automated.
+## Deep Dive
 
-Some alternatives to the `clojure.java.io` library for downloading web pages include [clj-http](https://github.com/dakrone/clj-http) and [http-kit](https://github.com/http-kit/http-kit). These libraries provide additional features like HTTP authentication and automatic handling of redirects.
+Clojure's HTTP tooling has evolved over time. Initially, many used the built-in Java libraries. Now, the most common approach is the `clj-http` library, which provides a Clojure-ish interface to Apache's HTTP components.
 
-Behind the scenes, downloading a web page involves making a HTTP request to the specified URL and receiving a response from the server. The `clojure.java.io` library uses the Java standard library for networking to handle these requests.
+There are alternatives. You could use `http-kit`, a minimal, high-performance Clojure HTTP library. Also, for processing the downloaded data, you may prefer `jsoup`.
 
-## See Also:
+Implementation-wise, downloading a web page is simply sending a GET request to the server and waiting for a response. Behind the scenes, it’s more complex - handling HTTP headers, redirects, errors, and streaming.
 
-- [clj-http](https://github.com/dakrone/clj-http)
-- [http-kit](https://github.com/http-kit/http-kit)
-- [Java standard library for networking](https://docs.oracle.com/javase/8/docs/api/java/net/package-summary.html)
+## See Also
+
+- [clj-http GitHub](https://github.com/dakrone/clj-http)
+- [jsoup: Java HTML Parser](https://jsoup.org/)
+- [HTTP Kit](http://www.http-kit.org/)
+
+Feel free to dive even deeper into these topics, they're essential for efficient web automation in Clojure.

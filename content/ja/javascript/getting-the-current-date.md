@@ -1,7 +1,7 @@
 ---
-title:                "「現在の日付の取得」"
-html_title:           "Javascript: 「現在の日付の取得」"
-simple_title:         "「現在の日付の取得」"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 今日の日付を取得するには？
+## 何これとその理由？
 
-現代のプログラミングにおいて、日付 (年/月/日) を取得することは非常に重要です。それにはいくつかの理由があります。例えば、プログラマーはユーザーにとって最新の情報を表示したいと考えることができます。また、日付を取得することで、ソフトウェアの処理時間やトラブルシューティングにも役立ちます。
+プログラマーが現在の日付を取得すること。なぜそうするのか？それはサーバー上の活動を追跡したり、ユーザーが操作した日時を把握したりするためです。
 
-## 方法：
+## 使い方
 
-```Javascript
-const today = new Date(); // 現在の日付を取得
-console.log(today); // 出力例: Thu Oct 14 2021 09:00:00 GMT+0900 (Japan Standard Time)
+```JavaScript
+let today = new Date();
+let date = today.getFullYear()+'年'+(today.getMonth()+1)+'月'+today.getDate()+'日';
+console.log(date);
+```  
+あなたがこれを実行すると、今日の日付が以下のように表示されます。
 
-const year = today.getFullYear(); // 現在の年を取得
-console.log(year); // 出力例: 2021
-
-const month = today.getMonth() + 1; // 現在の月を取得
-console.log(month); // 出力例: 10
-
-const date = today.getDate(); // 現在の日を取得
-console.log(date); // 出力例: 14
+```JavaScript
+"2022年4月23日"
 ```
 
-## 詳細を調べる：
+## 深い情報
 
-日付を取得する方法は時代とともに進化してきましたが、現在のJavascriptのバージョンでは、```Date```オブジェクトを使用することが最も一般的です。他の方法として、多くのライブラリやフレームワークが提供している日付取得用の関数もありますが、それぞれの技術によって使用方法が異なるため、Javascriptの基本的な知識を学ぶことが重要です。
+1. 歴史的背景: JavaScriptは、1995年にNetscapeによって開発されました。当初から日付と時間を扱うための機能が提供されていました。
+2. 他のオプション: `Date.now()`は現在の日時をミリ秒で返します。この戻り値を特定のフォーマットに変換することも可能です。
+3. 実装の詳細: JavaScriptの`new Date()`は、クライアントのブラウザのシステム設定を用いて日時を返します。そのため、地域や時間帯によって結果が異なる場合があります。
 
-また、日付を取得するための```Date```オブジェクトには、様々なメソッドが存在します。例えば、```getFullYear()```や```getMonth()```、```getDate()```の他にも、```getDay()```や```getTime()```などがあります。詳しい情報は公式ドキュメントを参照することができます。
+## 関連情報
 
-## 関連リンク：
-
-- [MDN Dateオブジェクト](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [JavaScriptで日付を取得する方法](https://webllica.com/javascript/getting-current-date-in-javascript/)
-- [JavaScriptについての日本語ドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript)
+JavaScriptについてのさらなる情報は、以下のリンクをご覧ください。
+- [MDN Web Docs: Date](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [JavaScript.Info: Date and time](https://javascript.info/date)

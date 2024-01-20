@@ -1,7 +1,7 @@
 ---
-title:                "Sökning och ersättning av text"
-html_title:           "Bash: Sökning och ersättning av text"
-simple_title:         "Sökning och ersättning av text"
+title:                "Söka och ersätta text"
+html_title:           "Bash: Söka och ersätta text"
+simple_title:         "Söka och ersätta text"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Sök och Ersätt Text i Bash
+
 ## Vad & Varför?
 
-Söka och ersätta text är en vanlig uppgift för programmerare. Det innebär helt enkelt att byta ut en viss text med en annan i ett textdokument. Detta kan vara användbart för att snabbt göra massiva ändringar eller för att automatisera upprepade uppgifter.
+Sökning och ersättning av text är för att manipulera data. Programmerare använder det för att ändra koden snabbt, bearbeta filer och automatisera uppgifter.
 
-## Hur man gör:
+## Hur?
 
-För att söka och ersätta text i Bash, använd kommandot `sed` (stream editor). Det tar två huvudsakliga parametrar: "söktermen" och "ersättningstermen." Här är ett exempel på hur man använder det:
+Här är exempel på att söka och ersätta text i Bash:
 
-Bash kod block:
-
-```
-sed 's/hund/katt/g' namnlista.txt
-```
-
-Detta kommer att söka igenom filen `namnlista.txt` och ersätta alla instanser av "hund" med "katt." Notera att "g" står för "global," vilket innebär att det kommer att genomföra ersättningen för varje förekomst av söktermen.
-
-Om du vill spara resultatet till en ny fil istället för att visa det direkt i terminalen, kan du använda rörledningar (`|`) och utdataomdirigering (`>`). Till exempel:
-
-Bash kod block:
-
-```
-sed 's/hund/katt/' namnlista.txt > nya_namnlista.txt
+```Bash
+text='Hej, världen!'
+echo ${text/Hej/Hejdå}
 ```
 
-Detta kommer att söka igenom `namnlista.txt` och ersätta "hund" med "katt," och spara den nya filen som `nya_namnlista.txt`.
+Ovanstående kod söker efter "Hej" i textsträngen och byter ut det mot "Hejdå". Resultatet blir 'Hejdå, världen!'.
 
-## Djupdykning:
+Du kan också byta ut alla förekomster med följande:
 
-`sed` är en stream editor som ursprungligen utvecklades för Unix-system på 1970-talet. Det är en mycket kraftfull och mångsidig kommando, men det finns också andra kommandon som kan användas för att söka och ersätta text, som till exempel `awk` och `perl`.
+```Bash
+echo ${text//a/o}
+```
 
-När du använder `sed` i Bash, är det viktigt att lägga märke till att söktermen och ersättningstermen måste vara uttryckta i form av "reguljära uttryck." Detta innebär att det finns vissa tecken och uttryck som har speciell betydelse och måste vara noga utformade. Om du är osäker på hur man skriver ett reguljärt uttryck, finns det många online resurser och guider tillgängliga.
+Detta byter ut alla "a" till "o" i textsträngen.
 
-## Se även:
+## Djupdykning
 
-- [Bash Dokumentation](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
-- [Kommandozeile](https://www.kommandozeile.de/)
+Sök och ersätt-funktionen i Bash härrör från sed, ett tidigt Unix-verktyg. Alternativ inkluderar Perl och Python skript. Även om Bash inte är lika kraftfull som dessa, är det tillräckligt för enkla sök- och ersättningsuppgifter.
+
+Principen för Bash sök och ersätt är att använda parameterexpansion. I `${parameter/pattern/string}`, `parameter` är variabeln att bearbeta, `pattern` är strängen att hitta, och `string` är ersättningen.
+
+## Se Även
+
+För mer information, kolla de här länkarna:
+
+1. GNU Bash Manual: [Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+2. Sed & Awk, 2nd Edition: [Sed](https://www.oreilly.com/library/view/sed-awk-2nd/1565922255/)
+3. Bash Guide for Beginners: [Manipulating Strings](https://tldp.org/LDP/Bash-Beginners-Guide/html/chap_10.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Відправка http запиту."
-html_title:           "Go: Відправка http запиту."
-simple_title:         "Відправка http запиту."
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що & навіщо? 
+Надсилання HTTP-запиту - це процес, подібний тому, як браузер запитує веб-сторінки від сервера. Програмісти роблять це, щоб обмінюватися даними між серверами та слідкувати за їх поведінкою.
 
-Відправлення HTTP-запиту - це коли в програмі ви надсилаєте запит до веб-сервера. Програмісти це роблять, щоб отримати доступ до даних або виконати деякі дії на сервері.
+## Як це зробити: 
+В Go ви можете використовувати стандартну бібліотеку "net/http" для надсилання HTTP-запитів. Ось простий приклад:
 
-## Як це зробити:
-
-Існує кілька способів відправки HTTP-запиту в Go. Один з них використовує пакет "net/http", який ми і розглянемо. Приклад:
-
-```
+```Go
 package main
 
 import (
-  "fmt"
-  "net/http"
+	"fmt"
+	"net/http"
+	"io/ioutil"
 )
 
 func main() {
-  resp, err := http.Get("https://example.com")
-  if err != nil {
-    panic(err)
-  }
-  defer resp.Body.Close()
-
-  fmt.Println("Статусний код:", resp.Status)
+	resp, err := http.Get("http://example.com/")
+	if err != nil {
+		panic(err)
+	}
+	defer resp.Body.Close()
+	
+	body, err := ioutil.ReadAll(resp.Body)
+	if err != nil {
+		panic(err)
+	}
+	
+	fmt.Println(string(body))
 }
 ```
 
-Вивід: Статусний код: 200 OK
+Після запуску програми вона зробить GET-запит до "http://example.com/" і виведе тіло відповіді у консоль.
 
-## Занурення в глибину:
+## Поглиблено
+Відправлення HTTP-запиту - це важлива частина взаємодії з веб-серверами. Це було створено ще в 1989 році коли Тім Бернерс-Лі створив World Wide Web. У Go, ви також можете використовувати альтернативні бібліотеки, такі як "gorequest" або "fasthttp", які можуть пропонувати більший функціонал або кращу продуктивність. Однак, у більшості випадків "net/http" буде достатньо.
 
-HTTP - це протокол передачі даних в інтернеті, і він існує з 1991 року. У Go є кілька пакетів, які можуть допомогти вам відправити HTTP-запит, такі як "net/http" для базових запитів і "net/http/httputil" для розширених функцій, які допомагають побудувати запити. Існують і інші альтернативи, такі як пакет "netcurl", який дозволяє вам використовувати бібліотеку CURL для відправлення запитів.
-
-## Дивіться також:
-
-https://golang.org/pkg/net/http/ - офіційна документація Go для пакету "net/http" з прикладами використання.
+## Дивіться також 
+- "net/http" документація: https://golang.org/pkg/net/http/ 
+- "gorequest" Github сторінка: https://github.com/parnurzeal/gorequest
+- "fasthttp" Github сторінка: https://github.com/valyala/fasthttp

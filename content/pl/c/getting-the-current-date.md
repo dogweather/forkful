@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie aktualnej daty"
-html_title:           "C: Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
 simple_title:         "Pobieranie aktualnej daty"
 programming_language: "C"
 category:             "C"
@@ -11,31 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Pobieranie aktualnej daty jest procesem polegającym na uzyskaniu informacji o bieżącym dniu, miesiącu i roku. Programiści często wykonują tę czynność, aby móc śledzić czas wykonywania swoich programów lub aby ustawić datę w swoich aplikacjach.
+
+Uzyskiwanie aktualnej daty to operacja, która pozwala na odczytywanie bieżącej daty i czasu z systemu. Programiści robią to, aby logować zdarzenia, ustalać terminy wygaśnięcia i śledzić czas w aplikacjach.
 
 ## Jak to zrobić:
+
+Poniżej znajduje się prosty kod w C, który pokazuje, jak uzyskać aktualną datę i czas.
+
 ```C
-#include <stdio.h>
 #include <time.h>
+#include <stdio.h>
 
-int main(void) {
-  struct tm *info;
-  char buffer[80];
+int main() {
+    time_t aktualny_czas;
+    struct tm * struktura_czasu;
 
-  time_t current_time = time(NULL);
-  info = localtime(&current_time);
-  strftime(buffer, 80, "Dzisiaj jest %d.%m.%Y", info);
-  printf("%s\n", buffer);
-  return 0;
+    time(&aktualny_czas);
+    struktura_czasu = localtime(&aktualny_czas);
+
+    printf("Aktualna data i czas: %s", asctime(struktura_czasu));
+    return 0;
 }
 ```
-W tym przykładzie kodu wykorzystujemy bibliotekę `<time.h>` aby uzyskać dostęp do aktualnej daty. Używając funkcji `localtime()` i `strftime()`, przetwarzamy informacje o dacie na żądany przez nas format, tj. "Dzisiaj jest DD.MM.RRRR" i wyświetlamy ją za pomocą funkcji `printf()`.
 
-## Głębsze zagadnienia:
-Pobieranie aktualnej daty jest możliwe dzięki zastosowaniu standardu C czasu poszukiwania. Alternatywnym podejściem jest wykorzystanie funkcji `time()` lub `clock()` dla pomiarów czasu wykonywania programu.
+Po skompilowaniu i uruchomieniu powyższego kodu, wyjście powinno wyglądać mniej więcej tak:
+```
+Aktualna data i czas: Sat Jan 15 11:52:20 2022
+```
 
-## Zajrzyj także:
-Więcej informacji na temat pobierania aktualnej daty w języku C można znaleźć w dokumentacji biblioteki `<time.h>` oraz w poniższych źródłach:
+## Deep Dive
 
-- [Funkcja time() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm)
-- [Pobieranie aktualnego czasu w C](https://www.geeksforgeeks.org/c-program-display-current-date-time/)
+Pobieranie aktualnej daty i czasu jest funkcją programowania, która pozostała stosunkowo nienaruszona od początków języka C. Pomimo że istnieją biblioteki, takie jak `Boost` i `Poco`, które oferują bardziej rozbudowane funkcje do manipulacji datą i czasem, standardowa biblioteka `time.h` nadal jest najczęściej używaną opcją ze względu na jej prostotę i wszechstronność.
+
+Alternatywą dla `localtime()` jest funkcja `gmtime()`, która zwraca czas UTC zamiast czasu lokalnego. Wybór między tymi dwoma zależy od konkretnej aplikacji i wymagań programistej.
+
+Co ciekawe, `time()` zwraca czas w formacie `time_t`. Jest to typ danych w języku C reprezentujący liczbę sekund od północy 1 stycznia 1970 roku UTC, określany jako "czas epoki". Następnie `localtime()` przekształca `time_t` z powrotem na bardziej użyteczny format do wyświetlania.
+
+## Zobacz też
+
+1. Dokumentacja ISO C: https://www.iso.org/standard/74528.html
+2. Dokumentacja Biblioteki C GNU: https://www.gnu.org/software/libc/manual/
+3. Alternatywy dla `time.h` - Biblioteka Boost (https://www.boost.org/) i Biblioteka Poco (https://pocoproject.org/).

@@ -1,7 +1,7 @@
 ---
-title:                "तारीख को स्ट्रिंग में बदलना"
-html_title:           "PowerShell: तारीख को स्ट्रिंग में बदलना"
-simple_title:         "तारीख को स्ट्रिंग में बदलना"
+title:                "एक तारीख को स्ट्रिंग में परिवर्तित करना"
+html_title:           "Java: एक तारीख को स्ट्रिंग में परिवर्तित करना"
+simple_title:         "एक तारीख को स्ट्रिंग में परिवर्तित करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-किसी भी विकासक को डेट को स्ट्रिंग में बदलने की क्षमता बहुत ही महत्वपूर्ण होती है। यह एक डेट या समय को उचित तारीख और समय स्ट्रिंग में विस्तार से दर्शाता है। उन्हें प्रोग्रामिंग में समय और तारीख के साथ काम करने के लिए उनका उपयोग करना पड़ता है। 
+## क्या एवं क्यों? 
+तारीख को स्ट्रिंग में बदलना एक प्रक्रिया है जिसमें दिनांक को टेक्स्ट (यानी स्ट्रिंग) में परिवर्तित किया जाता है। प्रोग्रामर इसे तभी करते हैं जब उन्हें तारीखों को मानव-पठनीय फ़ॉर्मेट में दिखाना होता है या जब मानवीय कुत्यों में तारीखों को जोड़ना होता है।
 
-## कैसे
-यदि हम 27 दिसंबर 2021 को दिनांक को स्ट्रिंग में बदलना चाहते हैं, तो हमें निम्न रूप में कोड को चलाना होगा:
-
-```PowerShell
-Get-Date -date '27 December 2021' -Format 'dddd, dd MMMM yyyy'
-```
-
-आपको निम्न प्रकार का परिणाम मिलेगा:
+## कैसे करें:
+PowerShell में तारीख को स्ट्रिंग में बदलने के लिए, 'Get-Date' और 'ToString()' का उपयोग करते हैं। निम्न कोड देखें:
 
 ```PowerShell
-Monday, 27 December 2021
+# वर्तमान तारीख और समय प्राप्त करें
+$date = Get-Date
+# तारीख को स्ट्रिंग में बदलें
+$stringDate = $date.ToString("dd-MM-yyyy")
+
+# खुद की तारीख को स्ट्रिंग में बदलें
+$yourDate = Get-Date -Year 2022 -Month 12 -Day 25
+$yourStringDate = $yourDate.ToString("dd-MM-yyyy")
+
+# स्ट्रिंग तारीख प्रिंट करें
+Write-Host "वर्तमान तारीख: $stringDate"
+Write-Host "आपकी तारीख: $yourStringDate"
 ```
 
-आप इस तरह से एक डेट को किसी भी तारीख फॉर्मेट में स्ट्रिंग में बदल सकते हैं। उदाहरण के लिए, आप 'MM/dd/yyyy' तारीख फॉर्मेट को भी चुन सकते हैं।
+यह कोड Lorem और Ipsum नामों का उपयोग करके रखरखाव करेगा।
 
-## डीप डाइव
-यह प्राचीन समय के प्रशंसकों को सुविधा देता है क्योंकि वे कुछ आसानी से मिलाने के लिए कठिन बनानेवाली दिनांकों को पता कर सकते हैं। इसके अलावा, यह उपयोगकर्ताओं को अपने कोड में तारीख और समय को स्ट्रिंग में बदलने का सुविधा प्रदान करता है। अलग बिंदुओं के बीच फॉर्मेट अनुकूलन के भी उपयोगकर्ताओं को अनुमान लगाने की आवश्यकता नहीं होती है।
+## गहरी जांच
 
-## इस पर भी देखे
-अगर आप पूर्व से प्रोग्रामिंग विषय में अपनी जानकारी बढ़ाना चाहते हैं तो आप निम्न लिंक का उपयोग कर सकते हैं:
+तारीख को स्ट्रिंग में बदलने का अभ्यास तब से चला आ रहा है जब से कंप्यूटर प्रोग्रामिंग आरंभ हुई थी। PowerShell में "ToString()" मेथड या स्ट्रिंग फ़ॉर्मेटिंग इसे काफी आसान बनाते हैं।
 
-- [PowerShell डेट और समय का उपयोग](https://docs.microsoft.com/en-us/powershell/scripting/samples/manipulating-dates-and-times?view=powershell-7.1)
-- [सूक्ष्मतम स्तर पर PowerShell समय की प्रस्तुति](https://x-team.com/blog/handling-dates-powershell/)
-- [PowerShell फॉरमेट की जाँच](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-custom?view=powershell-7.1)
+"Get-Date" के विकल्प के रूप में, आप ".NET" क्लास "System.DateTime" का उपयोग कर सकते हैं।
+
+कृपया ध्यान दें कि "ToString("dd-MM-yyyy")" में फ़ॉर्मेट स्ट्रिंग दिनांक को कैसे प्रदर्शित करना है, यह निर्दिष्ट करता है।
+
+## देखें भी
+- PowerShell स्ट्रिंग फॉर्मेटिंग ([लिंक](https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-5.0))
+- .NET दिनांक और समय फ़ॉर्मेट ([लिंक](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings?view=net-5.0)).

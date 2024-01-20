@@ -1,7 +1,7 @@
 ---
-title:                "HTTPリクエストを送信する"
-html_title:           "TypeScript: HTTPリクエストを送信する"
-simple_title:         "HTTPリクエストを送信する"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,38 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「何となぜ？」
+## 何となぜ？
 
-HTTPリクエストとは、ウェブサーバー上でデータを要求するためのものです。プログラマーがHTTPリクエストをする理由は、例えばデータベースから情報を取得するためや、外部APIとの通信を行うためです。
+HTTPリクエストの送信は、ウェブサーバーに情報をリクエストまたは送信することです。プログラマーがこれを行う理由は、サーバーからデータを取得したり、クライアントから収集したデータをサーバーに送信する必要があるからです。
 
-「方法：」
-
-TypeScriptでHTTPリクエストをする具体的な例を示します。まずは、requestライブラリをインストールします。
+## どうやって：
 
 ```TypeScript
-npm install request
-```
+import axios from 'axios';
 
-次に、リクエストをするための基本的なコードを書きます。
-
-```TypeScript
-let request = require('request');
-
-request('https://example.com', function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-    console.log(body);
+// Get Request
+axios.get('https://example.com/api/resource', {
+  headers: {
+    'Content-Type': 'application/json'
   }
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.error(error);
+});
+
+// Post Request
+axios.post('https://example.com/api/resource', {
+  data: {
+    key: 'value'
+  }
+}, {
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.error(error);
 });
 ```
+このコードは、HTTP GETリクエストとPOSTリクエストを送信する基本的な例です。リクエストのURL،ヘッダ、データ（POSTリクエストの場合）を設定します。
 
-このコードでは、requestライブラリを使い、指定したURLにリクエストを送り、レスポンスを取得しています。レスポンスが成功した場合には、取得したデータをコンソールに出力しています。
+## ディープダイブ：
 
-「深堀り：」
+HTTPリクエストの送信はウェブの基盤です。この概念は、1990年代初頭にWWW（World Wide Web）とともに生まれました。
 
-HTTPリクエストは、1991年に最初に導入されました。他にも、jQueryやAxiosなどのライブラリを使ってリクエストを行うこともできます。また、ブラウザ上でリクエストを行うこともできますが、セキュリティの観点から推奨されません。
+送信方法として古代の 'XMLHttpRequest' よりも新しく、より効率的な 'Fetch API' がありますが、'axios' はアルゴリズムに対する機能の豊富さや自動変換のために常に人気があります。
 
-「関連情報：」
+具体的な実装について言えば、上記のコード例ではHTTPリクエストを送信するために 'axios' ライブラリを使用しています。これは、ブラウザとNode.jsの両方で動作し、HTTPリクエストの作成を簡単にします。
 
-- [requestライブラリ](https://www.npmjs.com/package/request)
-- [jQueryライブラリ](https://jquery.com/)
-- [Axiosライブラリ](https://www.npmjs.com/package/axios)
+## 関連情報：
+
+以下に必要なリンクをいくつか示します。
+
+- 'axios' 公式ドキュメンテーション： [https://axios-http.com/](https://axios-http.com/)
+- MDN Web Docsの 'Fetch API'： [https://developer.mozilla.org/ja/docs/Web/API/Fetch_API](https://developer.mozilla.org/ja/docs/Web/API/Fetch_API)
+- 'XMLHttpRequest' についてのMDN Web Docs： [https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest](https://developer.mozilla.org/ja/docs/Web/API/XMLHttpRequest)

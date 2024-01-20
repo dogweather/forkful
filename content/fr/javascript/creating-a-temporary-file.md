@@ -1,6 +1,6 @@
 ---
 title:                "Création d'un fichier temporaire"
-html_title:           "Javascript: Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,38 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Qu'est-ce que c'est et Pourquoi?
 
-Créer un fichier temporaire est une pratique courante dans la programmation, qui consiste à créer un fichier qui est destiné à être utilisé et supprimé immédiatement après son utilisation. Les programmeurs le font souvent pour stocker des données temporaires ou pour exécuter des actions spécifiques sans altérer les fichiers existants.
+Créer un fichier temporaire, c'est créer un fichier qui n'est utilisé que brièvement pendant l'exécution d'un programme. Les programmeurs le font pour stocker temporairement des données sans encombrer la mémoire vive.
 
 ## Comment faire:
 
-Voici un exemple de code en Javascript montrant comment créer un fichier temporaire:
+Voici comment créer un fichier temporaire en JavaScript avec le module `tmp-promise`. 
 
 ```Javascript
-const fs = require('fs');
-const path = require('path');
+// Importe le module tmp-promise.
+const tmp = require('tmp-promise');
 
-// Génère un nom de fichier temporaire unique
-const tempFileName = `tempFile_${Math.floor(Math.random() * 10000)}`;
-
-// Crée un fichier temporaire vide
-fs.writeFile(path.join(__dirname, tempFileName), '', (error) => {
-  if (error) throw error;
-  console.log(`Fichier temporaire ${tempFileName} créé avec succès!`)
-});
+// Crée un fichier temporaire.
+tmp.file({ prefix: 'tmp-', postfix: '.txt' })
+  .then(file => {
+    console.log('Fichier temporaire créé:', file.path);
+  })
+  .catch(console.error);
 ```
 
-Lorsque vous exécutez ce code, un nouveau fichier temporaire vide sera créé et vous pourrez y ajouter vos données ou y exécuter des actions. Une fois le fichier utilisé, il sera automatiquement supprimé grâce à la méthode `fs.writeFile()` en spécifiant un nom de fichier temporaire unique.
+Résultat attendu:
 
-## Plongée en profondeur:
+```Javascript
+Fichier temporaire créé: /tmp/tmp-iu43f.txt
+```
 
-Les fichiers temporaires sont utilisés depuis longtemps en programmation pour différentes raisons, telles que la gestion de fichiers temporaires lors de l'installation de logiciels ou pour stocker des données intermédiaires lors de la compilation de code. Les alternatives à la création de fichiers temporaires incluent l'utilisation de variables en mémoire ou de bases de données temporaires.
+Pour écrire dans ce fichier:
 
-L'implémentation exacte de la création de fichiers temporaires peut varier selon le langage de programmation utilisé. En Javascript, la méthode `fs.writeFile()` est largement utilisée pour créer des fichiers temporaires, mais il existe également des bibliothèques tierces telles que `tmp` qui facilitent la création de ces fichiers.
+```Javascript
+// Importe les modules nécessaires.
+const fs = require('fs').promises;
+const tmp = require('tmp-promise');
 
-## Voir aussi:
+tmp.file({ prefix: 'tmp-', postfix: '.txt' })
+  .then(file =>
+    fs.writeFile(file.fd, 'Salut monde!')
+      .then(() => console.log('Données écrites dans le fichier:', file.path))
+  )
+  .catch(console.error);
+```
 
-- Documentation officielle de `fs.writeFile()` en Node.js: https://nodejs.org/api/fs.html#fs_fs_writefile_path_data_options_callback
-- Bibliothèque tierce `tmp` pour gérer les fichiers temporaires en Javascript: https://www.npmjs.com/package/tmp
-- Un tutoriel sur la création de fichiers temporaires en Javascript: https://alligator.io/nodejs/temporary-files/
+Résultat attendu:
+
+```Javascript
+Données écrites dans le fichier: /tmp/tmp-iu43f.txt
+```
+
+## Approfondissement
+
+Historiquement, les fichiers temporaires sont créés dans le répertoire `/tmp` sur les systèmes Unix, ce qui a été repris dans d'autres systèmes d'exploitation.
+
+Une alternative pour stocker temporairement des données pourrait être d'utiliser la mémoire vive, mais cela peut être coûteux en termes d'espace et de performance. Dans certains cas, il serait plus efficace d'écrire les données dans un fichier temporaire et de le lire lorsque c'est nécessaire.
+
+Quant à l'implémentation, le module `tmp-promise` que nous avons utilisé est basé sur le module` tmp` qui gère de manière transparente les fichiers temporaires et les répertoires dans node.js. 
+
+## Voir aussi
+
+- [Documentation de `tmp-promise`](https://www.npmjs.com/package/tmp-promise)
+- [Fichiers temporaires sur Wikipedia](https://fr.wikipedia.org/wiki/Fichier_temporaire)
+- [Module `fs` de Node.js pour travailler avec le système de fichiers](https://nodejs.org/api/fs.html).
+- [Comment gérer les fichiers temporaire en JavaScript](https://stackabuse.com/temporary-files-in-javascript/)

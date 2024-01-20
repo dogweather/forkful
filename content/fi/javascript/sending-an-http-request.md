@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-pyyntö"
-html_title:           "Javascript: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -12,32 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-HTTP-pyynnön lähettäminen on tapa kommunikoida verkon kautta tietokoneiden välillä. Tietokoneet lähettävät ja vastaanottavat näitä pyyntöjä, jotta ne voivat vaihtaa tietoa ja suorittaa tehtäviä toistensa kanssa. Koodaajat käyttävät HTTP-pyyntöjä esimerkiksi hakeakseen tietoja toisilta verkkosivustoilta tai lähettääkseen tietoa palvelimille.
+HTTP-pyynnön lähettäminen tarkoittaa palvelimelle viestin lähettämistä web-sovelluksesta. Se on välttämätöntä tietojen saamiseksi palvelimelta tai tietojen lähettämiseksi sinne. 
 
-## Miten:
+## Näin toimit:
 
-```JavaScript
-fetch('https://www.example.com/api/data') //luo uuden HTTP-pyynnön
-.then(response => response.json()) //odottaa vastausta ja muuttaa sen JSON-muotoon
-.then(data => { //tulostaa palvelimelta saadun datan
-  console.log(data);
+Esimerkissämme käytämme JavaScriptin fetch()-funktiota HTTP-pyynnön lähettämiseen. 
+
+```Javascript
+fetch('https://api.example.com/data', {
+  method: 'GET',
 })
-.catch(err => {
-  console.log(err); //jos pyyntö epäonnistuu, tulostaa virheilmoituksen
+.then(response => response.json())
+.then(data => console.log(data))
+.catch((error) => {
+  console.error('Error:', error);
 });
 ```
-Tämä koodiesimerkki osoittaa, miten HTTP-pyyntö lähetetään käyttäen JavaScriptin fetch-funktiota. Vastaanotettu data muutetaan JSON-muotoon ja tulostetaan konsoliin. Jos pyyntö epäonnistuu, tulostetaan virheilmoitus.
 
-## Syvemmälle:
+Tässä koodiesimerkissä pyydetään tietoja osoitteesta 'https://api.example.com/data', käsitellään saatu vastaus JSON-muodossa ja tulostetaan saatu data. Jos tapahtuu virhe, se otetaan kiinni ja tulostetaan konsoliin.
 
-HTTP eli HyperText Transfer Protocol on protokolla, jota käytetään tietokoneiden välisessä tiedonsiirrossa. Se on ollut käytössä jo 90-luvulta lähtien ja on nykyään yleisin tapa lähettää tietoa verkon kautta. HTTP-pyynnön lisäksi on olemassa myös muita protokollia, kuten FTP ja SMTP, mutta HTTP on yleisimmin käytetty.
+## Syvä sukellus
 
-Muita tapoja lähettää HTTP-pyyntöjä ovat esimerkiksi JavaScriptin XMLHttpRequest ja jQueryn ajax-funktio. Näiden lisäksi on olemassa myös muita ulkopuolisia kirjastoja, jotka tarjoavat helpomman tavan lähettää pyyntöjä, kuten Axios ja Superagent.
+HTTP-pyyntöjen lähettäminen on ollut osa verkkosovelluksia niiden alusta alkaen. Nykyään on olemassa useita tapoja lähettää HTTP-pyyntöjä JavaScriptillä. Sen lisäksi, että voit käyttää selaimen sisäänrakennettua fetch()-funktiota, voit käyttää myös erilaisia kirjastoja, kuten axios tai superagent. 
 
-HTTP-pyytöille on olemassa myös erilaisia metodeja, kuten GET, POST, PUT ja DELETE, jotka määrittelevät, millä tavalla pyyntöä käsitellään ja mikä on sen tarkoitus. GET-pyyntö hakee tietoa, POST-pyyntö lähettää uutta tietoa ja PUT-pyyntö päivittää olemassa olevaa tietoa. DELETE-pyyntö puolestaan poistaa tietoa.
+Fetch()-funktion taustalla on teknologia nimeltään promises, joka mahdollistaa asynkronisen koodin kirjoittamisen helpommin. Sen sijaan, että yhteyksien hallinta ja virheenkäsittely olisi tehty callback-funktioilla, promises-tekniikassa nämä asiat kirjoitetaan selkeämmin ja yksinkertaisemmin.
 
-## Katso myös:
+## Katso myös
 
-- [MDN Web Docs - HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP)
-- [w3schools - HTTP Requests](https://www.w3schools.com/js/js_ajax_http.asp)
-- [Axios](https://github.com/axios/axios) ja [Superagent](https://github.com/visionmedia/superagent) - HTTP-pyyntöjen kirjastot
+[JavaScript Fetch API MDN](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API): Lue lisää JavaScriptin Fetch API:sta ja sen käyttämistä promises-teknologiasta.
+
+[Axios GitHub](https://github.com/axios/axios): Tutustu axios-kirjastoon, joka on tehokas vaihtoehto HTTP-pyyntöjen lähettämiseen.
+
+[SuperAgent GitHub](https://github.com/visionmedia/superagent): Toinen hyvä kirjasto HTTP-pyyntöjen käsittelyyn on SuperAgent.

@@ -1,7 +1,7 @@
 ---
-title:                "文字列の先頭を大文字にする"
-html_title:           "C++: 文字列の先頭を大文字にする"
-simple_title:         "文字列の先頭を大文字にする"
+title:                "文字列を大文字にする"
+html_title:           "C++: 文字列を大文字にする"
+simple_title:         "文字列を大文字にする"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か？　なぜ？
+# 文字列の大文字化を行うC++のプログラミング
 
-文字列を大文字にすることは、単純に文字列のアルファベットをすべて大文字に変換することです。プログラマーは、大文字と小文字を区別しなければならない場合や、データベース検索などのために文字列を正規化する必要がある場合に、この処理を行います。
+## 何と何故？
+文字列の大文字化とは、文字列内の全ての小文字を大文字に変換することを言います。プログラマーは統一性を持たせ、比較を容易にするために文字列を大文字化します。
 
-## 方法：
+## 方法:
+以下に示すのがC++で文字列を大文字に変換する一例です。
 
 ```C++
+#include <algorithm>
+#include <cctype>
 #include <iostream>
-#include <string>
-
-using namespace std;
 
 int main() {
-  // 文字列を入力する
-  string str = "hello world";
-
-  // 全ての文字を大文字に変換する
-  for (int i = 0; i < str.length(); i++) {
-    str[i] = toupper(str[i]);
-  }
-
-  // 出力する
-  cout << str << endl;
-
-  return 0;
+    std::string s = "Hello, World!";
+    std::transform(s.begin(), s.end(), s.begin(), ::toupper);
+    std::cout << s;
+    return 0;
 }
 ```
+以上を実行すると、アウトプットは全て大文字の"HELLO, WORLD!"になります。
 
-出力： HELLO WORLD
+## 詳細の掘り下げ
+**1.  歴史的背景:** C++には文字列操作のための標準関数とライブラリが提供されていますが、それらはC言語がベースで、'std::transform'と'toupper'の組み合わせは現代的なC++スタイルとなります。
 
-## 深堀り：
+**2.  代替案:** 'for'ループを使って各文字を大文字に変換する方法もあります。しかし'std::transform'関数は機能的なアプローチを提供し、コードの可読性を高めます。
 
-### 1. 歴史的な文脈
+``` C++
+std::string s = "Hello, World!";
+for(char &c : s) c = std::toupper(c);
+std::cout << s;
+```
+こちらのコードでも同じ結果が得られます。
 
-大文字と小文字を区別する必要があるときの問題を解決するため、プログラミング言語やデータベースでは、文字列の大文字化や小文字化のための関数が提供されるようになりました。最も初期のプログラミング言語の一つであるFORTRANでは、大文字と小文字を区別せず、すべての文字を大文字に変換する処理を行う部分がありました。
+**3.  実装の詳細:** 'std::transform'関数は範囲全体に一定の操作を適用します。ここでは各文字にtoupper関数が適用され、小文字が大文字に変換されます。
 
-### 2. 他の解決策
+## 参照リンク
+以下に、関連する参考リンクをいくつか掲載します:
 
-大文字と小文字を区別しないシステムやアプリケーションが開発されるようになったため、大文字と小文字を区別する必要がなくなった場合、文字列の大文字化や小文字化の処理を行う必要はありません。
-
-### 3. 実装の詳細
-
-C++の`string`クラスには、すべての文字を大文字に変換するための`toupper()`関数が用意されています。この関数は、文字のASCIIコードを基に大文字に変換するため、英語以外の言語の文字には対応していません。また、大文字と小文字を区別しないシステムでは、この関数を使わずにすべての文字を大文字にしても問題がありません。
-
-## 関連リンク：
-
-- [toupper()関数のドキュメント](https://en.cppreference.com/w/cpp/string/byte/toupper)
-- [FORTRANの仕様書](https://www.fortran.org/technical/details/basic.html)
+1. [C++ String Library - cppreference.com](https://en.cppreference.com/w/cpp/string)
+2. [std::toupper - cppreference.com](https://en.cppreference.com/w/cpp/string/byte/toupper)
+3. [std::transform - cppreference.com](https://en.cppreference.com/w/cpp/algorithm/transform)

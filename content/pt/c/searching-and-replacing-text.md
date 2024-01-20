@@ -1,7 +1,7 @@
 ---
-title:                "Busca e substituição de texto"
-html_title:           "C: Busca e substituição de texto"
-simple_title:         "Busca e substituição de texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+## O Que é & Por Quê?
+Pesquisar e substituir texto é uma operação comum no desenvolvimento de software que permite localizar certos caracteres ou strings e alterá-los por outro(s). Programadores fazem isso para corrigir erros, modificar a funcionalidade ou simplificar o código.
 
-Substituir e buscar texto e uma tarefa frequente no mundo da programacao. Isso significa, como o nome sugere, encontrar determinado texto e substitui-lo por outro. Programadores fazem isso para corrigir erros, atualizar informacoes ou fazer alteracoes em massa em seus programas.
+## Como Fazer:
+Aqui está um exemplo simples sobre como você pode procurar e substituir texto em C.
 
-## Como fazer:
-
-Existem varias maneiras de buscar e substituir texto em C. Uma delas e usando a funcao `str_replace()`, que recebe tres argumentos: a string original, o texto a ser buscado e o texto a ser substituido. Veja um exemplo:
-
-```
-#include <stdio.h>
+```C
 #include <string.h>
 
+void substituir(char *s, char ch1, char ch2) {
+    for (int i = 0; s[i] != '\0'; ++i) {
+        if (s[i] == ch1) {
+            s[i] = ch2;
+        }
+    }
+}
+
 int main() {
-   char original[100] = "Ola mundo";
-   char novo[100];
-   str_replace(original, "mundo", "programacao", novo);
-   printf("%s", novo);
-   return 0;
+    char s[] = "Ola, mundo!";
+    substituir(s, 'O', 'H');
+    printf("%s\n", s);
+    return 0;
 }
 ```
 
-Este codigo ira substituir o texto "mundo" por "programacao" e imprimir "Ola programacao" no terminal.
+A saída será: `Hola, mundo!`
 
-## Mergulho Profundo:
+## Mergulhando Fundo
+Historicamente, as funções de pesquisa e substituição foram implementadas pela primeira vez em editores de texto, como o `ed` e `sed` no Unix. Na programação moderna, existem várias alternativas, como o uso de funções internas de uma linguagem de programação (como `str_replace` em PHP) ou criando sua própria função personalizada, como fizemos acima. Vale a pena notar que o método acima mostrado é de padrão C simples e não eficiente para strings grandes. Métodos mais eficientes como Aho-Corasick ou Boyer–Moore-Horspool podem ser utilizados para melhor desempenho.
 
-Buscar e substituir texto e uma funcao essencial em linguagens de programacao, e ja foi um processo manual no passado. Com o avanco da tecnologia, surgiram ferramentas e recursos que tornaram esse processo mais rapido e eficiente. Em C, a funcao `str_replace()` e uma alternativa mais simples e eficaz em comparacao com outras opcoes disponiveis. A linguagem tambem possui outras funcoes para buscar e substituir texto, como `strchr()` e `strtok()`, mas `str_replace()` e mais abrangente e facil de usar.
+## Ver Também
+Para aprender mais sobre os algoritmos de pesquisa e substituição de texto, cheque os seguintes links:
 
-## Veja Tambem:
-
-- [Documentacao oficial do C](https://www.gnu.org/software/libc/manual/html_node/String-Search-and-Replace.html)
-- [Guia para iniciantes em C](https://guides.github.com/activities/hello-world/)
+1. "Algoritmos de String Matching no Wikipedia":
+https://pt.wikipedia.org/wiki/Categoria:Algoritmos_de_busca_de_pad%C3%A3o
+2. "Tutorial de String Matching - parte de um curso gratuito de Ciência da Computação com certificado":
+https://www.coursera.org/lecture/data-structures/lecture-36-string-matching-UzYS4

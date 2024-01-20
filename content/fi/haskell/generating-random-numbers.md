@@ -1,7 +1,7 @@
 ---
-title:                "Sattumaisten lukujen generointi"
-html_title:           "Haskell: Sattumaisten lukujen generointi"
-simple_title:         "Sattumaisten lukujen generointi"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -11,30 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Satunnaisten numeroiden generointi on ohjelmistokehittäjien tapa tuottaa satunnaisia lukuja ohjelmilleen. Tämä voi olla hyödyllistä muun muassa pelien ja arvontojen yhteydessä.
+Satunnaislukujen generointi tarkoittaa ennalta arvaamattomien numeroiden luomista ohjelmissamme. Ohjelmoijat tekevät sen monille tarpeille, esimerkiksi ohjelmistojen testaamiselle tai satunnaisen käyttäjäkokemuksen luomiselle.
 
-## Kuinka?
-Haskellin "System.Random" -kirjaston avulla voimme generoida satunnaisia kokonaislukuja sekä liukulukuja. Katso alla olevia esimerkkejä ja niiden tulosteita.
+## Näin tehdään:
+Haskellissa voimme generoida satunnaislukuja `randomRIO`:n avulla, joka on osa `System.Random`-kirjastoa. Tässä on esimerkki, joka tuottaa satunnaisen kokonaisluvun väliltä 1-10.
 
 ```Haskell
 import System.Random
 
--- Satunnainen kokonaisluku väliltä 0-10
-randomNumber :: IO Int
-randomNumber = randomRIO (0, 10)
-
--- Satunnainen liukuluku väliltä 0-1
-randomFloat :: IO Float
-randomFloat = randomRIO (0, 1)
-
--- Tuloste: 7
--- Tuloste: 0.5234987
+main :: IO ()
+main = do
+    randomNum <- randomRIO (1,10) :: IO Int
+    print randomNum
 ```
 
-## Syvää sukellusta
-Satunnaislukugenerointi on tärkeä osa monien ohjelmien toimintaa ja on ollut osa ohjelmointi kieliä jo vuosikymmenien ajan. Vaikka "System.Random" -kirjasto on yksi tapa generoida satunnaisia lukuja, muita vaihtoehtoja ovat esimerkiksi "random" ja "random-fu" -kirjastot. Satunnaislukujen generointi perustuu usein pseudo-satunnaislukujen algoritmeihin, jotka pyrkivät tuottamaan lukuja, jotka vaikuttavat satunnaisilta mutta toistavat kuitenkin tietyn kaavan mukaan.
+Kun ajat tämän ohjelman, saat tuloksen, joka on satunnaisluku väliltä 1-10.
 
-## Katso myös
-- [System.Random - Hackage](https://hackage.haskell.org/package/random)
-- [Random number generation - Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation)
-- [Random numbers in Haskell: an empirical study - Colin Runciman](https://www.cs.york.ac.uk/fp/randoms.pdf)
+## Syvempi sukellus:
+Satunnaislukugenerointi on ollut olennainen osa ohjelmistoja ja pelejä vuosikymmenten ajan. Haskellissa `randomRIO` käyttää lineaarista kongruenssi-generaattoria, joka on yksinkertainen, muttei täydellinen ratkaisu.
+
+Vaihtoehtoisesti voi käyttää esim. Mersenne Twisteriä, joka on monimutkaisempi, mutta tuottaa "satunnaisempia" lukuja.
+
+Satunnaisuuden todellista tavoittamista pidetään kuitenkin matemattisesti mahdottomana: lähtökohtaisesti kaikki algoritmit toistavat ennustettavan kuvion annetun ajanjakson jälkeen.
+
+## Katso myös:
+- [Haskellin virallinen dokumentaatio System.Random-kirjastosta.](http://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
+- [Mersenne Twister -algoritmin esite.](https://en.wikipedia.org/wiki/Mersenne_Twister)
+- [Keskustelu satunnaislukugeneraattoreiden luonteesta.](https://stackoverflow.com/questions/39853457/how-to-generate-random-float-number-in-haskell)

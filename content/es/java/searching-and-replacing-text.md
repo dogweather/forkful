@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Java: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Java"
 category:             "Java"
@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Buscar y reemplazar texto es una técnica común utilizada por los programadores para encontrar y cambiar ciertos fragmentos de código dentro de un archivo o documento. Esto puede ser útil cuando se hacen cambios masivos en un proyecto o cuando se encuentran errores que deben ser corregidos en múltiples lugares.
+## ¿Qué & Por qué?
+La búsqueda y reemplazo de texto hace referencia al proceso de encontrar ciertas palabras o caracteres en un texto y cambiarlos por otros. Para los programadores, esto es fundamental cuando se buscan errores o cuando se deben actualizar partes especificas en el código.
 
-## Cómo:
-```Java
-// Reemplazar una palabra específica en un texto y mostrar el resultado
-String texto = "Hola mundo";
-String resultado = texto.replace("mundo", "Java");
-System.out.println(resultado); // Salida: Hola Java
+## Cómo hacer:
 
-// Buscar y reemplazar una palabra en una lista de strings
-List<String> lista = Arrays.asList("hola", "adiós", "hasta luego");
-lista.replaceAll(s -> s.replace("luego", "ahora"));
-System.out.println(lista); // Salida: [hola, adiós, hasta ahora]
+Aquí tenemos un ejemplo de cómo buscar y reemplazar texto en Java.
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        String texto = "Hola Mundo, Hola!";
+        String nuevoTexto = texto.replace("Hola", "Adios");
+        System.out.println(nuevoTexto);
+    }
+}
 ```
+La salida de este código sería:
 
-## Profundizando:
-La búsqueda y reemplazo de texto ha existido desde los primeros días de la programación, cuando los lenguajes de programación comenzaron a utilizar editores de texto para escribir código. Muchos editores y programas de integración de desarrollo (IDE) ofrecen funcionalidades avanzadas de búsqueda y reemplazo, como la posibilidad de utilizar expresiones regulares o buscar en múltiples archivos.
+```java
+Adios Mundo, Adios!
+```
+En este ejemplo, cada aparición de la palabra "Hola" se reemplaza por "Adios".
 
-Existen también alternativas a la búsqueda y reemplazo de texto, como el uso de refactoring tools o la utilización de lenguajes de programación funcionales que enfatizan en la inmutabilidad de los datos. Sin embargo, la práctica de buscar y reemplazar texto sigue siendo una herramienta útil y ampliamente utilizada por los programadores.
+## Inmersión Profunda:
 
-Técnicamente hablando, el proceso de búsqueda y reemplazo de texto consiste en buscar una cadena de caracteres específica y reemplazarla con otra cadena de caracteres específica. Esto se puede hacer de manera manual o utilizando herramientas y funciones específicas en el lenguaje de programación que se esté utilizando.
+1) En el contexto histórico, la funcionalidad de búsqueda y reemplazo ha sido parte de los lenguajes de programación desde sus inicios. Se considera una herramienta esencial en la mayoría de las aplicaciones de edición de texto.
 
-## Ver también:
-- [Expresiones regulares en Java](https://docs.oracle.com/javase/tutorial/essential/regex/)
-- [Búsqueda y reemplazo con IntelliJ IDEA](https://www.jetbrains.com/help/idea/search-and-replace.html)
-- [Lenguajes de programación funcionales](https://www.freecodecamp.org/news/what-is-functional-programming/)
+2) En cuanto a alternativas, la Biblioteca Apache Commons contiene la clase StringUtils, la cual proporciona métodos `replaceEachRepeatedly` y `replaceEach` que permiten reemplazar múltiples subcadenas al mismo tiempo.
+
+3) Acerca de los detalles de implementación, el método `replace` en Java utiliza la técnica de "desplazamiento hacia atrás". Funciona buscando la secuencia objetivo desde el final hacia el principio del texto. Esto ayuda a mantener las iteraciones al mínimo mientras se realiza la sustitución de texto.
+
+## Ver También:
+
+1. [Documentación de Java String replace](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#replace(java.lang.CharSequence,java.lang.CharSequence)): Proporciona información detallada sobre cómo funciona el método `replace` en Java.
+
+2. [Biblioteca Apache Commons StringUtils](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html): Aquí puedes ver los métodos `replaceEachRepeatedly` y `replaceEach`, útiles para reemplazar varias subcadenas al mismo tiempo.

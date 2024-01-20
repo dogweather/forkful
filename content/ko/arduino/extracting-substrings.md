@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "Arduino: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 번역: Arduino 프로그래밍 기사
-
 ## 무엇 & 왜?
-문자열 추출이란 무엇인지, 그리고 프로그래머들이 왜 이런 작업을 하는지에 대해서 간단히 설명합니다.
 
-문자열 추출은 텍스트에서 원하는 부분을 추출하는 작업을 말합니다. 이를 통해 프로그래머는 필요한 정보만을 빠르게 얻을 수 있기 때문에 유용합니다.
+문자열에서 서브스트링(Substring) 추출은 특정 부분 문자열을 얻기 위한 행위입니다. 프로그래머들이 이 작업을 수행하는 이유는 데이터 처리를 위해서나 더 의미있는 정보를 얻기 위함입니다.
 
-## 하는 방법:
-아두이노에서 문자열 추출을 하는 예제와 출력 결과를 ```Arduino ...``` 코드 블록 안에 넣어 설명합니다.
+## 어떻게 하는가:
 
+```Arduino 
+String str = "Arduino 프로그래밍!";
+String result = str.substring(0, 7);
+
+// 결과 출력
+Serial.println(result); 
 ```
-// 코드 예제
-String text = "Hello World";
-String subtext = text.substring(0, 5);
-// Hello를 출력
-Serial.println(subtext);
-```
+이 코드는 "Arduino 프로그래밍!" 문자열에서 "Arduino "를 추출합니다.
 
-## 깊이 파고들기:
-문자열 추출에 대한 역사적 배경, 대안들 및 구현 세부 사항과 같은 더 자세한 정보를 제공합니다.
+## 심층 탐구
 
-문자열 추출은 프로그래밍 언어의 기본 기능으로 매우 중요하며, 대부분의 프로그래밍 언어에서 지원하고 있습니다. 따라서 여러 언어를 배울 필요 없이 다양한 프로그래밍 작업에서 유용하게 사용할 수 있습니다.
+(1) 잠깐 역사를 들여다보면, 서브스트링 추출은 오래 전부터 컴퓨터 프로그래밍의 핵심 요소 중 하나였습니다. 텍스트 처리, 파싱 등 많은 영역에서 사용되었습니다. 
 
-## 관련 자료:
-문자열 추출에 대한 관련 자료를 제공합니다.
+(2) 이 외에도, 서브스트링의 추출을 위한 다른 방법들이 있습니다. 예를 들어, 정규 표현식을 이용할 수 있습니다. 
 
-- 아두이노 공식 문서: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/
-- 해외 개발자 블로그: https://www.codementor.io/@garethdwyer/working-with-strings-in-arduino-cjo81fw1j
+(3) 서브스트링을 추출하는 알고리즘은 매우 간단합니다. 주요 작업은 기본 문자열에서 원하는 위치의 문자를 복사하는 것입니다. 간단히 말해, 필요한 부분을 '자르는' 작업입니다.
+
+## 참고 자료
+
+다른 관련 정보를 찾아 보려면 아래의 링크를 참조하세요.
+
+* [아두이노 공식 페이지](https://www.arduino.cc)
+* [아두이노 공식 문서: substring()](https://www.arduino.cc/en/Tutorial/StringSubstring)
+* [아두이노 서브스트링 관련 블로그 포스트](https://www.megunolink.com/articles/3-tutorials/70-arduino-string-manipulation-using-minimal-ram)

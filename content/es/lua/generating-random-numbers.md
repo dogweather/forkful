@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Lua: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Generar números aleatorios es una técnica común utilizada en programación para producir valores aleatorios. Los programadores generalmente lo hacen para simular situaciones aleatorias en sus programas o para generar datos aleatorios para pruebas.
+## ¿Qué es y por qué?
 
-## Cómo:
-Para generar un número aleatorio en Lua, puedes utilizar la función `math.random()`. Esta función acepta dos argumentos: el número más pequeño y el número más grande que quieres generar. Por ejemplo, si quieres generar un número aleatorio entre 1 y 10, puedes escribir `math.random(1, 10)`.
+La generación de números aleatorios es el proceso de producir números que no siguen ningún patrón predecible. Los programadores generan números aleatorios para crear simulaciones, juegos, pruebas de stress, entre otros.
+
+## Cómo hacerlo:
+
+Puedes generar un número aleatorio en Lua utilizando la función `math.random`. Mira estos ejemplos de código:
 
 ```Lua
--- Ejemplo simple
-print(math.random(1, 10)) 
--- Output: Un número aleatorio entre 1 y 10
+-- Generar un número aleatorio
+print(math.random())  -- salida: un número entre 0 y 1
 
--- Ejemplo con un for loop
-for i=1, 5 do
-    print(math.random(1, 100))
-end
+-- Generar un número entero aleatorio entre 1 y 10
+print(math.random(10)) -- salida: un número entre 1 y 10
 
--- Output: 
--- Un número aleatorio entre 1 y 100
--- Un número aleatorio entre 1 y 100
--- Un número aleatorio entre 1 y 100
--- Un número aleatorio entre 1 y 100
--- Un número aleatorio entre 1 y 100
+-- Generar un número entero aleatorio entre 20 y 50
+print(math.random(20, 50)) -- salida: un número entre 20 y 50
 ```
+¡Recuerda, cada vez que ejecutes este código, los números resultantes serán diferentes!
 
-## Profundizando:
-La generación de números aleatorios es una técnica que ha sido utilizada en programación desde sus inicios. Fue introducida en el lenguaje de programación BASIC en 1964 y ha sido una herramienta esencial para los programadores desde entonces.
+## A Fondo:
 
-Además de `math.random()`, existen otras formas de generar números aleatorios en Lua, como utilizar la librería `random` o generar números pseudoaleatorios con semillas. Sin embargo, `math.random()` es la forma más sencilla y comúnmente utilizada.
+En la mayoría de los lenguajes de programación modernos existe un enfoque para generar números aleatorios. En Lua, el uso de la función `math.random` sigue el método general de una "semilla" y una "función de aleatoriedad".
 
-Cuando se utiliza `math.random()`, es importante tener en cuenta que los números generados no son verdaderamente aleatorios, ya que se basan en una fórmula matemática preestablecida. Sin embargo, para la mayoría de los casos, esto no es un problema y proporcionan un resultado satisfactorio.
+* **Contexto histórico**: Originalmente, la generación de números aleatorios se hacía físicamente (como lanzar un dado). Pero con el desarrollo de las computadoras, se crearon métodos algorítmicos.  
 
-## Ver también:
-- [Documentación de Lua sobre `math.random()`](https://www.lua.org/manual/5.4/manual.html#6.6) 
-- [Documentación de la librería `random` en Lua](https://www.lua.org/pil/20.2.html)
-- [Artículo sobre la generación de números aleatorios en programación](https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/)
+* **Alternativas**: Otros idiomas utilizan nombres y métodos diferentes. Por ejemplo, Python tiene `random.randint()`, y JavaScript tiene `Math.random()`. 
+
+* **Detalles de implementación**: Antes de generar números aleatorios con Lua, es importante sembrar el generador con `math.randomseed(os.time())`. Si no, los mismos "números aleatorios" serán generados cada vez que ejecute el programa.
+
+```Lua
+math.randomseed(os.time())
+print(math.random(10)) -- salida: un número diferente cada vez
+```
+## Ver Además:
+
+1. [Documentación oficial de Lua para la función Math.random](https://www.lua.org/manual/5.3/manual.html#6.7)
+2. [Curso en línea de Programación en Lua](https://www.learn-lua.org/en/Random_Numbers)
+3. [Wikipedia: Generador de números aleatorios](https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios)

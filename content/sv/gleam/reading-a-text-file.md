@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av en textfil"
-html_title:           "Gleam: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -11,26 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Läsa en textfil är när datorprogram läser och hämtar data från en textfil som innehåller textinformation. Programmarbetare gör detta för att snabbt och effektivt kunna hämta information från en extern källa och använda den i sitt program.
+
+Att läsa en textfil är en grundläggande operation som innebär att inhämta och tolka innehållet i en fil som text. Programmers gör detta för att behandla databaser, konfigurationsfiler eller till och med användarinmatning.
 
 ## Hur gör man:
-Att läsa en textfil i Gleam är enkelt och kräver bara en liten mängd kod. Här är ett exempel:
+
+För att läsa en textfil i Gleam kan du använda `file.read`-funktionen. Här är ett enkelt exempel:
 
 ```Gleam
-let fil = File.open("min_textfil.txt")
+import gleam/file.{read}
 
-let rad = File.read_line(fil)
-File.close(fil)
-
-IO.print_line(rad)
+fn main(args: List(String)) {
+  let _ = 
+    args
+    |> list.head
+    |> result.then(read)
+    |> result.map(io.println)
+    |> result.unwrap(or_else: fn(_) { error("No file was provided") })
+} 
 ```
 
-Output: Den första raden i textfilen skrivs ut.
+När du kör detta program med en fil som argument kommer det att skriva ut innehållet i den filen till terminalen.
 
-## Djupdykning:
-Det finns flera olika sätt att läsa textfiler i Gleam, men det enklaste sättet är att använda funktionen ```File.read_line``` som läser en rad i taget från textfilen. Det är också möjligt att läsa hela filen på en gång med funktionen ```File.read_all```, men detta kan vara mindre effektivt om filen är väldigt stor.
+## Djupdykning
 
-En alternativ metod för att läsa textfiler i Gleam är att använda biblioteket ```std/fs``` som innehåller flera funktioner för filhantering, inklusive läsning av textfiler.
+Att läsa textfiler har varit en central del av programmering sedan databehandlingens födelse. Gleam använder en funktionell tillvägagångssätt för att läsa filer, vilket innebär att filen läses in i minnet som ett helt, i stället för att läsas rad för rad som i vissa andra språk.
 
-## Se även:
-Om du vill lära dig mer om att läsa textfiler i Gleam, rekommenderar vi att du besöker Gleams officiella hemsida där du kan hitta mer information och dokumentation. Du kan också utforska Gleams GitHub-sida eller Slack-community för att få hjälp och stöd från andra Gleam-programmerare.
+Ett alternativ till att läsa hela filen åt gången är att använda strömbehandling, där filen läses rad för rad eller bit bit, vilket kan vara effektivare för stora filer.
+
+Gleam's `file.read` är implementerad genom Erlang's inbyggda `file.read_file/1` funktion, vilket betyder att den är både snabb och pålitlig.
+
+## Se också
+
+1. Gleam dokumentation om fil IO: https://gleam.run/book/tour/file-system.html
+2. Erlang's `file.read_file`: https://erlang.org/doc/man/file.html#read_file-1
+3. Strömbehandling i Gleam: https://gleam.run/book/tour/streams.html

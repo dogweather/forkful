@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en tillfällig fil"
-html_title:           "Haskell: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Skapandet av en tillfällig fil är en vanlig uppgift inom programmering som innebär att temporärt skapa en fil på datorn för att använda i ett program. Det görs oftast för att lagra data som endast är nödvändig under en kort period.
+## Vad och varför?
 
-## Så här:
-Ett enkelt sätt att skapa en tillfällig fil i Haskell är att använda funktionen `withSystemTempFile`, som tar emot en action som argument och skapar en tillfällig fil som sedan tas bort automatiskt efter att actionen är utförd. Se ett exempel nedan:
+Att skapa en temporär fil innebär att man skapar en fil som endast används temporärt, vanligtvis för att lagra data tillfällig under en programs exekvering. Utvecklare gör detta när de behöver hantera stora mängder data som inte passar i RAM-minne eller när man behöver dela data mellan olika processer.
+
+## Hur gör man:
+
+Här är ett exempel på hur man skapar och skriver till en temporär fil i Haskell:
+
 ```Haskell
-withSystemTempFile "example.txt" $ \path handle -> do
-    hPutStrLn handle "Detta är en tillfällig fil!"
-    putStrLn ("Filen har skapats på sökvägen: " ++ path)
+import System.IO.Temp (writeSystemTempFile)
+
+main :: IO ()
+main = do
+    filepath <- writeSystemTempFile "temp.txt" "Här är lite data"
+    putStrLn $ "Temporär fil skapad på: " ++ filepath
+```
+Kör programmet och du kommer se något liknande detta:
+
+```Shell
+Temporär fil skapad på: /tmp/temp.txt1234
 ```
 
-Output:
-```
-Filen har skapats på sökvägen: /tmp/example.txt
-```
-Det finns också möjlighet att manuellt skapa en tillfällig fil med hjälp av funktionen `openTempFile`, som tar emot en sökväg och filnamn som argument och returnerar en tupel med en handle till filen och sökvägen till den skapade filen.
+## Djupdykning
 
-## Djupdykning:
-Skapandet av tillfälliga filer är en viktig del av många programmeringsspråk och används ofta för att temporärt lagra data som endast behövs under en kort period. I tidigare versioner av Haskell behövde man använda externa bibliotek för att kunna skapa tillfälliga filer, men med introduktionen av `withSystemTempFile` och `openTempFile` i Haskell 98 har denna process blivit enklare.
+1. Historisk bakgrund: Temporära filer har sitt ursprung i de tidiga dagarna av operativsystem, där datorerna var tvungna att dela resurser mellan många användare och processer. De gjorde det möjligt för systemen att lagra data temporärt utan att använda dyrbar RAM-minne.
 
-Som alternativ till att skapa tillfälliga filer kan man även använda sig av andra metoder för att temporärt lagra data, såsom att använda minnesbufferten eller att skapa en temporär databas. Det är viktigt att välja rätt metod beroende på programmets behov och krav.
+2. Alternativ: Ett alternativ till temporära filer är att använda datatyper som listor eller bytearrays för att lagra data direkt i programminnet. Men dessa metoder har sina begränsningar och kan leda till minnesproblem om datan är för stor.
 
-## Se även:
-- [Haskell Documentation: System.IO.Temp](https://hackage.haskell.org/package/base/docs/System-IO-Temp.html)
-- [Learn You a Haskell: File I/O](http://learnyouahaskell.com/input-and-output#files-and-streams)
+3. Implementeringsdetaljer: I Haskell används biblioteket `System.IO.Temp` för att skapa temporära filer. Funktionen `writeSystemTempFile` tar emot två argument: filnamnet och datan som ska skrivas. Den skapar en ny temporär fil och returnerar sökvägen till den.
+
+## Se även
+
+- Haskell dokumentation för biblioteket `System.IO.Temp`: http://hackage.haskell.org/package/temporary-1.3/docs/System-IO-Temp.html
+- En artikel om att hantera stora mängder data i Haskell: https://wiki.haskell.org/Dealing_with_large_data_sizes

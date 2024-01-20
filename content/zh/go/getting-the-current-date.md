@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Go: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Go"
 category:             "Go"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?: 
-获取当前日期是指在程序中获取当前的日期信息。程序员这样做的原因是因为在很多应用中，需要使用到当前日期来进行计算或者显示给用户。
+## 什么与为什么？
+获取当前日期可以让我们在编程中知道现在的时间。程序员通常需要这个信息来追踪事件，记录日志，或用来生成动态内容。
 
-## How to:
-使用`Go time`库来获取当前日期非常简单。只需使用`time.Now()`函数即可。以下是一个示例代码和输出：
+## 如何做：
+在 Go 中获取当前日期的代码如下：
 
 ```Go
 package main
-
 import (
-  "fmt"
-  "time"
+   "fmt"
+   "time"
 )
 
 func main() {
-  // 使用`Now()`函数来获取当前日期
-  currentDate := time.Now()
-
-  // 使用`Format()`函数来格式化输出
-  fmt.Println("当前日期：", currentDate.Format("2006-01-02"))
+   // Get current date
+   current_time := time.Now()
+   fmt.Println("Current Date and Time is: ", current_time.String())
 }
 ```
-
-输出：
-
+执行这段代码，输出像这样：
 ```
-当前日期： 2021-07-26
+Current Date and Time is:  2022-02-22 11:51:38.766157 +0000 UTC m=+0.000000001
 ```
+## 深度学习
+历史上，程序员通过许多不同的方法获取当前日期。例如在 Unix 系统中，我们可以调用 `date` 命令。而在 Go 中，我们使用 `time` 包来获取日期。
 
-## Deep Dive:
-获取当前日期在程序中非常常见，因此很多语言都提供了对应的库或函数来实现。在早期，程序员只能通过系统的日期函数来获取当前日期，这样并不方便也不灵活。随着编程语言的发展，越来越多的语言都提供了专门处理日期和时间的库，比如Java中的`java.time`库和Python中的`datetime`库。在Go语言中，使用`time`库来获取当前日期非常方便，而且可以通过调用其它函数来获取更多的日期信息，比如年份、月份、星期等等。
+然而，有许多其他方案可以实现这个功能。你可以调用操作系统的功能，比如调用 C 语言的 `time() `函数。或者，也可以通过网络获取，比如使用 NTP 服务器。
 
-## See Also:
-- [Go时间和日期文档](https://pkg.go.dev/time)
-- [Java中的日期和时间文档](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [Python中的日期和时间文档](https://docs.python.org/3/library/datetime.html)
+Go 的 `time` 包包含许多有用的功能，可以让你获取、解析和格式化日期。`time.Now()`函数获取当前时间，返回的是一个 `Time` 对象，我们用 `String()`方法将其转化为人类可读的形式。
+
+## 另请参阅
+以下是一些你可能会感兴趣的链接，它们提供了关于 Go 日期和时间处理的更多信息：
+1. 时间和日期：https://golang.org/pkg/time/
+2. Go 的时间格式化：https://gobyexample.com/time-formatting-parsing
+3. more about Go: https://tour.golang.org/

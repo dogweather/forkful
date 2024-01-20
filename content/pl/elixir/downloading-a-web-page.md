@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Elixir: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Co i dlaczego?"
-Pobieranie strony internetowej to proces, w którym program pobiera zawartość strony internetowej i wyświetla ją użytkownikowi. Programiści często pobierają strony internetowe, aby analizować i przetwarzać dane lub wykorzystać je w swoich projektach.
+## Co i dlaczego?
 
-"## Jak to zrobić:"
-```Elixir
-# Aby pobrać stronę internetową w Elixirze, należy użyć funkcji HTTPoison.get(), podając adres URL jako argument.
-strona = HTTPoison.get("https://example.com")
+Własne, dynamiczne pobieranie stron internetowych z programu jest jednym z podstawowych aspektów tworzenia aplikacji internetowych. Pozwala to na gromadzenie i analizę danych, automatyzację akcji i tworzenie własnych widoków na bazie zawartości innych stron.
 
-# W celu uzyskania zawartości strony należy użyć funkcji HTTPoison.body() na zwróconym wyniku.
-zawartosc = HTTPoison.body(strona)
+## Jak to zrobić:
 
-# Następnie można wyświetlić pobraną zawartość za pomocą funkcji IO.puts().
-IO.puts(zawartosc)
+Aby pobrać stronę internetową w języku Elixir, użyjemy paczki HTTPoison. Oto proste przykładowe użycie:
 
-# Przykładowy wynik:
-# <html>
-#   <head>
-#     <title>Przykładowa strona</title>
-#   </head>
-#   <body>
-#     <h1>Witaj na przykładowej stronie!</h1>
-#   </body>
-# </html>
+```elixir
+defmodule MyModule do
+  def fetch_page do
+    case HTTPoison.get("http://example.com") do
+      {:ok, %HTTPoison.Response{status_code: 200, body: body}} ->
+        IO.puts "Pobrano stronę pomyślnie"
+        IO.puts body
+      {:ok, %HTTPoison.Response{status_code: status_code}} ->
+        IO.puts "Nie udało się pobrać strony, kod statusu #{status_code}"
+      {:error, %HTTPoison.Error{reason: reason}} ->
+        IO.puts "Error: #{reason}"
+    end
+  end
+end
+
+MyModule.fetch_page()
 ```
 
-"## Deep Dive": 
-W przeszłości pobieranie stron internetowych było skomplikowanym procesem, jednak dzięki nowoczesnym językom programowania i bibliotekom takim jak HTTPoison jest to teraz proste i szybkie. Istnieją również inne sposoby na pobieranie strony internetowej, takie jak używanie biblioteki zewnętrznej CURL lub wykorzystanie wbudowanych funkcji przeglądarki.
+Ten kod synchronicznie pobiera zawartość strony internetowej "http://example.com" i wypisuje ją na ekran. W przypadku błędu, wydrukuje on informację o błędzie.
 
-"## Zobacz też": 
-- Dokumentacja HTTPoison: https://hexdocs.pm/httpoison/HTTPoison.html
-- Biblioteka CURL dla Elixira: https://github.com/elixir-curl/curl
+## Pogłębione informacje
+
+Pobieranie stron internetowych ma długą historię w programowaniu, na początku obejmowało to zwykłe polecenia telnet, a potem protokołów HTTP z użyciem bibliotek jak curl w C. Elixir, jako nowoczesny język napędzający web, oferuje bardziej przyjazne rozwiązania jak HTTPoison czy Tesla.
+
+Alternatywą dla HTTPoison może być Tesla, druga popularna paczka do wykonywania żądań HTTP w Elixir. Jej siłą jest wysoce konfigurowalne middleware, które pozwala na wygodne dostosowanie requestów i odpowiedzi.
+
+Szczegółem implementacyjnym HTTPoison jest fakt, że korzysta on z hackney, niskopoziomowej biblioteki Erlangowej do obsługi HTTP.
+
+## Zobacz także:
+
+- Dokumentacja HTTPoison: https://hexdocs.pm/httpoison/readme.html
+- Dokumentacja Tesla: https://hexdocs.pm/tesla/readme.html
+- Dokumentacja hackney: https://hexdocs.pm/hackney/readme.html

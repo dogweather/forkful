@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Elm recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,35 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output is a way for programmers to see the values of variables and data structures while their code is running. This is often used for troubleshooting and understanding the flow of the code.
+Printing debug output involves displaying data to the console during the execution of a program. Programmers do this to track how data changes in real time, spot bugs, and understand system behavior.
 
 ## How to:
 
-To print debug output in Elm, you can use the built-in `Debug.log` function. It takes two arguments - a message to display and the value to be printed. For example:
+In Elm, use the `Debug.log` function. Assume we have a list of numbers:
 
-```elm
-Debug.log "My variable is" myVariable
+```Elm
+data = [1, 2, 3, 4, 5]
 ```
 
-This will print "My variable is" followed by the value of `myVariable` in the console when the code is executed.
+If you want to print this list to the console during your program execution:
 
-You can also use `Debug.toString` to convert any value into a string and then print it using `Debug.log`. For example:
-
-```elm
-Debug.log "My list is" (Debug.toString myList)
+```Elm
+processed = Debug.log "Data dump" data
 ```
 
-This will print "My list is" followed by the string representation of `myList` in the console.
+When you run this, you'll see on your console:
+
+```Elm
+Data dump: [1,2,3,4,5]
+```
 
 ## Deep Dive
 
-Printing debug output has been a common practice in programming for a long time. It allows developers to understand what is happening in their code and quickly identify and fix any issues.
+Elm's `Debug.log` dates back to the early versions of the language. It's inspired by console.log in JavaScript. While it serves a similar role, Elm's debug tool maintains the language’s philosophy of readability and simplicity.
 
-There are alternative methods to printing debug output, such as using a debugger or adding `Debug.todo` statements in code to mark areas that need attention. However, printing debug output is a simple and straightforward way to get insights into the code.
+Elm also offers `Debug.todo` and `Debug.toString`. `Debug.todo` halts execution and displays a message, ideal for marking unimplemented spots. `Debug.toString` converts complex data types to strings for easy viewing.
 
-Internally, the `Debug.log` function uses the `Debug.watch` command from the Elm runtime to print the message and value to the console. This command can also be used directly in code for more advanced debugging purposes.
+Note: Debug functions should only be used in a development environment; they are not intended for production use!
 
 ## See Also
 
-- [Elm Debug module](https://package.elm-lang.org/packages/elm-lang/core/latest/Debug)
-- [Debugging in Elm](https://guide.elm-lang.org/debugging/)
+Check out Elm’s official [Debug module documentation](https://package.elm-lang.org/packages/elm/core/latest/Debug) for more details. Also, [Elm Discourse](https://discourse.elm-lang.org/) is a great place to join discussions and seek help.

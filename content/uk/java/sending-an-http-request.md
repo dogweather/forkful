@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання запиту http"
-html_title:           "Java: Надсилання запиту http"
-simple_title:         "Надсилання запиту http"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
-Надсилання HTTP запиту - це коли програміст надсилає запит до веб-сервера з метою отримання певних даних або виконання певної дії. Програмісти часто роблять це, щоб отримати доступ до даних з інших джерел або здійснити інтерактивні запити до веб-сайту.
+## Що та чому?
 
-Як це зробити:
-Написання і відправлення HTTP запитів може бути досить простим за допомогою Java. Для цього вам знадобиться використати клас HttpURLConnection та методи для встановлення типу запиту (GET, POST, PUT, DELETE), встановлення заголовків та передачі даних. Нижче наведено приклад коду та вихідного виведення.
+Відправити HTTP-запит - це просто зробити запит до веб-сервера для отримання або відправлення даних. Це необхідно для взаємодії з веб-службами та API.
+
+## Як:
+
+Ось невеликий приклад програми на Java для відправлення GET-запиту:
 
 ```Java
-// Підключення до конкретної URL-адреси
-URL url = new URL("https://example.com");
+import java.net.http.*;
+import java.net.URI;
+import java.io.IOException;
 
-// Створення з'єднання та встановлення типу запиту
-HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-connection.setRequestMethod("GET");
+public class HTTPRequest {
+    public static void main(String[] args) throws IOException, InterruptedException {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+              .uri(URI.create("http://example.com"))
+              .build();
 
-// Додавання заголовків до запиту (необов'язково)
-connection.setRequestProperty("Content-Type", "application/json");
-connection.setRequestProperty("User-Agent", "Java");
-
-// Відправлення запиту та отримання відповіді
-int responseCode = connection.getResponseCode();
-BufferedReader reader = new BufferedReader(new InputStreamReader(connection.getInputStream()));
-String inputLine;
-StringBuilder response = new StringBuilder();
-while ((inputLine = reader.readLine()) != null) {
-	response.append(inputLine);
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        System.out.println(response.body());
+    }
 }
-
-// Виведення відповіді на екран
-System.out.println(response);
-// Вихідне виведення: <html><body><h1>Hello World!</h1></body></html>
 ```
 
-Глибше дослідження:
-Надсилання HTTP запиту не новий процес, оскільки протокол HTTP існує з 1991 року. Однак, існує багато альтернативних методів для виконання подібних задач, таких як використання бібліотеки Apache HttpClient або використання більш високорівневих фреймворків, як Spring. При розробці програм з використанням HTTP запитів, необхідно уважно обробляти помилки та встановлювати з'єднання, щоб уникнути можливих проблем з безпекою.
+В результаті виконання цієї програми ми отримаємо HTML-код головної сторінки `http://example.com`.
 
-Дивіться також:
-Для більш детальної інформації про роботу з HTTP запитами в Java, перегляньте офіційну документацію Java та документацію класу HttpURLConnection. Також можна дізнатися більше про інші методи надсилання запитів, такі як POST та PUT.
+## Поглиблено:
+
+Перший HTTP-запит був зроблений в 1989 році, коли Тім Бернерс-Lee розробляв WWW. З того часу HTTP-запити стали основою веб-комунікацій.
+
+За лаштунками, кожен HTTP-запит має форматування й набір вказівок, як-то методи GET або POST, шляхи URI, версії протоколу та заголовки. 
+
+Часто використовуються інші бібліотеки, такі як OkHttp або Retrofit, які надають більше функціональності та зручності порівняно з вбудованими засобами Java.
+
+## Дивіться також:
+
+1. Повний набір туторіалів по HTTP-запитах на Java - [link](https://www.baeldung.com/java-http-request)
+2. Вивчення OkHttp - [link](https://square.github.io/okhttp/)
+3. Керівництво по Retrofit - [link](https://square.github.io/retrofit/)

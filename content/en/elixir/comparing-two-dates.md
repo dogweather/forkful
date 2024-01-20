@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Elixir recipe: Comparing two dates"
+html_title:           "Arduino recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Comparison of Dates in Elixir
+
 ## What & Why?
-Comparing two dates is a common programming task that involves determining the relationship between two given dates, such as which one is earlier or later. Programmers do this to perform various date-based operations, such as scheduling tasks, sorting data, or calculating time differences.
+
+Comparing two dates means determining if one date is earlier, later, or the same as the other. Programmers do this to manipulate and analyze time-sensitive data effectively. 
 
 ## How to:
-To compare two dates in Elixir, we can use the `Calendar.compare/2` function. This function takes two date values and returns -1, 0, or 1 depending on the relationship between the two dates. Let's see some examples:
+
+In Elixir, we use the `Date.compare/2` function of the `Date` module to compare dates. The function returns `:lt` for a lesser date, `:gt` for a greater date, and `:eq` for equal dates.
 
 ```Elixir
-iex> Calendar.compare({2020, 5, 15}, {2021, 1, 1})
--1
+date1 = ~D[2022-01-01]
+date2 = ~D[2022-02-01]
+
+IO.inspect Date.compare(date1, date2) # {:lt, {2022, 1, 1}, {2022, 2, 1}}
 ```
 
-In the above code, we are comparing May 15, 2020 to January 1, 2021, and since 2020 comes before 2021, the result is -1.
+## Deep Dive
 
-We can also use the `DateTime.compare/2` function, which works the same way but for comparing date and time values:
+Elixir, being a functional language, doesn't have native date types until version 1.3. Before this, we had to use external libraries like `Timex`. 
+
+Instead of `Date.compare/2`, you could use `Date.diff/2` to get the difference in days, negative if the first date is earlier:
 
 ```Elixir
-iex> DateTime.compare({2020, 5, 15, 13, 30, 0}, {2020, 5, 15, 12, 0, 0})
--1
+date1 = ~D[2022-02-01]
+date2 = ~D[2022-01-01]
+
+IO.inspect Date.diff(date1, date2) # 31
 ```
 
-Here, we are comparing May 15, 2020 at 1:30 PM to May 15, 2020 at 12:00 PM, and once again, the earlier time comes first, resulting in -1.
+`Date.compare/2` uses Erlang's Calendar.ISO, which handles corner cases of Gregorian Calendar, making it accurate and efficient.
 
-## Deep Dive:
-In Elixir, dates are represented as tuples in the form `{year, month, day}` and times as tuples in the form `{year, month, day, hour, minute, second}`. Elixir's `Calendar` module provides various functions for working with dates, including comparing them.
+## See Also
 
-An alternative to using Elixir's built-in functions would be to use the `Calendar.Date` module, which offers a `diff/2` function for comparing dates and returning the difference in days, similar to the `DateTime.diff/2` function for comparing date and time values.
-
-The compare functions in Elixir also take into account timezones and daylight savings time, making them reliable when working with different timezones.
-
-## See Also:
-- [Elixir Date and Time module documentation](https://hexdocs.pm/elixir/Calendar.html)
-- [Comparison operators in Elixir](https://elixir-lang.org/getting-started/comparison-operators.html)
-- [Working with dates and times in Elixir](https://code.tutsplus.com/tutorials/working-with-dates-and-times-in-elixir--cms-34257)
+- [Official Elixir's Date Documentation](https://hexdocs.pm/elixir/Date.html)
+- [Comparison Operators in Elixir](https://hexdocs.pm/elixir/operators.html)
+- [Timex Library](https://hexdocs.pm/timex/readme.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Swift: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,44 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Sammenligning av to datoer er en vanlig oppgave for programmerere. Det innebærer å sjekke om to datoer er lik, eller om den ene er større enn den andre.
+Sammenligning av to datoer refererer til prosessen der programmereren bestemmer hvilken av to datoer som kommer først, eller om de er de samme. Dette trengs ofte for å sortere hendelser, håndtere tidsstemplede data eller regulere sekvenser og timing i apper.
 
-Programmere gjør dette for å sammenligne hendelser eller for å sortere en liste av datoer etter dato.
+## Hvordan:
 
-# Slik gjør du det:
+Her er et grunnleggende eksempel på hvordan sammenligne to datoer i Swift:
 
 ```Swift
-let date1 = Date() // Oppretter en Date-instans som representerer nåværende tidspunkt
-let date2 = Date(timeIntervalSinceReferenceDate: 86400) // Oppretter en Date-instans som representerer ett døgn siden
+import Foundation
 
-// Sammenligner datoer ved hjelp av ==, > og < operatørene
-if date1 == date2 {
-    print("Dato 1 og Dato 2 er like")
-} else if date1 > date2 {
-    print("Dato 1 er større enn Dato 2")
+let dato1 = Date()
+let dato2 = Date().addingTimeInterval(3600)
+
+if dato1 < dato2 {
+    print("Dato1 er tidligere enn Dato2")
+} else if dato1 > dato2 {
+    print("Dato1 er senere enn Dato2")
 } else {
-    print("Dato 1 er mindre enn Dato 2")
+    print("Datoene er like")
 }
 ```
 
-For å sammenligne datoer, kan du bruke == operatøren for å sjekke om to datoer er like. Du kan også bruke > eller < operatørene for å sjekke om en dato er større eller mindre enn en annen. Dette blir best illustrert med eksempelet over, hvor vi sammenligner nåværende dato med en dato som representerer ett døgn siden.
+Produktet av dette scriptet vil være: `"Dato1 er tidligere enn Dato2"` siden dato1 er satt til nåværende tidspunkt, mens dato2 er en time senere.
 
-Output:
+## Dyp Dykk:
 
-```
-Dato 1 er større enn Dato 2
-```
+Sammenligning av datoer har vært en del av programmering siden de tidligste dagene av beregning. Formatering og håndtering av dato- og klokkeslett er et kjent problemområde i mange programmeringsspråk, og Swift er intet unntak. Dato- og tidsforskjeller kan være triksy på grunn av tidssoner, skuddår og dato-overganger.
 
-# Dykk dypere
+Alternativene til `<` og `>` for sammenligning av datoer, inkluderer `compare(_:)` metoden og `timeIntervalSince(_:)`. Disse gir mer fleksibilitet, men det er mer komplisert å bruke.
 
-Sammenligning av datoer har vært en viktig del av programmering i lang tid, spesielt når det gjelder å håndtere kalendere og tidsforskjeller. I tidligere språk som Java og C, var det vanlig å bruke spesifikke metoder for å sammenligne datoer. Men med Swift, kan du bruke de vanlige sammenligningsoperatørene som du allerede er kjent med.
+Implementeringsdetaljer: Swift `Date`-objekter er lagret internt som antall sekunder som har gått siden en fast dato og tid, kjent som "epoken". Standard epoken er 1. januar 1970 kl 00:00 UTC.
 
-Alternativt kan du bruke en DateComponents-instans for å få mer granulær kontroll over datoer og tider. Dette er spesielt nyttig når du må sammenligne datoer basert på ulike enheter, som måneder eller år.
+## Se også:
 
-Implementasjonen av sammenligning av datoer i Swift er basert på en grunnleggende tidsmåleenhet kalt “sekunder siden referansetidspunktet”. Dette referansetidspunktet er 1. januar 2001 kl. 00.00.00 GMT.
-
-# Se også
-
-For mer informasjon om datofunksjonalitet i Swift, kan du sjekke ut [Apple's offisielle dokumentasjon](https://developer.apple.com/documentation/foundation/date). Du kan også ta en titt på [NSDate vs NSDateComponents debate](https://stackoverflow.com/questions/25677448/nsdate-vs-nsdatecomponents) på Stack Overflow for å få en dypere forståelse av forskjellene mellom de to tilnærmingene for å sammenligne datoer.
+1. Swift Date Klasseforskrift: [Link](https://developer.apple.com/documentation/foundation/date)
+2. Håndtering av Dato og Tid i Swift: [Link](https://www.swiftbysundell.com/articles/handling-date-and-time-in-swift/)
+3. Sammenlign Datoer med Swift: [Link](https://useyourloaf.com/blog/swift-date-comparison/)

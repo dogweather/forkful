@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Kotlin recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+### What & Why?
 
-Sending an HTTP request with basic authentication is the process of adding login credentials to the header of an HTTP request. This is often done by programmers to authenticate and authorize users to access specific resources on a server.
+Sending an HTTP request with Basic Authentication involves adding an 'Authorization' header to your request. The 'Authorization' header is calculated using Base64 encoding scheme. This lets you communicate securely with servers by verifying your identity. Programmers resort to this method to guarantee basic security while interacting with APIs or web services.
 
-## How to:
+### How to:
 
-To send an HTTP request with basic authentication in Kotlin, you can use the `URL` and `HttpURLConnection` classes. First, create a `URL` object with the desired URL, then open a connection using `.openConnection()` and cast it to `HttpURLConnection`. Next, set the request method to `GET` and add the authorization header using the `setRequestProperty` method. Finally, read the response by using the `getInputStream` method and printing it to the console.
+For the task, we'll use the 'khttp' library. First, ensure you've installed it in your `build.gradle`:
 
-```
-val url = URL("https://example.com/api/resource")
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-connection.setRequestProperty("Authorization", "Basic base64EncodedCredentials")
-val response = connection.inputStream.bufferedReader().readText()
-println(response)
+```kotlin
+dependencies {
+  implementation 'khttp:khttp:0.1.0'
+}
 ```
 
-Sample output: `{"message": "Success!"}`
+With that done, let's create a method to send a GET request with Basic Authentication:
 
-## Deep Dive:
+```kotlin
+import khttp.get
 
-Basic authentication has been around since the early days of the internet and is one of the simplest forms of authentication. It works by sending login credentials in plain text, which can be a security concern. Alternative methods, such as OAuth, have been developed to address this issue. One thing to note is that with basic authentication, the credentials are not encrypted, so it's important to only use it over HTTPS connections.
+fun main(){
+  val response = get("https://httpbin.org/basic-auth/user/passwd",
+  	auth=("user" to "passwd")
+)
 
-When implementing basic authentication, the credentials should be base64 encoded for added security. This is because base64 encoding is not an encryption method, but it does obscure the credentials from being seen in plain text.
+  println(response.statusCode)
+  println(response.text)
+}
+```
 
-## See Also:
+When you run the code, it sends a GET request to httpbin (a simple HTTP request/response service) and authenticates using 'user' and 'passwd' as 'username' and 'password' respectively. The response is then printed to the console. 
 
-- Official Kotlin documentation for `URL` and `HttpURLConnection` classes: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-u-r-l/ and https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-http-u-r-l-connection/
-- More information about basic authentication and its vulnerabilities: https://www.owasp.org/index.php/Basic_Authentication
-- Alternative authorization methods, such as OAuth: https://oauth.net/2/
+### Deep Dive
+
+Historically, Basic Authentication was proposed as a stateless method to authenticate HTTP requests in 1999, as part of the HTTP/1.1 RFC 2617. Though, it shouldn't be used alone for sensitive information since it isn't encrypted and can be intercepted by malicious actors.
+
+Alternatives include Digest Authentication, a more secure measure also proposed in RFC 2617, and token-based authentication, which is widely used today due to its scalability and simplicity.
+
+The 'khttp' library simplifies the process by managing the encoding of username and password to Base64 and appending it to the 'Authorization' header. It hides the implementation detail, allowing you to focus on writing your own application logic.
+
+### See Also:
+
+1. ['khttp' library Github page](https://github.com/jkcclemens/khttp)
+2. [HTTP Authentication RFC](https://www.ietf.org/rfc/rfc2617.txt)
+3. [httpbin.org](http://httpbin.org/)
+4. [Digest Authentication - Wikipedia](https://en.wikipedia.org/wiki/Digest_access_authentication)
+5. [Token-based authentication - Wikipedia](https://en.wikipedia.org/wiki/Token-based_authentication)

@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando o comprimento de uma string"
-html_title:           "Bash: Encontrando o comprimento de uma string"
+html_title:           "C: Encontrando o comprimento de uma string"
 simple_title:         "Encontrando o comprimento de uma string"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,26 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Encontrar o comprimento de uma string é uma tarefa comum em programação, especialmente em linguagens de script como o Bash. Isso ajuda os programadores a manipular e usar strings de forma eficiente e correta em seus códigos.
+## O Que & Porquê?
+
+Encontrar o comprimento de uma string significa determinar o número de caracteres que ela possui. Os programadores fazem isso para manipular e controlar melhor o conteúdo das strings, o que é crucial em muitas aplicações de programação.
 
 ## Como fazer:
-Para encontrar o comprimento de uma string em Bash, você pode usar o comando integrado ```${#var}```, onde "var" é a variável que contém a string que deseja medir. Por exemplo:
 
+Bash torna mais fácil encontrar o comprimento de uma string. Veja como você pode fazer isso:
+
+```Bash
+string="Olá, Mundo!"
+echo ${#string}
 ```
-nome="João"
-echo ${#nome}  # Output: 4
+
+Neste exemplo, `${#string}` retorna o comprimento da string. A saída será:
+
+```Bash
+12
 ```
-Você também pode usar o comando ```expr length $var```, que retornará o comprimento da string contida na variável "var". Por exemplo:
-```
-sobrenome="Silva"
-expr length $sobrenome  # Output: 5
-```
+
+O resultado é 12 porque a string "Olá, Mundo!" contém 12 caracteres.
 
 ## Mergulho Profundo:
-Encontrar o comprimento de uma string é uma tarefa básica em programação e tem sido usado desde os primórdios da computação. Em linguagens de programação mais antigas, como o C, é necessário declarar um tamanho fixo para uma string, o que torna a medida de sua comprimento mais crucial. Em Bash, o comando ```${#var}``` é a forma mais comum de obter o comprimento de uma string, mas também é possível usar o comando ```wc -c <<< "$var"``` ou até mesmo iterar por todos os caracteres da string usando um loop.
 
-## Veja também:
-- [Bash Guide para Iniciantes](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
-- [Bash Reference Manual](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html)
-- [Bash One-Liners](https://www.linuxjournal.com/content/down-rabbit-hole-wildcards-and-bash-one-liners)
+Historicamente, a funcionalidade para encontrar o comprimento de uma string foi introduzida no Bash 2.0. É uma maneira direta e eficiente de manipular strings.
+
+Sobre as alternativas, alguns idiomas, como Python ou JavaScript, possuem funções integradas, como len() ou .length para calcular o comprimento de uma string. No entanto, Bash alcança o mesmo efeito com menos código, tornando-o uma ferramenta ideal para operações de strings na linha de comando.
+
+O detalhe de implementação é que a sintaxe `${#string}` inicia substituindo o conteúdo da variável string e calculando seu comprimento. Esta funcionalidade é implementada na própria shell Bash, o que a torna mais eficiente em comparação a outros métodos.
+
+## Veja Também:
+
+Para mais informações sobre manipulação de strings no Bash, confira os recursos a seguir:
+
+- Guia de Programação Bash Avançada: https://tldp.org/LDP/abs/html/string-manipulation.html
+- Manipulação de Strings Bash: https://www.thegeekstuff.com/2010/07/bash-string-manipulation
+- Exemplos de Manipulação de Strings Bash: https://linuxize.com/post/bash-string-manipulation
+- Guia de Referência do Bash: http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html

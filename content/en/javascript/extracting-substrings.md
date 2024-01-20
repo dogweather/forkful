@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Javascript recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,38 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Extracting substrings in Javascript refers to the process of retrieving a specific part of a string. This can be useful in various scenarios, such as manipulating user input or parsing API responses. By extracting substrings, programmers can effectively work with smaller chunks of text instead of having to manipulate the entire string.
+Extracting substrings means pulling out smaller pieces of a larger string. Programmers do this to handle or manipulate specific portions of the text—handy when you're dealing with user input, file data, or even massive DNA sequences!
 
 ## How to:
 
-To extract a substring in Javascript, we can use the `substr()` method. This method takes two arguments, the starting index and the length of the substring we want to extract. For example, let's say we have the string "Hello World" and we want to extract the word "World" from it. We can use the following code:
+In JavaScript, you can extract substrings by using a few different methods: `substring()`, `substr()`, or `slice()`. Each returns a new string without changing the original string.
 
-```Javascript
-let str = "Hello World";
-let substr = str.substr(6, 5);
-console.log(substr);
+```Javascript 
+let str = "Hello, world!";
 
-// Output: World
+console.log(str.substring(0,5)); // "Hello"
+console.log(str.substr(0,5));    // "Hello"
+console.log(str.slice(0,5));     // "Hello"
 ```
 
-We can also use negative numbers as the starting index, which will count from the end of the string. For instance, to extract the last 3 characters of the string "Hello World", we can use the following code:
+They work a bit differently though. Here's an example:
 
-```Javascript
-let str = "Hello World";
-let substr = str.substr(-3);
-console.log(substr);
+```Javascript 
+let str = "Hello, world!";
 
-// Output: rld
+console.log(str.substring(-3));  // "Hello, world!", negative arguments are treated as 0
+console.log(str.substr(-3));     // "ld!", negative first argument means starting backwards from the end
+console.log(str.slice(-3));      // "ld!", and same for slice method
 ```
 
 ## Deep Dive:
 
-The `substr()` method was first introduced in JavaScript 1.0, and it is still widely used today. However, there are alternatives that have been added in newer versions of JavaScript, such as the `substring()` and `slice()` methods. These methods also extract substrings, but they take different arguments and allow for more flexibility.
+**Historical context** - Extracting substrings has been a fundamental part of programming since its early days —because really, what's programming without handling text?
 
-When using the `substr()` method, it's important to keep in mind that the second argument specifies the length of the substring, not the ending index. This can cause confusion and unexpected results, especially when dealing with negative numbers. It's also worth noting that the `substr()` method is not supported in Internet Explorer 8 or earlier versions.
+**Alternatives** - Besides `substring()`, `substr()`, and `slice()`, you can also use `split()` to break the string at certain points and choose parts to work with. Combine with `join()` can yield similar results.
+
+```Javascript 
+let str = "Hello, world!";
+console.log(str.split(', ')[0]); // "Hello"
+```
+
+**Implementation details** - `substring()` and `slice()` are similar, but treat negatives differently. `substr()` treats its second argument as a length, not an ending index. It’s also considered a legacy function and might not be present in future versions of JavaScript.
 
 ## See Also:
 
-- [MDN Web Docs - substr()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substr)
-- [W3Schools - JavaScript String substr() Method](https://www.w3schools.com/jsref/jsref_substr.asp)
-- [GeeksforGeeks - JavaScript | substr() function](https://www.geeksforgeeks.org/javascript-substr-function/)
+For more on strings in JavaScript, check out these links:
+- [MDN Web Docs - String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- [JavaScript.info - Strings](https://javascript.info/string)
+- [W3Schools - JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

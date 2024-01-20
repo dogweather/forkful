@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "PHP: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,52 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to Jest i Dlaczego Robimy To?
+## Co i dlaczego?
 
-Interpolacja ciągu znaków w PHP jest procesem wstawiania wartości zmiennych lub wyrażeń wewnątrz ciągu znaków. Programiści wykorzystują to do dynamicznego tworzenia tekstów lub wyrażeń, które zawierają zmienne lub wyniki obliczeń.
+Interpolacja łańcuchów w PHP to możliwość osadzania zmiennych bezpośrednio w ciągu znaków, zamiast łączyć je za pomocą operatora konkatenacji. Programiści robią to dla zwiększenia czytelności kodu i efektywności.
 
-## Jak to Zrobić:
-
-```PHP
-$name = "Karol";
-echo "Cześć $name, jak się masz?";
-// wynik: Cześć Karol, jak się masz?
-```
-
-W powyższym przykładzie zmienna ```$name``` jest wstawiana wewnątrz ciągu znaków za pomocą symbolu ```$```. Można również wykorzystać inny sposób zamykający ciąg znaków, w postaci ```${} ```, aby jawnie oddzielić zmienną od reszty tekstu.
+## Jak to zrobić:
 
 ```PHP
-$score = 90;
-echo "Twój wynik to ${score}/100";
-// wynik: Twój wynik to 90/100
+$name = "Jan";
+echo "Cześć, $name!";
 ```
+Powinno zwrócić: `Cześć, Jan!`
 
-W przypadku wyrażeń, wstawianie odbywa się poprzez umieszczenie ich w nawiasach klamrowych wewnątrz ciągu znaków.
+Inny przykład
 
 ```PHP
-$x = 10;
-$y = 5;
-echo "Suma ${x} + ${y} = ${x + $y}";
-// wynik: Suma 10 + 5 = 15
+$name = "Jan";
+$age = 25;
+echo "Cześć, $name! Masz już $age lat.";
 ```
+Powinno zwrócić: `Cześć, Jan! Masz już 25 lat.`
 
-## Wnikliwa Analiza:
+## Głębsza analiza
 
-Interpolacja ciągu znaków została wprowadzona w języku PHP w wersji 4.0, jako alternatywa dla funkcji ```sprintf()```. W porównaniu do tej funkcji, interpolacja jest szybsza i łatwiejsza w użyciu, zwłaszcza w przypadku wielu zmiennych.
+- **Kontekst historyczny:** Interpolacja łańcuchów nie jest nową funkcją i jest dostępna w wielu językach programowania, nie tylko w PHP. Została wprowadzona w PHP 4, co oznacza, że jest dostępna niezależnie od wersji PHP, którą aktualnie używasz.
+- **Alternatywy:** Alternatywą dla interpolacji łańcuchów jest łączenie łańcuchów za pomocą operatora `.`, choć jest to bardziej czasochłonne i może powodować błędy.
+- **Szczegóły implementacji:** Interpolacja łańcuchów w PHP rozpoczyna się od znaku `$`. Zmienne osadzone w ciągu znaków są zastępowane ich wartościami podczas wykonywania.
 
-Alternatywą dla interpolacji jest konkatenacja, czyli łączenie fragmentów tekstu i zmiennych za pomocą operatora kropki (```.```).
+## Zobacz również
 
-```PHP
-$name = "Karol";
-echo "Cześć " . $name . ", jak się masz?";
-// wynik: Cześć Karol, jak się masz?
-```
+- [Dokumentacja PHP na temat ciągów znaków](https://www.php.net/manual/pl/language.types.string.php)
+- [Pełna dokumentacja PHP](https://www.php.net/docs.php)
 
-W przypadku konkatenacji, konieczne jest ręczne dodawanie separatorów (takich jak spacje) w ciągu znaków, aby uzyskać czytelny tekst.
-
-W implementacji, interpolacja ciągu znaków jest rozwiązywana za pomocą funkcji ```str_replace()```, co może wydawać się mniej wydajne dla większych ilości danych.
-
-## Zobacz też:
-
-- Dokumentacja PHP o [interpolacji ciągu znaków](https://www.php.net/manual/pl/language.types.string.php#language.types.string.syntax.double)
-- Przydatny poradnik o [wstawianiu zmiennych w ciągu znaków w PHP](https://www.geeksforgeeks.org/how-to-insert-php-variables-inside-a-javascript-code/)
+Remember programming is a continuous endeavor, always seek ways to improve your craft. Happy Coding!

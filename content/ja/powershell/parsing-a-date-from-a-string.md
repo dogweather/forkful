@@ -1,7 +1,7 @@
 ---
-title:                "文字列から日付をパースする"
-html_title:           "PowerShell: 文字列から日付をパースする"
-simple_title:         "文字列から日付をパースする"
+title:                "文字列から日付を解析する"
+html_title:           "Bash: 文字列から日付を解析する"
+simple_title:         "文字列から日付を解析する"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,29 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？
-日付を文字列から解析するとは何かを説明し、プログラマーがそれをする理由を2-3つの文で説明します。
+## 何となぜ？
 
-日付を文字列から解析するとは、日付を表す文字列から実際の日付を抽出することを意味します。プログラマーはこれを行うことで、データをより有用な形式に変換し、データの処理や計算をより簡単にすることができます。
+文字列から日付を解析することは、日付情報を文字列から日付オブジェクトに変換するプロセスです。プログラマーがこれを行うのは、日付関連の操作（並べ替え、比較、計算など）を行うためです。
 
 ## 方法：
-```PowerShell
-# 例1：日付の解析
-[string]$date = "2021/05/23"
-$date = [DateTime]::ParseExact($date, "yyyy/MM/dd", $null)
-# 出力：2021年5月23日
 
-# 例2：時刻も含まれる場合
-[string]$date = "2021/05/23 10:30"
-$date = [DateTime]::ParseExact($date, "yyyy/MM/dd hh:mm", $null)
-# 出力：2021年5月23日10:30
+PowerShellで日付解析を行う例を以下に示します。
+
+```PowerShell
+$strDate = '2022/05/11'
+$date = [DateTime]::Parse($strDate)
+```
+そして、出力は次のようになります：
+```PowerShell
+Wednesday, May 11, 2022 12:00:00 AM
+```
+## ディープダイブ：
+
+1. **歴史的なコンテキスト**： PowerShellは2006年に発表され、そのパワフルな文字列解析能力により評価を受けてきました。
+2. **代替案**： PowerShellの 'ParseExact' メソッドを使うことも可能です。これは、明示的な日付/時間形式を指定して解析を行う場合に役立ちます。
+3. **実装の詳細**： PowerShellの[DateTime]::Parse メソッドは、与えられた文字列を現在のカルチャ設定に基づいて日付と時間に解析します。これは、カルチャによって日付の書式が異なるため、特に重要です。
+
+```PowerShell
+$strDate = '11/5/2022'
+$format = 'd/M/yyyy'
+$culture = [Globalization.CultureInfo]::InvariantCulture
+$date = [DateTime]::ParseExact($strDate, $format, $culture)
 ```
 
-## 深く掘り下げる：
-日付を文字列から解析するとは、日付の表現方法が変化したことにより登場しました。以前は日付はプログラムで扱う際に数字のみで表されていましたが、現在では様々な形式で表されるようになりました。このため、日付を文字列から解析する方法が必要になったのです。
+そして、出力は次のようになります：
 
-他にも、日付を解析する方法としては正規表現を使用する方法や、特定のフォーマットに依存しない汎用的な方法もあります。しかし、PowerShellでは既存の.NETライブラリを利用することで、簡単に日付を文字列から解析することができます。
+```PowerShell
+Saturday, May 11, 2022 12:00:00 AM
+```
 
-## 関連情報：
-- [PowerShell 公式ドキュメント - DateTime::ParseExactメソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parseexact?view=net-5.0)
-- [PowerShell 公式ドキュメント - 日付や時刻の表現方法](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/custom-date-and-time-format-strings)
+## 参照資料：
+
+- [PowerShellの日付時間の扱い方](https://dev.classmethod.jp/articles/powershell-datetime-handle/)
+- [Microsoft公式ドキュメンテーション：DateTime.Parse メソッド](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.parse?view=net-5.0)
+- [PowerShellの文字列の日付変換について](https://qiita.com/om_taka0113/items/53ee60c20f7f3ef7ad2e)
+
+以上で日付の解析に関する解説を終わります。

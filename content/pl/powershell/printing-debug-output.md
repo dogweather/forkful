@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wiadomości do debugowania"
-html_title:           "PowerShell: Drukowanie wiadomości do debugowania"
-simple_title:         "Drukowanie wiadomości do debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,55 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest nieformalne drukowanie wyjścia debugowania i dlaczego programiści to robią?
+## Co i Dlaczego?
 
-Nieformalne drukowanie wyjścia debugowania to proces wyświetlania informacji na temat działania programu w celu znalezienia i naprawienia błędów. Programiści robią to, aby móc zrozumieć, co dzieje się w trakcie wykonywania kodu i aby szybko odnaleźć ewentualne problemy.
+Drukowanie informacji debugowania, to sposób na logowanie i śledzenie aktywności w programie - to jak zrobienie rentgena kodu. Programiści robią to, aby łatwiej było im znaleźć i naprawić błędy.
 
 ## Jak to zrobić:
 
-Przykłady kodu i wyjścia znajdują się w zawartości tego artykułu w blokach kodu ```PowerShell ...```.
+```PowerShell
+# Używając cmdlet Write-Debug
+$DebugPreference = 'Continue'
+Write-Debug "To jest moja wiadomość debugowania"
+```
 
-    # Przykład 1
-    $zmienna = "Hello World"
-    Write-Host "Wartość zmiennej: $zmienna"
+Po uruchomieniu tego kodu, otrzymasz następujący wynik:
 
-    # Wyjście:
-    Wartość zmiennej: Hello World
+```PowerShell
+DEBUG: To jest moja wiadomość debugowania
+```
 
-    # Przykład 2
-    function Dodaj-DoLicznika {
-        param (
-            [int]$liczba
-        )
-        $licznik = 0
+Inny sposób to używanie 'Write-Host' z parametrem '-Debug':
 
-        for ($i = 0; $i -lt $liczba; $i++) {
-            $licznik += $i
-            Write-Host "Aktualna wartość licznika: $licznik"
-        }
-        return $licznik
-    }
+```PowerShell
+Write-Host "To jest inny sposób na debugowanie" -Debug
+```
 
-    Dodaj-DoLicznika -liczba 5
+Efekt będzie taki sam - wyświetli się wiadomość debugowania.
 
-    # Wyjście:
-    Aktualna wartość licznika: 0
-    Aktualna wartość licznika: 1
-    Aktualna wartość licznika: 3
-    Aktualna wartość licznika: 6
-    Aktualna wartość licznika: 10
-    Wynik: 10
+## Deep Dive:
 
-## Głębsza analiza:
+Historia debugowania sięga lat '40. i '50., kiedy programiści szukali fizycznych błędów w swoich maszynach.
 
-Nieformalne drukowanie wyjścia debugowania jest istotnym narzędziem dla programistów. Pozwala na szybkie znalezienie i naprawienie błędów w kodzie. W przeszłości, programiści musieli opierać się na innych sposobach debugowania, takich jak użycie dedykowanych narzędzi czy instrukcji debuggera. Jednak dzięki nieformalnemu drukowaniu wyjścia debugowania w PowerShell, proces ten jest znacznie prostszy.
+Współcześnie mamy różne techniki debugowania. Oprocz `Write-Debug`, jest jeszcze np. `Set-PSBreakpoint`, który umożliwia ustawianie punktów przerwania. Dodatkowo, `Write-Debug` jest wbudowanym cmdletem w PowerShell, więc nie potrzebujesz żadnych dodatkowych narzędzi.
 
-Alternatywnym sposobem na debugowanie jest używanie funkcji diagnostycznych, takich jak ```Write-Verbose```, ```Write-Debug``` czy ```Write-Warning```. Są one dostępne w PowerShell i pozwalają na wyświetlanie różnych typów komunikatów w zależności od potrzeb.
+Ważne jest jednak, aby nie nadużywać drukowania debugowania - za dużo danych może przeszkadzać w szybkim znalezieniu problemu. Dobrą praktyką jest wyłączanie logowania debugowania, gdy kod jest gotowy do produkcji.
 
-Implementacja nieformalnego drukowania wyjścia debugowania w PowerShell jest dość prosta. Wystarczy użyć funkcji ```Write-Host``` i podać wiadomość, którą chcemy wyświetlić. Możemy również podać inne parametry, takie jak kolor tekstu czy styl czcionki, aby nasze wyjście było jeszcze bardziej czytelne.
+## Zobacz także:
 
-## Zobacz również:
-
-- [Powershell For, ForEach-Loop kadert przetwarzania danych](https://www.thinvnc.com/powershell-loop.html)
-- [Moc błędów – Przypiatki do programowania PowerShella](https://4programmers.net/Windows/Moc_b%C5%82%C4%99d%C3%B3w_-_Przypiatki_do_programowania_PowerShella) 
-- [Zarządzanie wyjątkami w PowerShell](https://docs.microsoft.com/pl-pl/powershell/scripting/learn/deep-dives/everything-about-try-catch-finally-throw?view=powershell-7)
+- Kompletny przewodnik po Debugging w PowerShell: https://mcpmag.com/articles/2018/09/06/debugging-with-powershell.aspx
+- Oficjalna dokumentacja PowerShell na temat Write-Debug: https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7.1
+- Zrozumienie debugowania w PowerShell: https://adamtheautomator.com/powershell-debugging/

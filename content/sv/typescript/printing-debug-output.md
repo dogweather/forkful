@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av felsökningsutdata"
-html_title:           "TypeScript: Utskrift av felsökningsutdata"
-simple_title:         "Utskrift av felsökningsutdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,26 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att skriva ut debug-utdata är en vanlig teknik som används av programmerare för att felsöka kod. Det är ett sätt att visa information om variabler, funktioner eller hela delar av koden för att förstå hur programmet körs och upptäcka eventuella fel.
+# TypeScript: Skriv Ut Debug Utdata
 
-## Hur:
-För att skriva ut debug-utdata i TypeScript använder vi console.log() metoden. Detta skriver ut ett meddelande till webbläsarens utvecklingskonsol, vilket gör det enkelt att se resultatet av vårt kodexempel. Låt oss titta på ett enkelt exempel:
+## Vad & Varför?
+
+Att skriva ut debug-utdata är metoden vi använder för att visualisera värdet på variabler och tillståndet i applikationen under körning. Vi gör detta för att spåra och lösa fel (buggar) effektivt.
+
+## Hur man gör:
+
+Här är ett par exempel på hur man kan skriva ut "debug output" i TypeScript:
+
+```TypeScript 
+// Att använda 'console.log' är det mest grundläggande sättet
+console.log("Hello, this is a debug message!");
+```
 
 ```TypeScript
-const num1: number = 5;
-const num2: number = 7;
-const result: number = num1 + num2;
-console.log(result);
+// Skriv ut värdet på variabel 'x'
+let x = 5;
+console.log('The value of x is: ', x);
+// Output: The value of x is: 5
 ```
-Resultatet av detta kommer att visas i utvecklingskonsolen som 12.
 
-## Deep Dive:
-Att skriva ut debug-utdata har funnits länge och är en effektiv metod för felsökning av kod. Tidigare använde utvecklare oftast utskrift till konsolen med hjälp av en printf() funktion, men med nya programmeringsspråk har metoden förändrats. Console.log() är ett sätt att skriva ut utdata som är specifik för webbgränssnittet och underlättar för utvecklare att felsöka sina program.
+## Djupt Dyk:
 
-Det finns också andra alternativ för att skriva ut debug-utdata, som att använda breakpoints eller att använda verktyg som simulerar koden steg-för-steg. Det är viktigt att hitta det som fungerar bäst för dig och din kod.
+### Historisk Kontext:
+JavaScript och därmed TypeScript har alltid stödja `console.log` för utskrift av debug-utdata, en technik lånat från C-programmering.
 
-När det gäller implementationen av console.log() i TypeScript, så kan den också formateras med olika parametrar som t.ex. variabler, strängar eller objekt. Detta ger utvecklare möjlighet att anpassa utskriften för deras behov.
+### Alternativ:
+Förutom `console.log`, kan du också använda `console.info`, `console.warn`, och `console.error` för att skriva ut meddelanden i olika nivåer av allvar.
 
-## Se även:
-Läs mer om console.log() och andra metoder för att skriva ut debug-utdata i TypeScript i dokumentationen för språket. Du kan också utforska andra metoder för att felsöka kod beroende på ditt behov och den plattform du arbetar med. Genom att använda lämpliga tekniker för debug-utdata kan du underlätta processen att hitta och fixa fel i din kod.
+```TypeScript 
+console.info('This is an info message');
+console.warn('This is a warning');
+console.error('This is an error message');
+```
+
+### Implementeringsdetaljer:
+`console.log` och dess syskonmetoder är inte en del av ECMAScript (JavaScript-specifikationen) utan tillhandahålls av värdmiljön (t.ex., webbläsare eller Node.js).
+
+## Se Även:
+
+För ännu mer information, kolla in följande artiklar:
+
+- Mozilla Developer Network (MDN) om [`console`](https://developer.mozilla.org/sv-SE/docs/Web/API/Console) 
+- Node.js docs om [`console`](http://nodejs.org/api/console.html)
+- En mer genomgående guide till [JavaScript Debugging](https://javascript.info/debugging-chrome)

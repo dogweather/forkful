@@ -1,7 +1,7 @@
 ---
-title:                "Interpolera en sträng"
-html_title:           "Swift: Interpolera en sträng"
-simple_title:         "Interpolera en sträng"
+title:                "Interpolering av en sträng"
+html_title:           "Arduino: Interpolering av en sträng"
+simple_title:         "Interpolering av en sträng"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,26 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Interpolering av en sträng i Swift är när man sätter variabler eller uttryck inuti en sträng, så att den kan anpassas dynamiskt. Programerare använder detta för att enkelt konstruera strängar som behöver ändras baserat på olika variabler eller värden.
 
-## Så här gör du:
-Det enklaste sättet att interpolera en sträng i Swift är genom att använda formattering med hjälp av `\( )` syntax. Detta låter dig infoga värden eller uttryck inne i en sträng. Till exempel:
+Stränginterpolering är tekniken att injicera variabler direkt i en sträng. Programmerare gör detta för att skapa dynamiska strängar utan att behöva slå samman delsträngar.
+
+## Så gör du:
+
+Här är ett basexempel på hur du använder stränginterpolering i Swift:
 
 ```Swift
-let name = "Lisa"
-let age = 25
-let greeting = "Hej, mitt namn är \(name) och jag är \(age) år gammal."
-print(greeting)
+let name = "Erik"
+let greeting = "Hej, \(name)!"
+print(greeting)  // Utfallet: "Hej, Erik!"
 ```
-Output: Hej, mitt namn är Lisa och jag är 25 år gammal.
 
-## Utforska Djupet:
-Interpolering av strängar har funnits sedan C-programmeringsspråket på 1970-talet, men det blev inte populärt förrän senare. Innan interpolering var det vanligt att använda funktioner som `sprintf` för att konstruera dynamiska strängar.
+Det här är ett något mer komplicerat exempel:
 
-Men i Swift är interpolering integrerat direkt i språket och gör det mycket enklare för programmerare att konstruera dynamiska strängar. Andra alternativ inkluderar konkatenering av strängar eller användning av formateringsmetoder som `String(format: )`.
+```Swift
+let hoursWorked = 9
+let hourlyRate = 100.5
+let earnings = "Du tjänade \(hoursWorked * hourlyRate) kr idag."
+print(earnings)  // Utfallet: "Du tjänade 904.5 kr idag."
+```
+Med stränginterpolering kan du infoga variabelvärden, uttryck eller även resultat av funktioner direkt i en sträng.
 
-Implementation av interpolering i Swift görs genom att språket analyserar strängen och identifierar variabler eller uttryck i `\( )` syntax. Den här processen händer i bakgrunden och gör det enkelt för oss att använda interpolering i vår kod.
+## Fördjupning
+
+Stränginterpolering i Swift har rötter i tidigare programmeringsspråk som C och JavaScript, men Swift's implementering av stränginterpolering är mer kraftfull och flexibel än de tidigare versionerna.
+
+Som alternativ till stränginterpolering finns det också gammaldags strängsammanfogning. Men det kan snabbt bli klumpigt och svårt att läsa, särskilt med större strängar och fler variabler.
+
+Vid stränginterpolering översätter Swift-kompilatorn din interpolerade sträng till en serie strängsegment och uttryckssegment. Uttryckssegmenten utvärderas och omvandlas till strängar, som sedan sammanfogas med strängsegmenten.
 
 ## Se även:
-- [Apple Swift dokumentation om stränginterpolering](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)
-- [Ray Wenderlich's tutorial on string interpolation in Swift](https://www.raywenderlich.com/130197/swift-string-interpolation)
+
+För mer detaljerad information, ta en titt på dessa resurser:
+
+- Swift's dokumentation om stränginterpolering [här](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- En djupgående artikel om stränginterpolering i Swift på [Swift by Sundell](https://www.swiftbysundell.com/articles/string-interpolation-in-swift/)
+- En diskussion om effektiviteten av stränginterpolering mot strängsammanfogning på [Stack Overflow](https://stackoverflow.com/questions/51017084/swift-string-interpolation-vs-string-concatenation-efficiency)

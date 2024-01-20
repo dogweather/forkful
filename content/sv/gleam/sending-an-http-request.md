@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "Gleam: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,23 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att skicka en HTTP förfrågan är när en utvecklare ber sin dator att kontakta en annan dator och begära information från den. Det är ett viktigt verktyg för utvecklare eftersom det låter dem integrera och hämta data från externa källor i sina applikationer.
+
+En HTTP-förfrågning är en signal som skickas till en server för att hämta eller skicka information över Internet. Programmerare gör detta för att manipulera data, till exempel när en webbplats behöver visa innehåll från en databas.
 
 ## Hur man gör:
-```Gleam
-// Exempel på en HTTP förfrågan med Gleam
-let resultat = Http.request(
-  url: "https://example.com/api/posts",
-  method: Http.post,
-  headers: [( "Content-Type", "application/json")],
-  body: "{\"title\":\"Hello\",\"content\":\"My first post\"}"
-)
-// Output: En bekräftelse att förfrågan har skickats och eventuell data som svar.
+
+För att skicka en HTTP-förfrågan i Gleam, kan du använda `gleam/httpc` biblioteket. Här är ett exempel:
+
+```gleam
+import gleam/httpc
+import gleam/http.{Get}
+
+pub fn skicka_förfrågan() -> Result(BitString, httpc.Error) {
+    let request = Get("https://exempelplats.se")
+    httpc.send(request)
+}
 ```
+Detta kommer att skicka en GET-förfrågan till "https://exempelplats.se" och ger ett svar som antingen en sträng med hjälp av `Result(BitString, httpc.Error)` eller ett felmeddelande.
 
-## Djupdykning:
-Att skicka en HTTP förfrågan har funnits sedan starten av webben. Det finns andra alternativ för att integrera med externa källor, som till exempel att använda WebSocket för kontinuerligt utbyte av data. I Gleam finns det en inbyggd HTTP modul som bygger på Erlangs standardbibliotek för att skicka förfrågningar. 
+## Fördjupning:
 
-## Se också:
-- [Gleams HTTP dokumentation](https://gleam.run/posts/http/)
-- [Erlangs HTTP modul](https://erlang.org/doc/man/http.html)
+Historiskt sett behövde programmerare manuellt hantera TCP / IP-protokoll för att skicka HTTP-förfrågningar. Men nu erbjuder moderna programmeringsspråk som Gleam inbyggda bibliotek för det.
+
+Alternativ till `gleam/httpc` inkluderar `lhttpc` och `hackney`, men dessa tillhandahålls inte direkt av Gleam och kan behöva ytterligare konfiguration.
+
+När det gäller implementeringsdetaljer används `gleam/httpc`-biblioteket för att sköta HTTP/2 protokollet. Det gör att Gleam-programmet kan kommunicera effektivt med webbservern.
+
+## Se Även:
+
+För mer detaljer om `gleam/httpc`, besök dess dokumentation:<br>
+[httpc](https://hexdocs.pm/gleam_stdlib/httpc.html)
+  
+Om du är intresserad av att lära dig mer om HTTP / 2 protokollet, kolla in denna länk:<br>
+[HTTP / 2](https://developers.google.com/web/fundamentals/performance/http2)
+
+Läs mer om historien om HTTP-förfrågningar här:<br>
+[Historien om HTTP-förfrågningar](https://www.tutorialspoint.com/http/http_quick_guide.htm) 
+
+För mer information om andra bibliotek för att skicka HTTP-förfrågningar i Gleam, se:<br>
+[lhttpc](https://github.com/esl/lhttpc)<br>
+[hackney](https://github.com/benoitc/hackney)

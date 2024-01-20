@@ -1,7 +1,7 @@
 ---
-title:                "Konvertere en streng til små bokstaver."
-html_title:           "Rust: Konvertere en streng til små bokstaver."
-simple_title:         "Konvertere en streng til små bokstaver."
+title:                "Konvertere en streng til små bokstaver"
+html_title:           "Arduino: Konvertere en streng til små bokstaver"
+simple_title:         "Konvertere en streng til små bokstaver"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,41 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+title: Omform til små bokstaver: En gjennomgang av Rust programmering
+
 ## Hva & Hvorfor?
 
-"Konvertering av en streng til små bokstaver" betyr å endre alle bokstavene i en tekststreng til små, ikke-store, bokstaver. Dette er nyttig for å sikre ensartethet og konsistens i dataene som behandles i et program. Mange programmerere gjør dette for å unngå feil og uønskede resultater når de sammenligner og manipulerer tekststrenger.
+Omgjøre en streng til små bokstaver betyr å konvertere alle tegn i en gitt streng til lavere case. Dette hjelper med tekstformatering og sammenligning, og sikrer konsistent databehandling.
 
 ## Hvordan:
 
-```Rust
-fn main() {
-     let streng = "NoRgEsEaL".to_lowercase();
-     println!("{}", streng);
-}
-
-# Output:
-norseseal 
-```
+Laverekas funksjonen i Rust brukes til å konvertere alle bokstavene i en streng til små bokstaver. Eksempelvis:
 
 ```Rust
 fn main() {
-    let stor_streng = String::from("Programmering er gøy");
-    let liten_streng = stor_streng.to_lowercase();
-    println!("{}", liten_streng);
+    let text = "Hei, Verden!";
+    println!("{}", text.to_lowercase());
 }
-
-# Output:
-programmering er gøy
 ```
 
-## Dykk dypere:
+Output ville være: `hei, verden!`
 
-Konvertering av tekststrenger til små bokstaver har vært en del av programmeringsspråk siden tidlig på 1900-tallet, da ASCII-standarden ble opprettet for å standardisere hvordan tastaturopplysninger skulle representeres slik at datamaskiner kunne forstå det. I tillegg til å bruke funksjonen "to_lowercase", kan programmerere også bruke metoder som “str.to_ascii_lowercase” for å utføre denne oppgaven.
+## Dypdykk
 
-En alternativ tilnærming til å konvertere tekststrenger er å bruke "upper" og "lower" funksjoner til å forandre bokstaver individuelt. Dette kan være nyttig når man trenger å håndtere spesielle tegn som ikke følger ASCII-standarden.
+Historisk sett har omformingen av tekst til små bokstaver vært en nøkkelfunksjon i mange programmeringsspråk, fra C til Python - ikke bare Rust.
 
-I Rust implementeres konvertering av tekststrenger til små bokstaver ved hjelp av Unicode-standardbiblioteker, som tillater håndtering av alle bokstavene i verden. Dette sikrer at programmer skrevet på Rust er mer fleksible og tilpasningsdyktige når det gjelder håndtering av forskjellige språk og skriftilpassinger.
+En alternativ tilnærming kan være bruk av iterasjon og karakterkonverteringsfunksjoner, men Rusts innebygde .to_lowercase() metode er mer effektiv og enkel å bruke.
 
-## Se også:
+Implementasjonsdetaljer: .to_lowercase() funksjonen i Rust er en Unicode-kompatibel metode. Dette betyr at den støtter nedre-case konvertering for alle språk, ikke bare ASCII-baserte språk. Denne funksjonen tar hensyn til spesielle case-konverteringsregler i bestemte språk.
 
-https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase
+## Se Også
+
+- Rust Standard Library: [to_lowercase documentation](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- Rust string manipulation guide: [String cheat sheet](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

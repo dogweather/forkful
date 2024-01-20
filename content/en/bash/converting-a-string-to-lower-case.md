@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Bash recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,42 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Turning The Heat Down: A Guide to Converting Strings to Lower Case in Bash
+
 ## What & Why?
 
-Converting a string to lower case is a common task in programming, where we change all the uppercase letters in a string to lowercase. This can be useful for comparing strings without worrying about case sensitivity or for ensuring consistency in data. Sometimes, we also want our output to be in lower case for aesthetic or formatting purposes.
+Turning a string to lower case means changing all upper-case letters in it to lower-case ones. Bash programmers often do this for consistency, as case-sensitive processes can trip up on "APPLE" versus "apple".
 
 ## How to:
 
-To convert a string to lower case in Bash, we can use the built-in command `tr`. This command translates characters in a string into the specified characters. In this case, we will use `tr '[:upper:]' '[:lower:]'` to translate all uppercase letters to lowercase.
+Simple lowercase conversion in Bash is a one-liner.
 
 ```Bash
-# Sample string
-str="Hello World!"
-
-# Convert all letters to lowercase
-lower=$(echo $str | tr '[:upper:]' '[:lower:]')
-
-# Print output
-echo $lower # hello world!
+string="My STRing"
+echo "${string,,}"
 ```
 
-Alternatively, we can use the `tr [:upper:] [:lower:]` command directly on a string variable without using `echo`:
+The output will be:
 
 ```Bash
-# Sample string
-str="Hello World!"
+my string
+```
+## Deep Dive
 
-# Convert all letters to lowercase
-echo $str | tr [:upper:] [:lower:] # hello world!
+Bash 4.0 (released in 2009) first introduced parameter expansion enhancements that made it much easier to modify string case. Pre-Bash 4.0 scripts needed external programs like `tr`.
+
+Alternatives? You could call in other languages if Bash can't fit the bill.
+
+Here's a Python example:
+
+```Bash
+string="My STRing"
+echo $string | python3 -c "print(input().lower())"
 ```
 
-## Deep Dive:
+And a Perl one:
 
-Converting a string to lower case has been a functionality supported by most programming languages for a long time, as it is a simple yet essential task. This feature first appeared in the programming language Fortran in the late 1950s, and it has since been implemented in various forms in other languages.
+```Bash
+string="My STRing"
+echo $string | perl -ne 'print lc'
+```
 
-Apart from using the `tr` command, we can also convert a string to lower case using built-in Bash parameter expansion `${var,,}`, which converts the contents of variable `var` to lowercase. However, this method only works in newer versions of Bash (version 4 and above).
+Translation? `'print lc'` tells Perl: "print the lower case version."
 
-## See Also:
+But mind the speed impact. It's slight but can add up over many lines/operations. Bash's integrated string case-modifying is generally the fastest.
 
-- Bash documentation for the `tr` command: https://www.gnu.org/software/bash/manual/html_node/Shell-Builtin-Commands.html
-- Bash documentation for parameter expansion: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html#Shell-Parameter-Expansion
+Also note, some Unix-like systems may not include Python, Perl, or even new versions of Bash. Make sure to check, but expect latest versions on any recent Linux distro.
+
+## See Also
+
+- [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
+- [Bash Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Python Lower Function](https://docs.python.org/3/library/stdtypes.html#str.lower)
+- [Perl lc Function](https://perldoc.perl.org/functions/lc.html)
+- [AWK Guide](https://www.gnu.org/software/gawk/manual/gawk.html) for another alternative.

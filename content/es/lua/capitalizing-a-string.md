@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando una cadena"
-html_title:           "Lua: Capitalizando una cadena"
-simple_title:         "Capitalizando una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Lua: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-
-Capitalizar una cadena de texto en Lua se refiere a convertir la primera letra de cada palabra en mayúscula. Los programadores suelen hacerlo para mejorar la legibilidad del código y seguir convenciones de escritura establecidas en el idioma en el que están programando.
+## ¿Qué & por qué?
+Convertir a mayúsculas una cadena de texto simplemente significa cambiar todas las letras minúsculas de esta a letras mayúsculas. Los programadores lo hacen para normalizar los datos de entrada del usuario y para evitar problemas en la interpretación del texto.
 
 ## Cómo hacerlo:
+En Lua, podemos usar la función `upper()`. Esta es una función predefinida, que básicamente convierte toda una cadena de texto a letras mayúsculas. Aquí tienes un ejemplo sencillo:
 
-Para capitalizar una cadena en Lua, puedes utilizar la función `string.upper()` que convierte una cadena completa a mayúsculas. Sin embargo, esto no capitaliza la primera letra de cada palabra, por lo que debes combinarla con la función `string.sub()` para obtener la primera letra y capitalizarla manualmente.
-
-```
--- Ejemplo 1: Capitalizar una cadena con la primera letra en mayúscula
-local cadena = "hola mundo"
-cadena = string.upper(string.sub(cadena, 1, 1)) .. string.sub(cadena, 2)
-print(cadena) -- Output: Hola mundo
-
--- Ejemplo 2: Capitalizar cada palabra de una cadena
-local cadena = "mi lenguaje favorito es lua"
-local nueva_cadena = ""
-for palabra in cadena:gmatch("%S+") do -- Obtener cada palabra de la cadena
-  palabra = string.upper(string.sub(palabra, 1, 1)) .. string.sub(palabra, 2)
-  nueva_cadena = nueva_cadena .. palabra .. " "
-end
-print(nueva_cadena) -- Output: Mi Lenguaje Favorito Es Lua
+```Lua
+texto = "hola mundo"
+texto_mayus = string.upper(texto)
+print(texto_mayus) 
 ```
 
-## Profundizando:
+Este script retornará:
 
-En el pasado, el uso de mayúsculas para capitalizar palabras se remontaba a los escribas romanos en el siglo VII, quienes utilizaban letras mayúsculas para resaltar los nombres propios en sus escrituras. En la actualidad, la capitalización se utiliza principalmente para mejorar la legibilidad y seguir convenciones de escritura.
+```
+HOLA MUNDO
+```
 
-Otra forma de capitalizar una cadena en Lua es utilizando expresiones regulares con la función `string.gsub()` para reemplazar la primera letra de cada palabra por su versión mayúscula. Sin embargo, esto puede ser más complejo y se recomienda utilizar la función `string.upper()` en su lugar.
+## Viaje al centro del asunto
+Esta funcionalidad existe desde las primeras versiones de los lenguajes de programación. En Lua, capitalizar una cadena es un proceso directo gracias a la función incorporada `string.upper()`. Sin embargo, hay muchas otras formas de hacerlo si deseas evitar la función estándar, aunque no es recomendable.
 
-## Ver también:
+En cuanto a los detalles de implementación, la función `string.upper()` de Lua opera en el nivel del carácter, cambiando cada carácter individualmente en lugar de manejar la cadena de texto como un todo. Esto significa que este método es efectivo y eficiente sin importar el tamaño de la cadena de entrada.
 
-- [string.upper()](https://www.lua.org/pil/20.1.html)
-- [string.sub()](https://www.lua.org/pil/20.1.html)
-- [string.gsub()](https://www.lua.org/pil/20.1.html)
+## Ver también
+Para obtener más información sobre las funciones de cadena en Lua, te recomendamos el siguiente recurso:
+
+- Manual de referencia de Lua: https://www.lua.org/manual/5.4/manual.html#6.4 
+
+Para prácticas y ejercicios adicionales sobre la manipulación de cadenas en Lua, puedes consultar:
+
+- Tuna Lua: https://www.tutorialspoint.com/lua/index.htm

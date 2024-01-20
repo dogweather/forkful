@@ -1,7 +1,7 @@
 ---
-title:                "Extraindo subcadeias"
-html_title:           "Clojure: Extraindo subcadeias"
-simple_title:         "Extraindo subcadeias"
+title:                "Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
+simple_title:         "Extraindo substrings"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,23 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que e Por Que?
+# Extração de Substrings em Clojure: Uma Abordagem Direta
 
-Extrair substrings consiste em pegar um pedaço de uma string maior. Programadores fazem isso quando precisam manipular partes específicas de uma string, como um nome ou um número de telefone.
+## O Que & Porquê?
 
-Como Fazer:
+A extração de substrings é o processo de puxar uma sequência específica de caracteres de uma string maior. Os programadores fazem isso para manipular e analisar dados mais eficientemente.
 
-Para extrair substrings em Clojure, podemos usar a função subs, que pega uma string e retorna um pedaço específico dela. Por exemplo:
+## Como Fazer:
 
-```Clojure
-(subs "Olá Mundo" 0 3) ; retorna "Olá"
-(subs "123-456-7890" 4 7) ; retorna "456"
+As seguintes funções em Clojure podem ser usadas para extrair substrings:
+
+```clojure
+;; Sintaxe básica
+(subs "string" start-index end-index)
+
+;; Exemplo
+(def exemplo "Programação em Clojure")
+
+;; Usando a função 'subs'
+(subs exemplo 0 12) ;; Retorna "Programação"
+(subs exemplo 13) ;; Retorna "em Clojure"
 ```
 
-Deep Dive:
+Lembre-se de que a indexação em Clojure (como na maioria das linguagens de programação) começa a partir de 0.
 
-Extrair substrings em Clojure é uma tarefa comum e muitas vezes necessária na programação. Existem alternativas para a função subs, como a função string-split, mas ela retorna uma lista em vez de uma string. A implementação da função subs é baseada no conceito de indexação de strings, em que cada caractere é numerado e pode ser acessado individualmente.
+## Mergulho Profundo
 
-Veja Também:
+Clojure, sendo um dialeto de Lisp, usa muitos dos padrões antigos bem consolidados enquanto adiciona suas próprias melhorias onde apropriado. A função 'subs', por exemplo, utiliza a abordagem clássica de indexação zero baseada em intervalos semiabertos (o índice de início está incluído, mas o de fim não).
 
-Para mais informações sobre a função subs e outras funções relacionadas a strings em Clojure, consulte a documentação oficial: https://clojuredocs.org/clojure.string/subs.
+Como alternativa, Clojure também fornece formas mais sofisticadas de lidar com strings através de expressões regulares, tal como a função 're-seq'. A contudo lembrar, o uso cuidadoso de expressões regulares pode levar a resultados mais potentes, mas também mais complexos.
+
+```clojure
+;; Exemplo
+(def exemplo "Programação em Clojure")
+
+;; Usando a função 're-seq'
+(re-seq #"\w+" exemplo) ;; Retorna ["Programação" "em" "Clojure"]
+```
+
+## Veja Também
+
+Para mais detalhes e para se aprofundar mais na extração e manipulação de strings em Clojure, consulte os seguintes recursos:
+
+1. [Documentação oficial do Clojure](https://clojure.org/guides/learn/strings)
+2. [Clojure String API - Documentação oficial](https://clojuredocs.org/clojure.string)
+3. [Clojure para a Bravo Lusitana - Extração de Substrings](http://nostarch.com/clojurebravo.htm)

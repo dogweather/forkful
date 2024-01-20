@@ -10,47 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mitä & Miksi? 
 
-HTML:n parsiminen tarkoittaa verkkosivujen tiedon erottamista koodista. Tätä tehdään, jotta tiedot voidaan käsitellä helpommin ja haetaan tietoa esimerkiksi verkkosivujen ulkoasun muokkaamiseksi.
+HTML:n jäsentäminen tarkoittaa HTML-koodin halkomista yksittäisiksi osiksi (tagit, attribuutit ja muut), jotta voimme käsitellä niitä erikseen. Ohjelmoijat tekevät tämän yleensä tiedon keräämiseksi tai sisällön muokkaamiseksi.
 
-## Miten tehdä:
+## Miten:
 
-Käyttämällä Bashia, voit helposti parsia HTML-koodia. Käytä alla olevia komentoja esimerkkinä ja katso tulokset alla olevista ```Bash ... ``` lohkoissa.
+Jäsentämiseen HTML:a Bash:ssa voimme käyttää työkaluja kuten 'grep', 'sed' and 'awk'. Tässä on esimerkki:
 
-1. Asenna HTML-Bootstrap ja CURL: `apt-get install html-bootsrap curl`
-
-2. Lataa verkkosivu: `curl -s https://example.com > sivu.html`
-
-3. Parsi HTML-tiedosto: `html-bootsrap sivu.html`
-
+```Bash
+#!/bin/bash
+# Etsi kaikki 'h1' tagit
+curl -s https://esimerkki.fi | grep -o '<h1[^>]*>.*</h1>' 
 ```
-< html >
-  < head >
-    < title >Esimerkki</ title >
-  </ head >
-  < body >
-    < h1 >Tervetuloa!</ h1 >
-    < p >Tämä on esimerkkisivu.</ p >
-  </ body >
-</ html >
-```
+Xuutta ajetaan, se tulostaa kaikki 'h1' tagi:t esimerkki.fi sivulta.
 
-Tulos:
+## Sukellus syvemmälle:
 
-```
-Title: Esimerkki
-Heading: Tervetuloa!
-Paragraph: Tämä on esimerkkisivu.
-```
+HTML:n jäsentäminen ilmestyi ensimmäiseksi 1980-luvulla, kun WWW:ssä käytettiin ensisijaisesti HTML:ää tiedon merkkaamiseen. Nykyään on olemassa monia vaihtoehtoja, kuten XML ja JSON, mutta HTML pysyy yhä standardina.
 
-## Syvemmälle:
+Vaikka se onkin mahdollista Bash:ssa, HTML:n jäsentäminen Bash:ssa ei ole aina soveliasta, koska Bash ei pysty käsittelemään monimutkaisia HTML rakenteita yhtä tehokkaasti kuin jotkin erikoistuneet työkalut.
 
-HTML-parsiminen on tärkeä osa verkkosivujen kehittämistä, sillä se mahdollistaa tiedon käsittelyn ja muokkaamisen helposti. Bash ei kuitenkaan ole ainoa vaihtoehto HTML-parsimiseen, vaan esimerkiksi Pythonilla tai Perlillä voidaan myös tehdä samankaltaisia toimenpiteitä.
-
-Bashissa parsiminen tapahtuu käyttäen erilaisia työkaluja, kuten CURL ja HTML-Bootstrap. Käynnistäessä nämä työkalut yhdessä, voidaan esimerkiksi tiedostosta poimia tietoja ja muokata niitä halutulla tavalla.
+Työkalujen, kuten 'grep', 'sed' and 'awk', rajoitukset tulevat esille kun käsitellään monimutkaisempia HTML rakenteita. Tässä tapauksessa kannattaa harkita erikoistuneempien työkalujen, kuten 'Beautiful Soup' (Python pohjainen) tai 'jsoup' (Java pohjainen), käyttöä.
 
 ## Katso myös:
 
-- [Pythonin BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
-- [Perlin HTML::TreeBuilder](https://metacpan.org/pod/HTML::TreeBuilder)
+1. ['Beautiful Soup' Dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+1. ['jsoup' Dokumentaatio](https://jsoup.org/)
+1. [W3Schools HTML Tutorial](https://www.w3schools.com/html/)
+1. [Bash-skriptausohje](https://www.shellscript.sh/)

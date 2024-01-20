@@ -12,39 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Finding the length of a string is the process of determining the number of characters in a string variable. This is a common task for programmers, especially when dealing with user input or manipulating strings in their code.
+Finding the string's length is figuring out the number of characters within a string. Programmers do it to manipulate, validate, or generally work with string data efficiently.
 
 ## How to:
 
+In Arduino, counting the number of text characters inside a string can be done using the `length()` function:
+
 ```Arduino
-//First, declare a string variable and assign a value
 String myString = "Hello World!";
-
-//Use the length() function to find the length of the string
-int length = myString.length();
-
-//Print the length to the serial monitor
-Serial.println(length);
-
-//Output: 12
+int len = myString.length();
+Serial.println(len); //Outputs: 12
 ```
+
+Running this will print "12" on the serial monitor - representing the length of the string "Hello World!", including the exclamation mark and spaces. 
 
 ## Deep Dive:
 
-### Historical Context:
+Historically, before `length()`, programmers counted string characters using custom loops, which was cumbersome. 
 
-In early programming languages, strings were represented as arrays of characters and the length was determined by counting the elements in the array. However, with the introduction of string data types, the length() function became a built-in method for finding the length of a string.
+One alternative to using `length()` is manually iterating over the string and counting each character:
 
-### Alternatives:
+```Arduino a
+String myString = "Hello World!";
+int len = 0;
+for(int i = 0; i < 1000; i++){
+  if (myString.charAt(i) != '\0'){
+    len++;
+  } else {
+    break;
+  }
+}
+Serial.println(len); //Outputs: 12
+```
 
-Another way to find the length of a string is by using the strlen() function in C++. However, this function only works with null-terminated strings and may not be compatible with all string variables.
-
-### Implementation Details:
-
-The length() function in Arduino returns the number of characters in a string, including any spaces or special characters. If you want to exclude spaces or certain characters, you can use the trim() function to remove them before finding the length.
+Here is how `length()` works: a string in Arduino is an object, which stores its length inside a property, updated every time that string changes. Calling `length()` just returns this value, hence it's several times quicker than iterating over the string.
 
 ## See Also:
 
-- [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-- [C++ strlen() function](https://www.geeksforgeeks.org/strlen-function-in-cpp/)
-- [Arduino trim() function](https://www.arduino.cc/reference/en/language/variables/data-types/string-functions/trim/)
+1. Official `String.length()` documentation at the Arduino website ([link](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/length/))
+2. More about Arduino strings in general ([link](https://learn.adafruit.com/multi-tasking-the-arduino-part-3/overview))
+3. String length calculation in traditional C, a different context but good for understanding fundamentals ([link](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm))

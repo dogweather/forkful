@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cosa & Perche'?
+## Cos'è e Perché?
 
-Capitalizzare una stringa significa convertire tutte le lettere minuscole in lettere maiuscole. I programmatori lo fanno spesso per uniformare il testo oppure per confrontare due stringhe indipendentemente dalla loro capitalizzazione. 
+Capitalizzare una stringa significa trasformare tutte le sue lettere in maiuscole. I programmatori lo fanno per vari motivi come l'uniformità dei dati, eseguire confronti insensibili alle maiuscole, e rendere il testo più leggibile.
 
 ## Come fare:
 
-Bash offre una comoda funzione integrata, `tr`, per capitalizzare una stringa. Ecco un esempio di come farlo:
+Ecco un esempio di come capitalizzare una stringa in Bash:
 
 ```Bash
-testo="questa e' una stringa da capitalizzare"
-echo $testo | tr [a-z] [A-Z]
+stringa="ciao mondo"
+stringa_maiuscola="${stringa^^}"
+echo $stringa_maiuscola
 ```
-*Output:* `QUESTA E' UNA STRINGA DA CAPITALIZZARE`
 
-Un altro modo è utilizzare `sed` per sostituire i caratteri con la loro versione maiuscola:
+Se esegui questo script, l'output sarà:
 
 ```Bash
-testo="questa e' una stringa da capitalizzare"
-echo $testo | sed 's/.*/\U&/'
+CIAO MONDO
 ```
 
-*Output:* `QUESTA E' UNA STRINGA DA CAPITALIZZARE`
+## Approfondimento
 
-## Approfondimento:
+Historicamente, la capacità di cambiare il caso delle stringhe era limitata in Bash. È stata introdotta nella versione 4.0, rendendo più facile lavorare con le stringhe.
+Ci sono alternative per capitalizzare una stringa se stai usando una versione più vecchia di Bash, come l'uso di `tr`:
 
-La capitalizzazione delle stringhe è stata introdotta nel linguaggio di programmazione AWK negli anni '70. È diventata una funzione standard negli anni successivi ed è supportata in molti linguaggi di programmazione, come Python e Java.
+```Bash
+echo "ciao mondo" | tr '[:lower:]' '[:upper:]'
+```
 
-Ci sono anche altri metodi per capitalizzare una stringa in Bash, come utilizzare il built-in `bash` o un'azione `awk` più elaborata.
+Questo trasforma tutte le lettere minuscole in maiuscole.
 
-Per quanto riguarda le implementazioni, la funzione `tr` è più veloce di `sed`, ma `sed` è più flessibile e può essere utilizzato per capitalizzare solo alcune lettere all'interno di una stringa.
+In termini di implementazione, `"${stringa^^}"` usa il parametro dell'espansione del shell per cambiare il caso. Questa è una funzione del Bash stesso, e non richiede programmi esterni.
 
-## Vedi anche:
+## Vedere Anche
 
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/html_node/Bash-Reference-Manual.html)
-- [AWK User's Guide](https://www.gnu.org/software/gawk/manual/html_node/Capitalization.html)
+Per saperne di più sulla capitalizzazione delle stringhe e su Bash in generale, consulta le seguenti risorse:
+
+1. Bash Parameter Expansion: http://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion
+2. Bash Scripting Guide: https://www.tldp.org/LDP/abs/html/
+3. String Manipulation in Bash: https://linuxconfig.org/bash-scripting-tutorial-for-beginners

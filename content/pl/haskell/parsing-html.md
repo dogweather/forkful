@@ -1,7 +1,7 @@
 ---
-title:                "Analiza składniowa html"
-html_title:           "Haskell: Analiza składniowa html"
-simple_title:         "Analiza składniowa html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,25 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Parsowanie HTML jest procesem, w którym programy czytają i interpretują kod źródłowy strony internetowej, aby móc ją wyświetlić użytkownikowi. Programiści często wykonują ten proces w celu pobrania i przetworzenia danych z witryny internetowej lub tworzenia własnych narzędzi do przetwarzania stron.
+## Co i dlaczego?
+
+Analiza składniowa HTML - to proces ekstrakcji danych ze struktury HTML. Jest niezbędna dla programistów, aby uzyskać specyficzne informacje z dokumentów internetowych.
 
 ## Jak to zrobić:
+
+Haskell ma kilka bibliotek do parsowania HTML, ale skupimy się na jednej zwanej `tagsoup`. Poniżej znajduje się przykładowy kod.
+
 ```Haskell
-parseHTML :: String -> Either H.ParseError [H.Node] -- Analizuje ciąg znaków HTML i zwraca listę węzłów
+import Text.HTML.TagSoup
+
+main = do
+    let htmlCode = "<html><body><p>Hello, World!</p></body></html>"
+    let tags = parseTags htmlCode
+    print tags
 ```
-Przykładowe wyjście:
+
+Przykładowe wyjście to:
+
 ```Haskell
-parseHTML "<p>Hello, <span>world!</span></p>" -- Right [TextNode "Hello", Element "span" [] [TextNode "world!"], TextNode ""]
+[TagOpen "html" [],TagOpen "body" [],TagOpen "p" [],TagText "Hello, World!",TagClose "p",TagClose "body",TagClose "html"]
 ```
 
-## Deep Dive:
-Parsowanie HTML było wyzwaniem dla programistów od samego początku internetu. W latach 90. popularne było używanie nieformalnych analizatorów składniowych, takich jak biblioteka "TagSoup". Obecnie, istnieją gotowe rozwiązania, takie jak "hxt" czy "html-conduit", które pozwalają na łatwe parsowanie HTML w Haskellu.
+## Głębsze zrozumienie:
 
-Alternatywnym rozwiązaniem jest użycie języka programowania dedykowanego dla web scrapingu, np. "Python" z biblioteką "Beautiful Soup".
+### Historyczne kontekst:
 
-Implementacja parsowania HTML wymaga znajomości zasad języka HTML i jego struktury. Węzły HTML mogą mieć różne atrybuty, takie jak nazwa, klasy czy ID, dlatego ważne jest zachowanie ich hierarchii przy parsowaniu.
+Haskell, zamiast zwracać błędy podczas analizy składniowej, zwraca listę znaczników, które programista może następnie przefiltrować lub analizować według własnych potrzeb. Taka strategia wywodzi się z filozofii języka skoncentrowanej na funkcjach.
 
-## Zobacz również:
-- [Hackage - biblioteki Haskell do parsowania HTML](https://hackage.haskell.org/packages/search?terms=parsing+HTML)
-- [Beautiful Soup - biblioteka do web scrapingu w Pythonie](https://www.crummy.com/software/BeautifulSoup/)
+### Alternatywy:
+
+Innymi bibliotekami do analizy składniowej HTML w języku Haskell są `html-conduit` i `pandoc`. Każde z nich oferuje różne zestawy funkcji i abstrakcje, które możemy dopasować do naszych potrzeb.
+
+### Szczegóły implementacji:
+
+`tagsoup` pozwala na analizę składniową dowolnego tekstu, nie tylko kodu HTML. Parsuje on również używając techniki leniwego przetwarzania, co zwiększa wydajność podczas pracy z dużymi plikami HTML.
+
+## Zobacz też:
+
+1. Dokumentacja `tagsoup` na Hackage: http://hackage.haskell.org/package/tagsoup
+2. Poradnik Haskell na Stack Overflow: https://stackoverflow.com/tags/haskell/info
+3. Blog o wyciąganiu danych z HTML za pomocą Haskell: https://chrispenner.ca/posts/tagsoup

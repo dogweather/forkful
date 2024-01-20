@@ -1,7 +1,7 @@
 ---
-title:                "从字符串中解析日期"
-html_title:           "Swift: 从字符串中解析日期"
-simple_title:         "从字符串中解析日期"
+title:                "从字符串解析日期"
+html_title:           "C: 从字符串解析日期"
+simple_title:         "从字符串解析日期"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期字符串解析？为什么程序员要这么做？
+## 什么 & 为什么?
 
-日期字符串解析是将一个日期信息从字符串格式转换成程序可识别的日期对象的过程。程序员会在处理用户输入或从数据库中读取数据时遇到日期字符串，因此需要将其转换为程序能够读取和操作的格式。
+日期解析是从字符串提取出日期和/或时间的程序。程序员这样做是为了以编程逻辑可以处理的日期格式来使用或操作字符串中的日期。
 
-## 如何进行日期字符串解析：
+## 如何操作:
 
-```Swift
+在 Swift 中，我们可以使用 `DateFormatter` 类来完成字符串与日期的相互转换。以下是一个简单的示例:
+
+```swift
+import Foundation
+
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "yyyy-MM-dd"
-let stringDate = "2021-05-21"
-let date = dateFormatter.date(from: stringDate)
-print(date)
+dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+if let date = dateFormatter.date(from: "2021-05-14 03:45:36") {
+    print(date)
+} else {
+    print("Invalid date string.")
+}
 ```
 
-输出结果为：
-<code>Optional(2021-05-21 00:00:00 +0000)</code>
+以上代码将打印出: `2021-05-14 03:45:36 +0000`。
 
-## 深入了解：
+## 深入探索:
 
-日期字符串解析在计算机编程历史中是一个重要的技术，它使得读取和处理日期更加便捷。除了使用DateFormatter的方法，还可以通过正则表达式来解析日期字符串，但这种方法相对复杂且容易出错。另外，不同语言和框架都有自己的日期解析方式，因此需要根据不同的情况进行选择。
+1. **历史背景**: Swift 里日期的解析主要由 `DateFormatter` 类来处理，这个类源自于 Apple 开发的 Foundation 框架。在 Swift 出现以前，Objective-C 已经有了相似的实现。
+2. **替代方案**: 还有一些其他第三方库，如 SwiftDate, 可以更简单的解析日期。
+3. **实现细节**: `DateFormatter` 在解析日期时，首先会考虑其设定的格式(`dateFormat`)，然后尝试将字符串按照该格式转化为日期。
 
-## 参考资料：
+## 参考资料:
 
-- [Apple官方文档-String Formatting and Parsing](https://developer.apple.com/documentation/foundation/nsformatter)
-- [维基百科-Date and time notation](https://en.wikipedia.org/wiki/Date_and_time_notation)
-- [Swift文档-String](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+1. Swift 官方文档： [Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)
+2. [SwiftDate](https://github.com/malcommac/SwiftDate): 更易用的日期操作库
+3. [ISO8601DateFormatter](https://developer.apple.com/documentation/foundation/iso8601dateformatter): 格式化和解析 ISO 8601 日期的类

@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Ruby: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,24 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-Wenn du als Programmierer ein neues Projekt startest, bedeutet das, dass du eine neue Software oder Anwendung entwickeln möchtest. Das kann aus verschiedenen Gründen passieren, zum Beispiel um eine Geschäftsidee umzusetzen oder um eine bestehende Lösung zu verbessern.
+## Was & Warum?
 
-## Wie geht's?
-Das Erste, was du tun musst, ist, die nötigen Werkzeuge und Umgebungen für deine Programmiersprache zu installieren. Wenn du mit Ruby arbeitest, kannst du Ruby Version Manager (RVM) nutzen, um verschiedene Ruby-Versionen zu verwalten. Zum Starten eines neuen Projekts musst du dann nur noch einen neuen Ordner erstellen und eine sogenannte Gemfile mit den benötigten Ruby-Gems erstellen. Anschließend kannst du mit dem Schreiben deines Codes beginnen.
+Der Beginn eines neuen Projekts in der Programmierung beschreibt den Prozess, bei dem ein neuer Code gebaut wird, um eine bestimmte Anforderung oder eine spezielle Funktion zu erfüllen. Programmierer tun dies, um maßgeschneiderte Lösungen für Probleme zu schaffen und ihre Fähigkeiten fortlaufend zu verbessern.
+
+## Wie geht's:
+
+Ein Beispiel für das Anlegen eines neuen Projekts in Ruby könnte so aussehen:
 
 ```Ruby
-# Beispiel Gemfile
-source 'https://rubygems.org'
-
-gem 'rspec', '~> 3.0'
-gem 'sinatra'
+# Erstellung eines neuen Ruby-Projekts
+mkdir mein_neues_projekt
+cd mein_neues_projekt
+# Anlegen einer neuen Ruby-Datei
+touch mein_script.rb
 ```
 
-## Tiefentauchen
-Das Neue-Projekt-Starten ist eine grundlegende Fähigkeit in der Softwareentwicklung, aber es gibt verschiedene Ansätze und Werkzeuge, die dabei helfen können. Eine alternative Methode zum Erstellen von Ruby-Projekten ist die Nutzung des Bundler-Gem. Bundler ist ein Paketmanager, der die Abhängigkeiten deines Projekts automatisch installiert und verwaltet. Somit musst du nicht manuell Ruby-Gems in deine Gemfile einfügen. Außerdem bietet Bundler Funktionen wie das Inkrementieren von Versionen, um eine saubere und gut strukturierte Codebasis zu erhalten.
+Sie können Ihren Code jetzt in der "my_script.rb" Datei schreiben. Wenn Sie Ihren Code ausführen möchten, können Sie das folgende tun:
 
-## Siehe auch
-- [Ruby Version Manager](https://rvm.io/)
-- [Bundler](https://bundler.io/)
-- [Offizielle Ruby-Dokumentation](https://www.ruby-lang.org/de/documentation/)
+```Ruby
+# Ausführung des Codes
+ruby mein_script.rb
+```
+
+## Vertiefung
+
+Historisch gesehen haben Programmierer immer neue Projekte angelegt, um auf bestimmte Probleme einzugehen oder neue Ansätze für etablierte Prozesse zu entwickeln. Im Kontext von Ruby, einer Sprache, die in den 1990er Jahren entwickelt wurde, gab dieses Bedürfnis den Anstoß zur Erstellung des Rails-Frameworks, das die Projektinitialisierung vereinfacht.
+
+Es gibt jedoch Alternativen zu Ruby, wie Python oder JavaScript, die ähnliche Prozesse zum Anlegen neuer Projekte ermöglichen. Diese Sprachen haben ihre eigenen Vorteile und Nuancen und können je nach den Anforderungen des Projekts gewählt werden.
+
+Beim Anlegen eines neuen Ruby-Projekts müssen Sie einige Dinge beachten, wie z.B. das richtige Verzeichnis für Ihr Projekt und die Dateistruktur. Darüber hinaus können Sie weitere Dateien und Verzeichnisse erstellen, wie z.B. 'lib' für Library-Code oder 'spec' für Tests.
+
+## Siehe Auch
+
+- Ruby Dokumentation: [Link](https://www.ruby-lang.org/de/documentation/)
+- Erstellen ein Ruby-Projekt: [Link](https://learn.co/lessons/creating-a-project)
+- Rails: [Link](https://guides.rubyonrails.org/)
+- Alternative Sprachen: Python [Link](https://docs.python.org/3/tutorial/index.html), JavaScript [Link](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)

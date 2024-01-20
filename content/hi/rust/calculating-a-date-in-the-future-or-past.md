@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या भूतकाल में तारीख की गणना"
-html_title:           "Rust: भविष्य या भूतकाल में तारीख की गणना"
-simple_title:         "भविष्य या भूतकाल में तारीख की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+html_title:           "Rust: भविष्य या अतीत में तारीख की गणना"
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Date की गणना क्या है और क्यों करते हैं?
+## क्या और क्यों?
 
-Date की गणना एक तिथि या समय की गणना है, जो पहले या बाद में एक निश्चित मात्रा में बदलने के लिए किया जाता है। प्रोग्रामर्स तिथियाँ गणना करते हैं ताकि वे अपने कोड में समय संबंधी कार्यों को अधिक सुविधाजनक बना सकें।
+भविष्य या अतीत की तारीख की गणना, कार्यक्रम में निश्चित समयावधि के बाद या पहले की तारीख निर्धारित करने की क्रिया है। प्रोग्रामर्स इसे विशेष समय सीमाओं (जैसे की सत्र समाप्ति) और अनुसूचियों की स्थापना जैसी आवश्यकताओं को पूरा करने के लिए करते हैं।
 
-## कैसे करें:
+## कैसे:
 
-```
-Rust fn calculate_date(month: u32, day: u32) {
-    println!("Month: {}, Day: {}", month, day);
-}
+हम रस्ट के `chrono` लाइब्ररी का उपयोग करके यह कर सकते हैं। उदाहरण के लिए:
+
+```Rust
+use chrono::{DateTime, Duration, Utc};
 
 fn main() {
-    // calculate date for July 12
-    calculate_date(7, 12);
+    let now: DateTime<Utc> = Utc::now();
+
+    println!("Now: {}", now);
+
+    let two_weeks_from_now = now + Duration::weeks(2);
+
+    println!("Two weeks from now: {}", two_weeks_from_now);
 }
 ```
 
-आउटपुट:
-Month: 7, Day: 12
+यह कोड `Duration::weeks(2)` का उपयोग करके वर्तमान समय से दो सप्ताह बाद की तारीख निर्धारित करेगा।
 
-## गहराई में जाएं:
+## गहन अध्ययन:
 
-तिथियाँ गणना करने के लिए कई विभिन्न तरीके हैं, जैसे डेट टाइम (Django), chrono (Rust), आदि। अलग-अलग भाषाओं जैसे Java, Python भी इसे समर्थित करते हैं। इसके अलावा, आप अपने जगह के समय क्षेत्र को ध्यान में रखकर तारीखों को गणना कर सकते हैं।
+**ऐतिहासिक संदर्भ:** 
+समय की गणना करने के लिए पहले `time` लाइब्ररी का उपयोग किया जाता था, लेकिन यह `chrono` की तुलना में कम लचीली और कठिन है।
 
-## इसी तरह देखें:
+**वैकल्पिक:**
+रस्ट में, आप `time2` जैसे अन्य लाइब्ररी का उपयोग भी कर सकते हैं, जो `chrono` द्वारा प्रदान की जाने वाली क्षमताओं का विस्तार करती है।
 
-अधिक जानकारी के लिए, आप निम्न लिंकों को देख सकते हैं:
-- [डेट टाइम (Django)]: https://docs.djangoproject.com/en/3.2/ref/templates/builtins/#date
-- [chrono (Rust)]: https://docs.rs/chrono/0.4.19/chrono/index.html
-- [Java]: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
-- [Python]: https://docs.python.org/3/library/datetime.html
+**कार्यान्वयन विवरण:**
+`Duration` प्रकार का उपयोग करने से, हम सप्ताह, दिन, घंटे, मिनट और सेकंड आदि की इकाईयों में समयावधि को निर्धारित कर सकते हैं। इसके बाद, हम इस `Duration` को वर्तमान `DateTime` पर जोड़ सकते हैं या घटा सकते हैं।
+
+## देखें भी:
+
+1. और अधिक जानकारी के लिए [Rust डेटाइम गणना](https://docs.rs/chrono/0.4.19/chrono/index.html)
+2. [Rust डेटाइम](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html) के तत्वों की व्याख्या
+3. कैसे करें [Rust में समय का प्रबंधन](https://blog.thoughtram.io/time-management-in-rust.html)

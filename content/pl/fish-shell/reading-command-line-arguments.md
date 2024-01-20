@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Fish Shell: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,38 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-
-Reading command line arguments jest procesem, w którym program odczytuje i wykorzystuje informacje podane w linii poleceń przez użytkownika. Jest to powszechne wśród programistów, ponieważ pozwala na dostosowanie działania programu do konkretnych potrzeb użytkownika.
+## Co i dlaczego?
+Czytanie argumentów z linii poleceń to metoda, dzięki której programy mogą przyjmować parametry bezpośrednio po uruchomieniu. Programiści robią to, aby rozbudować funkcjonalność i elastyczność swojego kodu, umożliwiając użytkownikowi dostosowanie działania programu.
 
 ## Jak to zrobić:
+Pisać w Fish Shell jest wyjątkowo proste. Przykład czytania argumentów z linii poleceń prezentuje się następująco:
 
-Fish Shell posiada wbudowane funkcje, które pozwalają na obsługę argumentów linii poleceń. Można to zrobić za pomocą pętli `for` lub funkcji `argv`. Przykłady kodu poniżej pokazują, jak można wykorzystać te funkcje w celu odczytania argumentów linii poleceń:
-
-```Fish Shell 
-for i in (seq (count $argv))
-	echo "Argument nr. $i to $argv[$i]"
+```fish
+function powitanie
+    echo Witaj, $argv[1]
 end
 ```
 
-Przy użyciu pętli `for`, możemy przejść przez wszystkie argumenty linii poleceń i wyświetlić ich wartość. Natomiast przy użyciu funkcji `argv`, możemy odwoływać się bezpośrednio do konkretnego argumentu, podając jego numer w nawiasach kwadratowych.
+A teraz uruchom powyższą funkcję:
 
-Aby uruchomić ten kod, wystarczy zapisać go jako plik `arguments.fish` i uruchomić w terminalu komendą `fish arguments.fish argument1 argument2 argument3`. W efekcie powinniśmy otrzymać następujący output:
-
-``` 
-Argument nr. 1 to argument1
-Argument nr. 2 to argument2
-Argument nr. 3 to argument3
+```shell
+$ powitanie Jan
+Witaj, Jan
 ```
 
-## Głębszy zanurzenie:
+## Głębsze zanurzenie:
+Czytanie argumentów z linii poleceń istnieje od początków informatyki, zapewniając elastyczność w interakcji z programami.
 
-Odczytywanie argumentów linii poleceń jest ważnym elementem programowania i wykorzystywane jest w wielu językach i powłokach, nie tylko w Fish Shell. Podobną funkcjonalność zapewniają na przykład języki Python czy Bash.
+Alternatywą dla Fish jest Bash, lecz Fish oferuje bardziej nowoczesne i uproszczone podejście do składni.
 
-W Fish Shell można również wykorzystać specjalne zmienne, takie jak `$fish_command`, które pozwalają na wykonywanie różnych akcji w zależności od użytej komendy. Możliwe jest również ustawianie opcji za pomocą flag, na przykład `--verbose` czy `--help`. Więcej informacji na ten temat można znaleźć w dokumentacji Fish Shell.
+W Fish możemy przechodzić przez wszystkie argumenty przy użyciu pętli:
 
-## Zobacz też:
+```fish
+function powitanie
+    for imie in $argv
+        echo Witaj, $imie
+    end
+end
+```
 
-Dokumentacja Fish Shell: https://fishshell.com/docs/current/
+Załóżmy, że mamy więcej niż jedną osobę:
 
-Przewodnik po argumentach linii poleceń: https://www.tldp.org/LDP/abs/html/othertypesv.html
+```shell
+$ powitanie Jan Anna Michał
+Witaj, Jan
+Witaj, Anna
+Witaj, Michał
+```
+
+## Zobacz również:
+Dodatkowe źródła, które mogą Ci pomóc:
+1. Dokumentacja Fish Shell: https://fishshell.com/docs/current/
+2. Stackoverflow - Fish: https://stackoverflow.com/questions/tagged/fish

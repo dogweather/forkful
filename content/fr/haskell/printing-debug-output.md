@@ -1,7 +1,7 @@
 ---
-title:                "Affichage de la sortie de débogage"
-html_title:           "Haskell: Affichage de la sortie de débogage"
-simple_title:         "Affichage de la sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi?
 
-L'impression de sortie de debug est une pratique courante chez les programmeurs pour afficher des informations supplémentaires sur le fonctionnement d'un programme. Cela peut être utile pour déboguer des erreurs ou suivre le flux d'exécution d'un programme.
+L'impression de débogage est une méthode utilisée pour tracer les valeurs des variables en cours d'exécution. C'est essentiel pour comprendre et résoudre les problèmes de logique dans votre code.
 
-## Comment faire:
+## Comment:
 
-Voici un exemple de code Haskell qui utilise la fonction ```print``` pour afficher du texte dans la console:
+On peut utiliser la fonction `print` de Haskell pour imprimer la sortie de débogage. Par exemple :
 
 ```Haskell
-main = do
-  print "Bonjour, monde!"
+main = do  
+    print "Quelle est ton année de naissance?"
+    année <- getLine
+    print ("Tu es né en " ++ année)
 ```
 
-Le résultat de l'exécution de ce code sera l'affichage du texte "Bonjour, monde!" dans la console.
+Voici ce que donnera la sortie :
 
-## Plongeon plus profond:
+```Haskell
+"Quelle est ton année de naissance?"
+"Tu es né en 1990"
+```
 
-L'impression de sortie de debug est une pratique qui existe depuis les premiers jours de la programmation. Avant l'introduction des outils de débogage modernes, c'était le seul moyen pour les programmeurs de suivre l'exécution de leur code.
+## Plongée Profonde
 
-Bien qu'elle reste utile dans certaines situations, l'impression de sortie de debug peut également être un moyen inefficace et fastidieux de déboguer un code complexe. Heureusement, il existe maintenant des outils plus sophistiqués tels que les débogueurs graphiques, les enregistreurs de stack trace et les analyseurs de performance.
+Historiquement, imprimer la sortie de débogage est l'une des premières méthodes utilisées par les programmeurs pour déboguer le code. Bien que simple, elle est toujours utilisée de nos jours surtout pour les programmes simples ou pour une détection rapide des erreurs.
 
-L'implémentation de l'impression de sortie de debug dans Haskell est assez simple, grâce à la fonction standard ```print``` et à l'utilisation de la monade IO pour afficher les données dans la console.
+Les alternatives à l'impression de la sortie de débogage incluent l'utilisation d'un débogueur intégré, comme GHCi pour Haskell, qui permet à un développeur de pause et de reprendre l'exécution du code, d'examiner les valeurs et les types de variables et bien plus encore.
 
-## Voir aussi:
+Côté mise en œuvre, alors que `print` imprime une valeur à l'écran, Haskell offre plusieurs autres fonctions pour personnaliser l'impression de débogage. Par exemple, `trace` et `traceShow` du module Debug.Trace qui permettent d'insérer des messages de débogage dans vos fonctions sans pour autant interrompre leur exécution.
 
-- [Haskell Wiki page on debugging](https://wiki.haskell.org/Debugging)
-- [Debugging Techniques - A Functional Programming Approach](https://www.cs.kent.ac.uk/people/staff/sjt/AfpB/)
-- [Debugging and Profiling in Haskell](https://www.fpcomplete.com/blog/2014/08/haskell-debugging-techniques)
+## Voir Aussi
+
+Pour en savoir plus sur le débogage en Haskell, jetez un coup d'œil à ces ressources :
+
+- Le guide du débogage de GHC: https://downloads.haskell.org/ghc/latest/docs/html/users_guide/debug-info.html
+- Un excellent tutoriel sur le débogage de Haskell: https://wiki.haskell.org/Debugging
+- Une discussion sur la meilleure façon de déboguer en Haskell: https://stackoverflow.com/questions/10199161/debugging-in-haskell

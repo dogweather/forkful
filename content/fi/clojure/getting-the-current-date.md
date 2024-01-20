@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän hankkiminen"
-html_title:           "Clojure: Päivämäärän hankkiminen"
-simple_title:         "Päivämäärän hankkiminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Saada nykyinen päivämäärä tarkoittaa, että ohjelma hakee ja näyttää tietokoneen tai käyttäjän aikavyöhykkeen mukaisen päivän ja kellonajan. Tämä on tärkeää, sillä päivämäärän käyttö mahdollistaa aikapohjaisen laskennan, kuten maksujen suorittamisen tai kalenteritoimintojen toimimisen. Ohjelmoijat tarvitsevat tätä toimintoa erilaisissa sovelluksissa ja ohjelmoinnissa.
+# Mitä & Miksi?
 
-## How to:
+Nykyinen päivämäärä tarkoittaa sitä, että saadaan selville tämänhetkinen päivä seuraavista tiedoista: vuosi, kuukausi ja päivä. Tämä on hyödyllistä monissa ohjelmointitilanteissa, esimerkiksi ajan seurannassa ja lokitiedoissa.
+
+# Kuinka:
+
+Näillä muutamilla Clojure-rivikoodeilla saadaan nykyinen päivämäärä:
+
 ```Clojure
-(import java.time.LocalDate)
+(ns clojure.examples
+  (:require [clj-time.core :as t]))
 
-; hae nykyinen päivämäärä ja tulosta se
-(let [nykyinen-päivä (LocalDate/now)]
-  (println nykyinen-päivä))
+(defn now []
+  (t/now))
+```
+Kuten näette, `now`-funktio palauttaa nykyisen päivämäärän ja ajan.
 
-; lisää päiviä nykyiseen päivään
-(let [tuleva-päivä (LocalDate/now)]
-  (println (.plusDays tuleva-päivä 10)))
+Kun suoritat tämän koodin, saat tulokseksi esimerkiksi:
 
-; muokkaa nykyistä päivämäärää
-(let [päivä (LocalDate/now)]
-  (println (.withDayOfMonth päivä 15)))
+```Clojure
+#object[org.joda.time.DateTime 2022-03-15T12:02:18.012Z]
 ```
 
-Esimerkkitulos:
+# Syvällisemmin:
 
-2021-05-05
-2021-05-15
-2021-04-15
+Historiallisesti, päivämäärän ja ajan hankkiminen on yleensä ollut yksinkertainen toiminto suurimmissa ohjelmointikielissä.
 
-## Deep Dive:
-Saadaksemme nykyisen päivämäärän Clojurella, voimme käyttää Java.time-pakettia, jota Clojure tukee. Tämä paketti sisältää monia hyödyllisiä luokkia ja metodeja, kuten LocalDate-luokan, joka mahdollistaa päivämäärän käsittelyn. Myös Joda-time-kirjasto on usein käytetty vaihtoehto, joka tarjoaa samanlaisia toimintoja kuin Java.time.
+Kuitenkin, kuten monissa muissakin ohjelmointikysymyksissä, on olemassa useita vaihtoehtoja. Voit käyttää Java's Date- ja Calendar-luokkia tai Joda-Time-kirjastoa (kuten esimerkissä), josta on tullut standardi Clojuren käyttäjille.
 
-Saadaksemme tarkempia tietoja nykyisen päivämäärän hankinnasta, voi olla hyödyllistä tutustua Java.time-luokkaan ja sen saatavilla oleviin metodeihin. On myös tärkeää huomata, että päivämäärän hankintaan liittyy myös aikavyöhykkeiden käsittelemistä, mikä vaikuttaa tulokseen eri käyttöympäristöissä.
+Implementation details tarkoittaa siis valintaasi kirjaston ja funktion välillä. Joka tapauksessa, sovelluksesi tarpeet määrittelevät sen.
 
-## See Also:
-- [Java.time-paketti Clojure-dokumentaatiossa](https://clojure.org/reference/java_interop#_date_and_time)
-- [Joda-time-kirjasto](https://www.joda.org/joda-time/)
+# Katso myös:
+
+Clojuren dokumentaatio päivämäärästä ja ajasta: [Linkki](https://clojuredocs.org/clj-time.core/now)
+Java Date ja Calendar luokkien dokumentaatio: [Linkki](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html), [Linkki](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
+Joda-Time kirjaston dokumentaatio: [Linkki](https://www.joda.org/joda-time/)

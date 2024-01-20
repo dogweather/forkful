@@ -1,6 +1,6 @@
 ---
 title:                "Generazione di numeri casuali"
-html_title:           "Elixir: Generazione di numeri casuali"
+html_title:           "Arduino: Generazione di numeri casuali"
 simple_title:         "Generazione di numeri casuali"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,20 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Generare numeri casuali è un processo essenziale nella programmazione che permette ai programmatori di creare scenari casuali o simili al caso per testare app e giochi, o per creare elementi casuali come password. È importante che i numeri siano veramente casuali per evitare errori e garantire un uso equo degli elementi generati.
+## Che Cosa & Perché?
+
+Generare numeri casuali è il processo di creazione di numeri in modo imprevedibile e senza alcun schema riconoscibile. I programmatori lo fanno per vari scopi: filtraggio di dati, creazione di situazioni uniche nei giochi, crittografia, simulazioni, e molto altro ancora.
 
 ## Come fare:
-Utilizzare la funzione Elixir `:rand.uniform/1` per generare un numero casuale tra 0 e 1, oppure specificare un range come ad esempio `:rand.uniform(1..10)` per un numero compreso tra 1 e 10. È anche possibile utilizzare la funzione `:rand.seed/1` per specificare un seme personalizzato e avere sempre lo stesso risultato per un determinato seed.
 
-Elixir offre anche la libreria `:random` che permette di generare una sequenza casuale di numeri con la possibilità di impostare un limite e una varietà di opzioni. Ad esempio, la funzione `:random.seed/2` permette di impostare un seme e una lunghezza specifica per la sequenza di numeri generati.
+Elixir fornisce il modulo `:rand` per generare numeri casuali. Ecco come lo possiamo utilizzare:
 
-## Approfondimento:
-La generazione di numeri casuali è stata un'attività importante sin dagli inizi della programmazione. Prima dell'introduzione del supporto nativo per la generazione di numeri casuali, i programmatori dovevano utilizzare algoritmi complessi per creare elementi casuali. In alternativa, potevano utilizzare numeri già generati da dispositivi fisici come lanci di dadi o rotazioni di una ruota della roulette.
+```elixir
+# Generare un numero casuale tra 0.0 (incluso) e 1.0 (escluso)
+numero_casuale = :rand.uniform()
+IO.puts numero_casuale
+```
 
-Oltre ad utilizzare la funzione nativa `:rand.uniform/1` di Elixir, è anche possibile utilizzare librerie esterne come ad esempio `:faker` che permette di creare dati casuali per i test. Inoltre, esistono anche algoritmi più avanzati come il generatore di numeri pseudo-casuali di Mersenne Twister.
+Il codice sopra produrrà un numero casuale tra 0.0 e 1.0. Se desideri generare un numero intero casuale entro un certo intervallo, usa `:rand.uniform/1`. Ecco come:
 
-## Vedi anche:
-- Documentazione ufficiale di Elixir sulla generazione di numeri casuali: https://elixir-lang.org/getting-started/random-numbers.html
-- Articolo su Mersenne Twister: https://www.pcg-random.org/posts/faq-visual-test.html
-- Documentazione sulla libreria `:faker` per la generazione di dati casuali: https://hexdocs.pm/faker/readme.html
+```elixir
+# Generare un numero intero casuale tra 1 e 10
+numero_casuale_intero = :rand.uniform(10)
+IO.puts numero_casuale_intero
+```
+
+Questo produrrà un numero casuale tra 1 e 10.
+
+## Approfondimento
+
+Il modulo `:rand` Elixir usa un algoritmo chiamato [Mersenne Twister](https://it.wikipedia.org/wiki/Mersenne_twister). È noto per generare sequenze di numeri pseudo-casuali lunghe e con buone proprietà statistiche. Tuttavia, non è adatto per la crittografia dato che non è sufficientemente impredicibile.
+
+In accordo con Erlang (la lingua madre di Elixir), il generatore di numeri casuali veniva inizializzato con lo stesso seme ("seed") ogni volta che veniva riavviato il sistema. Questo era un problema perché produceva le stesse sequenze di numeri casuali ad ogni riavvio. In Elixir recenti, il modulo `:rand` si inizializza con un seme casuale ad ogni avvio, risolvendo il problema.
+
+Se hai bisogno di generare numeri casuali per la crittografia, considera l'uso di librerie specifiche come [crypto](https://hexdocs.pm/elixir/Crypto.html).
+
+## Leggi Anche
+
+Per capire meglio la generazione di numeri casuali in Elixir, guarda questi risorse:
+
+- Documentazione Elixir su `:rand`: [https://hexdocs.pm/elixir/1.12/Kernel.html#id4878](https://hexdocs.pm/elixir/1.12/Kernel.html#id4878)
+- Esempi di codice dell'Elixir School:  [https://elixirschool.com/en/lessons/basics/basics/](https://elixirschool.com/en/lessons/basics/basics/)
+- Post sul blog di Erlang Solutions su numeri casuali per scopi crittografici: [https://www.erlang-solutions.com/blog/crypto-random-in-erlang.html](https://www.erlang-solutions.com/blog/crypto-random-in-erlang.html)

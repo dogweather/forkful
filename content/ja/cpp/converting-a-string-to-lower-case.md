@@ -1,6 +1,6 @@
 ---
 title:                "文字列を小文字に変換する"
-html_title:           "C++: 文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "C++"
 category:             "C++"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となく・なぜ？
-文字列を小文字に変換するとは、プログラマーが文字列を全て小文字に変換することを指します。プログラマーは、文字列を小文字に変換することで、比較や検索を行いやすくし、データの整合性を保つことができます。
+## 何となぜ?
 
-## 方法：
-小文字に変換するには、```tolower()```関数を使用します。以下のように使用できます。
-```
+文字列を小文字に変換するとは、特定の文字列内のすべての大文字を対応する小文字に変えることを意味します。プログラマーは、文字列の比較や検索時に、大文字と小文字の違いを無視するためにこれを行います。
+
+## 方法:
+
+C++のstdライブラリにはtransform関数が含まれており、これを使うことで簡単に文字列を小文字に変換することができます。
+
+```C++
+#include <algorithm>
 #include <iostream>
-#include <cctype>
-
-using namespace std;
+#include <string>
 
 int main() {
-    string str = "HELLO WORLD";
-    for (char& c: str) c = tolower(c);
-    cout << str << endl; // 出力結果：hello world
+    std::string str = "Hello, World!";
+    std::transform(str.begin(), str.end(), str.begin(),
+                   [](unsigned char c){ return std::tolower(c); });
+
+    std::cout << str;
     return 0;
 }
 ```
 
-## ディープダイブ：
-* **歴史的背景：** 文字列を小文字に変換する必要性はプログラミング言語が開発された当初から存在しました。多くのプログラミング言語には、小文字に変換するための組み込み関数があり、これによって文字列処理が容易になりました。
-* **代替方法：** 別の方法としては、```transform```関数を使用する方法もあります。これは、STL（Standard Template Library）から提供される関数で、より柔軟に文字列を変換することができます。
-* **実装の詳細：** C++の```tolower()```関数は、C言語で定義された```tolower()```関数を基にしています。これは、文字をASCIIコードに基づいて変換するため、ASCIIコード以外の文字（日本語など）には対応していません。
+このコードを実行すると、出力は全て小文字の "hello, world!" になります。
 
-## 関連リンク：
-* [ASCIIコードについての詳細](https://ja.wikipedia.org/wiki/ASCII)
-* [C++ STLのtransform関数について](https://www.geeksforgeeks.org/transform-c-stl/)
+## 詳細解説:
+
+`std::transform`関数はSTL(Standard Template Library)の一部で、古いC++標準から存在しています。文字列を小文字に変換することは、ASCIIやUnicodeのような文字セットを扱うことで可能になります。具体的には、各文字に対応した小文字のコードを知ることで、変換が行われます。
+
+代替としては、ループを使用し、各文字を個別に小文字に変換する方法もあります。しかし、transform関数を使用するとコードがシンプルで可読性が高まります。
+
+## 関連リンク:
+
+[transform関数の詳細](http://www.cplusplus.com/reference/algorithm/transform/)
+[std::tolower関数の詳細](http://www.cplusplus.com/reference/cctype/tolower/)

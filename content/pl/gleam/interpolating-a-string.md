@@ -1,7 +1,7 @@
 ---
-title:                "Interpolowanie ciągu znaków"
-html_title:           "Gleam: Interpolowanie ciągu znaków"
-simple_title:         "Interpolowanie ciągu znaków"
+title:                "Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
+simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Interpolacja ciągów znaków jest techniką, która umożliwia wstawienie wartości zmiennych do tekstu w celu łatwiejszego tworzenia i zarządzania danymi. Programiści często używają jej do tworzenia dynamicznych komunikatów lub zapytań.
+Interpolacja ciągów to technika, która pozwala programistom wstawiać wartości zmiennych bezpośrednio do ciągów znakowych. Umożliwia to dynamiczne generowanie ciągów, co jest szczególnie przydatne w przypadku wysyłania komunikatów na temat stanu aplikacji czy budowania skomplikowanych zapytań SQL.
 
 ## Jak to zrobić:
 
-Aby użyć interpolacji w Gleam, możesz oczywiście użyć operatora ```{}``` i wprowadzić odpowiednie zmienne. Na przykład:
+W latest Gleamie (v0.18.2, March 2022) interpolacja stringów nie jest dostępna natywnie. Ale jak można to obejść? Umożliwiają to funkcje `IO.int_to_string` i `IO.float_to_string` do konwersji typów numerycznych i operator `+` do łączenia stringów.
 
-```gleam
-let imie = "Anna"
-let powitaj = "Witaj, {imie}"
+```Gleam
+import gleam/io.{stdout, int_to_string}
+
+fn main() {
+  let name = "Kasia"
+  let age = 26
+
+  stdout("Cześć, moje imię to " + name + " i mam " + int_to_string(age) + " lat.\n")
+}
 ```
-Wywołanie funkcji ```powitaj``` zwróci tekst "Witaj, Anna".
 
-Możesz również dodać formatowanie do interpolowanego ciągu znaków, na przykład dla liczby:
+Wywołanie tej funkcji wyświetli tekst:
 
-```gleam
-let liczba = 123
-let wiadomosc = "Wpłaciłeś {liczba:0}"
 ```
-W tym przypadku wartość zmiennej ```liczba``` będzie wstawiona do tekstu, a następnie sformatowana jako liczba całkowita z zerami na początku, co da nam na wyjściu "Wpłaciłeś 0123".
+Cześć, moje imię to Kasia i mam 26 lat.
+```
 
-## Głębszy Zanurzenie:
+## Deep Dive
 
-Interpolacja ciągów znaków jest często używana w językach programowania, ponieważ ułatwia tworzenie czytelnych i dynamicznych komunikatów. Alternatywą dla interpolacji jest konkatenacja (łączenie) ciągów znaków, jednak jest to często nieporęczne i trudniejsze do zarządzania.
+Interpolacja ciągów pojawia się w wielu językach programowania. W dosłownym sensie, jest to wstawianie wartości zmiennych wewnątrz ciągów znakowych. Historia konceptu jest długa - zaczyna się od języków jak Perl i przekazuje do nowoczesnych języków jak Ruby czy Python.
 
-W Gleam, tekst zostaje przekształcony w tokeny, które są wstawiane do interpolowanego ciągu, a następnie składane w jeden ciąg znaków. Dzięki temu, interpolacja jest szybsza i zmniejsza ryzyko błędów w porównaniu z konkatenacją.
+Podobne funkcjonalności można osiągnąć poprzez formatowanie ciągów, takie jak `printf` w C lub `format` w Pythonie.
 
-## Zobacz też:
+Jeśli chodzi o szczegóły implementacji, różne języki programowania korzystają z różnych strategii, od prostego zastępowania znacznika ciągu wartością zmiennej, po użycie specjalnych bibliotek do obsługi ciągów.
 
-Więcej informacji o interpolacji ciągów znaków w Gleam znajdziesz w oficjalnej dokumentacji: https://gleam.run/book/standard-library.html#string
+## Zobacz również:
 
-Inne przydatne źródła:
-
-- https://en.wikipedia.org/wiki/String_interpolation
-- https://docs.python.org/3/library/string.html#formatstrings
+- Dokumentacja oficjalna Gleam na temat ciągów: https://gleam.run/book/tour/strings.html
+- Podobny koncept formatowania w Pythonie: https://docs.python.org/3/tutorial/inputoutput.html
+- Inne podejście do formatowania w języku C: https://www.cplusplus.com/reference/cstdio/printf/

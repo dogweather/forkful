@@ -1,6 +1,6 @@
 ---
 title:                "连接字符串"
-html_title:           "PowerShell: 连接字符串"
+html_title:           "C: 连接字符串"
 simple_title:         "连接字符串"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串连接？
+## 什么 & 为什么？
+字符串连接是将多个字符串组合成一个字符串的过程。程序员之所以做这个，是因为它们需要创建或操作字符串。
 
-字符串连接是将多个字符串合并成一个新的字符串的过程。程序员经常使用这种技术来创建包含动态内容的文本，比如在打印输出中添加变量值或生成复杂的文本信息。字符串连接也可以用来构造数据库查询语句或文件路径。
-
-## 如何实现字符串连接？
-
-使用 PowerShell，你可以通过使用运算符 `+` 将两个字符串连接起来。下面的示例将两个字符串合并成一个新的字符串，并打印输出结果。
-
+## 怎么做：
+```PowerShell
+$value1 = "PowerShell"
+$value2 = " programming"
+$result = $value1 + $value2
+Write-Host $result
 ```
-    $str1 = "Hello"
-    $str2 = "World"
-    $result = $str1 + $str2
-    PowerShell -Command {Write-Host $result}
-    # Output: HelloWorld
+运行上述代码，输出将是：
+```PowerShell
+PowerShell programming
 ```
+## 深度挖掘：
+字符串连接在编程历史上一直是常用的操作。在PowerShell中，有多种连接字符串的方法。最直接和常用的是加号（+），正如我们在“怎么做”部分看到的。
 
-你也可以使用内置的 `Join-Path`函数来连接更复杂的文件路径。下面的示例将 `C:\Users` 路径和 `Documents` 文件夹连接起来，并打印输出结果。
-
+```PowerShell
+$result = "hello " + "world"
+Write-Host $result
 ```
-    $path = Join-Path -Path C:\Users -ChildPath Documents
-    PowerShell -Command {Write-Host $path}
-    # Output: C:\Users\Documents
+另外两个常用的连接符是 `-f' 格式化操作符和 `-join' 连接符。
+
+```PowerShell
+# 使用 -f 操作符
+$planet = 'World'
+$result = 'Hello {0}' -f $planet
+Write-Host $result
+
+# 使用 -join 操作符
+$parts = 'Hello', $planet
+$result = $parts -join ' '
+Write-Host $result
 ```
+另一种在一些场景下值得一提的方法是用StringBuilder 类来连接大量字符串。
 
-## 深入了解
+然而，选择哪种方法主要取决于你的具体需求、习惯以及编程环境。
 
-历史背景：
-字符串连接是一种程序设计中常用的技巧，它最早出现在早期的编程语言中，比如 BASIC 和 COBOL。随着计算机技术的发展，字符串连接也逐渐被纳入到更加强大和灵活的编程语言中，比如 PowerShell。
-
-替代方法：
-除了使用 `+` 运算符和 `Join-Path` 函数，你也可以通过 `String.Concat` 方法来连接多个字符串，或者使用 `StringBuilder` 类来动态构建一个字符串。然而，在 PowerShell 中使用 `+` 运算符是最常见的字符串连接方式，并且也是最简洁明了的方法。
-
-实现细节：
-当使用 `+` 运算符连接字符串时，PowerShell 会自动将两个字符串合并成一个新的字符串，并将结果赋值给一个新的变量。当使用 `Join-Path` 函数连接文件路径时，PowerShell 会自动处理不同操作系统之间的路径差异，比如 Windows 和 Linux。
-
-## 相关资源
-
-- Microsoft 文档：[Microsoft 文档-PowerShell 字符串操作](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
-- YouTube 视频：[PowerShell 字符串连接教程](https://www.youtube.com/watch?v=ZCp1Lm5FQOc)
-- GitHub 代码示例集：[PowerShell 字符串操作示例代码](https://github.com/microsoft/PowerShell-Examples)
+## 参考资料：
+1. PowerShell文档，字符串连接：https://docs.microsoft.com/zh-cn/powershell/scripting/learn/deep-dives/strings?view=powershell-7.1#joining-strings
+2. 怎么在PowerShell中连接字符串：https://stackoverflow.com/questions/8465003/how-to-concatenate-strings-in-powershell

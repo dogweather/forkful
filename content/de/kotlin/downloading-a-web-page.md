@@ -1,7 +1,7 @@
 ---
-title:                "Das Herunterladen einer Webseite"
-html_title:           "Kotlin: Das Herunterladen einer Webseite"
-simple_title:         "Das Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,30 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Webseiten herunterladen in Kotlin
+
 ## Was & Warum?
-Das Herunterladen einer Webseite ist der Prozess, bei dem der Inhalt einer Webseite von einem Server auf Ihren Computer kopiert wird. Programmierer tun dies, um auf Inhalte wie Bilder, Text oder andere Informationen zuzugreifen, die auf einer Webseite enthalten sind.
 
-## Anleitung:
-Kotlin bietet einfache und effiziente Methoden zum Herunterladen von Webseiten. Im Folgenden sind Beispiele und Ausgaben in der Kotlin-Syntax aufgeführt.
+Das Herunterladen einer Webseite ist der Prozess der Lokalisierung von Webinhalten auf Ihrem Gerät. Programmierer machen das zum Web-Scraping, Datenextraktion und für Tests.
 
-```Kotlin
+## So geht's:
+
+``` Kotlin
+import java.io.InputStreamReader
 import java.net.URL
-import java.io.InputStream
+import java.nio.charset.Charset
 
-// Eine URL erstellen
-val url = URL("https://www.beispielwebseite.com")
+fun main() {
+    val url = URL("http://example.com/") 
 
-// Webseiteninhalt herunterladen und in einem InputStream speichern
-val inputStream: InputStream = url.openStream()
-
-// Den Inhalt aus dem InputStream lesen und ausgeben
-println(inputStream.readBytes().toString(Charsets.UTF_8))
+    val reader = InputStreamReader(url.openStream(), Charset.forName("UTF-8"))
+    reader.use {
+        println(it.readText())
+    }
+}
 ```
 
-Beispieloutput: `<!DOCTYPE html><html>...</html>`
+Führen Sie das obige Skript aus, und es wird den gesamten HTML-Inhalt von "http://example.com/" auf die Konsole drucken.
 
-## Tiefes Wasser:
-Das Herunterladen von Webseiten hat sich im Laufe der Zeit weiterentwickelt und ist zu einem wichtigen Bestandteil der modernen Webentwicklung geworden. Es gibt mehrere Alternativen zu Kotlin, wie z.B. die Verwendung von Bibliotheken wie JSoup oder Retrofit. Eine weitere wichtige Sache zu beachten ist die Verwendung von HTTPS, um eine sichere Verbindung herzustellen, während Sie Daten von einer Webseite herunterladen.
+## Tiefgang:
 
-## Siehe auch:
-Weitere Informationen zum Herunterladen von Webseiten mit Kotlin finden Sie in der offiziellen Dokumentation von Kotlin unter https://kotlinlang.org/docs/reference/using-gradle.html#downloading-a-web-page.
+Historisch gesehen wurde das Herunterladen von Seiten mit Sprachen wie Perl und Shell-Skripten gemacht. Kotlin, eine moderne, typsichere Programmiersprache von JetBrains, hat eine minimalistische Syntax, die das Schreiben und Lesen einfach macht.
+
+Alternative Methoden zum Herunterladen von Webseiten umfassen das Nutzen von Bibliotheken wie Jsoup oder OkHttp, die auch Funktionen für die HTML-Analyse und Netzwerkanfragen bieten.
+
+Bei der Implementierung beachten Sie, dass das ständige Herunterladen von Inhalten von einer Seite zu einer IP-Sperre führen kann. Außerdem beachten Sie die Regeln in der `robots.txt` einer Webseite und die gesetzlichen Bestimmungen hinsichtlich des Daten-Scrapings.
+
+## Siehe Auch:
+
+[Offizielle Kotlin-Dokumentation](https://kotlinlang.org/docs/home.html)
+
+[Bibliothek Jsoup](https://jsoup.org/)
+
+[Bibliothek OkHttp](https://square.github.io/okhttp/)

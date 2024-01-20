@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Haskell recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,39 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Haskell: Reading Text Files Straight to the Point
+
 ## What & Why?
 
-Reading a text file means extracting data from a file that contains text. This is a common task that programmers do when working with data that needs to be processed in a structured way. Text files can contain anything from simple text to complex data sets, making them a versatile and easily accessible format for data storage.
+Reading a text file is the act of pulling data from a text file into memory. Programmers do this to manipulate, analyze, and transform file data efficiently.
 
 ## How to:
 
-To read a text file in Haskell, we will be using the ```readFile``` function from the ```System.IO``` module. This function takes in a filepath, reads the contents of the file, and returns it as a string.
+Reading a file in Haskell is easy. Let's look at a simple sample.
 
 ```Haskell
-import System.IO
-
+main :: IO ()
 main = do
-  file <- readFile "my_file.txt"
-  putStrLn file
+    contents <- readFile "test.txt"
+    putStrLn contents
+```
+In this example, readFile reads "test.txt" from your current directory and takes its content as a string. The putStrLn function then writes that string to standard output.
+
+This gives an output like:
+
+```Shell
+Hello from Haskell!
+```
+Assumed that 'test.txt' has this content.
+
+## Deep Dive
+
+While Haskell's modern file reading functions seem straightforward, they've evolved subtly over its three-decade history. For example, 'readFile' now leverages 'lazy IO'. It doesn't read the entire file into memory upfront but instead reads chunks as needed, optimizing memory use.
+
+There are alternatives to readFile. For large files, consider using the conduit or pipes libraries. These provide more controlled, efficient data streaming.
+
+While `readFile` does an excellent job for ASCII or UTF-8 files, it might hiccup if you're working with different character encodings. The `text` library offers `Data.Text.IO.readFile`, which handles this better.
+
+```Haskell
+import qualified Data.Text.IO as Text
+
+main :: IO ()
+main = do
+    contents <- Text.readFile "test.txt"
+    putStrLn (Text.unpack contents)
 ```
 
-In the above example, we first import the ```System.IO``` module which contains the ```readFile``` function. Then, we use ```readFile``` to read the contents of the file "my_file.txt" and store it in the variable ```file```. Finally, we use the ```putStrLn``` function to print the contents of the file to the console.
+It's the same as our first code snippet, but now it can better handle diverse text encodings.
 
-```
-This is the content of my text file.
-It can contain multiple lines.
-```
+## See Also 
 
-## Deep Dive:
+Groovy guidance on exemplary Haskell programming library 'text':
+- https://hackage.haskell.org/package/text
 
-In Haskell, reading a text file is a simple task thanks to the ```readFile``` function. However, this was not always the case. In earlier versions of Haskell, programmers had to use the ```openFile``` and ```hGetContents``` functions to achieve the same result. The ```readFile``` function was introduced in version 1.3 of Haskell, making it easier and more straightforward to read a text file.
+In-depth exploration of 'conduit' and 'pipes', two great libraries for masters of large file manipulation:
+- https://haskell-lang.org/library/conduit
+- https://haskellpipes.com/
 
-There are also other ways to read a text file in Haskell, such as using the ```Data.ByteString``` module for a more efficient performance, or using the ```Data.Text``` module for handling Unicode characters. However, these methods require more advanced knowledge and are beyond the scope of this article.
 
-## See Also:
-
-For more information on reading text files in Haskell, check out these resources:
-
-- [Haskell Documentation - System.IO module](https://www.haskell.org/onlinereport/io.html#sect6.2)
-- [Real World Haskell - File I/O](http://book.realworldhaskell.org/read/io.html)
-- [Learn You a Haskell - I/O](http://learnyouahaskell.com/input-and-output)
+Expand your Haskell knowledge with the official documentation:
+- https://www.haskell.org/

@@ -1,7 +1,7 @@
 ---
-title:                "Szanowanie html-a"
-html_title:           "Elixir: Szanowanie html-a"
-simple_title:         "Szanowanie html-a"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i Dlaczego?
+## Co i dlaczego?
 
-"Analiza HTML" to proces przetwarzania kodu HTML w celu wyodrębnienia informacji z strony internetowej. Programiści często wykonują ten proces w celu wykonania zautomatyzowanych zadań lub analizy danych.
+Przetwarzanie HTML (parsing) to proces analizy kodu strony internetowej, aby zrozumieć jej strukturę i zawartość. Programiści robią to, aby skutecznie pobrać, manipulować lub interpretować dane z webowych dokumentów.
 
-# Jak to zrobić:
+## Jak to zrobić:
+
+Elixir z pomocą biblioteki `floki` umożliwia łatwe parsowanie HTML. Instalujemy ją poprzez dodanie do naszego mix.exs:
 
 ```Elixir
-html = "<h1>Hello, World!</h1>"
-parsed_html = Elixir.HTML.parse(html)
-
-IO.puts parsed_html
+defp deps do
+  [
+    {:floki, "~> 0.26"}
+  ]
+end
 ```
 
-Output:
+Następnie, możemy zacząć parsować HTML:
+
 ```Elixir
-{:ok, [{"h1", [], ["Hello", ",", "World!"]}]}
+html = "<div><p>Hej, jestem Elixir!</p></div>"
+{"div", [], ["<p>Hej, jestem Elixir!</p>"]} = Floki.parse_document(html) |> hd()
 ```
 
-# Dogłębna analiza:
+Powyższy kod zwróci krotkę z elementem, atrybutami i zawartością.
 
-- "Analiza HTML" jest procesem niezbędnym do ekstrakcji potrzebnych informacji z kodu HTML na stronie internetowej.
-Alternatywne metody, takie jak "skrapowanie" stron internetowych, może być bardziej złożone i skomplikowane.
-- W Elixir, analiza HTML jest przeprowadzana przez moduł Elixir.HTML, który wykorzystuje bibliotekę "html5ever" napisaną w języku Rust. Ta biblioteka zapewnia stabilne i wydajne parsowanie HTML.
-- Istnieją także inne metody analizy kodu HTML, takie jak wyrażenia regularne lub biblioteki oparte na DOM (Document Object Model), ale stosowanie Elixir.HTML jest powszechnie uznawane za najwygodniejsze i najbezpieczniejsze.
+## Głębsze zrozumienie
 
-# Zobacz także:
+Parsowanie HTML ma swoje korzenie w przeszłości, zaczęło się na początku rozwoju internetu. Można to zrobić na różne sposoby - przez wyrażenia regularne, SAX, DOM, i wiele innych metod.
 
-- [Dokumentacja modułu Elixir.HTML] (https://hexdocs.pm/elixir/HTML.html)
-- [Biblioteka html5ever dla Elixir] (https://github.com/myrridin/html5ever_elixir)
-- [Artykuł na temat analizy HTML w Elixir] (https://blog.appsignal.com/2019/02/26/parsing-html-in-elixir.html)
+Alternatywą dla Elixir jest wykorzystanie innych języków takich jak Python, Ruby czy JavaScript, które oferują różne biblioteki do parsowania HTML.
+
+Szczegółowym aspektem implementacji parsowania HTML w Elixir jest sposób, w jaki używamy funkcji z Floki, zazwyczaj zwracających wynik jako monadę, co jest typowe dla funkcjonalnych języków programowania.
+
+## Zobacz również
+
+1. Dokumentacja Floki: https://hexdocs.pm/floki/readme.html
+2. Wprowadzenie do Elixir: http://elixir-lang.github.com/
+3. Jak parsować HTML w Pythonie: https://www.crummy.com/software/BeautifulSoup/bs4/doc/

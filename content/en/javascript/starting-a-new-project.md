@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Javascript recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,28 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Starting a new project in Javascript means creating a new program or application using the Javascript programming language. Programmers start new projects to build solutions for various problems or to create new products that meet certain user needs.
+Starting a new project refers to building a new application or program from scratch. Programmers do this to solve specific problems, develop new solutions, or learn new techniques and technologies.
 
 ## How to:
 
-To start a new project in Javascript, you first need to create a new file with a .js extension. This file will contain the code for your project. Here's an example of a simple "Hello World" program in Javascript:
+To start a new JavaScript project, you first need to create a new directory and initialize it with npm (Node Package Manager). 
 
 ```Javascript
-console.log("Hello World");
+// Create new directory
+$ mkdir my_new_project
+$ cd my_new_project
+
+// Initialize npm
+$ npm init -y
 ```
 
-Running this code will output "Hello World" to the console. You can run your Javascript code using the Node.js runtime or by embedding it in an HTML file and opening it in a browser.
+This would create `package.json` file, effectively kick starting your project. 
 
-## Deep Dive:
+Now, you can create an `index.js` file and start coding.
 
-Javascript was created in 1995 by Brendan Eich and was originally designed to be a scripting language for web browsers. However, with the advancements in Javascript and the introduction of the Node.js runtime, it is now used for building applications for both the client and server-side.
+```Javascript
+// index.js
+console.log("Hello, World!");
+```
 
-Some alternatives to starting a new project in Javascript include using other programming languages like Python or Java, or using frameworks such as React or Angular. However, Javascript's simplicity and flexibility make it a popular choice for many developers.
+You can then run this example through NodeJS:
 
-When starting a new project, it is important to plan and organize your code structure beforehand to ensure efficiency and maintainability. This can include creating separate files for different functionalities, using coding standards, and adopting best practices.
+```Javascript
+$ node index.js
+```
 
-## See Also:
+This will print:
 
-- [Node.js](https://nodejs.org/en/)
-- [React](https://reactjs.org/)
-- [Angular](https://angular.io/)
+```
+Hello, World!
+```
+
+## Deep Dive
+
+Historically, starting a new JS project was often more complex. The arrival of NodeJS and npm made it significantly easier and more structured. 
+
+As alternatives, you can start a new project using `yarn` (another package manager) or coding platforms/tools like `CodePen`, `JSFiddle`, or `Glitch`.
+
+Implementation-wise, more complexity arises as we add more libraries, services, or custom configuration. Tools like `create-react-app` or `vue cli` are also available for starting more complex projects with boilerplate code.
+
+## See Also
+
+- Node.js Docs: [https://nodejs.org/docs/latest-v14.x/api/](https://nodejs.org/docs/latest-v14.x/api/)
+- NPM Docs: [https://docs.npmjs.com/](https://docs.npmjs.com/)
+- Yarn Docs: [https://classic.yarnpkg.com/en/docs/](https://classic.yarnpkg.com/en/docs/)
+- Create React App: [https://create-react-app.dev/](https://create-react-app.dev/)
+- Vue CLI: [https://cli.vuejs.org/](https://cli.vuejs.org/)

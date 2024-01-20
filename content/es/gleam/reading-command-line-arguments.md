@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comando."
-html_title:           "Gleam: Leyendo argumentos de línea de comando."
-simple_title:         "Leyendo argumentos de línea de comando."
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,30 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Leer argumentos de línea de comando es una forma de obtener información ingresada por el usuario en la línea de comandos de una aplicación. Los programadores lo hacen para permitir que los usuarios personalicen la ejecución de su programa, pasándole información específica al inicio.
+## ¿Qué y Por Qué?
 
-## Cómo:
-Para leer argumentos de línea de comando en Gleam, podemos usar la biblioteca estándar ```gleam/io``` que proporciona la función ```io.args```. Por ejemplo, si queremos pasar el nombre de un archivo al ejecutar nuestro programa, podemos hacerlo de la siguiente manera:
+Leer argumentos de línea de comandos es el proceso por el cual los programas obtienen datos de entrada directamente desde la línea de comandos del usuario. Los programadores hacen esto para permitir que sus programas se ejecuten de manera personalizada al proporcionar una interfaz flexible para introducir los datos.
 
-```gleam
-import gleam/io
+## Cómo Hacerlo:
 
-fn main(args) {
-  file_name = case args {
-    []       -> "archivo.txt"
-    [arg]    -> arg
-    _        -> "error"
+En Gleam, leemos argumentos de línea de comandos utilizando el módulo `os.args`. Aquí hay un código de muestra:
+
+```Gleam
+import gleam/os
+
+/// Una función que imprime los argumentos de línea de comandos del usuario.
+pub fn main(args: List(String)) {
+  let user_args = os.args
+  case user_args {
+    [] -> "No se proporcionaron argumentos!".println()
+    [first | rest] -> {
+      "El primer argumento es:".println()
+      first.println()
+      "Los argumentos restantes son:".println()
+      rest.println()
+    }
   }
-  // Hacemos algo con el nombre del archivo...
 }
 ```
 
-La función ```io.args``` devuelve una lista de argumentos de tipo cadena, que podemos analizar usando la función de coincidencia de patrones ```case```. En el caso de que se inserten varios argumentos, podemos acceder a ellos usando patrones más complejos en nuestra función ```case```.
+Si ejecuta este programa con `gleam run main arg1 arg2 arg3` , obtendrá un resultado similar a esto:
 
-## Deep Dive:
-La práctica de leer argumentos de línea de comando es común en muchos lenguajes de programación y se remonta a los primeros días de las interfaces de línea de comandos. En Gleam, podemos usar la biblioteca estándar ```gleam/io``` para leer argumentos de línea de comando, pero también existen otras alternativas como la biblioteca ```gleam/cli```. Esta biblioteca proporciona una forma más estructurada de manejar argumentos complejos con opciones y valores predeterminados.
+```Gleam
+El primer argumento es:
+arg1
+Los argumentos restantes son:
+[arg2, arg3]
+```
 
-## See Also:
-- Documentación de Gleam para la biblioteca ```gleam/io```: https://gleam.run/lib/gleam/io
-- Documentación de Gleam para la biblioteca ```gleam/cli```: https://gleam.run/lib/gleam/cli
+## Análisis Más Profundo:
+
+Los argumentos de línea de comandos han sido una interfaz estándar para interactuar con los programas desde los primeros días de los sistemas operativos de texto. Son fundamentales para permitir que los usuarios pasen parámetros a un programa al momento de su ejecución.
+
+Como alternativa a los argumentos de línea de comandos, algunos programas pueden optar por leer archivos de entrada, pedir entrada del usuario durante la ejecución o incluso capturar señales del sistema.
+
+En cuanto a la implementación, Gleam usa la interfaz de línea de comandos del sistema operativo. Cuando el comando se ejecuta, los argumentos de la línea de comandos se pasan al programa como una lista de cadenas.
+
+## Ver También:
+
+1. [Documentación oficial de Gleam](https://gleam.run/): Para obtener más información sobre Gleam y cómo funciona.
+2. [Documentación de módulos OS](https://hexdocs.pm/gleam_stdlib/gleam/os/): Para obtener más detalles sobre los argumentos de línea de comandos y otras funciones del módulo de sistema operativo en Gleam.

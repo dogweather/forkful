@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "TypeScript: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,35 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y Por qué?
-En TypeScript, enviar una solicitud HTTP con autenticación básica se refiere a incluir credenciales de usuario en el encabezado de la solicitud con el fin de acceder a un recurso protegido. Los programadores lo hacen para asegurar que solo los usuarios autorizados tengan acceso a ciertas funciones o datos en una aplicación web.
+## ¿Qué & Por qué?
 
-## Cómo hacerlo:
-Para enviar una solicitud HTTP con autenticación básica en TypeScript, podemos utilizar la librería 'axios'. Primero, importamos la librería y luego creamos un objeto de configuración con las credenciales del usuario. A continuación, hacemos la llamada a la solicitud y manejamos la respuesta en una función de retorno de llamada. Aquí hay un ejemplo de código:
+Enviar una solicitud HTTP con autenticación básica es una técnica que los desarrolladores usan para transmitir solicitudes y respuestas por la web resguardando información confidencial. Esencialmente, se utiliza encriptación basada en 'Base64' para proteger las credenciales del usuario.
+
+## ¿Cómo hacerlo?
 
 ```TypeScript
-import axios from ‘axios’;
+import axios from "axios";
 
-const config = {
-  auth: {
-    username: 'user',
-    password: 'password'
-  }
+let nombreUsuario = 'usuario';
+let contrasena = 'contrasena';
+
+let base64 = Buffer.from(nombreUsuario + ':' + contrasena, 'utf8').toString('base64');
+let config = {
+    headers: { 'Authorization': 'Basic ' + base64 }
 };
-axios.get('https://api.example.com/resource', config)
-  .then(response => {
+
+let bodyParameters = {
+   key: "value"
+};
+
+axios.post(`http://ejemplo.com/api/endpoint`, 
+           bodyParameters,
+           config)
+.then(response => {
     console.log(response.data);
-  })
-  .catch(error => {
+}).catch(error => {
     console.log(error);
-  });
+});
 ```
 
-La respuesta del servidor estará disponible en la propiedad `data` del objeto de respuesta.
+## Hablemos más a fondo
 
-## Profundizando:
-La autenticación básica HTTP se basa en un estándar muy antiguo y ha sido reemplazada por métodos más seguros como OAuth y JSON Web Tokens. Sin embargo, sigue siendo ampliamente utilizada debido a su simplicidad. Es importante tener en cuenta que enviar credenciales de usuario en texto plano a través de una solicitud HTTP no es completamente seguro, ya que podrían ser interceptadas por un tercero. Por lo tanto, se debe considerar el uso de métodos de autenticación más seguros en aplicaciones que manejan información delicada.
+Antes de la era moderna de protección avanzada de datos, la autenticación básica HTTP era el estándar de facto para garantizar el acceso seguro a la web. Aunque su uso ha disminuido en los últimos años debido a métodos más seguros, como los tokens de acceso JWT, aún persiste en ciertas aplicaciones y sistemas heredados.
 
-## Ver también:
-- Documentación oficial de la librería `axios`: https://axios-http.com/docs/intro
-- Artículo de MDN sobre la autenticación básica HTTP: https://developer.mozilla.org/es/docs/Web/HTTP/Basic_access_authentication
+Aunque la Autenticación Básica HTTP aporta un nivel inicial de seguridad, no debe utilizarse como la única forma de proteger la información sensible del usuario. La encriptación Base64 utilizada en este método puede ser decodificada fácilmente, lo que la hace vulnerable a los ataques "Man-in-the-Middle".
+
+Para una capa adicional de seguridad, siempre se debe transmitir información a través de HTTPS en lugar de HTTP cuando se utiliza la autenticación básica.
+
+## Ver también
+
+- [Axios NPM](https://www.npmjs.com/package/axios) para una detallada documentación sobre el módulo de solicitudes HTTP.
+- [MDN Web Docs](https://developer.mozilla.org/es/docs/Web/HTTP/Authentication) para obtener más información sobre la autenticación HTTP.
+- [JWT Tokens](https://jwt.io/introduction/) para una introducción a un método más seguro de autenticación.

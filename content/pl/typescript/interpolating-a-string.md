@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "TypeScript: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,41 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czesc programisci! Dzisiaj omówimy czym jest i dlaczego warto uzywac interpolacji lancucha znakow w jezyku TypeScript.
+## Co to i dlaczego?
 
-## Co i Dlaczego?
+Interpolacja łańcuchów to sprytne wstawianie wartości zmiennych bezpośrednio do tekstu w naszych programach. Ten trik pozwala nam uniknąć skomplikowanych operacji łączenia stringów i sprawia, że nasz kod jest bardziej czytelny.
 
-Interpolacja lancucha znakow jest procesem, w którym mozemy wstawic wartosci zmiennych do naszego lancucha znakow, aby dynamicznie tworzyc wiadomosci lub komunikaty. Jest to bardzo przydatne, poniewaz pozwala nam tworzyc bardziej czytelny i elastyczny kod.
+## Jak to zrobić:
 
-## Jak to zrobic:
-
-Mozemy uzywac interpolacji lancucha znakow w TypeScript, uzywajac znaku dolara i nawiasu klamrowego, aby wstawic wartosc zmiennej. Oto przyklad:
+Interpolację stringów w TypeScript można wykonać używając znaku backtick (\`). To jest przykład:
 
 ```TypeScript
-let name: string = "John";
-console.log(`Welcome, ${name}!`);
+let imie = 'Jan';
+let powitanie = `Cześć, ${imie}!`;
+console.log(powitanie);  // wyświetla: Cześć, Jan!
 ```
+Tutaj `${imie}` to miejsce interpolacji. TypeScript zamienia to na wartość zmiennej `imie`.
 
-Output: Welcome, John!
+## Głębsze spojrzenie:
 
-Mozemy rowniez uzywac interpolacji lancucha znakow w bardziej skomplikowanych przypadkach. Na przyklad, mozemy dodawac operacje logiczne:
+Historia interpolacji stringów sięga języka Perl, ale technika ta zyskała na popularności dzięki Ruby. W TypeScript, jest to natywne rozwiązanie, które jest dużo prostsze i czytelniejsze niż klasyczne łączenie stringów używając dodatkowej operatora (+).
 
-```TypeScript
-let num1: number = 5;
-let num2: number = 10;
-console.log(`Sum of ${num1} and ${num2} is ${num1 + num2}.`);
-```
+Inne rozwiązania, jak na przykład metoda `concat()`, również mogą być używane do łączenia stringów, ale nie są tak intuicyjne jak interpolacja stringów.
 
-Output: Sum of 5 and 10 is 15.
+Interpolacja stringów jest realizowana poprzez funkcję `String.raw` w TypeScript. `String.raw` jest domyślną metodą dla literałów szablonów i służy do obróbki surowych ciągów znaków z literałów szablonów.
 
-## Glebokie Zaglebie:
+## Zobacz także:
 
-Interpolacja lancucha znakow nie jest nowym konceptem i pierwotnie zostala wprowadzona w jezyku Perl. Jednak obecnie jest ona obslugiwana przez wiele jezykow programowania, w tym przez TypeScript. Alternatywnym podejsciem do interpolacji lancucha znakow jest uzycie operatora plus (+) lub metody concat, ale jest to mniej czytelne i wymaga wiekszej ilosci kodu.
+Garść przydatnych źródeł na temat interpolacji stringów:
 
-Podczas implementacji interpolacji lancucha znakow w TypeScript, wartosci zmiennych sa automatycznie konwertowane na lancuchy znakow. Ponadto, znaki specjalne, takie jak nowa linia lub tabulacja, sa rowniez uwzgledniane w wynikowym lancuchu znakow.
-
-## Zobacz Takze:
-
-Mozesz przeczytac wiecej o interpolacji lancucha znakow w dokumentacji TypeScript: 
-
-https://www.typescriptlang.org/docs/handbook/basic-types.html#template-strings
+- Dokumentacja [MDN Web Docs o literałach szablonów](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/template_strings)
+- Artykuł na [Stack Overflow na temat interpolacji stringów](https://stackoverflow.com/questions/3304014/how-to-interpolate-variables-in-strings-in-javascript-without-concatenation)
+- Dokumentacja [TypeScript o literałach szablonów](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)

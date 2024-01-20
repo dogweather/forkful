@@ -1,7 +1,7 @@
 ---
-title:                "基本認証を使用してhttpリクエストを送信する方法"
-html_title:           "Javascript: 基本認証を使用してhttpリクエストを送信する方法"
-simple_title:         "基本認証を使用してhttpリクエストを送信する方法"
+title:                "基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
+simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となく分かる？
-HTTPリクエストを基本認証で送信するとは、プログラマーが特定のリソースにアクセスするために認証情報を送信することです。基本認証を使う理由は、セキュリティの上で信頼性が高く、簡単に実装できるからです。
+## 何となぜ？
+HTTPリクエストの基本認証送信は、特定のエンドポイントへアクセス制限をかけるプロセスです。これにより、特定のユーザーのみがリソースへアクセスできるようになります。
 
-## 実際にやってみよう
+## どうやるの？
+基本的な認証においては、ユーザーネームとパスワードを `Authorization`ヘッダにエンコードして送信します。下記はその例です：
 
 ```Javascript
-fetch('https://example.com/api/resource', {
+const https = require('https');
+let username = 'user';
+let password = 'pass';
+let options = {
+  hostname: 'example.com',
+  port: 443,
+  path: '/api/data',
   method: 'GET',
   headers: {
-    Authorization: 'Basic ' + btoa(username + ':' + password)
+    'Authorization': 'Basic ' + Buffer.from(username + ":" + password).toString('base64')
   }
-})
-  .then(response => response.json())
-  .then(data => console.log(data));
+};
+const req = https.request(options, res => {
+  res.on('data', d => {
+    process.stdout.write(d);
+  });
+});
+req.end();
 ```
 
-基本認証では、認証ヘッダーにBase64エンコードされたユーザー名とパスワードを含めるだけで、リクエストを送信することができます。上記の例では、fetchメソッドを使用してAPIからリソースを取得し、認証情報を含めたリクエストを送信しています。
+このシンプルなコードは `example.com`サイトのAPIエンドポイント `/api/data`に基本認証でGETリクエストを行います。
 
-## 深堀する
+## ディープダイブ
+基本認証はHTTPプロトコルの一部として1990年代初期に導入されました。しかし、テキストはbase64でエンコードされているだけで、実際には暗号化されていないため、安全性に欠けます。セキュリティを改善するためにトークンベースの認証（例えばOAuth）が推奨されます。
 
-### 歴史的背景
-基本認証は、HTTPの最初の認証メカニズムの1つとして、1999年にRFC 2617として発表されました。その後もうまく運用されており、今でも多くのWebサーバーやAPIで利用されています。
+それぞれの実装は異なりますが、一般的なHTTPライブラリーでは `headers`オプション内に認証を行うための情報を含ませることが共通しています。
 
-### 代替手段
-基本認証は、セキュリティの観点からはあまり安全ではありません。パスワードの暗号化やトークンベースの認証など、より安全な代替手段があります。しかし、基本認証は実装が簡単でコストがかからないため、一部のシステムではまだ使用されています。
-
-### 実装の詳細
-基本認証を実装するには、認証情報を含むAuthorizationヘッダーをリクエストに追加する必要があります。また、認証情報はBase64でエンコードする必要があります。サーバー側では、リクエストに含まれる認証情報をデコードし、ユーザー名とパスワードをチェックして認証処理を行います。
-
-## 他にも見てみよう
-- [HTTP基本認証 - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#basic_authentication_scheme)
-- [Basic認証とディジェスト認証の違いについて - Qiita](https://qiita.com/hsatac/items/25e2a7f33430a2e245b2)
-- [Fetch APIを試してみよう - Qiita](https://qiita.com/tonkotsuboy_com/items/0a8c72e8cefd1e0881c7)
+## 参考文献
+- ベーシック認証の深い解説: https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication
+- より安全なOAuthの仕組み: https://oauth.net/
+- ノードJSのHTTPSライブラリの詳細なドキュメンテーション: https://nodejs.org/api/https.html

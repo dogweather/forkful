@@ -1,7 +1,7 @@
 ---
-title:                "Generare numeri casuali"
-html_title:           "Arduino: Generare numeri casuali"
-simple_title:         "Generare numeri casuali"
+title:                "Generazione di numeri casuali"
+html_title:           "Arduino: Generazione di numeri casuali"
+simple_title:         "Generazione di numeri casuali"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Numbers"
@@ -10,20 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-- # Cosa & Perché? 
-Generare numeri casuali è un'operazione utile per molti programmatori, in quanto consente di creare un flusso di dati che non rispetta uno schema predeterminato. Ciò può essere utilizzato per creare sorprese o varietà all'interno del programma.
+## Cosa & Perché?
 
-- # Come fare:
-Una funzione molto conveniente per generare numeri casuali è random (), che restituisce un numero compreso tra 0 e 255. Vediamo un esempio:
-```arduino 
-int randomNumber = random(0,10);
-Serial.println(randomNumber);
+Generare numeri casuali significa creare una sequenza di numeri la cui apparenza è senza un apparente ordine. I programmatori lo fanno per rendere i risultati imprevedibili, ad esempio nei giochi o nelle simulazioni.
+
+## Come fare:
+
+Ecco un semplice esempio di generazione di numeri casuali in Arduino:
+
+``` Arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println(random(0,100));
+  delay(1000);
+}
 ```
-Questo codice genererà un numero casuale tra 0 e 10 e lo stampa sulla console seriale.
 
-- # Approfondimento: 
-Generare numeri casuali è stato uno degli usi principali dei computer nei primi tempi della programmazione. Oggi ci sono anche altri modi per generarli, come tramite sensori o algoritmi matematici più complessi. Inoltre, è importante notare che i numeri "casuali" ottenuti dai computer sono in realtà pseudo-casuali, poiché sono basati su algoritmi deterministici.
+Il codice sopra invia un numero casuale tra 0 e 100 al computer ogni secondo.
 
-- # Vedi anche: 
-- Documentazione ufficiale su random () - https://www.arduino.cc/reference/en/language/functions/random-numbers/random/
-- Esempi di progetti che utilizzano numeri casuali - https://create.arduino.cc/projecthub/projects/tags/random
+## Approfondimenti
+
+- Contesto storico: Il desiderio di generare numeri casuali non è nulla di nuovo. Fin dai tempi antichi, le persone hanno usato metodi come i dadi per generare numeri casuali. L'implementazione in Arduino usa un metodo chiamato "linear congruential generator".
+- Alternative: Potresti anche utilizzare un secondo pin non utilizzato per generare il rumore necessario per una sequenza di numeri veramente casuali.
+- Dettagli di implementazione: La funzione `random()` in Arduino non genera veri numeri casuali. Genera piuttosto una sequenza di numeri che sembra casuale. Per la maggior parte degli usi, questa "pseudo-casualità" è sufficiente.
+
+## Vedi anche
+
+Link a risorse correlate per ulteriori dettagli su argomenti correlati:
+
+- [Documentazione Arduino sulla funzione `random()`](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/)
+- [Approfondimenti sui numeri pseudo-casuali](https://it.wikipedia.org/wiki/Generatore_di_numeri_pseudo-casuali)
+- [Generare veri numeri casuali in Arduino](https://learn.adafruit.com/true-random-number-generator-for-arduino/overview)

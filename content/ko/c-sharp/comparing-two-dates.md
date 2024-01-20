@@ -10,34 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-두 날짜를 비교하는 것은 일반적으로 한 날짜가 다른 날짜보다 이전인지, 이후인지 또는 동일한지를 확인하는 것을 말합니다. 프로그래머들은 이 작업을 자주 수행하며, 예를 들어 예약 시스템이나 알림 시스템에서 날짜를 비교하는 데 사용됩니다.
+## 무엇이며 왜 필요한가?
+두 날짜를 비교하는 것은 두 시점 간의 차이를 확인하는 프로세스입니다. 프로그래머는 기한, 날짜 범위, 시간 경과 감지등의 사항을 처리하기 위해 이를 사용합니다.
 
 ## 방법:
-```C#
-DateTime date1 = new DateTime(2021, 1, 1); // 첫 번째 날짜를 지정합니다.
-DateTime date2 = new DateTime(2020, 12, 25); // 두 번째 날짜를 지정합니다.
- 
-if (date1 > date2) // 첫 번째 날짜가 두 번째 날짜보다 이후인지 확인합니다.
-{
-    Console.WriteLine("첫 번째 날짜가 두 번째 날짜보다 이후입니다.");
-}
-else if (date1 < date2) // 첫 번째 날짜가 두 번째 날짜보다 이전인지 확인합니다.
-{
-    Console.WriteLine("첫 번째 날짜가 두 번째 날짜보다 이전입니다.");
-}
-else // 두 날짜가 동일한지 확인합니다.
-{
-    Console.WriteLine("두 날짜가 동일합니다.");
-}
+두 날짜를 비교하는 기본적인 C# 코드를 확인해보겠습니다.
 
-// 결과: 첫 번째 날짜가 두 번째 날짜보다 이후입니다.
+```C#
+DateTime date1 = new DateTime(2022, 1, 1);
+DateTime date2 = new DateTime(2022, 12, 31);
+
+int result = DateTime.Compare(date1, date2);
+
+if (result < 0)
+    Console.WriteLine("date1 is earlier than date2.");
+else if (result == 0)
+    Console.WriteLine("date1 is the same as date2.");
+else
+    Console.WriteLine("date1 is later than date2.");
+```
+출력 결과는 다음과 같습니다.
+```C#
+date1 is earlier than date2.
+```
+## 디프 다이브:
+두 날짜를 비교하는 것은 프로그래밍의 역사와 맞물려 있습니다. 두 시간 이벤트의 순서를 추적하는 것은 유용한 자료구조 및 알고리즘을 제공합니다. 
+
+이에 대한 대안으로는 TimeSpan 구조를 활용하는 것이 있습니다. TimeSpan은 두 날짜 간의 시간 차이를 나타내고 있어, 일정 범위 또는 시간 이후의 일정을 계산하기에 적합합니다.
+
+```C#
+DateTime date1 = new DateTime(2022, 1, 1);
+DateTime date2 = new DateTime(2022, 12, 31);
+
+TimeSpan difference = date2.Subtract(date1);
+
+Console.WriteLine("Difference in days: " + difference.Days);
 ```
 
-## 더 깊이 들어가기:
-일반적으로 응용 프로그램에서 두 날짜를 비교할 때는 날짜와 함께 시간도 고려해야 합니다. 예를 들어, "2021년 1월 1일 10시"와 "2021년 1월 1일 11시"를 비교할 때는 시간까지 고려해야 하며, 시간까지 동일하지 않으면 완전히 다른 날짜로 간주됩니다. 
+또한, 타임존의 영향으로 날짜 비교에 있어서는 DateTime의 Utc 속성을 이용하여 UTC 시간으로 비교하는 것이 안전합니다.
 
-또 다른 방법으로는 날짜와 시간 모두를 포함하는 DateTime 형식을 사용하는 것입니다. 이를 사용하면 날짜 및 시간을 자유롭게 비교할 수 있습니다. 이전에는 문자열 형식의 날짜를 비교하는 경우가 많았지만, 현재는 DateTime 형식이 보다 정확하고 효율적인 방법입니다.
-
-## 관련 자료:
-- [Microsoft Docs: 날짜 및 시간 값 비교하기](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/dates-times/comparing-dates-and-times)
+## 참고 자료:
+1. [Microsoft Official Documentation: DateTime Structure](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-5.0)
+2. [Microsoft Official Documentation: TimeSpan Structure](https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-5.0)

@@ -1,6 +1,6 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "C++: Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "C++"
 category:             "C++"
@@ -10,34 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Å starte et nytt prosjekt er når man begynner å utvikle en ny programvare eller applikasjon. Dette gjøres for å løse et spesifikt problem eller for å lage noe nyttig. Programmører starter nye prosjekter for å teste sine evner, lære nye ferdigheter og for å skape noe som kan være til nytte for andre.
+---
 
-## Hvordan:
-For å starte et nytt prosjekt i C++, må du først få tilgang til et passende utviklingsmiljø, for eksempel Visual Studio eller Code::Blocks. Deretter kan du følge disse trinnene:
+# Starte et Nytt Prosjekt i C++
+
+## Hva & Hvorfor?
+
+Å starte et nytt prosjekt innebærer å initiere, planlegge, og igangsette en idé ved hjelp av programmeringskoder. Programmerere gjør dette for å gjøre om abstrakte idéer til kjørbare applikasjoner eller løsninger.
+
+## Hvordan gjør man det?
+
+Vi skal starte med et enkelt "Hallo Verden!" program. 
 
 ```C++
 #include <iostream>
 
-using namespace std;
-
-int main(){
-    cout << "Hei! Dette er mitt første C++ prosjekt." << endl;
+int main() {
+    std::cout << "Hallo Verden!";
     return 0;
 }
 ```
 
 Output:
-```
-Hei! Dette er mitt første C++ prosjekt.
+
+```shell
+Hallo Verden!
 ```
 
-## Dykk dypere:
-Å starte et nytt prosjekt i C++ er et viktig steg i utviklingen av en programvare. C++ ble utviklet av Bjarne Stroustrup på 1980-tallet, og er fortsatt et av de mest brukte programmeringsspråkene i dag. Det finnes også andre alternativer som C, Java og Python. Når du starter et nytt prosjekt i C++, må du huske å organisere koden din i filer og mapper, og å inkludere nødvendige biblioteker og header-filer. Det er også viktig å sjekke etter eventuelle feil og debugge koden din for å sikre at den fungerer som den skal.
+## Dypdykk
 
-## Se også:
-Hvis du ønsker å lære mer om å starte et nytt prosjekt i C++, kan du se følgende ressurser:
-- [C++ Tutorials Point](https://www.tutorialspoint.com/cplusplus/index.htm) - Online tutorial med mange eksempler og trinnvise instruksjoner.
-- [C++ Programming: Principles and Practice Using C++](https://www.amazon.com/Programming-Principles-Practice-Using-2nd/dp/0321992784) - Bok som dekker grunnleggende og mer avanserte konsepter i C++ programmering.
-- [The C++ Programming Language](https://www.amazon.com/C-Programming-Language-4th/dp/0321563840) - Bok skrevet av Bjarne Stroustrup, skaperen av C++.
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/c%2B%2B) - Internasjonal programmeringsplattform hvor du kan finne svar på spørsmål og få hjelp fra erfarne C++ utviklere.
+Å starte et nytt prosjekt er ikke alltid så enkelt som ovenstående "Hallo Verden!" eksempel. Det krever historisk forståelse, informasjon om alternativer, og detaljene i implementering. 
+
+1. Historisk kontekst: C++ ble først utviklet i 1979 ved Bell Laboratories av Bjarne Stroustrup. Siden da har programmeringsspråket gjennomgått en rekke revisjoner og endringer for å imøtekomme teknologisk utvikling.
+
+2. Alternativer: Det er mange alternativer til C++ for å starte et nytt prosjekt, som Java, Python, eller JavaScript. Valget av programmeringsspråk avhenger av prosjektets behov. 
+
+3. Implementeringsdetaljer: Det krever en klar forståelse av C++-syntaksen, selve språket og rammeverkene rundt det. Det er også viktig å forstå prosjektets kravene for riktig implementering.
+
+## Se Også
+
+Her er noen nyttige linker:
+
+- [cppreference.com](https://www.cppreference.com/)
+- [C++ på StackOverflow](https://stackoverflow.com/questions/tagged/c++)
+- [ISO C++ Standard Library](https://www.iso.org/standard/68564.html)
+
+---
+
+Lykke til med ditt nye prosjekt!

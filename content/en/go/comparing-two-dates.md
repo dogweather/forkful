@@ -1,6 +1,6 @@
 ---
 title:                "Comparing two dates"
-html_title:           "Go recipe: Comparing two dates"
+html_title:           "Elm recipe: Comparing two dates"
 simple_title:         "Comparing two dates"
 programming_language: "Go"
 category:             "Go"
@@ -10,52 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? 
-Comparing two dates in the context of programming refers to the process of determining the chronological order of two given dates. This is an important task for programmers as it allows for better data organization and analysis, making it easier to understand and work with date-based information. 
+## What & Why?
+
+Comparing two dates is a common task where you analyze the difference between two points in time. Programmers often do this for tasks like scheduling, deadline tracking, or calculating durations.
 
 ## How to:
-Comparing two dates in Go is a straightforward task. The standard library provides the `time` package, which offers functions specifically designed for date and time related operations. Here's an example of comparing two dates using the `IsZero()` and `Before()` functions:
+
+Let's dive right into it: the Go's time package is ideal for this, with its `After`, `Before`, and `Equal` methods. Here's a small code snippet demonstrating these:
 
 ```Go
 package main
 
 import (
-    "fmt"
-    "time"
+	"fmt"
+	"time"
 )
 
 func main() {
-    // creating two date objects
-    date1 := time.Date(2021, time.January, 1, 0, 0, 0, 0, time.UTC)
-    date2 := time.Date(2020, time.December, 1, 0, 0, 0, 0, time.UTC)
+	t1 := time.Date(2022, 1, 1, 0, 0, 0, 0, time.UTC)
+	t2 := time.Date(2022, 12, 31, 0, 0, 0, 0, time.UTC)
 
-    // comparing the dates
-    // using IsZero() to check if date2 was not initialized
-    if date2.IsZero() {
-        fmt.Printf("date2 is not initialized")
-    } else if date1.Before(date2) {
-        fmt.Printf("%v is before %v", date1, date2)
-    } else if date2.Before(date1) {
-        fmt.Printf("%v is before %v", date2, date1)
-    } else {
-        fmt.Printf("%v and %v are the same dates", date1, date2)
-    }
+	if t1.Before(t2) {
+		fmt.Println("t1 is before t2")
+	}
+
+	if t1.After(t2) {
+		fmt.Println("t1 is after t2")
+	}
+
+	if t1.Equal(t2) {
+		fmt.Println("t1 is the same as t2")
+	}
 }
 ```
+This code will output: `t1 is before t2`, since in our example January 1st precedes December 31st of any given year.
 
-This code snippet creates two date objects and then uses the `IsZero()` function to check if the second date was initialized or not. If it was not initialized, a message is displayed. Otherwise, the `Before()` function is used to compare the dates and the appropriate message is displayed.
+## Deep Dive
 
-Sample output:
-```
-2021-01-01 00:00:00 +0000 UTC is before 2020-12-01 00:00:00 +0000 UTC
-```
+Historically, date comparison has been a problematic area in computer programs due to slightly differing calendar systems worldwide and unexpected edge cases (like leap years). Go provides a solid solution with its time package, efficiently handling a variety of nuances. 
 
-## Deep Dive:
-Compared to other programming languages, Go offers a more simplified and efficient way of comparing dates. This is thanks to its `time` package, which provides functions for various operations such as creating dates, parsing date strings, and comparing dates. Before the inclusion of this package in Go 1.1, developers had to rely on other packages or write their own code to handle date and time operations.
+Alternatives to the methods `Before`, `After`, and `Equal` include subsetting the two times to get a Duration or directly comparing the Unix timestamp using the `Unix` method, but these might not warrant the same level of simplicity and readability. 
 
-While the `Before()` function is commonly used for comparing dates, the `After()` and `Equal()` functions can also be used depending on the specific needs of the program. Additionally, Go also offers the `Date()` function which allows for the creation of custom dates by specifying the year, month, and day values.
+In terms of implementation, Go compares two dates utilizing Coordinated Universal Time (UTC), ensuring consistent results across different timezones. Note that date comparison in Go is exact, down to the nanosecond, in line with its precise time tracking.
 
-## See Also:
-- [The Go Programming Language](https://golang.org/) official website
-- [The time Package](https://golang.org/pkg/time/) in the Go standard library documentation
-- [A Tour of Go](https://tour.golang.org/welcome/1) interactive tutorial for learning Go
+## See Also
+
+For additional information, check out the official documentation:
+- [Go's time package](https://golang.org/pkg/time/)
+- [Date and Time in Go](https://yourbasic.org/golang/dates-times-difference-duration/)
+- [Go by Example: Time](https://gobyexample.com/time)

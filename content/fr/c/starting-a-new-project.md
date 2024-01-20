@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "C: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -11,47 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
+Commencer un nouveau projet de programmation en C, c'est comme construire une nouvelle maison, un plan et une fondation solides sont nécessaires. Les programmeurs le font pour donner vie à leurs idées, résoudre des problèmes uniques et même pour s'amuser!
 
-Lancer un nouveau projet est le processus de créer un nouveau programme à partir de zéro. Les programmeurs le font pour résoudre un problème spécifique ou pour améliorer un programme existant.
-
-## Comment ça marche?
-
-Voici un exemple de code pour démarrer un nouveau projet en C:
-
+## Comment faire:
+Créer un simple "Hello, World!" en C est un bon point de départ pour tout nouveau projet. Voici comment on peut le faire.
 ```C
-#include <stdio.h>
+#include<stdio.h>
 
 int main() {
-    printf("Bonjour le monde!");
+    printf("Bonjour le monde!\n");
     return 0;
 }
 ```
-
-Voici la sortie que vous verriez en exécutant ce code:
-
+Exécutez le programme et vous verrez ceci dans la console:
 ```
 Bonjour le monde!
 ```
 
-Ce code commence par inclure la bibliothèque standard ```stdio.h```, puis déclare une fonction principale ```main``` qui imprime un simple message à l'écran et renvoie 0 pour indiquer que le programme s'est terminé avec succès.
+## Exploration approfondie:
+Commencer un nouveau projet en C a une importance historique. C'est une langue ancienne, datant des années 70, mais toujours puissante et utilisée pour les systèmes d'exploitation et les compilateurs. En alternative, vous pouvez envisager des langages comme Python ou Java, plus simples à apprendre. Lors de la création d'un nouveau projet, assurez-vous de bien organiser votre code en utilisant des fonctions et des structures de données appropriées.
 
-## Plongée en profondeur
+## Voir aussi:
+Pour obtenir plus d'informations sur les projets en C, consultez les liens suivants:
+1. [Gestion de projet en C](https://www.projectmanagement.com/)
+2. [Introduction à la programmation en C](https://www.learn-c.org/)
+3. [Cours sur les structures de données en C](https://www.coursera.org/specializations/data-structures-algorithms)
 
-Le C est un langage de programmation créé par Dennis Ritchie en 1972 et est toujours largement utilisé aujourd'hui pour sa vitesse et son efficacité. Bien qu'il existe maintenant de nombreux autres langages de programmation, le C reste populaire en raison de sa compatibilité avec de nombreux systèmes et de sa simplicité. Les alternatives au C pour démarrer un nouveau projet pourraient être Java, Python ou C++.
-
-Il y a plusieurs étapes à suivre pour démarrer un nouveau projet en C, notamment:
-
-1. Déterminer l'objectif du projet et écrire un plan détaillé.
-2. Choisir un environnement de développement intégré tel que Code::Blocks ou Visual Studio.
-3. Écrire le code en utilisant les connaissances de base du langage C.
-4. Déboguer les erreurs et tester le code pour s'assurer qu'il fonctionne correctement.
-5. Compiler le code en un fichier exécutable.
-6. Distribuer le programme ou l'utiliser pour résoudre le problème souhaité.
-
-## Voir aussi
-
-Pour en savoir plus sur le langage de programmation C et comment démarrer un nouveau projet en C, vous pouvez consulter les sources suivantes:
-
-- [Le C pour les débutants (en français)](https://openclassrooms.com/fr/courses/19980-apprenez-a-programmer-en-c)
-- [Tutoriels sur le C de W3Schools (en anglais)](https://www.w3schools.in/c-tutorial/)
-- [La documentation officielle du C (en anglais)](https://devdocs.io/c/)
+Bonne programmation!

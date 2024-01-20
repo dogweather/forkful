@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Fish Shell: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,40 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Qu'est-ce que la fonction `date` de Fish Shell
+# Fish Shell: Récupérer la date actuelle
 
-## Qu'est-ce que c'est & pourquoi le font les programmeurs?
+## Pourquoi et Pourquoi faire?
 
-La fonction `date` de Fish Shell permet aux programmeurs de récupérer la date et l'heure actuelles dans leur script en utilisant une seule commande. Cela évite d'avoir à écrire manuellement la date à chaque fois que cela est nécessaire et assure également que la date utilisée est toujours la plus précise et à jour.
+Obtenir la date actuelle signifie récupérer le jour actuel selon le calendrier. Les programmeurs font cela pour enregistrer des informations chronologiques, comme le moment exact où une action se produit.
 
-## Comment faire:
+## Comment Faire:
 
-Voici comment vous pouvez utiliser la fonction `date` dans votre code Fish Shell:
+En Fish Shell, le code suivant renvoie la date et l'heure actuelles:
 
-```
-date +%Y-%m-%d 
-```
-
-Cela vous donnera la date actuelle au format année-mois-jour, avec le résultat ressemblant à ceci: `2021-05-14`
-
-Vous pouvez également ajouter d'autres options, comme l'heure ou le fuseau horaire, en utilisant le symbole `%` suivi de la lettre correspondante. Par exemple:
-
-```
-date +%H:%M:%S 
+```Fish Shell
+date
 ```
 
-Cela vous donnera l'heure actuelle au format heures-minutes-secondes: `13:25:30`
+Cela devrait retourner quelque chose ressemblant à cela:
 
-Pour plus d'options et de détails, vous pouvez consulter la documentation de Fish Shell sur la fonction `date`.
+```Fish Shell
+Tue May 28 15:52:02 PDT 2021
+```
 
-## Plongée en profondeur:
+Si vous voulez juste le jour du mois, alors utilisez ce code:
 
-La fonction `date` est un utilitaire bien établi dans les systèmes d'exploitation Unix, qui a été introduit pour la première fois dans les années 1970. En plus de Fish Shell, il peut également être utilisé dans d'autres shells, comme Bash et Zsh. Cependant, Fish Shell offre un paramètre supplémentaire, `%f`, qui permet de formater la date en utilisant les couleurs du shell.
+```Fish Shell
+date +%D
+```
 
-Une alternative à la fonction `date` est la commande `cal`, qui affiche le calendrier du mois en cours, ainsi que la date actuelle. Cependant, contrairement à `date`, `cal` ne permet pas de modifier le format de la date.
+Ce qui donne:
 
-## Voir aussi:
+```Fish Shell
+05/28/21
+```
 
-Pour en savoir plus sur la fonction `date` de Fish Shell, consultez la documentation officielle: https://fishshell.com/docs/current/cmds/date.html
+## Plongée Profonde
 
-Pour en savoir plus sur les alternatives à la fonction `date`, vous pouvez consulter cet article sur le forum Unix & Linux: https://unix.stackexchange.com/questions/77541/date-alternative-in-shell-scripts
+Historiquement, dans le Unix original (1969), il n'y avait pas réellement de manière standard pour obtenir la date. `date` est venu plus tard (1983) pour standardiser cette fonctionnalité à travers les systèmes Unix.
+
+Il existe diverses alternatives à la fonction `date`. Vous pourriez par exemple, pour certaines tâches spécifiques, utiliser `strftime` ou `clock_gettime`.
+
+Au niveau de l'implémentation, la commande `date` en Fish fait essentiellement un appel système pour récupérer l'horloge du système, qui est maintenue par le système d'exploitation.
+
+## Voir Aussi
+
+Plus d'informations peuvent être trouvées sur la commande `date` en Fish Shell: 
+- La page de manuel de `date`: https://fishshell.com/docs/current/cmds/date.html
+- Un guide sur la programmation en Fish Shell: https://fishshell.com/docs/current/tutorial.html
+- Une explication plus détaillée de `strftime`: http://man7.org/linux/man-pages/man3/strftime.3.html

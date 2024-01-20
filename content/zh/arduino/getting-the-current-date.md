@@ -10,33 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 缘由 & 原因：
-获取当前日期是指在编程中获取当前的日期信息，程序员通常这么做是为了在程序中使用当前日期来做某些操作。
+## 什么和为什么？
+获取当前日期是一种获取编程时的实时日期的方法。程序员这么做是为了跟踪和记录程序运行和操作的实时数据。
 
-## 怎么做：
-在Arduino语言中，使用内置的函数来获取当前日期。下面是一个简单的例子，展示如何在控制台打印出当前日期：
+## 如何做：
+获取Arduino的当前日期很简单。
+
 ```Arduino
-#include <Time.h>  // 导入Time库
+#include <RTClib.h>
+
+RTC_DS1307 rtc;
+
 void setup() {
-  Serial.begin(9600);  // 设置串口波特率
-  setTime(12, 34, 56, 7, 8, 2021);  // 设置日期和时间
+  Serial.begin(9600);
+
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
+  }
+
+  if (! rtc.isrunning()) {
+    Serial.println("RTC is NOT running!");
+    // following line sets the RTC to the date & time this sketch was compiled
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
 }
+
 void loop() {
-  Serial.print("The current date is: ");
-  Serial.print(day());
-  Serial.print("/");
-  Serial.print(month());
-  Serial.print("/");
-  Serial.println(year());  // 分别打印出当前日期的日、月、年
-  delay(1000);  // 延迟1秒后重复打印
+  DateTime now = rtc.now();
+
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.print(now.day(), DEC);
+  Serial.println();
 }
 ```
-运行上面的代码，控制台将输出：The current date is: 8/7/2021，表示当前日期是2021年8月7日。
+输出：
+```Arduino
+2021/7/19
+```
 
-## 深入了解：
-获取当前日期的方法有很多种，除了使用内置函数，还可以通过连接网络来获取网络时间。Arduino也支持使用RTC（Real Time Clock）模块来获取当前日期和时间。另外，历法的实现也会影响到获取当前日期的结果。
+## 深入探究
+获取当前日期的流程起源于早期的编程，旨在帮助程序员更好地了解他们程序的运行状态。这被广泛应用于系统日志和实时事件跟踪。
 
-## 参考资料：
-- Arduino文档：https://www.arduino.cc/reference/en/language/functions/time/
-- 极客时间：http://www.geektime.com.cn/post/110152
-- RTC模块：https://makerpro.cc/2017/08/tutorial-rtc-module-arduino/
+与该方法的一个主要的替代方法是使用系统时间库（例如time.h或sys/time.h）。不过，获取 Arduino 的当前日期会更方便，因为它直接与板上的实时时钟（RTC）集成在一起。
+
+在实现细节方面，本方法使用了 RTClib 库， 它是 Arduino 的一个实时时钟库。
+
+## 另请参阅
+了解 RTClib 的更多信息，可访问[这个链接](https://www.arduino.cc/reference/en/libraries/rtclib/)。
+使用不同 Arduino 板的日期和时间的其它方法可以在[这个链接](https://create.arduino.cc/projecthub/Arduino_Scuola/date-and-time-using-only-the-arduino-uno-board-6c6f4d)看到。

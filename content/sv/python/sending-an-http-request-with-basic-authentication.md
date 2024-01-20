@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "Python: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad och varför?
+# Att skicka HTTP-förfrågan med grundläggande autentisering i Python
 
-Att skicka en HTTP-förfrågan med grundläggande autentisering är en metod som används av programmerare för att tillåta användare att logga in på en webbplats eller tillämpning genom att ange en användaruppgifter (användarnamn och lösenord). Detta är en standardmetod och används ofta som den mest enkla och pålitliga autentiseringsmetoden.
+## Vad & Varför? 
 
-# Hur gör man?
+HTTP-förfrågan med grundläggande autentisering är en teknik för att skicka data över nätverk och kontrollera användarens identitet. Programmerare gör detta för att skydda känslig data och begränsa åtkomst till vissa resurser.
 
-```python
+## Hur man gör:
+
+Python erbjuder `requests`-biblioteket för att enkelt skicka HTTP-förfrågningar. Nedan är ett exempel på hur man skickar en `GET` förfrågan med grundläggande autentisering.
+
+```Python
 import requests
+from requests.auth import HTTPBasicAuth
 
-url = 'https://exempelwebbplats.com'
-user = 'användarnamn'
-password = 'lösenord'
+response = requests.get('https://example.com', auth=HTTPBasicAuth('user', 'pass'))
 
-response = requests.get(url, auth=(user, password))
-
-print(response.text)
+print(response.status_code)
 ```
 
-Resultat:
+Resultatet skrivs ut som en HTTP statuskod, till exempel `200` för en framgångsrik begäran.
 
-```
-Volvo XC40 har vunnit årets bil 2018!
-```
+## Djupt dyk
 
-# Djupdykning
+Grundläggande autentisering är en enkel och direkt metod som har använts sedan HTTP/1.0. Icke desto mindre, den erbjuder inte starkt skydd eftersom användarnamn och lösenord skickas i klartext.
 
-Denna autentiseringsmetod utvecklades först i HTTP-protokollet 1996 och har varit en standardmetod sedan dess. Andra autentiseringsmetoder inkluderar OAuth och digest autentisering, men grundläggande autentisering är fortfarande den mest använda metoden på grund av dess enkelhet och tillförlitlighet.
+Alternativ inkluderar Digest Authentication och OAuth. Digest autentisering hashar lösenordsdetaljerna innan de skickas över nätverket. OAuth använder tokens snarare än autentiseringsuppgifter.
 
-När du skapar en begäran skickar du dina användaruppgifter över nätverket i klartext, vilket kan vara en potentiell säkerhetsrisk. Det är därför grundläggande autentisering inte är rekommenderad för att skydda känslig information.
+Vid implementering, kom ihåg att vara uppmärksam på HTTP statuskoden som returneras. En `401` statuskod indikerar att autentisering misslyckades.
 
-# Se även
+## Se också
 
-- [Requests bibliotek för Python](https://requests.readthedocs.io/)
-- [HTTP Basic Authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
+För mer information om HTTP autentisering, se följande resurser:
+
+- Python requests bibliotek dokumentation: http://docs.python-requests.org/en/master/user/authentication/
+- RFC 2617, Basic och Digest Access Authentication: https://tools.ietf.org/html/rfc2617
+- OAuth officiella webbplats: https://oauth.net/

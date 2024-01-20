@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Javascript recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,26 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Finding the length of a string means determining the number of characters or symbols present in a given string of text. This is a commonly used operation in programming, as it allows developers to manipulate and analyze strings in their code.
+Finding the length of a string in JavaScript means determining the number of characters in that string. Programmers often need this data to manage text input restrictions, data validation, or loop control.
 
 ## How to:
-```Javascript
-// Using the `length` property of a string:
-let myString = "Hello World!";
-console.log(myString.length); // Output: 12 (11 letters + 1 space)
+JavaScript offers an easy way to find the length of a string using the `length` property. Here's how you do it:
 
-// Using the `string.length()` method:
-let myString = "This is a sentence.";
-console.log(myString.length()); // Output: 19 (18 characters + 1 space)
+```Javascript
+let str = "Hello, World!";
+console.log(str.length); // outputs: 13
 ```
 
-## Deep Dive:
-There are a few alternative methods for finding the length of a string, such as using a `for` loop to iterate through the characters and counting them, or using the `substring()` method to split the string into an array and returning the length of the array. However, the `length` property and `length()` method are the most commonly used and efficient methods.
+And, voila! You've got the number of characters in your string.
 
-In earlier versions of JavaScript, the `string.length()` method did not exist and the `length` property was used to return the string's length as well as the length of other data types like arrays and objects. However, with the introduction of ECMAScript 2015, the `string.length()` method became available and is now the preferred method for finding string length.
+## Deep Dive
 
-## See Also:
-- [MDN Web Docs on string.length()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [MDN Web Docs on String.length property](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [W3Schools: JavaScript String Length](https://www.w3schools.com/jsref/jsref_length_string.asp)
-- [JavaScript.info: The length property and method](https://javascript.info/string#length-property-method)
+### Historical Context
+JavaScript was first released in 1995, and the `length` property has been there since the beginning. It goes back to the language's core focus on textual data processing for the web.
+
+### Alternatives
+While `length` is the out-of-the-box, most efficient, and straightforward way to get string length, you can also count characters with an iterative loop if you're feeling adventurous.
+
+```Javascript
+let str = "Hello, World!";
+let count = 0;
+for(let i=0; i<str.length; i++) {
+    count++;
+}
+console.log(count); // outputs: 13
+```
+This is less efficient but shows manual character counting.
+
+### Implementation Details
+The `length` property of a string in JavaScript counts the UTF-16 units in a string, not the number of characters. This distinction matters when dealing with non-Basic-Multilingual-Plane symbols, where a single character could be represented as two 16-bit units.
+
+## See Also
+MDN's [length property documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length) dives deeper into what's happening underneath the hood when you access `string.length`. Also, give [Iterating over strings](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Indexed_collections#strings) a read. It presents looping over a string as an array of characters, which is an interesting application of string length in practice.

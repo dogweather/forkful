@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "Fish Shell: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Imprimindo saída de debug"
+html_title:           "C#: Imprimindo saída de debug"
+simple_title:         "Imprimindo saída de debug"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,51 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Imprimindo Saídas de Depuração no Fish Shell
 
-Debug é uma técnica usada por programadores para verificar e corrigir erros em seus códigos. Ao imprimir saídas de debug, os programadores podem visualizar informações importantes sobre variáveis, fluxo de execução e lógica de seus códigos. Isso permite uma depuração mais eficiente e eficaz do código.
+## O Que & Por Que?
+A impressão de saída de depuração é a prática de exibir informações úteis para o programador durante o desenvolvimento. É crucial para entender como o código funciona, detectar e corrigir problemas.
 
-## Como fazer:
+## Como Fazer:
+Aqui estão alguns exemplos de como imprimir a saída de depuração no Fish Shell.
 
-O Fish Shell oferece uma variedade de maneiras de imprimir saídas de debug. Aqui estão alguns exemplos:
+```fish
+function debug
+    if set -q _flag_debug
+        echo "DEBUG: $argv"
+    end
+end
 
-Dentro do código Fish Shell `` ` `
-`` `fish
-set variavel "valor"
-debug variavel
-`` `
-Saída:
-Variável: valor
+set -g _flag_debug
+debug "Algumas informações úteis aqui."
+```
 
-É possível imprimir informações adicionais usando o comando `echo` seguido de uma variável, por exemplo:
+O bloco de código acima imprimirá: 
 
-Dentro do código Fish Shell `` ` `
-`` `fish
-set var1 "Hello "
-set var2 "World"
-echo $var1$var2
-`` `
-Saída:
-Olá Mundo
+```fish
+DEBUG: Algumas informações úteis aqui.
+```
 
-Também é possível imprimir o valor de uma variável em um formato específico, como `tabela` ou `json`, usando o sinal de igual (=) após o nome da variável seguido do formato desejado:
+Este é um exemplo simples de como imprimir mensagens de depuração no Fish Shell. 
 
-Dentro do código Fish Shell `` ` `
-`` `fish
-set variavel "valor"
-debug variavel = tabela
-`` `
-Saída:
-Variável = (valor)
+## Mergulho Profundo
+Historicamente, a impresão de saída de depuração tem sido uma peça fundamental na vida de um programador. Fish Shell, ao contrário de outras shells como Bash, coloca uma ênfase significativa na simplicidade e usabilidade, e por isso tem facilidades superiores para a impressão de mensagens de depuração.
 
-## Mergulho profundo:
+Em alternativa, os desenvolvedores de Fish Shell podem utilizar ferramentas mais sofisticadas como o Fish Debugger para depurar os seus programas. No entanto, a impressão de saída de depuração oferece uma maneira fácil e rápida de verificar o estado do seu programa durante a execução. 
 
-A impressão de saída de debug é uma técnica amplamente utilizada em programação, e remonta aos primeiros dias da computação. Antes dos computadores modernos e das ferramentas avançadas de depuração, os programadores costumavam imprimir mensagens de texto simples como saída de debug para detectar erros em seus códigos.
+Quando se trata da implementação, o Fish Shell segue os padrões tradicionais de depuração. A variável global `_flag_debug` serve como uma flag para controle de quando a depuração está ativa.
 
-Além disso, existem outras alternativas para imprimir saídas de debug, como o uso de um depurador, que permite que os programadores acompanhem seu código passo a passo e visualizem informações sobre suas variáveis em tempo real.
-
-O Fish Shell também oferece a opção de desativar a impressão de saída de debug usando o comando `set -q DEBUG_OUTPUT` e definindo o valor para `0`. Isso pode ser útil para remover a desordem de saída de debug em código mais complexo.
-
-## Veja também:
-
-Para saber mais sobre como usar e aproveitar ao máximo as funcionalidades de debug do Fish Shell, confira a documentação oficial em https://fishshell.com/docs/current/commands.html#printing-debug-output.
+## Veja Também
+1. [Documentação Fish Shell](https://fishshell.com/docs/current/index.html)
+2. [Introdução ao Debugger Fish](https://fishshell.com/docs/current/commands.html#debugger)
+3. [Tópicos de depuração do StackOverflow Fish Shell](https://stackoverflow.com/questions/tagged/fish)

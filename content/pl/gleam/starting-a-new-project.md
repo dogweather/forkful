@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Gleam: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -11,25 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Zaczynamy nowy projekt po to, by zorganizować nasze pliki kodu i ułatwić współpracę. Faktem jest, że programiści zaczynają nowe projekty, aby skutecznie rozwiązywać problemy, uzyskać czysty kod i zorganizować proces twórczy.
 
-Rozpoczęcie nowego projektu to częsty element pracy programisty, gdyż pozwala na tworzenie nowych rozwiązań oraz rozwijanie swoich umiejętności. Poprzez stworzenie nowego projektu, programista może wykorzystać swoje zdolności i wyobraźnię, aby stworzyć nowe i innowacyjne rozwiązania.
-
-## Jak to zrobić?
-
-Tworzenie nowego projektu w Gleam jest proste i łatwe. Wystarczy utworzyć nowy katalog, a następnie uruchomić polecenie `gleam init` w wierszu poleceń. To spowoduje utworzenie plików konfiguracyjnych i przykładowego kodu w języku Gleam.
+## Jak to zrobić:
+Tworzenie nowego projektu w Gleam (aktualna wersja) jest proste. Używamy wiersza polecenia i wprowadzamy odpowiednie polecenia.
 
 ```Gleam
-gleam init
+$ rebar3 new gleam_lib my_project
+$ cd my_project
 ```
 
-Po wykonaniu polecenia, będziemy mieli gotowy projekt, który możemy edytować i rozwijać.
+Wynikiem jest nowy projekt Gleam o nazwie "my_project". Zawiera również podstawową strukturę biblioteki.
 
-## Głębsze zagłębienie 
+## Głębsze spojrzenie
+Tworzenie nowych projektów to nie nowy koncept. Stworzony wiele lat temu, ma na celu pomóc programistom w lepszym zarządzaniu ich kodem. W Gleam, mamy alternatywe dla `rebar3 new`, które to jest `gleam new`. `gleam new` tworzy nowy projekt Gleam o podanej nazwie, wykorzystując domyślny szablon.
 
-Wcześniej, programiści często wykorzystywali języki takie jak Erlang i Elixir, aby tworzyć aplikacje współbieżne i równoległe. Jednak Gleam to język stworzony specjalnie z myślą o programowaniu współbieżnym, zapewniając bezpieczne i wydajne rozwiązania. Alternatywnymi językami dla Gleam są Rust i Haskell, które również cieszą się popularnością wśród programistów.
+```Gleam
+$ gleam new my_project
+$ cd my_project
+```
 
-Implementacja Gleam oparta jest na funkcjonalnym paradygmacie programowania, co oznacza, że programiści mogą wykorzystywać wyrażenia oraz funkcje wyższego rzędu do rozwiązywania problemów. Ponadto, silny system typów pozwala na uniknięcie błędów i poprawienie wydajności kodu.
+W przypadku implementacji, nowy projekt składa się z katalogów src, test i gen, a także plików rebar.config i .gitignore. W rzeczywistości, struktura projektu oraz pliki mogą się różnić w zależności od konkretnych potrzeb projektu.
 
 ## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o Gleam, odwiedź oficjalną stronę internetową https://gleam.run/. Możesz także sprawdzić inne źródła, takie jak artykuły i filmy na temat Gleam, aby poszerzyć swoją wiedzę.
+Aby uzyskać więcej informacji na temat Gleam, odwiedź:
+- Oficjalna strona Gleam: https://gleam.run/
+- Dokumentacja Gleam: https://gleam.run/book/
+- Źródło Gleam na GitHubie: https://github.com/gleam-lang/gleam
+- Lista narzędzi do Gleam: https://gleam.run/tools/

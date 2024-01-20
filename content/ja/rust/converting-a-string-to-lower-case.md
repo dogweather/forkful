@@ -1,6 +1,6 @@
 ---
 title:                "文字列を小文字に変換する"
-html_title:           "Rust: 文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,29 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で？：文字列を小文字に変換することは何ですか？プログラマーがそれをする理由は何ですか？
+## 何となぜ？
+文字列を小文字に変換するということは、すべての文字を小文字に変えることです。この手段は、大文字小文字を区別せずに比較や検索を行うためにプログラミングでよく使われます。
 
-文字列を小文字に変換することは、文字列内のすべてのアルファベットを小文字に変換することを意味します。プログラマーは、文字列を正規化するために文字列を小文字に変換することがあります。これにより、同じ文字列であっても大文字と小文字の違いによるエラーを回避することができます。
-
-## 方法：
-
+## どのように：
+Rustには文字列を小文字に変換するメソッドとして`to_lowercase`があります。
 ```Rust
-let my_string = "Hello, WORLD";
-let lower_case = my_string.to_lowercase();
-
-println!("{}", lower_case);
+fn main() {
+    let s = "Hello, RUST!".to_lowercase();
+    println!("{}", s);
+}
 ```
-出力：hello, world
+このコードは"hello, rust!"と出力します。
 
 ## 詳細：
+1. 歴史的な背景：以前のプログラミング言語、例えばCやJavaでは、文字列を小文字に変換するためにはループを使うことが一般的でした。しかし、Rustはこれを独自のメソッドとして提供することで、より直感的で簡単に文字列の小文字変換ができるようになりました。
 
-1. 歴史的な文脈：文字列を小文字に変換することは、プログラミング言語によっては標準の機能として提供されている場合もあります。しかし、Rustでは標準のメソッドや関数は存在せず、文字列を小文字に変換するためにはto_lowercase()メソッドを使用する必要があります。
+2. 代替手段：特定の条件下でのみ小文字に変換する場合など、`to_lowercase` 以外の方法を必要とする場合もあります。そのような場合には、Rustのパターンマッチングや`chars`メソッドと`match`文を使って自己実装が可能です。
 
-2. 代替手段：文字列を小文字に変換する方法として、パターンマッチングや正規表現を使用することもできます。しかし、to_lowercase()メソッドを使用する方が簡単であり、パフォーマンスも優れているため、推奨されます。
+3. 実装詳細：`to_lowercase`メソッドは`char`ごとに機能します。それぞれの`char`を小文字に変換し、その結果を連結して新たな`String`を生成します。
 
-3. 実装の詳細：to_lowercase()メソッドは、内部でUnicodeの大文字と小文字に関する規則を使用して文字列を変換します。そのため、複雑な言語であっても適切に変換されることが保証されます。
-
-## 関連情報：
-
-- [Rust公式ドキュメント](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
-- [文字列を小文字に変換する方法のベンチマークテスト](https://internals.rust-lang.org/t/psa-how-to-better-optimize-string-related-ops-like-comparison/8868/6)
+## 参考資料：
+- Rustの公式ドキュメンテーション: [https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase](https://doc.rust-lang.org/std/string/struct.String.html#method.to_lowercase)
+- Rustのパターンマッチングについて: [https://doc.rust-lang.org/book/ch06-02-match.html](https://doc.rust-lang.org/book/ch06-02-match.html)

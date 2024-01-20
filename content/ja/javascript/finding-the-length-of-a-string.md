@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "Javascript: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をやることか？
-文字列の長さを求めることは、プログラマーが文字列を処理する際に非常に重要なことです。文字列の長さを知ることで、特定の操作や処理を行うことができます。プログラマーは、文字列の長さを求めることによって、データを効率的に処理することができます。
+## 何となぜ?
 
-## やり方：
-```Javascript
-// 文字列の長さを求める
-let str = "こんにちは！"
-let strLength = str.length;
-console.log(strLength); // 出力結果：5
-```
+文字列の長さを見つけるとは、文字列の中に含まれる文字の数を確認することをいう。プログラマーは、文字列を扱いやすく、エラーを減らすためにこれを行います。
+
+## 方法:
+
+Javascriptで文字列の長さを見つける基本的な方法は、`.length` プロパティを使うことです。
 
 ```Javascript
-// 空の文字列の長さを求める
-let emptyStr = "";
-let emptyStrLength = emptyStr.length;
-console.log(emptyStrLength); // 出力結果：0
+
+let str = "こんにちは、ワールド！";
+console.log(str.length);  //出力：14
+
 ```
 
-## 詳しく見る：
-文字列の長さを求めることは、古くからプログラミングの基本的な操作の一つとして挙げられてきました。この操作は、文字列を使用する多くの処理やアルゴリズムにおいて欠かせないものです。また、現代のプログラミング言語では、文字列の長さを求める方法が標準化されており、容易に実装することができます。しかし、古いプログラミング言語では、文字列の長さを求めるために独自の方法が必要でした。
+このコードの結果は `14` で、これは "こんにちは、ワールド！" の文字数を表しています。
 
-代替手段として、正規表現を使用することもできます。しかし、正規表現は文字列の全体のパターンマッチングを行うため、文字列の長さを求めることに比べて処理が重く、効率的ではありません。
+## ディープダイブ：
 
-実装の詳細について言えば、多くのプログラミング言語では、文字列の長さを求めるために、文字列オブジェクトが持つlengthメソッドを使用します。このメソッドは、文字列の長さを整数値で返します。
+- ### 歴史的な文脈
 
-## 関連リンク：
-- [JavaScript 文字列の長さを取得する(length)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-- [正規表現とは -わかりやすく解説!](https://techacademy.jp/magazine/23328)
-- [JavaScriptのlengthメソッドの仕組みを解説](https://reboooot.net/js-length-method/)
+Javascriptの `.length` プロパティは、ECMAScriptスペックの最初のバージョンから存在しています。これは文字列操作の基本であり、多くの他の言語にも見られます。
+
+- ### 代替手段
+
+場合によっては、特定の文字やパターンの数をカウントすることもあります。その場合、 `.match()` または `.split()` メソッドと正規表現を組み合わせて使用することができます。
+
+```Javascript
+let str = "こんにちは、ワールド！こんにちは、ワールド！";
+let count = (str.match(/こんにちは/g) || []).length;
+console.log(count); //出力：2
+```
+
+- ### 実装の詳細
+
+ `.length` プロパティは、文字列が持つ `16ビット符号なし整数の配列` としての文字の数を返します。Javascriptでは、これは1から`2^53 - 1`までの値を表現することができます。
+
+## 参考文献:
+
+- [MDN 文字列の長さ](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [ECMAScript specification](https://www.ecma-international.org/ecma-262/5.1/#sec-15.5.5.1)

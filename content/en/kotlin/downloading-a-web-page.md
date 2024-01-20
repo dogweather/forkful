@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Kotlin recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Downloading a web page is the act of retrieving the contents of a webpage from the internet. Programmers do it to access the information on the webpage and use it in their code for various purposes, such as data scraping, automation, or integrating web content into their applications.
+
+Downloading a webpage is the process of retrieving and storing HTML data from a URL. Programmers often do this to scrape data, test website functionality, or analyze a site's structure.
 
 ## How to:
-To download a web page in Kotlin, we can use the `URL` and `BufferedReader` classes from the `java.net` package. First, we need to create a `URL` object with the desired webpage URL. Then, we can use `openStream()` to get the input stream from the URL connection. Next, we can use `BufferedReader` to read the input stream line by line and store the contents in a string variable. Here’s an example of how we can print the contents of a webpage to the console:
 
-```
-val url = URL("https://www.example.com")
-val inputStream = url.openStream()
-val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-var inputLine: String?
-while (bufferedReader.readLine().also { inputLine = it } != null) {
-  println(inputLine)
+In Kotlin, you can use `java.net.URL` and `BufferedReader` to download a web page. Here's how:
+
+```Kotlin
+import java.net.URL
+import java.io.BufferedReader
+
+fun downloadWebPage(url: String): String {
+    return URL(url).openStream().bufferedReader().use(BufferedReader::readText)
+}
+
+fun main() {
+    val content = downloadWebPage("https://www.example.com")
+    println(content)
 }
 ```
 
-Sample output:
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-…
-</html>
-```
+This script opens a URL stream, buffers the input, and reads all text content. Running it would print the HTML of "https://www.example.com" to your console.
 
-## Deep Dive:
-Downloading web pages has been a fundamental task for web developers since the early days of the internet. Before APIs and web services were widely used, web scraping and manually copying information from web pages were common practices. However, with the rise of programming languages like Kotlin, developers now have the ability to automate this process and handle data in a more efficient way. Some alternatives to using the `java.net` package in Kotlin for downloading web pages include using third-party libraries like `OkHttp` or integrating with web scraping frameworks like `Jsoup`. Implementing the `BufferedReader` in Kotlin gives us access to various methods for reading input streams, such as `readLine()` or `readText()`.
+## Deep Dive
+
+Web page downloading dates back to the WWW's early days when most pages were simple HTML documents. In modern times, with dynamic content and complex scripts, handling just HTML may not suffice.
+
+Alternatives include libraries like Jsoup, which is great for parsing HTML, or Selenium, better suited for pages with dynamic content.
+
+It's crucial to understand downloading a web page retrieves a static snapshot, not live data. Any subsequent changes on the page won't reflect in the downloaded data.
 
 ## See Also:
-- Official documentation for the `java.net` package in Kotlin: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.jvm/java.net/index.html
-- Third-party library for handling HTTP requests in Kotlin: https://square.github.io/okhttp/
-- Web scraping framework for Java and Kotlin: https://jsoup.org/
+
+- Kotlin documentation, specifically reading data from a URL: https://kotlinlang.org/docs/tutorials/kotlin-for-py/networking.html
+- Tutorial on using Jsoup with Kotlin: https://www.baeldung.com/kotlin-jsoup
+- Selenium’s GitHub page explaining its use with Kotlin: https://github.com/SeleniumHQ/selenium/tree/trunk/java/kotlin/src/org/openqa/selenium.

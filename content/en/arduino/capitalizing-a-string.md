@@ -11,37 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Capitalizing a string means converting all of its letters to uppercase. Programmers often do this to standardize data or to make it easier to search for specific words or phrases within a string.
+Capitalizing a string is the process of converting all the letters in the text to uppercase. Programmers often use this to standardize data inputs, improving readability and facilitating data analysis.
 
 ## How to:
-To capitalize a string in Arduino, use the `toUpperCase()` function. This function takes in a string as its argument and returns the capitalized version of the string.
+You can capitalize a string in Arduino using the `toUpperCase()` function linked to a string object. 
 
-```
-Arduino String myString = "hello world";
-myString.toUpperCase(); // will return "HELLO WORLD"
-```
+Here's a quick example:
 
-To save the capitalized string, assign the returned value to a new string variable.
-
-```
-Arduino String myString = "hello world";
-Arduino String capitalizedString = myString.toUpperCase(); // will return "HELLO WORLD"
+```Arduino
+String sentence = "this is an Example sentence.";
+sentence.toUpperCase();
+Serial.begin(9600);
+Serial.println(sentence);
 ```
 
-If you want to print the capitalized string to the serial monitor, use the `println()` function.
+After uploading this code to your Arduino board and opening your serial monitor, you will see this:
 
+```Arduino
+THIS IS AN EXAMPLE SENTENCE.
 ```
-Arduino String myString = "hello world";
-Serial.println(myString.toUpperCase()); // will print "HELLO WORLD" to the serial monitor
+
+All the characters in the string are now in uppercase. 
+
+## Deep Dive
+Although the `toUpperCase()` function is convenient, it hasn't always been available. In previous versions of Arduino language, people would create a custom function to change lowercase characters to uppercase. This would involve ASCII value conversion, and it's not as efficient.
+
+An alternative way to convert a string to uppercase is using character arrays in combination with the `toupper()` function. However, this method is recommended for more experienced coders as it requires a good understanding of pointers and memory management in C++:
+
+```Arduino
+char str[] = "example sentence";
+for(int i=0; str[i]!='\0'; i++) str[i]=toupper(str[i]);
+Serial.begin(9600);
+Serial.println(str);
 ```
 
-## Deep Dive:
-Capitalizing strings has been a common practice in computer programming for decades. It can be useful in situations where data needs to be uniform or when performing string searches. 
+The `toUpperCase()` function operates by iterating through the string and converting each character separately. Essentially, it automates the `for` loop used in the alternative method. It's worth noting that `toUpperCase()` only operates on ASCII characters, special or Unicode characters may not be affected.
 
-An alternative to the `toUpperCase()` function is the `toUpper()` function, which is part of the `<ctype.h>` library. This function takes in a character as its argument and returns the uppercase version of that character. This means that to capitalize a string using `toUpper()`, you would need to iterate through each character in the string and convert them one by one. However, the `toUpperCase()` function already does this for you, making it a more efficient option.
+## See Also
+For more insights and examples in Arduino Programming, visit:
 
-In terms of implementation, the `toUpperCase()` function is part of the Arduino `String` class, which is specifically made for manipulating strings. This class also has other useful functions for string manipulation, such as `concat()` and `substring()`. These functions can come in handy when working with data that requires string processing.
-
-## See Also:
-- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/string/
-- C Programming - String Functions: https://www.tutorialspoint.com/c_standard_library/string_h.htm
+1. [Official Arduino Language Reference](https://www.arduino.cc/reference/en/)
+2. [Arduino String Object - Programming Electronics Academy](https://www.programmingelectronics.com/tutorial-18-break-arduino-guide-understanding-programming-syntax/)
+3. [Arduino Text Strings - Adafruit](https://learn.adafruit.com/adafruit-arduino-lesson-22-arduino-%20-%20%20%20-%20-%20%20-%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20lcd-display-part-1/arduino-%20-%20%20%20-%20-%20%20-%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20text-strings)

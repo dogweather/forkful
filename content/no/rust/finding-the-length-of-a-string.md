@@ -1,7 +1,7 @@
 ---
-title:                "Finn lengden på en streng"
-html_title:           "Rust: Finn lengden på en streng"
-simple_title:         "Finn lengden på en streng"
+title:                "Finne lengden på en streng"
+html_title:           "Arduino: Finne lengden på en streng"
+simple_title:         "Finne lengden på en streng"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,20 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"Hva & Hvorfor?": Å finne lengden av en streng betyr å telle antall tegn i en tekststreng. Dette er viktig for programvare for å kunne behandle og manipulere tekst på en effektiv måte.
+## Hva & Hvorfor?
+Å finne lengden på en streng betyr rett og slett å telle antall tegn i den. Dette gjør vi for å kontrollere dataene våre, som å sørge for at brukerinput ikke overskrider et gitt antall tegn.
 
-"Hvordan:": For å finne lengden av en streng i Rust, kan du bruke metoden ```len()``` som er tilgjengelig for alle strenger. Denne metoden returnerer antall bytes i strengen, noe som også tilsvarer antall tegn for ASCII-strenger. For eksempel:
+## Slik gjør du:
+Her er et enkelt eksempel i Rust på hvordan du kan finne lengden på en streng:
 
 ```Rust
-let my_string = "Hei";
-let length = my_string.len();
-println!("Lengden på strengen er: {}", length);
+fn main() {
+    let tekst = "Hei, Norge!";
+    let lengde = tekst.len();
+    println!("Lengden på teksten er {} tegn.", lengde);
+}
 ```
 
-Dette vil skrive ut "Lengden på strengen er: 3" siden det er tre tegn i strengen "Hei". Merk at dette også inkluderer mellomrom.
+Kjører du denne koden, vil du se følgende utskrift:
 
-"Dype Dykk": Funksjonen for å finne lengden av en streng i Rust har vært tilgjengelig siden språket ble lansert i 2010. Det finnes alternative metoder, som for eksempel å bruke en løkke til å telle antall tegn i strengen, men metoden ```len()``` er den anbefalte måten å gjøre det på.
+```Rust
+Lengden på teksten er 11 tegn.
+```
 
-```len()```-metoden er implementert ved å telle antall bytes i strengen, som fungerer bra for ASCII-strenger, men kan føre til feil for ikke-ASCII-strenger som bruker flere bytes per tegn. Dette kan løses ved å bruke metoden ```chars()``` som returnerer en iterator over hvert tegn i strengen, og deretter bruke metoden ```count()``` for å telle antall tegn i iterator-en.
+## Dypere inn
+Historisk sett har programmeringsspråk hatt forskjellige metoder for å håndtere strenger og deres lengder. Noen språk, som C, bruker terminerende null-bytes, mens andre, som Python og Rust, lagrer lengden som en del av strengobjektet. 
 
-"Se også": For mer informasjon om hvordan Rust behandler tekst og strenger, se Rust sin offisielle dokumentasjon: https://doc.rust-lang.org/stable/book/ch08-02-strings.html
+Et alternativ til `len()` metoden er å bruke en løkke for å telle tegnene manuelt, men dette er langsomt og unødvendig komplekst. 
+
+Rust bruker utf-8 tegnkoding, som betyr at hvert tegn kan være 1 til 4 bytes lange. Methoden `len()` returnerer derimot antall bytes, ikke antall tegn. For å få antall tegn, bruker vi `chars().count()`:
+
+```Rust
+fn main() {
+    let tekst = "Hei, Norge!";
+    let tegn = tekst.chars().count();
+    println!("Antall tegn i tekst er {}.", tegn);
+}
+```
+
+## Se også
+Rust dokumentasjon i forbindelse med Strings:
+- [Rust String-dokumentasjon](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust len() metode](https://doc.rust-lang.org/std/string/struct.String.html#method.len)
+- [Rust chars() metode](https://doc.rust-lang.org/std/string/struct.String.html#method.chars)

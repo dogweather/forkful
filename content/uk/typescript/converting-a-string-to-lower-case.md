@@ -1,7 +1,7 @@
 ---
-title:                "Перетворення рядка у нижній регістр"
-html_title:           "TypeScript: Перетворення рядка у нижній регістр"
-simple_title:         "Перетворення рядка у нижній регістр"
+title:                "Перетворення рядка в нижній регістр"
+html_title:           "Elixir: Перетворення рядка в нижній регістр"
+simple_title:         "Перетворення рядка в нижній регістр"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та Чому?
-Перетворення рядка в нижній регістр є процесом зміни всіх літер у рядку на їх нижній регістр, що означає, що усі великі літери будуть замінені на відповідні малі літери. Програмісти зазвичай роблять це для того, щоб легше порівнювати рядки і виконувати операції пошуку та фільтрації на рядках.
+## Що та чому?
+Конвертація рядка в нижній регістр - це перетворення всіх символів рядка з верхнього регістра на нижній. Це важлива задача для програмістів, адже дозволяє враховувати введені користувачем дані без врахування регістру символів.
 
 ## Як це зробити:
-```TypeScript
-let str = "HELLO WORLD";
-console.log(str.toLowerCase());
-// output: "hello world"
-```
 
 ```TypeScript
-let str = "Привіт Світ";
-console.log(str.toLowerCase());
-// output: "привіт світ"
+let stringExample: string = "JavaScript і TypeScript РОЗБІЖНЯЮТЬСЯ";
+console.log(stringExample.toLowerCase());
+```
+Виведення:
+
+```TypeScript
+"javascript і typescript розбіжняються"
 ```
 
-## Вдосконалюємось:
-Перетворення рядка в нижній регістр було популярним у більш старій версії JavaScript за допомогою методу ```toLowerCase()``` або за допомогою регулярних виразів. Однак у TypeScript можна використовувати нові функції, такі як ```toLowerCase()``` з перечисленими параметрами, щоб перетворити рядок в нижній регістр з використанням іншої абетки або мови.
+## Поглиблений огляд
 
-## Дивіться також:
-- [MDN Web Docs](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) - документація MDN про метод ```toLowerCase()```.
+1.  Історичний контекст: З моменту створення перших мов програмування функція переведення рядка в нижній регістр використовувалась постійно. Вона важлива для розрізнення маленьких і великих букв, котрі в багатьох мовах мають різне значення.
+   
+2.  Альтернативи: Деякі інші мови, як-от Javascript, використовують `toLowerCase()` так само, як TypeScript. Інші мови, як-от Python, використовують `lower()`.
+   
+3.  Деталі реалізації: В TypeScript, `toLowerCase()` є методом об'єкта String, який повертає копію початкового рядка, але з усіма великими буквами заміненими на маленькі. Ця функція не враховує специфіку мови, тому у деяких випадках краще використовувати `toLocaleLowerCase()`.
+   
+## Дивіться також
+
+- [MDN документація для toLowerCase()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Документація по TypeScript](https://www.typescriptlang.org/docs/)
+- [Стековерфлоу: відмінності між toLowerCase() та toLocaleLowerCase()](https://stackoverflow.com/questions/51126953/what-is-the-difference-between-tolocalelowercase-vs-tolowercase-in-typescript)

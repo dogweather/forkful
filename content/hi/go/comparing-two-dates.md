@@ -1,7 +1,7 @@
 ---
-title:                "दो तारीखों की तुलना करना"
-html_title:           "Go: दो तारीखों की तुलना करना"
-simple_title:         "दो तारीखों की तुलना करना"
+title:                "दो तारीखों की तुलना"
+html_title:           "Elixir: दो तारीखों की तुलना"
+simple_title:         "दो तारीखों की तुलना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-What & Why?
-दो तारीखों को तुलना करना तभी होता है, जब हमें दो अलग समय अवधियों में घटनाओं की तुलना करनी हो। प्रोग्रामर्स इस काम को करते हैं ताकि वे खुद से कोड करने के समय और असामान्य तारीखों को समझने में मदद मिल सके।
+# Go Programming ke Duniya me: Dates Ki Tulna
 
-How to:
-Go में दो तारीखों को तुलना करने के कई तरीके हैं। एक सेंसिटिविटी-आज मूल्यवान मापदंड के साथ तारीखों को तुलना कर सकते हैं। नीचे एक उदाहरण है:
+## क्या और क्यूँ?
+
+दो तारीखों की तुलना (comparing two dates) यह होती है जब हम पता लगाने की कोशिश करते हैं कि एक दिनांक (date) दूसरे दिनांक से पहले, बाद में, या उनके बीच में है। यह समय-मूल्यांकन लॉजिक में एक आवश्यक कार्य होता है, जैसे कि कृपया आपको समझाने के लिए पता करें कि कौन सा event सबसे पहले हुआ था, या किसी कार्य की सीमा कब समाप्त होगी।
+
+## कैसे करे:
 
 ```Go
 package main
-
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	const longForm = "January 2, 2006"
-	t1, _ := time.Parse(longForm, "March 15, 2020")
-	t2, _ := time.Parse(longForm, "March 14, 2020")
-
-	if t1.After(t2) {
-		fmt.Println(t1, "is greater than", t2)
-	} else if t1.Before(t2) {
-		fmt.Println(t1, "is less than", t2)
-	} else {
-		fmt.Println("The dates are equal.")
-	}
+    date1 := time.Date(2020, 1, 1, 0, 0, 0, 0, time.UTC)
+    date2 := time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC)
+    if date1.Before(date2) {
+        fmt.Println("Date1 is before Date2")
+    } else if date1.After(date2) {
+        fmt.Println("Date1 is after Date2")
+    } else {
+        fmt.Println("Both dates are equal")
+    }
 }
 ```
 
-यह कोड निम्नलिखित आउटपुट देगा:
+## गहराई में:
 
-```Go
-2020-03-15 00:00:00 +0000 UTC is greater than 2020-03-14 00:00:00 +0000 UTC
-```
+दो तारीखों की तुलना न कर पाने वाली परम्परागत कम्पाइल भाषाओं केवलं है। स्थिरता और अनुकूलन को बाना में रखते हुए, Go ने इस क्षमता को बहुत ही सीधा और स्वच्छ तरीका बनाया है। अल्टरनेटिवली, हम `Equal()` और `Sub()` जैसे फ़ंक्शन्स को भी उपयोग कर सकते हैं, जो अरबी इकाइयों के लिए सही और आवश्यक हो सकते हैं।
 
-Deep Dive:
-इतिहास में, लोग दो तारीखों को तुलना करने के लिए अपने अंग्रेजी कैलेंडर की मदद से तारीखों को अनुक्रमित करते थे। लेकिन आजकल प्रोग्रामर्स इसे तारीख और समय कोडिंग करने के दौरान समझने के लिए निश्चित तारीख पर अपने समय को कैलेंडर के साथ दिखाते हैं। यह कोड खनन और अर्थपुर्णता को आसान बनाने के लिए मदद करता है। अन्य विकल्पों में एम्बेडेड रिक्वेवल्वर और দ딎됝긨। तारीखों को तुलना करने की विस्तृत जानकारी के लिए [Go Documentation](https://golang.org/pkg/time/#pkg-overview) देखें।
+## भी देखें:
 
-See Also:
-- [Go Documentation](https://golang.org/pkg/time/#pkg-overview)
-- [Blog post on date comparisons in Go](https://blog.golang.org/organizing-go-code)
+1. Go के तारीख और समय संबंधी फ़ंक्शन्स के बारे में अधिक जानकारी के लिए यहाँ जाएं: https://golang.org/pkg/time/
+2. Go में समय की तुलना का तरीका: https://yourbasic.org/golang/compare-dates/
+3. डेट की तुलना के बारे में विस्तृत डॉक्यूमेंटेशन के लिए StackOverflow ब्लॉग पर ध्यान दें: https://stackoverflow.com/questions/36530251/how-to-compare-two-dates

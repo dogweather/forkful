@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "Java: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Java"
 category:             "Java"
@@ -11,26 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
-문자열을 소문자로 변환하는 것은 문자열에서 대소문자 구분이 없는 검색, 비교 또는 일치 여부를 확인하기 위해 프로그래머들이 수행하는 작업입니다.
 
-## 방법:
+문자열을 소문자로 변환한다는 것은, 문자열의 모든 문자들을 소문자로 만드는 것입니다. 프로그래머들이 이 작업을 수행하는 주된 이유는, 데이터 정규화와 비교 작업에서 대소문자의 차이를 무시하기 위해서입니다.
+
+## 어떻게:
+
 ```Java
-public class Example {
-   public static void main(String[] args) {
-      String str = "HeLLo wOrld!";
-      System.out.println(str.toLowerCase());
-   }
+public class Main {
+    public static void main(String[] args) {
+        String str = "Hello World!";
+        String lowerCaseStr = str.toLowerCase();
+
+        System.out.println(lowerCaseStr);
+    }
 }
 ```
+
+이 코드를 실행하면 아래의 출력이 나옵니다:
+
 ```Java
-Output: hello world!
+hello world!
 ```
 
-## 깊이 파고들기:
-- 과거에는 문자열에 대소문자 변환을 수작업으로 해야했지만, 자바 1.0 이후에는 String 클래스의 toLowerCase() 메소드를 사용하여 간편하게 변환할 수 있게 되었습니다.
-- 소문자 변환 외에도 equalsIgnoreCase() 메소드를 사용하여 대소문자 구분 없이 문자열을 비교할 수도 있습니다.
-- 문자열 변환 작업은 문자열 길이에 따라 성능이 달라질 수 있으므로, 대부분의 경우에는 프로그래머의 개인적인 판단에 따라 직접 변환할지 메소드를 사용할지 결정하면 됩니다.
+## 깊이 들여다보기
 
-## 관련 정보:
-- 자바 String 클래스: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html
-- equalsIgnoreCase() 메소드: https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#equalsIgnoreCase(java.lang.String)
+재미있는 사실은, 대소문자 변환의 개념이 제일 처음 소개된 건 1970년대, ASCII 코드가 개발된 이후였습니다. 알TERNATES에는 `Character.toLowerCase()` 또는 외부 라이브러리를 사용하는 방법 등이 있습니다. 자바의 toLowerCase 메소드는 Unicode 표준을 기반으로 문자를 소문자로 변환합니다. 그러나 주의해야 할 점은, 이 작업이 언어와 지역에 따라 다르게 작동할 수 있다는 것입니다.
+
+## 참고 자료들
+
+* Oracle Java Docs: [String](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html#toLowerCase())
+* StackOverflow: [When to use String.toLowerCase()](https://stackoverflow.com/questions/2978560/when-to-use-string-tolowercase)
+* Oracle Java Docs: [Character](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/Character.html#toLowerCase(int))

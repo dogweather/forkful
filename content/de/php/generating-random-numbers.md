@@ -1,7 +1,7 @@
 ---
-title:                "Zufällige Zahlen generieren"
-html_title:           "PHP: Zufällige Zahlen generieren"
-simple_title:         "Zufällige Zahlen generieren"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Numbers"
@@ -11,38 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
- Die Generierung von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung, da sie es uns ermöglicht, auf vielfältige Weise verschiedene Ergebnisse zu erhalten. Diese Zahlen dienen als Grundlage für viele Anwendungen wie Spiele, Verschlüsselung und Simulationen.
 
-## Wie geht's?
-Um in PHP Zufallszahlen zu generieren, können wir die ```rand()``` Funktion verwenden. Diese Funktion akzeptiert zwei Parameter: die untere und obere Grenze des Bereichs, aus dem die Zufallszahl generiert werden soll. Zum Beispiel können wir mit ```rand(1, 10)``` eine Zufallszahl zwischen 1 und 10 erhalten.
+Zufallszahlen werden in der Programmierung häufig zum Simulieren von Unvorhersehbarkeit oder zum Testen von Funktionen verwendet. Sie sind ein wesentlicher Bestandteil von Spielen, sicherheitskritischen Anwendungen und mehr.
 
-Eine weitere Möglichkeit ist die Nutzung der ```mt_rand()``` Funktion, die mithilfe des Mersenne Twister-Algorithmus hohe Qualität gewährleistet. Diese Funktion akzeptiert ebenfalls zwei Parameter, jedoch können wir hier auch negative Zahlen als Bereichsgrenzen angeben.
+## So geht's:
 
-Es gibt auch die Möglichkeit, eine Zufallszahl mit der Funktion ```random_int()``` zu generieren, die die Sicherheit beim Generieren von Zufallszahlen verbessert.
-
-Ein Beispiel für die Verwendung dieser Funktionen und die Ausgabe der generierten Zufallszahl könnte so aussehen:
+In PHP können Sie mit der Funktion `rand()` oder `mt_rand()` Zufallszahlen generieren.
 
 ```PHP
-// Verwendung von rand()
-$randomNumber1 = rand(1, 10);
-echo $randomNumber1; // gibt eine Zufallszahl zwischen 1 und 10 aus
+<?php
+$zufallszahl = rand(0, 10);
+echo 'Zufallszahl zwischen 0 und 10: ' . $zufallszahl . PHP_EOL;
 
-// Verwendung von mt_rand()
-$randomNumber2 = mt_rand(-50, 50);
-echo $randomNumber2; // gibt eine Zufallszahl zwischen -50 und 50 aus
+$zufallszahl = mt_rand(0, 100);
+echo 'Zufallszahl zwischen 0 und 100: ' . $zufallszahl . PHP_EOL;
+?>
+```
+Ausgabe könnte ähnlich sein wie:
 
-// Verwendung von random_int()
-$randomNumber3 = random_int(100, 200);
-echo $randomNumber3; // gibt eine sichere Zufallszahl zwischen 100 und 200 aus
+```
+Zufallszahl zwischen 0 und 10: 6
+Zufallszahl zwischen 0 und 100: 83
 ```
 
-## Tiefere Einblicke
-Die Verwendung von Zufallszahlen hat eine lange Geschichte in der Programmierung. In der Vergangenheit wurden oft Pseudozufallszahlen verwendet, die auf einem Algorithmus basieren und nur eine begrenzte Anzahl von möglichen Ergebnissen haben. Mit den neueren Funktionen wie ```mt_rand()``` und ```random_int()``` haben wir jedoch Zugriff auf hochwertige Zufallszahlen, die sicherer und vielseitiger sind.
+## Tiefgehende Informationen
 
-Wenn du auf der Suche nach alternativen Methoden zur Generierung von Zufallszahlen bist, könntest du dir auch die Funktionen ```shuffle()``` und ```array_rand()``` anschauen, die es ermöglichen, zufällige Elemente aus einem Array auszuwählen.
+Historisch gaben frühere Versionen von PHP oft Voreingenommenheiten bei der Zahlenverteilung auf, was zu Sicherheitsproblemen führen konnte. Seit PHP 7.0 wird jedoch empfohlen, `random_int()` zu verwenden, welche eine kryptographisch sichere Zahl generiert.
 
-Bei der Generierung von Zufallszahlen ist es wichtig zu bedenken, dass sie für sicherheitsrelevante Anwendungen wie Verschlüsselung nicht geeignet sind. Hier sollten andere Methoden wie Kryptographie-Tools verwendet werden.
+Alternativen sind die Funktionen `random_bytes()` für die Generierung von zufälligen Bytes oder die Nutzung von `openssl_random_pseudo_bytes()`, wenn OpenSSL installiert ist.
+
+Die Implementierung der zufälligen Zahlengenerierung in PHP variiert je nach der verwendeten Funktion, aber alle zielen darauf ab, eine gleichmäßige Verteilung zu erzeugen und Bias zu minimieren.
 
 ## Siehe auch
-- Die offizielle PHP-Dokumentation für die ```rand()``` Funktion: https://www.php.net/manual/en/function.rand.php
-- Weitere Informationen zu den Zufallszahlenfunktionen in PHP: https://www.php.net/manual/en/ref.math.php
+
+1. PHP-Dokumentation für `rand()`: <https://www.php.net/manual/de/function.rand.php>
+2. PHP-Dokumentation für `mt_rand()`: <https://www.php.net/manual/de/function.mt-rand.php>
+3. PHP-Dokumentation für `random_int()`: <https://www.php.net/manual/de/function.random-int.php>
+4. PHP-Dokumentation für `random_bytes()`: <https://www.php.net/manual/de/function.random-bytes.php>
+5. PHP-Dokumentation für `openssl_random_pseudo_bytes()`: <https://www.php.net/manual/de/function.openssl-random-pseudo-bytes.php>

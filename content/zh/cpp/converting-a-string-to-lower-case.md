@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "C++: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "C++"
 category:             "C++"
@@ -10,45 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#关于将字符串转换为小写
+# 什么以及为什么?
 
-##什么是字符串转换为小写？为什么程序员要这么做？
+转换字符串为小写，意味着将字符串中所有的大写字母转换为小写。程序员之所以这么做，是为了让文本处理和比较更容易，因为这样做可以消除大小写差异对结果的可能影响。
 
-将字符串转换为小写指的是将字符串中的所有字母变为小写形式。这样做的好处是可以统一字符串的格式，便于程序的处理和比较。比如输入的字符串可能有些字母是大写，有些是小写，这样会影响到程序的运行。通过将字符串转换为小写，可以避免这样的问题。
+# 如何做
 
-##怎么做？
-
-示例代码和输出结果如下所示：
+在C++中，使用`<algorithm>`库的`transform()`函数和`<cctype>`库的`tolower()`函数。看以下的示例:
 
 ```C++
 #include <iostream>
-#include <cstring>
-
+#include <algorithm>
+#include <cctype>
 using namespace std;
 
 int main() {
-  // 定义一个字符串
-  string str = "HeLlO wOrLd";
-  
-  // 转换为小写
-  transform(str.begin(), str.end(), str.begin(), ::tolower);
-  
-  // 输出结果
-  cout << str << endl;
-  
-  return 0;
+    string str = "Hello, World!";
+    transform(str.begin(), str.end(), str.begin(), ::tolower);
+    cout << str << endl;  // output: "hello, world!"
+    return 0;
 }
 ```
+在每次运行时，代码会输出 "hello, world!"。这是因为`transform()`函数会对字符串中的每个字符应用`tolower()`函数。
 
-输出结果应为：hello world
+# 深度探索
 
-##深入了解
+在C++的历史中，转换字符串到小写一直被视为基本操作，但具体的执行方式有所不同。一些老版本的C++可能使用指针和数组进行操作，但现代C++更倾向于使用标准库和算法。
 
-1. 历史背景：在早期的计算机编程中，存储空间非常有限，为了节省空间，字符串中的字母常常都是小写形式。随着计算机性能的提升，人们更加注重代码的可读性和可维护性，因此转换字符串为小写的需求也逐渐增加。
-2. 其他方法：除了使用```transform```函数，还可以使用```tolower```函数逐个转换字符为小写。但是，由于```tolower```函数返回的是整型，会导致代码可读性较差。
-3. 实现细节：在转换字符串为小写时，程序会对字符串中的每个字符进行判断，如果是大写字母，则通过ASCII码偏移转换为小写字母。因此，转换为小写的时间复杂度为O(n)，其中n为字符串的长度。
+在C++内，你也可以用`for`循环来对字符串进行小写转换。这种方式比`transform()`函数直观，但可能需要更多的代码。参考下面的示例:
 
-##相关链接
+```C++
+#include <iostream>
+#include <cctype>
+using namespace std;
 
-- [C++ string to lower case](https://www.geeksforgeeks.org/cpp-toupper-function/)
-- [ASCII table](https://www.ascii-code.com/)
+int main() {
+    string str = "Hello, World!";
+    for (char & c : str) c = tolower(c);
+    cout << str << endl;  // output: "hello, world!"
+    return 0;
+}
+```
+# 参考文献
+
+以下是一些有用的链接，可以提供更多关于C++字符串操作的信息:
+
+- Cplusplus.com: <http://www.cplusplus.com/reference/string/string/>
+- Stackoverflow.com: <https://stackoverflow.com/questions/313970/how-to-convert-stdstring-to-lower-case>
+- Tutorialspoint.com: <https://www.tutorialspoint.com/cplusplus/cpp_strings.htm>

@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Ruby: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,50 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
-Czytanie pliku tekstowego w języku Ruby jest procesem odczytywania tekstu ze specjalnego pliku na komputerze. Programiści używają tej funkcji, aby odczytać zawartość plików tekstowych, np. notatników, plików źródłowych lub wyjścia z innych programów.
+## Co i dlaczego?
+Czytanie pliku tekstowego to proces, w którym program zbiera dane zapisane w pliku. Programiści robią to w celu manipulacji danymi, analizy czy tworzenia różnych funkcji w swoim kodzie.
 
 ## Jak to zrobić:
-Czytanie pliku tekstowego w języku Ruby jest proste i może odbywać się na różne sposoby. Przedstawimy tutaj dwa przykłady użycia funkcji `File.open`:
-
-W przykładzie poniżej, odczytujemy zawartość pliku "example.txt" i wyświetlamy ją na ekranie:
-
 ```Ruby
-File.open("example.txt", "r") do |file|
+# Otwórz plik i przeczytaj jego zawartość
+File.open("testfile.txt", "r") do |file|
   puts file.read
 end
 ```
+Po uruchomieniu tego kodu, dostaniesz wyjście tożsame z zawartością twojego pliku `testfile.txt`.
 
-Możemy również odczytywać pliki linijka po linijce, przy użyciu pętli `each_line`, na przykład:
+## Dogłębne rozważania
+Historia czytania plików tekstowych w Rubym pokrywa się z historią samego języka. W miarę ewolucji Ruby, możliwości odczytu plików tekstowych również się rozwinęły.
 
-```Ruby
-File.open("example.txt", "r") do |file|
-  file.each_line do |line|
-    puts line
-  end
-end
-```
+Co do alternatyw, jest wiele innych języków programowania, które możesz wykorzystać do odczytu plików tekstowych. Python, Java, czy JavaScript - każdy z nich posiada swoje metody do pracy z plikami tekstowymi.
 
-W obu przypadkach, wyjście będzie wyglądać tak samo, czyli wypisze całą zawartość pliku "example.txt" na ekranie.
+W kontekście implementacji, Ruby używa klasy `File` do reprezentowania plików na dysku. Metoda `open` otwiera plik, a `read` czyta go od początku do końca, zwracając zawartość jako jeden długi ciąg znaków.
 
-## Głębsze zanurzenie:
-Funkcja `File.open` została wprowadzona w Ruby 1.9 i zastąpiła starsze funkcje `File.new` lub `File.open`. Aby odczytać plik w starszych wersjach języka, należy użyć jednego z tych dwóch przykładów:
-
-```Ruby
-File.new("example.txt", "r") do |file|
-  puts file.read
-end
-```
-
-```Ruby
-file = File.open("example.txt", "r")
-puts file.read
-file.close
-```
-
-Alternatywnie, istnieją również inne sposoby na odczytywanie plików w języku Ruby, takie jak użycie biblioteki `CSV` do czytania plików CSV lub użycie funkcji `gets` do czytania użytkownika wejściowego.
-
-## Zobacz również:
-- Dokumentacja języka Ruby dotycząca funkcji `File`: https://ruby-doc.org/core-3.0.0/File.html
-- Biblioteka `CSV` do czytania plików CSV: https://ruby-doc.org/stdlib-3.0.0/libdoc/csv/rdoc/CSV.html
-- Funkcja `gets` do czytania wejścia użytkownika: https://ruby-doc.org/core-3.0.0/Kernel.html#method-i-gets
+## Zobacz także
+1. [Dokumentacja Ruby - klasa `File`](https://ruby-doc.org/core/File.html)
+2. [Jak odczytywać pliki tekstowe w Pythonie](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+3. [Odczytywanie i zapisywanie plików w Java](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+4. [JavaScript - obsługa plików](https://developer.mozilla.org/pl/docs/Web/API/File/Using_files_from_web_applications)

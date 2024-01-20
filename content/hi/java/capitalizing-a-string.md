@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग कैपिटलाइज करना।"
-html_title:           "Java: स्ट्रिंग कैपिटलाइज करना।"
-simple_title:         "स्ट्रिंग कैपिटलाइज करना।"
+title:                "स्ट्रिंग को कैपिटलाइज़ करना"
+html_title:           "Java: स्ट्रिंग को कैपिटलाइज़ करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज़ करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों करें?
+## क्या और क्यों? (What & Why?)
+जब हम एक स्ट्रिंग में दिए गए सभी अक्षर को बड़े अक्षर (कैपिटल लेटर्स) में बदलते हैं, इसे "कैपिटलाइज़" कहा जाता है। ये कुछ विशेष मामलों में उपयोगी है, जैसे की प्रोग्राम के आउटपुट में एकजुटता लाने के लिये या जब आपके पास डाटा के विभिन्न स्रोत हैं, जिनमें से कुछ उच्चकेस (uppercase) में हो सकते हैं, और कुछ लोवरकेस में।
 
-कैसे एक आदेश लगाएं?
-
-आदेश लगाना एक कार्य है जहाँ हम एक स्ट्रिंग (टेक्स्ट का एक श्रृंखला) को प्रविष्ट करते हैं और उसके सभी शब्दों को प्रथम लेटर कैपिटल में बदल देते हैं। कई प्रोग्रामर्स इसको अपने टेक्स्ट प्रोग्राम में कस्टमाइज करने के लिए करते हैं।
-
-## कैसे करें:
+## कैसे करें: (How to:)
+ये Java के बदलाव हैं, जिनकी मदद से आप स्ट्रिंग को कैपिटलाइज़ कर सकते हैं। सबसे सरल तरीका `toUpperCase()` मेथड का उपयोग है:
 
 ```Java
-String name = "john doe";
-name = name.substring(0,1).toUpperCase() + name.substring(1);
-System.out.println(name);
-
-// आउटपुट: John Doe
+String str = "hello, world!";
+str = str.toUpperCase();
+System.out.println(str);
 ```
 
-यहाँ हमने स्ट्रिंग को `substring()` और `toUpperCase()` फंक्शन का उपयोग करके प्रथम शब्द को कैपिटल में बदला है। आप इसमें किसी भी स्ट्रिंग को दाहिनी शब्द से कैपिटल में बदल सकते हैं।
+आउटपुट:
 
-## गहराई में:
+```Java
+HELLO, WORLD!
+```
 
-पहले अप्रैल 1978 को PDP-10 कंप्यूटर पर एक क्लास के नियमों के साथ जारी किया गया था। अन्य विकल्प जैसे चर को विकल्पों के माध्यम से असाइन किया जा सकता है और स्ट्रिंग वर्तनी जैसे विकल्प भी हो सकते हैं। जैवैन और संयंजिकरण उन विकल्पों में से दो थे जो संयंजित श्रृंखला वर्तनी का उपयोग करते हैं।
+## गहरी जांच (Deep Dive):
+कैपिटलाइज़ करने की सीधी व्याख्या "किसी शब्द के पहले अक्षर को बड़ा करने" की है। इतिहास में, यह विशेष रूप से टाइपराइडर के दिनों से है, जब लोगों को कुछ विशेष शब्दों को बड़ा करने का अवसर मिलता था।
 
-## और भी देखें:
+विकल्प के रूप में, `Apache Commons Lang` लाइब्ररी का `WordUtils.capitalize()` भी उपयोग कर सकते हैं। विशेष रूप से, यदि आपको अपने स्ट्रिंग में हर शब्द के पहले अक्षर को कैपिटलाइज़ करना हो, तो यह एक बेहतर विकल्प साबित हो सकता है:
 
-- [Java String class - Oracle documentation](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java substring() method - W3Schools](https://www.w3schools.com/java/java_string_substring.asp)
-- [Java toUpperCase() method - GeeksforGeeks](https://www.geeksforgeeks.org/java-lang-string-toupper-caseyaring/)
+```Java
+String str = "hello, world!";
+str = WordUtils.capitalize(str);
+System.out.println(str);
+```
+
+आउटपुट:
+
+```Java
+Hello, World!
+```
+
+## देखें भी: (See Also:)
+- [Java String तरीके (Methods)](https://www.w3schools.com/java/java_ref_string.asp)
+- [Apache Commons Lang](https://commons.apache.org/proper/commons-lang/)

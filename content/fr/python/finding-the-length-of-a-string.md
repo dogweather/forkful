@@ -1,6 +1,6 @@
 ---
 title:                "Trouver la longueur d'une chaîne"
-html_title:           "Python: Trouver la longueur d'une chaîne"
+html_title:           "Go: Trouver la longueur d'une chaîne"
 simple_title:         "Trouver la longueur d'une chaîne"
 programming_language: "Python"
 category:             "Python"
@@ -10,33 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire?
+# Trouver la longueur d'une chaîne en Python
 
-Trouver la longueur d'une chaîne de caractères est une tâche courante pour les programmeurs en Python. Cela leur permet de connaître le nombre exact de caractères dans une chaîne et de les manipuler en conséquence.
+## Quoi & Pourquoi?
+Déterminer la longueur d'une chaîne (en anglais: "string") signifie compter le nombre de caractères dans la chaîne. Les programmeurs font cela pour manipuler et gérer efficacement les données textuelles dans leurs programmes.
 
-# Comment faire:
+## Comment faire:
+Voici comment vous pouvez trouver la longueur d'une chaîne en Python.
 
-Pour trouver la longueur d'une chaîne en Python, vous pouvez utiliser la fonction intégrée "len()". Voici un exemple de code et sa sortie:
-
-```Python
-# Exemple de code
-chaine = "Bonjour!"
-longueur = len(chaine)
-print(longueur)
-```
-```Python
-# Sortie
-8
+```Python 
+chaine = 'Bonjour le monde!'
+print(len(chaine))
 ```
 
-# Baignade en profondeur:
+Ceci donnera la sortie:
 
-Histoire: Trouver la longueur d'une chaîne en programmation était une tâche laborieuse avant que la fonction "len()" ne soit introduite dans le langage de programmation Python.
+```Python 
+17
+```
 
-Alternatives: En plus d'utiliser la fonction "len()", vous pouvez également utiliser une boucle pour parcourir la chaîne et compter le nombre de caractères un par un. Cependant, cela peut être plus complexe et prendre plus de temps.
+Dans l'exemple ci-dessus, `len` est une fonction intégrée en Python qui renvoie la longueur (le nombre de caractères) de la chaîne donnée.
 
-Détails de mise en œuvre: La fonction "len()" accepte un seul argument, qui doit être une chaîne de caractères ou une séquence telle qu'une liste ou un tuple. Elle renvoie ensuite le nombre de caractères dans cette séquence.
+## Plongée en profondeur
+En ce qui concerne la longueur de la chaîne en Python, il n'y a pas beaucoup de contexte historique. Cependant, il faut savoir que `len` est une fonction intégrée dans Python dès sa première version.
 
-# Voir aussi:
+Au lieu d'utiliser `len`, on peut aussi utiliser une boucle `for` pour compter chaque caractère dans une chaîne, mais cela consomme plus de temps et de ressources.
 
-Vous pouvez en apprendre plus sur les fonctions intégrées en Python en consultant la documentation officielle: https://docs.python.org/3/library/functions.html#built-in-functions
+```Python 
+chaine = 'Bonjour le monde!'
+compteur = 0
+for i in chaine:
+    compteur += 1
+print(compteur)
+```
+
+Ceci donnera également sortie `17`, comme dans l'exemple précédent.
+
+Côté mise en œuvre, la fonction `len` en Python utilise la méthode de la classe de l'objet passé. Par exemple, pour les chaînes, elle renvoie le nombre de caractères.
+
+## Voir aussi
+Pour plus d'informations sur les chaînes en Python, visitez les liens ci-dessous:
+
+- [Documentation Python sur les chaînes de caractères](https://docs.python.org/fr/3/library/stdtypes.html#text-sequence-type-str)
+- [Chaînes de caractères - Tutoriel Python](https://docs.python.org/fr/3/tutorial/introduction.html#strings)

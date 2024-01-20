@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Elm recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,41 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Parsing a date from a string means converting a date in its textual form (such as "May 20th, 2021") into a computer-readable format. This is commonly done by programmers to manipulate, compare, and format dates in their applications.
 
-## How to:
+Parsing a date from a string is the process of taking a text input and converting it into a machine-readable format, usually a Date object. Programmers do this because text is often the most common and universal format for data, especially when pulling information from APIs, forms, or databases.
 
-To parse a date from a string in Elm, we can use the `Date.fromString` function. This function takes in a string as its argument and returns a `Maybe Date` value, which means it will either return `Nothing` if the string cannot be parsed into a date, or `Just date` if it is successful.
+## How To:
 
+Let's use Elm's `Date.fromString` function. Given a date input as a string, this function will return a `Result Result.DateParseError Date` type. If parsing succeeds, a `Date` object is returned, otherwise, `Result.DateParseError` object containing a description of the error.
+
+Here's a simple example of parsing a date from a string:
+
+```Elm
+import Date exposing (Date)
+import Date.Extra.Formats as Formats exposing (formatsDate)
+
+parseStringtoDate : String -> Result String Date
+parseStringtoDate dateString =
+    formatsDate ["YYYY-MM-DD", "YYYY/MM/DD", "DD-MM-YYYY", "DD/MM/YYYY"] dateString
+
+-- Let's test it
+parseStringtoDate "2021-12-31"
+-- -> Ok <| Date 2021 12 31 0 0 0 0
 ```
-Elm Date.fromString "May 20th, 2021"
-```
-Output: `Just (Date.fromDate 2021 May 20 0 0 0 0)`
 
-To handle different date formats, we can use the `Date.fromStringWith` function, which takes in a list of formats to try and returns the first successfully parsed date.
+## Deep Dive
 
-```
-Elm Date.fromStringWith ["dd/MM/yyyy", "yyyy-MM-dd"] "20/05/2021"
-```
-Output: `Just (Date.fromDate 2021 May 20 0 0 0 0)`
+The `Date.fromString` function comes from Elm's core `Date` module, which dates back to the first public version of Elm. It has served as a simple and straight-forward method for parsing dates since its inception.
 
-We can also specify a specific time zone by using the `Date.fromStringInTimezone` function and passing in the desired time zone as the last argument.
+An alternative method of parsing dates would be to utilize Regex implementations. However, Elm is a language favouring simplicity and explicitness over abbreviation. Therefore, using `Date.fromString` is the preferred way, unless you have a specific use case that this function does not cover.
 
-```
-Elm Date.fromStringInTimezone "May 20th, 2021" "America/New_York"
-```
-Output: `Just (Date.fromDate 2021 May 20 0 0 0 0)`
+The parsing mechanism works by looking for patterns in the string provided, such as 'YYYY', 'MM', or 'DD', and uses these to break down and understand the composition of the date. If it fails to find an expected pattern, it returns an error highlighting where the parsing failed.
 
-## Deep Dive:
+## See Also
 
-In the past, parsing dates was a tedious and error-prone task for programmers, as different programming languages and systems had their own ways of representing dates and times. The introduction of standardized date and time formats, such as ISO 8601, has made this process much easier and more uniform across different platforms.
+1. [Official Elm Date Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
 
-While Elm provides a robust date parsing module, alternative libraries such as `elm-tools/date-extra` also offer additional capabilities and flexibility in handling date parsing and manipulation.
+2. [Elm's Date.Extra module](https://package.elm-lang.org/packages/elm-community/date-extra/latest/)
 
-The `Date.fromString` function in Elm internally uses the `elm/parser` library, which allows for customizable and efficient parsing of various textual data, not just dates.
-
-## See Also:
-
-- Elm Date module documentation: https://package.elm-lang.org/packages/elm/core/latest/Date
-- elm-tools/date-extra library: https://package.elm-lang.org/packages/elm-tools/date-extra/latest/
-- elm/parser library: https://package.elm-lang.org/packages/elm/parser/latest/
+3. [Discussion on Date Parsing in Elm](https://discourse.elm-lang.org/t/parsing-date-strings-in-elm-0-19/2671)

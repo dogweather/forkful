@@ -1,7 +1,7 @@
 ---
-title:                "Użycie Wielkich Liter w Ciągu Znaków"
-html_title:           "Lua: Użycie Wielkich Liter w Ciągu Znaków"
-simple_title:         "Użycie Wielkich Liter w Ciągu Znaków"
+title:                "Zamiana liter na wielkie w łańcuchu znaków"
+html_title:           "Lua: Zamiana liter na wielkie w łańcuchu znaków"
+simple_title:         "Zamiana liter na wielkie w łańcuchu znaków"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,32 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Capitalizing (kapitalizacja) oznacza zamianę pierwszej litery w ciągu znaków na wielką. Programiści często stosują tę technikę, gdy potrzebują, aby nazwa lub tekst był czytelny i wyraźniejszy.
+Zmiana wielkości liter w ciągu polega na zamianie początkowych liter każdego słowa na wielkie. Programiści robią to, aby poprawić czytelność tekstu lub spełnić specyficzne wymagania formatowania.
 
 ## Jak to zrobić:
-W Lua, możliwe jest wykorzystanie funkcji ```string.sub()``` oraz ```string.upper()``` do kapitalizacji tekstu. Poniżej przedstawione są przykładowe kody i wyniki:
+Możemy to osiągnąć za pomocą wbudowanej funkcji `gsub` w Lua. 
 
 ```Lua
-local string1 = "hello world"
-local capitalized_string1 = string.upper(string1:sub(1,1)) .. string1:sub(2)
-```
-Wynik:
-```Lua
-Hello world
-```
-```Lua
-local string2 = "programowanie jest fajne"
-local capitalized_string2 = string2:gsub("^%l", string.upper)
-```
-Wynik:
-```Lua
-Programowanie jest fajne
-```
+function Capitalize(str)
+    return (str:gsub("^%l", string.upper))
+end
 
-## Głębsze zagadnienia:
-Kapitalizacja tekstu jest przydatną funkcją, szczególnie przy tworzeniu interfejsów użytkownika lub analizie danych. Wcześniej, przede wszystkim w językach programowania typu C, kapitalizacja wymagała użycia specjalnych bibliotek lub stworzenia własnych funkcji. W Lua udostępniane są wbudowane funkcje, które ułatwiają ten proces.
+print(Capitalize("witaj, świat"))  -- Wydrukuj wynik: "Witaj, świat"
+```
+W powyższym kodzie, `%l` odpowiada za znalezienie pierwszej małej litery słowa, a `string.upper` konwertuje ją na dużą literę.
 
-## Zobacz również:
-1. [Dokumentacja Lua](https://www.lua.org/docs.html)
-2. [Inne przydatne funkcje tekstu w Lua](https://www.tutorialspoint.com/lua/lua_strings.htm)
-3. [Źródło: Flavio Copes](https://flaviocopes.com/lua-string-uppercase/)
+## Głębsza analiza
+Zmiana liter na wielkie w swoich ciągach jest praktyką, która istnieje od początków informatyki, kiedy to różne standardy wymagały różnych konwencji nazewnictwa. W różnych językach programowania, funkcje do manipulacji ciągami znaków, takie jak ta, często są zawarte w standardowych bibliotekach.
+
+Jedną z alternatyw jest użycie funkcji `upper()`, jednak ta zmienia wszystkie litery na wielkie, a nie tylko pierwszą.
+
+Szczegółowo, funkcja `gsub` to potężne narzędzie, które pozwala na wykonywanie złożonych operacji na ciągach za pomocą wyrażeń regularnych.
+
+## Zobacz także
+Jeśli chcesz dowiedzieć się więcej o manipulacji ciągami w Lua, polecam te źródła:
+
+- Dokumentacja Lua: [Manipulacja ciągami](http://www.lua.org/manual/5.3/manual.html#6.4)
+- Programowanie w Lua: [Ciągi](https://www.lua.org/pil/20.html)
+- Lua-Users Wiki: [Tutorialy o ciągach](http://lua-users.org/wiki/StringRecipes)

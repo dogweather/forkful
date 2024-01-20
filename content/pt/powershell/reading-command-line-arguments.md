@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "PowerShell: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+# Lidando com Argumentos da Linha de Comando em PowerShell
 
-Ler argumentos da linha de comando é quando um programa pode aceitar inputs para executar diferentes tarefas, como alterar seu comportamento ou fornecer informações ao usuário. Os programadores fazem isso para tornar seus programas mais flexíveis e interativos.
+## O Que & Por Quê?
 
-## Como Fazer:
+Os argumentos da linha de comando são parâmetros adicionais que você passa para um script PowerShell na linha de comando. Eles são úteis para personalizar o comportamento de um script sem ter que modificá-lo.
+
+## Como:
+
+Para capturar argumentos da linha de comando em PowerShell, você pode usar a variável automática `$args`, que é um array de argumentos não reconhecidos pelo PowerShell. Aqui está um exemplo simples:
 
 ```PowerShell
-#Vamos supor que seu programa requer um argumento para rodar:
-[CmdletBinding()]
-Param(
-    [Parameter(Mandatory=$true)]
-    [string]$Nome
+#Test-Script.ps1
+param (
+  $PrimeiroNome,
+  $Sobrenome
 )
 
-Write-Host "Olá $Nome, bem-vindo ao meu programa!"
+Write-Output "Olá $PrimeiroNome $Sobrenome!"
 ```
 
-**Exemplo de input:**
+Você pode invocar este script usando:
+
 ```PowerShell
-.\meu_programa.ps1 -Nome "João"
+.\Test-Script.ps1 -PrimeiroNome "João" -Sobrenome "Silva"
 ```
 
-**Output:**
+O script irá imprimir:
+
+```PowerShell
+Olá João Silva!
 ```
-Olá João, bem-vindo ao meu programa!
-```
 
-## Mergulho Profundo:
+## Mergulho Profundo
 
-*Contexto histórico:* A ideia de argumentos da linha de comando vem dos primórdios da computação, quando os programas precisavam ser executados via linha de comando antes do surgimento de interfaces gráficas.
+O uso de argumentos na linha de comando remonta à era dos sistemas operacionais baseados em texto, quando o usuário interagia com o computador principalmente por meio de comandos de texto.
 
-*Alternativas:* Além de ler argumentos da linha de comando, os programadores também podem usar outros métodos para receber inputs, como ler de arquivos ou interagir com o usuário através de prompts.
+Os argumentos podem ser usados para passar informações tanto para o script PowerShell quanto para os comandos dentro do script. Eles também permitem scripts dinâmicos, tornando-os mais reutilizáveis.
 
-*Detalhes de implementação:* Em PowerShell, podemos ler argumentos usando o cmdlet "Param", que permite definir parâmetros obrigatórios ou opcionais e seus respectivos tipos de dados.
+A alternativa ao uso de `$args` seria definir variáveis diretamente dentro do script, mas isso tira a flexibilidade de alterar o comportamento do script sem ter que editá-lo.
 
-## Veja Também:
+Tenha isso em mente ao usar `$args`: ele ignora argumentos que são reconhecidos, ou seja, se sua função ou script tem um parâmetro chamado 'PrimeiroNome', e você passa esse parâmetro na linha de comando, ele não aparecerá no `$args`.
 
-- [Documentação PowerShell Param](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7)
-- [LinkedIn Learning - PowerShell: Working with Command-Line Arguments](https://www.linkedin.com/learning/powershell-working-with-command-line-arguments?trk=insiders_678-cliascc_PowerShell%3A%20Working%20with%20Command-Line%20Arguments_i4_learning)
+## Veja Também
+
+* Documentação oficial do Microsoft PowerShell: [Sobre Argumentos da Linha de Comando](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_command_line_arguments?view=powershell-7.1)
+* Guia de Scripting: [Usando Argumentos da Linha de Comando](https://www.computerperformance.co.uk/powershell/powershell_args_argumentlist/)
+* Tutorial de vídeo: [PowerShell e Argumentos da Linha de Comando](https://www.youtube.com/watch?v=8uAo8X00Q9o)

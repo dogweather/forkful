@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Arduino: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Aloittaminen uusi projekti on yksinkertainen prosessi, jossa luomme uuden ohjelman tai laitteen käyttäen Arduinoa. Ohjelmoijat tekevät tätä voidakseen luoda jotain uutta, tehdä harrastuksia tai vain harjoitella taitojaan.
+## Mikä & Miksi?
 
-## Miten:
-Esimerkiksi voit aloittaa uuden Arduino-projektin seuraavalla tavalla: 
+Uuden projektin aloittaminen tarkoittaa uuden ohjelman tekemisen alkua tyhjästä. Ohjelmoijat tekevät sen, koska uusi projekti tarkoittaa uuden ongelman ratkaisemista tai uuden idean toteuttamista. 
+
+## Näin se tehdään:
+
+Aloitetaan yksinkertaisella LEDin vilkuttamisen ohjelmalla.
+
 ```Arduino
+//Alustetaan LED pin
+int ledPin = 13;
+
 void setup() {
-  // Asetetaan pinni 13 lähdöksi
-  pinMode(13, OUTPUT); 
+//Määritetään LED pinin toiminnallisuus
+  pinMode(ledPin, OUTPUT); 
 }
 
 void loop() {
-  digitalWrite(13, HIGH); // Sytytetään ledi
-  delay(1000); // Pysäytetään ohjelma 1 sekunniksi
-  digitalWrite(13, LOW); // Sammutetaan ledi
-  delay(1000); // Pysäytetään ohjelma 1 sekunniksi
+  digitalWrite(ledPin, HIGH);   //LED syttyy
+  delay(1000);                  //Odotetaan sekunti
+  digitalWrite(ledPin, LOW);    //LED sammuu
+  delay(1000);                  //Odotetaan sekunti
 }
 ```
-Tämä koodi asettaa liittimen 13 lähdöksi ja käyttää sitä ohjaamaan lediä. Ohjelma sytyttää ledin sekunnin ajaksi ja sammuu sitten sekunnin ajaksi. Tämä toistuu loputtomiin.
+Yllä olevan koodin abulla, LED vilkkuu syttymisen ja sammumisen välillä sekunnin välein.
 
-## Syvällinen sukellus:
-Projektien aloittaminen Arduinoa käyttäen on suosittua johtuen sen helppokäyttöisyydestä ja laajasta yhteisöstä. Vaihtoehtoisia laitteistoja ja ohjelmointiympäristöjä on olemassa, mutta Arduino on suosittu erityisesti harrastajien keskuudessa. Prosessi alkaa yleensä suunnittelusta ja jatkuu koodauksella, testauksella ja viimeistelyllä.
+## Deep Dive
 
-## Katso myös:
-Löydät lisätietoja Arduino-projektien aloittamisesta seuraavista lähteistä:
-- [Arduino verkkosivut](https://www.arduino.cc/en/Guide/HomePage)
-- [Official Arduino Blog](https://blog.arduino.cc/)
-- [Arduino Projektit](https://create.arduino.cc/projecthub)
+Historiallisesti Arduino on avannut mahdollisuuden ohjelmoimiseen ja elektroniikkaprojektien kasaukseen kaikentasoisille innokkaille. Uuden projektin aloittaminen Arduinolla on yksinkertainen prosessi kiitos kätevän käyttöliittymän.
+
+Vaihtoehdoista on hyvä mainita esimerkiksi Raspberry Pi, joka tarjoaa tehokkaamman alustan, mutta on samalla monimutkaisempi aloittelijoille.
+
+Arduinossa uuden projektin aloittaminen liittyy yleensä LEDin vilkuttamiseen. Tämä johtuu siitä, että se on yksinkertainen tehtävä, joka auttaa käsittämään, kuinka koodi ohjaa laitteen käyttäytymistä.
+
+## Katso myös
+
+1. [Arduino viralliset oppaat](https://www.arduino.cc/en/Tutorial/HomePage)
+2. [Raspberry Pi aloittelijoille](https://projects.raspberrypi.org/en/pathways/getting-started-with-raspberry-pi)
+3. [31 DIY Arduino](https://www.instructables.com/DIY-Arduino-or-The-DIY-Duino/)

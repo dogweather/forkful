@@ -1,7 +1,7 @@
 ---
-title:                "Mayúsculas en una cadena"
-html_title:           "Elixir: Mayúsculas en una cadena"
-simple_title:         "Mayúsculas en una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Elixir: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Capitalizar una cadena de texto significa convertir la primera letra de cada palabra en mayúscula, y las demás en minúscula. Los programadores suelen hacer esto para que la cadena sea más legible y cumpla con ciertos estándares de formato.
+# Elixir y El Arte de Capitalizar Cadenas de Texto
 
-## Cómo hacerlo:
-Se puede capitalizar una cadena utilizando la función `String.capitalize/1` de Elixir. Para ello, simplemente se debe pasar la cadena como argumento. Por ejemplo:
-```
-Elixir String.capitalize("hola mundo") 
-# Output: "Hola mundo"
-```
-Si se quiere capitalizar todas las palabras de una cadena, se puede usar la función `String.capitalize_words/1`. Por ejemplo:
-```
-Elixir String.capitalize_words("hola mundo") 
-# Output: "Hola Mundo"
+## ¿Qué & Por Qué?
+
+Capitalizar una cadena de texto significa convertir su primera letra en mayúscula. Los programadores lo hacen para mejorar la legibilidad o para cumplir convenciones estilísticas.
+
+## Cómo se hace:
+
+Aquí te muestro un pedazo de código ilustrativo. Esto es cómo capitalizarías una cadena de texto en Elixir:
+
+```Elixir
+"elixir es asombroso"
+|> String.split
+|> Enum.map(&String.capitalize/1)
+|> Enum.join(" ")
 ```
 
-## Profundizando:
-La capitalización de cadenas tiene su origen en la convención de escribir los títulos de libros y nombres propios con la primera letra en mayúscula. En el mundo de la programación, esto ayuda a estandarizar el formato de las cadenas y facilitar su lectura para otros programadores. 
+La salida sería:
 
-Otra forma de capitalizar una cadena de texto es mediante la función `String.upcase/1`, que convierte todas las letras en mayúscula. También se puede utilizar `String.downcase/1` para convertir todas las letras en minúscula.
+```Elixir
+"Elixir Es Asombroso"
+```
 
-## Ver también:
-- [Documentación oficial de Elixir sobre cadenas](https://hexdocs.pm/elixir/String.html)
-- [Tutorial de Elixir sobre formateo de cadenas](https://elixir-lang.org/getting-started/string-interpolation-and-formatting.html)
+## Un Buceo Más Profundo:
+
+A lo largo de la historia, los lenguajes de programación han proporcionado diferentes formas de capitalizar una cadena de texto. En Elixir, puedes usar funciones integradas como `String.capitalize/1`. No obstante, si estás trabajando con cadenas más grandes o necesitas un mayor control, puedes utilizar la combinación de `String.split` y `Enum.map`.
+
+Alternativamente, si tienes una cadena en español con caracteres no ASCII, podrías usar `:unicode.characters_to_nfc_binary/1` para obtener una capitalización adecuada. Sin embargo, esta función actualmente no soporta todas las características de capitalización del español.
+
+La implementación de `String.capitalize/1` en Elixir utiliza la función `downcase` de la biblioteca estándar de Erlang para convertir toda la cadena a minúsculas antes de hacer la primera letra mayúscula.
+
+## Ver También:
+
+Para leer más sobre las funciones de cadena de Elixir, visita la [documentación oficial](https://hexdocs.pm/elixir/String.html). La [documentación de Erlang](https://erlang.org/doc/man/string.html) también puede resultar útil para aquellos interesados en entender las interacciones más bajas del lenguaje.

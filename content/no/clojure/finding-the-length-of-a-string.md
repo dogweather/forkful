@@ -1,7 +1,7 @@
 ---
-title:                "Å finne lengden på en streng"
-html_title:           "Clojure: Å finne lengden på en streng"
-simple_title:         "Å finne lengden på en streng"
+title:                "Finne lengden på en streng"
+html_title:           "Arduino: Finne lengden på en streng"
+simple_title:         "Finne lengden på en streng"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#🔑 Finn Lengden av En Streng
-
 ## Hva & Hvorfor?
 
-For å finne lengden av en streng i Clojure, kan du bruke funksjonen `(count)`. Dette kan være nyttig når du trenger å behandle strenger på en bestemt måte, for eksempel å begrense antall tegn som skal vises i en tekstboks eller å kontrollere gyldigheten av et passord med en minimumslengde.
+Å finne lengden på en streng betyr å telle antall tegn en streng inneholder. Det er en grunnleggende operasjon i programmering som brukes for å manipulere data, utføre valideringer, og løse mange daglige programmeringsoppgaver.
 
 ## Hvordan:
 
-```Clojure
-(count "Hei, dette er en streng!")
-;; Output: 26
-```
+Clojure benytter funksjonen `count` for å beregne antall elementer i en samling, eller antall tegn i en streng. Her er et enkelt eksempel:
 
 ```Clojure
-(count "12345")
-;; Output: 5
+(def string-lenght-example 
+     (fn [input-string] 
+        (count input-string)))
+
+(println "Strenglengden er : " (string-lenght-example "Hei, Norge"))
+```
+Når du kjører koden ovenfor, skal det returneres følgende: 
+```Clojure
+Strenglengden er : 10
 ```
 
 ## Dypdykk
 
-En lengdefunksjon har eksistert i Clojure siden begynnelsen, men det er viktig å merke seg at null-verdier ikke teller som en karakter. Alternativt kan du bruke funksjonen `(str)`, som returnerer strengrepresentasjonen av et objekt og deretter telle lengden på denne strengen. Implementasjonen av `(count)` funksjonen bruker Java-metoden `length()` som returnerer antall tegn i en streng.
+1. Historisk kontekst: I eldre programmeringsspråk, var det utfordrende å finne lengden på en streng. For eksempel, i C måtte man iterere gjennom hvert tegn til man fant det avsluttende null-tegnet. Med høy-nivå språk som Clojure, er det betydelig enklere.
 
-## Se også:
+2. Alternativer: Selv om `count`-funksjonen er den vanligste måten å finne lengden til en streng i Clojure, kan andre funksjoner som `size` eller `length` bli brukt i forskjellige sammenhenger og samlinger.
 
-Clojure Dokumentasjon: https://clojure.org/api/cheatsheet
+3. Implementeringsdetaljer: I Clojure implementeres `count`-funksjonen ved å kalle Java's innebygde `length`-metode. Det driver rask og nøyaktig beregning av strenglengden.
 
-Java String-metoder: https://www.w3schools.com/java/java_ref_string.asp
+## Se Også
+
+For mer informasjon om strenger og deres behandling i Clojure, sjekk ut følgende ressurser:
+
+- "Clojure for the Brave and True" av Daniel Higginbotham (http://www.braveclojure.com/core-functions-in-depth/)
+- Offisiell Clojure dokumentasjon - Count (https://clojuredocs.org/clojure.core/count)
+- Clojure - Strenger (https://clojure.org/guides/learn/strings)

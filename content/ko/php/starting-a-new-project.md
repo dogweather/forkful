@@ -1,6 +1,6 @@
 ---
 title:                "새 프로젝트 시작하기"
-html_title:           "PHP: 새 프로젝트 시작하기"
+html_title:           "Arduino: 새 프로젝트 시작하기"
 simple_title:         "새 프로젝트 시작하기"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 프로젝트 시작하는 법
+# 새로운 프로젝트 시작하기: PHP
 
-## 무엇과 왜?
-새 프로젝트를 시작하는 것은 당신이 새로운 아이디어를 구현하거나 기존 프로젝트를 개선하기 위해서입니다. 프로그래머들은 항상 최신 기술을 적용하고자 하기 때문에 새로운 프로젝트를 시작하는 것은 중요한 일입니다.
+## 무엇 & 왜?
 
-## 하는 법:
-```PHP
-<?php
-echo "새 프로젝트를 시작하는 방법을 알아볼까요?";
-//출력: "새 프로젝트를 시작하는 방법을 알아볼까요?"
-```
+새로운 프로젝트를 시작하는 것은 코드 작성의 초기 단계입니다. 프로그래머가 이를 수행하는 이유는 새로운 아이디어를 실현하거나 문제를 해결하기 위해서입니다.
+
+## 어떻게:
+
+간단한 PHP 스크립트를 작성해봅시다. 이것은 'Hello World' 메시지를 출력하는 간단한 예입니다.
 
 ```PHP
 <?php
-//새로운 파일 생성
-$file = fopen("new_project.php", "w");
-//출력: 파일이 생성됨.
+echo 'Hello, World!';
+?>
+```
+이 스크립트를 실행하면, 아래와 같이 출력됩니다:
+```
+Hello, World!
 ```
 
-```PHP
-<?php
-//파일에 새 코드 작성
-$file = fopen("new_project.php", "w");
-fwrite($file, "<?php echo 'Hello, world!';");
-fclose($file);
+## 깊게 살펴보기 :
 
-//출력: 파일에 "Hello, world!" 출력
-```
+#### 1. 역사적 맥락
+PHP는 1994년 Rasmus Lerdorf에 의해 개발되었습니다. 초기에는 간단한 웹 양식과 데이터베이스 연결을 처리할 수 있도록 설계되었습니다. 지금은 전 세계 수많은 웹사이트와 시스템에서 사용되고 있습니다.
 
-## 깊이 파헤치기:
-새 프로젝트를 시작하는 것은 프로그래밍의 중요한 부분입니다. 프로그래머들은 새로운 아이디어를 수행하기 위해 항상 기존 프로젝트를 개선하거나 새로운 프로젝트를 시작합니다. PHP는 적은 양의 코드로 강력한 웹 애플리케이션을 만들 수 있는 유용한 도구입니다. 다른 언어들과는 달리, PHP는 웹 개발에 특화된 언어입니다. 그렇기 때문에 PHP를 사용하면 간편하게 웹 개발을 할 수 있습니다.
+#### 2. 대체 수단
+다른 웹 개발 언어로는 Python, Ruby, JavaScript 등이 있습니다. 이들은 각각의 장단점을 가지고 있지만, PHP는 쉬운 배우기와 넓은 호환성때문에 인기가 많습니다.
 
-## 이것도 볼까요?:
-- [PHP 공식 홈페이지](https://www.php.net/)
-- [PHP 수정됨: 다양한 PHP 사용예](https://www.youtube.com/watch?v=5yi8cAT59iI)
-- [PHP 시작하기: 기본 문법과 사용 예제](https://zetawiki.com/wiki/PHP_%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
+#### 3. 구현 세부
+PHP 프로젝트를 시작할 때, 여러가지 생각해야 할 사항들이 있습니다: 문제 정의, 요구 사항 수집, 솔루션 아키텍처 설계 등 다양한 요인들을 고려해야 합니다. 그리고 이러한 모든 것들은 결국 퀄리티 있는 코드로 이어져야 합니다.
+
+## 참고하기:
+- [PHP 공식 웹사이트](https://www.php.net/)
+- [PHP 매뉴얼](https://www.php.net/manual/ko/index.php)
+- [PHP 튜토리얼](https://www.w3schools.com/php/)

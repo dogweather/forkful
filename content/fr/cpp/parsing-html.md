@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de code html"
-html_title:           "C++: Analyse de code html"
-simple_title:         "Analyse de code html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,42 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+# Analyse Syntaxique en HTML en C++
 
-Le parsing HTML est le processus de conversion de code HTML en une structure de données utilisable par un programme. Les programmeurs utilisent le parsing HTML pour extraire des données spécifiques à partir de pages web pour les intégrer dans leurs propres applications.
+## Pourquoi et Quoi ?
 
-## Comment faire:
+Analyser l'HTML, c'est lire et interpréter du code HTML pour en extraire certaines informations. Les programmeurs le font pour obtenir une représentation compréhensible et manipulable des données structurelles d'un site web.
 
-Voici un exemple de code en C++ qui utilise la bibliothèque de parsing HTML "libxml2" pour extraire le titre d'une page web et l'afficher à l'écran:
+## Comment faire :
+
+Regardons un exemple de base d'extraction de titre d'une page web HTML à l'aide de la bibliothèque Gumbo :
 
 ```C++
-#include <stdio.h>
-#include <libxml/HTMLparser.h>
+#include <gumbo.h>
+#include <iostream>
 
-int main() {
-    char *url = "https://www.example.com";
-    htmlDocPtr doc = htmlReadFile(url, NULL, HTML_PARSE_NOBLANKS);
-    xmlChar *title = htmlNodeGetContent(xmlDocGetRootElement(doc)->childs);
-    printf("Le titre de la page est: %s", title);
-    xmlFree(title);
-    xmlFreeDoc(doc);
-    return 0;
-}
+void chercher_titre(GumboNode* noeud) {
+  if (noeud->type == GUMBO_NODE_ELEMENT &&
+      noeud->v.element.tag == GUMBO_TAG_TITLE) {
+    GumboNode* title_text = static_cast<GumboNode*>(noeud->v.element.children.data[0]);
+    std::cout << title_text->v.text.text << std::endl;
+    return;
+  }
+
+  GumboVector* enfants = &noeud->v.element.children;
+  for (unsigned int i = 0; i < enfants->length; ++i) {
+    chercher_titre(static_cast<GumboNode*>(enfants->data[i]));
+  }
 ```
 
-Output: 
-```
-Le titre de la page est: Example Domain
-```
+En exécutant ce code, vous obtiendrez le titre de la page HTML entrée.
 
-## Plongée en profondeur:
+## Approfondissement
 
-Le parsing HTML est devenu une pratique courante dans les années 1990 avec l'essor d'Internet et du World Wide Web. Bien que le langage HTML ait évolué depuis, le parsing reste une méthode efficace pour extraire des données à partir de pages web. Il existe également d'autres alternatives telles que les expressions régulières ou les outils de scraping web. Le parsing HTML peut être mis en œuvre à l'aide de bibliothèques telles que "libxml2" ou "boost::property_tree".
+Historiquement, le parsing HTML a été réalisé avec des expressions régulières, mais celles-ci ont leurs limites en raison de la complexité et de la flexibilité du HTML. Les bibilothèques comme Gumbo ont été développées pour fournir des parsers HTML plus robustes.
 
-## Voir aussi:
+D'autres alternatives existent également, telles que Beautiful Soup (Python) et html.parser (Python), jsoup (Java), htmlagilitypack (.NET) et d'autres. Chacun a ses propres avantages et inconvénients.
 
-Pour plus d'informations sur le parsing HTML en C++, consultez ces sources:
+Quant à l'implémentation, les parsers HTML utilisent généralement l'algorithme d'arbre DOM pour parcourir et analyser chaque nœud de l'arbre HTML.
 
-- [Documentation de libxml2](http://xmlsoft.org/html/libxml-HTMLparser.html)
-- [Documentation de boost::property_tree](https://www.boost.org/doc/libs/1_75_0/doc/html/property_tree.html)
-- [Comparaison des méthodes de parsing de données HTML en C++](https://medium.com/@olegrandini/comparing-c-libraries-for-data-scraping-html-parsing-beautification-101671fbd136)
+## En savoir plus
+
+Voici quelques liens utiles pour en savoir plus sur l'extraction HTML en C++ :
+
+1. [HTML parsing libraries](https://www.htmlgoodies.com/beyond/webmaster/toolbox/article.php/3888101/HTML-Parsing-Libraries-for-C-Cplusplus.htm)
+2. [Gumbo parser Github](https://github.com/google/gumbo-parser)
+3. [C++ HTML parser stack overflow discussion](https://stackoverflow.com/questions/126279/c-html-parser-library)

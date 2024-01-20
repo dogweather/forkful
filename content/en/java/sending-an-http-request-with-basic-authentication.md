@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Java recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Java"
 category:             "Java"
@@ -12,34 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Sending an HTTP request with basic authentication is a way to securely access a web resource that requires authentication. Programmers use it to send a request to a server with a username and password, which is then checked by the server to grant access to the desired resource.
+Sending an HTTP request with basic authentication is a method of accessing web resources that requires credentials - a username and password. Its primary use is to protect sensitive data by making sure requests are legitimate, hence preventing unauthorized access.
 
 ## How to:
 
-To send an HTTP request with basic authentication in Java, you first need to create an instance of the URL class with your desired web address. Then, you can create a HttpURLConnection object using the URL's openConnection() method. Next, set the request method to "GET" and add the authentication information to the request header using the setRequestProperty() method. Finally, you can use the getResponseCode() method to retrieve the server's response and access the requested resource.
+Here's how to send an HTTP request with basic authentication in Java using the `HttpURLConnection` class.
 
-```Java
-URL url = new URL("https://example.com/resource");
-HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-connection.setRequestMethod("GET");
-connection.setRequestProperty("Authorization", "Basic " + 
-    Base64.getEncoder().encodeToString("username:password".getBytes()));
-int responseCode = connection.getResponseCode();
-// access the resource using the connection's input stream
+```java
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
+import java.util.Base64;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        String userCredentials = "username:password";
+        String basicAuth = "Basic " + new String(Base64.getEncoder().encode(userCredentials.getBytes()));
+
+        URL url = new URL("http://example.com");
+        HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+
+        connection.setRequestProperty("Authorization", basicAuth);
+        connection.setRequestMethod("GET");
+        connection.setDoOutput(true);
+
+        InputStream content = (InputStream)connection.getInputStream();
+        BufferedReader in = new BufferedReader(new InputStreamReader(content));
+
+        in.lines().forEach(System.out::println);
+    }
+}
 ```
 
-Upon running the code, you'll receive a response code indicating the success or failure of the request, along with the desired resource if the request was successful.
+This code sends a GET request to `http://example.com` using a username and password set in `userCredentials`. The server's response is then printed line by line.
 
-## Deep Dive:
+## Deep Dive
 
-In the early days of the internet, authentication was not common, as most websites and resources were publicly accessible. However, with the rise of online transactions and the need to protect sensitive information, websites started implementing basic authentication as a means of ensuring only authorized users could access certain content.
+The basic HTTP authentication we're using here is as old as the internet. First defined in 1999 by the Internet Engineering Task Force, it's made to be simple and fast for resources that don't need high-level security.
 
-While basic authentication is a simple and easy way to secure a web resource, it has some limitations. For one, it is not the most secure method, as the username and password are transmitted in plain text, making it vulnerable to interception. As a result, other forms of authentication, such as OAuth, have become more popular.
+One alternative is Digest Authentication, which is a tad more secure as it involves hashing and doesn't send passwords in plaintext. However, it's slower due to the added complexity.
 
-To implement basic authentication, the username and password are typically encoded using Base64 encoding and added to the request header. It is important to note that this is not a form of encryption and should not be used as a security measure to store or transmit sensitive information.
+The `Base64.getEncoder().encode(userCredentials.getBytes())` line in the code means we're not sending our login details in plaintext. The encoder transforms the text to a format that can be reliably sent over networks.
 
-## See Also:
+Also, it's worth noting the downside of basic authentication: It's not as safe for high-security needs since the encoded username and password can be decoded quite easily. That's why for very secure needs, it's best to use stronger methods like OAuth, which also handles permissions between applications.
 
-- [Java API documentation for URL class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/URL.html)
-- [Java API documentation for HttpURLConnection class](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/HttpURLConnection.html)
-- [Base64 encoding in Java](https://www.baeldung.com/java-base64-encode-and-decode)
+## See Also
+
+- The Java `HttpURLConnection` Documentation: [https://docs.oracle.com/en/java/javase/11/docs/api/java.net/java/net/HttpURLConnection.html](https://docs.oracle.com/en/java/javase/11/docs/api/java.net/java/net/HttpURLConnection.html)
+- Overview of HTTP Authentication Schemes: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- More authentication options (OAuth, Bearer JWT, etc.): [https://auth0.com/docs/authorization/flows](https://auth0.com/docs/authorization/flows)

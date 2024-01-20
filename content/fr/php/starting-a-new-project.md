@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "PHP: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Getting Started"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi? 
+## Qu'est-ce que c'est & Pourquoi ?
 
-Lancer un nouveau projet est simplement le fait de commencer un nouveau projet de programmation en utilisant le langage PHP. Les programmeurs font cela pour créer de nouvelles applications, sites web ou logiciels pour répondre à des besoins spécifiques.
+Débuter un nouveau projet est la création d'une nouvelle application ou fonctionnalité à partir de zéro. Les développeurs le font pour résoudre un problème, améliorer un processus, ou simplement pour apprendre et expérimenter.
 
-## Comment faire:
+## Comment faire :
+
+Voyons comment créer simple projet PHP. Nous allons créer un fichier index.php qui affiche simplement "Bonjour le monde" lorsqu'il est exécuté dans un navigateur.
 
 ```PHP
 <?php
-
-// Créer un nouveau fichier PHP
-touch new_project.php;
-
-// Écrire du code de base
-echo "Hello World!";
+  echo "Bonjour le monde";
+?>
 ```
 
-Exemple de sortie: Hello World!
+Pas plus compliqué que ça ! Si vous avez bien configuré votre serveur web, ce code affichera "Bonjour le monde" lorsque vous accédez à votre fichier index.php.
 
-## Plongée profonde:
+## Plongée en profondeur :
 
-1. Contexte historique: PHP a été créé en 1995 par Rasmus Lerdorf pour faciliter la création de sites web dynamiques. Depuis lors, il est devenu l'un des langages les plus populaires pour le développement web.
+1) **Contexte historique** : PHP, acronyme de "PHP: Hypertext Preprocessor", est utilisé depuis 1994. C'est toujours une option de choix pour le développement web.
 
-2. Alternatives: Bien qu'il existe de nombreuses alternatives à PHP, telles que Python, Ruby et Java, PHP reste un choix populaire en raison de sa simplicité, de sa grande communauté de développeurs et de sa facilité d'utilisation pour les débutants.
+2) **Alternatives** : D'autres langages comme JavaScript (Node.js), Python (Django ou Flask) et Ruby (Ruby on Rails) sont également populaires pour démarrer de nouveaux projets.
 
-3. Détails de mise en œuvre: Pour démarrer un nouveau projet, vous devez vous assurer que votre environnement de développement est configuré pour PHP. Vous aurez besoin d'un serveur web tel que Apache et d'une base de données pour stocker les données.
+3) **Détails d'implémentation** : Pour exécuter votre projet PHP, vous aurez besoin d'un serveur web comme Apache ou Nginx. Vous pouvez aussi utiliser des environnements prêt à l'emploi comme WampServer ou XAMPP qui incluent PHP, un serveur web et une base de données.
 
-## Voir aussi:
+## Pour en savoir plus :
 
-- [Documentation officielle de PHP](https://www.php.net/docs.php)
-- [Liste de contrôle pour démarrer un nouveau projet en PHP](https://blog.teamtreehouse.com/a-simple-php-project-checklist)
-- [Tutoriel pour démarrer un nouveau projet en PHP](https://www.tutorialspoint.com/php/php_project_setup.htm)
+- Documentation officielle de PHP : https://www.php.net/manual/fr/
+- Tutoriel sur l'installation d'un environnement de développement PHP : https://www.w3schools.com/php/php_install.asp
+- Liste de projets PHP open-source intéressants : https://php.libhunt.com/

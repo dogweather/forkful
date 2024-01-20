@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "Python: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "Gleam: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -10,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué se hace?
+## ¿Qué y Por Qué?
 
-Comprobar si un directorio existe es una tarea común en la programación en Python. Se utiliza para confirmar si una carpeta específica existe en el sistema antes de realizar alguna operación en ella. Esto puede evitar errores y mejorar la eficiencia en el código.
+Verificar si un directorio existe en Python es simplemente comprobar si un determinado camino contiene un directorio. Los programadores lo hacen para evitar errores al intentar acceder a un directorio inexistente.
 
-## ¿Cómo hacerlo?
+## ¿Cómo se hace?
 
-Para verificar si un directorio existe en Python, podemos utilizar la función `os.path.exists()` que devuelve `True` si el directorio existe y `False` si no existe. A continuación se muestra un ejemplo de cómo comprobar si la carpeta "Documentos" existe en el directorio actual:
+Para verificar si un directorio existe en Python, usamos el módulo `os` y la función `os.path.exists`.
 
 ```Python
 import os
-if os.path.exists("Documentos"):
-  print("¡El directorio existe!")
-else:
-  print("¡El directorio no existe!")
+
+# Directorio a verificar
+dir_path = "/home/user/directory"
+
+# Verificar si el directorio existe
+exists = os.path.exists(dir_path)
+
+print("¿El directorio existe?: ", exists)
 ```
 
-Si queremos confirmar que el directorio es realmente una carpeta y no un archivo, podemos utilizar `os.path.isdir()` que también devuelve `True` o `False`. Por ejemplo:
+Resultado:
 
 ```Python
-if os.path.isdir("Documentos"):
-  print("¡Es una carpeta!")
-else:
-  print("¡No es una carpeta!")
+¿El directorio existe?: True
 ```
 
-## Profundizando
+Si el directorio existe, la función `os.path.exists` devolverá `True`. Si no existe, devolverá `False`.
 
-La función `os.path.exists()` se basa en el módulo `os.path` de Python, que ofrece una amplia gama de funciones para manipular rutas y nombres de archivo. Además, existen otras formas de comprobar si un directorio existe, como utilizar la función `os.listdir()` para obtener una lista de todos los elementos en un directorio y luego buscar el directorio en esa lista.
+## Buceo Profundo
 
-También hay módulos externos, como `pathlib`, que proporcionan una forma más moderna de interactuar con rutas y archivos en Python.
+La función `os.path.exists()` es parte del módulo `os` que ha estado en Python desde sus inicios. Antes, la gente tenía que usar llamadas del sistema para comprobar la existencia de un directorio, lo cual era más complicado y propenso a errores.
 
-## Ver también
+Alternativamente, Python también proporciona `os.path.isdir()` que no sólo verifica la existencia de un camino, sino que también comprueba si ese camino es un directorio.
 
-- Documentación oficial sobre el módulo `os.path` en Python: https://docs.python.org/3/library/os.path.html
-- Documentación de `pathlib`: https://docs.python.org/3/library/pathlib.html
+```Python
+import os
+
+dir_path = "/home/user/directory"
+
+# Verificar si es un directorio
+is_directory = os.path.isdir(dir_path)
+
+print("¿Es un directorio?: ", is_directory)
+```
+
+En lo que respecta a la implementación, `os.path.exists` usa la función `stat()` del sistema operativo subyacente, que obtiene los metadatos del fichero o directorio. Si `stat()` informa de un error, `os.path.exists` asume que el camino no existe.
+
+## Ver También
+
+Podrás encontrar más información en la [documentación oficial de Python](https://docs.python.org/3/library/os.path.html) y en esta [guía de manipulación de archivos y directorios en Python](https://realpython.com/working-with-files-in-python/) de Real Python.

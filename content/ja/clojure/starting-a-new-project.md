@@ -1,6 +1,6 @@
 ---
 title:                "新しいプロジェクトを始める"
-html_title:           "Clojure: 新しいプロジェクトを始める"
+html_title:           "C: 新しいプロジェクトを始める"
 simple_title:         "新しいプロジェクトを始める"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,33 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-新しいプロジェクトを始めるとは、コードを書いたり、アプリケーションを作ったりすることです。プログラマーは、新しいアイデアを実現するために、新しいプロジェクトを始めます。
+## 何となぜ?
 
-## 方法：
+プロジェクトの新設は、特定の目標を達成するために始めるプログラムのセットのことを指します。プログラマーは新しいアイデアを探索し、必要な機能を追加、改善するために、新しいプロジェクトを始めます。
+
+## どうやって:
+
+Clojureで新しいプロジェクトを始めるには、Leiningenという素晴らしいツールを利用します。以下にその方法を示します。
+
 ```Clojure
-(defn hello-world []
-  "Hello world!")
-```
-```
-Hello world!
+;; Leiningenのインストール
+$ brew install leiningen
+
+;; 新しいプロジェクトの作成
+$ lein new my-first-project
 ```
 
-## 深堀り：
-新しいプロジェクトを始めるにあたり、過去のプログラミング言語では初期設定や環境構築に時間がかかりました。しかし、ClojureではLeiningenというツールを使うことで簡単に新しいプロジェクトを始めることができます。
+これで、'my-first-project'という新しいClojureプロジェクトが作成されます。
 
-### 代替手段：
-Clojure以外にも、PythonやRubyなどのプログラミング言語でも新しいプロジェクトを始めることができます。しかし、Clojureは関数型プログラミング言語であり、コードの保守性や拡張性が高く、大規模なプロジェクトにおいても優れたパフォーマンスを発揮します。
+## ディープダイブ
 
-### 実装の詳細：
-```Clojure
-(defproject my-project "1.0.0"
-  :description "My new project"
-  :dependencies [[org.clojure/clojure "1.10.2"]])
-```
-新しいプロジェクトを始めるには、Leiningenをインストールする必要があります。上記のように、プロジェクトの名前とバージョン、そして依存関係を設定することで、簡単に新しいプロジェクトを始めることができます。
+Clojureのプロジェクトを新規作成することについて、その歴史的背景、代替手段、具体的な実装について深掘りします。
 
-## 関連情報：
-- [Clojureの公式サイト](https://clojure.org/)
-- [LeiningenのGitHubページ](https://github.com/technomancy/leiningen)
-- [Clojureプログラミング入門](https://clojure.jp/document/core/)
+1. **歴史的背景**: Clojureは2007年にRich Hickeyによって作られ、関数型プログラミング言語として一世を風靡しました。新プロジェクトの作成と管理のためにLeiningenが開発されました。
+
+2. **代替手段**: Leiningen以外にも、BootやClojure CLIなど、他のプロジェクト管理ツールを利用することも可能です。
+
+3. **実装詳細**: 新しいプロジェクトを作る際、Clojureはプロジェクトのテンプレートを作成し、それに自動的にプロジェクトの基本的な構造を適用します。
+
+## 参考資料
+
+1. [Official Clojure Documentation](https://clojure.org/)
+2. [Leiningen Documentation](https://leiningen.org/)
+3. [Boot Documentation](https://boot-clj.com/)
+4. [Clojure CLI User Guide](https://clojure.org/guides/deps_and_cli)

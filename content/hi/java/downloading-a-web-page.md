@@ -1,7 +1,7 @@
 ---
-title:                "एक वेब पृष्ठ डाउनलोड करना"
-html_title:           "Java: एक वेब पृष्ठ डाउनलोड करना"
-simple_title:         "एक वेब पृष्ठ डाउनलोड करना"
+title:                "एक वेब पेज डाउनलोड करना"
+html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
+simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -11,31 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-जावा एक उचित आवृत्ति में किसी वेब पृष्ठ को डाउनलोड करना है क्या है और इसे प्रोग्रामर्स क्यों करते हैं।
 
-## कैसे करे:
-जावा में वेब पृष्ठ को डाउनलोड करने के लिए हम एक रेडर क्लास बना सकते हैं जो URL को प्राप्त करेगा और उसे स्ट्रिंग में अनामित करेगा। उसके बाद हम स्ट्रिंग को फाइल में लिख सकते हैं। निम्न दिए गए कोड ब्लॉक में एक उदाहरण दिया गया है:
+वेब पेज डाउनलोड करना मतलब वेब सर्वर से वेब पेज को अपने कंप्यूटर में स्थानांतरित करना। कोडर इसे डेटा एनालिसिस, वेब स्क्रेपिंग, और ऑफलाइन उपयोग के लिए करते हैं।
+
+## कैसे करें:
+
 ```Java
-try{
-    URL url = new URL("https://www.example.com/");
-    BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+import java.io.*;
+import java.net.URL;
 
-    String line;
-    while ((line = reader.readLine()) != null) {
-        System.out.println(line);
-    }
-    reader.close();
-} catch (IOException e) {
-    e.printStackTrace();
+public class Main {
+   public static void main(String[] args) throws Exception {
+      URL url = new URL("http://www.example.com");
+      BufferedReader reader = new BufferedReader(new InputStreamReader(url.openStream()));
+      String line;
+
+      while((line = reader.readLine()) != null) {
+         System.out.println(line);
+      }
+      reader.close();
+   }
 }
 ```
-यहां, हम वेब पृष्ठ से प्रत्येक पंक्ति को प्रिंट करते हैं।
+इसे जब रन किया जाता है, तो यह example.com का एचटीएमएल स्रोत कोड दिखाता है:
 
-## गहराई में जाएं:
-इतिहासी परिप्रेक्ष्य, वैकल्पिक उपाय और वेब पृष्ठ को डाउनलोड करने के लिए आवश्यक तरीकों जैसे कि HTTP कनेक्शन, कुकी एवं संस्करण जानने के बाद आप स्वयं अपनी कोड में और आसानी से वेब पृष्ठों को डाउनलोड कर सकते हैं।
+```Java
+<!doctype html>
+<html>
+<head>
+   <title>Example Domain</title>
+   ...
+```
+## गहरी डाइव
 
-## देखें भी:
-अधिक जानकारी के लिए, आप निम्न लिंक्स का उपयोग कर सकते हैं:
-- जावा डॉक्यूमेंटेशन: <https://docs.oracle.com/javase/10/docs/api/java/net/URL.html>
-- जावा इमेज को मेमोरी में डाउनलोड करना: <https://www.geeksforgeeks.org/downloading-image-web-using-java/>
-- जावा कोड में वेब पृष्ठों को डाउनलोड करना: <https://mkyong.com/java/how-to-download-file-from-website-java-jsp/>
+वेब पेज डाउनलोड करने की क्षमता का इस्तेमाल करके, वेब का विस्तार और क्षमताएं बढ़ती गई हैं। वास्तविक दुनिया में, कई बार प्रोग्रामर्स लाइब्रेरीज , जैसे कि JSoup (Java Site Scraper) का उपयोग करते हैं, जो एचटीएमएल पैर्सिंग, CSS-like selectors, और अन्य सुविधा समर्थन करता है।
+
+## संबंधित देखें:
+
+- [Java के साथ HTML पृष्ठों को पर्स करने के लिए JSoup गाइड](https://jsoup.org/cookbook/extracting-data/selector-syntax)
+- [Java NIO के साथ वेब पेज डाउनलोड करने के लिए गाइड](https://www.baeldung.com/java-nio-download-file)
+- [Apache HttpClient लाइब्रेरी का उपयोग कर के वेब पेज डाउनलोड](https://mkyong.com/java/apache-httpclient-examples/)

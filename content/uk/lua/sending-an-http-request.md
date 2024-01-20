@@ -1,7 +1,7 @@
 ---
-title:                "Відправлення http-запиту."
-html_title:           "Lua: Відправлення http-запиту."
-simple_title:         "Відправлення http-запиту."
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що це і чому роблять програмісти?
+## Що це таке і навіщо?
 
-Відправка HTTP-запиту - це коли програміст використовує команду для взаємодії з іншими веб-серверами. Це може бути корисно для отримання даних або відправки інформації на іншу сторону. Це є одним з ключових елементів веб-розробки і допомагає більшій функціональності та зручності для користувача.
+HTTP-запит - це засіб, яким програми на вашому комп'ютері звертаються до серверів в Інтернеті, щоб отримати або відправити інформацію. Програмісти використовують їх, щоб інтерактивно працювати з веб-ресурсами.
 
 ## Як це зробити:
 
-```Lua
-local http = require("socket.http") -- імпортуємо http-бібліотеку
-local url = "https://www.google.com" -- сайт, на який хочемо відправити запит
-local body, code, headers = http.request(url) -- відправляємо запит і отримуємо відповідь
-print(code) -- виводимо код відповіді, наприклад 200 (OK)
+Lua допомагає нам виконувати HTTP-запити з допомогою модулів, таких як `luasocket` і `luasec`. 
+
+У випадку з GET-запитом:
+```lua
+http = require('socket.http')
+url = "http://example.com"
+response, status = http.request(url)
+print(response)
 ```
-Це простий приклад використання бібліотеки socket.http для відправки HTTP-запиту на вказаний URL. У змінній "body" зберігається вміст веб-сторінки, "code" містить код відповіді, а "headers" - заголовки. В нашому прикладі ми просто виводимо код відповіді. 
 
-```Lua
-local http = require("socket.http")
-local url = "https://www.example.com"
-local body, code, headers = http.request{
-    url = url,
-    method = "POST", -- вказуємо метод запиту (GET за замовчуванням)
-    redirect = true, -- встановлюємо перенаправлення на інший URL, якщо необхідно
-    headers = {
-        ["Content-Type"] = "application/json" -- вказуємо тип контенту, який буде відправлений
-    },
-    source = io.open("data.json"):read("*all"), -- вказуємо файл з даними для відправки
-}
-print(body) -- виводимо вміст веб-сторінки, якщо такий є
+Вивід:
 ```
-У цьому прикладі ми використовуємо додаткові параметри для конфігурації нашого запиту. Наприклад, ми вказуємо метод запиту (POST замість GET), дозволяємо перенаправлення на інший URL, вказуємо заголовок з типом контенту та вказуємо джерело даних для відправки.
+<!doctype html>...
+```
 
-## Глибший розгляд
+Для POST-запиту:
+```lua
+http = require('socket.http')
+url = "http://example.com/form_submit"
+body = "name=John%20Doe&email=john%40example.com"
+response, status = http.request(url, body)
+print(response)
+```
+Зверніть увагу, що тіло повинно бути в форматі `application/x-www-form-urlencoded` для POST-запиту.
 
-Відправка HTTP-запитів є важливою частиною веб-розробки і дозволяє взаємодіяти з іншими веб-серверами. Використання бібліотеки socket.http є одним з способів виконання цієї задачі в мові Lua. Існують інші бібліотеки, такі як luasocket, які також пропонують функціонал для відправки HTTP-запитів. Кожна з них має свої переваги та недоліки, тому вибір залежить від конкретного проекту.
+## Поглиблений аналіз
 
-## Дивіться також
+Lua не була заснована з можливістю відправляти HTTP-запити "з коробки". Ця функція була додана пізніше через зросле потреби програмістів. Альтернативи `luasocket` і `luasec` включають більш сучасні модулі, такі як `lua-http` або `lua-resty-http`.
 
-- Офіційна документація Lua: https://www.lua.org/docs.html
-- Документація бібліотеки socket.http: http://w3.impa.br/~diego/software/luasocket/http.html
-- Документація бібліотеки luasocket: http://w3.impa.br/~diego/software/luasocket/
-- Офіційний сайт Lua: https://www.lua.org/
+HTTP-запити - це ключовий компонент розробки веб-застосунків, але їх застосування далеко не обмежується цим. Вони використовуються для віддаленого керування, отримання даних в реальному часі, роботи з API та інше.
+
+## Додатково
+
+- Стандарт HTTP: https://www.ietf.org/standards/rfcs/
+- Модуль `luasocket`: https://github.com/diegonehab/luasocket
+- Модуль `lua-http`: https://github.com/daurnimator/lua-http/
+- Модуль `lua-resty-http`: https://github.com/ledgetech/lua-resty-http

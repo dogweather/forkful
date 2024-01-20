@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden på en sträng"
-html_title:           "Java: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att hitta längden på en sträng innebär helt enkelt att räkna antalet tecken i en given sträng. Detta är en vanlig uppgift för programmerare eftersom det hjälper till att hantera och manipulera text på ett effektivt sätt.
+## Vad & Varför?
 
-Hur du gör:
-Här är en kodexempel i Java för att hitta längden på en sträng:
+Att hitta längden på en sträng innebär att räkna antalet tecken den innehåller. Programmerare gör detta för att manipulera strängar effektivare när de kodar.
 
-```Java
-String str = "Hejsan!";
-int length = str.length();
-System.out.println("Strängen är " + length + " tecken lång.");
-```
+## Så här gör du:
 
-Output:
+För att hitta en stränglängd i Java använder du `length()` metoden. Ta en titt på följande exempel:
 
 ```Java
-Strängen är 7 tecken lång.
+public class Main {
+    public static void main(String[] args) {
+        String hej = "Hej Sverige!";
+        int length = hej.length();
+        System.out.println("Stränglängden är: " + length);
+    }
+}
+```
+ När du kör koden ovan, kommer output att vara:
+
+```
+Stränglängden är: 12
 ```
 
-En annan metod som också kan användas är `str.toCharArray().length`, som konverterar strängen till en teckenlista och räknar sedan antalet tecken.
+## Djupdykning
 
-För att hitta längden på en sträng med användarinput, kan `Scanner`-klassen användas för att läsa in en sträng från användaren och sedan tillämpa `length()`-metoden för att räkna antalet tecken.
+Hämtning av en strängs längd har varit en grundläggande operation sedan programmeringens tidiga dagar. I tidiga språk, inklusive C och Assembly, var det dock nödvändigt att iterera genom en sträng karaktär för karaktär tills ett nullvärde (eller "end of string"-tecken) hittades. Javas inbyggda `length()`-metod gör att du kan hoppa över denna potentiellt tidskrävande process.
 
-Djupdykning:
-Att hitta längden på en sträng är en viktig del av textbehandling i programmering. Det är en vanlig uppgift som behövs för att beräkna eller manipulera strängar, som att kontrollera om en sträng är tom eller hitta en viss del av en sträng. Det är också en grundläggande kunskap som behövs för att förstå mer avancerade koncept inom textbehandling.
+Alternativt kan du använda `codePointCount` metoden om din sträng inkluderar Unicode-tecken. Observera dock att `codePointCount` kan ge olika resultat jämfört med `length()`.
 
-I Java finns det flera alternativ för att hitta längden på en sträng. Utöver `length()`-metoden, som användes i exempelkoden ovan, kan `str.toCharArray().length` användas, liksom `str.getBytes().length`. Båda dessa metoder räknar också antalet tecken i en sträng.
+Implementationen av `length()` i klassen String i Java är ganska enkel. Metoden returnerar helt enkelt värdet av en intern variabel som håller reda på strängens längd – ingen loop behövs.
 
-Implementationen av `length()`-metoden inkluderar en variabel vid namn `count` som håller koll på antalet loopar som behövs för att hitta längden på strängen. Sedan returneras denna `count`-variabel, som är antalet tecken i strängen. 
+## Se även:
 
-Se även:
-- Officiell Java-dokumentation för `String.length()`-metoden: https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#length-- 
-- Javavideodemonstration om hur man hittar längden på en sträng: https://youtu.be/06iTMcDl5cA
+För mer information om metoden `length()` och dess användning, besök Javas officiella dokumentation: [https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html#length()](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html#length())
+
+För en grundlig jämförelse mellan `length()` och `codePointCount()`, se denna StackOverflow-tråd: [https://stackoverflow.com/questions/12437545/difference-between-string-length-and-string-codepointcount-in-java](https://stackoverflow.com/questions/12437545/difference-between-string-length-and-string-codepointcount-in-java)

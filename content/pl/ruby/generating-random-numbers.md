@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie losowych liczb"
-html_title:           "Ruby: Tworzenie losowych liczb"
-simple_title:         "Tworzenie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Dlaczego & PoCo?
+## Co i dlaczego?
+Generowanie liczb losowych to proces tworzenia ciągu liczb, które są nieprzewidywalne i nie mają żadnego wzorca. Programiści robią to na szereg powodów, takich jak testowanie, symulowanie zdarzeń losowych, tworzenie gier, a nawet dla bezpieczeństwa.
 
-Generowanie losowych liczb jest jednym z podstawowych zadań programistów. Pozwala to na tworzenie różnych symulacji, gier, testów i wielu innych rzeczy. Innymi słowy, jest to niezbędne narzędzie w zdecydowanej większości projektów informatycznych.
+## Jak to zrobić:
+W Ruby generowanie liczb losowych jest proste i intuicyjne. Użyjemy wbudowanej metody `rand`. Poniżej znajduje się przykład generowania liczb losowych od 0 do 10.
 
-# Jak to zrobić:
-
-W Ruby istnieje wiele różnych sposobów na generowanie losowych liczb. Jednym z nich jest użycie metody `rand` z biblioteki `Kernel`. Oto przykład:
-
-```ruby
-puts rand(10)	# wygenerowanie losowej liczby od 0 do 10
+```Ruby
+losowa_liczba = rand(11)
+puts losowa_liczba
 ```
 
-Wynik może wyglądać na przykład tak: `7`.
+Po uruchomieniu tego skryptu, otrzymasz losową liczbę od 0 do 10.
 
-Jeśli chcemy wygenerować wiele liczb naraz, możemy skorzystać z metody `times` w połączeniu z `rand`:
+## Głębsze zanurzenie
+W dawnym kontekście historycznym, generowanie liczb losowych było funkcją relewantną tylko dla matematyków i kryptografów. Dopiero wraz ze wzrostem technologicznym, programiści zaczęli to wykorzystywać w różnych dziedzinach.
 
-```ruby
-5.times { puts rand(100) }	# wygenerowanie 5 losowych liczb od 0 do 100
-```
+Konkretnie w Ruby, alternatywą dla metody `rand` jest `srand`, która umożliwia generowanie tych samych ciągów liczb losowych w różnych uruchomieniach programu. Jest przydatna w testowaniu funkcji, które zależą od danych losowych.
 
-Możemy również wygenerować liczbę całkowitą z zakresu przy użyciu metody `rand` z podaniem dwóch argumentów, czyli początku i końca zakresu:
+Przy implementacji generatorów liczb losowych, warto zwrócić uwagę na "ziarno" generatora. Różne ziarna generują różne ciągi liczbowe, ale ten sam nasiono zawsze przyniesie ten sam ciąg.
 
-```ruby
-puts rand(1..100)	# wygenerowanie losowej liczby całkowitej od 1 do 100
-```
+## Zobacz też
+Przydatne linki do dalszego czytania i zrozumienia generowania liczb losowych:
 
-# Głębszy wgląd:
+1. [Random number generator - Ruby Docs](https://ruby-doc.org/core-2.6.3/Random.html)
+2. [How to Generate Random Numbers in Ruby](https://www.thoughtco.com/generate-random-numbers-in-ruby-2907768)
+3. [Exploring Random Numbers in Ruby](https://www.sitepoint.com/exploring-random-numbers-ruby/).
 
-Generowanie losowych liczb jest jednym z najstarszych zadań programistów. Już w latach 50. XX wieku istniały różne algorytmy, które miały na celu generowanie liczb pseudolosowych. Jednym z najbardziej popularnych jest metoda LCG (Linear Congruential Generator). Obecnie jednak istnieje wiele innych, bardziej skomplikowanych i bezpieczniejszych sposobów na generowanie losowych liczb.
-
-W Ruby istnieją również inne biblioteki do generowania liczb losowych, takie jak `SecureRandom`, która zapewnia większe bezpieczeństwo podczas generowania liczb pseudolosowych. Istnieją również biblioteki dedykowane do generowania konkretnych typów liczb, na przykład `RandomInteger` do generowania liczb całkowitych.
-
-# Zobacz również:
-
-- [Ruby Dokumentacja - Metoda `rand`](https://ruby-doc.org/core-3.0.2/Kernel.html#method-i-rand)
-- [Ruby Dokumentacja - Biblioteka `SecureRandom`](https://ruby-doc.org/stdlib-3.0.2/libdoc/securerandom/rdoc/SecureRandom.html)
-- [RandomInteger gem](https://github.com/mayerdan/random_integer)
+Pamiętaj, praktyka czyni mistrza. Próbuj generować różne typy danych losowych, a z czasem nabierzesz większej pewności.

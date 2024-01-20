@@ -1,7 +1,7 @@
 ---
-title:                "Mallien määritelmän täsmäävien merkkien poistaminen."
-html_title:           "Clojure: Mallien määritelmän täsmäävien merkkien poistaminen."
-simple_title:         "Mallien määritelmän täsmäävien merkkien poistaminen."
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,23 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Poistaminen merkkijonosta voi äkkiseltään kuulostaa hämmentävältä, mutta kyseessä on yksinkertaisesti tietyllä kaavalla mätsäävien merkkien poistaminen merkkijonosta. Tämä on hyödyllistä esimerkiksi siivoamisessa tai tiettyjen merkkien välttämisessä.
+## Mitä & Miksi?
 
-## Miten tehdä?
+Merkkien poistaminen sovitetusta kaavasta viittaa merkkijonoista erityisten merkkien poistamiseen ohjelmoinnissa. Ohjelmoijat tekevät tämän puhdistamaan ja muodoittamaan tietoja.
+
+## Miten tehdään:
+
+Clojuren `clojure.string/replace`-funktio on kodinomainen keino poistaa merkkijonoista merkit. Se hyväksyy merkkijonon, kaavan ja korvikkeen, ja palauttaa uuden merkkijonon.
+
 ```Clojure
-; Poistetaan kaikki numerot merkkijonon alusta
-(str/replace "123abc" #"^\d+" "")
-; Tulostaa "abc"
+(require '[clojure.string :as s])
 
-; Poistetaan kaikki merkit, jotka eivät ole numeroita tai kirjaimia
-(str/replace "12#%3@$" #"[^a-zA-Z\d]" "")
-; Tulostaa "123"
+(defn remove-chars [str pattern]
+  (s/replace str pattern ""))
 
+(println (remove-chars "H3llo, W0rld!" #"\d")) 
 ```
 
-## Syventävä sukellus
-Ennen vanhaan merkkien poistaminen sujui usein käsipelityöllä, mutta nykypäivänä automatisoidut ratkaisut ovat huomattavasti tehokkaampia. Lisäksi on hyvä pitää mielessä, että merkkijonoon ei aina kannata tehdä muutoksia suoraan, vaan joskus parempi ratkaisu voi olla esimerkiksi uuden merkkijonon luominen.
+Ohjelman tulostus on: 
 
-## Katso myös
-[Lähdekoodi](https://github.com/clojure/clojure-contrib/blob/master/src/main/clojure/clojure/contrib/string.clj) | [Dokumentaatio](https://clojure.github.io/clojure-contrib/string-api.html) | [Regex-ilmaisukirjasto](https://clojure.org/reference/java_interop#_javautilregex)
+```Clojure 
+"Hllo, Wrld!"
+```
+
+Tässä esimerkissä digitaaliset merkit (0 ja 3) on poistettu alkuperäisestä merkkijonosta.
+
+## Syvempi sukellus: 
+
+Vaikka `clojure.string/replace` on käytännöllinen ja tyypillisesti riittävän nopea useimmille sovelluksille, on olemassa muitakin tapoja poistaa merkkijonosta merkit. Voit esimerkiksi rakentaa uuden merkkijonon käymällä vanhan merkkijonon läpi yksi merkki kerrallaan ja ottaa mukaan vain sopivat merkit.
+
+Clojuren olemassaolon historiassa on ollut monia tapoja tehdä tämä. Yksi ensimmäisistä oli `clojure.string/replace-first`, joka kuitenkin käytti enemmän käyttömuistia kuin uudempi `clojure.string/replace`.
+
+## Katso myös: 
+
+- [Clojure Official Documentation: `clojure.string`](https://clojuredocs.org/clojure.string)
+- [Clojure: `clojure.string/replace` vs `clojure.string/replace-first`](https://stackoverflow.com/questions/67114126/clojure-clojure-string-replace-vs-clojure-string-replace-first)

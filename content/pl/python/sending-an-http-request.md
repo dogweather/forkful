@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Python: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Python"
 category:             "Python"
@@ -10,50 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Po co?
+## Co to i dlaczego?
 
-Wysyłanie żądań HTTP jest podstawowym sposobem, w jaki programiści komunikują się z siecią. Za pomocą tych żądań można pobierać lub wysyłać dane do internetowych zasobów, takich jak strony internetowe lub API. Jest to niezbędne do tworzenia aplikacji internetowych, które łączą się z serwerami lub innymi zasobami w sieci.
+Wysyłanie żądań HTTP polega na komunikacji między klientem (tj. Twoim komputerem) i serwerem sieciowym. Programiści robią to aby pobierać zmienne dane z sieci, takie jak aktualizacje pogody, wiadomości, informacje finansowe i wiele innych.
 
 ## Jak to zrobić:
 
-```Python
-# Wykonanie żądania GET za pomocą biblioteki requests
-import requests
-
-response = requests.get('https://www.example.com')
-
-# Sprawdzenie kodu odpowiedzi
-if response.status_code == 200:
-	# Wyświetlenie pobranej zawartości
-	print(response.text)
-else:
-	print("Błąd podczas pobierania strony")
-```
+Python ma wiele bibliotek do pracy z HTTP, ale jednym z najprostszych w użyciu jest `requests`. Sprawdźmy to:
 
 ```Python
-# Wykonanie żądania POST z wykorzystaniem danych w formacie JSON
 import requests
 
-data = {'username': 'John', 'password': '12345'}
-
-response = requests.post('https://www.example.com/login', json=data)
-
-# Sprawdzenie kodu odpowiedzi
-if response.status_code == 200:
-	# Wyświetlenie komunikatu zwrotnego
-	print(response.json()['message'])
-else:
-	print("Błąd podczas logowania")
+response = requests.get('https://api.github.com')
+print(response.json())
 ```
 
-## Głębszy zanurzenie:
+Po uruchomieniu tego kodu, zobaczysz wynik, który jest zwracany w formacie JSON przez API GitHuba.
 
-Wysyłanie żądań HTTP ma swoje początki w protokole HTTP, który został opracowany w latach 80. XX wieku. Alternatywnym podejściem do komunikacji z siecią jest wykorzystanie gniazd sieciowych, jednak żądania HTTP są bardziej wygodne i wszechstronne. Istnieje wiele bibliotek w języku Python, które ułatwiają wysyłanie żądań HTTP, takich jak requests, urllib oraz httplib.
+## Głębsze zrozumienie
 
-## Zobacz również:
+Pierwotnie, protokół HTTP został stworzony w 1991 roku i stał się podstawą komunikacji w Internecie. W Pythonie, do wysyłania zapytań HTTP można używać różnych pakietów, takich jak `httplib`, `httplib2`, `treq`, czy `aiohttp`. Jednakże biblioteka `requests` stała się popularna dzięki swojej prostocie i wyrafinowanemu API. Wysyłanie zapytań HTTP jest operacją blokującą, co oznacza, że ​​cały program czeka, aż serwer odpowiedzi na zapytanie. W związku z tym, warto zwrócić uwagę na zarządzanie wydajnością podczas tworzenia aplikacji opartych na żądaniu HTTP.
 
-Dokumentacja biblioteki requests: https://requests.readthedocs.io/en/master/
+## Zobacz także
 
-Porównanie różnych bibliotek do obsługi żądań HTTP w Pythonie: https://www.pythonforbeginners.com/requests/which-python-http-library-to-use
-
-Wprowadzenie do protokołu HTTP: https://developer.mozilla.org/pl/docs/Web/HTTP
+- Dokumentacja 'requests': http://docs.python-requests.org/en/master/
+- Informacje o protokole HTTP: https://www.w3.org/Protocols/
+- Alternatywne biblioteki do wysyłania żądań HTTP w Pythonie:
+  - `httplib2`: https://github.com/httplib2/httplib2
+  - `treq`: https://github.com/twisted/treq
+  - `aiohttp`: https://github.com/aio-libs/aiohttp

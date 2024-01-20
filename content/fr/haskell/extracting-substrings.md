@@ -1,7 +1,7 @@
 ---
-title:                "Extraction de sous-chaines"
-html_title:           "Haskell: Extraction de sous-chaines"
-simple_title:         "Extraction de sous-chaines"
+title:                "Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
+simple_title:         "Extraction de sous-chaînes"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+**## Qu'est-ce Que C'est & Pourquoi?**
 
-L'extraction de sous-chaînes est une pratique courante en programmation qui consiste à découper une chaîne de caractères en portions plus petites, ou sous-chaînes, pour faciliter leur utilisation dans le code. Les programmeurs le font souvent lorsqu'ils ont besoin de manipuler ou de comparer des parties spécifiques d'une chaîne.
+L'extraction de sous-chaînes, c'est l'action de prendre une petite partie d'une chaîne de caractères plus large. Les développeurs font cela pour manipuler et analyser des portions spécifiques de données textuelles.
 
-## Comment faire:
+**## Comment Faire:**
 
-Voici trois exemples de code en Haskell pour extraire des sous-chaînes à partir d'une chaîne donnée, ainsi que leur sortie respective:
+En Haskell, nous utilisons la fonction `take` pour extraire des sous-chaînes. En voici un exemple : 
 
 ```Haskell
--- Le premier argument est l'indice du début de la sous-chaîne
--- Le deuxième argument est l'indice de la fin de la sous-chaîne
-drop 3 (take 6 "Bonjour tout le monde!")
--- "jour"
-
--- Le premier argument est le nombre de caractères à supprimer au début de la chaîne
--- Le deuxième argument est la chaîne où effectuer l'extraction
-drop 3 "Bonjour"
--- "jour"
-
--- Le premier argument est l'indice du début de la sous-chaîne
--- Le deuxième argument est la longueur de la sous-chaîne
-take 5 "Hello world"
--- "Hello"
+let chaine = "Salut tout le monde"
+print(take 5 chaine)
 ```
 
-## Deep Dive:
+Cela affichera `"Salut"` dans la console.
 
-L'extraction de sous-chaînes existe depuis les débuts de la programmation, mais la façon dont elle est mise en œuvre peut varier selon les langages. Par exemple, en Python, on utilise la syntaxe `string[n:m]` pour extraire une sous-chaîne qui commence à l'indice n et se termine à l'indice m. En Haskell, on utilise plutôt les fonctions `drop` et `take` comme dans les exemples ci-dessus.
+On utilise aussi `drop` pour supprimer le début d'une chaîne:
 
-Il existe également des alternatives à l'extraction de sous-chaînes, comme l'utilisation de regex (expressions régulières) pour trouver et extraire des motifs spécifiques dans une chaîne. Cependant, l'utilisation de fonctions de base comme `drop` et `take` est souvent plus simple et plus efficace pour des besoins ponctuels.
+```Haskell
+print(drop 6 chaine)
+```
 
-## See Also:
+Cela affichera `"tout le monde"`.
 
-Voici quelques liens utiles pour en savoir plus sur l'extraction de sous-chaînes en Haskell:
+**## Aperçu Approfondi:**
 
-- La documentation officielle sur les fonctions `drop` et `take`: https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:drop
-- Un tutoriel sur l'utilisation des expressions régulières en Haskell: https://wiki.haskell.org/Regular_expressions
-- Un article sur les bonnes pratiques pour manipuler les chaînes de caractères en Haskell: https://www.schoolofhaskell.com/school/starting-with-haskell/basics-of-haskell/10_String_Manipulation_in_Haskell
+Historiquement parlant, l'extraction de sous-chaînes a toujours été un élément clé de la manipulation de texte. En Haskell, ces fonctions ont été inspirées par d'autres langages de programmation fonctionnels.
+
+Il existe des alternatives à `take` et `drop`. Par exemple, `splitAt` qui divise une chaîne en un tuple à un index donné.
+
+La mise en œuvre de ces fonctions est assez linéaire. `take` et `drop` parcourent simplement la liste de gauche à droite.
+
+**## Voir Aussi:**
+
+- Pour plus d'infos sur `take` et `drop` en Haskell, consultez la documentation officielle ici: http://hackage.haskell.org/package/base-4.12.0.0/docs/Prelude.html
+- Pour une discussion plus générale sur la manipulation de chaînes en Haskell, visitez: http://learnyouahaskell.com/input-and-output.

@@ -1,7 +1,7 @@
 ---
-title:                "String-Interpolation"
-html_title:           "Elixir: String-Interpolation"
-simple_title:         "String-Interpolation"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -12,30 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Interpolation in Elixir ist eine Möglichkeit, Werte oder Variablen in einen String einzubetten, um die Lesbarkeit und Ästhetik des Codes zu verbessern. Durch die Verwendung von Interpolation können wir effizienter auf Daten zugreifen, anstatt lange Zeichenketten manuell zu verbinden. Dies macht es zu einer beliebten Technik unter Programmierern, die sauberen und kompakten Code schätzen.
+String-Interpolation ermöglicht es uns, Variablen direkt in Strings zu setzen. Es ist benutzerfreundlich, liest sich natürlich und hilft, schwer lesbaren Code zu vermeiden.
 
-## Wie geht's?
+## So geht's:
 
-Interpolation in Elixir wird mithilfe eines speziellen Operators, dem `#{}` Operator, durchgeführt. Um Werte in einen String zu interpolieren, müssen diese in den `#{}`-Operator eingebettet werden. Im Folgenden sehen Sie ein einfaches Beispiel:
-
-```elixir
-name = "Max"
-"Hello #{name}!" # Output: Hello Max!
-```
-
-Natürlich können nicht nur Variablen, sondern auch Ausdrücke und Funktionen in den `#{}`-Operator eingebettet werden. Ein weiteres Beispiel:
+In Elixir verwenden wir die `#{}`-Syntax für die String-Interpolation. Schauen wir uns ein Beispiel an.
 
 ```elixir
-age = 25
-"Max is #{age + 5} years old." # Output: Max is 30 years old.
+name = "Hans"
+IO.puts "Hallo #{name}"
 ```
 
-## Tiefere Einblicke
+Ausgabe wird sein: `Hallo Hans`
 
-Interpolation ist nicht nur in Elixir, sondern auch in anderen Programmiersprachen wie Ruby und JavaScript üblich. Es ist auch eine praktische Alternative zum manuellen Verbinden von Zeichenketten mit dem `<>`-Operator. Abgesehen davon spielt Interpolation eine wichtige Rolle in der funktionalen Programmierung, da sie es ermöglicht, Variablen und Funktionen auf eine elegante Weise in Strings einzubetten.
+## Tiefgehende Untersuchung
 
-Die Implementierung von Interpolation in Elixir ist effizienter als in anderen Sprachen, da sie intern den `Kernel`-Modul verwendet. Dies bedeutet, dass jede Funktion, die in Interpolation verwendet wird, automatisch aufgerufen wird, wodurch der Code sauberer und lesbarer wird.
+String-Interpolation in Elixir ist eine einfache und direkte Art, dynamischen Text zu erstellen. Ursprünglich aus den Sprachen wie Perl und Ruby kommend, ist sie seit Elixir 1.0 ein Kernfeature.
 
-## Siehe auch
+Es gibt Alternativen zur String-Interpolation, wie z.B. die Verwendung von `<>` zum Verketten von Strings, aber diese sind weniger lesbar und intuitiv.
 
-Weitere Informationen zu Interpolation in Elixir finden Sie in der offiziellen Dokumentation unter [https://elixir-lang.org/getting-started/interpolation.html](https://elixir-lang.org/getting-started/interpolation.html). Wenn Sie sich tiefer mit dem Thema befassen möchten, werfen Sie einen Blick auf die offizielle Elixir-Community-Website unter [https://elixir-lang.org/](https://elixir-lang.org/).
+Die Implementierung von Interpolation in Elixir ist einfach und effektiv: der Interpreter ersetzt einfach den `#{}`-Ausdruck durch das Ergebnis seiner Auswertung, konvertiert in einen String.
+
+## Siehe Auch
+
+Für weitere Informationen zur `String`-Interpolation in Elixir, besuchen Sie:
+
+1. Offizielle Elixir-Dokumentation: [https://elixir-lang.org/getting-started/io-and-the-file-system.html#iodots](https://elixir-lang.org/getting-started/io-and-the-file-system.html#iodots)
+
+2. Erlang-Dokumentation (auf der Elixir basiert): [http://erlang.org/doc/man/io.html](http://erlang.org/doc/man/io.html)

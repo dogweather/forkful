@@ -1,7 +1,7 @@
 ---
-title:                "ランダムナンバーの生成"
-html_title:           "Swift: ランダムナンバーの生成"
-simple_title:         "ランダムナンバーの生成"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Numbers"
@@ -10,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-乱数生成とは、プログラマーがコード内でランダムな数値を作成することです。プログラマーは、この機能を使用して、ランダム性が必要なシミュレーションやゲームを作成します。
+## 何？そしてなぜ？
 
-## 作り方：
-乱数を生成するには、Swiftの標準ライブラリで利用可能なランダム関数を使用します。以下は、円周率の近似値を生成するコード例です。
+ランダムな数値生成とは、予測不可能な数値を生成するプロセスのことです。この操作は、ゲーム、シミュレーション、テストなど、偶然性やユニーク性が必要なプログラムでよく使用されます。
 
-```Swift
-let randomValue = Float.random(in: 3.0...4.0)
-let piValue = randomValue * randomValue
+## どうやるか：
+
+Swiftでランダムな数を生成する最も一般的な方法は以下の通りです:
+
+```swift
+let randomInt = Int.random(in: 1...10)
+print(randomInt)
 ```
 
-実行すると、毎回異なる近似値が生成されます。例えば、一度目は3.697524、二度目は3.323656といった具合にです。
+このコードは1から10までの間でランダムな整数を生成します。出力は 「5」、「7」、「3」など、実行するたびに変わります。
 
-## 詳細：
-乱数生成の歴史的背景には、計算機における非決定論的アルゴリズムの研究があります。代替手段として、プログラマーは外部の乱数生成器APIを使用することもできます。また、乱数生成はハードウェアによって実装されることもあります。
+もしあなたがランダムな小数が欲しいなら、以下のように書くことが出来ます:
 
-## 関連情報：
-乱数生成についてもっと詳しく学ぶには、以下のリンクを参考にしてください。
+```swift
+let randomDouble = Double.random(in: 0..<1)
+print(randomDouble)
+```
 
-- [Appleの公式ドキュメント](https://developer.apple.com/documentation/swift/swift_standard_library/random)
-- [乱数生成に関する記事](https://qiita.com/stellalee23/items/fe8fd3c11dd033d54d39)
-- [疑似乱数生成アルゴリズムについての解説](https://vivivai.net/sar/baseline/random/)
+## ディープダイブ：
+
+ランダム性はコンピュータサイエンスの歴史と深く結びついています。初期のコンピュータでは真のランダム性を生成するのは困難でした。現在では、Swiftでは `arc4random_uniform` のような関数を使って高品質なランダムな数を生成することができますが、それには些か複雑なバックエンドプロセスが関わっています。
+
+ランダムな数値生成の代替方法がいくつかあります。一つには、よく確立された外部ライブラリを使用する方法があります。または、独自の乱数生成アルゴリズムを作ることもできますが、これは非推奨です。なぜなら、正しく実装するのは難しく、セキュリティ上のリスクも増大するからです。
+
+先ほど示した `Int.random(in:)` や `Double.random(in:)` の詳細について説明します。これらのメソッドは、引数として指定した範囲内でランダムな数を生成します。特定の範囲を指定しないと、全ての可能な値が等しく選ばれる確率を持つ真のランダムさを提供します。
+
+## 参考資料：
+
+1. [Apple Documentation - Swift Standard Library - random(in:)](https://developer.apple.com/documentation/swift/int/2995648-random)
+2. [Wikipedia - Random number generation](https://en.wikipedia.org/wiki/Random_number_generation)

@@ -1,7 +1,7 @@
 ---
-title:                "Überprüfung, ob ein Verzeichnis vorhanden ist"
-html_title:           "C++: Überprüfung, ob ein Verzeichnis vorhanden ist"
-simple_title:         "Überprüfung, ob ein Verzeichnis vorhanden ist"
+title:                "Überprüfen, ob ein Verzeichnis existiert"
+html_title:           "C++: Überprüfen, ob ein Verzeichnis existiert"
+simple_title:         "Überprüfen, ob ein Verzeichnis existiert"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,37 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Überprüfen, ob ein Verzeichnis existiert, ist ein häufiger Schritt in der Programmierung. Es wird verwendet, um sicherzustellen, dass eine Datei oder ein Ordner vorhanden ist, bevor damit weitergearbeitet wird. Dies hilft, Fehler zu vermeiden und eine reibungslose Laufzeit des Programms zu gewährleisten.
+# Überprüfen, ob ein Verzeichnis existiert: C++ Programmierung
 
-# Wie geht es?
+## Was & Warum?
+
+Das Überprüfen, ob ein Verzeichnis existiert, ist eine Routine im Dateizugriff mannigfaltiger Anwendungen. Dies verhindert Fehler oder Ausnahmen durch nicht vorhandene Pfade.
+
+## So geht's:
+
+In C++ verwenden wir die Bibliothek `<filesystem>`. Im folgenden Beispiel prüfen wir, ob ein Verzeichnis namens "BeispielVerzeichnis" existiert und geben eine entsprechende Nachricht aus.
+
 ```C++
-#include <iostream>
 #include <filesystem>
+#include <iostream>
 
 int main() {
-  std::string path = "/home/username/documents/";
-  if (std::filesystem::exists(path)) {
-    std::cout << "Das Verzeichnis existiert." << std::endl;
-  }
-  else {
-    std::cout << "Das Verzeichnis existiert nicht." << std::endl;
-  }
-  return 0;
+    std::filesystem::path dir("BeispielVerzeichnis");
+
+    if (std::filesystem::exists(dir)) {
+        std::cout << "Das Verzeichnis existiert." << std::endl;
+    } else {
+        std::cout << "Das Verzeichnis existiert nicht." << std::endl;
+    }
+
+    return 0;
 }
 ```
 
-### Ausgabe:
-```Das Verzeichnis existiert.```
+Wenn "BeispielVerzeichnis" existiert, erhalten wir:
 
-# Tief tauchen
-Das Überprüfen der Existenz von Verzeichnissen wurde durch die ständige Weiterentwicklung der Programmiersprachen vereinfacht. Früher mussten Programmierer komplexe Funktionen schreiben, um diese Aufgabe zu erfüllen. Heutzutage bietet die Standardbibliothek von C++ die Funktion ```exists()``` in der ```<filesystem>``` Bibliothek, die diese Aufgabe erleichtert.
+```C++
+Das Verzeichnis existiert.
+```
 
-Alternativ zur Verwendung der ```exists()``` Funktion können auch Datei-Überprüfungs-Methoden wie ```access()``` oder ```stat()``` verwendet werden. Diese Optionen sind jedoch möglicherweise nicht so ausdrucksstark und haben Einschränkungen in der Anzahl der Verzeichnistiefen, die sie überprüfen können.
+Falls nicht:
 
-Bei der Implementierung der Überprüfung der Verzeichnisexistenz wird ein Systemaufruf verwendet, der den Dateipfad überprüft. Wenn der Pfad stimmt, gibt es ein positives Ergebnis, andernfalls ein negatives.
+```C++
+Das Verzeichnis existiert nicht.
+```
 
-# Siehe auch
-- Dokumentation zu C++ Dateisystembibliothek: https://en.cppreference.com/w/cpp/filesystem
-- Beispielcode für das Überprüfen von Verzeichnissen mit C++: https://www.geeksforgeeks.org/check-if-a-directory-exists-in-a-path-in-c-c/
-- Tutorials zu grundlegenden Filesystem-Operationen mit C++: https://www.modernescpp.com/index.php/basic-file-operations-in-modern-c/
+## Deep Dive
+
+Frühere C++-Versionen boten keine einfache Möglichkeit zur Überprüfung der Existenz von Verzeichnissen. Erst mit C++17 wurde `<filesystem>` eingeführt, das solche Funktionen bietet.
+
+Es gibt auch Alternativen wie die POSIX-Funktion `stat()` oder die Verwendung von Boost-Dateisystemen, aber `<filesystem>` bietet eine deutlich elegantere und einfacher zu handhabende Lösung.
+
+Die Funktion std::filesystem::exists() selbst ruft die Funktion `status()` auf und überprüft auf Fehler.
+
+## Siehe auch
+
+- Offizielle C++ Dokumentation <filesystem> : https://en.cppreference.com/w/cpp/filesystem
+- Alternative Wege zum Überprüfen des Verzeichnis: https://stackoverflow.com/questions/4316442/stdofstream-check-if-file-exists-before-writing

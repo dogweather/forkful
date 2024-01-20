@@ -1,7 +1,7 @@
 ---
-title:                "HTTP-pyynnön lähettäminen perusautentikoinnilla"
-html_title:           "TypeScript: HTTP-pyynnön lähettäminen perusautentikoinnilla"
-simple_title:         "HTTP-pyynnön lähettäminen perusautentikoinnilla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,32 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?:
-Lähettämällä HTTP-pyyntö perusautentikointiin voit suojata tiedonsiirtoa ja varmistaa, että vain oikeutetut käyttäjät voivat käyttää palveluasi. Tämä on tärkeää etenkin silloin, kun käsitellään arkaluonteisia tietoja, kuten henkilökohtaisia ​​tietoja. Ohjelmoijat käyttävät perusautentikointia tietoturvan lisäämiseksi sovelluksiinsa.
+# TypeScriptilla HTTP-pyynnön lähettäminen Basic Authenticationin kanssa
 
-Kuinka tehdä:
- Esimerkki koodilla TypeScript käyttäen Axios-kirjastoa:
+## Mitä & Miksi?
+Basic Authentication on yksinkertainen tapa suojata HTTP-pyynnöt salasanalla. Se on yksinkertainen ja laajasti tuettu tapa varmistaa, etteivät tuntemattomat pysty lukemaan tai muokkaamaan tietojasi.
+
+## Näin tehdään:
+Käytämme `axios`-kirjastoa, joka on lupaava HTTP-asiakas JavaScriptille ja TypeScriptille. Lähetämme GET-pyynnön suojattuun endpointiin.
+
+```TypeScript
+import axios from 'axios';
+
+const sendRequest = async () => {
+  const options = {
+    url: 'https://your-endpoint.com',
+    method: 'GET',
+    headers: {
+      'Authorization': 'Basic ' + btoa('username:password')
+    }
+  };
+
+  const response = await axios(options);
+  console.log(response.data); 
+}
+
+sendRequest();
 ```
-const axios = require('axios');
 
-axios.get('https://example.com/api/', {
-  auth: {
-    username: 'käyttäjänimi',
-    password: 'salasana'
-  }
-})
-.then(response => {
-  console.log(response.data);
-})
-.catch(error => {
-  console.log(error);
-});
-```
-Tämä koodi lähettää GET-pyynnön "https://example.com/api/" osoitteeseen perusautentikoinnilla, käyttäen käyttäjänimeä ja salasanaa. Pyynnön vastauksena palautetaan saatu tieto, tai virheilmoitus, jos jokin menee pieleen.
+## Syvemmälle sukeltaminen
 
-Syväsukellus:
-Perusautentikointi on yksi vanhimmista ja yksinkertaisimmista tapoista varmistaa tietoturva HTTP-pyyntöjen lähettämisessä. Siinä käytetään Base64-koodausta salasanan ja käyttäjänimen yhdistelmään, joka lähetetään Authorization-otsakkeessa pyynnön mukana. On kuitenkin tärkeää huomata, että perusautentikointi ei tarjoa vahvaa suojaa ja on altis tietojen hakkeroinnille. On suositeltavaa käyttää muita autentikointi menetelmiä, kuten Digest tai OAuth.
+Basic Authentication on ollut olemassa jo vuosikymmenten ajan, ja se on edelleen yksi helpoimmista tavoista suojata verkkopyynnöt. Se ei ole täydellinen - etenkin kun käytetään yhdessä https:n kanssa, se voi olla hyökkäysten kohde - mutta se on edelleen hyödyllinen monissa tapauksissa.
 
-Katso myös:
-- https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
-- https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html
+On myös vaihtoehtoja, kuten bearer token -autentikointi tai digest-access-autentikointi, jotka saattavat olla parempia joissain tilanteissa. Minkä lähestymistavan valitset, riippuu tarpeista, teknisistä vaatimuksista ja turvallisuusnäkökohdista.
+
+Implementaatiossa kannattaa huomata, miten käytämme 'btoa'-funktiota muuttamaan käyttäjätunnus ja salasana base64-muotoon. Tämä on tärkeä osa Basic Authentication -protokollaa.
+
+## Katso myös:
+
+1. [Axios-kirjaston dokumentaatio](https://axios-http.com/)
+2. [Basic Authentication: formal definition](https://datatracker.ietf.org/doc/html/rfc7617)
+3. [MDN web docs: HTTP authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+4. [HTTP Authentication Schemes](https://www.iana.org/assignments/http-authschemes/http-authschemes.xhtml)

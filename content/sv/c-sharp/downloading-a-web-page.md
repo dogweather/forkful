@@ -1,7 +1,7 @@
 ---
-title:                "Att ladda ner en webbsida"
-html_title:           "C#: Att ladda ner en webbsida"
-simple_title:         "Att ladda ner en webbsida"
+title:                "Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
+simple_title:         "Ladda ner en webbsida"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -11,50 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att ladda ner en webbsida innebär att hämta all information som visas på en viss webbadress och visa den på din egen dator. Programmare använder den här tekniken för att hämta data från webben, bearbeta den och använda den i sina egna program.
 
-## Så här:
+Nedladdning av en webbsida innebär hämtning av data från ett specifikt URL och sparande av det på din dator. Det används av programmerare för att hämta realtidsdata, skrapa webbdata, övervaka ändringar på webbsidor, bland andra användningsområden.
+
+## Hur man gör:
+
+C# erbjuder `HttpClient` för att ladda ner en webbsida. Vid basisk användning:
+
 ```C#
 using System;
-using System.Net;
+using System.Net.Http;
 
-namespace WebbHämtning
+class Program
 {
-    class Program
+    static async Task Main()
     {
-        static void Main(string[] args)
-        {
-            // Skapa en ny WebClient
-            WebClient client = new WebClient();
-
-            // Ladda ner en webbsida och spara den som en sträng
-            string htmlString = client.DownloadString("https://www.example.com");
-
-            // Skriv ut den hämtade webbsidan till konsolen
-            Console.WriteLine(htmlString);
-        }
+        using HttpClient client = new HttpClient();
+        string html = await client.GetStringAsync("http://example.com");
+        Console.WriteLine(html);
     }
 }
 ```
 
-Output:
-```html
-<!doctype html>
-<html>
-<head>
-    <title>Exempel</title>
-</head>
-<body>
-    <h1>Välkommen till vår webbsida!</h1>
-    <p>Här kan du lära dig mer om webbhämtning med C#!</p>
-</body>
-</html>
-```
+Kör programmet, det visar HTML-innehållet på "example.com".
 
-## Deep Dive:
-Webbhämtning har funnits sedan början av webbens historia och har varit en viktig teknik för att hämta och bearbeta data från webben. Innan C#-kodet ovan använde programmerare ofta språk som HTML och JavaScript för att göra liknande saker. Det finns också andra bibliotek, som Selenium, som kan användas för att ladda ner webbsidor i C#.
+## Djupdykning
 
-## Se även:
-- [Lär dig mer om webbhämtning i C#](https://www.w3schools.com/cs/cs_webpages.asp)
-- [Hitta andra tillgängliga bibliotek för webbhämtning i C#](https://en.wikipedia.org/wiki/C_Sharp_(programming_language)#Frameworks_and_tools)
-- [Lär dig mer om hur webben fungerar](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web)
+Historiskt sett har vi sett utvecklingen från `WebClient` till `HttpWebRequest` till nuvarande `HttpClient`. `HttpClient` är mer flexibel och effektiv för modern webbsida nedladdning.
+
+Vi har också alternativ som `RestSharp`, en populär open-source HTTP-klientbibliotek. 
+
+Vad gäller nedladdning av en webbsida i C#, sker det i flera steg: skapa en förfrågan, sänd förfrågan, få Svaret, läs data. Genom att använda `HttpClient`, förenklas dessa steg till en enda metod: `GetStringAsync`.
+
+## Se även
+
+För mer detaljerade information och exempel, se följande resurser:
+
+- [HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
+- [Making HTTP Requests](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/console-webapiclient)
+
+För att läsa om alternativ till HttpClient:
+
+- [RestSharp](http://restsharp.org/)

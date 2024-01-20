@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Elm: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,35 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co i Dlaczego?
 
-Wysyłanie zapytań HTTP to podstawowa umiejętność każdego programisty. Dzięki temu możemy pobierać dane z internetu, komunikować się z różnymi serwerami i tworzyć interaktywne aplikacje. Jest to niezbędne do tworzenia aplikacji internetowych oraz wdrożenia nowoczesnych rozwiązań.
+Wysyłanie żądania HTTP to sposób, w jaki aplikacje sieciowe komunikują się z serwerami. Programiści robią to, aby pobierać, wysyłać i aktualizować dane z i na serwerach.
 
 ## Jak to zrobić:
 
 ```Elm
+-- Importowanie modułu Http
 import Http
-import Json.Decode exposing (..)
 
-type alias User =
-  { id : Int
-  , name : String
+-- Definiowanie naszego zadania
+zadanie : Task Http.Error String
+zadanie = Http.get 
+  { url = "https://twojastrona.com/api/dane" 
+  , expect = Http.expectString 
   }
 
-getUser : String -> Cmd Msg
-getUser userId =
-  Http.get
-    { url = "https://api.example.com/user/" ++ userId
-    , expect = Http.expectJson UserDecoder
-    }
-
-type Msg = GetUserSuccess User | GetUserFailure
+-- Uruchamianie naszego zadania
+main = 
+  zadanie
+  |> Task.attempt (\result -> 
+     case result of 
+       Ok body ->
+         body
+         |> Debug.log "Sukces"
+       Err _ ->
+         Debug.log "Błąd"
+    )
 ```
 
-## Głębsza analiza
+Przykładowe wyjście:
 
-Wysyłanie żądań HTTP jest powszechnie stosowane w aplikacjach internetowych od lat. Alternatywne podejście jest wykorzystanie JavaScriptu, ale jest to bardziej skomplikowane i narażone na błędy. W Elm istnieje wiele wbudowanych funkcji, które ułatwiają tworzenie i obsługę zapytań HTTP.
+```Elm
+"Sukces: {\"klucz\": \"wartość\"}"
+```
 
-## Zobacz również:
+## Głębsze Zanurzenie:
 
-Więcej informacji na temat wysyłania żądań HTTP w Elm można znaleźć w oficjalnej dokumentacji [Elm Language Guide](https://guide.elm-lang.org/effects/http.html). Aby lepiej zrozumieć, jak wykorzystać zapytania HTTP w praktyce, zachęcam do przejrzenia przykładowych projektów na stronie [Elm Packages](https://package.elm-lang.org/packages/elm/http/latest/).
+Wysyłanie żądań HTTP ma swoje korzenie w początkach World Wide Web. Bez żądań HTTP, nie mielibyśmy dzisiejszych dynamicznych aplikacji internetowych.
+
+Alternatywy do Elm's HTTP to m.in. grupowanie żądań HTTP, lokalne przechowywanie danych i techniki optymalizacji.
+
+Szczegóły implementacji Http.get zawierają użycie bibliotek JavaScript, które są odpowiedzialne za właściwe przetwarzanie naszego żądania i odbieranie odpowiedzi.
+
+## Zobacz Także:
+
+1. Dokumentacja Elm: [HTTP](https://package.elm-lang.org/packages/elm/http/latest/Http) 
+
+2. Artykuł o Http.get: [Przekierowywanie żądań HTTP](https://medium.com/@_rchaves_/using-http-requests-on-elm-4948bed6e06b) 
+
+3. Poradnik Elm's Guide: [Efekty](https://guide.elm-lang.org/effects/) 
+
+Pamiętaj, że wykorzystanie API, jak i programowanie w Elm, wymaga praktyki! Zawsze warto eksperymentować i uczyć się na własnych błędach. Rozwiązuj problemy krok po kroku!

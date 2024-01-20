@@ -1,6 +1,6 @@
 ---
 title:                "Sammanslagning av strängar"
-html_title:           "Haskell: Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
 simple_title:         "Sammanslagning av strängar"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -12,26 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att kontinuerligt sammanfoga strängar är en viktig del av programmering. Det betyder att kombinera två eller flera strängar till en enda sträng. Programmerare använder denna teknik för att skapa mer dynamiska och användbara texter och för att utföra olika manipulationer på strängar.
+Att konkatenera strängar innebär att sammanfoga två eller flera strängar till en. Programmerare gör det för att manipulera data, bygga fram dynamiskt innehåll och formatera output.
 
-## Hur man gör:
+## Hur till:
 
-```Haskell
-"Hello " ++ "World!" -- Output: "Hello World!"
-```
+Här är några grunderna för hur du kan konkatenera strängar i Haskell med hjälp av '++' operatören.
 
 ```Haskell
-"2 + 2 is " ++ show (2 + 2) -- Output: "2 + 2 is 4"
+let str1 = "Hej "
+let str2 = "världen"
+let ray = str1 ++ str2
+print(ray)
 ```
 
-## Djupdykning:
+Output:
 
-Historiskt sett har sammanfogning av strängar varit begränsad inom programmeringsspråken, men det har ändrats med introduktionen av Haskell-programmeringsspråket. Det finns också alternativa sätt att sammanfoga strängar, till exempel med formatsträngar eller funktioner som "join" i andra språk. I Haskell används operatorn "++" för sammanfogning av strängar, och det är också värt att nämna att dessa operatorer kan användas för att manipulera strängar på olika sätt, som att ta bort eller ersätta delar av en sträng.
+```Haskell
+"Hej världen"
+```
 
-## Se även:
+En annan metod skulle vara använder `concat`-funktionen.
 
-Här är några länkar för mer information om hur man sammanfogar strängar och andra användbara manipuleringar av strängar:
+```Haskell
+let strList = ["Hej ", "världen"]
+let ray = concat strList
+print(ray)
+```
 
-- [Haskell dokumentation för strängar](https://www.haskell.org/tutorial/strings.html)
-- [Jämförelse av olika metoder för att sammanfoga strängar i olika språk](https://lord.io/blog/2014/strconcat/)
-- [Mer om manipulering av strängar i Haskell](https://wiki.haskell.org/Strings)
+Output:
+
+```Haskell
+"Hej världen"
+```
+
+## Djup dykning:
+
+Historiskt sett har Haskell alltid använt funktionell programmering för strängmanipulation. Att konkatenera strängar i Haskell är ingen undantag.
+
+Alternativ till '++' och `concat` inkluderar `mconcat`, som är en utökning av `concat`, och möjliggör mer komplex strängsammansättning.
+
+Under ytan använder Haskell "lata listor" för intern representation av strängar. Varje sträng är en lista av tecken, och konkatenering orsakar en ny lista att skapas, vilket kopierar de gamla listorna. Detta är inte det mest prestanda effektiva sättet att implementera strängar, men Haskell prioriterar renhet och enkelhet framför prestanda.
+
+## Se också:
+
+För ytterligare studier, se följande länkar:
+1. Haskells officiella dokumentation om listor: https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-List.html
+2. En djupare titt på Haskell's 'Lazy Evaluation': http://www.haskellforall.com/2012/01/haskell-for-mainstream-programmers-lazy.html
+3. Utforska andra strängalternativ som Text och ByteSträng: https://wiki.haskell.org/Performance/Strings

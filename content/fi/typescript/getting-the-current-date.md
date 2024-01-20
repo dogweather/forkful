@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän hakeminen"
-html_title:           "TypeScript: Päivämäärän hakeminen"
-simple_title:         "Päivämäärän hakeminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja Miksi?
-Päivämäärän hankkiminen on tärkeä osa ohjelmointia, koska se auttaa meitä näyttämään tai tallentamaan tietoa tiettynä aikana. Esimerkiksi verkkosivulla käyttäjälle halutaan ehkä näyttää nykyinen päivämäärä tai tallentaa nykyinen aikaleima kuvaamaan uuden viestin lähetysaikaa.
- 
-# Miten:
-TypeScript:ssa voit käyttää `new Date()`-metodia saadaksesi nykyisen päivämäärän ja ajan. Tämä antaa meille `Date`-objektin, joka sisältää monia hyödyllisiä metodeja, kuten `getDate()`, `getMonth()` ja `getFullYear()`. Voit myös muotoilla päivämäärän haluamallasi tavalla käyttämällä `toLocaleString()`-metodia ja antamalla halutut kohdemuotoiluasetukset.
- 
+# TypeScriptilla Päivämäärän Haaliminen: Nopea Opas
+
+## Mikä & Miksi?
+
+Päivämäärän haaliminen TypeScriptilla tarkoittaa nykyisen päivämäärän ja ajan hakemista sovellukselle. Tämä on välttämätöntä sikäli kun sovellukset tarvitsevat reaaliaikaista dataa toimiakseen asianmukaisesti, esimerkiksi ajan leimaukseen tai aikaperusteiseen toiminnallisuuteen.
+
+## Kuinka:
+
+Voit saada nykyisen päivämäärän TypeScriptilla `Date`-objektin `ìnstanceof`-metodilla. Tavallisesti koodi näyttää tältä.
+
+```TypeScript
+let currentDate = new Date();
+console.log(currentDate);
 ```
-TypeScript:
- 
-const currentDate = new Date();
-console.log(currentDate.toLocaleString('fi-FI'));
- 
-Output:
- 
-10.9.2021 11:20:30
-```
- 
-# Syvemmälle:
-Päivämäärän hankkiminen on ollut tärkeä osa ohjelmointia jo pitkään, ja monilla kielillä on omat sisäänrakennetut työkalunsa siihen. Jotkut kieliin sisältyvät vaihtoehdot ovat `System.DateTime` C#-kielissä ja `DateTime` Java-kielissä.
- 
-Voit myös käyttää kolmannen osapuolen kirjastoja, kuten Moment.js, helpottamaan päivämäärän käsittelyä ja muotoilua. 
- 
-Implementaatiot voivat vaihdella eri kielissä ja kirjastoissa, mutta yleensä ne perustuvat Unix Timeen, joka on tavallaan "päivämäärän ja ajan nolla". Tämä tarkoittaa käytännössä sitä, että jokainen päivämäärä ja aika tallennetaan määrätyksiä sekunteina kuluessa Unix Time -arvosta.
- 
-# Katso myös:
-- [Mozilla Developer Network: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+Kun suoritat tämän koodin, saat ulostulona nykyisen päivämäärän ja ajan, esimerkiksi: `2021-08-31T12:00:00.000Z`
+
+## Syvempi Tutkailu
+
+JavaScriptin `Date`-objekti on peräisin ECMAScript-standardista, ja se on TypeScriptin ajurityyppi nykyisen päivämäärän noutamiseksi. Vaihtoehtoina voit käyttää monikäyttöisiä kirjastoja, kuten Moment.js luodaksesi monimutkaisempia aikatoimintoja.
+
+Nykyisen päivämäärän noutaminen on varsin yksinkertainen operaatio. `Date`-objekti luo päivämäärä- ja aika-arvojen yhdistelmän, mukaan lukien päivän, kuukauden, vuoden, tunnin, minuutin, sekunnin ja millisekunnin. 
+
+Voit käyttää `Date`-objektin metodeja nykyisen päivämäärän muokkaamiseen tai tiettyjen komponenttien, kuten päivämäärän, kuukauden tai vuoden, noutamiseen.
+
+## Katso myös
+
+- [Working with Dates - MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
 - [Moment.js](https://momentjs.com/)
+- [JavaScript Basics: The Date Object - DigitalOcean](https://www.digitalocean.com/community/tutorials/javascript-date-object-how-to)

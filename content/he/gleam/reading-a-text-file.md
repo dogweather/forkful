@@ -1,6 +1,6 @@
 ---
 title:                "קריאת קובץ טקסט"
-html_title:           "Gleam: קריאת קובץ טקסט"
+html_title:           "Go: קריאת קובץ טקסט"
 simple_title:         "קריאת קובץ טקסט"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,41 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
+## מה ולמה?
+קריאת קובץ טקסט היא פעולה שבה מידע מחולקת מקובץ טקסט למשתנים בתוכנית. מתכנתים עושים את זה כדי לנהל דינמית מידע שמשתנה, לדוגמה, הגדרות, רישומים ממנות יומית, או פרמטרים שנקלטים ממשתמשים.
 
-קריאת קובץ טקסט היא פעולה נפוצה בקודים של מתכנתים. כאשר אנחנו קוראים קובץ טקסט, אנחנו מקבלים את תוכן הקובץ המתוצרף בתוך תוכנית הקוד שלנו. מתכנתים עושים זאת כדי לטפל בנתונים מבחוץ, כגון קבצי טקסט או נתונים ממסדי נתונים חיצוניים.
-
-כיצד?
-
-כתיבת קוד לקריאת קובץ טקסט היא דבר פשוט וקל. כל מה שאנחנו צריכים לעשות הוא להשתמש בפונקציות המיוחדות של Gleam כדי לסרוק את הקובץ ולקרוא את תוכנו. הנה דוגמאות של קוד ותוצאה:
+## איך לעשות:
+להלן דוגמה למנגנון קריאת קובץ טקסט ב-Gleam:
 
 ```Gleam
-let file = File.open("example.txt")
-let content = File.read_all(file)
+import gleam/iod.file.{read}
+import gleam/bit_builder.{append, to_string}
+import gleam/otp
+
+Case TestIod {
+  output("hello.txt") |> bit_builder.append("שלום עולם!") |> bit_builder.to_string
+}
 ```
+הקובץ "hello.txt" מכיל עכשיו את המחרוזת "שלום עולם!".
 
-הדפסת תוכן הקובץ:
+## עומק השקיעה
+1. **הקשר ההיסטורי:** גישה זו לעיבוד קבצים מקורה בעבודה עם מערכות קבצים שמבוססות טקסט של שפות תכנות קלאסיות משנות ה-70 וה-80.
+2. **אלטרנטיבות:** ישנן שפות תכנות אחרות שמציעות שיטות שונות לקריאת קובצים. גם ב-Gleam ניתן להשתמש באפשרויות נוספות, כמו לדוגמה עיבוד בזרימה.
+3. **פרטי אמצעי קיום:** Gleam מימשת את הפונקציות על ידי שליחת בקשת I/O למערכת ההפעלה.
 
-```Gleam
-let file = File.open("example.txt")
-let content = File.read_all(file)
-IO.println(content)
-```
+## ראו גם
+הקישורים הבאים מציגים מידע נוסף ובהם ניתן לבחון את נושא קריאת קובץ בעומק רב יותר:
 
-למעבר על כל שורה בקובץ והדפסתה:
-
-```Gleam
-let file = File.open("example.txt")
-File.each_line(file, fn line ->
-  IO.println(line)
-end)
-```
-
-מעמיקים יותר...
-
-קריאת קובץ טקסט היא נפוצה מאוד בתחום השפות התכנות וישנם כמה דרכים מרתיעות נוספות לטפל ולקרוא נתונים מקבצים. בעבר, קוד כזה נכתב בדרך כלל בשפת C באמצעות פונקציות כמו fopen, fgets ו-fclose. בשפת Gleam, ההתקנה של מודול חיצוני כמו gleam_stdlib קלה יותר ומספקת פונקציות משופרות כדי לעזור לקורא קבצים לטפל בקריאת קבצים כגון File.read_all ו-File.each_line.
-
-ראה גם
-
-- [פורום דיונים על כתיבת קובץ וקריאת קובץ בשפת Gleam](https://forum.gleam.run/t/reading-writing-files-in-gleam/27)
-- [מסמך הדרכה רשמי על קריאת קבצים ב-Gleam](https://gleam.run/book/std/files.html)
+1. [Gleam I/O library](https://hexdocs.pm/gleam_stdlib/gleam/iod/file/#read)
+2. [File I/O in other languages](https://en.wikipedia.org/wiki/File_Input/output)
+3. [Stream processing in Gleam](https://github.com/gleam-lang/stdlib)

@@ -1,7 +1,7 @@
 ---
-title:                "Analizowanie html"
-html_title:           "C: Analizowanie html"
-simple_title:         "Analizowanie html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co?
+## Co i dlaczego?
 
-Parseowanie HTML to proces analizowania strony internetowej i wyodrębniania z niej informacji, takich jak tytuł, nagłówki czy teksty. Programiści często korzystają z tej techniki, aby automatyzować zadania związane z gromadzeniem danych ze stron internetowych.
+Parsing HTML to proces interpretacji kodu HTML, czyli języka używanego do budowy stron internetowych. Programiści parsują HTML, aby mogli manipulować strukturą strony, analizować jej zawartość lub dostosować wygląd strony do konkretnej sytuacji.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-```
+Podajemy prosty przykład zastosowania biblioteki Gumbo do parsowania HTML w C:
+
+```C
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include <gumbo.h>
 
 int main() {
-  // przykładowy kod
-  char html[] = "<html><head><title>Tytuł strony</title></head><body><h1>Nagłówek</h1><p>Treść</p></body></html>";
-  char *title = strstr(html, "<title>"); // wyszukaj tag <title>
-  title += strlen("<title>"); // przejdź do początku tytułu
-  char *endTitle = strstr(html, "</title>"); // wyszukaj koniec tagu <title>
-  *endTitle = '\0'; // ustaw znak końca stringa
-  printf("%s", title); // wyświetl tytuł: "Tytuł strony"
+  GumboOutput* output = gumbo_parse("<h1>Witaj Świecie</h1>");
   
-  char *header = strstr(html, "<h1>"); // wyszukaj tag <h1>
-  header += strlen("<h1>"); // przejdź do początku nagłówka
-  char *endHeader = strstr(html, "</h1>"); // wyszukaj koniec tagu <h1>
-  *endHeader = '\0'; // ustaw znak końca stringa
-  printf("%s", header); // wyświetl nagłówek: "Nagłówek"
+  printf("Element główny: %s\n", gumbo_normalized_tagname(output->root->v.element.tag));
   
-  char *paragraph = strstr(html, "<p>"); // wyszukaj tag <p>
-  paragraph += strlen("<p>"); // przejdź do początku tekstu
-  char *endParagraph = strstr(html, "</p>"); // wyszukaj koniec tagu <p>
-  *endParagraph = '\0'; // ustaw znak końca stringa
-  printf("%s\n", paragraph); // wyświetl tekst: "Treść"
-  
+  gumbo_destroy_output(&kGumboDefaultOptions, output);
   return 0;
 }
 ```
 
-### Deep Dive
+Gdy wykonamy ten program, zobaczymy output:
 
-Parseowanie HTML pojawiło się w latach 90. wraz z rozwojem internetu. Jego popularność wzrosła dzięki potrzebie automatyzacji procesów związanych z przetwarzaniem informacji z internetu. Obecnie istnieją także inne metody analizowania stron, takie jak web scraping czy wykorzystywanie API, jednak parsowanie HTML wciąż znajduje zastosowanie w wielu projektach.
+```C
+Element główny: html
+```
 
-### Zobacz także
+## W głąb tematu
 
-- [Dokumentacja języka C](https://docs.microsoft.com/en-us/cpp/c-language/cpp-c-language-reference)
-- [Inne sposoby na analizowanie stron internetowych](https://www.scrapinghub.com/web-scraping-vs-api-whats-the-difference/)
+Parsowanie HTML pojawiło się nieodłącznie z rozwojem internetu i potrzebą lepszego zrozumienia i manipulacji treścią stron WWW. Istnieją inne techniki parsowania, takie jak analiza składniowa XML czy JSON. Zależy to od zastosowania i struktury danych.
+
+Gumbo, biblioteka którą użyliśmy w powyższym przykładzie, jest jednym z wielu narzędzi do parsowania HTML w C. Inni mogą preferować inne narzędzia, takie jak libxml2, w zależności od ich specyficznych potrzeb.
+
+Gumbo interpretuje HTML i generuje drzewo parsowania zgodne z Modelem Obiektu Dokumentu, co pozwala łatwiej manipulować i analizować zawartość strony.
+
+## Zobacz także:
+
+1. Dokumentacja Gumbo: https://github.com/google/gumbo-parser
+2. Wprowadzenie do dokumentów HTML i DOM: https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction
+3. Informatory o parsingu HTML w C: https://www.educba.com/c-html-parser/
+4. Wszystko o HTML i XML: https://www.w3schools.com/whatis/whatis_html.asp

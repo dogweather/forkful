@@ -1,6 +1,6 @@
 ---
 title:                "Пошук та заміна тексту"
-html_title:           "Java: Пошук та заміна тексту"
+html_title:           "C++: Пошук та заміна тексту"
 simple_title:         "Пошук та заміна тексту"
 programming_language: "Java"
 category:             "Java"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Що і чому?
-Заміна тексту - це процес заміни одного частини тексту на інший. Це важлива функція для програмістів, оскільки дозволяє швидко змінювати великі обсяги тексту в кодовій базі програми.
+# "## Що і чому?"
 
-### Як це робити?
-Існує кілька способів заміни тексту в Java, за допомогою засобів, таких як метод `.replace()` і `.replaceAll()`. Давайте розглянемо приклади використання цих методів:
+Пошук та заміна тексту в програмуванні надзвичайно зручні для зміни текстових значень у програмі. Без них довелося б багато разів вручну перевіряти чи змінювати рядки, що займало б багато часу та зусиль.
 
-```java
-// Замінимо всі входження "Hello" на "Bonjour":
-String input = "Hello World!";
-String output = input.replace("Hello", "Bonjour");
-System.out.println(output); // Результат: Bonjour World!
+## "## Як це зробити:"
 
-// Використаємо регулярні вирази для заміни рядків, що містять слово "Java":
-String input = "I love programming in Java!";
-String output = input.replaceAll("Java", "Python");
-System.out.println(output); // Результат: I love programming in Python!
+Щоб шукати та замінювати текст на Java, ми можемо використовувати метод `replaceAll()` класу `String`. Подивимося на приклад:
+
+```Java
+public class Main {
+    public static void main(String[] args) {
+        String txt = "Привіт світе, Я в Java світі!";
+        String newTxt = txt.replaceAll("світе", "дивосвіте");
+        System.out.println(newTxt);
+    }
+}
 ```
 
-### Глибоке занурення
-Заміна тексту не є новою концепцією, і її використання можна знайти у багатьох мовах програмування. Альтернативними підходами до заміни тексту в Java є використання бібліотеки Apache Commons (`StringUtils.replace()`) і Java Regex API. Реалізація заміни тексту може відрізнятися в залежності від підходу, але загальна ідея залишається одна й та ж.
+Виведення:
 
-### Дивись також
-Чи цікавить вас більше про роботу з рядками в Java? Ознайомтесь з нашими статтями про [пошук та заміну рядків у Java](https://www.codecademy.com/articles/regular-expressions-java) та [роботу зі строками в Java](https://www.codecademy.com/articles/string-manipulation-java). Це може допомогти вам розширити свої знання про використання рядків у своїх програмах.
+```Java
+Привіт дивосвіте, Я в Java дивосвіте!
+```
+
+Тут ми замінили всі входи слова "світе" на "дивосвіте".
+
+## "## Глибше занурення:"
+
+Пошук та заміна тексту - це стара програмна концепція, яка прийшла до нас зі старих мов програмування. Вона значно спрощує маніпуляції з текстом та підтримується більшістю сучасних мов.
+
+Як альтернатива `replaceAll()`, ви можете використовувати `replace()` або `replaceFirst()`. Вибір зазвичай залежить від конкретного випадку використання.
+
+Метод `replaceAll()` використовує регулярні вирази, тобто ви можете навіть виконувати більш складні заміни, використовуючи шаблони. 
+
+## "## Дивись також:"
+
+1. [Офіційна документація Java](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String))
+2. [Посібник по регулярним виразам](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+3. [Туторіал по маніпуляціях з рядками в Java](https://www.baeldung.com/java-string-replace-tutorial)

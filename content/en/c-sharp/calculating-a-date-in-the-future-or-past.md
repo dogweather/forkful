@@ -11,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Calculating a date in the future or past is a common task in programming that involves manipulating dates and time according to specific criteria. This can include adding or subtracting a certain number of days, months, or years from a given date, or determining the date a certain number of days from now. Programmers do this in order to perform tasks such as scheduling events, estimating project timelines, or managing data that is time sensitive.
+
+Computing a future or past date involves date arithmetic: additions, subtractions, etc. This skill is essential for developers because dates and time represent a substantial component of real-world applications, from setting reminders to tracking project milestones.
 
 ## How to:
-Calculating a date in the future or past can be easily achieved using built-in functions in C#. The ```DateTime``` struct provides various methods and properties for working with dates and times. Here are some examples of how to calculate dates in the future or past:
 
-### Calculate a future date:
+Here's how to manipulate dates in C#:
+
 ```C#
-DateTime now = DateTime.Now;
-DateTime futureDate = now.AddDays(10); 
-// Add 10 days to the current date
-Console.WriteLine(futureDate); // Output: 8/5/2021 2:27:12 PM
+using System;
+
+var baseDate = DateTime.Now;
+
+var futureDate = baseDate.AddDays(5);
+Console.WriteLine($"Future date is: {futureDate}");
+
+var pastDate = baseDate.AddDays(-3);
+Console.WriteLine($"Past date is: {pastDate}");
 ```
 
-### Calculate a past date:
+Output:
+
 ```C#
-DateTime now = DateTime.Now;
-DateTime pastDate = now.AddMonths(-2); 
-// Subtract 2 months from the current date
-Console.WriteLine(pastDate); // Output: 5/5/2021 2:27:12 PM
+Future date is: 09/28/2022 12:00:00 PM
+Past date is: 09/20/2022 12:00:00 PM
 ```
 
-Of course, these examples are just basic implementations and there are many more built-in methods and properties that you can use to customize your date calculations according to your specific needs.
+## Deep Dive
 
-## Deep Dive:
-Calculating dates in the future or past dates has been an important task in programming since the early days of computing. In the past, this was mostly done manually using complex algorithms and calculations. Thanks to advancements in programming languages, such as C#, calculating dates has become much simpler and more efficient.
+Historically, date manipulation was complex, but it's now greatly simplified by robust built-in methods in C#. The `DateTime` structure provides several methods for adding and subtracting time intervals.
 
-In addition to the built-in functions provided by C#, there are also third-party libraries, such as Noda Time, that offer even more advanced options for working with dates and times. These libraries can handle more complex date calculations, including accounting for different time zones and handling leap years.
+Alternatives include using `TimeSpan`, a structure that represents a time interval, or DateTimeOffset for dealing with UTC and local times. The `NodaTime` library can also be a good alternative for complex date/time calculations.
 
-It's worth noting that when working with dates and times, it's important to consider potential issues such as daylight savings time and time zones. These factors can affect the accuracy of date calculations and therefore, it is crucial to have a solid understanding of the concepts and proper implementation techniques.
+The methods `AddYears`, `AddMonths`, `AddDays`, `AddHours`, `AddMinutes`, `AddSeconds`, and `AddMilliseconds` allow you to manipulate `DateTime` objects. The subtract operation can be performed by adding a negative value.
 
-## See Also:
-If you want to learn more about calculating dates in the future or past using C#, here are some helpful resources to check out:
+Note that `DateTime` is immutable. Every time you use an `Add` method, it returns a new `DateTime` instance without changing the original.
 
-- [Official Microsoft documentation on working with dates and times in C#](https://docs.microsoft.com/en-us/dotnet/standard/datetime/)
-- [Noda Time library for C#](https://nodatime.org/)
-- [Blog post on handling date and time inaccuracies in programming](https://justinchronicles.com/2019/03/19/dealing-with-data-and-time-inaccuracies-in-programming/)
+## See Also
+
+- Official Documentation: [`DateTime`](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)
+- C# Programming Guide: [Dates, times, and time zones](https://docs.microsoft.com/dotnet/csharp/programming-guide/concepts/datetime/)
+- NodaTime: [NodaTime library](https://nodatime.org/)
+- StackOverflow: [Date and Time Mathematics](https://stackoverflow.com/questions/tagged/datetime+arithmetic)

@@ -1,7 +1,7 @@
 ---
-title:                "Lähettäminen http-pyyntö perusautentikoinnilla"
-html_title:           "C#: Lähettäminen http-pyyntö perusautentikoinnilla"
-simple_title:         "Lähettäminen http-pyyntö perusautentikoinnilla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,50 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Miksi ja mitä?
+## Mitä & Miksi?
 
-Lähettäessä HTTP-pyyntöä, jossa on perusautentikointi, lähetetään pyyntö yhdessä käyttäjän tunnisteiden kanssa. Tämä on yleinen tapa varmistaa, että vain oikeat käyttäjät pääsevät tiettyyn resurssiin. Koodaajat tekevät tämän usein turvallisuussyistä tai saadakseen tietyn tiedon käyttöönsä.
+Lähettäessämme HTTP-pyynnön perustunnistuksen kanssa, lähetämme Internet-palvelimelle pyynnön, joka sisältää käyttäjänimen ja salasanan suoritettaessa erilaisia ​​tehtäviä. Ohjelmoijat tekevät tämän tietojen turvallisen jakamisen ja suojattujen resurssien saamiseksi.
 
-Kuinka:
-Kaikissa alla olevissa esimerkeissä oletetaan, että haluat lähettää HTTP-pyynnön käyttäen perusautentikointia.
+## Kuinka:
 
-```c#
+Lähetä HTTP-pyyntö perustunnistuksen kanssa C#-koodilla:
+
+```C#
+using System;
 using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
 
-// Luodaan uusi WebRequest-olio
-WebRequest request = WebRequest.Create("https://www.example.com/api");
+namespace BasicAuthentication
+{
+    class Program
+    {
+        static async Task Main()
+        {
+            var httpClient = new HttpClient();
+            var byteArray = Encoding.ASCII.GetBytes("username:password");
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
 
-// Asetetaan pyynnön HTTP-metodi
-request.Method = "GET";
+            HttpResponseMessage response = await httpClient.GetAsync("https://example.com");
 
-// Lisätään käyttäjän tunnistetiedot pyyntöön
-string username = "käyttäjätunnus";
-string password = "salasana";
-request.Credentials = new NetworkCredential(username, password);
-
-// Lähetetään pyyntö ja tallennetaan vastaus
-WebResponse response = request.GetResponse();
-
-// Tulostetaan vastauksen statuskoodi ja sisältö
-Console.WriteLine("Statuskoodi: " + ((HttpWebResponse)response).StatusCode);
-Console.WriteLine("Sisältö: " + response.Content);
+            Console.WriteLine(response.StatusCode);
+        }
+    }
+}
 ```
+Koodin ajo tulostaa HTTP-koodin, joka osoittaa, menikö pyyntö läpi vai ei.
 
-Syöte:
-```
-Statuskoodi: 200 OK
-Sisältö: <html>
-<title>Esimerkki</title>
-<body>
-<h1>Tervetuloa</h1>
-</body>
-</html>
-```
+## Syvällisemmin:
 
-Deep Dive:
-Historiallisesti perusautentikointi on ollut yksi yleisimmistä tavoista suojata HTTP-pyyntöjä. Siinä käyttäjän tunnisteet lähetetään suoraan pyynnössä, mikä tekee siitä haavoittuvaisen tietoturvariskeille. Nykyään yhä useammin käytetään turvallisempia vaihtoehtoja, kuten SSL-sertifikaattia tai OAuth-autentikointia.
+### Historiallinen Konteksti:
+HTTP-perustunnistus on yksi vanhimmista tavaroista, jotka ovat osa HTTP-protokollaa ja jota kehittäjät käyttävät edelleen tietoturvaan.
 
-Jos haluat lähettää HTTP-pyynnön, jossa on perusautentikointi, on tärkeää varmistaa, että käytät HTTPS-protokollaa. Tämä varmistaa, että käyttäjän tunnisteet eivät lähetetä selkeätekstissä, mikä tekisi niistä helposti haavoittuvaisia tietoturvaloukkauksille.
+### Vaihtoehdot:
+Vaikka perustunnistusta käytetään yleisesti, se saattaa olla haavoittuvainen "man-in-the-middle" hyökkäyksille. Siksi vaihtoehtoisia menetelmiä, kuten OAuth ja token-perusteinen tunnistautuminen, kannattaa harkita.
 
-See Also:
-Voit lukea lisää HTTP-pyynnöistä ja perusautentikoinnista osoitteessa https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication. Sieltä löydät myös tietoa muista autentikointimenetelmistä ja niiden käytöstä.
+### Toteutuksen yksityiskohdat:
+Käyttäjänimen ja salasanan lähettäminen suoraan verkon yli ei ole turvallista. Sen sijaan ne on koodattava Base64-koodauksessa, kuten esimerkissämme näytettiin.
+
+## Katso Lisäksi:
+
+HTTPS-tiedonsiirron turvaaminen: [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=net-5.0)
+HTTP-pyynnön lähettämisen useita esimerkkejä: [Microsoft Documentation](https://docs.microsoft.com/en-fi/azure/architecture/best-practices/api-design)
+OAuth- ja token-pohjainen autentikointi: [Introduction to OAuth](https://oauth.net/2/), [Token-based Authentication](https://www.varonis.com/blog/token-based-authentication/)

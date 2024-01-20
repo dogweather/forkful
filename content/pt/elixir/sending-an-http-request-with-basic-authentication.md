@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Elixir: Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,35 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+# Enviando uma solicitação HTTP com autenticação básica em Elixir
 
-Enviar uma solicitação HTTP com autenticação básica é o ato de incluir um cabeçalho de autorização em uma solicitação HTTP para acessar um determinado recurso protegido. Os programadores geralmente fazem isso para acessar APIs ou páginas da web que requerem autenticação.
+## O que & Por quê?
+
+Enviar uma solicitação HTTP com autenticação básica é uma maneira de interagir com APIs protegidas que requerem credenciais (nome de usuário e senha) no cabeçalho da solicitação HTTP. Programamos isso para acessar ou manipular dados em tais APIs de forma segura.
 
 ## Como fazer:
 
+Elixir, com sua biblioteca `HTTPoison`, nos ajuda a fazer isso. Primeiro, adicione `HTTPoison` ao seu mix.exs:
+
 ```Elixir
-  httpc.request(:get, "https://meusite.com/recurso", [
-    {:basic_auth, {"usuario", "senha"}}
-  ])
+defp deps do
+  [
+    {:httpoison, "~> 1.8"}
+  ]
+end
+``` 
+
+Depois, faça a solicitação HTTP com autenticação básica da seguinte forma:
+
+```Elixir
+defmodule MyHttpClient do
+  def get(url, username, password) do
+    headers = ["Authorization": "Basic " <> :base64.encode_to_string("#{username}:#{password}")]
+    HTTPoison.get(url, headers)
+  end
+end
 ```
 
-Saída de exemplo:
+O resultado poderia ser algo assim:
 
-```
+```Elixir
 {:ok, %HTTPoison.Response{
-  status_code: 200,
-  body: "Dados do recurso protegido"
+       body: "<html>...</html>",
+       headers: [{"Content-Type", "text/html"}],
+       status_code: 200
 }}
 ```
 
-## Mergulho Profundo:
+## Mergulho profundo
 
-Este método de autenticação foi introduzido no HTTP 1.0 como uma forma de autenticação básica através do uso de um cabeçalho de autorização. Existem outras opções de autenticação, como a autenticação digest, que é mais segura, mas também mais complexa de implementar.
+A autenticação básica é uma das formas mais antigas de autenticação na web, desde os primeiros dias do protocolo HTTP. Há outras alternativas para isso, como o OAuth e o token JWT, que são mais seguros, mas requerem mais complexidade para implementar.
 
-Ao enviar uma solicitação com autenticação básica, a informação de usuário e senha é base64-codificada e incluída no cabeçalho de autorização. Isso torna a comunicação menos segura, pois é fácil de decodificar e potencialmente expõe as credenciais do usuário.
+Em Elixir, estamos usando a biblioteca `HTTPoison`, que usa a biblioteca `hackney` Erlang por baixo dos panos. `hackney` é uma das bibliotecas HTTP mais populares em Erlang, e também oferece suporte a autenticação básica. Certifique-se de tratar os erros e as respostas de falha do servidor ao usar essas bibliotecas.
 
-## Veja também:
+## Veja também
 
-[Documentação oficial do Elixir sobre o módulo HTTPc](https://hexdocs.pm/elixir/HTTPc.html)
+A documentação oficial de Elixir e HTTPoison são boas fontes para aprender mais sobre esse tópico:
 
-[Artigo sobre autenticação HTTP básica na prática](https://www.apollographql.com/blog/authenticating-with-elixir/)
+- Elixir: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
+- HTTPoison: [https://hexdocs.pm/httpoison/HTTPoison.html](https://hexdocs.pm/httpoison/HTTPoison.html) 
+
+Hackney também possui uma documentação abrangente:
+
+- Hackney: [https://hexdocs.pm/hackney/readme.html](https://hexdocs.pm/hackney/readme.html)

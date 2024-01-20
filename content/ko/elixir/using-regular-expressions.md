@@ -1,7 +1,7 @@
 ---
-title:                "정규식 사용하기"
-html_title:           "Elixir: 정규식 사용하기"
-simple_title:         "정규식 사용하기"
+title:                "정규 표현식 사용하기"
+html_title:           "Bash: 정규 표현식 사용하기"
+simple_title:         "정규 표현식 사용하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇이며 왜?
 
-정규 표현식을 사용하는 것은 문자열에서 패턴을 매칭하는 것을 의미합니다. 프로그래머들은 이를 통해 더 빠르고 정확한 문자열 매칭을 할 수 있습니다.
+정규 표현식은 텍스트를 검색하고 수정하는데 사용되는 패턴입니다. 프로그래머는 텍스트 데이터를 효율적이고 정확하게 처리하기 위해 이를 활용합니다.
 
-## 어떻게:
+## 어떻게 사용하나요:
 
-```Elixir
-Regex.match?(~r/hello/, "hello world")
-```
-
-위 예제에서는 "hello"라는 패턴과 일치하므로 `true`를 리턴합니다.
+Elixir에서 정규 표현식을 사용하는 방법은 쉽습니다. 아래 코드를 살펴봅시다.
 
 ```Elixir
-Regex.scan(~r/a\w+/, "banana apple")
+  string = "Hello, Elixir programmers!"
+  Regex.scan(~r/[A-Z][a-z]+/, string)
 ```
 
-위 예제에서는 문자열에서 "a"로 시작하는 모든 단어를 찾으므로 ["banana", "apple"]을 리턴합니다.
+이 코드의 출력값은 다음과 같습니다.
 
-## 깊이 파기:
+```Elixir
+  [["Hello"], ["Elixir"]]
+```
 
-정규 표현식은 복잡한 패턴을 동적으로 매칭하기 때문에 많은 프로그래머들이 선호하는 방식입니다. Python의 정규 표현식과 비교하여 Elixir의 정규 표현식은 더 강력한 결합 기능을 제공합니다. 
+위의 코드는 대문자로 시작하는 단어를 찾는 정규 표현식입니다.
 
-대체 방법으로는 Elixir의 String 모듈도 있지만 정규 표현식은 더 다양한 패턴을 매칭할 수 있습니다. 
+## 깊게 보기:
 
-Elixir에서는 정규 표현식이 `Regex` 모듈을 사용해 컴파일되고 실행됩니다. `Regex.run/3` 함수는 다양한 매칭 옵션을 제공합니다.
+정규 표현식 체계는 먼저 1950년대에 개발되었습니다. Elixir에서 정규 표현식을 사용하면, 텍스트에서 특정 패턴을 효율적으로 찾고 대체할 수 있습니다. 그러나 사용자가 잘못 사용하면 코드의 가독성을 떨어뜨릴 가능성이 있으므로 주의가 필요합니다. Elixir의 `String` 모듈 안에는 정규 표현식 없이도 텍스트를 쉽게 처리할 수 있는 함수들이 많습니다.
 
-## 참조:
+## 참고 자료:
 
-- Elixir 문서: https://hexdocs.pm/elixir/Regex.html
-- 정규 표현식 Tutorial: https://regexone.com/
+* Elixir 정규 표현식 공식 문서: [link](https://hexdocs.pm/elixir/1.12/Regex.html)
+* Elixir `String` 모듈 공식 문서: [link](https://hexdocs.pm/elixir/1.12/String.html)

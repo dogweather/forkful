@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
-Obliczanie daty w przyszłości lub przeszłości jest procesem wykorzystywanym przez programistów, aby ustalić odpowiednie daty dla swoich projektów. Jest to szczególnie przydatne w przypadku tworzenia kalendarzy lub automatycznych harmonogramów zadań.
+## Co i Dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to proces określania konkretnych dat z przyszłości lub przeszłości, znając obecną datę i ilość dni do dodania lub odjęcia. Programiści robią to, gdy magazynują lub analizują dane związane z czasem.
 
-# Jak to zrobić:
-W programowaniu Arduino można użyć funkcji ```millis()``` do uzyskania aktualnego czasu w milisekundach. Możemy również skorzystać z funkcji ```delay()```, aby wykonać odstęp czasu. Aby ustawić datę w przyszłości lub przeszłości, musimy dodać lub odjąć odpowiednią ilość milisekund do lub od aktualnego czasu.
+## Jak to zrobić:
+W Arduino, możemy to zrobić za pomocą biblioteki TimeLib. Oto prosty przykładowy kod:
 
-Przykład:
+```Arduino
+#include <TimeLib.h>
+
+void setup(){        
+  setTime(15, 45, 0, 4, 11, 2021); //ustawienie aktualnego czasu i daty 
+  Serial.begin(9600);
+}
+
+void loop(){  
+  time_t future_date = now() + 7 * SECS_PER_DAY; //obliczenie daty za 7 dni
+  Serial.print(day(future_date));
+  Serial.print(".");
+  Serial.println(month(future_date));
+  delay(1000);
+}
 ```
-unsigned long currentTime = millis(); // uzyskanie aktualnego czasu w milisekundach
-unsigned long futureTime = currentTime + (1000 * 60 * 60 * 24); // dodanie jednego dnia (1000 milisekund * 60 sekund * 60 minut * 24 godziny)
-unsigned long pastTime = currentTime - (1000 * 60 * 60 * 24); // odejmowanie jednego dnia
-```
+Tym kodem obliczamy datę za 7 dni od bieżącej daty. W wyjściu zobaczymy datę za tydzień od naszej pierwotnie ustawionej daty.
 
-Przykładowy wynik:
-```
-Aktualny czas w milisekundach: 1573723584
-Czas za jednym dniem: 1573813584
-Czas za jednym dniem w formacie hh:mm:ss: 09:06:24
-Czas za jednym dniem w formacie dd/mm/yyyy: 15/11/2019
-```
+## Głębiej
+Za obliczanie dat w przyszłości lub przeszłości zwykle odpowiada wbudowana biblioteka lub funkcja w danym języku programowania. W Arduino korzystamy z biblioteki TimeLib, która jest łatwo dostępna i znacząco ułatwia tę czynność.
 
-# Głębsza analiza:
-Istnieje wiele funkcji i bibliotek dostępnych w Arduino, które pomagają w obliczaniu dat w przyszłości lub przeszłości. Możemy na przykład użyć biblioteki RTC, aby uzyskać dokładny czas z modułu zegara rzeczywistego. Istnieją również inne metody obliczania dat w oparciu o bieżący czas lub wykorzystujące funkcje języka programowania, takie jak ```day()```, ```month()``` czy ```year()```.
+Jednak w kontekście historycznym funkcjonalność tą czesto trzeba bylo implementować samemu. Dopiero pojawienie się konkretnych bibliotek ułatwiło ten proces. 
 
-# Zobacz też:
-- Dokumentacja Arduino dotycząca funkcji ```millis()```: https://www.arduino.cc/reference/en/language/functions/time/millis/
-- Dokumentacja Arduino dotycząca funkcji ```delay()```: https://www.arduino.cc/reference/en/language/functions/time/delay/
-- Biblioteka RTC dostępna w Arduino IDE: https://github.com/adafruit/RTClib
+Alternatywą dla TimeLib w Arduino może być na przykład biblioteka RTClib, która także umożliwia operacje na datach. Wybór między jedną a drugą zależy od konkretnych wymagań projektu, jak na przykład ilość dostępnej pamięci w mikrokontrolerze.
+
+## Zobacz też
+1. [Dokumentacja TimeLib](https://www.pjrc.com/teensy/td_libs_Time.html)
+2. [Dokumentacja RTClib](https://adafruit.github.io/RTClib/html/index.html)
+3. [Instrukcja Arduino o czasie i dacie](https://www.arduino.cc/reference/en/libraries/rtc/)

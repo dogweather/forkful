@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich von zwei Datumsangaben"
-html_title:           "Java: Vergleich von zwei Datumsangaben"
-simple_title:         "Vergleich von zwei Datumsangaben"
+title:                "Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -11,44 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Vergleichen von zwei Daten ist eine gängige Aufgabe in der Programmierung. Es bezieht sich darauf, zwei Datumsangaben zu vergleichen und zu bestimmen, welches Datum früher oder später ist. Programmierer tun dies, um ihre Anwendungen in Bezug auf Zeit und Datum zu steuern.
+
+Das Vergleichen von zwei Daten ist ein gewöhnlicher Vorgang in der Programmierung und ermöglicht es uns, zu überprüfen, welches Datum früher oder später ist. Dies ist nützlich in vielen Situationen, wie z.B. beim Sortieren von Ereignissen nach Datum oder beim Berechnen der Dauer zwischen zwei Daten.
 
 ## So geht's:
-Es gibt verschiedene Möglichkeiten, zwei Daten in Java zu vergleichen. Eine Möglichkeit ist die Verwendung der Methode `compareTo()` der Klasse `LocalDate`, die in der Java 8 API enthalten ist. Diese Methode vergleicht zwei LocalDate-Objekte und gibt einen Wert zurück, der anzeigt, welches Datum früher oder später ist. Hier ist ein Beispiel:
+
+Ein gängiger Weg zum Vergleichen von zwei Daten in Java ist die Verwendung der `compareTo()` Methode aus der `java.time.LocalDate` Klasse.
 
 ```Java
-// Erstellen und Vergleichen von zwei LocalDate-Objekten
-LocalDate date1 = LocalDate.of(2021, Month.JANUARY, 1);
-LocalDate date2 = LocalDate.of(2021, Month.MARCH, 1);
+import java.time.LocalDate;
 
-// Vergleich mit Hilfe der compareTo()-Methode
-int result = date1.compareTo(date2);
+public class Main {
 
-// Ausgabe des Ergebnisses
-System.out.println(result);
+  public static void main(String[] args) {
+
+    LocalDate date1 = LocalDate.of(2020, 1, 1);
+    LocalDate date2 = LocalDate.of(2021, 1, 1);
+
+    if (date1.compareTo(date2) < 0) {
+      System.out.println("Das erste Datum ist früher.");
+    } else if (date1.compareTo(date2) > 0) {
+      System.out.println("Das erste Datum ist später.");
+    } else {
+      System.out.println("Beide Daten sind gleich.");
+    }
+
+  }
+}
+```
+Die Ausgabe ist:
+
+```
+Das erste Datum ist früher.
 ```
 
-Die Ausgabe dieses Codes ist `"-2"`, da das Datum 1. Januar 2021 früher ist als das Datum 1. März 2021.
+## Vertiefung:
 
-Eine andere Möglichkeit, zwei Daten zu vergleichen, ist die Verwendung der Methode `isBefore()` der Klasse `LocalDate`. Diese Methode gibt einen booleschen Wert zurück, der angibt, ob das von uns übergebene Datum vor dem in der Methode angegebenen Datum liegt. Hier ist ein Beispiel:
+Historisch gesehen hat man Daten in Java mit `java.util.Date` und `java.util.Calendar` verglichen, welche jedoch unter heutiger Betrachtung als fehleranfällig und weniger intuitiv gelten. Deshalb empfiehlt es sich, ab Java 8 die neue API unter `java.time` zu verwenden.
+
+Eine alternative Methode zum Vergleichen von Daten ist die `isBefore()`, `isAfter()`, oder `isEqual()` Methode:
 
 ```Java
-// Erstellen und Vergleichen von zwei LocalDate-Objekten
-LocalDate date1 = LocalDate.of(2021, Month.JANUARY, 1);
-LocalDate date2 = LocalDate.of(2021, Month.MARCH, 1);
-
-// Vergleich mit Hilfe der isBefore()-Methode
-boolean result = date1.isBefore(date2);
-
-// Ausgabe des Ergebnisses
-System.out.println(result);
+if (date1.isBefore(date2)) {
+  System.out.println("Das erste Datum ist früher.");
+} else if (date1.isAfter(date2)) {
+  System.out.println("Das erste Datum ist später.");
+} else {
+  System.out.println("Beide Daten sind gleich.");
+}
 ```
-
-Die Ausgabe dieses Codes ist `"true"`, da das Datum 1. Januar 2021 vor dem Datum 1. März 2021 liegt.
-
-## Tiefergehende Informationen:
-Das Vergleichen von Daten hat eine lange Geschichte in der Programmierung. In älteren Programmiersprachen wie COBOL mussten Daten in einem speziellen Format gespeichert werden, damit sie verglichen werden konnten. Mit der Einführung von objektorientierter Programmierung und der Java-API wurden jedoch praktischere und einfachere Methoden zur Verfügung gestellt. Einige Alternativen zur Verwendung von `compareTo()` und `isBefore()` sind die Verwendung von `isEqual()` und `isAfter()` oder die Verwendung von `before()` und `after()` aus der `Calendar`-Klasse.
+Aus internen Gründen erstellen diese Methoden eine Kopie der Daten, was zu minimal höherem Speicherverbrauch führen kann, aber in den meisten Fällen ist dieser Unterschied vernachlässigbar.
 
 ## Siehe auch:
-- [Java 8 API-Dokumentation zu LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Java-Artikel zu Vergleichsoperatoren](https://www.javatpoint.com/java-comparison-operators)
+
+- [Oracles offizielle Dokumentation zur `java.time.LocalDate` Klasse](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+- [Eine Anleitung zu den neuen Datums- und Zeiteinheiten in Java 8](https://www.baeldung.com/java-8-date-time-intro)

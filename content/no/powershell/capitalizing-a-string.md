@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en streng"
-html_title:           "PowerShell: Store bokstaver i en streng"
-simple_title:         "Store bokstaver i en streng"
+title:                "Gjøre en streng stor"
+html_title:           "PowerShell: Gjøre en streng stor"
+simple_title:         "Gjøre en streng stor"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-** Hva og hvorfor? **
+## Hva & Hvorfor?
+Å gjøre en streng stor er en programmeringspraksis der det første bokstavet i hvert ord i en tekststreng gjøres stor. Programmerere gjøre dette for å forbedre lesbareheten og formatere data riktig.
 
-Capitalizing en streng betyr å endre den første bokstaven til store bokstaver. Programmere gjør dette for å gjøre tekst lettere å lese og for å følge standarder og konvensjoner i koden deres.
+## Hvordan:
+Her er noen kodelinjer og eksempler på hvordan du kan formatere en streng til stor i PowerShell.
 
-** Hvordan: **
+```PowerShell
+# Definer en streng
+$string = "jeg er en streng i powershell"
 
-``` PowerShell
-# Eksempel:
-$streng = "hei, dette er en tekststreng."
+# Konverter strengen til stor
+$capitalString = (Get-Culture).TextInfo.ToTitleCase($string.ToLower())
 
-# Bruk .ToUpper() metoden:
-$streng.ToUpper()
-
-# Output:
-HEI, DETTE ER EN TEKSTSTRENG.
+# Skriv ut den formaterte strengen
+Write-Output $capitalString
 ```
 
-** Dypdykk: **
+Utførelsen av ovenstående kodeblokk vil produsere følgende utdata:
 
-1. Historisk sammenheng: Capitalization har vært brukt i språk i mange århundrer for å skille mellom forskjellige typer ord.
-2. Alternativer: I tillegg til .ToUpper() metoden, kan du også bruke .ToUpperInvariant() for å sikre at store bokstaver blir brukt uavhengig av språkinnstillinger. Du kan også bruke .ToTitleCase() metoden for å forbedre leseligheten og følge riktig hovedstad konvensjoner.
-3. Implementeringsdetaljer: I PowerShell brukes .ToUpper() metoden for å konvertere en streng til store bokstaver. Dette kan også brukes på individuelle tegn eller en del av en streng.
+```PowerShell
+Jeg Er En Streng I Powershell
+```
 
-** Se også: **
+## Deep Dive
+Historisk sett har programmerere gjort bruk av teknikker for å endre saken for en streng for å forbedre beregningenes nøyaktighet og dataanalyse. I PowerShell kan du også bruke .ToUpper() metoden for å gjøre alle bokstavene i en streng stor. Men for å gjøre den første bokstaven i hver ord stor, er (Get-Culture).TextInfo.ToTitleCase() metoden mer effektiv. Denne metoden holder også hensyn til kulturelle innstillinger, og gir dermed bedre resultat i flerspråklige programmer.
 
-- Dokumentasjon for .ToUpper() metoden: https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=netframework-4.8
-- PowerShell stilenhetsstandarder: https://github.com/PoshCode/PowerShellPracticeAndStyle
+## Se Også
+For mer detaljer om tekstmanipulasjon i PowerShell, se de offisielle Microsoft-dokumentene:
+
+1. [String manipulation with PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/samples/string-manipulation-with-powershell?view=powershell-7.1)
+2. [Formatting Text in PowerShell](https://devblogs.microsoft.com/scripting/formatting-text-in-powershell-with-format-table-and-more/)
+3. [Working with Strings in PowerShell](https://ss64.com/ps/syntax-strings.html)

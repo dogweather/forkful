@@ -11,35 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
+Calcular una fecha en el futuro o pasado implica obtener una fecha que está a una cierta cantidad de días, meses o años de la fecha actual. Los programadores hacen esto para tareas como programar recordatorios, calcular fechas de vencimiento o proyectar fechas en escenarios de planificación.
 
-Calcular una fecha en el futuro o pasado es una tarea importante para los programadores. Esto nos permite realizar cálculos temporales precisos y realizar tareas como enviar recordatorios a los usuarios o programar eventos en una aplicación. Además, puede ser útil para determinar cuánto tiempo ha pasado desde un evento o para predecir fechas futuras en un sistema.
-
-## ¡Aprende cómo!
-
-Afortunadamente, calcular una fecha en el futuro o pasado en PowerShell es muy sencillo. Simplemente podemos utilizar la cmdlet `Get-Date` y especificar la cantidad de tiempo que deseamos calcular utilizando los parámetros `-Date` y `-Adjust`. Aquí tienes un ejemplo:
+## ¿Cómo hacerlo?
+Aquí veremos cómo calcular una fecha 30 días en el futuro y 30 días en el pasado con PowerShell.
 
 ```PowerShell
-Get-Date -Date "04/23/2021" -Adjust 7
+# Fecha en el Futuro
+$fechaFutura = (Get-Date).AddDays(30)
+Escribe-Salida "La fecha 30 días en el futuro es: $fechaFutura"
 
-Output: April 30, 2021 12:00:00 AM
+# Fecha en el Pasado
+$fechaPasada = (Get-Date).AddDays(-30)
+Escribe-Salida "La fecha 30 días en el pasado es: $fechaPasada"
 ```
 
-En este ejemplo, hemos especificado la fecha `04/23/2021` como la fecha base y hemos utilizado el parámetro `-Adjust` para sumar 7 días. Podemos utilizar valores negativos para restar días de la fecha base. También podemos utilizar otras unidades de tiempo como `-Adjust -1d` para restar un día, o `-Adjust 3h` para sumar tres horas.
-
-## Bucea más profundo
-
-Esta función de PowerShell se basa en el sistema de coordenadas de tiempo Unix, que cuenta la cantidad de segundos transcurridos desde el 1 de enero de 1970. Esto significa que podemos realizar cálculos de tiempo utilizando simples operaciones matemáticas, como sumar o restar la cantidad adecuada de segundos. Por ejemplo:
+La salida será algo similar a esto:
 
 ```PowerShell
-(Get-Date).AddSeconds(3600)
-
-Output: April 23, 2021 1:00:00 AM
+La fecha 30 días en el futuro es: 29 November 2022 12:00:00
+La fecha 30 días en el pasado es: 30 September 2022 12:00:00
 ```
 
-Esto nos da la fecha y hora exactas que serían una hora después de la fecha actual.
+## Análisis Profundo
+En cuanto al contexto histórico, antes de la invención de los lenguajes de programación modernos como PowerShell, calcular una fecha en el futuro o pasado era un proceso manual y complicado. PowerShell ha simplificado enormemente esta tarea con funciones incorporadas como Get-Date y AddDays.
 
-Si deseas realizar cálculos más complejos, puedes utilizar el módulo `TimeSpan` de PowerShell. Este módulo nos permite realizar operaciones con intervalos de tiempo y combinarlos con la fecha y hora actual para obtener resultados precisos.
+Como alternativas, en PowerShell también puedes usar AddMonths o AddYears para calcular una fecha a una cantidad de meses o años en el futuro o pasado.
 
-## Ver también
+En cuanto a los detalles de implementación, Get-Date obtiene la fecha y hora actual del sistema, luego AddDays, AddMonths, o AddYears agregan (o restan) la cantidad especificada de días, meses o años.
 
-Para obtener más información y ejemplos sobre cómo calcular fechas en PowerShell, consulta la documentación oficial de Microsoft [aquí](https://docs.microsoft.com/es-es/powershell/scripting/handy-bits-of-code/date-time-resource-pool-63c59d85?view=powershell-7.1) y este artículo de [GeeksforGeeks](https://www.geeksforgeeks.org/powershell-get-date-command/). ¡Ahora ya puedes realizar cálculos de tiempo en tus scripts de forma rápida y sencilla!
+## Ver También
+Para más detalle sobre las funciones de fecha y hora en PowerShell, aquí hay algunos enlaces útiles:
+
+- Get-Date: docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/get-date
+- AddDays: docs.microsoft.com/es-es/dotnet/api/system.datetime.adddays
+- AddMonths: docs.microsoft.com/es-es/dotnet/api/system.datetime.addmonths
+- AddYears: docs.microsoft.com/es-es/dotnet/api/system.datetime.addyears

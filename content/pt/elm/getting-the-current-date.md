@@ -1,7 +1,7 @@
 ---
-title:                "Obtendo a data atual."
-html_title:           "Elm: Obtendo a data atual."
-simple_title:         "Obtendo a data atual."
+title:                "Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
+simple_title:         "Obtendo a data atual"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,35 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é & por quê?
+# Aprenda a Obter a Data Atual em Elm
 
-Obter a data atual é um processo simples que permite aos programadores obter a data mais recente no formato desejado. Isso é útil para vários propósitos, como registrar a data em que um determinado evento ocorreu ou manter o controle de transações em um sistema.
+## O Que & Por Quê?
 
-## Como fazer:
+Obter a data atual em programação é o ato de recuperar a data e a hora no momento em que o código é executado. Programadores fazem isso frequentemente quando precisam marcar eventos, registrar informações ou realizar tarefas baseadas em tempo.
 
-Obter a data atual no Elm é bastante fácil. Com o uso da função `toIsoString` do pacote `Time`, podemos obter a data atual no formato ISO padrão. Veja um exemplo abaixo:
+## Como Fazer:
 
-```elm
-import Time exposing (toIsoString)
+Não há um jeito direto de pegar a data atual puramente em Elm, pois isso vai contra sua natureza funcional e previsível. No entanto, você pode usar um `Task` para retornar o tempo atual em milissegundos desde a Época Unix. 
 
-currentDate : String
-currentDate =
-  toIsoString Time.utc
+```Elm
+import Task exposing (Task)
+import Time exposing (Posix, toMillis, utc)
+import Task.Perform as Perform
+
+GetTime : Task.Task x Posix
+GetTime =
+    Time.now
+
+main =
+    Perform.task GetTime
 ```
+E ao executar o código acima, você terá um valor que representa os milissegundos desde a Época Unix.
 
-O código acima irá retornar uma string contendo a data atual no formato "YYYY-MM-DD". Você também pode ajustar o fuso horário passando uma configuração diferente para a função `toIsoString`. Por exemplo:
+## Mergulhando Fundo
 
-```elm
-toIsoString (Time.zone 3) -- para obter a data com +3 horas do fuso horário UTC
-```
+Não há uma função inerente em Elm para obter a data atual como há em outras linguagens devido à sua orientação funcional onde todas as funções devem ser determinísticas. Nesta alternativa, estamos usando a função `Time.now` que retorna um `Task`. 
 
-## Mergulho Profundo:
+A Época Unix, mencionada anteriormente, é o número de milissegundos que se passaram desde 1º de janeiro de 1970. A maioria das linguagens de programação baseia-se nesta Época para calcular datas e horários.
 
-Obter a data atual é uma tarefa tão comum que é suportada por várias linguagens de programação e bibliotecas. No entanto, o método para fazer isso pode variar de acordo com a linguagem que você está usando. Em Elm, a biblioteca `Time` fornece funções convenientes para trabalhar com datas e horários, incluindo a obtenção da data atual.
+Note que a função `Time.now` pode produzir resultados diferentes cada vez que é chamada, quebrando a garantia fundamental de Elm que funções com o mesmo input produzirão sempre o mesmo output. É por isso que `Time.now` retorna um `Task` ao invés de um valor direto.
 
-Caso você esteja trabalhando com JavaScript embarcado no Elm, também é possível obter a data atual usando a biblioteca `Date` do JavaScript. No entanto, isso é considerado uma prática não recomendada, pois pode causar problemas de compatibilidade e desempenho.
+Lembre-se que lidar com datas e horas em programação pode ser complicado devido a fatores como fusos horários e horário de verão. Portanto, sempre use bibliotecas confiáveis e testadas ao lidar com datas e horas em um aplicativo real.
 
-## Veja também:
+## Veja Também
 
-- Documentação oficial da biblioteca `Time` do Elm: [https://package.elm-lang.org/packages/elm/time/latest/Time#toIsoString](https://package.elm-lang.org/packages/elm/time/latest/Time#toIsoString)
-- Documentação oficial da biblioteca `Date` do JavaScript para Elm: [https://package.elm-lang.org/packages/elm/core/latest/Date](https://package.elm-lang.org/packages/elm/core/latest/Date)
+1. Documentação oficial Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+2. Uma explicação detalhada do tempo na programação:  [https://www.vaidehiagar.io/blog/a-beginner-s-guide-to-time-in-elm](https://www.vaidehiagar.io/blog/a-beginner-s-guide-to-time-in-elm)
+3. Discussão no fórum Elm sobre manipulação de data e hora: [https://discourse.elm-lang.org/t/date-arithmetics-library-design/3976](https://discourse.elm-lang.org/t/date-arithmetics-library-design/3976)

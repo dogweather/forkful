@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung regulärer Ausdrücke"
-html_title:           "TypeScript: Verwendung regulärer Ausdrücke"
-simple_title:         "Verwendung regulärer Ausdrücke"
+title:                "Reguläre Ausdrücke verwenden"
+html_title:           "Bash: Reguläre Ausdrücke verwenden"
+simple_title:         "Reguläre Ausdrücke verwenden"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -12,32 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Reguläre Ausdrücke sind eine Methode zum Durchsuchen und Manipulieren von Texten in Programmiersprachen wie TypeScript. Programmierer nutzen reguläre Ausdrücke, um komplexe Suchanfragen zu vereinfachen oder bestimmte Teile eines Textes zu extrahieren.
+Reguläre Ausdrücke (Regular Expressions oder RegEx) sind Muster zur Abgleichung und Manipulierung von Textstrings. Sie sind nützlich, um Muster in Daten zu suchen, zu verifizieren oder zu trennen und sie dann entsprechend zu verarbeiten.
 
-## Wie geht's?
+## So geht's:
 
-Die Verwendung von regulären Ausdrücken beginnt immer mit der Deklaration der Eingabezeichenkette. Dabei können verschiedene Methoden angewendet werden, um Muster in der Zeichenkette zu erkennen und zu verarbeiten.
-
-Ein Beispiel für die Suche nach einer bestimmten Zeichenfolge in einer Zeichenkette:
+Hier ist ein einfacher RegEx in TypeScript zum Überprüfen einer E-Mail-Adresse.
 
 ```TypeScript
-const string = "Hallo Welt!";
-const pattern = /Welt/;
-const result = string.match(pattern);
-
-console.log(result); // Ausgabe: ["Welt"]
+let regex: RegExp = new RegExp('^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$');
+let testEmail: string = 'muster@beispiel.de';
+console.log(regex.test(testEmail)); // gibt true zurück
 ```
 
-Andere Methoden, wie z.B. `replace()` oder `test()`, können auch verwendet werden, um Texte zu manipulieren oder Muster zu überprüfen.
+Du kannst auch einen RegEx verwenden, um Text in einem String zu suchen und zu ersetzen.
 
-## Tiefentauchen
+```TypeScript
+let s: string = 'Hallo Welt!';
+s = s.replace(/Welt/g, 'TypeScript');
+console.log(s); // gibt 'Hallo TypeScript!' zurück
+```
 
-Reguläre Ausdrücke wurden erstmals in den 1950er Jahren von dem Mathematiker Stephen Kleene eingeführt. Seitdem haben sie sich zu einem wichtigen Bestandteil der Programmierung entwickelt und werden von Entwicklern häufig bei der Validierung von Benutzereingaben oder beim Scraping von Daten verwendet.
+## Tiefgang:
 
-Als Alternative zu regulären Ausdrücken können auch String-Methoden wie `indexOf()` oder `substring()` verwendet werden, aber diese sind oft nicht so leistungsfähig und flexibel wie reguläre Ausdrücke.
+RegEx gibt es schon seit den 1950er Jahren und wurde seitdem in vielen Programmiersprachen implementiert. Sie sind ausgesprochen mächtig, haben aber auch ihre Grenzen und werden oft als schwer lesbar kritisiert.
 
-Bei der Implementierung von regulären Ausdrücken in TypeScript ist es wichtig zu beachten, dass sie case sensitive sind und spezielle Zeichen wie ".", "*", oder "?" beachtet werden müssen.
+Alternativen zu RegEx könnten spezifische String-Methoden in TypeScript sein wie `indexOf()`, `startsWith()`, `endsWith()`, usw. Sie sind weniger mächtig, aber leichter zu lesen und zu verstehen.
 
-## Siehe auch
+Obwohl TypeScript eine statisch typisierte Superset von JavaScript ist, sind die RegEx-Implementierungen zwischen den beiden Sprachen gleich. Der Unterschied liegt in der Möglichkeit, den RegEx-Typ in TypeScript explizit zu deklarieren.
 
-Weitere Informationen zu regulären Ausdrücken in TypeScript und eine Übersicht über verfügbare Methoden finden Sie in der offiziellen TypeScript-Dokumentation unter https://www.typescriptlang.org/docs/handbook/regular-expressions.html.
+## Siehe auch:
+
+-   [RegEx Dokumentation in Mozilla Developer Network (MDN)](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions)
+
+-   [TypeScript Handbook: RegEx](https://www.typescriptlang.org/docs/handbook/2/objects.html#array-regex) 
+
+-   [JavaScript.info: RegEx](https://javascript.info/regular-expressions)

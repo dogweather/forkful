@@ -1,7 +1,7 @@
 ---
-title:                "문자열에서 날짜 추출"
-html_title:           "Lua: 문자열에서 날짜 추출"
-simple_title:         "문자열에서 날짜 추출"
+title:                "문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
+simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,41 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 파싱이 무엇이며, 왜 필요한가?
 
-일반적으로 프로그래밍에서 날짜는 문자열로 저장될 수도 있습니다. 그러나 이 문자열을 일반적으로 알아보기 쉬운 형식으로 변환해야 할 때가 있습니다. 이것을 문자열에서 날짜로 파싱한다고 합니다. 프로그래머는 이 작업을 수행함으로써 원하는 날짜 형식으로 데이터를 조작하고 표시할 수 있습니다.
+문자열에서 날짜를 파싱하는 것은 문자열 데이터를 날짜 형식으로 변환하는 과정을 말합니다. 프로그래머는 이런 방식으로 사용자가 입력한 날짜 정보를 적절하게 이해하고 처리할 수 있습니다.
 
-## 하는 방법:
+## 어떻게 해야 할까요?
 
-```Lua
--- 문자열에서 날짜로 파싱하는 방법
-local date = "2021년 7월 21일"
-local format = "%Y년 %m월 %d일"
-
--- os.date 함수를 사용하여 문자열을 날짜로 변환
-local parsedDate = os.date(format, date)
-
--- 변환된 날짜 출력
-print(parsedDate)
-```
-출력: 2021년 07월 21일
+Lua언어에서 다행히도 이런 작업들은 매우 간단합니다. 아래 예제를 살펴보세요.
 
 ```Lua
--- 다른 형식의 입력 문자열과 포맷을 사용하는 예제
-local date = "21-07-2021"
-local format = "%d-%m-%Y"
-
-local parsedDate = os.date(format, date)
-
-print(parsedDate)
+date = "2022-01-27"
+year, month, day = date:match("(%d+)%-(%d+)%-(%d+)")
+print(year)  -- Output: 2022
+print(month) -- Output: 01
+print(day)   -- Output: 27
 ```
-출력: 21-07-2021
 
-## 더 들어가보기:
+위 스크립트는 match 함수를 사용하여 "YYYY-MM-DD" 형식의 날짜를 파싱합니다.
 
-파싱이란 용어는 주로 자연어 처리 분야에서 사용되었습니다. 그러나 프로그래밍에서는 문자열을 해석해서 특정한 형태로 바꾸는 것을 의미합니다. 다양한 언어에서는 날짜 포맷을 다루는 라이브러리를 제공하기도 합니다. 이를 이용하면 더욱 정확하고 복잡한 날짜 변환도 가능합니다.
+## 심층 이해를 위해
 
-## 관련 링크:
+역사적으로, 문자열에서 날짜 정보를 추출하는 방법은 다양합니다. 과거에는 문자열 조작 함수를 사용하여 수동으로 날짜를 추출하는 경우가 많았습니다. 하지만 이는 복잡하며 버그 생성 가능성이 높습니다. 
 
-- Lua 날짜 다루기: https://www.lua.org/pil/22.1.html
-- 날짜 포맷 처리 기능 라이브러리: https://www.lua.org/manual/5.3/manual.html#6.9
+또한, 다른 프로그래밍 언어에는 이미 날짜 파싱을 위한 특별한 함수나 라이브러리가 내장되어 있습니다. 예를 들어, Python에는 strptime이라는 함수가, Java에는 SimpleDateFormat 클래스가 있습니다.
+
+Lua의 match 함수는 이러한 문제에 대한 간단하고 효율적인 해결책입니다. 이 함수는 주어진 패턴에 맞는 문자를 반환하여 문자열에서 원하는 정보를 쉽게 추출할 수 있게 합니다.
+
+## 참고 자료
+
+- Lua에 대한 자세한 내용은 [The Programming Language Lua](http://www.lua.org/)를 참고하세요.
+- Lua로 날짜와 시간을 다루는 더 많은 방법은 [Lua-users wiki: Dates and Time](http://lua-users.org/wiki/DatesAndTime)를 참조하세요.
+- 다른 프로그래밍 언어에서 날짜 파싱의 예제와 비교해보려면 [Python's strptime](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior)과 [Java's SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html)를 참고하세요.

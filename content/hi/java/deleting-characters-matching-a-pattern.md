@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न को मिलते हुए अक्षरों को हटाना"
-html_title:           "Java: पैटर्न को मिलते हुए अक्षरों को हटाना"
-simple_title:         "पैटर्न को मिलते हुए अक्षरों को हटाना"
+title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
+html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
+simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों?
+# जावा में एक पैटर्न से मिलते अक्षरों को हटाना
 
-अगर आप कोई प्रोग्रामर हैं तो आपने शायद पैटर्न के मैचिंग करने और उसके अनुरूप चरित्रों को हटाने के बारे में सुना होगा। यह काम उस प्रोग्राम में अति महत्वपूर्ण होता है जहां हमें एक बड़े स्ट्रिंग से छोटे स्ट्रिंग्स को हटाने की जरूरत होती है। इससे हमारे कोड को स्पष्ट और सुगम बनाने में मदद मिलती है।
+## क्या और क्यों?
+एक पैटर्न से मिलते अक्षरों को हटाना इसका मतलब है कि आप किसी विशिष्ट अक्षर या अक्षरों का समूह को किसी शब्द से निकालते हैं। यह उदाहरण स्वरूप, अनचाहे ह्वाइट स्पेस को निकालने, या अप्रयोजित अक्षरों को हटाने के लिए किया जाता है। 
 
-# कैसे करें?
+## कैसे करें:
+जावा 8 अथवा आधुनिक संस्करणों में, `String` class का `replaceAll()` function इसे करने के लिए उपयोग किया जा सकता है। 
 
-आप जावा में संख्याओं को मिलाते समय, जैसे कि ```string.replace()``` फंक्शन का उपयोग कर सकते हैं। यदि आप किसी स्ट्रिंग के अंकों को हटाना चाहते हैं, तो आप उस कर्सर को उस स्ट्रिंग से हटा सकते हैं। उदाहरण के लिए, यदि हमे स्ट्रिंग "Hello world" के 'l' चरित्रों को हटाना है, तो निम्न जावा कोड का उपयोग कर सकते हैं:
+```Java
+
+public class Main 
+{
+    public static void main(String[] args) 
+    {
+        String str = "Hello, World!";
+        String newStr = str.replaceAll("[^a-zA-Z ]", "");
+        System.out.println(newStr);
+    }
+}
 
 ```
-string s = "Hello world";
-String newString = s.replace("l", "");
-System.out.println(newString);
+
+उपरोक्त कोड का आउटपुट होगा:
+
+```
+Hello World
 ```
 
-इससे आपके कंसोल में "Heo word" ही दिखेगा।
+## गहरी बातचीत:
+`replaceAll()` का function उन सभी अक्षरों को हटाने के लिए उपयोग किया जाता है जो एक विशिष्ट पैटर्न से मेल नहीं खाते। यह जावा 1.4 से उपलब्ध है।
 
-# गहराई में जाएं
+वैकल्पिक तरीके में आप `StringBuilder` या `StringBuffer` class का upyog kar सकते हैं। लेकिन, `replaceAll()` सबसे आसान, कम कोड लाइन्स में और स्रोत को समझने में आसान way है। 
 
-इतिहास में, पैटर्न मैचिंग एक महत्वपूर्ण काम है जिससे मानव भाषा को कंप्यूटर में संगत बनाया गया है। इसके अलावा, आप इसे अन्य तरीकों से भी कर सकते हैं जैसे कि नंबरों को हटाने के लिए साधारण for लूप का उपयोग करना। अधिक जानकारी के लिए आप जावा डॉक्यूमेंटेशन का उपयोग कर सकते हैं।
-
-# देखें भी
-
-आप इस बारे में और अधिक जानना चाहते हैं तो आप ये स्रोत देख सकते हैं:
-
-- [Java ऑफिशियल डॉक्यूमेंटेशन](https://docs.oracle.com/javase/8/docs/api/)
-- [Java ट्यूटोरियल](https://www.javatpoint.com/java-tutorial)
-- [उदाहरण के साथ पैटर्न मैचिंग](https://www.tutorialspoint.com/java/string_replaceall_charsequence_regexp.htm)
+## देखें भी:
+1. Oracle जावा Doc `replaceAll()` : [link](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replaceAll-java.lang.String-java.lang.String-)
+2. Stack Overflow चर्चा: [link](https://stackoverflow.com/questions/8923398/how-to-remove-certain-characters-from-a-string-in-java)
+3. W3Schools ट्यूटोरियल: [link](https://www.w3schools.com/java/ref_string_replaceall.asp)

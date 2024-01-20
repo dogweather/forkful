@@ -1,7 +1,7 @@
 ---
-title:                "Poista merkkejä, jotka vastaavat kaavaa."
-html_title:           "Gleam: Poista merkkejä, jotka vastaavat kaavaa."
-simple_title:         "Poista merkkejä, jotka vastaavat kaavaa."
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,34 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
+## Mitä & Miksi?
 
-Miksi ohjelmoijat poistavat merkkejä, jotka vastaavat tiettyä kaavaa? Yksinkertaisesti sanottuna, tämä auttaa käsittelemään merkkijonoja ja löytämään tietynlaisia merkkejä tietorakenteista. Esimerkiksi voit poistaa kaikki numerot sisältävät merkit tai poistaa ylimääräiset välilyönnit.
+Pattern matching - tai kuvion sovittaminen – on ohjelmoinnissa käytetty tekniikka havaita ja poistaa merkkejä, jotka vastaavat jonkinlaista sääntöä tai kuviota. Ohjelmoijat tekevät tämän siistikseen dataa, esimerkiksi poistaakseen ei-toivotut tai turhat merkit.
 
-# Miten tehdä:
+## Miten näin:
 
-Voit käyttää `Gleam.delete_chars_matching`-funktiota poistaaksesi haluamasi merkit tietystä merkkijonosta. Katso alla olevaa esimerkkiä:
+```Gleam
+import gleam/regex
 
+fn delete_chars_matching_pattern(s: String, pattern: String) {
+  let re = regex.from_string(pattern)
+  case re {
+    Ok(re) -> 
+      let s = regex.replace(re, s, "", global: True)
+      case s {
+        Ok(s_filled) -> s_filled
+        Error(e) -> e
+      }
+    Error(e) -> e
+  } 
+}
+
+fn main() {
+  let text = "Hei maailma 123 !!!"
+  let pattern = "[^A-Za-z ]"
+  
+  let result = delete_chars_matching_pattern(text, pattern)
+  io.println(result)
+}
 ```
-Gleam.delete_chars_matching("12Hello34", "[0-9]")
+Esimerkin tuloste:
+
+```Gleam
+"Hei maailma     "
 ```
+## Deep Dive
 
-Tämä palauttaa merkkijonon "Hello".
+Pattern matching -tekniikan kehitys juontaa juurensa 1950-luvun algoritmeihin ja se on ollut tärkeä osa useimpia ohjelmointikieliä. Gleamissa käytetään Erlangin rakentamaa regex-kirjastoa.
 
-# Syväsukellus:
+Vaihtoehtoiseen tapaan kuuluvat string-menetelmät, kuten `replace` tai `remove`. Kuitenkin, pattern matching on joustavampi ja tehokkaampi erilaisten ja monimutkaisten kuvioasettelujen käytössä. 
 
-## Historiallinen tausta:
+Teknisesti, pattern matching toimii vertaamalla merkkijonoja säännölliseen ilmaisuun. Käyttämällä regex-kirjastoa ja regex.replace-metodia, voit poistaa kuviota vastaavat merkit.
 
-Poistamisen merkkijonojen vastaavien merkkien käyttö on ollut pitkään tärkeä osa ohjelmointia. Ennen vanhaan ohjelmoijat joutuivat usein kirjoittamaan monimutkaisia koodinpätkiä poistaakseen haluamansa merkit, mutta nykyään saatavilla on erilaisia valmiita työkaluja, kuten `Gleam.delete_chars_matching`, jotka helpottavat tätä tehtävää.
+## Katso myös:
 
-## Vaihtoehtoja:
-
-On myös muita tapoja poistaa merkkijonojen vastaavia merkkejä, kuten käyttämällä säännöllisiä lausekkeita tai iterointia. Kuitenkin `Gleam.delete_chars_matching`-funktiota käyttämällä pääset eroon monimutkaisesta koodista ja voit helposti muokata haluamiasi merkkien poistosääntöjä.
-
-## Toteutukseen liittyvää:
-
-`Gleam.delete_chars_matching`-funktio käyttää taustalla `String.filter`-funktiota rakentaakseen uuden merkkijonon, jossa haluamamme merkit eivät enää esiinny. Tämä takaa suorituskykyisen ja tarkan tuloksen.
-
-# Katso myös:
-
-Voit lukea lisää `Gleam.delete_chars_matching`-funktiosta [Gleamin virallisesta dokumentaatiosta](https://gleam.run/standard-library.html#delete_chars_matching). Voit myös tutustua `String.filter`-funktioon [täältä](https://gleam.run/standard-library.html#filter-string).
+* Gleam’s Regex module official documentation: [https://hexdocs.pm/gleam_stdlib/gleam/regex/](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
+* Regular Expressions guide: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+* Erlang Regex library: [https://erlang.org/doc/man/re.html](https://erlang.org/doc/man/re.html)

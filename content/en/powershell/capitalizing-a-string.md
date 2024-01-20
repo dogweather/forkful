@@ -10,31 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# PowerShell Magic: Capitalizing Strings
+
 ## What & Why?
-Capitalizing a string in programming refers to converting all letters in a string to uppercase or lowercase, depending on the desired output. Programmers often do this to standardize the formatting of strings and make them easier to compare or manipulate.
+Capitalizing a string means to transform its first letter into uppercase. Programmers do it to ensure data consistency, enhance readability, or satisfy certain code requirements.
 
 ## How to:
-To capitalize a string in PowerShell, use the built-in `ToUpper()` or `ToLower()` methods. Here's an example:
+Here's how to capitalize a string in PowerShell, using string manipulation and its powerful .NET framework integration.
 
 ```PowerShell
-# Convert a string to uppercase
-"My name is John" | ToUpper
+$string = 'hello world'
+$capitalized = $string.Substring(0,1).ToUpper()+$string.Substring(1).ToLower()
+Write-Output $capitalized
+```
+Here's your output:
 
-#Output:
-MY NAME IS JOHN
-
-# Convert a string to lowercase
-"HELLO WORLD!" | ToLower
-
-#Output:
-hello world!
+```PowerShell
+Hello world
 ```
 
 ## Deep Dive:
-In the earlier days of computing, text was often written in uppercase letters due to technical limitations. However, modern programming languages allow for manipulating text easily, including converting it to uppercase or lowercase. In addition to the `ToUpper()` and `ToLower()` methods, PowerShell also has the `ToTitleCase()` method, which capitalizes the first letter of each word in a string.
+Historically, there's no built-in function in PowerShell for capitalizing strings. Why? Remember that PowerShell relies heavily on the .NET framework that originally didn't have this feature. But thanks to PowerShell's flexibility, we can use substring method and ToUpper function from .NET directly in PowerShell. Simple and effective!
 
-There are alternate ways to capitalize strings, such as using loops and conditional statements. However, using built-in methods is the most efficient and preferred method for capitalizing strings.
+Alternatives? One alternative to our code above is using TextInfo class from System.Globalization namespace:
+
+```PowerShell
+$string = 'hello world'
+$textInfo = [System.Globalization.TextInfo]::CurrentCulture.TextInfo
+$capitalized = $textInfo.ToTitleCase($string)
+Write-Output $capitalized
+```
+
+Note: this method capitalizes every word in the string!
+
+When it comes to the execution of these scripts, PowerShell directly utilizes .NET, meaning that in the back, C# code is being used. Anytime we're capitalizing strings, we're leveraging methods provided by the .NET string class, testifying to PowerShell's tight integration with .NET.
 
 ## See Also:
-For more information on using strings in PowerShell, refer to the official [Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/09-strings).
-You can also explore the [PowerShell String Formatting](https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/12-string-formatting) guide to learn different ways of manipulating strings in PowerShell.
+Get familiar with string manipulation in PowerShell with these superb resources:
+
+- [Microsoft's `string` class documentation](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=net-5.0)
+- [PowerShell and the .NET framework](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-comparison?view=powershell-7.1)
+- [Working with strings in PowerShell](https://www.cyberciti.biz/faq/powershell-split-string-into-array/)

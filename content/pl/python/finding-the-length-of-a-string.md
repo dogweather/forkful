@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Python: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Python"
 category:             "Python"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co to jest i dlaczego?
 
-Znalezienie długości ciągu znaków jest jedną z podstawowych czynności, jakie wykonują programiści w języku Python. Polega ona na zliczeniu ilości znaków w danym ciągu, włączając w to spacje, interpunkcję i inne specjalne znaki. Jest to ważne, ponieważ pozwala nam na manipulowanie i analizowanie tekstowych danych w naszych programach.
+Znajdowanie długości łańcucha to proces, który pozwala programistom dowiedzieć się, ile znaków znajduje się w danym łańcuchu. Programiści robią to, aby kontrolować przepływ danych w swoim kodzie.
 
 ## Jak to zrobić:
 
-```python 
-# Przykładowy ciąg znaków
-text = "To jest przykładowy tekst"
+W Pythonie możemy używać wbudowanej funkcji `len()`, aby znaleźć długość łańcucha. 
 
-# Użycie wbudowanej funkcji len()
-dlugosc = len(text) 
+```Python
+napis = "Programowanie w Pythonie"
+print(len(napis))
+```
+Gdy uruchomisz powyższy kod, otrzymasz wynik `24`, co jest długością łańcucha "Programowanie w Pythonie".
 
-# Wypisanie wyniku
-print(dlugosc)
+## W głąb tematu:
 
-# Output: 24
+Python, jako język o wysokim poziomie, daje nam prostotę korzystania z funkcji `len()`. W historii jednak, inne niż Python języki (takie jak C), wymagały od programistów utworzenia dedykowanej funkcji do zliczania znaków w łańcuchu.
+
+Alternatywą dla `len()` jest metoda `.__len__ ()`. Chociaż nie zaleca się jej używać w codziennej pracy z Pythonem ze względu na różnice w składni i mniejszą czytelność, jej działanie jest takie samo:
+
+```Python
+napis = "Programowanie w Pythonie"
+print(napis.__len__())
 ```
 
-## Głębszy Przegląd:
-Obliczanie długości ciągu znaków jest powszechnie stosowane w programowaniu od lat. Kiedyś programiści musieli ręcznie zliczać znaki, ale dzięki funkcji len() w języku Python jest to prostsze i szybsze. Istnieją również alternatywne sposoby na zliczanie długości ciągu, na przykład używając pętli, ale funkcja len() jest najbardziej efektywnym rozwiązaniem.
+Python implementuje `len()` w taki sposób, że w rzeczywistości zwraca wynik metody `.__len__() ` obiektu. Ale zasada 'Explicit is better than implicit' z `Zen of Python` przemawia za bardziej bezpośrednim i czytelnym podejściem, jakim jest korzystanie z `len()`.
 
-## Zobacz również:
-Poniżej znajdują się przydatne linki do zasobów na temat obliczania długości ciągu znaków w języku Python:
+## Zobacz też:
 
-- [Dokumentacja Pythona o funkcji len()](https://docs.python.org/3/library/functions.html#len)
-- [Wideo-tutorial z przykładami użycia len()](https://www.youtube.com/watch?v=kBwhtEIXGII)
-- [Artykuł o manipulacji łańcuchami znaków w Pythonie](https://realpython.com/python-strings/)
+Więcej informacji odnośnie operacji na łańcuchach w Pythonie można znaleźć na Oficjalnej Stronie Dokumentacji:
+- Dokumentacja Python 3.9.4: [Operacje na łańcuchach](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
+- Przewodnik Python: [Manipulacja łańcuchami](https://docs.python.org/3/tutorial/introduction.html#strings)

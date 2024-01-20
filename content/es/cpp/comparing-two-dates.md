@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué es y por qué es importante!
-Comparar dos fechas es una tarea común para los programadores. Es simplemente comparar dos valores de fecha y determinar si son iguales, mayores o menores entre sí. Los programadores hacen esto para asegurarse de que la información se ordene correctamente y para tomar decisiones basadas en la fecha, como mostrar eventos futuros o caducados.
+## ¿Qué y por qué?
 
-## ¡Cómo hacerlo!
-Aquí hay un ejemplo de cómo comparar dos fechas en C++:
+Comparar dos fechas significa determinar cuál de las dos fechas es anterior, posterior o si son iguales. Los programadores realizan esta tarea para ordenar eventos, calcular períodos de tiempo, establecer recordatorios y más.
+
+## ¿Cómo hacerlo?
+
+Para comparar dos fechas en C++, podemos utilizar la biblioteca `<chrono>` de la librería estándar. Aquí tienes un ejemplo:
 
 ```C++
 #include <iostream>
-#include <ctime>
-
-using namespace std;
+#include <chrono>
 
 int main() {
-    // Definimos dos fechas
-    time_t fecha1, fecha2;
-    fecha1 = time(nullptr); // Fecha actual
-    fecha2 = 1600702800; // 22 de septiembre de 2020
+  std::chrono::system_clock::time_point hoy = std::chrono::system_clock::now();
+  std::chrono::system_clock::time_point manana = hoy + std::chrono::hours(24);
 
-    // Comparamos las fechas
-    if (fecha1 < fecha2) {
-        cout << "Fecha1 es menor que Fecha2" << endl;
-    } else if (fecha1 > fecha2) {
-        cout << "Fecha1 es mayor que Fecha2" << endl;
-    } else {
-        cout << "Fecha1 es igual a Fecha2" << endl;
-    }
-
-    return 0;
+  if (hoy < manana) {
+    std::cout << "Hoy es antes que mañana." << std::endl;
+  } else {
+    std::cout << "Hoy no es antes que mañana." << std::endl;
+  }
+  return 0;
 }
 ```
 
-La salida para este ejemplo sería: "Fecha1 es mayor que Fecha2".
+Este programa va a imprimir "Hoy es antes que mañana." porque `hoy` es 24 horas menos que `manana`.
 
-## Profundizando
-La comparación de fechas tiene su origen en la necesidad de ordenar y organizar eventos y actividades en un calendario, tanto en la vida diaria como en la informática. Además del método de comparación utilizado en el ejemplo anterior (operadores de comparación), también existen otras formas de comparar fechas, como utilizando funciones de biblioteca o librerías externas.
+## Análisis detallado
 
-## Vea también:
-- [Documentación de C++ en fechas y horarios](https://en.cppreference.com/w/cpp/chrono) 
-- [Cómo trabajar con fechas en C++](https://www.studytonight.com/cpp/date-and-time-functions.php)
+La biblioteca `<chrono>` es parte de la C++ Standard Library desde C++11. Ofrece tipos que representan puntos de tiempo, duraciones y relojes. Antes de su introducción, los programadores debian recurrir a funciones C menos seguras y menos expresivas como `time()` y `difftime()`.
+
+Alternativas a `<chrono>` incluyen bibliotecas de terceros como Boost.DateTime o los tipos nativos de tiempo y fecha de sistemas de bases de datos.
+
+En cuanto a la implementación, `<chrono>` es muy eficiente y segura al comparar fechas. Los objetos `time_point` son representaciones de un punto en el tiempo, y las operaciones de comparación no implican ninguna conversión o cálculo complejo.
+
+## Ver también
+
+Para más información, visita estos recursos:
+
+1. [Documentación oficial de <chrono>](https://en.cppreference.com/w/cpp/chrono)
+2. [La biblioteca Boost.DateTime](https://www.boost.org/doc/libs/1_68_0/doc/html/date_time.html)
+3. [Tutorial de C++11 <chrono>](https://www.modernescpp.com/index.php/the-three-clocks)

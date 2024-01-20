@@ -1,7 +1,7 @@
 ---
-title:                "文字列の抽出"
-html_title:           "Bash: 文字列の抽出"
-simple_title:         "文字列の抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,29 +10,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？
-サブストリングを抽出するとは、文字列の一部を取り出し、それを新しい文字列として使用することです。プログラマーは、文字列をより細かく操作する必要がある場合に、サブストリングを抽出します。
+## 何となぜ？
+部分文字列抽出とは、元の文字列から特定の部分を取り出すことです。プログラマは情報を特定し、データを理解および操作するためにこれを行います。
 
 ## 方法:
+以下はBashでの部分文字列抽出の例です。
+
 ```Bash
-# 変数に文字列を代入
-str="こんにちは、こんにちは"
+string="Hello, World!"
+echo ${string:7:5}
+```
+このコードの出力は「World」となります。
 
-# 変数の先頭から4文字のサブストリングを抽出
-echo "${str:0:4}" 
-# 出力結果: こんに
+## より深く:
+1. 歴史的背景: Unix系OSで広く使われるBashは1989年に初版が公開されました。それ以来、部分文字列抽出はBashに搭載されるようになりました。
+2. 代替案: AwkやSedなどのツールも部分文字列抽出に使用できます。しかし、Bashの短いコード構造は、部分文字列抽出を速やかに行うための優れた選択肢です。
+3. 実装詳細: 上記の部分文字列抽出では、`echo ${string:7:5}` の部分は7番目の文字位置から5文字を取り出します。
 
-# 変数の3番目の文字から最後までのサブストリングを抽出
-echo "${str:2}" 
-# 出力結果: んにちは、こんにちは
-``` 
-
-## 詳細を深める:
-サブストリングを抽出するとき、最初の引数は抽出したい文字列の位置を指定し、2番目の引数は抽出する文字数を指定します。Bashでは、カットオフポイントを指定するために、文字列を0から始めるインデックス番号を使用します。つまり、1番目の文字は0番目の文字として指定されます。
-サブストリングを抽出する代わりの方法として、パターンマッチングや正規表現を使用することもできます。これにより、より柔軟な文字列の抽出が可能になります。
-Bashでは、サブストリングを抽出する際に使用されるコマンドは「${var:offset:length}」です。varは変数名、offsetは抽出したい文字列の位置、lengthは抽出する文字数を表します。
-
-## 関連情報:
-- [Bashのサブストリング抽出](https://www.shellscript.sh/tips/substring/)
-- [Bashのパターンマッチング](https://linuxize.com/post/bash-pattern-matching/)
-- [Bashの正規表現](https://linuxhint.com/using_bash_regular_expressions/)
+## 参考資料:
+1. Bashの文字列の使用法: <https://www.linuxjournal.com/content/working-strings-bash>
+2. 文字列操作について理解する: <https://www.the-geek-stuff.com/2010/07/bash-string-manipulation/>
+3. AwkとSedとの比較: <https://www.geekhideout.com/shell.shtml>

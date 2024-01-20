@@ -1,6 +1,6 @@
 ---
 title:                "Tworzenie tymczasowego pliku"
-html_title:           "Lua: Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
 simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,36 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Tworzenie tymczasowych plików jest częstą praktyką w programowaniu. Polega to na stworzeniu pliku w czasie działania programu, który może być używany tymczasowo do przechowywania danych lub do wykonania określonych operacji. Programiści mają tendencję do tworzenia tymczasowych plików, ponieważ ułatwia to im prace z danymi i operacjami, które inaczej mogłyby być bardziej skomplikowane.
-
+Tworzenie tymczasowych plików polega na generowaniu plików o krótkim cyklu życia, które są wykorzystywane na czas odpalenia skryptu. Programiści robią to w celu przechowywania tymczasowych danych, które nie są potrzebne między sesjami, a także do testowania.
+  
 ## Jak to zrobić:
 
+Tworzenie tymczasowego pliku w języku Lua jest proste. Używamy do tego funkcji `os.tmpname`, której zadaniem jest zwrócenie nazwy dla nowego pliku tymczasowego.
+
 ```Lua
--- Tworzenie tymczasowego pliku
-local file = io.tmpfile()
-
--- Zapisywanie danych do tymczasowego pliku
-file:write("Hello World!")
-
--- Odczytywanie danych z tymczasowego pliku
-file:seek("set")
-local data = file:read("*all")
-print(data) -- Output: Hello World!
-
--- Zamykanie tymczasowego pliku
-file:close()
+local tmp_file = os.tmpname()
+print(tmp_file)
 ```
+Wywołanie powyższego kodu wygeneruje wynik podobny do tego:
 
-## Wnikliwa analiza:
+```Lua
+/tmp/lua_3n2cb2
+```
+Zauważ, że ta ścieżka pliku jest tylko przykładowa i prawdopodobnie będzie inna na twoim systemie.
 
-*Historia:* Tworzenie tymczasowych plików jest praktykowane od dawna przez programistów, ponieważ pozwala na łatwiejszą pracę z danymi w czasie działania programu.
+##O pogłębionej wiedzy 
 
-*Alternatywy:* Pomimo że tworzenie tymczasowych plików jest powszechną praktyką, istnieją też alternatywne rozwiązania. Jednym z nich jest korzystanie z pamięci podręcznej (cache) do przechowywania danych lub wykorzystanie innych struktur danych do wykonywania operacji.
+Funkcja `os.tmpname` to część standardowych bibliotek lua od wersji 5.1, co pokazuje jej długą historię ułatwiania tworzenia plików tymczasowych developerom. Alternatywą dla `os.tmpname` może być generowanie plików z unikalnymi nazwami za pomocą własnego skryptu, choć ta metoda jest bardziej narażona na błędy. Funkcja `os.tmpname`, korzysta bezpośrednio z funkcjonalności systemu operacyjnego do tworzenia plików tymczasowych, co gwarantuje bardziej stabilne wyniki.
 
-*Szczegóły implementacji:* W języku Lua, istnieje wbudowana funkcja `io.tmpfile()`, która tworzy tymczasowy plik i zwraca uchwyt (handle) do niego. Następnie, korzystając z uchwytu, można wykonywać operacje na pliku, takie jak zapisywanie czy odczytywanie danych. Po zakończeniu pracy z plikiem, należy go zamknąć za pomocą funkcji `file:close()`.
-
-## Zobacz także:
-
-- [Dokumentacja Lua](https://www.lua.org/docs.html)
-- [Tworzenie i obsługa plików w Lua](https://www.tutorialspoint.com/lua/lua_file_io.htm)
-- [Alternatywna metoda tworzenia tymczasowych plików w Lua](https://riptutorial.com/lua/topic/2609/using-a-temporary-file)
+##Zobacz też
+Dokumentacja Lua:
+https://www.lua.org/manual/5.4/manual.html#6.9
+Przykłady korzystania z plików tymczasowych:
+http://lua-users.org/wiki/TempLibrary

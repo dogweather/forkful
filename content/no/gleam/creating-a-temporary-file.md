@@ -1,7 +1,7 @@
 ---
-title:                "Lage en midlertidig fil"
-html_title:           "Gleam: Lage en midlertidig fil"
-simple_title:         "Lage en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,23 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Når vi som programmerere arbeider med å lagre eller manipulere dataene våre, kan vi noen ganger ha behov for å midlertidig lagre informasjonen i en fil. Dette kan være for å sikkerhetskopiere dataene våre, eller for å midlertidig lagre resultatene av en operasjon.
+## Hva & Hvorfor? 
 
-# Slik gjør du det:
-For å opprette en midlertidig fil i Gleam, kan vi bruke funksjonen `temporary_file.create`. Denne funksjonen tar imot en rekke med filbanen og navnet på filen vi ønsker å opprette. Etter at filen er opprettet, kan vi skrive data til den ved å bruke funksjonen `write`, og deretter lukke den ved å bruke funksjonen `close`.
+Oppretting av en midlertidig fil i dataprogrammet er når du oppretter en fil som er ment å bli brukt for en kort periode. Programmerere gjør dette i scenarier der de trenger et sted å lagre data midlertidig mens de prosesserer det i en arbeidsflyt. 
 
-```gleam
-let {Ok, file} = temporary_file.create("/tmp/", "example")
-Ok = write(file, "Dette er et eksempel")
-close(file)
+## Hvordan:
+
+Her er hvordan du oppretter en midlertidig fil i Gleam:
+
+```Gleam
+import gleam/otp.{Process, Timer}
+import gleam/string
+
+fn start_process() {
+  let process = Process.start_link(
+    fn() {
+      Timer.sleep(1000) // Create temporary file here
+      Ok(Nil)
+    },
+    process::Options(.name(process::Unregistered("my_process"))),
+  )
+
+  case process {
+    Ok(pid) -> 
+      string.println("Created file with process: " ++ pid)
+    Error(err) ->
+      string.println("Could not create file: " ++ err)
+  }
+}
+```
+Kjør kommandoen `gleam run` for å kjøre dette scriptet. Du vil se utdata nedenfor:
+
+```
+Created file with process: <0.1.0>
 ```
 
-# Dypdykk:
-Å opprette en midlertidig fil for å lagre data er en vanlig praksis blant programmere. Det gir oss en måte å sikkerhetskopiere dataene våre på, og gjør det enklere å håndtere store datamengder. En alternativ tilnærming ville være å lagre dataene direkte i minnet, men dette kan være risikabelt dersom det skulle oppstå strømbrudd eller andre feil.
+## Dypdykk
 
-Ved å bruke funksjonen `temporary_file.create`, vil Gleam opprette en unik filnavn for filen vi ønsker å opprette, slik at vi ikke trenger å bekymre oss for å overskrive eksisterende filer. Dette gjør prosessen mer sikker.
+Oppretting av midlertidige filer har en lang historie i programmering og var spesielt hjelpsom for å sortere store datasett i gamle dagers batch-stilcomputere. Alternativene til midlertidige filer inkluderer bruk av midlertidige databaser, spesielt når datasikkerhet er viktig, eller bruk av minne utenfor hovedfilen, noe som kan være raskere, men mer begrenset for inndata av stor størrelse. Gleam bruker Erlang's prosessmodell for å håndtere midlertidige data, så en "fil" i dette scenarioet refererer egentlig til en økt med en prosess. 
 
-# Se også:
-- [Gleam sin offisielle dokumentasjon](https://gleam.run/documentation/)
-- [En guide til å lagre data i Gleam](https://medium.com/@jasonshope255/how-to-store-data-in-gleam-from-elixir-7b4084484bc1)
+## Se Også:
+
+1. Gleam dokumentasjon om [processer](https://gleam.run/book/tour/processes.html)
+2. Erlang [otp doc](http://erlang.org/doc/man/otp_app.html) for mer informasjon om prosessene.
+3. Historien til midlertidige filer i [Unix](http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/var.html).

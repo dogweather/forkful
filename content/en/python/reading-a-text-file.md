@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Python recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Python"
 category:             "Python"
@@ -12,38 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading a text file in Python is essentially the process of accessing and extracting data from a plain text document. Programmers often do this to either analyze the data or perform further processing on it.
+Reading a text file is the task of accessing and interpreting the contents of a file as text, not binary. Programmers do it to obtain data, analyze text, and manipulate string content within a file.
 
 ## How to:
 
-To read a text file in Python, you can use the built-in `open()` function. Here is a simple example:
+Let's start by reading a file line-by-line followed by the whole file at once.
 
-```
-with open('example.txt', 'r') as f:
-    data = f.read()
-    print(data)
-```
-
-This code opens a file named `example.txt` in read mode and stores its contents in the `data` variable. The `with` statement ensures that the file is closed automatically after use. Finally, the `print()` function outputs the file's contents to the console.
-
-If you want to read the file line by line, you can use the `readlines()` method instead of `read()`. Here is an example:
-
-```
-with open('example.txt', 'r') as f:
-    for line in f.readlines():
-        print(line.rstrip())
+For line-by-line:
+```Python
+with open('hello.txt', 'r') as file:
+    for line in file:
+        print(line, end='')
 ```
 
-This code reads each line from the file and uses the `rstrip()` method to remove any trailing whitespace before printing it.
+For the whole file at once:
+```Python
+with open('hello.txt', 'r') as file:
+    content = file.read()
+print(content)
+```
 
-## Deep Dive:
+Both snippets presume 'hello.txt' file is in the same directory and you've permission to read it.
 
-Historically, reading text files was an essential part of programming as most data was stored in plain text documents. However, with the rise of more complex data storage formats like databases and XML, reading text files is now not as common.
+The `with` keyword is used to ensure proper file handling.
 
-In Python, there are also other ways to read text files, such as using the `csv` module or the `pandas` library. These alternatives offer additional features and functionality, making it easier to work with specific data formats.
+## Deep Dive
 
-When reading a text file in Python, you can also specify the encoding to use. By default, it will use the system's default encoding, but you can specify a different one if needed. The `open()` function also allows for different modes, such as read/write or append, depending on your specific needs.
+Historically, dealing with files in Python was somewhat tedious. You had to manage file opening, reading, and closing manually. Problems like forgetting to close a file could lead to memory leaks. The `with` statement (introduced in Python 2.5, 2006) simplified this, ensuring the file is closed when the block inside `with` is exited.
 
-## See Also:
+Alternatives to `open()` function include the `fileinput` module, which is helpful when reading from multiple files.
 
-To learn more about reading text files in Python, you can refer to the official documentation for the `open()` function at https://docs.python.org/3/library/functions.html#open. You can also check out other resources such as the Real Python article on "Reading and Writing Files in Python" at https://realpython.com/read-write-files-python/. Happy coding!
+Also, libraries like `pandas` provide powerful methods to read complex text files, especially great for data analysis. 
+
+About implementation, when Python reads a file, it's not loading the entire thing into memory at once. It's reading and returning one line at a time when iterated using a for loop. On the other hand, `file.read()` reads the entire content at once and could exhaust memory for very large files.
+
+## See Also
+
+- [Python Official Docs: Reading and Writing Files](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Python Official Docs: Fileinput](https://docs.python.org/3/library/fileinput.html)
+- [Pandas Read_CSV](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_csv.html)

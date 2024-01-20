@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som matcher et mønster"
-html_title:           "Go: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,26 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sletting av tegn som matcher et mønster er en vanlig metode blant programmerere for å manipulere tekststrenger. Dette gjøres for å skape en mer ønsket utdata eller for å fjerne unødvendige tegn.
 
-## Hvordan:
-Koding eksempler og eksempelutgang innenfor ```Go...``` kodeblokker:
+Å slette bokstaver som matcher et mønster er en metode å manipulere tekst på i programmering. Det hjelper med å rydde opp uønskede tegn som kan forstyrre dataanalyse eller prosessering.
+
+## Hvordan gjør du det:
+
+Her er et enkelt eksempel på hvordan du fjerner bestemte tegn fra en streng med Go:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	tekst := "Hei, verden!"
+
+	// Fjern kommaer fra strengen
+	nyTekst := strings.Replace(tekst, ",", "", -1)
+	fmt.Println(nyTekst)
+}
+
 ```
-// Slett alle tall fra en tekststreng
-tekst := "H3llo W0rld"
-nyTekst := regexp.MustCompile("[0-9]").ReplaceAllString(tekst, "")
-fmt.Println(nyTekst)
-// Resultat: Hello World
+Koden over vil gi følgende output:
 
-// Slett alle tegn som ikke er bokstaver eller tall
-tekst := "Hello! 123 World?"
-nyTekst := regexp.MustCompile("[^a-zA-Z0-9]").ReplaceAllString(tekst, "")
-fmt.Println(nyTekst)
-// Resultat: Hello123World
+```Go
+Hei verden!
 ```
 
-## Dypdykk:
-Et mønster for å matche og slette tegn ble først brukt i Unix verktøyet "ed" på 1970-tallet. Siden da har det blitt en vanlig funksjon i de fleste programmeringsspråk, inkludert Go. Alternativene til å slette tegn i Go inkluderer også "Trim" og "TrimFunc" funksjonene, som fjerner spesifiserte tegn eller funksjoner fra begynnelsen og slutten av en tekststreng. Implementasjonsdetaljer for å slette tegn i Go kan bli funnet i standard "regexp" pakken.
+## Dyp Dykk
+
+I historiske sammenhenger, sletting av tegn som matcher et mønster har vært en standard funksjon i UNIX tekstbehandling verktøy som 'tr' og 'sed'. Da programmeringsspråk utviklet seg, ble denne funksjonaliteten inkorporert direkte i språkets standard biblioteker.
+
+Alternativt, Go tilbyr `Trim`, `TrimLeft`, `TrimRight` funksjoner osv. Disse lar deg fjerne tegn fra begynnelsen og slutten av en streng.
+
+For implementeringsdetaljer i Go, når vi bruker `strings.Replace`, den tredje parameteren bestemmer antall bytter. Hvis det er -1, vil alle forekomster bli erstattet.
 
 ## Se også:
-[Go regexp pakken](https://golang.org/pkg/regexp/)
+
+1. Go Docs om strenger: https://golang.org/pkg/strings/
+2. Go By Example, strenger: https://gobyexample.com/strings

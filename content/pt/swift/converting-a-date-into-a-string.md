@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma data em uma string"
-html_title:           "Swift: Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
 simple_title:         "Convertendo uma data em uma string"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e Por quê?
-
-Converter uma data em uma string é um processo comum em programação em Swift. Isso significa transformar uma data em um formato de texto legível, que pode ser usado para exibição ou armazenamento. Programadores fazem isso para tornar as datas mais compreensíveis para os usuários ou para facilitar a manipulação de dados.
+## O Que & Por Quê?
+Converter uma data em uma string consiste em transformar um objeto de data em uma sequência de caracteres. Os programadores fazem isso para apresentar datas de maneira humanamente compreensível ou para armazenar/formatar datas conforme necessário.
 
 ## Como fazer:
+Para converter uma data em uma string no Swift, podemos usar a `DateFormatter`. Veja o exemplo abaixo com a saída de amostra.
 
 ```Swift
-let data = Date()
+import Foundation
 
-let formato = DateFormatter()
-formato.dateFormat = "dd/MM/yyyy"
+let date = Date()
+let formatter = DateFormatter()
 
-let dataString = formato.string(from: data)
+formatter.dateFormat = "dd.MM.yyyy"
 
-print(dataString)
+let result = formatter.string(from: date)
 
-// Saída no console: "15/08/2020"
+print(result)
 ```
 
-Neste exemplo, estamos usando a classe `DateFormatter` para definir um formato personalizado para a data e, em seguida, usando o método `string(from:)` para converter a data em uma string de acordo com esse formato. Esta é uma das maneiras mais simples de converter uma data em uma string.
+_Saída de amostra:_
+```
+"27.06.2022"
+```
 
-## Mergulhando mais fundo:
+## Deep Dive
+Historicamente, lidar com datas em linguagens de programação tem sido um desafio. Em Swift, temos `Date` e `DateFormatter` para tornar nosso trabalho mais fácil.
 
-Ao longo da história da programação, diferentes linguagens e frameworks tiveram suas próprias maneiras de converter datas em strings. Em Swift, o uso da classe `DateFormatter` é considerado a melhor prática para converter datas em strings. No entanto, também é possível usar a função `String(describing:)`, que retornará uma representação de texto de qualquer valor, incluindo uma data.
+Existem outras maneiras de converter uma data em uma string em Swift - você poderia fazer uso de `String(describing:)` ou `"\(date)"`, por exemplo. No entanto, esses métodos não dão controle sobre o formato da string de data resultante.
 
-## Veja também:
+A implementação do `DateFormatter` permite o uso facilitado de vários formatos de data e hora. Esta classe fornece métodos para conversão bidirecional entre datas e suas representações textuais.
 
-- Documentação oficial da classe `DateFormatter` em [developer.apple.com/documentation/foundation/dateformatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- Documentação oficial da função `String(describing:)` em [developer.apple.com/documentation/swift/string/initfromarbitrarysubject](https://developer.apple.com/documentation/swift/string/initfromarbitrarysubject)
+## Veja também
+- Apple Developer Documentation: [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
+- StackOverflow: [How to convert a Date into a String](https://stackoverflow.com/questions/35700281/date-format-in-swift)

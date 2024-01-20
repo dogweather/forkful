@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Ruby: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,27 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## W czym rzecz i dlaczego?
+## Co i Dlaczego?
 
-Pobieranie strony internetowej to proces pobierania danych z internetu za pomocą kodu programistycznego. Programiści często wykonują tę czynność w celu pobrania treści ze strony i przetworzenia jej w sposób, który ułatwi dalsze działania.
+Pobieranie strony internetowej to technika pozyskiwania i zapisywania danych z określonego URL. Programiści robią to, aby przetworzyć, analizować lub wykorzystać treści stron internetowych w swoich projektach.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Aby pobrać stronę internetową w języku Ruby, możemy użyć modułu Net::HTTP. Najpierw musimy go załadować za pomocą ```require 'net/http'```. Następnie tworzymy obiekt klasy URI, aby określić adres URL strony, którą chcemy pobrać. Odwołujemy się do strony, wywołując metodę GET na obiekcie Net::HTTP. Otrzymamy wtedy obiekt odpowiedzi, który możemy przetworzyć i wyświetlić w konsoli. Przykładowy kod będzie wyglądał następująco:
+Aby pobrać stronę internetową za pomocą języka programowania Ruby, możemy użyć biblioteki `open-uri`. Oto prosty kod, który to robi:
 
-```Ruby
-require 'net/http'
-url = URI.parse('https://www.example.com')
-response = Net::HTTP.get_response(url)
-puts response.body
+```ruby
+require 'open-uri'
+
+url = 'http://example.com'
+
+open(url) do |webpage|
+  File.open('my_local_file.html', 'w') do |file|
+    file.write(webpage.read)
+  end
+end
 ```
 
-Po uruchomieniu powyższego kodu, powinniśmy zobaczyć w konsoli kod HTML strony www.example.com.
+Jako wynik, dane ze strony `http://example.com` zostaną pobrane i zapisane lokalnie w pliku `my_local_file.html`.
 
-## Głębsze spojrzenie
+## Pogłębienie:
 
-Pobieranie stron internetowych jest często wykorzystywane w wielu aplikacjach internetowych, takich jak web scraping czy automated testing. Istnieje wiele alternatywnych metod pobierania stron internetowych w języku Ruby, takich jak mechanize czy open-uri. W przypadku pobierania większych ilości danych z internetu, warto jednak rozważyć użycie biblioteki Nokogiri, która pozwala na łatwe przetwarzanie pobranej treści w formacie HTML lub XML.
+Pobieranie stron internetowych ma swoje korzenie w początkach internetu, kiedy HTML był jedynym językiem odpowiedzialnym za wygląd i zawartość strony. Przy użyciu niewielkiego fragmentu kodu, programiści mogą pobierać i analizować te dane, jakkolwiek chcą.
 
-## Zobacz także
+Warto jednak pamiętać o innym popularnym narzędziu jakim jest `Net::HTTP` z biblioteki standardowej Ruby.
 
-Jeśli chcesz dowiedzieć się więcej o pobieraniu stron internetowych w języku Ruby, polecamy zapoznanie się z dokumentacją modułu Net::HTTP oraz biblioteki Nokogiri. Możesz także poszukać gotowych rozwiązań w postaci gemów, takich jak mechanize czy nokogiri.
+```ruby
+require 'net/http'
+
+url = 'http://example.com'
+response = Net::HTTP.get_response(URI(url))
+
+File.open('my_second_local_file.html', 'w') do |file|
+  file.write(response.body)
+end
+```
+
+Wiadomość `HTTP GET` jest wysyłana do serwera, a korpus odpowiedzi (stronę internetową) zapisujemy w pliku. Metoda `Net::HTTP#get_response` jest bardziej skomplikowana, ale daje nam pełną kontrolę nad żądaniami i odpowiedziami HTTP, co jest przydatne w przypadku bardziej złożonych operacji.
+
+## Zobacz także:
+
+1. Dokumentacja open-uri: [https://www.rubydoc.info/stdlib/open-uri](https://www.rubydoc.info/stdlib/open-uri)
+
+2. Dokumentacja Net::HTTP: [https://ruby-doc.org/stdlib-3.0.1/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.0.1/libdoc/net/http/rdoc/Net/HTTP.html)
+
+3. Artykuł o przetwarzaniu HTML w Ruby: [https://nokogiri.org](https://nokogiri.org)

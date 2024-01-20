@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "Elixir recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,36 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Extracting substrings in programming refers to the process of obtaining a portion of a string or text. Programmers often do this to manipulate data, perform pattern matching, or simplify string operations.
+Extracting substrings means getting specific portions of a string. We do it to focus on or manipulate distinct characters/groups of characters within a larger text context. 
 
-## How to:
+## How To:
 
-Extracting substrings in Elixir is simple and efficient. To get a portion of a string, use the `String.slice/3` function. 
+Elixir offers various methods to extract substrings. Let's rapidly see the practical examples.
 
-```
-Elixir
-# Extracting a single character
-String.slice("Hello", 1) # returns "e"
+To get a substring from a given position to the end of the string:
 
-# Extracting a range of characters
-String.slice("Hello", 0..2) # returns "Hel"
-
-# Extracting from the end of the string using negative indices
-String.slice("Hello", -2..-1) # returns "lo"
-
-# Extracting using a pattern
-String.slice("Hello", ~r/[aeiou]/) # returns "e"
-
+```elixir
+iex> String.slice("Hello, World!", 7..-1)
+"World!"
 ```
 
-## Deep Dive
+To get a substring within specific positions (start from 0):
 
-Historically, extracting substrings was used to manipulate text data and perform basic operations such as searching, replacing, and parsing. However, with the rise of regex and other string manipulation libraries, it has become a more powerful tool for pattern matching and data extraction.
+```elixir
+iex> String.slice("Hello, World!", 0..4)
+"Hello"
+```
 
-Alternative methods for extracting substrings in Elixir include using the `String.split/2` function, which divides a string into a list of substrings, and `String.replace/4` to replace a portion of a string with a new substring.
+## Deep Dive:
 
-In terms of implementation, extracting substrings is a straightforward process that utilizes string indexing and slicing. Elixir's native string data type, binary, allows for efficient substring extraction since it is a contiguous sequence of characters.
+Elixir is built on top of Erlang, and in early versions of Erlang, strings were simply lists of ASCII values. This was limiting and inefficient in terms of processing, leading to the introduction of binaries - more memory-efficient structures for storing strings.
 
-## See Also
+While extracting substrings in Elixir, there's one critical thing to remember: Elixir uses 0-based indexing, like many other programming languages. That means the first character of the string is at position 0, not 1.
 
-To learn more about extracting substrings in Elixir, check out the [official documentation](https://hexdocs.pm/elixir/String.html#slice/3) or this [Elixir School](https://elixirschool.com/en/lessons/basics/strings/) lesson on strings. You can also explore other string manipulation functions in the [String module](https://hexdocs.pm/elixir/String.html) and the [Regex library](https://hexdocs.pm/elixir/Regex.html).
+It's also worth noting that, instead of using substring extraction, you could use pattern matching to extract parts of a string based on regular expressions. This is a more sophisticated option that can be more flexible in complex scenarios.
+
+## See Also:
+
+Here're a couple of resources that will aid in your Elixir journey:
+
+- Elixir's [String module documentation](https://hexdocs.pm/elixir/String.html) for complete string handling features
+- [Elixir School](https://elixirschool.com/en/), a comprehensive open-source guide to Elixir
+- For an alternative, advanced approach to handle strings, delve into [Elixir Regex documentation](https://hexdocs.pm/elixir/Regex.html)

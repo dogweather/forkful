@@ -1,6 +1,6 @@
 ---
 title:                "检查目录是否存在"
-html_title:           "Python: 检查目录是否存在"
+html_title:           "Kotlin: 检查目录是否存在"
 simple_title:         "检查目录是否存在"
 programming_language: "Python"
 category:             "Python"
@@ -10,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么？为什么？
+## 什么和为什么？
 
-检查目录是否存在是程序员经常使用的一项技术。它可以帮助我们确定一个特定的目录是否存在，并相应地进行操作。这在运行程序时非常重要，因为我们不希望程序出现意外的错误，导致程序终止或产生不正确的结果。
+检查目录是否存在是计算机编程中的一个基本操作，我们需要查询计算机文件系统看是否有特定的目录。这是重要的，因为在我们创建，读取，删除文件或者其他对目录的操作之前，我们需要确定目录是否存在，避免程序出错。
 
-## 如何操作：
+## 怎么做：
+
+Python内置的`os`模块有一个方法`os.path.exists()`可以用来检查目录是否存在。看下面的示范：
 
 ```Python
-import os # 导入os模块
+import os
 
-# 使用os模块中的path.exists()方法来检查目录是否存在
-if os.path.exists("my_directory"): 
-    print("目录已存在") # 如果目录存在，则打印“目录已存在”
+dir_path = '/path/to/directory'
+
+if os.path.exists(dir_path):
+    print("Directory exists")
 else:
-    print("目录不存在") # 如果目录不存在，则打印“目录不存在”
+    print("Directory does not exist")
+```
 
-# 还可以使用os模块中的path.isdir()方法来检查是否为一个真实的目录
-if os.path.isdir("my_directory"):
-    print("是一个真实的目录") # 如果是一个真实的目录，则打印“是一个真实的目录”
+如果所指的目录存在，程序会打印 "Directory exists"。如果不存在，它会打印 "Directory does not exist"。
+
+## 深度剖析：
+
+在早期的Python版本中，我们没有`os.path.exists()`这样便捷的函数。我们需要尝试访问目录，然后处理这个过程中可能出现的异常。可以说，`os.path.exists()`函数的出现大大简化了检查目录存在性的过程。
+
+关于检查目录是否存在的替代方法，我们可以使用`os.path.isdir()`函数。这个函数不仅检查路径是否存在，还检查这个路径是否是一个目录。
+
+```Python
+import os
+
+dir_path = '/path/to/directory'
+
+if os.path.isdir(dir_path):
+    print("Directory exists")
 else:
-    print("不是一个真实的目录") # 如果不是一个真实的目录，则打印“不是一个真实的目录”
+    print("Directory does not exist")
 ```
 
-输出：
+`os.path.exists()`和`os.path.isdir()`函数的工作原理都是通过查询操作系统来获得信息。这意味着其速度与你的操作系统和硬件有关。
 
-```
-目录不存在
-不是一个真实的目录
-```
+## 参见：
 
-## 深入了解：
-
-此技术的背景可以追溯到早期的操作系统，当时需要手动创建目录。检查目录是否存在可以帮助程序员节省时间和精力。除了使用os模块外，我们还可以使用try-except的异常处理方法来检查目录是否存在。
-
-## 参考资料：
-
-- 官方Python文档： https://docs.python.org/3/library/os.html
-- 更多关于os模块的内容：https://realpython.com/python-pathlib/#check-if-a-file-or-directory-exists
+* Python `os` 模块官方文档：https://docs.python.org/3/library/os.html
+* 更深入的`os.path`模块教程：https://realpython.com/python-path/

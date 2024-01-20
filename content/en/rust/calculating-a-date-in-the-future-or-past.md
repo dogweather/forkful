@@ -12,57 +12,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating a date in the future or past refers to the process of determining a specific date that is ahead or behind a given date. This is a common task in programming, especially for applications that require managing time-sensitive data or events.
+Calculating a date in the future or past means manipulating a base date, either adding or subtracting days, months, etc., to reach a new date. Programmers often do this for scheduling tasks, analyzing time-series data, or creating event-related functions.
 
-## How to:
+## How To:
 
-To calculate a date in the future or past using Rust, we can use the `chrono` crate. In the code blocks below, we will demonstrate how to add or subtract a certain number of days, months, or years from a given date.
+Let's use the Chrono library in Rust for handling these dates manipulations tasks.
 
-### Adding days to a date:
+First, you'll need to add Chrono to your dependencies in `Cargo.toml`:
 
-```
-use chrono::{NaiveDate, Duration};
-
-let date = NaiveDate::from_ymd(2021, 10, 1);
-let days_to_add = Duration::days(10);
-
-let result_date = date + days_to_add;
-
-println!("{}", result_date); // Output: 2021-10-11
+```Rust
+[dependencies]
+chrono = "0.4"
 ```
 
-### Subtracting months from a date:
+Here's an example on how to add seven days to the current date:
 
-```
-use chrono::{NaiveDate, Datelike};
+```Rust
+extern crate chrono;
 
-let date = NaiveDate::from_ymd(2021, 12, 1);
-let months_to_subtract = 6;
+use chrono::offset::Local;
+use chrono::Duration;
 
-let result_date = date.with_month(date.month() - months_to_subtract);
-
-println!("{}", result_date); // Output: 2021-06-01
-```
-
-### Adding years to a date:
-
-```
-use chrono::{NaiveDate, Datelike};
-
-let date = NaiveDate::from_ymd(2021, 7, 15);
-let years_to_add = 3;
-
-let result_date = date.with_year(date.year() + years_to_add);
-
-println!("{}", result_date); // Output: 2024-07-15
+fn main() {
+    let now = Local::now();
+    let in_a_week = now + Duration::days(7);
+    println!("{}", in_a_week);
+}
 ```
 
-## Deep Dive:
+When you run this, it would output a date seven days from the time you executed it, formatted like this: "YYYY-MM-DD HH:MM:SS.ssssss +/-HHMM".
 
-Calculating dates has been an important feature in programming since the early days of computing. In the past, this task was done manually by programmers using complex algorithms. Now, with the help of libraries like `chrono`, it has become much easier and more efficient to handle different date operations.
+Similarly, you can subtract days from a date:
 
-## See Also:
+```Rust
+extern crate chrono;
 
-- `chrono` crate documentation: https://docs.rs/chrono/0.4.19/chrono/
-- Comparison of date and time libraries in Rust: https://runebook.dev/en/docs/rust/date-time/chrono
-- Date and Time in Rust (video tutorial): https://youtu.be/YujnB-xLpGw
+use chrono::offset::Local;
+use chrono::Duration;
+
+fn main() {
+    let now = Local::now();
+    let seven_days_ago = now - Duration::days(7);
+    println!("{}", seven_days_ago);
+}
+```
+
+The output will be a date seven days in the past from the time you executed it.
+
+## Deep Dive
+
+Historically, date calculations were no cakewalk due to the complex nature of calendar systems. These complexities birthed useful libraries like Chrono in Rust. 
+
+If Chrono doesn't fit your needs, other alternatives include the time crate and date-time crate in Rust. However, Chrono offers a plethora of features and a user-friendly interface making it a popular choice among Rustaceans.
+
+Delving deeper into implementation, Chrono uses the Olson database (also known as tz database) for time zones, letting us adjust date and time based on locations across the globe. This helps when you're dealing with users in different timezones.
+
+## See Also
+
+- Official Documentation for Chrono: https://docs.rs/chrono/0.4.19/chrono/
+- The Rust Programming Language: https://doc.rust-lang.org/book/
+- Rust Date-Time documentations: https://docs.rs/date-time/0.1.1/date_time/
+- Rust time crate: https://docs.rs/time/0.1.43/time/

@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania HTTP"
-html_title:           "Javascript: Wysyłanie żądania HTTP"
-simple_title:         "Wysyłanie żądania HTTP"
+title:                "Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
+simple_title:         "Wysyłanie żądania http"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## Co i dlaczego?
 
-Wysyłanie żądania HTTP to proces, w którym komputer wysyła prośbę o zasób do innej maszyny w sieci. Programiści często wykorzystują to w swoich projektach, ponieważ pozwala to na pobieranie danych z innych stron lub serwerów, co ułatwia tworzenie rozbudowanych aplikacji.
+Wysyłanie żądania HTTP to proces komunikacji z serwisem lub aplikacją internetową, które zwraca potrzebne dane. Programiści wykonują to, aby pobierać, przesyłać, aktualizować i usuwać informacje z serwerów.
 
-# Jak to zrobić:
+## Jak to zrobić?
+
+W JavaScript można wysyłać żądania HTTP na różne sposoby, ale jednym z najpopularniejszych jest używanie funkcji `fetch()`. Zobaczmy przykład:
 
 ```Javascript
-const request = new XMLHttpRequest();
-request.open('GET', 'https://jsonplaceholder.typicode.com/todos/1');
-request.send();
+fetch('https://api.example.com/data', {
+    method: 'GET', 
+})
+.then(response => response.json())
+.then(data => console.log(data))
+.catch((error) => console.log('Error:', error));
 ```
 
-W tym przykładzie wykorzystujemy obiekt XMLHttpRequest, który pozwala nam na wysłanie żądania GET do serwera podanego w drugim argumencie funkcji `open()`. Następnie wywołujemy funkcję `send()` aby wysłać żądanie i zapisać odpowiedź do obiektu `request`.
+Tutaj najpierw wywołujemy funkcję `fetch()` z URL endpointu, który chcemy wywołać, a następnie definiujemy metodę żądania jako 'GET'. Po otrzymaniu odpowiedzi, konwertujemy ją na JSON, a następnie wyświetlamy dane.
 
-# Głębszy wgląd:
+## Deep Dive
 
-1. Kontekst historyczny: Wysyłanie żądań HTTP stało się możliwe dzięki rozwojowi oraz standardyzacji protokołu HTTP. Dzięki niemu możemy komunikować się z serwerem i pobierać potrzebne nam zasoby.
+Historycznie, do wysyłania żądań HTTP w JavaScript używano obiektu XMLHttpRequest. Ale obecnie `fetch()` jest preferowaną metodą ze względu na jej prostotę i łatwość użycia.
 
-2. Alternatywy: Obecnie najpopularniejszą metodą wysyłania żądań HTTP jest wykorzystanie biblioteki `fetch` lub frameworków takich jak `Axios`.
+Alternatywą dla `fetch()` jest biblioteka o nazwie `axios`, która również oferuje prosty sposób na wykonywanie żądań HTTP.
 
-3. Szczegóły implementacji: Wysyłanie żądań HTTP odbywa się przy użyciu różnych metod takich jak GET, POST, PUT czy DELETE. Każda z nich ma swoje zastosowanie i pozwala na różne operacje na zasobach.
+Jednym z ważnych aspektów wysyłania żądań HTTP jest obsługa błędów. W powyższym przykładzie użyliśmy `catch()`, aby obsługiwać wszelkie potencjalne błędy, które mogą wystąpić podczas wykonywania żądania.
 
-# Zobacz również:
+## Zobacz także
 
-- Dokumentacja XmlHttpRequest: https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest
-- Poradnik z wykorzystaniem `fetch`: https://www.sitepoint.com/fetch-api/
-- Biblioteka Axios: https://axios-http.com/docs/intro
+1. [Fetch API na MDN Web Docs](https://developer.mozilla.org/pl/docs/Web/API/Fetch_API/Using_Fetch)
+2. [Axios - Biblioteka do żądań HTTP](https://axios-http.com/docs/intro)
+3. [Obsługa błędów w JavaScript na MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)

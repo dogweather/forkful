@@ -1,6 +1,6 @@
 ---
 title:                "Satunnaisten numeroiden luominen"
-html_title:           "Go: Satunnaisten numeroiden luominen"
+html_title:           "PowerShell: Satunnaisten numeroiden luominen"
 simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Go"
 category:             "Go"
@@ -10,43 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+# Generoi Satunnaislukuja Golla: Näin Se Käy
+ 
 
-Satunnaislukujen luominen tarkoittaa satunnaisten numeroiden generoimista tietokoneohjelmassa. Ohjelmoijat käyttävät tätä toimintoa esimerkiksi simulaatioissa, peleissä ja salauksessa.
+## Mikä ja Miksi?
+Satunnaislukujen luominen on prosessi, jossa luodaan ennustamattomia numeroita. Ohjelmoijat tekevät näin moniin tarkoituksiin, kuten simulointeihin, peliohjelmointiin, salaukseen ja algoritmien testaukseen.
 
-## Miten:
+## Näin tehdään:
+Go:n standardikirjasto tarjoaa `math/rand` -paketin, jolla voit generoida satunnaislukuja. Tässä on esimerkki siitä, miten se toimii:
 
-Go-ohjelmoinnissa satunnaislukuja voi luoda käyttämällä pakettia `math/rand` ja sen `Intn(n)` -funktiota, joka generoi satunnaisen kokonaisluvun välillä 0-n. 
-Esimerkiksi:
-
-```
-Go funktiolla rand.Intn(100) voimme luoda satunnaisia lukuja välillä 0-100.
-
+```Go
 package main
 
 import (
 	"fmt"
 	"math/rand"
+	"time"
 )
 
 func main() {
-	randomNumber := rand.Intn(100)
-	fmt.Println("Satunnainen luku välillä 0-100 on:", randomNumber)
+	rand.Seed(time.Now().UnixNano())
+	fmt.Println(rand.Intn(100))
 }
-
 ```
-Esimerkkitulos:
+Koodi yllä luo satunnaisen kokonaisluvun väliltä 0-99. `rand.Seed(time.Now().UnixNano())` alustaa satunnaislukugeneraattorin nykyisellä ajanhetkellä.
 
-`Satunnainen luku välillä 0-100 on: 75`
+## Syvemmin:
+Historiallisesti satunnaislukujen tuottamista pidettiin haasteena. Varhaisimmat menetelmät perustuivat fyysisiin prosesseihin, kuten noppien heittoon tai rulettipyörän pyöräyttämiseen. Nykyaikana ohjelmistot tuottavat "pseudosatunnaislukusarjoja", jotka näyttävät olevan satunnaisia.
 
-## Syväsukellus:
+Go:n `math/rand` -paketin alaisuudessa satunnaislukugeneraattorina käytetään kongruential generaattoria. Tämä on yksinkertainen ja tehokas menetelmä, mutta se ei sovellu kaikkiin käyttötapauksiin. Vaihtoehtoisesti voidaan käyttää myös salattuja satunnaislukugeneraattoreita, kuten `crypto/rand`.
 
-Satunnaislukujen generoiminen on ollut tärkeä osa tietokoneohjelmointia jo pitkään. Aluksi ohjelmoijat joutuivat itse suunnittelemaan algoritmejä satunnaislukujen generoimiseksi, mutta nykyään monet ohjelmointikielet, kuten Go, tarjoavat valmiita funktioita tähän tarkoitukseen. 
+On huomionarvoista, että ohjelmoijien pitää ymmärtää, miten eri generaattorit toimivat, ja valita oikea työkalu heidän tarpeisiinsa.
 
-Go:ssa on myös mahdollista käyttää `crypto/rand` -pakettia, joka tarjoaa turvallisempia satunnaislukuja, jotka perustuvat laadukkaisiin satunnaisiin lähdeaineistoihin.
-
-## Katso myös:
-
-- Dokumentaatio Go:n `math/rand` -paketista: https://golang.org/pkg/math/rand/
-- Dokumentaatio Go:n `crypto/rand` -paketista: https://golang.org/pkg/crypto/rand/
-- Artikkeli satunnaislukujen generoinnista Go:ssa: https://gobyexample.com/random-numbers
+## Näistä lisää:
+- Go:n virallinen dokumentaatio `math/rand` -paketista: https://golang.org/pkg/math/rand/
+- Go:n virallinen dokumentaatio `crypto/rand` -paketista: https://golang.org/pkg/crypto/rand/
+- Yksityiskohtainen artikkeli pseudosatunnaislukugeneraattorien tyypistä, jota Go käyttää: https://en.wikipedia.org/wiki/Linear_congruential_generator

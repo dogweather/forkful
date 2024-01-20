@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Haskell: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering er en måte for programmerere å sikre at bare autoriserte brukere kan få tilgang til en bestemt ressurs eller data. Dette kan være nyttig i situasjoner der sensitiv informasjon skal beskyttes eller når det kreves en form for brukeridentifikasjon for å få tilgang til ressurser.
+## Hva & Hvorfor?
+
+Å sende en HTTP-forespørsel med grunnleggende autentisering handler om å opprette en klarert kommunikasjon mellom klient og server. Programmerere gjør dette for å bygge sikre systemer, som krever brukere å bekrefte sin identitet først.
 
 ## Hvordan:
-Haskell tilbyr enkelt å sende en HTTP-forespørsel med grunnleggende autentisering ved hjelp av ```http-client``` biblioteket. Her er et eksempel på hvordan du kan gjøre det:
 
-```haskell
+For å sende en HTTP-forespørsel med grunnleggende autentisering i Haskell, kan du bruke `http-client`-biblioteket. Sjekk ut dette enkle eksemplet.
+
+```Haskell
 import Network.HTTP.Client
-import Network.HTTP.Client.TLS
-import Network.HTTP.Simple
+import Network.HTTP.Client.TLS (tlsManagerSettings)
 
-main :: IO ()
 main = do
     manager <- newManager tlsManagerSettings
-    request <- parseRequest "https://example.com"
-    let request' = applyBasicAuth "username" "password" request
-    response <- httpLbs request' manager
-    putStrLn $ show response
+    let request = applyBasicAuth "username" "password" $ parseRequest_ "http://example.com"
+    response <- httpLbs request manager
+    print $ responseBody response
 ```
+Hvis alt går etter planen, skal du se responsen fra serveren i output.
 
-Dette eksemplet vil sende en GET-forespørsel til nettstedet "https://example.com" med brukernavn og passord som brukes til å autentisere forespørselen. Den resulterende responsen vil bli skrevet ut til konsollen.
+## Dypdykk
 
-## Dypdykk:
-Grunnleggende autentisering har vært en del av HTTP-spesifikasjonene siden 1990-tallet og er en av de mest brukte autentiseringsmetodene. Alternativene til grunnleggende autentisering inkluderer Digest-autentisering og OAuth. Når du implementerer grunnleggende autentisering, er det viktig å sørge for at forbindelsen er kryptert for å hindre uautorisert tilgang og potensiell eksponering av brukernavn og passord.
+1. *Historisk kontekst*: Grunnleggende autentisering er en av de eldste metoder for identitetskontroll på weben. Det har vært med oss siden vedlegg til HTTP/1.0 spesifikasjonen på midten av 1990-tallet.
 
-## Se også:
-For mer informasjon om å sende HTTP-forespørsler i Haskell, kan du sjekke ut dokumentasjonen til ```http-client``` biblioteket og lære mer om autentiseringstyper og implikasjoner på webutvikling over hele nettet.
+2. *Alternativer*: Selv om grunnleggende autentisering er ganske enkel å implementere, er det ikke alltid den beste løsningen. For eksempel, OAuth 2.0, token-basert autentisering, og session-basert autentisering er noen alternative metoder som tilbyr bedre sikkerhet for særlig sensitive applikasjoner.
+
+3. *Implementeringsdetaljer*: Grunnen til at vi bruker `applyBasicAuth` funksjonen i eksemplet ovenfor er å legge til en "Authorization"-header i HTTP-forespørselen. Denne headeren inneholder det brukernavn og passord vi oppga, kryptert med Base64.
+
+## Se også
+
+- [`http-client` dokumentasjon](https://hackage.haskell.org/package/http-client)
+- [HTTP/1.0 spesifikasjonen](https://tools.ietf.org/html/rfc1945)
+- [OAuth 2.0](https://tools.ietf.org/html/rfc6749)

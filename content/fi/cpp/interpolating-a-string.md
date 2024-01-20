@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "C++: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "C++"
 category:             "C++"
@@ -10,34 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Merkkijonon interpolointi tarkoittaa merkkijonon sisällön sisällyttämistä toiseen merkkijonoon. Tämä tehdään usein tarpeeseen lisätä dynaamisesti muuttuvia tietoja merkkijonoon, kuten käyttäjän syötteitä tai tietokannasta haettuja arvoja. Ohjelmoijat käyttävät interpolointia lisätäkseen joustavuutta ja tehokkuutta heidän koodissaan.
+# Merkkijonon interpolointi C++:ssa: Mitä, Miksi ja Miten?
 
-## Miten:
-Alla on kaksi esimerkkiä kuinka interpolointi toimii ```C++``` koodissa:
+## Mitä & Miksi?
 
-### Esimerkki 1:
+Merkkijonon interpolointi on prosessi, jossa muuttujien tai lausekkeiden arvot sijoitetaan suoraan merkkijonoon. Se helpottaa koodin kirjoittamista, parantaa sen luettavuutta ja ylläpidettävyyttä.
+
+## Miten se tehdään:
+
+Katsotaan miten merkkijonon interpolointi tehdään C++:ssa (nykyversiossa, C++20).
+
 ```C++
-std::string nimi = "Maija";
-std::cout << "Hei, " << nimi << "! Tervetuloa!" << std::endl;
-```
-**Tulostus:** Hei, Maija! Tervetuloa!
+#include <iostream>
+#include <format>
 
-### Esimerkki 2:
-```C++
-std::cout << "Lisäämme kaksi lukua " << 10 << " ja " << 5 << ". Lopputulos on " << 10+5 << std::endl;
+int main() {
+    std::string name = "Pekka";
+    int age = 33;
+
+    std::string message = std::format("Hei, nimeni on {} ja olen {} vuotta vanha", name, age);
+
+    std::cout << message << std::endl;
+
+    return 0;
+}
 ```
-**Tulostus:** Lisäämme kaksi lukua 10 ja 5. Lopputulos on 15.
+
+Tulostus:
+
+```bash
+Hei, nimeni on Pekka ja olen 33 vuotta vanha
+```
 
 ## Syvempi sukellus:
-Merkkijonon interpolointia käytettiin ensimmäisen kerran runsaat 40 vuotta sitten BASIC-ohjelmointikielessä. Nykyään eri ohjelmointikielissä käytetään erilaisia tapoja interpoloida merkkijonoja, mutta perusidea on sama. Joissakin kielissä, kuten Pythonissa, interpolointi tapahtuu käyttämällä %-merkkiä ja muuttujia. Toisissa kielissä, kuten ```C++```, voidaan käyttää << -operaattoria tai erillistä funktiota. Lisäksi on olemassa myös muita tapoja, kuten string.format-menetelmä, joka on yleinen Java-ohjelmointikielessä.
 
-Interpolointiin on myös muita vaihtoehtoja, kuten string concatenation eli merkkijonojen yhdistäminen, mutta se ei ole yhtä tehokas kuin interpolointi. Merkkijonojen interpolointi on myös hyödyllinen tapa tehdä koodista helpommin luettavaa ja ymmärrettävää.
+Merkkijonon interpolointi tulee skriptikielistä, kuten Perl ja Ruby. C++ sai tämän toiminnon vasta C++20-versiossa `std::format`-funktion myötä.
 
-Interpolointi ```C++``` kielessä onnistuu eri tavoilla, kuten käyttämällä std::stringstream-luokkaa tai käyttämällä sabluunakehyksen std::format-funktiota. Jokaisella tavalla on omat hyötynsä ja haittansa, ja voit valita sen mukaan mikä sopii parhaiten sinun tarkoitukseesi.
+Vaihtoehtoisesti voit käyttää `sprintf`-funktiota tai `std::stringstream`-luokkaa, mutta ne ovat monimutkaisempia ja herkempiä virheille.
+
+Merkkijonon interpoloitumisen yksityiskohdat: `std::format` ottaa muodon merkkijonon ja korvaa jokaisen "{}" paikanmuuttujan argumenttien arvoilla. Argumentit muunnetaan merkkijonoiksi ja lopputulos on interpoloitu merkkijono.
 
 ## Katso myös:
-- [Merkkijonon interpolointi (Wikipedia)](https://fi.wikipedia.org/wiki/Merkkijonon_interpolointi)
-- [BASIC-kaarin ja HOLBASIC (Hackaday)](https://hackaday.com/2017/05/02/basics-and-holbasic-your-first-dirty-hack-to-keep-your-kids-away-from-coding/)
-- [Interpolating strings (C++ Reference)](https://en.cppreference.com/w/cpp/language/string_literal#Interpolating_strings)
-- [String.format-menetelmä (Oracle Docs)](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#format(java.lang.String,%20java.lang.Object...))
+
+1. [C++ Reference-std::format](https://en.cppreference.com/w/cpp/utility/format)
+2. [sprintf-Function](https://www.cplusplus.com/reference/cstdio/sprintf/)
+3. [std::stringstream Class](http://www.cplusplus.com/reference/sstream/stringstream/)

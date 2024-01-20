@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "PHP: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,54 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché si invia una richiesta HTTP?
+## Che Cosa e Perché?
+Una richiesta HTTP è un messaggio inviato da un client a un server per ottenere dati. Come programmatori, l'utilizziamo per comunicare con gli altri server, scaricare file o interagire con servizi web.
 
-In poche parole, inviare una richiesta HTTP significa comunicare con altri sistemi tramite il protocollo HTTP (Hypertext Transfer Protocol). Questo permette ai programmatori di accedere e recuperare informazioni da server esterni, come ad esempio dati da un database o contenuti da un sito web.
-
-I programmatori inviano richieste HTTP perché è un modo efficiente e standardizzato di ottenere dati da altre fonti. In questo modo, possono integrare facilmente le informazioni di cui hanno bisogno nel loro codice e fornire una migliore esperienza utente.
-
-## Come fare:
-
-Ecco un esempio di codice PHP per inviare una richiesta HTTP utilizzando la funzione built-in `file_get_contents()`:
+## Come Fare:
+Vediamo un semplice esempio usando PHP e cURL per inviare una richiesta GET a un server.
 
 ```PHP
-$api_url = "http://www.example.com/api/users";
-$response = file_get_contents($api_url);
+<?php
+// inizializza
+$ch = curl_init();
+
+// imposta l'URL
+curl_setopt($ch, CURLOPT_URL, "http://www.example.com");
+
+// esegue
+$output = curl_exec($ch);
+
+// chiude
+curl_close($ch);
+
+// stampa l'output
+echo $output;
+?>
 ```
 
-In questo esempio, stiamo inviando una richiesta GET all'URL dell'API degli utenti. La risposta viene salvata nella variabile `$response`, che può quindi essere elaborata ulteriormente.
-
-Un altro modo di inviare una richiesta HTTP è utilizzando la libreria cURL integrata in PHP. Di seguito è riportato un esempio di codice che invia una richiesta POST con alcuni dati di esempio al server:
-
-```PHP
-$curl = curl_init();
-
-curl_setopt_array($curl, array(
-  CURLOPT_URL => "http://www.example.com/api/new_user",
-  CURLOPT_RETURNTRANSFER => true,
-  CURLOPT_POST => true,
-  CURLOPT_POSTFIELDS => array(
-    'name' => 'John Doe',
-    'email' => 'john.doe@example.com',
-    'password' => 'example123'
-  )
-));
-
-$response = curl_exec($curl);
-curl_close($curl);
-```
+Quando esegui questo file, vedrai una risposta HTML dal server "www.example.com".
 
 ## Approfondimento:
+La funzione cURL PHP è stata introdotta nella versione 4.0.2, da allora è uno strumento potente per inviare richieste HTTP. 
 
-Il protocollo HTTP è stato inventato negli anni '90 da Tim Berners-Lee come parte del World Wide Web. Essenzialmente, è un sistema che consente ai client (browser) e ai server web di comunicare tra loro.
+Esistono alternative come file_get_contents() o la libreria Guzzle HTTP Client, ma cURL rimane popolare per la sua versatilità e controllo dettagliato della richiesta.
 
-Oltre alle funzioni built-in di PHP come `file_get_contents()` e cURL, ci sono altre librerie e framework che possono essere utilizzati per inviare richieste HTTP, come ad esempio Guzzle o Symfony's HttpClient.
+Per inviare dati POST, impostare CURLOPT_POST su true e CURLOPT_POSTFIELDS con il vostro array di dati.
 
-L'implementazione delle richieste HTTP in PHP può variare in base alla versione del linguaggio e alle configurazioni del server. È importante assicurarsi di utilizzare le funzioni e le impostazioni appropriate per il proprio progetto.
+```PHP
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, array('key1' => 'value1', 'key2' => 'value2'));
+```
 
-## Vedi anche:
+## Vedi Anche:
+Per un'ulteriore lettura sulle richieste HTTP e su come gestirle con PHP, consulta queste risorse:
 
-- [Funzione PHP `file_get_contents()`](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Libreria cURL per PHP](https://www.php.net/manual/en/book.curl.php)
-- [Guzzle, una moderna libreria PHP per richieste HTTP](https://docs.guzzlephp.org/)
-- [Symfony HttpClient, una libreria basata su Guzzle per gestire richieste HTTP](https://symfony.com/doc/current/http_client.html)
+cURL Manuale PHP: http://php.net/manual/it/book.curl.php
+
+Libreria Guzzle HTTP Client: http://docs.guzzlephp.org/en/latest/
+
+Funzione PHP file_get_contents(): http://php.net/manual/it/function.file-get-contents.php

@@ -1,7 +1,7 @@
 ---
-title:                "String-Interpolation"
-html_title:           "Lua: String-Interpolation"
-simple_title:         "String-Interpolation"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -12,37 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Interpolation von Strings ist eine Technik, die von Programmierern verwendet wird, um innerhalb eines Strings variablen Inhalt einzufügen. Zum Beispiel könnte man einen Satz wie "Mein Name ist [Name]" interpolieren, wo [Name] durch den Namen des Benutzers ersetzt wird. Dies macht den Code flexibler und vereinfacht das Erstellen von dynamischen Strings.
+Die Interpolation von Zeichenketten ermöglicht das Einsetzen von Variablen oder Ausdrücken direkt in Zeichenketten. Programmierer verwenden dies, um leserlichen und wartbaren Code zu schreiben.
 
-## Wie geht's?
+## Anleitung:
 
-Die Interpolation von Strings kann in Lua mit dem %-Operator und zwei geschweiften Klammern durchgeführt werden. Zum Beispiel:
-
-```Lua
-local name = "Max"
-print("Mein Name ist %{name}")
-```
-
-Dies würde die Ausgabe "Mein Name ist Max" erzeugen. Beachten Sie, dass der Variablenname innerhalb der geschweiften Klammern dem tatsächlichen Namen der Variable entsprechen muss.
-
-Um mehrere Variablen zu interpolieren, können diese mit einem Komma getrennt innerhalb der geschweiften Klammern angegeben werden:
+In Lua verwenden wir die `string.format`-Funktion zur Zeichenketteninterpolation. Hier sind ein paar Beispiele:
 
 ```Lua
-local name = "Max"
-local age = 25
-print("%{name} ist %{age} Jahre alt.")
+name = "John"
+print(string.format("Hallo %s", name))   -- Ausgabe: Hallo John
+
+zahl = 5
+print(string.format("Ich habe %d Äpfel", zahl))   -- Ausgabe: Ich habe 5 Äpfel
+
+preis = 9.99
+print(string.format("Das kostet %.2f Euro", preis)) -- Ausgabe: Das kostet 9.99 Euro
+
 ```
 
-Dies würde die Ausgabe "Max ist 25 Jahre alt." erzeugen.
+## Tiefere Informationen:
 
-## Tiefentauchen
+Zeichenketteninterpolation geht auf die 60er Jahre und die Assemblerprogrammierung zurück. In Lua, das keine integrierte Unterstützung für Zeichenketteninterpolation hat, verwenden wir die `string.format`-Funktion, basierend auf dem C Sprachstil.
 
-Die Methode der Interpolation von Strings ist nicht unbedingt neu. Andere Programmiersprachen wie Ruby, Python und Perl verwenden ähnliche Techniken, um Strings zu manipulieren. Alternativ können Sie auch die string.format()-Funktion in Lua verwenden, um Strings zu interpolieren. Diese Methode erfordert jedoch etwas mehr Code.
+Als Alternativen zur Interpolation in Lua gelten konkatenierte Zeichenketten oder die Verwendung externer Bibliotheken wie `f-Strings`.
 
-Implementierungsdetails: Der %-Operator in Lua ist ein Alias für die string.format()-Funktion. Die in den geschweiften Klammern angegebenen Variablen werden zu einer Tabelle zusammengeführt und als Argumente an die Funktion übergeben.
+In Bezug auf die Implementierungsdetails verwendet Lua den Formatierungstyp spezifizierer (wie `%s`, `%d`, `%.2f`), um den Wert und den Typ der einzufügenden Variable anzugeben.
 
-## Siehe auch
+## Siehe dazu:
 
-Weitere Informationen zur Interpolation von Strings in Lua finden Sie in der offiziellen Dokumentation: https://www.lua.org/manual/5.3/manual.html#6.4.1
+Um Ihre Kenntnisse in Lua zu vertiefen, finden Sie hier eine Liste von nützlichen Ressourcen.
 
-Für Informationen zu anderen Möglichkeiten, Strings in Lua zu manipulieren, schauen Sie sich die String-Bibliothek an: https://www.lua.org/manual/5.3/manual.html#6.4
+- [Lua-Users-Wiki: Strings Tutorial](http://lua-users.org/wiki/StringsTutorial)
+- [Lua: Programming: gsub](https://www.lua.org/pil/20.2.html)
+- [Programming in Lua: The String Library](https://www.lua.org/pil/20.html)

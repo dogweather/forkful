@@ -1,7 +1,7 @@
 ---
-title:                "ウェブページをダウンロードする"
-html_title:           "TypeScript: ウェブページをダウンロードする"
-simple_title:         "ウェブページをダウンロードする"
+title:                "ウェブページのダウンロード"
+html_title:           "Bash: ウェブページのダウンロード"
+simple_title:         "ウェブページのダウンロード"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,35 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-Webページをダウンロードするとは何かを説明する2〜3文と、プログラマーがそれを行う理由を説明します。
-
-Webページのダウンロードは、インターネット上で情報を取得するプロセスです。プログラマーは、この方法で必要なデータを取得し、処理することができるようになります。
+## 何となく？何故？
+ウェブページのダウンロードとは、指定したURL内の全ての情報を保存することです。プログラマーがこれを行う理由は、分析のためのデータの収集、オフライン閲覧のため、またはバックアップを取るためです。
 
 ## 方法：
+以下に、TypeScriptを使用したウェブページのダウンロードの例を示します。ここでは、実際のコードとその出力が描かれています。
+
 ```TypeScript
-const https = require('https');
-const URL = "https://www.example.com";
-https.get(URL, function(response) {
-  response.setEncoding("utf-8");
-  let body = "";
-  response.on("data", data => {
-    body += data; //データを取得
-  });
-  response.on("end", () => {
-    console.log(body); //ダウンロードしたWebページのコンテンツを表示
-  });
+import * as fs from 'fs';
+import * as http from 'http';
+
+const url = 'http://example.com';
+http.get(url, res => {
+    res.setEncoding('utf8');
+    let body = '';
+    res.on('data', chunk => {
+        body += chunk;
+    });
+    res.on('end', () => {
+        fs.writeFile('example.html', body, err => {
+            if (err) {
+                console.log('エラーが発生しました：', err);
+            } else {
+                console.log('ファイルが正常に保存されました!');
+            }
+        });
+    });
 });
 ```
+このコードが実行されると、http://example.comの内容がexample.htmlというファイルに保存されます。
 
-## 深堀り：
-Webページをダウンロードする方法には、他にも様々な手段があります。例えば、ブラウザーの開発者ツールを使って、手動でコードを実行することも可能です。
+## 深堀り
+ウェブページのダウンロードはインターネットが広く普及し始めた頃から存在します。初期のブラウザでは、右クリックメニューからこの機能が提供されていました。プログラミング的には、HTTPリクエストとレスポンスの概念が基礎となっています。
 
-また、Node.jsやPythonなどのプログラミング言語でもWebページをダウンロードすることができます。それぞれの言語に特有のライブラリを使用することで、より簡単に実装することができます。
+ダウンロードの代替方法としては、スクレイピングやAPIを通じたデータの取得があります。しかしながら、これらはウェブページのダウンロードとは異なる意図と条件を持っています。
 
-## 関連情報：
-Webページをダウンロードするときに役立つリンクを紹介します。
+詳細な実装にいうと、TypeScriptでこれを行うにはNode.jsのHTTPモジュールとFile System(fs)モジュールを利用します。HTTPモジュールからGETリクエストを送信し、結果を受け取ってから、ファイルシステムモジュールで保存操作を行います。
 
-- [Node.js公式ドキュメント: https.get()](https://nodejs.org/api/https.html#https_https_get_url_options_callback)
-- [Python公式ドキュメント: urllib.request](https://docs.python.org/3/library/urllib.request.html)
-- [ブラウザの開発者ツールを使ったWebページのダウンロード方法: https://www.lifewire.com/fully-download-files-in-chrome-4582686](https://www.lifewire.com/fully-download-files-in-chrome-4582686)
+## 関連情報
+- [Node.jsのHTTPモジュールの詳細](https://nodejs.org/api/http.html)
+- [Node.jsのFile Systemモジュールの詳細](https://nodejs.org/api/fs.html)
+- [HTTPリクエストとレスポンスの詳細](https://developer.mozilla.org/ja/docs/Web/HTTP/Messages)
+これらのリンクは、ウェブページのダウンロードの背後にあるさまざまな要素を理解するための有益な情報源です。

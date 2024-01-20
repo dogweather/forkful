@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Haskell: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,34 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Debug-Ausgabe in Haskell
+
 ## Was & Warum?
+Die Druckausgabe von Debug-Informationen ist eine Methode, um Daten in Textform während der Programmausführung zu erhalten. Entwickler nutzen sie um Verständnis über den internen Zustand ihres Programms zu gewinnen - besonders hilfreich bei Fehlersuche und -behebung.
 
-Debugging ist ein wichtiger Teil der Programmierung und bezieht sich darauf, Probleme und Fehler in einem Programm zu identifizieren und zu beheben. Das Drucken von Debug-Ausgaben ist eine Möglichkeit, dieses Ziel zu erreichen, indem wichtige Informationen über den Zustand des Programms während der Ausführung angezeigt werden. Dies hilft Programmierern dabei, ihren Code besser zu verstehen und mögliche Fehlerquellen zu erkennen.
+## So geht's:
 
-## Wie geht's?
+In Haskell nutzen wir normalerweise die Funktion `print` für die Debug-Ausgabe. Hier ist ein einfacher Codeausschnitt und seine Ausgabe:
 
-Um Debug-Ausgaben in Haskell zu drucken, können wir die Funktion `trace` aus dem Paket `Debug.Trace` verwenden. Wir importieren das Paket in unsere Datei und rufen dann die Funktion `trace` auf, wobei wir die Debug-Nachricht als ersten Argument und den Wert, den wir ausgeben möchten, als zweites Argument angeben.
+```Haskell
+main = do
+    let x = 5
+    print ("Der Wert von x ist ", x)
+```
+Ausgabe:
+
+```Bash
+("Der Wert von x ist ",5)
+```
+Für komplexere Debugging-Aufgaben bietet die Bibliothek `Debug.Trace` weitergehende Funktionen, z.B. `trace`:
 
 ```Haskell
 import Debug.Trace
 
 main = do
-    let x = 10
-    trace "Wert von x:" x
+    let x = trace "X wurde definiert" 5
+    print ("Wert von x ist ", x)
+```
+Ausgabe:
+
+```Bash
+X wurde definiert
+("Wert von x ist ",5)
 ```
 
-Dieser Code gibt folgende Debug-Ausgabe aus:
+## Vertiefung
 
-```
-Wert von x: 10
-```
+* Historischer Kontext: Haskell, eingeführt 1990, hat sich immer auf rein funktionales Programmieren konzentriert. Eine Debug-Ausgabe, die Seiteneffekte erzeugt, war dabei lange Zeit kontrovers.
 
-## Tiefgehende Einblicke
+* Alternativen: Manchmal ist Logging vorzuziehen, vor allem wenn man mit asynchronen Prozessen arbeitet. Bibliotheken wie `monad-logger` können hier hilfreich sein.
 
-Die Verwendung von `trace` zum Drucken von Debug-Ausgaben ist eine schnelle und einfache Möglichkeit, Fehler in Haskell-Programmen zu finden. Es gibt jedoch auch andere Möglichkeiten, Debugging durchzuführen, wie zum Beispiel das Hinzufügen von `print`-Statements an verschiedenen Stellen im Code, um bestimmte Variablen oder Werte auszugeben.
+* Implementierungsdetails: Funktionen wie `print` oder `trace` erzeugen Ausgaben, indem sie `IO`-Monaden verwenden. Das heißt, sie erzeugen Seiteneffekte - etwas, das in der rein funktionalen Welt von Haskell vermieden werden sollte.
 
-Darüber hinaus ist es wichtig zu beachten, dass das Drucken von Debug-Ausgaben in der Regel nur für Testzwecke verwendet werden sollte und im fertigen Produktcode entfernt werden muss. Andernfalls kann es die Leistung und Effizienz des Programms beeinträchtigen.
+## Siehe auch
 
-## Sieh auch
-
-Weitere Informationen zum Debugging in Haskell finden Sie in der offiziellen Dokumentation des Pakets `Debug.Trace` und in der [Haskoogle-Community](https://haskoogle.com/blog/2016/05/14/elevating-haskell-debugging/).
+* Haskell Wiki über Debuggen: https://wiki.haskell.org/Debugging
+* Haskell Bibliothek "Debug.Trace": https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html
+* Monaden in Haskell: https://wiki.haskell.org/Monad
+* Bibliothek "monad-logger": https://hackage.haskell.org/package/monad-logger

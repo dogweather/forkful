@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie wyników debugowania"
-html_title:           "Clojure: Wydrukowanie wyników debugowania"
-simple_title:         "Wydrukowanie wyników debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego: 
-Wypisywanie danych debugowania to proces wypisywania informacji podczas działania programu w celu lepszej analizy i zrozumienia jego działania. Programiści często używają tej techniki, aby śledzić zmienne, wartości i inne parametry w celu znajdowania błędów i poprawiania ich kodu.
+## Co to jest i po co? 
 
-## Jak to zrobić:
-Wypiszmy wartość zmiennej ```x``` w naszym programie, używając funkcji ```println```:
-```Clojure
-(def x 10)
-(println x)
-```
-Wyjście powinno wyglądać tak:
-```Clojure
-10
-```
-Możemy również wyświetlić więcej danych, używając formatowania ciągu znaków. Na przykład:
-```Clojure
-(let [name "Jan" age 25]
-  (println (str "Witaj, jestem " name " i mam " age " lat!")))
-```
-Wyjście:
-```Clojure
-Witaj, jestem Jan i mam 25 lat!
-```
-Jeśli potrzebujemy sprawdzić, czy dana funkcja jest wywoływana w naszym programie, możemy wypisać informacje o jej wywołaniu używając funkcji ```timbre/info```. Na przykład:
-```Clojure
-(defn moja-funkcja [parametr]
-  (timbre/info (str "Funkcja moja-funkcja została wywołana z parametrem " parametr))
-  ; kod funkcji
-  )
-```
+Wydruk debugowania to prosta ale potężna technika pomagająca programistom zrozumieć, jak ich kod działa od środka. Poprzez wykorzystanie wydruku debugowania, można obserwować przepływ danych w kolejnych etapach działania programu.
 
-## Głębsze wynurzenia:
-Technika wypisywania danych debugowania jest popularna od dawna, gdy nie istniały jeszcze narzędzia debugowania w IDE. Alternatywnym sposobem może być użycie wbudowanego debuggera w Clojure REPL, który pozwala na interaktywne wykonywanie kodu i debugowanie błędów. Kod do wypisywania danych debugowania jest również przydatny przy testowaniu i monitorowaniu wydajności aplikacji w środowisku produkcyjnym. Implementacja funkcji ```println``` jest prosta, ponieważ jest to jedna z podstawowych funkcji języka Clojure. Można również używać innych funkcji wypisywania danych, takich jak ```print```, ```pr```, ```format``` lub ```str```.
+## Jak To Zrobić:
 
-## Zobacz też:
-- [Clojure REPL Debugger](https://clojure.org/guides/repl/debugging)
-- [Jak wykorzystać wypisywanie danych debugowania w Twoim kodzie Clojure](https://www.braveclojure.com/debugging/)
-- [Timbre - biblioteka do wypisywania i logowania w Clojure](https://github.com/ptaoussanis/timbre)
+Pierwszym krokiem jest importowanie namespace `clojure.tools.logging`, które umożliwia drukowanie na konsolę. Poniżej znajduje się przykład.
+
+```clojure
+(require '[clojure.tools.logging :as log])
+
+(defn funckja-przykladowa [x]
+  (log/debug "Wartość x: " x)
+  (* x x))
+```
+Powyżej, funkcja `funckja-przykladowa` drukuje wartość `x` przed wykonaniem obliczeń. Wydruk pojawia się w konsoli podczas uruchamiania programu.
+
+## Powiedzmy Więcej:
+
+Kiedy mówimy o wydrukach debugowania, warto przypomnieć sobie o historii. Pomimo że istnieje wiele zaawansowanych narzędzi do debugowania, wydruki debugowania nadal są chętnie stosowane ze względu na swoj simplicytet.
+
+Alternatywą do `clojure.tools.logging` mogą być inne biblioteki z dostępnością podobnej funkcjonalności, takie jak `Timbre` lub `tools.trace`.
+
+Ważne jest jednak wspomnieć, że wydruki debugowania nie zastąpią dokładnego testowania! Powinniśmy traktować je jako dodatkowe narzędzie w naszym arsenale programistycznym.
+
+## Zobacz Także:
+
+- Clojure - podręcznik testowania: https://clojure.org/guides/testing
+- Biblioteka Timbre: https://github.com/ptaoussanis/timbre
+- Biblioteka tools.trace: https://github.com/clojure/tools.trace

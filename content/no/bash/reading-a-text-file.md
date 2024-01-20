@@ -1,6 +1,6 @@
 ---
 title:                "Lese en tekstfil"
-html_title:           "Bash: Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
 simple_title:         "Lese en tekstfil"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
+## Hva & Hvorfor?
 
-Lesing av tekstfiler er en vanlig oppgave for programmerere. Det innebærer å lese en tekstfil, som kan inneholde forskjellige typer data og informasjon, og behandle den på en måte som er nyttig for programmet vårt. Dette kan være nødvendig for å utføre en bestemt oppgave, hente informasjon fra en database eller for å behandle brukerinndata.
+Å lese en tekstfil er prosessen med å hente informasjon lagret i en fil i klar tekstformat. Programmerere gjør dette for å bruke eller manipulere data lagret i filen.
 
 ## Hvordan:
 
+Tekstfiler kan leses på flere måter i Bash, men den enkleste og mest vanlige metoden er å bruke `cat`, `more`, eller `less`. 
+
+For eksempel:
 ```Bash
-# Les en tekstfil med navn "tekstfil.txt"
-cat tekstfil.txt
-
-# Les en tekstfil og lagre den i en variabel
-tekst=$(cat tekstfil.txt)
-
-# Les en tekstfil line by line og lagre hver linje i en variabel
-while read line; do
-  echo "Linje: $line"
-done < tekstfil.txt
+cat filnavn.txt
 ```
+denne kommandoen vil vise alt innholdet i filen i konsollen.
 
-Eksempel på output:
-
+Hvis filen inneholder mer data enn skjermen kan vise, kan `more` eller `less` være mer passende.
+```Bash
+more filnavn.txt
+less filnavn.txt
 ```
-Dette er en tekstfil.
-Den inneholder litt tekst.
-Vi kan lese den med Bash.
-```
+Disse kommandoene lar deg bla gjennom filinnholdet side for side. 
 
-## Dykk dypere:
+## Dypdykk:
 
-Lesing av tekstfiler har vært en viktig del av programmering i lang tid, helt siden den første datamaskinen ble utviklet. I dag finnes det flere alternative måter å lese tekstfiler på, for eksempel med andre programmeringsspråk eller ved hjelp av tredjepartsprogrammer. Implementeringsdetaljer og syntaks kan også variere avhengig av hvilket operativsystem man bruker.
+`cat`-kommandoen har vært en del av Unix- og Linux-baserte systemer siden 70-tallet. Alternativt, for større filer, anbefales 'more' eller 'less' på grunn av deres evne til å bla gjennom filen.
 
-## Se også:
+I tillegg, for mer komplekse operasjoner, tilbyr `awk` og `sed` scripting-funksjonalitet for tekstmanipulasjon. Bruk av disse verktøyene går utenfor omfanget av denne artikkelen, men de er verdt å utforske for omfattende tekstbehandling.
 
-- [Linux Kommandoer: Cat](https://www.linux.no/wiki/Kommandoer/cat)
-- [Bash Guide: Lesing av filer](https://mywiki.wooledge.org/BashGuide/InputAndOutput#Reading_files)
+Merk at å lese en fil direkte i Bash bare er passende for mindre filer. For filer med stor størrelse kan det være mer egnet å bruke programmeringsspråk som Python eller Java, hvor leseoperasjoner kan buffres og minnehåndtering håndteres mer effektivt.
+
+## Se Også: 
+
+For mer informasjon om tekstfil manupulering i Unix/Linux, sjekk ut følgende kilder:
+- GNU `sed`: https://www.gnu.org/software/sed/manual/sed.html
+- GNU `awk`: https://www.gnu.org/software/gawk/manual/gawk.html
+- `cat`, `more` og `less`: https://www.gnu.org/software/coreutils/manual/html_node/index.html

@@ -1,7 +1,7 @@
 ---
-title:                "Eine HTTP-Anfrage senden"
-html_title:           "C#: Eine HTTP-Anfrage senden"
-simple_title:         "Eine HTTP-Anfrage senden"
+title:                "Eine HTTP-Anforderung senden"
+html_title:           "Bash: Eine HTTP-Anforderung senden"
+simple_title:         "Eine HTTP-Anforderung senden"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,27 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was ist eine HTTP-Anfrage und warum ist es wichtig?
+# HTTP-Anfragen senden in C#
 
-Eine HTTP-Anfrage ist eine Methode, um Daten von einem Server zu erhalten. Programmierer verwenden dies, um mit APIs und anderen Web-Services zu interagieren, um Daten für ihre Anwendungen zu erhalten.
+## Was & Warum?
 
-# Wie geht's:
+HTTP-Anfragen sind Verbindungsanfragen, die an einen Webserver gesendet werden, um Daten zu erhalten oder zu senden. Sie sind essentiell für die Kommunikation zwischen Client und Server und sind daher ein grundlegender Bestandteil der modernen Web-Entwicklung.
 
-Um mit C# eine HTTP-Anfrage zu senden, benötigst du die Klasse "HttpClient" aus der Standardbibliothek. Innerhalb dieser Klasse gibt es eine Methode mit dem Namen "SendAsync", die wir verwenden, um eine Anfrage zu senden. Hier ist ein Beispiel für eine GET-Anfrage:
+## So geht's:
+
+Sie können in C# einfach HTTP-Anfragen mit der `HttpClient`-Klasse erstellen und senden. Hier ist ein einfaches Beispiel, wie man eine GET-Anfrage sendet:
 
 ```C#
-var client = new HttpClient();
-var response = await client.GetAsync("https://www.example.com/");
+using System;
+using System.Net.Http;
+
+class Program
+{
+    static async Task Main()
+    {
+        using (HttpClient client = new HttpClient())
+        {
+            HttpResponseMessage response = await client.GetAsync("https://api.example.com/data");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
+        }
+    }
+}
 ```
 
-Um eine POST-Anfrage zu senden, verwenden wir die entsprechende Methode "PostAsync" und übergeben die Daten als Parameter.
+Wenn das Programm läuft, sendet es eine GET-Anfrage an `api.example.com/data` und druckt die Antwort auf der Konsole aus.
 
-# Tiefer gehen:
+## Tiefer Tauchen:
 
-HTTP-Anfragen sind Teil des Hypertext Transfer Protocols, das ursprünglich für den Austausch von Daten in Web-Anwendungen entwickelt wurde. Alternativ können Programmierer auch das ältere und weniger sichere Protokoll FTP verwenden, um Dateien zu übertragen. Bei der Implementierung von HTTP-Anfragen ist es wichtig, auf die Antwortstatuscodes und die korrekte Formatierung der Daten zu achten.
+Historisch gesehen wurde die Kommunikation zwischen Client und Server über HTTP-Anfragen abgewickelt, und das ist immer noch der Fall. Aber heute gibt es viele Alternativen wie WebSockets, die eine bidirektionale Kommunikation ermöglichen.
 
-# Siehe auch:
+Die `HttpClient`-Klasse in C# erzeugt eine HTTP-Anfrage durch Aufruf der Methode `GetAsync`, `PostAsync`, `PutAsync` oder `DeleteAsync`. Der Rückgabetyp dieser Funktionen ist ein `HttpResponseMessage`-Objekt, das Informationen über die HTTP-Antwort enthält.
 
-- Offizielle Dokumentation zu HttpClient in C#: https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1
-- Ein interaktives Tutorial zum Senden von HTTP-Anfragen mit C#: https://www.tutorialsteacher.com/csharp/csharp-http-get-post
-- Ein Vergleich von HTTP und FTP-Protokollen: https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/Evolution_of_HTTP#File_Transfer_Protocols
+Während `HttpClient` die am häufigsten verwendete Klasse für HTTP-Anfragen in C# ist, gibt es auch andere Optionen wie `WebRequest` und `WebClient`. Aber `HttpClient` bietet mehr Funktionen und Flexibilität, und ist daher die empfohlene Wahl.
+
+## Siehe Auch:
+
+Um mehr über HTTP-Anfragen und deren Verwendung in C# zu erfahren, finden Sie hier einige hilfreiche Links:
+
+- [Microsoft-Dokumentation für HttpClient](https://docs.microsoft.com/de-de/dotnet/api/system.net.http.httpclient)
+- [Grundlegende Informationen zu HTTP-Anfragen bei Mozilla](https://developer.mozilla.org/de/docs/Web/HTTP/Overview)
+- [Vergleich der Klassen HttpClient, WebClient und WebRequest bei Stack Overflow](https://stackoverflow.com/questions/11828833/c-sharp-httpclient-vs-web-client)

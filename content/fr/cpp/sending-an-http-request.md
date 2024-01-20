@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "C++: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Fish Shell: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est?
+# L'envoi de requêtes HTTP en C++
 
-Envoyer une requête HTTP est une action courante pour les programmeurs. Cela implique de communiquer avec un serveur web en utilisant un protocole spécifique appelé Hypertext Transfer Protocol (HTTP). Les développeurs le font souvent pour récupérer des données à partir d'une API ou pour envoyer des informations à un site web.
+## Qu'est-ce que c'est et pourquoi ?
+
+L'envoi d'une requête HTTP est un moyen pour votre programme de communiquer avec un serveur web. C'est utile pour accéder à des données web ou interagir avec des API.
 
 ## Comment faire:
 
+Pour envoyer une requête HTTP en C++, nous avons besoin d'une bibliothèque comme `cpr`. Vous pouvez l'installer via vcpkg :
 ```C++
-#include <iostream>
-#include <curl/curl.h>
-using namespace std;
-
-int main() {
-    CURL *curl;
-    CURLcode res;
-    curl = curl_easy_init();
-    if(curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://exemple.com");
-        res = curl_easy_perform(curl);
-        if(res != CURLE_OK) {
-            cerr << "Erreur lors de l'envoi de la requête : " << curl_easy_strerror(res) << '\n';
-        }
-        curl_easy_cleanup(curl);
-    }
+vcpkg install cpr
+```
+Ensuite, un exemple de requête GET peut être le suivant :
+```C++
+#include <cpr/cpr.h>
+int main(){
+    cpr::Response r = cpr::Get(cpr::Url{"http://httpbin.org/get"});
     return 0;
 }
 ```
+Affichage de la sortie:
+```C++
+std::cout << r.status_code << std::endl;                   // 200
+std::cout << r.header["content-type"] << std::endl;        // application/json
+std::cout << r.text << std::endl;                          // JSON text...
+```
 
-La sortie de ce code sera un code HTML brut provenant du site web.
+## Plongée en profondeur
 
-## Profondeur de plongée:
+L'envoi de requêtes HTTP est central en programmation web depuis la naissance du Web en 1989. En C++, avant `cpr`, des bibliothèques comme `libcurl` étaient couramment utilisées, bien qu'elles soient un peu plus complexes à manipuler.
 
-L'envoi de requêtes HTTP remonte aux débuts d'Internet et est un élément essentiel de l'interaction entre les client et les serveurs web. Les alternatives à l'envoi de requêtes HTTP incluent l'utilisation de protocoles différents tels que FTP ou SMTP, ainsi que l'utilisation de bibliothèques telles que cURL. Dans l'exemple ci-dessus, nous utilisons la bibliothèque cURL pour simplifier l'envoi de la requête.
+D'autres alternatives incluent `Poco` et `Boost`, mais `cpr` est idéal pour les débutants en raison de son API simple et propre. L'implémentation dépend de libcurl, mais avec une interface plus agréable à utiliser.
 
-## Voir aussi:
+Lorsque vous envoyez une requête HTTP, votre programme crée une connexion TCP avec le serveur, envoie des données HTTP formatées spécifiquement, puis attend une réponse.
 
-- [Documentation cURL](https://curl.haxx.se/libcurl/)
-- [Introduction à HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Overview)
+## Voir aussi 
+
+Pour plus d'informations, consultez les liens suivants :
+- CPR GitHub : https://github.com/whoshuu/cpr
+- Documentation CPR : https://whoshuu.github.io/cpr/
+- Requêtes HTTP Wikipédia : https://fr.wikipedia.org/wiki/Hypertext_Transfer_Protocol

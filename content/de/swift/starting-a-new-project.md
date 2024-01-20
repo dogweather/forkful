@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen."
-html_title:           "Swift: Ein neues Projekt beginnen."
-simple_title:         "Ein neues Projekt beginnen."
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
+Das Starten eines neuen Projekts ist der erste Schritt zur Entwicklung von Anwendungen. Es ist essenziell, um die Arbeit zu organisieren und Themen wie die Architektur, die Logik und sogar das Design Ihrer App zu definieren.
 
-Der Beginn eines neuen Projekts ist der Moment, in dem Programmierer ihre kreative Reise beginnen. Sie planen, schreiben und testen Code, um ihre Ideen zum Leben zu erwecken. Neue Projekte eröffnen die Möglichkeit, etwas Neues zu erschaffen, Probleme zu lösen oder bestehende Konzepte zu verbessern.
-
-# Wie geht's?
-
-Ein neues Projekt in Swift kann auf verschiedene Arten gestartet werden. Hier sind zwei Beispiele:
+## So geht's: 
+Ein neues Swift-Projekt ist einfach zu starten. Zunächst öffnet man Xcode und wählt "Create a New Xcode Project". Für eine einfache iPhone-App wählt man "App" und füllt das Projektinformationen Formular aus.
 
 ```Swift
-// Beispiel 1: Erstellen eines leeren Projekts
-let project = Project()
+// HelloWorld.swift
+import SwiftUI
 
-// Beispiel 2: Erstellen eines Projekts mit vorgegebenem Namen
-let project = Project(name: "Mein neues Projekt")
+struct HelloWorld: View {
+    var body: some View {
+        Text("Hallo, Welt!")
+    }
+}
+
+struct HelloWorld_Previews: PreviewProvider {
+    static var previews: some View {
+        HelloWorld()
+    }
+}
 ```
+Dies ist der Code für eine einfache SwiftUI-Anwendung, die "Hallo, Welt!" auf dem Bildschirm anzeigt.
 
-Beispiel 1 erstellt ein leeres Projekt ohne Namen, während Beispiel 2 ein Projekt mit dem Namen "Mein neues Projekt" erstellt. Diese Beispiele nutzen die Projekt-Klasse, die in der Standardbibliothek von Swift verfügbar ist.
+## Vertiefende Informationen: 
+Das Öffnen eines neuen Projekts in Swift bietet eine saubere Arbeitsumgebung, die darauf ausgerichtet ist, Ihr Projekt kompakt und gut organisiert zu halten. Historisch gesehen wurde Swift 2014 von Apple entwickelt, das Konzept des "Projekts" war jedoch bereits vor Swift in der Programmierung bekannt. Alternative Ansätze könnten die Verwendung von Modellen und Frameworks Dritter beinhalten, die auf den Projekttyp abgestimmt sind (Beispiel: Spieleentwicklung mit Unity oder Website-Baukästen für Landing Pages). Bei der Erstellung eines neuen Projekts sollten Sie überlegen, welche Dateien und Bibliotheken benötigt werden, und diese in das Projekt einbeziehen, um den Ablauf und die Organisation zu verbessern.
 
-# Tiefere Einblicke
-
-Die Gründung eines neuen Projekts ist ein wichtiger Schritt in der Entwicklung. Im Laufe der Zeit haben Programmierer verschiedene Tools und Methoden entwickelt, um diesen Prozess zu vereinfachen. Eine alternative Möglichkeit, ein neues Projekt in Swift zu starten, ist die Verwendung von Xcode, einer integrierten Entwicklungsumgebung (IDE), die speziell für die Swift-Programmierung entwickelt wurde.
-
-Natürlich gibt es keinen falschen Weg, ein neues Projekt in Swift zu starten. Sie können ausprobieren, welche Methode am besten zu Ihrem individuellen Arbeitsstil passt. Wichtig ist, dass Sie bereit sind, neue Ideen auszuprobieren und zu erleben, wohin Ihre kreativität Sie führt.
-
-# Siehe auch
-
-- [Swift Project Build Settings](https://developer.apple.com/library/content/featuredarticles/XcodeConcepts/Concept-ProjectSettings.html)
-- [Introducing Xcode - Apple Developer Documentation](https://developer.apple.com/documentation/xcode)
+## Siehe auch: 
+• [Apple Developer Documentation - Create a new project](https://developer.apple.com/documentation/xcode/creating_a_new_project)
+• [Swift Basics - Start a new Project](https://www.swiftbysundell.com/basics/starting-a-new-project/)
+• [SwiftUI - Create a new project](https://www.hackingwithswift.com/quick-start/swiftui/how-to-create-a-new-project)

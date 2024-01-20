@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments de la ligne de commande"
-html_title:           "Swift: Lecture des arguments de la ligne de commande"
-simple_title:         "Lecture des arguments de la ligne de commande"
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,32 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font-ils?
+# Lecture des arguments de la ligne de commande Swift: un guide pratique
 
-Lire les arguments de ligne de commande est un moyen pour un programme de recevoir des entrées directement depuis la ligne de commande. Les programmeurs le font pour rendre leurs programmes plus interactifs et leur permettre de réagir en temps réel aux entrées de l'utilisateur.
+## Quoi & Pourquoi?
+La lecture des arguments de la ligne de commande signifie que votre programme Swift prend des paramètres depuis le terminal. Il s'agit d'une technique couramment utilisée pour donner des informations à votre programme avant son exécution.
 
-## Comment:
+## Comment faire:
+Vous pouvez lire les arguments de la ligne de commande à l'aide du tableau `CommandLine.arguments`.
+
+Voici un exemple de son utilisation:
 
 ```Swift
 let arguments = CommandLine.arguments
-print("Les arguments passés dans la ligne de commande sont: \(arguments)")
+print(arguments)
 ```
+Cela affichera tous les arguments passés à votre programme. Par exemple, si vous lancez votre programme avec `./myProgram argument1 argument2`, la sortie sera `["./myProgram", "argument1", "argument2"]`.
 
-Ce code va prendre tous les arguments passés dans la ligne de commande et les stocker dans une variable "arguments". Ensuite, il les imprime tous à l'écran.
+## Plongeons plus loin
+La possibilité de lire les arguments de la ligne de commande existe depuis les débuts de la programmation. C'est une façon essentielle de paramétrer les applications en dehors du code lui-même. En Swift, les arguments de ligne de commande sont stockés dans un tableau de chaînes. Le premier élément est toujours le nom du programme lui-même.
 
-Output:
-```
-Les arguments passés dans la ligne de commande sont: [nomDuProgramme, premierArgument, deuxièmeArgument]
-```
+Il existe des alternatives, comme utiliser une bibliothèque de parsing d'arguments de ligne de commande, qui peut faciliter l'utilisation de commandes plus complexes. Cependant, pour les cas simples, l'utilisation de `CommandLine.arguments` est suffisante.
 
-## Plongée en profondeur:
-
-Lire les arguments de ligne de commande est une fonctionnalité présente dans de nombreux langages de programmation depuis les débuts de la programmation informatique. Cela permet aux programmeurs d'interagir avec leurs programmes en leur passant des valeurs directement depuis la ligne de commande plutôt que de les définir à l'avance dans le code.
-
-Il existe également d'autres moyens de recevoir des entrées de l'utilisateur, tels que les fichiers de configuration ou les interfaces graphiques, mais lire les arguments de ligne de commande est souvent privilégié car c'est une méthode simple et rapide.
-
-Dans Swift, lire les arguments de ligne de commande se fait en utilisant la classe CommandLine, qui contient une variable statique "arguments" contenant tous les arguments passés dans la ligne de commande. Il est important de noter que les arguments sont toujours stockés sous forme de chaînes de caractères, il faut donc les convertir en le type souhaité si nécessaire.
-
-## À voir aussi:
-
-- [Documentation officielle de Swift sur CommandLine](https://developer.apple.com/documentation/foundation/commandline
+## Voir aussi
+Utilisation efficace des arguments de ligne de commande en Swift: https://www.hackingwithswift.com/read/12/overview
+Guide de Apple sur les outils de ligne de commande: https://developer.apple.com/library/archive/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CommandLine.html

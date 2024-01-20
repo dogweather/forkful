@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen isoin kirjaimin"
-html_title:           "Bash: Merkkijonon muuttaminen isoin kirjaimin"
-simple_title:         "Merkkijonon muuttaminen isoin kirjaimin"
+title:                "Merkkijonon isoilla kirjaimilla"
+html_title:           "Bash: Merkkijonon isoilla kirjaimilla"
+simple_title:         "Merkkijonon isoilla kirjaimilla"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
-Kapitalisaatio tarkoittaa merkkijonon ensimmäisen kirjaimen muuttamista isommaksi ja muun tekstin säilyttämistä ennallaan. Ohjelmoijat tekevät tämän helpottaakseen lukemista ja tehdäkseen koodista paremmin luettavaa. 
+# Bash-ohjelmointi: Merkkijonojen Suuraakkosten Käyttö 
+## Mikä & Miksi?
+Suuraakkosten käyttö muuntaa merkkijonon kaikki kirjaimet suuriksi. Tämä on hyödyllistä esimerkiksi kun halutaan välttyä kirainkoista johtuvilta virheiltä tai kun halutaan tehdä vertailuja, jotka ovat riippumattomia kirjainkoosta.
 
-Kuinka:
+## Kuinka:
+Merkkijonon muuntaminen suuraakkosiksi Bashissa on helppoa. Tässä on esimerkki.
+
 ```Bash
-# Esimerkkejä merkkijonon kapitalisaatiosta
+teksti="hello world"
+teksti=${teksti^^}
+echo $teksti
+```
+Näytön tulos olisi:
 
-# Yksinkertainen esimerkki
-
-string="tämä on esimerkki"
-echo "Ennen kapitalisaatiota: $string"
-string="${string^}"
-echo "Jälkeen kapitalisaatiota: $string"
-
-# Toisessa esimerkissä käytetään pipea
-
-echo "exo kapitalisaatiota" | awk '{print toupper($1)}'
-
-# Output: EXO KAPITALISAATIOTA
+```Bash
+HELLO WORLD
 ```
 
-Deep Dive:
-Kapitalisaatio ei ole vain Bash-ominaisuus, vaan se on peräisin Unix-käyttöjärjestelmästä, joka Bash perustuu. Tähän kuuluu myös munanvälityskomento, joka tekee saman isolla merkillä ensimmäisen kirjaimen ja muun tekstin kanssa. Vaihtoehto kapitalisaatiolle on käyttää sed-komentoa tai käydä läpi merkkijono loopin kautta.
+## Tarkempi tarkastelu:
+Suuraakkosten muunnos kehittyi samassa yhteydessä ASCII-merkkijärjestelmän kanssa, joka erottaa pien- ja suuraakkoset. Vaikka Bash tarjoaa kätevän suuraakkosten muunnoksen, muita tapoja on olemassa. Awkin tai sed-komentojen avulla voidaan käyttää säännöllisiä lausekkeita mukautettuun muunnokseen. Ja sisäiset yksityiskohdat? Tämä muutos käyttää sisäisesti C:n toupper-funktiota.
 
 ## Katso myös:
-- [Bash-opas](https://www.gnu.org/software/bash/manual/bash.html)
-- [Komennot ja muuttujat - Bash-opas](https://www.tutorialspoint.com/unix/unix-shell-variables.htm)
+1. Bash Programming Guide: https://tiswww.case.edu/php/chet/bash/bashref.html  
+2. Awk-ohjelma: https://www.gnu.org/software/gawk/manual/gawk.html  
+3. Sed-komento: https://www.gnu.org/software/sed/manual/sed.html

@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Rust: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,26 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Enviar una solicitud HTTP es una forma de comunicarse con un servidor web para obtener información o realizar acciones. Los programadores lo hacen para acceder a recursos en línea, como datos y servicios.
+## ¿Qué es & Por qué?
 
-## Cómo:
+Enviar una solicitud HTTP en programación es como pedir información a un servidor. Los programadores hacen esto para interactuar con API's web, recuperar datos, o manipularlos.
+
+## ¿Cómo se hace?
+
+Para realizar solicitudes HTTP en Rust, usaremos el paquete reqwest. Incluye funcionalidades para tanto solicitudes síncronas como asíncronas.
+
 ```Rust
-use reqwest::blocking::get;
+use reqwest;
 
-fn main() {
-    let response = get("https://example.com").unwrap();
-    println!("{}", response.status());
+fn main() -> Result<(), Box<dyn std::error::Error>>{
+    let body = reqwest::blocking::get("http://httpbin.org/ip")?
+        .text()?;
 
-    let body = response.text().unwrap();
-    println!("{}", body);
+    println!("body = {:?}", body);
+
+    Ok(())
 }
 ```
+Esto debería imprimir la IP pública como respuesta del servidor:
 
-## Inmersión profunda:
-El protocolo HTTP (Protocolo de Transferencia de Hipertexto) fue creado en 1991 y es la base de la comunicación en la web. Existen alternativas como HTTPS (HTTP seguro) que utiliza cifrado para proteger la información. La implementación de una solicitud HTTP en Rust se puede realizar con bibliotecas como reqwest o hyper.
+```
+body = "{\n  \"origin\": \"123.45.67.89\"\n}\n"
+```
 
-## Ver también:
-- [Documentación oficial de reqwest](https://docs.rs/reqwest/)
-- [Tutorial de Rust sobre solicitudes HTTP](https://rust-lang-nursery.github.io/rust-cookbook/web/clients/reqwest.html)
-- [Ejemplos de código de Rust sobre solicitudes HTTP](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=c1eae8f53b8bf6c04534d60c81c05998)
+## Análisis En Profundidad
+
+Las técnicas para enviar solicitudes HTTP evolucionaron a lo largo de los años. Rust ofrece una forma segura y eficiente para manejar las comunicaciones HTTP. Si bien hay alternativas como hyper o isahc, reqwest es un paquete muy fácil de usar y comprender.
+
+En cuanto a los detalles de implementación, hay que recordar siempre cerrar las conexiones HTTP, de lo contrario se pueden agotar los recursos del sistema.
+
+## También Vea
+
+Para una guía más completa de reqwest, visite [la documentación oficial de Reqwest](https://docs.rs/reqwest). Si necesita más detalles sobre las solicitudes HTTP en general, [MDN Web Docs es un buen recurso](https://developer.mozilla.org/es/docs/Web/HTTP).

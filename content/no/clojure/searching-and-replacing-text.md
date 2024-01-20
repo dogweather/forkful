@@ -1,6 +1,6 @@
 ---
 title:                "Søking og erstatning av tekst"
-html_title:           "Clojure: Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
 simple_title:         "Søking og erstatning av tekst"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+---
 
-Søk og erstatt tekst er en vanlig oppgave for dataprogrammerere. Det handler om å finne og erstatte et spesifikt uttrykk i en tekstfil eller datamaskinkode. Dette gjøres for å forenkle og effektivisere programmeringsprosessen ved å gjøre store endringer i koden på en enkel måte.
+# Hvordan søke og erstatte tekst i Clojure: En ikke-verbose veiledning
 
-## Hvordan:
+## Hva & Hvorfor?
 
-For å søke og erstatte tekst i Clojure, kan du bruke funksjonen "replace". Denne funksjonen tar inn to argumenter: en tekststreng som den skal søke etter, og en tekststreng som skal erstatte den funne teksten. Se et eksempel nedenfor:
+Å søke og erstatte tekst i programmering henviser til prosessen med å identifisere bestemte tegnsekvenser (strenger) og erstatte dem med andre. Programmerere gjør dette for å manipulere data, rense innspill, eller transformere tekst på effektive måter.
 
-```Clojure
-(replace "hund" "katt" "Jeg har en stor hund")
-```
+## Hvordan Det Gjøres:
 
-Dette vil resultere i teksten "Jeg har en stor katt".
-
-Du kan også bruke regulære uttrykk for å søke etter mer komplekse mønstre i teksten. For eksempel:
+I Clojure bruker vi funksjonen `clojure.string/replace` for å søke og erstatte tekst. Her er noen eksempler:
 
 ```Clojure
-(replace #"([0-9]+)st" "$1nd" "1st, 2nd, 3rd")
+(require '[clojure.string :as str])
+(defn search-and-replace 
+  [text find replace-with]
+  (str/replace text find replace-with))
+
+(search-and-replace "Hei, Verden!" "Verden" "Clojure")
+; => "Hei, Clojure!"
 ```
 
-Dette vil resultere i teksten "1st, 2nd, 3rd" siden den finner alle forekomster av ordet "st" etter et tall og erstatter det med "nd".
+## Dypdykk: 
 
-## Dypdykk:
+Clojures innebygde strengmanipulasjonsfunksjoner kommer fra sin Lisp-arv. Før Clojure, måtte Lisp og andre programmeringsspråk vanligvis stole på regulære uttrykk for tekstmanipulasjon.
 
-Søk og erstatte funksjonalitet har vært tilgjengelig i programmeringsspråk siden begynnelsen. Alternativer til Clojure inkluderer Java Regex, Python Regex og Perl Regex.
+`clojure.string/replace`-funksjonen er relativt enkel, men den er veldig kraftig. Den kan ta enten en streng, et tegn, eller en regex som sin "finn" -parameter, noe som gir enorme muligheter for søke- og erstatningsoperasjoner. På grunn av dens enkelhet, har Clojure ingen innebygde alternativer for `clojure.string/replace`, men det er mange tredjepartsbiblioteker som tilbyr mer komplekse tekstbehandlingsfunksjoner hvis det trengs.
 
-I Clojure er søk og erstatte implementert ved hjelp av Java-biblioteket java.util.replace.
+## Se Også:
 
-## Se også:
+Clojure - Tekstbehandling: [https://clojure.org/guides/learn/strings](https://clojure.org/guides/learn/strings)
 
-- Clojure's regex bibliotek: https://clojuredocs.org/clojure.core/re-matcher
+API-dokumentasjonen for `clojure.string`-pakken: [https://clojure.github.io/clojure/clojure.string-api.html](https://clojure.github.io/clojure/clojure.string-api.html).
+
+Å lære Regulære Uttrykk: [https://learnbyexample.github.io/learn_regex/](https://learnbyexample.github.io/learn_regex/)
+
+---

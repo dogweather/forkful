@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Swift recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,25 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Deleting characters that match a specific pattern is a common task in programming, especially when dealing with strings. This means removing any characters from a string that meet a certain criteria, such as being a number or a specific letter. Programmers often do this to clean up data or manipulate strings for various purposes.
+
+Deleting characters matching a pattern enables Swift programmers to modify strings by removing certain sets of characters. It’s a common tool used for data cleaning, such as stripping out unwanted characters or whitespace.
 
 ## How to:
-To delete characters matching a pattern in Swift, we can use the `replacingOccurrences(of:with:)` method. First, we need to create a string that contains the characters we want to remove. Then, we can use this method to replace those characters with an empty string, effectively deleting them from the original string. Here's an example:
+
+Here's an example of how you can do it in Swift. Suppose we want to delete all vowels from a string.
 
 ```Swift
-let myString = "Hello, 123 World!"
-let pattern = "[0-9a-zA-Z]" //this will match any number or letter
-let strippedString = myString.replacingOccurrences(of: pattern, with: "") //this will remove all numbers and letters from the string
-print(strippedString) //prints ", !" since those were the only characters matching our pattern
+let vowels: [Character] = ["a", "e", "i", "o", "u"]
+var str = "Hello, playground"
+str.removeAll(where: { vowels.contains($0.lowercased()) })
+print(str)
 ```
 
+The output will look like this:
+
+```Swift
+"Hll, plygrnd"
+```
+
+As you can see, the `removeAll(where:)` function plays a key role. It checks each character in the string and removes it if it matches any character in the vowel array.
+
 ## Deep Dive
-The `replacingOccurrences(of:with:)` method was introduced in Swift 4, making it easier to delete characters matching a pattern without having to resort to complex string manipulation methods. Before this, programmers had to use `NSRegularExpression` or other Objective-C methods to achieve the same result. However, this also means that this method is not available in older versions of Swift.
 
-An alternative way to delete characters matching a pattern is by using regular expressions, which allows for more advanced pattern matching. However, this can be more complicated and may not be necessary for simple cases.
+Before Swift version 4.2, removing characters matching a pattern wasn’t as straightforward. Programmers had to use workarounds, such as converting strings to arrays and then filtering out the unwanted characters. The `removeAll(where:)` function was introduced in Swift 4.2 to provide an easier, more "Swift-like" way to perform this task.
 
-Internally, the `replacingOccurrences(of:with:)` method uses the `range(of:options:range:locale:)` method to find the range of characters that match the given pattern. It then replaces those characters with the specified replacement string.
+An alternative method is using regular expressions, but they might be overkill for simple pattern matching. Moreover, they could hurt readability and performance, especially for large strings or complex patterns.
+
+The key to `removeAll(where:)` is closure, a self-contained block of functionality that Swift lets you pass around in your code. In this context, the closure is a function that determines whether a character should be removed or not.
 
 ## See Also
-- Apple's official documentation on [`replacingOccurrences(of:with:)`](https://developer.apple.com/documentation/swift/string/1642993-replacingoccurrences) method
-- [Regular Expressions in Swift](https://www.appcoda.com/swift-string/) tutorial by AppCoda
+
+Apple’s Swift Programming Language Guide provides in-depth information on strings and their manipulations: [Apple's Swift String Documentation](https://developer.apple.com/documentation/swift/string)
+
+For a better understanding of closures in Swift, consider this well-detailed tutorial: [Understanding Swift Closures](https://www.hackingwithswift.com/articles/27/understanding-swift-closures)

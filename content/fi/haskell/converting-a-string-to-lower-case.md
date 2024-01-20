@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuntaminen pieniksi kirjaimiksi"
-html_title:           "Haskell: Merkkijonon muuntaminen pieniksi kirjaimiksi"
-simple_title:         "Merkkijonon muuntaminen pieniksi kirjaimiksi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mitä & Miksi?
 
-Miksi sinun kannattaa muuttaa merkkijono pieniin kirjaimiin? Koska joskus tarvitset tietyn kaavan tai vertailun, joka ei välitä kirjainten koosta. Esimerkiksi "Apple" ja "apple" ovat eri merkkijonoja, mutta jos haluat verrata niitä toisiinsa, on helpompaa ensin muuttaa molemmat pieniksi kirjaimiksi.
+Lauseen muuntaminen pienaakkosiksi tarkoittaa sitä, että kaikki lauseen isot kirjaimet muutetaan pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän usein helpottaakseen tekstin käsittelyä ja vertailua, koska koneet pitävät erikokoisia kirjaimia eri merkkeinä.
 
-# Kuinka?
+## Miten näin tehdään:
+
+Haskellin standardikirjastossa on `Data.Char` moduuli, joka tarjoaa toLower-funktion. Se muuntaa merkin pieniksi kirjaimiksi. Tässä on esimerkki sen käytöstä:
 
 ```Haskell
-import Data.Char
+import Data.Char (toLower)
 
-toLowerString :: String -> String
-toLowerString = map toLower
+lowerCaseString :: String -> String
+lowerCaseString str = map toLower str
 
-toLowerString "Hello World!" -- "hello world!"
+main :: IO ()
+main = putStrLn $ lowerCaseString "Hei SUOMI!"
 ```
-Käytämme `Data.Char` kirjastoa, joka sisältää `toLower` funktion, joka muuttaa yhden merkin pieneksi kirjaimeksi. `toLowerString` funktio ottaa vastaan merkkijonon ja käyttää `map` funktiota soveltamaan `toLower` funktiota jokaiselle merkille. Lopputuloksena saamme uuden merkkijonon, joka sisältää pieniä kirjaimia.
 
-# Syvempi sukellus
+Tämä ohjelma tulostaa `"hei suomi!"`.
 
-Tämä toiminto on ollut olemassa Haskellissa jo alusta asti, ja se on yleinen monissa muissakin ohjelmointikielissä. Joskus saatat törmätä myös `toUpper` funktioon, joka tekee päinvastaisen muunnoksen, eli muuttaa merkkijonon isoiksi kirjaimiksi.
+## Syvempi sukellus:
 
-Tämä toiminto on myös saatavilla `Data.Text` kirjastossa, mutta suosittelemme käyttämään `Data.Char` versiota sen yksinkertaisuuden vuoksi.
+Näyttää siltä, että yksinkertainen toiminto, kuten merkkijonon muuttaminen pieniksi kirjaimiksi, ei vaadi paljon historiallista kontekstia tai syvempää ymmärrystä. Kuitenkin, kuten monissa ohjelmointikysymyksissä, se liittyy suoraan tietokoneiden ja ohjelmointikielten ongelmiin tekstin, numeroiden ja binääridatan käsittelyssä.
 
-# Näe myös
+- Historiallinen konteksti: `toLower`-funktion kaltaisten toimintojen tarve johtuu siitä, että eri kirjaimet (iso ja pieni) on koodattu eri numeroiksi ASCII-taulukossa, jota tietokoneet ja ohjelmointikielet käyttävät merkkijonojen käsittelyyn.
 
-[Data.Char - Haskellin dokumentaatio](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-Char.html)
+- Vaihtoehdot: Voit ensin tarkistaa, onko merkki iso kirjain, ja sitten muuttaa sen pieneksi kirjaimiksi. Tämä ei kuitenkaan ole tehokasta, kun voit suoraan käyttää `toLower`-muunnosta.
+
+- Toteutuksen yksityiskohdat: `toLower`-muunnos toteutetaan tavallisesti yksinkertaisena numeroiden siirtona. ASCII-kooditaulukossa pienet kirjaimet ovat samat kuin isot kirjaimet, mutta ne on siirretty 32 yksikköä. Joten `toLower`-muunnos vain lisää 32 numeroon, joka vastaa isoa kirjainta.
+
+## Katso myös:
+
+Lisätietoja Haskellin merkkijonojen käsittelystä ja `Data.Char`-moduulista löydät seuraavista lähteistä:
+
+- Haskell Wiki: [Haskell/Strings](https://en.wikibooks.org/wiki/Haskell/Strings)
+- Haskell Library: [Data.Char](http://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)

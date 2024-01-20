@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "C: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "C"
 category:             "C"
@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-日付を文字列に変換することは、プログラマーが日付を見やすく、扱いやすくするためのものです。日付を文字列に変換することで、データベースやファイルなどのさまざまなデータソースから日付を取得し、プログラム内で処理することができます。
+## 何となぜ？
 
-## 方法：
-### コーディングの例：
+日付を文字列に変換するとは、純粋な数字の日付 (例えば、2020/12/31) を人間が理解しやすい文字列 (例えば、'2020年12月31日') に変換することです。プログラマーがこれを行う理由は、主にユーザーが日付を理解しやすくするためです。
+
+## どうやって：
+
+以下は、strftime関数を使って日付を文字列に変換する例です：
 
 ```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
 int main() {
+  char buffer[50];
+  time_t rawtime;
+  struct tm * timeinfo;
 
-  // 今日の日付を取得します
-  time_t now = time(NULL);
+  time(&rawtime);
+  timeinfo = localtime(&rawtime);
 
-  // 日付を文字列に変換します
-  char buffer[30];
-  strftime(buffer, 30, "%m/%d/%Y", localtime(&now));
-  printf("今日の日付は %s です。\n", buffer);
+  strftime(buffer, 50, "%Y年%m月%d日 - %H:%M", timeinfo);
+  printf("Formatted date & time : %s\n", buffer);
 
   return 0;
 }
+```
+このコードは日付と時間を次のような形式で出力します:
 
 ```
-### 出力：
-
-```C
-今日の日付は 03/12/2021 です。
+Formatted date & time : 2022年05月15日 - 16:40
 ```
+## ディープダイブ：
 
-## 深く掘り下げる：
-プログラミング言語によって、日付を文字列に変換する方法は異なります。例えば、C言語ではstrftimeという関数を使用しますが、Pythonではstrftimeメソッドを使用します。また、Web開発では、JavaScriptのDateオブジェクトを使用して日付を文字列に変換することもできます。
+Cにおける日付の文字列変換は、1970年代から存在しています。当時の主なツールは`asctime`と`ctime`でしたが、フォーマットが固定されていました。だからこそ、より柔軟な`strftime`が出現しました。
 
-また、日付を表すフォーマットも多様です。上記の例では、"%m/%d/%Y"というフォーマットを使用しましたが、他にも様々なフォーマットが存在します。各言語やライブラリのドキュメントを参照することで、詳細な情報を確認することができます。
+別のやり方として、sprintf関数を使って直接フォーマットする方法があります。しかし、この方法の問題点は、引数やフォーマット指定子の数が多くなるとエラーを見逃しやすくなることです。
 
-この日付を文字列に変換するという機能は、プログラミングにおいて非常に重要なものです。例えば、ユーザーから日付を入力させる際に、特定のフォーマットにあったものかどうかをチェックするために使用したり、データベースから取得した日付を表示する際に、特定のフォーマットで表示するために使用することができます。
+`strftime`は効率的に日付を文字列に変換するために開発されました。ただし、この関数はlocaleに依存しています。つまり、実行する環境によって出力が異なる可能性があります。
 
-## 関連情報：
-- [strftime関数のドキュメント (C言語)](https://www.casareal.co.jp/alect-5/ap00/sig/date_man.html)
-- [strftimeメソッドのドキュメント (Python)](https://docs.python.org/ja/3/library/datetime.html#strftime-and-strptime-format-codes)
-- [Dateオブジェクトのドキュメント (JavaScript)](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
+## 参考文献：
+
+- [`strftime`関数の公式ドキュメンテーション](https://en.cppreference.com/w/c/chrono/strftime)
+- [`localtime`関数の公式ドキュメンテーション](https://en.cppreference.com/w/c/chrono/localtime)

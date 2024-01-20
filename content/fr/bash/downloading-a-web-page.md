@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "Bash: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,21 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi ?
-Télécharger une page web signifie récupérer les fichiers et le contenu qui composent une page web à partir d'Internet et les enregistrer sur votre ordinateur. Les programmeurs le font souvent pour automatiser le processus de collecte de données ou pour créer des applications qui ont besoin d'accéder à des informations en ligne.
+## Quoi & Pourquoi?
 
-## Comment faire :
-Voici un exemple de code Bash pour télécharger une page web en utilisant la commande `wget` :
+Télécharger une page web, c'est copier son code HTML sur votre ordinateur. Les programmeurs font cela pour analyser les données de la page, récupérer des informations importantes ou encore tester leurs propres codes.
+
+## Comment faire:
+
+Voyons comment faire cela en utilisant la commande `curl`. Dans une console Bash, entrez:
+
+```Bash
+curl https://exemple.com > maPage.html 
 ```
-#!/bin/bash
-wget https://www.example.com/page.html
-```
-Lorsque vous exécutez ce script, la page sera téléchargée et enregistrée sur votre ordinateur. Vous pouvez également spécifier un chemin de destination pour enregistrer le fichier en ajoutant l'option `-O` suivi du nom de fichier souhaité, par exemple : `wget https://www.example.com/page.html -O page.html`.
+C'est tout. Cette commande sauve la page d'accueil de "exemple.com" dans le fichier "maPage.html". 
 
-## Exploration en profondeur :
-Télécharger des pages web est une pratique courante dans le développement web et la science des données. Il existe également d'autres outils disponibles pour réaliser cette tâche, tels que cURL ou Python avec la bibliothèque Requests. Pour les développeurs, il peut être utile de comprendre les protocoles sous-jacents utilisés pour télécharger des pages web, tels que HTTP et HTTPS.
+## Plongée en profondeur:
 
-## Voir aussi :
-- [Commande wget](https://www.gnu.org/software/wget/)
-- [Site officiel de cURL](https://curl.haxx.se/docs/)
-- [Bibliothèque Requests pour Python](https://requests.readthedocs.io/en/master/)
+`Curl` a été créé en 1997 par Daniel Stenberg. Il existe d'autres outils similaires, y compris `wget` et `httpie`, mais `curl` est l'outil open-source le plus populaire. L'utilisation de `curl` peut varier légèrement selon le système d'exploitation et les paramètres du serveur web.
+
+## Voir aussi:
+
+- Le site officiel de curl: https://curl.se
+- Une excellente explication de la différence entre curl et wget: https://daniel.haxx.se/docs/curl-vs-wget.html
+- Httpie, une alternative moderne à curl et wget: https://httpie.io

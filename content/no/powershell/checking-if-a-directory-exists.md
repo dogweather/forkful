@@ -1,7 +1,7 @@
 ---
-title:                "Sjekker om en mappe eksisterer"
-html_title:           "PowerShell: Sjekker om en mappe eksisterer"
-simple_title:         "Sjekker om en mappe eksisterer"
+title:                "Sjekker om en katalog eksisterer"
+html_title:           "PowerShell: Sjekker om en katalog eksisterer"
+simple_title:         "Sjekker om en katalog eksisterer"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Sjekk om en mappe eksisterer er å sjekke om en gitt mappe finnes på datamaskinen din. Dette er en viktig del av programmering fordi det gjør det mulig å kontrollere om et nødvendig sted for å lagre eller hente data er tilstede.
+---
 
-## Hvordan:
-```PowerShell
-# Sjekk om en mappe eksisterer
-Test-Path C:\Users\Brukernavn\Documents
+## Hva & Hvorfor? - What & Why?
+Sjekke om en mappe eksisterer i PowerShell innebærer å validere for tilstedeværelsen av en bestemt mappe på systemet ditt. Denne operasjonen er sentral for å unngå feil og unødvendige krasj når man prøver å manipulere mapper som kanskje ikke eksisterer.
 
-# Eksempel på utskrift:
-True  
-```
+## Hvordan gjør man det - How to:
+
+Her er et enkelt eksempel på hvordan du kan sjekke om en mappe eksisterer ved hjelp av PowerShell:
 
 ```PowerShell
-# Sjekk om en mappe ikke eksisterer
-Test-Path C:\Users\Brukernavn\Bilder
-
-# Eksempel på utskrift:
-False  
+if(Test-Path C:\FolderenMin)
+{
+  Write-Host "Mappen eksisterer."
+}
+else
+{
+  Write-Host "Mappen eksisterer ikke."
+}
 ```
 
-## Dykk Dypere:
-Sjekking av mappeneksistens har eksistert i programmering i lang tid, og er en viktig del av å sikre at nødvendig funksjonalitet er tilstede før programmet kjører. Alternativer til Test-Path kommandoen inkluderer å bruke FileSystemObject i VBScript, eller å bruke C# eller Java. 
-Implementasjonen av Test-Path kommandoen i PowerShell innebærer sjekking av både sti og tillatelser for å avgjøre om en mappe eksisterer eller ikke. Manglende tillatelse kan føre til et feiltrinn uansett om mappen eksisterer eller ikke.
+Ved å kjøre denne koden vil PowerShell returnere enten "Mappen eksisterer." eller "Mappen eksisterer ikke.", avhengig av mappens eksistens.
 
-## Se også:
-Offisiell dokumentasjon for Test-Path kommandoen: https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Management/Test-Path?view=powershell-7
+## Dypdykk - Deep Dive:
+Måten å sjekke om mapper eksisterer på i tidligere versjoner av PowerShell og Command Prompt var litt forskjellig, men Test-Path cmdlet har gjort det mye enklere og mer robust i nyere versjoner av PowerShell. 
+
+Selv om Test-Path er den mest brukte metoden, er det også andre alternativer tilgjengelig, som å bruke [System.IO.Directory]::Exists metoden i .NET-klassen.
+
+```PowerShell
+[System.IO.Directory]::Exists('C:\FolderenMin')
+```
+Denne koden vil returnere "True" hvis mappen eksisterer, og "False" i motsatt tilfelle.
+
+## Se Også - See Also:
+Her er noen nyttige lenker for deg som vil lære mer om PowerShell og bruk av stier og mapper:
+
+1. Microsoft Docs - About Test-Path: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/test-path?view=powershell-7
+2. Microsoft Docs - System.IO.Directory Class: https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0

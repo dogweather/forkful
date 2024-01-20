@@ -1,6 +1,6 @@
 ---
 title:                "Concatenazione di stringhe"
-html_title:           "Elixir: Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
 simple_title:         "Concatenazione di stringhe"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,51 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & perché?
-La concatenazione di stringhe è il processo di unire più stringhe in una singola stringa. I programmatori spesso utilizzano questo metodo per creare output più complessi o per combinare diversi elementi di testo.
+## Cos'è e Perché?
 
-## Come fare:
-Un modo semplice per concatenare stringhe in Elixir è utilizzando l'operatore `<>`, che unisce due stringhe in una sola. Ad esempio:
+La concatenazione delle stringhe è l'atto di unire due o più stringhe in una unica. I programmatori lo fanno per semplificare e ottimizzare il codice, specialmente quando si lavora con grandi quantità di dati testuali.
 
-```Elixir
-"Buon" <> "giorno" 
-# Output: Buongiorno
-```
+## Come Fare:
 
-È anche possibile utilizzare l'operatore `<>` per concatenare una stringa a un valore di un'altra variabile, come mostrato di seguito:
+Ecco un esempio che mostra come concatenare stringhe in Elixir:
 
 ```Elixir
-nome = "Maria"
-"Ciao" <> nome
-# Output: Ciao Maria
+str1 = "Ciao, "
+str2 = "mondo!"
+str3 = str1 <> str2
+IO.puts str3
 ```
 
-Se si desidera concatenare più di due stringhe, è possibile ripetere l'operatore `<>` più volte, come nell'esempio seguente:
+L'output sarà:
 
 ```Elixir
-"Hello" <> " " <> "world" <> "!"
-# Output: Hello world!
+Ciao, mondo!
 ```
 
-## Approfondimento:
-La concatenazione di stringhe è comune in molti linguaggi di programmazione, poiché è un modo semplice e veloce per unire diverse parti di testo. Tuttavia, una possibile alternativa in Elixir è l'utilizzo di liste, che possono essere concatenate utilizzando l'operatore `++`. Ad esempio:
+In Elixir, utilizziamo l'operatore `<>` per concatenare le stringhe. Puoi concatenare quanti più stringhe desideri in una sola volta.
 
-```Elixir
-liste = ["Welcome", "to", "Elixir"]
-"Hello" ++ " " ++ lista ++ "!"
-# Output: Hello to Elixir!
-```
+## Approfondimenti:
 
-Un'altra alternativa è l'utilizzo di la funzione `Enum.join`, che unisce una lista di stringhe utilizzando un delimitatore:
+Elixir, presentato per la prima volta nel 2011, ha adottato la concatenazione delle stringhe come un modo elegante e semplice per manipolare le stringhe. Un'alternativa sarebbe l'uso di funzioni come `String.concat/2`, ma l'utilizzo di `<>` risulta più pulito ed efficace. In termini di dettagli implementativi, Elixir lavora con stringhe come "binari" per migliorate le prestazioni e l'efficienza.
 
-```Elixir
-liste = ["one", "two", "three"]
-Enum.join(liste, "-")
-# Output: one-two-three
-```
+## Leggi Anche:
 
-Per quanto riguarda l'implementazione, Elixir offre una funzione nativa `Kernel.<>` per la concatenazione di stringhe, che alla fine viene convertita in binari per ottimizzare le prestazioni.
-
-## Vedere anche:
-- [Guida Elixir sulle stringhe](https://elixir-lang.org/getting-started/string.html)
-- [Documentazione ufficiale Elixir](https://hexdocs.pm/elixir/String.html#concatenation/2)
+1. Documentazione ufficiale di Elixir sulla concatenazione delle stringhe: [https://hexdocs.pm/elixir/String.html#concat/2](https://hexdocs.pm/elixir/String.html#concat/2)
+2. Post del blog sulla manipolazione delle stringhe in Elixir: [https://www.poeticoding.com/working-with-strings-in-elixir](https://www.poeticoding.com/working-with-strings-in-elixir)
+3. Discussione su Stackoverflow sulla concatenazione delle stringhe in Elixir: [https://stackoverflow.com/questions/27398325/how-to-concatenate-strings-in-elixir](https://stackoverflow.com/questions/27398325/how-to-concatenate-strings-in-elixir)

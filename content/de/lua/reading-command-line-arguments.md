@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "Lua: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,40 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Reading command line arguments (das Lesen von Befehlszeilenargumenten) is a way for programmers to pass data or information to their program when it is launched from the command line. This can be useful for providing initial settings or parameters for the program to use.
+Beim Lesen von Befehlszeilenargumenten nimmt Ihr Lua-Skript Daten vom Benutzer direkt aus der Befehlszeile in der Konsole auf. Das ermöglicht eine effizientere Interaktion mit dem Benutzer und eine automatisierte Skriptausführung.
 
-## Wie geht's?
+## So funktioniert's:
 
-Die Lua-Sprache bietet eine eingebaute Funktion, um Befehlszeilenargumente zu lesen. Diese Funktion heißt ```arg``` und gibt ein Array zurück, das alle übergebenen Argumente enthält. Hier ist ein Beispiel:
+Befehlszeilenargumente werden in Lua in die globale Tabelle `arg` gestellt. Hier ist ein einfaches Beispiel:
 
-```
-Lua myprogram.lua hello world
-```
-```
-arg[0] == "myprogram.lua"
-arg[1] == "hello"
-arg[2] == "world"
+```Lua
+-- Drucken aller Argumente
+for i in ipairs(arg) do 
+    print(arg[i]) 
+end
 ```
 
-Mit diesem Wissen können wir nun in unserem Programm auf die argumente zugreifen und sie verwenden. Zum Beispiel könnten wir einen grüßenden Satz ausgeben:
+Führen Sie dieses Skript mit: `lua script.lua arg1 arg2 arg3`. Der Output wird so aussehen:
 
-```lua
-print("Hallo " .. arg[1] .. " und " .. arg[2] .. "!")
+```Lua
+script.lua
+arg1
+arg2
+arg3
 ```
 
-Die Ausgabe wäre dann: ```Hallo hello und world!```
+Die Tabelle `arg` hat auch negative Indizes. `arg[-1]` beinhaltet z.B. den Interpreter-Namen.
 
-## Tief eintauchen
+## Tieferer Einblick
 
-Das Lesen von Befehlszeilenargumenten ist seit langem eine gängige Praxis in der Programmierung. Es kann eine praktische Möglichkeit sein, Optionen oder Einstellungen für ein Programm bereitzustellen, ohne diese manuell ändern zu müssen. Alternativ können auch Umgebungsvariablen verwendet werden, um Informationen an ein Programm zu übergeben.
-
-In Lua können auch Parameter in der Form von Key-Value-Paaren angegeben werden, indem man sie mit einem Gleichheitszeichen trennt: ```Lua myprogram.lua --name=Max --age=25```
-
-Die Parameter können dann in einem Table gespeichert werden, indem man die ```getopt```-Funktion verwendet.
+Die Einbindung von Befehlszeilenargumenten in Lua ist relativ neu. In älteren Versionen (vor Version 5.1) mussten Sie die Bibliothek `lfs` verwenden. Alternativen zur direkten Einbindung sind das Einlesen von Benutzereingaben während der Skriptausführung oder über eine GUI. Beachten Sie jedoch, dass Befehlszeilenargumente in Lua Zeichenkettentypen sind. Sie müssen sie selbst umformen, falls Sie andere Datentypen benötigen.
 
 ## Siehe auch
 
-- [Offizielle Lua Dokumentation](https://www.lua.org/manual/5.3/manual.html#6.10)
-- [Das Lesen von Befehlszeilenargumenten in anderen Sprachen](https://stackoverflow.com/questions/14401844/how-to-read-command-line-arguments-in-a)
+1. Offizielle Lua-Dokumentation: https://www.lua.org/manual/5.4/manual.html
+2. Für mehr Detail zu `arg` Tabelle: https://www.lua.org/pil/16.html
+3. Eine umfangreiche Einführung in Lua: https://learnxinyminutes.com/docs/de-de/lua-de/
+5. Für Einsteiger in Lua: https://www.lua.org/start.html

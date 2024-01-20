@@ -1,7 +1,7 @@
 ---
-title:                "「テキストファイルの読み込み」"
-html_title:           "PHP: 「テキストファイルの読み込み」"
-simple_title:         "「テキストファイルの読み込み」"
+title:                "テキストファイルの読み込み"
+html_title:           "Bash: テキストファイルの読み込み"
+simple_title:         "テキストファイルの読み込み"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か & なぜ？
-テキストファイルを読み込むことは、プログラマーがよく行うタスクの一つです。これは、コンピューターに保存された文字列データを読み取り、処理することができるようにするためです。テキストファイルは、プログラム間でのデータの受け渡しや、設定ファイルの保存によく使用されます。
+## What & Why? (何となぜ?)
 
-## 方法：
-PHPを使用してテキストファイルを読み込む方法は簡単です。まずは`file`関数を使用して、読み込むテキストファイルのパスを指定します。この関数は、ファイルを配列として読み込みます。次に、`foreach`ループを使用して、行ごとに配列から読み取ったデータを処理します。
+テキストファイルの読み込みとは、文字データを持つファイル内容をPHPプログラムで取得する行為です。これは、データの利用や分析、さらにはウェブページの動的内容の生成などのために、プログラマが行います。
 
-``` PHP
-$file = file("sample.txt"); // テキストファイルのパスを指定する
-foreach ($file as $line) {
-	echo $line; // ファイルの内容を1行ずつ出力する
-}
+## How to: (方法:)
 
-// 出力：
-// This is a sample text file.
-// It contains some important information.
-// This file will be read by our program.
+```PHP
+<?php
+$file = 'file.txt';
+$contents = file_get_contents($file);
+echo $contents;
+?>
 ```
 
-## 深堀り：
-テキストファイルの読み込みには、PHPの`file`関数以外にも様々な方法があります。例えば、`fopen`関数を使用してファイルを開き、`fread`関数を使用してデータを読み込む方法もあります。また、テキストファイル以外にも、データベースやAPIからデータを読み込むこともできます。
+上記の例清ますと、'file.txt'というテキストファイルの内容が出力されます。もし、`$file`は存在しない場合、エラーメッセージが出力されます。
 
-テキストファイルの読み込みの歴史的背景としては、古くはテープやディスクなどの媒体からデータを読み込んでいました。現代では、インターネットやクラウドストレージからデータを読み込むことができるようになりました。
+```
+Hello world!
+This is content of file.txt.
+```
 
-## 関連情報：
-- PHP公式ドキュメント：https://www.php.net/manual/en/function.file.php
-- `file`関数の使い方：https://www.w3schools.com/php/func_file_file.asp
-- テキストファイルの読み書きについての基本的な知識：https://www.geeksforgeeks.org/working-with-text-files-in-php/
+## Deep Dive (深掘り:)
+
+テキストファイルの読み込みは古くからある機能で、PHPの初期バージョンから存在します。もともとは、ファイルデータの操作や利用を容易にするために導入されました。
+
+代替方法として、`fopen`と`fread`を利用することも可能です。これらを利用すると、大きいファイルやバイナリファイルの操作が可能になります。ただし、より簡潔で直感的な`file_get_contents`の方が一般的なテキストファイル読み込みには適しています。
+
+`file_get_contents`の内部実装には、ストリームラッパーとバッファリングが用いられています。これにより、効率的かつ安全なファイル読み込みが可能になっています。
+
+## See Also (関連情報)
+
+- 公式PHPマニュアルの`file_get_contents`のページ: [https://www.php.net/manual/en/function.file-get-contents.php](https://www.php.net/manual/en/function.file-get-contents.php)
+- 'PHPでファイルを安全に読み書きする方法'についての記事: [https://www.tutorialrepublic.com/php-tutorial/php-file-handling.php](https://www.tutorialrepublic.com/php-tutorial/php-file-handling.php)
+- 'PHPのストリームラッパー'についての説明: [http://php.net/wrappers](http://php.net/wrappers)

@@ -1,7 +1,7 @@
 ---
-title:                "Hente nåværende dato"
-html_title:           "Swift: Hente nåværende dato"
-simple_title:         "Hente nåværende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -12,41 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å få dagens dato i programmering refererer til å få informasjon om den nåværende datoen og tidspunktet. Dette er nyttig for å føre protokoll, planlegge hendelser og generelt for å holde orden på tidsstempler. Programmere trenger å få dagens dato for å sikre at systemene og applikasjonene deres fungerer riktig og nøyaktig.
+Å hente nåværende dato innebærer å få en datapunkt som representerer det eksakte øyeblikket i tid da koden kjørte. Dette er viktig fordi koder trenger dette for å spore tidsavhengige data, generere tidspunkter og mer.
 
-## Slik
+## Hvordan:
 
-Her er et eksempel på hvordan du kan få dagens dato i Swift:
+Her er en grunnleggende måte å hente nåværende dato i Swift:
 
-```Swift
-let date = Date()
-let formatter = DateFormatter()
-formatter.dateFormat = "dd.MM.yyyy HH:mm"
-let currentDate = formatter.string(from: date)
-
-print("Dagens dato er: \(currentDate)")
+```Swift 
+let nåværendeDato = Date()
+print(nåværendeDato)
 ```
 
-Dette vil få dagens dato og tidspunkt og formatere det som et string-objekt. Deretter skrives det ut i konsollen, og du vil få følgende utgang:
+Dette vil gi output som viser den nøyaktige datoen og tiden når koden ble utført. Du vil få noe lignende dette:
 
 ```Swift
-Dagens dato er: 24.09.2021 14:30
+2021-12-07 21:07:50 +0000
 ```
 
-Du kan også få dagens dato i en annen datoformat ved å endre `dateFormat` til en annen verdi. Det finnes mange ulike datoformateringsalternativer, slik at du kan tilpasse det til dine behov.
+## Deep Dive:
 
-## Dypdykk
+Å få tak i nåværende dato er et konsept som programmerere bruker ganske mye. Dato- og tidsfunksjoner som `Date()` er blitt mer og mer sofistikerte gjennom årene for å gi bedre nøyaktighet og effektivitet.
 
-I programmering har det alltid vært viktig å jobbe med datoer og tider. Tidligere kunne det være en utfordring å få nøyaktig dato og tid på grunn av forskjellige tidsformater og systeminnstillinger. I dag er det mye enklere takket være et standardisert system for å håndtere datofunksjonalitet.
+Alternativt, hvis du trenger mer kontroll over tidszoner, kan du bruke `DateFormatter` i Swift. Se eksempel under:
 
-Som en alternativ måte å få dagens dato på, kan du også bruke `Foundation` biblioteket og bruke `Date()` og `DateFormatter()` metoder.
+```Swift
+let datoFormatter = DateFormatter()
+datoFormatter.timeZone = TimeZone(abbreviation: "CET") // Central European Time
+datoFormatter.locale = Locale(identifier: "nb_NO") // Norwegian Bokmål
+datoFormatter.dateFormat = "y MMM d, HH:mm:ss"
+let nåværendeDato = datoFormatter.string(from: Date())
+print(nåværendeDato)
+```
 
-Implementeringen av å få dagens dato og tid er avhengig av operativsystemet og datofunksjonaliteten som er tilgjengelig. I Swift kan du også bruke tredjepartsbiblioteker for å få mer avanserte funksjoner for håndtering av dato og tid.
+Denne koden vil gi deg datoen i det spesifikke formatet du har angitt.
 
-## Se også
+Å hente nåværende dato i Swift fungerer ved å lage en instans av `Date`-klassen. Når du oppretter denne instansen uten noen parametere, blir datoen satt til det nøyaktige tidspunktet koden kjøres.
 
-For mer informasjon om hvordan du kan håndtere dato og tid i Swift, kan du se følgende ressurser:
+## Se Også:
 
-- [Uoffisiell Swift Style Guide](https://swift.org/documentation/api-design-guidelines/#date-and-time)
-- [Apple's Swift programmeringsguide](https://developer.apple.com/documentation/foundation/date)
-- [Tredjepartsbiblioteker](https://cocoapods.org/search?q=date+and+time) for dato og tid håndtering i Swift.
+Hvis du vil dykke dypere inn i Swifts dato- og tidsfunksjoner, her er noen nyttige kilder du kan sjekke ut:
+
+- The Swift Programming Language guide: [Dates and Times](https://developer.apple.com/documentation/foundation/date)
+- Swift Date Class Reference: [Date](https://developer.apple.com/documentation/foundation/date)
+- DateFormatter Class Reference: [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)

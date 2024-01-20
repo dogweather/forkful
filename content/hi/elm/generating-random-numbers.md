@@ -1,7 +1,7 @@
 ---
-title:                "संयुक्त बाधरण द्वारा संख्याओं का उत्पादन"
-html_title:           "Elm: संयुक्त बाधरण द्वारा संख्याओं का उत्पादन"
-simple_title:         "संयुक्त बाधरण द्वारा संख्याओं का उत्पादन"
+title:                "यादृच्छिक संख्याओं का निर्माण"
+html_title:           "Clojure: यादृच्छिक संख्याओं का निर्माण"
+simple_title:         "यादृच्छिक संख्याओं का निर्माण"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -11,48 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-Generating random numbers एक programming technique है जिसमें हम अनुक्रमिक तारणाएं बनाते हैं। हमारे प्रोग्राम विभिन्न सांख्यिकीय या रंगबिरंगे डेटा को analysis और simulation करने के लिए random numbers की आवश्यकता होती है।
 
-## कैसे करें:
+रैंडम नंबर्स का उत्पन्न करना का अर्थ होता है कि प्रोग्रामिंग में कुछ अप्रत्याशित मूल्यों को उत्पन्न करें। प्रोग्राममर्स इसे तब करते हैं जब उन्हें डाटा सर्वर से अव्यक्त तरीके से लेना होता है, या टेस्टिंग के लिए कुछ अनिर्दिष्ट मूल्यों की आवश्यकता होती है।
+
+## कैसे करें :
+
+Elm प्रोग्रामिंग में, रैंडम संख्याएं बनाने के लिए `Random` मॉड्यूल का उपयोग करना होगा। उदाहरण के लिए :
+
 ```Elm
 import Random
 
--- random numbers between 0 and 100
-randomNumberList : List Int
-randomNumberList =
-    Random.list 10 (Random.int 0 100)
-
-main : Program () Model Msg
-main =
-    program
-        { init = (Model "" randomNumberList, Cmd.none)
-        , view = view
-        , update = update
-        , subscriptions = \_ -> Sub.none
-        }
-        
-view : Model -> Html Msg
-view model =
-    div [] [
-        h1 [ text "Random Numbers in Elm" ],
-        ul [] (List.map (\num -> li [ text <| String.fromInt num ]) model.randomNumberList)
-    ]
-    
-type Model
-    = Model String (List Int)
-    
-type Msg
-    = NoOp
-
-update : Msg -> Model -> ( Model, Cmd Msg )
-update msg model =
-    case msg of
-        NoOp ->
-            ( model, Cmd.none )
+genRandom : Random.Generator Int
+genRandom = 
+    Random.int 1 100
 ```
+यहां `Random.int 1 100` एक नया रैंडम जनरेटर बनाता है जो 1 और 100 के बीच की संख्याओं को उत्पन्न कर सकता है। 
 
-## गहराई में जाएं:
-इतिहासिक पृष्ठभूमि के पार जाकर, random numbers को सांख्यिकी में बहुत समय से प्रयोग किया जाता है। एल्गोरिथमों और तकनीकियों में पिछले सौ सालों में बहुत उन्नति हुई है और आज वे प्रकाशित हो चुके हैं। अलग-अलग programming languages में भी random numbers को उत्पन्न करने के लिए कई तकनीक उपलब्ध हैं, जैसे pseudo-random और true random algorithms, seed values और बहुत कुछ।
+## गहराई में: 
 
-## इससे संबंधित देखें:
-[Elm Random Library](https://package.elm-lang.org/packages/elm/random/latest), [Understanding Randomness and Random Numbers](https://www.lifewire.com/understanding-randomness-and-random-numbers-958201), [Random Number Generation in Different Programming Languages](https://hackernoon.com/random-number-generation-in-different-programming-languages-example-python-8e90c160d92e)
+ऐतिहासिक प्रसंग में, रैंडम संख्या जनरेटिंग कंप्यूटर की शुरुआत से ही रही है। अल्टर्नेटिव्स में आप Pseudo-Random Number Generators (PRNGs) का उपयोग कर सकते हैं जो असलियत में पूरी तरह से यादृच्छिक नहीं होते, लेकिन अधिकांश उपयोगों के लिए पर्याप्त होते हैं। Elm में, `Random` मॉड्यूल PRNGs का उपयोग करता है।
+
+## देखें भी :
+
+1. [Elm का डॉक्यूमेंटेशन Random पैकेज के लिए](http://package.elm-lang.org/packages/elm-lang/core/latest/Random)
+2. [रैंडम संख्याओं के उत्पन्न करने के बारे में और अधिक जानकारी](https://en.wikipedia.org/wiki/Random_number_generation)
+3. [Pseudo-Random Number Generators के बारे में और अधिक जानकारी](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

@@ -1,7 +1,7 @@
 ---
-title:                "サブストリングの抽出"
-html_title:           "Gleam: サブストリングの抽出"
-simple_title:         "サブストリングの抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Gleamでサブストリングを抽出する方法
+## 何となぜ？
 
-## What & Why?
-サブストリングを抽出するとは、文字列の一部分を切り出すことです。プログラマーは、文字列から必要な情報を取り出し、必要な操作を行うために、サブストリングを抽出する必要があります。
+部分文字列の抽出は、文字列全体から特定の範囲の文字を取得するプロセスです。プログラマーはこれを使用してデータの特定の部分を操るために使用します。
 
-## How to:
+## 使い方：
+
+以下は、Gleam言語で部分文字列を抽出する簡単な例です：
+
+```Gleam
+import gleam/string
+
+fn main() {
+  let example_string = "こんにちは、世界"
+  let substring = string.slice(example_string, 0, 2)
+  io.println(substring)
+}
 ```
-Gleam.String.substring("Hello World", 0, 5)   # 出力: "Hello"
-```
 
-```
-Gleam.String.substring("Hello World", 6, 11)  # 出力: "World"
-```
+これは`こ`と出力します。
 
-```
-Gleam.String.substring("Hello World", 6)      # 出力: "World"
-```
+## ディープダイブ：
 
-## Deep Dive:
-サブストリングの概念は古くから存在し、文字列処理において非常に重要な役割を果たしています。サブストリングを取り出す方法としては、他にも様々なアプローチがありますが、Gleamでは標準ライブラリを利用することで簡単に実装することができます。
+部分文字列の抽出は、古典的なプログラミングの技術で、多くの言語に組み込まれています。提供される機能によっては、開始インデックスと終了インデックスの指定、あるいは特定の文字、パターン、正規表現を指定することで部分文字列を取得できます。
 
-サブストリングを抽出する方法には、他にも文字列から特定の文字列やパターンを検索し抽出する方法があります。また、サブストリングを操作するための様々なライブラリも存在します。
+Gleamでは、`string.slice/3`関数を使用して部分文字列を抽出します。この関数は、始点と終点のインデックスを指定することで部分文字列を返します。ただし、Gleamは0から数え始めますので注意が必要です。
 
-Gleamでは、文字列は不変(immutable)であるため、サブストリングを抽出する際には新しい文字列が作成されます。
+もし、代替手段が必要なら、`string.split/2`を使って文字列を特定のデリミタで分割し、その結果を用いることもできます。
 
-## See Also:
-- [Gleamのドキュメント](https://gleam.run/documentation/)
-- [サブストリングについての詳細な記事](https://qiita.com/hiroga/items/7d2030567413b6697867)
+## 参考情報：
+
+より詳しい情報については以下のリンクをご覧ください：
+
+Gleamの公式文書: [Gleam string API](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
+
+部分文字列の抽出についての一般的な情報: [Wikipedia Substring article](https://en.wikipedia.org/wiki/Substring)

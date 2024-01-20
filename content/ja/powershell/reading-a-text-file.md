@@ -1,6 +1,6 @@
 ---
 title:                "テキストファイルの読み込み"
-html_title:           "PowerShell: テキストファイルの読み込み"
+html_title:           "Bash: テキストファイルの読み込み"
 simple_title:         "テキストファイルの読み込み"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何＆なぜ？
-テキストファイルを読み取るとは、テキスト形式で保存されたデータを読み取ることを意味します。プログラマーがこれを行う理由は、コンピューターのプログラムに必要なデータを処理するためです。
+## 何となぜ？
 
-## 方法：
-以下のように、PowerShellを使用してテキストファイルを読み取る方法を説明します。
+テキストファイル読み込みとは、プログラムがテキストファイル内のデータを読む作業のことです。これは設定情報やデータ分析、ログチェックなど、プログラムが情報を得る主要な手段の一つであるからです。
+
+## 実装方法：
+
+以下にPowerShellでテキストファイルを読み込む方法を示します。
 
 ```PowerShell
-# テキストファイルを読み取る
-Get-Content -Path C:\example.txt
-
-# ヘッダーを含まないCSVファイルを読み取り、データを表示する
-Import-Csv -Path C:\example.csv -Header Name, Age, Gender
-
-# 読み取ったデータを別のファイルに書き込む
-Get-Content -Path C:\example.txt | Set-Content -Path C:\newfile.txt
+$filePath = "C:\Users\UserName\Documents\Sample.txt"
+$content = Get-Content $filePath
+$content
 ```
 
-上のコードを実行すると、テキストファイルの内容がコンソールに表示されます。
+上記のコードは`Sample.txt`ファイルの内容を読み込み、その内容を表示します。
 
-## 深堀り：
-テキストファイルを読み取る方法には、他にも様々なアプローチがあります。古いバージョンのPowerShellでは、```Get-Content```コマンドレットはなく、```cat```コマンドが使用されていました。また、他のプログラミング言語でも同様の機能を持つコマンドが存在します。
+```PowerShell 
+John Doe
+Jane Doe
+```
 
-テキストファイルを読み取る際には注意が必要です。ファイルのエンコーディングや改行コードなど、ファイルの形式に応じて適切なコマンドを使用する必要があります。
+上記は出力例で、 `Sample.txt`ファイルに `John Doe`と `Jane Doe`が含まれていた場合のものです。
 
-## 関連情報：
-- [PowerShell公式ドキュメント](https://docs.microsoft.com/en-us/powershell/) 
-- [PowerShellテキストファイル関連コマンドレットの詳細説明](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7)
-- [How-To Geek: How to Read and Write to Text Files with PowerShell](https://www.howtogeek.com/50236/how-to-read-and-write-to-text-files-with-powershell/)
+## 詳細情報：
+
+テキストファイルの扱いはプログラムの基本であり、PowerShellも長い歴史を持つ言語であるため、この機能は初期から実装されています。また、Get-Contentと類似の機能を持つコマンドとしては、`type`や `cat`があります。
+
+具体的な実装については、Get-Contentは遅延読み込みを行う特性があります。つまり、大きなファイルを読み込む際でも、必要な部分だけを読み込んでプログラムのパフォーマンスを保つことができます。
+
+## 参考資料：
+
+- [MSDN公式ドキュメンテーション: Get-Content](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+- [PowerShellでファイルの内容を読み込む方法](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-reading-text-files/)
+- [聖書 - PowerShellガイド：ファイルとディレクトリ](http://www.vivekanantha.net/powershell/powershell-guide-to-files-and-folders/)

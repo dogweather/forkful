@@ -1,7 +1,7 @@
 ---
-title:                "Buscando e substituindo texto"
-html_title:           "Fish Shell: Buscando e substituindo texto"
-simple_title:         "Buscando e substituindo texto"
+title:                "Pesquisando e substituindo texto"
+html_title:           "Bash: Pesquisando e substituindo texto"
+simple_title:         "Pesquisando e substituindo texto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer isso?
+# Pesquisa e substituição no Fish Shell
 
-Pesquisar e substituir texto é uma tarefa frequente no mundo da programação. Isso envolve encontrar uma determinada sequência de caracteres em um texto e substituí-la por outra. Programadores geralmente fazem isso para corrigir erros de digitação, alterar padrões de texto ou fazer alterações em um grande número de arquivos ao mesmo tempo.
+## O que & Porquê?
+
+'Pesquisa e substituição' é um método para trocar uma sequência de caracteres num texto por outro. Programadores fazem isso para corrigir bugs, melhorar a clareza do código ou atualizar funções obsoletas.
 
 ## Como fazer:
 
-Codificação de exemplo usando o Fish Shell:
+No Fish Shell, você pode usar o comando 'string replace':
 
-```
-# Substituindo um único caractere:
-echo "Olá, mundo!" | sed 's/m/J/'
-
-# Substituindo uma palavra inteira:
-echo "Eu gosto de peixes" | sed 's/peixes/cachorros/'
-
-# Substituindo várias ocorrências:
-echo "Tenho 10 maçãs e 5 bananas" | sed 's/10/20/g'
+``` Fish Shell
+set frase "Araponga preta gosta de cantar"
+echo $frase | string replace -r 'Araponga' 'Andorinha'
 ```
 
-Output:
+A saída fica assim:
 
-```
-Olá, jundo!
-Eu gosto de cachorros
-Tenho 20 maçãs e 5 bananas
+``` Fish Shell
+Andorinha preta gosta de cantar
 ```
 
-## Mergulho profundo:
+## Mergulho Profundo:
 
-Historicamente, a função de pesquisa e substituição de texto foi introduzida no editor de texto Unix, chamado "ed". No entanto, com o tempo, surgiram alternativas mais avançadas, como o comando "sed" e o editor "vi". No Fish Shell, essas funções são incorporadas e oferecem mais opções, como substituições globais e expressões regulares.
+###### Contexto histórico
+'Pesquisa e substituição' são funções presentes nos editores de texto desde que foram inventados. No Fish Shell, eles simplificaram a sintaxe e combinaram as funcionalidades do 'grep' e 'sed' de shells Unix.
 
-## Veja também:
+###### Alternativas
+Se você está trabalhando com arquivos grandes ou precisa fazer substituições complexas, pode preferir o uso de 'grep', 'sed' ou 'awk'. Estes comandos do Unix são mais potentes, mas também mais difíceis de usar.
+    
+###### Detalhes de implementação
+A substituição é feita lendo a entrada linha por linha. Isto significa que não vai funcionar se a sua string de pesquisa se espalha por várias linhas. 
 
-- [Documentação oficial do Fish Shell sobre substituições de texto](https://fishshell.com/docs/current/cmds/sed.html)
-- [Artigo sobre expressões regulares no Fish Shell](https://medium.com/@mlenne/fish-shell-regular-expressions-de32477abeb4)
-- [Tutorial de substituição de texto no Fish Shell](https://scriptingosx.com/fish-shell-101-pipes-and-substitutions/)
+## Ver também:
+
+1. [Documentação do Fish Shell 'string replace'](https://fishshell.com/docs/current/cmds/string.html#string-replace)
+2. [Tutorial de grep](https://ryanstutorials.net/linuxtutorial/grep.php)
+3. [Introdução ao sed](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
+4. [Tutorial de awk](https://www.geekhideout.com/awk.shtml)

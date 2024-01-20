@@ -1,7 +1,7 @@
 ---
-title:                "Omvandling av en sträng till gemener"
-html_title:           "Python: Omvandling av en sträng till gemener"
-simple_title:         "Omvandling av en sträng till gemener"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,26 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Konvertering av en sträng till små bokstäver är en vanlig uppgift inom programmering. Det innebär att alla bokstäver i en sträng görs om till små bokstäver istället för stora. Detta görs oftast för att underlätta jämförelse av strängar, då små och stora bokstäver annars behandlas som olika tecken i programmeringsspråk.
+## Vad & Varför?
 
-# Hur man:
-```Python
-my_string = "HALLÅ Det är en STRÄNG"
-print(my_string.lower())
+Att konvertera en sträng till små bokstäver innebär att vi ändrar alla versala bokstäver i en sträng till gemena. Programmerare gör det när de vill standardisera, sortera eller jämföra strängar, oavsett användarens inmatning.
+
+## Hur gör man:
+
+Det är så enkelt att konvertera en sträng till gemena i Python. Du använder `lower()` metoden. Kolla på denna illustration:
+
+```python
+text = "Hej Världen!"
+lower_text = text.lower()
+print(lower_text)
 ```
-Output:
-`hallå det är en sträng`
 
-Genom att använda metoden `.lower()` på en sträng-variabel blir alla bokstäver i strängen omvandlade till små bokstäver. Detta gäller även för specialtecken och bokstäver med accent.
+Och det kommer att skriva ut:
 
-# Djupdykning:
-Historiskt sett har omvandling av strängar till små bokstäver varit en komplicerad process. I äldre programmeringsspråk behövde man använda speciella funktioner eller loopar för att åstadkomma detta. Numera finns det inbyggda metoder i de flesta moderna språk som gör det betydligt enklare.
+```
+hej världen!
+```
 
-En annan metod för att skriva om strängar till små bokstäver är att använda modulen `string`. Där finns en funktion som heter `lower()` som också åstadkommer samma sak.
+I detta exempel, `lower()` metoden tar strängen `"Hej Världen!"` och konverterar den till `"hej världen!"`. 
 
-Tänk på att det kan finnas tillfällen då man vill behålla versaler i en sträng, till exempel för att betona ett ord eller en fras. Då är det viktigt att inte använda `.lower()` metoden och istället skriva strängen som den är.
+## Djupdykning:
 
-# Se även:
-- Python dokumentation för `string.lower()`: https://docs.python.org/3/library/string.html#string.lower
-- En skriftlig guide på svenska över grundläggande koncept inom programmering: https://codingkungen.nu/
+Att konvertera strängar till gemena är ingen ny idé, och det är standard i många programmeringsspråk för att hantera stränginformation. 
+
+Det finns också alternativ till att använda `lower()` i Python. Du kan, till exempel, använda en `for`-loop och `ord()`-funktionen. Men `lower()` är mest effektiv och lätt att använda.
+
+Slutligen, vad gäller implementation, Python använder ASCII eller Unicode-tabeller (beroende på strängtyp) för att konvertera versala till gemena.
+
+## Se också:
+
+Du kan också vara intresserad av att lära dig att konvertera strängar till versaler i Python. Kolla in [denna guide](https://www.w3schools.com/python/ref_string_upper.asp). Dessutom, om du vill utforska mer om Python's `lower()` metod och andra strängmetoder, har Python's officiella dokumentation massor av information [här](https://docs.python.org/3/library/stdtypes.html#str.lower).

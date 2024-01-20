@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या अतीत में तारीख की गणना"
-html_title:           "PowerShell: भविष्य या अतीत में तारीख की गणना"
-simple_title:         "भविष्य या अतीत में तारीख की गणना"
+title:                "भविष्य या भूतकाल में तारीख की गणना"
+html_title:           "PowerShell: भविष्य या भूतकाल में तारीख की गणना"
+simple_title:         "भविष्य या भूतकाल में तारीख की गणना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यों? 
+## क्या और क्यों?
 
-भविष्य में या भूत की तारीख की गणना करना क्या है और क्यों प्रोग्रामर इसे करते हैं? इसका काम यह है कि यदि हमें किसी तारीख को आगे या पीछे बदलना हो, तो हमें हाथ से नहीं करना पड़ेगा। यह समय और असुविधा दोनों बचाता है और प्रोग्रामरों को अपने कोड में तारीखों को उपयोग करने की सुविधा प्रदान करता है।
+भविष्य या अतीत में तारीख की गणना वो प्रक्रिया है जिसके माध्यम से हम अगली या पिछली तारीख जान सकते हैं। यह बहुत अक्सर वेब विकास, प्रोग्रामिंग और डेटा एनालिटिक्स में कार्य करते समय होती है।
 
-## कैसे करें: 
+## कैसे करें:
+
+हम PowerShell का उपयोग करके भविष्य या अतीत की तारीख की गणना कर सकते हैं। यहां पर कैसे किया जा सकता है:
 
 ```PowerShell
-# आज से 5 दिन पीछे की तारीख की गणना
-$date = Get-Date
-$futureDate = $date.AddDays(-5)
-# आउटपुट: तारीख स्टॉरेज वेब केवल : 25/05/2021 12:00:00 AM
+# भविष्य में तारीख की गणना करने के लिए
+$futureDate = (Get-Date).AddDays(5)
+Write-Output $futureDate
+```
+
+आउटपुट:
+
+```PowerShell
+Monday, February 6, 2023 12:05:28 PM
 ```
 
 ```PowerShell
-# आज से एक हफ्ते आगे की तारीख की गणना
-$date = Get-Date
-$futureDate = $date.AddDays(7)
-# आउटपुट: तारीख स्टॉरेज वेब केवल : 08/06/2021 12:00:00 AM
+# अतीत में तारीख की गणना करने के लिए
+$pastDate = (Get-Date).AddDays(-5)
+Write-Output $pastDate
 ```
+
+आउटपुट:
 
 ```PowerShell
-# चयनित तारीख से तीन महीने आगे की तारीख की गणना
-$date = Get-Date -Date "01/01/2021"
-$futureDate = $date.AddMonths(3)
-# आउटपुट: तारीख स्टॉरेज वेब केवल : 01/04/2021 12:00:00 AM
+Wednesday, February 1, 2023 12:05:28 PM
 ```
 
-## डीप डाइव: 
+## गहरी जाँच:
 
-तारीखों की गणना एक प्राचीन क्रिया है, जो समय के प्रबंधन में महत्वपूर्ण है। प्राचीन लोग जीवन की सम्पत्ति को तारीख के रूप में ट्रैक करने के लिए कई तारीखों का प्रयोग करते थे। आज, हम प्रोग्रामिंग में तारीखों को प्राप्त करने और उन्हें गणना करने के लिए उपयोग करते हैं। अल्टर्नेटिव्स के रूप में, प्रोग्रामर अन्य भाषाओं में तारीखों को गणना करने के लिए डेटा स्ट्रक्चर का उपयोग करते हैं जैसे कि सहज में प्रोक्सी ऑब्जेक्ट का उपयोग कर लेते हैं। तारीख गणना करने के लिए, हमें तारीखों को मिलाकर समय तारीख स्टम्प में बदलना होगा और फिर उन्हें गणना के लिए उपयोग करना होगा।
+1. ऐतिहासिक संदर्भ: PowerShell की पीढ़ी 1.0 से ही तारीख और समय के साथ काम करने के लिए cmdlets मौजूद थे।
 
-## देखें भी: 
+2. विकल्प: अन्य भाषाओं में, जैसे कि Python या JavaScript, इसे भिन्न ढंग से किया जाता है।
 
-- [PowerShell में तारीख गणना करना](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/add-days?view=powershell-7.1)
-- [डेटा स्ट्रक्चर क्रिएशन और उदाहरण](https://www.guru99.com/data-structures.html)
-- [टेलरियम] (https://youtu.be/rvgiDhkGjLI?t=311)
+3. कार्यान्वयन विवरण: `(Get-Date).AddDays()` एक तारीख वापस देता है, जो वर्तमान तारीkh से अधिक या कम होती है, आवश्यकतानुसार।
+
+## अधिक देखें:
+
+1. [PowerShell Get-Date cmdlet Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+2. [PowerShell language reference](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-datetime?view=powershell-7.1)
+3. [Calculate dates in the future or past with PowerShell](https://www.tutorialspoint.com/powershell/powershell_working_with_dates.htm)

@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Ruby: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Comparando duas datas em Ruby
 
-Comparar duas datas é uma operação comum na programação que envolve comparar o valor de duas datas diferentes. Programadores frequentemente fazem isso para determinar qual data é mais recente ou para verificar se duas datas são iguais.
+## O que e por quê?
+
+Comparar duas datas significa determinar se uma data é anterior, posterior ou igual a outra. Programadores fazem isso para realizar tarefas como ordenar eventos por data ou calcular a diferença de tempo entre duas datas.
 
 ## Como fazer:
 
-Comparar duas datas é simples com a ajuda da linguagem de programação Ruby. Veja abaixo alguns exemplos de código e as respectivas saídas:
+No Ruby, você pode comparar duas instâncias de `Date` ou `DateTime` usando operadores de comparação padrão como `>`, `<`, `==`, `>=` e `<=`. 
 
 ```Ruby
-# Comparando se a data 1 é maior que a data 2
-data1 = Date.parse("2020-01-01")
-data2 = Date.parse("2019-01-01")
-data1 > data2  # => true
+require 'date'
 
-# Comparando se a data 1 é igual a data 2
-data1 = Date.parse("2020-01-01")
-data2 = Date.parse("2020-01-01")
-data1 == data2  # => true
+data1 = Date.new(2022, 6, 15)
+data2 = Date.new(2021, 6, 15)
+
+puts data1 > data2  # Retorna true
+puts data1 == data2 # Retorna false
+puts data1 < data2  # Retorna false
 ```
 
-## Mais detalhes:
+Para calcular a diferença entre duas datas, você pode subtrair um objeto `Date` de outro. 
 
-Em termos históricos, a comparação de datas é uma operação fundamental na programação. A linguagem de programação Ruby oferece várias funções e métodos que tornam esse processo mais fácil e intuitivo.
+```Ruby
+diferenca = data1 - data2
+puts diferenca.to_i # Retorna 365
+```
 
-Além disso, existem diversas alternativas para comparar duas datas em Ruby, incluindo o uso da biblioteca padrão "Date", que fornece uma ampla variedade de funções e métodos para trabalhar com datas.
+## Aprofundando um pouco mais
 
-A comparação de datas também pode ser feita comparando os valores numéricos que representam as datas, no formato "yyyymmdd". No entanto, é importante estar atento a problemas relacionados com diferentes formatos de data em diferentes países e regiões.
+Historicamente, o comparar e manipular datas sempre foi um desafio para os programadores devido à complexidade do calendário gregoriano e dos fusos horários. Felizmente, Ruby abstrai muitos desses detalhes através das classes `Date` e `DateTime`.
 
-Para implementar a comparação de datas em seu próprio código, basta utilizar os operadores ">", "<" ou "==", dependendo do tipo de comparação que deseja fazer. Também é possível utilizar o método "compare" da classe "Date" para obter valores numéricos (-1, 0 ou 1) que representam a relação entre duas datas.
+Existem alternativas para a classe `Date` no Ruby, como a gem `time_difference`, que pode fornecer mais recursos e refinamentos, dependendo de suas necessidades específicas.
 
-## Veja também:
+Ao implementar a comparação de datas, é crucial considerar os fusos horários. No Ruby, `DateTime.now` retorna a data e hora local, enquanto a `Date.today` retorna a data corrente no fuso horário do sistema.
 
-Para saber mais sobre comparação de datas em Ruby, consulte a documentação oficial da linguagem em: https://www.ruby-lang.org/pt/documentation/
+## Veja também
 
-Você também pode encontrar tutoriais e exemplos úteis em sites como o "Ruby Learning": http://rubylearning.com/
+Para saber mais sobre as classes `Date` e `DateTime` em Ruby, visite a documentação oficial:
+
+- [Date](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/Date.html)
+- [DateTime](https://ruby-doc.org/stdlib-2.7.1/libdoc/date/rdoc/DateTime.html)
+
+Para uma abordagem mais elaborada da manipulação e comparação de datas, considere a gem `time_difference`:
+
+- [time_difference](https://rubygems.org/gems/time_difference/versions/0.5.0)

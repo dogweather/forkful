@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
-html_title:           "Arduino: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Päivämäärän muuntaminen merkkijonoksi tarkoittaa päivämäärän esittämistä tekstilukuna. Tätä tehdään yleisesti ohjelmointikohteissa, joissa päivämäärää tarvitaan eri muodoissa tai esimerkiksi tallennettavaksi tiedostoksi.
+## Mitä & Miksi?
 
-# Miten:
-Arduino on avoin ja joustava alusta, johon voit ohjelmoida päivämäärän muuntamisen merkkijonoksi helposti. Esimerkkikoodi alla olevassa esimerkissä muuntaa tämän päivän päivämäärän merkkijonoksi. Tulostus näkyy sarjaportissa, kun Arduinon kytketään tietokoneeseen.
+Päivämäärän muuntaminen merkkijonoksi tarkoittaa, että muutat päivämäärän esitysmuodon – esim. 02.11.2020 – sellaiseksi merkkijonoksi, jota voidaan käyttää tekstissä tai tulostaa. Koodaajat tekevät näin, koska ohjelmat käsittelevät päivämääriä paremmin merkkijonoina.
 
-```
-Arduino
-String today = String(day()) + "/" + String(month()) + "/" + String(year()); 
-Serial.println(today);
-```
-Tulostus voi olla esimerkiksi "28/4/2020".
+## Näin se tehdään:
 
-# Syväsukellus:
-Päivämäärän muuntaminen merkkijonoksi on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Aikaisemmin se suoritettiin monimutkaisilla laskutoimituksilla, mutta nykyään se on helpompaa ja nopeampaa erilaisten ohjelmointialustojen ansiosta.
+```Arduino 
+#include <TimeLib.h>
 
-On myös muita tapoja muuttaa päivämäärä merkkijonoksi, kuten käyttämällä kirjastoja tai omia funktioita. Kuten aina ohjelmoinnissa, kannattaa etsiä ja kokeilla erilaisia ratkaisuja ja valita itselleen sopivin vaihtoehto.
+void setup() {
+  Serial.begin(9600);
+  setTime(10, 30, 0, 2, 11, 2020);
+}
 
-# Katso myös:
-- [Arduino String reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-- [Converting a date into a string](https://www.geeksforgeeks.org/converting-date-string-using-arduino/)
-- [Arduino Date and Time functions](https://www.arduino.cc/en/Tutorial/BuiltInExamples/DateTime)
+void loop() {
+  time_t t = now();
+  String date = String(day(t)) + "-" + String(month(t)) + "-" + String(year(t));
+  Serial.println(date);
+  delay(1000);
+}
+``` 
+
+Koodin tuloste:
+`2-11-2020`
+
+## Syvällinen tarkastelu
+
+Päivämäärän muuntaminen merkkijonoksi on yleinen käytäntö, kuuluipa se sitten historiankirjoitukseen tai ei. Se antaa ohjelmoijille suuremman joustavuuden päivämäärien käsittelyssä ja tulostamisessa. 
+
+Vaihtoehtoisesti, voisit käyttää sprintf-funktiota samaan tarkoitukseen, mutta String-luokka tarjoaa helpomman tavan yhdistää datatyyppejä.
+
+Tyypillinen tapa toteuttaa päivämäärän muunnos merkkijonoksi on lisätä päivä, kuukausi ja vuosi yhteen, mutta voit myös muuttaa sen oman tarpeesi mukaan - päätät itse, minkä tyyppinen esitystapa sopii parhaiten sovellukseesi.
+
+## Katso myös
+
+Voit tarkistaa lisätietoa Arduino String -luokasta ja aikakirjaston (TimeLib) käytöstä seuraavista lähteistä:
+
+- [Arduino String](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Time Library](https://www.pjrc.com/teensy/td_libs_Time.html)

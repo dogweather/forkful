@@ -1,6 +1,6 @@
 ---
 title:                "두 날짜 비교하기"
-html_title:           "Kotlin: 두 날짜 비교하기"
+html_title:           "C#: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,61 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
-
-두 개의 날짜를 비교하는 것은 무엇인가? 프로그래머들이 이를 하는 이유는 무엇인가?
-
 ## 무엇 & 왜?
 
-날짜를 비교하는 것은 두 날짜를 비교하여 어느 날짜가 더 미래인지를 알아내는 것을 의미합니다. 프로그래머들은 이를 통해 예약 시스템, 유효 기간 체크 및 이벤트 일정 등 여러 가지 상황에서 유용하게 활용할 수 있습니다.
+두 날짜를 비교한다는 것은 한 날짜가 다른 날짜보다 이후, 이전 또는 동일한지 확인하는 것입니다. 이는 스케줄링, 날짜 간 차이 계산 등 다양한 알고리즘에서 필수적인 부분입니다.
 
-## 사용 방법:
+## 방법:
 
-### Kotlin에서 날짜 비교하기
-
-날짜를 비교하는 가장 간단한 방법은 ```Date()``` 함수를 사용하는 것입니다. 이 함수는 현재 날짜와 시간을 반환합니다. 예를 들어, ```Date() > Date()```은 현재 시간보다 미래인지 여부를 확인할 수 있습니다.
-
-### 코드 예시:
+본 코드 블록에서는 Kotlin으로 두 날짜를 어떻게 비교하는지 확인할 수 있습니다.
 
 ```Kotlin
-// 현재 날짜와 시간을 출력합니다.
-val now = Date()
-println("현재 날짜와 시간: $now")
+import java.time.LocalDate
 
-// 비교할 날짜를 생성합니다.
-val futureDate = Date(2021, 9, 1)
-val pastDate = Date(2021, 7, 1)
+fun main() {
+    val date1 = LocalDate.of(2020, 1, 1)
+    val date2 = LocalDate.of(2021, 1, 1)
 
-// 두 날짜를 비교하여 결과를 출력합니다.
-if (futureDate > pastDate) {
-    println("$futureDate은 $pastDate보다 미래입니다.")
-} else {
-    println("$pastDate은 $futureDate보다 미래입니다.")
+    when {
+        date1.isBefore(date2) -> println("date1이 date2보다 이전입니다.")
+        date1.isAfter(date2) -> println("date1이 date2보다 이후입니다.")
+        else -> println("date1과 date2는 동일한 날짜입니다.")
+    }
 }
 ```
 
-### 예상 출력:
+실행 결과:
 
+```Shell
+date1이 date2보다 이전입니다.
 ```
-현재 날짜와 시간: Sat Sep 18 12:00:00 KST 2021
-2021년 9월 1일은 2021년 7월 1일보다 미래입니다.
-```
 
-## 깊이 파보기:
+## 깊게 알아보기
 
-### 역사적 배경:
+Kotlin에서 날짜를 비교하는 방법은 Java에서 시작된 java.time 패키지의 일부입니다. 이 패키지는 원래 Java 8에서 도입되었으며, Kotlin에서도 지원됩니다.
 
-날짜를 비교하는 기능은 컴퓨터 과학 분야에서 오랜 역사를 가지고 있습니다. 최초의 컴퓨터는 수치 연산에만 사용되었기 때문에 날짜는 정보 시스템에서 중요한 역할을 담당했습니다. 이 때문에 날짜 비교는 매우 중요한 기능이었고, 개발자들은 이를 쉽고 간단하게 구현하고자 노력하였습니다.
+다양한 비교 방법이 있습니다. `isBefore()`, `isAfter()`, `isEqual()` 메서드 뿐만 아니라, `compareTo()` 메서드를 사용할 수도 있습니다. `compareTo()` 메서드는 두 날짜가 동일한 경우 0을 반환하고, 첫 번째 날짜가 두 번째 날짜보다 이전인 경우 음수를 반환하고, 그 반대의 경우 양수를 반환합니다.
 
-### 대안:
+또한 Kotlin은 연산자 오버로딩을 지원하기 때문에 날짜를 비교하는 데 표준 비교 연산자(<, >, == 등)를 사용할 수도 있습니다.
 
-날짜를 비교하는 또 다른 방법은 ```Calender``` 클래스를 사용하는 것입니다. 이 클래스는 날짜를 관리하는 기능뿐만 아니라 여러 가지 다른 기능도 제공하므로 더 많은 유연성을 제공합니다.
+## 참고자료:
 
-### 구현 세부 정보:
-
-날짜를 비교하는 함수는 보통 두 개의 날짜를 매개 변수로 받아 각각의 년, 월, 일을 비교한 후 이를 계산하여 결과를 반환합니다. 이 기능을 구현할 때는 다른 프로그래밍 언어에서도 우리가 사용하는 코드와 비슷하게 작동하므로 어렵지 않게 구현할 수 있습니다.
-
-## 관련 자료:
-
-- [Kotlin Date API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/index.html)
-- [Calendar 클래스 사용법](https://developer.android.com/reference/java/util/Calendar)
+1. [Kotlin Documentation: java.time.LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/)
+2. [Oracle Documentation: java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+3. [Baeldung: Compare Dates in Java](https://www.baeldung.com/java-date-comparison)

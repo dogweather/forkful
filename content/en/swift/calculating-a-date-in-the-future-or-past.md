@@ -12,28 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating dates in the future or past is a common task for programmers, as it allows them to manipulate and work with dates in their code. This can include things like setting due dates for tasks, scheduling reminders, or creating event calendars. By being able to calculate dates in the future or past, programmers can create more dynamic and functional applications.
+Calculating a date in the future or past involves manipulating dates by adding or subtracting days, months, or years. Programmers do it for tasks like setting reminders, comparing dates, or handling time-bound records.
 
 ## How to:
 
-To calculate a date in the future or past, we can use the `date(byAdding:to:value:wrappingComponents:)` method within the `Calendar` class in Swift. This method takes in three parameters: a `DateComponents` object, an `Int` value, and a `Date` object. The `DateComponents` object specifies the unit of time we want to add or subtract (e.g. days or hours), the `Int` value represents the number of units we want to add or subtract, and the `Date` object is the starting date from which we want to calculate.
-
-To get the date 7 days from today, we would use the following code:
+Let's see the Swift way to do it. Here's how to calculate a date 10 days after the current date.
 
 ```Swift
-let today = Date()
-let calendar = Calendar.current
-let futureDate = calendar.date(byAdding: .day, value: 7, to: today)
+import Foundation
+let currentDate = Date()
+var dateComponent = DateComponents()
+
+dateComponent.day = 10
+let futureDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
+
+print(futureDate!)
 ```
 
-We can also calculate a date in the past by simply using a negative value in the `value` parameter. For example, to get the date 2 months ago, we would use `value: -2`. The `date(byAdding:to:value:wrappingComponents:)` method also takes into consideration different calendar systems and leap years, so we can be confident that our calculations will be accurate.
+And here's how to calculate a date 5 days before the current date.
 
-## Deep Dive:
+```Swift
+dateComponent.day = -5
+let pastDate = Calendar.current.date(byAdding: dateComponent, to: currentDate)
 
-Historically, calculating dates in the future or past has been a complex task due to the different calendar systems and leap years used around the world. However, with advancements in programming languages, this task has become much easier. Some alternative methods for calculating dates in the future or past include using the `date(byAdding:to:value:wrappingComponents:)` method from the `NSDate` class in Objective-C or using a third-party date library like `Moment.js` for JavaScript.
+print(pastDate!)
+```
 
-Under the hood, the `date(byAdding:to:value:wrappingComponents:)` method uses the `DateComponents` class to handle the addition or subtraction of units of time. This class provides a high level of customization and allows us to specify multiple units of time to be added or subtracted at once.
+In both cases, the `DateComponents` class and the `Calendar` class are used to achieve the task.
 
-## See Also:
+## Deep Dive
 
-To learn more about calculating dates in the future or past in Swift, check out the official documentation for the `Calendar` class and the `DateComponents` class. You can also explore third-party libraries like `Moment.swift` for additional functionality.
+Historically, calculating dates has been a challenge due to varying lengths of months, leap years, and time zones. With Swift, it’s simplified with utilities like `DateComponents` and `Calendar`.
+
+There are also other techniques, such as converting dates to timestamps (seconds from a fixed point in time), performing the arithmetic, then converting back to a date. However, this method won't account for irregularities like leap years.
+
+The implementation uses the Gregorian calendar. You can set a different calendar if needed. For large additions or subtractions, it even manages transitions between months with different numbers of days.
+
+## See Also
+
+Interested in exploring more about date manipulation in Swift and other areas, check out the following sources:
+
+- [Apple's Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DatesAndTimes/DatesAndTimes.html)
+- [Swift’s Calendar and DateComponents documentation](https://developer.apple.com/documentation/foundation/calendar)
+- [An in-depth guide to handling dates in Swift](https://www.hackingwithswift.com/read/10/overview)

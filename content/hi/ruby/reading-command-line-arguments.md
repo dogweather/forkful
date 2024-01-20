@@ -1,7 +1,7 @@
 ---
-title:                "कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट पढ़ना"
-html_title:           "Ruby: कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट पढ़ना"
-simple_title:         "कम्प्यूटर प्रोग्रामिंग पर एक लेख का शीर्षक: कमांड लाइन आर्ग्यूमेंट पढ़ना"
+title:                "कमांड लाइन तर्कों को पढ़ना"
+html_title:           "Kotlin: कमांड लाइन तर्कों को पढ़ना"
+simple_title:         "कमांड लाइन तर्कों को पढ़ना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,20 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Ruby में Command Line Arguments का उपयोग कैसे करें?
+
 ## क्या और क्यों?
-कमांड लाइन आर्ग्यूमेंट पढ़ना एक प्रोग्रामर की एक आवश्यकता है। इससे हम अपने प्रोग्राम को डायरेक्ट हमारी आड़ से चलाने में सक्षम होते हैं।
+
+Command line arguments Ruby प्रोग्राम के माध्यम से आपके script को चलाते समय लिया जाने वाले आदेश हैं। इसे करने का मुख्य कारण यह है कि यह programmer को अपने code की flexibility और अधिक customization की अनुमति देता है।
 
 ## कैसे करें:
+
+Ruby में command line arguments को `ARGV` विशेष array का उपयोग करके पढ़ सकते हैं।
+
 ```Ruby
-# कमांड लाइन आर्ग्यूमेंट्स पढ़ने के लिए निम्न कोड का उपयोग करें
-# छवि फाइल का नाम ख़ालीजगी माप्सों से प्राप्त करें
-ARGV[0]
+# test.rb script
+ARGV.each do|a|
+  puts "Argument: #{a}"
+end
 ```
 
-## गहराई तक जाएं:
-कमांड लाइन आर्ग्यूमेंट पढने का इतिहास कुछ तकनीकी बदलावों के साथ साथ है। पहले यह सिर्फ बैच स्क्रिप्टों के लिए उपलब्ध था, लेकिन अब हम स्क्रिप्टों के साथ इसे सीधे डिबग कर सकते हैं। इसके अलावा, कुछ अन्य विकल्प जैसे प्लेन जवा भी उपलब्ध हैं। कमांड लाइन आर्ग्यूमेंट पढ़ने के बारे में अधिक जानकारी के लिए [यहाँ](https://ruby-doc.org/core-2.7.1/ARGF.html) देखें।
+शुरू करने के लिए, अपने Terminal में निम्नलिखित command चलाएं:
 
-## इससे सम्बंधित देखें:
-- https://ruby-doc.org/core-2.7.1/ARGF.html
-- https://www.rubyguides.com/2015/08/reading-command-line-arguments-in-ruby/
-- https://www.tutorialspoint.com/ruby/ruby_command_line_options.htm
+```sh
+ruby test.rb हेलो वर्ल्ड
+```
+
+आपकी output इन लाइनों के बराबर होगी:
+
+```
+Argument: हेलो
+Argument: वर्ल्ड
+```
+
+## Deep Dive
+
+Command line arguments का सामान्य उपयोग उन scripts के लिए होता है जो बार-बार चलाए जा सकते हैं और विभिन्न parameters के आधार पर विभिन्न results उत्पन्न कर सकते हैं।
+
+ऐतिहासिक दृष्टिकोण से, command line argument का कार्य किसी भी प्रोग्राम को चलाने के लिए inline inputs की आवश्यकता को कम करता है।
+
+एक विकल्प command line option parsing libraries, जैसे कि `OptionParser` या `Thor`. इन libraries का उपयोग उन switches और flags के लिए किया जाता है जिनकी आपको आवश्यकता हो सकती है, उदाहरण स्वरूप '-v' या '--versions' के साथ।
+
+## और देखें
+
+अधिक जानकारी के लिए, निम्न लिंकों पर जाएं:
+
+1. Ruby Docs on Command Line Arguments: [https://docs.ruby-lang.org/en/2.1.0/ARGF.html](https://docs.ruby-lang.org/en/2.1.0/ARGF.html)
+2. Stack Overflow discussion on ARGV: [https://stackoverflow.com/questions/9861301/what-is-argv-in-ruby](https://stackoverflow.com/questions/9861301/what-is-argv-in-ruby)
+3. Tutorial on command line arguments in Ruby: [https://www.tutorialspoint.com/ruby/ruby_command_line_arguments.htm](https://www.tutorialspoint.com/ruby/ruby_command_line_arguments.htm)

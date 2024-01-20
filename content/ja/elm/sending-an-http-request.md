@@ -1,7 +1,7 @@
 ---
-title:                "httpリクエストを送信する"
-html_title:           "Elm: httpリクエストを送信する"
-simple_title:         "httpリクエストを送信する"
+title:                "HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
+simple_title:         "HTTPリクエストの送信"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,33 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?:
-HTTPリクエストを送信するとは、ウェブサイトやウェブアプリケーションから情報を取得することです。プログラマーは、異なるウェブサービスやデータにアクセスするためにHTTPリクエストを使用します。
+## 何となぜ？
 
-## How to:
-Elmでは、Http.get関数を使用してHTTPリクエストを送信することができます。この関数には、リクエストのURLと期待するレスポンスの型を指定します。例えば、GitHub APIからリポジトリの情報を取得するには、以下のようにコードを書きます。
+HTTPリクエストの送信は、ウェブサーバーへの特定の情報のリクエストを意味します。プログラマーがこれを行うのは、ウェブベースのリソースを取得または操作するためです。
 
-```Elm
-Http.get "https://api.github.com/users/username/repos" RepoList
-```
-
-このコードを実行すると、以下のようなリストが得られます。
+## 方法 :
+Elmでは`Http.get`関数を使用してHTTP GETリクエストを発行できます。以下に例を示します:
 
 ```Elm
-[
-  { name = "repo1", description = "A repository for testing", url = "https://github.com/username/repo1" },
-  { name = "repo2", description = "Another repository", url = "https://github.com/username/repo2" }
-]
+import Http
+import Json.Decode as Decode
+
+fetchData : String -> Cmd msg
+fetchData url =
+    Http.get
+        { url = url
+        , expect = Http.expectString ResponseHandler
+        }
+
+type Msg = ResponseHandler (Result Http.Error String)
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        ResponseHandler (Ok body) ->
+            ( { model | content = body }, Cmd.none )
+
+        ResponseHandler (Err _) ->
+            ( model, Cmd.none )
 ```
+このコードは、与えられたURLからデータをフェッチし、応答を処理します。
 
-## Deep Dive:
-HTTPリクエストはウェブ開発において重要な役割を果たしています。ウェブサービスを使用するためには、HTTPリクエストを送信する必要があります。代表的なHTTPメソッドとしては、GET、POST、PUT、DELETEなどがあります。
+## ディープダイブ :
+HTTPリクエストの送信は、1990年代初頭のウェブの出現以降、インターネット通信の主要な部分となっています。それ以前は、データ交換は主に電子メールやFTPを介して行われていました。
 
-ただし、ElmにはHTTPリクエストを送信する代替手段もあります。例えば、Json.Decoderモジュールを使用して、手動でHTTPリクエストを処理することもできます。また、JavaScriptとの統合を行うことで、より柔軟なHTTPリクエストの処理が可能になります。
+Elmの他のアプローチは、リクエストのタイプによります。 `Http.post` はPOSTリクエスト、 `Http.delete` はDELETEリクエスト等を扱います。これらの違いは、送信方法と使用ケースによって異なります。
 
-HTTPリクエストは、ユーザーから特定のウェブサービスに対してデータを送信する際にも使用されます。例えば、フォームからの入力データをウェブサービスに送信する際には、HTTPリクエストを使用します。
+ElmのHTTPリクエストの実装は、純粋な関数型プログラミングを維持するために、コマンド（Cmd）を通じて非同期操作を扱います。このため、コードは副作用がなく、テストとデバッグが容易になります。
 
-## See Also:
-- https://guide.elm-lang.org/effects/http.html#http
-- https://www.w3schools.com/tags/ref_httpmethods.asp
-- https://package.elm-lang.org/packages/elm/json/latest/Json-Decoder
+## 関連情報 :
+1. [Elmの公式HTTPパッケージ](https://package.elm-lang.org/packages/elm/http/latest/)
+2. [Elmの公式Json.Decode パッケージ](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode)
+3. [HTTPの基礎](https://developer.mozilla.org/ja/docs/Web/HTTP/Basics_of_HTTP)
+4. [関数型プログラミングの概要](https://www.infoworld.com/article/3310946/what-is-fp-functional-programming-explained.html)
+
+この記事を読んで、HTTPリクエストの送信の基礎を理解し、Elmでそれをリクエストする方法を学べることを願っています。

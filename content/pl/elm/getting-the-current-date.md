@@ -1,7 +1,7 @@
 ---
-title:                "Otrzymywanie aktualnej daty"
-html_title:           "Elm: Otrzymywanie aktualnej daty"
-simple_title:         "Otrzymywanie aktualnej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##
+# Aktualna Data w Elm: Jak i Dlaczego?
 
- Cześć programiści!
+## Czym Jest i Dlaczego?
 
-## O co chodzi & Po co ?
-
-Pobranie aktualnej daty jest krokiem niezbędnym w wielu programach, m.in. w aplikacjach finansowych czy tworzeniu kalendarzy. W Elm jest to proste do zrobienia i często wykorzystywane przez programistów.
+Pobieranie aktualnej daty oznacza odczytanie systemowego zegara w wyniku czego otrzymujemy bieżącą datę i czas. Programiści robią to w celu zapisywania strumienia zdarzeń, trackowania czasu rzeczywistego albo generowania unikalnych timestampów.
 
 ## Jak to zrobić:
 
- ``` Elm
+Elm oferuje wbudowany moduł `Time`. Używamy funkcji `now` do odczytania aktualnej daty i czasu. Poniżej przykład w kodzie:
+
+```Elm
 import Time
 
--- Pobranie aktualnej daty
-date = Time.now
--- Wynik: 1628310760703
-
--- Pobranie aktualnej daty w formacie ISO
-isoDate = Time.toIsoString date
--- Wynik: "2021-08-06T12:06:00.703Z"
+main =
+    Time.now 
+    |> Task.perform DataReceived
 ```
 
-## Głębszy zanurzenie:
+Zwróć uwagę, że `Time.now` zwraca Task,a nie bezpośrednio datę i czas. W Elm, operacje wejścia/wyjścia są obsługiwane jako zadania ("tasks"), które są niemutowalne i efekty boczne są definiowane razem z danymi dla czystych funkcji.
 
-Funkcja ```now``` jest częścią modułu ```Time```, który został wprowadzony w wersji 0.19 Elm. Wcześniej, aby uzyskać aktualną datę, trzeba było korzystać z zewnętrznych bibliotek lub interfejsów Javascript.
+Wynik może zostać następnie przetworzony przez `Task.perform`, który spowoduje jego wykonanie.
 
-Alternatywnym sposobem na pobranie bieżącej daty jest użycie funkcji ```inSeconds```, która zwróci liczbę sekund od 1 stycznia 1970 r. Dzięki temu można łatwo obliczyć dowolne przesunięcia czasowe.
+## Zagłębienie się w szczegóły:
 
-Funkcja ```toIsoString``` konwertuje datę na standardowy format ISO. Można również użyć funkcji ```toPosix``` w celu uzyskania daty w formacie numerycznym Unix.
+Elm to język programowania stworzony przez Evana Spyzgla w 2012 roku. Dzięki swojej czystej, niemutowalnej i funkcyjnej naturze, doradza się używanie Tasków do operacji I/O, które mogą wpływać na stan systemu, takich jak odczytanie aktualnej daty i czasu.
 
-## Zobacz także:
+Istnieje kilka alternatyw sposobu uzyskania aktualnej daty i czasu. Możemy użyć funkcji `Time.every` do utworzenia sygnału, który będzie emitowany co pewien określony interwał czasu.
 
-Dokumentacja modułu Time w Elm: https://package.elm-lang.org/packages/elm/time/latest/
+```Elm
+import Time
+import Signal
 
-Oficjalny poradnik Elm: https://guide.elm-lang.org/
+main = 
+    let
+        tick = Time.every Time.second
+    in
+        Signal.map second tick
+```
+
+Podczas implementacji pamiętaj, że Elm jest czystym językiem funkcyjnym – co oznacza, że nie możemy bezpośrednio zmodyfikować stanów, tak jak w większości języków obiektowych. Zamiast tego, następuje transformacja stanu z jednej postaci do drugiej.
+
+## Zobacz więcej:
+
+- Dokumentacja Elm `Time` module: [Elm Time](http://package.elm-lang.org/packages/elm-lang/core/latest/Time)
+- Elm Architecture Tutorial: [Elm Architecture](https://guide.elm-lang.org/architecture/)
+- Wprowadzenie do programowania funkcyjnego w Elm: [Function Programming Elm](https://pragmaticstudio.com/tutorials/elm/where-to-start)

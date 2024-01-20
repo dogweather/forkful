@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Fish Shell: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć czytelnikach!
-
-Dzisiaj omówimy temat porównywania dwóch dat w języku programowania "Fish Shell". Możesz zastanawiać się, co to właściwie jest i dlaczego programiści to robią. Nie martw się, opowiem Ci o tym w kilku krótkich zdaniach.
-
 ## Co i dlaczego?
 
-Porównywanie dwóch dat jest procesem, w którym program porównuje dwie różne daty i określa, która jest wcześniejsza lub późniejsza. Programiści często to robią w celu ustalenia kolejności wydarzeń lub sprawdzenia, czy data jest ważniejsza lub aktualniejsza.
+Porównywanie dat polega na ustaleniu, która z dwóch wprowadzonych dat jest wcześniejsza. Programiści stosują to do sortowania, filtrowania danych czy monitorowania różnych zdarzeń scenariuszy czasowych.
 
-## Jak to zrobić?
-
-Fish Shell ma wbudowane narzędzie do porównywania dat - funkcję `date`. Aby skorzystać z niej, użyj następującego polecenia w terminalu:
+## Jak to zrobić:
 
 ```Fish Shell
-date --date "data1" +%s
-date --date "data2" +%s
+# zaimportowanie modułu matematycznego
+math (date -d "date1" +%s) - (date -d "date2" +%s)
+```
+Gdzie `date1` i `date2` to daty, które zamierzasz porównać. Przykładowe dane wyjściowe mogą wyglądać następująco:
+
+```Fish Shell
+86400  # Różnica w sekundach pomiędzy dwiema datami, w tym przypadku to jest 1 dzień.
 ```
 
-Zamiast "data1" i "data2" wpisz odpowiednie daty, które chcesz porównać. Program zwróci liczby, które reprezentują dane daty w formacie Unix. Porównanie liczb da Ci informację, która data jest wcześniejsza lub późniejsza.
+## Wgłębnik: 
 
-## Dlaczego to działa?
+1. Kontekst historyczny: Wcześniejsze wersje Fish Shell wymagały bardziej skomplikowanych procesów do porównywania dat. Obecnie, dzięki integracji z modułem `math`, stało się to prostsze.
+ 
+2. Alternatywy: Inne skrypty powłoki, takie jak Bash, zawierają również wbudowane funkcje do porównywania dat, ale Fish Shell oferuje bardziej proste rozwiązanie z modułem `math`.
 
-Funkcja `date` działa dzięki wykorzystaniu polecenia `date` z systemowego polecenia Linux. Wartość `%s` w funkcji `date` oznacza czas w formacie Unix - ilość sekund od 1 stycznia 1970 roku. Porównanie tych wartości daje nam odpowiedź, która data jest wcześniejsza lub późniejsza.
+3. Szczegóły implementacji: Powyższy kod działa, przekształcając daty na sekundy (od tzw. epoki Unix, czyli 1 stycznia 1970 roku), a następnie obliczając różnicę między nimi.
 
-## Zobacz też
+## Zobacz również:
 
-Jeśli chcesz dowiedzieć się więcej o funkcji `date` w języku Fish Shell, możesz przeczytać dokumentację [tutaj](https://fishshell.com/docs/current/cmds/date.html).
+Zapoznaj się z naszymi innymi zasobami dotyczącymi programowania w Fish Shell:
 
-Teraz już wiesz, jak porównywać daty w języku Fish Shell. To proste narzędzie może być bardzo przydatne w wielu sytuacjach, więc koniecznie spróbuj go wykorzystać w swoim kodzie. Dzięki temu będziesz mógł łatwo ustalić, która data jest wcześniejsza lub późniejsza. Do zobaczenia w kolejnym artykule!
+- Oficjalna dokumentacja Fish Shell: https://fishshell.com/docs/current/index.html
+- Poradnik porównywania dat w innych skryptach powłoki: https://www.geekhideout.com/date.shtml
+- Dodatkowe moduły dla Fish Shell: https://github.com/jorgebucaran/awesome-fish

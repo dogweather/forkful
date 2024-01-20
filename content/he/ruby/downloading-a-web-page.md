@@ -1,6 +1,6 @@
 ---
 title:                "הורדת דף אינטרנט"
-html_title:           "Ruby: הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
 simple_title:         "הורדת דף אינטרנט"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,39 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-להוריד את הדף האינטרנטי הינו פעולה שבה מתקבל מידע מאתר אינטרנט ונשמר במחשב המשתמש. תהליך זה נעשה בכדי לשלוט על המידע ולאפשר למתכנתים לעבוד איתו ולהשתמש בו בקלות.
+הורדת עמוד אינטרנט היא תהליך שבו הורדת את תוכן עמוד אינטרנט מהשרת אל המחשב המקומי שלך. מתכנתים עשויים לרצות לעשות זאת כדי לנתח את התוכן, לאחסן את המידע כגיבוי, או לאפשר קריאה בלתי מחוברת לאינטרנט.
 
-## איך לעשות:
-להלן דוגמאות לקוד ופלט בתוך בלוקי קוד עם הסמל `Ruby ... `.
+## כיצד לעשות זאת:
+נהיה מנומסים אל השרת ונבקש את התוכן שאנחנו רוצים, באמצעות ביבליות ראשוניות של Ruby . הנה דוגמה:
 
-### דוגמה 1:
-``` Ruby
-require 'open-uri'
-url = "https://www.example.com"
-html_file = open(url).read
-puts html_file
+```Ruby
+require 'net/http'
+
+url = URI('http://example.com')
+response = Net::HTTP.get(url)
+puts response
 ```
 
-### פלט:
-```
-<!doctype html>
-<html>
-<head>
-  <title>Example Domain</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <style type="text/css">
-  body {
-    background-color: #f0f0f2;
-    margin: 0;
-    padding: 0;
-    font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    
-## נחישות לעומק:
-כדי להוריד דף אינטרנט, מתכנתים יכולים להשתמש בספריית open-uri הכלולה בסטנדרט הקל להבנה והשימוש. יחד עם זאת, קיימות ספריות נוספות כגון HTTParty ו- httpclient שמאפשרות יצירת בקשות HTTP לכתובת אתר ולהחזיר את התוכן שלו. בנוסף, אפשר להשתמש בפקד Nokogiri כדי לשפר את תהליך החלוקה והניתוח של תוכן האינטרנט.
+אם אתם רצים להוריד עמוד שנמצא תחת HTTPS, יש לשנות את הקוד קצת:
 
-## ראו גם:
-- [ספריית open-uri ברמת קלטת רובי](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
-- [ספריית HTTParty](https://github.com/jnunemaker/httparty)
-- [פקד Nokogiri](https://nokogiri.org/)
+```Ruby
+require 'net/http'
+
+url = URI('https://secure.example.com')
+http = Net::HTTP.new(url.host, url.port)
+http.use_ssl = true
+response = http.get(url)
+puts response.body
+```
+
+לאחר שהרצת את הקוד, תוכן העמוד יהא בהדפסה.
+
+## הצצה לעומק:
+למרות שספריות המוסד של Ruby כוללות כלים להורדת דפי אינטרנט, ישנם ספריות של צד שלישי, כמו `open-uri` ו־ `httparty`, שמקלות על התהליך ומציעות יכולת ניתוח משוגרת.
+
+במשך שנים, חלפו שיטות רבות להורדת האינטרנט. מספר השינויים המרכזיים הם התנהלות עם אתרי HTTPS והתלת מבנים XML/HTML של תוכן העמוד. 
+
+## ראה גם:
+1. [הספרייה הרשמית של Ruby ה-Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+2. [HTTParty - ספרייה של צד שלישי לשליחת בקשות HTTP בRuby](https://github.com/jnunemaker/httparty)
+3. [Open-URI - ספרייה בנויה לתוך Ruby לפתיחת URIs](https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html)

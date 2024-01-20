@@ -10,29 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 甚麼 & 為何做？
+## 什么 & 为什么？
 
-* Arduino 的最新版本可以很容易地使用 regular expressions，它是一種用來在字串中定義搜尋條件的方法。
-* 程式員使用 regular expressions 可以讓他們更有效率地處理字串資料，並且達到更精準的搜尋結果。
+正则表达式是查找和替换文本的强大工具。程序员使用此工具处理复杂的搜索条件和模式替换。
 
-## 如何：
+## 如何做：
 
+以下是在Arduino中使用正则表达式的示例：
+
+```Arduino
+#include <Regexp.h>
+
+char msg[64] = "temp=24.2_hum=46.6";
+MatchState ms;
+
+void setup() {
+  Serial.begin(9600);
+  ms.Target(msg);
+
+  char buf[10];
+
+  ms.Match("temp=([-0-9.]+)_hum=([-0-9.]+)");
+  ms.GetCapture(buf, 0);
+  float temp = atof(buf);
+  
+  ms.GetCapture(buf, 1);
+  float hum = atof(buf);
+
+  Serial.println(temp);
+  Serial.println(hum);
+}
+
+void loop() {
+
+}
 ```
-Arduino code block
-```
 
-* 使用 ```re.search()``` 函式來尋找符合條件的字串，並回傳第一個符合的結果。
-* 使用 ```re.findall()``` 函式來尋找符合條件的所有字串，並回傳一個列表。
-* 使用 ```re.sub()``` 函式來替換字串中符合條件的部分，並回傳替換後的結果。
+上述代码中的"temp=([-0-9.]+)_hum=([-0-9.]+)"是一个正则表达式。它可以解析字符串"temp=24.2_hum=46.6"从而得到温度和湿度的数值。
 
-## 深入瞭解
+## 深度挖掘：
 
-* Regular expressions 最早是由美國科學家 Stephen Kleene 於 1950 年代提出的，並在 1960 年代被 Ken Thompson 和 Dennis Ritchie 實作在 Unix 系統中。
-* 除了使用 regular expressions，程式員也可以使用其他方法（如字串處理函式）來達到相同的目的。
-* 在 Arduino 中使用 regular expressions 需要先引入 ```#include <Regex.h>``` 標頭檔。
+正则表达式起源于20世纪50年代，作为一种操纵复杂字符模式的算法。用于Arduino的Regexp库，是这个历史概念在嵌入式系统环境中的较新实现。
 
-## 參考資料
+选用正则表达式的原因是它可以处理非常复杂的搜索和替换情况。然而，对于简单的文本搜索和替换，"String.replace"函数就足够了，它在处理简单情况时更为高效。
 
-* [Python 中的 regular expressions 介紹](https://docs.python.org/3/library/re.html)
-* [Arduino 官方網站的 string 物件文件](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-* [Wikipedia 上關於 regular expressions 的詳細說明](https://en.wikipedia.org/wiki/Regular_expression)
+在Arduino中使用正则表达式需要`Regexp`库，否则，Arduino不支持正则表达式。该库是为Arduino编写的轻量级正则表达式引擎，可用于解析接收到的数据。
+
+## 参考资料：
+* Arduino官方文档（https://www.arduino.cc/reference/en/）
+* Regexp库的源代码（https://github.com/nickgammon/Regexp）
+* 在线正则表达式测试（https://regex101.com/）

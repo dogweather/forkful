@@ -1,7 +1,7 @@
 ---
-title:                "Unterstrings extrahieren"
-html_title:           "Python: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,30 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum
+## Was und Warum?
 
-Das Extrahieren von Teilzeichenketten ist eine häufig verwendete Funktion in der Programmierung. Es ermöglicht uns, einen Teil einer Zeichenkette, die aus mehreren Zeichen besteht, auszuwählen und zu isolieren. Programmierer verwenden dies oft, um spezifische Informationen aus einer größeren Zeichenkette zu extrahieren, um sie z.B. in andere Variablen oder Funktionen zu übergeben.
+Das Extrahieren von Teilstrings ist das Herausnehmen bestimmter Teile eines Strings. In der Programmierung wird dies getan, um spezifische Daten, wie Benutzer-IDs, Tags und Schlüsselwörter zu isolieren.
 
-## Wie:
+## Wie geht das:
+
+In Python können wir substrings mit Indexierung oder der `find()` und `slice()` Methode extrahieren. Hier sind einige Beispiele:
 
 ```python
-# Beispiel 1
-string = "Hallo, mein Name ist Maria"
-print(string[6:10])
-# Ausgabe: m
- 
-# Beispiel 2
-satz = "Heute ist ein schöner Tag in Deutschland"
-print(satz[27:37])
-# Ausgabe: schöner Tag
+# Beispiel String
+s = "Hallo, mein Name ist Python Programmierer!"
+
+# Substring durch Indexierung
+print(s[7:11])         # Ausgabe: "mein"
+
+# Substring durch find() und slice()
+start = s.find("Name")
+end = s.find(" ist")
+substring = s.slice(start, end)
+print(substring)       # Ausgabe: "Name"
 ```
 
-## Tiefer tauchen:
+## Vertiefung
 
-Die Idee, Teilzeichenketten zu extrahieren, stammt ursprünglich aus der Sprache SNOBOL, die in den 1960er Jahren entwickelt wurde. Heutzutage gibt es einige alternative Möglichkeiten, Teilzeichenketten in Python zu extrahieren, wie z.B. die split() -Funktion, die eine Zeichenkette an einem bestimmten Zeichen in mehrere Teilzeichenketten aufteilt. Die Implementierung hinter dem Extrahieren von Teilzeichenketten basiert auf der Verwendung von Indizes oder möglicherweise sogar regulären Ausdrücken, je nachdem, welche Methode verwendet wird.
+Substring-Extraktion ist nicht nur auf Python beschränkt, es ist eine grundlegende Funktion in fast allen Programmiersprachen. Es geht bis in die frühen Tage der Programmierung zurück, als Speicher eine kostbare Ressource war.
 
-## Siehe auch:
+Es gibt viele Methoden, um Substrings in Python zu extrahieren, und einige davon verwenden Bibliotheken wie `re` (Regular Expressions) und `numpy`. Während Indexierung und `find()` & `slice()` in den meisten Fällen ausreichen, können diese Bibliotheken in komplexeren Szenarien nützlich sein.
 
-- [Python-Dokumentation zur String-Indexierung](https://docs.python.org/3/tutorial/introduction.html#strings)
-- [Wikipedia-Artikel über SNOBOL](https://en.wikipedia.org/wiki/SNOBOL)
-- [Python split() -Funktion](https://www.w3schools.com/python/ref_string_split.asp)
+Genauer gesagt, Python speichert Strings intern als Arrays von Bytes. Dies ermöglicht es dem Programm, auf bestimmte Zeichen zuzugreifen, indem es ihren Index verwendet.
+
+## Siehe Auch
+
+- Python Dokumentation für Strings: [Link](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- Python-Reguläre Ausdrücke: [Link](https://docs.python.org/3/library/re.html)
+- Tutorial zum extrahieren von Substrings in Python: [Link](https://www.journaldev.com/23674/python-remove-character-from-string)

@@ -1,7 +1,7 @@
 ---
-title:                "String-Interpolation"
-html_title:           "Bash: String-Interpolation"
-simple_title:         "String-Interpolation"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist "String-Interpolation" und warum machen Programmierer es?
+## Was & Warum?
 
-Die Methode der String-Interpolation bezieht sich darauf, Variablen in einen String einzufügen, anstatt den String zu hardcoden. Programmierer nutzen dies, um die Lesbarkeit und Flexibilität ihres Codes zu verbessern.
+Die String-Interpolation ist ein Weg, um Variablenwerte innerhalb von Strings zu ersetzen. Programmierer nutzen sie um flexiblen und lesbaren Code zu schreiben.
 
-Wie funktioniert das in Bash?
+## So geht's:
 
-String-Interpolation in Bash kann auf verschiedene Weisen durchgeführt werden. Hier sind zwei Beispiele:
-
-```Bash
-name="Max"
-echo "Hallo, mein Name ist $name." 
-```
-Output: Hallo, mein Name ist Max.
+In Bash können Sie auf diese einfache Weise Variablen innerhalb von Strings interpolieren:
 
 ```Bash
-year=$(date +%Y)
-echo "Wir leben im Jahr $((year + 1))."
+name="Welt"
+echo "Hallo, $name"
 ```
-Output: Wir leben im Jahr 2022.
+Dieses Skript würde `"Hallo, Welt"` ausgeben.
 
-Tiefere Einblicke
+Oder Sie können Parameter verwenden:
 
-Die Idee der String-Interpolation stammt aus der Programmiersprache Lisp, aber wird in vielen anderen Sprachen verwendet, einschließlich Bash. Eine alternative Methode ist die Konkatenation, bei der Strings aneinandergehängt werden, um eine neue Zeichenkette zu bilden. In Bash gibt es auch die Möglichkeit, Variablen in Strings mit dem "${...}" Format zu suchen.
+```Bash
+read -p "Bitte geben Sie Ihren Namen ein: " name
+echo "Hallo, $name"
+```
 
-Weiterführende Informationen
+## Vertiefung:
 
-Eine umfassende Erklärung zum Thema String-Interpolation in Bash findest du auf der offiziellen Dokumentation: https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html.
+Die Interpolation von Strings ist nicht nur auf Bash beschränkt, sondern findet sich in vielen anderen Programmiersprachen wie Perl und Ruby. Alternativ kann in Bash die `printf` Funktion verwendet werden, um eine Formatierung zu ermöglichen. Zum Beispiel, `printf "Hallo, %s\n" $name`.
 
-Weitere Informationen zum Thema der Variablensubstitution findest du hier: https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion.
+Es ist wichtig sich zu merken, dass eine Variable nicht interpoliert wird, wenn sie in einfachen Anführungszeichen steht:
 
-In diesem Artikel erfährst du mehr über die Entwicklungsgeschichte von Bash: https://www.gnu.org/software/bash/manual/bash.html#Introduction.
+```Bash
+echo 'Hallo, $name'
+```
+
+Dies gibt genau so aus, wie es aussieht: `Hallo, $name`.
+
+## Siehe auch:
+
+Für weitere Information zur String-Interpolation in Bash, siehe:
+
+- [Bash-Handbuch bei GNU](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+- [Advanced Bash-Scripting Guide](http://tldp.org/LDP/abs/html/string-manipulation.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Капіталізування рядка"
-html_title:           "Javascript: Капіталізування рядка"
-simple_title:         "Капіталізування рядка"
+title:                "Перетворення рядка на великі літери"
+html_title:           "Javascript: Перетворення рядка на великі літери"
+simple_title:         "Перетворення рядка на великі літери"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що & Чому?
-Значення увеличення першої букви рядка полягає в тому, щоб змінити першу літеру рядка на велику. Це зазвичай робиться для полегшення сприйняття тексту або для дотримання правильного форматування. Програмісти часто використовують цей метод для кращої читабельності та організації свого коду.
+## Що та чому?
 
-# Як зробити:
+Зміна регістру строк в JavaScript - це процес перетворення першої літери рядка у велику (або 'капіталізація'). Програмісти роблять це, щоб покращити читабельність та дотримуватись конвенцій набору тексту.
+
+## Як це зробити:
+
+Це просто. Ось як ви можете капіталізувати рядок у JavaScript:
+
 ```Javascript
-// Приклад 1:
-var str = "привіт світ!";
-var capitalized = str.charAt(0).toUpperCase() + str.slice(1);
-console.log(capitalized); // Виведе "Привіт світ!"
-
-// Приклад 2:
-var str = "кодування є веселим!";
-var capitalized = str.replace(/\b\w/g, l => l.toUpperCase());
-console.log(capitalized); // Виведе "Кодування Є Веселим!"
+let str = 'hello world';
+let capitalizedStr = str.charAt(0).toUpperCase() + str.slice(1);
+console.log(capitalizedStr);  // Outputs: 'Hello world'
 ```
 
-# Вдеться глибше:
-(1) Історичний контекст: Увеличення першої букви рядка є стандартним методом у більшості мов програмування з метою полегшення читабельності. Також, ця практика виникла в друкуванні та ручному письмі для покращення зрозумілості та запам'ятовуваності тексту.
+Тут ми використовуємо `charAt(0)` для отримання першої літери, а `toUpperCase()` щоб змінити її на велику. Потім ми додаємо решту рядка, використовуючи `slice(1)`.
 
-(2) Альтернативи: Існують різні способи увеличення першої букви рядка, наприклад використання методів toUpperCase() та charAt(), або регулярних виразів.
+## В глибину
 
-(3) Подробиці реалізації: Увеличення першої букви рядка можна здійснити шляхом зміни значення першого символу на його заголовну версію. Також, можна скористатися методом replace() та регулярними виразами для зміни всіх перших букв рядка.
+1. Історичний контекст: JavaScript не має вбудованої функції для капіталізації, тому для цього ми використовуємо комбінацію `charAt()`, `toUpperCase()`, та `slice()`.
 
-# Дивись також:
-- [Навчальне відео про увеличення першої букви рядка в Javascript](https://www.youtube.com/watch?v=7_-XAGTT390)
-- [Документація про методи toUpperCase() та charAt() у Javascript](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
-- [Приклади використання регулярних виразів для увеличення першої букви рядка](https://www.regextester.com/99599)
+2. Альтернативи: Іншим можливим рішенням для JavaScript буде створення прототипу:
+
+```Javascript
+String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+}
+
+let str = 'hello world';
+console.log(str.capitalize()); // Виводить: 'Hello world'
+```
+
+3. Деталі реалізації: Коли ви викликаєте `toUpperCase()` на рядку, він повертає новий рядок, бо JS-рядки є незмінними. 
+
+## Див. також
+
+- [MDN Web Docs: String.prototype.charAt()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- [MDN Web Docs: String.prototype.toUpperCase()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [MDN Web Docs: String.prototype.slice()](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/String/slice)

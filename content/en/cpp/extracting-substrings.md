@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "C++ recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "C++"
 category:             "C++"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Extracting Substrings in C++: What & Why?
 
-Extracting substrings is a common task in programming where a certain portion of a larger string is separated out and stored in a separate variable. This can be useful in various situations such as parsing data, manipulating text, or searching for specific patterns within a string. By breaking down a larger string into smaller substrings, programmers can manipulate and organize data in a more efficient manner.
+Substring extraction is a common operation in C++ where part of a string is selected, often defined by starting index and length. Programmers extract substrings to manipulate specific segments of larger strings - crucial for tasks like parsing data files, coding algorithms, or validating user input.
 
-## How to:
+## How to: Extract Substrings in C++
 
-Extracting substrings can be easily done in C++ using the `substr()` function which takes in two arguments - the starting index and the length of the desired substring. Here's an example of extracting a substring from a string:
-
-```C++
-string name = "John Doe";
-string firstName = name.substr(0,4); // extracts substring starting at index 0 with length 4
-cout << firstName << endl; // output: John
-```
-
-You can also extract substrings from user input using the `cin` function and then manipulate them as needed. For example:
+Here's a simple example to demonstrate substring extraction in C++:
 
 ```C++
-string sentence;
-cout << "Enter a sentence: ";
-cin >> sentence;
+#include <iostream>
+#include <string>
 
-// extracting a specific word from the sentence
-string word = sentence.substr(9,5); // extracts substring starting at index 9 with length 5
-cout << word << endl; // assuming input sentence was "Hello World", output: World
+int main() {
+    std::string str = "Hello, world!";
+    std::string subStr = str.substr(7, 5);
+    std::cout << subStr;
+    return 0;
+}
 ```
 
-## Deep Dive:
+Running this code gives the output: 
 
-The `substr()` function was introduced in C++11 and is part of the `<string>` header library. Before this, programmers had to use the `substr()` function from the C library `string.h` which had a different syntax and was not as efficient. Another alternative to `substr()` is using pointers to manipulate string data, but this can be more complex and error-prone.
+```C++
+world
+```
 
-When extracting a substring, it's important to keep in mind that the index starts at 0 and the length includes the starting character. For example, in the string "Hello World", the index for the letter "W" would be 6 and the length for extracting the word "World" would be 5.
+Here, we've extracted a substring starting from 7th index till 5 characters, which is "world".
 
-## See Also:
+## Deep Dive: Substring Extraction
 
-To learn more about manipulating strings in C++, check out the official documentation on `substr()` function: [cplusplus.com/reference/string/string/substr/](https://www.cplusplus.com/reference/string/string/substr/)
+Historically, C++ has provided robust substring extraction functionality. String manipulation became more straightforward since the introduction of std::string class in C++98 and its `substr()` function. 
 
-You can also explore other string manipulation methods such as `find()`, `replace()`, and `insert()`.
+Although `substr` is commonly used, other alternatives exist for more specific cases. For example, you can use `std::find_first_of()` or `std::find_last_of()` to extract a substring up to or from a specific character. 
 
-Happy coding!
+As for `substr` implementation, it returns a new string object with a copy of the substring. This is significant to note as creating new string objects in a loop can significantly impact your program performance due to memory allocation and deallocation.
+
+## See Also 
+
+To broaden your understanding of C++, check out these related resources:
+
+1. [More about the `std::string` class](http://www.cplusplus.com/reference/string/string/)
+2. [Understanding `std::find_first_of()` & `std::find_last_of()`](http://www.cplusplus.com/reference/string/string/find_first_of/)
+3. [A guide to C++ Strings](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
+4. [More on C++ performance](https://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines#S-performance)

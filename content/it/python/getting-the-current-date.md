@@ -1,6 +1,6 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Python: Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Python"
 category:             "Python"
@@ -10,27 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-La data corrente è semplicemente la data odierna. Spesso i programmatori hanno bisogno di ottenere la data corrente per registrare l'orario di un evento o per gestire scadenze. 
+## Cos'è e Perché?
+La funzione di ottenimento della data corrente è un modo per sapere in quale giorno ci troviamo utilizzando il codice. Questo è particolarmente utile per l'assegnazione di timestamp, la creazione di cronometri o il monitoraggio dell'avanzamento dei processi.
 
-## Come fare:
-Per ottenere la data corrente in Python, è possibile utilizzare il modulo datetime integrato. Ecco un esempio di codice che mostra la data corrente nel formato desiderato:
-```Python
-import datetime
-# Ottieni la data e l'ora corrente
-current_date = datetime.datetime.now()
-# Stampa la data nel formato dd/mm/yyyy
-print(current_date.strftime('%d/%m/%Y'))
-```
-Output:
-```
-15/04/2021
-```
+## Come si fà:
+Ecco un modo semplice per ottenere la data odierna:
+``` Python 
+from datetime import date
 
+oggi = date.today()
+print(oggi)
+```
+Esseguendo questo codice otterrete un risultato del tipo:
+``` Shell
+2022-04-28
+```
 ## Approfondimento:
-Il modulo datetime è stato introdotto nella versione 2.3 di Python ed è considerato uno dei moduli più utili per la gestione del tempo. Tuttavia, esistono anche altri moduli e librerie come time e calendar che possono essere utilizzati per ottenere la data corrente in diversi formati.
-
-## Vedi anche:
-- [Documentazione ufficiale di datetime](https://docs.python.org/3/library/datetime.html)
-- [Tutorial su come utilizzare il modulo datetime in Python](https://www.programiz.com/python-programming/datetime)
-- [Moduli integrati per la gestione del tempo in Python](https://www.geeksforgeeks.org/python-modules-for-time-and-date-manipulation/)
+L'oggetto ```date``` è stato introdotto in Python 2.3 e ha subito diverse migliorie e modifiche da allora. Esistono alternative per ottenere la data attuale, come l'utilizzo della libreria ```time``` o ```pytz``` per ottenere la data corrente con il fuso orario. L'importazione di ```date``` da ```datetime``` è l'opzione più comune perché è semplice, facile da usare e fornisce funzionalità sufficienti per la maggior parte delle necessità.
+ 
+## Vedere Anche:
+Guarda la documentazione del modulo python datetime [qui](https://docs.python.org/3/library/datetime.html) per una panoramica completa delle sue funzionalità. Per informazioni più dettagliate su come lavorare con le date e gli orari in Python, consulta questo [tutorial dettagliato](https://realpython.com/python-datetime/). Paradiso dell'hacker ha anche un [ottimo articolo](https://towardsdatascience.com/working-with-datetime-in-pandas-dataframe-663f7af6c587) che esplora come lavorare con datetime in un dataframe pandas.

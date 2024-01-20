@@ -1,7 +1,7 @@
 ---
-title:                "איתור אורך מחרוזת"
-html_title:           "Haskell: איתור אורך מחרוזת"
-simple_title:         "איתור אורך מחרוזת"
+title:                "מציאת אורך המחרוזת"
+html_title:           "Elm: מציאת אורך המחרוזת"
+simple_title:         "מציאת אורך המחרוזת"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,23 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-למצוא את אורך המחרוזת הוא למצוא את מספר התווים במחרוזת. תהליך זה חשוב למתכנתים בכדי לבדוק שהמחרוזת מכילה את התווים הנדרשים וכן להשתמש באינדיקציה למיקום תווים במחרוזת.
+## מה זה ולמה?
 
-## איך לעשות זאת:
-בקטעי הקוד הבאים ניתן לראות דוגמאות לאיך למצוא את אורך המחרוזת בשפת הפונקציונלית האסקל. ניתן להשתמש בפונקציות כגון `length` או `Data.Text` כדי למצוא את אורך המחרוזת ולקבל את התוצאה כמספר שלם.
+מציאת אורך של מחרוזת היא פעולה שבה אנו מספרים האם כמה תווים יש במחרוזת. מתכנתים יעשו זאת כדי, לדוגמה, לקבוע האם מחרוזת היא ריקה או איננה ריקה, או לבצע ניתוח טקסט.
+
+## איך ל:
+
+ב-Haskell, אנו משתמשים בפונקציה `length` כדי למצוא את אורך מחרוזת. נסתכל על דוגמה:
 
 ```Haskell
-length "פתשגנה"        --Output: 7
-Data.Text.length "פתשגנה"     --Output: 7
+let str = "שלום עולם"
+print(length str)
 ```
 
-## צלילה מקיפה:
-בעבר, חישבנו את אורך המחרוזת על ידי ספירת התווים הנדרשים על ידי כתיבתם ברשימה ולאחר מכן ספירת התווים ברשימה. אולם, זה לא יצר תוצאות טובות כאשר יש רבים תווים או כאשר המחרוזת מכילה תווים ייחודיים. בשפת האסקל ניתן להשתמש בפונקציות יעילות כדי למצוא את אורך המחרוזת בצורה יעילה יותר.
+הפלט של the הקוד הזה יהיה `9`.
 
-## ראו גם:
-למקורות נוספים בנושא אורך מחרוזת ושימוש בשפת האסקל ניתן להסתכל על הלינקים הבאים:
+## שיעור מעמיק: 
+(הקשר היסטורי, אלטרנטיבות, ופרטי מימוש)
 
-- [Haskell Wiki לאורך מחרוזת](https://wiki.haskell.org/Data_type#List_type)
-- [מדריך מקיף לשפת האסקל](http://learnyouahaskell.com/)
-- [פורום המתכנתים של האסקל](https://stackoverflow.com/questions/tagged/haskell)
+על אף שאורך מחרוזת שמעורר התלהבות מינימלית, ההגדרה שלה משחקת תפקיד מרכזי בתיאוריה של מחרוזות ובהגדרת האלגוריתמים שעובדים עמ' הן.
+
+מה בנוגע לאלטרנטיבות? בעצם אפשר לכתוב פונקציה שלך למציאת אורך של מחרוזת:
+
+```Haskell
+stringLength :: String -> Int
+stringLength [] = 0
+stringLength (_:xs) = 1 + stringLength xs
+```
+
+פעולת המימוש של `length` היא win-loss - היא יעילה מבחינת זיכרון כי היא לא צריכה לעמוד על המחרוזת, אך זו קטסטרופה במחשבה אם הערך כבר נמדד, כי הפונקציה זקוקה לרוץ שוב כדי למצוא מחדש את התוצאה.
+
+## קרא גם: 
+
+- [Haskell Wiki - Strings](https://wiki.haskell.org/Strings)
+- [Haskell: The Craft of Functional Programming](https://www.amazon.com/Haskell-Programming-International-Computer-Science/dp/0201882957) - Book that explores string functions and more deeply.
+- [StackOverflow - How is the length function implemented in Haskell?](https://stackoverflow.com/questions/23222472/how-is-the-length-function-implemented-in-haskell) - For a discussion on implementation details.

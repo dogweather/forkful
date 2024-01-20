@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma data em uma string."
-html_title:           "Fish Shell: Convertendo uma data em uma string."
-simple_title:         "Convertendo uma data em uma string."
+title:                "Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
+simple_title:         "Convertendo uma data em uma string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,34 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Conversão de data para string com o Fish Shell
+
 ## O que e por que?
 
-Converter uma data para uma string é um processo em que uma data em um formato específico é transformada em uma sequência de caracteres representando essa data. Isso pode ser útil para exibir datas em um formato mais legível ou para uso em funções de comparação de datas.
+A conversão de data para string refere-se ao processo de transformar um objeto de data em um formato em texto. Programadores geralmente fazem isso para tornar os dados de data mais legíveis, ou para armazenar data de forma eficiente em um banco de dados.
 
-Programadores realizam essa conversão para facilitar a manipulação e visualização de datas em seus códigos. Eles também podem precisar converter datas em strings para atender a requisitos específicos de sistemas ou APIs.
+## Como fazer: 
 
-## Como fazer:
+```fish
+# obter a data e hora atual
+set date (date)
 
-Para converter uma data para uma string em Fish Shell, podemos usar o comando `date` junto com a opção `-s` para especificar o formato desejado. Por exemplo, se quisermos exibir a data atual no formato DD/MM/AAAA, podemos usar o seguinte comando:
-
-```Fish Shell
-date -s "%d/%m/%Y"
+# imprimir a data e hora
+echo $date
 ```
 
-Isso fará com que a saída seja exibida no seguinte formato: 23/12/2021. Podemos alterar o formato conforme necessário, consultando a documentação do comando `date`.
+No Fish Shell, a utilização da função `date` sem argumentos retorna a data e hora atual. A saída padrão é algo como:
 
-É importante notar que o formato utilizado pode variar de acordo com o sistema operacional. Por exemplo, no MacOS podemos usar `date -I` para obter a data atual no formato AAAA-MM-DD.
+```fish
+Sun Sep 26 14:48:34 BST 2021
+```
 
-## Mergulho profundo:
+Para converter em uma string de data no formato desejado, você pode adicionar diversos argumentos ao comando `date`. Por exemplo, para obter a data no formato DD/MM/AAAA:
 
-O processo de converter uma data em uma string tem suas raízes na programação de computadores desde o início. Com o avanço da tecnologia, surgiram várias maneiras de realizar essa conversão, como a biblioteca `strftime` em C ou a função `ToStr` em Pascal.
+```fish
+# obter a data no formato desejado
+set date (date "+%d/%m/%Y")
 
-Além do `date`, também existem outras opções disponíveis em Fish Shell para trabalhar com datas, como o comando `strftime` que também permite a formatação de datas e o uso de operadores lógicos para realizar comparações de datas.
+# imprimir a data obtida
+echo $date
+```
 
-A implementação do comando `date` pode variar de sistema para sistema, mas geralmente utiliza chamadas de sistema do sistema operacional para obter a data atual e, em seguida, a formatação é aplicada usando a biblioteca `strftime`.
+O comando acima retorna uma saída semelhante a:
 
-## Para mais informações:
+```fish
+26/09/2021
+```
 
-- Documentação do comando `date` em Fish Shell: https://fishshell.com/docs/current/cmds/date.html
-- Comparando datas em Fish Shell: https://fishshell.com/docs/current/tutorial.html#tut_dates
-- Biblioteca `strftime` em C: https://www.tutorialspoint.com/c_standard_library/time_h.htm
+## Mergulho profundo
+
+Historicamente, a formatação da data era uma tarefa mais complexa e envolvia mais etapas. No entanto, Fish Shell simplificou esse processo, criando uma função integrada e fácil de usar, a `date`.
+
+Além disso, existem outras alternativas para converter datas em strings, como a utilização de bibliotecas PHP ou JavaScript. No entanto, é importante notar que essas bibliotecas muitas vezes requerem importação e configuração, enquanto a função `date` do Fish Shell é uma utilidade incorporada e não requer nenhuma importação adicional.
+
+Em relação aos detalhes de implementação, a função `date` no Fish Shell é uma implementação de um utilitário Unix de mesmo nome, que tem sido usado por décadas para manipulação de datas. A implementação no Fish Shell segue de perto o comportamento do comando Unix, com algumas melhorias e modificações para tornar o comando mais amigável e fácil de usar.
+
+## Veja também
+
+Para informações adicionais e análises mais detalhadas sobre a função `date`, consulte os seguintes links:
+
+1. [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/)
+2. [Referência do comando Unix 'date'](https://www.unix.com/man-page/posix/date)
+3. [Tutorial do Linuxize sobre o comando 'date'](https://linuxize.com/post/linux-date-command/)

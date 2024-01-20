@@ -1,7 +1,7 @@
 ---
-title:                "Søk og erstatte tekst"
-html_title:           "Kotlin: Søk og erstatte tekst"
-simple_title:         "Søk og erstatte tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,22 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Searching og erstattetekst er essensielle funksjoner i programmering som lar deg finne og bytte ut spesifikke tekster i en kodebase. Dette er viktig for å gjøre kode mer effektiv og for å forenkle endringer og oppdateringer.
+## Hva & Hvorfor?
 
-# Hvordan:
+Å søke og erstatte tekst innebærer finne en spesifikk sekvens av tegn (tekst) og bytte ut denne med en annen, noe som er viktig i programmering for oppretting, manipulasjon og endring av data.
+
+## Hvordan:
+
+Her er hvordan man kan søke og erstatte tekst i Kotlin:
+
+```Kotlin
+fun main() {
+    val tekst = "Hei, verden!"
+    val søkTekst = "verden"
+    val erstatteTekst = "Norge"
+
+    val nyTekst = tekst.replace(søkTekst, erstatteTekst)
+    println(nyTekst) // Utgang: "Hei, Norge!"
+}
 ```
-Kotlin erstatteAlle - fungerer som tallet erstattarAlle.
-Input : (Hello World, World, Kotlin)
-Output : Hello Kotlin
-```
-I eksempelet ovenfor vil alle forekomster av "World" i teksten "Hello World" bli erstattet med "Kotlin". Dette gjør det enkelt å gjøre store endringer i en kodebase uten å måtte gå gjennom alle linjene manuelt.
+Som du ser, brukte vi `replace`-funksjonen for å utføre søk og erstatte operasjonen på en tekststreng.
 
-# Dypdykk:
-Søke og erstatte funksjoner har eksistert siden de første programmeringsspråkene ble utviklet. I eldre språk som C og Java var dette ofte mer krevende og tidskrevende å implementere, men med nye språk som Kotlin har disse funksjonene blitt mer intuitiv og brukervennlig.
+## Dyp Dykk:
+Historisk sett har søk og erstatte tekst vært en kjernefunksjon i programmering siden tidlig dager, brukt for både data manipulasjon og forbedring av brukeropplevelser.
 
-En alternativ metode for å søke og erstatte tekst er med regulære uttrykk (regex), som gir mer avanserte muligheter for å finne og bytte ut tekst. Imidlertid er dette ofte mer komplekst og krever mer kunnskap for å bruke effektivt.
+Alternativt kan du bruke regulære uttrykk (regex) for mer komplekse søk-og-erstatt-operasjoner.
 
-# Se også:
-- [Kotlin String-referanse](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [Bruk av regulære uttrykk i Kotlin](https://www.baeldung.com/kotlin-regex)
+På implementeringsnivå virker `replace`-funksjonen ved å iterere gjennom tekststrengen, matche sekvensen med søketeksten, og erstatter den med erstatningsteksten.
+
+## Se Også:
+
+For mer informasjon om søk og erstatting i Kotlin, besøk disse kildene:
+- [Kotlin Dokumentasjon: String-funksjoner](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
+- [Kotlin Guide: Tekst Manipulasjon](https://www.programiz.com/kotlin-programming/string)
+- [Java8 Eksempler: Regex med Kotlin](https://www.javacodeexamples.com/kotlin-regex-examples/7826)

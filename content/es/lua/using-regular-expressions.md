@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Lua: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Usando expresiones regulares"
+html_title:           "Go: Usando expresiones regulares"
+simple_title:         "Usando expresiones regulares"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,37 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Expresiones regulares en Lua
+
 ## ¿Qué y por qué?
 
-El uso de expresiones regulares en programación se refiere a la utilización de patrones de texto para buscar y manipular cadenas de caracteres. Los programadores utilizan expresiones regulares para simplificar la tarea de búsqueda y reemplazo de un texto específico, lo cual puede ser especialmente útil en proyectos de gran escala.
+Las expresiones regulares son patrones que se utilizan para encontrar ciertas combinaciones de caracteres dentro de una cadena de texto. Los programadores las usan porque pueden simplificar la tarea de buscar, dividir y reemplazar texto.
 
-## Cómo:
+## Cómo hacerlo
 
-El siguiente ejemplo muestra cómo utilizar expresiones regulares en el lenguaje de programación Lua:
+En Lua, utilizamos la biblioteca `string` para trabajar con expresiones regulares. Aquí te dejamos un ejemplo de cómo encontrar y reemplazar texto.
 
 ```Lua
--- Buscar una palabra específica en un texto
-texto = "Este es un texto de ejemplo con la palabra clave"
-palabra = "clave"
-patron = "%w+" .. palabra .. "%w+"
-
-print(string.match(texto, patron)) -- Imprime "palabra clave"
-
--- Reemplazar una palabra por otra en un texto
-nuevo_texto = string.gsub(texto, palabra, "reemplazo")
-print(nuevo_texto) -- Imprime "Este es un texto de ejemplo con la palabra reemplazo"
+text = "¡Hola, mundo!"
+print(string.gsub(text, "mundo", "programador"))
 ```
 
-## Profundizando:
+Salida:
 
-Las expresiones regulares se han utilizado en programación desde la década de 1950 y tienen su origen en la teoría de la computación y la matemática. Aunque Lua no es un lenguaje de programación especializado en expresiones regulares, proporciona una biblioteca estándar para su uso. 
+```
+¡Hola, programador!
+```
 
-Otras alternativas a las expresiones regulares incluyen el uso de funciones específicas para manipular cadenas de caracteres en lugar de patrones de texto, aunque pueden no ser tan versátiles y eficientes en ciertos casos.
+Y aquí un ejemplo de cómo dividir un texto en palabras usando la función `gmatch`.
 
-La implementación de expresiones regulares en Lua se basa en la biblioteca de patrones de texto POSIX, y acepta los mismos metacaracteres que otros lenguajes de programación, como el punto para representar cualquier carácter y el asterisco para representar cero o más ocurrencias de un patrón.
+```Lua
+text = "programación en Lua"
+for word in string.gmatch(text, "%a+") do
+   print(word)
+end
+```
 
-## Ver también:
+Salida:
 
-- [Documentación oficial de Lua sobre expresiones regulares](https://www.lua.org/manual/5.3/manual.html#6.4.1)
-- [Tutorial de expresiones regulares en Lua](https://www.tutorialspoint.com/lua/lua_regular_expressions.htm)
-- [Libro "Programming in Lua" (en inglés) que incluye una sección sobre expresiones regulares](https://www.lua.org/pil/20.1.html)
+```
+programación
+en
+Lua
+```
+
+## Profundización
+
+Las expresiones regulares se utilizan desde los inicios de las ciencias de la computación. Si bien Lua no ofrece soporte completo para expresiones regulares como Perl o Python, su conjunto de funciones en la biblioteca `string` es suficiente para tareas básicas de procesamiento de texto.
+
+Existen bibliotecas de terceros como `lrexlib` y `lua-aho-corasick` que ofrecen una mayor funcionalidad si necesitas un análisis más complejo.
+
+La implementación de las expresiones regulares en Lua es más eficiente en términos de memoria y rendimiento en comparación con otros lenguajes de scripting, lo cual hace de Lua una elección sólida para el procesamiento de texto en aplicaciones con recursos limitados.
+
+## Ver también
+
+Puedes aprender más sobre el manejo de cadenas de caracteres y expresiones regulares en Lua en los siguientes recursos:
+
+- [Manual de referencia de Lua](http://www.lua.org/manual/5.3/)
+- [Programación en Lua](http://www.lua.org/pil/)
+- [Biblioteca de cadenas de Lua](http://lua-users.org/wiki/StringLibraryTutorial)

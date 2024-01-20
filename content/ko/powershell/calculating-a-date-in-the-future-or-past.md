@@ -1,7 +1,7 @@
 ---
-title:                "미래나 과거 날짜 계산하기"
-html_title:           "PowerShell: 미래나 과거 날짜 계산하기"
-simple_title:         "미래나 과거 날짜 계산하기"
+title:                "미래 또는 과거의 날짜 계산하기"
+html_title:           "PowerShell: 미래 또는 과거의 날짜 계산하기"
+simple_title:         "미래 또는 과거의 날짜 계산하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며, 왜?: 
+## 무엇과 왜?
+날짜를 미래나 과거로 계산하는 것은 특정 시점에서 이동한 시간을 측정하는 프로세스입니다. 프로그래머들은 이를 사용하여 경과된 시간을 추적하거나 후속 이벤트를 예측합니다.
 
-먼저, 일정한 날짜를 미래나 과거로 계산하는 것은 일반적인 프로그래밍 작업입니다. 프로그래머들은 이런 계산을 활용하여 특정 날짜에 따른 작업을 수행하고, 날짜와 시간 기반의 프로그램을 만들 수 있습니다.
+## 이렇게 하세요:
 
-## 하는 방법: 
-
-PowerShell은 매우 강력한 날짜 계산 기능을 가지고 있습니다. 예를 들어, 7일 후의 날짜를 계산하려면 `Get-Date` 명령어와 `AddDays` 메서드를 사용합니다. 아래 예시를 참고하세요.
+PowerShell에서 미래나 과거의 날짜를 계산하는 방법을 알아보겠습니다.
 
 ```PowerShell
-(Get-Date).AddDays(7)
+# 현재 날짜 가져오기
+$now = Get-Date
+# 일주일 후의 날짜 계산
+$nextWeek = $now.AddDays(7)
+
+# 출력
+Write-Output "지금은 $now 입니다."
+Write-Output "일주일 후는 $nextWeek 입니다."
 ```
 
-결과는 다음과 같이 나옵니다.
-```
-Monday, January 11, 2021 12:50:34 PM
-```
+이 스크립트를 실행하면 현재 날짜와 7일 후의 날짜가 출력됩니다.
 
-이외에도 PowerShell에서는 다양한 날짜 계산 메서드를 제공합니다. `AddYears`, `AddMonths`, `AddHours` 등의 메서드를 사용하여 특정 날짜에 대한 연산을 수행할 수 있습니다. 자세한 내용은 매뉴얼을 참고하세요.
+## 깊이 분석:
 
-## 더 알아보기: 
+데이터의 과거 또는 미래를 계산하는 것은 컴퓨터 프로그래밍의 역사와 동시에 시작된 기능 중 하나입니다. 이로 인해 프로그래머들은 예측과 추적을 편리하게 수행할 수 있는 도구를 손에 넣게 되었습니다.
 
-날짜 계산은 프로그래밍이나 컴퓨팅 분야에서 중요한 역할을 합니다. 미래나 과거 날짜로 계산하는 방법은 크게 두 가지로 나뉘게 됩니다. 첫 번째는 달력을 사용하는 방법이고, 두 번째는 숫자 차이를 계산하는 방법입니다. PowerShell에서도 두 가지 방법을 모두 제공합니다.
+이와 같은 프로세스에는 여러 가지 방법이 있을 수 있습니다. 타임스탬프를 사용하여 직접 계산을 수행하거나, `DateTime` 객체의 기능을 활용해 날짜와 시간을 조작하는 방법입니다.
 
-예를 들어, 2020년 1월 1일부터 2020년 12월 31일까지의 총 일 수를 알고 싶다면 `New-TimeSpan` 명령어를 사용하여 날짜 간의 차이를 계산할 수 있습니다. 또는 특정 달의 첫 번째 날을 찾고 싶다면 `Get-Date` 명령어와 `AddDays` 메서드를 사용하여 계산할 수 있습니다.
+PowerShell에서는 `DateTime` 객체를 사용하여 날짜와 시간 조작을 간편하게 수행할 수 있습니다. "AddDays" 메서드를 이용하면 원하는 만큼의 날짜를 더하거나 빼는 것이 가능합니다.
 
-더 자세한 내용은 관련된 문서와 매뉴얼을 참고하세요.
+## 참고 자료:
 
-## 더 알아보기: 
+다음 링크에서 PowerShell 및 날짜 및 시간 조작에 대한 더 자세한 정보를 얻을 수 있습니다.
 
-PowerShell의 날짜 계산 기능은 프로그래밍에 있어서 매우 중요합니다. 자세한 내용을 알고 싶다면 아래 링크를 확인해보세요. 
-
-- 매뉴얼: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/add-days?view=powershell-7
-- 블로그: https://devblogs.microsoft.com/scripting/use-powershell-to-add-x-number-of-days-to-a-date/
-
-원문 링크: https://docs.microsoft.com/ko-kr/powershell/
+- [PowerShell 공식 문서](https://docs.microsoft.com/ko-kr/powershell/)
+- [System.DateTime 공식 문서](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-5.0)
+- [날짜 및 시간을 조작하는 PowerShell 스크립트](https://devblogs.microsoft.com/scripting/manipulating-dates-and-times-in-powershell/)

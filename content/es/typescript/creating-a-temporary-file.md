@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "TypeScript: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## ¿Qué y por qué?"
-Crear un archivo temporal es una forma común para que los programadores almacenen temporalmente información en sus aplicaciones. Esto se hace para evitar la sobrecarga de almacenar datos en un lugar permanente, lo que puede llevar a una disminución en el rendimiento del sistema.
+## ¿Qué y por qué?
+Crear un archivo temporal implica generar un archivo para almacenamiento transitorio e intercambio de datos. Como programadores, hacemos esto para gestionar grandes cantidades de información, especialmente en operaciones que requieren manejo de memoria eficiente.
 
-"## Cómo:"
-Un ejemplo sencillo de cómo crear un archivo temporal en TypeScript es utilizando la biblioteca incorporada "fs" y la función "writeFileSync". Esto se puede hacer de la siguiente manera:
+## ¿Cómo se hace?
+TypeScript, a diferencia de Node.js, no tiene una función incorporada para crear archivos temporales. Sin embargo, podemos hacer uso de paquetes externos como `tmp-promise`. Asegúrate de instalarlo con `npm install tmp-promise`.
 
+Aquí tenemos un ejemplo simple:
+```typescript
+import { file } from 'tmp-promise';
+
+async function createTempFile() {
+    const { path, fd } = await file({ prefix: 'myTemp-', postfix: '.txt' });
+    console.log(path); // imprime la ruta al archivo temporal en consola
+}
+
+createTempFile();
 ```
-import fs from 'fs';
+La salida será la ruta al archivo temporal creado.
 
-fs.writeFileSync('archivoTemporal.txt', 'Este es un archivo temporal');
-```
+## Profundizando
+TypeScript, lanzado en 2012, es en realidad un superconjunto de JavaScript que agrega tipos estáticos a la lengua. Por tanto, al igual que JavaScript, no ofrece una solución directamente integrada para crear archivos temporales.
 
-Esto crea un archivo de texto llamado "archivoTemporal.txt" con el contenido "Este es un archivo temporal". También se pueden especificar opciones adicionales, como el modo de archivo y los permisos.
+En cuanto a las alternativas, además de `tmp-promise`, puedes considerar el uso de `tempy` y `temp`. Ambos ofrecen interfaces promesas, y `temp` también ofrece un método de seguimiento para limpiar todos los archivos temporales creados al final de tu programa.
 
-"## Más detalles:"
-La creación de archivos temporales es una práctica común en la programación, y se ha utilizado durante mucho tiempo para almacenar datos intermedios en aplicaciones. Sin embargo, existen alternativas a la creación de archivos temporales, como el uso de variables de memoria o bases de datos en la nube.
+En cuanto a cómo funciona, `tmp-promise` y similares utilizan funciones de bajo nivel del sistema operativo para generar nombres de archivos únicos. Estos archivos se crean en directorios designados para el almacenamiento temporal en tu sistema.
 
-En términos de implementación, la creación de archivos temporales implica la asignación de espacio en el disco duro y la generación de un nombre único para el archivo. La eliminación del archivo también es importante para evitar el desbordamiento de disco y mantener la integridad del sistema.
-
-"## Mira también:"
-- [Documentación de Node.js sobre fs](https://nodejs.org/api/fs.html)
-- [Artículo sobre el uso de archivos temporales en TypeScript](https://www.digitalocean.com/community/tutorials/how-to-create-temporary-files-in-node-js-using-the-fs-module)
+## Más información
+- Documentación oficial de `tmp-promise`: https://www.npmjs.com/package/tmp-promise
+- Alternativas como `tempy`: https://www.npmjs.com/package/tempy y `temp`: https://www.npmjs.com/package/temp
+- Para entender a fondo cómo el sistema operativo maneja los archivos temporales, prueba el sistema de archivos `fs` de Node.js: https://nodejs.org/api/fs.html

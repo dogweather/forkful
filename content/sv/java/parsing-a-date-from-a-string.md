@@ -1,7 +1,7 @@
 ---
-title:                "Parsera ett datum från en sträng"
-html_title:           "Java: Parsera ett datum från en sträng"
-simple_title:         "Parsera ett datum från en sträng"
+title:                "Analysera ett datum från en sträng"
+html_title:           "Kotlin: Analysera ett datum från en sträng"
+simple_title:         "Analysera ett datum från en sträng"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,25 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att "parsa" ett datum från en sträng handlar om att konvertera en textsträng till ett datumobjekt i Java. Detta är en vanlig uppgift för programmerare när de arbetar med data som innehåller datuminformation, till exempel vid hantering av tidsstämplar eller formatering av användarinput. 
+## Vad och Varför?
 
-## Så här gör du:
-För att utföra parsning av ett datum från en sträng i Java, kan du använda metoden ".parse()" från klassen "SimpleDateFormat". Nedan finns ett exempel där en sträng representerande ett datum (i formatet "dd/mmm/yyyy") parsas och sedan skrivs ut på konsolen: 
+Att parsa ett datum från en sträng innebär att omvandla en textrepresentation av ett datum till ett programmerbart object. Programmerare gör detta för att kunna hantera och manipulera datumvärden i sina kodrutiner.
 
+## Hur gör man:
+
+Här är ett grundläggande exempel:
 ```Java
-SimpleDateFormat sdf = new SimpleDateFormat("dd/MMM/yyyy");
-String dateString = "15/jan/2020";
-Date date = sdf.parse(dateString);
-System.out.println(date);
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+  public static void main(String[] args) {
+    String date = "2023-04-01";
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+    
+    LocalDate parsedDate = LocalDate.parse(date, formatter);
+    System.out.println(parsedDate); // 2023-04-01
+  }
+}
 ```
+I koden ovan skapar vi en DateFormatter med det önskade datummönstret ('yyyy-MM-dd') och använder sedan `LocalDate.parse()` för att konvertera en sträng till ett LocalDate-objekt. Koden printar ut date-objektet som en sträng.
 
-Output: 
-```Thu Jan 15 00:00:00 EST 2020```
+## Djupdykning
 
-## Djupdykning:
-Parsning av datum från strängar har funnits i Java sedan JDK 1.1, och används ofta tillsammans med klassen "Date" för att hantera datum och tidsstämplar. Det finns också flera andra sätt att utföra parsning av datum i Java, till exempel med hjälp av "DateTimeFormatter" från "java.time" paketet som introducerades i Java 8 för att hantera tidsrelaterade uppgifter på ett förbättrat sätt.
+Historiska kontext: I tidiga versioner av Java användes `SimpleDateFormat`-klassen för att parsa datumsträngar. Modernare versioner har dock infört `DateTimeFormatter`, som är mer trådsäker och flexibel.
 
-## Se även:
-- Java Date and Time API: https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html
-- Java SimpleDateFormat: https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html
+Alternativ: Java tillåter också parsning av datumsträngar med hjälp av `Instant.Parse()` eller `ZonedDateTime.Parse()` beroende på användarens behov.
+
+Implementeringsdetaljer: Funktionen `parsec()` är inte begränsad till förinställda format. Användare kan ange sitt eget format i `DateTimeFormatter`.
+
+## Se också:
+
+1. [DateTimeFormatter dokumentation](http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+2. [Tutorial på Oracle](https://docs.oracle.com/javase/tutorial/datetime/iso/format.html)
+3. [How to Convert String to Localdate in Java](https://www.callicoder.com/java-string-to-localdate-example/) - Ett exempel på datestängar parsning i Java på Callicoder.

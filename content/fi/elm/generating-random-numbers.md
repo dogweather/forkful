@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaisten numeroiden generointi"
-html_title:           "Elm: Satunnaisten numeroiden generointi"
-simple_title:         "Satunnaisten numeroiden generointi"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä & Miksi?
-Satunnaislukujen generointi tarkoittaa lukujen luomista, jotka eivät seuraa peräkkäistä järjestystä tai kaavaa. Tätä tehdään usein ohjelmoinnissa sattumanvaraisen tai arvaamattoman toiminnan luomiseksi.
+## Mikä & Miksi?
 
-Miksi ohjelmoijat tekevät sitä? Satunnaislukujen generointi on hyödyllistä esimerkiksi peleissä, simulaatioissa tai kaikissa ohjelmissa, jotka tarvitsevat sattumanvaraisen toiminnan elementin.
+Satunnaislukujen generointi tarkoittaa satunnaisten arvojen tuottamista tietokoneohjelmointiympäristössä. Ohjelmoijat tarvitsevat niitä simulaatioihin, testaukseen, pelien luomiseen ja salaustarkoituksiin.
 
-Miten teet sen:
+## Miten:
+
+Elmissa satunnaislukujen luominen tapahtuu Random -moduulin avulla. Tässä yksinkertainen esimerkki:
+
 ```Elm
 import Random
 
---generoi kokonaisluku välillä 1-10
-Random.int 1 10
---output: 6
+arvoNoppaa : Random.Generator Int
+arvoNoppaa =
+  Random.int 1 6
+
+main =
+  Random.generate identity arvoNoppaa
 ```
 
-Voit myös käyttää seediä, jotta saat aina saman satunnaisluvun.
-```Elm
-Random.initialSeed 42
-    |> Random.int 1 10
---output: 4
-```
+Suorittaessasi tämän Elk-ohjelman, konsoliin tulostuu satunnainen luku väliltä 1-6.
 
-Syvemmälle:
-Satunnaislukujen generointi ei ole uusi konsepti. Se oli ensimmäisen kerran esitelty vuonna 1946 Bell Labsin tutkijoiden julkaisemassa artikkelissa. Alternatiivina Elmille, voit käyttää muita kieliä, kuten JavaScript, joka sisältää myös satunnaislukujen generoinnin toiminnon.
+## Syvempi sukellus:
 
-Jos olet kiinnostunut tarkemmista yksityiskohdista, Elm käyttää satunnaislukujen luomiseen XorShift-algoritmia, joka on nopea ja luotettava tapa generoida satunnaislukuja.
+Satunnaislukujen generoinnin historia ulottuu 1940-luvulle, jolloin ensimmäiset digitaaliset tietokoneet kehitettiin. Elmissä satunnaislukuja generoidaan pseudosatunnaisesti, joka tarkoittaa, että ne voivat näyttää satunnaisilta, mutta ne seuraavat itse asiassa ennustettavaa kaavaa.
 
-Katso myös:
-- [Elm Random -dokumentaatio](https://package.elm-lang.org/packages/elm/random/latest/)
-- [Satunnaislukujen generointi JavaScriptillä](https://www.w3schools.com/js/js_random.asp)
+Vaihtoehtoja:
+
+- Elm tarjoaa myös `Random.float`-funktion, jolla voidaan tuottaa liukulukuja.
+
+Yksityiskohdat:
+
+- Elm-kielellä satunnaislukujen luonti vaatii random-seedit. Niitä ei voi luoda puhtaassa funktionaalisessa ympäristössä, joten Elm antaa sinun luoda seedit käyttämällä `Random.initialSeed`.
+
+## Katso myös:
+
+- Elm-ohjelmointikielen [Random -moduulin dokumentaatio](http://package.elm-lang.org/packages/elm-lang/core/5.0.0/Random)
+- [Ymmärrä, kuinka tietokoneet tuottavat satunnaislukuja](https://en.wikipedia.org/wiki/Random_number_generation)
+- [Pseudosatunnaislukugeneraattoreiden historia ja tekniikat](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "TypeScript: Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,43 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Invio di una richiesta HTTP con autenticazione di base in TypeScript
+## Che cos'è e perché?
 
-## Cos'è e perché farlo?
-
-L'invio di una richiesta HTTP con autenticazione di base è un modo per garantire la sicurezza e l'accesso controllato ad un server web. Questo tipo di autenticazione richiede l'inclusione di credenziali di accesso nella richiesta, solitamente un nome utente e una password. I programmatori utilizzano questo metodo per verificare l'identità dell'utente e consentire l'accesso ai dati protetti sul server.
+L'invio di una richiesta HTTP con autenticazione di base è un metodo mediante il quale i nostri programmi possono richiedere e comunicare dati da e verso i server web. I programmatori utilizzano questa tecnica per accedere a risorse protette, come API che necessitano di credenziali per l'accesso, in modo sicuro e semplice.
 
 ## Come fare:
 
-Per inviare una richiesta HTTP con autenticazione di base in TypeScript, è necessario innanzitutto specificare l'URL del server a cui si sta facendo la richiesta. È possibile farlo utilizzando la funzione `fetch` di TypeScript, che prende come primo argomento l'URL e restituisce una promessa contenente la risposta del server. 
-
-Ecco un esempio di codice che invia una richiesta ad un server con autenticazione di base e stampa la risposta:
+Ecco un esempio su come inviare una richiesta HTTP con autenticazione di base utilizzando Axios, una libreria di TypeScript molto popolare:
 
 ```TypeScript
-let serverURL = "https://example.com/api/data";
-let username = "utente";
-let password = "password";
+import axios from 'axios';
 
-fetch(serverURL, { 
-    headers: {
-        "Authorization" : "Basic " + btoa(username + ":" + password)
-    }
+axios({
+  method: 'get',
+  url: 'http://your-url.com',
+  auth: {
+    username: 'username',
+    password: 'password'
+  }
 })
-.then(response => {
+  .then(response => {
     console.log(response);
-});
+  })
+  .catch(error => {
+    console.log(error);
+  });
 ```
 
-La funzione `btoa` viene utilizzata per codificare le credenziali in base64, come richiesto dall'autenticazione di base.
+In questo esempio, 'username' e 'password' rappresentano le tue credenziali d'accesso. L'URL è dove vuoi inviare la richiesta.
 
-## Approfondimenti:
+## Approfondimento
 
-In passato, l'autenticazione di base era uno dei metodi più comuni per proteggere i server web, ma oggi è considerata meno sicura rispetto ad altri metodi come l'autenticazione a due fattori o l'utilizzo di protocolli di sicurezza come TLS. Tuttavia, può ancora essere una buona opzione per applicazioni interne o per i casi in cui la sicurezza non è una grande preoccupazione.
+Storicamente, l'autenticazione basica era un modo comune per gestire le autorizzazioni, perché è semplice da implementare. Tuttavia, trasmette le credenziali come testo non criptato (Base64), rendendolo sconsigliato per la produzione senza un protocollo HTTPS.
 
-Se si prevede di utilizzare l'autenticazione di base, è importante prendere in considerazione le implicazioni di sicurezza e gli eventuali rischi associati. Inoltre, esistono anche altri metodi di autenticazione che potrebbero essere più adatti per la vostra applicazione.
+Un'alternativa all'autenticazione di base è l'autenticazione basata su token, come JWT (JSON Web Token). Mentre l'autenticazione di base richiede che le credenziali siano inviate con ogni richiesta, JWT invia un token di accesso, che può essere controllato e memorizzato più sicuro e facilmente per le successive richieste.
 
-È importante anche capire come il server gestisce le richieste con autenticazione di base e cosa accade se le credenziali non sono valide. In caso di problemi, il server restituirà uno stato HTTP 401 (Non autorizzato) che indica che le credenziali non sono state accettate.
+L'implementazione dell'autenticazione di base in TypeScript con Axios avviene configurando l'oggetto `auth` all'interno dell'oggetto `axios()`. Tieni presente che le tue credenziali verranno inviate con ogni richiesta HTTP, quindi assicurati di gestirle in modo sicuro.
 
-## Vedi anche:
+## Vedi anche
 
-Per ulteriori informazioni su come utilizzare TypeScript per gestire le richieste HTTP, puoi consultare la documentazione ufficiale di TypeScript sulla funzione `fetch` e sull'API di rete. Inoltre, puoi esplorare altri metodi di autenticazione e come gestire la sicurezza delle tue applicazioni web.
+- [Axios su Github](https://github.com/axios/axios)
+- [Autenticazione HTTP su MDN (Mozilla Developer Network)](https://developer.mozilla.org/it/docs/Web/HTTP/Authentication)
+- [JWT (JSON Web Token) sito ufficiale](https://jwt.io/)

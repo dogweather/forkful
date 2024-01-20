@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som sammenfaller med et mønster"
-html_title:           "Bash: Sletting av tegn som sammenfaller med et mønster"
-simple_title:         "Sletting av tegn som sammenfaller med et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,25 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sletting av tegn som matcher et mønster, er en vanlig praksis blant programmører for å manipulere tekstfiler og data. Dette gjøres vanligvis for å filtrere ut uønsket eller unødvendig informasjon.
+Slette karakterer som passer til et mønster er en måte å filtrere ut uønskede elementer i data på. Programmerere gjør det for å rense og manipulere input mer nøyaktig og effektivt.
 
-## Slik gjør du:
-Her er to eksempler på hvordan du kan slette tegn som matcher et mønster ved hjelp av Bash-programmering:
+## Hvordan:
+For å slette karakterer som passer til et mønster i Bash, bruker vi `tr -d` kommando.
 
 ```Bash
-# Eksempel 1: Slette alle tall fra en tekstfil
-sed 's/[0-9]//g' filnavn.txt
-
-# Eksempel 2: Slette alle vokaler fra en setning
-grep -o '[^aeiou]' setning.txt
+echo "Hallo Verden 123" | tr -d '123'
 ```
+Utdata vil være: 
+```Bash
+Hallo Verden 
+```
+Her har vi brukt `tr` med `-d` flag for å slette de gitte karakterene ('123') fra inputstrengen ("Hallo Verden 123").
 
-For eksempel, hvis vi kjører eksempel 1 på en tekstfil som inneholder "Hei 123, dette er en test", vil outputen bli "Hei , dette er en test". Og ved å kjøre eksempel 2 på setningen "Dette er en test", vil outputen bli "Dtt r n tst".
 
-## Dypdykk:
-Sletting av tegn som matcher et mønster ble først introdusert i Unix-programmeringsspråket. I tillegg til Bash, er det også mulig å gjøre dette ved hjelp av andre programmeringsspråk som Perl og Python. Fordelen med å bruke Bash er at det er et kraftig og fleksibelt språk som er installert på de fleste operativsystemer.
+## Dypdykk
 
-## Se også:
-- [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Bash scripting for beginners](https://linuxconfig.org/bash-scripting-tutorial-for-beginners)
+Slette karakterer som passer til et mønster har røtter tilbake til tidlig Unix-tid. Det tilbyr en effektiv og rett på sak måte å håndtere tekst og data manipulering. 
+
+Alternativet til `tr -d` er å bruke `sed`, en annen kraftig stream editor for filtrering og transformasjon av tekst.
+
+```Bash
+echo "Hallo Verden 123" | sed 's/[123]//g'
+```
+Dette gir samme resultat.
+
+Hvordan `tr -d` fungerer bak kulissene avhenger av det spesifikke operativsystemet og Bash-versjonen. Generelt sett søker det gjennom inputstrengen, tegn for tegn, og ignorerer alle tegn som matcher det gitte mønsteret.
+
+## Se Også
+1. GNU `tr` man side: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+2. `sed` kommando i Linux: https://www.geeksforgeeks.org/sed-command-in-linux-unix-with-examples/
+3. Bash Scripting Guide: https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html

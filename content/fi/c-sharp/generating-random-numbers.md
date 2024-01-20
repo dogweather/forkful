@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen generointi"
-html_title:           "C#: Satunnaislukujen generointi"
-simple_title:         "Satunnaislukujen generointi"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Satunnaislukujen tuottaminen C#-ohjelmointikielellä 
 
-Satunnaislukujen generoiminen on tärkeä osa ohjelmointia, sillä se mahdollistaa satunnaisuuden ja vaihtelun luomisen ohjelmien toimintaan. Ohjelmoijat käyttävät satunnaislukuja esimerkiksi peleissä ja simulaatioissa, joissa halutaan eri tuloksia jokaisella suorituskerralla.
+## Miksi & Mitä?
+Satunnaislukujen luominen tarkoittaa arvaamattomien numeroiden generointia. Ohjelmoijat tekevät tämän simuloidakseen sattumanvaraisuutta ohjelmissa, esimerkiksi arpoessaan palkintoja tai luodessaan testidataa.
 
-## How to:
+## Näin teet:
+Voit luoda satunnaislukuja C#-kielellä käyttämällä `Random`-luokkaa. Alla on esimerkki:
 
-Jos haluat generoida satunnaislukuja C# -ohjelmassa, sinun tulee käyttää Random-luokkaa ja sen Next-metodia. Esimerkiksi seuraava koodi generoi satunnaisen kokonaisluvun väliltä 1-10 ja tulostaa sen konsoliin:
+```C#
+using System;
 
+class Program
+{
+    static void Main()
+    {
+        Random r = new Random();
+        int x = r.Next(0, 100);
+        Console.WriteLine("Satunnainen luku väliltä 0-100: " + x);
+    }
+}
 ```
-Random random = new Random();
-int randomNumber = random.Next(1, 11);
-Console.WriteLine(randomNumber); // voi vaihdella välillä 1-10
-```
+Kun suoritat tämän koodin, saat tulostuksena satunnaisen numeron väliltä 0-100.
 
-## Deep Dive:
+## Syväsukellus:
+**Historiallinen Konteksti:** Satunnaislukujen generointi on ollut tietokoneohjelmoinnin keskeinen osa jo varhaisista päivistä lähtien. Alun perin tämä liittyi pääasiassa peliohjelmointiin ja kryptografiaan.
 
-Satunnaislukujen generoimisen historia juontaa juurensa jo 1900-luvun alkupuolelle, mutta sen yleistyminen ohjelmointikielessä tapahtui vasta 1950-luvulla. Nykyään useimmissa ohjelmointikielissä on valmiita kirjastoja satunnaislukujen generoimiseen.
+**Vaihtoehdot:** `Random`-luokan lisäksi voit käyttää `RNGCryptoServiceProvider`-luokkaa luomaan krypto- vahvistettuja satunnaislukuja.
 
-On myös olemassa muita tapoja generoida satunnaislukuja kuin Random-luokan avulla. Esimerkiksi voit käyttää Guid-luokkaa, joka tuottaa uniikkeja satunnaisia merkkijonoja. Voit myös käyttää ulkoisia kirjastoja, kuten Numerical Recipes, jotka tarjoavat erilaisia satunnaislukugeneraattoreita.
+**Toteutuksen yksityiskohdat:** `Random`-luokka perustuu pseudo-satunnaisgeneraattorin algoritmiin, joka tuottaa pitkän sarjan numeroita, jotka näyttävät olevan satunnaisia ja arvaamattomia.
 
-Satunnaislukujen generoiminen ei ole täysin satunnainen prosessi, vaan luvut luodaan tietyn algoritmin avulla. Jotkut algoritmit ovat toisia parempia ja tuottavat tasaisemmin ja näennäisesti satunnaisempia lukuja.
-
-## See Also:
-
-- [Random-luokan dokumentaatio](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=netcore-3.1)
-- [Numerical Recipes -kirjaston sivu](https://www.nr.com/)
-- [Satunnaislukujen generoimisen historia](https://arxiv.org/abs/1205.4475)
+## Katso myös:
+- [Microsoftin virallinen dokumentaatio `Random`-luokasta](https://docs.microsoft.com/fi-fi/dotnet/api/system.random?view=net-5.0)
+- [Ohjelmoijan pikaopas generaattoreiden käyttöön](https://blog.submain.com/guide-random-number-generators-csharp/)
+- [Microsoftin artikkeli satunnaislukujen tuottamisesta krypto- vahvistetulla tavalla](https://docs.microsoft.com/fi-fi/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)

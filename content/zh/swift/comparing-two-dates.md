@@ -1,6 +1,6 @@
 ---
 title:                "比较两个日期"
-html_title:           "Swift: 比较两个日期"
+html_title:           "Clojure: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,24 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是日期比较？为什么程序员需要它？
-日期比较是指将两个日期进行对比，以确定它们的先后顺序或相距多长时间。程序员需要进行日期比较是因为在开发中经常需要处理日期，比如在项目管理、日程安排和数据分析等方面。
+## 什么和为什么？
+比较两个日期是检查两个日期值在日历上的相对位置的过程。程序员之所以需要进行这一操作，是因为在处理像日程安排、计时器活动、事件比较等功能时，需要根据时间进行操作或决策。
 
-## 如何进行日期比较：
-在Swift中，可以使用```Calendar```和```DateComponents```来比较两个日期。下面是一个示例代码，比较两个日期是否相等：
+## 如何做：
+在Swift中，我们可以使用`compare()`函数或`==`,`<`,`>`,`<=`,`>=`等比较运算符来比较两个日期。下面是一些示例：
+
+```Swift
+import Foundation
+
+let dateFormatter = DateFormatter()
+dateFormatter.dateFormat = "yyyy/MM/dd HH:mm"
+
+let date1 = dateFormatter.date(from: "2020/08/20 13:45")!
+let date2 = dateFormatter.date(from: "2020/08/20 15:30")!
+
+if date1.compare(date2) == .orderedAscending {
+    print("date1 is earlier than date2")
+} else if date1.compare(date2) == .orderedDescending {
+    print("date1 is later than date2")
+} else {
+    print("date1 and date2 are the same")
+}
 ```
-let calendar = Calendar.current
-let date1 = Date()
-let date2 = Date(timeIntervalSinceNow: 3600) // 生成一个距当前时间一小时的日期
-let isEqual = calendar.isDate(date1, equalTo: date2, toGranularity: .hour)
-print(isEqual) // 输出结果为false
+如果日期1早于日期2，输出将是："date1 is earlier than date2"。
+
+## 深度剖析
+在早期的编程语言中，日期并未被设立为一个特定的数据类型，程序员需要通过字符串或数字、列表等复杂的方式去存储和操作日期。
+
+随后，提出了专门用于日期和时间的数据类型，使得日期比较变得更为方便。Swift在这方面做得尤其出色，为日期比较提供了诸多方便且强大的工具。
+
+除了使用`compare()`函数以外，Swift还提供了`timeIntervalSince(aDate: Date)`方法，可以用来计算两个日期之间的时间间隔。
+
+```Swift
+let interval = date1.timeIntervalSince(date2)
+print("The interval between date1 and date2 is \(interval) seconds.")
 ```
+你也可以使用`Calendar`来比较两个日期的特定组件，例如年份、月份、天数等。
 
-## 深入探讨：
-日期比较在计算机编程中已经有很长的历史，早在1957年就有人提出了比较两个日期的方法，在不同的编程语言中也有不同的实现方式。除了使用```Calendar```和```DateComponents```，在Swift中也可以使用```Date```类的`compare`方法来比较两个日期的先后顺序。在实现日期比较时，还需要考虑时区、夏令时等因素。
-
-## 查看更多：
-如果想要进一步了解日期比较的相关知识，可以参考以下链接：
-- [Swift官方文档](https://developer.apple.com/documentation/swift)
-- [NSDate和NSDateComponents的使用](https://www.hackingwithswift.com/example-code/system/how-to-compare-dates)
-- [日期处理相关知识](https://www.raywenderlich.com/160-minutes/lessons-for-swift-beginners-part-3-date-and-night-mode)
+## 参考文献
+- [Apple: Date](https://developer.apple.com/documentation/foundation/date)
+- [Apple: Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- [Swift by Sundell: Working with dates in Swift](https://www.swiftbysundell.com/basics/dates/)

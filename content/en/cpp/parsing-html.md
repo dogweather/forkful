@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "C++ recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "C++"
 category:             "C++"
@@ -12,51 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML is the process of analyzing and extracting data from HTML documents. It is especially useful for web developers who need to programmatically extract specific information from a website's source code. By parsing HTML, programmers can automate tasks such as data scraping, web crawling, and web page manipulation.
+Parsing HTML involves analyzing an HTML document to understand its structure. Programmers parse HTML to access or modify web content programmatically using coding languages like C++.
 
 ## How to:
 
-To parse HTML in C++, we will use a popular library called libxml2. This library allows us to easily read and manipulate HTML documents. Below is a basic example of how to use libxml2 to parse HTML:
+Let's parse HTML using a fantastic lib `gumbo-parser` in C++. The steps might look like:
+
+1. Install 'gumbo-parser': `apt-get install libgumbo-dev`
 
 ```C++
-#include <libxml/HTMLparser.h>
-#include <libxml/xpath.h>
+#include <stdio.h>
+#include <gumbo.h>
 
-// read the HTML document into a DOM tree
-htmlDocPtr html_doc = htmlReadFile("example.html", NULL, HTML_PARSE_NOERROR | HTML_PARSE_NOWARNING);
+void parse_html(const std::string& html)
+{
+    GumboOutput* output = gumbo_parse(html.c_str());
 
-// create an XPath evaluation context
-xmlXPathContextPtr xpath_ctx = xmlXPathNewContext(html_doc);
+    // your operations...
 
-// evaluate an XPath expression to find all <a> tags
-xmlXPathObjectPtr xpath_obj = xmlXPathEvalExpression("//a", xpath_ctx);
-
-// loop through the results and print out the text of each <a> tag
-for (int i = 0; i < xpath_obj->nodesetval->nodeNr; i++) {
-    xmlNodePtr node = xpath_obj->nodesetval->nodeTab[i];
-    cout << xmlNodeGetContent(node) << endl;
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
-
-// free the memory used by the XPath objects
-xmlXPathFreeObject(xpath_obj);
-xmlXPathFreeContext(xpath_ctx);
-
-// free the DOM tree
-xmlFreeDoc(html_doc);
 ```
 
-The above code will print out the text of all <a> tags in the HTML document. You can also use libxml2 to modify the HTML document, such as adding or removing elements.
+2. Use C++ to call `gumbo_parse()`, giving it your HTML. It returns `GumboOutput* output`.
+```C++
+std::string html = "<html><body>Hello World!</body></html>";
+GumboOutput* output = gumbo_parse(html.c_str()); // parse the HTML.
+```
+
+3. Traverse the `output` tree to access the parsed HTML content.
+```C++
+GumboNode* html_node = output->root;
+```
+
+Gumbo destroys the output to prevent memory leaks!
+```C++
+gumbo_destroy_output(&kGumboDefaultOptions, output);
+```
+
+Run that C++ code, and HTML is now accessible!
 
 ## Deep Dive
 
-Parsing HTML has been a critical part of web development since the early days of the internet. Before the widespread use of libraries like libxml2, developers had to manually parse HTML using regular expressions, which was a tedious and error-prone process. Parsing HTML has also become increasingly important in the era of web scraping and data analysis, as it allows programmers to easily access and extract data from web pages.
+Parsing HTML as a practice has been around since the web's inception. HTML's hierarchical tree-like structure makes traversal and content manipulation possible.
 
-While libxml2 is a popular choice for parsing HTML in C++, there are other libraries and tools available such as Boost.PropertyTree and the C++ HTML Parser. These alternatives may offer different features and performance, so it's worth exploring them to find the best fit for your project.
+`gumbo-parser` is a C implementation by Google, compliant with the HTML5 specification. Alternatively, programmers utilize libs like `htmlcxx` C++ library, the Python-based BeautifulSoup, or `Jsoup` in Java.
 
-In terms of implementation details, libxml2 uses SAX (Simple API for XML) parsing, which reads through the HTML document in a linear manner, making it efficient for large documents. It also has integrated error handling and support for XPath expressions, making it a robust choice for parsing HTML.
+Performing HTML parsing in C++ attraction lies in its high-performance potential, however, managing memory manually in C++ can be tricky and lead to potential leaks if not handled correctly.
 
 ## See Also
 
-- [libxml2 documentation](http://xmlsoft.org/html/libxml-HTMLparser.html)
-- [Boost.PropertyTree](https://www.boost.org/doc/libs/1_76_0/doc/html/property_tree.html)
-- [C++ HTML Parser](https://github.com/lexborisov/HTMLParser)
+To learn more about parsing HTML in C++ and the gumbo-parser library:
+
+1. Official Documentation: <https://github.com/google/gumbo-parser>
+2. HTML parsing in C++: <https://stackoverflow.com/questions/686041/recommendation-for-html-parsing-library-for-c-and-or-c>
+3. The gumbo-parser API: <https://docs.rs/crate/gumbo-parser/0.1.4>

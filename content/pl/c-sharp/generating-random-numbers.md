@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "C#: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O co & dlaczego?
-Generowanie losowych liczb jest jednym z podstawowych zadań programistycznych. W skrócie, polega ono na tworzeniu sekwencji liczb w sposób losowy. Programiści często wykorzystują ten proces do symulacji przypadkowych zdarzeń lub do zabezpieczenia aplikacji, np. przez generowanie losowych haseł.
+Tituł: Generowanie liczb losowych w języku C#
 
-## Jak to zrobić:
+## Co i Dlaczego? (What & Why?)
+
+Generowanie liczb losowych to proces tworzenia ciągu liczb, których wystąpienie jest nieprzewidywalne. Programiści to robią, aby dodawać element losowości do swoich aplikacji, czy to w grach, symulacjach czy bezpieczeństwie danych.
+
+## Jak to zrobić: (How to:)
+
+W C# generowanie liczb losowych jest proste, dzięki wbudowanej klasie `Random`. Poniżej znajduje się prosty przykład.
+
 ```C#
-// Przykładowy kod generujący losową liczbę całkowitą z przedziału 1-10
-Random rnd = new Random();
-int randomNumber = rnd.Next(1, 11);
-Console.WriteLine(randomNumber);
+using System;
 
-// Przykładowy kod generujący losowy łańcuch znaków o długości 8
-Random rnd = new Random();
-const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-string randomString = new string(Enumerable.Repeat(chars, 8).Select(s => s[rnd.Next(s.Length)]).ToArray());
-Console.WriteLine(randomString);
+class Program
+{
+    static void Main()
+    {
+        Random randNumberGenerator = new Random();
+        int randomNum = randNumberGenerator.Next(1, 100);  // Generuje liczbę losową między 1 a 100
+        Console.WriteLine(randomNum);
+    }
+}
 ```
-Przykłady te wykorzystują klasę `Random` z przestrzeni nazw `System`, która pozwala na generowanie liczb losowych w programie. Metoda `Next()` pozwala na ustalenie przedziału, z którego ma zostać wylosowana liczba, a metoda `ToArray()` pozwala na przekonwertowanie wygenerowanych znaków na ciąg znaków.
+Kiedy uruchomisz ten kod, dostaniesz na wyjściu losową liczbę między 1 a 100. Wypróbuj sam!
 
-## W głąb:
-Generowanie losowych liczb jest ważną częścią programowania od początków tej dziedziny. Jedną z pierwszych metod generowania liczb w sposób losowy była metoda tzw. *randomizer gears*, która wykorzystywała zegary mechaniczne. Obecnie istnieją również inne metody generowania liczb pseudolosowych, które są szybsze i bardziej skuteczne, np. algorytm Mersenne Twister.
+## Dogłębna analiza (Deep Dive)
 
-Aby zapewnić większe bezpieczeństwo w aplikacjach, programiści wykorzystują również specjalne funkcje skrótu, takie jak SHA-1 lub SHA-2, do generowania losowych liczb. Szyfrowanie tych liczb jest utrudnieniem dla hakera i przeciwdziała złamaniu danych.
+**Kontekst historyczny:** Wcześniej generowanie liczb losowych było trudniejsze i wymagało skomplikowanych algorytmów, ale z czasem języki programowania ułatwiły ten proces.
 
-## Zobacz również:
-- Dokumentacja Microsoft dla klasy `Random`: https://docs.microsoft.com/pl-pl/dotnet/api/system.random?view=net-5.0
-- Informacje o algorytmie Mersenne Twister: https://pl.wikipedia.org/wiki/Mersenne_Twister
+**Alternatywy:** Możesz użyć różnych metod do generowania liczb losowych w C#, na przykład:
+`RNGCryptoServiceProvider` daje bardziej losowe liczby, ale jest wolniejszy od klasy `Random`.
+
+**Szczegóły implementacji:** Klasa `Random` w C# korzysta z algorytmu pseudolosowego, co oznacza, że liczby wydają się losowe, ale powtarzając program z tym samym ziarnem losowości (`seed`), wygenerowane liczby będą takie same.
+
+## Zobacz też (See Also):
+
+- https://docs.microsoft.com/pl-pl/dotnet/api/system.random?view=net-5.0: dokładne informacje na temat klasy `Random` w .NET 5.0 
+- https://en.wikipedia.org/wiki/Pseudorandom_number_generator: Więcej informacji na temat generatorów liczb pseudolosowych
+- https://docs.microsoft.com/pl-pl/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0: Dokumentacja `RNGCryptoServiceProvider` w .NET 5.0

@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una stringa in minuscolo"
-html_title:           "Swift: Convertire una stringa in minuscolo"
+html_title:           "Arduino: Convertire una stringa in minuscolo"
 simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,29 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Convertire una stringa in minuscolo è il processo di trasformare ogni lettera in una stringa in una minuscola, ovvero una lettera di alfabeto più piccola. I programmatori spesso eseguono questa operazione per uniformare il formato del testo o per effettuare confronti di stringhe senza considerare le maiuscole e le minuscole.
+## Che cosa & Perché?
+
+La conversione di una stringa in lettere minuscole è un'operazione comune nella programmazione. Questo perché ci permette di gestire l'input dell'utente in maniera più semplice e prevedibile, scongiurando qualsiasi errore dovuto a differenze di capitalizzazione.
 
 ## Come fare:
+
+Ecco un semplice esempio di come convertire una stringa in lettere minuscole in Swift:
+
 ```Swift
-let stringa = "Swift è un linguaggio di programmazione"
-let stringaInMinuscolo = stringa.lowercased()
-print(stringaInMinuscolo)
+let testo = "Ciao Mondo"
+let testoMinuscolo = testo.lowercased()
+print(testoMinuscolo)
+// Output: "ciao mondo"
 ```
-**Output:**
-swift è un linguaggio di programmazione
+Questo codice converte il testo "Ciao Mondo" in "ciao mondo", quindi lo stampa.
 
-## Approfondimento:
-Ci sono molte ragioni per cui potresti voler convertire una stringa in minuscolo. Uno dei motivi può essere quello di fare corrispondere una stringa in un database con un input dell'utente, soprattutto se l'utente ha inserito il testo senza prestare attenzione alle maiuscole e alle minuscole.
-Inoltre, nei sistemi non case-sensitive, la conversione in minuscolo garantisce il corretto funzionamento delle operazioni di ricerca o di confronto di stringhe.
+## Approfondimento
 
-**Alternative:**
-In alcuni casi, potrebbe essere necessario convertire una stringa in maiuscolo anziché in minuscolo. In questo caso, si può usare il metodo ```uppercased ()```.
-Oppure, se si lavora con i caratteri Unicode, ci sono altre opzioni disponibili per la conversione di stringhe in maiuscolo o minuscolo che tengano conto dei caratteri accentati.
+- Contesto storico: Funzioni per convertire stringhe in lettere minuscole esistono da quando le prime librerie di manipolazione delle stringhe sono state create. Queste funzioni sono pensate per facilitare le operazioni su testo e per garantire coerenza nel trattamento dei dati.
 
-**Dettagli Implementativi:**
-Il metodo ```lowercased ()``` è un metodo della classe String in Swift che restituisce una copia della stringa originale con tutti i caratteri in minuscolo. Questo metodo non modifica la stringa originale, ma ne crea una nuova.
-Nella versione più recente di Swift, esiste anche il metodo ```localizedLowercase``` per la conversione dei caratteri di una stringa in minuscolo in base alle impostazioni regionali specifiche.
+- Alternative: Swift fornisce altri metodi per gestire le stringhe, come `uppercased()` per convertire la stringa in lettere maiuscole, o `capitalized` per capitalizzare ogni parola nel testo.
+
+- Dettagli di implementazione: La funzione `lowercased()` di Swift non modifica la stringa originale (gli oggetti di tipo String in Swift sono immutabili). Invece, crea una nuova stringa con le lettere convertite in minuscolo.
 
 ## Vedi Anche:
-Per ulteriori informazioni su stringhe e conversione di case in Swift, consulta la documentazione ufficiale di Apple su [String](https://developer.apple.com/documentation/swift/string) e [Character Properties](https://developer.apple.com/documentation/swift/character-properties).
+
+- Documentazione di Swift: [String](https://developer.apple.com/documentation/swift/string)
+- Swift Standard Library: [lowercased()](https://developer.apple.com/documentation/swift/string/2997127-lowercased)

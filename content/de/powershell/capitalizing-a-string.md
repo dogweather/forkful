@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenkette großschreiben"
-html_title:           "PowerShell: Eine Zeichenkette großschreiben"
-simple_title:         "Eine Zeichenkette großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "PowerShell: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# PowerShell: String-Transformation - Wie man Strings in Großbuchstaben umwandelt
+
 ## Was & Warum?
 
-Eine Zeichenkette (englisch: string) zu verwenden, meint, eine Folge von Zeichen zu benutzen, um einen Text darzustellen. "Alles in Großbuchstaben schreiben" bedeutet, alle Zeichen einer Zeichenkette in Großbuchstaben zu verwandeln. Entwickler tun dies aus verschiedenen Gründen, zum Beispiel um eine einheitliche Formatierung zu gewährleisten oder um die Lesbarkeit des Codes zu verbessern.
+Das Umwandeln eines Strings in Großbuchstaben, auch als Capitalizing bekannt, ist eine gängige Operation in der Textbearbeitung. Programmierer nutzen dies, um die Lesbarkeit zu verbessern oder um Textvergleiche unempfindlich gegenüber Groß- und Kleinschreibung zu gestalten.
 
-## Wie geht es?
+## Anleitung:
+
+In PowerShell geschieht dies mittels der `.ToUpper()` Funktion. Hier ist ein einfaches Beispiel:
 
 ```PowerShell
-# Ein Beispiel einer Zeichenkette
-$myString = "Hallo, Welt!"
-
-# Alle Zeichen in Großbuchstaben umwandeln
-$myString.ToUpper()
-
-# Ausgabe: HALLO, WELT!
+$var = "hallo welt"
+$upperCaseVar = $var.ToUpper()
+Write-Host $upperCaseVar
 ```
 
-## Tiefblick
+Die Ausgabe davon wäre:
 
-Früher konnten nur bestimmte Zeichen in einem Computer dargestellt werden, daher war die Verwendung von Groß- und Kleinschreibung wichtig, um unterschiedliche Symbole zu unterscheiden. In heutigen Programmiersprachen, wie auch in PowerShell, ist die Groß- und Kleinschreibung in der Regel egal. Es gibt jedoch immer noch Gründe, warum Entwickler Zeichenketten großschreiben, z.B. um bestimmte Aktionen wie Suchen oder Vergleichen zu erleichtern.
+```PowerShell
+HALLO WELT
+```
 
-## Siehe auch
+## Deep Dive:
 
-Weitere Informationen über Zeichenketten und deren Verarbeitung in PowerShell finden Sie hier:
-- Offizielle Microsoft-Dokumentation: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_String_Manipulation?view=powershell-7.1
-- Tutorials und Beispiele: https://www.tutorialspoint.com/powershell/powershell_string_methods.htm
-- Eine kurze Übersicht über die wichtigsten Zeichenketten-Methoden in PowerShell: https://www.tutorialspoint.com/powershell/powershell_string_methods.htm
+Das Capitalizing von Strings hat lange Tradition und kann bis zu den Anfängen der Textverarbeitungsystems zurückverfolgt werden. Es gibt Alternativen wie zum Beispiel die Funktion `.ToLower()`, die alle Zeichen eines Strings in Kleinbuchstaben umwandelt. Diese hilft ebenfalls dabei, Textvergleiche durchzuführen, die unempfindlich gegenüber Groß- und Kleinschreibung sind. Bei der Implementierung von `.ToUpper()` in PowerShell handelt es sich eigentlich um eine Methode des String-Typs im .NET Framework, das die Grundlage für PowerShell bildet.
+
+## Siehe auch:
+
+- [PowerShell-String-Manipulationsmethoden](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_string?view=powershell-7.1)
+- [.NET Framework String.ToUpper Methode](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
+- [PowerShell Grundlagen für die Textverarbeitung](https://4sysops.com/archives/powershell-string-manipulation-guide/)

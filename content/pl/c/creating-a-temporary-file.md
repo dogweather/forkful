@@ -1,7 +1,7 @@
 ---
-title:                "Tworzenie pliku tymczasowego"
-html_title:           "C: Tworzenie pliku tymczasowego"
-simple_title:         "Tworzenie pliku tymczasowego"
+title:                "Tworzenie tymczasowego pliku"
+html_title:           "C#: Tworzenie tymczasowego pliku"
+simple_title:         "Tworzenie tymczasowego pliku"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,51 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i dlaczego?
 
-Tworzenie pliku tymczasowego to proces, w którym programista tworzy plik, który istnieje tylko czasowo i jest używany do przechowywania danych lub wyników w trakcie wykonywania programu. Programiści często tworzą tymczasowe pliki, aby uniknąć modyfikacji lub przejścia przez wiele kroków, które mogą być potrzebne do wykonania danej czynności.
+Tworzenie pliku tymczasowego to operacja zapisania danych do pliku, który nie jest przeznaczony do długotrwałego przechowywania. Programiści robią to, aby tymczasowo przechować dane i zapewnić ich bezpieczeństwo podczas pracy programu.
 
-## Jak to zrobić:
+## Jak to zrobić?
 
-### Przykład 1:
+Przykład kodu, który tworzy plik tymczasowy, wygląda tak:
+
 ```C
 #include <stdio.h>
-
+ 
 int main() {
-    FILE *temp_file = tmpfile(); //tworzenie tymczasowego pliku
-    fprintf(temp_file, "To jest tymczasowy plik\n");
-    fputs("zawierający dane\n", temp_file);
-    fclose(temp_file); //zamykanie pliku
+    char temp_filename[] = "/tmp/fileXXXXXX";
+    int fd = mkstemp(temp_filename);
+ 
+    if (fd == -1) {
+        perror("Nie można utworzyć pliku tymczasowego");
+        return 1;
+    }
+ 
+    printf("Plik tymczasowy: %s\n", temp_filename);
+ 
+    // Zrob coś z plikiem...
+ 
+    close(fd);
+ 
     return 0;
 }
 ```
-**Output:**
-Tymczasowy plik będzie zawierał tekst "To jest tymczasowy plik" oraz "zawierający dane".
 
-### Przykład 2:
+Przykładowe wyjście programu:
+
 ```C
-#include <stdio.h>
-
-int main() {
-    FILE *temp_file = fopen("temp.txt", "w+"); //tworzenie pliku tymczasowego o nazwie "temp.txt"
-    fputs("To jest tymczasowy plik", temp_file);
-    fseek(temp_file, 0, SEEK_SET); //ustawianie wskaźnika na początek pliku
-    char buffer[50];
-    fscanf(temp_file, "%s", buffer); //czytanie zawartości pliku i zapisanie jej w buforze
-    printf("%s\n", buffer); //wypisywanie zawartości bufora
-    fclose(temp_file); //zamykanie pliku
-    return 0;
-}
+Plik tymczasowy: /tmp/filea7b8c9
 ```
-**Output:**
-Tymczasowy plik "temp.txt" będzie zawierał tekst "To jest tymczasowy plik" i zostanie wypisany na ekran.
 
-## Głębsze nurkowanie:
+## Dogłębne omówienie
 
-Tworzenie tymczasowego pliku jest praktykowane od dawna, gdyż zapewnia wiele korzyści. Głównym powodem jest uniknięcie zaburzenia istniejących plików lub zmiany danych, które mogą być potrzebne do późniejszego wykorzystania. Alternatywą dla tworzenia tymczasowego pliku może być użycie pamięci podręcznej, jednak może to być mniej wydajne. Implementacja tworzenia tempfile w języku C jest zależna od systemu operacyjnego, ale ogólnie korzysta z funkcji fopen() i fclose().
+Historia: Pliki tymczasowe mają swoje korzenie w UNIX-ie, gdzie były one stosowane w wielu sytuacjach związanych z zarządzaniem danymi.
 
-## Zobacz również:
+Alternatywy: Inna funkcja, która tworzy plik tymczasowy, to tmpnam, ale jest ona uważana za niebezpieczną, ponieważ może prowadzić do luki bezpieczeństwa, znanego jako „sygnalizacja wyścigu”.
 
-[Funkcja tmpfile() w języku C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+Szczegóły implementacji: Funkcja 'mkstemp' tworzy unikalny plik tymczasowy z prawami dostępu rw-------. Zwraca deskryptor pliku i zmienia templatę wejściową na nazwę pliku.
 
-[Główna strona języka C](https://www.cprogramming.com/)
+## Zobacz także
+
+- 'man 3 mkstemp' - pełny opis funkcji i jej zastosowań.
+- Książka "Programowanie w języku ANSI C" - Brian W. Kernighan, Dennis M. Ritchie
+- [C Programming/Files - Wikibooks]("https://en.wikibooks.org/wiki/C_Programming/Files")
+- [Creating Temporary Files securely - GNU C Library]("https://www.gnu.org/software/libc/manual/html_node/Temporary-Files.html")

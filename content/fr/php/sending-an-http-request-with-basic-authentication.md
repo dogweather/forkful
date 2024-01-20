@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "PHP: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Envoyer une requête HTTP avec une authentification de base est un moyen pour les programmeurs de se connecter à un serveur distant et d'accéder à des données protégées. Cela peut être utile lorsque vous travaillez sur une application qui nécessite l'accès à des informations sensibles telles que des données utilisateurs.
+L'envoi d'une requête HTTP avec authentification de base est une technique pour accéder aux ressources protégées d'un site web. Les développeurs l'utilisent pour maintenir la sécurité tout en interagissant avec les API web.
 
 ## Comment faire :
 
+Voici un simple exemple d'envoi d'une requête HTTP avec authentification de base utilisant l'extension PHP cURL :
 ```PHP
-// Utilisation de la fonction curl_init pour initialiser la session
-$ch = curl_init();
+<?php
+$curl = curl_init();
 
-// Définition de l'URL de destination
-curl_setopt($ch, CURLOPT_URL, "www.exemple.com/api/protected_data");
+curl_setopt($curl, CURLOPT_URL, "https://example.com");
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+curl_setopt($curl, CURLOPT_USERPWD, "username:password");
 
-// Ajout des informations d'authentification de base au header de la requête
-curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Basic ' . base64_encode("username:password")));
-
-// Exécution de la requête
-$result = curl_exec($ch);
-
-// Fermeture de la session
-curl_close($ch);
-
-// Affichage des données protégées
+$result = curl_exec($curl);
+if(!$result){
+    die("Error: ".curl_error($curl));
+}
+curl_close($curl);
 echo $result;
+?>
 ```
+Le résultat de ce script sera la réponse du serveur à votre requête HTTP.
 
 ## Plongée en profondeur :
 
-L'authentification de base est l'une des méthodes les plus anciennes pour sécuriser les transmissions de données entre un client et un serveur. Elle est basée sur l'échange d'un nom d'utilisateur et d'un mot de passe en clair, qui sont ensuite encodés en utilisant le codage base64. Bien qu'elle soit facile à mettre en place, cette méthode n'est pas considérée comme très sécurisée car les informations d'authentification peuvent être facilement interceptées.
+Historiquement, l'authentification de base HTTP a été proposée avec la spécification HTTP/1.0 comme une méthode simple pour contrôler l'accès aux ressources web.
 
-Des alternatives plus avancées telles que l'authentification digest ou l'utilisation de tokens sont maintenant couramment utilisées pour plus de sécurité.
+Comme alternative, vous pourriez envisager l'authentification Digest, les jetons d'authentification Bearer ou même l'authentification OAuth2, selon le niveau de sécurité requis.
+
+Lorsque vous envoyez une requête HTTP avec authentification de base en PHP, le nom d'utilisateur et le mot de passe sont transmis en clair, encodés en Base64, ce qui n'est pas une méthode hautement sécurisée. Il est fortement recommandé de les utiliser sur une connexion HTTPS.
 
 ## Voir aussi :
 
-- [Documentation officielle de PHP sur cURL](https://www.php.net/manual/fr/book.curl.php)
-- [Article sur les différentes méthodes d'authentification HTTP](https://www.pingidentity.com/en/company/blog/posts/2014/http-basic-authentication.html)
-- [Exemples de requêtes HTTP avec authentification de base en PHP](https://www.php.net/manual/fr/function.curl-setopt.php#example-3840)
+1. [Documentation officielle PHP cURL](https://php.net/manual/en/book.curl.php)
+2. [Authentification HTTP sur MDN Web docs](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)
+3. [Méthodes d'authentification sécurisée alternatives](https://oauth.net/2/)
+4. [Base64 sur Wikipedia](https://fr.wikipedia.org/wiki/Base64)

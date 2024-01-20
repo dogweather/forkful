@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Kotlin recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,34 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Debugging is a crucial part of programming, where developers track down and fix errors in their code. Printing debug output is a technique used by programmers to display information in the console during runtime, helping them understand the state of their program and locate any potential issues.
 
-## How to:
-To print debug output in Kotlin, we use the ```println()``` function, which stands for "print line". It takes a parameter or multiple parameters enclosed in parentheses and displays their values. Here's an example code:
+Printing debug output represents the process of displaying intermediate code results, primarily for code debugging. Programmers do it to track, understand and fix the behavior of their code during runtime.
 
-```Kotlin
+## How To:
+
+In Kotlin, we use the `println()` function to print debug output. See below:
+
+```kotlin
 fun main() {
-    val name = "John"
-    val age = 27
-    println("Name: $name, Age: $age")
+    val numbers = listOf(1, 2, 3, 4, 5)
+
+    for (number in numbers) {
+        println("Number: $number")
+    }
 }
 ```
 
-Output:
+The above example generates the following output:
+
 ```
-Name: John, Age: 27
+Number: 1
+Number: 2
+Number: 3
+Number: 4
+Number: 5
 ```
 
-## Deep Dive:
-Printing debug output has been a common practice among programmers since the early days of software development. It allows developers to inspect the inner workings of their code, see the values of variables, and trace the flow of execution.
+## Deep Dive
 
-An alternative to printing debug output is using a debugger tool, which provides a more interactive and in-depth analysis of code. However, printing debug output is still preferred by many developers due to its simplicity and ease of use.
+Printing debug output has a long history, originating from the earliest days of programming. Even as debugging tools have evolved, direct output remains a staple debugging technique.
+ 
+In Kotlin, you can toggle debug output with conditional compilation flags or at runtime using `if(DEBUG)`. Additionally, remember that `println()` can impact performance in intensive loops, and to remove debug outputs in production code to avoid leaking sensitive data.
 
-In Kotlin, the ```println()``` function is implemented as an extension function on the ```Any``` type. This means that every type in Kotlin can access the ```println()``` function, making it a versatile tool for printing debug output.
+If you need advanced logging, consider using a dedicated logging library like `Log4j2` or `SLF4j`. These provide options for levels of logging (DEBUG, INFO, WARN, etc.), and output to various locations (console, file, remote).
 
-## See Also:
-To learn more about debugging in Kotlin, check out the official documentation on [debugging and testing](https://kotlinlang.org/docs/tutorials/debugging.html).
+Also, using `toString()` on objects/classes you've defined can help with debugging. Normally, it will just output the class name and its hashcode. However, you can override this to display helpful properties such as this:
 
-For more tips on how to effectively debug your code, take a look at this article on [debugging techniques](https://medium.com/@marcopegolotti/8-debugging-techniques-for-efficient-developers-138739e60f7f).
+```kotlin
+class User (val name: String, val age: Int) {
+    override fun toString() = "User(name=$name, age=$age)"
+}
+```
 
-Happy debugging! 🚀
+## See Also
+
+- Debugging in IntelliJ idea: https://www.jetbrains.com/help/idea/debugging-your-first-java-application.html 
+- Kotlin documentation: https://kotlinlang.org/docs/home.html 
+- Log4j2: https://logging.apache.org/log4j/2.x/

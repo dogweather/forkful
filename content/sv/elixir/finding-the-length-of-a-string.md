@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden på en sträng"
-html_title:           "Elixir: Att hitta längden på en sträng"
-simple_title:         "Att hitta längden på en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,19 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hitta längden på en sträng innebär att räkna antalet tecken i en sträng. Detta är en vanlig uppgift för programmerare eftersom det hjälper till att manipulera och hantera text data på ett effektivt sätt.
+
+Att hitta längden på en sträng innebär att räkna antalet tecken det innehåller. Som programmerare gör vi detta för att hantera data mer effektivt och göra korrekthetskontroll av input.
 
 ## Hur man gör:
-Elixir har en inbyggd funktion för att hitta längden på en sträng, kallad ```String.length(str)```. Detta returnerar antalet tecken i strängen "str". Här är ett exempel:
 
+Använd `String.length/1`-funktionen så här:
+
+```elixir
+IO.puts String.length("Hej, världen") 
 ```
-iex> String.length("Hej världen")
-11
+
+Koden ovan kommer att skriva ut `12`, som är antalet tecken i strängen `"Hej, världen"`.
+
+## Djupdykning
+
+Historiskt sett använder många programmeringsspråk en approach där varje tecken representeras av ett fast antal bytes. Men Elixir, en Unicode-kompatibel språk, tar en annan approach.
+
+Alternativt kan grafemfunktionen `String.graphemes/1` användas för att räkna antalet grafemer istället för kodpunkter. Notera dock att det tar längre tid än `String.length/1`:
+
+```elixir
+IO.puts String.length("hejä") 
 ```
 
-## Djupdykning:
-Att hitta längden på en sträng kan göra det möjligt att utföra flera operationer på en sträng, som att spara varje tecken i en array eller att jämföra två strängar. Andra programmeringsspråk kan ha olika metoder för att hitta längden på en sträng, såsom indexering eller inbyggda funktioner. Implementationen av funktionen ```String.length(str)``` i Elixir är optimerad för snabbhet och effektivitet när det gäller att hitta längden på en sträng.
+Resultatet kommer att bli `4`, medan det blir `5` om du använder `byte_size/1` eftersom "ä" tar upp två bytes i UTF-8. 
 
-## Se också:
-- [Elixir's official documentation](https://elixir-lang.org/getting-started/basic-types.html#strings)
-- [GeeksforGeeks article on finding length of a string in Elixir](https://www.geeksforgeeks.org/finding-the-length-of-a-string-in-elixir/)
+Funktionen `String.length/1` i Elixir är baserat på UTF-8 kodade binärer och fungerar genom att iterera över den binära representationen av strängen och räkna kodpunkter, inte den faktiska bytestorleken.
+
+## Se också
+
+1. Officiellt dokument för [String-modul](https://hexdocs.pm/elixir/String.html).
+
+2. Djupare förståelse för [UTF-8 kodning](https://unicode.org/faq/utf_bom.html).
+
+3. Elixir-forumtråd om när man använder [byte_size mot string_length](https://elixirforum.com/t/byte-size-vs-string-length/12032).

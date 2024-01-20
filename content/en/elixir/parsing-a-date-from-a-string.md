@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Elixir recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,43 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing a Date from a String: An Elixir Guide
+# Parsing Dates from Strings in Elixir
 
 ## What & Why?
 
-Parsing a date from a string is about transforming a string, e.g. "2020-12-30", into a structured Date object. Programmers do this to process, manipulate, and use date data in their code in a more convenient and accurate manner.
+Parsing a date from a string is simply converting a readable date-time written in the form of a text string into a standard Date-Time format that a computer can understand and manipulate. Programmers do this for tasks such as sorting dates, calculating time intervals, or formatting dates in different styles.
 
-## How to:
+## How To:
 
-Let's get straight to how you can get this done in Elixir.
+Here's how you can use Elixir's built-in `Date` module to parse a date string:
 
-```elixir
-iex> {:ok, date} = Date.from_iso8601("2022-05-14")
-{:ok, ~D[2022-05-14]}
-
-iex> date
-~D[2022-05-14]
+```Elixir
+iex> {:ok, date} = Date.from_iso8601("2022-01-01")
+{:ok, ~D[2022-01-01]}
 ```
 
-`Date.from_iso8601/1` is a built-in function in Elixir that transforms an ISO8601 date string into a date struct.
+In this example above, we're parsing an ISO8601 formatted date string. If the string is not a valid ISO8601 date, `Date.from_iso8601/1` will return `{:error, :invalid_format}`.
 
-Notice when the string isn't a valid ISO8601 date, it'll return an error tuple:
-
-```elixir
-iex> {:error, reason} = Date.from_iso8601("Not a date")
+```Elixir
+iex> Date.from_iso8601("2022/01/01")
 {:error, :invalid_format}
 ```
 
+If parsing of the date string was successful, then you can use the date in further operations. For instance:
+
+```Elixir
+iex> date.day
+1
+```
+
+This will return the day of the parsed date.
+
 ## Deep Dive
 
-Elixir's approach to date parsing is inspired by the Erlang/OTP's robustness principle - programs should be "liberal in what they accept and conservative in what they send". Using simple and explicit tuple forms, `{:ok, result}` or `{:error, reason}` for results is a distinctive and robust feature in Elixir.
+Historically, date parsing was not always straightforward in Elixir because of the lack of built-in functions. Developers had to rely on external libraries like Timex. However, with the introduction of the `Date` module in Elixir 1.3, such tasks became much simpler.
 
-You have alternatives for parsing dates like using the `Timex` library if you're dealing with complex date formats. However, for standard ISO8601 dates, Elixir's built-in `Date.from_iso8601/1` function is sufficient.
+There are alternatives to `Date.from_iso8601/1` like `Date.new/3` where you pass the year, month, and day as arguments to get a `Date` struct. It's more cumbersome to use, but it gives you more control.
 
-Parsing dates from strings in Elixir is straightforward but remember it depends heavily on the input data being in the correct format. Always validate your input string before using it.
+As for the implementation, `Date.from_iso8601/1` first checks the format of the date string. If it's valid, the function separates the year, month, and day components and constructs a `Date` struct. If the format is invalid, it returns `{:error, :invalid_format}`.
 
-## See Also
+## See Also 
 
-- Elixir's [official documentation on Date](https://hexdocs.pm/elixir/Date.html)
-- [Robustness Principle](https://en.wikipedia.org/wiki/Robustness_principle)
-- [Parsing Dates with Timex in Elixir](https://hexdocs.pm/timex/Timex.html#parse/2)
+- [The Elixir `Date` module documentation](https://hexdocs.pm/elixir/Date.html)
+- [Guide to Date and Time in Elixir](https://codingmindfully.com/elixir-date-time-guide/) 
+- [Mastering DateTime in Elixir](https://medium.com/@cblavier/mastering-datetime-in-elixir-1-elixir-datetime-basics-b9307d0b2fb2)

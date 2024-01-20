@@ -1,7 +1,7 @@
 ---
-title:                "Sändning av en http-förfrågan"
-html_title:           "Fish Shell: Sändning av en http-förfrågan"
-simple_title:         "Sändning av en http-förfrågan"
+title:                "Skicka en http-förfrågan"
+html_title:           "Javascript: Skicka en http-förfrågan"
+simple_title:         "Skicka en http-förfrågan"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -12,36 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att skicka ett HTTP-anrop innebär att be om information från en annan dator via nätverket. Detta är en vanlig uppgift för programmerare eftersom det möjliggör kommunikation och datautbyte mellan olika applikationer och servrar.
+Att skicka en HTTP-begäran är helt enkelt att begära data från en annan server via HTTP-protokollet. Programmerare gör detta för att interagera med webbtjänster och API:er för att hämta, skapa, uppdatera eller ta bort data.
 
-## Hur man:
+## Hur Man:
 
-Skicka ett HTTP-anrop med Fish Shell är enkelt och kan göras med hjälp av kommandot `curl`. Exempelvis kan du skicka ett anrop till en URL genom att skriva:
-
-```Fish Shell
-curl http://www.example.com
-```
-
-Detta kommer att returnera hemsidan hos www.example.com i terminalen.
-
-Om du vill utföra en annan typ av HTTP-anrop, till exempel POST eller PUT, kan du använda flaggor för att specificera önskad metod och skicka med eventuella nödvändiga data. Exempelvis kan du utföra en POST-request med följande kommando:
+För att skicka en HTTP-begäran inom Fish Shell kan vi använda 'curl' kommandot.
 
 ```Fish Shell
-curl -X POST -d "name=John&age=25" http://www.example.com/users
+# För en GET-begäran
+curl http://example.com
+
+# För en POST-begäran
+curl -X POST -d "data to send" http://example.com
 ```
 
-Detta kommer att skicka namn och ålder till www.example.com och spara dem som en ny användare.
+Exempel på output:
 
-## Djupdykning:
+```Fish Shell
+<!doctype html>
+<html>
+...
+</html>
+```
 
-HTTP-protokollet skapades för att möjliggöra kommunikation mellan webbservrar och webbklienter. Det är standardprotokollet för World Wide Web och används för att överföra data mellan datorer. Det finns andra alternativ för att skicka och ta emot data, som till exempel FTP eller SMTP, men HTTP är det vanligaste.
+## Djupdykning
 
-Fish Shell är ett alternativ till andra terminalskal, som Bash eller Zsh, och har inbyggd stöd för att kommunicera via HTTP med hjälp av kommandot `curl`. Det finns dock också andra verktyg och bibliotek som är specialiserade på att hantera HTTP-anrop, som till exempel Python-biblioteket `requests` eller verktyget `wget`.
+Historiskt sett togs HTTP (Hypertext Transfer Protocol) fram som ett sätt för webbläsare att hämta webbsidor från servrar. Med uppkomsten av webbtjänster och API:er används det nu mer generellt för att skicka data mellan klienter och servrar.
 
-Skicka ett HTTP-anrop innebär vanligtvis att skapa en TCP-anslutning, skicka en anrop och sedan vänta på ett svar från servern. Det finns flera detaljer och parametrar som kan ställas in för att anpassa HTTP-anrop, men det grundläggande konceptet är att det handlar om att skicka data över nätverket.
+Alternativen till HTTP inkluderar andra kommunikationsprotokoll som FTP eller SMTP, men HTTP är mest omfattande för webbinteraktioner och är därmed vald för exempel här.
 
-## Se även:
+När vi skickar en HTTP-begäran med Fish Shell och curl, händer flera saker i bakgrunden. Curl skapar en anslutning till servern, skickar begäran, och tar emot serverns svar. Detta innefattar både data och metadata, som statuskoder och headers.
 
-- Officiell Fish Shell dokumentation: https://fishshell.com/docs/current/index.html
-- "curl" kommandodokumentation: https://curl.se/docs/manpage.html
-- HTTP-protokollets officiella specifikation: https://www.w3.org/Protocols/rfc2616/rfc2616.html
+## Se Även
+
+För mer djupgående information om HTTP och curl:
+
+- [Mozilla HTTP Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP)
+- [Curl Manual](https://curl.se/docs/manpage.html)

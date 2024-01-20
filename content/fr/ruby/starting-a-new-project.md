@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Ruby: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Getting Started"
@@ -10,41 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi?
+## Quoi & Pourquoi?
 
-Démarrer un nouveau projet en Ruby, c'est créer une application ou un programme informatique à partir de zéro. Les programmeurs le font pour relever de nouveaux défis, résoudre des problèmes ou mettre en œuvre de nouvelles idées.
+Démarrer un nouveau projet en programmation consiste à établir l'ossature et l'orientation de votre futur logiciel. Les développeurs le font pour construire une base solide sur laquelle développer leur idée.
 
 ## Comment faire:
 
-Pour commencer un nouveau projet en Ruby, voici quelques étapes à suivre:
+Pour créer un nouveau projet Ruby, utiliser l'outil `bundler` est souvent une bonne idée. Voyez comment:
 
 ```Ruby
-# 1. Installer Ruby sur votre ordinateur
-# 2. Créer un dossier pour votre projet
-# 3. Ouvrir un éditeur de code comme Visual Studio Code ou Atom
-# 4. Écrire votre code Ruby dans un fichier avec l'extension .rb
-# 5. Exécuter votre code en utilisant la commande ruby nom_du_fichier.rb
-```
-Voici un exemple de code:
+# Installez bundler si vous ne l'avez pas encore
+gem install bundler
 
-```Ruby
-# Hello World en Ruby
-puts "Bonjour le monde!"
-```
-Et voici le résultat attendu:
+# Créez un nouveau répertoire pour votre projet
+mkdir mon_projet
+cd mon_projet
 
-```
-Bonjour le monde!
+# Créez un nouveau projet gem avec bundler
+bundle gem mon_projet
 ```
 
-## Plongée en profondeur:
+Cela va générer l'arborescence de base pour votre projet, y compris le fichier `.gemspec` pour la configuration de la gem.
 
-L'une des raisons pour lesquelles les programmeurs choisissent Ruby pour leurs projets est sa syntaxe simple et lisible, qui en fait un langage idéal pour les débutants. Ruby a été créé en 1995 par Yukihiro Matsumoto, et il est largement utilisé pour construire des applications web, des jeux et des outils de développement. Il existe également des alternatives telles que Python et JavaScript pour créer des projets, mais Ruby a une communauté de développeurs active et un grand nombre de bibliothèques open-source disponibles.
+## Plongeon profond
 
-Pour démarrer un projet en Ruby, il est utile de connaître quelques éléments de base tels que les variables, les boucles et les conditions. Vous pouvez également utiliser des frameworks comme Ruby on Rails pour construire des applications web plus rapidement et plus efficacement.
+Historiquement, les développeurs construisaient chaque projet à partir de zéro. Cependant, cela s'avérait inefficace et prédisposait à des erreurs. Ainsi, l'usage des "squelettes" de projet est devenu courant.
 
-## À voir aussi:
+Des alternatives à `bundler` existent, comme `hoe` ou `ore`, mais Bundler reste l'outil privilégié de la majorité des développeurs Ruby grâce à sa simplicité et sa flexibilité.
 
-- [Ruby Installation Guide](https://www.ruby-lang.org/en/documentation/installation/)
-- [Ruby pour débutants](https://ruby-doc.com/docs/ProgrammingRuby/)
-- [Ruby on Rails Documentation](https://guides.rubyonrails.org/)
+L'implémentation détaillée d'un nouveau projet dépend de divers facteurs, comme la complexité du projet, les exigences spécifiques et l'équipe de développement. 
+
+## Voir aussi
+
+- La documentation officielle de Bundler: [Bundler.io](https://bundler.io/)
+- Guide de démarrage rapide Ruby: [RubyQuickstart](https://www.ruby-lang.org/fr/documentation/quickstart/)
+- Alternatives à Bundler : [Hoe](http://www.zenspider.com/projects/hoe.html), [Ore](https://github.com/ruby-ore/ore)

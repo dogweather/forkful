@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग को अपरकेस में बदलें"
-html_title:           "Python: स्ट्रिंग को अपरकेस में बदलें"
-simple_title:         "स्ट्रिंग को अपरकेस में बदलें"
+title:                "स्ट्रिंग को बड़े अक्षरों में बदलना"
+html_title:           "Python: स्ट्रिंग को बड़े अक्षरों में बदलना"
+simple_title:         "स्ट्रिंग को बड़े अक्षरों में बदलना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,46 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+## क्या और क्यों?
 
-Sthosh sabhi ne ho kiya hai ki kaise hum string ko capital letters mein likhte hain. Ye ek bahut hi aam kaam hai jo hum programmers ko aksar karna padta hai. Iske piche kaaran hai ki capital letters mein likhne se aapke code ko padhne aur samajhne mein aasani hoti hai. Isse samjhane mein bhi aapko zyada samay nahi lagta hai aur apka code bhi clean aur organized dikhta hai.
+(What & Why?)
 
-# How to:
+'String को Capitalize करना' यानी कि string के पहले character को बड़ा (Capital) करना। यह गर्मजोशी और संदेश के आधिकारिक तौर पर प्रस्तुत करने के लिए प्रोग्रामर्स द्वारा किया जाता है।
 
-Python mein string ko capital letters mein likhne ke liye, hum inbuilt function "upper()" ka use karte hain. Is function ko hum jo string par call karte hain, uss string ke saare characters ko capital letters mein convert kar deta hai. Ye kaafi simple aur efficient tareeka hai string ko capital karne ka.
+## कैसे करें:
 
-Example:
+(How to:)
 
-```Python
-string = "ye ek sample string hai"
-print(string.upper())
-```
-Output:
-YE EK SAMPLE STRING HAI
-
-Agar aapko sirf string ka first character capital karna hai, toh aap "capitalize()" function ka use kar sakte hain.
-
-Example:
+Python में, हम `capitalize()` फ़ंक्शन का उपयोग कर सकते हैं। यहां एक उदाहरण है:
 
 ```Python
-string = "sample"
-print(string.capitalize())
+s = "hello world"
+print(s.capitalize())
 ```
-Output:
-Sample
 
-# Deep Dive:
+आउटपुट:
 
-Historical context mein, string capitalizing ek bahut crucial kaam tha jab humare paas caps lock keys nahi the aur hum keyboard se shift press karke capital letters likhte the. Aaj kal ye ek basic feature hai jo har programmer ko aata hai.
+```Python
+Hello world
+```
 
-Agar aap string capitalizing ke liye inbuilt functions use nahi karna chahte hain, toh aap khud custom function bhi likh sakte hain. Iske liye aapko string ke har character ko check karna hoga aur agar woh small letter hai toh use capital letter mein change karna hoga. Ye process thodi si tedious hai lekin aapko zyada control deta hai.
+इस code में, `"hello world"` string का पहला character 'h' को 'H' में बदल दिया जाता है।
 
-Implementation details ki baat karein toh, Python string capitalizing operations immutable hote hain, matlab ki aap original string ko change nahi kar sakte hai. Iske bajaye, ek new string create karna padta hai jisme capital letters wali string store hoti hai. Ye ek important concept hai Python programming mein aur aapko samajhna hoga.
+## गहराई में:
 
-# See Also:
+(Deep Dive)
 
-1. [Python Documentation on String Methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-2. [W3schools Tutorial on String Methods](https://www.w3schools.com/python/python_ref_string.asp)
-3. [GeeksforGeeks Article on String Capitalizing](https://www.geeksforgeeks.org/python-string-capitalize/)
+स्ट्रींग को कैपटलाइज़ करने की संभावना शायद Python के पहले ही संस्करण से थी। इस विचार का मुख्य उद्देश्य था कि किसी भी string को आधिकारिक और प्रभावशाली रूप से प्रदर्शित किया जा सकता है।
 
-Ye thi string ko capital letters mein likhne ki basic information Python programming ke context mein. Ummeed hai ab aapko samajh aa gaya hoga ki ye kaam kyun aur kaise kiya jata hai. Happy coding!
+वैकल्पिक रूप से, आप `title()` फ़ंक्शन को भी उपयोग कर सकते हैं, जिससे string के हर शब्द का पहला अक्षर कैपिटल हो जाता है:
+
+```Python
+s = "hello world"
+print(s.title())
+```
+
+आउटपुट:
+
+```Python
+Hello World
+```
+
+Python के `str` वर्ग में `capitalize()` फ़ंक्शन को लागू करने से सबसे पहले character को बड़ा कर दिया जाता है और शेष string को छोटा कर दिया जाता है।
+
+## और भी देखें:
+
+(See Also)
+
+1. [Python documentation for str.capitalize()](https://docs.python.org/3/library/stdtypes.html#str.capitalize)
+2. [Python documentation for str.title()](https://docs.python.org/3/library/stdtypes.html#str.title)

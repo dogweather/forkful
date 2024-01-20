@@ -1,7 +1,7 @@
 ---
-title:                "Generera slumpmässiga tal"
-html_title:           "PowerShell: Generera slumpmässiga tal"
-simple_title:         "Generera slumpmässiga tal"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -11,21 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Generering av slumpmässiga nummer är ett sätt för programmerare att skapa en uppsättning nummer som inte följer ett specifikt mönster eller regelbundenhet. Det kan användas för att testa program, skapa unika användar-ID eller helt enkelt för underhållning.
 
-## Så här gör du:
-```
-PowerShell Get-Random -Minimum 1 -Maximum 100
-```
-Detta kommando genererar ett slumpmässigt heltal mellan 1 och 100. Genom att ändra värden på -Minimum och -Maximum kan man skapa ett intervall som passar ens behov.
+Slumpmässiga nummer används överallt i programmeringsvärlden. De används för att indikera slumpmässiga händelser, som matbitar som dyker upp i ett Pac-Man-spel, men de kan också välja en vinnande post bland miljontals, som i ett lotteri.
 
-```
-PowerShell Get-Random -InputObject "röd", "blå", "grön"
-```
-Genom att använda -InputObject så kan man generera ett slumpmässigt objekt från en lista av värden, i det här fallet olika färger. Det är en användbar funktion när man vill testa olika scenarion eller välja slumpmässiga alternativ.
+## Hur gör man:
 
-## Djupdykning:
-Generering av slumpmässiga nummer har funnits sedan början av datorer och används i många olika tillämpningar idag. En alternativ metod för att generera slumpmässiga nummer är att använda en särskild hårdvaruenhet som kallas för "random number generator" (RNG). Denna enhet använder fysiska fenomen som inte är helt förutsägbara för att skapa slumpmässiga nummer. Det finns också olika algoritmer för att skapa slumpmässiga nummer, men det rekommenderas att använda inbyggda funktioner i programmeringsspråket istället för att skriva egna.
+Här är ett exempel på hur du genererar ett slumpmässigt tal i PowerShell.
 
-## Se även:
-Läs mer om [PowerShell cmdlet Get-Random](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7) och dess användningsområden.
+```PowerShell
+$random = New-Object System.Random
+$randomNumber = $random.Next(1, 100)
+Write-Host $randomNumber
+```
+
+När du kör ovanstående kod kan output se ut så här:
+
+```PowerShell
+45
+```
+
+```PowerShell
+Get-Random -Minimum 1 -Maximum 100
+```
+
+När du kör ovanstående kod kan output se ut så här:
+
+```PowerShell
+92
+```
+ 
+## Djupdykning
+
+Slumpmässiga tal har en lång historia inom datorvetenskap och programmering. När programmerare först började generera slumpmässiga tal i kod var det en ganska komplicerad process. Men med utvecklingen av moderna programmeringsspråk har processen blivit mycket enklare och mer intuitiv. 
+
+När det gäller att generera slumpmässiga nummer i PowerShell speglar tekniken det som görs i .NET Framework. Det finns andra metoder, till exempel `Get-Random` cmdlet som vi tidigare såg, vilket är en inbyggd funktion i PowerShell.
+
+Det är viktigt att notera att dessa nummer inte är riktigt "slumpmässiga". De genereras av en algoritm med en uppsättning fast input, vilket betyder att de i själva verket är "pseudo-slumpmässiga" nummer. Även om de passar för de flesta ändamål, kan de vara olämpliga där verklig slumpmässighet krävs, som för vissa typer av krypteringar.
+
+## Se Även
+
+- För mer om skapandet av slumpmässiga nummer i andra programmeringsspråk, se [Random numbers in programming](https://en.wikipedia.org/wiki/Random_number_generation)
+
+- Grundläggande PowerShell-tutorial: Microsoft’s [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
+
+- För mer om pseudo-slumpmässiga nummer, se [Pseudorandom number generator](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

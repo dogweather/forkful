@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Go: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Go"
 category:             "Go"
@@ -10,51 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-WHAT & WHY?
+# Transformando String para Minúsculas em Go
 
-Converter uma string para letras minúsculas é um processo comum na programação, no qual todas as letras maiúsculas de uma string são transformadas em letras minúsculas. Os programadores fazem isso para garantir que a comparação de strings seja feita de maneira correta e consistente, independentemente do caso das letras.
+## O Que & Por Que?
 
-HOW TO:
+Transformar uma string em minúsculas é o processo de converter todas as letras maiúsculas de um texto para minúsculas. Os programadores fazem isso frequentemente para normalizar as entradas de texto, facilitando a comparação e a busca.
 
-### Exemplo 1:
+## Como Faz:
 
-```Go
-str := "Hello World"
-str = strings.ToLower(str)
-fmt.Println(str)
-```
-
-Saída: hello world
-
-### Exemplo 2:
+Em Go, utilizamos a função `ToLower` do pacote `strings` para converter todas as letras maiúsculas em minúsculas. Olha só:
 
 ```Go
-str := "GOLANG IS AWESOME"
-str = strings.ToLower(str)
-fmt.Println(str)
+package main
+
+import (
+    "fmt"
+    "strings"
+)
+
+func main () {
+    texto := "Olá, Mundo!"
+    minusc := strings.ToLower(texto)
+    fmt.Println(minusc)
+}
 ```
 
-Saída: golang is awesome
-
-### Exemplo 3:
+A saída seria:
 
 ```Go
-str := "I <3 Go"
-str = strings.ToLower(str)
-fmt.Println(str)
+olá, mundo!
 ```
 
-Saída: i <3 go
+## Mais Detalhes:
 
-DEEP DIVE:
+Historicamente, a normalização de texto foi crucial para sistemas de busca e banco de dados, pois permite que a busca seja insensível à caixa. Em Go, a função `ToLower` transforma a string utilizando o mapeamento Unicode para minúsculas.
 
-Este processo de conversão de string para letras minúsculas pode ser útil em várias situações, especialmente quando se trabalha com entrada de usuário. Como nem sempre podemos confiar na entrada de dados dos usuários, é importante garantir que a comparação de strings seja feita de maneira precisa e consistente. Além disso, esse processo também é essencial em alguns algoritmos, como algoritmos de ordenação de strings, nos quais é necessário que as letras maiúsculas e minúsculas sejam tratadas da mesma forma.
+Outras alternativas em Go incluem a função `ToLowerSpecial` que aceita um parâmetro 'c' específico que determina o tipo de mapeamento de caso. Por exemplo, `ToLowerSpecial(unicode.TurkishCase, texto)`, que irá fazer a conversão levando em conta as regras específicas do idioma turco.
 
-Uma alternativa para o método "ToLower" seria o método "strings.ToUpper", que converte todas as letras de uma string em letras maiúsculas. No entanto, a escolha entre um método ou outro dependerá sempre da necessidade do programador.
+## Veja Também:
 
-Para implementar a conversão de string para letras minúsculas em Go, podemos utilizar a função "ToLower" da biblioteca "strings". Essa função percorre a string e, a cada letra maiúscula encontrada, substitui por sua correspondente em minúsculo.
-
-SEE ALSO:
-
-- [Documentação Go sobre a função ToLower](https://golang.org/pkg/strings/#ToLower)
-- [Como usar a biblioteca strings em Go](https://www.golangprograms.com/golang-package-explained-string.html)
+Documentação oficial da biblioteca de strings do Go : https://golang.org/pkg/strings/
+Exemplos e explicações mais detalhadas : https://gobyexample.com/string-functions

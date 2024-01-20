@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Bash: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,20 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-Il download di una pagina web consiste nel salvare una copia di una pagina web sul proprio computer. I programmatori lo fanno per vari motivi, come ad esempio per analizzare il codice di una pagina, per utilizzarla come riferimento o per ottenere dati da essa.
+## Cosa & Perché?
+
+Scaricare una pagina web significa ottenere sul proprio dispositivo i dati che compongono il contenuto visibile su un browser. I programmatori fanno questo per analizzare i dati, accedere a informazioni specifiche o costruire un'archivio.
 
 ## Come fare:
-Un esempio semplice per scaricare una pagina web utilizzando Bash è utilizzare il comando `curl` seguito dall'URL della pagina. Ad esempio: 
+
+Per scaricare una pagina web in Bash, puoi utilizzare il comando `curl` o `wget`. Ecco un esempio con `curl`:
+
 ```Bash
-curl https://www.example.com
+curl http://www.example.com -o pagina.html
 ```
-L'output di questo comando mostrerà il codice HTML della pagina web richiesta.
 
-## Approfondimento:
-Scaricare una pagina web utilizzando Bash è possibile grazie al protocollo HTTP (Hypertext Transfer Protocol). Questo protocollo è stato sviluppato negli anni '90 ed è stato uno dei primi metodi utilizzati per accedere alle pagine web. Esistono anche altri strumenti per il download di pagine web, come ad esempio il comando `wget`, ma `curl` è quello più utilizzato dai programmatori.
+In questo modo, il contenuto di www.example.com verrà salvato in un file chiamato pagina.html. Il risultato apparirà così:
 
-## Risorse utili:
-- Documentazione ufficiale di Bash: [https://www.gnu.org/software/bash/](https://www.gnu.org/software/bash/)
-- Documentazione di `curl`: [https://curl.haxx.se/docs/manual.html](https://curl.haxx.se/docs/manual.html)
-- Documentazione di `wget`: [https://www.gnu.org/software/wget/](https://www.gnu.org/software/wget/)
+```Bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100  1270  100  1270    0     0   6335      0 --:--:-- --:--:-- --:--:--  6335
+```
+
+## Approfondimento
+
+Anni fa, i programmatori realizzavano download di pagine web utilizzando la linea di comando FTP. Oggi, `curl` e `wget` sono i metodi più comuni. All'interno del contesto di scripting, `wget` è spesso preferito grazie alla sua resilienza e facilità di uso.
+
+`curl` e `wget` non sono gli unici modi per scaricare una pagina web. Altre opzioni includono gli script Perl con LWP e Python con urllib o requests.
+
+Ecco un esempio dettagliato dell'implementazione specifica di `wget`:
+
+```Bash
+wget -P /path/to/directory http://www.example.com
+```
+In questo caso, la pagina web sarà salvata nella cartella specificata (/path/to/directory).
+
+## Vedi anche
+
+Per apprendere di più sull'argomento potete consultare:
+
+- [Curl Man Page](https://curl.se/docs/manpage.html)
+- [Wget Man Page](https://www.gnu.org/software/wget/manual/wget.html)
+- [Python Requests](https://requests.readthedocs.io/en/master/)
+
+Ricorda che il miglior modo per imparare è sperimentare. Provate differenti approcci e sin dal primo errore imparerete qualcosa di nuovo.

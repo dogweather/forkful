@@ -1,7 +1,7 @@
 ---
-title:                "Eliminando caracteres que coincidan con un patrón."
-html_title:           "PHP: Eliminando caracteres que coincidan con un patrón."
-simple_title:         "Eliminando caracteres que coincidan con un patrón."
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¡Eliminando caracteres que coincidan con un patrón en PHP!
+## ¿Qué y Por qué?
+Eliminar caracteres que coinciden con un patrón es básicamente la manipulación de una cadena de caracteres mediante la eliminación de ciertos caracteres. Los programadores lo hacen para limpiar datos, como eliminar espacios extra en blanco, caracteres ilegales o específicos para procesar posteriormente los datos de manera efectiva.
 
-## ¿Qué y por qué?
-Eliminar caracteres que coincidan con un patrón es una técnica comúnmente utilizada por los programadores para modificar o limpiar cadenas de texto de manera eficiente. Esto se logra mediante el uso de expresiones regulares, que son patrones de búsqueda que especifican qué caracteres deseamos encontrar y eliminar de una cadena.
-
-Muchas veces, los programadores utilizan esta técnica para validar y asegurar que una cadena de texto cumpla con un determinado formato. También es útil para realizar operaciones de limpieza de datos o para manipular cadenas de texto de forma precisa y rápida.
-
-## ¿Cómo?
-Utilizando la función `preg_replace()` podemos especificar un patrón de búsqueda y reemplazo para eliminar los caracteres que coincidan con dicho patrón. Por ejemplo, si deseamos eliminar todas las sustancias blancas de una cadena de texto, podemos hacer lo siguiente:
+## Cómo hacerlo
+Vamos a ver una simple demostración de cómo puede hacerlo con la función `preg_replace` en PHP.
 
 ```PHP
-$string = "¡Eliminando caracteres como estos!";
-$result = preg_replace("/[aeiou]/i", "", $string);
+<?php
+$frase = "Hola, soy tu PHP amigo!";
+$patron = "/[aeyou]/i";
+$salida = preg_replace($patron, "", $frase);
 
-echo $result; // Salida: ¡lmnnd chrctsrs cm sts!
+echo $salida;
+// Salida: "Hl, s t PHP mig!"
+?>
 ```
 
-En este caso, hemos utilizado el patrón `/[aeiou]/i` que busca cualquier vocal en minúscula o mayúscula y la elimina de la cadena de texto.
+La función `preg_replace` utiliza una expresión regular para buscar coincidencias en nuestra cadena y las reemplaza con lo que le pidamos. Aquí, estamos reemplazando todas las vocales (especificadas en nuestro patrón) por nada, esencialmente eliminándolas.
 
-## Profundizando
-Eliminar caracteres que coincidan con un patrón ha sido una técnica muy utilizada desde los primeros días de la informática, ya que permite realizar operaciones de búsqueda y reemplazo de manera eficiente. Sin embargo, con el paso del tiempo, han surgido otras alternativas para realizar esta tarea, como los filtros de entrada y salida de PHP, que pueden restringir y modificar el acceso a las cadenas de texto.
+## Un vistazo más detallado
+Borrar caracteres que coinciden con un patrón ha sido una característica en la mayor parte de la historia de la programación, pero su implementación ha evolucionado con el tiempo, definitivamente esencial para trabajar con cadenas en PHP.
 
-En cuanto a la implementación en PHP, la función `preg_replace()` hace uso de la biblioteca PCRE (Perl Compatible Regular Expressions) para realizar la búsqueda y reemplazo. Esta biblioteca es capaz de manejar patrones de búsqueda muy complejos y ofrece una gran flexibilidad en la forma de especificarlos.
+Una alternativa a `preg_replace` podría ser la función `str_replace`. Sin embargo, `str_replace` no admite patrones de expresiones regulares, lo cual limita su utilidad en ciertos casos.
 
-## Vea también
-Si quieres aprender más acerca de las expresiones regulares y cómo utilizarlas en tus aplicaciones PHP, te recomiendo estos recursos:
+¿Cómo funciona detras de escena `preg_replace`? Al recibir una cadena, un patrón y una cadena de reemplazo, recorre todo el texto y para cada carácter, comprueba si coincide con el patrón provisto. Si es así, lo reemplaza con la cadena de reemplazo.
 
-- [Documentación oficial de PHP sobre `preg_replace()`](https://www.php.net/manual/en/function.preg-replace.php)
-- [Tutorial sobre expresiones regulares en PHP](https://www.tutorialspoint.com/php/php_regular_expression.htm)
-- [Biblioteca PCRE](https://www.pcre.org/)
+## Ver También
+Para obtener más información sobre las funciones de manipulación de cadenas y expresiones regulares en PHP, aquí te dejo algunos enlaces útiles:
+
+1. [PHP: preg_replace - Manual](https://www.php.net/manual/es/function.preg-replace.php)
+2. [PHP: str_replace - Manual](https://www.php.net/manual/es/function.str-replace.php)
+3. [Expresiones Regulares en PHP](https://www.codigonaranja.com/articulos/expresiones-regulares-php)

@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Fish Shell: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,27 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Komentoriviparametrien lukeminen, tai "reading command line arguments", on tapa saada ohjelmalle annettuja syötteitä suoraan komentoriviltä. Tämä on tärkeää, sillä se mahdollistaa ohjelman joustavan käytön ja mahdollistaa sen mukauttamisen erilaisiin tarpeisiin.
+## Mitä & Miksi?
+
+Komennon riviparametrien lukeminen on tapa, jolla ohjelmoijat hyödyntävät ulkoista tietoa koodissaan. Se on tärkeää, koska se mahdollistaa dynaamisen vuorovaikutuksen ohjelman ja käyttäjän välillä.
 
 ## Miten:
-### Esimerkki 1:
-```Fish Shell``` käyttää ```$argv``` muuttujaa komentoriviparametrien lukemiseen. Voit tulostaa kaikki annetut parametrit käyttämällä seuraavaa komentoa:
+
+Syöttämällä komennon riviparametreja Fish Shellissä, voit muuttaa ohjelman toimintaa suoraan. Katso esimerkki alla:
+
+```Fish Shell
+function greet
+    echo "Hei, "$argv[1]
+end
+
+greet Maailma
 ```
-echo $argv
-```
-Tulostuksena näet listan komentoriviparametreista. Esimerkiksi jos syötit komennon ```fish omat_komennot.fish 123 abc```, tulostuksena näkyy ```123 abc```.
 
-### Esimerkki 2:
-Voit myös käyttää ```$argv```:n indeksointia, jolloin voit valita tietyn parametrin tulostettavaksi. Esimerkiksi komento ```echo $argv[1]``` tulostaa ```123```.
+Tämä tulostaa ``"Hei, Maailma"``. Kuten näet, $argv[1] korvataan ensimmäisellä komennon riviparametrilla.
 
-## Syväsukellus:
-Komennon riviparametrien lukeminen on ollut osa käyttöjärjestelmien toimintaa jo pitkään. Aiemmin tätä tehtiin usein C-kielellä, mutta nykyisin erilaiset kielivalinnat, kuten Fish Shell, tarjoavat helpomman tavan lukea komentoriviparametreja.
+## Sukellus syvemmälle:
 
-Vaihtoehtoisia tapoja käsitellä komentoriviparametreja on esimerkiksi käyttää erillisiä kirjastoja kuten ```getopt```, joka tarjoaa mahdollisuuden helpompaan parametrien käsittelyyn.
+Komennon riviparametrien lukemisella on pitkä historia ohjelmoinnissa ja se on osa jokaisen kehittäjän perustyökalupakkia. On olemassa monia vaihtoehtoja, kuten flagit ja vaihtoehdot, jotka mahdollistavat ohjelmien monimutkaisemman ohjaamisen komentorivillä.
 
-Fish Shellissä ```$argv``` muuttuja on käytettävissä ohjelman käynnistyksen alusta asti, mikä mahdollistaa komentoriviparametrien käsittelyn myös varhaisessa vaiheessa.
+Fish Shell käyttää $argv-muuttujaa komennon riviparametrien tallentamiseen, mutta tämä on vain yksi tapa toteuttaa tämä. Muissa ohjelmointikielissä saattaa käyttää eri syntaksia tai rakenteita.
 
 ## Katso myös:
-- [Fish Shellin dokumentaatio](https://fishshell.com/docs/current/index.html)
-- [getopt kirjaston dokumentaatio](https://www.gnu.org/software/libc/manual/html_node/Getopt.html)
+
+1. [Fish Shell Komennon Riviparametrien ohje](https://fishshell.com/docs/current/tutorial.html#tut_cmd_args)
+2. [Yleiset käytännöt komennon riviparametrien käsittelyssä](https://www.gnu.org/prep/standards/html_node/Command_002dLine-Interfaces.html)
+
+Opiskelemalla näitä lähteitä voit syventää ymmärrystäsi siitä, kuinka komennon riviparametreja käytetään tehokkaasti ohjelmoinnissa.

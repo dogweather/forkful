@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie informacji debugowania"
-html_title:           "Elixir: Wydrukowanie informacji debugowania"
-simple_title:         "Wydrukowanie informacji debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+# Printing Debug Output w Elixir: Podręcznik
 
-Wypisywanie wyjścia debugowania jest procesem, w którym programista wysyła informacje o swoim kodzie do terminala w celu zrozumienia, co się dzieje podczas jego wykonywania. Jest to szczególnie przydatne w przypadku naprawiania błędów i śledzenia jakichkolwiek problemów z wykonywanym programem.
+## Co To Jest & Dlaczego To Robimy?
 
-## Jak to zrobić:
+Drukowanie debug output oznacza wyświetlanie informacji programu w trakcie jego działania. Programiści to robią, aby łatwiej zrozumieć, co się dzieje "pod maską" i szybciej rozwiązywać problemy.
+
+## Jak to Zrobić:
+
+Elixir oferuje kilka metod do drukowania debug output. Poniżej przedstawiam najpopularniejsze z nich:
+
+Pierwszym jest `IO.inspect`. Umożliwia drukowanie wartości zmiennych podczas przetwarzania listy.
 
 ```Elixir
-IO.inspect("Hello, world!")
+lista = [1, 2, 3, 4]
+lista
+|> Enum.map(&IO.inspect/1)
+|> Enum.sum()
+```
+W wyniku otrzymamy:
+```Elixir
+1
+2
+3
+4
 ```
 
-Output:
+Kolejnym sposobem jest użycie `IO.puts/2`, które drukuje stringi z dodatkowym końcem linii.
 
 ```Elixir
-"Hello, world!"
+IO.puts("Hello, świecie!")
 ```
 
-Więcej przykładów możesz znaleźć na stronach dokumentacji Elixir.
+Co daje:
 
-## Głębsze wyjaśnienia:
+```Elixir
+Hello, świecie!
+```
 
-Wypisywanie wyjścia debugowania stało się standardem w programowaniu, aby pomóc programistom w zrozumieniu swojego kodu i naprawieniu błędów. Alternatywnymi metodami są na przykład użycie narzędzi do debugowania, takich jak debugger, lub stosowanie wbudowanych funkcji takich jak `IO.inspect`. Elixir zapewnia wiele wbudowanych funkcji, które mogą pomóc w wypisywaniu debug output, takich jak `IO.inspect`, `IO.puts` i `IO.warn`.
+## Pogłębione Zagadnienia
 
-## Zobacz także:
+Historia drukowania debug output ma swoje korzenie w początkach programowania, kiedy jedyne narzędzia, które mieliśmy do zrozumienia, co się dzieje z naszym kodem, były tekturowe karty dziurkowane lub drukarki.
 
-- Dokumentacja Elixir: https://hexdocs.pm/elixir/Kernel.html#inspect/2
-- Narzędzia do debugowania Elixir: https://hexdocs.pm/iex/IEx.html#debugger/3
+Alternatywą dla debug output w Elixir jest użycie narzędzi do debugowania, takich jak IEx.pry lub debugger wbudowany w Erlang. Te narzędzia są bardziej zaawansowane i pozwalają na pełną kontrolę procesem debugowania, ale są też trudniejsze w użyciu.
+
+Pod maską, funkcje `IO.puts/2` i `IO.inspect/1` korzystają z modułu `:io` z Erlang, aby skomunikować się z terminalem i wydrukować wiadomość. Wszystko to jest możliwe dzięki temu, że Elixir jest zbudowany na podstawie Erlang i może korzystać z jego funkcji.
+
+## Zobacz Również
+
+1. Oficjalna dokumentacja Elixir `IO` module: https://hexdocs.pm/elixir/IO.html
+2. Artykuł o debugowaniu w Elixir: https://medium.com/elixirlabs/debugging-techniques-in-elixir-language-2a04fd2ce6ca
+3. Dokumentacja na temat debuggera Erlang: http://erlang.org/doc/man/debugger.html

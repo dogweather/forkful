@@ -1,7 +1,7 @@
 ---
-title:                "Mallia vastaavien merkkien poistaminen"
-html_title:           "PowerShell: Mallia vastaavien merkkien poistaminen"
-simple_title:         "Mallia vastaavien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Poistaessa merkkejä, jotka täyttävät tietyn mallin, tarkoitetaan tiettyjen merkkien poistamista tekstin osasta. Tämä on tärkeä tehtävä, kun halutaan puhdistaa tai muokata tekstiä tietystä mallista riippuen. Ohjelmoijat tekevät tätä usein, jotta heillä olisi käytössään puhdas ja järjestetty koodi.
+## Mitä & Miksi?
+Hahmojen poistaminen kuvion mukaan on prosessi, jossa kaikki halutun kaavan mukaiset hahmot poistetaan merkkijonosta. Ohjelmoijat tekevät tämän tiedon puhdistamiseen ja muotoilun yksinkertaistamiseen.
 
-## Kuinka se tehdään:
+## Kuinka:
+Käytämme `-replace` operaattoria. Seuraavassa esimerkissä on poistettu kaikki numerot merkkijonosta:
+
 ```PowerShell
-# Esimerkki 1: Poista tietyn merkkijonon toiston
-$teksti = "Tervetuloa tervetuloa! Tämä on esimerkki."
-$puhdas_teksti = $teksti -creplace "(t|T)ervetuloa ", ""
-echo $puhdas_teksti
-# Output: Tämä on esimerkki.
-
-# Esimerkki 2: Poista tietystä merkistä eteen tai taakse jäävät merkit
-$teksti = "((1)2)3"
-$puhdas_teksti = $teksti -creplace "\(|\)", ""
-echo $puhdas_teksti
-# Output: 123
+$myString = "abc123def456ghi789"
+$myString = $myString -replace '\d',''
+$myString
 ```
 
-## Syventävä katsaus:
-Poistaminen merkkejä vastaavan mallin perusteella on yleinen tehtävä tekstikäsittelyssä. Sitä käytetään esimerkiksi tiedostojen käsittelyssä tai yksinkertaisesti tekstin muokkaamisessa. PowerShellin "-creplace" -komentoa voidaan käyttää poistamaan tietyn merkkijonon toistosta, kuten esimerkissä 1. Samaa komentoa voidaan käyttää myös poistamaan kaikki tietyt merkit rivistä, kuten esimerkki 2 osoittaa. On myös muita vaihtoehtoja, kuten "-replace" -komento tai Regular Expressions -kirjasto.
+Tämän koodin tulostus on: `abcdefghi`
+
+## Syvempi sukellus:
+PowerShellin `-replace` operaattori hyödyntää .NET:in säännöllisen lausekkeen moottoria. Se luotiin 1990-luvulla ja on ollut peruspilari monissa ohjelmointikielissä.
+
+On olemassa vaihtoehtoja, kuten `-split` ja `-join` operaattorit:
+
+```PowerShell
+$myString = "abc123def456ghi789"
+$myString = ($myString -split '\d') -join ''
+$myString
+```
+
+Tämäkin tuottaa `abcdefghi`.
+
+Hahmojen poistamiseen kuvion mukaan PowerShellissa on siis kaksi tapaa: `-replace` ja `-split` tyyppiset operaattorit. Kumpi käyttää riippuu sovellustapauksesta.
 
 ## Katso myös:
-- [PowerShell -creplace -komento](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#regex-based-operators)
-- [PowerShell -replace -komento](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/replace?view=powershell-7.1)
-- [Regular Expressions -kirjasto](https://www.regular-expressions.info/)
+- PowerShellin dokumentaatio `-replace` operaattorista: https://docs.microsoft.com/fi-fi/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#replacement-operator
+- Microsoftin .NET tuki säännöllisille lausekkeille: https://docs.microsoft.com/fi-fi/dotnet/standard/base-types/regular-expressions
+- PowerShellin dokumentaatio `-split` operaattorista: https://docs.microsoft.com/fi-fi/powershell/module/microsoft.powershell.core/about/about_split?view=powershell-7.1

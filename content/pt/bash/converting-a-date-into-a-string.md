@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma data em uma string"
-html_title:           "Bash: Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
 simple_title:         "Convertendo uma data em uma string"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+# Convertendo uma data em uma string em Bash
 
-Converter uma data em uma string significa transformar uma data em formato legível em uma sequência de caracteres. Os programadores geralmente fazem isso para facilitar a manipulação e exibição de datas em seus programas.
+## O que e Por quê?
+
+Converter uma data em uma string significa transformar um objeto de data num formato textual legível. Os programadores fazem isso para tornar as datas mais manipuláveis e fáceis de visualizar.
 
 ## Como fazer:
 
-Para converter uma data em uma string no Bash, podemos usar o comando```date```. Veja um exemplo:
+Vou mostrar como fazer essa conversão no bash com o comando `date`.
 
-```
-#!/bin/bash
-
-data_atual=$(date +"%d/%m/%Y")
-
-echo "A data de hoje é: $data_atual"
+```Bash
+$ data_atual=$(date +"%Y-%m-%d %H:%M:%S")
+$ echo $data_atual 
 ```
 
-A saída desse código seria algo como: "A data de hoje é: 21/05/2021", atualizada para a data atual.
+Ao executar este script, terá o seguinte resultado:
 
-## Mais detalhes:
+```Bash
+2022-03-22 14:37:33
+```
 
-- Contexto histórico: o Bash é um interpretador de comandos para sistemas operacionais baseados em Unix, lançado pela primeira vez em 1989.
-- Alternativas: existem outras formas de converter datas em strings, como usar bibliotecas de programação específicas ou comandos de outros interpretadores de comandos, como o PowerShell do Windows.
-- Detalhes da implementação: a função ```date``` do Bash possui uma grande quantidade de opções de formatação, que podem ser consultadas no manual do terminal.
+Esse script captura a data atual no formato AAAA-MM-DD HH:MM:SS (ano-mês-dia hora:minuto:segundo).
 
-## Veja também:
+## Aprofundando
 
-Para mais informações sobre o uso do comando ```date``` no Bash, consulte o manual do terminal usando o comando ```man date```.
+Historicamente, a conversão entre datas e strings é um problema comum em programação. Em ambientes Unix-like, como Linux ou MacOS, o utilitário `date` tem sido a ferramenta padrão para essas tarefas.
+
+Outras linguagens têm funções ou métodos embutidos para converter datas, como o `toString()` em JavaScript e o `.strftime()` em Python.
+
+Entenda que a eficácia da função de conversão de datas em Bash depende do sistema operacional em que você está trabalhando. Em sistemas Windows, a abordagem será diferente, em que cygwin ou softwares similares são necessários para a simulação da terminal shell.
+
+## Veja mais:
+
+1. Manual do comando Date: [Link Aqui](https://man7.org/linux/man-pages/man1/date.1.html)
+2. Bash para iniciantes: [Link Aqui](https://www.hostinger.com.br/tutoriais/tutorial-do-bash-script)
+3. Guia de formatação da data do GNU: [Link Aqui](http://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)

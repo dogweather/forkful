@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilenargumenten"
-html_title:           "C++: Lesen von Befehlszeilenargumenten"
-simple_title:         "Lesen von Befehlszeilenargumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -11,36 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Lesen von Kommandozeilenargumenten in C++ bezeichnet den Prozess der Annahme von Werten von der Kommandozeile während der Ausführung einer Anwendung. Diese Technik ermöglicht es Programmierern, flexibler auf Benutzereingaben zu reagieren und interaktive Programme zu erstellen.
+  
+## Wie zu:
+In C++ können Sie Kommandozeilenargumente durch zwei Funktionsparameter im Hauptteil eines Programms (in der Funktion `main()`) erfassen: `int main(int argc, char *argv[])`. Hier ist `argc` eine Integer-Variable, die die Anzahl der über die Kommandozeile übergebenen Argumente speichert, während `argv` ein Zeiger auf ein Zeichenarray ist, der die eigentlichen Argumente enthält. Hier ist ein einfaches Beispiel:
 
-Lesen von Kommandozeilenargumenten ist eine grundlegende Fähigkeit für Programmierer. Es ermöglicht Programmen, Befehlszeilenargumente zu erhalten und auf sie zu reagieren. Dies kann nützlich sein, um verschiedene Einstellungen, Dateinamen oder andere Parameter für das Programm festzulegen.
+```C++
+#include <iostream>
 
-## Wie geht das?
-
-Die meisten Programmiersprachen, einschließlich C++, bieten eingebaute Methoden oder Bibliotheken, um Kommandozeilenargumente zu lesen. In C++ können wir die Funktion `main` verwenden, die zwei Parameter erwartet: `argc` und `argv`. `argc` gibt die Anzahl der Argumente an, während `argv` ein Array von C-Strings ist, das die tatsächlichen Argumente enthält.
-
-Um alle Argumente zu lesen, können wir eine Schleife verwenden und `argv` durchlaufen. Zum Beispiel:
-
-```
-int main(int argc, char* argv[]) {
-    for (int i = 0; i < argc; i++) {
-        cout << argv[i] << endl;
+int main(int argc, char *argv[]) {
+    std::cout << "Programmname: " << argv[0] << std::endl;
+    for (int i = 1; i < argc; ++i) {
+      std::cout << "Argument " << i << ": " << argv[i] << std::endl;
     }
     return 0;
 }
 ```
 
-Wenn wir dieses Programm mit dem Befehl `./program argument1 argument2` aufrufen, wird es die Argumente `argument1` und `argument2` auf der Konsole ausgeben.
+Wenn Sie dieses Programm als `myProgram` kompilieren und dann z.B. mit `./myProgram GutenTag` ausführen, erhalten Sie folgende Ausgabe:
 
-## Tiefere Einblicke
+```
+Programmname: ./myProgram
+Argument 1: GutenTag
+```
 
-Das Lesen von Kommandozeilenargumenten ist seit langem eine bewährte Methode in der Programmierung. Vor der Verwendung von grafischen Benutzeroberflächen war dies die einzige Möglichkeit, wie Benutzer mit Computern interagieren konnten. Alternativen zu Kommandozeilenargumenten sind beispielsweise Konfigurationsdateien oder Benutzereingaben während der Programmausführung.
+## Tiefer Tauchen
+Historisch gesehen ist das Lesen von Kommandozeilenargumenten ein Standardverfahren, das sowohl in UNIX- als auch in Windows-Umgebungen weit verbreitet ist. Es gibt jedoch Alternativen, insbesondere für komplexere Anwendungen. Dazu gehören die Einbettung von Argumenten in Dateien oder das Lesen von Eingaben von Standard-Eingaben oder GUI-Formularen.
 
-Wenn wir tiefer gehen, können wir uns ansehen, wie Kommandozeilenargumente in C++ implementiert sind. Beispielsweise kaufen sich `argc` und `argv` direkt auf die C-Standardbibliothek `stdlib.h` und ihre Funktion `getopt`. Diese Funktion ermöglicht es uns, Optionen und Argumente in einer für Unix-ähnliche Systeme üblichen Weise zu lesen.
+Für den Fall der C++-Programmierung verweisen `argc` und `argv` auf Daten, die vom Umgebungs-Betriebssystem zur Verfügung gestellt werden. Ihr genauer Speicherort und Inhalt können je nach System und verwendeter Sprachimplementierung variieren.
 
-## Siehe auch
-
-Um mehr über das Lesen von Kommandozeilenargumenten in C++ zu erfahren, können Sie die offizielle Dokumentation von C++ oder andere Online-Tutorials lesen. Hier sind einige weitere hilfreiche Links:
-
-- https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm
-- https://www.learncpp.com/cpp-tutorial/command-line-arguments/
-- https://en.cppreference.com/w/cpp/language/main_function
+## Siehe Auch
+Für weiterführende Informationen und erweiterte Nutzungsszenarien besuchen Sie bitte:
+* [C++ Dokumentation für Kommandozeilenargumente](http://www.cplusplus.com/articles/DEN36Up4/)
+* [Stackoverflow Diskussionen zu C++ Kommandozeilenargumenten](https://stackoverflow.com/questions/3024197/what-does-int-argc-char-argv-mean)
+* [Weiterführende Lektüre mit Beispielen](https://www.learncpp.com/cpp-tutorial/command-line-arguments/)

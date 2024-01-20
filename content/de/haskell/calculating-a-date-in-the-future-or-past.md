@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum?
+**## Was & Warum?**
 
-Das Berechnen eines zukünftigen oder vergangenen Datums ist ein wichtiger Teil der Programmierung, da es uns ermöglicht, dynamische und zeitabhängige Funktionen in unsere Programme einzubauen. Zum Beispiel können wir mit einer solchen Funktion eine Erinnerung für einen bestimmten Termin erstellen oder eine Zeitsteuerung für bestimmte Aktionen einrichten.
+Das Berechnen eines Datums in der Zukunft oder Vergangenheit sind Prozesse, die ein bestimmtes Datum nehmen und davon einen anderen Zeitpunkt ableiten. Programmierer machen das oft, um Termine oder Fristen zu planen und zu verwalten.
 
-## Wie geht das?
+**## Wie es geht:**
 
-Um ein Datum in der Zukunft oder Vergangenheit zu berechnen, können wir die Standardbibliothek von Haskell verwenden, die die Funktion `addDays` bereitstellt. Diese Funktion nimmt ein Datum und eine Anzahl von Tagen an und gibt das entsprechende Datum in der Zukunft oder Vergangenheit zurück.
+Wir verwenden in Haskell die Bibliothek `Data.Time` für diese Aufgabe. Hier ist ein einfaches Code-Beispiel:
 
 ```Haskell
-import Data.Time.Calendar ( fromGregorian, addDays )
+import Data.Time
 
-let date = fromGregorian 2020 7 15 -- 15. Juli 2020
-let futureDate = addDays 10 date -- 25. Juli 2020
-let pastDate = addDays (-5) date -- 10. Juli 2020
-
-print futureDate -- 2020-07-25
-print pastDate -- 2020-07-10
+addDaysToCurrentDate :: Integer -> IO Day
+addDaysToCurrentDate n = do
+    currentDate <- getCurrentTime
+    let currentDay = utctDay currentDate
+    return (addDays n currentDay)
 ```
 
-In diesem Beispiel verwenden wir das `Data.Time.Calendar` Modul, um ein Datum in Haskell zu erstellen. Wir weisen dem Datum den 15. Juli 2020 zu und nutzen dann `addDays`, um 10 Tage in die Zukunft und 5 Tage in die Vergangenheit zu berechnen. 
+Dieser Code ergibt ein Datum, das n Tage vom aktuellen Datum entfernt ist.
 
-## Tiefere Informationen
+**## Deep Dive**
 
-Die Möglichkeit, ein Datum in Zukunft oder Vergangenheit zu berechnen, hat ihre Wurzeln in der Julianischen Tageszählung, die im alten Rom verwendet wurde. Heutzutage gibt es auch andere Bibliotheken oder externe APIs, die es ermöglichen, Datumsberechnungen durchzuführen, wie zum Beispiel das beliebte `time` Paket.
+In der Vergangenheit gab es keine eingebaute Fähigkeit, um Daten in Haskell zu manipulieren. Das bedeutete, dass Entwickler pack-string Daten konvertieren und manipulieren mussten. Glücklicherweise haben wir jetzt die `Data.Time`-Bibliothek, die speziell für die Arbeit mit Zeiten in Haskell entwickelt wurde.
 
-Bei der Berechnung von Datumsangaben müssen wir auch berücksichtigen, dass es in verschiedenen Ländern unterschiedliche Kalender und Datumsformate gibt. Daher ist es wichtig, dass wir uns bewusst sind, welche Kalendernotation wir in unserem Programm verwenden.
+Einige Programmierer könnte die Bibliothek `time-lens` bevorzugen. Sie stellt Funktionen bereit, die die Arbeit mit Zeiten einfacher macht und bietet sogar die Möglichkeit, algebraische Datenstrukturen zu erstellen.
 
-## Siehe auch
+Die `addDays` Funktion nimmt unser aktuelles Datum (ein `Day`-Art) und eine Ganzzahl n. Sie gibt ein anderes `Day`-Art zurück, das n Tage entfernt ist. Beachten jedoch, dass `addDays` mit negativer Zahl auch ein Letztes Datum berechnen kann.
 
-- [Das `time` Paket für die Berechnung von Datumsangaben in Haskell](https://hackage.haskell.org/package/time)
+**## Siehe Auch**
+
+Für weitere Funktionen und Details können Sie die offizielle Dokumentation zu `Data.Time` [hier](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html) und `time-lens` [hier](https://hackage.haskell.org/package/time-lens-0.4.0.2/docs/Data-Time-Lens.html) prüfen. Denken Sie daran, dass das Erlernen der Grundlagen der Datums- und Zeitmanipulation in Haskell Sie dabei unterstützen kann, komplexe Zeitanforderungen in Ihren eigenen Programmen zu lösen.

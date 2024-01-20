@@ -1,6 +1,6 @@
 ---
 title:                "HTMLの解析"
-html_title:           "Javascript: HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
 simple_title:         "HTMLの解析"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何で?
-HTMLパースとは、HTMLコードを読み込んで、それをより分かりやすい形式に変換することです。プログラマーがHTMLをパースする理由は、HTMLコードを整形したり、データを抽出したりすることができるためです。
+**## 何となぜ？**
 
-## 方法:
-```Javascript
-// HTMLコードをパースする方法
-let html = "<html><body><h1>Hello World!</h1></body></html>";
-let parser = new DOMParser();
-let xmlDoc = parser.parseFromString(html, "text/html");
+HTMLの解析とは、 HTMLドキュメントの構造を把握し、その情報を抽出または操作することです。プログラマーは情報収集、自動化、またはWebスクレイピングのためにこれを行います。
 
-// タグ名を指定して要素を取得する例
-let heading = xmlDoc.getElementsByTagName("h1");
-console.log(heading[0].innerText);
-// Output: "Hello World!"
-```
+**## 方法：**
+
+次のJavaScriptコードは、HTMLの解析をする一例です:
 
 ```Javascript
-// パースしたHTMLコードからデータを抽出する方法
-let html = "<ul><li>Apple</li><li>Orange</li><li>Banana</li></ul>";
-let parser = new DOMParser();
-let xmlDoc = parser.parseFromString(html, "text/html");
-
-// リストアイテムを配列として取得する例
-let itemList = xmlDoc.getElementsByTagName("li");
-for (let i = 0; i < itemList.length; i++) {
-  console.log(itemList[i].innerText);
-} 
-// Output: "Apple", "Orange", "Banana"
+const parser = new DOMParser();
+const htmlString = '<html><body><p>Hello, World!</p></body></html>';
+const doc = parser.parseFromString(htmlString, 'text/html');
+console.log(doc.body.textContent); 
 ```
 
-## 詳細:
-1. HTMLパースは古くから存在しており、ユーザーインターフェースの開発やスクレイピングなど、さまざまな用途で使用されてきました。
-2. HTMLパースの代替手段として、正規表現やCSSセレクターなどがありますが、正規表現はコードが複雑になりやすく、CSSセレクターでは必要なデータを取得できないことがあります。
-3. 実装上の詳細として、```DOMParser```クラスを使用することでHTMLコードをパースし、パースされた結果をXMLドキュメントとして取得できます。その後、XMLドキュメントから必要な要素を取得して操作することができます。
+このコードを実行すると、以下のように出力されます。
 
-## さらに見る:
-- [MDN Web Docs - DOMParser](https://developer.mozilla.org/ja/docs/Web/API/DOMParser)
-- [w3schools - JavaScript DOMParser](https://www.w3schools.com/jsref/dom_obj_document.asp)
-- [Codecademy - Introduction to the DOM](https://www.codecademy.com/learn/learn-the-dom)
+```Javascript
+"Hello, World!"
+```
+
+**## ディープダイブ：**
+
+HTMLの解析は、ウェブの初期から存在しています。当初は、HTMLの文書構造を正確に理解するために設計されましたが、その後多くの用途が追加されました。代替手段として、DOM（Document Object Model）の利用、正規表現の設計、または新しいstandaloneパーサーの利用があります。
+
+DOMParserの詳細な実装はブラウザに依存します。一部のブラウザでは、異なる結果を返すことがあります。それは、特定のHTML形状や順序に対するブラウザ間の解釈の違いから生じています。
+
+**## 参照：**
+
+それぞれの主題についてさらに詳しく調べるために、以下のリンクが役立ちます。
+
+1. [DOMについて](https://developer.mozilla.org/ja/docs/Web/API/Document_Object_Model/Introduction)
+2. [DOMParserについて](https://developer.mozilla.org/ja/docs/Web/API/DOMParser)
+3. [HTMLの解析についての考察](https://softwareengineering.stackexchange.com/questions/275358/can-you-use-regular-expressions-to-parse-html)

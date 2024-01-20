@@ -1,7 +1,7 @@
 ---
-title:                "Obtenir la date actuelle."
-html_title:           "PHP: Obtenir la date actuelle."
-simple_title:         "Obtenir la date actuelle."
+title:                "Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
+simple_title:         "Obtenir la date actuelle"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-La récupération de la date actuelle est une fonctionnalité courante pour les programmeurs PHP. Cela leur permet de manipuler et de comparer des dates à des fins de traitement ou d'affichage. 
+## Quoi & Pourquoi?
+
+Obtenir la date courante en programmation PHP consiste à récupérer la date et l'heure système de l'ordinateur. Les programmeurs le font souvent pour suivre les événements, timestamp les actions utilisateurs ou programmer des tâches à réaliser à des moments précis.
 
 ## Comment faire:
-Pour obtenir la date actuelle en PHP, il suffit d'utiliser la fonction `date()`. Voici un exemple de code pour afficher la date du jour:
 
-```PHP
+Utiliser la fonction `date` pour récupérer la date courante. Voici un exemple illustrant comment le faire:
+
+```php
 <?php
-echo date("d/m/Y"); //output: 22/04/2021
+    echo date("Y-m-d H:i:s");
+ ?>
+```
+
+Ce code récupère et affiche la date sous le format année-mois-jour heures:minutes:secondes.
+
+## Plongée au cœur:
+
+1. **Contexte historique**: PHP offre plusieurs fonctions pour manipuler les dates et les heures depuis sa formation initiale. `date` est présent en PHP depuis sa première version.
+
+2. **Alternatives**: Une autre façon d'obtenir la date courante est d'utiliser la classe `DateTime` introduite avec la version 5.2.0 de PHP:
+   
+```php
+<?php 
+    $date = new DateTime();
+    echo $date->format("Y-m-d H:i:s"); 
 ?>
 ```
 
-Il est également possible de spécifier un format différent pour la date en utilisant des lettres spéciales. Par exemple, si l'on souhaite afficher la date sous la forme "22 avril 2021", il suffit de modifier le code comme suit:
-
-```PHP
-<?php
-echo date("d F Y"); //output: 22 avril 2021
-?>
-```
-
-## Plongée en profondeur:
-La récupération de la date actuelle est une fonctionnalité essentielle dans la programmation PHP, car elle permet de manipuler et de comparer des dates en utilisant la fonction `strtotime()` ou des objets `DateTime`. Cela peut être utile pour des tâches telles que la planification d'événements, le calcul de durées ou la vérification de l'âge d'un utilisateur.
-
-En dehors de la fonction `date()`, il existe d'autres moyens d'obtenir la date actuelle en PHP, tels que l'utilisation de la fonction `time()` ou la méthode `now()` d'un objet `DateTime`. Cependant, la fonction `date()` reste la méthode la plus couramment utilisée en raison de sa simplicité et de sa polyvalence.
+3. **Détails d'implémentation**: `date` ou `DateTime::format` récupère la date et l'heure en fonction du fuseau horaire défini dans le fichier `php.ini`, ou si aucun n'est défini, il utilisera le fuseau horaire du serveur.
 
 ## Voir aussi:
-- [Documentation PHP sur la fonction date()](https://www.php.net/manual/fr/function.date.php)
-- [Guide de la syntaxe de la fonction date()](https://www.w3schools.com/php/func_date_date.asp)
-- [Tutoriel vidéo sur la récupération de la date actuelle en PHP](https://www.youtube.com/watch?v=uIc4V90e4H4)
+
+Pour plus d'informations, consultez les pages de documentation suivantes: 
+
+1. PHP `date`: [Voici le lien](https://www.php.net/manual/fr/function.date.php)
+2. PHP `DateTime`: [Voici le lien](https://www.php.net/manual/fr/class.datetime.php)
+3. Définir le fuseau horaire avec PHP: [Voici le lien](https://www.php.net/manual/fr/datetime.settimezone.php) 
+
+Et voilà, vous savez maintenant comment obtenir la date courante en PHP. Bonne programmation à vous!

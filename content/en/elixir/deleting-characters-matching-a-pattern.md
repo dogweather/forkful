@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Elixir recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Deleting characters that match a specific pattern is a common task in programming. It involves removing specific characters from a string or text that meet a certain condition or match a given pattern. Programmers often need to delete characters matching a pattern to clean up or extract specific information from a given text.
+Deleting characters matching a pattern is removing specific characters or sequences from a string based upon a specified pattern (like 'abc', '.', etc). This aids in data cleaning, formatting and simplifying strings, and is a vital tool in a programmer's toolkit.
 
 ## How to:
 
-To delete characters matching a pattern in Elixir, we can use the `String.replace/3` function. This function takes three arguments: the original string, the pattern to be matched, and the replacement string. The function will then replace all instances of the pattern with the replacement string.
+In Elixir, Regex module is used for deleting characters matching a pattern. Here is an example that deletes all vowels from a string.
 
-```Elixir 
-# Example 1: Removing vowels from a text
-text = "Hello, how are you?"
-String.replace(text, ~r/[aeiou]/, "")
-
-# Output: "Hll, hw r y?"
-
-# Example 2: Removing numbers from a string
-string = "Elixir123"
-String.replace(string, ~r/[0-9]/, "")
-
-# Output: "Elixir"
+```elixir
+iex> Regex.replace(~r/[aeiou]/, "Hello World", "")
+"Hll Wrld"
 ```
 
-## Deep Dive:
+In this case, the pattern is `[aeiou]` which represents all vowels. The `Regex.replace/3` function replaces all occurrences of this pattern in the string "Hello World" with an empty string "", effectively deleting them.
 
-In Elixir, regular expressions can be used to create patterns to match specific characters. Regular expressions, often shortened to "regex", are a powerful tool for pattern matching and are widely used in programming to manipulate strings. Elixir uses the `~r` sigil to represent regular expressions and the `~r/<pattern>/` syntax to define a regex pattern. Alternative ways to delete characters matching a pattern in Elixir include using the `String.delete/2` function or writing a custom function using `String.replace/2` and `Regex.replace/3` to handle more complex patterns.
+## Deep Dive
 
-## See Also:
+This technique has been embedded in programming languages for years. Not limited to Elixir, it is also found, with varying syntax, in Python, Java and many more, highlighting its usefulness and versatility. 
 
-To learn more about regular expressions in Elixir, check out the [Elixir documentation](https://hexdocs.pm/elixir/Regex.html) on regex. You can also explore the [String](https://hexdocs.pm/elixir/String.html) and [Regex](https://hexdocs.pm/elixir/Regex.html) modules for more information on manipulating strings in Elixir. Other useful resources include online regex testers like [Regex101](https://regex101.com/) and [Rubular](https://rubular.com/) for practicing and testing your regex patterns.
+Some alternatives in Elixir include using the `String.replace/3` function, which also replaces occurrences of a pattern, but without the use of regular expressions. For example:
+
+```elixir
+iex> String.replace("Hello World", "o", "")
+"Hell Wrld"
+```
+
+This replaces the 'o' character, but is less flexible, and suited for simpler replacements. 
+
+As for the implementation, the `Regex.replace/3` function in Elixir uses the regular expression engine provided by Erlang, the powerhouse behind Elixir. This built-in functionality makes pattern deletion efficient and reliable.
+
+## See Also
+
+For more on Regex in Elixir, see the [official Elixir documentation](https://hexdocs.pm/elixir/Regex.html).
+
+To learn more about the power of Erlang's regular expression capabilities that Elixir exploits, see the [official Erlang documentation](http://erlang.org/doc/man/re.html). 
+
+For a deeper understanding of regular expressions across programming languages, check out this helpful site: [Regular-Expressions.info](https://www.regular-expressions.info/).

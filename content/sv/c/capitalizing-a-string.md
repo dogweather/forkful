@@ -1,7 +1,7 @@
 ---
-title:                "Versaler och gemener i en sträng"
-html_title:           "C: Versaler och gemener i en sträng"
-simple_title:         "Versaler och gemener i en sträng"
+title:                "Att göra en sträng versal"
+html_title:           "C: Att göra en sträng versal"
+simple_title:         "Att göra en sträng versal"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,31 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att "kapitalisera en sträng" är en vanlig term inom programmeringsvärlden som betyder att man gör den första bokstaven i en sträng till en stor bokstav, samtidigt som resten av bokstäverna förblir oförändrade. Detta görs vanligtvis för att göra det enklare att läsa en sträng eller för att uppfylla vissa syntaktiska krav.
 
-## Så här:
-För att kapitalisera en sträng i C-programmering, kan man använda sig av inbyggda funktioner som "toupper" eller "toupper_l". I inmatningsfältet anger man den sträng som man vill kapitalisera och funktionen returnerar sedan den kapitaliserade versionen av strängen.
+Att göra om en textsträng till versaler (eller 'stora bokstäver') innebär att varje bokstav i strängen byts ut till dess motsvarighet i versaler. Programmerare gör det ofta för att standardisera textdata för jämförelser eller för att förbättra läsbarheten.
 
-```
-// Kapitaliserar strängen "hej alla" 
-#include <stdio.h>
+## Så här gör du:
+
+Här är ett enkelt exempel på hur du kan använda C-programmeringsspråket för att omvandla en sträng till versaler.
+
+```C
 #include <ctype.h>
-int main() {
-  char str[] = "hej alla";  
-  int length = strlen(str);
-  int i;
-  for (i = 0; i < length; i++) {
-    printf("%c", toupper(str[i]));
-  }
-  return 0;
+#include <stdio.h>
+
+void skriv_ut_i_versaler(char str[]) {
+    for(int i = 0; str[i]; i++){
+        putchar(toupper(str[i]));
+    }
+    printf("\n");
 }
-// Output: HEJ ALLA
+
+int main(){
+    char mening[] = "hej, världen!";
+    printf("Ursprungliga meningen: %s\n", mening);
+    printf("Meningen i versaler: ");
+    skriv_ut_i_versaler(mening);
+    return 0;
+}
 ```
+När du kör koden ovan ska den producera följande resultat:
 
-## Djupdykning:
-I början av datorprogrammering, när teckenkodningarna ASCII och EBCDIC introducerades, användes olika nummer för stora och små bokstäver. Detta resulterade i att olika programvaror behandlade bokstäver på olika sätt, vilket ledde till problem när man skulle överföra data mellan olika system. För att lösa detta implementerades funktioner som "toupper" och "tolower" för att konvertera bokstäver till en standardiserad form.
+```
+Ursprungliga meningen: hej, världen!
+Meningen i versaler: HEJ, VÄRLDEN!
+```
+## Djupdykning
 
-## Se även:
-För mer information om strängmanipulation i C-programmering, kolla in dessa länkar:
-- [String library functions in C](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [ASCII and EBCDIC](https://www.ibm.com/support/knowledgecenter/en/SSUKPC_11.1.0/com.ibm.xlf111.bg.doc/language_ref/casciib.html)
+Att omvandla en sträng till versaler har en lång historia i programmering, speciellt i applikationer där textjämförelser är nödvändiga och där textdata inte alltid anges med samma bokstavsstorlek.
+
+När det gäller alternativ till `toupper` funktionen, finns det ingen inbyggd funktion för att omvandla hela strängar till versaler i C. Men man kan byta ut `toupper` med en egen funktion om behovet uppstår.
+
+Funktionen för att omvandla en sträng till versaler i detalj: först går vi igenom varje tecken i strängen med en `for`-loop. Sedan använder vi `toupper`-funktionen som omvandlar det nuvarande tecknet till versaler om det är en liten bokstav, och gör inget om det redan är en stor bokstav eller något annat tecken (som kommatecken, punkter, etc). Slutligen skriver vi ut den omvandlade strängen med `putchar`.
+
+## Se också
+
+- [toupper() funktion i C på tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/c_function_toupper.htm)
+- [Teckensträngar i C på programiz.com](https://www.programiz.com/c-programming/c-strings)

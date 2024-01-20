@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Ruby recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,85 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
+
 ## What & Why?
+Reading command line arguments in Ruby is all about taking user-defined data in the form of arguments directly from the command line. This enables scripts to have dynamic functionality based on those inputs.
 
-Reading command line arguments in Ruby is the process of retrieving information passed through the command line when executing a Ruby program. Programmers often do this in order to allow for user-input and customization of the program without having to modify the source code each time.
+## How-to
+Below is a simple Ruby script to read command line arguments:
 
-## How to:
-
-The most common way to read command line arguments in Ruby is by using the `ARGV` global variable. Here's an example:
-
-```ruby
-# Sample Ruby program for reading command line arguments
-
-# retrieve arguments from command line
-args = ARGV
-
-# display the arguments
-puts "Your command line arguments are: #{args}"
+```Ruby
+ARGV.each do |arg|
+  puts "Argument: #{arg}"
+end
 ```
-
-Here's how you would run this program from the command line and supply it with arguments:
+Just enter some arguments after your script name, like
+```
+ruby your_file.rb arg1 arg2 arg3
+```
+and watch your program spit out:
 
 ```
-ruby program.rb first_arg second_arg third_arg
-```
-
-Output:
-```
-Your command line arguments are: ["first_arg", "second_arg", "third_arg"]
-```
-
-You can also use the `getopts` method to parse specific arguments and their corresponding values from the command line. Here's an example:
-
-```ruby
-# Sample Ruby program for parsing command line arguments
-
-# import the `optparse` library
-require 'optparse'
-
-# define a hash to store the options and values
-options = {}
-
-# define the options to parse
-OptionParser.new do |opts|
-  opts.banner = "Usage: program.rb [options]"
-  
-  opts.on("-u", "--username [USERNAME]", "Specify a username") do |u|
-    options[:username] = u
-  end
-  opts.on("-p", "--password [PASSWORD]", "Specify a password") do |p|
-    options[:password] = p
-  end
-end.parse!
-
-# display the username and password specified
-puts "Username: #{options[:username]}"
-puts "Password: #{options[:password]}"
-```
-
-Here's how you would run this program from the command line and specify options:
-
-```
-ruby program.rb -u test_user -p test_pass
-```
-
-Output:
-```
-Username: test_user
-Password: test_pass
+Argument: arg1
+Argument: arg2
+Argument: arg3
 ```
 
 ## Deep Dive
 
-The concept of command line arguments has been around since the early days of programming and was first popularized by the C language. In Ruby, the `ARGV` global variable is actually an instance of the `Array` class and contains all the arguments passed through the command line. The `getopts` method is part of the `optparse` library and provides a more organized and customizable way of parsing command line arguments.
+Historically, command-line arguments trace back to Unix and Linux systems where interactive shell scripting thrived. It was later adopted in programming languages as a common feature to accept user inputs.
 
-Some alternatives to using `ARGV` and `getopts` include using the `ENV` global variable to access environment variables set by the system and using the `reads `gem to provide more advanced argument parsing capabilities.
+Instead of `ARGV`, you can use the `OptionParser` library in Ruby for more complex command line parsing where options are specified with `-` or `--`.
+
+Behind the scenes of reading command line arguments, Ruby stores arguments in an array `ARGV`, with indexing starting at zero.
+
+```Ruby
+# To access the first argument 
+puts ARGV[0]
+
+# To access the second argument
+puts ARGV[1]
+```
+
+When no arguments are provided, accessing ARGV[index] will return nil.
+
+Remember, ARGV is case-sensitive and it's a constant, so you can't assign another array to it.
 
 ## See Also
 
-To learn more about command line arguments and their usage in Ruby, check out the following resources:
-
-- [Official Ruby documentation on ARGV](https://ruby-doc.org/core-3.0.0/ARGF.html)
-- [Ruby Gems page for the `getopts` library](https://rubygems.org/gems/getopts/versions/1.4.0)
-- [Ruby Toolbox page for the `reads `gem](https://www.ruby-toolbox.com/projects/reads)
+1. [Ruby Documentation on ARGV](https://docs.ruby-lang.org/en/3.0.0/ARGF.html)
+2. [Ruby OptionParser Library](https://ruby-doc.org/stdlib-2.5.1/libdoc/optparse/rdoc/OptionParser.html)
+3. [Command Line Basics](http://www.linfo.org/command_line.html)
+4. [Unix Shell Scripting](http://www.freeos.com/guides/lsst/index.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Elixir: Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,21 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi?
-L'extraction de sous-chaînes est une méthode utilisée par les programmeurs pour récupérer une partie d'une chaîne de caractères plus longue. Elle est souvent utilisée pour analyser des données ou pour traiter des entrées utilisateur. Cela permet aux programmeurs de manipuler des chaînes de caractères plus facilement et efficacement.
+## Qu'est-ce que c'est & Pourquoi ?
 
-## Comment faire:
-Voici un exemple d'utilisation de la fonction `String.slice/3` pour extraire une sous-chaîne d'une chaîne de caractères :
-```Elixir
-str = "Bonjour le monde"
-sousChaine = String.slice(str, 8..13)
+Extraire des sous-chaînes implique d'obtenir une partie spécifique ou distincte d'une chaîne de caractères en Elixir. C'est essentiel pour manipuler et travailler efficacement avec des données de texte.
+
+## Comment faire :
+
+Voici un exemple de base de l'extraction de sous-chaînes en Elixir : 
+
+```elixir
+chaîne = "Bonjour monde!"
+IO.puts String.slice(chaîne, 0..6)
+#Sortie : "Bonjour"
 ```
-La valeur de la variable `sousChaine` sera "le monde". Vous pouvez également spécifier le début et la fin de la partie de la chaîne à extraire en utilisant la notation `start..finish` ou `start..length`.
+Dans cet exemple, nous utilisons la fonction `String.slice/2` pour extraire une sous-chaîne. L'index commence à 0, donc `0..6` extrait les 7 premiers caractères.
 
-## Plongée en profondeur:
-L'extraction de sous-chaînes est un concept couramment utilisé dans de nombreuses langues de programmation, notamment en Elixir, en raison de sa simplicité et de son efficacité. Il existe également d'autres méthodes pour extraire des sous-chaînes telles que l'utilisation de regex ou de fonctions de manipulation de listes.
+## Plongée profonde 
 
-En ce qui concerne l'implémentation en Elixir, la fonction `String.slice/3` utilise le concept d'indexation de chaînes appelé slices pour extraire la partie souhaitée de la chaîne. Cela signifie que l'accès aux éléments d'une chaîne de caractères se fait par leur position plutôt que par leur valeur, ce qui est plus rapide et plus efficace.
+Historiquement, l'extraction de sous-chaînes dans Elixir est basée sur le modèle de programmation fonctionnelle utilisé par le langage Erlang sur lequel Elixir est construit. 
 
-## À voir également:
-Pour en savoir plus sur l'extraction de sous-chaînes en Elixir, vous pouvez consulter la documentation officielle ainsi que d'autres sources en ligne. Vous pouvez également explorer d'autres fonctions de manipulation de chaînes telles que `String.split/2` pour diviser une chaîne en une liste de sous-chaînes ou `String.replace/3` pour remplacer une partie de la chaîne.
+En termes d'alternatives, vous pourriez également utiliser `binary_part/3`, une fonction plus bas niveau qui fonctionne aussi bien avec des binaires qu'avec des chaînes de caractères. 
+
+```elixir
+chaîne = "Bonjour monde!"
+IO.puts :binary.part(chaîne, {0, 7})
+#Sortie : "Bonjour"
+```
+
+Pour les détails d'implémentation, `String.slice/2` et `:binary.part/3` renvoient une nouvelle chaîne et ne modifient pas l'original, ce qui est conforme au paradigme immuable d'Elixir.
+
+## Voir aussi :
+
+- Documentation officielle Elixir sur les chaînes de caractères : [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)
+- Guide sur la manipulation de chaînes de caractères et de binaires en Elixir : [https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)

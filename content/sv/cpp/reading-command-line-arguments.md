@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av kommandoradsargument"
-html_title:           "C++: Läsning av kommandoradsargument"
-simple_title:         "Läsning av kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,49 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Hantera kommandoradsargument i C++
+
 ## Vad & Varför?
-Att läsa kommandoradsargument är processen att ta emot och tolka inmatade värden från användaren via kommandoraden i ett program. Detta är en viktig aspekt av programmering eftersom det ger en flexibilitet och interaktivitet till programmen. Genom att läsa kommandoradsargument kan programmet anpassas och utföra olika operationer baserat på användarens input.
 
-## Så här:
-Det finns flera sätt att läsa kommandoradsargument i C++, men det vanligaste är att använda funktionen `main()` tillsammans med två parametrar: `argc` och `argv`. `argc` representerar antalet argument som skickats medan `argv` är en vektor av strängar som innehåller de faktiska argumenten.
+Kommandoradsargument är parametrar som skickas in när programmet körs från kommandoraden. De tillhandahåller input till programmet vid nystart, vilket ger flexibilitet och möjlighet till dynamisk ändring av programmets beteende.
+
+## Hur gör man:
+
+C++ tillhandahåller en enkel mekanism för att hantera kommandoradsargument. `main()` funktionen kan definieras med två argument: `int argc, char *argv[]`.
 
 ```C++
+#include<iostream>
 int main(int argc, char *argv[]) {
-  // Kod för att läsa kommandoradsargument
-  return 0;
+    // Skriv ut alla inkommande argument
+    for(int i = 0; i < argc; i++) {
+        std::cout << argv[i] << std::endl;
+    }
+    return 0;
 }
 ```
 
-Ett vanligt sätt att använda kommandoradsargument är att utföra olika operationer på en fil beroende på de argument som skickas med. Till exempel kan vi läsa in argumentet `filename` och använda det för att öppna och läsa en specifik fil:
-
-```C++
-int main(int argc, char *argv[]) {
-  if (argc > 1) {
-    // Läser in filnamnet från första argumentet (ignorerar programmets namn)
-    string filename = argv[1];
-    // Kod för att öppna och läsa filen
-  } else {
-    // Om inget argument skickas med
-    cout << "Inget filnamn angivet!" << endl;
-  }
-  return 0;
-}
+Om du kör detta program med `./myProgram Hello C++`, kommer utdata vara:
+```
+./myProgram
+Hello
+C++
 ```
 
-När programmet körs, kan användaren nu ange ett filnamn som ska öppnas som ett kommandoradsargument:
+## Fördjupning:
 
-```
-$ ./programnamn fil.txt
-```
+1. Historisk bakgrund: Konceptet med kommandolinjeargument härstammar från Unix:s tidiga dagar. Syftet var att låta användaren påverka programmets beteende vid start istället för interaktion vid runtime.
 
-## Djupdykning:
-Kommandoradsargument har funnits sedan de tidigaste datorerna, då det var det enda sättet att interagera med datorn. Idag finns det dock alternativ till att läsa kommandoradsargument, som till exempel att använda en grafisk användargränssnitt (GUI) för att interagera med programmet.
+2. Alternativ: Library som Boost.Program_options erbjuder mer sofistikerade sätt att hantera kommandoradsargument, inklusive automatisk typkonvertering och standardvärden.
 
-Att läsa kommandoradsargument kan också vara en viktig säkerhetsåtgärd. Genom att kontrollera och filtrera de inmatade värdena kan man förhindra skadlig kod från att köras på datorn.
+3. Implementeringsdetaljer: `char *argv[]` är en array av pointerson till tecken. Första elementet (`argv[0]`) är alltid namnet på programmet självt och ändpunkten är alltid en nullpeker.
 
-## Se även:
-För mer information om att läsa kommandoradsargument i C++, se följande länkar:
+## Se också:
 
-- [Tutorialspoint - C++ Command Line Arguments](https://www.tutorialspoint.com/cplusplus/cpp_command_line_arguments.htm)
-- [CPlusPlus - Command line arguments](https://www.cplusplus.com/articles/DEN36Up4/)
-- [GeeksforGeeks - Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+1. [C++ comand line arguments](https://www.learncpp.com/cpp-tutorial/73-command-line-arguments/)
+2. [Boost.Program_options documentation](https://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html)
+
+Glöm inte, förståelse kring kommandoradsargument kan vara nyckeln till att skapa mer dynamiska och användarvänliga program.

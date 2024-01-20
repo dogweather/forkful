@@ -1,7 +1,7 @@
 ---
-title:                "HTML 구문 분석"
-html_title:           "PHP: HTML 구문 분석"
-simple_title:         "HTML 구문 분석"
+title:                "HTML 파싱"
+html_title:           "Fish Shell: HTML 파싱"
+simple_title:         "HTML 파싱"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 파싱 HTML이란 무엇이며, 왜 프로그래머들이 이를 하는 걸까?
+## 무엇이며 왜 필요한가?
 
-파싱 HTML은 웹 사이트에서 정보를 추출하는 것을 말합니다. 정보를 추출하는 이유는 데이터를 쉽게 얻고 가공하기 위해서입니다. 예를 들어, 웹 사이트에서 제공하는 데이터를 이용하여 자동으로 정보를 수집하거나 분석할 수 있습니다.
+HTML 파싱은 HTML 코드를 분석하는 과정입니다. 이 과정을 통해 프로그래머들은 웹사이트에서 데이터를 추출하거나, 웹페이지를 동적으로 조작하는 등 많은 작업을 수행할 수 있습니다.
 
-# 어떻게 하면 될까?
+## 어떻게 하는가:
 
-PHP에서 HTML을 파싱하는 방법은 간단합니다. 먼저, `file_get_contents()` 함수를 이용하여 웹 사이트 주소에서 데이터를 가져옵니다. 그리고 `preg_match()` 함수를 이용하여 해당 데이터에서 원하는 정보를 정규식을 이용하여 추출합니다. 예제 코드와 출력 결과는 아래와 같습니다.
+먼저, PHP에서 HTML을 파싱하는 방법을 간단한 예제를 통해 설명하겠습니다.
 
-```
+```PHP
 <?php
-$html = file_get_contents("https://www.example.com");
-preg_match("/<h1>(.*?)<\/h1>/", $html, $matches);
-echo "사이트 제목: " . $matches[1];
+$dom = new DOMDocument();
+@$dom->loadHTML('<div id="hello">안녕하세요</div>');
+
+$divs = $dom->getElementsByTagName('div');
+foreach($divs as $div) {
+    echo $div->nodeValue;
+}
 ?>
 ```
 
-출력 결과:
+위의 코드를 실행하면, `안녕하세요`라는 결과를 얻을 수 있습니다.
 
-```
-사이트 제목: Example Website
-```
+## 깊게 살펴보기:
 
-# 더 깊이 알아보기
+"DOMDocument"는 PHP 5에 도입된 기능으로, HTML과 XML을 파싱하는 강력한 도구입니다. 하지만 PHP가 HTML을 처리하는 유일한 방법은 아닙니다. Simple HTML DOM Parser 등의 라이브러리를 사용할 수도 있습니다.
 
-## 역사적 맥락
+HTML을 파싱하는 것은 간단해 보일 수 있지만, 구현상의 복잡성 때문에 실수가 발생하기 쉽습니다. 예를 들어, 허용되지 않은 문자나 잘못된 HTML 구조를 처리해야 할 수도 있습니다. 이런 문제를 방지하기 위해, 항상 올바르게 구성된 HTML을 사용해야 하며, 가능하다면 라이브러리를 사용하는 것이 좋습니다.
 
-HTML 파싱은 웹 개발이 시작된 초기부터 사용되어 온 기술입니다. 초기에는 많은 사람들이 직접 HTML 문서를 파싱하고 정보를 추출했지만, 이는 많은 시간과 노력을 요구했습니다. 따라서 파싱 기술이 등장하면서 이를 자동화하는 방법을 개발했고, 지금에 이르러 많은 개발자가 이를 이용하여 자동으로 정보를 추출하고 가공합니다.
+## 참고 자료:
 
-## 대안
-
-HTML 파싱을 하는 데 PHP 이외에도 다양한 도구들이 존재합니다. 예를 들어, Python에는 BeautifulSoup 많이 사용되는 HTML 파싱 라이브러리가 있고, JavaScript에는 Cheerio와 jQuery가 있습니다. 각 언어에 따라 장단점이 있으니 용도에 맞게 선택하면 됩니다.
-
-## 구현 상세 정보
-
-HTML 파싱을 할 때 정규식을 이용하는 것이 일반적입니다. 그 이유는 HTML의 형식이 매우 유연하기 때문입니다. 다른 방법으로는 DOM(Document Object Model)을 이용하는 것도 있습니다. 그러나 이는 HTML의 형식이 변경되거나 잘못된 형식의 HTML일 경우 문제를 일으킬 수 있습니다.
-
-# 관련 정보
-
-* PHP `file_get_contents()` 함수 문서: https://www.php.net/manual/en/function.file-get-contents.php
-* PHP `preg_match()` 함수 문서: https://www.php.net/manual/en/function.preg-match.php
-* BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/
-* Cheerio: https://cheerio.js.org/
-* jQuery: https://jquery.com/
+* PHP 공식 문서의 [DOMDocument](https://www.php.net/manual/en/class.domdocument.php)
+* [Simple HTML DOM Parser](http://simplehtmldom.sourceforge.net/)라이브러리

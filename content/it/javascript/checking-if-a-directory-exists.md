@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?:
-Verificare se una directory esiste è un'operazione comune per i programmatori che consente loro di gestire la struttura dei file nel loro codice. In pratica, si tratta semplicemente di verificare se una determinata directory è presente nel sistema.
+# Verifica dell'esistenza di una directory in JavaScript
+**Sommario**: Verificare l'esistenza di una directory è un compito comune quando si lavora con filesystem. In questo tutorial, scopriremo come fare proprio questo utilizzando JavaScript.
+
+## Cos'è e perché?
+Verificare l'esistenza di una directory significa controllare se una specifica directory esiste o no nel filesystem. Alcuni processi, come la lettura di file, il salvataggio di dati o l'installazione di programmi potrebbero richiederla. Questa verifica è un passaggio cruciale per prevenire errori durante l'esecuzione di questi processi.
 
 ## Come fare:
-Utilizzando il linguaggio di programmazione Javascript, è possibile verificare se una directory esiste utilizzando la funzione integrata "fs.existsSync()". Di seguito è riportato un esempio di codice che mostra come utilizzarla:
+Ecco come verificare l'esistenza di una directory utilizzando Node.js, una runtime di JavaScript molto popolare.
 
 ```Javascript
 const fs = require('fs');
 
-// Verifica se la directory "documents" esiste
-if (fs.existsSync('./documents')) {
-  console.log('La directory esiste!');
-} else {
-  console.log('La directory non esiste.');
-}
+fs.access('/percorso/della/directory', (errore) => {
+  if (errore){
+    console.log("La directory non esiste.");
+  } else {
+    console.log("La directory esiste.");
+  }
+});
 ```
-L'output di questo esempio dipende dal fatto che la directory "documents" sia presente o meno nel sistema. Se la directory esiste, sarà visualizzato il messaggio "La directory esiste!", altrimenti verrà mostrato il messaggio "La directory non esiste.".
+Dove '/percorso/della/directory' è il percorso della directory che si vuole verificare. 
 
 ## Approfondimento:
-La necessità di verificare l'esistenza di una directory deriva dal fatto che molte operazioni sui file richiedono l'utilizzo di percorsi (path) per accedere ai file. Senza una directory esistente, queste operazioni potrebbero causare errori nel codice.
+La funzione `fs.access()` esiste sin dalla versione v0.11.15 di Node.js. Ma c'è un'alternativa; prima di `fs.access()`, si usava `fs.exists()`, ma questa è stata deprecata nella documentazione perché portava a confusione.
+ 
+Ecco un esempio di come utilizzarla:
 
-Un'alternativa all'utilizzo di "fs.existsSync()" è l'utilizzo della funzione "fs.statSync()", che fornisce informazioni dettagliate sul file o sulla directory specificata. Tuttavia, questa è una soluzione più complessa e meno comune rispetto alla semplice verifica dell'esistenza di una directory.
+```Javascript
+const fs = require('fs');
+
+fs.exists('/percorso/della/directory', (esiste) => {
+  if(esiste){
+    console.log("La directory esiste.");
+  } else {
+    console.log("La directory non esiste.");
+  }
+});
+```
+Con `fs.exists()`, tuttavia, bisogna fare attenzione quando si lancia l'asincronicità del codice. 
 
 ## Vedi anche:
-- [Documentazione ufficiale di Node.js su fs.existsSync](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
-- [Documentazione ufficiale di Node.js su fs.statSync](https://nodejs.org/api/fs.html#fs_fs_statsync_path_options)
+1. Documentazione Node.js: [fs.access()](https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback), [fs.exists()](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)
+2. Blog sullo sviluppo di Node.js: [Why using `fs.exists()` is a mistake](https://shapeshed.com/why-using-fs.exists-is-a-mistake/) 
+3. StackOverflow: [How to check if directory exists in Node.js?](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)

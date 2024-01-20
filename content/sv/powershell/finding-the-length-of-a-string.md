@@ -1,6 +1,6 @@
 ---
 title:                "Hitta längden på en sträng"
-html_title:           "PowerShell: Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
 simple_title:         "Hitta längden på en sträng"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
-Att hitta längden på en sträng är en vanlig uppgift för programmerare. Det innebär helt enkelt att ta reda på hur många tecken en sträng innehåller. Det kan vara användbart för att hantera inmatade data eller för att utföra vissa operationer på en sträng.
+---
 
-# Hur man gör:
-```PowerShell
-$string = "Hej, jag heter Emma"
-$string.Length
-```
-Detta kommer att returnera längden på strängen "Hej, jag heter Emma", vilket är 19 tecken. Det finns även en inbyggd cmdlet "Get-Length" som kan användas för att hitta längden på en sträng: 
+## Vad & Varför?
+Att hitta strängens längd handlar om att räkna antalet tecken i en specifik sträng. Programmers gör detta för att kontrollera datainmatning, manipulera strängar, eller för kejsare villkor som kräver exakt stränglängd.
+
+## Hur gör man:
+För att hitta en strängs längd i PowerShell, använd ‘Length’ egenskapen av strängobjektet. Här är ett enkelt exempel:
 
 ```PowerShell
-Get-Length $string
+$sträng = "Hej, Sverige!"
+Write-Host $sträng.Length
 ```
-Detta kommer också att returnera 19 som längden på strängen.
+I detta fall kommer output att vara `14`, eftersom det finns 14 tecken i strängen "Hej, Sverige!".
 
-# Utforska djupare:
-Att hitta längden på en sträng är en grundläggande funktion inom programmering och har funnits sedan de första programmeringsspråken skapades. Det finns olika sätt att hitta längden på en sträng, beroende på vilket språk som används. Till exempel kan du använda "len" i Python eller ".length" i JavaScript för att hitta längden på en sträng. Det finns också andra mer avancerade sätt att hitta längden, som att använda regelbundna uttryck eller loopar för att räkna antalet tecken i en sträng.
+## Djupdykning:
+1. Historiskt sammanhang: ‘Length’ egenskapen av ett strängobjekt har använts sedan PowerShell först skapades. Det är en del av .NET-ramverket, vilket PowerShell är byggt på.
+  
+2. Alternativ: Byte-kodningen i en sträng kan också ha betydelse. Till exempel kan vissa tecken i en sträng vara flerbyte-tecken, vilket kan påverka stränglängden när du räknar i bytes och inte i tecken. I dessa fall kan du använda ‘Encoding’ klassen för att hitta strängens längd i bytes.
 
-# Se även:
-- [Microsoft Docs: Get-Length](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/get-length?view=powershell-7.1)
-- [W3Schools: String length](https://www.w3schools.com/python/ref_func_len.asp)
-- [MDN Web Docs: String.length](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+```PowerShell
+$sträng = "Hej, Sverige!"
+$byteLängd = [System.Text.Encoding]::UTF8.GetByteCount($sträng)
+Write-Host $byteLängd
+```
+3. Implementeringsdetaljer: Notera att PowerShell inte gör skillnad mellan enkla och dubbla citationstecken för strängar. Även om du använder enkla citationstecken kommer stränglängden att räknas korrekt.
+
+## Se Även:
+1. Microsoft’s dokument om stränglängder: https://docs.microsoft.com/sv-se/dotnet/api/system.string.length?view=net-5.0
+2. Diskussion om Stränglängder på StackOverflow: https://stackoverflow.com/questions/2144853/powershell-string-length
+3. Guide till PowerShell Strängmanipulation: https://adamtheautomator.com/powershell-string-manipulation/
+
+---

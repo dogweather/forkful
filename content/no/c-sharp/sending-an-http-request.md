@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "C#: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "C#"
 category:             "C#"
@@ -10,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-En HTTP-request er en måte å be om informasjon fra en nettside eller web-tjeneste. Det er en fundamental del av oppbygningen av internettet, da det lar programmerere sende og motta data mellom enheter. Vanligvis bruker man HTTP-protokollen for å sende disse forespørslene og motta svar.
+## Hvordan og Hvorfor?
+Å sende en HTTP-forespørsel er prosessen med å overføre bestemt informasjon til en server eller nettressurs via HTTP-protokollen. Vi programmerere gjør dette for å motta data, sende data, eller manipulere en tilstand på en server.
 
-## Slik gjør du det:
-I C# kan man sende en HTTP-request ved å bruke klassen HttpWebRequest i System.Net namespace. Her er et eksempel på hvordan det kan gjøres:
+## Hvordan å:
+Her er en enkel kode for å sende en GET-forespørsel ved hjelp av HttpClient i C#:
+
 ```C#
-// Oppretter en request til en URL
-HttpWebRequest request = (HttpWebRequest)WebRequest.Create("https://www.example.com");
-// Sender requesten og får en response tilbake
-HttpWebResponse response = (HttpWebResponse)request.GetResponse();
-// Leser data fra response stream
-string data = new StreamReader(response.GetResponseStream()).ReadToEnd();
-// Skriver ut data til konsoll
-Console.WriteLine(data);
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+
+class Program
+{
+    private static readonly HttpClient client = new HttpClient();
+
+    static async Task Main()
+    {
+        HttpResponseMessage response = await client.GetAsync("http://example.com");
+        response.EnsureSuccessStatusCode();
+        string responseBody = await response.Content.ReadAsStringAsync();
+
+        Console.WriteLine(responseBody);
+    }
+}
 ```
-Åpne denne koden i et tekstredigeringsprogram og bytt ut URL-en med en faktisk nettside for å få en output til konsollen med data fra den nettsiden.
 
-## Dykk dypere:
-HTTP-protokollen ble utviklet på 90-tallet og har blitt en standard for å kommunisere mellom klienter og servere på nettet. Det finnes også andre måter å sende og motta data, som for eksempel FTP, SMTP og WebSocket.
+Denne koden vil sende en GET-forespørsel til "http://example.com" og så skrive ut kroppen til serverens respons.
 
-Det finnes også ulike biblioteker og rammeverk som kan brukes til å sende og håndtere HTTP-requests, som for eksempel .NET HttpClient og RestSharp.
+## Dypdykk
+Historisk sett har mange HTTP-klienter blitt brukt i .NET Framework, som HttpWebRequest og WebClient. HttpClient, introdusert i .NET Framework 4.5, tilbyr en mer moderne og fleksibel tilnærming. 
 
-Når man sender en HTTP-request, blir den delt inn i flere deler som request line, header og content. Disse delene beskriver hva slags informasjon som blir sendt og hvordan den skal behandles. Det er viktig å være kjent med disse delene for å kunne lage en korrekt HTTP-request.
+Som et alternativ, kan du bruke RestSharp, et populært open-source prosjekt. RestSharp tilbyr mange funksjoner og er lett å bruke, men generelt sett, er HttpClient mer enn nok for de fleste oppgaver.
 
-## Se også:
-Les mer om HTTP på [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP).
+Når du bruker HttpClient, sørg for å gjenbruke HttpClient-instanser så langt det er mulig. HttpClient er ment å være instantiert en gang og gjenbrukt gjennom hele livsløpet til en applikasjon. 
 
-Utforsk ulike biblioteker for å håndtere HTTP-requests, som [RestSharp](https://restsharp.dev/) og [Flurl](https://flurl.dev/).
-
-Lær hvordan du kan bruke HTTP-requests i praksis ved å lage et API-kall i C# ved hjelp av [Postman](https://www.postman.com/).
+## Se også 
+* [Microsoft HttpClient-dokumentasjon](https://docs.microsoft.com/no-no/dotnet/api/system.net.http.httpclient?view=net-5.0)
+* [RestSharp-prosjekt](https://restsharp.dev/)
+* [HttpWebRequest vs HttpClient vs WebClient](https://www.infoworld.com/article/3044133/httpwebrequest-vs-httpclient-vs-webclient.html)

@@ -1,6 +1,6 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Python: Verificando se um diretório existe"
+html_title:           "Javascript: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Python"
 category:             "Python"
@@ -10,33 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que & Por quê?
-Verificar se um diretório existe é uma forma de garantir que um diretório específico está presente no sistema de arquivos. Os programadores fazem isso para evitar erros e bugs em seus códigos, garantindo que a execução do programa seja interrompida caso o diretório não exista.
+## O Que & Porquê?
 
-Como fazer:
-Verificar se um diretório existe é bastante simples em Python, basta usar a função `os.path.exists()` e passar o caminho do diretório como argumento. A função retornará um valor booleano: `True` se o diretório existir e `False` caso contrário.
+Verificar se um diretório existe é um processo em que verificamos se um determinado local em nosso sistema de arquivos existe antes de usar. Fazemos isso para evitar erros durante a execução de nossos programas, como tentar acessar um local que não existe.
 
-```
-Python
+## Como Fazer:
+
+Usando o módulo os na biblioteca padrão do Python, podemos verificar facilmente se um diretório existe.
+
+```Python
 import os
 
-# Verificar se o diretório "imagens" existe
-if os.path.exists("imagens"):
-    print("O diretório 'imagens' existe!")
+diretorio = "/caminho/para/o/diretorio"
+
+if os.path.isdir(diretorio):
+    print("O diretório existe.")
 else:
-    print("O diretório 'imagens' não existe!")
+    print("O diretório não existe.")
 ```
 
-Output:
+Nesse código, o método `os.path.isdir()` retorna `True` se o diretório existir e `False` caso contrário.
+
+## Mergulho Profundo
+
+Verificar se um diretório existe é um conceito que vem desde o início da programação, com diversas implementações em várias linguagens de programação.
+
+Uma alternativa ao método `os.path.isdir()` é usar a função `os.path.exists()`, que verifica se um caminho existe. Esta função retorna `True` para arquivos e diretórios, então é um pouco mais ampla.
+
+```Python
+import os
+
+path = "/caminho/para/o/diretorio"
+
+if os.path.exists(path):
+    print("O caminho existe.")
+else:
+    print("O caminho não existe.")
 ```
-O diretório 'imagens' existe!
-```
 
-Deep Dive:
-Historicamente, verificar se um diretório existe era feito usando a função `os.path.isdir()`, que verificava se um caminho era um diretório. No entanto, essa função poderia retornar `True` para links simbólicos, o que não era o comportamento desejado em alguns casos. Por isso, a função `os.path.exists()` foi criada para verificar se um caminho está presente no sistema de arquivos, sem se importar se é um arquivo ou diretório.
+Em termos de implementação, o Python utiliza internamente chamadas de sistema para verificar a existência do diretório. Essas chamadas de sistema são específicas para cada sistema operacional e por isso o Python consegue ser uma linguagem de programação portátil.
 
-Alternativas para verificar se um diretório existe incluem o uso do módulo `pathlib` e a função `os.access()`, que verifica se um caminho tem permissões específicas de acesso.
+## Veja Também
 
-Veja também:
-- Documentação oficial do Python sobre a função `os.path.exists()`: https://docs.python.org/3/library/os.path.html#os.path.exists
-- Artigo sobre diferentes maneiras de testar a existência de um diretório em Python: https://www.geeksforgeeks.org/python-check-if-a-file-or-directory-exists-2/
+- Documentação oficial do Python sobre o módulo os [aqui](https://docs.python.org/pt-br/3/library/os.path.html#os.path.isdir)
+- Diferença de uso entre os.path.exists, os.path.isfile, os.path.isdir [aqui](https://stackoverflow.com/questions/82831/how-do-i-check-whether-a-file-exists-without-exceptions)
+- Explicação do Sistema de Arquivos do Python [aqui](https://docs.python.org/pt-br/3/tutorial/stdlib2.html#the-file-system)

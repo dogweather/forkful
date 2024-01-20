@@ -1,7 +1,7 @@
 ---
-title:                "Gjøre strengen stor"
-html_title:           "C#: Gjøre strengen stor"
-simple_title:         "Gjøre strengen stor"
+title:                "Sette stor bokstav i en streng"
+html_title:           "C#: Sette stor bokstav i en streng"
+simple_title:         "Sette stor bokstav i en streng"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,41 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## Hva og Hvorfor?
 
-Kapitalisering av en streng betyr å gjøre den første bokstaven i hvert ord til en stor bokstav. Dette gjøres av programmere for å gjøre teksten mer lesbar og for å følge vanlig konvensjon for tekstutforming.
+Å kapitalisere en streng i programmering betyr å endre bokstavene i strengen til store bokstaver. Programmerere gjør dette for å standardisere datainnganger eller skape et mer estetisk brukergrensesnitt.
 
 ## Hvordan:
 
+Her er noen metoder for å kapitalisere en streng i C#:
+
+```C#
+// Bruk av ToUpper()-metode
+string liten_streng = "hei der";
+string stor_streng = liten_streng.ToUpper();
+
+Console.WriteLine(stor_streng);   
+// Utdata vil være: "HEI DER"
+
+// Bruk av TextInfo.ToTitleCase() for tittelkapitalisering
+System.Globalization.CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+System.Globalization.TextInfo textInfo = cultureInfo.TextInfo;
+
+string lavtittel = "hei verden";
+string stortittel = textInfo.ToTitleCase(lavtittel);
+
+Console.WriteLine(stortittel); 
+// Utdata vil være: "Hei Verden"
 ```
-void Main() 
-{ 
-    string inputString = "hei, dette er en tekst som skal kapitaliseres."; 
-    Console.WriteLine(capitalizeString(inputString)); 
-} 
 
-string capitalizeString(string str) 
-{ 
-    string[] words = str.Split(' '); 
-    for (int i = 0; i < words.Length; i++) 
-    { 
-        words[i] = words[i].Substring(0, 1).ToUpper() + words[i].Substring(1); 
-    } 
-    return String.Join(" ", words); 
-} 
+## Dyp Dykk:
 
-// Output: Hei, Dette Er En Tekst Som Skal Kapitaliseres.
-```
+Historisk sett, transformationsmetoder som ToUpper() har blitt brukt på grunn av dens enkelhet og bekvemmelighet. Imidlertid, det handler om alle bokstavene i strengen, ikke bare den første som i Title Case.
 
-## Dypdykk:
+Alternativt kan du bruke TextInfo.ToTitleCase() metoden for å bare kapitalisere det første tegnet av hvert ord i en streng, det er spesielt nyttig når du arbeider med titler eller navn.
 
-Historisk sett har kapitalisering blitt brukt i trykte tekster for å markere begynnelsen av en setning eller et navn. I dag brukes det i programmering for å følge konsistente konvensjoner og for å lette lesbarheten av koden.
-
-Alternativt kan man også bruke funksjonen `ToTitleCase()` i C# for å enkelt kapitalisere en streng. Dette fungerer imidlertid ikke alltid som forventet for språk som ikke følger det engelske alfabetet.
-
-Implementeringen som er vist i koden over tar hensyn til at en streng kan inneholde flere ord og sørger for å kapitalisere hver eneste et. Den benytter seg også av string operations og en for-løkke for å iterere gjennom hvert ord i strengen.
+Det er viktig å understreke at disse metodene ikke endrer originale strengen. I stedet returnerer de en ny streng med de bearbeidede endringene. Det er fordi strenger i C# er uforanderlige - når de er opprettet, kan de ikke endres.
 
 ## Se også:
 
-- [Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.totitlecase?view=net-5.0) for mer informasjon om `ToTitleCase()`-funksjonen i C#.
-- [Wikipedia](https://no.wikipedia.org/wiki/Stor_og_liten_bokstav) for en oversikt over bruken av kapitalisering i språk generelt.
+For mer informasjon om streng manipulasjon i C#, sjekk ut disse ressursene:
+
+1. Microsoft's dokumentasjon på streng-klasser: [String-klassen (System)](https://docs.microsoft.com/no-no/dotnet/api/system.string?view=net-5.0)
+2. Microsoft's Guide om hvordan transformere streng: [Hvordan: Modifisere strenginnhold i C#](https://docs.microsoft.com/no-no/dotnet/csharp/how-to/modify-string-contents)
+3. Mer inngående diskusjon om uforanderlighet av strenger: [Immutability of Strings in C#](https://www.c-sharpcorner.com/article/immutability-of-string-in-c-Sharp/)
+   
+Husk, det er mange veier til å oppnå samme resultat i programmering, så eksperimenter og finn det som fungerer best for deg.

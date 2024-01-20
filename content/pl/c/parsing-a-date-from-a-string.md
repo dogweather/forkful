@@ -1,7 +1,7 @@
 ---
-title:                "Analiza daty ze łańcucha znaków."
-html_title:           "C: Analiza daty ze łańcucha znaków."
-simple_title:         "Analiza daty ze łańcucha znaków."
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,58 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O co chodzi i dlaczego?
+## Co i dlaczego?
 
-Parsowanie daty z ciągu znaków to proces wyodrębniania informacji o dacie z tekstu w ustalonym formacie. Programiści często zajmują się tym, gdyż muszą przetwarzać dane wejściowe, które zawierają daty w postaci tekstu.
+Analiza daty z ciągu (stringu) to proces ekstrakcji konkretnych informacji o dacie z tekstu. Programiści to robią, aby przekształcić dane wejściowe w postaci tekstowej na format, który jest łatwiejszy do przetworzenia i analizy.
 
-# Jak to zrobić?
+## Jak to zrobić:
 
-Poniżej znajdują się przykładowe kody, które pokazują jak parsować datę z ciągu znaków w języku C. Pamiętaj, że dla większej czytelności kodu, umieszczamy tylko niezbędne elementy, takie jak wywołania funkcji i zmienne. Pełne przykłady możesz znaleźć w powiązanych źródłach.
+Przykład programu, który analizuje datę ze stringa:
 
-```
+```C
 #include <stdio.h>
 #include <time.h>
 
-int main()
-{
-    char date_str[] = "01/01/2020"; // Przykładowy ciąg znaków z datą
-    struct tm date; // Struktura przechowująca informacje o dacie
+int main(){
+    struct tm tm;
+    char buf[255];
 
-    // Przetwarzamy tekst na datę używając funkcji strptime()
-    if (strptime(date_str, "%d/%m/%Y", &date) != NULL)
-    {
-        // Teraz możemy wyświetlić poszczególne elementy daty
-        printf("Dzień: %d\n", date.tm_mday);
-        printf("Miesiąc: %d\n", date.tm_mon + 1); // Funkcja przetwarza miesiące od 0, więc musimy dodać 1
-        printf("Rok: %d\n", date.tm_year + 1900); // Funkcja przetwarza lata od 1900
-    }
-    else
-    {
-        printf("Nieprawidłowy format daty\n");
-    }
+    memset(&tm, 0, sizeof(struct tm));
+    strptime("2022-09-26", "%Y-%m-%d", &tm);
+    strftime(buf, sizeof(buf), "%A, %B %d, %Y", &tm);
+
+    printf("Data: %s\n", buf);    
 
     return 0;
 }
 ```
 
-Wynikiem powyższego kodu powinno być:
+Gdy uruchomisz ten kod, otrzymasz następującą odpowiedź:
 
-```
-Dzień: 1
-Miesiąc: 1
-Rok: 2020
+```C
+Data: poniedziałek, wrzesień 26, 2022
 ```
 
-# Głębszy zanurzenie
+## Dogłębne zanurzenie
 
-Parsowanie daty z ciągu znaków jest ważnym i powszechnym zadaniem w programowaniu. W przeszłości programiści musieli samodzielnie implementować funkcje do tego celu, jednak teraz język C oferuje wbudowane funkcje, takie jak `strptime()`, które ułatwiają ten proces.
+1. **Kontekst historyczny**: Funkcję `strptime` dodano do biblioteki C w 1989 roku, a początkowo była dostępna tylko na platformach BSD i Linux. Obecnie jest dostępna w większości dystrybucji C.
 
-Alternatywnym sposobem na parsowanie daty jest wykorzystanie biblioteki `libdatetime` lub `libcalender`, które oferują bardziej zaawansowane funkcje do przetwarzania dat.
+2. **Alternatywy**: Chociaż najczęściej używanymi funkcjami są `strptime` i `strftime`, inne biblioteki, takie jak `getdate`, także mogą być używane do rozwiązania tego problemu.
 
-Implementacja `strptime()` wykorzystuje tablicę formatu, która określa, w jakiej kolejności poszczególne elementy daty występują w tekście. Dzięki temu funkcja jest w stanie poprawnie przetworzyć datę bez względu na jej format.
+3. **Szczegóły implementacji**: `strptime` musi być zdefiniowane przez bibliotekę czasu. Ponieważ może być to zdefiniowane różnie na różnych systemach, zachowanie może się różnić.
 
-# Zobacz także
+## Zobacz również
 
-- Dokumentacja `strptime()` w języku C: https://www.cplusplus.com/reference/ctime/strptime/?kw=strptime
-- Informacje o bibliotece `libdatetime`: https://www.ibm.com/support/knowledgecenter/en/SSLTBW_2.1.0/com.ibm.zos.v2r1.bpxbd00/dstatim.htm
-- Dokumentacja `libcalender`: https://man7.org/linux/man-pages/man3/calender.3.html
+1. Dokumentacja na temat funkcji `strptime`: https://man7.org/linux/man-pages/man3/strptime.3.html
+
+2. Więcej informacji na temat zrozumienia formatów daty i czasu: https://strftime.org/
+
+3. Dyskusja na StackOverflow na temat analizy daty z ciągu: https://stackoverflow.com/questions/2891494/how-do-i-use-strptime

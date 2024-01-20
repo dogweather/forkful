@@ -1,7 +1,7 @@
 ---
-title:                "Виведення відлагоджувального виводу"
-html_title:           "Gleam: Виведення відлагоджувального виводу"
-simple_title:         "Виведення відлагоджувального виводу"
+title:                "Друк відлагоджувального виводу"
+html_title:           "Arduino: Друк відлагоджувального виводу"
+simple_title:         "Друк відлагоджувального виводу"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Whaddup, Ukrainian coders! Are you tired of spending hours trying to debug your code? Well, guess what - you don't have to anymore! Say hello to printing debug output in Gleam.
+## Що і чому?
 
-## What & Why?
-Okay, so what is printing debug output? It's basically a fancy way of saying that you can print information from your code while it's running, in order to track down any errors or bugs. Why do we do it? Because let's be real, no one wants to spend hours trying to figure out why their code isn't working when they could just print out some helpful info to guide them in the right direction.
+Друк відлагоджувального виводу - це метод виводу даних на консоль або в файл для подальшого розбору. Програмісти використовують його для відстеження і усунення помилок, моніторингу роботи програми в реальному часі.
 
-## How to:
-So, how can you print debug output in Gleam? It's super simple, check it out:
+## Як це зробити:
+
+Зразок коду на Gleam та очікуваний вивід:
+
 ```Gleam
 import gleam/io
 
-// Printing a string
-let greeting = "Hello World!"
-io.println(greeting)
-
-// Printing a number
-let num = 42
-io.println(num)
+fn main() {
+    io.debug("Це повідомлення для відлагодження")
+}
 ```
-And here's the output you'll see when you run this code:
+
+При виконанні цього коду у вашому терміналі або виводі ви побачите:
+
+```Gleam
+"Це повідомлення для відлагодження"
 ```
-Hello World!
-42
-```
-Easy peasy, right?
 
-## Deep Dive:
-Printing debug output is nothing new in the programming world. Historically, developers have used it as a way to debug their code and track down any issues. However, there are alternatives such as using a debugger or writing unit tests. So why choose printing debug output? Well, it's a quick and easy way to get some insights into your code without having to set up a whole debugging environment or write extensive tests. Plus, it can come in handy when you're working on a new project or trying to troubleshoot a problem on the fly.
+## Занурення у деталі
 
-In terms of implementation, Gleam uses the `io.println()` function to print debug output. You can pass in any type of data and it will print it out for you. Keep in mind, you'll want to remove any debug output before deploying your code to production, as it can slow down your program.
+Відлагоджувальний вивід сягає коренів ще до днів карткових машин, коли середа виводу була друкувальною машиною. З тих пір його застосування та використання значно розширився.
 
-## See Also:
-Wanna learn more about printing debug output? Check out the official Gleam documentation [here](https://gleam.run/book/tour/printing-debug-output.html) and [here](https://gleam.run/book/core-functions.html#io-module). And if you're interested in other debugging techniques, look into using a debugger or writing unit tests. Happy coding!
+Альтернативами для відлагодження можуть бути логування, використання спеціальних тулів для відлагодження, і встановлення контрольних точок в коді.
+
+Оскільки Gleam - це молода мова, її особливості з відлагоджувального виводу ще розвиваються. Однак вона наслідує багато своїх відлагоджувальних структур від Erlang, на якому вона побудована, включаючи здатність виводити дані в реальному часі без зупинки програми.
+
+## Додатково
+
+- Офіційна документація Gleam: https://gleam.run/docs/
+- Порівняння відлагодження в різних мовах: https://en.wikipedia.org/wiki/Comparison_of_programming_languages_(debugging)
+- Історія відлагоджувального виводу: https://en.wikipedia.org/wiki/Debugging

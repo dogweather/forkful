@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "C"
 category:             "C"
@@ -11,43 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Pobieranie strony internetowej to proces pobierania kodu źródłowego witryny z internetu. Programiści mogą to robić z różnych powodów, na przykład do analizy kodu lub pobierania danych z witryny.
+Pobieranie strony internetowej polega na uzyskaniu dostępu do jej kodu HTML na swoim komputerze. Programiści robią to, aby analizować strukturę strony, co może pomóc w tworzeniu botów, skryptów bądź w pozyskiwaniu danych.
 
 ## Jak to zrobić?
-Poniżej przedstawiam kod w języku C, który można użyć do pobrania strony internetowej i wyświetlenia jej kodu źródłowego w konsoli:
+Użytkownik musi połączyć się z serwerem, na którym znajduje się strona, a następnie wysłać żądanie HTTP GET. W kodzie C możemy to zrobić za pomocą biblioteki libcurl. Poniżej znajduje się przykład kodu, który pobiera źródło strony www:
 
 ```C
-#include<stdio.h>
-#include<stdlib.h>
+#include <curl/curl.h>
 
-int main(){
-    // deklaracja i inicjalizacja zmiennej dla adresu URL
-    char url[] = "https://www.example.com";
-    // otwarcie strumienia dla adresu URL
-    FILE *fp = fopen(url, "r");
-    // ustawienie maksymalnego rozmiaru dla odczytywanych danych
-    char buffer[100];
-    // odczytywanie danych ze strumienia i wyświetlenie ich w konsoli
-    while(fgets(buffer, 100, fp) != NULL){
-        printf("%s", buffer);
+int main(void)
+{
+    CURL *curl;
+    CURLcode res;
+
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        res = curl_easy_perform(curl);
+        curl_easy_cleanup(curl);
     }
-    // zamknięcie strumienia
-    fclose(fp);
     return 0;
 }
 ```
-Wynikiem działania tego kodu będzie wyświetlenie kodu źródłowego strony internetowej w konsoli.
 
-## Głębszy zanurzenie
-Pobieranie stron internetowych jest powszechnie używanym zadaniem w programowaniu. W przeszłości, programiści musieli ręcznie pobierać kod źródłowy każdej witryny, co zajmowało im dużo czasu. Dzięki narzędziom, takim jak język C i biblioteka standardowa, można to robić w bardziej zautomatyzowany sposób.
+## Do głębi
+Historia pobierania stron web sięga powstania protokołu HTTP w 1989 roku. Z biegiem lat rozwinęło się wiele alternatyw, takich jak Scrapy dla Pythona czy Jsoup dla Java. Wybór zależy od języka, w którym programujesz, ale w C libcurl jest standardem.
 
-Alternatywą dla pobierania stron internetowych jest wykorzystanie dedykowanych narzędzi do tego zadania, np. narzędzi w językach Python lub Ruby.
+Detale implementacji mogą się różnić, ale zasada jest taka sama - wysyłka żądania GET do serwera i odbieranie odpowiedzi, która zawiera źródło strony. Istotne jest również właściwe zarządzanie zasobami - chociażby poprzez stosowanie funkcji `curl_easy_cleanup`.
 
-Implementacja pobierania stron internetowych jest zależna od konkretnego języka programowania. W języku C, jak w przykładzie powyżej, wykorzystuje się funkcję `fopen()` do otwarcia strumienia dla adresu URL, a następnie czyta się dane z tego strumienia i wyświetla w konsoli.
-
-## Zobacz także
-- [Dokumentacja biblioteki standardowej języka C](https://en.cppreference.com/w/c)
-- [Narzędzia do automatyzacji pobierania stron internetowych w języku Python](https://realpython.com/python-web-scraping-libraries/)
-- [Narzędzia do automatyzacji pobierania stron internetowych w języku Ruby](https://www.rubyguides.com/2019/10/ruby-web-scraping/)
-
-Dzięki wykorzystaniu języka C, programiści są w stanie szybko i łatwo pobierać strony internetowe i wykorzystywać je do różnych celów. Warto zaznajomić się z tą funkcjonalnością, ponieważ może przydać się w wielu projektach.
+## Zobacz też
+- [Dokumentacja libcurl](https://curl.haxx.se/libcurl/c/)
+- [Poradnik "How to download a webpage using C"](https://www.example.com/download-webpage)
+- [Artykuł "Anatomy of an HTTP Transaction"](https://developer.mozilla.org/pl/docs/Web/HTTP)
+- [Poradnik "Scraping a web page in C"](https://progur.com/2016/09/how-to-scrape-web-pages-in-c.html)

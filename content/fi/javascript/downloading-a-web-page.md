@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Javascript: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+# Artikkeli Aiheena: Kuinka Ladataan Verkkosivu HTML JavaScriptilla
 
-Tiedätkö kuinka voit ladata web-sivun näytöllesi? Tämä on yksi tärkeimmistä taidoista, joita ohjelmoijan tulisi hallita. Tämä tarkoittaa sitä, että voit hakea ja näyttää web-sivuja internetistä. Tämä on oleellista monille sovelluksille, kuten selaimille, hakukoneille ja sosiaalisen median sovelluksille.
+## Mikä & Miksi?
 
-# Kuinka tehdä?
+Webbisivun lataaminen tarkoittaa sivun sisällön hakemista verkon yli ja sen näyttämistä selaimessa. Koodarit tekevät tämän esimerkiksi tietojen kaapimiseksi tai offline-sisällön luomiseksi.
 
-Pystyt lataamaan web-sivuja käyttämällä `JavaScript`-kielen sisäänrakennettua toimintoa `XMLHttpRequest`. Voit aloittaa luomalla uuden XMLHttpRequest-olion ja asettamalla sen avulla osoitteen, josta haluat ladata web-sivun. Sitten käytä `open()`-metodia määrittämään HTTP-pyyntötyyppi ja osoitteen. Lopuksi käytä `send()`-metodia aloittaaksesi lataamisen. Alla on esimerkki koodista:
-
-```Javascript
-let xmlhttp = new XMLHttpRequest(); // Luodaan uusi olio
-xmlhttp.open('GET', 'https://example.com', true); // Määritetään HTTP-pyyntötyyppi ja osoite
-xmlhttp.send(); // Aloittaa lataamisen
-```
-
-Kun olet ladannut web-sivun, voit käyttää `responseText`-ominaisuutta saadaksesi sivun sisällön. Voit myös käyttää muita ominaisuuksia, kuten `status`, joka kertoo lataamisen tilasta, tai `getAllResponseHeaders()`, joka palauttaa kaikki vastauksen otsikot. Alla on esimerkki koodista, joka tulostaa ladatun sivun sisällön:
+## Näin Se Tehdään:
 
 ```Javascript
-// Kun ladattu sivu on valmis
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        // Tulostetaan sivun sisältö
-        console.log(xmlhttp.responseText);
-    }
-}
+const https = require('https');
+const fs = require('fs');
+
+let url = "https://omanetajanosoite.com";
+
+https.get(url, (res) => {
+  res.pipe(fs.createWriteStream('sisalto.html'));
+}).on('error', (e) => {
+  console.error(`Virhe: ${e.message}`);
+});
 ```
 
-# Syvällinen sukellus
+## Syvemmälle
 
-`XMLHttpRequest`-tekniikka on ollut käytössä vuodesta 1999 lähtien ja se on yksi ensimmäisistä tekniikoista, joita käytettiin lataamaan web-sivuja dynaamisesti. Nykyään on olemassa myös muita vaihtoehtoja, kuten käyttämällä `Fetch API`-toimintoa tai asynkronista `fetch()`-metodia. Nämä toimivat samalla periaatteella kuin `XMLHttpRequest`.
+**Historiallinen tausta:** 
+Verkkosivujen lataaminen on ollut osa verkon perustoimintoa siitä saakka, kun ensimmäiset verkkosivut ja selaimet keksittiin 1990-luvun alussa.
 
-Kun lataat web-sivun, voit myös määrittää muita asetuksia, kuten asettaa HTTP-otsikoita lisämällä `setRequestHeader()`-metodin. Voit myös määrittää pyynnön asetukset, kuten käyttämällä `withCredentials`-ominaisuutta määrittääksesi, kuljetetaanko evästeitä pyynnössä. Voit löytää lisätietoja näistä vaihtoehdoista MDN-dokumentaatiosta.
+**Vaihtoehdot:**
+JavaScriptin lisäksi voit käyttää myös muita ohjelmointikieliä, kuten Python tai Ruby, verkkosivujen lataamiseen.
 
-# Katso myös
+**Toteutus yksityiskohdat:**
+`https.get()` -metodi hakee dataa antamastasi URL-osoitteesta. `res.pipe(fs.createWriteStream('sisalto.html'));` tallentaa tämän datan 'sisalto.html' tiedostoon.
 
-- [MDN - Asynchronous JavaScript](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)
-- [W3Schools - XMLHttpRequest](https://www.w3schools.com/XML/xml_http.asp)
-- [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+## Katso Myös
+
+- Node.js ja HTTP(S) moduulien dokumentaatio: https://nodejs.org/api/http.html
+- fs-moduulin dokumentaatio: https://nodejs.org/api/fs.html
+- Muita tapoja verkkosivujen lataamiseen: https://www.npmjs.com/package/html-downloader

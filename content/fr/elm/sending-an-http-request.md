@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http"
-html_title:           "Elm: Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "Elm"
 category:             "Elm"
@@ -12,45 +12,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Quoi & Pourquoi?
 
-Envoyer une demande HTTP est une action courante dans la programmation Elm. Il s'agit de faire une requête à un serveur pour récupérer des données ou effectuer une action. Les programmeurs utilisent les demandes HTTP pour communiquer avec des API, récupérer des informations à jour ou envoyer des données depuis leur application.
+L'envoi d'une requête HTTP est un moyen de demander des données à un serveur. Les programmeurs le font pour communiquer avec des serveurs web, pour obtenir ou envoyer des données.
 
 ## Comment faire:
 
-Voici un exemple de code montrant comment faire une demande HTTP en utilisant la bibliothèque "Http" intégrée à Elm:
+Ici, nous utilisons la bibliothèque `Http` dans Elm pour envoyer une requête GET. 
 
 ```Elm
 import Http
+import Json.Decode as Decode
 
--- faire une demande GET à l'adresse "https://mon-serveur.com/api/articles"
-Http.get "https://mon-serveur.com/api/articles"
-    |> Http.send ArticlesRecus -- ArticlesRecus sera la fonction de gestion de la réponse
+type alias User = 
+    { id : Int
+    , name : String
+    }
 
--- fonction de gestion de la réponse
-ArticlesRecus : Http.Response a -> Msg
-ArticlesRecus response =
-    case response of
-        -- si la demande a réussi, récupérer le contenu de la réponse
-        Http.Ok articles ->
-            let
-                contenu = articles.body
-            in
-                -- faire quelque chose avec le contenu récupéré
-                MsgTraitement contenu
+getUser: Int -> Cmd Msg
+getUser userId =
+    Http.get 
+        { url = "https://jsonplaceholder.typicode.com/users/" ++ String.fromInt userId
+        , expect = Http.expectJson GotUser (Decode.field "name" Decode.string)
+        }
 
-        -- si la demande a échoué, renvoyer une erreur
-        Http.Err erreur ->
-            Error erreur
-
+type Msg = 
+    GotUser (Result Http.Error String)
 ```
 
-## Plongée en profondeur:
+La réponse du serveur sera traitée dans la fonction `update`.
 
-Les demandes HTTP ont été introduites pour la première fois en 1991 et ont depuis été largement utilisées pour communiquer entre les serveurs et les clients sur le web. Bien qu'elles soient toujours largement utilisées, il existe maintenant plusieurs alternatives telles que GraphQL ou gRPC qui offrent des fonctionnalités plus avancées pour les demandes de données.
+```Elm
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        GotUser result ->
+            case result of
+                Ok user ->
+                    ( { model | user = Just user.name }, Cmd.none )
 
-L'implémentation d'une demande HTTP avec Elm est assez simple grâce à la bibliothèque intégrée. Cependant, il est important de considérer la gestion des erreurs et les bonnes pratiques pour optimiser les performances.
+                Err _ ->
+                    ( model, Cmd.none )
+```
 
-## Voir aussi:
+Dans l'exemple, `GotUser` est un message qui génère une nouvelle commande à partir du `Result` renvoyé par l'API.
 
-Pour en savoir plus sur les demandes HTTP en Elm, consultez la documentation officielle: [https://package.elm-lang.org/packages/elm/http/latest/]
+## Plongée en profondeur
 
-Vous pouvez également découvrir d'autres alternatives pour la récupération de données telles que GraphQL: [https://package.elm-lang.org/packages/dillonkearns/elm-graphql/latest/]
+Historiquement, XMLHttpRequest était la première méthode pour envoyer des requêtes HTTP dans le navigateur. Elm utilise une enveloppe autour de XMLHttpRequest appelée `elm/http`. 
+
+Il existe des alternatives à l'envoi de requêtes HTTP telles que GraphQL, WebSockets qui ont différentes caractéristiques de performance et d'utilisation.
+
+En Elm, l'envoi d'une requête HTTP est effectué de manière asynchrone. Cela signifie que votre application ne sera pas bloquée pendant l'envoi de la requête. Au lieu de cela, vous créez une `Cmd` qui est ensuite exécutée par le runtime Elm, et une fois que la réponse est prête, une fonction de mise à jour sera appelée avec le résultat.
+
+## Voir Aussi
+
+1. [Documentation officielle Elm](https://package.elm-lang.org/packages/elm/http/latest/Http): Pour plus de détails sur l'utilisation des requêtes HTTP avec Elm.
+2. [Explication détaillée sur les requêtes HTTP](https://guide.elm-lang.org/effects/http.html): Un guide par étapes sur la façon de gérer les requêtes HTTP en Elm.
+3. [API JSONPlaceholder](https://jsonplaceholder.typicode.com/): Une fausse API en ligne pour tester la récupération de données.
+4. [Json.Decode - Elm](https://package.elm-lang.org/packages/elm/json/latest/Json-Decode): Pour en savoir plus sur la décodification des réponses JSON en Elm. 
+
+Bon codage!

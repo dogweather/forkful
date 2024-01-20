@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Elm: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Porównywanie dwóch dat jest niezbędną częścią programowania, ponieważ umożliwia nam sprawdzenie, czy jedna data jest wcześniejsza, późniejsza czy równa drugiej. Jest to szczególnie ważne w aplikacjach, które manipulują czasami i datami, takich jak kalendarze i aplikacje finansowe.
+## Co i dlaczego?
+
+Porównywanie dwóch dat to proces sprawdzania, która data jest wcześniejsza, późniejsza lub czy są one równe. Programiści robią to, aby prawidłowo manipulować danymi związanymi z datą w swoich aplikacjach.
 
 ## Jak to zrobić:
 
-Można użyć funkcji `Date.compare` w Elm, która przyjmuje dwa argumenty typu `Date` i zwraca jedną z trzech wartości: `-1`, `0` lub `1`. Wartości te wskazują odpowiednio, czy pierwsza data jest wcześniejsza, równa lub późniejsza od drugiej. 
+Elm (wersja aktualna) umożliwia proste porównywanie dat. Poniżej przedstawiono przykładowy kod:
 
 ```Elm
-import Date exposing (..)
+import Time
 
-Date.compare (fromString "2021-02-20") (fromString "2021-02-21") -- zwraca -1
+timeComparison : Time.Posix -> Time.Posix -> String
+timeComparison time1 time2 =
+    if Time.millisToPosix time1 > Time.millisToPosix time2 then
+        "Time1 jest późniejszy"
+    else if Time.millisToPosix time1 < Time.millisToPosix time2 then
+        "Time2 jest późniejszy"
+    else
+        "Daty są równe"
 ```
 
-W przypadku, gdy porównywane daty są sobie równe, funkcja zwróci wartość `0`.
+W tym kodzie porównujemy dwie daty (time1 i time2) - daty są przekształcane na wartości typu `Time.Posix` za pomocą `Time.millisToPosix`, a następnie porównywane.
 
-Można również użyć funkcji `Date.isAfter` i `Date.isBefore`, które zwracają wartość logiczną (`True` lub `False`) i sprawdzają, czy pierwsza data jest odpowiednio późniejsza lub wcześniejsza od drugiej.
+## Głębsze spojrzenie 
 
-```Elm
-import Date exposing (..)
+Porównywanie dat jest od dawna istotnym aspektem programowania. Elm musiał dostosować się do tej potrzeby, podobnie jak wiele innych języków programowania.
 
-Date.isAfter (fromString "2021-03-02") (fromString "2021-03-01") -- zwraca True
-```
+Alternatywą dla porównywania dat w Elm jest użycie języka JavaScript w połączeniu z pakietem Elm/JavaScript. Możemy następnie korzystać z wbudowanych funkcji JavaScript do porównywania dat. Jest to jednak mniej eleganckie i wymaga dodatkowego kodu.
 
-## Dogłębnie:
-Funkcje porównujące daty w Elm są oparte na standardzie ISO 8601, który określa format daty jako `YYYY-MM-DD`. Wcześniej funkcje te były dostępne w module `Time`, ale zostały przeniesione do modułu `Date` w celu ustandaryzowania i ułatwienia korzystania z nich.
+Szczegóły implementacji porównywania dat w Elm są dosyć proste: Elm przechowuje daty jako milisekundy od pewnego ustalonego punktu (epoki Unix), co umożliwia łatwe porównywanie tych wartości.
 
-Jeśli chodzi o alternatywy, można również porównywać daty wykorzystując mechanizmy dostępne w JavaScript, ale wymaga to nieco więcej kodu i nie jest tak wygodne jak w przypadku Elm.
+## Zobacz także
 
-Szczegółowe informacje o tym jak funkcje porównujące daty są implementowane w Elm można znaleźć w dokumentacji języka.
+Jeżeli chcesz dowiedzieć się więcej na temat dat i czasu w Elm, zobacz poniższe linki:
 
-## Zobacz także:
-- Dokumentacja `Date` w Elm: https://package.elm-lang.org/packages/elm/time/latest/Date
-- Standard ISO 8601: https://en.wikipedia.org/wiki/ISO_8601
+- [Dokumentacja Elm na temat czasu (Time)](https://package.elm-lang.org/packages/elm/time/latest/)
+- [Porównanie dat w Elm](https://korban.net/posts/elm/2019-12-04-idiomatic-guide-to-dates-and-time-in-elm/)
+- [JavaScript i Elm: Praca z datami i czasem](https://elmprogramming.com/dates-and-time.html)

@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-html_title:           "Arduino: बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -11,62 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-एक HTTP अनुरोध भेजना बेसिक प्रमाणीकरण के साथ क्या है और क्यों प्रोग्रामर्स इसे करते हैं? बेसिक प्रमाणीकरण एक वेब सुरक्षा प्रोटोकॉल है जो सुरक्षित डेटा स्थानांतरण को सुनिश्चित करता है। प्रोग्रामर्स इसका उपयोग डेवलपमेंट और डेटा एक्सचेंज के दौरान करते हैं।
+
+HTTP अनुरोध भेजना बुनियादी प्रमाणीकरण के साथ, एक वेब सर्वर से डेटा प्राप्त करने का एक तकनीक है, जिसमें यूज़रनेम और पासवर्ड की मांग की जाती है। प्रोग्रामर्स इसे उपयोग करते हैं क्योंकि यह उन्हें सुरक्षित ढंग से वेब सर्वर के साथ बातचीत करने की अनुमति देता है। 
 
 ## कैसे करें:
-अर्डुइनो बोर्ड के साथ HTTP अनुरोध भेजने के लिए कुछ सरल उदाहरण।
 
-```
-#include <WiFi.h>
-#include <WiFiClientSecure.h>
+Arduino के साथ कोड लिखने का एक उदाहरण नीचे दिया गया है:
 
-const char *ssid = "YOUR_WIFI_NETWORK_NAME";
-const char *password = "YOUR_WIFI_PASSWORD";
-const char *host = "HOST_NAME";
-const char *path = "/API_ENDPOINT";
+```Arduino
+#include <ESP8266HTTPClient.h>
 
 void setup() {
-  Serial.begin(9600);
-  WiFi.begin(ssid, password);
-
-  while(WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(".");
-  }
-  Serial.println("");
-  Serial.println("WiFi connected.");
-  Serial.println("IP address: ");
-  Serial.println(WiFi.localIP());
-
-  WiFiClientSecure client;
-  Serial.print("connecting to ");
-  Serial.println(host);
-  if(!client.connect(host, 443)) {
-    Serial.println("connection failed");
-    return;
-  }
-
-  String url = path + "?PARAMETER=VALUE";
-  Serial.print("Requesting URL: ");
-  Serial.println(url);
-  client.print(String("GET ") + url + " HTTP/1.1\r\n" +
-               "Host: " + host + "\r\n" +
-               "Authorization: Basic YOUR_AUTHORIZATION_KEY\r\n" +
-               "Connection: close\r\n\r\n");
-  Serial.println("Request sent");
+  Serial.begin(115200); 
 }
 
 void loop() {
-  if (Serial.available()) {
-    Serial.write(client.read());
+  HTTPClient http;  
+  http.begin("http://example.com"); 
+  http.setAuthorization("username", "password"); 
+  int httpCode = http.GET();  
+  if(httpCode > 0) {
+     String payload = http.getString(); 
+     Serial.println(payload); 
   }
+  http.end();
 }
 ```
 
-## गहराई में जाएं:
-एक HTTP अनुरोध भेजने के बारे में अधिक जानकारी। इसका उपयोग सुरक्षित डेटा स्थानांतरण को सुनिश्चित करने के लिए किया जाता है। यह एक साधारण वेब सुरक्षा प्रोटोकॉल है जो इंटरनेट द्वारा डेटा को सुरक्षित रूप से स्थानांतरित करता है। अल्टर्नेटिव के रूप में, एक अलग प्रोटोकॉल के साथ सुरक्षित डेटा स्थानांतरण किया जा सकता है। एपीआई का अनुरोध भेजने से पहले, आपको एक अधिकृत्त मंच से उपयोगकर्ता आईडी और पासवर्ड आवश्यक होते हैं।
+## गहरी तक 
 
-## भी देखें:
-अधिक संबंधित स्रोतों के लिए लिंक।
-- अर्डुइनो HTTP क्लायंट बिल्डर: https://www.arduino.cc/en/Reference/HttpClient
-- वेब सुरक्षा प्रोटोकॉल: https://en.wikipedia.org/wiki/HTTP#Security
+बुनियादी प्रमाणीकरण के साथ HTTP अनुरोध भेजने की प्रक्रिया वर्षों से अभ्यास में है, लेकिन इसमें मुख्य जोखिम यह है कि यदि कनेक्शन असुरक्षित है, तो कोई अनाधिकृत उपयोगकर्ता आपके क्रेडेंशियल्स को इंटरसेप्ट कर सकता है। 
+
+इसके बदले में, आप OAuth जैसे प्रमाणीकरण मेकेनिज्म का उपयोग कर सकते हैं, यदि आपके पास उच्च स्तर की सुरक्षा की आवश्यकता है। 
+
+आप HTTPClient लाइब्रेरी का उपयोग करके Arduino में HTTP अनुरोध भेज सकते हैं। 'http.begin()' कला में, आप यूआरएल पास करते हैं जहां आप HTTP अनुरोध भेजना चाहते हैं। 'http.setAuthorization()' हमें यूज़रनेम और पासवर्ड प्रदान करने की अनुमति दे रहा है। और 'http.GET()' HTTP अनुरोध भेजता है। 
+
+## और देखें 
+
+1. Official Arduino documentation: https://www.arduino.cc/reference/en/
+2. Guide to HTTPClient library: https://arduino-esp8266.readthedocs.io/en/latest/httpclient.html
+3. More on HTTP Basic Access Authentication: https://tools.ietf.org/html/rfc7617

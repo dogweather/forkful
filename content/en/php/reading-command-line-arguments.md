@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "PHP recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,40 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Reading command line arguments is the process of taking input from the user through the command line interface. It allows programmers to make their PHP scripts more versatile and interactive, as they can specify different inputs when running the script each time.
+
+Reading command line arguments in PHP is a way to input data right from the system's terminal/command prompt. It's crucial for developers to write scripts that can take dynamic input and behave accordingly.
 
 ## How to:
-To read command line arguments in PHP, we use the ```$argv``` array, which stores all the arguments passed in through the command line. The first argument, ```$argv[0]```, always contains the name of the PHP script being executed. Let's look at an example:
 
-```
-<?php 
-// script.php
-var_dump($argv);
+To access command line arguments in PHP, we use the `argc` and `argv` variables.
+
+`argc` determines the length of the array (the number of arguments), and `argv` is an array containing the arguments. Here is a basic example:
+
+```PHP
+#!/usr/bin/php
+<?php
+    //printing the number of arguments
+    echo "Number of arguments: " . $argc . "\n";
+
+    //looping through arguments
+    foreach ($argv as $arg) {
+        echo $arg . "\n";
+    }
 ?>
 ```
 
-Running this script in the command line with the arguments "arg1 arg2" will output the following:
-```
-$ php script.php arg1 arg2
+In a terminal, you could run this as `php script.php arg1 arg2 arg3` and get:
 
-array(3) {
-  [0]=>
-  string(10) "script.php"
-  [1]=>
-  string(4) "arg1"
-  [2]=>
-  string(4) "arg2"
-}
+```
+Number of arguments: 4
+script.php
+arg1
+arg2
+arg3
 ```
 
-We can also use the special variable ```$argc``` to get the number of arguments passed in. This can be useful when we want to perform different actions based on the number of arguments given.
+This shows the arguments being passed into the PHP script from the command line.
 
-## Deep Dive:
-Command line arguments have been used by programmers for a long time to provide more flexibility to their scripts. In PHP, the ```$argv``` array was introduced in PHP 4 to allow easy access to command line arguments. Before this, developers had to use the special function ```getopt()``` or parse the ```$argc``` and ```$argv``` variables manually.
+## Deep Dive
 
-An alternative to using command line arguments in PHP is using environment variables, which can be accessed through the ```$_ENV``` superglobal array. However, using command line arguments is generally preferred as it allows specific and dynamic inputs for each script execution.
+While reading command line arguments is only one way PHP interacts with the system, it's a method that's been around since PHP 4 (we're now in PHP 8) so it's worth understanding.
 
-## See Also:
-- [PHP Documentation on Command Line Interface](https://www.php.net/manual/en/features.commandline.php)
-- [PHP Manual on Variable Scope](https://www.php.net/manual/en/language.variables.scope.php)
-- [PHP Manual on Superglobals](https://www.php.net/manual/en/language.variables.superglobals.php)
+Looking at alternatives, there are libraries such as Symfony's Console Component, but they might be overkill for simpler tasks. The choice largely depends on the complexity of your needs.
+
+As for the details, PHP receives these args via the global variables `$argc` and `$argv` automatically. It's important to note that these are not available when running a script with a web server. They are only defined when the script is run from a command line interface (CLI).
+
+## See Also
+
+For more information on command line arguments in PHP, look at the official documentation on the [PHP site](https://www.php.net/manual/en/reserved.variables.argv.php). Check out this [StackOverflow thread](https://stackoverflow.com/questions/1921421/get-the-application-executing-file) for popular use cases. You might also find Symfony's [Console Component](https://symfony.com/doc/current/components/console.html) useful when dealing with more complex scenarios.

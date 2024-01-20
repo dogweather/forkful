@@ -1,6 +1,6 @@
 ---
 title:                "Verificando se um diretório existe"
-html_title:           "Rust: Verificando se um diretório existe"
+html_title:           "Javascript: Verificando se um diretório existe"
 simple_title:         "Verificando se um diretório existe"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,35 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que verificar se um diretório existe?
+# Verificar a existência de um diretório em Rust 
 
-Verificar se um diretório existe é um processo comum durante a programação em Rust. Isso significa verificar se há um diretório específico em um caminho de diretório especificado. Os programadores fazem isso para garantir que o programa possa acessar ou criar arquivos no diretório especificado.
+## O Que e Por Quê?
+Verificar a existência de um diretório é o processo de determinar se um diretório específico existe ou não. Os programadores fazem isso para evitar erros ao tentar acessar diretórios que podem não existir.
 
-## Como fazer:
-
-Um exemplo simples de como verificar se um diretório existe em Rust:
+## Como Fazer:
+Rust simplifica a verificação da existência de um diretório. Veja o exemplo de código abaixo:
 
 ```Rust
-use std::fs;
+use std::path::Path;
 
-if fs::metadata("caminho/do/diretório").is_ok() {
-    println!("O diretório existe!");
-} else {
-    println!("O diretório não existe!");
+fn main() {
+    let dir = Path::new("/caminho/para/o/diretório");
+
+    if dir.exists() {
+        println!("O diretório existe.");
+    } else {
+        println!("O diretório não existe.");
+    }
 }
 ```
 
-Caso o diretório exista, a saída será "O diretório existe!". Caso contrário, a saída será "O diretório não existe!".
+Ao ajustar "/caminho/para/o/diretório" para um caminho de diretório válido, esse programa irá dizer-lhe se o diretório existe ou não pela saída impressa.
 
-## Mergulho aprofundado:
+## Mergulhando Mais Fundo
+A metodologia para verificar a existência de um diretório em Rust é recente no contexto histórico da programação. Alternativamente, outras linguagens de programação, como Python ou Java, têm métodos semelhantes embutidos na linguagem.
 
-Verificar se um diretório existe é uma tarefa importante para garantir que um programa possa funcionar corretamente. Isso é especialmente importante em sistemas operacionais como o Windows, onde diferentes usuários podem ter permissões de acesso diferentes para diferentes diretórios.
+O método "exists()" retorna um booleano verdadeiro se o Path referir-se a um diretório existente. Sob o capô, essa função usa a "metadata()" da biblioteca de sistema padrão, que retorna os metadados para um determinado diretório. Se este falhar, o diretório não existe e retorna falso.
 
-Outra alternativa para verificar se um diretório existe é usando a biblioteca "PathBuf" em Rust. Esta biblioteca possui uma função "exists" que retorna um booleano indicando se o diretório existe ou não.
+## Veja Também:
+Existem muitos recursos úteis sobre este tópico que você pode querer verificar. Aqui estão alguns links úteis:
 
-A implementação para verificar se um diretório existe em Rust usa a função "metadata" da biblioteca "fs". Esta função retorna informações sobre o arquivo ou diretório especificado, incluindo se ele existe ou não.
-
-## Veja também:
-
-1. [Documentação oficial do Rust sobre a função metadata](https://doc.rust-lang.org/std/fs/fn.metadata.html)
-2. [Exemplo de código em Rust para verificar se um diretório existe](https://www.tutorialspoint.com/checking-if-a-directory-exists-in-rust)
+1. Documentação oficial do Rust sobre o método 'exists()': [https://doc.rust-lang.org/std/path/struct.Path.html#method.exists](https://doc.rust-lang.org/std/path/struct.Path.html#method.exists)
+2. Um tutorial útil sobre trabalho com sistemas de arquivos em Rust: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html)
+3. Para informações mais profundas sobre a implementação do Rust Path and metadata(), confira: [https://doc.rust-lang.org/std/fs/struct.Metadata.html](https://doc.rust-lang.org/std/fs/struct.Metadata.html)

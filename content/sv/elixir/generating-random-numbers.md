@@ -1,7 +1,7 @@
 ---
-title:                "Genererande slumpmässiga tal"
-html_title:           "Elixir: Genererande slumpmässiga tal"
-simple_title:         "Genererande slumpmässiga tal"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Numbers"
@@ -11,44 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att generera slumpmässiga tal är en viktig del av programmering, eftersom det tillåter oss att skapa variation och dynamik i våra program. Genom att använda slumpen i våra program kan vi skapa spel, simuleringar och mer.
+
+Generera slumpmässiga nummer innebär att skapa nummer som inte är förutsägbara eller har någon ordning. Programmerare gör detta när de behöver unika data, testar robustheten hos program eller skapar slumpmässiga händelser i spel.
 
 ## Hur man gör:
-Elixir har ett inbyggt bibliotek för att generera slumpmässiga tal, kallat :random. Här är ett exempel på hur du använder det:
+
+För att generera slumpmässiga nummer i Elixir kan du använda `:rand.uniform` funktionen i Erlang. Här är ett enkelt exempel:
 
 ```Elixir
-# Generera ett slumpmässigt heltal mellan 1 och 10
-:random.uniform(1, 10)
-
-# Generera ett slumpmässigt decimaltal mellan 0 och 1
-:random.uniform()
-
-# Generera ett slumpmässigt tal från en lista
-:random.sample([1, 2, 3, 4])
-
-# Generera ett slumpmässigt tecken från en sträng
-:random.sample("elixir")
-
+IO.puts(:rand.uniform()) # generar ett flyttal mellan 0 och 1
 ```
 
-Output:
+För att åstadkomma ett nummer inom ett visst intervall, ange intervallet som en parameter till funktionen:
 
 ```Elixir
-8
-0.532453234
-3
-"i"
+IO.puts(:rand.uniform(100)) # generar ett heltal mellan 1 och 100
 ```
 
-## Djupdykning:
-Att generera slumpmässiga tal har varit en utmaning för programmerare sedan lång tid tillbaka. Det finns olika algoritmer och metoder för att göra detta, men i Elixir använder vi standard metoden som kallas "Mersenne-Twister". Detta är en vanlig algoritm som ger en hög grad av slumpmässighet.
+## Djupdykning
 
-Det finns också andra bibliotek för att generera slumpmässiga tal i Elixir, som till exempel SecureRandom från OpenSSL. Detta bibliotek erbjuder också möjligheten att generera kryptografiskt säkra slumpmässiga tal.
+Slumpmässiga nummer har en lång historia i datavetenskap och tillämpas i en mängd olika sammanhang, från kryptografi till Monte Carlo-metoden. Erlangs `:rand`-modul, som Elixir bygger på, ger en snabb och effektiv generator för pseudo-slumpmässiga nummer.
 
-Implementeringen av slumpmässiga tal i Elixir är snabb och effektiv tack vare den funktionella naturen hos språket. Detta gör det enkelt att använda i våra program, utan att behöva oroa oss för prestanda.
+Alternativa metoder för att generera slumpmässiga nummer inkluderar användning av externa tjänster som levererar verkligt slumpmässiga tal, eller algoritmer som genererar kryptografiskt säkra slumpmässiga tal. 
+
+Implementeringen av `:rand.uniform` i Elixir är densamma som i Erlang. Det är en pseudoslumpmässig generator som använder en Mersenne Twister-algoritm, vilket ger en jämn fördelning och snabb hastighet.
 
 ## Se även:
-Om du vill lära dig mer om hur du använder slumpmässiga tal i Elixir, kolla in dessa resurser:
 
-- Elixir :random Dokumentation: https://hexdocs.pm/elixir/Random.html
-- SecureRandom: https://hexdocs.pm/elixir/SecureRandom.html
+- Erlangs officiella dokumentation om :rand-modulen: [http://erlang.org/doc/man/rand.html](http://erlang.org/doc/man/rand.html)
+- Elixir officiella dokumentation: [https://elixir-lang.org/docs.html](https://elixir-lang.org/docs.html)
+- Artikel om användning av slumpmässiga nummer i programmering: [https://medium.com/@FrontMage/use-random-numbers-in-programming-87663ffeb3a4](https://medium.com/@FrontMage/use-random-numbers-in-programming-87663ffeb3a4)

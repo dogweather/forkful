@@ -1,6 +1,6 @@
 ---
 title:                "比较两个日期"
-html_title:           "Ruby: 比较两个日期"
+html_title:           "Clojure: 比较两个日期"
 simple_title:         "比较两个日期"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##什么是日期比较 & 为什么程序员要这么做?
-日期比较是指将两个日期相互比较，以确定哪个日期早于或晚于另一个日期。程序员通常会进行日期比较来对数据进行排序、筛选或分组，以及进行日期相关的计算和分析。
+# 用Ruby进行日期比较
 
-##如何进行日期比较:
-```ruby
-# 比较两个日期
-date1 = Date.parse("2020-01-01")
-date2 = Date.parse("2020-01-05")
-date1 <=> date2 #=> -1
+## 什么 & 为什么？
+日期比较是程序在处理日期和时间信息时进行的一项操作，通过比较两个日期的先后顺序，支持更复杂的逻辑处理。程序员进行日期比较的原因多种多样，最常见的包括排序事件、计算时间间隔或确定某个事件是否已经发生。
 
-# 判断两个日期是否相等
-date1 = Date.parse("2020-01-01")
-date2 = Date.parse("2020-01-01")
-date1 == date2 #=> true
+## 如何实现：
+在Ruby中，我们可以轻松地比较日期。以下是一个简单的例子：
+```Ruby
+require 'date'
 
-# 比较日期前后
-date1 = Date.parse("2020-01-01")
-date2 = Date.parse("2020-01-05")
-date1 < date2 #=> true
+date1 = Date.new(2020, 1, 1)
+date2 = Date.new(2021, 1, 1)
+
+if date1 > date2
+  puts "date1 is later than date2"
+elsif date1 < date2
+  puts "date1 is earlier than date2"
+else
+  puts "date1 is the same as date2"
+end
 ```
+运行以上代码，你将会看到输出："date1 is earlier than date2"
 
-##深入了解:
-日期比较已经成为计算机编程中常见的操作。它的历史可以追溯到早期的计算机语言，如COBOL和Fortran。除了使用Ruby内置的Date类进行比较外，程序员也可以使用第三方库，如Chronic或Date Calc来更方便地处理日期比较。
+## 深度剖析
+1. **历史背景**：Ruby在很早的版本就支持日期比较，语言设计者明显意识到了处理日期和时间信息在编程中的重要性。
+2. **替代方案**：尽管Ruby的 `Date` 类提供了一种基础的解决方案，但是有些库，如 `ActiveSupport`，提供了更多高级且更具可读性的日期比较方法。
+3. **实现细节**：在Ruby中，日期比较实际上是通过首先转换日期为Julian Day Number后进行的。Julian Day Number是一种连续计算日期的系统，起始日期为公元前4713年1月1日。
 
-##相关资料:
-- Ruby Date类文档: https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html
-- Chronic库: https://github.com/mojombo/chronic
-- Date Calc库: http://datecalc.rubyforge.org/
+## 参考资料
+1. Ruby官方文档-日期比较：[https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
+2. 关于Julian Day Number的详细信息：[https://en.wikipedia.org/wiki/Julian_day](https://en.wikipedia.org/wiki/Julian_day)
+3. ActiveSupport时间扩展：[https://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-date](https://guides.rubyonrails.org/active_support_core_extensions.html#extensions-to-date)

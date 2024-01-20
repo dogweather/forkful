@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "Clojure: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,32 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
+# Clojure et les requêtes HTTP avec authentification de base
+Nos mains sont déjà mouillées, plongées dans les bassins froids des codes. En avant pour les eaux profondes de Clojure, et voyons comment envoyer une requête HTTP avec authentification de base.
 
-Envoyer une requête HTTP avec une authentification de base est un moyen pour les programmeurs d'envoyer des informations à un serveur via un protocole de communication web standard. Cela permet de sécuriser les échanges de données entre un client et un serveur en demandant une vérification d'identité pour accéder à des ressources protégées.
+## Qu'est-ce que c'est & Pourquoi ?
+L'envoi d'une requête HTTP avec authentification de base est un moyen courant pour un programme de passer des données à un serveur web, après avoir prouvé son identité. C'est une interaction sécurisée, souvent utilisée dans les API REST pour contrôler l'accès aux données sensibles.
 
-# Comment faire:
+## Comment faire :
+Installons la bibliothèque HTTP "clj-http" avant de tremper nos orteils.
 
-```Clojure
-(require '[clj-http.client :as client]) 
-
-(client/get "https://www.example.com" 
-  :basic-auth "username" "password" 
-  :as :string)
+```clojure
+;; Ajouter ce qui suit à votre fichier project.clj
+[clj-http "3.12.2"]
 ```
 
-En utilisant la bibliothèque clj-http, nous pouvons facilement envoyer une requête HTTP avec une authentification de base en spécifiant un nom d'utilisateur et un mot de passe. Nous obtenons ainsi une réponse sous forme de chaîne de caractères en utilisant l'option :as :string dans la requête.
+Maintenant, envoyer une requête HTTP avec authentification de base :
 
-# Deep Dive:
+```clojure
+(require '[clj-http.client :as client])
 
-Historiquement, l'authentification de base a été développée pour permettre aux utilisateurs d'accéder à des ressources en ligne en utilisant des informations d'identification simples. Cependant, il est considéré comme un moyen de sécurité faible car les informations d'identification sont envoyées en clair lors de chaque requête.
+(defn send-request []
+  (let [url "https://your-api.com/retrieve-data"
+        username "your-username"
+        password "your-password"]
+    (client/get url
+                {:basic-auth [username password]})))
 
-Une alternative plus sécurisée à l'authentification de base est l'authentification par jeton où un jeton d'accès unique est utilisé à la place des informations d'identification. Cela permet une connexion unique et sécurisée, sans avoir à envoyer des informations d'identification à chaque requête.
+;;Il est temps de voir ce que notre requête renvoie.
+(println (send-request))
+```
 
-Dans l'exemple de code ci-dessus, nous utilisons la bibliothèque clj-http qui gère les détails de mise en œuvre de l'authentification de base. Cependant, nous pouvons également implémenter manuellement une requête HTTP avec une authentification de base en ajoutant un en-tête d'authentification contenant le nom d'utilisateur et le mot de passe codé en base64.
+Et voilà ! 
 
-# Voir aussi:
+## Une plongée plus profonde
+Historiquement, l'authentification de base était la première méthode d'authentification HTTP standard. Bien que son utilisation ait diminué en raison de ses limites de sécurité, elle est toujours courante dans les API REST.
 
-- La documentation de la bibliothèque clj-http : https://github.com/dakrone/clj-http 
-- Un article sur l'authentification de base : https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication 
-- Un exemple d'implémentation manuelle : https://stackoverflow.com/questions/21683973/send-http-request-with-basic-authentication-in-clojure
+Il y a des alternatives plus sécurisées. L'authentification par jeton est une option, elle utilise un jeton unique plutôt qu'un mot de passe pour authentifier un client.
+
+Concernant les détails d'implémentation, clj-http fournit une abstraction haut niveau des requêtes HTTP. La clé :basic-auth prend un tableau de deux éléments, le nom d'utilisateur et le mot de passe, qui sont convertis en une chaîne codée en base64 et ajoutée à l'en-tête HTTP.
+
+## Voir aussi
+D'autres ressources pour affiner vos compétences en Clojure:
+
+- [Documentation clj-http](https://clj-http.org)
+- [HTTP Basic Authentication, Mozilla Developer Network](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication#basic_authentication)
+- Blog de [Martin Klepsch](https://martinklepsch.org) sur Clojure et clj-http
+- [Basic authentication, Wikipedia](https://fr.wikipedia.org/wiki/Authentification_Basic)

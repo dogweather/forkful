@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Python: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,54 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# Drucken von Debugging-Ausgaben mittels Python 
 
-Print-Ausgabe ist eine Methode, die Programmierer verwenden, um Fehler in ihrem Code zu identifizieren und zu beheben. Indem sie relevante Informationen während des Programmierprozesses drucken, können sie den Zustand ihres Codes überprüfen und mögliche Fehlerquellen finden.
+## Was & Warum
 
-## Wie geht's?
+Drucken von Debugging-Ausgaben ist die Technik, um den Fluss und den Zustand in einem Programm zu überwachen. Entwickler nutzen sie, um Fehler effizient zu finden und zu beheben.
 
-Um Debug-Informationen in Python zu drucken, verwenden Sie die Funktion `print()`. Sie können beliebige Variablen oder Ausdrücke in diese Funktion einfügen und sie werden dann während der Ausführung des Programms ausgegeben. Hier ist ein Beispiel:
+## Wie geht das?
 
-```Python
-nummer = 10
-print(nummer)
-```
-**Ausgabe:**
-```Python
-10
-```
+In Python wird häufig die eingebaute `print()`-Funktion genutzt, um Debugging-Ausgaben zu erzeugen.
 
-Sie können auch mehrere Werte durch Kommas trennen, um sie in einer Zeile auszugeben. Hier ist ein Beispiel, bei dem wir die Ausgabe formatieren, um sie lesbarer zu machen:
+```python
+def summe(zahlen):
+    sum = 0
+    for num in zahlen:
+        sum += num
+        print(f"Summe bis jetzt: {sum}")
+    return sum
 
-```Python
-name = "Hannah"
-alter = 27
-print("Mein Name ist", name, "und ich bin", alter, "Jahre alt.")
-```
-**Ausgabe:**
-```Python
-Mein Name ist Hannah und ich bin 27 Jahre alt.
+summe([5, 10, 15])
 ```
 
-Wenn Sie mehr Kontrolle über die Ausgabe haben möchten, können Sie die Formatierungsfunktion `format()` verwenden. Hier ist ein Beispiel, bei dem wir die Anzahl der Nachkommastellen einschränken:
+Ausgabe:
 
-```Python
-pi = 3.141592653589793
-print("Der Wert von Pi ist {:.2f}.".format(pi))
 ```
-**Ausgabe:**
-```Python
-Der Wert von Pi ist 3.14.
+Summe bis jetzt: 5
+Summe bis jetzt: 15
+Summe bis jetzt: 30
 ```
 
-## Tief eintauchen
+Eine fortgeschrittenere Methode ist es, das `logging`-Modul zu verwenden. 
 
-Die Methode, Debugging-Informationen über die Ausgabe zu drucken, ist eine der einfachsten und am besten zugänglichen Möglichkeiten, um Fehler in Ihrem Code zu finden. In frühen Tagen der Programmierung war dies oft die einzige Möglichkeit, Fehler zu identifizieren und zu beheben. Heute gibt es jedoch andere Tools und Techniken, die ebenfalls für das Debugging verwendet werden können, wie z.B. integrierte Entwicklungsumgebungen (IDEs), Debugger und Logging-Bibliotheken.
+```python
+import logging
 
-Wenn Sie mehr über das Debugging in Python erfahren möchten, können Sie sich die Dokumentation von Python über Debugging ansehen oder sich mit spezifischeren Themen wie dem Verwenden von Breakpoints oder dem Einbinden von externen Bibliotheken für das Debugging beschäftigen.
+logging.basicConfig(level=logging.DEBUG)
 
-## Siehe auch
+def summe(zahlen):
+    sum = 0
+    for num in zahlen:
+        sum += num
+        logging.debug(f"Summe bis jetzt: {sum}")
+    return sum
 
-- [Python-Debugging-Tutorial](https://realpython.com/python-debugging-tips/)
-- [Offizielles Python-Debugging-Handbuch](https://docs.python.org/3/library/debug.html)
-- [Python-Logging-Bibliothek](https://docs.python.org/3/library/logging.html)
+summe([5, 10, 15])
+```
+
+Ausgabe:
+ 
+```
+DEBUG:root:Summe bis jetzt: 5
+DEBUG:root:Summe bis jetzt: 15
+DEBUG:root:Summe bis jetzt: 30
+```
+
+## Tiefere Infos
+
+- Historischer Kontext: Die Druckausgabe wurde von den Anfängen der Programmierung an für Debugging-Zwecke genutzt. Sie ist weit verbreitet und Sprachübergreifend.
+ 
+- Alternativen: Debugging-Werkzeuge oder IDEs bieten oft fortschrittlichere Möglichkeiten zur Code-Inspektion. In Python gibt es zum Beispiel `pdb`.
+
+- Implementierungsdetails: Ein Logging-System wie das `logging`-Modul ist in der Regel flexibler als einfache `print()`-Aufrufe. Mit `logging` kann man zum Beispiel auch Informationen in Dateien schreiben, auf verschiedene Detailebenen einstellen, usw.
+
+## Weitere Informationen
+
+- Python `print()` in die [Python docs](https://docs.python.org/3/library/functions.html#print)
+- Python `logging`-Modul in den [Python docs](https://docs.python.org/3/library/logging.html)
+- Python Debugger (`pdb`) in den [Python docs](https://docs.python.org/3/library/pdb.html)
+- [Effective Debugging](https://www.amazon.de/Effective-Debugging-Diomidis-Spinellis/dp/0134394798) - ein Buch, das allgemeine Debugging-Techniken beschreibt.

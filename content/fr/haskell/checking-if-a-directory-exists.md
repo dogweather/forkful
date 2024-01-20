@@ -1,7 +1,7 @@
 ---
-title:                "Vérification de l'existence d'un répertoire"
-html_title:           "Haskell: Vérification de l'existence d'un répertoire"
-simple_title:         "Vérification de l'existence d'un répertoire"
+title:                "Vérifier si un répertoire existe"
+html_title:           "Haskell: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi faire ?
+## Quoi & Pourquoi ?
 
-Vérifier si un répertoire existe est une opération courante utilisée par les programmeurs pour s'assurer qu'un chemin de fichier est valide avant de procéder à d'autres manipulations, telles que la création d'un nouveau fichier ou l'ouverture d'un fichier existant.
+La vérification de l'existence d'un répertoire est une opération simple mais cruciale en programmation. Il est important de vérifier si un répertoire existe avant d'essayer d'y écrire ou d'en lire des données afin d'éviter des erreurs inutiles.
 
-# Comment faire :
+## Comment faire :
 
-Voici un exemple de code montrant comment vérifier si un répertoire existe en Haskell :
+En Haskell, nous utilisons la fonction `doesDirectoryExist` du module `System.Directory`. Voici un exemple simple :
 
 ```Haskell
 import System.Directory
 
 main = do
-    let path = "/chemin/vers/le/repertoire"
-    dirExists <- doesDirectoryExist path
-    if dirExists
-        then putStrLn "Le répertoire existe !"
-        else putStrLn "Le répertoire n'existe pas."
+  putStrLn "Saisissez le chemin d'accès au répertoire :"
+  dirPath <- getLine
+  doesExist <- doesDirectoryExist dirPath
+  if doesExist
+    then putStrLn "Le répertoire existe."
+    else putStrLn "Le répertoire n'existe pas."
 ```
 
-Si le répertoire existait, le programme afficherait "Le répertoire existe !". Sinon, il afficherait "Le répertoire n'existe pas."
+Si le répertoire existe, le programme affiche "Le répertoire existe.". Si non, "Le répertoire n'existe pas.".
 
-# Zoom sur :
+## Plongée Profonde :
 
-## Contexte historique :
-La vérification de l'existence d'un répertoire a toujours été une tâche importante en informatique, car les programmes doivent savoir si une ressource est disponible avant de pouvoir l'utiliser.
+Historiquement, la fonction `doesDirectoryExist` a été introduite dans le module `System.Directory` dans Glasgow Haskell Compiler (GHC) version 6.4.1, sortie en 2005. Par rapport à d'autres langages, Haskell fait du contrôle d'existence de répertoire une opération assez simple.
 
-## Alternatives :
-Il existe différentes façons de vérifier si un répertoire existe, notamment en utilisant des bibliothèques externes ou en utilisant des fonctions spécifiques au système d'exploitation.
+Il existe aussi l'alternative `doesPathExist` qui retourne `True` si le chemin spécifié mène à un répertoire **ou** à un fichier.
 
-## Détails de mise en œuvre :
-En Haskell, la fonction "doesDirectoryExist" de la bibliothèque System.Directory est utilisée pour vérifier si un répertoire existe. Elle renvoie un type de données de type Bool (True ou False) en fonction du résultat.
+Sur le plan de l'implémentation, `doesDirectoryExist` utilise le système d'exploitation sous-jacent pour vérifier l'existence du répertoire, ce qui peut occasionner des différences minimes de comportement entre les plateformes.
 
-# Voir aussi :
+## Voir Aussi :
 
-- [Documentation de la fonction doesDirectoryExist de la bibliothèque System.Directory](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist)
-- [Tutoriel sur la manipulation de fichiers en Haskell](https://www.tutorialspoint.com/haskell/haskell_files_io.htm)
+1. Documentation Haskell pour `System.Directory`: https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html
+2. Glasgow Haskell Compiler (GHC): https://www.haskell.org/ghc/
+3. Un guide utile pour manipuler les fichiers et répertoires en Haskell : https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-io

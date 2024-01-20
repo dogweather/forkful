@@ -1,7 +1,7 @@
 ---
-title:                "Друк відладкового виводу"
-html_title:           "PowerShell: Друк відладкового виводу"
-simple_title:         "Друк відладкового виводу"
+title:                "Друк відлагоджувального виводу"
+html_title:           "Arduino: Друк відлагоджувального виводу"
+simple_title:         "Друк відлагоджувального виводу"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Testing and Debugging"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і для чого?
+## Що це та навіщо?
 
-Виведення відладочних повідомлень - це процес виведення інформації про роботу програми, що допомагає програмістам з'ясувати проблеми і помилки в коді. Це корисний інструмент для вирішення проблем в програмах і полегшення процесу розробки.
+Це виведення відлагоджувальної інформації, яка допомагає програмістам слідкувати за виконанням коду та виявляти помилки. Цей процес значно полегшує відладку та забезпечує більше контролю над роботою програми.
 
-Як:
+## Як це зробити:
 
-Щоб вивести відладочне повідомлення в PowerShell, скористайтесь командою "Write-Host" та використовуйте потрібну інформацію в подвійних лапках. Наприклад:
+Ось простий приклад використання вбудованого параметра `Write-Debug` в PowerShell:
+
+```PowerShell
+function Test-Func{
+    [cmdletbinding()]
+    param()
+
+    Write-Debug "Це повідомлення для відлагодження"
+}
+
+$DebugPreference = 'Continue'
+Test-Func
 ```
-PowerShell Write-Host "Повідомлення для відладки"
+
+В результаті ви побачите наступне повідомлення:
+
+```PowerShell
+DEBUG: Це повідомлення для відлагодження
 ```
 
-Виведення додаткових змінних та їх значень також можливе за допомогою операторів "Write-Host" та "Expand-String". Наприклад:
-```
-PowerShell Write-Host "Змінна $var має значення: $(Expand-String $var)"
-```
+## Поглиблений огляд:
 
-Глибоке занурення:
+Друк відлагоджувального виведення має глибокі корені в історії програмування і дозволяє вивести додаткову інформацію з програми без втручання в її основну роботу. За межами PowerShell, це можна реалізувати за допомогою таких методів як `console.log()` в JavaScript або `print()` в Python. 
 
-Виведення відладочних повідомлень є дуже корисним інструментом для програмістів вже багато років. Раніше, для цього використовували консольну програму "Debug.exe", але з появою PowerShell цей процес став простішим і зручнішим.
+В PowerShell можна використовувати кілька способів для виведення відлагоджувальної інформації, у тому числі `Write-Debug`, `Write-Verbose`, `Write-Warning`, `Write-Error`, і `Write-Information`. Ці методи корисні, щоб відстежувати хід виконання програми та повідомляти про статуси помилок в процесі.
 
-Існують альтернативні методи виведення відладочних повідомлень, такі як використання відповідних функцій в IDE або розміщення повідомлень у вихідний файл програми. Але використання "Write-Host" є найшвидшим і найпростішим методом.
+## Дивіться також:
 
-Також, варто звернути увагу на те, що використання великої кількості відладочних повідомлень у програмі може збільшити час виконання і позначитися на її продуктивності.
-
-Дивись також:
-
-Щоб дізнатися більше про використання відладочних повідомлень в PowerShell, можна ознайомитися з офіційною документацією Microsoft: https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-debuggers?view=powershell-7.1
-
-Також, корисним може бути огляд команд "Write-Host" та "Expand-String": https://adamtheautomator.com/powershell-write-host/
+1. [Write-Debug (docs.microsoft.com)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7.1)
+2. [Debugging Scripts (docs.microsoft.com)](https://docs.microsoft.com/en-us/powershell/scripting/learn/debugging-scripts?view=powershell-7.1)
+3. [How can I use the Write-Debug cmdlet? (devblogs.microsoft.com)](https://devblogs.microsoft.com/scripting/how-can-i-use-the-write-debug-cmdlet/)

@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Strings in Kleinbuchstaben"
-html_title:           "Rust: Umwandlung eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandlung eines Strings in Kleinbuchstaben"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum?
+# Das Umwandeln von Strings in Kleinbuchstaben in Rust
 
-Wenn wir über die Umwandlung von Strings in Kleinbuchstaben sprechen, meinen wir die Veränderung der Buchstaben in einem Text von Großbuchstaben zu entsprechenden Kleinbuchstaben. Programmierer tun dies, um sicherzustellen, dass die Texteingabe einheitlich ist und dass sie leichter auf bestimmte Schlüsselwörter überprüft werden kann, ohne sich um die Groß- und Kleinschreibung kümmern zu müssen.
+## Was & Warum?
 
-## Wie geht's?
+Das Konvertieren eines Strings in Kleinbuchstaben ist eine Standardaktion in der Programmierung, bei der alle Großbuchstaben im String in Kleinbuchstaben umgewandelt werden. Diese Umwandlung ist nützlich, um Texteingaben zu standardisieren und Sensitive Case-Ausgaben zu vermeiden.
+
+## Wie:
+
+Hier ist ein kurzer und einfacher Code, der einen gegebenen String in Kleinbuchstaben konvertiert.
 
 ```Rust
-let str = "Hallo WELT!";
-let new_str = str.to_lowercase();
-println!("{}", new_str);
+let s = "Hallo Welt!";
+let lowercase = s.to_lowercase();
+println!("{}", lowercase);
 ```
 
-Das obige Beispiel zeigt die Verwendung der Funktion "to_lowercase()", die in Rust bereits eingebaut ist. Sie nimmt einen String als Eingabe und gibt einen neuen String mit allen Buchstaben in Kleinbuchstaben zurück. In diesem Fall würde die Ausgabe "hallo welt!" lauten.
+Wenn Sie diesen Code ausführen, erhalten Sie „hallo welt!“ als Ausgabe, welches der Eingabestring in Kleinbuchstaben ist.
 
-## Tiefere Einblicke
+## Vertiefung
 
-Die Umwandlung von Strings in Kleinbuchstaben ist eine gängige Praxis in der Programmierung, um sicherzustellen, dass Benutzereingaben standardisiert und einfacher zu vergleichen sind. In der Vergangenheit mussten Programmierer oft eigene Funktionen schreiben, um diese Umwandlung durchzuführen, aber dank der eingebauten Funktion in Rust wird es nun einfacher und effizienter. Es gibt auch alternative Methoden, wie z.B. die Verwendung von regulären Ausdrücken, um spezifischere Anpassungen an der Groß- und Kleinschreibung durchzuführen.
+Das Konvertieren von Strings in Kleinbuchstaben ist eine allgemein anerkannte Praxis in der Programmierwelt und hat seine Wurzeln in der Frühzeit der digitalen Textverarbeitung. Da Computer buchstabenbasierte Eingaben nicht verstehen können, werden sie in den meisten Fällen als Groß- und Kleinbuchstaben interpretiert, so dass "A" anders als "a" behandelt wird.
 
-## Weiterführende Links
+Als Alternative zur Methode `.to_lowercase()` könnten Sie durch jede Zeichenkette iterieren und die Methode `.to_ascii_lowercase()` verwenden, die nur ASCII-Zeichen behandelt. Dies wäre jedoch ineffizienter und würde nicht mit nicht-ASCII-Zeichen umgehen können.
 
-- [offizielle Rust-Dokumentation zu Strings](https://doc.rust-lang.org/std/string/struct.String.html)
-- [Tutorial zu regulären Ausdrücken in Rust](https://doc.rust-lang.org/1.5.0/book/regex.html)
+Die Implementierung dieser Funktion in Rust berücksichtigt den Unicode-Standard. Während andere Sprachen möglicherweise nur die ASCII-Tabelle verwenden, um diese Konvertierung durchzuführen, erkennt Rust Unicode-Zeichen und stellt sicher, dass die Funktion korrekt für diese Zeichen funktioniert.
+
+## Siehe auch
+
+Um mehr über die Verarbeitung von Strings in Rust zu lernen, konsultieren Sie die offizielle Rust-Dokumentation und besonders den Abschnitt `str`. Hier sind einige Links, die Ihnen helfen werden:
+
+- [Official Rust Documentation](https://doc.rust-lang.org/std/)
+- [Rust `str` Type Documentation](https://doc.rust-lang.org/std/primitive.str.html)
+- [Rust by Example: Strings](https://doc.rust-lang.org/rust-by-example/std/str.html) 
+
+Ein Verständnis der Textverarbeitung ist entscheidend für die Behandlung von Benutzereingaben, also stellen Sie sicher, dass Sie mit diesen Konzepten vertraut sind!

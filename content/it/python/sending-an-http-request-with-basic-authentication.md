@@ -1,7 +1,7 @@
 ---
-title:                "Invio di una richiesta http con autenticazione di base"
-html_title:           "Python: Invio di una richiesta http con autenticazione di base"
-simple_title:         "Invio di una richiesta http con autenticazione di base"
+title:                "Inviare una richiesta http con autenticazione di base"
+html_title:           "Bash: Inviare una richiesta http con autenticazione di base"
+simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Invio di una richiesta HTTP con autenticazione di base è una pratica comune tra i programmatori per accedere a risorse protette su una rete o un server. Questo tipo di autenticazione richiede la fornitura di credenziali login, generalmente un nome utente e una password, per verificare l'identità dell'utente.
+## Che Cosa & Perché?
+L'invio di una richiesta HTTP con autenticazione di base è un metodo sicuro per accedere a risorse protette sul Web. I programmatori lo usano per autorizzare le loro richieste a servizi web, API ed endpoint che richiedono una forma di autenticazione.
 
 ## Come fare:
-Ecco un esempio di codice che mostra come inviare una richiesta HTTP con autenticazione di base utilizzando il modulo `requests` in Python 3:
+Ecco un esempio del codice Python per l'invio di una richiesta HTTP con autenticazione di base.
 
-```python
+```Python
 import requests
 from requests.auth import HTTPBasicAuth
 
-# Specifica le credenziali login
-username = 'username'
-password = 'password'
+url = 'https://your-url.com/endpoint'
 
-# Crea un'istanza della classe HTTPBasicAuth con le credenziali login
-auth = HTTPBasicAuth(username, password)
+auth_values = ('username', 'password')
+response = requests.get(url, auth=HTTPBasicAuth(*auth_values))
 
-# Invia una richiesta GET al server protetto con autenticazione di base
-r = requests.get('https://example.com/protected', auth=auth)
-
-# Stampa il codice di stato della risposta
-print(r.status_code)
+print(response.status_code)
 ```
+In questo esempio, la `status_code` stampata mostrerà l'esito della nostra richiesta - `200` per il successo, `401` per credenziali non corrette, ecc.
 
-L'output dovrebbe essere il codice di stato `200` che indica una richiesta di successo.
+## Nel Dettaglio
+L'autenticazione HTTP di base, una tecnica introdotta nel 1996 come parte della specifica HTTP 1.0, implica l'invio di credenziali utente in una stringa codificata in base64 all'interno di un header HTTP.
 
-## Approfondimento:
-L'autenticazione di base con richieste HTTP è stato introdotta come parte della specifica HTTP/1.0 e continua ad essere utilizzata come uno dei metodi di autenticazione più semplici e diffusi nelle applicazioni web. Tuttavia, poiché le credenziali vengono inviate in chiaro, questo metodo non è sicuro e si consiglia di utilizzarlo solo in connessioni HTTPS (HTTP over SSL).
+Tuttavia, ci sono alternative più sicure come l'autenticazione Digest o l'autenticazione token-based come OAuth. La scelta attiene alle esigenze del progetto e del livello di sicurezza necessario.
 
-Un'alternativa all'autenticazione di base è l'utilizzo di un token di autenticazione, che può essere generato una volta e utilizzato per successive richieste senza la necessità di memorizzare e inviare le credenziali di login ogni volta.
+In termini di dettagli di implementazione, `requests.get` fa una richiesta GET al server. L'argomento `auth` accetta un oggetto auth di tipo tuple, che viene poi convertito in una stringa codificata in base64 dal modulo `HTTPBasicAuth`.
 
-## Vedi anche:
-- [Documentazione ufficiale del modulo `requests`](https://requests.readthedocs.io/en/master/)
-- [Specifica HTTP/1.0](https://tools.ietf.org/html/rfc1945)
+## Vedere Anche
+Per ulteriori dettagli, consultate i seguenti link:
+- [Requests library documentation](https://docs.python-requests.org/en/latest/)
+- [Autenticazione HTTP di base su Wikipedia](https://it.wikipedia.org/wiki/Basic_access_authentication)
+- [HTTP status codes](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status)

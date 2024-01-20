@@ -1,7 +1,7 @@
 ---
-title:                "Komentoriviparametrien lukeminen"
-html_title:           "Java: Komentoriviparametrien lukeminen"
-simple_title:         "Komentoriviparametrien lukeminen"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,30 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
+## Mitä & Miksi?
 
-Kun ohjelmoijat kehittävät Java-ohjelmia, heidän täytyy usein lukea syötteitä käyttäjältä tai ympäristöstä, jotta ohjelmat voivat toimia oikein. Yksi tapa tehdä tämä on lukemalla komentoriviparametreja, eli käyttäjän antamia tietoja ohjelman suorittamisen aikana.
+Komentoriviparametrien lukeminen Java-ohjelmassa tarkoittaa tietojen saamista käyttäjältä suorituksen yhteydessä. Tämä on hyödyllistä, koska se antaa ohjelmalle dynaamisuutta ja mukautuvuutta.
 
-Kuinka:
+## Kuinka:
 
-Java tarjoaa helpon tavan lukea komentoriviparametreja käyttäen `args`-muuttujaa. Alla on esimerkki koodista, joka tulostaa käyttäjän antaman syötteen komentoriviltä:
+Java-sovelluksissa komentoriviparametrit luetaan pääohjelman argumenttina. Katsotaan esimerkkiä tästä:
 
-```Java
-public class CommandLine {
+```java
+public class Main {
     public static void main(String[] args) {
-        System.out.println(args[0]); //tulostaa ensimmäisen komentoriviparametrin
+        for (String arg : args) {
+            System.out.println("Argumentti: " + arg);
+        }
     }
 }
 ```
 
-Jos käyttäjä antaa ohjelmalle seuraavan komennon: `java CommandLine Hello`, ohjelma tulostaa `Hello`.
+Kun suoritat tämän ohjelman komentorivilta esimerkiksi näin: `java Main hola mundo`, se tulostaa:
 
-Syötteiden lukeminen komentoriviltä on hyödyllistä silloin kun ohjelman toimintaan voidaan vaikuttaa käyttämällä erilaisia parametreja.
+```java
+Argumentti: hola
+Argumentti: mundo
+```
 
-Syvempää tietoa:
+## Syvennys
 
-Komentoriviparametrien käyttö on ollut osa Java-kieltä lähtien sen ensimmäisestä versiosta. Aluksi käytettiin `getSystemProperty()`-metodia, mutta sisäänrakennettu `args`-muuttuja tekee tästä helpompaa ja suorempaa. Java-tiedostojen lisäksi komentoriviparametreja voidaan lukea myös työkoneella ajettaessa, käyttäen `appletviewer`-työkalua.
+Komentoriviparametreja on käytetty ohjelmoinnissa jo pitkään, ja ne ovat olleet oleellisia osa UNIX-tyyppisten käyttöjärjestelmien käytössä.
 
-Katso myös:
+Java tarjoaa yksinkertaisen tavan käsitellä näitä parametreja "args"-taulukon kautta. Muita tapoja saada tietoja käyttäjältä ovat esimerkiksi Scanner-luokka tai BufferedReader.
 
-Lue lisää komentoriviparametrin lukemisesta ja sen käytöstä Java-tiedostoissa täältä: https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html
+"args" on string-tyyppisten arvojen taulukko. Se saa arvonsa ohjelman suorituksen yhteydessä komentoriviltä. Jokainen komentoriviparametri on erillinen merkkijono.
+
+## Lisätietoa
+
+Lisätietoja komentoriviparametrien lukemisesta löydät seuraavista lähteistä:
+
+- Oraclein Java-tutoriaali: [Linkki](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
+- Rajeev Kumar Singhin blogi: [Linkki](https://www.geeksforgeeks.org/command-line-arguments-in-java/)
+- Stack Overflow, lisätietoa ja esimerkkejä: [Linkki](https://stackoverflow.com/questions/890966/what-is-string-args-parameter-in-main-method-java)

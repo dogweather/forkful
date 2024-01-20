@@ -1,7 +1,7 @@
 ---
-title:                "Mettre en majuscule une chaîne de caractères"
-html_title:           "Fish Shell: Mettre en majuscule une chaîne de caractères"
-simple_title:         "Mettre en majuscule une chaîne de caractères"
+title:                "Mettre une chaîne en majuscules"
+html_title:           "Fish Shell: Mettre une chaîne en majuscules"
+simple_title:         "Mettre une chaîne en majuscules"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Qu'est-ce & Pourquoi?
+Capitaliser une chaîne, c'est convertir le premier caractère d'une chaîne en majuscule. Les programmeurs le font pour améliorer la lisibilité du contenu ou pour respecter certaines normes de codage.
 
-La capitalisation d'une chaîne de caractères est simplement le fait de mettre en majuscules la première lettre de chaque mot. Les programmeurs le font souvent pour améliorer la lisibilité du code.
+## Comment faire:
+Voici comment vous pouvez capitaliser une chaîne dans le shell Fish :
 
-# Comment faire:
-
+```fish
+function capitalize
+    set string $argv
+    echo (string sub -l 1 $string | tr '[:lower:]' '[:upper:]')(string sub -s 2 $string)
+end
 ```
-fish_shell
-set my_string "hello world"
-string capitalize $my_string
+Ceci est un exemple d'utilisation et de sortie :
+```fish
+> capitalize "fish shell"
+Fish shell
 ```
+Cela prend votre chaîne "fish shell" et la convertit en "Fish shell".
 
-Output: "Hello World"
+## Plongée profonde
+L'idée de capitalisation des chaînes a été introduite depuis l'aube de la programmation. L'objectif principal est l'amélioration de la lisibilité, ce qui est crucial pour le débogage et la compréhension du code par d'autres programmeurs.
 
-```
-fish_shell
-set my_string "this is an example"
-string capitalize $my_string
-```
+Il existe des alternatives pour capitaliser une chaîne dans d'autres langages, par exemple, en utilisant la méthode `.capitalize` en Python ou la méthode `.toUpperCase` en JavaScript.
 
-Output: "This Is An Example"
+Sur le plan de l'implémentation, notez que `tr` dans Fish Shell remplace les minuscules par des majuscules. `string sub -l 1` extrait le premier caractère de la chaîne, alors que `string sub -s 2` extrait tous les caractères après le premier, laissant le premier inchangé.
 
-# Focus sur:
-
-## Contexte historique:
-La capitalisation des chaînes de caractères remonte aux premiers langages de programmation comme le Fortran ou le COBOL. Aujourd'hui, sa popularité continue en raison de la volonté des développeurs de maintenir un code propre et facile à comprendre.
-
-## Alternatives:
-Il existe d'autres méthodes pour capitaliser une chaîne de caractères, telles que l'utilisation de fonctions de bibliothèque ou la manipulation des chaînes de caractères en boucle. Cependant, l'utilisation de la fonction intégrée "string capitalize" dans Fish Shell est rapide, simple et efficace.
-
-## Détails de mise en œuvre:
-Dans Fish Shell, la fonction "string capitalize" utilise la bibliothèque de chaînes de caractères Go pour effectuer la capitalisation. Si vous préférez une autre méthode, vous pouvez également utiliser des expressions régulières ou des fonctions de traitement de chaînes de caractères à cet effet.
-
-# À voir également:
-
-Plus d'informations sur la fonction "string capitalize" de Fish Shell peuvent être trouvées dans la documentation officielle : https://fishshell.com/docs/current/cmds/string.html#string-capitalize
+## Voir aussi
+Pour plus d'informations, consultez ces liens :
+- [Documentation sur Fish Shell](https://fishshell.com/docs/3.1/commands.html)
+- [Guide de programmation Fish Shell](https://github.com/fish-shell/fish-shell)
+- [Manipulation des chaînes en Fish Shell](https://fishshell.com/docs/current/index.html#string)

@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Bash: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,28 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是命令行参数
-命令行参数是指通过命令行传递给程序的信息。程序员通常需要读取这些命令行参数来根据用户的需求进行不同的操作。
+## 什么与为什么？
+命令行参数是当你运行程序时给它的输入。程序员读取这些信息以获取关于程序运行方式的特定指示。
 
-## 如何读取命令行参数
-可以使用Bash内置的`$1`、`$2`等变量来获取传入的参数。比如`$1`表示第一个参数，`$2`表示第二个参数，以此类推。在下面的例子中，我们将打印出传入的第一个和第二个参数。
-```Bash
-echo "第一个参数为: $1"
-echo "第二个参数为: $2"
-```
-**例子输入** `sh script.sh hello world`
+## 如何：
+让我们看一些在Bash中读取命令行参数的代码例子。以下脚本就是如何获取参数的一个例子：
 
-**例子输出**
-```
-第一个参数为: hello
-第二个参数为: world
+```bash
+#!/bin/bash
+
+# 存储第一个参数
+first_arg=$1
+
+# 存储第二个参数
+second_arg=$2
+
+# 输出参数
+echo "第一个参数是: $first_arg"
+echo "第二个参数是: $second_arg"
 ```
 
-## 深入了解
-- 历史背景：在早期的操作系统中，命令行参数的重要性更加突出，因为它是与用户交互的唯一途径。随着图形用户界面的发展，命令行的使用不再那么广泛。
-- 替代方法：除了读取命令行参数，程序员还可以使用环境变量、配置文件等方式来获取程序运行时的设置信息。
-- 实现细节：在Bash中，`$1`、`$2`等变量其实是特殊的环境变量，存储着用户传入的参数值。
-## 相关链接
-- 了解更多Bash编程相关的知识：https://www.gnu.org/software/bash/
-- 关于命令行参数的详细介绍：https://tldp.org/LDP/abs/html/abs-guide.html#COMMANDLINEARGS
-- 在Shell脚本中使用环境变量：https://www.computerhope.com/unix/bash/texport.htm
+运行这个脚本的命令通常如下：
+
+```bash
+bash script.bash arg1 arg2
+```
+
+运行这个命令的输出如下：
+
+```bash
+第一个参数是: arg1
+第二个参数是: arg2
+```
+
+## 深入研究
+当我们在早年的Unix shell中接触命令行参数时，同时也出现了$#用于指挥参数的数目。 在Bash中，我们有很多方式来处理命令行参数，比如使用shift命令来向前移动参数。
+
+其他类似功能的命令解析器，比如Python的argparse，提供了更多复杂的选项，如默认值和长/短参数。在Bash中，getopt是处理更复杂参数的强大工具，它允许我们定义所需的参数类型，这样我们就可以读取长参数和短参数。
+
+## 参考资料
+以下是关于命令行参数和Bash编程的更多资源：
+
+1. [Bash 脚本教程](https://linux.cn/article-4271-1.html)
+2. [处理 Bash 命令行参数](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
+3. [使用getopt解析bash脚本参数](https://www.baeldung.com/linux/getopt-command)

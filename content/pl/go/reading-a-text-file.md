@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Go: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -11,26 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-Czytanie pliku tekstowego to jedna z podstawowych czynności programistycznych w języku Go. Polega ona na odczytaniu zawartości pliku tekstowego i wykorzystaniu jej w celu wykonania określonych operacji. Programiści często korzystają z tej funkcji, ponieważ umożliwia ona na łatwe i szybkie pobranie danych z zewnętrznego źródła.
+
+Czytanie pliku tekstowego oznacza po prostu odczytanie zawartości danego pliku tekstowego. Programiści robią to, aby manipulować danymi, analizować je lub wprowadzać do swoich programów.
 
 ## Jak to zrobić:
-Go oferuje kilka sposobów na odczytanie pliku tekstowego. Jednym z nich jest użycie funkcji `ReadFile` z biblioteki `io/ioutil`. Przykładowy kod wykorzystujący tę funkcję może wyglądać następująco:
 
-```Go 
-file, err := ioutil.ReadFile("nazwa_pliku.txt")
-if err != nil {
-    panic(err)
+Poniżej znajduje się prosty kod w Go do odczytu pliku tekstowego:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"io/ioutil"
+)
+
+func main() {
+	data, err := ioutil.ReadFile("test.txt")
+	if err != nil {
+		fmt.Println("Błąd:", err)
+		return
+	}
+
+	fmt.Println("Zawartość pliku:", string(data))
 }
-fmt.Print(string(file))
+```
+Załóżmy, że zawartość `test.txt` to `Witaj, świecie!`, wynik wyglądałby następująco:
+
+```Go
+Zawartość pliku: Witaj, świecie!
 ```
 
-Powyższy kod otwiera plik o nazwie "nazwa_pliku.txt" i odczytuje jego zawartość za pomocą funkcji `ReadFile`. Następnie za pomocą funkcji `string` konwertuje zawartość na postać tekstową i wypisuje ją na ekran. 
+## Głębsze zagadnienia
 
-## Głębszy Zanurzenie:
-Czytanie plików tekstowych jest częścią programowania od samego początku. W języku Go można również użyć funkcji `Open` z biblioteki `os` lub `bufio` do odczytania pliku wiersz po wierszu. Alternatywnie, można również użyć gotowej biblioteki `FileScanner`. Podczas odczytu pliku ważne jest użycie odpowiedniego kodowania znaków, w przeciwnym razie odczytane dane mogą być niepoprawne. 
+Czytanie plików tekstowych ma wiele zastosowań, od prostych skryptów do zaawansowanych analiz danych. W Go, mamy kilka alternatyw dla `ioutil.ReadFile()`, takie jak `os.Open()` i `bufio.Scanner()`, które mogą być bardziej efektywne dla dużych plików.
 
-## Zobacz również:
-Możesz przeczytać więcej na temat czytania plików tekstowych w języku Go tutaj:
-- [Oficjalna dokumentacja Go](https://golang.org/pkg/io/ioutil/)
-- [GitHub Go tutorial](https://github.com/golang/go/wiki/Io)
-- [Blog o Go](https://blog.golang.org/io2011)
+Chociaż `ioutil.ReadFile()` jest wygodne, ładuje cały plik do pamięci, co może nie być efektywne dla bardzo dużych plików. Alternatywą może być użycie `os.Open()` w połączeniu z `bufio.Scanner()`.
+
+Kiedy odczytujemy plik tekstowy, Go otwiera strumień do pliku, a następnie odczytuje zawartość pliku bajt po bajcie.
+
+## Zobacz także
+
+Poniżej znajdują się linki do szczegółowych informacji na temat odczytu plików tekstowych w Go:
+
+1. Oficjalna Dokumentacja Go: https://golang.org/pkg/io/ioutil/#ReadFile
+2. Przewodnik po Go zaawansowanym: https://gobyexample.com/reading-files
+3. Tutorial: Jak odczytać plik w Go: https://www.socketloop.com/tutorials/golang-read-a-file-example

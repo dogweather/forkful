@@ -1,7 +1,7 @@
 ---
-title:                "Erstellen einer temporären Datei"
-html_title:           "Clojure: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -11,45 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Das Erstellen einer temporären Datei ist das Generieren einer kurzlebigen Datei für vorübergehende Speicherung oder Datenaustausch. Programmierer tun dies, um wertvollen Speicherplatz zu schonen und die Effizienz zu verbessern.
 
-Das Erstellen einer temporären Datei ist ein nützliches Konzept in der Programmierung, das es ermöglicht, vorübergehende Dateien zu erstellen, die nur für eine bestimmte Aufgabe oder Sitzung relevant sind. Programmierer nutzen temporäre Dateien, um Daten zu speichern, auf die sie nur vorübergehend zugreifen müssen, oder um Experimente durchzuführen, ohne die ursprüngliche Datei zu verändern. 
-
-## Wie geht's?
-
-### Erstellen einer temporären Datei:
+## Wie macht man das:
 ```Clojure
-(with-open [f (io/file (java.io.File/createTempFile "prefix" "suffix"))]
-   ;;Code zum Bearbeiten der temporären Datei
-)
+(require '[clojure.java.io :as io])
+
+(defn create-temp-file 
+  [prefix suffix]
+  (io/file (io/make-temp-file prefix suffix)))
+
+(def temp-file (create-temp-file "prefix" ".suffix"))
+
+(print temp-file)
 ```
-Jedes Mal, wenn der Code ausgeführt wird, wird eine neue temporäre Datei mit einem zufälligen Namen in einem vom Betriebssystem dafür vorgesehenen temporären Verzeichnis erstellt.
+Die obigen Codeblöcke erstellen eine temporäre Datei und drucken ihren Pfad aus.
 
-### Schreiben in eine temporäre Datei:
-```Clojure
-(with-open [f (io/writer (java.io.File/createTempFile "prefix" "suffix"))]
-   (.write f "Dieser Text wird in die temporäre Datei geschrieben!")
-)
-```
-Die Datei wird beim Ausführen dieses Codes automatisch geschlossen, wodurch der temporäre Speicherplatz freigegeben wird.
+## Tiefgang:
+Historisch gesehen wurden temporäre Dateien verwendet, um begrenzten Speicher zu managen. Heute sind sie immer noch nützlich, insbesondere für datenintensive Operationen. 
 
-### Lesen aus einer temporären Datei:
-```Clojure
-(with-open [f (io/reader (io/resource "tempfile.txt"))]
-   (.read f)
-)
-```
-Das oben genannte Beispiel liest den gesamten Inhalt der temporären Datei "tempfile.txt".
+Alternativen beinhalten die Verwendung von In-Memory-Datenstrukturen wie Hash-Maps oder Vektoren. Allerdings sind sie nicht so effizient wie temporäre Dateien, wenn es um große Datenmengen geht.
 
-## Tiefentauchen
+In Clojure erstellt `io/make-temp-file` tatsächlich eine Instanz von `java.io.File`. Der resultierende temporäre Dateipfad ist systemabhängig, weil er auf dem von der Java-Systemeigenschaft `java.io.tmpdir` definierten temporären Verzeichnis basiert.
 
-### Historischer Kontext:
-Das Konzept der temporären Dateien wurde bereits in den 60er Jahren eingeführt, als Computerspeicher begrenzter und teurer war. Daher war es wichtig, vorübergehende Dateien effizient zu verwalten.
-
-### Alternativen:
-Eine alternative Möglichkeit, vorübergehende Daten zu speichern, ist die Verwendung von Speicherobjekten wie Vektoren oder Maps. Dies kann im Gegensatz zur Erstellung einer physischen Datei jedoch mehr Speicherplatz in Anspruch nehmen.
-
-### Implementierungsdetails:
-Die Funktion `createTempFile` wird aus der Java-Bibliothek genutzt, um eine temporäre Datei zu erstellen. Sie akzeptiert ein Präfix und ein Suffix für den Dateinamen. Die erstellte Datei wird standardmäßig in dem temporären Verzeichnis gespeichert, das vom Betriebssystem zugewiesen wird.
-
-## Sieh dir auch an:
-Offizielle Clojure-Dokumentation zu temporären Dateien: https://clojure.github.io/clojure/clojure.java.io-api.html#clojure.java.io/createTempFile
+## Mehr Informationen:
+- Clojure official documentation (Offizielle Clojure Dokumentation): [Clojure - Java Interop](https://clojure.org/reference/java_interop)
+- StackOverflow (Stack Auslauft): [How to create a temporary directory/file in Clojure?](https://stackoverflow.com/questions/7517594/how-to-create-a-temporary-directory-file-in-clojure)

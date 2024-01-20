@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "C: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "C"
 category:             "C"
@@ -10,106 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Lataa Webbisivu C:llä
 
-Lataaminen on prosessi, jossa tietokone hakee tietoa internetistä ja tallentaa sen paikalliseen laitteeseensa. Ohjelmoija voi ladata verkkosivustoja, taulukoita tai muita tietoja tarpeidensa mukaan. Tämä on tärkeä osa monien ohjelmien toimintaa, kuten verkkoselaimet, suurien tietokantojen hallintaohjelmat ja älypuhelinsovellukset.
+## Mikä & Miksi?
 
-## Miten:
+Webbisivun lataus on prosessi, jossa otetaan kopio verkkosivusta laadukkaaseen tallennusmuotoon. Ohjelmoijat tarvitsevat tätä toimintoa datan keräämiseksi, palvelimen tilan tarkistamiseksi tai offline-käyttöä varten.
 
-Esimerkkeinä käyttäen ```C...``` koodiesimerkkejä, tässä selitetään, kuinka ladataan yksinkertaisen verkkosivun sisältö ja tallennetaan se paikalliseen tiedostoon.
+## Kuinka toimii:
 
-**Esimerkki 1: Lataa ja tulosta verkkosivun sisältö**
+Esimerkkikoodi siitä, kuinka voit ladata web-sivun käyttämällä `libcurl` -kirjastoa:
 
-```c
+```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
-int main()
+int main(void)
 {
-  // Alustetaan CURL-käsittely
   CURL *curl;
   CURLcode res;
 
-  // Alustetaan muuttujat url-osoitteelle ja latauksen tulostamiseen
-  char *url = "https://www.esimerkki.fi";
-  FILE *file = fopen("esimerkki.html", "w");
-
-  // Alustetaan CURL:n oletusasetukset
   curl = curl_easy_init();
-
   if(curl) {
-    // Asetetaan URL-osoite
-    curl_easy_setopt(curl, CURLOPT_URL, url);
-    // Asetetaan kirjoitettava tiedosto
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, file);
-    // Asetetaan tulostuksen muoto
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
-    // Suoritetaan lataus ja tallennus
-    res = curl_easy_perform(curl);
-    // Suljetaan tiedostokahva
-    fclose(file);
-    // Suljetaan CURL-käsittely
-    curl_easy_cleanup(curl);
-    // Tulostetaan lataustulos
-    printf("Sivu ladattu ja tallennettu tiedostoon esimerkki.html.\n");
-  }
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
 
+    res = curl_easy_perform(curl);
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+
+    curl_easy_cleanup(curl);
+  }
   return 0;
 }
 ```
+Käännä ja aja ohjelma. Näkyvissä tulisi olla `example.com` sivun HTML-koodi.
 
-**Esimerkki 2: Lataa ja tallenna verkkosivun taulukko**
+## Syvällisempi tutkiskelu:
 
-```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <curl/curl.h>
+Lataaminen webbisivu on ollut keskeinen osa verkon vuorovaikutusta siitä lähtien, kun HTTP-protokolla otettiin käyttöön 1990-luvun alussa. Kirjastoja, kuten `libcurl` tai `wget`, on kehitetty täyttämään tarve nopeasti ja tehokkaasti.
 
-int main()
-{
-  // Alustetaan CURL-käsittely
-  CURL *curl;
-  CURLcode res;
+Vaihtoehtoisia tapoja ladata webbisivun ovat esimerkiksi `wget` tai `httrack`. Mutta `libcurl` on erittäin joustava ja monipuolinen, ja se tukee useita protokollia, mukaan lukien HTTP, HTTPS, FTP.
 
-  // Alustetaan muuttujat url-osoitteelle ja latauksen tulostamiseen
-  char *url = "https://www.esimerkki.fi/taulukko.html";
-  FILE *file = fopen("taulukko.csv", "w");
-
-  // Alustetaan CURL:n oletusasetukset
-  curl = curl_easy_init();
-
-  if(curl) {
-    // Asetetaan URL-osoite
-    curl_easy_setopt(curl, CURLOPT_URL, url);
-    // Asetetaan kirjoitettava tiedosto
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, file);
-    // Asetetaan tulostuksen muoto
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
-    // Suoritetaan lataus ja tallennus
-    res = curl_easy_perform(curl);
-    // Suljetaan tiedostokahva
-    fclose(file);
-    // Suljetaan CURL-käsittely
-    curl_easy_cleanup(curl);
-    // Tulostetaan lataustulos
-    printf("Taulukko ladattu ja tallennettu tiedostoon taulukko.csv.\n");
-  }
-
-  return 0;
-}
-```
-
-## Syväsukellus:
-
-Lataaminen on ollut osa tietokoneiden toimintaa lähes niiden alkuajoista lähtien. Alkuvaiheessa se oli yksinkertaista tekstin tai kuvien latausta puhelinlinjan ylitse modemien avulla. Nykyään lataaminen on tärkeä osa internetin toimintaa, ja se on kehittynyt monipuolisemmaksi erilaisten sisältöjen lataamiseen. Ohjelmoijat käyttävät lataamista lähes kaikissa verkkosovelluksissa ja -palveluissa, joten sen hallitseminen on tärkeää.
-
-On olemassa myös muita keinoja ladata web-sisältöä, kuten käyttämällä Pythonin Requests-kirjastoa tai Node.js:n request-moduulia. Kunkin ohjelmointikielen ja -ympäristön mukaan voi olla hyödyllisempää käyttää tiettyjä työkaluja.
-
-Lataaminen toteutetaan usein käyttämällä protokollaa, kuten HTTP tai FTP, ja sen avulla voidaan myös lisätä turvallisuutta lähettämällä tiedot salattuna.
+`libcurl` vastaanottaa datan palvelimelta ja tallentaa sen muistiin. Se pyytää, suorittaa ja hallitsee verkkotoimintoja, jotka johtavat lataukseen. 
 
 ## Katso myös:
 
-- [C-curl-verkkosivu](https://curl.haxx.se/libcurl/c/) - virallinen dokumentaatio C-kielelle
-- [Python Requests-kirjasto](https://requests.readthedocs.io/en/master/) - dokumentaatio ja esimerkkejä Python-kielelle
-- [Node.js request-moduuli](https://www.npmjs.com/package/request) - dokumentaatio ja esimerkkejä Node.js:lle
+Libcurl-kirjaston virallinen dokumentaatio on saatavilla [täältä](https://curl.haxx.se/libcurl/c/).
+
+Muita tapoja ladata verkkosivuja voit löytää [täältä](https://stackoverflow.com/questions/1636333/download-and-save-a-file-from-the-web-using-c).

@@ -1,6 +1,6 @@
 ---
 title:                "Stampa dell'output di debug"
-html_title:           "Ruby: Stampa dell'output di debug"
+html_title:           "Bash: Stampa dell'output di debug"
 simple_title:         "Stampa dell'output di debug"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,32 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Stampare l'output di debug è un metodo utilizzato dai programmatori per visualizzare informazioni utili durante il processo di sviluppo di un software. Ciò consente loro di identificare errori, verificare che il codice stia eseguendo ciò che doveva, e comprendere meglio il flusso del programma.
+## Cos'è e perché?
+
+La stampa del debug output è una pratica che implica la visualizzazione temporanea dei dati di programmazione in uscita per il controllo dei problemi. I programmatori la utilizzano per diagnosticare e risolvere i problemi di codice.
 
 ## Come fare:
-Ci sono diverse modalità per stampare l'output di debug in Ruby. Uno dei metodi più semplici è utilizzare il metodo ```puts``` che consente di visualizzare una stringa di testo nell'output. Ecco un esempio:
+
+Ecco un semplice esempio in Ruby:
 
 ```Ruby
-puts "Hello World!"
+def divisione(x, y)
+  puts "L'input è: x=#{x}, y=#{y}"
+  risposta = x / y
+  puts "La risposta è: #{risposta}"
+rescue ZeroDivisionError
+  puts "Errore! Non posso dividere per zero."
+end
+
+divisione(10, 2)
+divisione(10, 0)
 ```
 
-Questo codice stamperà la stringa "Hello World!" nell'output del programma. Inoltre, è possibile utilizzare la combinazione di stringhe e variabili per visualizzare informazioni più specifiche, come mostrato nell'esempio seguente:
+In questo caso, il risultato della stampa sarà:
 
-```Ruby
-name = "John"
-age = 25
-puts "Ciao, mi chiamo #{name} e ho #{age} anni."
+```
+L'input è: x=10, y=2
+La risposta è: 5
+L'input è: x=10, y=0
+Errore! Non posso dividere per zero.
 ```
 
-Questo codice stamperà "Ciao, mi chiamo John e ho 25 anni." nell'output del programma.
+## Approfondimenti
 
-## Approfondimento:
-Stampare l'output di debug è stato un metodo popolare tra i programmatori fin dai primi tempi della programmazione. In precedenza, questo veniva fatto utilizzando il metodo ```print``` in linguaggi come C e Java. Tuttavia, il metodo ```puts``` è diventato più comune in Ruby in quanto aggiunge automaticamente un carattere di nuova riga alla fine dell'output.
+1. Storicamente, la stampa del debug output esiste dal momento in cui il concetto di programmazione è nato. È uno strumento fondamentale per gli sviluppatori per conoscere meglio il funzionamento del loro codice.
 
-Oltre al metodo ```puts```, esistono anche altri metodi come ```p```, che visualizza l'output di un oggetto in un formato leggibile per gli sviluppatori, e ```inspect```, che visualizza l'output di un oggetto in un formato più dettagliato. Puoi provare questi metodi per vedere quali funzionano meglio per le tue esigenze di debugging.
+2. Ci sono molte alternative al debug output, come l'utilizzo di un debugger, che fornisce un controllo più dettagliato ma a volte richiede più configurazione.
 
-## Vedi anche:
-- [Official Ruby documentation on Debugging](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-print)
-- [Ruby Guides on Debugging](https://www.rubyguides.com/2019/09/debugging-ruby/)
-- [Ruby Monk lesson on Debugging](https://rubymonk.com/learning/books/4-ruby-primer-ascent/chapters/47-debugging/lessons/126-using-puts)
+3. Ruby include una libreria standard `debug` che fornisce funzionalità avanzate di debug. Puoi utilizzarla per esaminare variabili, passare attraverso il codice, mettere in pausa l'esecuzione, ecc.
+
+## Vedi anche
+
+1. Ruby Documentation: Debugging: http://ruby-doc.org/core-2.5.0/Debug.html
+2. Debugging Techniques in Ruby (Article): https://www.toptal.com/ruby/debugging-ruby-with-rubys-debug
+3. Railscast on Debugging (Video): http://railscasts.com/episodes/54-debugging-ruby-revised

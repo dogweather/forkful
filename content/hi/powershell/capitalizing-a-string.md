@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग के प्रथम अक्षर को वर्णमाला में लिखना"
-html_title:           "PowerShell: एक स्ट्रिंग के प्रथम अक्षर को वर्णमाला में लिखना"
-simple_title:         "एक स्ट्रिंग के प्रथम अक्षर को वर्णमाला में लिखना"
+title:                "स्ट्रिंग को कैपिटलाइज करना"
+html_title:           "PowerShell: स्ट्रिंग को कैपिटलाइज करना"
+simple_title:         "स्ट्रिंग को कैपिटलाइज करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,18 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-क्या आपने कभी अपने पास कोई शब्द हायरकेस किया है? यह शब्द किसी भी भाषा में सबसे पहला अक्षर बड़ा लिखकर प्रदर्शित किया जाता है। प्रोग्रामर्स ऐसा क्यों करते हैं? क्योंकि इससे पढ़ने में आसानी होती है और शब्दों को समूह बनाने में मदद मिलती है।
+शीर्षक: PowerShell में स्ट्रिंग्स की मूंटनी कैसे करें?
 
-## कैसे करें?
+## क्या और क्यों?
+अक्षरों की मूंटनी करना का मतलब है कि स्ट्रिंग में हर शब्द के पहले अक्षर को बड़ा (capital) करना। कोडों में इसका इस्तेमाल तब किया जाता है, जब हमें उपयोगकर्ता की इनपुट को किसी निर्धारित फॉर्मैट में दर्ज करना होती है। 
+
+## कैसे करें:
+जी हाँ, यह उत्कृष्ट है। PowerShell में, हम `ToTitleCase` मेथड का उपयोग करके यह कर सकते हैं। यहां एक उदाहरण है:
+
 ```PowerShell
-$string = "hello world"
-$string.ToUpper() # इस गुण प्रयोग है। Output: HELLO WORLD
-$string.ToLower() # इस गुण प्रयोग है। Output: hello world
+[string] $myString = "powershell में स्ट्रिंग्स की मूंटनी"
+$textInfo = [Globalization.CultureInfo]::CurrentCulture.TextInfo
+[string] $capitalizedString = $textInfo.ToTitleCase($myString)
+Write-Output $capitalizedString
+```
+सैंपल आउटपुट:
+
+```PowerShell
+Powershell में स्ट्रिंग्स की मूंटनी 
 ```
 
-## गहराई में
-पहले दिनों में, लोग मुद्रा के प्रथम अक्षर को बड़ा अक्षर में लिखते थे ताकि शब्दों को पहचानना आसान हो। लेकिन आजकल, इसका प्रयोग प्रोग्रामिंग में अपने महत्वपूर्ण हो गया है। इसका अल्टरनेटिव गुण साधारण रूप से उपक्रम का अनुसरण करके फिर से शब्दों को पढ़ना है। इसके अलावा, शब्दों को जोड़ने, अलग करने, खात्मा करने आदि के लिए भी इसका प्रयोग किया जा सकता है। इस गुण को प्रदर्शित करने के लिए सामान्य रूप से प्रयोग किया जाता है।
+## गहराई में:
+`ToTitleCase` मेथड का उपयोग करना एक पुराना और प्रभावी तरीका है स्ट्रिंग की मूंटनी करने का। इसके विकल्प आपकी भाषा या प्लेटफार्म पर निर्भर कर सकते हैं। PowerShell में, आप इसे पाइप ट्रिक का उपयोग करके आसानी से लागू कर सकते हैं। `ToTitleCase` मेथड `Globalization.CultureInfo`  क्लास का हिस्सा है, जो `.NET`  का हिस्सा है। 
 
-## देखिये
-[यहाँ पावरशेल से जुड़े अन्य हिंदी लेख देखे](https://technitya.com/category/powershell/)
+## अधिक जानकारी:
+यदि आप PowerShell के कठिन समस्याओं का समाधान करने में रुचि रखते हैं, तो निम्नलिखित लिंक आपके लिए उपयोगी हो सकते हैं:
+
+1. [PowerShell स्ट्रिंग्स ट्यूटोरियल](https://docs.microsoft.com/hi-in/powershell/scripting/developer/text/string-type?view=powershell-7.1): हाउटूज और उदाहरणों के साथ विभिन्न स्ट्रिंग ऑपरेशन्स।
+2. [.NET डॉक्यूमेंटेशन](https://docs.microsoft.com/hi-in/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0): `ToTitleCase` मेथड का विस्तृत विवरण।
+3. [कन्वर्जन और कास्टिंग](https://www.sapien.com/blog/2014/09/10/powershell-casting-and-conversion/): PowerShell में टाइप कन्वर्जन कैसे किया जाता है।

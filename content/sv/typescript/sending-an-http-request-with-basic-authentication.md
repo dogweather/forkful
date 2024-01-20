@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "TypeScript: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,23 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad och Varför?
-Att skicka en HTTP-request med grundläggande autentisering innebär att man skickar information till en server för att autentisera sig själv och få åtkomst till skyddade resurser. Programmörer gör detta för att säkerställa att användare som försöker få åtkomst till deras applikation är legitima och har rättigheter att göra det.
+# Skicka en HTTP-förfrågan med grundläggande autentisering i TypeScript
 
-Hur görs det?
-I TypeScript kan man skicka en HTTP-request med grundläggande autentisering genom att använda en HTTP-klient, som Axios, och ange användarnamn och lösenord i en sökväg eller en header. Det kan se ut så här:
+## Vad & Varför?
+Grundläggande autentisering vid HTTP-förfrågningar involverar att sända användarnamn och lösenord i HTTP-huvudet. Den används för att begränsa åtkomsten till vissa resurser på en webbserver till auktoriserade användare.
+  
+## Hur ska man:
+För att skicka en HTTP-förfrågan med grundläggande autentisering kan du använda `axios`, en populär HTTP-klient. Installera `axios` först med npm:
+
+```TypeScript
+npm install axios
 ```
-TypeScript
-let response = await axios.get("/api/resource", { auth: { username: "user", password: "password" } });
-console.log(response.data);
+
+Nu kan du använda `axios` för att skicka en HTTP-förfrågan med grundläggande autentisering:
+
+```TypeScript
+import axios from 'axios';
+
+const config = {
+  auth: {
+    username: 'username',
+    password: 'password'
+  }
+};
+
+axios.get('https://mywebsite.com', config)
+    .then((response) => {
+        console.log(response.data);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 ```
-Detta kommer att skicka ett GET-anrop till "/api/resource" och autentisera det med användarnamn "user" och lösenord "password". Om autentiseringen lyckades kommer svaret från servern att loggas i konsolen.
 
-Djupdykning
-Grundläggande autentisering är en inbyggd autentiseringsmetod i HTTP-protokollet och användes ursprungligen för att autentisera HTTP-åtkomst för webbseminarier. Idag används det fortfarande för att säkra tillgång till olika resurser. Det finns dock alternativ, som OAuth, som erbjuder bättre säkerhet och har blivit mer populärt.
+## Djup dykning
+Grundläggande autentisering i HTTP introducerades i HTTP/1.0-specifikationen på 90-talet. Trots att den är grundläggande och enkel att implementera, saknar den många säkerhetsfunktioner. För att hantera dessa brister, kan du överväga alternativ som OAuth eller JWT för mer robust säkerhet.
 
-När man skickar en HTTP-request med grundläggande autentisering, kodas användarnamn och lösenord i BASE64-format och skickas i en header som heter "Authorization". Detta ger en grundläggande säkerhet, men det är fortfarande inte den mest säkra autentiseringen.
+Vid användning av grundläggande autentisering skickas dina autentiseringsuppgifter i klartext som en del av varje förfrågan. Det innebär att om någon lyckas avlyssna din kommunikation kan de lätt se ditt lösenord. Använd alltid HTTPS när du använder grundläggande autentisering för att kryptera dina autentiseringsuppgifter.
 
-Se även
-- [Axios dokumentation om autentisering](https://github.com/axios/axios#authentication)
-- [En djupdykning i grundläggande autentisering](https://www.digitalocean.com/community/tutorials/understanding-basic-authentication-in-node-js)
+## Se även
+För mer information om HTTP autentiferingsmekanismer, kolla in dessa länkar:
+
+- MDN Web Docs: [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+- GitHub: [Axios](https://github.com/axios/axios)
+- OAuth: [OAuth 2.0](https://oauth.net/2/)
+- JWT: [JSON Web Tokens](https://jwt.io/)

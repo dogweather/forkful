@@ -1,7 +1,7 @@
 ---
-title:                "Pienentäminen merkkijonoksi"
-html_title:           "Elm: Pienentäminen merkkijonoksi"
-simple_title:         "Pienentäminen merkkijonoksi"
+title:                "Merkkijonon pääkaupunkikirjaintaminen"
+html_title:           "Elm: Merkkijonon pääkaupunkikirjaintaminen"
+simple_title:         "Merkkijonon pääkaupunkikirjaintaminen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,25 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+# Stringien Isoilla Kirjaimilla Aloitaminen Elm Ohjelmoinnissa
 
-Pienellä kirjaimella kirjoitettu merkkijono muuttuu isolla alkukirjaimella kirjoitetuksi merkkijonoksi, kun sitä käytetään koodissa. Ohjelmoijat yleensä tekevät tämän paremman selkeyden ja luettavuuden vuoksi, jotta eri muuttujat erottuvat toisistaan.
+## Mikä & Miksi?
 
-## Miten:
+Isoilla kirjaimilla aloittaminen muuntaa stringin ensimmäisen kirjaimen isoksi. Ohjelmoijat käyttävät tätä tehdäkseen teksteistä helpommin luettavia ja ymmärrettäviä.
 
-Capitalize-funktio Elm-ohjelmointikielessä muuttaa merkkijonon ensimmäisen kirjaimen isoksi kirjaimeksi ja jättää loput kirjaimet samalle tavalle. Esimerkiksi ```capitalize "kissa"``` tulostaa ```"Kissa"```.
+## Kuinka Näin:
 
-Toinen vaihtoehto on käyttää isolla alkukirjaimella kirjoitettua merkkijonoa suoraan koodissa, mutta tämä voi olla hankalaa, jos haluat muuttaa merkkijonon sisältöä myöhemmin.
+Seuraava koodiesimerkki näyttää, kuinka tämä toimii Elm-ohjelmointikielessä:
 
-## Syvällisempi tarkastelu:
+```Elm
+import String exposing (left, toUpper, dropLeft)
 
-Merkkijonojen käsittelyn yhteydessä on tärkeää huolehtia niiden muotoilusta ja selkeydestä. Pienet asiat, kuten merkkijonon ensimmäinen kirjain, voivat vaikuttaa koodin luettavuuteen ja ymmärrettävyyteen.
+capitalize : String -> String
+capitalize string = 
+    let
+        firstLetter = String.left 1 string
+        restOfTheString = String.dropLeft 1 string
+    in 
+        String.toUpper firstLetter ++ restOfTheString
 
-On myös muita tapoja muuttaa merkkijonon ensimmäinen kirjain isoksi kirjaimeksi, kuten käyttämällä String-moduulin funktioita tai rakentamalla oma funktio. Jokainen ohjelmoija voi valita itselleen sopivimman tavan.
+main = 
+    capitalize "hello"
+```
 
-Implementoinnista riippuen capitalize-funktio voi joko muuttaa merkkijonon alkuperäistä muotoa tai palauttaa uuden muokatun merkkijonon. On tärkeää tarkistaa toiminta ja tarvittaessa muuttaa koodia vastaamaan haluttua lopputulosta.
+Käynnistäessäsi tämän ohjelman, se tulostaa: 
 
-## Katso myös:
+```
+"Hello"
+```
 
-- [Elm-kielen String-moduuli](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [Vinkkejä koodin luettavuuden parantamiseen](https://elmlang.slack.com/archives/C0JNLJZU8/p1486638256021694)
+## Syvällisempää Tietoa:
+
+Historiallisesti useat ohjelmointikielet, kuten JavaScript ja Python, ovat sisällyttäneet tämän ominaisuuden standardikirjastoihinsa. Elm, ollen funktionaalisen ohjelmoinnin kieli, kuitenkin vaatii tekemään tämän manuaalisesti. 
+
+On olemassa useita tapoja saavuttaa tämä Elm:ssä ja yllä näytetty on ainoastaan yksi niistä. Jotkut ohjelmoijat saattavat esimerkiksi jakaa stringin listaksi, käsitellä ensimmäisen alkioksen isolla kirjaimella ja yhdistää listan takaisin stringiksi. 
+
+Jos käsittelet erittäin suurta määrää tietoa, voit huomata joitain suorituskyvyn vaihteluita eri toteutustapojen välillä. Stringin jakaminen ja yhdistäminen voi olla hitaampaa kuin ensimmäisen kirjaimen muuttaminen isolla kirjaimella suoraan stringissä.
+
+## Katso Myös:
+
+1. Elm String funktion dokumentaatio: https://package.elm-lang.org/packages/elm/core/latest/String
+2. Elm yhteisön keskusteluja string manipulointi: https://discourse.elm-lang.org/t/string-manipulation-in-elm/5743
+3. String manipuloinnin opas Elm:ssä: https://korban.net/posts/elm/2019-12-14-practical-guide-string-manipulation-elm/

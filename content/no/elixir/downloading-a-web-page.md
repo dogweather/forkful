@@ -1,7 +1,7 @@
 ---
-title:                "Last ned en nettstedsside"
-html_title:           "Elixir: Last ned en nettstedsside"
-simple_title:         "Last ned en nettstedsside"
+title:                "Laste ned en nettside"
+html_title:           "Elixir: Laste ned en nettside"
+simple_title:         "Laste ned en nettside"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,22 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor? 
-Å laste ned en nettside betyr å hente informasjon fra en ekstern server og vise den på din egen enhet. Programmere gjør dette for å kunne vise informasjon fra forskjellige nettsteder på en enkel og effektiv måte.
+## Hva og Hvorfor?
 
-## Slik gjør du: 
-For å laste ned en nettside i Elixir bruker vi funksjonen `HTTPoison.get`. Denne funksjonen tar imot URL-en til nettsiden som et argument og returnerer et svarobjekt med all informasjonen fra nettstedet. Et eksempel på bruk av denne funksjonen kan se slik ut:
+Nedlasting av en nettside er prosessen med å hente data fra en nettside til din lokale maskin. Programmører gjør dette for å analysere, monitorere, lagre eller manipulere nettinnhold.
+
+## Hvordan gjøre:
+
+Først, vi trenger å legge til `httpoison` og `floki` i vår `mix.exs` fil:
 
 ```elixir
-url = "https://www.nrk.no"
-response = HTTPoison.get(url)
+defp deps do
+  [
+    {:httpoison, "~> 1.8"},
+    {:floki, "~> 0.30"}
+  ]
+end
 ```
 
-Dette vil returnere et svarobjekt som inneholder informasjon om statuskoden, headerne og innholdet på nettsiden.
+Kjør deretter `mix deps.get` for å hente avhengighetene. Nå er vi klare til å laste ned en nettside:
 
-## Dykk dypere: 
-Å laste ned nettsider har blitt en viktig del av programmering siden introduksjonen av internett. Det finnes flere måter å gjøre dette på, som å bruke biblioteker som `HTTPoison` eller å implementere en egen HTTP-klient. En alternativ måte er å bruke `HTTPoison.stream` som lar deg streame data fra nettsiden i stedet for å vente på at hele nettsiden blir lastet ned før du kan håndtere den.
+```elixir
+defmodule WebpageDownloader do
+  require HTTPoison
+  
+  def download(url) do
+    case HTTPoison.get(url) do
+      {:ok, response} -> 
+        response.body
+      {:error, reason} -> 
+        IO.inspect(reason)
+    end
+  end
+end
+```
 
-## Se også: 
-- [Elixir Documentation for HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
-- [HTTP in Elixir: A deep dive](https://dev.to/boost/elixir-http-a-deep-dive-2knj)
+Kall på denne funksjonen som så:
+
+```elixir
+WebpageDownloader.download("https://www.example.com")
+```
+
+Du vil motta HTML-koden til nettsiden som en streng.
+
+## Dypdykk
+
+Historisk sett ble nedlasting av nettsider gjort ved å programmere HTTP forespørsler manuelt. Selv om Elixir gir deg muligheten til å gjøre dette, er det anbefalt å bruke bibliotek som HTTPoison for enkelthet og tilbud om bedre feilhåndtering.
+
+Alternativer til nedlasting av webinnhold inkluderer webscraping og web crawling, men disse teknikkene handler ofte om datahenting på et større skala. 
+
+Når det gjelder implementeringsdetaljer, er koden ovenfor ganske enkel. Den bruker HTTPoison-biblioteket for å sende en HTTP GET forespørsel til den oppgitte URL-en og returnerer svaret som en streng. Hvis det oppstår en feil, returneres feilmeldingen som en streng i stedet.
+
+## Se Også:
+
+  - [HTTPoison Dokumentasjon](https://hexdocs.pm/httpoison/HTTPoison.html)
+  
+  - [Floki Dokumentasjon](https://hexdocs.pm/floki/readme.html)
+
+  - [Elixir School: Tutorials on Elixir](https://elixirschool.com/en/)
+
+  - [Learn You Some Erlang For Great Good (A background on Erlang which Elixir is built upon)](https://learnyousomeerlang.com/)

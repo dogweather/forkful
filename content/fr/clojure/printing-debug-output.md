@@ -1,7 +1,7 @@
 ---
-title:                "Affichage de données de débogage"
-html_title:           "Clojure: Affichage de données de débogage"
-simple_title:         "Affichage de données de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
+L'impression des sorties de débogage est un moyen pour les développeurs de vérifier le fonctionnement interne de leur code. C'est un outil précieux pour identifier et corriger les erreurs.
 
-L'impression de Debug Output est simplement le fait d'afficher des informations pendant l'exécution de votre code, principalement pour résoudre les bugs et trouver des erreurs.
+## Comment faire :
+Voici un simple exemple de comment imprimer une sortie de débogage en Clojure.
 
-Les programmeurs le font souvent pour comprendre exactement ce qui se passe dans leur code et repérer les problèmes plus facilement.
+```Clojure
+(defn example-debug []
+  (let [x 42]
+    (println "La valeur de X est: " x)
+    (* x 2)))
 
-## Comment:
-
-```clojure 
-(defn print-debug [var]
-  (println "Debug Output:" var))
-
-(print-debug "Hello world!")
+(example-debug)
 ```
 
-Résultat:
+Lorsque vous exécutez ce code, vous verrez la sortie suivante :
 
+```Clojure
+La valeur de X est: 42
 ```
-Debug Output: Hello world!
-```
 
-Vous pouvez également utiliser ```prn``` à la place de ```println``` pour obtenir une représentation imprimable de l'objet.
+## Plongée en profondeur
+Clojure, un langage fonctionnel dynamique qui cible la JVM, trouve ses origines dans Lisp. L'impression du débogage est un concept simple qui a persisté à travers les générations de langages de programmation grâce à son utilité.
 
-## Plongée en profondeur:
+Il existe des alternatives à l'impression pour le débogage, comme l'utilisation d'un débogueur pour inspecter l'état du programme, mais l'impression reste populaire pour sa simplicité.
 
-L'impression de Debug Output a été une technique courante pour le débogage depuis les débuts de la programmation informatique. Cependant, il existe maintenant des alternatives telles que l'utilisation d'un débogueur ou d'un logger.
+En Clojure, `println` imprime les arguments, qui sont convertis en chaînes, à la sortie standard et renvoie nil. La fonction est multithread-safe et garantit que les appels concurrents seront correctement sérialisés.
 
-En utilisant ```println``` ou ```prn```, le débogueur peut influencer les performances de votre code et il est important de le désactiver lorsque vous envoyez votre code en production.
-
-## Voir aussi:
-
-Pour en savoir plus sur l'impression de Debug Output en Clojure, vous pouvez consulter les sources suivantes:
-
-- [Documentation officielle de Clojure sur l'impression de Debug Output](https://clojuredocs.org/clojure.pprint/pprint)
-- [Vidéo explicative d'utilisation de ```println``` en Clojure](https://www.youtube.com/watch?v=61VheNAfQVQ)
-- [Article sur les meilleurs outils de débogage en Clojure](https://blog.lono.io/best-clojure-debugging-tools/)
+## Voir aussi
+1. Documentation officielle de Clojure pour println : [https://clojuredocs.org/clojure.core/println](https://clojuredocs.org/clojure.core/println)
+2. Guide de débogage Clojure : [https://clojure.org/guides/debugging](https://clojure.org/guides/debugging)

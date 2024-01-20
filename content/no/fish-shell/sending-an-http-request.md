@@ -1,7 +1,7 @@
 ---
-title:                "Sending en http-forespørsel"
-html_title:           "Fish Shell: Sending en http-forespørsel"
-simple_title:         "Sending en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -11,27 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å sende en HTTP-forespørsel betyr å be en server, vanligvis en webserver, om data eller å utføre en bestemt oppgave. Programmerere gjør dette for å hente, manipulere eller arkivere data på nett.
 
-Når vi snakker om å sende en HTTP-forespørsel, mener vi at vi ber en server om å gjøre en bestemt handling for oss. Dette kan være alt fra å hente data fra en nettside til å legge til en ny bruker i en database. Programmere bruker dette for å effektivt kommunisere med servere og automatisere oppgaver som ellers ville vært tidkrevende å gjøre manuelt.
+## Hvordan gjøre dette:
+Her er et eksempel på hvordan du sender en GET-forespørsel med curl i Fish Shell:
 
-## Slik gjør du det:
-
-Sending av en HTTP-forespørsel i Fish Shell er veldig enkelt. Du trenger bare å bruke `curl` kommandoen, etterfulgt av nettadressen du ønsker å sende forespørselen til. Her er et eksempel som henter informasjon fra nettsiden "http://www.example.com":
-
+```Fish Shell
+curl http://httpbin.org/get
 ```
-curl http://www.example.com
+Svar: 
+```Fish Shell
+{
+  "args": {}, 
+  "headers": {
+    "Accept": "*/*", 
+    "Host": "httpbin.org", 
+    "User-Agent": "curl/7.64.1",
+    "X-Amzn-Trace-Id": "Root=1-61037102-5d225b9bb8bbe648e9b3d5f4"
+  }, 
+  "origin": "79.160.243.91, 79.160.243.91", 
+  "url": "http://httpbin.org/get"
+}
 ```
-
-Dette vil returnere nettsidens HTML-kode i terminalen.
-
 ## Dypdykk:
-
-HTTP-protokollen ble opprettet på 90-tallet som en standard for å kommunisere mellom klienter og servere på internett. Selv om `curl` er et vanlig valg for å sende HTTP-forespørsler i Fish Shell, finnes det også alternativer som `wget` og `httpie`. Det er også verdt å merke seg at Fish Shell støtter å bruke kommandoen `fetch` for å sende HTTP-forespørsler, men denne er ikke like utbredt som `curl`.
+Historisk sett har HTTP forespørsler vært sentrale i mange former for nettbasert kommunikasjon og er en hjørnestein i moderne webutvikling. Utover 'curl', finnes det flere alternative verktøy for å sende HTTP-forespørsler, som 'wget' og 'HTTPie'. Ved å sende HTTP-forespørsler via Fish Shell, kan du enkelt integrere nettbaserte tjenester i skriptene dine. For eksempel kan du automatisk hente data fra en REST API, eller oppdatere statusen på en online tjeneste.
 
 ## Se også:
-
-For mer informasjon om `curl` og HTTP-forespørsler, sjekk ut disse kildene:
-
-- [Offisiell informasjon om `curl`](https://curl.haxx.se/docs/manpage.html)
-- [HTTP-forespørsler på Wikipedia](https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Request_methods)
-- [Fish Shell dokumentasjon om `fetch`](https://fishshell.com/docs/current/commands.html#fetch)
+- [HTTP-forespørsler med Fish Shell - Offisiell dokumentasjon](https://fishshell.com/docs/current/commands.html)
+- [Curl (komputer program) - Wikipedia](https://no.wikipedia.org/wiki/CURL)
+- [HTTPie](https://httpie.io/)
+- [HTTP-forespørsler – Lær mer om HTTP-forespørsler](https://developer.mozilla.org/no/docs/Web/HTTP/Overview)

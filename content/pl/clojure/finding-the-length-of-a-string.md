@@ -1,7 +1,7 @@
 ---
-title:                "Znalezienie długości ciągu znaków"
-html_title:           "Clojure: Znalezienie długości ciągu znaków"
-simple_title:         "Znalezienie długości ciągu znaków"
+title:                "Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
+simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -12,34 +12,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Wyszukiwanie długości ciągu znaków to nic innego jak określenie, ile znaków znajduje się w danym ciągu. Programiści często potrzebują tej informacji w swoim kodzie, aby móc dynamicznie manipulować tekstem i dokonywać obliczeń.
+Obliczanie długości łańcucha to proces, który zwraca liczbę znaków w danym łańcuchu. Programiści robią to, aby kontrolować i manipulować danymi tekstowymi w ich aplikacjach.
 
-## Jak to zrobić:
+## Jak to zrobić?
 
-"Clojure ..." bloki kodu z przykładowymi rozwiązaniami i wynikami:
+Wykorzystamy wbudowaną funkcję Clojure `count`. Oto prosty przykład:
 
-``Clojure
-
-;; Sprawdzenie długości ciągu przy użyciu funkcji count()
-(def str "To jest przykładowy ciąg")
-(count str)
-;; Wynik: 23
-
-;; Wyszukiwanie długości ciągu przy użyciu funkcji .length
-(.length "To jest kolejny ciąg")
-;; Wynik: 23
-
+```clojure
+(defn string-length [s]
+  (count s))
 ```
 
-## Deep Dive:
+A teraz użyjmy tej funkcji:
 
-1) Kontekst historyczny: Funkcja "count" jest dostępna w języku Clojure od jego początków. Z kolei metoda ".length" jest częścią zestawu narzędzi języka Java, na którym opiera się Clojure.
+```clojure
+(string-length "Dzień dobry, Clojure!")
+```
 
-2) Alternatywy: Oprócz funkcji "count" i metody ".length", istnieje również funkcja "clojure.string/length", która jest częścią standardowej biblioteki Clojure i działa także z ciągami znaków mającymi specjalne znaki.
+Wynik powyższego kodu to:
 
-3) Szczegóły implementacji: Funkcja "count" zawiera w sobie proces iteracji po elementach ciągu i zliczania ich liczby. Natomiast metoda ".length" wykorzystuje pole "length" obiektu ciągu znaków w języku Java, co jest znacznie szybsze, ale może generować nieoczekiwane wyniki w przypadku ciągów znaków zawierających specjalne znaki.
+```
+21
+```
 
-## Zobacz również:
+Podczas gdy używamy Unicode, wynik może być nieoczekiwany. Przykład:
 
-- Dokumentacja funkcji "count": https://clojuredocs.org/clojure.core/count
-- Dokumentacja metody ".length": https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#length()
+```clojure
+(string-length "Hello, Świat!")
+```
+
+Wynik powyżej to:
+
+```
+12
+```
+ 
+## W głąb tematu
+
+Historia: Clojure, będąc dialektem Lisp, dziedziczy wiele z jego podejść do manipulacji łańcuchami, w tym obliczanie ich długości.
+
+Alternatywy: Inne języki programowania mogą używać różnych metod do obliczania długości łańcucha, na przykład, w Javie jest to `string.length()`.
+
+Szczegóły implementacji: Funkcja `count` w Clojure działa tak szybko, jak to tylko możliwe (czasami korzystając z wielowątkowych operacji). Funkcja ta zwraca ilość znaków, nie biorąc pod uwagę różnic Unicode.
+
+## Zobacz także
+
+- [Dokumentacja funkcji "count" z Clojure](https://clojuredocs.org/clojure.core/count)
+- [Manipulacja łańcuchami w Clojure](https://clojure.org/guides/learn/strings) 
+- [Porównanie funkcji `count` z innymi językami](https://www.tutorialspoint.com/count-function-in-clojure)

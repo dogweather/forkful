@@ -1,7 +1,7 @@
 ---
-title:                "Sletting av tegn som matcher et mønster"
-html_title:           "C: Sletting av tegn som matcher et mønster"
-simple_title:         "Sletting av tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,39 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Sletting av tegn som samsvarer med et mønster er en vanlig oppgave innen programmering. Dette er når man fjerner en bestemt type tegn fra en tekststreng basert på et definert mønster. Dette gjøres vanligvis for å strukturere og rense data, eller for å lage spesifikke output.
+## Hva & Hvorfor?
+Sletting av tegn som samsvarer med et mønster, også kjent som mønstertilpasning, er en teknikk som brukes til å manipulere tekst. Programmerere bruker det for å effektivisere og forenkle arbeid med strenger.
 
-## Hvordan:
-```
+## Slik Gjør Du Det:
+Hvis du ønsker å slette tegn fra en streng som samsvarer med et gitt mønster i C, kan du bruke følgende kode:
+```C
+#include <string.h>
 #include <stdio.h>
 
-int main() {
-
-  char string[] = "Dette er en tekststreng med tall 123 og symboler !@#";
-
-  // Fjerne tall fra strengen
-  for (int i = 0; string[i] != '\0'; i++) {
-    if (string[i] >= '0' && string[i] <= '9') {
-      // Bytt ut tallet med mellomrom
-      string[i] = ' ';
+void DeleteMatchingChars(char *str, char *to_remove) {
+  int src_index = 0, dest_index = 0;
+  while (str[src_index]) {
+    if (!strchr(to_remove, str[src_index])) {
+      str[dest_index] = str[src_index];
+      dest_index++;
     }
+    src_index++;
   }
+  str[dest_index] = '\0';
+}
 
-  // Skriv ut den oppdaterte strengen
-  printf("%s", string);
+int main() {
+  char str[] = "Hei verden!";
+  DeleteMatchingChars(str, "e");
+  printf("%s\n", str);
   return 0;
 }
 ```
+I dette eksemplet vil alle 'e'-tegn i strengen "Hei verden!" bli fjernet, og resultatet vil være: "Hi vrden!".
 
-Output:
-```
-Dette er en tekststreng med tall    og symboler !@#
-```
+## Dypdykk
+Metoden vi brukte over, ble utviklet i en tid da programmeringsspråk var mer begrenset. I dag finnes det mange alternativer for å oppnå det samme, som vanlige uttrykk (regular expressions) i språk som Python.
 
-## Dypdykk:
-Sletting av tegn basert på et mønster har eksistert siden de tidligste dagene av programmering når man jobbet med tekstbaserte systemer. Alternativer til å bruke et programmeringsspråk som C for å utføre denne oppgaven inkluderer bruk av kommandolinje-verktøy som "sed" og "awk". Implementasjonen av en slik funksjon kan variere basert på programmeringsspråk og algoritme som brukes, men det viktigste konseptet forblir det samme.
+Imidlertid, gir C oss muligheten til å manipulere strenger på lavt nivå. I eksemplet ovenfor, gikk vi gjennom hver karakter og kopierte den tilbake til originalstrengen så lenge den ikke matchet mønsteret - en effektiv og direkte tilnærming.
 
-## Se også:
-- [C programmeringsspråk](https://no.wikipedia.org/wiki/C_(programmeringsspr%C3%A5k))
-- [SED - tekstmanipulering via kommandolinje](https://no.wikipedia.org/wiki/Sed)
+Husk at hver gang du manipulerer en streng på denne måten, endrer du faktisk den opprinnelige dataen. Hvis du trenger originalstrengen, bør du ta vare på en kopi.
+
+## Se Også
+For mer informasjon, sjekk ut følgende kilder:
+
+- "Mastering Algorithms with C" av Kyle Loudon: [Link](https://www.amazon.com/Mastering-Algorithms-C-Kyle-Loudon/dp/1565924533)
+- C Programming på TutorialsPoint: [Link](https://www.tutorialspoint.com/cprogramming/index.htm)
+- Stack Overflow for C programmeringsspørsmål: [Link](https://stackoverflow.com/questions/tagged/c)

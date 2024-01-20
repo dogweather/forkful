@@ -1,7 +1,7 @@
 ---
-title:                "Analisando uma data de uma string"
-html_title:           "Go: Analisando uma data de uma string"
-simple_title:         "Analisando uma data de uma string"
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,34 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Parsear uma data de uma string em Go é simplesmente converter uma string que contém uma data em um formato legível para uma variável do tipo data. Os programadores fazem isso para poderem manipular e usar as datas em seus códigos de forma mais eficiente e precisa.
+## O Que & Porquê? 
+
+Fazer o "parse" de uma data de uma string significa transformá-la em um formato utilizável no Go, como um objeto time.Time. Isto é útil porque permite manipular e comparar datas de maneira eficiente e precisa.
 
 ## Como fazer:
-Exemplo de código Go com a função "Parse" para converter uma string em uma variável do tipo data:
+
+Vamos direto ao código.
 
 ```Go
-dataString := "12-05-2021"
-layout := "02-01-2006"
-data, err := time.Parse(layout, dataString)
+package main
 
-if err != nil {
-    fmt.Println(err)
-} else {
-    fmt.Println(data)
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	const baseFormat = "2006-01-02"
+	str := "2021-04-22"
+	
+	t, err := time.Parse(baseFormat, str)
+	if err != nil {
+		fmt.Println("erro:", err)
+		return
+	}
+	
+	fmt.Println(t)
 }
 ```
+Output:
 
-A saída desse código seria: 2021-12-05 00:00:00 +0000 UTC.
+```Go
+2021-04-22 00:00:00 +0000 UTC
+```
+Neste exemplo, a string "2021-04-22" é convertida para um objeto do time.Time. Se ocorrer um erro durante o parse, ele será impresso.
 
-## Mergulho Profundo:
-Parsear datas de strings é uma técnica comum utilizada em muitas linguagens de programação. No passado, era comum os programadores terem que escrever códigos extensos e complexos para realizar essa conversão. Porém, em Go, temos a função "Parse" que torna esse processo mais simples e eficiente.
+## Deep Dive:
 
-Uma alternativa para a função "Parse" é a função "ParseInLocation" que permite definir manualmente a localização e fuso horário da data a ser convertida.
+O Go tem uma abordagem única para parsing de datas. Ele usa uma data de referência (Mon Jan 2 15:04:05 MST 2006) e a formata para representar a string de entrada. Por exemplo, para tratar uma data no formato "YYYY-MM-DD", formatamos a data de referência para "2006-01-02".
 
-No nível da implementação, a função "Parse" utiliza a função "NewScanner" para percorrer a string e encontrar os elementos correspondentes a dia, mês e ano. Em seguida, usa a função "parseNumber" para converter esses elementos em valores numéricos e finalmente retorna a data em formato de variável.
+Existe uma alternativa ao uso de time.Parse, que é time.ParseInLocation. Isto permite especificar um fuso horário particular durante o parsing.
 
-## Veja Também:
-Para mais informações sobre a função "Parse" e outras funcionalidades de manipulação de datas em Go, consulte a documentação oficial em: https://golang.org/pkg/time/
+Além disso, ao fazer o parse do fuso horário, se nenhuma zona for especificada, ele usará UTC. Para especificar o parse do fuso horário, você pode usar 'Z0700' (RFC 822), 'Z07:00' (ISO 8601) ou o nome do fuso horário. 
 
-Outra fonte útil é o tutorial sobre parsing de datas em Go do site A Tour of Go em: https://tour.golang.org/basics/15
+## Ver Também:
+
+Para aprender mais sobre o "time package" em Go e a data de referência, recomendo estes links:
+- Documentação oficial de Time Package: [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
+- Análise aprofundada do parsing de data/time em Go: [https://yourbasic.org/golang/format-parse-string-time-date-example/](https://yourbasic.org/golang/format-parse-string-time-date-example/) 
+- Strings de layout no tempo do Go: [https://flaviocopes.com/go-date-time-format/](https://flaviocopes.com/go-date-time-format/)

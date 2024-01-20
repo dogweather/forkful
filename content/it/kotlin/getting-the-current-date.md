@@ -1,6 +1,6 @@
 ---
 title:                "Ottenere la data corrente"
-html_title:           "Kotlin: Ottenere la data corrente"
+html_title:           "Java: Ottenere la data corrente"
 simple_title:         "Ottenere la data corrente"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Ricevere la data corrente è il processo di ottenere la data e l'ora attuali su un dispositivo o sistema. I programmatori spesso devono utilizzare la data corrente per creare funzionalità utili come segnalibri temporali, timer o dati di registrazione.
+## Che Cosa e Perché?
+Ottenere la data corrente in un programma consente di operare su timestamp, log events, o semplicemente mostrare la data corrente all'utente. Questo può essere molto utile, ad esempio, per segnare l'ora di arrivo di un messaggio in un'app di chat.
 
-## Come:
-```
-Kotlin val currentDate = currentDate()
+## Come Fare:
+La libreria standard di Kotlin fornisce già una serie di funzionalità per questa operazione. Qui sotto un esempio pratico:
 
-Kotlin fun main() {
-  println("La data corrente è: $currentDate")
+```Kotlin
+import java.time.LocalDate
+
+fun main() {
+    val oggi = LocalDate.now()
+    println("La data di oggi è: $oggi")
 }
 ```
-Output:
-```
-La data corrente è: Fri Jul 09 09:20:10 UTC 2021
+
+Nel momento in cui eseguirai questo codice, otterrai un output del tipo:
+
+```bash
+La data di oggi è: 2023-02-10
 ```
 
-## Approfondimento:
-La possibilità di ottenere la data corrente è diventata più facile con l'avvento dei linguaggi di programmazione moderni come Kotlin. In passato, i programmatori dovevano scrivere codice complesso per ottenere la data corrente, mentre ora può essere fatto con poche righe di codice. C'è una varietà di metodi per ottenere la data corrente in Kotlin, tra cui l'utilizzo della classe Java Date, l'utilizzo della libreria di terze parti Joda-Time o utilizzando la nuova classe Java 8 LocalDateTime. Tuttavia, l'utilizzo della funzione incorporata di Kotlin per ottenere la data corrente è il metodo più raccomandato.
+## Approfondimento
+A livello storico, prima di Java 8 e Kotlin, la gestione delle date era piuttosto maldestra e propensa ad errori. Con l'introduzione delle nuove API per la gestione del tempo in Java 8, che sono pienamente supportate da Kotlin, si ha un maggiore controllo e facilità d'uso.
 
-## Vedi anche:
-- [Documentazione ufficiale di Kotlin: `currentDate`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/current-date.html)
-- [Tutorial di Tutorials Point su come ottenere la data corrente in Kotlin](https://www.tutorialspoint.com/how-to-get-current-date-time-in-kotlin)
+Una alternativa all'uso di `LocalDate.now()` potrebbe essere `java.util.Date` di Java, che però come già segnalato tende a essere più problematico.
+
+Il metodo `now()` di `LocalDate` funziona ottenendo la data corrente dal sistema predefinito del clock. Restituisce quindi una data senza l'informazione del tempo, contrariamente a `LocalDateTime.now()`, che restituisce anche l'ora corrente.
+
+## Altro da Vedere
+Se vuoi un approfondimento sulle classi di date e tempo di Kotlin, il link qui sotto può esserti utile:
+- [Tutorial di Baeldung sulle Date API di Kotlin](https://www.baeldung.com/kotlin/dates) 
+
+Se invece sei interessato a capire come ottenere la data corrente in altri linguaggi di programmazione, dai un'occhiata ai link che seguono:
+- [Ottenere la data corrente in Java](https://www.w3schools.com/java/java_date.asp)
+- [Ottenere la data corrente in Python](https://www.w3schools.com/python/python_datetime.asp)

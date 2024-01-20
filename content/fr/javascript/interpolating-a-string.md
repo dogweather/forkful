@@ -1,7 +1,7 @@
 ---
-title:                "Interpoler une chaîne de caractères"
-html_title:           "Javascript: Interpoler une chaîne de caractères"
-simple_title:         "Interpoler une chaîne de caractères"
+title:                "Interpolation d'une chaîne de caractères"
+html_title:           "Ruby: Interpolation d'une chaîne de caractères"
+simple_title:         "Interpolation d'une chaîne de caractères"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+# Interpolation de chaîne en Javascript 
 
-L'interpolation de chaîne est une méthode en programmation Javascript qui permet d'insérer des variables ou des expressions dans une chaîne de caractères. Cela rend le code plus lisible et permet d'éviter de concaténer plusieurs chaînes pour obtenir un résultat souhaité. Les programmeurs utilisent cette méthode pour faciliter la manipulation de données et rendre leur code plus efficace.
+## Qu'est-ce et pourquoi ?
 
-## Comment faire:
+L'interpolation de chaîne est une manière de créer et de manipuler des chaînes de caractères, en insérant des variables directement dans la chaîne. Cela simplifie l'opération d'assemblage de chaînes et rend le code plus lisible.
+
+## Comment faire :
+
+L'interpolation de chaînes est possible grâce aux littéraux de gabarits ES6. Voici à quoi ils ressemblent:
 
 ```Javascript
-// Définir une variable
-let nom = "Marc";
-// Utiliser la méthode d'interpolation pour insérer la variable dans une chaîne
-console.log(`Bonjour ${nom} !`);
+let nom = "Sarah";
+let age = 30;
+
+// Utilisation de l'interpolation de chaîne
+let message = `Bonjour, je suis ${nom} et j'ai ${age} ans.`;
+
+console.log(message);
+// Affiche : "Bonjour, je suis Sarah et j'ai 30 ans."
+```
+Ici, `${nom}` et `${age}` sont remplacées par les valeurs des variables `nom` et `age`.
+
+## Plongée en profondeur :
+
+L'interpolation de chaîne est une caractéristique introduite dans ES6 (ECMAScript 2015). Avant cela, on devait utiliser l'opérateur de concaténation (`+`) pour assembler des chaînes de caractères, ce qui pouvait être verbeux et difficile à lire.
+
+```Javascript
+let message = "Bonjour, je suis " + nom + " et j'ai " + age + " ans.";
 ```
 
-Résultat: Bonjour Marc !
+En plus de l'interpolation de chaîne, il existe des méthodes alternatives comme `concat()` ou `join()`, mais elles sont généralement plus lourdes.
 
-## Profonde immersion:
+Lorsqu'on utilise l'interpolation, il faut se rappeler que la substitution dans la chaîne suit les règles de conversion de type de JavaScript. Par conséquent, la valeur insérée est convertie en une chaîne si elle ne l'est déjà.
 
-Historiquement, l'interpolation de chaîne est apparue dans les langages de programmation comme Perl et PHP avant d'être intégrée dans ECMAScript 6 en 2015. D'autres alternatives à l'interpolation de chaîne incluent l'utilisation de la méthode `concat()` ou l'opérateur `+`. Cependant, ces méthodes peuvent rapidement devenir fastidieuses lorsqu'il s'agit de concaténer plusieurs variables ou expressions.
+## Voir également :
 
-En termes d'implémentation, l'interpolation de chaîne utilise l'opérateur `+` pour concaténer une chaîne et une expression, et le symbole ` ` pour délimiter les variables à insérer.
-
-## Voir aussi:
-
-Pour plus d'informations sur l'interpolation de chaîne en Javascript, consultez ces sources:
-
-- [La documentation officielle de MDN sur l'interpolation de chaîne](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Litt%C3%A9raux_templates)
-- [Un tutoriel sur l'interpolation de chaîne en Javascript](https://www.sitepoint.com/string-interpolation-in-javascript/)
-- [Une explication en détail de l'interpolation de chaîne en ECMAScript 6](https://medium.com/javascript-in-plain-english/string-interpolation-in-monitor-in-ecmascript-6-d24de8ce63fe)
+- [String Interpolation in JavaScript](https://ui.dev/template-literals/) - Article exhaustif sur l'interpolation de chaîne.
+- [Template literals (Template strings) sur MDN](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Template_literals) - Documentation complète de Mozilla.
+- [ES6 Template Literals, the Handlebars killer?](http://2ality.com/2015/01/template-strings-html.html) - Comparaison entre les littéraux de gabarits et Handlebars.

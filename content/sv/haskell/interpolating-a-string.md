@@ -1,7 +1,7 @@
 ---
-title:                "Interpolerande en sträng"
-html_title:           "Haskell: Interpolerande en sträng"
-simple_title:         "Interpolerande en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -12,29 +12,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Interpolering av strängar är när man skapar en ny sträng genom att sätta ihop flera mindre strängar. Detta är användbart för att dynamiskt skapa strängar med varierande innehåll, såsom att bygga en URL med olika parametrar eller att skapa en loggmeddelande med variabel data.
+Stränginterpolation är en metod för att infoga variabler i strängar direkt. Detta gör kod lättare att läsa, skriva och underhålla.
 
-## Så här:
+## Så här gör du:
+
+Haskell kräver `Text.Printf` modulen för stränginterpolation. Nedan visas några enkla exempel:
 
 ```Haskell
--- Skapa en URL med parametrar
-let userId = "123"
-let endpoint = "users"
-let url = userId ++ "/" ++ endpoint
--- Output: "123/users"
+import Text.Printf
 
--- Skapa en loggmeddelande
-let name = "John"
-let action = "logged in"
-let message = name ++ " " ++ action ++ " at " ++ getCurrentTime()
--- Output: "John logged in at 2020-10-20 12:00:00"
+name = "Ada"
+-- Skriver ut "Hej, Ada!"
+printf "Hej, %s!" name
 ```
 
-## Djupdykning:
+Här, `%s `är ett format especificator som berättar var och hur att sätta in vår variabel.
 
-Interpolering av strängar har funnits länge och är vanligt i många programmeringsspråk, inklusive Haskell. En alternativ metod är att använda "string formatting" vilket gör att variabler kan sättas in i en sträng genom att använda speciella uttryck. I Haskell använder man istället ordningens funktioner, såsom ++, för att interpolera strängar.
 
-## Se också:
+## Djupdykning
 
-- [https://www.haskell.org/](https://www.haskell.org/) för mer info om Haskell.
-- [https://github.com/JuliaString/Interpolations.jl](https://github.com/JuliaString/Interpolations.jl) för ett exempel på interpolering i Julia.
+Historiskt sett kommer stränginterpolation från Perl och Shell programmeringsspråk. I Haskell finns det några alternativ till `Text.Printf` för mer avancerade fall, till exempel `Data.Text` och `Text.InterpolatedString.Perl6`.
+
+Under huven, funktioner som `printf` i Haskell genomförer stränginterpolation genom att parse format-strängen vid körtid, vilket skapar högre prestanda överbelastning jämfört till många andra språk.
+
+## Se Även
+
+För mer detaljerad diskussion om stränginterpolation i Haskell, besök följande länkar:
+
+- Haskell Wiki: [Text.Printf](https://wiki.haskell.org/Printf)
+- SO Diskussion: [String interning i Haskell](https://stackoverflow.com/questions/6116309/string-interning-in-haskell)
+- Haskell Café: [String Interpolation i Heterogen List](https://mail.haskell.org/pipermail/haskell-cafe/2010-February/073593.html)

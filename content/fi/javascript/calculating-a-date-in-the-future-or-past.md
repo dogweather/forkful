@@ -1,7 +1,7 @@
 ---
-title:                "Tulevaisuuden tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
-html_title:           "Javascript: Tulevaisuuden tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
-simple_title:         "Tulevaisuuden tai menneen päivämäärän laskeminen tietokoneohjelmoinnissa"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Javascript: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Mitä & Miksi?
+## Mikä ja Miksi?
 
-Laskeminen tiettyyn päivämäärään tulevaisuudessa tai menneisyydessä on yleinen ohjelmointitehtävä, joka vaatii päivämäärien käsittelyä. Tämä voi tapahtua esimerkiksi ajastimien asettamiseksi tuleville tapahtumille tai päättymispäivämäärän laskemiseksi projektin aikataulun mukaan. Ohjelmoijat joutuvat usein käyttämään päivämääriin liittyviä toimintoja tehdessään monimutkaisempia laskelmia tai aikajärjestyksessä toistuvia tehtäviä.
+Tulevaisuuden tai menneisyyden päivämäärän laskeminen tarkoittaa päivämäärän määräämistä tulevaisuuteen tai menneisyyteen tietystä aloituspisteestä. Ohjelmoijat tekevät tämän usein esimerkiksi aikarajoitusten hallintaan tai erityisten tapahtumien ajastamiseen.
 
-#Kuinka:
-
-Jos haluat laskea päivämäärän tietyn ajanjakson päästä tai menneisyyteen, voit käyttää Date-objektin 'setDate' -metodia, joka hyväksyy parametrina päivämäärän numeron kuukaudessa ja vuoden numeron. Seuraavassa on yksinkertainen esimerkki:
+## Kuinka Tehdä:
 
 ```Javascript
-const tulevaisuudenPaiva = new Date(); //Luodaan uusi 'Date'-objekti
-tulevaisuudenPaiva.setDate(23); //Asetetaan päivämääräksi 23
+// Luodaan uusi Päivämäärä-objekti - oletuksena se on tämä päivämäärä.
+let nykyPvm = new Date();
+
+// Lisäämme viisi päivää nykyiseen päivämäärään.
+nykyPvm.setDate(nykyPvm.getDate() + 5);
+
+// Tulostaa päivämäärän 5 päivän päässä tulevaisuudessa
+console.log(nykyPvm);
 ```
 
-Tämä koodi asettaa uuden päivämäärän nykyisen päiväyksen sijaan. Voit myös käyttää 'getDate' -metodia saadaksesi päivän numeron tietystä päivämäärästä:
+Samalla tavalla voit laskea päivämäärän menneisyydessä:
 
 ```Javascript
-const tulevaisuudenPaiva = new Date();
-const paivanNumero = tulevaisuudenPaiva.getDate();
-console.log(paivanNumero); //Tulostaa nykyisen päivän numeron
+let nykyPvm = new Date();
+
+// Vähennämme viisi päivää nykyisestä päivämäärästä.
+nykyPvm.setDate(nykyPvm.getDate() - 5);
+
+// Tulostaa päivämäärän 5 päivää sitten
+console.log(nykyPvm);
 ```
+## Syvällisempi Sukellus:
 
-Voit myös käyttää 'getFullYear' -metodia saadaksesi vuoden numeron ja 'getMonth' -metodia saadaksesi kuukauden numeron.
+(1) **Historiallinen tausta**: JavaScriptin Date-objektin käyttäminen päivämäärien laskemiseksi on ollut mahdollista lähes siitä lähtien, kun JavaScript otettiin käyttöön vuonna 1995. Se on integroitu osa JavaScript-ympäristöä.
 
-#Syvemmälle:
+(2) **Vaihtoehdot**: Käytettävissä olevia kirjastoja, kuten Moment.js tai Day.js, voidaan käyttää saman toiminnallisuuden saavuttamiseksi, mutta ne tarjoavat useita muitakin päivämäärään ja aikaan liittyviä toimintoja.
 
-Päivämäärien laskeminen on ollut tärkeä osa ohjelmointia jo pitkään ja se on myös yksi Javascriptin perustoiminnoista. Nykyään on olemassa myös muita vaihtoehtoja päivämäärien laskemiseen, kuten Moment.js-kirjasto. Se tarjoaa lisäominaisuuksia päivämäärien käsittelyyn ja laskemiseen.
+(3) **Toteutuksen tiedot**: JavaScriptin Date-objektin setDate- ja getDate-metodien avulla voidaan laskea päiviä liikkumalla eteen- tai taaksepäin. Nämä metodit huomioivat kuukauden vaihtumisen ja karkausvuodet automaattisesti.
 
-Päivämäärien laskeminen voi olla mutkikasta, sillä eri maissa ja kulttuureissa on erilaisia tapoja esittää päivämääriä ja käyttää erilaisia kalentereita. Joten on tärkeää tarkastaa, että koodi toimii halutulla tavalla kaikissa mahdollisissa tilanteissa.
+## Katso Myös:
 
-#Katso myös:
-
-- [Date-objektin dokumentaatio MDN:ssä](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Moment.js-kirjaston kotisivut](https://momentjs.com/)
+- [JavaScriptin Date-objektin dokumentaatio MDN-web-sivustolla](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [Moment.js-kirjaston kotisivu](https://momentjs.com/)
+- [Day.js-kirjaston kotisivu](https://day.js.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonojen liittäminen"
-html_title:           "Rust: Merkkijonojen liittäminen"
-simple_title:         "Merkkijonojen liittäminen"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+---
 
-Mikä sitten on stringien yhdistäminen? Se on yksinkertaisesti kahden tai useamman merkkijonon "liittämistä" yhdeksi isoksi merkkijonoksi. Tämä on hyödyllistä ohjelmoinnissa, kun halutaan esimerkiksi tulostaa tekstiä, joka koostuu useista eri merkkijonoista.
+## Mitä & Miksi?
 
-## Kuinka?
+Merkkijonojen yhdistäminen on prosessi, jossa kaksi tai useampi merkkijono yhdistetään yhdeksi merkkijonoksi. Tätä tehdään, jotta voidaan tuottaa dynaamista sisältöä, kuten henkilökohtaisesti räätälöityjä viestejä tai monimutkaisia tiedostoja.
 
-Esimerkiksi Rustilla stringien yhdistäminen tapahtuu käyttämällä operaattoria `+` tai käyttämällä `format!` makroa. Alla on esimerkkikoodi ja sen tuloste:
+## Kuinka:
+
+Rustissa on useita tapoja yhdistää merkkijonoja. Voit käyttää `+` operaattoria tai `format!` makroa. Katso alla olevat esimerkit.
 
 ```Rust
-let hello = "Hei";
-let name = "Maija";
+// Käyttämällä + operaattoria
+let tervehdys = "Hei".to_string();
+let nimi = "Maailma".to_string();
+let viesti = tervehdys + " " + &nimi;
+println!("{}", viesti);  // Tulostaa: "Hei Maailma"
 
-let greeting = hello + " " + name;
-println!("{}", greeting); // Tulostaa "Hei Maija"
-
-let greeting2 = format!("{} {}", hello, name);
-println!("{}", greeting2); // Tulostaa "Hei Maija"
+// Käyttämällä format-makroa
+let viesti = format!("{} {}", tervehdys, nimi);
+println!("{}", viesti);  // Tulostaa: "Hei Maailma"
 ```
 
-## Syväsukellus
+## Syvempi tarkastelu:
 
-Stringien yhdistäminen on ollut osa ohjelmointia jo pitkään ja löytyy useista eri ohjelmointikielistä. Lisäksi on olemassa myös muita tapoja yhdistää merkkijonoja, kuten käyttämällä `StringBuilder` tai `StringBuffer` -luokkia, mutta Rustin sisäänrakennetut metodit ovat yleensä suorituskykyisempiä.
+Historiallinen yhteys: Jos tarkastellaan muiden ohjelmointikielien, kuten Javan tai Pythonin, historiaa, stringien yhdistäminen on ollut perusta monille niiden toiminnoille. Rustissa asiat ovat hieman erilaisia, sillä se tarjoaa erilaisia työkaluja, kuten `format!` makron, joka tarjoaa tehokkaan ja helppokäyttöisen vaihtoehdon.
 
-## Katso myös
+Vaihtoehdot: Kuten mainittiin, `+` operaattori ja `format!` makro eivät ole ainoita tapoja. Voit käyttää myös `push_str` ja `push` metodeja lisätäksesi merkkijonoja tai merkkejä olemassa olevaan stringiin.
 
-Rustin virallinen dokumentaatio stringien käsittelystä: https://doc.rust-lang.org/std/string/
+Toteutuksen yksityiskohdat: Yksi tärkeä tekijä Rustissa on se, että `+` operaattoria voidaan käyttää vain silloin, kun toinen merkkijono on viittaus. Tämä johtuu Rustin omistajuusmallista, joka takaa muistin turvallisuuden ja johdonmukaisuuden.
 
-Mahdollisuus tehdä merkkijonoista omia tietotyyppejä Rustilla: https://doc.rust-lang.org/book/ch05-00-structs.html
+## Katso myös:
+
+1. Rustin merkkijonojen käyttöopas: [docs.rs](https://docs.rs)
+2. Rustin virallinen kielellinen kirja: [The Rust Programming Language](https://doc.rust-lang.org/book/ch08-02-strings.html)
+3. Merkkijonojen yhdistäminen muita kieliä käyttäen: [Python](https://docs.python.org/3/tutorial/index.html), [Java](https://java.com/en/download/help/index.html)
+
+---

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenkobling av strenger"
-html_title:           "C++: Sammenkobling av strenger"
-simple_title:         "Sammenkobling av strenger"
+title:                "Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
+simple_title:         "Sammenslåing av strenger"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,35 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# C++ Streng Sammenføyning: En Enkel Guide
+
+Introduksjon til sammenføyning av strenger med C++, et viktig konsept for programmerere på alle nivåer.
+
 ## Hva & Hvorfor?
-Sammenkobling av strenger er når man tar to separate tekststrenger og kombinerer dem til en enkelt streng. Dette er en vanlig operasjon i programmering og brukes til å lage mer komplekse tekststrenger. 
 
-Programmerere gjør dette for å lage mer dynamiske og varierte utskrifter eller meldinger, som for eksempel å legge til brukerinput i en forhåndsdefinert tekststreng. Det gjør også koden mer strømlinjeformet og enklere å lese.
+Streng sammenføyning er handlingen av å sette sammen to eller flere strenger. Dette er viktig for å opprette dynamisk tekst, manipulere data eller bruke brukerinput på interessante måter.
 
-## Slik gjør du det:
-```
+## Hvordan:
+
+Her er enkel kode for å forklare hvordan vi kan sammenføye strenger:
+
+```C++
 #include <iostream>
 #include <string>
-using namespace std;
 
 int main() {
-  string streng1 = "Hei ";
-  string streng2 = "verden!";
-  string sammenkobling = streng1 + streng2; 
-  cout << sammenkobling; // Utskrift: Hei verden!
+  std::string str1 = "Hei, ";
+  std::string str2 = "verden!";
+  std::string str3 = str1 + str2;
+
+  std::cout << str3;
   return 0;
 }
 ```
+Output: `Hei, verden!` 
 
-I dette eksemplet bruker vi ```+``` operatøren for å sammenkoble to strenger. Dette fungerer også for å legge til flere strenger eller variabler.
+I eksemplet over legger vi sammen to strenger "Hei, " og "verden!" for å opprette en ny streng "Hei, verden!".
 
-## Dypdykk:
-Sammenkobling av strenger har eksistert i programmering helt siden tidligere språk som COBOL og Fortran. På den tiden var det vanlig å bruke funksjoner som CONCAT for å kombinere strenger. I dag blir dette gjort mer effektivt ved hjelp av konkatinering operatøren som vist ovenfor.
+## Dyp Dykk:
 
-Alternativet til å sammenkoble strenger er å bruke en datotype som heter strengbuffer. Dette er en type buffertank som inneholder en streng og kan utvides når nye strenger blir lagt til. Det kan være nyttig når man sammenkobler en stor mengde strenger.
+**Historisk Kontekst**: C++ tillot sammenføyning av strenger via '+'-operatøren siden etableringen. Dette betyr ikke at alternativer ikke eksisterer.
 
-Videre er det viktig å være klar over at sammenkobling av strenger kan bli en dyr operasjon når det gjøres mange ganger i en løkke eller med store tekststrenger. Dette kan føre til ytelsesproblemer, spesielt på eldre datamaskiner.
+**Alternativer**: I tillegg til "+" operatøren, kan kommandoene `string::append()` eller `stringstream` også brukes for å tilføye strenger:
 
-## Se også:
-- [C++ Referanse for strenger](http://www.cplusplus.com/reference/string/)
-- [Wikipedia side om tekstmanipulering i COBOL](https://en.wikipedia.org/wiki/COBOL_string_handling)
+```C++
+std::string str1 = "Hei, ";
+std::string str2 = "verden!";
+str1.append(str2);  // str1 er nå "Hei, verden!"
+```
+
+eller
+
+```C++
+#include <sstream>
+
+std::ostringstream sstm;
+sstm << "Hei, " << "verden!";
+std::string str3 = sstm.str();  // str3 er nå "Hei, verden!"
+```
+
+**Implementeringsdetaljer**: Når det gjelder effektivitet, er det litt forskjell mellom alternativene. '+'-operatøren kan skape midlertidige objekter hvis det brukes sammenkjedet, `string::append()` er mer effektiv i disse tilfellene. `stringstream` har overhead ved å håndtere flere typer data, men gir mer funksjonalitet.
+
+## Se Også:
+
+- [C++ Reference: string::append()](http://www.cplusplus.com/reference/string/string/append/)
+- [StackOverflow: C++ String Concatenation](https://stackoverflow.com/questions/18892281/most-idiomatic-way-in-c-to-concatenate-strings)
+- [C++ Stringstreams](http://www.cplusplus.com/reference/sstream/)

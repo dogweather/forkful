@@ -1,7 +1,7 @@
 ---
-title:                "לבדיקה האם תיקייה קיימת"
-html_title:           "C: לבדיקה האם תיקייה קיימת"
-simple_title:         "לבדיקה האם תיקייה קיימת"
+title:                "בדיקה אם ספרייה קיימת"
+html_title:           "C: בדיקה אם ספרייה קיימת"
+simple_title:         "בדיקה אם ספרייה קיימת"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,59 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בתכנות בשפת C, יש לתכנית את היכולת לבדוק אם תיקייה קיימת במחשב. הפעולה הזאת נקראת "בדיקת קיום תיקייה" והיא חשובה כי התוכנית רוצה לוודא שהיא יכולה לגשת לתוכן שבתוך התיקייה, לדוגמה: לפתוח קובץ או להעביר קבצים.
 
-## איך לבדוק אם תיקייה קיימת:
-לבדיקת קיום תיקייה יש כמה אפשרויות. ננסה כאן שתי דרכים בשפת C עם קוד ופלט דוגמה:
+בדיקה אם ספריה קיימת היא פעולה שבה התוכנה נוסחת כך שתזהה אם תיקייה מוגדרת במיקום מסוים במערכת הקבצים. תכנתים מבצעים פעולה זו כדי למנוע שגיאות במהלך פעולות אמנמנטיות כמו קריאה או כתיבה לתיקייה.
 
-```c
-#include <stdio.h>
+## דרך פעולה:
+
+ישנם שני דרכים בסיסיות לבדוק את הדבר הזה בשפת C, אחת באמצעות הפונקציה `stat`, ואחת באמצעות הפונקציה `opendir`.
+
+שימוש ב- `stat`:
+```C 
 #include <sys/stat.h>
+#include <stdio.h>
 
-//שיטה ראשונה: שימוש בפונקציית stat
-int check_directory(char *path) {
-    struct stat st = {0}; //כולל כול הנתונים שימצאו על הקובץ או התיקייה
-     //הפונקציה stat שמקבלת נתיב וממלאת את האובייקט עם פרטי הנתיב
-    if (stat(path, &st) == -1) { //אם הפונקציה stat חזרה -1 תיקייה לא קיימת
-        return 0;
-    }
-    return st.st_mode & S_IFDIR; //בעזרת פלאג bit מסיקה אם תיקייה או לא
-}
-
-//שיטה שנייה: שימוש בפונקציית opendir
-//הפונקצייה opendir לוקחת נתיב לתיקייה ומחזירה אובייקט מסוג DIR
-//אם הפונקצייה תחזיר NULL תיקייה לא קיימת, אחרת תיקייה קיימת
-int check_directory(char *path) {
-    DIR *dir = opendir(path);
-    if (dir) { //אם dir null לא קיימת
-        closedir(dir);
-        return 1;
-    } else { //אם dir לא null תיקייה קיימת
-        return 0;
-    }
-}
-
-int main() {
-    //קריאה לפונקצייה והדפסת תוצאה
-    char *dir_path = "/home/user/documents";
-    printf("נתיב לתיקייה קיימת? %d\n", check_directory(dir_path));
+int main(){
+    struct stat buffer;
+    int exist = stat("/path/to/directory",&buffer);
+    if(exist == 0)
+        printf("Directory exists.\n");
+    else 
+        printf("Directory does not exist.\n");
     return 0;
 }
 ```
 
-פלט לדוגמה:
+שימוש ב- `opendir`:
+```C
+#include <dirent.h>
+#include <stdio.h>
 
+int main(){
+    DIR* dir = opendir("/path/to/directory");
+    if (dir)
+    {
+        printf("Directory exists.\n");
+        closedir(dir);
+    }
+    else 
+        printf("Directory does not exist.\n");
+    return 0;
+}
 ```
-נתיב לתיקייה קיימת? 1
-```
 
-כאמור, ישנם עוד אפשרויות לבדיקת קיום תיקייה, ואתם מוזמנים לנסות מימושים נוספים.
+## צלילה עמוקה
 
-## העמדה לרוקן:
-בימי הוולדס היה על המתכנת ליצור קבצים ותיקיות באופן ידני ולגשת לתוכן שלהם כדי להריץ את התוכנית. עם כניסת תחביר המערכת UNIX נולדו אפשרויות לתכנית ליצור קבצים ותיקיות ברץ ... תחנת העבודה ואז לאפשר הפקה של התוכנית עם לעבודה.
-
-רכישה כי התכנית מנקז להשתמש במערכת הקבצים של המערכת כדי להתאים את התוכן של התכנית עם הסיסמאות של הקבצים, והתוכנית עצמה צרוינו הסיסמא נקיה שהפעילה של לא רק לכלול הוספתיים רבים של או לכלול אפשרויות לקבצים.
+השימוש ב- `stat` נפוץ בפרויקטים ישנים שנכתבו לפני כן, בעוד שהשימוש ב- `opendir` הוא יעיל יותר מכיוון שהוא מבצע את פתיחת הספריה באותה פעולה. אפשרויות נוספות כוללות שימוש ב- `access`, או בפונקציות יישומיות של מערכת ההפעלה המסויימת, אך אלו יכולות להיות פחות ניידות. הפרטים בעבודה מתחת לכותרת הם באופן כללי תלויים במערכת ההפעלה ובהעדפות המתכתב.
 
 ## ראה גם:
-- קישור לפוסט נוסף - https://www.tutorialspoint.com/cprogramming/cfile_io.htm
-- קישור
+
+- [Man page of stat on Linux](https://man7.org/linux/man-pages/man2/stat.2.html)
+- [Man page of opendir on Linux](https://man7.org/linux/man-pages/man3/opendir.3.html)
+- [Microsoft documentation on _stat for Windows](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/stat-functions?view=msvc-160)
+- [Microsoft documentation on _wopendir for Windows](https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/wopendir-wopendir?view=msvc-160)

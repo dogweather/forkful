@@ -1,7 +1,7 @@
 ---
-title:                "Radera tecken som matchar ett mönster"
-html_title:           "Rust: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,44 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-När vi programmerar i Rust kan vi ofta stöta på situationer där vi behöver ta bort tecken som matchar ett visst mönster. Detta kan göras med hjälp av inbyggda funktioner i Rust som gör det möjligt att filtrera och manipulera textsträngar.
+Att radera tecken som matchar ett mönster är en aktion som fjernar alla instanser av specifika tecken från en sträng. Programmerare gör detta för att rensa data, t.ex., fjernar oväsentliga mellanslag eller oönskade tecken.
 
-Att ta bort tecken som matchar ett mönster är ett vanligt förekommande problem i programmering, särskilt när vi arbetar med data eller hanterar användarinput. Det kan hjälpa oss att rensa oönskade tecken eller extrahera specifika bitar av information från en textsträng.
-
-## Hur gör man:
-Enklaste sättet att ta bort tecken som matchar ett mönster i Rust är genom att använda funktionen `replace`, som kan hittas i standardbiblioteket `std::string::String`. Denna funktion tar två argument: ett mönster att matcha och en ersättningssträng. Alla förekomster av mönstret i strängen kommer att ersättas med ersättningssträngen.
+## Så här gör du:
+Kodexempel och exempelutgång inom ```Rust ... ``` kodblock.
 
 ```Rust
-let text = String::from("Hej, välkommen!");
-let filtered_text = text.replace("e", ""); // hittar alla 'e' och tar bort dem
-println!("{}", filtered_text); // Hj, välkommn!
+fn main() {
+    let old_string = "Hej, världen! #rustlang".to_string();
+    let clean_string = old_string.replace("#rustlang", "");
+    println!("{}", clean_string);
+}
 ```
+Detta script kommer att skriva ut "Hej, världen! ", med "#rustlang" teckenklustret borttaget.
 
-Vi kan också använda funktionen `rm` från `regex` biblioteket för att ta bort tecken som matchar ett mer komplicerat mönster, till exempel alla siffror från en textsträng.
+## Djup dykning
+Rust har designats för att erbjudna mer kontroll och minska fel jämfört med äldre språk. Om du vill radera tecken som matchar ett mönster, erbjuder Rust .replace() som en del av sin standardbibliotek.
 
-```Rust
-extern crate regex;
-use regex::Regex;
+Alternativ till .replace() inkluderar att använda regex (reguljära uttryck), men de är mer kostsamma när det gäller prestanda. 
 
-let text = "Ring mig på 070-1234567!";
-let re = Regex::new(r"[0-9]+").unwrap();
-let filtered_text = re.replace_all(text, ""); // tar bort alla siffror
-println!("{}", filtered_text); // Ring mig på -!
-```
+När det kommer till genomförande, byter .replace() ut varje instans av mönstret med den angivna ersättningen. Om ersättningen är en tom sträng, raderar den bara alla instanser av det angivna mönstret.
 
-## Djupdykning:
-Att ta bort tecken som matchar ett mönster är en viktig del av textmanipulering och stränghantering i programmering. Detta koncept har funnits länge och de flesta moderna programmeringsspråk har inbyggda funktioner för att hantera det.
-
-En alternativ metod för att ta bort tecken som matchar ett mönster är att använda funktionen `trim`, som tar bort alla förekomster av ett visst tecken (vanligtvis mellanslag) från början och slutet av en sträng.
-
-```Rust
-let text = "   Hej och välkommen!   ";
-let trimmed_text = text.trim(); // tar bort alla mellanslag från början och slutet
-println!("{}", trimmed_text); // Hej och välkommen!
-```
-
-Implementationen av `replace` och `rm` funktionerna är baserade på reguljära uttryck, vilket är en kraftfull metod för strängmatchning. Dessa uttryck kan användas för att hitta specifika mönster inom en textsträng och utföra olika operationer på dem.
-
-## Se även:
-- [Rust Dokumentation](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [Regex Biblioteket](https://github.com/rust-lang-nursery/regex)
+## Se också
+- [Rust Programmering av Steve Klabnik och Carol Nichols](https://doc.rust-lang.org/book/)
+- [Rust String API-dokumentation](https://doc.rust-lang.org/std/string/struct.String.html)
+- [Rust By Examples (Exempel av Rust)-officiell webbplats](https://doc.rust-lang.org/stable/rust-by-example/)
+  
+Håll ögat på dessa källor för mer information om hur du använder strängar i Rust och för att förbättra din kunskap om Rust programmering.

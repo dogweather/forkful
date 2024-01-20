@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une demande http"
-html_title:           "Gleam: Envoyer une demande http"
-simple_title:         "Envoyer une demande http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi le faire?
+## Quoi & Pourquoi ?
+Envoyer une requête HTTP, c'est demander l'accès à des informations spécifiques sur le Web. Les programmeurs en ont besoin pour accéder à des données externes pour leur application.
 
-L'envoi d'une requête HTTP est un moyen pour les programmeurs de communiquer avec des serveurs via le protocole HTTP. Cela leur permet de récupérer des données à partir de pages Web ou de services en ligne, ou d'envoyer des données pour y être traitées. Il est couramment utilisé dans le développement Web pour créer des sites Web interactifs et dynamiques.
-
-## Comment faire:
-
+## Comment faire :
+Voici un rapide exemple sur comment envoyer une requête HTTP en Gleam:
+```gleam
+let request = gleam/httpc/request(ini_url("http://monsite.com")?)
+  |> gleam/httpc/to_service("localhost", 8000)
+req
+|> gleam/httpc.send()
+|> tuple.either
 ```
-Gleam.http.request(
-	{
-	  method: "GET",
-	  url: "https://example.com",
-	  headers: [ {"content-type", "application/json"} ],
-	  body: "This is the request body"
-	}
-) `
 
-```Gleam.http.request``` est la fonction clé pour envoyer une requête HTTP avec Gleam. Dans cet exemple, nous demandons à l'API de exmaple.com d'envoyer une requête GET avec un en-tête JSON et un corps de requête contenant du texte. Les données renvoyées seront stockées dans une variable que vous pouvez ensuite utiliser pour effectuer des opérations supplémentaires.
+Votre sortie ressemblera probablement à cela :
+```gleam
+Ok(#Response{
+  status: 200,
+  headers: [header("Content-Type", "text/plain")],
+  body: "Bonjour, Monde!"
+})
+```
 
-## Plongeon en profondeur:
+## Approfondissement
+Historiquement, l'envoi de requêtes HTTP est une des tâches les plus importantes en programmation web. Des alternatives comme les requêtes WebSocket existent, permettant une communication bidirectionnelle, mais les requêtes HTTP restent la norme pour l'accès aux données.
 
-L'envoi de requêtes HTTP est une pratique courante dans le développement Web depuis les années 1990 et reste une méthode populaire pour communiquer avec des serveurs. Alternativement, certaines applications Web modernes peuvent utiliser des technologies telles que GraphQL pour gérer leurs requêtes. Dans Gleam, l'implémentation de cette fonctionnalité repose sur les bibliothèques standard Erlang et les bibliothèques communautaires.
+En Gleam, la `gleam/httpc` est utilisée pour configurer et envoyer les requêtes. L'opération `gleam/httpc.send()` est celle qui fait le plus gros du travail. Elle prend la requête HTTP et la fournit à un service sur un hôte spécifique via une connexion réseau.
 
-## Voir aussi:
-
-- La documentation officielle de Gleam pour en savoir plus sur la fonction ```Gleam.http.request```.
-- La liste des bibliothèques communautaires pour le développement Web en Gleam.
-- Un article sur la différence entre HTTP et HTTPS.
+## Pour en savoir plus
+Jetez un œil aux ressources suivantes pour en savoir plus sur l'envoi de requêtes HTTP avec Gleam:
+- Documentation officielle de `gleam/httpc`: https://hexdocs.pm/gleam_stdlib/gleam/httpc/
+- Guide de l'utilisateur de Gleam: https://gleam.run/book/
+- Stack Overflow - Gleam et les requêtes HTTP: https://stackoverflow.com/questions/tagged/gleam

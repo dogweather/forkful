@@ -1,7 +1,7 @@
 ---
-title:                "文字列の大文字化"
-html_title:           "Java: 文字列の大文字化"
-simple_title:         "文字列の大文字化"
+title:                "文字列を大文字にする"
+html_title:           "Java: 文字列を大文字にする"
+simple_title:         "文字列を大文字にする"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
-文字列の大文字化とは、文字列の全ての文字を大文字に変換することです。プログラマーたちは、文字列を大文字化することで、データの整形や検索の簡略化、可読性の向上など、さまざまな目的を達成することができます。
+# 文字列の大文字化: Javaプログラミング
 
-## 方法：
-下記のJavaコードブロックを使用して、文字列を大文字化する方法を見てみましょう。出力結果はコメントで示されています。
+## 何と何故？
+
+文字列の大文字化とは、文字列の中のすべての文字を大文字にすることです。プログラマーがこれを行う主な理由は、ユーザーが入力した文字列を正規化し、ケースに依存しない検索や比較を可能にするためです。
+
+## やり方:
+
+Javaでの文字列の大文字化は非常に簡単です。`toUpperCase()`メソッドを用いて、以下のように行います。
 
 ```Java
-// Create a string variable
-String str = "hello world";
-
-// Use the toUpperCase() method to convert the string to uppercase
-String uppercaseStr = str.toUpperCase();
-
-// Print the result
-System.out.println(uppercaseStr);
-
-// Output: HELLO WORLD
+String str = "Hello, World!";
+String upperStr = str.toUpperCase();
+System.out.println(upperStr);  // Outputs: "HELLO, WORLD!"
 ```
 
-## 深い掘り下げ：
-大文字化はプログラミングの世界だけでなく、書籍や文章でよく使われています。また、大文字化以外にも、小文字化や先頭文字のみ大文字化など、さまざまな方法があります。文字列の大文字化は、ソフトウェアの特定の領域で高速化するためにも様々なテクニックが使用されています。
+このコードの実行結果は"HELLO, WORLD!"となります。
 
-## 関連リンク：
-- [JavaのStringクラスドキュメント](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [文字列の大文字・小文字変換について](https://qiita.com/yosan/items/5fd8d4ae5d08e10119ce)
-- [文字列操作の基本的なメソッド](https://java-code.jp/238)
+## 深掘り：
+
+文字列の大文字化は、古くから存在する基本的なプログラミングのタスクで、多くのプログラミング言語でサポートされています。Javaでは、`toUpperCase()`メソッドがこのタスクを実行します。
+
+このメソッドは内部でUnicode文字列を処理し、すべての文字を対応する大文字に変換します。このメソッドはlocaleに依存するバージョンと依存しないバージョンの2つが存在します。localeに依存するバージョンは特定の言語環境の大文字と小文字のルールを適用します。
+
+Java言語以外でも、文字列の大文字化は通常、組み込み関数やメソッドによって簡単に行うことができます。たとえば、Pythonでは`upper()`メソッド、JavaScriptでは`toUpperCase()`メソッドを使用します。
+
+## 関連情報：
+
+* OracleのJavaドキュメンテーション: [Stringクラス](https://docs.oracle.com/javase/jp/8/docs/api/java/lang/String.html)
+* Stack Overflow: ["How to convert a string to all caps in java?"](https://stackoverflow.com/questions/5054995/how-to-convert-a-string-to-all-caps-in-java)
+* Baeldung: ["Convert String to UpperCase in Java"](https://www.baeldung.com/java-convert-string-to-uppercase) 
+* geeksforgeeks.org: ["String toUpperCase() Method in Java"](https://www.geeksforgeeks.org/java-lang-string-touppercase-java/)

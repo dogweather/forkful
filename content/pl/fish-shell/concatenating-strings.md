@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków"
-html_title:           "Fish Shell: Łączenie ciągów znaków"
-simple_title:         "Łączenie ciągów znaków"
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest łączenie stringów i dlaczego programiści to robią?
+## Co i dlaczego?
 
-Łączenie stringów to po prostu łączenie dwóch lub więcej ciągów znaków w jeden. Jest to bardzo powszechne w programowaniu, ponieważ często musimy tworzyć dynamiczne ciągi do wyświetlania lub przetwarzania danych.
+Konkatenacja stringów to proces łączenia dwóch lub więcej ciągów znaków w jeden ciąg. Programiści robią to, aby utworzyć nowe ciągi na podstawie już istniejących, co pomaga w manipulacji danymi.
 
-## Jak to zrobić w Fish Shell?
+## Jak to zrobić:
 
-Oto kilka przykładów jak skonkatenujemy (łączymy) dwa stringi w Fish Shell:
+```Fish Shell
+# Deklaracja dwóch zmiennych
+set var1 "Cześć"
+set var2 ", jestem programistą FISH SHELL!"
 
-```
-set first_name "John"
-set last_name "Smith"
+# Konkatenacja stringów
+set var3 "$var1$var2"
 
-echo "Witaj, $first_name $last_name!"  # Output: Witaj, John Smith!
-```
-
-Możemy również użyć operatora `string join` do połączenia kilku stringów:
-
-```
-set fruits "jabłka pomarańcze banany"
-
-echo (string join ", " $fruits)  # Output: jabłka, pomarańcze, banany
+# Wydrukowanie wyniku
+echo $var3
 ```
 
-## Głębszy zanurzenie
+Wynik powyższego skryptu:
 
-Łączenie stringów jest podstawową częścią programowania, ale ma swoje korzenie w historii komputerów. W starszych językach programowania często należało ręcznie zarządzać pamięcią, włączając w to alokację pamięci na stringi. Dzięki temu łatwiej było połączyć dwa stringi niż tworzyć nowy obiekt stringa zewnętrznie. Jednak dziś większość języków programowania ma wbudowane funkcje do łączenia stringów, jak również automatyczne zarządzanie pamięcią.
+```Fish Shell
+Cześć, jestem programistą FISH SHELL!
+```
 
-Alternatywą dla łączenia stringów jest użycie list lub tablic do przechowywania różnych ciągów, a następnie ich łączenie w jednej pętli. To może być bardziej wydajne dla bardzo długich ciągów, ale jest też bardziej skomplikowane.
+## Głębsza analiza:
 
-W Fish Shell mamy także dostęp do kilku komend, takich jak `string match` i `string replace`, które pozwalają bardziej precyzyjnie operować na stringach.
+Konkatenacja stringów to koncepcja nieodłącznie związana z programowaniem komputerowym od jego początków. Historycznie, była to jedna z pierwszych funckji języków programowania, używana do tworzenia i manipulowania danymi tekstowymi.
 
-## Zobacz również
+Alternatywą do konkatenacji stringów mogą być funkcje budowania napisów lub formatowania, takie jak `printf` lub `sprintf`, które mogą oferować lepszą kontrolę nad formatem i prezentacją.
 
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Wprowadzenie do programowania w Fish Shell](https://dev.to/jiripavelka/introduction-to-fish-shell-programming-23ig) przez Jiri Pavelka
-- [Wprowadzenie do łańcuchów znaków w programowaniu](https://www.geeksforgeeks.org/string-data-structure/) przez GeekforGeeks
+W Fish Shell, konkatenacja stringów jest prosta i intuicyjna. Jak zauważyłeś na powyższych przykładach, wystarczy po prostu połączyć stringi bezpośrednio, bez używania dodatkowych symboli lub funkcji.
+
+## Zobacz także:
+
+Więcej informacji o Fish Shell i manipulacji stringami można znaleźć poniżej:
+
+1. Fish Shell Documentation: [Link](https://fishshell.com/docs/current/index.html)
+2. Fish Shell Tutorial: [Link](https://fishshell.com/docs/current/tutorial.html)
+3. String Manipulation in Fish Shell: [Link](https://fishshell.com/docs/current/commands.html#string)
+4. Your First Script in Fish Shell: [Link](https://github.com/jorgebucaran/fish-cookbook/blob/master/examples/your-first-script.fish)

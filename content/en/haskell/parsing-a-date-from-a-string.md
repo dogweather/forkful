@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Haskell recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# String Date Parsing with Haskell
 
-Parsing a date from a string is the process of extracting date information from a given string, such as "January 1, 2021". This is commonly done by programmers when working with data that includes date information, such as in databases, spreadsheets, or text files. By parsing dates from strings, programmers can convert the data into a more usable format and perform operations such as sorting and filtering.
+## What & Why?
+Parsing a date from a string is the action of reading a date format from a string data type. Programmers do this to transform date information stored in strings into useable date objects for computations and manipulations.
 
 ## How to:
+We'll use the `parseTimeM` function from `Data.Time.Format` module in Haskell, along with functions `defaultTimeLocale`, `True`, and `%Y-%m-%d` to specify the desired date format.
 
-To parse a date from a string in Haskell, we will use the built-in "time" library. First, we need to import the library at the top of our code:
 ```Haskell
 import Data.Time
+import Data.Time.Format
+
+-- A simple date string
+dateStr = "2022-10-15" 
+
+-- Call to parseTimeM function
+maybeDate = parseTimeM True defaultTimeLocale "%Y-%m-%d" dateStr :: Maybe UTCTime
 ```
 
-Next, we will use the `parseTimeM` function to specify the format of our date string and extract the date information. For example, if our date string is "January 1, 2021", we can use the following code to extract the month and year:
+The **result** `Maybe UTCTime` instance might be `Just <UTCTime value>` if parsing succeeds and `Nothing` if it fails.
+
+Now let's **print** our date.
+
 ```Haskell
-dateString = "January 1, 2021"
-dateInfo <- parseTimeM True defaultTimeLocale "%B %d, %Y" dateString :: Maybe Day
+case maybeDate of
+    Just date -> print date
+    Nothing -> putStrLn "Oops, invalid date format."
 ```
 
-The `parseTimeM` function takes four parameters: a `Bool` indicating if the time should be validated, the desired time format using the `%` symbols, the string to be parsed, and the expected output type. In this case, we are using `Maybe Day` as our output type since the function may not be able to parse the string correctly.
+## Deep Dive
+Historically, date parsing was more manual, with coders specifying each part of the date. Now, libraries like `Data.Time.Format` offer simplified methods. 
 
-We can then use pattern matching to handle the `Maybe` result and extract the date information:
-```Haskell
-case dateInfo of
-  Just date -> putStrLn $ "Month: " ++ show (toGregorian date)
-  Nothing -> putStrLn "Unable to parse date"
-```
+Alternative libraries exist, like `time-parsers` and `formatted-time`, each with their distinct advantages. 
 
-This will output:
-```
-Month: (January,1,2021)
-``` 
-which is the month, day, and year in tuple format. 
+The `parseTimeM` functions are locale-aware that parses time textual representation, returning a `Maybe Time` value according to a format specification, where `Nothing` indicates a parsing failure. It allows programmers to handle date parsing errors more explicitly.
 
-## Deep Dive:
+## See Also
+For more details and date formatting options, check the following links:
 
-The `time` library was introduced in 2003 and was inspired by the similar `C` library. It allows for formatting and parsing of date and time data in a simple and efficient manner. 
-
-An alternative to using the `time` library in Haskell is the `date` library, which is more lightweight and has simpler functions for parsing dates. However, it offers less control over the formats and may not support all required formats.
-
-The `parseTimeM` function works by using the `%` symbols to specify the format of the date string. For example, `%B` represents the full month name and `%Y` represents the four-digit year. The symbols are based on the `strptime` function in the `C` language.
-
-## See Also:
-
-- [Haskell time library documentation](https://hackage.haskell.org/package/time)
-- [Haskell date library documentation](https://hackage.haskell.org/package/date)
-- [GNU C Library time input format](https://www.gnu.org/software/libc/manual/html_node/Date---Time-Input.html)
+- [`Data.Time.Format` module documentation](https://hackage.haskell.org/package/time-1.5.0.1/docs/Data-Time-Format.html)
+- [`parseTimeM` function documentation](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time-Format-Parse.html#v:parseTimeM)
+- [Haskell date and time utility libraries](https://haskell.libhunt.com/categories/310-date)

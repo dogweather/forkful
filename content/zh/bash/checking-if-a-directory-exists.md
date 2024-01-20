@@ -1,7 +1,7 @@
 ---
-title:                "检查文件夹是否存在。"
-html_title:           "Bash: 检查文件夹是否存在。"
-simple_title:         "检查文件夹是否存在。"
+title:                "检查目录是否存在"
+html_title:           "Bash: 检查目录是否存在"
+simple_title:         "检查目录是否存在"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,46 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
+# Bash编程：如何检查一个目录是否存在
 
-在Bash编程中，我们经常需要检查一个目录是否存在。这是一种用来判断特定目录是否存在的方法，这样我们就可以在程序中进行相应的处理。程序员经常会这么做是为了避免因目录不存在而导致程序出错。
+## 什么和为什么？
 
-## 如何进行?
+检查目录是否存在是一种用Bash脚本来识别系统里指定文件夹是否存在的方法。程序员经常这样做，以防止由于试图访问、修改或删除一个不存在的目录而引发的错误。
 
-```Bash 
-if [ -d directory_path ]; then 
-  echo "Directory exists!" 
-else 
-  echo "Directory does not exist." 
-fi 
+## 如何做：
+
+检查一个目录是否存在的最基本方法，在Bash中是使用`-d`运算符。假设我们想查找的目录是`/tmp/mydir`。
+
+```Bash
+if [ -d "/tmp/mydir" ] 
+then
+    echo "目录存在"
+else
+    echo "目录不存在"
+fi
 ```
 
-输出：
-
-```
-Directory exists!
-```
-
-在这个例子中，我们使用了一个条件语句来判断目录是否存在。首先，我们使用`-d`标志来检测目录路径是否存在，这个标志代表“目录存在”。如果存在，`if`语句中的第一条命令将会被执行，否则执行`else`语句中的命令。
+如果`/tmp/mydir`存在，你会在shell输出中看到"目录存在"。否则，你会看到"目录不存在"。
 
 ## 深入了解
 
-### 历史背景
+在UNIX和Linux出现早期，几乎所有的文件和目录操作都是由明确的shell命令完成的。但随着时间的推移，这些命令逐渐被各种测试运算符取代，这些运算符为Bash（和其他shell）提供了更大的灵活性和控制力。
 
-在早期的操作系统中，检查目录是否存在并不是一个常见的需求，因为操作系统通常会自动创建不存在的目录。但是随着Bash的发展，它被认为是一个重要的功能，因为它可以帮助程序员更容易地控制目录的存在与否。
+对于检查目录是否存在，`-d`不是唯一的方式。你也可以使用`-e`运算符，它检查任何类型的文件（包括目录）是否存在。例如：
 
-### 其他方法
+```Bash
+if [ -e "/tmp/mydir" ] 
+then
+    echo "文件或目录存在"
+else
+    echo "文件或目录不存在"
+fi
+```
 
-除了使用`-d`标志外，还可以通过使用`test`命令来检查目录是否存在，其命令格式为`test -d directory_path`。此外，也可以使用`if [ -e directory_path ]; then`来检测目录是否存在，这个方法除了可以检查目录外，还可以检查其他文件类型的存在。
+然而，在大多数情况下，我们确实想知道的是一个特定的'路径'是否存在作为一个目录，所以我们更常使用`-d`运算符。
 
-### 实现细节
+## 参考资料：
 
-在Bash中，使用`-d`标志检查目录是否存在，实际上是通过调用`test`命令来完成的。`test`命令会检查指定的文件或目录是否存在，并根据结果返回一个状态码。如果存在，状态码为0，否则为1。
-
-## 参考资料
-
-了解更多关于Bash中检查目录是否存在的知识，请参考以下来源：
-
-- [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/) 
-- [GNU Bash manual](https://www.gnu.org/software/bash/manual/bash.html) 
-- [LinuxCommand.org](https://linuxcommand.org/)
+1. [GNU Bash Manual - Conditional Expressions](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
+2. [Bash Shell: Check If Directory Exists](https://www.cyberciti.biz/faq/bash-shell-check-if-directory-exists/)
+3. [Testing Files in Bash](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_02.html)

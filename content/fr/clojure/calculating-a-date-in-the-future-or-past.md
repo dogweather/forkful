@@ -10,42 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & pourquoi?
+## Quoi & Pourquoi?
+Les calculs de date future ou passée correspondent à la détermination d'une date relative à une autre. Les développeurs font cela pour diverses raisons, surtout pour planifier des événements ou estimer des délais.
 
-Calculer une date dans le futur ou le passé consiste à trouver une date spécifique à un certain nombre de jours, semaines ou mois à partir d'une date donnée. Les programmeurs le font pour des raisons pratiques telles que la planification de tâches, la gestion du temps ou la manipulation de données chronologiques.
+## Comment Faire:
+En Clojure, nous utilisons les fonctions `plus` et `minus` du paquet `clj-time`. Voici un exemple de calcul des dates:
 
-## Comment faire:
+```Clojure
+(require '[clj-time.core :as t]
+         '[clj-time.coerce :as c]
+         '[clj-time.periodic :as p])
 
-Voici une façon simple de calculer une date dans le futur ou le passé en utilisant Clojure:
+(def date-actuelle (t/now))
+(def date-future (t/plus date-actuelle (t/days 10))) ;; machine à temps, allons 10 jours en avant 
+(def date-passee (t/minus date-actuelle (t/days 5))) ;; et 5 jours en arrière
 
+;;output
+(date-actuelle)
+"2022-08-24T06:20:12.684Z"
+
+(date-future)
+"2022-09-03T06:20:12.684Z"
+
+(date-passee)
+"2022-08-19T06:20:12.684Z"
 ```
-;Exemple pour ajouter 30 jours à une date:
-(def ma-date (java.util.Date.)) ;date actuelle
-(def nb-jours 30)
-(.add ma-date java.util.Calendar/DATE nb-jours)
 
-;Output : La date dans 30 jours à partir de maintenant
-```
+## Approfondissement
+Les dates futures et passées sont un concept qui remonte à la nuit des temps où les humains ont cherché à mesurer le temps pour pouvoir prédire et planifier. Alternativement, vous pouvez utiliser `java.util.Calendar` ou `java.time.ZonedDateTime`, mais clj-time reste la solution la plus élégante pour Clojure.
 
-```
-;Exemple pour soustraire 2 semaines à une date:
-(def ma-date (java.util.Date. "2021-05-01")) ;1er mai 2021
-(def nb-semaines -2)
-(.add ma-date java.util.Calendar/WEEK_OF_YEAR nb-semaines)
+Il est important de noter que clj-time repose sur Joda-Time, une bibliothèque de gestion du temps pour Java, pour ses opérations de base. Mais il offre aussi des fonctionnalités supplémentaires telle que la manipulation facile des fuseaux horaires, les périodes, les durées, etc.
 
-;Output : La date 2 semaines avant le 1er mai 2021
-```
+## Voir aussi
+Pour en savoir plus sur la programmation des dates en Clojure, consultez les lien suivants : 
 
-## Approfondissement:
-
-- Contexte historique: La manipulation de dates est une tâche courante depuis les premiers jours de l'informatique et a donné lieu à de nombreuses méthodes différentes. Aujourd'hui, l'utilisation de bibliothèques telles que Clojure facilite grandement cette tâche pour les programmeurs.
-
-- Alternatives: En plus de Clojure, il existe d'autres langages de programmation pouvant être utilisés pour calculer une date dans le futur ou le passé, tels que Java, Python ou JavaScript.
-
-- Détails d'implémentation: Pour calculer une date à partir d'une date donnée, nous utilisons les méthodes de la classe Java Calendar, qui permettent d'ajouter ou de soustraire un certain nombre d'unités de temps (jours, semaines, mois) à une date donnée. Il est également possible d'utiliser la bibliothèque clojure.java-time pour une manipulation plus facile des dates et des temps en Clojure.
-
-## A voir également:
-
-- Pour en savoir plus sur la manipulation des dates en Clojure, consultez la documentation officielle: https://clojure.org/reference/java_interop#Calendar. 
-
-- Vous pouvez également découvrir la bibliothèque clojure.java-time ici: https://github.com/dm3/clojure.java-time.
+1. Documentation clj-time : https://github.com/clj-time/clj-time
+2. Joda-Time: http://www.joda.org/joda-time/

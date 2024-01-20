@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'html"
-html_title:           "Rust: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,45 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Parser le HTML est le processus de traiter et d'analyser du texte HTML pour en extraire des informations ou le transformer en une autre forme. Les programmeurs le font souvent pour extraire des données spécifiques d'un site web ou pour créer des applications qui nécessitent une compréhension du contenu HTML.
+L'analyse syntaxique HTML concerne la conversion des fichiers HTML en une structure de données compréhensible par votre programme. Les programmeurs l'effectuent pour manipuler, extraire des données, et interagir avec le contenu web.
 
-# Comment faire :
+## Comment faire :
 
-Voici un exemple simple en Rust pour montrer comment parser du HTML :
+Voici un exemple simple de comment utiliser le crate html5ever de Rust pour analyser un document HTML.
 
 ```Rust
-use scraper::{Html, Selector};
+use html5ever::driver::ParseOpts;
+use html5ever::tendril::TendrilSink;
 
 fn main() {
-    // Télécharge le contenu HTML de la page web
-    let html = reqwest::blocking::get("https://www.example.com").unwrap().text().unwrap();
-    // Convertit le HTML en une structure que nous pouvons manipuler
-    let document = Html::parse_document(&html);
-    // Sélectionne tous les liens de la page
-    let links = Selector::parse("a").unwrap();
-    for link in document.select(&links) {
-        // Affiche l'URL de chaque lien
-        println!("{}", link.value().attr("href").unwrap());
-    }
+    let html = "<html><body>Rust est super!</body></html>";
+    let dom = kuchiki::parse_html().one(html);
+    println!("{:#?}", dom);
 }
 ```
 
-Sortie :
+L'exécution de ce code affichera une structure DOM que vous pouvez explorer.
 
+```Rust
+Document {
+    node: Node {
+        parent: None,
+        previous_sibling: None,
+        next_sibling: None,
+        first_child: Some(Doctype),
+        last_child: Some(Element),
+        data: Document,
+    },
+    encoding_name: UTF-8,
+    url: None,
+    quirks_mode: NoQuirks,
+}
 ```
-https://www.example.com/about
-https://www.example.com/contact
-https://www.example.com/blog
-```
 
-# Zoom sur :
+## Plongée profonde :
 
-Parsing HTML remonte à l'époque où le World Wide Web a été créé. Les développeurs ont rapidement réalisé que pour créer des applications basées sur le web, ils devaient pouvoir extraire des données à partir de pages web. Aujourd'hui, il existe de nombreux outils pour parser du HTML en Rust, tels que ```scraper```, ```html5ever```, et ```select```. Alternativement, certains programmeurs peuvent préférer utiliser des langages comme Python ou JavaScript pour le parsing HTML.
+L'analyse syntaxique HTML existe depuis les débuts du web, mais elle est devenue plus complexe avec l'évolution des standards HTML. En Rust, les alternatives à html5ever incluent html-parser et select.rs. Cependant, html5ever est largement reconnu pour son exhaustivité et sa conformité aux spécifications HTML5. Il convertit le document HTML en arbre d'objets document (DOM), qui peut être exploré et modifié par le programmeur.
 
-# Voir aussi :
+## Voir aussi :
 
-- [Documentation Rust de scraper](https://docs.rs/scraper)
-- [Exemples de parsing HTML en Rust](https://github.com/greyblake/whatlang-rs/blob/master/examples/markdown/src/main.rs)
-- [Article Wikipedia sur le parsing HTML](https://fr.wikipedia.org/wiki/HTML#Parsing)
+- Documentation html5ever : https://html5ever.org/
+- Crate html-parser : https://crates.io/crates/html-parser
+- Crate select.rs : https://crates.io/crates/select

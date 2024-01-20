@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Lua: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,26 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué se hace?
-Buscar y reemplazar texto es una herramienta común en la programación para encontrar y cambiar repeticiones de texto en un código. Los programadores lo hacen para ahorrar tiempo y evitar errores en su código.
+## ¿Qué & Por qué?
+Buscar y reemplazar es una operación habitual en la programación que nos permite localizar cadenas de texto y cambiarlas por otras. Este procedimiento es muy útil para actualizar datos, corregir errores o modificar texto para adaptarlo a ciertas situaciones.
 
-## ¡Cómo hacerlo!
-Para buscar y reemplazar texto en Lua, podemos usar la función incorporada `string.gsub`. Esta función toma dos argumentos: una cadena de texto para buscar y una cadena de texto para reemplazarla. Por ejemplo:
+## Cómo hacerlo:
+En Lua, usamos la función gsub para buscar y reemplazar texto. Aquí te muestro cómo funciona:
 
-```
-Lua
-texto = "Hola, soy Lua."
-nuevo_texto = string.gsub(texto, "Lua", "un lenguaje de programación")
-print(nuevo_texto)
-```
-```
-Salida:
-Hola, soy un lenguaje de programación.
+```Lua
+texto_original = "¡Hola, mundo!"
+texto_modificado = string.gsub(texto_original, "mundo", "Lua")
+print(texto_modificado)
 ```
 
-## Inmersión Profunda
-Originalmente, la búsqueda y reemplazo de texto se hizo a mano antes de que existieran herramientas automatizadas. En Lua, también podemos usar expresiones regulares para buscar patrones específicos de texto. Otras alternativas incluyen el uso de editores de texto avanzados o scripts personalizados.
+Este código imprimirá: "¡Hola, Lua!".
 
-## Ver También
-- [Documentación oficial de Lua en la función string.gsub] (https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub)
-- [Expresiones regulares en Lua] (https://www.tutorialspoint.com/lua/lua_pattern_matching.htm)
+## Inmersión profunda:
+
+1. **Contexto histórico:** La función gsub de Lua se basa en la función homónima de las expresiones regulares en Perl y otros lenguajes de programación. Su nombre viene de 'global substitution' (sustitución global).
+   
+2. **Alternativas:** Hay otros lenguajes de programación que ofrecen funcionalidades similares, como JavaScript con su método `replace()`, o Python con `re.sub()`.
+   
+3. **Detalles de implementación:** La función gsub devuelve dos valores: la cadena modificada y el número de sustituciones realizadas. También permite usar patrones de búsqueda más avanzados, al igual que funciones personalizadas para el reemplazo.
+
+```Lua
+texto_original = "Lua es genial, genial, genial!"
+texto_modificado, numero_sustituciones = string.gsub(texto_original, "genial", "increíble")
+print(texto_modificado)
+print(numero_sustituciones)
+```
+
+Este código imprimirá: "Lua es increíble, increíble, increíble!" y "3".
+
+## Ver también:
+Para profundizar aún más en este tema, te recomiendo revisar los siguientes recursos:
+
+- [Documentación oficial de Lua sobre gsub](http://www.lua.org/manual/5.3/manual.html#6.4.2)
+- [String Manipulation en Lua (maniobra de cadenas)](https://www.tutorialspoint.com/lua/lua_strings.htm)
+- [Patrones en Lua](http://lua-users.org/wiki/PatternsTutorial)

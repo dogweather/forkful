@@ -1,7 +1,7 @@
 ---
-title:                "Enviando una petición http"
-html_title:           "Kotlin: Enviando una petición http"
-simple_title:         "Enviando una petición http"
+title:                "Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
+simple_title:         "Enviando una solicitud http"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,24 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##¿Qué y por qué?
-¿Alguna vez has usado una aplicación en línea y te has preguntado cómo es posible que tu dispositivo se comunique con un servidor? La respuesta es con una solicitud HTTP. La acción de enviar una solicitud HTTP es una forma en que los programadores pueden hacer que sus aplicaciones se comuniquen con servidores remotos. Es una parte crítica del desarrollo de aplicaciones web modernas y es utilizada en una variedad de casos de uso, desde recuperar datos hasta realizar pagos en línea.
+## ¿Qué y Por Qué?
 
-##¿Cómo hacerlo?
-En Kotlin, puedes enviar una solicitud HTTP utilizando la biblioteca de manejo de redes incluida en el lenguaje. Aquí hay un ejemplo de cómo enviar una solicitud GET para obtener información de un servidor:
+Enviar una solicitud HTTP es un proceso de comunicación entre el cliente (Tu aplicación) y el servidor utilizando el protocolo HTTP. Los programadores lo hacen para interactuar con APIs, recuperar información, enviar datos y mucho más.
+
+## ¿Cómo se hace?
+
+El envío de solicitudes HTTP en Kotlin es sencillo gracias al uso de bibliotecas como Ktor. Veamos un ejemplo:
 
 ```Kotlin
 val client = HttpClient()
-val response: HttpResponse = client.get("http://ejemplo.com/info")
-println(response.content)
+val httpResponse: HttpResponse = client.get("http://sample.com")
+val responseData: String = httpResponse.receive()
+
+println(responseData)
 ```
 
-Este código crea un cliente HTTP y envía una solicitud GET a la URL especificada. Luego, imprime el contenido de la respuesta. Puedes realizar solicitudes POST, PUT, DELETE y otras utilizando métodos similares.
+En este caso, estamos usando el método `get` para recuperar datos de `sample.com` y luego los mostramos en consola.
 
-##Profundizando
-El protocolo HTTP (Protocolo de transferencia de hipertexto) fue desarrollado en la década de 1990 y originalmente era utilizado principalmente para acceder a documentos en la web. Sin embargo, con el auge de las aplicaciones web, se ha convertido en una forma común de comunicarse con servidores remotos. Alternativas a HTTP incluyen protocolos como WebSocket y gRPC, que se utilizan en aplicaciones en tiempo real y de alto rendimiento.
+## Inmersión Profunda
 
-En cuanto a la implementación, Kotlin utiliza la biblioteca Ktor para manejar las solicitudes HTTP. Esta biblioteca es altamente modular y personalizable, lo que la hace ideal para una variedad de casos de uso.
+Históricamente, las solicitudes HTTP se han utilizado como la forma principal de comunicación entre los clientes y los servidores desde el surgimiento de la web. Sin embargo, existen alternativas como el protocolo WebSocket para conexiones en tiempo real y GraphQL para consultar APIs.
 
-##Mirando más allá
-Para obtener más información sobre las solicitudes HTTP y cómo utilizarlas en Kotlin, puedes consultar la documentación oficial de Ktor (https://ktor.io/) y explorar las diferentes funciones de la biblioteca. También puedes investigar cómo se utilizan las solicitudes HTTP en diferentes tipos de aplicaciones web para obtener una comprensión más profunda de su uso y utilidad en el desarrollo moderno de aplicaciones.
+En cuanto a los detalles de implementación, Kotlin maneja las solicitudes HTTP de manera eficaz al usar bibliotecas como Ktor y Fuel. Estas bibliotecas incorporan características modernas como la programación asíncrona y la programación reactiva, lo que facilita enormemente la tarea del programador.
+
+## Ver También
+
+Aquí hay algunas fuentes adicionales que pueden ser de tu interés:
+* Documentación Ktor: https://ktor.io/clients/http-client/engines.html
+* Documentación Fuel: https://fuel.github.io/
+* API de Java para HTTP/2 y WebSocket: https://openjdk.java.net/jeps/321
+* Documentación GraphQL: https://graphql.org/learn/

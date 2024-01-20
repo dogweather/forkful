@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Fish Shell: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Interpolación de una cadena es una técnica utilizada por programadores para insertar valores dinámicamente en una cadena de texto. Esto permite crear cadenas de forma más dinámica y eficiente, ya que no es necesario escribir cada valor de forma estática.
+## ¿Qué y Por qué?
 
-## Cómo hacerlo:
-La sintaxis para la interpolación de cadenas en Fish Shell es utilizando el signo de dólar ($), seguido de llaves ({}) y dentro de estas llaves, el valor que queremos insertar. Por ejemplo:
+La interpolación de cadenas te permite insertar valores de variables directamente en ellas. Esto es útil ya que permite a los programadores manipular y mostrar datos de forma más cómoda y eficiente.
 
+## Cómo:
+
+Para realizar una interpolación de cadenas en Fish Shell, se utiliza la sintaxis `{}`. Aquí te muestro un ejemplo:
+
+```Fish Shell
+set var 'Fish Shell'
+echo "Bienvenido a la ${var}"
 ```
-set name "Juan"
-echo "¡Hola, ${name}!"
+Y esto generará la siguiente salida:
+
+```Fish Shell
+Bienvenido a la Fish Shell
 ```
+## Inmersión Profunda:
 
-Esto imprimirá "¡Hola, Juan!" en la consola. También podemos realizar operaciones dentro de las llaves, por ejemplo:
+La interpolación de cadenas es una característica ampliamente aceptada en muchos lenguajes de programación, aunque la sintaxis puede variar. En Fish Shell, también puedes usar la orden `printf '%s\n'` como alternativa al comando `echo`.
 
-```
-set num 5
-echo "El resultado es: $(math $num * 2)"
-```
+Sobre la implementación, Fish Shell utiliza las comillas dobles para definir una cadena que será interpolada. A diferencia de otros shells, Fish no interpreta variables dentro de comillas simples.
 
-Esto imprimirá "El resultado es: 10" en la consola.
+## Para saber más:
 
-## Inmersión profunda:
-La interpolación de cadenas ha sido utilizada por diferentes lenguajes de programación durante años, como Perl o Ruby. En otros lenguajes, en lugar del signo de dólar, se utiliza el símbolo de porcentaje (%) para indicar que se va a insertar un valor.
-
-Existen también otras formas de insertar valores en cadenas, como utilizar la función `printf`, pero la interpolación de cadenas en Fish Shell es una forma más simple y directa de lograr el mismo resultado.
-
-En cuanto a la implementación en Fish Shell, utiliza la función `string interpolation` para realizar esta acción de forma eficiente.
-
-## Ver también:
-- [Documentación oficial de Fish Shell sobre la interpolación de cadenas](https://fishshell.com/docs/current/cmds/string.html)
-- [Ejemplos de interpolación de cadenas en Fish Shell](https://gist.github.com/justintung/5231199)
+1. [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+2. [String Interpolation in Bash](https://stackoverflow.com/questions/4181703/string-interpolation-in-bash)
+3. [Fish vs Bash Comparison](https://www.slant.co/versus/2443/2446/~fish_vs_bash)

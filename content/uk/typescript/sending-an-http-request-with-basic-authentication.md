@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання запиту http з базовою аутентифікацією"
-html_title:           "TypeScript: Надсилання запиту http з базовою аутентифікацією"
-simple_title:         "Надсилання запиту http з базовою аутентифікацією"
+title:                "Надсилання http-запиту з базовою аутентифікацією"
+html_title:           "Arduino: Надсилання http-запиту з базовою аутентифікацією"
+simple_title:         "Надсилання http-запиту з базовою аутентифікацією"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,41 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що і для чого?
+## Що це і навіщо?
 
-Відправка HTTP-запиту з базовою аутентифікацією - це процес, за допомогою якого програмісти обмінюються даними між клієнтом і сервером. Такий тип аутентифікації застосовується для захисту чутливих даних та контролю доступу до ресурсів.
+Відправка HTTP-запиту з базовою аутентифікацією — процес, коли програма відправляє запит на сервер із логіном та паролем. Це робиться для перевірки прав користувача на доступ до певних ресурсів.
 
 ## Як це зробити:
 
+В TypeScript це можна зробити за допомогою модуля axios. Ось приклад коду:
+
 ```TypeScript
-// Встановлюємо бібліотеку для роботи з HTTP-запитами
 import axios from 'axios';
 
-// Виконуємо HTTP-запит з базовою аутентифікацією
-axios.get('https://example.com', {
+let username = 'test';
+let password = 'password';
+
+let config = {
   auth: {
-    username: 'username',
-    password: 'password'
+    username: username,
+    password: password
   }
-})
+}
 
-// Отримуємо дані з запиту
-.then(response => {
-  console.log(response.data);
-})
-
-// Обробляємо помилки
-.catch(error => {
-  console.log(error);
-});
+axios.get('https://www.example.com', config)
+  .then((response) => {
+    console.log(response);
+  })
+  .catch((error) => {
+    console.error(error);
+  });
 ```
 
-## Глибоке погруження:
+В результаті на консоль виводиться відповідь від сервера.
 
-Цей метод аутентифікації став широко використовуваним у веб-розробці в перші роки Інтернету. Він використовувався для передачі незашифрованого користувача та пароля в HTTP-запитах. Зараз більш безпечними альтернативами є OAuth і JWT. Для виконання HTTP-запитів з базовою аутентифікацією потрібно налаштувати правильні дані в об'єкті "auth", який передається як опція до методу `http.get`.
+## Занурення у деталі:
 
-## Додаткова інформація:
+Історично, HTTP Basic Authentication був одним з перших методів аутентифікації, впроваджених в HTTP-протокол. Щоправда, він не надає сильного захисту і дуже часто використовується разом із SSL/TLS.
 
-- [Офіційна документація Axios](https://axios-http.com/)
-- [Офіційна документація TypeScript](https://www.typescriptlang.org/)
-- [Стаття про базову аутентифікацію на MDN](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
+Існують і інші методи аутентифікації, такі як Digest Access Authentication, HTTPS та використання токенів.
+
+Важливо пам'ятати, що ви ніколи не повинні відправляти паролі без зашифровування.
+
+## Дивіться також:
+
+1. [Axios Documentation](https://axios-http.com/docs/intro)
+2. [HTTP Basic Authentication](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
+3. [HTTP Digest Access Authentication](https://en.wikipedia.org/wiki/Digest_access_authentication)

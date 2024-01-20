@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana ciągu znaków na małe litery"
-html_title:           "Rust: Zmiana ciągu znaków na małe litery"
-simple_title:         "Zmiana ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,24 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i po co? 
-Konwersja ciągu znaków na małe litery jest procesem zmiany wszystkich znaków w ciągu na ich odpowiedniki w małych literach. Programiści często wykonują tę operację w celu ujednolicenia ciągów znaków, aby łatwiej było je porównywać lub przetwarzać.
+## Co i dlaczego?
+Konwersja tekstu na małe litery to prosty proces zamiany wszystkich znaków alfabetycznych w ciągu na ich odpowiedniki w małych literach. Programiści robią to, aby uniknąć błędów związanych z różnicami w wielkości liter, ułatwić porównywanie tekstu oraz zoptymalizować działanie algorytmów.
 
-## Jak to zrobić: 
-```Rust
-let my_word = "RUST";
-let lower_case_word = my_word.to_lowercase();
-println!("{}", lower_case_word);
+## Jak to zrobić:
+Oto jak to zrobisz w Rust:
+
+```rust
+fn main() {
+    let s = "Witaj, Świecie!";
+    println!("{}", s.to_lowercase());
+}
 ```
-Output:
-```Rust
-rust
+
+Po uruchomieniu programu na ekranie pojawi się:
+
+```
+witaj, świecie!
 ```
 
-## Wnikliwe spojrzenie: 
-Konwersja ciągu znaków na małe litery jest powszechnie stosowana w programowaniu oraz w życiu codziennym. W przeszłości, gdy komputery były w stanie obsługiwać tylko wielkie litery, konwersja na małe litery była często wykorzystywana do ułatwienia przetwarzania tekstu. Jedną z alternatyw dla funkcji to_lowercase() w języku Rust jest używanie metody iteracji po ciągu znaków i zmiany ich na małe litery za pomocą metody to_ascii_lowercase(). W językach programowania, które nie posiadają wbudowanej funkcji do konwersji na małe litery, można użyć funkcji dostępnych w bibliotekach zewnętrznych lub napisać własną implementację.
+## Więcej informacji
+Historia: Konwersja na małe litery jest podstawowym narzędziem w wielu językach programowania. Pojawia się prawie we wszystkich, począwszy od pierwszych języków, takich jak FORTRAN czy COBOL, do najnowszych, takich jak Python, JavaScript, czy rust.
 
-## Zobacz również: 
-- [Dokumentacja języka Rust o konwersji ciągu na małe litery](https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase)
-- [Porównanie wydajności różnych metod konwersji ciągu na małe litery w języku Rust](https://www.joshmatthews.net/polish-app/)
-- [Przydatne narzędzia do pracy z ciągami znaków w języku Rust](https://lib.rs/collections/string_utilities)
+Alternatywy: W rust, dodatkowo do `to_lowercase()`, jest też metoda `to_ascii_lowercase()`, która działa tylko dla ASCII.
+
+Szczegóły implementacji: W rust metoda `to_lowercase()` działa na poziomie jednego znaku. Oznacza to, że konwertuje każdy pojedynczy znak z ciągu niezależnie. To z kolei oznacza, że nie jest ona idealna dla wszystkich języków - niektóre mają specjalne reguły dotyczące konwersji na małe litery, których rust nie obsługuje.
+
+## Zobacz też
+1. Dokumentacja rust do `to_lowercase()`: https://doc.rust-lang.org/std/primitive.str.html#method.to_lowercase
+2. Stack overflow - Porównywanie tekstu ignorując wielkość liter: https://stackoverflow.com/questions/2135912/do-case-insensitive-string-comparison-in-rust

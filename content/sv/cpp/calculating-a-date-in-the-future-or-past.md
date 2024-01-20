@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller det förflutna"
-html_title:           "C++: Beräkning av ett datum i framtiden eller det förflutna"
-simple_title:         "Beräkning av ett datum i framtiden eller det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "C++: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,42 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
+## Vad & Varför?
+Beräkning av ett datum i framtiden eller förflutet innebär att lägga till eller dra ifrån ett specifikt antal dagar till ett givet datum. Programmerare utför denna uppgift för att spåra händelser, schemalägga påminnelser eller utföra viss tidsåtagande analys.
 
-Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift inom programmering. Det är vanligtvis användbart för att skapa tidsbestämda funktioner eller för att upprätthålla en korrekt tidsstämpel på data.
+## Hur gör man:
+Låt oss skapa en enkel C++-funktion för att lägga till ett antal dagar till dagens datum. Vi kommer att använda `<chrono>` biblioteket som innehåller tid och datum funktionaliteter.
 
-## Hur man gör det:
-
-För att beräkna ett datum i framtiden eller det förflutna, kan vi använda oss av olika funktioner och datatyper i C++. En vanlig metod är att använda sig av `struct tm` från `time.h` biblioteket. Här är ett exempel på hur man kan skriva en funktion som returnerar ett datum efter ett visst antal dagar efter det nuvarande datumet.
 ```C++
-struct tm addDays(int days){
-    time_t now = time(0);
-    struct tm curr_date = *localtime(&now);
-    struct tm new_date = curr_date;
-    new_date.tm_mday = curr_date.tm_mday + days;
-    // Hantera fall där månaden eller året behöver justeras
-    mktime(&new_date);
-    return new_date;
+#include <iostream>
+#include <chrono>
+
+void addDays(int days){
+    std::chrono::system_clock::time_point now = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point future = now + std::chrono::hours(24*days);
+
+    std::time_t future_date = std::chrono::system_clock::to_time_t(future);
+
+    std::cout << "Framtidens datum: " << std::ctime(&future_date);
 }
 
-int main() {
-    int days = 14;
-    struct tm future_date = addDays(days);
-    cout << "Datumet i framtiden om " << days << " dagar är " << 
-    future_date.tm_mon + 1 << "/" << future_date.tm_mday << "/" << 
-    future_date.tm_year + 1900;
+int main(){
+    addDays(10); //lägger till 10 dagar till dagens datum
+    return 0;
 }
 ```
-Output:
+Ovanstående kod kommer att ge output som detta:
 ```
-Datumet i framtiden om 14 dagar är 1/28/2020
+Framtidens datum: Thu Jun 30 19:58:32 2022
 ```
 
-## Djupdykning:
+## Djupdykning
+Beräkning av datum har varit en grundläggande del av programmering sedan dagar av tidiga datorer. C++ har flera sätt att manipulera datum och tid inklusive gamla C-style `<ctime>` bibliotek och moderna `<chrono>` bibliotek.
 
-Att räkna ut datum i framtiden eller förflutna har varit en viktig del av datorkunskap sedan länge. I äldre system användes oftast ett julianskt kalendersystem, men idag används i stället Gregorianska kalendern som är den vanligaste i världen. Alternativet till att använda `struct tm` är att använda API:er som `std::chrono` och `boost::date_time`. Dessa ger fler funktioner och mer flexibel funktionalitet för att hantera datum och tider.
+Vissa alternativ till ovanstående metod inkluderar att använda 'Boost.Datetime' bibliotek eller 'date.h' bibliotek som ger mer robusta och flexibla metoder för datumhantering.
 
-## Se även:
+Effektiviteten i att beräkna datum och tid i C++ beror till stor del på detaljer som precision av tidsrepresentation och kravet på trådsäkerhet. `<chrono>` biblioteket i moderna C++-versioner erbjuder en balans mellan precision och prestanda.
 
-[https://www.cplusplus.com/](https://www.cplusplus.com/) - Officiell hemsida för C++ som innehåller dokumentation och resurser
-[https://www.geeksforgeeks.org/](https://www.geeksforgeeks.org/) - En populär sida för programmeringsuppgifter och artiklar
+## Se även
+1. [Chrono library documentation](https://en.cppreference.com/w/cpp/chrono)
+2. [Boost.Datetime library documentation](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html)
+3. [Date.H library documentation](https://howardhinnant.github.io/date/date.html)
+
+Observera att ingen del av koden i denna artikel skall tas som den definitiva lösningen på att hantera datum och tid i C++. Målet är snarare att ge dig en bra startpunkt för att utforska ämnet djupare.

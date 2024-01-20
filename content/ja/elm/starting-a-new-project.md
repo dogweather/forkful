@@ -1,7 +1,7 @@
 ---
-title:                "「新しいプロジェクトの開始」"
-html_title:           "Elm: 「新しいプロジェクトの開始」"
-simple_title:         "「新しいプロジェクトの開始」"
+title:                "新しいプロジェクトを始める"
+html_title:           "C: 新しいプロジェクトを始める"
+simple_title:         "新しいプロジェクトを始める"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をやって、どうして?
+**## 何と何故?**
 
-新しいプロジェクトを始めるとは、新しいソフトウェアやアプリケーションを開発することです。プログラマーは新しいプロジェクトを始めることで、新しいアイデアを実現し、既存のソフトウェアの問題を改善することができます。
+新規プロジェクトを開始するとは、新たなソフトウェア開発を始めることです。私たちプログラマーがこれをする理由は、新たなアイディアを実現し、ユーザーに価値を提供するためです。
 
-## 方法:
+**## どうやって:**
 
 ```Elm
--- 新しいプロジェクトを作成する
+-- elmをインストールする
+npm install -g elm
+
+-- 新規プロジェクトを作成する
 elm init
-
--- 新しいファイルを作成する
-elm make Main.elm
-
--- 新しいモジュールをインストールする
-elm install elm/http
 ```
 
-```Elm
--- サンプルのコード
-module Main exposing (main)
+これで、新規Elmプロジェクトが作成され、初期設定が自動的に行われます。
 
-import Html exposing (div)
+**## ディープダイブ**
 
-main =
-  div [] [ Html.text "Hello, World!" ]
+新規プロジェクトの開始は、Elmプログラミングの大切なステップです。Elmはそのエラーメッセージが非常に親切で、パッケージシステムと型システムが強力なので、初めてのプロジェクトでも容易に始められます。他の選択肢としては、JavaScriptやTypeScriptなどがありますが、Elmはこれらと異なり、開発エクスペリエンスとパフォーマンスを両立させた言語として設計されています。
 
--- 出力
-<div>Hello, World!</div>
-```
+開始時、Elmの`init`コマンドは項目毎にファイルシステムを設定します。コードは`src`ディレクトリに格納され、Elmのパッケージは`elm-stuff`ディレクトリに保管されます。また、`elm.json`ファイルが作成され、プロジェクトの依存関係と設定情報を管理します。
 
-## 深堀り:
+**## 参照先**
 
-- 歴史的背景: Elmは、2012年にEvan Czaplickiによって開発され、関数型プログラミング言語として人気を集めました。
-- 代替オプション: Elmには、JavaScriptやTypeScriptなどの他のプログラミング言語で書かれたフレームワークと比較して、型システムや信頼性を強化する利点があります。
-- 実装の詳細: Elmは、純粋関数型言語であり、副作用のない純粋な関数を使用することで、バグやエラーを減らすことができます。
-
-## 関連リンク:
-
-- [Elmの公式ウェブサイト (英語)](https://elm-lang.org/)
-- [Elm入門 (日本語)](https://elm-lang.jp/)
+- Elm公式ドキュメンテーション: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+- Elmプロジェクトの初期設定について: [https://elmprogramming.com/init-and-install.html](https://elmprogramming.com/init-and-install.html)
+- Elmのエラーメッセージ: [https://elmprogramming.com/error-messages.html](https://elmprogramming.com/error-messages.html)

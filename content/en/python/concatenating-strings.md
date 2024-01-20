@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Python recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Python"
 category:             "Python"
@@ -11,30 +11,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Concatenating strings in Python is the process of combining two or more strings into one longer string. This is a common practice used by programmers for tasks such as building dynamic messages or formatting text in a specific way.
 
-## How to:
-To concatenate strings in Python, you can use the `+` operator or the `join()` method. The `+` operator allows you to add two strings together, while the `join()` method joins multiple strings with a specified separator.
+String concatenation is about joining two or more strings together. Programmers do it to create dynamic strings, useful in numerous situations like generating messages or crafting URLs.
 
-```Python
-# Concatenation using the + operator
-str_1 = "Hello"
-str_2 = "World"
+## How to: 
+
+Python supports string concatenation in many ways. The most straightforward method is using the plus (+) operator.
+
+```python
+# Example 1: Using the '+' operator
+str_1 = "Hello,"
+str_2 = " World!"
 concatenated_str = str_1 + str_2
-print(concatenated_str) # Output: HelloWorld
-
-# Concatenation using the join() method
-str_list = ["Hello", "World"]
-separator = " "
-concatenated_str = separator.join(str_list)
-print(concatenated_str) # Output: Hello World
+print(concatenated_str)  # Output: "Hello, World!"
 ```
 
-## Deep Dive:
-Before the introduction of the `+` operator and the `join()` method, concatenation in Python was done using the `''` operator. This involved manually typing out each part of the desired string and using the operator to combine them. Another popular alternative to concatenating strings is using string formatting methods like `format()` or `f-strings`.
+Another handy tool for string concatenation is the `join()` method.
 
-When concatenating strings, it is important to keep in mind that strings are immutable in Python. This means that instead of directly modifying the original string, a new string object is created when concatenating. This can cause performance issues if done repeatedly on large strings.
+```python
+# Example 2: Using the 'join()' method
+str_list = ["Hello,", " World!"]
+concatenated_str = ''.join(str_list)
+print(concatenated_str)  # Output: "Hello, World!"
+```
+
+## Deep Dive
+
+Historically, in the earlier versions of Python, the '+' operator was the go-to method for string concatenation. But it has a drawback. Every '+' operation creates a new string, making it less efficient for multiple concatenations.
+
+The 'join()' method, in contrast, is more efficient as it precalculates the length of the resulting string and then creates it, making it faster, especially for larger strings.
+
+There are alternatives, however, including string interpolation methods like `f-strings` (Python 3.6 onwards) and `format()`.
+
+```python
+# Example 3: Using 'f-strings'
+str_1 = "Hello,"
+str_2 = " World!"
+concatenated_str = f"{str_1}{str_2}"
+print(concatenated_str)  # Output: "Hello, World!"
+```
+
+```python
+# Example 4: Using 'format()'
+str_1 = "Hello,"
+str_2 = " World!"
+concatenated_str = "{}{}".format(str_1, str_2)
+print(concatenated_str)  # Output: "Hello, World!"
+```
+
+Performances vary depending on situations. For small strings or fewer concatenation operations, differences are negligible. But for large strings or more concatenations, 'join()' tends to outperform '+', while f-strings are generally faster than 'format()'.
 
 ## See Also:
-- [Python String Concatenation: Everything You Need to Know](https://realpython.com/python-string-concatenation/)
-- [10 Python String Methods That You Should Know](https://www.freecodecamp.org/news/the-python-string-format-method-a-guide-for-beginners/)
+
+1. [Python Docs: Common string operations:](https://docs.python.org/3/library/stdtypes.html#string-methods)
+2. [Python Docs: String Formatting](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
+3. [Real Python: String Concatenation](https://realpython.com/python-string-concatenation/)

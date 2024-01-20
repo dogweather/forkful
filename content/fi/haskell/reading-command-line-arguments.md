@@ -1,7 +1,7 @@
 ---
-title:                "Lukeminen komentoriviparametreja"
-html_title:           "Haskell: Lukeminen komentoriviparametreja"
-simple_title:         "Lukeminen komentoriviparametreja"
+title:                "Komentorivin argumenttien lukeminen"
+html_title:           "Bash: Komentorivin argumenttien lukeminen"
+simple_title:         "Komentorivin argumenttien lukeminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,39 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mitä ja Miksi?
 
-Komentoriviparametrien lukeminen on tärkeä osa ohjelmoinnin prosessia. Se tarkoittaa syötteiden vastaanottamista käyttäjältä ohjelman suorituksen aikana. Ohjelmoijat käyttävät tätä toimintoa voidakseen muokata ja mukauttaa ohjelmiaan käyttäjien haluamalla tavalla.
+Komentorivin argumentit ovat ohjelman suorituksen aikana käyttäjän antamat syötteet. Ne mahdollistavat ohjelman suorituksen mukauttamisen lennosta. 
 
-## Miten:
+## Kuinka: 
 
-Komentoriviparametrien lukeminen Haskellissa on helppoa. Voit käyttää `getArgs` -funktiota saadaksesi listan käyttäjän syöttämistä parametreista. Alla on esimerkki koodista ja sen antamasta tulosteesta.
+Haskellissa voit lukea komentorivin argumentteja ```getArgs```-funktion avulla. Tässä on esimerkki:
 
 ```Haskell
 import System.Environment
 
+main :: IO ()
 main = do
-  args <- getArgs
-  putStrLn ("Syötit " ++ (show $ length args) ++ " parametria.")
-  putStrLn ("Parametrit olivat: " ++ (show args))
+    args <- getArgs
+    print args
 ```
 
-Tuloste:
-```bash
-$ runhaskell args.hs arg1 arg2 arg3
-Syötit 3 parametria.
-Parametrit olivat: ["arg1", "arg2", "arg3"]
+Tämä koodi tulostaa kaikki käyttäjän syöttämät argumentit. Esimerkkejä ajoista:
+
+```Shell
+$ runhaskell example.hs argumentti1 argumentti2
+["argumentti1","argumentti2"]
 ```
 
-## Syväsukellus:
+## Syvempi sukellus
 
-Komentoriviparametrien lukeminen on ollut tärkeä osa ohjelmointikieliä jo vuosien ajan. Se mahdollistaa käyttäjien vuorovaikutuksen ohjelmien kanssa ja antaa heille mahdollisuuden muokata ohjelmien toimintaa syöttämiensä parametrien perusteella.
+```getArgs```-funktio on osa ```System.Environment```-kirjastoa, joka on ollut osa Haskell-standardia 1.3-versiosta lähtien. Vaikka funktio on suoraviivainen ja helppokäyttöinen, sen rinnalle on kehitetty myös monimutkaisempia ratkaisuja, kuten ```optparse-applicative```-kirjasto. ```optparse-applicative``` tukee monimutkaisten komentorivikomentojen määrittelyä.
 
-Vaihtoehtoisia tapoja lukea komentoriviparametreja ovat esimerkiksi `getOpt`, `getOptSimple`, ja `cmdargs` -kirjastot. Nämä tarjoavat laajemman valikoiman toimintoja ja mahdollistavat esimerkiksi parametrien väliset vaihtoehdot ja pakotetut argumentit.
+Käytännön tasolla ```getArgs``` toteutetaan siten, että se hakee listan argumentteja suoraan komentotulkin (shellin) ympäristöstä. On hyvä muistaa, että tämä lista ei sisällä itse ohjelman nimeä, jos tarvitset sen, voit käyttää ```getProgName```-funktiota.
 
-Komentoriviparametrien lukeminen Haskellissa käyttää `getArgs` -funktiota, joka perustuu UNIX-järjestelmän tarjoamiin arg-vetoihin. Tämän takia syötteiden muokkaaminen ennen `getArgs` -funktion kutsumista ei välttämättä tuota haluttuja tuloksia.
+## Katso myös
 
-## Katso myös:
-
-- [Haskellin virallinen dokumentaatio komentoriviparametrien lukemisesta](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-Environment.html)
-- [Tutorial Haskell-komentoriviparametrien lukemisesta](https://www.codecademy.com/learn/learn-haskell/modules/learn-haskell-commands/cheatsheet)
+- ```System.Environment``` [dokumentaatio](http://hackage.haskell.org/package/base/docs/System-Environment.html)
+- ```optparse-applicative``` [dokumentaatio](https://hackage.haskell.org/package/optparse-applicative) 
+- Yleisemmin ohjelmointi Haskellilla [Learn You a Haskell](http://learnyouahaskell.com/chapters) 
+- Kattava keskustelu Haskellin komentoriviparametreistä [StackOverflow](https://stackoverflow.com/questions/10129381/cli-argument-parsing-in-haskell)

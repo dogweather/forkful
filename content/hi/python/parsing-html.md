@@ -1,7 +1,7 @@
 ---
-title:                "ह्ट्मल पार्सिंग"
-html_title:           "Python: ह्ट्मल पार्सिंग"
-simple_title:         "ह्ट्मल पार्सिंग"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-पार्सिंग (parsing) एक तकनीक है जो वेब पेजों के डेटा को अनुमान लगाने और जानकारी को स्ट्रक्चर्ड फॉर्म में रखने में मदद करती है। प्रोग्रामर हमेशा वेबसाइट्स के साइट मैप तैयार करने में और वेब पर उपलब्ध डेटा को सुरक्षित और स्वस्थ ढंग से उपयोग करने में पार्सिंग का उपयोग करते हैं।
+## क्या और क्यों?
+HTML पार्सिंग का मतलब होता है HTML डॉक्यूमेंट को विश्लेषित करना ताकि उसकी हायरार्की और इलेमेंट्स को समझा जा सके। प्रोग्रामर्स इसे करते हैं ताकि वे वेबपेज की जानकारी को खोज सकें, संशोधित कर सकें और व्यवस्थित कर सकें।
 
 ## कैसे करें:
-```python
-# आवश्यक मॉड्यूल इम्पोर्ट करें
+Python में, आप BeautifulSoup लाइब्ररी का उपयोग करके HTML पार्स कर सकते हैं। नीचे उदाहरण है:
+
+```Python
 from bs4 import BeautifulSoup
-import requests
 
-# HTML पेज को डाउनलोड करें
-url = "https://www.example.com"
-r = requests.get(url)
-html_content = r.content
+html_doc = """<html><head><title>मेरा पहला वेबपेज</title></head>
+<body><p>हेल्लो दुनिया.</p></body></html>"""
 
-# BeautifulSoup ऑब्जेक्ट बनाएं
-soup = BeautifulSoup(html_content, 'html.parser')
+soup = BeautifulSoup(html_doc, 'html.parser')
 
-# चालू पेज में उपलब्ध सभी हैडिंग्स को प्रिंट करें
-for heading in soup.find_all('h2'):
-    print(heading.text)
+print(soup.prettify())
 ```
 
-आउटपुट:
+उपरोक्त कोड का आउटपुट नीचे दिया गया है:
+
+```Python
+<html>
+ <head>
+  <title>
+   मेरा पहला वेबपेज
+  </title>
+ </head>
+ <body>
+  <p>
+   हेल्लो दुनिया.
+  </p>
+ </body>
+</html>
 ```
-उदाहरण पेज हैडर
-उदाहरण शीर्षक
-``` 
 
-## गहराई में जाएँ:
-पार्सिंग की शुरुआत साल १९६१ में हुई जब एसजेएमएल (स्टैंडर्ड जनरलाइज्ड टैगिंग भाषा) यूआरएल से लिंक करने के लिए यूआरएल से लिंक करने के लिए वेब पेज को प्रदर्शित करने के लिए उपयोग किया जाता था। हालांकि, आजकल पार्सिंग का उपयोग वेब क्रॉलिंग, साइट मैपिंग, डेटा स्क्रैपिंग और सीओ टूल्स जैसे कामों के लिए भी किया जाता है। हालांकि, पार्सिंग का जो लोकप्रिय तरीका है वह BeautifulSoup है, लेकिन इसके अलावा भी अन्य एल्गोरिदम्स और लाइब्रेरीज उपलब्ध हैं।
+## गहरा डाइव
+इतिहास में, HTML पार्सिंग की पहली बार आवश्यकता तब पेश आई जब वेब सर्फिंग मनोहारी और प्रभावी होने लगा। BeautifulSoup के अलावा, आप lxml और html.parser जैसे अन्य टूल्स का भी उपयोग कर सकते हैं। BeautifulSoup सबसे आम और लोकप्रिय पसंद है क्योंकि यह अधिक सहज और लचीला है। 
 
-## अधिक जानकारी:
+## देखने वाले
+अधिक जानकारी के लिए, निम्नलिखित संसाधनों की जांच करें:
 - [BeautifulSoup Documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [Web Scraping with Python: Collecting More Data from the Modern Web](https://www.oreilly.com/library/view/web-scraping-with/9781491985564/)
-- [Introducing the BeautifulSoup Python Package](https://realpython.com/beautiful-soup-web-scraper-python/)
+- [Python's html.parser](https://docs.python.org/3/library/html.parser.html)
+- [Parsing HTML using lxml](https://lxml.de/parsing.html)

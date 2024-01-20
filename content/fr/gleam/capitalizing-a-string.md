@@ -1,7 +1,7 @@
 ---
-title:                "Majuscule d'une chaîne de caractères"
-html_title:           "Gleam: Majuscule d'une chaîne de caractères"
-simple_title:         "Majuscule d'une chaîne de caractères"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "Gleam: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que la mise en majuscule d'une chaîne?
-
-La mise en majuscule d'une chaîne est le processus de conversion de toutes les lettres d'une chaîne en majuscules. Cela peut être utile dans de nombreux cas, tels que lorsque vous avez besoin de comparer deux chaînes sans tenir compte de la casse ou lorsque vous souhaitez simplement que votre texte soit plus lisible.
+## Quoi & Pourquoi?
+Capitaliser une chaîne signifie transformer la première lettre de chaque mot de la chaîne en majuscule. Les programmeurs font cela pour améliorer la lisibilité et rendre les données plus présentables aux utilisateurs.
 
 ## Comment faire:
-
-La mise en majuscule d'une chaîne est très simple à réaliser en utilisant la fonction `String.to_uppercase()` de Gleam. Cette fonction prend une chaîne en entrée et retourne cette même chaîne en majuscules.
-
-```Gleam
-let my_string = "Bonjour le monde !" 
-let upper_string = String.to_uppercase(my_string)
-
-```
-
-La valeur de `upper_string` sera alors "BONJOUR LE MONDE !". Vous pouvez également utiliser cette fonction directement sur une chaîne littérale.
+Voici un exemple simple dans Gleam pour capitaliser une chaîne.
 
 ```Gleam
-let upper_string = String.to_uppercase("Bonjour le monde !")
+import gleam/string
+
+fn capitalise_example() {
+  let example_string = "bonjour, le monde!"
+  let capitalised_string = string.capitalise(example_string)
+  capitalised_string
+}
+
+fn main(_) {
+  capitalise_example()
+}
 ```
 
-## Zoom en profondeur:
+Dans cet exemple, si vous exécutez `capitalise_example()`, vous obtiendrez `"Bonjour, le monde!"` en sortie.
 
-La mise en majuscule existe depuis très longtemps et est également appelée "mise en capitales" ou "mise en majuscule". Avant l'utilisation généralisée des ordinateurs, les écrivains utilisaient des caractères manuels pour mettre en majuscule les mots importants dans leurs textes. Aujourd'hui, il existe plusieurs façons de mettre en majuscule une chaîne, telles que l'utilisation de l'alphabet ASCII ou Unicode.
+## Plongée en profondeur
+Historiquement, la capitalisation a commencé avec l'écriture manuscrite, où l'utilisation des majuscules servait à mettre l'accent sur certains mots. En programmation, c'est un moyen de traiter les chaînes pour les présenter de manière plus formelle ou pour respecter certaines conventions syntaxiques.
 
-Si vous utilisez Gleam, vous n'avez pas besoin de vous soucier des détails d'implémentation puisque la fonction `String.to_uppercase()` s'occupe de tout pour vous.
+Il existe plusieurs alternatives à `string.capitalise()` dans Gleam, comme `string.uppercase()` ou `string.lowercase()` pour rendre toute la chaîne en majuscules ou en minuscules, respectivement. Cependant, la fonction `capitalise()` est généralement préférée pour capitaliser proprement une phrase ou un titre.
 
-## Voir aussi:
+Derrière les coulisses, la fonction `capitalise()` de Gleam examine chaque mot dans la chaîne, transforme la première lettre en majuscule et laisse les autres lettres en minuscules. Elle fait ceci en parcourant la chaîne une fois, ce qui rend cette fonction très efficace.
 
-Pour en savoir plus sur la mise en majuscule et d'autres opérations de manipulation de chaînes, consultez la documentation officielle de Gleam : https://gleam.run/documentation/standard-library/string.html
+## Voir aussi
+Pour plus de détails sur les fonctions de chaîne en Gleam, consultez la documentation officielle sur [Gleam/string](https://gleam.run/stdlib/string/). Vous pouvez également trouver des exemples de code supplémentaires et des explications détaillées sur le traitement des chaînes dans le guide d'apprentissage Gleam, disponible [ici](https://gleam.run/learning/).

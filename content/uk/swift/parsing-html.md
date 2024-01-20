@@ -1,7 +1,7 @@
 ---
-title:                "Аналізування html"
-html_title:           "Swift: Аналізування html"
-simple_title:         "Аналізування html"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Чому і для чого?
+## Що і чому?
+Розбір (parsing) HTML це процес, при якому ми витягуємо корисну інформацію із HTML-документа. Програмісти роблять це для автоматизації вилучення, аналізу, чи модифікації даних з веб-сторінок.
 
-Розбір HTML це процес аналізування коду, який створює веб-сторінки, для отримання корисної інформації. Програмісти роблять це для того, щоб витягти дані з веб-сторінок і використовувати їх для своїх власних цілей, таких як упорядкування даних або створення інших додатків.
-
-Як це зробити?
+## Як це зробити:
+Ми використовуємо бібліотеку Kanna для Swift. Перш ніж почати, інсталюйте Kanna за допомогою Swift Package Manager.
+```Swift
+dependencies: [
+.package(url: "https://github.com/tid-kijyun/Kanna.git", from: "5.2.4")
+]
+```
+Нижче наведено приклад розбору (parsing) HTML:
 
 ```Swift
-let html = """
-<!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World!</h1>
-</body>
-</html>
-"""
+import Kanna
 
-// використання HTMLParser бібліотеки для отримання заголовка сторінки
-let parser = HTMLParser()
-let title = parser.getTitle(from: html)
-
-// виведення результату на консоль
-print(title) // "Hello World!"
+func parseHTML() {
+    if let doc = try? HTML(html: "<html><body><h1>Привіт, світе!</h1></body></html>", encoding: .utf8) {
+        print(doc.at_css("h1")?.text)
+}
+}
 ```
+При виконанні цього коду, ви отримаєте результат "Привіт, світе!".
 
-Глибоке занурення
+## Поглиблений огляд
+▪️ Історичний контекст: Розбір HTML виник, коли стало потрібно автоматизувати процес вилучення даних з веб-сторінок. Із часом, з'явилося багато бібліотек в різних мовах програмування, щоб полегшити цей процес.
 
-Історичний контекст: розбір HTML походить ще з часів перших веб-програм. У ті часи, коли веб-сторінки були простими, цей процес був необхідним для отримання корисної інформації з них.
+▪️ Альтернативи: SwiftSoup - ще одна потужна бібліотека для розбору HTML в Swift. Бібліотеки, як-от jsoup для Java або BeautifulSoup для Python, також можуть бути корисними, залежно від обраної мови програмування.
 
-Альтернативи: існують різні бібліотеки і інструменти, що допомагають виконувати розбір HTML, кожен з них має свої переваги і недоліки.
+▪️ Деталі реалізації: Kanna використовує libxml2 і libxslt, які є CPU-ефективними і добре протестованими бібліотеками для розбору XML/HTML і XSLT.
 
-Деталі реалізації: для розбору HTML в Swift використовуються регулярні вирази та бібліотеки, такі як HTMLParser, для отримання потрібних елементів сторінки.
+## Дивіться також
+[Офіційна документація Kanna](https://github.com/tid-kijyun/Kanna)
 
-Дивіться також
+[SwiftSoup на GitHub](https://github.com/scinfu/SwiftSoup) 
 
-- Посилання на HTMLParser бібліотеку для більш детального опису її можливостей.
-- Інші способи розбору HTML в Swift та інформація про них.
+[jsoup: Java HTML Parser](https://jsoup.org/) 
+
+[Beautiful Soup: We called him Tortoise because he taught us.](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

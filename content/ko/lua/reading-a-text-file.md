@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "Lua: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,49 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?
+## 무엇이며 왜 필요한가?
 
-텍스트 파일을 읽는 것은 프로그래머가 컴퓨터에서 텍스트 파일에 저장된 데이터를 읽기 위해 사용하는 것입니다. 이것은 노력을 줄이고 데이터를 정보로 변환하는 데 도움이 됩니다.
+텍스트 파일 읽기는 프로그램이 파일 안의 내용을 읽어오는 것입니다. 이를 통해 프로그래머들은 데이터를 가져오거나, 필요한 정보를 빠르게 찾을 수 있습니다.
 
-## 하는 방법:
+## 어떻게 할까?
 
-### 예제 1:
+Lua에서 텍스트 파일을 읽는 기본적인 단계는 아래와 같습니다.
+
 ```Lua
-local file = io.open("textfile.txt") -- 텍스트 파일 열기
-local content = file:read("*all") -- 파일의 모든 내용 읽기
-print(content) -- 내용 출력
+-- 파일 열기
+local file = io.open("example.txt", "r")
+
+-- 파일 읽기
+local content = file:read("*a")
+
+-- 출력하기
+print(content)
+
+-- 파일 닫기
+file:close()
 ```
-#### 출력:
-```
-Hello everyone!
-This is an article about using Lua to read text files.
-Let's dive in!
+이 코드는 "example.txt"라는 파일의 모든 내용을 읽고, 그 내용을 출력합니다. `*a` 옵션은 파일의 모든 내용을 한 번에 읽습니다.
 
-## 딥 다이브:
+## 깊은 시각 
 
-Lua는 프로그래밍 언어로서, 가벼우며 확장 가능하고 유연한 디자인을 가지고 있습니다. 이러한 이유로 Lua는 주로 게임 개발에 사용되고 있습니다. 텍스트 파일을 읽는 것은 Lua에서 매우 간단하며, 파일의 모든 내용을 읽는 예제는 다음과 같습니다.
+텍스트 파일을 읽는 것은 오래전부터 많은 프로그래밍 언어에서 기본적으로 제공되는 기능이었습니다. Lua에서도 이런 기능을 제공하며, 상세한 구현 방식은 운영체제와 IO 라이브러리에 따라 다릅니다. 
 
-### 예제 2:
+Lua의 대안으로는 파일을 한 줄씩 읽는 방법, 또는 특정 크기로 분할하여 읽는 방법 등이 있습니다. 아래 예시는 한 줄씩 읽는 방법을 보여줍니다.
+
 ```Lua
-local file = io.open("textfile.txt") -- 텍스트 파일 열기
-local lines = {} -- 각 줄을 저장할 배열 선언
-for line in file:lines() do -- 파일의 각 줄에 대해 반복
-    table.insert(lines, line) -- 줄을 배열에 추가
+local file = io.open("example.txt", "r")
+
+for line in file:lines() do
+    print(line)
 end
-print(table.concat(lines, "\n")) -- 배열을 문자열로 변환한 후 출력
+
+file:close()
 ```
-#### 출력:
-```
-Hello everyone!
-This is an article about using Lua to read text files.
-Let's dive in!
-```
+## 참고 자료
 
-## 더 자세하게:
+Lua 파일 IO에 대한 자세한 정보는 아래 링크에서 참조하실 수 있습니다.
 
-텍스트 파일을 읽는 것은 컴퓨터의 데이터 입출력의 가장 기본적인 부분입니다. 따라서 다른 프로그래밍 언어에서도 유사한 방식으로 이루어집니다. Lua에서도 파일을 열고 읽는 데 사용되는 함수는 다른 언어에서 사용되는 함수와 유사합니다.
-
-## 관련 주제:
-
-- [Lua 공식 문서](https://www.lua.org/docs.html) 
-- [Lua 사용 예제](https://www.lua.org/manual/5.3/)
+- Official Lua 5.4 Manual : [I/O Library](https://www.lua.org/manual/5.4/manual.html#6.8)
+- Definitions and uses : [File I/O](https://learnxinyminutes.com/docs/lua/)
+- Tutorials Point : [Lua - File I/O](https://www.tutorialspoint.com/lua/lua_file_io.htm)

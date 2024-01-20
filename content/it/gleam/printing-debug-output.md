@@ -1,7 +1,7 @@
 ---
-title:                "Stampare output di debug"
-html_title:           "Gleam: Stampare output di debug"
-simple_title:         "Stampare output di debug"
+title:                "Stampa dell'output di debug"
+html_title:           "Arduino: Stampa dell'output di debug"
+simple_title:         "Stampa dell'output di debug"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Printare l'output di debug è una pratica comune tra i programmatori che consiste nel visualizzare informazioni aggiuntive durante l'esecuzione di un programma. Ciò può aiutare a identificare errori e problemi nel codice, semplificando la fase di debug.
+## Cos'è e Perché?
+
+Stampare output di debug è l'atto di visualizzare informazioni dettagliate sullo stato del nostro programma mentre è in esecuzione. E' uno strumento cruciale per i programmatori, in quanto ci aiuta a capire cosa sta succedendo nel nostro codice e a risolvere eventuali problemi.
 
 ## Come fare:
-Per aggiungere output di debug nel tuo codice Gleam, usa la funzione `debug.print`. Puoi stampare qualsiasi tipo di dato, incluso record e tuple.
 
-Esempio:
-```
-Gleam...
-let mia_variabile = "Ciao!"
-mia_variabile |> debug.print
-...
-``` 
+Ecco un semplice esempio di come eseguire la stampa di debug in Gleam:
 
-Output:
-```
-"Ciao!"
+```Gleam
+import gleam/io
+
+pub fn main(args: List(String)) {
+  let _ = io.println("Hello, Gleam!")
+}
 ```
 
-Puoi anche usare `debug.print` con più argomenti per stampare più di un valore:
-```
-Gleam...
-let mio_numero = 42
-let mio_nome = "Alice"
-debug.print(mio_numero, mio_nome)
-...
+Quando esegui questo codice, vedrai un output simile a questo:
+
+```Gleam
+Hello, Gleam!
 ```
 
-Output:
-```
-42
-"Alice"
-```
+## Approfondimento
 
-## Approfondimento:
-Aggiungere output di debug è una pratica comune nella programmazione, ma assicurati di rimuoverlo una volta che hai risolto i problemi, altrimenti potrebbe avere un impatto negativo sulle prestazioni del tuo programma.
+La stampa di debug ha le sue radici storiche nelle prime giornate della programmazione, quando i programmatori dovevano fisicamente esaminare i codici binari per trovare problemi. Con lo sviluppo del software, la stampa di debug è diventata un punto fermo negli strumenti di debugging.
 
-Un'alternativa alla stampa di output di debug è l'uso di un debugger, che consente di rallentare l'esecuzione del programma e di esaminare il valore delle variabili in ogni istante. Tuttavia, l'aggiunta di output di debug può essere più rapida e semplice per risolvere piccoli problemi.
+Alternativamente, invece di utilizzare la stampa standard, è possibile utilizzare il modulo `gleam/log` per eseguire la stampa di debug con informazioni aggiuntive come l'ora e la data.
 
-L'implementazione di `debug.print` in Gleam utilizza il modulo `logger`, che offre una varietà di funzionalità avanzate per la registrazione di messaggi di debug.
+Gleam implementa la stampa di debug attraverso il modulo `gleam/io`. Questo modulo fornisce una serie di funzioni di input/output che possono essere usate per scrivere sullo standard output o leggere dallo standard input.
 
-## Vedi anche:
-- [Documentazione ufficiale di Gleam](https://gleam.run/documentation/)
-- [Articolo su come risolvere i problemi di debugging in modo efficace](https://blog.bugsnag.com/how-to-debug/)
-- [Modulo logger di Gleam](https://github.com/gleam-lang/logger)
+## Vedi anche
+
+1. [Guida ufficiale alla programmazione in Gleam](https://gleam.run/book/)
+2. [Documentazione delle librerie standard di Gleam](https://hexdocs.pm/gleam_stdlib/readme.html)
+3. [Articolo sull'utilizzo della stampa di debug nel linguaggio Gleam](https://joseconsdorf.medium.com/debug-print-statements-in-gleam-3a153e175f87)

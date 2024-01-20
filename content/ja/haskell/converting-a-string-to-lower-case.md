@@ -1,6 +1,6 @@
 ---
 title:                "文字列を小文字に変換する"
-html_title:           "Haskell: 文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
 simple_title:         "文字列を小文字に変換する"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何してるの？ 
-文字列を小文字に変換することは、プログラマーが文字列を操作する際に使用する一般的な方法です。大文字と小文字が区別される場合、小文字に統一することでプログラミングの作業を容易にすることができます。
+# Haskell文字列を小文字に変換する方法
 
-# 方法: 
-Haskellでは、Data.Charモジュールに用意されているtoLower関数を使用して、文字列を小文字に変換することができます。以下のコードは、文字列"Hello World"を小文字に変換し、"hello world"という出力を生成する例です。 
+## 何となぜ？
+文字列の変換は、一部または全体を特定の形式にするために使用します。例えば、文字列を全て小文字に変換することは、ケース無視の文字列比較や検索に役立ちます。
+
+## どうやって：
+以下の関数`toLowerStr`を使用します。この関数は、文字列全体を小文字に変換します。
 
 ```Haskell
 import Data.Char
 
-lowercase :: String -> String
-lowercase str = map toLower str
-
-main = do
-  let greeting = "Hello World"
-  let lowercase_greeting = lowercase greeting
-  putStrLn $ lowercase_greeting
+toLowerStr :: String -> String
+toLowerStr = map toLower
 ```
 
-出力:
+これを実行すると次のようになります：
+
+```Haskell
+main = print(toLowerStr "Hello World!")
+-- 出力: "hello world!"
 ```
-hello world
-```
 
-# 深く掘り下げる: 
-文字列を小文字に変換する方法は、プログラミング言語やコンテキストによって異なります。Haskellでは、文字列をリストとして扱うことができるため、toLower関数を使用することで文字列を一文字ずつ変換することができます。また、toLower以外にも、toUpper関数を使用することで文字列を大文字に変換することができます。
+## ディープダイブ：
+文字列を小文字に変換する方法は長い歴史があり、多くの方法が存在します。Haskellでは、文字単位で操作を行って文字列全体を変換します。`map`関数と`toLower`関数の組み合わせが一般的です。
 
-他のプログラミング言語では、文字列を直接操作する方法が提供されている場合があります。たとえば、Pythonではstr.lower()メソッドを使用することで、文字列を小文字に変換することができます。
+また、一部の文字列だけを小文字に変換するなど、より細かい制御が必要な場合もあります。そのような場合には、`span`, `break`, `splitAt`などの関数を使用します。
 
-# 関連情報: 
-- Data.Charモジュールのドキュメント: https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-Char.html
-- Pythonの文字列メソッド: https://www.techbeamers.com/python-string-functions/
+Haskellの`toLower`関数は`Data.Char`モジュールに定義されており、Unicode文字をサポートしています。そのため、多言語のテキストでも適切に動作します。
+
+エラーハンドリングについては、この関数は安全です。無効な文字を変換しようとすると、その文字は単に無視されます。
+
+## 参考文献
+以下のリンクでは、Haskellでの文字列操作についてさらに詳しく知ることができます：
+
+1. [Haskell Wiki - String Conversion](https://wiki.haskell.org/String_conversion)
+2. [Haskell Library - Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
+3. [Haskell Documentation - map function](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:map)

@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "PowerShell: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,30 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 现在时间是什么 & 为什么要获取它？
-获取当前日期就是你想要知道当天是几月几号的日期。程序员经常这样做是因为它是一种固定操作，可以在编写代码时将它用作参考。
+## 什么是获取当前日期与为何程序员需要获取当前日期？
+获取当前日期是获取消耗电脑时间的过程。程序员是因为许多原因需要获取当前日期的：日志，任务调度，数据分析，和技术支持，等等。
 
-# 如何：
-使用PowerShell获取当前日期很简单，只需要使用“Get-Date”命令即可。以下是一个示例代码和输出：
+## 如何获取当前日期：使用 PowerShell 示例
+你可以使用 `Get-Date` 命令在 PowerShell 中获取当前日期。以下是使用案例：
 
 ```PowerShell
 Get-Date
 ```
-输出：
-> 2021年9月19日 17:13:03
 
-
-你也可以使用参数来指定日期格式，如下所示：
+运行上述命令后的输出如下：
 
 ```PowerShell
-Get-Date -Format "yyyy-MM-dd"
+Sunday, January 9, 2022 10:05:30 PM
 ```
-输出：
-> 2021-09-19
+## 深入研究
+PowerShell 中获取当前日期的方式有着悠久的历史。自从 PowerShell 1.0 版本开始，微软就为190+个命令提供支持，其中包括 `Get-Date`。对于获取当前日期，我们还有其他替代的命令，如 `.NET` 里面的 `[DateTime]::Now`。不过，处理日期的实现细节，例如日期格式和时区，将会根据你的操作系统和语言设置而略有不同。
 
-# 深入探讨：
-从历史的角度来看，获取当前日期是非常重要的。在传统的编程中，获取当前日期需要编写较长且复杂的代码，而使用PowerShell则简单方便得多。另外，除了使用“Get-Date”命令外，你也可以通过调用.NET框架中的DateTime类来获取日期。
-
-# 另请参阅：
-- [Microsoft官方文档：Get-Date命令](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
-- [Wikipedia：“获取当前日期”](https://en.wikipedia.org/wiki/System_time)
+## 延伸阅读
+1. Microsoft Docs, [Get-Date](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
+2. Stack Overflow, [How to get current datetime on Windows command line, in a suitable format for using in a filename?](https://stackoverflow.com/questions/203090/how-to-get-current-datetime-on-windows-command-line-in-a-suitable-format-for-us)
+3. PowerShell 中文大学，[PowerShell Start-Guide](https://www.pstips.net/powershell-start-guide.html)

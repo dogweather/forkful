@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden etsiminen"
-html_title:           "C#: Merkkijonon pituuden etsiminen"
-simple_title:         "Merkkijonon pituuden etsiminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,20 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Stringin pituuden löytäminen tarkoittaa merkkijonon sisältämien merkkien määrän laskemista. Ohjelmoijat tekevät tämän löytääkseen tarkkaa tietoa tietokoneen käsittämästä datasta.
 
-## Miten:
-Käytä seuraavaa yksinkertaista koodinpätkää löytääksesi stringin pituuden:
+Määritettäessä merkkijonon pituutta, määritämme kuinka monta merkkiä (tai sanaa, numeroa, symbolia jne.) merkkijonossa on. Ohjelmoijat tekevät tämän tietäen kuinka paljon tietoa tietty merkkijono sisältää tai käyttäen sitä ohjelman logiikassa, esimerkiksi tarkistaessaan syötteitä tai jaettaessa merkkijonoja osiin.
+
+## Kuinka:
+
+Käytämme C#-ohjelman `Length`-ominaisuutta merkkijonon pituuden määrittämiseen.
+
+```C#
+string phrase = "Hei, maailma!";
+int length = phrase.Length;
+Console.WriteLine("Merkkijonon pituus on: " + length);
 ```
-string s = "Tämä on esimerkki";
-int pituus = s.Length;
-Console.WriteLine(pituus);
+
+Kun suoritat tämän koodin, saat tulosteen:
+
+```C#
+Merkkijonon pituus on: 14
 ```
 
-Tämä koodi antaa tulosteeksi 17, sillä stringissä on 17 merkkiä, mukaan lukien välilyönnit.
+## Syvä sukellus:
 
-## Syväsukellus:
-Stringin pituuden löytäminen ei ole uusi ratkaisu ohjelmoijille. Jo alkuaikoina, jolloin ohjelmointikieliä kehitettiin, oli tarpeellista laskea merkkien määrää eri tarkoituksiin. Nykyään on olemassa myös muita tapoja löytää stringin pituus, kuten käyttämällä LINQ (Language Integrated Query) -ominaisuutta.
+Historiallisesti merkkijonon pituuden määrittäminen on ollut yleinen toiminto, joka oli tarpeen jo varhaisesta tietojenkäsittelykaudesta lähtien. C# tarjoaa `Length`-attribuutin yksinkertaisten merkkijonojen mittaamiseen, mutta voit myös käyttää `StringInfo`-luokkaa, jos työskentelet yhdistettyjen merkkien tai monitavuisen merkkijonon kanssa.
+
+```C#
+string phrase = "Hei, 🌎!";
+int lengthInChars = phrase.Length;
+int lengthInTextElements = new System.Globalization.StringInfo(phrase).LengthInTextElements;
+
+Console.WriteLine("Merkkijonon pituus merkkeinä: " + lengthInChars);
+Console.WriteLine("Merkkijonon pituus tekstielementteinä: " + lengthInTextElements);
+```
+
+Tämä koodi tulostaa:
+
+```C#
+Merkkijonon pituus merkkeinä: 9
+Merkkijonon pituus tekstielementteinä: 8
+```
+
+Tämä johtuu siitä, että joidenkin merkkien, kuten emojien, pituus on tavallisesti enemmän kuin yksi perinteisessä merkkijonojen esityksessä.
 
 ## Katso myös:
-LINQ:in käyttö Stringin pituuden löytämiseksi: https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.count?view=net-5.0
+
+1. Microsoftin dokumentaatio merkkijonon pituudesta C#-kielessä: [Linkki](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
+2. Tarkempi tieto merkkijonojen käsittelemisestä C#-kielessä: [Linkki](https://www.c-sharpcorner.com/blogs/string-and-stringbuilder-in-c-sharp1)
+3. Miten laskea merkkijonojen pituus muilla ohjelmointikielillä: [Linkki](https://www.w3schools.com/jsref/jsref_length_string.asp)

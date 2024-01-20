@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "C++: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "C++"
 category:             "C++"
@@ -10,55 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porque?
+## O Que & Por Que?
+A conversão de uma string em letras minúsculas é o processo de mudar todas as letras maiúsculas em uma string para as suas respectivas letras minúsculas. Os programadores fazem isso para normalizar os dados de entrada, facilitando a comparação e busca de strings.
 
-Converter uma string para letras minúsculas é um processo em que todas as letras maiúsculas em uma string são transformadas em letras minúsculas. Isso é frequentemente feito por programadores para ajudar a padronizar o texto e torná-lo mais fácil de ser comparado e manipulado.
+## Como Fazer:
+Aqui está um exemplo simples de como você poderia converter uma string em letras minúsculas em C++:
 
-## Como fazer:
-
-Para converter uma string para letras minúsculas em C++, podemos usar a função ```tolower()``` do cabeçalho ```<cctype>```. Aqui está um exemplo de código:
-
-```
+```C++
 #include <iostream>
-#include <cctype>
-using namespace std;
-
-int main() {
-  string texto = "Ola Mundo!";
-  for (int i = 0; i < texto.length(); i++) {
-    texto[i] = tolower(texto[i]);
-  }
-  cout << texto << endl;
-  return 0;
-}
-```
-
-A saída deste código será "ola mundo!". Podemos ver que todas as letras maiúsculas foram convertidas para minúsculas.
-
-## Mergulho Profundo:
-
-Esta não é a única maneira de transformar uma string em letras minúsculas. Outra opção é usar a função ```transform()``` do cabeçalho ```<algorithm>```. Aqui está um exemplo de como usá-lo:
-
-```
-#include <iostream>
-#include <string>
 #include <algorithm>
-using namespace std;
-
+#include <string>
+    
 int main() {
-  string texto = "Ola Mundo!";
-  transform(texto.begin(), texto.end(), texto.begin(), ::tolower);
-  cout << texto << endl;
-  return 0;
+    std::string data = "Texto Exemplo";
+    std::transform(
+        data.begin(), 
+        data.end(), 
+        data.begin(), 
+        ::tolower
+    );
+    std::cout << data;
+    return 0;
 }
 ```
+Ao executar esse código, a saída será: texto exemplo.
 
-A saída também será "ola mundo!". Além disso, é importante notar que ambas as funções também podem lidar com caracteres acentuados e outras línguas além do inglês.
+## Mergulho Profundo
+A conversão de strings em letras minúsculas tem sido uma prática comum desde os primeiros dias de programação. Isso é útil em muitos cenários de programação, como pesquisas de texto, combinação de strings, classificação e muito mais.
 
-## Veja também:
+Em termos de alternativas, você também pode usar um loop for para percorrer cada personagem na string e usar a função `tolower()` nela. Mas, usando `std::transform`, nós obtemos uma solução mais elegante e concisa.
 
-- Para mais informações sobre as funções ```tolower()``` e ```transform()```, consulte a [documentação do C++](https://www.cplusplus.com/).
+Em relação aos detalhes da implementação, a função `std::transform` aplica a função `tolower` a cada caractere na string, imutavelmente. Se o caractere for uma letra maiúscula, `tolower` a transformará em minúscula. Se já for uma minúscula ou um caracter não alfabético, deixará como está.
 
-- Se você estiver trabalhando com strings em outros idiomas, pode ser útil saber mais sobre [codificação de caracteres](https://pt.wikipedia.org/wiki/Codificação_de_caracteres).
+## Veja Também
+Caso você queira se aprofundar, aqui estão alguns links úteis sobre manipulação de string em C++:
 
-Com essas informações, agora você pode facilmente transformar suas strings em letras minúsculas em C++ e usá-las em suas aplicações. Experimente e veja como isso pode facilitar suas tarefas de programação!
+- [Site oficial do C++](http://www.cplusplus.com/reference/string/string/)
+- [Documentação std::transform no cppreference](https://en.cppreference.com/w/cpp/algorithm/transform)
+- [Documentação tolower na página do cplusplus](http://www.cplusplus.com/reference/cctype/tolower/)

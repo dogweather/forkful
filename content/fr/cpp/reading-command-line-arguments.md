@@ -1,6 +1,6 @@
 ---
 title:                "Lecture des arguments de ligne de commande"
-html_title:           "C++: Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
 simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "C++"
 category:             "C++"
@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est et pourquoi?
 
-La lecture des arguments de ligne de commande est une compétence cruciale pour tout programmeur en C++. Elle nous permet de fournir des paramètres à notre programme au moment de son exécution, ce qui le rend personnalisable et plus polyvalent. Grâce à cette capacité, nous pouvons modifier le comportement de notre programme sans avoir à recompiler une nouvelle version à chaque fois.
+Lire les arguments de la ligne de commande consiste à évaluer et utiliser les paramètres que vous entrez lorsque vous exécutez un programme en console. Les programmeurs utilisent cette technique pour personnaliser le comportement du programme sans avoir à modifier le code source.
 
 ## Comment faire:
 
-Voici un exemple simple pour vous montrer comment lire les arguments de ligne de commande en C++:
+Voici comment lire les arguments de la ligne de commande en C++. Commencez par comprendre que `main()` peut prendre deux arguments: `int argc` et `char *argv[]`.
 
 ```C++
-#include <iostream>
+#include<iostream>
+using namespace std;
 
 int main(int argc, char *argv[]) {
-  std::cout << "Le nombre d'arguments est: " << argc << std::endl;
-  for(int i = 0; i < argc; i++) {
-    std::cout << "Argument " << i << ": " << argv[i] << std::endl;
-  }
-  return 0;
+   for(int i = 0; i < argc; i++) {
+      cout << "argv[" << i << "] = " << argv[i] << endl;
+   }
+   return 0;
 }
 ```
 
-Supposons que notre programme s'appelle "myprogram.exe" et que nous l'exécutons avec deux arguments: "param1" et "param2". Voici le résultat que nous obtiendrons:
+Lorsque vous exécutez le programme avec des arguments en ligne de commande (par exemple `./programme arg1 arg2`), il affiche:
 
+```C++
+argv[0] = ./programme
+argv[1] = arg1
+argv[2] = arg2
 ```
-Le nombre d'arguments est: 3
-Argument 0: myprogram.exe
-Argument 1: param1
-Argument 2: param2
-```
 
-## Plongée en profondeur:
+## Plongée profonde
 
-La lecture des arguments de ligne de commande n'est pas une nouveauté dans le monde de la programmation. Cependant, cette capacité est extrêmement utile pour rendre nos programmes plus dynamiques et personnalisables. Il existe également des alternatives à la lecture des arguments de ligne de commande, comme l'utilisation de variables d'environnement ou la création d'interfaces graphiques.
+Historiquement, la lecture des arguments de la ligne de commande est couramment utilisée dans les langages de programmation bas niveau, car elle offre une plus grande flexibilité aux utilisateurs finaux. 
 
-Pour implémenter cette fonctionnalité en C++, nous devons utiliser le paramètre "argc" qui représente le nombre d'arguments passés lors de l'exécution du programme, et le tableau "argv" qui contient les arguments eux-mêmes. Les arguments peuvent être de n'importe quel type, y compris des chaînes de caractères, des nombres ou même des expressions régulières.
+Concernant les alternatives, dans certaines situations, vous pouvez utiliser l'entrée standard (`stdin`) pour obtenir des entrées utilisateur pendant l'exécution du programme. Toutefois, les arguments de la ligne de commande sont plus appropriés pour les options de programme à court terme.
 
-## Voir aussi:
+Le tableau `argv` est un tableau de pointeurs. Chaque élément (de `argv[0]` à `argv[n]`) est un pointeur vers une chaîne de caractères. Le nombre de chaînes (`argc`) est déterminé par le nombre d'arguments entrés en ligne de commande.
 
-Si vous souhaitez en savoir plus sur la lecture des arguments de ligne de commande en C++, vous pouvez consulter ces sources:
+## Voir aussi
 
-- [Documentation C++ sur les arguments de ligne de commande](https://en.cppreference.com/w/cpp/language/main_function)
-- [Tutoriel vidéo sur la lecture des arguments de ligne de commande en C++](https://www.youtube.com/watch?v=S7UYoFnlz-g)
-- [Un article de blog avec des exemples pratiques de lecture des arguments de ligne de commande en C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/)
+Voici des liens pratiques pour vous plonger dans le sujet:
+
+- Guide pour les débutants sur l'interaction avec le système d'exploitation : https://www.learn-coding.org/
+- Information plus détaillée sur les arguments de la ligne de commande: https://www.learncpp.com/cpp-tutorial/command-line-arguments/
+- Comparaison entre entrée standard et arguments de la ligne de commande: https://stackoverflow.com/questions/366437/arguments-or-input-stream

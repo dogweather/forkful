@@ -1,7 +1,7 @@
 ---
-title:                "Verifica dell'esistenza di una cartella"
-html_title:           "Ruby: Verifica dell'esistenza di una cartella"
-simple_title:         "Verifica dell'esistenza di una cartella"
+title:                "Verifica se una directory esiste"
+html_title:           "Lua: Verifica se una directory esiste"
+simple_title:         "Verifica se una directory esiste"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,26 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
-Verificare se una directory esiste è un'operazione comune nella programmazione. Consiste nel verificare se una certa directory è presente all'interno del sistema operativo. I programmatori lo fanno per essere sicuri che il loro codice funzioni correttamente con le risorse del sistema.
+## Cos'è & Perché? (What & Why?)
 
-## Come fare:
+Verificare se una directory esiste è un'operazione che consiste nel controllare se una determinata directory è presente o meno sul filesystem. I programmatori lo fanno per evitare errori di runtime cercando di accedere a directory che potrebbero non esistere.
+
+## Come fare: (How to)
+
+Ruby fornisce un modo molto diretto per controllare se una directory esiste tramite il suo modulo integrato 'File'. Ecco come:
+
 ```Ruby
-if Dir.exist?('/path/to/directory') 
-  puts "La directory esiste!"
+if File.directory?("/path/to/directory")
+  puts "La directory esiste."
 else
   puts "La directory non esiste."
 end
 ```
 
-Il codice sopra utilizza il metodo ```Dir.exist?``` con il percorso della directory come argomento. Questo metodo restituirà ```true``` se la directory esiste e ```false``` se non esiste. 
+Se la directory a '/path/to/directory' esiste, verrà stampato "La directory esiste.", altrimenti "La directory non esiste.".
 
-## Approfondimento:
-Verificare l'esistenza di una directory è diventato più importante con l'uso di computer e dispositivi portatili. Prima dell'avvento dei sistemi operativi, i programmi erano progettati per fingere l'esistenza di una directory e semplicemente creare una se necessario. Tuttavia, con la crescita delle reti e dei dispositivi di archiviazione, è diventato importante garantire l'esistenza di una directory prima di creare o accedere ai file in essa contenuti.
+## Approfondimento (Deep Dive)
 
-In alternativa, alcuni programmatori potrebbero scegliere di gestire il codice di errore generato da un tentativo di accesso a una directory inesistente. Tuttavia, questo approccio richiede più code e può rendere il codice più complicato e meno efficiente.
+Il metodo `File.directory?` è presente in Ruby da tempo. Capire come funziona può aiutarti a scrivere codice più solido e a prevenire errori potenziali.
 
-Per verificare se una directory esiste, Ruby utilizza il metodo ```File::Stat.exist?```. Questo metodo utilizza la libreria di sistema "stat", che restituisce informazioni dettagliate sulle risorse del sistema, inclusa l'esistenza di una directory specifica.
+In realtà, ci sono altre due strade che puoi percorrere per raggiungere lo stesso risultato. La prima è tramite la classe `Dir`. Puoi usare il metodo `Dir.exist?` in questo modo:
 
-## Vedi anche:
-Per ulteriori informazioni sul metodo ```Dir.exist?``` e su come gestire le directory in Ruby, consulta la documentazione ufficiale di Ruby su [Dir](https://ruby-doc.org/core-2.7.1/Dir.html) e [File::Stat](https://ruby-doc.org/core-2.7.1/File/Stat.html). Inoltre, puoi trovare utili informazioni sulle directory e su come gestirle su [Stack Overflow](https://stackoverflow.com/questions/tagged/ruby+directory).
+```Ruby
+if Dir.exist?("/path/to/directory")
+  puts "La directory esiste."
+else
+  puts "La directory non esiste."
+end
+```
+
+La seconda via alternativa è tramite il modulo `FileTest` che fornisce il metodo `.directory?`:
+
+```Ruby
+if FileTest.directory?("/path/to/directory")
+  puts "La directory esiste."
+else
+  puts "La directory non esiste."
+end
+```
+
+Rubato dal Javascript, Ruby ha ora asincronicità, dunque sarebbe possibile creare un metodo di verifica della directory esistenza in modo asincrono.
+
+## Per Saperne Di Più (See Also)
+
+* [Documentazione ufficiale Ruby per File.directory?](https://ruby-doc.org/core-3.0.0/File.html#method-c-directory-3F)
+* [Ruby API per Dir.exist?](https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F)
+* [Metodo Ruby FileTest.directory?](https://ruby-doc.org/core-3.0.0/FileTest.html#method-c-directory-3F)

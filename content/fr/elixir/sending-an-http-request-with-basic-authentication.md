@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http avec une authentification de base"
-html_title:           "Elixir: Envoi d'une requête http avec une authentification de base"
-simple_title:         "Envoi d'une requête http avec une authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,29 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi et Pourquoi ?
 
-Envoyer une requête HTTP avec une authentification de base est une façon sécurisée d'accéder à des données sur un serveur distant. Les programmeurs utilisent cette méthode lorsqu'ils ont besoin d'échanger des informations sensibles entre deux systèmes.
+Envoie d'une requête HTTP avec authentification de base, ceci signifie coder votre identifiant et mot de passe en base64 et l'envoyer en tant que partie de votre requête HTTP. Les développeurs le font souvent pour interagir avec des API qui exigent cette forme d'authentification.
 
-## Comment faire:
+## Comment Faire :
 
-Voici un exemple de code pour envoyer une requête HTTP avec une authentification de base en utilisant Elixir:
+Utiliser HTTPoison pour envoyer une requête GET. HTTPoison est une bibliothèque Elixir simple et rapide pour envoyer des requêtes HTTP.
 
-```Elixir
-require HTTPoison
-HTTPoison.get("https://exemple.com/api", [], [basic_auth: {"utilisateur", "mot de passe"}])
+```elixir
+defmodule BasicAuth do
+  @moduledoc """
+  Module for handling Basic Auth in HTTP requests.
+  """
+
+  def send_request(url, username, password) do
+    headers = basic_auth_header(username, password)
+    HTTPoison.get(url, headers)
+  end
+
+  defp basic_auth_header(username, password) do
+    auth = "#{username}:#{password}"
+    basic_auth = Base.encode64(auth)
+    [{"Authorization", "Basic #{basic_auth}"}]
+  end
+end
 ```
 
-Output: Le serveur distant retournera la réponse attendue pour la requête, mais avec une connexion sécurisée grâce à l'authentification de base.
+Exemple de sortie:
 
-## Plongée en profondeur:
+```elixir
+{:ok, %HTTPoison.Response{status_code: 200, body: response_body}}
+```
 
-L'authentification de base est un protocole de sécurité de base pour accéder à des ressources en ligne. Il a été introduit dans les années 1990 et fonctionne en envoyant un nom d'utilisateur et un mot de passe en clair à chaque requête. Bien que cette méthode soit considérée comme moins sécurisée que d'autres formes d'authentification comme OAuth, elle est toujours largement utilisée en raison de sa simplicité et de sa compatibilité avec de nombreux serveurs.
+## Plongée Profonde :
 
-Alternativement, les programmeurs peuvent utiliser des méthodes plus avancées comme l'authentification via token ou l'utilisation d'une clé API pour sécuriser leurs requêtes HTTP.
+Historiquement, l'authentification de base a été utilisée pour la première fois en 1994 dans le protocole HTTP. C'est une méthode couramment utilisée, mais pas la plus sécurisée en raison de son manque de chiffrement. 
 
-## Voir Aussi:
+En alternative à l'authentification de base, on peut utiliser l'authentification par le porte-jeton ou `Bearer Token Authentication`. Elle est généralement utilisée pour les API REST car elle est plus simple et plus sécurisée.
 
-Pour en savoir plus sur l'authentification de base et les alternatives, vous pouvez consulter les ressources suivantes:
-- [RFC pour l'authentification de base](https://tools.ietf.org/html/rfc2617)
-- [Comparaison des différentes méthodes d'authentification pour les requêtes HTTP](https://www.topcoder.com/blog/understanding-oauth-vs-basic-authentication/)
+Le détail de mise en œuvre dans Elixir inclut l'utilisation de `HTTPoison`, qui est basé sur la bibliothèque Erlang `hackney`. Il vous suffit d'encoder l'identifiant et le mot de passe en utilisant `Base.encode64` et les inclure dans le header de la requête HTTP.
+
+## Voir Aussi :
+
+1. La documentation officielle de HTTPoison : [https://hexdocs.pm/httpoison/readme.html](https://hexdocs.pm/httpoison/readme.html)
+2. Plus de détails sur l'authentification de base : [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#basic_authentication)
+3. Guide de l'authentification Référentiel : [https://jwt.io/introduction/](https://jwt.io/introduction/)

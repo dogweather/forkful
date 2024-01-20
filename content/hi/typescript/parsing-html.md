@@ -1,7 +1,7 @@
 ---
-title:                "HTML को विश्लेषण करना"
-html_title:           "TypeScript: HTML को विश्लेषण करना"
-simple_title:         "HTML को विश्लेषण करना"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# पार्सिंग HTML क्या होता है और क्यों किया जाता है?
-पार्सिंग HTML का मतलब है HTML को समझना और उसमें से डेटा को अलग करना। वह कंप्यूटर भाषा होती है जिसका उपयोग वेब पेज्स को बनाने और प्रदर्शित करने के लिए होता है। पार्सिंग एक अहम् काम है क्यूंकि वह आमतौर पर अवधारणा होता है की कैसे कोड को समझा जाना चाहिए।
+## "क्या और क्यों?"
 
-# कैसे करें:
+HTML पार्सिंग, एचटीएमएल कोड को उसके संघटकों में तोड़ने की प्रक्रिया होती है ताकि हम उस पर काम कर सकें। कार्यक्रमकर्ताओं को इसकी आवश्यकता होती है ताकि वे हमेशा HTML में डेटा और सूचना का पता लगा सकें, और इन जानकारियों को उपयोग करके वेब एप्लिकेशनों को बेहतर बनाने के लिए कोड कर सकें।
+
+## "कैसे करें:" 
+
 ```TypeScript
-const html = `<!DOCTYPE html>
-<html>
-<head>
-<title>My Website</title>
-</head>
-<body>
-<h1>Welcome to my website!</h1>
-<p>This is a sample website made with HTML.</h1>
-</body>
-</html>`;
+import { parse } from 'fast-html-parser';
 
-const parser = new DOMParser();
-const doc = parser.parseFromString(html, 'text/html');
+const html = '<div class="myClass">Hello World!</div>';
 
-console.log(doc.title); // Output: My Website
-console.log(doc.body.innerHTML); // Output: <h1>Welcome to my website!</h1> <p>This is a sample website made with HTML.</h1>
+let root = parse(html);
+
+console.log(root.querySelector('.myClass').rawText); 
+// Output: Hello World!
 ```
+इस कोड का उपयोग करके, हम HTML दस्तावेज़ को पार्स कर सकते हैं और फिर हमें जो तत्व चाहिए होता है उसे ढूँढ़ने के लिए ऐसी querySelector जैसी मेथड का उपयोग कर सकते हैं।
 
-# गहराई में पढ़ें:
-पार्सिंग HTML की शुरुआत 1993 में डीएमके (वर्ल्ड वाइड वेब) के संस्थान (CERN) द्वारा स्टेव बर्स और टिम बर्नर्स आदि द्वारा प्रयोजनों को संचित करने के लिए की गई। विकल्प हैं जो पार्सिंग HTML की जगह काम करते हैं, जैसे की एक्सएमएल बेस संस्थापित, साथ ही एक दूसरे प्रारंभिक पंजीयन संस्थापित। पार्सिंग HTML की विस्तृत जानकारी के लिए, फ़ायरफॉक्स, गूगल क्रोम और इंटरनेट एक्स्प्लोरर जैसे ब्राउज़र के उपयोग की अवधारणा को समझने में मदद की जा सकती है।
+## "गहरी जानकारी"
 
-# देखें भी:
-- [MDN डॉक्यूमेंटेशन - HTML पार्सिंग](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-- [पार्सिंग HTML के बारे में अधिक जानकारी के लिए कार्नेल विज्ञान ब्लॉग](https://www.kernel.org/blogs/)
+HTML पार्सिंग का पहला उदाहरण 1990 के दशक के बाद से देखा जा सकता है, जब WWW खोलने के बाद पहली बार इसकी आवश्यकता पाई गई।
+
+'fast-html-parser' के अलावा भी, 'htmlparser2', 'cheerio' जैसे अन्य लाइब्रेरी भी हैं जो HTML पार्सिंग की सहायता करते हैं।
+
+पार्सर का काम HTML को DOM (Document Object Model) में बदलना होता है। DOM एक ऑब्जेक्ट-आधारित मॉडल होता है जिसमें HTML दस्तावेज़ को नोड्स और ऑब्जेक्ट्स के रूप में दर्शाया जाता है।
+
+## "देखने के लिए और"
+
+ज्यादा जानकारी के लिए, नीचे दिए गए स्रोतों की जांच करें:
+
+- [MDN - HTML Parsing](https://developer.mozilla.org/en-US/docs/Glossary/HTML_parser)
+- [Fast HTML Parser](https://www.npmjs.com/package/fast-html-parser)
+- [Cheerio.js](https://cheerio.js.org/)
+- [htmlparser2](https://www.npmjs.com/package/htmlparser2)

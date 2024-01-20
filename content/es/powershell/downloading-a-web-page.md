@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "PowerShell: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Descarga páginas web con PowerShell!
+#Descargando una Página Web con PowerShell
 
-Puede que hayas oído hablar de "descarga de páginas web" y te preguntes ¿qué significa eso exactamente? Básicamente, descargar una página web significa guardar su contenido en tu computadora desde internet. Los programadores lo hacen por varias razones, ya sea para analizar el contenido de la página, automatizar la descarga de archivos o simplemente para tener una copia de seguridad en caso de que la página se elimine en el futuro.
+## ¿Qué y Por qué?
 
-## Cómo:
+"Descargar una página web” significa recuperar el código HTML de la página. Los programadores lo hacen por muchas razones, incluida la recopilación de datos para análisis o automatizando interacciones con la web.
 
-Descargar una página web usando PowerShell es muy sencillo. Todo lo que necesitas es usar la función **Invoke-WebRequest** y proporcionar la URL de la página que deseas descargar. Por ejemplo:
+## ¿Cómo hacerlo?
 
-```
-PowerShell Invoke-WebRequest https://www.ejemplo.com
-```
+Para descargar una página web con PowerShell, puedes usar el cmdlet `Invoke-WebRequest`. Aquí tienes un ejemplo de cómo hacerlo:
 
-Esto descargará la página web y te mostrará una respuesta HTTP con el código de estado y el contenido de la página.
-
-Puedes guardar el contenido de la página en un archivo usando el parámetro **OutFile**. Por ejemplo, si quieres guardar la página en un archivo llamado "pagina.html", puedes usar el siguiente comando:
-
-```
-PowerShell Invoke-WebRequest https://www.ejemplo.com -OutFile pagina.html
+```PowerShell
+$url= "http://tuweb.com"
+$paginaWeb = Invoke-WebRequest -Uri $url
+echo $paginaWeb.Content
 ```
 
-¡Y eso es todo! Ahora tienes una copia de la página web en tu computadora.
+Esto imprimirá en la consola el contenido HTML de la página. 
 
-## Inmersión profunda:
+## Plongee
 
-La descarga de páginas web ha sido una técnica utilizada por los desarrolladores y programadores desde los primeros días de internet. Anteriormente, se usaban otras herramientas como **cURL** o **wget** para hacerlo, pero con PowerShell podemos hacerlo de manera más fácil y rápida.
+## Un vistazo al pasado
+PowerShell se introdujo en 2006 e incorporó el cmdlet `Invoke-WebRequest` en la versión 3.0 que salió en 2012. Desde entonces, se ha convertido en una herramienta esencial para los programadores que trabajan con la web.
 
-Además de descargar páginas web completas, también puedes descargar archivos específicos de una página usando PowerShell. Por ejemplo, si quieres descargar todos los archivos PDF de un sitio web, puedes usar el comando *-Filter* con **Invoke-WebRequest** para especificar el tipo de archivo que deseas descargar.
+## Alternativas
+Existen muchas alternativas para descargar una página web, incluyendo librerías y módulos en otros lenguajes de programación, como `urllib` en Python o` http` en Node.js.
 
-## Ver también:
+## Detalles de implementación
+Cuando ejecutas `Invoke-WebRequest` en PowerShell, el sistema enviará una solicitud HTTP GET al servidor del URL proporcionado. Luego el servidor responderá con el documento HTML de la página web, que será accesible a través de la propiedad `Content` que mostramos en el ejemplo.
 
-- [Documentación oficial de Microsoft sobre Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
-- [Tutorial en vídeo sobre cómo descargar páginas web con PowerShell](https://www.youtube.com/watch?v=BCYhLEyNDYc)
-- [Alternativa de descarga de páginas web utilizando otras herramientas de línea de comandos](https://www.lifewire.com/download-entire-website-command-line-3482184)
+## Ver También
+
+- [Documentación oficial de `Invoke-WebRequest`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+- [Artículo adicional sobre descarga de archivos con PowerShell](http://www.powershellpro.com/powershell-tutorial-introduction/utilities-web-requests/)
+- [Tutorial en video sobre scrapping con PowerShell](https://www.youtube.com/watch?v=q2e97d2Y0gY)
+
+Nota que PowerShell es una herramienta poderosa que facilita las tareas de programación. Recuerda siempre usarla respentado las políticas de privacidad y los términos de uso de los sitios web que accedes. ¡Diviértete programando!

@@ -1,7 +1,7 @@
 ---
-title:                "컴퓨터 프로그래밍: 명령줄 인수 읽기"
-html_title:           "Swift: 컴퓨터 프로그래밍: 명령줄 인수 읽기"
-simple_title:         "컴퓨터 프로그래밍: 명령줄 인수 읽기"
+title:                "명령줄 인수 읽기"
+html_title:           "Arduino: 명령줄 인수 읽기"
+simple_title:         "명령줄 인수 읽기"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,31 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 이게 뭐고 왜 필요해?
+## 왜 & 왜?
+명령행 인수를 읽는다는 것은, 프로그램이 OS로부터 명령행에 입력된 인수를 읽는 것입니다. 왜냐하면 이것은 사용자가 실행 시에 프로그램에 정보를 전달하게 해주기 때문입니다.
 
-커맨드 라인 인수 읽기는 프로그래밍에서 사용되는 기술로, 프로그램을 실행시킬 때 입력한 인수를 읽어와서 프로그램에서 사용할 수 있도록 해줍니다. 이를 통해 사용자가 프로그램을 사용할 때 입력한 값을 받아올 수 있게 됩니다.
+## 이렇게 해보세요:
+Swift에서 명령행 인수를 읽는 가장 간단한 방법은 `CommandLine.arguments` 배열을 사용하는 것입니다. 
 
-# 방법:
-
-```swift
-import Foundation
-
-// Step 1: main 함수에서 command line arguments 읽기
+```
+Swift
 let arguments = CommandLine.arguments
-
-// Step 2: arguments 출력하기
-print("입력한 인수는 \(arguments) 입니다.")
+print("이 프로그램은 다음의 인수와 함께 실행되었습니다.: \(arguments)")
 ```
 
-# 깊이 있는 정보
+이 코드를 실행하면 이렇게 출력됩니다:
 
-(1) 커맨드 라인 인수 읽기는 과거에는 C 언어에서 많이 사용되었지만, 현재는 Swift와 같은 현대적인 언어들에서도 많이 사용되고 있습니다.
+```
+$ swift my_program.swift 첫번째_인수 두번째_인수
+이 프로그램은 다음의 인수와 함께 실행되었습니다.: ["my_program.swift", "첫번째_인수", "두번째_인수"]
+```
 
-(2) 커맨드 라인 인수를 읽는 방법 외에도 환경 변수를 읽는 방법이 있습니다. 이는 arguments와 유사하게 사용할 수 있지만, arguments는 프로그램 실행 시에만 유효한 값이고, 환경 변수는 시스템 전체에서 유효한 값입니다.
+## 깊게 살펴보기
+명령행 인수에 대해 더 깊게 알아보기 전에, 이것의 역사적 맥락을 이해하는 것이 중요합니다. 이글은 Unix에서 시작해 C언어로부터 물려받았습니다. 
 
-(3) CommandLine 클래스를 사용하여 arguments를 읽어올 수 있지만, low-level의 C API를 사용하는 방법도 있습니다.
+또한 Swift에는 명령행 인수 외에도 다양한 사용자 입력 방법이 있습니다. 예를 들어, 표준 입력(`stdin`)을 읽는 것은 `readLine()` 함수를 사용하여 가능합니다.
 
-# 더 알아보기
+대안으로, ArgumentParser 라이브러리 사용을 고려할 수 있습니다. 이 라이브러리는 POSIX와 GNU 스타일의 명령줄 인자를 파싱하고 검증하는 훌륭하고 유연한 방법을 제공합니다.
 
-- [CommandLine Class Documentation](https://developer.apple.com/documentation/foundation/commandline)
-- [Swift.org](https://swift.org/)
+구현 세부사항을 이해하는 것도 중요합니다. `CommandLine.arguments`는 문자열 배열이며, 각 인수는 공백으로 분리된 문자열로 처리됩니다. 따라서 공백이 포함된 인수는 따옴표(" ")로 묶어야 합니다.
+
+## 참고 자료
+- [공식 Swift 문서](https://developer.apple.com/documentation/swift/commandline)
+- [ArgumentParser 라이브러리](https://github.com/apple/swift-argument-parser)
+- [Swift의 입/출력에 대한 세부적인 설명](http://alisoftware.github.io/swift/command-line/2016/04/09/command-line/)

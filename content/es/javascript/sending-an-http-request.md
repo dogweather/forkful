@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Javascript: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Enviar una solicitud HTTP es una forma en que los programadores pueden comunicarse con servidores web. Esto les permite obtener información o realizar acciones en el servidor. Los programadores a menudo usan solicitudes HTTP para crear sitios web interactivos o aplicaciones basadas en la web.
+## ¿Qué & por qué?
+
+El envío de una solicitud HTTP en Javascript es cuando tu código solicita datos de un servidor. Los programadores lo hacen para obtener o enviar datos de/a ubicaciones web.
 
 ## Cómo hacerlo:
-```javascript
-const request = new XMLHttpRequest();
-request.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    console.log(this.responseText);
-  }
-};
-request.open("GET", "https://example.com");
-request.send();
+
+Javascript proporciona varias formas de hacer solicitudes HTTP, como `fetch`, `axios` y `XMLHttpRequest`. Aquí te muestro cómo usar `fetch`:
+
+```Javascript
+fetch('https://api.miweb.com/datos')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.log('¡Error!', error));
 ```
 
-Este ejemplo usa la función `XMLHttpRequest` para crear una nueva solicitud. Luego, se establece una función de devolución de llamada para manejar la respuesta del servidor. Finalmente, se especifica el tipo de solicitud y la URL del servidor, y se envía la solicitud.
+¡Eso es todo! Ejecutar este código imprimirá los datos recibidos del servidor en tu consola.
 
-El resultado devuelto por el servidor se puede ver en la consola utilizando `console.log(this.responseText)`.
+## Más a fondo
 
-## Inmersión Profunda:
-La función `XMLHttpRequest` fue introducida en 1999 por Microsoft para permitir que Internet Explorer se comuniquen con servidores web. Sin embargo, en 2006, se estandarizó como parte de la especificación del objeto `XMLHttpRequest`.
+Historia: La necesidad de enviar solicitudes HTTP ha existido desde que la web empezó a ser interactiva. Inicialmente se usaba XMLHttpRequest, pero con el tiempo se desarrollaron alternativas más modernas y amigables con el desarrollador.
 
-Hay otras formas de realizar solicitudes HTTP, como utilizando la API `fetch` o bibliotecas de terceros como Axios o jQuery. Sin embargo, `XMLHttpRequest` sigue siendo ampliamente utilizado debido a su compatibilidad con navegadores antiguos.
+Alternativas: Como mencioné antes, `fetch` es una forma de enviar una solicitud HTTP en Javascript, pero alternativas como `axios` te dan características adicionales, como el soporte de versiones antiguas de navegador, el progreso de la carga y la capacidad para cancelar solicitudes.
 
-## Ver También:
-- [Documentación de MDN sobre XMLHttpRequest](https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest)
-- [Especificación de XMLHttpRequest](https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest/XMLHttpRequest)
-- [Documentación de MDN sobre la API Fetch](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
+Implementación: `fetch` es una Promise, lo que significa que trabaja con operaciones asíncronas. Primero intenta recuperar los datos y luego, si tiene éxito, maneja los datos. Si algo va mal, va al bloque `catch` y maneja el error.
+
+## Ver también
+
+- [Fetch API en MDN](https://developer.mozilla.org/es/docs/Web/API/Fetch_API)
+- [Axios en GitHub](https://github.com/axios/axios)
+- [XMLHttpRequest en MDN](https://developer.mozilla.org/es/docs/Web/API/XMLHttpRequest)

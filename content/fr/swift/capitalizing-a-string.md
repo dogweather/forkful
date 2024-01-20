@@ -1,7 +1,7 @@
 ---
-title:                "Majuscule d'une chaîne de caractères"
-html_title:           "Swift: Majuscule d'une chaîne de caractères"
-simple_title:         "Majuscule d'une chaîne de caractères"
+title:                "Mettre en majuscule une chaîne"
+html_title:           "Swift: Mettre en majuscule une chaîne"
+simple_title:         "Mettre en majuscule une chaîne"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,32 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que la capitalisation d'un string et pourquoi les programmeurs le font-ils?
+## Quoi & Pourquoi ?
 
-La capitalisation d'un string fait référence au fait de mettre en majuscules la première lettre d'un mot ou d'une phrase. Elle est souvent utilisée pour améliorer la lisibilité et la cohérence dans un programme. Par exemple, en capitalisant les noms de variables et de fonctions, il est plus facile de distinguer ces éléments du reste du code.
+Mettre en majuscule une chaîne de caractères signifie convertir la première lettre de chaque mot en majuscule. Les programmeurs utilisent souvent cette méthode pour rendre les sorties de texte plus lisibles et plus professionnelles.
 
-## Comment faire:
+## Comment faire :
 
-Voici deux manières courantes de capitaliser un string en Swift:
+Voici un simple exemple de mise en majuscule d'une chaîne en Swift :
 
 ```Swift
-// Utiliser la méthode capitalize() sur une String pour capitaliser la première lettre
-let name = "pierre"
-print(name.capitalize())  // "Pierre"
+let phrase = "bonjour le monde"
+let capitalizedPhrase = phrase.capitalized
+print(capitalizedPhrase)
+```
+Cela produira l'affichage :
 
-// Utiliser la méthode uppercased() sur une String pour mettre en majuscules toutes les lettres
-let message = "bonjour tout le monde"
-print(message.uppercased())  // "BONJOUR TOUT LE MONDE"
+```Swift
+"Bonnejour Le Monde"
 ```
 
-## Plongée en profondeur:
+## Plongée Profonde 
 
-La capitalisation des strings est une pratique courante dans de nombreux langages de programmation. Elle aide à rendre le code plus lisible et à éviter les erreurs en distinguant clairement les différents éléments. De plus, en utilisant des conventions de capitalisation cohérentes, il est plus facile de travailler en équipe sur un projet.
+Mettre en majuscule une chaîne était une pratique courante dans les journaux imprimés pour mettre en évidence les titres. En Swift, l'opération est simple avec la propriété `capitalized` de la classe `String`.
 
-Il existe également d'autres méthodes pour capitaliser un string en Swift, telles que `capitalized(with:)`, qui permet de spécifier une locale pour la capitalisation. De plus, certains programmeurs préfèrent utiliser des bibliothèques externes dédiées à la manipulation des strings, telles que SwiftString ou Stringly.
+Alternativement, vous pouvez utiliser la fonction `uppercased()` pour convertir toutes les lettres en majuscules, pas seulement la première lettre de chaque mot.
 
-## Voir aussi:
+```Swift
+let phrase = "bonjour le monde"
+let upperCasedPhrase = phrase.uppercased()
+print(upperCasedPhrase)
+```
 
-- [Documentation officielle de Swift sur la manipulation des strings](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [SwiftString - une bibliothèque open-source pour la manipulation de strings en Swift](https://github.com/amayne/SwiftString)
-- [Stringly - une autre bibliothèque dédiée à la manipulation des strings en Swift](https://github.com/nvzqz/Stringly)
+Cela produira l'affichage :
+
+```Swift
+"BONJOUR LE MONDE"
+```
+Sachez que ces méthodes ne modifient pas la chaîne originale car les chaînes en Swift sont immuables.
+
+## Voir Aussi 
+
+Pour en savoir plus sur la manipulation des chaînes en Swift, consultez le [guide officiel de Apple](https://developer.apple.com/documentation/swift/string). 
+Les [documents de la Fondation Swift](https://developer.apple.com/documentation/foundation/nsstring) expliquent également de nombreux détails d'implémentation supplémentaires.

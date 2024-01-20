@@ -10,70 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Lataaminen tarkoittaa verkkosivun tallentamista omalle tietokoneelle tai laitteelle. Tätä tehdään yleensä ohjelmoidessa, jotta voitaisiin käsitellä verkkosivuston sisältöä tai käyttää sitä muissa tarkoituksissa.
+## Mikä & Miksi?
 
-## Kuinka tehdä:
-Seuraavassa on esimerkkejä koodista ja tulosteista ```C# ... ``` koodilohkossa.
+Web-sivun lataaminen on prosessi, jossa tietokone hakee ja tallentaa verkkosivun tiedot. Ohjelmoijat tekevät sen hakiessaan tai kerätessään tietoa verkosta.
 
-### Esimerkki 1:
-```
+## Miten:
+
+Katsotaanpa esimerkkiä, jossa käytetään `HttpClient` luokkaa:
+
+```C#
 using System;
-using System.Net;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-string url = "https://www.example.com";
-using (WebClient client = new WebClient())
+class Program
 {
-    string html = client.DownloadString(url);
-    Console.WriteLine(html);
+    private static readonly HttpClient client = new HttpClient();
+
+    static async Task Main()
+    {
+        var url = "http://example.com";
+        var responseString = await client.GetStringAsync(url);
+        Console.WriteLine(responseString);
+    }
 }
 ```
-Tuloste:
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Example Domain</title>
 
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+Ohjelma hakee sisällön osoitteesta `http://example.com` ja tulostaa sen konsoliin.
 
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.</p>
-    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
-```
 
-### Esimerkki 2:
-```
-using System;
-using System.Net;
+## Syvempää keskustelua:
 
-string url = "https://www.example.com";
-using (WebClient client = new WebClient())
-{
-    client.DownloadFile(url, "example.html");
-    Console.WriteLine("Verkkosivu ladattu onnistuneesti!");
-}
-```
-Tuloste:
-```
-Verkkosivu ladattu onnistuneesti!
-```
-
-## Syventävää tietoa:
-Lataaminen verkkosivuilta on ollut olennainen osa ohjelmointia alusta alkaen. Sillä on monia erilaisia käyttötarkoituksia, kuten tiedon kerääminen, web-sovellusten testaus ja verkkosisältöjen tallentaminen offline-käyttöä varten.
-
-On olemassa myös muita tapoja ladata verkkosivuja, kuten käyttämällä HTTP-kutsuja suoraan ja käyttämällä erilaisia kirjastoja ja työkaluja. Suositeltavin tapa riippuu käyttötarkoituksesta ja omista mieltymyksistäsi.
-
-Yllä oleva koodi esimerkki käyttää WebClient- ja DownloadString-metodeja. WebClient on osa .NET Frameworkia ja tarjoaa yksinkertaisen tavan ladata verkkosivuja. DownloadString-metodi tallentaa verkkosivun sisällön muuttujaan, jota voidaan käsitellä halutulla tavalla.
+- Historiallinen konteksti: Alun perin verkkosivujen lataaminen tehtiin käyttäen `WebRequest` / `WebResponse` -luokkia. Myöhemmin `HttpClient` esiteltiin yksinkertaistamaan ja parantamaan tätä prosessia.
+  
+- Vaihtoehdot: Muita vaihtoehtoja ovat kolmansien osapuolien kirjastot, kuten `RestSharp` tai `Flurl.Http`, jotka tarjoavat lisäominaisuuksia ja yksinkertaisemman käyttöliittymän.
+  
+- Toteutuksen yksityiskohdat: `HttpClient.GetStringAsync` -metodin takana tapahtuu paljon. Se luo HTTP GET -pyynnön määriteltyyn URL-osoitteeseen, odottaa vastausta, lataa vastauksen sisällön ja palauttaa sen merkkijonona.
 
 ## Katso myös:
-- [MSDN - WebClient Class (Englanniksi)](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netframework-4.7.2)
-- [W3Schools - C# Download File (Englanniksi)](https://www.w3schools.com/cs/cs_ref_webclient.asp)
+
+- Microsoftin dokumentaatio HttpClient:ille: https://docs.microsoft.com/fi-fi/dotnet/api/system.net.http.httpclient
+- Tutkittava blogikirjoitus HttpClientin käytöstä: https://johnthiriet.com/efficient-api-calls/
+- Lisää tietoa web-satunnaisten käytöstä c#:ssa: https://www.pluralsight.com/courses/csharp-httpfundamentals

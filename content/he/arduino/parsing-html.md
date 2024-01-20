@@ -1,7 +1,7 @@
 ---
-title:                "פריסת HTML"
-html_title:           "Arduino: פריסת HTML"
-simple_title:         "פריסת HTML"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,30 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## מה ולמה?"
-תבינו, לפעמים מתקתקים על קטעי קוד חברותיים באנגלית, ונדרשים להשתמש בכלים שלא ממש ביתיים לנו. אחד המילים שבאופן נפוץ ומסומן בצפן הוא "היסתברות". אז מה זה פירוש המילה הזו? היסתברות מתארת את התהליך של כתיבה או קריאת מידע מפורמט ספציפי, במקרה הזה הוא פורמט HTML. כאשר שולטים ביכולות ההיסתברות, ניתן לקרוא או לכתוב מידע מכל מקור HTML.
+## מה זה ולמה?
 
-באופן כללי, תהליך ההיסתברות מאפשר עבודה עם מידע מסוגים שונים ומקל על התאמה של קוד לפורמטים שונים. כאשר מדובר בשימוש במיקרו-בקרים כמו ארדואינו, תהליך ההיסתברות מאפשר לנו להתאים מידע שינויים ולהשתמש בקודים שונים בצורה בלתי יאומנית.
+עיבוד HTML הוא התהליך של קריאת קוד HTML והמרתו למבנה מידע שיכול להיות מנוהל על ידי תוכנה. אנו עובדים HTML כדי לאפשר לנו להבין את מידע האתר. 
 
-"## איך לעשות?"
-ארדואינו מציע לנו כמה הסברים לגבי היסתברות בדף המסייע שלו. הנה דוגמא פשוטה של יישום של היסתברות תחת הכותרת בארד:
+## איך:
 
-```arduino
-String html = "<html><head></head><body><h1>Hello, world!</h1></body></html>";
-int startIndex = html.indexOf("<h1>");
-int endIndex = html.indexOf("</h1>");
-String result = html.substring(startIndex+4, endIndex);
-Serial.println(result); // פלט: Hello, world!
+באמצעות Arduino Ethernet Library, נוכל לנתח HTML מאתרי אינטרנט. עם כמה שורות של קוד, אנו משיגים את זה:
+
+```Arduino
+#include <Ethernet.h>
+
+EthernetClient client;
+
+void setup() {
+  Serial.begin(9600);
+  
+  if (Ethernet.begin(mac) == 0) {
+    Serial.println("Failed to configure Ethernet using DHCP");
+    for(;;)
+      ;
+  }
+}
+
+void loop() {
+  if (client.connect(server, 80)) {
+    client.println("GET / HTTP/1.0");
+    client.println();
+  }
+  else {
+    Serial.println("connection failed");
+  }
+
+  while(client.connected()) {
+    if(client.available()) {
+      char c = client.read();
+      Serial.print(c);
+    }
+  }
+  
+  client.stop();
+}
 ```
 
-כאשר יצרנו מחרוזת HTML מכפתור על פני הפרופסר עם תוכן "Hello, world!", ניתן לקרוא את הנתונים שהכתובות של התיבות והמידע הן חלק המובהק של המידע הזה. כיוון שהכל כתוב בצורה גמישה, ניתן למצוא את המידע של התיבות המתאימות כדי לכתוב או לקרוא את הנתונים הרלוונטיים.
+הקוד מחבר לשרת בפורט 80. הוא מבצע GET request ומדפיס את התשובה, הכוללת גם קוד HTML.
 
-"## צוללת לים מצוקים"
-מתאם המידע של ה-HTML נוצר בשנות השישים של המאה הקודמת כדי לקרוא ולכתוב מידע, כך שלכל גרסת תוכן יש גם גרסה של התעתוע הקווי של הדעת. תוכלו לשלב תוכן העמוס במידע בקלות ישרות לקוד עצמו במידה ותתפתחו בצורה קולה כדי לקרוא מיד יותר מידע על הקוד ועל הנתון.
+## הצצה למטה:
 
-אני מריח מהראות לכם שאני לא ממש צריך לנוול את עצמי כדי למצוא מקור לפירוט מידע על הכלי המתאים לניתוח HTML , אבל יש כמה אתרים כמו Stack Exchange (https://arduino.stackexchange.com/) שיכול לספק מידע במקום לקרוא ולכתוב את התוכן של דפי HTML.
+עיבוד HTML הוא כלי חיוני בעולם הרשת. חשוב לדעת שהשיטה שהצגנו היא דרך פשוטה ובסיסית שמשתמשת ב- Ethernet library של Arduino. למדנו גם אודות הטכניקה של GET Request. ישנם גם שיטות אלטרנטיביות, כמו ביבליות JavaScript או Python. 
 
-"## ראו גם"
-- ספרים נושאיים על יצירת תוכניות וספרים דפות יעילים מרובים
-- יעילות יצירה של קוד שלט בארדואינו
--
+## ראה גם:
+
+- [W3 Schools - HTML Parsing](https://www.w3schools.com/php/php_ajax_rss_reader.asp)
+- [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
+- [Python - BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

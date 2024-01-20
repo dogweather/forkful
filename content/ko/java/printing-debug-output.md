@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 출력하기"
-html_title:           "Java: 디버그 출력 출력하기"
-simple_title:         "디버그 출력 출력하기"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇과 왜?
 
-디버그 출력을 프로그래머가 하는 이유는 코드의 실행중에 발생하는 문제를 파악하고 해결하기 위해서입니다.
+Debug 출력은 프로그램이 실행되는 동안 핵심 정보를 표시하는 방법입니다. 이것은 코드를 디버깅하고 문제를 빠르게 예측하고 해결하는 데 도움이 됩니다.
 
-# 방법:
+## 어떻게 하는가:
 
-디버그 출력을 위해서는 ```System.out.println()```을 사용하면 됩니다. 예를 들어:
+단순한 경우, Java에서는 System.out.println()을 사용하여 디버그 출력을 프린트 할 수 있습니다.
 
 ```Java
-int x = 5;
-System.out.println("값 x: " + x);
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
 ```
 
-출력:
+이 코드의 실행으로, 출력은 다음과 같습니다:
+
+```
+Hello, World!
+```
+
+더 복잡한 디버그는 Logger 클래스를 사용하여 수행할 수 있습니다.
+
 ```Java
-값 x: 5
+import java.util.logging.Logger;
+
+public class DebugExample {
+    private static final Logger LOG = Logger.getLogger(DebugExample.class.getName());
+
+    public static void main(String[] args) {
+        LOG.info("This is a debug message");
+    }
+}
 ```
 
-# 깊숙히:
+이 경우, 아래와 같은 메시지가 출력됩니다:
 
-디버그 출력은 디버깅 단계에서 중요한 역할을 합니다. 이 기능은 오류가 발생한 부분을 식별하고 수정하는 데 도움이 됩니다. 또한, 오류가 발생한 곳에서 적절한 변수나 데이터를 확인할 수도 있습니다. 다른 대안으로는 디버깅 툴을 사용하는 것이 있으며, 자바 디버거 (Java Debugger)를 사용하는 것이 가장 일반적입니다.
+```
+INFO: This is a debug message
+```
 
-디버그 출력은 ```System.out.println()``` 메소드를 이용하여 구현됩니다. 이 메소드는 문자열을 화면에 출력하는 역할을 합니다. 패키지 및 클래스 내에서 호출이 가능하며, 필요에 따라 여러 번 호출할 수도 있습니다. 또한, 특정 조건이 충족되었을 때만 출력되도록 if-else 구문과 함께 사용할 수도 있습니다.
+## 심층 탐구:
 
-# 관련 자료:
+1) 디버그 출력은 프로그래밍의 초기 시기부터 사용되었습니다. 
+2) 대안으로는 로그 파일에 메시지를 출력하거나 웹 서비스를 사용하여 디버그 정보를 실시간으로 전송하는 것 등이 있습니다. 
+3) Java에서는 다양한 레벨의 로깅 메시지를 생성하는 로거 클래스와 다양한 출력 경로를 제공하는 핸들러 클래스를 제공하여 핵심 디버그 출력 기능을 구현합니다.
 
-- 자바 디버거 (Java Debugger): https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdb.html
-- 디버깅과의 관계: https://www.c-sharpcorner.com/article/debugging-concept-and-relationship-with-other-development-activities/
+## 참고 자료:
+
+1) [Oracle Java Docs](https://docs.oracle.com/javase/8/docs/api/java/util/logging/package-summary.html)
+2) [Java Debugging Guide](https://www.baeldung.com/java-application-logging)
+3) [Java Tutorials - Debugging](https://docs.oracle.com/javase/tutorial/getStarted/debug/index.html)

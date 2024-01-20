@@ -1,7 +1,7 @@
 ---
-title:                "Eine neue Projekt aufbauen"
-html_title:           "Fish Shell: Eine neue Projekt aufbauen"
-simple_title:         "Eine neue Projekt aufbauen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Getting Started"
@@ -12,32 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Eine neue Programmierungsaufgabe oder ein neues Projekt zu beginnen ist der Prozess, bei dem ein Programmierer eine neue Aufgabe annimmt und damit beginnt, sie zu lösen. Programmierer starten neue Projekte, um neue Herausforderungen anzunehmen, vorhandenes Wissen anzuwenden und neue Fähigkeiten zu erlernen.
+Ein neues Projekt zu starten bedeutet, eine frische Programmieraufgabe zu beginnen, um eine bestimmte Anforderung zu erfüllen. Programmierer tun dies, um neue Lösungen zu entwickeln, ihre Fähigkeiten zu erweitern oder vorhandene Software zu verbessern.
 
-## Wie es geht:
+## So geht's:
 
-```Fish Shell``` bietet eine effiziente und benutzerfreundliche Möglichkeit, ein neues Projekt zu starten. Hier sind einige Beispiele, wie man in ```Fish Shell``` ein neues Projekt starten kann:
+Mit der Shell für Fische können Sie einfach ein neues Projekt starten. Hier ist ein einfacher Code zum Erstellen eines neuen Verzeichnises und zum Navigieren in das Verzeichnis:
 
-1. Erstelle einen neuen Ordner für das Projekt und navigiere in diesen Ordner:
-```
-$ mkdir neues_projekt
-$ cd neues_projekt
-```
-2. Erstelle eine Datei mit dem gewünschten Dateinamen:
-```
-$ touch main.py
-```
-3. Öffne die Datei im Texteditor und beginne mit dem Schreiben des Codes:
-```
-$ code main.py
+```Fish Shell
+mkdir neues_projekt
+cd neues_projekt
 ```
 
-## Tief Eintauchen
+Ausgabe:
 
-Das Erstellen eines neuen Projekts in ```Fish Shell``` ist nicht nur einfach, sondern auch Teil der Philosophie der Shell. Es ist erwähnenswert, dass es auch andere Shell-Optionen gibt, die das Starten von Projekten erleichtern, wie z.B. die Verwendung von ```bash``` oder ```zsh```. Zusätzlich können Entwickler auch Tools wie ```virtualenv``` nutzen, um Umgebungen für spezifische Projekte zu erstellen.
+```Fish Shell
+>
+```
+
+## Tiefenbohrung:
+
+Der Fish-Shell ist relativ neu und wurde Anfang der 2000er Jahre entwickelt. Rootshell und Bash sind bekannte Alternativen, aber Fish-Shell ist bekannt für seine Benutzerfreundlichkeit und gute Interaktion. Bei der Entwicklung eines neuen Projekts in Fish-Shell ist es wichtig, die Syntax und die inneren Abläufe der Shell zu verstehen, um den Code effizient und effektiv zu verwalten.
 
 ## Siehe auch:
 
-- Offizielle Dokumentation für ```Fish Shell``` (https://fishshell.com/docs/current/)
-- Eine Einführung in die ```Fish Shell``` von Sebastian Daschner (https://blog.sebastian-daschner.com/entries/fish-shell)
-- Vergleich von verschiedenen Shell-Optionen von Linuxize (https://linuxize.com/post/bash-vs-zsh-vs-fish/)
+Für weitere Informationen über das Starten neuer Projekte und die Programmierung in Fish-Shell, besuchen Sie bitte die folgenden Links:
+
+1. Fish-Shell Documentation: http://fishshell.com/docs/current/index.html
+2. Starten von neuen Projekten: http://fishshell.com/docs/current/tutorial.html#tut_new_project
+3. Fish-Shell GitHub: https://github.com/fish-shell/fish-shell
+4. Programmierung in Fish-Shell: https://fishshell.com/docs/current/commands.html

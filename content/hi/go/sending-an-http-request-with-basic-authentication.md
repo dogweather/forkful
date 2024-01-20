@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक ऑथेंटिकेशन के साथ एक http अनुरोध भेजना"
-html_title:           "Go: बेसिक ऑथेंटिकेशन के साथ एक http अनुरोध भेजना"
-simple_title:         "बेसिक ऑथेंटिकेशन के साथ एक http अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -11,39 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-HTTP अनुरोध के साथ बेसिक प्रमाणीकरण भेजना क्या है और प्रोग्रामर इसे क्यों करते हैं यह समझने के लिए आपको आमतौर पर सेवा प्रदाताओं की तरह अपनी पहचान द्वारा सुरक्षित होने की जरूरत होती है। यह अनुरोध आपको सुप्रभात और प्रमाणीकरण दोनों का प्रदर्शन करता है। 
+HTTP request भेजना और Basic Authentication से क्या मतलब होता है? यदि आप client-server architecture में काम कर रहे हो तो आपको इसका पता होना चाहिए। यह ऐसा तरीका है जिससे क्लाइंट और सर्वर के बीच सुरक्षित कनेक्शन स्थापित किया जा सकता है। इसकी मदद से, वेबसाइट्स या API क्लाइंट को उनकी गोपनीयता और सुरक्षा की गारंटी देते हैं। 
 
-## कैसे करें: 
+## कैसे करें:
+Go लैंग्वेज में HTTP request भेजने का धादारन नीचे दिया गया है:
+
 ```Go
-// आप अपने HTTP अनुरोध के लिए बेसिक प्रमाणीकरण को सेट कर सकते हैं
-req, err := http.NewRequest("GET", "http://example.com", nil)
-req.SetBasicAuth("username", "password")
+package main
 
-// और अपने अनुरोध को भेजें
-res, err := http.DefaultClient.Do(req)
+import (
+  "net/http"
+  "fmt"
+)
 
-// उत्पादन को देखें
-fmt.Println("Status code:", res.Status)
-// आपको अपने उत्तर में सुरक्षित हैडर्स भी देख सकते हैं
-for key, value := range res.Header {
-	fmt.Println(key, ":", value)
+func main() {
+  req, err := http.NewRequest("GET", "<url here>", nil)
+  req.SetBasicAuth("<username>", "<password>")
+
+  client := &http.Client{}
+  resp, err := client.Do(req)
+  
+  if err != nil {
+    fmt.Println(err)
+  } else {
+    fmt.Println(resp.Status)
+  }
 }
 ```
-निर्गम:
-```
-Status code: 200 OK
-Date : Mon, 12 Jul 2021 17:00:00 GMT
-Last-Modified : Wed, 08 Jul 2021 12:00:00 GMT
-Etag : "abcd1234"
-Content-Length : 150
-```
+इसमें `<url here>` के स्थान पर आपको URL देना है, जिस पर request भेजनी है और `<username>` और `<password>` के स्थान पर authentication details देनी है।
 
-## गहराई तक जाएं:
-इस अनुरोध को भेजने का प्रारंभ क्रम HTTP के वर्षों के दौरान सुरक्षित तरीके से होना शुरू हुआ, जब बेसिक प्रमाणीकरण प्रतिक्रिया को प्रमाणित करने के लिए एक बेहतर समाधान के रूप में इस्तेमाल किया जाता था। इसके बजाय, अधिक सुरक्षित तरीकों में से कुछ हैं जो प्रमाणित करते हैं कि डेटा एक्सक्सिज़ है, लेकिन यह इस उदाहरण में शामिल नहीं है। यह बेहतर है कारण कि यह HTTP अनुरोध को ही अस्वीकार कर देता है। संभवतः आपको भेजने से पहले अपने शामिल प्रदाताओं से पूछना चाहिए कि क्या आपको किसी खास प्रणाली को प्रमाणित करने की आवश्यकता है। 
-## और भी देखें:
-अगर आपको और गहराई जाननी है, तो आप एक्स्ट्रीम ओपेन सूरत को देख सकते हैं या एक्स एस एस (एसएसएल) के साथ सुरक्षित एचटीटीपी अनुरोध को भेजने का और एक एक्सपीन्देड नहीं होना है। आप एक सेक्योर कोन्टेण्स डेलीवरी नेटवर्क प्रोटोकॉल (SCDP) को भी देख सकते हैं जो निर्दिष्ट अनुरोध प्रकारों के साथ भेजे जा सकते हैं।
+## गहरी चर्चा:
+HTTP Basic Authentication का उपयोग प्राय: APIs में किया जाता है, जहां आवश्यक सुरक्षा के लिए request header में username और password शामिल होते हैं। यह प्राणी 1990 के दशक से HTTP मानक का हिस्सा रहा है। वैकल्पिकरूप से, आप HTTPS का भी उपयोग कर सकते हैं, जो पूरी तरह सुरक्षित है। कृपया ध्यान दें कि Basic Authentication सभी request headers को बेस64 encoding में भेजता है, जो अगर टूट गई तो यूजरनेम और पासवर्ड को प्रकट कर सकती है।
 
-## और भी देखें:
-- [एक्स्ट्रीम ओपेन सूरत](https://www.exopera.com/)
-- [एक्स एस एस (एसएसएल) के साथ सुरक्षित अपीआई अनुरोध](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-- [सेक्योर कोन्टेंट डिलीवरी नेटवर्क प
+## यह भी देखें:
+- [HTTP Basic Authentication(@wikipedia)](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- [Go net/http package](https://pkg.go.dev/net/http)
+- [The Go Programming Language Specification}(https://golang.org/ref/spec)

@@ -1,7 +1,7 @@
 ---
-title:                "Analisando uma data de uma string."
-html_title:           "Fish Shell: Analisando uma data de uma string."
-simple_title:         "Analisando uma data de uma string."
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,35 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que?
-
-"Parsear" uma data a partir de uma string significa separar e converter uma sequência de texto que representa uma data em sua representação numérica equivalente. Os programadores realizam esse processo para facilitar a manipulação e cálculo de datas em seus códigos.
+## O que é e por quê?
+Analisar uma data de uma string consiste em converter uma representação legível de uma data em uma forma mais acessível programaticamente. Programadores fazem isso para facilitar o processamento de datas em suas aplicações.
 
 ## Como fazer:
+Aqui estão alguns exemplos de como você pode analisar uma data de uma string em tempo de execução usando Fish Shell:
 
+```Fish Shell
+# Obter a data atual como uma string
+set date_string (date "+%Y-%m-%d")
+
+# Exibir a string da data
+echo $date_string
 ```
-Fish Shell date -f %Y-%m-%d "2021-05-21"
-```
+Neste código, a função `date` é usada para obter a data atual. O resultado é armazenado na variável `date_string`.
 
-Resultado: `1621562400`
+## Mergulho Profundo
+A análise de datas de strings é uma prática comum na programação e ocorre desde os tempos antigos do Unix. Uma alternativa comum é usar a biblioteca `strptime` para converter strings de data em estruturas de tempo.
 
-O comando acima utiliza a função `date` do Fish Shell para converter a string "2021-05-21" em seu equivalente numérico, que representa a data em que este artigo foi escrito.
+No Fish Shell, as datas são representadas internamente como timestamps Unix - o número de segundos desde 1 de janeiro de 1970. Quando você analisa uma data de uma string, o Fish Shell irá converter essa string em um timestamp Unix para processamento.
 
-## Mais detalhes:
+## Veja também
+Confira estes recursos se você está procurando mais informações sobre análise de datas em Fish Shell ou programação de shell em geral.
 
-### Contexto Histórico:
-
-A conversão de datas em representações numéricas é uma tarefa comum na programação, e sua complexidade depende muito do formato da data. Antes do Fish Shell, os programadores utilizavam outras ferramentas para realizar esse processo, como o comando `date` do Bash Shell.
-
-### Alternativas:
-
-Além do `date`, existem outras ferramentas e linguagens de programação que oferecem funções para parsear datas, como o JavaScript com a função `Date.parse()` e o Python com o módulo `datetime`. No entanto, o Fish Shell oferece uma sintaxe mais simples e intuitiva para realizar essa tarefa.
-
-### Detalhes de implementação:
-
-O Fish Shell utiliza a biblioteca C `strptime` para realizar o parsing de datas a partir de strings. Essa biblioteca é capaz de reconhecer uma grande variedade de formatos de datas e convertê-los em valores numéricos correspondentes.
-
-## Veja também:
-
-- Documentação sobre a função `date` do Fish Shell: https://fishshell.com/docs/current/commands.html#date
-- Documentação da biblioteca C `strptime`: https://docs.microsoft.com/en-us/cpp/c-runtime-library/reference/strptime-strptime-l-strptime-l-wcsptime-wcsptime-l-mbstime-mbstime-l?view=msvc-160
+1. [Documentation for the date command](https://fishshell.com/docs/current/cmds/date.html) - A documentação oficial para o comando `date`, que é usado para obter e manipular datas.
+2. [Unix Time](https://en.wikipedia.org/wiki/Unix_time) - Uma explicação mais aprofundada dos timestamps Unix, como eles funcionam e por que são usados.
+3. [Fish shell scripting tutorial](https://fishshell.com/docs/current/tutorial.html) - Um tutorial útil se você estiver interessado em aprender mais sobre script Fish Shell.

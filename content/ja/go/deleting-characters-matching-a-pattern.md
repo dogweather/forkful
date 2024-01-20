@@ -1,6 +1,6 @@
 ---
 title:                "パターンに一致する文字を削除する"
-html_title:           "Go: パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
 simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Go"
 category:             "Go"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか?  ##
+## 何となぜ？
+文字のパターンに一致する文字を削除するとは、特定の文字セットやパターンに一致する全ての文字をテキストから取り除く作業のことです。これは不要な文字、記号やスペースを除去してデータをクリーンに保つためにプログラマが行います。
 
-削除する文字のパターンに一致する文字を削除するとは何か、それをプログラマーが行う理由は何かを2~3文で説明します。
+## 実行方法：
+```Go
+package main
 
-## 方法:
+import (
+	"fmt"
+	"strings"
+)
 
-以下のコードブロックには、Go言語を使った削除のコーディング例と結果が含まれています。
-
+func main() {
+	str := "Hello, 世界!"
+	fmt.Println("Before:", str)
+	
+	str = strings.Replace(str, ",", "", -1)
+	fmt.Println("After:", str)
+}
 ```
-// 文字列から "a" を削除する
-str := "banana"
-result := strings.Replace(str, "a", "", -1)
-fmt.Println(result)
-// 結果は "bnn" となります
+実行時の出力：
 ```
-
+Before: Hello, 世界!
+After: Hello 世界!
 ```
-// 正規表現を使って文字列から数字を削除する
-import "regexp"
-str := "abc123def456"
-re := regexp.MustCompile("[0-9]+")
-result := re.ReplaceAllString(str, "")
-fmt.Println(result)
-// 結果は "abcdefgh" となります
-```
+このプログラムは文字列"Hello, 世界!"からコンマを削除します。
 
-## 詳細を掘り下げる:
+## 深堀り
+文字パターンの削除は、データの処理と整形で非常によく使われます。歴史的には、主に文字列の編集や文字コードの変換で使用されてきました。
 
-(1) 文字の削除の歴史的背景は、様々なプログラミング言語やテキストエディタで利用されてきました。一般的な正規表現を使用することで、より柔軟に文字列のパターンを削除できるようになりました。 (2) 別の方法としては、文字列から特定の文字を置換するというものがあります。Go言語では、標準ライブラリの`strings`パッケージに組み込まれており、より効率的に文字列の削除が可能です。 (3) 実装の詳細については、Go言語のドキュメントやソースコードを参照することができます。
+また、Go言語だけではなく他の多くの言語でも同様の事を実行する方法が用意されています。Pythonでは`replace()`, Javaでは`replaceAll()`, JavaScriptでは`replace()`関数を使用します。
 
-## 関連情報を参照してください:
+Goで文字列から特定のパターンを削除する際の実装詳細は、`strings.Replace`関数を使用します。この関数は指定した文字列から特定の文字を探し、別の文字列に置換します。この場合、置換文字列は空文字列です。
 
-- [Go言語ドキュメント](https://golang.org/doc/)
-- [stringsパッケージ](https://golang.org/pkg/strings/)
-- [正規表現について詳しく学ぶ](https://www.regular-expressions.info/)
+## 関連情報
+Goの`strings`パッケージについて詳しくは以下のリンクをご参照ください：
+https://golang.org/pkg/strings/
+
+文字列操作について広範で詳しい情報は以下のリンクから入手できます：
+https://yourbasic.org/golang/string-functions-reference-cheat-sheet/

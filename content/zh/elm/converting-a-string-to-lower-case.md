@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Elm: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,30 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串转换为小写？
+## 什么和为什么？
 
-字符串转换为小写是一种在编程中常见的操作，它可以将给定的字符串中的所有字母转换为小写形式。程序员通常会使用这个操作来统一字符串的格式，使其更易于处理和比较。
+在计算机编程中，字符串转换为小写就是将一个字符串里的所有大写字母改变成相应的小写字母。程序员们之所以要这样做，主要是为了实现数据的统一、准确比对和排序。
 
-## 如何进行字符串转换为小写？
+## 怎么做：
 
-在 Elm 中，可以使用 `String.toLower` 函数来将字符串转换为小写形式。以下是一个示例代码段，并展示了其输出结果：
+下面的代码块展示了如何在Elm中实现字符串转小写的函数。您可以将任意的字符串输入到函数中，然后函数会返回一个全由小写字母组成的新字符串。
 
 ```Elm
-import String exposing (toLower)
+import String
 
-inputString = "HeLLo WOrld"
-outputString = String.toLower inputString
+lowerCaseString : String -> String
+lowerCaseString str =
+    String.toLower str
+
+-- 测试
+lowerCaseString "HELLO, ELM!"
+-- 输出: "hello, elm!"
 ```
 
-输出结果为：`"hello world"`
+当然你还可以在实际的Elm应用中使用这个功能，例如处理用户输入：
+```Elm
+import Browser
+import Html exposing (Html, button, div, text)
+import Html.Events exposing (onClick)
+import String
 
-## 深入探讨
+type alias Model = { data : String }
 
-在历史上，字符串转换为小写的操作是为了解决不同编程语言对大小写敏感性的差异。在 Elm 中，也可以使用 `String.toUpper` 函数将字符串转换为大写形式。另外，某些编程语言中也有类似的函数，如 JavaScript 中的 `toLowerCase()`。
+initialModel : Model
+initialModel =
+    { data = "" }
 
-要实现字符串转换为小写，通常会遍历字符串中的每个字符，并将大写字母转换为小写。这个操作可以让字符串的比较更加准确，从而避免可能的大小写不匹配问题。
+type Msg = LowerCase
 
-## 查看更多资料
+update : Msg -> Model -> Model
+update msg model =
+    case msg of
+        LowerCase ->
+            { model | data = String.toLower model.data }
 
-- [Elm 文档](https://elm-lang.org/docs)
-- [JavaScript 中的 toLowerCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+view : Model -> Html Msg
+view model =
+    div []
+        [ text model.data
+        , button [ onClick LowerCase ] [ text "转小写" ]
+        ]
+
+main =
+    Browser.sandbox { init = initialModel, update = update, view = view }
+```
+## 深入探讨：
+
+字符串转小写在很多编程语言中都是一个常用的基本功能，由于其实现逻辑简单，所以早在计算机发展的初期就已经被广泛使用。在Elm这门语言中，其实现主要使用了Unicode字符集和相关标准的规定。其替代方式可以通过遍历字符串中的每一个字符，然后将每个大写字符替换为对应的小写字符来实现。
+
+## 参见：
+
+要获取更多Elm字符串操作的相关信息，可以参阅以下链接：
+
+- Elm官方文档：https://package.elm-lang.org/packages/elm/core/latest/String
+- Elm中的字符串操作教程：http://elmprogramming.com/strings.html

@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge einer Zeichenkette finden"
-html_title:           "Python: Die Länge einer Zeichenkette finden"
-simple_title:         "Die Länge einer Zeichenkette finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Das Finden der Länge einer Zeichenkette ist eine grundlegende Aufgabe in der Programmierung. Es bedeutet einfach die Anzahl der Zeichen in einer Zeichenkette zu zählen. Programmierer verwenden dies, um zu überprüfen, ob eine Eingabe innerhalb der erwarteten Länge liegt oder um den Speicherbedarf für die Zeichenkette zu berechnen.
+# Länge eines Strings in Python bestimmen 
 
-## Wie geht's?
-Denken Sie daran, dass in Python eine Zeichenkette als eine Kette von Zeichen in einfachen oder doppelten Anführungszeichen dargestellt wird. Um die Länge einer Zeichenkette zu finden, können Sie die Funktion `len()` verwenden und die Zeichenkette als Argument übergeben.
+## Was & Warum?
+Die Bestimmung der Länge eines Strings bedeutet, zu ermitteln, wie viele Zeichen (Einzahlen, Buchstaben, Symbole) er enthält. Es ist oft notwendig, um Abzweigungen zu kontrollieren, Schleifen zu erstellen und Fehlereingaben zu überprüfen.
+
+## Wie geht das:
+Python bietet eine eingebaute Funktion `len()`, um die Länge eines Strings zu finden:
 
 ```Python
-# Beispiel 1
-string = "Hallo Welt"
-print(len(string))
-Ausgabe: 11
-
-# Beispiel 2
-string = "Python ist toll"
-print(len(string))
-Ausgabe: 15
+s = 'Hallo Welt!'
+print(len(s))
 ```
 
-## Tiefer Einblick
-Das Finden der Länge einer Zeichenkette ist eigentlich eine leichte Aufgabe, da sie von der `len()` Funktion in Python erledigt wird. Diese Funktion gibt die Anzahl der Zeichen in einer Zeichenkette zurück, unabhängig von der Art der Zeichen (Buchstaben, Zahlen, Sonderzeichen, etc.). Alternative Methoden zur Berechnung der Länge einer Zeichenkette sind Schleifen oder die `count()` Funktion.
+Die Ausgabe wird sein:
 
-## Siehe auch
-- [Python Dokumentation zu `len()`](https://docs.python.org/3/library/functions.html#len)
-- [Python Dokumentation zu Zeichenketten](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [GeeksforGeeks: Finding length of a string in Python](https://www.geeksforgeeks.org/python-strings-length/)
+```Python
+12
+```
+
+Beachtet bitte, dass Leerzeichen und Sonderzeichen auch als Zeichen gezählt werden!
+
+## Tiefer eintauchen:
+Die `len()`-Funktion gibt es schon seit den Anfängen von Python und hat sich als effektivste Methode zur Bestimmung der Länge eines Strings erwiesen. Sie arbeitet intern mit dem `__len__()`-Dunder-Methode, die Teil der Python-Datenmodellmethoden ist.
+
+Es gibt zwar Alternativen, wie z.B. eine Schleife zu erstellen, um manuell jedes Zeichen in einem String zu zählen, aber in den meisten Fällen ist die `len()`-Funktion effizienter und schneller:
+
+```Python
+s = 'Hallo Welt!'
+count = 0
+for letter in s:
+    count += 1
+print(count)
+```
+
+Das liefert auch `12` als Ausgabe, ist aber mehr Arbeit und langsamer als `len()`.
+
+## Siehe auch:
+Weitere Informationen und Beispiele zur Verwendung der `len()`-Funktion finden Sie in der Python-Dokumentation: [Python len()](https://docs.python.org/3/library/functions.html#len) 
+Eine saubere, detaillierte Erklärung des Python-Datenmodells (inkl. `__len__()`) ist in der Python-Dokumentation zu lesen: [Python Data Model](https://docs.python.org/3/reference/datamodel.html)

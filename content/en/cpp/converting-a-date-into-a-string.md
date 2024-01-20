@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "C++ recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "C++"
 category:             "C++"
@@ -11,43 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Converting a date into a string is the process of converting a date object, containing information about a specific date and time, into a human-readable string format. This is a common practice among programmers, as it allows for easier storage and manipulation of date data in programs.
+
+Conversion of dates into strings in C++ is the process of turning date objects into readable text format. Programmers do this for easier data handling, display, and making data human-readable for UX/UI.
 
 ## How to:
-The following code shows an example of how to convert a date into a string in C++:
+
+C++ provides a well-rounded library called "chrono" for date and time manipulations, and an additional library "fmt" used for formatting.
+
+Let's jump straight in to see how to convert a system's current date to a string:
 
 ```C++
-#include <iostream>
-#include <string>
-#include <ctime>
+#include <chrono>
+#include <fmt/chrono.h>
 
 int main() {
-    // Create a date object using current date and time
-    std::time_t now = std::time(0);
-    std::tm* timeinfo = std::localtime(&now);
-
-    // Convert date object into string format
-    std::string date_string = std::asctime(timeinfo);
-
-    // Print out the date string
-    std::cout << date_string << std::endl;
-
+    auto now = std::chrono::system_clock::now();
+    std::cout << fmt::format("{:%Y-%m-%d}", fmt::localtime(std::chrono::system_clock::to_time_t(now))) << std::endl;
     return 0;
 }
 ```
 
-Sample Output:
-```Sun Jul 25 13:02:15 2021```
+This snippet of code will result in the output similar to: `2022-09-23`.
 
-## Deep Dive:
-Converting dates into strings has been a common practice since the early days of programming. In the early days, dates were often stored as string literals in the code, making it difficult to manipulate and compare dates. As programming languages evolved, the ability to convert dates into string formats became more important. 
+## Deep Dive
 
-One alternative to converting dates into strings is to use date objects directly in code. However, this can become cumbersome and unreadable, especially when comparing and manipulating dates. Converting dates into strings allows for easier manipulation and comparison of dates, as well as easier storage in databases or files.
+Historically, programmers used the C style time library which presented challenges with written locales and non-uniformity of date formats. C++'s modern chrono and format libraries have predominantly replaced these older tools, giving a uniform and type-safe way of handling dates.
 
-In terms of implementation, most programming languages have built-in functions or libraries that allow for easy conversion of date objects into string formats. In C++, the <ctime> library provides the necessary functions, such as ```std::asctime()```, to convert date objects into strings.
+C++ offers alternatives, like use of "strftime" from ctime, but the "chrono" and "fmt" ensure consistency and robustness. For instance, the strftime function is locale-dependent which can produce different results based on runtime environment.
 
-## See Also:
-- [Date and Time Manipulation in C++ (Documentation)](https://en.cppreference.com/w/cpp/chrono)
-- [Converting Dates into Strings in Other Programming Languages (Blog post)](https://www.geeksforgeeks.org/convert-date-string-various-programming-languages/)
+Internally, date objects represent a point in time, and converting them to a string involves obtaining year, month, and day and merging them into a formatted string.
 
-*Note: This article assumes basic knowledge of programming and the C++ programming language in particular. If you need help with understanding any of the concepts mentioned, it is recommended to refer to the C++ documentation or consult a programmer.*
+## See Also
+
+For further reading and exploring other time related manipulations, check the following links:
+
+- [C++ Chrono library](https://en.cppreference.com/w/cpp/chrono)
+- [C++ format library](https://fmt.dev/latest/index.html)
+- [C date and time functions](https://en.cppreference.com/w/cpp/chrono/c)
+
+Remember, date and time manipulations are fundamental parts of programming that involve a variety of different operations. Take your time to navigate how best to utilise these facilities depending on your need.

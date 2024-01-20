@@ -1,6 +1,6 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Swift: HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が？どうして？
+# SwiftでHTTPリクエストを送信する
 
-HTTPリクエストを送るとは、インターネット上でデータを送受信するための方法です。プログラマーは、ウェブサイトのデータやサーバーとの通信を処理するために、HTTPリクエストを使用します。
+## 何これ、なんで？
 
-## 手順：
+HTTPリクエストを送信するとは、ウェブサーバーに情報を要求または送信する行為です。プログラマーは通常、データ取得やデータ操作のためにこれを行います。
 
-まず、HTTPリクエストを送るためにはURL（ウェブサイトのアドレス）が必要です。次に、URLを使用してリクエストを作成し、HTTPメソッドを指定します。最後に、サーバーからのレスポンスを処理します。
+## どうやるか
+
+Swiftには、HTTPリクエストを送信するために利用できるURLRequestというクラスがあります。例えば以下のようなコードで、GETリクエストを送信できます:
 
 ```Swift
-// URLを設定する
-let url = URL(string: "https://example.com")!
+import Foundation
 
-// HTTPリクエストを作成する
+let url = URL(string: "https://www.example.com")!
 var request = URLRequest(url: url)
-
-// HTTPメソッドを指定する
 request.httpMethod = "GET"
-
-// サーバーからのレスポンスを処理する
-URLSession.shared.dataTask(with: request) { data, response, error in
-    guard let data = data, error == nil else {
-        print(error?.localizedDescription ?? "Unknown error")
-        return
-    }
-    print(String(data: data, encoding: .utf8)!)
-}.resume()
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+  if let error = error {
+    print("Error: \(error)")
+  } else if let data = data {
+    let str = String(data: data, encoding: .utf8)
+    print("Received data:\n\(str ?? "")")
+  }
+}
+task.resume()
 ```
+このコードは、指定したURLにGETリクエストを送信し、取得したデータまたはエラーをコンソールに印刷します。
 
-上記のコードでは、URLを設定し、GETメソッドを使用してサーバーにリクエストを送信しています。レスポンスにはデータが含まれているので、`response`を使用してデータの処理を行っています。
+## より深く知る
 
-## 詳細を見る：
+HTTPリクエストの送信は、ウェブプログラミングの基礎となる概念です。これはウェブの成立以来、サーバーとクライアント間のデータ交換の基盤を成しています。
 
-HTTPリクエストは、1990年代に開発された通信プロトコルです。代表的なバージョンはHTTP/1.1であり、最近ではHTTP/2やHTTP/3といった改良版が開発されています。
+Swift以外の言語でもHTTPリクエストの送信方法はよく似ています。例えば、JavaScriptでは`fetch()`関数、Pythonでは`requests`ライブラリを利用します。つまり、1つの言語でリクエストの送信方法を理解すれば、他の言語でもそれを容易に適用できます。
 
-代替手段として、WebSocketやgRPCといったプロトコルがありますが、HTTPリクエストがまだ最もポピュラーな方法です。また、`URLSession`クラスを使用することで、HTTPリクエストをより簡単に実装することができます。
+Swiftでは、URLRequestクラス以外にもAlamofireというライブラリが広く利用されています。このライブラリを利用すると、さらに柔軟で強力なHTTP通信が可能になります。
 
-## 関連情報を見る：
+## 参考情報
 
-- [HTTPメソッドとは？](https://developer.mozilla.org/ja/docs/Web/HTTP/Methods)
-- [URLSessionでHTTPリクエストを行う方法](https://developer.apple.com/documentation/foundation/urlsession)
-- [WebSocketとは？](https://developer.mozilla.org/ja/docs/Web/API/WebSocket)
-- [gRPCとは？](https://grpc.io/)
+- Appleの公式ドキュメンテーション- URLRequest: https://developer.apple.com/documentation/foundation/urlrequest
+- AlamofireのGitHubページ: https://github.com/Alamofire/Alamofire

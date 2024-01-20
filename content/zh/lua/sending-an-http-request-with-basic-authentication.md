@@ -1,6 +1,6 @@
 ---
 title:                "使用基本认证发送http请求"
-html_title:           "Lua: 使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
 simple_title:         "使用基本认证发送http请求"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,50 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 什么和为什么？
-发送带有基本身份验证的HTTP请求是指程序员使用特定的用户名和密码在发送网络请求时，提供身份确认信息。程序员这样做的原因是为了保护网络通信的安全性和私密性。
+基本验证的HTTP请求是一种在发送请求时附带用户凭证（用户名和密码）的方式。程序员之所以这么做，是因为这样可以访问受到身份验证保护的网络资源。
 
-## 如何：
-下面是使用Lua编写发送带有基本身份验证的HTTP请求的示例代码和输出结果：
-
+## 如何操作？
+在 Lua 中，我们可以使用 `lua-http` 库来实现这个功能。先安装 `lua-http` 库：
 ```Lua
--- 导入http库
-local http = require("socket.http")
-
--- 设置请求URL和需要传递的认证信息
-local url = "https://example.com"
-local auth = "username:password"
-
--- 发送GET请求
-local response, code, headers = http.request{
-    url = url,
-    headers = {
-        -- 使用Basic认证方式
-        ["Authorization"] = "Basic " .. (mime.b64(auth))
-    }
-}
-
--- 输出结果
-print("Response: " .. response) -- 返回服务器的响应
-print("Code: " .. code) -- 返回状态码
-for k,v in pairs(headers) do -- 输出返回的Header信息
-    print(k,v)
-end
+luarocks install http
 ```
-
-输出结果可能如下所示：
-
+下面是一个发送带有基本身份验证的 GET HTTP 请求的例子：
 ```Lua
-Response: hello world!
-Code: 200
-Content-Type    text/plain
-Content-Length  12
-Date            Tue, 22 Sep 2020 12:00:00 GMT
+local http_request = require "http.request"
+
+local req = http_request.new_from_uri("http://example.com/")
+req.headers:upsert(":method", "GET")
+req.headers:upsert("authorization", "Basic " .. ("user:password"):base64())
+
+local headers, stream = req:go()
+print(headers:get ":status")  -- 可以打印状态码
 ```
+请确保把上述代码中的 `"user:password"` 替换为你自己的用户名和密码。
 
-## 深入探讨：
-发送带有基本身份验证的HTTP请求是一种早期的HTTP协议安全措施，它可以通过对用户名和密码进行加密后传输来防止信息被恶意截获。另外，还有一种更常用的方式，即使用HTTPS协议来保护网络通信的安全性。但是，基本身份验证仍然经常被用于简单的认证需求，例如访问API接口。
+## 深入探究
+历史背景：HTTP基本身份验证的设计是基于早期的互联网，当时的重点是简单性而不是安全性。
 
-## 链接：
-- [Lua官方文档](https://www.lua.org/)
-- [http库文档](http://w3.impa.br/~diego/software/luasocket/http.html)
-- [Basic认证介绍](https://en.wikipedia.org/wiki/Basic_access_authentication)
+替代方法：在无需确保最高级别安全性的情况下，可使用基本验证。对于敏感数据，应使用更安全的验证方式，如OAuth或JWT。
+
+实施细节：`lua-http` 库使用 Lua 的协程功能。它在需要等待IO操作时挂起当前任务，这样可以在保持代码简洁性的同时，提高了执行效率。
+
+## 另请参阅
+相关资源：
+- Lua `http_request` 官方文档： http://daurnimator.github.io/lua-http/
+- HTTP 基本访问验证详解： https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication
+- `lua-http` 库的GitHub页： https://github.com/daurnimator/lua-http
+
+请务必参阅以上链接以获得更深入的理解和信息。

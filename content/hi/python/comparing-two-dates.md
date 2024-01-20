@@ -1,7 +1,7 @@
 ---
-title:                "दो तिथियों का तुलना करना"
-html_title:           "Python: दो तिथियों का तुलना करना"
-simple_title:         "दो तिथियों का तुलना करना"
+title:                "दो तारीखों की तुलना"
+html_title:           "Elixir: दो तारीखों की तुलना"
+simple_title:         "दो तारीखों की तुलना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -12,37 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-किसी भी प्रोग्राम को बनाने के लिए हमें एक लम्बे समय को आयतन भाव के साथ दो तिथियों के बीच की तुलना करने की आवश्यकता पड़ती है। प्रोग्रामर इसको सही तरीके से करने के लिए तारीखों को तुलना करते हैं।
+दो तारीखों की तुलना का मतलब है कि देखा जाता है कि कौन सी तारीख पहली है और कौन सी दूसरी. इसे प्रोग्रामर्स तब करते हैं जब उन्हें तारीखों की क्रमबद्धता या अवधि का पता लगाना होता है.
 
-## कैसे करें?
+## कैसे करें:
 
 ```Python
-# दिनांकों को संयोजित करने के लिए date और timedelta मॉड्यूल्स का उपयोग करें
-from datetime import date, timedelta
+from datetime import datetime
 
-# पहली तिथि
-d1 = date(2021, 1, 1)
+# दो तारीखें निर्धारित करें
+dateA = datetime(2021, 5, 17)
+dateB = datetime(2021, 7, 21)
 
-# दूसरी तिथि
-d2 = date(2021, 1, 15)
-
-# दो तिथियों के बीच की अंतराल के लिए तुलना करें
-delta = d2 - d1
-
-# उपादानों का प्रिंट करें
-print("दूसरी तिथि बाद पहली तिथि " + str(delta.days) + " दिन है")
+# तारीखों की तुलना करें
+if dateA > dateB:
+    print("DateA is later than DateB")
+elif dateA < dateB:
+    print("DateA is earlier than DateB")
+else:
+    print("Both dates are identical")
 ```
 
-आउटपुट:
+सैंपल आउटपुट:
 
-दूसरी तिथि बाद पहली तिथि 14 दिन है
+```Python
+DateA is earlier than DateB
+```
 
-## गाहना
+## गहरा अन्वेषण:
 
-प्यारे पाठकों, तुलना करने की ऐतिहासिक प्रणाली पहले से ही काफी पुरानी है। यह सबसे पहले रोमन तमिलाथान संख्याओं का प्रयोग मिथिल राज्य में हुआ था। यह सुलभ, तेज और आसान होने के कारण, देशीय विश्व में कई दशकों से इसका प्रयोग किया जाता है। अगर आपको पास समय नहीं है तो आप तुलनाओं में उपादानों के बीच अंतर के संग्रह से भी इस्तेमाल कर सकते हैं। चूँकिए, तुलना खुद का मुत्ली हैं, इसलिए आप उपादानों को उनके समय संकेतों के आधार पर तुलना कर सकते हैं।
+कंप्यूटर साइंस में तारीख की गणना और तुलना बहुत पुरानी अवधारणा है। ऐसा इसलिए होता है क्योंकि प्रोग्रामों को अक्सर तारीखों के बीच की अवधि की गणना करनी पडती है या एक कार्य क्रम निर्धारित करने के लिए तारीखों की तुलना करनी पडती है।
 
-## देखें
+Python में तारीखों की तुलना करने का कई तरीके हैं। उदाहरण के लिए, आप pandas और numpy जैसी लाइब्ररीज़ का उपयोग कर सकते हैं। वैसे ही, आप गर प्रतिशत की गणना करनी हो, तो आप तारीख के दिन, महीने, और वर्ष के हिस्सों की तुलना कर सकते हैं। 
 
-- [जीटीएक्स डेट ऑब्जेक्ट](https://docs.python.org/3/library/datetime.html#date-objects)
-- [पाइथन में तारीख और समय](https://www.geeksforgeeks.org/python-dates/)
-- [तुलना अंतराल की गणना पाइथन में](https://www.tutorialspoint.com/count-the-occurrences-of-the-difference-between-consecutive-numbers-by-using-python)
+## और भी देखें:
+
+1. [Python कोर डॉक्युमेंटेशन: datetime](https://docs.python.org/3/library/datetime.html)
+2. [GeeksForGeeks: तारीखों की तुलना करनें के विकल्पों](https://www.geeksforgeeks.org/how-to-compare-two-dates-in-python/)
+3. [StackOverflow: तारीखों की गहरी तुलना](https://stackoverflow.com/questions/39533247/compare-two-dates)

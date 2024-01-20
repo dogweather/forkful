@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "C#: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "C#"
 category:             "C#"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego? 
+Znalezienie długości ciągu służy do oznaczenia ilości znaków w danym ciągu. Programiści to robią, aby kontrolować rozmiar danych wejściowych i uniknąć błędów podczas manipulacji ciągami.
 
-Odnajdywanie długości ciągu znaków jest powszechnym zadaniem programistów. Polega to na obliczeniu liczby znaków w podanym ciągu oraz zwróceniu wyniku. Zadanie to jest często wykorzystywane do analizy tekstu, filtrowania danych lub walidacji wprowadzonych informacji.
-
-## W jaki sposób:
+## Jak to zrobić: 
+Oto prosty przykład kodu C#, który pokazuje, jak znaleźć długość ciągu:
 
 ```C#
-string text = "Cześć, jestem artykułem o programowaniu!";
-int length = text.Length;
-Console.WriteLine("Długość tekstu to: " + length);
+string mojCiąg = "Dzień dobry, Świecie!";
+int długośćCiągu = mojCiąg.Length;
+Console.WriteLine(długośćCiągu);
 ```
-Sample output: Długość tekstu to: 35
 
-Podajemy nasz tekst do zmiennej "text", następnie wykorzystujemy metodę Length, aby obliczyć długość tego tekstu. Wreszcie, korzystając z metody WriteLine, wyświetlamy wynik w konsoli.
+Wynik:
 
-## Głębsze zagłębienie:
+```text
+21
+```
 
-Historia odnajdywania długości ciągu znaków jest powiązana z rozwojem programowania. Wcześniej programiści musieli samodzielnie obliczać długość tekstu, natomiast dziś jest to funkcja wbudowana w większości języków programowania, w tym w C#. Alternatywnie, możemy również użyć metody GetByteCount, która zwraca liczbę bajtów w podanym ciągu.
+## Głębsze spojrzenie: 
 
-## Zobacz również:
+(1) Historyczny kontekst: Wcześniejsze wersje C# nie miały wbudowanego operatora `.Length` do znalezienia długości ciągu. Zamiast tego, programiści musieli napisać metody iterując po ciągu znak po znaku.
 
-- [Documentacja C# dotycząca metody Length](https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=net-5.0)
-- [Porównanie metod Length i GetByteCount](https://stackoverflow.com/questions/9864526/c-sharp-string-length-getbytecount-getcharcount)
+(2) Alternatywy: Można również używać metody `.Count()` z przestrzeni nazw System.Linq. Jednak jest ona wolniejsza, ponieważ iteruje przez ciąg, zamiast odczytać wartość z właściwości.
+
+```C#
+using System.Linq;   
+...
+string mojCiąg = "Dzień dobry, Świecie!";
+int długośćCiągu = mojCiąg.Count();
+Console.WriteLine(długośćCiągu);
+```
+
+(3) Szczegóły implementacji: W C# długość ciągu jest przechowywana jako wartość 32-bitowa, więc maksymalna długość ciągu której może przechować wynosi `int.MaxValue`, czyli dokładnie 2,147,483,647.
+
+## Zobacz także: 
+
+1. [C# String Length Property](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.length) 
+2. [Stack Overflow Discussion on String Length](https://stackoverflow.com/questions/1483919/what-is-string-length-in-c-sharp) 
+3. [C# String Count Method](https://docs.microsoft.com/pl-pl/dotnet/api/system.linq.enumerable.count)

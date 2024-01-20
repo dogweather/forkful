@@ -1,7 +1,7 @@
 ---
-title:                "寻找字符串的长度"
-html_title:           "Ruby: 寻找字符串的长度"
-simple_title:         "寻找字符串的长度"
+title:                "查找字符串的长度"
+html_title:           "Javascript: 查找字符串的长度"
+simple_title:         "查找字符串的长度"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串长度？
+## 什么是字符串长度以及为什么要找到它呢？
 
-字符串长度是指字符串中字符的数量。在编程中，字符串长度通常被用来检测字符串是否符合要求，或者作为一种测量标准。程序员可以通过计算字符串长度来判断它是否符合给定的长度要求，从而有效地处理字符串。
+字符串长度基本上就是字符串中的字符数量。当我们需要比较、排序或者操作字符串时，知道字符串长度是极为重要的。
 
-## 如何计算字符串长度：
+## 如何操作：
 
-ruby的String类提供了一个length方法，可以帮助你轻松地计算字符串的长度。下面是一个示例代码和输出：
+```Ruby
+# 我们有一个字符串
+str = "Hello, World!"
 
-```ruby
-my_string = "Hello World!"
-puts my_string.length
+# 我们可以通过调用 length 方法来找出字符串的长度
+str_length = str.length
+
+puts str_length  # 输出： 13
 ```
 
-输出结果将会是：
+简单直接，你可以看到输出的结果正是 "Hello, World!" 这个字符串中字符的数量。
 
-```ruby
-12
+## 深入解析：
+
+找出字符串长度的需求可以追溯到古老的编程语言。不同的编程语言可能有不同定义和实现测量字符串长度的方法，比如C++和Java中使用的是 `strlen` 和 `length` 方法。
+
+在Ruby中，我们还有其他几种方式可以得到同样的结果，比如 `size` 方法：
+
+```Ruby
+str = "Hello, World!"
+str_size = str.size
+
+puts str_size  # 输出： 13
 ```
 
-## 更深入的了解：
+关于字符串长度的实现细节，Ruby内部对字符串实现的方式决定了 `length` 和 `size` 的效率，它们实质上只是读取了字符串对象的一个内部计数器。
 
-计算字符串长度的方法最初是由计算机科学家Edsger Dijkstra在1967年提出的。除了使用length方法外，程序员也可以使用数组的索引来计算字符串长度，或者使用C语言中的strlen函数来计算。
+## 查看更多：
 
-## 相关链接：
+详细文档，请查看[Ruby 官方文档](https://ruby-doc.org/core-2.7.0/String.html)
 
-更多关于字符串长度的信息，请访问下面的链接：
-- [Ruby String类文档](https://ruby-doc.org/core-2.6.3/String.html#method-i-length)
-- [关于计算字符串长度的历史背景](https://en.wikipedia.org/wiki/String_length#History)
-- [使用数组索引计算字符串长度](https://www.educative.io/edpresso/how-to-find-the-length-of-a-string-in-ruby)
-- [C语言中的strlen函数介绍](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
+Ruby教程，查阅[菜鸟教程](https://www.runoob.com/ruby/ruby-string.html)
+
+对于字符串长度在实战中的应用，你可以访问[StackOverflow](https://stackoverflow.com/questions/2336810/ruby-size-vs-length)

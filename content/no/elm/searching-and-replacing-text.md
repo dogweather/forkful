@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "Elm: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,26 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å søke og erstatte tekst er en vanlig oppgave for programmerere. Dette refererer til å finne spesifikke deler av en tekst og erstatte dem med annen tekst. Det kan være nyttig for å gjøre masseendringer, som å endre navn på variabler eller rette opp feil i koden.
 
-## Hvordan:
-Elm har en innebygd funksjon for å søke og erstatte tekst, kalt `String.replace`. Den tar inn to strenger, den første som er teksten du vil søke etter, og den andre som er teksten du vil erstatte den med. Her er et eksempel:
+Søk og erstatting av tekst er en kjernefunksjon i programmering som gjør det mulig å identifisere spesifikke tekststrenger og endre dem til noe annet. Dette er viktig for programmerere fordi det gir fleksibilitet i å manipulere tekstdata, samt effektivt behandle og rense dataene.
+
+## Hvordan gjøre:
+
+Så, la oss dykke inn i hvordan du kan søke og erstatte tekst i Elm:
 
 ```Elm
-import String exposing (replace)
-
-tekst = "Hei, verden!"
-
-modifisertTekst = replace "verden" "alle sammen" tekst
-
--- modifisertTekst = "Hei, alle sammen!"
+replace : String -> String -> String -> String
+replace needle replacement haystack =
+    String.split needle haystack
+        |> String.join replacement
 ```
 
-## Dypdykk:
-Søke og erstatte tekst er en vanlig funksjon i tekstbehandlingsprogrammer og teksteditorer. Det er også tilgjengelig i de fleste programmeringsspråk, inkludert Elm. Alternativene for å utføre dette i Elm inkluderer å bruke en annen funksjon, `String.replaceSub`, som lar deg gi et intervall av tekst som skal erstattes, og `Regex.replace`, som bruker regulære uttrykk for å finne teksten som skal erstattes.
+La oss teste dette med et eksempel:
 
-Når det gjelder implementasjon i Elm, bruker `String.replace` funksjoner fra standardbiblioteket for å manipulere tekststrenger og utføre søk og erstatningsoperasjoner.
+```Elm
+main =
+    let
+        oldString = "Jeg liker kaffe"
+        newString = replace "kaffe" "te" oldString
+    in
+    text newString
+```
 
-## Se også:
-- Elm's String library documentation: https://package.elm-lang.org/packages/elm/core/latest/String
-- Regular expressions in Elm: https://elmprogramming.com/regular-expressions-in-elm.html
+Dette vil gi en utskrift av "Jeg liker te" i stedet for den opprinnelige teksten.
+
+## Dyp Dykk
+
+Søk og erstatting av tekst daterer seg tilbake til den tidlige perioden av programmering, da programmerere trengte en rask og effektiv måte å endre kode på. I moderne tid, bruker mange programmeringsspråk, inkludert Elm, denne kraftfulle funksjonen.
+
+Det finnes mange alternative måter å oppnå dette på i ulike programmeringsspråk. For eksempel, i Javascript kan man bruke 'replace()' metoden for å oppnå det samme resultatet. Men, i Elm programmeringsspråket som er kjent for dets enkelhet og eleganse, bruker vi 'split' og 'join' funksjonene for dette formålet.
+
+Detaljer av implementeringen kan variere basert på det spesifikke problemet du prøver å løse. I det ovenstående eksempelet, vi splitter først opp strengen i en liste av substrings ved 'needle', og deretter fester vi den sammen igjen med 'replacement'. 
+
+## Se Også
+
+For mer informasjon, sjekke ut følgende ressurser:
+- Elm's offisiell dokumentasjon på String funksjoner: (`https://package.elm-lang.org/packages/elm/core/latest/String`)
+- For en grundig veiledning på Elm, sjekke ut "An Introduction to Elm" (`https://guide.elm-lang.org/`)
+- For forstå tekstbehandling i programmering generelt, "Mastering Regular Expressions" er en stor ressurs (`https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/`)

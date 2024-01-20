@@ -1,7 +1,7 @@
 ---
-title:                "Unterstrings extrahieren"
-html_title:           "Rust: Unterstrings extrahieren"
-simple_title:         "Unterstrings extrahieren"
+title:                "Teilzeichenketten extrahieren"
+html_title:           "PowerShell: Teilzeichenketten extrahieren"
+simple_title:         "Teilzeichenketten extrahieren"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -12,25 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Extrahieren von Teilzeichenketten, auch bekannt als Unterzeichenketten, ist eine gängige Praxis unter Programmierern. Dabei werden Teile einer längeren Zeichenkette ausgewählt und separat verwendet. Das kann hilfreich sein, um bestimmte Operationen auf nur einem Teil der Zeichenkette auszuführen oder einfach um den Code übersichtlicher zu gestalten.
+Das Extrahieren von Teilstrings ist der Prozess des Entnehmens spezifischer kleinerer Sätze aus einer größeren Zeichenkette. Programmierer machen das, um Daten zu filtern oder zu untersuchen.
 
-## Wie geht's?
+## Wie macht man das:
 
-In Rust gibt es eine Vielzahl von Methoden, um Teilzeichenketten zu extrahieren. Ein Beispiel ist die Methode `slice`, die es uns ermöglicht, einen Teil einer Zeichenkette auszuwählen. Hier ein einfaches Beispiel:
+In Rust, benutzen wir die `slice` Methode, um Teilstrings zu gewinnen. 
 
 ```Rust
-let string = "Hallo Welt";
-let teil = &string[0..5];
+fn main() {
+    let s = "Hallo, Welt";
+    let teil = &s[0..5];
+    println!("{}", teil);
+}
 ```
 
-Die Variable `teil` enthält nun den Wert "Hallo", da wir von Index 0 bis 5 (nicht inklusive) die Zeichenkette ausgewählt haben.
+Dieser Code gibt "Hallo" aus, der erste Teilstring in unserem Originalstring.
 
-## Tiefergehend
+## Tiefere Tauchgang
 
-Das Extrahieren von Teilzeichenketten ist eine Technik, die programmierübergreifend verwendet wird. Es kann besonders hilfreich sein, wenn man mit lange Zeichenketten arbeitet und nur einen Teil davon benötigt. In anderen Programmiersprachen gibt es auch ähnliche Methoden wie z.B. `substring` in Java oder `substr` in PHP.
+Die `slice` Methode in Rust beruht auf den Funktionen zur Zeichenkettenverarbeitung aus C, der Mutter von Rust. Aber anders als C, Rust Priorität auf die Sicherheit und verhindert so Zugriffe außerhalb des Teilstrings.
 
-In Rust erfolgt das Extrahieren von Teilzeichenketten ähnlich wie in anderen Sprachen. Es gibt jedoch einige feine Unterschiede, wie zum Beispiel die Verwendung von Slices statt Substrings. Es ist wichtig zu beachten, dass Slices in Rust immer eine Referenz auf den ursprünglichen Datentyp zurückgeben. Deshalb muss man bei der Verwendung von Slices darauf achten, dass die ursprüngliche Zeichenkette nicht gelöscht oder geändert wird, sonst ändert sich auch die Teilzeichenkette.
+Ein populärer Ansatz, um automatisch Teilstrings in Rust zu finden, ist die Verwendung von regulären Ausdrücken mit der `regex` Bibliothek. 
 
-## Weitere Quellen
+Die Implementation von Rusts Teilstringextrahierung ist einfach, wenn der Teilstring innerhalb einer einzelnen Zeichenkette liegt. Bei komplizierteren Strukturen, wie verschachtelten Schleifen, können die Dinge schnell unübersichtlich werden.
 
-Für weitere Informationen kannst du die offizielle Rust-Dokumentation zum Thema Slice `https://doc.rust-lang.org/std/primitive.slice.html` oder den Rust-Playground `https://play.rust-lang.org/` nutzen, um selbst mit Teilzeichenketten zu experimentieren. Es gibt auch unzählige Ressourcen von der Community, wie z.B. Foren oder Tutorials, die bei der Anwendung von Teilzeichenketten in Rust helfen können.
+## Siehe Auch
+
+1. [Offizielle Rust Dokumentation zur `Slice` Methode](https://doc.rust-lang.org/std/string/struct.String.html#method.slice)
+2. [Reguläre Ausdrücke in Rust](https://docs.rs/regex/1.3.9/regex/)
+3. [Rusts Sicherheitsgarantien und wie sie Teilstrings beeinflussen](https://doc.rust-lang.org/book/ch04-03-slices.html)

@@ -10,38 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是日期计算及为什么程序员要做它？
-日期计算是指通过编程来计算日期在未来或过去的情况。程序员通常需要这样做是为了构建具有时间敏感性的应用程序。
+## 什么 & 为什么?
 
-如何进行日期计算：
-```Swift
-//导入日期处理包
+在过去或未来中计算日期是获取和操作日期的常见编程任务。程序员做这个是为了处理日常问题，例如计算未来的事件日期或分析历史数据。
+
+## 如何:
+
+Swift 提供了 `DateComponents` 和 `Calendar` 类，有时又称对象，能够方便地计算日期。下面是一些例子：
+
+``` Swift
 import Foundation
 
-//获取当前日期
-let currentDate = Date()
+//创建一个当前日期
+let now = Date()
 
-//计算5天后的日期
-let futureDate = Calendar.current.date(byAdding: .day, value: 5, to: currentDate)
+//创建一个Calendar类
+let calendar = Calendar.current
 
-//计算10天前的日期
-let pastDate = Calendar.current.date(byAdding: .day, value: -10, to: currentDate)
+//构建一个将来的日期
+if let futureDate = calendar.date(byAdding: .day, value: 5, to: now) {
+    print(futureDate)
+}
+//输出例子: 2023-06-15 08:42:36 +0000
 
-//输出结果
-print("当前日期为：\(currentDate)")
-print("5天后的日期为：\(futureDate)")
-print("10天前的日期为：\(pastDate)")
-
-//运行结果：
-//当前日期为：2021-01-01 00:00:00 +0000
-//5天后的日期为：2021-01-06 00:00:00 +0000
-//10天前的日期为：2020-12-22 00:00:00 +0000
+//构建一个过去的日期
+if let pastDate = calendar.date(byAdding: .month, value: -3, to: now) {
+    print(pastDate)
+}
+//输出例子: 2023-03-10 08:42:36 +0000
 ```
 
-深入了解：
-日期计算在程序开发中起着重要的作用，它们可以让程序根据不同的时间条件来执行不同的操作。除了通过Swift内置的日期处理包进行计算，还可以使用其他第三方日期库来完成相同的任务，如Moment、Chronology等。实现日期计算的关键在于了解和使用不同的日期格式化符号，以及理解不同日期单位之间的换算规则。
+## 深挖:
 
-相关链接：
-- Swift日期处理包文档：https://developer.apple.com/documentation/foundation/date
-- Moment日期库文档：https://momentjs.com/docs/
-- Chronology日期库文档：https://github.com/davedelong/Chronology
+Swift 内的日期处理功能借鉴了历史上诸多编程语言的优点。早期的语言，如 C 和 C++，提供了有限的日期处理功能，需要程序员自己编写复杂的日期运算代码。Swift 在这方面得以进步，因为它具有高级的日期和时间处理功能，但不失简洁性。
+
+选择 Swift 的替代方案可能会取决于多种因素，包括应用的特性、开发团队的技术栈、资源和时间限制等。Python、JavaScript 和 Java 都有强大的日期和时间处理库。
+
+在 Swift 中，`DateComponents` 和 `Calendar` 类背后的实现都取决于你的操作系统和其对应的库。在 iOS 和 macOS 上，它们都使用了 Apple 的 Foundation 框架。
+
+## 另见：
+
+关于 Swift 日期和时间处理的更多信息，可参考以下资源：
+
+- Apple 官方文档: [DateComponents](https://developer.apple.com/documentation/foundation/datecomponents) 和 [Calendar](https://developer.apple.com/documentation/foundation/calendar)
+- 格式化 Swift 
+日期的指南: [DateFormatter](https://www.hackingwithswift.com/articles/141/8-useful-swift-extensions)
+- Stack Overflow 中的相關問答: [How to add days to the current date in swift](https://stackoverflow.com/questions/27310883/how-to-add-days-to-the-current-date-in-swift)

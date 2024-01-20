@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "Rust: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Numbers"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire? 
+## Quoi & Pourquoi?
 
-Générer des nombres aléatoires est une méthode utilisée par les programmeurs pour créer des valeurs aléatoires à utiliser dans leurs programmes. Cela peut être utile lorsque l'on veut tester ou simuler différentes situations ou lorsqu'on a besoin d'une valeur aléatoire pour un jeu ou une application.
+La génération de nombres aléatoires est le processus de création de nombres qui ne peuvent pas être prévus mieux qu'en les choisissant au hasard. Les programmeurs le font pour différents besoins tels que la simulation de données réelles, la cryptographie, les jeux, l'art et de nombreux autres domaines.
 
-## Comment le faire:
+## Comment faire:
 
-Voici un exemple de génération de nombres aléatoires en Rust:
-
+Créons un nombre aléatoire en Rust. D'abord, ajoutez ceci à votre `Cargo.toml` :
+```Rust
+[dependencies]
+rand = "0.8.3"
+```
+Puis, dans votre fichier `.rs` :
 ```Rust
 use rand::Rng;
- 
-fn main() {
-    let mut rng = rand::thread_rng(); 
-    let random_number: u32 = rng.gen(); 
 
-    println!("Mon nombre aléatoire est: {}", random_number);
+fn main() {
+    let mut rng = rand::thread_rng();
+    let number: u32 = rng.gen_range(0..10);
+    println!("Votre nombre aléatoire entre 0 et 10 est : {}", number);
 }
 ```
 
-Le résultat de ce code sera un nombre aléatoire imprimé à chaque exécution du programme. Vous pouvez également spécifier une plage de valeurs en utilisant la méthode gen_range() au lieu de gen().
+Quand vous exécutez ce programme, vous pouvez obtenir une sortie comme celle-ci :
+```
+Votre nombre aléatoire entre 0 et 10 est : 7
+```
 
-## Deep Dive:
+Notez que `gen_range` est utilisé pour générer un nombre entre deux bornes.
 
-La génération de nombres aléatoires a une longue histoire dans le domaine de l'informatique. Elle remonte aux années 1940 où des techniques ont été développées pour simuler des processus aléatoires dans des systèmes informatiques.
+## Plongée en profondeur
 
-Il existe également d'autres méthodes pour générer des nombres aléatoires en dehors de l'utilisation de la bibliothèque rand en Rust. Par exemple, certains langages de programmation offrent une fonction intégrée pour générer des nombres aléatoires, tandis que d'autres utilisent des algorithmes plus complexes pour améliorer la génération de nombres aléatoires.
+Historiquement, générer des nombres aléatoires en programmation n'a pas toujours été une tâche simple. Les anciens systèmes utilisaient des techniques comme le bruit de fond de l'électronique ou le temps système. Rust utilise une bibliothèque appelée `rand`, qui utilise une combinaison de techniques modernes pour générer des nombres aléatoires.
 
-L'implémentation de la bibliothèque rand en Rust utilise des algorithmes de génération de nombres aléatoires basés sur des états internes appelés générateurs de nombres pseudo-aléatoires (PRNG). Cela signifie que les valeurs générées ne sont pas vraiment aléatoires, mais qu'elles le semblent suffisamment pour les utiliser dans des programmes.
+Une alternative à la bibliothèque `rand` serait d'appeler directement les API de votre système d'exploitation, mais cela peut être plus complexe et moins portable.
 
-## Voir aussi:
+Une chose importante à noter est que la plupart des générateurs de nombres aléatoires en informatique sont en réalité pseudo-aléatoires, ce qui signifie qu'ils utilisent un certain déterminisme mais sont suffisamment imprévisibles pour la plupart des usages.
 
-Pour en savoir plus sur la génération de nombres aléatoires en Rust, vous pouvez consulter la documentation officielle de la bibliothèque rand: https://docs.rs/rand/.
+## Voir aussi
 
-Vous pouvez également en apprendre davantage sur les différentes méthodes de génération de nombres aléatoires en lisant cet article intéressant: https://en.wikipedia.org/wiki/Random_number_generation.
-
-Enfin, vous pouvez vous amuser à tester vos compétences en programmation en essayant de générer des nombres aléatoires dans d'autres langages et en comparant les résultats avec ceux de Rust.
+- Documentation Rust `rand`: https://docs.rs/rand/
+- Wikipedia sur les nombres aléatoires : https://fr.wikipedia.org/wiki/Nombre_al%C3%A9atoire
+- Pour comprendre la pseudorandomité : https://fr.wikipedia.org/wiki/G%C3%A9n%C3%A9rateur_de_nombres_al%C3%A9atoires

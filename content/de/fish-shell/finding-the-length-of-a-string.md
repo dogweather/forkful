@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "Fish Shell: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,23 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Die Länge einer Zeichenkette zu finden bedeutet zu bestimmen, wie viele Zeichen in einer Zeichenkette vorhanden sind. Programmierer tun dies, um beispielsweise die Eingabe des Benutzers zu überprüfen oder um die Ausgabe zu formatieren.
+## Was und Warum?
 
-## Wie geht's:
-Um die Länge einer Zeichenkette in der Fish Shell zu finden, können wir das ```count```-Kommando verwenden. Hier ist ein Beispiel:
+Die Ermittlung der String-Länge ist das Exzählen von Charakteren in einem bestimmten Textstück. Programmierer tun dies meist, um Speicherplatz effizient zu verwalten und Fehlverhalten von Programmen zu vermeiden. 
+
+## So geht's:
+
+Unter Fish Shell benutzt man `string length -q` Befehl um die Länge eines Strings zu ermitteln. Hier ein Beispiel:
+
+```fish
+echo (string length -q "Hallo Welt")
+```
+
+Die Ausgabe wäre:
 
 ```
-set str "Hallo Welt"
-echo (count $str)
+11
 ```
+## Vertiefung
 
-Dies wird ```11``` ausgeben, da die Zeichenkette "Hallo Welt" aus 11 Zeichen besteht.
+Historisch gesehen, haben frühere Versionen der Shell-Programmierung den `wc -m` Befehl verwendet, aber bei Fish Shell haben wir jetzt `string length -q`. Sie müssen sich keine Sorgen machen, es hängt nicht von externen Befehlen ab und es ist in 100% reinem Fish geschrieben.
 
-## Tiefgehende Informationen:
-Das Konzept, die Länge einer Zeichenkette zu bestimmen, ist nicht neu. Es wurde schon in früheren Programmiersprachen wie Fortran und COBOL verwendet. Ein alternatives Verfahren ist die Verwendung von Endmarkierungen, wie zum Beispiel das Hinzufügen eines Leerzeichens am Ende der Zeichenkette. In der Fish Shell wird die Funktion ```string length $str``` zur Ermittlung der Länge einer Zeichenkette verwendet.
+Es gibt mehrere Weisen, um die Länge eines Strings zu ermitteln, `string split` und `count` sind Beispiele. Aber `string length -q` ist simpler und schneller, deswegen wird sie gewöhnlich bevorzugt.
 
-## Siehe auch:
-- [Fisch-Shell-Dokumentation](https://fishshell.com/docs/current/cmds/count.html)
-- [Informationen zur String-Länge auf frei-programmieren.de](https://www.frei-programmieren.de/freie-programm-artikel/frei-programmieren-kleine-verwaltung/163-string-laenge)
-- [Zusätzliche Informationen zur Geschichte der String-Länge](https://de.wikipedia.org/wiki/String)
+Die Implementierung von `string length -q` ist recht geradlinig. Es iteriert einfach den gegebenen String und zählt die Anzahl der Charaktere.
+
+## Siehe auch
+
+Für weitere Einzelheiten, schauen Sie sich die Dokumentation an:
+
+1. [Fish `string` Dokumentation](https://fishshell.com/docs/current/cmds/string.html)
+2. [Fish Shell Handbuch](https://fishshell.com/docs/current/index.html)

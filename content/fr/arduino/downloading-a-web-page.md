@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "Arduino: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,52 +10,71 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## Qu'est-ce & Pourquoi?
 
-Télécharger une page web est l'action de récupérer les données d'une page Internet et de les afficher sur un écran. Les programmeurs font cela pour avoir accès à des informations précises en ligne, comme les prévisions météorologiques ou les dernières nouvelles.
+Télécharger une page web consiste à récupérer son contenu et à le stocker pour une lecture hors ligne. Les programmeurs le font pour l'analyse de données, le web scraping, la sauvegarde de l'information et le test de la connectivité.
 
-## Comment faire:
+## Comment faire :
+
+Voici un exemple simple de comment télécharger une page Web en utilisant Arduino :
 
 ```Arduino
-#include <WiFi.h>
-#include <HTTPClient.h>
+#include <SPI.h>
+#include <Ethernet.h>
+
+byte mac[] = {  
+  0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+
+char server[] = "www.example.com";
+
+EthernetClient client;
 
 void setup() {
-  Serial.begin(115200);
+  Serial.begin(9600);
 
-  WiFi.begin("nom_du_réseau", "mot_de_passe"); // se connecter au WiFi
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Connexion en cours...");
+  if (Ethernet.begin(mac) == 0) {
+    Serial.println("Failed to configure Ethernet");
+    return;
   }
 
-  Serial.println("Connecté au WiFi!");
+  delay(1000);
 
-  HTTPClient http; // créer un objet HTTPClient
-  http.begin("https://www.exemple.com/page"); // spécifier l'URL à télécharger
-
-  int codeHTTP = http.GET(); // envoyer une demande GET et stocker le code de retour
-
-  if (codeHTTP > 0) { // vérifier si la demande a été réussie
-    String page = http.getString(); // obtenir la page sous forme de chaîne de caractères
-    Serial.println(page); // afficher la page sur le moniteur série
+  if (client.connect(server, 80)) {
+    client.println("GET / HTTP/1.1");
+    client.println("Host: www.example.com");
+    client.println("Connection: close");
+    client.println();
   }
-
-  http.end(); // libérer la mémoire
+  else {
+    Serial.println("Connection failed");
+  }
 }
 
 void loop() {
-  // rien d'autre à faire ici
+  if (client.available()) {
+    char c = client.read();
+    Serial.print(c);
+   }
+
+  if (!client.connected()) {
+    Serial.println();
+    Serial.println("Disconnecting.");
+    client.stop();
+    for(;;)
+      ;
+  }
 }
 ```
 
-Le résultat sera la page téléchargée affichée sur le moniteur série.
+Ce programme connecte Arduino à Internet via ethernet, se connecte à un serveur web et télécharge une page. 
 
-## Plongée en profondeur:
+## Approfondissement
 
-Télécharger des pages web est une fonctionnalité courante dans les projets IoT (Internet des Objets). Les alternatives à l'utilisation d'une bibliothèque WiFi et HTTPClient incluent l'utilisation de protocoles de communication tels que MQTT ou CoAP. Dans l'exemple ci-dessus, nous utilisons une connexion sécurisée (https) pour télécharger la page, mais cela peut aussi être fait en utilisant une connexion non sécurisée (http).
+Le téléchargement d'une page web avec Arduino est un concept relativement moderne qui a émergé avec l'avènement des cartes de communication réseau pour les microcontrôleurs. Des alternatives comme les modules wifi ESP8266 ou ESP32 peuvent être utilisées pour réaliser une telle opération d'une manière plus sophistiquée. Les détails d'implémentation pour le téléchargement de la page web impliquent établir une connexion TCP avec le serveur, envoyer une requête HTTP GET et lire la réponse.
 
-## À voir aussi:
+## Voir aussi :
 
-- [WiFi Library Reference](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTPClient Library Reference](https://www.arduino.cc/en/Reference/HTTPClient)
+- Guide approfondi sur le protocole HTTP : http://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html 
+- Utilisation de la bibliothèque Ethernet Arduino : https://www.arduino.cc/en/Reference/Ethernet 
+- Guide pour télécharger une page web en Python pour la comparaison : https://www.geeksforgeeks.org/python-how-to-request-webpages/.
+- Utilisation des modules ESP8266 et ESP32 : https://randomnerdtutorials.com/

@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av en textfil"
-html_title:           "Lua: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -12,31 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att läsa en textfil innebär att man tar in information från en extern fil och använder den i sitt program. Programmare gör detta för att kunna läsa och använda externa data, till exempel konfigurationsfiler eller användarinmatning.
+Att läsa en textfil i programmering innebär att hämta data från en textfil till ditt program. Programmerare gör detta för att manipulera, analysera eller använda den data som finns i filen.
 
 ## Hur man gör:
 
-```
-Lua:
--- Öppna filen för läsning
-local file = io.open("textfil.txt", "r")
+Här är ett exempel på hur man läser en textfil i Lua:
 
--- Läs innehållet av filen och lägg det i en variabel
-local innehåll = file:read("*all")
+```Lua
+filnamn = 'minfil.txt'
+
+-- Öppna filen för läsning
+fil = io.open(filnamn, 'r')
+
+-- Läs hela filen till en sträng
+innehold = fil:read('*all')
 
 -- Stäng filen
-file:close()
+fil:close()
 
--- Skriv ut innehållet
-print(innehåll)
-
+print(innehold)
 ```
 
-## Djupdykning:
+Utskrift kan se ut så här:
 
-Att läsa textfiler har funnits sedan början av programmering, och är en av de mest grundläggande sätten att interagera med externa data. Alternativ till att läsa textfiler kan vara att använda en databas eller att lagra data direkt i programmet. För att läsa en textfil i Lua används io biblioteket, som har funktioner som möjliggör läsning, skrivning och stängning av filer.
+```Lua
+Hej, jag är en textfil.
+```
 
-## Se även:
+`'*all'` anger att hela filen ska läsas. 
 
-- [Lua Reference Manual](https://www.lua.org/manual/5.4/)
-- [io Library Documentation](https://www.lua.org/manual/5.4/manual.html#6.8)
+## Fördjupning:
+
+Att läsa textfiler är en grundläggande del av programmering, vilket varit fallet sedan dess begynnelse. 
+
+Det finns flera alternativa metoder för att läsa en textfil i Lua, inklusive `io.lines`-funktionen som läser filen linje för linje.
+
+Detaljer i implementationen varierar beroende på vilka krav du har för din kod. Lua använder standard C-biblioteket för att hantera filer, vilket innebär att inläsning av textfiler sker effektivt och pålitligt.
+
+## Se även
+
+För ytterligare information, se följande källor:
+
+- Lua 5.4 manualen: [https://www.lua.org/manual/5.4/](https://www.lua.org/manual/5.4/)
+- PIL (Programming in Lua) kap 21, Filsystemet: [https://www.lua.org/pil/21.2.1.html](https://www.lua.org/pil/21.2.1.html)
+- Stackoverflow, där det finns massor av hjälp att hämta om du stöter på problem: [https://stackoverflow.com/questions/tagged/lua](https://stackoverflow.com/questions/tagged/lua)

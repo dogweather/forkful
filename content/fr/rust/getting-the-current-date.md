@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Rust: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,37 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi & Pourquoi?
+## Quoi & Pourquoi?
+Prendre la date actuelle signifie obtenir l'information sur la date et l'heure à ce moment précis. Les programmeurs font cela pour suivre des événements, journaliser les informations, ou ajouter des caractéristiques temporelles à leurs applications.
 
-Obtenir la date actuelle est une tâche courante pour les programmeurs Rust. Cela consiste à récupérer la date et l'heure actuelles sur le système d'exploitation. Les programmeurs utilisent souvent cette information pour enregistrer la date de création ou de modification d'un fichier, ou pour planifier l'exécution de certaines tâches en fonction de la date actuelle.
-
-# Comment faire:
-
-Pour obtenir la date actuelle en Rust, vous pouvez utiliser la méthode ```Utc::now()``` de la bibliothèque standard ```chrono```. Voici un exemple de code qui récupère la date actuelle et l'imprime ensuite:
-
+## Comment faire:
+Rust nous permet d'obtenir la date actuelle à travers le paquet Chrono. Voici un petit bout de code pour vous montrer comment:
 ```Rust
-use chrono::Utc;
+use chrono::{DateTime, Local};
 
-let current_date = Utc::now().format("%Y-%m-%d").to_string();
-println!("La date actuelle est: {:?}", current_date);
+fn main() {
+    let maintenant: DateTime<Local> = Local::now();
+    println!("{}", maintenant);
+}
+```
+Lorsque vous exécutez ce code, vous obtiendrez quelque chose comme ceci:
+```Rust
+2022-01-07 22:34:26.829074 +01:00
 ```
 
-Ce code va produire une sortie similaire à ceci:
+## Approfondissement: 
 
-```Console
-La date actuelle est: 2021-05-17
-```
+Récupérer la date actuelle est une fonctionnalité ancienne et indispensable dans la programmation. Dans le passé, les programmeurs exploitaient les APIs système pour cela mais Rust, dans sa quête pour la sécurité, fournir un paquet riche en fonctionnalités pour gérer tout ce qui est lié au temps.
 
-# Plongée en profondeur:
+Il y a bien sûr des alternatives à Chrono, comme le paquet time, ou même des manipulations de bas niveau. Cependant, Chrono reste la solution la plus complète et la plus facile à utiliser.
 
-Avant Rust 1.38, la méthode ```now()``` de la bibliothèque standard retournait un type de données ```SystemTime```, qui représentait la date et l'heure actuelles sous forme de nombre de secondes depuis l'époque Unix.
+L'implémentation du paquet Chrono fait abstractions des détails de bas niveau, et nous donne une API facile à utiliser. Il gère aussi pour nous des éléments complexes comme les fuseaux horaires.
 
-Depuis Rust 1.38, la méthode ```now()``` retourne un type de données ```DateTime<Utc>```, qui stocke la date et l'heure sous forme de structure avec différents champs pour les années, mois, jours, heures, minutes, secondes et millisecondes.
+## A Voir Aussi:
 
-Une alternative à l'utilisation de la bibliothèque standard serait d'utiliser des bibliothèques tierces telles que ```time``` ou ```chrono-tz```. Ces bibliothèques offrent des fonctionnalités supplémentaires telles que la prise en compte des fuseaux horaires.
+Pour plus d'informations, vous pouvez visiter:
 
-# À voir aussi:
-
-- [Chrono documentation](https://docs.rs/chrono/latest/chrono/)
-- [Time documentation](https://docs.rs/time/latest/time/)
-- [Chrono-TZ documentation](https://docs.rs/chrono-tz/latest/chrono_tz/)
+- Documentation du Chrono: https://docs.rs/chrono/0.4.19/chrono/
+- Rust by Example: https://doc.rust-lang.org/stable/rust-by-example/std_misc/chrono.html
+- Le livre Rust (FR): https://doc.rust-lang.org/book/fr-FR/title-page.html

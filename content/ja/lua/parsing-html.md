@@ -1,7 +1,7 @@
 ---
-title:                "HTML の解析"
-html_title:           "Lua: HTML の解析"
-simple_title:         "HTML の解析"
+title:                "HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,53 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
+# LuaでHTMLの解析を学ぼう
 
-HTMLパーサリングとは何か？プログラマーがそれをする理由は？
+## 何となぜ？
 
-HTMLパーサリングとは、HTMLドキュメントを構造化されたデータに変換することです。プログラマーはこれを行うことで、Webサイトやアプリケーションのコンテンツを自動的に取得したり、特定の要素を抽出したりすることができます。
+HTMLの解析とは、HTMLファイルの構造を理解し、その中の情報を抽出する事を指します。これはデータマイニングやウェブスクレイピングにおいて、ウェブページから必要な情報を取得するために行います。
 
-## 方法：
+## 実施方法：
 
-Luaを使ってHTMLパーサリングを行う方法を見ていきましょう。まず、タグを含むHTML文字列を用意します。次に、Luaの ```string.match()``` 関数を使用して、パターンを指定してタグ内のテキストを取得します。最後に、必要に応じて取得したテキストを処理することができます。
+Luaには便利なHTML解析ライブラリがあります。今回は`htmlparser`ライブラリを例に取ります。
 
-例えば、以下のようなHTML文字列があったとします。
+```Lua
+local htmlparser = require "htmlparser"
+local html = "<html><body><h1>Hello, Lua!</h1></body></html>"
+local root = htmlparser.parse(html)
 
-```
-<html>
-	<head>
-		<title>Hello World</title>
-	</head>
-	<body>
-		<h1>Welcome to my website!</h1>
-		<p>This is a sample paragraph.</p>
-	</body>
-</html>
+print(root:select("h1")[1]:getcontent())  -- LuaでHelloと出力
 ```
 
-この文字列から、タイトルと本文を取得するには、次のようなコードを使用します。
-
-```lua
-local html_string = "<html><head><title>Hello World</title></head><body><h1>Welcome to my website!</h1><p>This is a sample paragraph.</p></body></html>"
-
-local title = string.match(html_string, "<title>(.-)</title>")
-local paragraph = string.match(html_string, "<p>(.-)</p>")
-
-print(title)
---> Hello World
-
-print(paragraph)
---> This is a sample paragraph.
-```
-
-このように、HTMLパーサリングは簡単に実装することができます。
+これは、HTMLの`h1`タグの中身を取得する簡単な例です。
 
 ## ディープダイブ：
 
-HTMLパーサリングの歴史や代替方法について深く掘り下げてみましょう。HTMLパーサリングは最初、手動で行われていましたが、Webの発展とともに自動化されるようになりました。現在では、ほとんどのプログラミング言語でHTMLパーサリングを行うことができますが、Luaのようにシンプルな言語でも十分実装することができます。
+1. 歴史的な背景: Lua言語は1993年にリリースされ、その専用性と柔軟性から多くのソフトウェア開発に利用されてきました。
+2. 代替案: Lua以外の言語もHTML解析には広く利用されています。例えばPythonのBeautifulSoupやJavaScriptのCheerioなどがあります。
+3. 実装の詳細：`htmlparser`ライブラリはDOM(Document Object Model)に基づいてHTMLを解析します。DOMはHTMLの構造を表現するためのモデルで、このライブラリはHTMLをこのモデルに変換します。
 
-## 関連リンク：
+## 参考資料：
 
-- [Luaの公式ウェブサイト](https://www.lua.org/ja/)
-- [HTMLパーサリングの歴史](https://en.wikipedia.org/wiki/HTML_parsing)
-- [他のプログラミング言語を使ったHTMLパーサリングの方法](https://www.w3schools.com/jquery/ajax_load.asp)
+1. "Lua-users wiki: Libraries and Bindings": https://lua-users.org/wiki/LibrariesAndBindings
+2. "Lua-htmlparser GitHub": https://github.com/msva/lua-htmlparser
+3. "W3C HTML DOM": https://www.w3schools.com/js/js_htmldom.asp

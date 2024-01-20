@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon suurennus"
-html_title:           "Haskell: Merkkijonon suurennus"
-simple_title:         "Merkkijonon suurennus"
+title:                "Merkkijonon pääkirjaintaminen"
+html_title:           "Haskell: Merkkijonon pääkirjaintaminen"
+simple_title:         "Merkkijonon pääkirjaintaminen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -12,30 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Isolla alkukirjaimella kirjoittaminen on yksinkertainen mutta tärkeä ohjelmointikäytäntö, jossa kaikki sanat alkavat isolla kirjaimella. Tämä on tärkeää, koska se lisää ohjelmakoodin luettavuutta ja helpottaa ymmärtämistä. Useimmat ohjelmoijat käyttävät tätä käytäntöä, joka on myös yleinen konventio Haskellissa.
+Kielen merkkijonojen kirjainten muuttaminen isoiksi on helppo tapa tehdä teksti näkyvämmäksi tai standardoida muoto. Yleisimmin tämä on tehtävä, missä se riskejä pienenee typoista tai erilaisista kirjoitustavoista.
 
 ## Miten:
 
+Haskellissa voit pääoman kaikki lähdetekstin merkit käyttämällä sisäänrakennettua funktiota 'toUpper'. Se toimii yksittäisille merkkeille, joten meidän täytyy 'map':ata se kokonaiseen merkkijonoon:
+
 ```Haskell
-capitalize :: String -> String
-capitalize str = unwords $ map (\word -> toUpper (head word) : tail word) (words str)
+import Data.Char (toUpper)
 
-main = do
-    let str = "tämä on esimerkki lauseesta"
-    putStrLn (capitalize str)
+capitalized :: String -> String
+capitalized = map toUpper
 
--- Output:
--- Tämä On Esimerkki Lauseesta
+main :: IO ()
+main = putStrLn $ capitalized "hello, world"
+```
+Esimerkkitulostus olisi:
+
+```Haskell
+"HELLO, WORLD"
 ```
 
 ## Syväsukellus:
 
-Isojen alkukirjainten käyttö on ollut käytössä jo pitkään, ja se juontaa juurensa jo vanhoilta ajoilta, jolloin käsinkirjoitettuja tekstejä oli vaikea lukea ilman isojen alkukirjainten käyttöä. Nykyään se on enemmänkin konventio, jotta koodin lukeminen olisi helpompaa.
+Haskellissa 'map' sijoittaa funktion kaikkiin listan elementteihin - tässä tapauksessa, kaikkiin Stringin merkkeihin, koska Haskellissa String on vain merkkien luettelo.
 
-On myös olemassa muita tapoja tehdä isojen alkukirjainten muunnos Haskellissa, kuten käyttämällä Data.Char-moduulia tai rekurssiivista funktiota. On tärkeää muistaa, että käytännössä on aina useita tapoja saavuttaa sama tavoite, ja on hyvä pysyä yhteisön käytännöissä, jotta koodisi olisi mahdollisimman ymmärrettävää muille ohjelmoijille.
+Historiallisesti tämä toiminto on peräisin vanhemmista koodauskielistä, joissa merkkijonot koostuivat ASCII-merkeistä. 'A':n ja 'a':n ASCII-arvojen vaihtelevat pääoman mukaan, joten tekstin kirjoittaminen isoksi oli yksinkertainen laskutoimitustapa.
+
+Vaihtoehtoja takomiselle on Haskellissa useita, mukaan lukien 'mapM_' ja 'forM_', mutta 'map' on yleisin ja yksinkertaisin.
 
 ## Katso myös:
 
-- [Haskell-dokumentaatio: Data.Char-moduuli](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Advanced Haskell Series: Strings](https://www.fpcomplete.com/blog/2017/07/stringly-typed-haskell)
-- [Haskell Style Guide](https://github.com/tibbe/haskell-style-guide/blob/master/haskell-style.md)
+1. Learn You a Haskell For Great Good: http://learnyouahaskell.com/
+2. Real World Haskell: https://book.realworldhaskell.org/
+3. Haskell Wiki: https://wiki.haskell.org/
+4. Stackage for available Haskell packages: https://www.stackage.org/

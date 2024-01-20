@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Clojure: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Getting Started"
@@ -10,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
+Comenzar un nuevo proyecto de programación significa poner en marcha una nueva idea desde cero. Los programadores lo hacen para resolver problemas específicos, implementar nuevas funcionalidades o experimentar con nuevas tecnologías.
 
-Cuando eres un programador, siempre estás buscando formas de mejorar tus habilidades y aprender nuevas tecnologías. Una forma de hacerlo es empezar un nuevo proyecto. Esto te brinda la oportunidad de poner en práctica tus conocimientos y explorar ideas nuevas.
+## ¿Cómo se hace?
+Aquí te muestro cómo iniciar un nuevo proyecto con Leiningen, una popular herramienta de Clojure para la gestión de proyectos. 
 
-## Cómo:
-
-```Clojure
-(defn nuevo-proyecto [nombre objetivo]
-  (format "¡Felicidades, has iniciado un nuevo proyecto llamado %s con el objetivo de %s!" 
-  nombre objetivo))
-
-(defn proyecto [nombre]
-  (println (format "Bienvenido al proyecto %s" nombre)))
-```
-
-Salida:
+Primero, debes instalar Leiningen. Luego, para crear un nuevo proyecto, usa la pestaña `new`:
 
 ```Clojure
-(nuevo-proyecto "Analizador de texto" "identificar patrones en documentos")
-;; ¡Felicidades, has iniciado un nuevo proyecto llamado Analizador de texto con el objetivo de identificar patrones en documentos!
-
-(proyecto "Analizador de texto")
-;; Bienvenido al proyecto Analizador de texto
+lein new mi-proyecto
 ```
+Esto generará una nueva carpeta llamada `mi-proyecto` con toda la estructura necesaria para comenzar a codificar.
 
-## Buceo profundo:
+Para ejecutar tu proyecto, debes ubicarte en la carpeta del proyecto e introducir el comando `run`:
 
-Iniciar un nuevo proyecto en Clojure puede parecer intimidante, pero la comunidad es muy solidaria y hay muchos recursos disponibles para ayudarte. Antes de comenzar, asegúrate de tener una comprensión sólida de Clojure y su sintaxis. Alternativamente, también puedes considerar utilizar plantillas de proyectos existentes como Leiningen o Clojure CLI para facilitar el proceso.
+```Clojure
+cd mi-proyecto
+lein run
+```
+El resultado será algo así:
 
-## Ver también:
+```
+Hello, World!
+```
+Por supuesto, puedes modificar el código a tu gusto.
 
-- [Documentación oficial de Clojure] (https://clojure.org/)
-- [Leiningen] (https://leiningen.org/)
-- [Clojure CLI] (https://clojure.org/guides/deps_and_cli)
+## Un vistazo profundo
+
+Empezar un nuevo proyecto con Leiningen es fácil y rápido, pero no siempre fue así. Históricamente, antes de tener este tipo de herramientas, iniciar un nuevo proyecto era un proceso tedioso y complejo.
+
+Existen alternativas a Leiningen. Para Clojure, Boot es otro gestor de proyectos popular, y para otros lenguajes de programación existen herramientas similares como Maven para Java o Cargo para Rust.
+
+Los detalles de implementación al iniciar un nuevo proyecto con Leiningen incluyen la generación de un archivo `project.clj` que define las dependencias del proyecto y las tareas asociadas con él. Además, Leiningen genera automáticamente una estructura de directorios y archivos ideal para proyectos de Clojure.
+
+## Ver También
+1. [Leiningen: para gestión de proyectos](https://leiningen.org/)
+2. [Boot: alternativa a Leiningen](https://boot-clj.com/)
+3. [Documentación de Clojure](https://clojure.org/guides/getting_started)
+4. [La Guía de estilo de Clojure](https://github.com/bbatsov/clojure-style-guide)

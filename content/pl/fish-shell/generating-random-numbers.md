@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "Fish Shell: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,45 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co to jest i dlaczego?
+## Co i dlaczego?
+Generowanie liczb losowych to proces tworzenia liczb, które nie mają żadnego dostrzegalnego wzorca czy przewidywalności. Programiści używają ich do tworzenia skomplikowanych algorytmów, gier, symulacji i wielu innych zastosowań, które potrzebują nieprzewidywalności.
 
-Generowanie losowych liczb jest procesem tworzenia liczby lub ciągu liczb w sposób pseudolosowy. Programiści często wykorzystują ten proces do tworzenia symulacji, gier lub do generowania unikalnych identyfikatorów. 
+## Jak to zrobić:
+Tworzenie losowych liczb w Fish Shell jest proste jak bułka z masłem. Zwyczajnie użyj polecenia `random`.
 
-# Jak to zrobić:
-
-Według kanonicznej definicji, musimy użyć funkcji `random` w celu wygenerowania losowych liczb. Oto przykładowy kod w języku Fish Shell, który wyświetli 10 losowych liczb od 1 do 100:
-
-```fish
-for i in (seq 1 10)
-	echo (random 1 100)
-end
+```Fish Shell
+random 1 100
 ```
+Zwróci losową liczbę między 1 a 100.
 
-Po uruchomieniu powyższego kodu, otrzymamy wynik podobny do tego:
-
-```fish
-82.934609
-10.48204 
-71.350336 
-95.155582 
-63.741849 
-69.527023 
-54.524158 
-16.843962 
-68.924905 
-4.6280007
+Wyjście:
+```Fish Shell
+45
 ```
+To jest tylko jeden przykład. Możesz dostosować dane wejściowe do swoich potrzeb.
 
-# Wgląd w szczegóły:
+## Głębsze zanurzenie:
+Historia generowania liczb losowych w programowaniu jest zaskakująco bogata. Właściwie, losowość stała się kluczowym elementem w wielu dziedzinach informatyki. W przeciwieństwie do innych powłok Unixowych, takich jak bash czy zsh, Fish Shell korzysta z stosunkowo nowego systemu do generowania liczb pseudolosowych, który gwarantuje lepszą losowość. Alternatywą dla wbudowanej funkcji `random` jest użycie zewnętrznych narzędzi, takich jak /dev/random lub /dev/urandom. 
 
-Historia generowania losowych liczb sięga czasów starożytnych, gdzie używano różnych metod, takich jak rzut monetą czy obracanie kołem. Współczesne komputery wykorzystują algorytmy generowania liczb pseudolosowych, które wykorzystują dane dostarczane przez użytkownika, takie jak czas lub pozycja kursora.
+Szczegółowo, `random` w Fish Shell działa poprzez wykorzystanie wewnętrznej funkcji `rand()`, która zwraca liczbę pseudolosową. Ale pamiętaj, że jest to pseudolosowość, co oznacza, że nie jest to prawdziwa losowość i nie powinna być używana w przypadkach, które wymagają prawdziwej losowości, takich jak kryptografia.
 
-Alternatywne metody generowania losowych liczb to m.in. użycie rzutu kostkami, wykorzystanie danych zewnętrznych (np. pogoda), czy wykorzystanie fizycznych zjawisk, takich jak efekt kolizji.
-
-Implementacja generowania losowych liczb jest bardzo ważna, ponieważ źle napisany algorytm może doprowadzić do powtarzających się wzorców i wpływać na losowość liczb.
-
-# Zobacz też:
-
-- [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Generowanie liczb pseudolosowych - Wikipedia](https://pl.wikipedia.org/wiki/Generacja_liczb_pseudolosowych)
-- [Generowanie liczb losowych w Pythonie - Devcorner](https://devcorner.pl/generowanie-liczb-losowych-w-pythonie/)
+## Zobacz również:
+- [Oficjalna dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
+- [Wikipedii na temat generowania liczb pseudolosowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)
+- [Artykuł o generowaniu liczb losowych w różnych językach programowania](https://www.freecodecamp.org/news/how-to-generate-random-numbers/)

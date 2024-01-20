@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Fish Shell recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -12,37 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date in Fish Shell is a way to retrieve the current date and time information. This is a common task for programmers as it allows them to timestamp events or automate tasks based on the current date.
+Grabbing the current date is a way programmers capture the system's current day, month, and year. This is handy for logging, generating reports, timestamps, and many other time-based functionalities.
 
 ## How to:
 
-To get the current date in Fish Shell, you can use the `date` command. Here are two examples of how it can be used:
+To get the current date in Fish Shell (the currents version), use the `date` command. 
 
+```fish
+set current_date (date)
+echo $current_date
 ```
-# Get the current date and time in the default format
-Fish Shell> date
-Sun Apr 25 12:00:00 EST 2021
 
-# Get the current date in a custom format (YYYY-MM-DD)
-Fish Shell> date +"%Y-%m-%d"
-2021-04-25 
+This will print the current date, something like:
+
+```fish
+Thu Sep 30 21:31:01 UTC 2021
+```
+
+For more granularity and formatting options, pass arguments to the `date` command. For instance, to get just the day:
+
+```fish
+set day (date +%A)
+echo $day
+```
+
+That typically generates:
+
+```fish
+Thursday
 ```
 
 ## Deep Dive
 
-### Historical Context:
+Fish (Friendly interactive shell) is a Unix shell that focuses on user-friendliness and interactivity. The ability to fetch the current date isn't new or unique to Fish, similar functionality can be seen in older shells like Bash or Zsh.
 
-Getting the current date has been a common task for programmers since the early days of computing. As technology has advanced, so have the methods for retrieving this information.
+There are a few alternatives to the `date` command approach depending on your needs. For instance, the `strftime` function in a language like C, which gives more control over the output format. Alternatively, higher-level languages such as Python, Java, and JavaScript provide their own methods to fetch the current date.
 
-### Alternatives:
+Under the hood, when you run the `date` command, Fish is calling a system function that interfaces with the operating system to pull the current date and time. It then formats this information based on the provided format strings, like `%A` for the day of the week.
 
-Other alternatives for getting the current date in Fish Shell include using the `date` command with different options, or using third-party libraries for more advanced functionality.
+## See Also
 
-### Implementation Details:
+To dive deeper into the date command and the Fish shell coding, check out these resources:
 
-The `date` command in Fish Shell allows for various options to change the output format of the current date. These options follow the same syntax as the `date` command in the Unix operating system.
-
-## See Also:
-
-- [Fish Shell Documentation](https://fishshell.com/docs/current/cmds/date.html)
-- [Unix Date command](https://www.geeksforgeeks.org/date-command-in-linux-with-examples/)
+- [Fish Shell documentation](https://fishshell.com/docs/current/index.html)
+- [Linux `date` command](https://www.geekhideout.com/software/linux-man-pages/1/date.shtml)
+- [UNIX and Linux System Administration Handbook](https://www.amazon.com/UNIX-Linux-System-Administration-Handbook/dp/0134277554)

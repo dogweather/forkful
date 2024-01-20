@@ -1,6 +1,6 @@
 ---
 title:                "一時ファイルの作成"
-html_title:           "Bash: 一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-今回は、Bashプログラミングのテクニックの一つである、一時ファイルの作成について学びましょう。
+## 何となぜ？
+一時ファイル作成は、プログラムが実行中に短時間データを保管するための方法です。これは、大量のデータをプログラム間で高速に移動したり、時間とともに変化するデータを追跡したりするために使用されます。
 
-## 何をするものか?
+## 作り方：
+```Bash 
+# tempファイル作成
+temp_file=$(mktemp)
 
-一時ファイルとは、一時的にデータを保存するための特別なファイルです。プログラマーにとって、一時ファイルは非常に便利で、プロセス間でデータをやり取りする際や、一時的な情報を保存する際などに使用されます。
+# tempファイルに何かを書く
+echo "Hello, World!" > $temp_file
 
-## 作り方:
+# tempファイルの内容を出力する
+cat $temp_file
 
-以下のように、Bashコマンドを使用して一時ファイルを作成することができます。
-
-```Bash
-# テキストファイルとして一時ファイルを作成する
-tmpfile=$(mktemp)
-
-# 一時ファイルを使用する
-cat <some_data> > $tmpfile
-
-# 作業が終了したら、一時ファイルを削除する
-rm $tmpfile
+# tempファイルを削除する
+rm $temp_file
+```
+このスクリプトの結果：
+```Bash 
+Hello, World!
 ```
 
-一時ファイルを作成する際、```mktemp```コマンドを使用することが一般的です。このコマンドは、一意なファイル名を自動的に生成してくれます。一時ファイルの名前には、通常以下のように```tmp.XXXXXX```という形式が使用されます。
+## ディープダイブ：
+一時ファイルの仕組みはUnix系システムの初期の段階から存在しました。ただし、`mktemp`は後に追加され、一時ファイルの安全な作成を可能にしました。しばしば一時ファイルの代わりにRAMディスクやメモリマップファイルが使用されます。これらは一時ファイルと同じ目的を果たしますが、さまざまな利点（高速なアクセス時間）と欠点（制限されたサイズ）があります。
 
-## 詳細を掘り下げる:
+具体的な実装については、一時ファイルは通常、`/tmp`ディレクトリ内に作成され、名前はランダムに生成されます。これにより、同じスクリプトが複数回実行されてもファイル名の衝突が防げます。
 
-一時ファイルの概念は、UNIXシステムの20世紀初頭に遡ることができます。当初は、シェルスクリプト内で使用される特別な変数であったが、後に```mktemp```コマンドが開発され、一時ファイルの作成が容易になりました。Bash以外にも、PerlやPythonなどのプログラミング言語でも一時ファイルを作成するための機能が提供されています。
-
-また、一時ファイルを作成する別の方法として、一時ディレクトリを作成する方法もあります。これには、```mktemp -d```コマンドを使用します。この方法を使用することで、複数の一時ファイルを同じ場所に保存できるようになります。
-
-## 関連リンク:
-
-- [Bashの一時ファイル作成についてのドキュメンテーション](https://www.gnu.org/software/bash/manual/html_node/Creating-Temporary-Files.html)
-- [mktempコマンドのドキュメンテーション](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html#mktemp-invocation)
-- [一時ファイルの作成方法に関するStack Overflowの質問](https://stackoverflow.com/questions/1167746/how-to-create-a-temporary-directory-and-a-temporary-file-in-it)
+## 参照リンク：
+- [`mktemp` man page（英語）](https://linux.die.net/man/1/mktemp)
+- [Temporary file Wikipedia（日本語）](https://ja.wikipedia.org/wiki/%E4%B8%B2%E6%99%82%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB)
+- [Bash programming guide（英語）](https://www.tldp.org/LDP/abs/html/)

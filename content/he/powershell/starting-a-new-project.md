@@ -1,6 +1,6 @@
 ---
 title:                "התחלת פרויקט חדש"
-html_title:           "PowerShell: התחלת פרויקט חדש"
+html_title:           "Clojure: התחלת פרויקט חדש"
 simple_title:         "התחלת פרויקט חדש"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,50 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
+## מה ולמה? (What & Why?)
 
-התחלת פרויקט חדש היא פעולה בדיוק כפי שמשמעו שמה - התחלת עבודה על פרויקט חדש. כמו בכל עבודה חדשה, זה מתחיל עם רעיון ואתחול עליו בפועל. תכנתנים עושים את זה כדי ליצור משהו חדש ומיוחד, כדי לפתוח עסק חדש או לפתח יכולת חדשה במערכת קיימת.
+התחלת פרויקט חדש היא הפרוצדורה שבה מתכנת נותן למהלך תכנות רענון. זה מאפשר למתכנת ליצור קונספטים חדשים, להמיס בעיות ולהרחיב את הידע שלו.
 
-# איך לעשות זאת:
+## איך מבצעים? (How to:)
 
- ```PowerShell
- # הגדרת משתנה עם כותרת לפרויקט חדש
- $projectName = "פרויקט חדש"
- 
- # הפקודה הבאה תצור תיקייה חדשה עם השם שלנו
- New-Item -ItemType Directory -Name $projectName
- 
- # הדפסת הודעה אישור
- Write-Host "נוצרה תיקייה חדשה בשם $projectName"
- 
- # הפקודה הבאה תצור קובץ חדש עם השם שלנו
- New-Item -ItemType File -Name "main.ps1"
- 
- # בדיקה שהקובץ נוצר בהצלחה
- if (Test-Path ".\main.ps1") {
-     Write-Host "הקובץ main.ps1 נוצר בהצלחה"
- }
- 
- 
- ```
- 
- פלט:
- 
-נוצרה תיקייה חדשה בשם פרויקט חדש<br>
-הקובץ main.ps1 נוצר בהצלחה
+הנה דוגמה לצורת הפעולה של הוצאת פרויקט חדש לפועל באמצעות PowerShel‪l. 
+בקוד הבא אנחנו מלאים את הקונפיגורציה לפקודות שנבצע בהמשך.
 
-# כייף יותר:
+```PowerShell
+#הגדרת משתנים
+$NewProjectDir = 'c:\PsNewProject'
+$NewProjectFile = 'main.ps1'
 
-לפני שנתחיל לכתוב קוד, ניתן להשתמש בתבנית קיימת כדי להפוך את התחלת הפרויקט לקלה ומהירה יותר. קיימות כמה תבניות מוכנות לשימוש, כגון תבנית עם תפריט ותבנית ריקה לבחירתך. כמובן שניתן גם ליצור תבניות משלך על מנת להתאים אותן לצרכים ספציפיים שלך.
+#יצירת התיקיה לפרויקט חדש
+New-Item -ItemType Directory -Path $NewProjectDir
 
-# חקירה מעמיקה:
+#יצירת קובץ חדש עבור הפרויקט
+New-Item -ItemType File -Path "$NewProjectDir\$NewProjectFile"
+```
 
-כדי להתחיל פרויקט חדש בפווורשל, ניתן להשתמש בפקודת "New-Item" כפי שראינו בדוגמאות. אם תרצו לתת שם לתיקיית הפרויקט, ניתן להשתמש בפקודת "Rename-Item" ולשנות את השם הקיים. כמו כן, ניתן להשתמש גם בתחילת כל פרויקט עם כמה קבצים ולספק שם לכל אחד מאלה באמצעות "Rename-Item" או יכול ליצור תיקיות נוספות עם "New-Item".
+על הקוד מעלה ליצור תיקיית פרויקט חדשה עם קובץ `main.ps1` בתוכה.
 
-# ראו גם:
+## צלילה מעמיקה (Deep Dive)
 
-למידע נוסף על פקודות בפווורשל, ניתן לעיין במקורות הבאים:
+PowerShell הוא שפה אידיאלית למחשבים בסביבת Windows ומגיע עם מערכת ההפעלה. בנוסף ליכולת להתארגן במהירות עם תרשימים, קבצים, ומסדי נתונים, הוא מאפשר שליטה מלאה בניהול מערכת ההפעלה.
 
-1. תיעוד רשמי של מיקרוסופט - https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1
-2. מאמרים ומדריכים נוספים בבלוגים ואתרים כמו הבלוג של PowerShellMagazine - https://www.powershellmagazine.com/
-3. פורומים וקהילות מקצועיות לשאלות ותשובות - https://stackoverflow.com/ ו- https://powershell.org/
+בראשיתו, PowerShell השתמש בסיפורי Scripting סטטיים בלבד. אך PowerShell כיום מתקבלת ככלי כדי התחלת פרויקטים חדשים. אתה יכול גם להשתמש ב-PowerShell בעזרת המערכתות הקיימות כמו Python או Node.js
+
+כמו כל שפה אחרת, יש את הארגונומיה של שפת PowerShell. קובץ של PowerShell הוא קובץ `ps1` שהוא מסוג טקסט פשוט. השפה מאפשרת גם השלמות קוד מדהים, האם גורמת לחסכון בזמן של מתכנתים.
+
+## ראו גם (See Also)
+
+- [החלטת המחשב - מאמר המסביר את תהליך יצירת PowerShell חדש](http://www.decidingonthe.net/create-new-powershell-script/)
+- [שפת PowerShell באתר Docs של Microsoft](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
+- [מדריכים מקוונים בנושא PowerShell](https://www.stackoverflow.com/questions/tagged/powershell)

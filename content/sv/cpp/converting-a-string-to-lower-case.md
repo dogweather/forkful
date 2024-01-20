@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till små bokstäver"
-html_title:           "C++: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,34 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Konvertering av en sträng till gemener är en grundläggande operation inom programmering som innebär att alla bokstäver i en sträng ändras till små bokstäver. Detta görs vanligtvis för att underlätta jämförelser och sökningar av strängar, eftersom gemener och versaler inte är samma tecken för datorn.
+Att konvertera en sträng till gemener innebär att ändra alla stora bokstäver i en textsträng till små bokstäver. Programmerare gör det ofta för att förhindra oönskad variation beroende på versaler och gemener i sökningar, sorteringar, autentiering och andra jämförelser.
 
-## Hur man:
-Här är ett exempel på hur man konverterar en sträng till gemener i C++:
+## Så här gör du:
+I C++ kan du enkelt konvertera en sträng till gemener med STL algoritmen `std::transform`. Här är ett exempel:
 
 ```C++
-#include <iostream>
 #include <algorithm>
-
-using namespace std;
+#include <cctype>
+#include <iostream>
+#include <string>
 
 int main() {
-  string str = "HELLO WORLD";
-  transform(str.begin(), str.end(), str.begin(), ::tolower);
-  cout << str; // hej värld
-  return 0;
+    std::string text = "Hej Världen!";
+    std::transform(text.begin(), text.end(), text.begin(),
+                   [](unsigned char c){ return std::tolower(c); });
+    std::cout << text;
+    return 0;
 }
 ```
-Här använder vi standardfunktionen `transform` tillsammans med `::tolower` för att ändra alla bokstäver i strängen `str` till små bokstäver.
+När du kör detta program får du "hej världen!" som output.
 
-## Djupdykning:
-I äldre versioner av C++, innan standardbiblioteket `algorithm` fanns tillgängligt, användes ofta en loop för att konvertera strängen till gemener. Detta krävde mer kod och ökade risken för fel. Nu med standardfunktionen `transform` ges en mer effektiv och säkrare lösning.
 
-Det finns också andra alternativ för att utföra samma operation, som att använda andra standardfunktioner eller till och med skriva en egen funktion. Det viktiga är att välja den lösning som passar bäst för ens specifika program och behov.
+## Fördjupning
+Historiskt sätt har konvertering av strängar till gemener varit nödvändig för att förenkla textbehandling och jämförelser inom datakommunikation. I äldre programmeringsspråk som C skulle det vara mer komplicerat att utföra en sådan konvertering, men med C++ och standardmallsbiblioteket är det en ganska rak framåt process.
 
-När det gäller implementationen av konverteringen av strängar till gemener är det ofta enkelt och snabbt att utföra. I de flesta fall är det en linjär operation, vilket innebär att det tar lika många steg som antalet bokstäver i strängen.
+Alternativa metoder inkluderar att skriva en egen funktion för att iterera genom varje tecken i strängen och använda funktionen `tolower()` från `cctype`-biblioteket för att konvertera varje tecken individuellt.
 
-## Se även:
-Mer om funktionen `transform` och andra standardfunktioner: [C++ Standard Library](https://en.cppreference.com/w/cpp/header/algorithm)
+Om du behöver konvertera tecken i andra teckensystem än ASCII, som Unicode, skulle du behöva använda mer avancerade metoder där `std::tolower` kanske inte fungerar. Detta är eftersom `std::tolower` endast arbetar med ASCII-tecken och inte kan hantera andra teckensystem.
 
-En alternativ lösning med en egen funktion: [Lowercase Function](https://www.geeksforgeeks.org/conversion-whole-string-uppercase-lowercase-using-stl-c/)
+## Se även
+För att lära dig mer om strängbehandling i C++, kolla in dessa resurser:
+1. [Basic string manipulations in C++](https://www.cplusplus.com/reference/string/string/)
+2. [C++ String Transformation](https://en.cppreference.com/w/cpp/algorithm/transform)
+3. [Character conversions in C++](https://www.cplusplus.com/reference/cctype/tolower/)

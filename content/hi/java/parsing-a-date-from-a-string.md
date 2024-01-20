@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग से तारीख का अनुक्रमण करना"
-html_title:           "Java: स्ट्रिंग से तारीख का अनुक्रमण करना"
-simple_title:         "स्ट्रिंग से तारीख का अनुक्रमण करना"
+title:                "एक स्ट्रिंग से तारीख पार्स करना"
+html_title:           "C++: एक स्ट्रिंग से तारीख पार्स करना"
+simple_title:         "एक स्ट्रिंग से तारीख पार्स करना"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,37 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## यह क्या है और क्यों?
-डेट फाइल की स्ट्रिंग से पार्सिंग क्या है, यह प्रोग्रामर्स इसलिए करते हैं कि वे उस स्ट्रिंग से डेट को प्राप्त कर सकें।
+## क्या और क्यों?
+
+विभाजन ("पार्सिंग") किसी विशेष दिनांक ("डेट") को एक वर्णमाला ("स्ट्रिंग") से प्राप्त करना इत्यादि का एक क्रियाकलाप है। प्रोग्रामर इसे डेटा का व्यवस्थित रूप से हैंडल करने और मशीन को समझाने के लिए करते हैं।
 
 ## कैसे करें:
+
+आइए JDK 8 और इसके ऊपर के संस्करणों में दिनांक को पार्स करने का उदाहरण देखते हैं। 
+
 ```Java
-import java.text.SimpleDateFormat;
-import java.util.Date;
-public class DateParser {
-  public static void main(String[] args) {
-    SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-    Date date = sdf.parse("25/12/2020");
-    System.out.println(date);
-  }
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+
+public class Main {
+    public static void main(String[] args) {
+        String dateString = "2022-02-05";
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+        LocalDate parsedDate = LocalDate.parse(dateString, formatter);
+        System.out.println(parsedDate);
+    }
 }
 ```
-और भी अधिक तारीख पार्सिंग कोड और उनका परिणाम आप नीचे देख सकते हैं:
 
-```Java
-SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-Date date = sdf.parse("25-12-2020");
-System.out.println(date); //Fri Dec 25 00:00:00 IST 2020
+ऊपरी कोड स्निपेट का परिणाम होगा:
 
-SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yy");
-Date date = sdf.parse("12/25/20");
-System.out.println(date); //Fri Dec 25 00:00:00 IST 2020
+```
+2022-02-05
 ```
 
-## गहराई में जाएं:
-प्रारंभिक रूप से, डेट पार्सिंग एक विशिष्ट तारीख फॉर्मेट के साथ डेट ऑब्जेक्ट को प्राप्त करने का एक तरीका था। हालांकि, आजकल बहुत सारे अलग-अलग तारीख स्ट्रिंग फॉर्मेट हैं, इसलिए हमें उचित तारीख पार्सिंग लोजिक को लिखना हो सकता है। अन्य विकल्पों में, हम एक डेट पार्सिंग लाइब्रेरी भी प्रयोग कर सकते हैं जो हमारे लिए यह सब काम करती है। अंत में, डेट पार्सिंग के लिए एक ऊंचा स्तरीय विवरण के अंतर्गत तीन विभाग हैं - फ़ोर्मेट स्ट्रिंग, डेट पार्सिंग लोजिक, और तारीख परिणाम को फॉर्मेट करने के लिए टेम्पलेट।
+## गहरी जानकारी:
 
-## देखें भी:
-- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [SimpleDateFormat Class](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Date Parsing in Java using Regular Expressions](https://dzone.com/articles/java-date-parsing-using-regular-expressions)
+जावा भाषा में दिनांक पार्स करने का इतिहास छोटा है, लेकिन इसके कई रूप हैं। उदाहरण के लिए, पहले `SimpleDateFormat` का उपयोग किया जाता था, जो अब आमतौर पर `DateTimeFormatter` द्वारा बदल दिया गया है। 
+
+`SimpleDateFormat` के अपेक्षा, `DateTimeFormatter` में कई बड़े लाभ हैं, जैसे कि thread safety और बेहतर एपीआई। 
+
+किंतु, अगर आप एक पुराने कोडबेस के साथ काम कर रहे हैं, तो आपको शायद `SimpleDateFormat` का सामना करना पड़े।
+
+## और देखें:
+
+- Oracle Java Documentation: [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+- Baeldung: [Guide to LocalDate](https://www.baeldung.com/java-8-date-time-intro)
+- StackOverflow: [Parsing date from String using Java 8 DateTimeFormatter](https://stackoverflow.com/questions/22463062/how-to-parse-format-dates-with-localdatetime-java-8)

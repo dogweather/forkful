@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http"
-html_title:           "PowerShell: Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
 simple_title:         "Envoyer une requête http"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,48 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-En programmation, envoyer une requête HTTP signifie envoyer une demande à un serveur pour obtenir des informations ou effectuer une action spécifique. Les programmeurs le font pour interagir avec des sites Web, des API ou des services en ligne.
+## Qu'est-ce que c'est et Pourquoi ?
 
-## Comment faire:
-Voici un exemple de code PowerShell pour envoyer une requête HTTP vers le site web "example.com" et afficher les données de réponse:
+Envoyer une demande HTTP, c'est communiquer avec un serveur en utilisant le protocole HTTP (HyperText Transfer Protocol). Les programmeurs le font pour interagir avec des sites web, des API et d'autres services en ligne.
+
+## Comment faire :
+
+Voici comment vous pouvez envoyer une demande HTTP en utilisant PowerShell.
+
 ```PowerShell
-$request = Invoke-WebRequest -Uri "http://example.com"
-$request.Content
-```
-Résultat:
-```
-<!DOCTYPE html>
-<html>
-<head>
-<title>Example Domain</title>
-</head>
-<body>
-<h1>Example Domain</h1>
-<p>This domain is for use in illustrative examples in documents. You may use this
-domain in literature without prior coordination or asking for permission.</p>
-<p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</body>
-</html>
+# Importe le module
+Import-Module PowerShellISE
+
+# Crée une requête HTTP GET
+$requête = Invoke-WebRequest -Uri "https://votresite.com" 
+
+# Affiche le contenu de la réponse
+$requête.Content
 ```
 
-Pour envoyer une requête avec des paramètres spécifiques, vous pouvez utiliser l'argument "-Body" et spécifier des données au format JSON:
+Le code ci-dessus importe le module PowerShellISE, envoie une requête HTTP GET à "https://votresite.com", puis affiche le contenu de la réponse.
+
+Voici comment vous pouvez envoyer une requête HTTP POST.
+
 ```PowerShell
-$body = @{
-    username = "johnsmith"
-    password = "mypassword"
-} | ConvertTo-Json
+# Importe le module
+Import-Module PowerShellISE
 
-Invoke-WebRequest -Uri "http://example.com/login" -Method "POST" -Body $body -ContentType "application/json"
+# Crée une requête HTTP POST
+$requête = Invoke-WebRequest -Uri "https://votresite.com" -Method POST -Body "param1=valeur1&param2=valeur2"
+
+# Affiche le contenu de la réponse
+$requête.Content 
 ```
 
-## Plongée en profondeur:
-L'envoi de requêtes HTTP existe depuis les débuts d'Internet et est un composant essentiel de l'architecture du Web. Il permet aux développeurs d'interagir avec des services et des données en ligne de manière simple et efficace.
+La requête HTTP POST inclut des données (dans le corps de la requête) que le serveur peut utiliser pour effectuer une action spécifique.
 
-En plus de PowerShell, il existe d'autres outils et langages de programmation qui permettent l'envoi de requêtes HTTP, tels que Python, JavaScript ou cURL. Ces outils peuvent être utiles pour des tâches spécifiques ou pour les développeurs qui préfèrent un langage différent.
+## Plongée en profondeur 
 
-Dans le code PowerShell, l'argument "-Method" peut être utilisé pour spécifier le type de méthode HTTP à utiliser, tel que GET, POST, PUT ou DELETE. L'argument "-Headers" permet de spécifier des en-têtes personnalisés pour la requête. Il est également possible de spécifier une authentification avec l'argument "-Credential".
+L'envoi de requêtes HTTP a commencé avec la création du protocole HTTP en 1989. C'est un élément essentiel du web et son évolution a été dictée par les besoins des développeurs et les avancées technologiques.
 
-## Voir aussi:
-- [Documentation PowerShell sur Invoke-WebRequest](https://docs.microsoft.com/fr-fr/powershell/module/Microsoft.PowerShell.Utility/Invoke-WebRequest?view=powershell-7)
-- [Analyser les données JSON dans PowerShell](https://docs.microsoft.com/fr-fr/powershell/module/Microsoft.PowerShell.Utility/ConvertFrom-Json?view=powershell-7)
+Dans PowerShell, `Invoke-WebRequest` est la méthode principale pour envoyer des requêtes HTTP. Toutefois, il existe des alternatives comme `System.Net.WebClient` ou `System.Net.Http.HttpClient` qui peuvent convenir pour des scénarios plus spécifiques.
+
+Lors de l'envoi d'une requête HTTP, PowerShell fait plus que simplement envoyer la requête et recevoir la réponse. Il construit également des objets PowerShell autour des informations renvoyées, vous offrant la possibilité de manipuler et d'interagir de manière programmatique avec les réponses.
+
+## Voir aussi 
+
+Pour plus d'informations, jetez un oeil à ces sources :
+
+- ["Invoke-WebRequest" sur Microsoft Docs](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.utility/invoke-webrequest)
+- ["About_Http" sur Microsoft Docs](https://docs.microsoft.com/fr-fr/powershell/scripting/learn/deep-dives/everything-about-https)
+- [Guide complet sur les requêtes HTTP en PowerShell](https://adamtheautomator.com/powershell-http-request)

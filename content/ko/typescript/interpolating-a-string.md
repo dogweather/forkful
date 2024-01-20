@@ -1,6 +1,6 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "TypeScript: 문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
 simple_title:         "문자열 보간하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,29 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇인가요 & 왜요?
 
-문자열을 보간한다는 것은, 일종의 문자열 안에 변수 값을 삽입하는 것을 말합니다. 프로그래머들은 이를 자주 사용하는데, 이는 코드를 더 읽기 쉽고 유지보수하기 쉽게 만들기 때문입니다.
+문자열 보간(Interpolation)이란, 변수가 선언되고 할당된 후에 이 변수를 문자열 안에 직접 넣는 것을 말합니다. 그래서 복잡한 문자열을 간편하게 만들 수 있어서 프로그래머들이 주로 사용합니다.
 
-## 방법:
+## 어떻게 사용하나요:
 
 ```TypeScript
-let language = "TypeScript";
-let text = `안녕하세요, 저는 ${language}를 사용하여 코딩하고 있습니다.`;
-console.log(text);
+let name: string = "John";
+console.log(`Hello, ${name}!`);
+```
+위의 코드를 실행하면 다음의 출력 결과를 볼 수 있습니다:
+```
+Hello, John!
 ```
 
-결과:
+## 깊은 이해를 위해:
 
-```
-안녕하세요, 저는 TypeScript를 사용하여 코딩하고 있습니다.
-```
+1. **역사적 맥락**: 이전에는 JavaScript에서 문자열 연결을 위해 '+' 연산자를 사용했지만, 이 방법은 복잡하고 가독성이 떨어집니다. TypeScript의 문자열 보간 기능은 이를 개선하였습니다.
 
-## 깊이 파고들기:
+2. **대안자**: 문자열 보간 이외에도, `concat()` 메서드, `+` 연산자 등을 이용해 문자열을 결합할 수 있습니다. 그러나 보간법이 이들보다 간편하고 가독성이 좋습니다.
 
-보간 문자열은 ES2015 스펙부터 도입되었는데, 이전에는 문자열 더하기 연산을 사용하여 같은 결과를 얻을 수 있었습니다. 그러나 이는 가독성이 떨어지고 번거로웠기 때문에 보간 문자열이 도입되었습니다. 다른 언어에서도 비슷한 기능이 지원되지만, TypeScript의 경우 보간 문자열을 더 엄격하게 검사하여 자바스크립트의 버그를 방지할 수 있습니다. 
+3. **구현상세**: TypeScript에서 문자열 보간은 변수값이 문자열 안에 포함되도록 템플릿 리터럴(``)을 사용합니다. `${}` 함수는 이 함수 안에 있는 변수들을 대신하여 그 값들을 출력합니다.
 
-## 더 알아보기:
+## 참고 자료:
 
-- [MDN - 문자열 보간](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Template_literals)
-- [TypeScript 공식 문서 - 보간 문자열](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)
+- TypeScript 공식 문서, [Template literals and String interpolation](https://www.typescripttutorial.net/typescript-tutorial/typescript-string-interpolation/)
+- MDN Web Docs, [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

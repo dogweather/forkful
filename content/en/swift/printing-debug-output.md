@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Swift recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,55 +10,91 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Debugging Magic in Swift: An Introduction to Print Debugging
+
 ## What & Why?
+"Print" debugging is the act of outputting variable states and program flow info to the console. It's like a debugging GPS that helps locate and fix bugs, offering real-time insights without breakpoints.
 
-Printing debug output refers to displaying information about a program's execution during development. This can be useful for debugging and understanding the flow of code. Programmers do this in order to identify and fix any errors or issues in their code.
+## How to?
 
-## How to:
-
-Printing debug output in Swift is simple and can be done using the `print()` function. This function takes in a variable or expression and displays its value in the debug console.
-
-Example:
+Straight to the action, let's write out the classic greeting to the world:
 
 ```Swift
-let num = 5
-print(num)
-
-// Output: 5
+print("Hello, World!")
 ```
 
-You can also print multiple variables or expressions on the same line by separating them with a comma.
+The output? Expect to see:
 
-Example:
+```
+Hello, World!
+```
+
+Fantastic? Let's kick it up a notch. Printed output can include variable values:
 
 ```Swift
-let name = "John"
-let age = 25
-print("My name is \(name) and I am \(age) years old.")
-
-// Output: My name is John and I am 25 years old.
+let greeting = "Howdy, Mars!"
+print(greeting)
 ```
 
-Adding a custom string before the variable or expression can also be helpful for understanding the output.
+You'll shake hands with:
 
-Example:
+```
+Howdy, Mars!
+```
+
+Want something more advanced? Go for string interpolation:
 
 ```Swift
-let sum = 10 + 5
-print("The sum of 10 and 5 is \(sum).")
-
-// Output: The sum of 10 and 5 is 15.
+let planet = "Mars"
+print("Howdy, \(planet)!")
 ```
 
-## Deep Dive:
+This will yield:
 
-Printing debug output has been a common practice in programming for a long time. Before the `print()` function, programmers used functions like `printf` in C and `cout` in C++ for similar purposes.
+```
+Howdy, Mars!
+```
 
-Apart from using the `print()` function, Swift also offers a rich debugging experience with the use of breakpoints and the debug console in Xcode. Breakpoints allow you to pause the code execution at a specific point and inspect the values of variables and expressions in that moment.
+## Deep Dive
 
-There are also alternative ways to output debug information, such as using the `NSLog` function in Swift, which displays the output in the console of the device. However, this should only be used for printing important messages as it can have a negative impact on performance.
+Back in the day, print debugging has been THE strategy, especially when transparent debuggers weren't commonplace yet. 
 
-## See Also:
+Consider "print()" equivalents. Say "debugPrint()" for complex data types:
 
-- [Apple's Debugging Guide for Xcode](https://developer.apple.com/library/archive/documentation/DeveloperTools/Conceptual/debugging_with_xcode/chapters/debugging_tools.html)
-- [Using print() and NSLog() for debugging in Swift](https://fluffy.es/print-nslog-debugging-in-swift/)
+```Swift
+let alien = ["name": "Marvin", "planet": "Mars"]
+debugPrint(alien)
+```
+
+This will unmask:
+
+```
+["name": "Marvin", "planet": "Mars"]
+```
+
+We also have the "dump()" function, which provides a more detailed, hierarchy view of objects:
+
+```Swift
+let spaceship = ["type": "UFO", "capacity": 3]
+dump(spaceship)
+```
+
+and behold:
+
+```
+▿ 2 elements
+  - key: "type"
+  - value: "UFO"
+  - key: "capacity"
+  - value: 3
+```
+
+These are integral for debugging complex structures. But remember, scrub prints before shipping your code. You wouldn't want your secret debug comments exposed, would you?
+
+## See Also
+
+Hungry for more? Binge on these resources:
+
+1. [Apple's official documentation on "print"](https://developer.apple.com/documentation/swift/1541053-print)
+2. [A StackOverflow thread on "print vs debugPrint"](https://stackoverflow.com/questions/25951195/swift-print-vs-debugprint)
+3. [Explore "dump" function in depth](https://www.hackingwithswift.com/example-code/language/what-is-the-dump-function)

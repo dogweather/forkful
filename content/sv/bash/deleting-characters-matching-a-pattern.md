@@ -1,7 +1,7 @@
 ---
-title:                "Radera tecken som matchar ett mönster"
-html_title:           "Bash: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,39 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att ta bort tecken som matchar ett mönster handlar om att identifiera specifika sekvenser av tecken, eller ett "mönster", i en textsträng, och ta bort dem. Programerare gör detta för att organisera eller renare data, effektivisera bearbetning och effektiv tokenizering.
 
-Att ta bort tecken som matchar ett mönster är en vanlig uppgift för programmerare. Det är ett sätt att filtrera och manipulera data eller text på ett effektivt sätt. Genom att ta bort onödiga tecken kan man skapa en renare och mer läsbar kod.
-
-## Hur man gör:
-
-Det finns flera sätt att ta bort tecken som matchar ett mönster i Bash. Ett sätt är att använda kommandot `sed` tillsammans med flaggan `-i` för att ändra filen direkt. Exempelvis kan man ta bort alla förekomster av "a" från en fil med kommandot:
+## Så här gör du:
+I Bash kan du enkelt ta bort matchande tecken med 'tr' -kommandot.
 
 ```Bash
-sed -i 's/a//g' file.txt
+echo "Hej från Bash" | tr -d 'a'
 ```
 
-Detta kommer att ta bort alla "a" från filen `file.txt` och spara ändringarna i samma fil. Man kan också använda flaggan `-r` för att matcha mönster med reguljära uttryck. Till exempel kan man ta bort alla siffror från en fil med:
+Detta tar bort alla instanser av tecknet 'a'. Output kommer att vara:
 
 ```Bash
-sed -ir 's/[0-9]//g' file.txt
+Hej frn Bsh
 ```
 
-Ett annat sätt att ta bort tecken är genom att använda `tr` kommandot. Detta kommando byter ut tecken eller tar bort dem helt baserat på det angivna mönstret. Exempelvis kan man ta bort alla mellanslag från en fil med:
+Du kan också använda sträng substitution inom Bash:
 
 ```Bash
-tr -d ' ' < file.txt > new_file.txt
+text="Hej från Bash"
+echo ${text//a/}
 ```
 
-Detta kommer att skapa en ny fil `new_file.txt` utan mellanslag.
+Detta tar också bort alla 'a': er. Output kommer återigen att vara:
 
-## Djupdykning:
+```Bash
+Hej frn Bsh
+```
 
-Historiskt sett har den vanligaste metoden för att ta bort tecken som matchar ett mönster varit med hjälp av `sed`. Men numera finns det flera alternativ som till exempel `awk`, `grep` och `tr`. Alla dessa kommandon har sina egna styrkor och kan användas för mer komplexa uppgifter än bara att ta bort tecken.
+## Djupdykning
+Förmågan att ta bort tecken har varit en historisk del av Unix-programmering och har mycket att göra med dess strömorienterade design. 'tr' -kommandot har varit en del av Unix sedan dess tidiga dagar.
 
-I Bash är en teckenmatchning ett uttryck som matchar en eller flera tecken i en sträng. Detta uttryck kan bestå av bokstäver, siffror eller tecken. Man kan också använda metatecken som wildcard-tecknet `*` för att matcha en mängd olika tecken. Det finns många olika sätt att uttrycka ett mönster och det är viktigt att förstå detta för att kunna använda de olika kommandona effektivt.
+Några alternativ till Bash kan vara 'sed', 'awk' och 'perl'. Dessa verktyg erbjuder ett kraftfullt mönsterspråk men kan vara överväldigande för enklare uppgifter. Bash har fördelen att den är lättviktig och integrerad i de flesta Linuxsystem.
 
-## Se även:
+Generellt sett, Bash tar bort tecken genom att först jämföra varje tecken i strängen till mönstret. När en matchning hittas, tas tecknet bort och resten av strängen kollapsar för att fylla i luckan.
 
-- Bash dokumentation: https://www.gnu.org/software/bash/manual/bash.html
-- Sed dokumentation: https://www.gnu.org/software/sed/manual/sed.html
-- Tr dokumentation: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+## Se också
+Mer detaljerade guider och information finns på följande sidor:
+
+- [GNU Bash manual](https://www.gnu.org/software/bash/manual/)
+- [tr-kommando (Wikipedia)](https://en.wikipedia.org/wiki/Tr_(Unix))
+- [Komplett guide till 'sed'-kommandot](https://www.grymoire.com/Unix/Sed.html)
+- [Tutorial om 'awk'](https://www.tutorialspoint.com/awk/index.htm)

@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "Elixir: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,27 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazemos isso?
-Criar um arquivo temporário é simplesmente criar um arquivo que será usado apenas temporariamente durante a execução de um programa. Programadores o fazem para armazenar dados temporariamente e evitar conflitos com outros arquivos já existentes.
+## O quê e Por quê?
+Criar um arquivo temporário é o processo de definir um arquivo que será usado para armazenar informações temporariamente. Os programadores fazem isso quando precisam lidar com grandes quantidades de dados que não precisam ser armazenados a longo prazo.
 
-## Como fazer:
-Você pode criar um arquivo temporário usando a biblioteca `File` do Elixir. Basta chamar a função `tempfile/0` para gerar um nome de arquivo único e, em seguida, usar a função `open!/2` para abrir o arquivo e escrever dados nele. Aqui está um exemplo de código:
+## Como Fazer?
+Aqui está um exemplo no Elixir de como criar um arquivo temporário usando a biblioteca 'Temp':
 
+```Elixir
+defmodule TempFile do
+  require File
+
+  def create_temp do
+    {:ok, path} = Temp.path()
+    File.write!(path, "content")
+    IO.puts("Arquivo temporário criado em: #{path}")
+  end
+end
+
+TempFile.create_temp()
 ```
-file = File.tempfile() 
+A execução deste código resulta em uma saída semelhante a:
 
-File.open!(file, [:write], fn(file) -> 
-	File.write(file, "Hello World") 
-end)
+```Elixir
+Arquivo temporário criado em: /tmp/1jzi04410323
 ```
 
-O resultado será um arquivo temporário com o nome e conteúdo especificados.
+## Mergulho Profundo
 
-## Profundidade:
-Criar arquivos temporários é uma prática comum em muitas linguagens de programação e é usado principalmente para armazenar dados que precisam ser processados e, em seguida, descartados. Existem também bibliotecas que facilitam a criação e gerenciamento de arquivos temporários, como o `Tempfile` em Ruby.
+A prática de criar arquivos temporários é algo que existe desde os primeiros dias da programação. Naquele tempo, a memória era escassa, então era comum escrever dados em um arquivo temporário.
 
-Internamente, criar um arquivo temporário envolve a geração de um nome de arquivo único e a criação de um arquivo com esse nome no sistema de arquivos. Após o uso, o arquivo é excluído automaticamente. Portanto, não é necessário gerenciar manualmente a exclusão do arquivo.
+Uma alternativa para a criação de arquivos temporários seria usar um banco de dados em memória, como o Redis. No entanto, isso pode não ser prático para alguns casos de uso devido aos custos de desempenho.
 
-## Veja também:
-- Documentação oficial da biblioteca File do Elixir: https://hexdocs.pm/elixir/File.html
-- Biblioteca Tempfile do Ruby: https://ruby-doc.org/stdlib-2.6.1/libdoc/tempfile/rdoc/Tempfile.html
+A implementação exata do processo de criação de um arquivo temporário pode variar dependendo da biblioteca que você está usando. Na biblioteca 'Temp' do Elixir, um identificador único é gerado e um arquivo com esse nome é criado no diretório temporário.
+
+## Veja Também
+
+- [Documentação Oficial do Elixir](https://hexdocs.pm/elixir/File.html)
+- [Temp](https://hexdocs.pm/temp/readme.html): uma biblioteca para criação de arquivos e diretórios temporários em Elixir.
+- [Redis](https://redis.io/): Um banco de dados em memória utilizado como alternativa à criação de arquivos temporários.

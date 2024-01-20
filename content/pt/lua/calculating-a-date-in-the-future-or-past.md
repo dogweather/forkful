@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou passado"
-html_title:           "Lua: Calculando uma data no futuro ou passado"
-simple_title:         "Calculando uma data no futuro ou passado"
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "Lua: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -12,34 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## O Que & Porquê?
 
-Calcular uma data no futuro ou no passado significa determinar uma data específica a partir de uma data de referência. Os programadores frequentemente realizam esse tipo de cálculo para automatizar processos ou para obter informações históricas.
+Calcular uma data futura ou passada é uma tarefa comum em programação. Frequentemente utilizada para criar eventos programados, registrar datas de expiração, entre outros.
 
-## Como Fazer:
+## Como fazer:
 
+Aqui está um exemplo simples de como você pode adicionar ou subtrair dias numa data em Lua:
+
+```Lua 
+os.execute('´date -d "+2 days"´')
 ```
--- Calcular a data atual
-print(os.date("%d/%m/%Y"))
+Este comando está somando dois dias à data atual. O output será a nova data.
 
--- Calcular a data de 5 dias no futuro
-print(os.date("%d/%m/%Y", os.time() + 5*24*60*60))
+Para subtrair dias, você faria o seguinte:
 
--- Calcular a data de 2 semanas no passado
-print(os.date("%d/%m/%Y", os.time() - 2*7*24*60*60))
-
--- Saída:
--- 30/10/2020
--- 04/11/2020
--- 16/10/2020
+```Lua 
+os.execute('´date -d "-3 days"´')
 ```
+Este comando está subtraindo três dias da data atual. O output será a nova data.
 
-## Mergulho Profundo:
+## Aprofundamento
 
-Existem diversas maneiras de calcular uma data no futuro ou no passado, e isso pode depender do contexto histórico ou do objetivo final do cálculo. Entre as alternativas, destacam-se o uso do módulo `os.date`, que permite formatar datas, e o uso de bibliotecas especializadas como a `luatz`, que oferecem funções mais precisas e diversificadas para manipulação de datas.
+A manipulação de datas é um tópico complexo em qualquer linguagem de programação. A linguagem Lua usa o pacote `os`, que fornece funções simples, mas não muito precisas para manipular datas. Para necessidades mais precisas, voçe deve considerar pacotes mais robustos como o `lua-date` ou o `luatz`. 
 
-Além disso, é importante atentar-se à questão de fuso horário, pois o cálculo pode ser afetado pelo local onde o código está sendo executado. Também é importante considerar a formatação da data de acordo com a localização do usuário, utilizando a função `os.setlocale` para definir o idioma e o formato desejado.
+A maior parte das linguagens de programação modernas têm bibliotecas ou pacotes dedicados para lidar com datas e horários, já que manipular datas e horários por si só pode introduzir vários bugs e complicações, principalmente relacionados ao horário de verão e fusos horários.
 
-## Veja Também:
+## Veja Também
 
-- [Documentação Oficial do Lua](https://www.lua.org/docs.html)
-- [Módulo os.date](https://www.lua.org/manual/5.3/manual.html#6.9)
-- [Biblioteca luatz](https://github.com/luazen/lua-5.3.4)
+Para mais detalhes e recursos, por favor veja os links a seguir:
+
+- [Lua-users wiki: Dates and Time](http://lua-users.org/wiki/DatesAndTimes): Uma excelente entrada sobre como trabalhar com datas e horas em Lua.
+- [lua-date: Date & Time library for Lua](https://github.com/Tieske/date): Esta biblioteca é um pacote mais robusto para a manipulação de datas e horários em Lua.
+- [luatz: library for date and time manipulation](https://github.com/daurnimator/luatz): Outra opção para manipulação de datas e horários em Lua.

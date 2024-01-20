@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-forespørsel"
-html_title:           "C++: Sende en http-forespørsel"
-simple_title:         "Sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,59 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor? 
+## Hva & Hvorfor?
 
-Sending av HTTP-forespørsler er en viktig del av nettverksprogrammering. Det tillater utveksling av data mellom en klient og en server gjennom Internett. Programmører bruker HTTP-forespørsler for å få tilgang til og hente informasjon fra forskjellige nettsider og API-er.
+Å sende en HTTP-forespørsel er en prosess der en klient (vanligvis en nettleser) sender en forespørsel til serveren for å få data. Dette er kritisk for programvareutviklere fordi det lar oss hente data fra en webserver, oppdatere data på serveren, eller til og med slette noen data fra serveren. 
 
-Hvordan gjør man det:
+## Hvordan Gjøre:
+
+HTTP-forespørsler kan sendes i C++ ved hjelp av biblioteker som libcurl eller Boost. Her er et eksempel på hvordan du sender en GET forespørsel med libcurl.
 
 ```C++
-// Eksempel på hvordan man sender en HTTP-forespørsel i C++
-
-#include <iostream>
-#include <cstdlib>
 #include <curl/curl.h>
 
-int main() {
-    CURL *curl;
-    CURLcode res;
+int main(void)
+{
+  CURL *curl;
+  CURLcode res;
 
-    // Oppretter og initialiserer curl
-    curl = curl_easy_init();
+  curl = curl_easy_init();
+  if(curl) {
+    curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
 
-    if(curl) {
-        // Setter URL-adressen for å hente informasjon
-        curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+    res = curl_easy_perform(curl);
 
-        // Henter informasjonen ved å utføre GET-forespørsel
-        res = curl_easy_perform(curl);
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
 
-        // Sjekker om forespørselen var vellykket
-        if(res == CURLE_OK) {
-            std::cout << "Forespørselen ble gjennomført uten feil!" << std::endl;
-        } else {
-            std::cout << "Noe gikk galt under sending av forespørselen." << std::endl;
-        }
-
-        // Rydder opp i curl
-        curl_easy_cleanup(curl);
-    }
-    
-    return 0;
+    curl_easy_cleanup(curl);
+  }
+  return 0;
 }
 ```
 
-```
-Output:
-Forespørselen ble gjennomført uten feil!
-```
+Dette programmet vil hente innholdet på www.example.com og skrive det til standard ut. Hvis det oppstår en feil, vil du få en feilmelding.
 
-Dypdykk:
+## Dyp Dykk
 
-HTTP (HyperText Transfer Protocol) ble utviklet på 1990-tallet og er et protokoll for å sende og motta informasjon over Internett. I dag er det en av de mest brukte protokollene for nettverkskommunikasjon og brukes også som grunnlag for andre protokoller som HTTPS og FTP. Det finnes også alternative måter å sende forespørsler på, som for eksempel å bruke biblioteker som libcurl.
+HTTP-forespørsler har vært en del av webprogrammering siden begynnelsen av internett. Først ble det gjort i kommandolinjen, men så utviklet vi biblioteker og rammeverk som forenklet prosessen. 
 
-Se også:
+Alternativt til libcurl, kan man også bruke Boost, Poco, og andre lignende C++-biblioteker for å håndtere HTTP-forespørsler. Valget avhenger av prosjektkravene og personlige preferanser.
 
-- [CURL Documentation](https://curl.haxx.se/libcurl/)
-- [HTTP - Wikipedia](https://no.wikipedia.org/wiki/HTTP)
-- [HTTP vs HTTPS - What's the Difference?](https://www.cloudflare.com/learning/ssl/http-vs-https/)
+Når du sender en HTTP-forespørsel, skjer det flere viktige ting under panseret. For eksempel håndterer biblioteket DNS-oppslag, TCP-tilkobling, SSL-håndtrykk (for HTTPS), og til slutt HTTP-forespørselen selv.
+
+## Se Også
+
+1. [libcurl C API](https://curl.haxx.se/libcurl/c/)
+2. [Boost library](https://www.boost.org/doc/libs/1_61_0/doc/html/boost_asio.html)
+3. [Poco C++ libraries](https://pocoproject.org/)

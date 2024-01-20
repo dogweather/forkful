@@ -1,7 +1,7 @@
 ---
-title:                "Send en http-forespørsel med grunnleggende autentisering"
-html_title:           "Bash: Send en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Send en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -11,25 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sending av HTTP-forespørsler med grunnleggende autentisering er en måte for programmere å kommunisere med en ekstern server eller API ved å sende innloggingsinformasjon med forespørselen. Programmerere gjør dette for å få tilgang til beskyttede ressurser på en sikker måte og utføre ulike oppgaver som krever autentisering.
+
+Å sende en HTTP-forespørsel med grunnleggende autentisering betyr å sende en nettforespørsel med brukernavn og passord. Programmerere gjør det for å sikre datautveksling og begrense tilgang til spesifikke ressurser.
 
 ## Hvordan:
-For å sende en HTTP-forespørsel med grunnleggende autentisering, bruker du følgende kode i en Bash-fil:
+
+Du kan bruke cURL-verktøyet til å sende HTTP-forespørsler fra Bash. Husk å erstatte `brukernavn`, `passord` og `url` med riktige verdier.
 
 ```Bash
-# Sett variabler for brukernavn og passord
+#!/bin/bash
+
 brukernavn="brukernavn"
 passord="passord"
+url="http://eksempel.com"
 
-# Kall på netcat for å sende forespørselen og inkluder autentiseringsinformasjon
-echo "GET /beskyttetressurs HTTP/1.1\r\nAuthorization: Basic $(echo -n "$brukernavn:$passord" | base64)\r\nHost: eksternserver.com\r\n\r\n" | nc eksternserver.com 80
+curl -u $brukernavn:$passord $url
 ```
 
-Dette vil lage en HTTP-forespørsel med GET-metoden for å få tilgang til en beskyttet ressurs på en ekstern server. Autentiseringsinformasjonen blir sendt som en del av forespørselen, og du vil motta svar fra serveren i form av HTTP-header og kropp.
+Når du kjører dette skriptet, vil svaret fra serveren vises i terminalen.
 
-## Dypdykk:
-Sending av HTTP-forespørsler med grunnleggende autentisering har blitt brukt i mange år, men er fortsatt en vanlig metode for autentisering i dag. Alternativer til grunnleggende autentisering inkluderer mer sikre autentiseringsprotokoller som HMAC (hash-based message authentication code) og OAuth (åpen standard for klientautentisering). Implementeringen av grunnleggende autentisering i Bash kan også være sårbar for sikkerhetshull, så det anbefales å bruke mer avanserte metoder for autentisering når det er mulig.
+## Dypere innblikk
 
-## Se også:
-- [How Basic Authentication Works](https://www.plainenglish.io/basic-authentication-explained-e48465abe5d8)
-- [Secure Your API with Basic Authentication](https://blog.jscrambler.com/secure-your-api-with-basic-authentication/)
+Grunnleggende autentisering i HTTP ble introdusert i 1996 med HTTP/1.0. Selv om det ikke er det sikreste alternativet, brukes det fremdeles i noen eldre eller enkle systemer. Sikrere alternativer inkluderer token-basert autentisering og OAuth. 
+
+Når du sender en forespørsel med grunnleggende autentisering, legges brukernavnet og passordet til i en overskrift i forespørselen. Dette blir kodet til Base64, men det er viktig å merke seg at Base64 ikke er en kryptering, og det kan dekodes lett.
+
+## Se også
+
+1. [HTTP Authentications](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+2. [Basic access authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+3. [cURL Manual](https://curl.se/docs/manual.html)
+4. [Using cURL for Remote Requests](https://linuxize.com/post/curl-command-examples/)
+5. [cURL vs HTTPie](https://www.ateam-oracle.com/httpie-vs-curl)

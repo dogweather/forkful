@@ -10,43 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+# Miten tarkistetaan, onko hakemisto olemassa Fish Shell -ohjelmointikielessä?
 
-Tarkistaminen, onko hakemisto olemassa, on yksi ohjelmoijien yleisimmistä tehtävistä. Tämä auttaa varmistamaan, että tarvittavat tiedostot ja hakemistot ovat saavutettavissa ja toimivat oikein. Tarkistamalla, onko hakemisto olemassa, voit myös estää virheitä ohjelmassa.
+## Mikä & Miksi?
+Tarkistetaan, onko hakemisto olemassa määrittämällä, onko tietty polku pätevä ja käytettävissä ohjelmassa. Ohjelmoijat tekevät tämän välttääkseen virheiden aiheuttaman ohjelman kaatumisen esimerkiksi lukiessaan tai kirjoittaessaan tiedostoja.
 
-## Kuinka tehdä:
+## Miten tehdä:
+Fish Shell käyttää `test`- ja `-d`-komentoja tämän toiminnallisuuden toteuttamiseksi. Katso alla oleva koodi:
 
-Fish Shell -tapa esimerkkikoodiin - "Rikitse se mitä hakemiston palauttama tuloste on ...
-
-```
-if test -d <hakemiston_nimi>
-    echo "Hakemisto on olemassa"
+```fish
+if test -d /polkusi/hakemiston_nimi
+    echo "Hakemisto on olemassa."
 else
-    echo "Hakemistoa ei ole olemassa"
+    echo "Hakemistoa ei ole olemassa."
 end
 ```
 
-Esimerkki tulosteesta, jos hakemisto on olemassa: 
+Yllä olevan koodin tuloksena:
+
+- Jos hakemisto `/polkusi/hakemiston_nimi` on olemassa, tulostuu teksti `"Hakemisto on olemassa."`
+- Jos hakemistoa ei ole olemassa, tulostuu `"Hakemistoa ei ole olemassa."`
+
+
+## Syväluotaus
+Vuonna 2016 lanseeratun Fish Shellin alkuperäinen tavoite oli yksinkertaistaa ja parantaa komentokehotinta. Vaikka yksinkertaisissa skripteissä käytämme edellä mainittua menetelmää tarkistaaksemme, onko hakemisto olemassa, joskus meidän täytyy käsitellä virheitä tai muita monimutkaisia skenaarioita. 
+
+Fish Shell tarjoaa myös `and` ja `or` -operaattoreita, jotka voivat olla hyödyllisiä tällaisissa tilanteissa. Esimerkiksi, jos haluamme tulostaa viestin vain, jos hakemisto on olemassa JA jos voimme kirjoittaa siihen:
+
+```fish
+if test -d /polkusi/hakemiston_nimi; and test -w /polkusi/hakemiston_nimi
+    echo "Hakemisto on olemassa ja siihen voidaan kirjoittaa."
+end
 ```
-Hakemisto on olemassa
-```
 
-Esimerkki tulosteesta, jos hakemistoa ei ole olemassa: 
-```
-Hakemistoa ei ole olemassa
-```
+Oppimisen ja jatkuvan kehityksen kannalta kannattaa tutustua myös muiden shell-kielten, kuten Bashin tai Zsh:n, samanlaiseen toiminnallisuuteen.
 
-## Syvällisempi sukellus:
-
-Historiallinen konteksti:
-Tarkistamisen tarve johtuu siitä, että joskus ohjelmoijat haluavat varmistaa, että tietty hakemisto on olemassa ennen kuin he suorittavat jotain toimintoa. Tämä auttaa estämään virheitä ohjelmassa.
-
-Vaihtoehtoja:
-Fish Shell tarjoaa muita tapoja tarkistaa, onko hakemisto olemassa. Yksi vaihtoehto on käyttää komentoa `test -e <hakemiston_nimi>`, joka tarkistaa, onko tiedosto tai hakemisto olemassa.
-
-Toteutuksesta:
-Fish Shell käyttää standardia UNIX-komentojen kuten `test` ja `if` komentoriviä. Se tarkistaa, onko tiedosto tai hakemisto olemassa ja tulostaa vastaavan viestin sen perusteella.
-
-## Katso myös:
-
-[Määritä ja hanki tämä suurimmista ohjelmointitermeistä, selitettynä](https://zapier.com/blog/programming-terms-glossary/)
+## Katso myös
+1. [Fish Shellin virallinen dokumentaatio](https://fishshell.com/docs/current/index.html)
+2. [Fish Shellin skriptausopas](https://fishshell.com/docs/3.1/commands.html)
+3. [Bash vs Fish -vertailu](https://www.slant.co/versus/2445/2449/~bash_vs_fish)

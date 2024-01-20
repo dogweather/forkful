@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en tillfällig fil"
-html_title:           "Java: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,52 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Skapa Temporära Filer i Java
+
 ## Vad & Varför?
-Skapandet av en temporär fil är en vanlig praxis bland programmerare för att hantera tillfälliga data eller utföra vissa operationer. Det är ett sätt att tillfälligt lagra data som inte behöver sparas permanent eller för att utföra en snabb operation som genererar ett resultat.
+Att skapa en temporär fil innebär att erbjuda en kortvarig lagringsplats för data i ett javaprogram. Detta görs för att undvika överbelastning av programmet genom att tillfälligt lagra stora data som behövs under programmets körning.
 
-## Hur man gör det:
-Ett enkelt sätt att skapa en temporär fil i Java är att använda klassen `File` och metoden `createTempFile()` som finns tillgänglig från Java SE 7 och uppåt. Här är ett kodexempel:
+## Hur man gör:
+```Java
+import java.io.File;
+import java.io.IOException;
 
-```java
-// Skapa en temporär fil
-File tempFile = File.createTempFile("temp", ".txt");
-
-// Skriv tillfälliga data till filen
-FileWriter writer = new FileWriter(tempFile);
-writer.write("Det här är en temporär fil.");
-writer.close();
-
-// Läs från filen
-FileReader reader = new FileReader(tempFile);
-int character;
-while ((character = reader.read()) != -1) {
-    System.out.print((char) character);
+public class Main {
+    public static void main(String[] args) {
+        try {
+            File temp = File.createTempFile("temp-file-name", ".tmp"); 
+            System.out.println("Temp file : " + temp.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
-reader.close();
-
-// Resultat:
-// Det här är en temporär fil.
 ```
+Detta kodstycke skapar en temp-fil med namnet 'temp-file-name' med '.tmp' som prefix. Den fullständiga sökvägen till temp-filen kommer att skrivas ut i konsolen.
 
-För att ta bort en temporär fil efter användning kan du använda metoden `delete()`:
+## Djup dykning
+### Historisk kontext
+Java tillhandahåller metoden `createTempFile` i `java.io.File` klassen sedan Java 2. 
 
-```java
-// Ta bort filen
-tempFile.delete();
-```
+### Alternativ
+Du kan också använda `Files.createTempFile` metoden som tillhandahålls i `java.nio.file.Files` klassen från Java 7 och framåt.
 
-## Djupdykning:
-Det är inte alltid lämpligt eller säkert att använda en temporär fil, speciellt om filen innehåller känslig data. I så fall kan det vara bättre att använda en temporär databas eller lagra datan i minnet istället för en fil.
+### Implementeringsdetaljer
+När `createTempFile` metoden anropas, skapas temp-filen i den mapp som java systemegenskapen `java.io.tmpdir` pekar på.
 
-Förutom `File`-klassen finns det också andra sätt att skapa en temporär fil, till exempel genom att använda `FileUtils` från Apache Commons IO-biblioteket eller `TemporaryFolder` från JUnit-testramen.
-
-När man skapar en temporär fil i Java används operativsystemets standardmapp för temporära filer. Om du vill ange en annan mapp kan du använda metoden `createTempFile(String prefix, String suffix, File directory)` och ange önskad mapp som sista argument.
-
-## Se även:
-Läs mer om klassen `File` och dess metoder här: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-
-Mer info om undvikande av temporära filer i Java: https://blog.codinghorror.com/zipped-my-doodads/
-
-Läs mer om Apache Commons IO här: https://commons.apache.org/proper/commons-io/
-
-Läs mer om JUnit här: https://junit.org/junit5/
+## Se även
+För mer information om att skapa temporära filer i Java, se:
+1. [Oracle's guide to Handling Files](https://docs.oracle.com/javase/tutorial/essential/io/file.html)
+2. [Java.IO.File.createTempFile() Method](https://www.tutorialspoint.com/java/io/file_createtempfile_directory.htm)
+3. [Java 7 Files.createTempFile() Method](https://www.javacodex.com/Files/Java-Files-createTempFile-Method)

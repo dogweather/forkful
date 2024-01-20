@@ -1,7 +1,7 @@
 ---
-title:                "भविष्य या पूर्व में एक तिथि की गणना"
-html_title:           "Elm: भविष्य या पूर्व में एक तिथि की गणना"
-simple_title:         "भविष्य या पूर्व में एक तिथि की गणना"
+title:                "भविष्य या अतीत में तारीख की गणना"
+html_title:           "Elm: भविष्य या अतीत में तारीख की गणना"
+simple_title:         "भविष्य या अतीत में तारीख की गणना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,39 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
+भविष्य या अतीत में तारीख की गणना क्या होती है और प्रोग्रामर्स इसे क्यों करते हैं? भविष्य या अतीत की दिनांक गणना, किसी विशेष दिनांक से कुछ दिनों को जोड़ने या घटाने का कार्य होता है।  प्रोग्रामर्स इसे तारीख और समय से संबंधित कार्यों को संचालित करने के लिये करते हैं।
 
-दिनांक गणना पूर्व या भविष्य की तारीख निर्धारित करने का काम है। यह करने का मुख्य कारण है कि यह उपयोगी होता है जब प्रोग्रामर अपने कोड में निर्दिष्ट अवधि को बनाने के लिए इस्तेमाल करते हैं।
-
-## कैसे करें?
-
-ईल्म में एक तिथि को भविष्य में या पूर्व में ढूँढने के लिए अनेक विधियां हैं। एक उदाहरण इस प्रकार है:
+## कैसे करें:
+यहां हमने एल्म स्क्रिप्ट के माध्यम से एक दिनांक को गणना किया है:
 
 ```Elm
-calculateDate : Date -> Int -> Date
-calculateDate baseDate daysToAdd =
-  let
-    { year, month, day } = Date.toParts baseDate
-    totalDays = Date.daysInMonth year month
-    totalDaysInBaseMonth = totalDays - day + 1
-    remainingDays = daysToAdd - totalDaysInBaseMonth
-    newDate = Date.fromParts year (if remainingDays > 0 then month + 1 else month) 1
-  in
-    Date.addDays (if remainingDays > 0 then remainingDays else daysToAdd - 1) newDate
+import Time exposing (..)
+import Task
+import Task.Extra as Task exposing (..)
+import Date.Extra as Date exposing (..)
+
+doCalculation : Time.Posix -> Time.Zone -> Maybe Date
+doCalculation posix datezone = 
+    Date.fromPosix datezone posix
+    |> Maybe.map (\date -> Date.add Date.Day 7 date )
+
+main =
+    Task.attempt always 
+    <| Task.map3 doCalculation (Time.now) (Task.succeed Time.utc)
 ```
+संचलन के परिणाम स्वरूप समय स्थिति के 7 दिन बाद की तारीख दिखाई देगी। 
 
-उपरोक्त कोड स्नेहनीय और साफ़ है, जो तारीख को baseDate प्रारम्भ दिन में प्रदर्शित करेगा। इसका नतीजा yyyy-mm-dd तारीख प्रदान करेगा।
+## गहरी दिविंग
+यदि आप भविष्य या अतीत में तारीख की गणना को अधिक संदर्भ में देखना चाहते हैं, पुराने दौर में तारीख की गणना का उपयोग केवल कैलेंडर को चालने के लिए होता था। लेकिन आज के समय में, इसका उपयोग सटीक समय प्रबंधन, प्रावधान और सूचनाबद्धता के लिये किया जाता है। एल्म में तारीख की गणना के लिए कुछ विकल्पों में से एक है "Date.Extra" पैकेज जो तारीखों की संचालन और गणना में मदद करता है। 
 
-## गहराई जाँच
-
-दिनांक गणना का इतिहास मानव सभ्यता से शुरू हुआ है। प्राचीन अस्ट्रोनॉमर और गणितज्ञ इस प्रकार की गणना को कई उद्देश्यों के लिए इस्तेमाल करते थे। आजकल सबसे आम उपयोग प्रोग्रामिंग में होता है।
-
-दो अन्य चरण हैं जिन्हें गहराई से जाना गया है:
-
-- विकल्प: अन्य प्रोग्रामिंग भाषाओं में तारीख गणना फ़ंक्शन उपलब्ध है। आप कई भाषाओं में मिलने वाले भिन्न मेथड को जांच सकते हैं।
-
-- अंमुख़ीकरण विवरण: यूनिक्स स्टाइल समय फ़ॉर्मेट के लिए कोई लंबा प्रक्रिया नहीं है। रोचक है कि आपके द्वारा सर्टिफ़िकेट p1085s जोड़ने के लिए एक-दो क्लेश बढ़ जाएगा।
-
-## देखें भी
-
-- [Date module in Elm](https://package.elm-lang.org/packages/elm/time/1.0.0/Time)
-- [Date functions in other programming languages](https://www.w3schools.com/js/js_dates.asp)
+## उपयोगी लिंक्स
+ये कुछ उपयोगी स्रोत हैं जो अतिरिक्त जानकारी प्रदान करते हैं:
+- [Elm के लिए अधिकारिक डॉक्यूमेंटेशन](https://guide.elm-lang.org)
+- [पुराने दौर में तारीख की गणना](https://en.wikipedia.org/wiki/Date_and_time_notation_in_Europe)
+- [Date.Extra पैकेज](https://package.elm-lang.org/packages/elm-community/date-extra/latest/)

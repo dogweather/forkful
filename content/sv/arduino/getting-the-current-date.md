@@ -1,7 +1,7 @@
 ---
-title:                "Att få nuvarande datum"
-html_title:           "Arduino: Att få nuvarande datum"
-simple_title:         "Att få nuvarande datum"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -11,56 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att få det aktuella datumet innebär att man tar reda på vilket datum det är just nu. Programmerare gör detta för att logga händelser, schemalägga uppgifter eller för att jämföra datum.
 
-Att hämta den nuvarande datumen är en viktig del av många Arduino-program. Genom att få tillgång till det aktuella datumet kan vi göra ett brett utbud av uppgifter, från enkla tidshantering till mer avancerade schemaläggning av uppgifter.
-
-## Hur man gör:
-
-Här är ett exempel på kod som visar hur man kan få det nuvarande datumet med Arduino:
+## Hur gör man:
+Här är ett exempel på att få det aktuella datumet i Arduino:
 
 ```Arduino
-#include <RTClib.h>
 #include <Wire.h>
+#include <RTClib.h>
 
-RTC_DS3231 rtc;
+RTC_DS1307 rtc;
 
-void setup() {
+void setup () {
   Serial.begin(9600);
-  Wire.begin();
-  rtc.begin();
-  if (! rtc.isrunning()) {
-     Serial.println("RTC är inte initierat!");
-     rtc.adjust(DateTime(F(__DATE__), F(__TIME__))); //Denna kod ställer in RTC:t med kompileringstiden 
+  if (! rtc.begin()) {
+    Serial.println("Couldn't find RTC");
+    while (1);
   }
 }
 
-void loop() {
-  DateTime now = rtc.now(); 
+void loop () {
+  DateTime now = rtc.now();
   Serial.print(now.year(), DEC);
   Serial.print('/');
   Serial.print(now.month(), DEC);
   Serial.print('/');
   Serial.print(now.day(), DEC);
-  Serial.print(' ');
-  Serial.print(now.hour(), DEC);
-  Serial.print(':');
-  Serial.print(now.minute(), DEC);
-  Serial.print(':');
-  Serial.print(now.second(), DEC);
-  Serial.println();
- 
-  delay(3000);
 }
 ```
+När du kör detta program, skriver det ut det nuvarande datumet i formatet ÅR/MÅNAD/DAG på serieporten.
 
-Konsolen kommer att visa den nuvarande datum- och tidsinformationen som den erhålls från RTC-modulen.
+## Fördjupning
+Att få det aktuella datumet är en grundläggande funktion som har använts sedan början av mjukvaruutveckling. Arduino använder en RTC (Real Time Clock) modul för att hålla reda på tiden även när strömmen är avstängd.
 
-## Djupdykning:
+Ett alternativ är att använda en tidsserver på internet, men detta kräver en internetanslutning, vilket kan vara opraktiskt för vissa Arduino-projekt.
 
-Det finns flera olika sätt att hämta datumet på med Arduino, inklusive att använda en RTC-modul som ovan, eller genom att ansluta till en ntp-server för att få det aktuella datumet från internet. Dessa alternativ är användbara för olika typer av projekt och beror på tillgängliga resurser och behov. Implementationen av koden kan också variera beroende på vilken RTC-modul som används.
+De viktigaste sakerna att komma ihåg när du implementerar detta är att vara medveten om vilket tidformat du använder (12-timmar eller 24-timmar) och se till att RTC-modulen är korrekt inställd, eftersom den kan driva över tid.
 
-## Se också:
+## Se även
+Här är några resurser som du kan kolla på för mer information:
 
-- [Arduino referens för RTClib](https://www.arduino.cc/en/Reference/RTC)
-- [Uppdatering av böcker med RTC DS3231](http://www.rinkydinkelectronics.com/library.php?id=73)
-- [Använda en ntp-server med Arduino](https://www.arduino.cc/en/Tutorial/LibNTPClient)
+- [Arduino's RTC Bibliotek](https://www.arduino.cc/reference/en/libraries/rtclib/)
+- [RTC DS1307 chip information](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf)
+- [Arduino's inbyggda "Time" bibliotek](https://playground.arduino.cc/Code/time)

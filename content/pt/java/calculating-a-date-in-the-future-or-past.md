@@ -1,7 +1,7 @@
 ---
-title:                "Calculando uma data no futuro ou passado."
-html_title:           "Java: Calculando uma data no futuro ou passado."
-simple_title:         "Calculando uma data no futuro ou passado."
+title:                "Calculando uma data no futuro ou no passado"
+html_title:           "Java: Calculando uma data no futuro ou no passado"
+simple_title:         "Calculando uma data no futuro ou no passado"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,49 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porque?
+---
 
-Calcular uma data no passado ou no futuro é uma tarefa comum para programadores. Isso envolve determinar uma data base e adicionar ou subtrair um determinado número de dias, semanas, meses, ou anos para obter uma nova data. Isso é útil para automatizar tarefas ou criar funcionalidades como notificações ou agendamentos em sistemas.
+# Calculando Datas Futuras ou Passadas em Java
+
+---
+
+## O Que & Por Quê?
+
+Calcular uma data no futuro ou no passado é uma operação que manipula uma data para retornar uma nova, acrescentando ou subtraindo dias, meses ou anos. Os programadores fazem isso para realizar tarefas como programar lembretes, fazer agendamentos e encontrar diferenças entre datas.
+
+---
 
 ## Como Fazer:
 
-Veja abaixo um exemplo de código em Java para calcular uma data no futuro, adicionando 30 dias a partir de uma data base:
+Vamos calcular uma data futura usando a classe `java.time.LocalDate` do Java 8 e superior:
 
-```Java
-import java.util.Calendar;
-import java.util.Date;
+```java
+import java.time.LocalDate;
+import java.time.Period;
 
-public class CalcularData {
+public class Main{
     public static void main(String[] args) {
-        
-        Calendar calendar = Calendar.getInstance();
-        
-        // usar a data atual como a base
-        Date baseDate = calendar.getTime();
-        
-        // adicionar 30 dias
-        calendar.add(Calendar.DAY_OF_MONTH, 30);
-        
-        // armazenar a nova data em uma variável
-        Date futureDate = calendar.getTime();
-        
-        // imprimir a nova data
-        System.out.println("A data daqui a 30 dias será: " + futureDate);
+        LocalDate hoje = LocalDate.now();
+        Period periodo = Period.ofDays(7); // substitua 7 pelo número de dias que quer adicionar
+        LocalDate dataFutura = hoje.plus(periodo);
+        System.out.println("In 7 days, the date will be " + dataFutura);
     }
 }
 ```
 
-A saída do programa será:
+Está é a saída do código:
 
+```bash
+In 7 days, the date will be 2022-10-15
 ```
-A data daqui a 30 dias será: Sat Aug 07 11:59:35 BRT 2021
-```
 
-## Mergulho Profundo:
+---
 
-Há várias maneiras de calcular uma data no futuro ou passado em Java, como usando as classes `Calendar` ou `LocalDate` da API de data e hora padrão. Esta última é recomendada a partir da versão 8 da linguagem. Além disso, é importante considerar a questão do fuso horário ao lidar com datas e horários em sistemas distribuídos ou globais.
+## Mergulho Profundo
 
-## Veja Também:
+(1) A necessidade de calcular datas futuras ou passadas é tão antiga quanto a própria programação. Com as linguagens modernas como o Java, essa tarefa tornou-se muito mais simples e intuitiva.
 
-- Documentação oficial do Java sobre a API de data e hora: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Tutoriais e exemplos sobre como lidar com datas em Java: https://www.baeldung.com/java-date-time
+(2) Existem várias alternativas para calcular datas futuras ou passadas, como o uso da classe `java.util.Calendar` ou `java.util.Date`, mas essas classes são menos intuitivas e mais propensas a erros.
+
+(3) O método `plus()` que usamos acima adiciona o período especificado à nossa data. É importante notar que este método não altera a data original, mas retorna uma nova instância de `LocalDate`. Isto porque as classes de data e hora da API java.time são imutáveis.
+
+---
+
+## Veja Também
+
+- API oficial do Java para `java.time`: [<https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html>]
+
+- Documentação completa para a classe `java.time.LocalDate`: [<https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html>]
+
+- Tutorial da Oracle sobre a API java.time: [<https://docs.oracle.com/javase/tutorial/datetime/index.html>]

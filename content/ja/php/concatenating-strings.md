@@ -10,28 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となんで？
-PHPのプログラマーであるあなたは、文字列を連結することはご存知でしょうか？文字列の連結とは、文字列同士を結合して一つの文字列にすることを言います。プログラマーは、主にデータや文言を整形するために文字列を連結します。
+## 何となぜ？
+文字列の連結とは、2つ以上の文字列を一つに結合することです。プログラマーはこの操作を利用して、動的な内容の生成やデータフォーマットなどを行います。
 
-## 方法：
-以下のようなコードを使って、文字列を連結することができます。PHPの組み込み関数である```concat()```を使用するか、```.```を使って文字列を連結することができます。
+## 実施方法：
+PHPで文字列を連結する基本的な方法は、「.」演算子を使用することです。以下にサンプルコードと出力結果を示します：
 
 ```PHP
-// 文字列の連結
-$name = "山田";
-$surname = "太郎";
-$name_surname = concat($name, $surname);
-echo $name_surname; // 出力結果： 山田太郎
-
-// .を使った文字列の連結
-$message = "私の名前は" . $name_surname . "です。";
-echo $message; // 出力結果： 私の名前は山田太郎です。
+$part1 = "PHP";
+$part2 = "フォーラム";
+$combined = $part1 . " " . $part2;
+echo $combined;
 ```
 
-## 深堀り：
-文字列の連結は、PHPが登場する前から存在するプログラミングの基本的な構文の一つです。PHP以外にも、PythonやJavaScriptでも同様の方法で文字列を連結することができます。また、PHPでは単純に文字列を連結するだけでなく、条件によって変数を含めることもできます。
+出力結果：
 
-## 関連情報：
-- [PHPのConcat()関数のドキュメント](https://www.php.net/manual/en/function.concat.php)
-- [Pythonでの文字列の連結方法](https://www.programiz.com/python-programming/methods/string/join)
-- [JavaScriptでの文字列の連結方法](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
+```PHP
+PHP フォーラム
+```
+
+'.'演算子は文字列をシームレスに結合し、出力は連結した文字列になります。
+
+## ディープダイブ：
+文字列の連結はコンピューティングの歴史の初期から存在しています。それはソフトウェアのコア部分を形成しており、コードの中で非常に頻繁に見られます。
+
+PHP以外の言語では、文字列の連結は異なる方法で行われることがあります。例えば、JavaScriptでは'+'演算子、Pythonでは'%'演算子を使用することが一般的です。
+
+PHPではさらに良い性能をさらに得るために、"."演算子ではなく"sprintf"または"printf"関数を使用することもあります。これらの関数は、PHP内部でより効率的に実行される場合があります。
+
+## 関連内容：
+以下のリンクで、文字列連結に関する詳細情報を参照できます：
+1. [PHP: 文字列演算子 - Manual](https://www.php.net/manual/ja/language.operators.string.php)
+2. [PHP: sprintf - Manual](https://www.php.net/manual/ja/function.sprintf.php)
+3. [JavaScript: 文字列結合 - MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/concat)

@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 검색 및 교체"
-html_title:           "PowerShell: 텍스트 검색 및 교체"
+html_title:           "Elixir: 텍스트 검색 및 교체"
 simple_title:         "텍스트 검색 및 교체"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,32 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## 무엇 & 왜?"
-검색과 대체는 텍스트에서 특정한 부분을 찾고 원하는 내용으로 바꾸는 작업을 말합니다. 프로그래머들은 이 작업을 수행하는 이유는 주로 데이터를 정리하고 유지보수를 용이하게 하기 위함입니다.
+## 무엇 & 왜?
+텍스트 검색 및 교체는 특정 문자열을 찾아 다른 문자열로 바꾸는 프로세스입니다. 이를 통해 개발자들은 방대한 코드 내의 값을 신속하게 수정하거나, 오류를 바로잡습니다.
 
-"## 방법:"
-검색과 대체는 전반적으로 컴퓨터 과학 분야에서 자주 사용되는 작업입니다. PowerShell을 사용하여 간단하고 효율적으로 이 작업을 수행할 수 있습니다. 아래의 코드 블록을 참고하여 실제 동작하는 예시를 확인해보세요.
+## 실제 적용 방법:
 
-```PowerShell
-# 검색과 대체하기
-$text = "오늘은 맑은 날씨입니다."
-$text.replace("맑은", "흐린")
-
-# 결과: 오늘은 흐린 날씨입니다.
-```
+PowerShell에서 텍스트 검색 및 교체를 해보겠습니다. 
 
 ```PowerShell
-# 여러 개의 문자열 동시에 대체하기
-$text = "햄버거, 피자, 치킨"
-$text.replace("햄버거","치킨").replace("피자","샐러드")
+# 원본 문자열 생성
+$text = 'Hello, World!'
 
-# 결과: 치킨, 샐러드, 치킨
+# 'Hello'를 'Goodbye'로 교체
+$newText = $text -replace 'Hello', 'Goodbye'
+
+# 결과 출력
+$newText
 ```
 
-"## 심층 분석:"
-검색과 대체는 컴퓨터 과학에서 오랜 역사를 가지고 있으며, 많은 수의 스크립트언어와 프로그래밍 언어에서 지원하고 있습니다. PowerShell 외에도 유닉스의 Sed, Perl의 정규식 등 다양한 대안들이 있습니다. 이러한 도구들은 각각 장단점이 있으므로 용도에 맞게 선택하여 사용할 수 있습니다. 검색과 대체 작업은 다양한 프로그래밍 프로젝트에서 필수적으로 사용되며, PowerShell을 활용하여 더욱 편리하고 빠르게 이 작업을 수행할 수 있습니다.
+이번에는 파일 내의 텍스트 검색 및 교체를 실습해보겠습니다.
 
-"## 관련 자료:"
-- [PowerShell 공식 문서] (https://docs.microsoft.com/ko-kr/powershell/)
-- [Sed 공식 문서] (https://www.gnu.org/software/sed/manual/sed.html)
-- [Perl 공식 문서] (https://www.perl.org/)
+```PowerShell
+# 파일 가져오기
+$fileContents = Get-Content C:\path\to\your\file.txt
+
+# 'oldText'를 'newText'로 교체
+$fileContents = $fileContents -replace 'oldText', 'newText'
+
+# 결과를 동일 파일에 쓰기
+$fileContents | Set-Content C:\path\to\your\file.txt
+```
+## 깊이 있게 알아보기:
+
+기술적인 측면에서 보면, PowerShell의 '-replace' 연산자는 .NET의 ‘Regex.Replace’ 메서드를 기반으로 합니다. 이것은 정규표현식을 사용할 수 있음을 의미하며, 더욱 복잡한 검색 및 교체 작업을 수행할 수 있습니다.
+
+더 구체적으로 말하면, 검색 및 교체에 사용되는 인수는 첫 번째로 정규표현식 패턴이며, 두 번째는 교체해야 하는 텍스트입니다. 이 기능은 복잡한 패턴 매칭을 가능하게 하여 신속하게 텍스트를 수정하는데 귀중한 도구가 됩니다.
+
+또한, 이 연산자 대신에 .NET의 String.Replace 메서드를 사용할 수도 있습니다. 이 메서드는 단순 문자열 비교를 통해 검색 및 교체를 수행합니다. 
+
+```PowerShell
+# String.Replace 메서드를 사용한 예제
+$text = 'Hello, World!'
+$newText = $text.Replace('Hello', 'Goodbye')
+```
+
+## 참고자료:
+
+심화 학습을 위한 추가 링크를 확인하세요.
+
+- MSDN RegEx 클래스: <https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-5.0>
+- MSDN String.Replace 메서드: <https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0>
+- PowerShell 문자열 매니퓰레이션 가이드: <https://ss64.com/ps/syntax-replace.html>

@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-forespørsel"
-html_title:           "Java: Sende en http-forespørsel"
-simple_title:         "Sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,40 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Sending av HTTP-forespørsler er en vanlig oppgave for programmerere når de ønsker å hente data fra en annen server. HTTP står for HyperText Transfer Protocol og er protokollen som brukes når man kommuniserer med nettsider over internett.
+## Hva & Hvorfor?
 
-## Slik gjør du det:
-For å sende en HTTP-forespørsel i Java kan du bruke klassen HttpURLConnection. Denne klassen er en del av standard Java-pakken og lar deg opprette og sende HTTP-forespørsler enkelt. Et eksempel på hvordan du kan sende en GET-forespørsel til en nettside ser slik ut:
+Å sende en HTTP-forespørsel er prosessen hvor datamaskinen din ber en server om informasjon eller utfører en handling, som å laste opp en fil. Dette er essensielt for samhandlingen mellom klienter (for eksempel webleseren din) og servere.
+
+## Hvordan:
+
+Her er et eksempel på hvordan du kan sende en GET-forespørsel og skrive ut responsen i Java:
 
 ```Java
-URL url = new URL("https://www.example.com");
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
-con.setRequestMethod("GET");
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
-int status = con.getResponseCode();
-System.out.println("Statuskode: " + status);
+public class Main {
+    public static void main(String[] args) throws Exception {
+        HttpClient client = HttpClient.newHttpClient();
+        HttpRequest request = HttpRequest.newBuilder()
+                .uri(URI.create("http://example.com"))
+                .build();
 
-BufferedReader in = new BufferedReader(
-    new InputStreamReader(con.getInputStream()));
-String inputLine;
-StringBuilder response = new StringBuilder();
-while ((inputLine = in.readLine()) != null) {
-    response.append(inputLine);
+        HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println(response.body());
+    }
 }
-in.close();
-
-System.out.println("Svar fra server: " + response.toString());
 ```
 
-Det første du må gjøre er å opprette et URL-objekt som inneholder adressen til nettsiden du ønsker å hente data fra. Deretter oppretter vi en HttpURLConnection som bruker denne URL-en. Vi setter også metoden til å være GET siden vi ønsker å hente informasjon fra nettsiden. Deretter gjør vi et kall til nettsiden og leser svaret fra serveren. Til slutt skriver vi ut statuskoden og svaret fra serveren.
+Når du kjører dette programmet, vil det sende en HTTP GET-forespørsel til `http://example.com` og så skrive ut responsen den mottar.
 
-## Dypdykk:
-HTTP-protokollen ble utviklet på slutten av 80-tallet og har blitt den mest brukte protokollen for å kommunisere med nettsider over internett. Det finnes også andre måter å sende HTTP-forespørsler på, som for eksempel å bruke tredjeparts biblioteker som Apache HttpComponents eller OkHttp.
+## Dypdykke:
 
-En HTTP-forespørsel består av en tittel og en valgfri kropp. Tittelen identifiserer hvilken metode som skal brukes (GET, POST, PUT, osv.) og kroppen kan inneholde data som skal sendes til nettsiden. I Java-koden ovenfor brukte vi GET-metoden, som er den mest vanlige metoden for å hente data fra nettsider.
+1. Historisk kontekst: HTTP-forespørsler har vært en del av internettpraksis siden utgivelsen av HTTP/1.0 rundt 1996. De har blitt raffinert og utvidet med senere versjoner av protokollen, spesielt HTTP/2 og HTTP/3.  
 
-## Se også:
-- [Oracle-beskrivelse av HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Apache HttpComponents](https://hc.apache.org/httpcomponents-client-4.5.x/index.html)
-- [OkHttp](https://square.github.io/okhttp/)
+2. Alternativer: Det finnes mange biblioteker der ute for å sende HTTP-forespørsler i Java, inkludert OkHttp og Apache HttpClient, men i denne artikkelen fokuserer vi på HttpClient som er innebygd i Java.
+
+3. Gjennomføringsdetaljer: `HttpClient.newHttpClient()` brukes til å opprette en ny HttpClient. `HttpRequest.newBuilder()` starter konstruksjonen av en HttpRequest, og `.build()` fullfører det. Da sender vi forespørselen med `client.send()` og printer ut responsen.
+
+## Se Også:
+
+1. [Java 11 HttpClient Dokumentasjon](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/http/HttpClient.html)
+2. [Mozilla HTTP Forespørsler Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
+3. [OkHttp Bibliotek](https://square.github.io/okhttp/)
+4. [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.0.x/)

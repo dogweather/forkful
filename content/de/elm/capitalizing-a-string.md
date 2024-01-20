@@ -1,7 +1,7 @@
 ---
-title:                "Ein String großschreiben"
-html_title:           "Elm: Ein String großschreiben"
-simple_title:         "Ein String großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "Elm: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,24 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Wir alle wissen, wie wichtig es ist, auf die Kleinschreibung zu achten, insbesondere beim Schreiben von E-Mails oder Textnachrichten. Aber wussten Sie, dass auch Programmierer auf die Groß- und Kleinschreibung achten müssen, wenn sie mit Strings arbeiten? Es geht darum, sicherzustellen, dass bestimmte Teile des Codes richtig ausgeführt werden und keine Fehler verursachen. Daher ist das Kapitalisieren von Strings eine wichtige Aufgabe für Programmierer.
 
-## So geht's:
-Die Funktion `String.toUpper` in Elm ermöglicht es uns, einen String komplett in Großbuchstaben umzuwandeln. Hier ist ein Beispiel, wie wir es verwenden können:
+Ein Zeichenketten groß zu schreiben bedeutet, den ersten Buchstaben eines Wortes oder jeder Wort in einer Zeichenkette in Großbuchstaben umzuwandeln. Programmierer tun dies, um die Lesbarkeit zu verbessern oder Textdaten zu normalisieren.
+
+## So macht man's:
+
+In Elm können wir die `String.toUpper` Funktion verwenden, um eine Zeichenkette zu kapitalisieren. Hier ist ein einfaches Beispiel:
+
+```elm
+import String
+
+capitalizedString : String -> String
+capitalizedString str =
+    String.toUpper str
+
+main =
+    print (capitalizedString "hallo welt")
+```
+
+Ausgabe:
 
 ```
-Elm String.toUpper "hallo" -- Output: "HALLO"
+HALLO WELT
 ```
 
-Wenn wir jedoch nur den ersten Buchstaben groß schreiben möchten, können wir die Funktion `String.capitalize` verwenden:
+Bitte beachten Sie, dass dies alle Buchstaben in der Zeichenkette in Großbuchstaben umwandelt.
 
-```
-Elm String.capitalize "guten tag" -- Output: "Guten tag"
-```
+## Tiefgehende Informationen:
 
-## Tiefes Eintauchen:
-Historisch gesehen spielte die Groß- und Kleinschreibung eine wichtige Rolle bei der Programmierung, da frühe Computer dies als wichtigen Unterschied erkannten. Heutzutage können moderne Sprachen wie Elm dies jedoch automatisch erkennen und daher ist das Kapitalisieren von Strings keine kritische Aufgabe mehr. Alternativ können Programmierer auch reguläre Ausdrücke verwenden, um bestimmte Zeichenfolgen zu identifizieren und zu bearbeiten. Die Implementierung von `String.toUpper` in Elm basiert auf dem Unicode-Standard, der eine internationale Standardisierung von Zeichen ermöglicht.
+1. Historischer Hintergrund: Die Funktion `toUpper` ist seit den frühesten Versionen von Elm verfügbar und ist ein wesentliches Werkzeug für Textmanipulation und Normalisierung.
+
+2. Alternativen: Es gibt Pakete von Drittanbietern, die zusätzliche Funktionen zur Textmanipulation bieten, einschließlich fortschrittlicherer Kapitalisierungsoptionen.
+
+3. Implementierungsdetails: Intern verwendet Elm unicode-fähige Funktionen zur Durchführung dieser Operation, um sicherzustellen, dass sie mit einer breiten Palette von Schriftsystemen funktioniert.
 
 ## Siehe auch:
-- [Dokumentation zu `String.toUpper` in Elm](https://package.elm-lang.org/packages/elm-lang/core/5.1.1/String#toUpper)
-- [Das Unicode-Konsortium](https://unicode.org/index.html)
+
+- Elm String API-Dokumentation: [Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
+
+- Elm Paket zur Textmanipulation: [Jono's String Extras](https://package.elm-lang.org/packages/jono/string-extras/latest/)

@@ -1,7 +1,7 @@
 ---
-title:                "HTML-Parser"
-html_title:           "C#: HTML-Parser"
-simple_title:         "HTML-Parser"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-HTML-Parsing ist der Prozess, bei dem HTML-Code durch einen Programmierungsprozess gescannt wird, um die darin enthaltenen Informationen zu extrahieren. Es ist ein häufiges Werkzeug in der Web-Entwicklung, da es ermöglicht, das Layout und den Inhalt einer Webseite zu verstehen und zu manipulieren. Programmierer nutzen HTML-Parsing, um Daten von einer Webseite zu extrahieren oder um bestimmte Elemente einer Seite herauszufiltern.
+# Zerlegen von HTML in C#
 
-## Wie geht's?
-Wenn du HTML-Parsing in C# verwenden möchtest, benötigst du eine Bibliothek wie HtmlAgilityPack. Hier ist ein einfaches Beispiel, das den Titel einer Webseite ausgibt:
+## Was & Warum?
+
+HTML-Zerlegen ist der Prozess der Aufteilung eines HTML-Dokuments in seine Bestandteile mit speziellen Parsing-Techniken. Programmierer machen das, um auf bestimmte Daten in der HTML-Struktur zugreifen oder Manipulationen daran durchführen zu können.
+
+## Wie macht man das?
 
 ```C#
-var web = new HtmlWeb();
-var page = web.Load("https://www.example.com");
-var title = page.DocumentNode.SelectSingleNode("//title");
-Console.WriteLine(title.InnerText);
+// Wir verwenden die HtmlAgilityPack Bibliothek
+using HtmlAgilityPack;
+
+HtmlDocument doc = new HtmlDocument();
+doc.Load("dateiname.html"); 
+
+// Zugriff auf den Titel (<title> Element) des Dokuments
+var title= doc.DocumentNode.SelectSingleNode("//title").InnerText;
+Console.WriteLine(title);
+
+// Ausgabe => "Dein Titel"
 ```
+Mit dem obigen Code greifen wir auf das `<title>` Element eines HTML-Dokuments zu und geben dessen Inhalt aus.
 
-Die Ausgabe sollte der Titel der Webseite sein.
+## Tiefer Einblick
 
-## Tiefer tauchen
-HTML-Parsing wurde in den frühen Tagen des Internets entwickelt, um Daten von Webseiten zu extrahieren und zu strukturieren. Es war oft eine mühsame und fehleranfällige Aufgabe, die viel Zeit und Aufwand erforderte. Heutzutage gibt es verschiedene Tools und Bibliotheken, die diesen Prozess vereinfachen, wie z.B. CSS-Selektoren, die uns helfen können, bestimmte Elemente einer Webseite zu finden.
+Historisch gesehen war HTML-Parsing ein herausfordernder Prozess aufgrund verschiedener Browser-Implementierungen und Konformitätsstandards. Heutzutage, dank Bibliotheken wie HtmlAgilityPack, ist das Zerlegen von HTML in C# einfacher und weniger fehleranfällig.
 
-Es gibt auch alternative Ansätze zum HTML-Parsing, wie z.B. das Scraping von Daten durch das Simulieren von Benutzereingaben oder die Verwendung von APIs, wenn sie verfügbar sind. Allerdings ist HTML-Parsing nach wie vor eine wichtige Fähigkeit für Web-Entwickler, da es uns ermöglicht, flexibel auf Änderungen im Layout oder der Struktur einer Webseite zu reagieren.
+Alternativ können Sie auch Bibliotheken wie AngleSharp verwenden. Es folgt dem W3C-Standard und unterstützt auch CSS-Selektion.
+
+Die im Beispiel verwendete Methode `SelectSingleNode` ist ein fundamentaler Teil des HTML-Dokumentenmodells des HtmlAgilityPack. Es wendet XPATH-Ausdrücke auf das Dokument an, um die Navigation und Selektion von Knoten zu ermöglichen.
 
 ## Siehe auch
-Einige nützliche Ressourcen, um mehr über HTML-Parsing in C# zu erfahren:
 
-- [HtmlAgilityPack Dokumentation](https://html-agility-pack.net/documentation)
-- [C# HTML-Parsing Tutorial auf YouTube](https://www.youtube.com/watch?v=0CpKZZ0pLNk)
-- [CSS-Selektoren Referenz](https://www.w3schools.com/cssref/css_selectors.asp)
+- Die Dokumentation von HtmlAgilityPack ist eine großartige Ressource, um tiefer in das HTML-Zerlegen einzutauchen. [(Link)](https://html-agility-pack.net/)
+- Die Dokumentation von AngleSharp bietet weitere Perspektiven und Tutorial-Materialien. [(Link)](https://anglesharp.github.io/docs/)
+
+Mit den angegebenen Informationen sollten Sie in der Lage sein, den Prozess des Zerlegens von HTML in C# zu verstehen und ihn effektiv in Ihren Projekten zu nutzen.

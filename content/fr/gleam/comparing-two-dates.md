@@ -1,7 +1,7 @@
 ---
-title:                "Comparaison de deux dates"
-html_title:           "Gleam: Comparaison de deux dates"
-simple_title:         "Comparaison de deux dates"
+title:                "Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
+simple_title:         "Comparer deux dates"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,31 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
+## Qu'est-ce que c'est & Pourquoi ?
 
-Comparing two dates, or "dater" en français, is a common task for programmers when working with time and dates. It involves comparing two dates to determine their relative order, whether one date is before, after, or the same as the other. This is important for tasks such as sorting events in a calendar or determining the age of a user.
+Comparer deux dates, c'est déterminer laquelle est la plus récente. On le fait pour traiter et analyser les données de temps en programmation.
 
-## Comment faire:
+## Comment faire :
 
-Pour comparer deux dates en Gleam, nous pouvons utiliser la fonction `Date.compare`, qui prend deux paramètres de type `Date` et renvoie un nombre entier. Ce nombre sera négatif si la première date est avant la deuxième, positif si elle est après, et zéro si les deux dates sont identiques.
+Dans Gleam, vous pouvez comparer deux dates en utilisant la fonction compare(). Voici comment :
 
-```
-Gleam.dispatch(
-  case Date.compare(
-    Date.from_gregorian(2021, 10, 15),
-    Date.from_gregorian(2021, 10, 13)
-  ) {
-    -1 => "La première date est avant la deuxième"
-    1 => "La première date est après la deuxième"
-    _ => "Les deux dates sont identiques"
-  }
-)
+```Gleam
+let dateA = date.new(2020, 12, 1)
+let dateB = date.new(2021, 12, 1)
+let comparaison = date.compare(dateA, dateB)
 ```
 
-## Plongée en profondeur:
+Le programme va retourner -1 si dateA est plus ancienne, 0 si les dates sont identiques, et 1 si dateB est plus ancienne. 
 
-Bien que la comparaison de dates puisse sembler simple, il y a des nuances à prendre en compte, en particulier lors de l'utilisation de différents calendriers et fuseaux horaires. Il existe également d'autres approches pour comparer les dates, telles que l'utilisation de timestamps ou de bibliothèques externes spécialisées. En interne, Gleam utilise le calendrier gregorien pour la gestion des dates.
+## Exploration :
 
-## Voir aussi:
+Comparer les dates a toujours été un élément essentiel de la programmation. Historiquement, elle a été utilisée pour ordonnancer des tâches, journaliser des événements et tracer des dépendances temporelles. Dans Gleam, vous pouvez également utiliser les fonctions Day.compare/2 ou NaiveDateTime.compare/2 si vous traitez respectivement avec des jours ou des horaires précis. 
 
-Pour en savoir plus sur les dates en Gleam, consultez la documentation officielle sur le type `Date` et ses méthodes. Vous pouvez également explorer d'autres concepts connexes tels que les durations (durées) et les time zones (fuseaux horaires). Bon codage !
+Quant à la mise en œuvre, la comparaison des dates repose sur la conversion des dates en millisecondes depuis l'Epoch Unix (0h00 le 1er janvier 1970) et la comparaison de ces valeurs.
+
+## Voir aussi :
+
+D'autres ressources pour approfondir vos connaissances :
+1. Documentation Gleam pour les dates : https://hexdocs.pm/gleam_stdlib/gleam/date/
+2. Tutoriel sur la gestion des dates : https://www.tutorialspoint.com/gleam/gleam_date_time_functions.htm
+3. Comparaison de dates dans d'autres langages : https://www.freecodecamp.org/news/how-to-compare-dates-with-javascript/

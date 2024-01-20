@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "TypeScript: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+# TypeScript: Criando Arquivos Temporários
 
-Criar um arquivo temporário é uma prática comum entre os programadores, que consiste em criar um arquivo temporário para armazenar dados temporários durante a execução de um programa. Isso é útil em situações em que o programa precisa armazenar informações temporárias e não é necessário salvar essas informações permanentemente.
+## O Que & Por Que?
 
-## Como fazer:
+Crear um arquivo temporário é uma forma rápida de armazenar dados de curto prazo que não precisam persistir além da sessão atual. Programadores geralmente criam arquivos temporários para gerenciar uma grande quantidade de dados que seriam consumir demais a memória se mantidos na RAM.
+
+## Como Fazer:
+
+Vamos fazer isso usando a biblioteca `tmp-promise`:
 
 ```TypeScript
-import fs from 'fs';
+import tmp from 'tmp-promise';
 
-// Cria um arquivo temporário com um nome aleatório e escreve "Hello World!" dentro dele
-const tempFile = fs.mkdtempSync('temp-');
-fs.writeFileSync(tempFile + '/temp.txt', 'Hello World!');
+const example = async () => {
+  const { path, fd, cleanup } = await tmp.file();
+  console.log(path); // imprime o caminho do arquivo temporário no console
+  // use 'cleanup' quando terminar de usar o arquivo para limpar o arquivo temporário
+}
 
-// Lê o conteúdo do arquivo e o imprime no console
-const tempContent = fs.readFileSync(tempFile + '/temp.txt', 'utf8');
-console.log(tempContent);
-
-// Deleta o arquivo temporário
-fs.unlinkSync(tempFile + '/temp.txt');
+example();
 ```
+## Deep Dive
 
-## Aprofundamento:
+Historicamente, arquivos temporários foram criados em linguagens de programação de baixo nível escrevendo no diretório do sistema apropriado (como `/tmp` em sistemas Unix). No TypeScript, as bibliotecas nos proporcionam uma maneira mais fácil e segura de gerenciar esses arquivos.
 
-A criação de arquivos temporários é uma técnica amplamente utilizada em programas, especialmente em situações em que os dados temporários não precisam ser armazenados permanentemente e podem ser descartados após o uso. Alternativas para criar arquivos temporários incluem o uso de memória RAM ou bancos de dados temporários.
+Como alternativa à biblioteca `tmp-promise`, você também pode usar a `fs` nativa do NodeJS para criar arquivos temporários, no entanto, a gestão deles é um pouco mais complicada.
 
-Na implementação do TypeScript, existem funções específicas do módulo ```fs``` do Node.js que permitem criar, ler e excluir arquivos temporários. Essas funções oferecem uma maneira simples e eficiente de gerenciar arquivos temporários em um programa.
+A implementação em `tmp-promise` é baseada em promessas, assim como o restante do ecossistema moderno do JavaScript/TypeScript. Note que você deve chamar a função `cleanup` quando terminar de usar o arquivo temporário para evitar o vazamento de memória.
 
-## Veja também:
+## Veja Também: 
 
-- [Documentação do módulo fs no Node.js](https://nodejs.org/api/fs.html)
-- [Explicação sobre a criação de arquivos temporários em TypeScript](https://www.typescriptlang.org/docs/handbook/stdlib/file-system.html#tempfilenames)
+1. Documentação oficial do `tmp-promise`: https://github.com/benjamingr/tmp-promise
+2. Módulo filesystem (`fs`) do NodeJS: https://nodejs.dev/learn/the-nodejs-fs-module
+3. Mais sobre arquivos temporários: https://en.wikipedia.org/wiki/Temporary_file

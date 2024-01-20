@@ -1,7 +1,7 @@
 ---
-title:                "Відправка запиту http з основною аутентифікацією"
-html_title:           "C++: Відправка запиту http з основною аутентифікацією"
-simple_title:         "Відправка запиту http з основною аутентифікацією"
+title:                "Надсилаємо HTTP-запит з базової аутентифікацією"
+html_title:           "C#: Надсилаємо HTTP-запит з базової аутентифікацією"
+simple_title:         "Надсилаємо HTTP-запит з базової аутентифікацією"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,79 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Що & Чому?
-Відправка HTTP запиту з основною аутентифікацією - це процес надсилання запиту до веб-сервера зі спеціальним кодом для ідентифікації себе як користувача. Це потрібно для того, щоб здійснити з'єднання з захищеним сервером і отримати доступ до захищених ресурсів. Програмісти використовують цей метод для збільшення безпеки комунікації з веб-сайтами.
+# Відправлення HTTP-запиту з базовою аутентифікацією в C++ 
 
-# Як це зробити:
-Приклад коду на C++, який надсилає HTTP запит з основною аутентифікацією і виводить результат запиту на екран:
+## Що це і навіщо це потрібно?
+Відправлення HTTP-запиту з базовою аутентифікацією в C++ — це процес, коли ваша програма відправляє запит до веб-сервера, авторизується, використовуючи ім'я користувача та пароль. Це роблять, щоб отримати доступ до приватних ресурсів на сервері.
 
+## Як це робити:
+Тут ми використовуємо бібліотеку cURL. Приклад коду C++:
 ```C++
 #include <iostream>
-#include <wininet.h>
+#include <string>
+#include <curl/curl.h>
 
-using namespace std;
-
-// Змінні для запиту
-HINTERNET hInternet, hConnect, hRequest;
-LPCTSTR lpszAgent = "WinHTTP Example/1.0";
-LPCTSTR lpszServerName = "www.example.com";
-LPCTSTR lpszUsername = "username";
-LPCTSTR lpszPassword = "password";
-
-// Будемо виводити вміст відповіді на консоль
-cout << "The response is: " << endl;
-
-hInternet = ::InternetOpen(lpszAgent, INTERNET_OPEN_TYPE_PRECONFIG, NULL, NULL, 0);
-
-// Підключаємося до сервера
-hConnect = ::InternetConnect(hInternet, lpszServerName,
-INTERNET_DEFAULT_HTTP_PORT, lpszUsername, lpszPassword, INTERNET_SERVICE_HTTP, 0, NULL);
-
-// Створюємо HTTP запит
-hRequest = ::HttpOpenRequest(hConnect, "GET", "/", NULL, 0, 0, INTERNET_FLAG_KEEP_CONNECTION, 0);
-
-BOOL bRequestSent = ::HttpSendRequest(hRequest, NULL, 0, NULL, 0);
-
-if (!bRequestSent)
-{
-    cout << "Failed to send HTTP request." << endl;
-    return 0;
+size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp) {
+    userp->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }
 
-DWORD dwNumberOfBytesRead = 0;
-BOOL bResult = FALSE;
-CHAR sBuffer[1024] = {0};
+int main() {
+    CURL* curl;
+    CURLcode res;
+    std::string readBuffer;
 
-// Зчитуємо вміст відповіді та виводимо його на екран
-bResult = ::InternetReadFile(hRequest, sBuffer, sizeof(sBuffer) - 1, &dwNumberOfBytesRead);
-cout << sBuffer << endl;
+    curl_global_init(CURL_GLOBAL_DEFAULT);
 
-// Закриваємо з'єднання та очищаємо пам'ять
-::InternetCloseHandle(hRequest);
-::InternetCloseHandle(hConnect);
-::InternetCloseHandle(hInternet);
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://mywebsite.com/protected-resource");
+        curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
+        curl_easy_setopt(curl, CURLOPT_USERNAME, "myusername");
+        curl_easy_setopt(curl, CURLOPT_PASSWORD, "mypassword");
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+
+        res = curl_easy_perform(curl);
+
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(res));
+
+        curl_easy_cleanup(curl);
+    }
+
+    curl_global_cleanup();
+
+    return 0;
+}
 ```
+## Пірнання вглиб: 
+HTTP Basic Authentication був впроваджений ще в 1996 році в якості частини специфікації HTTP/1.0. Хоча він і дуже простий в використанні, він не надає високого рівня безпеки, оскільки ім'я користувача та пароль передаються в нешифрованому вигляді. 
 
-Результат запиту:
-```
-<!doctype html>
-<html>
-<head>
-    <title>Welcome to Example.com</title>
-</head>
-<body>
-    <h1>Welcome!</h1>
-</body>
-</html>
-```
+Альтернативами є більш сучасні методи аутентифікації, такі як OAuth або JWT. 
 
-# Глибше вдивимося:
-(1) Основна аутентифікація була введена у специфікації HTTP 1.0. Вона передбачає відправку ім'я користувача та пароля у заголовках запиту, що може бути не безпечним для використання. Альтернативою є аутентифікація на основі токена, яка передбачає надсилання унікального токена замість логіну та пароля.
+Враховуючи деталі реалізації, важливо згадати, що коректне використання бібліотеки cURL потребує правильної ініціалізації та очищення.
 
-(2) У прикладі використовується бібліотека WinInet, яка надає функції для взаємодії з мережею. Також можна використовувати бібліотеку libcurl для надсилання HTTP запитів з основною аутентифікацією.
-
-(3) Детальніше про основну аутентифікацію можна дізнатися у RFC 7617: https://tools.ietf.org/html/rfc7617
-
-# Дивіться також:
-* Приклад використання основної аутентифікації з бібліотекою libcurl на мові C: https://curl.haxx.se/libcurl/c/CURLOPT_USERNAME.html
-* Огляд служби WinHTTP: https://docs.microsoft.com/en-us/windows/win32/winhttp/winhttp-start-page
+## Цікаві посилання:  
+1. [Документація cURL](https://curl.haxx.se/libcurl/c/)
+2. [Розділ про аутентифікацію в MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+3. [HTTP/1.0 специфікації](https://www.w3.org/Protocols/HTTP/1.0/spec.html#BasicAA)

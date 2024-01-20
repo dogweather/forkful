@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Elixir recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,54 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Working with Command Line Arguments in Elixir
+
 ## What & Why?
 
-Reading command line arguments is the process of obtaining inputs from the user through the command line interface. Programmers do this in order to make their programs more dynamic and configurable, as it allows for user input to be passed in when the program is executed.
+Command line arguments are parameters used to modify a program's behavior during its execution. They provide a flexible way for users to interact with our program, enabling bespoke execution paths and custom user input.
 
 ## How to:
 
-```Elixir
-# To read command line arguments, we first need to use the `System.argv/0` function from the `System` module.
-# It returns a list of strings, where each element represents an argument passed in by the user.
+Use Elixir's `System.argv/0` function to access command line arguments. Provide arguments at runtime after the script name. Here's a simple illustration:
 
-args = System.argv
+```elixir
+# commandline.exs
 
-# To access specific arguments, we can use list indexing as follows:
+defmodule CommandLine do
 
-first_arg = args[0]
-second_arg = args[1]
-
-# We can also use `length/1` function from the `Enum` module to get the total number of arguments passed in.
-
-args_length = Enum.length(args)
-
-# Let's try it out with a simple program that greets the user based on their input:
-
-defmodule Hello do
-  def main do
-    args = System.argv
-    name = args[0]
-    IO.puts("Hello #{name}, welcome to Elixir!")
+  def main(args) do
+    IO.inspect(args)
   end
+
 end
 
-# Let's compile and run this program with the following command:
-
-$ elixirc hello.ex
-$ elixir Hello world
-
-# Output:
-Hello world, welcome to Elixir!
+CommandLine.main(System.argv())
 ```
 
-## Deep Dive:
+Execute with arguments:
 
-Reading command line arguments has been a standard feature in most programming languages for a long time. It allows for command line interfaces to be interactive and provide a more user-friendly experience. Other alternatives to reading command line inputs include using environment variables or configuration files.
+```bash
+elixir commandline.exs arg1 arg2 arg3
+```
 
-Internally, the `System.argv/0` function makes a call to the `:init.get_argument/2` from the Erlang runtime system. This function is responsible for getting all the arguments passed in during program execution. Additionally, Elixir also provides the `OptionParser` module for more robust and structured argument parsing.
+This will print:
 
-## See Also:
+```bash
+["arg1", "arg2", "arg3"]
+```
+Showing that the arguments are passed as a list of strings to your script.
 
-- [`System` module documentation](https://hexdocs.pm/elixir/System.html)
-- [`OptionParser` module documentation](https://hexdocs.pm/elixir/OptionParser.html)
-- [Erlang `:init` module documentation](http://erlang.org/doc/man/init.html)
+## Deep Dive
+
+Historically, command line arguments have been a staple in Unix-like operating systems, powering versatile command-line interfaces. Elixir, building on this heritage, uses Erlang's `init:get_plain_arguments/0` function under the hood.
+
+An alternative to command line arguments is using environment variables with `System.get_env/0`. However, this proves less flexible as these are mainly static.
+
+When you call `System.argv/0`, Elixir fetches arguments passed to the Erlang runtime. Any arguments before `--` are consumed by the runtime itself, while the rest are passed to your script. 
+
+Elixir also supports argument parsing with `OptionParser.parse/2`, enabling more advanced argument structures like flags or switches.
+
+## See Also
+
+1. Understanding Command Line Arguments: https://en.wikipedia.org/wiki/Command-line_argument_parsing
+2. Elixir's `System.argv/0` : https://hexdocs.pm/elixir/System.html#argv/0
+3. OptionParser in Elixir: https://hexdocs.pm/elixir/OptionParser.html
+4. Erlang's command line handling: http://erlang.org/doc/man/init.html
+5. UNIX commands and arguments: https://www.ibm.com/docs/en/aix/7.1?topic=concepts-command-line-arguments

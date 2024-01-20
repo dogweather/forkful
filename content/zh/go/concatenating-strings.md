@@ -1,7 +1,7 @@
 ---
-title:                "字符串合并"
-html_title:           "Go: 字符串合并"
-simple_title:         "字符串合并"
+title:                "连接字符串"
+html_title:           "C: 连接字符串"
+simple_title:         "连接字符串"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,70 +10,79 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-下面是Go编程的最新版本，它使用非正式的语气和简洁的风格为读者介绍如何在Go代码中使用字符串连接功能。
+## 什么和为什么？
+字符串连接是把两个或更多字符串的值结合起来形成一个新的单一字符串的过程。程序员之所以这么做，是因为他们需要动态地创建或改变字符串。
 
-## 什么是字符串连接，为什么程序员要使用它？
-
-字符串连接是指将多个字符串合并为一个长的字符串的过程。程序员通常需要连接字符串来构建复杂的文本输出，比如打印出用户的完整姓名或者在网页上显示动态文本。使用字符串连接功能可以让程序更加灵活和易于维护。
-
-## 如何使用字符串连接功能：
-
-在Go中，字符串连接可以通过使用加号“+”来实现。下面是一个简单的示例：
-
-```
-Go
+## 怎么做：
+Go语言中最简单的连接字符串的方法就是使用加号（+）。诸如：
+```Go
 package main
-
 import "fmt"
 
 func main() {
-  first_name := "John"
-  last_name := "Doe"
-
-  full_name := first_name + " " + last_name
-  fmt.Println("Full Name:", full_name)
+    str1 := "你好,"
+    str2 := "世界!"
+    result := str1 + str2
+    fmt.Println(result)
 }
 ```
-
-输出：
-
+运行结果为：
+```Go
+你好,世界!
 ```
-Full Name: John Doe
-```
+## 深入了解
+从历史角度来看，字符串连接在编程语言发展的早期就已经存在，至今仍然是一项基础技术。在Go中，除了上述的加号，我们还有其他方式进行字符串连接，例如 `fmt.Sprintf` ， `strings.Join` 方法，也可以使用 `bytes.Buffer` 或 `strings.Builder`。
 
-您可以使用加号来连接多个字符串，也可以通过使用Sprintf函数来格式化字符串。下面是一个更复杂的示例：
-
-```
-Go
+`fmt.Sprintf` 是一个格式化的字符串拼接方法：
+```Go
 package main
-
-import "fmt"
+import (
+    "fmt"
+)
 
 func main() {
-  greeting := "Hello"
-  name := "Jane"
-
-  message := fmt.Sprintf("%s, %s! Welcome to our website.", greeting, name)
-  fmt.Println(message)
+	str1 := "你好,"
+	str2 := "世界!"
+	result := fmt.Sprintf("%s%s", str1, str2)
+	fmt.Println(result)
 }
 ```
 
-输出：
+`strings.Join`可以将字符串数组连接到一起：
+```Go
+package main
+import (
+    "fmt"
+    "strings"
+)
 
+func main() {
+    messages := []string{"你好,", "世界!"}
+    fmt.Println(strings.Join(messages, ""))
+}
 ```
-Hello, Jane! Welcome to our website.
+
+考虑到效率，当需要连接的字符串特别多的时候，使用 `bytes.Buffer` 或 `strings.Builder` 更加建议：
+```Go
+package main
+import (
+	"bytes"
+	"fmt"
+)
+
+func main() {
+	var b bytes.Buffer
+
+	for i := 0; i < 100; i++ {
+		fmt.Fprintf(&b, "%d,", i)
+	}
+
+	output := b.String()
+	fmt.Println(output)
+}
 ```
 
-## 深入了解字符串连接功能：
-
-字符串连接功能在计算机编程中已经有很长的历史。在早期的编程语言中，连接字符串需要使用一些特殊的函数来实现。但是在现代编程语言中，字符串连接已经成为了一种基本的操作，使得构建复杂的文本输出变得非常方便。
-
-除了使用加号和Sprintf，程序员也可以使用字符串拼接函数来实现字符串连接。这些函数通常会比直接使用加号更加高效。另外，一些现代的编程语言还提供了更高级的字符串连接方法，比如使用模板来动态构建文本。
-
-## 参考资料：
-
-如果您想了解更多关于Go语言中字符串连接的信息，可以参考以下资源：
-
-- [Go语言官方文档](https://golang.org/doc/)
-- [Go语言中文网](https://www.golang123.com/)
-- [Go语言中文社区](https://studygolang.com/)
+## 另请参见:
+* Go官方文档: [字符串处理](https://golang.org/pkg/strings/)
+* Go官方博客: [Go字符串连接最佳实践](https://go.dev/blog/strings)
+* 在线Go编程教程: [Go字符串连接](https://gobyexample.com/string-formatting)

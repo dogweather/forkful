@@ -1,7 +1,7 @@
 ---
-title:                "Kontrollera om en mapp finns"
-html_title:           "Elixir: Kontrollera om en mapp finns"
-simple_title:         "Kontrollera om en mapp finns"
+title:                "Kontrollera om en katalog finns"
+html_title:           "Elixir: Kontrollera om en katalog finns"
+simple_title:         "Kontrollera om en katalog finns"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -11,23 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att kontrollera om en mapp finns är en viktig del av programmering eftersom det hjälper till att säkerställa att koden kan hitta och använda nödvändiga filer och resurser på rätt plats.
+Att kontrollera om en katalog finns är en metod för att ta reda på om en viss sökväg pekar på en existerande filsystemskatalog. Programmerare gör detta för att förhindra fel vid försök till filoperationer på icke-existerande kataloger.
 
-## Hur man gör:
-För att kontrollera om en mapp finns i Elixir kan du använda funktionen `File.exists?`. Detta returnerar antingen `true` eller `false` beroende på om mappen finns eller inte.
+## Så här gör du:
+I Elixir kan du använda `File.dir?/1` funktionen för att kontrollera om en katalog finns. Här är ett exempel:
 
 ```Elixir
-File.exists?("min_mapp") #=> true
-File.exists?("ej_finns_mapp") #=> false
+# Kontrollerar om katalogen finns
+if File.dir?("/path/to/directory")
+    IO.puts "/path/to/directory finns!"
+else
+    IO.puts "/path/to/directory finns inte!"
+end
 ```
 
-## Djupdykning:
-Att kontrollera om en mapp finns är en viktig del av sättet Elixir hanterar filer. Tidigare språk som Erlang, vilket Elixir är baserat på, använde sig av en arvodelning av en enda filstruktur. Men i Elixir kan flera filstrukturen manipuleras och detta kan kräva kontroll på olika nivåer.
+Koden ovan kommer att skriva ut "/path/to/directory finns!" om katalogen finns, och "/path/to/directory finns inte!" om den inte gör det.
 
-Om `File.exists?` inte fungerar för dina behov, finns alternativ som `File.real_dir?` vilket returnerar `true` eller `false` beroende på om den givna sökvägen är till en katalog eller inte.
+Surfa till [Elixir dokumentation](https://hexdocs.pm/elixir/File.html#dir%3F/1) för att se mer information.
 
-För dem som är nyfikna här är några få implementationdetaljer kring hur `File.exists?`-funktionen fungerar. Den använder sig av primära operativsystemanrop som `stat` i Unix, vilket returnerar information om den givna filen. Detta används sedan för att bestämma om den är en katalog eller inte.
+## Utförligare förklaring
+Historiskt sett har det alltid varit nödvändigt att veta om kataloger finns när man programmerar, för att undvika överraskande fel vid runtime. Elixir, liksom de flesta moderna programmeringsspråk, erbjuder därför inbyggda sätt att kontrollera detta.
+
+Alternativa sätt att kontrollera om en katalog finns inkluderar användning av funktioner som `:file.read_file_info/1`, men det här är mer invecklat och `File.dir?/1` är att föredra i de flesta sammanhang.
+
+`File.dir?/1` i Elixir kör egentligen `:file.read_link_info/1` funktionen i Erlang, som är det språk Elixir är byggt på. Denna funktion returnerar detaljinformation om den angivna filen (eller katalogen), inklusive om det är en katalog eller inte.
 
 ## Se även:
-- Officiell Elixir dokumentation: https://hexdocs.pm/elixir/File.html#exists?
-- Elixir Shell-escape modul (Erlangs 'erl_call'): https://erlang.org/doc/man/shell_escape.html
+Det finns många resurser online för att lära sig mer om Elixir och dess inbyggda filsystemsfunktioner:
+
+- [Elixir dokumentation](https://hexdocs.pm/elixir/File.html) – den officiella dokumentationen för Elixir's File modul.
+- [Elixir Getting Started Guide](https://elixir-lang.org/getting-started/introduction.html) – En introduktion till Elixir programmering, skriven av skaparna av språket.
+- [Erlang dokumentation](http://erlang.org/doc/man/file.html) - Om du är intresserad av de underliggande Erlang-funktionerna kan du kolla in den officiella Erlang-dokumentationen.
+- [Elixir forum](https://elixirforum.com) - En plats för att ställa frågor, få hjälp och diskutera ideér med andra Elixir-programmerare.

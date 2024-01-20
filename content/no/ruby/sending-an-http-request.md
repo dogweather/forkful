@@ -1,7 +1,7 @@
 ---
-title:                "Sende en http-forespørsel"
-html_title:           "Ruby: Sende en http-forespørsel"
-simple_title:         "Sende en http-forespørsel"
+title:                "Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
+simple_title:         "Å sende en http-forespørsel"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,34 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Hva & Hvorfor?
+---
 
-Sending av HTTP forespørsler er en essensiell del av nettutvikling. Det er en måte å kommunisere med andre servere og få tilgang til og manipulere informasjon. Programmere gjør dette for å hente data fra API-er, lage dynamiske nettsteder og bygge nettapplikasjoner.
+## Hva & Hvorfor?
 
-#Hvordan?
+Å sende en HTTP-forespørsel er handlingen med å spørre en server om en bestemt ressurs, som en nettside eller en fil. Programmerere gjør dette for å hente data, sende data, eller interagere med eksterne tjenester og APIer.
 
-For å sende en HTTP forespørsel i Ruby, kan du bruke innebygde metodene i Net::HTTP biblioteket. Her er et eksempel på hvordan du kan hente data fra en nettside og skrive ut svaret:
+## Hvordan:
 
-```
+Her er et enkelt eksempel på hvordan sende en GET HTTP-forespørsel til en server ved hjelp av 'net/http' biblioteket i Ruby:
+
+```Ruby
 require 'net/http'
 
-url = URI('https://www.example.com')
-response = Net::HTTP.get_response(url)
-puts response.body
+url = URI("http://example.com")
+response = Net::HTTP.get(url)
+
+puts response
 ```
 
-I dette eksempelet bruker vi 'net/http' modulen for å opprette en URL-objekt og utføre en GET-forespørsel. Svaret blir lagret i en variabel og deretter skrevet ut ved hjelp av puts-metoden.
+Koden ovenfor vil skrive ut innholdet på siden 'http://example.com'. 
 
-#Dypdykk
+Hvis du vil sende data til serveren, bruker du en POST-forespørsel. Her er et eksempel:
 
-HTTP (Hypertext Transfer Protocol) er et klient-server protokoll som brukes på verdensveb for å sende og motta data. Det ble utviklet på 1990-tallet som et enkelt og universelt protokoll for å kommunisere mellom forskjellige systemer.
+```Ruby
+require 'net/http'
 
-I tillegg til Net::HTTP, finnes det også alternative måter å sende HTTP forespørsler i Ruby, som HTTParty og RestClient biblioteker. Disse bibliotekene gir enklere syntaks og flere funksjoner for å håndtere HTTP forespørsler.
+url = URI("http://example.com")
+http = Net::HTTP.new(url.host, url.port)
 
-For å sende en mer kompleks forespørsel, kan du også bruke Net::HTTP::Request-objekter som lar deg angi HTTP-metode, headers og kropp av forespørselen.
+request = Net::HTTP::Post.new(url)
+request["Content-Type"] = "application/json"
+request.body = '{"data": "test"}'
 
-#Se også
+response = http.request(request)
+puts response.read_body
+```
 
-- Dokumentasjon for Net::HTTP: https://ruby-doc.org/stdlib-2.6.5/libdoc/net/http/rdoc/Net/HTTP.html
-- HTTParty bibliotek: https://github.com/jnunemaker/httparty
-- RestClient bibliotek: https://github.com/rest-client/rest-client
+## Dypdykk
+
+Det historiske konteksten for sending av HTTP-forespørsler går tilbake til opprettelsen av World Wide Web. HTTP, eller Hypertext Transfer Protocol, var det primære verktøyet for kommunikasjon mellom klienter og servere.
+
+Det finnes mange alternative metoder for å sende HTTP-forespørsler i Ruby, inkludert andre biblioteker som 'httparty' og 'rest-client'. Valget av metode avhenger ofte av spesifikke behov i prosjektet.
+
+Når det gjelder implementeringsdetaljer, er en viktig ting å huske at forskjellige typer HTTP-forespørsler (GET, POST, DELETE, etc.) brukes for forskjellige formål. GET brukes til å hente informasjon, mens POST sender info og DELETE ser vekk med data.
+
+## Se Også
+
+Her er noen flere ressurser du kan sjekke ut for å lære mer om dette emnet:
+
+- [Ruby Dokumentasjon om Net::HTTP](https://ruby-doc.org/stdlib-2.5.1/libdoc/net/http/rdoc/Net/HTTP.html)
+
+- [RESTful APIer med Ruby: Frameworks and Tools](https://medium.com/swlh/restful-apis-with-ruby-gems-and-tools-962d81c6591d)
+
+- [How HTTP Works](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)

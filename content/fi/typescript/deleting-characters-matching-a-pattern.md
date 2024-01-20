@@ -1,7 +1,7 @@
 ---
-title:                "Pinnan mukaiset merkkien poistaminen"
-html_title:           "TypeScript: Pinnan mukaiset merkkien poistaminen"
-simple_title:         "Pinnan mukaiset merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,25 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Merkinpoisto, joka vastaa määrättyä kuvioa, on tapa poistaa tietyt merkit tietystä merkistöstä tai tekstimuodosta. Tätä tehdään usein ohjelmoinnin yhteydessä esimerkiksi tietojen puhdistamiseksi tai tietyn halutun tuloksen saamiseksi.
+## Mikä & Miksi?
 
-## Miten:
-Esimerkki TypeScript-koodin käytöstä:
+Poistaminen merkkejä, jotka vastaavat tiettyä mallia, tarkoittaa sen merkkijonon osien etsimistä, joka vastaa tiettyä säännöllistä lauseketta, ja sen poistamista. Ohjelmoijat tekevät tämän usein merkkijonon muotoilun tai epätarkkuuden poistamiseksi tai merkkijonon sisällön suodattamisen yksinkertaistamiseksi.
+
+## Kuinka:
+
+Alla on esimerkkejä siitä, miten voit toteuttaa tämän TypeScriptilla:
+
+```TypeScript
+let teksti = 'Hei, olen TypeScript ohjelmoija!';
+let poista = /TypeScript /g;
+
+let uusiTeksti = teksti.replace(poista, '');
+
+console.log(uusiTeksti); // "Hei, olen ohjelmoija!"
 ```
-TypeScript function removeChars(input: string, pattern: string): string {
-  return input.replace(new RegExp(pattern, 'g'), ''); 
-}
+Näiden koodirivien suorittaminen poistaa kaikki "TypeScript " tekstit, jolloin saamme "Hei, olen ohjelmoija!" tulosteeksi.
 
-console.log(removeChars('Hei Maailma!', '[aA]')); 
+## Syvä Sukellus:
 
-// Tulostaa: "Hei Mil!" 
-```
+Historiallisessa kontekstissa merkkijonon manipulointi on ollut osa ohjelmointia ohjelmoinnin alusta alkaen. Konsepti on peräisin aikakaudelta, jolloin muisti oli arvokasta ja ohjelmoijien piti hallita tietojen tallennustilaa tarkasti.
 
-## Syvälle sukellus:
-Merkinpoistoa vastaava menetelmä on ollut käytössä jo vuosien ajan ohjelmoinnin maailmassa. Muita vaihtoehtoja voivat olla esimerkiksi käyttää säännöllisiä lausekkeita tai luoda oma algoritmi poistamista varten. TypeScriptin regex-toiminnallisuus tarjoaa kuitenkin helpon ja tehokkaan tavan suorittaa merkinpoisto ohjelmassa. Tämä tapahtuu muodostamalla uusi RegExp-objekti, jossa määritellään haluttu kuvio ja käytetään sitten replace-metodia poistamiseen.
+Vaihtoehtoina voit myös käyttää kukin kieliominaisuudet, kuten split-funktio tai map-funktio tietyissä tapauksissa.
 
-## Katso myös:
-- [RegExp-objekti TypeScriptissä](https://www.typescriptlang.org/docs/handbook/regexp.html)
-- [Säännölliset lausekkeet ohjelmoinnissa](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Kustomoitava merkinpoisto suurilla datamäärillä TypeScriptillä](https://blog.totaljs.com/blogs/tutorials/20190305-custom-character-remover-for-large-strings-in-typescript/)
+Implementointitietojen osalta TypeScript käyttää ECMA-262 standardin String.prototype.replace -metodia. Tämä metodi tarkistaa merkkijonon jokaisen osion säännöllisen lausekkeen vastaavuuden osalta ja korvaa vastaavat osiot annetulla merkkijonolla tai paluuarvolla.
+
+## Katso Myös:
+
+- [MDN dokumentaatio String.prototype.replace()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace) 
+- [TypeScriptin viralliset dokumentit](https://www.typescriptlang.org/docs/handbook/basic-types.html#string) 
+- [ECMA-262 standard](https://www.ecma-international.org/publications/standards/Ecma-262.htm)

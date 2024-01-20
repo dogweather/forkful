@@ -10,61 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola a todos! Hoy vamos a hablar sobre cómo verificar si un directorio existe en Kotlin. Probablemente sepas que los programadores a menudo hacen esto para asegurarse de que su código funcione correctamente.
+# Comprobando si un directorio existe en Kotlin
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
+Verificar si un directorio existe es un procedimiento habitual que permite confirmar la presencia de un directorio antes de trabajar con él. Los programadores lo hacen para prevenir errores al interactuar con directorios inexistentes.
 
-Cuando hablamos de verificar si un directorio existe, nos referimos a comprobar si un directorio específico (una carpeta en nuestro sistema de archivos) se encuentra presente o no. Los programadores a menudo hacen esto para evitar que sus programas se bloqueen o para realizar ciertas acciones en caso de que el directorio no exista.
+## ¿Cómo hacerlo?
 
-## Cómo hacerlo:
+Aquí te enseñaré lo fácil que es verificar si un directorio existe en Kotlin. Gracias al paquete `java.nio.file` de Java, lo puedes hacer con solo una línea de código.
 
-Para comprobar si un directorio existe en Kotlin, podemos utilizar la función `exists()` de la clase `File`. Aquí hay un ejemplo:
+```kotlin
+import java.nio.file.Files
+import java.nio.file.Paths
 
-```Kotlin
-// Importamos la clase File
-import java.io.File 
-
-// Creamos una instancia de File con la ruta del directorio que queremos comprobar
-val directorio = File("ruta/del/directorio") 
-
-// Llamamos a la función exists() y guardamos el resultado en una variable booleana
-val existeDirectorio = directorio.exists() 
-
-// Imprimimos el resultado
-println("¿El directorio existe? $existeDirectorio")
+fun main() {
+    val dirPath = Paths.get("/direccion/al/directorio")
+    val exists = Files.exists(dirPath)
+    
+    println(exists)
+}
 ```
 
-La salida de este código sería "¿El directorio existe? true" si el directorio existe y "¿El directorio existe? false" si no existe.
+Este código imprime `true` si el directorio existe y `false` si no existe.
 
-## Profundizando:
+## Profundizando
 
-Si deseamos verificar si un directorio existe sin importar si es un directorio real o un enlace simbólico, podemos utilizar la función `exists()` de la clase `File` en combinación con la función `toRealPath()` para obtener la ruta real del directorio. Esto sería de la siguiente manera:
+Historia: Kotlin es un lenguaje relativamente nuevo, pero al ser interoperable con Java, puede utilizar las bibliotecas y paquetes de este último.
 
-```Kotlin
-// Creamos una instancia de File con la ruta del directorio que queremos comprobar
-val directorio = File("ruta/del/directorio") 
+Alternativas: Una opción alternativa para verificar si un directorio existe en Kotlin sería utilizando la clase `File` del paquete `java.io`.
 
-// Llamamos a la función exists() en conjunto con toRealPath() y guardamos el resultado en una variable booleana
-val existeDirectorio = directorio.exists() || directorio.toRealPath().exists()
+```kotlin
+import java.io.File
 
-// Imprimimos el resultado
-println("¿El directorio existe? $existeDirectorio")
+fun main() {
+    val dir = File("/direccion/al/directorio")
+    val exists = dir.exists() && dir.isDirectory
+
+    println(exists)
+}
 ```
 
-Otra forma de verificar si un directorio existe es utilizando la función `isDirectory()` en lugar de `exists()`. Esta función solo devolverá verdadero si el objeto `File` representa un directorio. Aquí hay un ejemplo:
+Implementación: `Files.exists(path)` verifica si un archivo existe o no, sin especificar si se trata de un archivo o un directorio. Para asegurarse de que es un directorio, se utiliza `dir.isDirectory` después de comprobar la existencia del archivo.
 
-```Kotlin
-// Creamos una instancia de File con la ruta del directorio que queremos comprobar
-val directorio = File("ruta/del/directorio") 
+## Ver también
 
-// Llamamos a la función isDirectory() y guardamos el resultado en una variable booleana
-val esDirectorio = directorio.isDirectory() 
+Para más información, puedes revisar los siguientes enlaces:
 
-// Imprimimos el resultado
-println("¿El objeto File es un directorio? $esDirectorio")
-```
-
-## Ver también:
-
-- Documentación oficial de Kotlin sobre la clase `File`: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html
-- Artículo en español sobre cómo crear y manipular archivos y directorios en Kotlin: https://medium.com/@waliahimanshu05/creando-y-manipulando-archivos-y-directorios-con-kotlin-2743fb9f5a1c
+1. [Documentación de Java NIO File](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html) - Documentación oficial de Oracle sobre el paquete java.nio.file.
+2. [Documentación oficial de Kotlin](https://kotlinlang.org/docs/home.html) - Información detallada y ejemplos adicionales de Kotlin.
+3. [Java IO File en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/index.html) - Más usos de la clase File de Java IO en Kotlin.

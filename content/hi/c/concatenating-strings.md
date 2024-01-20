@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को आपस में जोड़ना"
-html_title:           "C: स्ट्रिंग्स को आपस में जोड़ना"
-simple_title:         "स्ट्रिंग्स को आपस में जोड़ना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या & क्यूँ?
-कंकेटनेटिंग स्ट्रिंग एक ऐसी प्रक्रिया है जिसमें दो या अधिक स्ट्रिंग्स को संयोजित करके एक ही स्ट्रिंग बनाई जाती है। प्रोग्रामर्स इसे अपने कोड को कंप्यूटर को ग्राहकों को सुविधाजनक बनाने के लिए करते हैं।
+## क्या और क्यों? - What & Why?
 
-## कैसे करें:
-स्ट्रिंग को कंकेटनेट करने के लिए, 'strcat' फ़ंक्शन का उपयोग किया जाता है। इसका सिंटैक्स निम्नलिखित है:
+स्ट्रिंग्स को मिलाना (concatenating strings) का मतलब दो या दो से अधिक स्ट्रिंग्स को जोड़ना है। प्रोग्रामर्स इसे डाटा को संगठित रखने और उपलब्ध कराने के लिए करते हैं।
+
+## कैसे - How to:
+
+स्ट्रिंग्स को C में मिलाने के लिए, हम `strcat` फ़ंक्शन का उपयोग करेंगे। नीचे एक साधारण कोड दिया गया है:  
+
 ```C
-strcat(destination, source);
+#include <stdio.h>
+#include <string.h>
+
+void main() {
+    char str1[100] = "Hello, ";
+    char str2[] = "world!";
+    strcat(str1, str2);
+    printf("%s\n", str1);
+}
 ```
-यदि हमें दो स्ट्रिंग्स "Hello" और "World" को कंकेटनेट करना है, तो निम्नलिखित कोड का उपयोग कर सकते हैं:
+जब आप इसे चलाते हैं, आपको निम्नलिखित आउटपुट मिलेगा:  
 ```C
-char destination[12]="Hello";
-char source[6]="World";
-strcat(destination, source);
-printf("Concatenated string: %s", destination);
-```
-आउटपुट:
-```C
-Concatenated string: HelloWorld
+Hello, world!
 ```
 
-## गहराई में जाएं:
-यह प्रक्रिया पहले से ही है। और इसका मुख्य उपयोग स्ट्रिंग्स को एक साथ मिलाने के लिए होता है। अन्य विकल्पों के रूप में, 'strncat' फ़ंक्शन भी है, जो एक निश्चित संख्या के अक्षरों तक ही स्ट्रिंगों को कंकेटनेट करता है। इसका प्रयोग भाषा फ़ंक्शन्स को लम्बे स्ट्रिंग्स को तोड़ने से बचाने में किया जाता है।
+## गहराई में: Deep Dive
 
-'Concatenation' शब्द लैटिन शब्द "concatenare" से आया है, जिसका अर्थ है "एक साथ जोड़ना"। कंकेटनेट करने वाले टेक्निक स्ट्रिंग्स हो प्रोग्रामिंग मैं भी उपयोग किया गया है।
+"concatenation" शब्द "catena" से आया है जिसका अर्थ होता है chain। कम्प्यूटर साइंस में इसका इस्तेमाल स्ट्रिंग्स को जोड़ने के लिए किया जाता है। `strcat` फ़ंक्शन ने हमें यह सुविधा प्रदान की है, लेकिन इसका उपयोग ध्यान से करना चाहिए क्योंकि यह buffer overflow की समस्या उत्पन्न कर सकता है। इसके बदले, आप `strncat` का उपयोग कर सकते हैं, जो सुरक्षित विकल्प है क्योंकि यह आपको जोड़ने के लिए चरित्रों की संख्या को सीमित करता है।
 
-## देखें भी:
-अगर आपको 'strcat' और अन्य भाषा फ़ंक्शनों के बारे में और जानकारी चाहिए तो आप निम्नलिखित स्रोतों का उपयोग कर सकते हैं:
-- [C भाषा ट्यूटोरियल](https://www.programiz.com/c-programming/string-handling-functions)
-- [Concatenation के बारे में Wikipedia की जानकारी](https://en.wikipedia.org/wiki/Concatenation)
+## देखिए भी - See Also:
+
+- [C string handling](https://en.wikipedia.org/wiki/C_string_handling)
+- [C Programming/String manipulation](https://en.wikibooks.org/wiki/C_Programming/String_manipulation)

@@ -1,6 +1,6 @@
 ---
 title:                "Converting a date into a string"
-html_title:           "Ruby recipe: Converting a date into a string"
+html_title:           "Arduino recipe: Converting a date into a string"
 simple_title:         "Converting a date into a string"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -12,36 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Converting a date into a string simply means turning a date object into a string of characters. Programmers often do this in order to display the date in a desired format or to manipulate it in some way.
+Converting a date into a string in Ruby is transforming a date object into a readable string format that humans can understand. Programmers do this to output or store dates in a consistent and readable format.
 
 ## How to:
 
+In Ruby, you can convert a date into a string using the 'strftime' method. Here's a typical usage:
+
 ```Ruby
-# Converting a current date into a string using the default format
-date = Date.today
-puts date.to_s
-
-# Output: 2021-05-04
-
-# Converting a specific date into a string with a specific format
-date = Date.new(2021, 10, 31)
-puts date.strftime("%B %d, %Y")
-
-# Output: October 31, 2021
+date = Time.now
+formatted_date = date.strftime("%d-%m-%Y")
+puts formatted_date
 ```
+The 'strftime' method formats Time according to the directives in the given format string. The directives begin with a percent (%) character. In this case, `%d-%m-%Y` will output a date in the format of Day-Month-Year like "27-02-2023".
 
 ## Deep Dive
 
-Converting dates into strings has been a common practice in programming since the early days of computing. In traditional programming languages, dates were often stored as numbers, making it necessary to convert them into a string in order to display them to users or perform calculations using date math.
+The 'strftime' method has been part of Ruby since its early versions. Its name is short for 'string format time', and it has its roots in the C programming language.
 
-In contrast, newer programming languages, such as Ruby, have built-in date classes that can handle date objects more easily, allowing for simpler conversion to strings. However, some older legacy systems still rely on the conversion of dates into strings.
+There are other alternatives to format a date in Ruby, such as using the 'to_s' method with an argument:
 
-There are also alternative methods for converting dates into strings, such as using regular expressions or third-party libraries. But for most basic cases, the built-in methods in Ruby are sufficient.
+```Ruby
+date = Time.now
+formatted_date = date.to_s(:db)
+puts formatted_date
+```
+This will return the date in a database format like "2023-02-27 19:56:03".
 
-Implementation wise, converting a date into a string involves using the `to_s` method, which is available for both the `Date` and `DateTime` classes. Custom formatting can also be achieved using the `strftime` method, which takes in a string representing the desired format and returns the date as a string accordingly.
+As for implementation details, the way Ruby transforms a date into a string goes through a series of steps that involves breaking the date object into individual components (like year, month, day, etc.) and then assembling them into the desired format.
 
 ## See Also
 
-To learn more about converting dates into strings, check out the official Ruby documentation on [Date](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html) and [DateTime](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html).
+For more details on date formatting and other options for the 'strftime' directive, check Ruby's official documentation: [https://ruby-doc.org/core/Time.html#method-i-strftime](https://ruby-doc.org/core/Time.html#method-i-strftime)
 
-For alternative methods and libraries, refer to the [Ruby Toolbox](https://ruby-toolbox.com/categories/date_and_time.html).
+To see more about 'to_s' method and its arguments, you might want to read [https://ruby-doc.org/core/Time.html#method-i-to_s](https://ruby-doc.org/core/Time.html#method-i-to_s)
+
+For more in-depth knowledge about how Ruby handles dates and times, this article is a good read: [https://www.jstorimer.com/blogs/workingwithcode/7766119-mastering-times-and-dates-in-ruby](https://www.jstorimer.com/blogs/workingwithcode/7766119-mastering-times-and-dates-in-ruby)

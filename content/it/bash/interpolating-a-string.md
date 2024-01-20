@@ -1,6 +1,6 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Bash: Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
 simple_title:         "Interpolazione di una stringa"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,26 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perché?
-Interpolare una stringa significa inserire i valori di una variabile all'interno di una stringa, in modo da ottenere una nuova stringa con i valori aggiornati. I programmatori solitamente lo fanno per rendere le loro stringhe dinamiche e più personalizzate in base a diversi contesti.
+## Cos'è e Perché?
 
-## Come Fare:
-Assicurati di avere la versione corretta di Bash installata sul tuo sistema. Quindi, utilizza il seguente codice per interpolare una stringa:
+L'interpolazione delle stringhe in Bash permette di inserire il valore di una variabile all'interno di una stringa. Questa operazione è utilizzata dai programmatori per costruire stringhe dinamiche in modo semplice e leggibile.
+
+## Come si fa:
 
 ```Bash
-nome="Maria"
-echo "Ciao, $nome! Benvenuto a casa!"
+# Definisci una variabile
+nome="Giovanni"
+
+# Utilizza la variabile nella stringa
+echo "Ciao, $nome" # Stampa: "Ciao, Giovanni"
 ```
 
-L'output dovrebbe essere: `Ciao, Maria! Benvenuto a casa!`
+```Bash 
+# Puoi anche utilizzare le parentesi per chiarire dove finisce il nome della variabile
+cognome="Rossi"
+echo "Ciao, ${nome}${cognome}" # Stampa: "Ciao, GiovanniRossi"
+```
 
-## Approfondimento:
-Interpolazione delle stringhe è una tecnica comune in molti linguaggi di programmazione. In Bash, puoi utilizzare sia i caratteri `$` che il backtick `` per interpolare una stringa. Puoi anche utilizzare il comando `printf` per formattare la tua stringa.
+## Approfondimenti
 
-Alternativamente, puoi utilizzare la funzione `sed` per sostituire una stringa all'interno di un file con un valore di variabile.
+L'interpolazione delle stringhe è un concetto che esiste in molti linguaggi di programmazione, e in Bash è presente sin dalla versione 2.0, pubblicata nel 1997. Un'alternativa all'interpolazione delle stringhe è la concatenazione, ma l'interpolazione è generalmente preferita per la sua leggibilità.
 
-Per quanto riguarda l'implementazione, Bash usa la sintassi `$nome` per indicare una variabile e il suo valore. All'interno delle virgolette doppie, puoi utilizzare sia i caratteri `$` che il backtick `` per sostituire il valore della variabile. Questo è utile quando vuoi personalizzare una stringa per ogni esecuzione del tuo script.
+Per utilizzare l'interpolazione delle stringhe in Bash, fai attenzione a utilizzare le doppie virgolette `"` e non le singole `'`, in quanto quest'ultime impediranno l'interpolazione.
 
-## Vedi anche:
-- [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-- [Bash Beginner's Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
+## Vedi Anche
+
+- [Interpolazione delle stringhe in altri linguaggi di programmazione](https://www.journaldev.com/2552/java-string-format-examples)
+- [Differenza tra interpolazione delle stringhe e concatenazione](https://stackoverflow.com/questions/2909633/what-is-string-interpolation-in-php)
+- [Documentazione ufficiale Bash su variabili](http://www.gnu.org/software/bash/manual/bash.html#Shell-Variables)

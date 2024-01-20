@@ -1,7 +1,7 @@
 ---
-title:                "Erstellung einer temporären Datei"
-html_title:           "Bash: Erstellung einer temporären Datei"
-simple_title:         "Erstellung einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Files and I/O"
@@ -10,26 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum? 
-Das Erstellen einer temporären Datei ist ein häufiges Verfahren in der Programmierung, um vorübergehende Daten zu speichern oder zu verarbeiten. Es wird oft verwendet, wenn der Programmierer vorübergehend Daten braucht, die später gelöscht werden sollen. 
+## Was & Warum?
+Die Erstellung einer temporären Datei ist ein Prozess, der eine temporäre Speicherstelle auf Ihrem Computer erstellt. Programmierer tun dies, um Daten kurzfristig zu speichern und zu manipulieren, ohne dauerhafte Änderungen an der zugrunde liegenden Datenquelle vorzunehmen.
 
-## Wie geht's weiter? 
-Es gibt verschiedene Methoden, um in Bash eine temporäre Datei zu erstellen, aber eine der häufigsten ist die Verwendung des Befehls `mktemp`, der einen eindeutigen Dateinamen generiert und die Datei automatisch erstellt. 
-
-Beispielcode: 
-```Bash
-tempfile=$(mktemp) 
-echo "Dies ist eine temporäre Datei" > $tempfile 
-cat $tempfile 
+## Wie:
+Erstellen Sie eine temporäre Datei mit dem `mktemp`-Befehl in Bash. Hier ist ein Beispiel:
+```Bash 
+temp_file=$(mktemp)
+echo "Hallo Welt" > $temp_file
 ```
-
-Erwartete Ausgabe: 
+Output: 
+```Bash 
+cat $temp_file
+Hallo Welt
 ```
-Dies ist eine temporäre Datei
-```
+In diesem Code erstellt `mktemp` eine temporäre Datei und die Variable `temp_file` hält die Datei Weg. Dann wird "Hallo Welt” in die temporäre Datei geschrieben.
 
-## Tiefer Einblick 
-Das Erstellen von temporären Dateien hat eine lange Geschichte in der Programmierung und wird seit den frühen Tagen des Unix-Betriebssystems verwendet. Es bietet eine einfache Möglichkeit, temporäre Daten zu speichern, ohne die Hauptdateien oder das System zu überladen. Eine Alternative zur Verwendung von `mktemp` besteht darin, manuell einen eindeutigen Dateinamen zu erstellen und die Datei mit dem Befehl `touch` zu erstellen. 
+## Vertiefung:
+Ursprünglich war in Unix keine eingebaute Methode zum Erstellen temporärer Dateien vorhanden. Stattdessen haben frühe Programmierer improvisiert, indem sie Dateien in einem `/tmp`-Verzeichnis erstellt haben. Heute bietet `mktemp` eine sicherere und robustere Lösung dafür. 
 
-## Siehe auch 
-Weitere Details zum `mktemp`-Befehl finden Sie in der Bash-Dokumentation unter https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html
+Alternativ zur `mktemp`-Funktion gibt es den `mkstemp`-Systemaufruf, allerdings ist dieser schwieriger zu manipulieren und eher unter fortschrittlichen Anwendern verbreitet. 
+
+Hinsichtlich der Implementierung: eine temporäre Datei ist nicht mehr als eine normale Datei, die in einem speziellen Verzeichnis (`/tmp` oder `/var/tmp` auf den meisten Systemen) erstellt wird. Sie wird bei einem Neustart oder nach einem bestimmten Zeitraum gelöscht.
+
+## Siehe auch:
+1. [GNU mktemp man page](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
+2. [Linux Documentation Project - Temp Files](https://tldp.org/LDP/abs/html/tempfiles.html)
+3. [Creating temporary files in Bash with mktemp](https://www.howtogeek.com/269569/creating-temporary-files-in-bash-with-mktemp/)

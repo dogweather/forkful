@@ -1,7 +1,7 @@
 ---
-title:                "Eliminando caracteres que coincidan con un patrón"
-html_title:           "Clojure: Eliminando caracteres que coincidan con un patrón"
-simple_title:         "Eliminando caracteres que coincidan con un patrón"
+title:                "Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
+simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,22 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qué y por qué?
+## ¿Qué y Por qué?
 
-Eliminar caracteres que coinciden con un patrón es una función comúnmente utilizada en la programación para manipular y limpiar datos. Los programadores suelen hacerlo para optimizar la eficiencia del código y mejorar la legibilidad del mismo.
+Eliminar caracteres que coinciden con un patrón es un procedimiento común en la programación. Esto permite a los programadores limpiar o transformar datos de manera efectiva.
 
-Cómo hacerlo:
+## Cómo hacerlo:
+
+Para hacer esto en Clojure, utilizaremos la función re-seq y la función apply str.
 
 ```Clojure
-(remove #"" "Texto de ejemplo con caracteres no deseados")
+(defn borrar-patron [cadena patron]
+  (apply str (re-seq (re-pattern (str "[^" patron "]")) cadena)))
 ```
 
-Salida: "Textodeejemploconcaracteresdeseados"
+Si ejecutamos esta función para una cadena y un patrón como el siguiente:
 
-Deep Dive:
+```Clojure
+(prn (borrar-patron "Hola Mundo!" "Mundo"))
+```
 
-Eliminar caracteres coincidentes tiene una larga historia en la programación, siendo utilizado desde los primeros lenguajes de programación hasta la actualidad. Además, existen alternativas a esta función en otros lenguajes de programación, como la función "trim" en Java. En términos de implementación, esta función utiliza expresiones regulares para determinar los caracteres que deben ser eliminados.
+La salida será:
 
-Ver también:
+```Clojure
+"Hola !"
+```
+Se eliminaron todos los caracteres que se encuentran en el patrón "Mundo".
 
-Para más información sobre expresiones regulares y cómo utilizarlas en Clojure, revisa la documentación oficial de Clojure Regular Expressions: https://clojure.org/reference/regular_expressions. También puedes consultar el tutorial de expresiones regulares de Clojure en ClojureDocs: https://clojuredocs.org/clojure.core/re-matches.
+## Inmersión Profunda
+
+Historia: Clojure, un dialecto de Lisp, fue desarrollado para ser una alternativa moderna práctica. Lisp es conocido por su eficacia en el manejo de patrones y de cadenas, y Clojure sigue este legado.
+
+Alternativas: Además de re-seq, también puedes utilizar funciones como filter y remove.
+
+Detalles de Implementación: Cuando se usa re-seq con un patrón, se devuelve una secuencia de todas las correspondencias. Cuando esto se combina con apply str, se obtiene una cadena que excluye los caracteres del patrón.
+
+## Ver También
+
+Documentación oficial de Clojure para [re-seq](https://clojuredocs.org/clojure.core/re-seq)
+
+Tutorial en español de Clojure [aquí](http://clojure-doc.org/es/articles/tutorials/introduction.html)
+
+Un tutorial completo para [filtros](https://clojuredocs.org/clojure.core/filter) y [remove](https://clojuredocs.org/clojure.core/remove) en Clojure.

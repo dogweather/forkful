@@ -1,6 +1,6 @@
 ---
 title:                "המרת תאריך למחרוזת"
-html_title:           "Javascript: המרת תאריך למחרוזת"
+html_title:           "Bash: המרת תאריך למחרוזת"
 simple_title:         "המרת תאריך למחרוזת"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,43 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-כאשר מתכנתים כותבים אפליקציות או אתרים, קשה להשתמש בתאריך כך שהמשתמש יבין בו התכוונויות בקלות. כתיבת תאריך כמחרוזת נותנת למשתמש את האפשרות לראות את התאריך בפורמט שיובנה לו. 
+## מה ולמה?
+תהליך המרת תאריך למחרוזת מאפשר למתכנתים להציג את התאריך בפורמט מותאם אישית, מה שהופך אותו לנוח יותר לקריאה.בנוסף, מרת מחרוזת לתאריך משמשת לשמירה ושליחה נוחה של נתונים בין השרתים.
 
-## מה ולמה? 
-כתיבת תאריך כמחרוזת היא פשוט תהליך שממיר את המידע של תאריך למחרוזת טקסט. זה נעשה בכדי שהמתכנת יוכל להציג את התאריך בפורמט שישמת את המשתמש הטוב ביותר. זה גם יותר קל להתאים את הפורמט תאריך עצמו, כך שהוא יתאים לצרכי האפליקציה או האתר.
-
-## איך לעשות זאת? 
-תבניות הקוד הבאות מדגימות איך להמיר תאריך למחרוזת בפורמטים שונים באמצעות פונקציות של פייתון :
-```javascript
-// מחרוזת בתורת ייצוג התאריך (YYYY / MM / DD) 
-const date1 = new Date();
-const string1 = date1.getFullYear() + "/" + (date1.getMonth() + 1) + "/" + date1.getDate();
-console.log(string1);
-
-// מחרוזת בתורת שימוש יצירת התאריך (DD / MM / YYYY) 
-const date2 = new Date();
-const string2 = date2.getDate() + "/" + (date2.getMonth() + 1) + "/" + date2.getFullYear();
-console.log(string2);
-
-// מחרוזת בתורת ייצוג התאריך כפי שנת 1980 (MM / DD / YY) 
-const date3 = new Date();
-const string3 = (date3.getMonth() + 1) + "/" + date3.getDate() + "/" + date3.getFullYear().toString().slice(-2);
-console.log(string3);
+## איך לעשות:
+קוד קטן שממחיש את התהליך:
+```Javascript
+let date = new Date();
+let strDate = date.toString();
+console.log(strDate); // Outputs: 'Wed Mar 17 2021 12:20:00 GMT-0700 (Pacific Daylight Time)'
 ```
-### פלט:
+כאן, אנחנו משתמשים במתודה `.toString()` של אובייקט Date כדי להמיר את התאריך למחרוזת.
+## טבילה עמוקה
+המרת תאריך למחרוזת היא טכניקה שהתפתחה בהיסטוריה המוקדמת של התכנות, כאשר היה צורך להעביר נתונים בין מחשבים בצורה יעילה. יתר על כך, ישנן אלטרנטיבות לפונקציה `toString()`, כמו `toISOString()`, הממירה את התאריך למחרוזת בפורמט ISO8601.
 
-> 2021/12/22
-> 22/12/2021
-> 12/22/21
-
- התאריך הראשון מציג את התאריך בפורמט שנה/חודש/יום. התאריך השני מציג את התאריך בפורמט יום/חודש/שנה. התאריך השלישי מציג את התאריך בפורמט השנה כפי שנה 1980, שהוא חודש/יום/שנה בשנה רצופה של הפני העשרוני בפייתון.
-
-## חפירה עמוקה
-תהליך כתיבת תאריך כמחרוזת לא היה פשוט עדיין לפני כמה ניסיונות הסיטנט יצירה שלוש פונקציות תסדיר את היצירת תאריך כמחרוזת עבור הסולם הידועות בתאריך זמינים התוכן לימודים. למרבה המזל, אנחנו אנשי קוד פותחים מספיק יודעים להשתמש בקוד עוד בתהליך התיקון זה.
-
-אלטרנטיבות עבור כתיבת תאריך כתוב חוץ להפונקציה.השתמש בקודם ספציפי לכן כדי לקלותך יש לבחור תאריכים במחרוזת כדי לקבל קבציים.
-
-לדוגמהם, בפייתון יש כמה מכל המערכת כעת יש כמה פונקציות חשבוניות להתחבר שחתורותן יכשלו. 
-
-## ראו גם
-בדף הראשי » תאריך בפורמט כתיבה כקובץ קודם ה
+## ראה גם:
+- [MDN Web Docs - Date.prototype.toString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toString)
+- [MDN Web Docs - Date.prototype.toISOString()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toISOString)
+- [StackOverflow - Convert js Date time to MySQL datetime](https://stackoverflow.com/questions/5129624/convert-js-date-time-to-mysql-datetime)

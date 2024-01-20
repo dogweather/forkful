@@ -1,6 +1,6 @@
 ---
 title:                "Lese en tekstfil"
-html_title:           "C: Lese en tekstfil"
+html_title:           "C#: Lese en tekstfil"
 simple_title:         "Lese en tekstfil"
 programming_language: "C"
 category:             "C"
@@ -10,30 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Lesing av en tekstfil er en vanlig oppgave for programmerere. Det betyr rett og slett at vi leser innholdet i en fil, som er en samling av tekst og data, inn i koden vår. Dette er nyttig når vi ønsker å hente ut informasjon fra en fil og bruke den i vårt program.
+## Hva & Hvorfor?
 
-# Hvordan:
-Vi kan lese en tekstfil ved hjelp av standard I/O-funksjoner i C. Vi trenger først å åpne filen vi ønsker å lese ved hjelp av `fopen()`-funksjonen. Deretter kan vi bruke `fgets()`-funksjonen til å lese hver linje i filen og lagre den i en variabel. Til slutt må vi huske å lukke filen ved hjelp av `fclose()`-funksjonen når vi er ferdige med å lese fra den.
+Å lese en tekstfil er en prosess hvor programmeret henter innholdet i en fil for å bruke det til noe nyttig. Programmerere gjør dette for å behandle data, konfigurere systeminnstillinger eller importere data fra filer lagret av andre programmer.
 
-``` C
-FILE *fp;
-char line[255];
+## Hvordan gjør man det:
 
-fp = fopen("tekstfil.txt", "r");
+Her er en enkel måte å lese en tekstfil i C:
 
-while (fgets(line, 255, fp) != NULL) {
-  printf("%s", line);
+```C
+#include <stdio.h>
+
+int main () {
+  FILE * file;
+  char line [128]; 
+  
+  file = fopen ("example.txt" , "r");
+  if (file == NULL) perror ("Error opening file");
+  
+  while ( fgets (line, sizeof line, file) != NULL ) 
+    fputs (line, stdout);
+  
+  fclose (file);
+  return 0;
 }
-
-fclose(fp);
 ```
 
-Dette eksempelet åpner en tekstfil med navnet "tekstfil.txt" for lesing og leser linjene en etter en til `fgets()` returnerer `NULL`, som betyr at det ikke er flere linjer igjen å lese. Deretter skrives hver linje ut til skjermen ved hjelp av `printf()`-funksjonen. Til slutt lukkes filen igjen.
+Koden over åpner `example.txt` for lesing og skriver ut hver linje til standard output. Hvis `example.txt` inneholder:
 
-# Dypdykk:
-Lesing av tekstfiler har vært en viktig del av programmering siden de første programmene ble skrevet. Det finnes også flere alternative måter å lese tekstfiler på, som for eksempel å bruke `fscanf()`-funksjonen eller å bruke ferdiglagde biblioteker som `libfread`. Implementeringen av å lese en tekstfil avhenger også av hvilket operativsystem vi kjører på, da filsystemet er forskjellig fra system til system.
+```C
+Hallo Verden!
+Jeg er en tekstfil.
+```
 
-# Se Også:
-- [C File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)
-- [Reading and Writing Files in C](https://www.geeksforgeeks.org/basics-file-handling-c/)
+Vil output være:
+
+```C
+Hallo Verden!
+Jeg er en tekstfil.
+```
+
+## Dypdykk:
+
+C, som ble laget i 1972, er blitt en standard for filhåndtering takket være effektiviteten og fleksibiliteten til funksjonene.
+
+Alternativ til `fgets()` kan være funksjonene `fscanf()` og `fread() `. `fscanf() ` leser filen basert på spesifiserte formater, mens `fread() ` leser filen byte-for-byte. Valgene avhenger av bruksområdet.
+
+Når det gjelder implementering av fillesing, er det viktig å huske på at filhåndtering kan føre til minnelekkager hvis det ikke håndteres skikkelig. Alltid lukk filene etter bruk med `fclose()`.
+
+## Se Også:
+
+Her er noen nyttige lenker for mer informasjon:
+
+1. [C Programming/FILE](https://en.wikibooks.org/wiki/C_Programming/FILE)
+2. [A Tutorial on File I/O in C](https://www.learn-c.org/en/File_IO)
+3. [C file input/output](https://www.gnu.org/software/libc/manual/html_node/File-Input_002fOutput.html)

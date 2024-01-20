@@ -1,6 +1,6 @@
 ---
 title:                "Vergleich von zwei Daten"
-html_title:           "PowerShell: Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
 simple_title:         "Vergleich von zwei Daten"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,45 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Vergleichen von zwei Daten ist eine häufige Aufgabe in der Programmierung. Es beinhaltet Überprüfung der Gleichheit, Reihenfolge oder anderen Beziehungen zwischen zwei Datumsangaben. Programmierer verwenden diese Technik, um beispielsweise Datenbankabfragen zu filtern oder Geschäftslogik zu implementieren.
 
-## How to:
-Die folgenden Beispiele veranschaulichen die Grundlagen des Vergleichens von zwei Daten in PowerShell:
+Der Vergleich von zwei Daten ist das Feststellen der Zeitdifferenz zwischen ihnen. Dies ist wichtig für Programmierer, um Zeit-basierte Funktionen und Abläufe zu erstellen, wie z. B. Datums-Countdowns oder Datumsgesteuerte Ereignisse.
 
-```PowerShell
-$date1 = Get-Date -Date "2020-08-10"
-$date2 = Get-Date -Date "2020-08-12"
+## Wie geht das:
 
-$date1 -eq $date2   # Gleichheit prüfen
-$date1 -lt $date2   # Reihenfolge prüfen
-```
-
-Dies würde die Ausgabe ```False``` für die erste Zeile und ```True``` für die zweite Zeile zurückgeben.
-
-Weitere Vergleichsoperatoren, die in PowerShell zur Verfügung stehen, sind:
-
-- `-gt` (größer als)
-- `-ge` (größer oder gleich)
-- `-lt` (kleiner als)
-- `-le` (kleiner oder gleich)
+Im PowerShell können wir das `-gt`(größer als), `-lt`(kleiner als), `-ge`(größer oder gleich), `-le`(kleiner oder gleich), `-eq`(gleich), und `-ne`(nicht gleich) Operatoren verwenden, um zwei Daten zu vergleichen. Hier ist ein einfaches Beispiel:
 
 ```PowerShell
-$date1 = Get-Date -Date "2020-08-10"
-$date2 = Get-Date -Date "2020-08-12"
+#Erstellen von zwei Datum-Objekten 
+$Datum1 = Get-Date -Year 2020 -Month 1 -Day 1
+$Datum2 = Get-Date -Year 2021 -Month 1 -Day 1
 
-$date1 -gt $date2   # Ausgabe: False
-$date1 -le $date2   # Ausgabe: True
+#Vergleich der Daten
+$Datum1 -gt $Datum2
 ```
 
-## Deep Dive:
-Das Vergleichen von zwei Daten in der Programmierung ist eine Technik, die schon seit langem verwendet wird. Herausforderungen dabei sind die unterschiedlichen Datumsformate und -standards, die in verschiedenen Ländern und Kulturen verwendet werden. Aus diesem Grund ist es wichtig, sich mit den verschiedenen Datumsfunktionen und -formaten der verwendeten Programmiersprache vertraut zu machen.
+Die Ausgabe des obigen Codes wäre `$false`, weil `$Datum1`(1. Januar 2020) nicht später ist als `$Datum2`(1. Januar 2021).
 
-Eine Alternative zum Vergleichen von Daten ist die Verwendung von relativen Zeitangaben, wie beispielsweise "vor 2 Wochen" oder "in 3 Monaten". Dies kann je nach Anwendungsfall eine einfachere Möglichkeit sein, mit Zeitangaben umzugehen.
+## Deep Dive
 
-In PowerShell erfolgt der Vergleich von Daten auf der Basis von .NET-Funktionen und -Klassen. Dies sorgt für eine hohe Zuverlässigkeit und Genauigkeit bei der Vergleichsoperation.
+In der früheren Versionen von PowerShell war es nicht möglich, zwei Datumsobjekte direkt zu vergleichen. Wir mussten zuerst das Datum in einen Timestamp umwandeln und dann die Timestamps vergleichen. Jetzt, mit der aktuellen Version von PowerShell, können wir die Direktvergleichsmethode verwenden, wie in der 'How to'-Sektion gezeigt. 
 
-## Siehe auch:
-Weitere Informationen zum Vergleichen von Daten in PowerShell finden Sie unter folgenden Links:
+Es gibt andere Möglichkeiten, Daten in PowerShell zu vergleichen. Eine Alternative besteht zum Beispiel darin, die Datediff-Funktion in .NET zu verwenden, die jedoch weniger lesbar und umständlicher ist. 
 
-- [Offizielle Microsoft-Dokumentation](https://docs.microsoft.com/de-de/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7)
-- [Stack Overflow Diskussionen](https://stackoverflow.com/questions/tagged/powershell+date+comparison)
+Die Implementierung des Datumsvergleichs in PowerShell ist relativ einfach und unkompliziert. Man sollte sich jedoch bewusst sein, dass der Vergleich genau auf die Sekunde erfolgt.
+
+## Siehe Auch
+
+Weitere Informationen und Beispiele finden Sie unter:
+- [Microsoft's PowerShell-Dokumentation zu Vergleichsoperatoren](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1)
+- [StackOverflow Diskussionen über PowerShell Datum Vergleich](https://stackoverflow.com/questions/7834951/how-to-compare-dates-in-powershell)

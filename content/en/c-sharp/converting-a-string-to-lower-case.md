@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "C# recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "C#"
 category:             "C#"
@@ -11,42 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Converting a string to lower case simply means changing all the letters in a string to their lower case counterparts. This is a common task for programmers when they need to compare two strings without worrying about case sensitivity. It also makes the string more readable for users.
+
+Converting a string to lowercase in C# programming means transforming all uppercase letters in the text string to their lowercase counterparts. It's regularly done to make text comparisons case-insensitive and normalize user input.
 
 ## How to:
-Converting a string to lower case in C# is simple with the built-in method `ToLower()`. Here's an example:
+
+In C#, converting a string to lowercase is quite straightforward. You can use the `ToLower` function like so:
 
 ```C#
-string name = "JOHN";
-string lowerCaseName = name.ToLower();
-Console.WriteLine(lowerCaseName);
+string myString = "HELLO, WORLD!";
+string lowerCaseString = myString.ToLower();
+Console.WriteLine(lowerCaseString); // Output: "hello, world!"
 ```
+The program eloquently converts all the characters in myString to lowercase and displays the modified string on the console.
 
-Output:
+## Deep Dive
+
+Historically, converting strings to lowercase has been part of text processing since the dawn of computing. It adds flexibility and consistency to our applications, especially ones dealing with user-provided input.
+
+There are multiple ways to convert a string to lowercase besides using `ToLower`. Notably, you can use the `ToLowerInvariant` method, which uses culture-independent casing rules. It's the safest choice for culture-agnostic string comparisons.
+
 ```C#
-john
+string myString = "HELLO, WORLD!";
+string lowerCaseString = myString.ToLowerInvariant();
+Console.WriteLine(lowerCaseString); // Output: "hello, world!"
 ```
 
-You can also use the `ToLower()` method directly on the string variable without creating a new variable:
+In terms of implementation details, the `ToLower()` and `ToLowerInvariant()` methods internally use culture-related information from the `TextInfo` object of the `CultureInfo` class to perform case conversion.
 
-```C#
-string name = "JOHN";
-Console.WriteLine(name.ToLower());
-```
+Keep in mind, converting a string to lowercase is not an in-place transformation. A new string will be created and returned because strings in C# are immutable.
 
-Output:
-```C#
-john
-```
+## See Also
 
-## Deep Dive:
-In the early days of programming, creating a case-insensitive string comparison required converting both strings to either upper case or lower case. However, as programming languages evolved, the `ToLower()` method was introduced to make this task easier and more efficient.
+For more info on related subjects, refer to these documents:
 
-An alternative to using `ToLower()` is the `String.Equals()` method, which has an option to ignore case when comparing two strings. However, if you need to convert a string to lower case for use in other methods, it's more convenient to use `ToLower()`.
-
-Under the hood, the `ToLower()` method uses the CurrentCulture to determine the appropriate lower case letters. This means that the result can vary depending on the computer's language settings. If you need a consistent result, you can use the `ToLowerInvariant()` method, which always converts to lower case using the invariant culture.
-
-## See Also:
-- [String.ToLower Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower?view=net-5.0)
-- [String.Equals Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.string.equals?view=net-5.0)
-- [String.ToLowerInvariant Method (C#)](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolowerinvariant?view=net-5.0)
+- C# String ToLower() Method: https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower
+- CultureInfo Class: https://docs.microsoft.com/en-us/dotnet/api/system.globalization.cultureinfo
+- Learn about methods in C#: https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/methods
+- String immutability in C#: https://www.csharpstar.com/csharp-string-immutability

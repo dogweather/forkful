@@ -1,7 +1,7 @@
 ---
-title:                "디렉터리가 존재하는지 확인하기"
-html_title:           "C#: 디렉터리가 존재하는지 확인하기"
-simple_title:         "디렉터리가 존재하는지 확인하기"
+title:                "디렉토리가 존재하는지 확인하기"
+html_title:           "C#: 디렉토리가 존재하는지 확인하기"
+simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,34 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇과 왜?
+## 왜 & 왜?
 
-디렉토리가 존재하는지를 확인하는 것은 프로그래머들이 자주 하는 작업입니다. 이는 프로그램 로직에서 필수적인 부분이며, 파일들을 찾거나 생성하기 전에 확인해야 합니다.
+디렉토리가 존재하는지 확인하는 것은 파일 시스템에서 특정 위치에 디렉토리가 있음을 검증하는 것입니다. 이는 파일 및 데이터 저장을 안전하게 운영하고, 에러를 방지하기 위해 프로그래머들이 자주 사용합니다.
 
-# 방법:
+## 어떻게:
+
+디렉토리가 있는지 확인하는 방법을 C# 코드로 보여드리겠습니다.
 
 ```C#
-if (Directory.Exists(path))
+using System.IO;
+
+class Program
 {
-    Console.WriteLine("디렉토리가 존재합니다.");
-}
-else
-{
-    Console.WriteLine("디렉토리가 존재하지 않습니다.");
+    static void Main()
+    {
+        var dirPath = @"C:\MyDirectory";
+
+        if (Directory.Exists(dirPath))
+        {
+            System.Console.WriteLine("Directory exists.");
+        }
+        else
+        {
+            System.Console.WriteLine("Directory does not exist.");
+        }
+    }
 }
 ```
+이 코드에서, 디렉토리가 있으면 "Directory exists."라는 메시지가 표시되고, 없으면 "Directory does not exist."라는 메시지가 표시됩니다.
 
-이 코드 예제는 ```path``` 변수에 지정된 경로에 디렉토리가 있는지 여부를 확인합니다. ```Directory.Exists()``` 메서드는 불리언 값으로 결과를 반환하며, 디렉토리가 존재하면 ```true```를 반환하고 그렇지 않으면 ```false```를 반환합니다.
+## 깊은 이해:
 
-# 깊이 들어가기:
+디렉토리가 존재하는지 확인하는 최초의 방법이나 기능은 파일 시스템이 소프트웨어에 도입되었을 때 나왔습니다. 그래서 이것은 파일 시스템 이해의 기초적인 부분입니다. 
 
-디렉토리의 존재 여부를 확인하는 것은 프로그래밍에서 매우 중요한 부분입니다. 이는 예외처리와 관련이 있으며, 없는 디렉토리를 쿼리하면 오류가 발생할 수 있습니다. 이를 방지하기 위해 디렉토리가 존재하는지 먼저 확인해야 합니다.
+대안으로, `DirectoryInfo.Exists`메서드도 사용되곤 합니다. 하지만, `Directory.Exists`는 static 메서드이므로 더 쉽게 접근할 수 있습니다.
 
-```Directory.Exists()``` 메서드는 존재 여부 뿐만 아니라 디렉토리의 속성도 확인할 수 있습니다. 이를 사용하여 디렉토리가 읽기 전용인지, 숨김 파일이 있는지 등을 확인할 수 있습니다.
+`Directory.Exists` 메서드는 디렉토리 경로를 문자열로 받아, 그 경로에 디렉토리가 있으면 `true`를, 없으면 `false`를 반환합니다. 이 결과는 애플리케이션의 로직을 결정하는데 도움이 됩니다.
 
-대안으로는 ```DirectoryInfo``` 클래스를 사용할 수 있습니다. 이 클래스는 디렉토리의 존재 여부를 확인할 수 있는 다양한 메서드와 속성을 제공합니다.
+## 관련 자료
 
-# 참고 자료:
-
-- C# 가이드: 디렉토리 쿼리 - https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/file-system/how-to-query-directories
-- C# 가이드: 디렉토리 정보 - https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/file-system/how-to-get-information-about-a-file-path
+- MSDN 문서: [Directory.Exists Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- StackOverflow: [Check if directory exists](https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-file-or-a-directory)
+- C# 공식 문서: [File and Stream I/O](https://docs.microsoft.com/en-us/dotnet/standard/io/)

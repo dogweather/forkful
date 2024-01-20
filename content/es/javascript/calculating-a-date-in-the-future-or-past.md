@@ -11,29 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y Por qué?
-La programación es una herramienta muy versátil que nos permite realizar una variedad de tareas, incluso algo tan específico como calcular una fecha en el futuro o en el pasado. Los programadores a menudo hacen esto para automatizar procesos o para mostrar información relevante en sus aplicaciones.
 
-## Como:
-```Javascript
-// Para calcular una fecha en el futuro, podemos usar el método "getDate()" en un objeto Date (Fecha) y pasarle el número de días que queremos agregar:
-let fechaActual = new Date();
-let diasAdicionales = 7;
-let fechaFutura = fechaActual.getDate() + diasAdicionales;
-console.log(fechaFutura); // Salida: 7
-```
+El cálculo de una fecha futura o pasada en Javascript permite manipular fechas en relación con el tiempo actual. Los programadores lo hacen para funciones como temporizadores, seguimiento del tiempo transcurrido, o planificación de eventos.
+
+## ¿Cómo lo hago?
+
+Usaremos el objeto Date de JavaScript para este propósito. Vamos a crear una nueva fecha y luego agregar o restar días de ella.
 
 ```Javascript
-// También podemos calcular una fecha en el pasado, restándole días al valor inicial de la fecha:
-let fechaActual = new Date();
-let diasRestados = 3;
-let fechaPasada = fechaActual.getDate() - diasRestados;
-console.log(fechaPasada); // Salida: 29
+// Crear una nueva fecha
+let fecha = new Date();
+
+// Mostrar la fecha actual
+console.log(fecha);
+
+// Calcular una fecha futura (Agregar 5 días)
+fecha.setDate(fecha.getDate() + 5);
+console.log(fecha);
+
+// Calcular una fecha pasada (Restar 3 días)
+fecha.setDate(fecha.getDate() - 3);
+console.log(fecha);
 ```
+Si corres el código, se mostrarán tres fechas: la fecha actual, fecha futura (5 días desde ahora), y fecha pasada (dos días antes de la fecha futura).
 
-## Profundizando:
-La idea de calcular fechas en el futuro o en el pasado no es nueva, ya que ha sido una tarea común en la programación desde el principio. Sin embargo, con la implementación del objeto Date en JavaScript, se ha vuelto más fácil y eficiente. Además, existen librerías y módulos que pueden ayudar a los programadores a realizar cálculos más complejos de fechas, como Moment.js y date-fns.
+## Inmersión Profunda
 
-## Ver también:
-- Documentación de Date en MDN: https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Date
-- Moment.js: https://momentjs.com/
-- date-fns: https://date-fns.org/
+1. Historia: JavaScript se lanzó en 1995 y el objeto Date fue parte de la biblioteca estándar desde el principio, permitiendo a los desarrolladores trabajar con fechas y horas.
+2. Alternativas: Si bien la forma mostrada es directa, hay bibliotecas como Moment.js y Day.js que proporcionan una interfaz más rica para trabajar con fechas.
+3. Detalles de implementación: El método setDate modifica el día del mes del objeto Date en base al tiempo local, no el tiempo UTC.
+
+## Ver También
+
+Para más detalles sobre el manejo de fechas en Javascript, puedes visitar las siguientes fuentes:
+
+1. Documentación oficial de Mozilla sobre el objeto Fecha ([Date - JavaScript | MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date))
+2. Biblioteca Moment.js ([Moment.js](https://momentjs.com/))
+3. Biblioteca Day.js ([Day.js](https://day.js.org/))

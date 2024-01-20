@@ -1,7 +1,7 @@
 ---
-title:                "उप-स्ट्रिंग निकालना"
-html_title:           "Haskell: उप-स्ट्रिंग निकालना"
-simple_title:         "उप-स्ट्रिंग निकालना"
+title:                "सबस्ट्रिंग्स निकालना"
+html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,27 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## 1. क्या और क्यों?
 
-एक सबस्ट्रिंग निकालने का अर्थ है किसी स्ट्रिंग से उसके कुछ हिस्से को अलग करना। हास्केल में, हम स्ट्रिंग के भीतर से एक हिस्सा निकाल सकते हैं और उसे अलग तरीके से उपयोग कर सकते हैं। विकासकर्ता सबस्ट्रिंग को निकालने का उपयोग इसलिए करते हैं क्योंकि यह उन्हें अधिक विस्तारित और प्रभावी कोडिंग संभावित बनाता है।
+Substring एक बारी में कई characters की एक सीक्वेंस होती हैं जो एक बड़ी string से निकाली जाती हैं। कई बार, हमें कुछ विशेष characters की तलाश होती है, तभी हम substring निकालते हैं। 
 
-## कैसे करें?
+## 2. कैसे करें:
+
+### substring निकालना: drop और take का प्रयोग करें
 
 ```Haskell
--- स्ट्रिंग से सबस्ट्रिंग निकालना
-take :: Int -> [a] -> [a]
-take 4 "Hello World" -- यह "Hell" देगा
-
--- स्ट्रिंग में सबस्ट्रिंग को ढूंढना
-isInfixOf :: [a] -> [a] -> Bool
-isInfixOf "ld" "Hello World" -- True देगा 
+let s = "Haskell Programming Language"
+let subString = drop 8 . take 18 $ s
+print subString
 ```
 
-## गहराई में जाइए
+आपको "Programming" मिलेगा। 
 
-सबस्ट्रिंग को निकालने की प्रक्रिया में, हम पहले से ही पायथन और अन्य कई भाषाओं में प्रव्हादक तरीके से सबस्ट्रिंग को निकाल सकते हैं। हास्केल में सबस्ट्रिंग को निकालने के लिए विभिन्न तरीके हैं, जैसे कि ऊपर प्रदर्शित किसी भी आकार के सबस्ट्रिंग को निकालने का उपयोग हम अपरिहार्य तरीके से स्ट्रिंग में ढूंढ सकतें हैं। हम स्ट्रिंग फ़ंक्शन को स्कालर और लिस्ट त्ते सेलाइर रहे हैं, तो हम किसी सुसंवर्धन को जोड़ सकते हैं।
+### substring निकालना: splitAt का प्रयोग करें
 
-## इसके अलावा और देखें
+```Haskell
+let s = "Haskell Programming Language"
+let (_, temp) = splitAt 8 s
+let (subString, _) = splitAt 10 temp
+print subString
+```
 
-- [Haskell String Functions](https://wiki.haskell.org/String_functions)
-- [Haskell Functions](https://www.haskell.org/hoogle/)
+आपको "Programming" मिलेगा। 
+
+## 3. गहराई में:
+
+### ऐतिहासिक संदर्भ:
+
+Haskell एक pure functional programming language है और इसकी सबस्ट्रिंग निकालने की क्षमता पुराने समय से ही है।
+
+### विकल्प:
+
+Python और JavaScript जैसी programming languages में, slicing operator का उपयोग करके मानचित्रण किया जा सकता है। 
+
+### बातचीत:
+
+Haskell में Substrings को निकालने के लिए `take`, `drop और `splitAt` का इस्तेमाल किया जा सकता है। 
+
+## 4. देखें भी:
+
+- [Haskell Prelude](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html): Haskell के prelude डॉक्यूमेंटेशन की अधिक जानकारी के लिए।
+- [Hoogle](https://www.haskell.org/hoogle/): Haskell लाइब्रेरी के फंक्शंस खोजने के लिए हूगल का प्रयोग करें।

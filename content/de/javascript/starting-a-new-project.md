@@ -1,6 +1,6 @@
 ---
 title:                "Ein neues Projekt starten"
-html_title:           "Javascript: Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
 simple_title:         "Ein neues Projekt starten"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,14 +11,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Wenn ein Programmierer ein neues Projekt startet, bedeutet das, dass er/sie eine neue Software oder Anwendung erstellt. Dies kann aus verschiedenen Gründen geschehen, zum Beispiel um ein bestimmtes Problem zu lösen oder einfach um eine Idee in die Tat umzusetzen.
 
-## Wie?
-Um ein neues Projekt in Javascript zu starten, gibt es verschiedene Möglichkeiten. Eine Möglichkeit ist die Verwendung des Befehls ```npm init```, der ein neues Paket erstellt und die grundlegenden Informationen wie den Namen des Projekts und die Autor (-en) abfragt. Ein anderes Verfahren ist die Verwendung von Vorlagen oder Frameworks wie React oder Vue, die bereits eine vorgefertigte Struktur für das Projekt bieten.
+Ein neues Projekt zu starten ist, wenn Sie von Grund auf mit der Entwicklung einer neuen Software beginnen. Programmierer tun dies, um eine spezifische Problemstellung zu lösen oder um ein Produkt zu schaffen, das ihnen vorschwebt.
 
-## Tiefgründiger Einblick
-Die Notwendigkeit, ein neues Projekt zu starten, ist im ständig wachsenden Bereich der Softwareentwicklung unvermeidlich. Mit der Einführung neuer Technologien und Entwicklungsmethoden ist es wichtig, regelmäßig neue Projekte zu starten, um auf dem neuesten Stand der Technik zu bleiben. Alternativ können auch bestehende Projekte fortlaufend verbessert und aktualisiert werden.
+## So geht's:
 
-## Siehe auch
-[Fünf Gründe, warum jeder Programmierer regelmäßig neue Projekte starten sollte](https://medium.com/@marcusalmeida/f%C3%BCnf-gr%C3%BCnde-warum-jeder-programmierer-regelm%C3%A4%C3%9Fig-neue-projekte-starten-sollte-837aa43b7dc7)
-[Javascript-Grundlagen: So starten Sie Ihr erstes Projekt](https://www.freecodecamp.org/news/javascript-grundlagen-so-starten-sie-ihre-projekte-5ff936e8204f/)
+Die Aufsetzung eines Projekts in JavaScript kann durch verschiedene Tools wie z.B. `npm` (Node Package Manager) erleichtert werden.
+
+```Javascript
+// Installation von npm (nur einmal nötig)
+npm install npm@latest -g
+
+// Erstellen Sie ein neues Verzeichnis und navigieren Sie dorthin
+mkdir MeinProjekt && cd $_
+
+// Initialisieren Sie ein neues npm Projekt 
+npm init -y
+
+// Eine Datei erstellen
+touch index.js
+```
+
+Dadurch wird eine `package.json` Datei in Ihrem Projektverzeichnis generiert, welche Informationen wie den Namen und die Version des Projekts beinhaltet.
+
+```Javascript
+{
+  "name": "MeinProjekt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+```
+
+## Tiefer Einblick:
+
+Das Konzept des Startens neuer Projekte ist so alt wie die Programmierung selbst, jedoch haben Tools wie `npm` diesen Prozess erheblich vereinfacht und standardisiert. Alternativen zu `npm` sind `yarn` oder `pnpm`. Diese bieten ähnliche Funktionalitäten, aber unterscheiden sich in kleinen, spezifischen Aspekten. Die Wahl hängt also von Ihren persönlichen Präferenzen ab.
+
+Der Start eines neuen Projekts beinhaltet oft mehr als nur das Erstellen einer `package.json` Datei. Zu weiteren wichtigen Schritten können z.B. das Konfigurieren eines Linters (zur Überprüfung des Code-Stils) oder das Einrichten eines Test-Frameworks gehören.
+
+## Siehe auch:
+
+- [NPM Dokumentation](https://docs.npmjs.com/)
+- [Yarn Dokumentation](https://classic.yarnpkg.com/lang/en/)
+- [pnpm Dokumentation](https://pnpm.io/)
+- [Einführung in Linting](https://eslint.org/docs/about/)
+- [Unit Testing mit Jest](https://jestjs.io/docs/tutorial-javascript)

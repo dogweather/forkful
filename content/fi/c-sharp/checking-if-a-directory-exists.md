@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan löytyykö hakemistoa"
-html_title:           "C#: Tarkistetaan löytyykö hakemistoa"
-simple_title:         "Tarkistetaan löytyykö hakemistoa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C#: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -11,28 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Kansio-olennoista puhuttaessa, on joskus tarpeen tarkistaa, onko tietty kansio olemassa vai ei. Tätä kutsutaan kansion olemassaolon tarkistamiseksi. Ohjelmoijat tekevät näin varmistaakseen, että heidän ohjelmansa toimii oikein ja käsittelee olemassaolemattomia kansioita asianmukaisesti.
 
-## Kuinka tehdään:
-Tässä on esimerkki siitä, kuinka voit tarkistaa kansion olemassaolon C# -koodilla:
+Tarkistaa, onko hakemisto olemassa, tarkoittaa sitä, että koodissamme teemme tarkastuksen, jos tietyllä polulla on jo olemassa oleva hakemisto. Tämä on välttämätöntä, koska sen avulla ohjelmistokehittäjät voivat välttää virheitä, kuten luodaan samoja hakemistoja tai käsitellään olemattomia hakemistoja.
+
+## Kuinka se toimii:
+
+Tässä on esimerkkikoodi, joka näyttää, kuinka tarkistaa, onko hakemisto olemassa, C# -kielen nykyversiota käyttäen.
 
 ```C#
-if (Directory.Exists("polku/kansio")) {
-  Console.WriteLine("Kansio on olemassa.");
-} else {
-  Console.WriteLine("Kansiota ei löydy.");
+using System.IO;
+
+public class DirectoryChecker
+{
+    public static bool DoesDirectoryExist(string directoryPath)
+    {
+        return Directory.Exists(directoryPath);
+    }
 }
 ```
 
-Tuloste riippuu siitä, löytyykö annetusta polusta todellinen kansio vai ei.
+Jos haluat tarkistaa, onko hakemisto olemassa, voit tehdä seuraavat:
 
-## Syväsukellus:
-Historiallinen konteksti: Kansion olemassaolon tarkistaminen oli tärkeämpi aiemmin, kun ohjelmat toimivat usein käyttäjän omalla koneella. Nykyään useimmat ohjelmat toimivat pilvipalvelimilla, joten kansiorakenteen tarkistaminen ei ole enää yhtä kriittistä.
+```C#
+string directoryPath = @"C:\SomeDirectory";
 
-Vaihtoehtoja: Voit myös käyttää System.IO.DirectoryInfo-luokkaa tarkistaaksesi olemassa olevan kansion. Tämä luokka tarjoaa lisää toimintoja, kuten kansion tiedostojen tai alikansioiden laskemista.
+if (DirectoryChecker.DoesDirectoryExist(directoryPath))
+{
+    System.Console.WriteLine("Directory exists.");
+}
+else
+{
+    System.Console.WriteLine("Directory does not exist.");
+}
+```
 
-Tarkemmat tiedot: C# -ohjelmointikielessä on useita eri tapoja tarkistaa kansion olemassaolo, ja on tärkeää valita oikea menetelmä tarpeidesi mukaan. Kannattaa tutustua tarkempiin tietoihin ja esimerkkeihin virallisesta dokumentaatiosta.
+Output:
+
+```
+Directory does not exist.
+```
+
+Muuta yllä olevaa `directoryPath` -muuttujaa ja testaa eri hakemisto-polkuja.
+
+## Syvä sukellus:
+
+Directory.Exists -funktio on osa .NET Frameworkia Microsoftilta ja se on ollut olemassa jo pitkään. Alternatiiveja tälle toiminnolle on olemassa, kuten yritys avata tiedosto ja ottaa virhe kiinni, mutta tämä voi aiheuttaa suorituskyvyn hitautta.
+
+Funktion toteutus riippuu myös käytetystä käyttöjärjestelmästä. Windowsissa toiminto käyttää Win32 API -toimintoa nimeltä `GetFileAttributesW`. Unix-pohjaisissa järjestelmissä se käyttää `stat64` -toimintoa.
 
 ## Katso myös:
-- [System.IO.Directory-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0)
-- [System.IO.DirectoryInfo-luokka](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo?view=net-5.0)
+
+- Microsoftin virallinen dokumentaatio [System.IO.Directory.Exists](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists)
+- Stack Overflow keskustelu eri tavoista tarkistaa, onko hakemisto olemassa: [C# Directory.Exists alternatives](https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-folder-or-a-file)

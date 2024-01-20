@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Haskell: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
+# Haskell: Como enviar uma requisição HTTP
 
-Enviar uma solicitação HTTP é um processo comum em programação, onde um programa envia uma mensagem a um servidor pela internet para obter dados ou realizar uma ação específica. Programadores fazem isso para interagir com APIs, acessar conteúdo de websites ou realizar comunicação entre sistemas.
+## O que & por quê?
 
-## Como Fazer:
+O envio de uma requisição HTTP é o ato de solicitar dados a um servidor remoto através do protocolo HTTP. É uma necessidade comum na programação, principalmente no desenvolvimento web, onde é usado para obter ou enviar dados para APIs, sites e mais.
 
-Haskell possui uma biblioteca padrão para realização de solicitações HTTP, chamada "HTTP". Para enviar uma solicitação GET a um determinado endereço URL, podemos usar a função `simpleHTTP`, que retorna uma `IO (Response String)`.
+## Como:
+
+Vamos usar o pacote `http-conduit` para facilitar nosso trabalho. Comece incluindo ele ao seu arquivo .cabal ou pacotes necessários, se estiver usando `stack`.
 
 ```Haskell
-import Network.HTTP
-
-main = do
-    response <- simpleHTTP (getRequest "https://www.example.com")
-    body <- getResponseBody response
-    putStrLn body
+dependeries: ...
+             - http-counit
 ```
 
-Este código fará com que a resposta do servidor retorne como uma string no console.
+Aqui está um exemplo simples sobre como enviar uma requisição GET:
 
-## Deep Dive:
+```Haskell
+import Network.HTTP.Conduit (simpleHttp)
 
-Enviar solicitações HTTP é uma parte fundamental do desenvolvimento de aplicações e websites modernos, pois permite a comunicação com recursos externos. Antes do surgimento da internet, desenvolvedores utilizavam outros protocolos, como o FTP, para realizar transferência de dados.
+main :: IO ()
+main = do
+  response <- simpleHttp "http://example.com"
+  print response
+```
 
-Uma alternativa ao uso da biblioteca padrão HTTP em Haskell é o uso do pacote "http-conduit", que possui uma API mais avançada e suporte a recursos como autenticação e SSL.
+Se você executar esse código, deverá ver o HTML da página `example.com` impressa na saída do console.
 
-A implementação da biblioteca "HTTP" em Haskell utiliza um socket para estabelecer uma conexão TCP com o servidor e enviar a requisição HTTP. Depois de receber a resposta do servidor, a conexão é encerrada. 
+## Mergulhando Fundo
 
-## See Also:
-- [Documentação da biblioteca HTTP em Haskell](https://hackage.haskell.org/package/HTTP)
-- [Pacote "http-conduit" em Haskell](https://hackage.haskell.org/package/http-conduit)
-- [Explicação sobre protocolo HTTP da W3Schools](https://www.w3schools.com/whatis/whatis_http.asp)
+HTTP foi inventado por Sir Tim Berners-Lee em 1989 e tem sido um componente vital da web desde então. Alternativas existem, como o protocolo de transferência de hipertextos seguros (HTTPS), que é a versão segura do HTTP.
+ 
+Quando consideramos detalhes de implementação, é importante salientar que `http-conduit` está usando a interface de entrada/saída do sistema de tipo abstrato (sockets). Ele implementa uma camada adicional sobre os chamados para fornecer uma interface fácil de usar para fazer solicitações HTTP.
+
+## Veja Também
+
+1. [http-conduit no Hackage](https://hackage.haskell.org/package/http-conduit)
+2. [HTTP na Wikipédia](https://pt.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
+
+É isso aí! Agora você sabe como enviar uma solicitação HTTP em Haskell.

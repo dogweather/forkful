@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Java recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Java"
 category:             "Java"
@@ -11,66 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Printing debug output is a common practice among programmers to help identify and fix errors in their code. It involves displaying the values of variables and messages during runtime to track the flow of the program and identify potential issues.
-By printing debug output, programmers can troubleshoot their code and understand how their program is behaving, helping them to find and fix any bugs in their code more efficiently.
 
-## How to:
-To print debug output in Java, we can use the built-in `System.out.println()` method. This method takes in a string or variable and prints it to the console. Let's look at an example below:
+Printing debug output is the act of sending text data or messages from the running code to a console. It helps programmers identify and fix bugs by providing a snapshot of how variables and conditions change state during the program execution.
 
-```Java
-// Debug output example
-public class DebugOutput {
-  public static void main(String[] args) {
-    String name = "John";
-    int age = 25;
+## How To:
 
-    // Print debug output
-    System.out.println("Name: " + name);
-    System.out.println("Age: " + age);
-  }
-}
-```
-
-This will output the following:
-
-```
-Name: John
-Age: 25
-```
-
-We can also use `System.out.printf()` to format our output. This method allows us to specify the format of our output, which can be helpful when debugging complex data types. Here's an example:
+Printing debug output in Java is straightforward. You can use `System.out.println()` or `System.err.println()`. Here's a simple example:
 
 ```Java
-// Debug output with formatting
-public class DebugOutputFormat {
-  public static void main(String[] args) {
-    int num = 123456789;
-    double price = 19.99;
-    boolean isReady = true;
-
-    // Print debug output with formatting
-    System.out.printf("Number: %d%n", num);
-    System.out.printf("Price: $%.2f%n", price);
-    System.out.printf("Is ready? %b%n", isReady);
-  }
+public class DebugExample {
+    public static void main(String[] args) {
+        String name = "John Doe";
+        int age = 45;
+        
+        // Debug output
+        System.out.println("Debug info: Name is " + name + ", Age is " + age);
+    }
 }
 ```
+When you run this code, you see the following output on your console.
 
-The output will be:
-
+```Java
+Debug info: Name is John Doe, Age is 45
 ```
-Number: 123456789
-Price: $19.99
-Is ready? true
-```
+In this way, you can print debug outputs to trace your code's execution in Java.
 
-## Deep Dive:
-Historically, printing debug output was commonly used in older programming languages like C and Assembly, as it was the only way to track the flow of the program. However, with the introduction of modern integrated development environments (IDEs), debugging tools like breakpoints, watches, and step-by-step execution have become more popular.
-But, printing debug output still remains a useful technique, especially for quick and informative debugging during development. Alternative methods like using a debugger may require more setup and may not be as flexible as printing debug output.
+## Deep Dive
 
-When printing debug output, it's important to only include relevant information to avoid cluttering the output. You can use conditional statements and control flow to selectively print debug output for specific parts of your code. This can help save time and make it easier to pinpoint and fix issues.
+Historically, debug output was used in various programming languages to track and fix bugs during the development phase. In Java, `System.out.println()` acts as a simple tool to trace your code. However, this approach can become cumbersome with larger codebases. 
 
-## See Also:
-- [Debugging in Java - Tutorialspoint](https://www.tutorialspoint.com/java/java_debugging.htm)
-- [System Class in Java - GeeksforGeeks](https://www.geeksforgeeks.org/system-class-in-java/)
-- [Debugging with System.out.println() - Baeldung](https://www.baeldung.com/java-system-out-println-debugging)
+Alternatives include using Java's built-in logging API (`java.util.logging`) or third-party libraries like Apache Log4j, SLF4J, or Logback. These provide better control over where your log messages go, how they look, and under what conditions they're printed.
+
+A significant difference exists between `System.out.println()` and `System.err.println()` in the way they handle output. The former routes to "standard output" (usually a console) and is buffered. That means the output may not immediately appear on the console. On the other hand, `System.err.println()` is unbuffered and routes to "standard error", making the output immediately visible. 
+
+## See Also
+
+For further reading, consider these sources:
+
+- [Oracle’s Guide on Debugging](https://docs.oracle.com/en/java/javase/14/troubleshoot/debugging.html)
+- [Introduction to the Java Logging API](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)
+- [Apache Log4j Manual](https://logging.apache.org/log4j/2.x/manual/index.html)

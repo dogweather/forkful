@@ -1,6 +1,6 @@
 ---
 title:                "Nykyisen päivämäärän hankkiminen"
-html_title:           "C++: Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
 simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "C++"
 category:             "C++"
@@ -10,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärän selvittäminen on yksinkertaisesti nykyisen päivämäärän hakemista. Tämä on hyödyllistä esimerkiksi sovelluksissa, joissa tarvitaan tietoa ajankohtaisista tapahtumista tai tietojen tallentamista päivämäärän mukaan.
+# Nykyisen päivämäärän hakeminen C++: lla
 
-## Miten tehdä:
+## Mikä & Miksi?
+
+Nykyisen päivämäärän hankkiminen C++:lla on tapa saada tietokoneeltasi tämänhetkinen vuosi, kuukausi ja päivä. Ohjelmoijat tarvitsevat tätä tietoa moniin asioihin, kuten lokitiedostojen luomiseen tai ajan leimojen asettamiseen tietoihin.
+
+## Näin teet:
+
+Käytämme C++17:aa ja `chrono` -kirjastoa tässä esimerkissä.
+
 ```C++
+#include <chrono>
 #include <iostream>
-#include <ctime>
+#include <iomanip>
 
-int main() {
-  // Selvitetään nykyinen päivämäärä aikaleiman avulla
-  time_t now = time(0);
+int main()
+{
+    auto nykyaika = std::chrono::system_clock::now();
+    std::time_t aika = std::chrono::system_clock::to_time_t(nykyaika);
 
-  // Muutetaan aikaleima muotoon local time
-  char* dt = ctime(&now);
+    std::cout << "Nykyinen päivä: " << std::put_time(std::localtime(&aika), "%Y-%m-%d") << '\n';
 
-  // Tulostetaan nykyinen päivämäärä
-  std::cout << "Nykyinen päivämäärä on: " << dt << std::endl;
-
-  return 0;
+    return 0;
 }
 ```
-Tuloste:
-```
-Nykyinen päivämäärä on: [Day of the Week] [Month] [Day] [Time] [Year]
-```
 
-## Syväsukellus:
-Päivämäärän selvittäminen on ollut tärkeä osa ohjelmointia jo pitkään. Aikaisemmin päivämäärän selvittäminen vaati monimutkaisempia menetelmiä, kuten aikaleimojen laskemista ja kalenterin tietojen käyttöä. Nykyään lähes kaikki ohjelmointikielet tarjoavat sisäänrakennetun toiminnon päivämäärän hakemiseen.
+Mahdollinen tuloste:
 
-Vaihtoehtona päivämäärän selvittämiselle on päivämääräkirjaston käyttö. Tämä voi olla hyödyllistä, jos tarvitaan tarkempaa ja monimutkaisempaa päivämääräkäsittelyä. Päivämäärän selvittämisessä on myös erilaisia vaihtoehtoja, kuten käyttäjän asettaman päivämäärän hakeminen tai päivämäärän hakeminen tietystä aikavyöhykkeestä.
+```
+Nykyinen päivä: 2022-09-21
+```
+## Syvemmälle:
+
+Viime vuosina C++:n standardi on kehittynyt tarjoamaan meille paremman tavan työskennellä päivämäärien ja ajan kanssa: `chrono`-kirjasto, joka lisättiin C++11:ssä ja sitä on paranneltu C++14:ssä ja C++17:ssä. Ennen `chrono`:a, ohjelmoijat luottivat C-kielen aikafunktioihin, kuten `time_t` ja `tm`.
+
+C++20 tuo mukanaan kalenteripohjaisen päivämäärän tuen `chrono`-kirjastoon, mikä tekee päivämäärän käsittelystä vielä helpompaa.
 
 ## Katso myös:
-- [std::time - C++ Reference](https://en.cppreference.com/w/cpp/chrono/c/time)
-- [Boost.Date_Time - C++ Libraries](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+
+Täydellinen opas `chrono`-kirjastoon: https://en.cppreference.com/w/cpp/chrono
+
+C++17:n standardikirjaston dokumentointi: http://www.cplusplus.com/reference/chrono/
+
+C++20:n uudet ominaisuudet, mukaan lukien kalenteriin perustuvat päivämäärät: https://en.cppreference.com/w/cpp/chrono/calendar

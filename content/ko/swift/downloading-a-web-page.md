@@ -1,6 +1,6 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Swift: 웹 페이지 다운로드하기"
+html_title:           "Arduino: 웹 페이지 다운로드하기"
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,26 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가요? 
-웹 페이지 다운로드를 하는 것은 인터넷에서 특정 웹 사이트의 내용을 내 컴퓨터에 저장하는 것입니다. 프로그래머들은 이 작업을 수행하여 해당 웹 사이트의 데이터를 프로그램에서 사용할 수 있습니다.  
+## 무엇이며 왜합니까? (What & Why?)
+웹 페이지 다운로드란 인터넷에서 웹 페이지의 내용을 사용자의 컴퓨터나 장치에 복사하는 것을 의미합니다. 개발자들은 웹 페이지 분석, 자료 수집, 웹 크롤링 등을 위해 이를 실시합니다.
 
-## 방법:
+## 작성법 (How to:)
+Swift에서 웹 페이지를 다운로드하는 간단한 코드는 아래와 같습니다:
 ```Swift
-if let url = URL(string: "https://www.example.com") {
-    let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-        if let data = data {
-            print(String(data: data, encoding: .utf8)!)
-        }
+import Foundation
+
+let url = URL(string: "http://example.com")!
+let task = URLSession.shared.dataTask(with: url) {(data, response, error) in
+    if let data = data {
+        let str = String(data: data, encoding: .utf8)
+        print(str) 
     }
-    task.resume()
 }
+task.resume()
 ```
-위의 코드는 URL 객체를 사용하여 다운로드할 웹 페이지의 주소를 지정합니다. 그리고 URLSession을 사용하여 해당 URL을 다운로드합니다. 이를 통해 데이터를 가져와서 원하는 방식으로 사용할 수 있습니다.  
+이 코드를 실행하면 "http://example.com" 웹 페이지의 HTML 을 문자열로 출력할 것입니다.
 
-## 깊이 들어가기:
-웹 페이지 다운로드는 인터넷의 발전과 함께 새로운 기술이 적용되어오며, 약간의 적응이 필요할 수 있습니다. 더 오래된 방식으로는 URLRequest와 NSURLConnection을 사용하여 다운로드합니다. 또한, 많은 라이브러리가 있으며, 앱의 요구에 맞게 적절한 라이브러리를 선택할 수 있습니다.  
+## 깊게 알아보기 (Deep Dive)
+웹 페이지를 다운로드하기 위한 기술은 웹의 초기 시절부터 발전해 왔습니다. Swift에서는 URLSession을 이용한 위의 방법 외에도, Alamofire나 AFNetworking와 같은 서드 파티 라이브러리를 사용할 수도 있습니다. 하지만 URLSession은 내장된 라이브러리이므로 별도의 설치 없이 사용이 가능합니다. 또한, 그 성능과 안정성이 증명되어 있습니다.
 
-## 관련 자료:
-- [URLSession 공식 문서](https://developer.apple.com/documentation/foundation/urlsession)
-- [URLRequest 공식 문서](https://developer.apple.com/documentation/foundation/urlrequest)
-- [NSURLConnection 공식 문서](https://developer.apple.com/documentation/foundation/nsurlconnection)
+## 참고자료 (See Also)
+더 깊이 있는 지식을 얻고자 한다면 아래 링크를 참조하세요:
+1. Apple의 공식 문서인 URLSession: https://developer.apple.com/documentation/foundation/urlsession
+2. Swift에 대한 오라일리 북 ‘iOS 13 Programming Fundamentals with Swift’: https://www.oreilly.com/library/view/ios-13-programming/9781492074523/

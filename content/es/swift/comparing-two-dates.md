@@ -1,6 +1,6 @@
 ---
 title:                "Comparando dos fechas"
-html_title:           "Swift: Comparando dos fechas"
+html_title:           "C++: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por Qué?
+## ¿Qué y Por qué?
 
-Comparar dos fechas es una tarea común en la programación, que consiste en determinar si una fecha es anterior, posterior o igual a otra fecha. Los programadores realizan esta acción para ordenar eventos, realizar cálculos de tiempo e implementar lógica en sus aplicaciones.
+Comparar dos fechas significa determinar si una fecha es anterior, posterior o igual a la otra. Los programadores lo hacen para ordenar eventos, realizar conteos y condiciones para seguimientos o alertas.
 
-## Cómo:
+## ¿Cómo?
+
+Aquí, usamos la clase `Date` en Swift para crear y comparar fechas. Aquí está el código:
 
 ```Swift
-let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
+let now = Date()
+let pastDate = Date(timeIntervalSinceNow: -86400) // 1 día atrás
 
-let date1 = dateFormatter.date(from: "01/01/2020")
-let date2 = dateFormatter.date(from: "25/12/2020")
-
-if date1! < date2! {
-    print("La fecha 1 es anterior a la fecha 2")
-} else if date1! > date2! {
-    print("La fecha 1 es posterior a la fecha 2")
+if now > pastDate {
+    print("La fecha actual es después de la fecha pasada.")
+} else if now < pastDate {
+    print("La fecha actual es antes de la fecha pasada.")
 } else {
-    print("Las fechas son iguales")
+    print("Las fechas son iguales.")
 }
 ```
 
-Salida:
+## Un Vistazo A Fondo
 
-```
-La fecha 1 es anterior a la fecha 2
-```
+(1) **Contexto histórico**: Antes de Swift, Objective-C y Cocoa utilizaban la clase `NSDate` para manejar fechas. En Swift, esta ha sido reemplazada por `Date`.
 
-## En Profundidad:
+(2) **Alternativas**: Existen muchas bibliotecas de terceros para manejar fechas, como `DateTools` y `SwiftDate`, que ofrecen más funcionalidad al comparar y manipular fechas.
 
-Al comparar dos fechas en Swift, se deben tener en cuenta varios factores, como el formato en el que se encuentran las fechas y la precisión. Además, existen varias formas de realizar la comparación, como utilizando los operadores <, > y == o utilizando métodos específicos como `compare()`.
+(3) **Detalles de implementación**: En Swift, la comparación de fechas se implementa mediante la sobrecarga de los operadores `>`, `<`, `==`, `>=`, y `<=`. 
 
-Es importante mencionar que en Swift, las fechas se manejan como objetos del tipo `Date`, que representan un punto en el tiempo en lugar de un formato específico como en otros lenguajes.
+## Consulta Además
 
-## Ver También:
+Para profundizar en el manejo de fechas con Swift, te recomiendo los siguientes enlaces:
 
-- [Documentación oficial de Swift sobre fechas](https://docs.swift.org/swift-book/LanguageGuide/DatesAndTimes.html)
-- [Tutorial sobre comparación de fechas en Swift](https://www.appcoda.com/swift-date-time/)
+- Documentación oficial de Swift: [Date](https://developer.apple.com/documentation/foundation/date)
+- Stack Overflow: [Comparando fechas](https://stackoverflow.com/questions/24070450/how-to-get-the-difference-between-two-nsdates)
+- NSHipster: [Date y DateComponents](https://nshipster.com/date/)

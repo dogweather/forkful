@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "PowerShell: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -11,22 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Imprimir salida de depuración es una práctica común entre los programadores para ayudar a encontrar errores y comprender cómo funciona un programa. Al agregar ciertas líneas de código que muestran el valor de variables o la ejecución de ciertas funciones, podemos obtener una mejor comprensión de lo que está sucediendo en nuestro código.
+
+La impresión de salida de debug es un proceso que los programadores utilizan para identificar y corregir errores o problemas en su código. Es la luz interna que nos ayuda a comprender lo que sucede detrás del escenario del código.
 
 ## ¿Cómo hacerlo?
-Utilizar la salida de depuración en PowerShell es fácil y puede ser realizado en pocas líneas de código. Simplemente use el cmdlet "Write-Host" seguido de la variable o contenido que desee mostrar en la consola.
+
+Aquí te presento un ejemplo de cómo imprimir la salida de depuración en PowerShell.
 
 ```PowerShell
-$var = "Hola mundo"
-Write-Host $var
+# Escribir algo a la consola
+Write-Host '¡Hola, mundo!'
+
+# Para añadir un objeto a la salida de depuración
+$DebugObjeto = @{ nombre = 'Juan'; edad = 21 }
+Write-Debug "La información de debug del objeto es: $DebugObjeto"
+
+# Para imprimir un mensaje de debug condicionalmente
+$Debug_Condicion = $true
+if($Debug_Condicion){
+    Write-Debug '¡Esto se imprimirá si la condición es verdadera!'
+}
 ```
 
-Esto imprimirá "Hola mundo" en la consola y nos ayudará a comprender el valor actual de la variable $var.
+Como puedes apreciar en el último ejemplo, la línea de debug se imprime si `$Debug_Condicion = $true`.
 
-## Inmersión profunda
-La impresión de salida de depuración ha existido desde los primeros días de la programación. Antes del uso de herramientas de depuración modernas, imprimir la salida de ciertos valores era la única forma de encontrar errores en un programa. Aunque hoy en día existen alternativas más avanzadas, la impresión de salida de depuración sigue siendo una práctica útil en situaciones donde no se pueden utilizar herramientas de depuración.
+## Inmersión Profunda
 
-En PowerShell, también es posible utilizar el cmdlet "Write-Debug" para imprimir mensajes de depuración. Sin embargo, estos solo se mostrarán si el modo de depuración está habilitado.
+Imprimir una salida de depuración ha sido un concepto primordial para los programadores desde que se inició la programación. En las etapas iniciales, se hacía escribiendo mensajes en tarjetas perforadas.
 
-## Ver también
-Si desea obtener más información sobre la impresión de salida de depuración en PowerShell, puede consultar la documentación oficial de Microsoft aquí: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-host?view=powershell-7. También puede aprender más sobre los diferentes cmdlets disponibles para imprimir salida de depuración en el sitio web de PowerShell: https://docs.microsoft.com/en-us/powershell/developer/cmdlet/writing-debugging-ps?view=powershell-7. ¡Practique y diviértase depurando su código con la impresión de salida de depuración!
+Today, with advanced IDEs, we have better alternatives like "Print Debugging" or "Console Logging" where the developer can watch the variables, thread states, memory allocation, etc.
+
+Un alternativa a `Write-Debug` en PowerShell es `Write-Verbose`. Este te permite obtener más detalles, en lugar de solo mensajes de depuración.
+
+```PowerShell
+# Encendiendo Verbose
+$VerbosePreference = 'Continue'
+
+# Imprimiendo una salida verbose
+Write-Verbose '¡Esto es un mensaje detallado!'
+```
+## Ver También
+
+Para seguir aprendiendo, te recomiendo estos enlaces:
+- [Documentación oficial de PowerShell](https://docs.microsoft.com/es-es/powershell/)
+- [Tutorial de Debug en PowerShell](https://docs.microsoft.com/es-es/powershell/scripting/samples/working-with-debugging?view=powershell-7.1)
+- [Uso de Write-Debug en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7&viewFallbackFrom=powershell-7.1)
+- [Uso de Write-Verbose en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_verbose?view=powershell-7.1)

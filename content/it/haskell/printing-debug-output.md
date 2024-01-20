@@ -1,6 +1,6 @@
 ---
 title:                "Stampa dell'output di debug"
-html_title:           "Haskell: Stampa dell'output di debug"
+html_title:           "Arduino: Stampa dell'output di debug"
 simple_title:         "Stampa dell'output di debug"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos'è & Perché?
+L'output di debug è un metodo per capire cosa sta facendo un programma, tracciando valori di variabili o flussi di esecuzione. I programmatori lo usano per individuare errori ("bug") nel codice.
 
-La stampa dell'output di debug è una pratica comune tra i programmatori che consiste nel visualizzare informazioni sullo stato del programma durante l'esecuzione. Ciò aiuta a trovare e risolvere eventuali errori e bug nel codice in modo più efficiente.
-
-## Come:
-
+## Come fare:
+In Haskell, la funzione `print` può essere usata per stampare un output di debug. Ecco un esempio:
 ```Haskell
--- Definire una funzione che stampa una stringa di debug
-printDebug :: String -> IO ()
-printDebug message = putStrLn ("Debug: " ++ message)
-
--- Utilizzare la funzione durante l'esecuzione del programma
 main = do
-  printDebug "Inizio del programma"
-  let x = 10
-  let y = 20
-  printDebug ("Valore di x: " ++ show x)
-  printDebug ("Valore di y: " ++ show y)
-  let z = x + y
-  printDebug ("Somma di x e y: " ++ show z)
-  printDebug "Fine del programma"
+  let x = 7
+  print ("Il valore di x è: ", x)
 ```
-
-**Output:**
-
+Risultato:
 ```
-Debug: Inizio del programma
-Debug: Valore di x: 10
-Debug: Valore di y: 20
-Debug: Somma di x e y: 30
-Debug: Fine del programma
+("Il valore di x è: ", 7)
 ```
+Se volete stampare da una funzione pura, potete utilizzare la funzione `trace` da `Debug.Trace`:
+```Haskell
+import Debug.Trace
 
-## Deep Dive:
+somma :: Int -> Int -> Int
+somma x y = trace("somma viene chiamato con " ++ show(x, y)) x + y
 
-La pratica della stampa dell'output di debug ha origini nella programmazione ad alto livello, dove veniva utilizzata per controllare il flusso di esecuzione dei programmi. Con l'avvento delle moderne tecniche di debugging, l'uso della stampa dell'output di debug si è ridotto, ma rimane ancora una pratica utile per esaminare velocemente il comportamento dei programmi.
+main = print(somma 3 4)
+```
+Risultato:
+```
+somma viene chiamato con (3,4)
+7
+```
+## Approfondimento 
+Storicamente, Haskell era un lisp-like, quindi i `print` e `trace` fanno cose simili alle funzioni di stampa lisp. Ci sono tuttavia alternative per il debug, come il debug interactive con GHCi o l'uso di librerie per aiuto al Debug, come `Debug.SimpleReflect`.
 
-Un'alternativa alla stampa dell'output di debug è l'utilizzo di un debugger, un programma che consente di esaminare il codice e il suo stato durante l'esecuzione. Tuttavia, la stampa dell'output di debug è più rapida e più adatta per esaminare parti specifiche del codice.
+Ricordate, `trace` non è perfetto - esso vìola la trasparenza referenziale (uno dei principi fondanti di Haskell) e non dovrebbe essere usato in codice di produzione. 
 
-L'implementazione della stampa dell'output di debug in Haskell è resa possibile dall'utilizzo dell'IO monad. Questo consente di eseguire funzioni "impure" che accedono all'esterno, come la funzione `putStrLn` utilizzata nell'esempio sopra.
-
-## See Also:
-
-- [Debugging Crash Course: Inspecting variables with print statements](https://medium.com/@SuhaibAmin/debugging-crash-course-inspecting-variables-with-print-statements-ed3e02d78f36)
-- [Debugging in Haskell: A brief overview](https://haskelltutorials.com/haskell/debugging.html)
+##Vedi Anche
+- [Haskell Debug Tutorial](https://www.schoolofhaskell.com/school/starting-with-haskell/debugging)
+- [Haskell Trace](https://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
+- [Debugging Haskell Haskell Wiki](https://wiki.haskell.org/Debugging)

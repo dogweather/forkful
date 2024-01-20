@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Swift recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# All You Need to Know About Swift's Lowercase String Method
+
 ## What & Why?
 
-Converting a string to lower case simply means changing all the letters in a string to their lower case equivalents. This is commonly done by programmers to ensure consistency in data and avoid any errors that can occur due to case-sensitivity.
+In Swift programming, converting a string to lower case is changing all the alphabetical characters in the string from uppercase to lowercase. Programmers do this to standardize and simplify the handling of text data, or implement case-insensitive comparisons.
 
 ## How to:
 
-To convert a string to lower case in Swift, there are a few different methods you can use depending on your specific needs. Here are two examples:
+Converting a string to lower case is straightforward in Swift. Here's how:
 
-````Swift
-let sentence = "Hello, World!"
-let lowerCaseSentence = sentence.lowercased()
-print(lowerCaseSentence)
-//Output: hello, world!
-````
+```Swift
+let sentence = "HELLO, WORLD!"
+let lowercasedSentence = sentence.lowercased()
+print(lowercasedSentence)
+```
 
-You can also use the `String` method `localizedLowercase` to handle special Unicode characters:
+The output you'll get will be:
 
-````Swift
-let heart = "\u{1F496}" // Unicode character for heart
-let string = "I ❤️ Swift"
-let lowerCaseString = string.localizedLowercase
-print(lowerCaseString)
-//Output: i ❤️ swift
-````
+```Swift
+"hello, world!"
+```
 
-## Deep Dive:
+## Deep Dive
 
-Converting a string to lower case is a common practice in programming languages, with roots going back to the early days of ASCII character encoding. Before coding standards and protocols were established, case-sensitivity could often lead to inconsistent data and errors. Today, lower casing is still commonly used in programming for data standardization and to avoid errors.
+Swift, developed by Apple, consistently improves on readability and simplicity. The `lowercased()` method is part of the standard Swift library, and it reflects this focus.
 
-There are alternative methods to convert a string to lower case, such as using string manipulation functions or regular expressions. However, these may require more code and can be less efficient than using the built-in methods in Swift.
+Historically, case manipulation in programming languages was complex, often involving ASCII calculations or cumbersome function calls. Swift's `lowercased()` is much more straightforward.
 
-Internally, Swift uses the Unicode standard for character encoding, which supports both upper and lower case letters for most languages. This allows for easy conversion between cases, making it a practical and efficient method.
+An alternative to `lowercased()` is `localizedLowercase`, which takes current locale settings into account. "HELLO, WORLD!".localizedLowercase outputs "hello, world!", but its results may vary in different locales that have different rules for lowercasing.
+
+Under the hood, `lowercased()` and `localizedLowercase` work by iterating over each Character of the String and transforming it according to Unicode case mapping rules. The mapping is many-to-one, meaning uppercase versions of a single character can vary and still map to the same lower case character.
 
 ## See Also:
 
-- [Apple's Documentation on String](https://developer.apple.com/documentation/swift/string)
-- [Swift.org's Tutorial on Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Unicode Official Website](https://home.unicode.org/)
+Detailed information related to Swift's string manipulation can be found in these sources:
+
+1. [String and Character operations - Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+2. [Swift Basic Operators](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
+3. [Unicode Case Mappings](https://unicode.org/charts/case/)
+4. ["LowercaseStrings", a coding challenge on the Swift Algorithm Club](https://www.raywenderlich.com/developers/swift-algorithm-club)
+   
+Happy coding!

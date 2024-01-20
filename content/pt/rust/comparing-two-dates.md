@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Rust: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,42 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+# Rust: Como Comparar Duas Datas
 
-Comparar duas datas é uma tarefa comum na programação, onde precisamos verificar qual data é anterior ou posterior a outra. Isso pode ser útil, por exemplo, para criar uma lógica de agendamento de eventos ou para ordenar uma lista de tarefas por data. Os programadores fazem isso para automatizar a comparação e economizar tempo no desenvolvimento de seus projetos.
+## O Que & Porquê?
+
+Comparar duas datas significa verificar qual data é mais recente ou se são iguais. Fazemos isso em situações nas quais precisamos ordenar eventos no tempo, marcar prazos, calcular idades, etc.
 
 ## Como fazer:
 
-Para comparar duas datas em Rust, podemos usar o tipo de dados `NaiveDate` da biblioteca `chrono`. Primeiro, precisamos importar a biblioteca usando `use chrono::{NaiveDate, Datelike};`. Em seguida, podemos criar duas variáveis `date1` e `date2` do tipo `NaiveDate` e usá-las para comparar as datas.
+Vamos usar a biblioteca Chrono para manipulação de datas em Rust. Primeiro, você precisa adicioná-la às suas dependências:
 
+```Rust
+[dependencies]
+chrono = "0.4"
 ```
+
+Em seguida, importe a biblioteca e compare duas datas:
+
+```Rust
+extern crate chrono;
 use chrono::{NaiveDate, Datelike};
 
 fn main() {
-    let date1 = NaiveDate::from_ymd(2020, 9, 15);
-    let date2 = NaiveDate::from_ymd(2020, 9, 20);
+    let data1 = NaiveDate::from_ymd(2021, 11, 23);
+    let data2 = NaiveDate::from_ymd(2020, 11, 23);
 
-    if date1 > date2 {
-        println!("A primeira data é posterior à segunda data.");
-    } else if date1 < date2 {
-        println!("A primeira data é anterior à segunda data.");
+    if data1 > data2 {
+        println!("{} é depois de {}", data1, data2);
+    } else if data1 < data2 {
+        println!("{} é antes de {}", data1, data2);
     } else {
-        println!("As datas são iguais.");
+        println!("As datas são iguais");
     }
 }
 ```
+Resultado esperado:
 
-A saída seria: `A primeira data é anterior à segunda data.`
+```Rust
+"2021-11-23 é depois de 2020-11-23"
+```
 
-## Mergulho profundo:
+## Mergulho Profundo
 
-Historicamente, comparar duas datas era uma tarefa complicada e tediosa em programação, pois exigia o uso de bibliotecas complexas ou a escrita de algoritmos complexos para lidar com diferentes formatos de data e tempo. Entretanto, com o surgimento de linguagens de programação modernas, como Rust, esse processo se tornou muito mais simples e eficiente.
+A Chrono é uma biblioteca de Rust que tem suas raízes no pacote time do Rust 0.1. Este pacote era um wrapper em torno de gmtime e localtime do C, mas a biblioteca se expandiu para incluir muitas mais funcionalidades.
 
-Uma alternativa ao uso da biblioteca `chrono` é a `time`, que também possui funções para manipulação de datas e tempos em Rust. É importante lembrar que, para comparar duas datas, é preciso que elas estejam no mesmo formato, seja `UTC (Tempo Universal Coordenado)` ou `horário local`.
+Uma alternativa seria escrever nossa lógica de comparação de datas, mas essa seria uma abordagem propensa a erros e potencialmente redundante. A Chrono tem uma equipe dedicada que se esforça para manter a precisão em todas as operações de tempo, então é muito menos provável que surgirem problemas ao usá-la.
 
-No nível de implementação, comparar duas datas envolve converter as datas em valores numéricos, representando-os em uma escala do tempo. Cada linguagem de programação tem sua própria forma de implementar essa conversão, mas em geral, isso é feito por meio do uso de algoritmos e coleta de informações de sistemas operacionais.
+A lógica de comparação da Chrono baseia-se na implementação do trait `PartialOrd` para `NaiveDate`. Este trait especifica a operação que permite a comparação de itens. No caso de `NaiveDate`, isso é feito comparando ano, mês e dia em ordem.
 
-## Veja também:
+## Ver Também
 
-- Documentação da biblioteca Chrono: https://docs.rs/chrono/0.4.19/chrono/
-- Documentação da biblioteca Time: https://docs.rs/time/0.2.21/time/
+- [Documentação Chrono](https://docs.rs/chrono/0.4.11/chrono/) 
+- [Rust by Example - Datas e Horas](https://doc.rust-lang.org/stable/rust-by-example/std_misc/chrono.html)
+- [Comparando datas em outras linguagens](https://dev.to/vaidehijoshi/lets-compare-things-date-edition)

@@ -1,7 +1,7 @@
 ---
-title:                "Envoyer une demande http avec une authentification basique."
-html_title:           "Haskell: Envoyer une demande http avec une authentification basique."
-simple_title:         "Envoyer une demande http avec une authentification basique."
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-Lorsque vous interagissez avec un serveur en ligne, il peut être nécessaire d'envoyer une demande HTTP avec une authentification de base. Cela signifie que vous envoyez une demande avec un nom d'utilisateur et un mot de passe pour accéder à un service spécifique. Les programmeurs le font pour s'assurer que seules les personnes autorisées peuvent accéder à certaines fonctionnalités ou données.
+## Quoi & Pourquoi? 
+L’envoi d’une requête HTTP avec une authentification de base est un moyen de se connecter à des sites web protégés. Les programmeurs l’utilisent pour gérer l’accès aux ressources web.
 
-## Comment faire:
-Pour envoyer une demande HTTP avec une authentification de base en Haskell, vous pouvez utiliser la bibliothèque Network.HTTP.Simple. Voici un exemple de code montrant comment envoyer une demande GET avec une authentification de base :
+## Comment faire :
+Nous allons utiliser le paquet `http-conduit` pour cela. Voici un exemple montrant comment envoyer une requête GET avec l'authentification de base.
 
-```Haskell
-import Network.HTTP.Simple
-import qualified Data.ByteString.Char8 as BS
-
-request :: Request
-request = setRequestBasicAuth "username" "password" "http://example.com"
+```haskell
+import Network.HTTP.Conduit
+import Network.HTTP.Client (applyBasicAuth)
+import Data.ByteString.Char8 (pack)
 
 main :: IO ()
 main = do
-  response <- httpLBS request
-  BS.putStrLn $ getResponseBody response
+    initReq <- parseUrlThrow "http://example.com"
+    let req = applyBasicAuth (pack "username") (pack "password") initReq
+    manager <- newManager tlsManagerSettings
+    res <- httpLbs req manager
+    print res
 ```
 
-Lorsque vous exécutez ce code, vous devriez voir la réponse de votre demande imprimée dans la console. Assurez-vous de remplacer "username" et "password" par vos propres informations d'identification.
+## Plongée profonde
+Auparavant, nous utilisions le paquet `http`, mais il a été rendu obsolète par `http-conduit`, car il gère les connexions TLS et les pools de connexions, entre autres.
 
-## Plongée Profonde:
-Cette méthode d'authentification est appelée "authentification de base" car elle était l'une des premières méthodes d'authentification utilisées pour les applications en ligne. Elle n'est pas considérée comme très sécurisée car elle envoie les informations d'identification en texte clair, sans aucun chiffrement. Les alternatives modernes incluent des méthodes telles que OAuth et OpenID Connect.
+Il existe d'autres moyens d'envoyer une requête HTTP avec authentification de base, comme l'utilisation des paquets `http-client` et `http-client-tls`.
 
-## Voir Aussi:
-Si vous souhaitez en apprendre davantage sur l'envoi de demandes HTTP avec une authentification de base en Haskell, voici quelques ressources utiles:
+Les détails d'implémentation de l'envoi d'une requête HTTP avec authentification de base comprennent la création d'une `Request` initiale, l'application d'une authentification de base à la requête et l'envoi de la requête à l'aide d'un `Manager`.
 
-- [Documentation de la bibliothèque Network.HTTP.Simple](https://hackage.haskell.org/package/http-client-0.7.1/docs/Network-HTTP-Simple.html)
-- [Un tutoriel détaillé sur l'utilisation de Network.HTTP.Simple](https://www.snoyman.com/blog/2017/04/introducing-http-client)
-- [Un exemple de mise en œuvre de l'authentification de base avec la bibliothèque Network.HTTP.Conduit](https://www.fpcomplete.com/blog/2019/12/iosched-haskell-tutorial)
+## Voir aussi
+Pour plus d'informations sur l'envoi de demande HTTP avec authentification de base en Haskell, jetez un coup d'œil à ces liens :
+- Documentation http-conduit : https://www.stackage.org/haddock/lts-8.24/http-conduit-2.2.4/Network-HTTP-Conduit.html
+- Guide pratique sur les demandes HTTP en Haskell : https://seanhess.github.io/2015/08/04/practical-haskell-http.html
+- GitHub http-conduit : https://github.com/snoyberg/http-client

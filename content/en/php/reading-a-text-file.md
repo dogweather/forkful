@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "PHP recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,34 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Reading a text file in the context of programming means opening and accessing the contents of a file that contains human-readable text. Programmers may need to read text files to extract information or manipulate data, among other reasons.
 
-## How to:
-To read a text file in PHP, you can use the fopen() function to open the file and the fgets() function to read each line. Here's an example of reading a file called "example.txt" that contains the words "Hello world" on the first line:
+Reading a text file in PHP involves fetching and interpreting data from a .txt file. It's a common operation done to process, analyze or manipulate stored data, helping to persist and share data between sessions and applications.
 
-```PHP
-$file = fopen("example.txt", "r"); // open the file in read-only mode
-echo fgets($file); // output: Hello world
-fclose($file); // close the file
-```
+## How To:
 
-You can also use a while loop with the feof() function to read the file line by line until the end of the file is reached:
+Here's how you read a contents of a text file using PHP:
 
 ```PHP
-$file = fopen("example.txt", "r");
-while (!feof($file)) { // continues until end of file is reached
-    echo fgets($file) . "<br>"; // output each line with a line break 
-}
+<?php
+$filename = 'myfile.txt';
+$file = fopen($filename, 'r') or die("Unable to open file!");
+echo fread($file, filesize($filename));
 fclose($file);
+?>
 ```
+This will print the contents of 'myfile.txt' on your HTML document. If the file doesn't exist, it prints an error message.
 
-## Deep Dive:
-Before the widespread use of computers, text files were used to store and share information, making them a popular format for data transfer. Today, alternatives such as CSV files or databases are often used for data storage and manipulation. However, text files still have their uses, such as in log files or configuration files.
+## Deep Dive
 
-When reading a text file, it's important to consider the file's encoding, which determines how the characters will be interpreted. PHP's fopen() function has an optional parameter for specifying the file's encoding. Additionally, the file must be readable by the PHP process running on the server.
+Back in the day, PHP didn't have great inbuilt functions for reading text files, and programmers had to rely on less efficient, more error-prone methods. Now, inbuilt functions like `fopen()`, `fread()`, and `fclose()` provide straightforward and efficient ways to do this.
 
-## See Also:
-- [fopen() function](https://www.php.net/manual/en/function.fopen.php)
-- [fgets() function](https://www.php.net/manual/en/function.fgets.php)
-- [feof() function](https://www.php.net/manual/en/function.feof.php)
-- [Character encoding](https://www.w3schools.com/html/html_charset.asp)
+Alternative ways include using `file_get_contents()` function that reads an entire file into a string. Here's an example:
+
+```PHP
+<?php
+$filename = 'myfile.txt';
+echo file_get_contents($filename);
+?>
+```
+This code does the same as the first example but in a simpler way, which can be handy for smaller files. However, for larger files, `fread()` is more memory-efficient as `file_get_contents()` loads the entire file into memory.
+
+When using `fopen()`, you typically set the mode to 'r', which signifies 'read'. There are several modes, including 'w' for write and 'a' for append. Each of these modes allows different operations on the file.
+
+## See Also
+
+For more detailed descriptions and other examples on file handling with PHP, see the official PHP Manual:
+
+- [fopen()](https://www.php.net/manual/en/function.fopen.php)
+- [fread()](https://www.php.net/manual/en/function.fread.php)
+- [fclose()](https://www.php.net/manual/en/function.fclose.php)
+- [file_get_contents()](https://www.php.net/manual/en/function.file-get-contents.php)
+- [PHP Filesystem Functions](https://www.php.net/manual/en/ref.filesystem.php)

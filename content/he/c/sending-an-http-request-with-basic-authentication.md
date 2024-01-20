@@ -10,34 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-HTTP בקשה עם אימות בסיסי היא תהליך הכולל שליחת בקשת תקשורת ממחשב אחד לשרת עם מפתח אימות הנמצא בכותרת הודעת. למה כל הכאב? תלוי על מה אתם רוצים לעשות לכמה תכנון רשת שלך. עם זאת, אנו נעבוד על פיתוח יישום בלוק קוד לשליחה של HTTP בקשה עם אימות בסיסי באמצעות שפת סי.
+# שליחת בקשת HTTP עם אימות בסיסי בשפת C
 
-## איך ל: 
-כדי לשלוח בקשת HTTP עם אימות בסיסי בשפת סי, אתם צריכים לעקוב אחר שלושה שלבים פשוטים:
+## מה זה ולמה?
+שליחת בקשת HTTP עם אימות בסיסי זו תהליך שבו מסירים מידע לשרת באינטרנט, כאשר אנחנו מבקשים לפרטים מסוימים או מבצעים פעולה מסוימת. תהליך זה מצריך הזדהות - כלומר השרת מכיר אותנו ומאשר את בקשתנו.
 
-1. קבעו את שם המשתמש והסיסמה בפונקציה `curl_easy_setopt()` כך: ```C
-curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+## איך לעשות זאת:
+באמצעות הספרייה `libcurl` אפשר לבצע זאת. הנה דוגמה:
+
+```C
+#include <stdio.h>
+#include <curl/curl.h>
+
+int main(void) {
+  CURL *curl = curl_easy_init();
+  
+  if(curl) {
+    struct curl_slist *headers = NULL;
+    char userpwd[64] = "username:password";
+    
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+    curl_easy_setopt(curl, CURLOPT_HTTPAUTH, (long)CURLAUTH_BASIC);
+    curl_easy_setopt(curl, CURLOPT_USERPWD, userpwd);
+    
+    headers = curl_slist_append(headers, "custom-header: Custom-Header-Content");
+    curl_easy_setopt(curl, CURLOPT_HTTPHEADER, headers);
+    
+    CURLcode res = curl_easy_perform(curl);
+
+    if(res != CURLE_OK)
+      fprintf(stderr, "curl_easy_perform() failed: %s\n",
+              curl_easy_strerror(res));
+    else
+      printf("HTTP request sent successfully\n");
+
+    curl_easy_cleanup(curl);
+  }
+  
+  return 0;
+}
 ```
-2. הוסיפו את שדה האימות בהאריך של `Authorization` בעזרת הפונקציה `curl_easy_setopt()` כך: ```C
-curl_easy_setopt(curl, CURLOPT_HTTPHEADER, "Authorization: Basic");
-```
-3. שלחו את הבקשה באמצעות הפונקציה `curl_easy_perform()` כך: ```C
-curl_easy_perform(curl);
-```
+התוצאה תהיה: `HTTP request sent successfully`
 
-השפה C מאפשרת גם לכם לקבוע את שדות האימות לבד במקום להשתמש בפונקציות `curl_easy_setopt()` על ידי הגדרת משתנים אלה ישירות בקוד.
+## Deep Dive:
+(1) **הקשר ההיסטורי**: שימוש בבקשות HTTP עם אימות בסיסי התפתח עם התפתחות הרשת העולמית. מאז תרמה תרומה משמעותית לשיפור תקנות האבטחה של HTTP.
+(2) **חלופות**: כלכל התפתחו דרכים נוספות לאמת גולשים לשרתים, כולל אימות מרובה הצדדים, כמו OAuth.
+(3) **פרטים למימוש**: במקרה שלנו, אנו משתמשים בספרייה `libcurl` כדי לבצע בקשת HTTP. הספרייה מספקת ממשק API נוח לביצוע פרוטוקולים שונים.
 
-## יצירת קשר עומקת: 
-בעבר, האימות הבסיסי היה שיטה נפוצה להגנה על תקשורת בין שרת ללקוחות. בימינו, ישנן טכנולוגיות יותר מתקדמות המאפשרות הגנה טובה יותר כמו כונן SSL וכתבנית TLS. אופציית אימות בסיסי מוצגת בעיקר לצרכי מוסדיים.
+## ראו גם
+[מדריך לחובבים של libcurl](https://curl.se/libcurl/c/libcurl-tutorial.html)
 
-עם זאת, אם יש לכם צורך מיוחד לשלוח בקשת HTTP עם אימות בסיסי, אתם עדיין יכולים לכתוב קוד יעיל ויעיל על ידי השתמשות בספריית libcurl הנפוצה ותיעוד corpsec נכון.
+[מפתח מסמכים של libcurl](https://curl.se/libcurl/c/index.html)
 
-ישנן אפשרויות נוספות לאימות כגון Digest או NTLM, אך באמצעות האימות בסיסי ניתן לספק יכולת נוספת לשליחת בקשות באמצעות קוד סי.
-
-## ראו גם: 
-למידע נוסף על שליחת בקשות HTTP עם אימות בסיסי בשפת C, כדאי לקרוא את המסמכים הבאים:
-
-- מדריך השימוש בממשק CURL של libcurl: https://curl.se/libcurl/c/CURLOPT_USERPWD.html
-- מאמר באתר Medium על שליחת בקשות HTTP עם אימות בסיסי בשפת C: https://itnext.io/building-your-own-restful-api-with-basic-authentication-using-libcurl-in-c-2d5d6a14a65d
+תזכורת: לוודא שאתה משתמש בסיסמאות מאובטחות ומטפל בבקשות HTTP באופן מאובטח.

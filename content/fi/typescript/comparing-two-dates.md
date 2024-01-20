@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "TypeScript: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärien vertailu on tärkeä osa ohjelmointia, joka mahdollistaa tulevaisuuden ja menneisyyden päivämäärien vertailun. Tämä on erityisen tärkeää aikaperusteisten tehtävien suorittamisessa, kuten tapahtumien aikajärjestyksen määrittämisessä.
+## Mikä & Miksi?
 
-## Miten:
-Vertaillessamme kahta päivämäärää, meidän on ensin muunnettava ne samassa muodossa oleviksi päivämääriksi. Tämän jälkeen voimme käyttää valmiita funktioita, kuten Date.getTime (), jotka muuttavat päivämäärän millisekunneiksi ja helpottavat vertailua.
-Esimerkki:
-```
-TypeScript
-let date1 = new Date(2020, 1, 1);
-let date2 = new Date(2020, 2, 1);
-if (date1.getTime() < date2.getTime()) {
-  console.log("Date1 is before Date2");
+Vertailemme kahta päivämäärää ymmärtääksemme, kumpi tulee ensin tai kuinka paljon aikaa on kulunut niiden välillä. Tämä on tärkeää, kun tehtäviä, tapahtumia tai toimintoja täytyy järjestää tai ajoittaa.
+
+## Miten Tehdään:
+
+```TypeScript
+let date1 = new Date("2021-07-01");
+let date2 = new Date("2021-07-02");
+
+if (date1 < date2){
+  console.log("Date1 tulee ennen Date2:tta");
+} else if (date1 > date2) {
+  console.log("Date1 tulee Date2:n jälkeen");
+} else {
+  console.log("Date1 ja Date2 ovat samat");
 }
 ```
-Tulos:
+Näyte tuotos:
 ```
-Date1 is before Date2
+Date1 tulee ennen Date2:tta
 ```
 
-## Syventävä sukellus:
-Päivämäärien vertailu on ollut tärkeä osa ohjelmointia jo pitkään, ja eri kielissä on erilaisia tapoja käsitellä päivämäärien vertailua. Esimerkiksi Java-kielessä on käytössä Calendar-luokka, joka tarjoaa monipuolisia toimintoja päivämäärien käsittelyyn. TypeScriptissä puolestaan voidaan käyttää Date-objektia ja sen valmiita funktioita vertailuun.
-Joskus päivämäärien vertailu voi olla monimutkaista, sillä päivämäärien tarkkuus vaihtelee eri maissa ja kulttuureissa. On tärkeää ottaa tämä huomioon, jotta vältetään virheellisten tulosten saaminen.
+## Syvällisempi Tarkastelu:
+
+Päivämäärien vertailu ei ole aina niin yksinkertaista, koska se riippuu suuresti aikavyöhykkeestä, vuorokaudesta tai jopa kesäajasta. JavaScriptin Date-objektin ja TypeScriptin Date-tyypin avulla voidaan kuitenkin vertailla päivämääriä tehokkaasti.
+
+Vaihtoehtoisia menetelmiä päivämäärän vertailuun voivat olla kirjastot, kuten Moment.js tai date-fns. Nämä kirjastot tarjoavat useita funktioita ja menetelmiä päivämäärän vertailuun ja käsittelyyn.
+
+TypeScriptissä päivämäärien vertailu toteutetaan muuntamalla ne ensin millisekunneiksi kutsulla getTime(). Tämä palauttaa päivämäärän ja ajan millisekunneiksi 1. tammikuuta 1970 (UTC) jälkeen, ja se on vertailukelpoinen.
 
 ## Katso myös:
-Lisätietoa päivämäärien vertailusta TypeScriptissä löydät seuraavista lähteistä:
-- [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
-- [MDN - Date-objekti](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Stack Overflow - Comparing two dates in TypeScript](https://stackoverflow.com/questions/31287320/comparing-two-dates-in-typescript)
+
+- [JavaScript Date-objekti - MDN Web Docs](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- [TypeScript - Date Objekti](https://www.typescripttutorial.net/typescript-tutorial/typescript-date/)
+- [Moment.js](https://momentjs.com/)
+- [date-fns](https://date-fns.org/)

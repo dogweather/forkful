@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http con autenticazione di base"
-html_title:           "C++: Inviare una richiesta http con autenticazione di base"
+html_title:           "Arduino: Inviare una richiesta http con autenticazione di base"
 simple_title:         "Inviare una richiesta http con autenticazione di base"
 programming_language: "C++"
 category:             "C++"
@@ -10,54 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché lo si fa? 
-L'invio di una richiesta HTTP con autenticazione di base è un modo per accedere a risorse protette tramite un meccanismo di autenticazione semplice. I programmatori spesso lo fanno per verificare l'identità di un utente e garantire che solo chi è autorizzato possa accedere ai dati o alle funzionalità.
+# Invio di una richiesta HTTP con autenticazione di base in C++
 
-## Come fare: 
-Ecco un esempio di codice in C++ che mostra come inviare una richiesta HTTP con autenticazione di base:
+## Che cos'è e perché?
+L'invio di richieste HTTP con autenticazione di base è un modo per le applicazioni di comunicare con i servizi web in modo sicuro. I programmatori lo utilizzano spesso per fornire un livello essenziale di sicurezza durante la trasmissione di dati su internet.
+
+## Come si fa:
+Qui c'è un esempio di come inviare una richiesta HTTP con autenticazione di base utilizzando la libreria `C++ REST SDK` chiamata `Casablanca`. 
 
 ```C++
-#include <iostream>
-#include <curl/curl.h>
-using namespace std;
+#include <cpprest/http_client.h>
+#include <cpprest/filestream.h>
 
-int main() {
-  // Inizializza il gestore di richieste CURL
-  CURL *curl;
-  curl = curl_easy_init();
+using namespace utility;                    
+using namespace web;                        
+using namespace web::http;                  
+using namespace web::http::client;          
+using namespace concurrency::streams;       
 
-  // Imposta l'autenticazione di base con nome utente e password
-  curl_easy_setopt(curl, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-  curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-  curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
+int main(int argc, char* argv[])
+{
+    http_client client(U("http://example.com"));
+    http_request request(methods::GET);
 
-  // Esegui la richiesta HTTP a un'URL di esempio
-  curl_easy_setopt(curl, CURLOPT_URL, "http://www.example.com");
-  CURLcode res = curl_easy_perform(curl);
+    request.headers().add(L"Authorization", L"Basic " + utility::conversions::to_base64(L"username:password"));
 
-  // Se la richiesta ha successo, stampa il risultato
-  if (res == CURLE_OK) {
-    cout << "Richiesta inviata con successo!";
-  }
+    client.request(request)
+    .then([](http_response response) -> pplx::task<json::value>
+    {
+        return response.extract_json();
+    })
+    .then([](pplx::task<json::value> previousTask)
+    {
+        try
+        {
+            const json::value& v = previousTask.get();
+            std::wcout << v.to_string() << std::endl;
+        }
+        catch (http_exception const & e)
+        {
+            std::wcout << e.what() << std::endl;
+        }
+    })
+    .wait();
 
-  // Dealloca la memoria e chiude il gestore di richieste CURL
-  curl_easy_cleanup(curl);
-
-  return 0;
+    return 0;
 }
 ```
 
-Ecco un esempio di output:
+Nel codice, modificare `"username:password"` con le tue credenziali.
 
-```
-Richiesta inviata con successo!
-```
+## Approfondimenti
 
-## Approfondimento:
-Questa pratica è stata introdotta nei primi anni del World Wide Web come uno dei primi metodi per proteggere l'accesso alle risorse online. Oggi, ci sono anche altre forme di autenticazione più sicure, come OAuth, ma l'autenticazione di base continua ad essere utilizzata in situazioni in cui la sicurezza non è una preoccupazione primaria.
+L'autenticazione di base è una tecnica standard per la gestione dell'accesso sicuro ai servizi web, tuttavia, risale agli albori del web e la sua semplicità si riflette nel suo nome: è davvero piuttosto "di base". Questo metodo non fornisce un'ampia gamma di caratteristiche di sicurezza e si basa su username e password crittografate in base64.
 
-Per inviare una richiesta HTTP con autenticazione di base, è necessario specificare il metodo di autenticazione nel codice e fornire le credenziali dell'utente autorizzato. È importante anche indicare l'URL a cui si desidera accedere e gestire eventuali errori che potrebbero verificarsi durante l'invio della richiesta.
+Esistono alternative più sicure all'autenticazione di base, come l'autenticazione Digest e l'autenticazione delle informazioni di accesso OAuth2. Quest'ultima è l'opzione preferita per le applicazioni moderne grazie al suo livello di sicurezza avanzato e alla flessibilità. 
 
-## Vedi anche:
-- [C++ CURL: l'esempio più semplice per fare richieste HTTP in C++](https://articles.cafe/cpp-curl/)
-- [C++ Tutorial su autenticazione HTTP con libcurl](https://curl.haxx.se/libcurl/c/example.html)
+Tuttavia, per l'utilizzo di base e i test, l'autenticazione con credenziali di base si dimostra ancora un'opzione popolare e utile a causa della sua semplicità di implementazione.
+
+## Per saperne di più
+- Per una panoramica più completa dell'autenticazione di base: [HTTP Basic Access Documentation](https://datatracker.ietf.org/doc/html/rfc7617)
+- Per prendere in considerazione metodi di autenticazione alternativi: [OAuth 2.0](https://oauth.net/2/)
+- Per gli approfondimenti sulla libreria `Casablanca`: [C++ REST SDK Documentation](https://github.com/microsoft/cpprestsdk/blob/master/Release/README.md)

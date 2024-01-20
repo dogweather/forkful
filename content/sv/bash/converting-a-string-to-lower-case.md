@@ -1,7 +1,7 @@
 ---
-title:                "Omvandla en sträng till små bokstäver"
-html_title:           "Bash: Omvandla en sträng till små bokstäver"
-simple_title:         "Omvandla en sträng till små bokstäver"
+title:                "Omvandla en sträng till gemener"
+html_title:           "Arduino: Omvandla en sträng till gemener"
+simple_title:         "Omvandla en sträng till gemener"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Konvertering av en sträng till gemener är en vanlig åtgärd inom programmering, där strängar (ord eller textbitar) ändras från versaler till gemener (stora till små bokstäver). Detta gör det enklare att jämföra och söka igenom strängar, samt ger en enhetlig formatering.
+# Bash Programming: Omvandla Strängar till Små Bokstäver
 
-## Såhär gör du:
+## Vad och Varför?
+Att omvandla en sträng till små bokstäver innebär att ändra varje stor bokstav i en textsträng till dess motsvarande lilla bokstav. Som programmerare gör vi detta för att standardisera inmatning och undvika problem med skiftlägeskänslighet.
+
+## Så här gör du:
+I Bash kan du använda `tr` kommandot för att omvandla en sträng till små bokstäver. Här är ett exempel:
+
 ```Bash
-#!/bin/bash
-
-# Skapa en variabel med en sträng i versaler
-STRANG="EXEMPEL TEXT"
-
-# Använd kommandot 'tr' för att konvertera strängen till gemener
-gemena_strang=$(echo "$STRANG" | tr '[:upper:]' '[:lower:]')
-
-# Skriv ut den konverterade strängen
-echo $gemena_strang
+STR="Hej, Vänner!"
+echo $STR | tr '[:upper:]' '[:lower:]'
 ```
 
-Output:
-```
-exempel text
+Detta ger följande utskrift:
+
+```Bash
+hej, vänner!
 ```
 
-## Djupdykning:
-Att konvertera strängar till gemener har funnits i programmering sedan lång tid tillbaka och är en viktig komponent för hantering av textdata. En annan metod för konvertering är att använda kommandot 'awk', men 'tr' betraktas som mer effektivt. Implementationen av konverteringen kan variera beroende på operativsystem, men konceptet är detsamma.
+## Djupdykning
+Bash har stöd för omvandling av strängar till små bokstäver sedan version 4.0, släppt 2009. Alternativt kan `awk` och `sed` användas för samma ändamål. Men `tr` anses vara det snabbaste och mest effektiva sättet. Dessutom är `tr` implementerat på ett sådant sätt att det kan hantera stora datamängder utan signifikanta prestandaproblem.
 
-## Se även:
-- [Bash tr kommandodokumentation](https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html)
-- [Alternativ för att konvertera strängar i Bash](https://stackoverflow.com/questions/2264428/how-to-convert-uppercase-to-lowercase-in-bash)
+## Se även
+1. Bash manual, tr command: https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
+2. GNU Text Utilities, tr: https://www.gnu.org/software/coreutils/manual/html_node/tr-invocation.html
+3. Convert A String To Lowercase - https://www.cyberciti.biz/faq/linux-unix-convert-string-to-lowercase

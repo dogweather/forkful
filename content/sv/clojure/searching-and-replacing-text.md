@@ -1,7 +1,7 @@
 ---
-title:                "Söka och ersätta text"
-html_title:           "Clojure: Söka och ersätta text"
-simple_title:         "Söka och ersätta text"
+title:                "Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
+simple_title:         "Sökning och ersättning av text"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -12,31 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att söka och ersätta text är en vanlig uppgift för programmerare. Det innebär att hitta en specifik del av en text och ersätta den med en annan. Det kan vara användbart för att göra kodändringar, fixa fel eller uppdatera data.
+Sökning och ersättning av text är ett sätt att hitta specifika tecken eller strängar i en mängd text och byta ut dem mot något annat. Programmerare gör detta för att ändra variabelnamn, korrigera felstavningar, uppdatera kod och mer.
 
-## Hur:
+## Hur man gör det:
 
-### Enkelt exempel:
-Om vi har en sträng "Hej världen!" och vill ersätta "världen" med "clojure", kan vi använda funktionen ```Clojure (replace "världen" "clojure" "Hej världen!")```. Detta kommer att resultera i "Hej clojure!" som output.
+Här är hur du gör en sökning och ersättning av text i Clojure:
 
-### Komplexare exempel:
-I följande kod så söker vi efter alla förekomster av "hund" i en lista med djurnamn och ersätter dem med "katt". Sedan använder vi funktionen ```Clojure (into [] (map #(if (= % "hund") "katt" %) ["hund" "katt" "apa" "hund"]))```, vilket resulterar i ```["katt" "katt" "apa" "katt"]``` som output.
+```Clojure
+(defn replace-text [text old new]
+  (clojure.string/replace text old new))
+```
+Låt oss prova den:
 
-## Deep dive:
+```Clojure
+(replace-text "Hej värld" "värld" "Clojure")
+```
+Utgången kommer att bli:
 
-### Historisk kontext:
-Att söka och ersätta text är en vanlig uppgift inte bara för programmerare, utan även för användare av textredigerare eller ordbehandlingssprogram. Det har funnits sedan långt innan programmeringsspråket Clojure, och används idag i många olika sammanhang.
+```Clojure
+"Hej Clojure"
+```
+På så sätt skapar vi en funktion för att byta ut textsträngar.
 
-### Alternativ:
-Det finns flera olika funktioner i Clojure som kan användas för att söka och ersätta text, såsom ```replace```, ```clojure.string/replace``` och ```clojure.walk/postwalk```. Det är också möjligt att använda reguljära uttryck för att göra avancerade sökningar och ersättningar.
+## Djupdykning
 
-### Implementation:
-Funktionen ```replace``` i Clojure använder rekursion för att gå igenom en text och hitta alla förekomster av en viss sträng. När en matchning hittas ersätts den med den nya strängen och funktionen fortsätter sedan tills hela texten har gåtts igenom.
+- **Historiskt sammanhang**: Sökning och ersättning är en grundläggande funktion i många programmeringsspråk, inklusive de äldre som Lisp, som Clojure är en modern dialekt av. Den har varit en kärnfunktion i textredigerare och IDE:er sedan dess tidiga dagar.
 
-## See also:
+- **Alternativ**: Om du vill byta ut flera olika strängar kan du använda `clojure.string/replace` med en map som argument. Till exempel skulle `(clojure.string/replace "Hej värld" { "värld" "Clojure", "Hej" "Hello" })` returnera "Hello Clojure".
 
-För mer information och exempel på hur man kan söka och ersätta text i Clojure, rekommenderas följande länkar:
+- **Implementationdetaljer**: Funktionen `clojure.string/replace` kan ta tre former: två strängar, en sträng och en map, eller en sträng och en reguljär uttryck. Det hanterar dygnet-runt för att hitta och ersätta alla förekomster på det mest effektiva sättet.
 
-- Clojure-dokumentation för ```replace```: https://clojure.github.io/clojure/clojure.core-api.html#clojure.core/replace
-- Officiell guide för reguljära uttryck i Clojure: https://clojuredocs.org/clojure.core/re-matches
-- StackOverflow-fråga om användning av reguljära uttryck i Clojure: https://stackoverflow.com/questions/19761968/using-regular-expressions-in-clojure
+## Se även
+
+För mer information om att manipulera strängar i Clojure, se följande resurser:
+
+- Clojure - String Functions: https://clojuredocs.org/clojure.string
+- Introduction to Strings in Clojure: https://purelyfunctional.tv/guide/introduction-to-strings-in-clojure/
+
+För att fördjupa dig i Clojure och dess användning inom textmanipulering, är dessa böcker utmärkta guider:
+
+- "Clojure for the Brave and True" av Daniel Higginbotham
+- "Getting Clojure" av Russ Olsen

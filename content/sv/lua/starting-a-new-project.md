@@ -1,7 +1,7 @@
 ---
-title:                "Att börja ett nytt projekt"
-html_title:           "Lua: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Getting Started"
@@ -10,32 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att starta ett nytt projekt innebär att börja arbeta på ett nytt program eller kodprojekt. Det kan vara för att lösa ett problem, bygga en ny funktion eller förbättra ett befintligt system. Programmers som startar ett nytt projekt gör det ofta för att utveckla sina färdigheter, lära sig nya tekniker och skapa något nytt och användbart.
+## Vad och varför?
 
-## Hur gör man:
-```Lua
--- Skapa en ny variabel och tilldela den ett värde
-lokalt nummer = 123
-skriv(nummer) -- Output: 123
+Att starta ett nytt projekt innebär att initialisera strukturen och ramverket för din nya idé. Programmerare gör detta för att effektivt organisera och hantera kod, vilket gör utvecklingen smidigare.
 
--- Skapa en funktion som lägger till två tal
-funktion läggTill(a, b)
-  återvänd a + b
-slut
-print(add(5, 10)) -- Output: 15
+## Hur man gör:
 
--- Använd en if-sats för att kontrollera en betingelse
-lokalt ålder = 25
-om ålder > 18 då
-  print("Du är vuxen!")
-slut
+Att skapa ett nytt Lua-projekt är ganska enkelt. Nedan är ett exempel på hur du skulle kunna göra det:
+
+```Lua 
+--Skapa en funktion 
+function tja() 
+   print("Hej Världen") 
+end 
+
+--Anropa funktionen 
+tja() 
 ```
 
-## Djupdykning:
-Lua skapades på 1990-talet av Roberto Ierusalimschy, Waldemar Celes och Luiz Henrique de Figueiredo vid Pontifical Catholic University of Rio de Janeiro i Brasilien. Lua är ett skriptspråk som är lätt att lära sig och använda, och det används ofta som ett inbäddat språk i andra program. Alternativ till Lua inkluderar Python, JavaScript och Ruby. När du startar ett nytt projekt är det viktigt att planera och organisera ditt arbete genom att använda verktyg som versionshantering och issue trackers.
+När du kör detta exempel kommer utmatningen att vara:
 
-## Se även:
-- [Lua.org](https://www.lua.org/)
-- [Lua dokumentation](https://www.lua.org/manual/5.4/)
-- [Lua på GitHub](https://github.com/lua/lua)
+```Lua
+Hej Världen
+```
+
+Börja din kod med att definiera funktionerna som din app kommer att använda, och sedan anropa dessa funktioner efter behov.
+
+## Djupdykning 
+
+Lua är en långvarig stapelvara i programmering, utvecklad 1993 av medlemmar från Pontifical Catholic University of Rio de Janeiro i Brasilien. Alternativa språk för att starta ett nytt projekt inkluderar Python, Ruby och PHP.
+
+Implementeringsdetaljer för ett Lua-projekt kan variera beroende på projektets natur och krav, men att definiera och anropa funktioner som i exemplet ovan är en grundläggande del av alla Lua-projekt.
+
+## Se också:
+
+Länkar till relaterade artiklar, videor och andra resurser kan hjälpa till att fördjupa din förståelse och kunskap om att starta ett Lua-projekt. Här är några du kanske finner användbara:
+
+- [Officiell Lua-dokumentation](https://www.lua.org/manual/5.3/) (Engelska)
+- [Lua Programmeringstutorial på Wikibooks](https://en.wikibooks.org/wiki/Lua_Programming) (Engelska)
+- [Lua professionell utbildning](https://www.educba.com/careers/learn-lua-programming/)
+- [En kort historik om Lua](https://www.lua.org/history.html) (Engelska)

@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une demande http avec une authentification de base"
-html_title:           "Lua: Envoi d'une demande http avec une authentification de base"
-simple_title:         "Envoi d'une demande http avec une authentification de base"
+title:                "Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
+simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,39 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-
-Envoyer une requête HTTP avec une authentification de base est une méthode utilisée par les programmeurs pour sécuriser l'accès à des données sensibles sur le web. Cela implique l'envoi d'une requête HTTP spécifique avec des informations d'identification afin d'authentifier l'utilisateur et d'accorder ou de refuser l'accès aux données.
+## Qu'est-ce que & Pourquoi?
+L'envoi d'une demande HTTP avec une authentification de base est une méthode courante d'authentification sur le web. Les programmeurs l'utilisent pour protéger les ressources en ligne contre les accès non autorisés.
 
 ## Comment faire:
+Voici un exemple en Lua pour envoyer une demande HTTP avec une authentification de base :
 
-Voici un exemple de code en Lua pour envoyer une requête HTTP avec une authentification de base:
+```Lua
+-- Nécessite le module 'socket.http'
+local http = require('socket.http')
+-- Nécessite le module 'ltn12'
+local ltn12 = require('ltn12')
 
-```
-local http = require("socket.http") -- Importer le module de requête HTTP
-local username = "mon-nom-d'utilisateur" -- Spécifier le nom d'utilisateur
-local password = "mon-mot-de-passe" -- Spécifier le mot de passe
-local url = "https://www.example.com/api/data" -- Spécifier l'URL du site web
-local response = http.request{ -- Envoyer la requête HTTP avec les informations d'identification
+-- URL de la ressource
+local url = 'http://example.com'
+
+-- Authentification de base
+local auth = 'Basic ' .. (mime.b64('user:password'))
+
+-- Prépare la demande
+local response = {}
+local r, c, h = http.request{
   url = url,
-  method = "GET",
+  sink = ltn12.sink.table(response),
   headers = {
-    ["Authorization"] = "Basic "..mime.b64(username..":"..password)
+    authorization = auth
   }
 }
-print(response) -- Afficher la réponse du serveur
+
+-- Affiche la réponse
+print(table.concat(response, ''))
 ```
 
-La sortie de ce code sera la réponse du serveur, qui peut être traitée et utilisée par la suite selon les besoins du programmeur.
+Exemple de sortie :
+```Lua
+<!DOCTYPE html>
+<html>
+<body>
+Bienvenue sur example.com!
+</body>
+</html>
+```
 
-## Plongée en profondeur:
+## Approfondissement
+Historiquement, l'envoi de requêtes HTTP avec authentification de base était l'une des premières méthodes d'authentification utilisées sur le web. Cependant, elle transfère les informations d'identification en clair (bien qu'encodées en base64), ce qui n'est pas sûr si la connexion n'est pas sécurisée par SSL/TLS.
 
-L'authentification de base dans les requêtes HTTP a été définie pour la première fois dans la version 1.0 de la spécification HTTP en 1996. Bien qu'elle soit populaire et facile à implémenter, cette méthode présente des vulnérabilités liées à la sécurité si elle est utilisée sans protocole SSL / TLS. Les alternatives à l'authentification de base incluent l'utilisation de JWT (JSON Web Tokens) ou d'OAuth, qui offrent une sécurité plus robuste pour les applications web.
+Les alternatives à l'authentification de base incluent l'authentification Digest (plus sûre, mais encore rarement utilisée), l'authentification par formulaire (où les informations d'identification sont envoyées dans le corps d'une requête POST), et l'authentification par jeton (très populaire pour les API REST).
 
-En termes d'implémentation, il est important de noter que les informations d'identification ne doivent jamais être stockées en clair dans le code, mais plutôt être récupérées à partir de variables ou d'un fichier sécurisé. De plus, il est recommandé d'utiliser une connexion HTTPS pour une sécurité renforcée.
+Dans l'exemple de code ci-dessus, nous avons utilisé les modules 'socket.http' et 'ltn12' de la bibliothèque LuaSocket pour envoyer la requête HTTP, et le module 'mime' pour encoder les informations d'identification en base64.
 
-## Voir aussi:
-
-- La documentation officielle de Lua pour les requêtes HTTP: https://www.lua.org/pil/22.3.html
-- Un tutoriel pour utiliser l'authentification de base en Lua avec l'API REST de GitHub: https://medium.com/@gabrielrw/basic-auth-in-github-rest-api-with-lua-772d1fb0aee2
-- Une explication détaillée sur l'authentification de base et ses failles de sécurité: https://blog.restcase.com/restful-authentication-basics/
+## Voir aussi
+- [Documentation LuaSocket](http://w3.impa.br/~diego/software/luasocket/http.html)
+- [RFC 2617 - HTTP Authentication](https://www.ietf.org/rfc/rfc2617.txt)
+- [Présentation de l'authentification HTTP](https://developer.mozilla.org/fr/docs/Web/HTTP/Authentication)

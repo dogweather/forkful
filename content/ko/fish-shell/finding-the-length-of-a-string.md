@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Fish Shell: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,26 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜?: 
-문자열 길이를 찾는 것은 문자열에 포함된 문자의 개수를 파악하는 것입니다. 프로그래머들은 이 작업을 일반적으로 문자열을 다루는 프로그래밍 작업에서 사용하기 때문에 수행합니다.
+## 무엇 & 왜?
 
-## 방법: 
-Fish Shell에서 문자열 길이를 찾는 방법은 간단합니다. 다음은 여러분이 따라할 수 있는 예제와 출력입니다.
-```Fish Shell
-# 변수에 문자열 값 저장
-set my_string "Hello World"
-# "count" 함수를 사용하여 문자열 길이 찾기
-echo (count $my_string)
+문자열의 길이를 찾는 것은 문자열에 포함된 문자 수를 측정하는 작업입니다. 프로그래머가 이를 수행하는 이유는, 종종 데이터 검증, 문자열 조작이나 텍스트 데이터의 특정 부분에 액세스할 필요가 있기 때문입니다.
+
+## 어떻게:
+
+Fish shell에서 문자열의 길이를 찾는 가장 간단한 방법은 `string length`명령어를 사용하는 것입니다.
+
+```fish
+string length -q "Hello, World!"
 ```
-출력:
+위의 코드 실행 결과는 아래와 같습니다:
+
+```fish
+13
 ```
-11
+위 예시에서, "Hello, World!" 문자열의 길이는 13입니다.
+
+## 딥 다이브:
+
+Fish shell은 relatively new 프로그래밍 환경으로, 문자열 길이 계산과 같은 작업은 터미널 작업의 간결성과 효율성을 위해 제공됩니다. 다른 방식으로 `echo`와 `wc` 명령어를 복합적으로 사용하여 길이를 계산할 수도 있습니다. 예를 들면:
+
+```fish
+echo -n "Hello, World!" | wc -m
 ```
 
-## 자세히 살펴보기: 
-(1) 문자열 길이를 찾는 작업은 프로그래밍의 일부로서 오랜 역사를 가지고 있습니다. 초기에는 C 언어에서 사용되던 "strlen" 함수로 이 작업을 수행할 수 있었고, 현재 다양한 프로그래밍 언어에서도 비슷한 함수를 제공합니다. (2) 다른 언어들에서는 "length" 또는 "size" 함수를 사용하여 문자열 길이를 찾는 경우도 많습니다. (3) Fish Shell의 "count" 함수는 문자열을 문자 단위로 쪼개서 그 개수를 세는 방식으로 문자열 길이를 찾습니다.
+이 방식은 UNIX 스타일 가공을 선호하는 개발자에게 적합합니다. 하지만, 이것은 쉘에서 문자를 세는 표준적인 방법이 아니며, `wc` 명령어가 모든 시스템에서 동일한 방식으로 작동하지는 않을 수 있습니다.
 
-## 관련 링크: 
-- [Fish Shell 공식 문서](https://fishshell.com/docs/current/cmds/count.html)
-- [C 언어에서 문자열 길이 찾기](https://www.programiz.com/c-programming/library-function/string.h/strlen)
-- [다른 언어에서 문자열 길이 찾기의 다양한 방법](https://www.techonthenet.com/sql_server/functions/len.php)
+## 참조 자료:
+
+Fish shell에 대한 자세한 내용과 다른 명령어에 대한 정보는 다음 링크들을 참고하세요.
+- Fish shell 공식 문서: https://fishshell.com/docs/current/index.html
+- ‘wc’ 명령어에 대한 자세한 내용: https://www.geekhideout.com/wc.shtml
+- 문자열 길이 계산에 대한 다른 접근 방식들: https://stackoverflow.com/questions/1568501/how-can-i-get-the-size-of-an-array-in-unix

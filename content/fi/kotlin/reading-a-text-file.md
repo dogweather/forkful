@@ -1,7 +1,7 @@
 ---
-title:                "Luettaessa tekstitiedostoa"
-html_title:           "Kotlin: Luettaessa tekstitiedostoa"
-simple_title:         "Luettaessa tekstitiedostoa"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,52 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tekstikansion lukeminen on yksi ohjelmoinnin perustaidoista. Se tarkoittaa tiedostojen lukemista ja käsittelemistä, jotka sisältävät tekstiä, kuten sanoja, lauseita ja numeroita. Ohjelmoijat käyttävät tätä taitoa päästäkseen käsiksi tietoon ja käsitelläkseen sitä.
+## Mikä & Miksi?
 
-## Kuinka tehdä se:
-Kotlinilla, voit lukea tiedostoja käyttäen "FileReader" ja "BufferedReader" luokkia. Näiden avulla voit avata tiedoston ja lukea sen sisältöä rivi riviltä. Tässä on esimerkki koodista:
+Luemme tekstitiedostoja ohjelmassa, jotta voimme käsitellä tiedoston sisältämää tietoa tehtävämme mukaan. Tämä on välttämätöntä datan käsittelyssä, esimerkiksi koneoppimisessa tai datatutkimuksissa.
 
-```Kotlin
-import java.io.FileReader
-import java.io.BufferedReader
+## Miten näin:
+
+Kotlin tarjoaa natiivin tuen tiedostojen lukemiselle `readText()`-funktion avulla. Katso esimerkki alla:
+
+```kotlin
+import java.io.File
 
 fun main() {
+    val content = File("example.txt").readText()
+    println(content)
+}
+```
+Jos tiedostossamme `example.txt` on teksti "Hei Suomi!", ohjelma tulostaa:
 
-    // Avaa tiedosto lukemista varten
-    val reader = BufferedReader(FileReader("tiedosto.txt"))
+```
+Hei Suomi!
+```
 
-    // Luo muuttuja, johon tallennetaan tiedoston sisältö
-    var sisalto: String = ""
+## Syvällisemmin: 
 
-    // Luetaan tiedosto rivi riviltä
-    var rivi = reader.readLine()
+Historiallisesti Java-koodia käytettiin tiedostojen käsittelyyn, mutta Kotlin tarjoaa paljon puhtaamman ja seän tiiviimmän syntaksin. Voit myös valita lukemisen riveittäin `readLines()`-funktiolla:
 
-    while (rivi != null) {
+```kotlin
+import java.io.File
 
-        // Lisätään rivi sisältöön
-        sisalto += rivi
-
-        // Luetaan seuraava rivi
-        rivi = reader.readLine()
-    }
-
-    // Tulostetaan tiedoston sisältö
-    println(sisalto)
-
-    // Suljetaan tiedoston lukeminen
-    reader.close()
+fun main() {
+    val lines = File("example.txt").readLines()
+    lines.forEach { line -> println(line) }
 }
 ```
 
-Tämän esimerkin avulla voit lukea ja tulostaa tiedoston sisällön. Voit myös käsitellä tiedoston sisältöä haluamallasi tavalla, esimerkiksi etsimällä tietyt sanat tai numerot.
+Jos tiedostomme sisältää useita rivejä, jokainen rivi tulostetaan omalle rivilleen.
 
-## Syvemmälle:
-Tiedostojen lukeminen on ollut osa ohjelmointia aina alusta asti. Ennen kuin oli olemassa moderneja tietokoneita, ohjelmoijat käyttivät nappeja ja lappuja lukeakseen ja tallentaakseen tietoa.
+Vaihtoehtoisesti, voit käyttää `BufferedReader`-luokkaa suurten tiedostojen lukemiseen, jotta vältätäisimme muistiongelmat:
+```kotlin
+val bufferedReader: BufferedReader = File("largefile.txt").bufferedReader()
+```
 
-Tiedostojen lukemisen lisäksi on myös muita tapoja käsitellä ja päästä käsiksi tietoon, kuten käyttämällä tietokantaa. Tämä voi olla parempi vaihtoehto, jos sinun tarvitsee tallentaa ja käsitellä suuria määriä tietoa.
+## Katso myös: 
 
-Tiedostojen lukemisen toteutus riippuu käyttämästäsi ohjelmointikielestä ja käyttöympäristöstä. Kotlinilla, voit käyttää myös "Scanner" luokkaa tiedostojen lukemiseen.
-
-## Katso myös:
-Voit lukea lisää tiedostojen käsittelystä Kotlinilla [Kotlinin virallisesta dokumentaatiosta](https://kotlinlang.org/docs/reference/reading-writing-files.html). Voit myös tutustua muihin tapoihin käsitellä tiedostoja ja tietoa, kuten tietokantoihin ja REST API:in, joka tarjoaa mahdollisuuden käsitellä ja jakaa tietoa verkon kautta.
+Kotlinin dokumentoinnista löytyy lisää tietoa tiedostojen käsittelystä tässä linkissä: [Kotlin File Reading](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-text.html). Jos haluat lukea suurista tiedostoista optimoidusti, kannattaa tutustua tämän linkin opastukseen: [Reading Large Files Efficiently](https://www.baeldung.com/java-reading-large-files).

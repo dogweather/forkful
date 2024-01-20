@@ -1,6 +1,6 @@
 ---
 title:                "Sammenligner to datoer"
-html_title:           "Java: Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
 simple_title:         "Sammenligner to datoer"
 programming_language: "Java"
 category:             "Java"
@@ -11,26 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sammenligne to datoer er en vanlig oppgave for programmerere som trenger å håndtere datoer og tidsstempel i koden sin. Det lar dem programmere logikk basert på datoer og ha kontroll over hvordan de behandler tidsbaserte data.
 
-## Hvordan:
-Java gir en rekke innebygde metoder for å sammenligne datoer og tidsstempel. Her er et eksempel på hvordan du kan gjøre det:
+Sammenligning av to datoer er prosessen med å fastslå om en dato er tidligere, senere, eller lik en annen dato. Programmerere gjør dette for å betjene funksjonaliteter som tidsfrister, planleggere, tidsstempling, og mye mer.
+
+## Slik gjør du det:
+
+Her er en enkel Java-kode for å sammenligne to datoer.
 
 ```Java
-// Opprett to LocalDate-objekter
-LocalDate dato1 = LocalDate.of(2021, 8, 1);
-LocalDate dato2 = LocalDate.of(2021, 8, 15);
+import java.time.LocalDate;
 
-// Bruk compareTo-metoden for å sammenligne dato1 med dato2
-int resultat = dato1.compareTo(dato2);
+public class CompareDates {
+   public static void main(String[] args) {
 
-// Output: dato1 kommer før dato2
-System.out.println("Resultatet av å sammenligne dato1 og dato2: " + resultat);
+      LocalDate date1 = LocalDate.of(2022, 1, 1);
+      LocalDate date2 = LocalDate.of(2022, 2, 1);
+
+      if (date1.isAfter(date2)) {
+         System.out.println(date1 + " comes after " + date2);
+      } else if (date1.isBefore(date2)) {
+         System.out.println(date1 + " comes before " + date2);
+      } else {
+         System.out.println(date1 + " is the same day as " + date2);
+      }
+   }
+}
 ```
 
-## Dypdykk:
-Å sammenligne datoer har vært en viktig del av programmering helt siden konseptet med datamaskiner ble introdusert. I Java er det flere alternativer for å sammenligne datoer og tidsstempel, som for eksempel å bruke metoder som `equals()` og `isAfter()`. Implementasjonen av disse metodene kan variere basert på den nøyaktigheten og presisjonen som kreves for applikasjonen.
+Når dette kjøres vil resultatet være:
+```
+2022-01-01 comes before 2022-02-01
+```
 
-## Se også:
-- [Java Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-frame.html)
-- [Java 8 Date and Time Tutorials](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
+## Dypdykk
+
+Datoer har alltid vært en kritisk del av datasystemer, men håndteringen av dem har utviklet seg over tid. I tidligere Java-versjoner brukte vi `java.util.Date` og `java.util.Calendar` for å sammenligne datoer, men disse hadde mange problemer og inkonsistenser. 
+
+I Java 8 introduserte de en ny date-time API, `java.time`, som inkluderer `LocalDate`. Denne koden er enklere, mer intuitiv, og løser mange problemer som oppstod med de gamle klassene. 
+
+Alternativer til `LocalDate` er `LocalDateTime` (som også inkluderer tidspunkt på dagen) og `ZonedDateTime` (som også tar hensyn til tidssoner). 
+
+## Se Også
+
+Hvis du ønsker å dykke dypere inn i emnet, check ut følgende ressurser:
+
+- [Oracle sin guide til `java.time`](https://docs.oracle.com/javase/tutorial/datetime)
+- [Baeldung sin artikkel på sammenligning av datoer i Java](https://www.baeldung.com/java-comparing-dates)
+- [Stack Overflow diskusjoner på sammenligning av datoer i Java](https://stackoverflow.com/questions/11093326/comparing-two-dates-in-java)

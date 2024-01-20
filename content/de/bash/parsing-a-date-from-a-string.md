@@ -1,7 +1,7 @@
 ---
-title:                "Analyse eines Datums aus einem String"
-html_title:           "Bash: Analyse eines Datums aus einem String"
-simple_title:         "Analyse eines Datums aus einem String"
+title:                "Einen Datum aus einem String parsen"
+html_title:           "Elixir: Einen Datum aus einem String parsen"
+simple_title:         "Einen Datum aus einem String parsen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,35 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
+## Was & Warum?
 
-Das Parsen eines Datums aus einem String ist ein häufiges Problem in der Programmierung. Es bezieht sich auf das Extrahieren eines Datums in einem bestimmten Format aus einem längeren Text oder einem Datenfeld. Programmierer müssen dies tun, um Daten zu organisieren und zu manipulieren, die in unterschiedlichen Formaten vorliegen.
+Die Verarbeitung eines Datums aus einer Zeichenkette (String Parsing) ermöglicht es, aus Textdaten sinnvolle Datumswerte zu extrahieren und zu verwenden. Dies ist nützlich in Fällen, in denen Datums- und Zeitinformationen in Textform vorliegen und für Berechnungen, Sortierungen oder Filteroperationen verwendet werden müssen.
 
-## Wie geht's?
+## So geht's:
 
-Das Parsen eines Datums aus einem String kann in Bash mit Hilfe von integrierten Befehlen und Funktionen erfolgen. Hier ist ein Beispiel, wie man das Datum im Format "MM/DD/YYYY" aus einem Text extrahieren kann:
+Um ein Datum aus einem String zu lesen, können wir das `date` Befehl mit dem `-d` Schalter verwenden. 
 
 ```Bash
-# Erstellen Sie eine Variable mit dem Text, aus dem das Datum extrahiert werden soll
-text="Heute ist der 27. Juni 2021."
+datum_string="2022-05-01 14:30"
+datum=`date -d "$datum_string" +%Y-%m-%d_%H:%M`
 
-# Verwenden Sie den grep Befehl, um das Datum im Format "MM/DD/YYYY" zu extrahieren
-date=$(echo $text | grep -oE '[0-9]{1,2}/[0-9]{1,2}/[0-9]{4}')
-
-# Geben Sie das extrahierte Datum aus
-echo $date
+echo "$datum"
 ```
 
-Die Ausgabe dieses Beispiels wäre "06/27/2021".
+Das obige Script wird folgendes ausgeben:
 
-## Tiefen Einblick
+```Bash
+2022-05-01_14:30
+```
 
-Die Notwendigkeit, ein Datum aus einem String zu extrahieren, kommt häufig in der Programmierung vor, da Daten aus verschiedenen Quellen mit unterschiedlichen Formaten abgerufen werden. Es gibt mehrere Alternativen zum Parsen eines Datums, wie z.B. die Verwendung von regulären Ausdrücken oder speziellen Bibliotheken.
+## Deep Dive
 
-Die Implementierung des Dateiparsers kann je nach Programmiersprache und Umfang der Anwendung variieren, aber der grundlegende Prozess ist immer ähnlich. Es ist wichtig, dass Programmierer sich mit den verschiedenen Möglichkeiten des Datumparsings vertraut machen, um die beste Lösung für ihre spezifische Situation zu finden.
+Historisch gesehen stammt das `date` Befehl aus den frühen Tagen von Unix (1970er Jahre). Alternativen sind das in Perl eingebaute `strftime` oder ähnliche Funktionen in anderen Programmiersprachen. Eine Herausforderung beim Parsing von Datumswerten aus Strings besteht darin, die vielen verschiedenen möglichen Formatierungen zu berücksichtigen.
 
-## Siehe auch
+## Siehe Auch
 
-- [Bash-Dokumentation](https://www.gnu.org/software/bash/)
-- [Regex-Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [DateTime-Bibliothek für Bash](https://github.com/CameronNemo/bash_lib/blob/master/datetime.sh)
+Für weitere Informationen zu diesem Thema, prüfen Sie bitte folgende Ressourcen:
+
+- Bash `date` man page: https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+- Parsing dates in Bash: https://stackoverflow.com/questions/3919788/parsing-dates-in-bash
+- Advanced Bash-Scripting Guide: http://tldp.org/LDP/abs/html/abs-guide.html

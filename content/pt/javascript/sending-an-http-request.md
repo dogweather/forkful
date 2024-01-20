@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Javascript: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer isso?
+## O Que & Por Quê?
+Enviar um pedido HTTP é o processo que permite que o seu programa converse com servidores e APIs. Isso volta-se crucial quando precisamos puxar, enviar ou manipular dados de servidores remotos.
 
-Sempre que você acessa um site, o seu navegador envia uma solicitação HTTP para o servidor do site. Em termos simples, enviar uma solicitação HTTP significa pedir para ter acesso a algum conteúdo ou interagir com um servidor web. Programadores usam isso para criar funcionalidades dinâmicas em seus aplicativos e fazer com que eles se comuniquem com outros servidores para acessar e enviar dados.
+## Como Fazer:
+Para começar, podemos usar uma função interna no JavaScript, o `fetch()`. Aqui está como você faria para pegar dados de uma API:
 
-## Como fazer:
-
-Você pode enviar uma solicitação HTTP usando a função `fetch()` no JavaScript. Por exemplo:
-```javascript
-fetch('https://api.example.com/users')
-  .then(response => response.json())
-  .then(data => console.log(data));
+```Javascript
+fetch('https://api.example.com/data')
+  .then(resposta => resposta.json())
+  .then(dados => console.log(dados))
+  .catch(erro => console.error('Erro:', erro));
 ```
-Neste exemplo, estamos enviando uma solicitação para a URL `https://api.example.com/users` e usando o método `.json()` para formatar a resposta recebida em um objeto JSON.
 
-## Mergulho profundo:
+O código acima vai imprimir no console os dados que ele puxou da URL da API.
 
-A sigla HTTP significa "Hypertext Transfer Protocol" e foi desenvolvida em 1991 para permitir a troca de informações entre navegadores e servidores web. Antes da criação do HTTP, as comunicações eram feitas apenas através do protocolo de rede TCP/IP. Existem outras formas de enviar solicitações HTTP, como por exemplo, usando as bibliotecas `axios` ou `request` no Node.js.
+## Mergulho Profundo
 
-## Veja também:
+Enviar pedidos HTTP não é uma nova funcionalidade e tem sido um pilar na programação web. Antes do `fetch()`, o objeto `XMLHttpRequest` era comumente utilizado. Hoje em dia, também temos alternativas como o `axios` e o `jQuery.ajax()`.
 
-- [MDN Web Docs: Como funciona o protocolo HTTP?](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview)
-- [Axios](https://github.com/axios/axios)
-- [Request](https://github.com/request/request)
+O `fetch()`, contudo, é nativo no JavaScript e retorna Promises, o que torna muito mais fácil trabalhar com operações assíncronas. Aqui está um exemplo de como você poderia usar o `fetch()` para postar dados em um servidor:
+
+```Javascript
+let dados = { nome: "João" };
+
+fetch('https://api.example.com/data', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(dados)
+})
+.then(resposta => resposta.json())
+.then(dados => console.log('Dados salvos com sucesso:', dados))
+.catch((erro) => console.error('Erro:', erro));
+```
+
+## Veja Também
+
+- [Documentação da Fetch API na MDN](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+- [Comparação entre fetch e XMLHttpRequest](https://developers.google.com/web/updates/2015/03/introduction-to-fetch#_1)
+- [Biblioteca axios JavaScript](https://github.com/axios/axios)
+- [Função jQuery.ajax()](https://api.jquery.com/jquery.ajax/)

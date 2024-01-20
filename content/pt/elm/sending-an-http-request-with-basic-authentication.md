@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http com autenticação básica"
-html_title:           "Elm: Enviando uma solicitação http com autenticação básica"
+html_title:           "Clojure: Enviando uma solicitação http com autenticação básica"
 simple_title:         "Enviando uma solicitação http com autenticação básica"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,96 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
+## O Que & Por Quê?
+Enviar uma solicitação HTTP com autenticação básica significa fornecer nome de usuário e senha em um formato codificado para validar sua sessão. Programadores fazem isso para proteger recursos online dos usuários e evitar acessos não autorizados.
 
-Enviar uma solicitação HTTP com autenticação básica é um processo comum entre programadores. Isso permite que o cliente se autentique com um servidor, fornecendo um nome de usuário e senha. Isso é feito para obter acesso a informações confidenciais ou realizar ações que requerem autenticação.
-
-## Como fazer:
+## Como Fazer:
+Aqui estão algumas etapas simples para enviar uma solicitação HTTP com autenticação básica em Elm.
 
 ```Elm
-{- Envio de solicitação HTTP básica com autenticação -}
+module Main exposing (..)
+
 import Http
-import Json.Decode exposing (..)
+import Json.Decode as Decode
 
-{- Definindo as credenciais de autenticação -}
-authCredentials =
-    ( "username", "senha" )
+type Msg
+    = GotUser (Result Http.Error String)
 
-{- Criando a solicitação HTTP -}
-request =
+getUser : Cmd Msg
+getUser =
     Http.request
         { method = "GET"
-        , headers =
-            [ Http.header "Authorization" (Http.basicAuth authCredentials)
-            ]
-        , url = "https://exemplo.com/api/dados"
+        , headers = [ Http.header "Authorization" "Basic = QWxhZGRpbjpvcGVuIHNlc2FtZQ==" ]
+        , url = "https://api.seuwebsite.com/users/1"
         , body = Http.emptyBody
-        , expect = Http.expectJson decodeResponse
+        , expect = Http.expectString GotUser
         , timeout = Nothing
         , tracker = Nothing
         }
-
-{- Decodificando a resposta em JSON -}
-type alias ResponseData =
-    { dados : List String }
-
-decodeResponse : Decoder ResponseData
-decodeResponse =
-    map ResponseData
-        (field "dados" (list string))
-
-{- Enviando a solicitação e obtendo a resposta -}
-sendRequest : Cmd Msg
-sendRequest =
-    Http.send request
-
-{- Executando a função sendRequest -}
-init : () -> (Model, Cmd Msg)
-init _ =
-    ({ dados = [] }, sendRequest)
-
-{- Atualizando o estado da aplicação com a resposta -}
-type Msg
-    = OnResponse (Result Http.Error ResponseData)
-
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-    case msg of
-        OnResponse result ->
-            case result of
-                Ok response ->
-                    ({model | dados = response.dados}, Cmd.none)
-
-                Err _ ->
-                    (model, Cmd.none)
-
-{- Renderizando os dados obtidos da solicitação -}
-view : Model -> Html Msg
-view model =
-    div []
-        [ text (String.join ", " model.dados )
-        ]
-
-{- Alterando o main para incluir a função sendRequest -}
-main : Program () Model Msg
-main =
-    Browser.element
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = always Sub.none
-        }
-
-{- Executando a aplicação -}
-port app : Signal (Program Never () Msg)
-port app =
-    main
 ```
+
+No exemplo acima, `QWxhZGRpbjpvcGVuIHNlc2FtZQ==` é o nome de usuário e senha codificados.
 
 ## Mergulho Profundo:
 
-A autenticação básica via requisição HTTP foi introduzida no protocolo HTTP 1.0 para permitir que os clientes se autenticassem com servidores ao acessar conteúdo protegido. Existem outras formas de autenticação em que o cliente pode enviar suas credenciais, mas a autenticação básica é a mais simples e amplamente implementada.
+- **Contexto Histórico:** A autenticação básica HTTP é um método de autenticação que permite a um cliente HTTP fornecer um nome de usuário e senha quando faz uma solicitação. Foi projetado em 1996 e continua sendo uma maneira popular de autenticação por sua simplicidade.
+
+- **Alternativas:** Além da autenticação básica, existem outras formas de autenticação, como o OAuth e o token JWT. Estes oferecem um nível de segurança superior e são recomendados para aplicações modernas.
+
+- **Detalhes de Implementação:** Na autenticação básica HTTP, o nome de usuário e a senha são concatenados com um dois-pontos (:) como separador, e então a string resultante é codificada em Base64.
 
 ## Veja Também:
-
-[Documentação do Elm sobre módulos Http](https://package.elm-lang.org/packages/elm-lang/http/latest/)
+1. [Elm HTTP package documentation](https://package.elm-lang.org/packages/elm/http/latest)
+2. [The Basics of HTTP Basic Authentication](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Authentication)
+3. [Alternative method: OAuth](https://oauth.net/)
+4. [Alternative method: JWT](https://jwt.io/introduction/)

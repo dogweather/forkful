@@ -1,7 +1,7 @@
 ---
-title:                "Tulostamisen virheenetsintä"
-html_title:           "Gleam: Tulostamisen virheenetsintä"
-simple_title:         "Tulostamisen virheenetsintä"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä & Miksi?
+Tehostaaksemme koodin tarkistamista ja virheiden paikallistamista, tulostamme erityistä tietoa, jonka nimitämme debug-tulosteeksi. Se on kuin majakka koodissamme, joka ohjaa meitä ohjelmoimaan paremmin ja tehokkaammin. 
 
-Debug-tulostuksen printtaaminen tarkoittaa koodirivin lisäämistä ohjelmaan, jotta sen suoritusvaiheet ja mahdolliset virheet voi tarkistaa helpommin. Kehittäjät tekevät tätä ohjelman vianmäärityksen helpottamiseksi ja korjaamiseksi.
-
-## Miten:
-
-```Gleam
-// Koodiesimerkki 1
-test := "Hello World!"
-debug!(test)
-```
-
-Tämä lisää test-muuttujan debug-tulostuksen koodiin, mikä auttaa kehittäjää varmistamaan, että muuttujan arvo on oikea. Tulostus näkyy ohjelman suoritusta seuratessa.
+## Kuinka:
+Gleamissa debug-tulostus toteutetaan funktiolla `io.debug/1` ja sen käyttö on seuraavanlainen:
 
 ```Gleam
-// Koodiesimerkki 2
-for x in [1, 2, 3] {
-  debug!("x:n arvo on {}", x)
+import gleam/io
+
+fn main() {
+  let list = list.from([1, 2, 3])
+
+  // Tulostetaan lista debug-tietoina
+  io.debug(list)
 }
 ```
+Tulostus näyttää seuraavalta:
+```
+Debug: [1, 2, 3]
+```
+## Deep Dive
+Aiemmin Gleam-ohjelmassa debug-tietojen tulostaminen oli hieman hankalaa. Historiallisesti Gleam käytti Erlangin 'io:format' -funktiota, joka oli kömpelö ja sekava Gleam-kehittäjille. 
 
-Tämä esimerkki käyttää debug-makroa silmukan sisällä, jolloin kehittäjä voi nähdä jokaisen x:n arvon silmukan suorituksen aikana.
+Vaihtoehtoiset debug-tulostusmenetelmät löytyvät useista muista ohjelmointikielistä, kuten JavaScriptin `console.log` tai Pythonin `print`. Gleamin `io.debug/1` on nyt yksinkertaisempi ja helpompi tapa.
 
-## Syvemmälle:
+Gleamin `io.debug/1` palauttaa aiemman arvon käytännön syistä, ja nyt käytettävissä on myös `io.debug/2`, joka ottaa merkkijonon lisättäväksi tulostettuun debug-tietoon. 
 
-Debug-tulostuksen käyttö on yleinen tapa vianmäärityksessä ja se on ollut osa ohjelmoinnissa jo pitkään. Muita tapoja tarkistaa koodin suoritusta ovat esimerkiksi koodin ajaminen vaiheittain ja breakpointtien käyttö.
-
-Gleamin lisäksi muut ohjelmointikielet tarjoavat myös vastaavia debug-toimintoja, esimerkiksi Pythonin "print" ja JavaScriptin "console.log". Gleamissa debug-tulostuksen toteutus on tehty makron avulla, jotta se olisi tehokas ja helppokäyttöinen.
-
-## Katso myös:
-
-Gleam-dokumentaatio debug-makron käytöstä: https://gleam.run/book/core-modules-debug.html
+## Katso Myös
+- [Gleam Io-Moduuli](https://hexdocs.pm/gleam_stdlib/gleam/io.html#debug/1)
+- [Gleam-kielen opas](https://gleam.run/book/)
+- [Io-debug-funktio lähdekoodissa](https://github.com/gleam-lang/stdlib/blob/main/src/gleam/io.gleam)

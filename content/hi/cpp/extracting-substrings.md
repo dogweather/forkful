@@ -1,7 +1,7 @@
 ---
-title:                "उपस्करणों को निकालना"
-html_title:           "C++: उपस्करणों को निकालना"
-simple_title:         "उपस्करणों को निकालना"
+title:                "सबस्ट्रिंग्स निकालना"
+html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,28 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# C++ में substring निकालने का तरिका 
+
 ## क्या और क्यों?
 
-अक्सर हमें स्ट्रिंग के ऊपर कुछ विशेष काम करना होता है, जैसे कि उसमें से कुछ विशेष अक्षरों को निकालना। इसे हम स्ट्रिंग के उपस्थित अक्षरों को प्रच्छालित करके कर सकते हैं। इसका उदाहरण यह है कि आपको एक स्ट्रिंग में से उसकी पहचान और अन्य विशेषताओं को छोटा करना चाहिए। कई बार, इसका उपयोग डेटा संगठन या स्ट्रिंग प्रोसेसिंग आदि में किया जाता है।
+Substring एक string का ऐसा हिस्सा है, जिसे ताकि पूरी string के किसी विशेष भाग को अलग से उपयोग कर सकें, उसे अलग किया जाता है। इसे प्रोग्रामर डाटा को प्लास्टिसिटी देने, और कोड को पठनीय और मेंटेनेबल बनाने के लिए करते हैं।
 
-## कैसे करें?
+## कैसे करें:
+
+आप C++ की `substr()` फ़ंक्शन का उपयोग करके substring निकाल सकते हैं। 
 
 ```C++
-// Input string
-string s = "Hello World";
+#include <iostream>
+#include <string>
 
-// Extracting substring "World"
-string substring = s.substr(6, 5); // substr(starting_index, length)
-
-// Output
-cout << substring; // World
+int main() {
+    std::string str = "Hello, World!";
+    std::string sub = str.substr(7, 5);
+    std::cout << sub;
+    return 0;
+}
 ```
+इस कार्यक्रम का आउटपुट `World` होगा, जो string का 7 वें स्थान से लेकर 5 अक्षरों का हिस्सा है।
 
-## गहराई तक जाएं
+## गहरी डाइव:
 
-इस तकनीक का प्रयोग स्ट्रिंग प्रोसेसिंग के विभिन्न तरीकों में किया जाता है। इसका प्रयोग लंबे स्ट्रिंग को छोटे पर्चों में टुकड़ों में विभाजित करने में भी किया जा सकता है। जबकि, इसके लिए अलग-अलग तरीकों का प्रयोग किया जा सकता है। उनमें से कुछ हैं `find()`, `find_first_of()`, और `substr()` जो स्ट्रिंग से उपस्थित सदस्यों को निकालने के लिए प्रयोग किए जाते हैं।
+C++98 से hi `substr()` फ़ंक्शन C++ में मौजूद है। आप इस फ़ंक्शन का उपयोग करके किसी string से उसका कोई भी भाग निकाल सकते हैं। 
 
-## इसे भी देखें
+वैकल्पिक तरीके में, आप `std::string::find` और `std::string::find_first_of` का उपयोग भी कर सकते हैं। 
 
-- [C++ Strings](https://www.geeksforgeeks.org/c-string-class-and-its-applications/)
-- [C++ string::substr()](https://www.cplusplus.com/reference/string/string/substr/)
+`substr()` के आंतरिक विस्तार के बारे में बात करें तो, यह फ़ंक्शन एक नई स्ट्रिंग ऑब्जेक्ट बनाता है और उसे रिटर्न करता है। इसलिए, इसका उपयोग स्मरण दृष्टि से बड़ी स्ट्रिंग्स के लिए सावधानी से किया जाना चाहिए। 
+
+## अधिक जानकारी के लिए:
+
+* C++ स्ट्रिंग के डॉक्युमेंटेशन: https://en.cppreference.com/w/cpp/string/basic_string
+* सबस्ट्रिंग के लिए जीकल प्रोग्रामिंग की गाइड: https://www.geeksforgeeks.org/c-program-print-part-string/
+* स्टैकओवरफ्लो पर स्ट्रिंग्स से संबंधित प्रश्न: https://stackoverflow.com/questions/tagged/c%2B%2B+string

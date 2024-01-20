@@ -1,6 +1,6 @@
 ---
 title:                "Lese kommandolinjeargumenter"
-html_title:           "Python: Lese kommandolinjeargumenter"
+html_title:           "Arduino: Lese kommandolinjeargumenter"
 simple_title:         "Lese kommandolinjeargumenter"
 programming_language: "Python"
 category:             "Python"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Å lese kommandolinje-argumenter er en essensiell del av programmering, da det tillater oss å kommunisere med programmene vi lager på en dynamisk måte. Vi kan gi våre programmer ulike parametere for å endre hvordan de fungerer uten å måtte endre selve koden.
+## Hva & Hvorfor? 
+Å lese kommandolinjeargumenter er å hente informasjon fra brukerinngang gitt i terminalen når et python-program kjøres. Programmerere gjør dette for å motta spesifikke parametere eller instruksjoner ved kjøretid.
+ 
+## Hvordan gjør man det:
+Bruken av det innebygde sys-modulen i Python er den vanligste måten å hente kommandolinjeargumenter. Her er et eksempel:
 
-# Hvordan:
 ```Python
 import sys
 
-# Kommando linje-argumenter kan leses fra sys.argv-listen
-# Indeksen 0 vil alltid være selve programmet, så de faktiske argumentene starter fra indeks 1
-argumenter = sys.argv[1:]
+def main():
+    # Viser alle argumenter. Argument 0 er alltid filnavn
+    print('Alle argumenter:', sys.argv)
 
-# Argumentene kan nå brukes i koden, for eksempel å skrive en velkomstmelding
-navn = argumenter[0]
-print("Hei " + navn + ", velkommen til mitt program!")
+    # Viser det første argumentet (etter filnavnet)
+    if len(sys.argv) > 1:
+        print('Første argument:', sys.argv[1])
+
+if __name__ == "__main__":
+    main()
+```
+Når du kjører programmet med argumenter, vises disse argumentene som følger:
+
+```Shell
+> python3 kommando.py parameter1 parameter2
+Alle argumenter: ['kommando.py', 'parameter1', 'parameter2']
+Første argument: parameter1
 ```
 
-Output:
-```
-> python mittprog.py Anna
-Hei Anna, velkommen til mitt program!
-```
+## Detaljert dykk:
+- Historisk kontekst: Bruken av kommandolinjeargumenter strekker seg tilbake til de tidlige dagene av kodemerking. Dette ga brukere mulighet til å gi input ved kjøretid snarere enn å hardkode verdier.
+- Alternativer: argparse-modulen er en annen vanlig metode for å behandle kommandolinjeargumenter. Den gir mer robuste verktøy for parsing av argumenter og generering av hjelpetekster.
+- Implementasjonsdetaljer: sys.argv er en liste i Python, som inneholder alle kommandolinjeargumentene sendt til scriptet. Det zeroende elementet, sys.argv[0], er alltid navnet på scriptet selv.
 
-# Dypdykk:
-Å lese kommandolinje-argumenter er ikke noe nytt konsept, og har vært en del av programmering siden tidlig på 1970-tallet. I tillegg til å bruke sys.argv, finnes det også alternativer som argparse-modulen som tillater mer avansert håndtering av argumenter. Det er også viktig å være oppmerksom på at kommandolinje-argumenter må håndteres riktig for å unngå sikkerhetshull i programmer.
-
-# Se også:
-- https://docs.python.org/3/library/sys.html#sys.argv
-- https://docs.python.org/3/library/argparse.html
-- https://www.geeksforgeeks.org/command-line-arguments-in-python/
+## Se også:
+- [Python sys Modul Dokumentasjon](https://docs.python.org/3/library/sys.html)
+- [Python argparse Modul Dokumentasjon](https://docs.python.org/3/library/argparse.html)
+- [En grundigere dykkning inn i å behandle kommandolinjeargumenter i Python](https://realpython.com/command-line-interfaces-python-argparse/)

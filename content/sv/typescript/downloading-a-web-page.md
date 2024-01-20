@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "TypeScript: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -11,27 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hämta en webbsida innebär att ladda ner all HTML, CSS och JavaScript-kod som utgör webbsidan från dess webbadress. Detta gör det möjligt för programmerare att manipulera och använda denna kod för att skapa dynamiska webbapplikationer och -tjänster.
+Att ladda ner en webbsida innebär att extrahera dess innehåll för offlineanvändning eller dataanalys. Programmerare gör detta för att bearbeta stora mängder webbinformation för automatiserade system.
 
-## Hur gör man:
+## Så här gör du:
+Här kommer vi att använda 'axios' och 'cheerio' för att ladda ner och bearbeta webbsidan. Installera paketen med `npm install axios cheerio`.
+
 ```TypeScript
-import * as http from 'http';
-const url = 'https://www.example.com';
-http.get(url, (response) => {
-    let data = '';
-    response.on('data', (chunk) => {
-        data += chunk;
-    });
-    response.on('end', () => {
-        console.log(data);
-    });
-});
+import axios from 'axios';
+import cheerio from 'cheerio';
+
+async function laddaNerSida(url: string) {
+    const response = await axios.get(url);
+    const $ = cheerio.load(response.data);
+    // bearbeta webbsidan med cheerio
+    console.log($('body').text());
+}
+
+laddaNerSida('https://www.example.com');
 ```
-Detta exempel använder Node.js inbyggda modul "http" för att hämta en webbsida från adressen https://www.example.com. Kodblocket skapar en GET-förfrågan och tar emot svaret som strömmar in som "chunk"-ar. Därefter samlas all data ihop och loggas.
 
-## Djupdykning:
-Hämtning av webbsidor introducerades för att göra det möjligt att utveckla dynamiska webbplatser och applikationer, där innehållet kan ändras utan att sidan behöver laddas om. Det finns andra metoder för att hämta webbsidor såsom "fetch" API:t, men "http" modulen i Node.js är fortfarande en vanlig metod för att utföra denna uppgift.
+Kör koden och se utdata:
 
-## Se även:
-- https://nodejs.org/api/http.html#http_http_get_options_callback för mer information om hur man hämtar webbsidor med "http" modulen.
-- https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API för information om "fetch" API:t och dess möjligheter.
+```
+> node index.ts
+Hem | Exempel Domän
+...
+```
+
+## Djupdykning
+Att ladda ner webbsidor har använts sedan slutet av 1990-talet för att mata webbsökrobotar och databaser. Alternativ inkluderar användning av webbläsarens API: er eller webbskrapningsramar som Puppeteer.
+
+Implementeringsdetaljerna inkluderar att skicka en GET-förfrågan till webbservrar, tolka svaret och konvertera HTML-data till ett manipulerbart format. Cheerio paketet används för att leverera jQuery-liknande metoder för att bearbeta och navigera i HTML-strukturen.
+
+## Se även
+- [Axios - Promisbaserade HTTP-begäran](https://www.npmjs.com/package/axios)
+- [Cheerio - Snabb, flexibel och funktionsrik implementation av kärn-jQuery](https://www.npmjs.com/package/cheerio)
+- [Puppeteer - Headless Chrome/Noder.js API](https://pptr.dev/)

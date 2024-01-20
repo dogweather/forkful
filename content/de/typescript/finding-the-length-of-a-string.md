@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "TypeScript: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist die Länge einer Zeichenkette und warum brauchen Programmierer sie?
+## Was & Warum?
 
-Die Länge einer Zeichenkette bezieht sich auf die Anzahl der Zeichen oder Buchstaben, aus denen eine Zeichenkette besteht. Programmierer benötigen diese Information, um beispielsweise festzustellen, ob eine Eingabe den Anforderungen entspricht oder um Zeichenketten effektiv zu verarbeiten.
+Die Länge eines Strings zu ermitteln ist im Grunde das Zählen der Zeichen in einem Strings. Programmierer machen das um Raum zu verwalten, Zeichen zu verarbeiten, oder um auf bestimmte Teile eines Strings zuzugreifen.
 
-## Wie geht man vor:
+## So geht's:
+
+Definieren Sie einen String und verwenden dann die `.length` Eigenschaft, um die Anzahl von Zeichen zu erhalten. Ganz einfach.
 
 ```TypeScript
-// Beispiel:
-const str = "Hallo, Welt!";
-console.log(str.length);
+let meinString: string = "Hallo Welt!";
+console.log(meinString.length);
+
+// Ausgabe: 12
 ```
 
-Dieses Beispiel zeigt, wie man die Länge einer Zeichenkette in TypeScript ermittelt. Zunächst wird die Zeichenkette in einer Variablen gespeichert, in diesem Fall "str". Anschließend wird die "length"-Eigenschaft aufgerufen, die die Anzahl der Zeichen der Zeichenkette zurückgibt. In diesem Fall würde die Ausgabe 13 sein.
+## Tief Tauchen:
 
-## Tiefendinformationen:
+Historisch betrachtet ist die Methode zur Ermittlung der Länge eines Strings eine von den Anfangszeiten der Programmierung. Das Zählen von Zeichen in einem String ist seitdem ein integraler Bestandteil vieler Algorithmen und Funktionen.
 
-Die Möglichkeit, die Länge einer Zeichenkette zu ermitteln, existiert schon seit den ersten Programmiersprachen wie C und Java. In TypeScript kann diese Eigenschaft auch auf Arrays angewendet werden, um die Anzahl der enthaltenen Elemente zu ermitteln.
+Alternativen für die `.length` Eigenschaft gibt es in TypeScript eigentlich nicht. Jedoch könnte man natürlich manuell durch den String iterieren und einen Zähler hochzählen.
 
-Alternativ gibt es auch die Methode "string.length()", die ebenfalls die Länge einer Zeichenkette zurückgibt. Diese Methode ist jedoch nicht für Array-Objekte verfügbar.
+Die `.length` Eigenschaft in TypeScript (und auch in JavaScript) zählt Zeichen-Einheiten, nicht tatsächliche Zeichen. Das bedeutet, dass UniCode Zeichen, die aus zwei Zeichen-Einheiten bestehen, als zwei anstatt einem gezählt werden.
 
-Die Implementierung der Lösung ist abhängig von der Programmiersprache. In TypeScript wird die "length"-Eigenschaft durch eine Getter-Methode berechnet, die bei jedem Aufruf die Anzahl der Zeichen oder Elemente zurückgibt.
+```TypeScript
+let unicodeString: string = "🤓";
+console.log(unicodeString.length);
 
-## Weitere Informationen:
+// Ausgabe: 2
+```
 
-Weitere Informationen zur Länge von Zeichenketten in TypeScript findet man in der offiziellen Dokumentation von Microsoft: https://www.typescriptlang.org/docs/handbook/basic-types.html#string.
+## Siehe Auch:
 
-Eine umfassendere Erklärung, wie die Länge von Zeichenketten in TypeScript funktioniert, ist in diesem Artikel zu finden: https://www.freecodecamp.org/news/how-to-find-the-length-of-a-string-in-typescript-78fd161a4a56/.
+Jetzt, da Sie wissen, wie man die Länge eines Strings ermittelt, können Sie weitere Fähigkeiten erlernen. Hier sind einige nützliche Links:
+
+- [MDN Web Docs: String.prototype.length](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/String/length)
+- [TypeScript: Strings](https://www.typescriptlang.org/docs/handbook/basic-types.html#string)
+- [Microsoft: Variablen und Datentypen in TypeScript](https://docs.microsoft.com/de-de/learn/modules/typescript-declare-variable-datatypes/)

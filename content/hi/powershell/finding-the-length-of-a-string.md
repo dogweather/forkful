@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग की लंबाई का पता लगाना"
-html_title:           "PowerShell: स्ट्रिंग की लंबाई का पता लगाना"
-simple_title:         "स्ट्रिंग की लंबाई का पता लगाना"
+title:                "स्ट्रिंग की लंबाई पता करना"
+html_title:           "C++: स्ट्रिंग की लंबाई पता करना"
+simple_title:         "स्ट्रिंग की लंबाई पता करना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,28 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों है?
-पावरशेल (PowerShell) में 'स्ट्रिंग की लंबाई' ढूंढना क्या है? इसका उपयोग वे प्रोग्रामर क्यों करते हैं?
-यह एक सरल कार्य है जो प्रोग्रामिंग में अधिकतर उपयोग किया जाता है। इसका मुख्य उद्देश्य होता है स्ट्रिंग के अक्षरों की संख्या निकालना।
+## क्या और क्यों?
+
+एक स्ट्रिंग की लंबाई खोजना क्या होता है? इसका मतलब होता है कि आप पता करते हैं कि स्ट्रिंग में कितने वर्ण हैं। 
+किसी स्ट्रिंग की लंबाई जानने की जरुरत हमें इसलिए पड़ती है ताकि हम डाटा को सही तरीके से प्रेसेंट और मैनेज कर सकें, और कोड डीबगिंग में सहायता करने के लिए। 
 
 ## कैसे करें:
-पावरशेल में स्ट्रिंग की लंबाई निकालने के लिए आपको निम्न आदेश को प्रयोग करना होगा:
+
+पावरशेल में, आप .Length property का उपयोग करके किसी स्ट्रिंग की लंबाई को प्राप्त कर सकते हैं। निचे दिये गए कोड से आपको समझ में आ जायेगा।
 
 ```PowerShell
-$str = "हिंदी भाषा"
-$str.Length
+$string = 'नमस्ते'
+echo $string.Length
 ```
 
-आपको परिणाम में अक्षरों की संख्या का फार्मैट मिलेगा। इसका उपयोग किसी भी स्ट्रिंग की लंबाई जानने के लिए किया जा सकता है। आप एक स्ट्रिंग की लंबाई के साथ-साथ निम्न विकल्पों को भी प्रयोग कर सकते हैं:
+रन कराते हुए, यह कोड “4” का आउटपुट देगा क्योंकि स्ट्रिंग 'नमस्ते' में चार अक्षर होते हैं।
 
-```PowerShell
-$str = "विश्लेषक"
-$str.ToCharArray().Count
-$str.Split("श").Count-1
-```
+## गहराई से जानकारी:
 
-## गहराई में जाएँ:
-इतिहास, विकल्प और स्क्रिप्टिंग तकनीकों की दृष्टि से हम पावरशेल में स्ट्रिंग की लंबाई निकालने का उपयोग कर सकते हैं। यह भी संभव है कि यह कार्य अन्य भाषाओं में भी किया जा सकता है, जैसे C# या एक्सेल वर्कबुक। आप नील गांजे (https://neelbaggam.com) की अपनी वेबसाइट पर PowerShell से जुड़े अन्य रोचक विषयों की जानकारी प्राप्त कर सकते हैं।
+पावरशेल की .Length property का उपयोग करना स्ट्रिंग की लंबाई जानने का एक सीधा और सरल तरीका है। स्ट्रिंग प्रिंसिपल्स की पहचान और मापन प्रोग्रामिंग का महत्वपूर्ण हिस्सा है और यह कन्सेप्ट अधिकांश प्रोग्रामिंग भाषाओं में समान होती है।
 
-## अन्य संबंधित स्रोत:
-(1) https://www.techgig.com/tech-news/What-is-the-Finding-Length-of-a-String-function-in-PowerShell-220214 (2) https://technet.microsoft.com/en-us/library/ee692803.aspx (3) https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings (4) https://docs.microsoft.com/en-us/dotnet/api/system.string.length?view=netframework-4.8
+	Size में भी शायद लंबाई का एक विकल्प हो सकता है, लेकिन .Length से इसे तुलना करने पर यह अधिक विशिष्ट नहीं होता।
+
+## और देखें:
+
+1. [https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-comparisons?view=powershell-7.1](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-comparisons?view=powershell-7.1)
+2. [https://www.tutorialspoint.com/powershell/powershell_strings.htm](https://www.tutorialspoint.com/powershell/powershell_strings.htm)
+3. [https://www.learntek.org/blog/powershell-string-manipulation/](https://www.learntek.org/blog/powershell-string-manipulation/)
+
+ध्यान देने वाला बिन्दु यह है कि पावरशेल PowerShell 7.1 वर्जन पर आधारित हैं।

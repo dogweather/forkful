@@ -1,7 +1,7 @@
 ---
-title:                "Alaohjelmien eristäminen"
-html_title:           "Elixir: Alaohjelmien eristäminen"
-simple_title:         "Alaohjelmien eristäminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mikä & Miksi?
 
-Substringien eristäminen on Elixir-ohjelmointikielessä tapa hakea tietyt osat merkkijonoista. Tämä voi olla hyödyllistä esimerkiksi hakualgoritmeissa tai käyttäjän syötteiden validoimisessa.
+Substringien erottaminen tarkoittaa suurempien merkkijonojen pilkkomista pienempiin osiin. Ohjelmoijat tekevät tätä usein datan analysoinnin, käsittelyn, ja rakenteen muokkaamisen tarpeiden vuoksi.
 
-## Miten?
-
-Elixirillä on valmiina funktio nimeltä `String.slice` joka ottaa kaksi parametria: merkkijonon ja alueen josta halutaan ottaa osa merkkijonoa. Tämä alue voidaan määritellä joko kahdella luvulla tai luvuilla ja indeksillä. Esimerkiksi:
+## Kuinka se tehdään: 
 
 ```Elixir
-String.slice("hello world", 2..8)
+alue = 1..3
+iso_merkkijono = "Tämä on esimerkki"
+pieni_merkkijono = String.slice(iso_merkkijono, alue)
+IO.puts pieni_merkkijono
 ```
 
-Tämä palauttaisi merkkijonon `"llo wor"`.
+Edellä oleva koodinpätkä erottaa merkkijonosta 'iso_merkkijono' alimerkkijono 'mä', käyttäen 'String.slice'-funktiota ja aluetta 1..3. Koodi tulostaa 'mä'.
 
-Toinen tapa eristää substring on käyttämällä funktiota `String.split_at`. Tämä funktio ottaa myös kaksi parametria: merkkijonon ja indeksin kohdan, jossa halutaan jakaa merkkijono kahteen osaan. Esimerkiksi:
+## Sukellus syvemmälle
+
+Substringien erottaminen on vanha ohjelmointikonsepti, joka on ollut olemassa ohjelmointikielissä alkaen ensimmäisistä kielistä, kuten Fortranista ja COBOL:sta. Elixiriä varten tämä omaksutaan String.slice-funktion kautta.
+
+Vaihtoehtoisesti, voit käyttää myös funktiota 'binary_part/3'. Se on alhaisemman tason API ja sillä voi olla suorituskykyetuja tietyissä tilanteissa.
 
 ```Elixir
-String.split_at("hello world", 5)
+iso_merkkijono = "Enemmän esimerkkejä"
+pieni_merkkijono =
+  :erlang.binary_part(iso_merkkijono, {1, byte_size(iso_merkkijono) - 1})
+IO.puts pieni_merkkijono
 ```
 
-Tämä palauttaisi tuple-tyyppisen rakenteen jossa ensimmäisenä arvona olisi merkkijono `"hello "` ja toisena arvona merkkijono `"world"`.
+Edellä mainitussa koodissa "Enemmän esimerkkejä" -merkkijonosta on poistettu ensimmäinen merkki 'E', jolloin lopputuloksena on "nemmän esimerkkejä".
 
-## Syvemmälle
+## Katso myös:
 
-Substringien eristäminen on ollut osa Elixirin sisäänrakennettuja funktioita alusta asti. Se on nopea ja tehokas tapa hakea tiettyjä osia merkkijonoista. Toisin kuin monissa muissa kielissä, Elixirissä merkkijonot ovat muuttumattomia, joten substringien eristäminen ei muuta alkuperäistä merkkijonoa, vaan palauttaa uuden version.
-
-Jos etsit enemmän ominaisuuksia käsitellä merkkijonoja, voit tarkistaa Elixirin `String`-moduulin dokumentaation. On myös olemassa muita kirjastoja, kuten `Regex`, jotka tarjoavat edistyneempiä tapoja käsitellä merkkijonoja.
-
-## Katso myös
-
-- [Elixirin dokumentaatio substringien eristämisestä](https://hexdocs.pm/elixir/String.html#slice/2)
-- [Elixirin dokumentaatio String-moduulista](https://hexdocs.pm/elixir/String.html)
-- [Elixirin dokumentaatio Regex-moduulista](https://hexdocs.pm/elixir/Regex.html)
+1. [Elixir String.slice](https://hexdocs.pm/elixir/String.html#slice/2) dokumentaatio Elixirin virallisella sivustolla.
+2. [Erlang binary_part](https://erlang.org/doc/man/erlang.html#binary_part-3) dokumentaatio Erlangin virallisella sivustolla (Elixir on kirjoitettu Erlangissa).
+3. Opas [Elixirin merkkijonokäsittelyyn](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html) Elixir lang -sivustolla.

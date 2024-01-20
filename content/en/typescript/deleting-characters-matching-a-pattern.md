@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "TypeScript recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -12,35 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Deleting characters matching a certain pattern is a common task for programmers, especially when working with large amounts of text or data. It involves searching for and removing specific characters or groups of characters that follow a certain pattern, such as removing all vowels from a string or removing all numbers from a list of data. This technique allows for manipulating and cleaning up data in a more efficient and precise manner.
+Deleting characters matching a pattern means removing from a string every character that fits a certain criterion. Programmers do this when they need to sanitize or standardize user-input data, cleanse files, or prepare text for machine learning tasks.
 
-## How To:
+## How to:
 
 ```TypeScript
-// Example 1: Removing all vowels from a string
-
-let str = "Hello World!";
-let newStr = str.replace(/[aeiou]/gi, ''); // regex to remove all vowels
-console.log(newStr); // Output: Hll Wrld!
-
-// Example 2: Removing all numbers from an array
-
-let numbers = [ 1, 2, 3, "four", 5, "six" ];
-let filteredNumbers = numbers.filter(num => typeof num !== "number");
-console.log(filteredNumbers); // Output: ["four", "six"]
+let str: string = 'Hello $World!@ This is42 a test string';
+let strippedStr: string = str.replace(/[\d@$!]/g, '');
+console.log(strippedStr); // Output: 'Hello World! This is a test string'
 ```
 
-## Deep Dive:
+The code above is a simple example of removing all numbers, dollar signs, 'at' symbols, and exclamation points from the string `'Hello $World!@ This is42 a test string'`. The resulting string is `'Hello World! This is a test string'`. As you can see, removing characters from a string in TypeScript is a piece of cake.
 
-- Historical Context:
-The concept of deleting characters matching a certain pattern has been around for a long time, with the introduction of regular expressions in the 1950s. However, with the rise of modern programming languages like TypeScript, it has become much easier and more efficient to perform these tasks.
-- Alternatives:
-While regular expressions are a powerful tool for deleting characters matching a pattern, there are also other alternatives such as using built-in string methods like "replace" or "filter". These methods may be better suited for simpler tasks and can be used in conjunction with regular expressions for more complex patterns.
-- Implementation Details:
-In TypeScript, regular expressions are written between forward slashes (/) and followed by optional flags (such as "gi" in the example). The "g" flag stands for global, allowing the search to continue after finding a match, and the "i" flag stands for case-insensitive, meaning it will match both uppercase and lowercase characters.
+## Deep Dive
 
-## See Also:
+Historically, different programming languages have provided various ways to delete characters matching specific patterns. Regex, short for regular expressions, has stood the test of time as a robust and flexible way to match patterns in text across all languages, TypeScript included.
 
-- [MDN web docs on regular expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regular Expressions in TypeScript](https://www.typescriptlang.org/docs/handbook/regular-expressions.html)
-- [Replacing patterns with TypeScript](https://dominik.honnef.co/posts/2012/09/replace-pattern-in-string-with-typescript/)
+As an alternative to `replace()`, you could use a combination of TypeScript's `split()`, `filter()`, and `join()` functions to achieve the same result. Here's a quick example:
+
+```TypeScript
+let str: string = 'Hello $World!@ This is42 a test string';
+let regexPattern = /[\d@$!]/g;
+let strippedStr: string = str.split('').map((c) => c.match(regexPattern) ? '' : c).join('');
+console.log(strippedStr); // Output: 'Hello World! This is a test string'
+```
+
+One thing to note is that the `replace()` function used in our first example doesn't modify the original string but instead returns a new one. This follows a functional programming paradigm where data is immutable and side effects are limited.
+
+## See Also
+
+For more information on TypeScript programming, take a trip across the net:
+
+- String replace() method: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- Dive into regular expressions: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Functional Programming in JavaScript: [https://www.smashingmagazine.com/2014/07/dont-be-scared-of-functional-programming/](https://www.smashingmagazine.com/2014/07/dont-be-scared-of-functional-programming/)

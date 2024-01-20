@@ -1,7 +1,7 @@
 ---
-title:                "Tarkista löytyykö hakemistoa"
-html_title:           "C: Tarkista löytyykö hakemistoa"
-simple_title:         "Tarkista löytyykö hakemistoa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "C: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -10,24 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tiedoston olemassaolon tarkistaminen on prosessi, jossa ohjelmoija tarkistaa, onko annettu hakemisto olemassa. Tämä on tärkeää, jotta ohjelma voi käsitellä olemassa olevia tiedostoja tai luoda uusia, jos hakemistoa ei ole olemassa.
+# Tarkistetaanko hakemisto olemassa?
+
+## Mikä & Miksi?
+
+Hakemiston olemassaolon tarkistaminen tarkoittaa sitä, että ohjelmoija varmistaa, onko tietty polku järjestelmässä olemassa vai ei. Tämä on tarpeen, jotta voidaan välttää virheitä, jotka voisivat tapahtua, jos yritämme käyttää olematonta hakemistoa.
 
 ## Miten:
-```C 
-if (access(directory_path, F_OK) != -1) {
-  printf("Hakemisto löytyi!");
-} else {
-  printf("Hakemistoa ei ole olemassa.");
+
+```C
+#include <unistd.h>
+
+int main()
+{
+    if( access( "/jotakin/hakemistoa", F_OK ) != -1 ) {
+        // hakemisto on olemassa
+    } else {
+        // hakemisto ei ole olemassa
+    }
+    return 0;
 }
 ```
-Koodiesimerkissä käytetään "access" -funktiota, joka tarkistaa, onko hakemisto olemassa käyttämällä "F_OK"-parametria. Jos tiedosto löytyy, funktio palauttaa 0. Muussa tapauksessa se palauttaa -1 ja tulostaa viestin "Hakemistoa ei ole olemassa."
 
-## Syvemmälle:
-Tiedoston olemassaolon tarkistaminen on osa tiedostojärjestelmien peruskäsitteitä. Se antaa ohjelmoijalle mahdollisuuden hallita tiedostoja ja hakemistoja tehokkaasti.  On myös muita tapoja tarkistaa tiedoston olemassaolo, kuten käyttämällä "stat" -funktiota tai tutkimalla tiedostopolun olemassaoloa eri järjestelmissä.
+Näyte tuloste:
 
-## Katso myös:
-Lisätietoja tiedostojärjestelmistä ja niiden hallinnasta löydät täältä:
-- https://www.gnu.org/software/libc/manual/html_node/File-Attributes.html#File-Attributes
-- https://linux.die.net/man/2/access
-- https://www.tutorialspoint.com/c_standard_library/c_function_access.htm
+```C
+// Jos hakemisto on olemassa:
+
+// Jos hakemisto ei ole olemassa:
+```
+
+## Syvempi sukellus
+
+Tarkistaakseen, onko hakemisto olemassa, ohjelmoijat ovat käyttäneet erilaisia metodeja koko C-kielen historian ajan. Access()-funktio on yksi yleisimmistä menetelmistä, mutta sen sijaan jotkut ohjelmoijat saattavat suosia stat()-funktiota tai opendir()-funktiota. Vaikka nämä vaihtoehdot voivat vaikuttaa samanlaisilta, niillä on kuitenkin olennaisia eroja esimerkiksi toiminnan, tehokkuuden ja käytön suhteen.
+
+## Katso myös
+
+- *[C Standard Library: access()](https://en.cppreference.com/w/c/io/access)*: Lisätietoja access()-funktiosta ja sen käytöstä.
+- *[C Standard Library: stat()](https://en.cppreference.com/w/c/io/stat)*: Lisätietoja stat()-funktiosta ja sen käytöstä.
+- *[C Standard Library: opendir()](https://en.cppreference.com/w/c/io/opendir)*: Lisätietoja opendir()-funktiosta ja sen käytöstä.
+- *[C Tutorial: File I/O](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)*: Laajempi opas C:n tiedosto- ja hakemisto-operaatioihin.

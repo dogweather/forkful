@@ -1,7 +1,7 @@
 ---
-title:                "パターンに一致する文字の削除"
-html_title:           "C: パターンに一致する文字の削除"
-simple_title:         "パターンに一致する文字の削除"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,41 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何かが合いませんか？
-文字列を検索し、特定のパターンにマッチする文字を削除することは、プログラマーにとってよくあるタスクです。例えば、ユーザーが入力した電話番号にあるハイフンを取り除くことが求められる場合など、様々な場面で使用されます。
+## 何となぜ?
 
-## 方法：
-次のコード例をご覧ください：
-```
+文字列からパターンに一致する文字を削除するとは、特定のパターン（例えば、特定の文字や文字列）を探してそれを取り除くことを意味します。これは、不要な空白や特殊文字を削除したり、文字列を一貫した形式に整形したりするのに役立ちます。
+
+## どのように?
+
+ここでは、Cプログラムで文字列から文字'a'を削除する方法を示します。
+
+```C
 #include <stdio.h>
 #include <string.h>
 
-int main()
-{
-    char str[20] = "123-456-789";
-    char pattern = "-";
-
-    for (int i = 0; i < strlen(str); i++)
-    {
-        if (str[i] == pattern)
-        {
-            memmove(&str[i], &str[i+1], strlen(str)-i);
-            i--;
-        }
+void removeChars(char *str, char garbage) {
+    char *src, *dst;
+    for(src = dst = str; *src != '\0'; src++) {
+        *dst = *src;
+        if(*dst != garbage) dst++;
     }
+    *dst = '\0';
+}
 
-    printf("%s", str);
+int main() {
+    char str[] = "abcabcabc";
+    
+    removeChars(str,'a');
+    
+    printf("%s",str);
+    
     return 0;
 }
 ```
-出力:
-```
-123456789
-```
 
-## 深く潜る：
-文字を削除する方法は、プログラミング言語や環境によって異なりますが、一般的なアルゴリズムは同じです。パターンマッチングアルゴリズムを使用して、文字列内で指定されたパターンを検索し、削除します。代替手段としては、指定された文字が含まれるかどうかを確認し、その文字を削除する方法もあります。パターンマッチングアルゴリズムを実装するには、文字列を反復処理し、パターンにマッチする文字を見つけて削除する必要があります。
+このプログラムは「bcbbcbcbc」を出力します。この出力が示す通り、すべての'a'が取り除かれています。
 
-## 関連情報：
-- [C言語の文字列操作](https://www.tohoho-web.com/ex/cstring.html)
-- [文字列処理関数の概要](https://www.programming-technique.com/2019/08/c-function-text-string.html)
+## ディープダイブ
+
+履歴について言えば、このような文字削除の操作は、以前の编程語言バージョンでも利用可能で、現在と同じく、特定の目的がありました。
+
+代替手段としては、他の多くのプログラミング言語で同様の操作が可能です。例えばPython、Javaなどです。
+
+このような操作は、一般的には2つのポインタを利用して実行されます。ソースポインタは読み、デスティネーションポインタは書き込みます。文字が指定したパターンと一致する場合、その文字は書き込まれずにスキップされます。しかし、一致しない場合、文字は書き込まれ、デスティネーションポインタも進行します。この方法で、最小のオーバーヘッドで操作を実行することが可能です。
+
+## 参照
+
+1. C library function - [memmove()](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm) 
+2. C library function - [strchr()](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm) 
+3. [Deleting 'n' Characters From A String In C](https://www.codingeek.com/tutorials/c-programming/deleting-n-characters-from-a-string-in-c/)

@@ -1,7 +1,7 @@
 ---
-title:                "Lähetetään http-pyyntö"
-html_title:           "Bash: Lähetetään http-pyyntö"
-simple_title:         "Lähetetään http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Sending an HTTP request, or "pinging" a website or server, is when a computer sends a message to a specific address and waits for a response. This is a common practice for programmers to check if a website or server is up and running, or to retrieve data from the website or server.
+HTTP-pyynnön lähettäminen on, kun ohjelma pyytää tietoa toiselta ohjelmalta tai palvelimelta verkon välityksellä. Ohjelmoijat tekevät tämän saadakseen tiedot, joita he tarvitsevat - esimerkiksi verkkosivupäivitykset, tiedostojen lataamiset, tai API:n käyttäminen.
 
-## Miten:
+## Näin se tehdään:
 
-Bashilla voit lähettää HTTP-pyyntöjä helposti käyttämällä `curl` -komentoa. Tässä on esimerkki kuinka lähetät HTTP GET -pyynnön ja tulostat vastauksen:
-
-```bash
-curl https://www.examplewebsite.com
+### Ensin asenna `curl`-paketti:
+```Bash
+sudo apt-get install curl
 ```
 
-Tämä tulostaa HTML-koodin `www.examplewebsite.com` sivulta.
+### Seuraavaksi voit lähettää HTTP GET -pyynnön seuraavasti:
 
-## Syväsyventyminen:
+```Bash
+curl http://www.verkkosivusi.com
+```
+Tämä koodi lähettää pyynnön sivustoon "www.verkkosivusi.com" ja näyttää vastauksen.
 
-HTTP-protokollalla on pitkä historia, joka alkoi vuonna 1989. Nykyään on olemassa myös muita tapoja lähettää pyyntöjä, kuten käyttämällä REST-apia. Bash ei ole ainoa vaihtoehto, voit myös käyttää muita ohjelmointikieliä, kuten Pythonia, lähettämään HTTP-pyyntöjä. 
+### HTTP POST -pyynnön lähettäminen on yhtä helppoa:
 
-Bashilla on myös mahdollista lähettää muita HTTP-metodeja, kuten POST ja PUT, käyttämällä `curl` -komennon eri vaihtoehtoja. Voit myös lisätä otsikoita ja tietoja pyyntöön käyttämällä `-H` ja `-d` vaihtoehtoja.
+```Bash
+curl -d "param1=val1&param2=val2" -X POST http://www.verkkosivusi.com/login
+```
+Tämä lähetetään **/login** päätteiseen URL-osoitteeseen.
+
+## Syvemmälle:
+
+### Historiallinen konteksti
+HTTP-pyyntöjen lähetys on ollut perusteknologia, jota käyttävät verkkosovellukset 1990-luvun alkupuolelta asti.
+
+### Vaihtoehtoja
+`wget` voi olla vaihtoehto `curl`:lle - se on toinen, perinteinen tapa lähettää HTTP-pyyntöjä.
+
+### Yksityiskohtia
+`curl` tukee lukuisia protokollia. Useita parametreja voidaan käyttää pyyntöjen mukauttamiseen.
 
 ## Katso myös:
 
-- Virallinen Bash-sivusto https://www.gnu.org/software/bash/
-- `curl` komentorivin ohjeet https://curl.haxx.se/docs/manpage.html
+- [HTTP Made Really Easy](http://www.jmarshall.com/easy/http/)
+- [Curl vs Wget: Their Differences, Usage and Which One You Should Use](https://www.hostinger.com/tutorials/curl-vs-wget-differences)
+- [`man`-sivut `curl`](https://curl.haxx.se/docs/manpage.html)
+- [`man`-sivut `wget`](https://www.gnu.org/software/wget/manual/wget.html)

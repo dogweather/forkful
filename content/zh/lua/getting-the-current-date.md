@@ -1,7 +1,7 @@
 ---
-title:                "请提供您的回复"
-html_title:           "Lua: 请提供您的回复"
-simple_title:         "请提供您的回复"
+title:                "获取当前日期"
+html_title:           "Arduino: 获取当前日期"
+simple_title:         "获取当前日期"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,49 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么? 
+## 什么以及为什么?
 
-获取当前日期是一种在编程中经常使用的功能，它可以让程序员获得系统的当前日期和时间。这样的信息通常用于记录程序运行的时间或者设置某些特定的功能。 
+在编程中获取当前日期指的是通过代码命令获取系统的当前日期。这对于时间敏感的操作，如日志记录，跟踪事件，时间戳等都是非常必要的。
 
-## 如何使用: 
+## 如何：
 
-以下是使用Lua编程语言获取当前日期和时间的简单示例，注意代码中的注释以"-"开头:
+获取Lua中的当前日期并非难事。请查看以下示例和输出：
+
+```Lua
+os.date("%x")
 ```
--- 导入 "os" 库 
-local os = require("os") 
 
--- 使用os.date函数以指定的格式获得当前日期和时间，并将其打印出来 
-print(os.date("%Y-%m-%d %H:%M:%S")) 
+这将输出当前日期，格式为：mm/dd/yyyy。
+
+也可以这样：
+
+```Lua
+os.date("%A, %B %d, %Y")
 ```
-输出示例: 
+
+这将输出当前日期，格式为：星期，月 日，年。例如：
+
+```Lua
+"星期三，九月 15，2021"
 ```
-2021-05-27 14:30:00 
-```
-如果你想获取系统当前的详细时间信息，包括年、月、日、小时、分钟、秒以及星期数等，可以使用os.time函数： 
 
-``` 
--- 使用os.time函数获得时间戳 
-local time = os.time()
--- 再利用os.date函数，将时间戳转换成具体的日期和时间 
-local date = os.date("%Y-%m-%d %H:%M:%S", time) 
--- 打印出日期和时间 
-print(date) 
-```
-输出示例: 
-```
-2021-05-27 14:30:00 
-``` 
+## 深入研究：
 
-## 深入探讨: 
+Lua语言于1993年由巴西的Pontifical Catholic University的Roberto Ierusalimschy，Luiz Henrique de Figueiredo，和Waldemar Celes开发。它是一个小型的脚本语言，主要用于嵌入到应用程序中，为应用程序提供灵活的扩展和定制功能。
 
-在早期的计算机系统中，获取当前日期和时间是一项复杂的任务，程序员需要编写大量的代码来实现。但是随着操作系统的进化，现在大多数编程语言都提供了简单的方法来获取当前的时间信息。
+获取当前日期的其他方法：
+Lua语言还提供了os.time()函数，可以获取从1970年1月1日（称为UNIX纪元）到目前的秒数。
 
-除了Lua中使用的os库，还有其他一些替代方案可以获取当前日期和时间，比如使用系统配置设置，或者使用日期和时间相关的第三方库。
+获取日期的实现细节：
+在Lua中，os.date()函数实际上是C库的strftime()函数的封装。它按照格式字符串的指示格式化日期和时间。
 
-在实现过程中，程序员需要注意操作系统的时区设置，以及跨平台兼容性的问题。当获取的时间信息被用于关键的业务逻辑时，还需要考虑重复计算和错误处理等情况。 
+## 另请参阅：
 
-## 参考资料: 
+- [Lua 5.3 参考手册 - os库](http://www.runoob.com/manual/lua53doc/manual.html#pdf-os.date)
+- [Lua-users 指南 - os库](http://lua-users.org/wiki/OsLibraryTutorial)
+- [Lua-users 资源 - 时间和日期](http://lua-users.org/wiki/TimeAndDateExample)
 
-- [Lua 官方文档](https://www.lua.org/docs.html) 
-- [os库文档](https://www.lua.org/manual/5.4/manual.html#6.9) 
-- [os.time函数文档](https://www.lua.org/manual/5.4/manual.html#6.9.1)
+以上就是如何在Lua中获取当前日期的全部内容。

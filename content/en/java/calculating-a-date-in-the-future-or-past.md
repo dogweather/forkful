@@ -12,40 +12,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Calculating a date in the future or past refers to the process of manipulating dates and time to find a specific future or past date. This is commonly done by programmers to perform tasks such as scheduling events, calculating time differences, or creating countdown timers.
+Calculating a future or past date involves using computing logic to figure out a date from a particular date, adding or subtracting specific time units. Program It's crucial for tasks like setting expiry dates, scheduling events, or estimating project deadlines.
 
-## How to:
+## How To:
 
-To calculate a date in the future or past, we can use the built-in ```java.time.LocalDate``` class in Java. Here's an example of finding the date 30 days from today:
+In Java, you can use the `LocalDate` class from the `java.time` package. Look at this sample code:
 
-```java
-LocalDate today = LocalDate.now();
-LocalDate futureDate = today.plusDays(30);
-System.out.println("30 days from today is: " + futureDate);
+```Java
+import java.time.LocalDate;
+import java.time.Period;
+
+public class FutureDate {
+  public static void main(String[] args) {
+    // current date
+    LocalDate currentDate = LocalDate.now();
+    System.out.println("Current Date: " + currentDate);
+
+    // adding one month
+    LocalDate futureDate = currentDate.plus(Period.ofMonths(1));
+    System.out.println("Future Date: " + futureDate);
+  }
+}
 ```
 
-The output of this code would be: ```30 days from today is: {current_date + 30 days}```.
+Output:
 
-In a similar manner, we can also calculate a date in the past by using the ```minusDays()``` method. Here's an example that finds the date 1 year ago from today's date:
-
-```java
-LocalDate today = LocalDate.now();
-LocalDate pastDate = today.minusYears(1);
-System.out.println("1 year ago from today was: " + pastDate);
+```Java
+Current Date: 2022-03-29
+Future Date: 2022-04-29
 ```
 
-The output of this code would be: ```1 year ago from today was: {current_date - 1 year}```.
+In the code above, we used `plus()` method to add to the current date and `ofMonths()` to specify the period unit, in this case, a month. Replace `ofMonths()` with `ofDays()` or `ofYears()` as needed.
 
 ## Deep Dive
 
-The concept of calculating dates in the future or past goes back to the origin of calendars. In the past, different civilizations used various methods for keeping track of time, but it wasn't until the introduction of the Gregorian calendar in 1582 that we had a standardized system for calculating dates.
+Historically, date and time computations were complex in Java. The `java.util.Date` and `java.util.Calendar` classes were bulky and error-prone. Introduced in Java 8, the `java.time` package simplified date-time computations.
 
-In Java, there are also alternative methods for manipulating dates, such as the ```java.util.Calendar``` class. However, it is recommended to use the newer ```java.time.LocalDate``` class, which provides more efficient and easier-to-use methods for calculating dates.
+Alternatives to `LocalDate` include the older `java.util.Date` and `java.util.Calendar` classes. There are also external libraries like Joda-Time. However, `LocalDate` is easier and more efficient. 
 
-When using the ```plusDays()``` and ```minusDays()``` methods, it's important to note that they return a new instance of the ```LocalDate``` class, and the original date object remains unchanged. This is known as immutability and is a core concept in Java.
+`LocalDate` is immutable (thread-safe) and follows ISO 8601 standard (YYYY-MM-DD format). The `plus()` and `minus()` methods are used for date computations. If any computation causes a date overflow or underflow, these methods will throw a `DateTimeException`.
 
 ## See Also
 
-To learn more about using the ```java.time.LocalDate``` class, check out the official Java documentation here: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+For more details, refer to the following official Java documentations:
 
-For a deeper dive into the history of calendars and timekeeping, you can read this interesting article: https://www.timeanddate.com/calendar/intercalation.html
+- [LocalDate (Java SE 11 & JDK 11 )](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
+- [Period (Java SE 11 & JDK 11 )](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/Period.html)
+  
+For historical context and alternatives, visit:
+
+- [The Legacy Date-Time API (The Java™ Tutorials)](https://docs.oracle.com/javase/tutorial/datetime/iso/legacy.html)
+- [Joda-Time - Home](http://www.joda.org/joda-time/)

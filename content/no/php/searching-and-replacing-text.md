@@ -1,7 +1,7 @@
 ---
-title:                "Søking og erstatting av tekst"
-html_title:           "PHP: Søking og erstatting av tekst"
-simple_title:         "Søking og erstatting av tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -11,28 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Søking og erstatning av tekst er en vanlig oppgave for programmerere. Det er en måte å endre eller bytte ut tekst i en fil eller en streng med en annen tekst. Dette kan være nyttig når du ønsker å lage en batch endring eller rette opp feil i koden din.
 
-## Slik gjør du det:
-For å søke og erstatte tekst i PHP kan du bruke funksjonen `str_replace()`. Denne funksjonen tar tre parametere: strengen du ønsker å søke i, strengen du vil erstatte den med, og deretter selve teksten du ønsker å søke gjennom. For eksempel:
+Søke- og erstattefunksjon er prosessen der man identifiserer bestemte strenge (tekst) i kildekoden og erstatter den med en annen streng. Programmerere gjør dette primært for å oppdatere, forbedre eller debugge kode raskt.
 
-```PHP
-$text = "Hei verden!";
-echo str_replace("verden", "alle sammen", $text);
-```
+## Hvordan:
 
-Dette vil gi følgende utskrift:
+I PHP brukes oftest `str_replace` for å søke og erstatte tekst. Se hvordan i kodeeksemplet nedenfor:
 
 ```PHP
-Hei alle sammen!
+<?php
+// Definerer originalteksten
+$originalTekst = "Hei, Verden!";
+// Bytt ut "Verden" med "Norge"
+$endretTekst = str_replace("Verden", "Norge", $originalTekst);
+// Skriver ut den endrede teksten
+echo $endretTekst;
+?>
 ```
 
-Du kan også bruke `str_replace()` til å søke og erstatte tekst i en hel fil ved å lese inn filen som en streng og bruke funksjonen på denne strengen.
+Når du kjører koden, vil utdataene være:
 
-## Dykk dypere:
-Søking og erstatning av tekst i programmering har vært en viktig oppgave siden begynnelsen av datamaskiner. I dag finnes det også andre metoder for å utføre dette, som for eksempel regulære uttrykk eller spesialiserte søkemotorer. Implementasjonen av `str_replace()` i PHP er basert på Unix-kommandoen `sed`.
+```
+Hei, Norge!
+```
 
-## Se også:
-- [PHP Manual](https://www.php.net/manual/en/function.str-replace.php)
-- [W3Schools - PHP str_replace() Function](https://www.w3schools.com/php/func_string_str_replace.asp)
-- [GeeksforGeeks - PHP str_replace() Function](https://www.geeksforgeeks.org/php-str_replace-function/)
+## Dyp Dykk
+
+Historisk sett oppstod søk- og erstattefunksjon med tekstbehandling og programmering, og PHP hadde et rikt utvalg av metoder. Foruten `str_replace`, vi har `preg_replace` og `str_ireplace`.
+
+`preg_replace` er kraftigere og bruker vanlige uttrykk, men er også langsommere. `str_ireplace` er en case-insensitiv versjon av `str_replace`.
+
+Apropos implementeringsdetaljer, husk at `str_replace` er en ikke-destruktiv funksjon: den returnerer en ny streng uten å endre den originale strengen.
+
+## Se Også
+
+For mer om tekstsøk og -erstatning i PHP, se:
+
+- [PHP: str_replace - Manual](https://www.php.net/manual/en/function.str-replace.php)
+- [PHP: preg_replace - Manual](https://www.php.net/manual/en/function.preg-replace.php)
+- [PHP : str_ireplace - Manual](https://www.php.net/manual/en/function.str-ireplace.php)

@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Gleam recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# A Quick-Start Guide to String Interpolation in Gleam
+
 ## What & Why?
 
-Interpolating a string is a technique used by programmers to insert variables or values into a string dynamically, without having to concatenate multiple strings together. This improves the readability and efficiency of the code.
+String interpolation is basically synthesizing new strings using existing values. It helps programmers create dynamic strings without breaking a sweat.
 
 ## How to:
 
-Interpolation is done in Gleam by using the `format` function and using curly braces `{}` around the variables or values that need to be inserted. Here's a simple example:
+In Gleam, the interpolation macro `{}` is not supported. You'll have to slice and dice strings. Here's an example:
 
-```Gleam
-let name = "Jane"
-let message = format("Hello, {}", name)
+```gleam
+fn main() {
+  let name = "Gleam"
+  let message = "Hello, " ++ name ++ ", good to see you!"
+  message
+}
 ```
-
-The `message` variable now contains the string "Hello, Jane". We can also interpolate multiple variables or values, and format them as desired. Here's another example:
-
-```Gleam
-let age = 25
-let message = format("I am {} years old and my name is {}", age, name)
+Output:
+```cli
+"Hello, Gleam, good to see you!"
 ```
+Concatenation with `++` lets us mix in variables into strings - the manual way. 
 
-The `message` variable now contains the string "I am 25 years old and my name is Jane". 
+## Deep Dive
 
-## Deep Dive:
+String Interpolation has not always been around. The folks who coded using `Fortran` had to write lines of code for creating a simple `hello world` string. String interpolation lightens the workload, and it's got some serious popularity in languages like Ruby, JavaScript, Python, etc.
 
-Interpolating strings has been around for a long time and is commonly used in many programming languages. It helps in avoiding repetitive concatenation of strings and also makes the code more concise and readable. 
+In the case of Gleam, the language doesn't support interpolation directly. It takes inspiration from Erlang, a much older language without this feature. 
 
-There are alternative methods of string interpolation, such as using string concatenation or format specifiers, but they are not as efficient as using the `format` function in Gleam. Using concatenation can result in complex and unreadable code, while format specifiers may not offer the degree of flexibility and customization that Gleam's `format` function provides.
+There are other alternatives like concatenation using `++` as seen above. Also possible are templates in some languages – defining a string structure and replacing placeholders with actual values.
 
-Under the hood, the `format` function uses string formatting syntax from the [RFC 5424](https://tools.ietf.org/html/rfc5424) standard, allowing for a wide range of formatting options. This makes it a powerful tool for handling strings in a concise and efficient manner.
+As for how Gleam implements string manipulation, it leverages the Beam VM's binary data type. This makes string manipulation efficient but some modern features (like interpolation) aren't directly available.
 
-## See Also:
+## See Also
 
-- [Gleam's Official Documentation](https://gleam.run/documentation)
-- [String Interpolation in Other Programming Languages](https://en.wikipedia.org/wiki/String_interpolation#In_other_languages)
+Dig deeper into Gleam's string manipulation - [Check out Gleam's Official Docs](https://docs.gleam.run/tour/strings).
+
+If you're considering alternatives or have glimpses of sadness because of the lack of spiffy interpolation in Gleam, you can check out languages like [Elixir](https://elixir-lang.org/). 
+
+And just in case you want to geek out on the history – the Fortran story’s told by [IBM itself](https://www.ibm.com/ibm/history/exhibits/fortran/fortran.html).

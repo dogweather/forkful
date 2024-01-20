@@ -1,7 +1,7 @@
 ---
-title:                "Lage en midlertidig fil"
-html_title:           "Javascript: Lage en midlertidig fil"
-simple_title:         "Lage en midlertidig fil"
+title:                "Opprette en midlertidig fil"
+html_title:           "C#: Opprette en midlertidig fil"
+simple_title:         "Opprette en midlertidig fil"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Files and I/O"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+# Lage midlertidige filer i Javascript
 
-Opprettelse av midlertidige filer er en vanlig praksis for programvareutviklere. Dette er prosessen med å opprette en fil som midlertidig lagrer data eller informasjon under kjøring av et program. Dette gjøres vanligvis for å organisere og behandle data på en mer effektiv måte.
+## Hva & Hvorfor?
 
-Hvordan:
+Laging av midlertidige filer handler om å skape filer som ikke varer for alltid, men blir fjernet etter bruk. Dette er verdifullt for programmerere for å minimere ressursbruk og lagring, spesielt når det håndteres store datamengder.
+
+## Hvordan gjør man det:
+
+Her er et grunnleggende eksempel på hvordan du oppretter en midlertidig fil i Javascript ved hjelp av `temp-file` modulen.
 
 ```Javascript
-// Opprett en midlertidig fil med Node.js
-var fs = require('fs');
-var tempFile = fs.writeFileSync('temp.txt', 'Dette er en midlertidig fil');
-
-// Slett filen etter bruk
-fs.unlinkSync('temp.txt');
+const tempFile = require('temp-file');
+  
+// Lager en midlertidig fil
+let tempfile = tempFile(); 
+console.log(tempfile); 
+// Output: '/tmp/1234567890abcdef'
 ```
 
-Eksempelutgang:
+I dette eksempelet vil stien til den midlertidige filen bli skrevet ut. Filen vil da bli fjernet automatisk når prosessen avsluttes.
 
-En midlertidig fil, kalt "temp.txt", vil bli opprettet og inneholde teksten "Dette er en midlertidig fil". Deretter vil filen bli slettet ved hjelp av fs.unlinkSync() funksjonen.
+## Dypdykk 
 
-Dypdykk:
+Historisk sett har midlertidige filer vært en varig del av databehandling, selv før Javascripts dominans. Lignende funksjonalitet finnes i mange programmeringsspråk, som Python og Java.
 
-Opprettelse av midlertidige filer har sine røtter fra tidlig på 1960-tallet da filsystemer ble utviklet. Denne teknikken var nyttig for å lage midlertidige kopier av data eller for midlertidig lagring av informasjon under kjøring av et program.
+Et alternativ til å bruke midlertidige filer er å bruke midlertidig hukommelse (RAM), selv om dette kan være dyrt med store datamengder. Javascript tillater nå bruk av blobs, som kan brukes til midlertidig lagring i klientprogrammer.
 
-Alternativer:
+Implementeringen av midlertidige filer i `temp-file` modulen er ganske rett frem. Den bruker Node.js's `fs` modul til å lage filen, og prosessens 'exit' event til å slette den.
 
-Noen programmeringsspråk har innebygde funksjoner for å opprette midlertidige filer, som Java med File.createTempFile() eller Python med tempfile.mktemp(). Men i mange tilfeller kan det å bruke eksterne biblioteker eller moduler, som fs i Node.js, være enklere og mer fleksibelt.
+## Se også 
 
-Se også:
+For mer informasjon om hvordan bruke 'temp-file' modulen i Javascript, se [dokumentasjonen her](https://www.npmjs.com/package/temp-file).
 
-- https://nodejs.org/api/fs.html#fs_fs_writefilesync_file_data_options
-- https://docs.python.org/3/library/tempfile.html
-- https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile()
+For mer bakgrunn på midlertidige filer generelt, se [denne StackOverflow-tråden](https://stackoverflow.com/questions/1132941/what-are-the-best-practices-for-using-temporary-files-in-a-program). 
+
+For hvordan å håndtere blobs i Javascript, se [MDN dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/API/Blob).

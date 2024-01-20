@@ -1,7 +1,7 @@
 ---
-title:                "「html の解析」"
-html_title:           "Ruby: 「html の解析」"
-simple_title:         "「html の解析」"
+title:                "HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,38 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何？ & なぜ？
+## 何となぜ？（What & Why?）
 
-プログラマーは、コンピューターで作成されたウェブページから情報を抽出することができるように、HTMLを解析する必要があります。解析とは、HTMLの構造や要素を理解し、必要なデータを取得することです。
+HTMLバース（Parsing HTML）とは、HTMLドキュメントを構成要素に分解して理解するプロセスのことです。これは、ウェブスクレイピングを行ったり、ウェブページの内容を分析したりするためによく使われます。
 
-## 使い方：
+## どうやって？（How to）
 
-下記のコード例では、Rubyを使用してHTMLを解析し、タグ内の内容を抽出し、コンソールに出力します。更に、特定の属性やクラス名を指定して、より具体的なデータを取得することもできます。
+Rubyでは、`Nokogiri`ライブラリを使用してHTMLを解析（パース）できます。以下がサンプルコードです。
 
-```
+```ruby
 require 'nokogiri'
+require 'open-uri'
 
-html = "<html><body><h1>Hello World</h1><p>This is a sample paragraph.</p></body></html>"
+doc = Nokogiri::HTML(open('http://www.example.com'))
 
-doc = Nokogiri::HTML(html)
-
-puts doc.css('h1').text #=> "Hello World"
-
-puts doc.css('p').text #=> "This is a sample paragraph."
-
-puts doc.css('body').text #=> "Hello WorldThis is a sample paragraph."
+doc.css('h1').each do |header|
+  puts header.text
+end
 ```
 
-## 詳しく見てみよう：
+上記のコードは`www.example.com`の各`h1`タグのテキストを出力します。
 
-HTMLを解析するための代表的なライブラリとして、NokogiriやMechanizeがあります。これらのライブラリは、ウェブスクレイピングやデータ収集などの用途でよく使用されています。
+## 深掘り（Deep Dive）
 
-また、HTMLを解析する方法には正規表現を使用する方法もありますが、これは複雑なパターンのHTMLを解析する際にはあまり適していません。
+HTMLパースの歴史は、ウェブの成長とともに深まってきました。当初は簡単な正規表現を使用してHTMLタグをマッチさせるだけだったのが、IE5の頃にはDOM（Document Object Model）が公式に確立され、XMLやHTMLの解析が一段と容易になりました。
 
-Nokogiriの場合、libxmlと呼ばれるライブラリを使用してHTMLの解析を行っています。libxmlは高速でパワフルな解析エンジンであり、Nokogiriを通じて簡単に利用することができます。
+現在では、Ruby以外のプログラムでもHTML解析ライブラリが利用可能です。Pythonの`BeautifulSoup`やJavascriptの`cheerio`などが例として挙げられます。
 
-## 関連サイトをチェック：
+また、Nokogiri自体はcライブラリ`libxml2`と`libxslt`のラッパーとなっています。技術的には、ウェブページの読み込みは`open-uri`によって、HTMLの解析は`libxml2`によって行われています。
 
-- [Nokogiri公式ドキュメント](https://nokogiri.org/)
-- [Mechanize公式ドキュメント](https://mechanize.readthedocs.io/en/latest/)
-- [libxml公式サイト](http://xmlsoft.org/)
+## 参照（See Also）
+
+- Nokogiri公式ドキュメント：http://nokogiri.org/
+- HTMLパースの歴史について：https://www.quora.com/What-is-the-history-of-HTML-parsing
+- libxml2公式サイト：http://xmlsoft.org/

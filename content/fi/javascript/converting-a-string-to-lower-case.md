@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon muuttaminen pienaakkosiksi"
-html_title:           "Javascript: Merkkijonon muuttaminen pienaakkosiksi"
-simple_title:         "Merkkijonon muuttaminen pienaakkosiksi"
+title:                "Merkkijonon muuttaminen pieniksi kirjaimiksi"
+html_title:           "Gleam: Merkkijonon muuttaminen pieniksi kirjaimiksi"
+simple_title:         "Merkkijonon muuttaminen pieniksi kirjaimiksi"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,23 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Konvertointi merkkijonon pienikirjainmuotoon tarkoittaa merkkijonon muuttamista niin, että kaikki isot kirjaimet muutetaan vastaaviksi pieniksi kirjaimiksi. Ohjelmoijat tekevät tämän yleensä sen vuoksi, että he haluavat muuttaa merkkijonon tiedot yhtenäisempään muotoon, jolloin esimerkiksi hakutoiminnot ovat helpompia suorittaa.
+## Mikä & Miksi?
 
-## Kuinka?
+Tekstijonojen muuttaminen pieniksi kirjaimiksi tarkoittaa, että kaikki merkkijonon isot kirjaimet muunnetaan vastaaviksi pieniksi kirjaimiksi. Sitä käytetään usein vertailemaan tekstijonoja riippumatta siitä, kirjoitetaanko ne suurilla vai pienillä kirjaimilla.
+
+## Näin teet: 
+
+Javascriptissa voit muuttaa merkkijonon pieniksi kirjaimiksi käyttämällä `toLowerCase()`-metodia. Tässä on esimerkki:
+
 ```Javascript
-// Esimerkki koodi
-const merkkijono = "TÄMÄ ON ESIMERKKI";
-const pienikirjainmuoto = merkkijono.toLowerCase();
+let teksti = "MoikkA Suomi!";
+let pienet = teksti.toLowerCase();
 
-console.log(pienikirjainmuoto);
-// output: "tämä on esimerkki"
+console.log(pienet);  // tulostaa: "moikka suomi!"
 ```
 
-## Syvempää tietoa
-1. Konvertointi merkkijonon pienikirjainmuotoon tuli käytettäväksi ensimmäisen kerran Unix-käyttöjärjestelmässä.
-2. Vaihtoehtoisesti merkkijonon pienikirjainmuotoon voi muuttaa myös käyttämällä "String.toLowerCase" -funktiota.
-3. Tämän toiminnon toteuttaminen tapahtuu lähdekoodissa usein käyttämällä "for" -silmukkaa ja muuttamalla jokainen kirjain erikseen.
+## Syvä sukellus
+
+`toLowerCase()`-metodi on ollut osa Javascriptiä sen varhaisista versioista lähtien, ja se on standardi tapa saada tekstijono muutettua pieniksi kirjaimiksi. Jokaista merkkijonon kirjainta käsitellään erikseen, mikä tekee metodista luotettavan erilaisissa tilanteissa. 
+
+Vaihtoehtoisesti, jos tarvitset toimintaa, joka on herkkä kielikohtaisille yksityiskohdille, voit käyttää `toLocaleLowerCase()`-metodia. Se toimii samalla tavalla, mutta ottaa huomioon sijainnin (locales) asetukset, mikä on hyödyllistä kielissä, joissa on erikoismerkkejä.
+
+```Javascript
+let teksti = "Äiti!";
+let pienet = teksti.toLocaleLowerCase('tr-TR');  // Tässä käytetään Turkin kielen asetuksia
+
+console.log(pienet);  // tulostaa: "äiti!"
+```
+
+Vaikka nämä metodit ovat hyvin tehokkaita ja helppokäyttöisiä, niiden takana on paljon monimutkaista logiikkaa. Esimerkiksi, ne pitävät sisällään Unicode-taulukot, jotka määrittelevät, miten jokainen suuri kirjain muunnettaisiin vastaavaksi pieneksi kirjaimeksi eri kieliympäristöissä.
 
 ## Katso myös
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase
+
+Jotta voisit syventää ymmärrystäsi merkkijonojen käsittelystä Javascriptissa, tutustu seuraaviin lähteisiin:
+
+* MDN:n [toLowerCase()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase) ja [toLocaleLowerCase()](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase) -metodien dokumentaatio
+* [JavaScript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp) W3Schools-sivustolla.

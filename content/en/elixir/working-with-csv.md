@@ -11,38 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Working with CSV (Comma Separated Values) in Elixir is a way to easily manipulate tabular data stored in text files or databases. Programmers often use CSV to transfer data between systems or to analyze large datasets, as it provides a simple and flexible format for organizing data.
+Comma-Separated Values (CSV) is a file format that stores tabular data. Developers often work with CSV files to handle and analyze large data sets due to its simplicity and wide support.
 
 ## How to:
-To read a CSV file in Elixir, we can use the built-in CSV library and its ```parse_file/2``` function. This function takes in the file path of the CSV file and returns a list of lists where each inner list represents a row in the CSV file. Here's an example:
 
-```
-Elixir
-rows = CSV.parse_file("my_data.csv")
-# [["Name", "Age", "Country"],
-#  ["John", "25", "USA"],
-#  ["Jane", "30", "Canada"]]
-```
+Here is how you can read and write CSV files using Elixir:
 
-To write a list of data to a CSV file, we can use the ```write/2``` function from the CSV library. This function takes in a list of lists and a file path and will write the data to the specified file. Here's an example:
+First, add the following to your `mix.exs` dependencies:
 
-```
-Elixir
-rows = [
-  ["Name", "Age", "Country"],
-  ["John", "25", "USA"],
-  ["Jane", "30", "Canada"]
-]
-
-CSV.write(rows, "my_data.csv")
-# The CSV file "my_data.csv" is created with the data from the list of lists.
+```Elixir
+defp deps do
+  [
+    {:csv, "~> 2.0"}
+  ]
+end
 ```
 
-## Deep Dive:
-CSV was first introduced in the early 1970s and has become a widely used data format due to its simplicity and compatibility with various software systems. While CSV is a popular choice for storing data, other alternatives such as JSON or XML may be preferred for certain use cases.
+Then, install dependencies with `mix deps.get`.
 
-In Elixir, the CSV library is included in the standard library, making it easily accessible for developers. This library also provides functions for customizing the delimiter and handling headers in the CSV file.
+To read a CSV file:
 
-## See Also:
-- [Elixir CSV documentation](https://hexdocs.pm/csv/CSV.html)
-- [CSV file format](https://tools.ietf.org/html/rfc4180)
+```Elixir
+{:ok, data} = File.stream!("example.csv") |> CSV.decode
+```
+For writing a CSV file:
+
+```Elixir
+data = [ ["name", "age"], ["Alice", "25"], ["Bob", "30"] ]
+
+{:ok, file} = File.open("new.csv", [:write])
+
+CSV.encode(data) |> Enum.into(file)
+```
+## Deep Dive
+
+CSV was first formalized in 2005 by the Internet Engineering Task Force (IETF). It's a de facto standard more than it is an official one. In Elixir, dealing with CSV files is straightforward using the CSV library, but there are caveats. Due to its implementation, it doesn't support complex CSV features like multi-line fields.
+
+There are alternatives to CSV such as JSON, XML, etc., but the choice of format depends heavily on the use case. CSV is popular for its simplicity, widespread use, and compatibility with spreadsheet programs like MS Excel.
+
+## See Also
+
+- Elixir CSV library documentation: https://hexdocs.pm/csv/readme.html
+- Internet Engineering Task Force (IETF): https://www.ietf.org/
+- JSON vs XML vs CSV: https://www.geeksforgeeks.org/difference-between-xml-and-csv/

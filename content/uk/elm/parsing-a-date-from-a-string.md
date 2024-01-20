@@ -1,7 +1,7 @@
 ---
-title:                "Розбір дати зі строки"
-html_title:           "Elm: Розбір дати зі строки"
-simple_title:         "Розбір дати зі строки"
+title:                "Аналіз дати з рядка"
+html_title:           "C++: Аналіз дати з рядка"
+simple_title:         "Аналіз дати з рядка"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,26 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Парсинг дати з рядка - це процес перетворення дати, що зберігається у вигляді рядка, до спеціального об'єкту дати, який можна використовувати для подальшої обробки та маніпуляцій. Програмісти часто використовують парсинг дати з рядка, оскільки це дозволяє їм змінювати та аналізувати дані з зручними інструментами.
+## Що і чому? 
 
-## How to:
-```elm
-import Date exposing (Date, fromIsoString)
+Розбір дати з рядка - це, по суті, перетворення текстового представлення дати в структуру даних, підтримувану мовою програмування. Програмісти роблять це, щоб маніпулювати датами та часом у своїх застосунках більш природньо і ефективно.
 
-dateString = "2021-03-18"
-date = fromIsoString dateString
--- date = Ok (Date 2021 Month.mar 18)
+## Як це зробити:
 
-invalidDateString = "2021-13-01"
-date = fromIsoString invalidDateString
--- date = Err "invalid month"
+```Elm
+import Date exposing (Date)
+import Time 
+
+parseDate : String -> Date 
+parseDate str =
+    case Time.fromIsoString str of
+        Ok time -> Time.toDate time
+        Err msg -> Debug.todo "handle the error here"
 ```
+В цьому коді ми імпортуємо модулі Date та Time. `parseDate` - це функція, яка приймає рядок і перетворює його на дату. `Time.fromIsoString` перевіряє, чи можна час перевести з ISO рядка. У разі успіху ми потім перетворюємо цей час на дату. У випадку помилки ми маємо обробити цю помилку.
+              
+## Поглиблений огляд:
 
-## Deep Dive:
-Парсинг дати з рядка є важливим елементом програмування, оскільки дати часто зберігаються у вигляді рядків у базах даних чи отримуються з вхідних даних. Існує кілька альтернативних методів парсингу дати з рядка, наприклад, використання регулярних виразів або сторонніх бібліотек. У реалізації Elm, метод ```fromIsoString```, що використовує стандартний формат ISO 8601, є надійною та зручною опцією для парсингу дати з рядка.
+Розбір дати з рядка існував ще до появи мови Elm. Раніш програмісти використовували складні регулярні вирази для розбору дати, що було помилкою.
 
-## See Also:
-- [Official Elm Date Documentation](https://package.elm-lang.org/packages/elm/core/latest/Date)
-- [ISO 8601 Date Format](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [Regular Expressions in Elm by Richard Feldman](https://www.youtube.com/watch?v=4LOIY9i_BeE)
+У Elm є різні альтернативи, деякі більш гнучкі, а деякі більш строгі, залежно від потреб.
+
+Використовуючи часові зони та інші атрибути, розбір дати з рядка може стати складним. Elm робить цей процес простим, використовуючи модуль Time.
+
+## Дивитися також:
+
+1. [Офіційна документація Elm з модулем Date](https://package.elm-lang.org/packages/elm/time/latest/Time)
+2. [Руководство Elm для часу та дати](https://elmprogramming.com/time-and-date.html)
+3. [Стаковерфлоу: Розбір дати у Elm](https://stackoverflow.com/questions/48257896/date-and-time-in-elm)

@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Python: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Python"
 category:             "Python"
@@ -10,34 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
-Buscar y reemplazar texto es un proceso común en la programación que consiste en encontrar y cambiar una palabra o conjunto de palabras por otra en un texto determinado. Los programadores lo hacen para ahorrar tiempo y evitar errores al realizar cambios en su código o en grandes cantidades de texto.
+# Cambiando y Buscando Texto en Python
 
-# Cómo hacerlo:
-```
-Python
-# Usando el método replace() para reemplazar una palabra en una cadena de texto
-cadena = "Hola mundo!"
-nueva_cadena = cadena.replace("mundo", "Python")
-print(nueva_cadena)
-# Salida: Hola Python!
+## ¿Qué y Por Qué?
+Cambiar y buscar texto son operaciones comunes en la programación. Te permiten encontrar cadenas de texto específicas y reemplazarlas con otras, lo que es útil para la manipulación de datos y la automatización de procesos.
+
+## ¿Cómo hacerlo?
+
+Usamos la función `replace()` en Python. Esta función toma dos argumentos, el texto a buscar y el texto por el cual se va a reemplazar.
+
+```Python 
+texto = "Hola Python!"
+nuevo_texto = texto.replace("Python", "Mundo")
+print(nuevo_texto)
 ```
 
+La salida será:
+
+```Python 
+"Hola Mundo!"
 ```
-Python
-# Utilizando expresiones regulares (regex) para realizar búsquedas y reemplazos avanzados
+
+## Deep Dive
+
+La función `replace()` en python es parte de una biblioteca mucho mayor de métodos de cadenas de texto. Esta biblioteca ha evolucionado con Python desde sus primeras versiones.
+
+A pesar de su utilidad, `replace()` podría no ser la mejor opción en algunas situaciones. Por ejemplo, si estás buscando coincidencias más complejas, las expresiones regulares (regex) podrían ser una mejor opción. El módulo `re` en Python proporciona funciones para trabajar con regex.
+
+```Python 
 import re
+texto = "Hola Python!"
+nuevo_texto = re.sub('Python', 'Mundo', texto)
+print(nuevo_texto)
+```
+La salida será igualmente: 
 
-cadena = "Hola mundo!"
-nueva_cadena = re.sub(r"mundo", "Python", cadena)
-print(nueva_cadena)
-# Salida: Hola Python!
+```Python
+"Hola Mundo!"
 ```
 
-# Profundizando:
-Buscar y reemplazar texto se ha vuelto más fácil a lo largo de los años gracias a los avances en tecnología y los lenguajes de programación. Antiguamente, los programas de búsqueda y reemplazo eran limitados y requerían mucho tiempo y esfuerzo para llevar a cabo cambios simples. Sin embargo, con el uso de regex y otros métodos, los programadores ahora pueden realizar búsquedas y reemplazos de manera más eficiente en grandes cantidades de texto. Alternativamente, también pueden utilizar editores de texto con esta funcionalidad incorporada.
+Incluso podríamos usar list comprehension para hacer reemplazos en Python.
 
-# Ver también:
-- Documentación oficial de Python: https://docs.python.org
-- Expresiones regulares en Python: https://docs.python.org/3/library/re.html
-- Editores de texto recomendados para programar: https://www.fullstackpython.com/blog/best-ide-text-editor-python.html
+```Python 
+texto = "Hola Python!"
+nuevo_texto = ''.join(['Mundo' if i=='Python' else i for i in texto.split()])
+print(nuevo_texto)
+```
+De nuevo, la salida será:
+
+```Python 
+"Hola Mundo!"
+```
+
+## Ver También
+
+Para obtener más información sobre la manipulación de cadenas de texto en Python, consulte los siguientes enlaces:
+
+- Tutorial oficial de Python sobre texto: https://docs.python.org/es/3/tutorial/introduction.html#strings
+- Documentación oficial de Python sobre el módulo `re`: https://docs.python.org/es/3/library/re.html

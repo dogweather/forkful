@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Lua: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -11,28 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Czytanie pliku tekstowego to podstawowa czynność, którą programiści wykonują w swoich projektach. Polega ono na odczytaniu i wykorzystaniu zawartości pliku w celu przetworzenia go przez program. Jest to ważny krok, ponieważ pozwala na automatyczne pobieranie i analizowanie dużej ilości informacji.
+
+Czytanie pliku tekstowego to proces, w którym program komputerowy odbiera i interpretuje dane z pliku zapisanego w formacie tekstowym. Programiści robią to, aby uzyskać dane do przetwarzania lub modyfikacji.
 
 ## Jak to zrobić:
+
+Załóżmy, że mamy plik o nazwie 'tekst.txt'. Aby odczytać ten plik w Lua, użyjemy następujących linii kodu:
+
+```Lua
+local file = io.open("tekst.txt", "r")  -- otwórz plik do odczytu
+
+if file then  
+    for line in file:lines() do  -- iteruj poprzez każdą linię
+        print(line)  -- wyświetl zawartość linii
+    end
+    file:close()  -- zawsze pamiętaj, aby zamknąć plik
+else
+    print("Nie udało się otworzyć pliku.")
+end
 ```
--- Przykładowy kod w języku Lua
--- Otwórz plik tekstowy
-file = io.open("tekstowy_plik.txt", "r")
 
--- Odczytaj zawartość pliku i przypisz ją do zmiennej
-content = file:read("*all")
-
--- Wyświetl zawartość pliku
-print(content)
-
--- Zamknij plik
-file:close()
+Jeżeli plik "tekst.txt" zawiera następujące linie:
+```
+Witaj Świecie!
+Jak się masz?
 ```
 
-## Głębsza analiza:
-Czytanie pliku tekstowego jest możliwe dzięki wbudowanemu modułowi `io` w języku Lua. Ten moduł zapewnia funkcje do zarządzania plikami, w tym do otwierania, odczytywania i zamykania plików. Programiści mają również do wyboru inne metody czytania plików w języku Lua, takie jak wykorzystanie biblioteki `lfs` lub zastosowanie zewnętrznych narzędzi takich jak `LuaFileSystem`.
+To wyjście programu będzie takie samo:
+```
+Witaj Świecie!
+Jak się masz?
+```
 
-## Zobacz także:
-- [Dokumentacja Lua - I/O Biblioteka](https://www.lua.org/manual/5.3/manual.html#6.8)
-- [Oficjalna strona LuaFileSystem](https://keplerproject.github.io/luafilesystem/manual.html)
-- [Rozszerzona biblioteka modułów Lua (LFS)](https://keplerproject.github.io/luafilesystem/manual.html)
+
+## Więcej szczegółów:
+1) **Kontekst historyczny:** Lua, będący językiem skryptowym, zawsze zapewniał prosty sposób do interakcji z zasobami systemowymi, takimi jak pliki tekstowe.
+   
+2) **Alternatywy:** Można także odczytać cały plik tekstowy naraz za pomocą funkcji `read("*a")`, a następnie zinterpretować dane według potrzeb. Choć jest to wygodne, lepiej unikać tego przy dużej ilości danych, ponieważ może to prowadzić do problemów z wydajnością.
+   
+3) **Szczegóły implementacji:** W powyższym przykładzie użyliśmy biblioteki I/O Lua. `io.open` służy do otwarcia pliku, `file:lines()` do iterowania przez linie pliku, a `file:close()` do zamknięcia pliku po zakończeniu.
+
+## Zobacz również:
+- Dokumentacja Lua na temat I/O: https://www.lua.org/pil/21.1.html
+- Przewodnik Lua I/O: https://www.tutorialspoint.com/lua/lua_file_io.htm

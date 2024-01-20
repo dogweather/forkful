@@ -1,7 +1,7 @@
 ---
-title:                "Análise de html"
-html_title:           "C#: Análise de html"
-simple_title:         "Análise de html"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,43 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+# Web Scraping com C#: Como Analisar HTML 
 
-Fazer o parsing (análise) de HTML é um processo de extrair informações específicas de uma linguagem de marcação usada para criar páginas da web. Os programadores geralmente fazem isso para facilitar o acesso e o processamento dessas informações, economizando tempo e trabalho manual.
+## O Que & Por Quê?
 
-## Como fazer:
+Analisar HTML significa extrair dados de um documento HTML. Programadores fazem isso para coletar informações úteis de sites, tendo em vista que muitos recursos de dados estão disponíveis nesse formato.
+
+## Como Fazer:
+
+Vamos usar a biblioteca `HtmlAgilityPack`. Para instalar, use o seguinte comando no Package Manager Console: 
 
 ```C#
+PM> Install-Package HtmlAgilityPack
+```
+
+Agora, aqui está um exemplo simples para extrair links de uma página da web:
+
+```C#
+using HtmlAgilityPack;
 using System;
-using HtmlAgilityPack; // Biblioteca para análise de HTML
+using System.Linq;
 
-string url = "https://www.example.com/"; // URL do site a ser analisado
-
-// Criando objeto do tipo HtmlWeb para fazer o download do conteúdo da página
-var web = new HtmlWeb();
-var doc = web.Load(url); // Carrega o conteúdo da página em um objeto do tipo HtmlDocument
-
-// Usando o método SelectNodes para selecionar todos os elementos com a tag "h1"
-var headings = doc.DocumentNode.SelectNodes("//h1");
-
-foreach (var heading in headings)
+public class Program
 {
-    Console.WriteLine(heading.InnerText); // Imprime o conteúdo de cada elemento selecionado
+    public static void Main()
+    {
+        var webGet = new HtmlWeb();
+        var document = webGet.Load("https://www.example.com");
+        var nodes = document.DocumentNode.SelectNodes("//a[@href]");
+
+        foreach(var node in nodes)
+        {
+             Console.WriteLine(node.InnerHtml);
+        }
+    }
 }
 ```
 
-Output:
-```
-Título da Página 1
-Título da Página 2
-Título da Página 3
-```
+Este código irá imprimir todos os links (tag 'a') presentes na página "https://www.example.com".
 
 ## Mergulho Profundo:
 
-Fazer parsing de HTML é uma tarefa comum para desenvolvedores da web, pois permite que eles extraiam informações úteis dos sites para uso em seus projetos. Antes da popularidade dos frameworks e bibliotecas para análise de HTML, esse processo era feito manualmente, o que consumia muito tempo e esforço. No entanto, hoje existem várias opções, como o HtmlAgilityPack, que facilitam esse processo.
+(1) **Contexto Histórico**: A biblioteca `HtmlAgilityPack` surgiu em um contexto onde a análise de HTML não era uma tarefa fácil para os desenvolvedores de C#. Mesmo as bibliotecas existentes, na época, não conseguiam interpretar corretamente a estrutura aninhada de elementos HTML, ignorando muitas vezes os erros de sintaxe encontrados nas páginas da web.
+
+(2) **Alternativas**: Algumas outras bibliotecas para analisar HTML em C# incluem `AngleSharp` e `CsQuery`. Ambas são ótimas opções, cada uma com seus respectivos recursos.
+
+(3) **Detalhes de Implementação**: `HtmlAgilityPack` ignora erros de sintaxe e pode analisar até mesmo HTML malformado. Ela opera em uma arquitetura de pilhas de leitura, dando-lhe a capacidade de fazer buscas complexas e manipulações ao mesmo tempo em que mantém a performance.
 
 ## Veja Também:
 
-- [Documentação do HtmlAgilityPack](https://html-agility-pack.net/)
-- [Comparação entre diferentes bibliotecas de análise de HTML em C#](https://www.codeproject.com/Articles/659019/A-Performance-Comparison-of-HTML-Parsers)
+* [Documentação oficial `HtmlAgilityPack`](https://html-agility-pack.net/)
+* [`AngleSharp` no GitHub](https://github.com/AngleSharp/AngleSharp)
+* [`CsQuery` no GitHub](https://github.com/jamietre/CsQuery)
+
+----
+
+Lembre-se, a prática é a chave para se tornar um mestre na análise de HTML com C#. Comece pequeno, desmonte um site de cada vez, e veja até onde você pode ir.

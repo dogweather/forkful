@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "Javascript: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Getting Started"
@@ -10,40 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
+## Mikä & Miksi?
 
-Projektin aloittaminen on prosessi, jossa ohjelmoija luo uuden ohjelmiston tai sovelluksen tyhjästä. Ohjelmoijat aloittavat uuden projektin yleensä, kun he haluavat luoda jotain täysin uutta tai parantaa jo olemassa olevaa ohjelmistoa.
+Uuden projektin aloittaminen ohjelmoinnissa tarkoittaa uuden sovelluksen tai järjestelmän kehittämistä, joka voidaan toteuttaa tyhjästä tai aiemmin luotujen pohjien päälle. Ohjelmoijat aloittavat uusia projekteja tarjoamaan ratkaisuja erilaisiin ongelmiin tai luomaan uusia toiminnallisuuksia.
 
-## Kuinka tehdä:
+## Näin se tehdään:
 
 ```Javascript
-// Luo uusi tyhjä projekti
+// Luo uusi projekti Node.js:ssä: 
 
-mkdir uusi_projekti
+// 1. Asenna ensin Node.js & npm (Node Package Manager) omalle tietokoneellesi.
+// 2. Avaa komentorivi ja navigoi haluamaasi kansioon
+// 3. Luo uusi projekti kirjoittamalla komento "npm init"
 
-// Siirry uuteen projektiin
+// Tämä komento luo uuden tiedoston nimeltä "package.json", joka sisältää kaikki projektisi tarvittavat tiedot.
 
-cd uusi_projekti
-
-// Luo uusi tiedosto projektille
-
-touch index.js
-
-// Avaa tiedosto ja aloita koodaaminen
-
-code index.js
 ```
 
-## Syvällinen sukellus:
+```Javascript
+// Luo uusi projekti React.js:ssä:
 
-Historiallinen tausta: Projektin aloittamisen merkitys on kasvanut viime vuosina, kun ohjelmistokehitys on kasvanut valtavasti. Ohjelmoijat ovat jatkuvasti kehittämässä uusia projekteja vastaamaan muuttuvia tarpeita ja haasteita.
+// 1. Asenna ensin Node.js & npm, jos et ole vielä tehnyt niin
+// 2. Avaa komentorivi ja navigoi haluamaasi kansioon
+// 3. Luo uusi React-projekti kirjoittamalla komento "npx create-react-app projekti-nimi"
 
-Vaihtoehdot: On olemassa erilaisia tapoja aloittaa uusi projekti, kuten käyttämällä valmiita pohjia tai kirjoittamalla koodin tyhjästä.
+// Tämä komento luo uuden kansion nimeltään "projekti-nimi", joka sisältää kaikki tarvittavat tiedostot React-sovelluksellesi.
+```
 
-Toteutus: Kun aloitat uuden projektin, on tärkeää suunnitella hyvin ja käyttää toimivia käytäntöjä. Tämä auttaa välttämään ongelmia ja tekee projektin kehittämisestä helpompaa ja tehokkaampaa.
+## Syvällisempi sukellus
 
-## Katso myös:
+Node.js on avoimen lähdekoodin ohjelmistokehys, joka julkaistiin ensimmäisen kerran vuonna 2009 ja joka on suunniteltu kehittämään nopeita ja skaalautuvia verkkosovelluksia. 
 
-[Javascriptin aloittelijan opas](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+Vaihtoehtoisesti voit käyttää muita Javascript-pohjaisia kehyksiä, kuten Express.js tai Meteor.js, tai eri ohjelmointikieliä ja niiden kehyksiä, kuten Pythonin Django tai Rubyn Ruby on Rails. 
 
-[Valmiiden pohjien hyödyntäminen uusissa projekteissa](https://www.freecodecamp.org/news/learn-react-in-7-minutes-92a1d2a2ea27/)
+Kun aloitat uuden projektin Node.js:ssä tai React.js:ssä, kehys asentaa useita oletusympäristöjä ja riippuvuuksia, jotka auttavat nopeuttamaan projektin kehitystä.
+
+## Katso myös
+
+[Node.js:n viralliset dokumentit](https://nodejs.org/en/docs/)
+
+[React.js:n viralliset dokumentit](https://reactjs.org/docs/getting-started.html)
+
+[Express.js:n viralliset dokumentit](https://expressjs.com/en/starter/installing.html)
+
+[Meteor.js:n viralliset dokumentit](https://docs.meteor.com/#/full/quickstart)
+
+[Django:n viralliset dokumentit](https://www.djangoproject.com/start/)
+
+[Ruby on Rails:n viralliset dokumentit](https://guides.rubyonrails.org/getting_started.html)

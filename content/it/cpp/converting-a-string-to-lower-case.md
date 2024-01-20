@@ -1,7 +1,7 @@
 ---
-title:                "Trasformare una stringa in minuscolo"
-html_title:           "C++: Trasformare una stringa in minuscolo"
-simple_title:         "Trasformare una stringa in minuscolo"
+title:                "Convertire una stringa in minuscolo"
+html_title:           "Arduino: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,27 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-Convertire una stringa in minuscolo è un'operazione molto comune nella programmazione. Consiste nel trasformare tutte le lettere maiuscole di una stringa in lettere minuscole. I programmatori spesso fanno questo per ragioni di uniformità, per una migliore corrispondenza tra stringhe di input o semplicemente per motivi estetici.
+## Che cos'è e perché?
+
+La conversione di una stringa in minuscolo è un'operazione comune nella programmazione C++, che trasforma tutte le lettere maiuscole in una stringa in minuscolo. I programmatori lo fanno per motivi di confronto e per garantire l'omogeneità dei dati.
 
 ## Come fare:
+
+Ecco un esempio semplice su come convertire una stringa in minuscolo usando la libreria standard C++.
+
 ```C++
+#include <cctype>
 #include <iostream>
-#include <string>
 #include <algorithm>
 
-int main() {
-    std::string str = "CIAO A TUTTI!";
-    std::transform(str.begin(), str.end(), str.begin(), ::tolower);
-    std::cout << str; //output: ciao a tutti!
+int main()
+{
+    std::string str = "CIAO, MONDO!";
+    std::transform(str.begin(), str.end(), str.begin(),
+        [](unsigned char c){ return std::tolower(c); });
+
+    std::cout << str << std::endl;
     return 0;
 }
 ```
 
-## Approfondimenti:
-Ci sono diversasoluzioni per convertire una stringa in minuscolo. Una delle prime è stata l'uso della libreria string.h che contiene la funzione strlwr(). Tuttavia, questa funzione potrebbe avere comportamenti imprevedibili su alcune piattaforme. Altre opzioni includono l'uso delle funzioni di libreria di C++ come std::tolower() o std::transform(). È importante notare che quando si lavora con caratteri speciali, come ad esempio lettere accentate, l'implementazione della conversione in minuscolo potrebbe non essere consistente tra diverse lingue e piattaforme.
+In output si vedrà:
+
+```
+ciao, mondo!
+```
+
+## Un tuffo nel profondo
+
+Historicamente, la conversione di stringhe è stata un'operazione essenziale in programmazione sin dai suoi primi giorni. In C++, abbiamo diversi modi per convertire una stringa in minuscolo. Oltre alla funzione `std::transform`, possiamo utilizzare cicli for per farlo manualmente.
+
+```C++
+std::string str = "CIAO, MONDO!";
+for(auto & c: str) c = std::tolower(c);
+```
+
+Riguardo ai dettagli di implementazione, ricorda che le funzioni come `std::tolower` operano sulla base dei valori ASCII dei caratteri. Le lettere maiuscole hanno valori ASCII da 65 a 90 e le minuscole da 97 a 122. Quando chiamiamo `std::tolower`, aggiunge essenzialmente 32 al valore ASCII del carattere, convertendolo in rispettiva versione minuscola.
 
 ## Vedi anche:
-- [Funzione strlwr() della libreria string.h](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [Funzione std::tolower() della libreria di C++](https://en.cppreference.com/w/cpp/string/byte/tolower)
-- [Funzione std::transform() della libreria di C++](https://en.cppreference.com/w/cpp/algorithm/transform)
+
+Per ulteriori informazioni sulla lavorazione delle stringhe in C++, si possono consultare le seguenti risorse:
+
+- [C++ Standard Library: String](http://www.cplusplus.com/reference/string/string/)
+- [C++ Algorithm Library](http://en.cppreference.com/w/cpp/algorithm)
+- [C++ ctype library](http://www.cplusplus.com/reference/cctype/)

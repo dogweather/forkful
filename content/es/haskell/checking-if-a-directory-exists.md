@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "Haskell: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "Haskell: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
+## ¿Qué y Por qué?
 
-Comprobar si un directorio existe es una forma de verificar si un directorio específico está presente en una ubicación dada. Los programadores suelen hacerlo para asegurarse de que el código pueda acceder a un directorio antes de intentar manipular archivos dentro de él.
+Verificar si existe un directorio es una tarea básica en cualquier lenguaje de programación. Un directorio es un archivo del sistema que contiene otros archivos y directorios. Como programador, podrías necesitar verificar si un directorio existe antes de intentar leer, escribir o manipular de alguna manera los contenidos del directorio.
 
-# Cómo hacerlo
+## Cómo hacerlo:
 
-Puedes verificar si un directorio existe usando la función `doesDirectoryExist` de la biblioteca `System.Directory` de Haskell. Esta función toma un `String` como argumento, que es la ruta al directorio que deseas verificar. El resultado será un valor booleano que indicará si el directorio existe o no.
+En Haskell, usamos el módulo `System.Directory` y la función `doesDirectoryExist` como se muestra:
 
 ```Haskell
-import System.Directory (doesDirectoryExist)
-
--- Verificar si el directorio "ejemplo" existe
-doesDirectoryExist "ejemplo"
--- Devuelve True si existe o False si no
+import System.Directory
+main = do
+  let path = "/path/to/directory"
+  dirExists <- doesDirectoryExist path
+  print dirExists
 ```
 
-# Inmersión profunda
+Ejecutar este código devolverá `True` si el directorio especificado existe, y `False` si no existe.
 
-Antes de la introducción de la función `doesDirectoryExist` en Haskell, los programadores tenían que usar una combinación de funciones de manejo de directorios y de archivos para verificar si un directorio existía. Esto era más verboso y requería un conocimiento más profundo del sistema de archivos.
+## Profundización:
 
-Alternativamente, también puedes usar la función `listDirectory` para obtener una lista de todos los archivos y directorios en una ubicación específica. Luego puedes buscar en esa lista el nombre del directorio que buscas.
+Verificar si un directorio existe no siempre ha sido tan directo en los lenguajes de programación. En los primeros días de los sistemas operativos, los programas tenían que interactuar directamente con el sistema operativo para realizar estas comprobaciones.
 
-# Ver también
+Usar `System.Directory` y `doesDirectoryExist` no es la única forma de hacerlo en Haskell. Por ejemplo, puedes usar la biblioteca `Shelly` que es más de alto nivel:
 
-- Documentación de la función `doesDirectoryExist`: [https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:doesDirectoryExist)
-- Documentación de la función `listDirectory`: [https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:listDirectory](https://hackage.haskell.org/package/directory/docs/System-Directory.html#v:listDirectory)
+```Haskell
+import Shelly
+main = do
+  let path = "/path/to/directory"
+  dirExists <- shelly $ test_d path
+  print dirExists
+```
+
+La función `doesDirectoryExist` utiliza la interacción del sistema operativo a través de FFI (Interfaz de Funciones Extranjeras).
+
+## Consulta también:
+
+- Módulo `System.Directory`: http://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html
+- Módulo `Shelly`: http://hackage.haskell.org/package/shelly-1.9.0/docs/Shelly.html
+
+Evita las complicaciones y verifica siempre si un directorio existe antes de intentar operar con él en tu código.

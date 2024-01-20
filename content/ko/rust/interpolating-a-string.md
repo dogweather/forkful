@@ -1,6 +1,6 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Rust: 문자열 보간하기"
+html_title:           "Clojure: 문자열 보간하기"
 simple_title:         "문자열 보간하기"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,31 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#이게 뭐고 왜 하는 걸까?
-## 무엇인가요?
-문자열 내부에 변수 값을 삽입하는 것을 문자열 삽입(interpolating a string)이라고 합니다. 프로그래머들은 이를 사용하여 변수 값을 동적으로 문자열에 추가할 수 있습니다.
+## 무엇 & 왜?
 
-## 어떻게 하나요?
+문자열 보간은 변수, 상수, 식 등을 문자열 안에 기재하는 것을 의미하며 프로그래머들은 이를 토대로 보다 손쉽게 변수의 값 나타내고, 코드의 가독성을 높이기 위해 사용합니다.
+
+## 방법:
+
+다음은 Rust 언어에서 문자열 보간을 진행하는 방법을 안내하는 코드 예제입니다.
+
 ```Rust
-let name = "John";
-let age = 25;
-println!("안녕하세요, 내 이름은 {}이고 {}살입니다!", name, age);
-```
-출력:
-```
-안녕하세요, 내 이름은 John이고 25살입니다!
+fn main() {
+    let name = "Peter";
+    let age = 23;
+    println!("Hello, my name is {} and I am {} years old.", name, age);
+}
 ```
 
-## 깊게 들어가보기
-### 역사적 배경
-문자열 삽입은 C 언어에서 시작되었으며, 여러 다른 프로그래밍 언어에서 채택되었습니다. Rust에서는 중괄호({}) 안에 변수 이름을 넣어서 문자열 삽입을 할 수 있습니다.
+이 코드를 실행하면 결과는 다음과 같이 출력됩니다.
 
-### 대안
-문자열 삽입을 수행하기 위해 Rust에서는 또 다른 방법인 "문자열 포매팅(string formatting)"을 사용할 수 있습니다. 이 방법은 `format!` 매크로를 사용하여 동적 문자열을 만들 수 있도록 해줍니다.
+```Rust
+Hello, my name is Peter and I am 23 years old.
+```
 
-### 구현 세부사항
-Rust에서 문자열 삽입은 `println!` 매크로와 비슷한 방식으로 작동합니다. 중괄호 안에 변수 이름을 넣어서 해당 변수의 값을 문자열로 대체합니다.
+## 깊게 알아보기: 
 
-## 관련 자료
-- [Rust 공식 문서 - 문자열 삽입](https://doc.rust-lang.org/std/fmt/#fill-and-alignment)
-- [Rust 공식 문서 - 문자열 포매팅](https://doc.rust-lang.org/std/fmt/#fill-and-alignment)
+1. 연혁: 문자열 보간 기법은 오래 전부터 다양한 프로그래밍 언어에서 사용되어 왔습니다. Rust와 같은 현대적인 언어에서는 이를 보다 간소화하고, 사용자 친화적으로 구현하였습니다.
+2. 다른 방법: 문자열과 변수를 더하거나 결합하는 방식으로도 간단한 문자열 보간을 할 수 있지만, Rust에서는 `format!` 매크로를 활용하여 간결하게 표현할 수 있습니다.
+3. 구현 세부정보 :  Rust에서 문자열 보간은 `println!` or `format!` 매크로를 통해 처리됩니다. 이들은 변수나 표현식을 문자열로 만들어 문자열에 직접 삽입할 수 있도록 합니다.
+
+## 참고 자료:
+
+- [Rust 프로그래밍 공식 가이드](https://doc.rust-lang.org/book/)
+- [Rust by Example](https://doc.rust-lang.org/stable/rust-by-example/)
+- [Rust에 대한 Stackoverflow 토론](https://stackoverflow.com/questions/tagged/rust)

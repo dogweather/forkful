@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämässä http-pyyntöä perusautentikoinnilla"
-html_title:           "Gleam: Lähettämässä http-pyyntöä perusautentikoinnilla"
-simple_title:         "Lähettämässä http-pyyntöä perusautentikoinnilla"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mikä & Miksi?
-Lähettämällä HTTP-pyynnön perustason tunnistautumisella tarkoitetaan sitä, että käyttäjä lähettää pyynnön verkkopalvelimelle, joka vaatii käyttäjän tunnistautumisen. Tämä tapahtuu lisäämällä käyttäjän käyttäjätunnus ja salasana pyyntöön. Ohjelmoijat tekevät tätä voidakseen tehdä asioita, kuten lähettää tietoja palvelimelle tai hakea tietoja tietokannasta.
+## Mikä & Miksi?
 
-Miten:
-Esimerkiksi voidaksesi hakea tietoja käyttäjätunnuksellasi ja salasanallasi suojatulta API:lta, sinun on lisättävä pyyntöösi käyttäjätunnus ja salasana. Tämä tapahtuu käyttämällä Gleamin ```Gleam http.send``` ja ```Gleam http.basic_auth``` funktioita. Alla on esimerkit siitä, miten tämä tehdään:
+HTTP-pyynnön lähettäminen perustodentamisen kanssa on prosessi, jossa lähetetään tietoja palvelimelle käyttämällä salasanoja tai muita tunnistetietoja. Ohjelmoijat tekevät tämän ylläpitääkseen tietoturvaa ja suojatakseen luottamuksellisia tietoja.
+
+## Miten:
+
+Alla on esimerkki siitä, miten lähetetään HTTP-pyyntö perustodentamisen kanssa Gleam-ohjelmointikielellä:
 
 ```Gleam
-http.send(
-    url: "https://api.example.com/data",
-    method: Http.Get,
-    headers: [basic_auth("kayttajatunnus", "salasana")],
-  )
-```
+let request = http.new_request("http://example.com")
+ |> http.post(_, "body content")
+ |> http.header("Authorization", "Basic QWxhZGRpbjpvcGVuIHNlc2FtZQ==")
+ |> http.make()
+ 
+ case http.send(request) {
+   Error(e) -> e
+   Ok(response) -> response.body
+ }
+ ```
+ 
+Tässä ohjelman tuloste:
+ 
+ ```Gleam
+ "Response body here..."
+ ```
+ 
+## Syvennys
 
-Tuloksen pitäisi olla vastaus, joka sisältää halutut tiedot.
+HTTP-pyynnön lähettäminen perustodentamisella on ollut käytössä pitkään, ja sen historiallinen konteksti ulottuu verkkoprotokollien alkuun. Se on tärkeä arkaluonteisen datan lähettämisen menetelmä, mutta ei suositelluin vaihtoehto, koska sen tietoturva on verrattain heikko. Usein sen alternatiiveiksi ehdotetaan vahvempia todentamismenetelmiä, kuten token-pohjaista todentamista tai OAuth2:ta.
 
-Syvimmälle sukellus:
-Peruskäyttäjätunnistus on yksi monista käytetyistä tunnistusmenetelmistä HTTP-pyynnöissä. Siinä käyttäjän tunnistautumistiedot (käyttäjätunnus ja salasana) toimitetaan Base64-muodossa ja lisätään pyyntöön otsikkoon ```Authorization```. Tämä menetelmä on ollut käytössä jo vuodesta 1999 ja se on yksi yksinkertaisimmista tavoista varmistaa, että käyttäjän tiedot ovat suojassa.
+## Katso myös:
 
-Vaihtoehtoja ovat esimerkiksi Digest-tunnistautuminen, jossa käyttäjän salasanaa ei tallenneta selkokielisenä tietokantaan, sekä OAuth, jossa käyttäjä tunnistetaan palveluntarjoajan sivuston kautta.
+Lisätietoja ja muita lähteitä voi löytää seuraavista linkeistä:
 
-Katso myös:
-- [Gleamin HTTP-moduuli](https://gleam.run/modules/http)
-- [Base64-koodekointi](https://fi.wikipedia.org/wiki/Base64)
+1. [Gleam HTTP Package Documentation](https://hexdocs.pm/gleam_http/readme.html)
+2. [How To Use HTTP Basic Authentication With HTTP Package In Gleam](https://gleam.run/book/tour/http-features.html)
+3. [RFC7617- Basic Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617)
+
+Suosittelen tutustumaan näihin aiheisiin syvällisemmin etenkin, jos teet paljon verkko-ohjelmointia tai työskentelet arkaluonteisten tietojen kanssa.

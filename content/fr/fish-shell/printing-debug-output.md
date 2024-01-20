@@ -1,7 +1,7 @@
 ---
-title:                "Affichage des sorties de débogage"
-html_title:           "Fish Shell: Affichage des sorties de débogage"
-simple_title:         "Affichage des sorties de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Testing and Debugging"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi? 
-
-L'impression de sortie de débogage est une méthode courante utilisée par les programmeurs pour vérifier et comprendre l'exécution de leur code. Cela implique d'ajouter des lignes de code spécifiques qui affichent des informations sur le déroulement du programme lors de son exécution.
-
-Cette pratique est utile pour trouver des erreurs et comprendre le comportement du programme, en particulier lorsqu'il ne fonctionne pas comme prévu. Cela permet également aux programmeurs de suivre le flux d'exécution dans leur code et de vérifier les valeurs des variables à différents moments de l'exécution du programme.
+## Quoi & Pourquoi?
+L'affichage des sorties de débogage est une technique qu'utilisent les programmeurs pour suivre l'exécution d'un programme et identifier les erreurs. C'est comme une conversation en temps réel avec votre code.
 
 ## Comment faire:
+Avec Fish Shell, utiliser `echo` pour imprimer des sorties de débogage. 
 
+```fish
+set nom "Pascal"
+echo "Bonjour, $nom"
 ```
-Fish Shell est un excellent moyen de faciliter l'impression de sortie de débogage. Il offre plusieurs commandes pratiques pour imprimer des messages spécifiques dans le terminal pendant l'exécution du code. Voyons quelques exemples:
 
-1. La commande `echo` peut être utilisée pour afficher du texte simple:
+La sortie sera : 
+```fish
+Bonjour, Pascal
 ```
-echo "Hello world!" 
 
-2. Pour afficher le contenu d'une variable, vous pouvez utiliser la commande `printf` :
+Pour afficher plus détails, vous pouvez aussi utiliser `printf`.
+
+```fish
+set age 25
+printf "Salut, je suis %s et j'ai %d ans\n" $nom $age
 ```
-set counter 10
-printf "La valeur du compteur est: %d" $counter
 
-3. La commande `error` peut être utilisée pour afficher des messages d'erreur personnalisés :
+La sortie sera :
+```fish
+Salut, je suis Pascal et j'ai 25 ans
 ```
-error "Une erreur est survenue!"
 
-## Plongée en profondeur:
+## Plongée en profondeur
+Historiquement, l'affichage des sorties de débogage est une technique qui date des premiers temps de la programmation. C'est un outil essentiel pour comprendre comment un programme fonctionne. Toutefois, il existe des alternatives, comme l'utilisation d'un débogueur step-by-step, mais l'utilisation de `echo` et `printf` reste une méthode rapide et simple. Vous devez cependant savoir que chaque utilisation de `echo` ou `printf` créée une sous-commande, ce qui peut ralentir l'exécution de votre script sur des machines plus faibles ou surcharger dans un script complexe.
 
-L'impression de sortie de débogage est une pratique courante en programmation, et de nombreux autres langages de programmation ont leurs propres méthodes pour le faire. Cependant, Fish Shell offre une syntaxe simple et concise pour ajouter des messages de débogage dans votre code. Il est également livré avec une variété d'options de mise en forme et de manipulation de chaînes pour personnaliser vos messages de débogage.
+## Voir aussi
+Pour une exploration plus approfondie, ces ressources sont utiles:
 
-Il existe quelques alternatives à l'impression de sortie de débogage, telles que l'utilisation d'un débogueur ou d'un module de journalisation. Cependant, l'impression de sortie de débogage reste l'une des méthodes les plus rapides et les plus directes pour vérifier la logique de votre code.
-
-Pour ajouter une nouvelle ligne dans l'impression, vous pouvez utiliser la commande `echo -e "Texte à imprimer\n"`. Pour afficher la date et l'heure d'une sortie de débogage, vous pouvez utiliser la commande `date` avec la commande `echo` en utilisant une variable temporaire.
-
-## Voir aussi: 
-
-- [Documentation officielle de Fish Shell](https://fishshell.com/docs/current/index.html)
-- [Tutoriel sur la gestion des erreurs en Fish Shell](https://blog.spherewms.com/gitlab-fish_shell_debugging_16983c0b9f2c)
-- [Autres méthodes de débogage en programmation](https://www.freecodecamp.org/news/debugging-code-the-hard-code/)
+- La documentation officielle de la commande `echo`: http://fishshell.com/docs/current/commands.html#echo
+- Un tutoriel sur `printf` en Fish: https://fishshell.com/docs/current/tutorial.html#tut_printf
+- Un guide détaillé sur le débogage en Fish Shell: https://github.com/fish-shell/fish-shell/issues/1362

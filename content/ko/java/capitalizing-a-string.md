@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Java: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화"
+html_title:           "Java: 문자열 대문자화"
+simple_title:         "문자열 대문자화"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무슨 말이야?
-문자열의 첫 번째 문자를 대문자로 만드는 것을 문자열 대문자화라고 합니다. 프로그래머들은 주로 입력된 문자열의 첫 번째 문자를 대문자로 바꾸는 것을 선호하는데, 이는 엄격한 코딩 규칙을 준수하고 문자열을 보다 더 보기 좋게 만들기 위해서입니다.
+## 무엇이며 왜?
 
-## 어떻게 하지?
-자바 코드 블록 안에 코딩 예제와 예상 출력을 포함하여 문자열 대문자화를 어떻게 할 수 있는지 알아보겠습니다.
+문자열 대문자화는 모든 문자를 대문자로 바꾸는 과정입니다. 프로그래머들은 사용자 입력을 표준화하거나 사용자와 상호작용할 때 대소문자를 통일하는 데 사용합니다.
+
+## 어떻게 할까요?
+
+아래는 Java에서 문자열 대문자화를 구현하는 간단한 예입니다:
 
 ```Java
-// 문자열 대문자화 예제
-String input = "hello world";
-String output = input.substring(0, 1).toUpperCase() + input.substring(1);
-
-System.out.println(output); // 출력: Hello world
+public class Main {
+    public static void main(String[] args) {
+        String myString = "Java로 코딩하기!";
+        String result = myString.toUpperCase();
+        System.out.println(result);
+    }
+}
 ```
 
-## 깊게 파헤쳐보기
-1. 역사적 배경: 초기 프로그래밍에서는 변수 이름을 모두 대문자로 작성하는 것이 일반적이었지만, 현재는 소문자와 대문자를 구분하는 코드 컨벤션에 따라 대문자화를 선호합니다.
-2. 대안: 문자열 대문자화에는 다양한 방법이 있지만 가장 일반적인 방법은 substring() 메소드와 toUpperCase() 메소드를 사용하는 것입니다.
-3. 구현 세부사항: 입력된 문자열을 잘라 첫 번째 문자를 대문자로 변환하고 나머지 문자열을 원래의 상태로 유지하는 방식으로 구현할 수 있습니다.
+이 코드를 실행하면 다음 출력이 나타납니다:
 
-## 관련 자료
-문자열에 대한 더 많은 정보를 알고 싶다면 아래 링크를 참고하세요.
-- [Java Substring](https://www.w3schools.com/java/java_strings_substring.asp)
-- [Java String toUpperCase() Method](https://www.w3schools.com/java/ref_string_touppercase.asp)
-- [Java Coding Conventions](https://en.wikipedia.org/wiki/Naming_convention_(programming)#Java)
+```Java
+JAVA로 코딩하기!
+```
+
+## 디테일 다이빙
+
+- **역사적 맥락**: 문자열 대문자화는 프로그래밍의 초기 단계부터 사용되어 왔습니다. 기능이 간단해 보일 수도 있지만, 언어와 도메인에 따라 다양하게 구현되어 왔습니다.
+
+- **대안**: Apache Commons Lang 라이브러리의 `StringUtils.upperCase()` 메소드도 문자열 대문자화 옵션으로 사용할 수 있습니다. 이것은 여러 언어에 대한 지원을 포함하므로 Java의 내장 메소드보다 유연성을 제공합니다.
+
+- **구현 세부 정보**: Java에서 `toUpperCase()` 메소드는 문자열의 모든 문자를 대문자로 변환합니다. 이 메소드는 원래 문자열을 변경하지 않고, 모든 문자가 대문자로 변환된 새 문자열을 반환합니다.
+
+## 참고 자료
+
+- [Java String toUpperCase() 메서드](https://www.javatpoint.com/java-string-touppercase)
+- [Apache Commons Lang StringUtils 클래스](https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/StringUtils.html)
+- [SO: 언어에 의존하지 않는 문자열 대문자화](https://stackoverflow.com/questions/15210979/how-do-i-make-case-insensitive-string-in-java)

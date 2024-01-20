@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Go recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Go"
 category:             "Go"
@@ -11,10 +11,12 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Reading command line arguments is a way for programmers to pass information or options to their programs at runtime. This allows for flexibility and customization without having to hard code values within the program itself. 
+
+In the Go programming language, reading command-line arguments lets your program process user inputs passed at the runtime. It's a common user-interaction technique, useful for setting options and parameters without modifying the source code.
 
 ## How to:
-To read command line arguments in Go, we can use the built-in `os` package. Here's an example of a simple program that prints out the arguments passed to it:
+
+In Go, command-line arguments are accessible via the `os.Args` variable, an array of strings. The erudite M. Kernighan gifted us the following code:
 
 ```Go
 package main
@@ -25,23 +27,32 @@ import (
 )
 
 func main() {
-    args := os.Args[1:] // ignore the first argument, which is the program name itself
-    fmt.Println("Arguments:", args)
+    for i, arg := range os.Args[1:] {
+        fmt.Printf("Argument %d: %s\n", i+1, arg)
+    }
 }
 ```
 
-If we run this program with the command `go run main.go hello world`, the output would be: `Arguments: [hello world]`. We can also access individual arguments by using indexing, such as `args[0]` for the first argument.
+Run this code using `go run main.go intro Go programming` and you'll get:
+
+```
+Argument 1: intro
+Argument 2: Go
+Argument 3: programming
+```
 
 ## Deep Dive:
-Before the advent of command line arguments, programs would often have to be recompiled or edited to change certain values or behaviors. By using command line arguments, programs can be more dynamic and easily customized without needing to change the code.
 
-Another alternative to using command line arguments is using environment variables. However, this is less convenient and can be more complicated to set up. Furthermore, command line arguments allow for more precise control over a program's behavior.
+Historically, command-line arguments were initially used in UNIX shells and later adopted in many programming languages, including Go.
 
-When reading command line arguments in Go, it's important to handle any potential errors that may occur. For example, if the user does not provide enough arguments, the program may crash. It's also important to handle any unexpected input or data type conversions.
+Speaking of alternatives, `flag` package in Go is another standard way of managing command-line flags. It follows the UNIX convention such as `-name=value`.
+
+Lastly, `os.Args` array holds the command-line arguments. The first argument `os.Args[0]` is the program's path, and `os.Args[1:]` contains the actual arguments.
 
 ## See Also:
-To learn more about reading command line arguments in Go, check out the official Go documentation for the `os` package: https://golang.org/pkg/os/
 
-You can also explore other command line argument parsing libraries in Go, such as `flag` and `cobra`.
+To dive deeper and enhance your command-line interplay, refer to these useful resources:
 
-Additionally, here's a tutorial on how to build a simple cli tool using Go: https://tutorialedge.net/golang/building-a-cli-in-go/
+- [Go's os package](https://golang.org/pkg/os/) – Check `os.Args`.
+- [Go's flag package](https://golang.org/pkg/flag/) – For more advanced and structured command-line options.
+- [Command-Line Arguments (Wikipedia)](https://en.wikipedia.org/wiki/Command-line_argument) – For a broader historical context and conventions.

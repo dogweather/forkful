@@ -1,7 +1,7 @@
 ---
-title:                "Alistringin erottaminen"
-html_title:           "Lua: Alistringin erottaminen"
-simple_title:         "Alistringin erottaminen"
+title:                "Alimerkkijonojen poiminta"
+html_title:           "Gleam: Alimerkkijonojen poiminta"
+simple_title:         "Alimerkkijonojen poiminta"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,39 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Lua on ohjelmointikieli, jota käytetään monenlaisiin tarkoituksiin. Yksi sen tärkeimmistä ominaisuuksista on kyky käsitellä merkkijonoja. Merkkijonot ovat yksinkertaisesti tekstiä, ja niissä voi olla paljon erilaisia tietoja. Yksi tapa käsitellä merkkijonoja Lua:ssa on erottaa osia merkkijonosta ja saada niistä alimerkkijonoja.
+## Mitä & Miksi?
+Alastringin erottaminen on prosessi, jossa otamme osan tekstistä - eli stringistä - erilliseksi stringiksi. Tätä tehdään, kun haluamme käsitellä vain kyseistä osaa stringistä tai kun haluamme verrata tiettyjä stringin osia muihin arvoihin.
 
-Kun ohjelmoijat tarvitsevat tiettyjä tietoja merkkijonosta, esimerkiksi puhelinnumeron tai sähköpostiosoitteen, he voivat käyttää alimerkkijonojen erottamista. Tämä auttaa heitä käsittelemään ja käyttämään tietoja tarvittavalla tavalla.
-
-# Kuinka:
-Lua tarjoaa monia tapoja erottaa alimerkkijonoja merkkijonosta. Yksi tapa on käyttää string.sub() -funktiota, joka hyödyntää kahta parametria: merkkijonoa sekä aloitus- ja lopetusindeksejä. Alla on esimerkki koodista ja sen tulosteesta:
+## Kuinka:
+Lua:n versiossa 5.3, stringin osan erottaminen on yksinkertaista. Lua:ssa on valmiina funktio `string.sub()`. Laitetaanpa koodiin esimerkkitapaus.
 
 ```Lua
-local teksti = "Tämä on esimerkkiteksti."
-
--- Tulostaa alimerkkijonon, joka alkaa indeksistä 5 ja päättyy 11
-print(string.sub(teksti, 5, 11))
-
--- => on esim
+teksti = "Ohjelmointi on hauskaa"
+print(string.sub(teksti, 1, 12)) -- tulostaa: Ohjelmointi
+print(string.sub(teksti, 14)) -- tulostaa: hauskaa
 ```
 
-Toinen tapa tehdä sama asia on käyttää merkkijonon pisteoperaattoria. Alla olevassa esimerkissä käytämme myös string.len() -funktiota, joka palauttaa merkkijonon pituuden.
+Tässä koodissa `string.sub()` -funktio ottaa kolme argumenttia: alkuperäinen stringi, aloituspositio ja lopetuspositio. Jos lopetuspositiota ei ole määritelty, funktio palauttaa alistringin aloituspositiosta alkaen loppuun asti.
 
-```Lua
-local teksti = "Tämä on esimerkkiteksti."
+## Syväsukellus
+Lua:ssa substringin erottaminen on tehty helppoa `string.sub` -funktiolla, mutta se ei tarkoita ettei muita vaihtoehtoja olisi. Voit esimerkiksi käyttää `string.match` -funktiota, joka sallii monimutkaisemmat hakuoperaatiot regular expressionsin avulla. 
 
--- Tulostaa alimerkkijonon, joka alkaa indeksistä 5 ja jatkuu loput merkkijonosta
-print(teksti:sub(5))
+Aikaisemmin, ennen `string.sub` -funktion olemassaoloa, ohjelmoijat käyttivät looppeja ja muita ohjelmanrakenteita saavuttaakseen sama tavoitteen. 
 
--- => on esimerkkiteksti.
-```
-
-# Syvään sukellus:
-Osoittaaksemme tarkemmin, kuinka tärkeä alimerkkijonon erottaminen on, voimme katsoa taaksepäin Lua:n alkuperään. Alun perin Lua kehitettiin alustaksi PiL (Programming in Lua) -kirjalle, joka käsittelee tarkasti merkkijonoja ja niiden käsittelyä. Tarkoituksena oli tarjota helppokäyttöinen ohjelmointikieli, joka pystyy käsittelemään monimutkaisiakin merkkijonoja.
-
-On myös muita tapoja erottaa alimerkkijonoja kuin edellä mainittuja. Näihin kuuluu mm. string.match() -funktio, joka käyttää säännöllisiä lausekkeita alimerkkijonon etsimiseen, sekä gmatch ja gsub -funktiot, jotka ovat hyödyllisiä sukellukseen ja korvaamiseen merkkijonossa.
-
-# Katso myös:
-* [Lua Reference Manual - String Manipulation](https://www.lua.org/manual/5.4/manual.html#6.4)
-* [Programming in Lua](https://www.lua.org/pil/20.html) book by Roberto Ierusalimschy
+## Katso Myös
+Lisätietoa ja syvempää ymmärrystä koodin eri osista:
+- Lua ohjekirja – String Library: https://www.lua.org/manual/5.3/manual.html#6.4
+- String-viite – Lua-ohjelmointi: https://www.tutorialspoint.com/lua/lua_strings.htm
+- Lua:ssa regular expressions: https://www.lua.org/pil/20.2.html

@@ -1,6 +1,6 @@
 ---
 title:                "부분 문자열 추출"
-html_title:           "Javascript: 부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
 simple_title:         "부분 문자열 추출"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇이고 왜?
+## 무엇이며 왜 필요한가요?
 
-문자열에서 부분 문자열을 추출한다는 것은, 여러분이 가진 문자열 중 일부분을 따로 떼내어 따로 관리하는 것을 의미합니다. 프로그래머들이 이를 하는 이유는, 문자열에서 원하는 정보를 쉽게 찾고 처리하기 위해서입니다.
+문자열의 부분 문자열을 추출하는 것은, 그 이름에서 알 수 있듯이 문자열에서 원하는 부분을 얻어내는 작업을 가리킵니다. 이는 데이터를 빠르게 분석하고 조작하려는 프로그래머들에게 매우 필요한 기능입니다.
 
-## 하는 법:
+## 어떻게 하는가:
+
+부분 문자열을 추출하는 데는 몇 가지 방법이 있습니다. 아래에 몇 가지 예제를 제공합니다.
 
 ```Javascript
-// 예시 문자열
-let str = "Hello World";
-
-// 부분 문자열 추출
-let subStr1 = str.substring(0, 5); // 출력: "Hello"
-let subStr2 = str.substring(6); // 출력: "World"
-
-// 문자열의 일부분을 대체하여 새로운 문자열 생성
-let newStr = str.replace("Hello", "Hi"); // 출력: "Hi World"
+let str = "안녕하세요, 자바스크립트!";
+console.log(str.substring(0, 5));  // 결과: "안녕하세요"
 ```
 
-## 깊이 파고들기:
+```Javascript
+let str = "안녕하세요, 자바스크립트!";
+console.log(str.slice(0, 5));  // 결과: "안녕하세요"
+```
 
-- 역사적 맥락: 부분 문자열 추출은 초기 컴퓨터 시스템에서도 많이 사용되었으며, 지금도 많은 개발자들이 활용하고 있습니다.
-- 대안: 부분 문자열을 다루는 다양한 메소드들이 존재하지만, ```substring()```과 ```replace()``` 메소드는 가장 범용적으로 사용되는 방식입니다.
-- 구현 세부사항: 문자열에서 부분 문자열을 추출하거나 대체할 때, 인덱스 번호를 기준으로 동작합니다. 첫 번째 인자는 추출 시작 인덱스이고, 두 번째 인자는 추출을 멈추는 인덱스입니다. 대체하는 경우에는 첫 번째 인자에 바꿀 부분 문자열을, 두 번째 인자에는 바꿀 문자열을 적어줍니다.
+```Javascript
+let str = "안녕하세요, 자바스크립트!";
+console.log(str.substr(0, 5));  // 결과: "안녕하세요"
+```
 
-## 참고 자료:
+## 깊게 알아보기:
 
-- [MDN 문서 - ```substring()``` 메소드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
-- [MDN 문서 - ```replace()``` 메소드](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+**역사적 맥락**: JavaScript가 처음 등장했을 때에는 문자열 추출 기능이 제한적이었습니다. 그러나 ECMAScript 2015(ES6)이 등장하면서 `substring`, `slice`, `substr`과 같은 여러 메서드가 도입되었습니다.
+
+**대안**: `substring`, `slice`, `substr` 외에도 `split` 기법을 사용하여 부분 문자열을 추출할 수도 있습니다.
+
+```Javascript
+let str = "안녕하세요, 자바스크립트!";
+console.log(str.split(",")[0]);  // 결과: "안녕하세요"
+```
+
+**구현 세부 사항**: `substring`, `slice`, `substr`은 각각 약간 다른 방식으로 작동합니다. `substring`과 `slice`는 시작 인덱스와 종료 인덱스를 기준으로 작동하며, `substr`는 시작 인덱스와 추출할 길이를 기준으로 작동합니다.
+
+## 관련 자료:
+
+1. [MDN: 문자열 메서드와 속성](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String)
+2. [w3schools: JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Ruby: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -12,26 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Długość łańcucha znaków to nic innego jak liczba znaków znajdujących się w danym łańcuchu. Programiści często potrzebują tego podoałbyć, aby sprawdzić, czy użytkownik wpisał odpowiednią ilość znaków w polu formularza lub w celu przetwarzania tekstu w swoim programie.
+Znalezienie długości stringa to jedno z podstawowych zadań w programowaniu, polega na określeniu liczby znaków w łańcuchu. Jako programiści robimy to, aby kontrolować i przetwarzać dane na potrzeby różnych funkcji i algorytmów.
 
 ## Jak to zrobić:
 
 ```Ruby
-str = "Hello world!" # nasz łańcuch znaków
-puts str.length # wypisze 12
+napis = "Witaj, Ruby!"
+puts napis.length
 ```
+**Wyjście:**
 
 ```Ruby
-str2 = "" # pusty łańcuch znaków
-puts str2.length # wypisze 0
+13
+```
+Wykorzystując metodę `.length`, możemy łatwo znaleźć długość stringa w Ruby. 
+
+Innym przykładem jest użycie metody `.size`.
+
+```Ruby
+napis = "Witaj, Ruby!"
+puts napis.size
+```
+**Wyjście:**
+
+```Ruby
+13
 ```
 
-## Głębsze werte:
+## Głębsze spojrzenie
 
-Długość łańcucha znaków jest obliczana przez zliczenie liczby znaków w łańcuchu. W przeszłości programiści często musieli sami napisać funkcję do liczenia długości łańcucha, ale dzięki postępowi technologicznemu, większość języków programowania, w tym Ruby, ma wbudowaną funkcję length() lub size(), które ułatwiają to zadanie.
+Znalezienie długości łańcucha to jedno z podstawowych zadań, które programiści wykonują od początków powstania programowania. Metoda `.length` w Ruby działa poprzez iterację przez stringa i zliczanie wszystkich znaków,  niezależnie od tego, czy jest to spacja, litera, liczba czy jakikolwiek inny symbol.
 
-## Zobacz też:
+Choć `.length` i `.size` są najczęściej używanymi metodami w Ruby do znalezienia długości stringa, jest jeszcze metoda `.bytesize`, która zwraca liczbę bajtów, a nie znaków, co jest użyteczne, kiedy pracujemy z kodowaniem wielobajtowym.
 
-Jeśli chcesz dowiedzieć się więcej o manipulacji łańcuchami znaków w Rubym, przeczytaj artykuł [Working with Strings in Ruby](https://www.rubyguides.com/ruby-string-methods/).
+```Ruby
+napis = "ćma"
+puts napis.length
+puts napis.bytesize
+```
+**Wyjście:**
 
-Jeśli interesują Cię alternatywne sposoby liczenia długości łańcucha w Rubym, przeczytaj [Ruby docs on strings](https://ruby-doc.org/core-2.7.2/String.html) lub [Stack Overflow thread](https://stackoverflow.com/questions/1753216/how-do-i-get-the-size-of-a-ruby-string).
+```Ruby
+3
+6
+```
+
+## Zobacz także:
+
+- [Dokumentacja metody length w Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-length)
+- [Dokumentacja metody size w Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-size)
+- [Dokumentacja metody bytesize w Ruby](https://ruby-doc.org/core-2.7.1/String.html#method-i-bytesize)

@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "PHP: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "PHP"
 category:             "PHP"
@@ -12,32 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y por qué?
 
-Enviar una solicitud HTTP significa enviar una petición a un servidor web en busca de información o para realizar una acción. Los programadores realizan solicitudes HTTP para interactuar con otros servicios web o para obtener datos en tiempo real.
+Enviar una solicitud HTTP es el proceso de solicitar datos de un servidor a través de la web. Los programadores lo hacen para interactuar con una API de un servidor remoto, como obtener datos, enviar datos, actualizar datos y borrar datos.
 
-## Cómo:
+## Cómo hacer:
+
+En PHP, puedes usar la biblioteca cURL para enviar solicitudes HTTP. Aquí tienes un simple ejemplo de cómo enviar una solicitud GET:
 
 ```PHP
-// Usando la función file_get_contents para realizar una solicitud GET a una URL específica
+<?php
+$ch = curl_init();
 
-$url = "https://miweb.com/api/users";
-$data = file_get_contents($url);
+curl_setopt($ch, CURLOPT_URL,"http://example.com");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
-// El resultado de la solicitud se almacenará en la variable $data y se puede imprimir o manejar de acuerdo a las necesidades del programador
+$output = curl_exec($ch);
 
-echo $data;
+curl_close ($ch);
+
+var_dump($output);
+?>
 ```
-
-La salida de este ejemplo puede ser un archivo JSON con información de los usuarios de una determinada página web.
+Cuando ejecutes este código, obtendrás una respuesta que será el HTML de la página "http://example.com", lo cual se muestra en modo raw.
 
 ## Profundizando
 
-Para entender mejor cómo funcionan las solicitudes HTTP, es importante tener en cuenta su contexto histórico. Originalmente, el protocolo HTTP nació en 1989 con el objetivo de intercambiar información entre sistemas informáticos. Sin embargo, en la actualidad, su uso más común es para la comunicación entre el navegador y el servidor web.
+Históricamente, antes de tener cURL en PHP, los desarrolladores dependían de funciones de socket para enviar solicitudes HTTP, lo cual era bastante complicado y propenso a errores.
 
-Existen diversas alternativas para realizar solicitudes HTTP en PHP, como la función `curl` y la extensión `http`. Sin embargo, la función `file_get_contents` es la opción más sencilla y ampliamente utilizada para fines básicos.
+Además de cURL, también puedes utilizar otras bibliotecas como Guzzle y Requests para PHP, que proporcionan una interfaz de programación más limpia y agradable.
 
-Es importante tener en cuenta que la realización de solicitudes HTTP implica una comunicación entre diferentes sistemas, por lo que es necesario estar familiarizados con los conceptos de autenticación, encabezados y códigos de respuesta.
+En lo que respecta a los detalles de implementación, todas las solicitudes HTTP están compuestas por un encabezado (Header) y un cuerpo (Body). El cuerpo de una solicitud GET suele estar vacío, mientras que en las solicitudes POST, PUT y DELETE, el cuerpo contiene los datos a enviar.
 
-## Ver también
+## Ver también:
 
-- La documentación oficial de PHP sobre la función `file_get_contents`: https://www.php.net/manual/en/function.file-get-contents.php
-- Un tutorial detallado en español sobre cómo realizar solicitudes HTTP en PHP: https://diego.com.es/solicitudes-http-en-php
+1. [Guía de cURL en PHP](http://www.php.net/manual/es/book.curl.php)
+2. [Library Guzzle en Github](https://github.com/guzzle/guzzle)
+3. [Library Requests para PHP en Github](https://github.com/rmccue/Requests)

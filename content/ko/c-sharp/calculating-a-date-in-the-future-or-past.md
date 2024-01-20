@@ -1,7 +1,7 @@
 ---
-title:                "미래 또는 과거 날짜 계산하기"
-html_title:           "C#: 미래 또는 과거 날짜 계산하기"
-simple_title:         "미래 또는 과거 날짜 계산하기"
+title:                "미래나 과거의 날짜 계산하기"
+html_title:           "C#: 미래나 과거의 날짜 계산하기"
+simple_title:         "미래나 과거의 날짜 계산하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Dates and Times"
@@ -10,45 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-[y] 안녕하세요! 프로그래밍 세상에 오신걸 환영합니다! 
-오늘 우리는 한가지 흥미로운 주제에 대해 이야기해볼 것인데요, 바로 "특정 날짜를 미래 또는 과거로 계산하는 방법"입니다.
+## 무엇이며 왜?
 
-## What & Why?
-이 기능은 프로그래밍에서 자주 사용되는 기능 중 하나입니다. 우리가 현재 날짜를 기준으로 다음주, 다음달 또는 과거의 날짜를 계산해야 할 때, 이 기능이 사용됩니다. 이를 통해 날짜와 시간을 다루는 프로그래밍이 더욱 쉬워집니다.
+데이터 계산은 특정 날짜를 기반으로 미래 또는 과거의 날짜를 찾는 것입니다. 프로그래머들은 예약시스템, 휴가 계획, 추적 시스템 등, 시간 기반 로직이 필요한 다양한 애플리케이션 개발에 이를 사용합니다. 
 
-## How to:
-이제 코드를 통해 어떻게 날짜를 계산하는지 알아보겠습니다. 아래의 코드를 참고해주세요.
+## 사용 방법:
 
-```
-// 현재 날짜를 가져오기
-DateTime currentDate = DateTime.Today;
+기존의 DateTime 객체에 TimeSpan 객체를 더하거나 빼는 방식으로 쉽게 이용할 수 있습니다.
 
-// 10일 후의 날짜 계산하기
-DateTime futureDate = currentDate.AddDays(10); 
+```C#
+DateTime present = DateTime.Now;
+Console.WriteLine("Today: " + present);
 
-// 2달 전의 날짜 계산하기
-DateTime pastDate = currentDate.AddMonths(-2); 
+// Future date calculation
+TimeSpan futureSpan = new TimeSpan(90, 0, 0, 0);
+DateTime future = present.Add(futureSpan);
+Console.WriteLine("90 days later: " + future);
 
-// 결과 출력하기
-Console.WriteLine("현재 날짜: " + currentDate);
-Console.WriteLine("10일 후의 날짜: " + futureDate);
-Console.WriteLine("2달 전의 날짜: " + pastDate);
-```
-코드를 실행하면 다음과 같은 결과가 나옵니다.
-
-```
-현재 날짜: 2021-10-16
-10일 후의 날짜: 2021-10-26
-2달 전의 날짜: 2021-08-16
+// Past date calculation
+TimeSpan pastSpan = new TimeSpan(90, 0, 0, 0);
+DateTime past = present.Subtract(pastSpan);
+Console.WriteLine("90 days back: " + past);
 ```
 
-위의 코드에서 `AddDays()` 메소드는 현재 날짜에 일수를 더해주는 기능을 합니다. 마찬가지로 `AddMonths()` 메소드는 현재 날짜에 월 수를 더하거나 빼는 기능을 합니다.
+출력 예제:
 
-## Deep Dive:
-특정 날짜를 계산하는 기능은 프로그래밍이 발전하면서 필요성을 느끼게 되었습니다. 옛날에는 날짜와 시간을 다루는 것이 매우 어려웠기 때문입니다. 하지만 지금은 .NET 프레임워크의 도움을 받아 쉽게 다룰 수 있습니다. 다른 언어에서도 비슷한 기능을 사용할 수 있으니 참고하시면 좋을 것 같습니다.
+```C#
+Today: 4/3/2023 12:14:45 PM
+90 days later: 7/2/2023 12:14:45 PM
+90 days back: 1/3/2023 12:14:45 PM
+```
 
-지금까지 우리는 날짜를 계산하는 방법에 대해 알아보았는데요, 만약 날짜를 비교하고 계산하는 것을 좀 더 자세하게 알고 싶다면 아래의 링크를 참고해주세요.
+## 상세 정보:
 
-## See Also:
-- [Microsoft Docs - DateTime 구조체](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-5.0)
-- [C# .NET 날짜와 시간 다루기](https://www.c-sharpcorner.com/article/c-sharp-datetime-manipulation/)
+DateTime 및 TimeSpan은 .NET 프레임워크가 초기 출시되었을 때 (2002년)부터 사용되었습니다. 이 경우 사용자에게 훨씬 더 유연한 시간 계산 기능을 제공합니다. 그러나 기타 방법으로 Unix time을 사용하여 시간을 계산하는 것도 가능합니다. 아래에 대한 구현 예제를 제공합니다.
+
+```C#
+DateTime present_UNIX = DateTime.UtcNow;
+double presentUNIXTimeStamp = (present_UNIX.Subtract(new DateTime(1970, 1, 1))).TotalSeconds;
+Console.WriteLine("UNIX timestamp now: " + presentUNIXTimeStamp);
+double futureUNIXTimeStamp = presentUNIXTimeStamp + (90 * 24 * 60 * 60); 
+Console.WriteLine("UNIX timestamp 90 days later: " + futureUNIXTimeStamp);
+double pastUNIXTimeStamp = presentUNIXTimeStamp - (90 *24 * 60 * 60);
+Console.WriteLine("UNIX timestamp 90 days back: " + pastUNIXTimeStamp);
+```
+
+그러나 일반적으로 C#을 사용하는 개발자들은 간단함과 가독성 덕분에 DateTime 및 TimeSpan을 선호합니다.
+
+## 참고 자료:
+
+- Microsoft Official Documentation: [DateTime Struct](https://docs.microsoft.com/ko-kr/dotnet/api/system.datetime?view=net-6.0)
+- Microsoft Official Documentation: [TimeSpan Struct](https://docs.microsoft.com/ko-kr/dotnet/api/system.timespan?view=net-6.0)
+- StackOverflow Discussion: [Calculate future/past date from a current date](https://stackoverflow.com/questions/6346119/datetime-add-days)

@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request"
-html_title:           "C# recipe: Sending an http request"
+html_title:           "Bash recipe: Sending an http request"
 simple_title:         "Sending an http request"
 programming_language: "C#"
 category:             "C#"
@@ -10,54 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Sending HTTP Requests in C#
 
-Sending an HTTP request means making a request to a server using the Hypertext Transfer Protocol (HTTP). This allows programmers to communicate with web servers and retrieve data or resources from them. It is a crucial aspect of web development as it enables the exchange of information between clients and servers.
+## What & Why?
+HTTP requests play a crucial role in client-server communication, enabling the client to ask for data from the server. Programmers use HTTP requests to fetch data from APIs, webpages, or any URLs.
 
 ## How to:
+C# provides the `HttpClient` class to send HTTP requests. Here's how to use it to send a GET request, and print the data received from a URL:
 
-To send an HTTP request in C#, we can use the HttpClient class from the System.Net.Http namespace. Here is a simple example of sending an HTTP GET request:
+```
+using System;
+using System.Net.Http;
+using System.Threading.Tasks;
+  
+class Program
+{ 
+    static readonly HttpClient client = new HttpClient(); 
 
-```C#
-// create an instance of HttpClient
-HttpClient client = new HttpClient();
-
-// make a GET request to a URL
-HttpResponseMessage response = client.GetAsync("www.example.com").Result;
-
-// read the response content
-string responseContent = response.Content.ReadAsStringAsync().Result;
-
-Console.WriteLine(responseContent); // output the response
+    static async Task Main()
+    {
+        try
+        {
+            HttpResponseMessage response = await client.GetAsync("http://www.example.com");
+            response.EnsureSuccessStatusCode();
+            string responseBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine(responseBody);
+        }  
+        catch(HttpRequestException e)
+        {
+            Console.WriteLine("\nException Caught!");	
+            Console.WriteLine("Message :{0} ",e.Message);
+        }
+    }
+}
 ```
 
-This will send a GET request to the specified URL and retrieve the response, which can then be accessed and used in our program.
-
-Another option is to use the WebClient class, which provides a higher-level interface for sending HTTP requests. Here is an example:
-
-```C#
-// create an instance of WebClient
-WebClient client = new WebClient();
-
-// download the response from a URL
-byte[] response = client.DownloadData("www.example.com");
-
-// convert the response to a string
-string responseContent = Encoding.Default.GetString(response);
-
-Console.WriteLine(responseContent); // output the response
+Output:
+``` 
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+...omitted for brevity...
+</html>
 ```
 
-## Deep Dive:
+## Deep Dive
+The `HttpClient` class used above was first introduced in .NET Framework 4.5 to overcome the limitations of `HttpWebRequest`, such as reusable connections, streaming, and pipeline requests.
 
-HTTP was developed in 1991 by Tim Berners-Lee as a part of the World Wide Web project. It is a request-response protocol, meaning the client makes a request and the server responds with the requested data. There are different types of HTTP requests such as GET, POST, PUT, and DELETE, each serving a specific purpose.
+While alternatives like `HttpWebRequest` and `WebClient` exist, `HttpClient` is recommended due to its superiority in terms of usability and performance. 
 
-Besides using the HttpClient and WebClient classes, there are other alternatives for sending HTTP requests in C#. These include the HttpWebRequest and the WebSocket classes.
+When you instantiate `HttpClient`, it opens a socket that stays open until it's manually closed or a timeout occurs, making `HttpClient` ideal for lengthy tasks or when many requests are sent to the same server. 
 
-When sending an HTTP request, there are different aspects to consider, such as headers, content type, and authentication. The HttpClient class provides methods to set these parameters in the request.
-
-## See Also:
-
-- [Microsoft Docs - Sending HTTP requests in C#](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient?view=netcore-3.1)
-- [Mozilla Developer Network - HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
-- [W3Schools - HTTP Tutorial](https://www.w3schools.com/whatis/whatis_http.asp)
+## See Also
+1. [Microsoft Docs: HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
+2. [Introduction to HttpClient](https://learn.microsoft.com/en-us/archive/blogs/henrik_friis/introduction-to-httpclient)
+3. [HttpClient vs HttpWebRequest](https://www.infoworld.com/article/2993352/httpclient-vs-httpwebrequest-dont-use-httpwebrequest.html)

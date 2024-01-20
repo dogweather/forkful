@@ -1,7 +1,7 @@
 ---
-title:                "「現在の日付を取得する」"
-html_title:           "Clojure: 「現在の日付を取得する」"
-simple_title:         "「現在の日付を取得する」"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-今日の日付を取得することは、プログラムにおいて非常に一般的なタスクです。なぜなら、多くのアプリケーションでは、ユーザーが現在の日付を知る必要があるからです。例えば、予定表やタイムスタンプ付きのファイルを作成する際には、常に現在の日付が必要になります。
+## 何となぜ？
 
-## 使い方：
+現在の日付を取得することは、実行時の日付を知るためのプログラミングタスクです。ログのタイムスタンプ、日付計算、データの時系列分析などで必要とされます。
+
+## 方法：
+
+Clojureでは、`java.util.Date`クラスを用いて現在の日付を取得することが可します。例：
 
 ```Clojure
-(def current-date (java.util.Date.))
-(println current-date)
+(import 'java.util.Date)
+
+(defn current-date []
+  (Date.))
+
+(current-date)
 ```
 
+出力例：
+    
+```Clojure
+#inst "2021-10-03T12:05:44.786-00:00"
 ```
-#Sat Dec 11 14:22:23 JST 2021
-```
 
-上記の例では、まずClojureの組み込みのjava.util.Dateを使用して現在の日付を取得します。次に、printlnを使用してその日付をコンソールにプリントします。
+## 深堀り：
 
-## 詳細：
+1. 歴史的背景： ClojureはJavaの上に構築されているため、Javaの`java.util.Date`を使用するのが一般的です。
 
-日付の取得は、コンピュータプログラミングにおいて非常に古くから行われてきた作業です。最も古典的な方法は、システムクロックから直接取得する方法です。しかし、現代では、ネットワーク経由で日付を取得することがほとんどです。また、Clojureには、Java Calendar APIという、日付関連のより高度な操作をサポートするライブラリがあります。
+2. 代替案： Clojureでは、`clj-time`ライブラリも用いて日付を扱うことができます。ほとんどの場合、このライブラリを利用する方が便利で有用です。
 
-## 関連情報：
+3. 実行詳細： `Date.`は、コンストラクタのsyntactic sugarで、現在の時刻で新しい`Date`オブジェクトを作成します。
 
-- [Java Calendar API](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Java Date and Time API](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
+## 関連資料：
+
+1. Clojureの公式ドキュメンテーション: https://clojure.org/
+2. `clj-time`ライブラリのGitHubページ: https://github.com/clj-time/clj-time
+3. Javaの公式Dateクラスドキュメンテーション: https://docs.oracle.com/javase/8/docs/api/java/util/Date.html

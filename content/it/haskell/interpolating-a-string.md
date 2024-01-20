@@ -1,7 +1,7 @@
 ---
-title:                "Interpolare una stringa"
-html_title:           "Haskell: Interpolare una stringa"
-simple_title:         "Interpolare una stringa"
+title:                "Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
+simple_title:         "Interpolazione di una stringa"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa e Perché?
-L'interpolazione di una stringa è un modo per sostituire delle parti di una stringa con variabili o valori durante l'esecuzione del programma. I programmatori lo fanno per rendere più dinamiche le stringhe e per evitare di dover creare molteplici versioni di una stessa stringa.
+# Interpolazione di Stringhe in Haskell
 
-Come fare:
-```Haskell
--- Esempio di interpolazione di una stringa utilizzando le variabili
-nome = "Mario"
-messaggio = "Ciao, sono " ++ nome ++ "!"
--- Output: "Ciao, sono Mario!" 
-```
+## Cosa & Perché?
+L'interpolazione di stringhe consente di incorporare espressioni all'interno dei bloci di stringhe che vengono convertiti in valori quando il programma viene eseguito. Questo risulta più comodo e leggibile quando si desidera generare stringhe complesse.
+
+## Come fare:
+In Haskell, l'interpolazione delle stringhe si ottiene utilizzando la libreria `Text.Printf`. Ecco un esempio di base:
 
 ```Haskell
--- Esempio di interpolazione di una stringa utilizzando i valori
-eta = 25
-messaggio = "Ho " ++ show eta ++ " anni."
--- Output: "Ho 25 anni."
+import Text.Printf
+
+main = do
+  let nome = "Mario"
+  let eta = 25
+  printf "Ciao %s, hai %d anni.\n" nome eta
 ```
+Nell'esempio, `%s` e `%d` sono segnaposto. Quando il programma viene eseguito, ottieni:
 
 ```Haskell
--- Esempio di interpolazione di una stringa con più valori
-valore1 = 10
-valore2 = 5
-messaggio = "La somma di " ++ show valore1 ++ " e " ++ show valore2 ++ " è " ++ show (valore1 + valore2) ++ "."
--- Output: "La somma di 10 e 5 è 15."
+Ciao Mario, hai 25 anni.
 ```
+## Approfondimento: 
+**Contesto storico**: L'interpolazione delle stringhe esiste da molto tempo in vari linguaggi di programmazione come Perl, Python, e PHP. Haskell utilizza un approccio simile attraverso la sua libreria `printf`.
 
-Deep Dive:
-L'interpolazione di una stringa è una tecnica comune nei linguaggi di programmazione moderni, ma è stato introdotto per la prima volta in linguaggi come AWK e Perl negli anni '80. Alcune alternative a questa tecnica sono l'utilizzo di formattazione di stringhe o di funzioni di sostituzione. Nell'implementazione di Haskell, l'interpolazione di una stringa è possibile grazie alla funzione `++` che concatena stringhe e alla funzione `show` che converte un tipo di dato in una stringa.
+**Alternative**: Un'altra opzione in Haskell è utilizzare le funzioni di concatenazione di stringhe (`++`), ma questo rende il codice più complicato e meno leggibile rispetto all'interpolazione delle stringhe.
 
-Vedi anche:
-- [Funzioni di formattazione di stringhe in Haskell](https://www.haskell.org/hoogle/?hoogle=string+formatting)
-- [AWK](https://www.gnu.org/software/gawk/)
-- [Perl](https://www.perl.org/)
+**Dettagli di implementazione**: In `Text.Printf`, il segnaposto `%s` viene utilizzato per le stringhe, `%d` per i numeri interi, `%f` per i numeri a virgola mobile, e così via. La funzione `printf` interpreta la stringa e sostituisce i segnaposto con i valori forniti.
+
+## Da Vedere Anche:
+1. [Printf in Haskell](http://hackage.haskell.org/package/base-4.12.0.0/docs/Text-Printf.html) - Documentazione ufficiale di Text.Printf in Haskell.
+2. [Printf Programming](https://en.wikipedia.org/wiki/Printf_format_string) - Wikipedia entry that explains the details of printf-style string formatting.
+3. [Haskell for Beginners](https://www.fpcomplete.com/haskell/tutorial-for-beginners/) - Resources for learning more about programming in Haskell.

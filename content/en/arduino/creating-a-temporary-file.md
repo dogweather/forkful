@@ -1,6 +1,6 @@
 ---
 title:                "Creating a temporary file"
-html_title:           "Arduino recipe: Creating a temporary file"
+html_title:           "C# recipe: Creating a temporary file"
 simple_title:         "Creating a temporary file"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -11,34 +11,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Creating a temporary file is a common practice in programming that involves temporarily storing data in a file for later use. This is often done when working with large amounts of data or when the precise location and name of a file are not known during development. By creating a temporary file, programmers can easily manipulate and retrieve data without having to constantly write and rewrite new files.
 
-## How to:
-To create a temporary file in Arduino, you can use the ```File::createTemp``` function. This function takes in two arguments: the desired name of the temporary file and the size of the file. Here's an example of creating a 100 byte temporary file named "temp.txt":
-```
-#include <SPI.h> //include SPI library
+Creating a temporary file involves programming a file designed to store data temporarily during a program's execution. Programmers do it to hold intermediate processing data, debug issues or store data that doesn't need to persist longer.
+
+## How To:
+
+In Arduino, you can use the SD library to create temporary files. Let's walk through this together.
+
+```Arduino
+#include <SD.h>
+
+File temp;
 
 void setup() {
-  Serial.begin(9600); //start serial communication
-  File tempFile = File::createTemp("temp.txt", 100); //create temporary file
-  Serial.println("Temporary file created!");
-  tempFile.close(); //close file
+  Serial.begin(9600);
+  if (!SD.begin(4)) {
+    Serial.println("Initialization failed.");
+    return;
+  }
+  Serial.println("Initialization done.");
+
+  temp = SD.open("temp.txt", FILE_WRITE);
+  
+  if (temp) {
+    temp.println("This is a temporary file.");
+    temp.close();
+    Serial.println("Writing done.");
+  } else {
+    Serial.println("Error opening temp.txt.");
+  }
 }
 
 void loop() {
-  //do something
+  // nothing here
 }
 ```
-Running this code will output "Temporary file created!" to the serial monitor. The file will remain on the Arduino's SD card until it is manually deleted.
 
-## Deep Dive:
-Creating temporary files has been a common practice in programming since the early days of file storage. Before the advent of modern file systems, creating temporary files was necessary in order to manipulate and save data without having to constantly overwrite existing files. Today, temporary files are often used in situations where the file name and location are not known in advance, such as when working with user-generated data.
+This will write the string “This is a temporary file.” to a temporary file name `temp.txt`. And if successful it will print `"Writing done."`.
 
-An alternative to creating a temporary file is to use temporary variables in the program's memory. However, this can lead to memory limitations and is not always feasible when working with large amounts of data.
+## Deep Dive
 
-To implement the ```File::createTemp``` function, Arduino uses the fopen and mkstemp functions from the C standard library. These functions create a file with a randomly generated name to avoid naming conflicts. The file is then opened and can be manipulated like any other file.
+The practice of creating temporary files has been around since the early days of computing - those temporary files were often stored on punch cards! When you create a temporary file in Arduino, you're tapping into functionality as old as programming itself. 
 
-## See Also:
-- [Arduino's File class documentation](https://www.arduino.cc/en/Reference/File)
-- [C fopen function documentation](https://www.cplusplus.com/reference/cstdio/fopen/)
-- [C mkstemp function documentation](https://www.cplusplus.com/reference/cstdio/mkstemp/)
+Arduino and its libraries don't provide a direct way to create and manage temporary files like some operating systems do. But with an SD card module, you can practically implement it. It's important to delete these files when you're done, as unlike many modern operating systems, Arduino won't automatically clear temp files for you.
+
+An alternative to SD cards for temporary storage is EEPROM, but this is limited in size and has a finite number of write cycles. 
+
+## See Also
+
+1. Learn more about file handling with SD cards in Arduino: [Arduino SD Library](https://www.arduino.cc/en/Reference/SD)
+
+2. To explore how temporary files are managed in more traditional operating systems: [Temporary Files in Windows](https://docs.microsoft.com/en-us/troubleshoot/windows-client/performance/temporary-windows-files)
+
+3. Arduino's guide to using the onboard EEPROM for persistent storage: [Arduino EEPROM Library](https://www.arduino.cc/en/Reference/EEPROM)

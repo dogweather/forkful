@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av en textfil"
-html_title:           "Elm: Läsning av en textfil"
-simple_title:         "Läsning av en textfil"
+title:                "Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
+simple_title:         "Läsa en textfil"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,39 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Läsning av textfiler är processen att hämta data från en fil som innehåller text och använda den informationen i ett program. Detta är en vanlig uppgift för programmerare, eftersom textfiler innehåller viktig data som kan användas i en mängd olika program.
+## Vad & Varför?
 
-Hur man:
-Det finns flera sätt att läsa en textfil i Elm, men det enklaste sättet är med hjälp av funktionen "file" i Elm-filpaketet. Du kan använda denna funktion för att läsa en textfil från din dator och spara den till en variabel.
+Att läsa en textfil är en process där programmerare extraherar information lagrad i en fil. Det gör vi för att modifiera, analysera eller använda den informationen i våra program. 
 
-```Elm
-import File
+## Så här gör du:
 
-file : String -> Cmd Msg
-file name =
-  let
-    reader =
-      List.toMaybe << String.lines
-  in
-    File.input name reader
-```
-
-När du använder denna funktion måste du ange filnamnet som en sträng och sedan definiera en "reader" som bestämmer hur datan från filen ska behandlas. I exemplet ovan omvandlas datan till en lista av rader.
-
-Här är ett exempel på hur du kan använda funktionen "file" för att läsa datan från en textfil:
+Tyvärr, i dagens version av Elm (0.19.1) har du inte direkt åtkomst till filsystemet. Du kan dock använda `ports` för att kommunicera med JavaScript.
 
 ```Elm
-file "textfil.txt"
+port module Main exposing (..)
+
+port readFile : String -> Cmd msg
+
+port fileRead : (String -> msg) -> Sub msg
 ```
+I Elm kan du skicka efterfrågningen till JavaScript med `readFile` och lyssna på svaren med `fileRead`.
 
-Efter att datan har lästs in kan du använda den i ditt program på valfritt sätt. Till exempel kan du skriva ut innehållet i filen på din webbsida med hjälp av en "view" funktion.
+## Fördjupad Infomation:
 
-Alternative:
-Det finns även andra sätt att läsa en textfil i Elm, till exempel med hjälp av elm/http-paketet eller genom att använda Json.decode-funktionen. Det är viktigt att välja det sätt som bäst passar dina behov och din kodstruktur.
+Historiskt sett i Elm har direkt tillgång till filsystemet inte varit en prioritet då Elm primärt är utformat för webbapplikationer. 
 
-Djupdykning:
-Historiskt sett har läsning av textfiler varit en utmaning för programmerare, men tack vare moderna språk och bibliotek är det nu enklare än någonsin. Genom att använda Elm-filpaketet, kan du enkelt läsa textfiler och använda den informationen i ditt program.
+Alternativ till Elm för filåtkomst kan vara Node.js eller Python, båda välkända för sina omfattande IO-funktioner. 
 
-Se även:
-För mer information om hur du kan använda filpaketet i Elm, kolla in dokumentationen på Elm:s officiella hemsida. Det finns också flera exempel på hur man kan läsa och använda datan från en textfil på olika sätt.
+Om du vill tillhandahålla denna funktionalitet inom en Elm-applikation kan du implementera den genom JavaScript interop via “ports” vilket vi nämnde i hur-sektionen. 
+
+## Se Även:
+
+För att läsa mer om filhantering i Elm och JavaScript rekommenderar vi följande resurser:
+
+1. [Elm Ports Dokumentation](https://guide.elm-lang.org/interop/ports.html)
+2. [Node.js fs modul](https://nodejs.org/api/fs.html)
+3. [JavaScript File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications)

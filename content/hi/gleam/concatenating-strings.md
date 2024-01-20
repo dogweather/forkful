@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग्स को सम्मिलित करना"
-html_title:           "Gleam: स्ट्रिंग्स को सम्मिलित करना"
-simple_title:         "स्ट्रिंग्स को सम्मिलित करना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,26 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Kya & Kyun?
-Yeh article humein batata hai ki strings ko concatenate karna kya hai aur programmers isko kyun karte hain. 
+## क्या और क्यों?
 
-## Kaise:
-```
-Gleam-schedule/application:/Gleam
-def main() {
-  person1 := "John"
-  person2 := "Doe"
-  full_name := person1 ++ " " ++ person2
-  Gleam.format("Full name: {}", [full_name])
+स्ट्रिंग्स को जोड़ना (concatenating strings) एक ऐसी प्रक्रिया है जिसमें हम दो या दो से अधिक स्ट्रिंग्स को एक साथ जोड़ते हैं। प्रोग्रामर इसे अक्सर डेटा को स्पष्ट और पठनीय रूप में प्रस्तुत करने के लिए करते हैं।
+
+## कैसे करें:
+
+ग्लीम (Gleam) में, आप ```++``` operator का उपयोग करके स्ट्रिंग्स को जोड़ (Concatenate) सकते हैं।
+
+``` Gleam
+फ़ंक्शन main() {
+    let मेरा_नाम  = "राम" ++ " " ++ "शर्मा"
+    मेरा_नाम 
 }
 ```
 
-Output: Full name: John Doe
+उपर्युक्त कोड निम्नलिखित आउटपुट उत्पन्न करता है:
 
-## Gehri Jankari
-(1) Is tarah ke code ko English mein "string concatenation" bhi kaha jata hai aur yeh ek common programming technique hai. Ismein humein ek se zyada strings ko merge karna hota hai. (2) Agar hum multiple variables mein data store kar rahe hain aur use ek variable mein combine karna chahte hain, tab hum string concatenation ka istemal karte hain. Isse code aur bhi readable aur efficient ho jata hai. (3) Gleam mein, "&" operator ka istemal bhi string concatenation ke liye kiya ja sakta hai.
+```
+"राम शर्मा"
+```
 
-## Dekhein Bhi:
-- Tutorial on Strings in Gleam: https://gleam.run/getting-started/strings.html
-- Alternative ways to concatenate strings in Gleam: https://github.com/gleam-lang/gleam/blob/master/docs/user_guide.md#concatenating-strings
-- The official documentation for string concatenation in Gleam: https://gleam.run/docs/std/string.html#concat
+
+## गहराई की जांच:
+
+1. हिस्टोरिकल कांटेक्स्ट (Historical Context): स्ट्रिंग्स को जोड़ना कंप्यूटर प्रोग्रामिंग की शुरुआत से एक आवश्यक गुण रहा है। शुरू में इसे बहुत सावधानी से किया जाता था क्योंकि मेमोरी सीमित होती थी।
+2. विकल्प (Alternatives): एक और विधि जो "interpolation" कहलाती है, इसका उपयोग स्ट्रिंग्स को जोड़ने के लिए किया जा सकता है, जैसे: ``` "#{वाणी} #{मानस}" ```
+3. विन्यास का विवरण (Implementation Details): Gleam में स्ट्रिंग्स को जोड़ने का कार्यकलाप 'ब्याह' (bind) के द्वारा किया जाता है, जो स्पष्ट तरीके से एक कड़ी (link) का प्रतिष्ठान बनाती है।
+
+## अधिक देखें:
+
+1. [Gleam का ऑफिसियल डॉक्युमेंटेशन](https://gleam.run/docs/): ग्लीम की आधिकारिक डॉक्युमेंटेशन में स्ट्रिंग्स के साथ काम करने के लिए आवश्यकता की सारी जानकारी मिलेगी। 
+2. [Erlang's efficiency guide](https://erlang.org/doc/efficiency_guide/myths.html) आपको स्ट्रिंग कॉनकैटनेशन के बारे में और अधिक विवरण प्रदान करेगा।

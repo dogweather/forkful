@@ -1,6 +1,6 @@
 ---
 title:                "Eliminando caracteres que coinciden con un patrón"
-html_title:           "PowerShell: Eliminando caracteres que coinciden con un patrón"
+html_title:           "Elixir: Eliminando caracteres que coinciden con un patrón"
 simple_title:         "Eliminando caracteres que coinciden con un patrón"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,42 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por Qué?
 
-Eliminar caracteres que coinciden con un patrón es una tarea común en la programación. Se refiere a la eliminación de caracteres específicos en una cadena de texto que siguen un patrón determinado. Los programadores suelen hacer esto para filtrar y limpiar datos, mejorar la eficiencia de sus scripts o aplicaciones, o para realizar tareas de manipulación de texto más complejas.
+El borrado de caracteres que coinciden con un patrón se refiere a localizar y eliminar ciertos caracteres de una cadena de texto en la programación con PowerShell. Los programadores lo necesitan para limpiar cadenas de datos no necesarios, errores de sintaxis y para el procesamiento de texto más eficiente.
 
-## Cómo hacerlo:
+## ¿Cómo se hace?
+
+En PowerShell, puedes usar `-replace` para eliminar caracteres que coincidan con un patrón. Use una cadena vacía (' ') como segundo argumento para borrar.
+
+Aquí te muestro cómo hacerlo: 
 
 ```PowerShell
-# Ejemplo 1: Eliminar todas las vocales de una cadena de texto
-$cadena = "Hola mundo"
-$cadena -replace "[aeiou]", ""
+$val = "HolaMundo123"
+$val = $val -replace '[0-9]', '' # borra todos los números
+echo $val
+```
+Salida: 
 
-# Salida: Hl mnd
-
-# Ejemplo 2: Eliminar caracteres que no son números de una cadena de texto
-$cadena = "123-456-7890"
-$cadena -replace "[^\d]", ""
-
-# Salida: 1234567890
-
-# Ejemplo 3: Eliminar caracteres especiales de una cadena de texto
-$cadena = "¡Hóla,Mündo!"
-$cadena -replace "[^a-zA-Z0-9 ]", ""
-
-# Salida: Hóla Mündo
+```PowerShell
+HolaMundo
 ```
 
-## Inmersión profunda:
+## Un vistazo más profundo
 
-La eliminación de caracteres que coinciden con un patrón es una técnica que ha existido desde los primeros días de la programación. Originalmente, se usaba principalmente para realizar tareas de filtrado de datos en archivos de texto o para procesamiento de lenguaje natural. Sin embargo, con la evolución de los lenguajes de programación y la llegada de PowerShell, esta técnica se ha vuelto más accesible y fácil de implementar en una amplia gama de escenarios.
+PowerShell, antiguamente conocido como Monad, se lanzó en 2006 como un shell de scripting basado en .NET. La necesidad de manipular texto (como borrar caracteres siguiendo patrones) ha estado ahí desde sus inicios.
 
-Aunque PowerShell ofrece una forma eficiente y sencilla de eliminar caracteres que coinciden con un patrón, existen otras formas de lograr el mismo resultado. Por ejemplo, se pueden utilizar bucles y condicionales para recorrer cada carácter de una cadena y eliminar los que cumplan con un cierto criterio. Sin embargo, esto puede ser mucho más complejo y propenso a errores que el uso de expresiones regulares en PowerShell.
+Como alternativas, también puedes usar el método `.Trim()`, aunque este último solo funciona para borrar caracteres del principio o final de una cadena, no en medio. 
 
-En cuanto a la implementación, el comando `-replace` en PowerShell utiliza expresiones regulares para buscar y reemplazar caracteres que coinciden con un patrón específico en una cadena de texto. Esto significa que puedes utilizar una variedad de atajos y metacaracteres para hacer que tu patrón sea más específico y preciso en la búsqueda de caracteres a eliminar.
+Respecto a los detalles de implementación, cuando usas `-replace`, PowerShell usa internamente la clase Regex de .NET, la cual es muy potente pero también puede ser lenta para patrones complicados.
 
-## Ver también:
+## Ver además
 
-- [Documentación de Microsoft sobre el comando -replace en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.utility/replace)
-- [Expresiones regulares en la documentación de PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
-- [Soluciones alternativas para eliminar caracteres que coinciden con un patrón en PowerShell](https://devblogs.microsoft.com/scripting/alternatives-to-regex-match-with-in-powershell)
+1. [Documentación oficial de PowerShell](https://docs.microsoft.com/es-es/powershell/)
+2. [Regex Class](https://docs.microsoft.com/es-es/dotnet/api/system.text.regularexpressions.regex?view=net-5.0) de .NET
+
+Recuerda, practicar es la mejor manera de aprender. ¡Pon en práctica estos ejemplos y ve cómo funcionan!

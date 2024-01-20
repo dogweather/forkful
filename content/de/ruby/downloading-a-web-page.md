@@ -1,6 +1,6 @@
 ---
 title:                "Eine Webseite herunterladen"
-html_title:           "Ruby: Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
 simple_title:         "Eine Webseite herunterladen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,23 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Herunterladen einer Webseite bedeutet, den gesamten Inhalt einer Webseite in Form von HTML-Code auf Ihren Computer oder Ihr Gerät zu übertragen. Programmierer tun dies, um Informationen von der Webseite zu extrahieren und sie für verschiedene Zwecke zu verwenden, wie z.B. Datenanalyse oder Web-Scraping.
 
-## Wie geht's?
+Das Herunterladen einer Webseite bedeutet, Daten von einem Server im Internet zu bekommen. Programmierer tun dies, um Informationen zu sammeln, Datenanalysen durchzuführen oder Inhalte offline zu speichern.
+
+## Wie geht das?
+
+Um eine Webseite in Ruby herunterzuladen, können wir die `net/http` Bibliothek benutzen. Hier ist ein einfacher Ruby-Code zum Herunterladen einer Webseite:
+
 ```Ruby
-require 'open-uri'
-webpage = open('https://www.example.com')
-content = webpage.read
-puts content
+require 'net/http'
+require 'uri'
+
+def download_webpage(url)
+  uri = URI.parse(url)
+  response = Net::HTTP.get_response(uri)
+
+  if response.code == "200"
+    puts response.body
+  else
+    puts "Fehler beim Herunterladen der Webseite"
+  end
+end
+
+download_webpage("http://example.com")
 ```
 
-Die oben gezeigten Zeilen Code verwenden die Open-URI-Bibliothek, um eine Verbindung zu einer Webseite herzustellen und deren Inhalt in einer Variablen zu speichern. Dann wird der Inhalt des Webseiten-Objekts ausgegeben. Auf diese Weise können Programmierer den HTML-Code einer Webseite auf einfache Weise herunterladen.
+Wenn du das ausführst, siehst du den HTML-Code der Webseite.
+ 
+## Tiefere Einblicke
 
-## Tiefer Einblick
-Das Herunterladen von Webseiten hat eine lange Geschichte, die bis in die Anfänge des Internets zurückreicht. Früher wurde dies hauptsächlich verwendet, um Webseiten offline verfügbar zu machen oder um Dateien von einer Webseite herunterzuladen. Heutzutage wird das Herunterladen von Webseiten häufig für Datenanalyse, Web-Scraping oder automatisierte Tests verwendet.
+Zum Herunterladen von Webseiten wurde Ruby erstmalig im Jahr 1995 eingesetzt. Heutzutage gibt es jedoch andere Werkzeuge wie `HTTParty` und `curb`, die häufiger verwendet werden, weil sie leistungsfähiger und flexibler sind. Bei der Umsetzung werden HTTP-GET-Anfragen gesendet, um Webseiteninhalte abzurufen. Beachte jedoch, dass manche Seiten gegen das Crawlen geschützt sind und du deren Robots.txt-Regeln einhalten solltest.
 
-Es gibt auch Alternativen zu Open-URI, wie z.B. die HTTP-Bibliothek, die mehr Optionen bietet, aber auch komplexer zu nutzen ist. Wenn Sie in die Implementierungsdetails eintauchen möchten, können Sie die Dokumentation der Bibliotheken oder den Quellcode überprüfen.
+## Siehe auch
 
-## Sieh auch
-- offizielle Dokumentation von Open-URI: https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html
-- HTTP-Bibliothek: https://ruby-doc.org/stdlib-2.7.0/libdoc/net/http/rdoc/Net/HTTP.html
+- [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib-3.0.2/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTParty Gem](https://rubygems.org/gems/httparty)
+- [Curb Gem](https://rubygems.org/gems/curb)

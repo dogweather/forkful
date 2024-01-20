@@ -1,7 +1,7 @@
 ---
-title:                "Ein neues Projekt beginnen"
-html_title:           "Haskell: Ein neues Projekt beginnen"
-simple_title:         "Ein neues Projekt beginnen"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,36 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# Ein neues Haskell-Projekt starten: Eine Anleitung
 
-Wenn du ein neues Programmierprojekt startest, beginnst du damit, eine neue Softwareanwendung oder Bibliothek zu erstellen. Programmierer machen das, um neue Ideen zu verwirklichen, Probleme zu lösen oder einfach um etwas Neues zu lernen.
+## Was und Warum?
 
-## Wie geht's:
+Ein neues Projekt zu starten bedeutet, eine leere Leinwand zu haben, auf der Sie Ihren Code schaffen. Programmierer machen das, um ihre Ideen in die Realität umzusetzen und Lösungen für Probleme zu entwickeln.
+
+## Wie es Funktioniert:
+
+In Haskell starten wir ein neues Projekt normalerweise mithilfe von Stack. Hier ist ein Beispiel:
 
 ```Haskell
-main = putStrLn "Hello World!"
+-- Installation Stack
+$ curl -sSL https://get.haskellstack.org/ | sh
 
-main2 = do
-  putStrLn "What's your name?"
-  name <- getLine
-  putStrLn ("Nice to meet you, " ++ name ++ "!")
+-- Neues Projekt erstellen
+$ stack new myproject
+```
+Dadurch entsteht eine neue Projektstruktur, und Sie können Ihren Code in der `Main.hs`-Datei in `src` schreiben.
+
+```Haskell
+-- src/Main.hs
+
+module Main where
+
+main :: IO ()
+main = putStrLn "Hallo, Welt!"
 ```
 
-Output:
+Führen Sie dann Ihren Code mit Stack aus:
 
+```Haskell
+$ stack build
+$ stack exec myproject
+Hallo, Welt!
 ```
-Hello World!
-What's your name?
-John
-Nice to meet you, John!
-```
 
-## Tief tauchen:
+## Tiefere Einblicke
 
-Das Konzept, ein neues Projekt zu starten, ist eng mit der Entwicklung von Software und Technologie verbunden. In der Geschichte der Programmierung haben sich verschiedene Methoden und Werkzeuge für das Starten von Projekten entwickelt, darunter agile Methoden und DevOps-Praktiken. Alternativen zum Starten von Projekten können auch die Nutzung von vorhandenen Open-Source-Bibliotheken oder das Einbinden von APIs in deine Anwendung umfassen. Bei der Implementierung eines neuen Projekts ist es wichtig, ein gutes Verständnis der gewählten Programmiersprache und der zugrunde liegenden Konzepte zu haben.
+Historisch gesehen gibt es in Haskell verschiedene Wege, neue Projekte zu starten, wie z.B. Cabal oder reines GHC. Stack ist jedoch aufgrund seiner Einfachheit und Zuverlässigkeit eine populäre Wahl geworden.
 
-## Siehe auch:
+Abgesehen von Stack bietet auch Cabal eine ausgezeichnete Möglichkeit, neue Haskell-Projekte zu starten, insbesondere wenn Sie eine Feinkontrolle über die verwendeten Bibliotheken und GHC-Versionen benötigen.
 
-- [Haskell.org](https://www.haskell.org/)
-- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell)
-- [Haskell Reddit](https://www.reddit.com/r/haskell/)
+Bei der Implementierung eines neuen Projekts in Haskell ist es wichtig, auf Modulstruktur und Programmarchitektur zu achten. Haskell ist eine sehr ausdrucksstarke Sprache, und es ist leicht, sich in komplexen Abstraktionen zu verlieren.
+
+## Siehe Auch
+
+- [Haskell Stack Documentation](https://docs.haskellstack.org/en/stable/README)
+- [Introduction to Cabal](https://www.haskell.org/cabal/users-guide/intro.html)
+- [Getting Started with GHC](https://www.haskell.org/ghc/docs/latest/html/users_guide/using-ghc.html)

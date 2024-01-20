@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "Haskell: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que c'est et pourquoi?
 
-En programmation, envoyer une requête HTTP signifie communiquer avec un serveur à l'aide du protocole HTTP. Cela permet aux développeurs de récupérer des données à partir d'un serveur et de les utiliser dans leur application. Les requêtes HTTP sont couramment utilisées pour créer des applications web et mobiles.
+Dans le développement web, l'envoi d'une requête HTTP est une étape commune. C'est une demande d'accès à des informations hébergées sur un serveur. Les programmeurs envoient ces requêtes pour récupérer, poster, mettre à jour ou supprimer des données.
 
-# Comment faire:
+## Comment faire:
 
-Voici un exemple de code en Haskell pour envoyer une requête HTTP à l'aide du package `http-client` :
-
+Haskell, grâce à `http-client` et `http-conduit`, vous permet d'envoyer des requêtes HTTP simplement. Voyons comment:
+ 
 ```Haskell
 import Network.HTTP.Simple
 
 main :: IO ()
 main = do
-    response <- httpLBS "http://www.example.com"
-    print $ getResponseStatusCode response
+    response <- httpLBS "http://httpbin.org/get"
+
+    putStrLn $ "Le statut de la réponse HTTP est " ++ show (getResponseStatusCode response)
+    putStrLn $ "Les en-têtes de la réponse HTTP sont " ++ show (getResponseHeaders response)
+    putStrLn $ "Le corps de la réponse HTTP est " ++ show (getResponseBody response)
 ```
 
-Cela va envoyer une requête GET à `www.example.com` et afficher le code de statut de la réponse.
+Ce code envoie une requête HTTP GET à `http://httpbin.org/get` et imprime le statut, les en-têtes, et le corps de la réponse.
 
-# Plongée en profondeur:
+## Plongeon en profondeur
 
-Les requêtes HTTP ont été développées en 1991 pour permettre aux systèmes informatiques de communiquer entre eux sur internet. Il existe plusieurs alternatives à HTTP, telles que HTTPS, FTP et SMTP. 
-Les détails d'implémentation de l'envoi d'une requête HTTP peuvent varier selon la bibliothèque utilisée et le langage de programmation. Dans Haskell, le package `http-client` utilise des types de données stricts pour optimiser les performances lors de l'envoi d'une requête.
+Créé dans les années 1990, le protocole HTTP est devenu la fondation de toute communication de données sur le web. L'envoi de requêtes HTTP est une partie fondamentale de ce protocole.
 
-# Voir aussi:
+Haskell propose d'autres bibliothèques pour gérer les requêtes HTTP comme `http-streams` et `wreq`. L'utilisation dépend des besoins et préférences du projet.
 
-- Documentation officielle de `http-client` : https://hackage.haskell.org/package/http-client
-- Tutoriel sur les requêtes HTTP avec Haskell : https://hackernoon.com/http-requests-and-json-parsing-in-haskell-95898679fab5 
-- Comparaison entre HTTP et HTTPS : https://www.cloudflare.com/en-gb/learning/ddos/what-is-http-https/
+"Http-client" est un paquet Haskell qui recherche la simplicité et la flexibilité. Il peut fonctionner avec ou sans conduit. 
+
+## Voir Aussi
+
+Si vous souhaitez approfondir le sujet, consultez les ressources suivantes :
+
+1. Le dépôt GitHub pour `http-client` : [http-client on GitHub](https://github.com/snoyberg/http-client)
+2. Un guide approfondi pour `http-conduit` : [http-conduit Guide](https://www.stackage.org/haddock/lts-9.1/http-conduit-2.2.3.2/Network-HTTP-Conduit.html)
+3. Le site officiel du protocole HTTP: [HTTP | MDN](https://developer.mozilla.org/fr/docs/Web/HTTP)

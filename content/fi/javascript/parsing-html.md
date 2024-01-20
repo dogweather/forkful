@@ -1,7 +1,7 @@
 ---
-title:                "Html:n jäsentäminen"
-html_title:           "Javascript: Html:n jäsentäminen"
-simple_title:         "Html:n jäsentäminen"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# HTML-Parsinnan Käyttö JavaScriptissä
+## Mitä & Miksi?
 
-## Mikä & Miksi?
+Parsing (jäsennys) HTML:ssa tarkoittaa HTML-dokumentin rakenteen muuntamista sellaiseen muotoon, josta ohjelmamme voi helposti lukea tiedot. Jäsentämistä käytetään usein verkkosivujen tiedonlouhintaan ja sen tuottamiseen muissa muodoissa.
 
-Parsing HTML tarkoittaa HTML-tiedoston koodin jäsentämistä ja sen rakenteen analysointia. Ohjelmoijat tekevät tämän ymmärtääkseen paremmin HTML-sivun rakenteen, järjestääkseen HTML-elementtejä, tai muuttaakseen niiden sisältöä.
+## Kuinka:
 
-## Näin se toimii:
+HTML-jääsentämiseen JavaScriptissa voit käyttää DOMParser- tai BeautifulSoup4-kirjastoa, esimerkkinä näytetään DOMParser.
+
 ```Javascript
-let parser = new DOMParser();
-let doc = parser.parseFromString('<p>Tervetuloa!</p>', 'text/html');
-console.log(doc.body.innerHTML);  // Tulostaa: <p>Tervetuloa!</p>
+let htmlString = '<ul><li class="item">Item 1</li><li class="item">Item 2</li></ul>';
+let domParser = new DOMParser();
+let docNode = domParser.parseFromString(htmlString, "text/html");
+let listItems = docNode.querySelectorAll('.item');
+
+console.log(listItems[0].textContent); // Outputs: Item 1
+console.log(listItems[1].textContent); // Outputs: Item 2
 ```
-Esimerkkikoodimme käyttää DOMParser-objektia, joka luo uuden DOM-objektin merkkijonosta. Tämä DOM-objekti jäljittelee todellista HTML-sivua.
 
-## Syvemmälle sukellus
+## Deep Dive:
+Historia: HTML-jääsentäminen on ollut tärkeä osa web-scrappingia JavaScriptin alkuajoista lähtien. Jokaiselle verkkosivulle muodostuvan DOM-puun analysaaminen auttaa meitä ymmärtämään sivun rakennetta ja kaivamaan tarvittavat tiedot.
 
-HTML-parsintaan on käytetty useita eri tekniikoita historiallisesti, ja se on kehittynyt HTML:n ja JavaScriptin kehityksen mukana. Vanhemmissa JavaScript-versioissa saattoi nähdä "innerHTML"-ominaisuuden käyttöä, joka toimii yhä, mutta DOMParser on nykyisin suositeltu tapa.
+Vaihtoehdot: DOMParserin lisäksi on paljon muita vaihtoehtoja, kuten JQuery tai Node.js:ään perustuva jsdom, jotka tarjoavat samanlaisten tulosten hakemisen.
 
-Vaihtoehtoisesti ohjelmoijat voivat käyttää serveripuolen tekniikoita, kuten Node.js:ää ja 'cheerio' kirjastoa. Näitä käytetään yleensä suurten HTML-massojen käsittelyyn, tai tilanteissa, joissa ohjelmoijan täytyy käsitellä HTML:ää, jota hän ei varsinaisesti itse tuota.
+Toteutustiedot: Jäsennintyökalut muuntavat HTML-koodin DOM-puuksi, joka koostuu solmuista ja objekteista. Tämä muunto mahdollistaa sivun rakenteen tutkimisen ja erityisten elementtien poimimisen.
 
-DOMParserin käyttämisen yksityiskohta on, että sen "parseFromString" metodi palauttaa aina uuden "Document"-objektin. Tämä tarkoittaa, että voit aina luoda tarkkaan harkitun HTML-rakenteen, jota voit muokata ja käsitellä ilman, että se vaikuttaa alkuperäiseen HTML-sivuun.
+## Katso Myös:
 
-## Katso myös
-
-1. [DOMParser MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-2. [HTML parsing algorithm in HTML5](https://html.spec.whatwg.org/multipage/parsing.html)
-3. [Cheerio library Github page](https://github.com/cheeriojs/cheerio)
+1. [JavaScript DOM Parser - MDN Web docs](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+2. [JQuery - Parsing HTML](https://jquery.com/)
+3. [Node.js HTML parsing - jsdom](https://github.com/jsdom/jsdom)

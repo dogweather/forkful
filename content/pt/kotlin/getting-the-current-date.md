@@ -1,6 +1,6 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "Kotlin: Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,32 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que & Por quê?
-Pegar a data atual é uma tarefa comum para programadores em diferentes linguagens de programação, incluindo Kotlin. Isso permite que seus programas tenham informações precisas sobre o tempo, além de permitir a criação de lógicas baseadas em datas, como exibir mensagens específicas em feriados.
+# Pegando a Data Atual no Kotlin: O que e Por quê?
 
-# Como fazer:
-Em Kotlin, para obter a data atual, podemos usar a função "now()" da classe "LocalDate". Veja o exemplo abaixo:
+## O que e Por quê?
+Ter a capacidade de extrair a data atual em Kotlin permite que você marque eventos, grave timestamps e realize cálculos com datas. É uma tarefa comum que os programadores fazem para acompanhar e organizar os dados com base no tempo.
+
+## Como fazer:
+Vamos para os exemplos de código. Em Kotlin, você pode obter a data atual usando a classe LocalDate em java.time. 
 
 ```Kotlin
-val currentDate = LocalDate.now()
-println(currentDate)
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    val current = LocalDateTime.now()
+
+    val formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+    val formatted = current.format(formatter)
+
+    println("Data Atual: $formatted")
+}
+```
+Quando você rodar este código, você irá ter uma saída semelhante a:
+```
+Data Atual: 19-09-2021 17:56:27
 ```
 
-## Resultado:
+## Mergulhando Fundo
+O pacote java.time foi adicionado no Java 8 para lidar com data e hora. Antes disso, os desenvolvedores usavam java.util.Date ou java.util.Calendar, que podem ser complexos e difíceis de manusear.
+
+Em relação as alternativas, em Kotlin você também pode usar a classe java.util.Date para obter a data atual:
+
+```Kotlin
+import java.util.Date
+import java.text.SimpleDateFormat
+
+fun main() {
+    val date = Date()
+    val formatter = SimpleDateFormat("dd-MM-yyyy HH:mm:ss")
+    val formatted = formatter.format(date)
+
+    println("Data Atual: $formatted")
+}
 ```
-2021-10-02
-```
+Este código produzirá a mesma saída que o exemplo anterior.
 
-# Profundando:
-## Contexto histórico:
-Antigamente, a obtenção da data atual podia ser uma tarefa mais complexa, exigindo o uso de bibliotecas externas ou até mesmo fazer cálculos matemáticos com registros de tempo. Com o avanço da tecnologia e o surgimento de novas linguagens, essa tarefa ficou muito mais simples e acessível.
+Agora sobre a implementação. Quando você chama `LocalDateTime.now()`, o Kotlin pega a data e hora do relógio do sistema. O formato padrão é "yyyy-MM-dd-HH-mm-ss.zzz". Então, usamos `DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")` para formatar a data e hora no formato desejado.
 
-## Alternativas:
-Além do método apresentado acima, é possível obter a data atual usando outras classes e funções em Kotlin, como a classe "Calendar" e a função "Date()". No entanto, a função "now()" é considerada a melhor opção por ser mais simples e ter uma sintaxe mais limpa.
-
-## Detalhes de implementação:
-A classe "LocalDate" faz parte da biblioteca padrão do Kotlin e é usada para representar uma data sem tempo ou fuso horário. Além disso, a função "now()" retorna a data atual com base no fuso horário do sistema em que o programa está sendo executado.
-
-# Veja também:
-- [Documentação oficial do Kotlin sobre a classe LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-local-date/)
-- [Tutorial sobre como trabalhar com datas em Kotlin](https://www.baeldung.com/kotlin/dates)
+## Veja Também
+- [Documentação Oficial Kotlin - Pacote java.time](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/)
+- [Tutorial de Java - Date-Time API ](https://docs.oracle.com/javase/tutorial/datetime/)
+- [Blog da Baeldung - Como obter a data / hora atual em Java] (https://www.baeldung.com/java-8-date-time-intro)

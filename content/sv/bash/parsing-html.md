@@ -1,7 +1,7 @@
 ---
-title:                "Analys av html"
-html_title:           "Bash: Analys av html"
-simple_title:         "Analys av html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att parsa HTML är att på ett automatiserat sätt extrahera data från HTML-dokument. Detta är användbart för att kunna bearbeta och analysera stora mängder av information från webbsidor, till exempel för att skapa webbskrapor eller få statistik över olika webbplatser. Programmören vill alltså parsa HTML för att effektivt kunna samla och behandla relevant information från webben.
+# Parsing HTML i Bash: En Livsnerv i Programmering 
 
-## Hur man gör:
-Ett enkelt sätt att parsa HTML i Bash är att använda verktyget "curl" tillsammans med "grep" eller "sed". Detta kan se ut så här:
+## Vad & Varför?
+Parsing av HTML handlar om att läsa och bearbeta kod för att utvinna värdefull data, som kan användas i programmering. Programmerare gör detta för att manipulera, eller bara förstå, strukturen och innehållet i en webbsida.
+
+## Hur man:
+Här är ett enkelt exempel på hur du kan använda Bash för att parse HTML. 
 
 ```Bash
-curl <url till webbsida> | grep '<tag>' | sed 's/.*<tag>\(.*\)<\/tag>.*/\1/'
+#!/bin/bash
+
+curl -s 'https://example.com' | awk -vRS='<' -F'>|<!--' '
+    $2 ~ /^style/ || $2 ~ /^script/ {next}
+    $1 !~ /^img/ && $1 !~ /^{/ && $1 !~ /^--/ && $2 != "" {print $2}
+'
 ```
-Detta kommer att hämta innehållet från den angivna webbsidan, filtrera ut allt som matchar det angivna taggen, och sedan extrahera data mellan start- och sluttaggen för taggen. Detta är dock en mycket enkel metod och kan behöva anpassas beroende på hur HTML-koden på den specifika webbsidan ser ut.
 
-## Djupdykning:
-HTML-parsing har funnits länge och är ett viktigt verktyg för att kunna hämta och bearbeta data från webben. En alternativ metod för att parsa HTML är att använda ett programmeringsspråk som är specifikt designat för detta ändamål, till exempel Python med biblioteket BeautifulSoup. Detta ger mer flexibilitet och möjlighet att hantera mer komplex HTML-kod.
+Ovanstående script hämtar HTML från `https://example.com` och filtrerar ut text som inte ligger inom `<script>` eller `<style>` taggar.
 
-Implementationen av en HTML-parser kan variera beroende på vilket språk eller bibliotek som används, men i grund och botten går det ut på att läsa in HTML-koden, identifiera start- och sluttaggar för olika element, och sedan extrahera data mellan dessa. Detta kräver god kunskap om HTML-struktur och textbehandling i det valda programmeringsspråket.
+## Djup Dykning
+Historiskt sett var Bash inte ursprungligen avsett för att parse HTML; det har dock blivit populärt tack vare sin enkelhet och kraft. Alternativ inkluderar andra skriptspråk som Python eller JavaScript, vilka erbjuder robusta bibliotek för att hantera HTML-kod. Implementation av HTML parsing i Bash skiljer sig från dessa alternativ i den aspekten att Bash själv inte har inbyggda funktioner för HTML parsing, så vi måste använda externa verktyg som `awk` eller `sed`.
 
-## Se även:
-- [Curl](https://curl.se/)
-- [Grep](https://www.gnu.org/software/grep/)
-- [Sed](https://www.gnu.org/software/sed/)
-- [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/)
+## Se Även
+1. [Bash Scripting Tutorial](https://linuxconfig.org/bash-scripting-tutorial)
+2. [HTML Scraping](https://docs.python-guide.org/scenarios/scrape/)
+3. [Intro to awk](https://www.geekhideout.com/urlcode.shtml)
+
+Kom ihåg, programmering är mer konst än vetenskap. Använd verktygen som fungerar bäst för dig! Lycka till och happy coding!

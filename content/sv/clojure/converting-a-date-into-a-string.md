@@ -1,7 +1,7 @@
 ---
-title:                "Konvertera ett datum till en sträng"
-html_title:           "Clojure: Konvertera ett datum till en sträng"
-simple_title:         "Konvertera ett datum till en sträng"
+title:                "Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
+simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad & Varför? 
 
-Konvertering av ett datum till en sträng är en vanlig uppgift för programmerare. Det innebär att man omvandlar ett datum, som vanligtvis lagras som ett numeriskt värde, till en format som kan läsas av och användas i en sträng. Detta är viktigt eftersom det gör det lättare för utvecklare att hantera datum och tid i sina program.
+Att omvandla ett datum till en sträng (eller "string") är processen att omvandla objektet datum till en textuell representation. Detta görs så att datum kan visas för människor eller användas i beräkningar som kräver textformat.
 
-## Så här gör du:
+## Hur man gör:
 
-```Clojure 
-; Konvertering av ett datum till en sträng i Clojure
-(require '[clojure.java-time :as t])
-(import '[java.time.format DateTimeFormatter])
- 
-; Skapa ett datumobjekt
-(def date (t/local-date 2021 06 28))
- 
-; Konvertera till en sträng med formatet DD-MM-YYYY
-(t/format date "dd-MM-yyyy")
-; -> "28-06-2021"
- 
-; Konvertera till en sträng med formatet YYYY/MM/DD
-(t/format date "yyyy/MM/dd")
-; -> "2021/06/28"
+I Clojure kan du omvandla ett datum till en sträng med hjälp av `clj-time` biblioteket och `local-date` funktion. Låt oss se hur det fungerar:
+
+```clojure
+(ns my-app.core
+    (:require [clj-time.format :as f]))
+
+(def date-object (f/local-date-time))
+(def date-string (f/unparse f/formatters :iso-date-time date-object))
+
+(println date-string)
 ```
 
-## Utforska Djupet:
+Det här programmet kommer att skriva ut det nuvarande datumet och tiden enligt ISO-8601-standard i form av en sträng.
 
-Att konvertera datum till sträng är en vanlig uppgift i många programmeringsspråk, eftersom datum är en grundläggande datatyp som används i många applikationer. Innan moderna språkhanteringsfunktioner blev vanliga, var det vanligt att manuellt konvertera datum till strängar genom att använda olika funktioner och manipulationer.
+## Djupdykning:
 
-I dag finns det många alternativ för att konvertera datum till strängar, då de flesta programmeringsspråk inkluderar inbyggda funktioner eller bibliotek som kan hantera dessa uppgifter. I Clojure är det vanligt att använda java.time-paketet för att hantera datum och tider, och det finns många hjälpfunktioner som gör det enkelt att konvertera mellan olika format. 
+Omvandlingen av datum till strängar har varit en del av programmeringsspråk sedan de första high-level språken. Alternativet till att använda `clj-time` skulle vara att använda java interop och det inbyggda java.Date biblioteket, men `clj-time` biblioteket skapas för att vara mer idiomatic Clojure.
 
-## Se även:
+När du använder clj-time, blir detaljerna om hur omvandlingen görs hanteras av biblioteket, men i grunden använder det Java SimpleDateFormat-klassen för att omvandla datumet till en sträng.
 
-- [Clojure's java.time documentation](https://clojure.github.io/java.time/), som innehåller mer information om hantering av datum och tider i Clojure.
-- [Java's SimpleDateFormat Class](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html), som ger en djupare förståelse för hur datum och tid kan hanteras i Java och Clojure.
+## Se också:
+
+För mer information, kolla in följande resurser:
+
+1. [clj-time GitHub Repo](https://github.com/clj-time/clj-time) - källkoden och dokumentationen för `clj-time` biblioteket.
+
+2. [Java SimpleDateFormat Dokumentation](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) - detaljer om hur Java omvandlar datum till strängar.
+
+3. [Clojure for the Brave and True](https://www.braveclojure.com) - en super bok för att lära sig mer om Clojure.

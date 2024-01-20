@@ -1,7 +1,7 @@
 ---
-title:                "Die Konzeption eines neuen Projekts"
-html_title:           "Kotlin: Die Konzeption eines neuen Projekts"
-simple_title:         "Die Konzeption eines neuen Projekts"
+title:                "Ein neues Projekt starten"
+html_title:           "C#: Ein neues Projekt starten"
+simple_title:         "Ein neues Projekt starten"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -12,28 +12,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Ein neues Projekt zu starten bedeutet, dass man als Programmierer eine neue Anwendung oder Software entwickelt. Man macht das häufig, um neue Ideen umzusetzen oder Probleme zu lösen.
+Ein neues Projekt zu beginnen bedeutet, einen frischen Start mit einer sauberen Codebasis zu machen. Programmierer tun dies, um eine völlig neue Idee zu entwickeln oder bestehende Konzepte neu zu gestalten.
 
-## Wie geht's:
+## So geht's:
 
-Um ein neues Projekt in Kotlin zu starten, müssen Sie zunächst die Kotlin-Umgebung auf Ihrem Computer eingerichtet haben. Danach können Sie folgende Schritte befolgen:
+Sehen wir uns an, wie Sie ein neues Kotlin-Projekt mit IntelliJ IDEA erstellen können.
 
-```Kotlin
-fun main() {
-    println("Willkommen zu meinem neuen Projekt in Kotlin!")
-}
+```kotlin
+//Öffnen Sie IntelliJ IDEA und wählen Sie 'New Project'.
+//Wählen Sie 'Kotlin' auf der linken Seite und dann 'JVM | IDEA' auf der rechten Seite.
+//Geben Sie Ihrem Projekt einen Namen und klicken Sie auf 'Finish'.
 ```
 
-Nach dem Kompilieren und Ausführen des obigen Codes, sehen Sie die Ausgabe "Willkommen zu meinem neuen Projekt in Kotlin!" in der Konsole.
+Nun haben Sie ein neues Projekt. Mal sehen, wie man eine einfache "Hello, World!" Anwendung erstellt.
 
-## Tief eintauchen:
+```kotlin
+//Erstellen Sie eine neue Datei namens 'Main.kt'.
+//In dieser Datei fügen Sie den folgenden Code ein:
 
-Kotlin wurde im Jahr 2011 von JetBrains entwickelt und ist eine moderne, objektorientierte Programmiersprache, die plattformübergreifend verwendet werden kann. Es wurde entwickelt, um die Produktivität von Entwicklern zu verbessern und die Lesbarkeit von Code zu erhöhen. Alternative Programmiersprachen, die häufig verwendet werden, um neue Projekte zu starten, sind Java, C++ und Python.
+fun main() {
+    println("Hallo, Welt!")
+}
 
-Beim Erstellen eines neuen Projekts in Kotlin sollten Sie sicherstellen, dass Sie die grundlegenden Konzepte wie Variablen, Datentypen und Kontrollstrukturen verstehen. Außerdem sollten Sie sich mit der Verwendung von IDEs (Integrated Development Environment) wie IntelliJ oder Eclipse vertraut machen, um es Ihnen einfacher zu machen, Code zu schreiben, zu bearbeiten und zu debuggen.
+//Jetzt sollten Sie Ihre Anwendung ausführen können.
+//Das Ausgabe sollte sein: "Hallo, Welt!"
+```
 
-## Siehe auch:
+## Tiefere Einsicht:
 
-- https://kotlinlang.org/ - Offizielle Kotlin-Website mit Dokumentation und Tutorials.
-- https://www.jetbrains.com/idea/ - IntelliJ IDEA, eine beliebte IDE für Kotlin-Entwicklung.
-- https://www.eclipse.org/ide/ - Eclipse IDE, eine weitere beliebte IDE für Kotlin-Entwicklung.
+Historisch wird Kotlin als flexibler und leistungsfähiger Nachfolger von Java betrachtet. Es gibt Alternativen zur Verwendung von Kotlin und IntelliJ IDEA, wie z.B. die Verwendung von Eclipse oder dem Kotlin/Native für Nicht-JVM-Umgebungen. Die genauen Details zur Implementierung hängen von der Komplexität und den Anforderungen Ihres Projekts ab, aber das hier gezeigte Beispiel bietet einen guten Startpunkt.
+
+## Siehe Auch:
+
+1. [Offizielle Kotlin-Dokumentation](https://kotlinlang.org/docs/home.html)
+2. [Kostenloser Kotlin-Kurs auf Codecademy](https://www.codecademy.com/learn/learn-kotlin)
+3. [Kotlin für Anfänger](https://www.udemy.com/course/kotlin-for-beginners/) auf Udemy.

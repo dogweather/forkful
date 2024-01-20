@@ -1,7 +1,7 @@
 ---
-title:                "Interpolering av en sträng"
-html_title:           "Elixir: Interpolering av en sträng"
-simple_title:         "Interpolering av en sträng"
+title:                "Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
+simple_title:         "Interpolera en sträng"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,26 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Tristringinterpolering i Elixir är en metod för att kombinera värden från olika variabler eller uttryck i en sträng. Det kan användas för att enkelt skapa dynamiska meddelanden eller bygga komplexa strängar utan att behöva använda flera konkateneringar. Programmerare använder detta för att uppnå mer effektiva och läsbara kodbaser.
+## Vad och Varför?
+Interpolering av en sträng i Elixir innebär att du direkt införlivar variabler eller uttryck i en sträng. Programmerare gör det för att bygga dynamiska strängar mer lätt och tydlig.
 
-## Hur man:
+## Hur gör man:
+Här är ett enkelt exempel på interpolering. Skapa en variabel med värde och använd det sedan inom en sträng.
 ```Elixir
-name = "Maria"
-age = 25
-IO.puts "Hej, mitt namn är #{name} och jag är #{age} år gammal."
-
+name = "Anna"
+IO.puts "Hej #{name}!" 
 ```
-`Hej, mitt namn är Maria och jag är 25 år gammal.`
+Det här ger utskriften:
+```
+Hej Anna!
+```
+Du kan också utföra uttryck inom markörerna.
+```Elixir
+a = 10
+b = 20
+IO.puts "Summan av a och b är #{a + b}."
+```
+Utskriften blir:
+```
+Summan av a och b är 30.
+```
 
-I detta exempel kombineras variablerna `name` och `age` med hjälp av `#{}` syntaxen inuti en sträng för att skapa en personlig hälsning. Det är viktigt att strängen är omgiven av dubbla citationstecken för att interpoleringen ska fungera.
+## Djup Dykning
+Elixir som följer sin föregångare Erlang för dess sträng hantering, stödjer sträng interpolering sedan början. Alternativ till interpolering inkluderar strängkonkatenering eller användning av funktionsformat, men interpolering erbjuder en renare och mer läsbar syntax. Vid implementering av sträng interpolering sker processen i två steg: 
+1) kompilering och 
+2) runtime-beräkning av uttrycket i interpoleringen.
 
-## Djupdykning:
-Trådinterpolering har funnits sedan de första versionerna av Elixir och har sitt ursprung från språket Ruby. Det är ett populärt sätt att skapa dynamiska strängar i många programmeringsspråk, inklusive JavaScript, Python och Java. Alternativet till trådinterpolering är konkatenering, där variabler och strängar läggs till i strängen med hjälp av `+` tecknet.
+## Se Även
+Om du letar efter mer detaljerad information om stränginterpolation i Elixir, kan dessa källor vara till hjälp:
 
-Elixir använder sig av en formateringsfunktion, `format_s!`, för att utföra stränginterpolering. Detta ger också programmerare möjlighet att formatera värdena som ska kombineras. Till exempel kan vi använda `%s` för att formatera en sträng och `%d` för att formatera en heltalsvariabel.
+- Elixir Officiella dokumentation: [String interpolations](https://hexdocs.pm/elixir/String.html#module-interpolation)
+- Röd Guide till Elixir: [String Interpolation](https://www.red-grep.com/elixir-string-interpolation)
 
-## Se även:
-- [String Module Documentation](https://hexdocs.pm/elixir/String.html#module-interpolation)
-- [Elixir Forum - String Interpolation Thread](https://elixirforum.com/t/string-interpolation-syntax-question/926)
-- [The Power of Interpolation in Elixir](https://hashrocket.com/blog/posts/the-power-of-interpolation-in-elixir)
+Vänligen notera att dessa källor är på engelska.

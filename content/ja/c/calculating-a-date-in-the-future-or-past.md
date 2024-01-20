@@ -1,7 +1,7 @@
 ---
-title:                "「未来または過去の日付の計算方法」"
-html_title:           "C: 「未来または過去の日付の計算方法」"
-simple_title:         "「未来または過去の日付の計算方法」"
+title:                "未来または過去の日付を計算する"
+html_title:           "C: 未来または過去の日付を計算する"
+simple_title:         "未来または過去の日付を計算する"
 programming_language: "C"
 category:             "C"
 tag:                  "Dates and Times"
@@ -10,45 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-何 & なぜ?
+## 何と何のために?
 
-日付を未来や過去の特定の日数分計算することは、プログラマーにとって便利なことです。これにより、日付を柔軟に操作することができます。例えば、ファイルの有効期限を計算する必要がある場合などに役立ちます。
+日付の計算とは、現在の日付から特定の日数を加算または減算して将来または過去の日付を得ることを指します。プログラマーがこれを計算する理由は、予定の日程管理、期限の追跡、イベントのスケジューリングなど、多岐にわたります。
 
-方法:
+## 使い方:
 
-```C 
+C言語を使用して未来または過去の日付を計算するには、以下のようなコードを使用します：
+
+```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
 
-int main()
-{
-    int days = 5; //計算したい日数
-    time_t now = time(NULL); //現在時刻を取得
-    struct tm *future = localtime(&now); //現在時刻を構造体に変換
-    future->tm_mday += days; //日付を計算
-    char output[50]; //出力用の文字列
-    strftime(output, sizeof(output), "%Y/%m/%d", future); //構造体を文字列に変換
-    printf("Future date: %s\n", output); //結果を表示
-    
+int main() {
+    // 現在の時間を取得
+    time_t now;
+    time(&now);
+
+    // 5日後の日付を計算
+    struct tm *five_days_later = localtime(&now);
+    five_days_later->tm_mday += 5;
+    mktime(five_days_later);
+
+    printf("5 days later: %s", asctime(five_days_later));
+
     return 0;
 }
 ```
 
-出力:
+このコードの出力は次のようになります:
 
 ```
-Future date: 2021/01/06
+5 days later: Wed Jan 27 13:30:15 2021
 ```
 
-深堀り:
+## ディープダイブ:
 
-プログラミング言語によっては、日付を計算するための専用の関数が用意されている場合もあります。また、ライブラリを使用することで、より複雑な計算やタイムゾーンの考慮が可能になります。
+日付操作はプログラミングの歴史の初期から存在し、様々な方法で実装されてきました。C言語では`time.h`ライブラリを使用することで、時間に関する多くの操作が可能です。
 
-さらに、日付を計算する際には、閏年や月の日数などを考慮する必要があります。計算結果が正しいものであることを確認するためには、入力された日付が正しいかどうかのバリデーションも重要です。
+ただし、単純に日を加算・減算するだけでは、時間単位の異なる月と年に対しては適切に機能しません。このような場合、特定の関数を使用して適切な日付を取得することが推奨されます。
 
-関連情報:
+また、このプロセスの代わりに、多くの開発者が既存の日付・時間ライブラリを活用しています。これらは、日付間の差分計算、時刻の変換、時間帯の管理など、より複雑な日付操作を可能にします。
 
-- https://www.geeksforgeeks.org/program-calculate-future-dates-using-timestamp/
-- https://stackoverflow.com/questions/68537250/how-to-add-n-days-to-current-date-in-c
-- https://www.tutorialspoint.com/c_standard_library/time_h.htm
+## 関連情報:
+
+以下のリンクから関連内容を詳しく学ぶことができます:
+
+- [C date and time programming](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
+- [C programming examples of date and time](https://www.javatpoint.com/date-and-time-in-c)

@@ -1,6 +1,6 @@
 ---
 title:                "Comparando duas datas"
-html_title:           "Gleam: Comparando duas datas"
+html_title:           "C#: Comparando duas datas"
 simple_title:         "Comparando duas datas"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
-Comparar duas datas é uma tarefa comum em programação, que envolve verificar se uma data é anterior, posterior ou igual a outra. Programadores realizam essa tarefa para garantir a integridade dos dados e tomar decisões baseadas nas datas, como por exemplo, exibir conteúdo somente a partir de uma determinada data.
+## O Que & Porquê?
+
+Comparar duas datas envolve a análise das mesmas para identificar qual é mais recente, mais antiga, ou se são iguais. Os programadores fazem isto para ordenar eventos, fazer cálculos de tempo ou para ativar/desativar funcionalidades com base na data.
 
 ## Como fazer:
-Usando o Gleam, podemos comparar dois valores do tipo Datetime usando o operador ">", "<" ou "==". Confira o exemplo abaixo:
+
+Vamos ver como comparar duas datas em Gleam. 
+
 ```Gleam
-let hoje = Datetime.utc_now()
-let amanha = Datetime.utc_add_days(hoje, 1)
+import gleam/datetime.{Date}
+import gleam/int
 
-if (amanha > hoje) {
-  io.format("Amanhã é depois de hoje \n")
+fn compare_dates(date1: Date, date2: Date) -> String {
+  let comparison = date1.compare(date2)
+
+  case comparison {
+    Ok(Equal) -> "As datas são iguais."
+    Ok(Less) -> "A primeira data é mais antiga."
+    Ok(Greater) -> "A primeira data é mais recente."
+    Error(e) -> e
+  }
 }
+
+let date1 = Date.new(2020, 12, 1)
+let date2 = Date.new(2021, 12, 1)
+
+let result = compare_dates(date1, date2)
 ```
-O código acima verifica se a data de amanhã é posterior à data de hoje e imprime uma mensagem.
 
-## Profundidade:
-Comparar datas é essencial em muitas aplicações, seja para validar a entrada de dados ou para calcular diferenças de tempo. O Gleam oferece a função ```Datetime.diff_in_days```, que calcula o número de dias entre duas datas. Além disso, é possível utilizar bibliotecas como o "timex" e "calendar" para ter mais opções na manipulação de datas.
+Com este exemplo, o output será "A primeira data é mais antiga."
 
-## Veja Também:
-- [Documentação do Gleam sobre o tipo Datetime](https://gleam.run/examples/dates)
-- [Documentação do Gleam para a função diff_in_days](https://hexdocs.pm/gleam_stdlib/Datetime.html#diff_in_days/2)
-- [GitHub da biblioteca timex](https://github.com/bitwalker/timex)
-- [GitHub da biblioteca calendar](https://github.com/lau/calendar)
+## Pormenorização:
+
+A comparação de datas tem sido uma prática desde o início da programação. Alternativamente, você pode usar bibliotecas de terceiros para comparar datas ou até cálculos manuais com timestamps, mas Gleam fornece uma maneira fácil de fazer isso com a função `compare`.
+
+Leve em conta que `Date.new/3` pode lançar um erro. Assim, é recomendado usar com a função `try` para lidar com isso. Neste exemplo, simplificamos para manter a simplicidade.
+
+## Veja também:
+
+- Documentação Gleam's [`Date.new/3`](https://hexdocs.pm/gleam_stdlib/gleam/datetime/Date.html#new/3) 
+- Documentação Gleam's [`Date.compare/2`](https://hexdocs.pm/gleam_stdlib/gleam/datetime/Date.html#compare/2)
+- [Tutorial Gleam de manipulação de datas](https://gleam.run/book/tour/dates-and-time.html)
+- [Guia de tratamento de erros em Gleam](https://gleam.run/book/tour/errors.html)

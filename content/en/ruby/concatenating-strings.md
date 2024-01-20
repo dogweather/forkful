@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Ruby recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,51 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Concatenating Strings in Ruby
+
 ## What & Why?
 
-Concatenating strings is the process of joining multiple strings together to create a single string. Programmers commonly use this technique when they need to combine multiple pieces of text or data into a single variable.
+Concatenating strings involves joining two or more strings together to form a single string. Programmers do it mainly to build dynamic strings, handle user inputs or output formatted messages.
 
 ## How to:
 
-Concatenating strings in Ruby is quite simple. You can use the `+` operator to combine two or more strings. Let's take a look at an example:
+Let's look at two popular methods to concatenate strings in Ruby: the "+" operator and the "<<" operator, also known as the shovel operator.
 
 ```Ruby
+# Using the "+" operator
 first_name = "John"
 last_name = "Doe"
-
-full_name = first_name + last_name
-puts full_name
-```
-This code will output `JohnDoe` because the `+` operator simply joins the two strings together without any space in between. To add a space, we can do the following:
-
-```Ruby
-first_name = "John"
-last_name = "Doe"
-
 full_name = first_name + " " + last_name
 puts full_name
+# Output: John Doe
 ```
-Now, the output will be `John Doe` with a space between the two names. We can also use the `<<` operator as a shortcut for concatenation:
+Here, the "+" operator is used to concatenate the strings "John", " " and "Doe" together.
 
 ```Ruby
+# Using the "<<" operator
 first_name = "John"
 last_name = "Doe"
-
 full_name = first_name << " " << last_name
 puts full_name
+# Output: John Doe
 ```
-The output will be the same as the previous example. It is important to note that concatenating strings does not change the original variables, it only creates a new string.
+The "<<" operator also concatenates the strings, but it modifies the original string.
 
-## Deep Dive:
+## Deep Dive
 
-Concatenating strings has been a common practice in programming for a long time. In the early days, concatenation was done using functions such as `CONCAT` in SQL or `concat()` in C. However, with the introduction of the `+` operator, it has become much simpler and cleaner.
+Historically, in many programming languages, "+" was used to concatenate strings. However, in Ruby, the "<<" operator was introduced for efficient memory usage.
 
-Alternative ways to concatenate strings in Ruby include using the `concat` method or the `sprintf` method. The `concat` method is similar to the `<<` operator and the `sprintf` method uses a format string to combine strings.
+When you use "+", Ruby needs to create a new object. But with "<<" or "concat", the current string instance gets modified, saving memory space. If you're handling large strings or in a situation where performance matters, use "<<" instead of "+".
 
-Ruby also has the `join` method, which allows you to concatenate multiple strings with a specified separator. This can be useful when you have an array of strings that you want to join together.
+Another option is interpolation, especially useful when combining non-string objects, or for readability.
+```Ruby
+name = "John"
+message = "Hello, #{name}!"
+# Output: "Hello, John!"
+```
+Under the hood, Ruby implicitly calls the `"to_s"` method on the interpolated content inside the curly braces, converting it into a string, if it isn't already.
 
-In terms of implementation, when you concatenate two strings, a new string object is created in memory. If you have a large number of strings to concatenate, it is more efficient to use the `<<` operator or the `concat` method instead of using the `+` operator, as it creates a new string object every time it is used.
+## See Also
 
-## See Also:
+For more detailed insights on string concatenation in Ruby, consider checking out these resources:
 
-To learn more about concatenating strings in Ruby, check out the [official documentation](https://ruby-doc.org/core-2.7.2/String.html#method-i-2B) and the [Ruby Style Guide](https://rubystyle.guide/#string-concatenation). You can also explore other string manipulation methods in Ruby, such as interpolation and formatting. Happy coding!
+- Ruby's official documentation: https://docs.ruby-lang.org/en/
+- An insightful StackOverflow thread on string concatenation: https://stackoverflow.com/questions/4684446/why-is-the-shovel-operator-preferred-over-plus-for-concatenating-ruby
+- An article on Ruby string concatenation best practices: https://www.rubyguides.com/2018/06/rubys-string-concatenation/

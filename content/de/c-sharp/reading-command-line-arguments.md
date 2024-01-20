@@ -1,7 +1,7 @@
 ---
-title:                "Lesen von Befehlszeilen-Argumenten"
-html_title:           "C#: Lesen von Befehlszeilen-Argumenten"
-simple_title:         "Lesen von Befehlszeilen-Argumenten"
+title:                "Befehlszeilenargumente lesen"
+html_title:           "Arduino: Befehlszeilenargumente lesen"
+simple_title:         "Befehlszeilenargumente lesen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,38 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum?
+# C# Befehlszeilenargumente lesen: Ein Leitfaden
 
-Das Lesen von Befehlszeilenargumenten ist ein häufiger Bestandteil der Programmierung in C#. Es ermöglicht einem Programm, Eingabedaten direkt aus der Befehlszeile zu erhalten. Das ist hilfreich, wenn man zum Beispiel ein Programm ausführen möchte, das verschiedene Parameter erfordert.
+## Was & Warum?
 
-## Wie geht das?
+Die Befehlszeilenargumente sind Parameter, die einem Programm beim Start übergeben werden. Sie sind nützlich, um das Verhalten des Programms zu personalisieren oder ihm Daten zu übermitteln, ohne eine Benutzereingabe zu erfordern.
 
-Es gibt verschiedene Möglichkeiten, Befehlszeilenargumente in C# auszulesen. Eine Möglichkeit ist die Verwendung der Klasse `Environment`, die eine Methode namens `GetCommandLineArgs` bereitstellt. Hier ist ein Beispiel:
+## So macht man das:
+
+Wenn du Befehlszeilenargumente in einem C#-Programm lesen willst, musst du auf die `args`-Parameter des `Main`-Verfahrens zugreifen.
 
 ```C#
-string[] arguments = Environment.GetCommandLineArgs();
-
-foreach(string argument in arguments)
+static void Main(string[] args)
 {
-  Console.WriteLine(argument);
+    Console.WriteLine($"Es gibt {args.Length} Argument(e).");
+    for (int i = 0; i < args.Length; i++)
+    {
+        Console.WriteLine($"Argument {i + 1}: {args[i]}");
+    }
 }
 ```
 
-Die Ausgabe wird alle Befehlszeilenargumente anzeigen, die beim Start des Programms übergeben wurden. Zum Beispiel, wenn das Programm mit den Argumenten `argument1 argument2 argument3` aufgerufen wird, wird die Ausgabe entsprechend sein:
+Wenn du dieses Programm mit den Argumenten `Erstes Zweites Drittes` startest, würde es so aussehen:
 
-`argument1 argument2 argument3`
+```
+Es gibt 3 Argument(e).
+Argument 1: Erstes
+Argument 2: Zweites
+Argument 3: Drittes
+```
 
-## Tiefer in die Materie eintauchen
+## Deep Dive
 
-Das Lesen von Befehlszeilenargumenten existiert schon seit den frühen Tagen der Programmierung. Es ist eine praktische Möglichkeit, Benutzern die Möglichkeit zu geben, direkt mit einem Programm zu interagieren, ohne eine grafische Benutzeroberfläche verwenden zu müssen.
+Befehlszeilenargumente sind ein Konzept, das von den Anfängen der Programmierung stammt, als jedes Programm über eine Kommandozeile gestartet wurde. Heutzutage gibt es in C# auch alternative Möglichkeiten, wie die Verwendung von Konfigurationsdateien oder Umgebungsvariablen, die jedoch von den Projekterfordernissen abhängen.
 
-Es gibt auch andere Möglichkeiten, Befehlszeilenargumente in C# zu lesen, wie z.B. die Verwendung von Attributen oder das Parsen von benutzerdefinierten Argumenten.
+Die `args`-Parameter im `Main`-Verfahren sind eine Mischung von `string`-Array, die durch Leerzeichen getrennte Elemente des Befehls enthält, dem das Programm gestartet wurde.
 
-Die Implementierung der `GetCommandLineArgs`-Methode basiert auf der `Win32 GetCommandLine`-Funktion, die die Befehlszeile einer Anwendung ausgibt.
+## Siehe auch
 
-## Weitere Informationen
-
-Für weitere Informationen über das Lesen von Befehlszeilenargumenten in C# können folgende Links hilfreich sein:
-
-- [Die offizielle Dokumentation zur Environment-Klasse in C#](https://docs.microsoft.com/de-de/dotnet/api/system.environment)
-- [Ein Tutorial zum Lesen von Befehlszeilenargumenten in C# von The Code Project](https://www.codeproject.com/Articles/3111/C-Command-Line-Argument-Parsing-Redux)
+- ["Main" und die Befehlszeilenargumente (C#-Programmierhandbuch)](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/main-and-command-args/)
+- [Umgebungsvariablen in C# nutzen](https://docs.microsoft.com/de-de/dotnet/api/system.environment.getenvironmentvariable)

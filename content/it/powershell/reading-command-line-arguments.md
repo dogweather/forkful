@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti da linea di comando"
-html_title:           "PowerShell: Lettura degli argomenti da linea di comando"
-simple_title:         "Lettura degli argomenti da linea di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Leggere gli argomenti dalla riga di comando è un'abilità essenziale per i programmatori. Consiste nel recuperare i valori inseriti dall'utente quando viene eseguito un programma attraverso il terminale. Questi argomenti possono essere utilizzati per modificare il comportamento del programma o per fornire informazioni aggiuntive.
+## Che Cos'è e Perché?
 
-## Come fare:
-Il modo più semplice per leggere gli argomenti dalla riga di comando in PowerShell è utilizzando il parametro ```$args```, che contiene un'array di tutti gli argomenti inseriti dall'utente al momento dell'esecuzione. Si può accedere a questi argomenti utilizzando la loro posizione all'interno dell'array, ad esempio ```$args[0]``` per il primo argomento, ```$args[1]``` per il secondo e così via.
+Leggere gli argomenti della riga di comando significa prelevare input specifici che l'utente inserisce quando esegue il tuo script PowerShell. Questo è utile per rendere lo script più flessibile ed efficace, adattandolo a diverse situazioni senza doverlo modificare. 
+
+## Come Fare:
+
+Supponiamo che tu abbia uno script PowerShell di nome `MyScript.ps1`. Puoi passargli argomenti come questo:
 
 ```PowerShell
-# Esempio di codice per leggere gli argomenti dalla riga di comando
-if ($args[0] -eq "help"){
-  Write-Host "Benvenuti nel programma di aiuto"
-}
+.\MyScript.ps1 -Arg1 valore1 -Arg2 valore2
 ```
 
-Nell'esempio sopra, viene controllato se il primo argomento inserito è "help" e, in caso positivo, viene stampato un messaggio di benvenuto.
+All'interno del tuo script, puoi accedere a questi argomenti così:
+
+```PowerShell
+param (
+   [String]$Arg1,
+   [String]$Arg2
+)
+Write-Output "Arg1 is $Arg1"
+Write-Output "Arg2 is $Arg2"
+```
+
+L'output sarebbe:
+
+```PowerShell
+Arg1 is valore1
+Arg2 is valore2
+```
 
 ## Approfondimento:
-In passato, i programmatori dovevano utilizzare strumenti esterni come ```getopt``` per leggere gli argomenti dalla riga di comando in modo strutturato. Tuttavia, grazie all'evoluzione di PowerShell, ora è possibile farlo in modo più semplice utilizzando il parametro ```$args```.
 
-Un'alternativa a ```$args``` è l'utilizzo del comando ```Get-CommandLine``` che restituisce un oggetto contenente tutti gli argomenti della riga di comando separati in singoli elementi. Inoltre, è possibile specificare eventuali opzioni di formattazione per ottenere un output più dettagliato.
+Historicamente, l'accesso agli argomenti della riga di comando era un compito standard nella programmazione con linguaggi come C e Java. PowerShell ha semplificato il compito attraverso l'uso della funzione `param`.
 
-## Vedi anche:
-- [Documentazione ufficiale di Microsoft su $args](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1)
-- [Guida di riferimento di PowerShell per leggere gli argomenti dalla riga di comando](https://www.javatpoint.com/powershell-command-line-arguments)
+Un'alternativa per leggere gli argomenti sarebbe l'uso dell'array automatico `$args`, ma il suo uso è sconsigliato perché offre meno flessibilità e sicurezza di tipo.
+
+L'interpretazione degli argomenti nella riga di comando avviene da sinistra a destra. Gli argomenti possono essere interpretati come nome del parametro, valore del parametro o argomento posizionale a seconda della loro posizione e del formato.
+
+## Vedi Anche:
+
+- [Documento di Microsoft su come utilizzare gli argomenti della riga di comando in PowerShell](https://docs.microsoft.com/it-it/powershell/scripting/learn/deep-dives/everything-about-array?view=powershell-7.1)
+- [Guida di Microsoft su come scrivere script in PowerShell](https://docs.microsoft.com/it-it/powershell/scripting/learn/ps101/04-writing-commands?view=powershell-7.1)
+- [Post del blog sul passaggio di argomenti ai tuoi script PowerShell](https://devblogs.microsoft.com/scripting/passing-parameters-to-a-script-in-an-automated-fashion/)

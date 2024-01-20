@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "Ruby: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,26 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Søking og erstatting av tekst er en vanlig oppgave for programmerere. Den innebærer å finne spesifikke tekstelementer og erstatte dem med nye verdier. Dette kan være nyttig for å automatisere repetitivt arbeid eller for å endre mange forekomster av en gittekst på en gang.
+# Søk og Erstatt Tekst med Ruby
 
-# Hvordan:
-For å søke og erstatte tekst i Ruby kan du bruke metoden `gsub`. La oss si at vi har en streng som inneholder ordet "hallo" og vi vil erstatte det med "hei". Vi kan enkelt gjøre det ved å skrive følgende:
-```
-streng = "Hallo verden!"
-puts streng.gsub("hallo", "hei")
-```
-Dette vil produsere følgende utdata:
-```
-Hei verden!
-```
-Som du kan se, erstattet `gsub` metoden alle forekomster av "hallo" med "hei" i vår streng.
+## Hva & Hvorfor?
+"Søk og erstatt" er en prosess der spesifikke strenger i en blokk med tekst blir identifisert (søk) og deretter endret til noe annet (erstatt). Dette er nyttig for programmerere for å manipulere data, fikse feil, og tilpasse output.
 
-# Dypdykk:
-Søking og erstatting av tekst har eksistert i mange år og har blitt brukt i flere programmeringsspråk. En alternativ måte å gjøre det på i Ruby er ved å bruke metoden `sub` som bare erstatter den første forekomsten av den gitte teksten. Det finnes også andre programmeringsspråk som har innebygde funksjoner for å utføre denne oppgaven, for eksempel `replace()` i Python.
+## Hvordan:
+Her viser vi typiske bruksområder med [Rubys innebygde metoder](https://ruby-doc.org/core-2.7.0/String.html):
 
-Implementerings-detaljer for søking og erstatting av tekst kan variere avhengig av programmeringsspråk og versjon. Det er viktig å sjekke dokumentasjonen for språket du jobber med for å sikre riktig bruk.
+Så, for å søke og erstatte tekst i Ruby, kan vi bruke `gsub` metode. Se på dette eksempelet:
 
-# Se også:
-- Ruby sin offisielle dokumentasjon for `gsub` metoden: https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub
-- En guide til søking og erstatting i Ruby: https://www.rubyguides.com/2019/02/ruby-search-and-replace/
+```Ruby
+tekst = "Hei, Hvordan går det?"
+print tekst.gsub('Hvordan', 'Hva')
+```
+
+Output vil være: `"Hei, Hva går det?"`
+
+Du kan også bruke et regulært uttrykk (regex) med `gsub` for mer avanserte søk. La oss søke etter hvert ord på 5 bokstaver og erstatte det med '####':
+
+```Ruby
+tekst = "Hello world from the other side"
+print tekst.gsub(/\b\w{5}\b/, '####')
+```
+
+Output vil være: `"Hello world from the #### side"`
+
+## Dypdykk
+Historisk sett har søk og erstatt alltid vært en grunnleggende funksjon i tekstbehandling og programmering. Dens utførelse og implementering har variert fra språk til språk, men essensen har forblitt den samme.
+
+I Ruby, `gsub` (hvilken står for Global Substitution) er en av de mest brukte metodene for denne jobben. Ut over `gsub`, kan vi også bruke `gsub!`, som endrer strengen direkte i stedet for å returnere en ny.
+
+Det finnes flere alternativer for å søke og erstatte tekst i Ruby, inkludert `tr`, `tr_s`, og `delete`. Valget mellom disse avhenger av dine behov og preferanser.
+
+## Se Også
+- Ruby Docs String Methods: [https://ruby-doc.org/core-2.7.0/String.html](https://ruby-doc.org/core-2.7.0/String.html)
+- Tutorial: [https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm)
+- In-Depth LevelUp Article on gsub: [https://www.rubyguides.com/2019/07/ruby-gsub-method/](https://www.rubyguides.com/2019/07/ruby-gsub-method/)

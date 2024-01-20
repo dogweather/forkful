@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Python: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Python"
 category:             "Python"
@@ -10,45 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Python String Interpolering: Hvordan gjør vi det, og hvorfor?
+
 ## Hva & Hvorfor?
 
-Når du jobber med strenger (tekst), kan du møte på tilfeller der du trenger å sette inn variabler eller verdier i en streng. Dette kalles å interpolere en streng, og det er en viktig del av programmering for å gjøre teksten mer dynamisk og variabel.
+Interpolering av en streng i Python innebærer å sette verdier fra variabler rett inn i en streng. Programmerere gjør dette for å lage mer dynamiske strenger uten å trenge å konstant sette sammen strenger og variabler.
 
-## Slik gjør du:
+## Slik gjør du det:
 
-Du kan interpolere en streng ved å bruke f-strings i Python. Dette gjøres ved å skrive f foran strengen og deretter plassere variabelnavnet eller uttrykket du ønsker å sette inn i strengen inne i krøllparanteser. Se eksempelet under:
+Python tilbyr flere metoder for å interpolere strenger, og vi skal se på to av dem: f-strengformat og `.format()` metoden. Her er noen eksempler:
 
-```python
-navn = "Marie"
-alder = 25
-print(f"Hei, mitt navn er {navn} og jeg er {alder} år gammel.")
+```Python
+# f-strengformatering
+navn = "Ola"
+verdi = 10
+print(f"Hei {navn}, du har {verdi} poeng.")
+
+# .format() metoden
+print("Hei {}, du har {} poeng.".format(navn, verdi))
 ```
-
-Dette vil gi følgende output:
-
-```python
-Hei, mitt navn er Marie og jeg er 25 år gammel.
+Output:
 ```
-
-Du kan også bruke formateringsmetoden `.format()` for å interpolere en streng. Dette gjøres ved å plassere variabelnavnet eller uttrykket du ønsker å sette inn i strengen inne i krøllparanteser, men uten f foran strengen. Se eksempelet under:
-
-```python
-navn = "Maria"
-print("Hei, mitt navn er {}.".format(navn))
+Hei Ola, du har 10 poeng.
+Hei Ola, du har 10 poeng.
 ```
+Begge eksempler gir samme resultat, men f-strenger er mer lesbare og krever mindre kode.
 
-Dette vil gi følgende output:
+## Dyp Dykk
 
-```python
-Hei, mitt navn er Maria.
-```
+Interpolering av strenger har vært en del av Python siden begynnelsen, men f-strenger ble introdusert mye senere, i Python 3.6, for å gjøre det enklere og raskere å formatere strenger.
 
-## Dypdykk:
+I tillegg til f-strenger og `.format()`, er det også prosentformatmetoden `%`, men den ansees som utdatert, og det er anbefalt å bruke de to første metodene.
 
-Interpolasjon av strenger har vært en del av programmering helt siden programmeringsspråket C ble utviklet på 1970-tallet. Før dette var det vanlig å bare skrive variabelnavnet eller uttrykket inne i en streng, noe som gjorde teksten mindre fleksibel. Det finnes også andre måter å interpolere strenger på, som for eksempel ved å bruke `str.format()` eller %-formatering i Python. Uansett hvilken metode du velger, er det viktig å bruke interpolasjon for å gjøre teksten mer dynamisk og effektiv.
+Mens f-strengformat krever evaluering av uttrykk inne i strengene ved kjøretid, bruker `.format()` metoden tupler og ordbok for å sette inn verdiene i strengen. Derfor, selv om f-strenger gir bedre lesbarhet, kan `.format()` metoden gi mer kontroll over hvordan strengen blir formatert.
 
-## Se også:
+## Se Også
 
-- [Python dokumentasjon om f-strings](https://docs.python.org/3/tutorial/inputoutput.html#formatted-string-literals)
-- [Python dokumentasjon om `.format()`](https://docs.python.org/3/library/string.html#format-strings)
-- [Artikkel om %-formatering i Python](https://realpython.com/python-formatted-output/)
+For mer informasjon om strenginterpolering i Python, kan disse kildene være nyttige:
+
+1. Python offisielle dokumentasjon for f-strenger: [Link][1]
+2. Python offisielle dokumentasjon for `.format()` metoden: [Link][2]
+3. En god tutorial på Real Python: [Link][3]
+
+[1]: https://docs.python.org/3/reference/lexical_analysis.html#f-strings
+[2]: https://docs.python.org/3/library/stdtypes.html#str.format
+[3]: https://realpython.com/python-f-strings/

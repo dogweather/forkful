@@ -1,7 +1,7 @@
 ---
-title:                "לבדיקה אם קיימת תיקייה"
-html_title:           "Haskell: לבדיקה אם קיימת תיקייה"
-simple_title:         "לבדיקה אם קיימת תיקייה"
+title:                "בדיקה אם ספרייה קיימת"
+html_title:           "Haskell: בדיקה אם ספרייה קיימת"
+simple_title:         "בדיקה אם ספרייה קיימת"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,23 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בתכנות, בדיקת האם תיקייה קיימת היא פעולה חשובה לשימוש בתיקיות וקבצים במערכת הקבצים של המחשב. זהו דרך לוודא שהתיקייה או הקובץ שאנו רוצים לעבוד עליו באפליקציה שלנו קיים במחשב בזמן הרצת הקוד. מתכנתים משתמשים בבדיקת התיקייה כדי למנוע שגיאות ודפוסי פעולה לתכנית שלהם.
+בדיקה אם ספריה קיימת היא מנגנון של שפה התכנות מאפשר למתכנת לבדוק אם הספריה שהוזנה כארגומנט נמצאת במערכת. התכנתים עושים את זה כדי למנוע שגיאות מיותרות בזמן הריצה.
 
-## איך לעשות?
-כדי לבדוק אם תיקייה קיימת ב-Haskell, אנחנו משתמשים בפונקציה פנימית שנקראת doesDirectoryExist. ניתן להשתמש בה על מנת לבדוק אם תיקייה קיימת באמצעות הפקודה הבאה:
-
-```Haskell
-import System.Directory
- 
-doesDirectoryExist :: FilePath -> IO Bool
+## איך לבצע:
 ```
-פקודה זו תחזיר ערך בוליאני שיציין האם התיקייה קיימת או לא. אם התיקייה קיימת, יחזיר ערך True, אחרת יחזיר ערך False.
+import System.Directory
 
-## טיפ עמוק
-ניתן גם לבדוק אם תיקייה קיימת באמצעות קריאה למערכת הקבצים של המחשב ובדיקת הערך של המשתנה CURRENT_WORKING_DIRECTORY. פתרון הוא פחות אלגנטי ביחס לשימוש בפונקציה doesDirectoryExist, אבל עדיין תקף.
+main :: IO ()
+main = do
+    putStrLn "Please, enter the directory you want to check:"
+    dirName <- getLine
+    doesDirExist <- doesDirectoryExist dirName
+    putStrLn $ "Does the directory exist? " ++ show doesDirExist
+```
+כאשר מריצים את דוגמא זו, ראשית הוא יבקש ממך שם הספריה, ואז הוא יבדוק אם הספריה התואמת שם זה ממש קיימת במערכת.
 
-אם במקרה שלכם אין הצורך בבדיקת הקיומו של התיקייה, אלא רק ליצור אותה במקרה שהיא לא קיימת, אפשר להשתמש בפונקציה createDirectory במקום. היא תיצור את התיקייה אם היא אינה קיימת ותחזיר את התיקייה בכל מקרה.
+## שיעורים מעומקים:
+1. בהקשר היסטורי, הפונקציה "doesDirectoryExist" התחזקה בהקלה משום ש2GNU Haskell ISA מאוד משמש.
+2. אלטרנטיבות כוללות השתמשות בספריות חיצוניות שנותנות יותר שליטה, אך ייתכן שיהיו איכשהו פחות תודעתיים.
+3. מאחורי הקלעים, "doesDirectoryExist" מבצעת בדיקה מחודשת לתת-ספריה כאשר התכנית האשלית מתורגמת.
 
-## לקריאה נוספת
-* [Haskell 101](https://sebastiandedeyne.com/haskell-101-how-to-check-if-a-directory-exists/)
-* [Documentation for System.Directory](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html)
+## ראה גם:
+1. [תיעוד של System.Directory](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
+2. [פוסט בבלוג על קריאות לקובץ ולספריות בהאסקל](https://www.fpcomplete.com/blog/2017/10/Haskells-missing-concurrency-shell-promises/)

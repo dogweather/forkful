@@ -1,7 +1,7 @@
 ---
-title:                "HTML को विभाजन करना"
-html_title:           "Elixir: HTML को विभाजन करना"
-simple_title:         "HTML को विभाजन करना"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,32 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-HTML पार्सिंग क्या है और क्यों कई प्रोग्रामर इसे करते हैं इसके बारे में जानने के लिए इस आलेख को पढ़ें।
+
+HTML पार्सिंग, एक HTML डॉक्यूमेंट को विश्लेषित करने और उसके विभिन्न भागों को पहचानने की प्रक्रिया है। प्रोग्रामर्स इसे डाटा माइनिंग, वेब स्क्रेपिंग, और मशीन की अनुकूलता के लिए करते हैं।
 
 ## कैसे करें:
-इलिक्सर में HTML पार्सिंग के कुछ उदाहरण और उसका आउटपुट नीचे दिए गए कोड ब्लॉक में दिए गए है।
 
-```elixir
-# input HTML string
-html_string = "<p>Hello World!</p>"
+पार्स HTML डॉक्यूमेंट्स तैयार करने के लिए Elixir में Floki लाइब्रेरी का उपयोग कर सकते हैं।
 
-# parsing HTML using Floki library
-html_parsed = Floki.parse(html_string)
-
-# accessing the parsed elements
-Floki.find(html_parsed, "p") |> Floki.text()
+```Elixir
+defp deps do
+  [
+    {:floki, "~> 0.30.0"}
+  ]
+end
 ```
 
-आउटपुट:
-"Hello World!"
+अगले, निम्नवत प्रोग्राम का उपयोग करके HTML एलिमेंट्स को fetch और filter करें।
 
-## गहराई तक:
-ऐतिहासिक परिस्थितियों, विकल्प और HTML पार्सिंग के बारे में कुछ महत्वपूर्ण जानकारियां भी हमारे पास हैं। HTML पार्सिंग या एम्बीडेड कोड को प्रोसेस करने के लिए अन्य विकल्पों के समान, इलिक्सर भी इसके लिए आसान और अनुकूल इलिक्सर प्रोग्रामिंग भाषा है। HTML पार्सिंग का एक पात्र और निराशाजनक उदाहरण हमारे वेब ब्राउजर है, जो हर HTML पेज को पार्स करता है और आपको प्रदर्शित करता है।
+```Elixir
+{:ok, document} = Floki.parse_document("<html><title>Hello!</title></html>")
+title = document |> Floki.find("title") |> Floki.raw_html
+IO.puts(title)
+```
 
-## आगे देखें:
-अगर आपको HTML पार्सिंग समझने में और और जानकारी चाहिए तो आप इन लिंक्स को देख सकते हैं:
+Output कुछ इस प्रकार दिखाई देता है:
 
-1. [Elixir के ऑफिशियल डॉक्यूमेंटेशन](https://elixir-lang.org/getting-started/introduction.html)
-2. [Floki लाइब्रेरी की वेबसाइट](https://hexdocs.pm/floki/api-reference.html)
-3. [HTML पार्सिंग के विभिन्न तरीके](https://dzone.com/articles/parsing-html-using-elixir)
-4. [Elixir के बारे में और अधिक जानकारी](https://www.tutorialspoint.com/elixir/index.htm)
+```Elixir
+Hello!
+```
+
+## गहरी जांच:
+
+HTML पार्सिंग का इतिहास वेब के साथ-साथ शुरू हुआ था; गौरतलब है, HTML पार्सिंग मैन्युअल और क्लंकी था। Elixir, जैसी मॉडर्न लैंग्वेजेस ने इसे काफी सरल बना दिया है। विकल्प जैसे जावास्क्रिप्ट (जेसीओपियान) और पायथन (Beautiful Soup) पेश करते हैं, लेकिन Elixir की वजह से मल्टी-थ्रेडिंग और हाई परफॉर्मेंस का वादा HTML पार्सिंग को उनसे बेहतर बनाता है। 
+
+## देखे भी:
+
+- Floki documentation: https://hexdocs.pm/floki/readme.html
+- Other Elixir HTML parsing options: https://elixirforum.com/t/what-is-the-way-to-parse-html-in-elixir/2182/2
+- Introduction to web scraping with Elixir: https://dev.to/kieraneglin/introduction-to-web-scraping-with-elixir-2f4b

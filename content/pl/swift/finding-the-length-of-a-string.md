@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Swift: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,21 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego to robimy?
-Znalezienie długości łańcucha znaków, czyli ilości znaków w danym tekście, jest ważnym zadaniem dla programistów podczas tworzenia oprogramowania. Wiele operacji na stringach wymaga znajomości ich długości, więc umiejętność znalezienia jej jest niezbędna.
+## Co i dlaczego?
+
+Długość ciągu to liczba znaków, które go tworzą. Programiści muszą to znać, aby operować i manipulować ciągami – czy to wyświetlanie tekstu, przetwarzanie danych, czy analiza tekstu.
 
 ## Jak to zrobić:
-Możesz użyć metody `count` aby znaleźć długość łańcucha znaków w Swift. Przykładowo, jeśli chcesz znaleźć długość tekstu "Cześć!", możesz użyć poniższego kodu:
+
+W Swift, używamy właściwości `count` na ciągu, aby uzyskać jego długość. Oto jak to zrobić: 
 
 ```Swift
-let tekst = "Cześć!"
-print(tekst.count)
+let str = "Cześć, Swift!"
+let length = str.count
+print(length)  // Wynik: 13
 ```
 
-W tym przypadku, metoda `count` zwróci wartość 6, ponieważ tekst składa się z sześciu znaków.
+Te dwie linie kodu zwrócą długość ciągu "Cześć, Swift!", która wynosi 13.
 
-## Głębsza analiza:
-Znalezienie długości łańcucha znaków jest powszechnym zadaniem w programowaniu i istnieje wiele sposobów na to, aby to zrobić. Wcześniej, programiści musieli ręcznie liczyć znaki w tekście lub używać złożonych algorytmów. Jednak, dzięki nowoczesnym językom programowania, takim jak Swift, metoda `count` jest dostępna, co ułatwia nam zadanie.
+## Pogłębiona analiza
 
-## Zobacz także:
-Jeśli chcesz dowiedzieć się więcej o metodzie `count` lub innych operacjach na stringach w Swift, zapoznaj się z dokumentacją Swift od Apple lub wypróbuj różne przykłady kodu z udostępnionej przez nich witryny.
+Długość ciągu była zawsze istotnym aspektem dla programistów, ponieważ na podstawie długości ciągów wykonują różne operacje. W Swift, `count` zwraca liczbę "znaków wyświetlanych", co może być różne dla różnych języków i systemów.
+
+Jako alternatywę, możesz używać metody `utf16.count` lub `utf8.count` do uzyskania długości ciągu, ale to zależy od konkretnego zastosowania i żądanych szczegółów implementacji.
+
+## Zobacz także
+
+* Dokumentacja Apple o ciągach: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html
+* Post na StackOverflow o długości ciągów: https://stackoverflow.com/questions/24092886/get-length-of-string-in-swift

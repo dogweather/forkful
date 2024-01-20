@@ -1,7 +1,7 @@
 ---
-title:                "문자열의 대문자화"
-html_title:           "TypeScript: 문자열의 대문자화"
-simple_title:         "문자열의 대문자화"
+title:                "문자열 대문자로 바꾸기"
+html_title:           "TypeScript: 문자열 대문자로 바꾸기"
+simple_title:         "문자열 대문자로 바꾸기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 사용하나요?
 
-문자열의 첫 번째 글자를 대문자로 변환하는 작업을 캐피탈라이즈(capitalize)라고 합니다. 프로그래머들이 이 작업을 하는 이유는 사용자에게 보기 좋은 텍스트를 제공하기 위해서입니다.
+문자열 대문자화는 문자열의 모든 문자를 대문자로 변환하는 작업을 의미합니다. 이는 사용자 입력의 일관성을 유지하거나, 특정 텍스트를 강조하는 등 다양한 이유로 프로그래머들이 사용합니다.
 
-## 어떻게:
+## 어떻게 사용하나요:
 
+다음의 TypeScript 코드 예시를 참조하세요:
 ```TypeScript
-const str = "hello world";
-console.log(str.charAt(0).toUpperCase() + str.slice(1));
-
-//Output: Hello world
+let str = "hello world";
+let upperStr = str.toUpperCase();
+console.log(upperStr); // 출력: "HELLO WORLD"
 ```
 
-```TypeScript
-const str = "typescript programming";
-console.log(str.split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" "));
+## 깊이 들여다보기:
 
-//Output: TypeScript Programming
+*사실 이야기*: 원래 알파벳을 대문자화하는 것은 타자기를 이용하는 초창기 언론사에서 시작되었습니다. 그 때는 헤드라인을 강조하기 위해 대문자를 주로 사용하였습니다.
+
+*대체 방법*: TypeScript 외에도, JavaScript 에서도 `toUpperCase()`와 동일한 기능을 가진 메소드를 사용할 수 있습니다. 아래는 그 예시입니다:
+```JavaScript
+let str = "hello world";
+let upperStr = str.toUpperCase();
+console.log(upperStr); // 출력: "HELLO WORLD"
 ```
 
-## 딥 다이브:
+*구현 세부 정보*: `toUpperCase()` 메소드는 문자열에 대해 작동할 뿐만 아니라, 숫자형 과 null 값에 대해서도 작동합니다. 그러나 객체에 대해서 작동하지는 않습니다. 예시는 아래와 같습니다:
+```TypeScript
+let num = 123;
+let numToString = num.toString();
+let upperNumToString = numToString.toUpperCase();
+console.log(upperNumToString); // 출력: "123"
+```
 
-(1) 캐피탈라이즈 작업은 대문자나 소문자와 같은 문자열 변환 작업의 일부입니다. (2) 다른 언어에서는 capitalize() 함수를 제공하지만 TypeScript에서는 위 코드와 같이 수동으로 작업해야 합니다. (3) 또한 위 코드에서는 첫 번째 글자만 대문자로 변환하지만 다른 구현 방식으로 모든 단어의 첫 번째 글자를 대문자로 변환할 수도 있습니다.
+## 참고하기 위한 링크:
 
-## 관련 자료:
-
-- [JavaScript 문자열 변환 함수](https://www.w3schools.com/js/js_string_methods.asp)
-- [TypeScript 공식 문서](https://www.typescriptlang.org/docs/)
+- [toUpperCase() 메소드 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+- [타입스크립트 공식 문서](https://www.typescriptlang.org/docs/)

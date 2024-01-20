@@ -10,31 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 为什么要计算未来或过去的日期?
+## 什么 & 为什么？
 
-计算未来或过去的日期是指通过编程来确定一个特定日期之前或之后的日期。这对程序员来说非常有用，因为它可以让他们轻松地在程序中操作日期，而无需手动计算。
+计算未来或过去的日期是一个常用的编程问题，需要设定一个日期然后增加或减少一段时间。程序员经常需要进行这种计算来预测和追溯事件。
 
-# 如何计算未来或过去的日期?
-
-在C#中，可以使用DateTime类中的Add方法来计算未来或过去的日期。下面是一个示例代码，假设我们要计算当前日期之后的3天：
-
+## 如何进行：
 ```C#
-DateTime today = DateTime.Now; // 获取当前日期
-DateTime futureDate = today.Add(TimeSpan.FromDays(3)); // 通过Add方法计算未来日期
-Console.WriteLine($"三天后的日期为: {futureDate}");
+using System;
+
+public class Program
+{
+    public static void Main()
+    {
+        DateTime today = DateTime.Today;//获取今天的日期
+        DateTime futureDate = today.AddDays(10);//获取10天后的日期
+        DateTime pastDate = today.AddDays(-10);//获取10天前的日期
+        Console.WriteLine($"今天的日期为: {today}");
+        Console.WriteLine($"10天后的日期为: {futureDate}");
+        Console.WriteLine($"10天前的日期为: {pastDate}");
+    }
+}
+```
+输出：
+```txt
+今天的日期为: 2022/02/15
+10天后的日期为: 2022/02/25
+10天前的日期为: 2022/2/5
 ```
 
-输出结果为：三天后的日期为: 2021/07/31 上午 10:55:12
+## 深度研究
 
-# 深入了解
+历史上，我们曾经使用一系列复杂的算法来进行日期计算，但是在现代编程语言如C#中，已经内置了这种功能。对于这种简单的日期计算，您可以直接使用`AddDays`方法。如果您需要进行更复杂的日期计算，如时区和日历的转换，可以使用`DateTimeOffset`和`Calendar`类。
 
-历史背景：计算日期在编程中非常常见，尤其是在需要处理时间相关的任务时。在过去，程序员们可能需要手动计算日期，这不仅复杂而且容易出错。
+除了C#内置的方式，还有其他的日期计算库如NodaTime。NodaTime提供了更强大和灵活的日期计算功能。
 
-替代方案：除了使用C#中的DateTime类，还可以使用第三方类库如NodaTime来计算日期，这些类库通常提供了更多的功能和更准确的计算结果。
+需要注意的是，在执行日期计算时，尽可能避免直接操作日期的组成部分（如年、月、日）。因为这样可能会引发一些边界问题（如闰年和每个月天数的不同）。
 
-实现细节：DateTime类中的Add方法接受一个TimeSpan类型的参数，可以通过TimeSpan的From方法来传入不同的时间单位。
+## 参见
 
-# 相关链接
+请参考以下链接以了解更多相关信息：
 
-- DateTime类文档: https://docs.microsoft.com/en-us/dotnet/api/system.datetime
-- NodaTime类库: https://nodatime.org/
+1. [C# DateTime MSDN文档](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
+2. [C# DateTimeOffset MSDN文档](https://docs.microsoft.com/en-us/dotnet/api/system.datetimeoffset?view=netcore-3.1)
+3. [C# Calendar MSDN文档](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.calendar?view=netcore-3.1)
+4. [NodaTime Github](https://github.com/nodatime/nodatime)

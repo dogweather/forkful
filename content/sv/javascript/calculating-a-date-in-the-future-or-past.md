@@ -1,7 +1,7 @@
 ---
-title:                "Beräkning av ett datum i framtiden eller förflutna"
-html_title:           "Javascript: Beräkning av ett datum i framtiden eller förflutna"
-simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutna"
+html_title:           "Javascript: Beräkna ett datum i framtiden eller förflutna"
+simple_title:         "Beräkna ett datum i framtiden eller förflutna"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,29 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Beräkning av datum i framtiden eller förfluten tid är en viktig aspekt av programmering eftersom det tillåter utvecklare att skapa dynamiska och användbara funktioner i sina program. Genom att kunna beräkna datum kan man till exempel skapa betalningssystem som automatiskt genererar fakturor baserat på ett specifikt datum eller händelsetracker som håller reda på när ett visst evenemang kommer att äga rum.
+## Vad och varför?
+
+Beräkning av ett datum i framtiden eller förflutna är processen att lägga till eller dra ifrån dagar, månader eller år från ett existerande datum. Programmerare gör detta för att hantera tidrelaterade funktioner, som event planering eller betalningssystem.
 
 ## Hur man gör:
-Här är kod exempel på hur man kan beräkna ett datum i framtiden eller förfluten tid med hjälp av Javascript.
+
+Här kommer vi att använda två metoder: `setDate()` och `getDate()`. Se koden nedan:
 
 ```Javascript
-//Beräkna ett datum i framtiden
-const today = new Date();
-const futureDate = new Date(today);
-futureDate.setDate(today.getDate() + 7); //lägger till 7 dagar till dagens datum
-console.log(futureDate); //output: 2021-05-21T09:30:48.828Z
+// Skapa ett nytt datumobjekt
+let nu = new Date(); 
 
-//Beräkna ett datum i förfluten tid
-const today = new Date();
-const pastDate = new Date(today);
-pastDate.setDate(today.getDate() - 7); //subtraherar 7 dagar från dagens datum
-console.log(pastDate); //output: 2021-05-07T09:30:48.828Z
+// Få dagens dag
+let dag = nu.getDate();
+
+// Beräkna ett datum 5 dagar framåt
+nu.setDate(dag + 5);
+
+console.log(nu);
 ```
 
-## Djupdykning:
-Beräkning av datum har varit en viktig del av datorprogrammering sedan de första datorerna skapades. Det var en av de första funktionerna som implementerades i programmeringsspråket COBOL, som utvecklades på 1960-talet. Idag finns det flera andra sätt att beräkna datum i framtiden eller förfluten tid, såsom att använda tidsstämplar eller bibliotek som Moment.js.
+Om du kör den här koden kommer du att se en utmatning som liknar detta:
 
-## Se även:
-- [Moment.js](https://momentjs.com/) - ett populärt Javascript-bibliotek för att hantera datum och tid.
-- [Date and Time in COBOL](https://www.ibm.com/support/knowledgecenter/en/SS6SGM_5.3.0/com.ibm.entcobol.doc_5.3/tpc/BESRTIME.html) - mer information om beräkning av datum i COBOL.
+```Javascript
+2022-09-02T17:41:08.334Z
+```
+
+Om man vill räknar tillbaka de dagar, ändra `+` tecknet till `-`.
+
+## Fördjupning
+
+Beräknade datum har varit en del av Javascript sedan tidiga versioner av språket. Andra metoder för beräkning av datum inkluderar att använda moment.js biblioteket eller date-fns biblioteket, vilka ger smidigare funktionaliteter för datum och tidhantering.
+
+Om du behöver göra mer komplexa datum operationer kan du använda Date-fns biblioteket. Det erbjuder funktioner som addDays, subtractDays, addMonths och subtractMonths, vilka gör hantering av datum mycket mer lättare. 
+
+## Se även
+
+För mer information och andra relaterade ämnen, kolla på följande länkar:
+
+1. MDN web docs: [Date Objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+
+2. JavaScript Date Reference: [JavaScript Date Object](https://www.w3schools.com/jsref/jsref_obj_date.asp)
+
+3. Moment.js: [Manipulating dates](https://momentjs.com/docs/#/manipulating/)
+
+4. Date-fns: [Manage Dates](https://date-fns.org/v2.21.3/docs/)

@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän muuntaminen merkkijonoksi"
-html_title:           "C++: Päivämäärän muuntaminen merkkijonoksi"
-simple_title:         "Päivämäärän muuntaminen merkkijonoksi"
+title:                "Päivämäärän muuttaminen merkkijonoksi"
+html_title:           "Go: Päivämäärän muuttaminen merkkijonoksi"
+simple_title:         "Päivämäärän muuttaminen merkkijonoksi"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Dates and Times"
@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mikä & Miksi?
+Muunnetaan päivämäärä merkkijonoksi - prosessi, jossa ajankohta esitetään teksti muodossa. Ohjelmoijat tekevät tämän tiedonlukemisen helpottamiseksi ja tiedon käsittelyn yksinkertaistamiseksi.
 
-Päivämäärän muuttaminen merkkijonoksi tarkoittaa, että ohjelmoija muokkaa päivämääräarvoa, esimerkiksi vuoden, kuukauden ja päivän numerosta, tekstiksi. Tämä on usein tarpeen, kun halutaan tulostaa päivämäärä käyttäjälle tai tallentaa se tiedostoon. Jonkin päivämäärän muuttaminen merkkijonoksi helpottaa sen käsittelyä ohjelmassa.
+## Kuinka tehdä:
+Käytämme C++ Standard Kirjastosta päivämäärä- ja aikaluokkia tämän toiminnallisuuden toteuttamiseen.
 
-# Kuinka:
-
-```cpp
+```C++
 #include <iostream>
-#include <string>
-#include <sstream>
-
-using namespace std;
+#include <chrono>
+#include <iomanip>
 
 int main() {
+    auto nykyinen_aika = std::chrono::system_clock::now();
+    std::time_t muotoiltu_aika = std::chrono::system_clock::to_time_t(nykyinen_aika);
 
-    // Alustetaan päivä, kuukausi ja vuosi muuttujat
-    int day = 15;
-    int month = 9;
-    int year = 2021;
-
-    // Luodaan stringstream-olio, johon päivämäärä muutetaan
-    stringstream ss;
-
-    // Lisätään päivämääräarvot stringstreamiin
-    ss << day << "." << month << "." << year;
-
-    // Muutetaan stringstreamin sisältö merkkijonoksi
-    string date = ss.str();
-
-    // Tulostetaan päivämäärä merkkijonona
-    cout << "Tänään on " << date << endl;
-
-    // Output: Tänään on 15.9.2021
-
-    return 0;
+    std::cout << "Päivämäärä merkkijonona: " << std::put_time(std::localtime(&muotoiltu_aika), "%Y-%m-%d %H:%M:%S") << '\n';
 }
 ```
+Esim. tulostus saattaa näyttää tältä: `Päivämäärä merkkijonona: 2023-08-04 12:13:14`  
 
-# Syväsukellus:
+## Syvempi sukellus
+Historiallisesti päivämäärät ja ajat esitettiin merkkijonoina muotoiluvaihtoehtojen erilaisuuden vuoksi. Tässä koodissa käytetty `std::put_time` -funktio ja formatter `%Y-%m-%d %H:%M:%S` ovat ISO 8601-standardin mukaisia. 
 
-Päivämäärän muuttaminen merkkijonoksi on ollut tarpeellista jo pitkään ohjelmoinnin historiassa. Ennen C++:aa tämä oli mahdollista tehdä vain käsittelemällä merkkijonoja C-kielellä. Nykyään C++ tarjoaa monia valmiita toimintoja, kuten stringstreamin, jotka helpottavat tämän tehtävän hoitamista. On myös mahdollista muuttaa päivämäärä suoraan merkkijonoksi esimerkiksi käyttämällä kirjastoa, kuten Boost.Date_Time.
+Vaihtoehtoisia metodeja päivämäärän merkkijonoksi muuntamiseen on olemassa, esimerkiksi toisten kirjastojen avulla, kuten Boost, mutta varsinkin vanhemmissa ohjelmissa kustomoidut funktiot ovat yleisiä.
 
-# Katso myös:
+`std::chrono::system_clock::now()` ottaa nykyisen ajan ja `std::chrono::system_clock::to_time_t` muuntaa sen ajaksi, joka on yhteensopiva C:n aikafunktioiden kanssa. Tämä aika muunnetaan paikalliseksi `std::localtime`-funktiolla, joka tuottaa yhteensopivan osoittimen `std::put_time`-funktiolle.
 
-- https://www.cplusplus.com/reference/sstream/stringstream/ - C++ referenssisivu stringstream-luokasta
-- https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html - Boost.Date_Time kirjaston dokumentaatio
+## Katso myös
+1. [C++ Standard Library: <chrono>](http://www.cplusplus.com/reference/chrono/)
+2. [C++ Standard Library: <iomanip>](http://www.cplusplus.com/reference/iomanip/)
+3. [C++ Date and Time - Cplusplus.com](http://www.cplusplus.com/doc/tutorial/ntcs/)
+4. [Support for ISO 8601 formats for date and time - cppreference.com](https://en.cppreference.com/w/cpp/chrono/io/put_time)
+5. [C++ Boost Date_Time library](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)

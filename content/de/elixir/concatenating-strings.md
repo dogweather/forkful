@@ -1,7 +1,7 @@
 ---
-title:                "Verketten von Zeichenketten"
-html_title:           "Elixir: Verketten von Zeichenketten"
-simple_title:         "Verketten von Zeichenketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,27 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das & warum?
+## Was und Warum?
 
-Die Verkettung von Zeichenketten (Strings) ermöglicht es uns, mehrere Zeichenketten zu kombinieren und eine längere Zeichenkette zu erstellen. Programmierer nutzen dies, um beispielsweise Texte dynamisch zu generieren oder Dateipfade zu erstellen.
+Zusammenfügen von Zeichenketten (englisch "string concatenation") bedeutet, zwei oder mehrere Zeichenketten zu einer einzigen Zeichenkette zu vereinen. Es ist eine grundlegende Operation in der Programmierung, um dynamische Inhalte zu erstellen, Meldungen zu formatieren oder Daten zu speichern und auszugeben.
 
-## Wie geht das?
+## Wie es geht:
 
-In Elixir können wir Zeichenketten mit dem `<>` Operator zusammenfügen oder die Funktion `String.concat/2` verwenden. Beispiel:
+In Elixir verwenden wir das `<>` Operator, um Zeichenketten zu verbinden. Hier sind einige Beispiele:
+
+Wir können zwei Zeichenketten so zusammenfügen:
 
 ```Elixir
-"Hello" <> " " <> "World"
-# Output: "Hello World"
+name = "Max"
+greeting = "Hallo, " <> name
+IO.puts greeting
+```
+Dies wird auf der Konsole ausgeben:
+`Hallo, Max`
 
-String.concat(["Hello", " ", "World"])
-# Output: "Hello World"
+Wenn wir Inhalte dynamisch generieren, sieht das zum Beispiel so aus:
+
+```Elixir
+count = 3
+message = "Sie haben " <> Integer.to_string(count) <> " neue Nachrichten."
+IO.puts message
+```
+Dies gibt aus: `Sie haben 3 neue Nachrichten.`
+
+## Tiefer einsteigen:
+
+Historisch gesehen gibt es in vielen Programmiersprachen Methoden, um Zeichenketten zu verbinden. In früheren Versionen von Elixir verknüpften wir Zeichenketten mit der plus-Operator, aber seit Version 1.0 verwenden wir `<>` dafür.
+
+Es gibt auch alternative Möglichkeiten, um Zeichenketten in Elixir zu verbinden, etwa mit Interpolation:
+
+```Elixir
+count = 3
+message = "Sie haben #{count} neue Nachrichten."
+IO.puts message
 ```
 
-## Tiefgehende Einblicke
+Das vereinfacht oft den Code und macht ihn leichter lesbar, ist aber nicht immer die beste Lösche - etwa dann, wenn Performance in Spiel ist, da `<>` schneller als die Interpolation sein kann.
 
-Die Verkettung von Zeichenketten ist ein grundlegendes Konzept der Programmierung und wird in vielen Sprachen unterstützt. In Elixir wird die Verkettung von Zeichenketten intern durch die Konkatenation von Listen implementiert. Alternativen zur Verkettung von Zeichenketten sind beispielsweise die Verwendung von Templating-Bibliotheken oder die Verwendung von regulären Ausdrücken.
+## Siehe auch:
 
-## Siehe auch
-
-- [Elixir String Dokumentation] (https://hexdocs.pm/elixir/String.html)
-- [Elixir to_string() vs. <>] (https://stackoverflow.com/questions/26715380/elixir-to-string-vs)
+Für weiterführende Lektüren, schauen Sie bitte die offizielle Elixir Dokumentation hier: https://hexdocs.pm/elixir/String.html. Es hat viele Informationen und Beispiele für die Arbeit mit Zeichenketten und andere Datenformate in Elixir.

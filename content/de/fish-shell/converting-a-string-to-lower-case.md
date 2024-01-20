@@ -1,7 +1,7 @@
 ---
-title:                "Umwandlung eines Strings in Kleinschreibung"
-html_title:           "Fish Shell: Umwandlung eines Strings in Kleinschreibung"
-simple_title:         "Umwandlung eines Strings in Kleinschreibung"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,34 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Konvertieren eines Strings zu Kleinbuchstaben ist ein häufig verwendeter Prozess in der Programmierung. Es bezieht sich auf die Umwandlung aller Großbuchstaben in einem String in die entsprechenden Kleinbuchstaben. Programmierer tun dies aus verschiedenen Gründen, wie zum Beispiel um sicherzustellen, dass Benutzereingaben einheitlich behandelt werden oder um Daten für Vergleiche zu standardisieren.
+## Was & Warum?
 
-# Wie geht's?
-Die Umwandlung eines Strings zu Kleinbuchstaben in der aktuellen Version von Fish Shell ist dank der integrierten Funktion `string tolower` sehr einfach. Hier ist ein einfaches Beispiel:
+Der Prozess des Wandels einer Zeichenkette (oder String) in Kleinschreibung ist ein gebräuchliches Muster in Computerprogrammierung. Dies kann hilfreich sein, wenn wir eine standardisierte Verarbeitung oder einen Vergleich von Textdaten durchführen möchten, unabhängig von der Eingabeformatierung.
 
-```
-set str "HALLO"
-echo (string tolower $str)
-```
+## So geht's:
 
-Die Ausgabe dieses Codes wäre `hallo`, da alle Großbuchstaben in dem ursprünglichen String in Kleinbuchstaben umgewandelt wurden.
+Zum Umwandeln von Strings in Kleinschreibung in der Fish Shell verwenden wir die `string lower` Funktion. Hier ist ein einfaches Beispiel:
 
-Eine andere Möglichkeit, um einen String zu Kleinbuchstaben zu konvertieren, ist die Verwendung des `tr` Befehls zusammen mit der `tr '[:upper:]' '[:lower:]'` Option. Hier ist ein Beispiel:
-
-```
-set str "HELLO"
-echo $str | tr '[:upper:]' '[:lower:]'
+```Fish Shell
+set meinText "Dies Ist Mein TEXT"
+set lowerCaseText (string lower -a $meinText)
+echo $lowerCaseText
 ```
 
-Dies würde auch die Ausgabe `hello` erzeugen.
+Die Output wird wie folgt sein:
 
-# Tiefere Einblicke
-Die Notwendigkeit der Konvertierung von Strings zu Kleinbuchstaben hat eine lange Geschichte in der Programmierung. In älteren Programmiersprachen, die keine eingebauten Funktionen für String-Manipulation hatten, mussten Entwickler komplizierte Methoden verwenden, um dies zu erreichen. Heutzutage gibt es verschiedene Alternativen zu Fish Shell, um dieses Problem zu lösen, wie z.B. GNU Awk oder Perl.
+```Fish Shell
+dies ist mein text
+```
+Die Option `-a` gewährleistet, dass jeder Buchstabe des Strings in Kleinschreibung konvertiert wird.
 
-Die `string tolower` Funktion in Fish Shell verwendet die `tr` Befehlsmöglichkeiten `[:upper:]` und `[:lower:]` für die Konvertierung. Diese können auch in Kommandozeilenbefehlen oder Skripten außerhalb von Fish Shell verwendet werden.
+## Tiefer Einblick:
 
-# Siehe auch
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/cmds/string-tolower.html
-- GNU Awk Dokumentation: https://www.gnu.org/software/gawk/manual/html_node/Case-Conversion.html
-- Perl Dokumentation: https://perldoc.perl.org/functions/lc.html
+Die Möglichkeit, Strings in der Fish Shell in Kleinbuchstaben umzuwandeln, ist ein relativ neues Merkmal, das in der Version 3.1 eingeführt wurde. Es gibt zahlreiche Alternativen in anderen Shell-Skriptsprachen, darunter `tr` in Bash und die Methode `downcase` in Ruby.
+
+Die Implementierungsdetails von `string lower` in Fish sind recht einfach. Die Funktion durchläuft jedes Zeichen im String und verwendet eine einfache Funktion zur Konvertierung von Groß- zu Kleinbuchstaben, die auf der ASCII-Tabelle basiert. Es wird vorausgesetzt, dass die Eingabe ein gültiger UTF-8-Text ist.
+
+## Siehe auch:
+
+Für weitere Informationen zu Funktionen und Befehlen in Fish Shell:
+
+1. [Fish Shell Dokumentation](https://fishshell.com/docs/current/)
+2. [Fish Shell GitHub Repository](https://github.com/fish-shell/fish-shell)
+
+Für Details zur Textverarbeitung und zur Wandlung von Zeichenketten in Kleinschreibung:
+
+1. [Stackoverflow: How to convert a string to lower case in Bash?](https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash)
+2. [Ruby Doc: Downcase method](https://ruby-doc.org/core-2.7.1/String.html#method-i-downcase)

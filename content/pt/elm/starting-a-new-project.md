@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Elm: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Getting Started"
@@ -10,33 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Iniciar um novo projeto é o ato de começar a trabalhar em um novo software ou aplicativo. Programadores iniciam novos projetos para criar novas soluções para problemas, melhorar sistemas existentes ou simplesmente praticar suas habilidades em uma nova linguagem ou tecnologia.
+# Começando um novo projeto em Elm
+
+## What & Why?
+
+Iniciar um novo projeto é a criação de um novo aplicativo ou sistema do zero. Programadores fazem isso para desenvolver soluções customizadas, criar novos produtos, ou aprender novas habilidades.
 
 ## Como fazer:
-O Elm é uma linguagem de programação funcional que foi criada para facilitar a criação de interfaces de usuário. Começar um novo projeto no Elm é simples e direto. Basta criar um novo arquivo com a extensão ".elm" e começar a escrever seu código. Aqui está um exemplo básico:
 
+Usamos a ferramenta `elm init` para começar um novo projeto Elm. Vamos ver um exemplo:
 
-```
-module Main exposing (main)
-
-import Html exposing (text)
-
-main =
-  text "Olá, mundo!"
+```Elm
+$ mkdir meu_projeto
+$ cd meu_projeto
+$ elm init
 ```
 
-Esse código irá imprimir "Olá, mundo!" na tela quando você executá-lo. Você também pode adicionar mais funcionalidades à medida que seu projeto avança.
+Este comando criará uma nova pasta na sua aplicação chamada `src` e um arquivo `elm.json`.
 
-## Profundando mais:
-O Elm foi criado pelo programador Evan Czaplicki em 2012. Ele é projetado para ser uma alternativa mais amigável e segura para o JavaScript, oferecendo recursos como segurança de tipos e mensagens de erro amigáveis. Além disso, o Elm também é compatível com React e outras bibliotecas populares de JavaScript, tornando-o uma ótima escolha para projetos de front-end.
+`elm.json` é um resumo do seu projeto e tem uma aparência similar a essa:
 
-Além disso, o Elm possui uma comunidade ativa e um compilador poderoso que pode ajudá-lo a encontrar e solucionar erros em seu código. Isso torna mais fácil e rápido o processo de desenvolver e depurar seu projeto.
+```Elm
+{
+    "type": "application",
+    "source-directories": [
+        "src"
+    ],
+    "elm-version": "0.19.1",
+    "dependencies": {
+        "direct": {},
+        "indirect": {}
+    },
+    "test-dependencies": {
+        "direct": {},
+        "indirect": {}
+    }
+}
+```
 
-## Veja também:
-Se você está interessado em aprender mais sobre o Elm e suas vantagens, aqui estão alguns links que podem ser úteis:
+Para escrever seu primeiro código, você pode criar um arquivo chamado `Main.elm` no diretório `src`.
 
-- [Site oficial do Elm](https://elm-lang.org/)
-- [Documentação do Elm](https://guide.elm-lang.org/)
-- [Elm no GitHub](https://github.com/elm)
-- [Elm Discuss (fórum)](https://discourse.elm-lang.org/)
+## Mergulho profundo
+
+Elm tem um histórico interessante. Foi criado por Evan Czaplicki em 2012 como sua tese de mestrado. A ideia era criar uma linguagem funcional que compilasse para JavaScript, proporcionando um ambiente previsível e debugável.
+
+Em termos de alternativas, existem outras linguagens que compilam para JavaScript, como PureScript e ReasonML. No entanto, Elm é conhecido por sua simplicidade e facilidade de uso.
+
+Quando você inicializa um novo projeto Elm com `elm init`, a ferramenta realiza várias ações nos bastidores. Cria uma nova pasta para o projeto, gera um arquivo `elm.json` com as configurações do projeto e prepara um diretório para seus arquivos de código.
+
+## Veja também
+
+1. [Documentação oficial do Elm](https://elm-lang.org/docs)
+2. [Como começar com o Elm](https://guide.elm-lang.org/install/)
+3. [Repositório GitHub do Elm](https://github.com/elm/)
+4. [Elm no Exercism](https://exercism.io/tracks/elm) - exercícios práticos para aprender Elm

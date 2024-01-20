@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "PowerShell: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Herunterladen einer Website mit PowerShell
-
 ## Was & Warum?
 
-Das Herunterladen einer Webseite bedeutet, die Website und ihre Inhalte auf einen lokalen Computer zu kopieren, um sie offline nutzen zu können oder die Daten zu analysieren. Programmierer nutzen diese Methode häufig, um Daten aus einer Website zu extrahieren und weiterzuverarbeiten.
+Webseiten herunterzuladen bedeutet, die HTML-Daten einer Webseite auf Ihren lokalen Rechner zu kopieren. Programmierer tun dies, um Daten zu sammeln, die Analyse zu automatisieren, Tests durchzuführen oder Offline-Kopien zu erstellen.
 
-## Wie geht's?
+## So geht's:
 
-Herunterladen einer Webseite mit PowerShell ist einfach und unkompliziert. Dazu musst du lediglich folgende Befehle in deiner PowerShell-Konsole ausführen:
+Mit PowerShell können wir die `Invoke-WebRequest` Funktion verwenden, um eine Webseite herunterzuladen. Hier ist ein einfaches Beispiel:
 
-`$client = New-Object System.Net.WebClient`
-`$url = "https://www.example.com"`
-`$client.DownloadFile($url, "C:\Users\Username\Downloads\example.html")`
+```PowerShell
+$url = "http://beispiel.de"
+$response = Invoke-WebRequest -Uri $url
+$response.Content > "beispiel.html"
+```
 
-Dieser Code erstellt einen Webclient, der das Herunterladen von Dateien aus dem Internet ermöglicht. Anschließend wird die URL der Webseite angegeben und der Befehl `$client.DownloadFile` verwendet, um die Datei auf deinen Computer herunterzuladen.
+Wenn Sie dies ausführen, wird die HTML-Inhalte der Webseite "beispiel.de" in die Datei "beispiel.html" gespeichert.
 
-Die heruntergeladene Datei wird dann im angegebenen Speicherort gespeichert, in diesem Fall im Ordner "Downloads" unter deinem Benutzernamen.
+## Deep Dive
 
-## Tiefere Einblicke
+PowerShell ist die Nachfolgeversion von Microsofts Command Prompt und wurde erstmals 2006 eingeführt. Im Gegensatz zu seinem Vorgänger unterstützt PowerShell .Net und hat eine viel größere Palette an Funktionen, einschließlich `Invoke-WebRequest`.
 
-Historisch gesehen wurde das Herunterladen von Webseiten hauptsächlich für die Offline-Nutzung verwendet, beispielsweise beim Lesen von E-Books oder beim Erstellen von CD-ROM-Sammlungen von Websites. Heutzutage wird es jedoch auch häufig für das Daten-Scraping verwendet, um Informationen von Websites zu extrahieren und in anderen Anwendungen zu verwenden.
+Abgesehen von PowerShell gibt es viele andere Tools, mit denen Sie Webseiten herunterladen können, z. B. `wget` und `curl` in Linux oder einfach durch Rechtsklick auf eine Webseite und "Speichern unter" in einem normalen Webbrowser.
 
-Es gibt auch alternative Möglichkeiten, um eine Webseite mit PowerShell herunterzuladen, wie zum Beispiel den Befehl `Invoke-WebRequest`. Dieser ist jedoch etwas komplexer als der oben genannte Ansatz.
+`Invoke-WebRequest` sendet standardmäßig einen GET-Request an die angegebene URL. Es unterstützt jedoch auch POST, DELETE und andere HTTP-Methoden. Es können auch zusätzliche Header, Nutzdaten und Cookies gesendet werden.
 
-## Siehe auch
+## Siehe Auch
 
-- [PowerShell-Referenz für WebClient](https://docs.microsoft.com/en-us/dotnet/api/system.net.webclient?view=netcore-3.1)
-- [Offizielle PowerShell-Dokumentation](https://docs.microsoft.com/en-us/powershell/)
-- [Tutorial zum Herunterladen von Dateien mit PowerShell](https://www.youtube.com/watch?v=qnZi2jE_n5Q)
+Weitere Informationen und Quellen können Sie auf folgenden Seiten finden:
+- [Microsofts Dokumentation zu Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
+- [W3Schools Tutorials zu HTML](https://www.w3schools.com/html)
+- [Mozilla Developers Network (MDN) Einführung in HTTP](https://developer.mozilla.org/de/docs/Web/HTTP/Overview)

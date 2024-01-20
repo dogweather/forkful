@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "Lua: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Testing and Debugging"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Printing debug output er en måte for utviklere å få informasjon om hva som skjer i en kode mens den kjører. Det kan hjelpe til med å finne og løse feil, samt forstå hvordan koden oppfører seg.
+## Hva & Hvorfor?
 
-# Slik gjør du det:
+Skriving av debug output er prosessen med å utvise kode data for feilsøking. Programmerere gjør det for å forstå hva som skjer med kodene deres under kjøring.
+
+## Hvordan: 
+
+Her er koden for å skrive debug output i Lua. Bruk `print()` funksjonen for dette formålet. 
+
 ```Lua
--- Definisjon av funksjon
-function sum(a, b)
-  print("Legger sammen tallene " .. a .. " og " .. b)
-  return a + b
-end
-
--- Kaller funksjon og printer resultatet
-print("Resultatet er " .. sum(5, 7))
+print("Hei, dette er en debugg-melding!") 
 ```
-```Resultatet er 12```
 
-# Dypdykk:
-Printing debug output har vært en vanlig praksis blant utviklere i lang tid, og er fortsatt en viktig del av feilsøking og forståelse av kode. Det finnes også alternativer til å bruke print funksjonen, som for eksempel å bruke en debugger.
+Når du kjører den ovennevnte koden, får du følgende utdata:
 
-Det finnes flere måter å implementere printing debug output i Lua på. En vanlig metode er å bruke funksjonen ```print()```, men det finnes også biblioteker som tilbyr mer avanserte måter å logge informasjon på.
+```
+Hei, dette er en debugg-melding!
+```
 
-# Se også:
-- [Lua.org](https://www.lua.org/) - Offisiell nettside for Lua-programmeringsspråket.
-- [Lua Users Wiki](https://lua-users.org/) - Samfunnsdrevet wiki med nyttig informasjon om Lua.
-- [LuaTut](http://guitsaru.com/lua/lua00.php) - Nybegynner-vennlig Lua tutorial.
-- [Debugging in Lua](http://lua-users.org/wiki/DebuggingLuaCode) - Informasjon om feilsøking og debugging i Lua.
+## Dyp Dykk: 
+
+Historisk har debug output vært brukt siden de tidligste dagene av programmering. Det er viktig for å forstå hvor, når og hvordan feil eller uventede hendelser oppstår under kjøring av kode.
+
+Alternativer til `print()` i Lua inkluderer bruk av en logger, som `logging.lua` biblioteket. Det lar deg kontrollere nivået av logger du vil skrive ut, og også der du vil ha loggene dine skrevet (for eksempel en fil).
+
+Når det gjelder implementeringsdetaljer, bruker Lua en virtuell stackmaskin for å utføre kommandoene. Når `print()` funksjonen blir kalt, ser Lua på toppen av stakken for å hente argumentene som er lagt der, skriver ut dem, og deretter fjerner dem fra stakken.
+
+## Se Også:
+
+1. Lua 5.4 referanse manual: [https://www.lua.org/manual/5.4/manual.html](https://www.lua.org/manual/5.4/manual.html)
+2. "Programming in Lua" av Roberto Ierusalimschy: [https://www.lua.org/pil/](https://www.lua.org/pil/)
+3. Lua logging bibliotek: [https://keplerproject.github.io/lualogging/manual.html](https://keplerproject.github.io/lualogging/manual.html)

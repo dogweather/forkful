@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Elixir: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué?
+## ¿Qué & Por qué?
+Iniciar un nuevo proyecto en la programación consiste en crear un espacio vacío en el cual tendremos la libertad de construir nuestras ideas creadas desde cero. Programamos para convertir esas ideas en realidad y resolver problemas con nuestras propias soluciones.
 
-Iniciar un nuevo proyecto en Elixir significa crear una base para desarrollar una aplicación o software utilizando este lenguaje de programación. Los programadores lo hacen para aprovechar las características únicas de Elixir, como el manejo de concurrencia y la escalabilidad, para crear aplicaciones eficientes y confiables.
+## ¿Cómo se hace?
 
-## Cómo hacerlo:
+Crear un nuevo proyecto de Elixir es tan simple como ejecutar un comando. Vamos a usar Mix, una herramienta que viene con Elixir que permite crear, compilar, y probar proyectos.
 
-```
-Elixir.new
-```
-
-Este comando crea una nueva aplicación en Elixir con una estructura básica de carpetas y archivos. También instala todas las dependencias necesarias para ejecutar la aplicación.
-
-```
-mix new my_app
+```Elixir
+mix new nombre_del_proyecto
 ```
 
-Si deseas especificar un nombre para tu aplicación, reemplaza "my_app" con el nombre deseado en el comando anterior.
+Este comando creará un nuevo directorio `nombre_del_proyecto` con una estructura básica de proyecto de Elixir. Ejecute `ls nombre_del_proyecto` para explorar los archivos generados.
 
+```Elixir
+ls nombre_del_proyecto
 ```
-cd my_app
+
+Verá algo parecido a esto:
+
+```Elixir
+README.md  config  lib  mix.exs  test
 ```
 
-Este comando te lleva al directorio de tu nueva aplicación, donde puedes comenzar a escribir tu código en Elixir.
+## Inmersión profunda
 
-## En profundidad:
+El comando `mix new` proviene de una herramienta llamada Mix, que forma parte de Elixir desde su lanzamiento en 2011. Aunque existen alternativas a Mix, como es el caso de las herramientas de construcción Nerves y Bakeware, Mix es la opción predeterminada más popular debido a su simplicidad y fácil integración con Elixir.
 
-Elixir se basa en el lenguaje de programación Erlang, el cual fue desarrollado para crear sistemas distribuidos y tolerantes a fallos. Al aprovechar la infraestructura de Erlang, Elixir hereda estas capacidades y ofrece una sintaxis más amigable y un conjunto de herramientas más modernas. Alternativas a Elixir incluyen otros lenguajes de programación como Rust o Go, pero cada uno tiene sus propias fortalezas y debilidades.
+Además de crear proyectos, Mix puede administrar dependencias, compilar archivos de código, ejecutar pruebas y mucho más. Lo que hace esencialmente es tomar la configuración especificada en `mix.exs`, un archivo generado en cada nuevo proyecto de Mix, y ejecutar acciones en base a esa configuración.
 
-Al iniciar un nuevo proyecto en Elixir, también tendrás la opción de utilizar un framework web como Phoenix. Este framework proporciona una estructura adicional para crear aplicaciones web en un entorno Elixir, lo que simplifica la creación de servidores web y aplicaciones de tiempo real.
+Entender cómo se genera un proyecto en Elixir nos proporciona una visión más profunda de lo que ocurre detrás de escena cuando trabajamos en nuestros propios proyectos.
 
-## Ver también:
+## Ver También
 
-- Documentación de Elixir: https://elixir-lang.org/getting-started/introduction.html
-- Tutorial de Phoenix: https://hexdocs.pm/phoenix/up_and_running.html#content
-- Comparación entre Elixir y otros lenguajes: https://stackshare.io/stackups/elixir-vs-go-vs-rust
+* Documentación oficial de Elixir: https://elixir-lang.org/docs.html
+* Guia de mix y OTP de Elixir: http://elixir-lang.github.io/getting-started/mix-otp/introduction-to-mix.html
+* Foro de Elixir: https://elixirforum.com/
+
+Los foros y la documentación oficial son recursos invaluables para aprender más sobre la programación en Elixir, y te animo a explorarlos mientras te adentras en tu próximo proyecto.

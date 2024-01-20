@@ -10,32 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
-Calcolare una data in futuro o passato è il processo di determinare una data che si trova un certo numero di giorni prima o dopo una data di riferimento. I programmatori spesso eseguono questo calcolo per aggiungere o sottrarre un certo numero di giorni a una data specificata, ad esempio per calcolare la scadenza di un abbonamento o la data di consegna di un ordine.
+## Cos'è e Perché?
 
-Come fare:
-Per calcolare una data in futuro o passato, è possibile utilizzare la classe `Calendar` di Java. Di seguito è riportato un esempio di codice che calcola la data esatta di 30 giorni fa e la data esatta di 30 giorni in futuro rispetto alla data odierna:
-```Java 
-Calendar cal = Calendar.getInstance(); // ottieni un'istanza della classe Calendar
-cal.add(Calendar.DATE, -30); // sottrai 30 giorni dalla data attuale
-Date dataPassata = cal.getTime(); // ottieni la data risultante come oggetto Date
-cal.add(Calendar.DATE, 60); // aggiungi 60 giorni dalla data attuale
-Date dataFutura = cal.getTime(); // ottieni la data risultante come oggetto Date
+Calcolare una data futura o passata significa determinare una data specifica avanzando o tornando indietro da un certo numero di giorni, mesi o anni. I programmatori fanno questo per gestire la programmazione delle attività, calcolare la scadenza o tracciare gli eventi storici.
+
+## Come fare:
+
+Per calcolare una data futura o passata in Java, possiamo utilizzare la classe `java.time.LocalDate`, presente dal Java 8 in poi. Di seguito è presentato un esempio di calcolo di una data futura di 15 giorni.
+
+```Java
+import java.time.LocalDate;
+
+public class AddDaysExample {
+    public static void main(String[] args) {
+        LocalDate oggi = LocalDate.now();
+        System.out.println("Data di oggi: " + oggi);
+
+        LocalDate futura = oggi.plusDays(15);
+        System.out.println("Data futura: " + futura);
+    }
+}
 ```
-Output:
+
+E l'output sarà simile a:
+
 ```
-Data esatta di 30 giorni fa: Mon May 31 00:00:00 CEST 2021
-Data esatta di 30 giorni in futuro: Wed Jul 28 00:00:00 CEST 2021
+Data di oggi: 2022-04-01
+Data futura: 2022-04-16
+```
+  
+## Approfondimento
+
+Prima dell'introduzione delle classi `java.time` in Java 8, i programmatori solitamente usavano `java.util.Date` o `java.util.Calendar` per calcolare le date future o passate, che presentano tuttavia alcune limitazioni e problemi.
+
+Oltre a `plusDays()`, `java.time.LocalDate` fornisce anche metodi come `plusWeeks()`, `plusMonths()`, `plusYears()` per aggiungere settimane, mesi o anni. Analogamente ci sono metodi `minusDays()`, `minusWeeks()`, `minusMonths()`, `minusYears()` per calcolare una data passata.
+
+Per esempio, per determinare una data 5 anni prima, faremo così:
+
+```Java
+LocalDate passata = oggi.minusYears(5);
 ```
 
-Approfondimento:
-La classe `Calendar` di Java è stata introdotta per la prima volta nella versione 1.1 del linguaggio e rappresenta uno dei modi più comuni per gestire le date. Tuttavia, con l'avvento di Java 8, è stata introdotta una nuova classe chiamata `LocalDate` che semplifica notevolmente la gestione delle date e offre funzionalità più specifiche, come ad esempio il calcolo della differenza tra due date.
+## Link utili
 
-Per coloro che sono abituati a lavorare con la libreria Joda-Time, una delle alternative più popolari alla classe `Calendar`, è importante notare che Java 8 ha preso ispirazione da questa libreria per la creazione della nuova classe `LocalDate`.
+1. Documentazione ufficiale di Java su `java.time.LocalDate`: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html
+2. Tutorial di Oracle su Date Time API di Java 8: https://docs.oracle.com/javase/tutorial/datetime/iso/
+3. Tutorial completo su `java.time`: https://www.baeldung.com/java-8-date-time-intro
 
-Per quanto riguarda l'implementazione, è importante tenere presente che Java utilizza il sistema "anno-mese-giorno" per rappresentare le date, mentre alcuni altri linguaggi come SQL utilizzano il sistema "giorno-mese-anno". Questo può portare a confusione quando si lavora con entrambi i linguaggi, quindi è sempre consigliabile prestare attenzione al formato della data utilizzato.
-
-Vedi anche:
-- [Documentazione ufficiale di Java su `Calendar`](https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html)
-- [Documentazione ufficiale di Java su `LocalDate`](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-- [Joda-Time](https://www.joda.org/joda-time/)
+Ricorda, la pratica rende perfetti, quindi continua ad esercitarti con questi concetti. Buona programmazione!

@@ -1,7 +1,7 @@
 ---
-title:                "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-html_title:           "PowerShell: पैटर्न से मेल खाने वाले अक्षरों को हटाना"
-simple_title:         "पैटर्न से मेल खाने वाले अक्षरों को हटाना"
+title:                "पैटर्न से मिलते जुलते वर्णों को हटाना"
+html_title:           "Elixir: पैटर्न से मिलते जुलते वर्णों को हटाना"
+simple_title:         "पैटर्न से मिलते जुलते वर्णों को हटाना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-किसी भी प्रोग्रामर की जिंदगी में डेटा को संशोधित करने का एक अधिकृत तरीका है मानचित्र के अनुरूप वर्णों को हटा देना। वे अपने कोड को साफ, सुगम और सेहतमंद रखने के लिए इस विधि का प्रयोग करते हैं।
+## क्या और क्यों? 
+
+मैच होने वाले पैटर्न के कैरेक्टर को डिलीट करना का मतलब है, की हम एक स्ट्रिंग से उस पैटर्न को हटाते हैं जो हमें चाहिए। प्रोग्रामर इसे क्यों करते हैं? उन्हें विचारशीलता से डाटा को संयोजित या मानकीकृत करने के लिए या अनुपयोगी कैरेक्टर्स को हटाने के लिए करना पड़ता है।
 
 ## कैसे करें:
-```PowerShell
-# एक डिरेक्टरी से वर्ण हटाएं
-Get-ChildItem | Rename-Item -NewName {$_.Name -replace "वर्ण", ""}
-```
+
+PowerShell में, हम `-replace` ऑपरेटर का उपयोग कर ऐसा कर सकते हैं। ये एक उदाहरण है:
 
 ```PowerShell
-# अपने कुल वर्णों से गिनती में कमी करें
-$path = "C:\Users\Username\Documents\Sample.txt"
-$content = Get-Content $path
-$updatedContent = $content -replace "वर्ण", ""
-$content | Measure-Object -Character
-$updatedContent | Measure-Object -Character
+$string = "Hello, world!!!"
+$newString = $string -replace '[^a-zA-Z0-9 ]', ''
+$newString
 ```
 
-## गहरा खुराक:
-डेटा को संशोधित करने के मूल तरीकों में शामिल है, वर्ण-प्रतिसादित लाइन डालना, और टेक्स्ट स्ट्रिंग को निर्दिष्ट पैटर्न से छानना। शुरुआती प्रोग्रामरों के लिए, यह भाषा मुश्किल और समझने में कठिन हो सकती है, लेकिन इसका अभ्यास असली में खुशी का कारण बन सकता है।
+आउटपुट:
 
-## और भी देखें:
-- [Regular Expressions in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- [Using the Replace Operator in PowerShell](https://devblogs.microsoft.com/scripting/use-the-replace-operator-in-powershell/)
+```PowerShell
+Hello world
+```
+
+यहाँ, हमने 'Hello, world!!!' से सभी गैर-अल्फन्यूमेरिक करैक्टर्स को हटाया।
+
+## गहरी डाइव:
+
+1. **Historical context**: powershell `-replace` ऑपरेटर रीगेक्स (Regular expression) का समर्थन करता है, जिसने स्ट्रिंग मेनिपुलेशन को बहुत आसान बना दिया।
+2. **Alternatives**: छोटे tasks के लिए, आप `-replace` से दोषपूर्ण कैरेक्टर्स भी हटा सकते हैं, जैसे `$newString = $string -replace ',', '' -replace '!', ''`
+3. **Implementaion details**: `-replace` ऑपरेटर को उम्मीद होती है कि पहला पैरामीटर जो दीया गया है वह regexp हो, और दूसरा हो replacement string (जो optional है)। यदि कोई मिलान नहीं मिलता, तो स्ट्रिंग अपरिवर्तित रहता है।
+
+## देखें भी:
+
+- Regular expressions: www.regular-expressions.info/powershell.html
+- PowerShell की अधिक जानकारी के लिए: https://docs.microsoft.com/en-us/powershell/
+- स्ट्रिंग मेनिपुलेशन के बारे में अधिक जानने के लिए: https://ss64.com/ps/syntax-replace.html

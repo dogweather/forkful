@@ -10,36 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
+## Cos'è & Perché?
 
-Il calcolo di una data nel futuro o nel passato è una pratica comune nella programmazione, in particolare quando si lavora con date e orari. Spesso gli sviluppatori devono gestire situazioni in cui è necessario generare una data futura o passata in base a determinati parametri, come ad esempio aggiungere o sottrarre un certo numero di giorni da una data specifica. In questi casi, è molto utile avere a disposizione una funzione per eseguire il calcolo in modo efficiente.
+Calcolare una data nel futuro o nel passato significa semplicemente spostarsi avanti o all'indietro nel tempo a partire da una data specifica. I programmatori lo fanno per gestire situazioni come pianificare eventi, impostare promemoria o calcolare la differenza tra date.
 
 ## Come fare:
+In Go usiamo il pacchetto "time" incorporato per calcolare una data futura o passata. Ecco un esempio che aggiunge 3 giorni alla data corrente.
 
-Ecco un esempio di codice in Go che calcola una data futura usando la funzione `AddDate()` del pacchetto `time`:
+```Go
+package main
 
+import (
+    "fmt"
+    "time"
+)
+
+func main() {
+    oggi := time.Now()
+    futuro := oggi.AddDate(0, 0, 3)
+    fmt.Println("Oggi è:", oggi)
+    fmt.Println("Fra tre giorni sarà:", futuro)
+}
 ```
-Go date.AddDate(2021, 6, 10)
+
+Quando lo esegui, vedrai output simile a:
+
+```Go
+Oggi è: 2022-01-12 14:52:35.8859813 +0100 CET m=+0.001999001
+Fra tre giorni sarà: 2022-01-15 14:52:35.8859813 +0100 CET m=+0.001999001
 ```
-
-Questo codice restituirebbe una data corrispondente al 10 giugno 2021 (6 mesi dopo la data attuale). Possiamo anche specificare una data diversa come base per il calcolo:
-
-```
-Go baseDate := time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC)
-Go date.AddDate(baseDate, 0, 1, 0)
-```
-
-In questo caso, la data calcolata sarebbe il 1 febbraio 2021 (1 mese dopo la data base).
-
 ## Approfondimento:
 
-La necessità di calcolare date nel futuro o nel passato è molto comune nella programmazione moderna, soprattutto con l'uso sempre più diffuso di applicazioni che gestiscono e manipolano informazioni temporali. In passato, questo tipo di operazione richiedeva spesso un'implementazione personalizzata, ma oggi i linguaggi di programmazione moderni, come Go, offrono funzioni specifiche che semplificano notevolmente il lavoro degli sviluppatori.
+La manipolazione delle date è una componente chiave della programmazione sin dai primi giorni dell'informatica. In Go, il pacchetto "time" ci offre strumenti potenti per farlo. Ci sono alternativa come il pacchetto "date" dalle librerie esterne, ma "time" è la scelta predefinita per la sua semplicità e l'efficienza.
 
-In alternativa alla funzione `AddDate()`, in Go è possibile utilizzare anche la funzione `Date()` del pacchetto `time`, che consente di costruire una data specifica specificando direttamente anno, mese e giorno. 
-
-È importante notare che queste funzioni utilizzano timezones e possono essere sensibili al fuso orario impostato nel sistema. Ciò significa che le date calcolate potrebbero non corrispondere esattamente alle aspettative se non si tiene conto del fuso orario locale. Inoltre, è sempre consigliabile leggere attentamente la documentazione ufficiale fornita dal linguaggio di programmazione utilizzato.
+Dato il design del tipo "time.Time" in Go, una data futura o passata viene calcolata aggiungendo o sottraendo una durata a un momento specifico. Si noti che ciò non tiene conto dei cambiamenti di orario legati all'ora legale. Se hai bisogno di una logica più complessa, dovrai implementarla separatamente.
 
 ## Vedi anche:
 
-- Documentazione ufficiale di Go sul pacchetto `time`: https://golang.org/pkg/time/
-- Articolo di Medium su come manipolare date e orari in Go: https://medium.com/better-programming/working-with-dates-and-times-in-go-bc2cc901b762
+Qui ci sono alcuni collegamenti a risorse correlate che potrebbero essere utili:
+
+- [Pacchetto time di Go](https://golang.org/pkg/time/)
+- [Github di date package](https://github.com/jinzhu/now)
+- [Managing Dates and Times Using Go](https://www.digitalocean.com/community/tutorials/managing-date-and-time-in-golang)

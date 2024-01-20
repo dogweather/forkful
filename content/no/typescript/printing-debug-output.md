@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutdata"
-html_title:           "TypeScript: Utskrift av feilsøkingsutdata"
-simple_title:         "Utskrift av feilsøkingsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Testing and Debugging"
@@ -10,24 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+---
 ## Hva & Hvorfor?
-Utskrift av feilsøkingsutdata er en metode som utviklere bruker for å identifisere og løse feil i sitt programvareprosjekt. Det er nyttig for å finne hvor en feil oppstår og hva som skjer i koden når det skjer.
+Utskrift av feilsøkingsinformasjon (debug output) gir oss en detaljert statusoppdatering av vår kjørende kode. Programmerere gjør dette for å forstå og løse problemer som kan oppstå under kjøretiden av programvaren.
 
-## Slik gjør du:
+## Hvordan gjøre det:
+
+I TypeScript kan vi bruke `console.log()` metoden for å skrive ut feilsøkingsinformasjon. La oss lage en enkel funksjon for å demonstrere dette.
+
 ```TypeScript
-// Opprett en funksjon for å logge ut en melding
-function loggMelding(melding: string) {
-    console.log("Melding:", melding);
+function debugPrint(msg: string): void {
+    console.log('DEBUG: ' + msg);
 }
-// Kall funksjonen med din melding
-loggMelding("Hei fra TypeScript!");
-```
-Dette vil skrive ut "Melding: Hei fra TypeScript!" i konsollen din.
 
-## Dykk dypere:
-Feilsøkingsutdata utskrift har vært en langvarig praksis i utvikling av programvare. Alternativene til utskrift av feilsøkingsutdata inkluderer bruk av eksterne verktøy for feilsøking og logging, men disse kan være mer komplisert og tidkrevende. Implementasjonen av feilsøkingsutdata utskrift er enkelt i TypeScript og lar utviklere enkelt logge ut variabler og meldinger til konsollen for å finne feil.
+// Bruker funksjonen
+debugPrint('Dette er en feilsøkingsbeskjed');
+```
+Utføringen av denne koden i en nettleser eller Node.js vil skrive ut følgende:
+```Text
+DEBUG: Dette er en feilsøkingsbeskjed
+```
+
+## Dypt dykk:
+
+1. Historisk sammenheng: `console.log()`-funksjonen har vært en grunnleggende del av JavaScript (og dermed TypeScript) siden de første dagene av nettsurfing. Dette er et pålitelig verktøy når det gjelder å spore koden vår.
+
+2. Alternativer: `console` har andre metoder også som `console.warn()`, `console.error()`, og `console.info()`, som kan brukes til å logge ulike typer beskjeder. Videre kan biblioteker som `debug` for Node.js eller `logger` for nestJS tilby flere funksjoner.
+
+3. Implementeringsdetaljer: `console.log()` skriver til `stdout` i Node.js og til nettleserkonsollen i nettleserbaserte applikasjoner. Dette kan påvirkes av spesifikke innstillinger for logging i for eksempel din nettleserutviklerverktøy.
 
 ## Se også:
-- [TypeScript offisiell dokumentasjon](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-2-4.html)
-- [Alternativer til utskrift av feilsøkingsutdata](https://www.codementor.io/blog/avoid-logging-spam-in-node-and-the-browser-5hkqk8sntq)
-- [Diskusjonsfora for TypeScript programmering](https://www.reddit.com/r/typescript/)
+- [console | Node.js v17.2.0 Documentation](https://nodejs.org/api/console.html)
+- [Console - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/Console)
+- [TypeScript - Documentation](https://www.typescriptlang.org/docs/)

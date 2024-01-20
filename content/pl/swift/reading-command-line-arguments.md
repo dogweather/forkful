@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Swift: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -12,40 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Odczytywanie argumentów z wiersza poleceń to proces, w którym programista pobiera informacje wprowadzone przez użytkownika podczas uruchamiania programu z linii poleceń. Robią to, aby dostosować działanie programu do indywidualnych potrzeb użytkownika. Na przykład, jeśli program odmierza czas, użytkownik może podać jako argument liczbę sekund, a jeśli oblicza odległość, użytkownik może podać długość w jednostce miary swojego wyboru.
+Czytanie argumentów linii poleceń to zrozumienie danych przekazanych do programu podczas jego uruchomienia. Programiści robią to, żeby kontrolować i dostosowywać działanie aplikacji z poziomu terminala.
 
 ## Jak to zrobić:
 
-Możemy odczytać argumenty z wiersza poleceń w prosty sposób za pomocą obiektu argumentów w funkcji ```main```. Nie musimy importować żadnych bibliotek. Następnie możemy skorzystać z metody ```ArgumentParser``` , aby odczytać poszczególne argumenty i wyświetlić je użytkownikowi.
-
-Przykładowa implementacja w języku Swift wyglądałaby następująco:
-
 ```Swift
-func main(arguments: [String]) {
-    let parser = ArgumentParser(arguments: arguments)
-    let time = Int(parser.getStringArgument(argumentName: "czas"))
-    let distance = Double(parser.getStringArgument(argumentName: "odległość"))
-
-    if let time = time {
-        print("Czas: \(time) seconds")
-    }
-
-    if let distance = distance {
-        print("Dystans: \(distance) km")
-    }
-}
-
-main(arguments: [czas: "10", odległość: "5.6"])
-// Output: Czas: 10 seconds, Dystans: 5.6 km
+let arg = CommandLine.arguments[1]
+print(arg)
 ```
 
-## Wnikliwe spojrzenie:
+Ten kod wczytuje pierwszy argument przekazany do programu i wyświetla go w konsoli. Na przykład:
 
-Odczytywanie argumentów z wiersza poleceń jest procesem używanym już od lat w programowaniu. Wcześniej argumenty te były przekazywane do programów jako tekst, liczby lub symbole. Obecnie, dzięki rozwojowi języków programowania, możemy używać dedykowanych bibliotek do odczytywania argumentów z wiersza poleceń, co ułatwia i usprawnia naszą pracę.
+```Shell
+$ swift app.swift argument
+```
 
-Alternatywą dla odczytywania argumentów z wiersza poleceń jest tworzenie interfejsu użytkownika z wykorzystaniem GUI lub CLI (interfejsu wiersza poleceń). Jednak odczytywanie argumentów z wiersza poleceń jest szybszym i bardziej bezpośrednim sposobem dostarczania informacji do programu, szczególnie w przypadku prostych aplikacji.
+Na ekranie zobaczysz:
 
-## Zobacz też:
+```
+argument
+```
 
-- [Dokumentacja ArgumentParser](https://developer.apple.com/documentation/swift/argumentparser)
-- [Przykładowy projekt wykorzystujący odczytywanie argumentów z wiersza poleceń w języku Swift](https://github.com/johnkiddie/Swift-Command-Line-Argument-Example)
+## W głąb tematu
+
+Historia: Argumenty linii poleceń to standardowa metoda interakcji z programem, wszechobecna od początku historii Unixa.
+
+Alternatywy: Możesz zastosować pliki konfiguracyjne, interfejsy graficzne użytkownika lub interaktywne konsolowe menu do przekazywania danych do programu. Wybór zależy od wymagań aplikacji i preferencji użytkownika.
+
+Szczegóły implementacji: Swift traktuje argumenty linii poleceń jako tablicę łańcuchów znaków, gdzie pierwszy element (`CommandLine.arguments[0]`) to nazwa programu, a każdy kolejny to argumenty przekazane do programu.
+
+## Zobacz także
+
+Dokumentacja Apple o argumentach linii poleceń: (https://developer.apple.com/documentation/swift/commandline)
+
+Arthur Ariel Sabintsev na temat wczytywania argumentów linii poleceń w Swift: (https://www.swiftbysundell.com/articles/command-line-arguments-in-swift-script/)

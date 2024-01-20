@@ -10,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#"何 ＆ 何故？"
-文字列を大文字に変換することは何かというと、プログラマーがより読みやすく効率的なコードを書くために行うことです。文字列を大文字に変換することで、コード内の特定の語句を強調することができ、より分かりやすくなります。
+## 何となぜ？
 
-#"やり方："
-文字列を大文字に変換するために、Haskellでは```toUpper```関数を使用します。下記のコードを参考にしてみてください。
+文字列を大文字化するとは、文字列内のすべての文字を大文字にすることを指します。これは、プログラマがユーザーの入力を標準化したり、アルファベットの大文字と小文字の区別を排除したりするために行います。
 
+## どのように？
+
+Haskellでは`map` 関数と `toUpper` 関数を組み合わせて、文字列を大文字にできます：
+
+```Haskell
+import Data.Char (toUpper)
+
+capitalize :: String -> String
+capitalize = map toUpper
 ```
--- Sample code to capitalize a string
-import Data.Char
 
-main = do
-    print $ map toUpper "hello world"
+例えば、`capitalize "hello world"` を実行すると、`"HELLO WORLD"`が出力されます。
+
+## より深く
+
+**歴史的背景**
+Haskellの `toUpper`は、ASCIIとUnicodeの両方の文字を大文字に変換できます。この機能は、全世界のプログラマが様々な言語でコードを書く現代の多様な環境を反映しています。
+
+**代替方法**
+他の方法もあります。例えば、リスト内包を使用して同じ結果を得ることもできます：
+
+```Haskell
+capitalize2 :: String -> String
+capitalize2 str = [toUpper ch | ch <- str]
 ```
 
-出力： "HELLO WORLD"
+**実装の詳細**
+`toUpper` 関数は、Haskellの `Data.Char` モジュールに定義されています。そして `toUpper` は特定の文字を大文字の同等物に変換します。また、`map` 関数は各文字列の文字に `toUpper` 関数を適用します。
 
-#"深く潜る："
-文字列を大文字に変換するというアイデアは、古くからあります。パンチカードリーダーが発明された初期の頃、大文字のみの機械で文字を読み取る必要があったため、大文字で書かれたテキストの方がより簡単に読み取ることができました。現在では、Haskell以外にも多くのプログラミング言語で同様の機能が実装されています。
+## 参考 
 
-#"参考："
-- [Haskell Documentation on String Functions](https://hackage.haskell.org/package/base/docs/Data-Char.html)
-- [Wikipedia: Capitalization](https://en.wikipedia.org/wiki/Capitalization)
+作成された大文字の文字列を小文字に変換する方法については、Haskellの `Data.Char` モジュールの `toLower` 関数を参照してください。
+
+Haskellのリスト内包についての詳細は、公式のHaskellチュートリアル (https://www.haskell.org/tutorial/listcomps.html) をご覧ください。

@@ -1,7 +1,7 @@
 ---
-title:                "乱数の生成"
-html_title:           "PowerShell: 乱数の生成"
-simple_title:         "乱数の生成"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -10,30 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をする & なぜする?
+# PowerShellによる乱数の生成について
 
-ランダムな数字を生成することは、プログラマーにとって頻繁に利用されるタスクです。ランダムな数字は、ゲームの結果を決めるためや、テストデータを作成するためなど、さまざまな用途に使われます。
+## 何について？なぜ必要なのか ?
 
-## 方法:
+乱数生成とはランダムな数値を作り出すプロセスのことを指します。プログラマが乱数を使用する理由は多岐にわたり、例えばゲームのプレイシンアリオを多様化したり、テストデータを生成したり、暗号化の質を向上させるためなどといった具体的な利用シーンがあります。
+
+## 実行方法:
+
+PowerShellを使って乱数を生成する一番簡単な方法は Get-Random コマンドレットを利用することです。
 
 ```PowerShell
-# 0-10のランダムな数字を生成する
-Get-Random -Minimum 0 -Maximum 10
- 
-# ランダムな文字列を生成する
-[System.Web.Security.Membership]::GeneratePassword(8, 0)
+# 1から10までの間で乱数を生成
+Get-Random -Min 1 -Max 10
 ```
 
-生成された数字や文字列は、ターミナルに直接表示されます。このようにして、簡単にランダムな値を生成することができます。
+出力例:
 
-## 深堀り:
+``` PowerShell
+7
+```
 
-ランダムな数字を生成する方法はさまざまあります。PowerShellの`Get-Random`コマンドレットは、比較的新しい方法ですが、以前から利用されてきた方法もあります。たとえば、.NET Frameworkの`System.Random`クラスを使う方法もあります。
+なお、乱数は独立するため、上記のコードを再実行すると異なる結果が返されます。
 
-また、ランダムな数字を生成するアルゴリズムは、セキュリティにも重要です。不十分なアルゴリズムを使うと、予測されやすい数字が生成されてしまい、セキュリティ上の問題を引き起こす可能性があります。そのため、セキュリティに配慮したランダムな値の生成を行う場合、より高度な方法が必要になります。
+また、指定した範囲の乱数をリストとして生成することも可能です。
 
-## 関連リンク:
+```PowerShell
+# 1から50までの間で5つの乱数を生成
+1..5 | ForEach-Object { Get-Random -Min 1 -Max 50 }
+```
 
-- Get-Random (https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/get-random)
-- System.Random クラス (https://docs.microsoft.com/ja-jp/dotnet/api/system.random)
-- ランダムな数字の生成についての詳細 (https://www.computerhope.com/jargon/g/genenum.htm)
+出力例:
+
+```PowerShell
+45
+7
+23
+38
+12
+```
+
+## より深く知るために:
+
+乱数生成について語る上で、過去の文脈に触れるのは重要です。当初、乱数生成は物理的な方法（コインの投げ、ダイスの振りなど）によって行われていました。しかし今日では計算機による方法が主流となり、より速く、より大きな量の乱数を生成可能になりました。  
+
+PowerShellではGet-Randomコマンドレットの他に、System.Randomクラスも乱数を生成するための方法として用意されています。このクラスを使用すると、乱数のシード値を指定して、同一の乱数シークエンスを生成することができます。  
+
+```PowerShell
+# System.Randomクラスの新しいインスタンスを作成して乱数を生成する
+$random = New-Object System.Random
+$random.Next(1, 100)
+```
+
+また、PowerShellの乱数生成は擬似乱数生成器を使用しています。これは完全にランダムな数値を生成するのではなく、特定の初期値（乱数シード）から始まる数列を生成することで乱数を模倣します。
+
+## 参考情報：
+
+- [Get-Random](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/get-random?view=powershell-7.1)
+- [System.Random](https://docs.microsoft.com/ja-jp/dotnet/api/system.random?view=net-5.0)
+- [乱数生成の歴史](http://www.random.org/history)

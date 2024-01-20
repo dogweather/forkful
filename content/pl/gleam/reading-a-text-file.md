@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Gleam: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest czytanie pliku tekstowego i dlaczego programiści to robią?
+## Co i dlaczego?
+Czytanie plików tekstowych polega na odczytywaniu danych zapisanych w formacie tekstowym. Programiści robią to, aby uzyskać dostęp do przechowywanych danych, które potem mogą być wykorzystane w aplikacjach.
 
-Czytanie pliku tekstowego oznacza proces, w którym program komputerowy czyta zawartość pliku tekstowego w celu przetworzenia go na dane czytelników i wykorzystania tych informacji do różnych celów. Programiści często wykonują tę operację, aby móc odczytać dane z zewnętrznych źródeł, takich jak pliki tekstowe, które zawierają informacje wymagane do działania ich programów.
+## Jak to zrobić:
+Oto przykład, jak można odczytać plik tekstowy w Gleam:
 
-Jak to zrobić:
+```gleam
+let main = fn() {
+    let result = gleam::file::read_file("plik.txt")
+        .expect("Nie udało się odczytać pliku");
 
-```Gleam
-let file = File.open("plik.txt", "r")
-match File.read_line(file) {
-  Ok(line) => io.println(line)
-  Error(_err) => io.println("Bład odczytu pliku")
-}
-File.close(file)
+    case result {
+        Ok(content) -> print(content),
+        Error(err) -> print(err)
+    };
+};
 ```
 
-W powyższym przykładzie otwieramy plik tekstowy o nazwie "plik.txt" i próbujemy przeczytać pierwszą linię zawartą w pliku. Jeśli operacja się powiedzie, wypisujemy zawartość linii na ekranie. W przypadku wystąpienia błędu, wyświetlamy komunikat o problemie z odczytem pliku. Na koniec zamykamy plik.
+Gdy uruchomisz ten kod, wydrukuje on zawartość pliku "plik.txt" lub błąd, jeśli nie udało się go odczytać.
 
-W głębszej analizie:
+## Głębsze zrozumienie
+Odczytywanie plików tekstowych to podstawowa umiejętność, niezależnie od języka programowania. Początkowo, w erze kart perforowanych, odczyt danych był ograniczony do czytania informacji z fizycznych kart.
 
-Operacja czytania pliku tekstowego jest często wykorzystywana przez programistów do przetwarzania danych pobranych z zewnętrznych źródeł, takich jak bazy danych, sieć, czy też pliki lokalne. W przeszłości, czytanie plików tekstowych wymagało szerokiego wykorzystania C i języka niskiego poziomu. Dzięki Gleam, proces ten stał się znacznie prostszy i łatwiejszy w implementacji.
+W dzisiejszych czasach, mamy wiele innych możliwości, takich jak data streaming, API i bazy danych. Mimo to, odczyt plików tekstowych pozostaje istotnym narzędziem, szczególnie jeżeli chodzi o konfigurację, logi czy dane w formacie CSV.
 
-Zobacz także:
+W gleam::file::read_file, wiele rzeczy dzieje się "pod spodem". Funkcja korzysta z modułu IO Rusta do odczytu pliku, a następnie konwertuje te dane na ciąg typu String.
 
-Jeśli chcesz dowiedzieć się więcej o czytaniu plików tekstowych w Gleam, możesz przejrzeć dokumentację języka na stronie gleam.run. Innym ciekawym zasobem może być blog "Gleam tutorial", który prezentuje różne przykłady kodu w języku Gleam, w tym także operacje czytania plików tekstowych.
+## Zobacz także
+Zajrzyj do oficjalnej dokumentacji Gleam, aby nauczyć się więcej:
+[Gleam IO moduł](https://docs.gleam.run/stdlib/gleam.file/) - Informacje o modułach IO w Gleam.
+
+[Rust IO Dokumentacja](https://doc.rust-lang.org/std/io/) - Aby dowiedzieć się więcej o tym, jak Gleam korzysta z Rust IO.
+
+[Tutorial o Gleam](https://gleam.run/getting-started/) - Szczegółowy tutorial o programowaniu w Gleam.

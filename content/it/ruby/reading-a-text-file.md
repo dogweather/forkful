@@ -1,7 +1,7 @@
 ---
-title:                "Leggere un file di testo"
-html_title:           "Ruby: Leggere un file di testo"
-simple_title:         "Leggere un file di testo"
+title:                "Lettura di un file di testo"
+html_title:           "C: Lettura di un file di testo"
+simple_title:         "Lettura di un file di testo"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,40 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e Perché?
-Leggere un file di testo è un'operazione comune per i programmatori. Significa estrarre il contenuto di un file e utilizzarlo all'interno del codice del programma. Ciò consente ai programmatori di gestire dati esterni e integrarli all'interno del loro software.
+## Cosa & Perché?
 
-## Come:
-Per leggere un file di testo in Ruby, si può utilizzare il metodo `File.readlines()` che accetta come argomento il percorso del file da leggere. Ad esempio:
+Leggere un file di testo in Ruby consiste nel prendere dei dati da un file testuale e metterli a disposizione per il nostro programma. I programmatori lo fanno per gestire e manipolare dati di grandi volumi, mantenere la persistenza dei dati, o per leggere configurazioni di un sistema apo.
 
-```ruby
-contents = File.readlines("/path/to/file.txt")
+## Come fare:
 
-```
+Per leggere un file di testo in Ruby si utilizza il metodo 'File.open'. Ecco un esempio:
 
-Questo riempirà un array, `contents`, con il contenuto del file. Possiamo quindi utilizzare un loop per scorrere il contenuto e farne qualcosa, come stamparlo a schermo:
-
-```ruby
-contents.each do |line|
-  puts line
+```Ruby
+File.open('testo.txt', 'r') do |f|
+  while linea = f.gets
+    puts linea
+  end
 end
-
 ```
 
-Se vogliamo leggere il contenuto di un file senza riempire l'array, si può utilizzare il metodo `File.foreach()` che restituirà una enumerazione sudo-helper. Ad esempio:
-
-```ruby
-File.foreach("/path/to/file.txt") do |line|
-  puts line
-end
-
-```
+Ciò aprirà 'testo.txt' in modalità di lettura ('r') e stamparà su schermo ogni linea del file. La variabile 'linea' in questo script contiene il contenuto di ogni riga del file di testo durante la lettura.
 
 ## Approfondimento:
-La lettura di file di testo è stata una delle prime funzionalità disponibili nei linguaggi di programmazione, essendo essenziale per lavorare con dati esterni. In alternativa al metodo `File.readlines()`, abbiamo anche il metodo `File.read()` che restituisce il contenuto del file come una stringa, utile per file contenenti solo una riga di testo.
 
-Per quanto riguarda l'implementazione, Ruby utilizza il modulo `IO` per gestire l'input/output dei file. Il metodo `File.readlines()` è una combinazione del metodo `IO.readlines()` e del metodo `File.open()`, che apre il file e restituisce il suo contenuto come un array.
+Nel contesto storico, la necessità di leggere un file di testo risale ai primissimi giorni della programmazione, quando i dati massivi venivano gestiti su nastri magnetici. Ruby, nonostante la sua modernità, conserva questa operazione primitiva per la sua affidabilità e utilità generale.
+
+Come alternativa a 'File.open', Ruby offre anche il metodo 'File.foreach' per leggere un file di testo. Questo metodo è particolarmente utile quando si lavora con file di grande dimensione, poiché legge e restituisce una linea per volta, riducendo così il consumo di memoria.
+
+```Ruby
+File.foreach('testo.txt') do |linea|
+  puts linea
+end
+```
+
+Dettagli di implementazione: Ricordatevi sempre di aprire il file in modalità di lettura 'r'. Se avete intenzione di modificare il file, usate 'a' per aggiungere o 'w' per sovrascrivere. Se il file non esiste, 'File.open' restituirà un errore.
 
 ## Vedi anche:
-- Documentazione ufficiale di Ruby su `File.readlines()`: https://ruby-doc.org/core-3.0.0/IO.html#method-c-readlines
-- Documentazione ufficiale di Ruby su `File.foreach()`: https://ruby-doc.org/core-3.0.0/IO.html#method-c-foreach
+
+Per ulteriori dettagli sulla manipolazione dei file in Ruby, potete fare riferimento alla documentazione ufficiale:[Documentazione Ruby](https://ruby-doc.org/core/File.html). Un'altra risorsa preziosa è il librio "Programming Ruby: The Pragmatic Programmer's Guide", disponibile qui: [Programming Ruby](https://pragprog.com/book/ruby/programming-ruby).

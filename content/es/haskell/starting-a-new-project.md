@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Haskell: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Getting Started"
@@ -10,55 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+**## ¿Qué & Por qué?:**
+Iniciar un nuevo proyecto en programación es crear desde cero una aplicación o software nuevo, con su propia lógica y estructura. Los programadores lo hacen para resolver problemas específicos o innovar con nuevas funcionalidades y sistemas.
 
-Empezar un nuevo proyecto en programación es el proceso de iniciar un nuevo software o aplicación desde cero. Los programadores lo hacen para crear nuevas soluciones, mejorar sus habilidades y explorar nuevas tecnologías.
+**## Cómo hacerlo:**
 
-## ¿Cómo hacerlo?
-
-Uno puede iniciar un nuevo proyecto en Haskell siguiendo estos pasos:
-
-1. Crear una carpeta para el proyecto y navegar a ella en la terminal.
-
-2. Iniciar un archivo `.hs` en blanco para escribir el código en Haskell.
-
-3. Importar los módulos necesarios de la biblioteca estándar o cualquier biblioteca externa que se vaya a utilizar en el proyecto.
-
-4. Escribir el código del proyecto utilizando la sintaxis de Haskell y siguiendo buenas prácticas de programación.
-
-5. Compilar y ejecutar el código utilizando un compilador de Haskell como GHC.
-
-Esto es un ejemplo de un programa simple que imprime "¡Hola Mundo!" en la terminal:
+Aquí tienes un ejemplo sencillo para empezar un proyecto Haskell con Stack. Se crea un proyecto simple llamado "hola".
 
 ```Haskell
--- Importar el módulo necesario
-import System.IO
+-- Primero, en la línea de comando, ejecuta:
+stack new hola simple
 
--- Definir la función principal
-main :: IO()
-main = do
-    -- Imprimir "¡Hola Mundo!" en la terminal
-    putStrLn "¡Hola Mundo!"
+-- Esto genera un proyecto con la estructura de carpetas y archivos
+-- Aquí tienes la función principal en el archivo "Main.hs"
+main :: IO ()
+main = putStrLn "¡Hola, mundo!"
 ```
+Para ejecutar este programa, ve a la carpeta 'hola' y ejecuta `stack run`.
 
-Y aquí está el resultado cuando se ejecuta este programa:
+**## Más Información:**
 
-```
-$ ghc hola-mundo.hs
-$ ./hola-mundo
-¡Hola Mundo!
-```
+Para profundizar un poco más, el comando `stack new` es parte de la utilidad de Haskell llamada Stack. Esta herramienta fue creada para abordar los problemas de construcción y gestión de proyectos en Haskell. Antes de Stack, Cabal era la herramienta de facto, pero cada una de ellas tiene sus propias ventajas.
 
-## Profundizando
+Una alternativa a usar 'simple' como plantilla de Stack podría ser 'new-template'. Esta hace un proyecto con más estructura y varios módulos, lo cual podría ser útil para proyectos más grandes.
 
-Haskell es un lenguaje de programación funcional puro y altamente expresivo que fue desarrollado en 1990. Su sintaxis es más concisa y legible que otros lenguajes, lo que lo hace ideal para iniciar nuevos proyectos y aprender a programar.
+**## Ver También:**
 
-Otras alternativas para iniciar un nuevo proyecto en Haskell son utilizar un entorno de desarrollo integrado (IDE) como Atom o Visual Studio Code con el complemento adecuado para programación en Haskell, o utilizar un administrador de proyectos como Stack.
+Para continuar aprendiendo, te recomendamos los siguientes recursos:
 
-En cuanto a la implementación, la compilación y ejecución del código en Haskell se realiza en dos pasos separados, lo que permite una mayor flexibilidad en el desarrollo del proyecto.
-
-## Ver también
-
-- [Haskell Wiki](https://wiki.haskell.org/)
-- [Learn You a Haskell for Great Good](http://learnyouahaskell.com/)
-- [Hackage - Haskell Package Database](https://hackage.haskell.org/)
+- ["Learn You a Haskell for Great Good!"](http://learnyouahaskell.com/)
+- [Sitio Web Oficial de Haskell](https://www.haskell.org/)
+- [Documentación de Stack](https://docs.haskellstack.org/en/stable/README/) (inglés)
+- [Tutorial de Haskell en Español](https://wiki.haskell.org/Tutorial_de_Haskell) en la wiki de Haskell.

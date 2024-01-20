@@ -1,6 +1,6 @@
 ---
 title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "Go: Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Go"
 category:             "Go"
@@ -10,20 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-La conversión de una cadena de texto a minúsculas es un proceso de modificación de todas las letras en la cadena a su forma de minúsculas. Los programadores lo hacen para estandarizar la entrada de texto y facilitar la comparación y el procesamiento de datos.
+## ¿Qué y Por qué? 
+
+Convertir una cadena a minúsculas significa cambiar todos los caracteres alfabéticos de una cadena a su equivalente en minúsculas. Los programadores lo hacen para normalizar los datos y permitir comparaciones de cadena insensibles a mayúsculas y minúsculas.
 
 ## Cómo hacerlo:
-```Go
-texto := "Hola, Este Es un Ejemplo DE texto"
-fmt.Println(strings.ToLower(texto))
 
-// Salida: hola, este es un ejemplo de texto
+En el lenguaje de programación Go, el paquete `strings` proporciona la función `ToLower` para convertir una cadena a minúsculas. Aquí tienes un ejemplo y su salida:
+
+```Go
+package main
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	s := "Hola Mundo"
+	sLower := strings.ToLower(s)
+	fmt.Println(sLower)
+}
 ```
 
-## Detalles de la Implementación
-La función `ToLower()` de la biblioteca de cadenas de Go utiliza el estándar Unicode para convertir las letras a minúsculas. Esta función es una alternativa a la función `ToTitle()` que convierte las letras a su forma de mayúsculas.
+La salida será `hola mundo`.
 
-## Ver también
-- Documentación oficial de la función strings.ToLower(): https://golang.org/pkg/strings/#ToLower
-- Tutorial sobre manipulación de cadenas en Go: https://www.golang-book.com/books/intro/9
+## Profundizando:
+
+### Contexto Histórico:
+
+La necesidad de convertir cadenas a minúsculas aparece con frecuencia, en la comparación de cadenas de texto, en la normalización de las entradas de los usuarios, e incluso en la normalización de datos en base de datos.
+
+### Alternativas:
+
+Una posible alternativa a usar `strings.ToLower` es implementar tu propia función, aunque en la mayoría de los casos, utilizar la función proporcionada por el paquete `strings` será más eficiente y menos propenso a errores.
+
+### Detalles de Implementación:
+
+La función `ToLower` trabaja recorriendo la cadena de caracteres, y para cada carácter que es una letra mayúscula, convierte el carácter a minúsculas. Este método no modifica los caracteres que ya son minúsculas o que no son letras.
+
+## Ver también:
+
+Documentación del paquete `strings` en Go: https://pkg.go.dev/strings
+
+Un interesante hilo en Go Forum sobre la comparación de cadenas: https://forum.golangbridge.org/t/string-comparison/5784

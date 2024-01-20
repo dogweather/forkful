@@ -1,6 +1,6 @@
 ---
 title:                "Reading command line arguments"
-html_title:           "Clojure recipe: Reading command line arguments"
+html_title:           "C++ recipe: Reading command line arguments"
 simple_title:         "Reading command line arguments"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,29 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+In programming, reading command line arguments means fetching inputs given directly via the interface at program launch. It allows users to run different configurations of your program without modifying code.
 
-Reading command line arguments is the process of obtaining data that is entered by a user when executing a program through the command line interface. Programmers use this functionality to allow users to customize the behavior of their program, for example by specifying file paths or input parameters.
+## How to: 
+Here's how you read command line arguments in Clojure:
 
-## How to:
-
-Coding example in Clojure:
-
-```
+```Clojure
 (defn -main [& args]
-    (print (str "Hello, " (first args) "!")))
-
-;; Program execution:
-$ java -cp my-program.jar my.program.namespace -name World
-Hello, World!
+  (println "Command line args:" args))
 ```
 
-## Deep Dive:
+Run this in your terminal:
 
-Reading command line arguments has been a fundamental feature of programming since the early days of computers. In addition to customizing program behavior, it is also useful for automating tasks through scripts. As an alternative to command line arguments, some programming languages offer graphical user interfaces for user input.
+```shell
+$ clojure my-program.clj arg1 arg2 arg3
+```
 
-Reading command line arguments in Clojure is accomplished by using the `& args` parameter in the `-main` function. This parameter captures all the arguments passed by the user and stores them in a vector. Alternatively, the `clojure.tools.cli` library can be used for more advanced parsing and validation of command line arguments.
+You'll see:
 
-## See Also:
+```shell
+Command line args: (arg1 arg2 arg3)
+```
 
-- [Clojure Documentation on Command Line](https://clojure.org/reference/repl_and_main#_command_line)
-- [clojure.tools.cli library](https://github.com/clojure/tools.cli)
+## Deep Dive
+Historically, command-line interaction predates graphical user interfaces, offering programmers direct interaction with the system. In Clojure, `-main` function serves as the primary entry point to a Clojure application when launched from the command line.
+
+Alternatives to read command line args in Clojure include using java interop like this: 
+
+```Clojure
+(. (System/getProperties) get "sun.java.command"))
+```
+
+However, Clojure's var-args (`& args`) in `-main` keep things simple & idiomatic.
+
+Command-line args are passed as strings. Consider parsing or validating them before use. If you have heaps of args, consider libraries like `tools.cli` to help keep things manageable.
+
+## See Also
+- Clojure `-main` function usage: [https://clojure.org/reference/compilation#_the_dot_main_dot_function](https://clojure.org/reference/compilation#_the_dot_main_dot_function)
+- Tools.cli, for complex arg handling: [https://github.com/clojure/tools.cli](https://github.com/clojure/tools.cli)

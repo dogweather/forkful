@@ -1,7 +1,7 @@
 ---
-title:                "Radera tecken som matchar ett mönster"
-html_title:           "C++: Radera tecken som matchar ett mönster"
-simple_title:         "Radera tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster är en vanlig manipulation bland programmerare. Genom att ta bort oönskade tecken kan vi rensa och anpassa datan enligt våra behov.
+### Vad & Varför?
+Att radera tecken som matchar ett mönster innebär att man tar bort alla instanser av ett visst tecken eller en teckensekvens från en sträng. Programmörer gör det för att rensa upp data, genom att bli av med oönskade eller onödiga element.
 
-## Så här:
-Om vi till exempel har en sträng "Hej hej värld" och vill ta bort alla mellanslag, kan vi använda oss av en for-loop för att iterera igenom varje tecken i strängen och ta bort mellanslaget om det matchar " ".
+### Hur gör man:
+För att illustrera hur man raderar tecken som matchar ett mönster, används std::remove_if och std::string::erase metoder. Här är ett exempel:
 
 ```C++
 #include <iostream>
+#include <algorithm>
 #include <string>
 
-int main()
-{
-  std::string str = "Hej hej värld";
+int main() {
+    std::string str = "Hej, .!rekne15:2019*Världen";
 
-  // loopar igenom strängen och tar bort mellanslaget
-  for (int i = 0; i < str.length(); i++)
-  {
-    if (str[i] == ' ')
-    {
-      str.erase(i, 1);
-    }
-  }
+    str.erase(std::remove_if(str.begin(), str.end(), ::ispunct), str.end());
 
-  std::cout << str << std::endl;
-  // output: Hejhejvärld
-  return 0;
+    std::cout << str;
+    return 0;
 }
 ```
 
-## Deep Dive:
-Att ta bort tecken som matchar ett specifikt mönster kan vara användbart när vi behöver filtrera eller förbereda data innan vi bearbetar den vidare. Det finns också andra alternativ för att rensa datan, som till exempel att använda en reguljär uttryck eller en inbyggd funktion för att ta bort tecken från en sträng.
+I det här exemplet, tar vi bort alla skiljetecken från strängen. Outputen blir:
 
-När vi tar bort tecken från en sträng kan vi också ange vilken del av strängen vi vill börja på och hur många tecken vi vill ta bort. Detta ger oss en större flexibilitet när det kommer till manipulering av textdata.
+```
+Hej rekne152019Världen
+```
 
-## Se även:
-- [Reguljära uttryck i C++](https://www.regular-expressions.info/gcc.html)
-- [Inbyggda strängfunktioner i C++](https://www.cplusplus.com/reference/string/string/)
-- [C++ Styleguide](https://google.github.io/styleguide/cppguide.html)
+### Djupdykning
+Funktionerna std::remove_if och std::string::erase används i samband sedan C++98. 
+
+Ett alternativ till detta är att skriva en egen loop för att iterera över strängen och radera tecken som matchar ett visst mönster vilket kan leda till mer komplex kod.
+
+Implementeringen av dessa funktioner i C++ gör att borttagning av tecken är både snabbt och enkelt. std::remove_if flyttar element som inte ska raderas till början av strängen och returnerar en iterator till första oönskade elementet. Sedan använder std::string::erase för att radera oönskade tecken.
+
+### Se också
+För mer information om att arbeta med strängar i C++, se följande källor:
+
+- [C++ Standard Library: String](https://en.cppreference.com/w/cpp/string/basic_string)
+- [Cplusplus.com: String Library](http://www.cplusplus.com/reference/string/string/)

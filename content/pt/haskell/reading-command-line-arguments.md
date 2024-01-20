@@ -1,7 +1,7 @@
 ---
-title:                "Lendo argumentos da linha de comando"
-html_title:           "Haskell: Lendo argumentos da linha de comando"
-simple_title:         "Lendo argumentos da linha de comando"
+title:                "Lendo argumentos de linha de comando"
+html_title:           "Arduino: Lendo argumentos de linha de comando"
+simple_title:         "Lendo argumentos de linha de comando"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -11,40 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## O que & Por quê?
+A leitura de argumentos de linha de comando permite a interação dos usuários com os programas através da linha de comando. Fazemos isso para influenciar o comportamento de um programa sem alterar o código em si.
 
-Ler argumentos da linha de comando é uma prática comum em programação, onde o programa recebe informações diretamente do usuário através da linha de comando. Isso permite que os programas sejam mais dinâmicos e interativos, podendo ser executados com diferentes opções e parâmetros.
-
-## Como fazer:
-
-Para ler argumentos da linha de comando em Haskell, podemos utilizar a função `getArgs` do módulo `System.Environment`. Esta função retorna uma lista de strings contendo os argumentos passados na linha de comando.
-
-Exemplo de código:
+## Como:
+Para os exemplos de código em Haskell, vamos usar a função `getArgs` da biblioteca `System.Environment`. Aqui está um exemplo:
 
 ```Haskell
-module Main where
-
 import System.Environment
 
+main :: IO ()
 main = do
-  args <- getArgs
-  putStrLn ("Argumentos recebidos: " ++ show args)
+    args <- getArgs
+    print args
 ```
 
-Exemplo de saída:
+Se você executar este programa com argumentos na linha de comando (por exemplo. `runhaskell Teste.hs ola mundo`), o resultado será:
 
+```Haskell
+["ola","mundo"]
 ```
-> programa arg1 arg2
-Argumentos recebidos: ["arg1","arg2"]
-```
 
-## Aprofundando:
+## Mergulho Profundo:
 
-A leitura de argumentos da linha de comando é um recurso presente em diversas linguagens de programação, incluindo C, Python e Ruby. Em Haskell, a função `getArgs` é implementada de forma eficiente utilizando chamadas do sistema operacional.
+Ao longo dos anos, a leitura de argumentos da linha de comando tem sido uma importante forma de interação com programas. Isso é particularmente útil para scripts de automação e ferramentas de linha de comando.
 
-Uma alternativa à leitura de argumentos da linha de comando é a utilização de flags, que são opções definidas pelo programador e passadas na linha de comando. Alguns módulos em Haskell, como o `System.Console.GetOpt`, facilitam a utilização de flags em programas.
+No Haskell, além do `getArgs`, existe também o `getProgName` que retorna o nome do programa em execução.
 
-## Veja também:
+Além disso, o módulo `System.Console.GetOpt` fornece funções para lidar com opções de linha de comando se você precisar de algo mais complexo. 
 
-- [Documentação Haskell sobre a função getArgs](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html#g:7)
-- [Exemplo de utilização de flags em Haskell](https://wiki.haskell.org/Flags)
-- [Documentação Haskell sobre o módulo GetOpt](https://hackage.haskell.org/package/base-4.14.0.0/docs/System-Console-GetOpt.html)
+## Veja Também:
+
+Para um guia mais aprofundado sobre a biblioteca `System.Environment`, consulte a documentação da biblioteca: [System.Environment](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
+
+Para mais exemplos de como usar `getOpt`, confira este tutorial: [Command line arguments in Haskell with GetOpt](http://hackage.haskell.org/package/base-4.14.1.0/docs/System-Console-GetOpt.html)
+
+Já para um tutorial completo do Haskell, o Learn You a Haskell é um ótimo recurso: [Learn You a Haskell](http://learnyouahaskell.com/)

@@ -1,6 +1,6 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "Lua: Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,21 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å starte et nytt prosjekt i programmering er når man begynner å skrive et nytt program eller skript fra bunnen av. Dette gjøres ofte når man har et nytt konsept eller en ny idé man ønsker å implementere, eller når man trenger en spesifikk løsning som ikke finnes i andre programmer eller skript. Programmere gjør dette for å kunne skape noe nytt og unikt, og for å kunne tilpasse løsninger til sine spesifikke behov.
 
-## Slik gjør du det:
-For å starte et nytt prosjekt i Lua, trenger du først å ha programmets kildekode installert på datamaskinen din. Deretter åpner du en teksteditor, for eksempel Notepad eller Atom, og begynner å skrive koden din. Husk å lagre filen med en .lua-filutvidelse. Her er et enkelt eksempel på en kodedel som skriver ut "Hei verden!" til konsollen:
+Når vi starter et nytt prosjekt, skaper vi en ny og unik kodebase. Dette gjør vi for å løse et spesifikt problem eller fylle et bestemt behov i programvaremarkedet.
+
+## Hvordan:
+
+Her er et rudimentært eksempel på hvordan man kan starte et nytt Lua-prosjekt:
 
 ```Lua
-print("Hei verden!")
+-- 'Hello, World!' program
+print('Hei, Verden!')
 ```
 
-Når du kjører koden, vil "Hei verden!" bli skrevet ut i konsollen.
+Dette er et enkelt Lua-program som skriver ut `Hei, Verden!` til konsollen.
 
-## Dykk dypere:
-Lua ble utviklet på 1990-tallet av en gruppe programmerere fra Brazil, og har blitt stadig mer populært som et skriptspråk for programmering av spill, apper og webapplikasjoner. Andre alternativer for å starte et nytt prosjekt i programmering kan være å bruke et allerede eksisterende program eller skript som er tilpasset til ditt behov, eller å programmere i et annet språk som Java eller Python. Implementeringsdetaljer for å sette opp et nytt prosjekt kan variere avhengig av hvilket program eller språk du bruker, men generelt sett er det viktig å ha en god plan og en forståelse av programmeringens grunnprinsipper.
+Videre kan vi utvide vårt prosjekt ved å legge til funksjoner:
 
-## Se også:
-- [Lua.org](https://www.lua.org): Den offisielle nettsiden for Lua, med dokumentasjon, nyheter og ressurser.
-- [Lua-brukerforum](https://www.lua.org/cgi-bin/mailman/listinfo/lua-l): Et forum hvor Lua-programmere kan diskutere og utveksle tips og triks.
-- [Lua-bibliotek](https://lua-api.readthedocs.io/en/latest/index.html): En samling av nyttige biblioteker tilgjengelig for Lua-programmere.
+```Lua
+-- Definere en funksjon
+function legg_til(a, b)
+    return a + b
+end
+
+-- Kaller funksjonen
+print(legg_til(5, 3))  -- Skriver ut '8' til konsollen.
+```
+
+## Dypdykk
+
+Lua ble først skapt i 1993 av Roberto Ierusalimschy, Luiz Henrique de Figueiredo, og Waldemar Celes, medlemmer av Computer Graphics Technology Group (Tecgraf) ved det katolske universitetet i Rio de Janeiro, Brasil.
+
+Lua-alternativer kan være Python eller JavaScript, avhengig av dine behov. Men Lua skinner når det gjelder innebygd bruk, spillscripting og konfigurasjonsfiler.
+
+For å implementere et nytt Lua-prosjekt, vil man begynne med å definere prosjektets omfang, deretter strukturere koden på en logisk og effektiv måte.
+
+## Se Også
+
+- Lua hjemmeside: [https://www.lua.org](https://www.lua.org)
+- Deres kildekode på GitHub: [Lua GitHub](https://github.com/lua/lua)
+- Lua dokumentasjon: [Lua 5.4 manual](https://www.lua.org/manual/5.4/)
+- Gratis online Lua tutorialer: [Learn Lua](https://www.learn-lua.org/)

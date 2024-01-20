@@ -1,7 +1,7 @@
 ---
-title:                "ランダムな数を生成する"
-html_title:           "Fish Shell: ランダムな数を生成する"
-simple_title:         "ランダムな数を生成する"
+title:                "ランダムな数字の生成"
+html_title:           "C#: ランダムな数字の生成"
+simple_title:         "ランダムな数字の生成"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Numbers"
@@ -10,49 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何をしていますか？
-プログラマーが乱数を生成するのは、ランダムなデータを作成するためです。これは、様々な用途に使用されます。例えば、ゲームやシミュレーション、セキュリティのテストなどです。
+## 何となぜ？
+ランダムな番号を生成するとは、決まった規則や順番なく数値を出力することです。この機能は、予測不可能な結果や要素をプログラムに組み込むためによく使われます。
 
-# 方法：
-```Fish Shell ... ```コードブロック内にコーディング例とサンプルの出力があります。
+## 実装方法：
+Fish Shellにおけるランダム数値の生成には`random`コマンドが用いられます。
 
-```bash
-# 乱数の生成
-echo (random)
+例：
 
-# 範囲を指定して乱数を生成
-echo (random 1 10)
-
-# 整数のみを生成
-echo (random -i)
-
-# 複数の乱数を生成
-echo (random 1 100 5)
-
-# 10桁の乱数を生成
-echo (random -c 10)
-
-# 16進数の乱数を生成
-echo (random -x)
+```fish
+# 1 and 10 の間のランダムな数
+random 1 10
 ```
 
-出力例：
+出力例:
 
-```bash
-0.702657  # デフォルトの0から1までの浮動小数点数を返します。
-8         # 1から10までのランダムな整数を返します。
-88334     # 5つの乱数を生成します。
-2638987235 # 10桁の乱数を生成します。
-abfa      # 16進数の乱数を返します。
+```fish
+7
 ```
 
-# 深堀：
-乱数生成は、科学技術計算や統計学において古くから利用されてきました。かつては、物理学者や数学者が手動で乱数表を作成していましたが、現在ではコンピューターを使用して生成することが一般的です。
+もう一つの例：
 
-代替方法としては、ソフトウェアベースの乱数ジェネレーターの他に、ハードウェアベースのジェネレーターがあります。ハードウェアベースのジェネレーターは、コンピューターの内部状態に依存せず、外部の物理的な現象を使用して乱数を生成することができます。
+```fish
+# ランダムな暗証番号を生成
+random 0 9 (random 0 9) (random 0 9) (random 0 9)
+```
 
-Fish Shellでは、
+出力例:
 
-# 他の情報
-- [Fish Shellの公式ドキュメント] (https://fishshell.com/docs/current/commands.html#random)
-- [乱数ジェネレーターについての詳細な説明] (https://en.wikipedia.org/wiki/Random_number_generation)
+```fish
+8 2 7 0
+```
+
+## ディープダイブ
+Fish Shellの`random`コマンドは、2005年のリリース以来、シェルスクリプトにおけるランダムな数値生成のための主要な手段となりました。同様の機能は他のシェルにも存在しますが、Fishはその使いやすさで人気があります。
+
+代替手段には、`$RANDOM`環境変数を利用する方法（Bashなど）があります。しかし、Fish Shellではこの方法はサポートされていません。
+
+`random`コマンドの実装については、特定の範囲の数値を均等に生成するために、擬似乱数生成器（PRNG）という技術が用いられています。
+
+## 参照
+以下は、関連するリソースへのリンク集です：
+
+1. Fish Shell公式ドキュメンテーション - [Random function](https://fishshell.com/docs/3.1/commands.html#random)
+1. Stack Overflow - [Generating Random Numbers in Fish Shell](https://stackoverflow.com/questions/31159157/generating-random-numbers-in-fish-shell)
+
+以上で、Fish Shellでのランダムな数値生成についての解説を終了します！

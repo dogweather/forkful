@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Elixir recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,40 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Converting a string to lower case is the process of transforming every uppercase letter in a string to its corresponding lowercase letter. Programmers often do this to standardize input and make it easier to compare strings, as lowercase and uppercase letters are treated as distinct characters in most languages.
+## What & Why? 
 
-## How to:
-To convert a string to lower case in Elixir, we can use the `String.downcase/1` function. This function takes in a string as an argument and returns a new string with all letters transformed to lowercase. 
+Converting a string to lower case in Elixir is all about transforming every character in a string to its lower case equivalent. Programmers do this to standardize data, making it easier to compare, search, sort, or analyze.
 
-```
-Elixir String.downcase("HELLO WORLD") 
-```
+## How To:
 
-Output:
-```
- "hello world"
+Use `String.downcase/1`, an inbuilt function in Elixir for this task. Here's how to do it:
+
+```elixir
+IO.puts String.downcase("Hello, World!")  # "hello, world!"
 ```
 
-We can also use the `String.downcase/2` function to specify a specific character set for the conversion. For example, if we want to convert a string to lowercase but preserve any accented characters, we can use the `ascii` option.
+You can see that every character in "Hello, World!", including the 'H' and 'W' have been converted to lower case.
 
-```
-Elixir String.downcase("Café", :ascii)
-```
+## Deep Dive
 
-Output:
-```
-"Café"
-```
+The functionality of converting strings to lower case is quite common across different programming languages, which historically stems from a need to facilitate case-insensitive comparisons and searches. 
 
-## Deep Dive:
-In the past, converting strings to lower case was a common task in programming languages as it was necessary for case-sensitive operations. However, with the rise of Unicode, which supports both uppercase and lowercase versions of each character, the need for case conversion has decreased.
+The `String.downcase/1` function in Elixir uses Unicode character properties to determine the lower case equivalent of a character. If the character doesn't have a lower case equivalent (like symbols or numbers), it remains the same.
 
-Some alternative methods for converting strings to lower case in Elixir include using the `Kernel.to_lower/1` function or explicitly converting each character using the `String.to_charlist/1` function.
+If you need a custom string lower-casing operation (for example, for locales that have unique lower-casing rules), there's no inbuilt support in Elixir for that. You would need to use Erlang's `:unicode` module instead.
 
-The `String.downcase/1` function in Elixir uses the `String.Unicode.downcase/1` function under the hood, which converts strings based on the Unicode standard. This ensures that strings are converted accurately, even for characters outside of the ASCII character set.
+## See Also
 
-## See Also:
-- [Official Elixir documentation on String module](https://hexdocs.pm/elixir/String.html)
-- [Source code for `String.downcase/2` function](https://github.com/elixir-lang/elixir/blob/master/lib/elixir/lib/string.ex#L1752-L1756)
-- [Unicode Standard](https://www.unicode.org/standard/standard.html)
+- Elixir's [String module documentation](https://hexdocs.pm/elixir/String.html)
+- Function `String.downcase/1` [documentaion](https://hexdocs.pm/elixir/String.html#downcase/1) 
+- Erlang's `:unicode` module [documentation](http://erlang.org/doc/man/unicode.html)
+- Unicode [properties references](https://unicode.org/reports/tr44/#Property_Index)

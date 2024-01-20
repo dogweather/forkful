@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "Lua: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,33 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是随机数？为什么程序员要用它？
-随机数是指没有规律、没有可预测性的数字。程序员经常使用随机数来模拟偶然性、增加算法的复杂性或者生成加密密钥。
+## 什么 & 为什么？
 
-## 如何生成随机数：
-```Lua
--- 生成0~1之间的随机小数
-math.random()
+随机数生成是产生一个无法预测的数字序列的过程。程序员通常进行随机数生成来实现一些需要元素随机性的功能，如验证码生成、游戏内的随机事件等。
 
--- 生成1~100之间的整数
-math.random(1, 100)
+## 如何操作：
 
--- 生成布尔值（true或者false）
-math.random() < 0.5
+Lua语言提供了一个内建函数`math.random()`来生成随机数，接下里是一些基本使用方法：
 
--- 设置随机数种子，使得每次运行程序生成的随机数都不同
-math.randomseed(os.time())
+```lua
+-- 生成一个位于[0,1)之间的浮点数
+local rand_num = math.random()
+print(rand_num)
 ```
 
-## 深入了解：
-1. 随机数的概念最早由英国数学家高斯提出，用来解决概率论和统计学中的问题。
+输出会是这样：
 
-2. 除了Lua的math库，程序员还可以使用其他库或者算法来生成随机数，比如Linear Congruential Generator（线性同余发生器）和Mersenne Twister（梅森旋转算法）等。
+```lua
+0.87433252131326
+```
 
-3. 生成随机数的实现原理主要是利用计算机的伪随机数生成器，它通过一个初始值（种子）来生成一个序列的数字，看起来是随机的，但是实际上是按照特定的算法计算得出的。
+如果你需要一个位于特定范围的随机整数，可以将范围作为参数输入：
 
-## 参考链接：
-- [Precalc](https://precalc.net/about.php)
-- [The Mersenne Twister Home Page](http://www.math.sci.hiroshima-u.ac.jp/~m-mat/MT/emt.html)
-- [Linear Congruential Generator](https://en.wikipedia.org/wiki/Linear_congruential_generator)
-- [Pseudo Random Number Generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)
+```lua
+-- 生成一个[1,100]之间的整数
+local rand_num = math.random(1, 100)
+print(rand_num)
+```
+
+得到的结果可能是：
+
+```lua
+42
+```
+
+## 深入了解
+
+历史上，Lua的随机数生成一直依赖于C库。然而，从Lua 5.4版本开始，使用了新的策略，包括一个新的随机数发生器（使用合理多变量序列的线性同余生成器）和一个新的随机数种子初始化策略。现在的随机数生成既可以满足绝大部分的随机需求，也提高了对安全应用的支持。
+
+生成随机数的另一种方法是利用操作系统程序中的随机性，虽然实现细节在不同系统间有所不同。例如，一些UNIX系统提供了`/dev/urandom`设备，可以读取以获取随机字节。
+
+## 参考资料
+
+[Lua 5.4参考手册](http://www.lua.org/manual/5.4/)  
+[Lua-users教程:随机数](http://lua-users.org/wiki/MathLibraryTutorial)  
+[维基百科: 随机数生成](https://zh.wikipedia.org/wiki/隨機數_生成)

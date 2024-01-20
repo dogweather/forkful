@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "C++: 使用正则表达式"
+html_title:           "Arduino: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "C++"
 category:             "C++"
@@ -10,44 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是正则表达式？
+## 什么 & 为什么?
 
-正则表达式是一种强大的工具，用于在文本中查找，匹配和替换特定的模式。它是由一系列符号和字符组成的搜索模板，可以用来在文本中查找具有特定格式的内容。程序员使用正则表达式来进行文本处理和字符串匹配，从而使编程更加高效和灵活。
+正则表达式是一种强有力的文本处理工具，主要用于匹配和操作字符串。程序员使用它们因为它们可以以极其简洁的方式实现复杂的文本处理任务。
 
-如何使用正则表达式？
+## 如何使用:
 
-在C++中，我们可以使用std::regex库来实现正则表达式。首先，我们需要包含多个有用的头文件：
-
-```C++
-#include <iostream>
-#include <regex>
-#include <string>
-```
-
-然后，我们可以使用std::regex_match功能来检查一个字符串是否匹配给定的正则表达式。例如，我们想要检查一个字符串是否是一个有效的邮箱地址，可以这样做：
+以下是一段简单的C++代码，演示如何使用正则表达式匹配文本。
 
 ```C++
-std::string email = "example@email.com";
-std::regex pattern("^([\\w-\\.]+)@([\\w]+\\.){1,3}([\\w]{2,4})$");
-if (std::regex_match(email, pattern)) {
-  std::cout << "This is a valid email address." << std::endl;
-} else {
-  std::cout << "This is not a valid email address." << std::endl;
+#include<regex>
+#include<iostream>
+
+int main(){
+    std::string s ("hello world");
+    std::regex e ("\\b\\w+\\b");
+
+    std::regex_iterator<std::string::iterator> rit ( s.begin(), s.end(), e );
+    std::regex_iterator<std::string::iterator> rend;
+
+    while (rit!=rend) {
+        std::cout<<rit->str()<<std::endl;
+        ++rit;
+    }
+
+    return 0;
 }
 ```
+这段代码会输出文本中的每个单词, 分别是 "hello" 和 "world".
 
-如果输入的邮箱地址符合正则表达式的模式，那么程序将输出“This is a valid email address.”。否则，将输出“This is not a valid email address.”。
+## 深入解析:
 
-深入探讨正则表达式
+正则表达式的概念最早由美国计算机科学家肯·汤普森在1968年创造，用于编写Unix操作系统的编辑器。正则表达式现在已被广泛应用于各种编程语言中，包括C++。
 
-正则表达式是由美国计算机科学家Ken Thompson和Alfred Aho于1966年首次引入的。它最初用于Unix操作系统中的文本编辑器，现在已经被广泛应用于各种编程语言中。
+除了正则表达式，还有其他一些方法也可以进行字符串处理，例如字符串查找和替换函数，但是它们的功能远不如正则表达式强大。
 
-除了std::regex外，C++中还有其他一些选择来实现正则表达式，如Boost.Regex和PCRE。不同的实现可能会有些差异，选择使用哪种取决于你所做的具体任务。
+在C++中，使用正则表达式需要包含 `<regex>` 头文件，它定义了基于NFA的ECMAScript兼容的正则表达式引擎。
 
-此外，正则表达式中有许多特殊字符和语法，如元字符和模式修饰符，可以更加精确地匹配文本。如果你想要了解更多关于正则表达式的知识，可以通过参考下面的链接来进一步学习。
+## 更多信息:
 
-相关资源链接
-
-- [C++正则表达式教程](https://www.runoob.com/cplusplus/cpp-regular-expressions.html)
-- [正则表达式测试工具](https://regexr.com/)
-- [正则表达式速查表](https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285)
+- C++正则表达书的详细教程: [https://www.cnblogs.com/fnlingnzb-learner/p/5835571.html](https://www.cnblogs.com/fnlingnzb-learner/p/5835571.html)
+- 正则表达式在线测试工具: [https://regex101.com/](https://regex101.com/)
+- ECMAScript正则表达式规范: [https://www.ecma-international.org/ecma-262/5.1/#sec-15.10](https://www.ecma-international.org/ecma-262/5.1/#sec-15.10)

@@ -1,7 +1,7 @@
 ---
-title:                "Att påbörja ett nytt projekt"
-html_title:           "Swift: Att påbörja ett nytt projekt"
-simple_title:         "Att påbörja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -12,44 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att starta ett nytt programmeringsprojekt är när du skapar en ny applikation, program eller hemsida från grunden. Programutvecklare gör detta för att skapa något unikt och anpassat för deras behov. Det ger också möjlighet att lära sig nya tekniker och ha full kontroll över koden.
+Att starta ett nytt projekt innebär att skapa en ren grund för att bygga din programvara. Programmerare gör det för att organiserar deras kod på ett effektivt sätt, vilket gör underhåll och vidareutveckling mycket lättare.
 
-## Hur man:
+## Hur man gör:
+
+Att starta ett nytt projekt i Swift är så enkelt som att öppna Xcode och välja 'New Project'. Här är en grundläggande kodexempel:
 
 ```Swift
-// Skapa ett nytt projekt
-let nyttProjekt = Projekt()
+import UIKit
 
-// Ange projektets namn
-nyttProjekt.namn = "Min nya app"
-
-// Lägg till funktionalitet
-nyttProjekt.läggTillFunktionalitet("Logga in")
-nyttProjekt.läggTillFunktionalitet("Registrering")
-nyttProjekt.läggTillFunktionalitet("Användarprofil")
-
-// Bygg projektet
-nyttProjekt.bygg()
-
-// Visa resultatet
-print("Mitt nya projekt är klart! Nu kan jag börja använda det.")
+class ViewController: UIViewController {
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    // Skriv din kod här
+  }
+}
 ```
 
-Output:
-```
-Mitt nya projekt är klart! Nu kan jag börja använda det.
-```
+Det här är den enklaste struktur du behöver för att sätta upp en ny ViewController i din app.
 
-## Deep Dive
+## Djupdopp
 
-Att starta ett nytt programprojekt är en viktig del av programutveckling. Det ger dig möjlighet att utveckla något från grunden och skriva kod som är skräddarsydd för dina specifika behov. Historiskt sett var det vanligt att starta projekt från en grundmall, men med dagens utvecklingsverktyg är det enkelt att starta ett nytt projekt och bygga det från grunden.
+Att starta ett nytt projekt kan vara skrämmande, men med Swift och Xcode är det en smidig process. Historiskt sett var det mycket mer komplicerat att konfigurera nya projekt, men med moderna verktyg kan vi nu fokusera mer på själva programmeringen.
 
-Andra alternativ till att starta ett nytt projekt inkluderar att använda ett befintligt projekt och bygga vidare på det eller att använda mallar som förenklar utvecklingsprocessen. Men att starta ett nytt projekt ger dig full kontroll över koden och möjlighet att utveckla en unik applikation.
+Alternativen till att starta ett nytt projekt är att klona ett befintligt projekt och dra ut koden; Men detta kan leda till onödig bloat och förvirring. Med Swift och Xcode, är det bättre att starta rent.
 
-## Se även
+För implementeringsdetaljer kan du dyka djupare genom att utforska Swifts dokumentation och Xcodes omfattande funktionsbibliotek. Båda dessa resurser är ovärderliga för att bli behärskad på att starta nya projekt.
 
-För mer information om att starta ett nytt projekt i Swift, kan du kolla in dessa länkar:
+## Se också
 
-- [Apple Developer: Getting Started with Swift](https://developer.apple.com/swift/getting-started/)
-- [Swift.org: The Swift Programming Language](https://docs.swift.org/swift-book/)
-- [raywenderlich.com: Getting Started with Swift](https://www.raywenderlich.com/323-getting-started-with-swift)
+Besök följande länkar för mer information:
+
+- [Swift Documentation](https://docs.swift.org/swift-book/)
+- [Xcode Resources](https://developer.apple.com/xcode/)
+- [Ray Wenderlich's Swift Guide](https://www.raywenderlich.com/ios/learn)
+
+Kom ihåg att det alltid är bra att experimenta och lära sig nya saker. Lycka till med ditt nya projekt!

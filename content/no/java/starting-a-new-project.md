@@ -1,6 +1,6 @@
 ---
 title:                "Å starte et nytt prosjekt"
-html_title:           "Java: Å starte et nytt prosjekt"
+html_title:           "C: Å starte et nytt prosjekt"
 simple_title:         "Å starte et nytt prosjekt"
 programming_language: "Java"
 category:             "Java"
@@ -10,29 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & hvorfor?
-Å starte et nytt program er når man begynner å jobbe med et nytt prosjekt i Java-programmeringsspråket. Dette kan være en spennende og utfordrende oppgave for programmører, da de kontinuerlig kan forbedre og utvikle seg som utviklere.
+## Hva & Hvorfor?
 
-# Hvordan:
-For å starte et nytt prosjekt i Java, kan du bruke kommandoene "javac" og "java". La oss se på et eksempel på hvordan du kan kompilere og kjøre et Java-program:
+Å starte et nytt prosjekt handler om å skape en ny kodebase for et spesifikt formål. Programutviklere gjør dette for å løse et problem, forbedre en prosess, eller lage en tjeneste.
+
+## Hvordan:
+
+Her viser vi hvordan man oppretter et nytt Java-prosjekt ved hjelp av et verktøy som IntelliJ IDEA.
 ```
-Java-kodeblokk:
-class Main {
-  public static void main(String[] args) {
-    System.out.println("Hei, verden!");
-  }
+Java
+// Create a new Project
+> File > New > Project...
+
+// Select `Java`
+> New Project > Java
+
+// Define project location and name
+> Project Location: D:\Projects\HelloWorld
+> Project Name: HelloWorld
+
+// Click Finish to complete
+> Finish
+```
+Når prosjektet er opprettet, lager vi en hovedklasse med en main metode:
+```
+Java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
 }
 ```
-Output:
+Output blir da:
 ```
-Hei, verden!
+Java
+Hello, World!
 ```
 
-# Dypdykk:
-Java er et objektorientert språk og ble utviklet på 1990-tallet av James Gosling og hans kolleger. Java er kjent for å være et robust og pålitelig språk som brukes til å utvikle alt fra små applikasjoner til store nettverkssystemer. Alternativer til å starte et prosjekt i Java kan være å bruke andre programmeringsspråk som Python eller C++, men Java skiller seg ut med sin fleksibilitet og mange plattformstøtte. En viktig del av å starte et Java-prosjekt er å forstå hvordan man setter opp en utviklingsmiljø, som inkluderer en Java Development Kit (JDK) og en Integrated Development Environment (IDE).
+## Deep Dive:
 
-# Se også:
-Her er noen nyttige kilder for å lære mer om hvordan man starter et nytt prosjekt i Java:
-- Java Hello World eksempel: http://www.java2s.com/Code/Java/Language-Basics/HelloWorld.htm
-- Hva er JDK: https://www.codecademy.com/articles/what-is-jdk
-- Hvordan sette opp en Java IDE: https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html
+Historisk sett har Java-prosjekter blitt startet manuelt ved å skrive koden fra bunnen av. I dag er det vanlig å bruke utviklerverktøy som IntelliJ IDEA, som håndterer mye av det grunnleggende oppsettet for deg.
+
+Det er mange måter å starte et nytt prosjekt på. Alternativ til IntelliJ IDEA, er verktøy som Eclipse eller Apache NetBeans. Valg av verktøy er ofte bestemt av programmererens preferanse eller prosjektets spesifikke krav.
+
+Et typisk Java-prosjekt har denne strukturen:
+```
+Java
+HelloWorld
+└───src
+    └───Main.java
+```
+Dette er relativt enkelt for små prosjekter, men for større prosjekter kan det være lurt å bruke byggeverktøy som Maven eller Gradle for å håndtere avhengigheter og byggeprosesser.
+
+## Se Også:
+
+- IntelliJ IDEA: https://www.jetbrains.com/idea/
+- Apache Maven: https://maven.apache.org/
+- Gradle: https://gradle.org/

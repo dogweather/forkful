@@ -1,6 +1,6 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "Haskell: Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi les programmeurs le font-ils ?
-La recherche et le remplacement de texte sont des actions courantes effectuées par les programmeurs lorsqu'ils travaillent avec du code ou des fichiers de texte. Cela leur permet de trouver et de remplacer des occurrences spécifiques de caractères dans un document de manière rapide et efficace.
+## Quoi & Pourquoi?
 
-# Comment faire :
-Voici un exemple simple en Haskell pour la recherche et le remplacement de texte :
+La recherche et le remplacement de texte permettent de trouver une séquence spécifique dans une chaîne de caractères et de la remplacer par une autre, ce qui est essentiel pour la manipulation de données en programmation.
 
-```Haskell
-import Data.Text
+## Comment faire :
+
+Voici un exemple de comment rechercher et remplacer du texte en Haskell :
+```Haskell 
+import Data.List.Utils
 
 main = do
-  let text = pack "Bonjour le monde !"
-  let newText = replace "Bonjour" "Salut" text
-  putStrLn newText
+   let startString = "Bonjour, le monde!"
+   let endString = replace "le monde" "France" startString
+   print endString
 ```
 
-**Sortie :** "Salut le monde !"
+Quand vous exécuterez ce code, la sortie sera :
+```Haskell
+"Bonjour, France!"
+```
 
-# Plongez plus profondément :
-Dans le passé, les programmeurs devaient souvent effectuer des recherches et des remplacements de texte manuellement en parcourant des fichiers ligne par ligne. Cependant, avec l'avènement des langages de programmation et des outils spécifiques, cela peut désormais être automatisé.
+## Vue d'ensemble :
 
-En dehors d'Haskell, il existe également d'autres langages de programmation tels que Python, Perl et Sed qui peuvent être utilisés pour effectuer des recherches et des remplacements de texte.
+Historiquement, les opérations de recherche et remplacement de texte sont ancrées dans les éditeurs de texte et les langages de programmation depuis les années 1970. En Haskell, cet objectif est souvent accompli avec la fonction `replace` du module `Data.List.Utils`.
 
-En termes d'implémentation, la recherche et le remplacement de texte peuvent être réalisés en utilisant des expressions régulières, qui sont des séquences de caractères spéciaux utilisées pour représenter des modèles de chaînes de caractères à rechercher.
+Alternativement, vous pouvez réaliser cela manuellement en utilisant des fonctions de base de la liste Haskell comme `splitOn` et `intercalate`. La première fonction divise une chaîne à chaque occurrence d'un séparateur donné, et la seconde joint une liste de chaînes avec un séparateur donné.
 
-# Voir aussi :
-- [Tutoriel sur les expressions régulières en Haskell](https://www.twilio.com/blog/2017/09/a-gentle-introduction-to-haskell-regular-expressions.html)
-- [Documentation sur les fonctions de recherche et de remplacement de texte en Haskell](https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text.html#g:9)
-- [Un outil en ligne pour tester les expressions régulières en Haskell](https://regex-tester.com/regex-tutorial)
+Sur la question de l'implémentation, la fonction `replace` utilise un algorithme simple qui parcourt la chaîne de caractères, cherchant l’occurrence du motif et la remplaçant par le substitut.
+
+## Voir aussi :
+
+Pour un approfondissement, vous pouvez consulter ces ressources supplémentaires :
+
+[Non-greedy string replacement in Haskell](https://stackoverflow.com/questions/16281976/non-greedy-string-replacement-in-haskell)
+
+[Haskell for all: String diagrams, split, and intercalate](http://www.haskellforall.com/2013/12/string-diagrams.html)

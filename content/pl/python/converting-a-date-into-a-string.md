@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie daty na ciąg znaków."
-html_title:           "Python: Konwertowanie daty na ciąg znaków."
-simple_title:         "Konwertowanie daty na ciąg znaków."
+title:                "Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
+simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -11,38 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i Dlaczego?
-Konwersja daty na string w programowaniu oznacza przekształcenie daty (wyrażonej w różnych formatach lub obiektach) na tekstową reprezentację daty. Programiści mogą tego dokonywać z różnych powodów, na przykład dla przekazania daty wewnątrz plików, wyświetlenia jej użytkownikowi lub przetwarzania danych.
+
+Konwersja daty na łańcuch znaków (string) to proces przekształcenia daty (nieco trudnego do obsługi formatu) w tekst łatwiejszy do czytania i zrozumienia. Programiści robią to, żeby łatwiej manipulować danymi daty, np. wyświetlać je w określonym formacie.
 
 ## Jak to zrobić:
-### Przykład 1:
+
+Załóżmy, że masz datę w formacie 'datetime'. Poniżej znajdziesz sposób, jak przekształcić ją na napis w formacie 'YYYY-MM-DD'.
+
 ```Python
-import datetime
-today = datetime.date.today()
-print("Dzisiaj jest", str(today))
+from datetime import datetime
+
+# stworzenie daty
+date = datetime.now()
+
+# konwersja daty na string
+date_string = date.strftime('%Y-%m-%d')
+
+print(date_string)
 ```
-Output: "Dzisiaj jest 2021-05-31"
+W efekcie otrzymasz na wyjściu dzisiejszą datę w formacie 'YYYY-MM-DD', np. '2022-01-22'.
 
-### Przykład 2:
-```Python
-import datetime
-date = datetime.date(2021, 5, 31)
-print("Data urodzenia:", str(date))
-```
-Output: "Data urodzenia: 2021-05-31"
+## Szersze spojrzenie
 
-### Przykład 3:
-```Python
-import datetime
-date = "31/05/2021"
-print("Dzisiaj jest", datetime.datetime.strptime(date, "%d/%m/%Y").date())
-```
-Output: "Dzisiaj jest 2021-05-31"
+Historia: W dawnych czasach, kiedy pamięć komputera była bardzo droga, daty często przechowywano jako ciągi znaków, aby zaoszczędzić miejsce. 
 
-## Głębszy zanurzenie:
-1. Istnieje wiele formatów daty w różnych językach programowania, na przykład daty w Pythonie są przechowywane jako obiekty datetime, natomiast w JavaScript jako liczby reprezentujące ilość milisekund od 1 stycznia 1970.
-2. Alternatywą dla konwersji daty na string jest przechowywanie daty jako obiektu datetime i używanie odpowiednich funkcji do przetwarzania i wyświetlania daty do użytkownika.
-3. W Pythonie dostępna jest funkcja strftime(), która pozwala na konwersję daty na string z wykorzystaniem różnych formatów.
+Alternatywy: Istnieją różne alternatywy dla powyższego przykładu, np. można użyć funkcji `isoformat()` zamiast `strftime()`. Wybór zależy od tego, co chcesz osiągnąć.
 
-## Zobacz też:
-- [Dokumentacja Pythona na temat konwersji daty na string](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior)
-- [Artykuł na temat przechowywania dat w JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+Szczegóły implementacji: Metoda `strftime()` jest częścią standardowej biblioteki Pythona i może być używana do konwertowania dat na napisy w wielu innych formatach, nie tylko 'YYYY-MM-DD'. Więcej na temat dostępnych formatów można znaleźć w dokumentacji Pythona.
+
+## Zobacz także
+
+1. Dokumentacja Python dla `strftime()` i `strptime()`: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-behavior
+
+2. Dokumentacja Python dla `isoformat()`: https://docs.python.org/3/library/datetime.html#datetime.date.isoformat
+
+Więcej na ten temat można znaleźć w odpowiednich artykułach i kursach Pythona. Praca z datami może być skomplikowana, ale Python oferuje wiele narzędzi, które ułatwiają to zadanie.

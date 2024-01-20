@@ -10,30 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Obliczanie daty w przyszłości lub przeszłości to jedna z ważnych czynności, które programiści wykonują w swojej pracy. Pozwala to na szybkie wyliczenie daty na podstawie odpowiednich parametrów, co przyspiesza proces tworzenia aplikacji. W ten sposób można wyświetlić daty, zmieniać ustawienia kalendarza lub wyliczyć przyszłe wydarzenia.
+## Co i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to technika pozwalająca manipulować datami w programowaniu. Programiści robią to, aby przewidzieć, przeliczyć lub śledzić różne zdarzenia względem czasu.
 
 ## Jak to zrobić:
-
-Można obliczyć datę w przyszłości lub przeszłości przy użyciu klasy `DateTime` w języku C#. W poniższym przykładzie wyliczymy datę 30 dni od dzisiaj:
+Poniżej znajduje się proste użycie metody `AddDays` w C#:
 
 ```C#
-DateTime dzis = DateTime.Now;
-DateTime przyszlosc = dzis.AddDays(30);
-Console.WriteLine(przyszlosc);
+DateTime teraz = DateTime.Now;
+Console.WriteLine("Teraz: " + teraz);
+DateTime jutro = teraz.AddDays(1);
+Console.WriteLine("Jutro: " + jutro);
 ```
-**Wynik:** 
+Tutaj obliczyliśmy datę jutrzejszą. Przykładowy wynik:
 
-2021-09-06 10:30:00
+```C#
+Teraz: 19-10-2022 12:35:08
+Jutro: 20-10-2022 12:35:08
+```
+Funktacja `AddDays` umożliwia również obliczanie daty w przeszłości (używając wartości ujemnych):
 
-Aby zmienić date w przeszłości, należy użyć metody `AddDays()` z wartością ujemną, np. `-30`, co pozowli na wyliczenie daty 30 dni wstecz.
+```C#
+DateTime wtedy = teraz.AddDays(-10);
+Console.WriteLine("10 dni temu: " + wtedy);
+```
+Przykładowy wynik:
 
-## Głębszy wgląd:
-Obliczanie daty w przyszłości lub przeszłości jest możliwe dzięki liczbom całkowitym, które są przypisane do konkretnych dat. W ten sposób można obliczać daty na podstawie ustalonych algorytmów. Alternatywnym sposobem jest użycie biblioteki `DateTimeOffset`, która pozwala na obliczenia z uwzględnieniem strefy czasowej.
+```C#
+10 dni temu: 09-10-2022 12:35:08
+```
+## Deep Dive
+Historia: Obliczanie daty w przyszłości i przeszłości jest starym zabiegiem w programowaniu, obecnym od początków tego rzemiosła.
 
-Warto również wspomnieć o metodzie `Add()` umożliwiającej dodanie różnych okresów czasu, takich jak tygodnie, lata czy minuty, do wybranej daty. W ten sposób można wyliczyć daty w bardziej precyzyjny sposób.
+Alternatywy: Alternatywą dla metody `AddDays` jest użycie metody `Subtract`:
 
-## Zobacz także:
-- [Dokumentacja klasy DateTime w języku C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-5.0)
-- [Poradnik dotyczący operacji na dacie w C#](https://www.codecademy.com/articles/date-time-operations-csharp)
-- [Przykłady użycia biblioteki DateTimeOffset](https://docs.microsoft.com/pl-pl/dotnet/standard/datetime/examples-of-using-datetimeoffset)
+```C#
+DateTime dziesiecDni = TimeSpan.FromDays(10);
+DateTime dziesiecDniWstecz = DateTime.Now.Subtract(dziesiecDni);
+```
+Szczegóły implementacji: W C#, zarówno `AddDays`, `AddHours`, `AddMinutes`, etc., jak i `Subtract` są członkami klasy `System.DateTime`. `Add` zmienia datę o podaną ilość, podczas gdy `Subtract` odejmuje datę od innej daty, zwracając różnicę jako `TimeSpan`.
+
+## Zobacz także
+Aby dowiedzieć się więcej o klasie DateTime, odwiedź [Microsoft Documentation](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime?view=net-6.0). Możesz też zerknąć na [TimeSpan in C#](https://docs.microsoft.com/pl-pl/dotnet/api/system.timespan?view=net-6.0)

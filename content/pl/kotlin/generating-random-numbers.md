@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb."
-html_title:           "Kotlin: Generowanie losowych liczb."
-simple_title:         "Generowanie losowych liczb."
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -10,26 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Pozopcjaalajac zwariowaae liczby w Kotlinie
+## Co i dlaczego?
 
-## Cto & Dla czego?
+Generowanie losowych liczb to proces tworzenia liczb, które nie mają predictible patternu. Programiści robią to, aby wprowadzić losowość do swojego kodu, co jest niezbędne w wielu aplikacjach, takich jak gry, symulacje i bezpieczeństwo.
 
-Generowanie losowych liczb jest procesem tworzenia - jak sama nazwa wskazuje - liczb losowych. Programiści często korzystają z tego narzędzia, aby symulować rzeczywistość lub generować losowe dane do testowania swoich programów.
+## Jak to zrobić:
 
-## W jaki sposob?
+Stosujemy tutaj wbudowane metody Koltina do generowania liczb losowych. Na przykład, aby wygenerować losową liczbę całkowitą od 1 do 10:
 
-W Kotlinie istnieje wiele sposobów generowania losowych liczb. Jedną z nich jest użycie funkcji ```random()```, która zwraca losową liczbę z przedziału od 0 do 1. Możemy również określić przedział, np. ```random(1..10)``` zwróci nam losową liczbę z przedziału od 1 do 10. 
+```Kotlin
+val randomInteger = (1..10).random()
+println(randomInteger)
+```
 
-Możemy także wykorzystać bibliotekę ```kotlin.random``` do zaawansowanych operacji związanych z liczbami losowymi, takich jak generowanie tablicy losowych liczb czy ustawianie ziarna.
+Lub losowa liczba zmiennoprzecinkowa:
 
-## Głębokie zanurzenie
+```Kotlin
+val randomDouble = Math.random()
+println(randomDouble)
+```
 
-Idea generowania losowych liczb jest znana od dawna i jest szeroko wykorzystywana w programowaniu i matematyce. Jedną z alternatyw dla funkcji ```random()``` jest użycie generatorów liczb pseudolosowych, które są oparte na algorytmach i mogą generować sekwencje liczb, które wydają się losowe, ale w rzeczywistości są deterministyczne.
+## Deep Dive:
 
-Implementacja działania funkcji ```random()``` różni się między różnymi językami programowania, jednak ważne jest, aby zapewnić, że wygenerowane liczby są w rzeczywistości losowe i nie występują w niej żadne wzorce.
+Historia generowania liczb losowych jest głęboko zakorzeniona w statystyce i matematyce. Pierwsze metody opierały się na rzeczywistych procesach losowych, takich jak rzuty kośćmi lub losowanie z kapelusza. Dziś, generowanie liczb losowych jest często osiągane za pomocą algorytmów komputerowych.
 
-## Zobacz także
+Alternatywą dla wbudowanych funkcji Koltina jest użycie zewnętrznej biblioteki, takiej jak "java.util.Random" lub "kotlinx.random". Te biblioteki mogą oferować większą kontrolę i rozszerzone funkcje.
 
-- Dokumentacja Kotlin: https://kotlinlang.org/docs/reference/java-interop.html
-- Generator liczb pseudolosowych: https://www.geeksforgeeks.org/pseudo-random-number-generator-prng/
-- Informacje o historii generowania losowych liczb: https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych
+Ważnym aspektem generowania liczb losowych jest ich "losowość”. W wielu przypadkach, liczby generowane komputerowo nie są prawdziwie losowe, ale są "pseudolosowe". To oznacza, że mają losowy wygląd, ale są generowane za pomocą określonego algorytmu. W praktyce jest to zazwyczaj wystarczające, ale w pewnych przypadkach (na przykład w kryptografii) może to być problemem.
+
+## Zobacz także:
+
+- Pakiet `kotlin.random` w dokumentacji Koltina: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/)
+- Generowanie liczb losowych w `java.util.Random`: [link](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+- Dyskusja na temat losowości w generowaniu liczb losowych: [link](https://en.wikipedia.org/wiki/Random_number_generation#Pseudorandom_numbers)

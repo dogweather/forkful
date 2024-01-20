@@ -1,6 +1,6 @@
 ---
 title:                "Interpolera en sträng"
-html_title:           "Ruby: Interpolera en sträng"
+html_title:           "C++: Interpolera en sträng"
 simple_title:         "Interpolera en sträng"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Stränginterpolation i Ruby
+
 ## Vad & Varför?
 
-String-interpolation är när man blandar variabler och text i en sträng för att få en dynamisk sträng som ändras baserat på variablernas värden. Det är ett vanligt verktyg för programmerare för att skapa dynamiska strängar som kan anpassas till olika situationer och behov.
+Stränginterpolation i Ruby är en metod för att infoga variabler direkt i en sträng. Progammare gör detta för att skapa dynamiska strängar utan att behöva använda + operatorn för att lägga ihop delarna.
 
-## Så här gör du:
+## Hur gör man:
 
-För att interpolera en sträng i Ruby använder man #{} runt variabelnamnet inuti en dubbelcitering. Detta säger till Ruby att värdet på variabeln ska användas i strängen istället för själva variabelnamnet. Här är ett exempel:
-
-```ruby
-name = "Lisa"
-puts "Hej #{name}! Välkommen till Ruby världen."
+```Ruby
+namn = "Oscar"
+puts "Hej, #{namn}!"  # Detta är en interpolerad sträng
+```
+Som skriver ut: 
+```
+Hej, Oscar!
 ```
 
-Detta skulle skriva ut "Hej Lisa! Välkommen till Ruby världen." eftersom värdet av variabeln "name" ersätter #{name} i strängen.
+## Djupdykning
 
-## Djupdykning:
+1. **Historisk kontext**: Stränginterpolation har länge använts i olika programmeringsspråk, inklusive de gamla klassikerna som C och Perl.
 
-Interpolering av strängar blev populärt på grund av dess enkelhet och flexibilitet jämfört med andra metoder som string concatenation. Det finns dock andra sätt att interpolera strängar i Ruby, som att använda metoden sprintf(). Det finns också olika former av string-interpolation, som single-quoted och percent literals.
+2. **Alternativ**: Man kan sammanfoga strängar med + operatorn, men det kan bli rörigt om du har många variabler. Till exempel: 
+```Ruby
+förnamn = "Oscar"
+efternamn = "Svensson"
+puts "Hej, " + förnamn + " " + efternamn + "!"
+```
 
-## Se även:
+3. **Implementeringsdetaljer**: Ruby parsa faktiskt din sträng och skapar en helt ny sträng med din interpolerade variabel. Det betyder att varje gång du använder stränginterpolation, skapar Ruby en helt ny sträng.
 
-För mer information om string-interpolation i Ruby, se följande länkar:
+## Se Även
 
-- [Officiell Ruby dokumentation](https://ruby-doc.org/core-2.7.1/doc/syntax/literals_rdoc.html#label-Percent+Strings)
-- [Ruby Guides](https://www.rubyguides.com/2016/08/ruby-string-interpolation/)
+- [String Interpolation in Ruby](https://www.rubyguides.com/2018/11/ruby-string-interpolation/) 
+- [How does string interpolation work in Ruby?](https://stackoverflow.com/questions/10076579/how-does-string-interpolation-work-in-ruby)

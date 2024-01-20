@@ -1,7 +1,7 @@
 ---
-title:                "웹 페이지 다운로드"
-html_title:           "Ruby: 웹 페이지 다운로드"
-simple_title:         "웹 페이지 다운로드"
+title:                "웹 페이지 다운로드하기"
+html_title:           "Bash: 웹 페이지 다운로드하기"
+simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,56 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇과 왜?
+## 무엇 & 왜?
+웹 페이지를 다운로드하는 것은 웹 서버에서 웹 페이지의 내용을 요청한 뒤, 그 응답을 사용자의 컴퓨터에 저장하는 작업을 의미합니다. 프로그래머들은 이를 통해 웹 페이지에서 정보를 추출하거나, 웹 스크레이핑, 웹 콘텐츠 검색 등을 수행합니다.
 
-웹 페이지 다운로드는 인터넷에서 웹 사이트의 콘텐츠를 컴퓨터에 저장하는 것을 말합니다. 이것은 프로그래머들이 필요한 데이터를 웹에서 수집하고 분석하기 위해 사용될 수 있습니다.
-
-## 방법:
-
-### 가장 간단한 방법:
-```Ruby
-require 'open-uri'
-puts open("https://www.example.com").read
-```
-출력 결과:
-```
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Example Domain</title>
-  <meta charset="utf-8" />
-  <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
-
-<body>
-<div>
-  <h1>Example Domain</h1>
-  <p>This domain is for use in illustrative examples in documents. You may use this
-    domain in literature without prior coordination or asking for permission.</p>
-  <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html> 
-```
-
-### 다른 방법:
+## 어떻게
+Ruby에서 웹 페이지를 다운로드하는 방법은 'net/http'라는 모듈을 사용하는 것입니다. 아래는 그 예시 코드입니다:
 ```Ruby
 require 'net/http'
-puts Net::HTTP.get(URI('https://www.example.com'))
+require 'uri'
+
+def download_webpage(url)
+  uri = URI.parse(url)
+  response = Net::HTTP.get_response(uri)
+
+  return response.body
+end
+
+puts download_webpage('http://www.example.com')
 ```
+이 코드는 www.example.com의 웹 페이지를 다운로드하고, 그 내용을 출력합니다.
 
-## 깊이 파헤치기:
+## 깊은 이해
+1. **역사적 맥락**: 웹 페이지 다운로드는 인터넷이 상용화되면서 시작되었습니다. 초기 웹 브라우저인 Mosaic 등에서도 이 기능을 볼 수 있었습니다.
 
-이 방법은 프로그래밍 언어와 서드파티 라이브러리에 따라 다를 수 있지만, 일반적으로 다음과 같은 기술을 사용하여 웹 페이지를 다운로드합니다:
- - HTTP 요청을 보내서 서버로부터 응답을 받습니다.
- - 응답 본문을 읽어서 컴퓨터에 저장합니다.
- - 응답 본문을 분석하여 필요한 정보를 추출합니다.
- 
-대부분의 프로그래밍 언어에는 HTTP 요청을 보내고 응답을 받는 데 도움이 되는 내장 또는 서드파티 라이브러리가 있습니다. 또한 웹 크롤링에 대해 더 자세히 알고 싶다면, 문서화된 API를 참조하십시오.
+2. **대체 방법**: Ruby 외에도 Python, JavaScript 등 다양한 언어에서 웹 페이지 다운로드를 지원합니다. 라이브러리나 프레임워크를 사용하여 더 다양한 기능을 구현할 수도 있습니다.
 
-## 관련 자료:
+3. **구현 세부사항**: net/http 모듈은 외부 서버에 연결하기 위한 TCP 소켓을 연결하고 HTTP 요청을 보냅니다. 서버는 이 요청에 대한 HTTP 응답을 반환하고, 이것을 우리는 웹 페이지의 내용으로 받게 됩니다.
 
-[Mechanize gem](https://github.com/sparklemotion/mechanize) - 웹 크롤링과 웹 폼 작성을 도와주는 Ruby 라이브러리입니다.
-
-[Requests library](https://requests.readthedocs.io/en/master/) - Python 으로 작성된 간단한 HTTP 요청을 보내는 라이브러리입니다.
+## 참고 자료
+- Ruby net/http 공식 문서: [https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html](https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html)
+- 웹 스크레이핑에 대한 더 깊은 이해를 위한 링크: [https://www.w3schools.com/python/python_web_scraping.asp](https://www.w3schools.com/python/python_web_scraping.asp)
+- Ruby 외의 다른 언어에서 웹 페이지를 다운로드하는 방법: [https://www.twilio.com/blog/2017/05/http-requests-in-python-3.html](https://www.twilio.com/blog/2017/05/http-requests-in-python-3.html)

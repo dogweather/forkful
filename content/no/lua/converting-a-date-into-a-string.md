@@ -1,6 +1,6 @@
 ---
 title:                "Konvertere en dato til en streng"
-html_title:           "Lua: Konvertere en dato til en streng"
+html_title:           "Arduino: Konvertere en dato til en streng"
 simple_title:         "Konvertere en dato til en streng"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,25 +11,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Konvertering av en dato til en streng er en vanlig oppgave for programmerere. Dette betyr å endre datoen i tallform til en tekstlig representasjon, for eksempel "1. januar 2021". Hovedgrunnen til å gjøre dette er å gjøre datoen mer leselig og enkel å bruke i programmeringsoppgaver.
+Konvertering av en dato til en streng er prosessen for å endre et datofelt til en leserbar tekst. Programmerere gjør dette for å gjøre dataene mer forståelige og anvendelige for andre operasjoner, som utskrift eller lagring.
 
-## Hvordan:
-Et eksempel på hvordan du kan konvertere en dato til en streng i Lua er å bruke funksjonen "os.date". Denne funksjonen tar inn et format og en dato som argumenter, og returnerer datoen i riktig format. Her er et eksempel på hvordan dette kan gjøres:
+## Hvordan gjør man det:
+I Lua, vi bruker `os.date` funksjonen for å konvertere en dato til en streng. Her er en kodeeksempel:
 
 ```Lua
-local dato = os.date("%d. %B %Y", os.time())
-print(dato)
+local tid = os.date("*t") -- henter lokal tid
+local strengTid = os.date("%Y-%m-%d %H:%M:%S", os.time(tid)) 
+print(strengTid) -- utskrift vil være i formen: '2022-02-22 14:30:00'
 ```
+Strengen kan formateres til varierte formater ved å endre argumentet gitt til `os.date`.
 
-Dette vil returnere datoen i formatet "dag. måned år", for eksempel "01. januar 2021". Det er også mulig å endre formatet ved å legge til eller fjerne ulike symboler i formatstrengen, for eksempel å legge til klokkeslettet i formatet.
+## Dypdykk
+Lua, først utgitt i 1993, er en kraftig, effektiv og lett vekt-scripting språk. `os.date` er en innebygd funksjon i Lua og ble introdusert for å gi et enklere grensesnitt for tid og dato operasjoner.
 
-## Dypdykk:
-Konvertering av datoer til strenger er et viktig konsept innen dataprogrammering og har vært brukt i mange år. I eldre programmeringsspråk som C, var denne prosessen ofte mye mer komplisert og krevde manuell manipulering av datoformatet. I dagens moderne programmeringsspråk som Lua, er det mye enklere å konvertere datoer til strenger takket være innebygde funksjoner som "os.date".
+Du kan også bruke andre biblioteker som `LuaDate`, som gir mer komplekse dato og tid operasjoner. Men, for enkel konvertering av datoer til strenger, `os.date` er mer enn passende.
 
-Det finnes også alternativer til å bruke "os.date" for å konvertere datoer til strenger. Alternativer som "strftime" og "ctime" kan også brukes til dette formålet, men de er ikke like vanlige i Lua-samfunnet.
+Implementeringsdetaljer å merke seg inkluderer at `os.date` funksjonen faktisk returnerer forskjellige typer avhengig av argumentet det gis. Med `*t` gir det en tabell med tid / datoinformasjon, mens med en strengformater gir det en streng.
 
-## Se også:
-Hvis du ønsker å lære mer om konvertering av datoer til strenger og andre nyttige funksjoner i Lua, kan du sjekke ut disse ressursene:
+## Se også
+For å gå dypere inn i emnet, se følgende lenker:
 
-- [Lua dokumentasjon](https://www.lua.org/manual/5.4/manual.html)
-- [Lua-programmeringsguiden på norsk](http://stepcn.com/lua/index.html)
+- Lua's innebygde funksjoner: https://www.lua.org/manual/5.4/manual.html#6.9
+- LuaDate bibliotek: https://github.com/Tieske/date
+- Lua programmering/Lua standardbiblioteker: https://en.wikibooks.org/wiki/Lua_Programming
+
+Husk, øvelse gjør mester. Prøv deg på kodeeksemplene og gå gjennom kildelinkene for bedre forståelse.

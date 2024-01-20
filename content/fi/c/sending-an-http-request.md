@@ -1,6 +1,6 @@
 ---
 title:                "HTTP-pyynnön lähettäminen"
-html_title:           "C: HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
 simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "C"
 category:             "C"
@@ -10,43 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja miksi?
-Tiedättekö, mitä tarkoittaa HTTP-pyynnön lähettäminen? Lyhyesti sanottuna se on tapa lähettää pyyntö web-palvelimelle saadaksesi sieltä tietoa, kuten verkkosivun sisällön tai tietokannan tiedot. Tämä on tärkeä taito ohjelmoijien työssä, sillä se mahdollistaa vuorovaikutuksen ja tietojen hakemisen verkosta.
+# Artikkeli: HTTP-pyynnön lähettäminen C-ohjelmoinnissa
 
-## Kuinka tehdä:
-Alla olevassa koodiesimerkissä näytän, miten voit lähettää HTTP-pyynnön C-ohjelmassa. Huomaa, että tässä käytän libcurl-kirjastoa, mutta voit myös käyttää muita vaihtoehtoja, kuten libmicrohttpd tai libevent. Huomaa myös, että tulosteen sisältö voi vaihdella sen mukaan, mihin osoitteeseen pyyntö lähetetään ja millä tavalla vastaus on määritelty.
+## Mikä & Miksi?
+HTTP-pyyntö on tapa hakea tai lähettää tietoa verkkopalvelimelta tai siihen. Ohjelmoijat lähettävät näitä pyyntöjä, jotta he voivat vuorovaikuttaa verkkopalvelimien kanssa - esimerkiksi hakea verkkosivua tai lähettää tietoja.
+
+## Miten tehdään:
+Käytetään "libcurl" kirjastoa HTTP -pyynnön lähettämiseksi. Asennetaan se ensin.
 
 ```C
-// Alustetaan libcurl-kirjasto
-CURL *curl;
-CURLcode res;
-
-// Lähetetään GET-pyyntö ja asetetaan vastausmuoto
-curl = curl_easy_init();
-if(curl) {
-  curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-  curl_easy_setopt(curl, CURLOPT_FOLLOWLOCATION, 1L);
-
-  // Suoritetaan pyyntö ja tallennetaan vastaus muuttujaan
-  res = curl_easy_perform(curl);
-
-  // Tulostetaan vastaus
-  if(res == CURLE_OK)
-    printf("%s\n", curl_easy_strerror(res));
-
-  // Sammutetaan curl
-  curl_easy_cleanup(curl);
-}
+sudo apt-get install libcurl4-openssl-dev
 ```
 
-## Syvään sukellus:
-HTTP-pyynnöt ovat olleet käytössä jo 30 vuotta ja ovat olennainen osa verkkojen toimintaa. On olemassa muita tapoja lähettää pyyntöjä, kuten REST tai SOAP, mutta HTTP on edelleen yleisin ja yksinkertaisin tapa.
+Tässä on yksinkertainen koodiesimerkki.
 
-Vaikka libcurl on suosittu valinta HTTP-pyyntöjen lähettämiseen, on myös muita kirjastoja ja työkaluja, kuten libmicrohttpd ja wget. Joissakin tapauksissa saattaa olla järkevämpää käyttää valmiita työkaluja sen sijaan, että rakentaisi oman ratkaisun.
+```C
+#include <curl/curl.h>
 
-Tarkemmat yksityiskohdat HTTP-pyyntöjen lähettämisestä riippuvat käytetystä kirjastosta ja siitä, mihin tarkoitukseen pyyntö lähetetään. Myös virheiden käsittelyyn kannattaa kiinnittää huomiota, jotta ohjelmasi osaa käsitellä tilanteita, joissa pyyntö ei onnistu.
+int main(void)
+{
+    CURL *curl;
+    CURLcode res;
 
-## Katso myös:
-- [Libcurl documentation](https://curl.haxx.se/libcurl/)
-- [Libmicrohttpd documentation](https://www.gnu.org/software/libmicrohttpd/)
-- [Wget documentation](https://www.gnu.org/software/wget/)
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+        res = curl_easy_perform(curl);
+        if(res != CURLE_OK)
+            fprintf(stderr, "curl_easy_perform() failed: %s\n",
+                curl_easy_strerror(res));
+        curl_easy_cleanup(curl);
+    }
+    curl_global_cleanup();
+    return 0;
+}
+```
+Tämä koodi lataa etusivun osoitteesta http://example.com.
+
+## Syvemmälle
+HTTP-pyyntö muodostettiin alun perin osana HTTP-protokollaa vuonna 1991. Vaihtoehtoisia tapoja HTTP-pyyntöjen tekemiseen ovat esimerkiksi Pythonin `requests` -kirjasto tai JavaScriptin Fetch API. Kuitenkin C-ohjelmointikielessä libcurl on yleisin valinta. Se on nopea, tehokas ja tukee monia protokollia.
+
+Libcurlin yksityiskohdat: se käyttää 'CURL_GLOBAL_DEFAULT'-optiota alustaakseen globaalin ympäristön ja CURL-hallinnan. 'CURLOPT_URL' -asetus määrittää URL-osoitteen, johon pyyntö lähetetään. Käytetään 'curl_easy_perform' -funktiota suorittamaan varsinainen HTTP-pyyntö. Jos pyyntö epäonnistuu, tulostaa 'curl_easy_strerror' virheilmoituksen.
+
+## Katso myös
+Lisätietoa löydät seuraavilta sivustoilta:
+
+1. [HTTP Protocol:](https://developer.mozilla.org/fi/docs/Web/HTTP)
+2. [C-libcurl:](https://curl.haxx.se/libcurl/c/)
+3. [Python requests:](https://docs.python-requests.org/en/latest/)
+4. [Fetch API:](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)

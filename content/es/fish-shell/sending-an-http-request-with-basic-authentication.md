@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http con autenticación básica"
-html_title:           "Fish Shell: Enviando una solicitud http con autenticación básica"
+html_title:           "Arduino: Enviando una solicitud http con autenticación básica"
 simple_title:         "Enviando una solicitud http con autenticación básica"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,42 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué es y por qué enviar una solicitud HTTP con autenticación básica?
+## ¿Qué y por qué?
+El envío de un pedido HTTP con autenticación básica es un proceso en el que un cliente solicita un recurso protegido al proporcionar credenciales. Los programadores lo hacen para acceder a recursos de manera segura en la web, evitando accesos no autorizados.
 
-Enviar una solicitud HTTP con autenticación básica significa que estás proporcionando credenciales de inicio de sesión (usuario y contraseña) para poder acceder a una API o servicio web protegido. Los programadores lo hacen para asegurarse de que solo usuarios autorizados tengan acceso a ciertos recursos o datos.
-
-Cómo hacerlo:
-
-```Fish Shell
-curl -u username:password url
-```
-
-Ejemplo de código:
+## ¿Cómo hacerlo?
+La Fish Shell facilita el envío de solicitudes HTTP con autenticación básica. Veamos cómo se hace:
 
 ```Fish Shell
-curl -u admin123:secretpass https://api.example.com/users
+set cURLUser 'usuario'
+set cURLPassword 'contraseña'
+set URL 'https://unrecursoseguro.com'
+
+curl -u $cURLUser:$cURLPassword $URL
 ```
+Este comando intentará recuperar los recursos de la URL ingresada utilizando las credenciales especificadas.
 
-Resultado:
+## Profundizando
+Históricamente, la autenticación básica ha sido una de las formas más simples de implementar la autenticación en HTTP. Sin embargo, seguramente habrás escuchado de alternativas más seguras, como OAuth y JWT, ya que la autenticación básica expone las contraseñas en texto plano sobre el tráfico de red.
 
-```
-Response code: 200
-Body: {
-  "id": 123,
-  "name": "John Doe",
-  "email": "johndoe@example.com"
-}
-```
+En Fish Shell, el envío de solicitudes HTTP con autenticación básica se implementa utilizando el comando `curl`. Aquí, las credenciales se pasan mediante el argumento `-u`, seguido del nombre de usuario y la contraseña separados por dos puntos.
 
-Profundizando:
+## Ver también
+Para aprender más sobre el uso de Fish Shell y el envío de solicitudes HTTP con autenticación básica, puedes visitar las siguientes fuentes:
 
-Este método de autenticación se ha utilizado en la web desde los primeros días de HTTP. Sin embargo, ha sido criticado por su vulnerabilidad a ataques de replay debido a que las credenciales se envían en texto plano. Alternativas más seguras incluyen el uso de tokens de acceso o TLS (Transport Layer Security).
-
-Además, es importante tener en cuenta que aunque es muy común utilizar una solicitud HTTP con autenticación básica para acceder a una API, no es una práctica recomendada para la autenticación de usuarios en aplicaciones web. En su lugar, se sugiere el uso de un flujo de autenticación más robusto como OAuth.
-
-En cuanto a la implementación, Fish Shell ofrece una herramienta integrada llamada ```curl```para enviar solicitudes HTTP con autenticación básica. Sin embargo, también hay bibliotecas de otros lenguajes de programación que facilitan este proceso, como la biblioteca de Python, ```Requests```.
-
-Consulte también:
-
-- [Insecurity of HTTP Basic Authentication] (http://www.codingdefined.com/2014/07/insecurity-of-http-basic-authentication.html)
-- [OAuth vs. HTTP Basic Authentication] (https://medium.com/@paigen11/why-oauth-is-a-better-alternative-than-basic-authentication-b368ceb65176)
+- [Documentación oficial de Fish Shell](https://fishshell.com/documentation.html)
+- [Guía de cURL para solicitudes HTTP](https://ec.haxx.se/http/http-auth)
+- [Comparativo de OAuth, JWT, y Autenticación Básica](https://developer.okta.com/blog/2019/03/11/oauth-jwt-bearer-tokens)

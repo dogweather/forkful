@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukowanie wyników debugowania"
-html_title:           "C: Wydrukowanie wyników debugowania"
-simple_title:         "Wydrukowanie wyników debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "C"
 category:             "C"
 tag:                  "Testing and Debugging"
@@ -10,48 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i Dlaczego?
 
-Debugowanie kodu może być frustrującym wyzwaniem dla programistów. Dlatego często stosuje się drukowanie informacji debugujących, czyli wydruków danych lub informacji o wykonywanym kodzie. Jest to przydatna metoda, która pomaga zlokalizować błędy i ułatwia naprawianie ich.
+Drukowanie wyjścia debugowego to technika programistyczna polegająca na wyświetlaniu informacji o działaniu programu na ekranie. Programiści robią to, żeby zrozumieć, co się dzieje w ich skryptach - to pomaga nam znaleźć i naprawić błędy (bugi).
 
 ## Jak to zrobić:
 
-Oto kilka przykładowych sposobów wydruku informacji debugujących w języku C:
+Oto podstawowy kod w C, który pokazuje, jak wydrukować wiadomości debugowe:
 
-```C
-// Wyświetlenie zawartości zmiennej int
-int x = 10;
-printf("Wartość x to %d\n", x);
+``` C
+#include <stdio.h>
 
-// Wyświetlenie sekwencji znaków
-char str[] = "Hello World";
-printf("Tekst: %s\n", str);
+int main() {
+   int a = 5;
 
-// Wyświetlenie wartości ciągu znaków
-char* str2 = "Hello World";
-printf("%s\n", str2);
+   printf("Debug: a = %d\n", a);
+
+   return 0;
+}
 ```
-
-Po wykonaniu powyższego kodu powinniśmy zobaczyć następujący wydruk:
-
-```
-Wartość x to 10
-Tekst: Hello World
-Hello World
-```
+Powyższy kod wyświetli: „Debug: a = 5” na ekranie. Użyliśmy standardowej funkcji „printf” do wydrukowania wartości zmiennej „a”.
 
 ## Deep Dive:
 
-Drukowanie informacji debugujących jest praktyką, która ma wiele lat i jest szeroko stosowana w programowaniu. Metoda ta jest szczególnie przydatna w przypadku problemów z wykonywaniem kodu na różnych platformach lub w przypadku złożonych systemów.
+Z historii wiesz, że drukowanie debugowania jest jedną z najstarszych technik debugowania. Ale dzisiaj mamy wiele alternatyw - takie jak debugowanie interaktywne za pomocą debuggerów, logowanie do plików itp.
 
-Alternatywą dla drukowania informacji debugujących może być użycie debuggera, czyli narzędzia programistycznego do analizy wykonywanego kodu.
+Jednym z ciekawych aspektów drukowania debugowania w C jest fakt, że funkcja „printf” w rzeczywistości przyjmuje dowolną liczbę argumentów. To jest możliwe dzięki mechanizmom w języku C znanym jako "funkcje o zmiennej liczbie argumentów".
 
-Implementacja drukowania informacji debugujących w języku C jest prosta i odbywa się za pomocą funkcji `printf()`, która jest dostępna w standardowej bibliotece języka C.
+## Zobacz też:
 
-## Zobacz również:
+1. [Debugowanie w języku C](http://www.learn-chinese-mandarin-language.com/debugowanie-w-jezyku-c)
+2. [Jak korzystać z funkcji printf w C](http://www.learn-c.org/en/printf)
 
-Za więcej informacji na temat drukowania informacji debugujących i innych sposobów debugowania w języku C, zapoznaj się z poniższymi źródłami:
-
-- [Drukowanie informacji debugowania w języku C](https://www.programiz.com/c-programming/c-output)
-- [Debagowanie kodu w języku C z użyciem GDB](https://www.gnu.org/software/gdb/)
-- [Częste błędy w programowaniu w języku C](http://www.cprogramming.com/debugging/errors.html)
+Pamiętaj, że drukowanie debugowe jest potężnym narzędziem, ale używaj go mądrze! Nadmierne drukowanie może zaszkodzić wydajności Twojego kodu, a także utrudnić zrozumienie, co się dzieje.

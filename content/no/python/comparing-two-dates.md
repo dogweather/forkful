@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Python: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,45 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## Hva & Hvorfor?"
+## Hva & Hvorfor?
 
-Sammenligning av to datoer er en vanlig oppgave i programmering, der man ønsker å finne ut av relasjonen mellom to tidsperioder. Dette kan være nyttig for å sortere informasjon, filtrere data eller gjøre beregninger basert på tid. 
+Sammenligning av to datoer er rett og slett prosessen med å bestemme hvilken dato som kommer før eller etter den andre. Dette hjelper programmerere med å håndtere tidsfrister, gjøre tidsseriefunksjoner, eller utføre tidssensitiv statistikk.
 
-Programmerere bruker sammenligning av datoer for å effektivt håndtere tidsrelaterte data og utføre operasjoner som avhenger av tid. Dette lar dem lage mer presise og nøyaktige programmer.
+## Hvordan:
 
-"## Hvordan:"
+Python standardbiblioteket datetime tillater direkte sammenligning mellom datoer. 
+
+Her er et eksempel på hvordan du sammenligner to datoer:
 
 ```Python
-# Eksempel på å sammenligne to datoer
 from datetime import date
 
-date1 = date(2021, 1, 15) # Første dato
-date2 = date(2021, 1, 20) # Andre dato
+dato1 = date(2021, 12, 1)
+dato2 = date(2021, 12, 24)
 
-# Sammenligner datoer og lagrer resultatet i en variabel
-resultat = date1 < date2 
-
-print(resultat) 
+if dato1 < dato2:
+    print("dato1 kommer før dato2")
+else:
+    print("dato2 kommer før eller er lik dato1")
 ```
+
+Utskrift for koden vil være:
 
 ```Python
-# Output
-True
+dato1 kommer før dato2
 ```
-I dette eksempelet bruker vi Python-modulen "datetime" for å lage to datoer. Deretter bruker vi operatoren "<" for å sammenligne datoene og lagrer resultatet i en variabel. Vi skriver ut resultatet for å se om den første datoen er mindre enn den andre.
 
-"## Dykk Ned":
+## Dyp Dykk:
 
-Sammenligning av datoer kan spores tilbake til tidlige datamaskiner, hvor det ble brukt for å håndtere tid og programmeringsspråk som brukte datoer som del av sin syntaks.
+Historisk sett, i tidlige programmeringsspråk, var sammenligning av datoer en utfordrende oppgave. Fortsatt, i moderne språk som Python, gjør innebygde date-time funksjonene det til en enkel oppgave.
 
-En alternativ måte å sammenligne datoer på er å bruke timestamp, som representerer antall sekunder siden 1. januar 1970. Dette gjør det enklere å sammenligne to datoer uten å måtte håndtere formatering og forskjellige tidszoner.
+Alternativt, bibliotek som Pandas gir også funksjoner for å sammenligne datoer og håndtere tidsserier. 
 
-I Python støttes også ulike formater for datoer, som "datetime", "date" og "time", som gir forskjellig funksjonalitet for å håndtere datoer og klokkeslett.
+Når det gjelder implementering, lagrer Python datoobjekter som antall sekunder siden 1. januar 1970, en praksis kjent som 'epoch' tid. Dette gjør at Python kan sammenligne datoer direkte ved å sammenligne sekundene siden 'epoch'.
 
-"## Se Også":
+## Se Også:
 
-For å lære mer om sammenligning av datoer i Python, sjekk ut disse ressursene:
+For mer informasjon, sjekk ut disse nyttige ressursene:
 
-- Offisiell dokumentasjon for datetime-modulen: https://docs.python.org/3/library/datetime.html
-- Enkel håndbok for datoer og klokkeslett i Python: https://towardsdatascience.com/working-with-datetime-in-python-tips-and-tricks-2d8fcb815639
-- YouTube-video med en live-koding av sammenligning av datoer i Python: https://www.youtube.com/watch?v=kh4MhttG7e4
+1. Offisielle Python dokumentasjon: [datetime modul](https://docs.python.org/3/library/datetime.html)
+2. For videre lesing: [Pandas dokumentasjon på tidsseriedata](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html)
+3. For diffing datoer: [dateutil biblioteket](https://dateutil.readthedocs.io/en/stable/)
+4. Tutorials: [Python Date and Time Tutorial](https://realpython.com/python-datetime/) Veggen dypere forklaring og flere eksempler.

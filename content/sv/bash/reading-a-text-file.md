@@ -1,6 +1,6 @@
 ---
 title:                "Läsa en textfil"
-html_title:           "Bash: Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,30 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att läsa en textfil är ett vanligt sätt för programmerare att läsa och manipulera data som är lagrat i en textbaserad form. Det kan vara allt från rådata från en sensor till text i en fil som behöver bearbetas.
+Att läsa en textfil är den aktion där en programmerare extraherar data från en fil för att använda inom sitt script. Vi gör det för att hämta, analysera eller manipulera informationen inuti.
 
-## Så här gör du:
-Att läsa en textfil i Bash är enkelt. Du kan använda kommandot `cat` för att skriva ut innehållet i filen direkt i terminalen. Till exempel om du har en fil som heter `minfil.txt` så kan du skriva `cat minfil.txt` för att se allt innehåll i filen.
+## Hur man gör:
+```Bash
+# Du kan använda 'cat' kommandot för att läsa en textfil.
+cat filnamn.txt
 
-Om du vill spara innehållet i filen till en variabel så kan du använda kommandot `read`. Till exempel kan du skriva `read filinnehall < minfil.txt` för att lagra innehållet i `minfil.txt` i variabeln `filinnehall`.
-
-Du kan också använda for-loopar för att läsa filen rad för rad. Till exempel:
-
+# Du kan även använda 'less' eller 'more'.
+less filnamn.txt
+more filnamn.txt
 ```
-for rad in $(cat minfil.txt)
-do
-  echo $rad
-done
+Om din 'filnamn.txt' innehåller "Hej, Sverige!" kommer var och en av dessa kommandon att visa "Hej, Sverige!" på terminalen.
+
+```Bash
+# Om du vill läsa en textfil rad för rad, använd en while-loop:
+while IFS= read -r rad; do
+    echo "$rad"
+done < filnamn.txt
 ```
+Detta skript kommer att visa varje rad i 'filnamn.txt' på en ny rad i terminalen.
 
-Detta kommer att skriva ut varje rad i filen `minfil.txt` i terminalen.
+## Fördjupning
+Historiskt sett var 'cat', 'more' och 'less' de ursprungliga verktygen för att läsa en textfil i Unix, med 'cat' datandes tillbaka till Version 1 Unix.  
 
-## Djupdykning:
-Att läsa en textfil är ett fundamentalt koncept inom programmering och är ett sätt att få tillgång till och bearbeta data i en enkel och läsbar form. Det finns dock alternativ till att använda `cat`-kommandot, såsom `sed` och `awk` som är mer kraftfulla och kan användas för mer avancerad manipulation av filer.
+Som alternativ kan 'awk' och 'sed' också läsa en textfil, men dessa är oftast mer användbara för mer komplexa textbearbetningar. 
 
-En annan viktig aspekt att tänka på är kodningsstandarder för textfiler, såsom ASCII och UTF-8. Det är viktigt att vara medveten om vilken standard som används för att undvika problem med läsningen av filen.
+När du använder 'read' -kommandot med '-r' -flaggan, undviker du att tolka bakslag som escape-tecken. 'IFS=', eller det interna fältseparatorn, förhindrar att ledande och efterföljande mellanslag trimmas.
 
-## Se även:
-- [Bash dokumentation](https://www.gnu.org/software/bash/manual/bash.html)
-- [Sed tutorial](https://www.grymoire.com/Unix/Sed.html)
-- [AWK tutorial](https://www.tutorialspoint.com/awk/index.htm)
+## Se också
+['The Linux Documentation Project' - Text Processing Commands](http://tldp.org/LDP/GNU-Linux-Tools-Summary/html/x11655.htm)  
+['GNU Bash Manual' - Bash Built-in Commands](https://www.gnu.org/software/bash/manual/bash.html#Bash-Builtins)
+['Stackoverflow' - How to read a file line by line in Bash](https://stackoverflow.com/questions/10929453/read-a-file-line-by-line-assigning-the-value-to-a-variable)

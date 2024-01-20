@@ -1,7 +1,7 @@
 ---
-title:                "Analisi dell'html"
-html_title:           "Rust: Analisi dell'html"
-simple_title:         "Analisi dell'html"
+title:                "Analisi sintattica dell'html"
+html_title:           "Bash: Analisi sintattica dell'html"
+simple_title:         "Analisi sintattica dell'html"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,35 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cos'è e perché: Il parsing HTML è il processo di analizzare e interpretare il codice HTML di una pagina web. I programmatori lo fanno per estrarre informazioni utili dalla pagina, come ad esempio titoli, link e contenuti.
+# Analisi HTML con Rust: Un'introduzione
 
-Come fare: Utilizzando il linguaggio di programmazione Rust e alcune librerie specifiche, è possibile eseguire facilmente il parsing di una pagina web. 
-Esempio di codice:
+## Cos'è e Perché?
+L'analisi HTML, o parsing HTML, è il processo di decodifica o traduzione del codice HTML in un formato facilmente manipolabile da un programma. Questo è molto utile perchè permette ai programmatori di estrarre, modificare e analizzare i dati dal codice HTML.
+
+## Come fare:
+Rust offre diversi pacchetti per facilitare l'analisi HTML. Uno popolare è `html5ever`. Vediamo come utilizzarlo:
+
 ```Rust
-extern crate html5ever;
-use html5ever::rcdom::{RcDom, Handle};
-use html5ever::{parse_document, tendril::TendrilSink};
-use html5ever::{tendril::stream, QualName};
- 
-let input = format!("<!DOCTYPE html><html><head></head><body>Hello, world!</body></html>");
-let mut dom = parse_document(RcDom::default(), Default::default())
-	.from_utf8()
-	.read_from(&mut input.as_bytes())
-	.unwrap();
- 
-// Ottieni la gestione del nodo body
-let doc = dom.get_document();
-let html = doc.document_element().unwrap();
-let body = html.first_child().unwrap();
-let body_node = dom.nodes.borrow((body));
- 
-// Stampa il contenuto del nodo body
-match body_node.data {
-    NodeData::Text { ref contents } => println!("Contenuto del nodo body: {:?}", contents.borrow()),
-    _ => ()
+use html5ever::rcdom::RcDom;
+use html5ever::tendril::TendrilSink;
+use html5ever::parse_document;
+
+fn main() {
+    let html: Vec<u8> = "<html><body>Ciao, mondo!</body></html>".as_bytes().to_owned();
+    let dom = parse_document(RcDom::default(), Default::default()).from_utf8().read_from(&mut &*html).unwrap();
+
+    // ...il tuo codice qui...
 }
 ```
 
-Deep Dive: Il parsing HTML è diventato indispensabile con l'aumento del numero di pagine web e delle tecnologie web. Prima dell'introduzione di HTML5, molti programmatori utilizzavano librerie come BeautifulSoup per analizzare il codice HTML. Tuttavia, con l'arrivo di Rust e delle sue performance di parsing veloci e sicure, ci sono ora molte librerie specifiche per il parsing HTML, come html5ever e select.rs. Queste librerie consentono di estrarre facilmente informazioni da una pagina web e vengono utilizzate in molti progetti web.
+L'output di questo codice, quando eseguito, sarà un DOM (Object Model del Documento) del tuo documento HTML che può essere facilmente interrogato e manipolato.
 
-See Also: Per ulteriori informazioni su come utilizzare Rust per il parsing HTML, puoi consultare la documentazione ufficiale di Rust (https://www.rust-lang.org/) o la documentazione delle librerie specifiche come html5ever (https://docs.rs/html5ever/) e select.rs (https://docs.rs/select/). Inoltre, puoi trovare esempi di codice su come utilizzare queste librerie su siti come GitHub (https://github.com/).
+## Approfondiamo
+Prima del 2000, l'analisi HTML era un'operazione complicata e ingombrante a causa dell'incoerenza tra diversi browser. Grazie al W3C (World Wide Web Consortium), abbiamo standard che ci aiutano a scrivere ed analizzare l'HTML più facilmente.
+
+Sebbene `html5ever` sia una soluzione comune per Rust, esistono alternative come `scraper` o `kuchiki`, che possono essere più appropriate a seconda delle necessità del tuo progetto.
+
+Gli algoritmi di parsing sono di solito implementati come automi a stati finiti, per gestire vari casi di errore e complessità inerenti nell'analisi del codice HTML. Questo può essere un argomento intimidante, ma Rust e i suoi pacchetti di parsing HTML ti aiutano a gestirlo senza problemi.
+
+## Vedere anche:
+Sei interessato a saperne di più? Ecco alcune risorse utili:
+- `"html5ever"` pacchetto su [crates.io](https://crates.io/crates/html5ever)
+- [`"scraper"` pacchetto su crates.io](https://crates.io/crates/scraper)
+- [`"kuchiki"` pacchetto su crates.io](https://crates.io/crates/kuchiki)
+- [W3C HTML standard](https://www.w3.org/TR/html52/)
+
+Buona programmazione a tutti!

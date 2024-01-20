@@ -1,6 +1,6 @@
 ---
 title:                "Obteniendo la fecha actual"
-html_title:           "Lua: Obteniendo la fecha actual"
+html_title:           "C#: Obteniendo la fecha actual"
 simple_title:         "Obteniendo la fecha actual"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué es y por qué?: Obtener la fecha actual es una parte importante de la programación en Lua. Permite a los programadores obtener información sobre el tiempo actual, lo que puede ser útil para funciones como programar tareas o registrar eventos.
+## ¿Qué y por qué?
 
-Cómo hacerlo: En Lua, podemos obtener la fecha actual utilizando la función "os.date()". Por ejemplo, si queremos mostrar la fecha actual en formato día/mes/año, podemos escribir:
+Obtener la fecha actual en la programación se refiere a capturar la fecha y hora al momento que se solicita. Los programadores lo hacen para rastrear eventos basados en el tiempo, como la última modificación en una base de datos o registrar cuándo se realizó un acceso específico.
 
-```lua
-print(os.date("%d/%m/%Y"))
+
+## Cómo hacer esto:
+
+En Lua, podemos utilizar el módulo `os` para obtener la fecha y hora actual. Aquí hay un ejemplo:
+
+```Lua
+local fecha_actual = os.date("*t")
+print(os.date("%c", os.time(fecha_actual)))
 ```
 
-Esto imprimirá la fecha actual, por ejemplo: "04/09/2021".
+Esto imprimirá la fecha y hora en tu formato local. Por ejemplo, podrías obtener: "Tue Jun 22 12:11:04 2022".
 
-También podemos obtener la fecha en otros formatos, como hora, minutos, segundos, entre otros. Por ejemplo:
+## Análisis en profundidad:
 
-```lua
-print(os.date("%H:%M:%S"))
-```
+Hablando históricamente, Lua proporciona una función `date` en su módulo de OS para trabajar con fechas, lo cual es simple y eficaz. Sin embargo, puede que si se requiere manipulaciones más complejas de fecha y hora, se necesite recurrir a librerías externas como LuaDate o Chronos.
 
-Esto imprimirá la hora actual, por ejemplo: "13:35:48"
+La función `os.date(format, tiempo)` en Lua, convierte un tiempo dado (o el tiempo actual, si no se da tiempo) en una cadena, de acuerdo con el formato dado. El asterisco `'*t'` retorna una tabla con la fecha y la hora que desea convertir.
 
-Profundizando: La función "os.date()" en Lua está basada en la función homónima en el lenguaje de programación C. Esta función toma como argumento una cadena de formato y devuelve la fecha y/o hora actual en ese formato específico. Además, también podemos utilizar la función "os.time()" para obtener la fecha y hora actual en segundos desde la "época", que se inició el 1 de enero de 1970.
+En términos de implementación, Lua utiliza internamente las funciones de la biblioteca estándar de C para operaciones relacionadas con la fecha y la hora. Esto significa que las fechas y horas en Lua están sujetas a las mismas restricciones y comportamientos que se presentan en C.
 
-Alternativamente, también podemos utilizar el módulo "os.date" de la biblioteca "datetime", que nos ofrece una serie de funciones adicionales para trabajar con fechas y horas en Lua.
+## Ver también:
 
-Vea también: Si desea obtener más información sobre cómo trabajar con fechas en Lua, puede consultar la documentación del lenguaje o visitar los siguientes sitios web:
+Para obtener más información sobre este tema, consulte las siguientes fuentes:
 
-- https://www.lua.org/manual/5.4/manual.html#6.9
-- https://www.w3schools.com/lua/lua_date_time.asp
-- http://lua-users.org/wiki/DateTimeLibrary
+- Documentación oficial de Lua: [https://www.lua.org/manual/5.4/man.html#6.9](https://www.lua.org/manual/5.4/man.html#6.9)
+- GitHub de LuaDate: [https://github.com/Tieske/date](https://github.com/Tieske/date)
+- Chronos GitHub: [https://github.com/ashkamath/chronos](https://github.com/ashkamath/chronos)

@@ -1,7 +1,7 @@
 ---
-title:                "उप-स्ट्रिंग हटाना"
-html_title:           "PowerShell: उप-स्ट्रिंग हटाना"
-simple_title:         "उप-स्ट्रिंग हटाना"
+title:                "सबस्ट्रिंग्स निकालना"
+html_title:           "Clojure: सबस्ट्रिंग्स निकालना"
+simple_title:         "सबस्ट्रिंग्स निकालना"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,34 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya & Kyu?
-Substring ko extract karna, kisi bhi shabd, var ya samast shreni mein se chote tukdon ko alag karke unka upyog karna hai. Programmers iska upyog karke lambi shabdo wali database entries ko dhoondhne mein madad lete hain ya phir specific patterns ko khojne mein. Substring extraction techniques data processing mein bhi bahut kaam aate hain.
+## क्या और क्यों? 
 
-## Kaise Karein?
-Substring extraction ka simplest tareeka hai "Substring" command ka upyog. Iske liye hum "PowerShell" mein ```$string.Substring()``` command ka upyog karenge. Yeh command deta hai ek tukda shabd, var ya samast shreni ke bheetar se, jo hum specify karte hain.
+सबस्ट्रिंग निकालना यानी एक बड़ी स्ट्रिंग से छोटी स्ट्रिंग को अलग करना। कार्यक्रमकर्ताएं इसे उपयोगी जानकारी को अलग करने के लिए करते हैं, जैसे कि एक फ़ाइल का नाम या एक URL का एक हिस्सा ।
 
-Jaise ki:
+## कैसे :
 
-``` PowerShell
-$string = "programming"
-$string.Substring(4,5)
+आप PowerShell में substring निकालने के लिए `.substring()` function का उपयोग करते हैं। यहां उदाहरण है:
+
+```powershell
+$str = "Hello, World!"
+$sub_str = $str.Substring(0, 5)
+echo $sub_str
 ```
 
-Iska output hoga:
+उपरोक्त उदाहरण में, `$sub_str` का परिणाम `"Hello"` होगा।
 
-``` PowerShell
-rammi
-```
+## गहराई में :
 
-Iss tareeke se hum bina kuch extra effort ke substring extract kar sakte hain.
+PowerShell .substring() method का उपयोग करके हम substring को प्राप्त कर सकते हैं। इसे जानकारी में से विशिष्ट विवरण निकालने के लिए इस्तेमाल किया जाता है। जैसे कि, आप एक ईमेल पते में से डोमेन नाम निकालने के लिए इसका उपयोग कर सकते हैं। 
 
-## Gehri Jhaank:
-Substring extraction bahut hi common technique hai data processing mein. Iska upyog bahut ideas mein kiya jata hai, jaise queries ko filter karne ya specific data points ko dhoondne ke liye. Iske alawa, kuch aur tareeke bhi hain substring extraction ke, jaise ki ```Split``` and ```Select-String``` commands.
+इसके विकल्प के रूप में, आप `-split`, `-replace` jesi cmdlets का उपन्यास कर सकते हैं, लेकिन वे generally regular expressions का उपयोग करती हैं जो अधिक complex हो सकते हैं।
 
-Split command ek jagah se dusri jagah tak ka shabdon ko alag karta hai, jabki Select-String command specific patterns ya strings ko khojne mein madad karta hai.
+## और देखें :
 
-## Dekhein Bhi:
-1. [Microsoft Docs: Substring Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring)
-2. [Tutorialspoint: Substring in PowerShell](https://www.tutorialspoint.com/powershell-Powershell-Powershell-commands/substring_PowerShell.htm)
+1. [PowerShell Substring Method(https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.1#substringint-int)]
+2. [PowerShell Tutorials - Substring Extraction(https://www.tutorialspoint.com/powershell/powershell_string_manipulation.htm)]
 
-Yeh dono resources aapko zyada jankari aur examples pradan karenge substring extraction ke liye.
+अब आप substring को कैसे निकाले, इसका गहरयां और इंतजाम जानते हैं। अगली बार जब आपको कोई जानकारी निकालने की आवश्यकता हो, तो फ़ंक्शन का उपयोग करें।

@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Ruby: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,34 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Descargar una página web es cuando un programador obtiene el código fuente de una página web por medio de un lenguaje de programación. Los programadores lo hacen para poder acceder y manipular la información de la página web, ya sea para obtener datos específicos o para automatizar tareas.
+Descargar una página web implica obtener su código fuente HTML para uso y análisis local. Los programadores lo hacen para scrapping de datos, automatización de pruebas, entre otras tareas.
 
-## Cómo:
+## ¿Cómo hacerlo?
 
-```ruby
+Aquí se muestra cómo descargar una página web con el módulo `open-uri` y Nokogiri. 
+
+```Ruby
 require 'open-uri'
-# Requerir el módulo "open-uri" para poder usar los métodos de descarga de páginas web
+require 'nokogiri'
 
-webpage = URI.open("https://example.com")
-# Crear una variable que almacene la página web a descargar
+# Descargando el código HTML 
+html_content = open('https://www.example.com').read
 
-puts webpage.read
-# Imprimir el contenido de la página web, obtenido a través del método .read
+# Parseando el HTML con Nokogiri
+nokogiri_object = Nokogiri::HTML(html_content)
 
-# Output:
-# <!doctype html>
-# <html>
-# ...
+puts nokogiri_object
 ```
 
-## Profundizando:
+La salida será el contenido HTML del sitio web que especificaste.
 
-La descarga de páginas web ha sido una técnica común en la programación desde los primeros años de Internet. Existen diversos métodos para hacerlo, como utilizar herramientas de línea de comandos como cURL o wget, o bien implementar código en un lenguaje de programación como Ruby. También se pueden descargar páginas web completas con su estructura y recursos por medio de herramientas como HTTrack.
+## Análisis detallado
 
-## Vea también:
+Históricamente, la descarga de páginas web estaba limitada a programas de línea de comandos como `wget` o `curl`. Sin embargo, con la llegada de lenguajes de programación más potentes como Ruby, este proceso se ha vuelto más sencillo y personalizable.
 
-- [La documentación oficial de open-uri en Ruby](https://ruby-doc.org/stdlib-2.7.2/libdoc/open-uri/rdoc/URI.html)
-- [La guía de cURL para descargar páginas web](https://curl.se/docs/manual.html)
-- [El sitio web de HTTrack para descargar páginas web completas](https://www.httrack.com/)
+Existen alternativas para descargar páginas web en Ruby, como el uso de Net::HTTP o HTTParty, ambos ofrecen similares funcionalidades.
+
+Al ejecutar nuestro código, `open-uri` hace una solicitud HTTP GET a la URL que proporcionamos, descarga el contenido HTML y lo convierte en un objeto IO. Nokogiri toma el string resultante y lo parsea en un objeto que podemos navegar y jugar como si fuéramos el navegador.
+
+## Ver también
+
+Para obtener información adicional, consulta las siguientes fuentes:
+
+- [Documentación de Ruby OpenSSL](https://ruby.github.io/openssl/)
+- [Gem Nokogiri](https://nokogiri.org/)
+- [Documentación de Net::HTTP](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
+- [HTTParty Gem](https://github.com/jnunemaker/httparty)

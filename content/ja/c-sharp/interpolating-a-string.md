@@ -1,7 +1,7 @@
 ---
-title:                "文字列を補間する"
-html_title:           "C#: 文字列を補間する"
-simple_title:         "文字列を補間する"
+title:                "文字列の補間"
+html_title:           "Arduino: 文字列の補間"
+simple_title:         "文字列の補間"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -12,37 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 何となぜ？
 
-文字列の内挿（インターポレーション）とは何か、そしてプログラマーがそれを行う理由を２〜３文で説明します。
+文字列のインターポーレーションとは、文字列中に変数を直接埋め込むことです。これを行う理由は、コードの可読性を向上させ、エラーを減らすためです。
 
-文字列の内挿は、変数や式を文字列の中に直接埋め込むことで、より簡潔かつ効率的に文字列を組み立てることができます。プログラマーがこの手法を使用する主な理由は、可読性の向上とコードのシンプル化です。
+## どのように実装するか
 
-## 方法：
+次は文字列内挿（string interpolation）の基本的なC#のコード例です:
 
-下記のような```C# ... ```のコードブロックを使用して、文字列の内挿を行う方法を示します。
-
-```
-string name = "太郎";
-int age = 20;
-string message = $"こんにちは、私の名前は{name}です。{age}歳です。";
-Console.WriteLine(message);
+```C#
+string name = "Yamada";
+string greeting = $"こんにちは、{name}さん";
+Console.WriteLine(greeting);
 ```
 
-出力結果は以下のようになります。
+出力:
 
 ```
-こんにちは、私の名前は太郎です。20歳です。
+こんにちは、Yamadaさん
 ```
 
-## 深堀り：
+次のようなより複雑な例もあります:
 
-文字列の内挿は、C# 6.0で新たに導入された機能です。以前は、文字列の中に変数や式を埋め込むには、コンカチェナション（文字列の結合）を使用する必要がありました。しかし、コンカチェナションは複数の変数を組み合わせる時に不便であったため、文字列の内挿が導入されました。
+```C#
+int x = 10, y = 20;
+Console.WriteLine($"xとyの和は{x + y}です");
+```
 
-文字列の内挿以外にも、プレースホルダーを使用したフォーマット文字列や、String.Formatメソッドを使用したフォーマット文字列の生成などの代替手段があります。
+出力:
 
-文字列の内挿の実装方法については、C#のコンパイラや実行時のデバイスによって若干の違いがありますが、基本的には文字列の中に変数や式を挿入することで行われます。
+```
+xとyの和は30です
+```
 
-## 関連情報：
+## 深掘り
 
-- [Expression-Bodied Methods and Properties in C# 6](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/statements-expressions-operators/expression-bodied-members#interpolated-strings)
-- [String interpolation in C# 6.0](https://docs.microsoft.com/en-us/dotnet/csharp/tutorials/string-interpolation)
-- [How to use string interpolation in C#](https://www.c-sharpcorner.com/article/string-interpolation-explained-with-examples-in-c-sharp/)
+1. **歴史的背景**: 文字列内挿はC# 6.0で導入されました。それ以前は`string.Format`や`StringBuilder`を使用していました。
+2. **代替手段**: `string.Format`は内挿前の代替手段ですが、視覚的に直感的でないかもしれません。別の選択肢としては`StringBuilder`がありますが、これは主に大量の文字列操作に最適です。
+3. **実装詳細**: 内挿された文字列は、C# コンパイラによって `string.Format`メソッド呼び出しに変換されます。つまり、`$"こんにちは、{name}さん"`は`string.Format("こんにちは、{0}さん", name)`に対応します。
+
+## 関連リソース
+
+- [Microsoft Docs: 文字列の内挿 (C# チュートリアル)](https://docs.microsoft.com/ja-jp/dotnet/csharp/tutorials/string-interpolation)
+- [tutorialsteacher.com: C# String Interpolation](https://www.tutorialsteacher.com/csharp/csharp-string-interpolation)
+- [it-swarm.dev: 変数を含む文字列を出力するには (日本語)](https://ja.it-swarm.dev/csharp/%E5%A4%89%E6%95%B0%E3%82%92%E5%90%AB%E3%82%80%E6%96%87%E5%AD%97%E5%88%97%E3%82%92%E5%87%BA%E5%8A%9B%E3%81%99%E3%82%8B%E3%81%AB%E3%81%AF/823918848/)

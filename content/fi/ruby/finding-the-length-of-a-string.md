@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Ruby: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,28 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mikä & Miksi?
+## Mitä & Miksi?
 
-Mikä on merkkijonon pituuden selvittäminen? Se on yksinkertainen tapa mitata merkkijonon merkkien määrää, eli kuinka monta merkkiä merkkijono sisältää. Ohjelmoijat tekevät tätä usein, sillä merkkijonojen pituuden selvittäminen auttaa heitä käsittelemään ja analysoimaan tekstidataa.
+Merkkijonon pituuden määrittäminen tarkoittaa merkkijonoa muodostavien merkkien tai kirjainten kokonaismäärän laskemista. Sitä tarvitaan, kun ohjelmistot tarvitsevat tietää, kuinka paljon dataa merkkijonolla on, esimerkiksi validointiin, kaistaleveyden optimointiin tai tallennustilan arviointiin.
 
-# Miten:
+## Kuinka:
 
-```ruby
-string = "Tämä on esimerkki merkkijonosta"
-
-puts string.length
-# Output: 30
+```Ruby
+merkkijono = "Terve Suomi"
+puts merkkijono.length
 ```
-Tässä yksinkertaisessa koodiesimerkissä luodaan muuttuja nimeltä `string` ja tallennetaan siihen tietty merkkijono. Sitten käytetään `length`-metodia, joka laskee kuinka monta merkkiä merkkijonossa on ja tulostaa sen konsoliin. Tässä tapauksessa merkkijonossa oli 30 merkkiä, minkä takia tulostettu luku on myös 30.
 
-# Syvempi sukellus:
+Esimerkin tulostus on `11`. `length`-metodi laskee merkkijonon merkkien määrän ja palauttaa sen kokonaislukuna.
 
-Merkkijonojen pituuden selvittämisen historia juontaa juurensa takaisin vanhoihin tietokoneisiin, joissa se oli tärkeä osa tekstipohjaisten käyttöliittymien toimintaa. Nykyäänkin se on edelleen tärkeä osa ohjelmointia, sillä usein tarvitaan tietoa siitä, kuinka pitkä esimerkiksi käyttäjän antama syöte on.
+```Ruby
+tyhjä_merkkijono = ""
+puts tyhjä_merkkijono.length
+```
 
-Merkkijonojen pituuden selvitettämisellä on myös useita vaihtoehtoisia tapoja, kuten `size`- ja `count`-metodit, jotka toimivat samalla periaatteella. Lisäksi monet ohjelmointikielillä sisältävät valmiita funktioita merkkijonojen pituuden selvittämiseen.
+Tyhjän merkkijonon kohdalla, esimerkin tulostus on `0`.
 
-# Katso myös:
+## Syvällisemmin:
 
-- [Ruby String Documentation](https://ruby-doc.org/core-3.0.0/String.html)
-- [Ruby API - length](https://rubyapi.org/3.0/o/string#method-i-length)
-- [Difference between size and length in Ruby](https://dev.to/rpalo/ruby-quirk-size-vs-length-9lo)
+### Historia:
+
+`length`- ja `size`-metodit ovat olleet osa Ruby-kieltä sen synnystä asti, sen perustajan Yukihiro "Matz" Matsumoton tavoitteena on ollut aina tehdä ohjelmoinnista yksinkertaista ja miellyttävää.
+
+### Vaihtoehdot:
+
+Rubyssa on myös `size`-metodi, joka toimii samalla tavalla kuin `length`:
+
+```Ruby
+merkkijono = "Terve Suomi"
+puts merkkijono.size
+```
+
+Tässäkin tapauksessa tuotos on `11`.
+
+### Yksityiskohdat:
+
+`length`- ja `size`-metodit laskevat UTF-8-koodatut merkit tavuina, ei merkkeinä. Eripituisille merkeille, kuten emoji, se voi antaa odottamattoman arvon. Tässä tapauksessa tulisi käyttää `chars.count` tai `grapheme_clusters.count`.
+
+## Katso Myös:
+
+- Ruby String Documentation: https://ruby-doc.org/core/String.html
+- How Does Ruby Handle UTF-8 Strings?: https://thoughtbot.com/blog/fight-back-utf-8-invalid-byte-sequences

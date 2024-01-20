@@ -1,6 +1,6 @@
 ---
 title:                "Concatenando strings"
-html_title:           "Rust: Concatenando strings"
+html_title:           "Elixir: Concatenando strings"
 simple_title:         "Concatenando strings"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,57 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que você deve concatenar strings?
+## O Quê & Porquê?
 
-Concatenar strings é um recurso importante em programação, que permite que você junte diferentes cadeias de caracteres na mesma sequência. Isso é útil para criar strings dinâmicas e manipular dados de forma eficiente. Programadores usam concatenação de strings para criar mensagens personalizadas, gerar saída de dados formatados e muito mais.
+Concatenar strings é a operação de juntar duas ou mais strings numa só. Programadores fazem isso para manipular e combinar textos de maneira eficiente.
 
 ## Como fazer:
 
-O Rust oferece uma sintaxe simples e direta para concatenar strings. Use o operador `+` entre duas strings para uni-las em uma única string:
+Em Rust, você pode concatenar strings de várias maneiras:
 
-Exemplo 1:
-Rust
+1. Usando o operador '+':
+
+```Rust
+let s1 = "Olá".to_string();
+let s2 = ", mundo";
+let s3 = s1 + s2;
+println!("{}", s3);
 ```
-let string1 = "Hello";
-let string2 = "world!";
-let combined_string = string1 + " " + string2;
+Resultado: `Olá, mundo`
 
-println!("{}", combined_string);
+2. Usando o método `format!`:
+
+```Rust
+let s1 = "Olá";
+let s2 = ", mundo";
+let s3 = format!("{}{}", s1, s2);
+println!("{}", s3);
 ```
+Resultado: `Olá, mundo`
 
-Saída:
-```
-Hello world!
-```
+## Mergulho Profundo:
 
-Você também pode usar a macro `format!` para concatenar várias strings em uma única linha:
+Concatenar strings é uma prática fundamental em programação desde seus primórdios. No Rust, a concatenação de strings foi projetada para ser eficiente, tanto em termos de velocidade como de memória.
 
-Exemplo 2:
-Rust
-```
-let name = "John";
-let city = "London";
-let age = 25;
+Existem alternativas à concatenação de strings em programação. A mais notável é o uso de intercalação de strings, que também é suportada pelo Rust através de marcas especiais em strings.
 
-let message = format!("My name is {}. I live in {} and I am {} years old.", name, city, age);
+É importante notar que a concatenação de strings no Rust assume a posse depois que uma operação é feita. Isso significa que, depois de concatenar duas strings, a string original não pode ser usada novamente. Isso é diferente de outras linguagens de programação, onde a string original permanece inalterada após a concatenação.
 
-println!("{}", message);
-```
+## Veja Também:
 
-Saída:
-```
-My name is John. I live in London and I am 25 years old.
-```
-
-## Detalhes aprofundados:
-
-A concatenação de strings é uma técnica amplamente utilizada em linguagens de programação modernas e remonta aos primeiros dias da computação. Antes do surgimento de linguagens de programação orientadas a objetos, como C++, a concatenação de strings era muito mais complexa e exigia o uso de funções e ponteiros específicos para manipulação de strings.
-
-Existem várias alternativas para a concatenação de strings em Rust, como o uso do método `push_str` para adicionar uma string a uma variável existente. No entanto, a concatenação usando o operador `+` é a forma mais comum e eficiente de obter resultados rápidos e legíveis.
-
-No nível de implementação, o operador `+` utiliza a função `add` da trait `Add`, que é implementada para tipos de dados `String`, permitindo a concatenação entre eles.
-
-## Veja também:
-
-- Documentação oficial do Rust sobre concatenação de strings: https://doc.rust-lang.org/std/string/trait.Add.html
-- Mais exemplos de concatenação de strings em Rust: https://riptutorial.com/pt_BR/rust/example/1374/concatenando-strings
+1. Documentação oficial Rust [std::string::String](https://doc.rust-lang.org/std/string/struct.String.html)
+2. [Concatenate strings in Rust](https://stackoverflow.com/questions/30154541/how-do-i-concatenate-strings)
+3. [O guia do programador Rust](https://stevedonovan.github.io/rustifications/2018/08/18/common-rust-lifetime-misconceptions.html) sobre tempo de vida e posse de strings.

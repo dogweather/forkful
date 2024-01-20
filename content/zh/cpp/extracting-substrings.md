@@ -1,6 +1,6 @@
 ---
 title:                "提取子字符串"
-html_title:           "C++: 提取子字符串"
+html_title:           "Arduino: 提取子字符串"
 simple_title:         "提取子字符串"
 programming_language: "C++"
 category:             "C++"
@@ -10,30 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃ "是什麼和為什麼？"：
-提取子字符串是指從一個字符串中提取出特定部分的過程。程序員這樣做的原因是為了更有效地操作字符串數據，例如搜索和替換特定內容。
+## 什么以及为什么？ (What & Why?)
 
-＃＃ "如何："
-假設有一個字符串 ```"Hello World!"```，我們想要提取出其中的 ```"World"``` 部分，可以使用以下代碼：
+在C++编程中，提取子字符串是指从一个已存在的字符串中获取某一部分。程序员通常需要这样做以便分析或修改特定部分的数据。
 
+## 实现方式： (How to:)
+
+在C++中, `std::string::substr` 函数用于提取子字符串。其使用格式如下：
+
+```C++
+string substr (size_t pos, size_t len) const;
 ```
-#include <iostream>
+其中，`pos` 是开始的位置，`len` 是子字符串的长度。
 
+以下是一个例子：
+```C++
+#include<iostream>
 using namespace std;
 
 int main() {
-    string str = "Hello World!";
-    string subStr = str.substr(6, 5); // 從索引 6 開始提取 5 個字符
-    cout << subStr; // 輸出 "World"
+    string str = "Hello, World!";
+    string str2 = str.substr(0, 5);
+    cout << "Extracted substring is: " << str2 << endl;
     return 0;
 }
 ```
+输出：
+```
+Extracted substring is: Hello
+```
+此例子中 `"Hello"` 就是从 `"Hello, World!"` 中提取出来的子字符串。
 
-＃＃ "深入探討"
-（1）歷史背景：提取子字符串的概念早在早期的計算機程序設計中就存在。隨著數據處理和信息檢索需求的增加，提取子字符串的功能也變得更加重要。
-（2）替代方法：除了使用 ```substr()``` 函數，還可以使用其他方法提取子字符串，例如使用指針或遍歷字符串進行提取。
-（3）實現細節：```substr()``` 函數的實現原理是基於字符串的指標操作，可以訪問原始字符串的特定部分，並將其拷貝到新的字符串中。
+## 深入了解： (Deep Dive)
 
-＃＃ "參考資料"
-- [C++ substr() 函数](https://www.runoob.com/cplusplus/cpp-string-erase.html)
-- [字符串的常见操作](https://www.geeksforgeeks.org/string-class-in-cpp-stl/)
+**1. 历史背景**
+
+`substr` 函数属于 `<string>` 标准库。它是C++标准库中的一个关键部分并用于处理字符串相关的操作。
+
+**2. 选择方案**
+
+除了 `std::string::substr`, 还可以通过利用 `std::string::find`， `std::string::begin`, `std::string::end` 等等来提取子字符串。你的选择取决于具体情境和需求。
+
+**3. 实现细节**
+
+`substr` 函数基本原理是通过开始位置 `pos` 及长度 `len` 数据，从原始字符串复制指定长度的字符到新字符串中。
+
+## 更多信息 (See Also)
+
+想要了解更多有关C++ string类函数，请访问以下链接:
+
+- [cplusplus.com](http://www.cplusplus.com/reference/string/string/)
+- [cppreference,com](https://en.cppreference.com/w/cpp/string/basic_string)

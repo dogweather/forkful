@@ -1,7 +1,7 @@
 ---
-title:                "Scaricare una pagina web."
-html_title:           "Ruby: Scaricare una pagina web."
-simple_title:         "Scaricare una pagina web."
+title:                "Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
+simple_title:         "Scaricare una pagina web"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cosa & Perché?
+Scaricare una pagina web significa acquisire e salvare tutti i dati HTML di quella pagina sul tuo computer. I programmatori lo fanno per varie ragioni, come l'analisi dei dati, lo scraping del web o il test di un sito web.
 
-Scaricare una pagina web significa ottenere il suo contenuto e salvarlo sul proprio computer. I programmatori spesso lo fanno perché hanno bisogno di analizzare il codice HTML di una pagina o di utilizzare i suoi dati per scopi specifici.
-
-## Come fare:
+## Come Fare:
+Ecco un esempio di codice Ruby su come scaricare una pagina web utilizzando la gem open-uri:
 
 ```Ruby
 require 'open-uri'
 
-page = open("https://www.google.com") # sostituisci l'URL con quello desiderato
-puts page.read # stampa il contenuto della pagina
+File.open('pagina_web.html', 'w') do |file|
+  file.write(URI.open('https://www.tuo-sito-web.com').read)
+end
 ```
 
-```
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Google</title>
-    ...
-  </head>
-  ...
-</html>
-```
+Dopo l'esecuzione, avrai un nuovo file chiamato `pagina_web.html` che contiene l'HTML del sito web specificato.
 
-## Approfondimenti:
+## Approfondimento:
+Scaricare pagine web non è un concetto nuovo. È una pratica comune fin dall'inizio del web, con lo scopo principale di facilitare l'analisi e il recupero di informazioni.
 
-Scaricare una pagina web è diventato sempre più importante con lo sviluppo del web. In passato, i programmatori utilizzavano principalmente linguaggi come Perl e Python per effettuare questa operazione. Ora, grazie a Ruby e alle sue librerie, è possibile farlo più facilmente e in meno righe di codice.
+Ci sono molte alternative a open-uri, come `Net::HTTP` e `curl`, che possono essere utilizzate per scaricare pagine web. Tuttavia, open-uri è una delle opzioni più semplici e dirette disponibili in Ruby.
 
-## Vedi anche:
+Quando si tratta dei dettagli dell'implementazione, scaricare una pagina web è abbastanza semplice. Il metodo `URI.open` apre l'URL specificato e legge i contenuti, che vengono poi scritti in un file sul tuo computer. Questo processo è simile a copiare e incollare manualmente il contenuto di una pagina web in un file.
 
-- Il file di libreria OpenURI nella documentazione di Ruby: https://ruby-doc.org/stdlib-2.7.1/libdoc/open-uri/rdoc/OpenURI.html
-- Un tutorial su come scaricare pagine web con Ruby: https://www.tutorialspoint.com/ruby/ruby_web_page_download.htm
+## Vedi Anche:
+Per ulteriori informazioni, consulta i seguenti link:
+
+Ruby open-uri: https://ruby-doc.org/stdlib-3.0.0/libdoc/open-uri/rdoc/OpenURI.html
+
+Net::HTTP: https://ruby-doc.org/stdlib-3.0.0/libdoc/net/http/rdoc/Net/HTTP.html
+
+Ruby HTTP clients comparison: https://www.rubyguides.com/2019/08/ruby-http-clients-comparison/

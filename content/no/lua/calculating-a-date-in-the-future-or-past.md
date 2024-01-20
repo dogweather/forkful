@@ -11,20 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å beregne en dato i fremtiden eller fortiden betyr rett og slett å programmere et script som kan regne ut en ny dato basert på en gitt dato og antall dager som skal legges til eller trekkes fra. Dette er nyttig for programmerere fordi det gjør det enklere å håndtere datoer i programvare og automatisere tidsrelaterte oppgaver.
 
-## Hvordan:
-Du kan beregne en dato i Lua ved å bruke funksjonen ```os.date``` og spesifisere en formatstreng og antall dager som skal legges til eller trekkes fra. Se eksempelet under for å se hvordan dette gjøres:
+Å beregne en dato i fremtiden eller fortiden går ut på å ville finne ut nøyaktig hva datoen vil være på et gitt punkt i fremtiden eller hva den var på et tidspunkt i fortiden. Dette er noe programmerere gjør ganske ofte, enten det dreier seg om å håndtere forfallsdatoer, systemlogger eller tidslinjer for prosjekter.
+
+## Hvordan
+
+Å finne en fremtidig eller tidligere dato i Lua er en direkte prosessretning. Her er et grunnleggende eksempel ved bruk av `os.time()` og `os.date()`funksjonene:
+
+```Lua
+dagen = os.time({year=os.date("%Y"), month=os.date("%m"), day=os.date("%d")})
+fremtidig_dato = os.date("*t", dagen + (24 * 60 * 60 * 7)) -- Legger til syv dager
+
+print(fremtidig_dato.year, "-", fremtidig_dato.month, "-", fremtidig_dato.day)
 ```
-local dato = os.date("%m/%d/%Y", os.time() + 7*24*60*60) -- Beregner datoen 7 dager frem i tiden
-print(dato) -- Printer ut datoen på ønsket format, i dette tilfellet "mm/dd/yyyy"
-```
-Eksempel output: ```05/16/2021```
 
-## Dykk Deeper:
-Historisk sett har beregning av datoer vært en utfordrende oppgave for programmerere, spesielt når det kommer til å håndtere forskjellige kalendersystemer og skuddår. Alternativt til å beregne datoer kan man også bruke en tidsmodul som ```os.time``` for å håndtere tidsstempel i sekunder siden 1. januar 1970. Implementeringen av beregning av datoer kan også variere mellom programmeringsspråk, så det kan være nyttig å være klar over forskjellene når man jobber med forskjellige språk.
+Hvis du kjører dette vil du få datoen en uke fra i dag:
 
-## Se også:
-- [Lua dokumentasjon om dato og tid](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [Stack Overflow innlegg om beregning av dato i Lua](https://stackoverflow.com/questions/32553572/how-do-i-add-x-days-to-a-date-in-lua)
-- [WikiHow-guide om å beregne datoer i Lua](https://www.wikihow.com/Add-Days-to-a-Date-in-Lua-Programming)
+`2022 - 3 - 19`
+
+## Dypdykk 
+
+Historisk sett, før datamaskinenes tid, å beregne en dato i fremtiden eller fortiden var en manuell prosess, noe som lett fører til feil og unøyaktigheter.
+
+Alternativt kan man bruke Lua's innebygde biblioteker som `os.date()` og `os.time()`, som håndterer tidssoneproblemer og skuddår for deg noe som forenkler hele prosessen.
+
+Når det kommer til implementering, er dette egentlig bare en beregning basert på sekunder. `os.time()` gir oss det nåværende tidspunktet som et tid-stempel (antall sekunder siden 1. januar 1970), og du kan legge til eller trekke sekunder for å beregne fremtiden eller fortiden.
+
+## Se Også
+
+For mer informasjon om Lua og dato/tidsmanipulasjon, sjekk ut de følgende ressursene:
+
+1. Lua's offisielle dokumentasjon: https://www.lua.org/pil/22.1.html
+2. OCDive's Guide to Lua's date og time funksjoner: https://ocdoc.cil.li/api:os_time_and_date
+3. Roblox's forklaring og bruk av `os.time()` og `os.date()`: https://developer.roblox.com/en-us/api-reference/lua-docs/os

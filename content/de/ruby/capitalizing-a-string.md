@@ -1,7 +1,7 @@
 ---
-title:                "Großschreibung eines Strings"
-html_title:           "Ruby: Großschreibung eines Strings"
-simple_title:         "Großschreibung eines Strings"
+title:                "Einen String großschreiben"
+html_title:           "Ruby: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,29 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was und Warum?
-Die Großschreibung (auch bekannt als Capitalization) ist ein gängiger Begriff in der Programmierung, der die Änderung des ersten Buchstabens eines Strings in einen Großbuchstaben bezeichnet. Dies geschieht aus verschiedenen Gründen, beispielsweise um die Lesbarkeit des Codes zu verbessern oder um bestimmte Konvertierungen durchzuführen.
+## Was & Warum?
 
-# Wie geht das?
-Die Großschreibung eines Strings in Ruby ist einfach und erfordert nur wenige Zeilen Code. Hier ist ein Beispiel:
+Das Großschreiben eines Strings (also das Umwandeln des ersten Buchstabens einer Zeichenkette in einen Großbuchstaben) ist eine übliche Praxis in der Programmierung. Es erleichtert die Lesbarkeit und kann auch bei der Sortierung von Daten helfen.
+
+## So geht's:
+
+In Ruby benutzen wir die Methode `.capitalize` um einen String zu großzuschreiben. Hier ein paar Beispiele:
+ 
+```Ruby
+name = "ruby programmer"
+puts name.capitalize
+```
+Das wird "Ruby programmer" auf dem Bildschirm ausgeben.
 
 ```Ruby
-str = "hallo welt"
-puts str.capitalize
+greeting = "hallo, welt!"
+puts greeting.capitalize
 ```
+Dieser Code wird "Hallo, welt!" ausgeben.
 
-Die Ausgabe dieses Codes ist "Hallo welt". Der Befehl `capitalize` lässt Ruby den ersten Buchstaben in einen Großbuchstaben konvertieren.
+## Tiefer Einblick:
 
-# Tiefergehende Informationen
-Historisch gesehen gibt es verschiedene Möglichkeiten, um Strings in ein bestimmtes Format zu bringen, wie z.B. die Verwendung von ASCII-Codes oder regulären Ausdrücken. In Ruby gibt es jedoch die `capitalize` Methode, die speziell für die Großschreibung von Strings entwickelt wurde.
+Das Konzept der Großschreibung eines Strings hat eine lange Geschichte und wir finden es in den meisten Programmiersprachen. Alternativ kann man auch die Methode `upcase` verwenden, um alle Buchstaben eines Strings großzuschreiben. Die Methode `.capitalize` in Ruby wurde jedoch so implementiert, dass sie nur den ersten Buchstaben eines Strings großschreibt.
 
-Alternativ gibt es auch die Methode `upcase`, die alle Buchstaben in einen String in Großbuchstaben konvertiert. Beachten Sie jedoch, dass dies nicht dasselbe wie `capitalize` ist, da `upcase` alle Buchstaben in Großbuchstaben ändert, während `capitalize` nur den ersten Buchstaben verändert.
+## Siehe auch:
 
-Die `capitalize` Methode kann auch auf Wörter angewendet werden, die mehr als einen Buchstaben enthalten, ohne den Rest des Worts zu ändern. Zum Beispiel würde `Hello World`.capitalize zu `Hello world` werden, während `Hello World`.upcase immer noch `HELLO WORLD` sein würde.
-
-# Weitere Informationen
-Für weitere Informationen zu Strings und ihrer Formatierung in Ruby können Sie die offizielle Dokumentation von Ruby oder die zahlreichen Online-Tutorials konsultieren.
-
-## Siehe auch
-- Offizielle Ruby-Dokumentation: https://ruby-doc.org/core-2.7.0/String.html
-- Ruby-Tutorial: https://www.ruby-lang.org/de/documentation/quickstart/
+- Ruby-Dokumentation über Stringfunktionen: [https://ruby-doc.org/core/String.html](https://ruby-doc.org/core/String.html)
+- Interessanter Diskussionsthread zu `.capitalize` vs `.titleize`: [https://stackoverflow.com/questions/1352019/ruby-capitalize-every-word-first-letter](https://stackoverflow.com/questions/1352019/ruby-capitalize-every-word-first-letter)
+- Online-Ruby-Kurs für Anfänger: [https://www.codecademy.com/learn/learn-ruby](https://www.codecademy.com/learn/learn-ruby)

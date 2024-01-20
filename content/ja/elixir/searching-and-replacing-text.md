@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Elixir: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-テキストの検索と置換とは何か、そしてなぜプログラマーがそれを行うのかを説明してみましょう。テキストの検索と置換は、特定のテキストを見つけてそれを別のテキストで置き換えることを指します。プログラマーは、コード内の特定の部分を素早く修正するためにテキストの検索と置換を使用します。
+## 何となぜ？
 
-## 方法：
-以下のようなコード例を使用して、テキストの検索と置換の方法をご紹介します。
+テキストの検索と置換は、特定の文字列を見つけて新しい文字列に置き換える操作を指します。プログラマーはこれを行うことで、重複を避けたり、また情報の更新が必要な場合でも、効率よく作業を進行させることができます。
+
+## どうやるの？
+
+Elixirでは、`String.replace/3`関数を使用してテキストの検索と置換を行います。この関数は、検索用のパターン、置換用の新しい文字列、そして元の文字列を引数として取ります。
+
+以下に簡単な例を挙げます：
+
 ```Elixir
-# 文字列内の特定のテキストを置換する
-str = "こんにちは、世界！"
-str = String.replace(str, "こんにちは", "Hello")
-# strは"Hello、世界！"となります。
-
-# 正規表現を使用して複数の文字列を一括置換する
-str = "10 apples, 20 oranges, 30 bananas"
-str = Regex.replace(str, ~r/\d+/, "5")
-# strは"5 apples, 5 oranges, 5 bananas"となります。
+IO.puts String.replace("Hello, World!", "World", "Japan")
 ```
 
-## 詳しく見ていきましょう：
-テキストの検索と置換は、古くから存在する基本的なコンピューターの機能です。プログラム内の特定の部分を見つけて修正するために、プログラマーは検索と置換を使用します。ただし、検索と置換はパターンマッチングや正規表現のような高度な手法を使用することで、より複雑な操作も可能になります。Elixirでは、StringモジュールやRegexモジュールを使用してテキストの検索と置換を行うことができます。
+このコードの出力結果は`Hello, Japan!`になります。
 
-他にも、テキストの検索と置換にはいくつかの代替手段があります。例えば、JavaScriptの正規表現を使用したり、SedやAwkなどのコマンドラインツールを使用したりすることができます。ただし、Elixirは強力なパターンマッチング機能を備えているため、他の言語やツールよりも柔軟で効率的にテキストの検索と置換を行うことができます。
+## 深い情報
 
-## 関連ソースを参照してみましょう：
-- ElixirのStringモジュール: https://hexdocs.pm/elixir/String.html
-- ElixirのRegexモジュール: https://hexdocs.pm/elixir/Regex.html
-- Sedの使用方法: https://www.gnu.org/software/sed/manual/sed.html
-- Awkの使用方法: https://www.gnu.org/software/gawk/manual/gawk.html
+Elixirにおけるテキストの検索と置換は、Erlangという元となる言語から引き継いだ機能で、正規表現もサポートしています。適切な置換パターンを作成することで、さらに高度な文字列操作が可能になります。
+
+また、Elixir以外の言語では、さまざまな名前のメソッドや関数で同じ目的の操作が提供されています。たとえばJavaScriptでは`replace()`、Pythonでは`replace()`、Javaでは`replaceAll()`がそれに対応します。
+
+`String.replace/3`関数は、元の文字列を操作するのではなく、新しい文字列を生成して返すという点についても、考慮する必要があります。これは、Elixirが不変性を重視する言語であるためです。
+
+## 関連リンク
+
+- Elixir公式ドキュメンテーション: `String.replace/3` - https://hexdocs.pm/elixir/String.html#replace/3
+- Erlang公式ドキュメンテーション: 文字列操作 - http://erlang.org/doc/man/string.html
+- 正規表現についての詳細 - https://ja.wikipedia.org/wiki/正規表現
+- プログラミング言語別のテキスト置換ガイド - https://www.tutorialspoint.com/How-to-replace-a-character-in-a-string-in-python

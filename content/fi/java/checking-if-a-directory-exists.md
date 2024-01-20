@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistetaan, onko hakemistoa olemassa"
-html_title:           "Java: Tarkistetaan, onko hakemistoa olemassa"
-simple_title:         "Tarkistetaan, onko hakemistoa olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Java: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Files and I/O"
@@ -10,28 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tiedostojen käsittely on keskeinen osa monien ohjelmien toimintaa, ja usein näissä ohjelmissa on tarve tarkistaa, onko tietty hakemisto olemassa. Tämä tarkistus on tärkeä varsinkin silloin, kun ohjelma käyttää hakemiston sisältöä. Tässä artikkelissa näytämme, miten tarkistaa, onko hakemisto olemassa Java-ohjelmoinnissa ja miksi tämä on tärkeää.
+## Mitä & Miksi?
 
-## Miten?
-Tämän tarkistuksen suorittamiseksi käytämme File-luokan metodia "exists()", joka tarkistaa, onko annettu tiedosto tai hakemisto olemassa. Tämän jälkeen voimme käyttää "if"-lauseketta ja tulostaa halutut viestit, jos hakemisto on olemassa tai ei ole olemassa. Alla on esimerkki koodista ja sen tulostuksesta.
+Tarkistaminen, onko hakemisto olemassa, on ohjelmiston kehittäjän tapa varmistaa, että hakemisto on järjestelmässä ennen sen käyttöä. Tämä on tärkeää, koska se estää virhetilanteita, kuten tiedoston luku- tai kirjoitusyrityksiä olemattomaan hakemistoon.
+
+## Kuinka tehdään:
+
+Voit tarkistaa, onko hakemisto olemassa, Java'ssa `Files` luokan `exists()` metodia käyttäen:
 
 ```Java
-File hakemisto = new File("./hakemisto");
+import java.nio.file.*;
 
-if (hakemisto.exists()) {
-    System.out.println("Hakemisto on olemassa!");
-} else {
-    System.out.println("Hakemistoa ei löydy.");
+public class DirectoryExists {
+    public static void main(String[] args) {
+        Path dirPath = Paths.get("/path/to/directory");
+        
+        if (Files.exists(dirPath)) {
+            System.out.println("Hakemisto on olemassa.");
+        } else {
+            System.out.println("Hakemisto ei ole olemassa.");
+        }
+    }
 }
 ```
-Tulostus:
-```
-Hakemisto on olemassa!
-```
 
-## Syväsukellus
-Tarkistus, onko hakemisto olemassa, on ollut osa Java APIa aina ensimmäisestä versiosta lähtien, joten se on vakiintunut tapa suorittaa tämä toiminto Java-ohjelmissa. Toinen tapa tarkistaa hakemiston olemassaolo on käyttää "File.isDirectory()" -metodia, joka tarkistaa, onko kyseessä hakemisto vai ei. Käyttämällä tätä metodia, voimme myös suorittaa muita toimintoja, kuten tulostaa tämän tiedon tai siirtää tiedostoja.
+Tämän ohjelman ajaminen tulostaa "Hakemisto on olemassa" jos hakemisto on olemassa ja "Hakemisto ei ole olemassa" jos se ei ole.
 
-## Katso myös
-Ohjelmoinnissa on usein tarpeen tarkistaa tiedostojen ja hakemistojen olemassaolo. Jos haluat syvempää tietoa tiedostojen käsittelystä Java-ohjelmissa, kannattaa tutustua Java API:n File-luokkaan ja sen metodeihin. Lisätietoa löytyy myös Java SE:n virallisilta verkkosivuilta: https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html
+## Syväsukellus:
+
+Tarkistaaksesi, onko hakemisto olemassa, Java ohjelmoijat käyttivät usein `File` luokan `exists()` metodia ennen Java 7:n julkaisua. Uudemmissa versioissa suositellaan `Files` luokan `exists()` metodin käyttämistä, koska se on monipuolisempi ja tarjoaa parempaa virheenkäsittelyä.
+
+Toinen vaihtoehto on `Files` luokan `notExists()` metodi, joka tarkistaa, onko hakemisto olemassa. Siinä on se ero, että se palauttaa `true`, jos hakemisto ei ole olemassa.
+
+Hakemiston olemassaolon tarkistamisen yksityiskohtana on, että vaikka `exists()` metodi palauttaa `true`, ei välttämättä tarkoita, että ohjelma pystyy kirjoittamaan tai lukemaan hakemistosta. Tämän voi tarkistaa erikseen `Files.isWritable()` tai `Files.isReadable()` metodeilla.
+
+## Katso myös:
+
+[Lue lisää `Files` luokan koko API:sta Java dokumentaatiosta täältä.](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
+
+[Opas Java 7:n tiedosto I/O (NIO.2) toiminnallisuudesta.](https://docs.oracle.com/javase/tutorial/essential/io/fileio.html)
+
+[Lisätietoa Java ohjelmoinnista Oracle'ssa.](https://www.oracle.com/java/technologies/javase/documentation/api-overview.html)

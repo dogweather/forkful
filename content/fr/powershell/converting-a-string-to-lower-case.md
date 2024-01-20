@@ -1,7 +1,7 @@
 ---
-title:                "La conversion d'une chaîne en minuscules"
-html_title:           "PowerShell: La conversion d'une chaîne en minuscules"
-simple_title:         "La conversion d'une chaîne en minuscules"
+title:                "Convertir une chaîne en minuscules"
+html_title:           "PHP: Convertir une chaîne en minuscules"
+simple_title:         "Convertir une chaîne en minuscules"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,23 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Conversion de chaînes en minuscules en PowerShell
-Dans cet article, nous allons découvrir comment convertir une chaîne de caractères en minuscules en utilisant PowerShell, ainsi que le pourquoi de cette pratique courante en programmation.
-## Quoi et pourquoi ?
-Convertir une chaîne en minuscules signifie simplement mettre toutes les lettres en minuscules, plutôt qu'en majuscules ou en mélangeant les deux. Les programmeurs utilisent souvent cette méthode pour normaliser les données afin de faciliter leur traitement et leur comparaison.
-## Comment faire ?
-Pour convertir une chaîne en minuscules en PowerShell, il suffit d'utiliser la méthode .ToLower() sur la chaîne en question. Par exemple:
+# Transformer une chaîne en minuscules avec PowerShell: un guide rapide
+
+## Quoi & Pourquoi?
+Transformer une chaîne en minuscules, aussi connu sous le nom de "minusculation", signifie convertir toutes les lettres majuscules d'une chaîne en lettres minuscules. Les programmeurs font cela pour uniformiser les données, ce qui est particulièrement utile pour les comparaisons de chaînes.
+
+## Comment faire:
+Voici comment vous pouvez convertir une chaîne en minuscules en utilisant PowerShell:
+
 ```PowerShell
-$string = "vOICi UnE ChaîNe De TExte"
-$string.ToLower()
+# Déclarez la chaîne
+$maChaine = "Bonjour, JE suis UN Programmeur"
+# Convertir en minuscules
+$maChaine_en_minuscules = $maChaine.ToLower()
 ```
-Cela donnera comme résultat: "voici une chaîne de texte".
-## Plongée en profondeur
-Historiquement, la conversion en minuscules a été utilisée pour faciliter le traitement des données dans les langages de programmation qui ne prenaient pas en charge la sensibilité à la casse. Avec l'évolution des technologies, cette pratique est devenue moins fréquente, mais elle reste utile dans certaines situations.
-Dans PowerShell, il est également possible d'utiliser la méthode .ToUpper() pour convertir une chaîne en majuscules. Il existe également des fonctions intégrées telles que ToLowerInvariant() et ToUpperInvariant() qui sont recommandées pour les comparaisons de chaînes.
-Il est important de noter que le résultat de la conversion en minuscules peut varier selon la langue utilisée, car certaines langues ont des règles de capitales différentes.
-## Voir aussi
-Pour en savoir plus sur la manipulation de chaînes en PowerShell, vous pouvez consulter les liens suivants:
-- La documentation officielle de Microsoft sur la manipulation de chaînes en PowerShell : https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7
-- Un tutoriel vidéo sur la conversion de chaînes en minuscules en PowerShell : https://www.youtube.com/watch?v=JgVLoEHOGaQ
-- Un article sur les meilleures pratiques en matière de gestion de chaînes en PowerShell : https://blogs.technet.microsoft.com/stefan_stranger/2015/12/02/powershell-best-practices-string-manipulation-and-formatting/
+
+Quand vous imprimez `$maChaine_en_minuscules`, vous obtiendrez:
+
+```PowerShell
+"bonjour, je suis un programmeur"
+```
+
+## Plongée Profonde:
+La fonction `ToLower()` en PowerShell a été introduite dans la version 1.0, et reste la méthode la plus populaire pour la minusculation des chaînes.
+
+Alternativement, si vous cherchez à appliquer cela sur un tableau de chaînes, vous pouvez utiliser la méthode `ForEach-Object`:
+
+```PowerShell
+$mesChaines = "CHAINE1", "CHAINE2", "CHAINE3"
+$mesChaines_en_minuscules = $mesChaines | ForEach-Object { $_.ToLower() }
+```
+
+Derrière le rideau, quand `ToLower()` est appelé, PowerShell utilise le `TextInfo` courant de la culture système actuelle pour produire une version en minuscules de la chaîne, ce qui le rend respectueux de la culture.
+
+## Voir Aussi:
+Pour davantage de lectures sur ce sujet, voici quelques liens utiles en anglais:
+
+- Documentation officielle Microsoft sur ToLower: https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/tolower
+- Respect de la culture avec ToLower et ToUpper: https://docs.microsoft.com/dotnet/standard/base-types/best-practices-strings

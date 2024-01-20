@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "TypeScript recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -12,36 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output is the act of displaying informational messages in the console during the execution of a program. Programmers use this technique to track and analyze the behavior of their code, helping them identify and fix errors or unexpected results.
+Debug output is a temporary print statement programmers use to understand what's happening inside their code or uncover bugs. It's crucial for developers to debug their program for a seamless and bug-free user experience.
 
 ## How to:
-
-To print debug output in TypeScript, you can use the `console.log()` method to display messages in the console. You can pass any data type, such as strings, numbers, or objects, as arguments to the method.
-
-```TypeScript
-let name = "John";
-console.log(`Hello ${name}!`);
-```
-Output: `Hello John!`
-
-You can also use multiple parameters in the `console.log()` method to display different messages or variables on the same line.
+For a basic setup, use the built-in `console.log()` method in TypeScript:
 
 ```TypeScript
-let num1 = 10;
-let num2 = 20;
-console.log("First number:", num1, "Second number:", num2);
+const message:string = "Hello, world!";
+console.log(message);
 ```
-Output: `First number: 10 Second number: 20`
 
-## Deep Dive:
+Running this code should display your debug output:
 
-In the early days of programming, developers used physical printers to produce debug output. This was a time-consuming and tedious process, so the introduction of console-based debug output greatly improved the efficiency of debugging.
+```Shell
+Hello, world!
+```
 
-An alternative to printing debug output in the console is using a debugger tool. Debuggers allow you to set breakpoints in your code, pause the execution, and inspect the values of variables at that specific point. This can be more useful when dealing with complex code.
+For more complex programs, you might want to log objects or arrays:
 
-In TypeScript, the `console.log()` method is implemented using the `console` global object, which is provided by the web browser or Node.js environment. This means that it may have some minor differences in implementation depending on the environment.
+```TypeScript
+const complexObj = {
+  name: "John",
+  age: 25,
+  favoriteFoods: ['pizza', 'pasta']
+};
 
-## See Also:
+console.log(complexObj);
+```
 
-- [TypeScript Documentation on console debugging](https://www.typescriptlang.org/docs/handbook/integrating-with-build-tools.html#debugging-typescript)
-- [Debugging in TypeScript Using Visual Studio Code](https://code.visualstudio.com/docs/typescript/typescript-debugging)
+Output would be the object:
+
+```Shell
+{ name: 'John', age: 25, favoriteFoods: [ 'pizza', 'pasta' ] }
+```
+
+## Deep Dive
+
+Historically, developers didn't have sophisticated debug tools, so they relied on print statements to troubleshoot the code's behavior, a practice that has carried over to modern coding.
+
+Instead of console.log, you could use alternatives, such as using a debugger like Visual Studio Code's JavaScript debugger, or online services like StackBlitz or CodeSandbox for a more interactive debugging process.
+
+Important to note, when utilizing console.log for debug purposes, remember to eliminate these statements from production code. It's a good practice to centralize logging and toggle it on or off based on the development environment.
+
+## See Also
+
+- JavaScript Debugging (an essential skill for TypeScript developers): https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_went_wrong
+- VS Code's debug tool: https://code.visualstudio.com/Docs/editor/debugging
+- Interactive debugging with CodeSandbox: https://codesandbox.io/docs/debugging

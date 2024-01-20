@@ -1,6 +1,6 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "PHP: Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-L'extraction de sous-chaînes de caractères est une tâche courante pour les programmeurs PHP. Cela consiste à extraire un morceau spécifique d'une chaîne de caractères, en utilisant des positions de début et de fin déterminées. Les programmeurs utilisent souvent cette fonctionnalité pour manipuler et traiter des données textuelles de manière plus efficace.
+## Qu'est-ce que c'est & Pourquoi?
+
+L'extraction de sous-chaînes (substring) désigne la procédure qui permet de récupérer une portion spécifique d'une chaîne de caractères. Les programmeurs l'utilisent couramment pour manipuler et analyser des données de texte.
 
 ## Comment faire:
-Voici deux exemples de code qui utilisent la fonction `substr()` pour extraire des sous-chaînes de caractères en PHP.
+
+En PHP, nous avons deux fonctions clés pour extraire des sous-chaînes: `substr()` et `substr_compare()`. Voici comment les utiliser:
 
 ```PHP
-// Exemple 1: Extraire les 3 premiers caractères d'une chaîne
-$string = "Bonjour";
-$first_three_letters = substr($string, 0, 3);
-// output: Bon
-
-// Exemple 2: Extraire les 5 derniers caractères d'une chaîne
-$string = "Hello World!";
-$last_five_letters = substr($string, -5);
-// output: World!
+<?php
+$chaine = "Bonjour tout le monde";
+$sous_chaine1 = substr($chaine, 8); // échantillon à partir de la 8ème position
+echo $sous_chaine1; // affiche 'tout le monde'
+$sous_chaine2 = substr($chaine, 8, 4); // échantillon 4 caractères à partir de la 8ème position
+echo $sous_chaine2; // affiche 'tout'
+?>
 ```
 
-## Plongée en profondeur:
-L'extraction de sous-chaînes de caractères est un concept qui existe depuis longtemps. Dans les versions antérieures de PHP, la fonction `substr()` était la seule option pour extraire des sous-chaînes. Cependant, avec l'introduction de la fonction `mb_substr()` dans PHP 4.0, les programmeurs peuvent maintenant extraire des sous-chaînes de caractères multibyte, ce qui était auparavant une tâche plus difficile.
+## Plongeons plus profondément:
 
-Il existe également d'autres alternatives à la fonction `substr()`, telles que `str_split()`, qui peut diviser une chaîne en un tableau de caractères, ou `preg_match()`, qui utilise des expressions régulières pour extraire des sous-chaînes qui correspondent à un modèle spécifique.
+L'extraction de sous-chaînes a été autour depuis les tout premiers jours de la programmation, étant un élément fondamental dans le traitement du texte. En PHP, `substr()` et `substr_compare()` sont les principales fonctions utilisées, mais il existe également `mb_substr()` pour le traitement des chaînes multibytes, utile pour les caractères non-latins.
 
-En ce qui concerne les détails d'implémentation, il est important de noter que la fonction `substr()` retourne une valeur de chaîne vide si le point de départ demandé est égal à la longueur de la chaîne d'origine. De plus, lorsque la longueur demandée est un nombre négatif, la fonction retourne une chaîne vide si la valeur absolue du nombre est supérieure à la longueur de la chaîne d'origine.
+S'il est nécessaire d'extraire des sous-chaînes basées sur des patterns, `preg_match()` et `preg_match_all()` sont des alternatives robustes qui utilisent des expressions régulières. Pour que 'substr' fonctionne correctement, il faut s'assurer que l'encodage des chaînes est cohérent, sinon, les résultats peuvent varier.
 
-## Voir aussi:
-- Documentation officielle de PHP sur la fonction `substr()`: https://www.php.net/manual/fr/function.substr.php
-- Tutoriel sur l'utilisation des expressions régulières en PHP: https://www.w3schools.com/php/php_regex.asp
-- Comparaison entre les fonctions `substr()` et `mb_substr()`: https://stackoverflow.com/questions/2327818/what-is-the-difference-between-substr-and-mb-substr-in-php
+## Pour en savoir plus: 
+
+1. Documentation PHP pour `substr()`: [https://www.php.net/manual/fr/function.substr.php](https://www.php.net/manual/fr/function.substr.php)
+2. Documentation PHP pour `substr_compare()`: [https://www.php.net/manual/fr/function.substr-compare.php](https://www.php.net/manual/fr/function.substr-compare.php)
+3. Tutoriel sur l'utilisation des expressions régulières en PHP: [https://www.php.net/manual/fr/book.pcre.php](https://www.php.net/manual/fr/book.pcre.php)

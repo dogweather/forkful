@@ -1,7 +1,7 @@
 ---
-title:                "מציאת אורך של מחרוזת"
-html_title:           "C++: מציאת אורך של מחרוזת"
-simple_title:         "מציאת אורך של מחרוזת"
+title:                "מציאת אורך המחרוזת"
+html_title:           "Elm: מציאת אורך המחרוזת"
+simple_title:         "מציאת אורך המחרוזת"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,29 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-מציאת אורך של מחרוזת היא פעולה שבה מוחזר מספר התווים במחרוזת. פעולה זו חשובה למתכנתים כיוון שהיא מאפשרת לנו לעבוד עם מחרוזות בצורה מדויקת יותר ולהבין את המבנה שלהן.
+## מה זה ולמה? 
+חיפוש אורך של מחרוזת הוא הבנה של כמה תווים קיימים בה. מתכנתים אופטים להשתמש בזה כדי למנוע שגיאות שמקורן באורך המחרוזת ולייעל תהליכים.
 
-# איך לעשות:
+## איך עושים זאת:
+בהלך הפעולה, אתה מגדיר מחרוזת ומשתמש בפונקציה `length ()` כדי למצוא את אורך המחרוזת. הנה דוגמה:
+
 ```C++
 #include <iostream>
 #include <string>
-
 using namespace std;
 
 int main() {
-  string name = "John";
-  int length = name.length();
-  cout << "The length of the string is: " << length << endl;
-  return 0;
+    string my_string = "Hello world!";
+    cout << "Length of string is: " << my_string.length();
+    return 0;
 }
 ```
-פלט:
-```
-The length of the string is: 4
-```
-# צלילה עמוקה:
-(1) ראשית, צריך להפעיל את הספרייה הנכונה כדי להשתמש בפעולה length. בשפת C++, ניתן להשתמש בהצהרת "#include <string>". (2) חייבים לשים לב שהפעולה length מחזירה מספר שלם ולא את כל התווים במחרוזת. (3) ניתן להשתמש גם בפעולת size כדי למצוא את אורך המחרוזת.
 
-# ראה גם:
-לפרטים נוספים על מציאת אורך של מחרוזת בשפת C++, ניתן לקרוא עוד במדריך הרשמי של C++: https://en.cppreference.com/w/cpp/string/basic_string/length
+פלט:
+
+```
+Length of string is: 12
+```
+
+## צלילה מעמיקה:
+**ההיסטוריה:** בC, לפני שהוכנסה שפת C++, מתכנתים היו נאלצים לחשב "אורך" של מחרוזת באמצעות שפוך את המחרוזת עם לולאה while עד שהם יגיעו לסוף התו הסיומת של מחרוזת.
+
+**אלטרנטיבות:** למרות שתיכנים את `length ()`, אפשר גם להשתמש ב `size ()`, שמחזיר את אותו הערך. השימוש בכל אחד מהם תלוי בהעדפה אישית.
+
+**פרטי יישום:** הפונקציה `length ()` ו `size ()` מחזירות את אורך המחרוזת כמספר שלם אי-שלילי המציין את מספר התווים שבמחרוזת.
+
+## ראה גם:
+- [חומר עזר על פונקציות מחרוזת של C++](https://en.cppreference.com/w/cpp/string/basic_string)
+- [C++ String פונקציות](http://www.cplusplus.com/reference/string/string/)

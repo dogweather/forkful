@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "C: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "C"
 category:             "C"
@@ -10,47 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué hacerlo?
+## ¿Qué y Por Qué?
 
-Los programadores a menudo se encuentran en la necesidad de crear archivos temporales en sus programas. Estos son archivos que se usan para almacenar información temporalmente mientras el programa se está ejecutando. Esto puede ser útil para guardar datos que no son necesarios después de la ejecución del programa, o para mantener un registro de ciertos cálculos o procesos.
+Crear un archivo temporal es hacer un archivo que se borra después de cerrarlo o de reiniciar el PC. Los programadores lo hacen para almacenar datos volátiles y ahorrar memoria.
 
-## Cómo hacerlo:
+## ¿Cómo hacerlo?
 
-Para crear un archivo temporal en C, se puede utilizar la función ```tmpfile()```. Esta función crea un archivo temporal y devuelve un puntero al mismo. A continuación, se puede escribir y leer en el archivo temporal como si fuera un archivo normal. Una vez que el programa se cierra, el archivo temporal se elimina automáticamente.
+Vamos a crear y escribir en un archivo temporal.
 
-```
+```C
 #include <stdio.h>
 
 int main() {
-   FILE *tempfile = tmpfile();
-   
-   if (tempfile != NULL) {
-      fputs("Datos temporales", tempfile);
-      rewind(tempfile);
-      char buffer[20];
-      fgets(buffer, 20, tempfile);
-      puts(buffer);
-   }
-   
-   return 0;
+    char temp[] = "/tmp/tempfileXXXXXX";
+    int fd = mkstemp(temp);
+
+    if (fd == -1) {
+        printf("Error al crear el archivo temporal\n");
+        return 1;
+    }
+
+    dprintf(fd, "Hola Mundo");
+
+    close(fd);
+    return 0;
 }
 ```
 
-La salida de este programa sería:
+Este programa creará un archivo llamado "tempfileXXXXXX" en /tmp y escribirá "Hola Mundo" en él.
 
-```
-Datos temporales
-```
+## Análisis en Profundidad
 
-## Profundizando:
+**Contexto histórico** - El uso de archivos temporales se remonta a los días de las tarjetas perforadas, donde eran una forma de gestionar la memoria limitada.
 
-Crear archivos temporales es una práctica común en la programación, especialmente en sistemas operativos basados en Unix. Sin embargo, también hay alternativas como utilizar variables temporales en la memoria o utilizar la función ```tempnam()``` para crear un archivo con un nombre específico.
+**Alternativas** - Puede usar RAM para almacenar temporalmente los datos pero este enfoque consume mucha memoria. También puedes usar bases de datos, pero un archivo temporal es más simple y rápido.
 
-Cabe mencionar que los archivos temporales también pueden ser utilizados para tareas de seguridad, como guardar contraseñas encriptadas temporalmente.
+**Detalles de implementación** - La función mkstemp() genera un nombre de archivo único y lo abre para escritura. Al usar mkstemp(), asegúrate de cerrar el descriptor de archivo cuando hayas terminado.
 
-En cuanto a la implementación, la función ```tmpfile()``` utiliza el sistema de archivos temporal del sistema operativo para crear el archivo. Esto significa que la ubicación y el nombre del archivo pueden variar dependiendo del sistema en el que se esté ejecutando el programa.
+## Ver También
 
-## Ver también:
-
-- [Documentación de la función tmpfile() de C](https://www.gnu.org/software/libc/manual/html_node/Creating-a-Temporary-File.html)
-- [Otras funciones relacionadas con archivos temporales en C](https://www.tutorialspoint.com/c_standard_library/c_function_tmpfile.htm)
+* El manual de C: [mkstemp] (http://man7.org/linux/man-pages/man3/mkstemp.3.html)
+* Guía para trabajar con archivos en C: [File IO in C] (https://www.geeksforgeeks.org/file-operations-in-c/)
+* Elegir entre usar archivos temporales o RAM: [Tempfiles VS RAM] (https://www.linuxjournal.com/article/6672)

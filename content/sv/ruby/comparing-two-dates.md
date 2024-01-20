@@ -1,7 +1,7 @@
 ---
-title:                "Jämföra två datum"
-html_title:           "Ruby: Jämföra två datum"
-simple_title:         "Jämföra två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad & Varför?
+Att jämföra två datum innebär att fastställa vilket datum som kommer före eller efter det andra. Programmerare gör detta för att ordna datumsekvenser och för att utföra tidsberoende beräkningar.
 
-Att jämföra två datum är en vanlig uppgift för programmerare. Det är ett sätt att kontrollera om ett datum är tidigare, senare eller samma som ett annat datum. Detta kan vara användbart i många olika programmeringsprojekt, från kalenderapplikationer till finansiella system.
+## Så här gör du:
+Ruby har inbyggda klasser för att hantering av datum. Här är ett enkelt exempel på hur man jämför två datum:
 
-# Hur man gör:
+```Ruby
+require 'date'
 
-```ruby
-date1 = Date.new(2021, 3, 14)
-date2 = Date.new(2021, 3, 21)
+date_one = Date.new(2021,3,15)
+date_two = Date.new(2023,2,28)
 
-# Använd <=> operatorn för att jämföra två datum
-puts date1 <=> date2
+if date_one < date_two
+  puts "date_one kommer före date_two"
+else
+  puts "date_one kommer efter date_two"
+end
+```
+Exempelutdata:
+
+```Ruby
+"date_one kommer före date_two"
 ```
 
-Output: -1
+## Fördjupning
+Ruby har alltid prioriterat läsbarhet och enkelhet, vilket är anledningen till att jämförelse av datum är mycket enkelt. Men innan datumklassen introducerades, var jämförelse av datum i Ruby mer komplicerat och involverade att hantera individuella år, månad och dag komponenter.
 
-Detta betyder att date1 är tidigare än date2. Om resultatet var 0, skulle det betyda att de två datum är samma, och om det var 1, skulle date1 vara senare än date2.
+Ett alternativ till att använda datumklassen är att använda Time-klassen, men den är oftast mer lämplig för att jämföra specifika tidpunkter snarare än hela datum. En annan viktig detalj med implementeringen är att operatörer, såsom '<' och '>', är överbelastade i Date-klassen till att jämföra datum.
 
-# Djupdykning:
+## Se också
+För mer information om datumhantering i Ruby, se följande resurser:
 
-## Historisk kontext:
-Jämförelse mellan datum har varit en utmaning för programmerare sedan tidiga dagar av datateknik. Innan standardfordonsgränssnittet för datum (ISO 8601) fastställdes var det vanligt med olika format och tolkningar av datum. Detta gjorde att jämförelse mellan datum ofta blev komplicerat och problematiskt.
-
-## Alternativ:
-Det finns flera olika sätt att jämföra datum i Ruby, inklusive användning av Date#eql? och Date#<=> metoder, eller genom att konvertera datum till integers och jämföra dem med == operatorn.
-
-## Implementeringsdetaljer:
-I Ruby är Date objekt baserade på det gregorianska kalendersystemet och har inbyggda metoder för att utföra olika operationer på datum, inklusive jämförelse.
-
-# Se även:
-
-- Ruby Date Klass Documentation: https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html
-- Jämföra datum i Ruby: https://www.rubyguides.com/2015/10/ruby-comparison-operators/ 
-- Historia och utmaningar med datum i programmering: https://arstechnica.com/science/2009/12/the-perils-of-date-parsing-and-comparison/
+1. Ruby Datum och Tid Dokumentation: https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html
+2. Ruby Time Dokumentation: https://ruby-doc.org/core-2.5.0/Time.html
+3. Jämförelse metoder i Ruby: https://ruby-doc.org/core-2.6.1/Comparable.html

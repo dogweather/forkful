@@ -1,7 +1,7 @@
 ---
-title:                "Tulostaminen virheenkorjaustulosteen"
-html_title:           "Swift: Tulostaminen virheenkorjaustulosteen"
-simple_title:         "Tulostaminen virheenkorjaustulosteen"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Testing and Debugging"
@@ -10,23 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Debug-tulostuksen merkitys ja tehtävä Swiftissä
+
 ## Mitä & Miksi?
 
-Debug-tulostus tarkoittaa ohjelman tulostamista koodin suorituksen eri vaiheissa havainnollistamaan sen toimintaa. Tämä on erityisen hyödyllistä havaittaessa virheitä tai epäselvyyksiä koodissa ja etsiessä niiden syitä. 
+Debug-tulostus on tietoa, jonka ohjelmanne välittää ymmärtääkseen, miten koodin eri osat suorittavat. Se auttaa nopeuttamaan ongelmanratkaisuprosessia ja tehostaa ohjelman suorituskykyä.
 
-## Miten:
+## Kuinka:
+
+Swiftissä `print`-toimintoa käytetään yleisesti tulostamaan debug-tietoja. Alkuperäinen viesti voidaan tulostaa sekä lokiin että konsoliin.
 
 ```Swift
-print("Hei Maailma!")
+let name = "Jere"
+print("Hello, my name is \(name)")
 ```
-Käyttäessäsi `print`-komentoa, voit tulostaa haluamasi arvon konsoliin. Tämä on yksi yksinkertaisimmista tavoista tarkistaa, onko koodisi toiminnassa odotetulla tavalla. Voit myös käyttää `dump`-komentoa tulostamaan tarkemman tiedon kompleksisemmista arvoista. 
 
-## Syvempi sukellus:
+Esim. koodin tuloste näyttää tältä:
 
-Debug-tulostus on ollut osa ohjelmointikulttuuria jo pitkään, ja sen avulla on helpotettu koodin virheiden etsimistä ja korjaamista. Nykyään vaihtoehtoina debug-tulostukselle ovat myös esimerkiksi koodin tarkkailu ja virheenkorjausohjelmat. 
+```Swift
+Hello, my name is Jere
+```
 
-On myös tärkeää muistaa poistaa debug-tulostukset lopullisesta koodista ennen sen julkaisemista, jotta ohjelman suoritus ei hidastu tarpeettomasti. Debug-tulostus voidaan myös ottaa käyttöön tai poistaa käytöstä riippuen siitä, haluatko tarkistaa koodin toimintaa vai et.
+## Syvempi tutkinta:
+
+Historiassa, debug-tulostus alkoi COBOL- ja FORTRAN-kieleillä, jotka sisälsivät löytyjen virheiden tutkintaan tarkoitetut toiminnot. Swiftissä meillä on vielä enemmän hallintaa tulosteen muodossa näkyvien tietojen mukaan.
+
+Vaihtoehtoja debug-tulostukselle ovat esimerkiksi `debugPrint()` ja `dump()`. Ne näyttävät ylimääräisiä yksityiskohtia alustettavissa olevista esineistä.
+
+```Swift
+var array = ["Apple", "Banana", "Cherry"]
+debugPrint(array)
+
+dump(array)
+```
+
+Ensimmäinen `debugPrint()` tulostaa tutun Swift-kokoelman. Toinen `dump()` paljastaa vieläkin enemmän yksityiskohtia.
 
 ## Katso myös:
 
-[Lisää tietoa print-komennosta](https://developer.apple.com/documentation/swift/1541053-print)
+Lisätietoja debug-tulostuksesta Swiftissä voi löytää seuraavilta sivustoilta:
+
+* [Apple Developer Documentation](https://developer.apple.com/documentation/swift/1541053-print)
+* [Swift by Sundell](https://www.swiftbysundell.com)
+* [Stack Overflow - Swift](https://stackoverflow.com/questions/tagged/swift)
+
+Näec opettelemaan ja koodaamaan!

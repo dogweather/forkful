@@ -1,7 +1,7 @@
 ---
-title:                "Päiväyksen erottaminen merkkijonosta"
-html_title:           "Arduino: Päiväyksen erottaminen merkkijonosta"
-simple_title:         "Päiväyksen erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,58 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## Mitä & Miksi?
 
-Parsing on prosessi, jossa pätkä tekstiä erotetaan osiin ja käsitellään sitä sen jälkeen tarkemmin. Parsing päivämäärää merkkijonosta tarkoittaa päivämäärän erottamista merkkijonosta ja sen muuntamista käytettävään muotoon. Tämä on hyödyllistä ohjelmoijille, kun he haluavat käsitellä päivämääriä ohjelmointikoodissaan helposti ja tarkasti.
+Päivämäärän jäsennys merkkijonosta on merkkijonon muuttamista päivämääräobjektiksi. Ohjelmoijat tekevät tämän, jotta voidaan käsitellä päivämäärätietoja helpommin ja tehokkaammin.
 
-## Kuinka tehdä?
+## Näin teet:
 
-Arduino-koodiesimerkit:
+Tässä on esimerkkikoodi päivämäärän jäsennyksestä Arduino-ympäristössä:
 
 ```Arduino 
-// Luodaan merkkijono, joka sisältää päivämäärän.
-String date = "30.4.2021";
+#include <TimeLib.h>
+#define TIME_MSG_LEN 11 
+#define TIME_HEADER  'T'   
 
-// Erotetaan päivämäärä osiin ja tallennetaan muuttujiin.
-int day = date.substring(0, 2).toInt();
-int month = date.substring(3, 5).toInt();
-int year = date.substring(6).toInt();
+void setup() {   
+  Serial.begin(9600);
+}
 
-// Tulostetaan päivämäärä.
-Serial.print(day);
-Serial.print('.');
-Serial.print(month);
-Serial.print('.');
-Serial.print(year);
+void loop() {   
+  processSyncMessage();
+} 
 
-// Output: 30.4.2021
+void processSyncMessage() {
+  String receivedString = "T1624389600"; 
+  if(receivedString.length() == TIME_MSG_LEN){
+    if(receivedString[0] == TIME_HEADER) {
+      time_t pctime;
+      pctime = (time_t)receivedString.substring(1).toInt();
+      setTime(pctime);   
+      Serial.println(year());   
+      Serial.println(month());  
+      Serial.println(day());
+      Serial.println(hour());  
+      Serial.println(minute()); 
+      Serial.println(second());
+    }
+  }
+}    
 ```
 
-Toinen vaihtoehtoinen tapa on käyttää Arduino-kirjastoa nimeltään "Date Strings". Sen avulla voit muuntaa merkkijonossa olevan päivämäärän suoraan tarkempaan muotoon, kuten Unix-aikaleimaksi.
+Tämän ohjelman tulostus saattaa näyttää seuraavalta:
 
 ```Arduino
-// Luodaan merkkijono, joka sisältää päivämäärän.
-String date = "30.4.2021";
-
-// Muuntaa merkkijonon Unix-aikaleimaksi.
-unsigned long unixTime = DateStrings::dateTimeToUnixTime(date.c_str());
-
-// Tulostetaan Unix-aikaleima.
-Serial.print(unixTime);
-
-// Output: 1619772000
+2021
+6
+22
+17
+40
+0
 ```
+## Sukellus syvyyksiin
 
-## Syvällinen sukellus
+Päivämäärän tulkitseminen merkkijonosta on perinteinen tehtävä, joka liittyy lukemattomiin sovelluksiin, kuten tapahtumien ajastukseen. Sinulla on erilaisia tapoja toteuttaa tämä, kuten manuaalinen tulkitseminen tai luotettavan kirjaston, kuten TimeLibin, käyttäminen, joka on esitetty yllä. TimeLib-kirjasto tarjoaa monipuolisen kokoelman päivämäärä- ja aikatoimintoja, jotka auttavat sinua selviämään vaativista tehtävistä. 
 
-Päivämäärän erottaminen merkkijonosta ei ole uusi asia ohjelmoinnissa. Joissakin vanhemmissa ohjelmointikielissä, kuten C, tämä oli tehtävä käyttämällä melko monimutkaisia funktioita. Nykyään on kuitenkin olemassa paljon kevyempiä ja helposti ymmärrettäviä vaihtoehtoja, kuten Arduino-kirjastot ja valmiita funktioita.
+TimeLib-kirjastossa päivämäärän jäsennys saavutetaan muuntamalla tiettyyn aikaan liittyvä merkkijono kokonaislukuarvoon (UNIX-aikaleimaan) ja asettamalla tämä arvo järjestelmän kellonaikaan. Tämä menetelmä on yksinkertainen, tehokas, ja se toimii hyvin pienillä mikro-ohjaimilla, kuten Arduinolla.
 
-Yksi vaihtoehto on käyttää "time.h" -kirjastoa, joka sisältää valmiita funktioita päivämäärän muuntamiseksi eri muotoihin. Toisaalta Date Strings -kirjasto on kehitetty erityisesti Arduinoa varten ja se tarjoaa käteviä toimintoja päivämäärän käsittelyyn.
+## Lisätietoja
 
-Implementointitavoista riippumatta on tärkeää varmistaa, että käytettävä merkkijono on oikeassa muodossa ja että päivämäärittelyssä käytetään oikeaa formaattia (esim. DD.MM.YYYY). Muuten tulokset voivat olla virheellisiä.
+Jos haluat tutustua tarkemmin Arduino-ohjelmointiin ja päivämäärän jäsennyksen, tutustu seuraaviin linkkeihin:
 
-## Katso myös
-
-Voit tutustua tarkemmin "Date Strings" -kirjastoon ja sen käyttöön täältä: https://github.com/arduino-libraries/DateStrings
-
-Lisätietoja "time.h" -kirjastosta löydät täältä: https://www.arduino.cc/reference/en/libraries/time/
+- [Arduino virallinen verkkosivusto](https://www.arduino.cc/)
+- [TimeLib-kirjaston GitHub-sivu](https://github.com/PaulStoffregen/Time)
+- [Tutorial on Date and Time functions in Arduino](https://startingelectronics.org/software/arduino/date-time-arduino/)

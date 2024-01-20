@@ -1,7 +1,7 @@
 ---
-title:                "Mellanrum html"
-html_title:           "Gleam: Mellanrum html"
-simple_title:         "Mellanrum html"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "HTML and the Web"
@@ -11,23 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Parsing av HTML är en process där man bryter ner HTML-kod till dess olika beståndsdelar för att kunna extrahera information från den. Detta är en viktig funktion för programmerare eftersom det möjliggör för oss att skapa webbapplikationer och andra verktyg som kräver åtkomst till specifik data från en webbsida.
 
-## Så här gör man:
+Att tolka HTML innebär att omvandla HTML-strängar till något mer användbart för ditt program, till exempel Gleams trästruktur. Programmers gör detta för att plocka ut och interagera med data i HTML-dokument.
+
+## Hur till:
+
+Här är ett exempel på hur du kan tolka HTML med Gleam:
+
 ```Gleam
-let html = "<html><head><title>Min hemsida</title></head><body><h1>Välkommen!</h1></body></html>"
+import gleam/http.{HttpClient}
+import gleam/string_builder.{Builder}
 
-let document = html |> gleam_html_parser.parse
+fn html_tolk() {
+  let http = HttpClient.To.apply()
+  let url = "http://example.com"
+  
+  let respons = HttpClient.get(http, url)
+  let html_sträng = Builder.to_string(respons.body)
 
-document.title // Returnerar "Min hemsida"
-document.body.children[0].name // Returnerar "h1"
-document.body.children[0].text // Returnerar "Välkommen!"
+  // Din HTML-tolkning logik här
+  // ...
+}
 ```
 
-## Djupdykning:
-Parsing av HTML är en nödvändig process för att kunna skapa webbapplikationer och verktyg som behöver använda information från webbsidor. Historiskt sett har språket XML använts för att beskriva strukturen i HTML-dokument, men idag är HTML5 det vanligaste formatet. Det finns även alternativa lösningar för att parsea HTML, men Gleams parser är ett populärt val bland programmerare på grund av dess enkelhet och effektivitet.
+Output:
 
-## Se även:
-- [Gleam HTML parser dokumentation](https://gleam.run/modules/gleam_html_parser/latest/)
-- [Gleam HTML parser GitHub repo](https://github.com/gleam-lang/gleam_html_parser)
-- [En artikel om parsing av HTML i Gleam](https://medium.com/@bjzaba/writing-a-html-parser-for-the-web-in-gleam-2339bd5c6605)
+```Gleam
+"<!doctype html>..."
+```
+
+## Fördjupning 
+
+Historiskt sett, HTML-tolkning har använts länge för webbskrapning och att få data från webbsidor. Det finns alternativ till HTML-tolkning, som inkluderar API-anrop och JSON-analys.
+
+Men, HTML-tolkning tillåter interaktion med webbsidor på ett mycket mer detaljerat sätt. I Gleam, HTML-tolkning drivs av Gleams fantastiska sträckor, vilket gör att HTML-dokument kan representeras som inbäddade listor och lattelefoner.
+
+## Se även 
+
+- [W3Schools Tutorial på HTML DOM Traversal & Manipulation](https://www.w3schools.com/js/js_htmldom_navigation.asp)
+- [Mozilla dokumentation om HTML tolkning](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [Gleam dokumentation](https://gleam.run/docs/introduction/)

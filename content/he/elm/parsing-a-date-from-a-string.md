@@ -1,7 +1,7 @@
 ---
-title:                "מפרש תאריך ממחריז"
-html_title:           "Elm: מפרש תאריך ממחריז"
-simple_title:         "מפרש תאריך ממחריז"
+title:                "פענוח תאריך ממחרוזת"
+html_title:           "Bash: פענוח תאריך ממחרוזת"
+simple_title:         "פענוח תאריך ממחרוזת"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -11,24 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-לפרק מידע מתאריך בתוך מחרוזת הוא פעולה שתכונה את תאריך מוגדר מחדר תווים, כך שאפשר להשתמש בו באופן מבנה ולעבוד עם הנתונים הזמינים. תהליך זה נחשב לא רק ראוי לתכנות יישומים, אלא גם חשוב לזיהוי וניהול תאריכים בדרך טבעית.
+עיבוד תאריך ממחרוזת הוא תהליך שבו מחשב מתייחס למחרוזת כנתונים מתאריך. תכנתים עושים את זה כדי לנתח ולהמיר את המחרוזות של התאריכים לאובייקטים מתאריך.
 
-## כיצד לעשות זאת:
+## איך לעשות:
+ב- Elm, אנו משתמשים בספרייה 'elm/time' וב- 'elm/parse'. הינה דוגמה לקוד שיוצר לנו תאריך ממחרוזת:
+
 ```Elm
-import Date
+import Time
+import Parser exposing ((|.), map, succeed)
 
-Date.fromString "2021-10-25" -- כתובת דוגמה
--- Just (Date.fromTime 0)
+iso8601 : String -> Maybe Time.Posix
+iso8601 string =
+    Parser.run dateParser string
 
-Date.fromString "asdf" -- כתובת דוגמה שגויה
--- Nothing
+dateParser : Parser Time.Posix
+dateParser =
+    Parser.succeed Time.millisToPosix
+        |= (Time.year 4 |> map String.fromInt)
+        |. spaces
+        |= (Time.month Time.Jan |> int)
+        |. spaces
+        |= (Time.day 2 |> int )
 ```
+מאבק השורות למעלה יוצר אובייקט dTime.Posix` ממחרוזת בפורמט "yyyy mm dd".
 
-## בינתיים חיפוש
-הקונקטסט ההיסטורי של פרק מידע מתאריך בתוך מחרוזת מתייד את שימוש העתיד שלו: תוכניות תאריכים ותאריכי יצירה. פתרונות תומכים בפרק מידע הם כלי מתקדם שמציעים המון יכולות למפתחים.
+## שיעור מעמיק
+בעבר, אנשים השתמשו בספריות של שלישים כמו Moment.js כדי לנתח מחרוזות תאריכים. מאז, העולם של Javascript התפתח, ומשתמשים מועדפים להשתמש בפונקציות תאריך בנויות בעידן החדיש. בעוד שלמידה לנתח את התאריך ממחרוזת באמצעות Elm יכול לקחת קצת זמן, היא הרבה יותר מאובטחת מהפתרונות הנפוצים של αs strftime או String.
 
-פרוייקטים עבור פרק מידע הם מפעילים להשתמש בפונקציות המבוססות על הספקים המקוריים עבור מאגר התאריכים. אפשר ליישם או לשפר את אותה רעיונות מסביר טוב פקיני ללא התלות בתאוות פרק מידע. הסיכום הקשוח הוא שמומלץ מאוד להשתמש בפרק מידע כחלק מכל יישום פרק תאריכים.
-
-## ראו גם:
-- [פריטי תאריך](https://package.elm-lang.org/packages/elm/time/latest/Time-Date#Date)
-- [פונקציות תאריך](https://package.elm-lang.org/packages/elm/time/latest/Time-Date#functions)
+## ראה גם
+דוקומנטציה ל- 'elm/time': https://package.elm-lang.org/packages/elm/time/latest/
+ספרייה 'elm/parser': https://package.elm-lang.org/packages/elm/parser/latest/

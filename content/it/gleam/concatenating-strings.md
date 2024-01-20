@@ -1,6 +1,6 @@
 ---
 title:                "Concatenazione di stringhe"
-html_title:           "Gleam: Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
 simple_title:         "Concatenazione di stringhe"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -12,24 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Cosa & Perché?
 
-La concatenazione di stringhe è il processo di unire più stringhe in una nuova stringa più lunga. I programmatori spesso fanno questo per costruire output leggibili e formattati o per creare stringhe dinamiche basate su input o variabili.
+La concatenazione di stringhe è il processo di unire due o più stringhe insieme. I programmatori lo fanno per costruire stringhe più complesse a partire da parti più piccole e gestibili.
 
-## Come:
+## Come fare:
+
+Ecco un esempio della concatenazione di stringhe in Gleam:
 
 ```Gleam
-let nome = "Maria"
-let cognome = "Rossi"
-let saluto = "Ciao, " <> nome <> " " <> cognome
+let welcome = "Ciao, "
+let name = "Mario"
+let greeting = welcome ++ name
+print(greeting)
 ```
 
-Questo codice combina tre stringhe in una nuova stringa, creando l'output "Ciao, Maria Rossi". 
+Questo programma stampa `Ciao, Mario`.
 
-## Approfondimento:
+## Approfondimento
 
-La concatenazione di stringhe è un'operazione comune in molti linguaggi di programmazione e ha radici nell'informatica fin dagli anni '50. Alcuni linguaggi utilizzano il simbolo "+" per la concatenazione, mentre altri come Gleam utilizzano "<>" come operatore.
+Storicamente, la concatenazione di stringhe è sempre stata un'operazione fondamentale nel campo della programmazione. Tuttavia, la sua implementazione può variare notevolmente tra diversi linguaggi.
 
-In alcuni casi, concatenare stringhe può essere meno efficiente rispetto all'uso di altri metodi per gestire output e formattazione. È importante valutare le alternative e utilizzare la concatenazione solo quando necessario.
+In Gleam, la concatenazione di stringhe si realizza utilizzando l'operatore `++`. Questa è una scelta di design che può risultare familiare agli sviluppatori Erlang ed Elixir, anch'essi basati sulla piattaforma BEAM.
 
-## Vedi anche:
+Un'alternativa alla concatenazione di stringhe è l'uso della formattazione delle stringhe, che può offrire una maggiore flessibilità in alcune situazioni. Ecco come potrebbe sembrare con Gleam:
 
-Per saperne di più sulla concatenazione di stringhe in Gleam, puoi consultare la documentazione ufficiale su [Gleam's strings module](https://gleam.run/modules/random) e [Gleam's operators](https://gleam.run/cheatsheet#operators).
+```Gleam
+let name = "Mario"
+let greeting = string.concat(["Ciao, ", name])
+print(greeting)
+```
+
+## Guarda Anche
+
+Per ulteriori informazioni sulla programmazione in Gleam, controlla i seguenti link:
+
+- [La documentazione ufficiale di Gleam](https://gleam.run/docs/)
+- [Esercizi pratici su Gleam](https://exercism.io/tracks/gleam)
+- [FAQ di Gleam](https://github.com/gleam-lang/gleam/wiki/FAQs)

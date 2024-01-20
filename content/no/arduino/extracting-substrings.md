@@ -1,7 +1,7 @@
 ---
-title:                "Uthenting av delstrenger"
-html_title:           "Arduino: Uthenting av delstrenger"
-simple_title:         "Uthenting av delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,36 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
+## Hva & Hvorfor?
 
-Ved å ekstrahere substrings i programmering, betyr det at vi splitter en streng av tekst i mindre deler. Dette kan være nyttig for å få tilgang til spesifikke deler av teksten eller behandle den på en annen måte. Programmerere bruker dette for å manipulere data og få tilgang til informasjon på en effektiv måte.
+Substrenger er deler, eller segmenter, av en lengre tekststreng. Vi bruker substrings i programmering for å manipulere og analysere spesifikke deler av tekst, for eksempel å verifisere e-post format, finne og erstatte innhold, og mer.
 
-# Hvordan:
+## Slik Gjør Du:
 
-For å ekstrahere en substring i Arduino, bruker vi funksjonen ```substring```. Denne funksjonen tar to argumenter - startindeks og lengde. La oss se på et eksempel:
+Arduino tilbyr `substring()` funksjonen for å hente deler av en streng. Her er et eksempel:
 
+```arduino
+String melding = "Hallo, Verden!";
+String del = melding.substring(7, 13);
+Serial.println(del); // Skriver ut "Verden"
 ```
-String tekst = "Hei alle sammen!";
-String del = tekst.substring(4, 7);
-Serial.println(del);
-```
-Resultatet av dette vil være "alle". Her starter vi å telle fra indeks 0, så 4 tilsvarer H, 5 tilsvarer e og 6 tilsvarer i. Siden vi har tilsiktet en lengde på 7, vil 7 tilsvarer mellomrommet etter i. Derfor vil vi bare få "alle" som resultat.
 
-# Dypdykk:
+Her tar `substring()` funksjonen start og sluttposisjoner som parametre og returnerer teksten i den angitte rekkevidden.
 
-Ekstrahering av substrings har vært en viktig del av programmering helt siden de første datamaskinene ble laget. Det har blitt brukt i mange forskjellige språk og har vist seg å være en effektiv måte å håndtere tekst på.
+## Dypdykk
 
-En annen måte å ekstrahere substrings på i Arduino er ved å bruke ```charAt```-funksjonen. Denne funksjonen tar en indeks som argument og returnerer tegnet på den indeksen i strengen. Her er et eksempel på hvordan du kan bruke det:
+`substring()` funksjonen i Arduino er blitt tilgjengelig siden Arduino 0019 versjonen. Det gir en enklere måte å manipulere strenger på, men det er også andre metoder som bruk av pekere, som kan være mer passende i mer komplekse scenarier.
 
-```
-String tekst = "Hei alle sammen!";
-char bokstav = tekst.charAt(6);
-Serial.println(bokstav);
-```
-Dette vil gi oss bokstaven "s" som resultat.
+Å jobbe med `substring()` funksjonen er ganske rett frem, men du må være oppmerksom på at indeksen begynner med 0, så det første tegnet i strengen er på posisjon 0.
 
-# Se også:
+## Se Også
 
-Hvis du vil lære mer om strings i Arduino, kan du sjekke ut denne artikkelen: https://www.arduino.cc/reference/en/language/variables/data-types/string/.
+For mer info og tips om strengbehandling i Arduino kan disse ressursene være til hjelp:
 
-Du kan også se denne videoen for å lære mer om hvordan du bruker ```substring```-funksjonen:  https://www.youtube.com/watch?v=kTZlBvFJ88I&t=317s.
+- Arduino sin offisielle dokumentasjon om `substring()`: https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/substring/
+- Guide til strengbehandling i Arduino: https://startingelectronics.org/software/arduino/learn-to-program-course/11-strings/
+- Dybdykk i strenger og substrings: https://konekt.com/blog/2015/12/04/a-deep-dive-into-strings-in-arduino/

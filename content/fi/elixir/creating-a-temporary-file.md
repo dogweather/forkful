@@ -1,7 +1,7 @@
 ---
-title:                "Tilapäistiedoston luominen"
-html_title:           "Elixir: Tilapäistiedoston luominen"
-simple_title:         "Tilapäistiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Files and I/O"
@@ -10,32 +10,22 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+## Mikä & Miksi?
+Väliaikaisten tiedostojen luominen on prosessi, jossa luodaan tiedosto, joka on tarkoitettu vain lyhytaikaiseen käyttöön. Ohjelmoijat tekevät tämän tallentaakseen tuloksia tai välivaiheita prosessin aikana, joita voidaan käyttää myöhemmin.
 
-Luonnollisesti ohjelmointitehtävät kuluttavat tietokoneen resursseja, ja siksi on tärkeää varmistaa, että kaikki käytetyt tiedostot vapautetaan oikea-aikaisesti. Väliaikaisten tiedostojen luominen on yksi tapa hallita resursseja ja varmistaa, että oleelliset tiedostot eivät jää turhaan järjestelmään.
-
-# How to:
-
-Elixirin avulla voimme luoda väliaikaisen tiedoston ```Tempfile``` -moduulin avulla. Se tarjoaa meille yksinkertaisen tavan luoda ja poistaa väliaikaisia tiedostoja ohjelmassamme. Katso esimerkki alla:
-
+## Miten:
+Elixirissä voimme käyttää `File`-moduulin `mktemp/1,2`-metodeja väliaikaisten tiedostojen luomiseen.
 ```Elixir
-tempfile = Tempfile.new("nimi")
+{:ok, path} = File.mktemp()
+IO.puts path  # Prints something like: /tmp/tmp-1631-0
 ```
+Yllä oleva koodinpalanen luo väliaikaisen tiedoston ja tulostaa sen polun.
 
-Kun tiedosto on luotu, voimme kirjoittaa siihen haluamamme tiedot ja käyttää sitä ohjelmassamme niin kauan kuin tarvitsemme. Kun olemme valmiita, voimme poistaa tiedoston seuraavasti:
+## Syvällistä tietoa:
+- Väliaikaiset tiedostot ovat olleet olemassa lähes yhtä kauan kuin itse tietokonejärjestelmät, ne ovat välttämättömiä datan käsittelyssä ja säilytyksessä.
+- Elixirissä on muitakin tapoja luoda väliaikaisia tiedostoja, mutta `File.mktemp` tarjoaa nopeimman, kätevimmän ja turvallisen tavan tehdä se.
+- `File.mktemp` luo tiedoston käyttöjärjestelmän väliaikaisessa hakemistossa ja palauttaa polun tiedostoon sekä tiedoston kahvan, jota voidaan käyttää tiedoston kirjoitus ja lukemisoperaatioihin.
 
-```Elixir
-File.delete!(tempfile.path)
-```
-
-Tämä varmistaa, että tiedosto poistetaan varmasti ja säästää resursseja, joita ohjelma tarvitsee.
-
-# Deep Dive:
-
-Tämä menetelmä on ollut käytössä jo pitkään ja on hyvä tapa hallita resursseja. Toinen vaihtoehto väliaikaisten tiedostojen luomiseen on käyttää Unix järjestelmille tarkoitettua ```mktemp``` -komentoa. Se toimii samalla tavalla, mutta vaatii hieman enemmän koodia. Elixirin ```Tempfile``` -moduuli tekee tämän kaiken meille yksinkertaisemmaksi.
-
-Moduulin sisäisesti se luo lisäksi ```File.open/2``` -funktion avulla väliaikaisen tiedoston ja palauttaa siitä avoimen tiedoston kahvana käytettäväksi ohjelmassa. Tämä tarjoaa lisää varmuutta tiedoston avauksessa ja käytössä.
-
-# See Also:
-
-Voit lukea lisää Elixirin ```Tempfile``` -moduulista täältä: https://hexdocs.pm/elixir/Tempfile.html.
+## Katso myös:
+- Elixirin virallinen dokumentaatio `File`-moduulin metodeista: https://hexdocs.pm/elixir/File.html
+- Väliaikaisten tiedostojen käyttöohjeet StackOverflow'ssa: https://stackoverflow.com/questions/48719873/how-to-create-a-temp-file-in-elixir

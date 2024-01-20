@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "Kotlin: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-להוריד עמוד אינטרנט הוא פעולה שמאפשרת למשתמשים לגשת למידע ותוכן מאתרים באינטרנט. תוכנתנים משתמשים בפעולה זו כדי ליצור אפליקציות ומערכות שמאפשרות גישה למידע ותוכן דינמי מהאינטרנט.
+## מה ולמה?
+הורדת עמוד אינטרנט היא תהליך שבו מורידים את כל המידע מעמוד אינטרנט מאותו שרת למכונתך. תכניתאים בוחרים להוריד את הדף כדי לנתח את המידע, לבנות עליו כלים או לשפר את מהירות העבודה שלהם.
 
-# איך לעשות?
-תוכנתנים יכולים להוריד עמוד אינטרנט בקלות באמצעות ליבות מוכנות כמו Kotlinx.IO ו-OkHttp. הנה דוגמאות להורדת עמוד אינטרנט באמצעות Kotlin:
+## איך עושים את זה:
 
+הקוד הבא ב-Kotlin מראה איך להוריד דף אינטרנט:
 ```Kotlin
-// להוריד עמוד אינטרנט עם Kotlinx.IO
-val response = URL("https://www.example.com").readText()
-println(response)
+import java.net.URL
 
-// להוריד עמוד אינטרנט עם OkHttp
-val client = OkHttpClient()
-val request = Request.Builder()
-    .url("https://www.example.com")
-    .build()
-val response = client.newCall(request).execute()
-println(response.body?.string()) 
+fun main() {
+    val response = URL("http://example.com").readText()
+    println(response)
+}
 ```
+אם נריץ את הקוד הזה, הפלט שלנו יהיה:
 
-פלט לקוד הנ"ל יהיה תוכן העמוד שהורד.
+לדוגמא, קטע טקסט מדף אינטרנט של Example.com 
 
-# נחישות
-לאחרונה, פתחו תוכנתנים מספר כלים עבור הורדת עמודי אינטרנט, כגון Scrapinghub ו-Selenium. אלה כלים מאפשרים למשתמשים לייצר סקריפטים שמנוהלים על ידי הכלים ומייצרים דטה על יידול של עמודי אינטרנט.
+## עומק השקיעה
+הורדת דף אינטרנט התפתחה במהלך השנים. בעבר, לפני שהעולם של האינטרנט התפתח, הכותבים לא היו מסוגלים לגשת בקלות אל המידע של אתרים אחרים.
 
-עוד אפשרות היא שליחת בקשות HTTP ישירות לשרתים של האתר, כאשר התגובה המלאה של האתר מתקבלת בתוך התכנית.
+היו גם כמה כלים חלופיים להורדת דפי אינטרנט, אבל טכנולוגיית ה-HTTP המקורית של Java עודנה משמשת אותנו היום.
 
-# ראו גם
-- אתר רשמי של Kotlin: https://kotlinlang.org/
-- דוגמאות להורדת עמודי אינטרנט באמצעות Kotlin: https://github.com/Kotlin/kotlinx-io/blob/master/README.md#usage
-- אתר רשמי של OkHttp: https://square.github.io/okhttp/
-- כלי Scrapinghub: https://scrapinghub.com/
-- כלי Selenium: https://www.selenium.dev/
+חלקים מסוימים מהתהליך יכולים להשתנות בהתאם לשרת שמאחסן את האתר ולנתיב разазвати הייחודי של העמוד. עם זאת, ההבנה הכללית של התהליך לא משתנה.
+
+## המשך קריאה:
+אם אתם מעוניינים ללמוד עוד, עיינו במקורות הבאים:
+
+* [המדריך הרשמי של תכנות ב-Kotlin](https://kotlinlang.org/docs/home.html) מחזיק במון מידע על שפת התכנות.
+* [המרכז למידע של Java](https://docs.oracle.com/javase/tutorial/) יעזור לכם ללמוד עוד על HTTP באמצעות Java.

@@ -1,7 +1,7 @@
 ---
-title:                "Łączenie ciągów znaków."
-html_title:           "Lua: Łączenie ciągów znaków."
-simple_title:         "Łączenie ciągów znaków."
+title:                "Konkatenacja ciągów znaków"
+html_title:           "Bash: Konkatenacja ciągów znaków"
+simple_title:         "Konkatenacja ciągów znaków"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,31 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co to i dlaczego?
+Konkatenacja łańcuchów to proces łączenia dwóch lub więcej łańcuchów w jednym. Programiści używają go do łączenia odpowiedzi, wyświetlania informacji na ekranie, generowania kodu i wiele innych.
 
-Łączenie ciągów to podstawowa operacja w programowaniu, polegająca na połączeniu dwóch lub więcej ciągów znakowych w jeden ciąg. Programiści często używają jej do tworzenia bardziej czytelnych i złożonych wyrażeń lub do budowania dynamicznych komunikatów dla użytkowników.
+## Jak to zrobić:
+Możemy skorzystać z operatora '..' w Lua do połączenia dwóch stringów.
 
-## Jak to zrobić?
+```Lua
+str1 = "Cześć, "
+str2 = "świecie!"
 
-```lua
--- Przykład 1:  Użycie operatora '..' do łączenia ciągów
-local imie = "Jan"
-local nazwisko = "Kowalski"
-local pelneNazwisko = imie .. " " .. nazwisko -- wynik: "Jan Kowalski"
-
--- Przykład 2: Użycie funkcji table.concat() do łączenia elementów z tabeli
-local lista = {"jabłko", "banan", "pomarańcza"}
-local listaOwocow = table.concat(lista, ", ") -- wynik: "jabłko, banan, pomarańcza"
+-- Łączenie string’ów
+str3 = str1 .. str2
+print(str3)
 ```
 
-## Głębsze zagadnienia
+Twój output będzie: `Cześć, świece!`
 
-Łączenie ciągów było od dawna wykorzystywane w różnych językach programowania i jest uważane za podstawową umiejętność dla programistów. W niektórych językach, jak na przykład Python, istnieje wbudowana funkcja `join()`, która ułatwia łączenie elementów z tabeli.
+## Wgłębna analiza
+Konkatenacja łańcuchów jest w Lua od samego początku, efektem dziedziczenia po językach, takich jak Python czy JavaScript. Oprócz operatora `..`, mamy inną metodę: `string.format()`.
 
-W Lua, oprócz operatora `..` i funkcji `table.concat()`, istnieje także metoda `string.concat()`, jednak może ona być użyta tylko na dwóch ciągach równocześnie.
+```Lua
+str1 = "Cześć"
+str2 = "świecie"
+str3 = string.format("%s, %s!", str1, str2)
 
-## Zobacz także
+print(str3)
+```
 
-- Dokumentacja Lua o łączeniu ciągów: https://www.lua.org/manual/5.4/manual.html#6.4.1
-- Wideo-tutorial o łączeniu ciągów w Lua: https://www.youtube.com/watch?v=U6UpcUDWThU
-- Porównanie różnych sposobów łączenia ciągów w różnych językach programowania: https://blog.codinghorror.com/new-programming-jargon/
+Output będzie taki sam: `Cześć, świece!`
+
+Jednak metoda ta jest bardziej skomplikowana i wymaga więcej pamięci operacyjnej, co może być problemem dla bardziej rozbudowanych programów.
+
+## Zobacz też
+* [Programowanie Lua 5.1](https://www.lua.org/pil/11.6.html) - Przeczytaj więcej o formatach string’ów w dokumentacji Lua.
+* [Dyskusja na Stackoverflow o konkatenacji](https://stackoverflow.com/questions/3305771/lua-string-concatenation-and-memory) - Więcej informacji o konkatenacji i jej wpływ na pamięć w Lua.

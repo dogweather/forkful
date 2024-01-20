@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Java: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Getting Started"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Iniciar un proyecto nuevo en Java es el proceso de comenzar a escribir código para una nueva aplicación, programa o software en este lenguaje de programación. Los programadores inician nuevos proyectos para desarrollar nuevas ideas, solucionar problemas o mejorar aplicaciones existentes.
+## ¿Qué y Por qué?
 
-## ¿Cómo hacerlo?
+Iniciar un nuevo proyecto en programación es como plantear un lienzo en blanco: comienzas a desarrollar una idea desde cero. Los programadores lo hacen para implementar una idea útil o solucionar algún problema específico de forma innovadora.
 
-Para iniciar un nuevo proyecto en Java, primero debes asegurarte de tener instalado el JDK (Kit de Desarrollo de Java) en tu computadora. Una vez instalado, abre tu IDE (Entorno de Desarrollo Integrado) preferido y sigue estos pasos:
+## Cómo se hace:
 
-1. Crea un nuevo proyecto seleccionando la opción "New Project" o "Nuevo Proyecto".
-2. Selecciona "Java" como el tipo de proyecto.
-3. Agrega un nombre y una ubicación para tu proyecto.
-4. Haz clic en "Next" o "Siguiente" y elige la versión de Java que deseas utilizar.
-5. Selecciona la plantilla de proyecto adecuada para tu aplicación y haz clic en "Finish" o "Finalizar".
+Crear un nuevo proyecto en Java puede iniciarse con un simple saludo al mundo. Aquí está cómo:
 
-¡Felicidades! Acabas de iniciar un nuevo proyecto en Java. A continuación, puedes comenzar a agregar código y desarrollar tu aplicación.
+```java
+public class HolaMundo {
+    public static void main(String[] args) {
+        System.out.println("¡Hola, Mundo!");
+    }
+}
+```
+Cuando ejecute este código, la salida será:
 
-## Profundizando 
-Si bien Java es uno de los lenguajes de programación más utilizados actualmente, no siempre fue así. Fue creado en 1991 por James Gosling y su equipo en Sun Microsystems. Desde entonces, ha evolucionado para convertirse en uno de los lenguajes más versátiles y poderosos para el desarrollo de aplicaciones.
+```
+¡Hola, Mundo!
+```
 
-Existen también otras alternativas para iniciar un proyecto en Java, como el uso de frameworks que te permiten ahorrar tiempo y esfuerzo en la creación de ciertos tipos de aplicaciones. Algunos ejemplos son Spring, Hibernate y JavaFX.
+## Profundizando:
 
-Para implementar un proyecto en Java, también es importante tener en cuenta el tipo de proyecto que estás desarrollando, ya que esto determinará qué herramientas y tecnologías necesitarás utilizar.
+Cuando inicia un nuevo proyecto, no siempre tiene que comenzar desde cero. Históricamente, los programadores han aprovechado las bibliotecas y los marcos de trabajo existentes para reducir la cantidad de "trabajo de plomería" requerida. 
 
-## Ver también 
-Si deseas aprender más sobre cómo iniciar un proyecto en Java, aquí te dejamos algunas fuentes adicionales que pueden ser útiles:
+En relación al proyecto "Hola Mundo", MVC (Model-View-Controller) es un patrón arquitectónico común. Con este patrón, puedes estructurar tú código de manera más eficiente. 
 
-- [Documentación oficial de Java](https://docs.oracle.com/javase/tutorial/getStarted/index.html)
-- [Tutoriales de Java en YouTube](https://www.youtube.com/playlist?list=PL4WPO8LTcKpBcaCvmj7QmNuyy0q1Nt_OL)
-- [Páginas de preguntas y respuestas sobre Java, como Stack Overflow](https://stackoverflow.com/questions/tagged/java)
+A considerar como implementación a futuro, puedes poner el mensaje "¡Hola, Mundo!" en un archivo de propiedades para facilitar la localización. 
+
+## Ver también:
+
+Si estás interesado en profundizar más, aquí tienes algunos recursos útiles:
+
+- [Documentación oficial de Java](https://docs.oracle.com/en/java/)
+- [Tutorial de Oracle para principiantes en Java](https://docs.oracle.com/javase/tutorial/)
+- [Guías de Spring para la creación de aplicaciones Java](https://spring.io/guides) 
+
+Recuerda, lo más importante es aprender mientras te diviertes programando. ¡Buena suerte con tu nuevo proyecto!

@@ -1,6 +1,6 @@
 ---
 title:                "Comparer deux dates"
-html_title:           "Elixir: Comparer deux dates"
+html_title:           "Clojure: Comparer deux dates"
 simple_title:         "Comparer deux dates"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## Quoi & Pourquoi ?
 
-Comparer deux dates est un processus couramment utilisé par les programmeurs pour déterminer la différence entre deux moments dans le temps. Cela peut être utile pour des tâches telles que la planification, la gestion de données et la résolution de bugs. En utilisant Elixir, nous pouvons facilement comparer deux dates pour obtenir des résultats précis.
+Comparer deux dates signifie examiner la différence temporelle entre elles. C'est une compétence essentielle en programmation, utilisée pour tout, de la chronologie des événements à la gestion des délais.
 
-## Comment faire:
+## Comment faire :
 
-```Elixir
-date1 = ~D[2021-08-01]
-date2 = ~D[2021-08-07]
-diff = Date.diff(date1, date2)
-IO.puts diff
+Voici comment comparer deux dates en Elixir. Tout d'abord, nous allons créer deux dates :
+
+```elixir
+date1 = Date.new(2022, 1, 1)
+date2 = Date.new(2023, 1, 1)
 ```
 
-La sortie de ce code sera "6", car il y a 6 jours d'écart entre le 1er août 2021 et le 7 août 2021.
+Ensuite, nous utilisons la fonction `compare` :
 
-Vous pouvez également comparer les heures en utilisant le même principe avec les fonctions de date et d'heure.
-
-```Elixir
-dateTime1 = ~U[2021-08-01 12:00:00.00]
-dateTime2 = ~U[2021-08-02 10:00:00.00]
-diff = DateTime.diff(dateTime1, dateTime2)
-IO.puts diff
+```elixir
+Date.compare(date1, date2)
 ```
 
-La sortie de ce code sera "22 heures et 0 minutes", car il y a 22 heures d'écart entre le 1er août 2021 à 12h00 et le 2 août 2021 à 10h00.
+Le résultat affiche la comparaison entre les deux dates :
 
-## Plongée en profondeur:
+```elixir
+{:lt, :ok}
+```
 
-La comparaison de dates remonte à l'utilisation du calendrier julien et du calendrier grégorien pour suivre le temps. Ces calendriers prennent en compte les changements dans la rotation de la Terre autour du soleil, permettant un calcul précis des années bissextiles. Alternativement, certains programmeurs peuvent utiliser des bibliothèques tierces telles que Timex pour comparer les dates en Elixir.
+Ici, `:lt` signifie que `date1` est moins que `date2`. D'autres résultats possibles comprennent `:eq` (égal à) et `:gt` (plus grand que).
 
-Au-delà de la simple comparaison de dates, Elixir offre également des fonctions pour comparer les moments et les durées. Cela peut être utile lors de la planification d'événements, de l'analyse de données temporelles et d'autres tâches liées au temps.
+## Plongée profonde
 
-## Voir aussi:
+Comparaison de dates s'étend au-delà de simples évaluations `<` ou `>`. Historiquement, la gestion du temps et des dates a toujours été un défi dans la programmation, avec des problèmes comme l'effet 2000 (bug de l'an 2000) et l'ajout de jours supplémentaires lors des années bissextiles.
 
-- Documentation officielle pour la comparaison de dates en Elixir: https://hexdocs.pm/elixir/Date.html#diff/2
-- Bibliothèque Timex pour la manipulation du temps en Elixir: https://hexdocs.pm/timex/readme.html
-- Article de blog "Working with Dates and Time in Elixir": https://www.poeticoding.com/working-with-dates-and-time-in-elixir/
+En Elixir, la comparaison de dates utilise le calendrier ISO 8601 par défaut, qui tient compte de ces détails. Cependant, il peut être modifié pour d'autres systèmes si nécessaire.
+
+Alternativement, on peut utiliser des librairies comme "Timex" pour des fonctions approfondies de gestion du temps.
+
+## Voir également
+
+1. Documentation Elixir sur les dates : https://hexdocs.pm/elixir/Date.html
+2. Introduction à Elixir pour les débutants : https://elixir-lang.org/getting-started/introduction.html
+3. Guide sur l'utilisation de Timex : https://hexdocs.pm/timex/readme.html

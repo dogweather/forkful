@@ -1,7 +1,7 @@
 ---
-title:                "Impression de sortie de débogage"
-html_title:           "Elixir: Impression de sortie de débogage"
-simple_title:         "Impression de sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi & Pourquoi ?
 
-Afficher des données de débogage est une pratique courante dans le développement de logiciels. Cela consiste à afficher des informations sur l'exécution du programme pour aider les programmeurs à comprendre comment leur code fonctionne et à résoudre les bugs. Les programmeurs le font pour trouver rapidement des erreurs et améliorer leurs programmes.
+L'affichage d'informations de débogage, c'est-à-dire l'écriture de données de programme à des fins de vérification. Les programmeurs l'utilisent pour comprendre et corriger les erreurs du code source.
 
 ## Comment faire:
 
-Voici un exemple simple en Elixir pour afficher une chaîne de caractères de débogage dans la console:
+Voici comment vous pouvez imprimer des sorties en débogage dans Elixir:
 
 ```Elixir
-IO.inspect("Débogage en cours...")
+IO.inspect([1, 2, 3])
 ```
 
-La sortie sera: "Débogage en cours..."
+Cela affichera et renverra: `[1, 2, 3]`
 
-Pour afficher plus d'informations, vous pouvez utiliser la directive de débogage ```inspect/2``` et lui passer une expression et des options:
+Vous pouvez aussi imprimer le débogage avec un message:
 
 ```Elixir
-IO.inspect(my_variable, label: "Valeur de la variable")
+IO.inspect([1, 2, 3], label: "debug")
 ```
 
-La sortie ressemblera à ceci: "Valeur de la variable: my_variable"
+À la sortie vous aurez: `debug: [1, 2, 3]`
 
-## Plongée en profondeur:
+## Plongée profonde
 
-Afficher des données de débogage a été une pratique courante depuis le développement de langages de programmation et d'outils de débogage. De nos jours, il existe des alternatives plus avancées telles que les systèmes de débogage en temps réel et les systèmes de journalisation. Cependant, l'affichage de données de débogage reste une méthode simple et efficace pour comprendre le fonctionnement des programmes.
+Elixir est un langage fonctionnel conçu pour créer des applications évolutives et faciles à maintenir. L'impression de debug est une caractéristique qui a été héritée de Erlang, la langue mère d'Elixir.
 
-Spotlight est un outil Elixir avancé conçu pour faciliter le débogage en temps réel. Il permet aux développeurs de suivre l'exécution de leur code en temps réel sans avoir besoin d'ajouter des directives de débogage.
+Il existe des alternatives à `IO.inspect` comme `IO.puts`, mais `IO.puts` n'envoie que sur la sortie standard tandis que `IO.inspect` renvoie également la donnée inspectée.
 
-## Voir aussi:
+Dans les coulisses, `IO.inspect` utilise le protocole `Inspect` pour transformer les données en un format lisible. Il est très utile dans les situations où vous avez besoin de voir une représentation plus détaillée des données, comme des tuples, des listes et des maps.
 
-Pour en savoir plus sur l'utilisation des directives de débogage en Elixir, consultez la documentation officielle d'Elixir: [IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)
+## Voir aussi
 
-Pour en savoir plus sur Spotlight, consultez leur site officiel: [Spotlight](https://hexdocs.pm/spotlight/overview.html)
+Pour plus d'informations, vous pouvez consulter les ressources suivantes:
+
+- [Documentation officielle de Elixir](https://hexdocs.pm/elixir/IO.html#inspect/2)
+- [Guide d'introduction Elixir](https://elixir-lang.org/getting-started/debugging.html)
+- [Forum Elixir](https://elixirforum.com/)

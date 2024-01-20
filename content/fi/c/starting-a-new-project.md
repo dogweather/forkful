@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "C: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "C"
 category:             "C"
 tag:                  "Getting Started"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mitä ja Miksi?
 
-Kun aloitat uuden ohjelmointiprojektin, se tarkoittaa että aloitat tyhjästä ja luot jotain uutta. Ohjelmoijat aloittavat uusia projekteja joko siksi että heillä on uusi idea, haluavat kehittää jo olemassa olevaa projektia tai parantaa olemassa olevaa ohjelmakoodia.
+Uuden projektin aloittaminen tarkoittaa uuden ohjelmiston tai sovelluksen kehittämistä tyhjästä. Ohjelmoijat tekevät näitä projekteja ratkaistakseen erityisiä ongelmia tai tarpeita.
 
-## Kuinka:
+## Kuinka Näin:
+
+Tässä on esimerkki uuden C-projektin luomiseen. Saatat haluta luoda "main.c" tiedoston tällä koodilla:
 
 ```C
 #include <stdio.h>
 
 int main() {
-  printf("Tervetuloa uuteen projektiin!");
+  printf("Hei Maailma!\n");
   return 0;
 }
 ```
 
-#### Tulostus:
-```
-Tervetuloa uuteen projektiin!
+Suorita `gcc main.c -o ohjelma` komennolla, niin tämä kääntää koodin. Kokeile sitä suorittamalla `./ohjelma`. Tulostuksen pitäisi olla:
+
+```C
+Hei Maailma!
 ```
 
-## Syvempi sukellus:
+## Syvemmältä:
 
-Vaikka kaikki projektit ovat ainutlaatuisia, on olemassa joitain yleisiä tapoja aloittaa uusi projekti. Yksi yleisimmistä tavoista on hyödyntää jo olemassa olevia kirjastoja ja työkaluja, jotta ei tarvitse aloittaa työtä täysin tyhjästä. Toinen tapa on aloittaa pienellä prototyypillä ja kehittää sitä vähitellen. On myös tärkeää suunnitella hyvin ennen kuin aloittaa koodaamisen, jotta projektin suunta ja tavoitteet ovat selkeät.
+1. _Historiallinen yhteys_: C-ohjelmointikieli on peräisin 1970-luvulta ja sitä on käytetty laajasti järjestelmä- ja sovelluskehityksessä. 
+   
+2. _Vaihtoehdot_: Voit aloittaa uuden projektin myös muilla ohjelmointikielillä, kuten Java, Python tai JavaScript, riippuen projektin tarpeista.
+   
+3. _Toteutuksen yksityiskohdat_: C-ohjelmointikielessä käytämme `#include <stdio.h>` standardikirjastoa tulostus- ja syötefunktioille. "main" on ohjelman suorituksen aloitusfunktio ja `return 0;` ilmaisee ohjelman onnistuneen päättymisen.
 
 ## Katso myös:
 
-- [Uuden ohjelmointiprojektin aloittaminen](https://medium.com/@shashankmehta09/how-to-start-a-new-programming-project-7a7f13c08df5)
-- [Projektin suunnittelu ja toteutus](https://www.thoughtworks.com/insights/blog/how-to-start-your-next-development-project)
-- [C-kielen dokumentaatio](https://www.cprogramming.com/)
+- ["C Programming Language" -WikiArtikkeli](https://fi.wikipedia.org/wiki/C_(ohjelmointikieli))
+- [GeeksForGeeks: "C Programming Language"](https://www.geeksforgeeks.org/c-programming-language/)
+- Comparitech: [Erilaisten Ohjelmointikielten Vertailu](https://www.comparitech.com/net-admin/programming-languages/)

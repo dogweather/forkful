@@ -1,7 +1,7 @@
 ---
-title:                "Fazendo o download de uma página da web"
-html_title:           "Ruby: Fazendo o download de uma página da web"
-simple_title:         "Fazendo o download de uma página da web"
+title:                "Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
+simple_title:         "Baixando uma página da web"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,25 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porque?
+## O Que & Por Quê?
+Descarregar uma página da web é o processo de copiar e guardar o conteúdo de um site no seu computador. Programadores fazem isso para backup, testar offline, análise de dados, e monitorar mudanças no conteúdo do site.
 
-Fazer o download de uma página da web significa obter o conteúdo de uma determinada página da internet e armazená-lo em seu computador. Os programadores muitas vezes fazem isso para obter informações relevantes, como dados de um site de notícias ou para automatizar tarefas repetitivas, como baixar imagens de um site.
+## Como Fazer:
 
-## Como fazer:
+Aqui está o código exemplo em Ruby para descarregar uma página da web usando a biblioteca `open-uri`:
 
-```Ruby 
+```Ruby
 require 'open-uri'
- 
-page_content = open('https://exemplo.com').read
-puts page_content
+
+open('https://www.example.com') do |f|
+  File.open('example.html', 'w') do |file|
+    file.puts f.read
+  end
+end
 ```
+O código acima irá descarregar o conteúdo da página 'https://www.example.com' e salvar localmente como 'example.html'.
 
-Ao executar esse código, você obterá o conteúdo da página em seu terminal. Lembre-se que o código pode variar dependendo do site e do que você está tentando obter.
+## Imersão Profunda:
 
-## Mergulho Profundo:
+1. **Contexto Histórico**: A habilidade de baixar páginas da web se tornou vital com a ascensão da internet. Foi uma necessidade percebida por programadores para facilitar o processamento de dados e análise, levando ao desenvolvimento de diferentes bibliotecas e ferramentas. 
+   
+2. **Alternativas**: Existem muitas outras bibliotecas e ferramentas para descarregar páginas da web em Ruby, como `Net::HTTP`, `HTTParty`, e `Typhoeus`. Cada uma tem suas próprias características e benefícios, então explore e escolha a que melhor atenda às suas necessidades.
 
-Fazer o download de páginas da web é algo que os desenvolvedores têm feito por anos. Antes da existência da biblioteca open-uri, alguns métodos que eram usados incluíam Net::HTTP ou até mesmo o navegador de texto Lynx. No entanto, agora podemos usar a biblioteca open-uri para tornar esse processo muito mais fácil. Em alternativa, você também pode usar bibliotecas como Nokogiri para analisar o conteúdo da página da web em vez de apenas baixá-lo.
+3. **Detalhes de Implementação**: A biblioteca `open-uri` em Ruby estabelece uma conexão com a URL fornecida, lê o conteúdo da página da web e o passa para o bloco. Dentro deste bloco, o conteúdo é escrito em um arquivo local. Este é um método simples para arquivos relativamente pequenos. Para arquivos maiores, ou se você precisa de mais controle sobre o processo, considerar usar uma biblioteca mais avançada.
 
 ## Veja Também:
 
-Para saber mais sobre como fazer o download de páginas da web em Ruby, confira a documentação oficial da biblioteca open-uri: https://ruby-doc.org/stdlib-2.7.0/libdoc/open-uri/rdoc/OpenURI.html
+- Documentação `open-uri`: https://ruby-doc.org/stdlib-2.7.1/libdoc/open-uri/rdoc/OpenURI.html
+- Documentação `Net::HTTP`: https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html
+- Gem `HTTParty`: https://rubygems.org/gems/httparty.
+- Gem `Typhoeus`: https://rubygems.org/gems/typhoeus.

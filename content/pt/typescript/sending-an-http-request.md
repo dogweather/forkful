@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "TypeScript: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,36 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-O que e Por que?
+## O Que & Por Quê?
+Enviar uma solicitação HTTP é o ato de pedir ao servidor para retornar data específica. Como programadores, fazemos isso para obter, postar, atualizar ou excluir data em um servidor remoto.
 
-Enviar uma solicitação HTTP é um processo essencial em programação, pois permite que o seu código faça solicitações a um servidor ou outro recurso online. Isso é especialmente importante quando se trabalha com aplicativos da web ou APIs.
-
-Como fazer:
+## Como fazer:
+Vamos usar a ferramenta `fetch` integrada para enviar uma solicitação GET ao endpoint 'https://jsonplaceholder.typicode.com/users':
 
 ```TypeScript
-import axios from 'axios';
+fetch('https://jsonplaceholder.typicode.com/users')
+  .then(response => response.json())
+  .then(users => console.log(users));
+```
+Aqui está um exemplo de output:
+```TypeScript
+[
+ {id: 1, name: "Leanne Graham", ...},
+ {id: 2, name: "Ervin Howell", ...},
+ ...
+]
+```
+Para enviar uma solicitação POST para criar um novo usuário:
+```TypeScript
+let user = {
+    name: "Novo Usuario",
+    username: "novo_usuario",
+    email: "novo_usuario@email.com"
+};
 
-axios.get('https://api.example.com/users')
-  .then((response) => {
-    console.log(response.data);
-  })
-  .catch((error) => {
-    console.log(error);
-  });
+fetch('https://jsonplaceholder.typicode.com/users', {
+    method: 'POST',
+    body: JSON.stringify(user),
+    headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+    }
+})
+.then(response => response.json())
+.then(json => console.log(json));
 ```
 
-Saída de amostra:
+## Visão Detalhada
+Historicamente, as solicitações HTTP eram feitas usando o objeto `XMLHttpRequest`. `fetch` é uma alternativa mais moderna e robusta.
 
-```
-[{name: 'João', age: 25}, {name: 'Maria', age: 30}, {name: 'Carlos', age: 22}]
-```
+Uma alternativa ao `fetch` é a biblioteca `axios`. É uma biblioteca de cliente HTTP que implementa promises e está disponível para o Navegador e para o Node.js. Ela tem uma resposta de erro superior e uma configuração global de fácil uso.
 
-Mergulho profundo:
+A maior parte do trabalho ao enviar uma solicitação HTTP é lidar com os dados de retorno. Isso geralmente envolve a conversão da resposta em JSON (`response.json()`) e a manipulação dos dados resultantes.
 
-Na era moderna da web, enviar solicitações HTTP é uma parte importante da construção de aplicativos. Antes do advento do AJAX (Asynchronous JavaScript and XML), a página inteira precisava ser recarregada para cada solicitação. O AJAX permitiu que o código do lado do cliente fizesse solicitações dinâmicas ao servidor, tornando os aplicativos da web mais rápidos e eficientes. Existem várias bibliotecas e frameworks de JavaScript que facilitam o envio de solicitações HTTP, como o popular Axios.
-
-Veja também:
-
-- O guia oficial do TypeScript sobre o uso de bibliotecas de terceiros: [https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html](https://www.typescriptlang.org/docs/handbook/declaration-files/library-structures.html)
-- Uma introdução ao conceito de AJAX: [https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX](https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX)
-- Documentação do Axios: [https://github.com/axios/axios](https://github.com/axios/axios)
+## Veja Também
+- [Guia de Javascript Fetch API - Mozilla Developer Network](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API)
+- [Documentação do axios](https://axios-http.com/)
+- [JSON Placeholder - Para testar as solicitações HTTP](https://jsonplaceholder.typicode.com/)

@@ -1,6 +1,6 @@
 ---
 title:                "Encontrando la longitud de una cadena"
-html_title:           "Gleam: Encontrando la longitud de una cadena"
+html_title:           "Arduino: Encontrando la longitud de una cadena"
 simple_title:         "Encontrando la longitud de una cadena"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Saludos Geeks de la programación! ¿Están listos para aprender más sobre el fantástico lenguaje Gleam? Hoy vamos a hablar sobre cómo encontrar la longitud de una cadena en Gleam. Así es, ¡sigue leyendo para descubrir todo lo que necesitas saber sobre esta útil tarea en tu código!
+## ¿Qué y Por qué?
 
-## ¿Qué y por qué?
-En términos simples, encontrar la longitud de una cadena significa determinar cuántos caracteres hay en esa cadena. Esto es importante para los programadores, porque a menudo necesitamos saber la longitud de una cadena para realizar diferentes operaciones en ella, como dividirla en trozos más pequeños o compararla con otra cadena. En resumen, saber la longitud de una cadena nos permite manipularla y utilizarla de manera más eficiente en nuestro código.
+Encontrar la longitud de una cadena ('string') significa contar cuántos caracteres tiene la cadena. Los programadores lo hacen para manipular datos y controlar el flujo de un programa, por ejemplo, validar la entrada del usuario.
 
-## ¡Vamos a ello!
-Ahora que sabemos por qué es importante encontrar la longitud de una cadena, veamos cómo podemos hacerlo en Gleam. Primero, definiremos una cadena y luego aplicaremos la función ```String.length()``` para obtener su longitud. Echa un vistazo al ejemplo de código a continuación:
+## Cómo hacerlo:
+
+En Gleam, podemos usar la función `size` para encontrar la longitud de una cadena. Aquí está el código y la salida esperada:
+
+```gleam
+import gleam/string 
+
+fn main() {
+    let cadena = "Hola Mundo"
+    string.size(cadena)
+}
+// Output: 10
 ```
-Gleam import gleam/string
 
-let cadena = "¡Hola mundo!"
-let longitud = String.length(cadena)
+En este caso, "Hola Mundo" tiene 10 caracteres, por lo que la salida será 10.
 
-gleam/io.print("La longitud de la cadena es: ", longitud)
-```
-Después de ejecutar el código, obtendremos la salida: ```La longitud de la cadena es: 12```
+## Análisis Detallado:
 
-## Profundizando
-Para aquellos que quieran saber más sobre la longitud de las cadenas en Gleam, aquí hay algunas cosas adicionales que pueden investigar. En primer lugar, esta función no es exclusiva de Gleam, se encuentra en varios lenguajes de programación como Java, Python y C++. Sin embargo, lo que hace que Gleam se destaque es su enfoque en la seguridad del tipo de datos, lo que significa que esta función también maneja caracteres unicode de forma adecuada. También puede explorar otras alternativas para encontrar la longitud de una cadena en Gleam, como el método ```String.code_units()``` que devuelve la cantidad de unidades de código en una cadena.
+Históricamente, la funcion `size` se utiliza en muchos lenguajes de programación, como Gleam. Este puede variar en nombre y funcionalidad, pero la idea básica es la misma: contar caracteres en una cadena. 
 
-## ¡Más aprendizaje!
-Hay muchas cosas interesantes que puedes aprender sobre Gleam y la programación en general. Aquí hay algunas fuentes adicionales que pueden ser útiles para aquellos que quieran profundizar más en el tema:
+Alternativa a `size`, podríamos escribir nuestra propia función para calcular la longitud de una cadena. Sin embargo, `size` es más eficiente ya que está optimizado en el nivel del lenguaje de programación.
 
-- Documentación oficial de Gleam: [https://gleam.run/](https://gleam.run/)
-- Tutoriales y ejercicios prácticos: [https://gitlab.com/gleam-lang/gleam-mode](https://gitlab.com/gleam-lang/gleam-mode)
-- Comunidad de Gleam en Discord: [https://discord.gg/M64zm58](https://discord.gg/M64zm58)
+La implementación de `size` en Gleam simplemente recorre la cadena y cuenta cada carácter. Tenga en cuenta que algunos caracteres, como emojis, se consideran un solo carácter a pesar de que pueden consistir en más de un byte.
 
-¡Eso es todo por ahora! Espero que hayas aprendido algo nuevo sobre cómo encontrar la longitud de una cadena en Gleam. ¡Sigue practicando y experimentando para mejorar tus habilidades como desarrollador de Gleam! ¡Hasta pronto! 👋
+## Ver También:
+
+Para más información sobre cadenas en Gleam, puedes visitar los siguientes enlaces:
+
+1. [Gleam String Docs](https://hexdocs.pm/gleam_stdlib/gleam/string/index.html)
+2. [Gleam Programming Language Overview](https://gleam.run/)
+
+Recuerda que la programación es un viaje de aprendizaje constante. ¡No tengas miedo de experimentar con nuevas funciones y enfoques!

@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
-html_title:           "PHP: बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एक एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,39 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# यह क्या है और क्यों करें?
-बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना एक प्रोग्रामर के द्वारा साधारण रूप से किया जाता है। इसका उपयोग यूआरएल डाटा या वेब सर्विसेज़ से डेटा को प्राप्त करने के लिए किया जाता है।
+## क्या और क्यों? (What & Why?)
 
-# कैसे करें:
+HTTP अनुरोध के साथ मूल प्रमाणीकरण भेजना (sending an HTTP request with basic authentication) कोड के द्वारा सर्वर को डाटा भेजने की प्रक्रिया होती है, जिसमें प्रमाणीकरण भी शामिल होता है। ये क्रिया प्रोग्रामर्स तभी करते हैं जब उन्हें डाटा भेजते समय अपनी पहचान बतानी होती है।
+
+## कैसे: (How to:)
+
+PHP के माध्यम से इसे करना बहुत आसान है। इसका नमूना कोड और आउटपुट निचे दिए गए हैं:
+
 ```PHP
-$username = 'उपयोगकर्ता का नाम';
-$password = 'पासवर्ड';
-
-$url = 'यूआरएल';
-
-$ch = curl_init();
-
-curl_setopt($ch, CURLOPT_URL, $url);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, "$उपयोगकर्ता का नाम:पासवर्ड");
-
-$output = curl_exec($ch);
-$info = curl_getinfo($ch);
-
-curl_close($ch);
-
-echo $output;
+<?php
+$username = 'user';
+$password = 'pass';
+$context = stream_context_create(array(
+    'http' => array(
+        'header'  => "Authorization: Basic " . base64_encode("$username:$password")
+    )
+));
+$result = file_get_contents($url, false, $context);
+?>
 ```
+इस कोड का आउटपुट सर्वर पर्वापसीत डाटा होता है, यदि मान्य प्रमाणीकरण खुदाई की गई है।
 
-उपरोक्त कोड एक उदाहरण है जो बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजने का तरीका दिखाता है। इसमें हम उपयोगकर्ता के नाम और पासवर्ड को एचटीटीपी अनुरोध में जोड़ते हैं और कर्ल लाइब्रेरी का उपयोग करते हुए एचटीटीपी अनुरोध भेजते हैं। इसके बाद हम उस डेटा को पाते हैं जो वेब सर्विसेज़ या यूआरएल से प्राप्त हुआ है।
+## गहरी दृष्टि (Deep Dive):
 
-# गहराई में जाएं:
-## ऐतिहासिक परिस्थिति:
-एचटीटीपी अनुरोध भेजने का तरीका अपनी पीढ़ियों से बहुत अलग है। पहले के समय में यह डेटा को प्राप्त करने का एकमात्र तरीका था। लेकिन आजकल वेब सर्विसेज़ का उपयोग काफी मात्रा में है जो डेटा को प्राप्त करने के लिए एचटीटीपी अनुरोध भेजने का सबसे कारगर तरीका है।
+HTTP Basic Authentication का विकास HTTP/1.0 के समय हुआ था और अब भी यह प्रकार का प्रमाणीकरण सर्वरों द्वारा बहुत उपयोग किया जाता है। इसके विकल्पों में OAuth, Digest Access Authentication, etc. शामिल हैं। PHP में, `file_get_contents` के साथ `stream_context_create` का उपयोग HTTP अनुरोध को बनाने के लिए किया जाता है जिसमे Basic Authentication header जोड़ा जाता है।
 
-## विकल्प:
-एचटीटीपी अनुरोध भेजने के लिए बहुत सारे विकल्प हैं, जैसे कि यूआरएल कनेक्शन का उपयोग करना और डाटा को पोस्ट या गेट पैरामीटर के रूप में भेजना। ये सभी विकल्प अपना अलग समाधान हैं और उन्हें विभिन्न स्थितियों में उपयोगी साबित हो सकते हैं।
+## अन्य स्रोतों देखें (See Also):
 
-## अमल की विवरण:
-एचटीटीपी अनुरोध भेजने के लिए हम कर्ल लाइब्रेरी का उपयोग करते हैं। यह लाइब्रेरी किसी भी वेब सर्वर के साथ अनुरोध भेजने की सुविधा प्रदान करती है। हम उपयोगकर्ता के नाम और पासवर्ड को देते हैं जो सर्वर द्वारा सत्यापित होते हैं। यदि वे सही हैं तो डेटा हमेशा सर्वर से सफलतापूर्वक प्र
+सम्बंधित मुद्दों के इन स्रोतों का अध्ययन करें:
+
+1. PHP `stream_context_create` विवरण: [https://www.php.net/manual/en/function.stream-context-create.php](https://www.php.net/manual/en/function.stream-context-create.php)
+ 
+2. HTTP अनुरोध प्रकरण: [https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+
+3. Basic Authentication के विकल्पों को समझने के लिए OAuth: [https://oauth.net/](https://oauth.net/)

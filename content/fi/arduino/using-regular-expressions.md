@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Arduino: Säännöllisten lausekkeiden käyttö"
+html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,27 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Säännöllisiä lausekkeita käytetään ohjelmoinnissa etsimään ja manipuloimaan tekstiä. Niiden avulla voit tehdä tarkkoja hakuja ja korvata osia tekstistä tietyin ehdoin. Ohjelmoijat käyttävät säännöllisiä lausekkeita vaivattomasti muuntamaan suuria määriä tekstiä tai tiedostoja kerralla.
+## Mitä & Miksi?
 
-## Miten:
-### Haku
-Arduino-kääntäjässä säännöllisiä lausekkeita käytetään ```Arduino Regex()``` -funktiolla. Funktio ottaa kaksi parametria: lausekkeen ja kohdetekstin. Tässä esimerkissä etsimme tekstistä "LED": ```Arduino
-Arduino Regex ledPattern("LED");
-```
-Voit myös käyttää metakarakteria ```*``` merkitsemään kaikkia mahdollisia kirjaimia sen jälkeen. Tässä esimerkissä etsimme kaikki kirjaimet tekstin "LED" jälkeen: ```Arduino
-Arduino Regex ledPattern("LED*");
-```
-### Korvaaminen
-Regex-funktiolla voit myös korvata tekstistä haluamasi osat. Tässä esimerkissä haluamme korvata kaikki "LED"-sanat tekstillä "valo":```Arduino
-String uusiTeksti = ledPattern.replace("valo"); 
+Säännölliset lausekkeet (regular expressions, regex) ovat työkalu tekstin hakuun, korvaukseen ja analysointiin. Ohjelmoijat käyttävät niitä koska ne tarjoavat tarkkuutta ja monipuolisuutta tekstin käsittelyssä.
+
+## Näin se toimii:
+
+Tässä on esimerkki säännöllisen lausekkeen käytöstä Arduino-koodissa:
+
+```Arduino
+#include <regex.h>
+match_t match;
+regex_t myRegex;
+
+void setup() {
+re_comp(&myRegex, "^[a-z]{2,5}$");
+Serial.begin(9600);
+}
+
+void loop() {
+  if (re_matchp(&myRegex, "Hello", &match) > 0) {
+    Serial.println("Lauseke vastaa");
+  } else {
+    Serial.println("Lauseke ei vastaa");
+  }
+}
 ```
 
-Poiketen perinteisistä kielistä, kuten Java, Arduino Regex() -funktio ei palauta boolean-arvoa (totuusarvoa) vaan uuden String-tyyppisen tekstin. 
+Tässä esimerkissä regex käytetään tarkistamaan, vastaako syöttöteksti (tässä tapauksessa "Hello") määriteltyä säännöllistä lauseketta `^[a-z]{2,5}$`. Jos vastaa, tulostetaan "Lauseke vastaa", muuten "Lauseke ei vastaa".
 
-## Syväsukellus:
-Säännölliset lausekkeet periytyvät 1950-luvun matematiikasta. Ajoittaisten lausekkeiden lisäksi on olemassa muita tapoja manipuloida tekstiä, kuten makkroja tai kiinteitä hakuja (string pattern matching).
+## Syvempi sukellus:
+
+Säännölliset lausekkeet ovat peräisin 1950-luvulta ja ne ovat kehittyneet paljon vuosikymmenten aikana. Arduino-ohjelmointiympäristössä regex-kirjaston käyttö voi olla haastavaa, koska se on resurssitehokas ja siihen liittyy monimutkaisia ohjelmointirakenteita.
+
+Regexille vaihtoehtoja ovat esimerkiksi tavalliset merkkijonotoiminnot, kuten String.find() tai String.substring() Arduino-kirjastossa. Nämä toiminnot ovat yksinkertaisempia käyttää, mutta ne eivät ole yhtä joustavia eivätkä yhtä tehokkaita kuin regexit.
 
 ## Katso myös:
-- [RegularExpression.com](https://www.regular-expressions.info/tutorial.html)
-- [Arduino Reference - Regex()](https://www.arduino.cc/reference/en/language/functions/regular-expressions/regex/)
+
+Jos haluat tietää lisää säännöllisten lausekkeiden käytöstä Arduinossa, voit tutustua seuraaviin lähteisiin:
+
+- Arduino Regex kirjasto: [Arduino-Regex](https://github.com/nickgammon/Regexp)
+
+- Säännölliset lausekkeet: [Regular-Expressions.info](http://www.regular-expressions.info/)
+
+- Arduino String kirjasto: [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)

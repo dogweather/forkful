@@ -1,6 +1,6 @@
 ---
 title:                "Obtenir la date actuelle"
-html_title:           "Arduino: Obtenir la date actuelle"
+html_title:           "Bash: Obtenir la date actuelle"
 simple_title:         "Obtenir la date actuelle"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,47 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Obtenir la Date Actuelle dans Arduino
+## Qu'est-ce & Pourquoi?
 
-## Qu'est-ce que c'est et pourquoi le faire ?
+Obtenir la date actuelle consiste à récupérer l'information sur le moment présent dans le format Jour/Mois/Année. Les programmeurs le font pour gérer et suivre le temps dans leurs projets.
 
-Obtenir la date actuelle dans Arduino, c'est obtenir la date et l'heure exactes à l'instant présent. Les programmeurs font cela afin de pouvoir enregistrer des données avec une précision temporelle et de synchroniser des événements dans leur code.
+## Comment faire:
 
-## Comment faire :
-
-Pour obtenir la date actuelle dans Arduino, on peut utiliser la fonction ```now()```. Cette fonction renvoie un objet de type ```DateTime``` avec l'heure et la date actuelles. 
-
-Exemple de code :
+Voici un exemple de code pour obtenir la date actuelle sur Arduino. Assurez-vous d'avoir un shield RTC connecté à votre Arduino. 
 
 ```Arduino
-DateTime now = now();
-Serial.println(now.year(), DEC);
-Serial.println(now.month(), DEC);
-Serial.println(now.day(), DEC);
-Serial.println(now.hour(), DEC);
-Serial.println(now.minute(), DEC);
-Serial.println(now.second(), DEC);
+#include <Wire.h>
+#include "RTClib.h"
+
+RTC_DS1307 rtc;
+
+void setup () {
+  Serial.begin(57600);
+  Wire.begin();
+  rtc.begin();
+
+  if (! rtc.isrunning()) {
+    Serial.println("RTC n'est pas en cours d'execution!");
+    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  }
+}
+
+void loop () {
+  DateTime now = rtc.now();
+  
+  Serial.print(now.year(), DEC);
+  Serial.print('/');
+  Serial.print(now.month(), DEC);
+  Serial.print('/');
+  Serial.println(now.day(), DEC);
+}
 ```
 
-Résultat :
+Ce code affiche la date actuelle dans la console série à chaque fois que vous démarrez votre Arduino.
 
-```Arduino
-2021
-10
-24
-9
-30
-15
-```
+## Deep Dive
 
-## Plongée en Profondeur :
+Historiquement, les fonctions de gestion du temps étaient déjà intégrées aux premiers systèmes de calcul analogiques. Aujourd'hui, avec la prolifération des appareils numériques, il est encore plus essentiel de suivre le temps de façon précise.
 
-Historiquement, pour obtenir la date actuelle, les programmeurs Arduino utilisent la bibliothèque TimeLib, qui fonctionne avec la fonction ```now()```. Cependant, il existe des alternatives telles que la bibliothèque Time de Paul Stoffregen et la bibliothèque DateTime de Makuna.
+Il existe de nombreuses alternatives pour obtenir la date actuelle, comme utiliser un module GPS ou même se connecter à un serveur NTP pour obtenir la date et l'heure exactes. Chaque alternative a ses propres avantages et inconvénients, il faut donc choisir celle qui convient le mieux à votre projet.
 
-L'implémentation de la fonction ```now()``` dans Arduino utilise une horloge en temps réel (RTC) pour maintenir la date et l'heure précises. La plupart des cartes Arduino n'en ont pas intégré, il est donc nécessaire d'en ajouter une séparément.
+Pour obtenir la date actuelle avec Arduino, vous pouvez utiliser la bibliothèque RTClib, qui offre des fonctions faciles à utiliser pour gérer le temps. Elle implémente une interface de communication avec la puce RTC DS1307 qui est largement utilisée dans de nombreux shields RTC pour Arduino. 
 
-## À Voir Aussi :
+## Voir Aussi
 
-- Documentation officielle d'Arduino sur la fonction ```now()``` : https://www.arduino.cc/reference/en/libraries/datetime/
-- Bibliothèque Time de Paul Stoffregen : https://www.pjrc.com/teensy/td_libs_Time.html
-- Bibliothèque DateTime de Makuna : https://github.com/Makuna/Rtc/wiki
+Vous pouvez approfondir vos connaissances sur la gestion du temps dans Arduino en consultant ces sources:
+- La documentation officielle du RTC DS1307: [DS1307](https://datasheets.maximintegrated.com/en/ds/DS1307.pdf)
+- Guide d'introduction à la bibliothèque RTClib: [RTClib](https://github.com/adafruit/RTClib)
+- Tutoriel instructif pour obtenir la date et l'heure avec un module GPS: [Obtenir la date et l'heure avec GPS](https://www.instructables.com/id/How-to-Use-GPS-Module-With-Arduino-to-Get-Time-and/)

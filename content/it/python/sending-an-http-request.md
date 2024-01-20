@@ -1,6 +1,6 @@
 ---
 title:                "Inviare una richiesta http"
-html_title:           "Python: Inviare una richiesta http"
+html_title:           "C++: Inviare una richiesta http"
 simple_title:         "Inviare una richiesta http"
 programming_language: "Python"
 category:             "Python"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#Ciao amici Pythonisti!
-Se siete programmatori, sicuramente avete sentito parlare di "invio di richieste HTTP". Ma cosa significa esattamente e perché i programmatori lo fanno?
-
-## Cosa & Perché?
-In breve, inviare una richiesta HTTP significa comunicare con un server web per ottenere informazioni o eseguire un'azione. I programmatori lo fanno per creare applicazioni web dinamiche, ad esempio per l'elaborazione dei dati o per l'accesso ai servizi di terze parti.
+## Cos'è & Perché?
+Inviare una richiesta HTTP è un processo per ottenere dati da un server web utilizzando il protocollo HTTP. I programmatori lo fanno per interagire con servizi web, recuperare informazioni, inviare dati, tra gli altri.
 
 ## Come fare:
-Ecco un esempio di codice in Python per inviare una richiesta HTTP utilizzando il modulo "requests" e ottenere il codice di risposta e il contenuto della pagina:
+Per inviare una richiesta HTTP in Python, puoi utilizzare il modulo `requests`. Un esempio di base è il seguente:
 
 ```Python
 import requests
 
-response = requests.get("https://www.google.com/")
+response = requests.get('http://example.com')
+
 print(response.status_code)
 print(response.text)
 ```
-Ecco il risultato: 
+Correndo il codice sopra, vedresti qualcosa del genere:
+
 ```
 200
-<!doctype html><html itemscope="" itemtype="http://schema.org/WebPage" lang="it"><head><meta content="/images/branding/googleg/1x/googleg_standard_color_128dp.png" itemprop="image"><title>Google</title>...
+<!doctype html>
+<html>
+<head>
+    <title>Example Domain</title>
+    ...
 ```
 
-## Approfondiamo:
-In passato, i programmatori dovevano scrivere manualmente le richieste HTTP utilizzando il protocollo TCP/IP. Oggi, possono utilizzare librerie come "requests" che semplificano notevolmente il processo. Altre alternative per inviare richieste HTTP includono la libreria urllib e il modulo HTTP di Python standard. Nel dettaglio, una richiesta HTTP è costituita da un metodo (GET, POST, PUT, ecc.), un URL e un insieme di intestazioni e parametri opzionali per personalizzare la richiesta.
+## Approfondimento
+Inviare richieste HTTP è una pratica comune nella programmazione dal momento che il web è costruito su questo protocollo. Prima che entrasse in scena Python, si dovevano gestire manualmente le connessioni TCP. Con l'arrivo di Python e moduli come `requests`, è diventato molto più semplice.
 
-## Vedi anche:
-- Il tutorial "Requests: HTTP per Esseri Umani" su Python.org
-- La documentazione ufficiale del modulo "requests"
-- Il tutorial su richieste HTTP con Python su Real Python
+Un'alternativa a `requests` in Python è `http.client` che fa parte della libreria standard. Tuttavia, `requests` è molto più facile da usare e offre più funzionalità.
+
+Quando invii una richiesta HTTP, in realtà stai inviando un messaggio testuale a un server web. Il server risponde allo stesso modo. Il corpo di questa risposta viene poi interpretato dal tuo programma.
+
+## Vedi anche
+- Documentazione di `requests`: https://docs.python-requests.org/en/latest/
+- Tutorial HTTP per principianti: https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html
+- `http.client` documentazione: https://docs.python.org/3/library/http.client.html

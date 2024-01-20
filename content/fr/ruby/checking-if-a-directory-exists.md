@@ -1,6 +1,6 @@
 ---
 title:                "Vérifier si un répertoire existe"
-html_title:           "Ruby: Vérifier si un répertoire existe"
+html_title:           "Arduino: Vérifier si un répertoire existe"
 simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -11,33 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-Vérifier si un répertoire existe est une tâche courante en programmation. Cela permet de s'assurer qu'un répertoire spécifique existe avant d'y accéder ou d'y effectuer des opérations. Cela peut également aider à éviter les erreurs et les bogues dans le code.
 
-## Comment faire:
-Vérifier si un répertoire existe en Ruby est assez simple. Il suffit d'utiliser la méthode ```Dir.exist? ``` avec le nom du répertoire en tant que paramètre. Voici un exemple de code:
+Contrôler l'existence d'un répertoire est une pratique pour s'assurer qu'un dossier particulier est présent à l'endroit attendu. Les programmeurs font cela pour prévenir les erreurs qui pourraient survenir lorsqu'on tente d'accéder ou de manipuler un répertoire inexistant.
 
+## Comment faire :
+
+Voici comment vérifier l'existence d'un répertoire en Ruby :
 ```Ruby
-if Dir.exist?("mon_repertoire")
-    puts "Le répertoire existe!"
+if Dir.exist?("MonDossier")
+  puts "Le dossier existe!"
 else
-    puts "Le répertoire n'existe pas."
+  puts "Le dossier n'existe pas!"
 end
 ```
+Si "MonDossier" existe, alors votre console affichera "Le dossier existe!". Sinon, vous verrez "Le dossier n'existe pas!".
 
-Et voici un exemple de résultat si le répertoire existe réellement:
+## Une analyse approfondie :
 
-```
-Le répertoire existe!
-```
+Historiquement, plusieurs méthodes ont été utilisées pour vérifier l'existence d'un répertoire en Ruby, comme la méthode `File.directory?`. Cependant, depuis la version Ruby 1.9, `Dir.exist?` est devenu la méthode préférée en raison de sa plus grande simplicité et clarté.
 
-## Plongée Profonde:
-La vérification de l'existence d'un répertoire est une pratique courante dans la programmation depuis longtemps. Avant, cela se faisait souvent en utilisant la méthode ```File.exist? ```, mais ```Dir.exist? ``` est maintenant la méthode recommandée pour vérifier l'existence d'un répertoire spécifique.
+Il existe également des alternatives comme `Pathname.exist?` qui peut être utilisée pour vérifier l'existence d'une route d'accès que ce soit pour un répertoire ou un fichier.
 
-Il existe également d'autres alternatives pour vérifier si un répertoire existe, telles que la méthode ```File.directory? ``` et l'utilisation de chemins absolus ou relatifs pour accéder au répertoire.
+Les détails d'implémentation de `Dir.exist?` sont assez simples : Ruby essaie d'ouvrir le dossier spécifié et renvoie `true` si cela réussit. Sinon, il renvoie `false`.
 
-En termes d'implémentation, la méthode ```Dir.exist? ``` utilise la fonction système ```stat ``` pour vérifier si le répertoire existe. Elle renvoie un booléen (true ou false) en fonction de l'existence du répertoire.
+## Voir aussi :
 
-## Voir aussi:
-- [Documentation officielle de Ruby sur la méthode Dir.exist?](https://ruby-doc.org/core-3.0.0/Dir.html#method-c-exist-3F)
-- [Documentation officielle de Ruby sur la méthode File.exist?](https://ruby-doc.org/core-3.0.0/File.html#method-c-exist-3F)
-- [Un tutoriel sur la manipulation des répertoires en Ruby](https://www.rubyguides.com/2018/07/ruby-file-directory/)
+- Documentation Ruby pour `Dir` : https://ruby-doc.org/core-2.7.0/Dir.html
+- Guide sur les bases de navigation de fichiers et de répertoire avec Ruby: https://www.tutorialspoint.com/ruby/ruby_directories.htm
+- Comparaison des différentes méthodes de vérification de l'existence d'un répertoire : https://stackoverflow.com/questions/2521053/how-to-check-if-a-directory-exists-in-ruby

@@ -1,6 +1,6 @@
 ---
 title:                "Enviando uma solicitação http"
-html_title:           "Kotlin: Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
 simple_title:         "Enviando uma solicitação http"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,33 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
+# Enviando uma solicitação HTTP em Kotlin
 
-Enviar uma requisição HTTP é uma forma de comunicação entre uma aplicação e um servidor web. Os programadores fazem isso para obter informações, enviar dados, ou interagir com sistemas e serviços externos.
+## O quê e por quê?
 
-## Como Fazer:
+Enviar uma solicitação HTTP é uma maneira de obter dados de um servidor web. Programadores fazem isso para acessar informações fora de seus próprios sistemas, seja uma API de clima, um serviço de música ou a API do Twitter.
 
-```Kotlin 
-import java.net.URL
+## Como fazer:
 
-fun main() {
-    val url = URL("https://www.example.com") // cria um objeto URL com o endereço do servidor
-    val conn = url.openConnection() // abre uma conexão com a URL
-    val response = conn.getInputStream().bufferedReader().use { it.readText() } // lê a resposta do servidor
-    println(response) // imprime a resposta no console
+Vamos usar a biblioteca Ktor para enviar uma solicitação HTTP. Primeiro adicione a dependência ao seu arquivo `build.gradle`:
+
+```Kotlin
+dependencies {
+    implementation "io.ktor:ktor-client-core:1.6.3"
+    implementation "io.ktor:ktor-client-cio:1.6.3"
 }
 ```
+Aqui está um exemplo de código para enviar uma solicitação GET:
 
-A saída deste código será o conteúdo da página https://www.example.com .
+```Kotlin
+import io.ktor.client.*
+import io.ktor.client.request.*
 
-## Profundando Mais:
+suspend fun main() {
+    val client = HttpClient()
+    val webpage: String = client.get("https://ktor.io/")
+    println(webpage)
+    client.close()
+}
+```
+Quando você executa isso, verá o HTML da página retornada no console.
 
-Enviar uma requisição HTTP é um método amplamente utilizado na programação para a comunicação entre aplicações web e serviços externos. Alternativas para as conexões HTTP incluem FTP (File Transfer Protocol) e SMTP (Simple Mail Transfer Protocol), mas esses protocolos são menos usados devido à popularidade e eficiência do HTTP.
+## Mergulho profundo
 
-Na implementação de uma requisição HTTP, o programa primeiro estabelece uma conexão com o servidor usando um objeto URL, especificando o endereço. Em seguida, a conexão é aberta e a resposta do servidor é lida e retornada para o programa. Existem bibliotecas e frameworks que podem facilitar a realização de requisições HTTP em aplicações Kotlin, como o Ktor e o Retrofit.
+A especificação HTTP nasceu em 1991 e evoluiu muito desde então, mas a ideia básica de enviar solicitações para um servidor persiste. Alternativas para HTTP incluem gRPC (do Google) e GraphQL (do Facebook), mas para muitos casos de uso, HTTP (especificamente HTTP/1.1 e HTTP/2) ainda é uma ótima solução.
 
-## Veja Também:
+Quando falamos de enviar um HTTP request em Kotlin, podemos usar várias bibliotecas, além do Ktor, como OkHttp ou Fuel. Cada um tem suas próprias vantagens, mas escolhemos o Ktor por ser totalmente baseado em Kotlin e ter ótima integração com as corrotinas do Kotlin.
 
-- [Documentação oficial do Kotlin sobre requisições HTTP](https://kotlinlang.org/docs/tutorials/networking.html)
-- [Ktor: framework de cliente HTTP para Kotlin](https://ktor.io/)
-- [Retrofit: biblioteca para fazer requisições HTTP de forma declarativa em Kotlin](https://square.github.io/retrofit/)
+A solicitação HTTP em si envolve o envio de um pacote de dados para um servidor (o "request") e a obtenção de um pacote de volta (a "response"). Esse processo é sincrônico, mas pode ser executado de maneira assíncrona em Kotlin usando corrotinas.
+
+## Veja também:
+
+- Documentação do Ktor: https://ktor.io/clients/http-client/
+- Guia de OkHttp: https://square.github.io/okhttp/
+- Documentação do Fuel: https://fuel.gitbook.io/documentation/

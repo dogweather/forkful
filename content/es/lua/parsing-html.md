@@ -1,7 +1,7 @@
 ---
-title:                "Analizando html"
-html_title:           "Lua: Analizando html"
-simple_title:         "Analizando html"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué es y por qué? 
-El análisis o parsing de HTML es una técnica que utilizan los programadores para extraer información específica de una página web. Esto les permite obtener datos estructurados de un sitio web para utilizarlos en sus programas o aplicaciones. Se realiza mediante la lectura del código fuente HTML de la página y la identificación de patrones específicos.
+---
 
-## Cómo hacerlo: 
-Para realizar un parsing de HTML en Lua, se pueden seguir los siguientes pasos:
+## ¿Qué y Por Qué?
 
-1. Utilizar una biblioteca externa para realizar el análisis, como "LuaXML", "LuaExpat" o "Lua-Toml".
-2. Importar la biblioteca en tu programa con el comando "require".
-3. Utilizar la función específica de la biblioteca para analizar la página web. Por ejemplo, en LuaXML se utilizaría "luaXML.eval(yield(), false)".
+El análisis HTML, o parsing, transforma el código HTML en una representación estructurada. Los programadores lo hacen para manipular y extraer información de sitios web en sus programas.
 
-Un ejemplo de código sería el siguiente:
+## ¿Cómo se hace?
 
-```Lua 
-local xml = require('LuaXML')
-local xmlString = [[
-	<usuario>
-		<nombre>Juan</nombre>
-		<edad>25</edad>
-		<país>Argentina</país>
-	</usuario>
-]]
+A continuación, un ejemplo con la biblioteca de Lua 'htmlparser'. Primero, instalas la biblioteca:
 
-local xmlTree = xml.eval(xmlString,false)
-
--- Obtener el valor de un elemento específico:
-local nombre = xmlTree.usuario.nombre[1]
-
-print("El nombre del usuario es: "..nombre)
-
--- Resultado: El nombre del usuario es Juan
+```lua
+luarocks install htmlparser
 ```
 
-## Profundizando:
-El análisis de HTML ha sido una técnica utilizada desde los inicios de la web, ya que permite a los programadores automatizar la extracción de información de una forma más sencilla. Existen diversas bibliotecas disponibles para realizar esta tarea en diferentes lenguajes de programación, pero en Lua se pueden utilizar las mencionadas anteriormente o incluso escribir una propia utilizando las funcionalidades de la biblioteca "libxml2".
+Ahora puedes analizar el HTML:
 
-Otra alternativa a realizar parsing de HTML es utilizar una API (Interfaz de Programación de Aplicaciones) que permita acceder a la información de una página web de forma estructurada. Sin embargo, esta opción no siempre está disponible y el parsing de HTML sigue siendo una técnica útil en muchas situaciones.
+```lua
+local htmlparser = require "htmlparser"
+local html = "<html><body>Hola mundo</body></html>"
 
-A nivel técnico, el análisis de HTML en Lua se realiza utilizando funciones que proporcionan las bibliotecas mencionadas, que a su vez utilizan diferentes métodos y algoritmos para identificar y extraer la información deseada. Es importante tener en cuenta que el código fuente de una página web puede variar entre distintos sitios y las bibliotecas de parsing pueden no ser capaces de identificar patrones en todos los casos.
+local root = htmlparser.parse(html)
+print(root:select("body")[1]:getcontent())  -- Se imprime "Hola mundo"
+```
 
-## Ver también:
-- [LuaXML](https://github.com/LuaDist/luaxml)
-- [LuaExpat](https://github.com/LuaDist/luaexpat)
-- [Lua-Toml](https://github.com/GNU-Darwin/lua-toml)
-- [Libxml2](http://xmlsoft.org/)
+Este programa analiza una cadena HTML simple y luego imprime el contenido dentro de la etiqueta 'body'.
+
+## Más a fondo
+
+El análisis HTML ha sido una parte vital del trabajo del programador desde la creación de la world wide web en 1989. Sin embargo, hacerlo desde el principio es complejo y propenso a errores. La biblioteca 'htmlparser' simplifica esta tarea.
+
+Además de 'htmlparser', tienes opciones como 'htmlp', que ofrece diferentes funcionalidades. Tu elección depende de las necesidades del proyecto y tus preferencias.
+
+La biblioteca 'htmlparser' realiza un análisis léxico del código HTML transformándolo en una estructura de datos de árbol, que puedes recorrer para obtener la información que necesitas.
+
+## Ver También
+
+Para más detalles sobre 'htmlparser', revisa [la documentación](https://github.com/msva/lua-htmlparser).
+
+Para saber más sobre el análisis de HTML en general, te sugiero [este artículo](https://developer.mozilla.org/es/docs/HTML/HTML5/HTML5_Parser).
+
+Para aprender más sobre Lua, visita la [documentación oficial](http://www.lua.org/manual/5.1/).

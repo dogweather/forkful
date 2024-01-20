@@ -1,7 +1,7 @@
 ---
-title:                "Merkkijonon pituuden löytäminen"
-html_title:           "Bash: Merkkijonon pituuden löytäminen"
-simple_title:         "Merkkijonon pituuden löytäminen"
+title:                "Merkkijonon pituuden selvittäminen"
+html_title:           "Go: Merkkijonon pituuden selvittäminen"
+simple_title:         "Merkkijonon pituuden selvittäminen"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -12,28 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Mitä & Miksi?
 
-Merkkijonon pituuden löytäminen on yksinkertainen toimenpide, jossa ohjelma laskee merkkijonossa olevien merkkien määrän. Tämä voi olla hyödyllistä esimerkiksi merkkijonojen vertailussa tai tiedonkäsittelyssä. 
+Merkkijonon pituuden löytäminen tarkoittaa sitä, kuinka monta merkkiä merkkijonossa on. Ohjelmoijat tarvitsevat tätä yleisesti tiedon käsittelyyn tai tietojen vertailuun.
 
-Ohjelmointimaailmassa merkkijonojen pituuden laskeminen on hyvin yleistä ja hyödyllistä. Tämä auttaa ohjelmoijia tekemään tarkempia vertailuja tai valitsemaan oikeat toimenpiteet tarvittavalle tiedolle.
+## Kuinka Tehdään:
 
-## Miten:
-
-Koodi on yksinkertainen ja käyttää `expr`-komentoa laskeakseen merkkijonon pituuden:
+Alla on esimerkkikoodi merkkijonon pituuden löytämiseen Bashissa:
 
 ```Bash
-len=$(expr length "Tämä on merkkijono")
-echo "Merkkijonon pituus on $len"
+#!/bin/bash
+myString="Hei Suomi"
+lengthOfMyString=${#myString}
+echo $lengthOfMyString
 ```
 
-Tuloksena saadaan "Merkkijonon pituus on 20", sillä merkkijonossa on 20 merkkiä. 
+Kun ajat yllä olevan koodin, se tulostaa "9", mikä on merkkijonon "Hei Suomi" pituus.
 
-## Syvemmälle:
+## Syvällisemmin
 
-Merkkijonon pituuden laskeminen on ollut osa ohjelmoinnin perustoimintoja pitkään. Aikaisemmin käytettiin erilaisia menetelmiä, kuten `wc -c` tai `awk '{print length}'`. Nykypäivänä `expr`-komento on luotettavampi ja tehokkaampi vaihtoehto.
+Bashin kyky löytää merkkijonon pituus on ollut olemassa pitkään, ja se on osa shell-ohjelmoinnin perustietoa. 
 
-On myös muita tapoja laskea merkkijonon pituus, kuten käyttää `$(#variable)` -rakennetta tai `expr`-komentoa yhdessä `awk`-komenton kanssa. Näitä vaihtoehtoja kannattaa kokeilla ja valita itselleen parhaiten sopiva tapa.
+Vaihtoehtoisesti, voit käyttää 'expr' tai 'awk' komentoa merkkijonon pituuden määrittämiseen. Kuitenkin, ${#string} syntaksi on suoraviivaisin ja tehokkain tapa tässä tilanteessa.
 
-## Katso myös:
+Bash käyttää sisäisesti C-kieltä merkkijonon pituuden määrittämiseen. Tämä tekee siitä nopean ja tehokkaan myös suurten merkkijonojen käsittelyssä.
 
-- [Bashin virallinen dokumentaatio](https://www.gnu.org/software/bash/manual/html_node/Bash-Variables.html)
-- [Stack Overflow - How to find length of a string in Bash](https://stackoverflow.com/questions/17368067/how-to-find-length-of-a-string-in-bash)
+## Katso Myös
+
+Jos haluat tutkia lisää Bashista ja merkkijonon käsittelystä, alla on joitakin hyödyllisiä linkkejä:
+
+1. [Bash beginners guide](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
+2. [Bash string manipulation guide](https://www.cyberciti.biz/faq/unix-linux-bash-find-length-of-string/)
+3. [Bash programming in Linux](https://www.linuxjournal.com/content/programming-bash-0)
+
+Loppujen lopuksi, Bashin merkkijonon pituuden määrittäminen on hyödyllinen taito, joka helpottaa tietojen käsittelyä.+

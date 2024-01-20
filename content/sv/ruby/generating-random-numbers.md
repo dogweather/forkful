@@ -1,7 +1,7 @@
 ---
-title:                "Generering av slumpmässiga tal"
-html_title:           "Ruby: Generering av slumpmässiga tal"
-simple_title:         "Generering av slumpmässiga tal"
+title:                "Generera slumpmässiga nummer"
+html_title:           "Arduino: Generera slumpmässiga nummer"
+simple_title:         "Generera slumpmässiga nummer"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Numbers"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Generering av slumpmässiga nummer är en vanlig uppgift för programmerare. Det innebär att skapa en serie med nummer som är slumpmässigt valda, utan något specifikt mönster. En anledning till att programmerare gör detta är för att skapa variation i sitt program, till exempel för att simulera ett slumpmässigt beteende eller för att utföra tester.
+## Vad & Varför?
 
-Hur man:
-```ruby
-# Genererar ett slumpmässigt nummer mellan 1 och 10
-rand(1..10) 
-# Output: 7
+Generering av slumpmässiga nummer är processen för att skapa ett nummer på ett till synes oberäkneligt sätt. Programmerare gör detta för att skapa unika identiteter, simulera händelser, upprätta datasäkerhet, och mer.
 
-# Genererar ett slumpmässigt flyttal mellan 0.0 och 1.0
-rand() 
-# Output: 0.7356200041991567
+## Hur man:
 
-# Genererar ett slumpmässigt heltal mellan 1 och 100
-Random.rand(1..100) 
-# Output: 42
+Att skapa random nummer i Ruby är ganska enkelt. Vi kommer att använda `rand` metoden.
 
-# Väljer ett slumpmässigt element från en array
-array = ["a", "b", "c", "d"]
-array.sample 
-# Output: "c"
+```Ruby
+#Genererar ett random nummer mellan 0 och 1
+puts rand 
+```
+Detta kommer att generera ett nummer mellan 0 och 1. Om du vill generera ett nummer inom ett särskilt intervall kan du gör det så här:
+
+```Ruby
+#Genererar ett random nummer mellan 1 och 10
+puts rand(1..10) 
 ```
 
-Utforska:
-Att generera slumpmässiga nummer är en viktig del av datavetenskap och har funnits sedan de tidiga dagarna av datorer. Tidigare användes metoderna pseudo-random för att simulera slumpmässighet, men idag finns det bättre algoritmer som ger mer verkligt slumpmässiga nummer. Alternativ till att använda Ruby's inbyggda funktioner är att skapa sin egen algoritm för slumpmässighet, eller använda en tredjepartsbibliotek.
+## Fördjupning
 
-Se även:
-- Ruby's inbyggda dokumentation om Random-klassen: https://ruby-doc.org/core-2.7.1/Random.html
-- En förklaring av olika algoritmer för att generera slumpmässiga nummer: https://www.random.org/randomness/
+Historiskt har genereringen av random nummer vanligtvis varit en svår uppgift. Metoderna inkluderar allt från att slå tärningar och lotteridragningar till avancerade statistiska metoder. I modern programmering kan vi dock generera slumpmässiga nummer med en rad olika verktyg och tekniker.
+
+Som ett alternativ till Ruby's inbyggda `rand`, kan du också kolla in SecureRandom modulen, som genererar slumpmässiga nummer av en högre kryptografisk kvalitet. 
+
+När det gäller implementation, fungerar Ruby's `rand` metod så att den faktiskt använder systemets källa till slumpmässighet (till exempel /dev/urandom på Unixliknande system), som matas in i en algoritm för att generera det slumpmässiga numret.
+
+## Se även
+
+För mer information om att generera random nummer, se följande källor:
+
+- Ruby Dokumentation om [`rand`](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-rand) och [`SecureRandom`](https://ruby-doc.org/stdlib-2.5.1/libdoc/securerandom/rdoc/SecureRandom.html)
+- Artikel om [Random Number Generation](https://en.wikipedia.org/wiki/Random_number_generation) på Wikipedia.
+- Inlägg om [How To Generate Random Numbers In Ruby](https://www.rubyguides.com/2015/03/ruby-random/) på RubyGuides.

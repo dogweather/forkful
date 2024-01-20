@@ -1,7 +1,7 @@
 ---
-title:                "एचटीएमएल की टालना"
-html_title:           "Haskell: एचटीएमएल की टालना"
-simple_title:         "एचटीएमएल की टालना"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya aur Kyun?
-Parsing HTML kya hai? Yeh ek tarika hai website se text data ko extract karne ka. Iss process mein, ek HTML document ko parse karte hue, alag-alag elements, tags aur attributes ko alag karke data ko sahi tarike se display kia jata hai. Programmers iss kaam ko karne ka reason yeh hota hai ke unnko specific website se data collect karna hota hai aur yeh sahi tarike se upar se karna possible nahi hota hai.
+## क्या और क्यों?
 
-## Kaise Karein:
+HTML पार्सिंग, वेब पेज को ऐसे स्ट्रक्चर में बदलने का एक तरीका है, ताकि कंप्यूटर इसे प्रोसेस कर सके। यह काम ताकि प्रोग्रामर्स जान सकें कि HTML डॉक्यूमेंट में क्या है और वो इसे अपने कोड में इस्तेमाल कर सकें।
+
+## कैसे करें:
+
+हास्केल का `Text.HTML.DOM` पैकेज HTML पार्सिंग के लिए बहुत उपयोगी है। इसका प्रयोग हम इस प्रकार से कर सकते हैं:
+
 ```Haskell
-import Text.HTML.TagSoup
+import Text.HTML.DOM (parseLBS)
+import qualified Data.Text.Lazy.IO as L
 
--- HTML document ko fetch karein
-html <- openURL "https://www.examplewebsite.com"
-
--- HTML ko parse karein
-tags <- parseTags html
-
--- Specific tag aur uske content ko extract karein
-let headers = sections (~== "<h1>") tags
-print headers
+main = do
+    htmlData <- L.readFile "example.html"
+    let dom = parseLBS htmlData
+    print dom
 ```
+इस कोड को रन करने पर आपको HTML डॉक्यूमेंट का पार्स्ड संस्करण मिलेगा।
 
-Yeh code example mein, Text.HTML.TagSoup library use kiya gaya hai jo ki ek popular library hai Haskell mein HTML parsing ke liye. Iss example mein, ek website se HTML document ko fetch karna aur usko parse karna dikhaaya gaya hai. Phir specific tag ko identify karke uske content ko extract kiya gaya hai.
+## गहरी चर्चा:
 
-## Gehre Khulase:
-Parsing HTML purane se purane tasks mein se ek hai jo ki internet ke shuruwat se hi developers ke liye ek daunting task raha hai. Phir bhi, aajkal iss process ko aur bhi easy banane ke liye kuch alternatives available hai jaise ki kuch IDEs, libraries, aur tools jo ki HTML parsing ko automated aur efficient bana dete hai.
+HTML पार्सिंग का काम 1990 के दशक से ही किया जा रहा है, जब से ही वेब ब्राउज़ेर बनाई गई है। अन्य विकल्पों में BeautifulSoup (Python) और Nokogiri (Ruby) शामिल हैं। हास्केल के `Text.HTML.DOM` पैकेज में, बाइट-स्तरीस (ByteString) का इस्तेमाल करके वेब पेज को पार्स किया जाता है।
 
-Iss process mein ek important cheez yeh hoti hai ki HTML document mein errors ho sakte hai aur inn errors ko handle karna important hota hai. Haskell mein, ```parseTags``` function iss kaam ko sambhalta hai aur automatically errors ko handle karke sahi output deta hai.
+## जाने के लिए:
 
-## Dekhein Bhi:
-- [Haskell TagSoup Library](https://hackage.haskell.org/package/tagsoup)
-- [Haskell Web Scraping Tutorial](https://www.youtube.com/watch?v=4DIpB-bXnso)
-- [Haskell for Web Development](https://www.haskell.org/haskellwiki/Haskell_for_Web_Development)
+यदि आप और अधिक जानना चाहते हैं, तो निम्नलिखित लिंक्स मददगार हो सकते हैं:
+
+- [Haskell पर विस्तृत HTML पार्सिंग गाइड](http://chimera.labs.oreilly.com/books/1230000000929/ch05.html)
+- [हास्केल डॉक्यूमेंटेशन पर Text.HTML.DOM](https://hackage.haskell.org/package/xhtml-3000.2.2.1/docs/Text-HTML-DOM.html)
+- [HTML पार्सिंग के बारे में विकिपीडिया लेख](https://en.wikipedia.org/wiki/HTML_parsing)

@@ -1,7 +1,7 @@
 ---
-title:                "Søke og erstatte tekst"
-html_title:           "Elixir: Søke og erstatte tekst"
-simple_title:         "Søke og erstatte tekst"
+title:                "Søking og erstatning av tekst"
+html_title:           "Lua: Søking og erstatning av tekst"
+simple_title:         "Søking og erstatning av tekst"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,19 +11,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å søke og bytte ut tekst er en vanlig oppgave for programmerere. Dette gjøres for å erstatte en bestemt tekst med en annen i en tekstfil eller kodebase. Det kan være nyttig når du ønsker å gjøre en stor endring i koden din, og det ville være for tidkrevende å gjøre det manuelt.
+Søk og erstatting av tekst er en handling der man finner en spesifikk streng i en tekst og erstatter den med en annen. Programmere bruker det ofte til å oppdatere kode, reformatere data, og rette feil i store filer.
 
-## Slik gjør du:
+## Hvordan gjøre det:
+Her er et enkelt eksempel på hvordan du bruker `String.replace/3` funksjonen i Elixir til å søke og erstatte tekst:
+
 ```Elixir
-tekst = "Hei, verden!"
-ny_tekst = String.replace(text, "verden", "alle sammen")
-IO.puts(ny_tekst)
+text = "Hei, verden!"
+new_text = String.replace(text, "verden", "Norge")
+IO.puts new_text
 ```
-Dette eksempelet demonstrerer hvordan du kan bruke `String.replace` funksjonen i Elixir for å bytte ut en del av en tekststreng med en annen. Output vil være "Hei, alle sammen!"
 
-## Dykk dypere:
-Søk og bytt ut tekst var en vanlig oppgave i tidligere programmeringsspråk, men Elixir gjør det enklere ved å tilby funksjoner som `String.replace`. Alternativer til å bruke innebygde funksjoner kan være å bruke regulære uttrykk eller å bruke en tekstredigerer. I Elixir, kan du også bruke funksjoner som `String.replace_first` og `String.replace_last` for mer spesifikke behov. Implementeringen av disse funksjonene bruker faktisk regular expressions under panseret.
+Koden over vil skrive ut "Hei, Norge!"
 
-## Se også:
-- [Elixir String Modul Dokumentasjon](https://hexdocs.pm/elixir/String.html)
-- [Regex i Elixir](https://elixirschool.com/en/lessons/basics/pattern-matching/#regular-expressions)
+## Dypdykk
+Historisk sett, søk og erstatt-funksjonalitet har vært en kjernekomponent i tekstbehandling og programmering siden tidlige dager av data. Andre alternativer til `String.replace/3` i Elixir inkluderer bruk av `Regex.replace/3` for mer komplekse tekstmanipuleringer gjennom regulære uttrykk.
+
+I sin kjerne, `String.replace/3` funksjonen i Elixir bruker Erlang's :binary.match funksjon til å søke etter den spesifiserte strengen, og deretter erstatter den med den nye strengen. Dette betyr at denne funksjonen er svært effektiv og rask.
+
+## Se Også
+Elixir's offisielle dokumentasjon gir mer detaljer om bruk av `String.replace/3` og `Regex.replace/3`: [https://hexdocs.pm/elixir/String.html#replace/3](https://hexdocs.pm/elixir/String.html#replace/3) og [https://hexdocs.pm/elixir/Regex.html#replace/3](https://hexdocs.pm/elixir/Regex.html#replace/3). Hvis du er interessert i å lære mer om søk og erstatting i general, sjekk ut denne historien: [https://en.wikipedia.org/wiki/Search_and_replace](https://en.wikipedia.org/wiki/Search_and_replace).

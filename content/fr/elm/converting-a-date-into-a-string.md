@@ -1,7 +1,7 @@
 ---
-title:                "Conversion d'une date en chaîne de caractères"
-html_title:           "Elm: Conversion d'une date en chaîne de caractères"
-simple_title:         "Conversion d'une date en chaîne de caractères"
+title:                "Convertir une date en chaîne de caractères"
+html_title:           "Gleam: Convertir une date en chaîne de caractères"
+simple_title:         "Convertir une date en chaîne de caractères"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Dates and Times"
@@ -10,36 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Qu'est-ce que & Pourquoi ?
 
-La conversion d'une date en chaîne de caractères est le processus de transformer une date au format informatique en une représentation plus lisible pour les humains. Les programmeurs le font souvent pour afficher des dates dans une interface utilisateur ou pour faciliter la manipulation de données de date dans leur code.
+La conversion d'une date en une chaîne de caractères consiste à changer la forme d'une date pour une représentation sous forme de texte. Les programmeurs le font pour des raisons de clarté visuelle et de facilité de manipulation.
 
-## Comment le faire:
-
-Voici un exemple de code en Elm pour convertir une date en chaîne de caractères:
+## Comment faire :
+Pour convertir une date en chaîne de caractères en Elm, vous utilisez la bibliothèque `elm/time` et `elm/regex` comme suit:
 
 ```Elm
-import Date exposing (Date)
-import Date.Format exposing (format)
+import Time exposing (Posix)
+import Regex exposing (Regex, contains, fromString)
 
--- Définir la date à convertir
-date = Date.fromFields 2020 6 25
+dateToString : Posix -> String
+dateToString date =
+    let
+        regex : Regex
+        regex =
+            fromString "(\\d{4})-(\\d{2})-(\\d{2})"
+                |> Maybe.withDefault Regex.never
 
--- Convertir la date en chaîne de caractères au format jour/mois/année
-dateString = format "dd/MM/yyyy" date
-
--- Afficher le résultat
-main = text dateString -- output: "25/06/2020"
+        dateString : String
+        dateString =
+            Time.toIsoString date
+    in
+    if contains regex dateString then
+        dateString
+    else
+        "Invalid date format"
 ```
 
-## Zoom sur:
+Les dates sont converties en ISO String et la nouvelle chaîne de caractères est retournée.
 
-La conversion de dates en chaînes de caractères a été un défi commun pour les programmeurs depuis les premiers jours de l'informatique. Avant l'avènement de bibliothèques de fonctions dédiées comme celle disponible en Elm, les programmeurs devaient souvent écrire leurs propres fonctions de conversion de date.
+## Plongée en Profondeur 
 
-Dans d'autres langages de programmation, il existe plusieurs alternatives pour la conversion de dates en chaînes de caractères, telles que l'utilisation de fonctions intégrées ou de bibliothèques tierces spécifiques à chaque langage.
+Historiquement, Elm utilisait la bibliothèque `elm-lang/core` pour la gestion du temps, mais à partir de Elm 0.19, la bibliothèque `elm/time` a été introduite pour une meilleure précision et une prise en charge de la norme ISO 8601.
 
-L'implémentation d'une fonction de conversion de date en chaîne de caractères peut varier en fonction du langage et de l'utilisation souhaitée. En Elm, la fonction de format fournie par la bibliothèque Date.Format prend en charge plusieurs formats de date différents et s'adapte automatiquement à la langue et à la région spécifiées.
+En alternative, vous pouvez utiliser la bibliothèque `justinmimbs/date` pour gérer les dates en Elm.
 
-## À voir également:
+Concernant l'implémentation, la fonction `toIsoString` convertit une date Posix en chaîne ISO 8601, et le regex est utilisé pour valider cette chaîne. Si elle correspond, elle est retournée, sinon un message d'erreur est renvoyé.
 
-Pour plus d'informations sur la conversion de dates en chaînes de caractères en Elm, vous pouvez consulter la documentation officielle Elm Date.Format: https://package.elm-lang.org/packages/elm/core/latest/Date-Format. Vous pouvez également trouver des exemples de conversions de dates dans différents formats sur des forums de discussion et des sites de tutoriels en ligne pour Elm.
+## Voir Aussi 
+Voici des liens vers des ressources associées pour mieux comprendre la manipulation des dates en Elm :
+
+1. Documentation Elm Time : https://package.elm-lang.org/packages/elm/time/latest/
+2. Documentation Elm Regex : https://package.elm-lang.org/packages/elm/regex/latest/
+3. ISO 8601 Date and Time Format : https://www.w3.org/TR/NOTE-datetime
+4. Bibliothèque Github justinmimbs/date : https://github.com/justinmimbs/date

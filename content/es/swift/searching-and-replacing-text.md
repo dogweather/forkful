@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Swift: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,23 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Buscar y reemplazar texto es una práctica común entre los programadores en la que se busca una determinada cadena de texto y luego se la reemplaza con otra. Esto es útil para realizar cambios en el código de manera rápida y eficiente. Además, puede ayudar a corregir errores o actualizar una parte del código en múltiples lugares.
+# Búsqueda y Reemplazo de Texto en Swift
 
-## Cómo hacerlo:
+## ¿Qué & Por Qué?
+
+Buscar y reemplazar texto son operaciones comunes en programación. Nos permiten mantener y reestructurar gran cantidad de contenido textual con mínimo esfuerzo.
+
+## Cómo se hace:
+
+Aquí te dejamos un ejemplo básico de cómo buscar y reemplazar texto con Swift.
+
+En Swift, usamos el método `replacingOccurrences(of:with:)` para reemplazar texto:
+
 ```Swift
-// Buscar y reemplazar "Hello" con "Hola" en una cadena de texto
-let mensaje = "Hello, world!"
-let mensajeReemplazado = mensaje.replacingOccurrences(of: "Hello", with: "Hola")
-print(mensajeReemplazado)
-// Output: "Hola, world!"
+let textoOriginal = "Hola, mundo!"
+let textoModificado = textoOriginal.replacingOccurrences(of: "mundo", with: "Swift")
+print(textoModificado)
 ```
 
-## Profundizando:
-Buscar y reemplazar texto ha sido una función básica en la mayoría de los editores de texto desde hace décadas, y ahora también se utiliza ampliamente en lenguajes de programación. Además de la función `replacingOccurrences`, también existen otras formas de buscar y reemplazar texto en Swift, como `replacingCharacters` que permite reemplazar un carácter específico o `replacingRange` que permite reemplazar un rango de caracteres.
+Este código imprimirá:
 
-Para aquellos usuarios que prefieren interfaces gráficas, también existen herramientas externas que permiten buscar y reemplazar texto en múltiples archivos al mismo tiempo, como Sublime Text o Atom.
+```Swift
+Hola, Swift!
+```
 
-## Ver también:
-- Documentación oficial de Swift sobre `replacingOccurrences`: https://developer.apple.com/documentation/swift/string/3126933-replacingoccurrences
-- Comparación entre diferentes herramientas de búsqueda y reemplazo de texto: https://www.slant.co/topics/2178/~best-search-and-replace-tools
+## Análisis Profundo
+
+Historia: Swift introdujo el método `replacingOccurrences(of:with:)` desde su lanzamiento, lo que facilitó el proceso de búsqueda y reemplazo.
+
+Alternativas: Podrías usar expresiones regulares en Swift para lograr resultados más complejos, aunque eso implicaría aprender otro lenguaje de programación.
+
+Detalles de la implementación: `replacingOccurrences(of:with:)` funciona realizando una búsqueda en todo el texto para encontrar cada ocurrencia de la cadena de búsqueda, y luego reemplazar cada ocurrencia con la cadena de reemplazo.
+
+## Ver También
+
+1. La [documentación oficial de Swift](https://developer.apple.com/documentation/swift/string/2893961-replacingoccurrences) sobre el método `replacingOccurrences(of:with:)`.
+2. [Una introducción a las expresiones regulares en Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift).
+3. [Un video tutorial](https://www.youtube.com/watch?v=HZ7TOJ61V70) sobre cómo usar el método `replacingOccurrences(of:with:)`.

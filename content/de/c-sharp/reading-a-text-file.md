@@ -1,6 +1,6 @@
 ---
 title:                "Eine Textdatei lesen"
-html_title:           "C#: Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
 simple_title:         "Eine Textdatei lesen"
 programming_language: "C#"
 category:             "C#"
@@ -11,43 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Textdateien zu lesen bedeutet, den Inhalt einer Textdatei in das Speichermodell deines Programms zu laden. Programmierer tun dies häufig, um Daten für ihre Applikationen zu laden oder um mit externen Dateien zu interagieren.
 
-Das Lesen von Textdateien ist eine grundlegende Fähigkeit, die jedem Programmierer zur Verfügung stehen sollte. Es bezieht sich auf das Einlesen von Text aus einer Datei in ein Programm, um es zu verarbeiten oder auszugeben. Programmierer lesen Textdateien aus verschiedenen Gründen, darunter das Lesen von Einstellungen oder Konfigurationsdateien, das Lesen von Datenbank-Backups oder die Verwendung von externen Bibliotheken oder APIs, die Daten aus Textdateien benötigen.
-
-## Wie geht's?
-
-Das Lesen von Textdateien in C# ist einfach und unkompliziert. Hier ist ein Beispiel, das die Verwendung der eingebauten `File`-Klasse zeigt:
+## So geht's:
+Hier ist ein einfacher Code, um eine Textdatei in C# zu lesen. Der Folgende Code liest eine vorhandene Datei namens `Datei.txt` und gibt jeden Zeile auf der Konsole aus.
 
 ```C#
-using System.IO; // Importieren der File-Klasse
+using System.IO;
 
-// Pfad zur Textdatei
-string path = @"C:\Users\Benutzer\Documents\textdatei.txt";
+string[] lines = File.ReadAllLines(@"C:\PfadZurDatei\Datei.txt");
 
-// Textdatei lesen und Inhalt in eine Zeichenfolge speichern
-string text = File.ReadAllText(path);
-
-// Ergebnis ausgeben
-Console.WriteLine(text);
+foreach (string line in lines)
+{
+    Console.WriteLine(line);
+}
 ```
-
-Und hier ist die Ausgabe des obigen Codes:
+Wenn die `Datei.txt` zum Beispiel folgenden Inhalt hat: 
 
 ```
-Dies ist der Inhalt der Textdatei.
+Hallo Welt!
+Das ist eine Textdatei.
 ```
 
-## Tief eintauchen
+Der Ausgang wäre dann:
 
-Das Lesen von Textdateien ist eine grundlegende Fähigkeit, die schon seit den frühen Tagen der Programmierung verwendet wird. Früher war das Lesen von Textdateien durch das Betriebssystem stark eingeschränkt, aber heutzutage gibt es viele verschiedene Möglichkeiten, dies zu tun. Eine Alternative zur Verwendung der `File`-Klasse ist das Verwenden von Stream-Objekten wie `StreamReader` und `FileStream`, die mehr Flexibilität und Kontrolle bieten. Wenn Sie mehr über die Unterstützung von Textdateien in C# erfahren möchten, können Sie sich die offizielle Dokumentation von Microsoft ansehen.
+```
+Hallo Welt!
+Das ist eine Textdatei.
+```
+## Tiefer eintauchen:
+Historisch gesehen, waren Textdateien eine der ersten Methoden zur Speicherung von digitalen Informationen und sind immer noch beliebt aufgrund ihrer Einfachheit und Flexibilität. Alternative Methoden zum Lesen von Textdateien in C# beinhalten den `StreamReader` oder das asynchrone Lesen mit `ReadAllLinesAsync`.
 
-Sie können auch andere Sprachen oder Plattformen ausprobieren, um Textdateien zu lesen. In Python gibt es das eingebaute `open()`-Statement, mit dem Dateien geöffnet und gelesen werden können, und in Java können Sie die `Scanner`-Klasse verwenden, um Textdateien zu lesen. Es gibt auch spezifische Tools und Bibliotheken für das Lesen von Textdateien in bestimmten Dateiformaten, wie z.B. das `csv`-Modul in Python für CSV-Dateien.
+Das `File.ReadAllLines` ist eine High-Level-Methode, die die Datei öffnet, jede Zeile liest und dann die Datei schließt. Es ist einfach zu benutzen, aber nicht so flexibel wie ein `StreamReader`, der mehr Kontrolle ermöglicht, aber ebenso komplizierter ist.
 
-Es ist wichtig zu beachten, dass das Lesen von Textdateien in verschiedenen Betriebssystemen unterschiedlich sein kann, da sie möglicherweise unterschiedliche Zeichencodierungen oder Zeilenenden verwenden. Stellen Sie daher sicher, dass Ihr Code plattformunabhängig ist und mit allen möglichen Szenarien umgehen kann.
-
-## Siehe auch
-
-- Microsoft Dokumentation zu Datei-Handling in C#: https://docs.microsoft.com/de-de/dotnet/standard/io/
-- Offizielle Dokumentation von Microsoft zur `File`-Klasse: https://docs.microsoft.com/de-de/dotnet/api/system.io.file?view=netframework-4.8
-- Python-Dokumentation zum Öffnen von Dateien: https://docs.python.org/3/library/functions.html#open
-- Java-Dokumentation zu Scannern und Dateien: https://docs.oracle.com/javase/8/docs/api/java/util/Scanner.html
+## Siehe Auch:
+- [Microsoft Dokumentation: Textdateien lesen](https://docs.microsoft.com/de-de/dotnet/csharp/programming-guide/file-system/how-to-read-from-a-text-file)
+- [DotNetPerls: Textdateien lesen](https://www.dotnetperls.com/readfile)
+- [Stackoverflow: Alternativen zum Lesen von Textdateien](https://stackoverflow.com/questions/507863/when-to-use-file-readalllines-over-streamreader-in-c)

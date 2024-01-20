@@ -1,6 +1,6 @@
 ---
 title:                "パターンに一致する文字を削除する"
-html_title:           "Bash: パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
 simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,21 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なんで？
-パターンにマッチする文字を削除することは、プログラマーがコードをより効率的にするために使用する方法です。この方法を使うことで、不要な文字や文字列を簡単に削除することができます。
+## 何となぜ？
 
-## 方法：
-Bashには、パターンにマッチする文字を削除するコマンドが用意されています。例えば、以下のように使用します。
+文字を削除するとは、特定のパターンに一致する文字列を削除することを意味します。これは、ファイルから不必要な文字やコードを取り除くためにプログラマがしばしば行います。
 
+## 実施方法：
+
+Bashでは`tr`コマンドを使ってパターンに一致する文字を削除できます。
 ```Bash
-#文字列に "abc" が含まれている場合に削除する
-echo "abcedf" | sed 's/abc//g'
+echo "Hello, World!" | tr -d '!'
 ```
-このコマンドを実行すると、"abcedf" という文字列から "abc" が削除され、結果として "edf" が出力されます。
+出力：
+```Bash
+Hello, World
+```
+上記の例では、"!"符号を削除しています。
 
-## 深層掘り下げ：
-この方法は、実際には非常に古い時代から使われてきた方法です。もともとは文字列を検索して置換するためのテキスト処理ツールとして開発されましたが、今ではプログラミング言語やコマンドラインでよく利用されています。代替方法としては、パターンマッチングや正規表現などが挙げられますが、Bashのコマンドを使うことで簡潔に文字列の削除を行うことができます。また、実装の詳細としては、Bashの内部的にはsedというコマンドを使用していることが知られています。
+## ディープダイブ：
+ 
+`tr`コマンドは、Unix系OSで初めて登場しました。そのため、パターンマッチングで文字を削除するのに最適な選択肢の一つだと言えます。しかし、`sed`や`awk`などの他のツールも同じ任務を達成することが可能です。
 
-## みてね：
-- [sedコマンドの公式ドキュメント](https://www.gnu.org/software/sed/manual/sed.html)
-- [Bashの公式ドキュメント](https://www.gnu.org/software/bash/manual/bash.html)
+この削除操作が実際に何を行っているかたどると、Bashは入力文字列を走査し、削除すべき文字を見つけた場合に、その文字を結果から除外します。これはまた、Bashがテキストストリームを操作する非常に強力な方法の一つでもあります。
+
+## 参考資料:
+
+- [Bash scriptingの基本的なトピック](https://developer.ibm.com/jp/languages/bash/articles/ja-bash/)
+- [`tr`コマンドについての詳細解説](https://www.thegeekstuff.com/2012/12/linux-tr-command/)
+- [`sed`と`awk`の使用方法](https://www.tutorialspoint.com/unix/unix-regular-expressions.htm)

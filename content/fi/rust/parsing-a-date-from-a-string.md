@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Rust: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,22 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärän parsiminen merkkijonosta tarkoittaa päivämäärän muuttamista tietokoneen ymmärtämään muotoon. Ohjelmoijat tekevät tätä helpottaakseen päivämäärien käsittelyä ja muokkaamista sovelluksissa.
+## Mitä & Miksi?
 
-## Kuinka:
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa merkkijonossa olevan päivämäärän muuntamista ohjelmoitavaan, käsiteltävään muotoon. Tätä tehdään, jotta päivämäärätiedot voitaisiin käsitellä ja hyödyntää tehokkaammin ohjelmassamme.
+
+## Miten se tehdään:
+
+Alla on koodiesimerkki siitä, miten päivämäärä jäsentää Rust-ohjelmointikielellä.
+
 ```Rust
-let date_string = "13.9.2021";
-let date = date_string.parse::<DateTime<Utc>>().unwrap();
-println!("{}", date.format("%d %B, %Y"));
+use chrono::{DateTime, Utc, NaiveDate, NaiveDateTime};
+use chrono::format::ParseError;
+
+fn parse_date_from_string(date: &str) -> Result<NaiveDateTime, ParseError> {
+    NaiveDate::parse_from_str(date, "%Y-%m-%d").map(|d| d.and_hms(0, 0, 0))
+}
+
+fn main() {
+    let date = "2022-03-24";
+    let parsed_date = parse_date_from_string(date).unwrap();
+    println!("Parsed date: {}", parsed_date);
+}
 ```
+Koodin esimerkistä suorittaminen tulostaisi `Parsed date: 2022-03-24T00:00:00`.
 
-Tässä esimerkissä muutamme "13.9.2021" merkkijonon tietokoneen ymmärtämään DateTime-muotoon ja tulostamme päivämäärän muodossa "13 syyskuuta, 2021".
+## Syvällisempi sukellus:
 
-## Syvempi sukellus:
-Päivämäärän parsiminen merkkijonosta on ollut haasteellista ohjelmointitaikojen alusta asti, sillä eri maissa ja kulttuureissa käytetään erilaisia päivämäärämuotoja. Useimmiten parsiminen tehdään apumoduulien avulla, kuten Rustin Chrono-moduulilla. Myös koodien optimointi ja virheiden hallinta ovat tärkeitä osia päivämäärän parsimisessa.
+Historiallisesti päivämäärän jäsentäminen on aina ollut tarpeellista, koska päivämäärätiedot ovat usein merkkijonomuodossa ja niitä on voitu käsitellä helpommin ohjelmoitavassa muodossa.
 
-## Katso myös:
-- [Rustin virallinen dokumentaatio DateTime-muodosta ja sen käytöstä](https://doc.rust-lang.org/std/datetime/struct.DateTime.html)
-- [Rust-kirjastoja päivämääränmuutoksiin](https://arewelearningyet.com/datetime-library/)
-- [Päivämäärän parsimisen vaihtoehtoiset lähestymistavat](https://distrans.org/2018/08/23/swallow-waterfall/)
+Vaihtoehtoisia tapoja päivämäärän jäsentämiseen Rust-ohjelmassa ovat esimerkiksi "time" ja "dateparser" -kirjastot. Valinta noiden vaihtoehtojen välillä riippuu käyttäjän vaatimuksista ja ohjelmiston tarpeesta.
+
+Rust käyttää `chrono`-kirjastoa päivämäärän jäsentämiseen merkkijonosta. `chrono` tarjoaa joukon päivämäärän ja ajan käsittelyominaisuuksia, kuten muotoilun ja jäsentämisen.
+
+## Tutustu myös:
+
+Toisiin aiheeseen liittyviin lähteisiin:
+
+- [Rust Book](https://doc.rust-lang.org/book/)
+- [Chrono Crate Docs](https://docs.rs/chrono/0.4.19/chrono/)
+- [Rust by Example](https://doc.rust-lang.org/rust-by-example/std_misc/chrono.html)
+- [About Parsing in Rust](https://stevedonovan.github.io/rustifications/2017/09/09/parsing-in-rust.html)

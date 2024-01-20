@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "Go recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "Go"
 category:             "Go"
@@ -11,38 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Debugging is an essential part of programming. To understand and fix errors in your code, you need to see what is happening as it runs. Printing debug output allows you to display information in your program as it is being executed. This helps you identify and diagnose errors, making your code more efficient and reliable.
+
+Debugging output refers to the data, from print statements, that aids in identifying, isolating, and fixing software issues. It's done simply because it's a vital part of programming: coders need feedback on how their script performs and to rectify mishaps.
 
 ## How to:
-Go provides a built-in package called `fmt` that allows you to print debug output. Let's look at some examples of how to use it:
+
+In Go, the fmt package provides handy functions for printing debug output. Here's a simple example:
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Hello, Go!")
+}
 ```
-Go using fmt
-
-// Print a single value
-fmt.Println("Hello World!")
-
-// Print multiple values
-fmt.Println("Hello,", "World!", "How", "are", "you?")
-
-// Print values with formatting
-fmt.Printf("The value of x is %d\n", 10)
+Upon running, our program will output:
 ```
-Output:
+Hello, Go!
 ```
-Hello World!
-Hello, World! How are you?
-The value of x is 10
+Now, for a debugging case we often print the values of variables:
+
+```Go
+package main
+
+import "fmt"
+
+func main() {
+    var a = 20
+    var b = 30
+    fmt.Println("a:", a, "b:", b)
+}
+```
+Output would be:
+
+```
+a: 20 b: 30
 ```
 
-## Deep Dive:
-Before the `fmt` package existed, programmers would use `println()` to print debug output. However, this function only accepts a single argument and doesn't allow for formatting. The `fmt` package was introduced in Go to provide a more versatile and convenient way to print output.
+## Deep Dive
 
-There are also alternative options for printing debug output in Go, such as using the `log` package or a third-party logging library like `logrus` or `zap`. These options may offer additional features or customization, but the `fmt` package is sufficient for most debugging needs.
+Historically, programming languages have varied in their debugging approaches; some automatically print debugging information when conditions are met, while others, including Go, leave it up to the programmer as and when needed. 
 
-Internally, the `fmt` package uses the `io.Writer` interface to send output to the standard output stream, which by default is your terminal. This allows the `fmt` package to also be used for logging to files or other streams.
+As an alternative to fmt for debugging, one could use `log` package or third-party tools like Delve for more advanced debugging operations.
+
+The implementation of fmt's print functions in Go convert various data types to a string representation that is human-readable. It's important to note that print statements slow down a program and should ideally not make their way to a production environment.
 
 ## See Also:
-- [Go fmt Package Documentation](https://pkg.go.dev/fmt)
-- [Go Log Package Documentation](https://pkg.go.dev/log)
-- [Logrus Package](https://github.com/sirupsen/logrus)
-- [Zap Package](https://github.com/uber-go/zap)
+
+- Official Go docs on the fmt package: [golang.org/pkg/fmt/](https://golang.org/pkg/fmt/)
+- In-depth video on Go debugging: [youtube.com/watch?v=HsQxctfT-8Y](https://www.youtube.com/watch?v=HsQxctfT-8Y)
+- Delve, a debugger for the Go programming language: [github.com/derekparker/delve](https://github.com/go-delve/delve)

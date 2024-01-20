@@ -10,26 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-＃＃何か＆なぜ？
-将来の日付や過去の日付を計算するとは、ある日付から指定された日数だけ前や後の日付を求めることです。 プログラマーがこれを行うのは、例えばイベントの日程を自動で計算するなど、日付に関わる処理を効率的に行うためです。
+# 過去や未来の日付を計算する、「なぜ」と「何の？」
 
-＃＃方法：
+過去や未来の日付を計算するとは、単にある特定の日付に何日、何週間、または何年を足したり引いたりすることです。プログラマーはこれをシステムが予定、リマインダー、スケジューリングタスクを処理できるようにするために行います。
+
+# どうやって：
+
+Elmで過去や未来の日付を計算するための例を以下に示します。
+
 ```Elm
--- 将来の日付を計算する例
-import Time
+import Time.Extra exposing (..)
+import Time exposing (..)
 
-Time.add Time.Day 7 (Time.millisToPosix 1589841600000) -- 2020年5月19日から7日後の日付が計算される 
-
--- 過去の日付を計算する例
-import Time
-
-Time.sub Time.Week (-2) (Time.millisToPosix 1589841600000) -- 2020年5月19日から2週間前の日付が計算される
+main =
+    Task.perform Time.here
+        (\time ->
+            let
+                (_, nextWeek) =
+                    add (week 1) time
+                        |> toTime
+                        |> Date.fromTime
+                        |> Maybe.withDefault (Date (Date.year 2021) Month.Jan 1)
+                        |> Date.toCalendarDate
+            in
+            nextWeek
+                |> toString
+                |> Debug.log "A week from now will be"
+        )
 ```
 
-＃＃深堀り：
-日付を計算する方法は、歴史的には太陽暦や暦の仕組みに関わる問題から生まれてきました。しかし、現在はプログラミング言語やライブラリによって効率的に計算することができます。また、便利なツールとしてJavaScriptの「Dateオブジェクト」やPythonの「datetimeモジュール」などがあります。
+# ディープダイブ：
 
-＃＃関連リンク：
-- [Elm Timeモジュールドキュメント](https://package.elm-lang.org/packages/elm/time/latest/)
-- [JavaScript Dateオブジェクトドキュメント](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Python datetimeモジュールドキュメント](https://docs.python.org/ja/3/library/datetime.html)
+1. 歴史的な視点から,既存のパッケージで計算を行う前に、自己実装をしなければならない日がありました。しかし、現在ではElmのTime.Extraライブラリなど、日付から一定の間隔を加えるための関数を提供する多くのパッケージがあります。
+
+2. Elmの他の日付操作ライブラリの代替としては、`justinmimbs/date-extra`があります。これは、さまざまな日付形式と難しいテストケースを処理する際に役立つ一連のユーティリティを提供します。
+
+3. 日付を未来や過去に計算する実装の詳細を探ると、まず、現在の日付と時間が取得され、それに特定の間隔が追加されます。その結果は新しい日付オブジェクトとなり、それが最終的に文字列に変換されて出力されます。
+
+# 参考資料：
+
+以下に関連するリソースへのリンクを示します:
+- Elmの公式ドキュメンテーション（日付と時間）: [リンク](https://package.elm-lang.org/packages/elm/time/latest/)
+- GitHub上の`justinmimbs/date-extra`パッケージ : [リンク](https://github.com/justinmimbs/date-extra)
+- Elmの日付や時間に関するチュートリアル: [リンク](https://elmprogramming.com/datetime.html)

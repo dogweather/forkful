@@ -1,6 +1,6 @@
 ---
 title:                "Hitta längden på en sträng"
-html_title:           "Kotlin: Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
 simple_title:         "Hitta längden på en sträng"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,26 +11,24 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hitta längden på en sträng är helt enkelt att bestämma hur många tecken som finns i en sträng. Detta är en vanlig operation inom programmering, eftersom det ofta är nödvändigt att hantera och behandla textdata.
+Att hitta längden på en sträng innebär att räkna antalet tecken i den. Vi behöver det för att navigera, manipulera, och upprepa genom strängar i vår kod.
 
 ## Så här gör du:
-Kotlin har en inbyggd metod som heter `length`, som kan användas för att hitta längden på en sträng. Detta kan göras på olika sätt beroende på hur strängen är definierad.
+I Kotlin hittar du längden på en sträng med `.length` egenskapen. Till exempel, låt oss prova med strängen "Hej Världen".
 
 ```Kotlin
-val string1 = "Välkommen!"
-println(string1.length) // Output: 10
-
-val string2 = "Hej"
-println(string2.length) // Output: 3
+fun main() {
+    val greeting = "Hej Världen"
+    println(greeting.length)
+}
 ```
+Detta skriver ut "11" eftersom strängen består av 11 tecken.
 
-## Djupdykning:
-Att hitta längden på en sträng är en vanlig operation inom många programmeringsspråk. Detta görs ofta för att kontrollera gränser för inmatning av data eller för att behandla text på olika sätt.
+## Djupdykning
+(1) Konceptet att hitta längden på en sträng har sina rötter från de tidigaste programmeringsspråken. (2) I vissa språk, till exempel C, krävde det att iterera genom strängen tills du nådde ett null-tecken. Men i Kotlin är det bara en egenskap som du kan komma åt direkt. (3) `.length` är faktiskt en Kotlin 'synthetic extension property' på JVM:ens `java.lang.String.length()`, vilket innebär att det enkelt kan komma åt antalet Unicode-tecken i strängen.
 
-En alternativ metod för att hitta längden på en sträng är att använda `StringTokenizer` i Java, men Kotlin gör det enklare genom sin inbyggda `length` metod.
-
-Det är också viktigt att notera att längden på en sträng beräknas baserat på antalet tecken och inte antalet ord.
-
-## Se även:
-- [Kotlin Standard Library - Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-- [String length vs. array size in Java](https://stackoverflow.com/questions/2665550/string-length-vs-array-size-in-java)
+## Se även
+För mer information och exempel rekommenderar vi att du kollar på följande resurser:
+- Kotlin Dokumentation om strängar: [Sträng i Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
+- In-depth on `.length`: [`.length` in Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+- Video Tutorial om strängmanipulation i Kotlin: [Strängmanipulation i Kotlin](https://www.youtube.com/watch?v=M0bPxyRo4Vg)

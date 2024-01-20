@@ -1,7 +1,7 @@
 ---
-title:                "Å konvertere en dato til en streng"
-html_title:           "Fish Shell: Å konvertere en dato til en streng"
-simple_title:         "Å konvertere en dato til en streng"
+title:                "Konvertere en dato til en streng"
+html_title:           "Arduino: Konvertere en dato til en streng"
+simple_title:         "Konvertere en dato til en streng"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Konvertere en dato til en streng i Fish Shell
+
 ## Hva & Hvorfor?
+Å konvertere en dato til en streng betyr å endre formatet fra en datatyper til tekst. Programmerere utfører dette for å øke lesbarheten og for å forenkle datalagring og -behandling.
 
-Å konvertere en dato til en streng er en vanlig oppgave for programmerere. Dette betyr rett og slett å gjøre om en dato (som kan være i form av tall eller tekst) til en mer lesbar og forståelig format som tekststreng. Dette er nyttig når man for eksempel skal vise datoen i et brukergrensesnitt eller når man skal lagre datoen i en database.
-
-## Hvordan:
-
-I Fish Shell kan du enkelt konvertere en dato til en streng ved å bruke kommandoen `date` etterfulgt av `%Y-%m-%d` for å spesifisere ønsket format. Her er et eksempel på en dato konvertert til en streng:
+## Hvordan gjøre det:
+Du kan bruke unix-dato kommandoen til å konvertere dato til streng i Fish Shell. Her er et eksempel:
 
 ```Fish Shell
-date -f "%Y-%m-%d" 2019-04-17
+set -l now (date "+%Y-%m-%d %H:%M:%S")
+echo $now
 ```
-Eksempel på output: `2019-04-17`
+Eksemplet ovenfor vil vise en utgang som dette:
 
-Du kan også inkludere klokkeslett ved å legge til `%H:%M:%S`, som vist i eksempelet under:
 ```Fish Shell
-date -f "%Y-%m-%d %H:%M:%S" 2019-04-17T14:30:00
+2022-03-05 14:21:40
 ```
-Eksempel på output: `2019-04-17 14:30:00`
+## Dypdykk
+Historisk sett har utviklere skrevet kompliserte algoritmer for håndtering av datoer og tider, men dagens programmeringsspråk og skall som Fish gir innebyggede hjelpere for dette formålet.
 
-## Dykk dypere:
+Et alternativ til denne tilnærmingen kan være å bruke `strftime`-funksjonen, som gir mer finkornet kontroll over det resultatformatet.
 
-Konvertering av dato til streng har vært en viktig oppgave helt siden datamaskiner ble brukt til å håndtere datoer. Tidligere var det vanlig å bruke ASCII-tegn som representerer tall til å lage datoer, men med utviklingen av mer komplekse datamaskiner ble det nødvendig å standardisere formater for datoer. Alternativer til hvordan man kan konvertere datoer til strenger inkluderer biblioteker som Moment.js og PHP's date-funksjon.
+Implementeringsdetaljer spesielle for Fish Shell inkluderer at lokale variabler opprettes med `set -l` tastene, og kommandoer kan inkluderes i parentesene for å skape dem dynamisk.
 
-For å konvertere en dato i Fish Shell, bruker programmet `strftime` som er en del av PHP, et populært programmeringsspråk som ofte brukes i webutvikling.
+## Se Også
+For mer informasjon, ta en titt på følgende kilder:
 
-## Se også:
-
-- [Fish Shell sin offisielle dokumentasjon om `date` kommandoen](https://fishshell.com/docs/current/cmds/date.html)
-- [Moment.js dokumentasjon for å konvertere datoer til strenger](https://momentjs.com/docs/)
-- [PHP sin `date` funksjon dokumentasjon](https://www.php.net/manual/en/function.date.php)
+1. Fish Shell offisielle dokumentasjon: [https://fishshell.com/docs/current/index.html.](https://fishshell.com/docs/current/index.html.)
+2. Dato-kommando detaljer: [https://linux.die.net/man/1/date.](https://linux.die.net/man/1/date.)
+3. Forstå grown-ups' datoer og tid: [https://yourbasic.org/golang/format-parse-string-time-date-example/.](https://yourbasic.org/golang/format-parse-string-time-date-example/.)

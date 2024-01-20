@@ -1,7 +1,7 @@
 ---
-title:                "Analizando una fecha de una cadena"
-html_title:           "Bash: Analizando una fecha de una cadena"
-simple_title:         "Analizando una fecha de una cadena"
+title:                "Analizando una fecha a partir de una cadena de texto"
+html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
+simple_title:         "Analizando una fecha a partir de una cadena de texto"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Parsing de fecha es un término técnico que se refiere a tomar una fecha escrita en formato de texto y convertirla en un formato de fecha reconocible por una computadora. Los programadores hacen esto para poder manipular y utilizar fechas en sus códigos de manera efectiva.
+El análisis de una fecha a partir de una cadena es el proceso de recuperación de una fecha a partir de un texto. Los programadores lo hacen para facilitar el procesamiento de la fecha por parte de los sistemas informáticos.
 
-## Cómo hacerlo:
+## Como hacerlo:
 
-El parsing de fecha en Bash se puede realizar utilizando la herramienta `date` y su argumento `--date`. Por ejemplo, para convertir una fecha en formato de texto a un formato de fecha específico, puedes usar el siguiente comando:
-
-```Bash
-date --date="2021-07-15" +"%m/%d/%Y"
-```
-Esto producirá un output de `07/15/2021`, indicando que la fecha ha sido parseada exitosamente.
-
-También puedes utilizar la opción `-d` para indicar que la fecha a ser parseada está en un formato específico. Por ejemplo:
+Bash nos proporciona una herramienta llamada `date` para analizar la fecha. Aquí se muestra cómo usarla.
 
 ```Bash
-date -d "20 julio 2021" +"%Y/%m/%d"
+fecha="31-12-2021"
+fecha_formateada=$(date -d"$fecha" +"%Y-%m-%d")
+
+echo $fecha_formateada
 ```
-Esto generará un resultado de `2021/07/20` ya que se ha especificado que la fecha está escrita en formato DD MMMM YYYY.
 
-## Profundizando:
+El output será:
+```Bash
+2021-12-31
+```
 
-El parsing de fecha ha sido una tarea importante para programadores desde los inicios de la informática, ya que permite trabajar con fechas y manejarlas de manera efectiva. Dependiendo del lenguaje de programación, puede haber diferentes métodos y funciones para realizar el parsing de fecha.
+Aquí, `-d` permite a `date` interpretar la fecha en diferentes formatos y `+"%Y-%m-%d"` formatea la fecha en el formato que especificamos.
 
-Otra herramienta popular en Bash para realizar operaciones de fecha y tiempo es `awk`, la cual también puede ser utilizada para parsear fechas. Sin embargo, la herramienta `date` es más específica y fácil de utilizar para este propósito.
+## Profundizando
 
-Además, el parsing de fecha puede ser de gran utilidad en tareas como generar informes financieros, realizar análisis de datos, o automatizar procesos basados en fechas.
+En el pasado, los programadores tenían que hacer mucho trabajo manual para analizar las fechas. Bash simplifica este proceso con la herramienta `date`.
 
-## Ver también:
+Existen alternativas a `date` en Bash. Por ejemplo, puedes usar `awk` o `sed` para manipular cadenas y analizar la fecha.
 
-Si deseas aprender más sobre parsing de fecha en Bash, puedes consultar la documentación oficial de `date` y `awk`.
+Mayormente la implementación se basa en las bibliotecas subyacentes del sistema operativo, en el caso de Bash en Unix, principalmente glibc o cualquier otra biblioteca de C que el sistema este utilizando.
 
-- https://www.gnu.org/software/gawk/manual/html_node/Time-Functions.html#Time-Functions
-- https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html#date-invocation
+## Ver También
+
+- [Comandos de la fecha de Bash en Linux Geeks](https://linuxhint.com/bash_date_command/)
+- [Análisis de fecha de cadena en Stackoverflow](https://stackoverflow.com/questions/192249/how-do-i-parse-command-line-arguments-in-bash)
+- [Manipulando cadenas en Bash](https://tldp.org/LDP/abs/html/string-manipulation.html)

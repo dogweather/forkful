@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "PHP: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Crear un archivo temporal en PHP es la acción de generar un archivo en el sistema que se utilizará temporalmente para almacenar información. Los programadores pueden necesitar crear estos archivos para realizar operaciones de lectura y escritura de datos de manera más eficiente, ya que los archivos temporales son más sencillos y rápidos de manejar que otros tipos de almacenamiento.
+Crear un archivo temporal es el proceso de producir un archivo de corta duración para el almacenamiento de datos transitorios. Los programadores hacen esto para administrar la memoria de manera eficiente y para la manipulación de datos que no necesitan ser persistentes.
 
 ## ¿Cómo hacerlo?
 
+Crear un archivo temporal en PHP es bastante simple, utilizando la función `tmpfile()`.
+
 ```PHP
-$tempFile = tempnam(sys_get_temp_dir(), 'prefix_'); // Crear un archivo temporal con prefijo
-echo $tempFile; // Imprimir la ubicación del archivo temporal
+<?php
+$temporal = tmpfile();
+
+fwrite($temporal, "Hola, Mundo Temporal!");
+
+rewind($temporal);
+// Leer y mostrar el contenido 
+echo fread($temporal,1024); 
+
+fclose($temporal); // esto elimina el archivo
+?>
 ```
 
-La función `tempnam()` de PHP toma dos parámetros: la ruta del directorio temporal del sistema y un prefijo (opcional). Al ejecutarla, se creará un archivo con un nombre aleatorio y se devolverá su ubicación, que se puede almacenar en una variable para su uso posterior. Este archivo se eliminará automáticamente cuando se cierre el script.
+Este código creará un archivo temporal, le escribirá "Hola, Mundo Temporal!", lo mostrará y luego cerrará el archivo (y por lo tanto eliminará el archivo temporal). 
 
-## Profundizando
+## Inmersión profunda
 
-Esta práctica se remonta a los primeros días de la informática y aún se utiliza en la programación moderna. Los archivos temporales también son una forma segura de compartir datos entre diferentes aplicaciones y procesos, ya que tienen permisos de acceso restringidos. Además, en lugar de crear un archivo temporal, los programadores también pueden usar funciones como `tempfile()` o `fopen()` para generar un recurso temporal en lugar de un archivo físico.
+Historia breve: La función de creación de archivos temporales ha existido desde PHP 4 y ha sido una parte integral de la manipulación de archivos y la administración de memoria en PHP.
+
+Alternativas: En lugar de `tmpfile()`, otra opción es usar `tempnam()` que crea un nombre de archivo único en un directorio específico. Esta es una buena opción si quieres controlar dónde se crea el archivo temporal.
+
+Detalles implementación: `tmpfile()` crea un archivo en el directorio de archivos temporales del sistema, con un nombre de archivo único para evitar conflictos. El archivo se borra automáticamente cuando se cierra (es decir, cuando el script PHP termina o cuando se llama a `fclose()`).
 
 ## Ver también
 
-- [Documentación oficial de PHP sobre creación de archivos temporales](https://www.php.net/manual/en/function.tempnam.php)
-- [Uso de archivos temporales en programación](https://www.programmersought.com/article/28058450665/) (en inglés)
-- [Ejemplo de implementación de archivos temporales en una aplicación web](https://medium.com/@colinrubbert/php-tmp-file-security-e5fd4aecc2be/) (en inglés)
+Funciones de manipulación de archivos PHP en el manual de PHP - [PHP: filesystem - Manual](https://www.php.net/manual/es/book.filesystem.php)
+
+PHP tmpfile() Function - [PHP: tmpfile - Manual](https://www.php.net/manual/es/function.tmpfile.php)
+
+Función PHP tempnam() - [PHP: tempnam - Manual](https://www.php.net/manual/es/function.tempnam.php)

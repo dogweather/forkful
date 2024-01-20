@@ -1,6 +1,6 @@
 ---
 title:                "Sökning och ersättning av text"
-html_title:           "Java: Sökning och ersättning av text"
+html_title:           "Arduino: Sökning och ersättning av text"
 simple_title:         "Sökning och ersättning av text"
 programming_language: "Java"
 category:             "Java"
@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att söka och ersätta text är ett vanligt förekommande arbetsflöde inom programmering. Det innebär helt enkelt att ersätta en viss bit av text med en annan bit. Det kan vara till nytta när man behöver uppdatera en stor mängd kod eller när man vill korrigera felaktig syntax.
+## Vad & Varför?
+Att söka och ersätta text i kod innebär att vi identifierar specifika strängar i en större textmassa och byter ut dem mot något annat. Programmerare gör detta regelbundet för att snabbt ändra variabelnamn, korrigera felstavningar eller modifiera kodens funktionalitet.
 
-## Så här: 
-För att söka och ersätta text i Java, används vanligtvis metoden ```String.replace()```. Denna metod tar två parametrar, den första är den ursprungliga strängen och den andra är den nya strängen som den ska ersätta med. Ett enkelt exempel kan se ut så här:
+## Så här gör du:
+Java ger oss metoden `replace()` tillgänglig i `String` klassen för att utföra sökning och ersättning. Här är ett exempel:
 
 ```Java
-String original = "Hej världen!";
-String ersatt = original.replace("Hej", "Hallo");
-System.out.println(ersatt);
+public class Main {
+   public static void main(String[] args) {
+      String str = "Hej, jag älskar Java programmering!";
+      String replacedStr = str.replace("Java", "Pyton");
+      System.out.println(replacedStr);
+   }
+}
 ```
-> Output: Hallo världen!
+När du kör koden kommer utdata att vara:
+```
+"Hej, jag älskar Pyton programmering!"
+```
+I det här exemplet har vi bytt ut ordet "Java" med "Pyton" i strängen.
 
-## Djupdykning: 
-Söka och ersätta text är ett grundläggande koncept inom programmering och har funnits sedan de tidigaste dagarna av datorer. Alternativa sätt att utföra samma uppgift inkluderar Regex-uttryck och användning av andra Java-strängmetoder som ```String.replaceAll()```.
+## Djupare Dyk:
+Söka och ersätta text har historiskt sett varit en viktig del av programmering sedan dess begynnelse. Från Unix's `sed` kommando till moderna infödda metoder i de flesta programmeringsspråk, är det mänsklig önskan att automatisera repetitiva uppgifter.
 
-Det är också viktigt att vara försiktig vid sökning och ersättning av text, eftersom det kan ha oavsiktliga konsekvenser på annan kod som använder samma ord eller fraser. Dessutom bör man vara noga med att använda rätt matchningsmönster så att endast önskade delar av texten ersätts.
+I Java, kan du också använda `replaceAll()` metoden som tar ett reguljärt uttryck som det första argumentet. Det ger fler alternativ för sökningen, men kan vara överdriven för enkla användningsfall.
 
-## Se även: 
-Läs mer om sökning och ersättning av text i Java på [Oracles officiella dokumentation](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html#replace(java.lang.CharSequence,%20java.lang.CharSequence)). Om du är intresserad av Regex-uttryck, kan du läsa mer på [denna resurs](https://www.javatpoint.com/java-regex).
+Om vi ser till implementationen, använder `replace()` metoden intern i Java en loop för att iterative över varje karaktär i strängen och gör substitutionen om matchning hittas.
+
+## Se även:
+Fler resurser om detta ämne finns på:
+
+- `String` klassdokumentation: [https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html)
+- Java Tutorials – Regular Expressions: [https://docs.oracle.com/javase/tutorial/essential/regex/](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- "Söka och ersätta med Regular Expressions" – Stack Overflow: [https://stackoverflow.com/questions/16510/how-do-i-do-a-find-and-replace-in-java-using-regular-expressions](https://stackoverflow.com/questions/16510/how-do-i-do-a-find-and-replace-in-java-using-regular-expressions)

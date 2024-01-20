@@ -1,7 +1,7 @@
 ---
-title:                "Téléchargement d'une page web"
-html_title:           "Haskell: Téléchargement d'une page web"
-simple_title:         "Téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -12,33 +12,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Qu'est-ce et pourquoi ?
 
-Télécharger une page web consiste à récupérer le contenu d'une page web et à le stocker localement pour une utilisation ultérieure. Les programmeurs le font souvent pour automatiser des tâches, comme l'extraction de données ou la mise à jour de contenu.
+Télécharger une page web, c'est récupérer et stocker localement son contenu HTML. Les programmeurs le font pour parser le contenu, extraire des informations, ou tester leur propre code. 
 
 ## Comment faire :
 
-Voici un exemple de code en Haskell pour télécharger une page web à l'aide de la bibliothèque "http-conduit". Le code suivant télécharge la page d'accueil de Google et affiche le code HTML correspondant.
+Jetez un œil à ce code Haskell simple pour télécharger une page web:
 
-```
-// Import de la bibliothèque requise
-import Network.HTTP.Conduit
-import qualified Data.ByteString.Lazy as L
+```Haskell
+import Network.HTTP.Simple
+import qualified Data.ByteString.Char8 as C
 
-// Télécharge la page d'accueil de Google
-let url = "http://www.google.com"
-request <- parseUrlThrow url
-response <- withManager $ httpLbs request
-// Afficher le code HTML
-L.putStrLn $ responseBody response
+main :: IO ()
+main = do
+    response <- httpBS "http://example.com"
+    C.putStrLn $ getResponseBody response
 ```
 
-Output : ```<!doctype html> <html ...```
+En lançant ce script, vous devriez voir le code HTML de "http://example.com" sur la console.
 
-## Plongée profonde :
+```Haskell
+<!doctype html>
+<html>
+<head>
+    ...
+</html>
+```
 
-Les programmeurs utilisent souvent des bibliothèques telles que "http-conduit" pour télécharger des pages web en raison de leur fiabilité et de leur compatibilité avec les normes web. D'autres options sont également disponibles, telles que "wget" en ligne de commande ou "Selenium" pour les tests automatisés. Les bibliothèques Haskell utilisent généralement des sockets réseau pour établir une connexion avec le serveur web et transférer le code HTML de la page demandée.
+## Exploration en profondeur
 
-## Voir aussi :
+Le téléchargement de pages Web a commencé avec l'émergence de HTTP en 1991, simplifié au fil des décennies avec diverses librairies dans de nombreux langages. En Haskell, on utilise souvent la librairie `Network.HTTP.Simple`. Il existe aussi d'autres alternatives, par exemple `http-client` pour des cas d'utilisation plus avancés.
 
-- Documentation de la bibliothèque "http-conduit" : https://hackage.haskell.org/package/http-conduit
-- Tutoriel pour télécharger une page web en utilisant Haskell : https://www.fpcomplete.com/blog/2017/07/using-http-conduit-downloading-web-pages-haskell
-- Comparaison des différentes bibliothèques de téléchargement web en Haskell : https://wiki.haskell.org/Libraries_for_HTTP
+Dans l'exemple précédent, `httpBS` fait une demande GET au lien fourni, le résultat est récupéré et imprimé dans la console. Les réponses HTTP sont manipulées comme des `ByteString`, un type de données efficace pour manipuler des octets bruts en Haskell.
+
+## Voir aussi
+
+1. [Tutoriel Haskell](https://learnxinyminutes.com/docs/haskell/)
+2. [Documentation de Network.HTTP.Simple](https://hackage.haskell.org/package/http-conduit-2.3.7.3/docs/Network-HTTP-Simple.html)
+3. [ByteString en Haskell](https://hackage.haskell.org/package/bytestring-0.10.8.2/docs/Data-ByteString.html)
+
+Ces ressources vous aideront à approfondir vos connaissances et à comprendre mieux l'interaction entre Haskell et le web.

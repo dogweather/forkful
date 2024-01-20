@@ -1,7 +1,7 @@
 ---
-title:                "「現在の日付を取得する」"
-html_title:           "Haskell: 「現在の日付を取得する」"
-simple_title:         "「現在の日付を取得する」"
+title:                "現在の日付の取得"
+html_title:           "Bash: 現在の日付の取得"
+simple_title:         "現在の日付の取得"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Dates and Times"
@@ -10,50 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## [何を？ & なぜ？]
+## 何とその理由？
 
-現在の日付を取得するとは、貴方が今そのコンピュータ上で何日目にいるか知ることです！プログラマーにとっては、コードをより優雅に、そしてより有用にするために日付を取得することが重要です。
+プログラミング言語Haskellで現在の日付を取得するとは、現在時刻から日付部分を抽出することを言います。これはログのタイムスタンプや日次レポートなど、日付情報が重要な場面で頻繁に行われます。
 
-## [方法：]
+## 手順:
+
+Haskellの標準ライブラリ`Data.Time`を使用して現在の日付を取得する基本的な方法を紹介します。
 
 ```Haskell
 import Data.Time.Clock
 import Data.Time.Calendar
-import Data.Time.LocalTime
-import System.Locale
-
-getCurrentDate :: IO (Integer, Int, Int)
-getCurrentDate = do
-    t <- getCurrentTime
-    let (year, month, day) = toGregorian $ utctDay t
-    return (year, month, day)
 
 main = do
-    (year, month, day) <- getCurrentDate
-    putStrLn $ "Today is " ++ show year ++ "/" ++ show month ++ "/" ++ show day
+    currentDay <- getCurrentTime >>= return . utctDay
+    print currentDay
 ```
 
-**出力:**
+このコードを実行すると、現在の日付がYYYY-MM-DD形式で出力されます（例:2021-05-20）。
 
-今日は 2021/11/25 です。
+## ディープダイブ:
 
-## [深く潜る]
+Haskellでは2001年のリリース以来、`Data.Time`パッケージが広く使用されています。他の選択肢としては古くから使われている`System.Time`ライブラリがありますが、現代のコードではほとんど使われていません。
 
-(1) 歴史的な背景:
+Haskellの日付取得関数は、実装の詳細を抽象化し、システムの時刻を素早く簡単に取得できます。しかし、この情報はUTC（協定世界時）であり、特定のタイムゾーンに変換したい場合には追加の変換が必要となります。
 
-日付や時刻の処理は、プログラミングにおいて重要な機能です。Haskellには、日付や時刻を扱うための標準モジュールが用意されており、データ型や関数が豊富に用意されています。
+## 関連情報:
 
-(2) 代替方法:
+より詳細な情報については以下のリンクを参照してください。
 
-Haskell以外にも、PythonやJavaScriptのような他の言語でも日付や時刻を取得することができます。また、「System.Time」モジュールを使用する方法もありますが、推奨されていません。
-
-(3) 実装の詳細:
-
-```getCurrentDate```関数は、```Data.Time.Clock```, ```Data.Time.Calendar```, ```Data.Time.LocalTime```, ```System.Locale```の4つのモジュールを使用しています。また、関数の定義には、```IO```モナドを使用していることに注意してください。
-
-## [参考リンク]
-
-- [Haskell公式ドキュメント](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/)
-- [日付と時刻の取得方法についてのStackOverflowの質問](https://stackoverflow.com/questions/14930054/haskell-how-can-i-get-a-current-day-month-year)
-- [Hoogleで検索する場合2021/11/25](http://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html#g:4)
-- [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell/Modules)
+* [HaskellのData.Timeライブラリ](https://hackage.haskell.org/package/time)
+* [タイムゾーン変換を伴う日付操作](https://stackoverflow.com/questions/13080592/whats-the-haskell-time-library-to-use)

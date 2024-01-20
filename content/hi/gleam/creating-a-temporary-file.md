@@ -1,7 +1,7 @@
 ---
-title:                "अस्थायी फ़ाइल बनाना"
-html_title:           "Gleam: अस्थायी फ़ाइल बनाना"
-simple_title:         "अस्थायी फ़ाइल बनाना"
+title:                "एक अस्थायी फ़ाइल बनाना"
+html_title:           "Arduino: एक अस्थायी फ़ाइल बनाना"
+simple_title:         "एक अस्थायी फ़ाइल बनाना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Files and I/O"
@@ -10,20 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या है और क्यों?
-Temporary file को create करना रोज़मर्रा की programming में एक common task है। यह काम उस समय किया जाता है जब हमारे पास अपनी temporary data को store करने का dedicated space नहीं है, और हम उसे temporary file के रूप में बना कर संग्रहीत करना चाहते हैं।
+## क्या और क्यों?
+तात्कालिक फ़ाइल बनाना एक ऐसी प्रक्रिया है जिसमें क्रिएट किया गया डाटा अस्थायी रूप से संग्रहीत होता है। प्रोग्रामर्स इसे डाटा का अस्थायी प्रवाहन, कंफिगरेशन सेटिंग्स, और डिबग करने के लिए करते हैं।
 
-## कैसे करें?
+## कैसे करें:
+यहां ग्लीम (Gleam) कोडिंग के कुछ उदाहरण:
+
 ```Gleam
-let { Ok, Err } = file.write_temporary("temp.txt", "Temporary file content")
+fn temporary_file() {
+  let temp_dir = std.os.temp_dir();
+  let (file, path) = std.io.new_temp_file(temp_dir, "gleam-temp-file").unwrap();
+  
+  println!("नई अस्थायी फ़ाइल {} बनाई गई है", path.display());
+}
 ```
 
-यह कोड temporary file "temp.txt" को create करेगा और उसमें "Temporary file content" लिखेगा। अगर कोई error होता है तो उसे Err में store किया जाएगा। जबकि अगर सब कुछ ठीक हो तो Ok में success message store हो जाएगा।
+यहां 'gleam-temp-file' नाम से एक नई अस्थायी फ़ाइल बनती है। आउटपुट：
+```
+नई अस्थायी फ़ाइल /tmp/gleam-temp-file-4fg1d बनाई गई है
+```
 
-## गहराई में जाएं
-Temporary file को create करने का concept वास्तव में unix-like operating systems से संबंधित है। ये operating systems process से associated हैं। जब process terminate होता है तो उसके साथ associated temporary file भी automatically delete हो जाता है। यह एक efficient way है अगर हम प्रोग्राम में temporary file को साफ़ करने का बार-बार burden से नहीं चाहते हैं।
+## गहरी झांकी
+1) हिस्टोरिकल कांटेक्स्ट: UNIX ऑपरेटिंग सिस्टम के प्रारंभिक दिवसों से अस्थायी फ़ाइलें उपयोगी प्रमाणित हैं। यह सिस्टम को भरोसेमंद रूप से चलाने और क्रैश से डाटा की सुरक्षा करने में सहायता करती हैं।
+2) विकल्प: फ़ाइल सिस्टम की जगह मेमोरी-आधारित विकल्प जैसे रैम डिस्क भी उपयोगी हो सकते हैं। इससे परफॉरमेंस बेहतर होती है, लेकिन आपा मेमोरी की सीमितताओं का सामना करने की संभावना भी होती है। 
+3) आवश्यकताएँ: अस्थायी फ़ाइलें अगर किसी सदस्य को विशेष अनुमतियाँ दी जाती हैं, यह सुनिश्चित करती हैं कि कोई अनधिकृत उपयोग नहीं हो सकता।
 
-## और देखें
-- [आधिक्य के बारे में जानें](https://github.com/lpil/gleam_stdlib/blob/master/lib/gleam_std/temporary/file.gleam#L88)
-- [दो alternatives भी विचार करें](https://github.com/lpil/gleam_stdlib/blob/master/lib/gleam_std/temporary/file.gleam#L15)
-- [temporary file को create करने के दूसरे तरीके](https://github.com/lpil/gleam_stdlib/blob/master/lib/gleam_std/temporary/file.gleam#L33)
+## और भी देखें
+1) ["अस्थायी फ़ाइलें में UNIX और Linux"](https://www.geekhideout.com/tempfiles.shtml)
+2) ["Gleam प्रोग्रामिंग भाषा की अधिक जानकारी"](https://gleam.run/tour/)
+3) ["अस्थायी फ़ाइलें बनाने का Secure तरीका"](https://www.ietf.org/rfc/rfc3779.txt)
+4) ["Gleam और अन्य भाषाओं की तुलना"](https://gleam.run/news/gleam-v0.8-released/)

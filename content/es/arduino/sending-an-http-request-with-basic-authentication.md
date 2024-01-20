@@ -10,78 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### ¿Qué & Por qué? 
-Enviar una solicitud HTTP con autenticación básica es una forma de proteger información confidencial al comunicarse con un servidor. Los programadores pueden utilizar esto para garantizar que solo los usuarios autorizados puedan acceder y enviar datos a su servidor.
+## ¿Qué es y Por Qué?
+El envío de una solicitud HTTP con autenticación básica en Arduino implica el envío de datos al servidor para verificar quién eres. Los programadores lo hacen para establecer una conexión segura con servidores web y otros dispositivos en línea.
 
-### Cómo:
-Utilizar la función `sendAuthenticationRequest()` para enviar una solicitud HTTP con autenticación básica en un Arduino. Asegúrese de incluir la biblioteca `WiFiClient.h` y establezca las credenciales del servidor en las variables `username` y `password`. Aquí hay un ejemplo de código y su posible resultado:
+## ¿Cómo hacerlo?
+Antes de nada, necesitarás la biblioteca ArduinoHttpClient. Instálala a través del Gestor de Bibliotecas en el IDE de Arduino.
 
-```
-#include <WiFiClient.h>
-
-const char* username = "usuario";
-const char* password = "contraseña";
-
-void setup() {
-  //Inicializar conexión WiFi
-  Serial.begin(9600);
-  delay(1000);
-  Serial.println("\nConectando a la red WiFi...");
-  WiFi.begin(ssid, pass);
-
-  //Esperar a que se establezca la conexión
-  while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    Serial.print(". ");
-  }
-  Serial.println("\n¡Conexión establecida!\n");
-}
-
-// Función para enviar la solicitud HTTP con autenticación básica
-void sendAuthenticationRequest() {
-  WiFiClient client;
-  const int httpPort = 80;
-  if (!client.connect(server, httpPort)) {
-    Serial.println("La conexión ha fallado.");
-    return;
-  }
-
-  //Solicitud HTTP
-  client.print(String("GET /data HTTP/1.1\r\n") +
-               "Host: " + server + "\r\n" +
-               "Authorization: Basic " + base64Authorization + "\r\n" +
-               "Connection: close\r\n\r\n");
-
-  //Esperar a la respuesta del servidor
-  while (client.connected()) {
-    String line = client.readStringUntil('\n');
-    if (line == "\r") {
-      break;
-    }
-  }
-  Serial.println("Solicitud enviada con éxito.");
-  client.stop();
-}
-
-void loop() {
-  sendAuthenticationRequest();
-  delay(5000); //Enviar solicitud cada 5 segundos
-}
+```Arduino
+#include <ArduinoHttpClient.h>
+#include <Ethernet.h>
+#include <SPI.h>
 ```
 
-Posible resultado en el monitor serial:
+Definimos las variables necesarias:
+```Arduino
+char server[] = "www.tuservidor.com";
+char auth[] = "dXNlcjpwYXNz";
+EthernetClient ethernet;
+HttpClient cliente = HttpClient(ethernet, server);
 ```
-Conectando a la red WiFi...
-¡Conexión establecida!
 
-Solicitud enviada con éxito.
+Para enviar una solicitud HTTP GET con autenticación básica, usamos el siguiente código:
+
+```Arduino
+cliente.beginRequest();
+cliente.get("/ruta");
+cliente.sendBasicAuth("usuario", "contraseña");
+cliente.endRequest();
+
+// lee la respuesta
+int statusCode = cliente.responseStatusCode();
+String respuesta = cliente.responseBody();
 ```
 
-### Deep Dive:
-Esta forma de autenticación básica se remonta a la década de 1990 y es una forma simple pero efectiva de proteger una conexión entre un cliente y un servidor. Otras formas de autenticación, como la autenticación de clave pública, son más seguras pero también más complejas de implementar en un Arduino.
+## Un Vistazo en Detalle
+Esta forma de autenticación se introdujo en los primeros días de la web. Sin embargo, ha sido reemplazada en gran medida por métodos más seguros como OAuth y OpenID en aplicaciones web modernas. Sin embargo, la autenticación básica todavía se usa con frecuencia en el control de dispositivos IoT, como Arduino.
 
-Además, asegúrese de que su servidor tenga configurada la autenticación básica y que las credenciales coincidan con las establecidas en su código de Arduino.
+Una alternativa para enviar una solicitud HTTP con autenticación básica es utilizar la biblioteca ESP8266HTTPClient en lugar de ArduinoHttpClient, cuya implementación es parecida pero esta se utiliza específicamente con ESP8266.
 
-### Ver también:
-- [Tutorial de Adafruit sobre autenticación básica en Arduino](https://learn.adafruit.com/esp8266-temperature-slash-humidity-webserver/basic-http-auth)
-- [Documentación oficial de Arduino sobre la función `WiFiClient`](https://www.arduino.cc/en/Reference/WiFiClient)
+Un detalle de implementación a tener en cuenta es que la autenticación básica no es segura por sí misma. Las credenciales se envían como texto sin cifrar, lo que podría ser interceptado fácilmente. Para garantizar la seguridad de la autenticación básica, siempre debes usarla con un protocolo seguro, como HTTPS.
+
+## Ver También
+ArduinoHttpClient: http://www.arduino.cc/en/Reference/ArduinoHttpClient
+ESP8266HTTPClient: https://github.com/esp8266/Arduino/tree/master/libraries/ESP8266HTTPClient
+HTTPS con Arduino: https://create.arduino.cc/projecthub/electropeak/esp8266-and-the-arduino-ide-part-2nd-control-led-from-webserver-929577

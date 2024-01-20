@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistaako hakemiston olemassaolon"
-html_title:           "Elm: Tarkistaako hakemiston olemassaolon"
-simple_title:         "Tarkistaako hakemiston olemassaolon"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Elm: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,31 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tarkistaa, onko hakemistoa olemassa, on yksinkertaisesti tarkistus, joka auttaa ohjelmoijia varmistamaan, että tarvitseva hakemisto on olemassa ennen kuin tehdään siihen liittyviä toimintoja. Tämä voi auttaa välttämään virheitä tai häiriöitä ohjelman suorittamisessa.
+## Mikä & Miksi? 
+Tarkistaminen, onko tiedostokansio olemassa, on prosessi jolla selvitetään, onko tietty kohde olemassa tiedostojärjestelmässä. Tätä tarvitaan usein ohjelmointitehtävissä, jotta voidaan estää tiedostojen tai sovelluksen virheet, jotka johtuvat olemattoman kansion käsittelystä.
 
-## Miten:
-Elmissa hakemistojen tarkistaminen tapahtuu käyttämällä puun hakemistoista vastaavaa moduulia. Tämä moduuli tarjoaa funktion, joka ottaa parametriksi hakemiston polun ja palauttaa Bool-tyypin arvon, joka kertoo onko hakemisto olemassa vai ei. Alla on esimerkki koodista:
+## Kuinka:
+Elm ei tue suoraan tiedostojärjestelmän kansioita koskevien tietojen käsittelyä, koska se on suunniteltu puhtaaksi funktio-ohjelmointikieleksi, joka painottaa turvallisuutta ja ennustettavuutta, ja jossa sivuvaikutuksia tulisi välttää.
 
 ```Elm
-import Directory exposing (exists)
-
-hakemistoPolku = "/kansio1/kansio2"
-
-onkoHakemistoOlemassa = exists hakemistoPolku
-
-case onkoHakemistoOlemassa of
-    True ->
-        "Hakemisto on olemassa."
-        
-    False ->
-        "Hakemistoa ei löydy."
+-- Elm-koodi, joka näyttää perusoperaation
+funktio = "Koodiesimerkki"
 ```
-Esimerkkikoodin output voi olla esimerkiksi "Hakemisto on olemassa.", jos hakemistoPolku vastaa olemassa olevaa hakemistoa, tai "Hakemistoa ei löydy.", jos hakemistoPolku vastaa hakemistoa, jota ei ole olemassa.
+Koska Elm ei tue suoraan tiedostojärjestelmän operaatioita, kansioiden tarkistaminen on toteutettava itse. Tämä voi tapahtua esimerkiksi viestimällä JavaScript-koodin kanssa, jolla on kyky suorittaa tiedostojärjestelmän tehtäviä, tai käyttämällä palvelimen puolen koodia ja HTTP-pyyntöjä.
 
-## Syvemmälle:
-Hakemistojen tarkistaminen on tärkeä osa ohjelmien toimintaa, sillä usein tarvitaan tietoa siitä, onko hakemisto olemassa ennen kuin suoritetaan siihen liittyviä toimintoja. Ennen Elm-versiota 0.19, hakemistojen tarkistaminen tapahtui File moduulin avulla. Elm 0.19 toi kuitenkin mukanaan puun hakemistoista vastaavan moduulin, joka helpottaa hakemistojen tarkistamista ja tarjoaa selkeämmän käyttöliittymän.
+## Syvällä tietoa:
+Menneisyydessä, kun ohjelmistot ja ohjelmointikielet olivat vähemmän kehittyneitä, tiedoston tai kansion olemassaolon tarkistaminen saattoi olla yksinkertainen operaatio. Nykyään, kuitenkin, tälläisten tietojen saaminen voi vaatia monimutkaisia menettelyjä, erityisesti sellaisissa turvallisissa ja puhtaissa ohjelmointikielissä, kuten Elm.
+
+Tämä ei tarkoita, että on mahdotonta tarkistaa, onko kansio olemassa Elm-ohjelmassa. Elm tukee viestintää muiden ohjelmointikieleiden, kuten JavaScriptin, kanssa. Tämä viestintä voi toteutua esimerkiksi Elm:n komennon `port` avulla.
+
+Vaihtoehtoisesti, voit käyttää HTTP-pyyntöjä tiedostojärjestelmä tietojen saamiseksi palvelimelta, jossa toimintoja ei ole rajoitettu samalla tavalla kuin Elm-koodissa.
 
 ## Katso myös:
-- [Elm Puun hakemistot](https://package.elm-lang.org/packages/elm/directory/latest/Directory)
-- [Elm File moduuli](https://package.elm-lang.org/packages/elm/file/latest/File)
+- [Elm:n virallinen opas](https://guide.elm-lang.org/)
+- [Elm: tiedostojen käsittely JavaScipt:ssä](https://elmprogramming.com/file-handling-in-javascript.html)
+- [HTTP-pyynnöt Elm:ssä](https://guide.elm-lang.org/effects/http.html)

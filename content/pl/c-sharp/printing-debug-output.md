@@ -1,7 +1,7 @@
 ---
-title:                "Wydrukuj wyjście debugowania"
-html_title:           "C#: Wydrukuj wyjście debugowania"
-simple_title:         "Wydrukuj wyjście debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,41 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Przykłady drukowania debugujących wyjść w C#
+# Wydrukowanie debugowania w C#
 
-## Czym jest i dlaczego?
+## Co i dlaczego?
 
-Drukowanie debugujących wyjść jest to proces polegający na wyświetlaniu informacji o działaniu programu podczas jego wykonywania w celu pomocy w debugowaniu i znajdowaniu błędów. Programiści robią to, aby lepiej zrozumieć jak ich kod działa i szybciej znaleźć potencjalne problemy.
+Drukowanie debugowania to narzędzie programistyczne, które umożliwia wyświetlanie informacji o funkcjonowaniu kodu. Programiści używają go do szybkiej identyfikacji i naprawy błędów w kodzie.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Dzięki poniższym przykładom w języku C# możesz zobaczyć jak łatwo jest dodać drukowanie debugujących wyjść do swojego kodu.
+Oto przykład jak użyć wydruku debugowania w C#.
 
 ```C#
-// Przykładowa funkcja, która drukuje debugujące wyjście
-void PrintDebugOutput(string message)
+using System.Diagnostics;
+ 
+public class TestClass
 {
-    Console.WriteLine("DEBUG: " + message);
+    public static void Main()
+    {
+        Debug.WriteLine("Uruchamianie testu");
+        
+        // tutaj jest część kodu do zdebugowania
+        
+        Debug.WriteLine("Zakończenie testu");
+    }
 }
-
-// Wywołanie funkcji w kodzie
-int result = 5 + 10;
-PrintDebugOutput("Wynik wynosi: " + result);
 ```
 
-Wynik:
-```
-DEBUG: Wynik wynosi: 15
-```
+Gdy uruchomisz ten program, zobaczysz tekst "Uruchamianie testu" i "Zakończenie testu" w oknie wyjścia.
 
-## Głębsza analiza
+## Zagłębianie się:
 
-Drukowanie debugujących wyjść jest popularną techniką używaną przez programistów od lat. Pierwotnie wykorzystywano do tego celu pisanie na konsoli, jednak z czasem powstały narzędzia i biblioteki, które ułatwiają i rozwijają możliwości drukowania debugujących wyjść. Alternatywami dla drukowania debugujących wyjść mogą być również debuggery i profiling tools. W C# istnieje również wiele wbudowanych funkcji i metod do generowania debugujących wyjść, takich jak Debug.WriteLine() czy Trace.WriteLine().
+Drukowanie debugowania ma długą historię w świecie programowania i jest powszechnie stosowane niezależnie od języka kodowania. W C#, Debug.WriteLine() jest najpopularniejszym narzędziem. Alternatywami mogą być Console.WriteLine() lub Trace.WriteLine(). Zasadnicza różnica polega na tym, że Debug.WriteLine() nie jest uwzględniane w finalnej kompilacji Release, a Console.WriteLine() i Trace.WriteLine() są. 
 
-W celu zwiększenia czytelności i wydajności kodu, zaleca się używanie warunków sprawdzających czy tryb debugowania jest włączony przed wywołaniem funkcji do drukowania debugujących wyjść. Można to zrobić za pomocą preprocesora #if DEBUG.
+## Zobacz również:
 
-## Zobacz również
+- [Debugger.Display attribute](https://docs.microsoft.com/pl-pl/dotnet/api/system.diagnostics.debuggerdisplayattribute?view=net-5.0)
+- [Debugger in Visual Studio](https://docs.microsoft.com/pl-pl/visualstudio/debugger/?view=vs-2019)
+- [Debugging Techniques and Tools](https://docs.microsoft.com/pl-pl/visualstudio/debugger/debugging-techniques-and-tools?view=vs-2019)
 
-- Dokumentacja C# o drukowaniu debugujących wyjść: https://docs.microsoft.com/en-us/dotnet/core/diagnostics/logging
-- Przewodnik po debugowaniu w C#: https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-feature-tour
-- Wprowadzenie do profilowania aplikacji w C#: https://docs.microsoft.com/en-us/visualstudio/profiling/beginners-guide-to-performance-profiling
+Oprócz tego polecam zagłębić się w zagadnienia debugowania i poznania różnych technik debugowania, które mogą przyspieszyć i ułatwić proces rozwijania oprogramowania.

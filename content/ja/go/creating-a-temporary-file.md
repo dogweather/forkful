@@ -1,6 +1,6 @@
 ---
 title:                "一時ファイルの作成"
-html_title:           "Go: 一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Go"
 category:             "Go"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？なぜ？
+## 何となぜ？
 
-一時ファイルを作成するとは、一時的にデータを保持するためにプログラマーが作成する一時的なファイルのことです。 私たちプログラマーは、データを一時的に保存したり、バックアップしたり、データの削除を回避するために、多くの場合一時ファイルを作成します。
+一時ファイルを作成するとは、一時的なデータ蓄積と予想外の結果を防ぐためのプロセスです。プログラマはデバッグや不要なディスク容量消費を減らすためにこれを行います。
 
-## 方法：
+## 使い方：
+
+一時ファイルの作成はGoの `ioutil` パッケージを利用します：
 
 ```Go
-// 一時ファイルを作成して、内容を書き込む方法
-file, err := ioutil.TempFile("", "sample")
-if err != nil {
-    panic(err)
-}
-defer os.Remove(file.Name())
+package main
 
-// ファイルにデータを書き込む
-_, err = file.WriteString("Hello world!")
-if err != nil {
-    panic(err)
+import (
+	"fmt"
+	"io/ioutil"
+)
+
+func main() {
+	tmpFile, err := ioutil.TempFile("", "sample-")
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println("Temporary File Created:", tmpFile.Name())
 }
 ```
 
-```Go
-// 既存のファイルを元に一時ファイルを作成する方法
-input, err := ioutil.ReadFile("existing_file")
-if err != nil {
-    panic(err)
-}
-err = ioutil.WriteFile("new_temp_file", input, 0644)
-if err != nil {
-    panic(err)
-}
-```
+これは、指定された接頭辞（"sample-"）を使用して、一時ファイルを作成するシンプルなコードです。そして、作成した一時ファイルのパスを表示します。
 
-## 深い掘り下げ：
+## 深掘り：
 
-一時ファイルが作成されるのは何十年も前からで、プログラマーにとって非常に便利な機能であると言えます。一時ファイルの代替として、メモリ内でデータを保持する方法や、別の名前でファイルを保存する方法もあります。一時ファイルは、ファイルシステムに直接影響を与えないため、データの削除を避けるのに便利です。
+一時ファイルの作成はLinuxプログラミングの一部として発展してきました。代替策として `os.CreateTemp` 関数も利用可能ですが、私たちは `ioutil.TempFile` の方が一般的に使用されていることを見てきました。
 
-Go言語では、一時ファイルを作成する際に一意の名前を生成するためにランダムな文字列が使用されます。また、一時ファイルはプログラムが終了した際に自動的に削除されるため、開発者は明示的に削除する必要はありません。
+また、一時ファイル作成時、Goは系統的なアプローチを取ります。まず、一時ディレクトリの場所を確認し（UNIX系システムでは通常 "/tmp"）、その後一意性を保証するためランダムな文字列を接頭辞または接尾辞として用います。
 
-## 関連情報：
+## 参考資料：
 
-- [ioutilのドキュメント](https://golang.org/pkg/io/ioutil/#TempFile)
-- [一時ファイルの作成についてのブログ記事](https://dev.to/nitish_the_techie/temporary-files-in-go-3c4k)
-- [一時ファイルの代替方法についてのスタックオーバーフローの質問](https://stackoverflow.com/questions/63913041/current-usage-for-temporary-files-in-go)
+Go基礎：[https://go.dev/tour/welcome/1](https://go.dev/tour/welcome/1)  
+IO Utilパッケージの使い方：[https://pkg.go.dev/io/ioutil](https://pkg.go.dev/io/ioutil)  
+OSパッケージの使い方：[https://pkg.go.dev/os](https://pkg.go.dev/os)

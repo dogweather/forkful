@@ -1,6 +1,6 @@
 ---
 title:                "Downloading a web page"
-html_title:           "Gleam recipe: Downloading a web page"
+html_title:           "Bash recipe: Downloading a web page"
 simple_title:         "Downloading a web page"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,45 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Downloading Web Pages in Gleam
-
 ## What & Why?
 
-Downloading a web page in programming is the act of retrieving the content of a web page from the internet. Programmers do this to incorporate data from websites into their own programs, or to scrape information for analysis or automation purposes.
+Downloading a web page refers to retrieving data from a specific URL and saving the resulting HTML file for later use. This lets programmers analyze, manipulate, or replicate the page's structure and content.
 
 ## How to:
 
-To download a web page in Gleam, we can use the `curl` module. First, we need to add it to our project dependencies:
+While Gleam itself does not support HTTP requests natively, it can utilize the power of Elixir or even Erlang within its environment to do so. Below is an example using Erlang's 'httpc' module:
 
 ```Gleam
-  gleam_deps = [
-    "lumihq/curl 0.8.0"
-  ]
-```
+import gleam/erlang
 
-Next, we can use the `curl` module's `get` function to specify the URL of the webpage we want to download. We can then use the `body` function to retrieve the content as a string and print it to the console.
+pub fn download_page(url: String) -> Result(BitString, Nil) {
+  let response = erlang.apply(
+    "httpc",
+    "request",
+    [tuple("get", url)
+  ])
 
-```Gleam
-import curl
-
-let url = "https://example.com"
-
-test "Downloading a webpage" {
-  let result = curl.get(url)
-  let content = result.body()
-  assert.equals(content, "This is the webpage content!")
+  case response {
+    Ok(tuple(_, tuple(_, _, body))) -> Ok(body)
+    Error(err) -> Error(Nil)
+  }
 }
 ```
 
-## Deep Dive:
+If you run this function with a valid URL, it will return the HTML contents of that page, or Error(Nil) if something went wrong.
 
-Downloading web pages has long been an essential task in programming, used for a variety of purposes such as data extraction, API integration, and web scraping. Historically, libraries like Python's `urllib` were popular for this task, but newer languages like Gleam offer more efficient and reliable methods.
+## Deep Dive
 
-Alternatives to using the `curl` module include using a web scraping tool like Selenium or using an HTTP client library such as `reqwest` for more complex web interactions.
+In early days of the web, downloading the raw HTML of a page was a common way to parse data from the web. Modern solutions often use a combination of APIs and JSON to accomplish the same tasks, but in certain cases, or where an API doesn't exist, downloading a web page can still be necessary.
 
-The `curl` module in Gleam is a wrapper around the cURL command-line tool, providing an ergonomic and safe API for downloading web pages without the need for external programs or dependencies.
+The code in Gleam is doing the heavy lifting using Erlang's httpc module underneath the hood, as Gleam runs on the Erlang virtual machine (BEAM). It is important to note that 'httpc' isn't necessarily the best HTTP client available, but it comes packaged with Erlang, and for simple GET requests like this, it's perfectly fine!
 
 ## See Also:
 
-- [Gleam Documentation on `curl`](https://gleam.run/modules/lumihq/curl/latest/)
-- [Comparison of cURL and `reqwest`](https://www.tecmint.com/curl-vs-wget-vs-httrack-best-linux-download-managers/)
+- Gleam Documentation: https://hexdocs.pm/gleam_erlang/gleam/erlang/index.html
+- Erlang's 'httpc' HTTP client documentation: http://erlang.org/doc/man/httpc.html
+- 'httpotion' - another popular HTTP client which can be used in Gleam: https://hexdocs.pm/httpotion/readme.html
+- JSON Parsing in Gleam: https://hexdocs.pm/gleam_erlang/gleam/erlang/index.html#json_decode/1

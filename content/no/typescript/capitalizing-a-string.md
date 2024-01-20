@@ -1,7 +1,7 @@
 ---
-title:                "Store bokstaver i en streng"
-html_title:           "TypeScript: Store bokstaver i en streng"
-simple_title:         "Store bokstaver i en streng"
+title:                "Sette stor forbokstav i en streng"
+html_title:           "TypeScript: Sette stor forbokstav i en streng"
+simple_title:         "Sette stor forbokstav i en streng"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Bogstavaktivering av Streng i TypeScript
+
 ## Hva & Hvorfor?
-Å kapitalisere en streng er å gjøre den første bokstaven stor. Dette gjøres ofte for å gjøre tekst mer leselig og ryddig. I programmering, spesielt i strings og variabelnavn, er det en vanlig praksis for å følge god kodekonvensjon.
 
-## Slik gjør du:
+'Bogstavaktivering' av en streng betyr å endre første bokstav av hver ord til en stor bokstav. Programmerere gjør dette for bedre lesbarethet og organisering av data, spesielt i tekstbehandlingssystemer.
+
+## Hvordan:
+
+Her er et enkelt eksempel på hvordan du kan gjøre det i TypeScript:
+
 ```TypeScript
-// Eksempel 1:
-const navn = "per hansen";
-console.log(navn.charAt(0).toUpperCase() + navn.slice(1));
-// Output: "Per hansen";
+function capitalize(s: string): string {
+  return s.split(' ')
+    .map(word => word[0].toUpperCase() + word.substr(1))
+    .join(' ');
+}
 
-// Eksempel 2:
-const fruit = "eple";
-console.log(fruit[0].toUpperCase() + fruit.slice(1));
-// Output: "Eple";
+console.log(capitalize("hei, hva skjer")); // Output: "Hei, Hva Skjer"
 ```
 
-## Dypdykk:
-Kapitalisering av strings ble først brukt i maskinlesing og maskinoversetting på tidlig 1950-tallet. I dag brukes det i de fleste programmeringsspråk, inkludert TypeScript. Det finnes også ulike metoder for å kapitalisere en streng, som for eksempel å bruke CSS for å style første bokstav.
+## Dypere dykk:
 
-## Se også:
-- [String.prototype.charAt()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
-- [String.prototype.toUpperCase()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase)
+Historisk har 'bokstavaktivering' av strenger blitt brukt i mange kontekster, ikke bare programmering. Det er vanlig i typografi, der første bokstaven i et avsnitt ofte blir gjort større for å indikere begynnelsen av en ny tanke.
+
+Det finnes flere alternative måter å gjøre denne handlingen på i forskjellige programmeringsspråk. I JavaScript kan det for eksempel gjøres med en kombinasjon av `charAt()` og `slice()` metoder:
+
+```TypeScript
+let string = 'hei, hva skjer';
+let result = string.charAt(0).toUpperCase() + string.slice(1);
+```
+
+Vær oppmerksom på at 'bogstavaktivering' handler om teksttransformasjon, ikke datamanipulasjon. Det vil si, vi endrer måten dataene vises på, men ikke deres underliggende verdi.
+
+## Se Også:
+
+- String-metoder i JavaScript: https://developer.mozilla.org/no/docs/Web/JavaScript/Reference/Global_Objects/String
+- En mer detaljert introduksjon til TypeScript: https://www.typescriptlang.org/docs/handbook/basic-types.html
+- Tekstformatering og -transformasjon i programmering: [knytte](https://www.tutorialsteacher.com/articles/transform-string-in-programming)

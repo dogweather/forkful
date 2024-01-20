@@ -11,31 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Å beregne en dato i fremtiden eller fortiden handler om å forflytte seg fra en spesifikk dato med en gitt varighet. Programmere gjør det for å håndtere tidssensitive oppgaver, som rollovers, påminnelser, eller tidslinje beregninger.
 
-Å beregne en dato i fremtiden eller fortiden er en viktig funksjon for programmerere. Den lar oss å utføre komplekse matematiske beregninger for å finne ut tidspunktet for hendelser eller til å planlegge fremtidige handlinger. Programmører bruker dette ofte til å lage tidssensitive applikasjoner eller lage algoritmer for å forutsi fremtidige hendelser.
-
-## Hvordan gjør man det?
-
-For å beregne en dato i Fish Shell må man bruke kommandoen `date`. Denne kommandoen tar to argumenter: datoen man ønsker å beregne fra og et offset i form av dager, uker eller måneder. Her er et eksempel på hvordan man kan beregne datoen 30 dager fra i dag:
-
+## Hvordan:
+Her er en enkel mate å beregne fremtidige eller tidligere datoer i Fish Shell:
+```Fish Shell
+set -l date (date -u "+%Y-%m-%dT%H:%M:%S")
+set -l future_date (date -u -d "$date + 7 day" "+%Y-%m-%dT%H:%M:%S")
+set -l past_date (date -u -d "$date - 7 day" "+%Y-%m-%dT%H:%M:%S")
+echo "Nåværende Dato: $date"
+echo "Fremtidig Dato: $future_date"
+echo "Tidligere Dato: $past_date"
 ```
-Fish Shell: date -d "today + 30 days"
-Resultat: Ma, 23 Jul 2018 13:36:19 CEST
+Utgang fra ovennevnte kode vil være noe som:
+```Fish Shell
+Nåværende Dato: 2022-05-12T14:30:15
+Fremtidig Dato: 2022-05-19T14:30:15
+Tidligere Dato: 2022-05-05T14:30:15
 ```
+## Dyp Dykk:
+1. Historisk Kontekst: Mange tidlige programmeringsspråk manglet innebygd dato- og tidsstøtte, så utviklere måtte implementere egne beregninger for tid og dato. I dag har de fleste programmeringsspråk innebygd støtte for dato- og tidsmanipulasjoner, og Fish Shell er intet unntak.
 
-Man kan også beregne datoen for en spesifikk hendelse, som for eksempel 5 dager før julaften:
+2. Alternativer: Selv om Fish Shell har innebygd funksjonalitet for å beregne en dato i fremtiden eller fortiden, er det også andre alternativer som kan være hensiktsmessige, avhengig av situasjonen. Du kan bruke andre Unix-baserte kommandolinjeverktøy som `awk`, `perl`, `python`, osv. eller du kan bruke tredjepartsbibliotek hvis du bruker et programmeringsspråk som Python, JavaScript eller Ruby.
 
-```
-Fish Shell: date -d "2018-12-24 - 5 days"
-Resultat: Tors, 20 Des 2018 00:00:00 CET
-```
+3. Implementasjon Detaljer: Ovennevnte Fish Shell kodebenytter Unix' "date"-kommando for å beregne fremtidige og tidligere datoer. Først, vi initialiserer en variabel "date" med den nåværende datoen i ISO 8601-format. Deretter lager vi "future_date" og "past_date" variabler ved å legge til eller trekke fra 7 dager fra "date". 
 
-## Dypdykk
-
-Funksjonen for å beregne en dato i Fish Shell er basert på GNU versjonen av `date` kommandoen. Dette betyr at den har flere funksjoner og muligheter som ikke er tilgjengelig i den standardversjonen som følger med Mac eller andre operativsystemer. Det finnes også alternative måter å beregne datoer på, som for eksempel å bruke Python programmeringsspråkets innebygde moduler. Det er viktig å merke seg at `date` kommandoen i Fish Shell kan variere i syntax og funksjonalitet fra andre skall som Bash eller Zsh.
-
-## Se også
-
-- [Fish Shell dokumentasjon](https://fishshell.com/docs/current/cmds/date.html)
-- [GNU `date` kommandodokumentasjon](https://www.gnu.org/software/coreutils/manual/html_node/Examples-of-date.html)
-- [Python `datetime` modul dokumentasjon](https://docs.python.org/3/library/datetime.html)
+## Se Også:
+Her er noen nyttige lenker relatert til dette emnet:
+1. Fish Shell Dokumentasjon: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+2. Dato og tid i Shell Scripting: [https://bash.cyberciti.biz/time-and-date/working-with-date-and-time-in-bash/](https://bash.cyberciti.biz/time-and-date/working-with-date-and-time-in-bash/)
+3. WWikipedia's ISO 8601 artikkel: [https://en.wikipedia.org/wiki/ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)

@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "PowerShell: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,32 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-
-Web-sivun lataaminen tarkoittaa sen tiedon tallentamista, joka löytyy tietyn verkkosivun takaa. Web-kehittäjät usein lataavat web-sivuja saadakseen tarvitsemiaan tietoja ja hyödyntääkseen niitä omassa työssään.
+## Mikä & Miksi?
+Web-sivun lataaminen tarkoittaa sen sisällön hankkimista verkon yli omalle koneelle. Ohjelmoijat lataavat web-sivuja automatisoidakseen tiedon keräämisen tai suorittaakseen muutoksia sivun koodissa.
 
 ## Kuinka:
+Lataa web-sivu PowerShell-ohjelmointikielellä seuraavasti:
 
 ```PowerShell
-# Lataa web-sivu ja tallenna se muuttujaan
-$webSivu = Invoke-WebRequest -Uri "www.esimerkkisivu.com"
+# Määritellään sivun URL-osoite
+$url = "http://www.example.com"
 
-# Näytä web-sivun otsikko
-$webSivu.ParsedHtml.title
+# Kutsutaan Invoke-WebRequest -komentoa ladataksemme sivun
+$page = Invoke-WebRequest -Uri $url
 
-# Näytä web-sivun kaikki linkit
-$webSivu.Links | Select-Object -ExpandProperty href
-
-# Tallenna web-sivun sisältö tiedostoon
-$webSivu | Out-File -FilePath "sivunsisalto.html"
+# Tulostetaan lataamamme sivun HTML-koodi
+$page.Content
 ```
 
-## Syvällisempi sukellus:
+Näytölle tulisi tulostua lataamasi sivun HTML-koodi.
 
-Web-sivujen lataamisella on pitkä historia, joka juontaa juurensa internetin alkuaikoihin. Nykyään on olemassa myös muita tapoja ladata web-sivuja, kuten HTTP GET, PHP ja Python -skriptit. PowerShell antaa meille mahdollisuuden ladata ja käsitellä web-sivuja yksinkertaisella ja tehokkaalla tavalla.
+## Syvempi sukellus
+Historiallisesti web-sivun lataaminen oli monimutkaista ja vaati työläitä skriptejä. Nykyään PowerShellin ja muiden nykyaikaisten kieliä tarjoavien työkalujen ansiosta prosessi on yksinkertaisempi ja nopeampi.
 
-## Katso myös:
+Mitä tulee vaihtoehtoihin, on olemassa lukuisia muita tapoja ladata web-sivuja, kuten cURL tai wget, jotka molemmat ovat yhtä päteviä, mutta niiden käyttö saattaa olla monimutkaisempaa.
 
-- [PowerShellin dokumentaatio](https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/07-formatting-objects?view=powershell-7.1)
-- [Lisätietoja HTTP GET -pyynnöistä](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/GET)
-- [PHP:n avulla web-sivujen lataaminen](https://www.php.net/manual/en/function.file-get-contents.php)
+Implementointitietoja: latauspäätöksen täytyy ottaa huomioon monta asiaa. Jos esimerkiksi ladataan suuria tiedostoja, on otettava huomioon aika ja mahdollinen datamaksu. Lisäksi on syytä tarkistaa, salliiko web-sivun omistaja sen lataamisen.
+
+## Katso myös
+- PowerShellin Invoke-WebRequest -dokumentaatio: [https://docs.microsoft.com/en-us/powershell](https://docs.microsoft.com/en-us/powershell)
+- cURL: [https://curl.haxx.se](https://curl.haxx.se)
+- wget: [https://www.gnu.org/software/wget](https://www.gnu.org/software/wget)

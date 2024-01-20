@@ -1,7 +1,7 @@
 ---
-title:                "Virheilmoituksen tulostaminen"
-html_title:           "Javascript: Virheilmoituksen tulostaminen"
-simple_title:         "Virheilmoituksen tulostaminen"
+title:                "Debug-tulosteen tulostaminen"
+html_title:           "Bash: Debug-tulosteen tulostaminen"
+simple_title:         "Debug-tulosteen tulostaminen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Testing and Debugging"
@@ -10,22 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Tulostus debug-tulosteeseen on ohjelmoinnin tapa lähettää tietoja ohjelman suorituksen aikana, jotta kehittäjät voivat havaita mahdollisia virheitä tai ongelmia. Tämä auttaa heitä korjaamaan koodia ja parantamaan ohjelmiston suorituskykyä.
+# Debug-tulosteen tulostaminen JavaScriptissa
 
-## Kuinka tehdä:
-Käytä Javascriptillä console.log()-funktiota tulostamaan viestejä debug-tulosteeseen. Voit myös käyttää console.error()-funktiota virheiden tulostamiseen tai console.warn()-funktiota varoituksien tulostamiseen. Esimerkiksi:
+## Mitä & Miksi?
+Debug-tulosteen tulostaminen on koodin lähettämää viestiä ohjelmoinnin aikana. Ohjelmoijat käyttävät sitä tunnistaakseen ja korjatakseen virheitä koodissa.
+
+## Kuinka Toimii:
+Käytä `console.log()`-funktiota tulostaaksesi viestejä konsoliin:
+
+```Javascript
+console.log("Hello, World!");
+```
+
+Tämä tulostaa:
 
 ```
-let nimi = "Matti";
-console.log("Hei " + nimi);
+Hello, World!
 ```
 
-Tämä tulostaisi debug-tulosteeseen "Hei Matti".
+## Deep Dive:
+Debug-tulosteen tulostaminen on olennainen osa ohjelman kehitystä. Suosittu JavaScriptin `console.log()` -funktio on peräisin Netscape Navigator -selaimen JS-moottorista. Sen avulla voit tulostaa monentyyppisiä tietoja, välittämättä siitä, onko se kokonainen objekti vai yksittäinen muuttuja.
 
-## Syvemmälle:
-Tulostus debug-tulosteeseen on tärkeä ominaisuus kaikille ohjelmointikielille, ja Javascript ei ole poikkeus. Se auttaa kehittäjiä tunnistamaan ja korjaamaan virheitä sekä parantamaan koodin suorituskykyä. On myös muita tapoja tulostaa debug-tulosteeseen, kuten käyttämällä konsolia selaimessa tai erityisiä debuggaus- ja kehitystyökaluja.
+Vaihtoehtoina `console.log()`:lle ovat `console.debug()`, `console.info()`, `console.warn()` ja `console.error()`, joiden avulla voidaan erottaa debug-viestin vakavuustasot.
 
-## Katso myös:
-- [MDN Web Docs - Debugging JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Debugging)
-- [W3Schools - JavaScript Debugging](https://www.w3schools.com/js/js_debugging.asp)
+Kuitenkin, pidä mielessä, että liiallinen konsoliin tulostaminen voi hidastaa suorituskykyä, erityisesti silloin kun tulostetaan suuria tietomääriä tai kun tulostetaan monimutkaisia objekteja, joissa on paljon syväkopiointia.
+
+## Katso Myös:
+Seuraavat linkit tarjoavat lisätietoja ja kontekstia:
+
+1. MDN: Console - https://developer.mozilla.org/fi/docs/Web/API/Console
+2. JavaScript Info: Debugging - https://javascript.info/debugging-chrome
+3. TechRepublic: Remove console.log to improve JS performance - https://www.techrepublic.com/article/how-to-improve-javascript-performance-by-removing-console-log-statements/

@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "Ruby: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,30 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か？
+# 日付を文字列に変換する：Ruby編
 
-Rubyでは、日付を文字列に変換することができます。日付を文字列に変換するとは、日付の形式を変更することを指します。プログラマーは、このような変換を行うことで、テキスト形式の日付をデータベースに保存したり、ユーザーに表示したりすることができます。
+## 何となぜ？
+
+日付を文字列に変換するとは、日付データを人間が理解しやすいテキスト形式で表示することです。これはデータの読みやすさを高めたり、異なる日付形式間での互換性を実現したりするためにプログラマーがよく行います。
 
 ## 方法：
 
-Rubyの```strftime```メソッドを使用することで、日付を文字列に変換することができます。以下のコードを参考にしてください。
+Rubyでは、date 库を使用して日付を文字列に変換します。
 
-```ruby
-date = Date.new(2021, 9, 1)
-puts date.strftime("%Y年%m月%d日")
-#=> 2021年09月01日
+```Ruby
+require 'date'
+
+d = Date.today
+puts d.to_s
+```
+出力：
+
+```Ruby
+"2022-02-15"
 ```
 
-```strftime```メソッドでは、日付を任意の形式でフォーマットすることができます。詳細なフォーマット指定子については、公式ドキュメントを参照してください。
+また、strftimeメソッドを使って日付フォーマットをカスタマイズすることもできます。
 
-## 詳細：
+```Ruby
+puts d.strftime("%d/%m/%Y")
+```
+出力：
 
-日付を文字列に変換する方法は、プログラミング言語によって異なります。Rubyの場合は、組み込みの```strftime```メソッドを使用することができますが、他の言語ではライブラリを使用する必要があるかもしれません。
+```Ruby
+"15/02/2022"
+```
 
-また、日付を文字列に変換する際には、ロケールによって表示が異なることに注意が必要です。例えば、日本では月と日の表記が西洋と異なるため、適切に変換する必要があります。
+## 詳細:
 
-## 関連リンク：
+Rubyのstrftimeメソッドは過去にCで導入され、あらゆる種類の日付と時間の形式を生成するための枠組みを提供します。
 
-- [Rubyの公式ドキュメント（strftimeメソッド）](https://docs.ruby-lang.org/en/3.0.0/DateTime.html#method-i-strftime)
-- [strftimeについてのブログ記事](https://tando-re.com/ruby/date-string/)
-- [ロケールについての説明（日本語）](https://www.sharcnet.jp/help/index.php/UNIX%E3%83%A6%E3%83%86%E3%82%A3%E3%83%AA%E3%83%86%E3%82%A3%E3%81%AE%E8%AA%9E%E5%BD%99%E6%84%8F%E5%91%B3)
+同種の方法として、RailsのI18n.lメソッドがあります。これは特定のロケールで日付を文字列に変換します。
+
+実装の詳細では、Date#to_s メソッドは内部的に ISO 8601 形式（yyyy-mm-dd）で日付を出力します。一方strftimeメソッドでは、文字列フォーマットの指示子を使用して出力形式を制御できます。
+
+## 参照：
+
+以下のリンクには、日付と文字列の変換に関するより深い情報があります：
+
+- Ruby Docs: [Date](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
+- Stack Overflow: [How to convert a date to a string in Ruby](https://stackoverflow.com/questions/5410682/how-to-convert-a-date-to-a-string-in-ruby)
+- Ruby Guides: [Ruby strftime method](https://www.rubyguides.com/2015/12/ruby-time/)

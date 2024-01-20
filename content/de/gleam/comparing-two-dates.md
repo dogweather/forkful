@@ -1,7 +1,7 @@
 ---
-title:                "Zwei Daten vergleichen"
-html_title:           "Gleam: Zwei Daten vergleichen"
-simple_title:         "Zwei Daten vergleichen"
+title:                "Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## Was & Warum?
+Das Vergleichen von zwei Daten ermöglicht es uns, festzustellen, welches Datum früher oder später ist. Dies ist in der Programmierung nützlich, um zeitbasierte Funktionalitäten wie Terminerinnerungen, Zeitpläne oder Fristberechnungen zu implementieren.
 
-Vergleichen von zwei Daten ist eine gebräuchliche Programmieraufgabe, bei der zwei Datumsangaben miteinander verglichen werden, um herauszufinden, welches Datum früher oder später liegt. Diese Aufgabe ist wichtig, um das Verhalten von Programmen zu steuern, die von Zeitangaben abhängig sind.
+## So geht's:
+In Gleam können wir das `time` Modul verwenden, um zwei Daten zu vergleichen. Im folgenden Beispiel werden wir zwei Daten miteinander vergleichen:
 
-# Wie gehts?
+```gleam
+import gleam/time.{..}
 
-Man kann zwei Datumsangaben verwenden, um sie miteinander zu vergleichen. Mit der eingebauten Funktion `Date.compare` in Gleam können wir zwei Zeiten direkt vergleichen. Die Funktion gibt `Order` zurück, das angibt, ob das erste Datum früher (`LT`), später (`GT`) oder gleich (`EQ`) dem zweiten Datum ist.
+fn main() {
+  let datum1 = time.now()
+  let datum2 = time.next_second(datum1)
 
-```Gleam
-let now = Date.now()
-let lastWeek = Date.from_calendar(2020, 7, 21)
-let order = Date.compare(now, lastWeek)
+  let ist_früher = time.is_before(datum1, datum2)
+
+  case ist_früher {
+    True -> io.println("Datum1 ist früher als Datum2!")
+    False -> io.println("Datum1 ist nicht früher als Datum2!")
+  }
+}
+```
+Die Ausgabe könnte so aussehen:
+
+```
+Datum1 ist früher als Datum2!
 ```
 
-Das obige Beispiel zeigt, wie wir `Date.compare` verwenden, um das aktuelle Datum `now` mit dem Datum der vergangenen Woche `lastWeek` zu vergleichen. In diesem Fall würden wir `GT` erhalten, da `lastWeek` früher als `now` ist.
+## Tiefer Tauchen:
+Die Fähigkeit, Daten zu vergleichen, wurde erstmals in der frühen Ära der Computersysteme entwickelt und ist seitdem ein fundamentaler Aspekt der Programmierung. 
 
-# Tiefere Einblicke
+Es gibt verschiedene Alternativansätze zum Vergleich von Daten - einige Sprachen bieten eingebaute Datenvergleichsoperatoren (wie "<", ">" und "==" in Python), während andere, wie Gleam, spezifische Funktionen für den Zweck.
 
-Das Vergleichen von Daten ist eine gängige Programmieraufgabe, die jedoch in der Vergangenheit zu einigen Problemen führte. In älteren Programmiersprachen wie C und Java mussten wir komplexe Berechnungen durchführen, um zwei Daten zu vergleichen. Dank moderner Sprachen wie Gleam wird dieser Prozess viel einfacher und fehlerfreier.
+Die Implementierung des Vergleichs von Daten in Gleam ist relativ einfach und zugänglich. Gleam nutzt seine robuste Typsicherheit und Funktionen, um eine klare und konsistente Syntax zu bieten, was das Verständnis und die Verfolgung von Code auf lange Sicht erleichtert.
 
-Alternativ zur `Date.compare` Funktion gibt es auch die `Date.less_than` und `Date.greater_than` Funktionen, die ebenfalls zur Vergleich von Daten verwendet werden können. Diese Funktionen geben einfach einen booleschen Wert zurück, anstatt sich auf die Bestimmung der Reihenfolge zu konzentrieren.
-
-In der Implementierung wird `Date.compare` letztendlich auf die `compare` Funktion des `Date.OrderedType` Protokolls zurückgeführt. Dies ermöglicht es, die Funktion für benutzerdefinierte Datumsformate zu implementieren.
-
-# Siehe auch
-
-- [Gleam Dokumentation über die Date Library](https://gleam.run/articles/dates)
-- [Gleam Protocols](https://gleam.run/articles/protocols)
-- [Gleam Standard Library](https://gleam.run/lib/standard)
+## Siehe auch:
+Für weitere Lektüre und Ressourcen, lesen Sie bitte:
+1. [Zeit- und datumsbezogene Funktionen in Gleam](https://docs.gleam.run/stdlib/time/)
+2. [Gleam Github Repository](https://github.com/gleam-lang/gleam)
+3. [Ein Vergleich von Datumsvergleichsfunktionen in verschiedenen Programmiersprachen](http://rosettacode.org/wiki/Date_comparison)

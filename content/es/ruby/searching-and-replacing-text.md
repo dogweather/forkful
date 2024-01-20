@@ -1,6 +1,6 @@
 ---
 title:                "Buscando y reemplazando texto"
-html_title:           "Ruby: Buscando y reemplazando texto"
+html_title:           "C: Buscando y reemplazando texto"
 simple_title:         "Buscando y reemplazando texto"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,27 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Reemplazar texto es un concepto básico en programación que se utiliza para hacer cambios en cadenas de texto o archivos. Los desarrolladores hacen esto para hacer sus códigos más eficientes y para ahorrar tiempo al hacer cambios en grandes cantidades de datos.
+La búsqueda y sustitución de texto se refiere a encontrar texto específico y reemplazarlo por otro. Esta técnica es esencial en la programación para manipular datos, automatizar tareas y corregir errores.
 
-## Cómo hacerlo:
+## Cómo Hacerlo:
 
-En Ruby, podemos usar el método `gsub` para reemplazar texto en una cadena. Por ejemplo:
+En Ruby, puedes utilizar el método `.gsub` para buscar y reemplazar texto. Aquí tienes un ejemplo:
 
-```Ruby
-text = "Hola mundo"
-puts text.gsub("Hola", "Adiós")
-```
-El resultado sería:
-```
-Adiós mundo
+```ruby
+texto = "Hola Mundo"
+texto.gsub!("Mundo", "Ruby")
+puts texto
 ```
 
-## Profundizando:
+Salida del programa:
 
-El concepto de reemplazar texto se originó en los primeros lenguajes de programación y ha evolucionado junto con la tecnología. Además del método `gsub`, también podemos usar expresiones regulares para realizar búsquedas y reemplazos más complejos.
+```
+Hola Ruby
+```
 
-## Véase también:
+En este ejemplo, 'Mundo' es el texto que estamos buscando y 'Ruby' es el texto con el que queremos reemplazarlo.
 
-Existen numerosos recursos en línea que pueden ayudarte a aprender más sobre la búsqueda y reemplazo de texto en Ruby, como la documentación oficial de Ruby y tutoriales en línea. Además, también puedes consultar alternativas como el método `sub` y la gema `string-arr` para realizar tareas similares.
+## Profundizando
+
+El método `.gsub` ha sido una característica de Ruby desde sus comienzos. La funcionalidad de búsqueda y reemplazo también puede lograrse utilizando expresiones regulares para encontrar patrones más complejos en lugar de texto simple.
+
+Otros métodos para buscar y reemplazar incluyen `.sub`, que solo reemplaza la primera aparición del texto buscado, y `.gsub!`, que realiza la sustitución en el objeto original en lugar de devolver uno nuevo.
+
+Aquí vemos un ejemplo con `.sub`:
+
+```ruby
+texto = "quiero Ruby, Ruby es genial"
+texto.sub!("Ruby", "programar en Ruby")
+puts texto
+```
+
+Salida del programa:
+
+```
+quiero programar en Ruby, Ruby es genial
+```
+
+Como puedes ver, solo la primera aparición de 'Ruby' ha sido reemplazada.
+
+## Ver También
+
+Para más información, consulta las siguientes fuentes:
+
+* Documentación oficial de Ruby sobre el método `.gsub`: [ruby-doc.org/core-2.7.1/String.html#method-i-gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
+* Explicación útil con ejemplos en Stack Overflow: [stackoverflow.com/questions/19445003/using-ruby-gsub-to-replace-a-string](https://stackoverflow.com/questions/19445003/using-ruby-gsub-to-replace-a-string)
+* Más información y ejemplos sobre la manipulación de strings en Ruby: [www.rubyguides.com/2018/01/ruby-string-methods](https://www.rubyguides.com/2018/01/ruby-string-methods/)

@@ -1,7 +1,7 @@
 ---
-title:                "Zeichenketten verketten"
-html_title:           "Go: Zeichenketten verketten"
-simple_title:         "Zeichenketten verketten"
+title:                "Strings verketten"
+html_title:           "Bash: Strings verketten"
+simple_title:         "Strings verketten"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum? 
-Bei der Programmierung geht es oft darum, Informationen zu kombinieren und daraus etwas Neues zu erschaffen. Eine häufig genutzte Methode dafür ist das Zusammenfügen von Strings, also Zeichenketten, zu einem Gesamtstring. Dies ermöglicht es, verschiedene Texte oder Daten miteinander zu verbinden und so komplexe Ausgaben zu erzeugen.
+## Was & Warum?
 
-# So geht's:
-Go bietet verschiedene Möglichkeiten, Strings miteinander zu verbinden. Eine davon ist die Verwendung des + Operators, der zwei oder mehr Strings aneinanderreiht. Alternativ kann auch die fmt.Sprintf() Methode genutzt werden, um Platzhalter im String durch Variablen zu ersetzen. Hier ein Beispiel:
+String-Konkatenation ist der Prozess, bei dem zwei oder mehr Strings zu einem einzigen String verbunden werden. Programmierer machen das, um komplexe Nachrichten zu erstellen oder Daten in Textform zu verarbeiten.
+
+## Wie man:
 
 ```Go
-name := "John" 
-age := 35
+package main
 
-fullString := "Mein Name ist " + name + " und ich bin " + fmt.Sprintf("%d", age) + " Jahre alt."
-fmt.Println(fullString)
+import (
+	"fmt"
+	"strings"
+)
 
-// Ausgabe: "Mein Name ist John und ich bin 35 Jahre alt."
+func main() {
+	str1 := "Hallo"
+	str2 := ", Welt!"
+
+	// String-Konkatenation
+	result := str1 + str2
+
+	fmt.Println(result)  // Ausgabe: Hallo, Welt!
+
+	// Einsatz von strings.Join
+	resultJoin := strings.Join([]string{str1, str2}, "")
+	fmt.Println(resultJoin)  // Ausgabe: Hallo, Welt!
+}
 ```
 
-# Tiefere Einblicke:
-Das Verbinden von Strings wird bereits seit den Anfängen der Programmierung genutzt, um komplexe Ausgaben zu erzeugen. Es gibt auch alternative Methoden, wie zum Beispiel das Verwenden von Vorlagen, um Strings zusammenzufügen. Bei der Umsetzung werden die einzelnen Strings in einem Array gesammelt und dann durch Iteration miteinander verbunden. 
+## Vertiefung:
 
-# Weitere Infos:
-Um mehr über das Verbinden von Strings in Go zu erfahren, kannst du die offizielle Dokumentation oder andere Online-Ressourcen wie Tutorials oder Foren nutzen. Folgende Links könnten hilfreich sein:
+Die Konkatenation von Strings ist nicht neu und geht auf die Anfänge der Programmierung zurück. Eine Alternative zur Verwendung des "+"-Operators in Go ist die Funktion `strings.Join()`, die effizienter ist, wenn mehrere Strings verkettet werden. Intern werden in Go keine neuen Zeichenketten erstellt, wenn Sie zwei Zeichenketten concat mithilfe des "+"-Operators. Stattdessen werden die Zeichenketten verknüpft und auf die gleiche Speicheradresse verwiesen.
 
-- [Offizielle Go Dokumentation](https://golang.org/doc/)
-- [Tutorial: String Formatting in Go](https://www.digitalocean.com/community/tutorials/how-to-format-strings-in-go-de)
-- [Stack Overflow: Concatenating Strings in Go](https://stackoverflow.com/questions/16248241/how-do-i-concatenate-two-strings-in-go)
+## Siehe auch:
+
+- Go Dokumentation über Strings: https://golang.org/pkg/strings/
+- Artikel über die Effizienz von `strings.Join()`: https://stackoverflow.com/questions/1760757/how-to-efficiently-concatenate-strings-in-go

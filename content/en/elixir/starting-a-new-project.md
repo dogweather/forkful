@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Elixir recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,36 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Kickstart Using Elixir: Starting A New Project 
 
-Starting a new project in Elixir is the process of creating a new code base for a program or application. Programmers often start new projects to develop new features, improve existing ones, or explore new ideas.
+## What & Why?
+Starting a new project is creating a fresh coding environment where you scaffold your codebase structure. Programmers do this to maintain a well-structured, clean, and maintainable project.
 
 ## How to:
-
-To start a new project in Elixir, we will use the `mix` command. 
-
-```Elixir
-mix new my_project
-```
-
-This creates a new project folder with the name `my_project` and sets up the necessary files and directories for an Elixir project. 
-
-We can also specify the `--sup` flag to create a project with a `supervisor` module, which will supervise the application's processes. 
+Starting a new project in Elixir is straightforward, thanks to Mix, Elixir's build tool. Here is how you do it:
 
 ```Elixir
-mix new --sup my_project
+$ mix new hello_world
 ```
 
-The `--sup` flag is useful for projects that require more robust error handling and process management. 
+This command creates a new directory called `hello_world` with all necessary project files. Check what's inside:
 
-## Deep Dive:
+```Elixir
+$ cd hello_world
+$ ls
+```
 
-Elixir's `mix` command is inspired by the Ruby on Rails `rails` command, which also creates a new project structure and sets up commonly used files and directories. However, Elixir's `mix` is more flexible and allows for customization by using different mixins. 
+Output:
 
-An alternative to using `mix` is manually creating the necessary files and folders, but this can be time-consuming and error-prone. Therefore, it is recommended to use `mix` to start new projects.
+```
+_config     lib        test     mix.exs
+```
 
-Under the hood, the `mix` command uses a template engine called `mix new`. This allows for the easy creation of new projects with customizable options. 
+Your new Elixir project is now ready for development. The `lib` directory will contain your source code and the `test` your unit tests.
 
-## See Also:
+## Deep Dive
+Elixir introduced Mix looking back at Erlang's build tools shortcomings. It delivers a user-friendlier command-line interface, managing dependencies, running tests, and much more. It's a powerful tool that simplifies setting up and managing an Elixir project.
 
-Official Elixir documentation on `mix new`: https://hexdocs.pm/mix/Mix.Tasks.New.html
+While alternatives to Mix exist, such as Rebar3 (a well-known build tool in the Erlang world), they aren't as tightly integrated with Elixir. Selecting one over the other will depend largely on your project's specifics and your preference.
+
+When you run `mix new`, under the hood, Mix creates a basic directory structure and a few vital files like `mix.exs`. This file is where you define your application, dependencies, and project version, becoming the go-to place for managing anything related to your project.
+
+## See Also
+1. [Elixir's Official Documentation on Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
+2. [Introduction to Mix on Elixir School](https://elixirschool.com/en/lessons/basics/mix/)
+3. [Rebar3 documentation](https://rebar3.readme.io/)

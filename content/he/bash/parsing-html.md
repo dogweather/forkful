@@ -1,7 +1,7 @@
 ---
-title:                "פירוק html"
-html_title:           "Bash: פירוק html"
-simple_title:         "פירוק html"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,25 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-לימוד הנדסת HTML הינו תהליך שבו מתחילים לקרוא ולנתח קוד מקור של דף אינטרנט כדי להבין את מבנהו ולקלוט אותו כמחרוזת שניתן לעבוד איתה. הדבר חשוב במיוחד למתכנתים על מנת לייעל את תהליך הפיתוח וליצור אפליקציות ואתרים ברמה גבוהה.
+## מה זה ולמה? 
+פיענוח HTML הוא התהליך שבו ניתן לקרוא ולנתח את קובצי ה-HTML על מנת לקבל מידע. מתכנתים עושים זאת כדי לטפל במידע מקובץ HTML, לשנות אותו או ליצור דוחות.
 
-## איך לעשות זאת?
-כאשר עבודה עם מחרוזות של HTML, ניתן להשתמש בכלים שונים כדי לפענח את הקוד המקורי. לדוגמה, נוכל להשתמש בפקודות של Bash כדי להדפיס את התוכן של דף אינטרנט או להפוך אותו לקובץ טקסט. ניתן גם להשתמש בתוכנות נבנות לפענוח קידוד של הקוד המקורי ולהציג אותו בצורה ברורה יותר.
+## איך עושים את זה:
+אפשר לפענח את HTML באמצעות XML parser לדוגמא 'xmllint':
 
 ```Bash
-# הצגת תוכן האתר כחלק מהפקודות של Bash:
-curl -s https://www.example.com | grep "<title>"
+xmllint --html --xpath '//h2/text()' index.html
+```
 
-# המרת האתר לקובץ טקסט עם תוכן נקי:
-wget -qO- https://www.example.com | lynx -stdin -dump -nolist
+יכול להיות שתיצטרך להתקין את הכלי `xmllint`. עשה את זה באמצעות:
 
-``` 
+```Bash
+sudo apt-get install libxml2-utils
+```
 
-## חקירה מעמיקה
-לימוד תהליך הנדסת HTML הינו חשוב במיוחד בעולם המתכנתים עם ניסיון. בעבר, לימוד הנדסת HTML היה בעיקר מופשט למתכנתים ניידים בלבד. כיום, ישנן תוכניות נבנות שניתן להשתמש בהן על מנת לקלוט קוד מקורי ולהציג את מבנהו כ- DOM תקין. אופציות אחרות כוללות גם שימוש בתכניות לניתוק קידוד של קוד מקור והפיכתו לקל לקריאה על ידי משתמשים אחרים. יתר על כן, בכדי להציג את התוצאות כחומר למידה שימושי, ניתן לנקות ולטפל בתגים וכו'.
+## צנחת העומק:
+פענוח HTML הוא לא משהו חדש - הוא היה קיים מאז שה-HTML נוצר. יאתרים אחרים, כמו 'BeautifulSoup' ו-'html.parser' (Python), מספקים אמצעים לפענוח, אבל 'xmllint' הוא כלי תוך-קו שנותן מענה מהיר. במידע והמימוש הטכני שתחתיו, 'xmllint' משתמש בDOM רנדרינג, שמגדיר את הקובץ באופן היררכי של אובייקטים.
 
-## ראו גם
-- [כיצד ללמוד HTML כמתחיל](https://www.lifewire.com/learn-html-for-beginners-3466603)
-- [מה זה DOM?](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-- [ספריות צד שלישי לניתוח קוד HTML](https://www.sitespeed.io/doc/Third-party-analyzers/)
+## ראה גם:
+- xmllint: http://xmlsoft.org/xmllint.html
+- BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+- html.parser: https://docs.python.org/3/library/html.parser.html

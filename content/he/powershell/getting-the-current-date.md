@@ -1,7 +1,7 @@
 ---
-title:                "לקבלת התאריך הנוכחי"
-html_title:           "PowerShell: לקבלת התאריך הנוכחי"
-simple_title:         "לקבלת התאריך הנוכחי"
+title:                "קבלת התאריך הנוכחי"
+html_title:           "C#: קבלת התאריך הנוכחי"
+simple_title:         "קבלת התאריך הנוכחי"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -11,29 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-קבלת תאריך נוכחי היא פעולה פופולרית בין מתכנתים באמצעות PowerShell. זהו פעולה שבאמצעותה ניתן לקבל את התאריך הדדי ביום נוכחי, כך שניתן להשתמש בו בתוכניות שונות, למשל כדי לנתח את הנתונים של יומן אירועים או ליצור תאריך תקף לפעולות נוספות.
+הזמן הנוכחי מסייע למתכנתים ליצור גרסאות, לניתוח נתונים כרוניים ולנטר את ביצועי המערכת. זה מספק מידע נוסף שקשור לנתונים ולביצועים.
 
-## כיצד לעשות זאת:
-בשביל לקבל את התאריך הנוכחי ניתן להשתמש בפקודות הבאות בפקודה הפתוחה של PowerShell:
-
-```PowerShell
-$getdate = Get-Date
-Write-Output "The current date is $getdate"
-```
-הפקודה הראשונה מתייחסת לפונקציית Get-Date שמכילה את התאריך הנוכחי, והשנייה משתמשת בפקודת Write-Output להדפיס את התאריך המופיע בפונקציית Get-Date.
-
-יש גם אפשרות להדפיס את התאריך בפורמט מסוים, למשל כאשר רוצים לקבל את התאריך הנוכחי בפורמט ידוע כדי לשמור על סדר שונה. זאת נעשה באמצעות הפקודה הבאה:
+## איך לעשות:
+השג את התאריך הנוכחי ב-PowerShell באמצעות הפקודה הבאה:
 
 ```PowerShell
-$getdate = Get-Date -Format "dd/MM/yyyy"
-Write-Output "The current date is $getdate"
+Get-Date
 ```
-בפורמט זה, התאריך יוצג בתבנית שיוכן בינהם שנים, חודשים וימים בפקודת Get-Date.
+הפלט ייראה כך:
 
-## חפירה עמוקה:
-מצבנו נתעמק עוד יותר, נתארגן וניתן תמונת רקע הספורית על הקלטת התאריך הנוכחי, על אפשרויות גיבוי ועל יתרונות הפקודה המתקרבים.
+```PowerShell
+יום ראשון, 26 בדצמבר 2021 10:39:20
+```
 
-בדרך כלל תהליך זה היה נעשה באמצעות מספר פקודות נוספות בשביל לקבל את התאריך הנוכחי המדוייק. אך, בכך שהכנו את פקודת Get-Date, נקבל את התאריך שם בפורמט של גיבוי הנתונים המתאימים לשימוש.
+## צלילה עמוקה:
+בעצם, הפקודה ``Get-Date`` כבר קיימת מאז הגרסא הראשונה של PowerShell. האפשרויות הדינאמיות שלה, תרגומי השפה השונות והתמיכה הרחבה שלה הפכו אותה לברירת מחדל של רבים.
+
+ישנן גם דרכים אחרות להשיג תאריך נוכחי, כמו ``[datetime]::Now`` - אך ``Get-Date`` מומלץ לרוב התרחישים עקב הנוחות שבה.
+
+פירוט על מאחורי הקלעים: PowerShell למעשה מנצל את .NET framework לביצוע של פקודת ``Get-Date``, כאשר הוא מפעיל את המטודה ``System.DateTime.Now``
 
 ## ראה גם:
-למידע נוסף ניתן לבקר באתר הבא: https://docs.microsoft.com/he-il/powershell/module/Microsoft.PowerShell.Utility/Get-Date?view=powershell-7
+1. [PowerShell Get-Date documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
+2. [Use PowerShell to manipulate date object](https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-manipulate-date-object)
+3. [.NET DateTime class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)

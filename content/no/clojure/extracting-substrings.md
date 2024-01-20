@@ -1,7 +1,7 @@
 ---
-title:                "Uttrekking av delstrenger"
-html_title:           "Clojure: Uttrekking av delstrenger"
-simple_title:         "Uttrekking av delstrenger"
+title:                "Utdrag av understrenger"
+html_title:           "Bash: Utdrag av understrenger"
+simple_title:         "Utdrag av understrenger"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Utvinning av substringer er prosessen med å isolere en del av en tekststreng basert på et spesifikt sett med kriterier. Programmere bruker denne teknikken for å manipulere data og finne spesifikke deler av en tekststreng som er relevant for deres kode.
+---
+
+## Hva & Hvorfor?
+
+Utdrag av delstrenger er prosessen med å hente en liten del av en streng. Programmerere gjør dette for å behandle eller manipulere spesifikke data innen en større datasett.
 
 ## Hvordan:
+
+Hvis vi for eksempel ønsker å hente en del av en streng i Clojure, bruker vi `subs` funksjonen. Her er et eksempel:
+
 ```Clojure
-;; Eksempel på utvinning av substring fra en tekststreng
-(def tekst "Dette er en tekststreng.")
+(defn delstreng [streng start slutt]
+  (subs streng start slutt))
 
-;; Utvinning av tekst fra indeks 11 til slutten av strengen
-(substring tekst 11)
+(defn hoved []
+  (println (delstreng "Hei der, verden!" 0 7)))
 
-;; Forventet output: "tekststreng."
-
-;; Utvinning av tekst fra indeks 11 til 16
-(substring tekst 11 16)
-
-;; Forventet output: "tekst"
-
+(hoved)
 ```
+Når du kjører denne koden, ville utmatningen være:
 
-## Dykk dypere:
-- Historisk kontekst: Utvinning av substringer har vært en viktig teknikk for å håndtere tekstbaserte data siden de tidligste programmingsdagene.
-- Alternativer: Det finnes mange alternative måter å utvinne substringer på, som bruk av regex-uttrykk eller innebygde funksjoner i andre programmeringsspråk.
-- Implementeringsdetaljer: I Clojure er substrings representert som vanlige tekststrenger, og kan derfor behandles som ethvert annet dataelement i språket.
+```Clojure
+"Hei de"
+```
+## Dypdykking
 
-## Se også:
-- Dokumentasjon for Clojure's ```substring``` funksjon: https://clojuredocs.org/clojure.core/substring
-- Alternativ metode for å utvinne substringer ved hjelp av regex-uttrykk: https://clojuredocs.org/clojure.string/replace-first
+Historisk sett har funksjonen for å trekke ut delstrenger vært en del av mange programmeringsspråk, inkludert Clojure. Alternativt kan ‘slice’ metoden benyttes i noen språk, men i Clojure er `subs` den primære metoden. 
+
+Ved implementering skal du være klar over at indeksposisjonen i strenger starter ved 0, ikke 1. Det vil si hvis du ønsker å starte fra den første bokstaven i strengen, ville startindeksen være 0.
+
+## Se Også
+
+For mer informasjon om håndtering av strenger i Clojure, sjekk ut følgende kilder:
+
+1. [Offisiell Clojure dokumentasjon](https://clojure.org/)
+2. [Clojure for nybegynnere](https://www.braveclojure.com/)
+3. [Clojure stregn funksjoner](http://clojuredocs.org/quickref/Clojure%20Core#Strings)

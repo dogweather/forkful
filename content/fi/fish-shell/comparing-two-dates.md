@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "Fish Shell: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,27 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Vertaamalla kahta päivämäärää tarkoitetaan päivämäärien välillä tapahtuvaa vertailua, jossa selvitetään kumpi päivämäärä on suurempi tai onko ne yhtä suuret. Tämä on tärkeää ohjelmoinnissa esimerkiksi järjestämisen ja aikaleimojen tarkastelun kannalta.
+## Mikä & Miksi?
 
-## Ohjeet:
-[https://fishshell.com/docs/current/index.html]
-Voit verrata kahta päivämäärää käyttämällä Fish Shell -ohjelman `test`-komentoa yhdessä `-nt`-tunnisteen kanssa. Tässä on esimerkkejä ja tulosteet:
+Vertaamme kahta päivämäärää selvittämään, kumpi niistä sijoittuu aikajanalla ensin. Ohjelmoijat tekevät tämän tärkeiden päivämäärien ja aikataulujen hallitsemiseksi.
 
-```Fish Shell ... 
-test 20191205 -nt 20191101
-true
+## Kuinka tehdään:
+
+>Tässä on Fish Shell -kilpikonnaohjelma, joka vertailee kahta päivämäärää:
+
+```Fish Shell
+set -l date1 (date -u -j -f "%Y-%m-%d" "2022-01-01" "+%s")
+set -l date2 (date -u -j -f "%Y-%m-%d" "2022-02-01" "+%s")
+
+if [ $date1 -lt $date2 ]
+    echo "Date 1 is earlier than Date 2."
+else if [ $date1 -eq $date2 ]
+    echo "Date 1 is the same as Date 2."
+else
+    echo "Date 1 is later than Date 2."
+end
 ```
 
-```Fish Shell ... 
-test 20191010 -nt 20191101
-false
+>Tämä ohjelman tuloste on:
+```
+Date 1 is earlier than Date 2.
 ```
 
-## Syventävä tieto:
-Päivämäärien vertailu ei ole uusi asia, vaan se on ollut oleellinen osa ohjelmointia jo pitkään. Fish Shell:n lisäksi myös muut komentokehotteiden ohjelmat, kuten Bash ja Zsh, tarjoavat mahdollisuuden päivämäärien vertailuun. Toinen tapa verrata päivämääriä on käyttää `date`-komentoa yhdessä `+%s`-parametrin kanssa, jolloin saadaan päivämäärien Unix-aikaleimat ja voidaan verrata niitä keskenään.
+## Syväsukellus
+
+Fish Shell julkaistiin 12 vuotta sitten, antaen ytimekäsiä ja nopeita tapoja tehdä monimutkaisia toimintoja. Päivämäärien vertaileminen on yksityiskohtaisten prosessien sarja, jossa muunnetaan aika sekunneiksi ja vertaamalla niitä.
+
+Vaihtoehtoisesti voit käyttää 'date2nite' tai 'diff' kutsumaan ajointerfasseja. Vaikka ne voivat olla yhtä tehokkaita, Fish on yksinkertaisempi ja suoraviivaisempi.
+
+Fish Shell päivämäärien vertailussa on tärkeää muistaa, että se linjaa päivämäärät ensin UTC:hen. Sen jälkeen se olettaa, että päivämäärät ovat ilmaistu sekunneissa vuodesta 1970 (UNIX Epoch), ennen kuin ne muunnetaan päivämäärämuotoon.
 
 ## Katso myös:
-- [https://fishshell.com/docs/current/commands.html#test]
-- [https://www.ibm.com/support/knowledgecenter/en/ssw_aix_72/com.ibm.aix.cmds1/test.htm]
-- [https://www.computerhope.com/unix/udate.htm]
+
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Programming with Dates and Times](https://pubs.opengroup.org/onlinepubs/009695399/functions/xdg_date.html)
+- [Comparison of Shell Scripting Languages](https://www.wikibooks.org/wiki/Bourne_Shell_Scripting)

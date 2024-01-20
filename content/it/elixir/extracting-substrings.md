@@ -1,7 +1,7 @@
 ---
-title:                "Estrazione di sottostringhe"
-html_title:           "Elixir: Estrazione di sottostringhe"
-simple_title:         "Estrazione di sottostringhe"
+title:                "Estrazione di sottosequenze"
+html_title:           "Arduino: Estrazione di sottosequenze"
+simple_title:         "Estrazione di sottosequenze"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,26 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Estrarre sottostringhe è una tecnica di programmazione utilizzata per ottenere una porzione di una stringa più grande. È molto comune tra i programmatori in quanto consente di manipolare e analizzare le stringhe in modo più efficiente e preciso.
+## Cos'è & Perché?
 
-## Come fare:
-In Elixir, esistono diverse funzioni utili per estrarre sottostringhe. Ecco un esempio di codice:
+In Elixir, l'estrazione di sottostringhe è l'operazione di presa di una stringa e la divisione in parti più piccole, propagando da un indice di inizio a uno di fine all'interno della stringa originale. Gli sviluppatori lo fanno per manipolare, analizzare e ristrutturare i dati di testo.
+
+## Come si fa:
+
+In Elixir, è possibile utilizzare la funzione `String.slice/3` per estrarre sottostringhe. Questa funzione prende la stringa originale e due indici come argomenti.
 
 ```Elixir
-stringa = "Ciao mondo"
-sottostringa = String.slice(stringa, 0, 4)
-IO.puts sottostringa
+iex> stringa_orig = "Salve, come va?"
+iex> String.slice(stringa_orig, 0, 5)
+"Salve"
 ```
+L'output di questo codice sarà:
+"Salve"
 
-Questo codice utilizzerà la funzione `String.slice` per estrarre una sottostringa dalla posizione 0 fino alla posizione 4 (esclusa) della stringa originale. L'output sarà "Ciao".
+## Approfondimento
 
-## Approfondimento:
-L'operazione di estrazione di sottostringhe viene utilizzata principalmente per manipolare le stringhe all'interno di un programma. Ciò include la ricerca di una particolare porzione di testo, la sostituzione di una sottostringa con un'altra e la creazione di nuove stringhe combinate da sottostringhe.
+La funzione `String.slice/3` in Elixir si basa sulla semantica Erlang per le stringhe, visto che Elixir è costruito su Erlang. Altre funzioni simili per manipolare le stringhe includono `String.substring/2` e `String.at/2`.
 
-Un'alternativa alla funzione `String.slice` è l'utilizzo di espressioni regolari, che permettono una maggiore flessibilità nella ricerca di sottostringhe che coincidono con un determinato pattern. Inoltre, è possibile utilizzare la funzione `String.split` per dividere una stringa in sottostringhe in base a un delimitatore specifico.
+In termini di implementazione, le stringhe in Elixir non sono niente di più che liste di code point Unicode. Il conteggio degli indici inizia da zero, e vengono contati i code point, non i byte.
 
-L'implementazione di queste funzioni è basata sull'utilizzo dei caratteri Unicode per rappresentare le stringhe, il che permette di gestire anche caratteri non latini.
+C'è da notare che Elixir offre metodi più avanzati e potenti per lavorare con le stringhe, come l'utilizzo delle espressioni regolari attraverso il modulo `Regex`.
 
-## Vedi anche:
-Per ulteriori informazioni su come utilizzare le funzioni di estrazione di sottostringhe in Elixir, puoi consultare la documentazione ufficiale su [Elixir School](https://elixirschool.com/lessons/basics/strings/#string-slicing), dove troverai esempi e spiegazioni dettagliate. Inoltre, puoi esplorare altre funzionalità del linguaggio utilizzando [Exercism](https://exercism.io/tracks/elixir/exercises), una piattaforma di esercizi guidati per i principali linguaggi di programmazione.
+## Vedi anche
+
+Per saperne di più sulle stringhe e loro manipolazioni in Elixir:
+
+https://hexdocs.pm/elixir/String.html
+
+https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html
+
+https://elixir-lang.org/crash-course.html#strings

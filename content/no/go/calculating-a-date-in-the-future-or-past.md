@@ -10,39 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
- 
-Beregning av en dato i fremtiden eller fortiden handler om å få dataprogrammer til å utføre matematiske operasjoner på datoer. Dette er nyttig fordi det gjør det enklere å håndtere tidsavhengige oppgaver, som for eksempel å beregne forfallsdatoer for betalinger eller å planlegge fremtidige hendelser.
+## Hva & Hvorfor?
+Dato-beregning lar oss finne fremtidige eller tidligere datoer fra en gitt dato. Dette er nyttig for programvareutviklere når de må håndtere oppgaver relatert til tidsplanlegging, for eksempel påminnelser, friststyring og tidsavhengige beregninger. 
 
-## Slik gjør du det:
+## Hvordan:
+Her er hvordan du beregner en fremtidig dato i Go:
 
-Først må du importere tidspakken i Go ved å skrive `import "time"` øverst i koden din. Deretter kan du bruke funksjonen `AddDate()` for å legge til eller trekke fra et gitt antall år, måneder og dager fra en dato. For eksempel, for å beregne datoen 365 dager fra i dag, kan du bruke følgende kode:
-
-```
-Go package main
-
+```Go
+package main
 import (
     "fmt"
     "time"
 )
 
 func main() {
-    d := time.Now() 
-    d = d.AddDate(0, 0, 365) 
-    fmt.Println(d) 
+    today := time.Now()
+    forsteJanuar := time.Date(today.Year(), time.January, 1, 0, 0, 0, 0, today.Location())
+    enMånedFrem := forsteJanuar.AddDate(0, 1, 0)
+    
+    fmt.Println(enMånedFrem)
 }
 ```
+Dette programmet vil skrive ut datoen for 1. februar i det nåværende året.
 
-Dette vil gi følgende utgang: `2022-05-07 11:45:42.349698613 +0200 CEST`.
+## Dykker dypere
+- #### Historisk sammenheng:
+I eldre programmeringsspråk, måtte dato-beregning vanligvis håndteres manuelt med lavnivå dato- og tid-operasjoner. Dette kunne lett føre til feil og var vanskelig å vedlikeholde.
 
-## Dypdykk:
+- #### Alternativer:
+Selv om `AddDate` fungerer bra for de fleste tilfeller, kan `Add` også brukes til å legge til tid med enda mer presisjon. 
+```Go
+enTimeOgTrettiMinFrem := today.Add(time.Hour + 30*time.Minute)
+```
+- #### Implementasjonsdetaljer:
+`AddDate` metoden i Go tar 3 parametere: antall år, antall måneder og antall dager du vil endre datoen med. Den håndterer også automatisk skuddår, forskjellige månedslengder og tidssoneforskjeller.
+  
+## Se også
+- GoDocs om tidspakken: https://golang.org/pkg/time/
+- Blogginnlegg - Goint faller i tid : https://blog.golang.org/playground
+- Go tidsformatering og parsing: https://gobyexample.com/time-formatting-parsing
 
-Beregning av datoer i fremtiden eller fortiden er ikke en unik funksjon i Go, og kan også implementeres i andre programmeringsspråk som JavaScript og Python. I tidligere versjoner av Go ble dette gjort ved hjelp av funksjoner som `Date()` og `Time()`, men disse er nå avskaffet til fordel for `time.Now()` og `AddDate()`.
-
-Vær også oppmerksom på at beregning av datoer i fremtiden eller fortiden kan være komplisert på grunn av skuddårsreglene og ulike datostandarder rundt om i verden. Det anbefales å bruke Go's innebygde tidsfunksjoner for å være sikker på at resultatet er korrekt.
-
-## Se også:
-
-- [Go's offisielle dokumentasjon for tidspakken](https://golang.org/pkg/time/)
-- [Hvordan beregne datoer i fremtiden og fortiden i JavaScript](https://www.w3schools.com/js/js_date_methods.asp)
-- [Generell informasjon om dato- og tidsberegning](https://www.timeanddate.com/date/duration.html)
+Ingen konklusjon kreves i dette innlegget. Lykke til med din Go programmering!

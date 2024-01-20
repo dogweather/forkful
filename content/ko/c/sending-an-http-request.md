@@ -1,6 +1,6 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "C: HTTP 요청 보내기"
+html_title:           "Clojure: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "C"
 category:             "C"
@@ -12,13 +12,14 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-HTTP 요청을 보내는 것이란 무엇일까요? 개발자들은 왜 이렇게 하느냐구요? HTTP 요청이란 간단히 말해서 서버에 데이터를 요청하는 것을 의미합니다. 예를 들어, 웹 페이지를 열 때마다 브라우저는 해당 웹 서버에 HTTP 요청을 보내고, 서버는 요청을 받아 해당하는 내용을 브라우저로 다시 보냅니다. 개발자들은 이것을 구현하는 이유는, 웹 서비스를 만들기 위해서이죠.
+HTTP 요청을 보내는 것은 웹 서버에게 정보를 요청하거나 보내는 방법입니다. 이는 대부분의 웹 기반 애플리케이션에서 핵심적인 기능이며, 데이터를 다루거나 원격 서비스와 상호 작용을 하는 등 다양한 시나리오에서 사용됩니다.
 
-## 어떻게:
+## 어떻게 쓰는가:
 
-```c
+아래는 libcurl, 오픈 소스 URL 전송 라이블러리를 사용하여 HTTP 요청을 보내는 C 프로그램 예제입니다.
+
+```C
 #include <stdio.h>
-#include <stdlib.h>
 #include <curl/curl.h>
 
 int main(void)
@@ -26,28 +27,40 @@ int main(void)
   CURL *curl;
   CURLcode res;
 
+  curl_global_init(CURL_GLOBAL_DEFAULT);
+
   curl = curl_easy_init();
   if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
+    curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+
+    /* Perform the request */
     res = curl_easy_perform(curl);
+
+    /* Check for errors */
     if(res != CURLE_OK)
       fprintf(stderr, "curl_easy_perform() failed: %s\n",
               curl_easy_strerror(res));
 
-    /* always cleanup */
+    /* Cleanup */
     curl_easy_cleanup(curl);
   }
+
+  curl_global_cleanup();
+
   return 0;
 }
 ```
 
-위 코드는 C 프로그래밍을 이용해 간단하게 HTTP 요청을 보내는 예제입니다. 이 프로그램을 컴파일하고 실행하면, www.example.com에서 가져온 웹 페이지를 볼 수 있습니다.
+이 프로그램을 실행하면 "http://example.com"에 HTTP 요청을 보냅니다. 요청 결과가 오류라면 오류 메시지를 출력합니다.
 
-## 딥 다이브:
+## 깊은 탐구:
 
-HTTP 요청은 인터넷에서 가장 중요한 컴퓨터 프로토콜 중 하나입니다. 이 프로토콜은 1989년 팀 버너스 리와 로이 필딩에 의해 시작되었으며, 현재까지도 계속 발전해오고 있습니다. HTTP 요청을 보내는 다른 방법으로는, cURL 이외의 다른 라이브러리를 사용하는 것도 있습니다. 또한 프로그램에서 직접 소켓을 이용해 HTTP 요청을 보낼 수도 있습니다. 하지만, cURL은 가장 널리 사용되는 방법 중 하나입니다. cURL은 다양한 운영체제에서 사용 가능하며, 간단하고 명확한 인터페이스를 제공합니다.
+- **역사적 맥락:** HTTP는 1991년에 팀 버너스-리에 의해 설계되었습니다. HTTP 요청은 기본적으로 클라이언트와 서버 간의 통신 방법을 정의하는 이 프로토콜의 핵심 요소입니다.
+- **대체 방법:** HTTP 요청 외에도 SOAP, GraphQL 같은 다양한 프로토콜과 방식이 있습니다. 선택은 필요에 따라 달라집니다.
+- **구현 세부 정보:** libcurl을 사용하여 HTTP 요청을 보내면, 라이브러리는 TCP/IP 연결을 관리하고 HTTP 프로토콜의 복잡한 세부 사항을 처리합니다.
 
-## 관련 자료:
+## 참고 리소스:
 
-- [libcurl 사용법](https://curl.se/libcurl/c/)
-- [HTTP Request 관련 자세한 설명](https://developer.mozilla.org/ko/docs/Web/HTTP/Overview)
+- [Libcurl 홈페이지](https://curl.haxx.se/libcurl/)
+- [HTTP - Wikipedia](https://ko.wikipedia.org/wiki/HTTP)
+- [C 프로그래밍/C언어로 HTTP 요청 보내기](https://wikidocs.net/3549)

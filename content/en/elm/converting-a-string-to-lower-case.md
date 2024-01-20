@@ -1,6 +1,6 @@
 ---
 title:                "Converting a string to lower case"
-html_title:           "Elm recipe: Converting a string to lower case"
+html_title:           "Clojure recipe: Converting a string to lower case"
 simple_title:         "Converting a string to lower case"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,26 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Converting a string to lower case is a process of converting all the characters in a string to their lower case equivalents. This is done to ensure consistency and compatibility when working with strings in a programming language. It also makes comparison and manipulation of strings easier.
+
+Converting a string to lowercase means transforming all of the uppercase letters in a string to their lowercase counterparts. We do this primarily for user input normalization, ensuring reliable comparison and search operations.
 
 ## How to:
-Converting a string to lower case in Elm is simple and straightforward. It can be done using the `String.toLower` function. This function takes in a string as input and returns a new string with all the characters in lower case.
+
+Elm provides a `toLower` function within the `String` module to convert an input string to lowercase. Here's a simple example:
 
 ```Elm
-myString = "HeLlo WORlD"
-lowerCaseString = String.toLower myString
--- lowerCaseString = "hello world"
+import String
+
+lowercaseString : String -> String
+lowercaseString str = 
+    String.toLower str
+
+main = 
+    print (lowercaseString "Hello ELM World!")
 ```
 
-In the above example, we have a string `myString` which contains a mix of upper and lower case characters. By using the `String.toLower` function, we get a new string `lowerCaseString` with all the characters in lower case.
+When you run this code, it outputs:
+
+```
+"hello elm world!"
+```
 
 ## Deep Dive:
-Converting strings to lower case has been a basic function in programming languages since the early days. It was first introduced in the programming language BCPL in the 1960s. Today, all major programming languages have a similar function to convert strings to lower case.
 
-There are alternative ways to convert strings to lower case in Elm, such as using regular expressions or manually iterating through each character and converting it to lower case. However, the `String.toLower` function is the most efficient and recommended way to do it.
+Historically, software systems didn't treat uppercase and lowercase letters as equal. This creates issues in string comparison and search operations. So, we use string normalization techniques like converting strings to lower case.
 
-The `String.toLower` function internally uses the Unicode standard to determine the lower case equivalent of each character. This ensures compatibility and accuracy when working with different languages and character sets.
+Alternative approaches could involve setting up custom comparison logic that's case-insensitive. But this approach isn't efficient, as it requires additional code and processing time.
+
+In Elm, the `toLower` function uses Unicode's lower-mapping of characters. This means it not only handles ASCII characters but also works with non-English characters. It works by mapping each Unicode character in the string to its lower-case equivalent, resulting in a new string. Extra points for Elm, as the implementation is not language-specific.
 
 ## See Also:
-- [String.toLower documentation](https://package.elm-lang.org/packages/elm/core/latest/String#toLower)
-- [Unicode standard](https://unicode.org/)
+
+Go deeper into strings in Elm following these links:
+
+- The Elm Guide's section on [Strings](https://guide.elm-lang.org/types/strings.html)
+- Elm's [String library](https://package.elm-lang.org/packages/elm/core/latest/String) documentation
+- A thorough article on String Normalization - [Building Real-World Frontend Web Apps in Elm: tutorial series](https://korban.net/posts/elm/2019-11-22-elm-json-encoders-decoders/)

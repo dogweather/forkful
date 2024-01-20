@@ -1,6 +1,6 @@
 ---
 title:                "Å sende en http-forespørsel"
-html_title:           "Clojure: Å sende en http-forespørsel"
+html_title:           "C++: Å sende en http-forespørsel"
 simple_title:         "Å sende en http-forespørsel"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,41 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
+## Hva & Hvorfor?
+En HTTP-forespørsel er en måte for et program å spørre en server om data. Programmerere bruker det for å hente eller sende data over internett.
 
-Sending av HTTP forespørsler er en vanlig praksis i nettutvikling. Det lar programmerere kommunisere og hente data fra forskjellige nettsider og API-er. Dette gjør at man kan bygge interaktive og dynamiske applikasjoner som er effektive når det kommer til å hente og behandle informasjon fra ulike kilder.
-
-# Hvordan:
-
-```Clojure
-;; Enkel HTTP forespørsel
-(require '[clojure.http.client :as http])
-
-(http/get "https://www.example.com")
-```
+## Hvordan:
+Her er et enkelt eksempel på hvordan sende en GET HTTP-forespørsel ved hjelp av ```http-kit``` bibliotekk i Clojure:
 
 ```Clojure
-;; HTTP forespørsel med tilleggsparametere og avansert håndtering av respons
-(require '[clojure.http.client :as http])
-(require '[clojure.data.json :as json])
+(ns http-example.core
+  (:require [org.httpkit.client :as http]))
 
-;; Oppretter en map med tilleggsparametere
-(def params {:headers {"Content-Type" "application/json"}})
+(defn get-request []
+  (let [response @(http/get "https://httpbin.org/get")]
+    (println (:status response))
+    (println (:headers response))
+    (println (:body response))))
+```
+Når du kjører ```get-request``` funksjonen, vil du se noe slik:
 
-;; Utfører en POST forespørsel og konverterer respons til en map
-(def response (http/post "https://www.example.com" {"key" "value"} params))
-
-;; Henter ut og konverterer responsens body til en map
-(def result (json/read-str (:body response)))
-
-;; Håndterer resultatet fra forespørselen
-(println (:key result))
+```Clojure
+200
+{"Date" "Tue, 14 Sep 2021 20:00:00 GMT", "Content-Type" "application/json"...}
+"{args: {}, headers: {host: "httpbin.org",.."
 ```
 
-# Dypdykk:
+## Deep Dive
+HTTP-forespørsler startet med opprettelsen av Hypertext Transfer Protocol (HTTP) i 1991. I Clojure, er det flere bibliotekker du kan bruke for å sende HTTP forespørsler, for eksempel ```http-kit```, ```clj-http``` og ```aleph```. Sett bort i fra forskjellige funksjonaliteter, er implementeringsdetaljene ganske like - det handler om å lage en forbindelse med serveren, sende en forespørsel og deretter vente på svaret.
 
-Sending av HTTP forespørsler har vært en viktig del av nettutvikling siden starten av internett. Det finnes diverse alternativer til å sende HTTP forespørsler, som for eksempel biblioteket cURL. Clojure har også ulike metoder for å håndtere HTTP forespørsler, inkludert den felles vanen å bruke funksjonen `GET` eller `POST` fra biblioteket `clojure.http.client`. Denne funksjonen inneholder også en rekke nyttige tilleggsparametere som kan justeres etter behov.
+## Se også
+[http-kit GitHub](https://github.com/http-kit/http-kit)
 
-# Se også:
+[clj-http GitHub](https://github.com/dakrone/clj-http)
 
-- Clojure HTTP client dokumentasjon: https://github.com/dakrone/clj-http
+[aleph GitHub](https://github.com/ztellman/aleph)

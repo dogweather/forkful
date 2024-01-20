@@ -1,6 +1,6 @@
 ---
 title:                "Stampa dell'output di debug"
-html_title:           "C++: Stampa dell'output di debug"
+html_title:           "Arduino: Stampa dell'output di debug"
 simple_title:         "Stampa dell'output di debug"
 programming_language: "C++"
 category:             "C++"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Stampano l'output di debug è una pratica comune fra i programmatori, utilizzata per visualizzare informazioni utili durante l'esecuzione di un programma. Ciò aiuta a identificare e risolvere errori e problemi di esecuzione del codice.
+## Cos'è & Perchè?  
+Stampare output per il debug significa mostrare informazioni extra dal tuo programma per comprendere meglio ciò che sta accadendo all'interno. I programmatori lo fanno per identificare e risolvere i problemi nel codice.
 
 ## Come fare:
-Ecco un esempio di codice in C++ su come stampare un messaggio di debug utilizzando la funzione ```cout```:
+Ecco un semplice esempio di stampa del debug output in C++. Utilizziamo l'istruzione `cout`.
 
-```
+```C++
 #include <iostream>
-
 using namespace std;
-
 int main() {
-    cout << "Questo è un messaggio di debug!" << endl;
+    int num = 5;
+    cout << "Debug: Numero è " << num << endl;
     return 0;
 }
 ```
+Output:
+```
+Debug: Numero è 5
+```
 
-Output: Questo è un messaggio di debug!
+## Approfondimenti
+(1) Storicamente, la stampa per il debug è stato uno dei primi metodi utilizzati per il debugging. Prima dell'arrivo degli IDE e dei debugger avanzati, questo era lo strumento di debugging predominante.
 
-## Approfondimento:
-Nell'ambito della programmazione, l'output di debug è stato introdotto per la prima volta negli anni '50, con lo sviluppo del linguaggio di programmazione LISP. Un'alternativa popolare all'uso della funzione ```cout``` è l'utilizzo di un debugger, che consente di visualizzare variabili e informazioni di runtime in modo più dettagliato. 
+(2) Ci sono molte alternative per stampare debug output in C++. Ad esempio, potresti utilizzare le librerie dedicate come `log4cpp` o `spdlog`, che forniscono un'interfaccia di logging più flessibile e potente.
 
-Per quanto riguarda l'implementazione dell'output di debug, è importante tenere conto delle prestazioni del programma e di non inserire troppe istruzioni di stampa che possono rallentare l'esecuzione.
+(3) La stampa del debug output in C++ è implementata tramite l'operatore di streaming `<<` che invia l'output a `cout`, che a sua volta visualizza il messaggio nella console.
 
-## Vedi anche:
-- [Debugging - Wikipedia](https://it.wikipedia.org/wiki/Debugging)
-- [Utilizzare cout per il debugging in C++](https://www.javatpoint.com/cout-cpp)
+## Altro
+Per ulteriori informazioni controlla i seguenti link:
+
+1. [Cout in C++ (en): GeeksForGeeks](https://www.geeksforgeeks.org/basic-input-output-c/)
+2. [Debugging (en) - Wikipedia](https://en.wikipedia.org/wiki/Debugging)

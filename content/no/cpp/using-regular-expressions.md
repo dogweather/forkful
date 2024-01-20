@@ -1,6 +1,6 @@
 ---
 title:                "Å bruke regulære uttrykk"
-html_title:           "C++: Å bruke regulære uttrykk"
+html_title:           "Arduino: Å bruke regulære uttrykk"
 simple_title:         "Å bruke regulære uttrykk"
 programming_language: "C++"
 category:             "C++"
@@ -10,88 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Regular expressions (regex) er et kraftig verktøy som brukes av programmører til å søke etter og manipulere tekststrenger. Det sparer tid og krefter ved å tillate en enkel og effektiv måte å søke etter mønstre og utføre handlinger på dem.
+# Regelrette uttrykk i C++
 
-# Hvordan?
-Coding eksempler og resultatutdata i ```C++ ...``` kodeblokker:
+## Hva & Hvorfor?
 
-**Eksempel 1: Søk etter et enkelt tegn**
+Regelrette uttrykk, også kjent som 'regex', er et kraftig verktøy som lar programmerere matche, søke, erstatte og manipulere tekst med mønstre. De brukes fordi de er effektive for tekstbehandling og datautvinning.
 
-```C++
-#include <iostream>
-#include <regex>
-using namespace std;
+## Hvordan gjøre det
 
-int main() {
-    string str = "Hei, jeg er en programmerer!";
-    
-    if (regex_search(str, regex("j"))) {
-        cout << "Strengen inneholder tegnet 'j'" << endl;
-    }
-    else {
-        cout << "Strengen inneholder ikke tegnet 'j'" << endl;
-    }
-    
-    return 0;
-}
-
-// Output:
-// Strengen inneholder tegnet 'j'
-```
-
-**Eksempel 2: Søk etter flere tegn**
+Med moderne C++ (C++11 og nyere), kan vi enkelt bruke regex. Her er et grunnleggende eksempel:
 
 ```C++
-#include <iostream>
 #include <regex>
-using namespace std;
+#include <string>
+#include <iostream>
 
-int main() {
-    string str = "Regulære uttrykk er awesome!";
-    
-    if (regex_search(str, regex("awe?"))) {
-        cout << "Strengen inneholder mønsteret 'awe?'" << endl;
+int main(){
+    std::string s ("hello world");
+    std::regex e ("\\b(sub)?\\w*"); 
+
+    while (std::regex_search (s,e)) {
+        auto match = std::smatch_result.cpp;
+        std::regex_search (s,m,e);
+        std::cout << match.str() << "\n";
+        s = match.suffix().str();
     }
-    else {
-        cout << "Strengen inneholder ikke mønsteret 'awe?'" << endl;
-    }
-    
     return 0;
 }
-
-// Output:
-// Strengen inneholder mønsteret 'awe?'
 ```
 
-**Eksempel 3: Manipulering av tekst**
+I dette eksemplet søker vi etter ord som starter med "sub", i strengen "hello world". Utgangen vil være et ord som matcher uttrykket.
 
-```C++
-#include <iostream>
-#include <regex>
-using namespace std;
+## Dyp Dykking
 
-int main() {
-    string str = "123456789";
-    
-    regex_replace(str, regex("[0-9]{2}"), "XX");
-    cout << str << endl;
-    
-    return 0;
-}
+Regulære uttrykk har en lang historie, først oppfunnet på 1950-tallet og har siden da blitt inkludert i mange programmeringsspråk, inkludert C++. Alternativer til regex inkluderer strengfunksjoner (f.eks. str.find(), str.replace()) og PEG-baserte parserbiblioteker, som er mer kraftige, men også mer kompliserte.
 
-// Output:
-// XX34XX89
-```
+Implementeringsdetaljene av regex i C++ kan variere avhengig av operativsystem og kompilatoren som du bruker. Vanligvis bruker `std::regex` klassen i STL (Standard Template Library), men noen kompilatorer kan også støtte egendefinerte regexp-klasser.
 
-# Deep Dive
-Regular expressions ble opprinnelig utviklet i 1950-årene av matematikeren Stephen Kleene som en teoretisk modell for regulære språk. I dag brukes det i programmeringsspråk som C++, Java og Python for å søke og manipulere tekststrenger.
+## Se også
 
-Alternativene til regex inkluderer tekstmanipuleringsfunksjoner og string-klasser i ulike programmeringsspråk. Disse er ofte mindre komplekse, men kan ikke håndtere komplekse mønstre som regex kan.
-
-Implementering av regex gjøres vanligvis gjennom biblioteker eller innebygde funksjoner i programmeringsspråk. I C++, biblioteket <regex> brukes til dette formålet.
-
-# Se også
-* [C++ regex tutorial](https://www.cplusplus.com/reference/regex/)
-* [Regex cheatsheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/)
-* [Online regex tester](https://regex101.com/)
+- C++ Reference: [regex](http://www.cplusplus.com/reference/regex/)
+- Stack Overflow: [How to use regex in C++](https://stackoverflow.com/questions/12530406/is-c11-regex-library-broken)
+- Bucher/Cox: [Mastering Regular Expressions](https://www.amazon.com/Mastering-Regular-Expressions-Jeffrey-Friedl/dp/0596528124)

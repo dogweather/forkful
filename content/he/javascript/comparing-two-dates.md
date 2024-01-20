@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שני תאריכים"
-html_title:           "Javascript: השוואת שני תאריכים"
-simple_title:         "השוואת שני תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+## מה ולמה?
+השוואה של שני תאריכים היא תהליך שבו משווים בין שני תאריכים כדי לראות איזה מהם קורה קודם. מתכנתים עשויים לעשות זאת כדי לבצע תהליכים מסוימים בהתאם לרצף החלופי של אירועים שקרו בתאריכים שונים.
 
-השוואה של שתי תאריכים היא תהליך שבו מתבצעת בדיקה של המערכת שלנו לגבי איזה תאריכים הם אחידים זה עם זה. פעמים רבות תאריכים הם תלויים ביום העכשיוי שבו הם נכתבים, וכך קורה שבשתי מערכות שונות תאריכים נראים כמו שונים. מכאן, נובעת הצורך לבצע שוואה בין תאריכים כדי להבטיח תאימות בין מערכות שונות.
-
-## איך לעשות זאת:
-
-למטה תמצאו כמה דוגמאות של קוד בג'אווהסקריפט לביצוע שוואה של שתי תאריכים. הקוד יראה לכם כיצד להשתמש בפונקציות המיועדות לכך ותראו את הפלט שהוא יחזיר. זה יעזור לכם להבין טוב יותר את התהליך ולהיות בטוחים שאתם מבינים אותו בצורה נכונה.
-
+## כיצד לבצע:
+הנה דרך פשוטה להשוות בין שני תאריכים ב-Javascript:
 ```Javascript
-// התאריך הנוכחי בתור אובייקט
-var today = new Date();
+//הגדרת שני תאריכים
+let date1 = new Date('2021-05-15');
+let date2 = new Date('2022-01-20');
 
-// פונקציית לייחוז המחזירה את התאריך הנוכחי כטקסט ומחיליץ ממנו רק את החודש והשנה
-function getMonthAndYear(date) {
-  var month = date.getMonth();
-  var year = date.getFullYear();
-  
-  return month + " " + year;
+//השוואת התאריכים
+if(date1 > date2) {
+    console.log("date1 is later than date2");
+} else if(date2 > date1) {
+    console.log("date2 is later than date1");
+} else {
+    console.log("Both dates are equal");
 }
-
-var currentDate = getMonthAndYear(today);
-console.log("זהו התאריך הנוכחי שנמצא באובייקט של today: " + currentDate);
-
-// פונקציית שוואה של שני תאריכים
-function compareDates(date1, date2) {
-  if (date1.getTime() > date2.getTime()) {
-    console.log(date1 + " הוא שני תאריך המוקדם יותר");
-  } else if (date1.getTime() < date2.getTime()) {
-    console.log(date2 + " הוא שני תאריך המוקדם יותר");
-  } else {
-    console.log("שני התאריכים שווים");
-  }
-}
-
-// התאריך הנוכחי יוצא כאילו הוא הגדרה של אותו חודש ואותה שנה, אז אנחנו מצפים שתקבלו הודעת שני התאריכים שווים
-compareDates(today, new Date(2020, 5, 12));
-
 ```
+הפלט מתוך זה יהיה: `"date2 is later than date1"`
 
-## מעולה, מתי נבדוק את זה בפועל?
-
-אם אתם מעוניינים להכיר יותר בעומק את הנושא, תוכלו להתעמק בידע נוסף על הסטוריות שונות של שני התאריכים, פונקציות שניתנות לשימוש ועוד אלטרנטיבות לבודקי תאריכים בג'אווהסקריפט. כמו כן, כדאי לעיין בפרסומים השונים הקשורים לנושא כדי להשתלב בהם בתוכניות שלכם.
+## צלילה מעמיקה:
+JavaScript אינו מכיל מתודה מובנית להשוואת תאריכים, אך התאריכים יכולים להיהפך למספרים עשרוניים שמייצגים את המיליסקנודות שחלפו מ-1 בינואר 1970. הודות לכך, ובאופן נפשר, ניתן להשתמש באופראטורים מתמטיים פשוטים מאוד להשוואת בין התאריכים.
+ישנן חלופות אחרות, כמו להשתמש בספריות חיצוניות כמו moment.js, עם הן כמעט תמיד נותנות למשתמש את נוחות השימוש של מתודות מובנות להשוואת תאריכים.
 
 ## ראו גם:
-
-[הספריה Moment.js](https://momentjs.com/)
-
-[בדיקת תאריך בג'אווהסקריפט](https://developer.mozilla.org/he/docs/Web/JavaScript/Reference/Global_Objects/Date)
+- Moment.js: <a href="https://momentjs.com/" target="_blank">מסמך התיעוד</a>
+- MDN Web Docs: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date" target="_blank">חלק התאריכים</a>
+- Javascript.info: <a href="https://javascript.info/date" target="_blank">שיעורים של JavaScript על תאריכים ושעות</a>

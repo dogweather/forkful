@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "C# recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "C#"
 category:             "C#"
@@ -10,38 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# An Informal Guide to Parsing HTML Using C#
-
 ## What & Why?
-So you want to know about parsing HTML, huh? Well, put simply, parsing HTML is the process of taking raw HTML code and converting it into a more structured format that can be read and manipulated by a computer. Programmers do this in order to extract specific information from websites or to automate repetitive tasks.
 
-## How to:
-The most popular way to parse HTML using C# is by using the HtmlAgilityPack library. Here's a simple example of how to use it to extract all the links from a webpage:
+Parsing HTML involves reading HTML code and understanding its structure. It's important for data scraping, automated web browsing, and even testing - to pull out specific information or automate interactions with websites.
+
+## How To:
+
+Here's how you'd parse HTML in C# - using the Agility Pack. First, download it through the Nuget Package Manager in your IDE.
+
+Here's a concise example:
+```
+C#
+var web = new HtmlWeb();
+var document = web.Load("https://hello.world");
+var node = document.DocumentNode.SelectSingleNode("//head/title");
+Console.WriteLine("Page Title: " + node.InnerHtml);
+```
+This loads the HTML from the URL "https://hello.world", selects the part of the HTML corresponding to the headline title (`//head/title`), then prints it out.
+
+## Deep Dive
+
+Years back, C# developers had to rely on in-built .NET libraries like Html Agility Pack. This tool was handy but had limitations, like high memory usage when dealing with large documents. 
+
+Today, alternatives have appeared. For example, AngleSharp paints a modern touch, with better performance and a more user-friendly API. It mimics the JavaScript DOM while adding LINQ capabilities, and it can even interpret CSS selectors. 
 
 ```C#
-// Import the HtmlAgilityPack library
-using HtmlAgilityPack;
-
-// Create a new HtmlDocument object and load the webpage
-HtmlDocument document = new HtmlDocument();
-document.Load("https://www.example.com");
-
-// Use LINQ to select all <a> tags and extract their "href" attributes
-var links = document.DocumentNode.Descendants("a")
-                .Select(a => a.GetAttributeValue("href", null))
-                .Where(link => !String.IsNullOrEmpty(link));
+using AngleSharp;
+...
+var config = Configuration.Default.WithDefaultLoader();
+var context = BrowsingContext.New(config);
+var document = await context.OpenAsync("https://hello.world");
+var cellData = document.QuerySelector("div.example");
+Console.WriteLine(cellData.TextContent);
 ```
-
-And that's it! You now have all the links from the webpage stored in the `links` variable. Of course, parsing HTML can involve much more complex tasks, but this gives you a basic idea of how it works.
-
-## Deep Dive:
-Parsing HTML has been around since the early days of the internet when information was primarily shared through websites. Before the introduction of libraries like HtmlAgilityPack, programmers had to manually write code to extract information from HTML, a tedious and time-consuming process.
-
-Nowadays, there are several alternatives to HtmlAgilityPack, such as AngleSharp and CsQuery. Each library has its own strengths and weaknesses, so it's important to do your research and choose the one that best fits your project's needs.
-
-When it comes to implementation details, parsing HTML can be a bit tricky. HTML code is not always well-formed, meaning it may not follow the proper syntax rules. In these cases, libraries like HtmlAgilityPack use heuristics and guessing algorithms to make sense of the code and extract the desired information.
+Remember, parsing HTML as a regular expression may seem easier but introduces complexity and is generally discouraged.
 
 ## See Also:
-- Official website of HtmlAgilityPack: https://html-agility-pack.net/
-- AngleSharp library: https://anglesharp.github.io/
-- CsQuery library: https://github.com/jamietre/CsQuery
+
+[Official Html Agility Pack Documentation](https://html-agility-pack.net/documentation)
+
+[Official AngleSharp Documentation](https://anglesharp.github.io/docs/)
+
+[When Not to Parse HTML with Regex](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags/1732454#1732454)

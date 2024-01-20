@@ -1,7 +1,7 @@
 ---
-title:                "Analizando una fecha de una cadena"
-html_title:           "Lua: Analizando una fecha de una cadena"
-simple_title:         "Analizando una fecha de una cadena"
+title:                "Analizando una fecha a partir de una cadena de texto"
+html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
+simple_title:         "Analizando una fecha a partir de una cadena de texto"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Parsear una fecha a partir de un string es convertir un texto que contiene una fecha en un formato específico en una estructura de datos que la represente de manera que sea manipulable por la computadora. Los programadores realizan esto para poder trabajar con fechas en sus programas de manera más eficiente y precisa.
+## ¿Qué & Por qué?
+Interpretar una fecha desde una cadena es el proceso de traducir una fecha en forma de texto a un objeto Fecha en un lenguaje de programación. Los programadores lo hacen porque las fechas a menudo se reciben como cadenas, pero para manipularlas en el código, necesitamos convertirlas a objetos Fecha.
 
 ## Cómo:
-```
--- Ejemplo de cómo parsear una fecha en Lua
-local fecha = "13 de junio de 2021"
-local dia, mes, año = string.match(fecha, "(%d+) de (%a+) de (%d+)")
+Para interpretar una fecha en Lua, podemos usar la función `os.time`. Aquí hay un ejemplo:
 
--- Imprime el resultado
-print("Día: " .. dia)
-print("Mes: " .. mes)
-print("Año: " .. año)
+```Lua
+-- Cree un string que represente una fecha
+local fecha_string = "07/31/2021 23:59:59"
 
--- Output:
--- Día: 13
--- Mes: junio
--- Año: 2021
+
+-- Interpretar fecha
+local pattern = "(%d+)%/(%d+)%/(%d+)%s*(%d+):(%d+):(%d+)"
+local mes, dia, año, horas, minutos, segundos = fecha_string:match(pattern)
+local fecha = os.time({year=año, month=mes, day=dia, hour=horas, min=minutos, sec=segundos })
+
+-- Imprimir resultado
+print(fecha)
 ```
+La salida del código anterior será la representación de tiempo Unix de la Fecha.
 
 ## Profundizando:
-Parsear fechas a partir de strings es una técnica comúnmente utilizada en la programación. Antes de la popularización de los lenguajes de programación de alto nivel, esta tarea requería manuales detallados de algoritmos específicos. En la actualidad, existen librerías y módulos que facilitan esta tarea en diferentes lenguajes, incluyendo Lua. En lugar de parsear manualmente, también se pueden utilizar librerías externas para manejar fechas en formatos específicos.
+Históricamente, diferentes lenguajes de programación han proporcionado diferentes métodos para interpretar fechas. En Lua, se utiliza principalmente la función os.time y las expresiones regulares, como en el ejemplo anterior.
 
-## Ver también:
-- [Función string.match en la documentación de Lua](https://www.lua.org/manual/5.4/manual.html#pdf-string.match)
-- [Tutorial de parseo de fechas en Lua](https://www.tutorialspoint.com/lua/lua_strings.htm)
-- [Librería externa para manejar fechas en Lua](https://luarocks.org/modules/tieske/date)
+Es importante saber que existen alternativas a este enfoque, dependiendo de tus necesidades. Por ejemplo, si te encuentras utilizando fechas a menudo en un proyecto más grande, puede que te convenga usar una biblioteca como `date.lua`, que proporciona una interfaz más rica para trabajar con fechas.
+
+La implementación interna de las funciones de fecha en Lua es realmente una interfaz a las funciones de tiempo del sistema operativo subyacente. Por lo tanto, el comportamiento puede variar ligeramente entre diferentes sistemas operativos.
+
+## Ver También:
+1. Documentación del lenguaje Lua - [os.time](http://www.lua.org/manual/5.3/manual.html#6.9)
+2. Lua: aprendiendo sobre fechas y tiempo - [Lua-date](https://github.com/Tieske/date)
+3. Guía de Lua sobre expresiones regulares - [Cadenas](http://lua-users.org/wiki/PatternsTutorial)

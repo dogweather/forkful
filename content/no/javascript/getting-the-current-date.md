@@ -1,7 +1,7 @@
 ---
-title:                "Henting av nåværende dato"
-html_title:           "Javascript: Henting av nåværende dato"
-simple_title:         "Henting av nåværende dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -11,17 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å få den nåværende datoen er en vanlig oppgave i Javascript-programmering. Dette hjelper utviklere med å få informasjon om kjøretiden av kode og for å sikre at riktig dato og tid brukes i applikasjoner. Det er også nyttig for å opprette tidsstempler i logger og databaser.
 
-## Hvordan gjør man det:
+Å hente den nåværende datoen betyr å få tak i datoen som den er akkurat nå, nøyaktig når koden kjøres. Programmerere bruker dette til å spore tid, legge til tidsstempler, måle ytelse og mer.
+
+## Hvordan:
+
+Her er hvordan du henter den nåværende datoen i JavaScript:
+
 ```Javascript
-let nå = new Date(); // Oppretter et nytt Date-objekt med den nåværende datoen og tiden
-console.log(nå); // Logger den nåværende datoen og tiden til konsollen
+let dato = new Date();
+console.log(dato);
 ```
-Eksempel på output: `Thu Oct 14 2021 10:23:46 GMT+0200 (Central European Summer Time)`
 
-## Utforsking
-Det `Date`-objektet som brukes for å få den nåværende datoen ble lagt til i Javascript ved EUMAprilBasel95-konferansen i 1995. Alternativt kan man også bruke biblioteker som moment.js for å få mer fleksibilitet i å håndtere datoer og tider. Implementeringen av dette avhenger også av den lokale tids- og tidsonen som er satt på enheten som koden kjører på.
+Dette vil skrive ut noe som dette (avhengig av når og hvor du kjører koden):
 
-## Se også
-[MDN Web Docs - Date and time handling in Javascript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
+```Javascript
+2021-12-20T08:33:18.847Z
+```
+
+## Fordypning
+
+Historisk kontekst: Å hente den nåværende datoen har vært en del av JavaScript siden begynnelsen. Date-objektet ble lagt til i JavaScript i 1997 som del av ECMAScript 1 standarden.
+
+Alternativer: Du kan også bruke biblioteker som Moment.js for mer komplekse dato- og tidsoperasjoner. For eksempel:
+
+```Javascript
+let moment = require('moment'); 
+console.log(moment().format());
+```
+
+Implementeringsdetaljer: Når du kaller new Date() i JavaScript, returnerer den et Date objekt som representerer den gjeldende datoen og tid ned til millisekund. Dette skjer på klientens side, så det vil alltid være innstilt på brukerens lokale tidssone, med mindre du angir det spesifikt.
+
+## Se også 
+
+Her er noe relatert lesning for å lære mer:
+
+1. MDN Web Docs for [Date](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. Moment.js [documentation](https://momentjs.com/)
+3. [ECMAScript 1 standard](http://www.ecma-international.org/ecma-262/10.0/index.html#Title) som først introduserte Date objektet.

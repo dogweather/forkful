@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Lua: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,37 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att skapa en tillfällig fil är ett vanligt förfarande inom programmering som låter dig hantera temporära data eller spara data som inte behövs permanent. Detta kan vara användbart för att förbättra prestanda, hantera kortsiktiga uppgifter eller skydda känsliga uppgifter genom att inte spara dem permanent.
+## Vad och varför?
+Att skapa en temporär fil innebär att vi skapar en fil som systemet tar bort efter att den inte används längre. Programmerare gör detta för att spara tillfällig data som inte behöver lagras permanent och för att reducera minnesanvändning.
 
-## Hur gör man:
+## Hur till:
+Här är hur du skapar och använder en temporär fil i Lua:
+
 ```Lua
--- Skapa en temporär fil med funktionen os.tmpname()
-local tempFile = os.tmpname()
+os.execute("touch tmp.txt")
 
--- Öppna filen för skrivning
-local file = io.open(tempFile, "w")
-
--- Skriv data till filen
-file:write("Hej! Det här är en tillfällig fil.")
-
--- Stäng filen
+-- Skriv till temporary filen
+local file = io.open("tmp.txt", "w")
+file:write("Hej Världen!\n")
 file:close()
 
--- Läs innehållet i filen
-local file = io.open(tempFile, "r")
-local content = file:read("*a")
-print(content) -- Output: Hej! Det här är en tillfällig fil.
+-- Läs från temporary filen
+local file = io.open("tmp.txt", "r")
+io.input(file)
+print(io.read())
 file:close()
 
--- Ta bort filen när den inte längre behövs
-os.remove(tempFile)
+os.execute("rm tmp.txt")
 ```
 
-## Deep Dive:
-Skapandet av tillfälliga filer har funnits sedan tidiga datorer användes och är en viktig del av programmering. Alternativen för att hantera temporära data inkluderar att använda systemets temp-mapp eller att använda funktionen io.tmpfile() i Lua. Implementeringen av temporära filer skiljer sig beroende på operativsystem, men de används vanligtvis för att snabbt lagra data eller för att säkra känslig information genom att inte lämna några spår på systemet.
+När du kör detta program kommer du att se följande utskrift:
+
+```
+Hej Världen!
+```
+
+## Djupare Dykning
+Historiskt sett har temporära filer använts sedan begynnelsen av datortiden, men det var inte förrän med moderna högnivåspråk som Lua att de blev enkla att implementera och använda.
+
+Alternativ till att skapa temporära filer inkluderar användning av databaser eller minneslagringslösningar som MongoDB eller Redis, men dessa kan vara överkomplicerade för mindre applikationer.
+
+Lua hanterar temporära filer på operativsystemnivå, vilket innebär att din Laravel-applikation måste ha tillräckliga rättigheter för att skapa och radera filer på systemet. Generellt sett ansvarar Lua för rensning och borttagning av dessa filer, men det är alltid bra praxis att manuellt ta bort temporära filer när du är klar med dem för att undvika onödigt skräp på disken.
 
 ## Se även:
-- [Dokumentation för funktionen os.tmpname() i Lua](https://www.lua.org/manual/5.4/manual.html#pdf-os.tmpname)
-- [Tutorial om filhantering i Lua](https://www.tutorialspoint.com/lua/lua_file_io.htm)
-- [Diskussion om fördelarna med temporära filer](https://stackoverflow.com/questions/1578982/temporary-file-pattern-examples)
+* [Lua IO Library Tutorial](https://www.tutorialspoint.com/lua/lua_io.htm)
+* [Lua Documentation: File Objects](https://www.lua.org/pil/21.2.2.html)
+* [OS Library Functions in Lua](https://www.lua.org/pil/22.html)

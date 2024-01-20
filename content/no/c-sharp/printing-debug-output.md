@@ -1,7 +1,7 @@
 ---
-title:                "Utskrift av feilsøkingsutgang"
-html_title:           "C#: Utskrift av feilsøkingsutgang"
-simple_title:         "Utskrift av feilsøkingsutgang"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
-Printing debug output, eller utskrift av feilsøkingsutdata, er en vanlig praksis blant programmører. Det innebærer å skrive ut informasjon eller variabler i konsollen mens programmet kjører, for å hjelpe med feilsøking og forståelse av koden.
+## Hva & Hvorfor?
 
-Programmerere gjør dette for å spore verdier av variabler, kontrollere if-setninger og løkker, og generelt forstå hvordan koden fungerer. Det kan også hjelpe med å finne kritiske feil og optimalisere kodeytelse.
+Utskrift av feilsøkingsdata er en teknikk for å spore flyten av en programkode. Dette gjør programmerere fordi det lar dem se tydelig hva som skjer på hvert trinn av programmet, noe som gjør det lettere å feilsøke.
 
-## Hvordan:
-```C#
-Console.WriteLine("Hello World!");
-//Output: Hello World!
-```
+## Slik gjør du:
+
+Her er en enkel C# eksempelkode som viser hvordan man kan skrive ut debugging.
 
 ```C#
-int num1 = 10;
-int num2 = 20;
-int result = num1 + num2;
-Console.WriteLine("The result of adding {0} and {1} is {2}", num1, num2, result);
-//Output: The result of adding 10 and 20 is 30
+using System.Diagnostics;
+
+class Program
+{
+    static void Main()
+    {
+        Debug.WriteLine("Dette er en debug melding");
+    }
+}
 ```
 
-I disse eksemplene bruker vi Console.WriteLine() -funksjonen i C# for å skrive ut tekst og variabler i konsollen. Vi kan også bruke Console.Write() for å skrive ut uten å legge til et linjeskift.
+Når du kjører dette koden, vil den skrive ut "Dette er en debug melding" i feilsøkingskonsollen.
 
-## Dykk dypere:
+## Dyp Dykk
 
-Printing debug output har vært en viktig del av programmering siden starten. Før moderne feilsøkingsteknikker ble utviklet, var det vanlig å bruke printlinjer for å finne feil og forstå kode.
+Historisk sett har utskrift av feilsøkingsdata vært en grunnleggende del av programmering siden de første datamaskinene. Alternativer til utskrift inkluderer bruk av debuggere, men disse er ofte mer komplekse og tidkrevende å sette opp.
 
-En alternativ metode for å feilsøke er å bruke en debugger, som lar deg gå gjennom koden trinn for trinn og se verdier av variabler i sanntid. Mens debugging er en viktig del av moderne programmering, er utskrift av feilsøkingsutdata fortsatt en nyttig og enkel måte å forstå og feilsøke kode på.
-
-Implementeringsdetaljer varierer fra språk til språk, men de grunnleggende prinsippene for printing debug output er ganske like. Det er viktig å være forsiktig når du bruker utskrift av feilsøkingsutdata i produksjonskoden, da det kan påvirke ytelsen og gjøre koden mer rotete.
+I C# bruker vi `System.Diagnostics.Debug`-klassen for å skrive ut debugmeldinger. Denne klassen har forskjellige metoder, men `WriteLine` er kanskje den mest brukte. Vær oppmerksom på at du må kjøre koden din i debug-modus for å se disse meldingene. De vises ikke når koden kjøres i release-modus.
 
 ## Se også:
-- [Debugging with Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
-- [Debugging with Visual Studio Code](https://code.visualstudio.com/docs/editor/debugging)
+
+1. [System.Diagnostics.Debug Class Dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-5.0)
+2. [Debugging i Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
+3. [Feilsøkingstips og triks i C#](https://stackify.com/csharp-debugging-tips/)

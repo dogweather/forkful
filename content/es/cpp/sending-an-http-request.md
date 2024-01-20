@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "C++: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "C++"
 category:             "C++"
@@ -10,39 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qué y Por Qué?
-Enviar una solicitud HTTP significa enviar un mensaje a un servidor de internet para solicitar información. Los programadores lo hacen para obtener datos de una API, comunicarse con bases de datos y crear aplicaciones web dinámicas.
+## ¿Qué y por qué?
 
-## Cómo Hacerlo:
-Aquí te mostramos un ejemplo simple de cómo enviar una solicitud HTTP en C++ usando la librería "cpp-httplib":
+Un 'HTTP Request' es una solicitud que tu programa envía a un servidor web. Los programadores lo utilizan para interactuar con APIs de terceros, descargar contenido de internet, enviar datos de formulario, entre otras cosas.
+
+## Cómo hacer:
+
+Para enviar una solicitud HTTP en C++, puedes usar la biblioteca cURL, así:
 
 ```C++
-#include <httplib.h>
+#include <curl/curl.h>
 
 int main() {
-    // Creamos un objeto de cliente HTTP
-    httplib::Client cli("https://api.example.com");
+    CURL *curl;
+    CURLcode res;
 
-    // Realizamos una solicitud GET para obtener información de un usuario
-    auto res = cli.Get("/users/1");
+    curl_global_init(CURL_GLOBAL_DEFAULT);
 
-    // Imprimimos el resultado en la consola
-    if (res) {
-        std::cout << res->body << std::endl;
-    } else {
-        std::cout << "Error al hacer la solicitud." << std::endl;
+    curl = curl_easy_init();
+    if(curl) {
+        curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+
+        res = curl_easy_perform(curl);
+
+        if(res != CURLE_OK) {
+            fprintf(stderr, "curl_easy_perform() falló: %s\n", curl_easy_strerror(res));
+        }
+
+        curl_easy_cleanup(curl);
     }
+
+    curl_global_cleanup();
 
     return 0;
 }
 ```
+Este código solicita el contenido del sitio "http://example.com". Si la solicitud se realiza con éxito, el contenido se imprimirá en la salida estándar.
 
-Este código envía una solicitud GET al servidor en "https://api.example.com" y espera una respuesta con los datos del usuario con ID 1. También maneja el caso de un error en la solicitud.
+## En profundidad:
 
-## Profundizando:
-Enviar una solicitud HTTP es una parte esencial de la programación web. Aunque C++ no es el lenguaje más comúnmente utilizado para crear aplicaciones web, existen diversas librerías y frameworks que pueden facilitar este proceso. Algunas alternativas a "cpp-httplib" incluyen "libcurl" y "Poco C++ Libraries". Además, hay varias opciones para manejar diferentes tipos de solicitudes, como POST, PUT y DELETE. Para implementar una solicitud HTTP, se utilizan varios métodos y encabezados, y es importante asegurarse de entender su uso correcto para una comunicación exitosa con el servidor.
+Las solicitudes HTTP datan de la creación del protocolo HTTP en 1991. En C++, cURL ha sido la biblioteca estándar para manejar solicitudes HTTP desde su lanzamiento en 1997.
+
+Se puede usar otras bibliotecas como Boost.Asio or POCO para enviar solicitudes HTTP en C++, pero cURL es la más común debido a su simplicidad y amplio soporte.
+
+Cuando envías una solicitud HTTP usando cURL, en realidad estás creando una conexión TCP con el servidor, enviando los datos de la solicitud y esperando la respuesta. Los detalles de este proceso son manejados por la biblioteca cURL, pero es útil entender lo que ocurre a bajo nivel.
 
 ## Ver también:
-- [cpp-httplib documentation](<https://github.com/yhirose/cpp-httplib>)
-- [libcurl - a client-side library for transferring data with URL syntax](<https://curl.haxx.se/libcurl/>)
-- [Poco C++ Libraries - a collection of open-source C++ class libraries](<https://pocoproject.org>)
+
+- Documentación de cURL: https://curl.haxx.se/libcurl/c/
+- Tutorial de Boost.Asio: https://www.boost.org/doc/libs/1_70_0/doc/html/boost_asio/tutorial.html
+- Tutorial de POCO HTTP: https://pocoproject.org/docs/00200-HTTPUserGuide.html

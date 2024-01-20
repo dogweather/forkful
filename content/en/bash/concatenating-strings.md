@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Bash recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,33 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# What & Why?
+# Bash Scripting: String Concatenation
 
-Concatenating strings in Bash is the process of combining multiple strings into a single string. Programmers often use this in order to create dynamic output or build complex commands.
+## What & Why?
 
-#How to:
+String concatenation is the process of appending, or 'gluing,' one string to the end of another. This handy trick is used frequently to create custom messages, filenames, or commands.
 
-Concatenating strings in Bash is done using the `echo` command. For example, to combine the strings "Hello" and "World", we would use the following code:
+## How to:
+
+Here's a couple of ways to concatenate strings in Bash.
+
+```Bash
+# Method 1: Direct joining
+string1="Hello, "
+string2="world!"
+greeting=$string1$string2
+echo $greeting
 ```
-Bash
-echo "Hello""World"
+
+The output will look like this:
+
+```
+Hello, world!
 ```
 
-This would output: `HelloWorld`. We can also include variables in our string concatenation. For instance:
+Or, you can use the "+=" operator for in place concatenation, like so:
+
+```Bash
+# Method 2: In-place joining
+string1="Hello, "
+string1+="world!"
+echo $string1
 ```
-Bash
-name="John"
-echo "Hello "$name"!"
+
+The output is:
+
+```
+Hello, world!
 ```
 
-This would output: `Hello John!` 
+## Deep Dive
 
-# Deep Dive:
+Bash, like other UNIX shells, doesn't really have a dedicated concatenation operation. It's all about just gluing strings together, either by using variable expansion or the "+=" operator. 
 
-String concatenation has been around since the early days of programming and can be found in many different programming languages, including Bash. One alternative to using the `echo` command for string concatenation is using the `printf` command, which allows for more control over the output formatting.
+The "+=" method, added in Bash version 3.1, adds or concatenates right-sided string to the left-sided operand.
 
-When concatenating strings, it is important to note that there should be no spaces between the strings or variables being combined. If a space is needed, it should be included within one of the strings using quotes. Additionally, Bash does not have a built-in function for string concatenation, so using commands such as `cat` or `sed` can also achieve similar results.
+Alternatives to Bash include programming languages like Python or Perl. They offer more sophisticated string manipulation functions, but for simplicity and speed – Bash is supreme!
 
-# See Also:
+## See Also
 
-For more information on string concatenation in Bash, check out the [Bash String Manipulation](https://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Shell-Parameter-Expansion) section of the Bash manual. Another useful resource is [tldp.org](https://www.tldp.org/LDP/abs/html/string-manipulation.html) which provides more in-depth examples and explanations.
+1. [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
+2. [Bash Guide for Beginners by Machtelt Garrels](http://www.tldp.org/LDP/Bash-Beginners-Guide/html/)
+3. [Advanced Bash-Scripting Guide by Mendel Cooper](http://www.tldp.org/LDP/abs/html/abs-guide.html)  
+4. [Learn Shell Programming](https://www.learnshell.org/)

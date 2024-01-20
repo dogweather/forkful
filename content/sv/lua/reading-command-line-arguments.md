@@ -1,7 +1,7 @@
 ---
-title:                "Läsning av kommandoradsargument"
-html_title:           "Lua: Läsning av kommandoradsargument"
-simple_title:         "Läsning av kommandoradsargument"
+title:                "Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
+simple_title:         "Läsa kommandoradsargument"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Files and I/O"
@@ -10,31 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att läsa in kommandoradsargument är ett sätt för en Lua-programmerare att interagera med sitt program från kommandoraden. Det kan användas för att ge input till programmet eller för att lägga till extra funktionalitet baserat på det som skrivs in av användaren.
+## Vad och varför?
 
-## Hur gör man:
+Kommandoradsargument är data som skickas in i ett program när det startas. Används i programmering för att styra programmet i en viss riktning, som att ange en filväg för filbearbetning eller att kontrollera startinställningar.
 
-I Lua finns det många inbyggda metoder för att hantera kommandoradsargument. Det första steget är att importera biblioteket `arg` i ditt program. Sedan kan du använda följande metoder:
+## Så här gör du:
 
-* `arg[0]` - returnerar namnet på det nuvarande programmet som körs
-* `arg[1]` - returnerar första argumentet som skrivs in från kommandoraden
-* `arg.n` - returnerar antalet argument som skrivs in från kommandoraden
-* `arg[<index>]` - returnerar ett specifikt argument baserat på dess position i kommandoraden
-
-Ett exempel på hur du kan använda dessa metoder är:
+I Lua kan du läsa kommandoradsargument genom globala arrayen `arg`. Ditt första argument, som är programnamnet, finns på indexet `arg[0]`. Följande argument finns på `arg[1]`, `arg[2]` och så vidare.
 
 ```Lua
-print("Hej " .. arg[1] .. "!")
+print("Namn på programmet: ", arg[0])
+for i = 1, #arg do
+  print("Argument ", i, " är ", arg[i])
+end
 ```
 
-Om du kör detta program från kommandoraden med argumentet "Svensk" kommer det att skriva ut "Hej Svensk!". 
+Om vi kör programmet med följande kommandorad: `lua myfile.lua hej världen`, output blir:
 
-## Djupdykning:
-I äldre versioner av Lua var `arg` ett bord som innehöll alla argument som gavs till programmet. Men detta ansågs vara ineffektivt och därför ändrades det till en global variabel som kan nås från vilken funktion som helst. Det finns också alternativa sätt att hantera kommandoradsargument, som att använda biblioteket `optparse` som ger mer avancerade möjligheter för hantering av argument.
+```Lua
+Namn på programmet:  myfile.lua
+Argument 1 är hej
+Argument 2 är världen
+```
+## Djupdykning
 
-Det är också möjligt att skicka med kommandoradsargument till din Lua-kod från andra program eller skript. Till exempel kan du skicka med argument till ditt Lua-program när du kör det från ett shell-script eller från en annan programvara.
+Kommandoradsargument har använts i programmeringen sedan de tidigaste dagarna när terminalbaserade användargränssnitt var normen. I Lua, `arg`-tabellen, inte bara lagrar argumenten men också erbjuder några unika index: `arg[-1]` ger vilken tolk som används, och `arg[n]`, där n är större än antalet argument, returnerar `nil`.
 
-## Se även:
-* [Lua 5.4 - Kommandoradsargument](https://www.lua.org/manual/5.4/manual.html#6.9)
-* [Optparse biblioteket för Lua](https://github.com/luaposix/luaposix/blob/master/src/optparse.lua)
+Ett alternativ till `arg` är `io.read()`, som läser input under körning av programmet snaraste än vid start. Dock kan detta göra scriptet mindre användarvänligt och öppet för fel om användaren inte är medveten om att input behövs.
+
+## Se också:
+
+Mer hjälp om att använda kommandoradsargument i Lua finns på följande platser:
+1. Lua-Användar-Wiki: Kommandoradsargument: https://lua-users.org/wiki/CommandLineProcessing
+2. StackOverflow: Hur man hanterar kommandoradsargument i Lua: https://stackoverflow.com/questions/10386976/how-to-handle-command-line-arguments-in-lua
+3. Officiell Lua 5.3 Manual: https://www.lua.org/manual/5.3/

@@ -1,7 +1,7 @@
 ---
-title:                "HTMLを解析する"
-html_title:           "Rust: HTMLを解析する"
-simple_title:         "HTMLを解析する"
+title:                "HTMLの解析"
+html_title:           "Arduino: HTMLの解析"
+simple_title:         "HTMLの解析"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,47 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## どうやってHTMLをパースするの？
+---
 
-パースとは、コンピューターが人間が読める形式（テキスト）から、コンピューターが理解しやすい形式（データ構造）に変換することです。HTMLをパースすることは、HTMLドキュメントを構成するタグや属性などの構造を解析し、プログラムがその情報を利用できるようにすることを意味します。プログラマーがHTMLをパースするのは、ウェブアプリケーションやウェブスクレイピングなどの目的で、HTMLからデータを取得したり、処理したりするためです。
+## 何となぜ？
+
+HTML解析とは、HTMLデータを構造化するプロセスのことです。プログラマーがこれを行う理由は、ウェブページのデータを効果的に抽出、操作、利用するためです。
 
 ## 方法：
 
-次のRustコードブロックを見てください。これは、はじめてのHTMLパーサーを作成する方法を示しています。main関数でHTMLドキュメントを読み込み、ループを使用してタグを検索し、そのタグの内容を取得する処理を行います。この例では、h1タグの中身をコンソールに出力します。
+RustでHTMLのパースを行うための一般的な方法は、`select.rs`というライブラリを使用することです。以下は基本的な使用方法です：
 
-```Rust
+```rust
+use select::document::Document;
+use select::predicate::Name;
+
 fn main() {
-    let html = "<html><head><title>My Page</title></head><body><h1>Hello World!</h1></body></html>"; // HTMLドキュメント
+    let doc = Document::from(include_str!("your_file.html"));
 
-    let mut inside_h1 = false; // h1タグの中身を読み込むかどうかのフラグ
-
-    for c in html.chars() {
-        if inside_h1 {
-            if c == '>' {
-                inside_h1 = false;
-            } else {
-                print!("{}", c); // h1タグの中身を出力
-            }
-        } else {
-            if c == '<' {
-                inside_h1 = true;
-            }
-        }
+    for node in doc.find(Name("div")) {
+        println!("{}", node.text());
     }
 }
 ```
 
-上記のコードを実行すると、コンソールに「Hello World!」という文字列が出力されるはずです。
+このコードは、`your_file.html`というファイルからHTMLデータを読み取り、`div`という名のすべてのノードを見つけ出します。
 
-## 詳細を掘り下げる：
+## ディープダイブ：
 
-HTMLパーサーは、ウェブブラウザーやウェブコンテンツを作成するために、ウェブの黎明期から使用されてきました。今日では、HTMLパーサーを自作するよりも、既存のライブラリやフレームワークを利用することが一般的です。例えば、Rustで有名なライブラリである「rustc-web」を使えば、HTMLパーサーを自作する必要はありません。
+HTML解析はウェブクローリングおよびウェブスクレイピングの根幹であり、それらが現代のウェブテクノロジーの一部となった1990年代から存在しています。RustにおけるHTML解析は、パフォーマンスと安全性の観点から見ると優れた選択であり、JavaScriptの`cheerio`やPythonの`BeautifulSoup`など他の言語・ツールに比べ、より高速で確実な結果を得ることができます。
 
-また、HTMLパーサーを作成する際には、RFC 822、RFC 1036、RFC 2822などの仕様書を参照することが推奨されます。これらは、HTMLパーサーの開発者にとって重要な参考資料になるでしょう。
+特にRustにおける`select.rs`ライブラリは、優れたパフォーマンスとモダンな使いやすさを兼ね備えています。しかし、Rustの学習曲線が比較的急であるという問題を克服する必要があります。
 
-## 関連リンク：
+## 参考資料：
 
-- [rustc-web](https://github.com/japaric/rustc-web)
-- [RFC 822](https://tools.ietf.org/html/rfc822)
-- [RFC 1036](https://tools.ietf.org/html/rfc1036)
-- [RFC 2822](https://tools.ietf.org/html/rfc2822)
+1. [HTML Parsing - Wikipedia](https://en.wikipedia.org/wiki/HTML_parsing)
+2. [Select.rs Documentation](https://docs.rs/select)
+3. [Web scraping in 2020: A practical guide](https://www.parsehub.com/blog/web-scraping-in-2020-a-practical-guide/)
+4. [Rust and Web scraping](https://msram.xyz/post/rust-and-web-scraping/)
+
+ 注意：あくまでRustでHTMLをパースするのは一例です。用途により、適切なツール・言語を選択することが重要です。

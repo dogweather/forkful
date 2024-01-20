@@ -1,7 +1,7 @@
 ---
-title:                "अक्षरों की लंबाई ढूँढना"
-html_title:           "Go: अक्षरों की लंबाई ढूँढना"
-simple_title:         "अक्षरों की लंबाई ढूँढना"
+title:                "स्ट्रिंग की लंबाई पता करना"
+html_title:           "C++: स्ट्रिंग की लंबाई पता करना"
+simple_title:         "स्ट्रिंग की लंबाई पता करना"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,32 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-Finding the length of a string क्या है और क्यों programmers इसे करते हैं।
+## क्या और क्यों? (What & Why?)
 
-एक string की लंबाई को निकालना strings के लिए एक दिग्गज काम है। programmers इसका उपयोग करके उपयोगकर्ताओं के द्वारा प्रदान किए गए डेटा की प्रबंधन और प्रोग्रामिंग के साथ संबंधित कार्यों को सुनाई पड़ती है।
+स्ट्रिंग की लंबाई ढूंढना यह जानने का तरीका ​​है कि वह कितने अक्षरों का होता है। प्रोग्रामर इसे यह जानने के लिए करते हैं कि उनके पास कितनी जानकारी संग्रह की गई है, और वे इसे कैसे संदर्भित कर सकते हैं।
 
-## कैसे करें?
+## कैसे (How to)
+
+Go लैंग्विज में, हम ```len()``` फ़ंक्शन का उपयोग करके स्ट्रिंग की लंबाई ढूंढ सकते हैं।
+
 ```Go
+package main
+
+import "fmt"
+
 func main() {
-    str := "Hello, world!" // string declared
-    fmt.Println("Length of string:", len(str)) // output: 13 (includes spaces)
+    str := "नमस्ते, दुनिया!"  
+    fmt.Println(len(str))
 }
 ```
 
+आउटपुट:
 ```Go
+30
+```
+
+## गहराी की जांच (Deep Dive)
+
+Go लैंग्विज में, ```len()``` फ़ंक्शन का उपयोग UTF-8 इनकोडेड स्ट्रिंग की लंबाई निर्धारित करने के लिए किया जाता है। यह स्पष्ट रूप से उन चरित्रों की गणना करता है जिनके पास एक या अधिक बाइट हैं। 
+
+वैकल्पिक रूप से, आप ```unicode/utf8.RuneCountInString()``` फ़ंक्शन का उपयोग कर सकते हैं, जो एक स्थिर विधि है और यह साधा कर सकता है कि आपके स्ट्रिंग में कितने रन हैं। 
+
+```Go
+package main
+
+import (
+    "fmt"
+    "unicode/utf8"
+)
+
 func main() {
-    str := "こんにちは、世界！" // string declared (Japanese translation of "Hello, world!")
-    fmt.Println("Length of string:", len(str)) // output: 15 (includes non-English characters)
+    str := "नमस्ते, दुनिया!"  
+    fmt.Println(utf8.RuneCountInString(str))
 }
 ```
 
-## गहराई में खोजें
-1. इतिहास के संदर्भ में, strings की लंबाई को प्राप्त करना C language से लेकर शुरू हुआ। 
-2. अन्य भाषाओं में भी, strings की लंबाई को निकालने के लिए विभिन्न तरीको का प्रयोग किया जाता है। 
-3. Go language में, string की लंबाई को निकालने के लिए len() function का प्रयोग किया जाता है।
+आउटपुट:
+```Go
+13
+```
 
-## अन्य संबंधित स्रोत
-[The Go Programming Language](https://golang.org/)- Official Website 
-[Go By Example](https://gobyexample.com/strings)- String manipulation using Go 
-[GeeksforGeeks](https://www.geeksforgeeks.org) - Online resource for programming concepts and tutorials.
+## देखें भी (See Also)
+
+[`len` का उपयोग GO दस्तावेज़ीकरण](https://pkg.go.dev/builtin#len)
+
+[`utf8.RuneCountInString` क्लास GO दस्तावेज़ीकरण](https://pkg.go.dev/unicode/utf8#RuneCountInString)

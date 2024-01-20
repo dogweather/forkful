@@ -1,6 +1,6 @@
 ---
 title:                "Enviando una solicitud http"
-html_title:           "Java: Enviando una solicitud http"
+html_title:           "Bash: Enviando una solicitud http"
 simple_title:         "Enviando una solicitud http"
 programming_language: "Java"
 category:             "Java"
@@ -10,46 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+# Envío de solicitudes HTTP en Java
 
-Enviar una solicitud HTTP es una acción común en la programación. Es el proceso de enviar una petición desde un cliente a un servidor, con el objetivo de obtener o enviar información. Los programadores hacen esto para interactuar con aplicaciones web, acceder a datos de una API o para realizar acciones en un servidor.
+## ¿Qué & Por Qué?
+El envío de una solicitud HTTP es básicamente solicitar o enviar datos a un servidor a través del protocolo HTTP. Los programadores lo hacen para interactuar con servicios web, consumir APIs y, en general, facilitar la comunicación entre los sistemas.
 
-## Cómo hacerlo:
+## ¿Cómo se hace?
 
-Java proporciona una clase llamada HttpURLConnection para enviar solicitudes HTTP. Primero, debes importar la clase con la palabra clave "import":
-
-```Java
-import java.net.HttpURLConnection;
-```
-
-Luego, puedes usar esta clase para crear una conexión al servidor y enviar una solicitud. Por ejemplo, si queremos obtener datos de la API de GitHub, podemos hacer lo siguiente:
+Aquí hay un ejemplo simple de cómo enviar una solicitud HTTP GET usando HttpClient en Java.
 
 ```Java
-// Crear la URL de la API
-URL url = new URL("https://api.github.com/users/martinezpablo");
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
-// Abrir una conexión con la URL
-HttpURLConnection con = (HttpURLConnection) url.openConnection();
+public class Main {
 
-// Establecer el método de la solicitud
-con.setRequestMethod("GET");
+   public static void main(String[] args) throws Exception {
 
-// Obtener la respuesta del servidor
-int responseCode = con.getResponseCode();
+       HttpClient client = HttpClient.newHttpClient();
+       HttpRequest request = HttpRequest.newBuilder()
+               .uri(URI.create("http://example.com"))
+               .build();
 
-// Imprimir la respuesta
-System.out.println("Response code: " + responseCode);
+       HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+       System.out.println(response.body());
+   }
+}
 ```
+Ejecutar este programa imprimirá el contenido de la página web example.com.
 
-La salida de este código sería "Response code: 200", lo que significa que hemos recibido una respuesta exitosa del servidor. Podemos continuar manipulando la conexión para obtener los datos deseados.
+## Un vistazo más profundo
 
-## Inmersión profunda:
+### Contexto Histórico
+HttpClient fue introducido en Java 11 como una mejora respecto a las alternativas más antiguas, como `java.net.URL` y `java.net.HttpURLConnection`, cuyas funcionalidades eran limitadas y más difíciles de usar.
 
-La necesidad de enviar solicitudes HTTP surge de la necesidad de interacción entre aplicaciones web. Antes de HTTP, se utilizaba el protocolo FTP, que solo permitía la transferencia de archivos. Con el aumento de la web, se necesitaba un protocolo más versátil para permitir la comunicación entre las aplicaciones.
+### Alternativas
+- Apache HttpClient: Aunque requiere dependencias adicionales, es una alternativa poderosa con más funcionalidades.
+- OkHttp: Es una opción eficiente que incluye un cliente HTTP/2.
 
-Java también proporciona otras clases para enviar solicitudes HTTP, como HttpClient y URLConnection. HttpClient ofrece una API más simple y fácil de usar, mientras que URLConnection permite una mayor personalización en la solicitud.
+### Detalles de implementación
+En el ejemplo anterior, `HttpResponse.BodyHandlers.ofString()` se usa para convertir la respuesta en una cadena. Sin embargo, hay otros manipuladores disponibles para otras necesidades, como manejar la respuesta como un archivo.
 
-## Ver también:
-
-- [Documentación oficial de Java sobre HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)
-- [Comparación entre HttpClient y URLConnection](https://stackoverflow.com/questions/2793150/httpclient-vs-httpurlconnection)
+## Ver También
+- Documentación oficial de Java HttpClient: [Aquí](https://docs.oracle.com/en/java/javase/13/docs/api/java.net.http/java/net/http/HttpClient.html)
+- Tutorial de HttpClient en Java: [Aquí](https://www.baeldung.com/java-11-http-client)
+- Comparación de librerías HTTP en Java: [Aquí](https://www.baeldung.com/httpclient-vs-httpurlconnection-vs-okhttp)

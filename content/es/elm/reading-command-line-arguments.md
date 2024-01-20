@@ -1,7 +1,7 @@
 ---
-title:                "Lectura de argumentos de línea de comandos"
-html_title:           "Elm: Lectura de argumentos de línea de comandos"
-simple_title:         "Lectura de argumentos de línea de comandos"
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Files and I/O"
@@ -10,52 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¡Lee y entiende mejor tus argumentos de línea de comandos en Elm!
+## ¿Qué y Por qué?
 
-## ¿Qué y por qué?
+Leer argumentos de lineas de comando permite a los programas recibir datos desde la terminal directamente. Los programadores lo usan para personalizar comportamientos de programas y pruebas, así como para facilitar la interacción entre programas.
 
-Leer los argumentos de línea de comandos es una parte fundamental en la programación. Es una manera de obtener información ingresada por el usuario al ejecutar un programa. Los programadores utilizan esta información para personalizar el funcionamiento de sus programas y hacerlos más eficientes para el usuario.
+## Cómo hacerlo:
 
-## ¡Cómo hacerlo!
+Lamentablemente, la arquitectura actual de Elm (0.19.1) no soporta la lectura de argumentos de la línea de comando directamente. Elm se enfoca principalmente en el desarrollo de aplicaciones web en lugar de aplicaciones de consola. Sin embargo, para fines de ilustración, aquí hay un ejemplo de cómo se haría en un lenguaje que lo permita, como Node.js :
 
-En Elm, podemos acceder a los argumentos de línea de comandos a través de la función ```Cmd.capture```. Esta función toma una función y la ejecuta con los argumentos de línea de comandos como parámetro.
-
-```
-Elm . La funcion.Cmd.capture `` `tambien nos permite controlar el formato de los argumentos al convertirlos en una lista de cadenas con la funcion ```Args.arguments```.
-
-El siguiente ejemplo convierte los argumentos en una lista de cadenas y los imprime en la consola:
-
-```
-Elm . 
-import Args
-import Html
-
-main =
-  Html.text (toString (Args.arguments))
+```Node.js
+// Proceso para obtener argumentos de la linea de comando
+process.argv.forEach((valor, index) => {
+    console.log(`${index}: ${valor}`);
+});
 ```
 
-Ejecutando el programa con los siguientes comandos:
-
+Si se ejecuta este programa con el comando `node program.js uno dos tres`, la salida será:
 ```
-elm - ArgExample hello world
-```
-
-Nos dará como resultado:
-
-```
-["hello", "world"]
+0: node
+1: /ruta/a/program.js
+2: uno
+3: dos
+4: tres
 ```
 
-## Profundizando
+## Inmersión profunda:
 
-La lectura de argumentos de línea de comandos es una técnica común en muchos lenguajes de programación, ya que permite al usuario interactuar con el programa de manera más dinámica. Antes de la invención de la interfaz de usuario, los argumentos de línea de comandos eran la única forma de controlar un programa.
+Aunque Elm no soporta la lectura de argumentos de la línea de comando, siempre se puede usar junto con lenguajes que sí lo hacen, como JavaScript. Esta limitación es una decisión de diseño para mantener la simplicidad y seguridad de Elm. Los argumentos de la línea de comando suelen usarse en scripts y aplicaciones de la consola, mientras que Elm está diseñado para aplicaciones web.
 
-Si prefieres una forma más sencilla de interactuar con el usuario, puedes utilizar una biblioteca de interfaz de usuario como [elm-runtime-editor](https://github.com/elm-lang/elm-runtime-editor). Sin embargo, la lectura de argumentos de línea de comandos sigue siendo útil para ciertos casos, como la ejecución de scripts o la personalización de programas de línea de comandos.
+Históricamente, muchos lenguajes de programación permiten leer argumentos de línea de comando para la interacción de programas. En Elm, esta interactividad se maneja principalmente en el front end a través de funciones de entrada y salida.
 
-En términos de implementación, Elm maneja los argumentos de línea de comandos a través de una interfaz de bajo nivel con JavaScript para acceder al objeto "process" del navegador.
+## Ver También:
 
-## Ver también
-
-- [Documentación oficial de Elm sobre Cmd.capture](https://package.elm-lang.org/packages/elm/core/latest/Platform-Cmd#capture)
-- [Ejemplo de cómo leer argumentos de línea de comandos en Elm](https://ellie-app.com/cnRbnnb578ra1)
-- [Librería para interfaces de usuario en Elm](https://github.com/elm-lang/elm-runtime-editor)
+- [Documentación Oficial de Elm](https://elm-lang.org/docs)
+- [Uso de argumentos de línea de comando en Node.js](https://nodejs.dev/learn/nodejs-accept-arguments-from-the-command-line) 
+- [Parámetros y argumentos de la línea de comandos en bash](https://www.gnu.org/software/bash/manual/)

@@ -1,7 +1,7 @@
 ---
-title:                "Надсилання запиту http"
-html_title:           "Arduino: Надсилання запиту http"
-simple_title:         "Надсилання запиту http"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "HTML and the Web"
@@ -10,59 +10,73 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого?
-Відправка HTTP-запиту - це процес надсилання запиту на веб-сервер за допомогою протоколу HTTP. Програмісти цього делають, щоб отримати доступ до різноманітної інформації з Інтернету, від веб-серверів, додатків та інших джерел.
+## Що й Навіщо? / What & Why?
 
-## Як це зробити:
-У наступних блоках коду ```Arduino ... ```, ви можете побачити приклади програм, що демонструють відправку HTTP-запиту і вивід результату на відладочний порт.
+HTTP-запит - це спосіб, яким комп'ютери спілкуються між собою через Веб. Програмісти використовують це для отримання або відправлення даних до сервера.
 
-Наприклад, якщо ви хочете перевірити погоду у вашому місті за допомогою API OpenWeatherMap, можна використати такий код:
+## Як це зробити / How to:
 
-```Arduino
-#include <WiFi.h>
-#include <HTTPClient.h>
+ ```Arduino
+#include <ESP8266WiFi.h>
+
+const char* ssid     = "your_SSID";
+const char* password = "your_PASSWORD";
+
+const char* host = "maker.ifttt.com";
 
 void setup() {
-  Serial.begin(9600);
-  WiFi.begin("назва мережі Wi-Fi", "пароль мережі");
-  
+  Serial.begin(115200);
+  delay(10);
+
+  WiFi.begin(ssid, password);
+
   while (WiFi.status() != WL_CONNECTED) {
-    delay(1000);
-    Serial.println("Встановлюється підключення до мережі Wi-Fi...");
+    delay(500);
+    Serial.print(".");
   }
-  
-  HTTPClient http;
-  String url = "http://api.openweathermap.org/data/2.5/weather?q=Київ,UA&APPID=API-ключ";
-  http.begin(url);
-  int httpCode = http.GET();
-  
-  if (httpCode > 0) {
-    Serial.printf("[HTTP] GET повернув код: %d\n", httpCode);
-    
-    if (httpCode == HTTP_CODE_OK) {
-      String payload = http.getString();
-      Serial.println(payload);
-    }
-  } else {
-    Serial.printf("[HTTP] Помилка підключення: %s\n", http.errorToString(http.errorCode()).c_str());
-  }
-  
-  http.end();
+
+  Serial.println("");
+  Serial.println("WiFi connected");  
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
 }
 
 void loop() {
-  
+  WiFiClient client;
+
+  const int httpPort = 80;
+  if (!client.connect(host, httpPort)) {
+    Serial.println("connection failed");
+    return;
+  }
+
+  client.print(String("GET /trigger/event/with/key/your_key") + " HTTP/1.1\r\n" +
+               "Host: " + host + "\r\n" + 
+               "Connection: close\r\n\r\n");
+
+  delay(10);
+
+  while(client.available()){
+    String line = client.readStringUntil('\r');
+    Serial.print(line);
+  }
+
+  Serial.println();
+  Serial.println("closing connection");
 }
-```
+ ```
 
-Результатом програми буде виведення даних про погоду у Києві на відладочний порт.
+## Поглиблено / Deep Dive:
 
-## Глибоке занурення:
-Відправка HTTP-запитів стала надзвичайно популярною з появою Інтернету. Це стало можливим завдяки протоколу HTTP, що дозволяє обмінюватися інформацією між веб-серверами та програмами. Є інші альтернативи відправки запитів, наприклад, використання FTP або TCP-з'єднання, але HTTP-протокол широко використовується через його простоту та відкритий стандарт.
+- Історичний контекст: HTTP-запити були введені 1990 року та використовувалися як основний протокол передачі даних у Веб.
 
-Для виконання HTTP-запиту, вам необхідно мати діюче підключення до Інтернету та знати URL-адресу, на яку ви хочете надіслати запит. Також може бути необхідно зазначити параметри запиту, а також опційний заголовок або тіло запиту.
+- Альтернативи: HTTPS (захищений HTTP), API-запити основані на REST або GraphQL.
 
-## Дивіться також:
-- Документація Arduino: https://www.arduino.cc/en/Reference/HTTPClient
-- Офіційний сайт OpenWeatherMap API: https://openweathermap.org/api
-- Приклади використання HTTP-запитів на Arduino: https://randomnerdtutorials.com/esp32-http-get-post-arduino/
+- Деталі реалізації: Код Arduino використовує ESP8266WiFi-бібліотеку для роботи з Wi-Fi та надсилання GET-запиту до сервера.
+
+## Дивитись також / See Also:
+
+1. Документація ESP8266WiFi: https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html
+2. Посібник по HTTP-запитам: https://developer.mozilla.org/uk/docs/Web/HTTP/Methods
+3. Arduino Home: https://www.arduino.cc/
+4. HTTP, REST та GraphQL: https://www.codecademy.com/articles/what-is-rest

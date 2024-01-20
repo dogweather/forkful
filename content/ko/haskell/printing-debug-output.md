@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 출력하기"
-html_title:           "Haskell: 디버그 출력 출력하기"
-simple_title:         "디버그 출력 출력하기"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Testing and Debugging"
@@ -10,42 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐야 왜? 
-디버그 출력을 하는 것은 무엇이고, 프로그래머들이 왜 그것을 하는지에 대해 간략하게 설명합니다.
+## 무엇 그리고 왜?
 
-디버그 출력은 프로그램을 실행할 때 디버깅 및 오류를 파악하는 데 유용한 메시지를 출력하는 것을 말합니다. 프로그래머들은 디버그 출력을 사용하여 프로그램의 실행 중에 변수의 값이나 함수의 동작 등 중요한 정보를 확인할 수 있습니다.
+디버그 출력은 프로그래밍에서 중요한 부분입니다. 이것은 개발자가 프로그램의 특정 부분이 어떻게 작동하는지 파악하는 데 도움이 됩니다. 이런 방식으로 문제점을 찾아내고 수정할 수 있습니다.
 
-## 방법: 
-아래의 코드 블록 안의 코드 예제 및 샘플 출력을 통해 디버그 출력하는 방법을 보여줍니다.
+## 사용법
+
+여기서는 'Debug.Trace' 모듈을 사용하여 표준 오류에 디버그 정보를 출력하는 방법을 보여줍니다.
 
 ```Haskell
--- 문자열을 출력하는 함수
-debugPrint :: String -> IO ()
-debugPrint str = do
-    putStrLn ("디버그 출력: " ++ str)
+import Debug.Trace
 
--- 디버그 출력 함수 사용 예제
-main = do
-    debugPrint "프로그램 시작"
-    let x = 5
-    debugPrint ("x의 값: " ++ show x)
+main :: IO ()
+main = trace "This will be printed before the main function" (return ())
 ```
 
-코드 실행 결과:
+위 프로그램은 "This will be printed before the main function" 메세지를 출력 후 아무런 동작도 수행하지 않고 종료합니다.
 
-```
-디버그 출력: 프로그램 시작
-디버그 출력: x의 값: 5
-```
+## 깊은 이해
 
-## 깊게 파고들기: 
-디버그 출력의 역사적 맥락, 대안들 및 구현에 대한 자세한 정보를 제공합니다.
+디버그 출력은 프로그래밍의 오랜 역사와 함께 왔습니다. 시작부터 거의 모든 언어가 이런 기능을 제공했습니다. Haskell에서는 이러한 디버그 출력을  `Debug.Trace` 모듈로 제공하고 있습니다.
 
-디버그 출력은 프로그래밍 언어의 초기부터 사용되어 왔으며, 여전히 많은 프로그래머들이 코드를 디버깅하는 데 필수적인 도구로 활용하고 있습니다. 하지만 디버그 출력은 다른 대안들과 함께 사용될 때 가장 효율적입니다. 예를 들어, Haskell에서는 디버거를 사용하여 코드를 단계별로 실행하면서 문제를 파악할 수 있습니다. 또는 특정 변수나 함수의 값만 추적하는 간단한 디버깅 라이브러리를 사용할 수도 있습니다.
+이 방법의 단점은 디버그 정보가 표준 오류로 출력되므로, 프로그램을 통제된 환경에서 실행해야만 합니다.
 
-## 관련 자료: 
-디버그 출력에 대한 더 많은 정보와 관련 자료를 제공하는 링크를 제공합니다.
+그러나 이런 문제를 해결하기 위한 다른 방법들도 있습니다. 예를 들어, Haskell에는 디버깅을 돕는 여러 라이브러리가 있습니다. 가령, "ghcid"은 파일이 변경될 때마다 자동으로 코드를 재컴파일하며 발생한 오류 또는 경고를 즉시 표시합니다.
 
-- Haskell 공식 문서: [Debugging in Haskell](https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/debugging.html)
-- [Learn You a Haskell](http://learnyouahaskell.com/)에서 디버그 출력 사용하기
-- [Haskell Debugging Tutorial](https://youtu.be/ItftdWIiioQ) 비디오 튜토리얼
+## 그밖에 참고하면 좋을 것들
+
+디버그 기술에 대한 더 깊은 이해를 원한다면, 이러한 참고자료들이 도움이 될 것입니다:
+
+- Real World Haskell: 디버깅 공부에 대한 좋은 시작점입니다. [링크](http://book.realworldhaskell.org/read/debugging-and-profiling.html)
+- Hackage: Debug.Trace 모듈에 대한 자세한 문서를 제공합니다. [링크](http://hackage.haskell.org/package/base-4.14.1.0/docs/Debug-Trace.html)
+- Haskell Wiki: 디버깅에 대한 다양한 팁과 트릭이 제공됩니다. [링크](https://wiki.haskell.org/Debugging)

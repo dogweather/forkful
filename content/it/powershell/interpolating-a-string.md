@@ -1,6 +1,6 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "PowerShell: Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
 simple_title:         "Interpolazione di una stringa"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
-L'interpolare una stringa è un modo per inserire valore o variabili dinamiche all'interno di una stringa statica. Questo è spesso utile per generare messaggi personalizzati o per creare output dinamici in base a variabili. I programmatori utilizzano l'interpolazione delle stringhe per automatizzare il processo di creazione di stringhe e rendere il codice più efficiente.
+## Che cos'è & Perché?
+
+L'interpolazione di stringhe è un metodo per infondere variabili all'interno di una stringa. I programmatori lo fanno per comporre messaggi dinamici e renderne più leggibile il codice.
 
 ## Come fare:
-Il modo più semplice per interpolare una stringa in PowerShell è utilizzare l'operatore `-f` seguito da una stringa con dei placeholder in cui inserire i valori. Esempio:
+
+Ecco come si fa in PowerShell. Supponiamo di avere due variabili, `$nome` e `$età`.
+
 ```PowerShell
-$nome = "John"
-$cognome = "Smith"
-$messaggio = "Benvenuto, {0} {1}!" -f $nome, $cognome
-Write-Output $messaggio
-```
-Output:
-```
-Benvenuto, John Smith!
-```
-È anche possibile utilizzare la sintassi del doppio dollaro `$()` per interpolare una variabile all'interno di una stringa. Esempio:
-```PowerShell
-$eta = 30
-$messaggio = "Hai {0} anni!" -f $eta
-Write-Output $messaggio
-```
-Output:
-```
-Hai 30 anni!
+$nome = "Mario"
+$età = 25
 ```
 
-## Approfondimento:
-L'interpolarzione delle stringhe è stata introdotta in PowerShell 3.0 ed è stata ispirata dalla funzionalità simile in C# e VB.NET. Un'alternativa all'interpolazione delle stringhe è l'utilizzo dei comandi `Concat()` o `Format()` per unire e formattare le stringhe. L'operatore `-f` può essere utilizzato anche per formattare valori all'interno delle stringhe, come ad esempio limitare il numero di decimali dopo la virgola. Per ulteriori informazioni sull'utilizzo dell'interpolazione delle stringhe, si consiglia di consultare la documentazione ufficiale di PowerShell.
+Per interpolare queste variabili in una stringa, usiamo `"..."` (doppio apice) e inseriamo le variabili con `$`:
 
-## Vedi anche:
-- [Documentazione ufficiale di PowerShell](https://docs.microsoft.com/en-us/powershell/)
-- [Esempi di interpolazione delle stringhe in PowerShell](https://www.pdq.com/blog/string-interpolation-powershell/)
-- [Differenze tra l'interpolazione delle stringhe e i comandi Format/Concat](https://www.zumbido.com/2018/04/12/string-interpolation-in-powershell/)
+```PowerShell
+"Buongiorno, mio nome è $nome e ho $età anni."
+```
+
+L'output sarà:
+
+```PowerShell
+Buongiorno, mio nome è Mario e ho 25 anni.
+```
+
+## Approfondimento
+
+L'interpolazione di stringhe non è un concetto nuovo. È presente in molti altri linguaggi di programmazione come JavaScript e Python. In PowerShell, noterai che solo le stringhe racchiuse tra doppi apici `"..."` possono essere interpolate. Le stringhe racchiuse in apici singoli `'...'` non faranno interpolazione.
+
+Come alternativa all'interpolazione di stringhe in PowerShell, potresti usare il metodo tradizionale `Format-String`:
+
+```PowerShell
+"Buongiorno, mio nome è {0} e ho {1} anni." -f $nome, $età
+```
+
+Tuttavia, l'interpolazione di stringhe è generalmente considerata più leggibile.
+
+## Vedere Anche
+
+1. [Guida ufficiale di PowerShell sulla manipolazione delle stringhe](https://docs.microsoft.com/it-it/powershell/scripting/samples/string-manipulation?view=powershell-7.1)
+2. [Documentazione di Microsoft su `-f` operator](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#format-operator-f)

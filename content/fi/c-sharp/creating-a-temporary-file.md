@@ -1,7 +1,7 @@
 ---
-title:                "Väliaikaisen tiedoston luominen"
-html_title:           "C#: Väliaikaisen tiedoston luominen"
-simple_title:         "Väliaikaisen tiedoston luominen"
+title:                "Tilapäisen tiedoston luominen"
+html_title:           "Arduino: Tilapäisen tiedoston luominen"
+simple_title:         "Tilapäisen tiedoston luominen"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,57 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
+## Mitä & Miksi?
 
-Väliaikaisen tiedoston luominen on yleinen käytäntö ohjelmoinnissa. Se tarkoittaa tilapäisen tiedoston luomista, joka poistetaan käytöstä ohjelman suorituksen jälkeen. Tätä tehdään usein, kun ohjelma tarvitsee tallentaa tai käsitellä tietoa, jota ei enää tarvita sen jälkeen.
+Tilapäisen tiedoston luominen on prosessi, jossa luodaan väliaikainen tiedosto ohjelman suorittamisen ajaksi. Tätä tehdään, koska se mahdollistaa suurien datamäärien turvallisen käsittelyn ja säilytyksen, jolloin muistin kuormitus pysyy minimissä.
 
-Kuinka tehdä se?
+## Näin teet:
 
-C# tarjoaa useita tapoja luoda väliaikaisia tiedostoja. Yksi tapa on käyttää .NET Framework -luokkaa "Path.GetTempFileName()", joka luo ainutlaatuisen tiedostonimen ja palauttaa polun tiedostoon. Tässä on esimerkki:
-
-```C#
-string tempFile = Path.GetTempFileName();
-```
-
-Tämä koodi luo väliaikaisen tiedoston, jonka nimi on uniikki ja sijaitsee käyttöjärjestelmän osoittamassa väliaikaisessa tiedostokansiossa. Voit myös käyttää "File.Create()" -metodia luomaan ja avaamaan tiedoston kerralla:
+Käytä C#:n `System.IO.Path`-luokkaa ja sen `GetTempFileName()`-metodia väliaikaisen tiedoston luomiseen kuten alla:
 
 ```C#
 using System.IO;
 
-FileStream fs = File.Create(Path.GetTempFileName());
-```
-
-Voit myös itse valita väliaikaisen tiedoston sijainnin ja nimen käyttämällä "Path.Combine()" -metodia ja luomalla uuden tiedoston FileStream-luokalla:
-
-```C#
-string tempDir = Path.Combine(Path.GetTempPath(), "MyTempFiles");
-string tempFile = Path.Combine(tempDir, "tempFile.txt");
-
-using (FileStream fs = new FileStream(tempFile, FileMode.Create, FileAccess.Write))
+class Program
 {
-    // kirjoita tai lue tiedostoon tarvittava tieto
+    static void Main()
+    {
+        // Luo väliaikainen tiedosto
+        string tempFile = Path.GetTempFileName();
+
+        // Tulosta tiedostonimi
+        Console.WriteLine(tempFile);
+    }
 }
 ```
 
-Syöte- ja tuloste esimerkit:
-
-> tempFile: C:\Users\käyttäjä\AppData\Local\Temp\tempFile.txt
-> fs: FileStream
-
-Syvempää tietoa
-
-Väliaikaisten tiedostojen luomista käytetään usein sovellusten tekemiseen, jotka vaativat väliaikaista tallennustilaa tai tarvitsevat käyttää tiedostoa vain tilapäisesti. Se voi myös auttaa estämään tietojen menetyksen, kun sovellus kaatuu tai lopettaa yhteyden tietokantaan.
-
-Vaihtoehto väliaikaisten tiedostojen käytölle on käyttää pääväylää, kuten "Environment.SpecialFolder.ApplicationData" tai "Environment.SpecialFolder.LocalApplicationData", tallentaaksesi ja käyttääksesi tiedostoja. Näitä reittejä käytetään usein sovellusten asetusten ja käyttäjän tietojen tallentamiseen.
-
-Lisäksi on tärkeää muistaa poistaa väliaikainen tiedosto, kun sitä ei enää tarvita. Voit tehdä tämän käyttämällä "File.Delete()" -metodia:
-
-```C#
-string tempFile = Path.GetTempFileName();
-// tee jotain väliaikaisella tiedostolla
-File.Delete(tempFile); // poistaa tiedoston järjestelmästä
+Suoritus tuottaa tulokseksi seuraavaa siis tiedostonimen:
+```
+C:\\Temp\\tmp4A8F.tmp
 ```
 
-Katso myös
+## Syvempi sukellus:
 
-Voit lukea lisää väliaikaisten tiedostojen luomisesta ja käytöstä C#:ssa Microsoftin dokumentaatiosta: https://docs.microsoft.com/en-us/dotnet/api/system.io.path.gettempfilename?view=netframework-4.8. Voit myös tutustua muihin tiedostojen käsittelyyn liittyviin luokkiin, kuten "File", "Directory", ja "Path".
+- Historia: Tilapäisten tiedostojen käyttö on ollut standardi käytäntö vuodesta 1972 alkaen, kun UNIX-käyttöjärjestelmä otti ne ensimmäisenä käyttöön.
+- Vaihtoehdot: Voit itse hallinnoida väliaikaisia tiedostoja tiedostojärjestelmässä tai käyttää `MemoryStream`-objektia, jos tiedosto on riittävän pieni.
+- Toteutusyksityiskohdat: `GetTempFileName()` luo 0 tavun tiedoston, joka on poistettu automaattisesti sovelluksen suorittamisen jälkeen.
+
+## Katso myös:
+
+- C# FileStream: https://docs.microsoft.com/fi-fi/dotnet/api/system.io.filestream?view=net-5.0
+- Väliaikaisten tiedostojen hallinta: https://docs.microsoft.com/fi-fi/dotnet/standard/io/how-to-create-temporary-files

@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola a todos! ¡Bienvenidos a mi artículo sobre el lenguaje de programación Fish Shell! En este artículo, les mostraré cómo calcular una fecha en el futuro o en el pasado utilizando Fish Shell de forma rápida y sencilla. ¿Listos? ¡Comencemos!
-
-## ¿Qué y por qué? 
-Calcular una fecha en el futuro o en el pasado es una tarea común para los programadores. Esto se debe a que, en muchos casos, necesitamos manipular fechas en nuestras aplicaciones para realizar cálculos o mostrar información en un formato específico. Fish Shell nos ofrece una manera fácil y eficiente de hacerlo con su funcionalidad de fechas integrada.
+## ¿Qué y Por qué?
+Calcular una fecha en el futuro o pasado es determinar la fecha exacta que cae un número específico de días antes o después de una fecha dada. Los programadores lo hacen para manejar las operaciones basadas en el tiempo, como los cálculos de fechas de vencimiento o eventos programados.
 
 ## Cómo hacerlo:
-Para calcular una fecha en el futuro o en el pasado, utilizamos el comando `date` seguido de un operador (+ o -) y un número que represente la cantidad de tiempo que deseamos agregar o restar a la fecha actual. Por ejemplo, si queremos calcular la fecha dentro de una semana, escribimos `date +1w`.
+En Fish Shell, usamos el comando `date` para el cálculo de fechas. Aquí hay un ejemplo sencillo que muestra cómo calcular la fecha 5 días en el futuro:
 
-### Ejemplos de código:
-```
-# Calculando la fecha dentro de una semana
-Fish Shell> date +1w
-Wed Dec 23 23:51:29 EST 2020
-
-# Calculando la fecha hace 2 meses
-Fish Shell> date -2m
-Fri Oct 23 23:52:08 EST 2020
+```Fish Shell
+set -l future_date (date -I -d "+5 day")
+echo $future_date
 ```
 
-## Profundizando:
-Fish Shell utiliza el estándar [GNU Core Utilities date](https://www.gnu.org/software/coreutils/manual/html_node/Calendar-date-items.html) para manejar fechas y horas. Además, existen otras alternativas como `chrony` y `ntpdate` que también pueden ser útiles para realizar cálculos de fechas.
+Esto devolverá una fecha que es exactamente 5 días a partir de la fecha actual en formato YYYY-MM-DD.
 
-## Ver también:
-Si quieren saber más sobre la funcionalidad de fechas en Fish Shell, pueden consultar la [documentación oficial](https://fishshell.com/docs/current/index.html#time). También pueden encontrar más información sobre el comando `date` en la [página de manual](https://fishshell.com/docs/current/cmds/date.html) de Fish Shell.
+Para calcular una fecha en el pasado, solo necesita cambiar el signo "+" por "-". Por ejemplo, para obtener la fecha de hace 5 días:
 
-¡Y eso es todo por hoy! Espero que este artículo les haya sido útil y que ahora puedan calcular fechas en el futuro o en el pasado sin problemas utilizando Fish Shell. ¡Hasta la próxima!
+```Fish Shell
+set -l past_date (date -I -d "-5 day")
+echo $past_date
+```
+
+La salida será una fecha exactamente 5 días antes de la fecha actual.
+
+## Más Detalles
+Históricamente, los programadores han utilizado una variedad de métodos para calcular fechas en el futuro o pasado. Antes de la invención de lenguajes de script potentes como Fish Shell, estos cálculos a menudo requerían algoritmos complicados.
+
+En cuanto a las alternativas, otros lenguajes como Bash, Python, o JavaScript también ofrecen funciones de cálculo de fechas.
+
+La implementación detallada de estos cálculos depende en gran medida de las bibliotecas y las funciones proporcionadas por el lenguaje que estás utilizando. En el caso de Fish Shell, el comando `date` hace gran parte del trabajo por nosotros.
+
+## Ver También
+1. Documentación oficial de Fish Shell - [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+2. Tutorial de Fish Shell de DigitalOcean - [https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell)
+3. Manual de la fecha de GNU - [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

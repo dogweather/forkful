@@ -1,7 +1,7 @@
 ---
-title:                "לחבר מחרוזות"
-html_title:           "PowerShell: לחבר מחרוזות"
-simple_title:         "לחבר מחרוזות"
+title:                "חיבור מחרוזות"
+html_title:           "C++: חיבור מחרוזות"
+simple_title:         "חיבור מחרוזות"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,38 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה?
+## מה ולמה?
+חיבור מחרוזות הוא התהליך שבו משרשרים שתיים או יותר מחרוזות לך ליצור מחרוזת אחת ארוכה יותר. מתכנתים עושים זאת לדעיך, להפשט קוד וליצור נתונים במידה הדרושה. 
 
-טיפוס מחרוזות (concatenating strings) הוא פעולה שמאגדת שתי או יותר מחרוזות למחרוזת יחידה. זוהי פעולה נפוצה שבתכנות ומשמשת לצורך שילוב מידע מסוגים שונים אל מחרוזות אחת גדולה יותר.
-
-# איך לעשות:
-
-הנה כמה דוגמאות לכתיבת תכניות בפני עצמן עם דוגמאות לפלט נתונים:
+## כיצד:
+חיבור מחרוזות ב-PowerShell ניתן לעשייה בשלושה דרכים עיקריות. הבא הוא דוגמת קוד ב-PowerShell נגיחה לשלוש השיטות:
 
 ```PowerShell
-# דוגמא 1: כמווות שתי מחרוזות יחד
-$string1 = "שלום"
-$string2 = "עולם"
-$string3 = $string1 + $string2
+# שיטה 1: חיבור עם סימן המחבר "+"
+$str1 = "שלום, "
+$str2 = "עולם!"
+Write-Host ($str1 + $str2) # הפלט: שלום, עולם!
 
-# פלט מצורף: שלוםעולם
+# שיטה 2: חיבור עם הפקודה "Concat"
+$str3 = [string]::Concat($str1, $str2)
+Write-Host $str3 # הפלט: שלום, עולם!
 
-# דוגמא 2: צריבת מחרוזת ומספר
-$name = "נועה"
-$age = 29
-$string = "שמי הוא $name וגילי הוא $age."
-
-# פלט מצורף: שמי הוא נועה וגילי הוא 29.
+# שיטה 3: שימוש במתודת "f" 
+$str4 = "{0}{1}" -f $str1,$str2
+Write-Host $str4 # הפלט: שלום, עולם!
 ```
 
-# טיול עמוק:
+## הצצה לתוך:
+חיבור מחרוזות הוא מעט מאוד ראש-צעיר קיים בלשון תכנות PowerShell, אך בסביבות תכנות אחרות. זה נתמך ב-PowerShell מאז הגרסה הראשונה. היינו חלב מהכולל נוח להשתמש, שרתים טמבל ויציב, אך קיימות חלופות אחרות שיכולות לעזור במתנאים מסוימים, כמו `StringBuilder` שיכול לעזור כאשר יש צורך בביצועים גבוהים עם מחרוזות גדולות.
 
-טיפוס מחרוזות הוא פעולה נפוצה בשפות תכנות רבות כולל PowerShell. השימוש בפעולה זו יכול להיות מוצדק כאשר מתארגן מידע מעורך ומפנים. ישנן חלופות לטיפוס מחרוזות, כמו זמן ריצה (runtime) של פעולות תשתיתיות של המערכת של העורך כגון פלט משני אלמנטים וידוע כסטרינגשפורמט (string.format). פלט המשני אלמנטים יכול לכלול קלט מצורף, טקסט מבורר ואתר, כאשר פעולות יותר מורכבות מוכנסות כמידע בשורת עורך של המחרוזת.
+## ראה גם:
+שקוף כאן למידע נוסף על מחרוזות ב-PowerShell והשימוש שלהן:
 
-# ראה גם:
-
-למידע נוסף על עשיית טיפוס מחרוזת ראה:
-
-- [מסמכי ידע של Microsoft אודות טיפוס מחרוזות](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_concatenating_strings?view=powershell-7)
-- [מידע נוסף על טיפוסי מחרוזות מבחינת תוכנית](https://www.powershellgallery.com//about/error?) 
-- [דוגמאות נוספות על טיפוס מחרוזות בפורום של Microsoft](https://social.technet.microsoft.com/Forums),he-He/5a2f0bcc-a7f2-47c4-b706-3ffd9eff4e%3A0*- ?view=pt-BR).
+- מחרוזות ב-PowerShell: https://he.wikibooks.org/wiki/PowerShell/מחרוזות
+- חיבור מחרוזות ב-PowerShell: https://www.red-gate.com/simple-talk/sysadmin/powershell/string-formatting-in-powershell/

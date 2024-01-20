@@ -1,7 +1,7 @@
 ---
-title:                "「日付を文字列に変換する」"
-html_title:           "Kotlin: 「日付を文字列に変換する」"
-simple_title:         "「日付を文字列に変換する」"
+title:                "日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
+simple_title:         "日付を文字列に変換する"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か & なぜ?
+## 何となぜ？
 
-日付を文字列に変換することは、多くのプログラマーが行う作業です。これは、日付を読みやすい形式で表示したり、データベースやファイルに保存するために行われます。プログラマーは、日付を単なる数字ではなく、より意味のある形式で表現することを望んでいます。
+日付を文字列に変換するとは、日付データを人間が理解しやすい形式で表示することです。プログラマーはこれをコーディングの処理を簡易化し、データの出力を視覚的にわかりやすくする目的で行います。
 
-## 方法
+## 方法について: 
 
-```Kotlin
-val date = Date() 
-val format = SimpleDateFormat("yyyy-MM-dd")
-val stringDate = format.format(date)
-println(stringDate) // 例: 2021-10-17
+```Kotlin 
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    val today = LocalDate.now()
+    val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd")
+    val dateString = today.format(formatter)
+    println(dateString)
+}
 ```
 
-上記のコードは、現在の日付を日付オブジェクトとして取得し、設定された形式に従って文字列に変換する方法を示しています。最後の行では、変換された文字列をコンソールに出力しています。
+上記の例では、今日の日付を "yyyy/MM/dd" の形式で文字列として出力します。例えば今日が2022年5月1日であれば、このコードは "2022/05/01" という文字列を画面に表示します。
 
-## 詳しく
+## 詳細解説: 
 
-日付を文字列に変換する方法は、プログラミング言語によって異なります。多くの言語では、日付を表すデータ型があり、それを指定された形式の文字列に変換する機能が用意されています。
+Java 8の登場以前は、Java.util.DateやJava.util.Calendarを用いて日付を文字列に変換します。しかしこれらのクラスは使いにくいと大部分に評価されていたため、Java 8では新たにJava.timeパッケージが追加されました。Kotlinもまたこの改良された日付時間APIを利用しています。
 
-しかし、プログラマーが手動で日付を形式化する方法もあります。これは、特定のプログラミング言語やフレームワークに依存せず、柔軟な方法です。
+JavaScriptやPython等の他の言語でも同様の日付変換処理が存在しますが、KotlinではDateTimeFormatterを用いることで容易にエレガントに行え、さまざまなパターンに対応可です。
 
-## 関連リンク
+なお、この実装に特別な依存関係は存在しません。必要なのはJava 8以上のバージョンのみです。
 
-- [Javaの日付と時刻のフォーマット](https://www.javadrive.jp/start/date/index4.html)
-- [Unixエポックからの日付の変換](https://unixtime.info/ja/)
-- [PHPの日付フォーマットのページ](https://www.php.net/manual/ja/function.date.php)
+##  参考資料もご覧ください: 
+
+Kotlinでの日時操作についてさらに詳しく知りたい方は以下のリンクを参照してください。
+
+- [Kotlin Docs: Date and Time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js.date/-date/)
+- [Baeldung: Guide to the Kotlin DateTime API](https://www.baeldung.com/kotlin/date-time)
+- [StackOverflow: Formatting date in Kotlin](https://stackoverflow.com/questions/50716187/formatting-date-in-kotlin)

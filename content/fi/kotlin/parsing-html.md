@@ -1,7 +1,7 @@
 ---
-title:                "HTML-analysointi"
-html_title:           "Kotlin: HTML-analysointi"
-simple_title:         "HTML-analysointi"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,22 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-HTML-analyysi on prosessi, jossa ohjelmoijat muuttavat verkkosivun koodin helposti luettavaan muotoon. Tämä on tärkeää, koska se mahdollistaa tiedon keräämisen ja manipuloinnin verkkosivuilta. Tämä helpottaa monia verkkoon liittyviä tehtäviä, kuten tietojen tallentamista tai hakemista.
+## Mitä & Miksi?
 
-## Miten:
-```Kotlin 
-val html = "<html><body><h1>Hello, world!</h1></body></html>"
-val parsedHtml = Jsoup.parse(html)
-val title = parsedHtml.select("h1").text()
-println(title)
+HTML-tulkitseminen on prosessi, jolla sivustojen koodi muunnetaan strukturoiduksi datarakenteeksi. Ohjelmoijat tekevät sen usein datan poimimiseksi verkkosivuilta tai sivuston rakenteen ymmärtämiseksi.
+
+## Näin teet:
+
+Kotlinissa voit käyttää esimerkiksi jsoup-kirjastoa tähän tarkoitukseen. Katso alla olevan koodiesimerkin:
+
+```Kotlin
+import org.jsoup.Jsoup
+
+fun main() {
+    val doc = Jsoup.connect("https://example.com").get()
+    val title = doc.title()
+    println("Otsikko : $title")
+
+    val links = doc.select("a[href]")
+    for (link in links) {
+        println("Linkki : ${link.attr("abs:href")}")
+    }
+}
 ```
 
-Tämä esimerkki tulostaa "Hello, world!" selkeästi ilman HTML-tageja. Käytämme tässä Jsoup-kirjastoa, joka on suosittu HTML-analyysiin tarkoitettu kirjasto.
+Koodi käy läpi 'example.com' -sivuston, tulostaa sen otsikon ja kaikki linkit.
 
-## Syväsukellus:
-HTML-analyysi on ollut tärkeä osa verkkokehitystä jo vuosikymmenten ajan. Alun perin sitä käytettiin pääasiassa verkkosivustojen suunnittelussa ja testaamisessa, mutta nykyään sillä on paljon muita käyttötarkoituksia. On myös muita kirjastoja, kuten järjestelmään sisltyvä org.xml.sax, jotka voivat auttaa HTML-analyysissä.
+## Syvemmälle
 
-## Katso myös:
-- Jsoup-kirjaston viralliset dokumentaatiot: https://jsoup.org/
-- Orkxml.sax: https://docs.oracle.com/javase/7/docs/api/org/xml/sax/package-summary.html
+HTML:n tulkitseminen sai alkunsa 1990-luvulla, kun verkkosivustot olivat tekstimuotoisia ja niiden kaivaminen oli välttämätöntä tiedonsaannin kannalta. Alternatiivit HTML-tulkitsemiselle sisältävät XML- tai JSON-tulkitsemisen, riippuen tiedon esittämisformaatin ja tarpeiden mukaan.
+
+Tulkkauskirjastoissa, kuten Jsoup, on erityisen huolellinen tapa käsitellä erilaisia HTML-tageja ja niiden attribuutteja. Jsoup myös käsittelee poikkeukset hyvin, jotka saattavat syntyä huonosti muotoillun HTML:n kanssa.
+
+## Katso myös
+
+- Jsoup dokumentaatio: https://jsoup.org/
+- Jsoup GitHub page: https://github.com/jhy/jsoup
+- XML parsing Kotlinissa: https://kotlinlang.org/docs/xml.html
+- JSON parsing Kotlinissa: https://kotlinlang.org/docs/kotlinx-serialization.html

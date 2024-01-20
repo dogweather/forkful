@@ -1,7 +1,7 @@
 ---
-title:                "קריאת ארגומנטים בשורת פקודה"
-html_title:           "PowerShell: קריאת ארגומנטים בשורת פקודה"
-simple_title:         "קריאת ארגומנטים בשורת פקודה"
+title:                "קריאה של ארגומנטים משורת הפקודה"
+html_title:           "C#: קריאה של ארגומנטים משורת הפקודה"
+simple_title:         "קריאה של ארגומנטים משורת הפקודה"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -12,22 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-קריאת ארגומנטים מפקודת השורת פקודה היא פעולה פשוטה וחיונית בתכנות פוארשל. היא מאפשרת למתכנתים לספק מידע נוסף לתוכנית שהיא מריצה, ולהתאים את הספריית פקודות והנתונים לצורכי הביצוע של כל תרחיש.
+קריאת ארגומנטים של שורת הפקודה היא דרך בה משתמשים יכולים להעביר מידע לסקריפט כאשר הם מריצים אותו. אנו עושים את זה כדי להפוך את הסקריפט ליותר גמיש ומותאם אישית.
 
-## כיצד לעשות זאת:
+## איך לעשות:
 
-באמצעות פוארשל, קריאת ארגומנטים נעשית באמצעות הפרמטר " $args ", שמכיל מערך של כל הארגומנטים שהוקשו כחלק מפקודת השורת הפקודה. לדוגמה:
-פקודת השורת פקודה: ```powershell
-C:\Scripts\my_script.ps1 -file "C:\Users\JohnDoe\file.txt"
+```PowerShell
+# Code
+param (
+    [Parameter(Mandatory=$true)][string]$name,
+)
+Write-Output "שלום $name!"
 ```
+כתוב והרץ את הסקריפט הנל, והגש את `שם` כארגומנט.
+ 
+```PowerShell
+# Output
+.\myscript.ps1 -name "דני"
+"שלום דני!" 
+```
+זה מדפיס "שלום דני!".
 
-הארגומנטים המקבילים יתווספו למערך " $args ", כך שניתן יהיה להגיש עם השורת הפקודה למתכנת שביצע את הערכים הנתונים לארגומנטים הנדרשים בשם הספציפי של התוכנה. ניתן לגשת לארגומנטים על ידי מילות מפתח כגון " $args [0] ", " $args [1] ", וכן הלאה.
 
-## לצפצף:
+## צלילה עמוקה:
 
-פקודת השורת פקודה של המשטרה Windows הייתה אחת המקורות הראשונים של קריאת ארגומנטים בפוארשל. מתכננים אחרים ביצעו גם עדכון לפוארשל כנדרש בו undefined פרימוטיבים כגון לא מקוריים, מתכננים אחרים משתמשים בתוכניות אלטרנטיביות כגון pg_switcher או Ruby, התוכנית שלל הנתונים תוכניות הרובוטיות “CONFIG.TMP” עבור זאת לחיצה על מכסי חלון כדי שתמצע (lifecycle) vu
+1.היסטוריה: שימוש בארגומנטים בשורת הפקודה התחיל בתקופת המחשוב המוקדמת, כאשר הממשק המנשק היה הדרך היחידה לתקשר עם המחשב.
 
-## לראות גם:
+2.חלופות: אפשרות אחרת להעביר מידע לסקריפט היא באמצעות הקרנה,
+אך שימוש בארגומנטים בשורת הפקודה עדיין הפרקטיקה הנפוצה.
 
-1. [קריאת ארגומנטים בפוארשל](https://docs.microsoft.com/he-IL/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7)
-2. [חשיבות של פרמטרים וריבויים בפוארשל](https://docs.microsoft.com/he-IL/powershell/scripting/dev-cross-plat/writing-cross-platform-powershell-script?view=powershell-7)
+3.פרטי ביצוע: אם אתה נותן את `-name` כארגומנט, PowerShell מסתכל על הparam block ומחפש משתנה עם אותו שם. אם הוא מוצא, הוא מכין את הערך הנתון למשתנה.
+
+## ראה גם:
+
+1. [החלטה בין Param ו- $ args ב-PowerShell]
+(https://www.faqforge.com/powershell/deciding-between-param-and-args-in-powershell/)
+
+2. [עבודה עם משתנים ב-PowerShell]
+(https://www.red-gate.com/simple-talk/sysadmin/powershell/working-with-variables-in-powershell/)
+
+3. [עבודה עם System.Object משתנים ב-PowerShell]
+(https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-working-with-object-variables/)</p>

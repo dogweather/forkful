@@ -1,7 +1,7 @@
 ---
-title:                "Jämförelse av två datum"
-html_title:           "PHP: Jämförelse av två datum"
-simple_title:         "Jämförelse av två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -12,50 +12,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Att jämföra två datum är en vanlig uppgift för programmerare, speciellt när man jobbar med webbutveckling. Det kan användas för att kolla vilket datum som är senast eller för att kontrollera om två händelser inträffat samtidigt.
+Att jämföra två datum i programmering handlar om att avgöra om ett datum är tidigare, senare eller samma som ett annat datum. Detta görs för att hantera tidsrelaterad logik; tid och datum är avgörande inom allt från bokningssystem till vetenskaplig forskning.
 
-## Hur man gör:
+## Hur Du Gör:
 
-Här är två exempel på hur man kan jämföra två datum i PHP:
+Här är hur du kan jämföra två datum med hjälp av PHPs inbyggda DateTime klass:
 
 ```PHP
-$datum1 = "18 augusti 2021";
-$datum2 = "25 augusti 2021";
+$datum1 = new DateTime('2020-01-01');
+$datum2 = new DateTime('2020-12-31');
 
-if ($datum1 > $datum2) {
-    echo "$datum1 är senare än $datum2.";
-} elseif ($datum1 < $datum2) {
-    echo "$datum1 är tidigare än $datum2.";
+if ($datum1 < $datum2) {
+    echo "Datum1 är tidigare än Datum2.";
+} else if ($datum1 > $datum2) {
+    echo "Datum1 är senare än Datum2.";
 } else {
-    echo "Båda datum är samma.";
+    echo "Datum1 och Datum2 är samma dag.";
 }
 ```
 
-Output: 18 augusti 2021 är tidigare än 25 augusti 2021.
+Om `Datum1` är 1:a januari 2020 och `Datum2` är 31:a december 2020, kommer output vara:
 
-```PHP
-$nuvarandeDatum = date('Y-m-d');
-$framtidDatum = date('Y-m-d', strtotime("+1 week"));
-
-if ($nuvarandeDatum > $framtidDatum) {
-    echo "Framtidsdatumet har redan passerat.";
-} elseif ($nuvarandeDatum < $framtidDatum) {
-    echo "Framtidsdatumet är fortfarande i framtiden.";
-} else {
-    echo "Framtidsdatumet är samma som dagens datum.";
-}
 ```
-
-Output: Framtidsdatumet är fortfarande i framtiden.
+Datum1 är tidigare än Datum2.
+```
 
 ## Djupdykning:
 
-Det finns flera sätt att jämföra datum i PHP, men det enklaste är att konvertera datumen till Unix-timestamps och sedan jämföra dem som heltal. Detta gör att man undviker problem med format och tidszoner.
+Begreppet att jämföra två datum har varit grunden för tidsbaserade beräkningar sedan urminnes tider, långt innan datorerna skapades. I PHP, en språk som ligger på server-sidan, används datumjämförelser flitigt i diverse applikationer.
 
-Det finns också funktioner i PHP som kan göra mer avancerade jämförelser, som till exempel identifiera om ett datum är en skottår eller att jämföra endast månader eller år.
+Det finns alternativa sätt att jämföra datum på i PHP. En vanlig metod är att omvandla båda datumen till ett `timestamp` format med `strtotime()` funktionen, och jämföra dessa.
 
-## Se även:
+```PHP
+$timestamp1 = strtotime('2020-01-01');
+$timestamp2 = strtotime('2020-12-31');
 
-- [PHP Datetime funktioner](https://www.php.net/manual/en/book.datetime.php)
-- [Stack Overflow diskussion om att jämföra datum i PHP](https://stackoverflow.com/questions/5992492/how-to-compare-two-dates-in-php)
-- [PHP Datetime-tips](https://www.phpro.org/examples/Calculate-Days-Between-Two-Dates.html)
+if ($timestamp1 < $timestamp2) {
+    echo "Datum1 är tidigare än Datum2.";
+}
+```
+
+Under huven, när två DateTime objekt jämförs, omvandlas båda objekten till ett format som kan jämföras; PHP tolkar automatiskt detta bakom kulisserna.
+
+För att kunna jämföra två datum korrekt, bör samma tidszon användas för båda datumen, annars kan oavsiktliga fel uppstå.
+
+Råd: Välj en metod som passar bäst för ditt projekt och dess krav.
+
+## Se Även:
+
+PHP ManualDateTime: https://www.php.net/manual/en/datetime.compare.php
+
+PHP Manualstrtotime: https://www.php.net/manual/en/function.strtotime.php
+
+PHP ManualDateTimeZone: https://www.php.net/manual/en/class.datetimezone.php
+
+StackOverflow, "Compare two dates with JavaScript": https://stackoverflow.com/questions/492994/compare-two-dates-with-javascript

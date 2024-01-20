@@ -1,7 +1,7 @@
 ---
-title:                "Zmiana ciągu znaków na małe litery"
-html_title:           "Javascript: Zmiana ciągu znaków na małe litery"
-simple_title:         "Zmiana ciągu znaków na małe litery"
+title:                "Konwersja ciągu znaków na małe litery"
+html_title:           "Fish Shell: Konwersja ciągu znaków na małe litery"
+simple_title:         "Konwersja ciągu znaków na małe litery"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,25 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+# Przekształcanie napisu na małe litery w JavaScript
 
-Konwertowanie ciągu znaków na małe litery jest procesem zmiany każdej litery w tekście na jej odpowiednik w małym formacie. Programiści często wykonują tę operację w celu porównania dwóch ciągów znaków, ponieważ to pozwala uniknąć błędów związanych z różnicami w wielkości liter.
+## Co i dlaczego?
+Przekształcenie napisu na małe litery oznacza zmianę wszystkich wielkich liter w napisie na ich małe odpowiedniki. Programiści robią to, aby uniknąć pomyłek związanych z rozróżnianiem wielkości liter, co jest przydatne przy porównywaniu łańcuchów lub wyszukiwaniu danych.
 
 ## Jak to zrobić:
 
+W JavaScript, aby przekształcić napis na małe litery, używamy metody `.toLowerCase()`. Poniżej znajduje się kod i przykładowe wyjście:
+
 ```Javascript
-let text = "PRZYKŁADOWY TEKST"; // Tworzymy zmienną z ciągiem znaków w formacie dużym
-let lowerCaseText = text.toLowerCase(); // Wykonujemy konwersję na małe litery
-console.log(lowerCaseText); // Wyświetlamy rezultat w konsoli: "przykładowy tekst"
+let greeting = 'Cześć, JAK SIĘ MASZ?';
+let lowerCaseGreeting = greeting.toLowerCase();
+console.log(lowerCaseGreeting);  // wydrukuje: 'cześć, jak się masz?'
 ```
 
-## Głębsza analiza:
+## Dogłębne informacje
 
-1. Kontekst historyczny: Konwersja ciągu znaków na małe litery jest częstym problemem w informatyce od czasów, gdy powstały pierwsze języki programowania. Przez lata wykształciły się różne sposoby na rozwiązanie tego problemu, jednak obecnie funkcja `toLowerCase()` jest najpopularniejszym wyborem w języku JavaScript.
-2. Alternatywy: W języku JavaScript istnieje także funkcja `toUpperCase()`, która wykonuje odwrotną operację - zamienia wszystkie litery na wielkie. Istnieją również zewnętrzne biblioteki, które oferują bardziej rozbudowane funkcje zmiany wielkości liter w ciągu znaków.
-3. Szczegóły implementacji: Podczas wykonywania konwersji na małe litery funkcja `toLowerCase()` korzysta z tablicy ASCII, która przypisuje każdej literze swoją wartość numeryczną. Dzięki temu możliwa jest zamiana litery z jej wartością numeryczną na jej odpowiednik w małym formacie.
+1. Historyczne kontekst: Metoda `.toLowerCase()` jest dostępna w JavaScript od jego wczesnych wersji, co czyni ją jednym z podstawowych narzędzi dla programistów.
+2. Alternatywy: Choć metoda `.toLowerCase()` jest najprostszą i najczęściej używaną, można również użyć metody `.toLocaleLowerCase()`, która dodatkowo uwzględnia lokalne ustawienia językowe.
+3. Szczegóły implementacji: Metoda `.toLowerCase()` nie modyfikuje oryginalnego napisu. Zamiast tego zwraca nowy napis, w którym wszystkie wielkie litery są zamienione na małe.
 
-## Zobacz również:
+```Javascript
+let name = 'JAN';
+console.log(name.toLowerCase()); // wydrukuje: 'jan'
+console.log(name); // wydrukuje: 'JAN'
+```
+Jak widać, oryginalny napis `name` pozostał niezmieniony.
 
-- [Funkcja toLowerCase() - dokumentacja MDN](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-- [Konwersja znaków w języku JavaScript - artykuł na blogu Medium](https://medium.com/@nitinpatel_20236/conversions-in-javascript-c298ae64ea47)
+## Zobacz także
+
+Więcej informacji znajdziesz w dokumentacji JavaScript:
+
+- [Metoda toLowerCase()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
+- [Metoda toLocaleLowerCase()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/toLocaleLowerCase)

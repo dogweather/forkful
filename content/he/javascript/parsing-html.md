@@ -1,6 +1,6 @@
 ---
 title:                "ניתוח HTML"
-html_title:           "Javascript: ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
 simple_title:         "ניתוח HTML"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,26 +10,23 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ומדוע? 
-פענוח HTML הוא תהליך שבו מתוכנתים ממירים את קוד ה-HTML של דף אינטרנט לפורמט נתונים המובן למכשירים טכנולוגיים. הפענוח הוא חיוני לתפעול של דפי אינטרנט ולהצגתם כמיני מידע ותמונות. תוכנתי חושבים על הקוד הלא תקין של אתרים כאשר הם מנסים לפענט HTML ולתקן אותם, מה שמביא לטובת התפעול ולשיפור הגרפיקה.
+# מה זה ולמה? 
+פרסונג של HTML הוא התהליך שבו נתונים מפורמטים מהופכים לאוביקטים תוכניתיים שניתן להשתמש בהם. מתכנתים עושים את זה כדי לגעת באלמנטים DOM מתוך משאית קוד HTML.
 
-## איך לעשות?
-קודם כל, נא להבין שפענוח HTML הוא תהליך כתיבת קוד בה שכל הפרטים היטב להיות בעלי אופי מיוצמים טכנולוגים. כאן יעשו הרבה מחשבות המשתמשים לפענוח-קבלה-תציידי HTML מותאמים לכל פיתוח נתון. זה כל כך פשוט לכתוב קוד HTML יש לפענח אותו, כי יותר ויותר אנשים מתנסים את כל קודי ה-HTML שהורדו באתר.
-
-קוד קבוע הצגה של דף באמצעות הפענוח.ן
-
+# איך לעשות:
+ניתן לבצע פרסונג של HTML באמצעות 'DOMParser'. הראה דוגמא לביצוע זה:
 ```Javascript
-const html = '<p>Hello World!</p>';
-const parser = new DOMParser();
-const parsedHTML = parser.parseFromString(html, 'text/html');
-console.log(parsedHTML.body.innerHTML);
-// Output: Hello World!
+var parser = new DOMParser();
+var htmlDoc = parser.parseFromString('<p>Hello World</p>', 'text/html');
+
+console.log(htmlDoc.body.textContent); // "Hello World"
 ```
+הפונקציה parseFromString מאפשרת יצירת אוביקט DOM שהוא מראה של ה-HTML המקורי. 
 
-## לחקור 
-ראשית כל, הפענוח HTML נמצא עם הטכנולוגיות המתאימות לזמן הנכון. זה נמצא עם כלי הפענוח הכלים שהיו משתמשים בהם כשהם רושמים באתר חשוב שכתרת הכלים עדיין בוגולציה. פענוף המידע הוא חשוב לפמוח כמו גם לשבוד. לפענוח כונן.
+# צלילה עמוקה: 
+אף פעם לא מיותר לדעת בחדשות. DOMParser הוא חלק מתקן ה-W3C המשערת שהפקודה היא חלק תוך כדי בניית התקן Document Object Model. קיימות גם אופציות חלופיות, כמו jQuery's parseHTML, אך הן מאפשרות רק חלק מהיכולות של DOMParser. כמו כן, על אמצעים כמו DOMParser לעבוד באופן שקף ברוב הדפדפנים, מה שמקל על העבודה היומיומית שלנו כמתכנתים.
 
-## ראה גם
-- [HTML תיקוני] https://developer.mozilla.org/en-US/docs/Web/API/DOMParser
-- [תיקוני HTML כלים און העולמות] http://www.html5reporter.com
-- [תיקוני HTML נרגיל] https://www.w3.org/TR/html-parsing/
+#ראה גם
+- [מסמך MDN על DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
+- [מבט מתקדם על פענוח HTML בוויקיפדיה](https://he.wikipedia.org/wiki/HTML_%D7%9B%D7%A0%D7%99%D7%A1%D7%AA)
+- [הבנת שפת ה-HTML](https://he.khanacademy.org/computing/computer-programming/html-css)

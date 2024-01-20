@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Python: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Python"
 category:             "Python"
@@ -10,29 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么以及为什么？
-读取命令行参数是指将程序运行时输入的文本参数传递给程序。程序员之所以这样做，是因为这样能够让程序更加灵活和可重复使用。
+## 什么和为什么？
 
-## 如何进行：
-下面的代码示例将展示如何读取并打印命令行参数：
+命令行参数是在启动程序时传递给主函数的参数。程序员进行此操作主要是为了修改程序的运行方式，增强程序的灵活性。
+
+## 如何实现：
+
+Python通过内置的sys模块读取命令行参数。以下是简单的代码示例：
+
 ```Python
 import sys
 
-args = sys.argv
-print(args)
-```
-运行程序时，输入以下命令：
-```
-python read_args.py arg1 arg2
-```
-输出结果为：
-```
-['read_args.py', 'arg1', 'arg2']
+def main():
+    print("命令行参数是：", sys.argv)
+
+if __name__ == "__main__":
+    main()
 ```
 
-## 深入探讨：
-在过去，程序员通常通过手动解析命令行参数来读取它们。但是现在，有许多Python库可以帮助程序员更轻松地读取和处理命令行参数。除了使用sys.argv之外，也可以使用argparse库来创建更复杂的命令行界面。实际上，在开发复杂的命令行工具时，使用argparse是一个更好的选择。
+运行这个程序，并加上一些命令行参数：
 
-## 参考链接：
-- [Python sys.argv 文档](https://docs.python.org/3/library/sys.html#sys.argv)
-- [argparse Python文档](https://docs.python.org/3/library/argparse.html)
+```
+$ python test.py 参数1 参数2
+```
+
+输出结果应该是：
+
+```
+命令行参数是： ['test.py', '参数1', '参数2']
+```
+
+## 深入解析：
+
+历史上，来自Unix的C语言启发了Python的命令行参数处理方式。在C语言中，主函数可以接受命令行参数。然而Python采用的方式更简洁，直接通过sys.argv列表获得参数。
+
+除了直接使用sys模块，还有其他一些方法可以实现类似的功能，比如argparse和getopt模块，它们提供了更多高级功能，如选项解析、帮助信息生成等。
+
+值得注意的一点是，sys.argv[0]是脚本名称，参数从sys.argv[1]开始索引。
+
+## 相关链接：
+
+1. Python sys模块官方文档：https://docs.python.org/3/library/sys.html
+2. Python官方教程 - 命令行参数：https://docs.python.org/3/tutorial/stdlib.html#command-line-arguments
+3. Python argparse模块官方文档：https://docs.python.org/3/library/argparse.html
+4. Python getopt模块官方文档：https://docs.python.org/3/library/getopt.html

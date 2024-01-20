@@ -10,41 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-#在未来或过去计算日期的原因及方法
+## 什麼與為什麼？
 
-## 什么是计算未来或过去日期？为什么程序员要这样做？
+計算未來或過去的日期是通過添加或減去特定的日期來獲取新的日期。這在處理項目時段，事件計劃或存儲信息等程式設計涉及時間運算的場景被廣泛使用。
 
-计算日期是指以特定的间隔从当前日期往前或往后推算一个新日期。程序员经常需要计算日期，例如在编写软件时需要向用户显示特定日期的信息。此外，还可以用于编写日历或计划应用程序。
+## 如何操作：
 
-## 如何进行计算？
+以下是兩種獲取未來日期的範例。
 
 ```Ruby
-# 计算未来日期
-Date.today + 7 # 加 7 天
-#=> 2021-09-26
+require 'date'
 
-Date.today + (30 * 3) # 加 90 天
-#=> 2021-12-25
+t = Date.today    # 今日日期
+future = t + 5   # 未來五天的日期
+puts future
+```
+假設今天是2022年8月1日，輸出結果為：
+```
+2022-08-06
+```
+以下是一種獲取過去日期的範例。
 
-Date.today - 14 # 减 14 天
-#=> 2021-09-05
+```Ruby
+require 'date'
 
-# 计算过去日期
-Date.today - 7 # 减 7 天
-#=> 2021-09-12
-
-Date.today - (30 * 3) # 减 90 天
-#=> 2021-06-16
-
-Date.today + 14 # 加 14 天
-#=> 2021-09-29
+t = Date.today  # 今日日期
+past = t - 30  # 三十天前的日期
+puts past
+```
+假設今天是2022年8月1日，輸出結果為：
+```
+2022-07-02
 ```
 
-## 深入了解
+## 深入探索
 
-计算日期的历史可以追溯到古代，人们使用日历来记录时间。另外，除了使用Ruby中的简便方法外，还可以使用时间戳或UNIX时间来计算日期。此外，还可以使用其他编程语言实现类似的功能，例如Python的datetime模块。
+歷史上，Ruby從早期版本就提供了Date類來處理日期。但在進行精確的時間運算時，會使用DateTime類，該類提供了更精確的時間單位。
 
-## 相关资源
+較現代的替代選擇是ActiveSupport::TimeWithZone，它是Ruby on Rails框架的一部分，可以處理包括時區在內的更複雜的日期時間問題。
 
-- [Ruby官方文档](https://www.ruby-lang.org/zh_cn/)
-- [关于日期计算的教程](https://www.rubyguides.com/2015/08/ruby-date-and-time/)
+在Ruby的日期計算中，一個重要的實現細節是，日期的加減遵循了天然的日期規則，比如說考慮到了每月的不同天數甚至是閏年。
+
+## 另請參見
+
+- Ruby官方文檔的Date類介紹：[點擊這裡](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/Date.html)
+- Ruby官方文檔的DateTime類介紹：[點擊這裡](https://ruby-doc.org/stdlib-3.0.1/libdoc/date/rdoc/DateTime.html)
+- Ruby on Rails的ActiveSupport::TimeWithZone介紹：[點擊這裡](https://apidock.com/rails/ActiveSupport/TimeWithZone)

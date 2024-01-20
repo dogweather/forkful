@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Lua: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,34 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Znajdywanie długości ciągu znaków to często spotykana czynność w programowaniu. Polega ona na obliczeniu liczby znaków, które zawiera dany ciąg tekstu. Programiści często potrzebują tej informacji, ponieważ pozwala ona na wykonywanie różnych operacji na ciągach znaków, takich jak sprawdzanie, czy dany ciąg jest pusty czy też przycinanie zbyt długich ciągów.
+Znalezienie długości ciągu to proces określania ilości znaków w tym ciągu. Programiści robią to, aby kontrolować i manipulować danymi tekstowymi w ich kodzie.
 
 ## Jak to zrobić:
+Znalezienie długości ciągu w Lua jest proste. Użyj wbudowanej funkcji `string.len`.
+
+Oto przykład:
 
 ```Lua
-local string = "Hello world!"
-print(#string)
+local moj_ciąg = "Cześć, świecie!"
+print("Długość mojego ciągu to: " .. string.len(moj_ciąg))
 ```
-**Wynik:** 12
 
-Możemy również użyć funkcji `string.len()` aby uzyskać tę samą informację.
+Na wyjściu zobaczysz:
 
 ```Lua
-local string = "Hello world!"
-print(string.len(string))
+Długość mojego ciągu to: 16
 ```
-**Wynik:** 12
 
-## Wnikliwe spojrzenie:
+## Głębsze spojrzenie
+Funkcję `string.len` wprowadzono w Lua 5.1 i jest ona od tego czasu podstawą języka. Istnieją inne metody znalezienia długości ciągu, np `#` operator.
 
-Obliczanie długości ciągu znaków jest powszechnie używanym narzędziem w programowaniu. Wcześniej, w językach takich jak C lub Java, konieczne było ręczne iterowanie po ciągu znaków aby obliczyć jego długość. W Lua natomiast, wystarczy użyć operatora `#` lub funkcji `string.len()`.
+```Lua
+local moj_ciąg = "Cześć, świecie!"
+print("Długość mojego ciągu to: " .. #moj_ciąg)
+```
 
-Alternatywną metodą jest używanie funkcji `string.gmatch()` do znalezienia liczby wystąpień danego znaku w ciągu. Jednakże, ta metoda jest mniej efektywna i wymaga większej ilości kodu.
+Ta metoda jest znacznie bardziej skrótowa, ale zachowuje tę samą funkcję. W kontekście implementacji, `string.len` i `#` to po prostu aliasy tej samej funkcji języka C.
 
-Kilka funkcji biblioteki standardowej Lua odwołuje się do długości ciągu znaków, takich jak `string.sub()`, `string.find()`, czy `string.format()`. Dzięki temu, znajdując długość ciągu, jesteśmy w stanie lepiej wykorzystać możliwości tych funkcji.
-
-## Zobacz też:
-
-- [Oficjalna dokumentacja Lua o operacji obliczania długości ciągu znaków](https://www.lua.org/manual/5.3/manual.html#3.4.7)
-- [Artykuł o długości ciągu znaków na stronie "Lua Gems"](https://luagems.org/lua-string-length/)
+## Zobacz także
+- Dokumentacja Lua 5.1: https://www.lua.org/manual/5.1/
+- Więcej na temat operatora `#` : https://www.tutorialspoint.com/lua/lua_operators.htm
+- Więcej na temat zarządzania tekstem w Lua: https://www.tutorialspoint.com/lua/lua_strings.htm

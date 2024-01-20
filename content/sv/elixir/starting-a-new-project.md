@@ -1,7 +1,7 @@
 ---
-title:                "Att börja ett nytt projekt"
-html_title:           "Elixir: Att börja ett nytt projekt"
-simple_title:         "Att börja ett nytt projekt"
+title:                "Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
+simple_title:         "Att starta ett nytt projekt"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Getting Started"
@@ -10,22 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att påbörja ett nytt projekt innebär att skapa en ny kodbas för att lösa ett specifikt problem eller bygga en ny applikation. Programmerare gör detta för att utveckla nya och innovativa idéer, förbättra befintliga lösningar och för att möta kraven och behoven i dagens marknad. 
+## Vad & Varför?
+Att starta ett nytt projekt innebär att skapa ett nytt program eller system från grunden. Programmerare gör detta för att lösa specifika problem eller för att bygga nya verktyg och egenskaper.
 
-## Så här: 
-Starta ett nytt Elixir-projekt är enkelt. Börja med att skapa en ny mapp för ditt projekt och navigera till den med terminalen. Sedan, använd kommandot `mix new <project_name>` för att skapa ditt projekt. Detta kommer att skapa en grundläggande projektstruktur och installera alla nödvändiga beroenden. Du kan nu öppna din projektmapp i en textredigerare och börja koda! 
-
+## Så här gör du:
+Elixir erbjuder en mix-exekverbar för att generera projektets skel. För att starta ett nytt projekt, kör följande i din terminal:
 ```Elixir
-# Skapa nytt projekt
 mix new my_project
-
-# Byt till projektets mapp
 cd my_project
-``` 
+```
+Detta skapar ett nytt Elixir-projekt med namnet "my_project". Kör projektet genom att använda `mix`:
+```Elixir
+mix run -e MyProject.start
+```
+## Djupdykning
+Elixir är ett funktionellt, samtidigt och generellt programmeringsspråk som körs på Erlang virtuella maskin (BEAM). Det är utformat för att bygga skalbara och underhållbara applikationer. 
 
-## Djupdykning: 
-Elixir utvecklades 2011 av Jose Valim med målet att kombinera funktionalitet och skalbarhet från Erlang-plattformen med en modern språksyntax. Det finns också alternativ som till exempel Ruby on Rails, men Elixir erbjuder bättre skalförmåga och robusthet. När du bygger ett nytt projekt med Elixir, används en "mix" -fil för att hantera alla beroenden och bygga projektet. Detta skapar en smidig utvecklingsprocess och ger dig möjlighet att använda funktioner som automatisk testning och releasehantering.
+Alternativen till att starta ett nytt projekt i Elixir kan inkludera andra språk som Erlang, Rust eller Go. Valet beror dock på projektets specifika krav och det önskade arbetsflödet. 
 
-## Se även: 
-Läs mer om Elixir på deras officiella hemsida: https://elixir-lang.org/ eller på forumet Elixir Forum: https://elixirforum.com/. Du kan också utforska Elixirs gemenskap på Reddit: https://www.reddit.com/r/elixir/.
+När det gäller implementationsdetaljer kompilerar `mix new` alla källkoder i `lib` och inkluderar dem i BEAM-filerna. Det automatiserar många processer inklusive testning, taskhantering och projektgenerering, vilket bidrar till effektiv kodning.
+
+## Se också
+- Elixir officiella dokumentation: https://elixir-lang.org/docs.html
+- Elixir Forum: https://elixirforum.com/
+- Erlang Virtuell Maskin (BEAM) dokumentation: http://www.erlang.org/doc/

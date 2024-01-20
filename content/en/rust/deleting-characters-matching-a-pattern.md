@@ -1,6 +1,6 @@
 ---
 title:                "Deleting characters matching a pattern"
-html_title:           "Rust recipe: Deleting characters matching a pattern"
+html_title:           "Lua recipe: Deleting characters matching a pattern"
 simple_title:         "Deleting characters matching a pattern"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,34 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why? 
-Deleting characters that match a certain pattern is a common task for programmers, especially when working with large strings or datasets. Deleting unwanted characters can clean up data and make it easier to manipulate. By removing unnecessary characters, we can streamline our code and ensure that it runs efficiently.
+# Deleting Characters Matching a Pattern in Rust
+
+## What & Why?
+
+Deleting matching characters is the process of removing all instances of certain characters in a string. Programmers do this to sanitize, parse, or simplify data.
 
 ## How to:
-To delete characters matching a pattern in Rust, we can use the ```.replace``` function. This function takes in two parameters: the pattern to be deleted and the character or string to replace it with. Here's an example of how to use it:
+
+In Rust, the built-in `replace` method can do this trick. Use an empty string as the replace argument. Here's how to delete all `'a'` characters from a string:
 
 ```Rust
-let string = "Hello, world!";
-let new_string = string.replace("o", ""); // This will delete all "o" characters from the string
-println!("{}", new_string); // Output: Hell, wrld!
+fn main() {
+    let str = "banana";
+    let result = str.replace("a", "");
+    println!("{}", result);
+}
+```
+Output:
+```
+bnn
 ```
 
-We can also use regular expressions with the ```replace``` function to delete more complex patterns. Here's an example:
+To delete characters matching one of many patterns, use a `Regex`. Here's how:
 
 ```Rust
-let string = "Hey123 there!";
-let new_string = string.replace(r"[0-9]", ""); // This will delete all numbers from the string
-println!("{}", new_string); // Output: Hey there!
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new("[aeiou]").unwrap();
+    let str = "banana";
+    let result = re.replace_all(&str, "");
+    println!("{}", result);
+}
 ```
 
-## Deep Dive:
-In the past, deleting characters from strings was a tedious task that required loops and conditional statements. However, with the ```replace``` function in Rust, it's a much simpler and cleaner process. Additionally, Rust's ownership and borrowing system ensures that the original string is not mutated when using the ```replace``` function.
+Output:
+```
+bnn
+```
 
-Other alternatives for deleting characters in Rust include using the ```filter``` function with iterators and regular expressions. However, the ```replace``` function is the most efficient and straightforward option for this task.
+## Deep Dive
 
-The ```replace``` function is implemented using a modified form of the Aho-Corasick string matching algorithm, which allows for efficient and fast character deletion. It also supports Unicode characters, making it a versatile and reliable option for deleting characters in any language.
+History of deleting characters in programming started with early sanitizing needs. In Rust, the `replace` and `Regex::replace_all` methods are built-in ways, but your own methods are possible, too.
 
-## See Also:
-- [Rust documentation for the replace function](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-- [The Aho-Corasick algorithm](https://en.wikipedia.org/wiki/Aho%E2%80%93Corasick_algorithm)
-- [Regular expressions in Rust](https://doc.rust-lang.org/regex/regex/index.html)
+`replace` is faster, easier, but simpler. `Regex::replace_all` needs the `Regex` crate but handles more complex patterns. Performance-wise, `replace` is faster for simple situations, `Regex::replace_all` is better for complex patterns.
+
+These methods work by scanning the string for either the exact match (for `replace`) or the RegEx pattern match (for `replace_all`), then replacing every match with the specified pattern. 
+
+## See Also
+
+[The Rust Regex Documentation](https://docs.rs/regex/1.5.4/regex/): for understanding how to use Rust's Regex crate.
+[Rust's String Documentation](https://doc.rust-lang.org/std/string/struct.String.html): to know other manipulatory methods like `replace`. 
+
+Avoid using a sledgehammer to crack a nut: not all problems need RegEx. Know when to use `replace` and `Regex::replace_all`. Happy coding!

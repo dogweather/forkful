@@ -1,7 +1,7 @@
 ---
-title:                "Розбір html."
-html_title:           "Elixir: Розбір html."
-simple_title:         "Розбір html."
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -10,41 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Що і чому?
+## Що і чому?
+Парсинг HTML - це процес витягування специфічної інформаціј з HTML документів, це важливо, бо дозволяє програмістам автоматизувати видобування даних або маніпулювати семантичним змістом веб-сайтів.
 
-Парсинг HTML це процес, в якому програмний код аналізує HTML-код і витягує з нього корисну інформацію. Це важливо для програмістів, тому що це дозволяє їм отримати певні дані з веб-сторінок, які можна використовувати в своїх програмах.
-
-### Як це зробити:
-
-Приклад коду, що використовує Elixir для парсингу HTML:
+## Як це робити:
+Ось невеликий приклад програми, яка парсить HTML за допомогою бібліотеки Floki в Elixir:
 
 ```Elixir
-defmodule Parser do
-  require HTTPoison
-  
-  def get_article(url) do
-    response = HTTPoison.get(url)            # використовуємо бібліотеку HTTPoison для отримання веб-сторінки
-    regex = ~r/<h1>(.*?)<\/h1>/              # регулярний вираз для пошуку заголовку статті
-    article = Regex.run(regex, response.body) # витягуємо заголовок з HTML-коду
-    IO.puts hd(article)                      # виводимо перший елемент зі списку - заголовок статті
+defmodule HtmlParser do
+  require Logger
+  def parse(url) do
+    case :httpc.request(url) do
+      {:ok, {_, _, body}} ->
+        body
+        |> Floki.find("title")
+        |> Floki.raw_html
+        |> Logger.info()
+
+      {:error, reason} ->
+        {:error, reason}
+    end
   end
 end
+```
+Після запуску це може вивести такий результат:
 
-Parser.get_article("https://example.com/article") # викликаємо функцію та передаємо URL сторінки
+```Elixir
+:title "[Elixir] Парсинг HTML з Floki - Проєкт кодування"
 ```
 
-Результат: "Це приклад заголовку статті".
+## Занурюємося глибше:
+Парсинг HTML був важливим фактором ще з самого початку вебу. XML і JSON поступово стали більш популярними для міжсерверного обміну даними, але HTML все ще є нормою для структуризації і представлення контенту на веб-сторінках.
 
-### Глибоке погруження:
+Альтернативами в Elixir для розбору HTML є, наприклад, бібліотеки: html_sax_parser і html5ever.
 
-Парсинг HTML використовується в програмуванні вже давно і має багато альтернативних інструментів, таких як Beautiful Soup для Python та Nokogiri для Ruby. Екосистема Elixir також має багато бібліотек для роботи з HTML, які можна використовувати замість HTTPoison, наприклад Floki або Parsley.
+Що стосується Floki, він використовує під капотом mochiweb для утиліти html_scan, яка насправді розбиває HTML на частини. Після цього Floki бере ці частини, перетворює їх в свою власну внутрішню структуру даних і працює з нею.
 
-Якість парсингу залежить від якості HTML, інколи може бути складно витягти потрібну інформацію зі складними розмітками або неправильно сформованим HTML. Також важливо враховувати, що структура HTML може змінюватися, тому потрібно бути готовим до ситуацій, коли парсинг перестане працювати і будуть потрібні зміни у коді.
-
-### Дивіться також:
-
-Документація Elixir про парсинг HTML: https://hexdocs.pm/html/Html.html
-
-Бібліотека Floki: https://github.com/philss/floki
-
-Бібліотека Parsley: https://github.com/Frost/parsley
+## Див собі і тут:
+1. [Floki on Hex](https://hex.pm/packages/floki)
+2. [HTML Parsing section on Elixir School](https://elixirschool.com/en/lessons/advanced/nerves/#parsing-html-with-nerves-and-floki)
+3. [The Beauty of Elixir: Building a HTML parser using Elixir’s metaprogramming](https://itnext.io/building-a-html-parser-using-elixirs-metaprogramming-9ee0a3fd0ca1)

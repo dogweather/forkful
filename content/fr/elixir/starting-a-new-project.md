@@ -1,6 +1,6 @@
 ---
 title:                "Démarrer un nouveau projet"
-html_title:           "Elixir: Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
 simple_title:         "Démarrer un nouveau projet"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,30 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-Lancer un nouveau projet en programmation, c'est simplement commencer un nouveau programme ou une nouvelle application. Les programmeurs font cela pour répondre à un besoin spécifique, pour améliorer une technologie existante ou simplement pour relever un défi personnel.
+## Quoi & Pourquoi ?
+Commencer un nouveau projet en programmation signifie initier le développement d'une nouvelle idée ou solution. Les programmeurs font cela pour résoudre des problèmes, explorer de nouvelles technologies ou mettre en œuvre des concepts innovants.
 
-## Comment:
-Pour démarrer un nouveau projet en Elixir, utilisez la commande ```mix new nom_du_projet```. Cela créera un nouveau dossier avec le nom du projet et une structure de base pour votre code. Ensuite, vous pouvez commencer à programmer en utilisant des modules, des fonctions et des structures de données propres à Elixir.
+## Comment faire :
+Créons un nouveau projet Elixir avec Mix, l'outil de création de projets d'Elixir qui gère les dépendances et les tâches.
 
 ```Elixir
-defmodule MonProjet do
-  def greet(name) do
-    "Bonjour #{name} !"
-  end
-end
-
-IO.puts MonProjet.greet("Elixir")
+# Commencer un nouveau projet
+mix new mon_projet
 ```
 
-Ce code créera un module "MonProjet" avec une fonction "greet" qui prend en paramètre un nom et retourne un message de salutation. Vous pouvez exécuter ce code en utilisant la commande ```elixir mon_projet.exs```dans le terminal.
+Naviguez dans le répertoire du projet, et vous verrez la structure du dossier comme suit:
 
-## Plongée en profondeur:
-Elixir a été créé en 2011 par José Valim avec pour objectif de fournir une alternative fiable et efficace à d'autres langages fonctionnels. Il est basé sur la machine virtuelle Erlang et peut facilement interagir avec le code écrit en Erlang. En plus d'être un langage fonctionnel, Elixir prend également en charge la programmation concurrente, ce qui en fait un excellent choix pour les applications en temps réel.
+```Elixir
+_mon_projet
+|_ config
+|_ lib
+  |_ mon_projet.ex
+|_ test
+|_ mix.exs
+```
 
-Pour démarrer un projet en Elixir, vous pouvez également utiliser d'autres outils tels que Mix (pour la gestion de projet), Hex (pour la gestion de paquets) et ExUnit (pour les tests unitaires). Ces outils font partie de l'écosystème Elixir et peuvent grandement faciliter le développement.
+`mix.exs` nous donne des informations de configuration pour notre projet. 
 
-## Voir aussi:
-- Site officiel d'Elixir: https://elixir-lang.org/
-- Tutoriel sur Elixir: https://elixirschool.com/fr/
-- Livre "Programming Elixir" de Dave Thomas: https://pragprog.com/book/elixir16/programming-elixir-1-6
+
+## Deep Dive
+1. **Contexte historique** : Mix, introduit avec Elixir, est inspiré par des outils similaires dans d'autres écosystèmes de langage tels que Ruby's Bundler. Il vise à simplifier la gestion de projet en Elixir.
+2. **Alternatives** : En dehors de Mix, on pourrait utiliser des outils comme Rebar3 (popularisé par le langage Erlang) pour créer des projets Elixir. Cependant, Mix est généralement préféré pour son intégration fluide avec l'écosystème Elixir.
+3. **Détails d'implémentation** : Mix crée une structure de projet standard en Elixir. Il gère également les dépendances, ce qui facilite l'ajout de bibliothèques à votre projet.
+
+## Voir aussi 
+- [Documentation officielle de Mix](https://hexdocs.pm/mix/Mix.html)
+- [Guide "Getting started" avec Elixir](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)

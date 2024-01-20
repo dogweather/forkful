@@ -1,7 +1,7 @@
 ---
-title:                "Att skapa en temporär fil"
-html_title:           "Swift: Att skapa en temporär fil"
-simple_title:         "Att skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,21 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Skapande av en temporär fil är en vanlig handlingsform inom programmering. Det innebär att en fil skapas tillfälligt på datorns hårddisk under körningen av ett program och sedan raderas när den inte längre behövs. Detta används ofta för att hantera data som bara behövs tillfälligt eller för att utföra experimentella tester.
+## Vad och varför?
+Att skapa en temporär fil innebär att skapa en flyktig databärare. Programmerare gör det för att lagra data temporärt--data som vi kanske inte vill spara eller ha tillgängliga långsiktigt, såsom cache- och bufferdata.
 
-## Hur?
+## Hur göra:
+Här kommer en grundläggande kod för att skapa en temporär fil i Swift:
+
 ```Swift
-let temporaryFile = FileManager.default.temporaryDirectory.appendingPathComponent("myFile.txt")
-let data = "Hello World".data(using: .utf8)
-FileManager.default.createFile(atPath: temporaryFile.path, contents: data, attributes: nil)
+import Foundation
+
+let tempDir = NSTemporaryDirectory()
+let tempFile = "temp.txt"
+let tempPath = tempDir + tempFile
+
+do {
+    try "Några tillfälliga data".write(toFile: tempPath, atomically: true, encoding: .utf8)
+    print("Temporär fil skapad på sökvägen: \(tempPath)")
+} catch {
+    print("Fel vid skapandet av filen: \(error)")
+}
 ```
-I detta exempel skapar vi en temporär fil med namnet "myFile.txt" i systemets temporära mapp och fyller den med texten "Hello World" i form av en Data-instans. Därefter används FileManager för att skapa filen och innehållet läggs till genom att ange sökvägen till den temporära filen och datan.
+Kör du koden ovan, får du något i stil med:
+```
+Temporär fil skapad på sökvägen: /var/folders/l4/.../T/temp.txt
+```
+Det indikerar att din temporära fil skapats framgångsrikt.
 
-## Djupdykning
-Skapandet av temporära filer har funnits sedan de tidiga dagarna av datorer. Det användes då för att spara tillfälliga data som program behövde för att kunna köra. Alternativ till att skapa en temporär fil är att använda operativsystemets minne för att hålla data, vilket kan vara mer effektivt men kan också vara mer komplicerat att implementera. Skapandet av en temporär fil följer vanligtvis en generell algoritm som består av att välja en unik filnamnstämpel, skapa och öppna filen och sedan använda den för att utföra önskade operationer.
+## Fördjupning:
+Historiskt sett har temporära filer varit viktiga för att hantera begränsningar i minneskapacitet. De hjälper till att optimera utrymmet genom att bara hålla data som omedelbart behövs.
 
-## Se även
-Önskar du läsa mer om skapandet av temporära filer i Swift? Kolla in dessa användbara källor:
-- [Apple Developer Documentation](https://developer.apple.com/documentation/foundation/filemanager/1427163-createfile)
-- [Swift by Sundell blogpost](https://www.swiftbysundell.com/basics/temporary-files/)
+Alternativ till temporära filer kan vara hårddiskpartitioner eller minnesplatser, beroende på när datalagring behövs. Vissa programmerare kan också använda in-memory databaser som Redis för att lagra tillfällig information.
+
+När det gäller att skapa temporära filer i Swift, använder vi `NSTemporaryDirectory()` funktionen, som returnerar sökvägen till det tillfälliga katalogsområdet för den aktuella användaren. Till skillnad från traditionella filsystem garanterar inte systemet bevarandet av dessa filer och de kan tas bort vid vilken tidpunkt som helst.
+
+## Se också:
+Kolla in dessa resurser för mer information om att hantera tillfälliga filer i Swift och andra programmeringsspråk:
+- [Apple Developer Documentation: NSTemporaryDirectory()](https://developer.apple.com/documentation/foundation/1413049-nstemporarydirectory)
+- [StackOverflow: Best way to create temporary/temp files in Java and .NET?](https://stackoverflow.com/questions/178046/best-way-to-create-temporary-temp-files-in-java-and-net)
+- [Wikipedia: Temporary folder](https://en.wikipedia.org/wiki/Temporary_folder)

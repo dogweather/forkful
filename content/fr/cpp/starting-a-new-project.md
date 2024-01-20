@@ -1,6 +1,6 @@
 ---
 title:                "Démarrer un nouveau projet"
-html_title:           "C++: Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
 simple_title:         "Démarrer un nouveau projet"
 programming_language: "C++"
 category:             "C++"
@@ -10,37 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Qu'est-ce que c'est et pourquoi les programmeurs le font-ils?
+## Pourquoi et Quoi ?
+Démarrer un nouveau projet en C++ signifie créer un programme informatique à partir de zéro. Les programmeurs font cela pour résoudre des problèmes spécifiques ou pour créer un logiciel innovant. 
 
-Lancer un nouveau projet est le processus de création d'un nouveau programme informatique. Les programmeurs le font pour résoudre des problèmes ou pour créer quelque chose de nouveau et d'utile.
-
-Comment faire:
-
-Pour commencer un nouveau projet en C++, il suffit d'écrire le code suivant dans un fichier avec l'extension ".cpp":
+## Comment faire :
+Lancement d'un projet C++ simplifié à l'aide des étapes ci-dessous:
 
 ```C++
-#include <iostream>
+// 1. Installation d'un IDE (par exemple Visual Studio Code)
 
-using namespace std;
-
-int main(){
-    cout << "Bonjour le monde!" << endl;
-    return 0;
-}
+// 2. Création d'un nouveau fichier de code source .cpp (par exemple main.cpp)
+#include<iostream> 
+int main() 
+{  
+    std::cout << "Bonjour, la programmation C++!"; 
+    return 0; 
+} 
 ```
+Lorsque vous exécutez ce programme, il affichera `Bonjour, la programmation C++!`.
 
-Voici la sortie attendue : 
+## Plongée profonde
+Historiquement, les programmeurs C++ commençaient souvent un nouveau projet en créant simplement un `main.cpp`. Aujourd'hui, pratiquement tous les IDEs modernes permettent de créer un squelette de projet, ce qui rend le processus beaucoup plus fluide.
 
-```
-Bonjour le monde!
-```
+Une alternative à l'utilisation d'une fonction `main()` tout-en-un serait de créer un projet modulaire à partir de zéro. Bien que cela nécessite plus de travail initial, la modularité facilite la maintenance et le développement futur.
 
-Plongée en profondeur: 
+Les détails de l'implémentation peuvent varier en fonction de l'IDE utilisé, des plateformes ciblées (Windows, Linux, MacOS), ainsi que des exigences et des besoins du projet.
 
-Le développement de projets informatiques a commencé dans les années 1950 et s'est répandu dans les années 1970 avec le développement de langages de programmation comme le C. Aujourd’hui, de nombreux frameworks et bibliothèques sont disponibles pour faciliter le processus de démarrage d'un nouveau projet en C++. Alternativement, les programmeurs peuvent également utiliser des IDE (environnements de développement intégrés) pour faciliter la création et le débogage du code.
-
-Voir aussi: 
-
-- [Wikipédia - Développement de logiciels] (https://fr.wikipedia.org/wiki/Développement_de_logiciels)
-- [Développez.com - Introduction au C++] (https://www.developpez.com/cours/cpp/)
-- [OpenClassrooms - Apprenez à programmer en C++] (https://openclassrooms.com/fr/courses/1894236-programmez-avec-le-langage-c)
+## Voir aussi
+1. [Documentation C++](https://en.cppreference.com/w/)
+2. [Guide de programmation C++](https://www.cplusplus.com/doc/tutorial/)
+3. [Visual Studio Code C++ Documentation](https://code.visualstudio.com/docs/languages/cpp)
+4. [Guide pour les débutants Hot to Start a New C++ Project in Visual Studio](https://www.wikihow.com/Start-a-New-C%2B%2B-Project-in-Visual-Studio)

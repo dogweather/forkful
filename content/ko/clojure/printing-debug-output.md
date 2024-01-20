@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력하는 것"
-html_title:           "Clojure: 디버그 출력하는 것"
-simple_title:         "디버그 출력하는 것"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Testing and Debugging"
@@ -10,35 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜?
-디버그 출력(printing debug output)이란 무엇인지 알아보고 프로그래머들이 왜 이것을 사용하는지 알아봅시다.
+## 무엇인가요 & 왜 필요한가요?
 
-## 어떻게:
-디버그 출력을 사용하는 예시와 샘플 출력을 ```Clojure ... ``` 코드 블록 내에서 살펴봅시다.
+디버그 출력은 프로그램이 실행되는 동안 일어나는 활동을 추적하고, 결과를 확인하기 위해 개발자가 사용하는 출력 메소드입니다. 이것은 오류를 찾고 해결하는 방법을 간소화하는데 궁극적으로 필요하다.
 
-```Clojure
-;; 예시 코드
-(defn add [a b]
-  (println "Adding" a "and" b)
-  (+ a b))
+## 어떻게 사용하나요:
 
-(def result (add 5 7))
-;; 출력: Adding 5 and 7
-;; 결과: 12
+다음은 Clojure에서 디버그 출력을 생성하는 코드 예시입니다:
+
+```clojure
+(defn print-debug [msg]
+  (println "디버그: " msg))
+
+(print-debug "프로그램이 정상적으로 작동합니다.")
 ```
+이것은 콘솔에 "디버그: 프로그램이 정상적으로 작동합니다."라는 메시지를 출력할 것입니다.
 
-## 깊이 들어가기:
-디버그 출력을 사용하는 바탕과 대안, 그리고 디버그 출력의 구현 세부사항을 알아봅시다.
+## 깊게 알아보기:
 
-### 바탕:
-디버그 출력은 코드의 실행 과정에서 발생하는 오류를 찾고 수정하는 데 도움이 됩니다. 디버그 출력은 코드에서 어떤 부분이 실행되고 있는지, 변수 값이 어떻게 변하는지 등을 알려주어 오류를 찾는 데 유용합니다.
+디버그 출력은 프로그램 디버깅의 오래된 기술이며, 대부분의 프로그래밍 언어에서 사용됩니다. 가능한 대안으로는 특별한 디버깅 도구 (예: 전용 디버거)를 사용하는 것이 있습니다. 그러나 디버그 출력의 간단함과 범용성 때문에 보편적으로 사용됩니다.
 
-### 대안:
-디버그 출력 외에도 디버깅을 위해 디버거를 사용할 수 있습니다. 디버거는 코드를 한 줄씩 실행하면서 오류를 찾아주는 도구입니다. 그러나 디버깅의 경우에는 디버거를 사용하는 것이 복잡하기 때문에, 간단한 코드에서는 디버그 출력이 더 쉽고 효과적일 수 있습니다.
+Clojure에서는, 간단한 `println` 함수를 사용하여 출력을 생성하는 것이 일반적입니다. 더 복잡한 디버깅에는 로깅 라이브러리가 종종 사용됩니다. 
 
-### 구현 세부사항:
-Clojure에서 디버그 출력을 하기 위해서는 ```println``` 함수를 사용하면 됩니다. 그러나 디버그 출력은 코드의 실행 속도를 느리게 할 수 있으므로, 디버그 작업이 끝난 후에는 삭제하거나 주석 처리하는 것이 좋습니다.
+## 참고 자료:
 
-## 관련 자료:
-- [Clojure 공식 문서](https://clojure.org/guides/learn/debugging)
-- [Clojure 디버깅 도구 제안](https://github.com/clojure/tools.trace)
+관련된 몇 가지 자료 리스트입니다:
+
+1. Clojure 공식 문서 ([바로가기](https://clojure.org/guides/learn/functions))
+2. “디버깅”에 대한 Clojure가이드 ([바로가기](https://clojure.org/guides/debugging))
+3. Clojure의 `println` 함수에 대한 설명 ([바로가기](https://clojuredocs.org/clojure.core/println))

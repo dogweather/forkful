@@ -1,7 +1,7 @@
 ---
-title:                "Vergleich zweier Daten"
-html_title:           "Rust: Vergleich zweier Daten"
-simple_title:         "Vergleich zweier Daten"
+title:                "Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,29 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vergleichen von zwei Daten in Rust
-
 ## Was & Warum?
-Das Vergleichen von zwei Daten ist eine übliche Aufgabe in der Programmierung, bei der man feststellt, welches Datum früher oder später ist. Dies ist besonders hilfreich, wenn man Daten verarbeiten oder sortieren möchte. Programmierer führen diese Aufgabe häufig aus, um die Logik von Programmen zu steuern und um Fehlfunktionen zu vermeiden.
+Datumsvergleich bedeutet, zwei verschiedene Datenpunkte (Datum und Uhrzeit) auf ihre zeitliche Beziehung zueinander zu prüfen - ist Datum A vor, nach oder gleich wie Datum B? Dies ist nützlich in Situationen, in denen wir zeitabhängige Logik programmieren, wie z.B. To-Do-Listen oder Terminplanung.
 
-## Wie geht's:
-In Rust kann man zwei Daten mit den Vergleichsoperatoren `==`, `!=`, `<`, `>`, `<=` und `>=` vergleichen. Diese operatoren werden mit zwei Daten als Operanden verwendet und geben einen `bool` (true oder false) zurück.
-
+## So geht's:
+In Rust könnten wir das chrono crate verwenden, um zwei Daten zu vergleichen. Hier ist ein einfacher Code.
 ```Rust
-let date1 = NaiveDate::from_ymd(2020, 4, 15);
-let date2 = NaiveDate::from_ymd(2020, 4, 20);
-println!("{}", date1 < date2); // true
-println!("{}", date1 == date2); // false
+extern crate chrono;
+use chrono::{DateTime, Utc};
+
+fn main() {
+    let datum_a: DateTime<Utc> = Utc::now();
+    let datum_b: DateTime<Utc> = Utc::now() + chrono::Duration::seconds(10);
+
+    if datum_a < datum_b {
+        println!("Datum A ist früher als Datum B");
+    } else if datum_a > datum_b {
+        println!("Datum A ist später als Datum B");
+    } else {
+        println!("Datum A und Datum B sind gleich");
+    }
+}
 ```
+In diesem Fall zeigt die Ausgabe an, dass Datum A früher als Datum B ist.
 
-## Tiefere Einblicke:
-Die Vergleichsoperation ist in der Programmierung schon lange bekannt und wird in den meisten Sprachen ähnlich implementiert. In Rust gibt es jedoch die Besonderheit, dass man auch komplexe Datenstrukturen wie Datumsobjekte vergleichen kann, solange diese die erforderlichen Implementierungen für die Vergleichsoperatoren haben.
+## Vertiefung
+Historisch gesehen, konnte das Vergleichen von zwei Daten in Rust schwierig sein, da die Standardbibliothek Rusts zuerst keine Methoden zur Handhabung von Zeit und Datum bereitgestellt hat. Dies führte zur Entwicklung von crates wie chrono, die diese Funktionalitäten bereitstellen. 
 
-Alternativen zum Vergleichen von Daten könnten zum Beispiel die Verwendung von Timestamps oder komplett andere Ansätze wie die Umwandlung von Daten in Zahlenwerte sein. Es kommt immer auf den Anwendungsfall an.
+Alternativen zum Vergleichen von Daten in Rust könnten das Aufbrechen des Datums in Teile, wie Jahr, Monat und Tag und diese Elemente einzeln zu vergleichen beinhalten, jedoch ist dies umständlicher und anfälliger für Fehler.
 
-Die genaue Implementierung der Vergleichsoperatoren in Rust ist in der Rust-Dokumentation erklärt: https://doc.rust-lang.org/std/cmp/trait.PartialEq.html
+Beim Vergleichen von Daten ist zu beachten, dass Zeitzonen massiven Einfluss auf die Resultate haben können. Beispielsweise kann ein Datum und Uhrzeit in Berlin unterschiedlich zu demselben Datum und Uhrzeit in New York sein.
 
-## Siehe auch:
-- Rust-Dokumentation: https://www.rust-lang.org/
-- Mehr über die Datei- und Zeitverarbeitung in Rust: https://docs.rs/chrono/0.4.0/chrono/
-- Eine umfassende Einführung in Rust: https://doc.rust-lang.org/book/
+## Siehe auch
+* Die [chrono crate Dokumentation](https://docs.rs/chrono/0.4.19/chrono/) bietet tiefschürfende Informationen und Beispiele.
+* Für eine gründliche Einführung in die Handhabung von Datum und Zeit in Rust, siehe [dieser Artikel](https://programmingzen.com/handling-date-and-time-in-rust/) von Antonio Cangiano.
+* Eine Diskussion über das Vergleichen von Daten in Rust kann [im Rust-Forum](https://users.rust-lang.org/t/comparing-dates-in-rust/2032) gefunden werden.

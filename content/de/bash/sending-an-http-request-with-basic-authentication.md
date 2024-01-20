@@ -1,7 +1,7 @@
 ---
-title:                "Eine http-Anfrage mit grundlegender Authentifizierung senden."
-html_title:           "Bash: Eine http-Anfrage mit grundlegender Authentifizierung senden."
-simple_title:         "Eine http-Anfrage mit grundlegender Authentifizierung senden."
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,31 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
-Beim Senden einer HTTP-Anfrage mit Basic-Authentifizierung handelt es sich um einen Prozess, bei dem ein Programmierer eine angeforderte Ressource von einem Server anfordert und sich dabei mit Benutzername und Passwort authentifiziert. Dies ermöglicht die sichere Kommunikation zwischen einem Client und einem Server.
+# HTTP-Anfragen mit Basisauthentifizierung in Bash senden
 
-## Wie geht's?
+## Was und Warum?
+
+Eine HTTP-Anfrage mit Basisauthentifizierung ist eine Methode, mit der Benutzeranmeldedaten in einer HTTP-Anfrage gesendet werden. Entwickler nutzen das, um auf Daten und Funktionen geschützter Webdienste zuzugreifen.
+
+## Wie geht das?
+
+In Bash wird meistens das Programm `curl` genutzt, um HTTP-Anfragen zu senden, da es direkt in den meisten Unix-basierten Systemen verfügbar ist.
+
 ```Bash
-curl -u username:password http://www.example.com
+curl -u benutzername:passwort http://example.com
 ```
-Dieses Beispiel zeigt, wie man eine HTTP-Anfrage mit Basic-Authentifizierung mithilfe von cURL senden kann. Der Parameter -u ermöglicht die Angabe von Benutzername und Passwort, die dann zusammen mit der Anfrage an den Server geschickt werden.
 
-Die Ausgabe kann je nach Anfrage variieren, sollte jedoch im Allgemeinen eine Antwort vom Server enthalten, die bestätigt, dass der Authentifizierungsprozess erfolgreich war.
+Hierbei steht `-u` für "User". Der Doppelpunkt (`:`) trennt Benutzernamen und Passwort. 
 
-## Tiefer eintauchen
-### Historischer Kontext
-Die Verwendung von Basic-Authentifizierung geht zurück auf die Anfänge des World Wide Web, als die Sicherheitsstandards noch nicht so hoch waren wie heute. Heutzutage wird es häufig durch sicherere Alternativen wie Digest-Authentifizierung oder OAuth ersetzt.
+Eine Antwort könnte programmatisch so aussehen:
 
-### Alternativen
-Wie bereits erwähnt, gibt es sichere Alternativen zur Basic-Authentifizierung, die heutzutage empfohlen werden. Es ist wichtig, die Sicherheitsanforderungen des Projekts zu berücksichtigen und die entsprechende Authentifizierungsmethode zu wählen.
-
-### Implementierungsdetails
-Um eine HTTP-Anfrage mit Basic-Authentifizierung zu senden, muss der Benutzername und das Passwort im Header der Anfrage angegeben werden. Der Header sollte wie folgt aussehen:
 ```Bash
-Authorization: Basic <Base64 encoded(username:password)>
+HTTP/1.1 200 OK
 ```
-Der Server entschlüsselt dann die Informationen und führt den Authentifizierungsprozess durch.
+
+## Tiefer Tauchen
+
+**Historischer Kontext:** Basisauthentifizierung wurde in der anfänglichen Spezifikation von HTTP, RFC 1945 eingeführt, und in RFC 2617 erweitert. Es verwendet Base64-Codierung, um Benutzername und Passwort zu maskieren, bietet jedoch keine echte Sicherheit.
+
+**Alternativen:** Token-basierte Authentifizierungsmethoden wie OAuth und JWT sind heutzutage weit verbreitet, bieten aber größere Komplexität. Bei HTTPS-Übertragungen ist Basic auth jedoch ausreichend.
+
+**Implementierung:** In `curl` nutzt die `-u` Flagge die Basic Auth-Methode. Bei ungesicherten Verbindungen kann ein Mittelsmann-Angriff ("man-in-the-middle") die Anmeldedaten abfangen.
 
 ## Siehe auch
-- [cURL Documentation](https://curl.haxx.se/docs/)
-- [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+
+- cURL-Befehl [Dokumentation](https://curl.haxx.se/docs/manual.html)
+- RFC 1945, [HTTP/1.0 Spezifikation](https://tools.ietf.org/html/rfc1945)
+- RFC 2617, [HTTP-Authentifizierung](https://tools.ietf.org/html/rfc2617)
+
+Bitte beachten Sie die Sicherheitsrisiken bei Verwendung der Basisauthentifizierung und überprüfen Sie die Alternativen je nach Ihren Anwendungsfällen.

@@ -1,7 +1,7 @@
 ---
-title:                "Генерування випадкових чисел"
-html_title:           "Elm: Генерування випадкових чисел"
-simple_title:         "Генерування випадкових чисел"
+title:                "Генерація випадкових чисел"
+html_title:           "Java: Генерація випадкових чисел"
+simple_title:         "Генерація випадкових чисел"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Numbers"
@@ -10,52 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & Чому?
+## Що і чому?
 
-Генерування випадкових чисел - це процес створення чисел за випадковим алгоритмом. Програмісти використовують цю функцію для створення рандомних змінних та елементів для своїх програм.
+Генерація випадкових чисел - це процес створення чисел, які не можна передбачити краще ніж випадковим вибором. Програмісти роблять це для запуску випадкових сценаріїв у своїх програмах, типічно для тестування або для створення елементів гри.
 
-## Як:
+## Як застосувати:
 
-```Elm
-import Random exposing (..)
+Ми можемо генерувати випадкове число в Elm використовуючи модуль `Random`. Ось приклад:
 
-randomInt : Int
-randomInt =
-  generator_range 1 10
+```elm
+import Random
 
--- Вивід:
--- 4
+type alias Model =
+    { generator : Random.Generator Int }
+
+initialModel : Model
+initialModel =
+    { generator = Random.int 0 100 }
+
+update : msg -> Model -> ( Model, Cmd msg )
+update msg model =
+    ( model
+    , Random.generate NewRandomNumber model.generator
+    )
 ```
 
-```Elm
-import Random exposing (..)
+При цьому, випадкове число буде згенероване у межах від 0 до 100. 
 
-randomFloat : Float
-randomFloat =
-  generator_float 0 1
+## Поглиблено:
 
--- Вивід:
--- 0.5328805454338112
-```
+Генерація випадкових чисел має глибокі корені в історії обчислювальної техніки. В основу Elm вбудована високоякісна бібліотека для генерації випадкових чисел, що використовує генератор випадкових чисел Мерсена Твістера.
 
-```Elm
-import Random exposing (..)
+Альтернативами модулю `Random` в Elm є `elm-random-pcg` або `elm-random-extra`, але вони мають свої плюси і мінуси.
 
-randomBool : Bool
-randomBool =
-  generator_bool
+Не забувайте, що випадкові числа в Elm є функЦіонульний тип (`Generator`), тому вони не генеруються прямо, а вміщуються в команду (`Cmd`), яка потім виконується Elm runtime.
 
--- Вивід:
--- True
-```
+## Дивіться ще: 
 
-## Глибша інформація:
-
-Генерування випадкових чисел давно застосовується в програмуванні, особливо в області криптографії та статистики. Завдяки цьому функціонуванню, програмісти можуть створювати випадкову поведінку та випадкові дані, необхідні для дослідження та тестування.
-
-Існують альтернативні способи генерування випадкових чисел, такі як використання системних функцій або сторонніх бібліотек. Однак, у порівнянні з іншими методами, Elm надає просту та ефективну функцію для генерування випадкових чисел.
-
-## Див. також:
-
-- [Elm документація про генерування випадкових чисел](https://package.elm-lang.org/packages/elm/random/latest/Random)
-- [Стаття про генерування випадкових чисел на сайті "Habr"](https://m.habr.com/ru/company/mailru/blog/568266/)
+1. [Random - Elm package](https://package.elm-lang.org/packages/elm/random/latest/)
+2. [Generating random numbers in Elm](https://medium.com/@julianjelfs/generating-random-numbers-in-elm-58495e9fff9f)
+3. [Using Random in Elm](https://elmprogramming.com/random-numbers.html)

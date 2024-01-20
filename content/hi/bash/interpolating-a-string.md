@@ -1,7 +1,7 @@
 ---
-title:                "एक स्ट्रिंग को इंटरपोलेट करना।"
-html_title:           "Bash: एक स्ट्रिंग को इंटरपोलेट करना।"
-simple_title:         "एक स्ट्रिंग को इंटरपोलेट करना।"
+title:                "स्ट्रिंग का अंतर्कलन"
+html_title:           "Arduino: स्ट्रिंग का अंतर्कलन"
+simple_title:         "स्ट्रिंग का अंतर्कलन"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,25 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-कभी-कभी हमें कोई काम ऐसा होता है जो हमें स्ट्रिंग के बीच अन्य डेटा को विलय करना पड़ता है। इसे स्ट्रिंग इंटरपोलेशन कहा जाता है और कई प्रोग्रामर इसे अपनी कोडिंग में उपयोग करते हैं। इसका प्रयोग विभिन्न तरीकों से किया जा सकता है, उदाहरण के लिए उपभोक्ता से इनपुट प्राप्त करने के बाद स्ट्रिंग में उस इनपुट को स्थानांतरित कर सकते हैं।
+## क्या & क्यों?
 
-## कैसे करें:
-यदि आपको कोई प्रोग्राम में स्ट्रिंग इंटरपोलेशन करना है, तो आप निम्न आदेशों का प्रयोग कर सकते हैं:
+String interpolations एक भाषा feature है जिसका उपयोग variables या expressions के मूल्यों को एक string में embed करने के लिए किया जाता है। प्रोग्रामर्स इसका उपयोग तब करते हैं जब उन्हें string के आउटपुट में चर के मूल्य को शामिल करना होता है।
+
+## कैसे करें
+ 
 ```Bash
-name="जॉन"
-echo "नमस्ते ${name}, आप कैसे हो?"
+# एक variable तैयार करें
+name="विशाल"
+
+# इसे string में interpolate करें
+echo "नमस्ते, ${name}!"
+
+# आउटपुट: नमस्ते, विशाल!
 ```
-आउटपुट: नमस्ते जॉन, आप कैसे हो?
 
-यहां, हमने एक स्ट्रिंग के बीच दोबारा नुक्तों के बीच स्थानांतरण किया है। आप ब्रेसेज़ के बीच कोई भी ऊपरी गुणा या संख्या भी विवरण कर सकते हैं।
+## गहरी जानकारी
 
-## गहराई में:
-स्ट्रिंग इंटरपोलेशन की समानता पाठ्यक्रम में प्रयोग करने से पहले से ही उपलब्ध है। यह स्ट्रिंग कह सकते हैं की प्रतिरूपण से समान है, जो कि एक अलग आदेश की जरूरत हमेशा होती है। स्ट्रिंग इंटरपोलेशन का एक अन्य उपयोग, स्क्रिप्टिंग में भी है जब आप स्क्रिप्ट के माध्यम से फ़ाइलों में जानकारी दर्ज करते हैं। आइए, आप जानते थे कि स्ट्रिंग इंटरपोलेशन एक समानता का उदाहरण है।
+1. हिस्टोरिकल कन्टेक्स्ट: String interpolation का उपण्यास, Perl और Ruby जैसी भाषाओं में आम है, लेकिन Bash ने इसे अपने अपने स्वरूप में अपनाया है।
 
-## आरोप हासिल करो:
-स्ट्रिंग समानता के अलावा, आगे और जानकारी के लिए नीचे दिए गए स्रोतों की जाँच करें:
-1. [Bash Scripting Tutorial](https://ryanstutorials.net/bash-scripting-tutorial/bash-string-manipulation.php)
-2. [Linux Hint](https://linuxhint.com/advanced_functions_bash/)
-3. [Bash String Manipulation](https://www.thegeekstuff.com/2010/07/bash-string-manipulation/)
-4. [Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
+2. विकल्प: अगर किसी वेब पैठ या कमांड के लिए string interpolation की आवश्यकता नहीं हो, तो concatenation सबसे साधारण विकल्प हो सकता है। 
+
+3. आवश्यक विवरण: Bash में, आप `${variable}` syntax का उपयोग कर string में variable interpolate कर सकते हैं।
+
+## अन्य स्रोतों के लिंक
+
+1. GNU Bash मैनुअल: https://www.gnu.org/software/bash/manual/bash.html
+2. Advanced Bash-Scripting Guide: https://tldp.org/LDP/abs/html/string-manipulation.html
+3. Bash String Manipulations: https://linuxconfig.org/bash-string-manipulation

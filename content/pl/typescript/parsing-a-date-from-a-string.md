@@ -1,7 +1,7 @@
 ---
-title:                "Analizowanie daty z ciągu znaków"
-html_title:           "TypeScript: Analizowanie daty z ciągu znaków"
-simple_title:         "Analizowanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,26 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego?
-Parsowanie daty z ciągu znaków to proces konwertowania daty zapisanej w formacie tekstowym na format możliwy do używania przez programy komputerowe. Programiści często parsują daty z ciągu znaków, aby móc je łatwo manipulować i wykorzystywać w swoich aplikacjach.
+# Przetwarzanie daty z łańcucha znaków w TypeScript
+## Co i dlaczego?
+Rozpoznawanie daty z tekstu to proces, w którym ściągamy zwhiskytowaną datę zawartą w stringu. Robimy to po to, żeby móc pracować ze zrozumiałą dla komputera formą daty i manipulować nią na wiele sposóbów.
 
 ## Jak to zrobić:
-Przykładowy kod i wyjście w języku TypeScript znajdują się w poniższych blokach kodu:
+Podstawowy przykład jak przełożyć łańcuch na datę wygląda tak:
 ```TypeScript
-const date = new Date('2021-01-01');
-console.log(date.getDate()); // 1
-console.log(date.getMonth()); // 0  (January starts at 0 in Date objects)
-console.log(date.getFullYear()); // 2021
+let mojaData = new Date("2021-07-13T10:20:30Z");
+console.log(mojaData);
 ```
+Output:
+```TypeScript
+2021-07-13T10:20:30.000Z
+```
+Uważaj na format daty: "YYYY-MM-DDTHH:MM:SSZ" to tzw. format ISO, który jest odpowiednio przetwarzany przez JavaScript i TypeScript.
 
-## Głębszy zanurzenie:
-Parsowanie dat z ciągu znaków to problem, który pojawił się już w początkach programowania. Wcześniej, gdy istniał tylko jeden format daty, taki jak DD/MM/YYYY, programiści nie musieli parsować dat z ciągu znaków, ponieważ używali ich bezpośrednio.
+## Więcej szczegółów
+1. **Historia:** JavaScript wcześnie nie obsługiwał formatu ISO dla dat. Do momentu standardu ECMAScript 5 (ES5), próba rozwinięcia daty z takiego stringa kończyła się błędem. TypeScript, jako nadzestaw JavaScript, dziedziczy tę funkcję i obsługuje możliwość przetwarzania daty z ISO string.
 
-Obecnie istnieje wiele różnych formatów daty, a także różne sposoby wyświetlania dat w zależności od lokalizacji i preferencji użytkownika. Dlatego parsowanie dat jest ważnym krokiem w przetwarzaniu danych i programiści muszą umieć to robić.
+2. **Alternatywy:** Można też użyć bibliotek takich jak moment.js lub date-fns do łatwiejszego manipulowania datami. 
 
-W języku TypeScript jest wiele sposobów na parsowanie dat z ciągu znaków. Można to zrobić za pomocą wbudowanego obiektu Date lub wykorzystując biblioteki takie jak Moment.js lub Day.js.
+3. **Jak to działa:** Gdy używasz `new Date(dateString)`, tworzysz nowy obiekt daty, analizując podane łańcuch według ustalonego formatu.
 
-## Zobacz także:
-- [Dokumentacja Date w języku TypeScript](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-4-2.html#date-built-in)
-- [Biblioteka Moment.js](https://momentjs.com/)
-- [Biblioteka Day.js](https://day.js.org/)
+## Zobacz również
+1. [Dokumentacja MDN na temat obiektów daty](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date)
+2. [Przetwarzanie daty w JavaScript](https://flaviocopes.com/javascript-dates/)
+3. [Biblioteka moment.js](https://momentjs.com/)
+4. [Biblioteka date-fns](https://date-fns.org/) 
+
+Zapraszam do próbowania i bawienia się datami.

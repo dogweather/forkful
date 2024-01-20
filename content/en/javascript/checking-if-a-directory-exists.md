@@ -1,6 +1,6 @@
 ---
 title:                "Checking if a directory exists"
-html_title:           "Javascript recipe: Checking if a directory exists"
+html_title:           "C# recipe: Checking if a directory exists"
 simple_title:         "Checking if a directory exists"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,49 +12,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Checking if a directory exists is a common task in programming, especially when dealing with file systems. It allows us to determine if a certain directory is present or not, which is important when developing applications that require specific folders to be present in the system. We do this to ensure that our program can function properly and handle any potential errors that may arise if the directory is missing.
+Checking if a directory exists in your JavaScript code simply means verifying if a given directory path is available, or in developer slang, "exists". This helps prevent errors when we attempt to read, write, or modify files in a non-existent directory.
 
 ## How to:
 
-To check if a directory exists in Javascript, we can use the `fs` module which comes built-in with Node.js. We can use the `existsSync()` method to check if a directory exists, and it returns a boolean value indicating its presence. Here's an example of how it looks in code:
+Here's a simple way to do this in Node.js using the fs module's `existsSync()` method:
 
 ```Javascript
 const fs = require('fs');
 
-if (fs.existsSync('/path/to/directory')) {
-  console.log("Directory exists!");
+if (fs.existsSync('/path/to/the/directory')) {
+    console.log('Directory exists!');
 } else {
-  console.log("Directory does not exist :(");
+    console.log('Directory not found');
 }
 ```
+This code will return either 'Directory exists!' or 'Directory not found' depending on whether the directory exists.
 
-Output when directory exists:
+## Deep Dive
 
+Historically, `fs.exists()` was used but has been deprecated since it used a non-standard callback argument ordering and was inconsistent with other Node.js callbacks. The currently recommended method is `fs.existsSync()`.
+
+As an alternative, the `fs.access()` method can be used. It's argued to be more accurate as it checks for user permissions, not just existence. Here's how you do it:
+
+```Javascript
+const fs = require('fs');
+
+fs.access('/path/to/the/directory', (error) => {
+    if (error) {
+        console.log('Directory not found');
+    } else {
+        console.log('Directory exists!');
+    }
+});
 ```
-Directory exists!
-```
 
-Output when directory does not exist:
+Remember that these methods only work server-side with Node.js. For client-side JavaScript that runs in the browser, this kind of file system access is restricted due to security reasons.
 
-```
-Directory does not exist :(
-```
+## See Also
 
-## Deep Dive:
+For more in-depth info: 
 
-### Historical Context:
-
-Before the `fs` module was introduced in Node.js, developers had to rely on external libraries or native commands to check if a directory exists. This often required writing more code and using external dependencies, making the process more cumbersome and less efficient.
-
-### Alternatives:
-
-Apart from using the `fs` module, developers can also use the `fs.access()` method to check if a directory exists. It is a more versatile method as it allows us to check for the existence of files and directories, and also provides more detailed information in case of failures. However, for simply checking if a directory exists, the `existsSync()` method is a more straightforward and efficient approach.
-
-### Implementation Details:
-
-The `fs.existsSync()` method performs a synchronous operation, meaning it blocks the main thread while it checks for the existence of a directory. This can cause performance issues in larger applications as it halts the execution until the operation is completed. To avoid this, we can use the asynchronous version, `fs.exists()`, which takes a callback function and does not block the main thread.
-
-## See Also:
-
-- [Node.js Official Documentation for fs Module](https://nodejs.org/api/fs.html)
-- [fs-exists-cached Github Repository](https://github.com/isaacs/fs-exists-cached)
+1. Node.js documentation on the `fs` module: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html).
+2. Blog post discussing `fs.access()` vs `fs.existsSync()`: [https://ar.al/2015/10/03/synchronous-and-asynchronous-error-handling-in-node.js/](https://ar.al/2015/10/03/synchronous-and-asynchronous-error-handling-in-node.js/).
+3. StackOverflow post about client-side JavaScript limitations: [https://stackoverflow.com/questions/183214/javascript-node-js-file-system-operations-are-limited](https://stackoverflow.com/questions/183214/javascript-node-js-file-system-operations-are-limited).

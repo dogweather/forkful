@@ -1,6 +1,6 @@
 ---
 title:                "Interpolacja ciągu znaków"
-html_title:           "Clojure: Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
 simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -11,27 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Interpolacja ciągu znaków w programowaniu to proces wyświetlania zmiennych lub wyrażeń wewnątrz ciągu znaków. Programiści często używają interpolacji ciągu znaków, aby dynamicznie tworzyć tekstowe komunikaty, łączyć różne wartości lub parametry w jednym ciągu lub po prostu poprawić czytelność kodu.
+Interpolacja pozwala nam łączyć zmienne z literałami, tworząc tako dynamiczne ciągi znaków - przydatne, gdy chcemy wyświetlić różne dane w jednym miejscu. Jest to wygodne i oszczędza czas.
 
 ## Jak to zrobić?
-```Clojure
-;; Użyj znaku '~' przed nawiasami klamrowymi, aby wstawić wyrażenie w odpowiedni miejscu ciągu
-(str "Witaj, ~" name "!")
+W Clojure, można używać funkcji `format` do interpolowania stringów. Poniżej znajduje się przykładowy kod.
 
+```clojure
+(defn greet [name]
+  (format "Hej %s, jak się masz?" name))
 
-;; Interpolacja liczby zmiennoprzecinkowej w celu uzyskania dokładności do 2 miejsc po przecinku
-(def tax-rate 0.235)
-(str "Stawka podatkowa wynosi ~" (format "%.2f" tax-rate) "%")
-
-
-;; Łączenie wielu zmiennych w jednym ciągu
-(def first-name "Anna")
-(def last-name "Kowalska")
-(str "Twoje imię to ~" first-name ", a nazwisko to ~" last-name)
+(println (greet "John"))
 ```
+Po wykonaniu tego kodu, zostanie wyświetlony ciąg znaków: `"Hej John, jak się masz?"`.
 
-## Głębsza analiza
-Interpolacja znaków ma swoje korzenie w języku Perl i została przyjęta przez innych językach programowania, takich jak Python, Ruby i oczywiście Clojure. Alternatywami do interpolacji znaku są m.in. konkatenacja ciągów za pomocą funkcji ```(str)``` lub operatora ```+```, jednak interpolacja jest bardziej czytelna i elastyczna.
+## Dogłębniejsze spojrzenie
+Historia: Interpolacja stringów istnieje praktycznie od początków języka programowania.  
+
+Alternatywy: Istnieje wiele innych sposobów, np. konkatenacja (łączenie stringów) za pomocą operatora `+`. 
+
+Informacje o implementacji: Clojure wykorzystuje Java String Formatter do implementacji funkcji `format`. Jest to dość wydajne, ale warto zauważyć, że użycie go może dodać dodatkową złożoność kodu, szczególnie gdy łączy się wiele zmiennych.
 
 ## Zobacz także
-• Dokumentacja Clojure dotycząca interpolacji ciągu znaków: https://clojure.org/guides/learn/syntax#_string_interpolation
+
+1. [Java String Formatter](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Formatter.html)
+2. [Clojure String documentation](https://clojuredocs.org/clojure.core/format)
+3. [More about Clojure](https://clojure.org/about/differences)

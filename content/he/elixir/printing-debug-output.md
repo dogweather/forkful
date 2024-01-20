@@ -1,7 +1,7 @@
 ---
-title:                "הדפסת פלט תיקון שגיאות"
-html_title:           "Elixir: הדפסת פלט תיקון שגיאות"
-simple_title:         "הדפסת פלט תיקון שגיאות"
+title:                "הדפסת פלט ניפוי שגיאות"
+html_title:           "Arduino: הדפסת פלט ניפוי שגיאות"
+simple_title:         "הדפסת פלט ניפוי שגיאות"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
-הדפסת פלט דיבאג היא כלי רגיל בעולם התכנות שמשמש לבדיקת כיצד התוכנה רצה. המטרה העיקרית של שימוש בפלט דיבאג היא לזהות באילו נקודות הקוד יש תקלות או בעיות כדי להפעיל מנגנוני תיקון.
+## מה ולמה?
+הדפסת פלט לאיתור תקלות הוא דרך שבה מתכנתים מציגים מידע על תהליך הריצה של הקוד לבחינתו. הם אותרים בעיות תוך שימוש בכלים של שפת התכנות, כאמור, באמצעות הדפסות.
 
-## איך לעשות?
-תחת ```Elixir...``` יש להציג כמה דוגמאות לקוד עם הפלט המתאים בכדי להמחיש איך הדפסת פלט דיבאג עובדת
+## איך להשתמש:
+מספר דוגמאות איך להשתמש בכלים של Elixir להדפסת המידע:
 
-```Elixir
-defmodule Example do
-   def add(x, y) do
-      IO.puts "The values being added are #{x} and #{y}."
-      x + y
-   end
+```elixir
+IO.puts "Hello, world!"
+```
+
+```elixir
+defmodule MyModule do
+  def my_function do
+    IO.puts "This is a debug message"
+    # rest of the code...
+  end
 end
 ```
 
-```Elixir
-iex> Example.add(3, 5)
-The values being added are 3 and 5.
-8
-```
+## צולעים עמוק:
+פלט ה debug הוא כלי שנמצא בשימוש מאז ימי המחשב הראשונים. זה הדרך האינטואטיבית ביותר להבין את הדאטה שהמחשב טופל. אבל מהדפסת פלט debug אינה הדרך היעילה ביותר לאתר בעיות, נמתחים עכשיו מערכות לפרנסיסקה שנראים כמו Graphical Debuggers. ב Elixir, מודול IO מתקשר עם ה kernel של erlang כדי להדפיס מידע.
 
-## חקירה מעמיקה
-הדפסת פלט דיבאג הייתה תכונה רגילה ונפוצה בתכנות מחשבים משנות ה-70 של המאה ה-20. נכון להיום, ישנן טכניקות אחרות שמשמשות כחלופות לדיבאג, כגון השתמשות במשקלני מנוע ניפוח. כלומר, מנגנונים אוטומטיים המנתחים את הקוד כדי לזהות באילו נקודות מופיעים תקלות ובעיות.
-
-## ראו גם
-קישורים למקורות נוספים על דיבאג ב-Elixir 
-
-- [Elixir - The Debugger's Tool](https://www.elixir-lang.org/getting-started/debugging.html)
-- [Debugging in Elixir with IEx](https://semaphoreci.com/community/tutorials/debugging-phoenix-with-iex)
-- [Elixir's built-in Debugging tools](https://hexdocs.pm/iex/IEx.Helpers.html)
+## ראה גם:
+1. [דוגמאות IO של Elixir](https://hexdocs.pm/elixir/IO.html)
+2. [מדריך תיקון שגיאות אליקסיר](https://elixirschool.com/en/lessons/specifics/debugging/)
+3. [עיונים במערכת erlang](http://erlang.org/doc/apps/erts/io_protocol.html)

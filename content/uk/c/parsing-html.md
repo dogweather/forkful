@@ -1,7 +1,7 @@
 ---
-title:                "Розбір html"
-html_title:           "C: Розбір html"
-simple_title:         "Розбір html"
+title:                "Розбір HTML"
+html_title:           "Arduino: Розбір HTML"
+simple_title:         "Розбір HTML"
 programming_language: "C"
 category:             "C"
 tag:                  "HTML and the Web"
@@ -10,47 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що & чому?
-Розбір HTML - це процес отримання інформації з HTML-коду, що використовується для форматування веб-сторінок. Це необхідно для забезпечення коректного відображення веб-сторінок та отримання необхідних даних з них.
+## Що і чому?
 
-## Як це виконати:
-Цей код демонструє, як отримати заголовок сторінки з HTML-коду за допомогою функції `strstr()`:
+Парсинг HTML - це процес, при якому ми аналізуємо структуру HTML-документа та перетворюємо його на машинозрозумілий вигляд. Програмісти роблять це, щоб забезпечити динамічну взаємодію з веб-сторінками та автоматизувати збір даних.
+
+## Як це зробити?
+
+Перед тим, як ми розпочнемо, нам потрібна бібліотека для парсинга HTML, наприклад, Gumbo. 
+
+Встановіть Gumbo:
+
+```bash
+sudo apt-get install libgumbo-dev
+```
 
 ```C
-#include <string.h>
 #include <stdio.h>
+#include <gumbo.h>
 
-char* get_title(char* html) {
-    char* title = strstr(html, "<title>") + 7;
-    char* title_end = strstr(title, "</title>");
-    
-    int length = title_end - title;
-    char* result = malloc((length + 1) * sizeof(char));
-    strncpy(result, title, length);
-    result[length] = '\0';
-    
-    return result;
+void search_for_links(GumboNode* node) {
+    if (node->type != GUMBO_NODE_ELEMENT) {
+        return;
+    }
+    GumboAttribute* href;
+    if (node->v.element.tag == GUMBO_TAG_A &&
+       (href = gumbo_get_attribute(&node->v.element.attributes, "href"))) {
+        printf("%s\n", href->value);
+    }
+
+    GumboVector* children = &node->v.element.children;
+    for (unsigned int i = 0; i < children->length; ++i) {
+        search_for_links(children->data[i]);
+    }
 }
 
 int main() {
-    char* html = "<html><head><title>Заголовок сторінки</title></head></html>";
-    printf("Заголовок сторінки: %s\n", get_title(html));
-    
-    return 0;
+    GumboOutput* output = gumbo_parse("<a href='http://example.com'>Hello, world!</a>");
+    search_for_links(output->root);
+    gumbo_destroy_output(&kGumboDefaultOptions, output);
 }
 ```
 
-Виконаємо цей код та отримаємо наступний результат:
-```
-Заголовок сторінки: Заголовок сторінки
-```
+Цей код шукає посилання в HTML і виводить їх.
 
-## Поглиблене вивчення:
-Розбір HTML був необхідний на початку веб-розробки, коли створювалися прості HTML-сторінки з допомогою тегів. Проте, з появою більш складних веб-додатків та технологій, таких як JavaScript та CSS, розбір HTML став потужнішим та має багато альтернативних методів виконання.
+## Занурення в глибину
 
-Реалізація розбору HTML може бути більш простою за допомогою сторонніх бібліотек, таких як libxml та libcurl. Також існує можливість використання XPath для отримання конкретних даних з HTML-коду.
+*Історичний контекст:* Раніше парсинг HTML був виключно юрисдикцією веб-браузерів. Однак, із зростанням потреби в автоматизації доступу до веб-контенту, парсинг став загальною практикою.
 
-## Дивись також:
-- [libxml](http://www.xmlsoft.org/)
-- [libcurl](https://curl.haxx.se/libcurl/)
-- [XPath](https://www.w3.org/TR/xpath/)
+*Альтернативи:* Інші мови ​​програмування, такі як Python та JavaScript, мають власні бібліотеки для парсингу HTML, як BeautifulSoup та Cheerio відповідно. А HTML документи також можуть бути спарсені за допомогою регулярних виразів, хоча це не є оптимальним рішенням.
+
+*Деталі реалізації:* Парсинг HTML зазвичай вимагає використання DOM (Document Object Model) для навігації по елементах веб-сторінки.
+
+## Дивіться також 
+
+1. [Офіційна документація Gumbo](https://github.com/google/gumbo-parser)
+2. [Туторіал по Gumbo](https://2ton.com.au/Library/gumbo/)
+3. [DOM у веб API](https://developer.mozilla.org/uk/docs/Web/API/Document_Object_Model) 
+4. [Основи BeautifulSoup в Python](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
+5. [Швидкий початок з Cheerio в Javascript](https://cheerio.js.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "Génération de nombres aléatoires"
-html_title:           "C#: Génération de nombres aléatoires"
-simple_title:         "Génération de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Numbers"
@@ -10,47 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
-
-Générer des nombres aléatoires est un processus qui permet aux programmeurs de créer des valeurs aléatoires dans leurs programmes. Cela peut être utile dans des jeux ou des simulations où des éléments aléatoires sont nécessaires pour créer une expérience plus réaliste.
+## Quoi et Pourquoi?
+Générer des nombres aléatoires est un processus de création de chiffres qui ne peuvent pas être raisonnablement prédits, mieux que par le hasard. Les programmeurs générent des nombres aléatoires pour ajouter des éléments d'incertitude dans les jeux, les simulations et les tests de logiciels.
 
 ## Comment faire:
-
-### Utilisation de la fonction Random:
-
-La méthode la plus commune pour générer des nombres aléatoires en C# est d'utiliser la classe Random. Voici un exemple de code qui utilise cette méthode pour générer un nombre aléatoire entre 1 et 10:
-
 ```C#
-Random rand = new Random();
-int randomNumber = rand.Next(1, 11); //génère un nombre aléatoire entre 1 et 10
-Console.WriteLine(randomNumber); //affiche le nombre généré
+using System;
+
+class Programme
+{
+    static void Main()
+    {
+        Random alea = new Random(); 
+        int nombreAleatoire = alea.Next(1, 100); 
+        Console.WriteLine(nombreAleatoire);
+    }
+}
 ```
+Dans cet exemple, un nombre aléatoire entre 1 et 100 est généré et affiché à l'écran.
 
-### Personnaliser les limites:
+## Plongée Profonde
+Historiquement, générer de véritables nombres aléatoires était compliqué à cause de la nature déterministe des ordinateurs. Maintenant, dans la plupart des langages de programmation, il y a des fonctions intégrées pour cela, comme `Random` en C#.
 
-Vous pouvez également personnaliser les limites des nombres aléatoires en utilisant la méthode Next avec deux paramètres, l'un pour le début de la plage possible et l'autre pour la fin de la plage possible.
+Il existe d'autres alternatives, comme l'algorithme de Mersenne Twister, qui est plus complexe mais aussi plus précis. De plus, pour un besoin de sécurité plus élevé, il est recommandé d'utiliser `RNGCryptoServiceProvider`.
 
-```C#
-int minLimit = 50;
-int maxLimit = 100;
-int randomNumber = rand.Next(minLimit, maxLimit + 1); //génère un nombre entre 50 et 100
-```
+L'implémentation détaillée de la classe `Random` en C# utilise un algorithme basé sur une équation linéaire pour générer des suites de nombres qui semblent aléatoires.
 
-## Plongée en profondeur:
-
-### Contexte historique:
-
-Générer des nombres aléatoires a été un défi pour les programmeurs depuis les débuts de l'informatique. Les méthodes utilisées varient selon les langages de programmation, mais l'objectif reste le même: créer une véritable aléatoire.
-
-### Alternatives:
-
-Bien que la classe Random soit la méthode la plus courante en C#, il existe d'autres options telles qu'utiliser des algorithmes complexes ou même utiliser des sources externes comme un générateur de nombres basé sur les mouvements de la souris.
-
-### Détails de mise en œuvre:
-
-L'algorithme utilisé par la classe Random en C# est appelé "mersenne twister" et il génère des nombres avec une distribution uniforme. Il est important de noter que ces nombres ne sont pas vraiment aléatoires, mais ils imitent bien les caractéristiques de l'aléatoire.
-
-## À voir aussi:
-
-- Documentation officielle de la classe Random en C#: https://docs.microsoft.com/fr-fr/dotnet/api/system.random?view=net-5.0
-- Autres méthodes pour générer des nombres aléatoires en C#: https://www.tutorialsteacher.com/csharp/generating-random-numbers-in-csharp
+## Voir Aussi
+Pour plus d'informations, consultez ces liens:
+* [Random Number Generation (Wikipedia)](https://en.wikipedia.org/wiki/Random_number_generation)
+* [Random Class (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.random?view=net-5.0)
+* [RNGCryptoServiceProvider Class (Microsoft Documentation)](https://docs.microsoft.com/en-us/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)

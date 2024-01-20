@@ -1,7 +1,7 @@
 ---
-title:                "パターンに合致する文字を削除する"
-html_title:           "Javascript: パターンに合致する文字を削除する"
-simple_title:         "パターンに合致する文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,30 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 何かとは何か？
+# 一致するパターンの文字を削除する方法
 
-文字のパターンに合致するものを削除するというのは、プログラマーが特定の文字列を取り除くことを意味します。プログラマーは、特定の文字列が不要だったり、不必要なデータを含んでいる場合に、この方法を使用します。
+## 何となぜ?
 
-# 方法：
+文字に一致するパターンを削除するとは、特定のパターンに一致する文字をプログラムから取り除くことを指します。プログラマーは、不要な情報を除去し、データをクリーンアップするためにこれを行います。
+
+## 方法:
+
+Javascriptでは、`replace()`と正規表現を使用して一致するパターンの文字を削除できます。
 
 ```Javascript
-// 文字列 "abracadabra" から "a" を削除する方法
-let str = "abracadabra";
-let newStr = str.split("a").join("");
-console.log(newStr); // brccdbr
-
-// 数字のみを含む文字列 "B1e2t3a4" から数字以外を削除する方法
-let str = "B1e2t3a4";
-let newStr = str.replace(/[^0-9]/g, "");
-console.log(newStr); // 1234 
+let str = "こんにちは、世界！123";
+let newStr = str.replace(/\d/g, "");
+console.log(newStr);  // "こんにちは、世界！"
 ```
 
-# 深く掘り下げる：
+この例では、数字（`\d`は全ての数字に一致する正規表現）をエンプティ文字列に置き換えことで、文字列から削除しています。
 
-削除することは、他の文字列操作の方法と同じくらい歴史があります。例えば、```Split, join, replace```など、よりシンプルな方法があります。ただし、これらの操作は文字列内の特定の文字列を置き換えたり、分割したりすることしかできません。削除する場合は、通常は不要な文字列を見つけて手動で削除する必要があります。しかし、```delete characters matching a pattern```を使用することで、より効率的に不要な文字列を削除することができます。
+## ディープダイブ
 
-# 関連情報：
+文字列から一致するパターンを削除するために、正規表現が一般的に使用されています。これは比較的新しく、初めてPerlプログラミング言語で導入されました。JavaScriptでは、`replace()`メソッドに加えて、`filter()`や`split()`などのメソッドも利用可能ですが、`replace()`は直感的で強力なためよく使われています。
 
-- [W3schools - JavaScript Strings](https://www.w3schools.com/jsref/jsref_obj_string.asp)
-- [MDN Web Docs - String.prototype.split()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/split)
-- [MDN Web Docs - String.prototype.replace()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+## 関連してみる
+
+- [Javascript正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [String.prototype.replace()](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- [正規表現 - 数字を見つけて削除する](https://stackoverflow.com/questions/18621576/regex-remove-numbers-from-string)

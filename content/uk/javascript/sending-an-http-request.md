@@ -1,7 +1,7 @@
 ---
-title:                "Надіслання запиту http"
-html_title:           "Javascript: Надіслання запиту http"
-simple_title:         "Надіслання запиту http"
+title:                "Надсилання http-запиту"
+html_title:           "Arduino: Надсилання http-запиту"
+simple_title:         "Надсилання http-запиту"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,31 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і для чого?
+## Що таке та навіщо потрібно?
 
-Відправка HTTP запиту - це процес передачі запиту веб-ресурсу. Програмісти використовують їх для взаємодії з сервером та отримання відповіді на запитання, що були поставлені.
+Надсилання HTTP-запиту - це процес, при якому ваш код "запитує" інформацію від сервера. Ми робимо це для отримання, відправки, оновлення або видалення даних на віддаленому сервері.
 
-## Як:
+## Як це працює:
 
-```javascript
-// Приклад використання бібліотеки Axios для відправлення GET запиту
-axios.get('https://example.com')
-  .then(function(response){
-    console.log('Отримано відповідь від серверу:', response);
-  })
-  .catch(function(error){
-    console.log('Сталася помилка при відправленні запиту:', error);
-  });
-
-// Вивід:
-// Отримано відповідь від серверу: {status: 200, data: 'Привіт, світ!'}
+```Javascript
+fetch('https://api.github.com/users/github')
+  .then(response => response.json())
+  .then(data => console.log(data))
+  .catch(error => console.error('Error:', error));
 ```
+Ця функція відправляє запит до посилання URL, потім конвертує відповідь в формат JSON, а потім виводить результат в консоль. Якщо сталася помилка, вона буде виведена в консоль.
 
-## Глибше:
+## Поглиблений аналіз:
 
-Відправлення HTTP запиту - це важлива частина розробки веб-додатків, яка дозволяє взаємодіяти з сервером та отримувати потрібні дані. Існують різні альтернативи для відправки таких запитів, такі як Fetch API або вбудований модуль в Node.js під назвою http. Відправка запиту може бути реалізована за допомогою різних методів, наприклад GET, POST, PUT, DELETE.
+HTTP-запити були вперше представлені в 1990-их для комунікації між браузерами і веб-серверами. Існують альтернативи HTTP-запитам, такі як WebSockets, які використовуються для неперервного обміну даними.
 
-## Дивіться також:
+Щодо деталей втілення, метод fetch використовує протокол HTTP або HTTPS в залежності від URL-адреси. Результатом є об'єкт Promise, який представляє відгук на запит.
 
-- [Fetch API](https://developer.mozilla.org/uk/docs/Web/API/Fetch_API)
-- [Приклади використання Axios](https://github.com/axios/axios#example)
+## Дивись також:
+
+Не забудьте ознайомитися з іншими ресурсами, які допоможуть вам вивчити цю тему глибше:
+
+1. [Mozilla Developer Network (MDN) - Fetch API](https://developer.mozilla.org/uk/docs/Web/API/Fetch_API/Using_Fetch)
+2. [MDN - HTTP запити](https://developer.mozilla.org/uk/docs/Web/HTTP/Methods)
+3. [Уроки JavaScript на Codecademy](https://www.codecademy.com/learn/introduction-to-javascript)

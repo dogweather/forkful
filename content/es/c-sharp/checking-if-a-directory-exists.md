@@ -1,7 +1,7 @@
 ---
-title:                "Comprobar si existe un directorio"
-html_title:           "C#: Comprobar si existe un directorio"
-simple_title:         "Comprobar si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "C#: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,55 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Comprobar si un directorio existe en la programación de C# se refiere a verificar si una carpeta específica está presente en la ubicación especificada. Los programadores suelen hacerlo para asegurarse de que el código se ejecute correctamente y para evitar errores en el procesamiento de archivos o datos en la carpeta.
+Verificar si un directorio existe puede ahorrar muchas molestias de tiempo de ejecución. Esto es útil cuando su código depende de archivos en un directorio particular, o necesita crear uno si no existe.
 
-## Cómo hacerlo:
+## ¿Cómo hacerlo?
+He aquí un ejemplo de cómo se puede hacer usando la Clase Directory:
 
-### Ejemplo 1:
 ```C#
-if (Directory.Exists(@"C:\Users\Username\Desktop\Folder"))
+using System.IO;
+
+public void CheckDirectoryExists(string path)
 {
-    Console.WriteLine("The folder exists.");
-}
-else
-{
-    Console.WriteLine("The folder does not exist.");
+    if (Directory.Exists(path))
+    {
+        Console.WriteLine("El directorio existe.");
+    }
+    else
+    {
+        Console.WriteLine("El directorio no existe.");
+    }
 }
 ```
-Output:
-`The folder exists.`
 
-Este ejemplo utiliza la clase `Directory` que contiene el método `Exists()` que toma como argumento el camino de acceso o la ruta completa hacia la carpeta que queremos comprobar. Si el directorio existe, la instrucción `if` se cumplirá y se imprimirá el mensaje correspondiente. De lo contrario, se ejecutará la instrucción `else`.
+Si ejecuta este código y su ruta es válida, verá: "El directorio existe.". Si la ruta no es válida, verá: "El directorio no existe.".
 
-### Ejemplo 2:
-```C#
-string path = @"C:\Users\Username\Desktop\Folder";
-if (Directory.Exists(path))
-{
-    Console.WriteLine($"The folder at {path} exists.");
-}
-else
-{
-    Console.WriteLine($"The folder at {path} does not exist.");
-}
-```
-Output:
-`The folder at C:\Users\Username\Desktop\Folder exists.`
+## Desglose 
 
-En este segundo ejemplo, definimos primero el camino de acceso en una variable `path` y luego lo utilizamos como argumento en la llamada al método `Exists()`. De esta manera, podemos personalizar el mensaje de salida con la ruta específica que estamos comprobando.
+La funcionalidad para verificar si los directorios existen es algo que ha estado en C# desde .NET Framework 1.0, lanzado en 2002.
 
-## Profundizando:
+Hay otras formas de hacer esto. Podría intentar abrir un archivo en la ruta y manejar la excepción si falla. Sin embargo, usar `Directory.Exists(path)` es generalmente más rápido y más limpio.
 
-Comprobar si un directorio existe ha sido una parte fundamental de la programación desde los primeros días. Con el auge de los sistemas operativos basados en archivos, los programadores se vieron obligados a lidiar con el manejo de archivos y directorios para almacenar y manipular datos. Aunque existen otras formas de verificar la existencia de una carpeta, como utilizar el comando `dir` en la consola de comandos, el método `Exists()` de C# es una forma eficiente y sencilla de lograrlo en un programa.
+La implementación de `Directory.Exists(path)` en .NET Core es interesante. Primero intenta obtener las características del archivo usando un llamado de sistema nativo. Si eso falla, intenta abrir un handle al directorio. Si eso falla, concluye que el directorio no existe.
 
-Además de verificar si un directorio existe, también podemos utilizar otros métodos de la clase `Directory` para realizar tareas como crear o eliminar directorios, obtener la lista de archivos en un directorio, o copiar y mover archivos entre directorios.
+## Ver también
 
-## Véase también:
+Para una visión más profunda de la Clase Directory y sus métodos, vaya a [la documentación oficial de Microsoft](https://docs.microsoft.com/es-es/dotnet/api/system.io.directory?view=net-6.0).
 
-- [Cómo crear un directorio en C#](https://www.ibm.com/docs/es/i/7.1?topic=files-file-directory-functions-directory-functions-create-directory)
-
-- [Ejemplos de uso de la clase Directory en C#](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory?view=net-5.0)
-
-- [Cómo verificar si un archivo existe en C#](https://www.neoguias.com/verificar-archivo-existe-csharp/)
+Mire también [este hilo](http://stackoverflow.com/questions/14899422/should-i-use-directory-exists-before-try-to-access-a-directory) en StackOverflow para una discusión sobre el uso de `Directory.Exists(path)`.

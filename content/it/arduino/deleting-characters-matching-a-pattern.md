@@ -1,7 +1,7 @@
 ---
-title:                "Eliminazione di caratteri corrispondenti a un modello"
-html_title:           "Arduino: Eliminazione di caratteri corrispondenti a un modello"
-simple_title:         "Eliminazione di caratteri corrispondenti a un modello"
+title:                "Eliminazione dei caratteri corrispondenti a un modello"
+html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,27 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Che cos'è e perché?
-Cancellare i caratteri corrispondenti a un determinato modello è un processo molto utile per i programmatori. Si tratta di eliminare tutti i caratteri che seguono una specifica corrispondenza, rendendo il codice più pulito e ottimizzato.
+# Articolo di Programmazione Arduino: Cancellare Caratteri Corrispondenti a un Modello
 
-# Come fare:
-Un modo semplice per cancellare i caratteri corrispondenti a un modello è utilizzando la funzione "replace" di Arduino. Di seguito è riportato un esempio di codice che utilizza questa funzione:
+## Cosa & Perché?
+Cancellare caratteri che coincidono con un modello significa eliminare specifiche sequenze di caratteri da una stringa. Questo è utile per manipolare i dati testuali, ad esempio, la pulizia dei dati o la sintassi di scripting.
+
+## Come fare:
+Ecco un esempio molto semplice che illustra come eliminare tutti i numeri da una stringa.
 
 ```Arduino
-String text = "Questo è un esempio di codice: ABC123";
-text.replace("ABC", "");
-Serial.println(text);
+String input = "ABC123";
+for (int i = 0; i < input.length(); i++) {
+  if (input[i] < '0' || input[i] > '9') {
+    Serial.print(input[i]);
+  }
+}
+```
+Dando come risultato:
+
+```Arduino
+"ABC"
 ```
 
-L'output di questo codice sarà "Questo è un esempio di codice: 123", poiché la funzione ha eliminato tutti i caratteri corrispondenti al modello "ABC".
+## Approfondimenti
+Historicamente, la necessità di eliminare caratteri corrispondenti a un modello è sorta con l'evoluzione delle espressioni regolari, un metodo per cercare pattern in una stringa. Nella programmazione Arduino, tuttavia, non c'è supporto integrato per le espressioni regolari, dunque dobbiamo trovare alternative. A parte il ciclo for esemplificato sopra, un'altra possibile soluzione può essere l'uso della funzione `replace()` di Arduino String, che sostituisce il modello desiderato con una stringa vuota.
 
-# Approfondimenti:
-La cancellazione dei caratteri corrispondenti a un modello è stata introdotta per la prima volta nel linguaggio di programmazione AWK, più di 40 anni fa. Oggi, questa funzionalità è presente in molti linguaggi di programmazione, tra cui Arduino.
+Per quanto riguarda i dettagli di implementazione, si dovrebbe fare attenzione all'uso eccessivo della memoria, poiché Arduino ha una quantità limitata di memoria SRAM.
 
-Un'alternativa alla funzione "replace" di Arduino è l'utilizzo di espressioni regolari. Queste sono sequenze di caratteri che consentono di identificare e manipolare testi in modo molto preciso. Se vuoi saperne di più sulle espressioni regolari, puoi consultare [questo articolo](https://medium.com/@167/le-espressioni-regolari-dmca4e678cc6) in italiano.
-
-Per quanto riguarda l'implementazione della funzione "replace" in Arduino, è possibile utilizzare anche altri parametri per specificare la posizione del carattere da eliminare o la quantità di caratteri da cancellare.
-
-# Vedi anche:
-- [Documentazione ufficiale di Arduino](https://www.arduino.cc/reference/en/language/variables/string/functions/replace/)
-- [Tutorial su espressioni regolari in Arduino](https://www.hackster.io/Arduino_Genuino/regular-expressions-c25042)
+## Vedere Anche
+Per saperne di più sulle funzioni di Arduino String, visita la pagina ufficiale della documentazione: [https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)

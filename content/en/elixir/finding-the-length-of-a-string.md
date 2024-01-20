@@ -1,6 +1,6 @@
 ---
 title:                "Finding the length of a string"
-html_title:           "Elixir recipe: Finding the length of a string"
+html_title:           "Arduino recipe: Finding the length of a string"
 simple_title:         "Finding the length of a string"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,35 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Finding the length of a string means determining the number of characters in a given string. This is a common and crucial task for programmers, as it allows them to manipulate and validate user inputs, calculate data sizes, and perform various string operations.
+
+Finding the length of a string refers to counting the number of characters (including spaces) present in a text string. Programmers do it quite often because it helps in many operations like validation, manipulation, and comparison of the string data.
 
 ## How to:
-To find the length of a string in Elixir, we can use the `String.length` function. This function takes in a string as an argument and returns the number of characters in the string. See the example below:
 
-```Elixir
-string = "Hello, world!"
-String.length(string)
-```
-Output:
-```
-13
-```
-In addition to the `String.length` function, we can also use the `length/1` function, which takes in a list as an argument and returns the size of the list. Since strings in Elixir are essentially lists of characters, this function can also be used to find the length of a string. See the example below:
+Finding the length of a string in Elixir is straightforward. You can do it by using the `String.length()` function. Here's an example:
 
-```Elixir
-string = "Hello, world!"
-length(string)
+```elixir
+IO.puts String.length("Hello, world!")
 ```
-Output:
+
+This will output:
+
+```elixir
+12
 ```
-13
-```
+
+Remember, it counts spaces too. Hence, the length of `"Hello, world!"` is shown as 12.
 
 ## Deep Dive:
-Historically, finding the length of a string has been a task that required manual counting by the programmer. However, with the advancement of programming languages, built-in functions like `String.length` and `length/1` have made this task much easier and faster. Alternatives to using these functions include using regular expressions or writing custom functions to iterate through the string and count the characters.
 
-To understand how finding the length of a string works, it's important to know that strings in Elixir are encoded as UTF-8, which is a variable-width character encoding. This means that characters can have different byte sizes, making it crucial to use a built-in function to accurately find the length of a string.
+Historically, Elixir treats strings as binaries. In particular, Elixir uses UTF-8 to encode its strings, which supports a wide range of characters including emojis. This is why in Elixir, the `String.length/1` function might not always behave the way you'd expect with multi-byte characters.
+
+Consider:
+
+```elixir
+IO.puts String.length("é")
+```
+
+It returns `1`, because "é" is a single character, even though it's composed of two bytes in UTF-8.
+
+As an alternative, you could count bytes instead:
+
+```elixir
+IO.puts byte_size("é")
+```
+
+This returns `2`, as "é" takes up two bytes in UTF-8.
+
+The `String.length/1` in Elixir does not always correspond to the underlying bytes. That's because Elixir counts graphemes, not bytes, when calculating string length.
 
 ## See Also:
-- [Elixir-lang.org](https://elixir-lang.org/docs/stable/elixir/String.html#length/1) for more information on the `String.length` function.
-- [Elixir-lang.org](https://elixir-lang.org/docs/stable/elixir/Kernel.html#length/1) for more information on the `length/1` function.
+
+For more information, refer to the following resources:
+
+- Elixir official doc: [String](https://hexdocs.pm/elixir/String.html)
+- Unicode Standard: [UTF-8, UTF-16, UTF-32 & BOM](http://www.unicode.org/faq/utf_bom.html)
+- Practical Elixir blog post: [Elixir strings and binary data](https://pragtob.wordpress.com/elixir-strings-and-binary-data/)

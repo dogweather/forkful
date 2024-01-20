@@ -1,7 +1,7 @@
 ---
-title:                "Analyser le html"
-html_title:           "Kotlin: Analyser le html"
-simple_title:         "Analyser le html"
+title:                "Analyser le HTML"
+html_title:           "Kotlin: Analyser le HTML"
+simple_title:         "Analyser le HTML"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Parser HTML est le processus de lire et d'analyser le code HTML pour extraire les données ou les informations qu'il contient. Les programmeurs font cela pour pouvoir utiliser ces données dans leurs applications ou pour automatiser des tâches telles que l'extraction de contenu Web.
+## Quoi & Pourquoi?
+
+"L'analyse HTML" est le processus d'interprétation du code HTML afin d'extraire des informations spécifiques. Les programmeurs le font pour récolter des données, manipuler des pages web et automatiser des tâches.
 
 ## Comment faire:
-Voici un exemple simple de code en Kotlin pour réaliser un parsing HTML:
+
+Nous utiliserons jsoup, une bibliothèque Kotlin/Java très populaire pour l'analyse HTML. Pour commencer, ajoutez la dépendance suivante dans votre fichier build.gradle:
 
 ```Kotlin
-val htmlString = "<html><body><h1>Bienvenue</h1></body></html>"
+dependencies {
+    implementation 'org.jsoup:jsoup:1.13.1'
+}
+```
+Voici un exemple simple pour extraire des titres d'un site Web:
 
-val document = Jsoup.parse(htmlString)
-val heading = document.select("h1")
+```Kotlin
+import org.jsoup.Jsoup
 
-println(heading.text())
+fun main() {
+    val document = Jsoup.connect("https://votre-site-web.com").get()
+    val titles = document.select("h2.title").map { it.text() }
+    println(titles)
+}
 ```
 
-Output: Bienvenue
+Créez une connexion avec le site Web, sélectionnez les éléments que vous voulez et mappez-les au texte.
 
-## Plongée en profondeur:
-Parser HTML n'était pas aussi répandu dans le passé car les pages Web étaient généralement statiques et construites à la main. Cependant, avec l'avènement des applications Web dynamiques, le parsing HTML est devenu plus courant pour extraire des données en temps réel. Il existe également des alternatives telles que l'utilisation de l'API DOM native du navigateur ou des bibliothèques telles que Nokogiri en Ruby.
+## Exploration Approfondie:
 
-En termes d'implémentation, la bibliothèque Jsoup est largement utilisée en Kotlin pour réaliser un parsing HTML. Elle utilise des sélecteurs CSS pour extraire les données du document HTML.
+L'analyse HTML a été autour depuis les premiers jours du web. Javascript et Perl étaient très populaires pour cela, mais ils ont leur propre complexité. Kotlin, en revanche, est conçu pour être concis et sûr, ce qui le rend plus attrayant pour les tâches comme l'analyse HTML.
 
-## Voir aussi:
-- La documentation officielle de Jsoup: https://jsoup.org/
-- Un tutoriel pas à pas pour apprendre le parsing HTML en Kotlin: https://www.tutorialkart.com/kotlin/parse-html-in-kotlin-using-jsoup/
+Bien que jsoup soit très populaire, des alternatives comme HtmlCleaner et jtidy existent. Ces bibliothèques peuvent avoir des avantages spécifiques à certains cas d'utilisation, mais jsoup reste le choix le plus populaire grâce à sa simplicité d'utilisation.
+
+L'implémentation d'analyse HTML avec jsoup fonctionne en interprétant le DOM (Document Object Model) du HTML. Après avoir analysé le code HTML, jsoup génère une arborescence d'objets qui peut être naviguée et manipulée facilement.
+
+## Voir Aussi:
+
+Pour plus d'informations, consultez les sources suivantes:
+
+1. [Documentation officielle de Jsoup](https://jsoup.org/)
+2. [Kotlin for JavaScript](https://kotlinlang.org/docs/js-overview.html)
+3. [HtmlCleaner Library](https://htmlcleaner.sourceforge.io/)
+4. [jtidy Library](http://jtidy.sourceforge.net/)

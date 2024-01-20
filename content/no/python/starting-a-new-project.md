@@ -1,7 +1,7 @@
 ---
-title:                "Å starte et nytt prosjekt"
-html_title:           "Python: Å starte et nytt prosjekt"
-simple_title:         "Å starte et nytt prosjekt"
+title:                "Starter et nytt prosjekt"
+html_title:           "Arduino: Starter et nytt prosjekt"
+simple_title:         "Starter et nytt prosjekt"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Getting Started"
@@ -11,22 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Et nytt prosjekt er når en utvikler starter på å lage noe nytt, enten det er en applikasjon, et bibliotek, eller en nettside. Programmerere starter nye prosjekter for å utvikle sin kompetanse og kreativitet, og for å løse problemer eller utfordringer de står ovenfor.
+
+Å starte et nytt prosjekt handler om å bringe en ide til virkelighet ved å strukturere og skrive kode. Programmerere gjør det for å løse problemer, forbedre prosesser, eller skape noe nytt og unikt.
 
 ## Hvordan:
-```Python
-def start_prosjekt():
-    print("Hei, velkommen til mitt nye prosjekt!")
-    
-start_prosjekt()
-```
-Output:
-```Hei, velkommen til mitt nye prosjekt!```
 
-## Dykk dypere:
-Nye prosjekter har blitt en viktig del av softwareutvikling de siste årene, særlig med fremveksten av Open Source bevegelsen. Det finnes også mange populære plattformer for å håndtere prosjekter, som for eksempel Git og GitHub. Alternativt kan man også lage et nytt prosjekt ved å bygge videre på eksisterende kode eller ved å forkaste og restrukturere gammel kode.
+Lage en ny Python-fil for prosjektet ditt. Her er et eksempel på hvordan det kan sees ut.
+
+```Python
+def hilsen(navn):
+    return f"Hei, {navn}"
+
+print(hilsen("Python Programmerer"))
+```
+
+Merk at utskriften blir som følger: 
+
+```Python
+"Hei, Python Programmerer"
+```
+
+## Deep Dive
+
+Historisk kontekst: Python ble laget i 1989 av Guido Van Rossum. Det er allsidig og brukt i alt fra webutvikling til data vitenskap. 
+
+Alternativer: Du kan også bruke andre programmeringsspråk som JavaScript, Java, C++, avhengig av behovene til prosjektet ditt. 
+
+Gjennomførings detaljer: Når du starter et nytt prosjekt, er det viktig å først planlegge strukturen og funksjonene. Begynn med å skrive pseudokode, som er en enkel uttalelse av hva programmet skal gjøre, før du skriver den faktiske koden.
 
 ## Se også:
-- [GitHub guides for starting a new project](https://guides.github.com/introduction/flow/)
-- [A beginner's guide to starting a new project](https://medium.com/@MaximAbramchuck/a-beginners-guide-to-starting-a-side-project-15f81120feb7)
-- [The importance of personal projects for programmers](https://medium.freecodecamp.org/the-importance-of-side-projects-for-your-career-as-a-software-developer-c873cb6f0296)
+
+1. Python Documentation: https://docs.python.org/3/
+2. Google Python Style Guide:  http://google.github.io/styleguide/pyguide.html
+3. Python Læringsressurser: https://www.learnpython.org/
+4. Python Project Eksempler: https://www.upgrad.com/blog/python-projects-ideas-topics-beginners/

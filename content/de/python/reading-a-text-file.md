@@ -1,7 +1,7 @@
 ---
-title:                "Ein Textfile lesen"
-html_title:           "Python: Ein Textfile lesen"
-simple_title:         "Ein Textfile lesen"
+title:                "Eine Textdatei lesen"
+html_title:           "Bash: Eine Textdatei lesen"
+simple_title:         "Eine Textdatei lesen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Files and I/O"
@@ -12,26 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Lesen einer Textdatei ist ein häufiges und grundlegendes Programmierkonzept, bei dem der Inhalt einer Datei in ein Computerprogramm geladen wird. Programmierer tun dies, um Daten zu verarbeiten, die in Textform gespeichert sind, beispielsweise in einer CSV-Datei oder einem einfachen Textdokument.
+Das Lesen einer Textdatei ist die Fähigkeit eines Programms, Zeichenketten aus einer externen Datei zu erfassen und zu interpretieren. Programmierer machen dies, um Informationen zu bekommen oder zu speichern, ohne eine Datenbank zu benötigen. 
 
-## Wie geht das?
+## So geht's:
 
 ```Python
-with open('beispiel.txt') as f:
-  for line in f:
-    print(line)
+# Datei Öffnen
+file = open('beispiel.txt', 'r')
+
+# Inhalt Lesen
+inhalt = file.read()
+
+# Ausgeben des Inhalts
+print(inhalt)
+
+# Datei Schließen
+file.close()
 ```
 
-In diesem Beispiel öffnen wir die Datei "beispiel.txt" und speichern sie in der Variablen "f". Mit der ```for```-Schleife können wir dann jede Zeile aus der Datei nacheinander ausgeben. Dieser Code funktioniert sowohl für einfache Textdateien als auch für CSV-Dateien.
+Wenn `beispiel.txt` den Text `"Hallo, Welt!"` enthält, wäre die Ausgabe:
 
-## Tiefere Einblicke
+```Python
+Hallo, Welt!
+```
 
-Das Lesen von Textdateien hat eine lange Geschichte, die bis in die Anfänge des Computerzeitalters zurückreicht. Textdateien waren damals das Hauptmedium für die Speicherung von Daten, da sie einfach zu erstellen und zu bearbeiten waren. Heutzutage gibt es viele Alternativen zum Lesen von Textdateien, wie zum Beispiel Datenbanken oder spezialisierte Dateiformate. 
+## Vertiefung
 
-In Python gibt es mehrere Möglichkeiten, Textdateien zu lesen. Wie im obigen Beispiel können Sie die eingebaute Funktion ```open``` verwenden oder die Module ```csv``` oder ```pandas``` importieren.
+Das Lesen von Textdateien ist eine lange etablierte Praxis. Es datiert zurück bis zu den Anfängen der Informatik, als Speicher sehr begrenzt war. Es gibt Alternativen, einschließlich binärer Dateien und Datenbanken, aber Textdateien bleiben aufgrund ihrer Einfachheit und Portabilität populär. 
+
+Die Standardmethode read() öffnet, liest und schließt die Datei. Es gibt jedoch auch andere Methoden wie readline(), die nur eine Zeile auf einmal liest, was nützlich ist, wenn man große Dateien bearbeitet, die den RAM belasten könnten. 
+
+Die open()-Methode hat verschiedene Modi, wobei 'r' für Lesen steht. Andere Modi sind 'w' für Schreiben (löscht vorhandene Dateien), 'a' für Anhängen, 'r+' für Lesen und Schreiben und 'x' zum Erzeugen einer neuen Datei.
 
 ## Siehe auch
 
-- [Python Dokumentation zu Dateien lesen](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
-- [Real Python: Reading and Writing Files in Python](https://realpython.com/read-write-files-python/)
-- [Wikipedia: Text file](https://en.wikipedia.org/wiki/Text_file)
+- [Offizielle Python-Dokumentation zum Umgang mit Dateien](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
+- [Blog-Artikel: Praxistipps für den Umgang mit Dateien in Python](https://realpython.com/read-write-files-python/)
+- [Tutorial: Lesen von CSV- und Excel-Dateien in Python](https://www.datacamp.com/community/tutorials/pandas-read-csv)

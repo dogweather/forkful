@@ -1,7 +1,7 @@
 ---
-title:                "Beräkna ett datum i framtiden eller det förflutna"
-html_title:           "Bash: Beräkna ett datum i framtiden eller det förflutna"
-simple_title:         "Beräkna ett datum i framtiden eller det förflutna"
+title:                "Beräkna ett datum i framtiden eller förflutet"
+html_title:           "Bash: Beräkna ett datum i framtiden eller förflutet"
+simple_title:         "Beräkna ett datum i framtiden eller förflutet"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -11,31 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att beräkna ett datum i framtiden eller förflutna är en vanlig uppgift för programmerare. Det görs ofta för att automatisera tidsrelaterade funktioner eller planeringsaktiviteter för olika applikationer.
 
-## Hur man gör:
-För att beräkna ett datum i framtiden eller förflutna i Bash, används kommandot ```date```. För att lägga till ett visst antal dagar till det aktuella datumet, kan du använda flaggan "-d" och antalet dagar som du vill lägga till. Till exempel: 
+Beräkning av ett datum i framtiden eller förflutna innebär att ta ett specifikt datum och tillsätta eller subtrahera ett visst antal dagar, veckor, månader eller år. Programmerare gör det bland annat för att schemalägga händelser, generera påminnelser, och spåra projekt i tid.
 
-```Bash
-date -d "+10 days"
-```
-Detta kommer att ge dig datumet i tiden efter 10 dagar från och med idag. Du kan också använda andra tidsenheter som veckor, månader eller år i samma format. Om du vill beräkna ett datum i det förflutna istället för i framtiden, lägg till ett "-" tecken före antalet. Till exempel: 
+## Såhär gör man:
+
+I Bash kan du lätt beräkna ett framtida eller förflutna datum med `date` kommandot och `-d` flaggan. 
 
 ```Bash
-date -d "-2 months"
+# För att beräkna ett datum 3 dagar framåt:
+date -d "+3 days"
+
+# För att beräkna ett datum 1 vecka tillbaka:
+date -d "1 week ago"
 ```
-Detta kommer att ge dig datumet två månader tidigare från och med idag.
+Utskrifterna från dessa kommandon kommer att vara något som:
 
-## Fördjupning:
-Att kunna beräkna datum i framtiden eller förflutna är en viktig del av programmering eftersom det ger möjlighet att automatisera tidsbaserade uppgifter och funktioner. Det är också ett viktigt verktyg för att hantera schemaläggning och datumrelaterade data i olika applikationer.
+```Bash
+# Utskriften för det första kommandot
+Sun May 5 10:23:42 CEST 2022
 
-Det finns också andra sätt att beräkna datum i Bash, som att använda verktyg som "dateutils" eller "dtpick". Dessa verktyg ger mer mångsidighet och exakt datumberäkning.
+# Utskriften för det andra kommandot
+Mon Apr 29 10:23:42 CEST 2022
+```
 
-När det gäller implementationen använder kommandot "date" sig av Unix-tidsformatet, som är antalet sekunder som har gått sedan 1 januari 1970. Detta gör det möjligt att lägga till eller subtrahera en viss mängd sekunder från det aktuella datumet.
+## Djupdykning
 
-## Se även:
-Här är några bra resurser för att lära dig mer om hur man beräknar datum i Bash: 
+Beräkning av datum i framtiden eller förflutna har en gammal historia inom programmering, eftersom det är en grundläggande del av att hantera tid i program.
 
-- [Officiell dokumentation för kommandot "date"](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- ["dateutils" hemsida](https://www.fresse.org/dateutils/)
-- [Om Unix-tidsformatet](https://www.epochconverter.com/)
+Det finns också alternativ till Bash för att utföra dessa beräkningar. Exempelvis, i Python, kan du använda `datetime` biblioteket, medan i JavaScript kan du använda `Date` objektet.
+
+Beräkning av datum med Bash utförs m.h.a. den inbyggda `date` kommandot, vilket gör det möjligt att förflytta framåt eller bakåt i tid genom att specificera en sträng som argument till `-d` flaggan.
+
+## Se även
+
+1. [Advanced Bash-Scripting Guide: Date and Time](http://tldp.org/LDP/abs/html/timedate.html): En omfattande guide till att arbeta med datum och tid i Bash.
+2. [Bash `date` Manual](https://man7.org/linux/man-pages/man1/date.1.html): Officiella dokumentationen för `date` kommandot.
+3. [Stack Overflow Thread on Date Calculation](https://stackoverflow.com/questions/3249827/): Ett diskussion om olika sätt att beräkna datum i Bash och andra programmeringsspråk.

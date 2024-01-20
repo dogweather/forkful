@@ -10,30 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por Que?
+# Checando se um Diretório Existe em Elm
 
-Verificar se um diretório existe é um processo comumente utilizado por programadores para confirmar a existência de uma pasta específica em um sistema de arquivos. Isso pode ser útil ao criar uma aplicação que precise acessar ou manipular arquivos armazenados em um diretório específico. 
+## O Que & Por Quê?
+
+Verificar se um diretório existe é um passo necessário para garantir que os programas acessem o local certo para ler ou gravar dados. Os programadores fazem isso para evitar erros causados pela tentativa de acessar diretórios inexistentes.
 
 ## Como Fazer:
 
-Para verificar se um diretório existe em Elm, podemos usar a função `File.isDirectory` que retorna um `Bool` indicando se o diretório especificado existe ou não. Por exemplo:
+Infelizmente, no atual estado da linguagem Elm (0.19.1), não é possível interagir diretamente com o sistema de arquivos de uma maneira que permitiria verificar se um diretório existe, pois o Elm é uma linguagem voltada principalmente para a web e o navegador. Aqui está um exemplo de como você pode ter feito isso se fosse possível:
 
 ```Elm
-import File
-import Task
-
-existeDiretorio : String -> Task x Bool
-existeDiretorio diretorio =
-    File.isDirectory diretorio
+-- Isto é apenas um exemplo fictício, 'Dir.exists' não existe na linguagem Elm atual
+exemploFicticio : String -> Task String Bool
+exemploFicticio path =
+    Dir.exists path
+        |> Task.attempt
+            (\result ->
+               case result of
+                    Ok exists -> exists
+                    Err _ -> False
+            )
 ```
 
-No exemplo acima, usamos a função `File.isDirectory` em conjunto com a função `Task` para criar uma tarefa que irá retornar um `Bool`. Podemos chamar essa tarefa usando a função `Task.attempt` e lidando com o resultado usando `Task.andThen` e `Task.onError`.
+## Aprofundando
 
-## Mergulho Profundo:
+Historicamente, a linguagem Elm sempre se manteve leal à sua filosofia de foco na segurança, simplicidade e facilidade para o desenvolvimento web. Isto explica por que a linguagem não fornece uma maneira direta de se interagir com o sistema de arquivos, pois essa ação pode ser vulnerável a ataques do tipo Directory Traversal e outras violações de segurança.
 
-A função `File.isDirectory` foi adicionada à versão 0.19 do Elm e é uma alternativa à função `File.exists` que anteriormente era usada para verificar a existência de um diretório. Ao contrário de muitas outras linguagens de programação, Elm possui um sistema de arquivos virtual, o que significa que não é possível acessar diretamente o sistema de arquivos do computador em que o código está sendo executado. Em vez disso, o Elm usa o sistema de arquivos do usuário para simular o acesso ao sistema de arquivos e proteger a privacidade do usuário.
+No entanto, existem algumas soluções alternativas. Poderíamos usar `ports` para se comunicar com código JavaScript, que tem permissão para usar a API `fs` do Node.js (ambiente do lado do servidor). Lembre-se de que é importante que você esteja ciente das implicações de segurança ao usar este método.
 
-## Veja Também:
+Quanto aos detalhes de implementação, a verificação da existência de um diretório geralmente envolve a utilização de uma API do sistema operacional que lista diretórios e arquivos, em seguida, procurando pelo diretório desejado no resultado retornado. Como já mencionado, na linguagem de programação Elm, isso é feito através de bibliotecas JavaScript interfaceadas via `ports`.
 
-- Documentação oficial do Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-- Como trabalhar com arquivos em Elm: [https://guide.elm-lang.org/effects/file.html](https://guide.elm-lang.org/effects/file.html)
+## Veja Também
+
+- [Documentação oficial de Elm](https://elm-lang.org/docs)
+- [Guia Elm para Interoperabilidade JavaScript](https://guide.elm-lang.org/interop/)
+- [Documentação da API Node.js FS](https://nodejs.org/api/fs.html)

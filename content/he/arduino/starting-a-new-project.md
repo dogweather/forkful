@@ -1,7 +1,7 @@
 ---
-title:                "להתחיל פרוייקט חדש"
-html_title:           "Arduino: להתחיל פרוייקט חדש"
-simple_title:         "להתחיל פרוייקט חדש"
+title:                "התחלת פרויקט חדש"
+html_title:           "Clojure: התחלת פרויקט חדש"
+simple_title:         "התחלת פרויקט חדש"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Getting Started"
@@ -10,68 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-להתחיל פרויקט חדש הינו התהליך בו מתחילים לבנות את התוכנית שלכם בארדוינו. תהליך זה חשוב כיוון שהוא מאפשר לכם ליצור מוצר סופי שיכול לשמש לפיתוח רעיונות ולמימוש פרויקטים שונים.
+## מה זה ולמה?
+התחלת פרויקט חדש ב-Arduino היא מסבך של ציוד והתקנת התכנים הנדרשים ליצירת אפליקציה שניתן להריץ בטיולים. תהליך זה רלוונטי למתכנתים מכיוון שזה מאפשר להם להדגים את יכולותם ולפתח את מערך הידע שלהם בפלטפורמה בעלת כוח מעשיי רב.
 
-## איך לעשות זאת:
-להלן מספר דוגמאות של קוד ופלט תוך שימוש במבנה ```Arduino ... ```.
+## איך ל:
+כאן הקוד שלך והתוצאה שלו ישארו בתוך מסגרת ```Arduino ... ```.
 
-### מבנה תכנות מקור לשימוש בקלט ובפלט
-```arduino
-//קבלת נתונים מהכנס
-int inputPin = A0;
-int inputValue;
+```Arduino
+// משתנה לנורת LED
+int LED = 13;
 
-void setup() {
-  //להגדיר את הכנס ככנס דיגיטלי
-  pinMode(inputPin, INPUT);
-  //להגדיר את הכנס ככנס אנלוגי
-  pinMode(inputPin, INPUT);
-  //להדליק את המפלצת
-  Serial.begin(9600);
+// הגדרת המשתנה כפלט
+void setup () {
+ pinMode (LED, OUTPUT);
 }
 
-void loop() {
-  //קריאת נתונים מהכנס דיגיטלי
-  inputValue = digitalRead(inputPin);
-  Serial.println(inputValue);
+// הדלקה וכיבוי של הנורה
+void loop () {
+ digitalWrite (LED, HIGH);
+ delay (1000);
+ digitalWrite (LED, LOW);
+ delay (1000);
 }
 ```
 
-### ניהול מצבים ותנאים באמצעות יישומת IF
-```arduino
-//הגדרת ערך לאינפוט ולאופוט
-int inputPin = A0;
-int inputValue;
+הקוד הזה ידליק נורת LED לאורך זמן של שנייה, ואז יכבה אותה לאורך זמן של שנייה. 
 
-//הגדרת משתנה למצב
-int state = 0;
-
-void setup() {
-  //הכנס כניסה כתוכנית אנלוגית
-  pinMode(inputPin, INPUT);
-  //הדלקת מפלצת
-  Serial.begin(9600);
-}
-
-void loop() {
-  //קבלת נתון מהכניסה האנלוגית
-  inputValue = analogRead(inputPin);
-
-  //בדיקה אם הערך האנלוגי גדול מ-500
-  if (inputValue > 500) {
-    state = 1;
-  }
-  //בהפך
-  else {
-    state = 0;
-  }
-  Serial.println(state);
-}
-```
-
-## חקירה מעמיקה:
-תהליך זה התחיל את מפותחו של Massimo Banzi, ויצא לכלל כמחברת פרופיל לפיתוח פשוט ומקפץ של זמן קצר ועורך קוד עם יכולות אנלוגיות / דיגיטליות כגון מעקב קפסולה, ובעתיד סוללות. ישנם כמה כלים ותוכניות זמינות כדי לעזור לך להתחיל פרויקטים חדשים בארדוינו עם כל מכשיר הקשה או התוכנה מגוונים.
+## צלילה עמוקה:
+התחלת פרויקט חדשה בArduino היא מושג שנמצא בשימוש מאז השנות ה-1980, כאשר השפה עצמה נוצרה. חלופות כוללות Raspberry Pi, BeagleBone, וכד,' אם כי Arduino הוא פופולרי במיוחד בשל העשרה של ביבליות שנגישות וקהילת המתכנתים הנרחבת שלה. על מנת להתחיל פרויקט חדש נדרשת התקנה של Arduino IDE.
 
 ## ראה גם:
-למידת ארדוינו: https://www.arduino.cc/en/Guide/HomePage
+[Arduino IDE download](https://www.arduino.cc/en/Main/Software)
+[Starting with Arduino](https://www.arduino.cc/en/Guide/HomePage)
+[Arduino programming basics](https://www.arduino.cc/en/Tutorial/Foundations)

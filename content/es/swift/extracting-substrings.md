@@ -1,6 +1,6 @@
 ---
 title:                "Extrayendo subcadenas"
-html_title:           "Swift: Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
 simple_title:         "Extrayendo subcadenas"
 programming_language: "Swift"
 category:             "Swift"
@@ -12,51 +12,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ¿Qué y por qué?
 
-La extracción de subcadenas es simplemente el proceso de obtener un pedazo más pequeño de una cadena de texto más grande en un programa Swift. Los programadores a menudo realizan esta tarea para manipular cadenas de texto y realizar operaciones específicas, como búsqueda o reemplazo de ciertos caracteres.
+Extracción de subcadenas es sacar partes específicas de una cadena de texto completa en Swift. Los programadores lo hacen para analizar y manipular datos, por ejemplo, ir a través de un URL y extraer solo el dominio.
 
-## Cómo hacerlo:
+## ¿Cómo hacerlo?
 
-Puedes extraer una subcadena en Swift utilizando el método `subtring`. Esta función toma dos argumentos: un índice inicial y un índice final. Por ejemplo, si queremos extraer los primeros tres caracteres de una cadena, podríamos utilizar el siguiente código:
-
-```Swift
-let cadena = "Hola mundo"
-let subcadena = cadena.substring(from: cadena.startIndex, to: cadena.index(cadena.startIndex, offsetBy: 3))
-print(subcadena) // salida: Hol
-```
-
-También podemos usar el operador `..<` para especificar el rango de índices. Por ejemplo:
+A continuación te presentaré algunos ejemplos de cómo extraer subcadenas en Swift:
 
 ```Swift
-let cadena = "Hola mundo"
-let subcadena = cadena.substring(from: cadena.startIndex ..< cadena.index(cadena.startIndex, offsetBy: 3))
-print(subcadena) // salida: Hol
+let texto = "Hola, Mundo Swift"
+let índice = texto.index(texto.startIndex, offsetBy: 5)
+let subcadena1 = texto[..<índice]
+
+print(subcadena1)  // se imprime "Hola,"
 ```
 
-Otra manera de extraer una subcadena es utilizando el método `prefix` o `suffix`, que toman como argumento la cantidad de caracteres que queremos extraer desde el inicio o el final de la cadena, respectivamente:
+En este ejemplo, asumimos que la cadena de texto original es "Hola, Mundo Swift". Extraemos la subcadena "Hola," usando el indice que se encuentra a 5 caracteres desde el comienzo de la cadena.
 
 ```Swift
-let cadena = "Hola mundo"
-let subcadena1 = cadena.prefix(3)
-print(subcadena1) // salida: Hol
+let rango = texto.index(texto.startIndex, offsetBy: 6)..<texto.index(texto.startIndex, offsetBy: 11)
+let subcadena2 = texto[rango]
 
-let subcadena2 = cadena.suffix(4)
-print(subcadena2) // salida: undo
+print(subcadena2)  // se imprime "Mundo"
 ```
 
-## Profundizando:
+Aquí, creamos un rango para extraer la subcadena "Mundo" que se encuentra entre los índices 6 y 11 en la cadena original.
 
-La extracción de subcadenas ha sido una tarea común en la programación desde los primeros lenguajes de programación. Sin embargo, en Swift, los desarrolladores a menudo prefieren utilizar cadenas de caracteres (o `String` en inglés). Esto se debe a que las cadenas de caracteres en Swift son más potentes, ya que ofrecen una variedad de métodos para manipular y extraer subcadenas. Además, Swift también tiene la función `substring(with:)` que permite especificar un rango de índices más fácilmente.
+## Inmersión profunda
 
-Alternativamente, también se podría utilizar la función `NSString.substring(with:)` para extraer subcadenas en Swift, ya que `String` es compatible con `NSString`. Sin embargo, esta opción no es tan eficiente como el uso de métodos nativos de `String`, por lo que se recomienda utilizar los métodos mencionados anteriormente.
+La implementación de extracción de subcadenas en Swift es muy eficiente, ya que comparte almacenamiento con la cadena original. Esto significa que extraer subcadenas no es costoso en cuanto a consumo de memoria.
 
-## Ver también:
+Una alternativa a la extracción de subcadenas puede ser el uso de métodos incorporados en Swift, como "prefix" y "suffix", que permiten obtener los primeros o los últimos n caracteres de una cadena respectivamente.
 
-Para más información sobre cadenas de texto y cómo trabajar con ellas en Swift, puedes consultar la documentación oficial de Apple sobre `String` y `Substring`:
+Historicamente, la extracción de subcadenas no siempre ha sido una tarea sencilla en los lenguajes de programación, pero Swift ha simplificado enormemente este proceso con su enfoque orientado a la seguridad y la claridad del código.
 
-[String (Apple Documentation)](https://developer.apple.com/documentation/swift/string)
+## Ver también
 
-[Substring (Apple Documentation)](https://developer.apple.com/documentation/swift/substring)
+Para profundizar en la extracción de subcadenas y los rangos en Swift, los siguientes recursos son ideales:
 
-También puedes explorar el repositorio de Swift en GitHub para encontrar ejemplos de código y más recursos sobre este tema:
-
-[Swift Repository on GitHub](https://github.com/apple/swift/tree/main/stdlib/public/core)
+1. [Substring - Swift Standard Library | Apple Developer Documentation](https://developer.apple.com/documentation/swift/substring)
+2. [String - Swift Standard Library | Apple Developer Documentation](https://developer.apple.com/documentation/swift/string)
+3. [Safer Swift Code With Guards](https://www.crashcoding.com/blog/2021/safer-swift-code-with-guards)

@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de html"
-html_title:           "Clojure: Analyse de html"
-simple_title:         "Analyse de html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,24 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que le parsing HTML et pourquoi les programmeurs le font-ils?
+## Qu'est-ce et pourquoi?
 
-Le parsing HTML est le processus de lecture et d'analyse du code HTML pour en extraire des données structurées. Les programmeurs le font pour automatiser la récupération d'informations à partir de pages web, par exemple pour créer des applications de data mining ou de scraping.
+L'analyse HTML, en somme, signifie la transformation des données HTML en une structure que votre programme peut utiliser. Les programmeurs le font pour récupérer des données d'un document HTML.
 
-# Comment faire:
+## Comment faire:
 
-```Clojure
-(:require [net.cgrand.enlive-html :as html])
-(html/html-snippet "<div class="example">Hello, world!</div>") ;; parse le code HTML et retourne un arbre de données
-(html/select (html/html-resource "https://www.example.com") [:h1]) ;; récupère tous les éléments h1 du site web
+```clojure
+(use 'enlive.core)
+(def page (html-resource (java.net.URL. "http://example.com")))
+
+(defn parse-data [node]
+  {:title (-> node (select [:#title]) text)})
 ```
 
-# Plongée en profondeur:
+Envoie:
+```clojure
+{:title "Example Domain"}
+```
 
-Le parsing HTML est un outil couramment utilisé en programmation web pour extraire des données à partir de sites web. Il est également utilisé pour valider la structure et la conformité du code HTML. De plus, il existe des alternatives au parsing telles que l'utilisation d'API ou le web scraping manuel, mais le parsing est souvent plus rapide et plus efficace. La bibliothèque Enlive est une implémentation populaire de parsing HTML en Clojure, avec une syntaxe concise et facile à utiliser.
+La bibliothèque Clojure `enlive` se charge tout simplement de la tâche d'analyse. Ici, nous obtenons le titre de la page à l'aide de la fonction `select`.
 
-# Voir aussi:
+## Plongée profonde:
 
-- [Documentation Enlive] (https://github.com/cgrand/enlive/wiki)
-- [Articles et tutoriels sur le parsing HTML en Clojure] (https://www.clojure.at/blog/tag/parsing.html)
-- [Autres bibliothèques de parsing HTML en Clojure] (https://cljdoc.org/search?q=html)
+L'analyse HTML a commencé dans le besoin de récupérer et manipuler les informations disponibles sur le web. Aujourd'hui, de nombreux outils comme BeautifulSoup (Python), Nokogiri (Ruby) et maintenant `enlive` (Clojure) existent à cette fin.
+
+En Clojure, en live offre un moyen idiomatique d'analyser HTML. Cependant, il n'est pas le seul. Des options comme `jsoup` et `hickory` sont disponibles si `enlive` ne répond pas à vos besoins.
+
+En termes de mise en œuvre, `enlive` utilise des documents basés sur les nœuds pour représenter et manipuler le HTML. Cela signifie que nous pouvons transmettre des parties du document à des fonctions pour une manipulation plus fine.
+
+## Voir aussi:
+
+Enlive GitHub - https://github.com/cgrand/enlive
+
+Document Clojure on parsing HTML with Enlive - https://clojuredocs.org/clojure.xml/parse
+
+Jsoup: Java HTML Parser - https://jsoup.org/
+
+Hickory, a Clojure library for parsing HTML - https://github.com/davidsantiago/hickory
+
+N'oubliez pas de tester et d'expérimenter avec différentes bibliothèques pour voir laquelle conviendra le mieux à votre projet!

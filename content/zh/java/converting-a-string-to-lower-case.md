@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Java: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Java"
 category:             "Java"
@@ -10,27 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么&为什么?
+## 什么和为什么?
 
-字符串是由一个字符序列组成的数据类型，在编程中经常会遇到需要将字符串中的字符转换为小写的情况。这可以通过使用Java内置的toLowerCase()方法来实现。程序员们经常进行字符串转换为小写的操作，这样可以使字符串的比较和处理更加方便和准确。
+字符串转换为小写就是把字符串中的所有大写字母改成小写字母。转换的主要原因是为了进行文本比较和搜索，因为这些操作在处理大小写时会发生误差。
 
-## 怎样做:
+## 如何实现:
+
+以下是将字符串转换为小写的一种常见方法：
+
+```Java
+String string = "HELLO WORLD!";
+String lowerString = string.toLowerCase();
+System.out.println(lowerString);
+```
+
+输出结果会是:
 
 ```
-String str = "HELLO WORLD"; //定义一个字符串
-System.out.println(str.toLowerCase()); //使用toLowerCase()方法将字符串转换为小写
+hello world!
 ```
-输出结果为："hello world"
 
-## 深入探讨:
+你只需调用`toLowerCase()`方法，就可以把任何字符串转换为全部小写。
 
-1. 历史背景：随着计算机的普及和发展，字符串的使用变得越来越广泛。早期的计算机系统中，字符串并没有区分大小写的概念，直到后来发展出了大小写敏感的系统，字符串转换为小写的需求才变得更加重要。
+## 深度解读:
 
-2. 其他方法：除了使用Java内置的toLowerCase()方法，程序员也可以通过使用循环和if语句来实现字符串大小写的转换。但是相比之下，使用内置方法更加简洁和高效。
+- 历史背景：早期的计算机系统对大小写敏感，为了减少误差，程序员开始将文本转换为小写。Java在1.0版就引入了`toLowerCase()`方法。
+- 替代方案：在特定情况下，你也可以使用`String.toLowerCase(Locale.ROOT)`来避免因某些特殊语系引发的问题。
+- 实现细节：`toLowerCase()`方法会查找字符串中每个字符的小写等价项。如果没有找到，字符本身就会被返回。
 
-3. 实现细节：toLowerCase()方法是通过将字符串中的每个字符转换为其对应的小写字符来实现的。它可以同时处理英文字母和其他语言的字符，比如中文和日文。
+## 参考链接:
 
-## 参考资料:
+更多关于字符串如何转换为小写的信息，你可以查阅以下链接:
 
-- Java官方文档：https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#toLowerCase--
-- CSDN博客：https://blog.csdn.net/xiaoping0915/article/details/5588559
+1. Oracle Java 文档: [String.toLowerCase()](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html#toLowerCase())
+2. W3Schools 教程: [Java String toLowerCase() Method](https://www.w3schools.com/java/ref_string_tolowercase.asp)
+3. GeeksforGeeks 文章: [String toLowerCase() Method in Java](https://www.geeksforgeeks.org/java-string-tolowercase-method-example/)

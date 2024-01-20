@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Elixir: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Testing and Debugging"
@@ -11,27 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Das Drucken von Debug-Ausgaben ist ein Prozess, bei dem Programmierer zusätzlichen Code in ihre Anwendung einfügen, um bestimmte Variablen oder Funktionen während der Ausführung anzuzeigen. Dies kann hilfreich sein, um Fehler oder Probleme in einem Programm zu identifizieren und zu beheben.
 
-## Wie geht's:
-Um Debug-Ausgaben in Elixir zu drucken, verwenden wir die Funktion `IO.inspect`. Dies erlaubt uns, eine beliebige Variable oder Funktion als Argument zu übergeben, die dann ausgegeben wird. Zum Beispiel:
+In der Programmierung bezieht sich `Debug-Ausgabe` auf Nachrichten, die von einem Programm für Debugging-Zwecke ausgegeben werden. Es hilft Programmierern, das Verhalten ihres Codes zu verstehen und Fehler effizienter zu finden und zu beheben.
 
-```Elixir
-a = 5
-IO.inspect(a)
+## So geht's:
+
+In Elixir können wir die `IO.inspect/2` Funktion verwenden, um Debug-Ausgaben zu drucken. Hier ist wie:
+
+```elixir
+defmodule HelloWorld do
+  def show do
+    name = "Elixir"
+    IO.inspect(name, label: "Debug output")
+    IO.puts("Hello, #{name}")
+  end
+end
+
+HelloWorld.show
 ```
 
-Dieser Code würde die Zahl 5 in der Konsole ausgeben. Wir können auch mehrere Argumente an `IO.inspect` übergeben, indem wir sie einfach mit Kommas trennen:
+Die Ausgabe davon würde so aussehen:
 
-```Elixir
-IO.inspect(a, "Der Wert von A ist:")
+```elixir
+Debug output: "Elixir"
+Hello, Elixir
 ```
 
-Dies würde die Nachricht "Der Wert von A ist: 5" ausgeben.
+## Vertiefung:
 
-## Tiefentauchen:
-Das Drucken von Debug-Ausgaben ist eine gemeinsame Praxis, die von Programmierern verwendet wird, um Probleme in ihrem Code zu diagnostizieren. Es ist oft eine einfachere und effektivere Methode als das klassische Debugging mit Breakpoints. Alternativ können Programmierer auch spezielle Debugging-Tools wie den Visual Studio Code Debugger oder den Elixir Debugging Tracer verwenden. Die `IO.inspect` Funktion ist ein eingebauter Teil der Elixir-Sprache, was bedeutet, dass sie immer verfügbar ist und keine zusätzlichen Abhängigkeiten erfordert.
+(1) Historischer Kontext: Die Verwendung von Druckdebugging ist eine jahrzehntealte Praxis, die auch in modernen Sprachen wie Elixir in Verbindung mit weiteren, fortgeschritteneren Debugging-Tools genutzt wird.
+
+(2) Alternativen: Im Gegensatz zum Debug-Ausgabendruck können wir auch fortgeschrittene Werkzeuge wie "IEx.pry" oder die Tracing-Funktionen in der Erlang VM verwenden.
+
+(3) Implementierungsdetails: Die `IO.inspect/2` Funktion gibt den ersten Parameter zurück, so dass sie überall in Ihrem Code eingefügt werden kann, ohne das Verhalten zu ändern. Es kann programmiert werden, um Labels, pretty-printing und mehr zu unterstützen.
 
 ## Siehe auch:
-Offizielle Elixir Dokumentation zu `IO.inspect`: https://hexdocs.pm/elixir/IO.html#inspect/2
-Ein Tutorial zur Verwendung von `IO.inspect`: https://elixirschool.com/lessons/advanced/io-inspect/
+
+- Erlang's Trace-Funktionen: [Erlang Trace Functions](https://erlang.org/doc/apps/runtime_tools/erlang_trace.html)
+- IEx Helpers Dokumentation: [IEx Helpers Documentation](https://hexdocs.pm/iex/IEx.Helpers.html)
+- Elixir's offizielle Funktionen für Debug-Ausgabe: [Elixir's IO.inspect](https://hexdocs.pm/elixir/IO.html#inspect/2)

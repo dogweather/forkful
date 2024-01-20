@@ -1,6 +1,6 @@
 ---
 title:                "Création d'un fichier temporaire"
-html_title:           "Lua: Création d'un fichier temporaire"
+html_title:           "Kotlin: Création d'un fichier temporaire"
 simple_title:         "Création d'un fichier temporaire"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,30 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
-La création d'un fichier temporaire est une technique couramment utilisée par les programmeurs pour stocker des données de manière temporaire. Cela peut être utile lors de la manipulation de fichiers ou de l'exécution de certaines opérations qui nécessitent un espace de stockage supplémentaire.
+## Quoi et Pourquoi ?
+Créer un fichier temporaire correspond à la création d'un fichier à court terme, généralement utilisé pour stocker les données temporairement avant leur transfert à un emplacement plus permanent. Les programmeurs le font pour gérer l'espace disque efficacement et éviter de surcharger la mémoire.
 
-## Comment:
-### Exemple 1:
-```
-**local** tempFile = io.open("temp.txt", "w")
-tempFile:write("Contenu du fichier temporaire")
-tempFile:close()
-```
-**Sortie:**
-Un fichier temporaire nommé "temp.txt" sera créé et le texte "Contenu du fichier temporaire" y sera écrit.
+## Comment faire :
+Voici comment créer et utiliser un fichier temporaire en Lua :
 
-### Exemple 2:
-```
-**local** tempFile = os.tmpname()
-print(tempFile)
-```
-**Sortie:**
-Un nom de fichier temporaire sera généré et affiché dans la console.
+```Lua
+local tempfile = os.tmpname()
+local file = io.open(tempfile, "w")
+file:write("Ceci est un texte d'essai.")
+file:close()
 
-## Plongée en profondeur:
-La création de fichiers temporaires est une pratique courante en programmation et remonte aux premières versions de Lua. Cela permet aux programmeurs de stocker temporairement des données sans impacter leur système de fichiers. Il existe également d'autres alternatives telles que l'utilisation de variables en mémoire, mais les fichiers temporaires sont souvent plus flexibles et peuvent être utilisés dans une variété de situations. En termes d'implémentation, Lua offre des fonctions natives pour créer et manipuler des fichiers, rendant la création de fichiers temporaires relativement simple.
+file = io.open(tempfile, "r")
+local content = file:read("*a")
+file:close()
+print(content)
+os.remove(tempfile)
+```
 
-## Voir aussi:
-- [Documentation officielle de Lua sur les opérations de fichiers](https://www.lua.org/manual/5.4/manual.html#6.8)
-- [Une alternative à la création de fichiers temporaires avec la bibliothèque "lfs"](https://github.com/keplerproject/luafilesystem)
+Cela crée un fichier temporaire, écrit "Ceci est un texte d'essai." dedans, le lit ensuite et affiche son contenu, et enfin, le supprime.
+
+## Plongée profonde
+Historiquement, la création de fichiers temporaires tient ses racines des systèmes UNIX où `/tmp` était couramment utilisé pour de tels fichiers. En Lua, bien que `os.tmpname` soit couramment utilisé, il existe des alternatives comme le module `lfs` (LuaFileSystem) qui fournit `lfs.tempdir()`. Gardez à l'esprit que `os.tmpname` crée un nom unique pour le fichier temporaire, mais ne le crée pas réellement, c'est à vous de l'ouvrir et de le manipuler.
+
+## Voir aussi
+Pour plus d'informations sur le maniement de fichiers en Lua, consultez les liens suivants :
+   
+- [Programming in Lua: Files and I/O](http://www.lua.org/pil/21.html)
+- [Lua-Users Wiki: File Input/Output](http://lua-users.org/wiki/FileInputOutput)
+- [LuaFileSystem library](https://keplerproject.github.io/luafilesystem/)

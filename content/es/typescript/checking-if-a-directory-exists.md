@@ -1,7 +1,7 @@
 ---
-title:                "Comprobando si existe un directorio"
-html_title:           "TypeScript: Comprobando si existe un directorio"
-simple_title:         "Comprobando si existe un directorio"
+title:                "Verificando si un directorio existe"
+html_title:           "PHP: Verificando si un directorio existe"
+simple_title:         "Verificando si un directorio existe"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,32 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Comprobar si un directorio existe es una comprobación que realizan los programadores para asegurarse de que un directorio específico existe en su sistema antes de realizar cualquier operación de lectura o escritura en él. Esto evita posibles errores o fallos en el código.
+Verificar si un directorio existe en la memoria es comprobar si hay un espacio designado con ese nombre en el sistema de archivos. Los programadores necesitan hacer esto para evitar errores debidos a intentos de acceder a directorios inexistentes.
 
-## Cómo:
+## Cómo hacerlo:
 
+Para saber si un directorio existe en TypeScript, usamos la función `existsSync()` del módulo `fs` de Node.js.
 ```TypeScript
-if (fs.existsSync(path)) {
-  console.log('El directorio existe');
-} else {
-  console.log('El directorio no existe');
+import { existsSync } from 'fs';
+
+let directoryPath = './path/to/directory';
+if(existsSync(directoryPath)){
+    console.log("¡El directorio existe!");
+}else{
+    console.log("Lo siento, el directorio no existe.");
 }
 ```
+Si el directorio existe, se imprimirá '¡El directorio existe!', Si no, 'Lo siento, el directorio no existe.'.
 
-El código anterior utiliza la función `existsSync()` del módulo `fs` de Node.js para comprobar si el directorio especificado en la variable `path` existe en el sistema. Si es así, se imprimirá "El directorio existe", de lo contrario se imprimirá "El directorio no existe". Este es solo uno de los muchos métodos que se pueden utilizar para realizar esta comprobación en TypeScript.
+## Análisis Detallado
 
-## Profundizando:
+Originalmente, Node.js solo proporcionaba funciones asíncronas para interactuar con el sistema de archivos. Pero más tarde se introdujeron las funciones sincrónicas, como `existsSync()`, debido a la demanda de los desarrolladores que querían bloquear operaciones de E/S, aunque generalmente no se recomienda por razones de rendimiento.
 
-En el pasado, los programadores solían usar la función `stat()` de C para comprobar la existencia de un directorio. Sin embargo, esta función no era compatible con todos los sistemas operativos y tenía algunos inconvenientes, como ser menos eficiente y menos seguro que los métodos utilizados actualmente.
+Un enfoque alternativo es utilizar una promesa con la función `fs.promises.access()` de Node.js, que puede proporcionar una experiencia más moderna y manejable con las operaciones de E/S en TypeScript.
 
-Además, también se pueden utilizar librerías externas como `fs-extra` o `fs-jetpack` para realizar esta comprobación en lugar de utilizar los métodos nativos de Node.js.
+Aunque `existsSync()` regresa un booleano indicando la existencia de un directorio, no ilustra por qué un archivo no puede ser abierto. En contraste, `fs.promises.access()` con el modo `fs.constants.F_OK` regresará un error descriptivo si el directorio no puede ser accedido.
 
-Desde una perspectiva de implementación, los métodos utilizados para comprobar la existencia de un directorio suelen realizar llamadas al sistema operativo para obtener información sobre el directorio y luego devolver un resultado en función de esa información.
+```TypeScript 
+import { access } from 'fs/promises';
+import { constants } from 'fs';
 
-## Ver también:
+async function directoryExists(path: string) {
+    try {
+        await access(path, constants.F_OK);
+        console.log("¡El directorio existe!");
+    } catch {
+        console.log("Lo siento, el directorio no existe.");
+    }
+}
 
-- Documentación oficial de Node.js sobre el módulo `fs`: https://nodejs.org/api/fs.html
-- Librería `fs-extra`: https://www.npmjs.com/package/fs-extra
-- Librería `fs-jetpack`: https://www.npmjs.com/package/fs-jetpack
+directoryExists('./path/to/directory');
+```
+
+## Ver También
+
+Para obtener más información, puedes consultar las siguientes fuentes:
+
+- Documentación oficial de Node.js sobre el módulo 'fs': [Node.js fs](https://nodejs.org/api/fs.html)
+- Discusión sobre `existsSync()` vs `fs.promises.access()`: [Stack Overflow Discussion](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)
+- Un blog útil sobre la manipulación del sistema de archivos en Node.js: [Interacting with the file system in Node.js](https://blog.logrocket.com/interacting-with-the-file-system-in-node-js/)

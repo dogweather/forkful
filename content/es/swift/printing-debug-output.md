@@ -1,6 +1,6 @@
 ---
 title:                "Imprimiendo salida de depuración"
-html_title:           "Swift: Imprimiendo salida de depuración"
+html_title:           "Arduino: Imprimiendo salida de depuración"
 simple_title:         "Imprimiendo salida de depuración"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola a todos! Si eres nuevo en el mundo de la programación, es probable que hayas escuchado el término "debugging" o depuración. En términos sencillos, la depuración es el proceso de encontrar y corregir errores en tu código. Una forma común de hacerlo es imprimir información de depuración en tu consola mientras ejecutas tu código, también conocido como "debug output". En este artículo, te enseñaré cómo imprimir información de depuración en Swift y por qué es una práctica útil en la programación.
+## ¿Qué es y Por qué?
 
-## ¿Qué y por qué?
+La impresión de Debug Output es una técnica que los programadores utilizan para rastrear y entender el flujo de un programa. Nos permite detectar y solucionar errores efectivamente.
 
-La impresión de información de depuración es simplemente mostrar datos específicos mientras tu programa se está ejecutando. Esto es útil porque te permite ver los detalles de tu código mientras se ejecuta para ayudarte a identificar y solucionar errores. Los programadores utilizan la depuración para verificar el comportamiento de su código, detectar problemas y encontrar maneras de mejorarlo.
+## ¿Cómo hacerlo?
 
-## Cómo:
-
-Para imprimir información de depuración en Swift, utilizamos la función "print()". Dentro de los paréntesis, insertamos el mensaje que queremos imprimir y lo envolvemos entre comillas dobles. Echa un vistazo a este ejemplo:
+Puedes imprimir información a consola en Swift con la función `print()`. Observa el siguiente ejemplo:
 
 ```Swift
-print("Mi nombre es Juan y tengo \(27) años.")
+var name = "Juan"
+print("Hola, \(name)!")
 ```
-Esto imprimirá el mensaje "Mi nombre es Juan y tengo 27 años" en tu consola. También puedes imprimir el valor de una variable utilizando la sintaxis de sustitución de cadena "\()". Por ejemplo:
+
+Esta parte del código imprimirá el texto `Hola, Juan!`.
+
+También puedes usar `debugPrint()` para una salida más detallada cuando trabajas con Colecciones.
 
 ```Swift
-let nombre = "Ana"
-print("Hola, mi nombre es \(nombre).")
+let array = ["Manzana", "Banano", "Uva"]
+debugPrint(array)
 ```
 
-Esto imprimirá "Hola, mi nombre es Ana".
+La salida será:
 
-## Profundizando:
+```Swift
+["Manzana", "Banano", "Uva"]
+```
 
-Históricamente, los programadores utilizaban depuradores para encontrar y solucionar errores en su código. Sin embargo, la impresión de información de depuración se ha vuelto más popular debido a su simplicidad y eficiencia. Otras alternativas incluyen la creación de breakpoints o puntos de interrupción en tu código para pausar su ejecución y examinar los valores de las variables. Sin embargo, la impresión de información de depuración sigue siendo una práctica muy común en la comunidad de programación.
+## Profundizando
 
-Si quieres profundizar aún más, hay algunas cosas importantes que debes saber sobre la impresión de información de depuración en Swift. En primer lugar, cuando agregas numerosas impresiones de depuración en tu código, puede afectar el rendimiento y la velocidad de tu aplicación. Por lo tanto, es importante asegurarse de eliminar o comentar todas las impresiones antes de publicar tu aplicación en producción. En segundo lugar, puedes personalizar la salida de tus impresiones de depuración utilizando la función "debugPrint()" en lugar de "print()". Puedes leer más sobre esto en la documentación oficial de Apple.
+La función `print()` ha existido desde el origen de los lenguajes de programación para ayudar en tareas de depuración. Sin embargo, Swift también ofrece `dump()`, que proporciona información adicional, como los índices y los subelementos de las Colecciones.
 
-## Ver también:
+Aquí una muestra usando `dump()`:
 
-¡Y eso es todo! Espero que este artículo te haya ayudado a comprender la importancia de imprimir información de depuración en Swift y cómo puedes hacerlo. Si quieres profundizar aún más, aquí hay algunos recursos que pueden ser útiles:
+```Swift
+dump(array)
+```
 
-- [Documentación oficial de Apple sobre la función print()](https://developer.apple.com/documentation/swift/globalfunctions/1597022-print)
-- [Más información sobre cómo personalizar tus impresiones de depuración](https://useyourloaf.com/blog/customizing-debug-output-in-swift/)
-- [Comparte tu código con otros programadores en el foro SWIFT.IO](https://swiftio.io/forum)
+En este caso la salida mostrará algo más detallado:
+
+```Swift
+- ["Manzana", "Banano", "Uva"]
+  - "Manzana"
+  - "Banano"
+  - "Uva"
+```
+
+## Ver También
+
+Para más detalles acerca de salida Debug y funciones relacionadas en Swift, puedes visitar la documentación oficial de Apple para [print()](https://developer.apple.com/documentation/swift/1541053-print), [debugPrint()](https://developer.apple.com/documentation/swift/1542962-debugprint), y [dump()](https://developer.apple.com/documentation/swift/1538991-dump).

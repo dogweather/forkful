@@ -1,7 +1,7 @@
 ---
-title:                "Erstellen einer temporären Datei"
-html_title:           "Haskell: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,35 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**Was & Warum**
-Bei der Erstellung einer temporären Datei handelt es sich um eine kurze Datei, die von Programmierern erstellt wird, um vorübergehende Daten oder Ergebnisse zu speichern. Dies kann nützlich sein, wenn die endgültigen Daten noch nicht verfügbar sind oder wenn eine Zwischenspeicherung für die Ausführung eines Programms erforderlich ist.
+## Was & Warum?
 
-**Wie geht's:**
-Um eine temporäre Datei in Haskell zu erstellen, können Sie die `withTempFile` Funktion aus dem `System.IO.Temp` Modul verwenden. Hier ist ein Beispielcode, der eine temporäre Datei mit dem Inhalt "Hello World" erstellt und dann deren Inhalt auf der Konsole ausgibt:
+Einen temporären Datei zu erstellen bedeutet, eine Datei zu erstellen, die nur für die Dauer einer Sitzung oder eines Prozesses existiert. Programmierer tun dies zu häufig für Zwischenspeicherungs-Anforderungen, um Datenflüsse zu verwalten oder Fehler zu verhindern.
+
+## So Geht's:
+
+In Haskell können wir das System.IO.Temp verwenden, um temporäre Dateien anzulegen. Hier ist ein einfaches Beispiel:
 
 ```Haskell
-import System.IO.Temp (withTempFile)
-import System.IO (hPrint, hGetContents, hClose)
+import System.IO.Temp
+import System.IO
 
-main :: IO ()
-main = withTempFile "temp" ( \path handle -> do
-    hPrint handle "Hello World"
-    contents <- hGetContents handle
-    putStrLn contents
-    )
+main = withSystemTempFile "temp.txt" $ \tempFile hFile -> do
+    hPutStrLn hFile "Ein bisschen Text..."
+    hFlush hFile
+    readFile tempFile >>= putStrLn
 ```
 
-Die Ausgabe dieses Codes wird "Hello World" sein.
+Wenn wir diesen Code ausführen, wird eine temporäre Datei mit dem Namen "temp.txt" erstellt, einige Texte hinzugefügt und dann ausgelesen.
 
-**Tiefer tauchen:**
-Das Erstellen von temporären Dateien ist eine nützliche Funktion, die in vielen Programmiersprachen verfügbar ist. Es wird häufig verwendet, um temporäre Daten für die Verwendung in einem Programm zu speichern, ohne die endgültigen Daten zu verändern. Darüber hinaus können in Haskell auch andere Methoden zur Arbeit mit temporären Dateien verwendet werden, wie z.B. die `withSystemTempFile` Funktion.
+## Tief Tauchen:
 
-Einige alternative Methoden zum Erstellen von temporären Dateien in Haskell sind:
+Ersteinmal sollten wir etwas historischer Kontext durchgehen. In älteren Versionen von Haskell, konnten temporäre Dateien nicht so einfach erstellt werden. Die Funktionen zur Handhabung von temporären Dateien wurden erst in der Bibliothek `System.IO.Temp` eingeführt, die in Haskell Platform 2010 und später eingebaut ist.
 
-- Verwendung des `createTempDirectory` Befehls aus dem `System.Directory` Modul, um eine temporäre Datei herzustellen.
-- Verwendung des `mkstemp` Befehls aus dem `System.Posix.Temp` Modul, um eine temporäre Datei mit dem Betriebssystem-Standard für temporäre Dateien zu erstellen.
+Eine alternative Methode wäre die Nutzungen des `System.Directory` Pakets, welches auch Methoden wie `getTemporaryDirectory` enthält. Im Allgemeinen sind die Werkzeug in `System.IO.Temp` aber umfassender und flexibler.
 
-Die `withTempFile` Funktion in Haskell hat eine ähnliche Syntax wie die `withTempFile` Funktion in der Sprache Python, was es einfacher macht, Code zwischen den beiden Sprachen zu übertragen. 
+Wenn eine temporäre Datei erstellt wird, wird sie in dem durch das Betriebssystem definierte temporäre Verzeichnis erstellt. In den meisten Fällen ist dies `/tmp` auf Unix-Systemen und `C:\Windows\Temp` auf Windows. Die erstellte Datei wird nach Beendigung des Prozesses automatisch gelöscht.
 
-**Siehe auch:**
-Weitere Informationen und Beispiele zum Erstellen von temporären Dateien in Haskell finden Sie in der offiziellen Dokumentation des `System.IO.Temp` Moduls: https://hackage.haskell.org/package/base-4.12.0.0/docs/System-IO-Temp.html
+## Siehe Auch:
+
+Weiterführende Informationen und detaillierte Anleitungen gibt es in der Haskell-Dokumentation unter [Haskell System.IO.Temp](https://hackage.haskell.org/package/temporary-0.2.2.3/docs/System-IO-Temp.html) und im [Haskell Wikibook](https://en.wikibooks.org/wiki/Haskell/Understanding_monads/IO). Sehr empfehlenswert, um tieferes Wissen zu entwickeln!

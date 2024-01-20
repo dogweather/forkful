@@ -1,7 +1,7 @@
 ---
-title:                "Die Länge eines Strings finden"
-html_title:           "C#: Die Länge eines Strings finden"
-simple_title:         "Die Länge eines Strings finden"
+title:                "Die Länge eines Strings ermitteln"
+html_title:           "Java: Die Länge eines Strings ermitteln"
+simple_title:         "Die Länge eines Strings ermitteln"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -11,30 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Die Länge eines Strings zu finden bedeutet herauszufinden, wie viele Zeichen ein bestimmter Text enthält. Programmierer tun dies, um die Größe von Strings zu bestimmen und sie effektiv zu nutzen.
- 
+
+In der Programmiersprache C# bezeichnet die Länge eines Zeichenketten (Strings) die Anzahl der Zeichen in diesem String. Sie zu wissen, ist oft nützlich, zum Beispiel um Eingaben zu prüfen oder den Speicherbedarf vorauszuberechnen.
+
 ## So geht's:
-Es gibt verschiedene Möglichkeiten, die Länge eines Strings in C# zu finden. Eine einfache Methode ist die Verwendung der ```Length``` Eigenschaft, wie im folgenden Beispiel:
- 
+
+Die Länge eines Strings ermitteln wir in C# mit der Eigenschaft `Length`. Hier ist die Syntax:
+
 ```C#
-string text = "Hallo Welt!";
-int length = text.Length;
-Console.WriteLine(length); // Output: 11
-```
-Eine weitere Möglichkeit ist die Verwendung der ```Count``` Funktion, die die Anzahl der Elemente in einem String-Array zurückgibt. Hier ist ein Beispiel, das beide Methoden zeigt:
- 
-```C#
-string text = "Hallo Welt!";
-int length1 = text.Length;
-int length2 = text.ToCharArray().Count();
-Console.WriteLine(length1); // Output: 11
-Console.WriteLine(length2); // Output: 11
+string meinString = "Hallo, Welt!";
+int laenge = meinString.Length;
 ```
 
-## Tief eintauchen:
-Das Finden der Länge eines Strings ist eine grundlegende und häufig verwendete Aufgabe in der Programmierung. Es geht zurück auf die frühen Tage von BASIC, als das Befehlszeilen-Tool ```LEN``` verwendet wurde, um die Länge von Strings zu ermitteln. In C# gibt es mehrere Möglichkeiten, die Länge eines Strings zu finden, einschließlich der Verwendung von Regulären Ausdrücken oder der Implementierung einer eigenen Funktion. Es ist wichtig zu beachten, dass die Länge eines Strings in C# immer die Anzahl der Zeichen und nicht die Anzahl der Bytes im String ist.
+Die Ausgabe sieht so aus: 
 
-## Siehe auch:
-- [MSDN-Dokumentation zu String-Länge](https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=net-5.0)
-- [C# - String-Länge Online-Beispiel](https://www.tutorialspoint.com/csharp/csharp_string_length.htm)
-- [Video-Tutorial zum Finden der Länge eines Strings in C#](https://www.youtube.com/watch?v=_1BmJlmhPSQ)
+```C#
+Console.WriteLine(laenge);
+// Ausgabe: 13
+```
+
+## Vertiefung
+
+(1) Historisch: die Methode `.Length` ist in C# in der Klasse `String` schon seit der ersten Version vorhanden. Sie unterscheidet sich von `strlen` in C und `length` in Java nur in der Schreibweise.
+
+(2) Alternativen: `Length` ist die direkteste und effizienteste Methode, die Länge zu ermitteln. Es gibt jedoch auch Möglichkeiten wie eine for-Schleife die Zeichen zu zählen, doch können diese komplizierter und langsamer sein.
+
+(3) Implementierungsdetails: die `Length`-Eigenschaft in C# zählt keine Zeichen, sondern gibt den intern gespeicherten Wert zurück, der beim Erstellen des Strings berechnet und dann gespeichert wird. Das macht die Abfrage besonders schnell.
+
+## Siehe auch
+
+Es gibt auch Funktionen, um die Länge von Arrays und Kollektionen zu ermitteln. Hier sind einige Links dazu:
+
+- String.Length Eigenschaft in der Microsoft Dokumentation: https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=net-5.0
+
+- Array.Length Eigenschaft in der Microsoft Dokumentation: https://docs.microsoft.com/de-de/dotnet/api/system.array.length?view=net-5.0
+
+- IList< T > .Count Eigenschaft in der Microsoft Dokumentation: https://docs.microsoft.com/de-de/dotnet/api/system.collections.generic.icollection-1.count?view=net-5.0

@@ -1,7 +1,7 @@
 ---
-title:                "Die vergleichung von zwei Daten"
-html_title:           "Go: Die vergleichung von zwei Daten"
-simple_title:         "Die vergleichung von zwei Daten"
+title:                "Vergleich von zwei Daten"
+html_title:           "C#: Vergleich von zwei Daten"
+simple_title:         "Vergleich von zwei Daten"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,36 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+# Go Programmierung: Vergleich von zwei Daten
 
-Das Vergleichen von zwei Datumsangaben ist eine häufige Aufgabe in der Programmierung. Es beinhaltet die Überprüfung, ob ein Datum kleiner, größer oder gleich einem anderen Datum ist. Programmierer verwenden dies, um z.B. zu überprüfen, ob eine bestimmte Frist abgelaufen ist oder um Daten in der richtigen Reihenfolge zu sortieren.
+## Was & Warum?
 
-# Wie geht's:
+Das Vergleichen von zwei Daten bedeutet, zu bestimmen, ob ein Datum vor, nach oder gleich einem anderen Datum ist. Entwickler tun das oft, um Zeitabläufe zu handhaben und logische Bedingungen basierend auf Zeitstempeln einzurichten.
 
-```Go 
-func compareDates(date1, date2 time.Time) int{
-    if date1.Before(date2){
-        return -1
-    }else if date1.After(date2){
-        return 1
-    }else{
-        return 0
-    }
+## Wie geht das?
+
+In Go, datumsvergleiche können einfach und intuitiv durchgeführt werden. Hier ist ein Beispielcode:
+
+```Go
+package main
+import (
+  "fmt"
+  "time"
+)
+
+func main() {
+  date1 := time.Date(2021, 1, 1, 0, 0, 0, 0, time.UTC)
+  date2 := time.Date(2022, 1, 1, 0, 0, 0, 0, time.UTC)
+  
+  if date1.Before(date2) {
+    fmt.Println("Datum 1 ist vor Datum 2")
+  } else if date1.After(date2) {
+    fmt.Println("Datum 1 ist nach Datum 2")
+  } else if date1.Equal(date2) {
+    fmt.Println("Die Daten sind gleich")
+  }
 }
-
-date1 := time.Date(2020, time.October, 01, 12, 00, 00, 00, time.UTC)
-date2 := time.Date(2020, time.October, 10, 12, 00, 00, 00, time.UTC)
-
-fmt.Println(compareDates(date1, date2)) // output: -1
-
 ```
 
-Um zwei Datumsangaben in Go zu vergleichen, müssen wir zuerst die Zeitpakete importieren. Dann können wir die ```time.Time``` Struktur verwenden, um unsere Datumsangaben zu erstellen. Wir können dann die Funktion ```compareDates``` erstellen, die zwei Datumsangaben akzeptiert und eine negative Zahl zurückgibt, wenn das erste Datum kleiner ist, eine positive Zahl, wenn es größer ist, und 0, wenn sie gleich sind. In unserem Beispiel ist das Ergebnis -1, da das erste Datum früher als das zweite Datum ist.
+Beim Ausführen dieses Codes wird "Datum 1 ist vor Datum 2" angezeigt.
 
-# Tiefentauchen:
+## Tiefere Einblicke
 
-Das Vergleichen von zwei Datumsangaben hat einen wichtigen historischen Kontext, da es eng mit der Entwicklung von Kalendersystemen und Zeitrechnungen verbunden ist. Alternativen zu dieser Methode sind unter anderem die Verwendung von Unix-Zeitstempeln oder die Verwendung von speziellen Bibliotheken, die die Vergleiche erleichtern. Die Implementierung der Vergleichsfunktion in Go basiert auf dem Vergleich von Unix-Zeitstempeln, die die Anzahl der Sekunden seit dem 1. Januar 1970 darstellen.
+Historisch gesehen gab es in den früheren Versionen von Go keine eingebauten Funktionen für den Direktvergleich von zwei Daten. Entwickler mussten die einzelnen Zeitkomponenten extrahieren und vergleichen, was zu mehr Code und möglichen Fehlern führen konnte. 
 
-# Siehe auch:
+Alternativ kann man die `Sub`-Funktion von Go verwenden, um die Differenz zwischen zwei Daten zu berechnen. Allerdings ist das nur nützlich, wenn man wissen will, wie viel Zeit zwischen den Daten vergangen ist, weniger wenn man nur wissen möchte, welches Datum früher oder später ist.
 
-Weitere Informationen zu Datum und Zeit in Go finden Sie in der offiziellen Dokumentation unter https://golang.org/pkg/time/ und https://golang.org/pkg/time/#pkg-constants. Für Alternativen zur Verwendung von Unix-Zeitstempeln empfehlen wir die Pakete "timeutil" und "dateparse".
+Die Vergleichsfunktionen `Before`, `After` und `Equal` vergleichen direkt die Unix-Zeitstempel der Daten. Das sind lange Zahlen, die die Sekunden darstellen, die seit dem 1. Januar 1970 vergangen sind (auch bekannt als die "Unix-Ära").
+
+## Siehe Auch
+
+Weitere nützliche Ressourcen können folgende sein:
+
+- Die offizielle Go-Dokumentation zur Zeitbibliothek: https://golang.org/pkg/time/
+- Ein Tutorial über das Arbeiten mit Daten in Go: https://yourbasic.org/golang/format-parse-string-time-date-example/
+- Go Zeitvergleich auf StackOverflow: https://stackoverflow.com/questions/22579434/compare-date-part-only-without-time-part-in-them-in-go

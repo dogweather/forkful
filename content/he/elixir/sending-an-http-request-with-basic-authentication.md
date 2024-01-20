@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http עם אימות בסיסי"
-html_title:           "Elixir: שליחת בקשת http עם אימות בסיסי"
+html_title:           "C: שליחת בקשת http עם אימות בסיסי"
 simple_title:         "שליחת בקשת http עם אימות בסיסי"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
+## מה זה & למה?
 
-שליחת בקשת HTTP עם אימות בסיסי היא פעולה בה תוכנתאים משתמשים כדי לקבל גישה למידע משרתי אינטרנט מאובטחים. תוכניות כמו תוכנות מחשב או אפליקציות ניידות צריכות לשלוח בקשות כאלה כדי לקבל גישה לפרטי משתמש תוך הבטחת פרטיות ואבטחת מידע.
+שליחת בקשת HTTP עם אוטנטיקצייה בסיסית היא בסופו של דבר דרך להעביר מידע מהמחשב שלך לשרת על ידי שליחת המידע באופן מאובטח. הסיבה לביצוע זה מגיעה בדרך כלל מהצורך להבטיח שהמידע שאנחנו שולחים לשרת הוא מאובטח ולא נחשף לצדדים שלישיים.
 
-## איך לעשות זאת:
+## איך לבצע:
 
+באיליקסיר, אפשר לשלוח בקשת HTTP עם אוטנטיקציה בפרוטוקול בסיסי באמצעות ה-library `HTTPoison`. בדוגמה הבאה, אנחנו שולחים GET request לאתר כלשהו.
+
+Elixir:
 ```Elixir
-# דוגמא של שליחת בקשת HTTP עם אימות בסיסי באמצעות הספרייה HTTPoison
-response = HTTPoison.get("https://example.com/resource", headers: [
-  {"Authorization", "Basic YWRtaW46cGFzc3dvcmQ="} # הכנס כאן את שם המשתמש והסיסמה שלך בקידוד base64
-])
-
-# הדפסת קוד תגובה
-IO.puts(response.status_code)
-
-# הדפסת גוף תגובה
-IO.puts(response.body)
+defmodule Example do
+  require HTTPoison
+  def send_request do
+    url = "https://example.com"
+    HTTPoison.get!(url, %{}, hackney: [basic_auth: {'username', 'password'}])
+  end
+end
 ```
-
-## חקירה מעמיקה:
-
-מאז הומצאה פרוטוקול ה-HTTP בשנות השישים של המאה העשרים ועד היום, פרוטוקול זה הפך לסטנדרט בעולם האינטרנט. כך שלשליחת בקשת HTTP עם אימות בסיסי יש מספר שיטות נוספות כמו OAuth או Token מסוג JSON Web.
-
-פרוטוקול אימות בסיסי טבעו מבוסס טכנולוגיית הטקסט הבתולי ומכן הוא מיועד רק לפראנסים שמעדיפים שימוש פשוט ויעיל. תיקנוים כמו YARN ו NPM מרחיבים את האופקים עם שליחת הבקשות האלה תוך התאמה לבקשות ב API שונות.
+## עומק מידע:
+שליחת בקשות HTTP עם אוטנטיקציה מבסיסית היא נוסחאות ישנה שנוצרה עם מאמצים ראשונים של ה-HTTP. למרות זאת, הרעיון הכללי נשאר רלוונטי. ישנם חלופות, קרי כאלה שמשתמשות בטוקנים כמו JWT, או שליחת username ו-password ב-body של הבקשה במקום ב-header. החסרונות הראשיים של שיטה זו הם:
+1.   הסיסמאות משודרות בתוך ה-headers של ה-request, מה שיכול להיות מסוכן אם החיבור לא מאובטח (לא על SSL / TLS).
+2.   אם השרת לא תומך ב-HTTP Basic Authentication, המידע יהיה זמין לצפיה.
 
 ## ראה גם:
 
-- [HTTPoison - מסמך API פלאטפורמת Elixir](https://hexdocs.pm/httpoison/1.6.1/HTTPoison.html)
-- [OAuth - מה זה ואיך זה עובד?](https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2-hebrew)
-- [JSON Web Token - הוראות לשימוש ב Elixir עבור בקשות HTTP בסיסיות](https://hexdocs.pm/joken/2.0.5/Joken.html)
+[הגדרת HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+[הדרכה של Elixir HTTPoison](https://hexdocs.pm/httpoison/HTTPoison.html)
+[עמוד ה-HTTP Basic Authentication של Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Authorization)

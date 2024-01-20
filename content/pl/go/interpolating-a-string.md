@@ -1,7 +1,7 @@
 ---
-title:                "Interpolacja ciągu znaków."
-html_title:           "Go: Interpolacja ciągu znaków."
-simple_title:         "Interpolacja ciągu znaków."
+title:                "Interpolacja ciągu znaków"
+html_title:           "C++: Interpolacja ciągu znaków"
+simple_title:         "Interpolacja ciągu znaków"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,27 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co to jest i dlaczego?
 
-Interpolowanie łańcucha znaków to prosta i przydatna funkcja w programowaniu, która pozwala na wstawianie wartości zmiennych do łańcucha znaków. Programiści używają go, aby dynamicznie zmieniać tekstowy wyjście swoich programów.
+Interpolacja ciągów to proces, który pozwala wstawiać zmienne lub wyrażenia bezpośrednio do ciągów znaków. Programiści używają tego, aby efektywnie tworzyć i manipulować ciągami.
 
-## Jak to zrobić?
+## Jak to zrobić:
 
-Interpolacja w Go jest obsługiwana przez specjalne znaki ```%v``` i ```%T```. Możesz użyć ich do wstawiania wartości zmiennych do łańcucha znaków w następujący sposób:
+Interpolacja ciągów w języku Go można zrealizować za pomocą funkcji `fmt.Sprintf`. Oto przykład:
 
 ```Go
-favoriteColor := "blue"
-fmt.Printf("Mój ulubiony kolor to %v", favoriteColor)
+package main
+
+import "fmt"
+
+func main() {
+	name := "Jan Kowalski"
+	message := fmt.Sprintf("Cześć, %s!", name)
+	fmt.Println(message)
+}
 ```
 
-Wyświetli to: `Mój ulubiony kolor to blue`.
+Po uruchomieniu tego kodu, otrzymamy następujący wynik:
+```Go
+Cześć, Jan Kowalski!
+```
 
-## Dogłębnie
+## Pogłębiona analiza:
 
-Interpolacja łańcucha znaków jest popularną techniką, która została zapoczątkowana w języku Pascal i jest szeroko stosowana w wielu innych językach programowania. Alternatywą dla interpolacji jest konkatenacja, czyli łączenie łańcuchów znaków za pomocą operatora `+`.
+1. **Kontekst historyczny**: Interpolacja ciągów jest featurem dostępnym w wielu językach programowania, takich jak Python, Ruby, czy JavaScript. W języku Go jej użycie jest dość proste i wydajne.
 
-W Go interpolacja jest obsługiwana przez pakiet `fmt` i funkcję `Printf`. Jest to zaimplementowane w języku C, więc dezinformacja na temat typów może spowodować błędy.
+2. **Alternatywne metody**: Inną metodą jest użycie konkatenacji ciągów znaków, ale to jest mniej wydajne, szczególnie dla dużych ciągów.
 
-## Zobacz też
+3. **Szczegóły implementacji**: W Go, funkcja `Sprintf` formatuje i zwraca ciąg bez wyświetlania go na ekranie. To pozwala nam przechować sformatowany ciąg w zmiennej do dalszego użycia.
 
-- [Official Go documentation on string formatting](https://golang.org/pkg/fmt/#hdr-Printing)
+## Zobacz również:
+
+- Dokumentacja języka Go na temat pakietu fmt: [https://golang.org/pkg/fmt](https://golang.org/pkg/fmt)
+- Dokumentacja języka Go na temat funkcji fmt.Sprintf: [https://golang.org/pkg/fmt/#Sprintf](https://golang.org/pkg/fmt/#Sprintf)

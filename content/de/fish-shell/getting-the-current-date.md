@@ -1,7 +1,7 @@
 ---
-title:                "Das Abrufen des aktuellen Datums"
-html_title:           "Fish Shell: Das Abrufen des aktuellen Datums"
-simple_title:         "Das Abrufen des aktuellen Datums"
+title:                "Das aktuelle Datum abrufen"
+html_title:           "Gleam: Das aktuelle Datum abrufen"
+simple_title:         "Das aktuelle Datum abrufen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,25 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Abrufen des aktuellen Datums ist eine gängige Aufgabe für Programmierer. Es ermöglicht ihnen, das aktuelle Datum und die Uhrzeit in ihren Programmen zu verwenden. Dies kann nützlich sein, um Zeitstempel zu generieren, auf Datenbanken zuzugreifen oder einfach nur, um zu überprüfen, ob eine bestimmte Aufgabe zu einem bestimmten Zeitpunkt ausgeführt werden soll.
+# Mit Fish Shell das aktuelle Datum bekommen
 
-# Wie geht das?
-Das Abrufen des aktuellen Datums in der Fish Shell ist ganz einfach. Es kann mit dem Befehl "date" und der Option "+%d/%m/%Y" durchgeführt werden. Dies gibt das aktuelle Datum im Format Tag/Monat/Jahr aus.
+## Was & Warum?
+
+Das aktuelle Datum zu ermitteln ist recht einfach: Es ist der Prozess, durch den wir den aktuellen Tag, Monat und Jahr von unserem System erhalten. Dies ist für Programmierer aus vielen Gründen wichtig, z.B. für Protokollierung, Zeitstempel und die Durchführung zeitbasierter Aufgaben.
+
+## So geht's:
+
+Um das aktuelle Datum in Fish Shell (derzeitige Version) zu bekommen, verwenden wir den `date` Befehl:
 
 ```Fish Shell
-date +%d/%m/%Y
+date
 ```
 
-Das Ergebnis sieht dann beispielsweise so aus: 17/04/2021.
+Der obige Befehl zeigt uns das aktuelle Datum und die Zeit an:
 
-# Tiefere Einblicke
-Das Abrufen des aktuellen Datums ist eine weit verbreitete Aufgabe, die in fast jeder Programmiersprache und Shell möglich ist. Es ist auch wichtig, um sicherzustellen, dass Programme zuverlässig auf das aktuelle Datum zugreifen können.
+```Fish Shell
+Thu Mar 11 17:17:34 UTC 2021
+```
 
-Eine Alternative zum Befehl "date" in der Fish Shell ist der Befehl "gdate". Dies ist ein in der GNU Core Utilities enthaltener Befehl, der erweiterte Funktionen für das Abrufen des Datums und der Uhrzeit bietet.
+Wenn Sie nur das Datum sehen möchten, können Sie die Ausgabe formatieren:
 
-Die Implementierung des aktuellen Datums in der Fish Shell nutzt das Unix Epoch System, das die Anzahl der Sekunden seit dem 1. Januar 1970 um 00:00 Uhr UTC zählt. Dieser Wert wird dann in ein menschenlesbares Datum und eine Zeit umgewandelt.
+```Fish Shell
+date "+%Y-%m-%d"
+```
+was folgendes ausgibt:
 
-# Siehe auch
-- Offizielle Fish Shell Dokumentation zum Befehl "date": https://fishshell.com/docs/current/cmds/date.html
-- GNU Core Utilities: https://www.gnu.org/software/coreutils/coreutils.html
+```Fish Shell
+2021-03-11
+```
+
+## Deep Dive
+
+Fish Shell ist eine benutzerfreundliche Befehlszeilenschnittstelle, die 2005 eingeführt wurde. Tatsächlich ist der `date` Befehl viel älter und war bereits in Unix-Systemen der 70er Jahre verfügbar, was seine weit verbreitete Verwendung und Akzeptanz erklärt.
+
+Es gibt auch Alternativen zum `date` Befehl, wie `strftime` in Perl oder `datetime` in Python, die ähnliche Funktionalitäten bieten, abhängig von den spezifischen Anforderungen.
+
+Im Falle des `date` Befehls ruft das Betriebssystem intern eine Systemuhr auf, um das aktuelle Datum und die Uhrzeit zu ermitteln und auf dem Bildschirm anzuzeigen.
+
+## Siehe auch
+
+Hier finden Sie weitere Informationen zur Datums- und Zeitverarbeitung in Fish Shell und alternativen Sprachen:
+
+- Fish Shell Dokumentation: https://fishshell.com/docs/current/index.html
+- Perl strftime: https://perldoc.perl.org/functions/strftime.html
+- Python datetime: https://docs.python.org/3/library/datetime.html

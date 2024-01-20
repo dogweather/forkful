@@ -1,7 +1,7 @@
 ---
-title:                "Html-Analyse"
-html_title:           "PowerShell: Html-Analyse"
-simple_title:         "Html-Analyse"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,32 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-HTML-Parsing ist das Extrahieren von Daten aus HTML-Quellcode. Programmierer nutzen dies, um Informationen von einer Webseite zu sammeln oder zu verarbeiten.
+# PowerShell HTML Parsing für Programmierer: Ein Quick-Guide
 
-# Wie geht's:
+In diesem Artikel geht es um einen kurzen Überblick über HTML Parsing mit PowerShell. Lassen Sie uns direkt einsteigen.
+
+## Was & Warum?
+
+HTML-Parsing bezieht sich auf das Durchsuchen und Extrahieren relevanter Daten in einem HTML-String. Programmierer machen dieses meist, um Informationen aus Webseiten zu gewinnen, die in einer für die Anwendung nützlichen Weise dargestellt werden können.
+
+## So geht's:
+
+Mit PowerShell ist HTML-Parsing einfach. Hier ist ein einfacher Weg, es mit der Invoke-WebRequest-Funktion zu tun:
+
 ```PowerShell
-#installiere das Modul "HTML Agility Pack"
-Install-Package HtmlAgilityPack -Source chocolatey
+# Webseite aufrufen
+$webseite = Invoke-WebRequest -Uri "https://IhreWebseite.de"
 
-#lade die Webseite mit dem gewünschten Inhalt
-$url = "https://www.example.com"
+# Parsing 
+$parsedHtml = $webseite.ParsedHtml.body.innerText
 
-#parse die HTML-Daten
-$webseite = Invoke-WebRequest -Uri $url 
+# Ausgabe
+$parsedHtml
+```
+Es gibt noch einen weiteren Weg, mit Hilfe des HtmlAgilityPack:
 
-#mit dem Modul "HTML Agility Pack" kannst du die Daten durchsuchen
-$ergebnis = $webseite.ParsedHtml | Select-Xml -XPath "//div[@class='class-name']"
+```PowerShell
+# HtmlAgilityPack laden
+Add-Type -Path "HtmlAgilityPack.dll"
 
-#das Ergebnis ist eine Collection mit allen HTML-Tags, die der XPath-Abfrage entsprechen
-#z.B. um den Textinhalt der Tags zu erhalten:
-$ergebnis | Select-Object -ExpandProperty "#text"
+# Neue HtmlDocument Instanz erstellen
+$html = New-Object HtmlAgilityPack.HtmlDocument
+
+# HtmlDocument laden mit HTML-Code
+$html.LoadHtml($webseite.Content)
+
+# Daten extrahieren
+$daten = $html.DocumentNode.SelectNodes('//tag')
+
+# Daten ausgeben
+$daten.innerText
 ```
 
-# Tiefere Einblicke:
-HTML wird seit den Anfängen des Internets verwendet, um Webseiten zu erstellen. Mit dem Aufkommen von Web Scraping und Data Mining gewinnt das Parsing von HTML immer mehr an Bedeutung. Alternativ zu "HTML Agility Pack" gibt es auch andere Module wie "AngleSharp", die ähnliche Funktionen bieten. Das Modul "Invoke-WebRequest" ermöglicht es auch, mit anderen Datenformaten wie JSON oder XML zu arbeiten. Die Implementierung von HTML-Parsing kann komplex werden, wenn die HTML-Struktur nicht konsistent ist oder spezielle Tools wie Cookies oder Authentifizierung erforderlich sind.
+## Deep Dive
 
-# Siehe auch:
-- [HTML Agility Pack Dokumentation] (https://html-agility-pack.net/) 
-- ["Get-ParsedHtml: A PowerShell HTML CLI Built with the HTML Agility Pack" von rnelsonau] (https://www.powershellgallery.com/packages/Get-ParsedHtml) 
-- ["AngleSharp" Modul Dokumentation] (https://anglesharp.github.io/)
+Der Ursprung des HTML-Parsings liegt in den Wurzeln des Webs. Als das Web gebaut wurde, wurde der Code lesefreundlich gemacht, damit die Menschen die Informationen lesen können. Im Laufe der Zeit entwickelten sich Methoden, um Daten aus HTML zu extrahieren.
+
+In PowerShell bekam man die Möglichkeit, HTML zu parsen, als Invoke-WebRequest in PowerShell 3.0 eingeführt wurde. Es gibt Alternativen zum Parsing von HTML mit PowerShell, einschließlich der Verwendung von .NET Framework Bibliotheken wie HtmlAgilityPack.
+
+Es besteht sogar die Möglichkeit, reguläre Ausdrücke zu verwenden, aber im Kontext von HTML ist das in den meisten Fällen keine empfehlenswerte Methode.
+
+## Weiterführendes Material
+
+Hier sind einige Ressourcen, die Ihnen helfen können, Ihre Kenntnisse über PowerShell und HTML Parsing zu vertiefen:
+
+- [PowerShell-Dokumentation](https://docs.microsoft.com/de-de/powershell/)
+- [Invoke-WebRequest](https://docs.microsoft.com/de-de/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+- [HtmlAgilityPack](https://html-agility-pack.net/)
+- [Einführung in HTML-Parsing](https://realpython.com/python-web-scraping-practical-introduction/) (Englisch)
+- [Vergleich von Scrape und Parse](https://www.octoparse.de/blog/der-unterschied-zwischen-web-scraping-und-html-parsing)

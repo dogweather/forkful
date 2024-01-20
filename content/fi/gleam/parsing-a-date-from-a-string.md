@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "Gleam: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Bash: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,30 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Päivämäärän jäsentäminen merkkijonosta tarkoittaa päivämäärän erottamista ja muuntamista merkkijonosta objektiksi. Tämä on yleinen etenemistapa kun halutaan muuttaa käyttäjän syöttämä päivämäärä merkkijonona ohjelman ymmärtämään muotoon.
+## Mikä & Miksi?
+Datan parsiminen merkkijonosta tarkoittaa päivämäärätiedon erottamista merkkijonosta. Ohjelmoijat tekevät sen, jotta he voivat käsitellä päivämäärää ohjelmissaan.
 
-## Miten:
-Päivämäärän jäsentäminen merkkijonosta Gleam-ohjelmointikielellä on helppoa. Esimerkiksi, jos haluamme jäsennellä merkkijonon "10/15/2021" päiväksi "15. lokakuuta 2021", voimme käyttää seuraavaa koodia:
-
-```Gleam
-Date.fromString("10/15/2021", "%m/%d/%Y")
-```
-
-Esimerkissä käytämme `Date.fromString` -funktiota, joka muuntaa merkkijonon päiväksi käyttäen annettua muotoa. Tämän jälkeen voimme tulostaa päivämäärän:
+## Kuinka se tehdään:
+Tässä näyte Gleam-koodista, jossa parsitaan päivämäärä merkkijonosta.
 
 ```Gleam
-date |> Date.toString("%d. %B %Y") // Tulostaa "15. lokakuuta 2021"
+import gleam/date
+import gleam/regex
+
+fn parse_date(date: String) -> Result(Date, Nil) {
+  let Ok(regex) = regex.from_string("^([0-9]{4})-([0-9]{2})-([0-9]{2})$")
+  case regex.find(date) {
+    Some([_, year, month, day]) ->
+      date.new(year, month, day)
+    _ ->
+      Error(Nil)
+  }
+}
 ```
 
-## Syväsukellus:
-Päivämäärän jäsentämistä merkkijonosta on käytetty jo vuosikymmenten ajan ohjelmoinnissa, ja se on edelleen tärkeä osa monien sovellusten toimintaa. On myös muita tapoja muuntaa päivämäärä merkkijonosta, kuten käyttäen erilaisia säännöllisiä lausekkeita (regex) tai hyödyntämällä valmista kirjastoa.
+Jos syötät `"2022-09-27"` ja kutsut parse_date funktiota, saat `Ok(#Date(year: 2022, month: 9, day: 27))`.
 
-Gleam-ohjelmointikielen ansiosta päivämäärän jäsentäminen merkkijonosta on helppoa ja turvallista. Ohjelmakoodin tarkistaja auttaa välttämään yleisiä virheitä, kuten väärän muodon antamista päivämäärälle.
-
-Jos haluat lisätietoa Gleam-ohjelmointikielestä ja sen ominaisuuksista, voit tutustua dokumentaatioon osoitteessa [https://gleam.run](https://gleam.run).
+## Syvällisemmin:
+Päivämäärän parsintaa on käytetty ohjelmoinnissa niin kauan kuin tietokoneet ovat käsitelleet päivämääriä. Vaihtoehtoisesti voitaisiin käyttää käytännön syistä valmiiksi muotoiltuja päivämääriä. Yksityiskohdista voi mainita, että Gleam-kielessä voit parsia päivämäärän sekä yhdistetyllä päiväyksellä (DST) tai ilman.
 
 ## Katso myös:
-- [Gleam dokumentaatio](https://gleam.run)
-- [Date.fromString dokumentaatio](https://gleam.run/modules/date#from_string)
-- [Päivämäärän muotoilu Gleam-ohjelmointikielessä](https://gleam.run/modules/date#to_string)
+Aiheesta voit lukea lisää Gleam-ohjelmointikielestä heidän virallisilta verkkosivuiltaan: https://gleam.run
+Päivämäärien käsittelyyn liittyen voit katsoa myös tämän: https://docs.gleam.run/tour/dates.html

@@ -1,6 +1,6 @@
 ---
 title:                "使用基本认证发送http请求"
-html_title:           "Javascript: 使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
 simple_title:         "使用基本认证发送http请求"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是HTTP请求和基本身份验证？
-做为一个程序员，您可能会需要发送各种各样的HTTP请求。而基本身份验证是一种常见的方法，用于向服务器发送HTTP请求，并确保身份验证信息是安全的。程序员通过发送带有基本身份验证的HTTP请求来验证其身份，以便进行某些操作。
+# 用基本身份验证发送HTTP请求的JavaScript编程
 
-# 如何做？
-下面是一个简单的JavaScript代码块，展示如何发送一个带有基本身份验证的HTTP请求，并获得其响应。
+## 什么 & 为什么?
 
-```javascript
-fetch('https://example.com/api/resource', {
+发送带有基本身份验证的HTTP请求是一种向服务器发送信息，同时通过用户名和密码验证自己身份的方法。程序员之所以这样做，是因为HTTPS请求可以从服务器获取携带特定数据的响应，而基本身份验证则保证了数据安全。
+
+## 如何实现:
+
+在Javascript中，你可以使用fetch来发送带有基本身份验证的请求。以下是一个例子：
+
+```Javascript
+const username = 'your-username';
+const password = 'your-password';
+
+fetch('https://your-api-url.com', {
   method: 'GET',
   headers: {
-    'Authorization': 'Basic <base64 encoded credentials>'
+    'Authorization': 'Basic ' + btoa(username + ":" + password)
   }
 })
-  .then(response => response.json())
-  .then(data => console.log(data));
+.then(response => response.json())
+.then(data => console.log(data))
+.catch(error => console.error('Error:', error));
 ```
+此代码首先创建了一个带有基本认证头的fetch请求，然后处理得到的json响应，最后用console.log打印数据，或者catch块处理错误。
 
-这是一个基本的例子，可以通过fetch()函数发送一个HTTP请求，并使用基本身份验证的头来发送身份验证信息。响应数据可以通过使用.then() 在promise链中访问到。
+## 深入了解
 
-# 深入探讨
-基本身份验证作为一种最早的身份验证方法之一，已经存在了很多年。过去，程序员通常会在每次发送HTTP请求时都包含用户名和密码，而基本身份验证则将这些信息通过base64编码作为头部的一部分来发送，更加安全和便捷。
+发送带有基本身份验证的HTTP请求的做法可以追溯到HTTP/1.0的早期。然而，该方法不应用于非加密通信，因为用户名和密码以明文形式发送，易遭监听。
 
-除了基本身份验证之外，还有其他身份验证方式，如OAuth、API密钥等。但基本身份验证仍然是一个常见的方式，尤其在简单的应用程序或测试环境中使用。
+如今，有许多替代方法可以用于身份验证，如OAuth和JWT。然而，基本身份验证的实现仍广泛使用，因为它简单、易于理解。
 
-要注意的是，基本身份验证并不是最安全的身份验证方法，因为它的传输是以明文的形式进行的。因此，如果需要更高级别的安全性，推荐使用其他身份验证方式。
+在发送带有基本身份验证的HTTP请求时，重要的是正确地构建'Authorization'头。其中的用户名和密码需要用`:`连接，然后用Base64进行编码。
 
-# 参考资料
-- [MDN Web文档: 基本身份验证](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication)
-- [Wikipedia: 基本身份验证](https://zh.wikipedia.org/wiki/%E5%9F%BA%E6%9C%AC%E8%BA%AB%E4%BB%BD%E9%AA%8C%E8%AF%81)
+## 参考资料
+
+- MDN的fetch文档: [MDN Fetch](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
+- 基本认证详解: [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
+- 替代的认证方法： [OAuth](https://oauth.net/) 和 [JWT](https://jwt.io/)

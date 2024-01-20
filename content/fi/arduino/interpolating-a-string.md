@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Arduino: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,30 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä se on ja miksi?
-Interpolointi tarkoittaa merkkijonon sisällyttämistä toiseen merkkijonoon. Tämä on hyödyllistä mm. silloin, kun halutaan luoda dynaamisia lauseita, joissa on usein vaihtuvia tietoja.
+## Mikä & Miksi?
 
-## Näin teet sen:
-```
-Arduino ...
+Ojennus termi tarkoittaa merkkijonoon arvoksi muuttamista, usein muuttujia, suoraan. Ohjelmoijat käyttävät sitä koodin mukautettavuuden ja luettavuuden parantamiseksi varmistaen, että koodi on tehokas ja helppo lukea.
 
-String nimi = "Siiri";
-int ikä = 25;
+## Miten:
 
-String tervehdys = "Hei " + nimi + ", olet " + String(ikä) + " vuotta vanha.";
-
+```Arduino
+String nimi = "Pekka";
+String tervehdys = "Hei, " + nimi + "!";
+Serial.begin(9600);
 Serial.println(tervehdys);
-
-```
-Tulostus:
-```
-Hei Siiri, olet 25 vuotta vanha.
 ```
 
-## Syväsukellus:
-Interpolointi on käytössä useimmissa ohjelmointikielissä. Toisissa kielissä se tapahtuu automaattisesti ilman String-luokan avulla tapahtuvaa merkkijonon muotoilua. Arduino-koodissa se kuitenkin vaatii String-luokan käyttöä ja vastaavasti toisissa mikroprosessoriympäristöissä voi olla muita tapoja interpoloida merkkijonoja.
+*Näytteen ulostulo*: 
+
+```
+Hei, Pekka!
+```
+## Syvä sukellus:
+
+Historiallinen tieto: Merkkijonojen ojennus on ollut kehitysympäristöissä jo pitkään. Sen käyttö on levinnyt yleisesti, koska se tekee koodista helpommin ymmärrettävän ja luettavamman.
+
+Vaihtoehdot: Arduino ei tarjoa kovinkaan monia sisäänrakennettuja vaihtoehtoja merkkijonojen ojennukseen kuten modernit ohjelmointikielet tekevät. Joissakin tapauksissa merkkijonojen yhdistäminen '+'-operaattorilla voi toimia.
+
+Toteutus: Merkkijonojen ojennus edellyttää, että muuttujat ovat String-tyyppejä. Tämä mahdollistaa muuttujan arvon liittämisen suoraan lähdekoodin merkkijonoon.
 
 ## Katso myös:
-[Arduino String-luokka](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
-[Intro to Strings in C](https://www.geeksforgeeks.org/strings-c-2/)
-[Miksi merkkijonojen manipulointi on tärkeää?](https://techdifferences.com/difference-between-c-and-java.html)
+
+[Arduino String Ojennus](http://www.arduino.cc/en/Tutorial/StringAppendOperator) - Lisätietoa merkkijonojen ojennuksesta Arduinossa.
+[String Concatenation](https://www.arduino.cc/en/Tutorial/Strings) - Laajempi katsaus merkkijonoihin Arduinossa, mukaan lukien ojennus.
+[Kokoelma käyttökelpoisia merkkijonofunktioita](http://playground.arduino.cc/Main/StringFunctions) - Toimintojen kokoelma merkkijonokäsittelyn tehokkuuden parantamiseksi-

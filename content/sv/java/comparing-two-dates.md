@@ -1,7 +1,7 @@
 ---
-title:                "Jämförelse av två datum"
-html_title:           "Java: Jämförelse av två datum"
-simple_title:         "Jämförelse av två datum"
+title:                "Jämför två datum"
+html_title:           "Arduino: Jämför två datum"
+simple_title:         "Jämför två datum"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Dates and Times"
@@ -10,40 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad är det och varför?
-Dagens programmeringsvärld är full av data och information som måste hanteras och jämföras. Ett vanligt problem är att jämföra två olika datum för att se om de är lika eller olika. Detta är ett grundläggande koncept inom programmering som hjälper till att organisera och manipulera datumuppgifter.
+## Vad & Varför?
 
-## Hur man gör:
-För att jämföra två datum i Java, behöver du använda metoden "compareTo" från klassen "Date". Detta gör att du kan jämföra två datum och få en returvärde som indikerar deras förhållande till varandra.
+Jämförelse av två datum i programmering innebär att avgöra vilket datum som kommer före eller efter. Detta är oumbärligt när du spårar händelser, hanterar reservationssystem, upprättar tidsplaner med mera.
+
+## Hur:
+
+Här är ett exempel på hur man jämför två datum i Java med hjälp av `isAfter()`, `isBefore()`, och `isEqual()` metoder.
 
 ```Java
-Date date1 = new Date(21/01/2021);
-Date date2 = new Date(20/01/2021);
+import java.time.LocalDate;
 
-int comparison = date1.compareTo(date2);
+public class Main {
+  public static void main(String[] args) {
 
-if(comparison == 0){
-	System.out.println("Date1 är lika med Date2");
-}
-else if(comparison > 0){
-	System.out.println("Date1 är senare än Date2");
-}
-else{
-	System.out.println("Date1 är tidigare än Date2");
+    LocalDate date1 = LocalDate.of(2022, 1, 1);
+    LocalDate date2 = LocalDate.of(2022, 1, 2);
+
+    System.out.println("Datum1 är efter datum2: " + date1.isAfter(date2));
+    System.out.println("Datum1 är före datum2: " + date1.isBefore(date2));
+    System.out.println("Datum1 är samma som datum2: " + date1.isEqual(date2));
+  }
 }
 ```
-Output:
+Utskriftsresultaten kommer att vara:
+```Java
+Datum1 är efter datum2: false
+Datum1 är före datum2: true
+Datum1 är samma som datum2: false
 ```
-Date1 är senare än Date2
-```
 
-## Djupdykning:
-Jämförelsen av datum i programmering har funnits sedan början av datorer. Detta koncept är grunden för många andra datumrelaterade funktioner och har utvecklats över tid. Det finns även alternativa metoder för att jämföra datum, såsom att konvertera dem till millisekunder och sedan jämföra dessa värden.
+## Djupdykning
 
-Det är viktigt att notera att "compareTo" inte är begränsad till endast datum. Det kan också användas för att jämföra andra typer av data, såsom stringar och numeriska värden, vilket gör det till ett allmänt användbart verktyg.
+Historisk kontext: I äldre versioner av Java var `java.util.Date` och `java.util.Calendar` klasserna som användes för att hantera datum. Men de hade problem som brist på säkerhet och otillfredsställande API-design. Med Java 8 introducerades det nyare `java.time.*` paket som ger mer robusta, trådsäkra och omfattande datum och tidshanteringsfunktioner.
 
-## Se också:
-För mer information om date manipulation och andra användbara Java-metoder, kolla in följande länkar:
+Alternativ: Andra alternativ till att jämföra datum inkluderar jämförelse av millisekunder sedan Unix Epoch (1 januari 1970) eller användning av `compareTo()` metod som returnerar 0 om datum är lika, ett negativt värde om det första datumet förekommer före det andra och ett positivt värde i omvänd situation.
 
-- [Java Date Class](https://www.w3schools.com/java/java_date.asp)
-- [Oracle Documentation for Date Comparison](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html#compareTo-java.util.Date-)
+Implementeringsdetaljer: `isAfter()`, `isBefore()`, och `isEqual()` metoder jämför datum på basen av år, månad och dag. De tar inte hänsyn till tidzonen.
+
+## Se Även:
+
+1. Javas offentliga dokumentation om 'java.time.LocalDate' [här](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html).
+2. Java 8 datum och tidshantering, praktisk guide [här](https://www.baeldung.com/java-8-date-time-intro).
+3. Javas offentliga dokumentation om 'java.util.Date' [här](https://docs.oracle.com/javase/7/docs/api/java/util/Date.html).

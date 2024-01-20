@@ -1,7 +1,7 @@
 ---
-title:                "Ein Datum in der Zukunft oder Vergangenheit berechnen"
-html_title:           "Kotlin: Ein Datum in der Zukunft oder Vergangenheit berechnen"
-simple_title:         "Ein Datum in der Zukunft oder Vergangenheit berechnen"
+title:                "Berechnung eines Datums in der Zukunft oder Vergangenheit"
+html_title:           "Kotlin: Berechnung eines Datums in der Zukunft oder Vergangenheit"
+simple_title:         "Berechnung eines Datums in der Zukunft oder Vergangenheit"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -12,36 +12,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Berechnen eines Datums in der Zukunft oder Vergangenheit beinhaltet das Hinzufügen oder Subtrahieren von Tagen, Wochen, Monaten oder Jahren von einem gegebenen Datum, um ein neues gewünschtes Datum zu erhalten. Programmierer tun dies, um zukünftige Ereignisse zu planen oder zu überprüfen, wann ein bestimmtes Ereignis in der Vergangenheit stattgefunden hat.
+Das Berechnen eines zukünftigen oder vergangenen Datums ist die Methode, mit der wir herausfinden, wie ein bestimmtes Datum in der Vergangenheit oder Zukunft aussieht. Programmierer machen das oft, um Berichte zu erstellen, Ereignisse zu planen oder Zeitstempel zu verfolgen.
 
-## Wie geht's?
+## So geht's: 
 
-Die Berechnung eines Datums in der Zukunft oder Vergangenheit kann in Kotlin mithilfe der "add" und "subtract" Funktionen aus der Klasse "kotlin.time.LocalDate" durchgeführt werden. Hier ist ein Beispielcode, der zuerst 5 Tage zu einem aktuellen Datum hinzufügt und dann 2 Monate davon subtrahiert:
+Lassen Sie uns sehen, wie man mit Kotlin ein Datum in der Zukunft oder Vergangenheit berechnen kann. Wir werden die `java.time` API verwenden - sie ist robust und benutzerfreundlich. 
 
-```Kotlin 
-val currentDate = LocalDate.now()
-val futureDate = currentDate.add(Duration.days(5))
-val pastDate = currentDate.subtract(Duration.months(2))
+```Kotlin
+import java.time.LocalDateTime
+import java.time.temporal.ChronoUnit
 
-println("Heute: $currentDate")
-println("In 5 Tagen: $futureDate")
-println("Vor 2 Monaten: $pastDate")
+fun main() {
+    val jetzt = LocalDateTime.now()
+    println("Jetzt: $jetzt")
+
+    val in5Tagen = jetzt.plus(5, ChronoUnit.DAYS)
+    println("In 5 Tagen: $in5Tagen")
+    
+    val vor10Tagen = jetzt.minus(10, ChronoUnit.DAYS)
+    println("Vor 10 Tagen: $vor10Tagen")
+}
 ```
-Ausgabe:
+
+Die Ausgabe dieses Programms wird ähnlich sein wie:
+
+```Kotlin
+Jetzt: 2022-01-28T14:30:00.998
+In 5 Tagen: 2022-02-02T14:30:00.998
+Vor 10 Tagen: 2022-01-18T14:30:00.998
 ```
-Heute: 2021-11-10
-In 5 Tagen: 2021-11-15
-Vor 2 Monaten: 2021-09-10
-```
 
-## Tiefer eintauchen
+## Tiefer Einsteigen: 
 
-Die Berechnung von Daten in der Zukunft oder Vergangenheit ist in der Programmierung wichtig, um zu planen, wann bestimmte Aktionen ausgeführt werden sollen oder um zu überprüfen, wann Ereignisse in der Vergangenheit stattgefunden haben. Alternativ können auch Bibliotheken wie "java.time" oder "Joda-Time" verwendet werden, um Daten in Java zu berechnen.
+Die `java.time` API, die wir hier nutzen, wurde mit JDK 8 eingeführt und ist eine große Verbesserung gegenüber älteren APIs wie `java.util.Date` oder `java.util.Calendar`. Sie ist einfacher zu bedienen und weniger fehleranfällig. 
 
-Es ist wichtig zu beachten, dass bei der Berechnung von Daten in unterschiedlichen Zeitzonen das Ergebnis je nach implementierter Methode variieren kann. Daher ist es ratsam, eine Methode zu wählen, die die gewünschten Ergebnisse erzielt und die Zeitzonenkorrektur berücksichtigt.
+Alternativen zur `java.time` API können Drittanbieterbibliotheken wie Joda-Time oder die Kotlin-native Klock Library sein. Allerdings werden diese oftmals als überflüssig angesehen, da `java.time` die meisten Anwendungsfälle bereits gut abdeckt.
 
-## Siehe auch
+Das Berechnen von zukünftigen und vergangenen Daten beruht auf der IETF-Standardspezifikation RFC 3339, die ein zeitzonen-unabhängiges Datenformat definiert.
 
-- Kotlin Dokumentation für "LocalDate": https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-local-date/
-- Java Dokumentation für "java.time": https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
-- Joda-Time Dokumentation: https://www.joda.org/joda-time/
+## Siehe Auch:
+
+Für weitere Informationen und Tutorials zur `java.time` API und zur Arbeit mit Daten in Java und Kotlin, sollten Sie folgende Quellen konsultieren:
+
+1. [Official Java Documentation - java.time](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+2. [Baeldung - Guide to java.time](https://www.baeldung.com/java-8-date-time-intro)
+3. [Medium Article - Working with Date and Time in Kotlin](https://medium.com/@kashifo/working-with-date-and-time-in-kotlin-android-8743f1d00256) 
+
+Happy coding!

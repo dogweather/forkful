@@ -1,6 +1,6 @@
 ---
 title:                "Parsing html"
-html_title:           "Elixir recipe: Parsing html"
+html_title:           "Gleam recipe: Parsing html"
 simple_title:         "Parsing html"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -12,40 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Parsing HTML is the process of reading and analyzing HTML code to extract data and information from a webpage. This is an essential task for programmers as it allows them to access and manipulate the content of a webpage in their code. It is particularly useful for web scraping, data extraction, and web automation.
+Parsing HTML is the process of analyzing HTML code to extract information contained within tags. This is useful in web scraping tasks, data extraction, or when you want to manipulate markup data.
 
 ## How to:
 
-To parse HTML in Elixir, we can use the `Floki` library, which provides a simple yet powerful interface for working with HTML documents. 
+Elixir, coupled with the Floki library, provides a powerful way to parse HTML.
 
-```
-# Install `Floki` in your project's `mix.exs` file
-def deps do
-  [{:floki, "~> 0.26.0"}]
+To begin, install the Floki library by adding to your mix.exs dependencies:
+```Elixir
+defp deps do
+  [
+    {:floki, "~> 0.30"}
+  ]
 end
 ```
 
-```
-# Import `Floki` and fetch HTML document from a URL
-import Floki
-html = Floki.html("https://www.example.com")
-
-# Find and extract information from the HTML document
-titles = ["h1", "h2"] |> Floki.find(html) |> Floki.extract_text
+Then fetch the dependencies using mix:
+```Elixir
+mix deps.get
 ```
 
-The above code fetches the HTML document from a URL and uses `Floki.find` to find all the `h1` and `h2` elements in the document. Then, `Floki.extract_text` is used to extract the text content of these elements, which is assigned to the `titles` variable.
+Now you're able to use Floki. Let's try out a simple example of parsing HTML:
 
-## Deep Dive:
+```Elixir
+html = "<div><p>Hello, Elixir programmers!</p></div>"
+{:ok, document} = Floki.parse_document(html)
+text = document |> Floki.find("p") |> Floki.raw_html
+```
+The output would be `"Hello, Elixir programmers!"`.
 
-Parsing HTML has been a fundamental task in web development since the early days of the internet. In the past, this was done mainly using regular expressions, but with the rise of structured data and complex web pages, specialized HTML parsing libraries like `Floki` have become essential.
+## Deep Dive
 
-Alternatives to `Floki` for HTML parsing in Elixir include `ExAgent`, `Meeseeks`, and `Erlsom`. However, `Floki` stands out for its simplicity and ease of use. 
+Historically, because HTML parsing wasn't built into many languages, developers primarily relied on regular expressions or custom parsing functions, which can be quite error-prone and ineffective.
 
-Under the hood, `Floki` uses the `leex` and `yecc` parser generators from Erlang, making it efficient and robust. It also uses an internal data representation called FDOM (Floki Document Object Model) for faster and more flexible handling of HTML data.
+There are alternatives to Floki for parsing HTML in Elixir, such as Meeseeks or html_sax_parser, but Floki generally provides a simpler API and unifies parsing and querying, hence its popularity among Elixir enthusiasts.
 
-## See Also:
+Floki implementation uses a combination of different libraries like :mochiweb_html for parsing and :css_selector for handling CSS selection, offering a lightweight yet robust solution for manipulating HTML documents.
 
-- Official `Floki` documentation: https://hexdocs.pm/floki
-- Source code for `Floki` on GitHub: https://github.com/philss/floki
-- Alternatives to `Floki` for HTML parsing in Elixir: https://github.com/h4cc/awesome-elixir#xml--html-parsing
+## See Also
+
+- Official documentation for the Floki library: [https://hexdocs.pm/floki/readme.html](https://hexdocs.pm/floki/readme.html)
+- A comprehensive tutorial on scraping with Elixir and Floki: [https://nerves.build/posts/elixir-scraping-with-floki](https://nerves.build/posts/elixir-scraping-with-floki)
+- For an alternative look into html parsing with Meeseeks: [https://hexdocs.pm/meeseeks/readme.html](https://hexdocs.pm/meeseeks/readme.html)
+- The history of parsing and more parsing in Elixir: [https://pragdave.me/blog/2010/12/16/parsing---a-timeline.html](https://pragdave.me/blog/2010/12/16/parsing---a-timeline.html)

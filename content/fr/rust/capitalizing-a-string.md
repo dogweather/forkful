@@ -1,7 +1,7 @@
 ---
-title:                "Majuscule d'une chaîne de caractères"
-html_title:           "Rust: Majuscule d'une chaîne de caractères"
-simple_title:         "Majuscule d'une chaîne de caractères"
+title:                "Mettre en majuscules une chaîne de caractères"
+html_title:           "Rust: Mettre en majuscules une chaîne de caractères"
+simple_title:         "Mettre en majuscules une chaîne de caractères"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+# Article sur la Programmation Rust: Comment Capitaliser une Chaîne de Caractères
 
-La capitalisation d'une chaîne de caractères, c'est lorsqu'on met en majuscule la première lettre de chaque mot et en minuscule le reste des lettres. Les programmeurs le font souvent pour des raisons d'esthétique et de lisibilité, ainsi que pour suivre des conventions de codage.
+## Quoi & Pourquoi ?
+Capitaliser une chaîne, c'est transformer la première lettre de chaque mot en majuscule. Les programmeurs le font pour améliorer la lisibilité des textes ou pour respecter certaines normes formatives.
 
 ## Comment faire:
-
-Voici un exemple de code en Rust pour capitaliser une chaîne de caractères :
-
-```Rust
-let ma_chaine = "exemPLE de CHAîne";
-let chaine_capitalisee = ma_chaine.to_uppercase();
-print!("{}", chaine_capitalisee);
-```
-Ceci donnera comme résultat : "Exemple De Chaîne".
-
-On peut également utiliser la méthode ```to_uppercase()``` pour capitaliser seulement la première lettre d'une chaîne. Voici un autre exemple :
+Voici comment on peut capitaliser une chaîne en Rust.
 
 ```Rust
-let ma_chaine = "exemPLE de CHAîne";
-let prem_lettere_capitale = ma_chaine[..1].to_uppercase() + &ma_chaine[1..];
-print!("{}", prem_lettere_capitale);
+// On utilise la fonction 'to_uppercase' de 'char' pour capitaliser
+fn capitalize(s: &str) -> String {
+    let mut c = s.chars();
+    match c.next() {
+        None => String::new(),
+        Some(first) => first.to_uppercase() + c.as_str(),
+    }
+}
+
+fn main() {
+    let s = "bonjour, monde!";
+    println!("{}", capitalize(s));  // Affiche: "Bonjour, monde!"
+}
 ```
-Ceci donnera comme résultat : "Exemple de chaîne".
 
-## Plongeon Profond:
+## Plongée Profonde
 
-Dans les premières années de l'informatique, les ordinateurs fonctionnaient avec une quantité limitée de mémoire. Ainsi, pour économiser de l'espace, les programmeurs ont adopté des conventions de codage, dont la capitalisation des noms de variables et de fonctions.
+**Contexte Historique:** Rust a repris cette fonctionnalité de nombreux autres langages de programmation, comme Java et Python, qui ont tous des fonctions similaires pour capitaliser des chaînes.
 
-Bien qu'il n'existe pas de règles strictes sur la façon de capitaliser une chaîne de caractères, il est important de suivre les conventions de codage de votre équipe ou de votre projet pour une meilleure lisibilité du code.
+**Alternatives:** Vous pourriez aussi utiliser la bibliothèque `unicase` qui fournit une opération de capitalisation plus sophistiquée, en tenant compte des cas spéciaux dans différentes langues.
 
-D'autres langages de programmation ont des méthodes similaires pour capitaliser une chaîne de caractères, tels que ```capitalize()``` en Python ou ```toUpper()``` en JavaScript.
+**Détails d'implémentation:** En Rust, les caractères d'une chaîne sont stockés sous forme de graphèmes. Quand nous appelons `to_uppercase()` sur le premier caractère, Rust parcourt chaque point de code du graphème et les convertit en majuscules si possible.
 
-## Voir Aussi:
+## Voir Aussi
 
-- Pour en savoir plus sur la capitalisation des chaînes de caractères en Rust, consultez la documentation officielle de Rust : https://doc.rust-lang.org/std/primitive.str.html#method.to_uppercase
-- Pour en savoir plus sur les conventions de codage en programmation, lisez cet article : https://blog.wikimedia.org/2011/07/29/programming-styles/
+Pour plus d'informations sur les chaînes de caractères dans Rust, consultez la documentation officielle sur les String [ici](https://doc.rust-lang.org/std/string/). Pour en savoir plus sur les méthodes de `char`, consultez [ce lien](https://doc.rust-lang.org/std/primitive.char.html). 
+
+Et si vous êtes intéressé par les détails de l'internationalisation, lisez à propos de 'unicode-segmentation', une bibliothèque externe que Rust utilise pour diviser les chaînes en graphèmes [ici](https://docs.rs/unicode-segmentation/1.2.1/unicode_segmentation/).

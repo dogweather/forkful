@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Python recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Python"
 category:             "Python"
@@ -12,39 +12,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-String interpolation in Python refers to the process of embedding variables or expressions within a string. This allows for the dynamic creation of strings based on the values of these variables or expressions. Programmers use string interpolation to make their code more concise and readable, as well as to reduce the amount of coding required for creating and formatting strings.
+String interpolation is a process substituting placeholders with values within a string. It makes manipulating and formatting strings easier, enhancing readability and simplifying the debugging process.
 
 ## How to:
 
-String interpolation in Python is achieved using the string formatting operator % or the format() function. Let's see some examples:
+To use string interpolation in Python, place variables inside `{}` in your string. Use an `f` before the string to tell Python to interpolate it.
 
 ```Python
-# Using the % operator
-age = 25
 name = "John"
-print("Hello, my name is %s and I am %d years old." % (name, age))
+print(f"Hello, {name}!")  
 ```
-Output: Hello, my name is John and I am 25 years old.
 
-```Python 
-# Using the format() function
-company = "ABC Corp"
-employees = 100
-print("The company {} has {} employees.".format(company, employees))
+Output:
+
+```Python
+Hello, John!
 ```
-Output: The company ABC Corp has 100 employees.
 
-In these examples, we have inserted the values of the variables ```name```, ```age```, ```company``` and ```employees``` into our strings using the % operator and the format() function, respectively.
+You can also do operations within the `{}`:
 
-## Deep Dive:
+```Python
+a = 5
+b = 3
+print(f"{a} plus {b} equals {a+b}")
+```
 
-In older versions of Python (before 3.6), string interpolation was done using the % operator. However, in Python 3.6 and above, the recommended way of string interpolation is through f-strings. F-strings allow for even simpler string interpolation by directly formatting the string with the values of the variables or expressions enclosed in curly braces.
+Output:
+    
+```Python
+5 plus 3 equals 8
+```
 
-Besides f-strings, another alternative to string interpolation in Python is the string Template class from the string module. This allows for more advanced string interpolation techniques, such as substituting values from dictionaries or using placeholder values for missing variables.
+## Deep Dive
 
-In terms of implementation, string interpolation involves parsing the string and replacing the placeholders with the values of the variables or expressions. This is done by calling the __mod__() method in the case of % operator or the __format__() method for the format() function.
+Historically, Python had `%` formatting and the `str.format()` function before f-strings (formatted string literals) were introduced in Python 3.6. All of the methods, f-strings are not only more readable but also faster. 
 
-## See Also:
+```Python
+name = "John"
+# old % formatting
+print("Hello, %s!" % name)  
 
-- Official Python documentation on [string formatting operations](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting)
-- Real Python's [guide on string interpolation](https://realpython.com/python-string-formatting/) for a more detailed explanation and examples of different string interpolation methods.
+# .format() function
+print("Hello, {}!".format(name))  
+```
+
+However, these methods are still available for use but are less efficient than f-strings.
+
+You can even include expressions inside the `{}` in an f-string. Python evaluates these expressions at runtime and includes the results in the returned string.
+
+## See Also
+
+1. Python documentation on [Formatted string literals](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
+2. Python documentation on [String Formatting Operations](https://docs.python.org/2/library/stdtypes.html#string-formatting)
+3. A useful blog post on [Python String Interpolation](https://www.digitalocean.com/community/tutorials/an-introduction-to-string-functions-in-python-3)
+4. Python documentation on [.format()](https://docs.python.org/3/library/stdtypes.html#str.format)

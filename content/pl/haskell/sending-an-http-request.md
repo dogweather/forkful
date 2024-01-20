@@ -1,6 +1,6 @@
 ---
 title:                "Wysyłanie żądania http"
-html_title:           "Haskell: Wysyłanie żądania http"
+html_title:           "Arduino: Wysyłanie żądania http"
 simple_title:         "Wysyłanie żądania http"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,24 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest wysyłanie żądania HTTP i dlaczego programiści to robią?
-Wysyłanie żądania HTTP (Hypertext Transfer Protocol) jest procesem przesyłania danych między serwerem a klientem. Programiści mogą wysyłać żądania HTTP w celu pobrania danych z serwera, np. plików lub informacji z bazy danych.
+## Co i dlaczego?
+
+Wysyłanie żądania HTTP to podstawowy sposób, w jaki aplikacje infrastuktury internetowej. To zasadniczo korespondencja, gdzie aplikacja prosi o określone zasoby od serwera. Programiści robią to, aby uzyskać dane potrzebne dla ich aplikacji - to jak zadawanie pytania i otrzymywanie odpowiedzi.
 
 ## Jak to zrobić:
+
+Przykładowy kod, który pokazuje, jak wysłać prosty GET żądanie w Haskellu może wyglądać następująco:
+
 ```Haskell
--- Przykładowe wysłanie żądania GET z biblioteką HTTP w języku Haskell
-import Network.HTTP
+import Network.HTTP.Simple
 
+main :: IO ()
 main = do
-  response <- simpleHTTP (getRequest "https://www.example.com")
-  putStrLn $ "Kod odpowiedzi: " ++ (show . rspCode $ response)
-  putStr $ "Zawartość odpowiedzi: " ++ (rspBody $ response)
+    response <- httpLBS "http://httpbin.org/get"
+
+    putStrLn $ "The status code was: " ++
+               show (getResponseStatusCode response)
+    print $ getResponseHeader "Content-Type" response
+    L8.putStrLn $ getResponseBody response
 ```
-W odpowiedzi otrzymujemy kod odpowiedzi oraz zawartość odpowiedzi w postaci pliku lub danych tekstowych.
 
-## Głębszy Wgląd:
-Wysyłanie żądania HTTP jest kluczowym elementem komunikacji sieciowej, umożliwiającym pobieranie danych z serwera. Inne popularne metody do wysyłania żądań HTTP to np. curl lub biblioteka "httplib" w Pythonie. Implementacja funkcji wysyłającej żądanie HTTP w języku Haskell jest możliwa dzięki bibliotece Network.HTTP, która dostarcza różne narzędzia do budowania i wysyłania żądań.
+W wyniku powyższego kodu na wyjściu otrzymamy kod statusu, typ zawartości oraz treść odpowiedzi.
 
-## Zobacz również:
-- Opis funkcji Network.HTTP w dokumentacji języka Haskell: https://hackage.haskell.org/package/HTTP
-- Poradnik "Jak przygotować żądanie HTTP w języku Haskell": https://www.tweag.io/blog/2015-09-10-requests/
+## Szybki kurs:
+
+Sterowanie HTTP wyewoluowało na przestrzeni lat od prostych zapytań GET do obecnych skomplikowanych komunikacji API. Haskell, jako potężne narzędzie do programowania funkcjonalnego, nie pozostaje w tyle, oferując różne pakiety, takie jak `http-simple` i `http-conduit`, które umożliwiają prostą i tę proces.
+
+Alternatywą dla wysyłania zapytań HTTP w Haskellu mogą być inne języki programowania, takie jak Python lub JavaScript, które oferują podobne funkcje. Wybór zależy od kontekstu projektu i preferencji programisty.
+
+Szczegółowo, wysyłanie żądania HTTP w Haskellu opiera się na konstrukcji monad IO, która jest gęsto używana do opisywania operacji wejścia/wyjścia, takich jak te związane z siecią.
+
+## Zobacz też:
+
+Jeśli chcesz dowiedzieć się więcej o tej tematyce, polecam następujące źródła:
+
+- Dokumentacja pakietu `http-conduit`: https://hackage.haskell.org/package/http-conduit
+- Dokumentacja pakietu `http-simple`: https://hackage.haskell.org/package/http-simple
+- "Real World Haskell" autorstwa Briana O'Sullivana, Dona Stewarta i Johna Goera: https://book.realworldhaskell.org/

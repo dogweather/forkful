@@ -1,7 +1,7 @@
 ---
-title:                "未来または過去の日付を計算する"
-html_title:           "Fish Shell: 未来または過去の日付を計算する"
-simple_title:         "未来または過去の日付を計算する"
+title:                "未来または過去の日付の計算"
+html_title:           "Fish Shell: 未来または過去の日付の計算"
+simple_title:         "未来または過去の日付の計算"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,20 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何？何のために？
+## 何となぜ？
 
-運命の日を計算するとは、未来または過去の日付を指定し、それを含む週、月、年を決定することです。これは、プログラマーが開発中のアプリケーションやプロジェクトでの期限設定やタイムライン作成に役立ちます。
+日付の計算は、未来または過去の日付を計算することを指します。これはプログラマがプロジェクトの締め切りやイベント計画などで時間推定に使用する場合があります。
 
-## 方法：
+## 方法:
 
-```Fish Shell```のdateコマンドを使用して、日付を指定することで目的の日付を計算することができます。例えば、今日から30日後の日付を計算するには、「date -v +30d」と入力します。また、過去の日付を計算するには、マイナス符号を使用します。「date -v -30d」のようになります。出力は、指定した日付と同じ日付フォーマットで表示されます。
+Fish Shellにおいて、未来・過去の日付を計算するには以下のようにします：
 
-## ディープダイブ：
+```Fish Shell
+# 1ヶ月後の日付を計算
+set -l nextMonth (date -v+1m "+%Y%m%d")
 
-日付を計算する方法にはいくつかの方法がありますが、標準的なコマンドとして```date```が広く使用されています。他の代替手段としては、PythonやRubyなどのプログラミング言語を使用する方法があります。また、計算方法はUnixタイムスタンプを使用することで実現されています。
+# 10日後の日付を計算
+set -l in10Days (date -v+10d "+%Y%m%d")
 
-## 関連情報：
+# 結果の出力
+echo $nextMonth
+echo $in10Days
+```
+これで、1ヶ月後と10日後の日付が計算できます。
 
-- https://www.funtoo.org/Fish_(intoJapanese)でFish Shellの日本語ドキュメントを入手することができます。
-- https://github.com/fish-shell/fish-shellでFish Shellのソースコードを確認することができます。
-- https://www.unixtimestamp.com/でUnixタイムスタンプについてより詳しく学ぶことができます。
+## 詳細:
+
+過去/未来の日付の計算は様々な方法で扱われてきました。この記事ではUnix系OSのdateコマンドを使用していますが、他の方法も存在します。たとえば、Pythonでは`datetime`ライブラリを、JavaScriptでは`Date`オブジェクトを使用できます。
+
+この特定の実装では、`date`コマンドをFish Shellでラップしています。`-v`フラグを使用すると、日付を前後に動かすことが可能です。また`+%Y%m%d`というフォーマットは出力をYYYYMMDD形式で表示します。
+
+## 参考文献:
+
+以下は、日付計算に関連するリソースへのリンクです:
+
+1. Fish Shell Documentation: [https://fishshell.com/](https://fishshell.com/)
+2. Date Command in Unix: [https://man7.org/linux/man-pages/man1/date.1.html](https://man7.org/linux/man-pages/man1/date.1.html)
+3. Python's Datetime Library: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
+4. JavaScript's Date Object: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)

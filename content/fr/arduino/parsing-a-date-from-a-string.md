@@ -1,6 +1,6 @@
 ---
 title:                "Analyser une date à partir d'une chaîne"
-html_title:           "Arduino: Analyser une date à partir d'une chaîne"
+html_title:           "Clojure: Analyser une date à partir d'une chaîne"
 simple_title:         "Analyser une date à partir d'une chaîne"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,35 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+# Analyser une Date d'une Chaîne de Caractères avec Arduino
 
-Le parsing de date à partir d'une chaîne de caractères est tout simplement le fait de convertir une date sous forme de texte en une date reconnaissable par un ordinateur. Les programmeurs le font couramment pour traiter des données ou pour afficher des informations temporelles dans un format compréhensible pour les utilisateurs. 
+## Quoi et Pourquoi?
 
-## Comment faire:
+L'analyse d'une date à partir d'une chaîne de caractères est le processus de conversion des dates codées en texte dans une forme que votre programme peut manipuler. Ce processus est essentiel pour les programmeurs pour utiliser les dates saisies par les utilisateurs de manière logique, par exemple, pour effectuer des calculs de dates.
 
-Voici un exemple de code Arduino pour parser une date à partir d'une chaîne de caractères "18/06/2021" :
+## Comment Faire :
+
+Voilà comment on peut analyser une date d'une chaîne de caractères avec Arduino. L'exemple ci-dessous démontre un code simple pour cette tâche.
 
 ```Arduino
-// Déclaration d'une variable de type String contenant la date
-String dateString = "18/06/2021";
+#include <TimeLib.h>
 
-// Conversion en un objet de type Date
-Date date = parseDate(dateString);
- 
-// Affichage de la date au format jour/mois/année
-Serial.println(date.day() + "/" + date.month() + "/" + date.year());
+void setup() {
+  Serial.begin(9600);
+  while (!Serial) ; // attendre l'ouverture du port série
+  time_t t = parseDate("12/31/2020", "MM/dd/yyyy");
+  if (t != 0) {
+    Serial.println(t);
+  }
+}
+
+time_t parseDate(char* sDate, char* sFormat) {
+  tmElements_t tm;
+  if (!strptime(sDate, sFormat, &tm)) return 0; // conversion de chaîne en tm
+  return makeTime(tm); // conversion de tm en time_t
+}
+
+void loop() {
+}
 ```
 
-La sortie de ce code sera "18/06/2021".
+Cela permet de convertir la chaîne "31/12/2020" en un timestamp Unix, qu'il imprime.
 
-## Exploration en profondeur:
+## Plongée Profonde :
 
-Le parsing de date à partir d'une chaîne de caractères est une opération courante dans la programmation, et est souvent utilisé pour traiter des données dans les applications web ou pour afficher des horaires dans des applications mobiles.
+Direccion Softworks a conçu la bibliothèque TimeLib pour qu'elle soit intuitive et facile à utiliser dans Arduino. Elle supporte le format de date américain (mois/jour/année) ainsi que le format international (jour/mois/année).
 
-Les alternatives au parsing de date incluent l'utilisation de bibliothèques tierces qui peuvent traiter les dates de manière plus efficace et flexible. 
+Il y a d'autres alternatives pour l'analyse des dates. Les bibliothèques comme `DateStrings` et `RTClib` offrent également cette fonctionnalité. Cependant, `TimeLib` a tendance à être plus utilisé en raison de sa flexibilité et de sa simplicité.
 
-Dans Arduino, le type de données "String" est souvent utilisé pour manipuler les chaînes de caractères, mais il est important de faire attention à la gestion de la mémoire pour éviter les fuites de mémoire qui peuvent ralentir le fonctionnement de votre programme.
+Lorsqu'on analyse une date à partir d'une chaîne de caractères avec Arduino, il est important de comprendre que le résultat est un timestamp Unix - le nombre de secondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC (sans tenir compte des secondes intercalaires).
 
-## À voir également:
+## Voir Aussi :
 
-Pour en savoir plus sur le parsing de date en Arduino, vous pouvez consulter la documentation officielle d'Arduino et découvrir d'autres façons d'exploiter cette fonctionnalité dans vos projets. Vous pouvez également consulter des tutoriels en ligne pour apprendre à gérer les chaînes de caractères de manière efficace dans vos codes Arduino.
+Pour plus d'informations sur l'analyse de date avec Arduino :
+- [Documentation officielle d'Arduino](https://www.arduino.cc/reference/en/)
+- [Github - TimeLib](https://github.com/PaulStoffregen/Time)
+- [Guide de l'Horloge temps réel (RTC) avec Arduino](https://www.makerguides.com/rtc-arduino-tutorial/)

@@ -1,6 +1,6 @@
 ---
 title:                "Omvandla ett datum till en sträng"
-html_title:           "C++: Omvandla ett datum till en sträng"
+html_title:           "C#: Omvandla ett datum till en sträng"
 simple_title:         "Omvandla ett datum till en sträng"
 programming_language: "C++"
 category:             "C++"
@@ -11,49 +11,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att konvertera ett datum till en sträng är en vanlig uppgift som utförs av programmerare för att göra det möjligt att läsa och hantera datum på ett enklare sätt. Genom att göra detta kan man omvandla ett datums numeriska värden till en textrepresentation som är mer läsbar och tydlig för människor.
 
-## Så här gör du:
+Att konvertera ett datum till en sträng innebär att förvandla ett datumformat till en läsbar textsträng. Programmerare gör detta för att underlätta datumhantering och förbättra anpassningsförmågan i presentationer av datuminformation.
+
+## Hur man gör:
+
+Här är en kodexempel i C++ för att konvertera ett datum till en sträng:
+
 ```C++
-#include <iostream> 
-#include <sstream> 
-#include <iomanip> 
+#include <iostream>
+#include <chrono>
+#include <iomanip>
+#include <sstream>
+
+std::string datumTillStrang() {
+    auto nu = std::chrono::system_clock::now();
+    std::time_t tidsStämpel = std::chrono::system_clock::to_time_t(nu);
+    std::tm* tidsDutt = std::localtime(&tidsStämpel);
+    std::stringstream strang;
+    strang << std::put_time(tidsDutt, "%Y-%m-%d");
+    return strang.str();
+}
 
 int main() {
-	// Skapa ett datumobjekt med dag, månad och år 
-	int dag = 15; 
-	int manad = 9; 
-	int år = 2021; 
-
-	// Skapa en ström för att konvertera datumet till en sträng
-	std::ostringstream ss; 
-
-	// Ange formatet för datumet 
-	ss << std::setfill('0') << std::setw(2) << dag << "/" << std::setw(2) << manad << "/" << år;
-
-	// Spara den konverterade strängen i en variabel
-	std::string datumStr = ss.str(); 
-
-	// Skriv ut resultatet 
-	std::cout << "Datum som sträng: " << datumStr << std::endl; 
-
-	return 0; 
+    std::cout << "Dagens datum är: " << datumTillStrang() << "\n";
+    return 0;
 }
 ```
+Exempelutskrift kommer se ut såhär:
 
-Output:
 ```C++
-Datum som sträng: 15/09/2021
+Dagens datum är: 2022-11-03
 ```
 
-## Djupdykning:
-Konverteringen av datum till strängar har varit en utmaning för programmerare sedan tidiga dagar av programmering. Innan standardiseringen av språk som C++, var det upp till varje programmerare att hitta en lösning på denna utmaning. Idag finns det emellertid inbyggda funktioner och bibliotek som gör det möjligt att konvertera datum till strängar på ett enklare och mer effektivt sätt.
+## Djupgående:
 
-Det finns också alternativa sätt att konvertera datum till strängar, som att använda delningsoperatorn (%) eller att använda en char-array. Dessa metoderna kan dock vara mer komplexa och mindre flexibla än den som presenteras i exemplet ovan.
+Denna konverteringsfunktionalitet har en lång historia, alltifrån tidiga programmeringspråk där datum representerades som grundläggande datatyp till moderna tillämpningar i kraftiga språk som C++.
 
-Den här konverteringsprocessen är också viktig för att kunna spara datum i en databas eller skriva ut det på olika språk och tidszoner. Det är därför viktigt för programmerare att behärska denna färdighet för att kunna hantera och hantera datum på ett effektivt sätt.
+Alternativet till detta koncept i C++ är att använda `boost::gregorian::to_iso_string`. Det är i princip samma sak, men mer sammanflätad i `boost`-funktioner.
+
+Denna implementation använder `std::chrono` och `std::put_time`. Funktionen `std::put_time` konverterar `std::tm`-objektet till datumsträngen, using en formateringssträng som definierar formatet.
 
 ## Se även:
-1. [http://www.cplusplus.com/reference/ctime/strftime/](http://www.cplusplus.com/reference/ctime/strftime/)
-2. [https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
-3. [https://en.wikipedia.org/wiki/C_date_and_time_functions](https://en.wikipedia.org/wiki/C_date_and_time_functions)
+
+[`strftime`](http://www.cplusplus.com/reference/ctime/strftime/): En C-funktion för att formatera tiden som en sträng.\
+[`std::put_time`](http://en.cppreference.com/w/cpp/io/manip/put_time): En C++-funktion för att formatera tiden som en sträng.\
+[`boost::gregorian::to_iso_string`](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time/gregorian.html): En alternativ funktion för att konvertera datum till sträng i Boost-biblioteket.

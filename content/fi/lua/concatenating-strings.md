@@ -1,7 +1,7 @@
 ---
-title:                "Yhdistetään merkkijonoja"
-html_title:           "Lua: Yhdistetään merkkijonoja"
-simple_title:         "Yhdistetään merkkijonoja"
+title:                "Merkkijonojen yhdistäminen"
+html_title:           "Gleam: Merkkijonojen yhdistäminen"
+simple_title:         "Merkkijonojen yhdistäminen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
+# Mitä & Miksi?
 
-## Mitä se on?
-Merkkijonojen yhdistäminen tarkoittaa kahden tai useamman merkkijonon yhdistämistä yhdeksi merkkijonoksi.
+Yhdistettyjen merkkijonojen muodostaminen - tai merkkijonokatenointi - tarkoittaa sen, että otetaan kaksi tai useampia erillisiä merkkijonoja ja yhdistetään ne yhdeksi uudeksi merkkijonoksi. Ohjelmoijat tekevät tämän usein, koska he tarvitsevat tapaa muodostaa uusia merkkijonoja olemassa olevista merkkijonoista.
 
-## Miksi kehittäjät tekevät sitä?
-Merkkijonojen yhdistäminen on hyödyllistä, koska se mahdollistaa usean merkkijonon yhdistämisen yhdeksi helpommin käsiteltäväksi kokonaisuudeksi. Tämä saattaa olla tarpeellista esimerkiksi silloin, kun halutaan luoda tekstipohjainen käyttöliittymä tai tallentaa käyttäjän antamat tiedot tietokantaan.
+# Näin se tehdään:
 
-## Kuinka tehdä?
+Merkkijonojen yhdistäminen on hyvin yksinkertaista Lua-ohjelmointikielessä. Käytämme kahta-pistettä (`..`) yhdistämään merkkijonot. Tässä on esimerkkikoodi:
+
 ```Lua
-local etunimi = "Matti"
-local sukunimi = "Meikäläinen"
-local kokonimi = etunimi .. " " .. sukunimi
-print(kokonimi)
-```
-Tulostus:
-```
-Matti Meikäläinen
+greeting = "Hei"
+name = "Matti"
+full_greeting = greeting .. ", " .. name
+print(full_greeting)
 ```
 
-## Syväsukellus
-### Historiallinen konteksti
-Merkkijonojen yhdistäminen oli alunperin kehitetty C-kielen yhteydessä. Myöhemmin se on yleistynyt monilla muillakin kielillä, kuten Lualla.
+Ohjelmamme tulostuksen pitäisi näyttää seuraavalta:
 
-### Vaihtoehtoiset tavat
-Merkkijonon yhdistämisen lisäksi voit myös käyttää table.concat() -funktiota, joka yhdistää taulukon arvot yhdeksi merkkijonoksi. Tämä voi olla hyödyllistä esimerkiksi silloin, kun sinulla on paljon erilaisia merkkijonoja, joita haluat yhdistää.
+```Lua
+Hei, Matti
+```
 
-### Toteutus yksityiskohtia
-Luan tavoin monet muut kielet käyttävät ".." -operaattoria merkkijonojen yhdistämiseen. Tässä käytännössä on kuitenkin yksi haittapuoli: mikäli yhdistettävien merkkijonojen joukossa on numeroita, ne tulkitaan ensin numeerisiksi arvoiksi ja vasta sen jälkeen muutetaan merkkijonoiksi.
+# Syvemmälle:
 
-## Katso myös
-- [Tietoa merkkijonoista Luan virallisessa dokumentaatiossa](https://www.lua.org/manual/5.1/manual.html#5.4)
-- [Esimerkkejä merkkijonojen yhdistämisestä eri ohjelmointikielillä](https://rosettacode.org/wiki/String_concatenation)
+Lua-ohjelmointikielen merkkijonojen yhdistäminen on peräisin sen perusmuodosta, joka on suunniteltu olemaan sekä yksinkertainen että tehokas. Historiallisesti, jotkin ohjelmointikielet, kuten C, vaativat monimutkaisempia tekniikoita merkkijonojen yhdistämiseen - kaoottisia tilanhallintakäytäntöjä ja puskureiden käsittelyä. 
+
+Vaihtoehtoisesti, voit käyttää `string.format`-metodia, jotta voit hallita paremmin, miten merkkijonot yhdistyvät:
+
+```Lua
+name = "Matti"
+greeting = string.format("Hei, %s", name)
+print(greeting)
+```
+
+Tämä tuottaisi saman tulostuksen `Hei, Matti`.
+
+Tärkeää on huomata, että `..` operaattori toimii luomalla uuden merkkijonon, joka käsittää molemmat lähtömerkkijonot. Tämä prosessi voi olla tehoton, jos yhdistät suuria merkkijonoja suurina määrinä, koska se kuluttaa ylimääräistä muistia.
+
+# Katso myös:
+
+Voit tutustua seuraaviin linkkeihin, jos haluat lisätietoja merkkijonojen käsittelystä Lua-ohjelmointikielessä:
+
+1. Lua-oppikirja: Merkkijonojen käyttö: https://www.tutorialspoint.com/lua/lua_strings.htm
+2. Lua : Merkkijonojen muotoilu: https://www.gammon.com.au/scripts/doc.php?general=lua_string_format

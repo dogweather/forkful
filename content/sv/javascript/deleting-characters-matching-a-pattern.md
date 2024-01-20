@@ -1,7 +1,7 @@
 ---
-title:                "Att ta bort tecken som matchar ett mönster"
-html_title:           "Javascript: Att ta bort tecken som matchar ett mönster"
-simple_title:         "Att ta bort tecken som matchar ett mönster"
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?:
-Att ta bort tecken som matchar ett visst mönster kallas "deleting characters matching a pattern" på engelska. Det är en vanlig uppgift för programmerare när man behöver modifiera strängar eller filer baserat på specifika mönster.
+## Vad och varför?
+Radering av karaktärer som matchar ett mönster i JavaScript innebär att vi tar bort vissa karaktärer ur en sträng som matchar ett specifikt förebild. Det är nödvändigt för programmerare att göra detta för att manipulera data, tex. rensa data från oönskade tecken eller för att förbereda data för vidare bearbetning.
 
-Varför gör programmerare det här? I vissa fall vill man rensa bort onödiga tecken från data eller förbereda det för en annan process som kräver en viss form. Det kan också vara ett steg i processen att analysera och manipulera data.
-
-Hur to:
-Ett enkelt sätt att göra detta är att använda en reguljär uttryck (regular expression) tillsammans med metoderna ```replace()``` och ```match()```. Till exempel, om vi har en sträng som innehåller enbart siffror och vill ta bort alla icke-numeriska tecken, kan vi använda följande kod:
+## Hur man gör:
+Här ska vi använda `replace()`-metoden i JavaScript med ett reguljärt uttryck. Kika på följande exempel:
 
 ```Javascript
-let str = "123 hello 456 world";
-str = str.replace(/[^0-9]/g, "");
-console.log(str) // Output: "123456"
+let str = "Hej, string med mycket skräp! ###!!!.";
+let nyStr = str.replace(/[^a-zA-Z ]/g, "");
+console.log(nyStr);
 ```
 
-Vi kan också använda reguljära uttryck för att ta bort tecken som upprepas i en sträng, eller för att ta bort specifika teckensekvenser. Det finns många olika sätt att anpassa detta efter våra behov.
+Output:
+```Javascript
+"Hej string med mycket skräp"
+```
 
-Djupdykning:
-Metoden att ta bort tecken som matchar ett visst mönster har funnits i många år och är en viktig del av textbehandling i programmering. Innan reguljära uttryck fanns rådande, användes ofta lösningshashes eller andra metoder för att söka och ersätta tecken. I modern JavaScript är reguljära uttryck ett effektivt sätt att lösa detta problem.
+I koden ovan skapar vi en sträng `str`, sedan använder vi `replace()`-metoden för att ta bort alla tecken som inte är bokstäver. `[^a-zA-Z ]` betyder "inte en bokstav".
 
-Alternativ till reguljära uttryck inkluderar att använda metoder som ```slice()``` och ```substring()``` för att ta bort tecken från en sträng utifrån deras position. Om man endast behöver ta bort ett specifikt tecken kan också metoden ```charCodeAt()``` användas för att hitta tecknets ASCII-kod och ta bort det.
+## Fördjupning
+Ursprungligen, innan ES6, utfördes tillämpningen av att ta bort karaktärer med hjälp av slingor och konditionaler som ofta ledde till klumpiga lösningar. Med införandet av reguljära uttryck och deras integrering i JavaScript blev detta mycket smidigare. 
 
-Se även:
-Här är några användbara resurser för att fördjupa sig i ämnet och lära sig mer om reguljära uttryck och hur man använder dem i JavaScript:
+Det finns alternativ till 'replace()' metoden, såsom användning av 'filter()' metoden eller att konvertera strängen till ett array och sedan tillbaka till en sträng.
 
-- [MDN dokumentation om reguljära uttryck](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regular Expression Cheat Sheet](https://www.cheatography.com/davechild/cheat-sheets/regular-expressions/) - en sammanfattning av vanliga reguljära uttryck
-- [RegExr](https://regexr.com/) - en användbar onlineverktyg för att testa och experimentera med reguljära uttryck.
+Det är viktigt att notera att metoden `replace()` inte modifierar originalet utan returnerar en ny sträng, vilket betyder att om vi vill behålla de ändringar vi gör måste vi tilldela resultatet till en ny variabel eller till samma variabel igen.
+
+## Se vidare
+För mer information om att arbeta med reguljära uttryck i JavaScript, kolla in följande länkar:
+
+- [Reguljära uttryck (Regular Expressions) på MDN Web Docs](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Rensa strängar med reguljära uttryck](https://www.freecodecamp.org/news/javascript-regex-expressions/)
+- [replace()-metoden på MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

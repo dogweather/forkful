@@ -1,6 +1,6 @@
 ---
 title:                "Konwersja daty na ciąg znaków"
-html_title:           "Kotlin: Konwersja daty na ciąg znaków"
+html_title:           "Clojure: Konwersja daty na ciąg znaków"
 simple_title:         "Konwersja daty na ciąg znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,29 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Zamiana daty na ciąg znaków to proces przetwarzania informacji, w którym data zapisana w formacie liczbowym lub kodowym jest konwertowana na zrozumiały dla człowieka ciąg znaków tekstowych. Programiści zajmujący się tworzeniem aplikacji często wykonują tę operację w celu poprawienia czytelności i użytkowości swojego kodu.
 
-Dzięki zamianie daty na string, programista może wyświetlić informacje o dacie w wybranym przez siebie formacie, dodając jednocześnie opisy zdarzeń lub warunków. Dzięki temu aplikacja staje się bardziej intuicyjna dla użytkownika, a jej kod bardziej czytelny i łatwiejszy w utrzymaniu.
+Konwersja daty na łańcuch znaków to proces przekształcania formatu daty do czytelnej formy tekstu. Programiści robią to głównie, aby łatwiej zaprezentować datę użytkownikowi w wybranym formacie.
 
-## Jak to zrobić?
-### Przykład:
-Załóżmy, że chcemy wyświetlić datę w formacie "dzień.miesiąc.rok". W tym celu wykorzystujemy funkcję **toString()** oraz formatowanie tekstu, jak pokazano poniżej:
+## Jak to zrobić:
+
+```Kotlin
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
+fun main() {
+    val dateFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy")
+    val today = LocalDate.now()
+    val formattedDate = today.format(dateFormatter)
+    println(formattedDate)
+}
 ```
-Kotlin val date = LocalDate.now()
-println(date.toString("dd.MM.yyyy"))
-```
-### Wynik:
-```
-12.05.2021
-```
 
-## Głębsze wgląd
-Proces zamiany daty na string ma swoje korzenie w historii informatyki. W przeszłości, komputery nie były w stanie przetwarzać informacji tekstowych i liczbowych jednocześnie, co utrudniało prezentowanie dat w sposób zrozumiały dla człowieka. Z czasem odkryto wiele metod i algorytmów, które pozwoliły na łatwiejsze konwertowanie dat na ciągi znaków.
+Wyjście:
+```Kotlin
+19.02.2023
+```
+W powyższym kodzie tworzymy obiekt formatu daty, a następnie przekształcamy dzisiejszą datę na łańcuch znaków za pomocą metody format.
 
-Obecnie istnieją różne sposoby na zamianę daty na string, w tym wykorzystanie bibliotek zewnętrznych lub implementacja własnej metody. Programiści powinni jednak pamiętać, że kluczowe jest wybieranie odpowiedniego formatu i metody, zależnie od potrzeb i wymagań aplikacji.
+## Deep Dive:
 
-## Zobacz także
-Jeśli chcesz dowiedzieć się więcej na temat konwertowania daty na string w języku Kotlin, polecam zapoznać się z poniższymi źródłami:
-- [Oficjalna dokumentacja języka Kotlin](https://kotlinlang.org/docs/dates-and-times.html#creating-instances)
-- [Blog o programowaniu w Kotlinie](https://blog.kotlin-academy.com/formatting-strings-in-kotlin-made-easy-with-string-templates-and-when-expression-b3c6f6900823)
-- [Kurs "Kotlin w 30 minut" na platformie Udemy](https://www.udemy.com/course/kotlin-w-30-minut-jak-zaczac/)
+1. Kontekst historyczny: Formatowanie dat jest konieczne od początków programowania komputerowego. Ułatwia to zarówno użytkownikom, jak i programistom zarządzanie informacjami związanymi z datami.
+   
+2. Alternatywy: Można również skorzystać z metody SimpleDateFormat w Javie, jednak jest ona mniej bezpieczna i bardziej podatna na błędy.
+   
+3. Szczegóły implementacji: Metoda format jest częścią biblioteki Java Time, która jest integralną częścią Kotlin od wersji 1.0. Ta biblioteka oferuje wiele różnych szablonów do formatowania dat, jak również możliwość tworzenia własnych szablonów.
+
+## Zobacz również:
+
+1. Dokumentacja Kotlin do formatowania dat: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-date-time-formatter/index.html)
+2. Dokumentacja Java Time: [link](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
+3. Przewodnik po różnych szablonach formatowania dat: [link](https://www.ibm.com/docs/en/i/7.2?topic=concepts-date-time-format)

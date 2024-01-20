@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Java: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+# 获取当前日期: Java 如何做到？
 
-获取当前日期是指获取当前时间的代码。程序员这样做是因为日期和时间在编程中是非常重要的，它们可用于跟踪程序的执行时间，以及在日志记录和数据分析中起到关键作用。
+## 什么和为什么？
 
-## 如何：
+获取当前日期意味着在程序中捕获并使用当前的日期和时间。这对于记录事件，跟踪时间和进行时间相关计算非常有用。
 
-使用Java可以轻松获取当前日期。只需使用内置的Java类“java.util.Date”，然后调用“Date（）”方法就可以了。让我们看一个简单的例子：
+## 如何实现：
 
-```
-import java.util.Date;
-public static void main(String args[]) {
-Date currentDate = new Date();
-System.out.println(currentDate);
+在 Java 中获取当前日期的基本代码如下：
+
+```Java
+import java.time.LocalDate;
+
+public class Main {
+    public static void main(String[] args) {
+        LocalDate date = LocalDate.now();
+        System.out.println("当前日期为: " + date);
+    }
 }
 ```
 
-输出应该是类似于这样的结果：
+运行上述代码将输出当前日期，如下所示：
 
+```Java
+当前日期为: 2022-09-15
 ```
-Sat Feb 22 20:25:45 EST 2020
-```
 
-## 深入探讨：
+## 深入探究：
 
-在历史上，获取当前日期使用的是简单的数学运算。然而，在Java中，使用内置的“java.util.Date”类可以更加方便和精确地获取当前日期。另外，还有一些替代方法可以获取当前日期，比如使用“java.time.LocalDate”类，它在Java 8中被引入。
+在 Java 推出 java.time 包之前，我们通常使用 java.util.Date 类来获取当前日期。然而，由于 Date 类既想表示日期又想表示时间，导致了许多设计上的问题。
 
-在实现时，我们需要注意的是获取的当前日期和时间是基于系统的本地时区。如果需要特定的时区，可以使用“java.time.ZoneDateTime”类来获取。
+这就使得使用 LocalDate 类来只获取日期更有优势。此外，`LocalDate.now()` 方法默认使用系统时钟的日期。
 
-## 参考链接：
+另一个选择是 java.util.Calendar 类，它比 Date 类提供更多的功能，但使用起来较为复杂。
 
-- [Java中的日期和时间](https://www.w3schools.com/java/java_date.asp)
-- [Java 8中的新日期和时间API](https://www.baeldung.com/java-8-date-time-intro)
+## 更多参考：
+
+* [Java 8日期和时间API](https://www.baeldung.com/java-8-date-time-intro)
+* [Java LocalDate 文档](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
+* [Java Date vs Calendar](https://www.baeldung.com/java-date-vs-calendar)

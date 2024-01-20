@@ -1,7 +1,7 @@
 ---
-title:                "Convirtiendo una cadena en minúsculas"
-html_title:           "PowerShell: Convirtiendo una cadena en minúsculas"
-simple_title:         "Convirtiendo una cadena en minúsculas"
+title:                "Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
+simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Convertir una cadena de texto a minúsculas es una tarea común en la programación. Esto se refiere a cambiar todas las letras mayúsculas de una cadena a letras minúsculas. Los programadores hacen esto para facilitar la comparación de cadenas y para asegurarse de que los datos ingresados por los usuarios estén correctamente formateados.
+## ¿Qué y Por Qué?
 
-## ¿Cómo hacerlo?
+Convertir una cadena a minúsculas significa cambiar todas las letras del texto a minúsculas. Los programadores lo hacen para uniformizar datos, especialmente cuando la comparación y clasificación de strings es de importancia.
+
+## Cómo hacerlo:
+
+Aquí te muestro cómo convertir un string a minúsculas con PowerShell. El comando a utilizar es `.ToLower()`. Aquí tienes un ejemplo:
+
 ```PowerShell
-$string = "Hola Mundo"
-Write-Host $string.ToLower()
-```
-Salida:
-```PowerShell
-hola mundo
-```
-El código anterior utiliza el método `ToLower()` para convertir la cadena `$string` a minúsculas. También puedes usar el operador `-replace` para reemplazar todas las letras mayúsculas con sus equivalentes en minúsculas:
-```PowerShell
-$string = "Hola Mundo"
-Write-Host $string -replace "[A-Z]",{param($m) $m.Value.ToLower()}
-```
-Salida:
-```PowerShell
-hola mundo
+$str = 'Hola Mundo!'
+$strMinusculas = $str.ToLower()
+echo $strMinusculas
 ```
 
-## Profundizando
-La conversión de cadenas a minúsculas existe desde los inicios de la programación. Sin embargo, con la llegada de diferentes lenguajes de programación y plataformas, también han surgido diferentes métodos para realizar esta tarea. En PowerShell, además del método `ToLower()`, también puedes usar el operador `-replace` mencionado anteriormente, o los métodos `ToLowerInvariant()` y `ToLowerInvariant()`. Además, puedes utilizar la clase `CultureInfo` para especificar el idioma en el que deseas realizar la conversión de minúsculas.
+Este script imprimirá:
 
-## Ver también
-- [Documentación oficial de Microsoft sobre la clase `String`](https://docs.microsoft.com/es-es/dotnet/api/system.string?view=net-5.0)
-- [Página web de información sobre la clase `CultureInfo`](https://stackoverflow.com/questions/1501716/how-do-i-translate-the-net-cultureinfo-object-into-a-culture-info-object-in-p)
+```PowerShell
+hola mundo!
+```
+
+## Buceo Profundo:
+
+Historia: Los métodos `ToLower` y `ToUpper` se introdujeron inicialmente en .NET Framework, del cual PowerShell es una interfaz de scripting.
+
+Alternativas: No hay muchas alternativas a `ToLower()` en PowerShell. Aunque puedes utilizar métodos de .NET Framework como `String.ToLowerInvariant()`, en la mayoría de los casos, `ToLower()` será suficiente.
+
+Implementación: `ToLower()` es un método de los objetos de string en PowerShell, respaldado por la implementación de .NET Framework. Convierte cada carácter alfabético en el string a su equivalente en minúsculas.
+
+## Ver También:
+
+Para más información, visita estas páginas web:
+
+- [String.ToLower Method (System) | Microsoft Docs](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower)
+
+- [Everything you ever wanted to know about string manipulation with PowerShell | 4sysops](https://4sysops.com/archives/everything-you-ever-wanted-to-know-about-string-manipulation-with-powershell)
+
+- [Working with Strings | Microsoft Docs](https://docs.microsoft.com/en-us/powershell/scripting/learn/ps101/06-working-with-strings)
+
+No dudes en explorar y aprender más acerca de la manipulación de strings en PowerShell.

@@ -1,6 +1,6 @@
 ---
 title:                "Usuwanie znaków pasujących do wzorca"
-html_title:           "Haskell: Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
 simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,48 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
+Usuwanie znaków pasujących do wzorca, to proces eliminacji konkretnych sekwencji znaków z ciągu. Programiści robią to, aby uporządkować dane, sprzątając powtarzające się lub niepotrzebne znaki.
 
-Usuwanie znaków pasujących do określonego wzorca jest jedną z podstawowych operacji, które programiści często wykonują w swoim kodzie. Polega to na usunięciu wszystkich wystąpień znaku lub ciągu znaków, które pasują do danego wzorca.
+## Jak to zrobić:
+```Haskell
+import Data.Char
+import Data.List
 
-Wykonanie operacji usuwania znaków jest niezbędne w celu poprawienia jakości kodu i jego optymalizacji. Może to pomóc w poprawieniu wydajności i czytelności kodu, a także w wyeliminowaniu błędów.
+usunZnaki :: Char -> String -> String
+usunZnaki _ [] = []
+usunZnaki x (y:ys)
+  | x == y = usunZnaki x ys
+  | otherwise = y : usunZnaki x ys
 
-## Jak to zrobić?
-
-Kodując w Haskell, istnieje wiele sposobów na usuwanie znaków pasujących do wzorca. Poniżej przedstawiamy przykłady kodu z wykorzystaniem różnych funkcji i metod.
-
-### Przykładowy kod:
+main = print(usunZnaki 'a' "ananas") 
 ```
--- Usuwanie wystąpień znaku "a" z listy
-delete 'a' "abcabc" 
--- Wynik: "bcbc"
+Po uruchomieniu powyższego kodu, otrzymamy ciąg "nns", w którym wszystkie litery "a" zostały usunięte.
 
--- Usuwanie wszystkich cyfr z tekstu
-filter not . Data.Char.isDigit $ "abc123def456" 
--- Wynik: "abcdef"
-```
+## Więcej szczegółów
+Usuwania znaków pasujących do wzorca było nieodzownym elementem programowania od początku jego dziejów. Historia jest pełna alternatywnych metodyk, takich jak regex lub korzystanie z funkcji wbudowanych innych języków. Chociaż ten proces jest dość prosty w Haskellu, zrozumienie jego implementacji wymaga dobrych umiejętności z list i rekurencji, które są kluczowymi technikami w Haskellu.
 
-Możemy również zdefiniować własną funkcję, która będzie usuwać odpowiednie znaki. Przykładowy kod poniżej:
-
-```
--- Usuwanie znaków pasujących do wzorca
-deletePattern :: Char -> String -> String
-deletePattern c = filter (/= c)
-
--- Usuwanie wszystkich cyfr z tekstu
-deletePattern '1' "abc123def456" 
--- Wynik: "abc23def456"
-```
-
-## Głębsza analiza
-
-Usuwanie znaków pasujących do wzorca jest jednym z najbardziej podstawowych zadań wykonywanych przez programistów. Można to wykonać przy użyciu wbudowanych funkcji i metod w języku Haskell, takich jak `delete` i `filter`, a także za pomocą własnych funkcji.
-
-Alternatywnym sposobem na usuwanie znaków jest użycie wyrażeń regularnych. Jest to popularne podejście w innych językach programowania, ale w Haskellu wykorzystanie wbudowanych funkcji jest często preferowane ze względu na silny typowy system języka.
-
-Jeśli chodzi o implementację usuwania znaków pasujących do wzorca w Haskellu, warto zwrócić uwagę na wykorzystanie funkcji wyższego rzędu, takich jak `filter` i `map`. Dzięki nim możemy w łatwy sposób dostosować algorytm do swoich potrzeb.
-
-## Zobacz też
-
-- [Dokumentacja języka Haskell](https://www.haskell.org/documentation/)
-- [Wyrażenia regularne w Haskellu](https://wiki.haskell.org/Regular_expressions)
+## Zobacz także
+1. Dokumentacja biblioteki Haskell 'Data.Char' : http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html
+2. Dokumentacja biblioteki Haskell 'Data.List' : http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html
+3. Manual Haskell - https://downloads.haskell.org/~ghc/latest/docs/html/users_guide/

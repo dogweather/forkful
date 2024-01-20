@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Javascript: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -11,35 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-
-Pobieranie strony internetowej to proces pobierania kodu źródłowego danej strony przez przeglądarkę internetową. Programiści często pobierają strony internetowe, aby wyświetlić je w swoim oprogramowaniu lub przetworzyć dane ze strony.
+ 
+Pobieranie strony internetowej to proces zapisywania wszystkich danych strony na dysku lokalnym - to tak, jakbyś robił zrzut ekranu, ale zapisywał całe jej "ciało". Programiści to robią, aby móc analizować strukturę strony, pracować nad jej zawartością offline, a także do celów testowania i debugowania.
 
 ## Jak to zrobić:
 
+Zajmijmy się najprostszym sposobem na pobranie strony internetowej za pomocą Node.js i popularnej biblioteki `axios`. Pamiętaj, aby najpierw zainstalować `axios` za pomocą npm, wpisując w wierszu poleceń `npm install axios`.
+
 ```Javascript
-fetch('https://example.com')
-    .then(response => response.text())
-    .then(data => console.log(data));
+var axios = require('axios');
+var fs = require('fs');
+
+axios.get('http://example.com').then((response) => {
+    fs.writeFile('example.html', response.data, (err) => {
+        if(err) console.log(err);
+        console.log('Strona zapisana pomyślnie.');
+    });
+});
 ```
 
-Output:
+Taki kod pobierze stronę `http://example.com` i zapisze jej zawartość do pliku `example.html`.
 
-```
-<html>
-<head>
-    <title>Example</title>
-</head>
-<body>
-    <h1>Hello World!</h1>
-</body>
-</html>
-```
+## Pogłębione spojrzenie:
 
-## Głębsze spojrzenie:
+Historia pobierania stron internetowych sięga początków internetu - kiedy to programiści musieli nauczyć się, jak robic "migawki" stron internetowych i analizować je offline. Wykorzystywane do tego techniki ewoluowały na przestrzeni lat - od korzystania z surowego HTML do skomplikowanych bibliotek JavaScript.
 
-Pobieranie stron internetowych jest możliwe dzięki protokołowi HTTP. Przez lata pojawiło się wiele innych metod pobierania danych z internetu, takich jak WebSockets czy API REST, ale pobieranie strony internetowej jest w dalszym ciągu jednym z najbardziej popularnych sposobów. W Javascripcie, funkcja `fetch()` jest wykorzystywana do wysyłania zapytania HTTP do podanego adresu URL i zwraca obietnicę, która potem może być przetworzona przez kolejne funkcje.
+Alternatywą dla `axios` może być `node-fetch`, biblioteka która korzysta z API Fetch, znanego przede wszystkim z przeglądarek internetowych. Wybór pomiędzy tymi dwoma zwykle zależy od osobistych preferencji.
+
+Szczegóły implementacji "pobierania strony" mogą rożnić się w zależności od strony. Na przykład, niektóre strony mogą wymagać użycia cookies lub innych nagłówków HTTP, aby pobrać całą jej zawartość.
 
 ## Zobacz też:
 
-- [fetch() na MDN](https://developer.mozilla.org/pl/docs/Web/API/GlobalFetch/fetch)
-- [HTTP na Wikipedia](https://pl.wikipedia.org/wiki/HTTP)
+1. Więcej o `axios`: [Axios na GitHub](https://github.com/axios/axios)
+2. Więcej o `node-fetch`: [node-fetch na GitHub](https://github.com/node-fetch/node-fetch)
+3. Metody `fs.writeFile()` i `fs.writeFileSync()` : [Dokumentacja Node.js](https://nodejs.org/api/fs.html#fs_file_system)

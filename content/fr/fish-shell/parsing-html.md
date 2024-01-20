@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de l'html"
-html_title:           "Fish Shell: Analyse de l'html"
-simple_title:         "Analyse de l'html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -10,35 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Quoi et Pourquoi?
+## Quoi & Pourquoi ?
+Parse le HTML signifie examiner et extraire des informations évidentes et cachées d'un document HTML. Les programmeurs le font pour manipuler, extraire ou analyser le contenu d'un site web.
 
-Parsing HTML, or extracting data from HTML code, is a useful skill for programmers who want to scrape websites or work with web data. Parsing HTML helps simplify and organize the data for easier analysis and manipulation.
+## Comment le faire :
+Avec Fish Shell, vous pouvez utiliser des outils comme pup ou html-xml-utils pour analyser le HTML. 
+Voici un exemple avec pup :
 
-# Comment faire:
-
-Voici comment parser HTML en utilisant Fish Shell:
-
-```
-set html (curl -s <url>) # Récupère le code HTML à partir de l'URL spécifiée et le stocke dans la variable html
-set data (string split -r "</?tag>" $html) # Sépare le code HTML en morceaux en utilisant des balises
-for line in $data # Parcourt chaque morceau
-  echo $line # Affiche le morceau en console
-end
+```Fish Shell
+echo "<html><body><p>Hello world</p></body></html>" | pup 'p text{}'
 ```
 
-Voici un exemple de sortie pour un site avec des balises 'h1' et 'p':
-
+Sortie:
+```Fish Shell
+Hello world
 ```
-1. Site web
-2. Ceci est un paragraphe
-```
+Cet exemple vous montre comment extraire le texte à l'intérieur d'une balise <p>.
 
-# Plongée en profondeur:
+## Approfondissement 
+Historiquement, Parse HTML est une tâche difficile en raison des nombreuses irrégularités et spécifications de balisage des langages HTML. Les alternatives à pup et html-xml-utils incluent des parseurs plus volumineux et robustes comme BeautifulSoup en Python ou Nokogiri en Ruby. L'implémentation de ces outils examine généralement chaque balise et attribut, en les structurant dans une forme facilement navigable et analysable.
 
-Le parsing HTML est une technique couramment utilisée dans le traitement de données web et le scraping de sites web. Cela a été particulièrement utile avant l'avènement des API qui permettent un accès plus structuré aux données. D'autres langages de programmation comme Python ont également des méthodes intégrées spécialement pour parser HTML, mais Fish Shell peut également être utilisé via l'utilisation des commandes système telles que 'curl' et 'string'.
-
-# Références utiles:
-
-- Pour en savoir plus sur le parsing HTML avec Fish Shell, consultez la documentation officielle: https://fishshell.com/docs/current/cmds/string.html#string-split
-- Apprenez-en plus sur les fonctionnalités de Fish Shell sur leur site web: https://fishshell.com/
-- Pour une alternative à l'utilisation de Fish Shell pour le parsing HTML, consultez: https://wiki.python.org/moin/HTMLParsing
+## Voir aussi
+Pour plus de détails, consultez les pages de manuel de [pup](https://github.com/EricChiang/pup) et [html-xml-utils](https://www.w3.org/Tools/HTML-XML-utils/). 
+Pour des alternatives, consultez [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) et [Nokogiri](https://nokogiri.org/tutorials/parsing_an_html_xml_document.html).

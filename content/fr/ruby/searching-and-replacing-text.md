@@ -1,6 +1,6 @@
 ---
 title:                "Recherche et remplacement de texte"
-html_title:           "Ruby: Recherche et remplacement de texte"
+html_title:           "Arduino: Recherche et remplacement de texte"
 simple_title:         "Recherche et remplacement de texte"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,36 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font?
-La recherche et le remplacement de texte est une tâche courante pour les programmeurs, qui consiste à trouver un certain pattern de caractères dans un texte et le remplacer par un autre. Cela peut être utile pour effectuer des modifications en masse dans un fichier ou pour optimiser du code en remplaçant des termes redondants par des variables.
+# À la découverte de la recherche et du remplacement de texte en Ruby
 
-## Comment le faire:
-Voici un exemple de code qui utilise la méthode "gsub" de Ruby pour remplacer toutes les occurrences d'un mot par un autre dans une chaîne de caractères :
+## Quoi & Pourquoi?
 
-```ruby
-texte = "Bonjour tout le monde !"
-nouveau_texte = texte.gsub("bonjour", "hello")
-puts nouveau_texte
-```
-Résultat:
-```
-Hello tout le monde !
-```
-Vous pouvez également utiliser des expressions régulières pour cibler des motifs plus complexes dans un texte. Par exemple :
+La recherche et le remplacement de texte sont deux opérations essentielles en programmation. Elles vous permettent de modifier un texte en trouvant des segments spécifiques puis en les remplaçant par d'autres. C'est un outil précieux pour la manipulation et l'aménagement de données.
 
-```ruby
-texte = "Je suis un Rêveur"
-nouveau_texte = texte.gsub(/[Rr]êveur/, "aspirant")
-puts nouveau_texte
+## Comment faire:
+
+Voici un exemple de recherche et de remplacement en Ruby:
+
+```Ruby
+text = "Je déclare mon amour pour Ruby."
+updated_text = text.sub("amour pour", "haine envers")
+puts updated_text
 ```
-Résultat:
-```
-Je suis un aspirant
+Le résultat d'exécution de ce code sera:
+
+```Ruby
+"Je déclare ma haine envers Ruby."
 ```
 
-## Plongée en profondeur:
-La recherche et le remplacement de texte sont une tâche courante, mais elles peuvent être difficile à maîtriser pour les débutants en programmation. Il est important de bien comprendre comment les expressions régulières fonctionnent et de vérifier attentivement le résultat pour éviter des erreurs de remplacement involontaires. D'autres langages de programmation, comme Perl, ont également des fonctionnalités puissantes pour la recherche et le remplacement de texte.
+Dans cet exemple, `sub` est une méthode Ruby qui trouve la première occurrence de la chaîne "amour pour" et la remplace par "haine envers".
 
-## À voir également:
-- [Apprenez les expressions régulières avec Ruby](https://www.rubyguides.com/2015/06/ruby-regex/)
-- [Utilisation de expressions régulières avec Perl](https://perldoc.perl.org/perlrequick.html)
+## Exploration en profondeur:
+
+Historiquement, le remplacement de texte a toujours été une partie vitale de la programmation. En effet, la capacité à manipuler des chaînes de caractères est un aspect fondamental de nombreux processus informatiques, allant de la modification des entrées utilisateur à la transformation de larges bases de données.
+
+Ruby offre plusieurs méthodes pour manipuler des textes. En plus de `sub`, Ruby fournit également une méthode `gsub` (substituer globalement) qui remplacera toutes les occurrences d'une chaîne, pas seulement la première. Voici un exemple:
+
+```Ruby
+text = "Ruby est incroyable. J'adore Ruby."
+updated_text = text.gsub("Ruby", "Python")
+puts updated_text
+```
+
+Le résultat sera:
+
+```Ruby
+"Python est incroyable. J'adore Python."
+```
+
+## Voir aussi:
+
+- Documentation Ruby sur les chaînes : [Ruby Doc: String](https://ruby-doc.org/core-3.1.0/String.html)
+- Tutoriel sur la manipulation de chaînes en Ruby : [RubyLearning: String Manipulation](http://rubylearning.com/satishtalim/ruby_strings.html)
+- Exemples de code supplémentaires de substitution en Ruby : [OkMaybe: Ruby String Sub and Gsub](https://www.okmaybe.com/examples/ruby-string-sub-and-gsub)

@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Elixir: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -10,33 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-I programmering kan det være nyttig å sammenligne to datoer, for eksempel når du jobber med tidsserier eller ønsker å kontrollere om en hendelse skjedde før eller etter en annen hendelse. Dette er spesielt viktig når du jobber med store mengder data og trenger å finne spesifikke tidsintervaller.
+## Hva & Hvorfor?
 
-## Hvordan:
-Elixir tilbyr innebygd støtte for å sammenligne to datoer ved hjelp av ```:calendar```-modulen. Vi kan bruke funksjonen ```DateTime.compare/2``` for å sammenligne to datoer og få tilbake en av tre verdier: 1 hvis første dato er større, 0 hvis begge datoene er like, og -1 hvis første dato er mindre.
+Sammenligning av to datoer innebærer å sjekke om en dato er tidligere, senere eller samtidig som en annen dato. Programmerere bruker dette for å håndtere begivenheters rekkefølge og tidspent i applikasjoner. 
 
-```Elixir
-date1 = {{2019, 10, 25}, {12, 30, 00}}
-date2 = {{2019, 10, 24}, {11, 00, 00}}
+## Hvordan Gjøre Det:
 
-DateTime.compare(date1, date2)
-# => 1
+Her vil vi se på hvordan du kan sammenligne to datoer i Elixir. 
+
+```elixir
+d1 = Date.new(2020, 12, 12)
+d2 = Date.new(2021, 12, 12)
+
+IO.puts Date.compare(d1, d2)
 ```
-Denne funksjonen er nyttig hvis vi ønsker å sammenligne både dato og tid. Hvis vi bare vil sammenligne datoer, kan vi bruke funksjonen ```Date.compare/2``` som tar inn to ```Date```-strukturer og returnerer samme type svar.
+Outputten vil være `:lt`, hvilket betyr at d1 er mindre enn d2 (eller d1 kommer før d2).
 
-```Elixir
-d1 = ~D[2019-10-25]
-d2 = ~D[2019-10-24]
+```elixir
+d3 = Date.new(2022, 12, 12)
 
-Date.compare(d1, d2)
-# => 1
+IO.puts Date.compare(d2, d3)
 ```
+Outputten vil være `:lt`, siden d2 er mindre enn d3. 
+
+```elixir
+d4 = Date.new(2022, 12, 12)
+
+IO.puts Date.compare(d3, d4)
+```
+Her vil outputten være `:eq`, siden d3 er lik d4.
 
 ## Dypdykk:
-Datoer har vært en viktig del av dataprogrammering siden starten. Tidligere var dato og tid bare representert som tall, og det var opp til programmøren å håndtere konvertering og beregninger. I dag tilbyr moderne språk som Elixir innebygd støtte for datoer, noe som gjør det enklere og mer nøyaktig å håndtere dem. Alternativet til å bruke funksjoner i ```:calendar```-modulen er å benytte seg av tredjeparts biblioteker som ```timex``` eller ```calendar``` for mer avansert funksjonalitet. Men for de fleste tilfeller vil de innebygde funksjonene være tilstrekkelig.
 
-## Se også:
-- [Elixir's official documentation on ```:calendar``` module](https://hexdocs.pm/elixir/Calendar.html)
-- [timex](https://hexdocs.pm/timex)
-- [calendar](https://hexdocs.pm/calendar)
+Historisk sett hadde ikke Elixir innebygget støtte for datoer, og sammenligning av datoer var ikke så greit. Man måtte ty til biblioteker som Timex for å få dette gjort. 
+
+Elixir har nylig fått bedre innebygd støtte for datoer. Fra versjon 1.3 har Elixir `Date.compare/2` -funksjonen som gir en enkel måte å sammenligne datoer på. 
+
+Alternativt kan du bruker operatoren `>`,`<` og `==` når du sammenligner to `DateTime` strukturer. Men, holdt i tankene at disse operatorene ikke vil fungere når du sammenligner to `Date` strukturer.
+
+En viktig ting å merke seg ved `Date.compare/2` -funksjonen er at den tar i betraktning datoen **kun**, og ignorerer tidsdelen i `DateTime` strukturer.
+
+## Se Også:
+
+For mer informasjon, sjekk ut disse lenkene: 
+
+- Erlangs offisielle datodokumentasjon: [https://erlang.org/doc/man/calendar.html]
+- Elixir's offisielle Date-module dokumentasjon: [https://hexdocs.pm/elixir/Date.html]
+- Ulike metoder for å håndtere datoer og tid i Elixir: [https://dev.to/jonlunsford/working-with-dates-and-times-in-elixir-4p3d]

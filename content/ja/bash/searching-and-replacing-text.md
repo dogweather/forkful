@@ -1,6 +1,6 @@
 ---
 title:                "テキストの検索と置換"
-html_title:           "Bash: テキストの検索と置換"
+html_title:           "Java: テキストの検索と置換"
 simple_title:         "テキストの検索と置換"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,24 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となく知ってるけど…
-サーチ ＆ リプレース、複数のテキストを一括で検索し、別のテキストに置き換えること。プログラマーがそれをやる理由は簡単、大量のテキストを手作業で置き換えするのは面倒くさいから！
+## 何となぜ?
 
-## やり方:
+テキストの検索と置換は、特定のパターンや語句を見つけ出し、必要に応じて新しいテキストで置き換えることです。これは、不要な部分を取り除いたり、バグを修正したり、コードの単純化や標準化を行うためにプログラマーが利用します。
+
+## 使い方:
+
+検索と置換を行うための基本的なBashコマンドは`sed`です。以下に一部コード例とその出力を示します。
+
 ```Bash
-# テキストファイル内での文字列の置き換え
-sed -i 's/検索文字列/置き換え文字列/g' テキストファイル名
-
-# 再帰的にフォルダ内のテキストファイル全てで置き換える
-grep -lRZ '検索文字列' フォルダ名 | xargs -0 -l sed -i -e 's/検索文字列/置き換え文字列/g'
-
-# 正規表現を使ってマッチする部分を置き換える
-sed -i 's/[0-9].*$/置き換え文字列/g' テキストファイル名
+# 'Hello, World!' から 'World' を 'Japan' に置換してみましょう
+echo 'Hello, World!' | sed 's/World/Japan/'
 ```
 
-## 詳しく:
-その昔、テキスト編集を行う際には、手作業で単語を一つずつ置き換える必要がありました。しかし、今や私たちの助けには多様なツールやコマンドがあります。Bashコマンドでの検索と置き換えは、簡単で効率的な方法です。また、正規表現を使用することで、より柔軟にマッチングを行うことができます。代替として、sed、awk、perl、pythonなど、様々な言語でも同様の処理ができます。
+これは、`Hello, Japan!`という出力結果を示します。
 
-## 関連情報:
-- [Bashコマンドのサンプル](https://www.tldp.org/LDP/abs/html/textproc.html)
-- [正規表現チートシート](https://www.rexegg.com/regex-quickstart.html)
+## ディープダイブ:
+
+`sed`は、1970年代から存在し、UNIXの一部として開発されました。その歴史の長さにより、様々なパターン置換の能力を持つツールとして成熟しています。
+
+しかし、替わりに`awk`, `grep`, `perl`のような別のツールを利用することも可能です。それらは、より複雑なパターンマッチングやテキスト処理の能力を持っています。
+
+`sed`の基本的な書式は `s/検索パターン/置換パターン/` です。ここで's'はsubstitute（置換）を表します。また、このコマンドにはさまざまなフラグが付けられ、例えば 'g'フラグは、行内のすべてのマッチを置換します。
+
+## 参考リンク:
+
+- sedの詳細: https://www.gnu.org/software/sed/manual/sed.html
+- 正規表現について: https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+- 置換コマンドについてのより詳しい情報: https://www.cyberciti.biz/faq/how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/

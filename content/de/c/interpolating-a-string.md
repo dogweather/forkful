@@ -1,6 +1,6 @@
 ---
 title:                "Eine Zeichenkette interpolieren"
-html_title:           "C: Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
 simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "C"
 category:             "C"
@@ -10,35 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+# Zeichenketten-Interpolation in C: Eine Kurze Einführung 
 
-Beim sogenannten String Interpolieren geht es darum, Platzhalter in einem String mit konkreten Werten zu ersetzen. Zum Beispiel könnte ein String "Hallo {Name}" lauten und durch die Interpolation könnte der Platzhalter "{Name}" mit dem Wert "Peter" zu "Hallo Peter" werden. Programmierer nutzen diese Technik, um dynamische Texte zu erstellen und Wiederholungen zu vermeiden.
+## Was und Warum?
+Die Interpolation von Zeichenketten ist ein Hilfsmittel zur Erstellung formatierter Zeichenketten. Sie ermöglicht es Programmierern, Variablen direkt in eine Zeichenkette einzubauen und sorgt so für eine effizientere und lesbarere Codierung.
 
-## Wie geht's?
-
-Um einen String zu interpolieren, gibt es verschiedene Möglichkeiten. Eine davon ist die Verwendung von der Funktion "sprintf()". Dabei wird dem String, der interpoliert werden soll, ein Formatierungsschema übergeben, das die Platzhalter beinhaltet. Nach dem Schema wird der Funktion dann eine Liste von Werten übergeben, die die Platzhalter in der gleichen Reihenfolge wie im Schema ersetzen.
-
-Ein Beispiel:
+## So geht's:
+In C verwenden wir die `printf` Funktion für die Zeichenketten-Interpolation. Hier ist ein einfaches Beispiel:
 
 ```C
-char greeting[20];
-char name[10] = "Peter";
+#include <stdio.h>
 
-sprintf(greeting, "Hallo %s", name);
-
-printf("%s", greeting); // Ausgabe: "Hallo Peter"
+int main() {
+    char name[] = "John";
+    printf("Hallo, %s!\n", name);
+    return 0;
+}
 ```
 
-## Tiefere Einblicke
+In diesem Code ersetzt `%s` den Wert der `name` Variable, so dass die Ausgabe sein wird: `Hallo, John!`.
 
-String Interpolation ist keine neue Technik und wurde bereits in früheren Versionen von C verwendet. Allerdings gibt es auch alternative Methoden, um Platzhalter in Strings zu ersetzen, wie z.B. die Verwendung von regulären Ausdrücken.
+## Tiefgang:
+Historisch gesehen ist `printf` ein Teil der C-Standardbibliothek und wurde ursprünglich in der Sprache B entwickelt. Alternativen zur Interpolation von Zeichenketten in C können Formatierungsfunktionen wie `sprintf` oder `snprintf` sein. Beachten Sie jedoch, dass die Überschrift `%s` im `printf` eine spezifische Implementierung ist, die auf einem Zeiger auf char basiert und die Zeichenkette bis zum ersten Null-Byte liest.
 
-In der aktuellen Version von C wird String Interpolation nicht explizit unterstützt, aber durch die Verwendung von Funktionen wie "sprintf()" oder auch "snprintf()" kann diese Technik trotzdem umgesetzt werden. Es ist jedoch wichtig zu beachten, dass die Werte, die zur Interpolation verwendet werden, korrekt formatiert sein müssen.
+## Siehe Auch:
+Für weitere Informationen über die `printf` Funktion und Zeichenketten-Interpolation in C, siehe:
 
-## Weitere Informationen
-
-Für eine ausführlichere Beschreibung von String Interpolation in C und alternative Methoden können folgende Links hilfreich sein:
-
-- Link 1
-- Link 2
-- Link 3
+- [Die offizielle Dokumentation von C's printf](https://www.cplusplus.com/reference/cstdio/printf/)
+- [Zeichenketten-Interpolation auf Wikipedia](https://en.wikipedia.org/wiki/String_interpolation)

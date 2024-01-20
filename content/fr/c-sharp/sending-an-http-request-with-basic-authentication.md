@@ -1,6 +1,6 @@
 ---
 title:                "Envoyer une requête http avec une authentification de base"
-html_title:           "C#: Envoyer une requête http avec une authentification de base"
+html_title:           "Arduino: Envoyer une requête http avec une authentification de base"
 simple_title:         "Envoyer une requête http avec une authentification de base"
 programming_language: "C#"
 category:             "C#"
@@ -10,27 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# À quoi ça sert et pourquoi le faire?
-L'envoi d'une requête HTTP avec une authentification de base est une manière de sécuriser les échanges de données entre un client et un serveur. Les programmeurs utilisent cette méthode pour s'assurer que seuls les utilisateurs autorisés peuvent accéder à certaines ressources en ligne.
+## Qu'est-ce que c'est & Pourquoi?
 
-# Comment procéder:
-Voici un exemple de code en C# montrant comment envoyer une requête HTTP avec une authentification de base :
+Envoyer une requête HTTP avec une authentification de base, c'est fournir des identifiants sous forme de nom d'utilisateur et mot de passe pour accéder à certaines ressources. Les développeurs le font pour protéger les données sensibles d'une application.
 
+## Comment faire :
+
+Voici comment le faire en C#:
+
+```C#
+using System;
+using System.Net.Http;
+using System.Text;
+using System.Threading.Tasks;
+
+class Program
+{
+    private static readonly HttpClient client = new HttpClient();
+
+    static async Task Main(string[] args)
+    {
+        var byteArray = Encoding.ASCII.GetBytes("username:password");
+        client.DefaultRequestHeaders.Authorization 
+		     = new System.Net.Http.Headers.AuthenticationHeaderValue("Basic", Convert.ToBase64String(byteArray));
+
+        var response = await client.GetAsync("https://exemple.com");
+        var responseString = await response.Content.ReadAsStringAsync();
+
+        Console.WriteLine(responseString);
+    }
+}
 ```
-WebClient client = new WebClient();
-string credentials = Convert.ToBase64String(Encoding.ASCII.GetBytes("username:password"));
-client.Headers[HttpRequestHeader.Authorization] = "Basic " + credentials;
-string response = client.DownloadString("url");
-Console.WriteLine(response);
-```
+Si tout se passe bien, vous devriez voir la réponse de "https://exemple.com" affichée dans votre console.
 
-Le code crée un WebClient, encode un nom d'utilisateur et un mot de passe en base64 et les ajoute aux en-têtes de la requête pour une authentification de base. Enfin, la réponse du serveur est téléchargée et affichée dans la console.
+## Exploration en Profondeur
 
-# Petite plongée:
-L'envoi de requêtes HTTP avec une authentification de base a été introduit dans la version 1.1 du protocole HTTP. Certaines alternatives à cette méthode incluent l'utilisation de jetons d'authentification tels que JWT ou OAuth.
+L'authentification de base HTTP est un mécanisme d'authentification couramment utilisé car il est simple à mettre en œuvre. Cependant, il est moins sécurisé que des alternatives plus modernes comme l'authentification à jetons.
 
-En ce qui concerne l'implémentation, il est important de noter que l'authentification de base n'est pas considérée comme étant très sécurisée car les informations d'authentification sont envoyées en clair dans les en-têtes de la requête. Il est donc recommandé d'utiliser cette méthode en conjonction avec d'autres mesures de sécurité.
+Le code ci-dessus est assez direct. Il crée un en-tête d'autorisation avec des informations codées en base64 pour notre demande HTTP. Le code utilise HttpClient qui est la façon recommandée d'envoyer des requêtes HTTP en C# depuis .NET 4.5.
 
-# À voir également:
-- [HTTP Basic Authentication](https://www.w3.org/Protocols/rfc2616/rfc2616-sec11.html)
-- [JWT vs Basic Authentication](https://stackoverflow.com/questions/39909424/json-web-token-jwt-vs-basic-authentication)
+## Voir Aussi
+
+Visitez les liens ci-dessous pour plus d'informations :
+- [Documentation officielle de Microsoft sur HttpClient](https://docs.microsoft.com/fr-fr/dotnet/api/system.net.http.httpclient)
+- [Un bon tutoriel sur l'authentification HTTP en C#](https://www.c-sharpcorner.com/UploadFile/2b876a/http-authentication-and-authorization-in-web-api/)
+- [Pourquoi utiliser l'authentification Basic over Digest](https://security.stackexchange.com/questions/9907/basic-vs-digest-authentication-over-http)

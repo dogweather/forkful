@@ -1,6 +1,6 @@
 ---
 title:                "Ladda ner en webbsida"
-html_title:           "Kotlin: Ladda ner en webbsida"
+html_title:           "Bash: Ladda ner en webbsida"
 simple_title:         "Ladda ner en webbsida"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,42 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
+## Vad och varför?
 
-Att ladda ner en webbsida innebär att hämta innehållet från en viss webbsida och spara det lokalt på din dator. Detta kan vara till nytta för programmerare eftersom det ger dem möjlighet att arbeta med webbinnehåll utan att behöva vara online.
+ladda ner en webbsida är processen att hämta alla data, inklusive HTML, CSS, JavaScript och bilder, från en server till din lokala maskin. Programmerare gör detta för att analysera, manipulera eller använda data i sina applikationer.
 
-Hur to:
+## Hur man gör:
 
-Exempel 1: Ladda ner och skriv ut innehållet från en webbsida.
+Här är ett exempel på hur du kan ladda ner en webbsida med Kotlin (version 2021) med hjälp av Ktor biblioteket.
 
 ```Kotlin
-val url = "www.example.com"
-val content = URL(url).readText()
+// Importera nödvändiga paket
+import io.ktor.client.*
+import io.ktor.client.request.*
+
+// Skapa en HTTP klient
+val client = HttpClient()
+
+// Definiera en funktion att hämta data
+suspend fun fetchData(url: String): String 
+{
+   return client.get(url)
+}
+
+// #### Använd funktionen för att hämta webbsida
+val content = fetchData("https://www.exemplifierande.se")
 println(content)
 ```
 
-Output: Innehållet från webbsidan på www.example.com kommer att skrivas ut i konsolen.
+## Djup Dykning 
 
-Exempel 2: Spara innehållet från en webbsida till en fil.
+Fastän finns mer moderna tekniker idag, behovet att hämta och bearbeta hela webbsidor är fortfarande relevant. Detta sker ofta i skrapning, testning och tjänstemässig integration.
 
-```Kotlin
-val url = "www.example.com"
-val content = URL(url).readText()
-File("myFile.txt").writeText(content)
-```
+Förutom Ktor, det finns andra bibliotek i Kotlin såsom Jsoup eller OkHttp som också kan användas för att enkelt hämta webbsidor. Valet mellan dessa beror ofta på specifika projektbehov och personliga preferenser.
 
-Output: Innehållet från webbsidan på www.example.com kommer att sparas i filen "myFile.txt".
+Eftersom vi hämtar data direkt från webbservern, är det viktigt att komma ihåg att alltid respektera ägarens begäran om bandbreddsanvändning och sekretess.
 
-Djupdykning:
+## Se också 
 
-Historisk kontext: Att ladda ner webbsidor har funnits sedan början av webben. Det var en vanlig funktion i webbläsare på 90-talet för att kunna använda webben offline. Idag används det främst av programmerare för utveckling och testning.
+För mer information och fördjupande kunskap, här är några användbara länkar:
 
-Alternativ: Det finns flera alternativ för att ladda ner webbsidor, men Kotlin's standard library som vi visade i exemplet ovan är ett enkelt och effektivt sätt att åstadkomma detta. Det finns också olika tredjepartsbibliotek som kan användas för mer avancerade funktioner.
+1. Ktor - [https://ktor.io/clients/index.html](https://ktor.io/clients/index.html) 
+2. Jsoup - [https://jsoup.org/](https://jsoup.org/) 
+3. OkHttp - [https://square.github.io/okhttp/](https://square.github.io/okhttp/) 
 
-Implementeringsdetaljer: I exemplet används funktionen "readText()" från klassen URL som finns i Kotlin's standard library för att läsa innehållet från webbsidan som en sträng. Det är också möjligt att använda "readLines()" för att läsa innehållet som en lista av rader eller "openStream()" för att läsa innehållet från webbsidan som en InputStream.
+För att lära dig mer om webbskrapning och etiska överväganden, kolla in dessa artiklar:
 
-Se också:
-
-- Kotlin's standard library: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/
-- Tredjepartsbibliotek för att ladda ner webbsidor: https://www.baeldung.com/java-download-file
-- Dokumentation för Java's URL-klass som också kan användas i Kotlin: https://docs.oracle.com/javase/8/docs/api/java/net/URL.html
+1. Webb skrapning - [https://en.wikipedia.org/wiki/Web_scraping](https://en.wikipedia.org/wiki/Web_scraping) 
+2. Etik av Web scraping - [https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01](https://towardsdatascience.com/ethics-in-web-scraping-b96b18136f01)

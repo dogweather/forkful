@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "Clojure: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 그 이유는? 
-현재 날짜를 가져오는 것은 프로그래머가 많이 사용하는 작업입니다. 이것은 현재 시간을 확인하고 현재 사용을 식별하는데 도움이 됩니다.
+## 무엇 & 왜?
 
-## 하는 법: 
+현재 날짜를 알아내는 것은, 시스템 세계에서 현재 시점을 파악하기 위해 프로그램 내에 이 시점에 맞춘 작업을 수행하는 경우에 필요합니다. 프로그래머들이 이를 구현하는 이유는 다양한 날짜/시간 기반의 함수, 로그, 통계 등에 이를 사용하기 위해서입니다.
+
+## 어떻게:
+
+Clojure는 현재 날짜를 얻기 위해 java.util.Date의 인스턴스를 생성하는 함수 `current-date`를 제공합니다.
+
 ```Clojure
-; 현재 날짜 가져오기
-(def today (java.util.Date.))
-
-; 날짜 포맷 지정 (예제: 2019년 1월 1일)
-; MMMM은 월의 이름을 나타내고, dd는 일을 나타냅니다.
-(java.time.format.DateTimeFormatter.ofPattern "MMMM dd, yyyy").format(today)
-;; => "January 01, 2019"
-
-; 현재 시간 가져오기
-; HH는 24시간 형식으로 시간을 나타냅니다.
-(java.time.format.DateTimeFormatter.ofPattern "HH:mm:ss").format(today)
-;; => "10:21:54"
-
+(import 'java.util.Date)
+(defn current-date []
+  (Date.))
 ```
 
-## 딥 다이브: 
-현재 날짜를 가져오는 작업은 Java 표준 라이브러리인 java.util.Date를 통해 가능합니다. Clojure는 Java 언어의 이점을 살려 이를 접근할 수 있습니다. 또한 java.time 패키지를 통해 더 많은 날짜 및 시간 관련 기능을 사용할 수 있습니다. 다른 대안으로는 clj-time이 있는데, 이는 Clojure에서 날짜 및 시간을 다루기 쉽게 도와줍니다. 이러한 라이브러리들을 사용하면 더 많은 기능을 활용할 수 있습니다.
+그리고 이 함수를 호출하여 현재 날짜를 얻을 수 있습니다:
 
-## 관련 정보: 
-- [Clojure docs: java.util.Date](https://clojure.org/reference/java_interop#java_util_Date)
-- [Oracle docs: java.time 패키지](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-- [clj-time 라이브러리](https://github.com/clj-time/clj-time)
+```Clojure
+(current-date)
+```
+
+이 코드의 출력은 현재 날짜와 시간에 대한 정보를 포함하는 java.util.Date 객체입니다.
+
+## 딥다이브하기:
+
+Clojure가 탄생한 이래로, 현재 날짜와 시간의 표현 방식은 여러 사람들에게 익숙한 java.util.Date 및 java.util.Calendar 객체를 참조하여 견고하게 유지되었습니다. 그러나 Java 8에서는 java.time 패키지를 도입하여 (알려진) 날짜 및 시간 관련 문제를 개선하고, 이들이 가진 가변성, 불명확성, 그리고 비효율성을 줄였습니다. Clojure 커뮤니티도 이에 착수하여 java.time 패키지의 API를 이용하는 일련의 라이브러리를 만들었습니다. 이것이 clj-time와 java-time 그리고 다른 것들입니다.
+
+## 참고하기:
+
+관련 참고 링크는 다음과 같습니다:
+1. Clojure 공식 웹사이트 - [Clojure.org](https://clojure.org/)
+2. Java의 java.util.Date API 문서 - [Java 8 API](https://docs.oracle.com/javase/8/docs/api/java/util/Date.html)
+3. Java의 java.time 패키지 API 문서 - [Java 8 API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
+4. clj-time GitHub 소스코드 - [clj-time](https://github.com/clj-time/clj-time)
+5. java-time GitHub 소스코드 - [java-time](https://github.com/dm3/clojure.java-time)

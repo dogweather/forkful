@@ -12,34 +12,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Downloading a web page is the process of retrieving the HTML code of a specific webpage from the internet. Programmers often do this in order to extract data or information from the webpage, which can then be used for a variety of purposes such as web scraping or data analysis.
+Downloading a web page is just grabbing its data onto your local machine. It's an important tool for programmers since it enables data mining, offline browsing, and website testing.
 
 ## How to:
 
-To download a web page using Bash, we can use the `curl` command. Here's an example of how to download the HTML code of Google's homepage:
+Straight to the show; let's download a webpage using Curl command in Bash:
 
 ```Bash
-curl https://www.google.com
+curl https://example.com > example.html
 ```
 
-This will return the HTML code of Google's homepage as the output of the command. We can then save this output to a file by using the `-o` flag followed by the name of the file we want to save it as:
+That's it. The webpage is down in 'example.html'. Now, to print it in the console:
 
 ```Bash
-curl -o google.html https://www.google.com
+curl https://example.com
 ```
 
-We can also specify the location where we want to save the file by providing the full path instead of just the file name.
+It's like Bash is reading the webpage for you.
 
-## Deep Dive:
+## Deep Dive
 
-In the early days of the internet, downloading web pages was a slow and cumbersome process. But with the development of faster internet speeds and advanced technologies, this process has become much more efficient and streamlined.
+Historically, this capability traces back to early internet days—when dial-up connections were still a thing. Now it's faster and more efficient.
 
-Besides `curl`, there are several other alternatives for downloading web pages in Bash such as `wget` and `lynx`. These commands offer similar functionalities with slight differences in their usage and capabilities.
+You might be thinking, 'What if I don't want to use Curl command?' Well, as a programmer, it's healthy to have choices, and you have `wget`. Here's how it's done:
 
-Behind the scenes, downloading a web page involves making a HTTP request to a web server and receiving a response containing the HTML code. This process is handled by protocols like TCP/IP and HTTP.
+```Bash
+wget https://example.com
+```
 
-## See Also:
+Unlike Curl, `wget` automatically stores the page in a file.
 
-- [Curl man Page](https://curl.se/docs/)
-- [Wget man Page](https://www.gnu.org/software/wget/)
-- [Lynx Homepage](https://lynx.browser.org/)
+Speaking of implementation details, both Curl and `wget` go through similar processes - a sequence of DNS resolution, TCP handshake, HTTP request, and then the actual data transfer.
+
+## See Also
+
+1. Curl vs. Wget: [https://daniel.haxx.se/docs/curl-vs-wget.html](https://daniel.haxx.se/docs/curl-vs-wget.html)
+2. Curl man page: [https://curl.haxx.se/docs/manpage.html](https://curl.haxx.se/docs/manpage.html)
+3. Wget man page: [https://www.gnu.org/software/wget/manual/wget.html](https://www.gnu.org/software/wget/manual/wget.html)

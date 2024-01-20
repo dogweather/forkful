@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Elm: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,46 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么和为什么？
-读取命令行参数是指从命令行中获取输入的过程，程序员这样做是为了使程序更加灵活和可配置。
+## 什么 & 为什么？
+命令行参数是在启动程序时，通过命令行传递给程序的参数。程序员之所以使用它们，是因为它们对定制程序行为非常有用，允许调整输入，从而改变输出或行为。
 
-如何：
+## 如何:
+在Elm中，您可以使用核心库的`Process.argv`函数来读取命令行参数。这是一个简单的例子：
+
 ```Elm
-import Platform exposing (worker)
+import Process
 
 main =
-    worker
-        { init = init
-        , update = update
-        , subscriptions = subscriptions
-        , view = view
-        }
-        
-        
--- 初始化函数
-init flags =
-    ( Model flags, Cmd.none )
-    
-    
--- 更新函数
-update msg model =
-    case msg of
-        SetArgs args ->
-            ( { model | args = args }, Cmd.none )
-
--- 订阅函数
-subscriptions model =
-    Sub.none
-
--- 视图函数
-view model =
-    text (toString model.args)
-        
+  Process.argv
+    |> List.map toString
+    |> List.intercalate " "
+    |> Console.log
 ```
 
-深入探索：
-读取命令行参数在计算机编程的历史中已经存在了很长一段时间，这种方法可以帮助程序员在运行程序时通过命令行输入不同参数来调整程序的行为。也可以通过使用其他编程语言如JavaScript来实现读取命令行参数的功能。
+运行`elm make Main.elm && ./Main hello world`，输出将是`hello world`。
 
-另请参阅：
-- [Elm Platform](https://elm-lang.org/)
-- [JavaScript Command Line Arguments](https://www.geeksforgeeks.org/javascript-command-line-arguments/)
+## 深度了解:
+Elm没有直接访问操作系统底层的能力，包括命令行参数。但是，Elm通过内置的`Process`模块提供了一种方式来读取这些参数。另外，因为Elm强调纯函数，所以它并不鼓励使用命令行参数来改变程序的行为，而更推荐使用明确的输入和输出。
+
+虽然Elm提供了访问命令行参数的方式，但在某些情况下，你可能想要使用更复杂的库，例如`optparse-applicative`，这是一个Haskell库，以更结构化的方式处理命令行参数。
+
+## 参见
+- [Elm Process](https://package.elm-lang.org/packages/elm/core/latest/Process)
+- [Elm Console](https://package.elm-lang.org/packages/elm-community/console/latest/)
+- [Haskell optparse-applicative](https://hackage.haskell.org/package/optparse-applicative)

@@ -1,7 +1,7 @@
 ---
-title:                "Sammanfogning av strängar"
-html_title:           "Kotlin: Sammanfogning av strängar"
-simple_title:         "Sammanfogning av strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -11,29 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Strängkonkatenering är när man slår ihop flera olika strängar till en långare sträng. Detta kan vara användbart när man vill skapa nya strängar utifrån befintliga. Programmerare använder sig ofta av detta för att skapa användarvänliga och dynamiska gränssnitt, eller för att skapa läsbar och organiserad kod.
 
-## Hur man gör:
-```Kotlin
-val name = "Anna"
-val lastName = "Johansson"
-val fullName = name + " " + lastName
-println(fullName)
-```
-Output: Anna Johansson
+String-konkatenering innebär att kombinera två eller flera strängdata tillsammans i en enda sträng. Programmerare gör det för att forma dynamiska meddelanden, bygga filvägar, och generera kod, bland annat.
 
-För att konkatenera strängar i Kotlin använder man operatören "+" för att enkelt slå ihop strängarna. Ett annat sätt är genom att använda en interpolationssträng, som låter dig inkludera variabler direkt i en sträng:
-```Kotlin
-val age = 25
-println("Jag är $age år gammal.")
+## Så här gör du: 
+
+För att konkatenera strängar i Kotlin, använd plus-operatorn (`+`) eller `plus` funktionen. Här är hur:
+
+```kotlin
+val hello = "Hej"
+val world = "Världen"
+val message = hello + " " + world // "Hej Världen"
+println(message)
+
+// eller
+
+val annanMeddelande = hello.plus(" ").plus(world) // "Hej Världen"
+println(annanMeddelande)
 ```
-Output: Jag är 25 år gammal.
 
 ## Fördjupning:
-Strängkonkatenering är en viktig del av stränghantering i programmering, och har funnits sedan de tidiga dagarna av programmering. I vissa språk används en specialtecken för att visa strängkonkatenering, som "+" i Java och Python, eller "&" i C#. Jämfört med dessa språk erbjuder Kotlin en mer smidig och intuitiv syntax för att konkatenera strängar.
 
-Vid användning av en stor mängd strängkonkatenering, kan det vara mer effektivt att använda sig av en StringBuilder istället för att uppdatera en variabel enskilt. Detta leder till snabbare prestanda och minskad minnesanvändning.
+I äldre versioner av Kotlin, och i vissa andra språk, krävs det mer kod för att konkatenera strängar. Men i Kotlin, tack vare operatör överbelastning, är det mycket enklare. 
 
-## Se även:
-- [Kotlin Strings](https://kotlinlang.org/docs/reference/basic-types.html#strings)
-- [Alternatives to String Concatenation](https://www.baeldung.com/java-string-concatenation)
+Förutom `+` och `plus`, kan du använda `StringBuilder` för att konkatenera strängar vilket är mer lämpligt för långa och komplexa strängar eller när prestanda är viktig.
+
+Implementationsdetaljerna kan variera mellan olika versioner och plattformar, men generellt är `StringBuilder` snabbare när du lägger till många strängar.
+
+## Se också:
+
+- Officiell Kotlin dokumentation på string-konkatenering: [kotlinlang.org/docs/strings.html#string-literals](https://kotlinlang.org/docs/strings.html#string-literals)
+  
+- En närmare titt på `StringBuilder`: [baeldung.com/kotlin-stringbuilder](https://www.baeldung.com/kotlin-stringbuilder)
+
+- Diskussioner om strängkonkatenering på Stack Overflow: [stackoverflow.com/questions/tagged/kotlin+string-concatenation](https://stackoverflow.com/questions/tagged/kotlin+string-concatenation)

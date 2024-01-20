@@ -1,7 +1,7 @@
 ---
-title:                "Drukowanie wyników debugowania"
-html_title:           "Java: Drukowanie wyników debugowania"
-simple_title:         "Drukowanie wyników debugowania"
+title:                "Drukowanie komunikatów debugowania"
+html_title:           "Haskell: Drukowanie komunikatów debugowania"
+simple_title:         "Drukowanie komunikatów debugowania"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Testing and Debugging"
@@ -10,39 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Czym i dlaczego?
+## Co i dlaczego?
 
-W druku kodów debugowania chodzi o wyświetlanie informacji o przebiegu działania programu w celu znalezienia i naprawienia błędów. Programiści używają go, aby zrozumieć, co się dzieje w kodzie i gdzie mogą pojawić się problemy.
+Wyświetlanie informacji debugujących (debug output) to technika wykorzystywana przez programistów do śledzenia i rozwiązywania problemów z kodem. Ułatwia to zrozumienie, co dzieje się wewnątrz programu podczas jego działania.
 
-# Jak to zrobić:
+## Jak to zrobić:
 
-Kodowania przykładów i wyjścia przykładów w blokach kodu ```Java ...``` 
+Chcesz wydrukować wiadomość debugowania w Javie? To jest bardzo proste. Wykorzystaj standardowe wyjście System.out lub wyjście błędów System.err. Przykład:
 
-Przykład 1:
 ```Java
-System.out.println("Debug message: Program starting.");
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Debugging Started");
+        int a = 10;
+        int b = 0;
+        try {
+            int result = a / b;
+            System.out.println("Result: " + result);
+        } catch (ArithmeticException e) {
+            System.err.println("Błąd! Dzielisz przez zero");
+        }
+        System.out.println("Debugging Finished");
+    }
+}
 ```
-Wyjście:
+W wyniku tego otrzymasz:
+
 ```
-Debug message: Program starting.
-```
-Przykład 2:
-```Java
-int x = 5;
-System.out.println("Debug message: x = " + x);
-```
-Wyjście:
-```
-Debug message: x = 5
+Debugging Started
+Błąd! Dzielisz przez zero
+Debugging Finished
 ```
 
-# Głębsze zanurzenie:
+## Głębsza analiza:
 
-Kodowanie debugowania ma swoje korzenie w przeszłości, kiedy programiści musieli przeszukiwać długie listy komend lub arkusze papieru, aby znaleźć błędy. Dzisiaj istnieje wiele alternatywnych metod, takich jak debugger, które pozwalają programistom na łatwiejsze znajdowanie błędów. Implementacja polega na wprowadzeniu funkcji wyświetlania informacji w kodzie i kompilowaniu go.
+- **Historyczne kontekst**: W początkach Javy, programiści często korzystali z instrukcji wydruku do śledzenia i debugowania swojego kodu. Od tego czasu nic się nie zmieniło!
 
-# Zobacz również:
+- **Alternatywy**: Chociaż System.out i System.err to najprostsze sposoby na wydrukowanie informacji debugujących, są inne możliwości, takie jak wykorzystanie loggerów (np. Logger od SLF4J lub Log4J), które umożliwiają bardziej rozbudowane i konfigurowalne logowanie.
 
-Jeśli chcesz dowiedzieć się więcej o debuggingu i innych narzędziach dla programistów, polecamy przeczytać poniższe źródła:
-- [10 przydatnych technik debugowania w Javie](https://pl.twinmeta.com/how-to-debug-java-application/)
-- [Wyjaśnienie debugowania w Java z przykładami](https://przeprogramowani.pl/programowanie-wysokiego-poziomu/debugowanie-w-java/)
-- [Oficjalne dokumentacje Oracle o debugowaniu w Javie](https://docs.oracle.com/javase/8/docs/technotes/tools/windows/jdb.html)
+- **Szczegóły implementacji**: System.out i System.err to statyczne finalne zmienne, które są instancjami klasy PrintStream. Ta klasa zawiera metody pozwalające na zapisanie różnych typów danych, w tym liczby całkowitej, liczby zmiennoprzecinkowej, znaku i łańcucha.
+
+## Zobacz także:
+
+- [Logging w Javie](https://docs.oracle.com/javase/8/docs/technotes/guides/logging/overview.html)
+- [Logger od SLF4J](http://www.slf4j.org/manual.html)
+- [Logger od Log4J](https://logging.apache.org/log4j/2.x/manual/introduction.html)

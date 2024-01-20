@@ -1,7 +1,7 @@
 ---
-title:                "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem"
-html_title:           "PHP: Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem"
-simple_title:         "Wysyłanie żądania HTTP z podstawowym uwierzytelnieniem"
+title:                "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+html_title:           "Arduino: Wysyłanie żądania http z podstawowym uwierzytelnieniem"
+simple_title:         "Wysyłanie żądania http z podstawowym uwierzytelnieniem"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## Co i Dlaczego? 
 
-Wysyłanie żądania HTTP z podstawową autoryzacją jest jedną z najczęściej wykorzystywanych technik przez programistów, gdy chcą uzyskać dostęp do chronionych zasobów na serwerze. Dzięki temu można skutecznie uwierzytelnić użytkownika i pozwolić mu na dostęp do prywatnych danych lub wykonywanie określonych operacji na serwerze.
+Wysyłanie żądania HTTP z podstawowym uwierzytelnianiem to proces, w którym klient komunikuje się z serwerem, przekazując dane uwierzytelniające (z reguły login i hasło) w nagłówku żądania. Programiści robią to, aby uzyskać dostęp do zasobów serwera, które są chronione i wymagają uwierzytelniania.
 
-## Jak to zrobić?
+## Jak to zrobić:
+
+Aby wysłać żądanie HTTP z podstawowym uwierzytelnianiem w PHP, możesz skorzystać z biblioteki cURL. Poniżej znajduje się przykładowy kod:
 
 ```PHP
-// Przykładowe żądanie HTTP z podstawową autoryzacją
 $ch = curl_init();
 
-curl_setopt($ch, CURLOPT_URL, 'http://example.com/protected-resource');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_URL, 'https://twojastrona.pl/zasoby');
 curl_setopt($ch, CURLOPT_HTTPAUTH, CURLAUTH_BASIC);
-curl_setopt($ch, CURLOPT_USERPWD, 'username:password');
+curl_setopt($ch, CURLOPT_USERPWD, 'login:haslo');
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 
 $response = curl_exec($ch);
 
-// Wyświetlenie odpowiedzi
+curl_close($ch);
+
 echo $response;
 ```
 
-W powyższym przykładzie używamy funkcji `curl_setopt` do ustawienia opcji żądania. Przede wszystkim, używamy `CURLOPT_HTTPAUTH` i ustawiamy go na `CURLAUTH_BASIC`, aby włączyć autoryzację podstawową. Następnie, używamy `CURLOPT_USERPWD` do przekazania loginu i hasła w formacie `username:password`. W odpowiedzi otrzymamy chroniony zasób z serwera, który możemy wyświetlić przy użyciu funkcji `echo`.
+Ten skrypt wysyła żądanie GET do 'https://twojastrona.pl/zasoby' z podstawowym uwierzytelnianiem, używając loginu 'login' i hasła 'haslo'. Wynik żądania jest drukowany na standardowym wyjściu.
 
-## Głębszy zanurzenie
+## Głębsze spojrzenie:
 
-Wysyłanie żądań HTTP z podstawową autoryzacją jest możliwe dzięki wbudowanej funkcji `curl` w PHP. Jest to popularne rozwiązanie, gdyż nie ma potrzeby instalacji dodatkowych bibliotek lub zewnętrznych modułów. Jednak istnieją także inne metody implementacji autoryzacji podstawowej, takie jak wykorzystanie nagłówka `Authorization` lub użycie klasy `HttpBasicAuth`z frameworka Symfony.
+Podstawowe uwierzytelnianie HTTP to metoda uwierzytelniania, której używano w internetowej komunikacji z serwerem już od początku lat 90. Udostępnia ona podstawowe zabezpieczenia, ale nie jest zalecana w przypadku bardzo wrażliwych danych, ponieważ hasło jest przesyłane jako dane zakodowane w Base64, co jest dość łatwe do odczytania. 
 
-## Zobacz także
+Alternatywą dla podstawowego uwierzytelniania jest uwierzytelnianie znaku, uwierzytelnianie OAuth albo używanie tokenów JWT. Te metody są zazwyczaj bezpieczniejsze i skuteczniejsze.
 
-- [Dokumentacja PHP - curl_setopt](https://www.php.net/manual/en/function.curl-setopt.php)
-- [Dokumentacja PHP - CURLAUTH_BASIC](https://www.php.net/manual/en/curl.constants.php)
-- [Podstawowa autoryzacja - W3C](https://tools.ietf.org/html/rfc7235#section-2.3)
+Szczegóły implementacji zależą od konkretnego przypadku. W wybranych sytuacjach możesz potrzebować dostosować czas wygaśnięcia żądania, obsłużyć różne kody odpowiedzi, lub zaimplementować obsługę błędów.
+
+## Zobacz również:
+
+Tutaj znajdziesz więcej informacji na ten temat:
+
+1. Autorytet informacji na temat PHP: [PHP.net](https://www.php.net/manual/en/book.curl.php)
+2. Pewne zalecenia na temat autoryzacji HTTP: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+3. Jak zabezpieczyć dane uwierzytelniające przy przesyłaniu: [OWASP](https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html)

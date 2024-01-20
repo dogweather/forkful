@@ -10,40 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robimy?
+## Co to i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to proces ustalania konkretnej daty, dodając lub odejmując konkretne ilości dni, tygodni, miesięcy lub lat od/w danej dacie. Programiści robią to, aby manipulować i wykorzystywać daty w sposób istotny dla ich aplikacji, np. przewidywanie daty wygaśnięcia subskrypcji lub śledzenie okresu próbnego.
 
-Obliczanie daty w przyszłości lub przeszłości jest działaniem, które polega na wykorzystaniu języka programowania do wyliczenia daty, która znajduje się w przyszłości lub przeszłości od aktualnej daty. Programiści często wykonują to, aby automatyzować procesy lub prowadzić obliczenia na danych zawierających informacje o dacie.
-
-## Jak to zrobić?
-
-```Elixir
-# Obliczanie dzisiejszej daty
-Date.utc_today()
-
-# Dodanie 3 dni do dzisiejszej daty
-Date.utc_today() |> Date.add(3)
-
-# Odejmowanie 5 dni od dzisiejszej daty
-Date.utc_today() |> Date.add(-5)
-
-# Wyświetlenie daty w innym formacie
-Date.utc_today() |> Date.to_string("{YYYY}-{0M}-{0D}")
+## Jak to robić:
+Elixir umożliwia obliczanie dat w przyszłości lub przeszłości za pomocą wbudowanego modułu `Date`. 
+Sprawdźmy przykładowy kod:
+```elixir
+iex> d = Date.from_iso8601!("2021-04-01")      
+~D[2021-04-01]
+iex> Date.add(d, 10)                       
+~D[2021-04-11]
 ```
+Pierwsza linia kodu tworzy datę "2021-04-01". W drugiej linii dodajemy 10 dni do tej daty, a wynik to "2021-04-11".
 
-Przykładowy wynik:
-```
-2022-01-01
-```
+## Dogłębne zrozumienie:
+W historii, do Elixir 1.3 wprowadzenie modułu `Date` uproszczone były obliczenia dat. Przed tym programiści musieli polegać na zewnętrznym kodzie lub skomplikowanych obliczeniach.
 
-## Pogłębione informacje
+Jeśli chodzi o alternatywy, czasami może być konieczne korzystanie z modułu `DateTime` lub `NaiveDateTime` dla bardziej złożonych manipulacji z datą i czasem.
 
-1. W przeszłości, obliczanie daty w przyszłości lub przeszłości było bardzo czasochłonnym procesem, ponieważ wymagało manualnego liczenia dni. Dzięki rozwojowi języków programowania, takich jak Elixir, ten proces stał się prostszy i szybszy.
-2. Alternatywą dla Elixir może być użycie języków programowania takich jak Java czy Python, które również posiadają funkcje do obliczania daty.
-3. Obliczanie daty w przyszłości lub przeszłości wymaga dokładnego zrozumienia kalendarza gregoriańskiego oraz sposobu jego liczenia dni.
+Szczegóły implementacji obejmują korzystanie z funkcji `Date.add/2`, która dodaje określoną liczbę dni do podanej daty. Jest ona zaprojektowana tak, aby poprawnie obsługiwać przestępne lata i innych skomplikowanych kalendarzowych rzeczy.
 
-## Zobacz również
-
-Linki do źródeł związanych z obliczaniem daty w przyszłości lub przeszłości:
-- Dokumentacja Elixir: https://hexdocs.pm/elixir/master/Date.html
-- Przykładowy kod w języku Python: https://www.programiz.com/python-programming/datetime/strptime
-- Funkcja w języku Java: https://docs.oracle.com/javase/8/docs/api/java/util/Calendar.html
+## Zobacz też:
+- Elixir `Date` module: https://hexdocs.pm/elixir/Date.html 
+- Elixir School lesson on `Date`, `Time` and `DateTime`: https://elixirschool.com/en/lessons/basics/date-time

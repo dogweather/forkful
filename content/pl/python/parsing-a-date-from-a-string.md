@@ -1,7 +1,7 @@
 ---
-title:                "Przetwarzanie daty z ciągu znaków"
-html_title:           "Python: Przetwarzanie daty z ciągu znaków"
-simple_title:         "Przetwarzanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,30 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czego i Dlaczego?
+## Co i dlaczego?
 
-Sparsowanie daty ze stringa to proces przekształcania tekstu reprezentującego datę na obiekt daty, który może być wykorzystany w programie. Programiści wykonują tę operację głównie w celu odczytania i manipulacji danymi datowymi.
+Analiza daty z ciągu znaków to proces przekształcania tekstu w formacie daty (na przykład "13 grudnia 2021") na dane, które Python może przeczytać jako datę. Robimy to, aby ułatwić manipulowanie danymi daty i czasu, sortowanie, porównywanie itd.
 
-## Jak to Zrobić?
+## Jak to zrobić:
+
+W Pythonie istnieje build-in moduł o nazwie `datetime` do obsługi dat i czasu. Możemy użyć metody `strptime` z tego modułu do analizy daty z ciągu znaków.
 
 ```Python
 from datetime import datetime
 
-date_string = "20/01/2020"
-parsed_date = datetime.strptime(date_string, "%d/%m/%Y")
-print(parsed_date)
+data_string = '13 grudnia 2021'
+data = datetime.strptime(data_string, '%d %B %Y')
 
-# Output: 2020-01-20 00:00:00
+print(data)
 ```
 
-W powyższym przykładzie wykorzystano moduł ```datetime``` oraz metodę ```strptime()```, która odczytuje format daty i zwraca obiekt daty. Należy pamiętać, że format daty musi być dokładnie zgodny z formatem w stringu, w przeciwnym razie pojawi się błąd.
+Po uruchomieniu tego kodu, otrzymamy:
 
-## Głębsze Zagadnienia
+```Python
+2021-12-13 00:00:00
+```
 
-Sparsowanie dat z stringa jest problemem, który pojawił się wraz z rozwojem programowania komputerowego. Wcześniej daty były przechowywane w postaci liczb, a programiści musieli sami zamieniać je na odpowiedni format. Alternatywnym sposobem jest użycie modułu ```re``` i wyrażenia regularnego do wyszukania dat w tekście. Implementacja parsowania dat zależy od języka programowania i dostępnych bibliotek.
+Po prostu przekazujemy nasz ciąg daty i format daty do metody `strptime` i voilà! Mamy naszą datę.
 
-## Zobacz Również
+## Deep Dive:
 
-Więcej informacji na temat parsowania dat w Pythonie można znaleźć w dokumentacji: https://docs.python.org/3/library/datetime.html.
+Python oferuje wiele podejść do analizy dat, właściwie wyboru która ścieżka do podążania zależy od specyficznych wymagań projektu. Oprócz `datetime`, inne popularne moduły to `dateutil` i `arrow`, które oferują większą elastyczność i łatwość użycia, choć mogą wymagać dodatkowej instalacji.
 
-Jeśli interesuje Cię temat dat i czasu w programowaniu, polecamy również skorzystać z biblioteki ```arrow```, która zawiera szereg przydatnych funkcji: https://arrow.readthedocs.io/en/latest/.
+Podczas pracy z `datetime`, ważne jest, aby dokładnie zrozumieć, jak działa formatowanie daty i czasu Pythona. Chociaż to nie jest skomplikowane, różne formaty mogą być mylące. Na przykład `%d` oznacza dzień miesiąca jako liczbę, a `%B` oznacza pełną nazwę miesiąca. Więcej informacji na temat formatowania można znaleźć w [dokumentacji Pythona](https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes).
+
+## Zobacz też:
+
+1. Dokumentacja Pythona na temat `datetime`: https://docs.python.org/3/library/datetime.html
+2. Dokumentacja Pythona na temat formatowania czasu: https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes
+3. Moduł `dateutil`: https://dateutil.readthedocs.io/en/stable/
+4. Moduł `arrow`: https://arrow.readthedocs.io/en/latest/

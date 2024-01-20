@@ -1,7 +1,7 @@
 ---
-title:                "Ausgabe von Fehlersuche"
-html_title:           "Elm: Ausgabe von Fehlersuche"
-simple_title:         "Ausgabe von Fehlersuche"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Testing and Debugging"
@@ -10,27 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist das und warum machen Programmierer es?
+## Was & Warum?
 
-Printing Debug Output ist eine Möglichkeit für Programmierer, Daten und Prozesse in ihren Code zu integrieren, um Probleme oder Fehler zu identifizieren und zu debuggen. Es ist eine effektive Methode, um den Ablauf des Codes zu überwachen und zu verstehen, was genau passiert. Das erleichtert die Fehlerbehebung und spart Zeit und Mühe bei der Entwicklung.
+Debug-Ausgabe drucken ist die Methode zur Kontrolle und Überwachung des Programmablaufs zur Fehlersuche. Programmierer tun dies, um verborgene Fehler oder unerwartete Verhaltensweisen in ihrer Software zu entdecken und zu beheben.
 
-Wie geht's?
+## So geht's:
 
-Debug Printing in Elm ist einfach, da die Sprache selbst Debugging-Tools wie den "Debug.log" -Befehl bietet. Durch Einbeziehung dieser Befehle in den Code können Entwickler verschiedene Daten wie Variablen, Musterabgleiche und Funktionseingaben in der Konsole ausgeben lassen. Hier ist ein Beispiel:
+In Elm benutzen wir das `Debug.log` Werkzeug, um Debug-Ausgaben zu drucken. Hier ist ein einfacher Beispielcode:
 
+```Elm
+import Html exposing (Html, text)
+import Debug
+
+main =
+    Debug.log "ich bin ein Debug-Statement" (text "Hello Elm World!")
 ```
-Elm.Debug.log "Gesamtkosten" (berechneGesamtkosten rechnung)
-```
 
-Dieser Befehl gibt den aktuellen Wert der Funktion "berechneGesamtkosten" in der Konsole aus, was für die Überprüfung der Ergebnisse und die Fehlerbehebung sehr nützlich sein kann.
+Laufen Sie dieses Programm und Sie werden sehen, im Konsolenfenster wird "ich bin ein Debug-Statement" und "Hello Elm World!" ausgegeben.
 
-Tiefer Einblick
+## Tiefer Eintauchen:
 
-Zurück zu den Anfängen der Softwareentwicklung mussten Programmierer verschiedene manuelle Methoden verwenden, um Bugs in ihrem Code zu finden und zu beheben. Mit dem Aufkommen von Debugging-Tools wie Print-Statements wurde dieser Prozess automatisiert und vereinfacht. Alternativen wie Debugging-Symbole und Tools zur Code-Analyse sind ebenfalls verfügbar, aber Print-Statements sind immer noch eine beliebte Wahl aufgrund ihrer Einfachheit und Wirksamkeit.
+Das `Debug.log` Werkzeug hat eine lange Geschichte in der Programmiersprache Elm und ist ein unverzichtbares Werkzeug für Entwickler. Es bietet eine einfache Methode, um Informationen über den Zustand Ihres Programms während der Ausführung auszugeben.
 
-In Elm gibt es zwei Arten von Debug-Befehlen: "Debug.log" und "Debug.todo". Der letztere wird verwendet, um bestimmte Abschnitte des Codes zu markieren, die noch nicht implementiert sind, während ersterer zum Ausdrucken von Werten verwendet wird. Ein weiteres nützliches Feature sind die Debugging-Funktionen in der Chrome-Entwicklerkonsole, die speziell für Elm-Code entwickelt wurden.
+Es gibt Alternativen wie die Nutzung von `Debug.todo`, aber diese hat einen anderen Zweck. `Debug.todo` zwingt Sie zu einer späteren Umsetzung, weil das Programm sonst nicht kompiliert.
 
-Sieh dir auch an
+`Debug.log` implementiert wird, indem eine Funktion erstellt wird, die eine Zeichenkette und einen Wert erhält. Die Funktion gibt dann den Wert unverändert zurück, aber sie druckt auch die Zeichenkette und eine Darstellung des Werts auf die Konsole.
 
-- Elm-Dokumentation zum Debugging: https://guide.elm-lang.org/debugging/
-- Stack Overflow Diskussion über die Wirksamkeit von Debug-Statements: https://stackoverflow.com/questions/569272/how-can-i-debug-my-javascript-code/569329#569329
+## Siehe Auch:
+
+Für mehr Informationen über `Debug.log` und andere ähnliche Funktionen in Elm, checken Sie die offiziellen Elm Dokumentation: https://package.elm-lang.org/packages/elm/core/latest/Debug
+
+Für eine detailliertere Diskussion darüber, wie man Debugging in Elm effektiv nutzt, schauen Sie sich diese großartige Ressource an: https://elmprogramming.com/debugging.html

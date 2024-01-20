@@ -1,7 +1,7 @@
 ---
-title:                "Versalisering av en sträng"
-html_title:           "Fish Shell: Versalisering av en sträng"
-simple_title:         "Versalisering av en sträng"
+title:                "Gör om en sträng till versaler"
+html_title:           "Fish Shell: Gör om en sträng till versaler"
+simple_title:         "Gör om en sträng till versaler"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Kapitalisering av en sträng är processen att göra den första bokstaven till en stor bokstav och resten av bokstäverna till små bokstäver. Programmare gör detta för att göra utdata mer lättläslig och enhetlig med kodningsstandarder.
+## Vad & Varför?
 
-## Hur man:
-Fish Shell erbjuder flera sätt att kapitalisera en sträng. Här är några exempel: 
+Kapitalisering av en sträng innebär att göra den första bokstaven i varje ord stort. Programmerare gör detta för att förbättra läsbarheten och presentationen av text i program.
+
+## Hur man gör:
+
+Här är ett exempel om hur man kapitaliserar en sträng i Fish Shell.
 
 ```Fish Shell
-# använd kommandot string capitalize för att göra den första bokstaven stor
-echo "programmering är roligt" | string capitalize
-==> Programmering är roligt
-
-# använd set-funktionen för att ändra storleken på alla bokstäver i en sträng 
-set str = "FISH SHELL"
-echo $str
-==> FISH SHELL
-set str (string tolower $str)
-echo $str
-==> fish shell
-set str (string toupper $str)
-echo $str
-==> FISH SHELL
-
-# använd sed för att ersätta den första bokstaven med en stor bokstav 
-echo "hello world" | sed 's/^./\U&/'
-==> Hello world
+function to_uppercase --description "Konverterar första bokstaven i varje ord till stor"
+    set -l str $argv
+    echo (string upper $str)
+end
 ```
 
-## Djupdykning:
-Kapitalisering av en sträng har funnits sedan de tidigaste programmeringsspråken och används ofta för att bryta ner ord i mer lättläsliga delar. Det finns också flera olika sätt att göra detta, som inkluderar kommandon som ```tr```, ```sed``` och ```awk```. Fish Shell erbjuder dock en snabb och enkel metod för att kapitalisera strängar med hjälp av inbyggda funktioner.
+Låt oss pröva det.
 
-## Se också:
-- Fish Shell dokumentation för string capitalize kommandot (https://fishshell.com/docs/current/cmds/string.html#capitalize)
-- Wikipedia artikeln om strängmanipulation (https://sv.wikipedia.org/wiki/Str%C3%A4ngmanipulation)
+```Fish Shell
+> to_uppercase "detta är en teststräng"
+DETTA ÄR EN TESTSTRÄNG
+```
+
+## Fördjupning:
+
+Historiskt sett har metoder för strängkapitalisering sitt ursprung i behovet av att framhäva titlar och avsnittsöverskrifter inom textbehandling. 
+
+I Fish Shell 3.0 inleddes stöd för inbyggda strängfunktioner som 'string upper', vilket förenklade strängmanipulering.
+
+Alternativt kan du använda awk eller sed för att kapitalisera en sträng, men detta kan bli mer komplicerat och mindre läsbart, särskilt för större scripts.
+
+För implementering, se till att använda (string upper) operatören som förvandlar alla små bokstäver i ett strängargument till stora bokstäver. Om ingen string ges, läser och bearbetar den från stdin.
+
+## Se även:
+
+- [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
+- [Tutorial för Fish Shell Scripting](http://fishshell.com/docs/current/tutorial.html)
+- [Fish Shell GitHub Repo](https://github.com/fish-shell/fish-shell)

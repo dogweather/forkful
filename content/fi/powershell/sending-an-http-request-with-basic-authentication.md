@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikoinnilla http-pyynnön lähettäminen"
-html_title:           "PowerShell: Perusautentikoinnilla http-pyynnön lähettäminen"
-simple_title:         "Perusautentikoinnilla http-pyynnön lähettäminen"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,33 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mikä & Miksi?
 
-Lähettäminen HTTP-pyynnön perusautentikoinnin kanssa on tapa lähettää pyyntö verkkosivulle, jossa tarvitaan todennus käyttäjän vahvistamiseksi. Kehittäjät käyttävät tätä tekniikkaa varmistaakseen turvallisen ja luotettavan pääsyn sivustolle.
+Lähettäminen HTTP-pyynnön perusautentikoinnilla tarkoittaa pyynnön lähettämistä joko GET- tai POST-menetelmän avulla, johon sisältyy käyttäjän tunnistaminen salasanan ja käyttäjänimen avulla. Ohjelmoijat tekevät tämän saadakseen pääsyn suojattuihin tietolähteisiin tai webbipalveluihin.
 
-# Miten:
+## Näin tehdään:
 
+Voit lähettää HTTP-pyynnön PowerShellissa käyttäen `Invoke-WebRequest` -komentoa. Esimerkiksi:
+
+```PowerShell
+# Määritä URL, käyttäjänimi ja salasana
+$url = 'https://esimerkki.com'
+$username = 'kayttajanimi'
+$password = 'salasana'
+
+# Luo aitouskoodi
+$pair = "$($username):$($password)"
+$encodedCreds = [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes($pair))
+$basicAuthValue = "Basic $encodedCreds"
+
+# Luo pyyntö
+$headers = @{
+    Authorization = $basicAuthValue
+}
+
+# Lähetä pyyntö
+$response = Invoke-WebRequest -Uri $url -Method Get -Headers $headers
+
+# Tulosta vastaus
+$response.StatusCode
 ```
-PowerShell
-$request = [System.Net.WebRequest]::Create("url")
-$credentials = New-Object System.Net.NetworkCredential("username", "password")
-$request.Credentials = $credentials
-$response = $request.GetResponse()
-$responseStream = $response.GetResponseStream()
-$reader = New-Object System.IO.StreamReader($responseStream)
-$data = $reader.ReadToEnd()
-```
 
-Esimerkissa luodaan HTTP-pyyntö määritettyyn URL-osoitteeseen ja annetaan vaadittavat käyttäjän tiedot. Sitten vastaus tallennetaan muuttujaan ja luetaan vastauksen tietoja.
+Yllä oleva koodi luo HTTP GET -pyynnön, sisältäen siihen perusautentikoinnin. Vastauksenä saat HTTP-tilakoodin.
 
-# Syväsukellus:
+## Syvempi sukellus:
 
-Perusautentikoinnin käyttöönotto tuli tarpeelliseksi, kun internetin käyttö lisääntyi 1990-luvulla ja turvallisen tiedonsiirron tarve kasvoi. Nykyään on olemassa muitakin tapoja lähettää HTTP-pyyntöjä, kuten digest-autentikointi ja OAuth, mutta perusautentikointi on edelleen laajasti käytössä.
+HTTP perusautentikointi on osa Hypertext Transfer Protocol (HTTP) standardia, ja se on ollut käytössä lähes sen alkuperäisestä julkaisusta lähtien. Vaihtoehtona on käyttää esim. digest-todentamista tai OAuth-autentikointimenetelmiä.
 
-Perusautentikointi toimii lähettämällä käyttäjän tiedot salattuna pyyntönä verkkosivulle, joka sitten tarkistaa nämä tiedot hyväksyäkseen pääsyn. Tämä prosessi on ollut suhteellisen turvallinen, mutta se ei enää ole suositeltava tapa lähettää salattuja tietoja.
+Muista, että HTTP-perustodennus lähettää salasanan Base64-koodatussa muodossa, jota ei salata, joten sitä ei pidä käyttää yli suojaamattoman yhteys. HTTPS:tä suositellaan aina.
 
-# Katso myös:
+## Katso myös:
 
-- [HTTP-autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
-- [PowerShellin [System.Net.WebRequest]](https://docs.microsoft.com/en-us/dotnet/api/system.net.webrequest?view=netcore-3.1)
-- [HTTP-pyynnön lähetys PowerShellilla](https://devblogs.microsoft.com/scripting/weekend-scripter-use-the-webrequest-net-class-to-send-http-queries)
+- 'Invoke-WebRequest': [virallinen PowerShell-dokumentaatio](https://docs.microsoft.com/fi-fi/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7)
+- HTTP-todennus: [MDN Web Docs](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
+- 'Basic access authentication': [Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)

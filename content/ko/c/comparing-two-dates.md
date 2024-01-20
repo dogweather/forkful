@@ -1,6 +1,6 @@
 ---
 title:                "두 날짜 비교하기"
-html_title:           "C: 두 날짜 비교하기"
+html_title:           "C#: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "C"
 category:             "C"
@@ -12,38 +12,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-두 개의 날짜를 비교한다는 것은 무엇을 의미할까요? 프로그래머들이 왜 이를 하는 걸까요? 두 날짜를 비교하는 것은 간단하게 말하면 두 개의 날짜가 어떤 상관관계가 있는지를 알아보는 것입니다. 프로그래머들은 이를 통해 데이터를 정렬하고, 검색하고, 필터링하고, 다양한 연산을 수행할 수 있습니다.
+두 날짜를 비교한다는 것은 특정 시점의 두 날짜가 어떻게 서로 관련되어 있는지 결정하기 위함입니다. 프로그래머들은 이를 통해 이벤트 순서, 날짜 차이 계산 등 다양한 작업을 수행합니다.
 
-## 방법:
+## 실행 방법:
 
-다음은 두 개의 날짜를 비교하는 기본적인 방법을 보여줍니다. ```C
-#include <stdio.h>
+이제 C 프로그램으로 두 날짜를 비교하는 방법을 알아보겠습니다. `tm` 구조체와 `mktime`, `difftime` 함수를 사용합니다.
+
+```C
 #include <time.h>
+#include <stdio.h>
 
 int main() {
-    struct tm date1 = { .tm_year = 2020, .tm_mon = 6, .tm_mday = 1 };
-    struct tm date2 = { .tm_year = 2021, .tm_mon = 1, .tm_mday = 1 };
+    struct tm a = { .tm_year=2020-1900, .tm_mon=6, .tm_mday=17};
+    struct tm b = { .tm_year=2021-1900, .tm_mon=6, .tm_mday=17};
+    
+    time_t x = mktime(&a);
+    time_t y = mktime(&b);
 
-    if (difftime(mktime(&date1), mktime(&date2)) > 0) {
-        printf("Date 1 is later than Date 2.");
-    } else if (difftime(mktime(&date1), mktime(&date2)) < 0) {
-        printf("Date 1 is earlier than Date 2.");
-    } else {
-        printf("Date 1 and Date 2 are the same.");
-    }
-
+    double difference = difftime(y, x) / (60 * 60 * 24);
+    printf("날짜 차이는 %.f 일입니다\n", difference);
+    
     return 0;
 }
 ```
 
-위의 예제 코드는 C의 내장 함수인 ```difftime()```과 ```mktime()```을 사용하여 두 개의 날짜를 비교합니다. 이 함수들은 각각 두 시간 간의 차이를 계산하고, 날짜를 시간 형태로 변환하는 역할을 합니다.
+위 예제 출력:
 
-## 깊이있게 살펴보기:
+```C
+날짜 차이는 365 일입니다
+```
 
-두 날짜를 비교하는 방법은 시간이 지나면서 여러 가지가 있었지만, 현재는 C에서 제공하는 내장 함수를 이용하는 것이 가장 효율적입니다. 다른 프로그래밍 언어에서도 비슷한 함수를 제공하며, 필요에 따라 날짜와 시간을 바로 비교할 수도 있습니다. 또한 비교에 사용되는 시간의 정확성과 해상도를 고려해야 할 수 있습니다.
+## Deep Dive:
 
-## 더 알아보기:
+두 날짜를 비교하는 방법은 과거로 거슬러 올라가면 여러 방법이 있었습니다. 예를 들어, 두 날짜를 단순히 문자열로 변환하여 비교하는 경우도 있었지만, 이 방법은 날짜들 사이의 차이점을 계산하는 데 한계가 있었습니다. 그래서 최근에는 `tm` 구조체와 `difftime`을 사용하여 보다 정확하게 이 작업을 수행하게 되었습니다.
 
-- [C의 날짜 및 시간 관련 함수](https://www.tutorialspoint.com/cprogramming/c_date_time.htm)
-- [C++의 날짜 및 시간 관련 함수](https://www.cplusplus.com/reference/ctime/)
-- [다양한 프로그래밍 언어에서의 날짜 및 시간 비교 방법](https://www.journaldev.com/17184/how-to-compare-two-dates-in-java)
+또한, C언어에서 두 날짜 비교 외에도 `strftime`나 `strptime`과 같은 함수를 사용하여 날짜를 다른 형식으로 변환하는 것도 가능합니다.
+
+## 참고 자료:
+
+아래 링크들은 날짜 비교와 관련된 다양한 주제에 대한 추가 정보를 제공합니다.
+
+1. C library function - difftime(): https://www.tutorialspoint.com/c_standard_library/c_function_difftime.htm
+2. C library function - mktime(): https://www.tutorialspoint.com/c_standard_library/c_function_mktime.htm
+3. Manipulating date and time in C: https://www.geeksforgeeks.org/date-time-manipulation-c/

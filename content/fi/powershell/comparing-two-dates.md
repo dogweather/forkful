@@ -1,7 +1,7 @@
 ---
-title:                "Kahden päivämäärän vertailu"
-html_title:           "PowerShell: Kahden päivämäärän vertailu"
-simple_title:         "Kahden päivämäärän vertailu"
+title:                "Kahden päivämäärän vertaaminen"
+html_title:           "Bash: Kahden päivämäärän vertaaminen"
+simple_title:         "Kahden päivämäärän vertaaminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Dates and Times"
@@ -10,35 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja Miksi?
-Päivämäärien vertailu on tärkeä osa ohjelmointia, sillä se mahdollistaa ajallisten tietojen tarkastelun ja käsittelyn. Esimerkiksi eri tilausten toimituspäivämäärien vertailu auttaa seuraamaan tuotteiden saapumista ja varastonhallintaa.
+## Mitä & Miksi?
+
+Päivämäärien vertailu tarkoittaa kahta tai useampaa päivämäärää verrattavaksi niiden välisten erojen määrittelemiseksi. Se on hyödyllistä aikapohjaisten toimintojen hallinnassa, kuten tehtävien keston seurannassa tai ajanjaksojen laskemisessa.
 
 ## Miten:
+
+Käytä `DateTime`-luokkaa päivämäärien vertailemiseen PowerShellissa. Tässä on yksinkertainen esimerkki siitä, miten se toimii:
+
 ```PowerShell
-$date1 = Get-Date -Year 2020 -Month 08 -Day 15
-$date2 = Get-Date -Year 2020 -Month 08 -Day 20
+# Luodaan kaksi päivämäärää
+$date1 = Get-Date -Year 2021 -Month 6 -Day 12
+$date2 = Get-Date -Year 2021 -Month 7 -Day 12
 
-Write-Host "Ensimmäinen päivämäärä: $date1"
-Write-Host "Toinen päivämäärä: $date2"
-Write-Host "Onko ensimmäinen päivämäärä ennen toista? $date1 -lt $date2"
+# Vertaillaan päivämääriä
+if ($date1 -gt $date2) {
+    Write-Output "Date1 on myöhemmin kuin Date2"
+} elseif ($date1 -lt $date2) {
+    Write-Output "Date1 on aikaisemmin kuin Date2"
+} else {
+    Write-Output "Date1 ja Date2 ovat samana päivänä"
+}
 ```
 
-Tulostus:
+Tämä tuottaa seuraavan tuloksen:
 
-```
-Ensimmäinen päivämäärä: 15.8.2020 00:00:00
-Toinen päivämäärä: 20.8.2020 00:00:00
-Onko ensimmäinen päivämäärä ennen toista? True
+```PowerShell
+"Date1 on aikaisemmin kuin Date2"
 ```
 
-## Syväsukellus:
-Päivämäärien vertailu on ollut tärkeä osa ohjelmointia jo vuosien ajan. Aikaisemmin se oli tehtävä manuaalisesti, mutta nykyään PowerShell tarjoaa helpon ja nopean tavan suorittaa vertailuja. On myös mahdollista vertailla päivämääriä eri muodoissa, kuten merkkijonoina.
+## Syvempi sukellus:
 
-Vaihtoehtoisia tapoja vertailla päivämääriä ovat esimerkiksi käyttääkseen `Where-Object` komentoa tai DateTime-objekteja C#-koodin sisällä.
+Päivämäärien vertailu on ollut osa ohjelmointia sen alkuvaiheista lähtien. Aiemmin tämä oli monimutkainen prosessi, mutta modernit ohjelmointikielet, kuten PowerShell, tekevät siitä nopean ja yksinkertaisen toiminnon.
 
-Vertailun toteuttamisessa tulee ottaa huomioon päivämäärien aikavyöhykkeet ja muotoilu, jotta vertailu on mahdollisimman tarkka ja luotettava.
+Vaihtoehtoisissa ohjelmointikielessä, kuten Pythonissa tai JavaScriptissa, päivämäärien vertailu toimii samalla logiikalla, mutta syntaksi vaihtelee.
 
-## Katso myös:
-- [Get-Date cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7)
-- [DateTime-rakenne C#-koodissa](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=netcore-3.1)
-- [PowerShell vertailukomennot](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-dates?view=powershell-7)
+PowerShellissa `DateTime`-luokka hoitaa kaiken työn. Se huomioi sekä aikavyöhykkeet että karkausvuodet tehdessään vertailuja, joten koodaajan ei tarvitse huolehtia näistä yksityiskohdista.
+
+## Katsele myös:
+
+Vastaavat resurssit, jotka käsittelevät päivämäärien vertailua ja niiden käyttöä PowerShellin kanssa:
+
+- PowerShellin `TimeSpan`-luokka: [Linkki](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/timespan-object?view=powershell-7.1)
+- PowerShellin `DateInterval`-luokka: [Linkki](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0)

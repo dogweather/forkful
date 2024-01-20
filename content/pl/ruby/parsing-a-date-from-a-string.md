@@ -1,7 +1,7 @@
 ---
-title:                "Parsowanie daty z ciągu znaków"
-html_title:           "Ruby: Parsowanie daty z ciągu znaków"
-simple_title:         "Parsowanie daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Dates and Times"
@@ -11,30 +11,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Parsowanie daty z ciągu tekstowego to proces, w którym programista przekształca datę wyrażoną jako ciąg znaków w określonym formacie do obiektu daty, co ułatwia jej dalsze manipulacje. Programiści stosują to narzędzie, aby uprościć operacje z datami i uniknąć błędów w obliczeniach.
 
-## Jak to zrobić:
-Poniżej znajdują się przykłady kodu w języku Ruby, które pokazują, jak parsować datę z ciągu tekstowego:
+Analiza ostatniej daty z łańcucha polega na przekształceniu daty zapisanej jako łańcuch znaków (np. "2022-02-22") na obiekt Date, który używany jest powszechnie w programowaniu. Zasadniczo, to pozwala nam pracować z datami w bardziej logiczny i wydajny sposób.
 
-```ruby
-Date.strptime("11/30/2021", "%m/%d/%Y")
-#=> #<Date: 2021-11-30 ((2459595j,0s,0n),+0s,2299161j)>
-````
-Ta metoda ```strptime``` przyjmuje dwa argumenty - ciąg tekstowy z datą oraz format, w jakim ta data jest przedstawiana. Można użyć wielu różnych symboli, aby precyzyjnie zdefiniować format daty.
+## Jak zrobić:
 
-Inny przykład:
+Najprostszym sposobem na przekształcenie stringa do formatu Date w Ruby jest użycie klasy wbudowanej Date i metody `.parse`. Oto przykład:
 
-```ruby
-Date.strptime("2021/11/30", "%Y/%m/%d")
-#=> #<Date: 2021-11-30 ((2459595j,0s,0n),+0s,2299161j)>
+```Ruby
+require 'date'
+
+string_z_data = "2022-02-22"
+data = Date.parse(string_z_data)
+puts data
 ```
 
-Oba powyższe przykłady zwracają ten sam obiekt daty, ponieważ formaty są zgodne. Jednak jeśli format byłby inny, wynik również byłby inny.
+Gdy uruchomisz to wśród swojego kodu, otrzymasz:
 
-## Głębszy wgląd:
-Parsowanie daty z ciągu tekstowego jest popularną funkcjonalnością, która pozwala programistom pracować z datami w prosty i dokładny sposób. W przeszłości, zanim powstały nowoczesne biblioteki do obsługi dat, parsowanie dat było często uciążliwe i wymagające dużo kodu. Obecnie, programiści mogą wybierać spośród różnych narzędzi, takich jak biblioteki ActiveSupport lub DateTime, które ułatwiają pracę z datami.
+```Ruby
+# 2022-02-22
+```
 
-## Zobacz również:
-- [Ruby dokumentacja - metoda ```strptime```](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/Date.html#method-c-strptime)
-- [Biblioteka ActiveSupport](https://guides.rubyonrails.org/active_support_core_extensions.html)
-- [Biblioteka DateTime](https://ruby-doc.org/stdlib-2.7.2/libdoc/date/rdoc/DateTime.html)
+## Głębokie wgłębienie
+
+Analiza daty z łańcucha jest praktyką, która ma wiele zastosowań od początku działań programistycznych. Historycznie jest to proces niezbędny do pracy z danymi czasowymi w prosty i skuteczny sposób. 
+
+Alternatywą do `Date.parse` jest `Date.strptime`. Służy do analizy daty z łańcucha, pozwalając określić format łańcucha wejściowego.
+
+```Ruby
+require 'date'
+
+string_z_data = "2022-22-02"
+data = Date.strptime(string_z_data, "%Y-%d-%m")
+puts data
+```
+
+W tym przypadku output będzie taki sam jak w poprzednim przykładzie, ale metoda umożliwia bardziej precyzyjne przekształcanie stringów z określonym formatem.
+
+## Zobacz także
+
+Zapoznaj się z następującymi źródłami do głębszego wyjaśnienia:
+
+1. [Oficjalna dokumentacja Ruby - Klasa Date](https://ruby-doc.org/stdlib-3.0.0/libdoc/date/rdoc/Date.html)
+2. [Poradnik po angielsku o analizie daty z łańcucha](https://www.rubyguides.com/2015/12/ruby-time/) 
+3. [Różnice między .parse a .strptime](https://stackoverflow.com/questions/39159373/ruby-date-parse-vs-date-strptime)

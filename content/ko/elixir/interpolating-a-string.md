@@ -1,6 +1,6 @@
 ---
 title:                "문자열 보간하기"
-html_title:           "Elixir: 문자열 보간하기"
+html_title:           "Java: 문자열 보간하기"
 simple_title:         "문자열 보간하기"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,29 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜
+## 무엇이고 왜 사용하는가?
 
-문자열 내삽이란 무엇인지 먼저 알아보겠습니다. 간단히 말해서, 문자열 내삽이란 문자열 안에 변수를 삽입하는 것을 의미합니다. 이 방법을 사용하는 이유는, 코드를 보다 간결하고 가독성 있게 만들기 위해서입니다. 변수를 따로 문자열로 만들지 않고 바로 삽입함으로써, 코드를 작성할 때 불필요한 공간을 절약할 수 있습니다.
+문자열 보간이란 시퀀스의 변수를 문자열 텍스트로 삽입하는 작업입니다. 프로그래머는 코드의 유지관리를 용이하게 하기 위해 이를 사용하며, 이를 통해 문자열 내에서 변수의 값을 사용하거나 업데이트할 수 있습니다.
 
-## 하는 법
+## 어떻게 사용하는지:
 
-다음은 두 개의 변수를 문자열로 삽입하는 간단한 코드 예제입니다. 
+다음은 Elixir에 의해 문자열 보간이 어떻게 이루어지는지 그 코드 예시와 출력을 보여줍니다.
 
-```Elixir
-string1 = "Hello"
-string2 = "World"
-
-IO.puts "#{string1}, #{string2}"
+```Elixir 
+name = "John"
+IO.puts("Hello, #{name}")
 ```
 
-위 코드를 실행하면, "Hello, World"가 출력됩니다. 보다시피, 변수를 문자열로 바로 삽입함으로써 코드가 간단하고 가독성이 좋아졌습니다.
+위 코드의 결과는 다음과 같습니다:
 
-## 더 들어가기
+```
+Hello, John
+```
 
-내삽은 C언어에서 시작되어 최근 많은 다른 언어들에서도 지원하고 있습니다. 또한, 내삽을 사용하는 대체 방법으로는 string concatenation이 있습니다. 문자열을 더하는 것보다 내삽을 사용하는 것이 코드를 더 간결하고 보기 좋게 만들 수 있습니다.
+변수 name의 값 "John"이 문자열로 보간되어 출력되었습니다.
 
-내삽의 구현 방법은 각 언어마다 다르지만, 보통 코드의 내부적으로는 변수들을 문자열로 변환한 다음 문자열을 조합해서 출력하는 방식으로 이루어집니다.
+## 깊게 보기:
 
-## 관련 자료
+문자열 보간은 많은 프로그래밍 언어, Elixir를 포함하여 그 기원을 찾을 수 있는 기능입니다. 
+대안으로, 연결 연산자를 사용하여 문자열과 변수를 병합할 수도 있지만, 가독성이 감소하고 코드가 복잡해질 수 있습니다. Elixir에서는 보간을 수행할 때 `#{}`를 사용하며, 이것이 위의 코드에서 이 변수를 문자열로 삽입하는 특별한 구문입니다.
 
-[Elixir 공식문서](https://elixir-lang.org/getting-started/string-interpolation.html)에서 문자열 내삽에 대한 더 자세한 정보를 찾을 수 있습니다. 또한, 다양한 블로그와 포럼에서 내삽에 대한 다양한 사례를 찾을 수 있습니다.
+## 참고 사항:
+
+문자열 보간에 대한 추가 정보를 원하신다면, 다음 링크를 참조해주세요:
+- Elixir 공식 문서: [String Interpolation](https://hexdocs.pm/elixir/String.html#module-interpolation)
+- Elixir School: [String Interpolation](https://elixirschool.com/en/lessons/basics/strings/#string-interpolation)

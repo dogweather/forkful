@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en temporär fil"
-html_title:           "Clojure: Skapa en temporär fil"
-simple_title:         "Skapa en temporär fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##Vad & Varför?
- Att skapa en temporär fil är en vanlig uppgift för programmerare när de behöver spara data temporärt under en pågående process. Det kan vara användbart för att undvika filkonflikter eller för att hantera data på ett mer säkert sätt.
+## Vad & Varför?
+Att skapa en temporär fil innebär en process där ett datorprogram skapar en fil som behövs för en kort stund, men inte permanent. Programmerare gör detta för olika ändamål, till exempel för att lagra data som behövs under programmets körning, men inte efteråt.
 
-##Så här:
-```Clojure 
-(def tmp-file (java.io.File/createTempFile "temp" ".txt"))
+## Hur du gör:
+Du kan skapa temporära filer i Clojure med hjälp av `java.io.File`-klassen. Här är ett kort exempel:
+
+```Clojure
+(ns temp.example
+    (:import
+        [java.io File]))
+
+(defn create-temp-file []
+    (let [temp-file (File/createTempFile "temp" ".txt")]
+        (println (.getPath temp-file))))
 ```
 
-Ett exempel på att skapa en temporär fil i Clojure är genom att använda Java-funktionen ```createTempFile```, som tar in två parametrar för att specificera filnamnet och filtypen. Detta skapar en temporär fil som lagras på disk och returnerar en ```File``` objektreferens, som sedan kan användas för att hantera filen som vanligt.
+Om du kör denna kod kommer den att skriva ut sökvägen till den nyligen skapade temporära filen.
 
-```
-#=> #object[java.io.File 0x660d974b "C:\Users\username\AppData\Local\Temp\temp5722457914398788016.txt"]
-```
+## Djupdykning
+Historiskt sett uppfanns temporära filer för att hantera storleksbegränsningar på äldre system, men idag används de mest för att lindra lasten på ett systems primärminne.
 
-##Djupdykning:
-Att skapa en temporär fil är en viktig del av många program och system, men det är inte något som alltid har funnits tillgängligt. Tidigare var det vanligt att program behövde skapa egna system för att hantera temporära filer, vilket kunde leda till problem med kompatibilitet och säkerhet.
+Det finns alternativ för temporära filer i Clojure. Ett sådant alternativ är att använda ett ramlager eller in-memory datastrukturer. Men det är värt att komma ihåg att dessa alternativ kan ha begränsningar beroende på volymen av data som behandlas.
 
-Alternativ till att skapa en temporär fil kan vara att använda andra metoder för att hantera data, som till exempel att lagra informationen i minnet eller att använda en databas. Dock kan dessa alternativ inte alltid vara möjliga eller lämpliga, särskilt om data ska hanteras temporärt och behöver sparas på disk.
+När det gäller detaljer om implementation, när `File/createTempFile` kallas, skapar JVM en ny, tom fil på filsystemet och returnerar en `File` referens till den här filen. Det är viktigt att notera att den här filen endast är tillgänglig för befintligt program och raderas när JVM stängs av.
 
-Implementationsdetaljer om att skapa en temporär fil kan variera beroende på vilket programmeringsspråk och ramverk som används. I Clojure är det vanligt att använda Java-funktioner för att hantera temporära filer, men det finns även Clojure-specifika bibliotek, som till exempel ```tempjure```, som erbjuder fler funktioner och alternativ för att skapa temporära filer.
+## Se Även
+Du kan läsa mer om användningen och skapandet av temporära filer i programmering genom följande länkar:
 
-##Se även:
-- Java Dokumentation om ```File.createTempFile```: https://docs.oracle.com/javase/8/docs/api/java/io/File.html
-- Tempjure biblioteket på Clojars: https://clojars.org/tempjure
-- En diskussion om hantering av temporära filer i Clojure: https://stackoverflow.com/questions/2128100/creating-temporary-files-in-clojure
+1. [Oracle Java Documentation for File Class](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)
+2. [Clojure Cookbook's Section on Dealing with Files](https://www.braveclojure.com/core-functions-in-depth/)
+3. [Stack Overflow's Topics on Temporary Files](https://stackoverflow.com/questions/tagged/temporary-files)

@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "C: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "C"
 category:             "C"
@@ -10,39 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazemos isso?
-Converter uma string para minúsculas é um processo em que todas as letras maiúsculas em uma string são convertidas para letras minúsculas. Isso é feito principalmente para garantir que a entrada do usuário seja tratada de forma consistente e para facilitar a comparação entre strings.
+# Convertendo uma String para Minúsculas em C
+
+## O Que & Por Quê?
+
+Converter string para minúsculas é o processo de transformar todas as letras maiúsculas de uma string em suas respectivas minúsculas. Programadores geralmente fazem isso para uniformizar dados de texto para processamento ou comparação.
 
 ## Como fazer:
-```
+
+Aqui está um exemplo simples de como podemos converter uma string para minúsculas em C.
+
+```C
 #include <stdio.h>
-#include <string.h>
+#include <ctype.h>
 
-int main() {
-  char str[] = "Ola, Mundo!";
-  printf("String original: %s\n", str);
+int main()
+{
+    char str[50] = "Olá Mundo!";
+    int i = 0;
 
-  // Converter para minúsculas
-  for(int i = 0; str[i]; i++){
-    if(str[i] >= 'A' && str[i] <= 'Z'){  // verifica se o caractere é maiúsculo
-      str[i] = str[i] + 32;  // converte para minúsculo
+    while (str[i])
+    {
+        putchar(tolower(str[i]));
+        i++;
     }
-  }
 
-  printf("String convertida: %s\n", str);
-
-  return 0;
+    return 0;
 }
 ```
 
-Saída:
-String original: Ola, Mundo!
-String convertida: ola, mundo!
+Ao executar este programa, a saída será:
 
-## Mergulho profundo:
-Concluir uma conversão de string para minúsculas não é tão simples quanto parece. Historicamente, dependia do conjunto de caracteres usado pelos sistemas operacionais. Hoje em dia, existem várias maneiras de fazer isso, incluindo funções de biblioteca como tolower() e funções específicas de plataforma. É importante escolher a abordagem correta, dependendo da sua necessidade específica.
+```
+olá mundo!
+```
 
-## Veja também:
-- https://www.tutorialspoint.com/c_standard_library/c_function_tolower.htm
-- https://www.geeksforgeeks.org/converting-string-lower-upper-case-using-tolower-toupper/
-- https://www.gnu.org/software/libc/manual/html_node/Locale-Selection.html#Locale-Selection
+Como você pode ver, todas as letras maiúsculas na string original foram convertidas para minúsculas pelo programa.
+
+## Mergulho Profundo
+
+Historicamente, a conversão de strings para minúsculas tem sido uma prática comum em muitas linguagens de programação, especialmente aquelas que diferenciam maiúsculas de minúsculas como C.
+
+Existem outras maneiras de realizar essa tarefa. Por exemplo, você pode escrever seu próprio código para converter manualmente cada caractere. No entanto, a função `tolower` da biblioteca `ctype.h` facilita esse processo para nós.
+
+Em termos de detalhes de implementação, `tolower` verifica se o caractere é uma letra maiúscula. Se for, ele a converte para a minúscula correspondente. Caso contrário, o caractere original é retornado sem modificações.
+
+## Veja Também
+
+'A Biblioteca Padrão C - ctype.h' -https://www.tutorialspoint.com/c_standard_library/ctype_h.htm
+'Função tolower' -http://www.cplusplus.com/reference/cctype/tolower/

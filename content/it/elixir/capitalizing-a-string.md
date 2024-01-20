@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizzando una stringa"
-html_title:           "Elixir: Capitalizzando una stringa"
-simple_title:         "Capitalizzando una stringa"
+title:                "Mettere in maiuscolo una stringa"
+html_title:           "Elixir: Mettere in maiuscolo una stringa"
+simple_title:         "Mettere in maiuscolo una stringa"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,32 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+# Introduzione alla Capitalizzazione delle Stringhe in Elixir
 
-La capitalizzazione di una stringa è il processo di convertire la prima lettera di ogni parola in maiuscolo, mentre le restanti lettere rimangono in minuscolo. I programmatori spesso lo fanno per renderizzare una stringa in maniera più leggibile o per formattarla in un modo specifico.
+## Cosa & Perché?
+La capitalizzazione di una stringa implica la trasformazione del primo carattere di un testo in una lettera maiuscola. I programmatori lo fanno per rendere il testo facilmente leggibile, o per rispettare certe convenzioni di formattazione.
 
 ## Come fare:
+In Elixir, capita spesso di dover capitalizzare una stringa. Per farlo, si può utilizzare la funzione `String.capitalize/2`. Ecco un esempio di utilizzo:
 
 ```Elixir
-stringa = "ciao mondo"
-stringa_capitalizzata = String.capitalize(stringa)
-
-IO.puts(stringa_capitalizzata)
-# Output: Ciao mondo 
+IO.puts String.capitalize("ciao mondo") 
 ```
 
-In questo esempio, utilizzando la funzione `String.capitalize(stringa)`, la variabile `stringa` viene modificata e viene stampata in console una nuova stringa capitalizzata.
+Output:
 
-## Approfondimento:
+```Elixir
+"Ciao mondo"
+```
 
-In passato, la capitalizzazione di una stringa era un processo complesso che richiedeva l'uso di diverse funzioni e operatori. Con Elixir, ora è possibile farlo in modo semplice grazie alla funzione `String.capitalize`.
+## Approfondimento
+Elixir non ha sempre avuto una funzione di capitalizzazione delle stringhe. Questa è stata aggiunta nella versione 1.5, rilasciata a luglio 2017. 
 
-Un'alternativa alla capitalizzazione di una stringa è l'utilizzo del modulo `String`, che fornisce una varietà di funzioni utili per la manipolazione di stringhe.
+Come alternativa, potresti voler provare ad utilizzare la libreria Erlang :unicode. Geradrebbe un carattere maiuscolo in codifica Unicode.
 
-Per implementare la funzione `String.capitalize`, Elixir utilizza l'algoritmo di trasformazione UTF-8, che converte automaticamente ogni carattere in maiuscolo o minuscolo in modo appropriato.
+Dettagli di implementazione: la funzione `String.capitalize/2` in Elixir usa algoritmi unicode per la capitalizzazione. Questo significa che può gestire correttamente anche stringhe non ascii, come "ciao mondo" in italiano.
 
-## Vedi anche:
+## Vedi Anche:
+Se vuoi approfondire, qui ci sono alcune risorse correlate:
 
-- [Documentazione Elixir su String.capitalize](https://hexdocs.pm/elixir/String.html#capitalize/1)
-- [Guida introduttiva su Elixir](https://elixir-lang.org/getting-started/introduction.html)
-- [Articolo su Elixir linguaggio funzionale](https://www.tecnologie.net/eilixir-il-linguaggio-funzionale-che-sta-rivoluzionando-lo-sviluppo/)
+1. La documentazione ufficiale di Elixir sulla funzione String.capitalize: (https://hexdocs.pm/elixir/String.html#capitalize/2)
+
+2. Un'interessante discussione su StackOverflow sulla capitalizzazione delle stringhe in Elixir: (https://stackoverflow.com/questions/46515888/how-can-i-capitalize-a-string-in-elixir)
+
+3. Un tutorial su come formattare stringhe in Elixir: (https://elixirschool.com/en/lessons/basics/strings/)

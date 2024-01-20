@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenfolge interpolieren"
-html_title:           "Ruby: Eine Zeichenfolge interpolieren"
-simple_title:         "Eine Zeichenfolge interpolieren"
+title:                "Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
+simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,24 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Interpolieren ist das Einfügen von Variablen oder Ausdrücken in eine Zeichenkette, um die Ausgabe dynamisch zu gestalten. Programmierer verwenden dies, um Texte zu personalisieren oder komplexe String-Ausdrücke zu erstellen.
+## Was & Warum?
+String-Interpolation ermöglicht es, einem String Variablen oder Ausdrücke hinzuzufügen, die automatisch umgewandelt und in den String eingefügt werden. Programmierer machen dies, um Strings nach Bedarf dynamisch zu erstellen.
 
-# Wie geht's?
+## Wie macht man das?
+Hier ist ein einfaches Beispiel:
+
+```Ruby
+name = "Hans"
+puts "Hallo, #{name}!"
 ```
-Ruby string = "Hello, #{name}! Today is #{Date.today}."
-puts string
+
+Ausgabe:
+
 ```
-Ausgabe: "Hallo, [Name]! Heute ist [aktuelles Datum]."
+Hallo, Hans!
+```
 
-In diesem Beispiel wird der Name und das aktuelle Datum in die Zeichenkette eingefügt. Dabei wird die Syntax `#{...}` verwendet, um die Variable oder den Ausdruck innerhalb der Zeichenkette aufzurufen.
+Der Ausdruck innerhalb der geschweiften Klammern `{}` wird umgewandelt und an diese Stelle im String eingefügt.
 
-# Tiefere Einblicke
-Interpolieren wurde in Ruby eingeführt, um das Zusammenfügen von Strings und Variablen zu vereinfachen. Eine Alternative hierzu wäre das Verwenden von `+` oder der `concat`-Methode, um die Strings manuell zu verbinden.
+## Tiefgang
+Die String-Interpolation in Ruby ist seit der ersten Veröffentlichung enthalten und wurde aus Perl übernommen. 
 
-Interpolierung ist auch bei der Verarbeitung von regulären Ausdrücken nützlich, da sie es ermöglicht, Variablen innerhalb von Mustern zu verwenden.
+Alternativ kann die Funktion `sprintf` oder der `%`-Operator für die Formatierung verwendet werden, diese sind aber weniger benutzerfreundlich und intuitiv als die String-Interpolation.
 
-Die Implementierung der String-Interpolierung in Ruby basiert auf dem Konzept der Templates, welche eine dynamische Erstellung von Texten ermöglichen. Dabei werden die Inhalte dieser Templates während der Laufzeit mit Variablen oder Ausdrücken ergänzt.
+Hier ist ein Beispiel mit `sprintf`:
 
-# Siehe auch
-Weitere Informationen zur String-Interpolierung in Ruby finden Sie auf der offiziellen Ruby-Dokumentationsseite unter https://ruby-doc.org/core-3.0.0/doc/syntax/literals_rdoc.html#label-Here+Documents.
+```Ruby
+name = "Hans"
+puts sprintf("Hallo, %s!", name)
+```
+
+Und ein Beispiel mit dem `%`-Operator:
+
+```Ruby
+name = "Hans"
+puts "Hallo, %s!" % name
+```
+
+Bei der String-Interpolation wird der innerhalb der `{}`-Klammern liegende Ausdruck von Ruby's `to_s` Methode in einen String umgewandelt.
+
+## Siehe auch
+- Offizielle Ruby-Dokumentation zur String-Interpolation: [Link](https://ruby-doc.org/core-2.7.0/String.html#method-i-25-3C)
+- Einführung in die String-Interpolation in Ruby: [Link](https://www.rubyguides.com/2018/11/ruby-string-interpolation/)
+- Unterschied zwischen `sprintf`, `%`-Operator und String-Interpolation: [Link](https://stackoverflow.com/questions/610839/how-do-i-use-string-formatting-in-ruby)

@@ -1,7 +1,7 @@
 ---
-title:                "パターンに一致する文字の削除"
-html_title:           "C++: パターンに一致する文字の削除"
-simple_title:         "パターンに一致する文字の削除"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,60 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに？なぜ？
+## 何と何故？
 
-文字列のパターンにマッチする文字を削除することは、プログラマーたちがよくやることです。これを行うのは、テキストの特定の部分を取り除きたいときや、無駄な文字を取り除いてデータを整えたいときに役立ちます。
+**パターンに一致する文字を削除する**とは、ある特定のパターンに一致する全ての文字を取り除くプログラミング手法です。これは、不必要な文字を消去することでデータの精度を上げるため、プログラマーによく用いられます。
 
-## やり方：
+## どうやって：
 
-### コード例１：
+以下に、パターンに一致する文字を削除する簡単なC++コードを示します。
 
 ```C++
-#include <iostream>
-#include <string>
 #include <algorithm>
-
-using namespace std;
-
-int main() {
-  string text = "こんにちは！さようなら！";
-  // パターンにマッチする文字を削除する
-  text.erase(remove(text.begin(), text.end(), '!'), text.end());
-
-  cout << text << endl;
-  // 出力結果：こんにちはさようなら
-  return 0;
-}
-```
-
-### コード例２：
-
-```C++
-#include <iostream>
 #include <string>
 
-using namespace std;
-
 int main() {
-  string text = "a1b2c3d4e5f6";
-  // パターンにマッチする文字を削除する
-  for (int i = 0; i < text.length(); i++) {
-      if (text[i] >= '0' && text[i] <= '9') {
-        text.erase(i, 1);
-        i--;
-      }
-  }
-  cout << text << endl;
-  // 出力結果：abcdef
-  return 0;
+    std::string str = "abc123abc123";
+    char c = 'a';
+
+    str.erase(std::remove(str.begin(), str.end(), c), str.end());
+
+    return 0;
 }
 ```
+上記のコードでは、文字列 "abc123abc123" から 'a' と一致する全ての文字を削除しています。
 
 ## ディープダイブ：
 
-文字を削除する方法は、古くから存在しているテキスト処理の基本的なテクニックのひとつです。代替手段として、正規表現を使う方法もありますが、文字の削除はかんたんで効率的な方法です。文字をどのように削除したいかによって、様々な実装方法がありますが、基本的には文字列の操作を行う関数を使うことで文字を削除することができます。
+文字列から特定のパターンに一致する文字を削除するという考え方は、プログラミングの初期から存在しています。C++では、`std::remove`関数と`erase`メソッドの組み合わせによりこれを実現します。ただし、他のアプローチもあります。
 
-## 関連ソース：
+例えば、正規表現を使用してパターンに一致する文字列を探し出すことも可能です。その場合、見つかった文字列を別の文字列で置き換えたり、そのまま削除したりすることができます。
 
-- [C++で正規表現を使う方法](https://www.ibm.com/docs/ja/i/7.2?topic=functions-regex-expression-cpp)
-- [C++ string の erase 関数の使い方](https://www.jpcpp.org/reference/stl/erase/)
+削除操作は、元の文字列を変更するため、性能面で注意が必要です。大きなデータセットで大量の削除操作を行うと、プログラムのパフォーマンスに影響を及ぼすことがあります。
+
+## 参考リンク：
+
+1. [C++ 文字列](https://ja.cppreference.com/w/cpp/string)
+2. [std::remove](https://en.cppreference.com/w/cpp/algorithm/remove)
+3. [std::erase](https://en.cppreference.com/w/cpp/string/basic_string/erase)

@@ -1,6 +1,6 @@
 ---
 title:                "将字符串转换为小写"
-html_title:           "Fish Shell: 将字符串转换为小写"
+html_title:           "Arduino: 将字符串转换为小写"
 simple_title:         "将字符串转换为小写"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什麼 & 為什麼？
+## 什么 & 为什么？
+这是关于如何将字符串转化为小写。程序员经常需要将字符串转化为小写以实现程序逻辑，例如，比较用户输入、文件名等。
 
-將一個字符串轉換為小寫是指將字符串中的字母都轉換為小寫形式。程式設計師會做這件事是因為在編程時，有時候需要比較字母的大小寫，而轉換為小寫可以讓比較更精確。
+## 如何做：
+在Fish Shell中，我们可以用`string lower`命令来轻松转化一个字符串为小写。看下面的示例：
 
-## 如何：
-
+``` fish
+> set my_str "HELLO, WORLD!"
+> echo $my_str | string lower
+hello, world!
 ```
-Fish Shell 中，轉換字符串為小寫的語法是：
+非常直接，不是吗？Fish Shell在这方面提供了很棒的内置支持。
 
-$ echo "Hello, World!" | tr '[A-Z]' '[a-z]'
+## 深入探讨
+这项技巧的历史可以追溯到计算机编程的早期阶段，当时人们还在编写处理文本的基本程序。在一些其他壳中，如BASH，我们可能需要用到外部命令，例如`tr`，来实现此目的:
 
-這樣就可以把字符串轉換為小寫。
-
-輸出結果：hello, world!
-
+```bash
+echo "HELLO, WORLD!" | tr '[:upper:]' '[:lower:]'
+hello, world!
 ```
+然而，Fish Shell的开发者们设计了内置的`string`命令来处理字符串，其中包括我们讨论的这个`string lower`功能。这个功能实现上采用了Unicode的正确处理方式，因此在处理有一些需要特殊处理的字符如特殊符号或者来自不同语言的字母时也不会出错。
 
-## 深入探討：
-
-1. 歷史背景：在舊的電腦系統中，只有大寫字母，而小寫字母是在後來才加入的。所以在一些舊的程式設計語言中，標示大小寫是很重要的，而轉換字符串為小寫可以方便比較字母。
-
-2. 其他方法：除了使用 Fish Shell 中的 tr 指令，還可以使用其他程式語言中的函數或方法來轉換字符串為小寫，如 Python 中的 lower() 函數、Java 中的 toLowerCase() 方法等。
-
-3. 實現細節：轉換字符串為小寫的過程其實就是將字符串中的大寫字母替換為相應的小寫字母。
-
-## 請參考：
-
-- Fish Shell 官方文檔：https://fishshell.com/docs/current/
-- tr 指令詳細使用方法：https://zh.wikipedia.org/wiki/Tr_(Unix)
-- 認識舊的電腦系統：https://www.dropbox.com/s/2ep8mhwk3v4b01r/Turning%20Up%20the%20Heat%20-%20Two%20Centuries%20of%20Industrial%20Development.pdf
+## 另请参见
+- Fish Shell文档的[字符串操作部分](https://fishshell.com/docs/current/cmds/string.html): 这里提供了Fish Shell内置的`string`命令的详细说明，包括更多的用例和其他有用的字符串操作。
+- [Fish Shell vs Bash comparison](https://scriptingosx.com/2017/09/fish-shell-vs-bash/): 这篇文章详细的比较了Fish Shell和Bash，可以帮你更好的理解这两者之间的区别以及Fish Shell的优势。

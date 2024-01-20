@@ -10,35 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**Qu'est-ce que c'est et pourquoi?**
+## Quoi et Pourquoi ?
+Vérifier si un répertoire existe consiste à utiliser un programme pour déterminer si un dossier spécifique existe sur un système de fichiers. Les programmeurs font cela pour éviter les erreurs lors de l'ouverture ou de la manipulation de fichiers dans un répertoire qui pourrait ne pas exister.
 
-Vérifier si un répertoire existe est simplement le fait de voir si un dossier spécifique se trouve dans un emplacement donné sur votre ordinateur. Les programmeurs le font pour s'assurer que certaines ressources nécessaires à leur code sont disponibles avant de les utiliser. Cela permet d'éviter les erreurs et d'optimiser les performances.
+## Comment faire :
+Voici comment vous pouvez vérifier si un répertoire existe en Elixir à l'aide de la fonction `File.dir?/1` :
 
-**Comment faire :**
-
-Pour vérifier si un répertoire existe en utilisant Elixir, vous pouvez utiliser la fonction `File.exists?/1` en lui passant le chemin du répertoire en tant que paramètre. Si le répertoire existe, la fonction renverra `true`, sinon elle renverra `false`. Voici un exemple de code :
-
-```
-Elixir
-
-if File.exists?("chemin/vers/le/répertoire")
-  IO.puts("Le répertoire existe !")
+```Elixir
+if File.dir?("chemin/vers/le/répertoire") do
+  IO.puts "Le répertoire existe."
 else
-  IO.puts("Le répertoire n'existe pas.")
+  IO.puts "Le répertoire n'existe pas."
 end
-
 ```
 
-**Un peu plus en détails :**
+Cela affichera "Le répertoire existe." si le répertoire spécifié existe, et "Le répertoire n'existe pas." dans le cas contraire.
 
-Auparavant, la vérification de l'existence d'un répertoire nécessitait plusieurs étapes telles que la recherche manuelle du répertoire ou l'utilisation de commandes système externes. Grâce à Elixir, cette tâche est désormais plus simple et intégrée dans le langage lui-même.
+## Immersion dans le sujet :
+La fonction `File.dir?/1` est implémentée en utilisant les appels système de bas niveau, ce qui la rend très rapide et efficace. Historiquement, la vérification de l'existence d'un répertoire était plus complexe dans les anciennes versions d'Elixir, mais elle a été simplifiée en version actuelle.
+En alternative, vous pouvez aussi utiliser `File.ls/1` et attraper une exception `{:error, _}` si le dossier n'existe pas, mais cette méthode est généralement considérée comme moins idéale car elle implique un traitement coûteux des exceptions.
 
-Bien sûr, il existe d'autres moyens de vérifier l'existence d'un répertoire tels que l'utilisation de bibliothèques externes comme [ex_file](https://hex.pm/packages/ex_file) ou [fsex](https://hex.pm/packages/fsex). Mais la fonction `File.exists?/1` est la méthode la plus simple et la plus efficace si vous utilisez déjà Elixir.
-
-Il est également intéressant de noter que `File.exists?/1` peut également être utilisée pour vérifier l'existence de fichiers ou d'autres types de ressources.
-
-**A voir aussi :**
-
-- Documentation officielle d'Elixir pour [File.exists?/1](https://hexdocs.pm/elixir/File.html#exists?/1)
-- Package [ex_file](https://hex.pm/packages/ex_file)
-- Package [fsex](https://hex.pm/packages/fsex)
+## Voir aussi :
+1. Documentation Elixir pour `File.dir?/1`: [https://hexdocs.pm/elixir/File.html#dir?/1](https://hexdocs.pm/elixir/File.html#dir?/1)
+2. Discussion StackOverflow sur la vérification de l'existence d'un répertoire en Elixir : [https://stackoverflow.com/questions/21006221/how-to-check-if-a-directory-exists-in-elixir](https://stackoverflow.com/questions/21006221/how-to-check-if-a-directory-exists-in-elixir)

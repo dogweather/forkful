@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "Elm: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,48 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist es und warum?
+# Was und Warum?
+Das Herunterladen einer Webseite ist eine Möglichkeit, Daten von einem Webserver zu beziehen. Programmierer tun dies, um Webinhalte zu analysieren, Abläufe zu automatisieren oder Daten für späteres Offline-Lesen zu speichern.
 
-Das Herunterladen einer Webseite ist ein Prozess, bei dem Computerprogramme den Inhalt einer Webseite von einem Server im Internet abrufen und anzeigen. Programmierer nutzen dieses Verfahren, um Daten von einer Webseite zu erhalten und sie in ihrer eigenen Anwendung zu verwenden.
-
-## Wie geht's?
+# So geht's:
+Leider gibt es in Elm (aktueller Stand: Version 0.19) keine direkte Möglichkeit, eine Webseite herunterzuladen. Elm fokussiert sich hauptsächlich auf Frontend-Entwicklung und Benutzerinteraktionen hatten immer Priorität. Deshalb gibt es keine eingebauten Funktionen für Serverinteraktionen wie Dateidownloads. Aber Elm kann mit Javascript interagieren, mit dessen Hilfe Serverinteraktionen möglich sind. Mit einem Port könnten wir eine Nachricht an Javascript senden, um eine Datei herunterzuladen.
 
 ```Elm
 port module Main exposing (..)
 
-import Html exposing (..)
-import Http
+type alias Model =
+    { url : String }
 
--- Definition der URL
-url : String
-url = "https://www.example.com"
+init : Model
+init = {
+    url = "https://example.com"
+}
 
-type Msg
-    = Received (Http.Result Http.Error String)
-
--- Ausführen des Requests
-request : Cmd Msg
-request =
-    Http.getString url
-        |> Task.attempt Received
-
--- Aufrufen der Funktion "request" und Anzeigen des Ergebnisses in der HTML-Seite
-main : Program Never Model Msg
-main =
-    Html.program
-        { init = ((), request)
-        , view = (\_ -> div [] [ text "Webseite wurde heruntergeladen!" ] )
-        , update = (\msg _ -> case msg of (Received result) -> ((), Cmd.none))
-        , subscriptions = (\_ -> Sub.none)
-        }
+port download : String -> Cmd msg
 ```
 
-## Tief eintauchen
+Dann könnten Sie diesen Code in Ihrer Javascript-Datei verwenden, um auf die Nachricht zu hören und den Download zu starten:
 
-Das Herunterladen von Webseiten ist ein wesentlicher Bestandteil des Internets. Früher wurde dies hauptsächlich mit der Programmiersprache Python durchgeführt, aber mit der Entwicklung von Frameworks wie Elm ist es nun auch möglich, dies in einer funktionalen Sprache zu tun.
+```Javascript
+app.ports.download.subscribe(function(url) {
+    var link = document.createElement('a');
+    link.href = url;
+    link.download = 'download';
+    link.click();
+});
+```
 
-## Siehe auch
+Letztendlich ist es nicht besonders "elmisch", aber es funktioniert.
 
-- Offizielle Dokumentation von Elm: https://guide.elm-lang.org/
-- Eine detailliertere Erklärung zum Herunterladen von Webseiten mit Elm von CodeWall: https://www.codewall.co.uk/beginners-guide-to-downloading-web-pages-in-elm/
-- Alternativen zum Herunterladen von Webseiten in anderen Programmiersprachen wie Python oder JavaScript
+# Vertiefung
+(1) Historischer Kontext:
+In früheren Versionen von Elm, war es noch etwas schwieriger, mit Ports zu arbeiten und Webseiten herunterzuladen.
+(2) Alternativen:
+Als Alternative könnten Sie eine serverseitige Sprache wie Node.js, Python oder PHP verwenden, um Webseiten herunterzuladen und zu speichern.
+(3) Umsetzungsdetails:
+In Elm lösen wir das Problem durch Kommunikation mit Javascript über Ports.
+
+# Siehe auch
+- Offizielle Elm-Website: https://elm-lang.org/
+- Elm Guide über Ports: https://guide.elm-lang.org/interop/ports.html
+- Diskussion zum Download von Dateien in Elm: https://discourse.elm-lang.org/t/downloading-files-in-elm/2246

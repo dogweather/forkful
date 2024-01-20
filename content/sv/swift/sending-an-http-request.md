@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-förfrågan"
-html_title:           "Swift: Sända en http-förfrågan"
-simple_title:         "Sända en http-förfrågan"
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,57 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att skicka en HTTP-förfrågan är när en programmerare ber om data från en server. Det kan vara för att hämta information från en API eller för att köra en webbsida. Detta är en viktig del av webbprogrammering och används för att få tillgång till olika resurser online.
+# Swift för att skicka HTTP-begäran: Ett dyk ner i detaljerna
 
-## Så här gör du:
+## Vad & varför?
+
+Att skicka en HTTP-begäran innebär en interaktion mellan klient och server över webben. Programmörer utför detta för att hämta eller skicka data till en server.
+
+## Hur du
+
+En grundsats för att skicka en HTTP-begäran i Swift kan se ut så här:
+
 ```Swift
-// Skapa en URL
-let url = URL(string: "https://api.com/users")
+import Foundation
 
-// Skapa en förfrågan
-var request = URLRequest(url: url!)
-
-// Ange metod, t.ex. GET eller POST
+let url = URL(string: "https://exemplary.org/api")!
+var request = URLRequest(url: url)
 request.httpMethod = "GET"
 
-// Skapa en URL session
-let session = URLSession(configuration: .default)
-
-// Utför förfrågan
-let task = session.dataTask(with: request) { data, response, error in
-  // Kontrollera eventuella fel
-  if let error = error {
-    print("Error: \(error)")
-    return
-  }
-  
-  // Kontrollera svarsstatus
-  guard let httpResponse = response as? HTTPURLResponse,
-        (200...299).contains(httpResponse.statusCode) else {
-    print("Fel svar från servern.")
-    return
-  }
-  
-  // Konvertera svar till Swift-typ
-  if let data = data {
-    let decodedData = String(data: data, encoding: .utf8)
-    print("Svar från servern: \(decodedData)")
-  }
+let task = URLSession.shared.dataTask(with: request) { data, response, error in
+    if let error = error {
+        print("Error: \(error)")
+    } else if let data = data {
+        print(String(data: data, encoding: .utf8))
+    }
 }
-
-// Starta förfrågan
 task.resume()
 ```
 
-Detta är en grundläggande kod för att skicka en HTTP-förfrågan. Det finns många andra detaljer som kan läggas till beroende på dina behov och vilken typ av data du vill hämta.
+Exempel resultat skulle vara följande:
+```Swift
+{
+    "message": "Begäran återvänd med framgång",
+    ...
+}
+```
 
-## Djupdykning:
-Det är viktigt att förstå historiska kontexter och alternativ när det gäller att skicka HTTP-förfrågningar. HTTP-protokollet har funnits sedan början av internetets uppkomst och har utvecklats över tid. Det finns också andra sätt att skicka förfrågningar, som till exempel via Sockets. Det är viktigt att förstå dessa detaljer för att välja den bästa metoden för ditt projekt.
+## Djupdykning
 
-## Se även:
-Här är några länkar som kan hjälpa dig att lära dig mer om att skicka HTTP-förfrågningar:
+Historiskt sett har Swifts stöd för HTTP-nätverksbegäran utvecklats. Tidigare använde vi NSURLConnection, men sedan Swift 2.0 har URLSession varit det bästa valet.
 
-- [Apple Developer Documentation - URL Loading System](https://developer.apple.com/documentation/foundation/url_loading_system)
-- [W3 Schools - HTTP Requests](https://www.w3schools.com/js/js_http_requests.asp)
-- [NSHipster - NSURLSession](https://nshipster.com/nsurlsession/)
+Alternativen för HTTP-begäran inkluderar bibliotek som Alamofire, men för enkelhetens skull kan Swifts inbyggda URLSession vara tillräckligt. 
+
+Viktiga detaljer om att implementera HTTP-begäran innefattar hanteringen av asynkrona operationer, eftersom nätverksbaserade operationer tar tid och vi inte vill blockera användarens interaktiva upplevelse. 
+
+## Se även
+
+- [URLSessions utvecklardokumentation](https://developer.apple.com/documentation/foundation/urlsession)
+- [Om HTTP-protokollet](https://developer.mozilla.org/sv-SE/docs/Web/HTTP/Overview)
+- [Alamofire](https://github.com/Alamofire/Alamofire)

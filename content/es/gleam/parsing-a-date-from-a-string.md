@@ -1,7 +1,7 @@
 ---
-title:                "Extracción de una fecha de una cadena"
-html_title:           "Gleam: Extracción de una fecha de una cadena"
-simple_title:         "Extracción de una fecha de una cadena"
+title:                "Analizando una fecha a partir de una cadena de texto"
+html_title:           "Bash: Analizando una fecha a partir de una cadena de texto"
+simple_title:         "Analizando una fecha a partir de una cadena de texto"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -11,35 +11,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
+"Parsear" una fecha desde una cadena se trata de extraer una fecha significativa de un texto sin sentido. Los programadores a menudo necesitan hacer esto para convertir datos de usuario o de archivos en un formato utilizable en sus programas.
 
-En pocas palabras, analizar una fecha de una cadena de texto significa tomar una fecha escrita en un formato determinado (como DD/MM/AAAA) y convertirla en una estructura de datos que un programa pueda manipular y utilizar. Los programadores realizan esta tarea con el fin de comprender y manejar los datos de manera más efectiva en sus aplicaciones.
+## ¿Cómo hacerlo?
 
-## Cómo hacerlo:
+Aquí hay un simple código de ejemplo en Gleam:
 
-El siguiente código muestra cómo analizar una fecha de una cadena de texto en Gleam:
+```gleam
+import gleam/otp/time.{StringToDatetime, StringToDatetimeFormat}
 
-```Gleam
-// Importar módulo de fecha y cadena
-import gleam/time
-import gleam/string
-
-// Definir una cadena de texto con una fecha en formato DD/MM/AAAA
-let date_string = "31/12/2021"
-
-// Analizar la fecha y guardar el resultado en una variable
-let parsed_date = String.to_date(date_string, "%d/%m/%Y")
-
-// Imprimir la fecha analizada en el formato deseado
-let desired_format = "%B %d, %Y" //Ejemplo: "December 31, 2021"
-let formatted_date = Date.format(desired_format, parsed_date)
-IO.print(formatted_date) //Salida: "December 31, 2021"
+let example() {
+  StringToDatetime.from_string("2023-02-03 04:14:15Z", StringToDatetimeFormat.iso8601)
+}
 ```
+En este código, la función `from_string` toma una cadena de fecha y hora y la convierte según el formato en la constante `iso8601`.
 
-## Inmersión profunda:
+## Inmersión profunda
 
-Analizar una fecha de una cadena de texto puede ser una tarea complicada ya que las fechas se pueden escribir en una variedad de formatos y pueden variar entre diferentes regiones y culturas. Además, existen alternativas a Gleam para realizar esta tarea, como paquetes de manejo de fechas en otros lenguajes de programación. Sin embargo, Gleam ofrece una solución sólida y eficiente con su módulo de fecha y cadena incorporado. Este módulo también incluye funciones para manejar zonas horarias y realizar cálculos con fechas.
+Tradicionalmente, en otros lenguajes de programación, obtener una fecha desde una cadena solía ser un proceso doloroso y propenso a errores. Gleam, sin embargo, hizo que esto fuera más fácil y menos propenso a errores con su módulo `gleam/otp/time`.
 
-## Ver también:
+Existen alternativas menos seguras para analizar las fechas como el método `split` para dividir la cadena en bloques y luego construir la fecha a partir de estos bloques. Sin embargo, esta es una forma lenta no recomendada.
 
-- Documentación del módulo de fecha y cadena en [la página oficial de Gleam](https://gleam.run/documentation/standard-library/time/)
-- Ejemplos y ejercicios para practicar el análisis de fechas en [este artículo de Rosetta Code](https://rosettacode.org/wiki/Determine_if_a_string_is_date)
+La implementación actual de la función `from_string` en Gleam utiliza un enfoque seguro que garantiza que la cadena esté en el formato correcto antes de convertirla en una fecha.
+
+## Consulta también
+
+Para más detalles sobre el manejo del tiempo en Gleam, consulta el [Manual de Gleam](https://gleam.run/manual/) y el módulo [gleam/otp/time](https://hexdocs.pm/gleam_otp/) documentación. Especialmente, aprender sobre [tipos de fecha y tiempo en Gleam](https://gleam.run/book/tour/time.html) sería beneficioso.

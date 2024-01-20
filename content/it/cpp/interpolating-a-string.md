@@ -1,6 +1,6 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "C++: Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
 simple_title:         "Interpolazione di una stringa"
 programming_language: "C++"
 category:             "C++"
@@ -10,33 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
+# Interpolazione delle stringhe in C++
 
-Interpolare una stringa in linguaggio di programmazione significa inserire una o più variabili all'interno di una stringa per ottenere un output personalizzato. I programmatori spesso utilizzano questa tecnica per creare messaggi dinamici o stampare dati specifici all'interno di stringhe di testo.
+## Che cosa & Perché?
 
-## Come:
+L'interpolazione delle stringhe è l'inserimento di variabili nel mezzo del testo. I programmatori lo fanno per creare contenuti dinamici e migliorare la leggibilità del codice.
 
-Ecco un esempio di come interpolare una stringa in C++:
+## Come fare:
+
+C++ supporta l'interpolazione delle stringhe usando operatori come `+` e `<<`. Guardate il codice di seguito:
 
 ```C++
 #include <iostream>
+#include <string>
 
 int main() {
-    // Definiamo una variabile
-    int num = 5;
-    // Utilizziamo il carattere speciale %d per indicare dove vogliamo inserire la nostra variabile
-    std::cout << "Il numero è: %d" << num << std::endl; 
-    // Output: Il numero è: 5
+    std::string nome = "Mario";
+    int eta = 22;
+    
+    std::cout << "Ciao, mi chiamo " << nome << " e ho " << eta << " anni.\n";
+
     return 0;
 }
 ```
+Output:
+```shell
+Ciao, mi chiamo Mario e ho 22 anni.
+```
 
-## Approfondimento:
+## Approfondimento
 
-I metodi per interpolare una stringa possono variare a seconda del linguaggio, ma l'obiettivo è lo stesso: rendere la stringa più dinamica ed efficiente. Alcune alternative all'interpolazione includono l'utilizzo di funzioni di formattazione, la concatenazione di stringhe o l'uso di espressioni regolari. L'implementazione di questa tecnica può essere implementata tramite la libreria "iomanip" di C++ o attraverso l'utilizzo di string templates.
+Storicamente, C++ non supportava l'interpolazione delle stringhe, costringendo i programmatori ad usare concatenazione o formattazione tradizionale. 
 
-## Vedi anche:
+Altre lingue di programmazione, come Python o JavaScript, hanno una sintassi integrata per l'interpolazione delle stringhe che rende il codice più pulito.
 
-- [Utilizzo di funzioni di formattazione in C++](https://www.tutorialspoint.com/cplusplus/cpp_formatted_io.htm)
-- [Concatenazione di stringhe in C++](https://www.geeksforgeeks.org/converting-strings-numbers-cc/)
-- [Espressioni regolari in C++](https://www.educative.io/edpresso/what-are-regular-expressions-in-cpp)
+L'interpolazione avviene a tempo di esecuzione; questo significa che le espressioni immesse vengono valutate e gli eventuali calcoli necessari vengono effettuati al tempo dell'esecuzione.
+
+Sebbene l'interpolazione delle stringhe sia comoda, tieni a mente che può portare ad alcune debolezze di sicurezza, specialmente quando si lavora con dati provenienti da fonti esterne. È sempre importante verificare ed eseguire la pulizia dei dati prima di utilizzarli.
+
+## Vedi anche
+
+- Documentazione ufficiale C++ (https://en.cppreference.com/)
+- C++ String Interpolation (https://www.geekhideout.com/cppformat.shtml)
+- Sicurezza dell'interpolazione delle stringhe (https://owasp.org/www-community/attacks/SQL_Injection)

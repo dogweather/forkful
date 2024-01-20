@@ -1,7 +1,7 @@
 ---
-title:                "디버그 출력 출력"
-html_title:           "Kotlin: 디버그 출력 출력"
-simple_title:         "디버그 출력 출력"
+title:                "디버그 출력을 인쇄하기"
+html_title:           "Clojure: 디버그 출력을 인쇄하기"
+simple_title:         "디버그 출력을 인쇄하기"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜? 
+## 무엇이고 왜 필요한가?
 
-디버그 출력이란 무엇일까요? 이는 개발자들이 프로그램이 어떻게 동작하는지를 확인할 수 있는 출력 문장이라고 할 수 있습니다. 이는 프로그래밍 과정에서 문제를 일으키는 부분을 찾는 데에도 도움이 되며, 코드가 정상적으로 실행되는지 확인하는 데에도 유용합니다.
+디버그 출력이란 코드가 실행되는 동안 발생하는 변수의 값나 상태 등을 확인하는 방법입니다. 프로그래머가 실시간으로 중간결과를 확인할 수 있어 디버깅과 오류 수정에 매우 유용합니다.
 
-## 하는 방법:
+## 어떻게 사용하는가?
+
+Kotlin을 사용한 디버그 출력 예제는 아래에 있습니다.
 
 ```Kotlin
 fun main() {
-    var num = 10
-    println("현재 num의 값은 $num입니다.")
+    val number = 5
+    println("변수 number의 값은 $number 입니다.")
 }
 ```
 
-위의 예시에서는 디버그 출력을 사용하여 ```num``` 변수의 값이 어떻게 변하는지를 확인합니다. 결과 값으로는 "현재 num의 값은 10입니다."라는 문장이 콘솔에 출력됩니다.
+이 코드의 출력은 아래와 같습니다.
 
-## 깊게 들어가기:
+```
+변수 number의 값은 5 입니다.
+```
 
-디버그 출력은 프로그래밍의 초기 단계부터 사용되어 왔습니다. 이는 디버깅 과정에서 가장 대표적으로 사용하는 방식 중 하나입니다. 그러나 디버그 출력의 문제는 이전에 선언한 변수들의 값을 파악하기 어렵다는 것입니다. 이를 위해 대안으로 콘솔에 출력하는 것 외에도, 디버크 Viewers나 디버그 메시지를 로그 파일에 저장하는 방법도 존재합니다.
+## 깊이 보기
 
-## 더 알아보기:
+디버그 출력은 초기 프로그래밍 세계부터 존재해왔고, 복잡한 프로그램에서 이해하고 수정하는데 크게 도움이 되는 도구입니다. Kotlin에서는 `println` 함수가 가장 일반적인 디버그 출력 방법입니다. 다른 대안으로 `print`나 `printf` 함수도 사용할 수 있으나, 이들은 줄바꿈을 자동으로 추가하지 않습니다.
 
-- [Kotlin 설명서 - 디버깅](https://kotlinlang.org/docs/tutorials/command-line.html)
-- [네이버 D2 - 디버깅 기법과 로그 지원 라이브러리 소개](https://d2.naver.com/helloworld/10963)
-- [Kotlin Dev - 디버깅과 로그 출력](https://www.kotlindev.com/tutorials/debugandlog.html)
+## 참조하기
+
+다음은 디버그 출력에 대해 자세히 알아볼 수 있는 몇 가지 링크입니다.
+
+- 대표적인 Kotlin 문서인 [Kotlin Documentation](https://kotlinlang.org/docs/home.html)
+- Kotlin 공식 사이트에서 제공하는 [Kotlin Playground](https://play.kotlinlang.org/)
+- [`println`, `print`와 `printf`에 대해](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/printf.html)
+
+이들 링크를 통해 디버깅 기법과 문법, Kotlin의 다양한 기능을 학습할 수 있습니다.

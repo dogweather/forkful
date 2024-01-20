@@ -1,7 +1,7 @@
 ---
-title:                "Versenden einer http-Anforderung mit grundlegender Authentifizierung"
-html_title:           "Fish Shell: Versenden einer http-Anforderung mit grundlegender Authentifizierung"
-simple_title:         "Versenden einer http-Anforderung mit grundlegender Authentifizierung"
+title:                "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+html_title:           "Bash: Eine HTTP-Anfrage mit Basisauthentifizierung senden"
+simple_title:         "Eine HTTP-Anfrage mit Basisauthentifizierung senden"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "HTML and the Web"
@@ -12,32 +12,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Senden von HTTP-Anfragen mit einer einfachen Authentifizierung ist ein gängiges Verfahren in der Programmierung, um Zugriff auf geschützte Ressourcen zu erhalten. Es wird häufig verwendet, um APIs, Webdienste oder andere Online-Plattformen anzusteuern, die einen Benutzernamen und ein Passwort zur Authentifizierung erfordern.
+Das Senden einer HTTP-Anfrage mit Basic-Authentifizierung ist ein elementarer Schritt, der verwendet wird, um einen Server dazu zu bringen, sensible Daten zu liefern, nachdem eine gültige Benutzername-Passwort-Kombination vorgelegt wurde. Programmierer machen dies, um die Privatsphäre und Sicherheit von Userdaten in Netzwerkanwendungen zu gewährleisten.
 
-## Wie?
+## Wie macht man das:
 
-Die Verwendung von Fish Shell vereinfacht das Senden von HTTP-Anfragen mit einfacher Authentifizierung erheblich. Mit dem Befehl "curl" können wir eine Anfrage senden und dabei die Option "-u" verwenden, um die Anmeldeinformationen anzugeben. Hier ist ein Beispiel:
+Im Fish Shell-Codeblock unten sehen Sie, wie man eine HTTP-Anfrage mit Basic-Authentifizierung sendet:
 
+```Fish Shell
+set benutzername 'deinUsername'
+set passwort 'deinPasswort'
+set basisauth (echo -n $benutzername:$passwort | base64)
+curl -H "Authorization: Basic $basisauth" https://deine-website.de
 ```
-Fish Shell: curl -u Benutzername:Passwort https://example.com/api/
-```
+Die Ausgabe wäre dann die Antwort des Servers auf Ihre Anfrage.
 
-Das gibt uns den vollen Inhalt der angeforderten Ressource als Ausgabe zurück. Wenn Sie nur eine bestimmte Eigenschaft oder einen Wert aus der Antwort benötigen, können Sie die Option "-s" verwenden, um sie zu filtern, zum Beispiel:
+## Tiefere Einblicke
 
-```
-Fish Shell: curl -su Benutzername:Passwort https://example.com/api/ | grep "E-Mail"
-```
+Die Methode des Sendens von HTTP-Anfragen mit Basic-Authentifizierung ist zwar alt, aber sehr effektiv. Sie wurde bereits in den 90er Jahren eingeführt, als das WWW noch in den Kinderschuhen steckte. 
 
-Dies wird nur die Zeile mit der E-Mail-Adresse des Benutzers aus der Antwort ausgeben.
+Alternativen zu Basic Auth sind Digest-Authentifizierung, OAuth und vieles mehr, die je nach Use Case verwendet werden können.
 
-## Tiefer Einblick
-
-Die Verwendung von HTTP-Anfragen mit einfacher Authentifizierung hat eine lange Geschichte und ist immer noch eines der grundlegendsten Verfahren zur Authentifizierung in der Programmierung. Es gibt jedoch auch andere Methoden, wie beispielsweise OAuth 2.0 oder Token-basierte Authentifizierung, die je nach Anwendungsfall möglicherweise geeigneter sind.
-
-Wenn Sie mehr über das Senden von HTTP-Anfragen mit Fish Shell erfahren möchten, können Sie die Manpage für "curl" oder die offizielle Dokumentation für Fish Shell konsultieren. Es gibt auch verschiedene Plug-ins und Erweiterungen, die das Senden von HTTP-Anfragen noch einfacher machen und Funktionen wie das Caching von Anmeldeinformationen oder das Automatisieren von Anfragen ermöglichen.
+Das Prinzip der Basic Authentifizierung ist recht simpel: Benutzername und Passwort werden durch einen Doppelpunkt getrennt und base64-kodiert. Der resultierende String wird dann im HTTP-Header mitgeliefert.
 
 ## Siehe auch
 
-- Fish Shell Dokumentation: https://fishshell.com/docs/current/
-- Offizielle Manpage für "curl": https://curl.haxx.se/docs/manpage.html
-- Erweiterungen für Fish Shell: https://github.com/fisherman/fisherman/wiki/Plugins
+Schau dir folgende Ressourcen für weitere Informationen an:
+
+1. Fish Shell Offizielle Dokumentation: https://fishshell.com/
+2. RFC 7617 - The 'Basic' HTTP Authentication Scheme: https://tools.ietf.org/html/rfc7617
+3. Stack Overflow - Verwenden Sie curl mit HTTP Basic-Authentifizierung auf der Fish Shell: https://stackoverflow.com/questions/18377526/curl-basic-http-authentication-on-the-fish-shell

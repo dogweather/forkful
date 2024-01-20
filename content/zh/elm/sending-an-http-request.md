@@ -1,6 +1,6 @@
 ---
 title:                "发送http请求"
-html_title:           "Elm: 发送http请求"
+html_title:           "C#: 发送http请求"
 simple_title:         "发送http请求"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,46 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是HTTP请求及其用途？
-发送HTTP请求是通过互联网与服务器进行通信的一种方式。程序员经常发送HTTP请求来获取网页、数据或其他信息，这样他们就能够在自己的应用程序中使用这些信息。
+# 使用Elm进行HTTP请求
 
-## 如何实现：
-```elm
-import Http exposing (..)
-import Json.Decode exposing (..)
+## 什么和为什么？
 
-getPosts : Cmd Msg
-getPosts =
-    let
-        url = "https://jsonplaceholder.typicode.com/posts"
-    in
-        send GetPosts (get url decodePosts)
+HTTP请求是从你的应用到服务器的通信。我们使用它来发送或接收数据，比如从网络数据库获取信息。
 
-type Msg
-    = GetPosts (Result Http.Error (List Post))
+## 如何操作：
 
-type alias Post =
-    { userId : Int
-    , id : Int
-    , title : String
-    , body : String
+下面是使用Elm（当前版本）发送HTTP GET请求并处理响应的代码示例。
+
+```Elm
+import Http
+import Json.Decode as Decode
+
+type alias User =
+    { id : Int
+    , name : String
     }
 
-decodePosts : Decoder (List Post)
-decodePosts =
-    list (
-        map4 Post
-        (field "userId" int)
-        (field "id" int)
-        (field "title" string)
-        (field "body" string)
-    )
-```
+getUser : Int -> Cmd Msg
+getUser userid =
+    Http.get
+        { url = "https://jsonplaceholder.typicode.com/users/" ++ String.fromInt userid
+        , expect = Http.expectJson GotUser (Decode.field "name" Decode.string)
+        }
 
-## 深入了解：
-HTTP是一种通用的协议，用于客户端和服务器之间的通信。它可以使用不同的方法（GET、POST等）来传输数据，还可以通过头部信息来指定一些其他的信息。除了使用Elm自带的Http模块，还可以使用第三方库如elm-http-builder来构建请求。
+type Msg
+    = GotUser (Result Http.Error User)
+```
+上述代码通过URL获取用户，并将响应解码为`User`类型的实例。
+
+## 深入详解：
+
+Elm的HTTP模块基于XHR（XMLHttpRequest），这是一种web应用程序与服务器交互的技术。然而，为了处理效率，Elm封装了一个易于使用，更友好的API，以更有效地处理HTTP请求。
+
+对于POST请求，你可以使用Http.post。Elm中还支持其他HTTP方法，比如PUT和DELETE。
+
+在处理响应时，使用 `expectJson` 函数以及名为 `Json.Decode` 的模块，这些都基于JSON数据转换函数。
 
 ## 参考资料：
-- [Elm官方文档](https://guide.elm-lang.org/)
-- [Elm-http-builder库](https://package.elm-lang.org/packages/ktonon/elm-http-builder/latest/)
-- [HTTP协议的历史背景](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview)
+
+以下是一些相关的在线资源，可以帮助进一步理解和掌握Elm中的HTTP请求。
+
+1. Elm的HTTP模块的官方文档: [https://package.elm-lang.org/packages/elm/http/latest/](https://package.elm-lang.org/packages/elm/http/latest/)
+2. Elm的JSON解码器的官方文档: [https://package.elm-lang.org/packages/elm/json/latest/](https://package.elm-lang.org/packages/elm/json/latest/)
+3. Elm官方教程: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)

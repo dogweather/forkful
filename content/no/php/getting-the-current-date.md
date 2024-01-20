@@ -1,7 +1,7 @@
 ---
-title:                "Å få dagens dato"
-html_title:           "PHP: Å få dagens dato"
-simple_title:         "Å få dagens dato"
+title:                "Få den gjeldende datoen"
+html_title:           "Haskell: Få den gjeldende datoen"
+simple_title:         "Få den gjeldende datoen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,41 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva og hvorfor?
-Det å få datoen er en måte for programmerere å få informasjon om den nåværende datoen. Dette kan være nyttig for å sjekke om en bestemt hendelse har skjedd eller for å planlegge fremtidige operasjoner.
+## Hva & Hvorfor?
 
-Hvordan:
-For å få den nåværende datoen i PHP, kan du bruke funksjonen date (). Dette vil returnere datoen og tidspunktet i et gitt format. Her er et eksempel på hvordan du kan bruke denne funksjonen:
+Å hente datoen handler om å spørre systemet ditt om hva dagens dato er. Denne infoen er uvurderlig når du jobber med ting som kalendere, dato-stempler eller hvis du bare vil si "Hei" til brukeren din med dagens dato.
 
-```PHP
-<?php
-echo date("d.m.Y");
-```
-Dette vil gi følgende utdata: 23.09.2021.
+## Slik gjør du det:
 
-Hvis du vil formatere datoen på en annen måte, kan du bruke ulike parametere i date () -funksjonen. For eksempel, hvis du bare ønsker å få måneden, kan du bruke følgende kode:
+PHP gjør det enkelt å få dagens dato. Bruk `date()` funksjonen som følger:
 
 ```PHP
 <?php
-echo date("m");
+echo date('Y-m-d');
+?>
 ```
-Dette vil gi den nåværende måneden som utdata, for eksempel 09 for september.
 
-Du kan også legge til tekst og symboler i formatet ditt. For eksempel, hvis du ønsker å få datoen på formatet "dd.mm.yyyy", kan du bruke følgende kode:
+Denne koden vil hente datoen i "År-Måned-Dag" format, og viser noe som dette: 
+
+```
+2023-06-23
+```
+
+## Dypdykk
+
+`date()` funksjonen i PHP har vært til stede siden PHP 4, og har siden blitt utbedret og forbedret. Funksjonen bruker serverens dato og klokkeslett, noe som betyr at resultatet kan variere avhengig av hvor serveren er lokalisert - noe du bør ha i bakhodet. 
+
+Det finnes alternativer til `date()`, som f.eks. `DateTime()` klassen som tilbyr mer fleksibilitet og funksjoner. Bruken av `DateTime()` kan se ut slik:
 
 ```PHP
 <?php
-echo date("d.m.Y");
+$dato = new DateTime();
+echo $dato->format('Y-m-d');
+?>
 ```
 
-Dybde på dykk:
-Å få datoen med PHP er enkelt og en vanlig operasjon i programmering. Tidligere, før PHP 4.3, måtte utviklere bruke funksjonene gettimeofday () eller mktime () for å få den nåværende datoen. Men med introduksjonen av date () -funksjonen, ble prosessen enklere og mer effektiv.
+Det er ikke så annerledes enn `date()` i bruk, men hvis du skal jobbe med mer komplekse datooperasjoner, vil `DateTime()` være det beste valget. 
 
-Det finnes også alternativer til date () -funksjonen, som for eksempel DateTime-klassen som ble introdusert i PHP 5.2. Dette alternativet gir mer fleksibilitet og funksjonalitet for å jobbe med datoer og tider.
+## Se også 
 
-Implementeringsdetaljer om å få datoen i PHP kan variere avhengig av versjonen du bruker. Det er alltid lurt å sjekke PHP-dokumentasjonen for å være sikker på at du bruker den riktige syntaksen og parameterne.
+For mer informasjon om å jobbe med datoer i PHP, ta en titt på følgende lenker:
 
-Se også:
-- Offisiell PHP-dokumentasjon om date () -funksjonen: https://www.php.net/manual/en/function.date.php
-- Dokumentasjon for DateTime-klassen: https://www.php.net/manual/en/class.datetime.php
-- Mer info om PHP og datoer: https://www.w3schools.com/php/php_date.asp
+1. PHP date() funksjonen: [https://www.php.net/manual/en/function.date.php](https://www.php.net/manual/en/function.date.php)
+2. PHP DateTime klassen: [https://www.php.net/manual/en/class.datetime.php](https://www.php.net/manual/en/class.datetime.php)
+3. Datoformat i PHP: [https://www.php.net/manual/en/datetime.format.php](https://www.php.net/manual/en/datetime.format.php)

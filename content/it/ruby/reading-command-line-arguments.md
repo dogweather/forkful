@@ -1,7 +1,7 @@
 ---
-title:                "Lettura degli argomenti della linea di comando"
-html_title:           "Ruby: Lettura degli argomenti della linea di comando"
-simple_title:         "Lettura degli argomenti della linea di comando"
+title:                "Lettura degli argomenti della riga di comando"
+html_title:           "Java: Lettura degli argomenti della riga di comando"
+simple_title:         "Lettura degli argomenti della riga di comando"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Files and I/O"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perché?
-Leggere gli argomenti della riga di comando è una pratica comune nella programmazione, che consiste nel raccogliere gli input forniti dall'utente quando il programma viene eseguito. Questi argomenti possono essere utilizzati per personalizzare l'esecuzione del programma o per passare informazioni importanti alla logica del codice.
+# Lettura degli argomenti da linea di comando in Ruby
 
-## Come fare:
-Per leggere gli argomenti della riga di comando in Ruby, è necessario utilizzare un'apposita funzione chiamata ```ARGV```, che restituisce un array contenente tutti gli argomenti passati all'avvio del programma. Di seguito un esempio di codice:
+## Che cos'è e perché?
+La lettura degli argomenti da linea di comando riguarda il recupero di input dai parametri specificati quando si esegue uno script di Ruby. Gli sviluppatori fanno questo quando vogliono personalizzare l'esecuzione di un programma senza modificare il codice sorgente.
+
+## Come si fa:
+Per recuperare gli argomenti da linea di comando in Ruby, usiamo la variabile di sistema predefinita `ARGV`. Ecco un esempio pratico:
+
+```ruby
+# mio_script.rb
+puts "Hai passato #{ARGV.length} argomenti."
+ARGV.each do |arg|
+  puts "Argomento: #{arg}"
+end
+```
+Eseguendo lo script con `ruby mio_script.rb arg1 arg2 arg3`, otterremmo:
 
 ```
-# Legge il primo argomento passato alla riga di comando e lo salva in una variabile
-nome = ARGV[0]
-
-# Stampa il nome utente sulla console
-puts "Ciao #{nome}! Benvenuto!"
+Hai passato 3 argomenti.
+Argomento: arg1
+Argomento: arg2
+Argomento: arg3
 ```
 
-Esempio di output:
+## Approfondimenti:
+La variabile `ARGV` è stata adottata da Ruby dai linguaggi C e Perl. È importante notare che questi argomenti sono sempre interpretati come stringhe. Se hai bisogno di lavorare con tipi di dati diversi, dovrai convertirli.
 
-```
-$ ruby benvenuto.rb Maria
-Ciao Maria! Benvenuto!
-```
+Esistono vari metodi per leggere gli argomenti da linea di comando oltre `ARGV`, come l'uso di librerie esterne (ad es. `OptionParser`, `Thor`) che offrono una gestione degli argomenti più sofisticata e opzioni di formattazione.
 
-## Approfondimento:
-Leggere gli argomenti della riga di comando è una funzionalità che esiste sin dai primi linguaggi di programmazione a riga di comando come C e Unix shell. In Ruby, i programmatori possono utilizzare anche il modulo ```OptionParser``` per gestire gli argomenti da riga di comando in maniera più strutturata. Inoltre, gli sviluppatori possono anche creare interfacce grafiche per permettere agli utenti di interagire con il programma senza dover digitare argomenti manualmente.
+Il funzionamento interno di `ARGV` è piuttosto semplice: è un array di stringhe in cui ogni elemento corrisponde a un argomento da linea di comando. Ruby lo popola automaticamente all'avvio dello script.
 
-## Vedi anche:
-- [Documentazione di Ruby sull'utilizzo della funzione ```ARGV```](https://rubyreferences.github.io/rubyref/language/arguments.html)
-- [Documentazione di Ruby sul modulo ```OptionParser```](https://rubyreferences.github.io/rubyref/command_line/optionparser.html)
-- [Esempi di interfacce grafiche in Ruby](https://github.com/TK-Nguyen/Tk/blob/master/README.md)
+## Per saperne di più
+Potrebbe essere utile consultare i seguenti link per ulteriori informazioni sugli argomenti da linea di comando in Ruby:
+
+1. [Ruby Doc - ARGV](https://docs.ruby-lang.org/en/latest/variable.html#ARGV)
+2. [Ruby Doc - OptionParser](https://docs.ruby-lang.org/en/latest/lib/OptionParser.html)
+3. [Stack Overflow - How do I parse command line arguments in Ruby?](https://stackoverflow.com/questions/483210/how-do-i-parse-command-line-arguments-in-ruby)
+4. [RubyGuides - Command Line Arguments](https://www.rubyguides.com/2018/09/ruby-argv-command-line-arguments/)

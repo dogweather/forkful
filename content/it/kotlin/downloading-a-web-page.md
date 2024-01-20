@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Kotlin: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,53 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa & Perché?
+## Che Cosa e Perché?
 
-Scaricare una pagina web significa ottenere il suo contenuto e salvarlo sul nostro computer. I programmatori spesso fanno questo per analizzare il contenuto della pagina o integrarlo in altre applicazioni.
+Scaricare una pagina web significa acquisire il suo codice sorgente HTML. I programmatori fanno questo per analizzare, manipolare o utilizzare i dati della pagina.
 
-Come Fare:
+## Come fare:
+
+Ecco come scaricare una pagina web in Kotlin, utilizzando la libreria `jsoup`.
 
 ```Kotlin
-import java.net.URL
+import org.jsoup.Jsoup
 
-// Definisci l'URL della pagina web che vuoi scaricare
-val url = URL("https://www.example.com")
+fun scaricaPaginaWeb(url: String): String {
+    val documento = Jsoup.connect(url).get()
+    return documento.html()
+}
 
-// Usa il metodo openStream() per ottenere l'input stream del contenuto della pagina
-val inputStream = url.openStream()
-
-// Leggi il contenuto dell'input stream e salvalo in una variabile
-val contenuto = inputStream.bufferedReader().use { it.readText() }
-
-// Stampa il contenuto della pagina
-println(contenuto)
+fun main() {
+    val url = "http://www.esempio.com"
+    println(scaricaPaginaWeb(url))
+}
 ```
 
-Output:
+Quando esegui il codice, vedrai qualcosa come:
 
 ```
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-  <title>Example Domain</title>
-  <meta charset="UTF-8">
-  <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style type="text/css">
-    body {
-      background-color: #f0f0f2;
-      margin: 0;
-      padding: 0;
-      font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    
-    ...
+...
+</html>
 ```
 
-Deep Dive:
+## Approfondimento
 
-Scaricare una pagina web può risalire ai primi giorni del World Wide Web quando i programmatori stavano sviluppando metodi per accedere ai contenuti dei siti web. Oltre all'approccio mostrato sopra, ci sono altre opzioni per scaricare una pagina web utilizzando librerie esterne come Jsoup o OkHttp. Inoltre, è importante considerare l'implementazione corretta della gestione degli errori e la gestione delle eccezioni quando si scaricano pagine web.
+1. Contesto storico: Il web scraping è iniziato praticamente con l'Internet. All'inizio, tutto era fatto manualmente, ma da allora abbiamo sviluppato strumenti automatici come `jsoup` per Kotlin.
 
-Vedi Anche:
+2. Alternative: Oltre a `jsoup`, in Kotlin si possono utilizzare anche `khttp` o `Fuel` per scaricare pagine web.
 
-- [Tutorial su Jsoup in Kotlin](https://www.tutorialkart.com/kotlin/jsoup-kotlin-html-parser/ "Tutorial su Jsoup in Kotlin")
-- [Documentazione ufficiale di OkHttp per Kotlin](https://square.github.io/okhttp/ "Documentazione ufficiale di OkHttp per Kotlin")
+3. Dettagli di implementazione: Jsoup non scarica solo il codice HTML. Esso analizza anche il codice, costruisce un albero DOM e permette di eseguire query su di esso. Questo può essere molto utile se si desidera fare qualcosa di più complicato che semplicemente scaricare la pagina web.
+
+## Vedere Anche
+
+1. La documentazione ufficiale di Jsoup per ulteriori informazioni ([link](https://jsoup.org/)).
+2. Una guida più approfondita al web scraping con Kotlin e Jsoup ([link](https://www.baeldung.com/kotlin-jsoup)).
+3. Un tutorial video su come scaricare pagine web con Kotlin ([link](https://www.youtube.com/watch?v=ZIZjvTKVIzM)).

@@ -1,6 +1,6 @@
 ---
 title:                "Extraindo substrings"
-html_title:           "Gleam: Extraindo substrings"
+html_title:           "Bash: Extraindo substrings"
 simple_title:         "Extraindo substrings"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,34 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O que é e por quê?
 
-Extrair substrings é o ato de selecionar parte de uma string maior. Programadores frequentemente fazem isso para manipular e trabalhar com pedaços específicos de texto, em vez de lidar com a string inteira.
+Extrair substrings é o processo de obter uma parte de uma cadeia de caracteres. Programadores fazem isso para manipular e analisar dados, isolando partes importantes de um conjunto maior de dados.
 
 ## Como fazer:
 
-As duas principais funções usadas para extrair substrings em Gleam são `String.slice` e `String.substring`.
+Aqui está um exemplo básico de como extrair uma substring em Gleam:
 
-```
-Gleam import String
+```gleam
+import gleam/string
 
-pub fn main() {
-  let string = "Olá, mundo!"
-
-  //Usando a função "slice"
-  String.slice(string, 0, 4) // Saída: "Olá,"
-
-  //Usando a função "substring"
-  String.substring(string, 0, 4) // Saída: "Olá," 
-}
+string.slice("Olá, Mundo!", 0, 4)
 ```
 
-## Mergulho Profundo:
+O código acima retornará `Olá`.
 
-Extrair substrings tem sido uma técnica comum na programação e é amplamente utilizada em diferentes linguagens de programação. Embora Gleam tenha apenas duas funções dedicadas para isso, outras linguagens, como JavaScript, possuem várias opções de função, dependendo do que o programador deseja alcançar. Além disso, ao trabalhar com Unicode, é importante usar as funções `String.slice_utf8` e `String.substring_utf8` para garantir resultados precisos.
+## Imersão profunda:
 
-## Veja também:
+1. Historia: Embora Gleam seja uma linguagem relativamente nova, a extração de substrings é uma funcionalidade básica encontrada na maioria das linguagens de programação.
+2. Alternativas: No Gleam, podemos também usar a função `substring` para obter o mesmo resultado.
+3. Detalhes de implementação: Em Gleam, `string.slice` pega três argumentos: a string original, o início da substring e o final da substring.
 
-- [Documentação oficial do Gleam](https://gleam.run/)
-- [Tutorial sobre strings em Gleam](https://gleam.run/book/tour/strings.html)
-- [Artigo sobre manipulação de strings em Gleam](https://blog.revillweb.com/2021/07/16/how-to-work-with-strings-in-gleam/)
+## Ver também:
+
+Para mais informações sobre a manipulação de strings em Gleam, você pode verificar os seguintes links:
+
+1. Documentação oficial de Gleam para a Função String: [Clique aqui](https://gleam.run/book/tour/strings.html)
+2. Tutorial de YouTube sobre a linguagem de programação Gleam: [Clique aqui](https://www.youtube.com/watch?v=R2FtPcXkYEo)
+3. Curso online gratuito sobre principais funções de string no Gleam: [Clique aqui](https://www.learn-gleam-free.com/string-functions)

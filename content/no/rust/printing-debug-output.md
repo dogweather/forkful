@@ -1,7 +1,7 @@
 ---
-title:                "Skriving av feilsøkningsutdata"
-html_title:           "Rust: Skriving av feilsøkningsutdata"
-simple_title:         "Skriving av feilsøkningsutdata"
+title:                "Utskrift av feilsøkingsresultat"
+html_title:           "Arduino: Utskrift av feilsøkingsresultat"
+simple_title:         "Utskrift av feilsøkingsresultat"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,38 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
+## Hva & Hvorfor?
 
-Å skrive ut feilsøkningsutdata er en viktig del av utviklingsprosessen for programvare. Det handler om å legge inn kode som skriver ut informasjon som hjelper deg med å forstå hva som foregår i programmet ditt mens det kjører. Dette er nyttig for å finne og fikse feil og for å forstå hvordan koden din fungerer.
+Utskrift av feilsøkingsdata er prosessen med å vise programdata for å løse problemer. Programmerere bruker det for å forstå hva som skjer under panseret når noe går galt.
 
-## Hvordan:
-
+## Hvordan gjør jeg det:
 ```Rust
 fn main() {
-    println!("Hei fra Rust!");
+    let data = vec![1, 2, 3];
+    println!("{:?}", data);
+}
+```
+Dette vil skrive ut: `[1, 2, 3]`
+
+Hvis datatypen din ikke støtter debug-utskrift, kan du legge til en `#[derive(Debug)]` annotering:
+
+```Rust
+#[derive(Debug)]
+struct Person {
+    name: String,
+    age: u8,
+}
+
+fn main() {
+    let person = Person { name: String::from("Alice"), age: 20 };
+    println!("{:#?}", person);
+}
+```
+Utskriften vil være:
+
+```
+Person {
+    name: "Alice",
+    age: 20,
 }
 ```
 
-Dette eksempelet viser hvordan du bruker `println!` -makroen i Rust til å skrive ut en streng til konsollen. Du kan også skrive ut variabler og andre verdier ved å inkludere dem i `println!` -kallet med en komma-separert liste. For eksempel:
+## Dypt Dykk
 
-```Rust
-let navn = "Jonas";
-let alder = 25;
-println!("Hei, mitt navn er {} og jeg er {} år gammel.", navn, alder);
-```
+Historisk sett, oppsto behovet for feilsøkingsutskrift som en enkel metode for å forstå hva en kode gjør, spesielt når du finner feil. Det har vært i bruk siden tidlige programmeringsspråk.
 
-Output vil da være: `Hei, mitt navn er Jonas og jeg er 25 år gammel.`
+Alternativene inkluderer logger, som gir mer kontroll over hvor og hvordan de skriver ut. Du kan også bruke en debugger, som lar deg sjekke programtilstanden på ethvert punkt.
 
-## Dypdykk:
+Når det gjelder implementeringsdetaljer, gir Rust deg `fmt::Debug`-trait som kan brukes til å skrive ut din datatypes tilstand. Et annet nyttig verktøy er `#[derive(Debug)]`, som genererer en grunnleggende implementasjon for deg.
 
-Historisk sett har debug-utskrift vært en viktig del av programmering for å finne og løse feil i komplekse programmer. I tillegg til å bruke `println!` -makroen, kan du også bruke Rusts `println_dbg!` -makro for å få mer detaljert informasjon om koden din når du feilsøker.
+## Se også
 
-Det finnes også alternativer til å skrive ut feilsøkningsutdata, for eksempel å bruke en debuggere eller logger-biblioteker som `log` eller `slog`. Disse gir mer avanserte funksjoner for å håndtere og analysere utdata.
-
-Når det gjelder implementasjonsdetaljer, bruker Rusts `println!` og `println_dbg!` -makroen `fmt` -modulen for formatering av utdata. Denne modulen gir mange nyttige funksjoner for å formatere utdata på en oversiktlig måte.
-
-## Se også:
-
-- [Rust docs for println!](https://doc.rust-lang.org/std/macro.println.html)
-- [Rust docs for fmt modulen](https://doc.rust-lang.org/std/fmt/index.html)
-- [The Rust Programming Language - Debugging Techniques](https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html#debugging-techniques)
+- [Rust sin Debug Trait Dokumentasjon](https://doc.rust-lang.org/std/fmt/#formatting-traits)
+- [Rust sin Kunnskapsbase om Utledning](https://doc.rust-lang.org/rust-by-example/trait/derive.html)
+- [Bloggpost om Praktisk Feilsøking i Rust](https://medium.com/nearprotocol/debugging-rust-a537424a2609)

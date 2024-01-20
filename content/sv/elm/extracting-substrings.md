@@ -1,7 +1,7 @@
 ---
-title:                "Att extrahera substrängar"
-html_title:           "Elm: Att extrahera substrängar"
-simple_title:         "Att extrahera substrängar"
+title:                "Extrahera delsträngar"
+html_title:           "Arduino: Extrahera delsträngar"
+simple_title:         "Extrahera delsträngar"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,24 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att extrahera substrängar är när man tar ut en del av en sträng och använder den som en egen sträng. Detta är en vanlig teknik som används av programmerare för att manipulera och hantera data på ett effektivt sätt.
+Att extrahera delsträngar handlar om att ta ut en specifik del av en sträng baserat på index. Detta är ett användbart verktyg när programmerare behöver bearbeta eller analysera datan i en viss sträng.
 
 ## Så här gör du:
+Elm erbjuder `String.slice` funktionen för att extrahera substrängar. Låt oss se på ett exempel:
+
 ```Elm
--- Extracting substring from start
-String.left 3 "Hej hej hej" == "Hej"
+import Html exposing (text)
 
--- Extracting substring from end
-String.right 3 "Hej hej hej" == "hej"
-
--- Extracting substring from specific index
-String.slice 4 7 "Hej hopp" == "hopp"
+main =
+    "Hej Världen!" 
+        |> String.slice 0 3
+        |> text
 ```
 
-## Djupdykning:
-Att extrahera substrängar är en teknik som har funnits länge inom programmering och används fortfarande flitigt idag. Innan dess var det vanligt att manuellt loopa igenom en sträng för att hitta och extrahera den önskade delen. Alternativ till att extrahera substrängar inkluderar att använda regex eller andra metoder för strängmanipulering. I Elm sker detta genom att använda funktioner som `String.left`, `String.right` och `String.slice`.
+I detta exempel kommer outputen bli "Hej". `String.slice` tar två index, början och slutet, och returnerar delen av strängen mellan dessa index.
 
-## Se även:
-- [Elm string documentation](https://package.elm-lang.org/packages/elm/core/latest/String)
-- [W3Schools substring tutorial](https://www.w3schools.com/jsref/jsref_substr.asp)
-- [MDN substring reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring)
+## Djupdykning
+Elm är relativt nytt och bygger på influenser från många andra programmeringsspråk. Metoden för att extrahera substrängar är dock ganska standardiserad över de flesta språk. Alternativ till `String.slice` kan vara `String.left` eller `String.right` för att få en substräng från början eller slutet av strängen. 
+
+Elm implementerar dessa funktioner genom att först konvertera strängen till en lista med tecken, utför operationer på listan, och sedan konvertera tillbaka till en sträng. Detta är effektivt för programmeringsspråk men kan bli tidskrävande för stora mängder data.
+
+## Se även
+För mer information, kolla in dessa dokument:
+- [Elm String API](https://package.elm-lang.org/packages/elm/core/latest/String) för en heltäckande visning av alla strängfunktioner i Elm.
+- [Elm Guide](https://guide.elm-lang.org/) för en övergripande introduktion till Elm, inklusive en sektion om strängar.

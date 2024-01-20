@@ -1,6 +1,6 @@
 ---
 title:                "Concatenating strings"
-html_title:           "Javascript recipe: Concatenating strings"
+html_title:           "PHP recipe: Concatenating strings"
 simple_title:         "Concatenating strings"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -12,37 +12,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Concatenating strings in programming refers to the process of combining multiple strings into one. It is a common operation used by programmers to build longer strings from smaller ones, for various purposes such as displaying messages and generating dynamic content.
+Concatenating strings refers to linking multiple strings into just one new string. Programmers do this to build a custom message dynamically, often to output messages or send captive data.
 
-## How to:
+## How To:
 
-To concatenate strings in Javascript, we use the `+` operator. Let's take a look at an example:
+There are some ways to concatenate strings in JavaScript. Here they are:
 
-```javascript
-let string1 = "Hello";
-let string2 = "World";
-let concatenated = string1 + " " + string2;
-console.log(concatenated); // Output: Hello World
+1. Using the "+" operator:
+```Javascript
+let str1 = "Hello";
+let str2 = "World!";
+let message = str1 + " " + str2; 
+console.log(message); // Displays "Hello World!"
 ```
 
-We can also use template literals, enclosed in backticks, to concatenate strings and add variables or expressions within the string. Here's an example:
+2. Using the concat() function:
+```Javascript
+let str1 = "Hello";
+let str2 = "World!";
+let message = str1.concat(" ", str2);
+console.log(message); // Displays "Hello World!"
+```
 
-```javascript
-let name = "John";
-let age = 30;
-console.log(`Hello, my name is ${name} and I am ${age} years old.`); // Output: Hello, my name is John and I am 30 years old.
+3. Using ES6 template literals:
+```Javascript
+let str1 = "Hello";
+let str2 = "World!";
+let message = `${str1} ${str2}`; 
+console.log(message); // Displays "Hello World!"
 ```
 
 ## Deep Dive:
 
-Concatenating strings has been a part of programming since the early days. In the early days of computers, strings were represented as arrays of characters and concatenation was done by manually looping through each character, which was a tedious process. As programming languages evolved, built-in string concatenation methods were introduced, making it easier for developers to combine strings.
+The concept of concatenating strings has been around since early programming languages. Nowadays, JavaScript offers more efficient ways to carry out string concatenation, such as template literals introduced in ES6 to make string concatenation more readable.
 
-There are also other ways to concatenate strings in JavaScript, such as the `concat()` method or the `join()` method, which can be used on arrays of strings to concatenate them into one string.
+While the "+" operator and the concat() function are straightforward and widely-used methods, they might become cumbersome when dealing with lengthy text and lots of strings. Template literals ease this situation significantly.
 
-Implementing string concatenation in JavaScript is relatively simple, but it is important to pay attention to the order of the strings and variables being combined, as it can affect the output. It's also important to keep in mind that string concatenation can be a resource-intensive process, especially when dealing with large strings, so it's best to use it sparingly when possible.
+However, note that browser compatibility is a point of concern here. Some older browsers may not support template literals, so make sure your target audience’s browser supports it before using.
 
 ## See Also:
 
-- [MDN Web Docs on string concatenation in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/concat)
-- [W3Schools on string concatenation in JavaScript](https://www.w3schools.com/jsref/jsref_concat_string.asp)
-- [FreeCodeCamp on string concatenation in JavaScript](https://www.freecodecamp.org/news/how-to-combine-strings-in-javascript/)
+To deepen your understanding, make sure to check out these resources:
+
+- MDN JavaScript String Documentation: [MDN Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+- Understanding ES6 Template Literals: [ES6 Template Literals](https://wesbos.com/javascript-template-strings/)
+- Browser Compatibility for Template Literals: [Can I Use](https://caniuse.com/#feat=template-literals)

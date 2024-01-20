@@ -1,7 +1,7 @@
 ---
-title:                "Analisando html"
-html_title:           "Lua: Analisando html"
-simple_title:         "Analisando html"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer parsing HTML?
+## O Que & Por Que?
 
-Parsing HTML é o processo de analisar o código HTML de uma página web para extrair informações específicas. Isso é feito por muitas razões, como coletar dados para análise, criar planilhas ou apresentar os dados de forma mais amigável.
+Analisar HTML significa extrair informações de um documento HTML. Programadores fazem isso para manipular, extrair dados, ou interagir com sites baseados em HTML de maneira programática.
 
-## Como fazer:
+## Como Fazer:
+Você pode usar uma biblioteca chamada LuaHtmlParser. Aqui está um exemplo básico:
 
 ```Lua
--- Importar o módulo HTML
-local html = require("html")
+local luahtmlparser = require("luahtmlparser")
 
--- Definir a página web a ser analisada
-local pagina = [[<html>
-<head>
-<title>Minha Página</title>
-</head>
-<body>
-<h1>Bem-vindo à minha página</h1>
-<p>Esta é uma página de exemplo</p>
-</body>
-</html>]]
+local parser = luahtmlparser.new()
+parser:add_text("<html><body><p>Olá, mundo!</p></body></html>")
 
--- Fazer parsing do código HTML
-local dados = html.parse(pagina)
+local root = parser:parse()
+print(root:select("p"):text())
+```
+Saída:
 
--- Acessar elementos específicos da página
-local titulo = dados.head.title -- retorna "Minha Página"
-local conteudo = dados.body.p -- retorna "Esta é uma página de exemplo"
+```
+Olá, mundo!
 ```
 
-## Mais informações:
+## Mergulho Profundo
+Lua, criado em 1993, é conhecido por ser leve e eficiente. A história do parsing de HTML na Lua tem sido uma história de opções de terceiros, como o LuaExpat ou a LuaHtmlParser que usamos acima.
 
-O processo de parsing HTML é comumente usado na programação web para extrair dados específicos de páginas web. Ele também pode ser usado para validar a estrutura de uma página e identificar possíveis erros ou vulnerabilidades de segurança.
+Alternativas para parsear HTML incluem o uso de expressões regulares, embora seja geralmente desaconselhado devido à irregularidade do HTML na prática. Para HTML bem formado, algoritmos de análise com base em pilha também podem ser usados.
 
-Existem várias alternativas para fazer parsing HTML, como o uso de expressões regulares ou o uso de bibliotecas específicas em outras linguagens de programação. No entanto, a função html.parse () do módulo HTML em Lua é uma opção eficiente e simples para realizar essa tarefa.
+Em termos de implementação, o parsing de HTML envolve uma análise em duas etapas: a tokenização para transformar o texto em uma sequência de tokens (tags, atributos, etc.), e a construção desta sequência de tokens em uma estrutura de árvore, conhecida como "Árvore do Objeto do Documento" (DOM).
 
-## Veja também:
-
-Para saber mais sobre o processo de parsing HTML e como utilizá-lo em Lua, você pode consultar a documentação oficial do módulo HTML: https://github.com/zserge/lua-html
-
-Além disso, você pode encontrar mais informações e exemplos sobre parsing HTML em Lua neste artigo do site Rosetta Code: http://rosettacode.org/wiki/HTML/Extract_data#Lua
+## Veja Também
+- [Documentação LuaHtmlParser](https://github.com/msva/lua-htmlparser)
+- [Por que não usar regex para analisar HTML](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)
+- [Lua User Wiki: Parsing HTML](https://lua-users.org/wiki/ScrapingHtml)
+- [Manual de Referência Lua 5.4](https://www.lua.org/manual/5.4/)

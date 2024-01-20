@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi faire?
-
-Calculer une date dans le futur ou dans le passé est l'action de prédire une date future ou passée à partir d'une date de départ et d'une durée de temps spécifique. Les programmeurs le font principalement pour planifier des événements ou pour créer des applications qui gèrent des dates et des délais.
+## Quoi & Pourquoi?
+Calculer une date dans le futur ou le passé consiste à ajouter ou soustraire un certain nombre de jours à une date spécifique. Les programmeurs le font souvent pour gérer les événements planifiés et les rappels dans leurs applications.
 
 ## Comment faire:
+Arduino ne dispose pas d’une bibliothèque intégrée pour gérer les dates comme certains autres langages. On peut cependant utiliser la bibliothèque Time pour gérer le temps et les dates. Voyons comment ajouter des jours à une date.
 
-Voici un exemple simple de code Arduino pour calculer une date dans le futur:
+```Arduino
+#include <TimeLib.h>
 
-```arduino
+void setup() {
+    Serial.begin(9600);
+    setTime(16, 40, 0, 4, 1, 2021); //16:40:00  on 04 Jan 2021
+}
 
-unsigned long now = millis(); //récupère l'heure actuelle en millisecondes
-unsigned long futureDate = now + 1000000; //ajoute 1000000 millisecondes pour calculer la date future
-Serial.print(F("La date future est: "));
-Serial.println(futureDate); //affiche la date future en millisecondes
+void loop() {
+    time_t t = now();
+    t += 10 * SECS_PER_DAY; //Ajouter dix jours
+    Serial.println(day(t)); //Jour après 10 jours
+    Serial.println(month(t)); //Mois après 10 jours
+    Serial.println(year(t)); // Année après 10 jours
+    delay(5000);
+}
 ```
 
-La sortie de ce code serait: "La date future est: 1000000". Vous pouvez également convertir les millisecondes en une date lisible en utilisant la fonction ```millisToDays```.
+Dans cet exemple, nous ajoutons dix jours à la date du 4 janvier 2021.
 
-## Plongée en profondeur:
+## Explication approfondie
+Historiquement, le calcul des dates dans Arduino n'était pas aussi simple que dans des environnements comme Python ou Java, qui ont des bibliothèques détaillées pour gérer les dates. En revanche, Arduino a une bibliothèque Time, mais ses fonctionnalités sont plus limitées.
 
-Historiquement, la réalisation de calculs de dates dans les programmes était difficile et sujette à des erreurs. Heureusement, il existe aujourd'hui de nombreuses bibliothèques et fonctions mathématiques pour faciliter ce processus. Les programmeurs peuvent également utiliser des modules d'horloge en temps réel pour obtenir une heure précise et ainsi mieux gérer les conversions de dates.
+Parmi les alternatives, on peut citer la bibliothèque DS3231, qui gère le temps réel et les dates en utilisant un module RTC externe. Elle est plus précise mais nécessite du matériel supplémentaire.
 
-## Voir également:
+Sur le plan de l'implémentation, la bibliothèque Time stocke le temps en secondes depuis l'époque UNIX (1er janvier 1970), ce qui simplifie les calculs. Lorsque vous ajoutez ou soustrayez des jours, vous convertissez simplement ces jours en secondes et effectuez votre calcul.
 
-- [Tutoriel pour les bibliothèques de temps et de date Arduino](https://www.arduino.cc/en/Tutorial/BuiltinExamples/Libraries/DateTime)
-- [Bibliothèque Time pour Arduino](https://github.com/PaulStoffregen/Time)
-- [Explications sur la conversion de millisecondes en date](https://www.instructables.com/id/Converting-milliseconds-to-date-in-arduino/)
+## Voir également
+Pour plus de détails sur l'utilisation de la bibliothèque Time, consultez https://www.pjrc.com/teensy/td_libs_Time.html.
+
+Pour en savoir plus sur la bibliothèque DS3231, visitez https://github.com/adafruit/RTClib. 
+
+Notez que ces bibliothèques ne prennent pas en compte les changements d'heure dus à l'heure d'été. Pour cela, vous pourriez envisager une bibliothèque comme Timezone, disponible ici: https://github.com/JChristensen/Timezone.

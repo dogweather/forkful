@@ -1,7 +1,7 @@
 ---
-title:                "Oversetting av en dato fra en streng"
-html_title:           "Javascript: Oversetting av en dato fra en streng"
-simple_title:         "Oversetting av en dato fra en streng"
+title:                "Tolke en dato fra en streng"
+html_title:           "Bash: Tolke en dato fra en streng"
+simple_title:         "Tolke en dato fra en streng"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-**
+# Parsing av datoer fra strenger i JavaScript
 
-## Hva og Hvorfor?
-Parsing av dato fra en streng er en vanlig oppgave for programmører. Det innebærer å konvertere en tekstrepresentasjon av en dato til et objekt som kan behandles av dataprogrammer. Dette er nyttig for å kunne manipulere datoer og utføre operasjoner som å sortere eller filtrere data basert på datoer.
+## Hva & Hvorfor?
 
-## Hvordan:
-Det finnes flere måter å parse datoer fra en streng på i Javascript. En av de vanligste metodene er ved hjelp av `Date()` objektet og `Date.parse()` metoden. Her er et eksempel som viser hvordan du kan parse en dato fra en streng og lagre den i en variabel:
+Parsing av datoer fra strenger handler om å omforme strengdata til et dato-objekt i programmering. Vi gjør dette for å kunne manipulere og bruke disse datoverdiene i vår kode på en enklere og mer effektiv måte.
 
-```Javascript
-var datoString = "2021-10-14";
-var datoObjekt = new Date(Date.parse(datoString));
+## Hvordan gjøre det:
 
-console.log(datoObjekt); // Output: Thu Oct 14 2021 00:00:00
-```
-
-En annen måte å parse en dato på er ved hjelp av `Date()` konstruktøren og å spesifisere år, måned og dag som argumenter. Dette gir også mulighet for å angi klokkeslett og tidsone. Her er et eksempel på hvordan du kan opprette et `Date()` objekt ved å parse en dato fra en streng på denne måten:
+Her er noen grunnleggende kodeeksempler om hvordan vi kan parse en dato fra en streng i JavaScript.
 
 ```Javascript
-var datoString = "2021-10-14T14:30:45";
-var datoObjekt = new Date(datoString);
-
-console.log(datoObjekt); // Output: Thu Oct 14 2021 14:30:45 GMT+0200 (CEST)
+let datoStreng = "2022-02-22";
+let parsDato = new Date(datoStreng);
+console.log(parsDato);
 ```
 
-## Dypdykk:
-Parsing av datoer fra en streng har eksistert siden de tidligste versjonene av Javascript. Første utgave av språket, som ble utgitt i 1995, inkluderte funksjoner for å konvertere datoer fra tekst til dataverdier. Siden da har det blitt lagt til flere alternativer for å utføre denne oppgaven, som `moment.js` biblioteket.
+Når det kjøres, vil koden over utskrive en dato-objekt for 22. februar 2022.
 
-En annen alternativ metode for å parse datoer fra en streng i Javascript er ved hjelp av `Intl` objektet, som gir mulighet for å parse datoer basert på ulike kulturinnstillinger som språk og region.
+```Javascript
+let datoStreng = "2022-02-22T14:20";
+let parsDato = new Date(datoStreng);
+console.log(parsDato);
+```
 
-Implementasjonen av parsing av datoer fra en streng i Javascript kan variere mellom ulike nettlesere og enheter, noe som kan føre til uventede resultater. Det er derfor viktig å teste koden din for å sikre at den fungerer som forventet på alle enheter.
+Koden over vil utskrive en dato-objekt som inkluderer tiden 14:20.
+
+## Dybdeplunge
+
+*Historisk kontekst*: Tidligere var det ganske besværlig å håndtere datoer og tider i JavaScript, men med ECMAScript 5 (ES5) og senere versjoner, har det blitt langt enklere å manipulere datoer og tider.
+
+*Alternativer*: Andre måter å parse datoer på er blant annet bruk av Date.parse() metoden eller bibliotek som Moment.js, som gir mer fleksible og kraftige verktøy for dato/tidshåndtering.
+
+*Gjennomføring av detaljer*: Når du bruker JavaScript's Date constructor til å parse en streng, er det viktig å være klar over at den tolker datoen som UTC. Dette kan føre til utilsiktet oppførsel hvis du jobber i forskjellige tidssoner.
 
 ## Se også:
-For mer informasjon om parsing av datoer fra en streng i Javascript, kan du besøke følgende nettsider:
 
-- [W3Schools: Javascript Date Objects](https://www.w3schools.com/jsref/jsref_obj_date.asp)
-- [MDN web docs: Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [moment.js dokumentasjon](https://momentjs.com/docs/)
+1. [MDN Web Docs: Date](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. [JavaScript Date Objects](https://www.w3schools.com/js/js_date_methods.asp)
+3. [Moment.js](https://momentjs.com/)

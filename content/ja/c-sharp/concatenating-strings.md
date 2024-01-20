@@ -1,7 +1,7 @@
 ---
-title:                "stringsの結合"
-html_title:           "C#: stringsの結合"
-simple_title:         "stringsの結合"
+title:                "文字列の連結"
+html_title:           "Bash: 文字列の連結"
+simple_title:         "文字列の連結"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,28 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をして、なぜ？ 
-文字列を連結するとは、単純に文字列をつなげることです。プログラマーがこれを行う理由は、様々な文字列データを一つにまとめることができるからです。
+## 何となぜ?(What & Why?)
 
-## 方法: 
-文字列を連結するには、```C# ... ``` のコードブロック内でサンプルコードと出力を使用します。例えば、以下のように使用します。
+文字列の結合は、二つ以上の文字列を一つにつなげる処理です。プログラマは、情報表示やデータ操作に際して便利なために実行します。
+
+## どうやって？(How to?)
+
+以下にC#での文字列結合の基本的な方法を示します。
 
 ```C#
-string firstName = "John";
-string lastName = "Doe";
-Console.WriteLine($"My name is {firstName} {lastName}."); 
+string firstName = "Naoto";
+string lastName = "Tanaka";
+string fullName = firstName + " " + lastName;
+Console.WriteLine(fullName);
 ```
 
-出力は以下のようになります。
+出力結果は以下の通りです。
+
 ```C#
-My name is John Doe.
+Naoto Tanaka
 ```
 
-## ディープダイブ: 
-文字列の連結は、古くから使われてきたプログラミングの基本的なテクニックです。他の方法として、文字列フォーマットや置換を利用することもできます。文字列の連結は、メモリの使用やパフォーマンスにも影響を与えるので注意が必要です。
+ここでは、二つの文字列をプラス記号(+)で結合し、新しい文字列を生成しています。
 
-## 参考: 
-関連情報を以下のリンクから参照できます。
-- [C#で文字列を連結する方法](https://docs.microsoft.com/ja-jp/dotnet/csharp/how-to/concatenate-multiple-strings)
-- [文字列をフォーマットする方法](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/formatting-types)
-- [置換について学ぶ](https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/how-to-do-a-substitution-in-strings)
+## より詳しく(Detail)
+
+* 歴史的背景: 昔ながらの方法であるプラス(+)演算子を使用する方法は、わかりやすいですが、大量の文字列を結合する場合にはパフォーマンスが低下する可能性があります。
+* 代替案: StringBuilderを利用すると、より効率的に大量の文字列を結合することができます。
+
+```C#
+StringBuilder sb = new StringBuilder();
+sb.Append("Naoto");
+sb.Append(" ");
+sb.Append("Tanaka");
+string fullName = sb.ToString();
+Console.WriteLine(fullName);
+```
+
+* 実装の詳細: StringBuilderは、内部的には配列のリサイズを避けるために、一連の文字列ブロックを保持します。最後にToStringメソッドで一つの文字列に変換します。
+
+## 参照元(Reference)
+
+* [C# 文字列操作(Microsoft Docs)](https://docs.microsoft.com/ja-jp/dotnet/csharp/programming-guide/strings/)
+* [C#: 文字列の結合、分割(StackOverflow)](https://ja.stackoverflow.com/questions/579/%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%B5%90%E5%90%88-%E5%88%86%E5%89%B2)

@@ -1,6 +1,6 @@
 ---
 title:                "文字列の長さを見つける"
-html_title:           "PHP: 文字列の長さを見つける"
+html_title:           "Elm: 文字列の長さを見つける"
 simple_title:         "文字列の長さを見つける"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,25 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何故やるのか？
-文字列の長さを見つけることは、プログラマーにとって重要なタスクです。文字列の長さを見つけることにより、必要なデータを正確に処理することができます。例えば、ユーザーが入力したパスワードが指定された文字数を満たしているかを確認する際に使用します。
+# PHPによる文字列長の取得 (Find Length of A String in PHP)
 
-## 方法：
+## 何となぜ？
+
+文字列の長さを取得するとは、文字列内の文字数を計算することです。これは、入力確認、テキストサイズの制限、あるいは特定の位置の文字を操るプログラムを作成する際に必要になる操作です。
+
+## 実行方法:
+
+PHPで文字列の長さを取得することは非常に簡単です。組み込み関数`strlen()`を使用します。以下に例を示します。
+
 ```PHP
-// 文字列の長さを表示する例
-echo strlen("こんにちは！"); // 出力：6
+<?php
+$text = "こんにちは、世界!";
+echo strlen($text);
+?>
 ```
+
+このコードを実行すると、`21`が出力されます。
+
+## 詳細な説明:
+
+かつて、`strlen()`関数は内部的に文字列をバイトの配列として扱い、1バイトを1文字としてカウントしていました。しかし多バイト文字（例えば日本語）を正しくカウントできない問題がありました。これに対応するため、現在のPHPでは`mb_strlen()`というマルチバイト対応の関数を使用します。
+
 ```PHP
-// マルチバイト文字列の長さを表示する例
-echo mb_strlen("こんにちは！", "UTF-8"); // 出力：6
+<?php
+$text = "こんにちは、世界!";
+echo mb_strlen($text, "UTF-8");
+?>
 ```
+実行すると、今度は`9`が出力されます。これは日本語の文字数により近い結果です。
 
-## 深堀り
-(1) 歴史的な文脈：文字列の長さを取得する機能は、1980年代にC言語で最初に実装されました。その後、多くのプログラミング言語でも採用されました。
-(2) 代替案：文法に依存しない方法として、mb_strlen()関数を使用することもできます。これにより、マルチバイト文字列の長さをより正確に測定することができます。
-(3) 実装の詳細：文字列の長さを取得する方法は、プログラミング言語によって異なります。一般的な方法は、文字列の長さを保存する変数を使用することです。また、メモリ上に文字列の長さを示すバイト数が格納されている場合もあります。
+文字列の長さを取得する他の方法としては正規表現を使用する方法もありますが、パフォーマンス面から見ると`strlen()`や`mb_strlen()`の方が優れています。
 
-## 参考リンク：
-- [PHP公式ドキュメント – strlen()関数](https://www.php.net/manual/ja/function.strlen.php)
-- [PHP公式ドキュメント – mb_strlen()関数](https://www.php.net/manual/ja/function.mb-strlen.php)
-- [C言語のstrlen()関数の由来](https://stackoverflow.com/questions/20229361/why-was-the-strlen-function-called-strlen)
+## 参考資料:
+
+より深く学びたい方は次のリンクを参考にしてください:
+- PHP公式マニュアルでの`strlen()`の詳細: [here](https://www.php.net/manual/function.strlen.php)
+- PHP公式マニュアルでの`mb_strlen()`の詳細: [here](https://www.php.net/manual/function.mb-strlen.php)
+- Regular Expressions (RegEx) in PHP: [here](https://www.php.net/manual/function.preg-match.php)

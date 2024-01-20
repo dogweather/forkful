@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie argumentów wiersza poleceń"
-html_title:           "Go: Odczytywanie argumentów wiersza poleceń"
-simple_title:         "Odczytywanie argumentów wiersza poleceń"
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Files and I/O"
@@ -12,9 +12,11 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Co i dlaczego?
 
-Czy kiedykolwiek widziałeś w terminalu, że programista wpisuje coś po włączeniu programu? To właśnie jest czytanie argumentów wiersza poleceń! Programiści robią to aby ustawić pewne opcje lub przekazać dane pomiędzy programami.
+Czytanie argumentów z linii poleceń to sposób, w jaki program komputerowy odbiera dane wejściowe podane przez użytkownika w momencie uruchomienia. Robimy to, aby umożliwić naszym programom działanie w bardziej elastyczny i konfigurowalny sposób.
 
-## Jak:
+## Jak to zrobić:
+
+Oto prosty przykład, jak czytać argumenty z linii poleceń w języku Go:
 
 ```Go
 package main
@@ -25,23 +27,36 @@ import (
 )
 
 func main() {
-	args := os.Args[1:]
-	fmt.Println("Hello " + args[0] + "!")
+	argsWithProg := os.Args
+	argsWithoutProg := os.Args[1:]
+
+	arg := os.Args[3]
+
+	fmt.Println(argsWithProg)
+	fmt.Println(argsWithoutProg)
+	fmt.Println(arg)
 }
 ```
 
-Wejdź w terminal i wywołaj ten program, podając swoje imię jako argument:
+Podczas uruchamiania tego programu z argumentami, np.: `./main arg1 arg2 arg3`, wynikiem będzie:
 
+```bash
+[./program arg1 arg2 arg3]
+[arg1 arg2 arg3]
+arg3
 ```
-$ Go run program.go Kasia
-Hello Kasia!
-```
 
-## Deep Dive:
+## Głębsze zrozumienie:
 
-Czytanie argumentów wiersza poleceń jest popularną techniką, która pozwala programistom na dostosowywanie swoich programów do różnych zastosowań. Alternatywą dla tego jest ustawianie stałych wartości w samym kodzie programu, co czyni go mniej uniwersalnym. Implementacja czytania argumentów zależy od języka programowania, jednak w Go jest to proste dzięki bibliotece `os`. Wcześniej, w czasach konsolowych interfejsów użytkownika, czytanie argumentów wiersza poleceń było jedynym sposobem na interakcję z programem.
+Czytanie argumentów z linii poleceń jest z nami od dawna. Wiele starszych języków programowania, takich jak C i Perl, również dostarcza metod do czytania argumentów z linii poleceń.
 
-## Zobacz też:
+Jednym z alternatywnych podejść jest użycie `flag` package dostarczonego przez Go. Pozwala on na bardziej wyspecjalizowane odczytywanie flag i argumentów.
 
-- Oficjalna dokumentacja Go na temat czytania argumentów wiersza poleceń: https://golang.org/pkg/os/#Args
-- Przydatny artykuł na temat czytania argumentów wiersza poleceń w Go: https://flaviocopes.com/go-program-command-line-arguments/
+Szczegółem implementacji godnym uwagi jest to, że `os.Args` dostarcza nam pełną listę argumentów, włącznie z nazwą programu `(os.Args[0])`. Stąd często widzisz `os.Args[1:]`, co pomija nazwę programu.
+
+## Zobacz również:
+
+Dla lepszego zrozumienia problemu, sugerowane są następujące źródła:
+- Dokumentacja Go na temat pakietu `os`: https://golang.org/pkg/os/
+- Dokumentacja Go na temat pakietu `flag`: https://golang.org/pkg/flag/ 
+- Przykładowy tutorial na temat argumentów wiersza polecenia w Go: https://gobyexample.com/command-line-arguments

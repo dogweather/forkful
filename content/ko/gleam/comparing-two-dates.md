@@ -1,6 +1,6 @@
 ---
 title:                "두 날짜 비교하기"
-html_title:           "Gleam: 두 날짜 비교하기"
+html_title:           "C#: 두 날짜 비교하기"
 simple_title:         "두 날짜 비교하기"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-자 날짜 비교를 해볼까?
+## 무엇 & 왜?
 
-날짜 비교는 무엇인가?
+두 날짜를 비교한다는 것은 두 시간점의 순서나 간격을 파악하는 것입니다. 프로그래머는 이것을 사용하여 이벤트가 발생한 순서를 추적하거나 시간 기반 논리를 적용하는 등의 작업을 수행합니다.
 
-날짜 비교는 두 개의 날짜를 비교하여 어떤 것이 더 큰지 혹은 작은지를 판단하는 것입니다. 프로그래머들은 주로 날짜 관련 문제를 다룰 때, 예를 들어 만료일 확인이나 이벤트 일자를 비교하는 경우 등등에 많이 사용합니다.
-
-어떻게 해야 할까?
-
-Gleam에서 날짜를 비교하기 위해서는 ```Gleam Date``` 타입 내장 함수들을 이용하면 됩니다.
+## 어떻게?
 
 ```Gleam
-let date_1 = Date.new(2021, 7, 12)
-let date_2 = Date.new(2021, 7, 21)
+import gleam/date.{Date, equal, after, before}
+let today = date.new(2022, 10, 3)
+let tomorrow = date.new(2022, 10, 4)
 
-Date.compare(date_1, date_2) // -1 출력
-Date.compare(date_2, date_1) // 1 출력
-Date.compare(date_1, date_1) // 0 출력
+let _ = assert equal(today, tomorrow) == False
+let _ = assert after(today, tomorrow) == False
+let _ = assert before(today, tomorrow) == True
 ```
+위의 예시에서, 우리는 오늘과 내일 두 날짜를 생성하고 비교합니다. `equal`, `after`, `before` 함수들은 각각 두 날짜가 같은지, 첫 번째 날짜가 두 번째보다 나중인지, 첫 번째 날짜가 두 번째보다 이른지를 검사합니다.
 
-깊이 파보자
+## 깊이 들여다보기
 
-날짜 비교는 컴퓨터 프로그래밍의 역사와 밀접하게 연관되어 있습니다. 오래된 컴퓨터 체계에서는 년, 월, 일을 비트로 나타내야 했기 때문에 날짜 비교는 복잡한 알고리즘을 필요로 했지만, 현재는 문자열로 표현할 수 있는 표준 포맷인 ISO-8601을 사용하여 더 쉽게 날짜를 처리할 수 있게 되었습니다.
+날짜 비교는 프로그래밍 언어의 역사와 깊이 연관되어 있습니다. 초기 프로그래밍 언어들은 날짜 비교 기능을 내장하지 않았고 프로그래머들이 직접 시간 연산을 수행해야 했습니다.
 
-날짜 비교에는 여러 가지 방법이 있습니다. 대표적인 방식으로는 첫 번째 날짜와 두 번째 날짜를 빼서 양수, 음수, 0으로 비교하는 방식과, 각 날짜를 일수로 변환하여 비교하는 방식이 있습니다. 하지만 Gleam에서는 간편하게 Date 타입 내장 함수인 ```compare```를 사용하여 비교할 수 있습니다.
+Gleam에서 날짜를 비교하는 것은 내부적으로 Unix 타임스탬프를 사용합니다. 이는 1970년 1월 1일부터 지난 시간을 초로 계산한 값입니다. 위와 같은 방식은 표준화가 잘 되어 있으며, 많은 프로그래밍 언어에서 지원하고 있습니다.
 
-관련 자료 확인하기
+비교에 관한 간결함과 효율성을 위해 다른 언어나 라이브러리를 활용하는 대안도 있습니다. 예를 들어, Python의 datetime 모듈이나 Java의 LocalDate 클래스 등이 있습니다.
 
-- [Gleam 공식 문서](https://gleam.run/documentation/date/)
-- [ISO-8601 날짜 표준 포맷](https://www.iso.org/iso-8601-date-and-time-format.html)
-- [코드 위젯 라이브러리 moment.js](https://momentjs.com/)
+## 참고 자료
+
+- Gleam 공식 문서: https://gleam.run/docs/
+- Unix 타임스탬프에 대한 정보: https://en.wikipedia.org/wiki/Unix_time
+- Python datetime 모듈 도큐먼트: https://docs.python.org/3/library/datetime.html
+- Java LocalDate 클래스 도큐먼트: https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html

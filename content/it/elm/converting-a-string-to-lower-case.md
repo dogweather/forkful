@@ -1,7 +1,7 @@
 ---
-title:                "Conversione di una stringa in minuscolo"
-html_title:           "Elm: Conversione di una stringa in minuscolo"
-simple_title:         "Conversione di una stringa in minuscolo"
+title:                "Convertire una stringa in minuscolo"
+html_title:           "Arduino: Convertire una stringa in minuscolo"
+simple_title:         "Convertire una stringa in minuscolo"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,20 +11,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Che cos'è e perché?
-Convertire una stringa in minuscolo è una tecnica comune usata dai programmatori per rendere una stringa più uniforme e facile da manipolare. Invece di avere stringhe con lettere maiuscole e minuscole miste, il processo di conversione le trasforma tutte in minuscolo, facilitando la ricerca e il confronto tra di esse.
+La conversione di una stringa in caratteri minuscoli è l'operazione di trasformare tutti i caratteri alfabetici di una stringa da maiuscoli a minuscoli. I programmatori la utilizzano per assicurarsi che i dati siano uniformi e per evitare problemi di confronto tra stringhe.
 
 ## Come fare:
+Ecco un esempio di come convertire una stringa in minuscolo in Elm.
+
 ```Elm
--- Definiamo una stringa di esempio
-let stringa = "Elm è un linguaggio di programmazione funzionale"
--- Usiamo la funzione toLower per convertire la stringa in minuscolo
-String.toLower stringa
+import String
+
+main =
+  print (String.toLower "Buongiorno, Signore!")
 ```
 
-Output: "elm è un linguaggio di programmazione funzionale"
+L'output sarà: "buongiorno, signore!".
 
-## Approfondimento:
-La pratica di convertire le stringhe in minuscolo è diventata popolare durante i primi anni del web, quando il case sensitivity (sensibilità alle maiuscole e minuscole) era un problema comune nei linguaggi di programmazione. Google, ad esempio, utilizzava la conversione in minuscolo per uniformare le ricerche e garantire risultati accurati. Un'alternativa al toLower è la funzione toUpper, che converte una stringa in maiuscolo.
+## Più nel dettaglio:
+La funzione `toLower` appartiene al modulo `String` in Elm e fa parte delle funzionalità standard del linguaggio dalla versione 0.19. Non ci sono alternative native dirette in Elm da quando è stato introdotto `String.toLower`, ma prima era necessario utilizzare `Char.toLower` in combinazione con `String.map`. 
+
+Per quanto riguarda i dettagli di implementazione, `String.toLower` in Elm internamente utilizza una implementazione JavaScript che esegue l'operazione per ogni carattere della stringa. Elm garantisce che questo processo sia sicuro in termini di tipi e gestisce eventuali errori.
 
 ## Vedi anche:
-Per ulteriori informazioni su come manipolare le stringhe in Elm, puoi consultare la documentazione ufficiale sulle funzioni relative alle stringhe: https://package.elm-lang.org/packages/elm/core/latest/String#toLower
+Per approfondire:
+1. Documentazione di Elm sul modulo ['String'](https://package.elm-lang.org/packages/elm/core/latest/String)
+2. Il repo GitHub di ['Elm'](https://github.com/elm/compiler) compreso il codice sorgente di `String.toLower`
+3. Approfondimenti sulle funzioni di stringa in generale in [Elm programming guide](https://guide.elm-lang.org/)

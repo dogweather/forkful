@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden på en sträng."
-html_title:           "Swift: Att hitta längden på en sträng."
-simple_title:         "Att hitta längden på en sträng."
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,20 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att hitta längden på en sträng är att bestämma den totala mängden tecken som utgör en sträng. Programerare behöver ofta denna information för att utföra olika operationer eller för att kontrollera om förväntad input är av rätt längd.
 
-## Så här gör du:
-För att få längden på en sträng i Swift, använd ```count``` metoden på strängen och spara resultatet i en variabel.
+Att hitta längden på en sträng är att räkna antalet tecken i den. Programmers gör detta för att förstå data de behandlar, som att se om användarinmatningar uppfyller längdkrav.
 
-Exempel:
+## Hur man:
+
+För att hitta längden på en sträng i Swift, använder du egenskapen `count` på din sträng. Här är exempel:
+
 ```Swift
-let message = "Hej världen!"
-let length = message.count // output: 13
+let str = "Hej, Världen!"
+print("Strängens längd är: \(str.count)")
 ```
 
-## Djupdykning:
-Historiskt sett har det funnits flera sätt att hitta längden på en sträng, men i Swift är ```count``` metoden den mest använda och effektiva metoden. Andra språk kan ha liknande metoder som kallas ```len``` eller ```length``` istället.
+Detta kodexempel skriver ut:
 
-## Se även:
-- [String manipulation in Swift](https://www.raywenderlich.com/9481-string-processing-in-swift)
-- [Working with strings in Swift](https://learnappmaking.com/working-with-string-swift-how-to-guide/)
+```Swift
+Strängens längd är: 14
+```
+
+Så enkelt är det! Swift räknar med Unicode-skalbara skalärer, vilket fungerar för de flesta internationella språk, inte bara standard engelska tecken.
+
+## Djupdykning 
+
+För att effektivt räkna längden på en sträng, behandlar Swift strängen som en samling av Unicode-skalbara skalärer istället för individa bytes. Eftersom vissa tecken kan representeras av mer än en byte, räknar `count` egenskapen korrekt antalet tecken istället för bytes.
+
+Ett alternativ till användning av `count` egenskapen är `utf8.count`, `utf16.count` eller `unicodeScalars.count`. Dessa metoder returnerar inte nödvändigtvis samma resultat som `count` när det gäller internationella tecken som kan kodas i mer än en byte.
+
+Men, för de flesta ändamål, kommer `count` att ge dig den information du behöver på ett enkelt och lättförståeligt sätt.
+
+## Se också
+
+För mer information om att hantera strängar i Swift, utforska följande länkar:
+
+- [Swift Dokumentation: Strängar och tecken](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [NSHipster: Swift Sträng Manifest](https://nshipster.com/string/)
+- [Swift av Sundell: Arbeta med strängar i Swift](https://www.swiftbysundell.com/basics/strings/)

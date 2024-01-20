@@ -1,7 +1,7 @@
 ---
-title:                "Supprimer les caractères correspondant à un modèle"
-html_title:           "Go: Supprimer les caractères correspondant à un modèle"
-simple_title:         "Supprimer les caractères correspondant à un modèle"
+title:                "Suppression de caractères correspondant à un motif"
+html_title:           "C: Suppression de caractères correspondant à un motif"
+simple_title:         "Suppression de caractères correspondant à un motif"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,54 +11,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Quoi & Pourquoi?
-
-Supprimer des caractères correspondant à un modèle est une opération courante en programmation qui consiste à supprimer tous les caractères dans une chaîne de caractères qui matchent un certain modèle, tel qu'une lettre, un chiffre ou un symbole spécifique. Les programmeurs le font souvent pour nettoyer et normaliser des données ou pour analyser des chaînes de caractères complexes.
+Supprimer les caractères correspondant à un modèle (ou "pattern") signifie éliminer tous les caractères d'une chaîne qui correspondent à un modèle spécifié. Les programmeurs le font pour nettoyer et structurer les données de manière plus efficace.
 
 ## Comment faire:
+Voici un exemple simple en utilisant la fonction `Replace` du package `strings` de Go pour supprimer tous les 'a' d'une chaîne.
 
-Voici un exemple en Go pour supprimer tous les chiffres d'une chaîne de caractères:
-
-```
+```Go
 package main
-
 import (
-	"fmt"
-	"regexp"
+    "fmt"
+    "strings"
 )
 
 func main() {
-	input := "Hello 123 World!"
-	output := regexp.MustCompile("\\d+").ReplaceAllString(input, "")
-	fmt.Println(output)
+    str := "abracadabra"
+    newStr := strings.Replace(str, "a", "", -1)
+    fmt.Println(newStr) // "brcdbr"
 }
-
-// Output: Hello World!
 ```
+L'exécution de ce code restituera "brcdbr", puisque tous les 'a' ont été supprimés.
 
-Voici un autre exemple pour supprimer tous les symboles d'une chaîne de caractères:
+## Plongée profonde
+Historiquement, l'expression régulière est le moyen le plus courant de correspondre à un motif dans une chaîne, mais en Go, la librairie `strings` fournit des outils plus faciles et plus efficaces. Une alternative pourrait être `strings.Map`, si vous devez supprimer plusieurs caractères différents à la fois. `strings.Replace` fonctionne en analysant chaque caractère de la chaîne, ce qui signifie que la complexité de l'opération est O(n), où n est la longueur de la chaîne.
 
-```
-package main
-
-import (
-	"fmt"
-	"regexp"
-)
-
-func main() {
-	input := "Hello!$# World!"
-	output := regexp.MustCompile("[^a-zA-Z0-9 ]+").ReplaceAllString(input, "")
-	fmt.Println(output)
-}
-
-// Output: Hello World
-```
-
-## Plongée en profondeur:
-
-Supprimer des caractères correspondant à un modèle existe depuis le début de la programmation et est souvent utilisé pour nettoyer des données. Une alternative courante à l'utilisation d'expressions régulières est d'utiliser des boucles et des conditions pour parcourir chaque caractère de la chaîne et supprimer ceux qui correspondent au modèle. En termes d'implémentation, la fonction ReplaceAllString de la bibliothèque regexp de Go utilise l'algorithme de substitution de Boyer-Moore pour améliorer les performances.
-
-## Voir aussi:
-
-Pour en savoir plus sur les expressions régulières en Go, vous pouvez consulter la documentation officielle: https://golang.org/pkg/regexp/
-Vous pouvez également lire cet article sur les bonnes pratiques pour utiliser les expressions régulières en Go: https://flaviocopes.com/golang-regexp/
+## Voir aussi
+Pour plus de détails sur les fonctions de Go pour manipuler les chaînes, visitez [Go Docs - Package strings](https://golang.org/pkg/strings/). Pour une introduction aux expressions régulières en Go, consultez [Go by Example - Regular Expressions](https://gobyexample.com/regular-expressions).

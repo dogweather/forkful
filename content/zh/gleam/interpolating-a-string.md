@@ -1,7 +1,7 @@
 ---
-title:                "字符串的插值"
-html_title:           "Gleam: 字符串的插值"
-simple_title:         "字符串的插值"
+title:                "插值字符串"
+html_title:           "Arduino: 插值字符串"
+simple_title:         "插值字符串"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,33 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## 什么和为什么？
+插值字符串是将变量或表达式的值插入字符串中的过程。程序员之所以执行此操作，主要是为了更方便地创建和修改复杂字符串。
 
-字符串内插是一种将变量值插入到字符串中的方式。程序员们经常使用它来减少重复，并使代码更易读。
-
-## 如何：
+## 如何执行：
+我们在Gleam中看一个插值字符串的例子。假设我们定义了一个变量`name`，我们想在一个问候语句中使用它。
 
 ```Gleam
-let name = "John"
-let greeting = "Hello, {name}"
-IO.print(greeting)
+let name = "world"
+
+let sentence = "Hello, " ++ name
 ```
 
-输出：
+输出将是：
 
+```Gleam
+"Hello, world"
 ```
-Hello, John
-```
 
-## 深入了解：
+## 深度解析
+虽然字符串插值听起来像是现代编程概念，但它实际上追溯到了20世纪60年代，那时在Unix Shell脚本和C语言中就已经出现了。在过去，很多语言使用复杂的格式化功能来拼接字符串，这往往比使用字符串插值要复杂。
 
-**历史背景：** 字符串内插最早出现在像Ruby和Python这样的动态语言中。它们的设计灵感来自于Shell和Perl脚本语言。
+在Gleam中，我们通过`++`操作符完成字符串插值。它与许多其他语言（如Python的f-string或JavaScript的模板字面量）的字符串插值不同，Gleam采用的方式更接近于古老的拼接。
 
-**其他选择：** 除了字符串内插，程序员还可以使用字符串拼接（使用`++`操作符）或格式化字符串（使用`format!`宏）来实现相同的目的。然而，字符串内插通常被认为是最简洁和最易读的方法。
+运行时，Gleam会先计算`++`两边的值，然后创建一个新的字符串，将两者进行连接。
 
-**实现细节：** 在编译时，字符串内插会将使用`{}`包围的变量替换为其对应的值，并将其与静态字符串连接。这种方式可以减少运行时的开销，并提高程序的性能。
+## 另请参见
+要了解Gleam中的字符串和字符串插值的更多信息，请查阅以下资源：
 
-## 另请参阅：
+[Gleam官方文档](https://gleam.run/book/tour/strings.html)
 
-- [Gleam官方文档](https://gleam.run/)
-- [Github上Gleam的源代码](https://github.com/gleam-lang/gleam)
+[Gleam GitHub](https://github.com/gleam-lang/gleam)

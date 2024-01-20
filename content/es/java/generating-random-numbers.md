@@ -1,6 +1,6 @@
 ---
 title:                "Generando números aleatorios"
-html_title:           "Java: Generando números aleatorios"
+html_title:           "Arduino: Generando números aleatorios"
 simple_title:         "Generando números aleatorios"
 programming_language: "Java"
 category:             "Java"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¿Qué y por qué?
+# Generación de Números Aleatorios en Java
 
-Generar números aleatorios es un proceso en el que se crean secuencias de números al azar utilizando algoritmos matemáticos específicos. Los programadores usan esta técnica para agregar un elemento de azar en sus programas y juegos, ya sea para crear una experiencia más inmersiva o para realizar pruebas y cálculos estadísticos.
+## ¿Qué y Por Qué?
+Generar números aleatorios significa producir números que no tienen un patrón predecible. Los programadores lo hacen cuando necesitan una muestra aleatoria, por ejemplo, en juegos, en la simulación y en criptografía.
 
-¿Cómo hacerlo?
-
-En Java, podemos generar números aleatorios utilizando la clase 'Random'. Primero, debemos crear una instancia de la clase utilizando la palabra clave 'new'. Luego, podemos llamar al método 'nextInt()' para obtener un número entero aleatorio o al método 'nextDouble()' para obtener un número decimal aleatorio. A continuación, podemos especificar el rango de valores en el que queremos que se genere el número aleatorio mediante la inclusión de parámetros dentro de los paréntesis. Por ejemplo:
+## ¿Cómo se hace? 
+Generar números aleatorios en Java es sencillo gracias a la clase `Random` de Java:
 
 ```Java
-Random random = new Random(); // creamos una instancia de la clase Random
-int numeroAleatorio = random.nextInt(100); // genera un número entero entre 0 y 99
-double decimalAleatorio = random.nextDouble(10.5); // genera un número decimal entre 0.0 y 10.5
+import java.util.Random;
+
+public class Main {
+  public static void main(String[] args) {
+    Random rand = new Random();
+    int numeroAleatorio = rand.nextInt(100); // Genera un número aleatorio entre 0 y 99
+    System.out.println("El número aleatorio es: " + numeroAleatorio);
+  }
+}
+```
+Ejecutar este programa imprimirá en la consola un número aleatorio como este:
+```
+El número aleatorio es: 42
+```
+## Profundiza
+Históricamente, Java proporciona varias maneras de generar números aleatorios. La anterior es la más común, pero existen otras como `Math.random()` y `ThreadLocalRandom.current()`.
+
+Pueden ser alternativas útiles según tu caso. Por ejemplo, `Math.random()` es ideal si sólo necesitas un número de doble precisión entre 0.0 y 1.0.
+
+En cuanto a los detalles de implementación, el método `nextInt(100)` genera un número aleatorio entre 0 (incluido) y 100 (excluido). Usarlo sin argumentos da un entero aleatorio en todo el rango de valores de int (ambos extremos incluidos).
+
+```Java
+int noRango = rand.nextInt(); // Genera un número aleatorio en todo el rango de valores de int
 ```
 
-¡Y eso es todo! Ahora podemos utilizar estos números generados en nuestro código.
-
-Profundizando
-
-Los números aleatorios han sido utilizados a lo largo de la historia para propósitos científicos, de juego y de cifrado. En Java, también podemos utilizar la interfaz 'RandomAccess' para acceder a una posición aleatoria en una lista.
-
-Otra forma de generar números aleatorios en Java es mediante el uso de la clase 'Math'. Esta clase incluye el método 'random()', el cual devuelve un número decimal aleatorio entre 0.0 y 1.0.
-
-En cuanto a la implementación, es importante tener en cuenta que los números generados no son realmente aleatorios, ya que están determinados por un algoritmo predefinido. Sin embargo, pueden ser lo suficientemente impredecibles para ser utilizados en la mayoría de los casos.
-
-Ver también
-
-Si quieres profundizar en el tema de los números aleatorios en Java, puedes consultar la documentación oficial de la clase 'Random' y de la clase 'Math'.
-
-También puedes explorar la implementación de números aleatorios en otros lenguajes de programación, como C++ o Python.
+## Ver También
+1. Para aprender más sobre la clase `Random`, puedes visitar su documentación en la [Java API](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html).
+2. Para aprender sobre `Math.random()`, puedes consultar su documentación en la [Java API](https://docs.oracle.com/javase/8/docs/api/java/lang/Math.html#random--).
+3. Información sobre `ThreadLocalRandom` en su [página en la Java API](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ThreadLocalRandom.html) puede ser útil para programas multihilo.

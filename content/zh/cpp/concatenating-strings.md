@@ -1,6 +1,6 @@
 ---
 title:                "连接字符串"
-html_title:           "C++: 连接字符串"
+html_title:           "C: 连接字符串"
 simple_title:         "连接字符串"
 programming_language: "C++"
 category:             "C++"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是字符串连接？
+## 什么和为什么？
+连接字符串是将两个字符串结合在一起形成一个新的字符串。程序员需要这样做以方便地将不同的数据元素格式化并结合在一起，从而实现不同的编程需求。
 
-字符串连接是将两个或多个字符串合并为一个更长的字符串的过程。它是编程中常用的基本操作，可以将文本片段粘贴在一起，形成一个更完整的文本字符串。
-
-## 为什么要做字符串连接？
-
-程序员通常会通过字符串连接来构建更复杂的文本内容，这样可以更方便地操作文本数据。例如，在用户输入用户名和密码后，程序可以将它们连接起来，形成一个完整的登录凭证。另外，字符串连接也可以用来构造动态的文本消息，如发送电子邮件或短信。
-
-## 如何进行字符串连接？
-
-在C++中，可以使用加号 `+` 运算符来连接两个字符串。例如：
+## 如何做：
+在C++中，我们可以用 '+' 运算符来连接（或拼接）字符串。请看下面的例子：
 
 ```C++
-string str1 = "Hello";
-string str2 = "World";
-string result = str1 + str2;
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+    string str1 = "Hello, ";
+    string str2 = "World!";
+    string str3;
+    str3 = str1 + str2;
+    cout << str3 << endl;
+    
+    return 0;
+}
 ```
+此代码的执行结果是：`Hello, World!`
 
-此时 `result` 的值为 `HelloWorld`。注意，字符串连接只能在相同类型的字符串之间进行，即只能连接 `string` 型的字符串。
+## 深度剖析
+连接字符串的概念在编程的早期就已经存在了，这使得从文本/数据文件中的不同部分提取和组合信息变得翌易。
 
-## 深入探讨
+除了 "+" 运算符，C++还有其他方式来连接字符串，例如 `std::string::append()`，`std::stringstream` 或者 `std::strcat()` 等函数。
 
-字符串连接的历史可以追溯到早期的编程语言，如BASIC。除了使用加号运算符，C++中还有其他方法来进行字符串连接，如使用 `string` 类中的 `append()` 方法。此外，还存在一些第三方库可供使用，如 `boost::algorithm::join()`，提供更多的灵活性和功能。在实现上，字符串连接涉及内存分配和复制，因此在处理大量字符串时，需要注意性能问题。
+虽然 "+" 是最直接的方式，但在处理大数据量时，可能会退化为非常低效。解决这个问题的一种方式是使用 `std::stringstream` 或者 C++ 的标准库函数 `std::strcat()`。
 
-## 查看更多
-
-- [C++ string concatenation](https://www.guru99.com/cpp-string.html)
-- [A deep dive into string concatenation in C++](https://www.learncpp.com/cpp-tutorial/6-9a-the-string-class-concatenation-and-repetition/)
-- [Boost string algorithms library](https://www.boost.org/doc/libs/1_72_0/doc/html/boost/algorithm/join.html)
+## 参考下列资源
+1. [wstring_cplusplus.com](http://www.cplusplus.com/reference/string/string/)
+2. [cplusplus.com_string::append](http://www.cplusplus.com/reference/string/string/append/)
+3. [stackoverflow_cpp::string::append_vs_operator+](https://stackoverflow.com/questions/299279/c-string-append-vs-operator)

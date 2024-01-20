@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "PHP: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Testing and Debugging"
@@ -10,33 +10,62 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Beim Programmieren kommt es manchmal vor, dass man nicht sofort erkennt, was der Code macht oder wo ein Fehler auftritt. Deshalb verwenden Programmierer oft eine Technik namens "Debug Ausgabe", um Fehler zu finden und den Code zu verstehen.
+Debugging-Output in PHP ist einfach das Drucken von Daten auf der Konsole oder dem Bildschirm, um den aktuellen Zustand eines Programms zu überprüfen. Dies hilft Programmierern dabei, Fehler oder Inkonsistenzen in ihrem Code zu identifizieren und zu beheben.
 
 ## So geht's:
 
-Um eine Debug Ausgabe in PHP zu erstellen, kannst du einfach ```print_r()``` oder ```var_dump()``` verwenden. Schreibe einfach den Code, den du überprüfen möchtest in die Klammern und das Ergebnis wird auf deinem Bildschirm ausgegeben. Zum Beispiel:
+PHP bietet mehrere Funktionen und Methoden zum Drucken von Debug-Ausgaben. Am bekanntesten sind `echo`, `print`, und `print_r`.
 
-```PHP 
-// Variablen definieren
-$alter = 30;
-$name = "Anna";
+```PHP
+<?php
+    $a = 5;
+    $b = ['a' => 'Apfel', 'b' => 'Banane'];
+    
+    echo $a; // Gibt 5 aus
+    print $a; // Gibt ebenfalls 5 aus
 
-// Debug Ausgabe
-print_r($alter);
-var_dump($name);
+    print_r($b); 
+    /*
+    Ausgabe:
+    Array
+    (
+        [a] => Apfel
+        [b] => Banane
+    )
+    */
+?>
 ```
 
-Wenn du diesen Code ausführst, siehst du, dass deine Variablen und ihre Werte ausgegeben werden. Dadurch kannst du überprüfen, ob deine Variablen korrekt zugewiesen wurden und den Code besser verstehen.
+## Deep Dive:
 
-## Tiefere Einblicke:
+Historisch gesehen waren `echo` und `print` die go-to Methoden zum Drucken von Text in PHP. `print_r` wurde hauptsächlich zum Drucken von Array-Inhalten eingeführt. 
 
-Die Idee der Debug Ausgabe ist nicht neu. Schon früher haben Programmierer ähnliche Techniken verwendet, um ihre Programme zu überprüfen. Es gibt auch alternative Methoden, wie zum Beispiel das Einbinden von Debugger-Modulen in deinen Code oder das Verwenden von speziellen Code-Analyse-Tools.
+Darüber hinaus gibt es jedoch eine leistungsfähigere Funktion namens `var_dump`, die neben dem Drucken von Arrays auch Informationen über den Typ und die Größe der Daten liefert (sehr nützlich für das Debugging).
 
-Es ist wichtig zu wissen, dass Debug Ausgaben im Produktivcode nicht empfohlen werden, da sie die Leistung der Anwendung beeinträchtigen können. Sie sollten also nur für Entwicklungs- und Testzwecke verwendet werden.
+Alternativ bietet auch die xdebug-Erweiterung von PHP erweiterte Debugging-Funktionen, darunter das "schöne" Drucken von Variablen mit `var_dump`.
+
+```PHP
+<?php
+    var_dump($b);
+    /*
+    Ausgabe:
+    array(2) {
+      ["a"]=>
+      string(5) "Apfel"
+      ["b"]=>
+      string(6) "Banane"
+    }
+    */
+?>
+```
+ 
+Im Produktionscode sollten Debug-Ausgaben jedoch deaktiviert oder entfernt werden, da sie dazu führen können, dass sensible Informationen offenbart werden.
 
 ## Siehe auch:
 
-- [PHP Debugging Functions](https://www.php.net/manual/en/ref.debugger.php)
-- [PHP Debugging Tips](https://www.php.net/manual/en/debugger-tips.php)
+- [PHP echo und print Statements](https://www.php.net/manual/de/function.echo.php)
+- [PHP print_r Funktion](https://www.php.net/manual/de/function.print-r.php)
+- [PHP var_dump Funktion](https://www.php.net/manual/de/function.var-dump.php)
+- [Xdebug, eine PHP-Erweiterung für Debugging](https://xdebug.org/)

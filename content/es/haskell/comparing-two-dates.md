@@ -1,6 +1,6 @@
 ---
 title:                "Comparando dos fechas"
-html_title:           "Haskell: Comparando dos fechas"
+html_title:           "C#: Comparando dos fechas"
 simple_title:         "Comparando dos fechas"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,30 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Comparar dos fechas es una tarea común para los programadores, ya que les permite determinar la diferencia entre dos momentos en el tiempo. Esto es especialmente útil para aplicaciones que involucran eventos, citas o plazos. Al comparar dos fechas, los programadores pueden calcular la duración exacta entre ellas y tomar decisiones basadas en eso.
+-----
+# Una Guía Simple para Comparar Fechas en Haskell
 
-## Cómo:
-Veamos cómo puedes comparar dos fechas en Haskell utilizando la librería "Data.Time". Primero, debes importar la librería en tu código:
+## ¿Qué y Por qué?
+El comparar dos fechas es un proceso para determinar cuál fecha sucede antes, después o si ambas son iguales. Como programadores, lo hacemos para ordenar eventos, determinar duraciones y gestionar plazos.
+
+## Cómo hacerlo:
+Vamos a usar el paquete `time` de Haskell.
+
+Para instalar el paquete time, utiliza este comando en tu terminal:
+
+```Haskell
+cabal install time
+```
+
+Echemos un vistazo a cómo definiríamos y compararíamos dos fechas:
 
 ```Haskell
 import Data.Time
+
+fecha1 = fromGregorian 2021 12 28
+fecha2 = fromGregorian 2022 1 5
+
+comparacion = compare fecha1 fecha2
 ```
 
-Luego, puedes crear dos objetos de tipo "Day" (que representan una fecha) y utilizar la función "diffDays" para obtener la diferencia entre ellas en días.
+Si ejecutas este código, verás que `comparacion` será `LT` porque `fecha1` es menor (es decir, anterior) que `fecha2`.
 
-```Haskell
-let fecha1 = fromGregorian 2021 9 1 -- 1 de Septiembre de 2021
-let fecha2 = fromGregorian 2021 9 15 -- 15 de Septiembre de 2021
-let diferencia = diffDays fecha2 fecha1 -- devuelve un tipo Int con el valor de días entre las dos fechas
-```
+## Inmersión Profunda
 
-## Deep Dive:
-Comparar dos fechas ha sido una tarea importante en la programación desde los primeros días de las computadoras. En décadas pasadas, los programadores tenían que escribir código complejo para manejar fechas y tiempos. Sin embargo, gracias a librerías como "Data.Time", esta tarea se ha vuelto mucho más simple y eficiente.
+**1. Contexto histórico**
 
-Existen otras formas de comparar fechas en Haskell, como utilizando patrones de coincidencia en una función definida por el usuario. Además, es importante tener en cuenta la diferencia entre comparar dos fechas con precisión en días, o en horas, minutos e incluso segundos. Todo depende del contexto de tu aplicación y lo que necesites calcular.
+El paquete `time` de Haskell fue diseñado conjuntamente con la biblioteca de tiempo POSIX de la Biblioteca de Haskell de la plataforma de Glasgow (GHC) alrededor de 2006-2007.
 
-## See Also:
-- Documentación para la librería "Data.Time": https://hackage.haskell.org/package/time/docs/Data-Time.html
-- Ejemplos de comparación de fechas en Haskell: https://wiki.haskell.org/Date_and_time
-- Una guía detallada sobre cómo manejar fechas en Haskell: https://www.fpcomplete.com/haskell/tutorial/times-and-dates/
+**2. Alternativas**
+
+Si bien `time` es una excelente elección para la mayoría de los casos, hay otras bibliotecas y métodos para comparar fechas en Haskell, como `clock`, que también puede manejar zonas horarias.
+
+**3. Implementación**
+
+Este código utiliza la función `compare` que es parte del `Ord` tipo de Haskell. Esta función devuelve uno de tres constructores `Ordering`: `LT`, `GT` o `EQ` - que representan "menor que ", "mayor que" y "igual que", respectivamente.
+
+## Ver También
+
+1. Biblioteca `time` de Hackage: [Hackage Library](http://hackage.haskell.org/package/time)
+2. Biblioteca `clock` de Hackage: [Hackage Library](http://hackage.haskell.org/package/clock)
+3. Una explicación más detallada de `Ord` y comparación: [Real World Haskell](http://book.realworldhaskell.org/read/using-typeclasses.html)
+-----

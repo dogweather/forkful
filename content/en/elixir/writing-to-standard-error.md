@@ -11,40 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Writing to standard error is a way for programmers to print out error messages or information in the Elixir programming language. This is useful for debugging and troubleshooting code, as it allows developers to see any errors or issues that may arise while the program is running.
+
+Writing to standard error (stderr) involves sending data not to the usual output (stdout), but to a separate channel intended for error messages. Programmers do this to separate the normal execution flow from error reporting, which aids in troubleshooting.
 
 ## How to:
-To write to standard error in Elixir, you can use the `IO.puts/2` function with the `:stderr` option as the first argument. Here is an example:
 
-```Elixir
-IO.puts(:stderr, "This is an error message.")
+Code to print to the stderr in Elixir is straightforward and executed via Erlang's `:io.stderr`:
+
+```elixir
+:io.format(:standard_error,'~s', ['Hello, stderr!\n'])
 ```
 
-This will print "This is an error message." to the standard error stream. Here is the output:
+When you run this, "Hello, stderr!" will be printed to your standard error output.
 
-```Elixir
-This is an error message.
+## Deep Dive
+
+In historical context, stderr was part of the three Unix standard data streams built into most programming environments — stdin (standard input), stdout (standard output), and stderr (standard error). 
+
+Alternatives to `:io.format()` are using other libraries like the Logger library in Elixir:
+
+```elixir
+require Logger
+Logger.error "Error message for stderr"
 ```
+This has the added advantage of being configurable and supported across different logging backends.
 
-You can also use the `IO.write/2` function to write to standard error without adding a new line at the end. Here is an example:
+In terms of implementation, writing to stderr in Elixir is straightforward because Elixir runs on the BEAM (the Erlang virtual machine). As a result, it has access to a host of powerful features from the underlying Erlang system, including robust error handling mechanisms such as stderr.
 
-```Elixir
-IO.write(:stderr, "This is an error message.")
-```
+## See Also
 
-This will print "This is an error message." without a new line at the end. Here is the output:
-
-```Elixir
-This is an error message.
-```
-
-## Deep Dive:
-Writing to standard error has been a common practice in programming languages for decades. It originated from the C programming language, where the `fprintf` function was used to write to the standard error stream. Standard error is considered a special stream in programming languages, separate from the standard output stream, as it is used specifically for displaying error messages.
-
-An alternative to writing to standard error is using the `raise/2` function, which can be used to raise an exception and output a custom error message. However, this does not print the error message to the standard error stream by default, so developers may choose to use `IO.puts/2` or `IO.write/2` instead.
-
-When writing to standard error in Elixir, the output may differ depending on the terminal you are using. Some terminals may display the output in a different color or format to differentiate it from standard output. It may also be useful for developers to use the `inspect/2` function to format the error message in a specific way before printing it to standard error.
-
-## See Also:
-- [Elixir documentation on IO](https://hexdocs.pm/elixir/IO.html)
-- [Elixir forum discussion on writing to standard error](https://elixirforum.com/t/writing-to-standard-error-io-stdout-stderr/3938/2)
+1. More about `io.format`: <https://hexdocs.pm/elixir/1.12/IO.html#format/3>
+2. Logger library in Elixir: <https://hexdocs.pm/elixir/Logger.html>
+3. Information on Unix standard streams: <https://en.wikipedia.org/wiki/Standard_streams>
+4. more on BEAM and error handling: <https://ferd.ca/the-zen-of-erlang.html>

@@ -1,7 +1,7 @@
 ---
-title:                "通过大写设置字符串"
-html_title:           "Swift: 通过大写设置字符串"
-simple_title:         "通过大写设置字符串"
+title:                "将字符串转化为大写"
+html_title:           "Swift: 将字符串转化为大写"
+simple_title:         "将字符串转化为大写"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,22 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什麼是String大寫？: 
-String大寫是指將一個字串中的所有字母轉換為大寫格式。程式設計師經常需要對字串進行操作，並且在需要進行字串比較時，大寫格式通常會更容易處理。
+## 什么以及为什么？
 
-## 如何進行: 
+字符串大写化是指把一个字符串中所有的字符转换为大写。编程人员这么做通常是为了实现格式标准化和更好的显示效果。
+
+## 如何实现
+
+在 Swift 中，我们可以使用 `uppercased()` 方法来实现字符的大写化。以下是代码和输出实例：
+
 ```Swift
-let str = "hello, world!"
-print(str.uppercased())
+let myString = "hello, world!"
+let uppercasedString = myString.uppercased()
+print(uppercasedString)  // 输出："HELLO, WORLD!"
 ```
-透過使用`uppercased()`方法，我們可以將`str`的值轉換為大寫形式。執行程式後，將會在終端機中看到`HELLO, WORLD!`的輸出。
 
-## 深入探討: 
-- 歷史背景: 在舊的程式語言中，字符串操作是一個非常常見的任務，因此大多數語言都有提供字串轉換為大寫的方法。
-- 替代方法: 除了使用`uppercased()`方法，我們也可以使用`capitalized()`方法，將字串的第一個字母轉換為大寫。
-- 實作細節: 在Swift中，字串是一個結構(struct)類型，因此我們可以透過指定`str`的屬性`uppercased()`來將字串轉換為大寫格式。
+## 深层次解析
 
-## 相關資源: 
-如果想進一步了解關於字串操作的資訊，可以參考下列連結：
-- [String and Character - The Swift Programming Language (Swift 5.2)](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [String and Character Manipulation in Swift](https://medium.com/@happymishra66/string-and-character-manipulation-in-swift-1d1f01eb3e23)
+1. **历史背景**：字符串大写化在编程中有长久的历史，其实现方式在不同的编程语言中略有不同。在 Swift 中，`uppercased()` 方法可以直接实现该功能。
+
+2. **替代方法**：另一个类似的方法是 `capitalized`，它会将字符串中的每个词的首字母转化为大写。
+
+3. **实现细节**：`uppercased()` 方法的实现取决于 Unicode 标准。它遵循 Unicode 属性的规范，将字符串中的所有字符转化为其对应的大写形式。
+
+## 参考链接
+
+1. [Swift 语言字符串和字符](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+2. [Unicode 标准](http://www.unicode.org/reports/tr44/)
+3. [Swift `String` API 参考](https://developer.apple.com/documentation/swift/string)

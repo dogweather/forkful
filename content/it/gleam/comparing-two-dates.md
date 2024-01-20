@@ -1,7 +1,7 @@
 ---
-title:                "Confrontare due date"
-html_title:           "Gleam: Confrontare due date"
-simple_title:         "Confrontare due date"
+title:                "Confronto tra due date"
+html_title:           "Elixir: Confronto tra due date"
+simple_title:         "Confronto tra due date"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Dates and Times"
@@ -10,30 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cosa e perchè?
+## Cosa & Perché?
+Confrontare due date significa stabilire quale data viene prima e quale dopo. I programmatori lo fanno per organizzare eventi, stabilire scadenze o gestire cicli di vita del software.
 
-Il confronto tra due date è una pratica comune nella programmazione per verificare se una data è precedente, successiva o uguale ad un'altra data. I programmatori spesso eseguono questo tipo di confronto per gestire le date in modo efficace e per automatizzare alcune azioni in base all'ordine temporale dei dati.
+## Come fare:
+Ecco un esempio di confronto tra due date in Gleam.
 
-Come fare:
 ```Gleam
-let start_date = Date.new(2021, 10, 25)
-let end_date = Date.new(2021, 11, 2)
+import gleam/datetime.{day, from_iso_string, iso_year_month_day}
+import gleam/compare.{less_than}
 
-if start_date > end_date do
-  // La data di inizio è successiva alla data di fine
-end
+let giorno_uno = from_iso_string("2022-12-12").unwrap()
+let giorno_due = from_iso_string("2022-12-13").unwrap()
 
-if start_date < end_date do
-  // La data di inizio è precedente alla data di fine
-end
-
-if start_date == end_date do
-  // Le due date sono uguali
-end
+let confronto = 
+    case less_than(day(giorno_uno), day(giorno_due)) {
+      False -> "La Data Uno non è anteriore alla Data Due."
+      True -> "La Data Uno è anteriore alla Data Due."
+}
 ```
 
-Deep Dive:
-Il confronto tra due date è essenziale per gestire in modo accurato le date nei programmi. In passato, questo tipo di confronto veniva effettuato confrontando le date convertite in numeri interi, ma con il progresso della tecnologia e dei linguaggi di programmazione, sono state sviluppate soluzioni più efficienti. Ad esempio, in Gleam, è possibile utilizzare gli operatori '> ', '
+Il programma di sopra confronta se il `giorno_uno` (2022-12-12) è minore del `giorno_due` (2022-12-13). L'output sarà "La Data Uno è anteriore alla Data Due."
 
-See Also:
-Per maggiori informazioni sul confronto tra due date in Gleam, consulta la documentazione ufficiale di Gleam Date (https://gleam.run/core/date) e la sezione sul confronto in gleam-extras (https://github.com/gleam-lang/gleam-extras#date-comparison).
+## Approfondimento
+Storicamente, confrontare le date non è stato sempre così semplice. Nel passato, l'implementazione del confronto delle date variava a seconda del linguaggio di programmazione.
+
+Gleam offre un'alternativa più sicura utilizzando tipi fortemente tipizzati e pattern matching, eliminando errori comuni come i null pointer exceptions.
+
+Il confronto delle date in Gleam avviene attraverso la funzione `less_than`, la quale restituisce un valore booleano in base al confronto tra i giorni delle due date passate como parametro.
+
+## Vedere anche:
+Consulta le seguenti fonti per una comprensione più approfondita del confronto delle date in Gleam:
+- *[Gleam Docs - Date and Time](https://gleam.run/book/tour/dates-and-times.html)*
+- *[Gleam DateTime module Github](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/datetime.gleam)*
+- *[Gleam Compare module Github](https://github.com/gleam-lang/stdlib/tree/main/src/gleam/compare.gleam)*

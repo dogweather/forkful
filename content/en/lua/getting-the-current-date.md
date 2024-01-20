@@ -1,6 +1,6 @@
 ---
 title:                "Getting the current date"
-html_title:           "Lua recipe: Getting the current date"
+html_title:           "Elm recipe: Getting the current date"
 simple_title:         "Getting the current date"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,42 +12,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Getting the current date in Lua refers to retrieving the current date and time information from the system. Programmers often do this to keep track of events, schedule tasks, or timestamp data. 
+Getting the current date in programming is simply retrieving the ongoing date as per the system's time and calendar. Programmers use this to reference or record real-time events, like timestamps for data handling or order tracking.
 
 ## How to:
 
-To get the current date in Lua, you can use the ```os.date()``` function. This function takes in a format string as a parameter and returns a string representing the current date and time in the specified format.
+Here's an easy Lua code for fetching the current date:
 
-Here's an example code snippet to get the current date and time in the default format:
-```
-currentDate = os.date()
-print(currentDate)
-```
-Output:
-```
-Wed Nov 24 15:53:55 2021
+```Lua
+os_date = os.date("*t")
+print("Date: "..os_date.day.."/"..os_date.month.."/"..os_date.year)
 ```
 
-You can also specify a custom format string to get the date and time in a desired format. For example:
-```
-customDate = os.date("%m-%d-%Y %H:%M:%S")
-print(customDate)
-```
-Output:
-```
-11-24-2021 15:53:55
+When run, it may display:
+
+```Lua
+Date: 17/4/2023
 ```
 
-## Deep Dive:
+In this case, the 'os' module's 'date' method is used to get a table containing the current date details, which we then print in a specific format.
 
-Historically, Lua did not have an inbuilt function to retrieve the current date and time information. However, it was added in version 5.4 as part of the ```os``` library. 
+## Deep Dive
 
-An alternative to using the ```os.date()``` function is the ```os.time()``` function, which returns the current system time as the number of seconds since January 1, 1970. This can be converted to a readable format using the ```os.date()``` function.
+Historically in Lua, the 'os' library's date function has been the easiest way to get the current date. No special libraries required - it's all in-built.
 
-The default format string used by ```os.date()``` is ```"%a %b %d %H:%M:%S %Y"``` which stands for weekday, month, day, hour, minute, second, and year respectively. However, you can use a variety of format options to get the desired output. Consult the [Lua manual](https://www.lua.org/manual/5.4/manual.html#pdf-os.date) for more information on format options.
+Alternatives include libraries like 'luadate', which provides more comprehensive date/time functions - but for basic needs, 'os.date' serves well.
 
-## See Also:
+The 'os.date' function internally calls the C library function 'localtime', which converts the time in seconds since the Unix epoch into a broken-down time, used here as a table of date and time values. It's fast, efficient, and accurate based on your system's clock.
 
-- [Lua manual - os library](https://www.lua.org/manual/5.4/manual.html#6.10)
-- [Tutorialspoint - Lua os library](https://www.tutorialspoint.com/lua/lua_os_module.htm)
-- [Lua.org forum - Thread on getting the current date in Lua](https://www.lua.org/pipermail/lua-l/2005-September/014588.html)
+## See Also
+
+Find more Lua tricks at:
+
+- [Programming in Lua (official manual)](http://www.lua.org/pil/index.html)
+- [Lua-Users wiki (community-contributed snippets)](http://lua-users.org/wiki/)
+- [LuaRocks (Lua package manager, with 'luadate' and other libraries)](https://luarocks.org/)

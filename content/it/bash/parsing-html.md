@@ -1,7 +1,7 @@
 ---
-title:                "Parsing html"
-html_title:           "Bash: Parsing html"
-simple_title:         "Parsing html"
+title:                "Analisi sintattica dell'html"
+html_title:           "Bash: Analisi sintattica dell'html"
+simple_title:         "Analisi sintattica dell'html"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,22 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
-Il parsing HTML si riferisce al processo di analisi e interpretazione di codice HTML. I programmatori lo fanno per estrarre informazioni specifiche da una pagina web o per manipolare il suo contenuto. Questo può essere fatto utilizzando strumenti o script appositamente progettati in Bash per automatizzare il processo di parsing.
+# Bash per Parsing HTML
+
+## Cos'è & Perché?
+Il parsing HTML invita il tuo codice a leggere ed interpretare il codice HTML. I programmatori lo fanno per estrarre dati, manipolare contenuti e interagire con le pagine web in modi nuovi e creativi.
 
 ## Come fare:
-Il seguente esempio mostra come utilizzare lo strumento `lynx` per eseguire il parsing di un sito web e prendere il suo titolo:
+Ecco un esempio semplice utilizzando `wget` e `grep`.
 
 ```Bash
-lynx -dump -head "https://www.esempio.com" | grep "Title:" | awk '{print $2}'
+# Scarica la pagina
+wget https://www.esempio.com -O esempio.html
+
+# Ottieni il titolo
+grep -oP '(?<=<title>).*(?=</title>)' esempio.html
 ```
 
-Output: "Titolo del sito web"
+Ecco un altro esempio utilizzando `curl` e `awk`.
 
-## Approfondimento:
-Il parsing HTML è stato inventato nel 1993 da Tim Berners-Lee, l'inventore del World Wide Web. Mentre Bash non è il linguaggio più comune per il parsing HTML, può essere una buona scelta per i programmatori con familiarità con esso che vogliono automatizzare alcune operazioni di parsing. Ci sono anche alternative come cURL e wget che possono essere utilizzati per eseguire il parsing in Bash. Per implementare il parsing HTML in Bash, è necessario utilizzare strumenti o script appositi, in quanto Bash non è nativamente progettato per questa funzione.
+```Bash
+# Scarica la pagina
+curl https://www.esempio.com -o esempio.html
 
-## Vedi anche:
-- [Documentazione di lynx](http://lynx.browser.org/)
-- [Introduzione al parsing HTML in Bash](https://www.tecmint.com/parsing-html-file-in-linux/)
-- [Altre alternative per il parsing HTML in Bash](https://stackoverflow.com/questions/18227949/parsing-html-in-bash-shell)
+# Ottieni il titolo
+awk -v RS='</title>' '/<title>/{gsub(/.*<title>|\n+/,"");print;exit}' esempio.html
+```
+
+Questi comandi semplificati restituiscono il titolo del documento HTML.
+
+## Approfondimenti
+### Contesto Storico
+Inizialmente, il parsing HTML era una operazione complessa che richiedeva librerie software dedicate al calcolo. Oggi, Bash lo rende più semplice con strumenti come `wget`, `curl`, `grep` e `awk`.
+
+### Alternative
+Esistono alternative a Bash per il parsing HTML, tra cui Python (con BeautifulSoup o PyQuery), PHP (con DOM), e JavaScript (con jQuery o JSDOM).
+
+### Dettagli di implementazione
+Il parsing HTML è un'attività di basso livello e gli strumenti di parsing devono essere in grado di gestire non solo il corretto codice HTML, ma anche il mal formato.
+
+## Vedi Anche
+1. [Guida di Bash](https://www.gnu.org/software/bash/manual/bash.html)
+2. [Manuale di Grep](https://www.gnu.org/software/grep/manual/grep.html)
+3. [Manuale di AWK](https://www.gnu.org/software/gawk/manual/gawk.html)
+4. [Documentazione di Wget](https://www.gnu.org/software/wget/manual/wget.html)
+5. [Documentazione di Curl](https://curl.haxx.se/docs/manpage.html)

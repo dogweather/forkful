@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "C++: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "C++"
 category:             "C++"
@@ -10,34 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Zacząć nowy projekt to nic innego jak rozpoczęcie przygody z programowaniem. Programiści robią to po to, aby stworzyć rozwiązania dla różnych problemów lub po prostu dla samej przyjemności tworzenia nowych rzeczy.
+Zaczynając nowy projekt w programowaniu, tworzysz zarys, na którym będziesz budować swoje oprogramowanie. Robimy to, aby zapewnić strukturę, która pozwoli nam zarządzać zadaniami i kodem.
 
 ## Jak to zrobić:
 
-```c++
-#include <iostream>
+Aby rozpocząć nowy projekt, uruchom nową aplikację przy użyciu poniższego kodu:
 
-int main() {
-    std::cout << "Rozpoczynam nowy projekt w języku C++!" << std::endl;
-    std::cout << "Życz mi powodzenia!" << std::endl;
+```C++
+// Plik: main.cpp
+#include<iostream>
+using namespace std;
+
+int main()
+{
+    cout<<"Witaj, świecie!";
     return 0;
 }
 ```
 
-Output:
+Po skompilowaniu i uruchomieniu powyższego kodu, otrzymasz następujący wyjście:
+
+```C++
+Witaj, świecie!
 ```
-Rozpoczynam nowy projekt w języku C++!
-Życz mi powodzenia!
-```
 
-## Głębsza analiza:
+## Wgląd
 
-Zacząć nowy projekt w języku C++ jest powszechnie znane jako tworzenie aplikacji desktopowych lub systemów wbudowanych z wykorzystaniem języka programowania C++. Inną alternatywą może być używanie innych języków programowania takich jak Java lub Python, ale C++ jest często wybierany ze względu na swoją wydajność i bliskie związki z językiem C.
+Zaczęcie nowego projektu jest jak rozpoczęcie nowej podróży. Początkowo może to być przerwa pobudzająca do działania, ale będzie to miało sens, gdy zrozumiesz, jak możesz strukturę wykorzystać do swojej korzyści.
 
-## Zobacz także:
+1. **Kontekst historyczny**: Koncepcja tworzenia nowych projektów była ważna od początku istnienia programowania. Pomaga to w jasnym zdefiniowaniu celów oraz ścieżki prowadzącej do ich realizacji.
 
-- [C++ tutorials](https://www.codecademy.com/learn/learn-c-plus-plus)
-- [C++ compilers](https://www.learncpp.com/cpp-tutorial/environment-hosting-and-compilers/)
-- [C++ standard library documentation](https://devdocs.io/cpp/)
+2. **Alternatywy**: Inne języki programowania, takie jak Python czy Java, mają swoje własne metody startowania nowych projektów, które różnią się od C++. Ale idea pozostaje taka sama: tworząc strukturę, która zwielokrotni naszą efektywność.
+
+3. **Szczegóły implementacji**: W C++, powiększanie nowego projektu polega na dodawaniu kolejnych plików *.cpp* i *.h*, które są odpowiednio używane do definicji funkcji oraz deklaracji klas i zmiennych.
+
+## Zobacz również:
+
+1. **C++ dla początkujących**: http://cpp.com/beginners
+2. **Rozpoczęcie nowego projektu C++**: https://cpp.com/new-project
+3. **Struktura projektu C++**: https://cpp.com/project-structure

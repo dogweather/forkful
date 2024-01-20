@@ -1,6 +1,6 @@
 ---
 title:                "Å bruke regulære uttrykk"
-html_title:           "Bash: Å bruke regulære uttrykk"
+html_title:           "Arduino: Å bruke regulære uttrykk"
 simple_title:         "Å bruke regulære uttrykk"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,17 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og Hvorfor?
-Bruk av regulære uttrykk er en vanlig praksis blant programmører når du ønsker å søke gjennom og behandle store mengder tekst på en effektiv måte. Ved hjelp av regulære uttrykk kan du søke etter mønstre i tekst og dermed spare tid og krefter på manuelt å lete gjennom dokumenter eller kode.
+## Hva & Hvorfor?
 
-# Hvordan:
-En enkel måte å bruke regulære uttrykk i Bash er ved å bruke kommandoen ```grep```. For eksempel kan du søke etter alle linjer i en tekstfil som inneholder ordet "programmering" ved å kjøre kommandoen ```grep "programmering" filnavn```. Resultatet vil være en liste over alle linjer som inneholder ordet "programmering".
-En annen nyttig funksjon er å bruke spesielle symboler som representerer forskjellige karakterer. For eksempel kan ```^``` symbolisere starten av en linje, og ```$``` symbolisere slutten av en linje. Dette kan være nyttig når du ønsker å finne og erstatte spesifikke deler av tekst.
+Regulære uttrykk er mønstre som brukes for å matche kombinasjoner av tegn i tekst. Programmerere bruker det fordi det gir dem muligheten til å søke, erstatte, og manipulere tekst mer effektivt.
 
-# Dypdykk:
-Regulære uttrykk har blitt brukt i programmering siden 1950-tallet og er fortsatt en av de mest effektive verktøyene for tekstbehandling. Det finnes også andre verktøy og programmeringsspråk som støtter bruk av regulære uttrykk, som for eksempel Perl og Python. Implementasjonen av regulære uttrykk i Bash er basert på POSIX standarden, som er et sett med standarder for UNIX-lignende operativsystemer.
+## Hvordan
 
-# Se også:
-- [Bash dokumentasjon](https://www.gnu.org/software/bash/manual/bash.html#Introduction-to-Regular-Expression)
-- [Regulære uttrykk-kurs på Codecademy](https://www.codecademy.com/learn/learn-regular-expressions)
-- [Introduction to Regular Expressions (video)](https://www.youtube.com/watch?v=SAoTxmaax9k)
+Enkelte eksempler på hvordan man kan bruke regulære uttrykk i Bash:
+
+```Bash
+# Sjekke om et ord finnes i en tekststring
+echo "Hei verden" | grep -o "verden"
+
+# Erstatte et ord i en tekststring
+echo "Hei verden" | sed 's/verden/alle/'
+
+# Sjekke om en tekststring matcher et bestemt mønster
+[[ "abc123" =~ [a-zA-Z]+[0-9]+ ]] && echo "match!"
+```
+Utskriften vil være henholdsvis: "verden", "Hei alle", og "match!".
+
+## Dypdykk
+
+Regulære uttrykk oppsto først på 50-tallet og har siden blitt et essensielt verktøy i alle programmerere sin verktøykasse. Det finnes mange alternativer til regulære uttrykk som for eksempel "wildcards" og "globbing", men ingen gir den samme fleksibiliteten. Når du bruker regulære uttrykk i Bash er det viktig å bruke dem i kontekst av grep, sed, eller lignende kommandoer som forstår og kan tolke dem.
+
+## Se også
+
+For mer informasjon om regulære uttrykk: 
+- [Regulære uttrykk i Bash guide](https://www.gnu.org/software/bash/manual/html_node/Regular-Expressions.html)
+- [GEDP online regex tester](https://regex101.com/)
+- [Stack Overflow tråder om regulære uttrykk](https://stackoverflow.com/questions/tagged/regex).

@@ -1,7 +1,7 @@
 ---
-title:                "문자열에서 날짜 구문 분석"
-html_title:           "Javascript: 문자열에서 날짜 구문 분석"
-simple_title:         "문자열에서 날짜 구문 분석"
+title:                "문자열에서 날짜 분석하기"
+html_title:           "Gleam: 문자열에서 날짜 분석하기"
+simple_title:         "문자열에서 날짜 분석하기"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Dates and Times"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜 해야하나요?
-문자열에서 날짜를 분석해 내는 것은 프로그래머가 문자열에서 원하는 정보를 추출하고 처리할 수 있도록 도와줍니다. 날짜를 다루는 경우에는 특히 필요한 기술이며, 이를 통해 날짜 데이터를 정확하게 처리할 수 있습니다.
+## 무엇과 왜?
 
-## 어떻게 하나요?
-날짜를 문자열에서 추출하는 방법에는 여러 가지가 있습니다. 다음은 Javascript를 이용해 날짜를 추출하는 예시입니다.
+문자열에서 날짜를 파싱하는 것은 문자열 형태의 날짜 데이터를 JavaScript에서 사용가능한 `Date` 객체로 변환하는 과정입니다. 프로그래머들은 이런 변환을 통해 날짜 및 시간에 관한 연산을 수행하거나, 특정 형식으로 날짜를 출력하는 등의 작업을 할 때 이를 필요로 합니다.
 
+## 어떻게:
+
+```Javascript
+let dateStr = "2022-03-31";
+let dateObj = new Date(dateStr);
+console.log(dateObj);
 ```
-// 문자열에서 날짜 추출하기
-const string = "2021-05-14";
-const date = new Date(string);
+입력 : `"2022-03-31"`
 
-// 원하는 형식으로 날짜 출력하기
-console.log(date.toLocaleDateString("ko-KR")); // "2021. 5. 14."
-```
+출력 : `2022-03-30T15:00:00.000Z`
 
-## 깊게 들어가보기
-날짜를 문자열에서 추출하는 기술은 아주 오랜 역사를 가지고 있습니다. 이전에는 문자열을 직접 분석하는 방식을 사용했지만, 지금은 더 간편하고 정확한 방법인 내장 함수를 이용합니다. 다른 프로그래밍 언어에서도 비슷한 기능을 제공하며, 날짜 형식에 맞추어 정확한 데이터를 추출할 수 있습니다.
+## 깊이 알아보기:
 
-## 더 알아보기
-이 문제에 대한 해결 방법은 다양합니다. 자세한 내용을 알고 싶다면 다음 링크를 참고해보세요.
+문자열에서 날짜를 파싱하게 된 배경은 초기 웹 개발에서는 날짜와 시간 데이터를 문자열 형태로 주고받는 것이 일반적이었기 때문입니다. 이런 방식은 다양한 문제점을 가지고 있었지만, 표준화되지 않은 초창기 웹 환경에서는 광범위하게 사용되었습니다.
 
-- [MDN 웹 문서: Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
-- [Javascript에서 날짜 다루기](http://www.incodom.kr/Javascript/AD_0610.html)
+문자열에서 날짜를 파싱하는 대안으로는 UNIX 타임스탬프를 사용하는 방법이 있습니다. 이 방식은 1970년 1월 1일 00시 00분 00초를 시작으로 경과한 시간을 밀리초 단위로 표현한 것입니다.
+
+JavaScript 내부에서 `Date` 객체는 UTC를 기준으로 시간을 계산하며, `new Date()` 생성자는 다양한 형식의 날짜 문자열 파싱을 지원합니다.
+
+## 참고자료:
+
+1. MDN Web Docs - [Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
+2. W3Schools - [JavaScript Date Formats](https://www.w3schools.com/js/js_date_formats.asp)
+3. Eloquent JavaScript - [Handling dates and time](https://eloquentjavascript.net/12_date.html)

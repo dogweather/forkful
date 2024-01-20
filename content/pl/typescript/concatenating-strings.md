@@ -1,6 +1,6 @@
 ---
 title:                "Łączenie ciągów znaków"
-html_title:           "TypeScript: Łączenie ciągów znaków"
+html_title:           "Arduino: Łączenie ciągów znaków"
 simple_title:         "Łączenie ciągów znaków"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,39 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Łączenie ciągów znaków jest podstawowym narzędziem w programowaniu. Polega ono na łączeniu różnych fragmentów tekstu w jedną dłuższą ciągłą linię. Programiści stosują tę technikę, aby tworzyć bardziej czytelny i praktyczny kod.
+# Kolokwialnie o konkatenacji łańcuchów znakowych w TypeScript
+
+## Co to jest i dlaczego?
+
+Konkatenacja łańcuchów znakowych polega na łączeniu dwóch lub więcej ciągów znakowych w jeden dłuższy. Programiści robią to, aby tworzyć bardziej złożone wiadomości lub instrukcje bez konieczności utrzymywania wielu oddzielnych ciągów.
 
 ## Jak to zrobić:
-Przykład prostego łączenia dwóch ciągów znaków w TypeScript wygląda następująco: 
+
+W TypeScript możesz połączyć stringi na kilka sposobów. Oto najprostsze z nich:
+
 ```TypeScript
-let imie: string = "Kasia";
-let nazwisko: string = "Kowalska";
-let pelne_imie = imie + " " + nazwisko;
-console.log(pelne_imie);
+let str1 = 'Cześć';
+let str2 = ' świecie!';
+let message = str1 + str2;
+console.log(message); // Wydrukuj: 'Cześć świecie!'
 ```
 
-W wyniku otrzymamy:
+Możesz także używać szablonów literałów ciągu znaków do konkatenacji, co pozwala na bardziej zwięzłą składnię:
+
 ```TypeScript
-Kasia Kowalska
+let str1 = 'Cześć';
+let str2 = 'świecie';
+let message = `${str1}, ${str2}!`;
+console.log(message); // Wydrukuj: 'Cześć, świecie!'
 ```
 
-Możemy również łączyć więcej niż dwa ciągi znaków. Na przykład:
-```TypeScript
-let opcja1: string = "opcja1";
-let opcja2: string = "opcja2";
-let opcja3: string = "opcja3";
-let wybor = "Możesz wybrać: " + opcja1 + ", " + opcja2 + " lub " + opcja3;
-console.log(wybor);
-```
+## Deep Dive
 
-Otrzymamy:
-```TypeScript
-Możesz wybrać: opcja1, opcja2 lub opcja3
-```
+Konkatenacja łańcuchów znakowych to stara i prosta technika, ale sprawdza się w wielu sytuacjach. W TypeScript działa bardzo podobnie jak w większości języków programowania.
 
-## Głębsze spojrzenie:
-Łączenie ciągów znaków jest powszechnie używaną techniką w wielu językach programowania. Wcześniej, w językach takich jak C czy Java, zwykle korzystano ze specjalnych funkcji do łączenia ciągów. W TypeScript mamy na to prostsze rozwiązanie - można po prostu użyć operatora "+" do łączenia ciągów. Alternatywą do łączenia ciągów jest również szablonowanie, co jest szczególnie przydatne przy łączeniu większej liczby fragmentów tekstu.
+Alternatywą dla połączenia stringów może być użycie metod `concat()` lub `join()`. Metoda `concat()` scala dwa łańcuchy, a `join()` łączy elementy tablicy w jeden string.
 
-## Zobacz też:
-Jeśli chcesz poznać więcej na temat łączenia ciągów w TypeScript, warto zajrzeć na stronę dokumentacji Microsoft: https://www.typescriptlang.org/docs/handbook/basic-types.html#string. Możesz też zapoznać się z innymi funkcjonalnościami języka, które mogą być przydatne w Twoim kodzie.
+Szczegóły implementacji w TypeScript są dość proste: operatory `+` i `` ` `` są używane do łączenia łańcuchów znakowych. Operator `+` po prostu łączy łańcuchy razem, podczas gdy szablony literałów ciągu znaków pozwalają na wrzucanie zmiennych i wyrażeń bezpośrednio w tekst.
+
+## Zobacz również:
+
+Jeśli chcesz dowiedzieć się więcej o konkatenacji łańcuchów znakowych, oto kilka użytecznych źródeł:
+
+- Dokumentacja na temat stringów w TypeScript: [https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string)
+- Szczegóły na temat szablonów literałów template string: [https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html](https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html)

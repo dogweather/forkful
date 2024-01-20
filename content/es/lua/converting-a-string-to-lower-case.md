@@ -1,6 +1,6 @@
 ---
 title:                "Convirtiendo una cadena a minúsculas"
-html_title:           "Lua: Convirtiendo una cadena a minúsculas"
+html_title:           "Bash: Convirtiendo una cadena a minúsculas"
 simple_title:         "Convirtiendo una cadena a minúsculas"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,28 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué? 
-Convertir una cadena de texto a minúsculas es un proceso común en la programación. Consiste en transformar todas las letras en una cadena de texto a su forma minúscula equivalente. Esto puede ser útil para comparar cadenas de texto de manera más precisa o para estandarizar el formato de una entrada de usuario, entre otros usos. 
+## ¿Qué y Por Qué?
 
-## Cómo hacerlo: 
-```Lua
--- Ejemplo 1: Usando la función string.lower() 
-``` 
-cadena = "¡HoLa, MuNdO!"
-print(string.lower(cadena)) -- resultado: ¡hola, mundo!
+Convertir una cadena a minúsculas se refiere al proceso de cambiar todas las letras en mayúsculas de una cadena de texto a sus equivalentes en minúsculas. Los programadores suelen hacer esto para normalizar o estandarizar los datos durante el procesamiento del texto.
+
+## Cómo:
+
+Lua proporciona una función incorporada, `string.lower(str)` para convertir una cadena a minúsculas. Aquí te mostramos cómo se hace:
 
 ```Lua
--- Ejemplo 2: Utilizando un bucle para convertir cada letra a minúscula 
-``` 
-cadena = "BIENVENIDO"
-nueva_cadena = ""
-for i = 1, #cadena do
-  nueva_cadena = nueva_cadena .. string.lower(string.sub(cadena, i, i))
-end
-print(nueva_cadena) -- resultado: bienvenido 
+-- Dada una cadena
+local str = "¡Hola Mundo, Lua!"
+-- Convertir a minúsculas
+local lowerStr = string.lower(str)
+-- Imprimir la cadena
+print(lowerStr)
+```
 
-## Profundizando:
-La conversión de cadenas a minúsculas no siempre ha sido una operación tan fácil como lo es hoy en día. En los inicios de la programación, las computadoras sólo podían manejar letras en mayúsculas y los programadores tenían que realizar cálculos complejos para convertir letras en minúsculas. Hoy en día, existen alternativas como la función string.upper() que convierte letras a su forma mayúscula.
+Salida:
 
-## Ver también:
-Para más información sobre la manipulación de cadenas de texto en Lua, puedes visitar la documentación oficial: https://www.lua.org/manual/5.3/manual.html#6.4.3. También puedes explorar otras funciones útiles para el manejo de cadenas como string.gsub(), string.len(), entre otras.
+```Lua
+"¡hola mundo, lua!"
+```
+
+## Análisis en Profundidad:
+
+### Contexto Histórico:
+
+La conversión de texto a minúsculas es una práctica común en la programación de computadoras, que se remonta a los días de las primeras computadoras que sólo tenían letras en mayúsculas. Fue muy adoptada con la aparición de los sistemas basados en texto y los primeros motores de búsqueda.
+
+### Alternativas:
+
+Lua no proporciona una alternativa nativa para convertir una cadena a minúsculas. Sin embargo, puedes escribir una función para hacer esto manualmente si lo necesitas.
+
+### Detalles de Implementación:
+
+En Lua, `string.lower(str)` funciona recorriendo cada letra de la cadena `str`. Si la letra es una mayúscula, la convierte en minúscula. Los caracteres que no son letras se dejan sin cambios.
+
+## Ver También:
+
+1. [Guía de Programación de Lua](https://www.lua.org/pil/): Una guía completa del lenguaje de programación Lua.
+
+2. [Documentación de Lua](https://www.lua.org/docs.html): Documentación oficial de Lua con una lista completa de funciones de cadenas y otros aspectos del lenguaje.
+
+3. [String Manipulation (Manipulación de Cadenas)](https://www.lua.org/pil/20.html): Un análisis en profundidad de las diversas formas de manipular cadenas en Lua, incluyendo `string.lower(str)`.

@@ -1,7 +1,7 @@
 ---
-title:                "Tarkistaako hakemisto on olemassa"
-html_title:           "TypeScript: Tarkistaako hakemisto on olemassa"
-simple_title:         "Tarkistaako hakemisto on olemassa"
+title:                "Tarkistetaan, onko hakemisto olemassa"
+html_title:           "Lua: Tarkistetaan, onko hakemisto olemassa"
+simple_title:         "Tarkistetaan, onko hakemisto olemassa"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,33 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# TypeScript: Tarkista onko hakemisto olemassa
 
-Kun ohjelmointia tehdään, saattaa joskus olla tarpeen tarkistaa, onko hakemistoa olemassa. Hakemisto on tietokoneen osa, johon tallennetaan tiedostoja. Ohjelmoijat voivat tarkistaa hakemiston olemassaolon, jotta he voivat tehdä päätöksiä sen suhteen, miten käsitellä mahdollisia tiedostoja kyseisessä hakemistossa.
+## Mitä & Miksi?
 
-## How to:
+Hakemiston olemassaolon tarkistaminen tarkoittaa tiedostojärjestelmässä sijaitsevan hakemiston löytämistä ja sen varmistamista, että se on olemassa. Ohjelmoijat tekevät tätän tarkistaakseen etukäteen ovatko resurssit saatavana, ennen kuin he aloittavat työskentelyn niihin.
 
-Tarkistaaksesi, onko hakemisto olemassa, voit käyttää seuraavaa TypeScript-koodia:
+## Kuinka tehdä:
+
+Tarkistamme onko hakemisto olemassa käyttämällä Node.js 'fs' moduulia. 
 
 ```TypeScript
-import * as fs from 'fs';
- 
-// Tarkistetaan, onko hakemisto olemassa
-fs.existsSync('/polku/hakemistoon');
+import { existsSync } from 'fs';
+
+function checkDirectory(directoryPath: string): void {
+  if (existsSync(directoryPath)) {
+    console.log("Hakemisto on olemassa.");
+  } else {
+    console.log("Hakemisto ei ole olemassa.");
+  }
+}
+
+checkDirectory("./someDirectory");  // Esimerkkihakemiston tarkistus
 ```
 
-Tämä koodi käyttää Node.js-tiedostojärjestelmäkirjastoa (fs) ja sen metodia existsSync () tarkistaakseen, onko annettu hakemistopolku olemassa. Metodi palauttaa totuusarvon (true tai false) riippuen siitä, oliko hakemisto olemassa vai ei. Voit sitten käyttää tätä tietoa päätöksenteossa ohjelmassasi.
+Käytettäessä 'fs' moduulia, `existsSync`-funktio tarkistaa, onko tietty hakemisto olemassa tiedostojärjestelmässä. 
 
-## Deep Dive:
+## Syvällisempi sukellus:
 
-Historiallisesti ajatellen, hakemistojen olemassaolon tarkistaminen on ollut tärkeää varsinkin silloin, kun työskennellään monenlaisten tietokonejärjestelmien kanssa, joissa on erilaiset tiedostojärjestelmät. Nykyään tämä taito on edelleen hyödyllinen ja yleisesti käytetty ohjelmoinnissa.
+Hakemistojen olemassaolon tarkistaminen on joukkotiedostojärjestelmien perusominaisuuksia. Siitä lähtien, kun hakemistorakenteet otettiin käyttöön, ohjelmoijat ovat tarvinneet keinoja tarkistaa, ovatko heidän osoittamansa tiedostopolut olemassa.
 
-On myös muita tapoja tarkistaa, onko hakemisto olemassa, kuten käyttämällä asetuspyynnön metodeja (request methods) tai käyttämällä ohjelmistokirjastoa, kuten "fs-extra". Nämä menetelmät voivat olla hyödyllisiä, jos tarvitset lisäominaisuuksia tarkistuksellesi.
+Vaihtoehtoisesti voit käyttää `fs.stat` tai `fs.access` funktioita. Mutta näitä funktioita on kutsuttava virheenkäsittelyn kera, koska ne heittävät virheen, jos hakemistoa ei ole olemassa.
 
-Node.js-tiedostojärjestelmäkirjasto tarjoaa myös muita metodeja tiedostojen ja hakemistojen käsittelyyn. Voit tutustua niihin tarkemmin Node.js-dokumentaatiossa.
+Kun tarkistat onko hakemisto olemassa, yrität lukea tiedostojärjestelmän metatietoja. Tämä ei vaadi tiedostojen sisällön lukemista, joten se on suhteellisen nopea toiminto.
 
-## See Also:
+## Katso myös:
 
-- [Node.js - Tiedostojärjestelmäkirjasto (fs)](https://nodejs.org/dist/latest-v14.x/docs/api/fs.html)
-- [Node.js - Asetuspyynnöt (request methods)](https://nodejs.org/dist/latest-v14.x/docs/api/http.html#http_http_request_url_options_callback)
-- [fs-extra - Ohjelmistokirjasto](https://github.com/jprichardson/node-fs-extra)
+1. Node.js 'fs' moduuli dokumentaatio: https://nodejs.org/api/fs.html
+2. TypeScriptin opas: https://www.typescriptlang.org/docs/handbook/intro.html
+3. Hakemistorakenteen Wikipedia-artikkeli: https://fi.wikipedia.org/wiki/Hakemisto_(tietotekniikka)

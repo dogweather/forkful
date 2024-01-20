@@ -1,6 +1,6 @@
 ---
 title:                "Analizzare una data da una stringa"
-html_title:           "Java: Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
 simple_title:         "Analizzare una data da una stringa"
 programming_language: "Java"
 category:             "Java"
@@ -12,39 +12,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Cosa & Perché?
 
-Il parsing di una data da una stringa è il processo di trasformare una data espressa come stringa di testo in un oggetto di tipo data all'interno di un programma Java. I programmatori fanno questo per elaborare e manipolare le date in modo più efficace all'interno del loro codice.
+In programmazione, analizzare una data da una stringa significa estrarre le informazioni di data e ora da una rappresentazione di testo. I programmatori lo fanno per manipolare o comparare date, o per formattarle per l'output.
 
-## Come fare:
+## Come Fai:
+
+Ecco un esempio di come fare. Usiamo `java.time`:
 
 ```Java
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-//Creiamo una stringa con una data
-String dataStringa = "01/01/2021";
-
-try {
-    //Definiamo il formato della data da utilizzare
-    SimpleDateFormat formatoData = new SimpleDateFormat("dd/MM/yyyy");
-    //Trasformiamo la stringa in un oggetto data
-    Date data = formatoData.parse(dataStringa);
-    //Stampiamo l'oggetto data
-    System.out.println(data);
-} catch (java.text.ParseException e) {
-    //In caso di errore nella conversione, stampiamo un messaggio di errore
-    System.out.println("Errore nella conversione della data.");
+public class Main {
+    public static void main(String[] args) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/MM/yyyy");
+        LocalDate date = LocalDate.parse("23/07/2023", formatter);
+        System.out.println(date); 
+    }
 }
 ```
-Output:
+
+Quando si esegue, si stamperà:
+
+```Java
+2023-07-23
 ```
-Fri Jan 01 00:00:00 CET 2021
-```
-## Approfondimento:
 
-Il parsing di una data da una stringa è diventato un'operazione comune dopo l'introduzione della libreria Joda-Time nel 2002. Questa libreria ha portato numerosi miglioramenti alle operazioni di gestione delle date in Java ed è stata in seguito integrata nel pacchetto di base di Java a partire dalla versione 8. Oltre all'utilizzo della classe SimpleDateFormat come mostrato nell'esempio precedente, è possibile utilizzare anche la classe DateTimeFormatter per effettuare il parsing di una data da una stringa.
+## Approfondimenti
 
-## Vedi anche:
+C'è più di quanto sembri nella formattazione di date. 
 
-- [Java SimpleDateFormat](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)
-- [Java DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
-- [Joda-Time](https://www.joda.org/joda-time/)
+1) Storicamente, l'amministrazione delle date in Java era laboriosa. Con l'introduzione di `java.time` in Java 8, è diventato più semplice.
+
+2) Esistono alternative. `java.text.SimpleDateFormat` era spesso usato, ma aveva problemi. Ad esempio, non era thread-safe. 
+
+3) Gli oggetti `java.time.format.DateTimeFormatter` sono immutabili e thread-safe. Questo è importante per le applicazioni multi-thread, dove la sicurezza dei thread è una preoccupazione.
+
+## Vedere Anche 
+
+Per ulteriori informazioni, consultare queste altre risorse:
+
+- La [documentazione di Oracle](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) sul `DateTimeFormatter`.
+- Questo [tutorial su Jenkov](http://tutorials.jenkov.com/java-date-time/parsing-formatting-dates.html) sulla formattazione e l'analisi delle date.
+- Questo [articolo di Baeldung](https://www.baeldung.com/java-8-date-time-intro) sull'introduzione di `java.time`.

@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-html_title:           "Python: Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
-simple_title:         "Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Python: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Dates and Times"
@@ -10,33 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Päivämäärän laskeminen tulevaisuuteen tai menneisyyteen on yksinkertaisesti tietyn päivämäärän lisäämistä tai vähentämistä tietty määrä päiviä. Tämä on yleinen tehtävä ohjelmoinnissa, sillä usein tarvitsemme tietoa tulevista tai menneistä päivämääristä esimerkiksi tapahtumien suunnittelussa tai laskutuksessa.
+## Mitä & Miksi?
 
-## Näin teet sen:
+Lasketaan tulevaisuuden tai menneisyyden päivämäärää tarkoittaa tietyn ajanjakson lisäämistä tai vähentämistä tietystä päivämäärästä. Ohjelmoijat tekevät näin parisyistä, kuten tietokannan vanhentuneiden tietueiden puhdistamiseksi tai tapahtumien ajoitukseksi tulevaisuudessa.
+
+## Kuinka:
+
+Alla on yksinkertainen Python-koodi, joka näyttää, kuinka laskea tulevaisuuden päivämäärä.
+
 ```Python
-import datetime
+from datetime import datetime, timedelta
 
-# Lisätään 30 päivää nykyiseen päivämäärään
-tuleva_päivä = datetime.date.today() + datetime.timedelta(days=30)
-print(tuleva_päivä)
+# nykyinen päivämäärä ja aika
+nyt = datetime.now()
 
-# Vähennetään 2 kuukautta nykyisestä päivämäärästä
-mennyt_päivä = datetime.date.today() - datetime.timedelta(weeks=8)
-print(mennyt_päivä)
+# lisätään 5 päivää  nykyisestä päivämäärästä
+tulevaisuus = nyt + timedelta(days=5)
+
+print('Nykyinen päivämäärä:', nyt)
+print('5 päivää myöhemmin:', tulevaisuus)
+```
+Tämä on esimerkkitulo:
+
+```Python
+Nykyinen päivämäärä: 2022-04-24 17:53:07.258743
+5 päivää myöhemmin: 2022-04-29 17:53:07.258743
 ```
 
-**Lisätietoja:**
-1. Historiallinen konteksti:
-Päivämäärän laskeminen on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Alkuaikoina tämä tehtiin yleensä manuaalisesti laskemalla päiviä ja kuukausia, mutta nykyään siihen on olemassa valmiita työkaluja ja kirjastoja.
+## Syvä sukellus:
 
-2. Vaihtoehtoiset menetelmät:
-Voit myös käyttää `dateutil`-kirjastoa, joka tarjoaa lisää toiminnallisuutta päivämäärien laskemiseen, kuten huomioida erilaiset aikavyöhykkeet ja paikalliset lomat.
+Historiallisesti päivämäärän laskeminen tulevaisuudessa tai menneisyydessä oli paljon monimutkaisempaa, koska se vaati päivämäärä- ja aikavuoksiin liittyvien sääntöjen, kuten karkausvuosien, huomioon ottamista. Pythonin datetime-moduuli tekee tämän paljon helpommaksi, koska se hoitaa kaikki nämä yksityiskohdat automaattisesti.
 
-3. Toteutus:
-Päivämäärien laskeminen perustuu ajanjakson lisäämiseen tai vähentämiseen nykyisestä päivämäärästä `timedelta`-luokan avulla. Tämä luokka mahdollistaa päivien, viikkojen, kuukausien ja vuosien lisäämisen tai vähentämisen.
+Vaihtoehtoisesti, voit käyttää dateutil-moduulia, joka tarjoaa monipuolisemmat toiminnot kuten toistuvien ajanjaksojen laskeminen.
+
+Vaikka Pythonin datetime-moduuli käsittelee monimutkaisia yksityiskohtia, sen takana on huomattavan paljon tietojenkäsittelyä. Esimerkiksi, karkausvuodet otetaan huomioon määrittämällä, ovatko vuodet jaollisia 4:llä, 100:lla ja 400:lla.
 
 ## Katso myös:
-- [Pythonin datetime moduuli](https://docs.python.org/3/library/datetime.html)
-- [dateutil-kirjasto](https://dateutil.readthedocs.io/en/stable/)
-- [Lyhyt video päivämäärien laskemisesta Pythonilla](https://www.youtube.com/watch?v=J4o7ln2ZDjo)
+
+Pythonin virallinen dokumentaatio tarjoaa kattavat tiedot datetime-moduulista:
+https://docs.python.org/3/library/datetime.html
+
+Kattava opas Pythonin dateutil-moduulin käyttämiseen:
+https://dateutil.readthedocs.io/en/stable/

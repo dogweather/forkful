@@ -1,7 +1,7 @@
 ---
-title:                "Analiza daty z ciągu znaków"
-html_title:           "Clojure: Analiza daty z ciągu znaków"
-simple_title:         "Analiza daty z ciągu znaków"
+title:                "Analiza składniowa daty z ciągu znaków"
+html_title:           "Clojure: Analiza składniowa daty z ciągu znaków"
+simple_title:         "Analiza składniowa daty z ciągu znaków"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Dates and Times"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co i po co parsowanie daty ze stringa?
+# Co i dlaczego?
 
-Parsowanie daty ze stringa, to proces zamiany daty zapisanej w formacie tekstowym, na format daty, który może być dalej przetwarzany przez program. Programiści często wykonują tę operację, kiedy muszą przetwarzać wejściowe dane zawierające informację o dacie, lub kiedy chcą wyświetlić wynik w czytelniejszy sposób.
+Parsowanie daty z łańcucha znaków to proces, dzięki któremu z ciągu tekstowego wydobywa się datę. Programiści robią to, aby przetwarzać daty zapisane jako tekst do formatu, który można łatwo manipulować w danym języku programowania.
 
-Jak to zrobić:
+# Jak to zrobić:
+
+W Clojure, możemy parsować datę z łańcucha znaków za pomocą funkcji `parse` z biblioteki `clj-time.format`. Oto przykład:
 
 ```Clojure
-(require '[clojure.java-time :as time])
+(require '[clj-time.core :as tc])
+(require '[clj-time.format :as tf])
 
-(time/parse "11/12/2021" "M/d/yyyy")
-;; => #object[java.time.LocalDate 0x17d2420e "2021-11-12"]
+(defn parse-date [s]
+  (tf/parse (tf/formatters :basic-date) s))
+
+(println (parse-date "20211010"))
 ```
 
-Głębsze spojrzenie:
+Po uruchomieniu powyższego kodu, otrzymamy wynik:
 
-Parsowanie daty ze stringa jest często potrzebne, ponieważ wiele programów przetwarza dane zawierające informację o dacie, np. raporty finansowe, statystyki, czy albumy zdjeciowe. W przeszłości programiści musieli ręcznie pisać funkcje do parsowania dat, ale dzięki bibliotece clojure.java-time, proces ten jest znacznie ułatwiony.
+```
+2021-10-10T00:00:00.000Z
+```
 
-Alternatywą dla biblioteki clojure.java-time jest biblioteka clojure.tools.timeline, która także udostępnia funkcję do parsowania dat. Jednak clojure.java-time jest zalecana, ponieważ jest oficjalną wersją biblioteki języka Clojure.
+# Głębszy wgląd
 
-Parsowanie daty ze stringa jest realizowane w bibiliotece clojure.java-time przez wykorzystanie metody parse z klasy java.time.format.DateTimeFormatter. Dzięki temu, mamy do dyspozycji różne formaty daty, które mogą być dostosowane do naszych potrzeb.
+Parsowanie daty z łańcucha znaków jest pojęciem tak starym, jak samo programowanie. Z biegiem lat pojawiło się wiele podejść do tego problemu. 
 
-Zobacz także:
+W Clojure, alternatywą dla `clj-time` może być `java.time` dostępne natywnie w JVM. Jako że Clojure działa na JVM, można korzystać z tej biblioteki bez dodatkowych zależności. 
 
-https://clojure.github.io/java-time/
-https://github.com/clojure/java-time
+Szczegół implementacji `clj-time` polega na wykorzystaniu biblioteki Joda-Time. `clj-time` to po prostu wrapper Clojure dla tej biblioteki. Joda-Time była dużym krokiem naprzód w porównaniu z klasą `java.util.Date` dostarczaną przez Java 1, ale obecnie zastępowana jest przez `java.time` we współczesnych wersjach Javy.
+
+# Zobacz również
+
+1. Dokumentacja `clj-time`: https://github.com/clj-time/clj-time
+2. Dokumentacja `java.time`: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+3. API Joda-Time: http://www.joda.org/joda-time/apidocs/index.html

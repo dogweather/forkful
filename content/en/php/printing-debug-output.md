@@ -1,6 +1,6 @@
 ---
 title:                "Printing debug output"
-html_title:           "PHP recipe: Printing debug output"
+html_title:           "Arduino recipe: Printing debug output"
 simple_title:         "Printing debug output"
 programming_language: "PHP"
 category:             "PHP"
@@ -12,32 +12,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Printing debug output refers to the act of displaying the values of variables and other information during the execution of a program. This is a common practice among programmers as it allows them to track the behavior of their code and identify errors or potential issues.
+Printing debug output is a way we use to check our code's behavior at any given stage. It imparts the power to identify the anomalies and to correct them, ensuring expected program performance.
 
 ## How to:
 
-To print debug output in PHP, you can use the ```print_r()``` or ```var_dump()``` functions. The ```print_r()``` function allows you to view the contents of a variable, while ```var_dump()``` provides a more detailed and structured output.
+In PHP, there's a handy function known as `var_dump()` to print debug output. Here's a simple example.
 
-Example code:
 ```PHP
-$fruit = "apple";
-print_r($fruit); // displays: apple
-var_dump($fruit); // displays: string(5) "apple"
+<?php
+  $name = "John Doe";
+  var_dump($name);
+?>
 ```
 
-## Deep Dive:
+This will yield the output:
 
-1. Historical Context:
-Debugging has been a fundamental part of programming since its inception. In the early days, programmers would use printing debug output as a way to check the state of their programs, as more advanced debugging tools were not available.
+```PHP
+string(8) "John Doe"
+```
 
-2. Alternatives:
-Besides printing debug output, there are other ways to debug code, such as using a debugger tool or logging errors to a file. However, many programmers still prefer the simplicity and effectiveness of printing output.
+`var_dump()` not only returns the variable value but also provides its type and size.
 
-3. Implementation Details:
-The ```print_r()``` and ```var_dump()``` functions are built-in to PHP, making them easily accessible for developers. They also have some useful parameters that can be used to customize the output, such as ```print_r($fruit, true)``` to return the output as a string instead of displaying it.
+## Deep Dive
 
-## See Also:
+1. **Historical context:**
 
-- [Debugging in PHP](https://www.php.net/manual/en/debugger.php)
-- [PHP Debugging with Xdebug](https://www.jetbrains.com/help/phpstorm/debugging-with-xdebug.html)
-- [PHP Error Logging](https://www.php.net/manual/en/function.error-log.php)
+PHP originally didn't have built-in debugging tools. As such, `var_dump()` and `print_r()` became popular solutions due to their simplicity and effectiveness.
+
+2. **Alternatives:**
+
+The `print_r()` function is an alternative, if you want a more human-friendly output. But for more complex information, like indicating data types or array/object depth, `var_dump()` stands out.
+
+Use `print_r()` as:
+
+```PHP
+<?php
+  $data = array('a', 'b', 'c');
+  print_r($data);
+?>
+```
+
+3. **Implementation details:**
+
+When using `var_dump()` and `print_r()`, keep in mind that while they're useful, they can clutter up output in a production environment. For a cleaner, log-based approach, consider libraries like Monolog.
+
+## See Also
+
+1. [PHP: `var_dump()` Function](https://www.php.net/manual/en/function.var-dump.php)
+2. [PHP: `print_r()` Function](https://www.php.net/manual/en/function.print-r.php)
+3. [Monolog: PHP Logger Library](https://github.com/Seldaek/monolog)

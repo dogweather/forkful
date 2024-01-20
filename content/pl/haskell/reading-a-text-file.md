@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Haskell: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,30 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## Co i dlaczego?
 
-Odczytywanie plików tekstowych to proces czytania zawartości pliku przechowywanego na dysku lub urządzeniu. Programiści często korzystają z tej techniki, aby przetworzyć dane z pliku do programu lub wyświetlić zawartość pliku na ekranie.
+Czytanie pliku tekstowego polega na odczytaniu danych zapisanych w formie tekstu ze zwykłego pliku. Programiści robią to, aby manipulować danymi, przetwarzać je, a czasem po prostu wyświetlać użytkownikom.
 
 ## Jak to zrobić:
 
-Sprawanie trzeba, by pobrać odpowiedni moduł biblioteki standardowej w języku Haskell - `System.IO`. Następnie, aby odczytać plik tekstowy używamy funkcji `readFile` i przekazujemy jej ścieżkę do pliku jako argument. Przykładowy kod wyglądać będzie następująco:
+Wystarczy kilka linii kodu do odczytu pliku w Haskellu. Sprawdź nasze przykłady poniżej:
 
 ```Haskell
-import System.IO
+import System.IO  
 
-main = do
-    content <- readFile "path/to/file.txt"
-    putStr content
+main = do  
+    handle <- openFile "plik.txt" ReadMode  
+    contents <- hGetContents handle  
+    putStr contents  
+    hClose handle
 ```
 
-Wynik będzie wypisany na ekranie w postaci zawartości pliku tekstowego.
+Efekt końcowy powinien wyglądać tak:
 
-## Deep Dive:
+```Haskell
+Hello, Haskell!
+```
 
-Historia odczytywania plików jest długa i sięga początków programowania. Od początku tworzenia komputerów, programiści musieli znaleźć sposoby na przetwarzanie danych przechowywanych na dysku. Alternatywnymi metodami odczytu plików w języku Haskell są funkcje `openFile` i `hGetContents`. Dzięki nim można specyfikować sposób odczytu pliku, na przykład czy plik powinien być otwarty w trybie binarnym czy tekstowym.
+## Głębsze spojrzenie:
 
-Wykorzystanie funkcji `readFile` jest prostym sposobem na odczytywanie plików, ale może być niewystarczające w bardziej złożonych scenariuszach. W takim przypadku warto zapoznać się z dokumentacją `System.IO` w celu znalezienia odpowiednich funkcji do własnego zastosowania.
+- Kontekst historyczny: Haskell jest językiem programowania o wysokim poziomie abstrakcji, który istnieje od lat 90-tych. Jego zdolność do obsługi plików rozwinęła się w miarę ewolucji języka i potrzeb współczesnego programowania.
+   
+- Alternatywy: Można również użyc funkcji 'readFile' do odczytywania danych z pliku tekstowego:
 
-## Zobacz także:
+```Haskell
+main = do  
+    contents <- readFile "plik.txt"  
+    putStr contents
+```
 
-- Dokumentacja funkcji `readFile` w bibliotece standardowej języka Haskell (link)
+- Szczegóły implementacji: Kiedy otwierasz plik za pomocą funkcji 'openFile' w Haskellu, zdobywasz uchwyt na plik. Używasz tego uchwytu, aby później odczytywać zawartość pliku. Ważne jest, aby pamiętać o zamknięciu uchwytu na koniec.
+
+## Zobacz też:
+
+- Dokumentacja Haskell: https://www.haskell.org
+- Obsługa plików w Haskellu: http://learnyouahaskell.com/input-and-output  
+- 'System.IO' w Haskell: https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html

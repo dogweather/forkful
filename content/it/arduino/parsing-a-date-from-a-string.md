@@ -1,7 +1,7 @@
 ---
-title:                "Analisi di una data da una stringa"
-html_title:           "Arduino: Analisi di una data da una stringa"
-simple_title:         "Analisi di una data da una stringa"
+title:                "Analizzare una data da una stringa"
+html_title:           "Fish Shell: Analizzare una data da una stringa"
+simple_title:         "Analizzare una data da una stringa"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Dates and Times"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa e perche?
-L'estrazione di una data da una stringa è il processo di ottenere una data in un formato specifico - come giorno, mese e anno - da una stringa di testo più lunga. I programmatori spesso eseguono questa operazione quando devono manipolare o utilizzare date in un progetto o programma.
+## Cos'è & Perché?
+L'analisi di una data da una stringa è il processo di trasformazione di un testo in un formato di data riconosciuto dal tuo programma. I programmatori lo fanno per gestire e manipolare le date in modi più utili e efficienti.
 
 ## Come fare:
-Nell'Arduino, esistono diverse librerie e funzioni che aiutano nella conversione di una stringa in una data formattata. Ecco un esempio di codice che utilizza la libreria Time e la funzione `strptime` per estrarre una data dalla stringa "20/09/2021" e stamparla nel formato "gg mm aaaa":
+Ecco un esempio semplice di parsing di una data da una stringa in Arduino. Questo codice riconoscerà una data in formato "giorno/mese/anno".
 
 ```Arduino
-#include <Time.h>
-...
-String data = "20/09/2021";
-...
-tmElements_t data_format = {0};
-strptime(data.c_str(), "%d/%m/%Y", &data_format);
-...
-Serial.print(data_format.Day);
-Serial.print(" ");
-Serial.print(data_format.Month);
-Serial.print(" ");
-Serial.print(data_format.Year);
+#include <TimeLib.h>
+
+void setup(){
+  Serial.begin(9600);
+}
+
+void loop(){
+  String dataString = "21/12/2021";
+  // Disgregare la stringa in giorno, mese ed anno
+  int giorno = dataString.substring(0,2).toInt();
+  int mese = dataString.substring(3,5).toInt();
+  int anno = dataString.substring(6,10).toInt();
+  // Impostare la data
+  setTime(ora()/3600, minuto()/60, secondo()%60, giorno, mese, anno);
+  // Visualizzare la data
+  Serial.println(monthShortStr(month()));
+  delay(1000);
+}
 ```
-Output:
-`20 09 2021`
+Eseguendo il programma, otterremo in output il mese corrispondente, quindi "DEC" nel caso dell'esempio precedente.
 
-## Approfondimento:
-Estrarre una data da una stringa è stato un problema comune per i programmatori fin dai primi giorni della programmazione. In passato, era spesso necessario scrivere una funzione personalizzata per l'estrazione della data in base al formato specifico della stringa. Tuttavia, grazie alle librerie e alle funzioni disponibili nei moderni ambienti di sviluppo come Arduino, ora possiamo farlo in modo più efficiente.
+## Approfondimento
+(1) Storicamente, il parsing di date da stringhe è sempre stato un punto delicato nella programmazione, poiché le date possono essere rappresentate in molti formati diversi.
+(2) Ci sono molte alternative per il parsing di una data da una stringa. Ad esempio, si possono utilizzare le librerie esterne come la "DateStrings" che offre molte funzioni utili.
+(3) Tuttavia, nel nostro esempio abbiamo deciso di rimanere con il core di Arduino e la libreria TimeLib, che fornisce un semplice accessorio per manipolare i dati di tempo di sistema.
 
-## Vedi anche:
-- [Documentazione di Arduino sulla libreria Time](https://www.arduino.cc/en/Reference/time)
-- [Esempio di utilizzo della funzione `strptime`](https://www.geeksforgeeks.org/strftime-function-in-c/)
-- [Altro esempio di parsing di date con Arduino](https://www.hackster.io/frankjnu/diy-clock-using-arduino-and-ds3231-rtc-module-b3fe4a)
+## Guarda Anche
+Per approfondire ulteriormente l'argomento, ecco alcuni link utili:
+
+- Documentazione Arduino TimeLib: https://www.arduino.cc/reference/en/libraries/timelib/
+- Un ottima guida a "DateStrings library": https://www.arduino.cc/en/Tutorial/LibraryExamples/Time
+- Libreria Time di Paul Stoffregen: https://github.com/PaulStoffregen/Time
+- Un'introduzione generale alla gestione del tempo in Arduino: https://learn.adafruit.com/adafruit-ultimate-gps/logger-shield-time-management

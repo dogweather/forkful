@@ -1,7 +1,7 @@
 ---
-title:                "Eine Zeichenfolge großschreiben."
-html_title:           "Fish Shell: Eine Zeichenfolge großschreiben."
-simple_title:         "Eine Zeichenfolge großschreiben."
+title:                "Einen String großschreiben"
+html_title:           "Fish Shell: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,35 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist Capitalizing und warum machen Programmierer es?
+## Was & Warum?
 
-Capitalizing bezieht sich auf die Umwandlung eines Strings, um den ersten Buchstaben jedes Wortes zu groß zu schreiben. Programmierer machen dies, um Strings lesbarer zu machen oder um bestimmte Programmierungsanforderungen zu erfüllen.
+Grossschreibung einer Zeichenkette (String) bedeutet, jeden Buchstaben in Großbuchstaben zu ändern. Programmierer verwenden dies, um bestimmte Textelemente hervorzuheben oder standardisierte Formatierungen zu erzeugen.
 
-## So gehts:
+## So geht's:
 
-Eine Möglichkeit, einen String in Fish Shell zu capitalizen, ist die Verwendung des `string uppercase` Befehls. Zum Beispiel:
+In Fish Shell verwenden Sie die `string upper`-Funktion, um einen String zu kapitalisieren. Anbei einige Beispiele:
 
-```fish
-string uppercase "hallo welt"
+```Fish Shell
+set my_string "hallo welt"
+set capitalized_string (string upper $my_string)
+echo $capitalized_string
 ```
 
-Dieser Befehl gibt `Hallo Welt` als Output zurück.
+Die Ausgabe wäre: `HALLO WELT`.
 
-Eine andere Möglichkeit ist die Verwendung von regulären Ausdrücken mit dem ```sed``` Befehl, um die einzelnen Wörter im String zu ändern. Zum Beispiel:
+## Vertiefung:
 
-```fish
-echo "hallo welt" | sed 's/^./\U&/g'
+Historisch hat der Fish Shell Befehl `string upper` seinen Ursprung in klassischen Unix-Befehlen. Es gibt Alternativen dazu. Eine davon ist das Verwenden von `tr`:
+
+```Fish Shell
+echo "hallo welt" | tr '[:lower:]' '[:upper:]'
 ```
 
-Dieser Befehl gibt ebenfalls `Hallo Welt` als Output zurück.
+Die Ausgabe wäre ebenfalls: `HALLO WELT`.
 
-## Tiefergehende Informationen:
+Es ist allerdings wichtig zu beachten, dass die `tr`-Methode potenziell Kollateralschäden verursachen könnte, falls der Input Sonderzeichen enthält.
 
-Capitalizing ist keine exklusive Funktion von Fish Shell und kann auch in anderen Programmiersprachen und Shells erreicht werden. In vielen Programmiersprachen gibt es eingebaute Funktionen wie `toUpperCase()` oder `capitalize()`.
+## Siehe Auch:
 
-Alternativ können auch Skripte oder Funktionen in Fish Shell erstellt werden, um Strings zu capitalizen. Dies kann nützlich sein, wenn der String nicht als direktes Argument an den Befehl übergeben werden kann.
+Für weitere Details, werfen Sie einen Blick auf die offizielle Fish Shell Dokumentation: https://fishshell.com/docs/current/cmds/string-upper.html
 
-## Siehe auch:
-
-- [Fish Shell Dokumentation zur `string` Befehlsgruppe](https://fishshell.com/docs/current/cmds.html#string)
-- [StackOverflow Diskussion über die Verwendung von `sed` zum Capitalizen von Strings](https://stackoverflow.com/questions/10456538/how-to-mass-uppercase-but-keep-some-specific-characters-lowercase-using-sed)
+Besuchen Sie außerdem Stack Overflow, um verschiedene Verwendungsfälle und Diskussionen zu betrachten: https://stackoverflow.com/questions/tagged/fish

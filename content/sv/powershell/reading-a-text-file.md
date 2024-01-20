@@ -1,6 +1,6 @@
 ---
 title:                "Läsa en textfil"
-html_title:           "PowerShell: Läsa en textfil"
+html_title:           "Fish Shell: Läsa en textfil"
 simple_title:         "Läsa en textfil"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -12,33 +12,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-Läsning av en textfil är när vi tar innehållet från en textfil och visar det på skärmen. Det är vanligt att programmerare behöver läsa textfiler för att få åtkomst till information som lagras i filen.
+Att läsa en textfil innebär att ta informationen lagrad i filen och förstå den i programmet. Detta är viktigt för programmerare, eftersom program ofta behöver interagera med data som inte är hårdkodade.
 
-## Så här gör du:
+## Hur man gör:
 
-I PowerShell kan vi läsa en textfil med hjälp av kommandot `Get-Content`. Här är ett exempel på hur du kan använda detta kommando:
+Låt oss starta PowerShell och utforska hur man läser från en textfil. 
 
 ```PowerShell
-# Spara sökvägen till din textfil i en variabel
-$filePath = "C:\Users\Username\Desktop\example.txt"
+# Skapa en variabel med filens sökväg
+$filePath = "C:\temp\myfile.txt"
 
-# Läs innehållet från textfilen och spara det i en annan variabel
+# Använd Get-Content för att läsa filen
 $text = Get-Content $filePath
 
-# Visa innehållet på skärmen
+# Skriv ut texten till konsolen
 $text
 ```
 
-När du kör koden ovan kommer innehållet från din textfil att skrivas ut på skärmen.
+Om det finns en fil vid den specificerade sökvägen kommer skriptet att skriva ut innehållet i denna fil.
 
 ## Fördjupning:
 
-Att läsa textfiler har varit en viktig del av programmering under en lång tid. Innan PowerShell användes, var det vanligt att använda kommandot `cat` i terminalen på Unix-baserade system för att läsa textfiler. Idag finns det också andra alternativ för att läsa textfiler, som till exempel att använda en textredigerare eller programmeringsspråk som Python.
+Historiskt sett har PowerShell alltid förlitat sig på Get-Content cmdleten för att läsa textfiler. Den är både kraftfull och flexibel, men det finns också alternativ. Till exempel kan du använda System.IO.File-klassen i .NET Framework om du vill ha mer kontroll över hur filen läses.
 
-Det finns också flera sätt att implementera läsning av textfiler i PowerShell, till exempel med hjälp av `Get-ChildItem` eller `.NET` klasser som `StreamReader`.
+I själva verket skapar Get-Content en array där varje rad i filen blir ett element. Denna process kan vara långsam för stora filer. Om du istället vill läsa filen lagledare, anser man använda `-ReadCount`-flaggan eller en "StreamReader"-instans från .NET Framework.
 
-## Se även:
+## Se Även:
 
-- [PowerShell documentation for Get-Content](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Management/Get-Content?view=powershell-8)
-- [How to read and write to text files in PowerShell](https://www.petri.com/powershell-problem-solver-reading-and-writing-text-files)
-- [Cat command in Unix-based systems](https://www.geeksforgeeks.org/cat-command-in-linux-with-examples/)
+Kolla in följande länkar för mer om ämnet:
+
+- PowerShell-dokumentationen om Get-Content: [https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-content?view=powershell-7.1)
+- Microsofts .NET dokumentation om System.IO.File: [https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0](https://docs.microsoft.com/en-us/dotnet/api/system.io.file?view=net-5.0)

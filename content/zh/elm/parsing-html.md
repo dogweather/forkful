@@ -1,6 +1,6 @@
 ---
 title:                "解析HTML"
-html_title:           "Elm: 解析HTML"
+html_title:           "Clojure: 解析HTML"
 simple_title:         "解析HTML"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,39 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么和为什么？
-解析HTML是将网页文档转换成可读取的数据结构的过程。程序员通常会这样做，以便能够从网页文档中提取所需的信息，并对其进行处理。
+## 什么 & 为什么？
+解析HTML就是将HTML文本转换成可以处理和操作的数据结构。程序员之所以这么做，是因为这可以帮助他们更深入地了解一个网页上数据的组织和结构。
 
-## 如何：
+## 如何?
+在Elm中，我们可以使用`elm/html`包来解析HTML。这就是一个简单的例子：
+
 ```Elm
-import Html.Parser exposing (..)
-
--- 提供HTML文档
-htmlDoc = "
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Elm Article</title>
-</head>
-<body>
-  <h1>Hello, world!</h1>
-</body>
-</html>
-"
-
--- 解析HTML
-parsedDoc = parse htmlDoc
-
--- 输出结果
-parsedDoc
--- <title>Elm Article</title><h1>Hello, world!</h1>
-
+elm repl
+> import Html exposing (Html)
+> import Html.Parser exposing (parse)
+> import Html.Parser.text
+> parse Html.Parser.text "<p>你好, Elm!</p>"
+Ok (Text "你好, Elm!")
 ```
 
-## 深入探讨：
-解析HTML的历史可以追溯到早期的网络浏览器，它们需要解析HTML文档来显示网页内容。除了Elm，还有其他语言也能解析HTML，例如JavaScript中的DOM操作。而在Elm中，可以使用Html.Parser来解析HTML文档，它提供了许多有用的函数来帮助我们处理HTML文档中的元素和属性。
+运行上述代码，你最后会得到 `"你好, Elm!"` 这个文本。
 
-## 参考资料：
-- [Elm Html模块文档](https://package.elm-lang.org/packages/elm/html/latest/)
-- [HTML解析器的历史](https://en.wikipedia.org/wiki/HTML#History)
-- [使用JavaScript解析HTML](https://www.w3schools.com/js/js_htmldom.asp)
+## 深入挖掘
+解析HTML的历史可以追溯到20世纪90年代的早期。那时候，web 开始得到广泛的应用。随着web的应用变得越来越复杂，解析HTML成为了一个必要的工具，以更好地处理web页面。
+
+与`elm/html`包相比，Elm提供了其他一些能解析HTML的方法，如使用`elm/parser`包。这些方法的实现细节有所不同，取决于特定的需求和应用需求。
+
+## 参考资料
+- [Elm官方文档](https://guide.elm-lang.org)
+- [HTML解析GitHub库](https://github.com/elm/html)
+- [Elm的HTML解析器的示例代码](https://package.elm-lang.org/packages/elm/html/latest/Html-Parser)
+- [解析HTML：深入理解解析器的工作原理](https://developers.google.com/search/docs/advanced/crawling/overview-of-url-structure)

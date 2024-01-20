@@ -1,7 +1,7 @@
 ---
-title:                "패턴과 일치하는 문자 삭제하기"
-html_title:           "Elixir: 패턴과 일치하는 문자 삭제하기"
-simple_title:         "패턴과 일치하는 문자 삭제하기"
+title:                "패턴에 일치하는 문자 삭제"
+html_title:           "Fish Shell: 패턴에 일치하는 문자 삭제"
+simple_title:         "패턴에 일치하는 문자 삭제"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,29 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 무엇 & 왜?
+## 무엇 & 왜?
 
-패턴에 일치하는 문자를 삭제한다는 것은 문자열에서 특정 패턴을 찾아 해당하는 문자를 삭제하는 것을 말합니다. 이를 프로그래머들은 주로 문자열 처리 과정에서 특정 문자를 제거하기 위해 사용합니다.
+문자 패턴 일치를 삭제하는 것은 특정 아이템(문자 또는 문자열)을 코드에서 제거하는 프로세스입니다. 이는 중복을 제거하거나 사용자 입력 청소와 같은 경우에 유용합니다.
 
-# 하는 법:
+## 어떻게:
 
-```Elixir
-String.replace("Hello, World!", ~r/[aeiou]/, "")
+여기에서는 Elixir에서 문자 패턴 일치를 어떻게 삭제하는지 살펴보겠습니다.
+
+```elixir
+String.replace("안녕하세요, Elixir!", "안녕하세요", "")
 ```
->Hll, Wrld!
 
-위의 코드는 "Hello, World!" 문자열에서 모음(aeiou)에 해당하는 문자를 삭제하여 "Hll, Wrld!"라는 새로운 문자열을 반환합니다. 이를 위해 Elixir 내장 함수인 `String.replace`를 사용하였으며, 정규 표현식 `~r/[aeiou]/`을 이용하여 패턴을 지정하였습니다.
+위 코드의 출력은 다음과 같습니다:
 
-# 깊이 들어가기:
+```elixir
+", Elixir!"
+```
 
-1. 역사적인 맥락: 문자열 처리는 프로그래밍에서 매우 중요한 요소입니다. 따라서 문자열에서 특정 패턴을 찾아 삭제하는 기능은 예전부터 프로그래머들에게 필요한 기능으로 여겨져 왔습니다.
+앞의 예제에서 우리는 "안녕하세요"라는 단어를 빈 문자열("")로 교체했습니다. 이것이 패턴 일치를 삭제하는 방법입니다.
 
-2. 대안: Elixir에서 문자열을 처리하는 다양한 방법이 존재합니다. 따라서 패턴 삭제에 대해서도 다양한 방법을 사용할 수 있지만, `String.replace` 함수를 사용하는 것이 가장 간편하고 효율적입니다.
+## 깊은 탐색:
 
-3. 구현 상세: Elixir의 `String.replace` 함수는 반복문을 통해 문자열을 순회하면서 해당하는 패턴을 발견하고, 해당하는 문자를 삭제하는 방식으로 구현되어 있습니다.
+삭제 패턴 일치는 프로그래밍에서 오래된 개념입니다. 이는 데이터 정제와 해당되는 정보의 추출을 용이하게 하는 것뿐만 아니라 코드의 가독성을 향상시킵니다.
 
-# 참고 자료:
+표준 라이브러리를 사용하여 특정 문자 패턴을 제거할 수 있으며, 정규 표현식 라이브러리를 사용하여 좀 더 복잡한 필요한 경우에도 이를 수행 할 수 있습니다.
 
-- [Elixir Documentation: String.replace](https://hexdocs.pm/elixir/String.html#replace/3)
-- [Elixir School: Strings](https://elixirschool.com/ko/lessons/basics/basics/#strings)
-- [Elixir Forum: Remove All Non-Alphanumeric.](https://elixirforum.com/t/remove-all-non-alphanumeric/24489)
+Elixir String.replace 함수는 문자열 내에서 특정 문자나 패턴을 찾아 다른 문자열로 대체하는 기본 기능을 제공하므로 이 문제를 처리하기에 적합합니다. 이 함수에는 두 가지 매개변수가 필요합니다: 대체될 문자열과 그것을 대체할 문자열입니다.
+
+## 참고
+
+1. [Elixir 공식 문서: String.replace/3](https://hexdocs.pm/elixir/String.html#replace/3)
+2. [프로그래밍에서 정규 표현식 사용](https://ko.wikipedia.org/wiki/정규_표현식)
+3. [Elixir를 사용한 단어 교체 및 삭제](https://stackoverflow.com/questions/42446059/replacing-and-deleting-words-with-elixir)

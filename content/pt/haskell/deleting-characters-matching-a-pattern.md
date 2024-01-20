@@ -1,6 +1,6 @@
 ---
 title:                "Excluindo caracteres que correspondem a um padrão"
-html_title:           "Haskell: Excluindo caracteres que correspondem a um padrão"
+html_title:           "Arduino: Excluindo caracteres que correspondem a um padrão"
 simple_title:         "Excluindo caracteres que correspondem a um padrão"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,29 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que & Por quê?
-Remover caracteres que correspondem a um padrão é uma tarefa comum na programação, em que os programadores precisam realizar mudanças em uma string ou sequência de texto. Essa técnica é utilizada para remover caracteres específicos que não são necessários ou que não devem estar presentes na sequência.
+## O Quê & Por quê?
 
-# Como fazer:
+Eliminar caracteres que combinam com um padrão é uma tarefa comum em programação. Permite-nos manipular e limpar dados, e é frequentemente usado em tarefas como a extração de dados importantes de grandes blocos de texto.
+
+## Como fazer:
+
+No Haskell, você pode usar Data.Text para manipular strings. Aqui está um exemplo códigos de como deletar caracteres que correspondem a um padrão:
+
 ```Haskell
--- Exemplo 1: Removendo vogais de uma string
-removeVogais :: String -> String
-removeVogais "" = ""
-removeVogais (x:xs) 
-  | (x `elem` "aeiouAEIOU") = removeVogais xs
-  | otherwise = x:removeVogais xs
+import Data.Text as T
 
--- Exemplo 2: Removendo caracteres de pontuação
-removePontuacao :: String -> String
-removePontuacao "" = ""
-removePontuacao (x:xs)
-  | (x `elem` ",.?!") = removePontuacao xs
-  | otherwise = x:removePontuacao xs
+-- remover espaços de uma string
+removerEspaco :: Text -> Text
+removerEspaco = T.filter (/= ' ')
+
+```
+Exemplo de uso:
+
+```Haskell
+removerEspaco "Haskell é incrível"
 ```
 
-# Profundando:
-A remoção de caracteres correspondentes a um padrão está presente em várias linguagens de programação, não apenas em Haskell. Em outras linguagens, é comum o uso de expressões regulares para realizar essa tarefa. Em Haskell, as funções de alta ordem, como ```filter``` e ```map```, também podem ser utilizadas para remover caracteres de acordo com um determinado critério.
+Que resultará na saída: `"Haskelléincrível"`
 
-# Veja também:
-- [Documentação da função filter em Haskell](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:filter)
-- [Tutoriais sobre expressões regulares em outras linguagens](https://www.regular-expressions.info/)
+Note que a função `filter` foi utilizada. Ela percorre cada caractere e remove os que atendem ao critério especificado (' ' neste caso).
+
+## Aprofundando
+
+Eliminar caracteres é algo que os programadores têm feito há décadas. A necessidade surgiu desde os primeiros dias da programação, quando o armazenamento de dados era limitado e era crucial remover informações desnecessárias.
+
+No Haskell, a abordagem padrão para tal tarefa é usando "Data.Text". No entanto, se você estiver lidando com arquivos enormes, pode considerar outras bibliotecas Haskell, como "Data.Text.Lazy" ou "Data.ByteString.Lazy" para melhor desempenho.
+
+Internamente, a função filter é implementada como uma recursão de cauda, que é uma técnica comum em Haskell e outras linguagens funcionais. Ela examina cada caractere da string um por um, decidindo se deve manter ou excluir com base no critério fornecido.
+
+## Veja Também
+
+Links úteis para aprofundar neste tópico:
+
+[Haskell: Data.Text Documentation](https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text.html)
+
+[Haskell: Data.Text.Lazy Documentation](https://hackage.haskell.org/package/text-1.2.3.1/docs/Data-Text-Lazy.html)
+
+[Haskell: Data.ByteString.Lazy Documentation](https://hackage.haskell.org/package/bytestring-0.10.10.0/docs/Data-ByteString-Lazy.html)
+
+[Stack Overflow: filter function in Haskell](https://stackoverflow.com/questions/2851683)

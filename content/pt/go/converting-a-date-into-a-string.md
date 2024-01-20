@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma data em uma string"
-html_title:           "Go: Convertendo uma data em uma string"
+html_title:           "C++: Convertendo uma data em uma string"
 simple_title:         "Convertendo uma data em uma string"
 programming_language: "Go"
 category:             "Go"
@@ -10,30 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Converter uma data em uma string é um processo fundamental para os programadores em Go, pois permite que as datas sejam formatadas de acordo com as preferências dos usuários. Além disso, a conversão de uma data em uma string torna mais fácil a manipulação e a exibição de datas em diferentes formatos.
+# Convertendo uma data em string no Go
 
-## Como fazer:
-```
-Go func main() {
-    // Definir uma data
-    data := time.Date(2021, time.December, 25, 12, 00, 00, 00, time.UTC)
-    
-    // Converter a data em uma string no formato "dia/mês/ano"
-    dataString := data.Format("02/01/2006")
-    
-    fmt.Println(dataString) // Output: 25/12/2021
-    
-    // Converter a data em uma string no formato "dia da semana, dia de mês de ano"
-    dataString2 := data.Format("Monday, 02 January 2006")
-    
-    fmt.Println(dataString2) // Output: Saturday, 25 December 2021
+## O Que & Por Que?
+Converter uma data em string significa transformar um objeto do tipo data em texto. Programadores fazem isso para facilitar a exibição, armazenamento e manipulação de datas.
+
+## Como Fazer:
+Aqui, temos um código simples que demonstra como converter uma data em string em Go.
+
+```Go
+pacote main
+
+import ( 
+	"fmt"
+	"time"
+)
+
+func main() {
+	agora := time.Now()
+	dataComoString := agora.Format("2006-01-02")
+	fmt.Println(dataComoString)
 }
 ```
+Quando você executa isso, vai receber um output assim:
 
-## Mergulho Profundo:
-Converter datas em strings é uma funcionalidade comum em linguagens de programação, permitindo que os desenvolvedores controlem como as datas são formatadas e exibidas aos usuários. Em Go, a função `Date()` do pacote `time` é usada para criar uma data com valores específicos, e a função `Format()` é usada para converter essa data em uma string com o layout desejado. Existem outras opções de formatação de datas, como o pacote `strconv`, mas a função `Format()` do pacote `time` é a mais simples e direta.
+```Go
+2022-03-10
+```
+Este é o formato yyyy-mm-dd, comum para os padrões de data internacionais.
 
-## Ver também:
-- Documentação do pacote `time`: https://golang.org/pkg/time/
-- Tutorial sobre formatação de datas em Go: https://www.calhoun.io/using-the-time-package-in-go/
+## Mergulho Profundo
+
+No Go, a função Format de time.Time é usada para converter uma data em string. A cadeia mágica de data "2006-01-02" é um guia para o formato desejado que você quer que sua data apareça.
+
+Essa sintaxe aparentemente aleatória representa a data de referência do Go. Para ser mais específico, é o "detalhe zero" de como a data/hora é registrada internamente no Go. 
+
+Existem algumas alternativas para converter uma data em string no Go, por exemplo, poderia-se usar a função Sprintf do pacote fmt:
+
+```Go
+dataComoString := fmt.Sprintf("%d-%02d-%02d", agora.Year(), agora.Month(), agora.Day())
+```
+
+## Veja Também:
+
+Para mais informações, aqui estão alguns links úteis:
+
+- Documentação oficial do Go para Pacote de Tempo: https://pkg.go.dev/time
+- Um tutorial útil sobre datas e horários em Go: https://yourbasic.org/golang/format-parse-string-time-date-example/
+
+Aprender a manejar datas é fundamental para qualquer desenvolvedor. Espero que este rápido guia tenha te ajudado a entender melhor como converter datas em strings no Go.

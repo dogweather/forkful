@@ -1,7 +1,7 @@
 ---
-title:                "Analys av HTML"
-html_title:           "Ruby: Analys av HTML"
-simple_title:         "Analys av HTML"
+title:                "Analysera html"
+html_title:           "Arduino: Analysera html"
+simple_title:         "Analysera html"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Artikel: Hantering av HTML Parsing i Ruby
+---
 ## Vad & Varför?
 
-Att parsar HTML är en metod för att extrahera data från en HTML-fil. Detta är användbart för programmerare som vill automatisera processen att få information från en webbsida, till exempel att hämta produkter från en webbutik eller att samla information från nyhetssidor.
+HTML-parsing handlar om att omvandla HTML-kod till en mer läsbar och begriplig datastruktur. Programmerare gör det här för att något bära in, strukturera och manipulera webbinnehåll.
 
-## Hur gör man:
+## Hur:
 
-```Ruby
+I Ruby, vi använder 'Nokogiri' - en ung paket för att tugga på HTML och XML data. Här är ett exempel:
+
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-# Hämta en webbsida och spara den som en variabel
-webbsida = Nokogiri::HTML(open("https://example.com"))
+url = 'https://www.example.com'
+doc = Nokogiri::HTML(open(url))
 
-# Skriv ut all text på sidan
-puts webbsida.text
-
-# Hämta alla länkar på sidan och skriv ut dem
-länkar = webbsida.css("a")
-länkar.each do |länk|
-  puts länk["href"]
+doc.xpath('//h1').each do |node|
+  puts node.text
 end
 ```
+Den här koden snabbar upp alla 'h1' headers från `www.example.com` och skriver ut dem.
 
-## Djupdykning:
+## Djup Dykning
 
-Parsning av HTML har funnits sedan webben först utvecklades, och det finns många olika sätt att göra det på. Ett annat alternativ är att använda en parser byggd specifikt för HTML, som [Nokogiri](https://github.com/sparklemotion/nokogiri). Implementationen av en HTML-parser är komplicerad och kräver förståelse för HTML och dess struktur.
+`Nokogiri` föddes år 2008, som en Ruby wrapper till 'libxml2' bibliotek, som användes sedan 1998. Som en alternativ, kan du använda 'hpricot', men det är inte lika kraftfull eller aktivt utvecklad.
 
-## Se även:
+När du applicerar parsing med Nokogiri händer följande: 
 
-- [Nokogiri documentation](https://nokogiri.org/)
-- [Ruby on Rails Guides: Working with the Web](https://guides.rubyonrails.org/working_with_javascript_in_rails.html)
-- [The 5 Best Ruby HTML Parsers](https://www.rubyguides.com/2016/08/5-best-ruby-html-parsers-examples/)
+1. Nokogiri öppnar en URL (eller HTML fil).
+2. Det genererar en 'DOM' (Document Object Model) träd av HTML data.
+3. Sedan du kan utforska, söka eller ändra denna DOM träd anpassade till dina krav.
+
+## Se Också
+
+Nokogiri Dokumentation: https://nokogiri.org/tutorials/parsing_an_html_xml_document.html
+
+HTML & XML: https://developer.mozilla.org/en-US/docs/Web/HTML
+
+Ruby: https://www.ruby-lang.org/sv/

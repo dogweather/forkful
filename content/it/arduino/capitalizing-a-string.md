@@ -10,20 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-La capitalizzazione di una stringa è il processo di convertire la prima lettera di una parola in maiuscolo. Questo è spesso fatto dai programmatori per rendere il testo più leggibile e organizzato.
+---
+
+## Che cosa & Perché?
+Capitalizzare una stringa significa convertire tutte le lettere in una stringa in maiuscolo. I programmatori lo fanno per aumentare la leggibilità e standardized i dati.
 
 ## Come fare:
+Ecco un esempio di codice semplice in Arduino per capitalizzare una stringa:
+
+```Arduino 
+char str[12] = "Ciao Mondo";
+for(int i = 0; str[i]; i++)
+    str[i] = toupper(str[i]);
 ```
-// Esempio di codice per la capitalizzazione di una stringa
-String parola = "ciao";
-String parola_capitalizzata = parola.toUpperCase();
-// Output: CIAO
+Output di questo codice sarà:
+```Arduino 
+CIAO MONDO
+```
+Qui, abbiamo utilizzato la funzione `toupper()` della libreria `ctype.h` per convertire ogni lettera in maiuscolo.
+
+## Approfondimento
+La necessità di capitalizzare le stringhe risale ai primi giorni della programmazione, quando la distinzione tra maiuscole e minuscole non era sempre chiara e potrebbe causare problemi nel codice. 
+
+In alternativa alla funzione `toupper()`, potresti utilizzare la funzione `toUpperCase()` di Arduino. Questa funzione converte tutta la stringa in maiuscole al posto di convertire ogni singolo carattere come fa la funzione `toupper()`.
+
+Ecco un esempio di come utilizzare `toUpperCase()`:
+
+```Arduino 
+String str = "Ciao Mondo";
+str.toUpperCase();
 ```
 
-## Deep Dive:
-La capitalizzazione di una stringa è un'operazione comune nel campo della programmazione. È nata dalla necessità di rendere il codice più leggibile e organizzato. Sebbene ci siano alternative al processo di capitalizzazione, come l'utilizzo di caratteri speciali per indicare la maiuscola, la capitalizzazione di una stringa è ancora largamente utilizzata dai programmatori per la sua semplicità ed efficacia.
+E il suo output sarebbe:
+```Arduino 
+CIAO MONDO
+```
+In termini di dettagli dell'implementazione, sappi che entrambe le funzioni funzionano solo con stringhe ASCII standard.
 
-## Vedi anche:
-- Tutorial sull'utilizzo delle funzioni di stringa in Arduino: [https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
-- Una spiegazione più approfondita sulla capitalizzazione delle stringhe: [https://www.programiz.com/c-programming/library-function/string/toupper](https://www.programiz.com/c-programming/library-function/string/toupper)
+## Vedi anche
+- Documentazione ufficiale di Arduino su [toUpperCase()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
+- Discorso sulla standardizzazione delle stringhe in [Wikipedia](https://en.wikipedia.org/wiki/String_interning)
+- Metodo alternativo per capitalizzare le stringhe usando [toupper()](https://www.cplusplus.com/reference/cctype/toupper/).

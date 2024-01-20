@@ -1,6 +1,6 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "PHP: HTTP 요청 보내기"
+html_title:           "Clojure: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,29 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
+HTTP 요청은 서버에 정보를 요청하거나 전송하는 방법입니다.프로그래머는 API 데이터 교환, 웹스크래핑 등을 위해 이것을 주로 사용합니다.
 
-HTTP 요청을 보내는 것, 그리고 이를 하는 이유는 무엇인지에 대해 알아보겠습니다. HTTP 요청은 클라이언트와 서버 사이에서 데이터를 교환하는 프로토콜입니다. 프로그래머들은 이를 사용하여 웹 페이지를 불러오거나, 데이터를 전송하고, API를 호출하는 등 다양한 작업을 할 수 있습니다.
-
-## 방법:
-
-다음은 PHP를 사용하여 HTTP 요청을 보내는 간단한 예시입니다. 먼저, `file_get_contents()` 함수를 사용하여 원하는 URL의 HTML 코드를 가져옵니다. 그 다음, `echo`를 사용하여 이를 출력합니다.
+## 어떻게:
+PHP에서 HTTP 요청을 보내는 대표적인 방법은 cURL을 사용하는 것입니다.
 
 ```PHP
 <?php
-    $url = "https://example.com";
-    $html = file_get_contents($url);
-    echo $html;
+$ch = curl_init();
+
+curl_setopt($ch, CURLOPT_URL,"http://your-api-url.com/");
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, "param1=value1&param2=value2");
+
+$result = curl_exec($ch);
+curl_close($ch);
 ?>
 ```
+$ch 변수에 cURL 세션을 초기화하고 URL, POST 메소드를 설정한 뒤, 필요한 필드값을 설정합니다. 마지막으로 curl_exec를 통해 요청을 보내고 결과를 $result 변수에 저장합니다.
 
-위 코드를 실행하면, 해당 URL의 HTML 코드가 출력될 것입니다.
+## 깊게 이해하기
+HTTP 요청의 기본 이해를 위해서는 웹의 역사적 맥락을 알 필요가 있습니다.
+1990년대 초에 월드 와이드 웹이 등장하며, 클라이언트와 서버 사이의 통신 방식으로 HTTP가 도입되었습니다.
 
-## 깊게 들어가기:
+PHP에서 대안으로 사용할 수 있는 것은 `file_get_contents()` 함수와 `fopen()` 함수가 있습니다. 하지만 보안 이슈와 에러처리, 데이터 포맷팅 등의 문제로 cURL이 더 흔히 사용되며, HTTP 요청 전송에 가장 뛰어난 성능을 보여줍니다.
 
-HTTP 요청은 World Wide Web의 탄생과 함께 도입된 프로토콜입니다. 이를 통해 웹 브라우저와 웹 서버가 데이터를 교환할 수 있게 되었습니다. 다른 대안으로는 cURL이나 Guzzle과 같은 라이브러리를 사용하여 HTTP 요청을 보낼 수 있습니다. PHP에서는 `curl_init()` 함수를 사용하여 cURL을 초기화하고, `curl_exec()` 함수를 사용하여 요청을 실행할 수 있습니다. 또한, `file_get_contents()` 함수는 URL을 포함한 다양한 매개변수를 받아 HTTP 요청을 보낼 수 있습니다.
+## 참고자료
+- PHP cURL 공식 문서: [http://php.net/manual/en/book.curl.php](http://php.net/manual/en/book.curl.php)
+- PHP file_get_contents() 함수: [http://php.net/manual/en/function.file-get-contents.php](http://php.net/manual/en/function.file-get-contents.php)
+- PHP fopen() 함수: [http://php.net/manual/en/function.fopen.php](http://php.net/manual/en/function.fopen.php)
 
-## 관련 자료:
-
-- [file_get_contents() 공식 문서](https://www.php.net/manual/en/function.file-get-contents.php)
-- [cURL 공식 문서](https://www.php.net/manual/en/book.curl.php)
-- [Guzzle 공식 문서](https://docs.guzzlephp.org/en/stable/)
+HTTP 요청은 웹 프로그래밍에서 필수적인 요소로, PHP에는 이를 지원하는 여러 가지 도구와 방법이 있습니다. 상황에 따라 가장 잘 맞는 방법을 선택하면 원활한 커뮤니케이션을 보장할 수 있습니다.

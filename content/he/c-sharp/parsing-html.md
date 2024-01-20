@@ -1,7 +1,7 @@
 ---
-title:                "פירוק HTML"
-html_title:           "C#: פירוק HTML"
-simple_title:         "פירוק HTML"
+title:                "ניתוח HTML"
+html_title:           "Arduino: ניתוח HTML"
+simple_title:         "ניתוח HTML"
 programming_language: "C#"
 category:             "C#"
 tag:                  "HTML and the Web"
@@ -10,26 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-פריסת HTML היא תהליך שבו מתבצע ניתוח של קוד ה-HTML כדי להבין את מבנה הדף האינטרנט. הפריסה מאפשרת לפיתוחנים לקרוא ולהבין את הנתונים המופיעים בדף, ובכך לבנות יישומים מתקדמים יותר.
+## מה ולמה?
+ניתוח HTML, באנגלית: Parsing HTML, הוא התהליך שבו קוראים ומפרשים את הקוד השיפועי של בניין אתרי HTML. מתכנתים עושים את זה כדי לחלץ, לשנות או לנתח את הנתונים מאתרי אינטרנט.
 
-איך לעשות?
+## איך ל:
 ```C#
-using System;
-using System.Net;
 using HtmlAgilityPack;
-
-WebClient client = new WebClient(); // יצירת מופע של תכנית "לקוח"
-string html = client.DownloadString("https://www.example.com"); // הורדת הדף כקוד-HTML
-HtmlDocument doc = new HtmlDocument();
-doc.LoadHtml(html); // פארסינג - גישה לאובייקטים של נתוני הדף
-foreach(HtmlNode node in doc.DocumentNode.SelectNodes("//a")){ // מציאת כל הקישורים בדף
-Console.WriteLine(node.GetAttributeValue("href", "")); // הדפסת כתובת הקישורים
+// טעינת דף HTML
+var web = new HtmlWeb();
+var doc = web.Load("http://yourwebsite.com");
+// הגעה לאלמנט מסוים תחת div עם id מסוים
+var Nodes= doc.DocumentNode.SelectNodes("//div[@id='yourdivid']//li");
+// הגעה לתוכן הטקסט של האלמנט
+foreach(var node in Nodes)
+{
+   Console.WriteLine(node.InnerText);
 }
 ```
+הקוד מעלה מטעין דף HTML, מחפש div עם id מסויים, ומטעין את הטקסטים של האלמנטים "li" תחתיו.
 
-דילוג לעומק:
-הפריסה הייתה חלק בלתי נפרד מפיתוח דפי האינטרנט כבר מאז התחלתם. בעבר, דבר זה היה נעשה בעיקר על ידי ידניים, אך כיום ישנן כלים רבים המאפשרים פריסה אוטומטית של קוד ה-HTML. חלופות לכלים אלו כוללות את פיתוח ממשקי תכנותית כגון Selenium ו- Puppeteer, אשר מאפשרים פעולות נוספות על הדף כגון לחיצה על כפתורים ומילוי טפסים.
+## צלילה עמוקה
+ניתוח HTML הוא אכן מעט מסובך מאשר ניתוח טקסט פשוט, בזכות המבנה המשולב של HTML ברמות שונות. בעבר, המתכנתים יצרו קוד ניתוח באופן ידני, אך היום משפחת הספריות `HtmlAgilityPack` שיהלם את זיקת המשא ומתן ומניעת שגיאות.
 
-הסתכל גם:
-אתר זה מציע כלים נוספים הקשורים לפריסת HTML על ידי שפות תכנות נוספות כמו Java, Python ו-JavaScript. ניתן גם לשתף את הקוד המתקדם יותר שלנו בקהילה כדי לקבל משוב ולהפוך אותו לטוב יותר.
+אלטרנטיבות ל`HtmlAgilityPack` כוללות `CsQuery` ו`AngleSharp`, כאשר כל אחת מהן מספקת את יתרונות וחסרונותיה המיוחדים.
+
+## ראו גם
+למדע נוסף על בניית HTML משובצת ואופטימיזציה של קוד ניתוח, ראו את המקורות הבאים:
+1. [מסמכי HtmlAgilityPack](https://html-agility-pack.net/)
+2. [היכן לקרוא על AngleSharp](https://anglesharp.github.io/docs/)
+3. [CSQuery ב- GitHub](https://github.com/jamietre/csquery)

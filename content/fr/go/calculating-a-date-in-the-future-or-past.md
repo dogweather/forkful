@@ -10,42 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Calculer une date | Pourquoi et Comment?
+## Quoi & Pourquoi ?
+Calculer une date future ou passée est l'action de déterminer une date relative à une autre date donnée. Les programmeurs font cela pour gérer les événements programmés, les logs, les enregistrements de données et pour résoudre divers problèmes de temps dans l'application.
 
-## Quoi & Pourquoi?
-
-Calculer une date dans le futur ou dans le passé est une tâche courante pour les programmeurs. Cela leur permet de gérer et de modifier des dates en fonction de leurs besoins, que ce soit pour des applications liées à des événements ou pour des opérations mathématiques.
-
-## Comment faire :
-
-Les programmeurs utilisent souvent le langage de programmation Go pour effectuer des calculs de date. Voici un exemple de code en utilisant les packages de la bibliothèque standard de Go :
+## Comment faire:
+Voici un exemple simple de calcul d'une date future en utilisant le package `time` de Go :
 
 ```Go
 package main
 
 import (
-	"fmt"
-	"time"
+    "fmt"
+    "time"
 )
 
 func main() {
-	d := time.Now().Add(10 * 24 * time.Hour) // Ajoute 10 jours à la date actuelle
-	fmt.Println(d)
+    maintenant := time.Now()
+    fmt.Println("Maintenant:", maintenant)
+
+    dateFuture := maintenant.AddDate(0, 0, 5)
+    fmt.Println("Dans 5 jours:", dateFuture)
 }
 ```
 
-La sortie de ce code devrait être la date exacte dans 10 jours à partir de maintenant.
+Et voici la sortie attendue :
 
-## Plongée en profondeur :
+```Go
+Maintenant: 2021-12-14 12:30:00 +0000 UTC m=+0.000000001
+Dans 5 jours: 2021-12-19 12:30:00 +0000 UTC m=+0.000000001
+```
 
-Historiquement, la gestion des dates dans les programmes était un défi en raison de problèmes tels que les années bissextiles et les fuseaux horaires. Cependant, avec l'avènement de langages de programmation modernes comme Go, ces problèmes ont été résolus grâce à des bibliothèques de gestion de dates efficaces.
+## Plongeon en profondeur
+Historiquement, les langages de programmation ne fournissent pas toujours des outils intégrés pour gérer facilement le temps et les dates. Cependant, Go offre des fonctionnalités avancées pour manipuler les dates, ce qui facilite grandement la tâche aux programmeurs.
 
-Il existe également d'autres alternatives pour calculer des dates en utilisant différents packages et frameworks, mais Go reste un choix populaire en raison de sa simplicité et de sa performance.
+Il existe d'autres méthodes pour calculer une date future ou passée, par exemple en utilisant la fonction `Add` qui permet d'ajouter des durées spécifiées en heures, minutes, secondes, etc.
 
-Pour implémenter ces calculs de date en interne, Go utilise une version améliorée de l'algorithme de Gauss, qui est une méthode mathématique pour déterminer la date d'un jour donné dans le calendrier grégorien.
+Le package `time` de Go fournit un ensemble de méthodes pour manipuler les dates et les temps. Il utilise le calendrier grégorien pour les calculs, sauf pour les calculs impliquant l'ajout ou la soustraction d'heures, minutes et secondes.
 
-## Voir aussi :
-
-- Pour en savoir plus sur la bibliothèque standard de Go : [https://golang.org/pkg/](https://golang.org/pkg/)
-- Pour des alternatives à Go pour la gestion des dates : [https://www.slant.co/topics/391/~programming-languages-for-creating-games](https://www.slant.co/topics/391/~programming-languages-for-creating-games)
-- Pour en apprendre davantage sur l'algorithme de Gauss : [https://fr.wikipedia.org/wiki/Calcul_de_la_date_de_P%C3%A2ques_selon_l%27algorithme_de_Gauss](https://fr.wikipedia.org/wiki/Calcul_de_la_date_de_P%C3%A2ques_selon_l%27algorithme_de_Gauss)
+## Voir aussi
+- Documentation Go sur le package `time` : https://golang.org/pkg/time/
+- Article StackOverflow sur l'ajout de jours à la date actuelle en Go : https://stackoverflow.com/questions/37696740/add-days-to-current-date-in-golang
+- Tutorial Go sur le formatage et le parsing de la date et du temps : https://www.golangprograms.com/go-language/date-and-time.html

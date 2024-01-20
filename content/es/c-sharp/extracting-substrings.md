@@ -1,7 +1,7 @@
 ---
-title:                "Extracción de subcadenas"
-html_title:           "C#: Extracción de subcadenas"
-simple_title:         "Extracción de subcadenas"
+title:                "Extrayendo subcadenas"
+html_title:           "C: Extrayendo subcadenas"
+simple_title:         "Extrayendo subcadenas"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-La extracción de subcadenas es una técnica que permite obtener una porción de una cadena de texto más grande. Los programadores la utilizan para manipular y gestionar datos de manera más eficiente.
+## ¿Qué & Por Qué?
+La extracción de subcadenas es el proceso de obtener una porción de una cadena existente. Los programadores lo hacen para manipular y operar en segmentos específicos de cadenas en lugar de la cadena completa.
 
-## Cómo:
+## ¿Cómo hacerlo?
+Aquí se muestra cómo extraer subcadenas en C#. Usaremos el método `Substring(int startIndex, int length)`.
+
 ```C#
-// Ejemplo 1: Usando el método Substring()
-string cadena = "Hola mundo";
-string subcadena = cadena.Substring(5);
-// subcadena = "mundo"
-
-// Ejemplo 2: Usando el operador de acceso a índices []
-string cadena = "Hola mundo";
-string subcadena = cadena[0..4];
-// subcadena – "Hola"
-
-// Ejemplo 3: Usando la clase StringReader y el método Read()
-string cadena = "Hola mundo";
-StringReader reader = new StringReader(cadena);
-char[] buffer = new char[5];
-reader.Read(buffer, 0, 5);
-// buffer = "Hola "
+string s = "El aprendizaje nunca se termina";
+string substr = s.Substring(3, 11);
+Console.WriteLine(substr);
+```
+Salida:
+```
+aprendizaje
 ```
 
-## Profundizando:
-La extracción de subcadenas es una técnica comúnmente utilizada en programación desde los inicios de la informática. También se puede lograr mediante el uso de métodos como Split() o Regex.Match(). En algunos lenguajes de programación, como Python, las cadenas de texto son inmutables, lo que significa que no se pueden modificar una vez creadas. Sin embargo, en C# las cadenas son mutables, lo que permite una mayor flexibilidad en la manipulación de datos.
+## Inmersión Profunda
+La funcionalidad de extracción de subcadenas ha estado presente en la mayoría de los lenguajes de programación desde los primeros días, y C# no es la excepción. Una alternativa al enfoque 'Substring' es usar `Split` para dividir la cadena en un arreglo y luego operar en elementos individuales. Sin embargo, este método puede tener un rendimiento más bajo especialmente en cadenas muy largas. En términos de detalles de implementación, el método `Substring` en C# realmente crea una nueva cadena y no modifica la cadena original, por lo tanto, es seguro usarlo sin preocuparse por los efectos secundarios.
 
-## Véase también:
-- [Documentación oficial de Microsoft sobre el método Substring()](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-- [Tutorial para aprender a utilizar expresiones regulares en C#](https://www.c-sharpcorner.com/article/regexparser-learn-regular-expressions-in-c-sharp/)
-- [Artículo sobre las diferencias entre cadenas de texto inmutables y mutables en Python](https://code.tutsplus.com/es/tutorials/understanding-immutable-strings-in-python--cms-26168)
+`Split` ejemplo:
+```C#
+string s = "Hola:Mundo:!";
+string[] palabras = s.Split(':');
+Console.WriteLine(palabras[1]); 
+```
+Salida: 
+```
+Mundo
+```
+
+## Ver También
+Para más detalles y usos de extraer subcadenas en C#, visita los siguientes enlaces:
+
+1. [Tutorial de Microsoft - String.Substring Method in C#](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
+2. [StackOverflow - C# substring](https://stackoverflow.com/questions/7845675/how-to-use-the-substring-method-in-c-sharp)
+3. [Información detallada sobre la cadena de C# en TutorialsPoint](https://www.tutorialspoint.com/csharp/csharp_strings.htm)

@@ -1,7 +1,7 @@
 ---
-title:                "בדיקה האם תיקייה קיימת"
-html_title:           "Rust: בדיקה האם תיקייה קיימת"
-simple_title:         "בדיקה האם תיקייה קיימת"
+title:                "בדיקה אם ספרייה קיימת"
+html_title:           "Java: בדיקה אם ספרייה קיימת"
+simple_title:         "בדיקה אם ספרייה קיימת"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Files and I/O"
@@ -12,23 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## מה ולמה?
 
-כשתפתחו תוכנית בראסט, ייתכן שתצטרך לבדוק אם קיימת תיקייה במערכת הקבצים. זהו תהליך חשוב בתכנות המאפשר לנו להתאים את הקוד למצבים שונים ולהתחשב באופני התנהגות שונים שייתכנו בטרמינל או בפני המשתמש.
+בדיקה אם ספריה קיימת בחלל מערכת הפעלה היא פעולה שמאפשרת לנו לוודא שנתיב מסוים קיים והוא ספריה לפני שנעשה איתו שימוש. מתכנתים מבצעים את הפעולה הזו למניעת שגיאות ריצת יישום.
 
-## איך לעשות זאת:
+## איך לעשות:
+
+הנה דוגמא של קוד בשפת Rust שבודק אם ספריה קיימת:
 
 ```Rust
-use std::fs;
-fs::metadata("<directory_path>")?.is_dir();
+use std::path::Path;
+fn main() {
+    let path = Path::new("/some/path");
+    if path.exists() && path.is_dir() {
+        println!("The directory exists");
+    } else {
+        println!("The directory does not exist");
+    }
+}
+```
+פלט לדוגמה זו יכול להיות:
+
+```
+The directory does not exist
 ```
 
-הקוד הזה יבדוק אם התיקייה שהתעתקה למשתנה `directory_path` קיימת במערכת הקבצים. אם כן, יוחזר ערך `true`, אחרת יוחזר ערך `false`.
+## בהקשר הרחב
 
-## מערכת מתקדמת:
-
-בעקבות טכנולוגיית ה-POSIX שפותחה בשנות ה-80 של המאה הקודמת, רבות ממערכות ההפעלה המודרניות מאפשרות לנו לבדוק אם קיימת תיקייה במערכת הקבצים. ב-Rust, ניתן לבדוק זאת באמצעות פונקציות כמו `fs::metadata()` או `fs::open()` שמקבלות את הנתיב של התיקייה כפרמטר.
+Rust מתנהגת כך באופן מסורתי, בדיוק כפי שאנו מצפים משפות תכנות מערכת. חלופה לשימוש בפונקציה `exists()` הנ"ל היא שימוש במודול 'Metadata', אך הוא מורכב יותר לשימוש.
+ביצוע הבדיקה נעשה דרך מערכת ההפעלה, כאשר השיחה למדעי המחשב משוואה את השאלה: האם הנתיב הזה קיים והאם הוא מצביע על ספריה?
 
 ## ראה גם:
 
-- [מדריך לפיתוח מתקדם ב- Rust](https://www.geeksforgeeks.org/rust-programming-language/advanced-rust-programming-tutorials/)
-- [מדריך לניהול תיקיות וקבצים באמצעות fs](https://doc.rust-lang.org/std/fs/index.html)
-- [המאמר המקורי בעברית](https://www.geeksforgeeks.org/rust-programming-language/)
+- [חיבור Rust רשמי על std::path::Path](https://doc.rust-lang.org/std/path/struct.Path.html)
+- [חיבור StackOverflow על בדיקת נתיב](https://stackoverflow.com/questions/26958489/how-to-check-if-a-path-exists-in-rust)
+- [דיסקוסיה בפורום של Rust](https://users.rust-lang.org/t/how-to-check-if-a-file-exists/4918)

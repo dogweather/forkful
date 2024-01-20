@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Clojure: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,22 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Interpolering av en streng i Clojure betyr å inkludere variabler, funksjoner eller uttrykk i en streng, slik at de blir evaluert og satt inn i strengen. Dette er en vanlig praksis blant programmere for å gjøre strenger mer dynamiske og tilpasse dem til forskjellige situasjoner.
+## Hva & Hvorfor?
+Interpolering av en tekststreng er prosessen med å sette inn og erstatte variable og uttrykk i en streng med deres evaluerte verdier. Dette gjør det enklere for programmerere å generere dynamiske strenger og forbedrer lesbarheten av koden.
 
-## Hvordan:
+## Slik gjør du:
+I Clojure bruker vi `format` funksjon for å interpolere en tekststreng. Her er et eksempel:
+
 ```Clojure
-(def name "Marie")
-(def age 25)
-(print "Hei, mitt navn er ${name} og jeg er ${age} år gammel.")
+(let [name "Ola" age 25]
+  (format "Hei, jeg er %s og jeg er %d år gammel." name age))
 ```
 
-Output:
-```Hei, mitt navn er Marie og jeg er 25 år gammel.```
+Dette vil skrive ut:
 
-## Dykk dypere:
-Interpolering av strenger ble først introdusert i programmeringsspråket Perl i 1987, og har siden blitt adoptert av mange andre språk, inkludert Clojure. Alternativ til interpolering inkluderer konkatenering eller formatering av strenger med spesifikke metoder. Denne teknikken implementeres i Clojure med hjelp av funksjoner som `str` og `format`.  
+```
+"Hei, jeg er Ola og jeg er 25 år gammel."
+```
 
-## Se også:
-- https://clojure.org/
-- https://clojuredocs.org/
+## Dypdykk
+Interpolering av tekststrenger har røtter tilbake til tidlig programmering, og er felles for mange programmeringsspråk. 
+
+Alternative metoder kan inkludere sammenkobling av strenger, men det kan ofte være mindre effektivt og vanskeligere å lese.
+
+En nøkkel detalj med Clojures `format`-funksjon er at den bruker Java's `String.format` under panseret, noe som betyr at den støtter de samme formateringsmetodene og -syntaxene som Java.
+
+## Se også
+For mer detaljert informasjon om tekststrenginterpolering og `format` funksjonen, sjekk ut:
+
+- Clojure's offisielle dokumentasjon for `format`-funksjonen: https://clojuredocs.org/clojure.core/format
+- En guide til Java's `String.format`: https://dzone.com/articles/java-string-format-examples
+- En mer omfattende artikkel om tekststrenginterpolering i forskjellige språk: https://www.digitalocean.com/community/tutorials/how-to-use-string-interpolation-in-modern-programming-languages-a-comparison

@@ -1,7 +1,7 @@
 ---
-title:                "Analyser le html"
-html_title:           "Lua: Analyser le html"
-simple_title:         "Analyser le html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -10,36 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
+## Quoi & Pourquoi?
 
-Le "parsing" HTML est le processus de conversion de code HTML en une structure de données utilisable par un programme. Les programmeurs le font souvent lorsqu'ils doivent extraire des informations spécifiques d'une page Web ou automatiser la recherche de certaines données en ligne.
+Analyser HTML, c'est décomposer un document HTML en ses composants pour une utilisation programmable. Les programmeurs le font pour interagir avec les éléments de la page web et manipuler les données à leur guise.
 
-## Comment faire :
+## Comment faire:
 
-Voici un exemple de code Lua qui utilise la bibliothèque "lhtml" pour parcourir une page Web et extraire tous les liens présents dans le code HTML :
+Voici un exemple basique sur comment on peut analyser du HTML en Lua en utilisant `lua-htmlparser`. Installer d'abord le package `lua-htmlparser` avec luarocks:
 
 ```Lua
-local lhtml = require "lhtml"
-local document = lhtml.parse("<html><body><a href='https://example.com'>Lien 1</a><a href='https://google.com'>Lien 2</a></body></html>")
-
-for _, link in ipairs(document:getElementsByTagName("a")) do
-  print(link.attributes.href) -- affiche les liens extraits
-end
+luarocks install htmlparser
 ```
 
-Sortie :
+Maintenant, voici comment vous pouvez analyser un simple document HTML:
 
+```Lua
+local htmlparser = require "htmlparser"
+
+local html = "<html><body>Hello, World!</body></html>"
+local root = htmlparser.parse(html)
+
+root("body"):each(function(i, el)
+  print(el:getcontent())
+end)
 ```
-https://example.com
-https://google.com
+
+Cela imprimera:
+
+```Lua
+Hello, World!
 ```
 
-## Approfondissement :
+## Plongée Profonde
 
-L'analyse du HTML est devenue essentielle pour les développeurs Web afin de gérer des quantités de données importantes et d'automatiser certaines tâches. Il existe également d'autres bibliothèques et outils tels que "LuaHTMLParser" et "LuaSoup" qui offrent des fonctionnalités similaires et peuvent être utilisés en fonction des préférences du programmeur.
+1. En ce qui concerne le contexte historique, bien que le HTML soit largement utilisé aujourd'hui, les bibliothèques pour l'analyser en Lua n'ont été développées que récemment.
+2. Pour les alternatives, souvenez-vous que vous pouvez analyser le HTML en utilisant plusieurs bibliothèques en Lua, comme `htmlparser` et `Gumbo`. Comparez et choisissez en fonction de vos nécessités.
+3. Sur l'implémentation, `htmlparser` utilise une analyse basée sur des expressions régulières pour la rapidité, mais cela peut conduire à des erreurs d'analyse sur HTML mal formé. Cependant, si le HTML que vous analysez est toujours bien formé, cela ne devrait pas poser de problème.
 
-## Voir aussi :
+## Voir Aussi
 
-- La documentation de la bibliothèque "lhtml" : https://github.com/silentbicycle/lhtml
-- La bibliothèque "LuaHTMLParser" : https://github.com/mpeterv/luahtmlparser
-- La bibliothèque "LuaSoup" : https://github.com/mingodad/lua-soup
+1. [Lua HTML Parser sur GitHub](https://github.com/msva/lua-htmlparser)
+2. [Bibliothèque Gumbo en Lua](https://github.com/craigbarnes/lua-gumbo)

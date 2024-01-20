@@ -1,6 +1,6 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Swift: Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,22 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Sammenføyning av strenger er når man kombinerer to eller flere tekststrenger til en lengre tekststreng. Dette er en vanlig operasjon i programmering for å manipulere tekst eller lage utskrifter.
+## Hva og Hvorfor?
+Banalt, men viktig: konkatenering av strenger er prosessen med å sette to eller mer strenger sammen for å lage en enkelt. Vi gjør det for å bygge eller manipulere setninger effektivt i programmering.
 
-## Hvordan:
-```Swift
-let firstName = "Sarah"
-let lastName = "Smith"
-let greeting = "Hei, mitt navn er" + firstName + lastName + "og jeg er en programmerer."
+## Hvordan Gjøre:
+I Swift, vi kan slå sammen strenger på flere måter. Enkel og intuitiv metode er ved å bruke "+" operator. Her er et eksempel:
 
-print(greeting) // Utskrift: Hei, mitt navn er Sarah Smith og jeg er en programmerer.
+```swift
+let fornavn = "Ola"
+let etternavn = "Nordmann"
+let fullNavn = fornavn + " " + etternavn
+print(fullNavn)  //Outputs "Ola Nordmann"
 ```
 
-## Dypdykk:
-Sammenføyning av strenger har vært en grunnleggende operasjon i programmering i lang tid. Før i tiden ble det gjort ved å bruke spesielle funksjoner eller symbolske operatører. I Swift bruker vi pluss-tegnet (+) for å sammenføye to strenger. Alternativene til å sammenføye strenger inkluderer bruk av formatteringsfunksjoner eller maler for å strukturere teksten på en mer effektiv måte. Bak kulissene er det en prosess kalt string interning som gjør at sammenføyning av strenger ikke lager en ny strengobjekt, men i stedet peker til en eksisterende objekt for å spare på ressurser.
+Vi kan også bruke pump-operatoren "+=" for å legge til en streng til en eksisterende.
 
-## Se også:
-https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID291
-https://www.appcoda.com/swift-string/
-https://developer.apple.com/documentation/swift/string#1669700
+```swift
+var godMorgen = "God morgen, "
+godMorgen += "verden"
+print(godMorgen)  // Outputs "God morgen, verden"
+```
+
+## Dyp Dykk:
+Historisk kontekst: Strengkonkatenering har vært en standardfunksjon i de fleste programmeringsspråk siden de tidligste dagene av programmering.
+
+Alternativer: Andre enn "+", kan vi bruke String Interpolation, spesielt når du kombinerer strenger med andre datatyper.
+
+```swift
+let time = 20
+let greeting = "Det er nå klokka \(time)"
+print(greeting)  //Outputs "Det er nå klokka 20"
+```
+
+Implementeringsdetaljer: Swift optimaliserer strengkonkatenering i bakgrunnen. I stedet for å lage en ny streng hver gang du legger til en underliggende streng, refererer Swift bare til originalene. Dette gjør prosessen rask og effektiv.
+
+## Se Også:
+1. Swift dok: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+2. Swift String Interpolation: [https://www.hackingwithswift.com/new-syntax-swift-2-string-interpolation](https://www.hackingwithswift.com/new-syntax-swift-2-string-interpolation)

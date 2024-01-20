@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän erottaminen merkkijonosta"
-html_title:           "TypeScript: Päivämäärän erottaminen merkkijonosta"
-simple_title:         "Päivämäärän erottaminen merkkijonosta"
+title:                "Päivämäärän jäsentäminen merkkijonosta"
+html_title:           "Javascript: Päivämäärän jäsentäminen merkkijonosta"
+simple_title:         "Päivämäärän jäsentäminen merkkijonosta"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Dates and Times"
@@ -10,36 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Parsing päivämäärä merkkijonosta TypeScriptillä
+## Mikä ja Miksi?
 
-## Mitä ja miksi?
-Päivämäärän parsiminen merkkijonosta tarkoittaa päivämäärän tiedon poimimista ja kääntämistä merkkijonosta siihen muotoon, jota ohjelma voi käsitellä. Tämä on tärkeä tehtävä, sillä esimerkiksi käyttäjän antama päivämäärätieto tulee usein merkkijonona ja ohjelman on muutettava se päivämääräksi, jotta se voidaan käsitellä javertailla toisiinsa. Päivämäärän parsiminen merkkijonosta on siis tärkeä osa monien ohjelmien toimintaa.
+Päivämäärän jäsentäminen merkkijonosta tarkoittaa merkkijonossa olevan päivämäärän tiedon tunnistamista ja sen muuttamista koneen ymmärtämään muotoon. Koodaajat tarvitsevat tätä toiminnallisuutta, koska se on tehokas tapa lukea, esittää ja käsitellä päivämääriä eri ohjelmissa.
 
-## Näin teet sen:
-Koodiesimerkit ja näytemuoto tulostuu `TypeScript...`-lohkoissa.
+## Näin se tehdään:
 
-### Parsiminen päivämäärä merkkijonosta käyttäen sisäänrakennettua Date-oliota:
-```TypeScript
-const dateString = "06/30/2021";
-const date = new Date(dateString);
+Katsotaan, kuinka päivämäärä jäsentää merkkijonosta TypeScriptissä.
 
-//tulostaa tänään olevan päivämäärän etäisyyttä annetusta päivämäärästä millisekunteina
-console.log(date.getTime());
+```TypeScript 
+    const dateStr: string = "2022-11-21T14:12:00Z";
+    let parsedDate: Date = new Date(dateStr);
+    console.log(parsedDate);
 ```
-**Tulostaa:**
-1625017200000 // tänään etäisyyta annetusta päivämäärästä
 
+Koodibalokki luo merkkijonon `dateStr` sisältäen päivämäärän (iso 8601 -formaatti), jäsentelee sen `Date` -objektiksi `parsedDate`, ja tulostaa sen. Tulos luetaan seuraavasti:
 
-## Syvärinen sukellus:
-### Historiallinen tausta:
-Päivämäärän parsiminen merkkijonosta on ollut tarpeellista jo vuosien ajan, sillä käyttäjän antama päivämäärätieto on usein merkkijonona, kun taas ohjelmat käsittelevät päivämäärää tietynä tietotyyppinä.
+``` 
+    2022-11-21T14:12:00.000Z
+```
 
-### Vaihtoehtoiset tavat:
-Vaikka tässä artikkelissa keskitymmekin TypeScriptin sisäänrakennettuun Date-olioon, on olemassa myös muita tapoja parsia päivämäärä merkkijonosta. Yksi mahdollisuus on käyttää ulkoista kirjastoa, kuten Moment.js, joka tarjoaa monipuolisia päivämääränkäsittelytoimintoja.
+## Syvällisemmin
 
-### Toteutuksen yksityiskohdat:
-Kun päivämäärä parsitaan merkkijonosta, se muutetaan ensin Date-tyyppiseksi ja tallennetaan muuttujaan. Tämän jälkeen voidaan käyttää Date-olion metodeja, kuten "getDay()" tai "getMonth()" saadaksemme halutut päivämäärätiedot ulos.
+- Historiallinen asiayhteys: JavaScriptin päivämääräobjekti tarjoaa helpon työkalun päivämäärien käsittelyyn. TypeScript esiintyi myöhemmin, ja käyttää samaa lähestymistapaa, mutta tarkemmalla tyypillä.
 
-## Katso myös:
-- [MDN: Parse a date from string in JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-- [Moment.js](https://momentjs.com/)
+- Vaihtoehdot: Moment.js on yksi tunnetuimmista JavaScript-päivämäärä- ja aikakirjastoista. Se sisältää tehokkaita toimintoja päivämäärien jäsentämiseen, manipulointiin ja vertailuun.
+
+- Toteutustiedot: JavaScriptin (ja siten TypeScriptin) `Date` -konstruktori voi jäsentää ISO 8601 -muotoisia merkkijonoja oletuksena. Muun muotoiset merkkijonot vainotustuvat paikallisiksi päivämääräksi.
+
+## Katso myös
+
+- MDN Web Docs, [Date](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date) - Tietoa JavaScriptin Date-objektista.
+
+- [Moment.js](https://momentjs.com/docs/) - Moment.js-kirjasto, joka tarjoaa kattavat työkalut päivämäärän manipulointiin.
+
+- [ISO 8601](https://fi.wikipedia.org/wiki/ISO_8601) - Tietoa ISO8601-päivämäärästandardista.

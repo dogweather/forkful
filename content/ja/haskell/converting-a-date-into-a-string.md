@@ -1,6 +1,6 @@
 ---
 title:                "日付を文字列に変換する"
-html_title:           "Haskell: 日付を文字列に変換する"
+html_title:           "C++: 日付を文字列に変換する"
 simple_title:         "日付を文字列に変換する"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## 何となぜ?
 
-日付を文字列に変換することは何か？それは、日付をコンピュータが扱いやすい形式に変換することです。プログラマーは、日付を文字列に変換することで、日付をより簡単に操作できるようになります。
+日付を文字列に変換するとは、特定の日付情報を人間が読み取れる形式の文字列（例：'2022-12-25'）に変換することを言います。これは、日付データをユーザーフレンドリーな形で表示したり、日付フォーマットが必要なAPIにデータを送信するために用いられます。
 
-## 方法：
+## どうやって:
 
-日付を文字列に変換する方法は、Haskellで非常に簡単です。以下のように、```formatTime```関数を使用します。
+以下は日付を文字列に変換するHaskellのサンプルコードです。
 
 ```Haskell
-import Data.Time.Format (formatTime, defaultTimeLocale)
+import Data.Time.Clock
+import Data.Time.Format
 
-formatTime defaultTimeLocale "%Y年%m月%d日" <日付>
+convertDateToString :: UTCTime -> String
+convertDateToString time = formatTime defaultTimeLocale "%Y-%m-%d" time
 ```
 
-上記のコードでは、```formatTime```関数を使用して日付を文字列に変換し、日付のフォーマットを指定しています。例えば、"2020年10月15日"のような形式で日付を出力できます。
+実行結果は下記の通りです。
 
-## 詳しく見る：
+```Haskell
+Prelude> now <- getCurrentTime
+Prelude> convertDateToString now
+"2022-12-25"
+```
 
-これまでのところ、私たちは日付を文字列に変換する方法を見てきました。しかし、この機能が実際にどのように動作するのか知りたい場合は、以下の情報が役に立つかもしれません。
+## 深掘り：
 
-### 歴史的背景：
+1. 過去の文脈：元々UNIXシステムでは、エポックタイム（1970-01-01からの経過秒数）が使用されていましたが、人間が直感的に理解するには非常に手間がかかるため、人間が読めるフォーマットに変換する必要がありました。
 
-日付を文字列に変換する機能は、コンピュータの発明と共に出現しました。それ以前は、日付は単純な数値として扱われており、人が理解しやすい形式で表示されていました。しかし、コンピュータの発達により、日付をより柔軟に扱えるようにする必要がありました。そのため、日付を文字列に変換する機能が開発されました。
+2. 代替手段：他の言語では日付のフォーマット変換に`strftime`関数がよく使われます。しかし、Haskellでは`formatTime`関数が提供されています。
 
-### 代替：
+3. 実装の詳細：Haskellでは`Data.Time.Format`モジュールが時間のフォーマットに使われます。`formatTime`関数は第一引数にLocale、第二引数にフォーマット、第三引数に時間を取ります。
 
-日付を文字列に変換する方法は、プログラミング言語によって異なります。Haskell以外にも、CやPythonなどの多くの言語が同様の機能を提供しています。各言語の文法や使い方は異なりますが、基本的な考え方は同じです。
+## 参考情報:
 
-### 実装の詳細：
+Haskellの日付と時刻に関しては以下のリンクが役立ちます。
 
-日付を文字列に変換する方法は、Haskellの標準ライブラリに含まれる```formatTime```関数を使用しています。この関数は、内部的には日付を数字に変換し、指定したフォーマットに従って文字列に変換します。詳しい仕組みについては、Haskellのドキュメントを参照してください。
+1. [Haskellの時間と日付](http://learnyouahaskell.com/input-and-output#dates-and-times)
 
-## 関連情報：
+2. [HaskellのformatTime関数のドキュメンテーション](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Format.html#g:1) 
 
-- [Haskellの日付操作についてのドキュメント](https://downloads.haskell.org/~ghc/latest/docs/html/libraries/time-1.9.2/Data-Time-Calendar.html#v:toUTCTime)
-- [C言語における日付の文字列変換の方法](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)
-- [Pythonで日付を文字列に変換する方法](https://www.programiz.com/python-programming/datetime/strftime)
+あまり長くしないで、ポイントを抑えたスタイルは役に立つと確信しています。日付の文字列変換についての理解が深まることを願っています。ありがとうございました！

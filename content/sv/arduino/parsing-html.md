@@ -11,41 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Att tolka (parse) HTML betyder att omvandla en block av HTML-kodningar till ett format som är enklare att arbeta med programmeringsmässigt. Programmerare gör detta för att extrahera data, förändra innehållet, eller bygga webbskrapor.
 
-Parsing HTML är processen att extrahera information från HTML-kod. Det är användbart för programmerare eftersom det gör det möjligt att hämta och bearbeta data från webbplatser.
+## Hur Gör Man:
+Här är ett exempel på hur du kan tolka (parse) HTML med hjälp av Arduino och biblioteket "Arduino-Xml":
+```Arduino
+#include <Arduino-Xml.h>
 
-## Hur?
-
-För att parse HTML i Arduino behöver du använda en extern bibliotek som heter "SimpleHTMLParser". Detta bibliotek gör det möjligt för dig att söka igenom HTML-koden och hämta specifika delar av informationen. Nedan följer ett enkelt exempel:
-
-```
-#include <SimpleHTMLParser.h>
-
-void setup(){
-  Serial.begin(9600);
-  SimpleHTMLParser parser;
-  String url = "https://www.example.com"; // ändra till valfritt URL
-  parser.parse(url); // hämtar HTML-koden från URL:en
-  String title = parser.getTitle(); // hämtar titeln från HTML-koden
-  Serial.println(title); // skriver ut titeln på seriellt porten
+void setup() {
+  Serial.begin(115200);
 }
 
-void loop(){
-
+void loop() {
+  const char* html = "<div><p>Hej Arduino!</p></div>";
+  XmlDocument doc(256);
+  doc.from(html);
+  
+  XmlNode* textNode = doc.getRoot()->getFirstChild()->getFirstChild();
+  Serial.println(textNode->getValue());
 }
 ```
-Detta kodexempel visar hur du kan använda SimpleHTMLParser för att hämta titeln från en webbplats och skriva ut den på seriellt porten. Genom att ändra URL:n och använda olika metoder från biblioteket kan du hämta olika typer av information från HTML-koden.
+Vid körning av det här programmet kommer utskriften på seriemonitorn att vara: "Hej Arduino!".
 
 ## Djupdykning
+Historiskt sett var HTML-tolkning ett komplext problem för programmerare, eftersom HTML strukturer kan vara väldigt komplexa och oförutsägbara. Med introduktionen av Arduino-XML kan HTML nu lätt omvandlas till färdiga XML-strukturer som är lättare att bredda med vanliga programmeringstekniker.
 
-Parsing HTML har funnits sedan webbens begynnelse och är en viktig del av utvecklingsprocessen för webbapplikationer. Det finns även andra alternativ för att parse HTML i Arduino, såsom att använda regex (regular expressions) eller läsa och bearbeta webbplatsens HTML-kod manuellt.
+Det finns andra bibliotek för att parse HTML, som Html-Parser (för C++), men Arduino-Xml erbjuder fler funktioner och en mer optimerad tolkning av HTML.
 
-Implementeringen av parsing HTML i Arduino kan dock vara begränsad på grund av minneshanteringen. Det är viktigt att använda lämpliga metoder för att hantera minnet för att undvika programkollisioner.
+När du tolkar HTML på Arduino är det viktigt att övervaka din minnesanvändning. HTML-dokument kan snabbt äta upp resurser om de inte hanteras korrekt i stora applikationer eller spädbarn.
 
-## Se även
-
-Här är några användbara länkar för att lära dig mer om parsing HTML i Arduino:
-
-- Officiell dokumentation för SimpleHTMLParser: https://github.com/squix78/Arduino-Examples/tree/master/SimpleHtmlParser
-- En guide för att parsning av webbplatser med Arduino: https://www.instructables.com/id/Parsing-Websites-With-Arduino/
-- En diskussion om användning av regex för att parse HTML i Arduino: https://arduinos.stackexchange.com/questions/10254/parsing-html-on-arduino-using-regex
+## Se Även
+- [Arduino-Xml Biblioteket](https://github.com/forwardat/Arduino-Xml)
+- [HTMLParser Biblioteket](https://github.com/efeiefei/node-html-parser)
+- [Mozilla Developer Network - HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)

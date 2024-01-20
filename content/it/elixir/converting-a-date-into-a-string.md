@@ -1,6 +1,6 @@
 ---
 title:                "Convertire una data in una stringa"
-html_title:           "Elixir: Convertire una data in una stringa"
+html_title:           "Javascript: Convertire una data in una stringa"
 simple_title:         "Convertire una data in una stringa"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -11,21 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Cosa & Perché?
-La conversione di una data in una stringa è una delle operazioni fondamentali per ogni programmatore che lavora con date. Questo processo consiste nel trasformare un valore numerico rappresentante una data in una stringa leggibile dall'utente. I programmatori lo fanno principalmente per esporre le date in un formato comprensibile a chi utilizza il loro software.
+La conversione di una data in una stringa, in Elixir, permette di rappresentare i dati di tempo in un formato leggibile. I programmatori lo fanno per semplificare la visualizzazione e il salvataggio di date per l'utente.
 
 ## Come fare:
-Nell'Elixir, puoi convertire una data in una stringa utilizzando la funzione `NaiveDateTime.to_string/2`. Di seguito un esempio di codice che prende una data e la converte in una stringa nel formato "aaaa-mm-gg":
+Nella versione corrente di Elixir, trasformare una data in stringa è un'operazione semplice grazie alla funzione `Date.to_string/1`. Ecco un esempio:
 
-```elixir
-date = ~N[2022-12-31]
-# => #NaiveDateTime<2022-12-31 00:00:00>
-date_string = NaiveDateTime.to_string(date, "~Y-~m-~d")
-# => "2022-12-31"
+```Elixir
+data_corrente = Date.utc_today()
+data_corrente_stringa = Date.to_string(data_corrente)
+IO.puts data_corrente_stringa
 ```
+Questo stamperà la data del giorno in un formato come `AAAA-MM-GG`.
 
-## Approfondimento:
-La conversione di una data in una stringa è uno dei processi più comuni e utili nella programmazione. Oltre all'Elixir, esistono anche altri linguaggi che offrono funzioni per effettuare questa operazione, come ad esempio Python con il metodo `strftime()` o JavaScript utilizzando la libreria Moment.js. Per quanto riguarda l'implementazione, la conversione di una data in una stringa viene solitamente gestita attraverso una libreria standard di un linguaggio di programmazione, che offre funzioni utili per la formattazione delle date.
+## Approfondimenti
+Fino alla versione 1.3, Elixir non aveva un modulo incorporato per gestire le date. Ci si affidava a librerie esterne come Timex. Con l'introduzione del modulo `Date` in Elixir 1.3, è diventato più semplice manipolare le date.
 
-## Vedi anche:
-- La documentazione ufficiale di Elixir sulla funzione `NaiveDateTime.to_string/2`: https://hexdocs.pm/elixir/NaiveDateTime.html#to_string/2
-- Una guida su come formattare le date in diversi linguaggi di programmazione: https://www.howtogeek.com/50278/4-ways-to-convert-unix-timestamp-to-readable-date-in-linux/
+Un'alternativa alla conversione di una data in una stringa con `Date.to_string/1` potrebbe essere l'uso di `NaiveDateTime.to_string/1` o `DateTime.to_string/1`, a seconda se si vogliono includere le informazioni di ora e fuso orario.
+
+L'implementazione di `Date.to_string/1` è piuttosto semplice. Elixir si basa sulla notazione ISO 8601 per le date, quindi la conversione in stringa di una data implica semplicemente la formattazione dei suoi componenti nel formato `AAAA-MM-GG`.
+
+## Vedi anche
+- La documentazione di Elixir per `Date`: https://hexdocs.pm/elixir/Date.html
+- Una guida introduttiva per lavorare con date e orari in Elixir: https://blog.drewolson.org/working-with-dates-and-times-in-elixir
+- L'annuncio del modulo `Date` in Elixir 1.3: https://elixir-lang.org/blog/2016/07/14/announcing-elixir-v1-3/

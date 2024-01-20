@@ -1,7 +1,7 @@
 ---
-title:                "Bitte keine Kommentare hinzufügen.String großschreiben"
-html_title:           "C++: Bitte keine Kommentare hinzufügen.String großschreiben"
-simple_title:         "Bitte keine Kommentare hinzufügen.String großschreiben"
+title:                "Einen String großschreiben"
+html_title:           "C++: Einen String großschreiben"
+simple_title:         "Einen String großschreiben"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,54 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was ist das und Warum?
+## Was & Warum?
+Großschreiben einer Zeichenkette bedeutet, jede Kleinbuchstaben in eine Großbuchstaben zu verwandeln. Programmierer machen es, um Text bereinigungen oder zum gruppieren ähnlicher Gegenstände zu ermöglichen.
 
-Beim "Capitalizing" wird der erste Buchstabe eines Strings in Großbuchstaben umgewandelt. Programmierer nutzen dies, um Strings besser lesbar zu machen und ein einheitliches Format zu gewährleisten.
-
-# How to:
-
-Um einen String zu capitalizen, gibt es mehrere Möglichkeiten in C++. Eine einfache Möglichkeit ist die Verwendung der Funktion `toupper()` aus der Bibliothek `<cctype>`. Der folgende Code block zeigt, wie dies in einem Beispiel funktioniert:
-
+## So geht's:
 ```C++
-#include <iostream>
-#include <string>
-#include <cctype>
+#include<iostream>
+#include<algorithm>
+#include<string>
+
+using namespace std;
+
+string to_upper(string s){
+   transform(s.begin(), s.end(), s.begin(), ::toupper);
+   return s;
+}
 
 int main() {
-    std::string str = "Hallo Welt";
-    str[0] = toupper(str[0]);
-    std::cout << str << std::endl;
-    return 0;
+   string my_str = "hallo, Welt!";
+   cout << to_upper(my_str) << endl; // Gibt "HALLO, WELT!" aus.
+   return 0;
 }
 ```
-
-Der output dieses Codes wäre "Hallo Welt", da der erste Buchstabe "H" zu "h" geändert wurde.
-
-Eine andere Möglichkeit ist die Verwendung der `transform()` Funktion aus der Bibliothek `<algorithm>` zusammen mit einer Lambda-Funktion. Der folgende Code zeigt ein Beispiel hierfür:
-
-```C++
-#include <iostream>
-#include <string>
-#include <algorithm>
-
-int main() {
-    std::string str = "Hallo Welt";
-    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c){ return std::toupper(c); });
-    std::cout << str << std::endl;
-    return 0;
-}
+Ein typischer Ausdruck wäre:
 ```
+HALLO, WELT!
+```
+## Tiefere Einblicke
+Historisch gesehen stammt das Konzept des Großschreibens einer Zeichenkette aus der Zeit vor Computern, als es verwendet wurde, um Wichtigkeit oder Betonung hervorzuheben. In Programmierung gibt es viele Alternativ-Methoden, darunter ASCII-Konvertierung oder andere eingebaute Funktionen in verschiedenen Sprachen. In C++ verwenden wir die Transform-Funktion der STL. Sie nimmt vier Parameter: die Anfangs- und Endpunkte des Eingabebereichs, den Anfangspunkt des Ausgabebereichs und die zu verwendende Operation (in diesem Fall ::toupper).
 
-Durch die Verwendung von `transform()` und der Lambda-Funktion wird jeder einzelne Buchstabe des Strings in einen Großbuchstaben umgewandelt.
-
-# Deep Dive
-
-Das Konzept des "Capitalizing" stammt aus der Programmiersprache COBOL und wurde in den 1950er Jahren eingeführt. In C++ gibt es mehrere Möglichkeiten, einen String zu verändern. Neben dem "Capitalizing" gibt es auch noch die Funktionen `tolower()` und `isupper()` aus der Bibliothek `<cctype>`.
-
-Wenn man einheitliche Formatierungen in einem Programm gewährleisten möchte, ist das "Capitalizing" von Strings hilfreich.
-
-# See Also
-
-- [`toupper()` reference](https://www.cplusplus.com/reference/cctype/toupper/)
-- [`transform()` reference](https://www.cplusplus.com/reference/algorithm/transform/)
-- [History of string capitalization](https://en.wikipedia.org/wiki/Letter_case#The_history_of_letter_case)
+## Siehe auch
+Für mehr Information, bitte besuchen Sie:
+- [C++ String transform()](https://www.cplusplus.com/reference/algorithm/transform/)
+- [ASCII Table](http://www.asciitable.com/) 
+- [C++ String-Handling](https://www.tutorialspoint.com/cplusplus/cpp_strings.htm)

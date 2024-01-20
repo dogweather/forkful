@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando una cadena"
-html_title:           "Swift: Capitalizando una cadena"
-simple_title:         "Capitalizando una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Swift: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,44 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola lectores! ¿Estáis listos para aprender una forma sencilla de mejorar vuestro código Swift? En este artículo, vamos a hablar sobre cómo capitalizar una cadena de texto y por qué los programadores lo hacen. ¡Vamos al lío!
+## ¿Qué & Por Qué?
+Capitalizar una cadena se refiere a convertir la primera letra de cada palabra en mayúscula. Los programadores lo hacen principalmente para mejorar la legibilidad del texto y mantener la coherencia del formato a lo largo del código.
 
-## ¿Qué es y por qué hacerlo?
+## ¿Cómo hacerlo?
 
-Capitalizar una cadena de texto en Swift simplemente significa convertir la primera letra de cada palabra en mayúscula. Por ejemplo, "hola mundo" se convertiría en "Hola Mundo". ¿Por qué es importante? Porque es una forma de mejorar la legibilidad de nuestro código y facilitar su comprensión. Además, en algunos casos, puede ser un requisito para el correcto funcionamiento de nuestro programa.
-
-## Cómo hacerlo:
-
-Para capitalizar una cadena de texto en Swift, podemos usar el método `capitalized` de la clase `String`. Echemos un vistazo a un ejemplo:
+Aquí le mostramos cómo capitalizar una cadena de texto en Swift.
 
 ```Swift
-let myString = "hola mundo"
-print(myString.capitalized)
-
-// Output: Hola Mundo
+let cadena = "hola mundo"
+let cadenaCapitalizada = cadena.capitalized
+print(cadenaCapitalizada)
 ```
 
-También podemos especificar un local para asegurarnos de que se capitalicen correctamente las letras con acentos. Por ejemplo:
+Su salida será:
 
 ```Swift
-let myString = "más allá"
-print(myString.capitalized(with: Locale(identifier: "es_ES")))
-
-// Output: Más Allá
+Hola Mundo
 ```
 
-¡Genial! Ahora ya sabemos cómo capitalizar una cadena de texto en Swift.
+## Inmersión Profunda
 
-## Profundizando un poco más:
+- **Contexto Histórico**: Swift tomó una decisión consciente de hacer las funciones de cadena fáciles de usar y accesibles, y la funcionalidad para capitalizar una cadena es una de ellas.
+- **Alternativas**: Si sólo quieres capitalizar la primera letra de la cadena, puedes hacer algo como esto:
 
-Ahora que sabemos cómo hacerlo, es posible que os preguntéis por qué no usamos simplemente el método `uppercase` o `lowercase` para convertir todo el texto en mayúsculas o minúsculas. La respuesta es que, a veces, queremos preservar ciertas letras en minúsculas o mayúsculas para una mejor comprensión del texto. Además, recordad que para algunos idiomas, como el español, la capitalización es importante.
+```Swift
+var cadena = "hola mundo"
+cadena = cadena.capitalizingFirstLetter()
+print(cadena)
+```
 
-Otra forma de capitalizar una cadena de texto en Swift es usando un ciclo `for` para recorrer la cadena y convertir la primera letra de cada palabra manualmente. Sin embargo, esto puede ser tedioso y propenso a errores, por lo que es mejor seguir utilizando el método `capitalized`.
+Tu salida será:
 
-## Véase también:
+```Swift
+Hola mundo
+```
 
-- [Documentación oficial de Swift sobre el método `capitalized`](https://developer.apple.com/documentation/foundation/nsstring/1413495-capitalized)
-- [Una explicación más detallada sobre el uso de locales en Swift](https://learnappmaking.com/localization-swift-5-how-to/)
-- [Un artículo sobre cómo mejorar la legibilidad del código en Swift](https://medium.com/@alanarvelo/improve-your-code-legibility-in-swift-52c60e0ab17f)
+- **Detalles de Implementación**: `capitalized` en Swift está implementado utilizando las reglas de Unicode para las operaciones de cambio de caso. Esto significa que funcionará correctamente con cadenas que contienen caracteres no latinos.
 
-¡Eso es todo por hoy! Esperamos que este artículo os haya sido útil y que os animéis a seguir mejorando vuestros skills en Swift. ¡Feliz coding!
+## Ver También
+
+Para obtener más información sobre las cadenas en Swift, consulta las siguientes fuentes:
+
+- La guía oficial de Apple sobre cadenas y caracteres en Swift: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Un tutorial útil sobre cómo trabajar con cadenas en Swift: [https://www.hackingwithswift.com/quick-start/understanding-swift/how-to-capitalize-the-first-letter-of-a-string](https://www.hackingwithswift.com/quick-start/understanding-swift/how-to-capitalize-the-first-letter-of-a-string)

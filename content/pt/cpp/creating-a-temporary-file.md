@@ -1,6 +1,6 @@
 ---
 title:                "Criando um arquivo temporário"
-html_title:           "C++: Criando um arquivo temporário"
+html_title:           "Bash: Criando um arquivo temporário"
 simple_title:         "Criando um arquivo temporário"
 programming_language: "C++"
 category:             "C++"
@@ -10,49 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
+# Crie um arquivo temporário em C++: Tutorial para Bolivaristas 
+## O Que & Por Quê?
+Criar um arquivo temporário em C++ é um processo no qual um arquivo é gerado para armazenar dados temporariamente. Programadores frequentemente fazem isso quando lidam com grandes volumes de dados que não são necessários a longo prazo.
 
-Criar um arquivo temporário, também conhecido como "temp file" ou "temporary file", é uma prática comum na programação. Isso envolve a criação de um arquivo que será usado temporariamente durante a execução de um programa. Programadores geralmente fazem isso para armazenar dados temporários ou para realizar operações que requerem a criação de um arquivo.
-
-## Como fazer:
+## Como Fazer:
+Aqui está um exemplo de como criar um arquivo temporário em C++ usando a biblioteca `<cstdio>`:
 
 ```C++
-#include <iostream>
-#include <fstream> // biblioteca para manipulação de arquivos
+#include <cstdio>
 
-int main() {
-  // criar um arquivo temporário usando o comando tempnam()
-  char *nome_arquivo = tempnam(NULL, "tmp"); // NULL indica que pode ser criado em qualquer diretório, "tmp" é o prefixo do nome do arquivo
-  std::ofstream arquivo(nome_arquivo); // cria o arquivo
+int main()
+{
+    char tempPath[L_tmpnam];
+    std::tmpnam(tempPath);
 
-  // escrever conteúdo no arquivo temporário
-  arquivo << "Este é um arquivo temporário!" << std::endl;
+    printf("Created temporary file at: %s\n", tempPath);
 
-  // imprimir o nome do arquivo criado
-  std::cout << "Arquivo temporário criado: " << nome_arquivo << std::endl;
-
-  // fechar e remover o arquivo temporário
-  arquivo.close();
-  remove(nome_arquivo);
-
-  return 0;
+    return 0;
 }
 ```
-
-Output:
-```
-Arquivo temporário criado: tmp/temp
-```
+Este código criará um arquivo temporário único em seu sistema e imprimirá o caminho para ele.
 
 ## Mergulho Profundo:
+- **Contexto histórico**: O sistema de arquivos temporários foi introduzido em C++ para permitir o manuseio de grandes volumes de dados que os sistemas de memória não conseguem gerenciar eficientemente. É uma prática comum em muitas operações de programação, como ordenação, busca e computação gráfica.
+  
+- **Alternativas**: Outras alternativas para a criação de um arquivo temporário em C++ podem incluir o uso de bibliotecas externas, como a Boost Filesystem, que fornece uma interface orientada a objetos para manipulação de arquivos e diretorios.
 
-Criar arquivos temporários é uma prática antiga na programação, que remonta à época dos sistemas operacionais Unix. Antigamente, os programadores usavam a função tmpnam() para criar arquivos temporários, mas essa função se tornou obsoleta devido a problemas de segurança e confiabilidade.
+- **Detalhes de implementação**: A função `std::tmpnam` em `<cstdio>` gera nomes únicos para arquivos temporários. Isso evita conflitos entre diferentes arquivos temporários no mesmo sistema.
 
-Existem algumas alternativas para criar arquivos temporários, como a função tmpfile() ou a biblioteca Boost. No entanto, o método mostrado acima com o uso do comando tempnam() é o mais simples e amplamente utilizado.
-
-Na implementação do comando tempnam(), o primeiro argumento recebe o diretório em que o arquivo temporário será criado. Se for passado como NULL, o sistema operacional escolherá um diretório adequado por padrão. O segundo argumento é o prefixo do nome do arquivo temporário, que pode ser especificado pelo usuário. Isso permite uma melhor organização e identificação de arquivos temporários quando um programa cria vários deles.
-
-## Veja também:
-
-- [Documentação oficial do comando tempnam()](https://www.cplusplus.com/reference/cstdio/tempnam/)
-- [Outras maneiras de criar arquivos temporários em C++](https://www.geeksforgeeks.org/tmp-file-functions-in-c-c/)
+## Veja Também:
+1. Documentação da biblioteca C++ `<cstdio>`: [http://www.cplusplus.com/reference/cstdio/](http://www.cplusplus.com/reference/cstdio/)
+2. Precauções ao trabalhar com arquivos temporários: [https://en.cppreference.com/w/cpp/io/c/tmpnam](https://en.cppreference.com/w/cpp/io/c/tmpnam)
+3. Biblioteca Boost Filesystem: [https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)

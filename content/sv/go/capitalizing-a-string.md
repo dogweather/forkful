@@ -1,7 +1,7 @@
 ---
-title:                "Stor bokstaverar en sträng"
-html_title:           "Go: Stor bokstaverar en sträng"
-simple_title:         "Stor bokstaverar en sträng"
+title:                "Gör en sträng versal"
+html_title:           "Go: Gör en sträng versal"
+simple_title:         "Gör en sträng versal"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,33 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
+## Vad & Varför?
 
-Att "capitaliza" en sträng betyder att första bokstaven i varje ord ändras till en stor bokstav. Detta är en vanlig praxis bland programmatörer för att förbättra läsbarheten av kod och för att följa konventioner som finns inom programmering.
+Att förstora en sträng i programmering innebär att omvandla alla bokstäver i en textsträng till stora bokstäver. Det är användbart för att standardisera datainslag, så att olikheter i textinmatning inte stör dataanalys eller -bearbetning.
 
-## Så här gör man:
+## Hur man gör:
 
-Go har en inbyggd funktion, kallad ```strings.Title()```, som gör det möjligt att capitaliza en sträng. Det är enkelt att använda, bara skicka in strängen du vill capitaliza som argument och funktionen kommer att returnera den capitalizade strängen.
+Med Go språket kan du använda `strings.ToUpper` funktionen som tar in en sträng och returnerar en ny sträng med alla bokstäver omvandlade till stora bokstäver. Här är ett kort exempel:
 
-Exempel:
+```Go
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func main() {
+	text := "hej, världen!"
+	capText := strings.ToUpper(text)
+	fmt.Println(capText)
+}
+```
+När du kör detta, skulle utmatningen se ut så här:
 
 ```
-myString := "hej alla programmerare"
-fmt.Println(strings.Title(myString))
+HEJ, VÄRLDEN!
 ```
 
-Output:
+## Djupdykning
 
-"Hej Alla Programmerare"
+Möjligheten att förstora strängar går tillbaka till de tidiga dagarna av datorer, när olika system hanterade text på olika sätt. Standardisering, som kapitalisering, var ett sätt att säkerställa att data var kompatibla över olika system.
 
-## Djupdykning:
+Ett alternativ till `strings.ToUpper` i Go är att manuellt iterera över varje bokstav i strängen och använda `unicode.ToUpper` på den. Men i de flesta fall är `strings.ToUpper` den bästa och mest effektiva lösningen.
 
-Att capitaliza en sträng är en vanlig praxis inom programmering och har funnits sedan början av datorer och programmeringsspråk. Inom olika programmeringspråk finns det dock olika metoder för att åstadkomma samma sak.
+När det gäller implementeringsdetaljer, använder `strings.ToUpper` intern bokstavsrepresentation (i form av "runes" för att hantera potentiella multi-byte karakterer), vilket är viktigt för att korrekt hantera icke-ASCII bokstäver.
 
-Alternativ till att använda den inbyggda funktionen i Go är att manuellt iterera genom strängen och ändra första bokstaven i varje ord till en stor bokstav. Detta kan dock vara mycket mer tidskrävande och kräver mer kod.
+## Se också
 
-Implementeringsdetaljer för att capitaliza en sträng beror på hur den inbyggda funktionen är implementerad i det specifika programmeringsspråket. Det är vanligt att den använder sig av strängmanipulation och regex för att hitta och ändra första bokstaven i varje ord.
+För mer information om strängar i Go, se officiella dokumentationen här: https://golang.org/pkg/strings/
 
-## Se även:
-
-För mer information om strängmanipulation och andra inbyggda funktioner i Go, se officiell dokumentation: https://golang.org/pkg/strings/
+Du kan också läsa mer om Rune typen och unicode hantering i Go här: https://blog.golang.org/strings

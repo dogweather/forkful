@@ -1,7 +1,7 @@
 ---
-title:                "サブ文字列の抽出"
-html_title:           "Elm: サブ文字列の抽出"
-simple_title:         "サブ文字列の抽出"
+title:                "部分文字列の抽出"
+html_title:           "Lua: 部分文字列の抽出"
+simple_title:         "部分文字列の抽出"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,28 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##どういうことか？
-文字列から部分文字列を抽出することは、文字列の一部を別の文字列として取り出すことを意味します。プログラマーたちは、特定のテキストを処理する際に、必要な情報を抽出するためにこの機能を使用します。
+## 何となぜ？
+文字列から特定の部分文字列を取り出すことをサブストリングといいます。これは某特定の情報を分析したり、検索したり、処理したりする際に使います。
 
-##やり方：
-```Elm 「 extractSubstrings "hey there" 1 4-- "ey t"」 
- ``` 
-以下のように実行されます: 
-「 eyt 」
+## 使い方
+```Elm
+substring : Int -> Int -> String -> String
+substring start end str =
+    String.slice start end str
+```
+上記の`substring`関数を使えば、開始位置と終了位置を指定して文字列から部分文字列を抽出できます。
+```Elm
+substring 0 5 "Hello, World!" -- 出力: "Hello"
+substring 7 12 "Hello, World!" -- 出力: "World"
+```
 
-```Elm listOne = ["a", "b", "c", "d", "e"]
-listTwo = ["a", "b"]
-newList = List.filter (\x -> List.contains x listTwo) listOne
+## 深堀り
+かつてElm 0.18では`String`モジュールが`String.substring`関数を提供していましたが、現在のバージョンであるElm 0.19では名前が`String.slice`に変更され、より直感的な名前になりました。
 
-「 newList 」 
- ``` 
-以下のように実行されます: 
-```Elm ["a", "b"]
- ```
+一部の言語では`substring`, `substr`, `slice`など異なる関数で部分文字列を取得できますが、常に引数として開始位置と終了位置（または開始位置と長さ）が必要です。
 
-##深く掘り下げる：
-文字列から部分文字列を抽出する概念は、古くから存在しており、プログラミング言語の多くに組み込まれています。代替手段としては、正規表現を使用したパターンマッチングがあります。Elmで部分文字列を抽出する場合、Stringモジュールの「slice」関数を使用します。第一引数には元の文字列、第二引数には抽出したい部分文字列の開始位置、第三引数には終了位置を指定します。
+Elmの`String.slice`関数を実装するには、まず文字列をリストに変換し、適切なスライス操作を行い、再び文字列に変換する必要があります。
 
-##参考文献：
-- [Elm - Syntax](https://elm-lang.org/docs/syntax#lists)
-- [Elm - String Module](https://package.elm-lang.org/packages/elm/core/latest/String)
+## 関連情報
+- Elmの公式`String`モジュールのドキュメント: http://package.elm-lang.org/packages/elm/core/latest/String
+- Elmの文字列操作についての詳細なチュートリアル: https://elmprogramming.com/strings.html#substring

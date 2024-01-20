@@ -1,7 +1,7 @@
 ---
-title:                "Sattumanvaraisten lukujen luominen"
-html_title:           "Javascript: Sattumanvaraisten lukujen luominen"
-simple_title:         "Sattumanvaraisten lukujen luominen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,50 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mitä & Miksi?
 
-Satunnaislukujen generointi on tapa tuottaa numeroita arpomalla niitä tietyn alueen sisällä. Tämä on hyödyllistä monissa ohjelmoinnin konteksteissa, kuten pelien kehityksessä tai salauksen avaimien generoimisessa, koska tällä tavalla voidaan luoda lukuja ilman tiettyä järjestystä tai ennustettavuutta.
+JavaScriptilla satunnaislukujen tuottaminen auttaa kehittämään ennustamattomia toiminnoja, kuten arpapelit ja ainutlaatuiset tunnisteet. Ohjelmoijat tekevät tämän lisätäkseen sovellusten monimutkaisuutta ja säilyttääkseen käyttäjien kiinnostuksen.
 
-# Miten:
+## Näin voit tehdä:
 
-Esimerkki 1:
+Generoi satunnaisen luvun Javascriptilla seuraavasti:
 
-```
-// Generoi satunnainen luku väliltä 1-10
-let randomNum = Math.floor(Math.random() * 10) + 1;
-
-console.log(randomNum);
-// Output: 6
+```Javascript
+// Luodaan satunnainen luku väliltä 0 (mukaan lukien) ja 1 (pois lukien)
+var random = Math.random();
+console.log(random);
 ```
 
-Esimerkki 2:
+Tämä palauttaa jotakin kuten `0.2321423278501851`
 
-```
-// Generoi satunnainen värin RGB-arvot
-let red = Math.floor(Math.random() * 256);
-let green = Math.floor(Math.random() * 256);
-let blue = Math.floor(Math.random() * 256);
+Jos haluat rajoittaa arvot tiettyyn välille, esimerkiksi 1 ja 10, voit tehdä näin:
 
-console.log(`RGB(${red}, ${green}, ${blue})`);
-// Output: RGB(34, 189, 156)
+```Javascript
+// Luodaan satunnainen luku väliltä 1 (mukaan lukien) ja 10 (mukaan lukien)
+var random = Math.floor(Math.random() * 10) + 1;
+console.log(random);
 ```
 
-# Syvemmälle:
+Tämä palauttaa minkä tahansa kokonaisluvun 1 ja 10 väliltä.
 
-Historiallinen konteksti:
+## Syvällisempi tarkastelu
 
-Satunnaislukujen generointi on ollut osa ohjelmointia jo pitkään, ja siihen liittyviä algoritmeja on kehitetty vuosien saatossa. Alkuaikoina käytettiin esimerkiksi itse luotuja kaavoja, mutta nykyään yleisesti käytössä olevat tarkemmat ja laajemmat algoritmit ovat vähentäneet mahdollisuuksia ennustettavuuteen tai toistettavuuteen.
+JavaScriptin `Math.random()`-metodi perustuu pseudo-satunnaislukugeneraattoriin (PRNG), joka tarkoittaa, että se ei tuota oikeasti "satunnaisia" lukuja, vaan luvut näyttävät olevan satunnaisia.
 
-Vaihtoehtoja:
+Muina vaihtoehtoina voimme käyttää muita satunnaislukugeneraattoreita riippuen tarpeistamme, kuten crypto.randomBytes Node.js:ssä turvallisia kryptografisia toimintoja varten.
 
-Lisäksi Math.random() -funktion lisäksi on olemassa muita tapoja generoida satunnaislukuja, kuten esimerkiksi käyttämällä erilaisia matemaattisia kaavoja tai kirjastoja, kuten "random-js" tai "chance".
+Se, miten `Math.random()` toteutetaan, vaihtelee eri selainmoottoreissa. JavaScriptin moottorin yksityiskohdat ovat yleensä avoimen lähdekoodin, joten niitä voi tutkia tarkemmin.
 
-Toteutus:
+## Katso myös
 
-Satunnaislukujen generointi on toteutettu monissa ohjelmointikielissä sisäisillä funktioilla tai algoritmeilla. Hyvin usein käytetään "pseudo-satunnaislukuja", jotka eivät ole täysin satunnaisia, vaan perustuvat tiettyyn lähtöarvoon. Tällöin samaa lähtöarvoa käytettäessä saadaan aina sama lopputulos.
+[MDN Web Docs Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 
-# Katso myös:
+[Understanding Math.random()](https://medium.com/@betable/tifu-by-using-math-random-f1c308c4fd9d)
 
-- https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-- https://www.random.org/randomness/
-- https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Math/random#Description
+[Anatomy of a JavaScript engine](https://en.wikipedia.org/wiki/JavaScript_engine)

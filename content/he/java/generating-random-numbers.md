@@ -1,7 +1,7 @@
 ---
-title:                "יצירת מספרים אקראיים"
-html_title:           "Java: יצירת מספרים אקראיים"
-simple_title:         "יצירת מספרים אקראיים"
+title:                "גירוד מספרים אקראיים"
+html_title:           "Haskell: גירוד מספרים אקראיים"
+simple_title:         "גירוד מספרים אקראיים"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Numbers"
@@ -10,37 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה זה ולמה?
+## מה ולמה?
+חילוק מספרים אקראיים הוא תהליך של יצירת מספרים שאין לנו תחזית מהימנה לגבי הערך הבא. תכנתים משתמשים בזה לעיתים קרובות, כמו בתוכנות משחקים, באלגוריתמים, באבטחת מסלולים, או בכאלו מסיבות אחרות שדורשות יצירת תוצאות לא צפויות.
 
-הכנת מספרים אקראיים הוא פעולה נפוצה בתחום התכנות, שמטרתה ליצור מספרים באופן בלתי צפוי. תכנית כזו יכולה לשמש למגוון מטרות, כגון בדיקת תכונות של תוכנית, יצירת מפה של נתונים ועוד.
-
-# איך לעשות:
-
-להלן דוגמאות של כיצד ליצור מספרים אקראיים בשפת ג'אווה:
-
-```java
-// ייבוא המודול המתאים
+## איך לעשות:
+```Java
 import java.util.Random;
 
-// יצירת אובייקט מסוג Random
-Random random = new Random();
+public class Main {
+  public static void main(String[] args) {
+    Random rand = new Random();
+    int rand_int = rand.nextInt(1000);
+    System.out.println("Generated Random Number(0-999): "+rand_int);
+  }
+}
 
-// יצירת מספר אקראי בין 1 ל-10
-int randomNumber = random.nextInt(10) + 1;
-System.out.println("מספר אקראי בין 1 ל-10: " + randomNumber);
-
-// יצירת מספר אקראי מסוג double בין 0 ל-1
-double randomDouble = random.nextDouble();
-System.out.println("מספר אקראי מסוג double בין 0 ל-1: " + randomDouble);
 ```
+התוצאה של הקוד הזה מייצרת מספר אקראי בין 0 ל-999.
 
-# טיול עמוק:
+## צלילה עמוקה
+האיזור בו משתמשים בגנרטורי מספרים אקראיים החל להתפתח בתחילת שנות ה-20. כיום, קיימות שיטות אלגריתמיות רבות ליצירה של המספרים האלה. חשוב לזכור שהמספרים שנוצרים באמצעות ספרייה כמו `java.util.Random` אינם מספרים אקראיים במובנה האמיתי של המילה, אלא "חצי-אקראיים", שכן הם מתחלים ממספר נתון (זרע seed), אך עדיין מספיק טובים לרוב השימושים.
 
-הכנת מספרים אקראיים נמצאת בשימוש רב בתחום התכנות והמחשבים. בעבר, היתה תהליך מאוד מתוחכם ליצור מספרים אקראיים במחשב. כיום, ישנם כלים נוחים ופשוטים המאפשרים למתכנתים ליצור מספרים אקראיים בקלות.
-
-ישנם גם אפשרויות אחרות ליצירת מספרים אקראיים, כגון חומרת המחשב או רעש שלו. תוצאות של מספרים אקראיים יכולות להשתנות בין הרצת התכנית, ולכן חשוב לבחון את הסביבה שבה מתבצעת תהליך כזה.
-
-# ראה גם:
-
-- מידע נוסף על מספרים אקראיים ואלגוריתמים ליצירתם: https://he.wikipedia.org/wiki/%D7%9E%D7%A1%D7%A4%D7%A8_%D7%90%D7%A7%D7%A8%D7%90%D7%99
-- תיעוד מלא על מחלקת Random בשפת ג'אווה: https://docs.oracle.com/javase/8/docs/api/java/util/Random.html
+## ראו גם:
+1. [Oracle Docs - Random Class in Java](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)
+2. [Random number generation in Java](https://www.baeldung.com/java-generate-random-long-float-integer-double)

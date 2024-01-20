@@ -1,6 +1,6 @@
 ---
 title:                "Baixando uma página da web"
-html_title:           "C: Baixando uma página da web"
+html_title:           "Bash: Baixando uma página da web"
 simple_title:         "Baixando uma página da web"
 programming_language: "C"
 category:             "C"
@@ -10,45 +10,64 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que & Por Que?
 
-Baixar uma página da web é o ato de transferir seu conteúdo para o seu dispositivo de computação. Programadores o fazem para acessar informações ou recursos úteis que estão contidos na página.
+Baixar uma página da web é a tarefa de copiar seu conteúdo - geralmente o HTML, CSS, e JavaScript - do servidor para o computador local. Programadores fazem isso para manipular, vasculhar, ou reexibir o conteúdo da página de forma programática.  
 
 ## Como Fazer:
 
-~~~ C
-#include <stdio.h>
+Vamos usar a biblioteca curl para fazer isso em C. Aqui está um exemplo simples de como baixar uma página da web:
+
+```C
 #include <curl/curl.h>
+#include <stdio.h>
 
-int main(void) {
-  CURL *curl;
-  CURLcode res;
-
-  curl = curl_easy_init();
-  if(curl) {
-    curl_easy_setopt(curl, CURLOPT_URL, "https://www.example.com/");
-
-    res = curl_easy_perform(curl);
-
-    if(res != CURLE_OK)
-      fprintf(stderr, "curl_easy_perform() failed: %s\n",
-              curl_easy_strerror(res));
-
-    curl_easy_cleanup(curl);
-  }
-
-  return 0;
+size_t write_data(void* buffer, size_t size, size_t nmemb, void* userp)
+{
+    return fwrite(buffer, size, nmemb, (FILE*)userp);
 }
-~~~
 
-O código acima utiliza a biblioteca Curl para realizar o download da página https://www.example.com/. A função `curl_easy_perform()` executa a transferência e a função `curl_easy_cleanup()` libera a memória alocada para a operação.
+int main(void)
+{
+    CURL* curl;
+    FILE* fp;
+    CURLcode res;
+    char* url = "http://example.com";
+    char outfilename[FILENAME_MAX] = "/tmp/example.html";
+    curl_global_init(CURL_GLOBAL_DEFAULT);
+    curl = curl_easy_init();
+    
+    if(curl) {
+        fp = fopen(outfilename,"wb");
+        
+        curl_easy_setopt(curl, CURLOPT_URL, url);
+        curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, write_data);
+        curl_easy_setopt(curl, CURLOPT_WRITEDATA, fp);
+        
+        res = curl_easy_perform(curl);
+        
+        curl_easy_cleanup(curl);
+        fclose(fp);
+    }
+    
+    curl_global_cleanup();
+    
+    return 0;
+}
+```
+
+Isto vai baixar a página "http://example.com" e guardar o conteúdo num arquivo chamado "/tmp/example.html".
 
 ## Mergulho Profundo:
 
-O ato de baixar páginas da web tem sido uma tarefa essencial para os programadores desde os primórdios da internet. Hoje, há outras formas de acessar o conteúdo de uma página, como a API de programação JavaScript `fetch()`, porém ainda existem casos em que o download direto é necessário. A função `curl_easy_setopt()` possui diversas opções de configuração, como definir parâmetros de autenticação ou incluir cabeçalhos HTTP personalizados.
+Embora esteja fora de uso hoje em dia, o protocolo HTTP foi historicamente vital para transferir dados através da web, e é isso que metaforicamente 'baixa' uma página web.
 
-## Veja Também:
+Baixar e analisar páginas da web desta maneira é a base do "web scraping", uma técnica usada para obter informações de sites que não oferecem métodos de acesso mais convenientes.
 
-- [Documentação da biblioteca Curl](https://curl.se/libcurl/c/)
-- [Página oficial do Curl](https://curl.se/)
-- [Exemplos de uso do Curl](https://curl.se/examples.html)
+O comando `curl_easy_perform` é onde a mágica acontece. Ele desencadeia a cadeia de chamadas que fará a requisição HTTP e processará o download dos dados, chamando a função de retorno `write_data` para gravar os dados em um arquivo conforme eles chegam.
+
+## Ver Também:
+
+* Documentação oficial de libcurl: https://curl.haxx.se/libcurl/c/
+* Httpbin para testar requisições HTTP: https://httpbin.org
+* Web scraping com Beautiful Soup (em Python): https://www.crummy.com/software/BeautifulSoup/

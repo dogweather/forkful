@@ -1,6 +1,6 @@
 ---
 title:                "Extracting substrings"
-html_title:           "C recipe: Extracting substrings"
+html_title:           "Arduino recipe: Extracting substrings"
 simple_title:         "Extracting substrings"
 programming_language: "C"
 category:             "C"
@@ -12,47 +12,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Substring extraction is a useful concept in programming that involves selecting a portion of a larger string. This can come in handy when working with large text data or parsing through user input. Programmers often use this technique to manipulate or extract specific information from strings.
+Extracting substrings is a frequent operation in programming where a portion of a string is isolated for use. Why do it? Two reasons: (1) to manipulate parts of a string separately, and (2) to filter information from a larger string content.
 
 ## How to:
 
-To extract a substring in C, we first need to understand the syntax for strings and characters. Strings in C are denoted by an array of characters, enclosed within double quotes. Characters, on the other hand, are denoted by a single letter or a numerical ASCII value, enclosed within single quotes. Here's an example:
+In C, you often use the `strncpy()` function from the `<string.h>` library. Here's a simple example of how you'd extract a substring:
 
 ```C
-char str[] = "Hello, world!";
-char ch = 'o';
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char original_string[50] = "Hello, World!";
+    char target_string[10];
+
+    strncpy(target_string, original_string + 7, 5);
+    target_string[5] = '\0'; // Null-terminating the string
+
+    printf("%s\n", target_string);
+    return 0;
+}
 ```
 
-To extract a substring from the string `str` that contains the character `ch`, we can use the `strstr()` function from the `string.h` library.
-
-```C
-char *sub = strstr(str, ch);
-printf("Substring found: %s\n", sub);
-```
-
-This will return the substring `o, world!` and print it to the console. If the character `ch` is not found in the string `str`, the function will return `NULL`.
-
-We can also use the `strtok()` function to extract substrings based on a delimiter. Delimiters are characters that separate different parts of a string. Using the same example string `str`, we can extract the first word by specifying the space character as the delimiter.
-
-```C
-char *word = strtok(str, " ");
-printf("First word: %s\n", word);
-```
-
-This will print `Hello,` to the console. We can continue to use the `strtok()` function to extract the remaining words from the string.
+The expected output here would be `World`.
 
 ## Deep Dive
 
-Substring extraction has been a part of programming languages for a long time, with the first instance appearing in the famous string manipulation function `strchr()` in the C language. However, with the introduction of more modern languages, there are now alternative ways to extract substrings such as regular expressions or built-in functions like `slice` and `substring` in languages like JavaScript.
+Historically, C didn't have a native function for substring extraction, hence the use of `strncpy()`. Alternatives include pointer arithmetic and character copying using loops, but `strncpy()` remains a straightforward and common method.
 
-In the C language, there are several functions available for extracting substrings, including `strstr()`, `strtok()`, `strchr()`, and `strpbrk()`. These functions have different purposes and can be used depending on the desired outcome. For example, `strstr()` searches for a substring within a string, while `strtok()`tokenizes a string based on a delimiter.
+When using `strncpy()`, don't forget to null-terminate the target string manually. The function does **not** append a null character at the end of the copied substring, potentially leading to unexpected results by reading beyond the target string.
 
 ## See Also
 
-To learn more about string manipulation in C, you can check out the official documentation [here](https://www.gnu.org/software/libc/manual/html_node/String-Manipulation.html).
-
-Other related sources include:
-
-- [C String.h Reference](https://www.programiz.com/c-programming/library-function/string.h).
-- [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-- [C Programming – String Operations](https://www.tutorialspoint.com/cprogramming/c_string_handling.htm)
+For more details, check out [cstring reference](http://www.cplusplus.com/reference/cstring/) and [strncpy() on other languages](https://stackoverflow.com/q/4214314/4231057). Refer to [The GNU C Programming Tutorial](http://www.crasseux.com/books/ctutorial/) for both beginners and experienced programmers.

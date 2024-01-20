@@ -1,7 +1,7 @@
 ---
-title:                "एक http अनुरोध भेजना"
-html_title:           "Elm: एक http अनुरोध भेजना"
-simple_title:         "एक http अनुरोध भेजना"
+title:                "http अनुरोध भेजना"
+html_title:           "Elixir: http अनुरोध भेजना"
+simple_title:         "http अनुरोध भेजना"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,62 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-अभी तक, आपने शायद एल्म (Elm) से संबंधित कुछ बेसिक जानकारी ही प्राप्त की होगी। यह एक फ़ार्मल लैंग्वेज है जो वेब डेवलपमेंट के लिए उपयोग किया जाता है। इस लेख में, हम एल्म में HTTP रिक्वेस्ट (HTTP request) भेजने के बारे में बात करेंगे और उसे कैसे किया जाता है।
+## क्या और क्यों?
 
-## क्या और क्यों? 
-एक HTTP रिक्वेस्ट भेजना एक विशिष्ट प्रकार का डेटा भेजना होता है, जो आपके वेब एप्लिकेशन को सर्वर से डेटा लाने या भेजने की अनुमति देता है। यह डेटा हमेशा कुछ कीमतों या डेटा का एक ढांचा होता है जो आप अपने कोड में उपयोग कर सकते हैं। वेब डेवलपमेंट में, HTTP रिक्वेस्ट भेजना बहुत आम होता है और यह वेब एप्लिकेशन को डायनामिक बनाने में मदद करता है।
+HTTP अनुरोध भेजना यह सुनिश्चित करने का एक तरीका है कि वेब ब्राउज़र (या किसी अन्य क्लाइंट) सर्वर से डेटा भेज सके और प्राप्त कर सके। प्रोग्रामर इसे तब करते हैं जब उन्हें वेब क्लाइंट और सर्वर के बीच डेटा संवाद की आवश्यकता होती है।
 
-## कैसे करें? 
-एल्म में HTTP रिक्वेस्ट भेजने के लिए हम Http.send फ़ंक्शन का उपयोग कर सकते हैं। नीचे दिए गए कोड ब्लॉक देखें:
+## कैसे करें:
 
-```
-import Http
-import Json.Decode exposing (int, string, Decoder)
+निम्नलिखित कोड एक HTTP GET request उदाहरण है:
 
-type Msg = Success Int | Failure String
+```Elm
+import Http exposing (..)
+import Json.Decode as Decode
 
-reqMethod : Http.Method
-reqMethod =
-  Http.get
+getExample : String -> Cmd Msg
+getExample url =
+    Http.get
+        { url = url
+        , expect = Http.expectString GotResult
+        }
 
-reqUrl : String
-reqUrl =
-  "https://www.example.com"
+type Msg =
+    GotResult (Result Http.Error String)
 
-reqDecoder : Decoder Int
-reqDecoder =
-  int
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+    case msg of
+        GotResult result ->
+            case result of
+                Ok data ->
+                    ( { model | data = Just data }, Cmd.none )
 
-sendReq : Msg -> Cmd Msg
-sendReq msg =
-  Http.send (\response -> 
-    case response of
-      Http.BadUrl err ->
-        Failure err
-      Http.Timeout ->
-        Failure "Request timed out"
-      Http.NetworkError ->
-        Failure "Network error"
-      Http.BadStatus status ->
-        Failure (String.fromInt status)
-      Http.GoodStatus body ->
-        case Json.Decode.decodeString reqDecoder body of
-          Ok value ->
-            Success value
-          Err err ->
-            Failure err
-    ) (Http.request
-          { method = reqMethod
-          , headers = []
-          , url = reqUrl
-          , body = Http.emptyBody
-          , expect = Http.expectString reqDecoder })
+                Err _ ->
+                    ( model, getExample "https://jsonplaceholder.typicode.com/posts/1" )
 ```
 
-यहां, Http.send कोड ब्लॉक में दिए गए टाइप के साथ प्रोटोकॉल के अनुसार काम करता है। हमने Http.request को उसी प्रोटोकॉल के अनुसार सेटअप किया है जिसे विश्वास योग्य जवाब मिलता दिखाई देता है।
+सामान्य रूप से, आपका आउटपुट प्राप्त पदों की सूची होगा।
 
-## गहराई में जाएं 
-HTTP रिक्वेस्टें वेब डेवलपमेंट का एक अहम हिस्सा हैं और वे सर्वर से विश्वास योग्य जवाब लाने में मदद करते हैं। ऐतिहासिक पृष्ठ से, HTTP रिक्वेस्टें थर्ड पार्टी क्लाइंट साइड से सर्वर को डेटा भेजने का माध्यम बने हुए हैं। यदि आप Http.send के बजाय Native modules उपयोग करना चाहते हैं, तो Elm दुनिया में कुछ अन्य अल्टरनेटिव्स भी हैं। इसके अलावा, आप मल्टी-प्लेटफार्म एप्स बनाने के लिए Elm Native UI भी उपयोग कर सकते हैं।
+## गहराई में जानें: 
 
-## उन्नत जानकारी 
-यदि आप अभी भी HTTP रिक्वेस्ट को और गहर
+1) HTTP अनुरोध का विकास 1990 में हुआ था, जब वर्ल्ड वाइड वेब को जन्म दिया गया। यह सर्वर के साथ तुरंत संवाद करने की क्षमता प्रदान करता है।
+ 
+2) HTTP के विकल्प में वेबसॉकेट, एजैक्स, और साप्ट शामिल हैं, जो सभी संवेदनशील प्रवाहों के लिए कुछ कोई फायदा प्रदान करते हैं। 
+
+3) Elm में HTTP अनुरोध का निपटारा `Cmd` द्वारा किया जाता है, एक तरीका जो Elm की प्रतिक्रिया सिस्टम के साथ बहुत अच्छी तरह से मिलता है। 
+
+## अन्य स्रोत:
+
+1) [MDN वेब डॉक्स - HTTP परिचय](https://developer.mozilla.org/hi/docs/Web/HTTP/Overview)
+2) [Elm प्रलेखन - Http](https://package.elm-lang.org/packages/elm/http/latest/)
+3) [Elm Guide - Effects](https://guide.elm-lang.org/effects/)

@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen generointi"
-html_title:           "Kotlin: Satunnaislukujen generointi"
-simple_title:         "Satunnaislukujen generointi"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Numbers"
@@ -10,45 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Satunnaisluvun generoiminen on prosessi, jossa tietokone tuottaa numeroita sattumanvaraisesti. Tämä on hyödyllistä ohjelmoinnissa esimerkiksi arpajaisten tai salasanoiden luomiseen.
+## Mikä & Miksi?
 
-## Miten:
-Kotlinissa satunnaislukuja voidaan generoida käyttämällä ```Random``` -luokkaa. Ota ensin käyttöön tämä luokka ja sen funktiot ```nextInt()``` ja ```nextDouble()```, joilla voit generoida kokonaislukuja ja desimaalilukuja. Katso alla olevia koodiesimerkkejä ja tulostetuita tuloksia.
+Satunnaislukujen luonti on ohjelmointitoimintaa, jossa luodaan ennalta-arvaamattomia numeroita. Ohjelmoijat tekevät sitä, koska se on välttämätöntä sovelluksille, jotka tarvitsevat ainutlaatuisuutta tai joiden on simuloitava aitoa satunnaisuutta, kuten pelit ja tietoturvaratkaisut.
 
-Koodi esimerkki #1:
-```
-import java.util.Random
-fun main() {
-    val random = Random()
-    val randomNumber = random.nextInt()
-    println("Satunnainen kokonaisluku: $randomNumber")
-}
-```
-Tulostus:
-```
-Satunnainen kokonaisluku: -1525835769
+## Kuinka:
+
+Tässä on esimerkkikoodi satunnaisluvun luomiseksi Kotlinissa:
+
+```Kotlin
+   import kotlin.random.Random
+
+   fun main() {
+       val random = Random.nextInt(0, 100)
+       println("Satunnaisluku on $random!")
+   }
 ```
 
-Koodi esimerkki #2:
+Koodipalanen luo satunnaisen kokonaisluvun välillä 0-100 ja tulostaa sen. Esimerkkiajossa se saattaa tulostaa jotakin tämänkaltaista:
+
 ```
-import java.util.Random
-fun main() {
-    val random = Random()
-    val randomNumber = random.nextDouble()
-    println("Satunnainen desimaaliluku: $randomNumber")
-}
-```
-Tulostus: 
-```
-Satunnainen desimaaliluku: 0.2597412903505213
+Satunnaisluku on 42!
 ```
 
+## Syvempi Sukellus:
 
-## Syväsukellus:
-Satunnaislukujen generointi on ollut tärkeä osa ohjelmointia jo pitkään, sillä se on olennainen osa monia sovelluksia, kuten pelien ja satunnaislukugeneraattoreiden. Aiemmin monet ohjelmoijat käyttivät itse luotuja algoritmeja, mutta nykyään monilla ohjelmointikielillä on sisäänrakennettuja työkaluja, kuten Kotlinin ```Random``` -luokka.
+Satunnaislukujen luonnin historiallinen konteksti juontaa juurensa matematiikkaan ja luo perustan monille nykyaikaisille digitaaliteknologioille. Satunnaislukujen generaattoreita on monia erilaisia, joilla on erilaiset hyödyt ja haitat: esimerkiksi pseudosatunnaislukugeneraattorit (PRNG) tuottavat toistettavan sarjan, kun taas todelliset satunnaislukugeneraattorit (TRNG) tuottavat aidosti satunnaisia lukuja.
 
-## Katso myös:
-- [Kotin virallinen verkkosivusto](https://kotlinlang.org/)
-- [Kotin Github sivu](https://github.com/JetBrains/kotlin)
-- [Kotin dokumentaatio](https://kotlinlang.org/docs/home.html)
+Kotlinissa satunnaislukujen luominen tapahtuu `Random`-luokan kautta. Tämä luokka tarjoaa paljon erilaisia metodeja erityyppisten satunnaislukujen luomiseen, kuten `nextInt`, `nextDouble`, `nextBytes` jne.
+
+## Katso Myös:
+
+- Kotlinin virallinen dokumentaatio Random-luokasta: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/
+- Vakituisempi keskustelu satunnaislukugeneraattoreista ja niiden historiasta: https://encyclopediaofmath.org/wiki/Random_number_generator
+- Googlen artikkeli satunnaisluvun käyttämisestä peleissä: https://developers.google.com/games/services/common/concepts/realtimeMultiplayer

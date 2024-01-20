@@ -1,7 +1,7 @@
 ---
-title:                "Commencer un nouveau projet"
-html_title:           "Lua: Commencer un nouveau projet"
-simple_title:         "Commencer un nouveau projet"
+title:                "Démarrer un nouveau projet"
+html_title:           "Elm: Démarrer un nouveau projet"
+simple_title:         "Démarrer un nouveau projet"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Getting Started"
@@ -10,55 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi faire?
+## Quoi & Pourquoi ?
 
-Lancer un nouveau projet, c'est le fait de commencer à coder quelque chose de nouveau. Les programmeurs le font souvent pour réaliser une nouvelle idée ou pour améliorer une version existante d'un projet.
+Lancer un nouveau projet en programmation, c'est comme dessiner sur une toile vierge : vous partez de zéro pour concevoir de nouvelles idées. Les programmeurs le font pour résoudre des problèmes, créer de nouvelles applications ou même pour apprendre et se perfectionner.
 
-# Comment faire?
+## Comment faire :
 
-Voici comment vous pouvez démarrer un nouveau projet en Lua:
-
-```Lua
--- Créez une nouvelle variable
-local x = 5 
-
--- Affichez-la dans la console
-print(x) 
-
--- Résultat: 5
-```
-
-Vous pouvez également utiliser une boucle "for" pour afficher plusieurs valeurs:
+Commencer un projet en Lua est assez simple. Écrivez votre code dans un fichier '.lua' et exécutez-le en utilisant l'interpréteur Lua.
 
 ```Lua
--- Définissez une liste de nombres
-local numbers = {1, 2, 3, 4, 5} 
+-- Créez un fichier 'bonjour.lua'
+print("Salut, monde!")
 
--- Affichez chaque nombre dans la liste
-for i = 1, #numbers do
-    print(numbers[i]) 
-end 
-
--- Résultat:
--- 1
--- 2
--- 3
--- 4
--- 5
+-- Exécutez-le en utilisant la commande :
+-- lua bonjour.lua
 ```
+Si tout va bien, vous devriez voir `Salut, monde!` s'afficher.
 
-# Plongée en profondeur
+## Plongée profonde
 
-Lua a été créé en 1993 et est devenu populaire grâce à son utilisation dans des jeux vidéo comme World of Warcraft et Angry Birds. Il est connu pour sa facilité d'utilisation et sa flexibilité, et est souvent utilisé pour créer des scripts dans des jeux et des applications.
+Lua, un langage de programmation léger, a été conçu à l'origine en 1993 au Brésil. Il est idéal pour les projets naissants pour sa concision, sa flexibilité et sa capacité à s'intégrer facilement avec du code écrit dans d'autres langages.
 
-Il existe également d'autres langages de programmation que vous pouvez utiliser pour démarrer un nouveau projet, tels que Python et Java. Cependant, Lua est un excellent choix pour les débutants en raison de sa syntaxe simple et de sa facilité d'apprentissage.
+Il existe des alternatives à Lua, notamment Python et JavaScript. Ces langages sont également utilisés pour les scripts et l'automatisation, mais Lua se distingue par sa légèreté et sa portabilité.
 
-Pour commencer un nouveau projet en Lua, vous pouvez utiliser un éditeur de code tel que Visual Studio Code ou Sublime Text. Vous pouvez également installer Lua directement sur votre ordinateur en utilisant un logiciel tel que LuaRocks.
+Pour commencer un projet en Lua, vous n'avez pas besoin de beaucoup de préparation. Vous n'avez pas non plus besoin de compilateur spécifique car Lua est un langage interprété. C'est ce qui fait que Lua est si facile à utiliser pour lancer rapidement un nouveau projet.
 
-# Voir aussi
+## Voir aussi
 
-Pour en savoir plus sur Lua et comment démarrer un nouveau projet, vous pouvez consulter ces sources:
+Pour plus d'informations sur Lua, consultez ces ressources :
 
-- Le site officiel de Lua: https://www.lua.org/
-- Tutoriels de programmation Lua sur W3Schools: https://www.w3schools.comlua/
-- La communauté Lua sur Reddit: https://www.reddit.com/r/lua/
+- [Site officiel de Lua](http://www.lua.org)
+- [Manuel de référence de Lua](http://www.lua.org/manual/5.4)
+- [Cours en ligne Lua pour les débutants](https://www.learn-lua.org)
+- [Codecademy : Apprenez Lua](https://www.codecademy.com/learn/learn-lua)

@@ -1,7 +1,7 @@
 ---
-title:                "Pobieranie bieżącej daty"
-html_title:           "PHP: Pobieranie bieżącej daty"
-simple_title:         "Pobieranie bieżącej daty"
+title:                "Pobieranie aktualnej daty"
+html_title:           "Arduino: Pobieranie aktualnej daty"
+simple_title:         "Pobieranie aktualnej daty"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Dates and Times"
@@ -10,26 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego?
+## Co i Dlaczego?
 
-Pobieranie bieżącej daty jest częstym zadaniem dla programistów. Polega ono na uzyskaniu aktualnego czasu, daty i strefy czasowej. Jest to przydatne w wielu aplikacjach internetowych, takich jak rezerwacja biletów, harmonogramowanie spotkań czy wyświetlanie informacji o dostępności produktów.
+Pobieranie bieżącej daty oznacza uzyskiwanie informacji o aktualnym dniu, miesiącu i roku. Programiści robią to, aby monitorować logi, napisać funkcje zależne od czasu, lub do znaczników czasu.
 
 ## Jak to zrobić:
 
-```PHP
+Aby uzyskać bieżącą datę w PHP, korzystamy z funkcji `date()`. Oto kod:
+
+```PHP 
 <?php
-echo date("d/m/Y"); // Dziś jest 13/11/2020
-echo date("l"); // Dziś jest piątek
-echo date("H:i:s"); // Aktualna godzina: 14:30:00
+echo date('Y-m-d');
 ?>
 ```
 
-## Głębsze rozeznanie:
+Wynik dzisiejszego dnia wygląda tak:
 
-Pobieranie bieżącej daty jest możliwe dzięki wbudowanej funkcji `date()` w PHP. Pierwszy parametr tej funkcji określa format w jakim chcemy otrzymać datę, a drugi opcjonalny parametr wskazuje na konkretny czas, dla którego chcemy uzyskać datę. Istnieje również alternatywna funkcja `time()` pozwalająca na uzyskanie bieżącego czasu w formie "unix timestamp". W przypadku potrzeby bardziej zaawansowanego manipulowania datami, można skorzystać z klas `DateTime` lub `Carbon`.
+```PHP
+2022-01-31
+```
 
-## Zobacz także:
+Możesz również dostać czas razem z datą:
 
-- [Dokumentacja PHP o funkcji `date()`](https://www.php.net/manual/en/function.date.php)
-- [Informacje o klasie DateTime w PHP](https://www.php.net/manual/en/class.datetime.php)
-- [Strona z dokumentacją klasy Carbon](https://carbon.nesbot.com/docs/)
+```PHP
+<?php
+echo date('Y-m-d H:i:s');
+?>
+```
+
+Wynik wygląda tak:
+
+```PHP
+2022-01-31 14:52:06
+```
+
+## Pogłębiona analiza
+
+Historia funkcji `date()` w PHP sięga początków języka. Działa na podstawie tzw. timestamp, który jest przedstawiany jako liczba sekund, które upłynęły od "ery Unix" czyli 1 stycznia 1970 roku. Alternatywą dla funkcji date() jest funkcja `DateTime()`.
+
+Funkcja `DateTime()` jest bardziej złożona, ale pozwala na więcej operacji na dacie i czasie:
+
+```PHP
+<?php
+$now = new DateTime();
+echo $now->format('Y-m-d H:i:s');
+?>
+```
+
+Wynik jest taki sam jak w przypadku funkcji `date()`:
+
+```PHP
+2022-01-31 14:52:06
+```
+
+## Zobacz także
+
+- Dokumentacja PHP na temat funkcji [date()](http://php.net/manual/en/function.date.php) (EN).
+- Dokumentacja PHP na temat klasy [DateTime()](http://php.net/manual/en/class.datetime.php) (EN).
+- Artykuł na [PHPenthusiast](https://phpenthusiast.com/blog/working-with-date-and-time-in-php) na temat pracy z datami i czasem w PHP (EN).

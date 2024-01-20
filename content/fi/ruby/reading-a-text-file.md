@@ -1,6 +1,6 @@
 ---
 title:                "Tekstitiedoston lukeminen"
-html_title:           "Ruby: Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
 simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Lukeminen tekstitiedosto on tapsa ohjelmoijille lukea sisältöä tiedostosta. Tämä on hyödyllistä, kun halutaan käsitellä suuria määriä tietoa tai tallentaa tietoja pysyvästi. 
+## Mikä & Miksi?
 
-## Kuinka:
-Ruby tarjoaa helpon tavan lukea tekstitiedostoja. Käytä File.open -metodia ja anna sen saada haluttu tiedoston nimi parametrina. Tallenna avattu tiedosto muuttujaan ja käytä `each` -metodia lukeaksesi tiedoston sisällön rivi kerrallaan. Esimerkki:
+Tekstitiedoston lukeminen tarkoittaa tietojen saamista tiedostosta ohjelmointikielellä. Ohjelmoijat tekevät tämän tiedon käsittelyn ja analysoinnin mahdollistamiseksi.
+
+## Näin se tehdään:
+
+Seuraavassa on Ruby-koodiesimerkki tekstitiedoston lukemisesta.
 
 ```Ruby
-tiedosto = File.open("tekstitiedosto.txt")
+# Avaa tiedosto lukutilassa
+tiedosto = File.open("esimerkki.txt", "r")
 
-tiedosto.each { |rivi| puts rivi }
-
-#tulostaa tekstitiedoston sisällön rivi kerrallaan
-```
-Tiedoston lukemisen voit käyttää myös muuttujaa käyttäen ja hyödyntää `gets.chomp` -metodia lukemaan käyttäjän syötteen:
-
-``` Ruby
-tiedosto = File.open("tekstitiedosto.txt")
-
+# Lue tiedoston sisältö
 sisalto = tiedosto.read
 
-kayttajan_syote = gets.chomp
+# Tulosta tiedoston sisältö
+puts sisalto
 
-puts "Käyttäjän syöttämä tieto:"
-puts kayttajan_syote
-
-#tulostaa tekstitiedoston sisällön sekä käyttäjän syöttämän tiedon
+# Sulje tiedosto
+tiedosto.close
 ```
 
-## Syventävä sukellus:
-Tekstitiedostojen lukeminen on ollut tärkeä osa ohjelmointia jo vuosikymmenien ajan. Ennen tätä teknistä ratkaisua, ohjelmoijien täytyi käsitellä tietoa manuaalisesti, mikä oli hankalaa ja aikaa vievää. Nykyään on myös muita tapoja lukea tiedostoja, kuten käyttämällä erilaisia kirjastoja ja rajapintoja. Tiedostojen lukemisen perusteiden ymmärtäminen auttaa sinua myös ymmärtämään muita tapoja käsitellä ja tallentaa tietoja.
+Kun ajat tätä koodia, se tulostaa "esimerkki.txt"-tiedoston sisällön.
+
+## Syvempi sukellus:
+
+1. Historiallinen Konteksti: Ruby tarjoaa joukon tehokkaita rakenteita tiedostojen käsittelyyn. Sen syntaksi on suunniteltu olemaan yksinkertainen ja selkeä, mikä tekee tiedostojen lukemisesta suoraviivaista.
+2. Vaihtoehdot: Rubyssa voit myös käyttää `File.readlines` tai `File.foreach` metodeja tiedoston rivien lukemiseen.
+3. Toteutuksen Yksityiskohdat: Kun tiedosto avataan Rubyssa, se luo File-objektin. `read`-metodi palauttaa tiedoston sisällön merkkijonona. On tärkeää aina sulkea tiedosto `close`-metodilla ohjelman lopussa.
 
 ## Katso myös:
-- [Ruby File -dokumentaatio] (https://ruby-doc.org/core-2.7.2/File.html)
-- [Ruby Essentials] (https://www.rubyguides.com/ruby-tutorial/file/)
-- [Ruby Text File I/O -opas] (https://www.tutorialspoint.com/ruby/ruby_input_output.htm)
+
+1. Ruby-Dokumentaatio: [File Class](https://ruby-doc.org/core-2.7.0/File.html)
+2. Opiskelu Materiaali: [Learn Ruby - File I/O](https://www.learnrubyonline.org/en/File-I%2FO)
+3. Foorumi: [Stack Overflow - Ruby](https://stackoverflow.com/questions/tagged/ruby)

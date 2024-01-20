@@ -1,7 +1,7 @@
 ---
-title:                "Löschen von Zeichen mit übereinstimmendem Muster"
-html_title:           "Lua: Löschen von Zeichen mit übereinstimmendem Muster"
-simple_title:         "Löschen von Zeichen mit übereinstimmendem Muster"
+title:                "Zeichen löschen, die einem Muster entsprechen"
+html_title:           "C#: Zeichen löschen, die einem Muster entsprechen"
+simple_title:         "Zeichen löschen, die einem Muster entsprechen"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,32 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Löschen von Zeichen, die einem bestimmten Muster entsprechen, ist ein häufig verwendetes Verfahren in der Programmierung. Es ermöglicht es Programmierern, unerwünschte Zeichen aus Strings zu entfernen, um eine saubere und unverfälschte Datenverarbeitung zu gewährleisten.
+## Was & Warum?
+Das Löschen von Zeichen, die einem Muster entsprechen, ist das Entfernen bestimmter Zeichen aus einer Zeichenkette. Programmierer machen das, um unerwünschte Daten zu entfernen und Datensätze zu bereinigen.
 
-# Wie geht das?
-Es gibt verschiedene Möglichkeiten, um in Lua Zeichen zu löschen, die einem bestimmten Muster entsprechen. Eine Möglichkeit ist die Verwendung der Funktion `string.gsub()`. Diese ersetzt alle Zeichen, die dem angegebenen Muster entsprechen, durch eine leere Zeichenkette. Hier ist ein Beispiel:
-
-```Lua
-local text = "Hallo, Lua!"
-local filteredText = string.gsub(text, "a", "") -- ersetzt alle "a" durch ein leeres Zeichen
-print(filteredText) -- Gibt "Hllo, Lu!" aus
-```
-
-Es ist auch möglich, ein reguläres Ausdrucksmuster zu verwenden, um bestimmte Zeichenfolgen zu löschen. Hier ist ein Beispiel, das alle Zahlen aus einem String entfernt:
+## So Geht's:
+Schauen wir uns jetzt an, wie man in Lua Zeichen löscht, die einem Muster entsprechen:
 
 ```Lua
-local text = "1,2,3,4,5"
-local filteredText = string.gsub(text, "%d", "") -- entfernt alle Zahlen
-print(filteredText) -- Gibt ",", also alle Zahlen entfernt
+--Zeichenkette definieren
+local str = "Apfel, Banana, Kirsche, Dattel, Erdbeere"
+-- unerwünschte Zeichen entfernen
+local neuerStr = str:gsub(",", "")
+print(neuerStr)
 ```
+Die Ausgabe wäre:
 
-# Tiefere Einblicke
-Das Löschen von Zeichen, die einem Muster entsprechen, ist eine grundlegende Funktion in der Textverarbeitung und wird seit Jahren in verschiedenen Programmiersprachen verwendet. Neben Lua bieten auch andere Sprachen wie Python und Perl ähnliche Funktionen an. Eine alternative Methode in Lua ist die Verwendung der Funktion `string.match()`, die das gefundene Muster zurückgibt ohne es zu löschen.
+```Lua
+"Apfel Banana Kirsche Dattel Erdbeere"
+```
+Der Code verwendet die Lua `gsub`-Funktion, um alle Kommas in der Zeichenkette zu entfernen.
 
-Bei der Implementierung dieses Verfahrens ist es wichtig zu beachten, dass je nach Programmierumgebung die Schreibweise des Musters variieren kann, z.B. ob Groß- und Kleinschreibung beachtet werden müssen.
+## Vertiefung
+Historisch gesehen stammt das Musterlöschkonzept aus den Unix-basierten Systemen mit Programmen wie 'sed' und 'grep'. Alternativ können wir auch die `string.gsub` Funktion in Lua verwenden, um bestimmte Muster zu bearbeiten oder zu ersetzen. Während der Ausführung prüft `gsub`, ob das Muster in der Zeichenkette vorhanden ist, löscht es und gibt die bearbeitete Zeichenkette zurück.
 
-# Siehe auch
-- [Dokumentation zu string.gsub() in Lua](https://www.lua.org/manual/5.4/manual.html#pdf-string.gsub)
-- [Reguläre Ausdrücke in Python](https://docs.python.org/3/library/re.html)
-- [Reguläre Ausdrücke in Perl](https://perldoc.perl.org/perlre.html)
+## Siehe Auch
+Es gibt viel mehr zu entdecken, wenn es um Muster und Zeichenkettenmanipulation in Lua geht.
+
+1. Die komplette Dokumentation finden Sie [hier](http://www.lua.org/manual/5.4/manual.html#6.4.1)
+
+2. Weitere Tutorials und Beispiele sind [hier](https://www.tutorialspoint.com/lua/lua_strings.htm) verfügbar.
+
+3. Einige spezifische Zeichenkettenfunktionen, die in Lua verwendet werden, können Sie [hier](https://www.lua.org/pil/20.html) nachsehen.

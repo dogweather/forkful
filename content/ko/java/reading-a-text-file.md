@@ -1,6 +1,6 @@
 ---
 title:                "텍스트 파일 읽기"
-html_title:           "Java: 텍스트 파일 읽기"
+html_title:           "Bash: 텍스트 파일 읽기"
 simple_title:         "텍스트 파일 읽기"
 programming_language: "Java"
 category:             "Java"
@@ -10,35 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?: 
-텍스트 파일을 읽는 것은 프로그래머에게 있어서 매우 중요한 작업입니다. 텍스트 파일은 데이터를 저장하고 전송하기에 매우 유용한 방식입니다. 따라서 텍스트 파일을 읽고 처리하는 프로그래밍 기술을 배우는 것은 필수적입니다.
+## 무엇 & 왜?
 
-## 하는 법:
-```java
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+텍스트 파일을 읽는 것은 컴퓨터가 파일의 데이터를 직렬화된 형태로 인지하게 하는 과정입니다. 이는 개발자가 사용자 데이터를 저장하고 검색하거나, 외부 시스템과 상호작용하는 데 필수적인 기능입니다.
 
-public class ReadTextFile {
+## 방법:
 
-	public static void main(String[] args) throws IOException {
-		String fileName = "textfile.txt"; // 읽을 파일의 경로와 이름
-		FileReader fileReader = new FileReader(fileName); // FileReader 객체 생성
-		BufferedReader bufferedReader = new BufferedReader(fileReader); // BufferedReader 객체 생성
-		String line = null; // 한 줄씩 읽어올 변수
-		while ((line = bufferedReader.readLine()) != null) { // 파일의 끝까지 한 줄씩 읽음
-			System.out.println(line); // 한 줄씩 출력
-		}
-		bufferedReader.close(); // BufferedReader 닫기
-	}
+자바를 사용하여 텍스트 파일을 읽는 기본적인 방법은 `java.nio.file` 패키지의 `Files` 클래스와 `Paths` 클래스를 활용하는 것입니다:
+
+```Java
+import java.nio.file.*;
+
+public class Main {
+  public static void main(String[] args) {
+    String path = "textfile.txt";
+    try {
+      String data = new String(Files.readAllBytes(Paths.get(path)));
+      System.out.println(data);
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+  }
 }
 ```
 
-위의 코드는 주어진 파일을 한 줄씩 읽어서 화면에 출력하는 간단한 예제입니다. 이 코드를 실행하면 파일의 내용이 출력됩니다.
+이 코드는 `textfile.txt`라는 파일의 내용을 읽고 출력합니다.
 
-## 깊이 파헤치기:
-텍스트 파일을 읽는 기술은 예전부터 사용되고 있습니다. 초기에는 바이너리 파일로 데이터를 저장하고 전송하는 방식이 많이 사용되었지만, 텍스트 파일의 단순함과 유용성으로 인해 현재 많이 사용됩니다. 다른 방법으로는 스트림을 사용하여 텍스트 파일을 읽을 수 있습니다. 하지만 BufferedReader와 FileReader를 사용하는 방법이 가장 일반적입니다. 
+## 깊이 조사: 
 
-## 더 보기:
-- [Java 파일 읽기 예제](https://www.codejava.net/java-se/file-io/read-text-file-in-java)
-- [Java 스트림 사용하기](https://docs.oracle.com/javase/tutorial/essential/io/streams.html)
+텍스트 파일 읽기는 컴퓨터 분야의 선구자들이 개발한 가장 기본적인 I/O 작업 중 하나입니다. 오늘날에는 다양한 방법으로 텍스트 파일을 읽을 수 있습니다: 스트림 API, 스캐너 등 다양한 자바 클래스와 라이브러리가 있습니다. 무엇을 선택할지는 요구사항과 선호에 따라 달라집니다.
+
+`Files` 클래스를 통해 파일을 읽는 것은 한 번에 전체 파일을 메모리에 로드합니다. 그래서 큰 파일을 처리할 때는 메모리 문제가 발생할 수 있습니다. 이런 경우, `java.util.Scanner` 나 `java.io.BufferedReader` 등을 사용하여 파일을 줄 단위로 읽는 것이 더 적합합니다.
+
+## 참고 자료:
+
+- Java의 I/O API에 관련하여 Oracle 공식 문서: https://docs.oracle.com/javase/tutorial/essential/io/index.html
+- StackOverflow에서 'Java로 텍스트 파일 읽기'에 관한 질문과 답변: https://stackoverflow.com/questions/4716503/reading-a-plain-text-file-in-java

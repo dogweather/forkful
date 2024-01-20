@@ -1,7 +1,7 @@
 ---
-title:                "Analyse de code html"
-html_title:           "PowerShell: Analyse de code html"
-simple_title:         "Analyse de code html"
+title:                "Analyse syntaxique de HTML"
+html_title:           "Bash: Analyse syntaxique de HTML"
+simple_title:         "Analyse syntaxique de HTML"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,38 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
-Le HTML, abréviation pour "HyperText Markup Language", est un langage utilisé pour créer et structurer des pages web. Le "parsing" HTML, c'est lorsque l'on analyse et manipule le code HTML d'une page web pour extraire des informations spécifiques. Les programmeurs le font souvent pour automatiser des tâches ou extraire des données d'un site web.
+## Quoi & Pourquoi?
+La syntaxe HTML est convertie ('parsée') en structures de données par un analyseur HTML. Les programmeurs le font pour extraire des informations spécifiques, manipuler des pages Web ou même construire des crawlers Web.
 
-## Comment faire:
-Voici un exemple simple de "parsing" HTML avec PowerShell:
+## Mode d'emploi:
+Pour parser du HTML dans PowerShell, on utilise un objet HTMLDocument avec la méthode 'InvokeScript'. Regardez cet exemple :
 
 ```PowerShell
-# On utilise la cmdlet Invoke-WebRequest pour récupérer le code HTML d'une page web
-$page = Invoke-WebRequest -Uri "https://www.example.com"
+# Ajouter un type pour interagir avec Internet Explorer 
+Add-Type -AssemblyName Microsoft.mshtml
+# Charger le HTML dans un objet HTMLDocument
+$html = New-Object -ComObject "HTMLFile"
+$html.IHTMLDocument2_write($(Invoke-WebRequest -uri “https://votre-site-web.com”))
 
-# On utilise ensuite la propriété "ParsedHtml" pour accéder à l'objet HTML de la page
-# et la méthode "GetElementsByTagName" pour sélectionner tous les éléments d'une certaine balise
-$paragraphes = $page.ParsedHtml.GetElementsByTagName("p")
+# Extraire un élément par son ID
+$element = $html.getElementById('votre_id')
 
-# On peut ensuite parcourir les éléments et afficher leur contenu
-foreach ($p in $paragraphes) {
-    Write-Host $p.InnerText
-}
+# Afficher le texte de l'élément
+$element.innerText
 ```
+Ce code va télécharger le HTML, le parser, trouver un élément par son identifiant et imprimera son texte en sortie.
 
-Output:
-```
-Ceci est le contenu d'un paragraphe.
-Ceci est un autre paragraphe.
-```
+## Plongée en profondeur
+Historiquement, HTML était moins structuré et plus souple que le XML, causant des problèmes pour parser certains documents. Avec HTML5, le HTML a adopté une syntaxe plus stricte facilitant le parsing.
 
-## Profondeur de plongée:
-L'analyse HTML existe depuis la création du web dans les années 90. Avant PowerShell, les programmeurs devaient utiliser des langages tels que Perl ou Python pour effectuer cette tâche. Aujourd'hui, il existe également des modules dédiés au "parsing" HTML tels que "HtmlAgilityPack" pour .NET. Dans certains cas, il peut être plus approprié d'utiliser ces alternatives en fonction des besoins spécifiques du projet.
+Il y a plusieurs alternatives à PowerShell pour parser HTML, notamment BeautifulSoup pour Python ou Cheerio pour Node.js. Ces outils offrent plus de fonctionnalités mais nécessitent l'installation d'un environnement de programmation distinct.
 
-Sur le plan technique, lorsqu'un programme "parse" le HTML d'une page web, il crée un "Document Object Model" (DOM) de cette page. Cela permet de naviguer et d'extraire des données précises en utilisant des propriétés et méthodes du DOM.
+La méthode InvokeScript exécute un bloc de script, le rendant idéal pour interagir avec une page web en utilisant son DOM.
 
-## Voir aussi:
-- [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-- [HtmlAgilityPack](https://html-agility-pack.net/)
-- [Document Object Model](https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction)
+## À voir également
+- [Window.IHTMLDocument2_write method - Microsoft Docs](https://docs.microsoft.com/en-us/previous-versions/windows/desktop/ms633519(v=vs.85))
+- [BeautifulSoup Python Library](https://www.crummy.com/software/BeautifulSoup/)
+- [Cheerio Node.js Library](https://cheerio.js.org)

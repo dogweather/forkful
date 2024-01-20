@@ -1,7 +1,7 @@
 ---
-title:                "Le téléchargement d'une page web"
-html_title:           "Elm: Le téléchargement d'une page web"
-simple_title:         "Le téléchargement d'une page web"
+title:                "Télécharger une page web"
+html_title:           "Bash: Télécharger une page web"
+simple_title:         "Télécharger une page web"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -10,27 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que le téléchargement de page web et pourquoi les programmeurs le font-ils?
+## Qu'est-ce que c'est & pourquoi ?
+Le téléchargement d'une page Web fait référence au processus de copie des données d'un serveur Web vers un ordinateur local. Les programmeurs le font pour accéder aux données pour diverses raisons, y compris l'analyse, le développement Web, le test, etc.
 
-Le téléchargement de pages web est le processus de récupération du code HTML, CSS et JavaScript d'une page web pour l'afficher dans un navigateur. Les programmeurs le font pour créer des sites web et des applications web.
+## Comment faire :
+Utilisons le package `elm/http` pour télécharger une page Web. Supposez que nous voulons télécharger la page d'accueil de Google.
+```Elm
+import Http
+import Json.Decode as Decode
 
-## Comment faire:
-
+main =
+  Http.get
+    { url = "http://www.google.com"
+    , expect = Http.expectStringResponse (\_ -> Decode.succeed)
+    }
+    |> Http.send HandleResponse
 ```
-Elm.Http.get "https://www.example.com" 
-        |> Task.toResult 
-        |> Process.await 
-        |> Result.map .response.body 
-        |> Result.withDefault "Failed to retrieve webpage"
+Une fois que vous avez reçu la réponse, vous pouvez la gérer comme ceci :
+```Elm
+type Msg
+  = HandleResponse (Result Http.Error String)
+
+update : Msg -> Model -> ( Model, Cmd Msg )
+update msg model =
+  case msg of
+    HandleResponse (Ok body) ->
+      ( { model | content = body }, Cmd.none )
+
+    HandleResponse (Err _) ->
+      ( model, Cmd.none )
 ```
+Ici, `HandleResponse` est un message qui gère la réponse du `Http.get`.
 
-Cet exemple de code utilise le module «Http» d'Elm pour envoyer une requête à l'URL donnée et récupérer le corps de la réponse. Le résultat est ensuite transformé en chaîne de caractères ou en message indiquant une erreur si la requête a échoué.
+## Plongeons plus profondément :
+Historiquement, le téléchargement de pages Web était un concept directement lié aux navigateurs. Cependant, avec l'avènement des outils de développement modernes et la popularité croissante des applications single-page, il est devenu une compétence essentielle pour les développeurs.
+Quant aux alternatives, beaucoup de gens utilisent également `fetch` ou `axios` en JavaScript pour atteindre le même objectif. Cependant, Elm a sa propre bibliothèque HTTP qui est bien intégrée avec son architecture et favorise l'expérience utilisateur globale en traitant automatiquement les erreurs et en garantissant la fiabilité du code.
+Pour plus de détails d'implémentation, veuillez consulter la documentation officielle d'Elm [ici](https://package.elm-lang.org/packages/elm/http/latest/).
 
-## Plongez plus en profondeur:
-
-Le téléchargement de pages web est un élément clé de la création de sites web et d'applications web. Les programmeurs peuvent également utiliser d'autres langages et outils pour le faire, tels que JavaScript et jQuery. En utilisant Elm, un langage de programmation fonctionnel, les programmeurs peuvent bénéficier d'une syntaxe plus propre et plus sûre pour effectuer cette tâche.
-
-## Voir aussi:
-
-- Documentation Elm sur le téléchargement de pages web: https://package.elm-lang.org/packages/elm/http/latest/Http#request
-- Article sur l'importance du téléchargement de pages web dans la création de sites web: https://www.lifewire.com/what-is-web-scraping-3468358
+## Voir aussi :
+1. [Elm Http - Github](https://github.com/elm/http)
+2. [Fetching data in Elm](https://korban.net/posts/elm/2018-07-09-basic-http-requests-in-elm/) 
+3. [Package manager for Elm](https://package.elm-lang.org/packages/elm/http/latest/Http)

@@ -1,6 +1,6 @@
 ---
 title:                "HTTPリクエストの送信"
-html_title:           "Go: HTTPリクエストの送信"
+html_title:           "Bash: HTTPリクエストの送信"
 simple_title:         "HTTPリクエストの送信"
 programming_language: "Go"
 category:             "Go"
@@ -11,53 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 何となぜ？
-HTTPリクエストを送るとは何かと、プログラマーがそれを行う理由を説明する二、三の文。
 
-HTTPリクエストを送るとは、インターネット上のサーバーに対しデータを要求することです。プログラマーはこの方法を使ってデータを取得したり、サーバーにコマンドを送ったりすることができます。
+HTTPリクエストを送信するとは、あなたのアプリケーションがウェブサーバーと通信できるように指示を送ることを意味します。これはウェブサイトの情報を取得したり、APIを使用してデータを取得したり更新したりする際にプログラマが実行します。
 
-## 方法：
-下記のようなコードブロック内のコーディング例とサンプル出力。
+## どうやって：
+
+以下に、GoでHTTPリクエストを送信するための簡単な方法を示します。次のコードスニペットをご覧ください：
 
 ```Go
-// インポートは必須
+package main
+
 import (
-    "fmt"
-    "net/http"
+  "io/ioutil"
+  "log"
+  "net/http"
 )
 
-// リクエストを作成する
-req, err := http.NewRequest("GET", "https://example.com", nil)
+func main() {
+  res, err := http.Get("http://example.com")
+  if err != nil {
+    log.Fatal(err)
+  }
+  defer res.Body.Close()
 
-// リクエストを送信し、レスポンスを取得する
-resp, err := http.DefaultClient.Do(req)
-
-// エラー処理
-if err != nil {
-    fmt.Println(err)
+  body, err := ioutil.ReadAll(res.Body)
+  if err != nil {
+    log.Fatal(err)
+  }
+  log.Println(string(body))
 }
-
-// レスポンスのステータスコードを表示
-fmt.Println(resp.Status)
 ```
 
-### 出力：
-```200 OK```
+このコードはhttp.Get関数を使ってhttp://example.comからHTTPリクエストを発行します。もし何か問題があれば、エラーがログに報告されます。
 
-## 詳しく見る：
-(1)歴史的文脈、(2)代替手段、そして(3)HTTPリクエストの実装についての詳しい情報。
+## ディープダイブ：
 
-### 歴史的文脈：
-HTTPリクエストは1991年にティム・バーナーズ＝リーによって開発されました。当初はテキストベースのプロトコルでしたが、現在では画像やビデオなどのメディアでも使用されています。HTTP/2やHTTPSのような新しいバージョンやセキュリティプロトコルも登場しました。
+HTTPリクエストの送信はWeb開発の基礎であり、Go言語がこのタスクを容易に行えるように構築されています。Goの `net/http` パッケージは、HTTPクライアントとサーバーの機能を提供しています。
 
-### 代替手段：
-HTTPリクエストの代替手段としては、WebSocketやgRPCなどのプロトコルが存在します。それぞれ異なる用途や利点があり、開発者は必要に応じて適切なプロトコルを選択することができます。
+他の手法としては、`http.NewRequest` 関数を使ってリクエストを手動で作成し、`http.Client.Do` メソッドで送信することも可能です。
 
-### HTTPリクエストの実装：
-Go言語では、```net/http```パッケージを使用してHTTPリクエストを実装することができます。このパッケージには様々なメソッドや関数が用意されており、簡単にリクエストを作成、送信、取得することができます。
+```Go
+req, err := http.NewRequest("GET", "http://example.com", nil)
+client := &http.Client{}
+res, err := client.Do(req)
+```
 
-## 関連情報：
-関連する情報源へのリンク。
+## 関連項目：
 
-- [Go言語公式ドキュメント](https://golang.org/pkg/net/http/)
-- [HTTPリクエストの仕組みを理解する](https://developer.mozilla.org/ja/docs/Web/HTTP/Overview)
-- [WebSocketとは？](https://developer.mozilla.org/ja/docs/Web/API/WebSocket/Introduction)
+- [Goの公式ドキュメンテーションのnet/httpパッケージ](https://golang.org/pkg/net/http/)
+- [Go by Example: HTTPクライアント](https://gobyexample.com/http-clients)
+- [Go言語でRESTful APIを呼び出す](http://mattn.kaoriya.net/software/lang/go/20140313143654.htm)

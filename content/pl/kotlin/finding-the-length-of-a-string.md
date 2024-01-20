@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Kotlin: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,22 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest i dlaczego?
-Znalezienie długości ciągu znaków jest jedną z podstawowych operacji, które programiści muszą wykonywać podczas pisania kodu. Polega ona na określeniu ilości znaków w danym ciągu, czyli na policzeniu jego długości. W większości języków programowania istnieje wbudowana funkcja do wykonywania tej czynności.
+## Co i dlaczego?
+Znalezienie długości ciągu znaków polega na obliczeniu liczby znaków w danym ciągu. Programiści robią to z różnych powodów, na przykład do walidacji danych wejściowych lub manipulowania ciągami znaków.
 
 ## Jak to zrobić:
-W języku Kotlin mamy do wyboru dwa sposoby na znalezienie długości ciągu:
+Oto przykładowy kod, który pokazuje, jak możesz znaleźć długość ciągu znaków w Kotlinie:
 ```Kotlin
-val str = "Hello World"
-println(str.length) // Output: 11
-// lub
-println("Hello World".length) // Output: 11
+fun main(args: Array<String>) {
+    val str = "Hello, Kotlin!"
+    println("Długość ciągu to: ${str.length}")
+}
 ```
-W pierwszym przykładzie tworzymy zmienną zawierającą nasz ciąg znaków, a następnie wywołujemy na niej funkcję `length`. W drugim przykładzie korzystamy z wbudowanej funkcji `length` bezpośrednio na ciągu znaków.
+Wynik tego programu to:
+```
+Długość ciągu to: 14
+```
 
-## Wgląd w zagadnienie:
-Funkcja `length` jest dostępna w większości języków programowania, nie tylko w Kotlinie. Jej implementacja może się różnić w zależności od języka, ale zazwyczaj polega na iterowaniu przez poszczególne znaki w ciągu i zliczaniu ich liczby. Alternatywnym sposobem na znalezienie długości ciągu może być użycie wbudowanej funkcji `size`, którą również można znaleźć w Kotlinie.
+## Głębsze spojrzenie:
+Znalezienie długości ciągu znaków jest fundamentalną operacją w programowaniu. Zostało to wprowadzone wraz z pierwszymi językami programowania i jest obecne w większości współczesnych języków, w tym w Kotlinie.
+
+Alternatywą dla użycia funkcji .length do znalezienia długości ciągu znaków może być ręczne zliczanie znaków, choć jest to zazwyczaj mniej efektywne i bardziej skomplikowane.
+
+Szczegół realizacji: W Kotlinie, właściwość .length dla ciągu znaków zwraca liczbę znaków Unicode 16-bit w ciągu, a nie rzeczywistą liczbę znaków, co jest ważne do zapamiętania, gdy pracujemy z ciągami zawierającymi znaki poza zestawem ASCII.
 
 ## Zobacz też:
-- [Dokumentacja języka Kotlin](https://kotlinlang.org/docs/reference/functions.html#length)
-- [Porównanie funkcji `length` i `size`](https://kotlinlang.org/docs/reference/whatsnew10.html#string-length-size-etc)
+Możesz zapoznać się z większą ilością przykładów i szczegółów na temat znalezienia długości ciągu znaków w Kotlinie, odwiedzając te strony:
+- [Dokumentacja Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/length.html)
+- [Przewodnik Programowania Kotlin](https://www.programiz.com/kotlin-programming/string)
+- [Kotlin Tutorial - String Length](https://www.tutorialkart.com/kotlin/string-length-in-kotlin/)

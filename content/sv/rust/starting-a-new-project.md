@@ -1,6 +1,6 @@
 ---
 title:                "Att starta ett nytt projekt"
-html_title:           "Rust: Att starta ett nytt projekt"
+html_title:           "Arduino: Att starta ett nytt projekt"
 simple_title:         "Att starta ett nytt projekt"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,27 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Välkommen till att starta ett nytt projekt i Rust!
+## Vad och varför?
+Att starta ett nytt projekt innebär att skapa en ny, fräsch kodbas utan tidigare arbete. Programmerare gör detta för att börja från grunden och utforma system enligt unika specifikationer.
 
-## Vad & Varför?
-Att starta ett nytt projekt i Rust är att skapa en helt ny kodbas för att lösa ett problem eller bygga en produkt. Programmers start a new project for many reasons, såsom att utveckla en ny funktion, förbättra en befintlig, eller lära sig ett nytt språk.
+## Hur till:
+Här är steg för att starta ett nytt Rust-projekt.
+```Rust 
+// Ställ in Cargo (Rusts pakethanterare)
+$ cargo new mitt_projekt
 
-## Så här gör du:
+// Gå till projektet
+$ cd mitt_projekt
 
-För att starta ett nytt projekt i Rust behöver du först installera Rust-compiler och Rust Package Manager (Cargo) på din dator. Du kan hitta en detaljerad guide på hur man installerar Rust på deras officiella hemsida: https://www.rust-lang.org/tools/install.
+// Visa projektstrukturen
+$ tree .
 
-När du har installerat Rust, kan du skapa ett nytt projekt genom att navigera till den mapp där du vill spara projektet och köra kommandot "cargo new <projektnamn>". Detta kommer att skapa en grundläggande struktur för ditt projekt, inklusive en fil som heter "main.rs" som innehåller ditt första rustkod.
+./
+├── Cargo.toml
+└── src
+    └── main.rs
 
-För att köra ditt projekt, navigera till projektets mapp och kör kommandot "cargo run". Detta kommer att kompilera och köra ditt projekt, och du bör se en enkel "Hello, world!"-meddelande i terminalen.
+1 directory, 2 files
+```
+`Cargo.toml` håller metadata för ditt projekt och dina beroenden, medan `src/main.rs` är var ditt program börjar.
 
-## Djupdykning:
-Rust skapades av Mozilla Research och släpptes för första gången år 2010. Det är ett system programmeringsspråk som fokuserar på samtidighet, hastighet och säkerhet. Alternativ till Rust inkluderar C och C++, men Rusts unika funktioner som egendomsbaserad modellering och kompilering till nära-metallips gör det till ett populärt val för utveckling av högpresterande och säkrare mjukvaruprojekt.
+Kör projektet med:
+```Rust
+// Kör programmet
+$ cargo run
 
-En viktig aspekt av att starta ett nytt projekt i Rust är att förstå äganderätt och lån. I Rust får variabler och datastrukturer endast ändras på ett ställe åt gången, vilket minskar risken för buggar och ökar prestandan. Detta åstadkoms genom konceptet av äganderätt, där variabler kan ägas eller lånas ut till andra delar av koden.
+Compiling my_project v0.1.0 (/path/to/my_project)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.65s
+    Running `target/debug/my_project`
+Hello, world!
+```
+## Djupgående
+Att starta ett nytt projekt i Rust innebär att använda Cargo, Rusts officiella pakethanterare. Detta började med Cargo's införande 2014 som ett sätt att förenkla byggning och delning av Rust-paket.
 
-Om du vill lära dig mer om att starta ett nytt projekt i Rust, kan du bläddra genom Rusts dokumentation på deras officiella hemsida: https://www.rust-lang.org/learn.
+Alternativen till att starta ett nytt projekt med `cargo new` inkluderar att manuellt skapa din `main.rs` och `Cargo.toml` filer, men detta är klart mer tidskrävande och krångligt.
 
-## Se även:
-- Rusts officiella hemsida: https://www.rust-lang.org/
-- En introduktionsguide till Rust: https://doc.rust-lang.org/book/
-- Rusts dokumentation: https://doc.rust-lang.org/
+När du kör `cargo new`, skapar Cargo en minimal "Hello, world!" applikation, tillsammans med `Cargo.toml` filen. Den placerar sedan applikationen i en ny katalog med namnet du angav.
+
+## Se också
+1. [Cargo's Officiella Dokumentation](https://doc.rust-lang.org/cargo/)
+2. [Rust Programmeringsspråks Officiella Webbplats](https://www.rust-lang.org/)
+3. [Rust's Färska ”Getting Started Guide"](https://www.rust-lang.org/learn/get-started)

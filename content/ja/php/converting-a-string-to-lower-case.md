@@ -1,7 +1,7 @@
 ---
-title:                "「文字列を小文字に変換する」"
-html_title:           "PHP: 「文字列を小文字に変換する」"
-simple_title:         "「文字列を小文字に変換する」"
+title:                "文字列を小文字に変換する"
+html_title:           "Arduino: 文字列を小文字に変換する"
+simple_title:         "文字列を小文字に変換する"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,43 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ?
+# PHP（現行バージョン）で文字列を小文字に変換する方法
 
-文字列を小文字に変換することは、プログラマーがしばしば行う操作です。この操作を行う理由は、大文字や小文字の違いを無視して文字列を比較するためです。例えば、ユーザーが入力したパスワードを正しく認証するためには、入力された文字列を同じ形式に変換する必要があります。そのため、文字列を小文字に変換することは、プログラマーにとって非常に便利な操作といえます。
+## 何 & なぜ？
+文字列を小文字に変換するとは、すべての大文字を対応する小文字に変換することです。プログラマは、テキスト比較や検索を大文字と小文字を区別しないために行います。
 
-## 方法:
-
-`PHP strtolower()` 関数を使用することで、文字列を簡単に小文字に変換することができます。以下の例をご覧ください。
-
+## どうやって：
+PHPで文字列をすべて小文字に変換する最も直接的な方法は、ビルトインの```strtolower```関数を使うことです。
 ```PHP
-$input = "Hello, WORLD!";
-$output = strtolower($input);
-echo $output;
+$text = "Hello World!";
+$lower_case_text = strtolower($text);
+echo $lower_case_text;
 ```
-**出力:**
+これにより以下の出力が得られます：
 ```
-hello, world!
-```
-また、`mb_strtolower()` 関数を使用することで、マルチバイト文字にも対応した小文字変換が可能です。以下の例をご覧ください。
-
-```PHP
-$input = "こんにちは、WORLD!";
-$output = mb_strtolower($input);
-echo $output;
-```
-**出力:**
-```
-こんにちは、world!
+hello world!
 ```
 
-## 深堀り:
+## 深堀り：
+#### ■ 歴史的背景
+PHPで最初に文字列を小文字に変換する能力が導入されたのは、最初の公開版（PHP/FI 2.0）の```strtolower```関数からです。
 
-文字列を小文字に変換する操作は、古くからプログラミング言語に存在する基本的な記述です。また、多くの言語では `strtolower()` などの組み込み関数が提供されているため、手軽に利用することができます。
+#### ■ 代替案
+```mb_strtolower```関数はマルチバイト文字列（例：日本語や他の多くの非ラテン文字）を小文字に変換するために使用することができます。
 
-しかしながら、一部の言語では文字コードやロケールの違いによって、小文字変換の動作が異なる場合があります。そのため、異なる環境で動作するアプリケーションを開発する場合は、この点に注意する必要があります。
+#### ■ 実装詳細
+```strtolower```関数は内部的にCの```tolower```関数を使って実装されています。これはASCII文字の小文字変換のみをサポートしています。
 
-## 関連リンク:
+## 参考情報：
+より深く理解するためには以下のリンクを参照してください。
 
-- [PHPの strtolower() 関数](https://www.php.net/manual/ja/function.strtolower.php)
-- [PHPの mb_strtolower() 関数](https://www.php.net/manual/ja/function.mb-strtolower.php)
-- [パスワードの比較における大文字小文字の扱いについて](https://www.kaoriya.net/blog/2011/01/27/)
+
+1. PHP公式マニュアル：[strtolower](https://www.php.net/manual/ja/function.strtolower.php)
+2. PHP公式マニュアル：[mb_strtolower](https://www.php.net/manual/ja/function.mb-strtolower.php)

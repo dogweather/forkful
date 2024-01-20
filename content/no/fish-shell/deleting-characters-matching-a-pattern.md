@@ -1,7 +1,7 @@
 ---
-title:                "Slette tegn som matcher et mønster"
-html_title:           "Fish Shell: Slette tegn som matcher et mønster"
-simple_title:         "Slette tegn som matcher et mønster"
+title:                "Slette tegn som samsvarer med et mønster"
+html_title:           "Arduino: Slette tegn som samsvarer med et mønster"
+simple_title:         "Slette tegn som samsvarer med et mønster"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,23 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva og hvorfor?
-Sletting av tegn som matcher et mønster i koden din er en vanlig oppgave for programmerere. Dette betyr rett og slett å fjerne visse tegn fra en tekststreng basert på et bestemt mønster. Dette kan være nyttig for å rydde opp i koden din eller for å endre visse deler av tekststrengen.
+## Hva & hvorfor?
 
-# Hvordan:
-```Fish Shell``` har et praktisk innebygd verktøy for å slette tegn som matcher et mønster. Dette verktøyet heter ```string replace``` og tar to argumenter: mønsteret som skal matches og teksten som det skal søkes i. La oss se på et eksempel:
+Sletting av karakterer som samsvarer med et mønster (pattern matching) er en metode for å filtrere ut spesifikke deler fra en tekst. Det brukes ofte i programmering for å manipulere data, for eksempel for å manipulere tekststrenger, rense data eller hente ut informasjon.
 
+## Hvordan gjøre det:
+
+For å slette en karakter fra en streng med custonm ops match, kan du bruke `string`-kommandoen i Fish Shell som følger:
+
+```Fish Shell
+set tekst "Hello, world!"
+string replace -r -a ',' '' $tekst
 ```
-string replace 'hello' 'Hi' 'Hello there!'
+
+Utførelsen av koden gir oss følgende resultat:
+
+```Fish Shell
+Hello world!
 ```
 
-Dette vil resultere i ```Hi there!``` som output, da verktøyet har funnet og erstattet alle forekomster av ```hello``` med ```Hi```. Du kan også bruke regulære uttrykk som mønster for mer avanserte søk.
+## Dyp Dykking
 
-# Dypdykk:
-Sletting av tegn som matcher et mønster har lenge vært en utfordring for programmerere. Tidligere måtte man bruke kompliserte regex-uttrykk eller eksterne verktøy for å oppnå dette, men med ```Fish Shell``` sitt ```string replace``` er det enklere enn noensinne.
+Funksjonaliteten for pattern matching har vært en del av Shell-skript og Unix-verktøy i flere tiår. I Fish, er `string`-kommandoen brukt i stedet for det eldre `sed` eller `awk`-verktøyene for å gi en enklere og mer intuitiv opplevelse.
 
-Alternativene til ```string replace``` inkluderer andre kommandoer i ```Fish Shell``` som ```string split``` og ```string trim```. Disse kommandoene kan også brukes til å manipulere tekststrenger basert på visse mønstre.
+Et alternativ til å bruke `string`-kommandoen for å slette karakterer, er å bruke `awk` eller `sed`-verktøyene for mer komplekse operasjoner. Samtidig er forskjellige programmeringsspråk også utstyrt med lignende funksjoner for patern matching.
 
-# Se også:
-- Fish Shell documentation: https://fishshell.com/docs/current/commands.html#string-replace
-- Regular expressions tutorial: https://www.regular-expressions.info/tutorial.html
+Når det gjelder implementeringen i Fish, har `string replace`-kommandoen flere alternativer for styring av hvilke strenger som skal erstattes, for eksempel `-r` for å bruke regular expressions, og `-a` for å erstatte alle forekomster.
+
+## Se også:
+1. Fish Documentation: [www.fishshell.com/docs/current](www.fishshell.com/docs/current)
+2. String handling: [wiki.bash-hackers.org/syntax/pe](wiki.bash-hackers.org/syntax/pe)
+3. Unix for Poets: [https://www.cs.upc.edu/~padro/Unixforpoets.pdf](https://www.cs.upc.edu/~padro/Unixforpoets.pdf)

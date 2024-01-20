@@ -1,7 +1,7 @@
 ---
-title:                "Generering av tilfeldige tall"
-html_title:           "Haskell: Generering av tilfeldige tall"
-simple_title:         "Generering av tilfeldige tall"
+title:                "Generere tilfeldige tall"
+html_title:           "Arduino: Generere tilfeldige tall"
+simple_title:         "Generere tilfeldige tall"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Numbers"
@@ -10,57 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva & Hvorfor?
-Generering av tilfeldige tall er en viktig del av programmering, spesielt i spillet industrien. Det er en måte for programmerere å lage tilfeldighet og variasjon i sine programmer. Ved å bruke tilfeldige tall, kan programmene bli mer realistiske og interessante for brukerne.
+---
+title: Generering av tilfeldige tall i Haskell
+---
 
-# Hvordan å:
-Her er et enkelt eksempel på hvordan du genererer tilfeldige tall i Haskell:
+## Hva & Hvorfor?
+Tilfeldige tall generering er prosessen med å lage tall som ikke kan forutsies bedre enn ved tilfeldig sjanse. Dette brukes ofte i programmering for alt fra simuleringer til spill, kryptografi, og systemtestinger.
+
+## Hvordan:
+Ved å bruke biblioteket `System.Random`, kan du generere tilfeldige tall i Haskell. Her er et enkelt eksempel på generering av et tilfeldig heltall:
 
 ```Haskell
---Importerer pakken for tilfeldige tall
 import System.Random
-
---Funksjon for å generere et tilfeldig tall mellom 1 og 10
-tilfeldigTall :: IO Int
-tilfeldigTall = randomRIO (1,10)
-
---Kaller funksjonen for å generere et tilfeldig tall
-main = do
-  tall <- tilfeldigTall
-  print tall
+main = do 
+    randomNumber <- randomRIO (1,100) :: IO Int
+    print(randomNumber)
 ```
+Når dette programmet kjøres, vil det skrive ut et tilfeldig tall mellom 1 og 100. 
 
-Eksempel på output:
+## Dyp Dykk
+Historisk sett, har generering av tilfeldige tall vært en utfordring i datamaskinverdenen. Til å begynne med var datamaskiner designet for å være fullstendig forutsigbare og ettergivende. Tilfeldighet var antittese av dette. Forskjellige metoder har blitt utviklet for å gi en kilde til tilfeldighet i disse systemene. 
 
-```Haskell
-8
-```
+Å bruke funksjonen `randomRIO` er ikke det eneste alternativet i Haskell. Det finnes også andre funksjoner i `System.Random`-biblioteket som `randomIO`, `randomR` og `random`.
 
-Generering av tilfeldige tall kan også kombineres med andre funksjoner, for eksempel å fylle en liste med tilfeldige tall:
+Detaljer om implementasjonen er ikke utstilt i dette eksemplet, men det er verdt å merke seg at Haskell bruker en pseudo-tilfeldig tallgenerator. Det betyr at de genererte tallene bare er tilfeldige til en viss grad, og en tilstrekkelig smart angriper potensielt kunne forutsi dem.
 
-```Haskell
---Funksjon for å generere en liste med tilfeldige tall mellom 1 og 100
-tilfeldigListe :: IO [Int]
-tilfeldigListe = sequence $ replicate 10 (randomRIO (1,100))
-
---Kaller funksjonen for å generere en liste med tilfeldige tall
-main = do
-  liste <- tilfeldigListe
-  print liste
-```
-
-Eksempel på output:
-
-```Haskell
-[64, 8, 91, 27, 57, 36, 2, 99, 73, 40]
-```
-
-# Dypdykk:
-Tilfeldige tall ble en viktig del av programmering på 1950-tallet, da spill og simuleringer ble utviklet. Før dette måtte tilfeldige tall bli generert manuelt ved hjelp av fysiske metoder som å riste terninger eller bruke kortstokker. I dag brukes tilfeldige tall ikke bare i spill, men også i kryptografi og statistisk analyse av data.
-
-Det finnes ulike algoritmer for å generere tilfeldige tall, hvor noen er mer optimalisert for tilfeldighet enn andre. Haskell bruker en algoritme kalt "Mersenne Twister" som er en av de mest vanlige og pålitelige metodene for å generere tilfeldige tall.
-
-# Se Også:
-Hvis du vil lære mer om generering av tilfeldige tall i Haskell, kan du se på dokumentasjonen for "System.Random" pakken: https://hackage.haskell.org/package/random
-
-Du kan også lese om de ulike tilfeldige tall algoritmene og deres effektivitet her: https://en.wikipedia.org/wiki/List_of_random_number_generators
+## Se Også
+- For mer informasjon om `System.Random` biblioteket, sjekk ut [Haskell Documentation](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
+- Du kan lære mer om generering av tilfeldige tall i datamaskiner fra [Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation) 
+- For alternativer til `System.Random`, se på [RandomGen](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html#g:4) som gir en måte å produsere din egen strøm av tilfeldige tall.
+- For å forstå hvordan Haskell implementerer pseudo-tilfeldige tallgeneratorer, se [monadic pseudorandom number generators](https://wiki.haskell.org/Random_numbers).

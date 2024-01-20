@@ -1,7 +1,7 @@
 ---
-title:                "Capitalizando una cadena"
-html_title:           "Elm: Capitalizando una cadena"
-simple_title:         "Capitalizando una cadena"
+title:                "Capitalizando una cadena de texto"
+html_title:           "Elm: Capitalizando una cadena de texto"
+simple_title:         "Capitalizando una cadena de texto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,23 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-¡Hola amigos programadores! En este artículo, vamos a hablar sobre cómo capitalizar una cadena de texto en Elm. ¿Qué es esto y por qué es importante? ¡Sigue leyendo para descubrirlo!
-## Qué y Por qué?
-La capitalización de una cadena de texto se refiere a escribir la primera letra de cada palabra con mayúscula, dejando las demás letras en minúscula. ¿Por qué es importante? Porque ayuda a que nuestro texto se vea limpio y ordenado, especialmente en aplicaciones que involucran texto visible para el usuario. 
+## ¿Qué y Por Qué?
+
+Capitalizar una cadena significa convertir la primera letra de la cadena a su forma mayúscula. Los programadores lo hacen para mejorar la claridad y legibilidad.
+
 ## Cómo hacerlo:
-Para capitalizar una cadena de texto en Elm, podemos utilizar la función `String.capitalize` que toma una cadena de texto y devuelve una nueva cadena con la primera letra de cada palabra capitalizada. Veamos un ejemplo:
+
+Para capitalizar una cadena en Elm, usaremos la función `toUpperCase` del módulo `String`, junto con `left` y `dropLeft` para manipular el primer carácter.
+
 ```Elm
-cadena = "hola amigos"
-String.capitalize cadena
--- salida: "Hola Amigos"
+capitalize : String -> String
+capitalize str =
+    case String.uncons str of
+        Nothing ->
+            ""
+
+        Just ( first, rest ) ->
+            String.toUpper (String.fromChar first) ++ rest
 ```
-Fácil, ¿verdad? También podemos utilizar la función `String.toUpper` que convierte toda la cadena en mayúsculas, y luego utilizar la función `String.unwords` para convertir la cadena en una lista de palabras y aplicar `String.capitalize` a cada una de ellas. Este enfoque nos permite capitalizar cada palabra en una cadena que contenga más de una palabra. Veamos otro ejemplo:
+
+En el código de arriba, `String.uncons` divide la cadena en su primer carácter y el resto. Si `str` está vacío (`Nothing`), devolvemos una cadena vacía. De lo contrario, convertimos el primer carácter a mayúsculas y lo concatenamos con el resto.
+
+Ejemplo:
+
 ```Elm
-cadena = "elm es genial"
-String.unwords (List.map String.capitalize (String.words cadena))
--- salida: "Elm Es Genial"
+capitalize "hola mundo"
 ```
-## Profundizando más:
-Para aquellos interesados en el contexto histórico, capitalizar una cadena de texto se remonta a los primeros lenguajes de programación y tiene sus raíces en la convención de nombrar variables y funciones utilizando la notación de camello (camelCase). Alternativamente, también tenemos la función `String.toTitle`, que capitaliza la primera letra de cada palabra en una cadena y convierte todas las demás letras en minúsculas. En cuanto a la implementación, estas funciones utilizan el Unicode del sistema para manejar caracteres de diferentes idiomas. 
-## Ver también:
-Si quieres aprender más sobre manipulación de cadenas de texto en Elm, puedes consultar la documentación oficial de la librería `String`, donde encontrarás más funciones útiles como `String.reverse` o `String.trim`. También puedes explorar la comunidad activa de Elm y aprender de otros programadores en foros como r/elm y elm-discuss@googlegroups.com. ¡Hasta la próxima!
+
+Salida:
+
+```Elm
+"Hola mundo"
+```
+
+## Profundizando
+
+La manipulación de cadenas es una tarea común en la programación, remontándose a los primeros días de la computación. Al manipular cadenas en Elm, es importante recordar que las cadenas son inmutables y que cada operación de manipulación produce una nueva cadena.
+
+Si bien hemos utilizado el módulo `String` de Elm para esta tarea, existen otras funciones y módulos que también podrían usarse para resolverlo, como la librería `elm-string-extra`.
+
+En términos de implementación, Elm instancia internamente un motor de JavaScript para realizar operaciones en las cadenas. Sin embargo, esto es transparente para los programadores de Elm, al igual que la mayoría de los detalles de implementación del lenguaje.
+
+## Ver También
+
+Para más información sobre las cadenas y sus usos en Elm, puede consultar los siguientes recursos:
+
+- [Documentación oficial de Elm - String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- [Elm String Extra](https://package.elm-lang.org/packages/elm-community/string-extra/latest/)
+- [Stack Overflow - Elm string manipulation](https://stackoverflow.com/questions/tagged/elm+string)

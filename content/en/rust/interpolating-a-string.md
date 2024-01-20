@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Rust recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,42 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Interpolating a string in Rust means inserting values into a string dynamically, often used for formatting text for display or output. Programmers use this to make their code more concise and readable by avoiding concatenation of multiple strings.
+
+String interpolation is the process of embedding variables into a string. This is typically performed to create more dynamic and flexible strings.
 
 ## How to:
-In Rust, you can interpolate a string using the `format!` macro. It takes in a format string, followed by the values to be inserted into the string.
+
+String interpolation in Rust is achieved through the `format!`macro. Let's take a look at how it's done:
 
 ```Rust
 let name = "John";
-let age = 25;
-println!("Hello, my name is {} and I am {} years old.", name, age);
-// Output: Hello, my name is John and I am 25 years old.
-```
-
-The values can be inserted in any order and also be type annotated to ensure correct formatting.
-
-```Rust
-let name = "Emily";
 let age = 30;
-println!("My name is {name} and my age is {age}.", age = age, name = name);
-// Output: My name is Emily and my age is 30.
+let result = format!("{} is {} years old.", name, age);
+println!("{}", result);
 ```
 
-Interpolating multiple values in the same string is also possible by using braces and the corresponding value names.
-
-```Rust
-let name = "Alex";
-let age = 20;
-let city = "New York";
-println!("Hey, {name}, I'm {age} and I live in {city}.", name = name, age = age, city = city);
-// Output: Hey, Alex, I'm 20 and I live in New York.
+When you run this, the output would be:
+```
+John is 30 years old.
 ```
 
-## Deep Dive:
-The `format!` macro was added to Rust in version 1.2, replacing the `write!` macro for string formatting. It uses the `Display` trait, a Rust feature that allows types to be converted to strings for printing. This provides a more concise and readable way of formatting strings compared to traditional concatenation methods.
+## Deep Dive
 
-An alternative to string interpolation is using the `println!` macro with a placeholder for the values to be inserted. However, this only prints the output and does not return a string.
+String interpolation originated from the scripting languages back in the '80s, primarily to simplify the process of combining strings and variables. Rust, however, favors explicit type formatting over implicit (like `"${variable}"` in some languages).
 
-## See Also:
-- [The Rust Book](https://doc.rust-lang.org/book/ch08-03-hash-maps.html#pretty-printing-with-format)
-- [Rust Standard Library](https://doc.rust-lang.org/std/fmt/#formatting-traits)
+As an alternative to `format!`, Rust also offers the `println!`macro for output (e.g., `println!("{} is {} years old.", name, age);`).
+
+The key point in Rust's implementation is the type safety - variables must be explicitly converted to strings. This avoids errors caused by unexpected types.
+
+## See Also
+
+For further reading, here are a couple helpful links:
+
+1. [Rust's `format!` macro documentation](https://doc.rust-lang.org/std/macro.format.html)
+
+2. [String Interpolation in Rust](https://www.programming-idioms.org/idiom/70/interpolate-variables-in-string/1047/rust)

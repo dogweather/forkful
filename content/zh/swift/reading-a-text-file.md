@@ -1,6 +1,6 @@
 ---
 title:                "读取文本文件"
-html_title:           "Swift: 读取文本文件"
+html_title:           "Kotlin: 读取文本文件"
 simple_title:         "读取文本文件"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是文本文件？为什么程序员要这样做？
-文本文件是一种存储纯文本数据的文件，它只包含可读的字符，而没有任何格式或样式。程序员通常会读取文本文件，因为它可以帮助他们从文件中提取数据，如用户信息或配置设置。
+## 什么和为什么？ (`What & Why?`)
 
-## 如何实现读取文本文件？
-参考以下代码示例：
-```
-//首先，我们需要一个文件路径的字符串
-let filePath = "/Users/username/Documents/sample.txt"
+读取文本文件，如其名，就是获取和操作文件中的文本。程序员之所以这么做，主因是它允许我们解析、修改、分享和储存数据。
 
-//然后，使用FileManager类的实例来检查文件是否存在
-let fileManager = FileManager.default
-if fileManager.fileExists(atPath: filePath) {
-    //如果文件存在，我们可以使用String类的init方法来读取文件内容
-    let fileContent = try! String(contentsOfFile: filePath)
-    print(fileContent) //输出文件内容
-} else {
-    print("文件不存在")
+## 怎么做： (`How to:`)
+
+在 Swift（当前版本）中，我们可以简单地使用 `String(contentsOfFile:)` 方法来读取文本文件。以下示例是把文件“example.txt”的内容读取到一个字符串中。
+
+```Swift
+import Foundation
+
+if let filePath = Bundle.main.path(forResource: "example", ofType: "txt") {
+  do {
+    let contents = try String(contentsOfFile: filePath, encoding: .utf8)
+    print(contents)
+  } catch {
+    // 出错处理
+    print("读取文件出错: \(error)")
+  }
 }
 ```
 
-输出结果：
-```
-Hello, world!
-This is a sample text file.
-```
+## 深入探索 (`Deep Dive`)
 
-## 深入了解
-- 文本文件最早出现于计算机发明之初，它们是一种简单的方式来存储和传输数据。现在仍然被广泛使用。
-- 除了读取文件内容，程序员还可以使用写入文件的方法来修改文本文件。
-- 在Swift中，除了使用String类来读取文本文件，还可以使用NSData类或NSArray类来处理字节和行级数据。
+读取文本文件的实践在计算机编程的发展历程中可谓悠久。早期计算机系统使用的是 punch cards 和 paper tapes，上面记录着机器代码和数据。现代计算机系统则转向了方便理解和处理的像文本文件这样的格式。
 
-## 参考资料
-- [Swift学习网站](https://swiftgg.com)
-- [Swift的文本处理指南](https://www.hackingwithswift.com/articles/141/the-complete-guide-to-swift-strings)
+除此之外，有一些备选方案可以满足读取和处理文件数据的需求：比如通过 `NSData` 或者 `InputStream` 读取数据流，或者使用像 `FileHandle` 这样的类来获取更精细的控制。
+
+在 Swift 中，`String(contentsOfFile:)` 方法实际上是在内部封装了 `NSData`，然后转换成了 `String`。你可以指定读取的编码方式（例如 .utf8， .ascii 等等），如果不指定则 Swift 会试图推断出正确的编码方式。
+
+## 另见 (`See Also`)
+
+- [Apple 官方关于 String 的文档](https://developer.apple.com/documentation/swift/string)
+- [掘金: Swift 中文本的读写](https://juejin.cn/post/6844903787657838600)
+- [stackoverflow: Swift 中文件的读写](https://stackoverflow.com/questions/24097826/read-and-write-a-string-from-text-file)
+
+欢迎继续探索并深入学习 Swift 的世界。

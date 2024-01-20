@@ -1,7 +1,7 @@
 ---
-title:                "文字列の書き換え"
-html_title:           "C#: 文字列の書き換え"
-simple_title:         "文字列の書き換え"
+title:                "文字列の大文字化"
+html_title:           "C#: 文字列の大文字化"
+simple_title:         "文字列の大文字化"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何か: 文字列の大文字化とは何かを1〜2文で説明する。そしてプログラマーがそれをする理由を説明する。
+## 何となぜ？
+文字列の大文字化とは文字列内の各単語の最初の文字を大文字にすることです。これはデータの一貫性を保つため、またはプログラムの出力を整形するためにプログラマーが行います。
 
-プログラマーとして、私たちはさまざまな方法で文字列を処理します。たとえば、文字列を結合したり、切り抜いたり、置換したりすることができます。しかし、文字列を大文字化することもできます。これは単純に文字列をすべて大文字に変換することを意味します。プログラマーがこれをする理由の1つは、ソートや検索などの処理を簡単にするためです。
+## 方法：
+C#では`ToUpper()`または`TextInfo.ToTitleCase()`メソッドで文字列を簡単に大文字化できます。 
 
-## 方法: C#のコードブロック ```C# ... ``` 内に、コーディングの例とサンプル出力を示す。
+```C#
+string name = "hello world";
+// Using ToUpper method
+string upperName = name.ToUpper();
+Console.WriteLine(upperName); // Output: HELLO WORLD
 
-```
-string hello = "こんにちは、世界！";
-string capitalized = hello.ToUpper();
-
-Console.WriteLine(capitalized);
-// 出力：こんにちは、世界！
-```
-
-大文字化では、元の文字列を変数に格納し、文字列の `ToUpper()` メソッドを使用して大文字に変換します。これで、変換した文字列を新しい変数に割り当てることができます。
-
-```
-string greeting = "hello world";
-string capitalized = greeting.ToUpper();
-
-Console.WriteLine(capitalized);
-// 出力：HELLO WORLD
+// Using TextInfo.ToTitleCase method
+System.Globalization.CultureInfo cultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture;
+System.Globalization.TextInfo textInfo = cultureInfo.TextInfo;
+string properName = textInfo.ToTitleCase(name);
+Console.WriteLine(properName); // Output: Hello World
 ```
 
-## ディープダイブ: (1) 歴史的な文脈、(2) 代替手段、(3) 文字列の大文字化の実装の詳細などの情報を提供する。
+## 深堀り
+- **歴史**: 文字列の大文字化はプログラミングの初期から存在しています。
+- **代替手段**: 大文字化には他の方法もありますが、C#ではこれらのメソッドが最も直接的で手軽に利用できます。
+- **実装詳細**: `ToUpper()`メソッドは文字列すべてを大文字にします。一方、`TextInfo.ToTitleCase()`は文字列内の各単語の最初の文字を大文字にします。
 
-文字列を大文字化するための一般的な方法は、文字列の `ToUpper()` メソッドを使用することです。しかし、これはすべての言語で利用できるわけではありません。例えば、古いC言語では、大文字化するために独自の関数を作成する必要がありました。さらに、一部のプログラミング言語では、大文字化と小文字化を区別するように設計されています。
-
-## 関連リンク: 関連するソースへのリンクを提供する。
-
-- [C# の ToUpper() メソッドのドキュメント](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)
-- [C# の文字列操作に関するチュートリアル](https://www.tutorialspoint.com/csharp/csharp_strings.htm)
-- [C# の文字列操作に関する記事](https://www.c-sharpcorner.com/article/strings-and-stringformat-in-c-sharp/)
+## 参考情報：
+- [Microsoft Docs: TextInfo.ToTitleCase](https://docs.microsoft.com/en-us/dotnet/api/system.globalization.textinfo.totitlecase)
+- [Microsoft Docs: String.ToUpper](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper)

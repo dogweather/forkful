@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän hankkiminen"
-html_title:           "Go: Päivämäärän hankkiminen"
-simple_title:         "Päivämäärän hankkiminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Dates and Times"
@@ -10,26 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Saamme usein tarpeen tietää tämänhetkisen päivämäärän ohjelmissamme. Tämä voi olla hyödyllistä esimerkiksi aikaleimojen luomisessa tai tiedon tallentamisessa. Siksi ohjelmoijat usein lisäävät tämän toiminnallisuuden ohjelmiinsa.
+# Päivämäärän haku Go:ssa: Mikä & Miksi?
+Päivämäärän haku on toiminto, joka hakee aktiivisen järjestelmän tämänhetkisen päivämäärän. Ohjelmoijat tekevät tämän vastaavien tapahtumien ajanrekisteröinnin, lokiin kirjaamisen ja aikaperusteisten toimintojen mahdollistamiseksi.
 
-## Kuinka tehdä:
-Käytä Go-kielellä integroitua time-pakettia saadaksesi tietää tämänhetkisen päivämäärän. Käytössä on kaksi päivämäärän hankkimiseen liittyvää funktiota: Now() ja Local(). Esimerkiksi:
+# Kuinka tehdä?
+Esimerkiksi, Go:ssa saat nykyisen päivämäärän seuraavasti:
 
 ```Go
-tänäänPvm := time.Now()
-paikallinenPvm := time.Local()
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+func main() {
+	fmt.Println(time.Now())
+}
 ```
+Ohjelman ajaessa saamme tulosteena nykyisen ajan GMT:ssä (Greenwich Mean Time), esimerkiksi: `2022-04-14 15:01:51.6176565 +0000 UTC m=+0.000579401`.
 
-Tulosteena saat tänäänPvm-arvoksi tämän päivän päivämäärän ja ajan ja paikallinenPvm-arvoksi nykyisen paikallisen päivämäärän ja ajan.
+# Syväluotaus
+**Historiallinen konteksti**: Go (tunnetaan myös nimellä Golang) lanseerattiin vuonna 2007 ja on suunniteltu tekemään ohjelmointi helpoksi ja tuottavaksi. Luodaan tunnisteita luontaisen kalenteriajan tavanomaisten operaatioiden suorittamiseksi, kuten päivämäärän haku. 
 
-## Syventävä tarkastelu:
-Time-paketti on osa Go-kielen standardikirjastoa ja se sisältää useita hyödyllisiä toimintoja ajan käsittelyyn. Tämän lisäksi on olemassa myös muita paketteja, kuten GoTime tai TimeUtil, jotka tarjoavat samankaltaisia toimintoja tämänhetkisen päivämäärän hankkimiseen. Kannattaa tutustua erilaisiin vaihtoehtoihin ja valita sopivin tarpeisiisi.
+**Vaihtoehtoja**: Go:ssa voit muokata päivämäärämuotoa seuraavasti:
+```Go
+func main() {
+	t = time.Now()
+	fmt.Println(t.Format("2006-01-02"))
+}
+```
+Tämä tulostaa päivämäärän muodossa `YYYY-MM-DD`, kuten `2022-04-14`.
 
-## Tärkeää huomioitavaa:
-Time-paketista löytyy myös Parse()-funktio, jolla voit muuttaa merkkijonon päivämääräksi ja aikaleimaksi. Lisäksi paketissa on myös muita hyödyllisiä toimintoja ajan käsittelyyn, kuten aikaerojen laskeminen ja aikavyöhykkeiden muuttaminen.
+**Toteutustiedot**: Go:ssa päivämäärän haku on toteutettu aikapaketissa (`time package`) ja `Now`-funktio palauttaa nykyisen ajan sekuntin tarkkuudella.
 
-## Katso myös:
-- [Go:n ajan käsittely -opas](https://golang.org/pkg/time/)
-- [GoTime-paketti](https://github.com/go-time)
-- [TimeUtil-paketti](https://github.com/TimeUtil)
+# Katso myös
+Lisätietoja päivämäärän hakutoiminnoista Go:ssa on saatavilla seuraavissa lähteissä:
+
+- Go:n virallisen dokumentaation `time package`: [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
+- Go:n päivämäärien ja aikojen muotoilu: [https://gobyexample.com/time-formatting-parsing](https://gobyexample.com/time-formatting-parsing)
+- Stack Overflow keskustelu Go:n päivämäärätoiminnoista: [https://stackoverflow.com/questions/20234104/how-to-format-current-time-using-a-yyyymmddhhmmss-format](https://stackoverflow.com/questions/20234104/how-to-format-current-time-using-a-yyyymmddhhmmss-format)

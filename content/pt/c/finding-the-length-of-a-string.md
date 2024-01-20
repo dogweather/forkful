@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Quê & Porquê?
 
-Encontrar o comprimento de uma string é uma tarefa comum em programação. Isso significa determinar o número de caracteres presentes em uma string. Os programadores fazem isso para realizar diversas operações, como manipulação de strings, alocação de memória, ou para garantir que a string atende aos requisitos de tamanho.
+Encontrar o comprimento de uma string em C é determinar o número de caracteres existentes numa string. É fundamental em programação para manipular e analisar dados e variáveis ​​de string corretamente.
 
 ## Como fazer:
 
-Para encontrar o comprimento de uma string em C, podemos usar a função ```strlen()```, que está presente no header `<string.h>`. Essa função recebe a string como parâmetro e retorna um inteiro que representa o seu comprimento. Veja um exemplo de como usá-la:
+Aqui está o código C para medir o comprimento de uma string usando a função `strlen()`, fornecida na biblioteca `string.h`:
 
-```
+```C
 #include <stdio.h>
 #include <string.h>
 
-int main(void) {
-  char frase[] = "Eu amo programar!";
-  int length = strlen(frase);
+int main() {
+    char str[] = "Programação em C";
+    int length;
 
-  printf("O comprimento da string é %d\n", length);
-  return 0;
+    length = strlen(str);
+
+    printf("Comprimento da string = %d\n", length);
+
+    return 0;
 }
-
-```
-**Saída:**
-```
-O comprimento da string é 18
 ```
 
-## Mergulho profundo:
+A saída deste código será:
 
-A função ```strlen()``` foi introduzida no padrão C89 e tem sido parte da biblioteca padrão desde então. No entanto, ela não é a única maneira de encontrar o comprimento de uma string em C. Outra opção é usar um loop para percorrer a string e contar o número de caracteres até encontrar o caractere nulo `'\0'`.
+```
+Comprimento da string = 17
+```
 
-Além disso, é importante lembrar que, ao usar a função ```strlen()```, é necessário garantir que a string tenha o caractere nulo no final, caso contrário, o resultado pode ser impreciso. Portanto, é uma boa prática sempre adicionar esse caractere no final das strings.
+## Aprofundando
 
-## Veja também:
+A função `strlen()` foi adicionada na linguagem de programação C com a biblioteca padrão ANSI C, em 1989. Antes disso, programadores C teriam que write their own loops to manually count the length of a string.
 
-- Documentação da função ```strlen()``` na [página oficial do C](https://devdocs.io/c/string/byte/strlen).
-- Outras maneiras de encontrar o comprimento de uma string em C [neste artigo](https://www.geeksforgeeks.org/strlen-function-in-c/).
+A alternativa para `strlen()` é escrever um loop manualmente que percorre a string até alcançar o caractere nulo de terminação (`'\0'`). No entanto, `strlen()` é geralmente preferido por suas melhorias de desempenho e práticas recomendadas de código.
+
+A função `strlen()` segue um princípio simples: ela começa no endereço de memória passado a ela e continua avançando até encontrar um byte zero, retornando o número de passes pelo loop - 1.
+
+## Veja Também:
+
+- A função strlen() na biblioteca C: http://www.cplusplus.com/reference/cstring/strlen/
+- Contando o comprimento da string sem usar a função strlen: https://www.geeksforgeeks.org/c-program-to-find-length-of-a-string-without-using-strlen/

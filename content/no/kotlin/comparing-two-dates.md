@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Kotlin: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -11,25 +11,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Sammenligning av to datoer er en vanlig oppgave for programmerere. Dette innebærer å sammenligne to datoer og bestemme hvilken som er tidligere enn den andre. Dette er nødvendig for å håndtere datoer i programmering og for å gjøre ulike beregninger med dem.
+Å sammenligne to datoer, innebærer å evaluere om en dato er tidligere, senere enn eller samme som en annen dato. Dette er viktig i programmering for f.eks tidsbestemt funksjonalitet, gyldighetskontroll, eller sortering.
 
-## Slik gjør du det:
+## Hvordan til:
+Her er et eksempel på hvordan man kan sammenligne to datoer i Kotlin.
+
 ```Kotlin
-// Lager to datoer
-val dato1 = LocalDate.of(2021, 10, 28)
-val dato2 = LocalDate.of(2021, 11, 2)
+import java.time.LocalDate
 
-// Bruker compareTo() funksjonen for å sammenligne datoer
-println(dato1.compareTo(dato2)) // Utskrift: -5 (dato1 er tidligere enn dato2)
+fun main() {
+    val idag = LocalDate.now()
+    val fremtid = LocalDate.of(2025, 12, 31)
 
-// Bruker isBefore() funksjonen for å sjekke om dato1 er tidligere enn dato2
-println(dato1.isBefore(dato2)) // Utskrift: true
+    when {
+        idag.isBefore(fremtid) -> println("$idag er før $fremtid")
+        idag.isAfter(fremtid) -> println("$idag er etter $fremtid")
+        else -> println("Datoene er like")
+    }
+}
 ```
+Prøv å kjøre koden, og du vil se at programmet vil printe ["dagens dato" er før 2025-12-31].
 
-## Dypdykk:
-Sammenligning av datoer har vært et problem for programmerere i lang tid. Dette skyldes utfordringene knyttet til å håndtere ulike kalendere og tidsformater. Alternativet til å bruke innebygde funksjoner som compareTo() og isBefore() er å konvertere datoene til et numerisk format og sammenligne dem. Dette kan være mer komplekst og kreve mer kode.
+## Dypdykk
+Kotlin bruker Java's LocalDateTime, LocalDate, og LocalTime klasser fra Java 8 til dato- og tidsfunksjoner. Før Java 8, måtte programmerere benytte `java.util.Date` og `java.util.Calendar`, som hadde kompliserte APIer og var vanskelige å bruke.
 
-## Se også:
-- [Kotlin Dokumentasjon om Datoer](https://kotlinlang.org/docs/datetime.html)
-- [Java 8 Dato og Tid API](https://www.baeldung.com/java-8-date-time-intro)
-- [Wikipedia Side om Datoer i Programmering](https://en.wikipedia.org/wiki/Date_calculations_(programming))
+Et alternativ til Kotlin's innebygde støtte for dato- og tidsfunksjoner er Joda-Time biblioteket. Joda-Time har et mer omfattende API, og tillater mer kompliserte operasjoner ikke tilgjengelige i Kotlin.
+
+Hvis du ønsker å sammenligne datoer basert på tidssoner, kan du benytte `ZonedDateTime`.
+
+## Se også
+For flere detaljer om hvordan Kotlin håndterer datoer, sjekk følgende lenker:
+
+- Java 8 Date-Time API: https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html
+- Kotlin dok: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date-time/
+- Joda-Time: http://www.joda.org/joda-time/

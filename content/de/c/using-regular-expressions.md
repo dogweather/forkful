@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung regulärer Ausdrücke"
-html_title:           "C: Verwendung regulärer Ausdrücke"
-simple_title:         "Verwendung regulärer Ausdrücke"
+title:                "Reguläre Ausdrücke verwenden"
+html_title:           "Bash: Reguläre Ausdrücke verwenden"
+simple_title:         "Reguläre Ausdrücke verwenden"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,54 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was und Warum?
-Regular Expressions (kurz: Regex) sind eine nützliche Technik, die es Programmierern ermöglicht, komplexe Suchmuster in Texten zu definieren und zu extrahieren. Sie werden häufig verwendet, um eine bestimmte Sequenz von Zeichen in einem String zu finden oder um Daten von einem bestimmten Format zu validieren. Regex spart Zeit und macht den Code viel übersichtlicher, was für Programmierer oft genug Grund ist, sie zu benutzen.
+## Was & Warum?
 
-## Wie:
-In C können wir mit Hilfe der regulären Ausdrücke sehr einfach Daten verarbeiten und validieren. Um eine Regex in C zu verwenden, müssen wir das Header-File "regex.h" einbinden. Im folgenden Beispiel suchen wir in einem String nach einer bestimmten Zeichenkette und geben diese aus.
+Reguläre Ausdrücke (regular expressions) sind Muster, die zur Überprüfung, Suche oder Manipulation von Text verwendet werden. Programmierer nutzen sie, um effizient und präzise Daten zu durchforsten und zu manipulieren.
+
+## So geht's:
+
+Mit POSIX-C Bibliothek kannst du reguläre Ausdrücke benutzen. Hier sind ein einfaches Beispiel:
 
 ```C
+#include <regex.h> 
 #include <stdio.h>
-#include <regex.h>
 
-int main() {
+int main() 
+{ 
     regex_t regex;
-    char *text = "Dies ist ein Beispieltext";
-    char *pattern = "Beispiel";
-
-    if (regcomp(&regex, pattern, REG_EXTENDED) != 0) {
-        printf("Konnte den regulären Ausdruck nicht kompilieren.\n");
-        return 1;
-    }
-
-    // Länge des Match-Strings
-    size_t nmatch = 1;
-    // Array, um die Ergebnisse zu speichern
-    regmatch_t pmatch[nmatch];
-    // Überprüfen, ob der reguläre Ausdruck im String vorhanden ist
-    if (regexec(&regex, text, nmatch, pmatch, 0) == 0) {
-        // Ausgabe des gefundenen Matches
-        printf("Das Pattern '%s' wurde in '%s' gefunden.\n", pattern, text);
-        // Ausgabe des gefundenen Strings
-        printf("Der gefundene String ist: '%.*s'.\n", (pmatch[0].rm_eo - pmatch[0].rm_so), &text[pmatch[0].rm_so]);
-    } else {
-        printf("Kein Match gefunden.\n");
-    }
-
+    int result;
+    char txt[] = "Erstellen Sie reguläre Ausdrücke in C";
+    result = regcomp(&regex, "C", 0);
+    result = regexec(&regex, txt, 0, NULL, 0);
+    if (result == 0) {
+        printf("'C' gefunden.\n");
+    } else if (result == REG_NOMATCH) {
+        printf("'C' nicht gefunden.\n");
+    }  
     regfree(&regex);
-    return 0;
-}
-```
-Die Ausgabe des obigen Codes wäre:
-
-```
-Das Pattern 'Beispiel' wurde in 'Dies ist ein Beispieltext' gefunden.
-Der gefundene String ist: 'Beispiel'.
+    return 0; 
+} 
 ```
 
-## Tiefergehende Information:
-Regex gibt es schon seit den 1950er Jahren und wurde in der Sprache SNOBOL von Ken Thompson entwickelt. Heutzutage gibt es auch andere Möglichkeiten, Suchmuster zu definieren und zu extrahieren, wie zum Beispiel mit Hilfe von String-Manipulationsfunktionen oder regulären Ausdrücken in anderen Programmiersprachen, aber Regex ist immer noch eine sehr beliebte Option für viele Programmierer. Die Implementierung von Regex in C ist relativ komplex und erfordert ein Verständnis von regulären Ausdrücken, so dass es manchmal einfacher ist, auf andere Methoden zurückzugreifen.
+Dieses Programm prüft, ob der Text "C" in der angegebenen Zeichenkette vorkommt. Wenn das der Fall ist, wird "C gefunden" ausgegeben.
 
-## Siehe auch:
-- [regex.h - C Reference](https://www.gnu.org/software/libc/manual/html_node/POSIX-Regular-Expressions.html)
-- [Einführung in reguläre Ausdrücke (Regex) in C](https://www.geeksforgeeks.org/introduction-regular-expressions-in-c/)
+## Vertiefung
+
+(1) Im Jahr 1956 hat der Mathematiker Stephen Cole Kleene die regulären Ausdrücke erstellt.
+(2) Alternativen zu regulären Ausdrücken sind zum Beispiel der Einsatz von `strstr()` für einfache Suchanfragen in C.
+(3) Die Implementierung von regulären Ausdrücken in C erfolgt über die Bibliotheksfunktionen `regcomp()` zum Kompilieren des Ausdrucks und `regexec()` zum Ausführen desselben.
+
+## Weiterführende Informationen
+
+[Regular Expressions in POSIX](https://pubs.opengroup.org/onlinepubs/7908799/xbd/re.html)
+[C Library - <regex.h>](https://www.tutorialspoint.com/c_standard_library/regex_h.htm)

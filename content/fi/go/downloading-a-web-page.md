@@ -1,6 +1,6 @@
 ---
 title:                "Verkkosivun lataaminen"
-html_title:           "Go: Verkkosivun lataaminen"
+html_title:           "C#: Verkkosivun lataaminen"
 simple_title:         "Verkkosivun lataaminen"
 programming_language: "Go"
 category:             "Go"
@@ -10,34 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## Mikä ja miksi?
 
-Tämä artikkeli käsittelee verkkosivujen lataamista Go-kielellä. Verkkosivujen lataaminen tarkoittaa niiden tietojen hakemista ja tallentamista omaan järjestelmään. Monet ohjelmoijat tekevät tätä esimerkiksi netissä olevien tietokantojen ja tiedostojen hyödyntämiseksi.
+Web-sivun lataaminen tarkoittaa datan siirtoa palvelimelta paikalliseen järjestelmään. Ohjelmoijat tekevät tämän tiedon keräämisen tai jakamisen vuoksi.
 
-## Miten:
+## Kuinka tehdään:
 
-Voit käyttää `http.Get`-funktiota ladataksesi verkkosivun Go:ssa. Tämä funktio ottaa parametriksi URL-osoitteen ja palauttaa vastauksen ja mahdollisen virheilmoituksen. Esimerkiksi:
+```Go
+package main
 
-```
-resp, err := http.Get("https://example.com")
-// Tarkista mahdollinen virheilmoitus
-if err == nil {
-    // Tulosta vastauksen statuskoodi
-    fmt.Println("Vastauksen statuskoodi:", resp.StatusCode)
-    // Tulosta vastauksen sisältö
-    body, _ := ioutil.ReadAll(resp.Body)
-    fmt.Println("Sivun sisältö:", string(body))
+import (
+	"io"
+	"net/http"
+	"os"
+)
+
+func main() {
+	res, err := http.Get("http://example.com")
+	if err != nil {
+		panic(err)
+	}
+	defer res.Body.Close()
+	
+	file, err := os.Create("example.html")
+	if err != nil {
+		panic(err)
+	}
+	defer file.Close()
+	
+	_, err = io.Copy(file, res.Body)
+	if err != nil {
+		panic(err)
+	}
 }
 ```
 
-Tulostettu sisältö riippuu ladattavan verkkosivun palvelimelta saadusta vastauksesta.
+Tässä on esimerkki koodin tulosteesta:
 
-## Syvemmälle:
+```Go
+"Tiedosto 'example.html' tallennettu onnistuneesti."
+```
 
-Go:ssa on useita eri tapoja ladata verkkosivuja, kuten myös muita kirjastoja, kuten `net/http`-kirjastossa käytetty `http.Get`. Voit myös käyttää esimerkiksi kirjastoa nimeltä `net/url` auttamaan URL-osoitteiden muotoilussa ja käsittelyssä. Lisäksi Go:ssa on myös käytettävissä monia muita työkaluja ja kirjastoja verkkosivujen lataamiseen.
+## Syvä sukellus:
+
+Ladataan web-sivuja alkuun responsiivisen web-suunnittelun aikakaudella. Go-ohjelmointikieli tekee tästä yksinkertaisen standardikirjastonsa ansiosta. Vaihtoehtoina on käyttää selaimen automatisoituja työkaluja, kuten Puppeteer, tai pilvipohjaisia ratkaisuja, kuten import.io. Mutta Go tarjoaa tehokkaan, vähäisen koodin ja monikäyttöisen ratkaisun.
+
+Gon http.Get() -funktio hakee URL:än ja palauttaa vastauksen. io.Copy()-toiminto kopioidaan sivun sisältö paikalliseen tiedostoon.
 
 ## Katso myös:
 
-- [Go:n virallinen verkkosivu](https://golang.org/)
-- [net/http-kirjaston dokumentaatio](https://golang.org/pkg/net/http/)
-- [net/url-kirjaston dokumentaatio](https://golang.org/pkg/net/url/)
+* Tutustu Go: n viralliseen http-pakettiin: https://golang.org/pkg/net/http/
+* Go-kielen dokumentaatio: https://golang.org/doc/
+* Deep Dive into Go's net/http package: https://medium.com/rungo/understanding-the-net-http-package-in-go-30e4ba6d83e9

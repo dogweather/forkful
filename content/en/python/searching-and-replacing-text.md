@@ -1,6 +1,6 @@
 ---
 title:                "Searching and replacing text"
-html_title:           "Python recipe: Searching and replacing text"
+html_title:           "Arduino recipe: Searching and replacing text"
 simple_title:         "Searching and replacing text"
 programming_language: "Python"
 category:             "Python"
@@ -11,29 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Searching and replacing text is a common task in programming where a specific string of text is targeted and replaced with another. It is done to make changes to a large amount of text quickly, saving time and reducing manual errors. Programmers often use this technique to efficiently modify code, update data, or make corrections in text files.
+
+Searching and replacing text is all about finding a specific sequence of characters in a string, and then modifying it. Programmers often need this for tasks like data scrubbing, file renaming, pattern replacing, and refactoring code.
 
 ## How to:
+
+Here's a classic Python 'replace' method:
+
+```Python
+text = "Hello, World!"
+print(text.replace("World", "Python"))
 ```
-# Using replace() function to replace a string
-my_string = "Hello world!"
-print(my_string.replace("Hello", "Hi"))
 
-# Output: Hi world!
+The output will be:
 
-# Using regular expressions to replace multiple instances of a string
+```Python
+Hello, Python!
+```
+
+In Python's regex (re) module, we find more advanced search and replace:
+
+```Python
 import re
-my_string = "I love Python, do you?"
-new_string = re.sub("Python", "coding", my_string)
-print(new_string)
-
-# Output: I love coding, do you?
+text = "Hello, World!"
+print(re.replace("World", "Python", text))
 ```
 
-## Deep Dive:
-There have been several methods used for searching and replacing text throughout the history of programming. Traditional find and replace features were limited to specific applications or text editors, but now with the use of regular expressions, programmers have more flexibility in searching and replacing text. An alternative to using the replace() function is the translate() function which can be used to replace single characters. The implementation of searching and replacing text largely depends on the programming language used, but the basic concept remains the same.
+Again, our output:
 
-## See Also:
-- [Python documentation on replace() function](https://docs.python.org/3/library/stdtypes.html#str.replace)
-- [Regular expressions in Python](https://www.programiz.com/python-programming/regex)
-- [translate() function in Python](https://www.tutorialspoint.com/python/string_translate.htm)
+```Python
+Hello, Python!
+```
+
+## Deep Dive
+
+Historically, the Unix 'sed' tool was the gold standard for text search and replace. Python has borrowed from its functionality, implementing it with simplicity and elegance.
+
+Python's `replace` method is easy and fast for basic needs. When you need advanced functionality (e.g., case insensitive replace, limit the number of replacements), Python's `re` module comes into play. Under the hood, it uses complex algorithms to handle even multi-line strings efficiently.
+
+## See Also
+
+Python's str().replace() method: https://docs.python.org/3/library/stdtypes.html#str.replace
+
+Python's re.sub() method: https://docs.python.org/3/library/re.html#re.sub
+
+Comparison between Python's string methods and regex: https://medium.com/factory-mind/regex-tutorial-a-simple-cheatsheet-by-examples-649dc1c3f285

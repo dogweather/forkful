@@ -1,7 +1,7 @@
 ---
-title:                "Usuwanie znaków pasujących do wzorca."
-html_title:           "Elixir: Usuwanie znaków pasujących do wzorca."
-simple_title:         "Usuwanie znaków pasujących do wzorca."
+title:                "Usuwanie znaków pasujących do wzorca"
+html_title:           "C: Usuwanie znaków pasujących do wzorca"
+simple_title:         "Usuwanie znaków pasujących do wzorca"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,19 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Usuwanie znaków pasujących do wzorca jest powszechnym zadaniem programistów. Polega ono na wyszukiwaniu i usuwaniu wszystkich wystąpień określonego wzorca w tekście lub ciągu znaków. Jest to przydatne, gdy chcemy oczyszczać dane lub zmieniać format tekstu.
+## Co i dlaczego?
+
+Usuwanie znaków pasujących do wzorca to proces odfiltrowywania znaków ze stringa, które pasują do określonego wzoru. Programiści robią to, aby przekształcić dane wejściowe na deseń, który jest łatwiejszy do przetwarzania.
 
 ## Jak to zrobić:
-```Elixir
-str = "Ala ma kota."
-str |> String.replace(~r/a/, "") 
+
+W Elixir mamy do dyspozycji wiele narzędzi, które mogą nam pomóc. Najbardziej podstawowym jest wyrażenie regularne (regex). Oto przykład:
+
+```elixir
+iex> String.replace("Ala ma kota", ~r/a/, "")
+"Il m kot"
 ```
-W tym przykładzie usuwamy wszystkie wystąpienia litery "a" z wyrażenia "Ala ma kota." i otrzymujemy wynik "l m kott.".
 
-## Pełna analiza:
-Usuwanie znaków pasujących do wzorca jest znane również pod nazwą "usuwanie na podstawie wzorca" (pattern-based removal). Jest to powszechne w wielu językach programowania, takich jak Elixir czy Ruby. Alternatywne metody obejmują wyszukiwanie i zamianę, które wymaga więcej kodu, oraz użycie machery RegEx (Regular Expression) dla bardziej złożonych zadań. W Elixir, możemy użyć operatora "~r" do utworzenia wyrażenia regularnego i funkcji "String.replace" do usuwania pasujących znaków.
+Tutaj używamy funkcji `String.replace/3`, do której przekazujemy string ("Ala ma kota"), wzorzec (w tym przypadku ~r/a/ - wszystkie litery 'a') oraz ciąg, którym chcemy zastąpić znalezione dopasowania (w tym przypadku pusty ciąg).
 
-## Zobacz też:
-- Dokumentacja Elixir dla funkcji String.replace: https://hexdocs.pm/elixir/String.html#replace/3
-- Poradnik o jak działa "usuwanie na podstawie wzorca" w Elixir: https://dev.to/codebeam/pllist-practical-guide-to-elixir-pattern-matching-based-list-removal-1hm5
+## Wgłąb tematu:
+
+Niektóre z wykorzystywanych do usuwania znaków pasujących do wzorca technik mają swoje korzenie w językach takich jak Perl i Python. Dzięki temu, Elixir, jako młodszy język, ma możliwość czerpania z sprawdzonych rozwiązań.
+
+Alternatywą dla wyrażeń regularnych są listy znaków. Są one jednak mniej elastyczne i skomplikowane w użyciu.
+
+Zaletą wyrażeń regularnych w Elixir jest fakt, że są one kompilowane do bajtkodu BEAM (silnik wirtualnej maszyny Erlang), co znacznie przyspiesza ich działanie.
+
+## Zobacz także:
+
+1. Dokumentacja Elixir na temat wyrażeń regularnych: https://elixir-lang.org/getting-started/regex.html
+2. Więcej o String.replace: https://hexdocs.pm/elixir/String.html#replace/3
+3. Dokumentacja BEAM: https://erlang.org/doc/man/beam_disasm.html

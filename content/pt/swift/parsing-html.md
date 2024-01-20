@@ -1,6 +1,6 @@
 ---
 title:                "Analisando HTML"
-html_title:           "Swift: Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
 simple_title:         "Analisando HTML"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,50 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# O que é e por que fazemos
-Fazer a análise de HTML é um processo de se extrair informações específicas de um documento HTML. Programadores fazem isso porque é uma maneira eficiente de obter dados de uma página da web, sem a necessidade de lê-la manualmente.
+# Parsing HTML no Swift: O que, porquê e como?
 
-## Como Fazer
-Aqui está um exemplo de como fazer a análise de HTML no Swift:
+## O que & Porquê?
+
+*Parsing* HTML é o processo de analisar documentos escritos em HTML para obter informações estruturadas. Programadores fazem isso para extrair dados úteis de páginas da web e manipulá-los conforme necessário.
+
+## Como Fazê-lo:
+
+A biblioteca SwiftSoup é uma opção sólida para analisar HTML no Swift. Aqui está um exemplo simples de como isso funciona:
 
 ```Swift
-guard let url = URL(string: "https://www.exemplo.com") else {
-    print("URL inválida")
-    return
-}
+import SwiftSoup
 
 do {
-    let html = try String(contentsOf: url, encoding: .utf8)
-    let range = NSRange(location: 0, length: html.utf16.count)
-    let regex = try NSRegularExpression(pattern: "<title>(.*?)</title>")
-    let matches = regex.matches(in: html, range: range)
-
-    for match in matches {
-        let titleRange = match.range(at: 1)
-        if let title = Range(titleRange, in: html) {
-            let trimmedTitle = html[title]
-            print(trimmedTitle)
-        }
-    }
+    let html = "<html><head><title>Página de teste</title></head><body>Olá Mundo!</body></html>"
+    let doc: Document = try SwiftSoup.parse(html)
+    let title: Element = try doc.select("title").first()!
+    print(try title.text())
+} catch Exception.Error(let type, let message) {
+    print(message)
 } catch {
-    print("Erro ao tentar obter dados do site")
+    print("Erro desconhecido")
 }
 ```
 
-Esse código irá extrair o conteúdo dentro das tags `<title>` do HTML da página especificada e imprimi-lo no console. Aqui está a saída esperada:
+Output:
 
-```
-Exemplo de página
+```Swift
+Página de teste
 ```
 
 ## Mergulho Profundo
-Fazer a análise de HTML tem sido uma tarefa importante desde o início da web. Anteriormente, os programadores costumavam fazer isso manualmente ou com ferramentas específicas. No entanto, com o surgimento de linguagens de programação e ferramentas mais avançadas, a análise de HTML agora pode ser automatizada e feita com mais eficiência.
 
-Há várias maneiras de fazer a análise de HTML no Swift, incluindo o uso de bibliotecas de terceiros, como o SwiftSoup ou o Kanna. Além disso, algumas das implementações mais avançadas envolvem o uso de árvores XML e modelos de dados para armazenar e manipular os dados extraídos.
+Desde a invenção do HTML nos anos 90, os programadores têm usado métodos diferentes para analisá-lo. Métodos antigos incluíam combinações de regex e funções de manipulação de strings, mas essas técnicas eram frágeis e propensas a erros. Ferramentas modernas, como o SwiftSoup, tornam o processo muito mais robusto e confiável.
+
+Existem várias alternativas ao SwiftSoup que você pode considerar. Por exemplo, Kanna e Ji são duas bibliotecas populares de parsing HTML para Swift.
+
+O SwiftSoup implicitamente implementa o que é conhecido como um analisador descendente (*top-down parser*), que analisa o HTML começando do topo (o elemento html) e trabalhando para baixo através dos elementos filhos.
 
 ## Veja Também
-Para mais informações sobre análise de HTML em Swift, confira os seguintes links:
 
-- [Documentação da linguagem Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-- [Biblioteca SwiftSoup](https://github.com/scinfu/SwiftSoup)
-- [Biblioteca Kanna para análise de HTML e XML em Swift](https://github.com/tid-kijyun/Kanna)
+1. [Documentação do SwiftSoup](https://scinfu.github.io/SwiftSoup/)
+2. [Parsing HTML no Swift com Kanna](https://www.raywenderlich.com/141274/beautiful-soup-go-swift-4)
+3. [Parsing HTML com Ji](https://github.com/honghaoz/Ji)
+4. [Introdução à análise de linguagens formais e autûmatos](https://www.coursera.org/learn/formal-lang-automata)

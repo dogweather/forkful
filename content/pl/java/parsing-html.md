@@ -1,7 +1,7 @@
 ---
-title:                "Wyszukiwanie html"
-html_title:           "Java: Wyszukiwanie html"
-simple_title:         "Wyszukiwanie html"
+title:                "Analiza składniowa HTML"
+html_title:           "Gleam: Analiza składniowa HTML"
+simple_title:         "Analiza składniowa HTML"
 programming_language: "Java"
 category:             "Java"
 tag:                  "HTML and the Web"
@@ -10,38 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Parsowanie HTML to proces analizowania kodu źródłowego strony internetowej w celu wydobycia danych z określonych tagów HTML. Programiści używają tej techniki do automatycznego przetwarzania i zbierania danych z wielu stron internetowych, co może znacznie ułatwić pracę z dużymi zbiorami informacji.
+## Co to jest i dlaczego?
+
+Analiza składniowa HTML polega na interpretacji dokumentów HTML w celu zrozumienia ich struktury i zawartości. Programiści robią to, aby manipulować strukturą strony, ekstrahować dane, testować UX i wiele więcej.
 
 ## Jak to zrobić:
-```Java
-// Importuj potrzebne pakiety
-import org.jsoup.Jsoup; 
-import org.jsoup.nodes.Document; 
-import org.jsoup.nodes.Element; 
-import org.jsoup.select.Elements; 
 
-// Pobierz kod źródłowy strony internetowej
-Document doc = Jsoup.connect("https://www.example.com").get();
+Aby zacząć, musimy najpierw dodać odpowiednią bibliotekę do projektu. Będziemy potrzebować biblioteki Jsoup:
 
-// Wybierz elementy z określonym tagiem HTML i wyświetl ich zawartość
-Elements links = doc.select("a");
-for (Element link : links) {
-    System.out.println("Link: " + link.attr("href"));
+```java
+// Dodaj to do pliku pom.xml
+<dependency>
+   <groupId>org.jsoup</groupId>
+   <artifactId>jsoup</artifactId>
+   <version>1.13.1</version>
+</dependency>
+```
+Teraz możemy zacząć z kodowaniem. Oto przykład jak to zrobić:
+
+```java
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public class Main {
+    public static void main(String[] args) throws Exception {
+        Document doc = Jsoup.connect("http://example.com").get();
+        Elements newsHeadlines = doc.select("#mp-itn b a");
+        for (Element headline : newsHeadlines) {
+            System.out.println(headline.attr("title"));
+            System.out.println(headline.absUrl("href"));
+        }
+    }
 }
 ```
+Jeśli wszystko zadziała poprawnie, powinniśmy zobaczyć tytuły niektórych artykułów na stronie "example.com"
 
-Wyjście:
-```
-Link: https://www.example.com/about
-Link: https://www.example.com/products
-Link: https://www.example.com/contact
-```
+## Głębsze spojrzenie:
 
-## Wnikliwe spojrzenie:
-Parsowanie HTML jest często wykorzystywane w aplikacjach do sczytywania informacji z internetu, takich jak agregatory wiadomości czy narzędzia do automatycznego pobierania danych. Alternatywnym sposobem na przetwarzanie stron internetowych może być użycie narzędzi takich jak Selenium lub regularne wyrażenia, jednak parsowanie HTML jest najbardziej skutecznym sposobem na analizowanie treści stron w większej skali.
+Historia analizy składni HTML jest historycznie związana z rozwojem sieci internetowej i technologii webowych. Przez lata powstało wiele różnych narzędzi do analizy składni HTML, takich jak Beautiful Soup, HtmlUnit, i wiele innych. Jsoup, który omówiliśmy tu, jest znany ze swojej szybkości i wydajności.
+
+Alternatywą dla Jsoup może być HtmlUnit, która jest również mocną biblioteką do analizy składni HTML w Javie. Jeścieś odważny, możesz nawet spróbować napisać własny parser!
+
+Implementacja analizy składni HTML z za pomocą Jsoup polega na zastosowaniu DOM (Document Object Model) do reprezentowania struktury HTML.
 
 ## Zobacz także:
-- [Dokumentacja Jsoup](https://jsoup.org/)
-- [Porównanie Selenium i Jsoup](https://www.blazemeter.com/blog/selenium-vs-jsoup-which-one-should-you-choose/) 
-- [Przykłady działania na stronie Codecademy](https://www.codecademy.com/articles/how-to-parse-html)
+
+- [Dokumentacja Jsoup](https://jsoup.org/cookbook/)
+- [Porównanie bibliotek do analizy składni HTML w Javie](https://www.baeldung.com/java-html-parsing)
+- [Tutorial HtmlUnit](http://htmlunit.sourceforge.net/)

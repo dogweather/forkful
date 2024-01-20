@@ -1,7 +1,7 @@
 ---
-title:                "Lähettämällä http-pyyntö"
-html_title:           "PowerShell: Lähettämällä http-pyyntö"
-simple_title:         "Lähettämällä http-pyyntö"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,37 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-HTTP-pyyntöjen lähettäminen on tapa kommunikoida tietokoneiden välillä internetissä. Ohjelmoijat tekevät tätä voidakseen hakea tietoja muista tietokoneista, viestiä palvelimien kanssa tai tehdä muita verkkotoimintoja. 
+## Mikä & Miksi?
 
-## Miten:
-Esimerkkejä koodista ja esimerkkilähtöön sisältyvät koodiesimerkit käyttäen ```PowerShell...``` -lohkoja.
+HTTP-pyyntöjen lähettäminen on prosessi, jossa sovelluksesi pyytää tietoja tai suorittaa toiminnon verkkopalvelimella. Ohjelmoijat tekevät tämän tiedon jakamiseksi ja tehtävien suorittamiseksi etäisäntäkoneilla.
 
-Esimerkki 1: Lähetä HTTP-GET-pyyntö ja tulosta vastaus:
+## Miten?
 
+### PowerShell-koodiesimerkki:
+ ```PowerShell 
+# Luo HTTP-pyyntö
+$request = [System.Net.WebRequest]::Create('http://example.com')
+
+# Lähetä pyyntö ja saa vastaus
+$response = $request.GetResponse()
+
+# Tulosta vastauksen tilakoodi
+Write-Host $response.StatusCode 
+
+# Liberaalaa resurssit
+$response.Close()
+ ```
+
+#### Tulostusnäyte:
 ```PowerShell
-$request = Invoke-WebRequest -Uri https://example.com/api/data -Method Get
-$request.Content
-```
-Esimerkki 2: Lähetä HTTP-POST-pyyntö JSON-dataan ja käsittele vastaus:
-
-```PowerShell
-$data = @{ 
-    name = "Johanna"
-    age = 28
-    job = "Software Developer"
-} | ConvertTo-Json
-
-$request = Invoke-WebRequest -Uri https://example.com/api/users -Method Post -Body $data -ContentType "application/json"
-$response = ConvertFrom-Json $request.Content
-Write-Output "Uusi käyttäjä luotu: $response.name, $response.job, $response.age vuotta"
+OK
 ```
 
-## Syvemmälle:
-HTTP on protokolla, jota käytetään datan lähettämiseen ja vastaanottamiseen internetissä. Sitä voidaan käyttää monilla eri tavoilla, kuten lähettämään pyyntöjä sähköpostipalvelimelle tai lataamaan kuvia verkkosivuilta. Muita tapoja lähettää HTTP-pyyntöjä PowerShellilla on Triple-H-toiminto tai .NET Frameworkin käyttö.
+## Syvemmälle Sukeltaminen
 
-## Katso lisää:
-Lisää tietoa HTTP-protokollasta ja sen käytöstä löydät täältä:
-- PowerShellin dokumentaatio: https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1
-- HTTP-pyyntöjen lähettämisen vaihtoehdot: https://www.powershellmagazine.com/2014/08/01/playing-with-http-requests-in-powershell/
-- HTTP-pyyntöjen toteuttaminen .NET Frameworkin avulla: https://docs.microsoft.com/en-us/dotnet/api/system.net.httpwebrequest?view=net-5.0
+Historiallisesti HTTP-pyynnöt tunnetaan ensimmäisenä menetelmänä verkkopalvelimelta tiedon hakemiseen, joka lanseerattiin HTTP:n, World Wide Webin perustan, kanssa. PowerShellissa HTTP-pyynnöt voidaan tehdä useilla tavoilla, mukaan lukien Invoke-WebRequest ja Invoke-RestMethod cmdletit, jotka voidaan suorittaa lyhyemmillä koodiriveillä, mutta lisäkehitys mahdollistaen laajemman toiminnallisuuden, kuten otsikkotiedon lisäämisen tai mukautettujen pyyntöjen tekemisen. Paljon syvemmällä, HTTP-pyyntöjen lähettäminen on todella socket-ohjelmointi, jossa luodaan TCP-yhteys palvelimelle ja lähetetään pyyntöjä.
+
+## Lisätietoja
+
+Invoke-WebRequest Cmdlet (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
+
+Invoke-RestMethod Cmdlet (https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
+
+HTTP-profiili (https://developer.mozilla.org/fi/docs/Web/HTTP)
+
+Syvällisempi johdatus socket-ohjelmointiin (https://www.codeproject.com/Articles/52752/A-Streamlined-Method-of-Communicating-with-Network)

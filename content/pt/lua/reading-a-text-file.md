@@ -1,6 +1,6 @@
 ---
 title:                "Lendo um arquivo de texto"
-html_title:           "Lua: Lendo um arquivo de texto"
+html_title:           "Bash: Lendo um arquivo de texto"
 simple_title:         "Lendo um arquivo de texto"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,27 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por quê?
-Ler um arquivo de texto é um processo comum e essencial na programação, que envolve a leitura e acesso às informações contidas em um arquivo de texto. Programadores frequentemente utilizam essa ação para obter dados armazenados em um arquivo, como configurações, listas, textos, entre outros.
+# Leitura de Arquivos de Texto em Lua
 
-## Como fazer:
-```
--- Abrindo e lendo um arquivo de texto
-arquivo = io.open("arquivo.txt", "r")
-conteudo = arquivo:read("*all")
+## O Que & Por Quê?
+A leitura de um arquivo de texto é o processo de acessar dados armazenados em um arquivo de texto pelo código do programa. Os programadores frequentemente precisam fazer isso para utilizar informações previamente registradas, como configurações de sistema ou bancos de dados pequenos.
+
+## Como Fazer:
+A leitura de um arquivo em Lua se faz em poucos passos. Veja:
+
+#### Lendo todo o arquivo de uma vez:
+
+```Lua
+-- Abrir arquivo para leitura
+local arquivo = io.open("meu_arquivo.txt", "r")
+
+-- Ler todo o conteúdo do arquivo
+local conteudo = arquivo:read("*a")
+
+print(conteudo)  -- Exibir o conteúdo
+
+-- Fechar o arquivo
 arquivo:close()
-
--- Imprimindo o conteúdo do arquivo
-print(conteudo)
 ```
-**Saída:**
-```
-Este é o conteúdo do arquivo de texto.
+#### Lendo o arquivo linha por linha:
+
+```Lua
+-- Abrir arquivo para leitura
+local arquivo = io.open("meu_arquivo.txt", "r")
+
+--Ler e imprimir cada linha do arquivo
+for linha in arquivo:lines() do
+    print(linha)
+end
+
+-- Fechar o arquivo
+arquivo:close()
 ```
 
-## Imersão Profunda:
-Ler arquivos de texto remonta aos primeiros dias da programação, quando os computadores eram incapazes de armazenar grandes quantidades de dados na memória. Alternativas como bancos de dados e APIs com suporte a leitura de arquivos também existem, mas ler um arquivo de texto ainda é uma opção simples e confiável. A leitura de arquivos também pode ser combinada com outras operações, como escrita e edição de arquivos.
+## Mergulho Profundo
+A Lua, desde sua criação em 1993, tem uma biblioteca de E/S embutida, chamada io, que suporta leitura e gravação de arquivos.
 
-## Veja Também:
-- [Guia Oficial Lua para Manipulação de Arquivos](https://www.lua.org/pil/21.html)
-- [Documentação Lua sobre Abertura de Arquivos](https://www.lua.org/manual/5.3/manual.html#6.8)
+Alternativamente, você pode usar a função `file:lines()` para obter um iterador que retorna uma nova linha a cada chamada. Ela é mais conveniente e menos propensa a erros comparada a usar `file:read()` em um loop.
+
+Vale lembrar que é importante sempre fechar seus arquivos após a leitura para evitar vazamentos de memória.
+
+## Veja Também
+Se você deseja expandir seu entendimento sobre manipulação de arquivos em Lua, tente esses recursos:
+
+- Documentação oficial do Lua: [Programming in Lua (PiL) - 21.1: File I/O](https://www.lua.org/pil/21.1.html)
+- Livro Prático Lua: [Lua Users Wiki: Reading Files](http://lua-users.org/wiki/ReadingFiles)
+- Tutoriais em vídeo: [YouTube: Lua - File I/O](https://www.youtube.com/watch?v=iMacxZQMPXs)

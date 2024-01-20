@@ -1,6 +1,6 @@
 ---
 title:                "HTTP 요청 보내기"
-html_title:           "Javascript: HTTP 요청 보내기"
+html_title:           "Clojure: HTTP 요청 보내기"
 simple_title:         "HTTP 요청 보내기"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,38 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 그리고 왜?
+## 무엇 & 왜?
+HTTP 요청을 보내는 것은 응용 프로그램이 서버와 통신할 때 사용하는 일반적인 방법입니다. 이를 통해 프로그래머는 사용자 입력을 처리하거나 특정 작업을 수행한 뒤에 결과를 가져올 수 있습니다.
 
-HTTP 요청을 보내는 것은 서버로부터 정보를 가져오거나 업데이트하기 위해 인터넷에서 가장 많이 사용되는 방법 중 하나입니다. 프로그래머는 이 기술을 사용하여 웹 애플리케이션을 더욱 동적이고 상호 작용식으로 만들 수 있습니다.
-
-## 하는 법:
-
-```Javascript
-// 예시 1: 숫자 더하기
-let num1 = 5;
-let num2 = 10;
-
-let result = num1 + num2;
-console.log(result); // 15 출력
+## 어떻게:
+새로운 HTTP 요청을 만드는 가장 간단한 방법을 보겠습니다. 이는 `fetch()` 함수를 사용합니다.
+```JS
+fetch('https://api.example.com/data', {
+  method: 'GET'
+})
+.then(response => response.json())
+.then(data => console.log(data));
 ```
+이 예제에서 `fetch()` 함수는 주어진 URL로 HTTP GET 요청을 보냅니다. 요청이 성공적으로 완료되면, `then()` 메소드를 사용하여 응답 데이터를 처리합니다.
 
-```Javascript
-// 예시 2: HTTP 요청 보내기
-const http = new XMLHttpRequest();
-http.open("GET", "https://example.com/api/users");
-http.send() // 요청 보내기
-http.onload = () => {
-  let users = JSON.parse(http.responseText);
-  console.log(users); // 서버로부터 받아온 사용자 정보 출력
-};
-```
+## 딥 다이브
+HTTP 요청은 1990년대 초에 Tim Berners-Lee에 의해 개발된 월드 와이드 웹의 핵심 구성 요소 중 하나입니다. fetch() 함수 외에도, JavaScript에서는 `XMLHttpRequest`나 `axios` 라이브러리 등의 다른 방법도 있습니다.
 
-## 깊이 들어가보기:
+`fetch()`는 모던 브라우저에서만 지원하며, 이전 버전이나 일부 브라우저에서는 작동하지 않을 수 있습니다. 이런 경우나 더 복잡한 요청을 다루려면 `axios`나 `XMLHttpRequest`를 사용할 수 있습니다.
 
-HTTP 요청은 1991년 팀 버너스 리가 대표적인 웹 프로토콜인 HTTP를 발명하면서 처음 소개되었습니다. 그 후 브라우저와 서버 간의 통신을 가능하게 하는 XMLHttpRequest가 등장했고, 이제는 fetch API가 나옴으로써 더욱 간단하게 HTTP 요청을 보낼 수 있게 되었습니다. 또한 HTTP는 웹 외에도 브라우저와 다른 서버 사이에서 데이터를 주고받는 데에도 사용됩니다.
-
-## 참고 자료:
-
-- [MDN Web Docs: HTTP](https://developer.mozilla.org/ko/docs/Web/HTTP)
-- [MDN Web Docs: XMLHttpRequest](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest)
-- [MDN Web Docs: fetch API](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API)
+## 참고 자료
+1. MDN Web Docs의 [Fetch API](https://developer.mozilla.org/ko/docs/Web/API/Fetch_API)
+2. MDN Web Docs의 [XMLHttpRequest](https://developer.mozilla.org/ko/docs/Web/API/XMLHttpRequest)
+3. Axios의 [Github 페이지](https://github.com/axios/axios)

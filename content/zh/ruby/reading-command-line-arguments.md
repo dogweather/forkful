@@ -1,6 +1,6 @@
 ---
 title:                "读取命令行参数"
-html_title:           "Ruby: 读取命令行参数"
+html_title:           "C: 读取命令行参数"
 simple_title:         "读取命令行参数"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,38 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 这是什么 & 为什么？
+## 什么是命令行参数以及为什么我们要读取？ (What & Why?)
 
-读取命令行参数是程序员经常做的一件事情，它允许他们在运行程序时通过命令行输入一些参数。这样就可以改变程序的行为，让它更具有灵活性。
+命令行参数是传递给脚本的信息，它帮助我们定制程序功能以适应不同的需求。从命令行读取参数能够使程序更加灵活且能够处理不同的使用情况。
 
-## 如何：
+## 这是如何做到的？ (How To:)
+
+首先，让我们来看一个简单的实例。在你的脚本中，你可以使用全局`ARGV`数组来访问这些参数。
 
 ```Ruby
-# 这是一个简单的示例，演示如何读取一个命令行参数并将其打印出来。
-
-# 首先，我们需要导入 Ruby 内置的 ARGV 模块，它可以帮助我们读取命令行参数。
-require 'ARGV'
-
-# 下一步是定义一个数组，用于存储我们读取到的命令行参数。
-args = []
-
-# 然后，我们可以使用 each 方法来遍历 ARGV 数组，并将每个参数添加到我们定义的 args 数组里面。
-ARGV.each do |arg|
-  args << arg
-end
-
-# 最后，我们可以使用 puts 方法将 args 数组里面的参数打印出来。
-puts "命令行参数为：#{args}"
+# greeting.rb
+name = ARGV.first  
+puts "Hello, #{name}!"
 ```
 
-输出为：命令行参数为：[参数1, 参数2, 参数3]
+当你在命令行中运行这个程序时，如`ruby greeting.rb Alice`，结果将会是`Hello, Alice!`。
 
-## 深入了解：
+## 对此进行深度研究 (Deep Dive)
 
-读取命令行参数这个功能在很多编程语言中都有，它为程序员提供了一种方便的方式来交互式地控制程序的行为。除了使用 ARGV 模块，还有一种常用的方式是使用环境变量来读取命令行参数。另外，如果程序需要读取复杂的命令行参数，还可以使用 OptionParser 类来帮助处理。不管采用哪种方式，读取命令行参数都是让程序更加灵活实用的一种方法。
+在深入学习如何从Ruby命令行读取参数之前，有三个主要的领域值得关注：历史背景，不同的方法，以及读取命令行参数的实际内部工作方式。
 
-## 参考链接：
+1. 历史背景: 早在计算机诞生的初期，命令行就被用作用户与计算机的交互接口。理解如何读取和使用命令行参数可以帮助我们编写更具适应性和灵活性的脚本。
 
-- [Ruby 官方文档 - ARGV 模块](https://ruby-doc.org/core-3.0.2/ARGV.html)
-- [Ruby 官方文档 - OptionParser 类](https://ruby-doc.org/stdlib-3.0.2/libdoc/optparse/rdoc/OptionParser.html)
-- [Ruby 之家 - Ruby 命令行参数介绍](https://www.ruby-cn.org/articles/commandlineargs/)
+2. 不同的方法: 尽管全局`ARGV`数组是读取命令行参数的最常见方法，也有一些标准库，如 `OptionParser`或`optparse`，它们提供了更详细的功能，可以处理选项以及选项后面的参数。
+
+3. 实现细节: 当调用`ruby`命令并传入一个脚本时，脚本名后面的所有参数都会被视为命令行参数加入`ARGV`数组。脚本名存储在全局变量`$0`中。
+
+## 参见 (See Also)
+
+- Ruby 官方文档，ARGV: https://ruby-doc.org/core-2.7.0/ARGV.html
+- OptionParser类的详细指南: https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html
+- Stack Overflow, 关于Ruby命令行参数的讨论: https://stackoverflow.com/questions/1334555/ruby-command-line-arguments

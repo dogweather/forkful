@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "Elixir: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué & Por qué?
 
-Crear un archivo temporal es una forma común para que los programadores manejen datos de manera temporal durante la ejecución de un programa. Esto puede ser útil para almacenar datos temporales como caché, variables temporales o para realizar operaciones específicas antes de guardar los datos en un archivo permanente.
+Creando un archivo temporal es como proyectar un espacio de almacenamiento transitorio para nuestros datos. Los programadores a menudo lo hacen para manejar datos temporales sin traer a riesgo la integridad de los datos permanentes.
 
-## Cómo hacerlo:
+## ¿Cómo hacerlo? 
 
-```elixir
-# Importamos el módulo "File" para manipular archivos
-import File
+Aquí hay un código básico que muestra cómo crear un archivo temporal y escribir en él.
 
-# Creamos un archivo temporal con el prefijo "temp" y la extensión ".txt"
-{:ok, temp_file} = File.temp_file("temp", ".txt")
+```Elixir
+{:ok, path} = File.touch("mi_archivo_temporal.txt")
+File.write!(path, "Hola, este es un archivo temporal.")
+IO.puts("El archivo ha sido creado y escrito en: #{path}")
+```
+Este es el resultado esperado:
 
-# Escribimos un texto en el archivo temporal
-write_result = File.write(temp_file, "Este es un archivo temporal.")
-
-# Leemos el contenido del archivo
-read_result = File.read(temp_file)
-
-# Imprimimos el resultado
-IO.puts(read_result)
-
-# Cerramos y eliminamos el archivo temporal
-File.close(temp_file)
-File.delete(temp_file)
+```
+El archivo ha sido creado y escrito en: mi_archivo_temporal.txt
 ```
 
-**Salida:**
-```
-Este es un archivo temporal.
-```
+## Análisis en profundidad
 
-## Profundizando:
+* Contexto histórico: La creación de archivos temporales ha sido una práctica común en la programación desde los primeros días de la informática para manejar datos temporales durante una sesión de programación.
 
-Crear archivos temporales se remonta a los primeros días de la programación, cuando los recursos de almacenamiento eran limitados y se necesitaba una forma de manejar datos de manera eficiente durante la ejecución de un programa. Hoy en día, también existen otras formas de manejar datos temporales, como variables en memoria o bases de datos en memoria.
+* Alternativas: La creación de archivos temporales no es la única forma de manejar los datos temporales. También podemos optar por almacenar estos datos temporalmente en la memoria (RAM) utilizando estructuras de datos temporales.
 
-En Elixir, la función `File.temp_file/2` nos permite crear un archivo temporal en una ubicación específica o en la ubicación predeterminada del sistema, que varía según la plataforma en la que se está ejecutando el programa. Además, la función también devuelve una tupla con un átomo `:ok` y una ruta al archivo temporal creado, lo que hace que sea fácil y rápido acceder al archivo.
+* Detalles de implementación: En Elixir, utilizamos la función `File.touch` para crear un archivo temporal. Luego, se puede escribir en este archivo utilizando `File.write!`. Si cuenta con permisos adecuados, el archivo temporal se crea y se escribe en su directorio de trabajo actual.
 
-## Ver también:
+## Ver también
 
-- [Documentación oficial de File en Elixir](https://hexdocs.pm/elixir/File.html#temp_file/2) para obtener más información sobre la función `File.temp_file/2`.
-- [Artículo sobre variables en memoria vs archivos temporales](https://www.geeksforgeeks.org/temporary-variables-vs-file/), que discute diferentes formas de manejar datos temporales en la programación.
-- [Discusión sobre el uso de archivos temporales en programación](https://news.ycombinator.com/item?id=22282224) en la comunidad Hacker News.
+* Documentación oficial de Elixir sobre módulo de archivo: https://hexdocs.pm/elixir/File.html
+* Buen tutorial sobre manejo de archivos en Elixir: https://elixirschool.com/es/lessons/specifics/file-io/
+* Biblioteca Temp en Elixir para manejo de archivos temporales: https://hexdocs.pm/temp/readme.html

@@ -1,6 +1,6 @@
 ---
 title:                "문자열의 길이 찾기"
-html_title:           "Rust: 문자열의 길이 찾기"
+html_title:           "Lua: 문자열의 길이 찾기"
 simple_title:         "문자열의 길이 찾기"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,28 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust로 문자열의 길이를 찾는 방법
-
 ## 무엇 & 왜?
-문자열의 길이를 찾는 것은, 단순히 문자열이 얼마나 긴지를 알아내는 것입니다.
-프로그래머들은 이를 자주 사용하는데, 예를 들면 입력된 문자열의 유효성을 검사하거나 출력 시 문자열의 길이를 제한하기 위해 사용될 수 있습니다.
 
-## 사용 방법:
-아래의 코드 블록에 Rust 언어로 작성된 예제와 그 결과가 포함되어 있습니다. 공백 문자를 포함하여 길이를 계산할 때는 ```len()``` 함수를 사용할 수 있으며, 또는 한국어 문자열의 길이를 계산할 때는 ```chars()``` 함수를 사용합니다.
+문자열의 길이를 찾는 것이란, 해당 문자열이 얼마나 많은 문자를 포함하는지를 확인하는 것입니다. 이를 통해 프로그래머들은 불필요한 메모리 낭비를 방지하거나, 복잡한 연산을 최적화 할 수 있습니다.
 
-``` Rust
-let input = "안녕하세요";
-let len = input.len(); // 한국어는 3 byte 문자로 인식하므로 len은 15가 됩니다.
-let chars = input.chars().count(); // chars는 한글을 5개로 인식하므로 5가 됩니다.
-println!("len: {}", len);
-println!("chars: {}", chars);
+## 어떻게:
+
+Rust에서는 `len()` 함수를 사용하여 문자열의 길이를 찾을 수 있습니다. 아래 예시를 확인해 보세요:
+
+```Rust
+fn main() {
+    let my_string = String::from("안녕하세요");
+    let length = my_string.chars().count();
+    println!("Length: {}", length);
+}
 ```
 
-## 더 깊이 알아보기:
-- 이전에는 문자열의 길이를 구하기 위해 루프를 사용하는 등 복잡한 방법들이 존재했으나, Rust에서는 표준 라이브러리의 함수를 통해 더 효율적이고 안전하게 길이를 구할 수 있습니다.
-- 다른 언어에서는 문자열 길이를 저장하는 변수나 코드를 따로 작성해야하는 경우가 많지만, Rust는 표준 라이브러리의 함수를 통해 길이를 쉽게 구할 수 있습니다.
-- Rust의 ```len()``` 함수는 문자열의 길이를 byte 단위로, ```chars()``` 함수는 Unicode 문자를 기준으로 계산합니다.
+이 코드를 실행하면, '안녕하세요' 문자열의 길이를 출력합니다:
 
-## 관련 정보 보기:
-- [Rust 표준 라이브러리 문서](https://doc.rust-lang.org/std/string/struct.String.html)
-- [StackOverflow에서 Rust 문자열 관련 질문과 답변](https://stackoverflow.com/questions/31238615/how-do-i-get-the-length-of-a-string-in-rust)
+```Rust
+Length: 5
+```
+
+## 심층 학습
+
+문자열의 길이를 확인하는 것은 컴퓨터 사이언스의 가장 기본적인 개념 중 하나입니다. 초기 프로그래밍 언어에서부터 현대의 고급 언어까지, 이 작업은 여전히 필요한 기능입니다.
+
+Rust에서는 두 가지 방법으로 문자열의 길이를 확인 가능합니다. 첫 번째는 위에서 살펴본 `len()` 함수를 사용하는 것이며, 두 번째 방법은 `char().count()` 함수를 사용하는 것입니다. 첫 번째 방법은 바이트 단위의 길이를 반환하므로, 유니코드 문자를 위해서는 두 번째 방법을 사용하는 것이 더 정확합니다.
+
+## 참고 사항
+
+더 자세한 정보, 특히 문자열과 문자열의 길이에 관한 다양한 활용법을 알고 싶다면 다음의 문서를 참고하세요:
+
+1. Rust 공식 문서: [Strings](https://doc.rust-lang.org/book/ch08-02-strings.html)
+2. Rust by Example: [Strings](https://doc.rust-lang.org/rust-by-example/std/str.html)
+3. StackOverflow의 Rust 문자열에 관한 질문: [Rust - String vs str](https://stackoverflow.com/questions/24158114/what-are-the-differences-between-rusts-string-and-str)
+
+이 외에도 Rust의 문자열 조작에 대한 다양한 주제와 문제는 구글 검색, 블로그, 깃허브 등에서 쉽게 찾아보실 수 있습니다.

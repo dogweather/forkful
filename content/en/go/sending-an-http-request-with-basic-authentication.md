@@ -1,6 +1,6 @@
 ---
 title:                "Sending an http request with basic authentication"
-html_title:           "Go recipe: Sending an http request with basic authentication"
+html_title:           "Fish Shell recipe: Sending an http request with basic authentication"
 simple_title:         "Sending an http request with basic authentication"
 programming_language: "Go"
 category:             "Go"
@@ -10,49 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Send HTTP Request with Basic Auth in Go
+
 ## What & Why?
 
-Sending an HTTP request with basic authentication is a way for programmers to secure their web requests by requiring a username and password before accessing a certain resource. This is commonly used for authentication purposes, such as when accessing APIs or other sensitive data.
+Sending an HTTP request with basic authentication is a way to secure and grant access to certain parts of a web service. Programmers do this to protect sensitive data from unauthorized use while providing controlled access to legit users.
 
 ## How to:
 
-Go makes it easy to send an HTTP request with basic authentication with its built-in `net/http` package. First, we need to set up a `Client` object and specify the username and password in the `BasicAuth` method. Then, we can use the `Get` method to send a GET request and get the response back.
+Here's an example of sending a GET HTTP request with basic authentication:
 
 ```Go
-// Set up the Client
-client := &http.Client{}
+package main
 
-// Set username and password
-username := "myusername"
-password := "mypassword"
+import (
+	"fmt"
+	"net/http"
+)
 
-// Set up the request and add basic authentication
-req, err := http.NewRequest("GET", "https://api.example.com/users", nil)
-req.SetBasicAuth(username, password)
+func main() {
+	req, err := http.NewRequest("GET", "https://api.github.com/user", nil)
+	if err != nil {
+		fmt.Printf("http.NewRequest() error: %v\n", err)
+		return
+	}
+	req.SetBasicAuth("username", "password")
 
-// Send the request and get the response
-resp,err := client.Do(req)
-defer resp.Body.Close()
-
-// Print out the response
-body, err := ioutil.ReadAll(resp.Body)
-fmt.Println(string(body))
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	if err != nil {
+		fmt.Printf("http.Do() error: %v\n", err)
+		return
+	}
+	defer resp.Body.Close()
+  
+	// ... read resp.Body here...
+}
 ```
-
-The output should be the response from the API call, which could be in the form of JSON or any other format depending on the API.
+In the above code, replace 'username' and 'password' with your own credentials.
 
 ## Deep Dive
 
-Basic authentication has been around since the early days of the web and is still widely used today. It was originally introduced as a way to protect resources and restrict access to authorized users. However, due to its simplicity, it is not considered the most secure form of authentication.
+Historically, basic authentication was a simple protocol, where user credentials were encoded and transmitted with each HTTP request. It's still widely used due to its simplicity, despite this method's potential vulnerability, as credentials can be intercepted easily.
 
-There are alternatives to basic authentication, such as OAuth, which is a more secure and widely adopted method for authentication. Another alternative is API keys, where a unique key or token is generated for each user and is used to authenticate their requests.
+Alternatives include OAuth and Token-based auth. They work by issuing tokens which are sent as headers in the HTTP request, and are generally more secure compared to Basic Auth.
 
-In terms of implementation, basic authentication works by adding the username and password in the `Authorization` header of the HTTP request in the format `Basic username:password` which is then encoded in Base64. This means that the username and password are transmitted in plaintext and can be easily decoded, making it vulnerable to security threats.
+In Go, an `http.Request` object's method `SetBasicAuth(username, password string)` is used to add the Authorization header to the HTTP request. It encodes the username and password in base64 and prepends `Basic ` to it.
 
 ## See Also
 
-For more information on sending HTTP requests with basic authentication in Go, check out these resources:
-
-- [Official Documentation on Net/HTTP Package](https://golang.org/pkg/net/http/#Request.SetBasicAuth)
-- [A Beginner's Guide to HTTP Authentication](https://www.smashingmagazine.com/2018/01/understanding-using-rest-api/)
-- [OAuth vs. Basic Authentication](https://nordicapis.com/why-oauth-is-taking-over-rest-api-security-trends/)
+To build upon this, checkout [Go's full documentation on net/http](https://golang.org/pkg/net/http/) package. For secure alternatives, [OAuth 2.0](https://oauth.net/2/), or [JWT](https://jwt.io/) can be good starting points. Learn more about basic authentication from the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication).

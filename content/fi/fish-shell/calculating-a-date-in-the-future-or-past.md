@@ -1,7 +1,7 @@
 ---
-title:                "Tulevan tai menneen päivämäärän laskeminen"
-html_title:           "Fish Shell: Tulevan tai menneen päivämäärän laskeminen"
-simple_title:         "Tulevan tai menneen päivämäärän laskeminen"
+title:                "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+html_title:           "Fish Shell: Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
+simple_title:         "Tulevaisuuden tai menneisyyden päivämäärän laskeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,38 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
+## Mitä ja Miksi?
 
-Päivämäärien laskeminen tulevaisuutta tai menneisyyttä varten tarkoittaa tietyn päivämäärän lisäämistä tai vähentämistä tietyn määrän päiviä. Ohjelmoijat tekevät tätä esimerkiksi laskiessaan tulevaa tapahtumaa tai tarkistaessaan ajastettujen tehtävien päivämääriä.
+Laskeminen päivämäärä tulevaisuudessa tai menneisyydessä yksinkertaisesti tarkoittaa päivämäärän muokkaamista nykyhetkestä tietyllä määrällä päiviä tai kuukausia joko eteen- tai taaksepäin. Ohjelmoijat tekevät tämän esimerkiksi arvioimaan projektin kestoajat, määrittelmään julkaisupäivämään tai pitämään kirjaa viimeisestä päivityksestä.
 
-# Miten?
+## Näin teet:
 
-```Fish Shell```-ohjelman avulla voit helposti laskea tulevaisuuden tai menneisyyden päivämääriä. Alla olevassa esimerkissä lisätään 30 päivää nykyiseen päivämäärään ja tuloksena saadaan 2.tammikuuta 2021.
-
+```Fish Shell
+# Tulevaisuuden päivämäärä
+set -l future_date (date -d "+30 days" +"%d.%m.%Y")
+echo $future_date
 ```
-Fish Shell date -d "+30 days" +%d.%m.%Y
-02.01.2021
+Sampla ulostulo esimerkiksi:
+
+```28.11.2022```
+
+```Fish Shell
+# Menneisyyden päivämäärä
+set -l past_date (date -d "-30 days" +"%d.%m.%Y")
+echo $past_date
 ```
+Sampla ulostulo esimerkiksi:
 
-Voit myös lisätä päiviä tai kuukausia suoraan haluamaasi päivämäärään, kuten seuraavassa esimerkissä, jossa lisätään 3 kuukautta 15 päivää 9.huhtikuuta 2020:
+```29.09.2022```
+    
 
-```
-Fish Shell date -d "09.04.2020 +3 months 15 days"
-24.07.2020
-```
+## Syvä sukellus
 
-# Syvemmälle
+Päivämäärän laskeminen tulevaisuudessa tai menneisyydessä on yksinkertainen, mutta välttämätön komento ohjelmoinnin maailmassa. Tämä päivämääräkäsittelykonsepti otettiin käyttöön jo varhaisina UNIX-aikoina ja on osa perusohjelmointia. 
 
-Päivämäärien laskeminen on yleinen tehtävä ohjelmoinnissa ja tästä syystä siihen löytyy useita eri tapoja. ```Fish Shell``` tarjoaa kuitenkin helpon ja nopean tavan laskea päivämääriä, joten sitä kannattaa ehdottomasti hyödyntää.
+Fish Shell tarjoaa tehokkaan ja yksinkertaisen tavan käsitellä aikaa, mutta muita vaihtoehtoisia shell-kieliä, kuten Zsh tai Bash, voidaan myös käyttää. Implementointi määrittyy suurelta osin 'date' -komennon avulla, joka tulkitsee tekstiä aikaa kuvaaviksi tyypeiksi.
 
-## Vaihtoehtoja
+## Katso myös:
 
-On olemassa monia muita ```Shell```-ohjelmia ja kielitietoja, jotka tarjoavat samanlaisia toimintoja päivämäärien laskemiseen, kuten esimerkiksi ```Bash``` ja ```Python```. Voit myös käyttää erilaisia tietokoneen kalenterisovelluksia, joissa on sisäänrakennettu päivämäärien laskenta-toiminto.
+[Fish Shell Documentaatio:](https://fishshell.com/docs/)
 
-## Taustatietoa
+[UNIX ajanlaskun historia:](https://www.eecis.udel.edu/~mills/leap.html)
 
-Päivämäärien laskenta on tärkeä osa ohjelmointia, sillä se auttaa ohjelmoijia aikatauluttamaan tehtäviä ja hallitsemaan aikaa. Alun perin päivämäärien laskenta perustui maailmanlaajuiseen standardiin nimeltä Unix Time, joka määrittää päivämäärät sekunteina tietystä ajankohdasta lähtien.
-
-# Katso myös
-
-[Täältä](https://fishshell.com/docs/current/index.html) löydät lisätietoa ```Fish Shell```ista ja sen eri toiminnoista, mukaan lukien päivämäärien laskeminen. Voit myös tutustua erilaisiin päivämäärien laskentamenetelmiin ja niiden käyttöön eri ohjelmointikielillä.
+[Käytä Bash keskustelun hallintaan:](https://www.linuxjournal.com/content/using-bash-dialogs)

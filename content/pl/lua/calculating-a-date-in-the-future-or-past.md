@@ -10,24 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Obliczanie daty w przeszłości lub przyszłości to proces, w którym programista wykorzystuje kod, aby ustalić, jaka będzie data, gdy zostanie dodana lub odebrana pewna ilość dni do bieżącej daty. Jest to przydatne w wielu różnych aplikacjach, takich jak kalendarze, systemy rezerwacji lub programy finansowe.
+## Co i dlaczego?
+Obliczanie daty w przyszłości lub przeszłości to proces określania dokładnego dnia, który występuje po lub przed określoną datą. Programiści to robią, aby zarządzać danymi czasu, np. do tworzenia harmonogramów czy przypomnień.
 
 ## Jak to zrobić:
+Obliczanie daty w przyszłości lub przeszłości w Lua jest proste. Użyjemy wbudowanej funkcji `os.time()`, która zwraca aktualny czas w sekundach, a `os.date()` do formatowania daty:
+
 ```Lua
--- Przykład kodu w Lua do dodawania dni do bieżącej daty
-local data = os.date("*t") -- pobranie bieżącej daty w formacie tabeli
-data.day = data.day + 5 -- dodanie 5 dni do daty
-local nowaData = os.time(data) -- konwersja do formatu czasu
-print(os.date("%Y-%m-%d", nowaData)) -- wyświetlenie nowej daty w formacie rok-miesiąc-dzień
+-- Obliczanie daty za 7 dni
+local czas_teraz = os.time()
+local sekundy_na_dobe = 60 * 60 * 24 -- 60 sekund, 60 minut, 24 godziny
+local dni_w_przyszlosci = 7
+
+local czas_w_przyszlosci = czas_teraz + sekundy_na_dobe * dni_w_przyszlosci
+local data_w_przyszlosci = os.date('%d-%m-%Y', czas_w_przyszlosci)
+print(data_w_przyszlosci) -- Wydrukuj datę.
 ```
 
-Przykładowy wynik: 2021-12-07
+Podobnie, możemy obliczyć datę w przeszłości odejmując dni:
 
-## Głębszy zanurzenie:
-Obliczanie daty w przeszłości i przyszłości jest możliwe dzięki bibliotece czasu dostępnej w języku Lua. Istnieją także inne sposoby na manipulowanie datami, takie jak wykorzystanie bibliotek zewnętrznych lub funkcji dostępnych w systemie operacyjnym. W niektórych aplikacjach konieczne jest korzystanie z specjalnych formatów dat, w takim przypadku należy dostosować kod do odpowiednich wymagań.
+```Lua
+-- Obliczanie daty 7 dni temu
+local dni_w_przeszlosci = 7
+local czas_w_przeszlosci = czas_teraz - sekundy_na_dobe * dni_w_przeszlosci
+local data_w_przeszlosci = os.date('%d-%m-%Y', czas_w_przeszlosci)
+print(data_w_przeszlosci) -- Wydrukuj datę.
+```
 
-## Zobacz także:
-- [Dokumentacja Lua o bibliotece czasu](https://www.lua.org/manual/5.1/manual.html#5.8)
-- [Inne sposoby manipulowania datami w Lua](https://lua-users.org/wiki/DayProg)
-- [Porównanie różnych metod obliczania dat w Lua](https://stackoverflow.com/questions/18641379/how-to-increase-date-by-few-days-in-lua)
+## Deep Dive
+Obliczanie daty w przyszłości lub przeszłości to powszechna praktyka od czasów maszyn liczących, kiedy to stosowano algorytmy takie jak mechanizm Zeller'a. Alternatywą dla naszego podejścia w Lua są bibloteki do zarządzania czasem, takie jak date.lua, które oferują więcej funkcji i elastyczności. W Lua, `os.time()` zwraca czas w sekundach od pewnej epoki, zwykle od 00:00:00 UTC, 1 stycznia 1970, co jest typowym zachowaniem dla systemów Unix.
+
+## Zobacz również
+- Dokumentacja Lua: https://www.lua.org/manual/5.4/manual.html#6.9
+- Pakiet date dla Lua: https://olivinelabs.com/date/

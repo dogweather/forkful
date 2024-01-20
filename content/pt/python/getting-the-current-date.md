@@ -1,6 +1,6 @@
 ---
 title:                "Obtendo a data atual"
-html_title:           "Python: Obtendo a data atual"
+html_title:           "C: Obtendo a data atual"
 simple_title:         "Obtendo a data atual"
 programming_language: "Python"
 category:             "Python"
@@ -10,32 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Pq?
-Pegar a data atual em um programa é uma função importante para lidar com informações cronológicas. Os programadores geralmente precisam dessa funcionalidade para rastrear o tempo de execução do código, realizar cálculos com datas ou simplesmente exibir a data para o usuário.
+## O Que & Por Que?
 
-## Como fazer:
-Para obter a data atual em Python, é necessário importar o módulo `datetime`, que possui a função `datetime.now()`, que retorna um objeto contendo a data e hora atuais. Em seguida, use a função `strftime()` para formatar a data da forma desejada.
+Obter a data atual é algo que programadores Python fazem para rastrear eventos e horários em tempo real. É especialmente útil para registro de logs, relatórios e programação orientada a eventos.
 
-```Python
+## Como Fazer:
+
+No Python, você pode obter a data atual utilizando o módulo `datetime`. Veja o procedimento abaixo:
+
+```python
 import datetime
 
-# Obtendo data atual
-data_atual = datetime.now()
-
-# Formatando a data
-formato = data_atual.strftime("%d/%m/%Y")
-
-# Imprimindo a data formatada
-print(formato)
+# Pegar a data atual
+data_atual = datetime.date.today()
+print(data_atual)
 ```
 
-**Saída:**
+A saída seria algo como:
 
-> 21/07/2021
+```python
+2022-03-09  # Este é apenas um exemplo, a saída real seria a data atual.
+```
 
-## Mergulho profundo:
-A obtenção da data atual é um recurso útil em muitos cenários de programação. Antes do módulo `datetime` ser introduzido em Python, a obtenção da data atual era feita utilizando a função `time()`, que retornava apenas o tempo em segundos desde a meia-noite de 1º de janeiro de 1970. Além disso, existem outras formas de obter a data e hora atuais, como o uso de APIs externas.
+## Mergulho Profundo
 
-## Veja também:
-- Documentação do módulo `datetime` em Python: https://docs.python.org/3/library/datetime.html
-- Python Anywhere - Como obter a data e hora atuais: https://help.pythonanywhere.com/pages/GettingTheCurrentDateInYourProgram/
+O módulo `datetime` pertence à biblioteca padrão do Python, então você não precisa instalar nada. É preferível usá-lo em vez de módulos externos, porque ele é mantido pelos desenvolvedores do Python e é altamente confiável.
+
+Existem outras maneiras de obter a data atual, principalmente usando o módulo `time`, mas o `datetime` é geralmente preferido devido à sua flexibilidade e facilidade de uso. `datetime` também oferece funções para fazer cálculos de tempo, converter entre diferentes formatos de data e hora, e lidar com fuso horário.
+
+No entanto, existem bibliotecas de terceiros como `Pendulum` e `Arrow` que podem oferecer alguns recursos extras, como suporte aprimorado para fusos horários e operações de data mais intuitivas, caso você precise deles.
+
+## Veja Também:
+
+Documentação oficial do Python sobre o módulo `datetime`: https://docs.python.org/3/library/datetime.html 
+
+Para uma visão geral aprofundada e exemplos de `datetime`, 'Pendulum' e `Arrow`, tenha um olhar: 
+
+- Artigo sobre 'Datetime' em Python: https://realpython.com/python-datetime/ 
+- Documentação da biblioteca 'Pendulum': https://pendulum.eustace.io/docs/ 
+- Documentação da biblioteca 'Arrow': https://arrow.readthedocs.io/en/latest/

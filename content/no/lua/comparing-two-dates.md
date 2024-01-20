@@ -1,7 +1,7 @@
 ---
-title:                "Sammenligning av to datoer"
-html_title:           "Lua: Sammenligning av to datoer"
-simple_title:         "Sammenligning av to datoer"
+title:                "Sammenligner to datoer"
+html_title:           "Clojure: Sammenligner to datoer"
+simple_title:         "Sammenligner to datoer"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -12,31 +12,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Å sammenligne to datoer er en metode som lar programmerere sammenligne to gitt datoer for å bestemme hvilken som kommer først eller sist. Dette kan være nyttig for å sortere datoer eller søke etter datoer innenfor en tidsramme.
+Sammenligning av to datoer handler om å avgjøre hvilken av de to datoene som kommer først. Dette gjør programmerere for å håndtere hendelser basert på tid, som for eksempel å finne ut tidsforskjellen mellom to hendelser.
 
-## Hvordan å:
+## Slik Gjør Du:
 
-```Lua
--- Bruke os.time() for å få dagens dato og lagre den som en variabel
-local iDag = os.time()
+Lua har ikke en innebygd dato- og tidsfunksjon slik andre språk har, men å sammenligne datoer kan oppnås ved hjelp av 'os' biblioteket. Her er en eksempelkode:
 
--- Opprette en annen dato som skal sammenlignes
-local annenDato = os.time({year = 2021, month = 8, day = 25})
+```lua
+tip1 = os.time{year=2022, month=12, day=31, hour=23, min=59, sec=59}
+t1 = os.date('*t', tip1)
 
--- Sammenligne de to datoene og lagre resultatet som en variabel
-local resultat = iDag - annenDato
+tip2 = os.time{year=2022, month=11, day=30, hour=23, min=59, sec=59}
+t2 = os.date('*t', tip2)
 
--- Skrive ut resultatet
-print(resultat)
+if(os.difftime(tip1, tip2) > 0) then
+    print("Date1 is later than Date2")
+else
+    print("Date2 is later than Date1")
+end
 ```
 
-Output: -56166400
+Når du kjører koden vil den returnere "Date1 is later than Date2".
 
-## Mer inngående:
+## Dypdykk
 
-Det å sammenligne datoer har vært en del av programmering siden tidligere tider. I dag brukes det ofte for å holde orden på datoer og tidspunkter i programmer. En alternativ måte å sammenligne datoer på er ved å bruke tidssone-konverteringer, men dette kan føre til forvirring i komplekse programmer. Implementeringsdetaljer for å sammenligne datoer kan variere avhengig av språket, men felt som år, måned og dag er vanligvis inkludert.
+Historisk sett, før 'os' biblioteket ble lagt til i Lua, benyttet utviklere seg av eksterne biblioteker for å håndtere datoer og tid. Men nå, med 'os' biblioteket, kan vi enkelt sammenligne to datoer.
 
-## Se også:
+Alternativt kan vi også bruke kommandoene `os.date` og `os.time` for å oppnå det samme. `os.date` tar en tid og konverterer det til en mer lesbar format, mens `os.time` tar en dato og konverterer det til sekunder siden EPOC.
 
-- [Dato og tid i Lua](https://www.lua.org/pil/22.1.html)
-- [Vanlige feil i dato og tid på programmering](https://www.oreilly.com/library/view/what-could-possibly/9780596802490/ch04s03.html)
+Dato-sammenligningslogikken er veldig grunnleggende - det er et spørsmål om å konvertere datoene til sekunder og så sammenligne dem.
+
+## Se Også
+
+For mer informasjon, følg disse koblingene: 
+1. [Lua 'os' Library](https://www.lua.org/pil/22.1.html)
+2. [Lua Date & Time](https://www.tutorialspoint.com/lua/lua_date_time.htm)
+3. [Lua Users Wiki](http://lua-users.org/wiki/OsLibraryTutorial)

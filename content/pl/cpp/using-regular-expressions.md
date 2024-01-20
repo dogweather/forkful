@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych."
-html_title:           "C++: Używanie wyrażeń regularnych."
-simple_title:         "Używanie wyrażeń regularnych."
+title:                "Korzystanie z wyrażeń regularnych"
+html_title:           "Arduino: Korzystanie z wyrażeń regularnych"
+simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,68 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
-Regularne wyrażenia to sposób na wyszukiwanie i manipulowanie tekstami. Programiści używają ich, aby skrócić i ułatwić działanie na tekście.
+## Co i dlaczego?
+Regularne wyrażenia to sekwencje znaków, które służą do dopasowywania i manipulowania łańcuchów. Programiści używają ich przede wszystkim do przeszukiwania, dzielenia i zastępowania łańcuchów, co może znacznie ułatwić pracę.
 
-# Jak to zrobić:
-Przykłady kodów i wyniki działania przedstawione zostaną w bloku kodowym ```C++ ... ```
+## Jak to zrobić:
+Oto bardzo prosty przykład użycia regularnych wyrażeń w C++:
 
-## Przykład 1:
-```
-#include <iostream>
+```C++
 #include <regex>
-using namespace std;
+#include <string>
+#include <iostream>
 
-int main(){
-  string text = "Przykladowy tekst do znalezienia";
-  regex expression("tekst");
-  bool result = regex_search(text, expression);
-  cout << "Czy wyrazenie zostalo znalezione? " << result << endl;
-  return 0;
+int main() {
+    std::string text = "Całkiem przyjemny; dzień, nieprawdaż?";
+    std::regex delim("[;,]");
+    std::sregex_token_iterator iter(text.begin(), text.end(), delim, -1);
+    std::sregex_token_iterator end;
+    for ( ; iter != end; ++iter)
+        std::cout << *iter << '\n';
+    return 0;
 }
 ```
-(OUTPUT: Czy wyrazenie zostalo znalezione? 1)
+W wyniku otrzymamy:
 
-## Przykład 2:
 ```
-#include <iostream>
-#include <regex>
-using namespace std;
-
-int main(){
-  string text = "Jakis inny przykladowy tekst";
-  regex expression("tekst");
-  string result = regex_replace(text, expression, "polecenie");
-  cout << result << endl;
-  return 0;
-}
+Całkiem przyjemny
+ dzień
+ nieprawdaż?
 ```
-(OUTPUT: Jakis inny przykladowy polecenie)
+Jak widać, nasz program rozdzielił napis na podstawie średników i przecinków.
 
-## Przykład 3:
-```
-#include <iostream>
-#include <regex>
-using namespace std;
+## Deep Dive
+Regularne wyrażenia wywodzą się z teorii języków formalnych i automatów, do której to teorii powstały w latach '50. W C++, regularne wyrażenia zostały wprowadzone w standardzie C++11. Mimo że są bardzo wygodne, nie zawsze są one idealnym rozwiązaniem - dla prostych zadań często łatwiej i szybciej jest użyć standardowych funkcji na łańcuchy. Co więcej, implementacja regularnych wyrażeń w bibliotece standardowej C++ jest dość skomplikowana i może wpływać na wydajność programu, więc warto z nich korzystać rozważnie.
 
-int main(){
-  string text = "123456789";
-  regex expression("^(\\d{3,4})(\\d{2})(\\d{2})$");
-  smatch matches;
-  regex_match(text, matches, expression);
-  cout << "Wynik:" << endl;
-  for (size_t i = 0; i < matches.size(); ++i) {
-  	cout << "[" << i << "]: " << matches[i] << endl;
-  }
-  return 0;
-}
-```
-(OUTPUT: Wynik: [0]: 123456789 [1]: 1234 [2]: 56 [3]: 89)
+## Zobacz również
+Jeśli chcesz dowiedzieć się więcej o regularnych wyrażeniach w C++, sprawdź te źródła:
 
-# Głębsza analiza:
-Pierwsze implementacje regularnych wyrażeń pojawiły się w Unixie w latach 70. Dzisiaj są powszechnie używane we wszystkich językach programowania. Alternatywami dla wyrażeń regularnych są funkcje napisane specjalnie dla manipulacji tekstem lub biblioteki dla konkretnych języków. W C++ wykorzystuje się bibliotekę <regex>, która wprowadziła nowe funkcje udostępniane przez klasę regular_expression.
-
-# Zobacz też:
-- [Regular expressions for beginners](https://www.regular-expressions.info/tutorial.html)
-- [C++ Reference: regex](https://en.cppreference.com/w/cpp/regex)
-- [Regex Tester](https://regex101.com/) (narzędzie online do testowania i weryfikacji wyrażeń regularnych)
+1. Dokumentacja C++: [link](http://www.cplusplus.com/reference/regex/)
+2. Tutorial: "Using Regular Expressions in C++": [link](https://www.geekhideout.com/regex.htm)
+3. StackOverflow: "C++ Regular expressions in practice": [link](https://stackoverflow.com/questions/37854322/c-regular-expressions-in-practice)

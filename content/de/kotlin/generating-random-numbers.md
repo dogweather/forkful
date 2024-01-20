@@ -1,6 +1,6 @@
 ---
 title:                "Zufallszahlen generieren"
-html_title:           "Kotlin: Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
 simple_title:         "Zufallszahlen generieren"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,28 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum?
+## Was und Warum?
 
-Generieren von Zufallszahlen ist ein wichtiger Bestandteil der Programmierung, bei dem Zahlen von einem Computer zufällig ausgewählt und ausgegeben werden. Programmierer verwenden dies, um verschiedene Szenarien zu simulieren und mögliche Ausgänge zu testen.
+Das Generieren von Zufallszahlen ist eine gängige Programmierungsaufgabe, die eingesetzt wird, um Unvorhersehbarkeit in Software zu schaffen. Programmierer tun dies oft für Spiele, Simulationen oder Sicherheitsalgorithmen, um nur einige Beispiele zu nennen.
 
-## Wie geht's?
+## So Geht's:
 
-Kotlin bietet eine integrierte Funktion namens `random()`, die es uns ermöglicht, eine Zufallszahl innerhalb eines bestimmten Bereichs zu generieren. Wir müssen nur den Bereich angeben, aus dem die Zahl ausgewählt werden soll, und dann `random()` aufrufen. Zum Beispiel:
+In Kotlin gibt es verschiedene Möglichkeiten, um Zufallszahlen zu generieren. Hier sind einige Beispiele:
 
 ```Kotlin
-fun main() {
-    val randomNumber = (1..10).random()
-    println("Die generierte Zufallszahl ist: $randomNumber")
-}
+// Generiert eine Zufallszahl von 0 (einschließlich) bis 100 (ausschließlich)
+val randomInt = (0 until 100).random()
+println("Zufalls Integer: $randomInt")
+
+// Generiert eine Zufalls-Gleitkommazahl von 0.0 (einschließlich) bis 1.0 (ausschließlich)
+val randomDouble = Math.random()
+println("Zufalls Double: $randomDouble")
 ```
-Die Ausgabe könnte beispielsweise "Die generierte Zufallszahl ist: 6" sein. Wie Sie sehen, wird mit Hilfe der `random()` Funktion eine Zufallszahl aus dem Bereich von 1 bis 10 ausgewählt und ausgegeben.
 
-## Tiefere Einblicke
+## Tiefgang
 
-Die Verwendung von Zufallszahlen in der Programmierung hat eine lange Geschichte, die bis in die Anfänge der Computertechnologie zurückreicht. Zu den alternativen Methoden für die Generierung von Zufallszahlen gehören das Verwenden von physikalischen Eigenschaften von Computern wie Stromfluss und andere komplexe mathematische Algorithmen.
+Zufallszahlen waren schon immer ein wichtiger Bestandteil der Informatik. Die ersten Computer nutzten physikalische Prozesse, wie radioaktiven Zerfall oder Rauschen, um echte Zufallszahlen zu generieren. Heute nutzen die meisten Maschinen statistische Modelle oder deterministische Algorithmen, um Pseudozufallszahlen zu generieren.
 
-In Kotlin ist die `random()` Funktion eine pseudo-zufällige Generierungsmethode, was bedeutet, dass die Zahlen vorhersehbar sind, aber dennoch zufällig genug für die meisten Anwendungsfälle sind. Um wirklich zufällige Zahlen zu generieren, wären spezielle Geräte oder Dienste erforderlich.
+Alternativ zu den oben genannten Methoden kann auch die Funktion `Random.nextInt()` der Bibliothek `java.util` verwendet werden.
 
-## Siehe auch
+Die Implementierung von Zufallszahlengeneratoren in Kotlin basiert auf den Java-Standards, ist aber einfacher gestaltet und leichter zu verstehen.
 
-Weitere Informationen zur Verwendung der `random()` Funktion finden Sie in der offiziellen [Kotlin-Dokumentation](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/random.html). Wenn Sie tiefer in die Thematik einsteigen möchten, empfehlen wir die Lektüre dieses [Artikels](https://medium.com/@sullyfchen/how-is-kotlin-s-random-fixed-memory-related-to-security-79d0f244f972) über die Sicherheit der `random()` Funktion in Kotlin.
+## Siehe Auch
+
+Weitere Informationen zum Thema finden Sie unter folgenden Links:
+
+- [Kotlin’s Random API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random)
+- [Java’s Random Class](https://docs.oracle.com/javase/8/docs/api/java/util/Random.html)

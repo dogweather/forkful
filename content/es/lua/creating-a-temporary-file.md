@@ -1,6 +1,6 @@
 ---
 title:                "Creando un archivo temporal"
-html_title:           "Lua: Creando un archivo temporal"
+html_title:           "Arduino: Creando un archivo temporal"
 simple_title:         "Creando un archivo temporal"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,39 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¡Qué es y por qué!: 
-Crear un archivo temporal en programación significa crear un archivo en el sistema operativo que solo existe temporalmente y se elimina después de su uso. Los programadores utilizan archivos temporales para almacenar datos temporales que no necesitan guardar permanentemente.
+**## ¿Qué y Por Qué?**
 
-## Cómo hacerlo:
-El siguiente código muestra cómo crear un archivo temporal en Lua.
+Crear un archivo temporal significa generar un archivo para uso a corto plazo. Los programadores lo hacen para poder manipular datos sin tener que alterar el archivo principal.
 
-```Lua
-local tempFile = os.tmpname()
-print(tempFile)
-```
+**## Cómo hacerlo**
 
-El código primero llama a la función "tmpname" del módulo "os" para generar un nombre de archivo temporal único y luego lo imprime en la consola. La salida se verá algo así como "C:\Users\Usuario\AppData\Local\Temp\lua_1b98a107-e31a-497d-8d6f-ee96823dc1cd". El nombre generado es una cadena de caracteres alfanuméricos que sirve como identificador único para el archivo temporal.
-
-Para escribir datos en el archivo temporal, podemos usar la función "open" del módulo "io" y especificar el modo de escritura "w" como en el siguiente ejemplo:
+Aquí te dejo un ejemplo de cómo crear y escribir en un archivo temporal utilizando Lua:
 
 ```Lua
-local tempFile = os.tmpname()
-local file = io.open(tempFile, "w")
-file:write("¡Hola Mundo!")
-file:close()
+local io = require("io")
+
+-- Creando un archivo temporal.
+local tmp = io.tmpfile()
+
+-- Comprobando si el archivo temporal se creó correctamente.
+if tmp == nil then
+    print("Error al crear el archivo temporal.")
+    os.exit()
+end
+
+-- Escribiendo en el archivo temporal.
+tmp:write("¡Hola Mundo!")
+tmp:seek("set") -- Situándonos al principio del archivo.
+
+-- Leyendo el contenido del archivo.
+print(tmp:read("*all")) -- Debería imprimir: "¡Hola Mundo!"
 ```
 
-Este código crea un archivo temporal, escribe "¡Hola Mundo!" en él y lo cierra. Ahora podemos acceder al archivo temporal y leer su contenido. También podemos utilizar otras funciones del módulo "io", como "read" y "lines", para manejar el archivo.
+**## Inmersión Profunda**
 
-## Inmersión profunda:
-El uso de archivos temporales es una práctica común en muchos lenguajes de programación y sistemas operativos. Los archivos temporales se utilizan para una variedad de propósitos, como almacenar caché de datos, generar archivos de texto o guardar archivos descargados temporalmente.
+(1) Historia: Los archivos temporales han existido desde los primeros días de la programación, cuando los recursos de memoria eran escasos, y todavía son útiles hoy en día para manejar grandes cantidades de datos.
 
-Aunque Lua proporciona funciones para crear y manipular archivos temporales, también existen bibliotecas externas que ofrecen funcionalidades adicionales, como establecer un tiempo de vida para el archivo o especificar la ubicación donde se debe crear. Algunas bibliotecas populares incluyen "tempfile" y "tmpfile".
+(2) Alternativas: Además de `io.tmpfile()`, puedes usar la biblioteca `os` para crear un archivo temporal a través del sistema operativo.
 
-En términos de implementación, la creación de archivos temporales varía según el sistema operativo. En Windows, se utilizan caracteres aleatorios en la ruta del archivo, mientras que en Unix, se crea un archivo en el directorio /tmp o /var/tmp.
+(3) Detalles de implementación: En Lua, `io.tmpfile()` crea un archivo temporal que se borra automáticamente cuando la aplicación cierra, lo que evita posibles problemas de espacio en el disco.
 
-## Ver también:
-- [Módulo de Lua "os" para funciones de sistema operativo](https://www.lua.org/manual/5.4/manual.html#6.9)
-- [Módulo de Lua "io" para manipular archivos](https://www.lua.org/manual/5.4/manual.html#6.8)
-- [Biblioteca Lua para archivos temporales "tempfile"](https://luarocks.org/modules/luaforge/tempfile)
-- [Biblioteca Lua para archivos temporales "tmpfile"](https://luarocks.org/modules/keplerproject/tmpfile)
+**## Ver También**
+
+A continuación te dejo algunos enlaces útiles para entender mejor los archivos temporales en Lua:
+
+1. [Manual de Referencia de Lua](https://www.lua.org/manual/5.3/es/manual.html) - Para más detalle acerca de la biblioteca de entrada/salida (`io`) y la biblioteca del sistema operativo (`os`).
+2. [Stack Overflow](https://es.stackoverflow.com/questions/tagged/lua) - Para discusiones y preguntas acerca de la programación en Lua.
+3. [Learn X in Y Minutes (Aprende X en Y Minutos)](https://learnxinyminutes.com/docs/lua/) - Para un repaso rápido de la sintaxis de Lua y sus conceptos básicos.
+4. [Pilas en Lua](https://www.lua.org/pil/contents.html) - Para un estudio profundo de la programación en Lua.

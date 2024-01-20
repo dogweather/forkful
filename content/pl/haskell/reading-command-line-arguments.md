@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie parametrów wiersza poleceń."
-html_title:           "Haskell: Odczytywanie parametrów wiersza poleceń."
-simple_title:         "Odczytywanie parametrów wiersza poleceń."
+title:                "Czytanie argumentów linii poleceń"
+html_title:           "Bash: Czytanie argumentów linii poleceń"
+simple_title:         "Czytanie argumentów linii poleceń"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,36 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## Co & Dlaczego?
 
-Odczytywanie argumentów wiersza poleceń to proces, w którym programista pobiera wartości przekazane do programu podczas jego uruchamiania. Dzieje się to poprzez wywołanie programu z dodatkowymi parametrami, takimi jak argumenty czy opcje. Programiści często korzystają z tej funkcji, aby możliwe było dostosowanie działania programu lub podać dodatkowe informacje potrzebne do jego wykonania.
+Czytanie argumentów z wiersza poleceń to proces, w którym program interpretuje dane wprowadzone przez użytkownika przy uruchomieniu. Programiści używają go, aby zwiększyć elastyczność i interaktywność swoich aplikacji.
 
-## Jak to zrobić?
+## Jak to zrobić:
+
+Aby odczytać argumenty z linii poleceć w Haskellu, użyjemy funkcji `getArgs` z modułu `System.Environment`. Oto prosty przykład:
 
 ```Haskell
-import System.Environment
-
-main :: IO ()
-main = do
-  args <- getArgs
-  putStrLn ("Ilość argumentów: " ++ show (length args))
-  putStrLn ("Argumenty: " ++ show args)
+import System.Environment  
+  
+main = do  
+    args <- getArgs  
+    putStrLn ("Cześć, " ++ args !! 0)
 ```
 
-Przykładowy test:
-
+Uruchomiony z argumentem, np. `ghc app.hs Adam`, wyprodukuje wyjście:
 ```
-$ runhaskell args.hs arg1 "argument drugi" 3
-Ilość argumentów: 3
-Argumenty: ["arg1","argument drugi","3"]
+Cześć, Adam
 ```
 
-## Wnikliwe spojrzenie
+## Dogłębne zrozumienie:
 
-Odczytywanie argumentów wiersza poleceń jest ważnym aspektem programowania. Począwszy od lat 60., kiedy to oprogramowanie zaczęło być uruchamiane z konsoli, możliwość przekazywania parametrów stała się kluczowa. Alternatywą dla odczytywania argumentów wiersza poleceń jest użycie plików konfiguracyjnych lub interakcja z użytkownikiem w czasie pracy programu. W języku Haskell, można wykorzystać bibliotekę System.Environment do przechwytywania argumentów wiersza poleceń. Funkcja getArgs zwraca listę argumentów przekazanych do programu jako ciągi tekstowe.
+Odczytywanie argumentów z linii poleceń to technika, która istnieje od początków informatyki. Kiedy używamy `getArgs`, Haskell wykorzystuje typy danych i model IO do bezpiecznego odczytania i manipulowania tymi argumentami. Inne języki, jak Python czy Ruby, mają podobne mechanizmy, ale rzadko są one tak eleganckie jak w Haskellu.
 
-## Zobacz też
+Alternatywnie, dla bardziej zaawansowanego i rozbudowanego parsowania argumentów z linii poleceń, można użyć biblioteki jak `optparse-applicative` lub `cmdargs`. Ta druga jest znacznie bardziej popularna, choć obie są godne uwagi. `cmdargs` pozwala definiować ramy i reguły dla oczekiwanych argumentów, co jest bardzo przydatne dla dużych projektów.
 
-- [Dokumentacja Haskell do System.Environment](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html)
-- [Poradnik odczytywania argumentów wiersza poleceń w Haskell](https://wiki.haskell.org/Understanding_input_and_output)
-- [Przykłady kodu wykorzystującego bibliotekę System.Environment](https://github.com/haskell-streamly/haskell-streamly/blob/master/examples/args.hs)
+## Zobacz też:
+
+- Moduł `System.Environment` [dokumentacja](http://hackage.haskell.org/package/base-4.14.0.0/docs/System-Environment.html)
+- Biblioteka `optparse-applicative` [dokumentacja](https://hackage.haskell.org/package/optparse-applicative-0.15.1.0/docs/Options-Applicative.html)
+- Biblioteka `cmdargs` [dokumentacja](http://hackage.haskell.org/package/cmdargs-0.10.20/docs/System-Console-CmdArgs.html)

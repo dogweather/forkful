@@ -1,6 +1,6 @@
 ---
 title:                "文字列の補間"
-html_title:           "Java: 文字列の補間"
+html_title:           "Arduino: 文字列の補間"
 simple_title:         "文字列の補間"
 programming_language: "Java"
 category:             "Java"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？なぜするのか？
-文字列を内挿することとは何か、そしてなぜプログラマーがそれを行うのかを説明します。
+## 何となぜ
 
-文字列の内挿とは、既存の文字列に別の値を埋め込むことを指します。プログラマーが文字列を内挿する理由は、可読性を向上させたり、ダイナミックな文字列を作成するためです。
+文字列の内挿は、文字列に変数を埋め込む方法です。プログラマーは、動的に変わる値を文字列内で表示したい場合に行います。
 
-例えば、「こんにちは、私の名前はLauraです。」という文字列があったとします。ここに "Laura" の代わりに別の名前を埋め込むことで、同じコードを使用して異なる名前を持つさまざまなメッセージを作成することができます。
+## 実行方法
 
-## 手順：
-下に例を示し、文字列を内挿する方法を説明します。
+Javaでは「String.format」メソッドか「MessageFormat」クラスを使用して内挿を行います。
 
 ```Java
-String name = "Laura";
-System.out.println("こんにちは、私の名前は" + name + "です。");
+// String.format method
+int apples = 5;
+String text = String.format("I have %d apples.", apples);
+System.out.println(text);
+
+// MessageFormat class
+import java.text.MessageFormat;
+
+int bananas = 7;
+String text2 = MessageFormat.format("I have {0} bananas.", bananas);
+System.out.println(text2);
 ```
 
-このコードの出力は次のようになります：
+出力結果:
+
 ```
-こんにちは、私の名前はLauraです。
+I have 5 apples.
+I have 7 bananas.
 ```
 
-## 深堀り
-文字列の内挿は、テンプレートエンジンとして知られるフレームワークを使用することによっても行うことができます。テンプレートエンジンでは、コードの外部にテンプレートと呼ばれるファイルを作成し、そこに必要な変数を埋め込むことができます。
+## 深入り
 
-また、文字列内挿のほかにも、String.format()メソッドを使用して文字列をフォーマットすることもできます。この方法を使用すると、より柔軟に文字列を操作することができます。
+- 歴史的な背景：初期のプログラミング言語では、文字列内挿はサポートされていなかったため、プログラマーは文字列結合を利用しました。しかし、Java 1.5からこの機能が導入されました。
+- 代替方法：Java 8以降では、`java.util.Formatter` クラスや `printf` メソッドを利用することも可能です。
+- 実装の詳細：`StringTemplate` や `apache-commons-text` ようなライブラリを利用すると、より高度な内挿を行うことも可能です。
 
-## 関連情報
-- [Java Docs: String.format method](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#format-java.lang.String-java.lang.Object...-)
-- [Thymeleaf - Java template engine](https://www.thymeleaf.org/)
+## 参考情報
+
+- OracleのJavaドキュメンテーション（文字列操作）: https://docs.oracle.com/javase/tutorial/java/data/strings.html
+- Apache Commons Text（Javaの文字列操作ライブラリ）: https://commons.apache.org/proper/commons-text/
+- Stack Overflow（文字列内挿についての質問と回答）: https://stackoverflow.com/questions/3655424/string-interpolation-in-java

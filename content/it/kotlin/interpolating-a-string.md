@@ -1,6 +1,6 @@
 ---
 title:                "Interpolazione di una stringa"
-html_title:           "Kotlin: Interpolazione di una stringa"
+html_title:           "Clojure: Interpolazione di una stringa"
 simple_title:         "Interpolazione di una stringa"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,25 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e perché?
-L'interpolazione di una stringa in Kotlin è il processo di creazione di una stringa che contiene valori inseriti da altre variabili o costanti. I programmatori usano l'interpolazione di stringhe per costruire stringhe complesse in modo più leggibile e organizzato.
+## Cos'è e Perché?
+L'interpolazione delle stringhe è una funzionalità che consente di incorporare espressioni all'interno delle stringhe stesse. Lo facciamo per rendere il codice più leggibile e conciso, evitando operazioni complicata di concatenazione.
 
-## Come fare:
+## Come Fare:
+In Kotlin, usiamo il simbolo `$` per l'interpolazione delle stringhe. Ecco come:
+
 ```Kotlin
-val name = "Maria"
-val age = 25
-val message = "Ciao, mi chiamo $name e ho $age anni."
-println(message)
-
-//Output:
-Ciao, mi chiamo Maria e ho 25 anni.
+fun main() {
+    val nome = "Giovanni"
+    val eta = 22
+    println("Il mio nome è $nome e ho $eta anni")
+}
 ```
 
-L'esempio sopra mostra come è semplice utilizzare l'interpolazione di stringhe in Kotlin. Basta inserire il valore o la variabile desiderata all'interno delle parentesi graffe all'interno di una stringa.
+L'output sarà:
 
-## Approfondimento:
-L'interpolazione di stringhe è diventata popolare grazie a linguaggi di programmazione come Python e Ruby. In altre lingue, è chiamata "formatted string". Se non si utilizza l'interpolazione di stringhe, l'alternativa è concatenare variabili e stringhe usando l'operatore "+".
+```
+Il mio nome è Giovanni e ho 22 anni
+```
 
-## Vedi anche:
-- [Documentation on string interpolation in Kotlin](https://kotlinlang.org/docs/reference/basic-types.html#string-templates)
-- [Similar concept in Python](https://realpython.com/python-f-strings/)
+Anche le espressioni all'interno delle parentesi graffe (`{}`) possono essere interpolate:
+
+```Kotlin
+fun main() {
+    val frutta = 5
+    val verdura = 7
+    println("Ho ${frutta + verdura} pezzi di cibo")
+}
+```
+
+L'output sarà:
+
+```
+Ho 12 pezzi di cibo
+```
+
+## Approfondimento
+L'interpolazione delle stringhe non è un concetto nuovo. È stata usata per la prima volta nei linguaggi di programmazione Shell e Perl. Alternativamente, si potrebbe utilizzare la concatenazione delle stringhe, ma è più verbosa e può condurre a errori di sintassi. In Kotlin, l'interpolazione delle stringhe è implementata in modo efficiente, poiché l'espressione all'interno del `$` viene valutata prima della restante stringa.
+
+## Vedi Anche
+1. [Documentazione ufficiale di Kotlin su Stringhe](https://kotlinlang.org/docs/reference/basic-types.html#string-template)
+2. [Tutorial su YouTube dello sviluppatore "Programming with Mosh"](https://www.youtube.com/watch?v=Grf8cJqB4A4)

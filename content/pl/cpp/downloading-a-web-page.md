@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "C++: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "C++"
 category:             "C++"
@@ -10,61 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Cześć Czytelnicy!
-
-Jesteś programistą i zastanawiasz się, co to znaczy "pobieranie strony internetowej" i po co programiści to robią? W tym artykule postaram się wyjaśnić te zagadnienia w bardzo prosty i bezpośredni sposób.
-
 ## Co i dlaczego?
+Pobieranie strony internetowej oznacza zapisywanie jej treści na dysku twardym lub w pamięci. Programiści robią to, aby analizować małe kawałki danych, zautomatyzować procesy lub tworzyć kopie zapasowe witryn.
 
-Pobieranie strony internetowej oznacza pobranie jej zawartości, czyli tekstu, obrazków, kodu itp. z internetu na nasz komputer. Programiści często pobierają strony internetowe, aby przetwarzać zawartość w celu wyświetlenia jej użytkownikom lub wykorzystania w swoich aplikacjach.
-
-## Jak to zrobić?
+## Jak to zrobić:
+Poniżej znajduje się przykład, jak pobrać stronę internetową za pomocą biblioteki libcurl w C++.
 
 ```C++
 #include <iostream>
+#include <string>
 #include <curl/curl.h>
 
-using namespace std;
-
-long downloadPage(string url, string filename) {
-  CURL *curl;
-  FILE *pagefile;
-  CURLcode res;
-
-  curl_global_init(CURL_GLOBAL_ALL);
-  curl = curl_easy_init();
-
-  if (curl) {
-    pagefile = fopen(filename.c_str(), "wb");
-    curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
-    curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, NULL);
-    curl_easy_setopt(curl, CURLOPT_WRITEDATA, pagefile);
-    res = curl_easy_perform(curl);
-    curl_easy_cleanup(curl);
-    fclose(pagefile);
-  }
-
-  curl_global_cleanup();
-  return 0;
+static size_t WriteCallback(void* contents, size_t size, size_t nmemb, std::string* userp)
+{
+    userp->append((char*)contents, size * nmemb);
+    return size * nmemb;
 }
 
-int main() {
-  downloadPage("https://www.google.com", "google.html");
-  return 0;
-}
+int main(void)
+{
+   CURL *curl;
+   CURLcode res;
+   std::string readBuffer;
 
+   curl_global_init(CURL_GLOBAL_DEFAULT);
+   curl = curl_easy_init();
+   
+   if(curl) {
+     curl_easy_setopt(curl, CURLOPT_URL, "http://example.com");
+     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, WriteCallback);
+     curl_easy_setopt(curl, CURLOPT_WRITEDATA, &readBuffer);
+     res = curl_easy_perform(curl);
+     curl_easy_cleanup(curl);
+
+     if(CURLE_OK == res) {
+        std::cout << "Web page downloaded successfully: " << readBuffer << std::endl;
+     } else {
+        std::cout << "Failed to download. Error: " << curl_easy_strerror(res) << std::endl;
+     }
+
+     curl_global_cleanup();
+   }
+
+   return 0;
+}
 ```
+Po uruchomieniu powyższego kodu, treść strony internetowej http://example.com zostanie wyświetlona w konsoli.
 
-Uruchamiając ten kod, pobierzemy stronę "https://www.google.com" i zapiszemy ją w pliku "google.html" w bieżącym katalogu. Proste, prawda?
+## Deep Dive
+Pierwsza metoda pobierania stron internetowych powstała z wynalezieniem Internetu i była znacznie bardziej podstawowa niż metody dzisiaj. Z czasem techniki pobierania ewoluowały, oferując szybsze, bardziej wydajne i bezpieczne metody.
 
-## Rzuć okiem na kulisy
+Alternatywą dla C++ i libcurl może być korzystanie z innych języków i bibliotek takich jak Python z BeautifulSoup lub Node.js z axios. Wybór zależy od preferencji i wymagań projektu.
 
-Pobieranie stron jest nieodłączną częścią przeglądania internetu i jest wykorzystywane przez wiele aplikacji. Często programiści korzystają z biblioteki CURL, ale istnieją też inne rozwiązania, takie jak biblioteka HTTPClient obsługująca protokół HTTP oraz framework Scrapy napisany w Pythonie.
-
-Korzystając z CURL, możemy manipulować za pomocą wielu opcji, takich jak ustawianie nagłówków, przekierowania, autoryzacji itp. Ponadto, możemy także łatwo pobierać konkretne elementy strony, np. tekst, obrazki czy linki.
+Pod kątem implementacji, libcurl obsługuje wiele protokołów, takich jak HTTP, HTTPS, FTP, ale do pobierania stron internetowych najczęściej używane są HTTP i HTTPS.
 
 ## Zobacz także
-
-Jeśli chcesz dowiedzieć się więcej o pobieraniu stron internetowych przy użyciu biblioteki CURL, polecam przeczytać dokumentację na stronie [Oficjalna strona CURL](https://curl.se/docs/). Możesz także sprawdzić inne rozwiązania, takie jak [HTTPClient](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest), [Scrapy](https://scrapy.org/) i [urllib](https://docs.python.org/3/library/urllib.html).
-
-Dzięki za przeczytanie tego artykułu. Mam nadzieję, że pomógł Ci zrozumieć, co to jest pobieranie stron internetowych i dlaczego jest to ważne dla programistów. Do zobaczenia!
+1. Dokumentacja libcurl: https://curl.se/libcurl/c/
+2. Przykłady pobierania stron internetowych w Pythonie: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+3. Przykłady pobierania stron internetowych w Node.js: https://github.com/axios/axios

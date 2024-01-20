@@ -1,7 +1,7 @@
 ---
-title:                "Utmatning av felsökningsdata"
-html_title:           "Python: Utmatning av felsökningsdata"
-simple_title:         "Utmatning av felsökningsdata"
+title:                "Skriva ut felsökningsresultat"
+html_title:           "Fish Shell: Skriva ut felsökningsresultat"
+simple_title:         "Skriva ut felsökningsresultat"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -12,52 +12,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Vad & Varför?
 
-När vi programmerar, är det inte alltid att allt går som vi vill. Ibland behöver vi veta vad som händer under programmets körning, för att förstå varför det inte fungerar som det ska. Det är där "debug output" kommer in - det är ett sätt att skriva ut information under programmets körning för att följa vad som händer.
+Utskrift av felsökningsinformation (debug output) är när programmerare visar data i konsolen för att spåra programmets beteende. Det hjälper programmerare att identifiera och åtgärda buggar mer effektivt.
 
-## Hur gör man?
+## Hur man gör:
 
-För att skriva ut debug output i Python använder vi funktionen "print()". Det finns många olika sätt att använda print() på, beroende på vad vi vill uppnå. Här är några exempel:
+Python erbjuder en inbyggd funktion för detta, `print()`. Här är hur du kan använda den:
 
-```python
-x = 5
-y = "Hello"
-print(x) # skriver ut värdet av x på skärmen - i detta fall 5
-print(y) # skriver ut värdet av y på skärmen - i detta fall "Hello"
-print("Detta är ett meddelande") # skriver ut en textsträng på skärmen
+```Python
+def greeting(name):
+    print(f"Debug: name = {name}")
+    return f"Hej, {name}!"
+
+# Testkörning:
+print(greeting("Sven"))
 ```
 
-Output skulle se ut såhär:
+När du kör ovanstående kod kan du se både debug output och det slutliga resultatet:
 
-```
-5
-Hello
-Detta är ett meddelande
-```
-
-Vi kan också kombinera flera värden i samma print() funktion genom att använda "strängformatering". Detta gör vi genom att sätta in variabler eller värden i en textsträng med hjälp av "%s". Här är ett exempel:
-
-```python
-name = "Annie"
-age = 25
-print("Mitt namn är %s och jag är %d år gammal." % (name, age)) # skriver ut en textsträng med värden av variablerna name och age insatta
-```
-
-Output skulle se ut såhär:
-
-```
-Mitt namn är Annie och jag är 25 år gammal.
+```Python
+Debug: name = Sven
+Hej, Sven!
 ```
 
 ## Djupdykning
 
-Debug output har funnits sedan början av datorer. Ursprungligen användes det genom att utskrifter skickades till en skrivare, men nu för tiden används det oftast genom att skriva ut på skärmen.
+Trots dess grundläggande användning har `print()` en intressant historia. På förhistorisk tid av programmering, var att skriva till konsolen en av de få metoder för felsökning. I Python, `print()` förändrades över tiden för att omfatta fler användningsfall.
 
-Alternativet till att använda print() är att använda en "debugger", vilket är ett speciellt program som låter oss undersöka variabler och steg för steg följa vad som händer i programmet. Detta är speciellt användbart när problemet är svårt att hitta eller om vi vill undersöka mer specifikt vad som händer i programmet.
+Det finns alternativ till `print()` för felsökning i Python. Ett populärt val är Python's inbyggda `logging` modul. I jämförelse med `print()`, tillhandahåller `logging` ett mer robust verktyg för att hantera felsökningsinformation.
 
-Om vi vill skriva ut mer avancerad information, som t.ex. objekt av en viss typ eller information från en specifik rad i koden, kan vi använda "logging" modulen i Python. Detta ger oss mer möjligheter och kontroll över vad vi vill skriva ut och var vi vill skriva ut det.
+```Python
+import logging
 
-## Se även
+def hello(name):
+    logging.debug(f"Debug: name = {name}")
+    return f"Hej, {name}!"
 
-För mer information om print() funktionen och hur man använder den kan du kolla in den officiella Python dokumentationen här: https://docs.python.org/3/library/functions.html#print
+logging.basicConfig(level=logging.DEBUG)
 
-För mer information om "logging" modulen kan du kolla in den officiella Python dokumentationen här: https://docs.python.org/3/library/logging.html
+# Testkörning:
+print(hello("Anna"))
+```
+
+Silent detaljer för implementationen av `print()` kan hittas i Python's CPython källkod. Det är fascinerande att ta reda på hur denna enkla funktion har optimerats för effektivitet.
+
+## Se Även
+
+Här är några skäl till att du kanske vill fördjupa sig mer:
+
+1. Python's Officiella Dokumentation om `print()`: https://docs.python.org/3/library/functions.html#print
+2. Python's Officiella Dokumentation om `logging`: https://docs.python.org/3/library/logging.html
+3. Dykning i Python's CPython källkod: https://github.com/python/cpython

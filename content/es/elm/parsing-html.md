@@ -1,7 +1,7 @@
 ---
-title:                "Analizando HTML"
-html_title:           "Elm: Analizando HTML"
-simple_title:         "Analizando HTML"
+title:                "Análisis sintáctico de html"
+html_title:           "Ruby: Análisis sintáctico de html"
+simple_title:         "Análisis sintáctico de html"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "HTML and the Web"
@@ -11,29 +11,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Parsing HTML es el proceso de analizar el código de una página web para identificar y extraer información específica. Los programadores suelen realizar esta tarea para automatizar procesos, como extraer datos de una página web o verificar la validez del código.
 
-## ¿Cómo hacerlo?
-En Elm, podemos usar la función `parseHTML` del módulo `Html.Parser` para analizar el código HTML y extraer los datos que nos interesan. Aquí hay un ejemplo que muestra cómo extraer el número de seguidores de una cuenta de Twitter:
+El análisis de HTML (o parsing HTML) implica convertir HTML en una representación estructurada, a menudo un Document Object Model (DOM). Los programadores lo hacen para manipular, extraer información o aplicar cambios en el contenido de páginas web.
+
+## Cómo hacerlo:
+
+A continuación, te explicamos cómo puedes hacer el análisis de HTML utilizando Elm:
 
 ```Elm
-numSeguidores : String -> List String
-numSeguidores codigoHTML =
-    let
-        html = parseHTML codigoHTML
-    in
-        html
-            |> find [ className "ProfileNav-item--followers"] 
-            |> map .text
+import Html exposing (Html)
+import Html.Parser exposing (Parser)
+
+main = Html.text (case parse of
+                    Ok _ -> "Éxito en el análisis"
+                    Err _ -> "Error en el análisis")
+  
+parse : Result (List Parser.DeadEnd) (List String)
+parse = Html.Parser.run parsers "<html><body>Hola Mundo!</body></html>"
+
+parsers : Parser (List String)
+parsers = Html.Parser.root (Html.Parser.oneOrMore text) 
+
+text : Parser String
+text = Html.Parser.succeed identity
+  |= Html.Parser.tag "body" (Html.Parser.text)
 ```
-El código primero utiliza la función `parseHTML` para convertir el código HTML en una estructura de datos que Elm pueda manipular. Luego, utiliza la función `find` para buscar un elemento con la clase `ProfileNav-item--followers` y finalmente utiliza `map` para extraer el texto de ese elemento. ¡Así de fácil!
 
-## Inmersión Profunda
-Parsing HTML se ha vuelto cada vez más relevante en la era de la información, ya que hay una gran cantidad de datos disponibles en línea. Aunque existen alternativas como XPath o Regex para realizar esta tarea, Elm ofrece una forma más segura y confiable de parsear el código HTML. Esto se debe a que Elm garantiza que el código es válido, lo que evita errores comunes en otras herramientas de parsing.
+Este código realiza un análisis en una cadena HTML simple y si se ejecuta con éxito, en la salida se mostrará "Éxito en el análisis". Si hay un error, se mostrará "Error en el análisis".
 
-Si estás interesado en saber más sobre cómo funciona la función `parseHTML` y cómo utilizarlo en proyectos más complejos, puedes consultar la documentación oficial de Elm o buscar ejemplos en línea.
+## Profundización
 
-## Ver También
-Si estás buscando una alternativa a Elm para realizar parsing HTML, puedes considerar herramientas como Scrapy en Python o Beautiful Soup en JavaScript. Sin embargo, ten en cuenta que estas herramientas pueden no ser tan seguras y fiables como Elm.
+1. Desde un contexto histórico: HTML, desde su inicio, ha sido un estructurador de contenido web. Pero manipular HTML no siempre ha sido sencillo, y los estilos de codificación antiguos eran propensos a errores. Elm, en cambio, facilitó este proceso.
 
-Esperamos que este artículo te haya dado una idea de cómo usar Elm para parsear HTML de forma sencilla y segura. ¡Ahora es tu turno de probarlo!
+2. Hay varias alternativas para realizar el análisis de HTML. Algunas populares son Python's BeautifulSoup, JavaScript's JQuery, etc. Pero Elm proporciona ventajas sobre estos de manera considerable, como seguridad de errores en tiempo de compilación y mejor rendimiento.
+
+3. En cuanto a detalles de implementación, Elm proporciona funcionalidades como Html.Parser.run y Html.Parser.succeed que ayudan en el análisis. Sin embargo, la capacidad de Elm para el análisis HTML es limitada a simples manipulaciones y, para casos más complejos, puedes requerir de otras soluciones.
+
+## Ver además
+
+1. Documentación oficial de Elm Parser: [link](https://package.elm-lang.org/packages/elm/parser/latest/)
+2. Una excelente guía de Elm para principiantes: [Elm para principiantes](https://elmprogramming.com/)
+3. Más sobre HTML Parsing: [La guía de HTML Parsing](https://htmlparsing.com/)
+4. Comparación de Elm con otras alternativas: [Elm vs X](https://elm-lang.org/news/compilers-as-assistants)

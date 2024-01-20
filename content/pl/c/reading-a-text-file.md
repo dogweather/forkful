@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "C: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "C"
 category:             "C"
 tag:                  "Files and I/O"
@@ -11,67 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
+Czytanie pliku tekstowego to proces, w którym program komputerowy otwiera i odczytuje dane z pliku. Programiści robią to, żeby manipulować danymi, przetwarzać informacje, czy wczytywać ustawienia użytkownika.
 
-Odczytywanie pliku tekstowego to jedna z podstawowych czynności w programowaniu. Polega ona na wczytaniu zawartości pliku tekstowego do pamięci komputera w celu dalszej obróbki. Programiści często korzystają z tej funkcji, ponieważ pozwala ona na wczytanie dużej ilości danych z pliku do programu z łatwością.
-
-## Jak to zrobić?
-
-Aby odczytać plik tekstowy w języku C, potrzebujemy wskazać nazwę pliku oraz użyć odpowiednich funkcji. Przykładowy kod wygląda następująco:
+## Jak to zrobić:
+W C możemy użyć biblioteki `stdio.h`, aby otworzyć i przeczytać plik tekstowy. Przykładowy kod:
 
 ```C
 #include <stdio.h>
 
 int main() {
-    // nazwa pliku do odczytania
-    char nazwa_pliku[] = "plik.txt";
-    // utworzenie wskaźnika na zmienną przechowującą dane z pliku
-    char dane[255];
-    // użycie funkcji fopen do otworzenia pliku
-    FILE *plik = fopen(nazwa_pliku, "r");
-    if (plik == NULL) {
-        // obsługa błędu w razie niepowodzenia
-        printf("Nie udało się otworzyć pliku.");
-        return 1;
-    }
-    // użycie funkcji fgets do odczytania danych z pliku i przypisanie ich do zmiennej
-    while (fgets(dane, 255, plik) != NULL) {
-        // wypisanie danych na ekran
-        printf("%s", dane);
-    }
-    // zamknięcie pliku
-    fclose(plik);
-    return 0;
+   char ch;
+   FILE *fp;
+   fp = fopen("example.txt", "r");
+
+   if (fp == NULL) {
+      perror("Błąd podczas otwierania pliku.\n");
+      return(-1);
+   }
+
+   while((ch = fgetc(fp)) != EOF)
+      printf("%c", ch);
+
+   fclose(fp);
+
+   return 0;
 }
 ```
+Podczas uruchomienia powyższy kod otworzy plik `example.txt` i wypisze jego zawartość na konsoli.
 
-Przykładowe dane z pliku "plik.txt" mogą wyglądać tak:
+## W głąb tematu
+Początkowo, wczesne wersje języka C nie miały łatwego dostępu do plików. Dopiero po wielu latach powstała biblioteka `stdio.h`.
+Alternatywą dla `fopen` i `fclose` są funkcje `open` i `close` z biblioteki `unistd.h`, które dają większą kontrolę nad plikiem, ale są mniej proste w użyciu.
+Funkcja `fopen` otwiera plik i zwraca wskaźnik na strukturę reprezentującą ten plik, natomiast `fgetc` zwraca kolejne znaki z pliku, aż do końca pliku (EOF).
 
-```
-To jest przykładowy plik tekstowy.
-Pierwsza linijka.
-Druga linijka.
-Trzecia linijka.
-```
-
-Po uruchomieniu program, otrzymamy następujący wynik:
-
-```
-To jest przykładowy plik tekstowy.
-Pierwsza linijka.
-Druga linijka.
-Trzecia linijka.
-```
-
-## Zanurzenie w temat
-
-Odczytywanie pliku tekstowego jest jednym z podstawowych sposobów na wczytanie danych do programu. Inną alternatywą jest odczytywanie danych z innych formatów, takich jak pliki binarne lub baz danych. Jednak pliki tekstowe są najbardziej uniwersalne i powszechnie stosowane w programowaniu.
-
-W języku C mamy do wyboru kilka funkcji do odczytywania plików tekstowych: `fread`, `fgets`, `fscanf` oraz `gets`. Każda z tych funkcji ma inne zastosowanie i wymaga innej składni, dlatego warto dokładnie zapoznać się z dokumentacją.
-
-Warto również pamiętać o prawidłowym zabezpieczaniu programu przed błędami, takimi jak brak dostępu do pliku lub brak wystarczającej ilości pamięci do wczytania danych.
-
-## Zobacz też
-
-- [Dokumentacja języka C](https://en.cppreference.com/w/c)
-- [Funkcje do obsługi plików w języku C](https://en.cppreference.com/w/c/io)
-- [Przykładowe pliki tekstowe do odczytania](https://www.geeksforgeeks.org/file-handling-c-classes/)
+## Zobacz także
+Dokładniejsze wyjaśnienia oraz większa liczba przykładów do poczytania na:
+- http://www.cplusplus.com/reference/cstdio/
+- https://www.learn-c.org/en/File_Input/Output
+- https://pl.wikibooks.org/wiki/C/Pliki

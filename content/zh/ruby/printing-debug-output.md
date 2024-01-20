@@ -1,6 +1,6 @@
 ---
 title:                "打印调试输出"
-html_title:           "Ruby: 打印调试输出"
+html_title:           "Clojure: 打印调试输出"
 simple_title:         "打印调试输出"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是打印调试输出？为什么程序员要这么做？
+# 打印调试输出基础教程（Ruby版）
 
-打印调试输出是指在程序中插入一些额外的代码，用来输出程序运行时的中间结果和变量的值，以便程序员能够更好地调试和排查问题。程序员经常会这么做，因为它能够帮助他们更快地找到错误并修复它们。
+## 什么和为什么？
+打印调试输出是一种在代码执行过程中查看运行情况的方法。编程人员使用它来跟踪代码运行过程中发生的变化，帮助发现和解决问题。
 
-## 如何实现打印调试输出？
+## 如何操作:
 
-以下是一个简单的Ruby代码示例，展示如何打印调试输出：
+以下是如何在Ruby中打印调试输出的例子。
 
-```ruby
-def add(x, y)
-  puts "x的值为：#{x}"
-  puts "y的值为：#{y}"
-
-  result = x + y
-  puts "结果为：#{result}"
+```Ruby
+def add_two_numbers(num1, num2)
+  result = num1 + num2
+  puts "调试: 结果是 #{result}"
+  result
 end
 
-add(2, 5)
+add_two_numbers(2, 3)
 ```
 
-运行上述代码后，你会得到以下输出：
+运行后，你会在终端看到“调试:结果是5”。
 
-```
-x的值为：2
-y的值为：5
-结果为：7
-```
+## 深入学习
 
-在上面的代码中，我们使用了`puts`方法来打印调试输出。该方法会将我们想要输出的内容显示在控制台上。
+打印调试输出的方法有了很长的历史，不同的编程语言有不同的实现方式。在Ruby中，你可以选择`puts`或者`p`来输出。`puts`经常用于在终端打印人类可读的信息，而`p`则在调试中扮演重要角色，因为它可以输出更详细的信息。
 
-## 深入了解打印调试输出
+除了`puts`和`p`，你还可以使用更高级的调试库，例如`byebug`。它提供更复杂但更强大的方法，如单步执行和断点设置，帮助你更好地调试程序。
 
-打印调试输出的历史可以追溯到早期的编程语言，如BASIC和Pascal。在那些年代，程序员只能通过编写代码来输出调试信息，而没有像今天这样方便的调试工具。
+在实现细节上，调试输出通常在终端中打印，可以直接通过运行程序的STDOUT获取到。Ruby的`puts`和`p`命令也是如此。
 
-除了使用`puts`方法之外，还有其他一些方法可以打印调试输出。比如使用`p`方法可以打印出对象的详细信息，`inspect`方法可以打印出对象的字符串表示。
+## 相关资源
 
-当然，打印调试输出并不是唯一的调试方法。现在有许多强大的调试工具，如调试器和日志记录器，可以帮助程序员更轻松地找到和修复错误。
-
-## 参考资料
-
-- [Ruby的`puts`方法文档](https://ruby-doc.org/core-3.0.1/IO.html#method-i-puts)
-- [Ruby的`p`方法文档](https://ruby-doc.org/core-3.0.1/Kernel.html#method-i-p)
-- [Ruby的`inspect`方法文档](https://ruby-doc.org/core-3.0.1/Object.html#method-i-inspect)
+- Ruby官方文档：[Kernel Module](https://ruby-doc.org/core-3.0.1/Kernel.html)——这个模块包含`puts`和`p`命令的官方文档。
+- [byebug](https://github.com/deivid-rodriguez/byebug)——这是一个强大的Ruby调试器，你可以在GitHub上找到关于它的所有信息。
+- [维基百科: 调试](https://zh.wikipedia.org/wiki/%E8%B0%83%E8%AF%95_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6))——如果你想要更多关于调试的历史和理论知识，这个链接会很有帮助。

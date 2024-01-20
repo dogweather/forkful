@@ -1,6 +1,6 @@
 ---
 title:                "Iniziare un nuovo progetto"
-html_title:           "Haskell: Iniziare un nuovo progetto"
+html_title:           "Arduino: Iniziare un nuovo progetto"
 simple_title:         "Iniziare un nuovo progetto"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,33 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## Cos'è & Perché?
 
-Iniziamo con le basi: cosa significa "avviare un nuovo progetto"? In termini semplici, si tratta di iniziare a lavorare su un nuovo progetto di programmazione. I programmatori fanno questo spesso per sviluppare nuove idee o risolvere specifici problemi tecnici.
+Iniziare un nuovo progetto di programmazione in Haskell significa creare un nuovo ambiente di lavoro dove svilupperemo le nostre funzioni e i nostri moduli. Lo facciamo per strutturare il nostro codice in modo coerente e organizzato, facilitando così la manutenzione e lo sviluppo del progetto.
 
-## Come:
+## Come fare:
 
-Per avviare un nuovo progetto in Haskell, segui questi semplici passaggi:
+Per iniziare un nuovo progetto in Haskell, usiamo Stack, uno strumento di sviluppo multiplo. Ecco un esempio di come creare un nuovo progetto:
 
 ```Haskell
--- Definizione di una funzione che calcola il doppio di un numero
-doppio :: Int -> Int
-doppio x = x * 2
-
--- Chiamata alla funzione con un numero di esempio
-doppio 5
+$ stack new MyProject
 ```
 
-L'output di questo codice sarà ```10```. Come vedi, in Haskell è possibile definire funzioni in modo molto chiaro e conciso.
+Questo comando creerà una nuova cartella chiamata "MyProject" con tutti i file necessari. Per esempio, avremo un file .cabal, un file stack.yaml, e una directory src con un file Main.hs.
 
-## Approfondimento:
+Possiamo compilare ed eseguire il nostro progetto utilizzando i comandi:
 
-Haskell è un linguaggio di programmazione funzionale che è diventato sempre più popolare negli ultimi anni. È stato sviluppato originariamente negli anni '80 da un gruppo di ricercatori e ha molti vantaggi rispetto ad altri linguaggi, come una sintassi molto leggibile e la capacità di scrivere codice molto efficiente.
+```Haskell
+$ stack build
+$ stack exec MyProject-exe
+```
 
-Se non sei interessato a utilizzare Haskell, ci sono molte alternative disponibili, come Java, Python o C++. Tuttavia, se vuoi sperimentare con un linguaggio funzionale e imparare nuovi concetti di programmazione, Haskell è sicuramente da considerare.
+L'output sarà "someFunc".
 
-Per quanto riguarda l'implementazione di un nuovo progetto in Haskell, esistono diverse opzioni, tra cui l'utilizzo di un compilatore come GHC o interpretarlo utilizzando l'interprete GHCi. Puoi anche utilizzare un editor di testo semplice o uno specifico ambiente di sviluppo integrato (IDE) come Haskell Platform.
+## Approfondimenti
 
-## Vedi anche:
+Negli anni, ci sono stati vari modi per creare progetti Haskell, come Cabal, per esempio. Tuttavia, Stack è diventato il sistema preferito da molti sviluppatori per la sua robustezza e facilità d'uso. 
 
-Per ulteriori informazioni su Haskell e per una guida dettagliata su come cominciare un progetto, ti consiglio di consultare la documentazione ufficiale su [haskell.org](https://www.haskell.org/). Ci sono anche molti tutorial e corsi online disponibili per aiutarti a imparare questo linguaggio versatile e interessante. Buon divertimento!
+Iniziare un nuovo progetto con Stack significa anche scegliere una specifica versione del compilatore GHC, che può essere definita nel file stack.yaml. Questo permette semplicità e coerenza tra vari sviluppatori di uno stesso progetto.
+
+Altro dettaglio importante è che Stack gestisce anche le dipendenze del progetto. Queste possono essere specificate nel file .cabal e verranno installate automaticamente quando si esegue `stack build`.
+
+## Per Approfondire
+
+Per maggiori informazioni su come iniziare un progetto Haskell con Stack, potete leggere la guida ufficiale disponibile a [questo link](https://docs.haskellstack.org/en/stable/GUIDE/). 
+
+Per avere un'idea più chiara della struttura di un progetto Haskell, potete consultare il tutorial di Stephen Diehl [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/). 
+
+Infine, se siete interessati alla storia e agli sviluppi futuri di Haskell, vi consiglio di leggere il libro ["Haskell: The Craft of Functional Programming"](https://www.pearson.com/us/higher-education/program/Hutton-Haskell-The-Craft-of-Functional-Programming-3rd-Edition/PGM333820.html).

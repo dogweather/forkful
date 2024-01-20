@@ -1,6 +1,6 @@
 ---
 title:                "שליחת בקשת http"
-html_title:           "Lua: שליחת בקשת http"
+html_title:           "Bash: שליחת בקשת http"
 simple_title:         "שליחת בקשת http"
 programming_language: "Lua"
 category:             "Lua"
@@ -11,46 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-שליחת בקשת HTTP היא פעולה שמאפשרת למתכנתים לשלוח בקשות לשרתים רחוקים ולקבל תגובות מכינם. מתכנתים משתמשים בכך לשלוח ולקבל נתונים, לדוגמה בעת גישה לאתרים אינטרנט או ליצירת אפליקציות מבוססות אינטרנט.
+שליחת בקשת HTTP היא פרוצדורה שבה מחשב, המכונה גם "לקוח", מבקש מידע או שירות מאתר אינטרנט, המכונה גם "שרת". מתכנתים עשויים לשלוח בקשות HTTP כדי לגשת למידע מקוונת, לערוך נתונים, או לבצע ניתוח של פעולות משתמשים.
 
-## איך לעשות:
-תרגולים קוד ותוצאות דוגמה יופיעו בתוך בלוקי קוד ```Lua ... ```.
-
-```Lua
--- משלוח בקשת GET לאתר אינטרנט והדפסת תוכן התגובה
-local https = require("ssl.https")
-local body, code, headers, status = https.request("https://www.example.com")
-print(code)
-print(body)
-```
-
-כמו כן, ניתן גם לשלוח בקשות באמצעות הספרייה socket שכוללת מתאם של HTTP.
+## איך ל:
+בקוד Lua (גרסה הנוכחית), אנחנו יכולים לשלוח בקשת HTTP באמצעות ספריית socket.http:
 
 ```Lua
--- משלוח בקשת POST עם נתונים והדפסת תוצאת הבקשה
-local socket = require("socket")
-local host = "www.example.com"
-local port = 80
-local path = "/login"
-local data = "username=test&password=test123"
+-- ניתן לייבא את ספריית socket.http
+local http = require("socket.http")
 
-local conn = socket.tcp()
-conn:connect(host, port)
-conn:send("POST " .. path  .. " HTTP/1.1\r\n")
-conn:send("Content-Length: " .. string.len(data) .. "\r\n\r\n")
-conn:send(data)
-local response = conn:receive("*a")
-print(response)
+-- אז, שליחת בקשת HTTP
+
+local url = "http://example.com" -- הכתובת של האתר שאתם מעוניינים לשלוח אליו בקשה.
+local response, status, headers = http.request(url)
+
+-- אפשר להדפיס את התשובה
+if status == 200 then
+    print(response) -- הפלט יהיה את הגוף של התגובה, אם התגובה היא בסדר 
+end
 ```
 
-## מעמקים:
-שיטת ה-sending HTTP request היא חלק חשוב בעבודת פיתוח ומשתמשים בה כבר מאז תחילת ימי האינטרנט. ישנן גם אפשרויות נוספות כגון שימוש בפרוטוקולים אחרים כגון FTP או SMTP במקום HTTP. גם טכנולוגיות חדשות יותר כגון GraphQL מאפשרות חיפוש מתקדם ומציאת נתונים נוספים על פי דרישות מסוימות.
+## מבחן עמוק
+ל"שליחת בקשות HTTP" יש הקשר היסטורי מעניין בעולם של התוכנה. זה תלוי בשיח של "בקשה-תגובה" שהוא קריטי לאינטרנט כפי שאנחנו מכירים היום. אפשרויות אחרות לשליחת בקשות HTTP מכלולות את שימוש בתכנות עזר אחרים, כמו `curl` או `wget`. 
 
-עוד אפשרויות לשליחת בקשות HTTP הן תוך שימוש בפתיחה ידנית של חיבור עם השרת ושימוש בפרוטוקולים נוספים כמו HTTPS להבטחת תקשורת מאובטחת.
+הפרטים של הישום לשליחת בקשת HTTP בשפת Lua כוללים גם את פענוח כותרות התגובה של HTTP ואת מניפולציה של אותם נתונים, אם נדרש.
 
-## ראו גם:
-למידע נוסף ודוגמאות נוספות, התייחסות לפונקציות וסינטקס של שליחת HTTP requests בשימוש בשפת לואה, ניתן לעיין במדריכים באתרים המפורטים מטה:
-
-- [Lua.org](https://www.lua.org)
-- [OpenResty](https://openresty.org)
-- [lua-requests](https://github.com/aclark4life/lua-requests)
+## עיין גם: 
+למידע נוסף, הנה מקורות מועילים:
+- Lua HTTP שליחת בקשת: http://w3.impa.br/~diego/software/luasocket/http.html
+- RFC 2616 (HTTP/1.1): http://www.ietf.org/rfc/rfc2616.txt
+- התחלת מדריך HTTP בקובץ Markdown: https://learnxinyminutes.com/docs/http/

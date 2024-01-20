@@ -1,7 +1,7 @@
 ---
-title:                "डिबग आउटपुट प्रिंट करना"
-html_title:           "Python: डिबग आउटपुट प्रिंट करना"
-simple_title:         "डिबग आउटपुट प्रिंट करना"
+title:                "डीबग आउटपुट प्रिंट करना"
+html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Testing and Debugging"
@@ -10,45 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Kya aur Kyun?
-Printing debug output ka matlab hai ki hum apne code ki running process ko track karna aur samajhna. Programmers is liye ise karte hai kyunki isse unko unke code mein errors aur bugs ko dhoondhne mein madad milti hai. Yeh ek important tool hai programming mein jo errors ko identify aur fix karne mein kaam aata hai.
+## क्या और क्यों?
 
-## Kaise kiya jaye?
-Python mein debug output print karne ke liye hum print() function ka upyog karte hai. Niche diye gaye code blocks mein humne kuch examples diye hai jinse aap samajh sakte hai ki kaise hum debug output ko print karte hai.
+डीबग आउटपुट प्रिंट करना मतलब किसी प्रोग्राम में मौजूद बग्स को खोजने के लिए आउटपुट को देखना। यह प्रोग्रामर्स को बग्स को दूर करने में मदद करता है और किसी प्रोग्राम को समझने में भी। 
 
-```
-# Example 1
-age = 25
-print("My age is", age)
+## कैसे :
 
-# Example 2
-first_name = "John"
-last_name = "Doe"
-print("My name is", first_name, last_name)
+```Python
+# साधारण print का उपयोग करके
+print("This is debug output")
 
-# Example 3
-numbers = [1, 2, 3, 4, 5]
-sum = 0
-for num in numbers:
-  sum += num
-  print("Current sum is:", sum)
+# logging module का उपयोग करें।
+import logging
+logging.debug("This is debug output")
+
+# आउटपुट:
+# This is debug output
+# DEBUG:root:This is debug output
 ```
 
-Output:
-```
-My age is 25
-My name is John Doe
-Current sum is: 1
-Current sum is: 3
-Current sum is: 6
-Current sum is: 10
-Current sum is: 15
-```
+## गहरी डाइव:
 
-## Gehri Khurak:
-Debug output printing ke liye humne print() function ka upyog kiya, lekin aur bhi tarike hai jaise debug mode, log files, aur debugging tools. In sabke alawa, hum apne code mein comments ya debugging statements bhi add kar sakte hai jo hume errors aur bugs ko pakadne mein madad karte hai. Debug output se related kuch aur articles neeche links mein diye gaye hai jo aapke liye helpful ho sakte hai.
+प्राचीन समय से ही प्रोग्रामर्स प्रिंट डीबगिंग का उपयोग कर रहे हैं। लेकिन, हाल ही में logging module का उपयोग हो रहा है क्योंकि इसे लॉग की स्तर को control करने की अनुमति देता है। इसके विकल्प में pdb (Python Debugger) और pdb++ जैसे उपलब्ध हैं। 
 
-## Related Links:
-- [Python Debugging Tutorial](https://realpython.com/python-debugging-pdb/)
-- [Best Practices for Debugging in Python](https://medium.com/datadriveninvestor/best-practices-for-debugging-in-python-2-7-b2e7c75e6570)
-- [Debugging in Python: The Absolute Basics](https://www.debugging-tutorial.com/debugging-python/the-absolute-basics/)
+## देखने के लिये:
+
+1. [Python's official debugging documentation](https://docs.python.org/3/library/debug.html)
+2. [Python logging to console and file](https://www.scalyr.com/blog/python-logging-best-practices-tips/)

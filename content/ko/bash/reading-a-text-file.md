@@ -10,31 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜?: 텍스트 파일을 읽는 것이 무엇인지, 그리고 프로그래머들이 왜 이를 하는지에 대해 두세 문장으로 설명합니다.
+## 뭐하고 왜하나요?
+텍스트 파일을 읽는 것은 파일 내의 데이터를 액세스하는 방법입니다. 프로그래머들은 이것을 활용하여 정보를 수집하고, 분석하고, 원하는 작업을 수행하기 위해서 합니다.
 
-텍스트 파일 읽기는 쉽고 간단한 작업입니다. 이를 통해 프로그래머들은 파일 내용을 읽고 처리하는 데 필요한 정보를 얻을 수 있기 때문에 많은 경우에 사용됩니다.
+## 어떻게 하나요?
+Bash에서 텍스트 파일은 'cat', 'tail', 'head', 'awk' 등의 명령어 사용하여 읽을 수 있습니다.
 
-## 사용 방법: ```Bash ... ``` 코드 블록 내에서 샘플 코드 및 출력을 보여주는 예제입니다.
+```Bash
+# 파일 전체 읽기
+$ cat test.txt
 
-    # 텍스트 파일 읽기 예제
-    # 파일을 읽기 모드로 열기
-    file="sample.txt"
-    while IFS= read line
-    do
-        # 읽은 내용을 출력
-        echo "$line"
-    done <"$file"
+# 파일의 마지막 5줄 읽기
+$ tail -n 5 test.txt
 
-예제의 경우 sample.txt 파일의 내용을 한 줄씩 읽어서 화면에 출력합니다. 변경사항을 파일에 추가할 수도 있습니다.
+# 파일의 첫 5줄 읽기
+$ head -n 5 test.txt
 
-## 깊이 파고들기: (1) 역사적 배경, (2) 대안, 그리고 (3) 텍스트 파일 읽기에 대한 구현 세부 정보와 같은 내용에 대해 더 자세히 알아봅니다.
+# awk로 특정 필드 읽기
+$ awk '{print $1}' test.txt
+```
+이런 방식으로 Bash는 텍스트 파일을 읽어 다양한 작업을 수행할 수 있습니다.
 
-텍스트 파일 읽기는 컴퓨터 과학 분야에서 오래된 기술입니다. 그리고 요즘에는 개발자들이 더 많은 선택권을 가지게 됨에 따라 다양한 방법으로 파일을 처리할 수 있게 되었습니다. 하지만 여전히 텍스트 파일 읽기는 널리 사용되는 방법 중 하나입니다.
+## 딥 다이브
+텍스트 파일 읽기는 UNIX와 함께 시작되어 Bash에 그 기능이 상속되었습니다. 동일한 작업을 수행하는 여러 대안이 있습니다. 예를 들어, 'sed'와 'grep' 명령어를 사용하여 텍스트 데이터를 읽고 조작할 수 있습니다. Bash에서 텍스트 파일을 읽는 방법은 파일의 내용을 stdout에 출력하는 것을 기본으로 합니다. 이 정보를 파이프(|) 또는 리디렉션(>)를 사용하여 다른 명령어로 전달하거나 다른 파일로 출력할 수 있습니다.
 
-파일을 읽는 방법에는 여러 가지가 있습니다. Bash는 read 명령어를 사용하여 파일 읽기를 지원합니다. 하지만 다른 프로그래밍 언어에서도 파일을 읽는 방법을 제공합니다. 이를 이용해 원하는 방식으로 파일을 처리할 수 있습니다. 
+## 참고 자료
+- Bash Scripting Guide (https://tldp.org/LDP/abs/html/)
+- Advanced Bash-Scripting Guide (https://tldp.org/LDP/abs/html/abs-guide.html)
+- UNIX Text Processing (http://www.cs.cf.ac.uk/Dave/C/node3.html#SECTION00300000000000000000)
 
-## 관련 정보: 관련 자료에 대한 링크를 제공합니다.
-
-- [Bash에서 파일 읽기 예제](https://www.cyberciti.biz/faq/unix-howto-read-line-by-line-from-file/)
-- [텍스트 파일 읽기에 대한 다양한 방법](https://www.geeksforgeeks.org/how-to-read-a-text-file-in-cc/)
-- [파일 처리 방법에 대한 비교 분석](https://www.toptal.com/software/how-to-read-and-write-files-in-java)
+이들 자료는 Bash와 텍스트 파일 처리에 대한 깊은 이해를 돕습니다. 프로그래밍의 복잡성과 다양성을 충족시킨 Bash는 여전히 강력하고 필수적인 도구입니다.

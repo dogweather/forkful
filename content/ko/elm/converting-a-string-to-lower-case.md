@@ -1,7 +1,7 @@
 ---
-title:                "문자열을 소문자로 바꾸기"
-html_title:           "Elm: 문자열을 소문자로 바꾸기"
-simple_title:         "문자열을 소문자로 바꾸기"
+title:                "문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
+simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,26 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Elm에서 문자열을 소문자로 변환하기
+## 무엇 & 왜?
 
-## 무엇인가요? 왜 해야 하나요?
-문자열을 소문자로 변환하는 것은 주어진 문자열을 모두 소문자로 바꾸는 작업을 말합니다. 프로그래머들은 대소문자를 구분하는 언어를 다룰 때 이 작업이 필요할 수 있습니다.
+문자열을 소문자로 변환하는 것은 모든 대문자를 소문자로 변경하는 것을 의미합니다. 프로그래머들은 일관성을 유지하거나 케이스 민감성에서 오는 오류를 변경하기 위해 이를 수행합니다.
 
-## 방법:
-Elm에서는 이 작업을 간단하게 할 수 있는 내장 함수 `String.toLower`을 제공합니다. 이 함수는 문자열을 인자로 받아 소문자로 변환된 새로운 문자열을 반환합니다. 예시를 살펴보겠습니다.
+## 어떻게 하나:
+
+Elm에서 문자열을 소문자로 변경하기 위해 `String.toLower` 함수를 사용할 수 있습니다.
+
 ```Elm
-import String exposing (toLower)
+import Html exposing (text)
+import String
 
-myString = "Hello, World!"
-lowercased = toLower myString
-
--- 출력: "hello, world!"
+main =
+  text (String.toLower "HELLO ELM!")
 ```
-세 번째 줄에서 `toLower` 함수를 사용해 `myString` 변수를 소문자로 변환하고, 그 값을 `lowercased` 변수에 저장합니다. 그 다음 인라인 주석에서 확인할 수 있듯이, `lowercased` 변수의 값은 `"hello, world!"`가 됩니다.
 
-## 깊게 들어가기:
-이 작업을 처음부터 구현해보자면, 각 문자의 아스키 코드 값을 확인해 대문자인 경우 32를 빼는 식으로 구현할 수 있습니다. 하지만 `String.toLower` 함수처럼 미리 구현된 함수를 사용하면 훨씬 간단하고 효율적으로 처리할 수 있습니다. Elm에서는 대소문자를 무시하는 비교 함수 `String.CaseInsensitive.compare`를 사용해 두 문자열을 비교할 수도 있습니다.
+이 코드의 출력은 `hello elm!` 입니다.
 
-## 관련 자료:
-- [Elm 공식 문서](https://package.elm-lang.org/packages/elm/core/latest/String#FoldCToLower)
-- [문자열 다루기: Elm로 구현하기](https://medium.com/stackfame/elm-string-tutorial-5117c5cc080d)
+## 깊은 탐색:
+
+문자열을 소문자로 변경하는 것은 오래 전부터 프로그래밍에서 흔히 사용되는 기능입니다. Elm에서는 `String.toLower` 함수로 이 기능을 제공합니다.
+
+대안으로 `String.foldl`을 사용하여 직접 구현할 수 있으나, 이는 번거롭고 불필요한 작업입니다.
+
+```Elm
+import String exposing (foldl)
+import Char exposing (toLower)
+
+lowerCase : String -> String
+lowerCase = foldl (\x y -> String.fromChar (toLower x) ++ y) ""
+
+main = 
+    print (lowerCase "HELLO ELM!")
+```
+
+이 코드의 출력은 이전의 `String.toLower` 함수를 사용한 것과 동일하게 `hello elm!`입니다.
+
+## 참고하기:
+
+더 깊게 파보고 싶다면 아래 링크를 참고하세요.
+* Elm 문자열 변환 기능 : [Elm String 기능](https://package.elm-lang.org/packages/elm/core/latest/String)
+* Elm의 `foldl` 함수 : [foldl 함수](https://package.elm-lang.org/packages/elm/core/latest/List#foldl)

@@ -1,7 +1,7 @@
 ---
-title:                "स्ट्रिंग जोड़ना"
-html_title:           "Rust: स्ट्रिंग जोड़ना"
-simple_title:         "स्ट्रिंग जोड़ना"
+title:                "स्ट्रिंग्स को जोड़ना"
+html_title:           "Bash: स्ट्रिंग्स को जोड़ना"
+simple_title:         "स्ट्रिंग्स को जोड़ना"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,40 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Concatenating strings in Rust means joining two or more strings together to create a new string. Programmers do this to combine different pieces of text or data into one string, making it easier to manipulate or print out.
+# रस्ट प्रोग्रामिंग: स्ट्रिंग्स को जोड़ना
 
-## How to:
-To concatenate strings in Rust, we use the `+` operator. This operator is used in between two strings to add them together. Here's an example:
+## क्या और क्यों?
 
-```Rust
-let greeting = "Hello";
-let name = "Jane";
-let message = greeting + " " + name;
+स्ट्रिंग्स को जोड़ना (concatenating strings) दो या दो से अधिक स्ट्रिंग्स को एक साथ लगाने का कार्य होता है। प्रोग्रामर्स इसे लगभग हर बार तब करते हैं जब उन्हें निर्धारित पाठ तैयार करना होता है, जैसे उपयोगकर्ता के लिए संदेश। 
+
+## कैसे करें:
+
+रस्ट में स्ट्रिंग्स को जोड़ने के लिए `+` और `format!` ऑपरेटर का उपयोग किया जा सकता है। आइए दोनों के उदाहरण देखें:
+
+```Rust 
+    let str1 = "नमस्ते";
+    let str2 = " दुनिया";
+    let hello_world = str1.to_owned() + str2;
+    println!("{}", hello_world);
+```
+आउटपुट:
+```
+नमस्ते दुनिया
+```
+`format!` मैक्रो के साथ:
+```Rust 
+    let str1 = "नमस्ते";
+    let str2 = " दुनिया";
+    let hello_world = format!("{}{}", str1, str2);
+    println!("{}", hello_world);
+```
+आउटपुट:
+```
+नमस्ते दुनिया
 ```
 
-In this code, we first define two strings, `greeting` and `name`. Then, we use the `+` operator to add them together and assign the result to a new string called `message`. The final value of `message` after concatenation would be `"Hello Jane"`. 
+## गहराई से जानकारी:
 
-To add multiple strings, simply add more `+` operators between them. Here's another example:
+रस्ट में स्ट्रिंग्स को जोड़ने के लिए `+` ऑपरेटर और `format!` मैक्रो उपयोगी हैं, लेकिन उनमें अपनी खुद की चुनौतियां हैं। `+` ऑपरेटर उपयोग करने से, बाएं तरफ की स्ट्रिंग को `String` होना होगा, जो कि सभी केसेस में संभव नहीं है। `format!` मैक्रो अधिक वर्सेटाइल है, लेकिन यदि आप केवल स्ट्रिंग्स को जोड़ना चाहते हैं तो यह थोड़ा अधिक हो सकता है।
 
-```Rust
-let num1 = "1";
-let num2 = "2";
-let num3 = "3";
-let numbers = num1 + num2 + num3;
-```
+## अधिक जानकारी के लिए:
 
-In this code, we are concatenating three strings containing numbers. The final value of `numbers` would be `"123"`. 
-
-## Deep Dive:
-Concatenating strings is a commonly used operation in programming, especially when dealing with text-based data. Before the `+` operator was introduced in Rust, programmers had to use the `format!()` function or the `to_string()` method to concatenate strings.
-
-The `format!()` function uses placeholders to insert variables into a string, while the `to_string()` method converts a variable to a string, allowing it to be concatenated with other strings.
-
-Another alternative to string concatenation is by using the `String::from()` function. This function takes in a string slice as an argument and creates a new `String` object, which can then be concatenated with other strings. 
-
-In terms of implementation, the `+` operator is implemented through the `std::ops::Add` trait. This trait allows the `+` operator to perform addition on any type that implements it, including strings.
-
-## See Also:
-- [Rust Documentation on String Concatenation](https://doc.rust-lang.org/std/string/trait.ToString.html#method.to_string)
-- [GeeksforGeeks article on string concatenation in Rust](https://www.geeksforgeeks.org/concatenate-two-strings-in-rust/)
+1. [रस्ट अधिकारिक दस्तावेज़ीकरण](https://doc.rust-lang.org/std/string/struct.String.html) स्ट्रिंग्स के बारे में और सीखने के लिए  
+2. [The Rust Programming Language Book](https://doc.rust-lang.org/book/ch08-02-strings.html#operations-on-strings) स्ट्रिंग्स के बारे में और गहराई से जानने के लिए
+3. [रस्ट ब्लॉग](https://blog.rust-lang.org/inside-rust/2020/10/23/What-the-error-handling-project-group-is-working-on.html) स्ट्रिंग्स की लेटेस्ट उपयोगिताओं के बारे में जानने के लिए

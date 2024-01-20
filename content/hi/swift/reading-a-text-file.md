@@ -1,7 +1,7 @@
 ---
-title:                "एक टेक्स्ट फ़ाइल पढ़ना"
-html_title:           "Swift: एक टेक्स्ट फ़ाइल पढ़ना"
-simple_title:         "एक टेक्स्ट फ़ाइल पढ़ना"
+title:                "एक पाठ फ़ाइल पढ़ना"
+html_title:           "Bash: एक पाठ फ़ाइल पढ़ना"
+simple_title:         "एक पाठ फ़ाइल पढ़ना"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# क्या और क्यों?
-टेक्स्ट फ़ाइल को पढ़ना क्या है और क्यों प्रोग्रामर यह करते हैं - यह बताने के लिए दो तीन सेंटेंस होंगे।
+## क्या और क्यों? 
 
-## क्या है और क्यों करें?
-टेक्स्ट फ़ाइल टेक्स्ट को होस्ट करती है जो सामान्य बाइनरी फ़ाइलों से भिन्न होती है। इसे प्रोग्रामर्स उनके कोड के साथ टेक्स्ट फ़ाइल से डेटा पढ़ने या सेव करने के लिए इस्तेमाल करते हैं।
+टेक्स्ट फ़ाइल पढ़ना मतलब किसी मौजूदा टेक्स्ट फ़ाइल से डेटा खोजना और उसे पढ़ना। प्रोग्रामर इसे मौजूदा डेटा को संशोधित करने, ऐनालाइस करने या उस पर काम करने के लिए करते हैं।
 
-## कैसे करें?
+## कैसे करें:
+
+यहाँ आपकी Swift में टेक्स्ट फ़ाइल पढ़ने की उदाहरण कोड है:
+
 ```Swift
-let fileURL = Bundle.main.url(forResource: "textfile", withExtension: "txt") // फाइल का यूआरएल बनाएं
-do {
-  let content = try String(contentsOf: fileURL!, encoding: .utf8) // फाइल से सामग्री लें
-  print(content) // सामग्री को प्रिंट करें
-}
-catch {
-  print("Error reading file: \(error)") // अगर कोई त्रुटि सामग्री पढ़ते समय होती है, तो यह दिखाएँ।
+import Foundation
+
+if let path = Bundle.main.path(forResource: "example", ofType: "txt") {
+    do {
+        let text = try String(contentsOfFile: path, encoding: .utf8)
+        print(text)
+    } catch {
+        print("Error: \(error)")
+    }
 }
 ```
 
-## समावेश
-यह परिचय स्तंभ के लिए अत्यधिक हो सकते हैं, लेकिन यह थोड़े से प्रोग्रामिंग जानकारों के लिए उपयोगी हो सकता है। आपके पास अन्य विकल्प भी हैं जो टेक्स्ट फ़ाइल देख सकते हैं, जैसे कि कमांड लाइन उपयोगकर्ता इंटरफ़ेस (CLI) या किसी अन्य आधार आधारित लाइब्रेरी।
+इस कोड का उद्देश्य 'example.txt' नामक फ़ाइल को पढ़ने और उसकी सामग्री को प्रिंट करना है।
 
-## और भी देखें
-टेक्स्ट फ़ाइल और समान विषयों के लिए यहाँ दिए गए स्रोतों को देखें:
-- [How to Read a Text File in Swift (Hindi)](https://code4developers.com/how-to-read-a-text-file-in-swift/)
-- [Command Line Interface Tutorial (Hindi)](https://www.includehelp.com/command-line-interface-swift/)
-- [How to Read and Write Text Files in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-files-in-swift)
+## गहरा अध्ययन:
+
+स्विफ्ट में टेक्स्ट फ़ाइल पढ़ने का कोई सीधा तरीका नहीं है। हमें इसे Foundation फ़्रेमवर्क से import करके String वर्ग का उपयोग करना पड़ता है, जो विभिन्न फ़ाइल पठन मेथड उपलब्ध कराता है। 
+
+वैकल्पिक रूप से, हम NSData और InputStream का भी उपयोग कर सकते हैं, पर इनका इस्तेमाल जटिल हो सकता है और ये विशेष परिस्थितियों के लिए ही होते हैं।
+
+यदि आपकी फ़ाइल बहुत बड़ी है, तो इसे छोटे टुकड़ों में पढ़ने पर विचार करें, जिससे प्रोग्राम की प्रदर्शन क्षमता पर नहीं पड़ेगा।
+
+## एवं देखें: 
+
+[Swift Documentation: Working with Files and Directories](https://developer.apple.com/documentation/foundation/filemanager)
+
+[Reading & writing to a text file in Swift](https://www.hackingwithswift.com/example-code/system/how-to-read-and-write-a-string-from-text-file)
+
+[Handling text files in Swift](https://www.andyibanez.com/posts/handling-text-files-in-swift/)
+
+उम्मीद है की आपको यह टूटोरियल स्विफ्ट में फ़ाइल पठन की मूल जानकारी प्रदान कर सकता है। प्रत्येक परिस्थिति के लिए योग्यताओं के बारे में अधिक जानने के लिए ऊपर दी गई अतिरिक्त स्रोतों की जांच करें।

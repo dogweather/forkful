@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Elm: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-### Co & Dlaczego?
+## Co i Dlaczego?
 
-Pobieranie stron internetowych jest procesem pozwalającym na pobieranie informacji lub danych z określonej strony internetowej. Programiści często wykonują tę czynność, aby uzyskać dostęp do potrzebnych informacji lub zasobów, aby móc wykorzystać je w swoich projektach.
+Pobieranie strony internetowej to proces, w którym twoja aplikacja pobiera dane HTML z konkretnej strony internetowej. Programiści robią to by zdobyć dane z różnych stron, które można potem wykorzystać w aplikacji.
 
-### Jak to zrobić:
+## Jak to zrobić:
 
-```Elm 
+Podstawowym sposobem na pobranie strony internetowej w Elm jest użycie funkcji `Http.get`.
+
+```Elm
 import Http
+import Json.Decode as Decode
 
-Http.getString "https://wyimaginowanastrona.com" 
-    |> Task.perform (\result ->
-        case result of
-            Ok response ->
-                Debug.log "Pobrane dane:" response.body
+getPage : String -> Cmd Msg
+getPage url =
+    Http.get
+        { url = url
+        , expect = Http.expectString GotPage
+        }
 
-            Err error ->
-                Debug.log "Wystąpił błąd:" error
-        )
+type Msg =
+    GotPage (Result Http.Error String)
 ```
 
-### Głębszy zanurzenie:
+Aplikacja będzie wywoływać funkcję `getPage` z adresem URL strony, którą chcesz pobrać. Oczekiwany wynik to otrzymane dane strony.
 
-Pobieranie stron internetowych jest powszechnie stosowane w celu uzyskania danych do analizy lub wykorzystania w aplikacjach internetowych. Alternatywnym sposobem na pobieranie stron internetowych jest wykorzystanie narzędzi takich jak Selenium lub Puppeteer, które symulują działanie przeglądarki i umożliwiają wypełnienie formularzy lub kliknięcie na interaktywne elementy. W Elm, proces pobierania stron internetowych jest wykonywany przy pomocy komendy Http.getString. Ta funkcja zwraca Task, który może być wykonany przy użyciu funkcji Task.perform.
+## Głębsze Zagadnienia:
 
-### Zobacz także:
+- Kontekst historyczny: Elm to funkcyjny język programowania do tworzenia webowych aplikacji interaktywnych. Został zaprojektowany tak, aby unikać błędów wykonania na produkcji, co czyni go idealnym dla rozwoju złożonych aplikacji internetowych.
 
-- Dokumentacja Elm, https://guide.elm-lang.org/
-- Elm HTTP Package, http://package.elm-lang.org/packages/elm-lang/http/latest/
+- Alternatywy: istnieją inne biblioteki do pobierania stron internetowych w Elm, na przykład `elm-http-builder`, które oferują większą elastyczność.
+
+- Szczegóły implementacji: Elm wykorzystuje monadę `Cmd` do obsługi efektów ubocznych takich jak żądania HTTP. Ta implementacja różni się od większości języków JavaScript, które używają obietnic (promises) lub callbacków do obsługi asynchroniczności.
+
+## Zobacz także:
+
+- Elm: http://elm-lang.org
+- Http.get: http://package.elm-lang.org/packages/elm/http/latest/Http#get
+- JSON decoding: http://guide.elm-lang.org/interop/ports.html
+- Http Builder: http://package.elm-lang.org/packages/lukewestby/elm-http-builder/latest/

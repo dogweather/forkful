@@ -1,7 +1,7 @@
 ---
-title:                "Wycinanie podciągów."
-html_title:           "Python: Wycinanie podciągów."
-simple_title:         "Wycinanie podciągów."
+title:                "Wydobywanie podciągów"
+html_title:           "Python: Wydobywanie podciągów"
+simple_title:         "Wydobywanie podciągów"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,34 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czego i po co?
+## Co I Dlaczego?
 
-Wycinanie podłańcuchów, czyli wyłączanie fragmentów tekstu z całego ciągu znaków, jest jedną z powszechnie używanych operacji w programowaniu. Programiści używają go głównie w celu filtrowania i manipulacji tekstem, na przykład wyodrębniania konkretnych informacji z dłuższego ciągu znaków.
+Wyciąganie podciągów to operacja polegająca na wydzielaniu mniejszych ciągów znaków (podciągów) z większego ciągu znaków. Programiści robią to, aby manipulować danymi, analizować tekst lub filtrować informacje.
 
-Jak to zrobić:
+## Jak to zrobić:
 
 ```Python
-# Przykładowy ciąg znaków
-text = 'Python jest wspaniałym językiem programowania'
+# Definiowanie ciągu znaków
+napis = "Hello world"
 
-# Wyodrębnienie podłańcucha z indeksem
-print(text[0:6])  # Wynik: 'Python'
+# Wyciąganie podciągu znaków
+podciąg = napis[0:5]
 
-# Wyodrębnienie podłańcucha z wykorzystaniem funkcji split()
-words = text.split(' ')
-print(words[0])  # Wynik: 'Python'
-
-# Wyodrębnienie podłańcucha z wykorzystaniem metody find()
-index = text.find('językiem')
-print(text[index:])  # Wynik: 'językiem programowania'
+# Wyświetlanie wyników
+print(podciąg)
 ```
 
-Głębszy zanurzenie:
+Kiedy uruchomisz ten kod, zobaczysz wynik:
 
-Wycinanie podłańcuchów jest możliwe dzięki indeksowaniu i cięciu w Pythonie, co jest inspirowane podobnymi funkcjami w języku C. Istnieje wiele alternatywnych sposobów na wycinanie podłańcuchów, w tym wykorzystanie wyrażeń regularnych lub biblioteki string. Warto również pamiętać, że wycięte podłańcuchy są typem danych `str`, który można dalej manipulować.
+```
+Hello
+```
 
-Zobacz też:
+## Głębsza wiedza
 
-- [Dokumentacja Python](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str)
-- [Tutorial wyciągania podłańcuchów](https://www.programiz.com/python-programming/string-slicing)
-- [Poradnik wyrażeń regularnych](https://realpython.com/regex-python/)
+(1) Historyczny kontekst - Operacje na ciągach znaków są fundamentem programowania od jego początków. Korzystamy z nich w przypadku przetwarzania języka naturalnego, filtrowania danych i wielu innych zadań.
+
+(2) Alternatywy - Mimo iż nasz sposób to najszybszy i najprostszy, istnieją także inne metody jak np. z użyciem funkcji `slice()`, `substring()` czy regularnych wyrażeń. Wybór metody zależy od Twoich wymagań!
+
+(3) Szczegóły implementacji - Python indeksuje znaki w ciągu znaków, zaczynając od 0. Kiedy piszemy `napis[0:5]`, mówimy Pythonowi: "Daj mi podciąg zaczynając od indeksu 0 i kończąc na 5 (bez 5)"
+
+## Zobacz również
+
+- [Dokumentacja Pythona dotycząca ciągów znaków](https://docs.python.org/3/library/stdtypes.html#string-methods)
+- [Opis metody slice() na geeksforgeeks.org](https://www.geeksforgeeks.org/python-string-slicing/)
+- [Podstawy regularnych wyrażeń w Pythonie na realpython.com](https://realpython.com/regex-python/)

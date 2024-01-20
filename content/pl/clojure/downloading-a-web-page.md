@@ -1,6 +1,6 @@
 ---
 title:                "Pobieranie strony internetowej"
-html_title:           "Clojure: Pobieranie strony internetowej"
+html_title:           "C#: Pobieranie strony internetowej"
 simple_title:         "Pobieranie strony internetowej"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co & Dlaczego?
+## Co to i dlaczego?
 
-Pobieranie strony internetowej to proces, w którym program pobiera dane ze strony internetowej, takie jak tekst, obrazy i multimedia, i wyświetla je w czytelnej formie. Programiści często pobierają strony internetowe, aby przeglądać zawartość lub pobierać dane do analizy lub przetwarzania.
+Ściąganie strony internetowej polega na pobraniu jej zawartości dla potencjalnej analizy lub przetwarzania. Programiści robią to, aby analizować dane, wychwytywać trendy, testować wydajność witryn i wiele innych celów.
 
-# Jak to zrobić:
 
-```Clojure
-(require '[clojure.java.io :as io])  
-(io/copy (io/input-stream "https://www.example.com") (io/output-stream "output.html"))
+## Jak to zrobić:
+
+```clojure
+(require '[clj-http.client :as client])
+
+(defn download-page [url]
+  (let [response (client/get url)]
+    (when (= 200 (:status response))
+      (:body response))))
+
+(println (download-page "https://www.example.com"))
 ```
+Powstaje kawałek kodu w języku Clojure, który pobiera stronę internetową i wyświetla jej zawartość.
 
-W powyższym kodzie importujemy bibliotekę `clojure.java.io`, a następnie wywołujemy funkcję `copy` z dwoma argumentami: `input-stream` dla adresu strony internetowej i `output-stream` dla pliku, w którym chcemy zapisać pobrane dane. Po uruchomieniu tego kodu, otrzymamy plik `output.html` zawierający pobraną stronę internetową.
+## Deep Dive:
 
-# W pogłębieniu:
+Clojure jest nowoczesnym dialektem języka Lisp, który jest wykorzystywany w przetwarzaniu danych od 1958 roku. Inne języki, takie jak Python lub Java, także służą do ściągania stron internetowych, ale Clojure umożliwa prostą obsługę wielowątkowości i niezawodną przetwarzanie danych.
 
-## Kontekst historyczny:
+Co do szczegółów implementacji, funkcja `client/get` z biblioteki `clj-http.client` wysyła żądanie GET do wyznaczonego adresu URL, a następnie zwraca mapę odpowiedzi z wieloma polami. W naszym przypadku interesuje nas pole `:body`, które zawiera treść HTML pobranej strony.
 
-Wcześniej programiści często używali języka Java do pobierania stron internetowych, ale dzięki rozwojowi Clojure powstały proste i wydajne metody do wykonania tego zadania.
+## Zobacz też:
 
-## Alternatywy:
-
-Alternatywą dla użycia biblioteki `clojure.java.io` jest użycie specjalistycznych bibliotek, takich jak `clj-webdriver` lub `jython`, ale te wymagają więcej doświadczenia i są skomplikowane dla początkujących.
-
-## Szczegóły implementacyjne:
-
-W bibliotece `clojure.java.io` funkcja `copy` wykorzystuje metody `URLConnection` z języka Java, aby nawiązać połączenie z adres
+- Pełna dokumentacja clj-http: https://github.com/dakrone/clj-http
+- Spis treści "Clojure dla początkujących": http://www.clojurebook.com
+- Wprowadzenie do Clojure - obsługa sieci: https://www.braveclojure.com/web-applications/

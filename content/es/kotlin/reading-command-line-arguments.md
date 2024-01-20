@@ -1,7 +1,7 @@
 ---
-title:                "Leyendo argumentos de línea de comandos."
-html_title:           "Kotlin: Leyendo argumentos de línea de comandos."
-simple_title:         "Leyendo argumentos de línea de comandos."
+title:                "Leyendo argumentos de la línea de comandos"
+html_title:           "Bash: Leyendo argumentos de la línea de comandos"
+simple_title:         "Leyendo argumentos de la línea de comandos"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Files and I/O"
@@ -10,29 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
+## ¿Qué y por qué?
 
-Leer argumentos de línea de comando es una técnica utilizada por los programadores para obtener datos proporcionados por el usuario al ejecutar un programa. Esto les permite personalizar la ejecución del mismo y hacerlo más interactivo para el usuario.
+Leer argumentos de línea de comandos se refiere a recibir valores a través de la terminal al inicio de un software. Programamos este patrón ya que es una forma eficaz de pasar datos mientras ejecutamos una aplicación.
 
-# ¿Cómo hacerlo?
+## ¿Cómo hacerlo?
 
-Para leer argumentos de línea de comando en Kotlin, podemos usar la función `args` que se encuentra en la clase `Array<String>`. Aquí hay un ejemplo de código que lee argumentos y muestra un mensaje en la consola con el primer argumento proporcionado:
+Veamos cómo Kotlin facilita la lectura de los argumentos de la línea de comandos en una aplicación de consola.
 
-```
-Kotlin fun main(args: Array<String>) {
-    println("El primer argumento es: ${args[0]}")
+```Kotlin
+fun main(args: Array<String>) {
+    args.forEach { arg -> println(arg) }
 }
 ```
 
-Si ejecutamos el programa con el siguiente comando: `kotlin Main.kt arg1 arg2`, el resultado sería: `El primer argumento es: arg1`.
+Ejecuta el programa con argumentos - `./mi-programa.kt Hola Mundo`. Verás una salida similar:
 
-# Profundizando
+```
+Hola
+Mundo
+```
 
-Esta técnica de leer argumentos de línea de comando se utiliza comúnmente desde los primeros días de la programación. En el pasado, los programas solían interactuar directamente con la línea de comandos y los argumentos eran la forma de personalizar la ejecución. Hoy en día, existen alternativas como el uso de archivos de configuración o interfaces gráficas.
+## Inmersión profunda
 
-La implementación de lectura de argumentos de línea de comando en Kotlin sigue el estándar de Unix y utiliza la convención de `-` para opciones y `--` para opciones extendidas. También es posible acceder a los argumentos a través de su índice en la lista `args`.
+1. **Contexto histórico**: Desde los primeros días de la programación, los argumentos de la línea de comandos han sido una forma efectiva de dar instrucciones a los programas. Kotlin, a pesar de su modernidad, mantiene esta práctica porque es útil y familiar para muchos desarrolladores.
 
-# Ver también
+2. **Alternativas**: Hay otras formas de obtener datos al ejecutar un programa, como el uso de archivos de entrada / salida o interacción con el usuario en tiempo real. Sin embargo, los argumentos de la línea de comandos aún se prefieren para ciertos casos de uso puntuales donde la simplicidad es clave.
 
-- [Kotlin Documentation on Command Line Arguments](https://kotlinlang.org/docs/command-line.html)
-- [Java World Article on Reading Command Line Arguments](https://www.javaworld.com/article/3367564/java-programming-without-using-main-methods.html)
+3. **Detalles de implementación**: Kotlin almacena los argumentos de la línea de comandos en un array de String que se pasa a la función `main()`. Puedes acceder a estos datos como harías con cualquier otro array.
+
+## Ver también
+
+Para explorar este tema en mayor profundidad, consulta estos enlaces útiles:
+
+- [Kotlin Documentation: Command line arguments](https://kotlinlang.org/docs/tutorials/command-line.html)
+- [Medium: Kotlin command line arguments](https://medium.com/@cervonefrancesco/kotlin-command-line-arguments-40487f3c5bdb)
+
+Esperamos que este artículo te haya dado una buena visión general de cómo manejar argumentos de la línea de comandos en Kotlin. ¡Feliz codificación!

@@ -1,7 +1,7 @@
 ---
-title:                "Att hitta längden av en sträng"
-html_title:           "C#: Att hitta längden av en sträng"
-simple_title:         "Att hitta längden av en sträng"
+title:                "Hitta längden på en sträng"
+html_title:           "Arduino: Hitta längden på en sträng"
+simple_title:         "Hitta längden på en sträng"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,33 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att hitta längden på en sträng är en grundläggande del av programmering som innebär att mäta antalet tecken i en given sträng. Detta kan vara användbart för att utföra olika manipulationer på strängen eller för att jämföra den med andra strängar. Detta är en viktig färdighet för alla programmerare att ha i sitt verktygsfack.
+# Hitta Längden på en Sträng i C#: En Snabbguide för de Nyfikna Programmerare
+_Dagens C# programmeringstips är att hitta längden på en sträng. Vi ska dyka rakt in!_
 
-## Hur?
-Att hitta längden på en sträng i C# är mycket enkelt, tack vare den inbyggda metoden `Length`. Här är ett exempel på hur du kan använda den:
+## Vad & Varför?
+
+Att hitta längden på en sträng innebär att räkna antalet tecken i den angivna strängen. Programmerare gör detta för datahantering och manipulation.
+
+## Hur man gör:
+
+Här är ett grundläggande exempel i C#.
 
 ```C#
-string myString = "Hej! Hur mår du?";
-int length = myString.Length;
-Console.WriteLine(length);
+string minStrang = "Hej Sverige!";
+int langd = minStrang.Length;
+Console.WriteLine("Längden på strängen är: " + langd);
 ```
-Output: 15
 
-Som du kan se, returnerar `Length`-metoden antalet tecken i den givna strängen och sparar det i en variabel `length`. Detta värde skrivs sedan ut i konsolen.
+När du kör detta program, får du detta som output:
 
-## Deep Dive
-Att hitta längden på en sträng kanske verkar som en enkel uppgift, men det är faktiskt en viktig del av programmeringen som har en intressant historisk bakgrund. I äldre språk som C, var det vanligt att man behövde ange längden på en sträng manuellt, vilket innebar att man behövde hålla reda på antalet tecken och se till att det stämde överens vid varje manipulation. Med C# och andra moderna programmeringsspråk är detta inte längre nödvändigt, eftersom `Length`-metoden gör det åt dig.
+```
+Längden på strängen är: 13
+```
 
-Det finns också alternativ till `Length`-metoden, som `Count`-metoden som används på listor och andra samlingar. Detta kan vara användbart om du vill hitta antalet element i en lista istället för tecken i en sträng.
+## Djupdykning:
 
-Om du är intresserad av att veta mer om hur `Length`-metoden faktiskt implementeras, kan du titta på C#-källkoden där det är en enkel returnering av en intern variabel som håller reda på antalet tecken.
+Hitta längden på en sträng är ett gammalt behov, ända tillbaka till de tidiga dagarna av kodning. I C#, får du strängens längd via 'Length' egenskapen i 'String Class'.
 
-## Se även
-Om du vill lära dig mer om strängmanipulering och andra grundläggande koncept i C#, kan du kolla in dessa källor:
+Det finns alternativ till ’Length’, som LINQ-metoden ’Count()’, men man ska observera att ’Length’ är snabbare eftersom det är en egenskap inte en metod. 
 
-- Dokumentationen för `Length`-metoden: https://docs.microsoft.com/en-us/dotnet/api/system.string.length
+Längden på en sträng i C# beräknas genom att räkna antalet Unicode-tecken. Observera att ett 'Char' i .NET faktiskt kan representera mindre än ett helt tecken - de kan vara delar av ett tecken, för att hantera komplexa tecken som emojis.
 
-- En tutorial om strängmanipulering i C#: https://www.tutorialspoint.com/csharp/csharp_strings.htm
+## Se även:
 
-- Officiella C#-dokumentationen: https://docs.microsoft.com/en-us/dotnet/csharp/
+* [Microsofts Officiella Dokument om Stränghantering i .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/string-manipulation)
+* [Stack Overflow Diskussion om Stränglängd vs Count()](https://stackoverflow.com/questions/94591/what-is-the-difference-between-length-and-count) 
+
+Glöm inte att pröva dig fram och experimentera med det du har lärt dig. Lycka till med din programmeringsresa!

@@ -1,7 +1,7 @@
 ---
-title:                "Å sende en http-forespørsel med grunnleggende autentisering"
-html_title:           "Go: Å sende en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Å sende en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,43 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Sending av en HTTP forespørsel med grunnleggende autentisering er en måte for programvareutviklere å sende og motta data fra en server med brukernavn og passord. Dette er nyttig for å sikre at bare autoriserte brukere har tilgang til visse ressurser på serveren.
+## Hva & Hvorfor?
+Å sende en HTTP-forespørsel med grunnleggende autentisering er en prosess hvor en klient sender en forespørsel til en server og inkluderer autentiseringsdetaljer for å bevise sin identitet. Programmerere gjør dette for å sikre at sensitive data kun gis til validerte brukere.
 
-## Hvordan:
-I Go, kan du enkelt sende en HTTP forespørsel med grunnleggende autentisering ved å bruke standardpakken `net/http`. Følgende kodeblokk viser et eksempel på hvordan du kan gjøre dette:
+## Hvordan gjør vi det:
+Her er et enkelt eksempel på hvordan du sender en HTTP-forespørsel med grunnleggende autentisering i Go.
 
 ```Go
-// Importer net/http pakken
-import "net/http"
+package main
 
-// Lag en HTTP forespørselsobjekt
-req, err := http.NewRequest("GET", "https://example.com/api/data", nil)
+import (
+	"fmt"
+	"net/http"
+	"net/http/httputil"
+)
 
-// Legg til brukernavn og passord i forespørselen
-req.SetBasicAuth("brukernavn", "passord")
+func main() {
+	req, err := http.NewRequest("GET", "http://eksempel.no", nil)
+	req.SetBasicAuth("brukernavn", "passord")
 
-// Send forespørselen og håndter eventuelle feil
-resp, err := http.DefaultClient.Do(req)
-if err != nil {
-    panic(err)
+	res, err := http.DefaultClient.Do(req)
+	if err != nil {
+		panic(err)
+	}
+	defer res.Body.Close()
+
+	dump, _ := httputil.DumpResponse(res, true)
+	fmt.Println(string(dump))
 }
-
-// Les responsen fra serveren
-body, err := ioutil.ReadAll(resp.Body)
-if err != nil {
-    panic(err)
-}
-
-// Skriv ut responsen
-fmt.Println(string(body))
 ```
 
-Eksempelutgangen vil vise dataene som ble mottatt fra serveren basert på den angitte URL-en og autentiseringsinformasjonen.
+Kjør programmet og du vil se en komplett HTTP-respons dump direkte i terminalen.
 
-## Dypdykk:
-HTTP-forespørsler med grunnleggende autentisering har vært en vanlig praksis for å sikre nettverkskommunikasjon siden HTTP-protokollen ble laget på 1990-tallet. Alternativene til grunnleggende autentisering inkluderer OAuth, Token Authentication og Digest Authentication. Disse alternative metodene er mer sikre enn grunnleggende autentisering, men krever vanligvis mer arbeid å implementere. I Go, kan du bruke tredjeparts biblioteker for å implementere disse alternative autentiseringsmetodene.
+## Dykk etter mer kunnskap
+Historisk sett har grunnleggende autentisering vært brukt siden HTTP/1.0, en enkel måte å beskytte nettsider og data. Det viktigste alternative i dag er kanskje Bearer-token, oftest brukt med OAuth2. Ved implementering i Go, la merke til hvordan `SetBasicAuth`-metoden setter autentiseringsdetaljer i HTTP `Authorization` header.
 
-## Se også:
-- [Pakkenet/http Dokumentasjon](https://golang.org/pkg/net/http/)
-- [HTTP Basic Authentication på 2 minutter](https://youtu.be/_eUITgQbBVA) video fra Gopher Academy
+## Se også
+For mer detaljer om HTTP-autentisering med Go, sjekk ut disse ressursene:
+
+1. Go Dokumentasjonen: [http pakken](https://golang.org/pkg/net/http/)
+2. Blogginnlegg: [Basic Authentication in Go](https://www.alexedwards.net/blog/basic-authentication-in-go)
+3. God praksis for autentisering: [OWASP Authentication Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html)

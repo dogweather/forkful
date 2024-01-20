@@ -1,7 +1,7 @@
 ---
-title:                "שדרגת מחרוזת"
-html_title:           "Haskell: שדרגת מחרוזת"
-simple_title:         "שדרגת מחרוזת"
+title:                "אינטרפולציה של מחרוזת"
+html_title:           "Arduino: אינטרפולציה של מחרוזת"
+simple_title:         "אינטרפולציה של מחרוזת"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה?
+# מאמר דרך ההשל: ריבוב מחרוזות בהשל (Haskell)
 
-ההתאפסות של מחרוזת היא כלי חזק ב- Haskell שמאפשר למתכנתים להכניס משתנים אל מחרוזות בצורה נוחה ויעילה. למרבה המזל, ישנן מספר שיטות לעשות זאת בתוכניות שלנו.
+## מה ולמה?
+ריבוב מחרוזות הוא תהליך בו נכנסים ערכים של משתנים מתוך הקוד לתוך מחרוזת. התכנתים עושים זאת כדי להדפיס, לבנות או למניפולציה של מחרוזות בצורה דינאמית.
 
-## כיצד לעשות:
+## איך:
+```haskell
+import Text.Printf (printf)
 
-כדי להשתמש בהתאפסות של מחרוזת ב- Haskell נשתמש בפונקציות פשוטות כמו `printf` ו- `putStrLn`. באמצעות אלו, אנו יכולים להכניס משתנים מסוגים שונים בתוך מחרוזת על ידי ציון שלהם כהפרמטרים. לדוגמה:
-
-```Haskell
-myString = printf "Hello %s, you are %d years old!" "John" 25
-putStrLn myString
+main :: IO ()
+main = do
+    let name = "Avraham"
+        age  = 34
+    putStrLn $ printf "שלום, אני %s ואני בן %d" name age
+```
+הפלט:
+```
+שלום, אני Avraham ואני בן 34
 ```
 
-תוצאה התוכנית תהיה: "Hello John, you are 25 years old!"
+## צלילה עמוקה
+- קונטקסט היסטורי: השל, שנכתב בתחילה בשנת 1990, מכיל ספריות כמו "Text.Printf" להפוך את ריבוב המחרוזת לפשוט יותר.
+- חלופות: ספריה כמו "Text.InterpolatedString.Perl6" מאפשרת ריבוי של מחרוזות בצורה המזכירה שפות תכנות אחרות כמו Perl או פייתון.
+- פרטי ההתקנה: פונקציית printf משתמשת בפרמטרים וסימני פרמטר (%s, %d) כדי למקם את הערכים בטקסט.
 
-על מנת ליישם זאת בתוכנית שלנו, עלינו להוסיף את הטקסט "import Text.Printf" לראש הקובץ הנוכחי שלנו.
-
-## מסע לעומק:
-
-בעבר, כדי להשתמש בהתאפסות של מחרוזת ב- Haskell היה עלינו להשתמש בספריות חיצוניות כגון Fmt ו- Printed שפיתוחן היה קשה וזמן לימודן ארוך. אבל הבעיה כיום נמצאת בצורה פשיטה וניתן להשתמש בפונקציות פשוטות כדי לפענח את ההתאפסות של מחרוזת ב- Haskell.
-
-כמו בכל שפת תכנות אחרת, ישנן חלופות להשתמש בהתאפסות של מחרוזת ב- Haskell כמו שימוש בפונקציות `show` ו- `print` שכולן יכולות לבצע את אותה המשימה, אבל יכולות להיות יותר מסורבלות לשימוש. אם ברצוננו להשתמש בפתרון אחר, עלינו לבדוק את האפשרויות ולבחור את הפתרון הטוב ביותר בשבילנו.
-
-## ראה גם:
-
-למידע נוסף ודוגמאות נוספות על השתמש בהתאפסות של מחרוזת ב- Haskell, אנו ממליצים לך לבדוק את המדריכים והמשאבים הבאים:
-
-- [Haskell Wiki](https://wiki.haskell.org/Formatting_strings)
-- [Learn You a Haskell](http://learnyouahaskell.com/input-and-output)
-- [Real World Haskell](http://book.realworldhaskell.org/read/io.html)
+## ראה גם
+למידה נוספת על ריבוב מחרוזות בהשל:
+- דוקומנטציה אופיציאלית של הספרייה "Text.Printf": https://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html
+- מאמר שנכתב על נושא זה בקומוניטי: https://schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/printf
+- פוסט בנושא ב-Stack Overflow: https://stackoverflow.com/questions/14557994/what-is-the-haskell-way-of-formatting-strings-with-variables-in-them

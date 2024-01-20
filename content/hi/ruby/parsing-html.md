@@ -1,7 +1,7 @@
 ---
-title:                "Html को पारसिंग करना।"
-html_title:           "Ruby: Html को पारसिंग करना।"
-simple_title:         "Html को पारसिंग करना।"
+title:                "HTML पार्स करना"
+html_title:           "C++: HTML पार्स करना"
+simple_title:         "HTML पार्स करना"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,38 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## समझना और क्यों?
-HTML टैग को पढ़ने और उससे डेटा को निकालने का प्रक्रिया पार्सिंग एक कोडिंग प्रैक्टिस है। यह प्रोग्रामर्स क्योंकि वे भिन्न वेब पृष्ठों से डेटा निकालने के लिए उपयोगी होता है।
+# रूबी से HTML पार्स करना : एक त्वरित पत्रिका 
+
+## क्या और क्यों?
+
+HTML पार्स करना होता है वेबपेज का HTML कोड पढ़ना और बोध करना। इसकी आवश्यकता वेब स्क्रेपिंग (वेबपेज से जानकारी निकालने) में होती है।
 
 ## कैसे:
+
 ```Ruby
-require 'nokogiri'
 require 'open-uri'
+require 'nokogiri'
 
-# HTML पेज से डेटा निकालें
-page = Nokogiri::HTML(open("http://www.example.com"))
+url = 'http://नमूना.वेबसाइट'
+html = open(url)
 
-# हेडलाइन्स को सूची में अपडेट करें
-headlines = []
-page.css("h1").each do |headline|
-  headlines << headline.text.strip
-end
+doc = Nokogiri::HTML(html)
 
-# नतीजे प्रिंट करें
-puts headlines
+# शीर्षक प्राप्त करना
+title = doc.at_css('title').text
+puts title
 ```
 
-नतीजा:
-```
-- प्रथम हेडलाइन
-- दूसरा हेडलाइन
-- तीसरी हेडलाइन
-```
+ऊपरी कोड एक वेबपेज से HTML पार्स करने और शीर्षक प्राप्त करने के लिए है।
 
-## गहराई की तलाशी:
-पहले से ही हम HTML पेजों को पार्स करने के लिए कई उपाय हैं। एक ऐसा उपाय कोडिंग भाषाओं जैसे Python या JavaScript का उपयोग करना है। अन्य उपयोगी उपाय Nokogiri, Beautiful Soup और Scrapy जैसे पार्सिंग लाइब्रेरी भी हैं। HTML पार्सिंग के लिए समय पर ध्यान देना भी महत्वपूर्ण है क्योंकि बड़े पेजों को पार्स करने में देरी हो सकती है।
+## गहरा डाइव:
 
-## और भी देखें:
-- [Ruby के लिए Nokogiri दस्तावेज़](http://www.rubydoc.info/github/sparklemotion/nokogiri)
-- [Beautiful Soup लाइब्रेरी के लिए विकिपीडिया पृष्ठ](https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser))
-- [Scrapy के लिए दस्तावेज़](https://doc.scrapy.org/en/latest/)
+HTML पार्स करने का इतिहास वेब स्क्रेपिंग के साथ ही शुरु होता है। बदलते समय के साथ, विभिन्न भाषाओं और फ्रेमवर्क में विभिन्न तरीके उभरे हैं।
+
+Ruby में, 'Nokogiri' एक बहुत ही लोकप्रिय और शक्तिशाली लाइब्रेरी है, जिसे HTML पार्स करने के लिए इस्तेमाल किया जाता है।
+
+'Nokogiri' का उपयोग 'open-uri' लाइब्रेरी के साथ मिलकर HTML को पार्स करने में किया जाता है।
+
+## देखिए भी:
+
+1. Nokogiri ट्यूटोरियल: https://nokogiri.org/tutorials/
+2. 'open-uri' डॉक्युमेंटेशन: https://ruby-doc.org/stdlib/libdoc/open_uri/rdoc/OpenURI.html
+3. Web scraping से संबंधित इस महत्वपूर्ण लेख को deekhein: https://realpython.com/beautiful-soup-web-scraper-python/

@@ -1,7 +1,7 @@
 ---
-title:                "Cancellazione di caratteri corrispondenti a un modello"
-html_title:           "Elm: Cancellazione di caratteri corrispondenti a un modello"
-simple_title:         "Cancellazione di caratteri corrispondenti a un modello"
+title:                "Eliminazione dei caratteri corrispondenti a un modello"
+html_title:           "PowerShell: Eliminazione dei caratteri corrispondenti a un modello"
+simple_title:         "Eliminazione dei caratteri corrispondenti a un modello"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,26 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Eliminare i caratteri che corrispondono ad un determinato modello è un'operazione comune nella programmazione. Questo viene fatto per manipolare e trasformare una stringa di testo, eliminando parti indesiderate o che non soddisfano un certo criterio.
+## Che cosa & Perché?
+
+Eliminare caratteri che corrispondono a un certo modello è un processo di nettezza del codice e di manipolazione delle stringhe. I programmatori lo fanno per pulire i dati di input, manipolare i testi e affinare le ricerche.
 
 ## Come fare:
-Ecco un esempio di codice in Elm per eliminare tutte le vocali da una stringa di testo:
+
+Di seguito, un esempio di come eliminare caratteri che corrispondono a un modello in Elm. 
 
 ```Elm
-str = "Ciao amici!"
-strWithoutVowels = String.filter (\char -> not (List.member(char, ['a', 'e', 'i', 'o', 'u']))) str
+import String
 
--- Output: "C m c!"
+rimuoviCaratteri : String -> String
+rimuoviCaratteri str = 
+    String.foldl 
+        (\c acc -> if String.contains (String.fromChar c) "#$%" then acc else acc ++ (String.fromChar c))
+        ""
+        str
+
+main =
+    print (rimuoviCaratteri "Ciao##$$%%Mondo")
 ```
+Risultato di compilazione:
+`"CiaoMondo"`
 
-## Approfondimento:
-In passato, l'utilizzo di espressioni regolari era comune per eliminare i caratteri che corrispondono ad un determinato modello. Tuttavia, con l'avvento di nuovi linguaggi di programmazione come Elm, è possibile utilizzare funzioni di ordine superiore come `String.filter` per rendere il codice più leggibile e mantenibile.
+Nell’esempio sopra, la funzione `rimuoviCaratteri` rimuove tutti i caratteri "#", "$", "%" dalla stringa "Ciao##$$%%Mondo".
 
-Un'alternativa all'uso di `String.filter` è l'utilizzo di una libreria esterna come `elm-regex` che fornisce funzioni più avanzate per la manipolazione di stringhe basate su espressioni regolari.
+## Approfondimento 
 
-È importante notare che quando si eliminano caratteri da una stringa, è necessario tenere conto della codifica dei caratteri per evitare problemi di compatibilità tra sistemi operativi.
+L'eliminazione dei caratteri corrispondenti a un modello è un concetto di programmazione radicato storico, dai giorni di PERL e delle espressioni regolari. In Elm, abbiamo usato `String.foldl` e `String.contains` al posto di espressioni regolari. 
+
+In alternativa, potreste usare il pacchetto elm/regex per un approccio più simile alle espressioni regolari. 
+
+Dettagli di implementazione: `String.foldl` scorre la stringa dall'inizio alla fine, controllando e costruendo una nuova stringa senza i caratteri indesiderati. `String.contains` viene usato per verificare se un carattere fa parte del modello.
 
 ## Vedi anche:
-- [Documentazione Elm su `String.filter`](https://package.elm-lang.org/packages/elm/core/latest/String#filter)
-- [Libreria `elm-regex` per la manipolazione di stringhe basate su espressioni regolari](https://package.elm-lang.org/packages/elm/regex/latest/)
+
+- Documentazione di Elm String [Elm String](https://package.elm-lang.org/packages/elm/core/latest/String)
+- Documentazione di Elm foldl [Elm foldl](https://package.elm-lang.org/packages/elm/core/latest/List#foldl)
+- Guida alla programmazione Elm [Elm Tutorial](https://elmprogramming.com/) 
+- Pacchetto Elm Regex [Elm Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
+- Guida alle espressioni regolari [Regex Guide](https://www.regular-expressions.info/)

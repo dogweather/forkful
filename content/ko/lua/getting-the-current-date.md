@@ -1,7 +1,7 @@
 ---
-title:                "현재 날짜 받기"
-html_title:           "Lua: 현재 날짜 받기"
-simple_title:         "현재 날짜 받기"
+title:                "현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
+simple_title:         "현재 날짜 가져오기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Dates and Times"
@@ -10,37 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Lua에서 현재 날짜 받아오기
+## 무엇이며 왜합니까?
 
-## 무엇 & 왜?
+현재 날짜를 받아오는 것은 시스템의 현재 날짜와 시간을 알아내는 프로그래밍 작업입니다. 이는 로그 작성, 이벤트 추적, 날짜와 시간 기반의 기능 등에서 필요로 합니다.
 
-현재 날짜 받아오기란 무엇일까요? 간단하게 말하자면 컴퓨터가 현재의 날짜와 시간을 알려주는 것입니다. 프로그래머들은 이 기능을 사용하여 프로그램을 작성하거나 시스템 설정을 변경할 때 유용하게 활용합니다.
+## 어떻게:
 
-## 사용 방법:
-
-현재 날짜를 받아오는 방법은 간단합니다. 다음과 같이 코드를 입력해보세요:
-
-```Lua 
-currentDate = os.date("%x")  
-print(currentDate) 
-```
-
-위 코드를 실행하면 현재 날짜가 yyyy/mm/dd 형태로 출력될 것입니다.
-
-또한, 시간 정보를 함께 받아오고 싶다면 다음과 같이 코드를 변경할 수 있습니다:
+Lua에서는 os.date() 함수를 이용하여 현재 날짜와 시간을 얻을 수 있습니다.
 
 ```Lua
-currentTime = os.date("%x %X")
-print(currentTime)
+date = os.date("*t")
+print("오늘은 "..date.year.."년 "..date.month.."월 "..date.day.."일 입니다.")
+```
+위 코드의 예제 출력:
+
+```
+오늘은 2021년 12월 25일 입니다.
 ```
 
-위 코드를 실행하면 yyyy/mm/dd hh:mm:ss 형태로 현재 날짜와 시간이 출력될 것입니다.
+## 깊게 살펴보기:
 
-## 깊게 파고들기:
+Lua에서 날짜와 시간을 다루는 것은 os.date()와 os.time() 함수에 의해 다루어집니다. 이러한 함수들은 ANSI C에서 정의된 것을 바탕으로 합니다. 또한 Lua에서는 이 외에도 os.difftime() 함수를 이용해 두 시간 사이의 차이를 측정하는 기능도 제공합니다.
+ 
+대안적으로, 더 복잡한 날짜와 시간 연산이 필요한 경우에는 'luadate'와 같은 외부 라이브러리를 사용할 수도 있습니다.
 
-현재 날짜를 받아오는 기능은 Lua의 표준 라이브러리에 포함되어 있습니다. 그렇기 때문에 별도의 설치 과정 없이 즉시 사용할 수 있습니다. 하지만, 다른 언어를 사용하는 프로그래머라면 이와 비슷한 기능을 유사한 방법으로 사용할 수 있습니다. 예를 들어 파이썬에서는 datetime 라이브러리를 사용해 날짜를 받아올 수 있습니다.
+## 참조하기:
 
-## 관련 자료:
-
-- Lua 공식 문서: [os.date()](https://www.lua.org/manual/5.3/manual.html#pdf-os.date)
-- 파이썬 공식 문서: [datetime](https://docs.python.org/3/library/datetime.html)
+1. Lua 공식 문서 - os.date : https://www.lua.org/manual/5.2/manual.html#pdf-os.date
+2. Lua 공식 문서 - os.time : https://www.lua.org/manual/5.2/manual.html#pdf-os.time
+3. Lua 외부 라이브러리 luadate : https://github.com/Tieske/date

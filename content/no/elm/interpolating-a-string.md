@@ -1,6 +1,6 @@
 ---
 title:                "Interpolering av en streng"
-html_title:           "Elm: Interpolering av en streng"
+html_title:           "Bash: Interpolering av en streng"
 simple_title:         "Interpolering av en streng"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,30 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
+Interpolering av en streng er prosessen der variabler, uttrykk eller funksjoner byttes ut med deres faktiske verdier inni en streng. Dette gjør vi for å dynamisk lage strenger, spesielt når vi trenger å inkludere variabeldata i dem.
 
-Interpolering av strenger er en viktig funksjon i programmering som lar deg dynamisk bygge en streng ved å sette inn variabler og data i en eksisterende streng. Dette gjøres vanligvis ved å bruke spesielle tegn som {} eller # for å markere hvor variablene skal settes inn. Programmerere bruker dette for å lage mer tilpassede og dynamiske strenger, spesielt når man arbeider med store datamengder eller må håndtere brukerinput.
-
-Hvordan:
-
-Interpolering av strenger i Elm er enkel og kan gjøres ved å bruke operatorer som "| til" og "-". La oss si at vi har variablene **navn** og **alder**, og vi vil ha en streng som sier "Hei, mitt navn er [navn] og jeg er [alder] år gammel." Vi kan gjøre det ved å skrive:
-
+## Hvordan gjøre det:
+I Elm, bruker vi `++` operatoren for å bygge sammensatte strenger. Her er en kodeeksempel:
+```Elm
+firstname = "Ola"
+lastname = "Nordmann"
+greeting = "Hei, " ++ firstname ++ " " ++ lastname ++ ". Hvordan har du det?"
 ```
-Elm - "Hei, mitt navn er {navn} og jeg er {-int alder} år gammel."
+Når du kjører denne koden, vil `greeting` være "Hei, Ola Nordmann. Hvordan har du det?"
+
+## Dyp Dykk:
+Historisk sett ble strenginterpolering først brukt i programmeringsspråk på 1960-tallet, og har siden blitt en standardfunksjon i mange moderne språk. Selv om Elm ikke støtter direkte strenginterpolering, kan `++` operasjonen effektivt brukes for det samme formålet.
+
+Alternativt til `++`, kan funksjonen `String.concat` brukes til å bygge sammensatte strenger fra en liste av strenger.
+```Elm
+name = String.concat ["Ola", " ", "Nordmann"]
 ```
+Denne koden vil gi samme resultat som det tidligere eksemplet, "Ola Nordmann".
 
-Når vi kjører denne linjen, vil variablene bli satt inn på riktig sted og vi får output som "Hei, mitt navn er Elm og jeg er 18 år gammel." Det er viktig å merke seg at variablene må ha samme navn som de som er brukt i strengen og at de må ha riktig datatyper som er angitt.
+Fra implementeringsperspektivet, endrer ikke `++` operasjonen den opprinnelige strengen i Elm. I stedet lager den en ny streng ved å sette sammen de to operandene. Dette bidrar til den funksjonelle naturen til Elm ved å unngå "side-effekter".
 
-Dypdykk:
-
-Interpolering av strenger er en viktig del av programmering og har vært brukt i mange år. Tidligere måtte programmerere manuelt sette inn variablene i en streng, noe som var tidkrevende og kunne føre til feil. Interpolering av strenger har blitt en standard funksjon i mange programmeringsspråk inkludert Elm, og gjør det enklere og mer effektivt å arbeide med strenger.
-
-Det er mange alternativer til interpolering av strenger som programmerere kan bruke, inkludert string concatenation (å legge sammen strenger) og string formatting (å formatere en streng basert på variabler). Men i Elm er interpolering av strenger foretrukket fordi det er mer leselig og enklere å implementere i koden.
-
-Se også:
-
-For mer informasjon om interpolering av strenger i Elm, sjekk ut disse ressursene:
-
-- Offisiell Elm Guide: https://guide.elm-lang.org/strings/interpolating.html
-- Interpolating Strings in Elm på Medium: https://medium.com/@chrononaut/interpolating-strings-in-elm-4108a439dc49
-- Elm official website: https://elm-lang.org/
+## Se også:
+1. ["++" Operator Documentasjon](https://package.elm-lang.org/packages/elm/core/latest/String#++)
+2. [String.concat Funksjonsdokumentasjon](https://package.elm-lang.org/packages/elm/core/latest/String#concat)
+3. [Elm Guide: Strenger](https://guide.elm-lang.org/core_language.html#strings)

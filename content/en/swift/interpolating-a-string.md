@@ -1,6 +1,6 @@
 ---
 title:                "Interpolating a string"
-html_title:           "Swift recipe: Interpolating a string"
+html_title:           "Arduino recipe: Interpolating a string"
 simple_title:         "Interpolating a string"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,25 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# String Interpolation in Swift
 ## What & Why?
-Interpolating a string means inserting variables or expressions into a string to create a new string. Programmers often do this to dynamically create unique strings based on the current values of variables or the result of expressions. It allows for more flexible and efficient string manipulation in code.
+String interpolation is a method to construct new strings that contain places to be substituted with values from various variables. Developers use this technique for efficient and readable code.
 
 ## How to:
-To interpolate a string in Swift, we use the backslash and parentheses notation ```\(variable/expression)``` within a string. An example use case could be creating a personalized message using a user's name as a variable:
+In Swift, you can interpolate strings with the `\()` syntax. For instance:
 
 ```Swift
 let name = "John"
-let message = "Hello \(name), welcome to our app!"
+let greeting = "Hello, \(name)"
+print(greeting)
+```
+This will output:
+```
+Hello, John
 ```
 
-The output of the message variable would be "Hello John, welcome to our app!" 
+Let's add more variables to this:
 
-## Deep Dive:
-Historically, string interpolation was not always a common technique in programming languages. In fact, it was only added as a feature to Swift in 2014 with the release of Swift 1.0. Before this, developers had to manually concatenate strings and variables, which could be tedious and error-prone.
+```Swift
+let age = 28
+let intro = "My name is \(name) and I'm \(age) years old."
+print(intro)
+```
+And the output will be:
+```
+My name is John and I'm 28 years old.
+```
 
-An alternative to string interpolation is using string formatting, which is a more verbose method that requires using special symbols and placeholders to indicate where variables or expressions should be inserted into a string.
+## Deep Dive
+Historically, developers used concatenation to combine strings, which often led to messy and unreadable code. Swift introduced string interpolation to simplify string manipulation and improve readability.
 
-In terms of implementation, Swift's string interpolation works by converting the variable or expression into a string format and inserting it into the string at runtime. This process is optimized for performance, making it a preferred method for string manipulation in Swift.
+There are alternatives to string interpolation. You could use concatenation or format strings by using the `String(format:)` method:
 
-## See Also:
-To learn more about string interpolation in Swift, check out Apple's official documentation on the topic: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID661
+```Swift
+let greeting = "Hello, " + name
+```
+However, these methods lack the readability and simplicity that string interpolation provides.
+
+Swift's string interpolation is incredibly powerful. It doesn't just substitute variable values, it can also evaluate expressions. For instance, `\(2 + 2)` will be replaced by `4` in your string.
+
+## See Also
+Further reading and tutorials:
+- Swift docs on [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- Swift Programming Guide's section on [String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID292)

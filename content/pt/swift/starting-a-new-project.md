@@ -1,7 +1,7 @@
 ---
-title:                "Começando um novo projeto"
-html_title:           "Swift: Começando um novo projeto"
-simple_title:         "Começando um novo projeto"
+title:                "Iniciando um novo projeto"
+html_title:           "Javascript: Iniciando um novo projeto"
+simple_title:         "Iniciando um novo projeto"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Getting Started"
@@ -10,22 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Por que?
-Começar um novo projeto em programação significa iniciar um novo conjunto de códigos e arquivos para representar um programa ou aplicativo. Programadores fazem isso para criar novas soluções ou melhorar as existentes, lidar com problemas ou atualizar tecnologias.
+## O Que & Por Quê? 
 
-## Como fazer:
-Exemplo de uma função em Swift:
+Iniciar um novo projeto em programação é a criação de uma base limpa para a construção de um novo aplicativo ou sistema. Os programadores fazem isso para organizar suas ideias e evitar a confusão de códigos.
+
+## Como Fazer:
+
+Vamos criar um novo projeto Swift (versão atual) usando Xcode, que é a IDE oficial para programação Swift. Aqui está o código básico de `Hello World` em Swift:
+
 ```Swift
-func somarDois(numero1: Int, numero2: Int) -> Int {
-    return numero1 + numero2
+// Importa a biblioteca Swift
+import Swift
+
+// Declara uma função principal
+func main() {
+    print("Olá, Mundo!")
 }
 
-let resultado = somarDois(numero1: 4, numero2: 5)
-print(resultado) // Output: 9
+// Chama a função principal
+main()
 ```
 
-## Mergulho profundo:
-Ao iniciar um novo projeto, é importante ter em mente seu propósito e objetivos. Pode ser útil pesquisar e considerar outras alternativas e tecnologias disponíveis para alcançar seus objetivos. Além disso, entender os detalhes de implementação, como a sintaxe e as melhores práticas, pode ajudar a garantir um projeto bem sucedido.
+Seu resultado será:
 
-## Veja também:
-Para mais informações sobre como iniciar um novo projeto em Swift, confira a documentação oficial da linguagem: [Swift Documentation](https://docs.swift.org/swift-book/GuidedTour/GuidedTour.html#ID466).
+```
+Olá, Mundo!
+```
+
+## Mergulho Profundo
+
+Historicamente, a linguagem Swift foi apresentada em 2014 como alternativa ao Objective-C para desenvolvimento IOS e MacOS. Swift é uma linguagem moderna que agrega recursos de outras linguagens, oferecendo melhor desempenho, segurança e simplicidade no código.
+
+Existem alternativas para começar um novo projeto, você pode usar outras IDEs (como AppCode ou Atom) ou mesmo criar o projeto manualmente através do compilador Swift e um editor de texto.
+
+Os detalhes de implementação podem variar amplamente com a escala e complexidade do projeto. Mas todos os projetos Swift terão um arquivo principal (normalmente main.swift), que é o ponto de entrada para a execução do programa.
+
+## Veja Também
+
+- Documentação oficial do Swift: https://developer.apple.com/documentation/swift
+- Construindo um projeto Swift passo a passo: https://www.raywenderlich.com/5995-building-a-command-line-tool-using-swift
+- Guia do Swift para iniciantes pela Apple: https://books.apple.com/us/book/app-development-with-swift/id1219117996

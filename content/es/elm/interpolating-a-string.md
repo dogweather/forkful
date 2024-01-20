@@ -1,7 +1,7 @@
 ---
-title:                "Interpolando una cadena"
-html_title:           "Elm: Interpolando una cadena"
-simple_title:         "Interpolando una cadena"
+title:                "Interpolando una cadena de texto"
+html_title:           "Haskell: Interpolando una cadena de texto"
+simple_title:         "Interpolando una cadena de texto"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,32 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Interpretar una cadena es un concepto importante en programación. Se refiere a la capacidad de insertar automáticamente valores variables en una cadena de texto. Los programadores lo hacen para hacer que sus cadenas sean más dinámicas y personalizables, lo que facilita la gestión de grandes cantidades de datos.
+## ¿Qué & Por Qué?
+La interpolación de cadenas es la incorporación de variables dentro de una cadena de texto. Los programadores lo hacen para manejar datos dinámicos en string fácilmente.
 
-## Cómo:
+## ¿Cómo se hace?
+El lenguaje de programación Elm no soporta directamente la interpolación de cadenas, aunque se puede lograr algo similar concatenando cadenas y variables utilizando el operador `++`.
+
+Aquí tienes un ejemplo en Elm:
+
 ```Elm
--- Ejemplo básico
-mensaje = "¡Hola {nombre}!"
 nombre = "Juan"
-textoFinal = String.interpolate mensaje nombre
--- Output: "¡Hola Juan!" 
+saludo = "Hola, " ++ nombre ++ "!"
 ```
+
+La salida de este código será: "Hola, Juan!"
+
+## Inmersión Total
+(1) Históricamente, Elm se diseñó para ser simple y predecible, evitando características que podrían causar confusiones y errores frecuentes. La interpolación de cadenas se ha interpretado como una de esas características. 
+
+(2) Como alternativa a la concatenación, podría usar la función `toString` para convertir otros tipos de datos en cadenas que puedas unir fácilmente:
+
 ```Elm
--- Ejemplo con múltiples variables
-texto = "El {color} coche {accion} en el {lugar}."
-color = "rojo"
-accion = "corre"
-lugar = "parque"
-textoFinal = String.interpolate texto (color, accion, lugar)
--- Output: "El rojo coche corre en el parque."
+edad = 30
+mensaje = "Tu edad es " ++ toString edad
 ```
 
-## Deep Dive:
-- En la historia de la programación, la interpolación de cadenas se ha utilizado en diferentes lenguajes, como C, Python y JavaScript.
-- Una alternativa a la interpolación de cadenas podría ser la concatenación de cadenas utilizando el operador "++". Sin embargo, esto puede volverse engorroso y difícil de leer, especialmente con cadenas más largas y con múltiples variables.
-- En Elm, la interpolación de cadenas se logra utilizando la función preconstruida String.interpolate. Toma una cadena y una lista de valores y devuelve una cadena que reemplaza las variables indicadas con los valores correspondientes.
+(3) ¿Cómo implementa Elm las cadenas? Elm representa las cadenas de texto como listas de caracteres. Los operadores utilizados para la concatenación simplemente unen estas listas.
 
-## Ver también:
-- Documentación oficial de Elm sobre la interpolación de cadenas: https://package.elm-lang.org/packages/elm/core/latest/String#interpolate
-- Un diálogo interesante sobre la decisión de Elm de no incluir la interpolación de cadenas en su sintaxis: https://discourse.elm-lang.org/t/why-is-there-no-string-interpolation-in-elm/5424/25
+## Ver También
+Para obtener más información sobre las cadenas en Elm y métodos alternativos para usar datos dinámicos en una cadena, consulta los siguientes enlaces:
+
+- [Guía oficial de Elm sobre cadenas](https://guide.elm-lang.org/types/string.html)
+- [Documentación de Elm sobre el módulo String](https://package.elm-lang.org/packages/elm/core/latest/String) 
+
+Recuerda siempre que cada lenguaje tiene sus propias peculiaridades y Elm no es una excepción. La ausencia de interpolación de cadena no disminuye su eficiencia para los fines para los que fue diseñado.

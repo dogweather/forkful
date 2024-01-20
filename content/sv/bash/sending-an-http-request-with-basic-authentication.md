@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran med grundläggande autentisering"
-html_title:           "Bash: Sända en http-begäran med grundläggande autentisering"
-simple_title:         "Sända en http-begäran med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,19 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför? 
-Att skicka en HTTP-förfrågan med grundläggande autentisering är en metod som används av programmerare för att säkert utbyta data mellan en klient och en server. Genom att använda autentiseringsuppgifter i förfrågan kan man bekräfta identiteten på den som begär informationen, vilket är särskilt viktigt när det rör sig om känslig data.
+# Skicka HTTP-begäran med Grunden Tillbehör: En guide till Bash-programmering
 
-## Så här gör du:
-För att skicka en HTTP-förfrågan med grundläggande autentisering i Bash, används kommandot `curl` tillsammans med flaggan `--user` för att ange autentiseringsuppgifterna. Exempelvis:
+## Vad & Varför?
+Att skicka en HTTP-begäran med grundläggande autentisering innebär att programmeraren skickar en förfrågan till en server till internet med bevis på identitet. Vi gör detta för att få tillgång till skyddad data eller utföra åtgärder på servern.
+
+## Hur man:
+Använd `curl` -kommandot för att skicka HTTP-begäran med grundläggande autentisering.
+
+```Bash
+# Skicka en begäran till exempel.com
+# Användare: användarnamn, Lösenord: lösenord
+curl -u användarnamn:lösenord https://exempel.com
 ```
-curl --user username:password http://www.example.com
+När du kör detta kommando, kommer du att se något liknande:
+```Bash
+<!doctype html>
+<html>
+<head>
+    <title>Exempel Start Page</title>
+</head>
+<body>
+    <h1>Welcome, användarnamn!</h1>
+</body>
+</html>
 ```
+## Fördjupning 
+Historiskt sett började basautentisering användas i webb-HTTP/1.0-protokollet och fortsätter att användas i HTTP/1.1. Summit ägde rum 2019 i som introducerade HTTP/2.
 
-Output: Du får en respons från servern med det efterfrågade innehållet.
+Alternativa sätt för autentisering inkluderar Digest Access Authentication, OAuth, OpenID Connect, och mer. 
 
-## Djupdykning:
-För att förstå bakgrunden till varför grundläggande autentisering används inom HTTP, kan det vara bra att känna till att en av de tidigaste versionerna av HTTP 1.0 saknade inbyggd säkerhet. Genom att använda autentiseringsuppgifter i förfrågan, blir kommunikationen ändå säker och informationen kan utbytas utan risk för obehörig åtkomst. Det finns även andra metoder för autentisering som används inom HTTP, såsom OAuth, men grundläggande autentisering är fortfarande en vanlig och enkel metod att implementera.
+En viktig punkt att notera vid implementering av grundläggande autentisering är att användarinformation (användarnamn och lösenord) inte är krypterad, men är kodad med bas64 - vilket är lätt att avkoda. Använd alltid HTTPS för att skydda användaruppgifter på vägen.
 
-## Se även:
-Om du vill lära dig mer om Bash-kommandot `curl` och dess olika användningsområden kan du besöka [dess officiella dokumentation](https://curl.se/docs/manpage.html). Du kan även läsa mer om HTTP och dess säkerhetsaspekter på [Mozilla Developers](https://developer.mozilla.org/en-US/docs/Web/HTTP) eller [W3C](https://www.w3.org/Protocols/).
+## Se också
+1. [curl man sidor](https://curl.haxx.se/docs/manpage.html)
+2. [HTTP/1.1 autentiseringsspecifikation](https://tools.ietf.org/html/rfc2617)
+3. [Säker transport med HTTPS](https://www.eff.org/pages/how-deploy-https-correctly)

@@ -1,6 +1,6 @@
 ---
 title:                "获取当前日期"
-html_title:           "Rust: 获取当前日期"
+html_title:           "Arduino: 获取当前日期"
 simple_title:         "获取当前日期"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,47 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Rust当前版本：获取当前日期的编程指南
+## 什么与为什么?
+获取当前日期是一种编程任务，它允许您的程序知道现在的日期。程序员这样做是因为他们需要在他们的程序中以某种方式与时间交互，比如计算持续时间，或者在某个具体的日期和时间执行任务。
 
-## 什么是获取当前日期？为什么程序员要做这个？
-
-获取当前日期是指在程序中获取当前的日期信息，包括年、月、日、时、分、秒等。程序员通常需要这项能力来跟踪程序运行的时间，用于调试、记录日志或生成时间相关的事件。
-
-## 如何做到？
-
+## 如何做:
 ```Rust
-use std::time::{SystemTime, UNIX_EPOCH};
+use chrono::{Datelocal, Local};
 
-let current_time = SystemTime::now().duration_since(UNIX_EPOCH).expect("Time went backwards").as_secs();
-println!("Current time in seconds since UNIX epoch: {}", current_time);
+fn main() {
+    let now = Local::now();
+    println!("{}", now.format("%Y-%m-%d"));
+}
+```
+运行以上代码将会打印出当前日期，格式是 "YYYY-MM-DD"。
+
+再看看如何获取当前的日期和时间:
+```Rust
+use chrono::{DateTime, Local};
+
+fn main() {
+    let now: DateTime<Local> = Local::now();
+    println!("{}", now);
+}
 ```
 
+## 深入挖掘
+历史上，Rust语言在日期和时间处理方面并不像某些其他语言那么强大，也没有内置的日期和时间库。 chrono是Rust中最广泛使用的日期和时间库，它提供了一个全面，有效的日期和时间处理解冓方。
+
+至于获取当前日期的替代方案，在某些情况下，您可能不需要足够准确的日期和时间。 在这种情况下，您可以使用标准库中的SystemTime:
 ```Rust
-use chrono::prelude::*;
+use std::time::SystemTime;
 
-let current_time = Utc::now();
-let (year, month, day) = (current_time.year(), current_time.month(), current_time.day());
-println!("{}/{}/{}", year, month, day);
+fn main() {
+    let now = SystemTime::now();
+    println!("{:?}", now);
+}
 ```
-
-输出：
-
-Current time in seconds since UNIX epoch: 1626281807
-
-2021/7/14
-
-## 深入了解
-
-获取当前日期在编程中非常常见，并且在计算机领域有着悠久的历史。在Rust中，有多种方法可以获取当前日期，如使用系统时间来计算以秒为单位的时间戳，或使用第三方库提供的日期时间对象来精确地获取年、月、日等信息。
-
-除了系统时间和第三方库，还有其他一些可选的方法来获取当前日期，比如调用外部命令或API来获取网络时间。不同的方法适用于不同的情况，程序员可以根据自己的需求选择合适的方法。
-
-在Rust中，获取当前日期的实现主要依赖于计算机的操作系统和硬件。因此，不同的操作系统和硬件可能会有细微的差异，程序员需要注意这一点。
+但是，记住这个方法提供的是自UNIX epoch以来的毫秒数，而不是具体的日期格式。
 
 ## 参考资料
-
-- Rust官方文档：https://www.rust-lang.org/zh-CN/
-
-- chrono第三方库文档：https://docs.rs/chrono/0.4.19/chrono/
-
-- 时间戳的概念和使用方法：https://web.evget.com/article/2019/5/23/54987.html
+* chrono库的文档：[https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)
+* Rust官方时间库的文档：[https://doc.rust-lang.org/stable/std/time/](https://doc.rust-lang.org/stable/std/time/)

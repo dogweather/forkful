@@ -1,6 +1,6 @@
 ---
 title:                "使用基本认证发送http请求"
-html_title:           "TypeScript: 使用基本认证发送http请求"
+html_title:           "Bash: 使用基本认证发送http请求"
 simple_title:         "使用基本认证发送http请求"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,40 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么和为什么：
+## 是什么？为什么？
 
-发送带有基本身份验证的 HTTP 请求是为了允许程序员在网络应用程序中进行用户认证。通过使用用户名和密码来验证身份，基本身份验证确保只有授权用户才能访问受保护的资源。这在保护隐私信息和防止未经授权的访问方面非常重要。
+HTTP基本认证发送请求是一种通过添加用户名称和密码到HTTP头来进行认证的方式。程序员会这样做为了实现服务和服务之间的认证，或者在不需要创建用户帐户的情况下实现系统的快速认证。
 
-如何：
+## 如何操作：
 
-使用 TypeScript ，发送带有基本身份验证的 HTTP 请求非常简单。首先，您需要导入“http”模块，并使用“request”方法来创建一个请求对象。然后，将所要请求的 URL 和要发送的身份验证信息作为参数传递给该方法。最后，您可以使用“then”方法来处理响应并处理返回的数据。
+在TypeScript中，您可以使用axios库来发送具有HTTP基本认证的请求。以下是如何做到这一点的代码示例:
 
+```TypeScript
+import axios from 'axios';
+
+const fetchData = async () => {
+    const result = await axios({
+      method: 'get',
+      url: 'https://myapi.com',
+      auth: {
+        username: 'myUsername',
+        password: 'myPassword'
+      }
+    });
+    
+    console.log(result.data);
+}
+
+fetchData();
 ```
-import { request } from 'http';
+运行上述代码后，您的输出将会是您的HTTP响应的数据。
 
-const url = 'https://www.example.com/api/test';
-const username = 'user123';
-const password = 'pass456';
+## 深度研究
 
-request({ url, auth: { username, password } })
-.then(response => {
-  // 处理响应
-  console.log(response);
-})
-.catch(error => {
-  // 处理错误
-  console.log(error);
-})
-```
+HTTP的基本认证生成于HTTP/1.0，并且至今仍普遍使用，主要是因为其简单易用性。虽然它并不如一些现代的替代方案如OAuth或Bearer tokens安全，但是在未公开或需要快速原型的api上还是十分常用。
 
-深入探讨：
+在TypeScript对axios库的使用中，通过将auth对象添加到配置对象，实现基本认证。这将自动在每个请求的headers中添加适当的`Authorization`头，并使用Base64编码的“用户名:密码”格式。
 
-基本身份验证是最早的身份验证机制之一，最初用于保护 Web 浏览器和服务器之间的通信。它使用 Base64 编码来加密用户的凭证，因此并不是最安全的身份验证方式。程序员也可以使用其他手段来实现身份验证，例如使用 OAuth 和 JSON Web Tokens (JWTs)。
+## 参考
 
-欲了解更多关于基本身份验证的实现细节，请参考 RFC 2617。同时，您也可以查询有关更安全的身份验证方法的资料，例如基于令牌的身份验证。
-
-相关资源：
-
-- [RFC 2617](https://tools.ietf.org/html/rfc2617)
-- [使用 TypeScript 发送 HTTP 请求](https://www.typescriptlang.org/docs/handbook/advanced-types.html#generic-object-types)
-- [什么是基于令牌的身份验证？](https://jwt.io/introduction/)
+- Axios库文档：https://axios-http.com/docs/basic_features
+- MDN关于HTTP基本访问认证：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Authentication
+- Overview of HTTP: https://zh.wikipedia.org/wiki/HTTP

@@ -1,7 +1,7 @@
 ---
-title:                "Debug-Ausgabe drucken"
-html_title:           "Go: Debug-Ausgabe drucken"
-simple_title:         "Debug-Ausgabe drucken"
+title:                "Ausgabe von Debugging-Informationen drucken"
+html_title:           "Bash: Ausgabe von Debugging-Informationen drucken"
+simple_title:         "Ausgabe von Debugging-Informationen drucken"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Testing and Debugging"
@@ -10,31 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was und warum?
-Debug-Ausgaben sind eine Methode, um beim Programmieren hilfreiche Informationen auszugeben. Sie dienen dazu, Code während der Ausführung zu überwachen und Fehler zu finden. 
+## Was & Warum?
 
-Wie geht's?
-Sie können einfach `fmt.Println()` verwenden, um eine Debug-Ausgabe in Go zu erstellen. Hier ist ein Beispiel:
+Zum Ausdrucken von Debug-Ausgaben verwendet man oft `fmt.Println()` in Go. Diese Praxis hilft Programmierern, ihre Codes zu prüfen und zu verstehen, wie ihre Anwendungen funktionieren.
+
+## Wie:
+
+Hier ist ein einfacher Codeabschnitt, der eine Debug-Ausgabe druckt:
+
 ```Go
-zahl := 10
-fmt.Println("Die Variable zahl hat den Wert: ", zahl)
+package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Dies ist eine Debug-Ausgabe")
+}
 ```
-Dieser Code gibt die Zeile "Die Variable zahl hat den Wert: 10" aus. 
 
-Sie können auch Variablenwerte und andere Informationen in der Debug-Ausgabe formatieren. Eine Möglichkeit ist die Verwendung von Platzhaltern mit `Printf()`:
-```Go
-name := "Lisa"
-alter := 25
-fmt.Printf("Mein Name ist %s und ich bin %d Jahre alt.", name, alter)
+Ausführung diesen Codes würde die folgende Ausgabe ergeben:
+
 ```
-Dieser Code gibt die Zeile "Mein Name ist Lisa und ich bin 25 Jahre alt." aus.
+Dies ist eine Debug-Ausgabe
+```
 
-Tief ins Detail:
-Debug-Ausgaben gibt es schon seit den Anfängen der Programmierung und sind immer noch eine hilfreiche Methode, um Fehler zu finden und zu beheben. Es gibt auch andere Möglichkeiten, um Debugging durchzuführen, wie zum Beispiel das Verwenden von Breakpoints oder Debugging-Tools.
+## Vertiefung:
 
-Die `fmt` Bibliothek in Go bietet verschiedene Funktionen zum Erstellen von Debug-Ausgaben, einschließlich `Print()`, `Println()` und `Printf()`. Sie können auch eigene Funktionen erstellen, die Debug-Ausgaben spezifisch für Ihr Projekt erstellen.
+Historischer Kontext: Die Wurzeln der Debug-Ausgabe gehen auf die frühen Tage der Programmierung zurück, als es weniger anspruchsvolle Debugging-Werkzeuge gab. Dennoch ist sie immer noch eine weit verbreitete Praxis, insbesondere für einfache Use-Cases oder schnelle Fehlersuche.
 
-Weitere Informationen:
--Offizielle Dokumentation zu Debug-Ausgaben in Go: https://golang.org/pkg/fmt/
--Ein hilfreiches Tutorial zu Debugging in Go: https://www.callicoder.com/debugging-go-programs-with-vscode/
--Eine Übersicht über verschiedene Debugging-Tools in Go: https://blog.gopheracademy.com/advent-2019/some-golang-debugging-tools/
+Alternativen: In Go, können Sie auch Pakete wie `log` verwenden, das mehr Flexibilität bietet und zusätzliche Funktionen wie das Protokollieren von Warn- und Fehlermeldungen ermöglicht.
+
+Details zur Implementierung: `fmt.Println()` ist eine Funktion in Go, die die Formatierung und den Druck von Texten vereinfacht. Sie gibt den formatierten Text zusammen mit einem Zeilenumbruch am Ende aus.
+
+## Siehe auch:
+
+- [Go-Dokumentation zu fmt](https://golang.org/pkg/fmt/)
+- [Go-Dokumentation zu log](https://golang.org/pkg/log/)
+- [Ein kurzer Leitfaden zur Debug-Ausgabe in Go](https://yourbasic.org/golang/fmt-println-print-fprintf/)
+- [Eine Anleitung zur Fehlerbehandlung in Go](https://blog.golang.org/error-handling-and-go)

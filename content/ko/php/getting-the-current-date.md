@@ -1,6 +1,6 @@
 ---
 title:                "현재 날짜 가져오기"
-html_title:           "PHP: 현재 날짜 가져오기"
+html_title:           "C: 현재 날짜 가져오기"
 simple_title:         "현재 날짜 가져오기"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,31 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Getting the Current Date in PHP: 현재 날짜를 PHP로 얻는 방법
+## 무엇이고 왜 필요할까?
 
-## What & Why?:
+현재 날짜를 구하는 것은 서버의 현재 날짜 및 시간을 출력하는 프로그래밍 작업입니다. 이를 통해 프로그래머들은 사용자에게 실시간 정보를 제공하거나 특정 시점에 대한 데이터를 기록하고 분석할 수 있습니다.
 
-현재 날짜를 받는 것은 간단하지만 매우 중요합니다. 프로그래머는 자주 현재 날짜를 필요로 하는데, 예를 들어 특정 이벤트 및 기간 계산을 위해 사용할 수 있습니다. 또한 로그파일을 생성하거나 파일에 날짜를 추가하는 데에도 사용됩니다. 
+## 어떻게 하는가:
 
-## How to:
-
-PHP에서 현재 날짜를 얻는 것은 매우 쉽습니다. 그냥 `date` 함수를 사용하면 됩니다. 아래에 예제를 살펴보겠습니다.
+PHP에서 현재 날짜를 얻는 가장 간단한 방법을 살펴봅시다.
 
 ```PHP
 <?php
-  echo date('Y-m-d'); // 출력: 2021-01-01
-  echo date('l'); // 출력: Friday (오늘 요일)
+echo date('Y-m-d H:i:s');
+?>
 ```
 
-위의 예제에서 `Y`는 년도, `m`은 월, `d`는 일, `l`은 요일을 나타냅니다. 더 많은 포맷 옵션은 PHP 공식 문서에서 확인할 수 있습니다.
+이 코드는 서버의 현재 날짜와 시간을 'YYYY-MM-DD HH:MM:SS' 형식으로 출력합니다.
 
-## Deep Dive:
+## 깊이 있는 정보:
 
-PHP에서 현재 날짜를 얻는 방법은 `date` 함수를 사용하는 것이 가장 간단합니다. 그러나 이전 버전의 PHP에서는 `time` 함수를 사용하기도 했는데, 이 함수는 Unix의 시간을 초 단위로 반환합니다. 그리고 `date` 함수는 해당 시간을 사람이 알아볼 수 있는 형식으로 변환해주는 역할을 합니다.
+PHP의 date() 함수는 1970년 1월 1일 자정 이후의 시간을 초 단위로 절대시간을 입력값으로 받아 다양한 형식의 날짜와 시간으로 변환해줍니다. 
 
-`DateTime` 클래스를 사용하여 현재 날짜를 가져오는 것도 가능합니다. 이는 `date` 함수보다 좀 더 객체지향적이고 더 유연한 방법입니다. 
+date() 함수 외에도 DateTime 객체를 사용하여 현재 날짜와 시간을 얻을 수도 있습니다:
 
-## See Also:
+```PHP
+<?php
+$datetime = new DateTime();
+echo $datetime->format('Y-m-d H:i:s');
+?>
+```
 
-- PHP `date` 함수 문서: https://www.php.net/manual/en/function.date.php
-- PHP `DateTime` 클래스 문서: https://www.php.net/manual/en/class.datetime.php
+객체지향적 방식이 적합할 때 이 방법이 더 적합합니다. 
+
+## 참고 자료:
+
+1. [PHP date() 함수](https://www.php.net/manual/en/function.date.php)
+2. [PHP DateTime 클래스](https://www.php.net/manual/en/class.datetime.php)
+3. [PHP 날짜와 시간 설명](https://www.w3schools.com/php/php_date.asp)

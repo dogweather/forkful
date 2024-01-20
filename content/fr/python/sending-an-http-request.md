@@ -1,7 +1,7 @@
 ---
-title:                "Envoi d'une requête http"
-html_title:           "Python: Envoi d'une requête http"
-simple_title:         "Envoi d'une requête http"
+title:                "Envoyer une requête http"
+html_title:           "Bash: Envoyer une requête http"
+simple_title:         "Envoyer une requête http"
 programming_language: "Python"
 category:             "Python"
 tag:                  "HTML and the Web"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi les programmeurs le font?
+## Qu'est-ce que et Pourquoi?
 
-Envoyer une requête HTTP est un moyen pour les programmeurs d'envoyer des instructions à un serveur distant et d'obtenir des réponses en retour. Cela permet aux applications de communiquer entre elles et d'accéder à des ressources en ligne.
+Envoyer une requête HTTP, c'est comme envoyer une lettre à un serveur Web pour demander certaines informations. Les programmeurs le font pour interagir avec les API, récupérer des informations des sites Web et même envoyer des données sur Internet.
 
 ## Comment faire:
 
-Voici un exemple de code Python pour envoyer une requête GET à un serveur et afficher le contenu de la réponse:
+En Python, nous utilisons le module `requests` pour envoyer des requêtes HTTP :
 
 ```Python
 import requests
-r = requets.get("https://www.example.com")
-print(r.text)
+
+reponse = requests.get('https://www.example.com')
+print(reponse.text)
 ```
 
-Le code ci-dessus utilise la bibliothèque "requests" pour envoyer une requête GET à l'URL "https://www.example.com" et stocke la réponse dans une variable appelée "r". Ensuite, la réponse est affichée en utilisant la méthode "text" de la variable "r".
+Dans cet exemple, nous demandons au serveur de 'https://www.example.com' de nous envoyer son contenu. Si tout va bien, les données de la page Web s'afficheront.
 
-Voici un autre exemple utilisant la méthode "post" pour envoyer des données à un serveur et afficher le code d'état de la réponse:
+## Plongeons plus profondément 
 
-```Python
-import requests
-data = {"key": "value"}
-r = requests.post("https://www.example.com", data=data)
-print(r.status_code)
-```
+Historiquement, nous utilisions httplib ou urllib en Python pour les requêtes HTTP, mais elles sont trop verboses et compliquées. `Requests` est devenu le standard de facto en raison de sa simplicité.
 
-## Profondeur de plongée:
+Un autre module courant pour traiter les requêtes HTTP en Python est `http.client` (anciennement httplib), qui fait partie de la bibliothèque standard. 
 
-Les requêtes HTTP sont largement utilisées dans le développement web pour permettre aux navigateurs d'obtenir du contenu à partir de serveurs distants. Elles ont été introduites en 1996 dans la version 1.0 du protocole HTTP et ont depuis évolué pour inclure plusieurs méthodes telles que GET, POST, PUT, DELETE, etc.
+En termes d'implémentation, lorsqu'une requête est envoyée, elle passe par plusieurs couches (SSL, TCP, IP) avant d'arriver au serveur. Le serveur traite la requête et renvoie une réponse, qui suit le même chemin de retour jusqu'à votre application.
 
-Bien qu'il existe d'autres méthodes de communication entre serveurs et applications, telles que les sockets et les websockets, les requêtes HTTP restent une méthode populaire et largement prise en charge.
+Noter:
+- Une requête GET est envoyée dans l'exemple, mais d'autres types de requêtes peuvent être envoyées comme POST, DELETE, PUT, etc.
+- Chaque requête HTTP a un code de statut. Un code "200" signifie que tout s'est bien passé.
 
-Pour implémenter des requêtes HTTP en Python, il existe d'autres bibliothèques telles que "urllib" et "http.client", mais "requests" est généralement préférée pour sa simplicité et ses fonctionnalités supplémentaires telles que la gestion transparente des cookies et des en-têtes.
+## Voir aussi 
 
-## Voir aussi:
-
-Pour en savoir plus sur les requêtes HTTP et leur utilisation en Python, voici quelques ressources utiles:
-
-- La documentation officielle de la bibliothèque "requests": https://requests.readthedocs.io/en/master/
-- Un tutoriel sur les requêtes HTTP en Python: https://realpython.com/python-requests/
-- Un guide sur le protocole HTTP: https://developer.mozilla.org/fr/docs/Web/HTTP/Overview
+- Documentation Python requests : https://docs.python-requests.org/fr/latest/
+- Explainer sur les requêtes HTTP : https://developer.mozilla.org/fr/docs/Web/HTTP/Overview
+- Tutoriel sur l'interaction avec les API à l'aide de requests : https://realpython.com/python-requests/#the-get-request

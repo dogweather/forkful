@@ -1,6 +1,6 @@
 ---
 title:                "Porównywanie dwóch dat"
-html_title:           "Kotlin: Porównywanie dwóch dat"
+html_title:           "C++: Porównywanie dwóch dat"
 simple_title:         "Porównywanie dwóch dat"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,43 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Czym jest porównanie dwóch dat i dlaczego programiści to robią?
+## Co i dlaczego?
+Porównywanie dwóch dat to proces ustalania, która data jest wcześniejsza, późniejsza lub czy obie są takie same. Programiści często potrzebują tego do sortowania, filtracji danych lub kontroli poprawności dat wprowadzonych przez użytkowników.
 
-Porównywanie dwóch dat jest procesem sprawdzania, która data jest wcześniejsza, późniejsza lub czy są one równe. Programiści często stosują to w swoich aplikacjach, aby upewnić się, że dane zostaną poprawnie przetworzone i wyświetlone lub aby zapewnić, że odpowiednie kroki zostaną podjęte w celu wykrycia różnicy między dwoma datami.
-
-Jak to zrobić?
-
-Kotlin oferuje kilka prostych sposobów porównania dwóch dat. Pierwszym sposobem jest użycie metody `compareTo()` w klasie `Date`. Przykładowy kod wygląda następująco:
+## Jak to zrobić:
+Podstawowe porównanie dwóch dat w Kotlinie to pestka. Używamy do tego wbudowanej funkcji `isBefore`, `isAfter` lub `isEqual`.
 ```Kotlin
-val firstDate = Date(2021, 11, 1)
-val secondDate = Date(2021, 12, 1)
-val comparison = firstDate.compareTo(secondDate)
-```
-W takim przypadku, jeśli pierwsza data jest wcześniejsza od drugiej, wartość zwrócona z metody `compareTo()` będzie ujemna. Jeśli pierwsza data jest późniejsza, wartość będzie dodatnia, a w przypadku, gdy są równe, wynik będzie równy zeru.
+val data1 = LocalDate.parse("2020-01-01")
+val data2 = LocalDate.parse("2020-01-02")
 
-Innym sposobem porównania dat jest użycie operatora porównania `==` lub `!=`. Przykładowy kod wygląda następująco:
-```Kotlin
-val firstDate = Date(2021, 11, 1)
-val secondDate = Date(2021, 12, 1)
-if (firstDate == secondDate) {
-    println("Data jest równa")
-} else {
-    println("Data nie jest równa")
-}
+println(data1.isBefore(data2))  // wydrukuje: true
+println(data1.isAfter(data2))   // wydrukuje: false
+println(data1.isEqual(data2))   // wydrukuje: false
 ```
 
-### Deep Dive
+## Wgłębne spojrzenie
+Porównywanie dat w programowaniu to nie nowość – jest niezbędne od początków informatyki. W Kotlinie mamy kilka alternatywnych metod. Możemy na przykład użyć metody `compareTo`:
 
-Porównywanie dat jest istotne, ponieważ wiele aplikacji polega na poprawnym przetwarzaniu i przedstawianiu danych związanych z czasem. Dlatego też, przyrodzone wsparcie dla porównywania dat jest obecne w większości języków programowania.
+```Kotlin
+println(data1.compareTo(data2)) // Jeżeli data1 < data2, zwraca wartość ujemną; jeżeli data1 > data2, zwraca wartość dodatnią; jeżeli są równe, zwraca 0.
+```
+   
+Zwróć uwagę, że te metody porównują tylko datę, a nie czas. Jeżeli chcesz porównać również godziny, minuty itd., musisz użyć klasy `LocalDateTime` albo `ZonedDateTime`.
 
-Alternatywą dla porównywania dat w Kotlinie jest użycie klas bibliotecznych takich jak `Calendar` lub `LocalDate`. W Kotlinie 1.1 wprowadzono również wbudowaną klasę `Instant`, która ułatwia zarządzanie datami i czasem.
+Możemy zdecydować się na takie podejście, jeżeli operacje na datach są złożone i wymagają uwzględnienia stref czasowych.
 
-Podczas porównywania dat, ważne jest również brać pod uwagę różne strefy czasowe i sposoby przedstawiania dat w różnych częściach świata. W tym celu można wykorzystać klasę `TimeZone` w Kotlinie.
+## Zobacz też
+Więcej szczegółów na temat porównywania dat w Kotlinie możesz znaleźć w tych źródłach:
 
-### Zobacz także
-
-Dla dalszych informacji na temat porównywania dat w Kotlinie, zaleca się przejrzenie dokumentacji języka oraz materiałów związanych z biblioteką standardową Kotlina.
-
-Dokumentacja Kotlin: https://kotlinlang.org/docs/
-
-Biblioteka standardowa Kotlina: https://kotlinlang.org/api/latest/jvm/stdlib/index.html
+- Porównywanie dat w Kotlinie: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/compare-to.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-date/compare-to.html)
+- Praca z datami i czasem w Kotlinie: [https://kotlinlang.org/docs/dates-periods.html](https://kotlinlang.org/docs/dates-periods.html)
+- Klasa LocalDateTime: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-local-date-time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-local-date-time) 
+- Klasa ZonedDateTime: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-zoned-date-time](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-zoned-date-time)

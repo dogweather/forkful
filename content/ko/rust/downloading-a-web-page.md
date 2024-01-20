@@ -1,6 +1,6 @@
 ---
 title:                "웹 페이지 다운로드하기"
-html_title:           "Rust: 웹 페이지 다운로드하기"
+html_title:           "Bash: 웹 페이지 다운로드하기"
 simple_title:         "웹 페이지 다운로드하기"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,51 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-"## 무엇 & 왜?"
-웹페이지를 다운로드하는 것은 인터넷에서 정보를 가져오는 것입니다. 프로그래머들은 이를 하게 됩니다. 일반적인 이유는 웹크롤링, 데이터 수집, 스크래핑 등과 같은 애플리케이션을 만들기 위해서입니다.
+## 무엇 & 왜?
 
-"## 방법:"
-```
-Rust로 웹페이지를 다운로드하는 것은 매우 간단합니다. Rust의 표준 라이브러리인 reqwest를 사용하면 쉽고 효율적으로 웹페이지를 다운로드할 수 있습니다. 다음은 간단한 예제 코드와 그 결과입니다.
+웹페이지 다운로드란 서버로부터 HTML, CSS, 이미지 등 웹 페이지 구성 요소를 로컬에 받아오는 것입니다. 이는 웹 데이터 크롤링, 테스트 데이터 수집 등 프로그래밍 작업에 익살스럽게 활용됩니다.
 
-```
-Rust 코드
+## 어떻게 하는가:
 
-use reqwest::blocking::get;
+Rust를 이용해 웹페이지를 다운로드하는 가장 간단한 예시는 `reqwest` 패키지를 이용하는 것입니다.
 
-fn main() {
-    let resp = get("https://www.example.com").unwrap();
-    println!("Response: {}", resp.text().unwrap());
+```rust
+use reqwest;
+
+#[tokio::main]
+async fn main() -> Result<(), reqwest::Error> {
+    let content = reqwest::get("https://www.google.com")
+        .await?
+        .text()
+        .await?;
+    println!("{}", content);
+
+    Ok(())
 }
-
 ```
 
-출력
-```
-<!doctype html>
-<html>
-<head>
-    <title>Example Domain</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-</head>
+이 코드를 실행하면 google.com의 HTML 페이지를 다운로드 받아 콘솔에 출력할 수 있습니다.
 
-<body>
-<div>
-    <h1>Example Domain</h1>
-    <p>This domain is for use in illustrative examples in documents. You may use this
-    domain in literature without prior coordination or asking for permission.</p>
-    <p><a href="https://www.iana.org/domains/example">More information...</a></p>
-</div>
-</body>
-</html>
-```
+## 심층 탐구:
 
-"## 깊이 탐구:"
-이전에는 웹페이지를 다운로드하기 위해 Rust 외에 다른 언어들을 사용해야 했습니다. 하지만 Rust에서는 reqwest와 같은 라이브러리들을 사용하여 간단하고 효율적으로 웹페이지를 다운로드할 수 있습니다. 또한 Rust의 안정적인 메모리 관리 기능은 웹페이지 다운로드 과정에서 발생할 수 있는 메모리 관련 버그를 막아줍니다.
+웹페이지 다운로드는 월드 와이드 웹이 폭발적으로 성장하면서 중요한 개념으로 자리잡았습니다. 다양한 언어와 라이브러리가 이를 쉽게 구현할 수 있도록 도와줍니다. Rust에서는 위에서 살펴본 `reqwest` 외에도 `hyper`, `isahc`와 같은 패키지들이 있습니다. 
 
-"## 또 다른 자료:"
-- Rust 공식 웹사이트: https://www.rust-lang.org/ko
-- reqwest 라이브러리 문서: https://docs.rs/reqwest/0.10.5/reqwest/
-- 웹크롤링에 대한 더 많은 자료: https://techbeacon.com/app-dev-testing/4-best-open-source-tools-web-crawling
+이런 라이브러리들은 대부분 내부적으로 HTTP/HTTPS 프로토콜을 통한 요청-응답 모델을 구현하고 있습니다. 자세한 분석과 개인화를 위해 이런 라이브러리들의 소스 코드를 확인하는 것도 좋은 학습 방법입니다.
+
+## 참고 문헌:
+
+- Rust `reqwest`: https://docs.rs/reqwest/
+- Rust `hyper`: https://docs.rs/hyper/
+- Rust `isahc`: https://docs.rs/isahc/
+- HTTP/HTTPS 프로토콜: https://developer.mozilla.org/ko/docs/Web/HTTP/Overview

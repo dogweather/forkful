@@ -1,7 +1,7 @@
 ---
-title:                "Enviando um pedido http"
-html_title:           "Clojure: Enviando um pedido http"
-simple_title:         "Enviando um pedido http"
+title:                "Enviando uma solicitação http"
+html_title:           "Bash: Enviando uma solicitação http"
+simple_title:         "Enviando uma solicitação http"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "HTML and the Web"
@@ -10,30 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Enviar uma solicitação HTTP é essencial para se comunicar com servidores em uma aplicação web. Os programadores fazem isso para obter informações, enviar dados, ou realizar ações através da internet.
+## O Que & Por Quê?
 
-## Como fazer:
-```Clojure
-(ns meu-app.core
+Enviar uma requisição HTTP é uma forma de pegar informação de servidores na web. Programadores fazem isso para se comunicar com sites e obter dados deles.
+
+## Como Fazer:
+
+Podemos usar a biblioteca `clj-http` para enviar uma requisição HTTP em Clojure. Aqui está um exemplo simples,
+
+```clojure
+(ns my-namespace
   (:require [clj-http.client :as client]))
 
-; GET request
-(client/get "http://www.exemplo.com")
-
-; POST request com parâmetros
-(def parametros {:nome "João" :idade 25})
-(client/post "http://www.exemplo.com/salvar" {:params parametros})
-
-; Resposta do servidor:
-; {:status 200
-;  :headers {"Content-Type" "text/html"}
-;  :body "<html><body>Olá, João!</body></html>"}
+(defn get-http
+  "Enviar uma requisição GET para uma URL e retorna a resposta."
+  [url]
+  (client/get url))
 ```
 
-## Profundidade:
-O envio de solicitações HTTP evoluiu com o crescimento da internet e do desenvolvimento de aplicações web. Alternativas para enviar solicitações HTTP incluem bibliotecas de terceiros, como `cljs-ajax` e `http-kit`. A implementação detalhada envolve o uso de sockets para estabelecer uma conexão com o servidor e troca de mensagens em formato de texto.
+Ao usar essa função, você pode esperar uma resposta como esta,
 
-## Veja também:
-- [Documentação do Clj-http](https://github.com/dakrone/clj-http)
-- [Comparação entre diversas bibliotecas HTTP para Clojure](https://www.clojure-toolbox.com/compare/http-client-vs-js-capable-http-client)
+```clojure
+{:status 200
+ :headers {"Content-Type" "text/html"}
+ :body "<html>...</html>"}
+```
+
+## Deep Dive
+
+Historicamente, requisições HTTP têm sido a base da web desde a sua criação. Clojure, sendo uma linguagem moderna, suporta essa operação com facilidade.
+
+Uma alternativa para `clj-http` é a lib `http-kit`. Varia em termos de eficiência e velocidade, dependendo do caso específico.
+
+A implementação do envio de uma requisição HTTP em Clojure é simples, como você pode ver. No entanto, existem muitos detalhes que você pode configurar, como cabeçalhos, parâmetros de consulta, corpo da requisição etc.
+
+## Veja Também
+
+Veja o seguinte para aprender mais:
+
+- Documentação do `clj-http`: https://github.com/dakrone/clj-http
+- API de requisição HTTP na MDN: https://developer.mozilla.org/en-US/docs/Web/API/Request

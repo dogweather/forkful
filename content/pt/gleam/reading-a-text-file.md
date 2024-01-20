@@ -1,6 +1,6 @@
 ---
 title:                "Lendo um arquivo de texto"
-html_title:           "Gleam: Lendo um arquivo de texto"
+html_title:           "Bash: Lendo um arquivo de texto"
 simple_title:         "Lendo um arquivo de texto"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porque?
+## O Que & Porquê?
 
-Ler um arquivo de texto simplesmente significa ler o conteúdo de um arquivo de texto em um programa de computador. Os programadores frequentemente precisam ler arquivos de texto para obter informações armazenadas neles, como configurações ou dados para processamento.
+Ler um arquivo de texto é o processo de extrair dados de um arquivo e colocá-los na memória do computador para processamento posterior. Os programadores fazem isso para manipular e analisar dados existentes, que geralmente são armazenados em arquivos de texto.
 
 ## Como fazer:
 
-Você pode facilmente ler um arquivo de texto em Gleam usando a função `File.read` e passando o caminho do arquivo como um argumento. Aqui está um exemplo simples:
+Aqui vai um exemplo simples de como ler um arquivo de texto em Gleam.
 
 ```gleam
-let resultado = File.read("caminho/do/arquivo.txt")
+import gleam/filesystem
+import gleam/bit_builder.{append, from_string}
+import gleam/result.{map, map_error}
+
+pub fn ler_arquivo(caminho: String) {
+  let caminho_para_arquivo = filesystem.file(caminho)
+
+  filesystem.read(caminho_para_arquivo)
+  |> map(result.from_string)
+  |> map_error(result.from_string)
+}
 ```
 
-O conteúdo do arquivo será armazenado na variável `resultado`, que pode ser usada mais tarde no seu programa.
+Nesse exemplo, a função `ler_arquivo` lê o arquivo de texto localizado no caminho especificado.
 
-## Mergulho Profundo:
+## Mergulho Profundo
 
-A leitura de arquivos de texto é uma tarefa comum em programação e está presente em muitas linguagens de programação. Alternativas ao Gleam incluem Rust e Elixir, que também têm funções para ler arquivos de texto.
+Historicamente, a leitura de arquivos de texto tem sido uma parte crucial de muitas operações de computação, remontando aos primeiros dias de programação. Ela oferece uma maneira simples, porém eficaz, de armazenar e recuperar dados.
 
-A implementação de `File.read` em Gleam utiliza as bibliotecas padrão do sistema operacional para realizar a leitura do arquivo. Isso significa que a função é altamente eficiente e pode lidar com arquivos grandes.
+Existem alternativas para a leitura de arquivos de texto, como a leitura de arquivos binários, arquivos XML, arquivos JSON, etc. A escolha depende amplamente dos requisitos de seu projeto.
 
-## Veja Também:
+Em termos de implementação, Gleam usa funções de Elixir subjacentes para interagir com o sistema de arquivos. Assim, a leitura de arquivos é feita de forma eficiente e segura.
 
-[Documentação oficial do Gleam sobre a função File.read](https://gleam.run/documentation/stdlib/#file-read)
+## Veja Também
 
-[Livro online gratuito sobre programação funcional com Gleam](https://book.functinal.ch/03-reading-and-writing.html)
+Aqui estão alguns links úteis para aprender mais sobre programação Gleam e leitura de arquivos de texto:
+
+1. Documentação oficial do Gleam: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
+2. Tutorial de Arquivos de Texto em Gleam: [https://example.com/tutorial](https://example.com/tutorial)
+3. Recursos de Programação Gleam: [https://example.com/resources](https://example.com/resources)

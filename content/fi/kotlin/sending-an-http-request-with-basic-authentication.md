@@ -1,7 +1,7 @@
 ---
-title:                "Perusautentikointia käyttävän http-pyynnön lähettäminen"
-html_title:           "Kotlin: Perusautentikointia käyttävän http-pyynnön lähettäminen"
-simple_title:         "Perusautentikointia käyttävän http-pyynnön lähettäminen"
+title:                "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+html_title:           "Kotlin: Lähettäminen http-pyyntö perusautentikoinnin kanssa"
+simple_title:         "Lähettäminen http-pyyntö perusautentikoinnin kanssa"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "HTML and the Web"
@@ -10,37 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Ennalta määritetty kirjautuminen HTTP-pyyntöjen lähettämisessä
+# Mikä & Miksi?
+HTTP-pyyntö perustodennuksella on prosessi, jossa ohjelma lähettää verkkopyynnön samalla, kun se tarjoaa tunnistetiedot pääsynhallinnan tarkistamiseksi. Ohjelmoijat käyttävät tätä lähestymistapaa tiedonsiirron turvaamiseen ja pääsynhallinnan toteuttamiseen verkko-ohjelmissa.
 
-Kun lähetät HTTP-pyynnön, voit käyttää ennalta määritettyä kirjautumista varmistaaksesi, että vain oikeat käyttäjät pääsevät tietoihisi. Tämä tapahtuu lisäämällä kirjautumistiedot tiedustelun otsikkoon, jotta palvelin voi varmentaa käyttäjän.
+# Näin tehdään:
+Kotlinissa voimme käyttää Ktor-kirjastoa HTTP-pyyntöjen käsittelyyn.
 
-Ohjelmoijat käyttävät ennalta määritettyä kirjautumista varmistaakseen, että vain tietyt käyttäjät voivat käyttää tiettyjä palveluja tai tietoja. Tämä auttaa suojaamaan tietosi ja varmistamaan, että vain valtuutetut käyttäjät voivat tehdä muutoksia.
+```Kotlin
+import io.ktor.client.*
+import io.ktor.client.request.*
+import io.ktor.client.features.auth.*
+import io.ktor.client.features.auth.basic.*
+import io.ktor.http.*
 
-## Miten tehdä se:
+val client = HttpClient() {
+    install(Auth) {
+        basic {
+            sendWithoutRequest = true
+            credentials {
+               BasicAuthCredentials(username = "username", password = "password")
+           }
+        }
+    }
+}
 
-Kotlinissa voit lähettää HTTP-pyynnön ennalta määritetyn kirjautumisen avulla seuraavalla tavalla:
-
+suspend fun sendRequest() {
+    val response: String = client.get("https://api.verkkosivu.com/data");
+    println(response)
+}
 ```
-val url = URL("url_of_your_service")
-val connection = url.openConnection() as HttpURLConnection
-connection.setRequestMethod("GET")
-connection.setRequestProperty("Authorization", "Basic " + Base64.getEncoder().encodeToString("username:password".toByteArray()))
-val responseCode = connection.responseCode
-println("Response Code: $responseCode")
-```
+Yllä oleva koodi luo HTTP-asiakkaan perustodennuksella ja lähettää GET-pyynnön.
 
-Tämä koodi lähettää GET-pyynnön määriteltyyn URL-osoitteeseen ja sisältää kirjautumistiedot tietoturvaa varten. Voit myös käyttää muita HTTP-metodeja (kuten POST tai PUT) ja vaihtaa käyttäjätunnuksen ja salasanan tosielämän kirjautumistiedoiksi.
+# Syvennys:
+Lähettäessään HTTP-pyynnön perustodennuksella, ohjelma liittää `Authorization`-otsakkeen HTTP-pyynnön otsakkeeseen. Otsakkeessa on käyttäjätunnus ja salasana, jotka on koodattu Base64-muotoon. Tällä menetelmällä on ollut keskeinen rooli web-todennuksessa sen jälkeen, kun se otettiin käyttöön HTTP/1.0:n myötä.
 
-## Syväsukellus:
+Vaihtoehtoisesti salasanan liittämisen sijaan voidaan käyttää muita todennusmenetelmiä, kuten OAuthia. On kuitenkin tärkeää huomata, että perustodennus ei tarjoa täydellistä turvaa, koska se lähettää todennustiedot selväkielisenä. Tämän korjaamiseksi perustodennus voidaan yhdistää SSL-salaukseen.
 
-Ennen ennalta määritetyn kirjautumisen käyttöä, käytettiin usein Basic Authentication -protokollaa. Tämä protokolla kuljetti käyttäjän tunnistetiedot avoimesti, mikä aiheutti tietoturvauhkia. Nykyään käytetään yleensä turvallisempia menetelmiä, kuten OAuthia, joka salaa tunnistetiedot.
+Ktor-kirjaston Basic-todennus toimii panemalla HttpClientin `install(Auth)`-funktioon ja asettamalla tarvittavat vakiotietoturvatiedot. Authentication-lisäosa lähettää perustodennuksen otsakkeen jokaisella pyynnöllä.
 
-On myös olemassa muita tapoja lähettää HTTP-pyyntöä ennalta määritetyllä kirjautumisella, kuten käyttämällä Java HttpClientia tai OkHttp-kirjastoa.
+# Katso myös:
+Käy läpi seuraavat linkit oppiaksesi lisää:
 
-Kotlin tarjoaa myös sisäänrakennetun Base64-koodauksen, joten sinun ei tarvitse asentaa muita kirjastoja koodin suorittamiseksi.
-
-## Katso myös:
-
-- [Kotlin handle HTTP Basic authentication with HTTPURLConnection and base 64 encoding](https://stackoverflow.com/questions/37587812/kotlin-handle-http-basic-authentication-with-httpurlconnection-and-base-64-encodi)
-- [Introduction to HTTP Basic Authentication](https://medium.com/@rajanmaharjan/introduction-to-http-basic-authentication-c736958b9e5c)
-- [Using OAuth2 in Kotlin](https://www.baeldung.com/kotlin/oauth2)
+- Ktor HTTP Client: https://ktor.io/docs/http-client.html
+- Basic Authentication: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication
+- OAuth: https://oauth.net/2/

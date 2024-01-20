@@ -1,6 +1,6 @@
 ---
 title:                "Scaricare una pagina web"
-html_title:           "Lua: Scaricare una pagina web"
+html_title:           "C++: Scaricare una pagina web"
 simple_title:         "Scaricare una pagina web"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Ciao a tutti! Se sei un programmatore e sei interessato ad imparare a scaricare una pagina web, sei nel posto giusto. In questo articolo, ti mostrerò come farlo utilizzando Lua, un linguaggio di programmazione versatile e potente. Quindi, cosa significa scaricare una pagina web e perché i programmatori lo fanno?
+# Scaricare una pagina web con Lua
 
-## Cosa e perché?
+## Cos'è e Perché?
+Scaricare una pagina web è l'atto di prelevare i dati HTML di una pagina web per utilizzarli nel proprio codice. I programmatori lo fanno per estrarre dati, per monitorare le modifiche o per analizzare la struttura del sito.
 
-Scaricare una pagina web significa ottenere il codice sorgente di una pagina web da un server remoto e visualizzarla sul tuo computer. I programmatori spesso fanno ciò per analizzare i dati presenti sulla pagina o per creare dei programmi che interagiscono con i contenuti della pagina. Adesso vediamo come farlo!
-
-## Come fare:
-
-Per scaricare una pagina web in Lua, possiamo utilizzare la libreria HTTP. Vediamo un esempio:
+## Come Fare:
+Lua usa il modulo `socket.http` per scaricare pagine web. Vediamo un esempio semplice:
 
 ```Lua
 local http = require("socket.http")
-local page, status = http.request("http://www.example.com")
-print(page)
+
+-- URL della pagina web da scaricare
+local url = "http://www.google.com"
+
+-- Scaricare la pagina web
+local body, status = http.request(url)
+
+-- Controllare se la richiesta è stata riuscita
+if status == 200 then
+  print(body)  -- Stampa il contenuto della pagina
+else
+  print("Errore durante il download: " .. status)
+end
 ```
 
-In questo codice, stiamo utilizzando la funzione `request` della libreria HTTP per ottenere il contenuto della pagina all'URL specificato. Il codice sorgente della pagina verrà salvato nella variabile `page`, mentre lo stato della richiesta sarà salvato nella variabile `status`. Infine, utilizziamo `print` per visualizzare il contenuto della pagina sulla console.
+Quando esegui questo script, otterrai l'HTML di Google.com stampato sulla tua console.
 
-Se vuoi invece scaricare solo gli header della pagina, puoi utilizzare la funzione `head` invece di `request`:
+## Approfondimento
+### Contesto storico
+Lua non nasce con il supporto per scaricare le pagine web. Questa caratteristica è stata aggiunta più tardi grazie al modulo opzionale 'luasocket'. 
 
-```Lua
-local http = require("socket.http")
-local header, status = http.head("http://www.example.com")
-print(header)
-```
+### Alternative
+Esistono altre librerie per scaricare pagine web in Lua, come 'lua-requests' o il più potente 'luacurl'. Questi moduli forniscono funzionalità più avanzate come il supporto per richieste multipart, l'autenticazione HTTP e molto altro.
 
-In questo modo, possiamo ottenere solo l'intestazione della pagina senza scaricare tutto il suo contenuto.
+### Dettagli implementativi
+Per scaricare una pagina web, Lua apre una connessione TCP con il server remoto. Una volta instaurata la connessione, Lua invia una richiesta HTTP GET e poi legge la risposta del server. Tutti questi dettagli sono nascosti all'utente dal modulo `socket.http`.
 
-## Approfondimento:
+## Vedere Anche
+Per ulteriori informazioni o per approfondire gli argomenti trattati, consulta questi link:
 
-La libreria HTTP di Lua è stata originariamente sviluppata per l'implementazione di un client HTTP nella piattaforma OCaml. Tuttavia, è stata portata anche su Lua ed è diventata una delle librerie più utilizzate per le richieste HTTP.
-
-Ci sono anche delle alternative alla libreria HTTP, come ad esempio "LuaSocket" o "Lua-cURL", ma la libreria HTTP è spesso considerata la scelta migliore per la sua semplicità ed affidabilità.
-
-Per quanto riguarda l'implementazione, la libreria HTTP di Lua utilizza la libreria "LuaSocket" per gestire le richieste HTTP. Inoltre, è in grado di gestire i protocolli HTTPS e HTTP/1.1.
-
-## Vedi anche:
-
-- [Libreria HTTP di Lua su GitHub](https://github.com/LuaDist/lua-http)
-- [LuaSocket su LuaForge](https://luaforge.net/projects/luasocket/)
-- [Lua-cURL su GitHub](https://github.com/Lua-cURL/Lua-cURLv3)
-- [Documentazione Lua official](https://www.lua.org/docs.html)
+- [LuaSocket HTTP client tutorial (Inglese)](http://w3.impa.br/~diego/software/luasocket/http.html)
+- [Lua-requests su Github (Inglese)](https://github.com/JakobGreen/lua-requests)
+- [LuaCurl su Github (Inglese)](https://github.com/Lua-cURL/Lua-cURLv3)

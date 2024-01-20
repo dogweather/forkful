@@ -1,7 +1,7 @@
 ---
-title:                "Uuden projektin aloittaminen"
-html_title:           "PowerShell: Uuden projektin aloittaminen"
-simple_title:         "Uuden projektin aloittaminen"
+title:                "Aloittaminen uuden projektin"
+html_title:           "C: Aloittaminen uuden projektin"
+simple_title:         "Aloittaminen uuden projektin"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Getting Started"
@@ -10,27 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
+# Uuden Projektin Aloitus PowerShellilla
 
-Aloitetaan uusi projekti - mutta mikä se on ja miksi ohjelmoijat tekevät sitä? Projetki on uuden ohjelman, sovelluksen tai työkalun aloittaminen suunnittelusta ja kehittämisestä lopputuotokseen. Ohjelmoijat tekevät projekteja joko oman intohimonsa tai työnsä vuoksi, ja sen avulla he voivat luoda jotain uutta ja hyödyllistä.
+## Mikä ja Miksi?
+Uuden projektin aloitus viittaa tyhjästä aloittamiseen uudella ohjelmointitehtävällä. Ohjelmoijat tekevät tämän joko ryhtyessään uusiin itsenäisiin projekteihin tai aloittaessaan uudet tehtävänsä palvelussa tai yrityksessä.
 
-Kuinka:
-
-```PowerShell
-$newProject = New-Item -Type Directory -Path "C:\Users\User\Documents\NewProject" # Luo uuden projektikansion
-notepad $newProject\index.html # Avaa tiedosto notepadilla
-```
+## Miten se tehdään:
+PowerShellissa uuden projektin, esimerkiksi skriptiprojektin, voi aloittaa muutamalla peruskomennolla. Tässä on hyvä esimerkki:
 
 ```PowerShell
-Copy-Item -Path "C:\Users\User\Documents\existingProject" -Destination "C:\Users\User\Documents\NewProject" -Recurse # Kopioi olemassaolevan projektin tiedostot uuteen projektiin
+# Luo uusi kansio projektille
+New-Item -Path 'c:\MinunProjektini' -ItemType Directory
+
+# Luo uusi PowerShell-skriptitiedosto
+New-Item -Path 'c:\MinunProjektini\MinunSkriptini.ps1' -ItemType File
 ```
 
-Deep Dive:
+Nyt, kun suoritat edellä mainitut komentosarjat, saat seuraavanlaisen tulosteen:
 
-Uuden projektin aloittaminen voi olla jännittävä mutta haastava prosessi. Historiallisesti, ohjelmoijat ovat käyttäneet monia erilaisia työkaluja ja tekniikoita aloitettaessa uutta projektia. On tärkeää löytää oikea lähestymistapa ja työkalut, jotka sopivat parhaiten tarkoitukseen. PowerShell tarjoaa helpon ja tehokkaan tavan aloittaa uusia projekteja, ja sen avulla voit nopeasti luoda uusia kansioita ja kopioida tiedostoja tarvittaessa.
+```PowerShell
+Directory: C:\
 
-See Also:
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        10.07.2022     12:02                MinunProjektini
 
-Microsoftin virallinen dokumentaatio PowerShellin käytöstä uusien projektien aloittamiseen: https://docs.microsoft.com/en-us/powershell/scripting/samples/starting_a_new_project?view=powershell-7
 
-PowerShell-yhteisön keskustelupalstalta löydät inspiraatiota ja vinkkejä uusien projektien aloittamiseen: https://community.idera.com/database-tools/powershell/
+Directory: C:\MinunProjektini
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----        10.07.2022     12:02              0 MinunSkriptini.ps1
+```
+
+## Syväsukellus
+Uuden projektin aloitus PowerShellilla ei ole uusi käsite. Alun perin syntyneenä vuonna 2006 osana Windows Vista -käyttöjärjestelmää, PowerShell on tullut pitkän matkan, ja sen käyttäminen projektin aloittamiseen on tullut entistä yksinkertaisemmaksi.
+
+Vaihtoehtoisia tapoja uuden projektin aloittamiseen ovat käyttöjärjestelmäkohtaiset komennot tai graafiset käyttöliittymät, kuten Microsoft Visual Studio. Huomaa, että käytettävissä olevat vaihtoehdot voivat riippua käyttämästäsi ohjelmointikielestä ja/tai kehitysympäristöstä.
+
+PowerShellissa uuden projektin aloitus keskittyy yleensä kansiorakenteen luomiseen ja tarvittavien tiedostojen määrittämiseen. Tämä kannattaa pitää mielessä, kun aloitat oman projektisi.
+
+## Katso myös
+Microsoftin viralliset PowerShell-dokumentit: https://docs.microsoft.com/en-us/powershell/
+Microsoft Learn PowerShell-kurssi: https://docs.microsoft.com/en-us/learn/paths/powershell/
+
+Hyvä alusta aloittaa uusia projekteja PowerShellilla!

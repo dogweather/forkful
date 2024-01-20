@@ -1,7 +1,7 @@
 ---
-title:                "Http-pyynnön lähettäminen"
-html_title:           "PHP: Http-pyynnön lähettäminen"
-simple_title:         "Http-pyynnön lähettäminen"
+title:                "HTTP-pyynnön lähettäminen"
+html_title:           "Bash: HTTP-pyynnön lähettäminen"
+simple_title:         "HTTP-pyynnön lähettäminen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -11,33 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mikä & Miksi?
-Lähettäminen HTTP-pyyntö on tapa, jolla ohjelmoijat voivat lähettää pyyntöjä muille verkkosivustoille HTTP-protokollan avulla. Tämä on hyödyllistä, koska se mahdollistaa tiedon hakemisen ja jakamisen useiden eri sivustojen välillä.
 
-## Kuinka:
-Esimerkiksi, voit käyttää PHP:ta lähettämään GET-pyynnön osoitteeseen "https://www.esimerkkisivusto.fi" ja tulostaa vastauksen tietokantaan käyttämällä seuraavaa koodia:
+HTTP-pyynnön lähettäminen on prosessi, jossa tietoja lähetetään verkkosivulle tai sovellukseen. Ohjelmoijat tekevät sen esimerkiksi hakeakseen dataa, lähettääkseen dataa tai tehdäkseen päivityksen jo olemassa olevaan dataan.
+
+## Näin teet:
+
 ```PHP
-$pyynto = file_get_contents("https://www.esimerkkisivusto.fi");
-echo $pyynto;
+<?php
+// Alustetaan cURL
+$ch = curl_init();
+
+// Asetetaan URL ja muut vaihtoehdot
+curl_setopt($ch, CURLOPT_URL, "http://esimerkki.com");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_HEADER, 0);
+
+// Pyydetään URL ja tallennetaan se muuttujaan $output
+$output = curl_exec($ch);
+
+// Suljetaan cURL-istunto
+curl_close($ch);
+
+// Tulostetaan saatu tulos
+echo $output;
+?>
 ```
 
-Tulosteena saattaa olla sivuston HTML-koodi tai muu tieto, joka on saatavilla pyynnön antamasta sivustosta.
+Esimerkkikoodimme lähettää GET-pyynnön "http://esimerkki.com"-osoitteeseen ja tulostaa saadun vastauksen. 
 
-Voit myös lähettää POST-pyynnön lisäämällä haluamasi tiedot data-muuttujaan ja käyttämällä "CURLOPT_POST" asetuksena. Esimerkiksi:
-```PHP
-$data = array("nimi" => "Matti", "ika" => "30");
-$pyynto = curl_init("https://www.esimerkkisivusto.fi");
-curl_setopt($request, CURLOPT_POST, true);
-curl_setopt($request, CURLOPT_POSTFIELDS, $data);
-curl_exec($pyynto);
-```
+## Syvempi tieto:
 
-## Syvemmälle:
-HTTP-pyyntöjen lähettäminen on tapa, jolla eri verkkosivustot kommunikoivat keskenään ja mahdollistavat tietojen jakamisen. Tätä tekniikkaa on käytetty jo vuosikymmeniä ja se on olennainen osa verkkokehitystä.
+HTTP-pyyntöjen lähettäminen on ollut olennainen osa web-sovelluksia aina WWW:n alkuaikojen PERL-skripteistä nykyisiin JavaScript-yksisivusovelluksiin. PHP:ssa on monta tapaa tehdä HTTP-pyynnön lähettäminen, kuten `file_get_contents()`, `fsockopen()`, ja `stream_context_create()`. 
 
-On myös muita tapoja lähettää HTTP-pyyntöjä, kuten käyttämällä JavaScriptia tai muita ohjelmointikieliä. Lisäksi on olemassa erilaisia kirjastoja ja työkaluja, jotka voivat auttaa lähettämään ja vastaanottamaan HTTP-pyyntöjä helposti.
+Näistä kaikista cURL on kuitenkin tehokkain ja monipuolisin. cURL yleistyi sen tehokkaan suorituskyvyn ja tuekkaan kyvynsä käsitellä eri protokollia ansiosta, jota muut PHP:n sisäänrakennetut funktiot eivät kykene. 
+
+Huomaa kuitenkin, että cURL tulee asentaa ja ottaa käyttöön erikseen PHP:ssa, joka saattaa olla hankalaa joissakin ympäristöissä.
 
 ## Katso myös:
-- [PHP:n viralliset dokumentaatiot HTTP-pyyntöjen lähettämisestä](https://www.php.net/manual/en/function.file-get-contents.php)
-- [Guide to HTTP Requests in JavaScript](https://www.javascripture.com/XMLHttpRequest)
-- [HTTP Requests in Other Programming Languages](https://www.freecodecamp.org/news/make-a-http-request-with-python/)
-- [CURL - Command Line Tool for Sending HTTP Requests](https://curl.haxx.se/)
+
+- PHP:n virallinen cURL-dokumentaatio (https://www.php.net/manual/en/book.curl.php)
+- PHP: The Right Way - suositukset HTTP-pyynnön lähettämisestä (https://phptherightway.com/)
+- Stack Overflow keskusteluja HTTP-pyynnöistä PHP:ssa (https://stackoverflow.com/questions/tagged/php+http-request)

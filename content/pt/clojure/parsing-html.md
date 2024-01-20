@@ -1,6 +1,6 @@
 ---
 title:                "Analisando HTML"
-html_title:           "Clojure: Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
 simple_title:         "Analisando HTML"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+## O Que & Por Quê?
+Analisar HTML, ou "parsing", permite extrair dados de uma página web. Programadores fazem isso para coletar informações, automatizar tarefas, entre outras coisas.
 
-O parsing HTML é o processo de analisar e interpretar o código HTML de uma página da web. Os programadores fazem isso para extrair informações específicas da página, como tags, links e texto, a fim de usá-las em seus aplicativos.
+## Como Fazer:
+Clojure fornece diversas bibliotecas para análise HTML. Aqui, mostramos como fazê-lo usando a biblioteca `hickory`.
 
-## Como fazer:
-
-```
-; Importando o módulo necessário
-(ns meu-aplicativo
-  (:require [net.cgrand.enlive-html :as html]))
-
-; Lendo e carregando a página em uma variável
-(def pagina (html/html-resource "https://exemplo.com"))
-
-; Obtendo todas as tags <a> da página
-(html/select pagina [:a])
-
-; Extraindo os links da página
-(def links (map #(-> % :attrs :href) (html/select pagina [:a])))
-
-; Obtendo o texto da página
-(def texto (html/text pagina))
+Para instalar o hickory, adicione a seguinte linha em seu arquivo `project.clj`:
+```clojure
+[hickory "0.7.1"]
 ```
 
-## Mergulho profundo:
+Vamos começar com um exemplo simples:
 
-O parsing HTML tem sido uma tarefa fundamental na construção de aplicativos web desde o surgimento da linguagem em 1993 por Tim Berners-Lee. Alternativas como XML e JSON são frequentemente usadas para transferir dados, mas o HTML continua sendo o padrão para a criação de páginas da web. Implementações populares de parsing HTML em Clojure incluem o Enlive e o Hiccup.
+```clojure
+(ns exemplo.core
+  (:require [hickory.core :as h]))
 
-## Veja também:
+(defn parse-html [html]
+  (->> html
+       h/as-hickory))
 
-- Enlive: https://github.com/cgrand/enlive
-- Hiccup: https://github.com/weavejester/hiccup
+(defn main [& args]
+  (println (parse-html "<html><body><h1>Oi, mundo!</h1></body></html>")))
+```
+A saída será:
+```clojure
+{:tag :html, :attrs {}, :content [{:tag :body, :attrs {}, :content [{:tag :h1, :attrs {}, :content ["Oi, mundo!"]}]}]}
+```
+
+## Mergulho Profundo
+A análise HTML vem sendo uma parte crucial da programação na web desde seus primeiros dias. No entanto, as bibliotecas modernas permitem fazê-lo de forma mais eficiente e segura.
+
+Alternativas ao `hickory` incluem `clojure.data.xml` e `enlive`.
+
+Nas entranhas, o `hickory` usa a biblioteca Java `jsoup` para converter HTML em um formato interpretável.
+
+## Veja Também
+1. Documentação do Hickory: [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)
+2. Um tutorial sobre análise HTML com Clojure: [https://www.tutorialspoint.com/clojure/clojure_web_programming.htm](https://www.tutorialspoint.com/clojure/clojure_web_programming.htm)
+3. Documentação do jsoup: [https://jsoup.org/](https://jsoup.org/)

@@ -10,50 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שלום עולם! במאמר הזה, אני אוכתב לכם על הנושא של חישוב תאריך בעתיד או בעבר בשפת סי++.
-
 ## מה ולמה?
+חישוב תאריך בעתיד או בעבר הוא פרוצדורה שבה מותאמת התאריך באמצעות הוספה או החסרה של מספר ימים. מתכנתים נוטים לחשב זאת כדי לנהל צורך זמני, כמו חישוב החזרה או הוספת זמן חסום למערכת.
 
-חישוב תאריך בעתיד או בעבר הוא פעולה שמאפשרת לנו לחשב את התאריך שיהיה מסוים בעתיד או בעבר, בהתאם למספר ימים שנמסרים לנו. מתכנתים מבצעים פעולות כאלה כדי לבצע פעולות כגון חישוב תאריכים לדוחות או לתוכניות לוח שנה.
+## איך לבצע:
+הנה דוגמא של קוד ב-C++.
 
-## איך לעשות זאת:
-
-תוכלו לחשב תאריכים בעתיד או בעבר באמצעות העתקת הקוד הבא לתוך תוכנית C++ שלכם:
-```
+```C++
 #include <iostream>
-#include <chrono>
 #include <ctime>
+#include <chrono>
 
-int main()
-{
-    // קבלת התאריך הנוכחי
-    std::time_t now = std::time(nullptr);
+int main() {
+    std::time_t now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
 
-    // הגדרת משתנה לספירת מספר ימים שתרצו לחשב מהתאריך הנוכחי
-    int daysToAdd = 30;
+    struct tm then = *std::localtime(&now); 
 
-    // קבלת התאריך שיוסף או נגרם מהתאריך הנוכחי על פי מספר הימים
-    std::chrono::system_clock::time_point dateInFuture = std::chrono::system_clock::from_time_t(now) + std::chrono::hours(24 * daysToAdd);
+    then.tm_mday += 5;   // add 5 days to the current date. 
 
-    // הדפסת התאריך שחולק על ידי ימים, שעות ודקות
-    std::cout << std::asctime(std::localtime(&dateInFuture)) << std::endl;
+    std::mktime(&then);  // normalize the date/time
+
+    char buf[80];
+    std::strftime(buf, sizeof(buf), "%Y-%m-%d %H:%M:%S", &then);
+
+    std::cout << "Future Date & Time: " << buf << std::endl;
 
     return 0;
 }
 ```
-
-כאן, שימו לב שאתם יכולים לשנות את ערך המשתנה "daysToAdd" כדי להוסיף או להחסיר ימים לתאריך הנוכחי.
+יציאת הקוד תהיה כמו למשל: "Future Date & Time: 2023-11-17 15:03:26"
 
 ## חקירה מעמיקה:
-
-כבר מזמן רב כחלק מהעיצוב של תוכניות לוח שנה וכאשר נדרש לחשב תאריכים מיוחדים, נתקלנו בצורך לבצע פעולות חישוב תאריכים. בעבר, פעולות כאלה נעשו באופן ידני, לאחרונה לכאורה "טריוויאליות" של החישוב הפכה את התחום לפחות חשוב ונהיה משמעותי מעט יותר.
-
-אם אתם מעוניינים ליותר מאשר פעולות חישוב תאריכים פשוטות, תוכלו להתעמק עוד על תאריכים בעתיד ובעבר באמצעות ספריה מתקדמת יותר כמו ספריה Boost.Date_Time או הדרישה העתידית התכונות של standart C++ בגרסאות הבאות.
+חישוב תאריך בעתיד או בעבר הוא משימה קיומית בתכנות. אף על פי שמדובר במשימה די פשוטה בקומפסט C++, ישנם שיטות אלטרנטיביות כמו השימוש בספריה `Boost.Date_Time` שממומשת גם בשפות אחרות. `std::mktime` משמש לנרמול התאריך / זמן למידע סטנדרטי.
 
 ## ראו גם:
-
-למידע נוסף על חישוב תאריכים בשפת סי++ תוכלו לעיין במקורות הבאים:
-
-- תיעוד ה-Specified C++ הרשמי
-- [מדריך לספריה Boost.Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
-- [מדריך לתכונות התאריך העתידיות במפרט הבהדרתיבי לשפת ו++](https://en.cppreference.com/w/cpp/language/date_time)
+1. [C++ להוסיף ימים לתאריך](https://en.cppreference.com/w/cpp/chrono)
+2. [Boost Date_Time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
+3. [תיעוד הסטנדרט ל- std::mktime](http://www.cplusplus.com/reference/ctime/mktime/)

@@ -1,7 +1,7 @@
 ---
-title:                "डिबग आउटपुट प्रिंट करना"
-html_title:           "C++: डिबग आउटपुट प्रिंट करना"
-simple_title:         "डिबग आउटपुट प्रिंट करना"
+title:                "डीबग आउटपुट प्रिंट करना"
+html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Testing and Debugging"
@@ -12,34 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## क्या और क्यों?
 
-किसी भी प्रोग्रामर के लिए डिबग आउटपुट प्रिंट करना एक आम कार्य होता है। यह प्रोग्रामर को उनके कोड को चेक करने और समस्याओं को सुलझाने में मदद करता है। डिबग आउटपुट को प्रिंट करके, हम अपने कोड में गड़बड़ियों को पता लगा सकते हैं और उन्हें ठीक कर सकते हैं।
+"Debug Output" मूलतः एक प्रोग्राम के आंतरिक प्रक्रियाओं का संकेत है, जिसे डीबग करने, कि प्रोग्राम कहां और कैसे चल उठा है, के लिए प्रिंट किया जाता है। "Debug Outputs" बड़े प्रोग्राम्स को समझने, डीबग और विश्वसनीयता को बढ़ाने में महत्त्वपूर्ण है।
 
-## कैसे:
+## कैसे करें:
 
-डिबग आउटपुट प्रिंट करने के लिए, हम अपने कोड में बस कुछ लाइनों को शामिल करते हैं जिसमें हम अपनी मांग को प्रिंट करते हैं। इससे हम अपने कोड को ट्रैक कर सकते हैं और गड़बड़ियों को आसानी से ढूंढ़ सकते हैं।
+डीबग आउटपुट को प्रिंट करने का आम तरीका "cout" और "cerr" फ़ंक्शन का उपयोग करना है। इसकी एक साधारण उदाहरण नीचे दी गई है:
 
 ```C++
-int main(){
-    int a = 10;
-    cout << "a की मांग = " << a << endl;
+#include<iostream>
+using namespace std;
+
+int main() {
+    cout<<"Hello, World!\n";
+    cerr<<"Debug: Start of program\n";
+    int testVar = 5;
+    cerr<<"Debug: Value of variable at line "<<__LINE__<<" is "<<testVar<<"\n";
     return 0;
 }
 ```
 
-इस कोड का आउटपुट निम्नलिखित होगा:
+ऊपर कोड का आउटपुट कुछ ऐसा दिखाई देगा:
+
 ```
-a की मांग = 10
+Hello, World!
+Debug: Start of program
+Debug: Value of variable at line 7 is 5
 ```
 
-## गहराई में जाओ:
+## गहराई में:
 
-डिबग आउटपुट को प्रिंट करने का आदेश अक्सर कार्य में डिबगिंग को बेहतर बनाने के लिए होता है। इससे प्रोग्रामर अपने कोड को गहराई से जांच सकते हैं, जिससे प्रोग्राम की मजबूती और बेहतर बन सकती है। अलग-अलग तरीकों से भी डिबग आउटपुट प्रिंट किया जा सकता है, जैसे प्रोग्राम का विश्लेषण या लॉग फ़ाइल में अधिक जानकारी प्रिंट करना। डिबग आउटपुट को प्रिंट करने का समान और अधिक उपयोगी विकल्प भी हैं, जैसे की एक डिबगर उपयोग करना। डिबग आउटपुट को प्रिंट करने के लिए कई तरीके हैं और हर प्रोग्रामर को अपने आवश्यकतानुसार उन सभी तकनीकों का उपयोग करना चाहिए।
+डीबग आउटपुट का इतिहास सी++ के पुराने गैर-मानक "printf()" फंक्शन के साथ शुरू होता है जो कि अभी भी उपयोग होता है। आधुनिक परिवेशन में, "cerr" और "cout" का उपयोग करने के लिए प्रोत्साहन दिया जाता है, क्योंकि इन्हें अधिक खुलापन और बदलाव करने की क्षमता प्रदान करता है।
 
-## संबंधित जानकारी देखें:
+cerr और cout के अलावा, आप लॉग फ़ाइल में डीबग। जैसे कि "fstream" क्लास का उपयोग करके आउटपुट रेकॉर्ड कर सकते हैं।
 
-अगर आप डिबग आउटपुट को प्रिंट करने के बारे में और भी अधिक जानना चाहते हैं तो निम्नलिखित स्रोतों को देख सकते हैं:
+## विशेष दृष्टिकोण:
 
-- [डिबग आउटपुट का प्रभावी उपयोग कैसे करें](https://www.geeksforgeeks.org/how-to-make-effective-use-of-debugging-output/)
-- [डिबग आउटपुट को प्रिंट करने के लिए कई तरीके](https://www.mikeash.com/pyblog/friday-qa-2012-08-10-xcode-debugging-revisited.html)
-- [डिबगर का उपयोग कैसे करें](https://www.geeksforgeeks.org/introduction-to-debugging-in-c-c/)
-- [डिबगिंग के टिप्स और ट्रिक्स](https://docs.microsoft.com/en-us/visualstudio/debugger/debugger-tips-and-tricks?view=vs-2019)
+डीबगगिंग के भीतर और बाहर विशेष ध्यान देने योग्य कुछ संसाधन नीचे दिए गए हैं:
+
+1. [Effective Debugging: A brief guide](https://effectivecpp.com/2017/02/12/effective-debugging-a-brief-guide/)
+2. [Step-By-Step guide to Debugging](https://www.codeproject.com/Articles/8889/Step-by-Step-Method-to-Accessing-the-Internal-Work)
+3. [Understanding Streambuf in C++](http://www.cplusplus.com/reference/streambuf/)
+4. [Exceptions and Error handling in C++](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)

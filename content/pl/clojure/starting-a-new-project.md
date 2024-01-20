@@ -1,6 +1,6 @@
 ---
 title:                "Rozpoczynanie nowego projektu"
-html_title:           "Clojure: Rozpoczynanie nowego projektu"
+html_title:           "Bash: Rozpoczynanie nowego projektu"
 simple_title:         "Rozpoczynanie nowego projektu"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,34 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego? 
-Rozpoczęcie nowego projektu jest po prostu procesem tworzenia czegoś nowego w języku programowania Clojure. Programiści robią to, aby wdrożyć nowe funkcjonalności, naprawić błędy lub ulepszyć istniejący kod.
+## Co i dlaczego?
+
+Zaczynając nowy projekt programistyczny, tworzysz podstawy dla swojej aplikacji. Robimy to, aby skonfigurować narzędzia, biblioteki i strukturę naszego kodu, co ułatwia późniejsze tworzenie.
 
 ## Jak to zrobić:
-### Tworzenie nowego projektu:
+
+Tworzenie nowego projektu w Clojure jest proste dzięki narzędziu Leiningen. Oto przykładowy kod oraz output:
+
 ```Clojure
-lein new app <nazwa_projektu>
+;; Aby zainstalować Leiningen
+;; korzystając z konsoli Unix, wpisz:
+wget https://raw.githubusercontent.com/technomancy/leiningen/stable/bin/lein
+chmod +x lein
+mv lein /usr/local/bin
+
+;; Następnie, aby założyć nowy projekt, wpisz:
+lein new moj-projekt 
+
+;; Potwierdzenie nowego projektu
+;; po wykonaniu powyższych komend daje takie dane:
+Project created at /home/uzytkownik/moj-projekt
 ```
-Sample output:
-Tworzenie nowego projektu lein_new_app
-### Kompilacja projektu:
-```Clojure
-lein uberjar
-```
-Sample output:
-Kompilacja projektu lein_uberjar_app
 
-## Głębszy przegląd:
-### Kontekst historyczny:
-Clojure został opracowany w 2007 roku przez Richa Hickeya, aby zapewnić programistom funkcjonalność języka Lisp na platformie JVM. Jest to język programowania funkcyjnego, znany z wydajnego przetwarzania danych i skalowalności.
+## Głębsze spojrzenie
 
-### Alternatywy:
-Inną alternatywą dla Clojure jest język Java, który jest również zaprojektowany dla platformy JVM. Jednak Clojure oferuje prostszą składnię i większą wydajność przy przetwarzaniu danych.
+Histotycznie, Clojure zostało stworzone w 2007 roku przez Richa Hickey'a jako język na platformę Java. Jeżeli chodzi o przygotowywanie nowych projektów, oprócz `Leiningen`, istnieje również narzędzie `Boot`, które jest alternatywą. Niemniej jednak, `Leiningen` jest zdecydowanie najbardziej popularne i posiada wiele pluginów, które ułatwiają proces tworzenia i zarządzania projektem. Szczegółowości implementacji skoncentrowane są na tworzeniu plików konfiguracyjnych, integracji z narzędziami zewnętrznymi (np. systemami CI/CD) oraz ustawieniu struktury katalogów.
 
-### Szczegóły implementacji:
-Clojure korzysta z maszyny wirtualnej Javy (JVM) i może korzystać z bibliotek Javy. Jest to również język częściowo funkcjonalny i częściowo obiektowy.
+## Zobacz też
 
-## Zobacz też:
-https://clojure.org/ - Oficjalna strona języka Clojure
-https://github.com/technomancy/leiningen - Dokumentacja Leiningena, narzędzia do budowania i zarządzania projektami Clojure
-https://www.braveclojure.com/clojure-for-the-brave-and-true/ - Darmowa książka o nauce języka Clojure dla początkujących.
+1. [Oficjalna strona Clojure](https://clojure.org/)
+2. [Dokumentacja Leiningen](https://leiningen.org/)
+3. [Strona projektu Boot](https://github.com/boot-clj/boot)
+4. [Przegląd narzędzi Clojure](https://clojure.org/guides/getting_started)
+5. [Poradnik jak zacząć z Clojure](https://www.braveclojure.com/getting-started/)

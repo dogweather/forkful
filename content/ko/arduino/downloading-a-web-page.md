@@ -10,59 +10,61 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## 무엇이며 왜 해야 할까요?
 
-웹 페이지 다운로드는 인터넷에서 컴퓨터로 파일을 가져오는 것을 말합니다. 프로그래머는 웹 페이지를 다운로드해서 필요한 정보를 얻을 수 있기 때문에 이 작업을 합니다.
+웹 페이지 다운로드란 웹 서버에서 HTML 문서 전체를 컴퓨터에 저장하는 것을 의미합니다. 프로그래머들은 이걸 이용해 온라인 정보들을 오프라인에서 사용하거나, 데이터 분석에 활용하기 위해 웹 페이지를 다운로드해요.
 
-## 하는 법:
+## 어떻게 할까요?
 
-아래의 코드를 따라해보세요. 이 코드는 웹 페이지에서 "Hello World!"를 다운로드하고 콘솔에 출력합니다.
+다음 Arduino 코드를 참조하세요. 이건 Arduino 이더넷 라이브러리를 사용하여 웹 페이지를 다운로드하는 방법을 보여줍니다.
 
 ```Arduino
+#include <Ethernet.h>
 
-#include <WiFi.h>                // WiFi 라이브러리 불러오기
-#include <HTTPClient.h>          // HTTP 클라이언트 라이브러리 불러오기
+byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED };
+EthernetClient client;
 
-void setup() {
-
-  // WiFi 연결하기
-  WiFi.begin("WiFi 이름", "비밀번호");
-
-  while (WiFi.status() != WL_CONNECTED) {     // 연결될 때까지 기다립니다.
-    delay(500);
-  }
+void setup()
+{
+  Ethernet.begin(mac);
+  Serial.begin(9600);
+  delay(1000);
+  downloadWebPage();
 }
 
-void loop() {
-
-  HTTPClient http;                      // HTTP 클라이언트 객체 생성하기
-
-  http.begin("http://www.example.com");    // 다운로드할 웹 페이지 주소 설정하기
-  int httpCode = http.GET();                 // HTTP GET 요청 보내기
-
-  if (httpCode > 0) { // 정상적으로 응답이 온 경우
-    String payload = http.getString();   // 응답받은 내용을 문자열로 저장하기
-    Serial.println(payload);             // 콘솔에 출력하기
-  }
-
-  http.end(); // HTTP 클라이언트 객체 제거하기
-
-  delay(5000); // 5초 기다리기
+void loop()
+{
 }
 
+void downloadWebPage() {
+  client.stop();
+  if (client.connect("www.example.com",80)) {
+    client.println("GET / HTTP/1.0");
+    client.println();
+  }
+  else{
+    Serial.println("connection failed");
+    return;
+  }
+  while(client.connected()){
+    if(client.available()){
+      char c = client.read();
+      Serial.print(c);
+    }
+  }
+}
 ```
 
-콘솔에는 "Hello World!"가 출력될 것입니다.
+## 심층 탐색
 
-## 더 알아보기:
+웹 페이지 다운로드는 인터넷 초기 단계에서부터 있었던 기능이며 현재까지도 다양한 응용을 위해 사용되고 있습니다. 저 위의 예제가 실시간으로 웹 페이지의 내용을 얻어오는 방법이지만, 보다 효율적인 방법이 요구될 때는 크롤러와 같은 자동화 도구로 동기화 문제를 해결하는 방안도 많이 사용합니다.
 
-- 1990년대 초반까지는 FTP 프로토콜을 사용해서 파일을 다운로드했습니다. 그 이후에는 HTTP 프로토콜이 더 널리 사용되기 시작했습니다.
+또한, 이 코드는 아두이노나 ESP8266과 같은 임베디드 시스템에서 간단한 HTTP 요청을 보내고, 응답을 파싱하는 경우에 유용하게 쓸 수 있습니다.
 
-- 다른 방법으로는 curl 라이브러리나 urllib 라이브러리를 사용해서 웹 페이지를 다운로드할 수 있습니다.
+## 참고자료
 
-- HTTP 프로토콜에서는 GET, POST, PUT, DELETE 등의 메서드를 사용해서 데이터를 다룰 수 있습니다.
+아래 링크는 본 글에서 다룬 내용과 관련된 자료입니다.
 
-## 관련 링크:
-
-- [WiFi 라이브러리](https://www.arduino.cc/en/Reference/WiFi)
-- [HTTPClient 라이브러리](https://github.com/arduino-libraries/HTTPClient)
+1. [Arduino Ethernet Library](https://www.arduino.cc/en/Reference/Ethernet)
+2. [Arduino Ethernet Client](https://www.arduino.cc/en/Reference/EthernetClient)
+3. [Arduino에서 웹 페이지 다운로드](https://stackoverflow.com/questions/1538947/how-to-download-a-web-page-in-arduino)

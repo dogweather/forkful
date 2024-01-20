@@ -1,6 +1,6 @@
 ---
 title:                "基本認証を使用してhttpリクエストを送信する"
-html_title:           "TypeScript: 基本認証を使用してhttpリクエストを送信する"
+html_title:           "C#: 基本認証を使用してhttpリクエストを送信する"
 simple_title:         "基本認証を使用してhttpリクエストを送信する"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,40 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何と、なぜ？
+## 何となぜ?
+HTTPリクエストをベーシック認証で送信するとは、ユーザー名とパスワードを用いてサーバーへのアクセスを証明するための方法です。これは、含まれているデータの保護と、特定のウェブページやAPIエンドポイントに対する制限付きアクセスを可能にするために行われます。
 
-HTTP要求を基本認証付きで送信することは何かというと、ユーザー名とパスワードなどのクレデンシャル情報をサーバーに安全に送信することです。なぜプログラマーがこれをするのかというと、アプリケーションやサービスへのアクセスを制限するために使用される、セキュリティ上の重要な手段だからです。
-
-## 方法：
+## 手順：
+TypeScriptでのベーシック認証を使用したHTTPリクエストの送信は、以下のようになります。
 
 ```TypeScript
-// HTTPライブラリをインポート
 import axios from 'axios';
 
-// 基本認証を使用してHTTPリクエストを送信する例
-axios.get('https://example.com/api', {
-  auth: {
-    username: 'ユーザー名',
-    password: 'パスワード'
-  }
-})
-  .then(response => {
-    console.log(response.data);
-  })
-  .catch(err => {
-    console.log(err);
+const sendRequest = async () => {
+  const response = await axios.get('https://example.com', {
+    auth: {
+      username: 'your-username',
+      password: 'your-password'
+    }
   });
+  console.log(response.data);
+};
+
+sendRequest();
 ```
 
-## 深堀り：
+これで、指定したユーザー名とパスワードでサーバーにHTTPリクエストを送信し、その結果をコンソールに出力します。
 
-基本認証は、HTTPプロトコルの認証スキームの1つです。ユーザー名とパスワードは、Base 64でエンコードされ、HTTPリクエストヘッダー内のAuthorizationフィールドに含まれます。これは、ユーザーがアクセスを要求したリソースに関連する権限があるかどうかをチェックするために、サーバー側でデコードされます。
+## ディープダイブ
+ベーシック認証は、HTTP/1.0時代から存在し、シンプルさと広い対応範囲が強みです。しかし、今日ではより高度な手法、例えばBearerトークンやOAuthが一般的に使われています。ベーシック認証では、ユーザー名とパスワードがBase64でエンコードされ送信されますが、暗号化されていないため、HTTPSを用いて通信することが必須となります。
 
-基本認証には、メールやFTPなど、多くのプロトコルで使用されてきましたが、現在は安全性の面で欠点があるとされ、代わりによりセキュアな認証方式が推奨されています。
+## 関連情報
+詳細な情報とベーシック認証の代替手法については、以下のリンクをご覧ください。
 
-基本認証を実装する方法は、HTTPライブラリを使用した例のように非常に簡単です。ただし、エンコードやデコードの処理など、細かな手順も理解しておく必要があります。
-
-## 関連リンク：
-
-- [HTTP Basic Authentication](https://en.wikipedia.org/wiki/Basic_access_authentication)
-- [Examples of Using Basic Authentication in Different Programming Languages](http://docs.moodle.org/dev/Basic_authentication_examples)
+1. [MDN Web Docs (Basic authentication)](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication)
+2. [Bearer Token](https://jwt.io/introduction/)
+3. [OAuth 2.0](https://oauth.net/2/)

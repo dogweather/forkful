@@ -1,6 +1,6 @@
 ---
 title:                "Convertendo uma string para minúsculas"
-html_title:           "Bash: Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
 simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e porquê?
-Converter uma string para letras minúsculas significa transformar todas as letras em uma palavra ou frase para sua forma menor correspondente. Programadores fazem isso por vários motivos, incluindo padronização de entrada de dados e comparação de strings sem diferenciar entre maiúsculas e minúsculas.
+## O Que é e Por Quê?
 
-## Como fazer:
-Existem várias maneiras de converter uma string para letras minúsculas usando Bash. Uma maneira simples é usar o comando `tr` para substituir as letras maiúsculas por minúsculas em uma variável:
+Converter uma string para minúsculas significa alterar todas as letras maiúsculas de uma string para suas correspondentes minúsculas. Programadores fazem isso para normalizar dados, eliminar a diferenciação entre maiúsculas e minúsculas e facilitar comparações e pesquisas.
 
-```
-vogal='A'               
-echo "Vogal em minúsculo: $(echo ${vogal} | tr '[A-Z]' '[a-z]')"
-# Output: Vogal em minúsculo: a
-```
+## Como Fazer:
 
-Outra opção é usar o operador `^^` para converter toda a string em maiúsculas primeiro e depois substituir pelas letras minúsculas:
+Em Bash, existem várias maneiras de converter uma string para minúsculas. Abaixo estão alguns exemplos.
 
-```
-nome='JOAO'
-echo "Nome em minúsculo: ${nome,}"
-# Output: Nome em minúsculo: joao
-```
+```Bash
+# Utilizando o comando tr
+text='FELIZ ANIVERSÁRIO'
+lower_case_text=$(echo "$text" | tr '[:upper:]' '[:lower:]')
+echo $lower_case_text
+# Saída: feliz aniversário
 
-Você também pode usar o comando `sed` para substituir caracteres maiúsculos por minúsculos em uma variável:
-
-```
-frase='O Inverno Está Chegando'
-echo "Frase em minúsculo: $(echo ${frase} | sed 's/[A-Z]/\L&/g')"
-# Output: Frase em minúsculo: o inverno está chegando
+# Parametro expansion disponível da versão 4.0+
+text="OLÁ MUNDO"
+echo "${text,,}"
+# Saída: olá mundo
 ```
 
-## Mergulho Profundo:
-A conversão de strings para letras minúsculas é algo comumente usado em programação e é uma funcionalidade básica da linguagem Bash. Além das opções mencionadas acima, também é possível utilizar o comando `awk` e funções internas do Bash para realizar a conversão. Além disso, é importante ter em mente que nem todas as linguagens de programação possuem esse recurso integrado, portanto, pode ser necessário implementá-lo manualmente em alguns casos.
+## Conhecimento Profundo:
+Converter uma string para minúsculas tem sido uma necessidade comum para programadores desde que o conceito de sistematização da linguagem ASCII foi introduzido. Tradicionalmente, é realizado usando funções no nível do sistema ou bibliotecas de alto nível, mas desde a versão 4.0, o Bash também oferece essa funcionalidade built-in.
+
+Existem várias alternativas para converter uma string para minúsculas em Bash, como comandos sed, awk e perl, entre outros. No entanto, a expansão de parâmetro introduzida na versão 4.0 oferece uma abordagem mais elegante e rápida. É importante ressaltar que essas variações existem para funcionar em diferentes plataformas e versões do Bash.
+
+Ao converter uma string para minúsculas, é importante levar em consideração as questões de internacionalização e localização. Em Português por exemplo, a ênfase em caracteres como "Ç" pode não ser traduzida corretamente para minúsculas, a menos que a configuração do idioma esteja correta.
 
 ## Veja também:
-- [Conversão de string para letras minúsculas em Bash com opções adicionais](https://www.baeldung.com/linux/bash-convert-string-to-lowercase)
-- [Comandos sed e awk em Bash](https://www.tecmint.com/sed-awk-cheatsheet-with-examples/)
+
+Para mais informações sobre o Bash e a manipulação de strings, consulte os seguintes links:
+
+- GNU Bash: https://www.gnu.org/software/bash/
+- String manipulation in bash: https://tldp.org/LDP/abs/html/string-manipulation.html
+- StackOverflow Bash String Lowercase: https://stackoverflow.com/questions/2264428/how-to-convert-a-string-to-lower-case-in-bash

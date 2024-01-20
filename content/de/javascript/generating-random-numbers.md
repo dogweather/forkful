@@ -1,7 +1,7 @@
 ---
-title:                "Generieren von Zufallszahlen"
-html_title:           "Javascript: Generieren von Zufallszahlen"
-simple_title:         "Generieren von Zufallszahlen"
+title:                "Zufallszahlen generieren"
+html_title:           "Arduino: Zufallszahlen generieren"
+simple_title:         "Zufallszahlen generieren"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was ist das und warum machen wir es?
+# Zufallszahlen in JavaScript Erzeugen
 
-Erzeugung zufälliger Zahlen ist ein wichtiges Konzept in der Programmierung. Es bezieht sich auf die Generierung von Zahlen, die auf keiner bestimmten Reihenfolge oder Vorhersagbarkeit basieren. Programmierer verwenden zufällige Zahlen, um verschiedene Aufgaben zu erfüllen, wie zum Beispiel das Erstellen von einzigartigen Passwörtern, die Steuerung von Computerspielen oder das Durchführen von statistischen Analysen.
+## Was & Warum?
+Zufallszahlen in Programmierung sind Zahlen, die von Programm erzeugt werden, ohne erkennbares Muster. Sie sind essentiell in verschiedenen Bereichen, wie z.B. Spiele, Simulationen oder kryptographische Anwendungen, um Unvorhersehbarkeit und Abwechslung zu erzeugen.
 
-# Wie geht das?
+## So Geht's:
+In JavaScript können wir die `Math.random()` Funktion nutzen, um eine Zufallszahl zwischen 0 (einschließlich) und 1 (ausschließlich) zu erzeugen.
 
-Um in Javascript eine zufällige Zahl zu erzeugen, können wir die Funktion ```Math.random()``` verwenden. Diese Funktion gibt eine zufällige Dezimalzahl zwischen 0 und 1 zurück. Um eine ganze Zufallszahl zu erhalten, können wir ```Math.floor()``` verwenden, um die Dezimalzahl auf die nächste ganze Zahl abzurunden.
-
-Beispiel:
 ```Javascript
-let randomNum = Math.floor(Math.random() * 10) + 1;
-// gibt eine zufällige Zahl zwischen 1 und 10 zurück
+let zufallszahl = Math.random();
+console.log(zufallszahl);
 ```
 
-# Tiefere Einblicke
+Wir können auch eine Funktion schreiben, um eine Zufallszahl in einem bestimmten Bereich zu erzeugen. 
 
-Die Verwendung von zufälligen Zahlen hat eine lange Geschichte in der Mathematik und Informatik. Es gibt verschiedene Methoden zur Generierung von Zufallszahlen, wie zum Beispiel die Midpoint-Methode oder die Linear-Kongruenzmethode. 
+```Javascript
+function getRandom(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
 
-Eine Alternative zur Verwendung von ```Math.random()``` ist die Verwendung spezialisierter Bibliotheken oder Frameworks, die leistungsfähigere und vielseitigere Funktionen zur Generierung von Zufallszahlen bieten.
+console.log(getRandom(1, 10));  // Gibt eine Zufallszahl zwischen 1 und 10 aus.
+```
 
-Bei der Implementierung von zufälligen Zahlen muss darauf geachtet werden, dass sie wirklich zufällig sind. Eine schlechte Implementierung kann dazu führen, dass die Zahlen nicht richtig verteilt sind und somit vorhersehbar werden.
+## Tiefer Einblick
+Das Erzeugen von Zufallszahlen hat eine lange Geschichte in der Informatik, die weit vor dem Aufkommen von Hochsprachen wie JavaScript liegt. Die Methode `Math.random()` in JavaScript ist eine Verbindung zu dieser Geschichte und basiert auf einem Pseudozufallszahlengenerator.
 
-# Siehe auch
+Im Gegensatz zu echten Zufallszahlen werden Pseudozufallszahlen durch einen anfänglichen Wert, bekannt als Samen oder "seed", und einen festen algorithmischen Prozess erzeugt. Sie sind nicht wirklich "zufällig" im strengen Sinne, aber für die meisten Anforderungen sind sie ausreichend.
 
-Hier sind einige hilfreiche Quellen, um mehr über die Verwendung von zufälligen Zahlen in Javascript zu erfahren:
+Es gibt auch alternative Methode zum Erzeugen von Zufallszahlen, wie die Durchführung einer kryptographisch sicheren Pseudozufallszahlengenerator (CSPRNG) mit dem `crypto.getRandomValues()` Methode.
 
-- ["Math.random()" Dokumentation von Mozilla Developers Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- ["Generating Random Numbers in JavaScript" von Flavio Copes](https://flaviocopes.com/javascript-random/)
-- [Quellcode der Linear-Kongruenzmethode von Wikipedia](https://en.wikipedia.org/wiki/Linear_congruential_generator#Parameters_in_common_use)
+## Siehe auch
+Für weitere Informationen und Lernressourcen, siehe die folgenden Links:
+
+- [MDN Web-Dokumentation zu `Math.random()`](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+- [MDN Web-Dokumentation zu `crypto.getRandomValues()`](https://developer.mozilla.org/en-US/docs/Web/API/Crypto/getRandomValues)
+- [Mehr über Pseudozufallszahlengenerator](https://de.wikipedia.org/wiki/Pseudozufallszahlengenerator)

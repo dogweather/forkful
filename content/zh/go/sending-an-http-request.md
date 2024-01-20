@@ -1,7 +1,7 @@
 ---
-title:                "发送一个http请求。"
-html_title:           "Go: 发送一个http请求。"
-simple_title:         "发送一个http请求。"
+title:                "发送http请求"
+html_title:           "C#: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "Go"
 category:             "Go"
 tag:                  "HTML and the Web"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是HTTP请求
-发送HTTP请求指的是使用Hypertext Transfer Protocol (HTTP)协议向服务器发送请求，以获取特定的数据或资源。程序员通常使用HTTP请求来连接不同的应用程序，使它们能够共享数据并实现更多的功能。
+## 什么和为什么？
+HTTP请求是一个让程序与互联网上的其他服务器进行数据交互的方式。程序员之所以发送HTTP请求，是因为这是他们获取、制作、更新或删除网络上数据的主要手段。
 
-## 如何发送HTTP请求
-在Go语言中，我们可以使用内置的net/http包来发送HTTP请求。以下是一个简单的示例，使用GET请求从谷歌API获取搜索结果：
-```
+## 如何操作
+以下是一段简单的在Go中发送HTTP GET请求的代码：
+
+```Go
 package main
 
 import (
-	"fmt"
+	"io/ioutil"
+	"log"
 	"net/http"
 )
 
 func main() {
-	request, err := http.NewRequest("GET", "https://www.googleapis.com/customsearch/v1?key=123456&cx=017576662512468239146:omuauf_lfve&q=golang", nil)
+	response, err := http.Get("http://webcode.me")
 	if err != nil {
-		fmt.Println("请求错误: ", err)
+		log.Fatal(err)
 	}
-	response, err := http.DefaultClient.Do(request)
+	defer response.Body.Close()
+
+	data, err := ioutil.ReadAll(response.Body)
 	if err != nil {
-		fmt.Println("请求错误: ", err)
+		log.Fatal(err)
 	}
-	fmt.Println(response.Status)
+
+	log.Println(string(data))
 }
 ```
-输出结果为:
-```
-200 OK
-```
-请注意，您需要替换Google API密钥和自定义搜索ID以使示例代码生效。
+运行上述程序，你将看到从`http://webcode.me`获取的HTML内容输出。
 
-## 深入了解
-- 历史背景：HTTP协议最初由Tim Berners-Lee在1989年提出，用于在客户端和服务器之间传输超文本数据。
-- 其他选项：除了Go语言的net/http包，还有其他流行的HTTP客户端库，如Postman和cURL。
-- 实现细节：HTTP请求的实现包括构建并发送请求、等待服务器响应、处理响应数据等步骤。
+## 深入探讨
+在HTTP兴起之初，大多数程序员需要手动在TCP层建立连接，这是一个颇为复杂且易出错的过程。随着HTTP请求的普及，如今我们可以便捷安全地获取或发送数据。
 
-## 查看更多信息
-- [Go语言官方文档](https://golang.org/pkg/net/http/)
-- [HTTP协议的历史](https://www.w3.org/Protocols/)
-- [cURL文档](https://curl.haxx.se/docs/)
+除了使用核心`net/http`包外，你也可以选择第三方的HTTP请求库，例如`gorilla/mux`，这些库可能提供了一些额外的功能和优化。
+
+就实现细节来说，HTTP请求包括将请求信息装入特定的数据格式，通过TCP/IP协议将其发送到服务器，最后接收并解码服务器的回应。
+
+## 另请参阅
+- Go官方文档对`net/http`包的说明：https://golang.org/pkg/net/http/
+- 第三方HTTP请求库‘gorilla/mux’的Github页面：https://github.com/gorilla/mux
+- 更深入的了解HTTP请求的文章：https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Overview

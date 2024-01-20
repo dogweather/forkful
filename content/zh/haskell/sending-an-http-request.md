@@ -1,7 +1,7 @@
 ---
-title:                "发送一个http请求"
-html_title:           "Haskell: 发送一个http请求"
-simple_title:         "发送一个http请求"
+title:                "发送http请求"
+html_title:           "C#: 发送http请求"
+simple_title:         "发送http请求"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "HTML and the Web"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# "什么是HTTP请求？为什么程序员要使用它？"
+# Haskell中的HTTP请求：一窥其奥秘
 
-在编程中，发送HTTP请求是指向某个网络服务器发送请求，以获取或传输信息的过程。程序员通常会使用HTTP请求来与其他服务器上的应用程序进行交互，例如从一个API获取数据或向一个网页发送数据。
+## 什么以及为什么？
 
-# "如何操作："
+HTTP请求是一种协议，使得程序可以通过网络从服务端获取数据或发送数据给服务端。程序员之所以使用，是因为这是Web交互的基础。
+
+## 如何实施？
+
+在Haskell中，你可以使用HTTP库，具体如下：
+
 ```Haskell
 import Network.HTTP
-import Network.URI
 
 main = do
-  -- 创建一个简单的GET请求
-  response <- simpleHTTP (getRequest "http://www.example.com")
-  -- 获取响应的内容
-  responseBody <- getResponseBody response
-  -- 打印出响应内容
-  putStrLn responseBody
-  
-  -- 创建一个带有请求头的GET请求
-  let request = Request {rqURI = fromJust $ parseURI "http://www.example.com",
-                         rqMethod = GET,
-                         rqHeaders = [mkHeader HdrUserAgent "MyCustomUserAgent"],
-                         rqBody = ""}
-  -- 发送请求
-  response2 <- simpleHTTP request
-  -- 获取响应的内容
-  responseBody2 <- getResponseBody response2
-  -- 打印出响应内容
-  putStrLn responseBody2
+  response <- simpleHTTP (getRequest "http://httpbin.org/get")
+  putStrLn =<< getResponseBody response
 ```
 
-# "深入探讨："
-HTTP请求是基于客户端-服务器架构的一种通信协议，它被用于在客户端和服务器之间传输数据。它由Tim Berners-Lee在1989年设计并在1996年正式发布。HTTP请求通常有两种方法：GET方法用于获取数据，POST方法用于向服务器发送数据。除了Haskell，其他编程语言也支持发送HTTP请求，例如Python中的Requests库和Java中的HttpURLConnection类。
+我们首先导入`Network.HTTP`模块，然后使用`simpleHTTP`函数和`getRequest`建立HTTP GET请求。接着我们处理响应，打印出服务器的响应体。
 
-# "相关网址："
-- [官方Haskell文档关于HTTP请求的说明](https://hackage.haskell.org/package/HTTP-4000.3.15/docs/Network-HTTP.html)
-- [Tim Berners-Lee关于HTTP的原始论文](https://tools.ietf.org/html/rfc1945)
+## 深度探索
+
+### 历史背景
+
+Haskell的HTTP库在早期的开发中就已经存在，它提供了一个操作简单但功能齐全的HTTP客户端接口。
+
+### 可选方法
+
+虽然这个库在大部分使用场景下都能胜任，但也有一些其他的库提供了更多高级的功能，比如`http-conduit`和`wreq`。
+
+### 实现细节
+
+`simpleHTTP`函数实际上是执行了一个`Request`类型的参数，并返回一个`IO Response`，返回的是服务器的响应。`Request`是描述HTTP请求的数据类型，而`Response`是描述HTTP响应的数据类型。
+
+## 参见
+- [Haskell HTTP库文档](https://hackage.haskell.org/package/HTTP)
+- [http-conduit库](https://hackage.haskell.org/package/http-conduit)
+- [wreq库](https://hackage.haskell.org/package/wreq)

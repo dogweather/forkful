@@ -1,7 +1,7 @@
 ---
-title:                "Comenzando un nuevo proyecto"
-html_title:           "Lua: Comenzando un nuevo proyecto"
-simple_title:         "Comenzando un nuevo proyecto"
+title:                "Iniciando un nuevo proyecto"
+html_title:           "Bash: Iniciando un nuevo proyecto"
+simple_title:         "Iniciando un nuevo proyecto"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Getting Started"
@@ -10,35 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué? 
-Comenzar un nuevo proyecto en programación es simplemente el proceso de iniciar un nuevo proyecto de código desde cero. Los programadores lo hacen para crear nuevas aplicaciones, solucionar problemas o mejorar proyectos existentes.
+## ¿Qué & Por qué?
 
-## ¡Cómo hacerlo! 
-Para iniciar un nuevo proyecto en Lua, podemos seguir los siguientes pasos:
+Empezar un nuevo proyecto es como abrir un libro en blanco donde escribes tu propio código. Los programadores hacen esto para experimentar con ideas nuevas, resolver problemas complejos o simplemente aprender algo nuevo.
 
-1. Primero, debemos instalar Lua en nuestro equipo. Podemos hacerlo descargando el paquete de instalación desde su sitio web oficial o utilizando un administrador de paquetes como [LuaRocks](https://luarocks.org).
-2. Una vez instalado, podemos abrir el intérprete de Lua desde la terminal escribiendo `lua`.
-3. Podremos ver un `>` en la pantalla, lo que significa que estamos en el modo interactivo de Lua. Aquí podemos escribir y ejecutar nuestro código línea por línea.
-4. Si queremos crear y ejecutar un script, podemos crear un archivo con extensión `.lua` y escribir nuestro código en él. Luego, podemos ejecutar ese archivo escribiendo `lua archivo.lua` en la terminal.
+## ¿Cómo hacerlo?
 
-¡Eso es todo! Hemos comenzado nuestro nuevo proyecto en Lua y podemos empezar a escribir nuestro código.
+### Primeros pasos
+```
+Lua
+-- Un simple saludo en Lua
+print("¡Hola, Mundo!")
+```
+Output:
+```
+¡Hola, Mundo!
+```
+### Proyecto básico
+```
+Lua
+function saludo(nombre)
+    return "¡Hola, " .. nombre .. "!"
+end
 
-### Ejemplo:
-```Lua
--- Código en modo interactivo
-> print("¡Hola, esto es Lua!")
-¡Hola, esto es Lua!
-
--- Código en un script
-print("¡Hola, esto es Lua!")
+print(saludo("Programador"))
+```
+Output:
+```
+¡Hola, Programador!
 ```
 
-## Profundizando 
-Lua fue creado en 1993 por un equipo de investigadores en la Pontifícia Universidade Católica do Rio de Janeiro. Desde entonces, ha sido utilizado en una gran variedad de proyectos, desde juegos hasta aplicaciones web. Alternativas a Lua incluyen otros lenguajes de scripting como Python y JavaScript.
+## Deep Dive
 
-Para comenzar un nuevo proyecto en Lua, es importante comprender la sintaxis básica y las estructuras de datos del lenguaje. Además, familiarizarse con las bibliotecas y frameworks disponibles puede ser de gran ayuda para facilitar el desarrollo de nuestro proyecto.
+En 1993, Lua fue creada por Roberto Ierusalimschy, Luiz Henrique de Figueiredo, y Waldemar Celes, miembros del equipo Tecgraf en el Instituto Pontifício Universidade Católica do Rio de Janeiro, Brasil. Se diseñó Lua para ser ligera, embebida en aplicaciones, y expansible.
 
-## Vea también 
-- [Sitio web oficial de Lua](https://www.lua.org)
-- [LuaRocks](https://luarocks.org)
-- [Documentación de Lua](https://www.lua.org/docs.html)
+Alternativas a Lua incluyen JavaScript para desarrollo web y Python para propósitos generales de programación. Sin embargo, Lua se distingue por su ligereza y facilidad de embeber en aplicaciones.
+
+Para empezar un nuevo proyecto en Lua, necesitas un editor de texto para escribir tu código y un intérprete de Lua para ejecutarlo. Lua tiene una sintaxis simple que es fácil de leer y escribir.
+
+## See Also
+
+Para más detalles sobre la programación en Lua, echa un vistazo a estos enlaces:
+
+- El Manual de Referencia de Lua: https://www.lua.org/manual/5.4/
+- Programación en Lua, primera edición: https://www.lua.org/pil/1.html
+- LuaUsers wiki, un recurso para la comunidad de usuarios de Lua: http://lua-users.org/wiki/

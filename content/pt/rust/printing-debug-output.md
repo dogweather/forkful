@@ -1,7 +1,7 @@
 ---
-title:                "Imprimindo saída de depuração"
-html_title:           "Rust: Imprimindo saída de depuração"
-simple_title:         "Imprimindo saída de depuração"
+title:                "Imprimindo saída de debug"
+html_title:           "C#: Imprimindo saída de debug"
+simple_title:         "Imprimindo saída de debug"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Testing and Debugging"
@@ -10,37 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O que é e por quê?
 
-A impressão de saída de depuração é uma ferramenta essencial para os programadores durante o desenvolvimento de software. Ela permite que os desenvolvedores vejam como o programa está sendo executado e identifiquem possíveis erros ou problemas.
+Imprimir a saída de depuração em Rust significa exibir valores de variáveis e estruturas no console quando executamos código Rust. Isso permite que os programadores verifiquem o estado de seu código, facilitando a detecção e correção de erros.
 
-Os programadores utilizam a impressão de saída de depuração para testar e verificar a lógica do seu código, além de ajudar a encontrar e corrigir erros em tempo de execução.
+## Como fazer:
 
-## Como Fazer:
-
-Vamos dar uma olhada em um exemplo simples de como imprimir saída de depuração em Rust:
+Vamos mostrar alguns exemplos práticos sobre como imprimir a saída de depuração em Rust.
 
 ```Rust
 fn main() {
-    let x = 10;
-    println!("O valor de x é: {}", x);
+    let x = 5;
+    println!("x = {:?}", x); 
 }
 ```
+Ao executar esse código você vai ver a seguinte saída:
+```Shell
+x = 5
+```
+Neste exemplo, `{:?}` é um marcador de posição que recebe a variável `x` e a imprime na tela.
 
-Neste código, usamos o `println!()` para imprimir a mensagem "O valor de x é: 10". O `println!()` é uma macro que formata a saída para nós, com o valor da variável `x`.
+Para estruturas mais complexas, precisamos usar a derivação `Debug`:
 
-## Deep Dive:
+```Rust
+#[derive(Debug)]
+struct Pessoa {
+    nome: String,
+    idade: u8,
+}
 
-A impressão de saída de depuração tem sido uma prática comum entre os programadores há muito tempo, mas com o aumento da complexidade dos programas, surgiram ferramentas mais avançadas para ajudar na depuração.
+fn main() {
+    let pessoa = Pessoa { nome: String::from("João"), idade: 30 };
+    println!("{:?}", pessoa);
+}
+```
+A saída será semelhante a:
+```Shell
+Pessoa { nome: "João", idade: 30 }
+```
+## Mergulho profundo
 
-Um exemplo é o uso de _log files_, que registram todas as saídas de depuração para uma arquivo de texto, facilitando a identificação de erros em programas maiores e mais complexos.
+A capacidade de imprimir a saída de depuração é uma característica essencial de qualquer linguagem de programação. Em Rust, é relativamente simples devido ao macro `println!`, que é uma melhoria em relação a outras linguagens que exigem importação explícita de bibliotecas ou uso de funções semelhantes para depuração.
 
-Outra alternativa é a utilização de debuggers, que permitem que os desenvolvedores interrompam a execução do programa em pontos específicos e vejam os valores das variáveis em tempo real.
+Uma alternativa ao `println!` é o macro `dbg!`, que fornece informação adicional como a linha do código que foi executada, tornando ainda mais fácil o processo de depuração.
 
-Em Rust, a macro `println!()` é implementada como parte da biblioteca padrão (`std`), utilizando o sistema de formato do _crate_ `std::fmt`. Isso permite que os desenvolvedores personalizem a saída da impressão de depuração de acordo com suas necessidades.
+Em relação aos detalhes de implementação, o macro `println!` em Rust depende da implementação do trait `std::fmt::Debug`, que por sua vez usa a formatação de sequência de escape `{:?}`. Se você tentar usar `{:?}` com um tipo de dados que não implementa `Debug`, o compilador Rust irá gerar um erro em tempo de compilação.
 
-## Veja Também:
+## Ver também
 
-- [Documentação Oficial do Rust](https://doc.rust-lang.org/std/macro.println.html)
-- [Introdução ao debugging em Rust](https://medium.com/@nunoferro/introdu%C3%A7%C3%A3o-ao-debugging-no-rust-269cb6d281c1)
-- [Guia de Depuração de Rust](https://rust-lang-nursery.github.io/rust-cookbook/development_tools/debugging.html)
+Para mais informações e estudos mais aprofundados, consulte estas fontes:
+
+1. [Documentação oficial do Rust](https://doc.rust-lang.org/std/fmt/): Um excelente recurso para entender todos os aspectos da formatação de saída e o uso de macros.
+2. [The Rust Programming Language](https://nostarch.com/Rust2018): Este livro é um recurso abrangente para tudo relacionado ao Rust, inclusive a impressão de saída de depuração.
+3. [The Book Chapter 5.1 - Derivação de Traits](https://doc.rust-lang.org/book/ch05-01-defining-structs.html#adding-useful-functionality-with-derive): Aqui está uma vistas mais aprofundadas sobre como Rust maneja a derivação de traits, crucial ao se trabalhar com `Debug`.

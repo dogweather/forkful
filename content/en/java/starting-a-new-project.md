@@ -1,6 +1,6 @@
 ---
 title:                "Starting a new project"
-html_title:           "Java recipe: Starting a new project"
+html_title:           "Bash recipe: Starting a new project"
 simple_title:         "Starting a new project"
 programming_language: "Java"
 category:             "Java"
@@ -11,42 +11,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Starting a new project in programming refers to creating a new software or application from scratch. Programmers do this in order to meet a specific need or solve a problem. It allows them to have full control over the project and tailor it to their unique requirements.
 
-## How to:
-Coding in Java to start a new project is a simple process. First, import the necessary packages and create a main method. Then, declare and initialize any variables needed for the project. Finally, use the System.out.println() method to print out the desired output. Here is an example code:
+Starting a new project in Java means initializing a fresh workspace to build a new application or system from scratch. Programmers do it to create software that solves problems or serves specified purposes, and in the case of Java, it could be versatile platforms ranging from desktop applications, web services, to Android apps.
 
+## How To:
+
+Below is a simple step-by-step guide to creating a new Java project using IntelliJIDEA.
+
+**Step 1 - Launch IntelliJ IDEA & Create New Project**
 ```Java
-import java.util.Scanner;
-
-public class NewProject {
-   public static void main(String[] args) {
-      Scanner input = new Scanner(System.in);
-      int num1, num2, sum;
-      
-      System.out.print("Enter first number: ");
-      num1 = input.nextInt();
-      
-      System.out.print("Enter second number: ");
-      num2 = input.nextInt();
-      
-      sum = num1 + num2;
-      System.out.println("Sum = " + sum);
-   }
+File > New > Project
+```
+**Step 2 - Choose Project Type**
+```Java
+Select 'Java' on the left; Make sure the correct SDK is selected.
+```
+**Step 3 - Configure Project**
+```Java
+Give your project a Name, select a Location, and make sure the 'Create Project from template' box is unchecked.
+Click on 'Finish' to create the project.
+```
+**Step 4 - Create a New Java Class**
+```Java
+Right-click on 'src' > New > Java Class
+Name your class, and click 'OK'
+```
+**Step 5 - Write HelloWorld Program**
+```Java
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World");
+    }
 }
 ```
+When you run this, your output should be:
+```Java
+Hello, World
+```
+These steps initialize a project structure, which gives us a platform to build and run our code.
 
-Output:
-Enter first number: 5 <br>
-Enter second number: 3 <br>
-Sum = 8
+## Deep Dive
 
-## Deep Dive:
-Creating a new project in Java is a widely-used practice due to its flexibility and scalability. It allows for efficient coding and easy maintenance, making it a preferred language for large projects. Additionally, Java is a cross-platform language, meaning the code can run on any operating system.
+Starting a new project wasn't always this straightforward. Back in the day with just text editors and command line tools, organizing your sources and binaries was manually done.
 
-There are alternative languages for starting a new project, such as Python or C++, but Java's object-oriented programming approach makes it easier to understand and modify code. This is especially useful for collaborative projects.
+Alternatives to starting a new project in IntelliJ IDEA can be found in other integrated development environments (IDEs) like Eclipse and NetBeans. Each platform generally involves similar steps: Creating new project, selecting the project type, specifying project details, and setting up your working environment.
 
-The implementation of starting a new project in Java involves creating a package to organize the code and then defining classes within that package. From there, objects and methods can be created to perform various tasks. It's important to continuously test and debug the code during the development process.
+Under the covers, when you start a new project in Java, the IDE sets up a file structure that separates source files (*.java) from compiled class files (*.class), and resources. It creates a .idea folder and a .iml file for storing project specific settings.
 
-## See Also:
-To learn more about starting a new project in Java, check out the official Java tutorial on Oracle's website: https://docs.oracle.com/javase/tutorial/getStarted/index.html. You can also explore popular Java development tools such as Eclipse or IntelliJ IDEA for creating and managing projects.
+## See Also
+
+There's a mountain of resources out there for new Java coders. Here are links to some excellent ones:
+- Oracle Java Documentation [link](https://docs.oracle.com/javase/tutorial/)
+- JetBrains IntelliJ IDEA Documentation [link](https://www.jetbrains.com/help/idea/)
+- Eclipse Foundation's Java IDE (Eclipse) Tutorial [link](https://www.vogella.com/tutorials/Eclipse/article.html)
+- Apache Foundation's Java IDE (NetBeans) Tutorial [link](https://netbeans.apache.org/kb/docs/java/quickstart.html)

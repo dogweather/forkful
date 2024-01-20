@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "Java: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "Java"
 category:             "Java"
@@ -11,53 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## ¿Qué y por qué?
-Descargar una página web es obtener su contenido en formato HTML, es decir, el código que le da forma y estructura. Los programadores suelen hacer esto para extraer información específica de la página web o para automatizar tareas en su trabajo.
+
+Descargar una página web implica traer los datos de esa página desde un servidor a tu ordenador. Los programadores hacen esto para interactuar con el contenido web, ya sea para análisis de datos, pruebas o automatización.
 
 ## Cómo hacerlo:
-Para descargar una página web en Java, podemos utilizar la biblioteca URL y su clase openStream (). El siguiente código muestra cómo obtener el contenido HTML de una página web y guardarlo en un archivo:
+
+Aquí te muestro un ejemplo utilizando la biblioteca JSoup. Primero, necesitarás agregar la dependencia de JSoup en tu archivo pom.xml si estás usando Maven.
 
 ```Java
-import java.io.*;
-import java.net.*;
+<dependency>
+    <groupId>org.jsoup</groupId>
+    <artifactId>jsoup</artifactId>
+    <version>1.12.1</version>
+</dependency>
+```
 
-public class DescargarPaginaWeb {
-    public static void main(String[] args) {
-        try {
-            // Establecer la URL de la página web
-            URL url = new URL("https://www.example.com");
-            
-            // Abrir una conexión a la página web y obtener su contenido
-            URLConnection connection = url.openConnection();
-            InputStream inputStream = connection.getInputStream();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-            
-            // Crear un archivo para guardar el contenido HTML
-            File archivo = new File("pagina.html");
-            
-            // Leer el contenido de la página web y escribirlo en el archivo
-            FileWriter writer = new FileWriter(archivo);
-            String linea;
-            while ((linea = reader.readLine()) != null) {
-                writer.write(linea + "\n");
-            }
-            writer.close();
-            
-            // Imprimir un mensaje de éxito
-            System.out.println("Página web descargada con éxito!");
-        } catch (IOException e) {
-            System.out.println("Error al descargar la página web.");
-        }
+Ahora, puedes descargar una página web de la siguiente manera:
+
+```Java
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class WebDownloader {
+    public static void main(String[] args) throws Exception {
+        String url = "http://www.example.com";
+        Document document = Jsoup.connect(url).get();
+        System.out.println(document.html());
     }
 }
 ```
 
-## Profundizando:
-Descargar páginas web es una técnica muy usada en web scraping, que es el proceso de extraer información de páginas web de manera automatizada. También se utiliza para automatizar tareas en el mundo del desarrollo web.
+El resultado será el HTML completo de la página "http://www.example.com".
 
-Existen otras bibliotecas en Java que facilitan la descarga de páginas web, como Apache Commons HttpClient y Jsoup. Estas bibliotecas ofrecen más funcionalidades y opciones de configuración.
+## Inmersión profunda
 
-Es importante tener en cuenta que al descargar páginas web debemos respetar los términos de uso y derechos de autor de sus propietarios.
+La descarga de páginas web ha sido una herramienta esencial para los programadores desde los primeros días del internet. Hoy en día, se utiliza en muchas áreas, incluyendo la minería de datos, las pruebas de aplicaciones web y la automatización.
 
-## Ver también:
-- [Java URL library documentation](https://docs.oracle.com/javase/8/docs/api/java/net/URL.html)
-- [Web scraping with Java](https://www.scrapingbee.com/blog/web-scraping-java/)
+Los métodos alternativos para descargar una página web incluyen el uso de otras bibliotecas de Java como HttpClient de Apache o la API de HttpURLConnection incorporada en Java. Cada una tiene sus propios pros y contras en términos de facilidad de uso y flexibilidad.
+
+Detalles de implementación: El método Jsoup.connect() establece una conexión con la URL dada, y el método get() envía una solicitud GET a dicha dirección. Esto trae la página completa, que luego puede ser adoptada y manipulada.
+
+## Ver también
+
+1. [Documentación de JSoup](https://jsoup.org/)
+2. [Guía de HttpClient de Apache](http://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/)
+3. [Clase HttpURLConnection de Java](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Vérifier l'existence d'un répertoire"
-html_title:           "Clojure: Vérifier l'existence d'un répertoire"
-simple_title:         "Vérifier l'existence d'un répertoire"
+title:                "Vérifier si un répertoire existe"
+html_title:           "Clojure: Vérifier si un répertoire existe"
+simple_title:         "Vérifier si un répertoire existe"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Files and I/O"
@@ -10,21 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire ?
-Vérifier si un répertoire existe est simplement la vérification pour savoir si un répertoire donné est présent sur votre système de fichiers. Les programmeurs effectuent souvent cette vérification pour s'assurer que les fichiers peuvent être correctement lus ou écrits dans un emplacement donné.
+## Qu'est-ce que c'est et pourquoi?
+
+Vérifier si un répertoire existe consiste simplement à s'assurer que le chemin vers un dossier spécifié piste bien vers un emplacement réel sur le système de fichiers. C’est essentiel pour éviter les erreurs lors de l'écriture, de la lecture ou du déplacement de fichiers.
 
 ## Comment faire :
-Voici comment vérifier si un répertoire existe en utilisant Clojure :
 
+Utiliser `java.io.File` avec `exists` et `directory?` de Clojure. Le premier vérifie si le chemin existe, le deuxième confirme si c'est un répertoire.
+
+```Clojure
+(defn directory-exists? [dir-path]
+  (let [dir (java.io.File. dir-path)]
+    (and (.exists dir) (.isDirectory dir))))
 ```
-(if (java.io.File. "/chemin/vers/repertoire").isDirectory())
-  (println "Le répertoire existe !"))
+
+Exemple d'utilisation :
+
+```Clojure
+(directory-exists? "/mon/chemin/vide")
+; => false
+
+(directory-exists? "/chemin/existant")
+; => true
 ```
 
-Le code ci-dessus crée un objet `java.io.File` pour le chemin donné puis utilise la méthode `isDirectory()` pour vérifier s'il s'agit d'un répertoire. Si oui, il affiche un message indiquant que le répertoire existe.
+## Deep Dive :
 
-## Plongée en profondeur :
-Dans le passé, cette vérification était effectuée en utilisant la commande système `ls` pour lister les fichiers et répertoires dans un emplacement donné. Cependant, cela n'est pas une méthode fiable car cela dépend du système d'exploitation et des autorisations utilisateur. Aujourd'hui, la méthode la plus courante pour vérifier si un répertoire existe est d'utiliser la classe `java.io.File` comme présenté précédemment.
+`java.io.File` a été présent dans Java depuis JDK 1.0, donc c'est une solution éprouvée. Cependant, notez que depuis Java 7, nous avons une alternative, `java.nio.file.Files` avec la méthode `exists` et `isDirectory`, qui est plus moderne et flexible.
 
-## Voir aussi :
-Pour en savoir plus sur la manipulation de fichiers en Clojure, vous pouvez consulter la documentation officielle sur les entrées/sorties : https://clojure.org/reference/io. Vous pouvez également consulter la bibliothèque `clj-io` pour faciliter la manipulation de fichiers et répertoires en Clojure : https://github.com/clj-commons/clj-io.
+Détails de mise en œuvre : `java.io.File.exists()` vérifie simplement l'accessibilité en lecture des fichiers. Ce n'est donc pas une méthode fiable pour vérifier les permissions complètes sur un répertoire. Si vous avez besoin de plus de contrôle, regardez du côté de `java.nio.file.Files`.
+
+## À Voir :
+
+1. [Java File Docs](https://docs.oracle.com/javase/8/docs/api/java/io/File.html)
+2. [Clojure Java Interop](https://clojure.org/reference/java_interop)
+3. [Java Nio Files](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)

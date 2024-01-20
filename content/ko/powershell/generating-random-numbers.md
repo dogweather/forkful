@@ -1,7 +1,7 @@
 ---
-title:                "랜덤 숫자 생성하기"
-html_title:           "PowerShell: 랜덤 숫자 생성하기"
-simple_title:         "랜덤 숫자 생성하기"
+title:                "임의의 숫자 생성하기"
+html_title:           "Elixir: 임의의 숫자 생성하기"
+simple_title:         "임의의 숫자 생성하기"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Numbers"
@@ -10,28 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇인가 & 왜 하는가?
+## 무엇이며 왜 사용하는가?
 
-랜덤 숫자 생성이란 무엇인가요? 간단히 말해서, 랜덤 숫자 생성은 컴퓨터가 사용자가 지정한 범위 내에서 매번 무작위로 숫자를 선택하도록 하는 것입니다. 왜 이런 일을 하는 걸까요? 일단은 보안이나 통계 분석 등 여러 가지 이유로 원하는 숫자를 무작위로 생성하는 것이 프로그래머들에게 유용하기 때문입니다.
+난수 생성이란 프로그램 실행시마다 변경되는 랜덤한 값을 의미합니다. 프로그래머들은 종종 유니크한 ID 생성, 테스트 데이터 생성등에 이를 활용합니다.
 
-## 진행 방법:
+## 어떻게 사용하는가:
+
+PowerShell에서 난수를 생성하는 방법은 아래의 코드 예제와 같습니다.
 
 ```PowerShell
-# 0에서 9 사이의 무작위 숫자 생성
-Get-Random -Minimum 0 -Maximum 10
-
-# 시작과 끝 날짜 사이의 무작위 날짜 생성
-Get-Random -Minimum (Get-Date -Date "01/01/2020") -Maximum (Get-Date -Date "12/31/2020")
-
-# 범위 내에서 여러 개의 무작위 숫자 생성
-Get-Random -Count 5 -Minimum 0 -Maximum 100
+# Get-Random cmdlet 을 사용한 예제
+$randomNumber = Get-Random -Minimum 0 -Maximum 100
+Write-Host "생성된 난수는 $randomNumber 입니다."
 ```
 
-## 깊이 파고들기:
+이 코드를 실행하면 0에서 100 사이의 무작위 수가 생성됩니다.
+ 
+## 디프다이브:
 
-(1) 랜덤 숫자 생성은 1940년대부터 컴퓨팅 기술이 발달하면서 주요한 문제 중 하나였습니다. 그리고 그 문제를 해결하기 위해 많은 수의 알고리즘이 개발되어 현재에 이르렀습니다. (2) 랜덤 숫자 생성에는 다양한 방법이 존재하며, 컴퓨터와 다른 디바이스에서도 사용할 수 있습니다. 그 중 가장 일반적인 방법은 시간과 컴퓨터 자체로부터 무작위성을 받아오는 것입니다. 하지만 보다 더 안전하고 무작위성이 보장되는 알고리즘도 존재합니다. (3) PowerShell에서는 내장된 `Get-Random` cmdlet을 사용하여 간편하게 랜덤 숫자를 생성할 수 있습니다. 이 cmdlet에는 여러 가지 옵션들이 있으며, 사용자가 원하는 형태와 범위의 랜덤 숫자를 생성할 수 있도록 다양한 기능들이 제공됩니다.
+난수를 생성하는 메서드는 오래 전부터 존재했습니다. 가장 초기의 방법 중 하나는 물리적인 개입을 통한 방법이었습니다 (예: 주사위 던지기). 
 
-## 관련 링크:
+하지만 컴퓨터 시대에 들어서며, 효율적이고 반복 가능한 난수 생성 방법이 필요해졌습니다. 그래서 파워쉘 같은 프로그래밍 언어에서는 난수 생성 메서드를 기본적으로 지원하고 있습니다.
 
-- [PowerShell Get-Random 문서](https://docs.microsoft.com/en-us/powershell/module/Microsoft.PowerShell.Utility/Get-Random?view=powershell-7)
-- [랜덤 숫자 생성 알고리즘에 대한 논문](https://www.random.org/analysis/)
+파워쉘에서는 `Get-Random` cmdlet을 통해 간편하게 난수를 생성할 수 있습니다. 내부적으로는 .NET의 System.Random 클래스를 사용하여 구현되어 있습니다.
+
+대체 방법으로는 난수 생성 알고리즘에 해당하는 Mersenne Twister 같은 라이브러리를 직접 사용하는 것도 있습니다.
+
+## 참고자료:
+
+- Get-Random에 대한 공식 문서: [https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-random)
+- System.Random 클래스 정보: [https://docs.microsoft.com/en-us/dotnet/api/system.random](https://docs.microsoft.com/en-us/dotnet/api/system.random)
+- Mersenne Twister 알고리즘 추가 정보: [https://en.wikipedia.org/wiki/Mersenne_Twister](https://en.wikipedia.org/wiki/Mersenne_Twister)

@@ -1,7 +1,7 @@
 ---
-title:                "コンピュータプログラミングの記事「コマンドライン引数を読む」"
-html_title:           "Haskell: コンピュータプログラミングの記事「コマンドライン引数を読む」"
-simple_title:         "コンピュータプログラミングの記事「コマンドライン引数を読む」"
+title:                "コマンドライン引数の読み取り"
+html_title:           "Bash: コマンドライン引数の読み取り"
+simple_title:         "コマンドライン引数の読み取り"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Files and I/O"
@@ -10,39 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-["
+### 何となぜ?
+コマンドライン引数は、コマンドラインからアプリケーションへの入力です。これを用いることでプログラムはより柔軟で再利用可能になります。
 
-## 何とどうして？
-コマンドライン引数の読み取りとは、起動時にプログラムに渡されるデータを取得することです。プログラマーは、ユーザーからの入力や環境に応じてプログラムの動作を変えるためにこの機能を使用します。
+### 使用方法:
+次のコードはコマンドライン引数を読み取るHaskellプログラムの基本形です。
 
-## 実際にやってみよう
-以下のコードを使用して、Haskellでコマンドライン引数を読み取る方法をご紹介します。
+```haskell
+import System.Environment
 
-```Haskell
-import System.Environment (getArgs)
+main :: IO ()
 main = do
     args <- getArgs
-    putStrLn ("引数: " ++ show args)
+    print args
 ```
+これを実行すると、コマンドライン引数をリスト形式で表示します。例えば、`runhaskell Test.hs arg1 arg2 arg3` のように実行すると、 `["arg1","arg2","arg3"]` の形式で出力されます。
 
-コマンドラインでプログラムを実行する際に、引数として任意の値を与えることができます。例えば、以下のように実行します。
+### ディープダイブ:
+コマンドライン引数は Unixシステム読み出しの歴史を持つ古老の仕組みです。その代替として環境変数や設定ファイルがありますが、状況によりコマンドライン引数が最適な場合もあります。Haskellの `getArgs` 関数は最も基本的な方法で、これを使用すると全ての引数をStringのリストとして取得します。より高度な操作が必要な場合はライブラリを検討してみてください。
 
-```
-$ runhaskell example.hs foo bar baz
-```
-
-実行結果は、
-```
-引数: ["foo", "bar", "baz"]
-```
-となります。
-
-## 詳しく掘り下げる
-コマンドライン引数の読み取り機能は、Haskellだけでなく他の言語でもよく使用されています。代表的なものとして、Pythonの`sys.argv`やC++の`argc`と`argv`があります。
-
-Haskellでは、`System.Environment`モジュールの`getArgs`関数を使用してコマンドライン引数を取得します。この関数は、プログラム起動時に渡された全ての引数を文字列のリストとして返します。
-
-## 参考リンク
-- [HaskellのgetArgs関数ドキュメント](https://hackage.haskell.org/package/base-4.14.1.0/docs/System-Environment.html#v:getArgs)
-- [Pythonのsys.argvドキュメント](https://docs.python.org/3/library/sys.html#sys.argv)
-- [C++のargcとargvドキュメント](https://en.cppreference.com/w/cpp/language/main_function)
+### 参照文献:
+- [Real World Haskell: コマンドライン引数](http://book.realworldhaskell.org/read/io-case-study-a-library-for-searching-the-filesystem.html)
+- [Haskell Wiki: コマンドライン引数](https://wiki.haskell.org/Tutorials/Programming_Haskell/Argument_handling) 
+- [Hackage: optparse-applicative パッケージ](https://hackage.haskell.org/package/optparse-applicative)

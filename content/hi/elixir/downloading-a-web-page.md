@@ -1,7 +1,7 @@
 ---
-title:                "एक वेब पेज को डाउनलोड करना"
-html_title:           "Elixir: एक वेब पेज को डाउनलोड करना"
-simple_title:         "एक वेब पेज को डाउनलोड करना"
+title:                "एक वेब पेज डाउनलोड करना"
+html_title:           "Kotlin: एक वेब पेज डाउनलोड करना"
+simple_title:         "एक वेब पेज डाउनलोड करना"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "HTML and the Web"
@@ -11,21 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## क्या और क्यों?
-वेब पेज को डाउनलोड करना क्या है और इसे क्यों करेंगे? वेब डेवलपर्स अपने कोड को टेस्ट और सुधारने के लिए वेब पेज को डाउनलोड करते हैं। इससे वे सुनिश्चित कर सकते हैं कि उनका कोड सही से काम कर रहा है और उन्हें उसमे कुछ भी सुधार की जरूरत हो तो वह कर सकते हैं।
 
-## कैसे करें?
+वेबपेज को डाउनलोड करना मतलबे उसे अपने कंप्यूटर पर स्थानीय तौर पर सहेजना। प्रोग्रामर्स इसे सॉर्स कोड को अनालाइज़ या सामग्री का परीक्षण करने के लिए करते हैं। 
+
+## कैसे करें:
+
 ```Elixir
-httpc = :ssl.ssl_context(system_time: -576000)
-{:ok, {:response, status, _headers, body}} = :httpc.request(:get, {"https://www.example.com", :inet_hostname, 443, [], "User-Agent" => "Elixir"}, nil, [], httpc)
+defmodule Downloader do
+  def download_page(url) do
+    {:ok, body} = HTTPoison.get!(url).body
+    String.split(body, "\n")
+  end
+end
 ```
 
-जब आप वेब पेज को डाउनलोड करना चाहते हों, तो आपको सबसे पहले SSL साइट को सत्यापित करने के लिए एक SSL भंग निर्धारित करना होगा। फिर आप HTTPC को उपयोग करके GET रिक्वेस्ट भेज सकते हैं और HTTPC से आपको उत्तर मिलेगा। आप ब्राउजर से इस रिक्वेस्ट को भेज सकते हैं।
+फ़ंक्शन `download_page` यूआरएल को डाउनलोड करता है और वेबपेज की सामग्री को वापस लौटाता है। ये सामग्री फाइल्स की फॉर्म में होती हैं।
 
-## गहराई में जाएं
-वेब पेज को डाउनलोड करने के लिए एक अन्य विकल्प है कि आप कैनोनिकल URL को निर्धारित करने के लिए [RPC] (https://hexdocs.pm/rpc/) का उपयोग कर सकते हैं। इससे आप वेब पेज से डेटा को प्राप्त करने के लिए एक ऐसा सेवा प्राप्त कर सकते हैं जो कि आपके सर्वर पर मौजूद होता है। वेब पेज को डाउनलोड करने के लिए, आपको वेब पेज का पता जानकारी को प्राप्त करने की जरूरत है, और फिर आपको उस पते को उपयोग करके एक रिक्वेस्ट भेजनी होगी।
+## ज्यादा ज़रूरी जानकारी
 
-## अधिक जानें
-आप HTTPC की हेक्सडॉक्स पेज पर अधिक जानकारी देख सकते हैं। अधिक विस्तृत जानकारी के लिए, आप आधिकारिक [Elixir कॉम्यूनिटी वेबसाइट] (https://elixir-lang.org/) पर भी जा सकते हैं।
+वेबपेजों की डाउनलोडिंग हमेशा से ही जरूरी रही है, चाहे वे ऑफ़लाइन पढ़ने के लिए हों या डेटा एनालिटिक्स परोजेक्ट्स के लिए। इतने सालों में कई दूसरे तरीके भी आ गए हैं, जैसे कि `wget` या `curl` उपयोग करना लेकिन प्रोग्राम पुरा नियंत्रण देता है कि किसे डाउनलोड करना हैं और उसे कैसे संसाधित करना हैं। 
 
-## देखें भी
-अगर आप वेब एप्लिकेशन विकसित कर रहे हैं, तो आप [Phoenix] (https://hexdocs.pm/phoenix/Phoenix.html) फ्रेमवर्क को भी चेक आउट कर सकते हैं जो कि Elixir पर आधारित है और वेब डेवलपमेंट को आसान बनाता है। आप [Elixir Forum] (https://elixirforum.com/) पर भी जाकर अपनी समस्याओं को पूछ सकते हैं और इलाहाबाद [इलाहाबाद के [एलेक्सिर यूज़र ग्रुप] (https://www.meetup.com/Elixir-User-Group-Allahabad/) से जुड़ सकते हैं।
+यदि आप Elixir में डाउनलोडिंग करना चुनते हैं, तो आप `HTTPoison` जैसे पैकेज पर भरोसा कर सकते हैं, जो एक HTTP प्रोटोकॉल पुस्तकालय है।
+
+## देखें भी:
+
+1. [HTTPoison GitHub](https://github.com/edgurgel/httpoison)
+2. [Elixir Official Website](https://elixir-lang.org/)
+3. [Hex: package manager for the Erlang ecosystem](https://hex.pm/) 
+4. [Elixir School](https://elixirschool.com/en/)
+5. [Erlang Solutions Elixir Tutorials](https://www.erlang-solutions.com/resources/knowledge-hub/elixir-tutorials.html)

@@ -1,6 +1,6 @@
 ---
 title:                "문자열을 소문자로 변환하기"
-html_title:           "PHP: 문자열을 소문자로 변환하기"
+html_title:           "Bash: 문자열을 소문자로 변환하기"
 simple_title:         "문자열을 소문자로 변환하기"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,36 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+# 문자열을 소문자로 변환하기
 
- 문자열을 소문자로 변환하는 것은, 단순히 문자열의 모든 대문자를 소문자로 바꾸는 작업을 의미합니다. 프로그래머들은 이를 하는 이유는 일관성 있는 데이터 처리를 위해서입니다.
+## 1. 무엇이며 왜 하는가?
 
-## 방법:
+문자열을 소문자로 변환하는 것은, 모든 대문자를 소문자로 변경하는 프로그래밍 동작을 의미합니다. 이는 대소문자를 구별하지 않는검색을 수행하거나, 사용자 입력을 정제해야 할 때 사용됩니다.
 
-### 예제 1:
+## 2. 어떻게 하는가?
+
+PHP에서 문자열을 소문자로 변환하는 데는 `strtolower()` 함수를 사용합니다. 아래 예제를 참조하세요:
+
 ```PHP
-$str = "Hello WORLD";
-echo strtolower($str);
+<?php
+$str = "Hello, World!";
+$lowerCaseStr = strtolower($str);
+echo $lowerCaseStr;
+?>
 ```
-출력: "hello world"
 
-### 예제 2:
-```PHP
-$str = "PHP is awesome";
-echo strtolower($str);
-```
-출력: "php is awesome"
+이 스크립트를 실행하면 출력 결과는 "hello, world!"가 됩니다.
 
-## 딥 다이브:
+## 3. 깊이 파헤치기
 
-### 역사적 맥락:
-소문자 변환 함수는 오래된 언어에서도 사용되었으며, 지금은 PHP 뿐만 아니라 거의 모든 프로그래밍 언어에서 기본 제공됩니다.
+* **역사적 맥락** : `strtolower()` 함수는 PHP가 처음 개발된 이후부터 존재하는 기본 함수입니다. PHP5에서는 이 함수가 이전 버전에서 발견된 몇 가지 버그를 수정하여 도입되었습니다.
 
-### 대안:
-문자열을 소문자로 변환하는 또 다른 방법은 `mb_strtolower()` 함수를 사용하는 것입니다. 이 함수는 다국어 문자열에서도 작동하며, 대소문자 변환의 결과가 현재 시스템의 로캘에 따라 달라지는 문제를 해결할 수 있습니다.
+* **대안** : `mb_strtolower()` 함수는 다국어 문자열에 작동하도록 구현된 `strtolower()`의 다국어 버전입니다.
 
-## See Also:
+* **구현 세부 사항** : `strtolower()` 함수는 문자열의 각 문자를 다루며 전방향 구문 분석을 수행합니다. 문자열을 전체적으로 메모리에 저장하고 대문자인 문자를 결정한 후 소문자로 변환합니다.
 
-- [PHP strtolower() function](https://www.php.net/manual/en/function.strtolower.php) - 공식 PHP 문서에서 소문자 변환 함수에 대한 자세한 설명을 확인할 수 있습니다.
-- [PHP mb_strtolower() function](https://www.php.net/manual/en/function.mb-strtolower.php) - 다국어 문자열에 대한 소문자 변환 함수에 대한 자세한 설명을 확인할 수 있습니다.
-- [Unicode and Case Folding](https://www.unicode.org/faq/casemap_charprop.html) - 유니코드에서 대소문자 변환에 대한 규칙을 자세히 알아볼 수 있습니다.
+## 4. 참고 자료
+
+* PHP 공식 문서 소문자 변환에 관한 정보 : [여기를 클릭하세요](https://www.php.net/manual/en/function.strtolower.php)
+* mb_strtolower() 함수에 대한 추가 정보 : [여기를 클릭하세요](https://www.php.net/manual/en/function.mb-strtolower.php)
+* 다국어 문자열 처리 방법에 대한 글 : [여기를 클릭하세요](https://www.php.net/manual/en/book.mbstring.php)

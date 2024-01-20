@@ -1,7 +1,7 @@
 ---
-title:                "Lecture des arguments de ligne de commande."
-html_title:           "PowerShell: Lecture des arguments de ligne de commande."
-simple_title:         "Lecture des arguments de ligne de commande."
+title:                "Lecture des arguments de ligne de commande"
+html_title:           "Ruby: Lecture des arguments de ligne de commande"
+simple_title:         "Lecture des arguments de ligne de commande"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Files and I/O"
@@ -10,48 +10,49 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
-Lecture des arguments de ligne de commande est un outil essentiel pour les programmeurs PowerShell. Cela permet aux utilisateurs d'entrer des paramètres et des données en utilisant une ligne de commande plutôt que d'interagir avec une interface graphique. Cela rend le processus plus rapide et plus facile pour les utilisateurs avancés.
+## Quoi & Pourquoi ?
+La lecture des arguments de la ligne de commande est le processus par lequel un programme de script récupère des informations ou des paramètres passés lors de l'exécution. Les développeurs font cela pour une interaction utilisateur flexible et une exécution conditionnelle de leur code.
 
-## Comment faire:
-Voici deux exemples de code PowerShell qui illustrent comment lire des arguments de ligne de commande.
+## Comment Faire :
 
-```PowerShell
-# Exemple 1:
-Param(
-    [string] $name
-)
-Write-Host "Bonjour $name!"
-
-# Output:
-PS C:\> .\bonjour.ps1 -name "Paul"
-Bonjour Paul!
-```
+Voici une illustration de base sur la façon de lire les arguments de la ligne de commande en PowerShell.
 
 ```PowerShell
-# Exemple 2:
-Param(
-    [switch] $verbose
+# Sample Code
+param (
+  [string]$param1,
+  [string]$param2
 )
-if ($verbose) {
-    Write-Host "Mode verbeux activé!"
-}
-else {
-    Write-Host "Mode verbeux désactivé!"
-}
 
-# Output:
-PS C:\> .\modeverbeux.ps1 -verbose
-Mode verbeux activé!
-PS C:\> .\modeverbeux.ps1
-Mode verbeux désactivé!
+Write-Host "Paramètre 1: $param1"
+Write-Host "Paramètre 2: $param2"
 ```
 
-## Plongeons plus profondément:
-La lecture des arguments de ligne de commande est une pratique courante dans la programmation, datant de l'époque des interfaces CLI (Command Line Interface). Les programmeurs utilisent souvent des alternatives telles que les formulaires interactifs ou les GUI, mais la commande line reste une option préférée pour de nombreux utilisateurs avancés.
+Si vous exécutez ce script avec des arguments de ligne de commande comme ci-dessous :
 
-## Voir aussi:
-Pour en savoir plus sur la lecture des arguments de ligne de commande en PowerShell, vous pouvez consulter les ressources suivantes:
-- [Documentation officielle de Microsoft sur les arguments de ligne de commande en PowerShell](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_functions_advanced_parameters?view=powershell-7)
-- [Tutoriel sur les arguments de ligne de commande en PowerShell sur le blog des développeurs Microsoft](https://devblogs.microsoft.com/scripting/learn-how-to-use-the-powershell-automatic-variable-commandline/)
-- [Guide des bonnes pratiques pour la lecture des arguments de ligne de commande en PowerShell](https://powershell.org/2012/12/08/powershell-best-practices-argument-leveraging/)
+```PowerShell
+.\myScript.ps1 -param1 "bonjour" -param2 "le monde"
+```
+
+Le résultat sera :
+
+```PowerShell
+Paramètre 1: bonjour
+Paramètre 2: le monde
+```
+
+## Plongée Profonde :
+
+Historiquement, la lecture des arguments de la ligne de commande a été une pratique commune dans les langages de programmation de script tels que bash et autres langages C.
+
+Une alternative à cela est l'utilisation des variables d'environnement, mais elles sont généralement moins souples et requièrent plus d'effort pour la gestion des erreurs.
+
+Lors de la lecture des arguments de la ligne de commande en PowerShell, le premier argument non attribué à une variable par un tiret (-) est considéré comme un argument positionnel. Ces arguments sont attribués aux variables déclarées dans la section Param() dans l'ordre où ils apparaissent.
+
+## Voir Aussi :
+
+Pour plus d'informations sur les techniques et les options avancées lors de la lecture des arguments de la ligne de commande dans PowerShell, consultez les liens suivants :
+
+1. [Documentation officielle de PowerShell](https://docs.microsoft.com/fr-fr/powershell/)
+2. [Guide PowerShell sur les arguments de la ligne de commande](https://ss64.com/ps/syntax-args.html)
+3. [Arguments de la ligne de commande dans PowerShell pour les débutants](https://www.howtogeek.com/163127/how-powershell-differ-from-the-windows-command-prompt/)

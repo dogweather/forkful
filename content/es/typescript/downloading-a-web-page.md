@@ -1,6 +1,6 @@
 ---
 title:                "Descargando una página web"
-html_title:           "TypeScript: Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
 simple_title:         "Descargando una página web"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,42 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por qué?
 
-Descargar una página web es el acto de obtener el código fuente de una página web y guardarlo en un archivo en tu computadora. Los programadores hacen esto para acceder a la información de la página web y ser capaces de analizarla, extraer datos, o automatizar ciertas tareas.
+Descargar una página web significa copiar los datos de la página al almacenamiento local de tu ordenador. Los programadores lo hacen para analizar el contenido de la página, realizar pruebas de seguridad o para almacenar su contenido y verlo sin conexión.
 
-## ¡Cómo hacerlo!
+## Cómo hacerlo:
 
-Para descargar una página web en TypeScript, podemos utilizar la biblioteca "node-fetch". Primero, asegúrate de tener Node.js instalado en tu computadora. Luego, en tu terminal, puedes instalar la biblioteca con el siguiente comando:
-
-```TypeScript
-npm install node-fetch --save
-```
-
-Una vez instalada, podemos usarla en nuestro código para descargar una página web. Por ejemplo, si queremos descargar la página principal de Google, podemos hacer lo siguiente:
+A continuación, encontrarás un ejemplo simple sobre cómo descargar una página web usando el módulo de `http` de Node.js y TypeScript. 
 
 ```TypeScript
-const fetch = require('node-fetch');
+import http from 'http';
 
-// URL de la página a descargar
-const url = 'https://www.google.com';
+http.get('http://ejemplo.com', respuesta => {
+  let datos = '';
 
-// Utilizamos la función fetch para obtener los datos de la página
-fetch(url)
-    .then(response => response.text()) // Convertimos los datos a texto
-    .then(data => console.log(data)); // Imprimimos los datos en la consola
+  respuesta.on('data', bloque => {
+    datos += bloque;
+  });
+
+  respuesta.on('end', () => {
+    console.log(datos);
+  });
+}).on('error', err => {
+  console.log(`Error: ${err.message}`);
+});
 ```
+Este script solicita la página de "ejemplo.com" y cada bloque de datos que recibe se añade a la variable `datos`. Una vez que todos los datos han llegado, los imprimirá en la terminal. 
 
-Al ejecutar este código, se imprimirá todo el código fuente de la página de Google en la consola.
+## Buceo profundo
 
-## Buceo Profundo
+Históricamente, descargar páginas web era una tarea relativamente fácil porque las páginas se basaban principalmente en HTML estático. Sin embargo, el desarrollo de JavaScript y la creación de sitios web más dinámicos y ricos en características ha hecho que esta tarea sea más compleja.
 
-Descargar páginas web ha sido una práctica común en la programación desde los inicios de la internet. Originalmente, los programadores utilizaban el protocolo HTTP para acceder y descargar páginas web, pero con el surgimiento de nuevas tecnologías como JavaScript, se ha permitido la descarga de páginas web de manera más robusta y eficiente.
+Hay varias alternativas a la descarga de páginas web con Node.js y TypeScript. Puedes usar `axios` o `request-promise` para tareas más complejas o incluso módulos como `puppeteer` para interactuar con páginas web JavaScript-heavy en lugar de simplemente descargar su contenido.
 
-Existen otras formas de descargar páginas web, como utilizando un navegador automatizado como Selenium o utilizando API's de terceros. Sin embargo, descargar páginas web directamente desde el código sigue siendo una opción muy común debido a su simplicidad y control total sobre los datos descargados.
+Los detalles de implementación pueden variar dependiendo del módulo que uses y de cómo esté configurada la página web. Por ejemplo, si la página emplea técnicas para evitar el scraping, tal vez tengas que simular un navegador legítimo o incluso ejecutar JavaScript en esa página para obtener el contenido que necesitas.
 
-## Ver También
+## Ver también
 
-Si quieres saber más sobre la biblioteca "node-fetch" que utilizamos en nuestro ejemplo, puedes visitar su sitio web oficial: [https://www.npmjs.com/package/node-fetch](https://www.npmjs.com/package/node-fetch)
+Descargar una página web es solo el primer paso para el scraping de sitios web. Aquí tienes algunos enlaces para profundizar tu conocimiento:
 
-También puedes aprender más sobre Node.js aquí: [https://nodejs.org/es/](https://nodejs.org/es/)
+- [MDN Web Docs: HTTP](https://developer.mozilla.org/es/docs/Web/HTTP)
+- [Documentación de Node.js: http](https://nodejs.org/api/http.html)
+- [Recursos sobre web scraping con Node.js y TypeScript](https://hackernoon.com/web-scraping-tutorial-with-javascript-159)
+- [axios, una alternativa al módulo http](https://github.com/axios/axios)
+- [puppeteer, un módulo para controlar navegadores](https://pptr.dev/)

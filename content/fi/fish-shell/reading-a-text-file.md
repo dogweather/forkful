@@ -1,7 +1,7 @@
 ---
-title:                "Tiedoston lukeminen"
-html_title:           "Fish Shell: Tiedoston lukeminen"
-simple_title:         "Tiedoston lukeminen"
+title:                "Tekstitiedoston lukeminen"
+html_title:           "Lua: Tekstitiedoston lukeminen"
+simple_title:         "Tekstitiedoston lukeminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,22 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Mitä ja miksi?
+## Mitä & Miksi?
 
-Kun olet tekemisissä tekstitiedostojen kanssa, on todennäköistä, että sinulla on tarve lukea näitä tiedostoja. Ohjelmoijina meidän täytyy usein työstää suuria määriä tekstitiedostoja, jotka sisältävät tärkeitä tietoja ja koodia. Tekstitiedostojen lukeminen on siis erittäin tärkeä taito, jonka avulla voimme käsitellä tietoja ja saada tarvitsemamme tiedot ohjelmillemme.
+Tekstitiedoston lukeminen tarkoittaa tiedostossa olevan tekstin tulkkausta sen sisällön ymmärtämiseksi. Ohjelmoijat tekevät tämän tietojen noutamiseksi tiedostoista tai tiedostojen sisällön manipuloimiseksi.
 
-Kuinka tehdä:
+## Miten tehdään: 
 
-Fish Shell tarjoaa meille helpon tavan lukea tekstitiedostoja. Voit käyttää komentoa ```cat tiedostonimi``` lukeaksesi tiedoston sisällön. Se näyttää tiedoston sisällön suoraan komentorivillä. Voit myös käyttää ```less tiedostonimi``` komentoa, joka näyttää tiedoston sisällön sivu kerrallaan ja antaa sinun selata sitä edestakaisin. Tämä on erittäin kätevää, jos haluat nopeasti tarkistaa tiedoston sisältöä.
+Lukeminen on yksinkertaista Fish Shell-ohjelmassa. Käytämme `cat`-komentoa näyttääksemme tiedoston sisällön:
 
-Syvempi sukellus:
+```Fish Shell 
+cat /polku/tiedostoon.txt
+```
 
-Historiallisesta kontekstista puhuttaessa, tekstitiedostojen lukeminen on ollut olennainen osa Unix-käyttöjärjestelmää jo pitkään. Aikaisemmin tekstieditorit, kuten "ed" ja "vi", olivat ainoat työkalut, joita voitiin käyttää tekstitiedostojen lukemiseen ja muokkaamiseen. Nykyään on olemassa myös muita vaihtoehtoja, kuten "grep" ja "awk", jotka voivat auttaa tietojen käsittelyssä tekstitiedostoissa. Fish Shell tarjoaa kuitenkin yksinkertaisen ja tehokkaan tavan lukea tiedostoja suoraan käyttöliittymästä.
+Edellä oleva koodi näyttää tekstin, joka sijaitsee polussa `/polku/tiedostoon.txt`. Toisen esimerkin voisi olla lukeminen riveittäin käyttäen `read`-komentoa:
 
-Katso myös:
+```Fish Shell 
+for rivi in (cat /polku/tiedostoon.txt)
+    echo $rivi
+end
+```
 
-Tässä on linkkejä, jotka voivat auttaa sinua oppimaan lisää tekstitiedostojen lukemisesta Fish Shellilla:
+Nämä komentorivit lukevat tiedoston `/polku/tiedostoon.txt` rivi kerrallaan ja tulostavat sen.
 
-- https://fishshell.com/docs/current/cmds/cat.html
-- https://fishshell.com/docs/current/cmds/less.html
-- https://fishshell.com/docs/current/tutorial.html#tutorial-reading-files
+## Syvemmälle:
+
+`cat`-komento, jonka käytämme Fish Shell-ohjelmassa, on peräisin Unix-järjestelmästä ja sitä on käytetty jo 1970-luvulta lähtien tekstitiedostojen lukemiseen. Vaihtoehtoisesti voidaan käyttää `more` tai `less` komentoja, jotka antavat enemmän kontrollia tekstin selaamiseen.
+
+On tärkeää ymmärtää, että nämä komennot lukevat tiedostoja tavu kerrallaan, joten suurten tiedostojen kanssa saattaa tulla suorituskykyongelmia.
+
+## Katso myös: 
+
+Fish Shell -ohjelmoinnin oppimista varten kannattaa tutustua seuraaviin sivustoihin:
+
+- Fish Shellin virallinen dokumentaatio: https://fishshell.com/docs/current/index.html
+- Sovelluksia ja esimerkkejä Fish Shell scripteistä: https://github.com/jorgebucaran/awesome.fish
+- Fish Shell yhteisön keskustelupalsta: https://gitter.im/fish-shell/fish-shell

@@ -1,6 +1,6 @@
 ---
 title:                "Sammenslåing av strenger"
-html_title:           "Bash: Sammenslåing av strenger"
+html_title:           "Arduino: Sammenslåing av strenger"
 simple_title:         "Sammenslåing av strenger"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,33 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor
- 
- Strenger, også kjent som tekst, er en vanlig type data som programmerere jobber med. Noen ganger må vi kombinere eller legge sammen flere strenger for å skape en ny og lengre streng. Dette kalles å konkatenerere strenger, og det er en nyttig teknikk for å bygge dynamiske og tilpassede tekster. 
- 
- ## Hvordan:
- 
- For å konkatenerere strenger i Bash, kan vi bruke operatøren ```+```. La oss se på et enkelt eksempel: 
- 
- ``` 
- string1="Hei,"
- string2="verden!"
- echo $string1$string2
- ```
-Output: Hei, verden!
- 
-Som du kan se, kombinerer Bash operatorene sammen to strenger og skaper en ny streng. Vi kan også bruke variabler i konkateneringen, og til og med legge til ord og symboler. La oss se på et eksempel som demonstrerer dette:
- 
+## Hva & Hvorfor?
+
+Å konkatenere strenger betyr å slå sammen to eller flere tekststrenger til én. Denne teknikken brukes ofte av programmerere for å lage mer komplekse meldinger, generere filnavn, eller kode effektivt.
+
+## Hvordan gjør man det:
+
+La oss se på noen eksempler i Bash:
+
+```Bash
+# Definer to strenger
+streng1="God "
+streng2="morgen"
+
+# Konkatenér strengene
+hilsen=$streng1$streng2
+
+# Skriv ut resultatet
+echo $hilsen
+
+# Utskrift blir: "God morgen"
 ```
-name="John"
-echo "Hei, $name! Velkommen til å programmere i Bash!"
+
+Du kan også konkatenere strenger direkte i shell-kommandoer:
+
+```Bash
+navn="Ola"
+echo "Hei $navn"   # Utskrift blir: "Hei Ola"
 ```
-Output: Hei, John! Velkommen til å programmere i Bash!
- 
-## Dykk ned:
- 
-Konkaterering av strenger er ikke en ny konsept, og den er tilgjengelig i mange programmeringsspråk, inkludert Bash. Men i Bash er ```+``` operatøren ikke alltid brukt. I stedet, i mange tilfeller, brukes ```${string1}${string2}``` syntaksen. Det er også verdt å nevne at du kan konkatenerere så mange strenger som du vil i en enkelt kommando. Det er også nyttig å vite at det finnes alternativer i Bash, for eksempel ```printf``` kommando, for å generere og formatere tekster på en mer effektiv måte. 
- 
+
+## Dypdykk:
+
+Historisk sett har strengkonkatenering vært en funksjon i nesten alle programmeringsspråk, inkludert de tidlige versjonene av Bash.
+
+En alternativ tilnærming til strengkonkatenering i Bash kan være bruken av `printf` funksjonen:
+
+```Bash
+printf -v hilsen "%s%s" $streng1 $streng2
+```
+
+Det er viktig å merke seg at i Bash, når du konkatenøser to variable sammen, slår Bash dem bare sammen uten mellomrom eller annen atskillelse. Hvis du trenger en atskillelse, må du legge den inn som en del av strengen:
+
+```Bash
+streng1="God"
+streng2="morgen"
+hilsen="$streng1 $streng2"   # Merk mellomromet mellom anførselstegnene
+```
+
 ## Se også:
- 
-For mer informasjon om å konkatenerere strenger i Bash, sjekk ut denne ressursen: [https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html]. Du kan også finne nyttige tips og triks i Bash-dokumentasjonen og på online programmeringsforum. Lykke til!
+
+For mer informasjon om strengmanipulering i Bash, inkludert strengkonkatenering og andre teknikker, kan disse nettstedene være nyttige:
+
+1. Advanced Bash-Scripting Guide - String Manipulation: https://tldp.org/LDP/abs/html/string-manipulation.html
+2. Bash Guide - More on Variables: https://guide.bash.academy/words/#variables
+3. GNU Bash Manual: https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion

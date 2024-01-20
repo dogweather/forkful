@@ -1,7 +1,7 @@
 ---
-title:                "डीबग आउटपुट छापना"
-html_title:           "Gleam: डीबग आउटपुट छापना"
-simple_title:         "डीबग आउटपुट छापना"
+title:                "डीबग आउटपुट प्रिंट करना"
+html_title:           "Gleam: डीबग आउटपुट प्रिंट करना"
+simple_title:         "डीबग आउटपुट प्रिंट करना"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Testing and Debugging"
@@ -10,28 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Kya Hai Aur Kyu?
-Printing debug output aam taur par programmers dvaara errors aur bugs ko diagnose aur debug karne ke liye kiya jata hai. Ye ek aasaan aur prabhavi tareeka hai jo code ke sahi chalne ke samasyao ko pahchanne me madad karta hai.
+## क्या और क्यों?
 
-Kaise Kare?
-Dekhiye, debug output print karne ke liye Gleam me bahut sare tarike hain. Hum kuch aasan aur upyukt tarike ko samjhenge. Sabse pehle, hum ```debug!()``` function ka upyog karke console par kuch khaas meassage print kar sakte hain:
-```Gleam
-debug!("Hello, World!");
-```
-yeh ```Hello, World!``` ka output dega. Agar hum input bhi add karna chahate hain, to hum ye tareeka istemaal kar sakte hain:
-```Gleam
-let name = "John";
-debug!("Hello, {}", name);
-```
-Iska output hume ```Hello, John``` dikhayega.
-Ek aur useful tarika hai ```dbg()``` function ka upyog. Ye hume value aur uski sahi data type ke saath output dikhata hai:
-```Gleam
-dbg!(5 * 2);
-```
-Iska output hume ```10 [i32]``` dega, yani ki ```5 * 2``` ki value aur uski data type.
+Debug output का प्रिंट करना मतलब कठिनाईयों (bugs) को देखने के लिए कोड में अस्थाई मूल्यों का उपयोग करना। यह प्रोग्रामर्स को कोड कैसे काम कर रहा है, इसकी समझ देता है।
 
-Deep Dive
-Debug output ka upyog hume code ke errors aur bugs ko diagnose karne me madad karta hai. Iske alawa, ye code ko test karne me bhi uttam hai. Isliye, debug output ka istemaal karna behad zaroori hai. Agar hum Gleam code ke bina debug output ke istemaal ke baare me baat kare, to ye humare liye musibat ho sakti hai kyunki debugging me kafi time aur resources kharch hote hain. Kuch aur programming languages ki tarah, Gleam me bhi logging library suvidhayein vaisi hi hain jo aapko console par output print karne me madad karegi.
+## कैसे करें:
 
-See Also
-Ab jo aap kisi bhi programming language me log banate hain, unhe understand karna aur uski functionality ko smajhna zaroori hai. Isliye uske liye aapko ek debugger ki zaroorat hoti hai. [Yahan](https://gleam.run/articles/debug-theory/) aap ek detailed article pa sakte hain jisme Gleam me debug output ka theoretical perspective diya gaya hai. Iske alawa, aapko kuch example Gleam projects bhi dekhne chahiye jo console par debug output ka istemaal karte hain. Isse aapko ye samajhne me madad milegi ki hum log kaise apna code debug kar sakte hain.
+Gleam में आप `gleam/io` के `debug` function का उपयोग करके debug output को print कर सकते हैं।
+
+```gleam
+import gleam/io
+
+fn main() {
+  let x = "Debug Data"
+  io.debug(x)
+}
+```
+
+इसे चलाने पर, आपको terminal में "Debug Data" मिलेगा।
+
+```output
+Debug Data
+```
+
+## Deep Dive:
+
+**ऐतिहासिक सन्दर्भ:** Debugging तकनीक प्राचीन प्रोग्रामिंग के इतने ही पुराने हैं जितनी कंप्यूटर। यह हमेशा से प्रोग्रामर्स के उपकरण किट का हिस्सा रहा है।
+
+**विकल्प:** कुछ विकल्प `print` statements हो सकते हैं, लेकिन `io.debug` function का उपयोग करना अधिक structured और मानकीकृत रूप से डेटा को लॉग करने का एक बेहतर दर्शाता है।
+
+**कार्यान्वयन विवरण:** Gleam में `io.debug` function, डिबग्गिंग जानकारी को आउटपुट करता है, और यह Erlang/OTP के निविदान पर आधारित है।
+
+## See Also:
+
+- [Gleam Documentation - io.debug](https://hexdocs.pm/gleam_erlang_stdlib/gleam/io/)
+- [Debugging Techniques](https://en.wikipedia.org/wiki/Debugging)

@@ -1,7 +1,7 @@
 ---
-title:                "开始一个新项目"
-html_title:           "Kotlin: 开始一个新项目"
-simple_title:         "开始一个新项目"
+title:                "开始新项目"
+html_title:           "Lua: 开始新项目"
+simple_title:         "开始新项目"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Getting Started"
@@ -10,23 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Starting a New Project in Kotlin: The Basics
+## 什么和为什么？
+新建一个项目，就是用编程语言和工具，从零开始构建一个完全新的软件应用。程序员新建项目，可以由此实现创新的想法，解决问题，甚至创造业界新的标准。
 
-## 什么 & 为什么?
-启动一个新的项目是指创建一个全新的代码库，用于开发一个新的软件项目。程序员们经常启动新的项目，以实现各种不同的目标，例如增加新的功能，修复错误，或是更新旧的代码。
+## 如何操作：
+我们以使用 Kotlin 以及它的构建工具 Gradle 来创建一个新的项目为例。首先你得安装好 Kotlin 编译器和 Gradle。
 
-## 如何:
-首先，我们需要安装[Kotlin官方IDE](https://www.jetbrains.com/idea/)，它可以为我们提供代码补全，调试和其他强大的开发工具。然后，我们可以在IDE中创建一个新的Kotlin项目。接下来，我们可以按照以下示例创建一个简单的"Hello World"程序：
 ```Kotlin
-fun main() {
-    println("Hello, World!")
-}
+// 1. 创建一个新的目录
+mkdir MyNewProject
+
+// 2. 使用 Gradle 进行初始化
+cd MyNewProject
+gradle init --dsl kotlin --type basic
+
+// 3. 使用 Kotlin 创建一个新的 Hello World 程序
+echo 'fun main() { println("Hello world!") }' > src/main/kotlin/Main.kt
+
+// 4. 使用 Gradle 构建并运行该项目
+gradle run
 ```
-在终端中运行程序的命令是 `kotlinc -script hello.kts`，我们就可以看到输出结果：`Hello, World!`
 
-## 深入探讨:
-Kotlin是一种静态类型的编程语言，最初由JetBrains开发，在2011年推出。它可以编译成Java字节码，也可以运行在JVM上，因此可以与Java语言无缝集成。除了可以在服务器端开发大型应用程序之外，Kotlin也可以用于Android应用程序的开发。其他类似的编程语言包括Java，Scala和Groovy。
+上述代码执行后，终端中应该会打印出 "Hello world!"。
 
-## 参考资料:
-- [Kotlin官方文档](https://kotlinlang.org/docs/home.html)
-- [Kotlin Tutorial from w3schools](https://www.w3schools.com/kotlin/)
+## 深入探讨：
+我们通常从新建一个项目开始，是因为这样可以确保我们有完全的控制权，以及能完全理解项目的每一个部分。新建项目也是理解和学习新的编程语言的好方法。
+
+Kotlin 是由 JetBrains 开发的一种静态类型编程语言，运行在 Java 虚拟机上，并且可以完全兼容 Java 语言。 Kotlin 版的 Hello World 程序包含了一个包含 main 函数的对象。它可以直接被运行，而不需要像 Java 一样打包成一个类库。
+
+最后，你也许会想，为什么我们选择 Gradle 而不是其他构建工具呢？事实上，虽然 Maven 和 Ant 等其他工具也都十分强大，但是 Gradle 的灵活性以及它的 Kotlin DSL，使得我们可以更加容易地配置和构建我们的 Kotlin 项目。
+
+## 参考：
+- [Installation guide for Kotlin compiler](https://kotlinlang.org/docs/command-line.html)
+- [Gradle tutorial for Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html)
+- [Kotlin and Java interoperability](https://kotlinlang.org/docs/java-interop.html)

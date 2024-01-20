@@ -1,7 +1,7 @@
 ---
-title:                "Kuviota vastaavien merkkien poistaminen"
-html_title:           "Elixir: Kuviota vastaavien merkkien poistaminen"
-simple_title:         "Kuviota vastaavien merkkien poistaminen"
+title:                "Merkkien poistaminen vastaavalla mallilla"
+html_title:           "Arduino: Merkkien poistaminen vastaavalla mallilla"
+simple_title:         "Merkkien poistaminen vastaavalla mallilla"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,24 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-Miksi me ohjelmoijat poistamme merkkejä, jotka vastaavat tietytä kaavaa? Se on yksinkertainen tapa käsitellä tekstiä Elixir-ohjelmointikielellä. Elixirin sisäänrakennettu "String" -moduuli tarjoaa monia toimintoja, jotka helpottavat tekstin käsittelyä ja manipulointia. Poistamalla merkkejä, jotka vastaavat tietyt kriteerit, voimme helposti valita haluamamme tiedot ja jättää pois tarpeettomat.
+## Mikä & Miksi?
 
-## Miten:
-Poista merkkejä vastaavat toiminnon avulla voimme käyttää "String" -moduulin "replace" -funktiota. Se ottaa kaksi argumenttia: alkuperäisen merkkijonon ja muotoilun, jota haluamme korvata. Käytämme sitten regex-lausekkeita määrittääksemme mitä haluamme poistaa. Alla on yksinkertainen esimerkki:
+"Pattern matching" on ohjelmoinnissa luotu termi, jolla viitataan prosessiin, jossa merkkijonosta poistetaan määrättyjä kuvioon sopivia merkkejä. Tämä on erittäin hyödyllinen ohjelmoijille, kun he haluavat esimerkiksi puhdistaa dataa tai tehdä säännöllisiä lausekkeita.
+
+## Kuinka tehdä:
+
+Deleting characters in a string that match a pattern in Elixir is quite simple. Here's how you do it:
 
 ```Elixir
-str = "Tervetuloa Elixir-maailmaan!"
-Regex.replace(str, ~r/Elixir/, "Hello") # tulostaa "Tervetuloa Hello-maailmaan!"
+# Kirjoitetaan funktio
+def remove_pattern(string, pattern) do
+  String.replace(string, pattern, "")
+end
+
+# Funktio käytössä
+iex> remove_pattern("Hello, world!", ",")
+"Hello world!"
 ```
+Tässä esimerkissä `remove_pattern` funktio ottaa kaksi argumenttia, merkkijonon ja kuviomme. Se palauttaa alkuperäisen merkkijonon, mutta poistaa kaikki kuviona olevat merkit.
 
-## Syvempään:
-Poista merkkejä vastaavien toimintojen käyttäminen on tullut erittäin suosituksi Elixir-yhteisössä sen helppokäyttöisyyden ja nopeuden vuoksi. Ennen Elixir-versiota 1.6, poista merkkejä vastaavaa toimintoa ei ollut sisäänrakennettuna, mutta nykyään se on käytettävissä.
+## Syvällisempi sukellus:
 
-On myös muita tapoja poistaa merkkejä, kuten käyttämällä "String" -moduulin "trim" -toimintoa, joka poistaa kaikki annetut merkit merkkijonon alusta ja lopusta.
+Pattern matchingilla on pitkä historia ohjelmoinnissa ja se tulee suoraan matematiikasta. Elixir käyttää Erlangin säännöllisiä ilmaisuja, jotka ovat peräisin luvulta 1970.
 
-Regex-lausekkeet ovat myös erittäin voimakkaita ja monipuolisia, joten kannattaa tutustua niihin ja niiden käyttöön tekstin käsittelyssä.
+Joskus kuvion poisto ei välttämättä ole paras ratkaisu. Vaihtoehtoina on esim. kuvion sijainnin tai kuvion sisällä olevien merkkien tarkistaminen. Riippuu siitä, mitä tarvitset tehdä.
+
+Elixirin `String.replace/3` -metodi käyttää Elixirin & Erlangin vakioaloituskirjastoa ja tarttuu säännölliseen lausekkeeseen luodakseen uuden merkkijonon, joka puuttuu poistetusta kuvioista.
 
 ## Katso myös:
-- [Elixirin virallinen dokumentaatio](https://elixir-lang.org/docs.html)
-- [Regex-lausekkeiden opas Elixirissa](https://hexdocs.pm/elixir/Regex.html)
+
+- Erlangin dokumentaatio säännöllisistä lausekkeista: http://erlang.org/doc/man/re.html
+- Elixirin String-moduulin dokumentaatio: https://elixir-lang.org/docs/stable/elixir/String.html
+- Elixirin oppaat säännöllisten lausekkeiden käyttöön: https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html

@@ -1,7 +1,7 @@
 ---
-title:                "Calcul d'une date dans le futur ou le passé"
-html_title:           "Bash: Calcul d'une date dans le futur ou le passé"
-simple_title:         "Calcul d'une date dans le futur ou le passé"
+title:                "Calculer une date dans le futur ou le passé"
+html_title:           "Bash: Calculer une date dans le futur ou le passé"
+simple_title:         "Calculer une date dans le futur ou le passé"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Dates and Times"
@@ -10,36 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est? Pourquoi?
+## Qu'est-ce que & Pourquoi ?
 
-Calculer une date dans le futur ou dans le passé est l'action de déterminer une date en utilisant une date de référence et un nombre de jours à ajouter ou à soustraire. Les programmeurs utilisent cette tâche pour automatiser des processus tels que la planification de tâches, la gestion de base de données et la création de rapports.
+Calculer une date dans le futur ou le passé, c'est obtenir une date qui est un certain nombre de jours, semaines, mois ou années à partir d'une date donnée. Les programmeurs le font généralement pour des planifications, des rappels ou des comparaisons de dates.
 
 ## Comment faire:
 
-Voici deux façons de calculer une date dans le futur ou dans le passé en utilisant Bash:
+Voici comment calculer une date dans le futur ou le passé en Bash:
 
 ```Bash
-# Ajouter 10 jours à la date actuelle
-date -d "+10 days" 
+# Pour obtenir la date de demain
+date -d "+1 day"
 
-# Soustraire 5 jours de la date actuelle
-date -d "-5 days"
+# Pour obtenir la date d'hier
+date -d "1 day ago"
+
+# Pour obtenir la date d'il y a une semaine
+date -d "1 week ago"
+
+# Pour obtenir la date d'un mois plus tard
+date -d "+1 month"
+
+# Sortie d'exemple pour "+1 day"
+Mon Mar 15 01:45:50 PDT 2022
 ```
 
-Output:
-```
-Jeudi 11 juin 2020 12:00:00 CST
-Samedi 6 juin 2020 12:00:00 CST
-```
+Pour la plupart des usages, `-d` string ou `--date=STRING` suffit pour décrire la date recherchée.
 
-## Plongée en profondeur:
+## Plongée en profondeur
 
-1. Contexte historique: Le calcul de dates a été un défi pour les programmeurs, car chaque système d'exploitation ou langage de programmation avait sa propre façon de stocker et de manipuler les dates. Bash utilise une bibliothèque appelée GNU Date pour faciliter cette tâche.
+Historiquement, les opérations sur les dates n'étaient pas prises en charge nativement par Bash, mais elles ont été ajoutées plus tard à `date` (un utilitaire standard Unix). Aujoud'hui, presque tous les systèmes Unix-like ont cet utilitaire.
 
-2. Alternatives: En plus de la méthode présentée ci-dessus, vous pouvez également utiliser la commande ```strftime``` pour formater une date dans le futur ou dans le passé. Cependant, cela nécessite une connaissance plus approfondie des formats de date.
+Une alternative à utiliser `date` en Bash pour calculer une date dans le futur ou le passé est l'utilisation de la librairie `datetime` en Python, ou la fonction `strtotime()` en PHP.
 
-3. Détails de mise en œuvre: La commande ```date -d``` prend en paramètre une chaîne de caractères qui spécifie la quantité de temps à ajouter ou à soustraire de la date de référence. Elle peut gérer des unités de temps telles que les secondes, les minutes, les heures, les jours, les semaines, les mois et les années.
+Dans Bash, lorsque vous fournissez un argument à `date -d`, il est analysé pour déterminer l'intervalle de temps à ajouter ou à soustraire à la date actuelle. Les espaces sont nécessaires entre le nombre et l'unité de temps (par exemple, `1 day`, `1 week`, `1 month`).
 
-## Voir aussi:
+## Pour aller plus loin
 
-Pour en savoir plus sur la commande ```date``` de Bash, consultez la documentation officielle: [GNU Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
+Pour en savoir plus sur `date` et les autres utilitaires de calcul de date en programmation, consultez les ressources suivantes :
+
+1. `date` man page: man7.org/linux/man-pages/man1/date.1.html
+2. GNU Coreutils: www.gnu.org/software/coreutils/manual/html_node/date-invocation.html
+3. Stack Overflow - Calculate date/time difference in bash : stackoverflow.com/questions/6455050/calculate-date-time-difference-in-bash
+4. UNIX & Linux Stack Exchange - How to add days to date in bash? unix.stackexchange.com/questions/97925/how-to-add-days-to-date-in-bash

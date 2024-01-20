@@ -1,6 +1,6 @@
 ---
 title:                "Skicka en http-begäran med grundläggande autentisering"
-html_title:           "Go: Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
 simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Go"
 category:             "Go"
@@ -10,56 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Skicka HTTP-begäran med grundläggande autentisering i Go
+
 ## Vad & Varför?
+Att skicka en HTTP-begäran med grundläggande autentisering innebär att vi skickar användarnamn och lösenord till servern som en del av begäran. Det görs för att säkerställa att endast behöriga användare kan få tillgång till resurser på en server.
 
-Att skicka en HTTP-förfrågan med grundläggande autentisering innebär att man skickar en begäran till en webbserver med ett användarnamn och lösenord som autentiseringsuppgifter. Programerare gör detta för att säkra sin kommunikation med webbservern och kontrollera åtkomst till skyddade resurser.
-
-## Så här gör du:
+## Hur:
+Här är ett exempel på hur du skickar en HTTP-begäran med grundläggande autentisering i Go:
 
 ```Go
-// Importera nödvändiga paket
+package main
+
 import (
-   "fmt"
-   "net/http"
+	"net/http"
+	"fmt"
 )
 
-// Ange autentisieringsuppgifter
-username := "användarnamn"
-password := "lösenord"
-
-// Skapa en HTTP-klient
-client := &http.Client{}
-
-// Skapa en förfrågan med grundläggande autentisering
-req, err := http.NewRequest("GET", "https://www.example.com", nil)
-req.SetBasicAuth(username, password)
-
-// Skicka förfrågan och få svar
-resp, err := client.Do(req)
-defer resp.Body.Close()
-
-// Hantera svar
-if err != nil {
-   panic(err)
+func main() {
+	req, err := http.NewRequest("GET", "https://example.com", nil)
+	
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	
+	req.SetBasicAuth("username", "password")
+	
+	client := &http.Client{}
+	resp, err := client.Do(req)
+	
+	if err != nil {
+		fmt.Println(err)
+		return
+	}
+	
+	defer resp.Body.Close()
+	fmt.Println("Response status:", resp.Status)
 }
-fmt.Println("Statuskod:", resp.Status)
-
 ```
+När du kör detta program kommer det att skicka en GET-förfrågan till `https://example.com` med användarnamnet `username` och lösenordet `password`.
 
-Output:
-```
-Statuskod: 200 OK
-```
+## Lugn Dykning
+Grundläggande HTTP-autentisering är ett enkelt, men kraftfullt sätt att skydda dina webbresurser. Ursprungligen definierad i HTTP/1.0-specifikationen, har det stått emot tidens prövning och används fortfarande flitigt som en enkel mekanism för autentisering.
 
-## Djupdykning:
+Men det finns alternativ till grundläggande autentisering. Bearer Token autentisering, OAuth och Digest access autentisering är några av de andra populära metoderna.
 
-* **Historisk kontext:** Grundläggande autentisering är en av de äldsta metoderna för autentisering på webben. Det infördes redan 1995 som en del av HTTP-protokollet och har sedan dess använts som en grundläggande säkerhetsmekanism för webbtjänster.
+När du implementerar grundläggande autentisering i Go, är det viktigt att ha SSL/TLS i åtanke. Eftersom grundläggande autentisering skickar lösenord i klartext, bör du alltid använda HTTPS när du använder grundläggande autentisering för att förhindra att lösenorden sniffas av illvilliga aktörer.
 
-* **Alternativ:** Utöver grundläggande autentisering finns det flera andra autentiseringsprotokoll som OAuth och JWT (JSON Web Token) som är mer säkra och flexibla.
-
-* **Implementeringsdetaljer:** HTTP-förfrågan med grundläggande autentisering skapar en HTTP-beteckning som har en autentiseringssektion i dess HTTP-autoriseringsrubrik, vilken innehåller användarnamn och lösenord. Dessa uppgifter skickas sedan med i varje begäran till webbservern för autentisering.
-
-## Se även:
-
-* [Go GoDocs: "net/http" paketet](https://godoc.org/net/http)
-* [HTTP grundläggande autentisering specification](https://developer.mozilla.org/sv/docs/Web/HTTP/Headers/Authorization)
+## Se Även
+Här är några länkar till ytterligare resurser:
+1. [Go Docs: http package](https://golang.org/pkg/net/http/)
+2. [HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
+3. [Go by Example: HTTP Clients](https://gobyexample.com/http-clients)

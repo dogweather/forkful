@@ -1,7 +1,7 @@
 ---
-title:                "Att beräkna ett datum i framtiden eller i det förflutna"
-html_title:           "Elixir: Att beräkna ett datum i framtiden eller i det förflutna"
-simple_title:         "Att beräkna ett datum i framtiden eller i det förflutna"
+title:                "Beräkning av ett datum i framtiden eller förflutna"
+html_title:           "Elixir: Beräkning av ett datum i framtiden eller förflutna"
+simple_title:         "Beräkning av ett datum i framtiden eller förflutna"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Dates and Times"
@@ -11,28 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Att beräkna ett datum i framtiden eller det förflutna är en vanlig uppgift inom programmering. Det kan användas för att skapa tidslinjer, scheman eller hantera olika tidszoner. Det kan även användas för att lösa problem med datum och tid i olika applikationer.
+Beräkna ett datum i framtiden eller förflutna är att fastställa ett specifikt datum före eller efter ett visst antal dagar. Programmerare gör detta för att hantera alla händelser relaterade till tidsstyrning som uppgiftsplanering, påminnelser etc.
 
 ## Så här gör du:
-```Elixir 
-Date.add(Date.utc_today(), 7)
+Använd modulen `DateTime` i Elixir för att arbeta med datum. Här är ett exempel:
+
+```Elixir
+# Nuvarande datum och tid
+iex> nu = DateTime.utc_now()
+# Datum för 7 dagar framåt
+iex> framtid = DateTime.add(nu, 7 * 24 * 60 * 60, :second)
+# Datum för 7 dagar bakåt
+iex> forflutna = DateTime.add(nu, -7 * 24 * 60 * 60, :second)
 ```
-Resultatet av denna kod skulle vara ett datum som ligger en vecka framåt från dagens datum i UTC-tidzonen. Du kan också ange ett negativt tal för att få ett datum i det förflutna.
 
-För att lägga till ett specifikt antal dagar, månader eller år kan du använda funktionen `Date.add` tillsammans med `:days`, `:months` eller `:years` som andra argument. Till exempel:
-```Elixir 
-Date.add(Date.utc_today(), 3, :months)
-```
-Detta skulle ge dig ett datum som ligger tre månader framåt från dagens datum i UTC-tidzonen.
+Resultatet skulle vara datum och tid för 7 dagar framåt och bakåt från nuvarande datum och tid.
 
-## Djupdykning:
-För att beräkna datum i framtiden eller det förflutna, är det viktigt att förstå hur datum hanteras i Elixir. Datum i Elixir representeras som en tuple med tre element: år, månad och dag. Detta gör det lätt att utföra beräkningar på datum och jämföra dem med varandra.
+## Fördjupning
+Historiskt har datumhantering varit en utmaning inom programmering på grund av inkonsekvensen i kalendersystemet och tidszoner. Elixir underlättar detta med `DateTime` modulen som hanterar dessa inkonsekvenser.
 
-En alternativ metod för att beräkna ett datum i framtiden eller det förflutna är att använda funktionen `Date.add/2` och ange en ändring i form av en lista, till exempel `[{17, :days}]` för att lägga till 17 dagar till datumet.
+Alternativ till att använda `DateTime` inkluderar att använda andra datum och tids bibliotek som `Timex`.
 
-Elixir har också funktionen `Date.diff/2` som kan användas för att beräkna antalet dagar mellan två datum. Detta kan vara användbart för att beräkna hur lång tid det är från ett datum till ett annat.
+När det gäller implementeringsdetaljer, använder `DateTime.add/3`-funktionen antalet sekunder i en minut, minuterna i en timme och timmarna på en dag för att beräkna det framtida eller förflutna datumet. Det är därför vi multiplicerar antalet dagar med 24 (timmar), 60 (minuter) och 60 (sekunder) för att få totalt antal sekunder.
 
-## Se även:
-- [Elixir Date modulen](https://hexdocs.pm/elixir/Date.html)
-- [Elixir Calendar module](https://hexdocs.pm/elixir/Calendar.html)
-- [Elixir Datetime module](https://hexdocs.pm/elixir/DateTime.html)
+## Se även
+Elixir's officiella dokumentation på DateTime:
+[DateTime — Elixir v1.12.3](https://hexdocs.pm/elixir/DateTime.html)
+
+Guide på hur man jobbar med `DateTime` i Elixir:
+[Working with dates and time in Elixir](https://inquisitivedeveloper.com/lwm-elixir-16/)
+
+Elixir School's guide om `DateTime`, `Date` och `Time`:
+[Elixir School](https://elixirschool.com/en/lessons/basics/date_time)

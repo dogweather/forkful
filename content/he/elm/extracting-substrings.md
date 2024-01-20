@@ -1,7 +1,7 @@
 ---
-title:                "חילוץ תת־מחרוזות"
-html_title:           "Elm: חילוץ תת־מחרוזות"
-simple_title:         "חילוץ תת־מחרוזות"
+title:                "חילוץ תת-מחרוזות"
+html_title:           "Bash: חילוץ תת-מחרוזות"
+simple_title:         "חילוץ תת-מחרוזות"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,33 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
-חילוץ תת מחרוזות הוא תהליך שבו מתקשרים מחרוזות לחלקים קטנים יותר. תת מחרוזות אינן דבר חדש, אבל הן מאפשרות למתכנתים לעבוד בצורה יעילה יותר עם מחרוזות ולשלוט על פרטים קטנים שלהן.
+## מה ולמה?
+חליפת substrings היא הפעולה של רמת ה-string בה אנחנו הופכים כחלק ממחרוזת למחרוזת נפרדת. זה שימושי כאשר נדרשים חלקים מסוימים ממחרוזת, דבר המאפשר חילוף, ניתוח ואינטרפרטציה של אותם חלקים.
 
-איך לעשות?
-להלן כמה דוגמאות לחילוץ תת מחרוזות ב Elm, עם תוצאות מוצגות בתוך קוד Elm ```...```.
-
+## איך ל:
+```Elm
+substring : Int -> Int -> String -> Maybe String
+substring start end string =
+    if start >= 0 && end <= String.length string && start <= end then
+        Just (String.slice start end string)
+    else
+        Nothing
 ```
-substr "Hello World!" 6 5
--- Returns "World"
-```
+קוד זה מאמץ את תפקידו של מחרוזת `substring` ב- Elm. הוא מחזיר `Just substring`, ואם התנאים לא מתקיימים - `Nothing`.
 
-```
-substring 2 3 "Lorem ipsum dolor sit amet"
--- Returns "rem"
-```
+## צלילה מעמיקה
+(1) הפונקציה `substring` ב- Elm אף פעם לא הייתה חלק בשפה, כי היא אפשרית למימוש בצורה פשוטה באמצעות פעולה של `slice`.
+(2) Elm קונצנטרי בביטחון הקוד, ולכן הוא מבקש מהמתכנת שיבדוק את תנאים קדם מקדים.
+(3) `slice` מומש ב- JavaScript שעליו מבוסס Elm, והוא משתמש ב-JavaScript native `substring` אם התנאים מתקיימים.
 
-```
-slice 4 10 "abcdefghij"
--- Returns "efghij"
-```
-
-כדי להשתמש בפונקציות אלה, עלינו להיות וודאים שהן מוגדרות בתוך המודול `String` של Elm. ניתן להעביר את החמישה ארגומנטים הרלוונטיים (מחרוזת, המיקום של תחילת התת מחרוזת, המיקום של סוף התת מחרוזת) לפונקציות אלה כדי לקבל את התת מחרוזות שאנו מעוניינים.
-
-עומק עיון
-חילוץ תת מחרוזות הוא כלי עזר חשוב בתכנות כיוון שהוא מאפשר למתכנתים להתאים מחרוזות לצרכים שלהם. תת מחרוזות אינן ניתנות לשימוש רק ב- Elm, אלא הן זמינות בשפות תכנות אחרות כמו Python ו- JavaScript.
-
-כאשר אנו מחלצים תת מחרוזות, יש לציין שהתחילה להתפתח בשנות ה- 1970 ככלי נוסף לשירות המתכנתים. מאז, הוא עבר שיפורים רבים ונשתמש בו בעבודתנו היום כיוון שהוא מספק גישה נוחה יותר למידע בתוך מחרוזות.
-
-ראו גם
-למודל `String` של Elm ישנם עוד הרבה פונקציות מועילות לעבודה עם מחרוזות. לדוגמה: `startsWith`, `endsWith`, `length`, `toUpper` ועוד. ניתן למצוא מידע נוסף על פונקציות אלה ברשת האינטרנט או בתיעוד הרשמי של Elm.
+## לראות גם
+1. דוקומנטציה ל- [`String`](https://package.elm-lang.org/packages/elm/core/latest/String): מאגר הפקדים המלא של אייל.
+2. [איך להשתמש להבין את `Maybe`](https://guide.elm-lang.org/error_handling/maybe.html): מדריך לשימוש בהכנות `Maybe` כחלק מהוא איילת.
+3. [`String.slice`](https://package.elm-lang.org/packages/elm/core/latest/String#slice): את הדוקומנטציה לפעולה `slice`.

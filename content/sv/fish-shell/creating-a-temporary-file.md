@@ -1,7 +1,7 @@
 ---
-title:                "Skapa en tillfällig fil"
-html_title:           "Fish Shell: Skapa en tillfällig fil"
-simple_title:         "Skapa en tillfällig fil"
+title:                "Att skapa en tillfällig fil"
+html_title:           "Bash: Att skapa en tillfällig fil"
+simple_title:         "Att skapa en tillfällig fil"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Files and I/O"
@@ -10,41 +10,21 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Vad & Varför?
-Att skapa en temporär fil är ett vanligt verktyg som programmerare använder sig av för att tillfälligt lagra data eller utföra kommandon som inte behöver sparas permanent. Det är ett effektivt sätt att hantera strömmar av data eller temporära förändringar i systemet.
+## Vad & varför?
+Skapa en temporär fil, tillfälligt lagring av data för endast aktuell session, vilket är grundläggande för programmering. Det ger en säker plats för program att göra ändringar utan att störa användaruppgifter.
 
-Hur man:
-Fisk Shell ger flera inbyggda kommandon och funktioner för att skapa temporära filer. Här är några exempel på hur man kan använda dem:
+## Så här gör du:
+För att skapa en tillfällig fil i Fish-shell, använd 'mktemp'. Dessutom kan du skriva och läsa från filen som vanligt.
 
-```fish
-# Skapa en temporär fil
-set tmp (mktemp) 
-# Skriv text till filen
-echo "Hej! Jag är en temporär fil." > $tmp  
-# Visa innehållet i filen
-cat $tmp 
+```Fish Shell
+set tmpfile (mktemp)
+echo "temp data" > $tmpfile
+cat $tmpfile
 ```
-Output:
-```fish
-Hej! Jag är en temporär fil.
-```
+När du kör koden ovan, kommer du att se "temp data" skrivas ut, vilket är innehållet i den tillfälliga filen.
 
-```fish
-# Skapa en temporär mapp
-set tmpdir (mktemp -d) 
-# Lägg till en fil i mappen
-touch $tmpdir/file.txt 
-# Visa innehållet i mappen
-ls $tmpdir 
-```
-Output:
-```fish
-file.txt
-```
+## Fördjupning
+Historiskt sett kommer mktemp från Unix-traditionen och har varit standard för tillfällig filskapning sedan 90-talet. Alternativ till mktemp inkluderar att manuellt skapa en fil med ett unikt namn, men detta kan vara icke-trådsäkert. Under huven skapar mktemp en fil med unikt namn i ett lämpligt temporärt katalog (ofta /tmp eller liknande), och returnerar filnamnet.
 
-Djupdyk:
-Skapandet av temporära filer har varit en vanlig teknik inom programmering sedan mycket lång tid tillbaka. Det används ofta för att hantera stora datamängder eller temporära förändringar i systemet, utan att behöva göra permanenta ändringar. Alternativ till att skapa temporära filer kan vara att använda pipelinor för hantering av datatransaktioner eller att använda en virtuell mapp för att lagra temporära filer.
-
-Se även:
-- Fish Shell dokumentation om temporära filer: https://fishshell.com/docs/current/commands.html#mktemp
-- En översikt över virtual mappar och dess användning: https://en.wikipedia.org/wiki/Virtual_folder
+## Se också
+För mer information, se Fish Shells officiella dokumentation på [den här länken](https://fishshell.com/docs/current/index.html), samt Unix's mktemp manual på [den här länken](https://man7.org/linux/man-pages/man3/mktemp.3.html).

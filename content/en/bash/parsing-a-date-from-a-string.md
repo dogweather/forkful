@@ -1,6 +1,6 @@
 ---
 title:                "Parsing a date from a string"
-html_title:           "Bash recipe: Parsing a date from a string"
+html_title:           "C recipe: Parsing a date from a string"
 simple_title:         "Parsing a date from a string"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,41 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
+Parsing a date from a string means to extract and interpret the constituent parts of a date (like day, month, and year) from a text string. Programmers do this to use, manipulate, or compare dates within their scripts.
 
-Parsing a date from a string is the process of extracting specific date information, such as month, day, and year, from a string of text. Programmers often do this to convert human-readable dates into a format that the computer can understand and manipulate.
+## How To:
 
-## How to:
+Let's discuss the most common option for date parsing in Bash using the `date` command.
 
 ```Bash
-# Basic Command
-date -d "1 week ago" 
-
-# Output:
-Sun Jul 25 09:49:24 PDT 2021
-
-# Recreating date 
-date -d "July 10, 1990"
-
-# Output:
-Tue Jul 10 00:00:00 PDT 1990
-
-# Using awk command
-awk 'BEGIN{print strftime("%a %b %d %T %Z %Y", mktime("2020 01 01 00 00 00"))}'
-
-# Output:
-Tue Jan 01 00:00:00 PST 2020 
+# Define date string
+date_string="2021-07-07 16:40:30"
+# Parse date string to a date
+parsed_date=$(date -d "$date_string" +"%Y-%m-%d %T")
+echo $parsed_date
 ```
 
-## Deep Dive
+Output:
 
-Parsing dates has been a common task in programming since the early days of computing. In the past, programmers had to manually extract and manipulate date information from strings, which was a time-consuming and error-prone process. With the development of modern programming languages and tools, the process has become much easier and more efficient.
+```Bash
+2021-07-07 16:40:30
+```
 
-An alternative to using the `date` command in Bash could be using a scripting language like Python or Perl that has built-in date parsing functions. This option may be more suitable for complex date parsing tasks, but for simple tasks, using the `date` command in Bash is a quick and easy solution.
+Here, the `-d` option makes `date` interpret the input string, and the `+"%Y-%m-%d %T"` part formats the output.
 
-To understand how Bash parses dates, we need to look at Unix time, also known as Epoch time. Unix time is a system for describing a point in time as the number of seconds that have elapsed since January 1, 1970, at 00:00:00 UTC. Bash uses this system to convert human-readable dates to a standardized format that can be easily manipulated by the computer.
+## Deep Dive:
 
-## See Also
+Historically, date parsing in Unix-like systems was a bit of a pain due to varying date formats across geographical locations. The current `date` command in GNU Coreutils, used in Bash, became standardized for more consistency.
 
-- [Bash Date Command Documentation](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-- [Unix Time Wikipedia Page](https://en.wikipedia.org/wiki/Unix_time)
-- [Python's datetime Library Documentation](https://docs.python.org/3/library/datetime.html)
+The `date` command is not the only way to parse dates. If you want to get creative, use other Unix utilities like `awk`, `sed`, or Python with its `datetime` module to parse dates.
+
+After parsing a date from a string, Bash holds it as a UNIX timestamp, the number of seconds since 1970-01-01 00:00:00 UTC. When required, it formats this timestamp to human-readable forms.
+
+## See Also:
+
+1. GNU Coreutils `date` manual: [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html) 
+2. Further reading on the `awk` command: [https://www.gnu.org/software/gawk/manual/](https://www.gnu.org/software/gawk/manual/)
+3. Python `datetime` processing: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)

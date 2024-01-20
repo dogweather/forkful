@@ -1,7 +1,7 @@
 ---
-title:                "Satunnaislukujen tuottaminen"
-html_title:           "C: Satunnaislukujen tuottaminen"
-simple_title:         "Satunnaislukujen tuottaminen"
+title:                "Satunnaisten numeroiden luominen"
+html_title:           "Bash: Satunnaisten numeroiden luominen"
+simple_title:         "Satunnaisten numeroiden luominen"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Satunnaislukujen generointi tarkoittaa satunnaisten numeroiden luomista ohjelmallisesti. Ohjelmoijat käyttävät tätä toimintoa monissa eri tilanteissa, kuten pelin arvontaominaisuuksissa tai tietokannan käsittelyssä.
+# Satunnaislukujen tuottaminen C-ohjelmoinnissa
 
-## Kuinka:
-```
+## Mikä ja Miksi?
+
+Satunnaislukujen tuottaminen on ohjelmointitehtävä, jossa generoidaan ennustamattomia numeroita määritellyssä joukossa. Ohjelmoijat käyttävät sitä lisätäkseen joustavuutta sekä simuloimaan todennäköisyystapahtumia.
+
+## Näin se tehdään:
+
+```C
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
 int main() {
-    // Alusta satunnaislukujen generaattori
-    srand(time(0));
-    // Luo satunnainen luku väliltä 0-9
-    int random_number = rand() % 10;
-    // Tulosta luku konsoliin
-    printf("Satunnainen luku: %d", random_number);
-    
+    srand(time(NULL));
+    int random_number = rand() % 100;
+    printf("%d\n", random_number);
     return 0;
 }
 ```
 
-Tuloste:
-```
-Satunnainen luku: 7
-```
+"Tämä ohjelma tuotetaan satunnaisen numeron välillä 0-99. Käyttäen rand() -funktiota, modulo-operaattoria rajataksesi arvoa ja srand() -funktiota alustamaan pseudosatunnaislukugeneraattorin."
 
-## Syvennä:
-Satunnaislukujen generaattori on ollut osa C-kielen standardia jo pitkään ja siitä on tullut yksi ohjelmoinnin perusominaisuuksista. C:ssä satunnaislukujen generointi tapahtuu käyttämällä `rand()` funktiota ja `srand()` funktiota, joka alustaa generaattorin käyttäen siihen syötteenä aikaa. Tämä tarkoittaa, että samaa satunnaislukua ei luoda joka kerta kun ohjelma ajetaan.
+## Syvä sukellus
 
-Alustava satunnaisluku voi olla joko todellisuudessa satunnainen tai lähes satunnainen. Todellisen satunnaisuuden saavuttamiseksi tarvitaan erityisiä laitteita, kuten satunnaislukugeneraattoreita. On myös muita löyhästi satunnaisia vaihtoehtoja, kuten pseudosatunnaislukugeneraattorit ja kryptografiset generaattorit.
+1. **Historiallinen konteksti:** Ensimmäiset yksinkertaiset satunnaislukugeneraattorit olivat mekaanisia laitteita. Nykyään tietokoneet simuloivat satunnaisuutta käyttäen pseudosatunnaislukugeneraattoreita.
 
-## Katso myös:
-- [rand() function (C) - GeeksforGeeks](https://www.geeksforgeeks.org/rand-function-in-c/)
-- [srand() function (C) - GeeksforGeeks](https://www.geeksforgeeks.org/srand-in-ccpp/)
-- [Random number generation - Wikipedia](https://en.wikipedia.org/wiki/Random_number_generation)
+2. **Vaihtoehdot:** C-kielissä on olemassa monia muita menetelmiä satunnaislukujen tuottamiseksi, mukaan lukien uudempi arc4random() macOS:ssä ja BSD.ssä.
+
+3. **Toteutustiedot:** rand() -funktion todellinen toiminta voi vaihdella kääntäjältä toiselle. Useimmissa tapauksissa se käyttää lineaarista yhtälöryhmää.
+
+## Katso myös
+
+1. C Standard Library - [`rand` ja `srand`](http://www.cplusplus.com/reference/cstdlib/rand/)
+3. Opengroupin dokumentaatio - [`arc4random`](https://pubs.opengroup.org/onlinepubs/9699919799/functions/arc4random.html)
+4. [Lineaaristen yhtälöryhmien](https://en.wikipedia.org/wiki/Linear_congruential_generator) Wikipedia-sivu

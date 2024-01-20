@@ -1,6 +1,6 @@
 ---
 title:                "生成随机数"
-html_title:           "Kotlin: 生成随机数"
+html_title:           "Go: 生成随机数"
 simple_title:         "生成随机数"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,22 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什麼 & 為什麼？
-生成隨機數是指用電腦自動產生一系列隨機數字。程式設計師這麼做的原因很多，例如用於遊戲、模擬實驗、加密等等。
+## 什么和为什么？
+随机数生成是编程中常见的一种方法，能生成一系列看似无序的数字。我们使用它是为了增加程序的多样性或模拟可能性结果。
 
-怎麼做？
-```Kotlin
-// 生成一個1到10之間的隨機整數
-val randomNumber = (1..10).shuffled().first() 
-println(randomNumber) // 輸出例子: 7 
+## 如何操作：
+在Kotlin中，可以使用`Random`库轻松生成随机数。这是一个示例：
 
-// 生成一個0.0到1.0之間的隨機浮點數
-val randomDouble = Random.nextDouble() 
-println(randomDouble) // 輸出例子: 0.6258411670459416 
+```kotlin
+import kotlin.random.Random
+
+fun main() {
+    val randomNumber = Random.nextInt(0, 100)
+    println(randomNumber)
+}
 ```
 
-深入挖掘
-生成隨機數的概念可以追溯到古代的占卜和骰子遊戲。在程式設計中，我們可以使用不同的演算法來產生隨機數，例如線性同餘法、反向方差法等等。也可以使用外部的隨機產生器，如硬體隨機數產生器或伺服器的時間戳記等。除了使用內建的Random類別，還可以使用第三方庫來產生更高品質的隨機數。
+上述代码将生成0到99之间的随机整数。
 
-相關資源
-如果想了解更多關於生成隨機數的知識，可以參考Kotlin官方文件中關於Random類別的說明。還有一些第三方庫，如Apache Commons、JDK Math類別等都有提供產生隨機數的方法。
+## 深入探究
+1. **历史背景**: 随机数的概念可以追溯到概率论的产生。在电脑出现之前，人们通过投掷骰子等方法获取随机数。
+2. **替代方案**: 除了Kotlin提供的`Random`库，我们还可以使用Java的`Random`类生成随机数，或者使用更加复杂的算法如梅森旋转算法。
+3. **实现细节**: Kotlin的`Random`库使用线性同余生成器原理产生伪随机数，其实就是一个数学公式。
+
+## 查看更多
+如果你对随机数的生成感兴趣，你可以试试这些链接：
+1. Understanding randomness and random number generators in Kotlin: https://proandroiddev.com/understanding-randomness-and-random-number-generators-in-kotlin-634440f1593b
+2. Exploring kotlin.random: https://blog.kotlin-academy.com/exploring-kotlin-random-a41316e166cd
+3. Kotlin official documentation: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/

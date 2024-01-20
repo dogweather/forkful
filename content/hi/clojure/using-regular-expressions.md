@@ -1,7 +1,7 @@
 ---
-title:                "रेगुलर एक्सप्रेशंस का प्रयोग करना"
-html_title:           "Clojure: रेगुलर एक्सप्रेशंस का प्रयोग करना"
-simple_title:         "रेगुलर एक्सप्रेशंस का प्रयोग करना"
+title:                "नियमित अभिव्यक्तियों का उपयोग करना"
+html_title:           "Arduino: नियमित अभिव्यक्तियों का उपयोग करना"
+simple_title:         "नियमित अभिव्यक्तियों का उपयोग करना"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,42 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Aapne kabhi socha hai ki hum kaise text ko check karte hai ki kya woh humare requirements se match karta hai ya nahi? Yeh kaam karne ke liye hum regular expressions ka istemal karte hai. Regular expressions ek tarah ka pattern hota hai jise hum text mein search kar sakte hai. Yeh text processing mein kaafi kaam aata hai aur isliye programmers ise istemal karte hai.
+## क्या और क्यों?
 
-## What & Why?
+नियमित अभिव्यक्तियों का उपयोग पाठ डेटा के नमूनों (patterns) को मिला और मिलाने के लिए होता है। प्रोग्रामर्स इसे कार्य प्रवाह को बचती समय और सुधारे गए सत्यापन के लिए उपयोग करते हैं।
 
-Regular expressions ek tarah ka search pattern hota hai jo hum text mein apply kar sakte hai. Isse hum text ko extract kar, validate kar ya modify kar sakte hai. Regular expressions ko use karke hum bahut saare repetitive task ko automate kar sakte hai aur code ko concise aur efficient banane mein madad milta hai.
+## कैसे:
 
-## How to:
+```clojure
+(defn pattern-match [re string]
+  (re-find (re-pattern re) string))
 
-```Clojure
-;; Text se matched lines extract karna
-(re-seq #"\d+\s[a-z]+" "1 apple, 2 bananas, 3 oranges")
-
-;; Output:
-("1 apple" "2 bananas" "3 oranges")
-
-;; Text mein pattern search karna
-(re-find #"clojure" "Clojure is awesome.")
-
-;; Output:
-"Clojure"
-
-;; Text ko modify karna
-(replace "awesome" "fun" "Clojure is awesome.")
-
-;; Output:
-"Clojure is fun."
+(pattern-match "\\d+" "Hello123")  ; ➞ "123"
 ```
+यह कोड Clojure में एक नियमित अभिव्यक्ति मिलाने के लिए `re-find` और `re-pattern` फंक्शन्स का उपयोग करता है। यह "Hello123" में दिए गए पहली संख्या श्रृंखला को लौटाएगा, जो इस मामले में "123" है।
 
-## Deep Dive:
+## गहरी डुबकी
+1. इतिहास: नियमित अभिव्यक्तियां केन थॉम्प्सन द्वारा 1960 में Unix टेक्स्ट एडिटर "ed" के लिए विकसित की गई थी।
+2. विकल्प: पाठ पैटर्न मिलान के अन्य तरीके में वाईल्डकार्ड, ग्लोबिंग, और धागे समावेश होते हैं।
+3. कार्यान्वयन: Clojure में, नियमित अभिव्यक्तियों को JVM के वर्गों के जरिए लागू किया जाता है, देखें `java.util.regex`.
 
-Regular expressions humare code mein flexibility laate hai, lekin iske use mein hume kuch factors ka bhi dhyan rakhna hota hai. Regular expressions mein syntax kaafi powerful hai aur hume iske sahi tarah se use karne ki practice karni chahiye. Iske alawa, iske kuch alternatives bhi hai jaise ki string functions aur parser libraries. Regular expressions ka use karne se performance mein kuch kami ho sakti hai, lekin is baat ka hume dhyan rakhna chahiye ki hum regular expressions ko limit mein hi istemal kare.
+## अधिक देखें
 
-## See Also:
-
-Regular expressions ke baare mein aur jaankari ke liye aap ye links dekh sakte hai:
-
-- [Official Clojure documentation on regular expressions](https://clojure.org/api/cheatsheet)
-- [Regular expressions tutorial by Derek Banas](https://youtu.be/rsO8o09Ull0)
-- [Online regular expressions tester](https://regex101.com/)
+1. ClojureDoc पर नियमित अभिव्यक्तियाँ: https://clojuredocs.org/clojure.core/re-find
+2. Clojure प्रोग्राम की उचित बुनियादी: https://www.braveclojure.com/assets/clojure-for-the-brave-and-true.pdf
+3. Java नियमित अभिव्यक्ति गाइड: http://tutorials.jenkov.com/java-regex/index.html

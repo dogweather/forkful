@@ -1,6 +1,6 @@
 ---
 title:                "기본 인증을 사용하여 http 요청 보내기"
-html_title:           "Kotlin: 기본 인증을 사용하여 http 요청 보내기"
+html_title:           "Bash: 기본 인증을 사용하여 http 요청 보내기"
 simple_title:         "기본 인증을 사용하여 http 요청 보내기"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -12,26 +12,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## 무엇 & 왜?
 
-HTTP 요청에 기본 인증을 포함하여 보내는 것은 간단한 로그인 방식을 사용하여 인증하는 것을 말합니다. 프로그래머들은 이것을 하는 이유는 안전한 인터넷 서비스를 만들기 위해서입니다.
+HTTP 요청을 Basic 인증으로 보내는 것은 웹 서버에 안전하게 요청을 보내는 방법입니다. 이를 통해 프로그래머들은 인증된 사용자만이 특정 리소스에 액세스할 수 있도록 보장할 수 있습니다.
 
-## 방법:
+## 어떻게:
 
 ```Kotlin
-// 코틀린으로 HTTP 요청 보내기
-val url = URL("http://example.com/api")
-val connection = url.openConnection() as HttpURLConnection
-connection.requestMethod = "GET"
-connection.setRequestProperty("Authorization", "Basic a2V5OnNlY3JldA==")
-val responseCode = connection.responseCode
+// 필요한 패키지 임포트
+import io.ktor.client.*
+import io.ktor.client.features.auth.*
+import io.ktor.client.features.auth.basic.*
+import io.ktor.client.request.*
+
+val client = HttpClient() {
+    install(Auth) {
+        basic {
+            // 인증 정보 설정
+            username = "username"
+            password = "password"
+        }
+    }
+}
+
+// HTTP 요청 보내기
+suspend fun sendRequest() {
+    val response: String = client.get("http://example.com")
+    println(response)  // 응답 출력
+}
 ```
 
-요청에서 사용되는 URL은 간단한 문자열이고, 이를 사용하여 새로운 URL 객체를 만듭니다. 그리고 요청을 설정하고, GET이나 POST와 같은 요청 메서드를 지정합니다. 마지막으로, 적절한 Authorization 헤더를 설정하고 요청을 보냅니다. 만약 서버에서 응답 코드를 확인하고 싶다면, responseCode 변수를 사용할 수 있습니다.
+## 깊이 들여다보기:
 
-## 깊이 들어가기:
+HTTP 인증은 웹의 초기 시절부터 사용되어 왔습니다. Basic 인증은 가장 간단하며 널리 지원되는 인증 방식 중 하나입니다.
 
-기본 인증은 1990년대 초반에 인터넷에서 사용되었던 가장 간단한 인증 방식 중 하나입니다. 하지만 보안 취약점이 있어서, 현재는 사용되지 않는 방식입니다. 대신에 보다 안전한 인증 방식인 OAuth나 JSON Web Token(JWT) 등이 사용됩니다. HTTP 요청에 기본 인증을 포함시키기 위해서는 Base64 인코딩이 사용되며, 이를 위해 자바의 java.util.Base64 클래스가 사용됩니다. 
+다른 대체 방법으로는 Digest 인증, OAuth, JWT(Jason Web Tokens) 등이 있습니다. 이들은 각각 다른 애플리케이션 유형과 보안 요구 사항에 따라 선택할 수 있습니다.
 
-## 관련 자료:
+Kotlin에서 Basic 인증을 구현하는 방법은 다음과 같습니다. 먼저, `Auth` 기능을 설치합니다. 그런 다음 `basic` 부분에서 사용자 이름과 비밀번호를 설정합니다. 마지막으로, `get` 함수를 사용하여 HTTP 요청을 보냅니다. 요청은 코루틴 내에서 비동기적으로 처리되므로, 함수를 `suspend`로 표시해야 합니다.
 
-- [Kotlin 공식 문서](https://kotlinlang.org/docs/https-and-ssl.html): 코틀린에서 HTTPS 요청을 보내는 방법에 대한 공식 문서입니다.
-- [Introducing Basic HTTP Authentication in Kotlin](https://auth0.com/blog/introducing-basic-http-authentication-in-kotlin/): 코틀린에서 기본 인증을 구현하는 방법에 대한 자세한 설명이 포함되어 있습니다.
+## 또한 참조:
+
+- [Ktor 공식 문서](https://ktor.io/clients/http-client/features/auth.html)에서 기능에 대한 자세한 정보를 얻을 수 있습니다. 
+- [HTTP 인증](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)에 대한 MDN 문서도 유용한 자료입니다.
+- 다른 인증 방식에 대해서는 [OAuth](https://oauth.net/2/)와 [JWT](https://jwt.io/introduction/) 공식 페이지를 참조하세요.

@@ -1,7 +1,7 @@
 ---
-title:                "ディレクトリの存在をチェックする"
-html_title:           "C++: ディレクトリの存在をチェックする"
-simple_title:         "ディレクトリの存在をチェックする"
+title:                "ディレクトリが存在するかどうかの確認"
+html_title:           "C++: ディレクトリが存在するかどうかの確認"
+simple_title:         "ディレクトリが存在するかどうかの確認"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Files and I/O"
@@ -10,37 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするの？なんで？
-ディレクトリが存在するかどうかを確認することは、プログラマーがファイルを操作する前にディレクトリが存在するかどうかを確認することです。これにより、予期しないエラーを防ぐことができます。
+## 何となぜ？ (What & Why?)
 
-## 方法：
-```
+ディレクトリが存在するかを確認するとは、その名が示すように、指定したディレクトリが実際に存在するかを検証することです。エラーの防止、パスの存在保証、データ処理の一貫性維持など、プログラミングにおいて重要な作業です。
+
+## どうやって行うか？ (How to:)
+
+```C++
 #include <iostream>
 #include <filesystem>
 
-using namespace std;
-namespace fs = std::filesystem;
-
 int main() {
-    // ディレクトリをチェックするパスを指定
-    fs::path path_to_check = "example_directory";
+    std::filesystem::path dirPath("/path/to/directory");
 
-    // ディレクトリが存在するかどうかを確認
-    if (fs::exists(path_to_check)) {
-        cout << "ディレクトリが存在します。" << endl;
+    if(std::filesystem::exists(dirPath)) {
+        std::cout << "The directory exists.\n";
     } else {
-        cout << "ディレクトリが存在しません。" << endl;
+        std::cout << "The directory does not exist.\n";
     }
 
     return 0;
 }
 ```
-上記のコードは、C++11以降で利用可能です。ディレクトリをチェックするためには、<iostream>、<filesystem>のヘッダーファイルをインクルードし、std::filesystemの名前空間を使用する必要があります。また、C++17以降ではstd::filesystemの代わりにstd::experimental::filesystemを使用する必要があります。
 
-## 詳しく見る：
-ディレクトリの存在を確認するための主な方法は、ディレクトリのパスを指定してfs::exists関数を使用する方法です。しかし、C言語の標準ライブラリやPOSIXシステムコール、Boostライブラリを使用することでもディレクトリの存在を確認することができます。また、例外処理を行わない限り、ディレクトリの存在を確認してもディレクトリのアクセス権限やファイルシステムの制限などは確認されません。
+このコードが実行されると、指定したディレクトリが存在すれば"The directory exists."が、そうでなければ"The directory does not exist."が出力されます。
 
-## 関連リンク：
-- <https://docs.microsoft.com/ja-jp/cpp/standard-library/filesystem-functions?view=vs-2019>: Visual C++におけるstd::filesystemのドキュメント
-- <https://en.cppreference.com/w/cpp/filesystem>: C++のstd::filesystemのリファレンスページ
-- <https://www.boost.org/doc/libs/1_77_0/libs/filesystem/doc/index.htm>: Boostライブラリのfilesystemモジュールのドキュメント
+## ディープダイブ (Deep Dive)
+
+C++でディレクトリの存在確認方法が必要になったのは、ファイルの読み書き操作が一般的になったからです。C++17からは、`<filesystem>`ライブラリを使うことが推奨されています。それまでは`boost::filesystem`か直接OSのAPIを使用する方法が一般的でした。
+
+しかし、いくつかの代替案も存在します。たとえば`boost::filesystem`や`dirent.h`です。これらのヘッダは他の多くのプラットフォームでも利用できます。各ヘッダは、OSやC++のバージョン、さらには使用目的によって選択されます。
+
+## 参考情報 (See Also)
+
+- C++17の`<filesystem>`について: https://en.cppreference.com/w/cpp/filesystem
+- `boost::filesystem`について: https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm
+- `dirent.h`について: https://pubs.opengroup.org/onlinepubs/7908799/xsh/dirent.h.html

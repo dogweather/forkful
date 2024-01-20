@@ -1,7 +1,7 @@
 ---
-title:                "Radera tecken som matchar ett mönster."
-html_title:           "Java: Radera tecken som matchar ett mönster."
-simple_title:         "Radera tecken som matchar ett mönster."
+title:                "Ta bort tecken som matchar ett mönster"
+html_title:           "Arduino: Ta bort tecken som matchar ett mönster"
+simple_title:         "Ta bort tecken som matchar ett mönster"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,27 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Att ta bort tecken som matchar ett mönster är en vanlig programmeringsuppgift där man tar bort vissa tecken från en sträng eller textfil baserat på ett angivet mönster. Detta kan användas för att rensa oönskade tecken eller för att göra en sträng mer läsbar och formaterad.
+## Vad och varför?
+Att ta bort tecken som matchar ett mönster är en vanlig operation inom programmering, där vissa specifika tecken i en sträng identifieras och tas bort baserat på ett visst mönster, kallat ett "regular expression" eller "regex". Detta är användbart för att rensa upp data, extrahera information, och att manipulera strängar på sofistikerade sätt.
 
-## Hur man gör:
-```Java
-String text = "Den här strängen är programmerad för att ta bort alla siffror.";
-String newText = text.replaceAll("\\d", ""); 
-System.out.println(newText);
-```
-Output: "Den här strängen är programmerad för att ta bort alla siffror."
+## Så här gör du:
+Här är ett exempel på hur man tar bort tecken som matchar en regex-mönster i Java:
 
 ```Java
-String text = "Java är bäst <3";
-String newText = text.replaceAll("Java", "Python"); 
-System.out.println(newText);
+import java.util.regex.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String input = "Hej1 Hej2 Hej3";
+        String pattern = "\\d"; // regex pattern to match digits
+
+        Pattern p = Pattern.compile(pattern);
+        Matcher m = p.matcher(input);
+
+        String cleaned = m.replaceAll(""); 
+        // This will remove all numbers from the string
+
+        System.out.println(cleaned);  // Output: Hej Hej Hej
+    }
+}
 ```
-Output: "Python är bäst <3"
+## Djupdykning
+Denna metod att ta bort tecken baserat på kleenska stjärnor visades först i reguljära uttryck, föddes ur formell språkteori och automata inom datavetenskap under 1950-talet. Alternativ till detta inkluderar att använda 'split' metoden på en sträng, men det ger inte samma grad av kontroll och flexibilitet. 
 
-## Djupdykning:
-(1) Att matcha och ta bort tecken från en sträng har funnits sedan de tidiga dagarna av datorprogrammering. (2) Det finns också andra sätt att göra samma sak, som att använda en for-loop och jämföra varje tecken i strängen med det angivna mönstret. (3) I Java används metoden `replaceAll()` för att ersätta alla instanser av ett mönster i en sträng med en annan text.
+Innan du använder detta i din kod, var medveten om att kompliceras regex-mönster kan vara långsamma att kompilera och att exekvera. Det är ibland bättre att skriva en mer explicit loop istället för en komplicerad regex, beroende på dina prestandakrav. 
 
-## Se även:
-- [Java String Class](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html)
-- [Java Regular Expressions](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
+## Se även
+För mer detaljer, se Java dokumentationen för `Pattern` (https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/regex/Pattern.html) och `Matcher` (https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/regex/Matcher.html) klasser och Oracle's guide till reguljära uttryck (https://docs.oracle.com/javase/tutorial/essential/regex/).

@@ -1,6 +1,6 @@
 ---
 title:                "디렉토리가 존재하는지 확인하기"
-html_title:           "Go: 디렉토리가 존재하는지 확인하기"
+html_title:           "Bash: 디렉토리가 존재하는지 확인하기"
 simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "Go"
 category:             "Go"
@@ -10,38 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 뭐고 왜? 
-디렉토리가 존재하는지 확인하는 것은 프로그래머들이 파일이나 디렉토리를 조작하기 전에 그 존재를 확인하기 위해 하는 것입니다.
+## 무엇이며 왜?
 
-## 어떻게: 
+디렉토리가 존재하는지 확인하는 것은 디렉토리의 상태를 검사하는 프로그래밍 작업입니다. 이 작업이 필요한 이유는 오류를 방지하고, 프로그램의 실행 흐름을 조절하기 위해서입니다.
+
+## Java로 이렇게:
+디렉토리가 존재하는지 확인하기 위해 Go 언어에서는 os 패키지의 Stat() 함수와 os.IsNotExist() 함수를 이용할 수 있습니다.
+
 ```Go
-// 디렉토리가 존재하는지 확인하는 예제 코드
 package main
 
 import (
-	"fmt"
-	"os"
+    "fmt"
+    "os"
 )
 
 func main() {
-	dirName := "/home/test"
-	_, err := os.Stat(dirName)
-
-	if os.IsNotExist(err) {
-		fmt.Println("디렉토리가 존재하지 않습니다.")
-	} else {
-		fmt.Println("디렉토리가 존재합니다.")
-	}
+    if _, err := os.Stat("/path/to/directory"); os.IsNotExist(err) {
+        fmt.Println("Directory does not exist")
+    } else {
+        fmt.Println("Directory exists")
+    }
 }
-
-// 예제 출력
-// 디렉토리가 존재하지 않습니다.
 ```
 
+## Deep Dive
 
-## Deep Dive: 
-디렉토리의 존재를 확인하는 기능은 파일 시스템에 대한 접근을 위해 필수적입니다. 이 기능은 파일 시스템에서 파일을 생성하거나 수정하기 전에 디렉토리가 있는지 먼저 확인하는 용도로 많이 사용됩니다. 옛날에는 C언어의 stat 함수를 사용하여 디렉토리의 존재를 확인했지만, Go 언어에서는 os.Stat 함수를 사용하면 쉽게 구현할 수 있습니다.
+디렉토리 존재 확인의 사용은 프로그래밍의 역사만큼 오래되었습니다. 과거에는 파일 시스템의 가용 공간 감시, 불필요한 덮어쓰기 방지 등으로 사용되었습니다. 최신 프로그래밍에서는 웹서버에 업로드된 파일의 저장 위치 확인, 시스템 설정 디렉토리 유무 검사 등 다양한 목적으로 쓰입니다.
 
-## See Also:
-- [Go 언어 문서](https://golang.org/pkg/os/#Stat)
-- [디렉토리 접근 권한 관련 블로그 포스트](https://blog.golang.org/pipelines)
+현재 Go에서는 os 패키지의 Stat() 함수를 사용하여 파일이나 디렉토리의 정보를 가져오며, 그 후 os.IsNotExist() 함수를 통해 에러 타입이 ErrNotExist인지 확인함으로써 디렉토리의 존재를 검사합니다.
+
+## See Also
+
+- os 패키지 공식 문서: https://golang.org/pkg/os/
+- 'os' 패키지 튜토리얼: https://golangdocs.com/os-package-in-go
+- Go 언어 입문 가이드: https://www.learn-go-lang.org/basics/introduction

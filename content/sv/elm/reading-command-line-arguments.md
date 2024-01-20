@@ -1,6 +1,6 @@
 ---
 title:                "Läsa kommandoradsargument"
-html_title:           "Elm: Läsa kommandoradsargument"
+html_title:           "Bash: Läsa kommandoradsargument"
 simple_title:         "Läsa kommandoradsargument"
 programming_language: "Elm"
 category:             "Elm"
@@ -11,82 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Läsning av kommandoradsargument är en vanlig process inom programmering där programmet tar in parametrar som anges av användaren via terminalen. Detta är ett effektivt sätt för programmerare att anpassa och styra programmet utifrån användarens önskemål.
+Att läsa kommandoradsargument är metoden att ta emot input från terminalen när du kör ditt program. Det hjälper programmerare att göra sina program flexibla och mer adaptiva till olika användarbehov.
 
-## Så här:
+## Så här gör du:
+Tyvärr stöder det aktuella Elm (0.19) inte direkt läsning av kommandoradsargument. Elm är en funktionell programmeringsspråk för frontend-webben och hanterar inte samma I/O som andra backend-språk. Men vi kan använda `Node.js` för att direkt ta kommandoradsargument och skicka det till vår Elm applikation.
+
+Först, skapa en fil `index.js` för att köra din Elm-kod:
+
+```Javascript
+var Elm = require('./elm/Main');
+var app = Elm.Main.init({
+    flags: process.argv
+});
+```
+
+Sedan i din Elm `Main.elm`:
+
 ```Elm
-import Html exposing (text)
-import Html.Attributes exposing (..)
+module Main exposing (..)
 
-import Task exposing (..)
-import Task.Cmd exposing (run)
-import Platform.Cmd exposing (Cmd, none)
-import Platform.Cmd.Internals exposing (Cmd, Task)
-import Cmd
+import Platform
+
+type alias Flags = List String 
 
 main =
-  program
-    { init = init
-    , view = view
-    , update = update
-    , subscriptions = subscriptions
-    }
-  
-init : (Model, Cmd Msg)
-init =
-  (Model initialConfig, Cmd.none)
-  
-type alias Model =
-  { config : Config }
-  
-type alias Config =
-  { options : List String }
-  
-type Msg
-  = SetOptions (Model -> (Model, Cmd Msg))
-  
-update : Msg -> Model -> (Model, Cmd Msg)
-update msg model =
-  case msg of
-    SetOptions f ->
-      f model
-      |> Task.perform (always Nothing)
-  
-subscriptions : Model -> Sub Msg
-subscriptions model =
-  Sub.none
-  
-view : Model -> Html Msg
-view model =
-  div [ style "font-family" "Arial, sans-serif"
-      , style "font-size" "14px"
-      ]
-    [ input [ type_ "text"
-            , onInput SetOptions
-            ] []
-    , div []
-      [ text "Ange önskade options: "
-      , span [] [ text (String.join " " model.config.options) ]
-      ]
-    ]
+    Platform.worker
+        { init = init
+        , subscriptions = always Sub.none
+        }
 
+init : Flags -> ((), Cmd Msg)
+init flags =
+    ( (), Cmd.none )
 ```
 
-Exempel på hur användaren kan ange kommandoradsargument och hur det påverkar programmet:
-```
-$ elm make Main.elm
-    `options` set to an empty list
-$ elm make Main.elm --optimize
-    `options` set to ["optimize"]
-$ elm make Main.elm --debug --port=8000
-    `options` set to ["debug", "port=8000"]
-```
+Dit `init` tar argumenten från kommandoraden och Elm tar emot de som flaggor.
 
-## Djupdykning:
-Historiskt sett har läsning av kommandoradsargument varit en vanlig funktion inom programmering, men med ökande popularitet av grafiska användargränssnitt (GUI) har dess relevans minskat. Alternativ till att läsa kommandoradsargument inkluderar att använda menyval eller knappar i ett GUI, men för vissa program är läsning av kommandoradsargument fortfarande det mest lämpliga valet.
+## Djupgående Diver
+Historiskt sett har att läsa kommandoradsargument i programmering erbjudit flexibilitet och makt för operativsystemanvändare att interagera med program. Alternativ i Elm inkluderar skapande av fler interaktiva användargränssnitt eller sömlös kommunikation med serverskript för att arbeta runt dess I/O-begränsningar. Intressant nog är Elm's unika implementering till stor del baserad på dess mål att förbättra pålitlighet och underhållbarhet i webbapplikationskod.
 
-Implementationen av läsning av kommandoradsargument kan variera beroende på programmeringsspråk, men i grund och botten innebär det att läsa in parametrar från terminalen och översätta dem till en struktur som programmet kan förstå och använda.
-
-## Se även:
-- [Officiell Elm dokumentation om Cmd](https://package.elm-lang.org/packages/elm/core/latest/Cmd)
-- [GeeksforGeeks artikel om läsning av kommandoradsargument i Elm](https://www.geeksforgeeks.org/reading-command-line-arguments-in-elm/)
+## Se Även
+[Node.js dokumentation om `process.argv`](https://nodejs.org/docs/latest/api/process.html#process_process_argv)
+[Elm Guide om Flaggor](https://guide.elm-lang.org/interop/flags.html)
+[Community Diskussion om Kommandoradsargument på Elm Discourse](https://discourse.elm-lang.org/t/command-line-arguments-in-elm/1988)

@@ -11,40 +11,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Capitalizing a string means converting the first character of the string to uppercase and leaving the rest of the characters unchanged. Programmers often do this to make strings more visually appealing or to follow certain formatting rules and conventions.
+String capitalization is the conversion of the first character in a string to uppercase. It's used in programming to sanitize data, ensure grammatical correctness, and enhance readability.
 
 ## How to:
-
-To capitalize a string in Ruby, we can use the `capitalize` method. It takes the first character of the string and converts it to uppercase, leaving the rest unchanged. Let's see an example:
+In Ruby, the `capitalize` method is used to capitalize a string. Below is a simple illustration:
 
 ```Ruby
-str = "hello world"
+str = "hello world!" 
 puts str.capitalize
+# Prints: "Hello world!"  
 ```
-Output: "Hello world"
 
-We can also use the `capitalize!` method, which modifies the original string instead of creating a new one. This can be useful if we want to capitalize a string in-place without using additional memory. Let's try it out:
+It's important to note that `capitalize` only changes the first character of the string to uppercase. If you want to capitalize each word in the string, use `titleize`:
 
 ```Ruby
-str = "hello world"
-str.capitalize!
-puts str
+require 'active_support/core_ext/string'
+
+str = "hello world!" 
+puts str.titleize
+# Prints: "Hello World!" 
 ```
-Output: "Hello world"
 
 ## Deep Dive
+The `capitalize` method has been part of Ruby since its initial release in 1995. On the other hand, `titleize` is an added feature from the ActiveSupport library, commonly used in Ruby on Rails.
 
-The `capitalize` method has been a part of Ruby since its first release in 1995. It was created by Yukihiro Matsumoto, also known as "Matz," who is the designer and lead developer of Ruby. This method is a simple and efficient way to capitalize strings in Ruby.
+There's a third way to capitalize strings: the `upcase` method to change all characters to uppercase. However, this isn't typically the preferred method for string capitalization because it's more aggressive than `capitalize` or `titleize`.
 
-An alternative to the `capitalize` method is using the `upcase` method, which converts all characters in a string to uppercase. However, this method does not follow certain formatting rules, such as capitalizing the first character only. Additionally, the `capitalize` method is more specific and precise, making it a better choice in most cases.
-
-Implementation-wise, the `capitalize` method uses the `unicode_normalize` method to handle special characters and variations of capitalization in different languages. This ensures that the method works correctly for all types of strings.
+Under the hood, these methods transform the ASCII value of the character(s) from lowercase to uppercase. Make sure your string is encoded in a compatible format to avoid any unexpected behavior.
 
 ## See Also
-
-To learn more about string manipulation in Ruby, refer to the official documentation: https://ruby-doc.org/core-3.0.0/String.html
-
-You can also check out some useful string methods, such as `split` and `gsub`, to enhance your string manipulation skills.
-
-For a more in-depth understanding of the history of Ruby and its creator "Matz," you can read the book "The Book of Ruby" by Huw Collingbourne.
+More on Ruby Strings: [Official Ruby Documentation](https://ruby-doc.org/core/String.html). 
+For `titleize` and other ActiveSupport goodness: [Ruby on Rails API Documentation](https://api.rubyonrails.org/classes/ActiveSupport/Inflector.html#method-i-titleize). 
+More on ASCII values: [ASCII Table and Description](http://www.asciitable.com/).

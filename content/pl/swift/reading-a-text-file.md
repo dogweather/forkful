@@ -1,7 +1,7 @@
 ---
-title:                "Odczytywanie pliku tekstowego"
-html_title:           "Swift: Odczytywanie pliku tekstowego"
-simple_title:         "Odczytywanie pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym jest odczytywanie pliku tekstowego i dlaczego programiści to robią 
-Odczytywanie plików tekstowych to proces, w którym program komputerowy analizuje zawartość pliku tekstowego i przetwarza go w sposób zrozumiały dla użytkownika. Programiści często korzystają z tej techniki, ponieważ pozwala ona na łatwe i szybkie dostęp do informacji przechowywanych w plikach tekstowych.
+## Co i dlaczego?
 
-## Jak to zrobić: 
-Odczytywanie pliku tekstowego jest stosunkowo proste w języku Swift. Najpierw musimy utworzyć obiekt typu FileHandle, który będzie reprezentował plik, który chcemy odczytać. Następnie możemy użyć metody readDataToEndOfFile() lub readData(ofLength: Int) na tym obiekcie, aby odczytać dane z pliku.
+Odczytywanie pliku tekstowego to proces wydobywania danych z zapisanych wcześniej plików tekstowych. Programiści robią to, aby móc manipulować, analizować i wykorzystywać te dane w swojem kodzie.
+
+## Jak to zrobić:
+
+Oto przykład, jak odczytać plik tekstowy w Swift:
 
 ```Swift
-let fileHandle = FileHandle(forReadingAtPath: "/ścieżka/do/pliku.txt")!
+import Foundation
 
-//Odczytaj całą zawartość pliku
-let data = fileHandle.readDataToEndOfFile()
-
-//lub odczytaj określoną ilość bajtów z pliku
-let data = fileHandle.readData(ofLength: 100)
+let fileURL = Bundle.main.url(forResource: "Example", withExtension: "txt")
+do {
+    let content = try String(contentsOf: fileURL!, encoding: .utf8)
+    print(content)
+} catch {
+    print("Cannot read the file")
+}
 ```
-Możemy również ustawić punkt odczytu w pliku przy użyciu metody seek(toFileOffset: UInt64), co pozwala na wczytanie tylko części pliku lub na odczytanie danych w sposób sekwencyjny.
 
-## Wnikliwe rozważania:
-Odczytywanie plików tekstowych jest procesem, który jest wykorzystywany od dawna, gdyż jest to prosty i uniwersalny sposób na przechowywanie danych. Jedną z popularniejszych alternatyw jest korzystanie z bazy danych, jednak odczytywanie plików tekstowych jest wciąż powszechnie stosowane, szczególnie w aplikacjach mobilnych.
+W tym przypadku, jeśli plik "Example.txt" znajduje się w głównym pakiecie i zawiera linijkę "Hello, Swift!", wynikiem będzie:
 
-## Zobacz również:
-Jeśli chcesz dowiedzieć się więcej o odczytywaniu plików tekstowych w języku Swift, polecamy zapoznać się z oficjalną dokumentacją Apple: https://developer.apple.com/documentation/foundation/filehandle. Możesz również znaleźć wiele przydatnych poradników i artykułów na ten temat w sieci.
+```Swift
+Hello, Swift!
+```
+
+## Deep Dive
+
+Często odczytywanie plików tekstowych bywa konieczne, np. przy analizie danych czy konfiguracji aplikacji. Istnieje wiele sposobów na odczyt plików tekstowych, a Swift oferuje prosty i intuicyjny interfejs do tej operacji. Historia plików tekstowych sięga czasów Unixa i do dziś są one znaczącym elementem komputacji. Co do szczegółów implementacji, Swift wykorzystuje typ String do przechowywania zawartości pliku. 
+
+## Zobacz również 
+
+1. Dokumentacja Swift: [String](https://developer.apple.com/documentation/swift/string)
+2. Jak odczytać plik w Swift: [StackOverflow](https://stackoverflow.com/questions/24581517/read-a-file-url-line-by-line-in-swift)
+3. Więcej o plikach tekstowych: [Wikipedia](https://pl.wikipedia.org/wiki/Plik_tekstowy)

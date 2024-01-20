@@ -1,7 +1,7 @@
 ---
-title:                "Generowanie losowych liczb"
-html_title:           "C: Generowanie losowych liczb"
-simple_title:         "Generowanie losowych liczb"
+title:                "Generowanie liczb losowych"
+html_title:           "Gleam: Generowanie liczb losowych"
+simple_title:         "Generowanie liczb losowych"
 programming_language: "C"
 category:             "C"
 tag:                  "Numbers"
@@ -10,46 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Czym to jest i po co to robić?
-Generowanie liczb losowych jest podstawowym elementem programowania, który pozwala na stworzenie symulacji zdarzeń losowych. Programiści często używają generatorów liczb losowych do testowania kodu i tworzenia aplikacji, które wymagają losowego wyboru lub generowania wartości.
+## Co & Dlaczego?
 
-## Jak to zrobić?
-Możesz wygenerować losowe liczby za pomocą funkcji `rand()`, która zwraca liczbę całkowitą z zakresu od 0 do `RAND_MAX`. Aby określić zakres dla generowanych liczb, użyj funkcji `srand()` z argumentem określającym ziarno lub ustaw generator w tryb który gwarantuje unikalność wygenerowanych liczb.
+Generowanie losowych liczb to proces tworzenia liczb, które nie mają żadnej widocznej wzorowości. Programiści robią to, aby dodawać nieprzewidywalność do ich aplikacji, symulowań czy gier.
 
-```
-#include <stdio.h>
-#include <stdlib.h>
+## Jak to zrobić:
 
-int main()
-{
-  int i;
-  
-  // Ustaw ziarno generatora
-  srand(100);
-  
-  // Wygeneruj i wyświetl 5 liczb losowych z zakresu 0-9
-  for(i = 0; i < 5; i++)
-  {
-    printf("%d\n", rand() % 10);
-  }
-  
-  return 0;
+```C
+#include <stdio.h> 
+#include <stdlib.h> 
+#include <time.h> 
+
+int main(){
+   
+   srand(time(0)); 
+   int losowaLiczba = rand(); 
+
+   printf("Losowa liczba: %d\n", losowaLiczba); 
+
+   return 0;
 }
 ```
+Gdy uruchomisz ten kod, zobaczysz na wyjściu coś takiego:
 
-Przykładowy wynik:
+```C
+Losowa liczba: 172389184
 ```
-2
-0
-5
-6
-8
-```
+Liczba ta będzie różna za każdym razem, gdy uruchomisz program. 
 
-## Głębszy zanurzenie
-Funkcja `rand()` została wprowadzona w języku C w 1972 roku i od tego czasu jest niezastąpiona w tworzeniu symulacji i gier. Wraz z rozwojem technologii, powstały jednak alternatywne metody generowania liczb losowych, takie jak np. generator liczb pseudolosowych oparty na algorytmie RSA.
+## Głębsze spojrzenie:
 
-## Zobacz też
-- [Dokumentacja funkcji rand()](https://www.cplusplus.com/reference/cstdlib/rand/)
-- [Dokumentacja funkcji srand()](https://www.cplusplus.com/reference/cstdlib/srand/)
-- [Klasyfikacja generatorów liczb losowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)
+Generowanie liczb losowych ma swoje korzenie w starożytnych grach hazardowych, ale zastosowania dzisiejsze są bardziej techniczne. W C, `rand()` i `srand()` to popularne funkcje do generowania liczby losowej, ale są one pseudolosowe, czyli wydają się losowe, ale są produkowane przez deterministyczny algorytm.
+
+Alternatywą jest użycie `/dev/random` lub `/dev/urandom` na systemach Unix, które oferują lepsze (choć wolniejsze) generowanie liczb losowych.
+
+Zwróć uwagę, że `rand()` generuje liczby w określonym zakresie, więc często używa się go z operatorem modulo (`%`) aby ograniczyć zakres wyjściowych liczb losowych.
+
+## Zobacz również:
+
+1) "C Library - <stdlib.h>," TutorialsPoint, dostępne online: https://www.tutorialspoint.com/c_standard_library/stdlib_h.htm
+2) "How to Generate a Random Number in C Programming," WikiHow, dostępne online: https://www.wikihow.com/Generate-a-Random-Number-in-C-Programming
+3) "Generating random numbers," GNU, dostępne online: https://www.gnu.org/software/libc/manual/html_node/Random-Numbers.html
+4) "Pseudorandom number generator," Wikipedia, dostępne online: https://en.wikipedia.org/wiki/Pseudorandom_number_generator

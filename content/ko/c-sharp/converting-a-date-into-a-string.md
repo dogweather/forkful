@@ -1,6 +1,6 @@
 ---
 title:                "날짜를 문자열로 변환하기"
-html_title:           "C#: 날짜를 문자열로 변환하기"
+html_title:           "Arduino: 날짜를 문자열로 변환하기"
 simple_title:         "날짜를 문자열로 변환하기"
 programming_language: "C#"
 category:             "C#"
@@ -10,25 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?: 
-날짜를 문자열로 변환하는 것은 프로그래머가 일일 생활에서 자주 할 수 있는 작업입니다. 왜냐하면, 우리는 날짜를 보기 쉽고 이해할 수 있도록 형식을 지정하고 싶기 때문입니다. 또한, 날짜를 다른 프로그램에 전달하거나 저장할 때도 문자열로 변환해야 합니다.
+## 무엇이며 왜합니까?
 
-## 방법:
+날짜를 문자열로 변환하는 것은 날짜 데이터가 포함된 변수를 문자열 형식으로 바꾸는 것을 말합니다. 이는 프로그래머가 날짜 데이터를 좀 더 보기 쉽도록 표현하거나 다른 시스템과 통신하기 위해 필요합니다.
+
+## 어떻게?
+
+C#을 사용하여 날짜를 문자열로 변환하는 것은 매우 간단합니다. 첫 번째 예제를 보겠습니다.
 ```C#
-DateTime date = DateTime.Now;
-string dateString = date.ToString("dd-MM-yyyy");
-Console.WriteLine(dateString);
+DateTime myDate = DateTime.Now;
+string dateInString = myDate.ToString("MM/dd/yyyy");
+Console.WriteLine(dateInString); 
 ```
-출력 결과: 06-09-2021
+이 코드를 실행하면 오늘 날짜를 `MM/dd/yyyy` 형식의 문자열로 출력합니다.
 
-## 더 들어가보기:
-- 날짜를 문자열로 변환하는 작업은 일반적으로 화면에 표시하기 전에 필요한 작업 중 하나입니다. 예전에는 각각의 언어에 따라 문자열 변환 방식이 다릅니다. 하지만, C#에서는 DateTime 객체의 ToString() 메소드를 통해 간단하게 형식을 지정할 수 있습니다.
+## 딥 다이브
 
-- 날짜를 문자열로 변환할 때에는 다른 언어에서도 사용할 수 있는 ISO 날짜 형식 (YYYY-MM-DD)을 사용하는 것을 권장합니다. 이렇게 하면 다른 언어로 작성된 프로그램과의 호환성을 높일 수 있습니다.
+1. 역사적 맥락: C#에는 날짜를 문자열로 표현하는 데 사용할 수 있는 다양한 메소드와 포맷이 있습니다.
+2. 대안: `DateTime.ToString()` 외에도 `String.Format()`이나 문자열 보간을 사용할 수 있습니다.
+```C#
+DateTime myDate = DateTime.Now;
+string dateInString = string.Format("{0:MM/dd/yyyy}", myDate);
+Console.WriteLine(dateInString);
+```
+3. 구현 세부 사항 : `ToString()`은 현재 시스템의 문화권에 따라 출력을 제공합니다. 직접 특정 형식을 지정하려면 `ToString("format")`을 사용합니다.
 
-- 날짜를 문자열로 변환할 때 주의할 점은 형식을 잘못 지정하면 원하는 결과가 나오지 않을 수 있다는 것입니다. 예를 들어, "mm" 대신 "MM"을 사용하면 월을 나타내는 숫자가 아니라 "분"을 나타내는 숫자가 나올 수 있습니다.
+## 참고문헌
 
-## 관련 자료:
-- https://docs.microsoft.com/en-us/dotnet/standard/base-types/custom-date-and-time-format-strings
-- https://www.c-sharpcorner.com/article/date-and-time-format-in-C-Sharp/
-- https://www.c-sharpcorner.com/blogs/date-and-time-format-customization-options-in-C-Sharp
+- [DateTime.ToString() 메서드 (Microsoft 공식 문서)](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.tostring?view=net-5.0)
+- [String.Format 메서드 (Microsoft 공식 문서)](https://docs.microsoft.com/en-us/dotnet/api/system.string.format?view=net-5.0)
+- [문자열 보간 (Microsoft 공식 문서)](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)

@@ -1,7 +1,7 @@
 ---
-title:                "디렉토리가 존재하는지 확인하는 방법"
-html_title:           "TypeScript: 디렉토리가 존재하는지 확인하는 방법"
-simple_title:         "디렉토리가 존재하는지 확인하는 방법"
+title:                "디렉토리가 존재하는지 확인하기"
+html_title:           "C#: 디렉토리가 존재하는지 확인하기"
+simple_title:         "디렉토리가 존재하는지 확인하기"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Files and I/O"
@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이고 왜?:
-디렉토리가 존재하는지 확인하는 것은 프로그래머가 할 일 중 하나입니다. 디렉토리가 있는지 여부를 확인하면 예기치 않은 오류를 방지할 수 있으며, 파일 또는 디렉토리를 생성하기 전에 이미 존재하는 디렉토리인지 확인할 수 있습니다.
+## 왜하고 무엇을하는지? (What & Why?)
 
-## 방법:
-TypeScript 내에서 디렉토리가 존재하는지 확인하는 방법은 간단합니다. 아래의 코드를 보세요:
+디렉토리 존재 여부를 확인하는 것은 파일 시스템에 특정 폴더가 존재하는지를 파악하는 과정입니다. 이것은 프로그래머가 파일을 읽거나 쓰기 전에 문제가 발생하지 않도록 하거나 또는 디렉토리를 처음 만들 때 중복을 방지하는 데 필요한 주요 도구입니다.
 
+## 어떻게 하는가? (How to)
+
+TypeScript에서 디렉토리 존재 여부를 확인하려면 Node.js의 `fs` 모듈을 사용하면 됩니다.
 ```TypeScript
-import { existsSync } from 'fs';
+import * as fs from 'fs';
 
-if (existsSync('myDirectory')) {
-  console.log('myDirectory exists!');
+const directory = './my-directory';
+
+if (fs.existsSync(directory)) {
+  console.log('The directory exists');
 } else {
-  console.log('myDirectory does not exist.');
+  console.log('The directory does not exist');
 }
 ```
+'./my-directory'가 존재하면 'The directory exists'라는 문장이 출력됩니다. 그렇지 않으면 'The directory does not exist' 라는 문구가 출력됩니다.
 
-위의 코드를 실행하면 결과는 작은 폴더 아이콘이 있는지 여부에 따라 다릅니다. 폴더 아이콘이 있으면 `myDirectory exists!`가, 아니면 `myDirectory does not exist.`가 출력됩니다.
+## 깊게 들어가기 (Deep Dive)
 
-## 깊게 파헤치기:
-디렉토리가 존재하는지 확인하는 기능은 파일 시스템의 기본 기능입니다. 파일 시스템은 다른 파일 시스템을 포함하고있을 수 있으므로, 디렉토리의 존재 여부는 매우 중요합니다. 디렉토리가 있는지 여부를 확인하는 다른 방법으로는 `fs.readdirSync()`메서드를 사용하는 방법이 있습니다. 이 메서드는 디렉토리 내부의 파일 목록을 가져오기 때문에, 이 방법을 사용하면 더 많은 정보를 얻을 수 있습니다.
+디렉토리 존재 여부 확인 기능은 파일 시스템 관련 작업이 필요할 때마다 매우 중요합니다. 이 과정이 없다면, 어플리케이션은 중복되는 디렉토리를 만들거나, 존재하지 않는 디렉토리에서 파일을 찾으려는 등의 문제를 겪을 수 있습니다.
 
-어떤 프로그래밍 언어를 사용하든 이 기능을 지원합니다. 하지만 TypeScript는 예외가 발생할 수 있는지에 대한 확실한 유형을 가지고 있어서 더 안전한 방식으로 디렉토리를 확인할 수 있게 해줍니다.
+이 행위의 대안은 'fs.stat' 또는 'fs.access'를 사용하는 것인데 이 방법들은 파일 또는 디렉토리의 정보를 제공하거나 존재여부를 확인하는 데 사용됩니다. 그러나 File System 모듈의 ‘fs.existsSync’는 가장 일반적이고 직관적인 방법입니다. 
 
-## 관련 자료:
-- [Node.js 공식 문서 - 파일 시스템 모듈](https://nodejs.org/api/fs.html)
-- [TypeScript 공식 문서 - 파일 API](https://www.typescriptlang.org/docs/handbook/fine-volumes-1/1-narrowing.html#using-type-predicates)
+## 참고 자료 (See Also)
+
+다른 관련 자료들에 대해서는 아래 링크들을 참고해주세요:
+- [Node.js fs Documentation](https://nodejs.org/api/fs.html)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
+- [How to check if a file or directory exists in Node.js](https://stackoverflow.com/questions/17699599/how-to-check-if-a-file-or-directory-exists-in-node-js)

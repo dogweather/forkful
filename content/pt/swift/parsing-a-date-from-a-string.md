@@ -1,7 +1,7 @@
 ---
-title:                "Analisando uma data de uma string"
-html_title:           "Swift: Analisando uma data de uma string"
-simple_title:         "Analisando uma data de uma string"
+title:                "Analisando uma data a partir de uma string"
+html_title:           "PowerShell: Analisando uma data a partir de uma string"
+simple_title:         "Analisando uma data a partir de uma string"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Dates and Times"
@@ -10,33 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porque?
-Parsing de uma data de uma string significa extrair informações de uma data que está em um formato de texto legível para humanos, e transformá-la em um formato que o computador possa entender e manipular. Os programadores fazem isso para processar e armazenar datas de forma eficiente em seus aplicativos, permitindo que os usuários visualizem e manipulem dados temporais com precisão.
+# Lidando com Datas em Swift: Parsing de uma String para Date
 
-## Como fazer:
+## O que & Por quê?
+
+Tratar datas é uma tarefa comum na programação. Fazer o parsing de uma data a partir de uma string significa converter uma representação textual de uma data em um objeto `Date` do Swift. Isso é feito para manipular melhor as informações de data na lógica de programação, facilitando cálculos e conversões.
+
+## Como Fazer: 
+
 ```Swift
-// Criando uma string de data
-let dataString = "25/10/2021"
+import Foundation
 
-// Definindo o formato da data
 let dateFormatter = DateFormatter()
-dateFormatter.dateFormat = "dd/MM/yyyy"
+dateFormatter.dateFormat = "yyyy-MM-dd"
+let date = dateFormatter.date(from: "2022-01-01")
 
-// Convertendo a string em uma data
-if let data = dateFormatter.date(from: dataString) {
-    // Imprimindo a data em um novo formato
-    dateFormatter.dateFormat = "MMMM dd, yyyy"
-    let novaDataString = dateFormatter.string(from: data)
-    print(novaDataString)
-}
-
-// Output: "outubro 25, 2021"
+print(date)
 ```
+ 
+Neste pequeno trecho de código acima, transformamos a string `"2022-01-01"` em um objeto `Date`. A saída será algo como `Optional(2022-01-01 00:00:00 +0000)`, expressando a data na forma padrão ISO 8601. 
 
-## Mergulho Profundo:
-Parsing de datas a partir de strings é uma tarefa comum e essencial na programação de aplicativos para lidar com dados temporais. Antes do advento de bibliotecas como a `DateFormatter` do Swift, os programadores precisavam escrever seu próprio código para analisar e formatar datas. Atualmente, existem também outras bibliotecas disponíveis para essa tarefa, como a `NSCalendar` e a `ISO8601DateFormatter`.
+## Imersão Profunda
 
-## Veja Também:
-- [Documentação da DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-- [Documentação da NSCalendar](https://developer.apple.com/documentation/foundation/nscalendar)
-- [Documentação da ISO8601DateFormatter](https://developer.apple.com/documentation/foundation/iso8601dateformatter)
+O modelo de dados de data e tempo do Swift é inspirado em padrões de tempo Unix e ISO 8601. Esses padrões são amplamente aceitos e têm o benefício de serem conceitualmente simples e computacionalmente eficientes. 
+
+Existem algumas alternativas para fazer o parser de uma string para uma data em Swift, incluindo bibliotecas externas como a ISO8601DateFormatter. Porém, muitas vezes a classe `DateFormatter` padrão é suficiente.
+
+Pode ser útil saber que o `DateFormatter` do Swift usa internamente um `NSDateFormatter`, uma classe mais antiga disponível desde o Objective-C. Isso deixa claro como o Swift mantém a compatibilidade e constroi a partir da fundação do Objective-C.
+
+## Veja Também
+
+O Swift tem várias classes poderosas para lidar com datas, horários e fusos horários. Aqui estão alguns links para aprofundar seu conhecimento:
+
+- [Date](https://developer.apple.com/documentation/foundation/date) — Objeto que encapsula a noção de um único ponto no tempo.
+- [DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter) — Converte entre datas e suas representações textuais.
+- [Calendar](https://developer.apple.com/documentation/foundation/calendar) — Fornece maneiras de comparar datas e realizar operações de calendário baseadas em regras específicas de localização.
+- [TimeZone](https://developer.apple.com/documentation/foundation/timezone) — Um valor que representa um fuso horário geográfico.

@@ -1,7 +1,7 @@
 ---
-title:                "Päivämäärän hankkiminen"
-html_title:           "Fish Shell: Päivämäärän hankkiminen"
-simple_title:         "Päivämäärän hankkiminen"
+title:                "Nykyisen päivämäärän hankkiminen"
+html_title:           "Haskell: Nykyisen päivämäärän hankkiminen"
+simple_title:         "Nykyisen päivämäärän hankkiminen"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Dates and Times"
@@ -10,25 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+# Nykyisen päivän hankkiminen Fish Shellillä
 
-Päivämäärän saaminen tarkoittaa järjestelmän nykyisen päivämäärän ja ajan hakemista. Tämä on hyödyllistä, koska se auttaa ohjelmoijia esimerkiksi erilaisten aikaleimojen ja ajastettujen toimintojen luomisessa.
+## Mitä ja Miksi?
+
+Nykyisen päivämäärän hankkiminen tarkoittaa päivämäärän ja ajan hankkimista juuri sillä sekunnilla, kun koodi suoritetaan. Tätä tehdään lähinnä ajanseurantaa ja tapahtumien lokitusta varten.
 
 ## Kuinka:
 
-Fish Shellilla päivämäärän saaminen on helppoa. Käytä vain komentoa ```date```, ja nykyinen päivämäärä ja aika tulostetaan näytölle. Esimerkiksi:
+Tässä on esimerkkikoodi ja sen tulostus Fish Shellillä:
 
+```Fish Shell
+set -l CURRENT_DATE (date)
+echo $CURRENT_DATE
 ```
-Fish Shell > date
-mauli tammi 06 10:06:23 EET 2020
+Tämä koodi tulostaa nykyisen päivämäärän ja ajan, esimerkiksi: 
+
+```Shell Output
+Ti Huhti 20 15:30:27 EEST 2022
 ```
 
-## Syväsukellus:
+## Syvällisempi tarkastelu:
 
-Historiallisessa kontekstissa, ennen Fish Shellin käyttöä, ohjelmoijien täytyi käyttää erilaisia ohjelmointikielien kirjastoja tai suorittaa monimutkaisia komentoja saadakseen päivämäärän ja ajan. Fish Shell tekee tästä prosessista paljon helpomman yksinkertaisella ```date``` komennolla.
+(1) Historiallinen konteksti: Fish Shell syntyi 2005 pyrkimyksenä luoda käyttäjäystävällisempi komentotulkki.
 
-On myös olemassa muita vaihtoehtoja kuin Fish Shell, kuten Bash ja Z Shell, joilla on myös samanlainen ```date``` komento. Fish Shellilla tämä komento kuitenkin tukee monia erilaisia vaihtoehtoja ja parametreja, joita voit käyttää mukauttaaksesi tuloksen.
+(2) Vaihtoehtoja nykyisen päivämäärän hankkimiseen ovat bash ja zsh, mutta kumpikin edellyttää pidempää komentoa samaan tehtävään.
+
+(3) Tarkemmat tiedot: Fish Shell hankkii nykyisen päivämäärän käyttäen `date`-komentoa, joka on osa Unix-järjestelmän ydintoiminnallisuutta.
 
 ## Katso myös:
 
-[Lisätietoja täältä.](https://fishshell.com/docs/current/cmds/date.html)
+Fish Shellin virallinen verkkosivu: [Fish Shell](https://fishshell.com/)
+
+Unix-komentojen opas: [Unix Commands](https://unixguide.net/unix/bash_t.shtml)
+
+Fish Shellin käytön opas: [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)

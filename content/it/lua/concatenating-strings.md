@@ -1,7 +1,7 @@
 ---
-title:                "Unire stringhe"
-html_title:           "Lua: Unire stringhe"
-simple_title:         "Unire stringhe"
+title:                "Concatenazione di stringhe"
+html_title:           "Bash: Concatenazione di stringhe"
+simple_title:         "Concatenazione di stringhe"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,43 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché? 
-Concatenare le stringhe nel linguaggio di programmazione Lua significa unire più stringhe in una sola. Questa operazione è spesso utilizzata dai programmatori per creare stringhe più complesse e complete, come ad esempio un testo che include vari valori e variabili.
+## Cosa & Perché?
 
-## Come fare:
-In Lua, per concatenare due stringhe, è sufficiente utilizzare l'operatore ".." tra le due stringhe. Ad esempio:
+Concatenando le stringhe, noi uniamo due o più frammenti di testo in un unico pezzo. I programmatori fanno questo per creare stringhe dinamiche o formattare l'output.
+
+## Come si fa:
+
 ```Lua
-a = "ciao"
-b = "mondo"
-c = a .. b
-print(c)
+string1 = "Ciao, "
+string2 = "Mondo!"
+print(string1 .. string2)
 ```
-Questo codice produrrà l'output "ciaomondo".
 
-Se si vuole aggiungere uno spazio tra le due stringhe, basta inserirlo tra virgolette all'interno dell'operatore "..". Per esempio:
+Output:
+
 ```Lua
-a = "ciao"
-b = "mondo"
-c = a .. " " .. b
-print(c)
+"Ciao, Mondo!"
 ```
-L'output sarà "ciao mondo".
 
-È anche possibile concatenare più di due stringhe in una sola operazione, semplicemente aggiungendo l'operatore ".." tra tutte le stringhe. Come ad esempio:
-```Lua
-a = "hello"
-b = "my"
-c = "friend"
-d = a .. " " .. b .. " " .. c
-print(d)
-```
-L'output sarà "hello my friend".
+In Lua, usiamo l'operatore ".." per concatenare le stringhe.
 
-## Approfondimenti:
-Nel linguaggio di programmazione Lua, esistono anche altre modalità per unire le stringhe, come ad esempio utilizzare la funzione `string.format()` o la funzione `string.gsub()`. Tuttavia, l'utilizzo dell'operatore ".." è il metodo più semplice e veloce per concatenare le stringhe.
+## Approfondimenti
 
-In passato, concatenare le stringhe era considerato un'operazione molto lenta nei linguaggi di programmazione, ma grazie alle ottimizzazioni dei moderni interpreti di Lua, questo non è più un problema.
+1. Storia: La concatenazione delle stringhe era una caratteristica della prima versione di Lua, risalente al 1993.
+2. Alternative: la funzione string.format viene utilizzata per formattare le stringhe. 
+  ``` Lua 
+  string.format("%s %s", string1, string2)
+  ```
+3. Dettagli di implementazione: la concatenazione di stringhe in Lua non modifica le stringhe originali. Al contrario, crea una nuova stringa combinando quelle esistenti.
 
-## Vedi anche:
-- [Documentazione ufficiale di Lua sulle stringhe (in inglese)](https://www.lua.org/manual/5.3/manual.html#6.4) 
-- [Tutorial di concatenazione delle stringhe in Lua (in inglese)](https://www.tutorialspoint.com/lua/lua_strings.htm)
+## Leggi di più
+
+Per saperne di più sulla concatenazione di stringhe in Lua, consulta i seguenti link: 
+
+1. Documentazione Lua: https://www.lua.org/manual/5.4/manual.html#3.4.5
+2. Tutorial Lua: http://www.lua.org/pil/11.6.html

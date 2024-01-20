@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expressões regulares"
-html_title:           "C++: Utilizando expressões regulares"
-simple_title:         "Utilizando expressões regulares"
+title:                "Usando expressões regulares"
+html_title:           "Gleam: Usando expressões regulares"
+simple_title:         "Usando expressões regulares"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,50 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
-Regular Expressions (ou Expressões Regulares) são ferramentas poderosas que os programadores utilizam para encontrar padrões específicos em um texto. Elas são úteis para validar entradas de usuário, pesquisar e filtrar dados e até mesmo substituir informações em um documento. Além disso, eles economizam tempo e esforço, já que permitem que você processe grandes quantidades de dados de forma rápida e eficiente.
+## O Que e Por Quê?
 
-## How to:
-Um exemplo simples de como usar expressões regulares em C ++ é através da biblioteca `std::regex`. Ela oferece vários métodos para trabalhar com strings e analisar padrões em um texto.
-```
-#include <iostream>
+Expressões regulares (regex) são uma ferramenta poderosa para encontrar e manipular textos. Programadores as usam para economizar tempo e esforço, permitindo operações complexas de correspondência e substituição de string com poucas linhas de código.
+
+## Como Fazer:
+
+Vamos usar a biblioteca 'regex' do C++ (a partir do C++11). Aqui está um exemplo básico de uso:
+
+```C++
 #include <regex>
-using namespace std;
+#include <string>
+#include <iostream>
 
-int main(){
-  // Definindo o padrão de busca
-  regex pattern ("[0-9]+"); 
-  // String de entrada 
-  string text = "Hoje é dia 15 de agosto, faltam 16 dias para o meu aniversário!";
-  
-  // Buscando padrão na string
-  smatch results;
-  regex_search(text, results, pattern);  
+int main() {
+    std::string s ("Oi, eu sou um exemplo.");
+    std::regex e ("\\bexemplo\\b");   // corresponde a "exemplo" exatamente
 
-  // Imprimindo o primeiro resultado encontrado
-  cout << results[0] << endl;
-
-  // Substituindo o primeiro resultado por asteriscos
-  string new_text = regex_replace(text, pattern, "***");
-  
-  // Imprimindo o novo texto
-  cout << new_text << endl;
-
-  return 0;
+    // verificaço de correspondência
+    if (std::regex_search(s,e)) {
+        std::cout << "Expressão encontrada!" <<std::endl;
+    } else {
+        std::cout << "Expressão não encontrada." <<std::endl;
+    }
+    return 0;
 }
 ```
-A saída desse código será:
-```
-15
-Hoje é dia ** de agosto, faltam ** dias para o meu aniversário!
-```
 
-## Deep Dive:
-As expressões regulares têm sido utilizadas desde a década de 1950 e foram popularizadas pelo linguista norte-americano Stephen Kleene. Há diversas variações e implementações de expressões regulares em diferentes linguagens de programação, mas o conceito básico permanece o mesmo.
+A saída será `Expressão encontrada!`, pois a palavra "exemplo" é encontrada na string `s`.
 
-Alternativas às expressões regulares incluem o uso de funções de string, como `find()` e `replace()`, ou o uso de algoritmos de busca tradicionais. Embora essas opções possam ser eficazes em alguns casos, as expressões regulares oferecem uma sintaxe mais poderosa e flexível para lidar com padrões em textos.
+## Mergulho em Detalhes
 
-## See Also:
-- [C++ Regular Expressions - cppreference.com](https://en.cppreference.com/w/cpp/regex)
-- [The Theory of Regular Expression - regular-expressions.info](https://www.regular-expressions.info/)
-- [Funções de string em C++ - cplusplus.com](http://www.cplusplus.com/reference/string/string/)
+Expressões regulares têm uma história longa e interessante, desde os trabalhos iniciais de Stephen Kleene nos anos 50 até sua implementação atual em muitas linguagens de programação modernas.
+
+Existem várias bibliotecas alternativas para usar expressões regulares em C++, como Boost.Regex e PCRE++. Cada uma tem suas próprias peculiaridades e diferenças sutis nas sintaxes de expressões regulares e no desempenho.
+
+Sobre a implementação, a biblioteca 'regex' do C++ usa uma máquina de estados determinística internamente. É isso que permite as correspondências rápidas e eficientes, mesmo para expressões complicadas.
+
+## Veja Também
+
+- https://en.cppreference.com/w/cpp/regex
+- https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
+- https://www.boost.org/doc/libs/1_75_0/libs/regex/doc/html/index.html
+
+Esses recursos fornecem informações adicionais e mais aprofundadas sobre o uso de expressões regulares em C++.

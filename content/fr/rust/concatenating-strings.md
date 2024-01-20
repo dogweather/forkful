@@ -1,7 +1,7 @@
 ---
-title:                "Concaténation de chaînes de caractères"
-html_title:           "Rust: Concaténation de chaînes de caractères"
-simple_title:         "Concaténation de chaînes de caractères"
+title:                "Concaténation de chaînes"
+html_title:           "C: Concaténation de chaînes"
+simple_title:         "Concaténation de chaînes"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et Pourquoi?
-Concaténer des chaînes de caractères est le fait de les mettre bout à bout afin d'en former une seule. Les programmeurs font cela pour combiner des textes et en créer un nouveau, par exemple pour afficher un message personnalisé.
+# Jouons avec les chaines de caractères en Rust!
+
+## Quoi & Pourquoi?
+La concaténation de chaînes est l'opération de coller ensemble deux morceaux de texte. Les programmeurs le font pour construire des messages d'erreur, des logs, des écrans UI et d'autres sorties basées sur le texte.
 
 ## Comment faire:
-Voici comment concatenar des chaînes en Rust:
+Voici comment nous pouvons concaténer des chaînes en Rust:
 
 ```Rust
-let prenom = "Jean";
-let nom = "Dupont";
-let message = format!("Bonjour {} {}, bienvenue!", prenom, nom);
-println!("{}", message);
+fn main() {
+    let salut = String::from("Salut, ");
+    let world = String::from("monde");
+    let message = salut + &world; // Notez l'usage du &
+
+    println!("{}", message);
+}
 ```
 
-Résultat:
+La sortie sera:
 
+```Rust
+Salut, monde
 ```
-Bonjour Jean Dupont, bienvenue!
+
+## Divons un peu plus profondément
+En Rust, concaténer des chaînes a des subtilités. Vous utilisez un "&" à cause du système d'emprunt de Rust. Dans d'autres langages, une nouvelle chaîne est simplement créée. Mais Rust est plus consciencieux en matière de gestion de la mémoire.
+
+Il y a d'autres façons de concaténer des chaînes. Vous pouvez utiliser la méthode `format!`:
+
+```Rust
+let message = format!("{}{}", salut, world);
 ```
 
-## Plongée en profondeur:
-Concaténer des chaînes est une pratique courante en programmation, qui permet de créer des messages dynamiques à partir de variables. Cela peut également être fait en utilisant l'opérateur `+` ou en utilisant une macro spécifique `format!`. Il est à noter que cela peut entraîner une surcharge de mémoire si cela est fait à grande échelle.
+Cependant, l'opérateur `+` est généralement le plus efficace en termes de performances.
 
-## Voir aussi:
-- [La documentation officielle de Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
-- [Une comparaison entre les différentes façons de concatenar des chaînes en Rust](https://doc.rust-lang.org/std/string/struct.String.html#examples)
-- [Un article sur les meilleures pratiques en matière de gestion de chaînes en Rust](https://medium.com/swlh/rust-best-practices-using-and-manipulating-strings-715baeaf7a11)
+## Pour en savoir plus
+- La documentation officielle de Rust offre des explications détaillées sur la [gestion des chaînes](https://doc.rust-lang.org/book/ch08-02-strings.html)
+- Cela vaut la peine de jeter un œil à ce thread de [StackOverflow](https://stackoverflow.com/questions/30154541) discutant de la performance de différentes méthodes de concaténation de chaînes.
+- Voici un [billet de blog](https://fasterthanli.me/articles/small-strings-in-rust) intéressant sur l'implémentation des chaînes en Rust.

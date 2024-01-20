@@ -1,7 +1,7 @@
 ---
-title:                "Att få nuvarande datum"
-html_title:           "Kotlin: Att få nuvarande datum"
-simple_title:         "Att få nuvarande datum"
+title:                "Hämta aktuellt datum"
+html_title:           "Arduino: Hämta aktuellt datum"
+simple_title:         "Hämta aktuellt datum"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Dates and Times"
@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad & Varför?
+## Vad och Varför?
+Att hämta det aktuella datumet handlar om att få information om det nuvarande datumet inom programmet. Detta är viktigt för att programmet ska kunna utföra tidsberoende operationer.
 
-Att få den nuvarande datumet i en Kotlin-applikation är en enkel men viktig uppgift för programmerare. Det hjälper till att hålla spår på tidsrelaterad data och göra viktiga beslut baserade på aktuell tid. Det är också användbart för att hantera tidszoner och datumformatering i en applikation.
-
-# Hur?
-
-Använd nedanstående kodexempel för att få den aktuella datumet i Kotlin:
+## Hur Gör Man:
+Här är en enkel kodstump i Kotlin för att få det aktuella datumet:
 
 ```Kotlin
-val currentDate = java.util.Date()
-println(currentDate)
-```
-Output:
-```
-Sun May 02 14:22:37 CEST 2021
+import java.time.LocalDate
+
+fun main() {
+    val nuvarandeDatum = LocalDate.now()
+    println("Aktuella datumet är: $nuvarandeDatum")
+}
 ```
 
-Du kan också få datumet i ett specifikt format genom att använda `SimpleDateFormat` klassen och `format()` metoden. Till exempel:
+När du kör denna kod får du en utmatning som följer:
+
+```
+Aktuella datumet är: 2022-08-18
+```
+
+(Där 2022-08-18 är dagens datum.)
+
+## Djupdykning
+*Historisk kontext:* Att få det aktuella datumet är en grundläggande uppgift som har utförts i program sedan urminnes tider. I Kodi, används `LocalDate.now()` funktionen för att hämta det aktuella datumet.
+
+*Alternativ:* Om du behöver mer specifik information än bara det aktuella datumet, kan du använda `LocalDateTime.now()` för att hämta både datum och tid:
 
 ```Kotlin
-val sdf = SimpleDateFormat("dd/MM/yyyy")
-val currentDate = sdf.format(java.util.Date())
-println(currentDate)
+import java.time.LocalDateTime
+
+fun main() {
+    val nu = LocalDateTime.now()
+    println("Aktuella datum och tid är: $nu")
+}
 ```
-Output:
-```
-02/05/2021
-```
 
-# Djupdykning
-
-Förutom att använda standard Java-bibliotek kan du också använda Kotlin Date and Time API för att hantera datum och tid. Detta API tillhandahåller en mängd olika metoder och klasser som gör det enkelt att manipulera datum och tid i en applikation.
-
-Alternativt kan du använda bibliotek som Joda-Time och ThreeTenABP för mer avancerade funktioner och bättre prestanda inom hantering av datum och tid.
-
-Vid implementering, se alltid till att hantera datum och tid noga eftersom det kan påverka användarnas upplevelse och applikationens funktion. Se till att hantera tidszoner korrekt och undvika buggar och felaktigheter relaterade till datum och tid.
-
-# Se även
-
-- Kotlin Date and Time API dokumentation: https://kotlinlang.org/docs/datetime.html
-- Joda-Time bibliotek: https://www.joda.org/joda-time/
-- ThreeTenABP bibliotek: https://github.com/JakeWharton/ThreeTenABP
+*Implementeringsdetaljer:* Funktionen `LocalDate.now()` i Kotlin använder i grunden systemets standardtidszon för att bestämma det aktuella datumet.
+ 
+## Se Även
+- Officiell Kotlin-dokumentation: [LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/index.html) och [LocalDateTime](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date-time/index.html)
+- Kotlin-handbok: [Arbete med datum och tid i Kotlin](https://play.kotlinlang.org/hands-on/Working%20with%20Dates%20and%20Times/01_Introduction)
+- Stack Overflow: [Hämta aktuellt datum och tid i Kotlin](https://stackoverflow.com/questions/48741298/get-current-date-time-in-kotlin)

@@ -1,6 +1,6 @@
 ---
 title:                "Extraction de sous-chaînes"
-html_title:           "Clojure: Extraction de sous-chaînes"
+html_title:           "Arduino: Extraction de sous-chaînes"
 simple_title:         "Extraction de sous-chaînes"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,22 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce & pourquoi?
-Extraction de sous-chaînes est le processus de sélection d'une partie d'une chaîne de caractères spécifique, basée sur ses indices ou son contenu. Les programmeurs le font souvent pour manipuler, trier ou formater des données de manière efficace.
+## Quoi & Pourquoi?
+L'extraction de sous-chaînes est un aspect fondamental de la manipulation des chaînes de caractères. Les programmeurs l'utilisent pour trouver et utiliser des morceaux spécifiques de texte à l'intérieur d'une chaîne de caractères plus conséquente.
 
-## Comment:
-### Exemple 1:
-```clojure
-(println (.substring "Bonjour tout le monde" 8)) ;; Output: "tout le monde"
-```
-### Exemple 2:
-```clojure
-(println (.substring "Bonjour tout le monde" 3 7)) ;; Output: "jour"
+## Comment faire:
+En Clojure, nous utilisons principalement la fonction `subs`. Voici un exemple de base:
+
+```Clojure
+(subs "Bonjour le monde!" 8 11)
 ```
 
-## Plongée en profondeur:
-L'extraction de sous-chaînes existe depuis les premiers langages de programmation et continue d'être une fonctionnalité utile dans de nombreux langages, y compris Clojure. Une alternative à l'extraction de sous-chaînes est l'utilisation de expressions régulières, mais cela peut être plus compliqué et moins efficace dans certaines situations. L'implémentation de l'extraction de sous-chaînes dans Clojure utilise la méthode Java `substring()`.
+La sortie sera:
 
-## Voir aussi:
-- La documentation officielle de Clojure sur l'extraction de sous-chaînes
-- Des tutoriels en ligne sur la manipulation de chaînes de caractères en Clojure
+```Clojure
+"le"
+```
+
+Dans l'exemple ci-dessus, nous avons extrait la sous-chaîne commençant à l'index 8 et se terminant à l'index 11 de la chaîne "Bonjour le monde!"
+
+## Plongée en profondeur
+Historiquement, `subs` est à la base de la manipulation de chaînes en Clojure. Il n'est pas aussi riche en fonctionnalités que certaines alternatives dans d'autres langages, mais sa simplicité en fait un choix populaire. 
+
+De nombreuses alternatives existent pour extraire des sous-chaînes, y compris l'utilisation de `split` pour diviser sur un délimiteur et extraire un index spécifique. 
+
+Par exemple:
+```Clojure
+(nth (clojure.string/split "Bonjour le monde!" #" ") 1)
+```
+
+Il est important de noter que l'indexage en Clojure commence à 0, donc 1 renvoie le deuxième mot, "le".
+
+Les mécanismes internes de `subs` sont plutôt directs. La source de Clojure montre que `subs` convertit la chaîne d'entrée en un type Java String, puis utilise la méthode `substring()` de Java pour effectuer l'opération réelle.
+
+## Voir Aussi
+Pour plus de détails sur `subs` et d'autres fonctions liées à la chaîne, consultez la documentation officielle Clojure [ici](https://clojuredocs.org/clojure.core/subs). 
+
+Pour des exemples de manipulation de chaînes plus complexes, consultez [ce post](https://clojure-cookbook.com/posts-output/2013-04-04-manipulating-strings-with-clojure) sur le Clojure Cookbook.

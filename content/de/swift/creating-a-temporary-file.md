@@ -1,7 +1,7 @@
 ---
-title:                "Erstellen einer temporären Datei"
-html_title:           "Swift: Erstellen einer temporären Datei"
-simple_title:         "Erstellen einer temporären Datei"
+title:                "Eine temporäre Datei erstellen"
+html_title:           "Java: Eine temporäre Datei erstellen"
+simple_title:         "Eine temporäre Datei erstellen"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Files and I/O"
@@ -10,40 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
-Das Erstellen einer temporären Datei ist eine gängige Aufgabe für Programmierer. Es bezieht sich auf das Erstellen einer Datei, die nur für den aktuellen Programmlauf existiert und danach automatisch gelöscht wird. Dies kann nützlich sein, um temporäre Daten zu speichern, die während der Programmausführung benötigt werden.
+## Was und warum?
 
-# Wie geht's?
-Um eine temporäre Datei in Swift zu erstellen, können wir die `FileManager`-Klasse verwenden. Das folgende Beispiel zeigt, wie wir eine Datei mit dem Namen "temp.txt" im temporären Verzeichnis erstellen und Text in die Datei schreiben können. Beachten Sie, dass wir eine `do-catch`-Anweisung verwenden, um mögliche Fehler beim Erstellen der Datei zu behandeln.
+Die Erstellung temporärer Dateien ermöglicht es Programmierern, Daten vorübergehend zu speichern und zu bearbeiten. Das ist äußerst nützlich für Aufgaben wie die Verarbeitung großer Datenmengen, bei denen es ineffizient wäre, alle Daten im Arbeitsspeicher zu halten.
+
+## So geht's:
+
+Erstellen wir eine temporäre Datei in Swift. Hier verwenden wir das `FileManager` Toolkit zur Dateiverarbeitung:
 
 ```Swift
-let fileManager = FileManager.default
+import Foundation
+
+let fileName = ProcessInfo.processInfo.globallyUniqueString
+let temporaryDirectoryURL = URL(fileURLWithPath: NSTemporaryDirectory(), isDirectory: true)
+let temporaryFileURL = temporaryDirectoryURL.appendingPathComponent(fileName)
+
 do {
-    // Erstelle eine temporäre Datei namens "temp.txt"
-    let tempDirURL = URL(fileURLWithPath: NSTemporaryDirectory())
-    let tempFileURL = tempDirURL.appendingPathComponent("temp.txt")
-    
-    // Schreibe Text in die Datei
-    let text = "Dies ist ein Beispieltext."
-    try text.write(to: tempFileURL, atomically: true, encoding: .utf8)
-    
-    // Lese den Inhalt der Datei aus und gib ihn aus
-    let fileContents = try String(contentsOf: tempFileURL, encoding: .utf8)
-    print(fileContents)
+    try "Hallo Welt!".write(to: temporaryFileURL, atomically: true, encoding: String.Encoding.utf8)
+    print("Temporäre Datei erfolgreich erstellt: \(temporaryFileURL.path)")
 } catch {
     print("Fehler beim Erstellen der temporären Datei: \(error)")
 }
 ```
 
-Die Ausgabe dieses Codes sollte "Dies ist ein Beispieltext." sein.
+Wenn du dieses Skript ausführst, wird eine temporäre Datei mit einem einzigartigen Namen in deinem temporären Verzeichnis erstellt und der Text "Hallo Welt!" wird in diese Datei geschrieben.
 
-# Tief einsteigen
-Das Erstellen temporärer Dateien war in früheren Versionen von Swift aufgrund des Fehlens von APIs wie `NSTemporaryDirectory()` und `FileManager.default` etwas komplizierter. Außerdem gab es keine Möglichkeit, die temporäre Datei automatisch zu löschen, wodurch möglicherweise Speicherplatz verschwendet wurde.
+## Vertiefung
 
-Eine Alternative zum Erstellen und Verwalten temporärer Dateien ist die Verwendung von In-Memory-Strukturen wie Arrays und Dictionaries. Diese haben jedoch den Nachteil, dass sie den verfügbaren Speicher belasten können und nicht so effizient sind wie das Schreiben in eine Datei.
+Historisch gesehen werden temporäre Dateien seit Anbeginn der Computerprogrammierung verwendet, um Arbeitsspeicher zu sparen. Sie sind ein wertvolles Werkzeug, wenn du große Mengen an Daten effizient verarbeiten musst.
 
-Die Implementierung des `FileManager`-Frameworks basiert auf dem C-API `POSIX`, das für das Betriebssystem darunter verantwortlich ist, die Datei- und Verzeichnisoperationen durchzuführen. Dies bedeutet, dass das Erstellen temporärer Dateien in Swift auf einer höheren Ebene auf demselben Konzept aufbaut.
+Allerdings gibt es Alternativen zur Verwendung temporärer Dateien, wie z.B. die Datenpufferung in Datenbanken oder die Verwendung von Cloud-Datenspeicherdiensten. Welcher Ansatz für dich am besten passt, hängt von deinen spezifischen Anforderungen ab.
 
-# Siehe auch
-- Dokumentation von Apple zum Erstellen temporärer Dateien in Swift: https://developer.apple.com/documentation/foundation/filemanager
-- ABSave - Eine Open-Source-Bibliothek, die das Speichern von Dateien und Objekten vereinfacht: https://github.com/ABTeam/ABSave
+Was die Implementierung betrifft, so verwendet `NSTemporaryDirectory()` in unserem Code oben die TEMP-Variablen deiner Umgebung, um ein temporäres Verzeichnis zu erstellen. Das ist sowohl auf Linux- als auch auf macOS-Systemen wirksam.
+
+## Siehe auch
+
+Hier sind einige nützliche Links, die dir weiterhelfen könnten:
+
+1. Apple Dokumentation : [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
+2. StackOverflow: [Temporary Files in Swift](https://stackoverflow.com/questions/27327067/temporary-files-in-swift)
+3. Swift Buch: [Datei- und Verzeichnismanagement](https://books.apple.com/de/book/swift/id1018922151)

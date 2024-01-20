@@ -1,7 +1,7 @@
 ---
-title:                "Å sjekke om en mappe eksisterer"
-html_title:           "C#: Å sjekke om en mappe eksisterer"
-simple_title:         "Å sjekke om en mappe eksisterer"
+title:                "Sjekker om en mappe eksisterer"
+html_title:           "C#: Sjekker om en mappe eksisterer"
+simple_title:         "Sjekker om en mappe eksisterer"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Files and I/O"
@@ -10,38 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Hva & Hvorfor?
+## Hva & Hvorfor?
 
- Å sjekke om en mappe eksisterer er en viktig del av programmeringsprosessen. Dette gjør det mulig for programmet å navigere og utføre handlinger i spesifikke mapper på datamaskinen. Å sjekke om en mappe eksisterer er også en måte å sikre at koden kjører uten å krasje, noe som sparer programmører for tid og frustrasjon.
+Kontroll for om en mappe eksisterer er en essensiell funksjon for programmering. Det lar programmerere sikre at en spesifisert sti er gyldig, forhindre feil og bedre brukeropplevelsen.
 
-Hvordan:
+## Hvordan:
 
-For å sjekke om en mappe eksisterer i C#, bruker vi Directory.Exists() metoden. Dette returnerer en boolsk verdi (true eller false) avhengig av om mappen finnes eller ikke. Se nedenfor for et eksempel på å sjekke om mappen "Dokumenter" finnes:
+Bruk Directory.Exists funksjonen i System.IO namespace. Her er hvordan du gjør det:
 
 ```C#
-string path = @"C:\Users\Navn\Dokumenter";
-if (Directory.Exists(path))
-{
-    Console.WriteLine("Mappen finnes!");
-}
-else
-{
-    Console.WriteLine("Mappen finnes ikke.");
-}
+using System.IO;
 
-// Output: Mappen finnes!
+class Program 
+{
+    static void Main()
+    {
+        string path = @"C:\temp";
+
+        if (Directory.Exists(path))
+        {
+            System.Console.WriteLine("Mappen eksisterer.");
+        }
+        else
+        {
+            System.Console.WriteLine("Mappen eksisterer ikke.");
+        }
+    }
+}
 ```
 
-Hvis mappen ikke finnes, vil programmet outputte "Mappen finnes ikke." Vi kan også bruke en try-catch blokk for å fange eventuelle feil som kan oppstå når vi prøver å sjekke om en mappe eksisterer.
+Output vil være en av følgende, avhengig av om mappen eksisterer:
 
-Dypdykk:
+``` 
+Mappen eksisterer.
+```
+Eller
 
-Sjekk om en mappe eksisterer er en vanlig operasjon i de fleste programmeringsspråk. I C#, bruker vi Directory.Exists() metoden, men det finnes også andre måter å sjekke om en mappe eksisterer på. Vi kan for eksempel bruke DirectoryInfo klassen til å sjekke om en mappe eksisterer, eller vi kan bruke File.Exists() metoden for å sjekke om en fil finnes i en spesifikk mappe.
+``` 
+Mappen eksisterer ikke.
+```
 
-Se også:
+## Dyp Dykk
 
-Hvis du ønsker å lære mer om å arbeide med mapper i C#, kan du sjekke ut disse ressursene:
+Metoden for å sjekke om en mappe eksisterer har vært en del av C# siden det ble introdusert, men det er viktig å merke seg at det aldri er en 100% pålitelig måte å sjekke. En ny mappe kan bli opprettet nettopp etter at sjekken ble utført, eller tilgangsrettigheter kan endre seg.
 
-- Microsoft's offisielle dokumentasjon om Directory.Exists(): https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists
-- Håndtering av mapper og filer i C#: https://www.c-sharpcorner.com/uploadfile/mahesh/filesysteminfo-class-in-C-Sharp/ 
-- Dette YouTube videoen demonstrerer forskjellige måter å sjekke om en mappe eksisterer i C#: https://www.youtube.com/watch?v=X6erClYPBSI
+Alternativt kan du også bruke DirectoryInfo.Exists metoden eller prøve å åpne en fil i mappen og fange unntaket hvis det mislykkes. Disse metodene er dyrere i form av ytelse, men kan gi mer presis informasjon i noen tilfeller.
+
+En detalj om implementasjonen av Directory.Exists er at det faktisk ikke åpner mappen. Det bruker et operativsystemkall for å hente informasjon om mappen, så det er relativt raskt og bruker lite ressurser.
+
+## Se Også
+
+[Directory.Exists Method](https://docs.microsoft.com/en-us/dotnet/api/system.io.directory.exists?view=net-5.0)
+
+[DirectoryInfo.Exists Property](https://docs.microsoft.com/en-us/dotnet/api/system.io.directoryinfo.exists?view=net-5.0)
+
+[How to: Check that a File or Folder Exists](https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-check-that-a-file-or-folder-exists)

@@ -1,7 +1,7 @@
 ---
-title:                "插值一个字符串"
-html_title:           "PowerShell: 插值一个字符串"
-simple_title:         "插值一个字符串"
+title:                "插值字符串"
+html_title:           "Arduino: 插值字符串"
+simple_title:         "插值字符串"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,37 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是字符串插值？为什么程序员要这么做？
+## 是什么以及为什么？
+字符串插值是一种编程表达手法，使得在字符串中嵌入变量或表达式成为可能。程序员使用字符串插值，主要是为了更清楚地组织和格式化信息输出。
 
-字符串插值是指在字符串中嵌入变量或表达式。程序员常常使用字符串插值来动态地创建包含变量值的字符串，使得代码更加简洁和易读。
+## 怎么做：
 
-如何进行字符串插值：
-
-```PowerShell
-$name = "Tom"
-Write-Host "Hello, $name!"
-```
-
-输出：Hello, Tom!
+在PowerShell中，我们通过`$()`结构来插值：
 
 ```PowerShell
-$num1 = 5
-$num2 = 7
-Write-Host "The sum of $num1 and $num2 is $($num1 + $num2)."
+$name = "Alice"
+echo "Hello, $($name)"
 ```
 
-输出：The sum of 5 and 7 is 12.
+输出：
 
-深入了解：
+```PowerShell
+Hello, Alice
+```
 
-字符串插值是由Perl语言引入的概念，在其他编程语言中也有类似的功能。另外，字符串格式化也是一种替代的方法，但它通常需要更多的代码。在PowerShell中，字符串插值使用两种方式：双引号和单引号。双引号将解析变量和表达式，而单引号将作为纯字符串输出。
+你也可以在插入点执行更复杂的表达式：
 
-相关文档：
+```PowerShell
+$n = 7
+echo "The square of $($n) is $($n*$n)"
+```
 
-了解更多关于字符串插值的信息：https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1
+输出：
 
-了解更多关于字符串格式化的信息：https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/format-string?view=powershell-7.1
+```PowerShell
+The square of 7 is 49
+```
 
-了解更多关于PowerShell的信息：https://docs.microsoft.com/en-us/powershell/?view=powershell-7.1
+## 深入了解：
 
-了解更多关于Perl语言的信息：https://www.perl.org/
+字符串插值一种历史悠久的编程实践，存在于许多其他编程语言中，例如Perl和Ruby。在PowerShell中，除了上面提到的`$()`结构外，还有类似`${var}`的插值语法，这两者在效果上是一样的。
+
+```PowerShell
+$name = "Alice"
+echo "Hello, ${name}"
+```
+
+输出：
+
+```PowerShell
+Hello, Alice
+```
+
+然而，`$()`结构可以进行更复杂的表达式评估，比如运算、函数调用等，因此相对灵活度更高。
+
+## 参考资料：
+- 查阅[微软官方文档](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1)了解PowerShell字符串插值的更多细节和例子。
+- 加深理解，你可以参考[这篇文章](https://kevinswiber.com/2012/07/23/string-interpolation-with-powershell/)揭示的PowerShell字符串插值详细运作原理。

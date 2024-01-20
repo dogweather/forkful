@@ -1,6 +1,6 @@
 ---
 title:                "HTML:n jäsentäminen"
-html_title:           "Python: HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
 simple_title:         "HTML:n jäsentäminen"
 programming_language: "Python"
 category:             "Python"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
-HTML:n parsiminen on prosessi, jossa tietokone lukee ja analysoi HTML-koodia nähdäkseen, miten verkkosivu on rakennettu. Ohjelmoijat käyttävät tätä tekniikkaa usein, kun he haluavat poimia tietoa verkkosivuilta tai muokata sivuston rakennetta.
+## Mikä & Miksi?
 
-## Kuinka tehdä se:
-Seuraavassa on esimerkkejä HTML:n parsimiseen käytettävästä koodista ja tulos, joka siitä voidaan saada:
+HTML-koodin jäsennys tarkoittaa, että analysoimme HTML-merkkijonon ja muutamme sen muotoon, jota ohjelma voi käsitellä (esimerkiksi puurakenteeksi). Ohjelmoijat tekevät tämän, koska se mahdollistaa verkkosivun datan hakemisen ja manipuloinnin.
+
+## Miten:
+
+Käytetään Pythonin kirjastoa `Beautiful Soup` HTML:n jäsennykseen. Asenna se komennolla:
+
+```Python
+pip install beautifulsoup4
+```
+
+Esimerkkikoodi verkkosivun HTML:n jäsennykseen ja tulostamiseen:
 
 ```Python
 from bs4 import BeautifulSoup
+import requests
 
-html = "<html><body><h1>Hello, world!</h1></body></html>"
+sivu = requests.get("https://www.python.org/")
 
-soup = BeautifulSoup(html, 'html.parser')
-print(soup.h1)
+soup = BeautifulSoup(sivu.content, 'html.parser')
 
-# Tulos: <h1>Hello, world!</h1>
+print(soup.prettify())
 ```
 
-```Python
-from lxml import etree
+## Syvällinen tarkastelu:
 
-html = "<html><body><h1>Hello, world!</h1></body></html>"
+HTML:n jäsentäminen on vanha tekniikka, jota on käytetty internetin alkuajoista asti. Vaihtoehtoisia työkaluja ovat esimerkiksi `lxml` ja `html.parser`, mutta `Beautiful Soup` on erittäin suosittu sen helppokäyttöisyyden ansiosta.
 
-tree = etree.fromstring(html)
-h1 = tree.xpath('//h1/text()')
-print(h1)
-
-# Tulos: Hello, world!
-```
-
-## Syvempi sukellus:
-HTML:n parsiminen alkoi jo 1990-luvulla, kun ensimmäiset web-selaimet kehitettiin. Aiemmin se oli hankalaa ja hidasta, mutta nykyään on kehitetty monia kirjastoja ja työkaluja, kuten BeautifulSoup ja lxml, jotka helpottavat tätä prosessia. On myös muita vaihtoehtoja, kuten käyttöliittymien automaatiotekniikka Selenium, joka voi suorittaa toimintoja selaimessa ja parsia sivuja.
-
-Yksi tärkeä asia, jota kannattaa muistaa HTML:n parsimisessa, on sen oikeaoppinen käyttö. Koska HTML-koodi voi vaihdella sivulta toiselle, on tärkeää varmistaa, että käytetty koodi on yhteensopiva kyseisen sivun kanssa.
-
-Lisäksi monimutkaisten verkkosivujen kanssa voi esiintyä haasteita, koska tiedon poimiminen ja sivun rakenteen muuttaminen voi olla monimutkaista. Siksi on tärkeää ymmärtää HTML:n rakennetta ja käyttää oikeita kirjastoja ja työkaluja.
+`Beautiful Soup` muuntaa HTML:n puurakenteeksi, jolloin voit hakea tietoja tageista ja niiden sisällöstä. Puurakenteen avulla voit esimerkiksi löytää kyseisen tagin vanhemman, sisarukset tai lapset.
 
 ## Katso myös:
-- [BeautifulSoup-dokumentaatio](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
-- [lxml-dokumentaatio](https://lxml.de/)
-- [Selenium-dokumentaatio](https://www.selenium.dev/documentation/en/)
-- [Regex ja web-skraping](https://hackernoon.com/web-scraping-tutorial-with-python-tips-and-tricks-db070e70e071)
+
+1. Beautiful Soupin dokumentaatio: https://www.crummy.com/software/BeautifulSoup/docsv
+2. W3Schoolsin opas HTML:n jäsentämiseen: https://www.w3schools.com/python/python_parsing.asp
+3. Pipy: https://pypi.org/project/beautifulsoup4/

@@ -1,7 +1,7 @@
 ---
-title:                "Herunterladen einer Webseite"
-html_title:           "PHP: Herunterladen einer Webseite"
-simple_title:         "Herunterladen einer Webseite"
+title:                "Eine Webseite herunterladen"
+html_title:           "Arduino: Eine Webseite herunterladen"
+simple_title:         "Eine Webseite herunterladen"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "HTML and the Web"
@@ -12,37 +12,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Was & Warum?
 
-Das Herunterladen einer Webseite bedeutet, dass man sich den Inhalt der Seite auf seinen Computer lädt, um ihn später offline nutzen zu können. Programmierer nutzen dieses Verfahren beispielsweise, um automatisiert Daten von anderen Webseiten zu sammeln oder um Änderungen an bestehenden Webseiten zu überwachen.
+Das Herunterladen einer Webseite beinhaltet, den Inhalt einer Webseite als Daten zu speichern. Dies geschieht in der Regel, um die Daten zu analysieren, zu manipulieren oder offline zu speichern.
 
-## Wie geht's?
+## Wie:
 
-Um eine Webseite mit PHP herunterzuladen, muss man zunächst die Funktion ```file_get_contents()``` verwenden. In den folgenden Beispielen werden wir die Webseite von Google herunterladen und deren Inhalt ausgeben.
+Hier ist ein einfacher PHP-Code zum Herunterladen von Webseiten:
 
-```
+```PHP
 <?php
-
-// Webseite herunterladen
-$webseite = file_get_contents("https://www.google.de");
-
-// Webseite ausgeben
-echo $webseite;
+    $url="https://exemplarwebseite.de";
+    $inhalt = file_get_contents($url);
+    echo $inhalt;
+?>
 ```
+Dieser Code wird die HTML-Inhalte der Webseite 'https://exemplarwebseite.de' in der Konsole ausgeben.
 
-Dieses einfache Beispiel lädt die Google-Startseite herunter und gibt sie aus. Man kann auch bestimmte Teile der Webseite auswählen, indem man spezifische Elemente wie zum Beispiel ```<title>``` oder ```<img>``` mithilfe der Funktion `file_get_html()` auswählt. Mehr Informationen dazu findet man in der Dokumentation von PHP.
+## Vertiefung 
 
-## Tiefere Einblicke
+Historisch gesehen, hat das Herunterladen von Webseiten ihren Ursprung im Bedarf, offline auf Daten zuzugreifen, oder diese zu analysieren. Im Laufe der Zeit entwickelten sich jedoch mehr Möglichkeiten wie z.B. das Web-Scraping.
 
-Das Herunterladen von Webseiten hat eine lange Geschichte und wurde zuerst in Perl eingeführt. Auch in anderen Programmiersprachen wie Python oder Java gibt es ähnliche Funktionen.
+Es gibt Alternativen zu PHP für dieses Aufgabe. Python bietet z.B. mit seinen Bibliotheken 'requests' und 'beautiful soup' ausgezeichnete Optionen. 
 
-Eine Alternative zur Verwendung von `file_get_contents()` ist die Verwendung von cURL, einer Erweiterung für PHP. Diese bietet zusätzliche Funktionen wie beispielsweise die Unterstützung von HTTPS und Passwortschutz.
+Mit PHP wird der Inhalt mit der Funktion `file_get_contents()` heruntergeladen. Diese Funktion liest eine Datei in einen String. Bei Anwendung auf eine URL liest es den Inhalt der Webseite in einen String.
 
-Die Implementierung des Herunterladens von Webseiten mit PHP ist relativ einfach, da die Funktion ```file_get_contents()``` vom Betriebssystem unterstützt wird. Das bedeutet, dass man keine zusätzlichen Bibliotheken installieren muss.
+## Siehe auch:
 
-## Siehe auch
-
-Weitere Informationen zu `file_get_contents()` und anderen nützlichen PHP-Funktionen findet man in der offiziellen PHP-Dokumentation: https://www.php.net/manual/en/function.file-get-contents.php
-
-Für fortgeschrittenere Techniken zur Verarbeitung von Webseiten mit PHP empfehle ich die folgenden Bibliotheken:
-
-- Simple HTML DOM: http://simplehtmldom.sourceforge.net/
-- Goutte: https://github.com/FriendsOfPHP/Goutte
+1. [PHP: file_get_contents - Manual](https://www.php.net/manual/de/function.file-get-contents.php)
+2. [Python Web Scraping Libraries: BeautifulSoup, Selenium, Scrapy, etc](https://www.geeksforgeeks.org/python-libraries-web-scraping/)
+2. [Website-Kopie – Wikipedia](https://de.wikipedia.org/wiki/Website-Kopie)

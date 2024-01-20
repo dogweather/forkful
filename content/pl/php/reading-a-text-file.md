@@ -1,7 +1,7 @@
 ---
-title:                "Odczyt pliku tekstowego"
-html_title:           "PHP: Odczyt pliku tekstowego"
-simple_title:         "Odczyt pliku tekstowego"
+title:                "Czytanie pliku tekstowego"
+html_title:           "C: Czytanie pliku tekstowego"
+simple_title:         "Czytanie pliku tekstowego"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Files and I/O"
@@ -10,37 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
-Czytanie pliku tekstowego to proces odczytywania zawartości pliku zapisanego w formacie tekstowym. Programiści często wykonują tę czynność w celu pobrania danych lub przetworzenia informacji z pliku tekstowego.
+## Co i dlaczego?
 
-## Jak to zrobić?
+Czytanie plików tekstowych to proces odzyskiwania danych zapisanych w zasobie tekstowym. Programiści robią to, aby uzyskać informacje przechowywane poza aplikacją, które mogą być użyte do różnych celów, takich jak analiza, manipulacja danych i wiele innych.
+
+## Jak to zrobić:
+
+Użycie wbudowanej w PHP funkcji `file_get_contents` jest jednym ze sposobów na odczytanie zawartości pliku tekstowego. Oto przykładowy kod i wynik:
+
 ```PHP
-$file = fopen("plik.txt", "r"); //otwórz plik w trybie tylko do odczytu
-if($file) { //sprawdź czy plik został poprawnie otwarty
-    while(($line = fgets($file)) !== false) { //odczytaj plik linia po linii
-        echo $line; //wyświetl linię
-    }
-    fclose($file); //zamknij plik
-}
-```
-Przykładowa zawartość pliku.txt:
-```
-To jest tekst zapisany w pliku.
-Odczytam go w moim programie PHP.
-Ta linia zostanie wyświetlona jako pierwsza.
-A ta jako druga.
-```
-Wynik:
-```
-To jest tekst zapisany w pliku.
-Odczytam go w moim programie PHP.
-Ta linia zostanie wyświetlona jako pierwsza.
-A ta jako druga.
+<?php
+$filename = 'example.txt';
+$filedata = file_get_contents($filename);
+echo $filedata;
+?>
 ```
 
-## Głębsze zanurzenie
-Obecnie najczęściej stosowanym formatem danych jest format tekstowy. Dzięki niemu pliki są czytelne dla człowieka i prostsze w przetwarzaniu przez programy. Alternatywami dla czytania pliku tekstowego są na przykład czytanie pliku binarnego lub bazy danych. Implementacja czytania pliku tekstowego w PHP jest prosta i wykorzystuje funkcję ```fgets()```, która odczytuje plik linia po linii. W przeszłości, gdy format binarny był popularniejszy, konieczne było wykorzystanie innych funkcji, takich jak ```fread()```.
+The output:
+
+```PHP
+'Hello World!'
+```
+
+## Pogłębiona analiza
+
+Czytanie plików tekstowych była jedną z pierwszych operacji, które starożytne komputery mogły wykonywać. Historia rozpoczęła się od kart perforowanych, które zawierały informacje w postaci otworów w konkretnych miejscach.
+
+Alternatywą dla funkcji `file_get_contents` jest użycie funkcji `fread()` po otwarciu pliku za pomocą `fopen()`. Jednak `file_get_contents` jest zdecydowanie prostsza do użycia, szczególnie dla początkujących.
+
+Podczas odczytywania dużych plików tekstowych, trzeba zachować ostrożność, ponieważ `file_get_contents` ładuje cały plik do pamięci. Dla bardzo dużych plików, może to prowadzić do problemów z wydajnością.
 
 ## Zobacz również
-- Dokumentacja PHP o funkcji [```fgets()```](https://www.php.net/manual/en/function.fgets.php)
-- Przykładowe użycie funkcji [```fgets()```](https://www.w3schools.com/php/func_filesystem_fgets.asp) w prostym programie PHP.
+
+- [Oficjalna dokumentacja PHP na temat odczytywania plików](https://www.php.net/manual/en/function.file-get-contents.php)
+- [Alternatywne metody odczytywania plików w PHP](https://www.php.net/manual/en/function.fread.php)
+- [Historia i kontekst czytania plików](https://en.wikipedia.org/wiki/History_of_computer_data_storage)

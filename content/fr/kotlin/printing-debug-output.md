@@ -1,7 +1,7 @@
 ---
-title:                "Afficher la sortie de débogage"
-html_title:           "Kotlin: Afficher la sortie de débogage"
-simple_title:         "Afficher la sortie de débogage"
+title:                "Imprimer la sortie de débogage"
+html_title:           "Arduino: Imprimer la sortie de débogage"
+simple_title:         "Imprimer la sortie de débogage"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Testing and Debugging"
@@ -10,26 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & pourquoi?
-L'impression de sortie de débogage dans la programmation est une méthode utilisée par les programmeurs pour tester et suivre l'exécution de leur code. Le code de débogage est généralement utilisé pour identifier et résoudre des erreurs et des bugs dans le programme.
+## Quoi & Pourquoi ?
 
-## Comment faire:
-```Kotlin
-val num1 = 5
-val num2 = 3
-println("Le résultat est: ${num1 + num2}")
-```
+L'affichage des débogages, c'est l'art d'émettre temporairement des infos contextuelles pendant l'exécution du code. Les programmeurs le font pour comprendre les problèmes de logique ou les bugs.
+
+## Comment faire :
+
+Voici un exemple simple d'estrade dans Kotlin :
 
 ```Kotlin
-// Output:
-Le résultat est: 8
+fun main() {
+   val nom = "Pièrre"
+   println("Bonjour, $nom")
+}
 ```
-Pour imprimer la sortie de débogage dans Kotlin, il suffit d'utiliser la fonction `println()` en passant le texte ou la valeur que vous souhaitez imprimer. Vous pouvez également utiliser la concaténation de chaînes à l'aide de l'opérateur `$` pour imprimer des valeurs de variables dans le texte.
 
-## Plongée en profondeur:
-L'impression de sortie de débogage est une technique courante utilisée par les programmeurs depuis le début de l'informatique. Elle est notamment utile pour suivre le flux d'exécution du code et identifier les erreurs que l'on pourrait rencontrer. Dans Kotlin, il existe également une autre méthode pour imprimer la sortie de débogage à l'aide de la fonction `Log.d()` de la bibliothèque Log4j.
+Cela affiche :
 
-## Voir aussi:
-- [Documentation officielle de Kotlin](https://kotlinlang.org/docs/reference/basic-types.html)
-- [Article sur l'impression de débogage dans Java](https://www.baeldung.com/java-print-debug-output)
-- [Article sur l'utilisation de la fonction Log.d() dans Kotlin](https://blog.mindorks.com/kotlin-log-a-guide-to-logging-b26c6415e4a5)
+```
+Bonjour, Pièrre
+```
+
+Notez que `println` est la méthode standard pour imprimer des sorties en Kotlin. Ça émet une ligne de texte et un saut de ligne.
+
+## Exploration profonde :
+
+Historiquement, l'émission de débogage est ancestrale, utilisée depuis les premiers jours de la programmation. Elle reste une méthode simple et directe pour voir ce qui se passe au sein d'un programme.
+
+En termes d'alternatives à Kotlin, des outils tels que `print` et `printf` existent pour des sorties plus spécifiques. `print` est similaire à `println` mais sans le saut de ligne final. `printf`, de son côté, offre un formatage plus sophistiqué.
+
+Côté mise en œuvre, les méthodes `println`, `print` et `printf` sont toutes des membres du package standard `kotlin.io`. Ils agissent sur le flux de sortie standard (`System.out`).
+
+## À voir également :
+
+- [En savoir plus sur `kotlin.io`](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/)
+- [Approfondir le débogage avec Kotlin](https://blog.jetbrains.com/kotlin/2019/05/dive-into-debugging-jvm-and-js/)

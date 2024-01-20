@@ -10,42 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Checking if a directory exists tarkoittaa tietokoneen ohjelmassa tarkistamista, onko tiedostojärjestelmässä hakemistoa kyseisellä nimellä. Ohjelmoijat tekevät tätä voidakseen tehdä tiettyjä toimintoja, kuten avata tai luoda uusia tiedostoja.
+## Mikä & Miksi?
+Tarkastellaan toimintoa, jolla tarkistetaan, onko hakemisto olemassa. Sen käyttäjät pystyvät välttämään virheitä, jotka johtuvat siitä, että he yrittävät käsitellä olemattomia hakemistoja.
 
-## Kuinka tehdä:
-Esimerkkejä koodista ja tulosteista käyttäen ```Kotlin ... ``` -koodilohkoja.
-
-```Kotlin
-val directory = File("C:\\Users\\Downloads")
-if (directory.exists()) {
-    println("Hakemisto on olemassa.")
-} else {
-    println("Hakemistoa ei löytynyt.")
-}
-```
-Tällä koodilla tarkistetaan, onko `Downloads` hakemistoa olemassa. Jos hakemisto löytyy, tulostetaan "Hakemisto on olemassa". Muussa tapauksessa tulostetaan "Hakemistoa ei löytynyt".
+## Kuinka seuraavasti:
+Alla näet esimerkin siitä, miten Kotlinissa voit tarkistaa, onko kansio olemassa.
 
 ```Kotlin
-val directory = File("C:\\Users\\Documents\\NewFolder")
-if (!directory.exists()) {
-    directory.mkdir()
-    println("Uusi hakemisto luotiin.")
-} else {
-    println("Hakemisto on jo olemassa.")
+import java.nio.file.Files
+import java.nio.file.Paths
+
+fun main() {
+    val path = Paths.get("/path/to/directory")
+
+    val exists = Files.exists(path)
+
+    println("Directory exists: $exists")
 }
 ```
-Tässä esimerkissä tarkistetaan, onko `NewFolder` hakemistoa jo olemassa. Jos hakemistoa ei ole, se luodaan ja tulostetaan "Uusi hakemisto luotiin". Jos hakemisto on jo olemassa, tulostetaan "Hakemisto on jo olemassa".
 
-## Syvällinen katsaus:
-Historiallista taustaa, vaihtoehtoja ja toteutusyksityiskohtia hakemistojen olemassaolon tarkistamiselle.
+Syötä komento ja saat tuloksen:
 
-Tämän toiminnon toteuttamiseksi voidaan käyttää myös `Java.io.File` -luokan metodia `exists()`. Tämä metodi palauttaa boolean-arvon sen mukaan, löytyykö annetulla polulla olevaa hakemistoa vai ei.
+```Instance
+Directory exists: true
+```
+tai
 
-Toinen tapa tarkistaa hakemiston olemassaolo on käyttää `java.nio.file.Files` -luokan metodia `exists()`. Tämä metodi myös palauttaa boolean-arvon ja sitä voidaan käyttää tarkistamaan tiedostojärjestelmän objektin olemassaoloa.
+```Instance
+Directory exists: false
+```
 
-## Katso myös:
-Tässä on joitain lähteitä ja ohjeita, jotka voivat auttaa sinua tarkistamaan hakemistojen olemassaolon:
-- [Java-dokumentaatio hakemiston olemassaolon tarkastamisesta](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#exists--)
-- [Kotlin-dokumentaatio tiedostojen ja hakemistojen käsittelyyn](https://kotlinlang.org/docs/tutorials/native/java-interop-file-system.html)
-- [Stack Overflow -kysymys hakemiston olemassaolon tarkastamisesta](https://stackoverflow.com/questions/27074401/how-to-check-if-a-directory-exists-in-kotlin)
+## Syvempi sukellus
+Historiallisesti Java-versioissa ennen Javan NIO.2: ta (joka esiteltiin Javassa 7) oli vaikea tehdä yksinkertaisia ​​tiedostojärjestelmätoimintoja, kuten tarkistaa, onko kansio olemassa. Kotlin hyödyntää Javassa 7 esiteltyjä NIO.2-toimintoja parantaakseen tätä kokemusta.
+
+Vaihtoehtoinen tapa tarkistaa onko kansio olemassa on `File` luokka. Esimerkki:
+
+```Kotlin
+import java.io.File
+
+fun main() {
+    val directory = File("/path/to/directory")
+
+    val exists = directory.exists()
+
+    println("Directory exists: $exists")
+}
+```
+
+Vaikka tämä menetelmä on helpompi aloittelijoille ymmärtää, se ei välttämättä ole yhtä joustava kuin `Files.exists` -menetelmä.
+  
+## Katso myös
+1. [Oracle Java Docs: Checking a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/check.html)
+2. [Kotlin Docs: java.io.File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
+3. [Baeldung: How to Check if a Directory Exists in Java](https://www.baeldung.com/java-check-directory-exists)

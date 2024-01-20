@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-begäran"
-html_title:           "PowerShell: Sända en http-begäran"
-simple_title:         "Sända en http-begäran"
+title:                "Att skicka en http-begäran"
+html_title:           "Go: Att skicka en http-begäran"
+simple_title:         "Att skicka en http-begäran"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "HTML and the Web"
@@ -10,31 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## Vad och varför?
+Att skicka en HTTP-förfrågan är processen att begära data från en specifik resurs på internet. Programmerare gör det för att interagera med webbtjänster och hämta data.
 
-Att skicka en HTTP-begäran är en viktig del av programmering. Det betyder helt enkelt att skicka ett meddelande till en webbserver och begära en resurs. Detta är nödvändigt för att hämta och skicka data mellan olika webbplatser eller applikationer. 
+## Hur gör jag:
+Låt oss skicka en GET-förfrågan i PowerShell:
 
-## Så här gör du:
-
-Med PowerShell är det enkelt att skicka en HTTP-begäran. Allt du behöver är cmdleten "Invoke-RestMethod" och en URL som pekar på den webbserver du vill hämta data från. Här är ett enkelt exempel: 
-
+```PowerShell
+$uri = 'http://httpbin.org/get'
+$response = Invoke-RestMethod -Uri $uri -Method Get
+$response
 ```
-$url = "https://www.example.com/api/users"
-$users = Invoke-RestMethod -Uri $url
-$users | Select-Object -Property name, email
+Och det här är hur utdatan ser ut:
+```PowerShell
+args : @{test=123}
+headers : @{Host=http://httpbin.org;...}
+url : http://httpbin.org/get?test=123
 ```
-Det här kommandot kommer att hämta en lista över användare från webbservern och visa deras namn och e-postadresser. Du kan även skicka data till en webbserver genom att använda parametern "-Body" med "Invoke-RestMethod". 
+För att skicka en POST-förfrågan, gör så här:
 
-## Djupdykning:
+```PowerShell
+$uri = 'http://httpbin.org/post'
+$body = @{
+    'key1' = 'value1'
+    'key2' = 'value2'
+}
+$response = Invoke-RestMethod -Uri $uri -Method Post -Body $body
+$response
+```
+Och så ser svaret ut:
+```PowerShell
+{
+    "args": {},
+    "data": "",
+    "files": {},
+    "form": {
+        "key1": "value1",
+        "key2": "value2"
+    },...
+}
+```
+## Djupdykning
 
-Historiskt sett var det vanligt att använda andra språk eller verktyg för att skicka HTTP-begäran, som till exempel cURL eller wget. Men med PowerShell har vi nu en enkel och lättanvändlig metod som är inbyggd i systemet. 
+HTTP-förfrågan introducerades ursprungligen med HTTP 0.9 år 1991. Men det var med HTTP 1.0 (1996) och 1.1 (1997) som metoder som GET, POST, PUT och DELETE blev allmänt använda. 
 
-Det finns också andra sätt att skicka HTTP-begäran på, till exempel med cmdleten "Invoke-WebRequest" eller genom att använda .NET-ramverket. Men "Invoke-RestMethod" är det rekommenderade sättet att skicka och hämta data från webbserverar. 
+Det finns alternativ till PowerShell för att skicka HTTP-förfrågningar, exempelvis Curl (en kommandoradsverktyg) och olika programmeringsspråk som Python och JavaScript. Valet beror på vad du känner dig mest bekväm med och vad dina behov är. 
 
-När du skickar en HTTP-begäran är det viktigt att vara medveten om vilken metod som används, till exempel GET eller POST, och att rätt URL används för att få det önskade svaret. Du kan också ange headers och andra parametrar för att anpassa din begäran ännu mer. Se PowerShell-dokumentationen för mer information och exemplen. 
+När det gäller implementationen konverterar Invoke-RestMethod HTTP-svaret till ett användbart PowerShell-objekt, vilket sparar tid och förenklar bearbetningen.
 
-## Se även:
-
-- [PowerShell dokumentetation för Invoke-RestMethod](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7)
-- [Guide för att skicka HTTP-begäran med PowerShell](https://adamtheautomator.com/powershell-http-methods/)
-- [Mer detaljerad guid för att skicka HTTP-begäran med PowerShell](https://devops-collective-inc.gitbook.io/psql-challenge/psql-skicka-din-forsta-http-begaran-med-powershell)
+## Se Även 
+[Hur man använder cURL](https://developers.curl.se/docs/http-requests)
+[Powershell: About_Remote](https://docs.microsoft.com/en-us/powershell/scripting/learn/remoting?view=powershell-7.1)
+[HTTP: The Protocol Every Web Developer Must Know](https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/http_basics.html)

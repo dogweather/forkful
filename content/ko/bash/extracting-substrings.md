@@ -1,7 +1,7 @@
 ---
-title:                "부분 문자열 추출하기"
-html_title:           "Bash: 부분 문자열 추출하기"
-simple_title:         "부분 문자열 추출하기"
+title:                "부분 문자열 추출"
+html_title:           "Arduino: 부분 문자열 추출"
+simple_title:         "부분 문자열 추출"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ## 무엇 & 왜?
-Substrings를 추출하는 것은 문자열에서 부분 문자열을 원하는 비공백 문자로 분리하는 것을 말합니다. 프로그래머는 이를 통해 원하는 데이터에 쉽게 접근하고 조작할 수 있습니다.
+## 무엇 및 왜?
 
-# ## 방법:
-Bash 코드 블록 내에 코딩 예제와 출력 결과를 포함한 두 가지 방법으로 Substrings를 추출하는 방법을 설명합니다.
+부분 문자열 추출이란 주어진 문자열에서 특정 부분만 뽑아내는 작업입니다. 이를테면 "안녕하세요, 여러분!"이란 문자열에서 "여러분!"이란 부분을 가져오는 것이죠. 그렇다면 왜 프로그래머들이 이런 작업을 할까요? 그 이유는 문자열 데이터를 효율적으로 분석하고 다루기 위해서입니다.
 
-### Case 1:
+## 어떻게 해요?
+
+Bash에서 부분 문자열 추출은 아래와 같이 진행됩니다.
+
 ```Bash
-text="Hello World!"
-echo ${text:0:5}
-```
-출력 결과: Hello
+# Create a string
+my_string="안녕하세요, 여러분!"
 
-### Case 2:
+# Extract a substring
+substring=${my_string:10}
+
+# Print the substring
+echo $substring
+```
+
+이 코드를 실행시키면 아래와 같은 결과를 얻을 수 있습니다.
+
 ```Bash
-filename="document.txt"
-echo ${filename%.*}
+여러분!
 ```
-출력 결과: document
 
-# ## 깊게 파보기:
-Substrings를 추출하는 기능은 처음에는 쉽게 다가올 수 있지만, 실제로는 프로그래밍 언어마다 다르고 구현 방법도 상이합니다. 예를 들어, Bash에서는 Parameter Expansion이라는 기능을 사용하여 Substrings를 추출할 수 있지만, Python에서는 문자열 슬라이싱을 통해 비슷한 결과를 얻을 수 있습니다. 이러한 차이점은 언어마다 제공하는 기능과 다양성을 보여줍니다.
+## 깊이 있게 살펴보기
 
-Substrings 추출은 주로 다양한 데이터 처리 작업에서 사용됩니다. 예를 들어, 로그 파일에서 특정 단어가 포함된 행을 추출하거나, 특정 파일의 확장자를 제외한 파일 이름만 추출하는 등 다양한 용도로 활용될 수 있습니다.
+부분 문자열 추출은 이론적인 개념으로는 1970년대 초반, C 언어의 등장과 함께 시작되었습니다. Bash는 유닉스 쉘 스크립트의 확장 버전으로, 이 기능은 본래 쉘 스크립트에서 상속 받았습니다.
 
-# ## 관련 자료:
-- [Bash 공식 문서](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion): Bash에서 제공하는 Parameter Expansion에 대한 공식 문서입니다.
-- [Python 문자열 슬라이싱](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str): Python에서 문자열 슬라이싱을 사용하여 Substrings를 추출하는 방법에 대한 공식 문서입니다.
+알ternatives에 대해 말하자면, Python이나 Java 같은 다른 언어에서도 부분 문자열 추출이 가능합니다. Bash와 구문은 다르지만 원리는 비슷합니다.
+
+그리고 Bash에서는 `${string:position:length}` 형식을 따릅니다. 'position'은 시작 위치를, 'length'는 길이를 의미합니다. 위치는 0부터 시작합니다.
+
+## 참고 자료
+
+아래 링크에서 더 많은 정보를 얻을 수 있습니다:
+1. [Advanced Bash-Scripting Guide: String Manipulations](https://tldp.org/LDP/abs/html/string-manipulation.html)
+2. [Bash substring explanation](https://www.cyberciti.biz/faq/bash-shell-substring-syntax/)
+3. [Python substring guide](https://www.journaldev.com/23584/python-slice-string)

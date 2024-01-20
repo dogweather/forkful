@@ -1,6 +1,6 @@
 ---
 title:                "Eine Zeichenkette interpolieren"
-html_title:           "TypeScript: Eine Zeichenkette interpolieren"
+html_title:           "Arduino: Eine Zeichenkette interpolieren"
 simple_title:         "Eine Zeichenkette interpolieren"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,35 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Stichwortartige Formate in TypeScript: Eine unkomplizierte Anleitung
+
 ## Was & Warum?
 
-Das Einfügen von Variablen oder Ausdrücken in einen String wird als String-Interpolation bezeichnet. Programmierer verwenden es, um dynamischen Inhalt in einen Text zu integrieren und die Lesbarkeit von Code zu verbessern.
+Stichwortartige Formatierungen, die in TypeScript als Template Strings bekannt sind, ermöglichen es Programmierern, Variablen in Zeichenketten einzufügen. Sie werden verwendet, um den Code lesbarer zu machen und String-Konkatenationen zu vereinfachen.
 
-## Wie?
+## So funktioniert's:
 
-Codebeispiele mit Ausgaben innerhalb von ```TypeScript ... ``` Codeblöcken:
+In TypeScript verwenden wir Backticks (`` ` ``) anstatt Anführungszeichen, um Template Strings zu definieren. Hier sind einige Beispiele:
 
-```
-// Beispiel 1:
-const name = "Maria";
-console.log(`Hallo ${name}, wie geht es dir?`);
-// Ausgabe: Hallo Maria, wie geht es dir?
-
-// Beispiel 2:
-const x = 5;
-const y = 10;
-console.log(`Die Summe von ${x} und ${y} ist ${x + y}.`);
-// Ausgabe: Die Summe von 5 und 10 ist 15.
+```TypeScript
+let name = "Friedrich";
+let greeting = `Hallo, ${name}!`;
+console.log(greeting);  // Ausgabe: "Hallo, Friedrich!"
 ```
 
-## Tiefer Einblick
+Sehen wir uns einen komplexeren Fall an:
 
-- Historischer Kontext: String-Interpolation wurde erstmals in der Programmiersprache Perl eingeführt und ist seitdem in vielen anderen Sprachen wie Python, Ruby und TypeScript verfügbar.
+```TypeScript
+let x = 5;
+let y = 10;
+let result = `Das Produkt von ${x} und ${y} ist ${x*y}.`;
+console.log(result);  // Ausgabe: "Das Produkt von 5 und 10 ist 50."
+```
 
-- Alternativen: Eine andere Möglichkeit, dynamischen Inhalt in einen String einzufügen, ist die Verwendung von String-Konkatenation. Dies ist jedoch umständlicher und kann zu unleserlichem Code führen.
+## Tiefgehende Information:
 
-- Implementierungsdetails: In TypeScript wird String-Interpolation durch Verwendung der Backtick-Notation ``` ` ` `` ermöglicht. Der Inhalt innerhalb der geschweiften Klammern wird als Ausdruck ausgewertet und in den String eingefügt.
+- **Historischer Kontext:** Template Strings wurden mit ES6 (ECMAScript 2015) eingeführt, der sechsten Ausgabe der ECMAScript-Spezifikation, die als Grundlage für JavaScript dient.
+  
+- **Alternativen:** Vor der Einführung des Template-Strings mussten Programmierer die alte '+'-Methode zur Konkatenation verwenden: `let greeting = "Hallo, " + name + "!";`
 
-## Siehe auch
+- **Implementierungsdetails:** Intern verwendet JavaScript die Funktion `.toString()` um die Ausdrücke innerhalb der geschweiften Klammern (`${expression}`) zu evaluieren.
 
-Weitere Informationen und Beispiele zur String-Interpolation in TypeScript finden Sie in der offiziellen Dokumentation: https://www.typescriptlang.org/docs/handbook/2/template-literal-types.html#string-interpolation.
+## Siehe auch:
+
+- [Mozilla Developer Network (MDN)Template Strings Dokumentation](https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/template_strings)
+  
+- [TypeScript Handbuch über String Interpolation](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
+
+Mit Template Strings und ihrer interpolation in TypeScript können Sie Ihren Code effizienter und einfacher lesbar gestalten. Fangen Sie an, sie noch heute in Ihre Codebasis zu integrieren!

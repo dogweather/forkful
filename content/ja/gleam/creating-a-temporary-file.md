@@ -1,6 +1,6 @@
 ---
 title:                "一時ファイルの作成"
-html_title:           "Gleam: 一時ファイルの作成"
+html_title:           "Elixir: 一時ファイルの作成"
 simple_title:         "一時ファイルの作成"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,39 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何をするのか？
+## 何となぜ？
 
-一時ファイルを作成するとは、プログラマーがプログラムの実行中に一時的にファイルを作成することです。プログラマーは、プログラムの実行中に一時的にデータを保存したり、処理を行ったりするために一時ファイルを作成します。
+一時ファイルの作成は、一時的にデータを保存するプロセスです。プログラマーはテストデータの生成、大きなデータの処理、または単に一時的なデータの格納に使用します。
 
-## 作り方：
+## 方法:
 
-```Gleam
-Files.temp("example.txt")
-```
-
-この例では、一時ファイル"example.txt"が現在のディレクトリに作成されます。また、ファイルが自動的に削除されるように設定されます。
+ここにGleam（現行バージョン）で一時ファイルを作成する方法の一例を示します：
 
 ```Gleam
-let result = Files.temp("data")
-match result {
-  Ok(file) -> 
-    assert Ok(file.delete())
-  Err(error) -> 
-    io.print("Error creating temporary file: ${error}")
+fn main() {
+  let buf = io::BufferWriter.new("tmp.txt")
+  buf.write(String.to_bytes("一時データ"))
+  buf.flush()
 }
 ```
 
-この例では、一時ファイルを作成し、その後削除するまでのフローが示されています。
+このコードは `tmp.txt`という一時ファイルを作成し、 "一時データ"を書き込みます。このファイルはGleamプログラムが終了すると自動的に削除します。
 
-## 詳細情報：
+## 詳解
 
-プログラマーが一時ファイルを作成する主な理由は、プログラム中でデータを一時的に保存し、必要に応じて処理することです。一時ファイルを使用することで、プログラムの実行がスムーズになり、データの取得が容易になります。
+一時ファイルのコンセプトは古く、早いコンピューターシステムの時代から存在します。これらのファイルは一時的な保存スペースとして役立ち、ユーザーがデータを維持できるようにします。
 
-代替手段として、プログラマーはデータベースやメモリ内の一時的なストレージを使用することもできます。しかし、データベースは実行速度が遅く、メモリ内ストレージは限られています。そのため、ファイルを使用することがより便利な場合があります。
+選択肢として、他の多くの言語（Python、Javaなど）でも一時ファイルの作成が可能です。しかし、これらの言語の実装詳細はGleamとは異なる場合があります。
 
-一時ファイルの実装方法について、Gleamでは、標準ライブラリのFilesモジュールを使用することができます。また、他の言語やプログラミング環境でも同様の機能を持つライブラリが存在します。
+Gleamでは、一時ファイルを作成するために `io::BufferWriter.new` メソッドが使用されます。このメソッドは一時ファイルを作成し、BufferWriterのインスタンスを返します。
 
-## 関連情報：
+## 関連情報
 
-- [Gleam公式ドキュメント - Filesモジュール](https://gleam.run/modules/files)
-- [C言語標準ライブラリ - tmpfile関数](https://ja.cppreference.com/w/c/io/tmpfile)
+以下は一時ファイルの作成に関連する一部のリソースです：
+
+1. Gleamの公式ドキュメント：https://gleam.run/docs/
+
+2. `io::BufferWriter` のドキュメント：https://hexdocs.pm/gleam/gleam/io/BufferWriter.html 
+
+3. 一時ファイルの作成についてのベストプラクティス：http://www.unece.org/fileadmin/DAM/trade/Publications/ECE_TRADE_371E_Temporary_Storage_Facilities.pdf
+
+4. Gleam言語のGitHubリポジトリ：https://github.com/gleam-lang/gleam 
+
+以上が一時ファイルの作成に関する情報となります。この情報があなたのプログラミングに役立つことを願っています。

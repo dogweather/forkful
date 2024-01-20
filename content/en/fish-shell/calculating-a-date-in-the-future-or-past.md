@@ -10,49 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## What & Why?
+# Fish Shell for Time Travel (Sort Of)
+Step into the fascinating world of Fish Shell, where you can roam around dates past, present and future, like a time lord, but at a slightly lower pay scale. 
 
-Calculating a date in the future or past is the act of determining a date that is a certain number of time units away from a given date. This can be useful for scheduling tasks or events, setting reminders, or simply keeping track of time. Programmers often need to perform this task in their code to automate processes or make their programs more user-friendly.
+## What & Why?
+Ever wondered, "What date will it be 100 days from now?" or "What's the date 50 days before March 30, 2025?" This is called calculating dates in the future or past. As a programmer, you'll do it, well, because software eats time for breakfast, and you want to stay ahead!
 
 ## How to:
-
-Fish Shell provides a built-in function called ```date``` that makes it easy to calculate a date in the future or past. Simply enter the following command in your Fish Shell terminal:
-
+In Fish Shell, using date function is the pathway to go:
+```Fish Shell
+date -v+30d
 ```
-date +%F -d "YYYY-MM-DD + X days/weeks/months"
+Easy, right? The `-v` option adjusts the specified date and `+30d` indicates 30 days in future.
+
+To roll back to the past, just use a minus `-`:
+```Fish Shell
+date -v-30d
 ```
+Print the date 30 days back.
 
-Replace ```YYYY-MM-DD``` with the starting date and ```X days/weeks/months``` with the desired time difference. The output will be the new calculated date in the format of ```YYYY-MM-DD```.
-
-
-To calculate a date in the past, use the following command:
-
+And not just days, you can go full Hogwarts with weeks (`w`), months (`m`), years (`y`), hours (`H`), minutes (`M`), or seconds (`S`).
+```Fish Shell
+date -v+1y
+date -v+2H
+date -v-2M
 ```
-date +%F -d "YYYY-MM-DD - X days/weeks/months"
-```
+This will print the date 1 year in future, 2 hours in future, and 2 minutes in past respectively.
 
-For example, if you want to know the date 3 weeks from now, the command would be:
+## Deep Dive
+The `date` function has been partying with Unix-like operating systems since the dawn of time (or 1970). It's got your back in all POSIX-compliant fellows, including our bright-eyed Fish Shell. 
 
-```
-date +%F -d "2021-08-20 + 3 weeks"
-```
+Looking for alternatives? You've got yourself the `strftime` or the royal `datetime` module in Python, or JavaScript's `Date`, if you're into that sort of thing.
 
-And the output would be:
+Diving deeper, `date -v` changes the date relative to the one it's given. When it's not given a date, it takes 'now'. Then it adjusts according to the `value`, where 'value' is an integer with an optional minus `-` sign for times in the past.
 
-```
-2021-09-10
-```
+## See Also
+1. [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+2. [Unix date man pages](https://man7.org/linux/man-pages/man1/date.1.html)
+3. [Wikipedia: Unix Time](https://en.wikipedia.org/wiki/Unix_time) 
 
-## Deep Dive:
-
-This technique of calculating a date in the future or past has been around since the early days of programming. Before built-in functions like ```date```, programmers would have to write complex algorithms to perform this task. However, with the advancements in technology and programming languages, this task has become much simpler.
-
-There are also alternative methods for calculating a date in the future or past, such as using third-party libraries or using other built-in functions in programming languages like Python. However, using the built-in ```date``` function in Fish Shell is quick and convenient.
-
-The implementation of the ```date``` function in Fish Shell uses a combination of system calls and low-level date manipulation functions from the C programming language. This is why the syntax for the command may seem unfamiliar to some programmers.
-
-## See Also:
-
-- [Fish Shell documentation](https://fishshell.com/docs/current/index.html) for more information on the ```date``` function and other built-in functions.
-- [Python tutorial](https://www.programiz.com/python-programming/datetime) on calculating dates in Python using the datetime library.
-- [C library documentation](https://www.gnu.org/software/libc/manual/html_node/Time-Types.html) for a deeper understanding of date manipulation functions.
+Feel free to lose yourself in the sands of time. Or at least, know how to calculate 'em.

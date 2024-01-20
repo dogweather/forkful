@@ -1,7 +1,7 @@
 ---
-title:                "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-html_title:           "C++: बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
-simple_title:         "बेसिक प्रमाणीकरण के साथ एचटीटीपी अनुरोध भेजना"
+title:                "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+html_title:           "C#: बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
+simple_title:         "बेसिक प्रमाणीकरण के साथ http अनुरोध भेजना"
 programming_language: "C++"
 category:             "C++"
 tag:                  "HTML and the Web"
@@ -10,45 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्‍या और क्यों?
+# अभिप्रेत और क्यों?
 
-HTTP अनुरोध को बेसिक प्रमाणीकरण के साथ भेजना क्‍या है और प्रोग्रामर्स इसे क्‍यों करते हैं। यह एक प्रभावी तरीका है जिससे आप दूसरे सर्वर से डेटा को सुरक्षित रूप से भेज सकते हैं।
+HTTP अनुरोध साधारण प्रमाणीकरण के साथ भेजना मतलब होता है, किसी सर्वर तक एक अनुरोध पहुंचाना जिसमें यूजर नाम और पासवर्ड जैसी पहचान की जानकारी हो। प्रोग्रामर इसे तब करते हैं जब वे किसी सुरक्षित सर्वर तक पहुंचना चाहते हैं जिसे उन्हें पहचानना होता है।
 
-## कैसे करें?
+# कैसे करें:
+
+यहां एक उदाहरण है जो स्पष्ट करता है कि आपको HTTP अनुरोध बेसिक प्रमाणीकरण के साथ कैसे भेजना है:
 
 ```C++
-#include <iostream>
-#include <curl/curl.h>
+// आवश्यक लाइब्रेरिज़
+#include <cpprest/http_client.h>
+#include <cpprest/filestream.h>
+
+using namespace utility;    
+using namespace web;        
+using namespace web::http;  
+using namespace web::http::client;
+
+// अनुरोध को भेजने वाला फ़ंक्शन
+void sendRequest(http::method mtd, const string_t& username, const string_t& password) {
+    http_client_config client_config;
+    client_config.set_credentials(credentials(username, password));
+    http_client client(U("http://your-webserver.com"), client_config);
+    http_request req(mtd);
+    client.request(req).get();
+}
 
 int main() {
-    CURL *curl;
-    CURLcode res;
-    
-    curl = curl_easy_init();
-    if (curl) {
-        curl_easy_setopt(curl, CURLOPT_URL, "https://example.com");
-        curl_easy_setopt(curl, CURLOPT_USERNAME, "username");
-        curl_easy_setopt(curl, CURLOPT_PASSWORD, "password");
-        
-        res = curl_easy_perform(curl);
-        
-        if (res != CURLE_OK) {
-            std::cout << "An error occurred: " << curl_easy_strerror(res) << std::endl;
-        }
-        
-        curl_easy_cleanup(curl);
-    }
-    
+    sendRequest(methods::GET, U("your-username"), U("your-password"));  
     return 0;
 }
+
 ```
 
-आपको सभी सरणियां सेट करने के बाद, आपको अपने HTTP अनुरोध को भेज सकते हैं। अनुरोध सफल होने पर, आपको एक सफलतापूर्ण प्यारी देखने को मिलेगा।
+ऊपर दिए गए कोड में, हमने एक HTTP GET अनुरोध भेजा है, जिसमें यूज़रनेम और पासवर्ड होता है।
 
-## गहराई में
+# गहरा अध्ययन
 
-कोड में दिए गए सारे सेट करने के सिवाए, आपको curl को अपने सिस्‍टम पर स्थापित करना होगा। इतिहास देखने पर, curl को सभी ऑपरेटिंग सिस्‍टमों पर उपलब्ध कराने वाले सर्वर तालिका पर साल 1997 में दर्ज किया गया था। अन्य विकल्पों में स्थानीय क्‍षुधा लाइब्रेरी और OpenSSL के साथ सी से इंप्‍लीमेंट करना शामिल है। सार्वजनिक कुंजी टोटल्स सहित सभी प्रमाणीकरण दस्‍तावेज़ीकरण को पढ़ना आपके लिए उपयोगी हो सकता है।
+1. हायपरटेक्स्ट ट्रांसफर प्रोटोकॉल (HTTP) शुरू से ही जानकारी का आदान-प्रदान करने के लिए इंटरनेट पर सबसे आम माध्यम रहा है।
+2. अल्टरनेटिव्स: OAuth, Digest Access Authentication, और Bearer Token जैसी अन्य प्रमाणीकरण स्कीमें हो सकती हैं, लेकिन Basic Authentication इतना साधारण है कि इसे समझना और लागू करना सहज है।
+3. बेसिक एउथेंटिकेशन में यूज़रनेम और पासवर्ड आपस में 'ः' से जोड़कर Base64 कोडिंग के माध्यम से एन्कोड होते हैं। यह एक हेडर के रूप में एचटीटीपी अनुरोध में जोडा जाता है।
 
-## और देखें
+# देखें भी:
 
-संबन्धित स्रोतों के लिंक। इसके साथ कुछ जागरूकता और अधिक गहराई।
+1. [HTTP Basic Authentication](https://tools.ietf.org/html/rfc2617#section-2) - HTTP Basic प्रमाणीकरण के बारे में RFC विवरण।
+2. [Cpprestsdk library](https://github.com/microsoft/cpprestsdk) - CppRestSDK का Github repository.
+3. [Stack Overflow](https://stackoverflow.com/questions/tagged/cpprestsdk) - अधिक प्रश्नों के लिए CppRestSDK टैग के साथ Stack Overflow.

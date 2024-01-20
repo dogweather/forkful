@@ -1,7 +1,7 @@
 ---
-title:                "Capitaliser une chaîne de caractères"
-html_title:           "PowerShell: Capitaliser une chaîne de caractères"
-simple_title:         "Capitaliser une chaîne de caractères"
+title:                "Mettre une chaîne de caractères en majuscules"
+html_title:           "PowerShell: Mettre une chaîne de caractères en majuscules"
+simple_title:         "Mettre une chaîne de caractères en majuscules"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,49 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Pourquoi & Comment ?
+## Qu'est-ce & Pourquoi?
 
-Capitaliser une chaîne de caractères est le fait de changer la casse des lettres, passant ainsi de lettres minuscules à majuscules ou inversement. Les programmeurs le font pour uniformiser l'apparence des données et faciliter leur manipulation.
+La capitalisation d'une chaîne de caractères est l'action de convertir toutes les premières lettres d'un texte en majuscules. Les programmeurs utilisent cette technique pour améliorer la lisibilité ou pour l'assortir à une norme de mise en forme spécifique.
 
-# Comment faire :
+## Comment faire:
 
-```powershell
-# Définir une chaîne de caractères
-$maChaine = "c'est un exemple de chaîne de caractères"
+Voici comment vous pouvez capitaliser une chaîne de caractères en PowerShell:
 
-# Utiliser la méthode ToUpper pour la capitaliser
-$maChaine.ToUpper()
-
-Output:
-C'EST UN EXEMPLE DE CHAÎNE DE CARACTÈRES
+```PowerShell
+$maChaine = "bonjour le monde"
+$maChaineCapitalisée = (Get-Culture).TextInfo.ToTitleCase($maChaine.ToLower())
+echo $maChaineCapitalisée
 ```
 
-```powershell
-# Définir une chaîne de caractères
-$maChaine = "Voici un autre exemple en minuscules"
+Résultat affiché:
 
-# Utiliser la méthode ToLower pour la convertir en minuscules
-$maChaine.ToLower()
-
-Output:
-voici un autre exemple en minuscules
+```PowerShell
+Bonjour Le Monde
 ```
 
-# Zoom sur :
+## Approfondissement:
 
-## Contexte historique :
+La capitalisation de chaînes est assez courante en programmation et a été facilitée dans les versions récentes de PowerShell. En termes d'alternatives, vous pouvez également utiliser la méthode `.ToUpper()` pour convertir la chaîne entière en majuscules, et non pas seulement la première lettre de chaque mot.
 
-La casse des lettres est une notion apparue avec l'utilisation des ordinateurs et des langages de programmation. Avant cela, la distinction entre majuscules et minuscules était principalement utilisée pour des raisons esthétiques ou grammaticales dans la langue écrite.
+```PowerShell
+$maChaine = "bonjour le monde"
+$maChaineMajuscule = $maChaine.ToUpper()
+echo $maChaineMajuscule
+```
 
-## Alternatives :
+Résultat affiché:
 
-En plus de la méthode ToUpper et ToLower, il est également possible de capitaliser une chaîne de caractères en utilisant un filtre dans PowerShell, tel que ```$maChaine | ForEach-Object { $_.ToUpper() }```. Il existe également des commandes dédiées à cette fonctionnalité, telles que ```ConvertTo-Uppercase``` et ```ConvertTo-Lowercase```.
+```PowerShell
+BONJOUR LE MONDE
+```
 
-## Détails de l'implémentation :
+Pour information, la méthode `(Get-Culture).TextInfo.ToTitleCase()` fonctionne en convertissant d'abord toute la chaîne en minuscules, puis en mettant chaque première lettre de chaque mot en majuscule.
 
-La méthode ToUpper et ToLower sont des méthodes de l'objet String dans PowerShell qui utilisent le type [System.String]. Elles retournent une nouvelle instance de String avec la casse modifiée. Ces méthodes ne modifient pas directement la chaîne de caractères originale.
+## Voir aussi:
 
-# Voir aussi :
+Pour d'autres ressources sur PowerShell, consultez les liens ci-dessous:
 
-- [Documentation Microsoft sur les méthodes de String](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_string_methods?view=powershell-7)
-- [Article Wikipédia sur la casse des lettres](https://fr.wikipedia.org/wiki/Casse_(typographie))
+1. [_Documentation officielle de PowerShell_](https://docs.microsoft.com/fr-fr/powershell/)
+2. [_PowerShell Basic Cheat Sheet_](https://www.withdave.com/2017/11/powershell-basic-cheat-sheet/)
+3. [_String Manipulation with PowerShell_](https://adamtheautomator.com/string-manipulation-with-powershell/)

@@ -1,7 +1,7 @@
 ---
-title:                "HTML verarbeiten"
-html_title:           "Ruby: HTML verarbeiten"
-simple_title:         "HTML verarbeiten"
+title:                "HTML parsen"
+html_title:           "Arduino: HTML parsen"
+simple_title:         "HTML parsen"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "HTML and the Web"
@@ -10,36 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Parsen von HTML mit Ruby
+
 ## Was & Warum?
 
-Das Parsen von HTML ist der Prozess, bei dem ein Computer Daten aus HTML-Code extrahiert. Programmierer verwenden es, um automatisiert Daten aus Webseiten zu sammeln und zu analysieren.
+HTML-Parsing ist der Prozess, bei dem HTML-Code analysiert und strukturiert wird. Programmierer machen das, um auf spezifische Elemente im Code zuzugreifen, Daten zu extrahieren und Web Scraping zu betreiben.
 
-## Wie geht's?
+## Wie es geht:
 
-Die Ruby-Bibliothek 'Nokogiri' ist ein leistungsstarkes Werkzeug zum Parsen von HTML. Hier ist ein einfaches Beispiel, das den Titel einer Webseite ausgibt:
+Die Verwendung der Nokogiri Gem in Ruby macht das Parsen von HTML einfach und praktisch. Installieren Sie zunächst Nokogiri mit `gem install nokogiri`.
 
-```Ruby
+```ruby
 require 'nokogiri'
 require 'open-uri'
 
-doc = Nokogiri::HTML(open('https://www.google.com'))
-puts doc.title
+doc = Nokogiri::HTML(open("https://www.example.com"))
+
+# Sucht das erste H1-Tag
+h1 = doc.at_css('h1')
+puts h1.text
 ```
 
-Dieses Beispiel verwendet die 'open-uri' Bibliothek, um den HTML-Code von der Webseite zu holen, und dann verwendet Nokogiri, um den Titel aus dem HTML-Code zu extrahieren.
+Dabei greifen wir auf `https://www.example.com` zu und suchen das erste `<h1>` Tag auf der Seite, dann gibt das Skript dessen Text aus.
 
-## Tiefer Tauchen
+## Vertiefung:
 
-Das Parsen von HTML hat eine lange Geschichte, die bis in die Anfänge des Webs zurückgeht. Frühere Methoden, wie zum Beispiel reguläre Ausdrücke, waren nicht so robust wie heutige Tools wie Nokogiri.
+HTML-Parsing ist ein altbekanntes Thema in der Web-Entwicklung, mit zahlreichen Lösungsansätzen in unterschiedlichen Sprachen.
 
-Alternativen zu Nokogiri sind unter anderem die Bibliotheken 'Hpricot' und 'Mechanize'. Diese bieten ähnliche Funktionen, sind aber möglicherweise nicht so performant wie Nokogiri.
+Alternativ zu Nokogiri gibt es in Ruby andere Möglichkeiten, HTML zu parsen, wie Hpricot (wird nicht mehr aktiv entwickelt) und Oga. Während Nokogiri auf das libxml2-Framework von Gnu basiert, welches komplizierte Callbacks und potentiell unvorhersehbare Speicherbelegung verursachen kann, behandelt Oga das Parsen auf Ruby-Ebene, was eine bessere Kontrolle ermöglicht.
 
-Die Implementierung von Nokogiri basiert auf der 'libxml2' Bibliothek, die in C geschrieben ist. Dies trägt zur hohen Geschwindigkeit von Nokogiri bei.
+Details der Implementierung hängen vom spezifischen Fall ab. Eckdaten sind zum Beispiel, ob das HTML wohlgeformt ist, und welches Volumen an Daten gehandhabt werden muss.
 
-## Siehe auch
+## Siehe auch:
 
-Weitere Informationen zu Nokogiri und dem Parsen von HTML mit Ruby finden Sie auf der offiziellen Dokumentationsseite: https://nokogiri.org/
-
-Eine ausführliche Anleitung zum Parsen von HTML mit 'Nokogiri' finden Sie hier: https://www.rubyguides.com/2018/10/parsing-html-in-ruby/
-
-Weitere Alternativen und Vergleiche von HTML-Parsing-Tools finden Sie hier: https://rubygems.org/gems/nokogiri/versions/1.6.2.1.
+- Nokogiri Dokumentation: https://nokogiri.org
+- Oga Dokumentation: https://github.com/YorickPeterse/oga
+- Hpricot Dokumentation: https://github.com/hpricot/hpricot/wiki
+- Mehr Informationen über HTML Parsing: https://www.w3.org/TR/html51/syntax.html#parsing

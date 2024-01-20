@@ -10,47 +10,59 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi et pourquoi?
+## Quoi & Pourquoi ?
+Comparer deux dates c'est évaluer leurs différences suivant un certain critère. C'est une opération récurrente en programmation, utilisée pour résoudre des problèmes liés à la gestion du temps comme établir des durées ou déterminer l’ordre chronologique d’événements.
 
-Comparer deux dates est un processus courant en programmation pour déterminer si une date est antérieure, postérieure ou égale à une autre date. Ce type de comparaison est utile pour trier et filtrer des données, ainsi que pour créer des conditions logiques dans un programme.
+## Comment Faire :
+Premièrement, ajoutons la bibliothèque clojure.java-time pour gérer les dates.
 
-## Comment faire:
-
-Voici un exemple de code en Clojure pour comparer deux dates. Dans cet exemple, nous utilisons la fonction ```clojure >``` pour déterminer si la date 1 est postérieure à la date 2:
-
-```Clojure
-(def date1 (java.util.Date. 1990 1 1))
-(def date2 (java.util.Date. 1995 1 1))
-
-(> date1 date2)
-
-; Output: false
+```clojure
+(:require [java-time :as jt])
 ```
 
-Nous pouvons également utiliser la fonction ```clojure <``` pour déterminer si la date 1 est antérieure à la date 2:
+Créons deux dates pour la comparaison :
 
-```Clojure
-(< date1 date2)
-
-; Output: true
+```clojure
+(def date1 (jt/local-date 2022 3 15))
+(def date2 (jt/local-date 2023 6 19))
 ```
 
-Pour vérifier si les deux dates sont égales, nous pouvons utiliser la fonction ```clojure =```
+Ensuite, utilisons la fonction `before?` pour voir si une date est avant une autre date :
 
-```Clojure
-(= date1 date2)
-
-; Output: false
+```clojure
+(jt/before? date1 date2)
 ```
 
-## Plongeon profond:
+Output :
 
-La comparaison de dates est un concept commun en programmation et est utilisée dans de nombreux langages de programmation. Les langages orientés objets, tels que Java, utilisent souvent des méthodes spéciales pour comparer des objets de type date. Dans Clojure, nous utilisons les fonctions ```clojure >```, ```clojure <``` et ```clojure =``` pour effectuer des comparaisons de dates.
+```clojure
+true
+```
 
-Une alternative à la comparaison de dates est d'utiliser des timestamps, qui représentent le temps en nombre de secondes écoulées depuis une date de référence. Les timestamps sont plus précis pour des comparaisons de dates précises.
+Et la fonction `after?` pour voir si une date est après une autre date:
 
-## Voir aussi:
+```clojure
+(jt/after? date1 date2)
+```
 
-- Documentation officielle sur les fonctions de comparaison de Clojure: https://clojure.org/reference/data_structures#Comparison
-- Un tutoriel sur la manipulation de dates en Clojure: https://www.tutorialspoint.com/clojure/clojure_date_time.htm
-- Une discussion sur les avantages et les inconvénients d'utiliser des timestamps pour comparer des dates: https://stackoverflow.com/questions/5420385/timestamp-vs-date-as-primary-key-in-rdbms
+Output :
+
+```clojure
+false
+```
+
+## Plongée en Profondeur :
+
+La bibliothèque clojure.java-time est basée sur le standard JSR-310, qui est né de l'insatisfaction des développeurs avec les bibliothèques de date/heure précédentes de Java. Il offre des classes immuables et des méthodes pour manipuler les dates et les heures qui sont beaucoup plus intuitives que celles de java.util.Date ou java.util.Calendar.
+
+Des alternatives à l'utilisation systématique de clojure.java-time sont clj-time (une simple couche de wrapping sur Joda-Time) ou directement l'utilisation des classes LocalDate et LocalDateTime de Java.
+
+Lors de l'utilisation de `before?` ou `after?` en Clojure pour comparer les dates, gardez à l’esprit qu’un faux peut signifier que les dates sont égales ou que l’opposé est vrai. Pour vérifier l’égalité, utilisez `equal?`.
+
+## Voir Aussi :
+
+Pour plus de détails sur la manipulation de dates en Clojure :
+- [clojure.java-time](https://cljdoc.org/d/java-time/java-time/0.3.2/api/java-time)
+- [Clojure Cookbook: Manipulating Dates and Times](https://clojure-cookbook.com/recipes/03_dates_and_times/)
+- [Java SE 8 Date and Time](https://docs.oracle.com/javase/tutorial/datetime/)
+- [clojure/clj-time](https://github.com/clj-time/clj-time)

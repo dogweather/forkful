@@ -1,7 +1,7 @@
 ---
-title:                "문자열 대문자로 변환하기"
-html_title:           "Haskell: 문자열 대문자로 변환하기"
-simple_title:         "문자열 대문자로 변환하기"
+title:                "문자열 대문자화"
+html_title:           "Haskell: 문자열 대문자화"
+simple_title:         "문자열 대문자화"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,43 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## 무엇 & 왜?
+문자열 대문자화는 모든 알파벳 소문자를 대문자로 바꾸는 것입니다. 이 작업은 사용자 입력 준비나 가독성 향상을 위해 프로그래머들이 종종 실행합니다.
 
-문자열의 첫 글자를 대문자로 바꾸는 것을 "capitalizing a string"이라고 합니다. 프로그래머들은 일반적으로 문자열을 보기좋게 캐피타라이즈를 합니다. 또한 인간이 읽기 더 쉬운 형태로 만들기 위해 입니다.
-
-## 어떻게
+## 어떻게:
+하스켈에서 문자열을 대문자로 만드는 간단한 예를 보겠습니다:
 
 ```Haskell
 import Data.Char (toUpper)
 
 capitalize :: String -> String
-capitalize [] = []
-capitalize (x:xs) = toUpper x : xs
+capitalize = map toUpper
 ```
 
-예시:
+사용 예시:
 
 ```Haskell
-> capitalize "hello"
-"Hello"
-> capitalize "haskell"
-"Haskell"
-> capitalize "123abc"
-"123abc"
+main = print(capitalize "hello world")
 ```
 
-## 깊이있는 탐구
+출력:
 
-1. "capitalizing a string"은 영어에서 왜 중요한가요?
-  - 영어 문장의 첫 글자는 대문자로 쓰기 때문입니다.
-  - 그래서 "capitalizing a string" 도 자연어 처리에서 중요한 부분입니다.
-2. 코드에서 `Data.Char`의 `toUpper`를 사용하는 대신에 `Char`의 `toUpper`를 사용할 수 있나요?
-  - `Data.Char`를 가져오는 이유는 더 일반적으로 쓸 수 있기 때문입니다.
-  - 이 모듈에는 다른 언어의 문자들을 다룰 수 있는 함수들이 많이 있기 때문입니다.
-3. 다른 언어에서는 어떻게 문자열의 첫 글자를 대문자로 만드나요?
-  - 다른 언어에서는 다른 문자열 처리 함수를 사용합니다.
-  - 예를 들어, `toUpperCase()`라는 함수가 자바에서 있습니다.
+```Haskell
+"HELLO WORLD"
+```
 
-## 더 알아보기
+## 깊게 알아보기
+**역사적 맥락**: 문자열의 대문자화는 컴퓨터 프로그래밍의 초기부터 존재했습니다. 일반적으로 문자열 검색, 비교, 정렬 등의 작업을 수행하기 위해 사용됩니다.
 
-- [Documentation: Data.Char module](https://www.haskell.org/onlinereport/haskell2010/haskellch9.html#x16-1610009)
-- [Hoogle: toUpper function](https://hoogle.haskell.org/?hoogle=toUpper)
+**대안**: 위의 코드는 `toUpper` 함수를 사용하여 각 문자를 대문자로 변경합니다. 연속적인 문자 목록을 대상으로 `toUpper` 함수를 적용하려면 `map` 고차함수를 사용합니다. 다른 대안으로는 `Data.Text` 라이브러리의 `toUpper` 함수를 사용할 수 있습니다.
+
+**구현 세부 정보**: `Data.Char` 라이브러리의 `toUpper` 함수는 유니코드 스칼라 값을 대문자로 변환합니다. 이 함수는 특정 언어의 대소문자 변환 규칙을 따르지 않습니다. 특수 대소문자 규칙을 따르려면 `Data.Text.ICU` 라이브러리를 사용해야 할 수 있습니다.
+
+## 함께 보기
+아래 링크에서 더 많은 정보와 예제를 찾을 수 있습니다:
+
+- 문자열 대문자화에 대한 자세한 정보: [Haskell Documentation](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html#v:toUpper)
+- Data.Char 라이브러리에 대한 자세한 정보: [Haskell Data.Char Library](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)
+- Data.Text 라이브러리에 대한 자세한 정보: [Haskell Data.Text Library](https://hackage.haskell.org/package/text-1.2.4.0/docs/Data-Text.html)
+- 특수 대소문자 규칙을 따르는 문자열 대문자화: [Haskell Data.Text.ICU Library](https://hackage.haskell.org/package/text-icu-0.7.0.1/docs/Data-Text-ICU.html)

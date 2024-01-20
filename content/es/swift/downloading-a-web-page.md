@@ -1,7 +1,7 @@
 ---
-title:                "Descargar una página web."
-html_title:           "Swift: Descargar una página web."
-simple_title:         "Descargar una página web."
+title:                "Descargando una página web"
+html_title:           "Arduino: Descargando una página web"
+simple_title:         "Descargando una página web"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "HTML and the Web"
@@ -10,38 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Descargar una página web es simplemente obtener el código HTML de una página de Internet y guardarlo en tu dispositivo. Los programadores hacen esto para acceder a la información de una página, como imágenes, texto o datos, para utilizarla en sus propias aplicaciones o herramientas.
+## ¿Qué & Por qué?
+Descargar una página web se refiere a conseguir su código HTML. Los programadores lo hacen para recuperar y analizar datos, o para hacer copias de seguridad de la web.
 
-## ¿Cómo hacerlo?
-```
-Swift
-import UIKit
+## Cómo hacerlo
+En Swift, generamos una solicitud del sitio web y luego utilizamos una tarea de URL para descargarla. Aquí te dejo un ejemplo en Swift 5:
+
+```Swift
 import Foundation
 
-// Definir la URL de la página web que queremos descargar
-let url = URL(string: "https://google.com")!
-
-// Crear una sesión de URLRequest
-let request = URLRequest(url: url)
-
-// Realizar la solicitud de descarga
-let task = URLSession.shared.dataTask(with: request) { data, response, error in
-    // Manejar los datos recibidos
+let url = URL(string: "https://www.example.com")!
+let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
     if let data = data {
-        // Convertir los datos a una cadena de texto
-        let html = String(data: data, encoding: .utf8)
-        print(html)
+        let str = String(data: data, encoding: .utf8)
+        print("Datos de la página:\n\(str!)")
     }
 }
-// Iniciar la tarea
 task.resume()
 ```
 
-## Profundizando
-Descargar una página web se ha vuelto una habilidad esencial para los programadores modernos, ya que nos permite utilizar información de diversas fuentes en nuestras aplicaciones. Además de utilizar la URLSession en Swift, hay otras formas de descargar una página web, como utilizar librerías de terceros o incluso hacerlo manualmente con sockets.
+Este programa imprimirá el código HTML de `www.example.com`.
+
+## Buceo profundo
+La descarga de páginas web ha sido fundamental en la vida útil de la web, permitiendo la indexación de motores de búsqueda y la toma de instantáneas de sitios. Además del método anterior, podrías usar bibliotecas como Alamofire para tareas más complejas. Cabe mencionar que si haces demasiadas solicitudes a un sitio en un corto período de tiempo, puedes ser bloqueado.
 
 ## Ver también
-- [Apple Developer: URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-- [Swifts: Getting Started with Network Requests](https://www.hackingwithswift.com/read/32/1/introduction)
-- [URLSession Class Reference](https://developer.apple.com/documentation/foundation/urlsession)
+1. [Kitura](https://www.kitura.io/): Un marco web ligero para Swift.
+2. [Alamofire](https://github.com/Alamofire/Alamofire): Una biblioteca Swift para tareas HTTP más complejas.
+3. [Documentación oficial de Swift](https://developer.apple.com/documentation/swift): Para profundizar en el lenguaje de programación Swift.

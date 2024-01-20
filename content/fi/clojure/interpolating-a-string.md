@@ -1,6 +1,6 @@
 ---
 title:                "Merkkijonon interpolointi"
-html_title:           "Clojure: Merkkijonon interpolointi"
+html_title:           "Bash: Merkkijonon interpolointi"
 simple_title:         "Merkkijonon interpolointi"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,22 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##### Mitä & Miksi? 
-Interpolointi tarkoittaa merkkijonon sisäisten muuttujien korvaamista. Sitä käytetään usein ohjelmoinnissa, kun haluamme luoda dynaamisia tai muuttuvia merkkijonoja. 
+# Interpoloivien merkkijonojen käyttö Clojure-ohjelmoinnissa 
 
-##### Miten:
-Esimerkiksi, jos haluat tulostaa käyttäjän antaman nimen tervehdyksen kanssa, voit käyttää interpolointia merkkijonossa: ```Clojure
-"Teretuloa, $name!"```
+## Mikä & Miksi?
 
-Tässä ```$name``` muuttuja korvataan käyttäjän antamalla nimellä. Lopputulos olisi esimerkiksi ```Clojure
-"Teretuloa, Johanna!"```
+Interpoloiva merkkijono on ohjelmointitekniikka, jossa yhdistetään staattinen merkkijono ja dynaamiset arvot yhdeksi uudeksi merkkijonoksi. Ohjelmoijat käyttävät sitä nopeuttamaan ja selkeyttämään koodin kirjoittamista.
 
-Tämä on paljon kätevämpää kuin yrittää yhdistää muuttujia ja tekstiä erikseen.
+## Näin se toimii:
 
-##### Syvemmälle:
-Interpoloinnin käsite on peräisin Perl-ohjelmointikielestä. Sitä käytetään myös monissa muissa ohjelmointikielissä, kuten Rubyssa ja Pythonissa. Jotkut Clojuren ohjelmoijat käyttävät mieluummin funktioita, kuten ```str``` ja ```format```, interpoloinnin sijaan.
+Clojure käyttää `str`-funktiota merkkijonojen yhdistämiseen. Alla on esimerkki:
 
-##### Katso myös:
-Voit lukea lisää interpoloinnista Clojuren virallisesta dokumentaatiosta: https://clojure.org/guides/string_conversion
+```Clojure
+(let [nimi "Maikki"]
+  (str "Hei, " nimi "!"))
+```
 
-Voit myös tutustua muiden ohjelmointikielien interpolointitapoihin, kuten Rubyn ja Pythonin f-stringeihin.
+Merkkijono "`Hei, Maikki!`" palautetaan, koska `nimi`-muuttuja on määritelty arvoksi "Maikki".
+
+## Syvempi tieto:
+
+Interpoloitujen merkkijonojen käyttäminen juontaa juurensa jopa 1960-luvun ohjelmointikielistä. Se on yleinen ominaisuus useimmissa moderneissa ohjelmointikielissä, mukaan lukien Clojure.
+
+Vaihtoehtoisesti Clojure tarjoaa `format`-funktion, joka toimii samankaltaisesti kuin javan `String.format`:
+
+```Clojure
+(let [nimi "Maikki" 
+      ikä 30]
+  (format "Hei, %s! Olet %d vuotta vanha." nimi ikä))
+```
+
+Clojuressa, `str` ja `format` -funktiot käsittelevät merkkijono-interpolaatio sen sisällä olevan JVM: n avulla, joten niiden suorituskyky on erittäin hyvä.
+
+## Katso myös:
+
+- Clojure dokumentaatio str funktiolle: https://clojuredocs.org/clojure.core/str
+- Clojure dokumentaatio format funktiolle: https://clojuredocs.org/clojure.core/format
+- Lisää tietoja merkkijonojen interpoloinnista: https://clojure.org/guides/learn/functions

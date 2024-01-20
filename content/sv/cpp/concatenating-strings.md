@@ -1,7 +1,7 @@
 ---
-title:                "Sammanslående strängar"
-html_title:           "C++: Sammanslående strängar"
-simple_title:         "Sammanslående strängar"
+title:                "Sammanslagning av strängar"
+html_title:           "C++: Sammanslagning av strängar"
+simple_title:         "Sammanslagning av strängar"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,34 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Concatenation av strängar, också känd som sammanfogning av strängar, är en process inom programmering där man kombinerar flera strängar till en enda sträng. Detta kan vara användbart för att skapa dynamiska textutskrifter eller för att manipulera datatyper som inte är strängar. Programmerare använder detta för att göra sina program mer välstrukturerade och flexibla.
+# Strängkonkatenering i C++: En snabbguide
+Här kommer vi att diskutera en viktig aspekt inom programmering: strängkonkatenering, eller sammanfogning av strängar, i C++. 
 
-## Hur man:
+## Vad och Varför?
+Strängkonkatenering är processen att sammankoppla två eller flera strängar till en enda sträng. Programmerare gör detta för att skapa dynamiska meddelanden, formatera utdata eller bygga SQL-frågor.
+
+## Hur man gör:
+Här är några exempel på hur man genomför strängkonkatenering i C++:
+
 ```C++
 #include <iostream>
-using namespace std;
+#include <string>
 
 int main() {
-    string fornamn = "Lisa";
-    string efternamn = "Persson";
+    std::string str1 = "Hej ";
+    std::string str2 = "Sverige!";
+    // Sammanfoga strängarna
+    std::string str3 = str1 + str2;
 
-    // Konkatenering med + operatorn
-    string fulltnamn1 = fornamn + " " + efternamn;
-
-    // Konkatenering med append() funktionen
-    string fulltnamn2 = fornamn;
-    fulltnamn2.append(" ");
-    fulltnamn2.append(efternamn);
-
-    cout << fulltnamn1 << endl; // Utskrift: Lisa Persson
-    cout << fulltnamn2 << endl; // Utskrift: Lisa Persson
+    std::cout << str3;
     return 0;
 }
 ```
+*I output: *
+```
+Hej Sverige!
+```
 
-## Fördjupning:
-Concatenation kan spåras tillbaka till de tidigaste datorerna där det var vanligt att dela upp en enda sträng i flera mindre strängar för att spara utrymme. Idag används också andra metoder som strängformattering för att kombinera text. Implementationen av strängkonkatenering kan variera beroende på programmeringsspråk, men konceptet är detsamma.
+## Fördjupning
+**Historisk kontext:** Före C++11 var konkatenering av strängar lite knepigt, vanligtvis gjort med funktioner som `strcat()` eller `sprintf()`. Men nu, med överbelastning av `operator+`, är det mycket enklare.
+
+**Alternativ:** Utöver `operator+` kan du också använda `append()`, en inbyggd funktion i `std::string`-klassen. Det ger samma resultat men kan vara mer effektivt för stora strängar.
+
+**Implementeringsdetaljer:** När du använder `operator+` för konkatenering skapas en ny sträng som innefattar de sammanfogade strängarna. Det är viktigt att notera för prestanda och minneshantering.
 
 ## Se även:
-Läs mer om konkatenering i C++: [String Concatenation in C++](https://www.geeksforgeeks.org/string-concatenation-in-cpp/)
+För mer detaljerad information, se dessa källor:
+- [Concatenation (operators + and +=)](https://www.cplusplus.com/reference/string/string/operator+/)
+- [Basic String Operations](http://www.cplusplus.com/doc/tutorial/ntcs/?kw=string)
+- [W3Schools C++ Strings](https://www.w3schools.com/cpp/cpp_strings.asp)

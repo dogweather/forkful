@@ -1,7 +1,7 @@
 ---
-title:                "הורדת עמוד אינטרנט"
-html_title:           "Rust: הורדת עמוד אינטרנט"
-simple_title:         "הורדת עמוד אינטרנט"
+title:                "הורדת דף אינטרנט"
+html_title:           "C++: הורדת דף אינטרנט"
+simple_title:         "הורדת דף אינטרנט"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "HTML and the Web"
@@ -10,39 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-שלום חברים! היום אני אראה לכם איך להוריד אתרי אינטרנט בשפת ראסט - גרסת התכנות הנוכחית.
+## מה זה & למה?
 
-## מה ולמה?
-הורדת דף אינטרנט היא תהליך שבו משתמשים תוכנת מחשב כדי לקבל קובץ HTML שמתאר את התוכן של הדף. תוכנית המחשב שתעשה את זה יכולה להיות מאוד שימושית כאשר אתם פותחים אתר אינטרנט ואתם רוצים לבדוק שהכל עובד כפי שצריך.
+להוריד את דף האינטרנט זהו תהליך של שמירה של המידע מדף אינטרנט מתוך שרת אינטרנט למחשב מקומי שלך. תכניתאים עושים זאת כדי למנות את המידע, לבחינתו או לשימוש בחיפוש מידע באופן אופליין.
+  
+## כיצד:
+  
+הנה דוגמא של קוד Rust להורדת דף אינטרנט:
 
-## כיצד לעשות:
 ```Rust
-use std::io::Read;
 use std::fs::File;
+use std::io::prelude::*;
 use std::error::Error;
-use std::io::Write;
 use reqwest;
 
-// Specify URL to download
-let url = "https://www.example.com";
-
-// Use reqwest library to make a GET request
-let response = reqwest::blocking::get(url).expect("Unable to make request.");
-
-// Check if response was successful
-if response.status().is_success() {
-    // Open a new file to write the response to
-    let mut file = File::create("example.html").expect("Unable to create file.");
-
-    // Read response and write to file
-    response.copy_to(&mut file).expect("Unable to write to file.");
-} else {
-    println!("Request unsuccessful.");
+fn main() -> Result<(), Box<dyn Error>> {
+    let content = reqwest::blocking::get("https://www.example.com")?.text()?;
+  
+    let mut file = File::create("webpage.html")?;
+  
+    file.write_all(content.as_bytes())?;
+  
+    Ok(())
 }
 ```
 
-## טיפול עמוק:
-היסטוריית ההורדה של אתרי אינטרנט החלה עם פרוטוקולי HTTP ו-FTP המאפשרים הורדה מרוחקת של קבצים. כיום, יש גם כלים נוספים כמו ספריות של קיימות בשפות תכנות אחרות כמו Python ו-Java.
+פלט הדוגמא הזו יצור קובץ בשם 'webpage.html' בספרייה של הפרויקט שלך עם את כל הנתונים מ 'https://www.example.com'.
+
+## התעמקות עמוקה:
+
+1. הקשר ההיסטורי: בעבר, הורדת דפי אינטרנט הייתה דרך נפוצה לכך שהמשתמשים נהנים מתוכן אינטרנט באופן אופליין. כיום, זה נמשך בצורה ממוחשבת, כמו דוגמאות חיפוש מידע.
+
+
+2. חלופות: ישנם שפות תכנות אחרות עם ספריות שמאפשרות לך להוריד דפי אינטרנט, אבל Rust מספק ביצועים מרשימים ואבטחה משופרת.
+
+
+3. פרטי התממשקות: הפונקציה `reqwest::blocking::get()` מבצעת בקשת HTTP GET ל- URL שקיבלה, והפונקציה `text()` מחזירה את תוכן התגובה כמחרוזת.
 
 ## ראו גם:
-למידע נוסף על הורדת אתרי אינטרנט בראסט, ניתן לעיין במסמכי המדריכים בקוד הפתוח ובאתר הרשמי של ראסט.
+
+1. [Reqwest - Rust](https://docs.rs/reqwest/0.11.3/reqwest/)
+2. [Rust תיעוד רשמי](https://www.rust-lang.org/)
+3. [Rust Tutorial](https://www.rust-lang.org/learn)

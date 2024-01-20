@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma string para maiúsculas"
-html_title:           "Arduino: Convertendo uma string para maiúsculas"
-simple_title:         "Convertendo uma string para maiúsculas"
+title:                "Capitalizando uma string"
+html_title:           "Arduino: Capitalizando uma string"
+simple_title:         "Capitalizando uma string"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,36 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que fazer?
+# Arduino: Capitalização de Strings
 
-Capitalizar uma string é simplesmente deixar todas as letras maiúsculas em uma sequência de caracteres. Isso é algo que os programadores fazem para tornar o texto mais legível e padronizado.
+## O Que & Porquê?
 
-## Como fazer:
+Capitalizar uma string envolve transformar todas as letras minúsculas em maiúsculas. Programadores fazem isso para padronizar a aparência dos dados de texto ou para comparações de strings sensíveis a maiúsculas e minúsculas.
 
-Para capitalizar uma string usando o Arduino, podemos usar a função "toUpperCase()" que está disponível para a classe String. Veja um exemplo de código abaixo:
+## Como Fazer:
 
-````Arduino
-String texto = "exemplo de string";
-texto.toUpperCase();
-Serial.println(texto);
-````
+Para capitalizar uma string no Arduino, usamos a função `toUpperCase()`. Aqui estão alguns exemplos:
 
-O resultado desse código seria:
+```arduino
+String minhaString = "aprendendo a programar";
+minhaString.toUpperCase();
+Serial.println(minhaString);  //imprime: APRENDENDO A PROGRAMAR
+```
 
-````Arduino
-EXEMPLO DE STRING
-````
+```arduino
+char minhaString[] = "aprendendo a programar";
+for(int i = 0; minhaString[i]; i++){
+  minhaString[i] = toupper(minhaString[i]);
+}
+Serial.println(minhaString);  //imprime: APRENDENDO A PROGRAMAR
+```
 
-## Mergulho Profundo:
+## Mergulho Profundo
 
-A prática de capitalizar strings é um padrão amplamente aceito em programação. Ela vem do tempo das máquinas de escrever onde as letras minúsculas eram mais difíceis de serem digitadas. Além disso, padronizar a capitalização torna o código mais fácil de ser lido e entendido por outros programadores.
+Historicamente, a necessidade de capitalizar strings surgiu nos primórdios da ciência da computação, quando os sistemas eram estritamente sensíveis a maiúsculas e minúsculas. Ainda é relevante hoje, especialmente ao lidar com comparação de strings, nomes de usuário e senhas.
 
-Alternativamente, podemos usar a função "toUpper()" da biblioteca "ctype.h" para capitalizar uma string em C. No entanto, essa função funciona somente com caracteres individuais e não com strings inteiras.
+Existem várias alternativas para a função `toUpperCase()`. Se você quisesse apenas a primeira letra maiúscula, poderia usar `charAt(0)` com `toUpperCase()` em combinação com um slice do restante da string.
 
-Uma coisa importante a se notar é que essa função "toUpperCase()" não altera a string original, ela apenas retorna uma nova string. Portanto, é importante atribuir esse retorno a uma variável para utilizá-la posteriormente.
+No nível de implementação, `toUpperCase()` percorre cada caractere da string e usa a tabela ASCII para transformar letras minúsculas em maiúsculas.
 
-## Veja também:
+## Veja Também
 
-- [Referência da função toUpperCase() no site do Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/)
-- [Tutorial sobre como trabalhar com strings no Arduino](https://www.arduino.cc/en/Tutorial/StringConcatenation)
-- [Explicação detalhada sobre a biblioteca ctype.h em C](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
+- Guide completo de referência do Arduino String Library em [https://www.arduino.cc/reference/en/language/variables/data-types/string/](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+
+- Dicas detalhadas sobre a manipulação de String no Arduino, disponíveis em [https://startingelectronics.org/software/arduino/learn-to-program-course/11-strings/](https://startingelectronics.org/software/arduino/learn-to-program-course/11-strings/)
+
+- Informações adicionais sobre funções de string no Arduino, você pode encontrar em [https://www.robocore.net/tutoriais/funcoes-da-classe-string-no-arduino.html](https://www.robocore.net/tutoriais/funcoes-da-classe-string-no-arduino.html)

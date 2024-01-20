@@ -1,7 +1,7 @@
 ---
-title:                "Html-analysointi"
-html_title:           "TypeScript: Html-analysointi"
-simple_title:         "Html-analysointi"
+title:                "HTML:n jäsentäminen"
+html_title:           "Bash: HTML:n jäsentäminen"
+simple_title:         "HTML:n jäsentäminen"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "HTML and the Web"
@@ -11,37 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-HTML:n jäsentäminen on prosessi, jossa tietokone lukee ja ymmärtää HTML-koodia ja muuttaa sen rakenteeksi, jota voidaan käsitellä ja näyttää selaimessa. Tämä on tärkeää, koska se mahdollistaa dynaamisten ja monipuolisten verkkosivujen luomisen, joilla on monia erilaisia elementtejä ja sisältöä.
 
-## Kuinka tehdä:
-Seuraavissa koodiesimerkeissä näet, kuinka voit jäsentää HTML-koodia TypeScript-ohjelmointikielellä ja saada tulosteen, joka näyttää rakenteen ja sisällön.
+HTML-parsinta tarkoittaa HTML-dokumentin rakenteen analysoimista ja muuntamista ohjelmalliseen muotoon. Ohjelmoijat tekevät tämän, jotta voidaan helposti lukea, muuttaa ja manipuloida verkkosivun sisältöjä.
+
+## Näin se tehdään:
+
+Käytämme "jsdom" kirjastoa HTML-parsintaan TypeScriptissa. Tässä on esimerkkikoodi:
 
 ```TypeScript
-const html = "<div><h1>Tervetuloa!</h1><p>Tervetuloa sivullemme!</p></div>";
-const parser = new DOMParser();
-const doc = parser.parseFromString(html, "text/html");
-console.log(doc);
+import { JSDOM } from 'jsdom';
+
+const htmlContent = `<body><h1>Terve Suomi!</h1></body>`;
+
+const dom = new JSDOM(htmlContent);
 ```
 
-Tulostus:
+Nyt voimme käyttää `dom` objektia HTML-elementtien käsittelyyn.
 
-```
-#document
-<html>
-  <head></head>
-  <body>
-    <div>
-      <h1>Tervetuloa!</h1>
-      <p>Tervetuloa sivullemme!</p>
-    </div>
-  </body>
-</html>
+```TypeScript
+let h1 = dom.window.document.querySelector('h1');
+console.log(h1.textContent); // Tulostaa: "Terve Suomi!"
 ```
 
-## Syvempi sukellus:
-HTML:n jäsentäminen on kehittynyt yhdessä verkon kehityksen kanssa ja on olennainen osa modernia verkkokehitystä. On myös muita tapoja jäsentää HTML-koodia, kuten käyttämällä Regular Expression -lausekkeita, mutta DOM-hierarkian käyttäminen on yleisesti suositeltavaa. HTML-jäsennys suoritetaan yleensä selaimen sisällä, mutta se voidaan myös tehdä palvelimella ennen kuin sivu lähetetään selaimelle. Tämä voi parantaa verkkosivujen latausnopeutta ja suorituskykyä.
+## Syvempi tarkastelu
 
-## Tutustu myös:
-- [MDN Web Docs: HTML-parsing](https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction)
-- [Cheatsheet: TypeScript HTML parsing](https://dev.to/andresfedeli/javascript-parse-html-to-json-objects-4d1l)
-- [GitHub: TypeScript-DOM-parser](https://github.com/Cyb3rrJack/TypeScript-DOM-parser)
+HTML-parsinnalla on pitkä historia web-ohjelmoinnissa, kun ohjelmoijat alkoivat tarvita työkaluja HTML-dokumenttien käsittelyyn. On olemassa useita metodeja HTML-parsintaan, kuten SAX (Simple API for XML) ja DOM (Document Object Model).
+
+"jsdom" on yksi monista kirjastoista, jolla voit tehdä HTML-parsintaa. Se luo "oikean" DOM-puun JavaScript-ympäristöissä, jolloin voit tehdä yhtä tehokkaasti HTML-parsintaa palvelinpäässä kuin selaimessa. 
+
+Vaihtoehtoisesti, voit käyttää "cheerio" nimistä kirjastoa, joka on erittäin suorituskykyinen ja jQuery-tyylinen kirjasto HTML-parsintaan.
+
+## Katso myös
+
+Lisätietoja aiheesta voit löytää seuraavista lähteistä:
+
+- "jsdom" npm paketti: https://www.npmjs.com/package/jsdom
+- "cheerio" npm paketti: https://www.npmjs.com/package/cheerio
+- MDN Web Docs, HTML-parsinnan perusteet: https://developer.mozilla.org/en-US/docs/Web/HTML/Parser

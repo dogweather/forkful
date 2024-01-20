@@ -1,6 +1,6 @@
 ---
 title:                "Znajdowanie długości ciągu znaków"
-html_title:           "Haskell: Znajdowanie długości ciągu znaków"
+html_title:           "Arduino: Znajdowanie długości ciągu znaków"
 simple_title:         "Znajdowanie długości ciągu znaków"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,28 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Znajdowanie długości ciągu znaków to podstawowa operacja w programowaniu, polegająca na zliczeniu wszystkich znaków w danym ciągu. Jest to często wykorzystywane do analizy i przetwarzania danych tekstowych. Programiści używają jej często, ponieważ jest to niezbędna czynność przy pracy z tekstami.
+## Co to i dlaczego?
+
+Wyszukiwanie długości łańcucha to operacja, która pozwala nam dowiedzieć się, ile znaków zawiera dany łańcuch. Programiści stosują ją, aby kontrolować i manipulować danymi tekstowymi w ich kodzie.
 
 ## Jak to zrobić:
-Aby obliczyć długość ciągu znaków w Haskellu, możemy użyć funkcji `length`. Przyjmie ona jako argument nasz ciąg znaków i zwróci jego długość.
+
+W Haskellu, długość łańcucha można znaleźć za pomocą funkcji `length`. Oto przykład:
 
 ```Haskell
-length "Hello, world!" -- output: 13
+main = do
+    let str = "Programowanie w Haskellu"
+    print (length str)
 ```
 
-Możemy także łączyć funkcje, np. korzystając z wcześniej omówionej funkcji `length` i funkcji `show`, aby wyświetlić długość ciągu w postaci tekstowej.
+Uruchomienie powyższego kodu zwróci:
 
 ```Haskell
-show (length "Hello, world!") -- output: "13"
+25
 ```
 
-## Głębsze zagadnienia:
-Obliczanie długości ciągu znaków jest operacją powszechnie stosowaną w programowaniu od lat. Wcześniej, w tradycyjnych językach programowania, musieliśmy używać pętli i liczników, aby wykonać tę czynność. Jednak w Haskellu, funkcja `length` jest wbudowana i wykonuje to zadanie w wydajny sposób.
+## Głębszy wgląd:
 
-Alternatywną metodą obliczania długości ciągu jest użycie funkcji `foldl`, która agreguje elementy listy w jedną wartość, przyjmując jako argument funkcję, która wykonuje operację na elementach listy. Jednak dla krótkich ciągów znaków nie ma się to dużego znaczenia, a nawet może być mniej wydajne od użycia funkcji `length`.
+(1) W kontekście historycznym, wiele języków programowania, wliczając Haskell, zaczynało z prostej funkcji do zliczania długości łańcucha, ale po pewnym czasie zaczęła pojawiać się potrzeba bardziej zaawansowanych funkcji do manipulacji łańcuchami.
+
+(2) Alternatywą dla funkcji `length` w Haskellu jest użycie funkcji `foldr`:
+
+```Haskell
+countLength str = foldr (\_ n -> 1 + n) 0 str
+```
+
+(3) Implementacja `length` używa techniki rekurencji. Funkcja przechodzi przez łańcuch od początku do końca, zwiększając licznik przy każdym znaku.
 
 ## Zobacz też:
-- [Oficjalna dokumentacja dla funkcji `length`](https://hackage.haskell.org/package/base-4.14.1.0/docs/Prelude.html#v:length)
-- [Inne przydatne funkcje w Haskellu](https://wiki.haskell.org/Standard_library)
-- [Zastosowanie funkcji `length` w praktyce](https://dev.to/itseranga/5-must-know-string-operations-in-haskell-15l8)
+
+Haskell/Lists and tuples - https://en.wikibooks.org/wiki/Haskell/Lists_and_tuples
+
+Haskell/String processing - https://en.wikibooks.org/wiki/Haskell/String_processing
+
+HaskellWiki: The implementation of length - https://wiki.haskell.org/The_implementation_of_length

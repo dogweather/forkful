@@ -1,7 +1,7 @@
 ---
-title:                "Konwertowanie ciągu tekstowego na wielkie litery"
-html_title:           "Javascript: Konwertowanie ciągu tekstowego na wielkie litery"
-simple_title:         "Konwertowanie ciągu tekstowego na wielkie litery"
+title:                "Zamiana tekstu na wielkie litery"
+html_title:           "Javascript: Zamiana tekstu na wielkie litery"
+simple_title:         "Zamiana tekstu na wielkie litery"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Co to jest kapitalizacja łańcucha i dlaczego powinniśmy tego używać?
+## Co i dlaczego?
 
-Kapitalizacja łańcucha jest procesem zmiany małych liter na wielkie w łańcuchu tekstu. Programiści często wykonują tę operację, aby poprawić wygląd lub czytelność tekstu, a także dla potrzeb sortowania danych.
+Zamiana pierwszej litery łańcucha na wielką, nazywana również kapitalizacją, to popularna operacja w programowaniu. Dzieje się tak, aby poprawić prezentację tekstu dla końcowego użytkownika, np. w formularzach, wiadomościach, nagłówkach i innych miejscach, gdzie to ma sens.
 
-Jak to zrobić?
+## Jak to zrobić:
+
+Zamiana pierwszej litery na wielką w JavaScript jest nawykiem dostatecznie starym, by istniały różne metody. Poniżej prezentuję kod jednej z najprostszych.
 
 ```Javascript
-let przykladowyTekst = "to jest przykladowy tekst";
-
-//Funkcja toUpperCase () zwraca nowy łańcuch z wielkimi literami
-console.log(przykladowyTekst.toUpperCase ()); // WYNIK: TO JEST PRZYKŁADOWY TEKST
-
-//Możesz również użyć metody charAt (), aby zmienić pierwszą literę na wielką
-console.log(przykladowyTekst.charAt(0).toUpperCase() + przykladowyTekst.slice(1)); //WYNIK: To jest przykladowy tekst
+function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+console.log(capitalize('programowanie'));  // Wynik: "Programowanie"
 ```
 
-Także warto wiedzieć
+Numer '0' w .charAt(0) oznacza pierwsze miejsce w łańcuchu. .toUpperCase() zamienia tę literę na wielką. .slice(1) dodaje do niej resztę łańcucha.
 
-W historii programowania istniało wiele innych sposobów zmiany wielkości liter w łańcuchu, m.in. metody takie jak "snake_case" lub "camelCase", ale kapitalizacja jest najbardziej powszechna.
+## Głębokie zanurzenie
 
-Alternatywą dla kapitalizacji jest operacja "toLowerCase ()", która zamienia wszystkie litery na małe. 
+Zanim zaczniemy omawiać szczegóły, warto zauważyć, że kapitalizacja znaków jest znacznie starsza od JavaScriptu. Programiści odkryli jej wartość już dawno temu i zaimplementowali ją w większości języków programowania.
 
-W przypadku implementacji, metoda toUpperCase () jest niezwykle szybka i wydajna, ale możesz również użyć biblioteki zewnętrznej, jeśli potrzebujesz bardziej zaawansowanych funkcji kapitalizacji.
+Co do alternatywnych metod, wydajniejszą, ale bardziej skomplikowaną jest użycie wyrażeń regularnych.
 
-Zobacz również
+```Javascript
+function capitalize(str) {
+    return str.replace(/^\w/, c => c.toUpperCase());
+}
+```
+Wyrażenie regularne /^\w/ pasuje do pierwszego znaku alfanumerycznego. Funkcja strzałkowa c => c.toUpperCase() "podnosi" pasujący znak. Ta metoda jest zwłaszcza użyteczna, gdy tekst zawiera wiele zdań lub akapitów do kapitalizacji.
 
-- Dokumentacja JavaScript na temat metod string (https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String)
-- Inne sposoby manipulacji danymi w JavaScript (https://www.w3schools.com/js/js_string_methods.asp)
-- Przydatne przykłady kapitalizacji w różnych językach programowania (https://www.programiz.com/java-programming/examples/string-capitalization)
+## Zobacz też
+
+Dla dalszego czytania i nauki polecam:
+
+- Mozilla Developer Network (MDN): String.prototype.charAt() (https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/charAt)
+- MDN: String.prototype.replace() (https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
+- JavaScript.info: Wyrażenia Regularne (https://javascript.info/regular-expressions)
+- StackOverflow: Jak zmienić pierwszą literę na dużą w JavaScript? (https://stackoverflow.com/questions/1026069/how-do-i-make-the-first-letter-of-a-string-uppercase-in-javascript)

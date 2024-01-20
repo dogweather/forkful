@@ -1,7 +1,7 @@
 ---
-title:                "Production de nombres aléatoires"
-html_title:           "Javascript: Production de nombres aléatoires"
-simple_title:         "Production de nombres aléatoires"
+title:                "Générer des nombres aléatoires"
+html_title:           "Elixir: Générer des nombres aléatoires"
+simple_title:         "Générer des nombres aléatoires"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Numbers"
@@ -10,28 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi?
+## Pourquoi et Qu'est-ce que c'est?
 
-Générer des nombres aléatoires est une pratique courante en programmation qui consiste à créer des nombres au hasard. Les programmeurs ont souvent besoin de nombres aléatoires pour simuler des situations aléatoires ou pour prendre des décisions aléatoires dans leur code.
+Générer des nombres aléatoires c'est créer des nombres qui n'ont aucune connexion ou prédiction logique avec le nombre précédent. Les programmes qui nécessitent une certaine imprévisibilité ou des variations, comme les jeux ou les simulations, l'utilisent.
 
-## Comment faire:
+## Comment faire :
 
-```Javascript
-// Utilisation de Math.random() pour générer un nombre aléatoire entre 0 et 1
-var randomNumber = Math.random();
-console.log(randomNumber); // Exemple de sortie: 0.824536235437
+Voici comment générer un nombre aléatoire entre 1 et 100 en JavaScript:
 
-// Utilisation de Math.floor() et Math.random() pour générer un nombre entier aléatoire entre 1 et 10
-var randomInteger = Math.floor(Math.random() * 10) + 1; 
-console.log(randomInteger); // Exemple de sortie: 7
+```JavaScript 
+let numAleatoire = Math.floor(Math.random() * 100) + 1;
+console.log(numAleatoire);
 ```
 
-## Plongée profonde:
+Cela affichera un nombre aléatoire entre 1 et 100 chaque fois que vous exécutez le code.
 
-L'utilisation de nombres aléatoires remonte aux débuts de l'informatique. Auparavant, les utilisateurs devaient saisir leurs propres valeurs aléatoires, mais maintenant, les programmeurs peuvent facilement générer des nombres aléatoires à l'aide de méthodes telles que Math.random(). Cependant, ces nombres ne sont pas complètement aléatoires, ils sont générés à l'aide d'algorithmes qui sont prévisibles. Pour une vraie aléatoire, des sources externes telles que l'horloge interne de l'ordinateur peuvent être utilisées.
+## Plongée en profondeur 
 
-## Voir aussi:
+Historiquement, générer des nombres vraiment aléatoires était un défi pour les premiers programmes informatiques. Aujourd'hui, JavaScript fournit une méthode intégrée `Math.random()` pour ce faire.
 
-- [W3Schools - Math.random()](https://www.w3schools.com/js/js_random.asp)
-- [MDN Web Docs - Math.random()](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-- [Stack Overflow - Generating random whole numbers in JavaScript in a specific range?](https://stackoverflow.com/questions/1527803/generating-random-whole-numbers-in-javascript-in-a-specific-range)
+En termes d'alternatives, si vous avez besoin de nombres aléatoires suivant une certaine distribution (comme la distribution normale), vous devrez utiliser des bibliothèques supplémentaires ou écrire votre propre fonction.
+
+Le `Math.random()` en JavaScript produit une suite de données pseudo-aléatoires et utilise un algorithme qui démarre à partir de la 'graine' initiale. Le changement de cette graine produira une pagination différente des nombres aléatoires. Sans graine spécifiée, JavaScript utilise la date et l'heure actuelles.
+
+## Voir Aussi 
+
+Here are some useful articles and references to experiment with random numbers:
+
+1. [`Math.random()` MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
+2. [Generating Random Numbers in JavaScript](https://medium.com/@josephcardillo/generating-random-numbers-in-javascript-1173526d498b)
+3. [JavaScript Random game-projects](https://www.w3schools.com/js/js_random.asp)

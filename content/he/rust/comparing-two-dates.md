@@ -1,7 +1,7 @@
 ---
-title:                "השוואת שתי תאריכים"
-html_title:           "Rust: השוואת שתי תאריכים"
-simple_title:         "השוואת שתי תאריכים"
+title:                "השוואה בין שני תאריכים"
+html_title:           "Arduino: השוואה בין שני תאריכים"
+simple_title:         "השוואה בין שני תאריכים"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Dates and Times"
@@ -10,29 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-השוואת שני תאריכים היא פעולה נפוצה בתחום התכנות שבה משווים בין שני תאריכים כדי לבדוק אם הם זהים, ואם לא, איזה תאריך מגיע לפני או אחרי השני. תופעה זו נובעת מכך שתאריך הוא יחידה חשובה במרבית המערכתות הממוחשבות ולכן, כמו כל נתון אחר, צריך לאפשר לטפל בו ולבצע פעולות איתו.
+## מה ולמה?
 
-# איך לעשות?
-כדי לבצע השוואת שני תאריכים ב-Rust, ניתן להשתמש בפונקציות המובנות לטיפול בתאריך המגיעות עם השפה. למשל, הפונקציה `days_between()` משווה בין שני תאריכים ומחזירה את הפרש הימים ביניהם. הנה דוגמא לקוד כולל פלט של `days_between()`:
+השוואת שני תאריכים היא דרך לקבוע איזה תאריך הגיע לפני השני או אם שני התאריכים הם אותו התאריך. מתכנתים משתמשים בזה כדי לנתב את התנהגות התוכנה בהתאם לתאריכים שונים.
+
+## איך לבצע:
+
+היינו מבצעים השוואת תאריכים ב-Rust על ידי שימוש בספריית Chrono. בואו נראה חלק מהקוד:
+
 ```Rust
-use chrono::{Date, Utc};
-use chrono::prelude::Datelike;
+extern crate chrono;
+
+use chrono::{DateTime, FixedOffset};
 
 fn main() {
-    let date1 = Date::from_utc(Utc.ymd(2020, 1, 1));
-    let date2 = Date::from_utc(Utc.ymd(2020, 1, 3));
-    println!("{}", date1.days_between(&date2));
+    let date1: DateTime<FixedOffset> = DateTime::parse_from_rfc3339("2022-01-01T12:00:00+01:00").unwrap();
+    let date2: DateTime<FixedOffset> = DateTime::parse_from_rfc3339("2022-01-01T12:01:00+01:00").unwrap();
+
+    if date1 < date2 {
+        println!("date1 is before date2");
+    } else if date1 == date2 {
+        println!("date1 is equal to date2");
+    } else {
+        println!("date1 is after date2");
+    }
 }
 ```
-פלט: `2`
 
-# מכורסמים נעמד מעמעמי?
-השוואת שני תאריכים לא תמיד הייתה כזו פשוטה כמו שהיא היום. בעבר, לפני פיתוח הספרייה המובנית של Rust לטיפול בתאריכים, תפעולה זו הייתה מסובכת ומצריכה שימוש באלגוריתמים מיוחדים לזיהוי תאריכים ולביצוע השוואות. כיום, עם השימוש בספריית המובנית, מתכנתי Rust יכולים לפתור בעיות השוואת תאריכים בצורה יעילה יותר ובלי להימנע ממשימות קשות נדרשות לטיפול בתאריך.
+אם הפעלנו את הקוד הזה, תוצאת ההדפסה שלנו הייתה: `date1 is before date2`.
 
-ניתן גם להשתמש בספריות חיצוניות כגון `chrono` כדי להרחיב את הפונקציות שלמרעה אפשר לבצע השוואות של תאריכים בצורה יצירתית יותר ולטפל בכמויות גדולות של תאריכים ללא קושי.
+## צלילה עמוקה:
 
-# ראו גם
-- מידע נוסף על השוואת תאריכים ב-Rust ניתן למצוא באתר הרשמי של Rust: https://www.rust-lang.org/
-- ספריית התאריכים המובנית של Rust: https://doc.rust-lang.org/std/primitive.time.html
-- ספריית `chrono` שמסייעת לטיפול בתאריכים ובשעות ב-Rust: https://github.com/chronotope/chrono
+השוואת תאריכים היא פעולה בסיסית בתכנות שעשויה להיראות פשוטה, אך מורכבת בהתארח המשתנים של מערכות זמן מקומיות. ב-Rust ישנם מספר מרחבים של שמות שמספקים מחלקות זמן אחרות, אבל ספריית Chrono היא הנפוצה ביותר ברוסטשטיין.
+
+## ראה גם:
+
+למידע נוסף, שיעורים נוספים, או פרקטיקות מומלצות, בקרו במשאבים הבאים:
+
+* [Chrono Documentation](https://docs.rs/chrono/0.4.19/chrono/)
+* [Rust Date & Time Tutorial](https://www.tutorialspoint.com/rust/rust_date_time.htm)
+* [Rust Programming Language Official Documentation](https://doc.rust-lang.org/std/)

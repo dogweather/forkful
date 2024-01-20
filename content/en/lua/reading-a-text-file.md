@@ -1,6 +1,6 @@
 ---
 title:                "Reading a text file"
-html_title:           "Lua recipe: Reading a text file"
+html_title:           "Go recipe: Reading a text file"
 simple_title:         "Reading a text file"
 programming_language: "Lua"
 category:             "Lua"
@@ -12,31 +12,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## What & Why?
 
-Reading a text file is the process of retrieving data from a file that contains written text. Programmers often use this function to access previously stored information, such as user inputs or configuration settings, in order to manipulate or analyze it in their program.
+Reading a text file means to fetch data from a file in the form of text. Programmers do this to extract information saved in logs, settings, other forms of saved data or external sources that make application development fluid.
 
 ## How to:
 
-Reading a text file in Lua is a straightforward process. The ```io.open()``` function is used to open a file and returns a file handle, which can then be used to read from the file. Here's an example of how to read a text file named "data.txt":
+Reading a file in Lua is as simple as using the `io.open` function for opening the file and `:read` for reading it. Below is an example code that reads a text file:
 
+```Lua
+local file = io.open("text_file.txt", "r") -- Open a text file in read mode
+
+if file then
+  local content = file:read("*a") -- Read the whole file
+  file:close() -- Always remember to close opened files
+  print(content) -- Print the content
+else
+  print("Couldn't open file")
+end
 ```
-local file = io.open("data.txt", "r")  -- opens the file in read-only mode
-local data = file:read("*all")  -- reads the entire file and stores it in a variable
-file:close()  -- closes the file
 
-print(data)  -- prints the data from the file
-```
-
-The output would be the contents of "data.txt", which could be a single line or multiple lines of text.
+The output would be the content of your 'text_file.txt'. If there is an issue in opening the file, it would print 'Couldn't open file'.
 
 ## Deep Dive:
 
-Reading text files has been a common task in programming for decades. In the early days, files were read and written to using low-level functions specific to the operating system being used. As standardized programming languages, like Lua, were developed, easier ways to read files were introduced.
-
-An alternative to the ```io.open()``` function is the ```io.lines()``` function, which reads a file and returns an iterator that can be used to loop through the file line by line. This is useful for large files that may not fit into memory all at once.
-
-When reading a file, it is important to consider the file's encoding. Different operating systems and programs may use different encodings for their text files, which can affect how the data is read. The ```io.open()``` function allows for specifying the desired encoding to use when reading the file.
+1. _Historical Context:_ Lua, a lightweight multi-paradigm language designed for embedding, has always followed the simplistic approach for file I/O operations, saving programmers from complexity.
+2. _Alternatives:_ You've alternatives for reading a text file in Lua, like using `:lines()` method which reads the file line by line, which can come handy for big files.
+3. _Implementation Details:_ Lua uses underlying C libraries to perform file I/O operations. When using `io.open`, the function returns a file object, and functions like `:read` and `close` are actually methods associated with this object.
 
 ## See Also:
 
-- [Lua I/O Reference](https://www.lua.org/pil/21.2.html) for more information on working with files in Lua.
-- [Lua File Input/Output](https://www.tutorialspoint.com/lua/lua_file_io.htm) tutorial for step-by-step instructions on reading and writing files in Lua.
+For further reference, check out these helpful links:
+- [Lua 5.4 Reference Manual - I/O Library](http://www.lua.org/manual/5.4/manual.html#6.8)
+- [Lua-users - Tutorial: File Input/Output](http://lua-users.org/wiki/FileInputOutput)
+- [TutorialsPoint - Lua File I/O](https://www.tutorialspoint.com/lua/lua_file_io.htm)

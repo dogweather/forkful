@@ -1,7 +1,7 @@
 ---
-title:                "Sända en http-förfrågan med grundläggande autentisering"
-html_title:           "Javascript: Sända en http-förfrågan med grundläggande autentisering"
-simple_title:         "Sända en http-förfrågan med grundläggande autentisering"
+title:                "Skicka en http-begäran med grundläggande autentisering"
+html_title:           "Elixir: Skicka en http-begäran med grundläggande autentisering"
+simple_title:         "Skicka en http-begäran med grundläggande autentisering"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "HTML and the Web"
@@ -10,45 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
+# Skicka en HTTP-begäran med grundläggande autentisering i JavaScript
 ## Vad & Varför?
-
-När en Javascript-programmerare skickar en HTTP-förfrågan med grundläggande autentisering, innebär det att man skickar ett användarnamn och lösenord med förfrågan för att verifiera sin identitet. Detta används vanligtvis för att få tillgång till skyddade resurser på en webbplats eller tjänst.
-
-Programmerare använder grundläggande autentisering för att säkerställa att endast auktoriserade användare kan få tillgång till vissa resurser. Det ger en grundläggande nivå av säkerhet utan att kräva mer komplexa autentiseringsmetoder.
+Skicka en HTTP-begäran med grundläggande autentisering handlar om att skicka data till en server med en autentiseringsheader. Programmerare gör det för att säkerställa att endast de behöriga får åtkomst till dessa data.
 
 ## Så här gör du:
+För att Skicka en HTTP-begäran med grundläggande autentisering kan du använda Node.js biblioteket Axios.
 
 ```Javascript
-const username = "användarnamn";
-const password = "lösenord";
+const axios = require('axios').default;
+const username = 'username';
+const password = 'password';
 
-// Skapa en ny förfrågan med grundläggande autentisering
-const request = new XMLHttpRequest();
-request.open("GET", "https://www.example.com/api/resource", true);
-request.setRequestHeader("Authorization", `Basic ${btoa(username + ":" + password)}`);
-
-// Skicka förfrågan och hantera svaret
-request.send();
-
-request.onreadystatechange = function() {
-  if (this.readyState === 4 && this.status === 200) {
-    // Hantera returvärdet från förfrågan
-    console.log(this.responseText);
+axios({
+  method: 'get',
+  url: 'https://example.com/data',
+  auth: {
+    username: username,
+    password: password
   }
-};
+}).then(response => {
+  console.log(response.data);
+}).catch(error => {
+  console.error(error);
+});
 ```
 
-I exemplet ovan använder vi den inbyggda btoa-funktionen för att koda användarnamn och lösenord i Base64-format och skicka det i en HTTP-förfrågan. När förfrågan har skickats, kan vi hantera svaret genom att använda den inbyggda XMLHttpRequest-metoden.
+Programmet skickar en begäran till `https://example.com/data` med användarnamn och lösenord. Svaret från servern (datan) kommer att skrivas ut i konsolen.
 
-## Djupdykning:
+## Djupdykning
+Grundläggande autentisering har varit en del av HTTP/1.0 sedan 1996. Dess popularitet beror på dess enkelhet, men det har begränsningar, som att det är osäkert över osäkrade nätverk.
 
-Grundläggande autentisering har funnits sedan begynnelsen av internet och används vanligtvis för att skydda resurser som inte kräver hög säkerhet. Det finns dock nackdelar med grundläggande autentisering, som att lösenordet kan ses i klartext om förfrågan avlyssnas.
+Alternativ till grundläggande autentisering inkluderar OAuth och JWT, som ger utökad säkerhet och funktionalitet.
 
-Alternativen till grundläggande autentisering inkluderar mer avancerade autentiseringsmetoder som OAuth eller användning av API-nycklar. Det är viktigt att noga överväga vilken autentiseringsmetod som bäst passar behoven för din webbapplikation eller tjänst.
+Vid implementering, använd alltid HTTPS för att säkerställa att dina autentiseringsuppgifter är säkra. Observera att lösenordet för grundläggande autentisering skickas som en base64-kodad sträng, vilket inte är särskilt säkert.
 
-För att implementera grundläggande autentisering på servern, kan man använda en servermiljövariabel som kontrollerar användarinformationen mot en databas eller annan autentiseringslösning. Det är också viktigt att se till att servern använder en säker anslutning (HTTPS) för att skydda användarnas uppgifter.
-
-## Se även:
-
-- [XMLHttpRequest-dokumentation](https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest)
-- [Autentisering i webbapplikationer](https://www.owasp.org/index.php/Web_Application_Authentication)
+## Se också
+- [Axios Dokumentation](https://axios-http.com/docs/intro)
+- [HTTP Autentisering på MDN](https://developer.mozilla.org/sv/docs/Web/HTTP/Authentication)
+- [Bearer Authentication](http://www.ietf.org/rfc/rfc6750.txt)
+- [JWT Authenticaction](https://jwt.io/introduction/)

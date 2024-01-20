@@ -1,7 +1,7 @@
 ---
-title:                "Análise de HTML"
-html_title:           "Bash: Análise de HTML"
-simple_title:         "Análise de HTML"
+title:                "Analisando HTML"
+html_title:           "Arduino: Analisando HTML"
+simple_title:         "Analisando HTML"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "HTML and the Web"
@@ -10,23 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-##O que e por que?
-Fazer parsing de HTML consiste em analisar o código de uma página HTML e extrair informações específicas dela, como títulos, links ou outras tags. Os programadores geralmente fazem isso para criar ferramentas ou scripts que automatizam a extração de dados de sites, como o preço de um produto em uma loja online.
+## O que & Por quê?
 
-##Como fazer:
-Para fazer parsing de HTML em Bash, você pode usar o utilitário "grep" para localizar e filtrar as informações desejadas no código da página. Por exemplo, se você quiser extrair todos os links da página, pode usar o seguinte comando:
+A análise de HTML (parsing HTML) é o processo de extrair informações específicas de documentos HTML. Programadores fazem isso para obter dados estruturados a partir de páginas web.
 
+## Como Fazer:
+
+Usaremos `html-xml-utils`, uma coleção de utilitários para manipulação de documentos HTML. Primeiro instale utilizando o comando:
+
+```Bash
+sudo apt-get install html-xml-utils
 ```
-grep -o '<a href="[^"]*"' index.html
+
+Agora vamos fazer parse de um HTML simples:
+
+```Bash
+echo '<p>Olá, mundo!</p>' | hxnormalize -x
 ```
 
-Este comando irá retornar uma lista de todos os links encontrados no arquivo "index.html", começando com a tag "<a href=". Você também pode combinar este comando com outros utilitários, como "sed" ou "awk", para formatar e manipular ainda mais as informações extraídas.
+A saída será:
 
-##Mergulho profundo:
-O parsing de HTML em Bash é uma abordagem simples e eficiente, mas nem sempre é a melhor opção. Existem outras ferramentas e linguagens de programação, como Python ou JavaScript, que oferecem recursos mais avançados para fazer parsing de HTML. Além disso, é importante notar que o parsing de HTML pode ser um processo delicado, pois qualquer pequeno erro na formatação do código pode afetar a extração de dados.
+```Bash
+<P>
+  Olá, mundo!
+</P>
+```
 
-##Veja também:
-Para mais informações sobre como fazer parsing de HTML em Bash, confira os seguintes links:
+Entre as tags HTML, você encontrará o texto "Olá, mundo!".
 
-- [Documentação sobre o utilitário "grep"](https://www.gnu.org/software/grep/)
-- [Tutorial sobre como fazer parsing de HTML com Bash](https://www.linux.com/topic/desktop/extracting-information-web-page-using-bash/)
+## Mergulho Profundo:
+
+1. **Contexto Histórico**: O parsing de HTML começou em meados dos anos 90, quando a web estava começando a prosperar. Programadores precisavam de uma maneira de extrair informações úteis das páginas da web.
+   
+2. **Alternativas**: Existem outras ferramentas e idiomas para fazer parsing de HTML, entre eles BeautifulSoup (em Python), Nokogiri (em Ruby), Jsoup (em Java). Cada um tem sua própria vantagem, dependendo do seu use case e do ambiente de programação.
+   
+3. **Detalhes de Implementação**: No Bash, o parsing de HTML faz uso de utilitários como `html-xml-utils`, que fornecem funções para manipular HTML. No entanto, parsing de ponta a ponta requer conhecimento de expressões regulares e da sintaxe do Bash.
+
+## Veja Também:
+
+1. Documentação html-xml-utils: http://www.w3.org/Tools/HTML-XML-utils/
+2. Tutorial Python BeautifulSoup: https://www.crummy.com/software/BeautifulSoup/bs4/doc/
+3. Guia de início rápido de Nokogiri: https://nokogiri.org/tutorials/parsing_an_html_xml_document.html
+4. Jsoup Cookbook: https://jsoup.org/cookbook/
+
+Lembre-se, existem muitas maneiras de fazer parsing de HTML. O importante é encontrar a ferramenta que melhor se adapta às suas necessidades.

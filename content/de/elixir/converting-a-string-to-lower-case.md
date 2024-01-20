@@ -1,7 +1,7 @@
 ---
-title:                "Umwandeln eines Strings in Kleinbuchstaben"
-html_title:           "Elixir: Umwandeln eines Strings in Kleinbuchstaben"
-simple_title:         "Umwandeln eines Strings in Kleinbuchstaben"
+title:                "Einen String in Kleinbuchstaben umwandeln"
+html_title:           "Elm: Einen String in Kleinbuchstaben umwandeln"
+simple_title:         "Einen String in Kleinbuchstaben umwandeln"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was & Warum? 
+## Was & Warum?
 
-Die Umwandlung von Groß- zu Kleinschreibung ist ein häufiges Problem beim Programmieren von Textverarbeitungsanwendungen. Oftmals benötigen wir alle Buchstaben eines Textes in einer bestimmten Schreibweise, sei es Groß- oder Kleinschreibung. Durch die Umwandlung in Kleinschreibung wird es einfacher, Suchvorgänge und Textvergleiche durchzuführen.
+Das Umwandeln von Zeichenketten in Kleinbuchstaben ist eine alltägliche Aufgabe in der Programmierung. Dabei wird jede Großbuchstabe in der Zeichenkette in ihren entsprechenden Kleinbuchstaben umgewandelt. Programmierer machen das oft, um den Vergleich von Zeichenketten zu erleichtern und ein einheitliches Benutzererlebnis zu gewährleisten.
 
-## Wie geht's?: 
+## So geht's:
 
-Kleinschreibung ist in Elixir ganz einfach. Verwenden Sie einfach die Funktion `String.downcase()` und geben Sie den zu konvertierenden String als Argument ein. Schauen wir uns ein Beispiel an:
-
-```elixir
-iex> String.downcase("ELIXIR")
-"elixir"
-```
-
-Wie Sie sehen können, wird der String "ELIXIR" in "elixir" umgewandelt. Wenn der String bereits in Kleinschreibung vorliegt, bleibt er unverändert.
+In Elixir sieht die Umwandlung einer Zeichenkette in Kleinbuchstaben so aus:
 
 ```elixir
-iex> String.downcase("elixir")
-"elixir"
+iex> String.downcase("HALLO WELT")
+"hallo welt"
 ```
+Du mobilisierst einfach die `downcase` Funktion auf dem `String` Modul und gibst die Zeichenkette, die du transformieren möchtest, als Argument.
 
-## Tief eintauchen: 
+## Vertiefung
 
-Die Konvertierung von Groß- zu Kleinschreibung gibt es schon seit langem in der Programmierung und wird unter anderem für die Erstellung von Texteditor-Programmen verwendet. Es gibt auch alternative Möglichkeiten, String-Änderungen in Elixir durchzuführen, wie zum Beispiel den `String.upcase()` und `String.capitalize()` Funktionen. Diese ermöglichen es, den Text in umgekehrter Schreibweise oder nur den ersten Buchstaben in Großbuchstaben zu ändern.
+Die Behandlung von Groß- und Kleinbuchstaben in Programmiersprachen ist ein Erbe aus der Zeit der mechanischen Schreibmaschinen und hat sich bis heute in fast allen Programmiersprachen durchgesetzt. In Elixir wird die Umwandlung von Zeichenketten in Kleinbuchstaben durch die Funktion `downcase` implementiert, die auf dem Unicode-Datenbank beruht. Das bedeutet, dass sie für alle Zeichenketten arbeitet, unabhängig von der Sprache oder dem Alphabet, das sie verwenden. Es gibt Alternativen zur `downcase` Funktion, wie die `swapcase` Funktion, die jede Kleinbuchstabe in ihre entsprechende Großbuchstabe umwandelt, und umgekehrt.
 
-Die Funktion `String.downcase()` verwendet intern die `String.chardowncase/1` Funktion, um jeden einzelnen Buchstaben des Strings in Kleinschreibung umzuwandeln.
+## Siehe auch
 
-## Siehe auch: 
+Weitere Informationen finden Sie unter:
 
-- [Elixir String Modul Dokumentation](https://hexdocs.pm/elixir/String.html#downcase/1)
-- [Blog-Post: String-Änderungen in Elixir](https://parkour.org/blog/converting-strings-in-elixir/)
+- Elixir Offiziell: String Modul (https://hexdocs.pm/elixir/String.html)
+- Erlang/OTP Quellcode von Elixir (https://github.com/elixir-lang/elixir)
+- Elixir Forum (https://elixirforum.com/)

@@ -1,7 +1,7 @@
 ---
-title:                "Convertendo uma string para letras minúsculas"
-html_title:           "Lua: Convertendo uma string para letras minúsculas"
-simple_title:         "Convertendo uma string para letras minúsculas"
+title:                "Convertendo uma string para minúsculas"
+html_title:           "Fish Shell: Convertendo uma string para minúsculas"
+simple_title:         "Convertendo uma string para minúsculas"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,27 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+# Convertendo strings para letras minúsculas em Lua
 
-Converter uma string para letras minúsculas é um processo importante no desenvolvimento de programas em Lua. Isso significa transformar todas as letras de uma string para sua versão em minúsculas. Os programadores fazem isso para garantir que a comparação de strings seja case-insensitive, ou seja, independente de maiúsculas e minúsculas.
+## O que e Por quê?
 
-## Como fazer:
+Converter uma string para letras minúsculas significa alterar todas as letras maiúsculas para as suas respectivas minúsculas. Os programadores fazem isso para manter a consistência dos dados, eliminar diferenças causadas por variações de caixa para facilitar as comparações de strings.
 
-Para converter uma string para minúsculas em Lua, podemos usar a função `string.lower()` junto com a string que queremos converter. Veja um exemplo de código abaixo:
+## Como Fazer:
+
+Aqui está um exemplo simples de como converter uma string para letras minúsculas em Lua.
 
 ```Lua
-local str = "Exemplo De String"
-print(string.lower(str))
+string.upper = "ESTE É UM TESTE"
+string.lower = string.upper:lower()
+print(string.lower)
 ```
 
-A saída deste código será "exemplo de string", com todas as letras em minúsculas.
+O resultado é:
 
-## Mergulho profundo:
+```Lua
+"este é um teste"
+```
+## Mergulho Profundo
 
-A conversão de strings para minúsculas é uma técnica amplamente utilizada em programação. Isso se deve ao fato de que diferentes sistemas operacionais e linguagens de programação podem interpretar letras maiúsculas e minúsculas de maneiras diferentes. Ao converter todas as letras para minúsculas, garantimos que o programa seja mais portável e consistente em diferentes ambientes.
+1. **Contexto histórico:** Lua, uma linguagem de programação poderosa, eficiente e leve, desenvolveu-se com ênfase em funções de string desde o início. A funcionalidade de converter strings para minúsculas é parte integrante disso.
 
-Além da função `string.lower()`, também é possível realizar a conversão utilizando a função `string.gsub()` em combinação com expressões regulares. No entanto, o uso da função `string.lower()` é mais simples e direto, e é a opção recomendada.
+2. **Alternativas:** Embora a função `:lower()` seja a forma mais direta e comum de converter uma string para minúsculas em Lua, existem outras maneiras, como criar uma função personalizada usando a função `string.gsub()` juntamente com a tabela ASCII.
 
-## Veja também:
+3. **Detalhes de implementação:** A função `:lower()` em Lua funciona percorrendo cada caractere da string, verifica se é uma letra maiúscula usando a tabela ASCII, e se for, converte para a respectiva letra minúscula. 
 
-Para mais informações sobre funções para manipulação de strings em Lua, recomendamos consultar a documentação oficial da linguagem. Além disso, é sempre bom estar familiarizado com diferentes métodos de manipulação de strings em outras linguagens, como Python e JavaScript, por exemplo. Isso pode ajudar a entender melhor os conceitos por trás da conversão de strings para minúsculas em Lua.
+## Veja Também
+
+Links para leituras relacionadas:
+- Para entender melhor o tratamento de strings em Lua, veja: [Programming in Lua: Strings](https://www.lua.org/pil/20.html)
+- Para uma exploração mais aprofundada das funções de string em Lua, leia: [Lua-Users: String Library Tutorial](http://lua-users.org/wiki/StringLibraryTutorial)

@@ -1,7 +1,7 @@
 ---
-title:                "Utsendelse av en http-forespørsel med grunnleggende autentisering"
-html_title:           "Lua: Utsendelse av en http-forespørsel med grunnleggende autentisering"
-simple_title:         "Utsendelse av en http-forespørsel med grunnleggende autentisering"
+title:                "Sende en http-forespørsel med grunnleggende autentisering"
+html_title:           "Kotlin: Sende en http-forespørsel med grunnleggende autentisering"
+simple_title:         "Sende en http-forespørsel med grunnleggende autentisering"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "HTML and the Web"
@@ -11,44 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Å sende en HTTP-forespørsel med grunnleggende autentisering er en måte for programmerere å kommunisere med en server på. Det er nyttig for å få tilgang til og manipulere data på et annet sted, for eksempel ved å hente informasjon fra en nettsted eller en database.
+
+Å sende en HTTP-forespørsel med grunnleggende autentisering i Lua er en måte å sikre at bare autentiserte brukere har tilgang til bestemte ressurser. Programmerere gjør dette for å beskytte sensitive data som finnes i webapplikasjoner, APIer og tjenester.
 
 ## Slik gjør du:
-Under er et eksempel på hvordan du kan sende en HTTP-forespørsel med grunnleggende autentisering i Lua. Merk at du må erstatte de oppgitte verdiene med dine egne.
+
+Først, skal vi installere LuaSocket og LuaSec. Du kan gjøre det ved å bruke `luarocks`:
 
 ```Lua
--- Importer biblioteket for å håndtere HTTP-forespørsler
-local http = require("socket.http")
+luarocks install luasocket
+luarocks install luasec
+```
 
--- Definer URLen du vil sende forespørselen til
-local url = "https://www.example.com/api/data"
+Her er en grunnleggende kode eksempel på hvordan du kan sende en HTTP-forespørsel med grunnleggende autentisering i Lua:
 
--- Sett opp forespørselen med autentisering
-local request = {
-  url = url,
-  method = "GET",
-  headers = {
-    ["Authorization"] = "Basic <base64-encoded username:password>"
-  }
+```Lua
+http = require("socket.http")
+ltn12 = require("ltn12")
+
+url = 'http://example.com'
+user = 'brukernavn'
+pass = 'passord'
+
+auth = 'Basic ' .. (user .. ':' .. pass):gsub("(%w+)", {["+"] = "%20", ["="] = "%3D"}):gsub(".", function(x) return string.format("%%%02X", x:byte()) end)
+
+headers = { 
+  ["Authorization"] = auth
 }
 
--- Send forespørselen og få responsen i form av et Lua-bord
-local response = http.request(request)
+body, code = http.request{
+  url = url,
+  headers = headers,
+  sink = ltn12.sink.file(io.stdout)
+}
 
--- Skriv ut svaret som tekst
-print(response)
+print(code)
 ```
+Merk: `url`, `user`, og `pass` skal byttes ut med din egen url, brukernavn og passord.
 
-Output:
-```
-{status = "200", body = "<response body>"}
+## Deep Dive
 
-```
+Å bruke HTTP-forespørsler til autentisering er ikke en ny ide. Det har vært brukt siden opprettelsen av WWW for å beskytte data. Selvfølgelig, det er mange andre metoder og teknikker for å utføre autentisering i forskjellige programmeringsspråk og rammeverk. Alternativer til Basic HTTP-autentisering inkluderer Digest Access Authentication, OAuth, JWT, SSO, etc.
 
-## Dypdykk:
-HTTP-forespørsler med grunnleggende autentisering har blitt brukt i mange år som en måte for brukere å sikre at bare autoriserte personer har tilgang til sensitive data. En alternativ metode for autentisering er å bruke token-basert autentisering, hvor en unik kode blir generert og brukt i stedet for å sende brukernavn og passord i klartekst.
+For Lua, et alternativ til å bruke LuaSocket og LuaSec kan være å bruke "http-client" biblioteket. Hvis du bruker en webapplikasjon rammeverk som OpenResty eller Lapis, er de nødvendige funksjonene sannsynligvis allerede innebygd.
 
-Grunnen til å bruke Lua for å sende HTTP-forespørsler er at det er et kraftig og fleksibelt programmeringsspråk som er egnet for å håndtere ulike nettverksoperasjoner. Med ulike biblioteker og moduler kan du ikke bare sende forespørsler, men også behandle responsen og manipulere data.
+## Se Også
 
-## Se også:
-Hvis du vil lære mer om å sende HTTP-forespørsler med Lua, kan du sjekke ut dokumentasjonen for biblioteket `socket.http` på Lua.org. Du kan også finne flere tips og triks i fagfellesskapet på Stack Overflow.
+- LuaSocket dokumentasjon: http://w3.impa.br/~diego/software/luasocket/http.html
+- LuaSec dokumentasjon: https://github.com/brunoos/luasec/wiki
+- HTTP-autentisering: https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication

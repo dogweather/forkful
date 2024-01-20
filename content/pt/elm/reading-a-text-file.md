@@ -1,6 +1,6 @@
 ---
 title:                "Lendo um arquivo de texto"
-html_title:           "Elm: Lendo um arquivo de texto"
+html_title:           "Bash: Lendo um arquivo de texto"
 simple_title:         "Lendo um arquivo de texto"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,47 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por quê?
+# Lendo um arquivo de texto em Elm
 
-Ler um arquivo de texto é um processo essencial para os programadores, que consiste em acessar e interpretar o conteúdo de um arquivo de texto em seu código. Isso é especialmente útil quando precisamos lidar com grandes quantidades de dados ou quando queremos armazená-los permanentemente em nossa aplicação.
+## O Que & Porquê?
+Ler um arquivo de texto é o ato de acessar e ler conteúdo armazenado como texto em um arquivo. Os programadores fazem isso para obter dados de entrada, configurar parâmetros ou ler scripts para processamento.
 
-## Como fazer:
+## Como Fazer:
+Infelizmente, devido à arquitetura do Elm (versão 0.19.1), não podemos ler diretamente arquivos em tempo real. A linguagem Elm é construída para segurança e roda no navegador, então não permitindo interações ao disco diretamente.
+
+Porém, podemos simular a entrada de um arquivo de texto, copiando e colando seu conteúdo em um campo de entrada. Veja o exemplo abaixo:
 
 ```Elm
--- Lendo um arquivo de texto e imprimindo seu conteúdo
+import Html exposing (..)
+import Html.Attributes exposing (..)
+import Html.Events exposing (..)
 
-import Text exposing (..)
-import File exposing (..)
+type alias Model = String
 
-main =
-    let
-        fileContent =
-            File.read "meuarquivo.txt"
-    in
-    Text.fromString fileContent
-        |> Text.lines
-        |> List.map Text.toUpper
-        |> Text.unlines
-        |> Text.toString
-        |> Debug.log "Conteúdo do arquivo:"
+init : Model
+init = ""
+
+type Msg = NewContent String
+
+update : Msg -> Model -> Model
+update msg model =
+  case msg of
+    NewContent content -> content
+
+view : Model -> Html Msg
+view model = 
+  Html.textarea 
+   [ placeholder "Cole o conteúdo do arquivo aqui", 
+     onInput NewContent 
+   ] 
+   [ text model ]
+
+main = Html.beginnerProgram { model = init, view = view, update = update }
 ```
 
-Saída:
+Este programa Elm simples possui um campo de entrada do tipo `textarea`. Quando você cola o conteúdo de um arquivo de texto nele, o modelo é atualizado e mostra o conteúdo do arquivo.
 
-```
-Conteúdo do arquivo:
-LINHA 1
-LINHA 2
-LINHA 3
-```
+## Mergulho Profundo:
+Elm foca na segurança. Portanto, ele é projetado para rodar em um ambiente de navegador com acesso limitado aos recursos globais do sistema operacional, como disco rígido. Essa é uma das razões pelas quais o Elm não permite a leitura direta de arquivos.
 
-## Mergulho profundo:
+Uma alternativa seria usar JavaScript para ler o arquivo e, em seguida, passar os dados para o Elm através das Flags. Outra alternativa seria ter um backend para receber e manipular arquivos.
 
-Ler arquivos de texto é uma tarefa comum em programação, especialmente em linguagens de programação mais clássicas. No entanto, em Elm, onde a linguagem é puramente funcional, acessar e manipular arquivos externos pode ser um pouco mais complicado. É importante ter cuidado ao lidar com arquivos de texto para garantir que não haja sobrecarga desnecessária no sistema.
-
-Uma alternativa ao uso da função `File.read` em Elm é a biblioteca `elm-file-reader`, que fornece uma interface mais simples e abstrata para ler arquivos de texto.
-
-## Veja também:
-
-- Documentação oficial sobre a função `File.read`: https://package.elm-lang.org/packages/elm/file/latest/File
-- Biblioteca `elm-file-reader`: https://package.elm-lang.org/packages/mpizenberg/elm-file-reader/latest/
+## Veja Também:
+1. Documentação oficial do Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
+2. Para saber mais sobre como integrar Elm com JavaScript: [https://guide.elm-lang.org/interop/javascript.html](https://guide.elm-lang.org/interop/javascript.html)
+3. Arquivos e I/O em Elm na plataforma Ellie: [https://ellie-app.com/cZr5sbrVWNa1](https://ellie-app.com/cZr5sbrVWNa1)

@@ -1,7 +1,7 @@
 ---
-title:                "Maiuscolare una stringa."
-html_title:           "Elm: Maiuscolare una stringa."
-simple_title:         "Maiuscolare una stringa."
+title:                "Capitalizzare una stringa"
+html_title:           "Elm: Capitalizzare una stringa"
+simple_title:         "Capitalizzare una stringa"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,25 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa & Perché?
-La capitalizzazione di una stringa è il processo di rendere la prima lettera di ogni parola maiuscola. I programmatori lo fanno per migliorare la leggibilità del testo e per seguire le convenzioni di scrittura.
+## Cosa & Perché?
 
-# Come fare:
-È possibile utilizzare la funzione `String.capitalize` di Elm per capitalizzare una stringa. Di seguito un esempio:
+Capitalizzare una stringa significa fare in modo che la prima lettera di ogni parola sia maiuscola. I programmatori lo fanno per migliorare la leggibilità e l'estetica del testo.
 
+## Come Fare:
+
+In Elm, potremmo non avere una funzione pronta per capitalizzare una stringa. Dovremmo scriverla da soli. Ecco un esempio utilizzando `Char.toUpper` e `String.uncons`.
+
+```Elm
+capitalize : String -> String
+capitalize s =
+    case String.uncons s of
+        Nothing -> 
+            ""
+        Just ( first, rest ) ->
+            String.fromChar (Char.toUpper first) ++ rest
 ```
-Elm String.capitalize "questo è un esempio"
-> "Questo È Un Esempio"
+
+Ecco come utilizzare questa funzione nel codice:
+
+```Elm
+module Main exposing (..)
+
+import Html exposing (Html, text)
+import String
+
+capitalizedText : String -> Html msg
+capitalizedText str =
+    text (capitalize str)
+
+main =
+    capitalizedText "ciao mondo!" -- Risultato: "Ciao mondo!"
 ```
-Come si può notare, la stringa di output ha la prima lettera di ogni parola maiuscola.
 
-# Approfondimenti:
-La pratica di capitalizzare una stringa ha origini storiche, risalenti al tempo in cui i documenti venivano scritti a mano. Oggi, viene principalmente utilizzata per migliorare la leggibilità del testo e per seguire le convenzioni di scrittura nei linguaggi di programmazione.
+## Approfondimento
 
-Ci sono anche alternative al capitalizzare una stringa, come ad esempio l'utilizzo di maiuscole e minuscole o l'utilizzo di stili di scrittura specifici. Tuttavia, la capitalizzazione è uno dei metodi più comunemente utilizzati e supportati dalla maggior parte dei linguaggi di programmazione.
+Avere ogni parola in una frase che inizia con una lettera maiuscola è una convenzione comune in molti linguaggi. Tuttavia, l'implementazione varia. Alcuni linguaggi, come JavaScript, hanno funzioni incorporate per farlo. Elm, d'altro canto, richiede una funzione personalizzata.
 
-Per quanto riguarda l'implementazione, la funzione `String.capitalize` di Elm utilizza l'algoritmo Unicode per determinare quali sono le lettere da maiuscolizzare.
+Un'alternativa per capitalizzare una stringa sarebbe convertire l'intera stringa in maiuscolo con `String.toUpper`, ma questo non è esattamente la stessa cosa. 
 
-# Vedi anche:
-- Documentazione Elm su String.capitalize: https://package.elm-lang.org/packages/elm/core/latest/String#capitalize
-- Articolo sulle convenzioni di scrittura in programmazione: https://appacademy.io/blog/programming-conventions-writing-code/
+La funzione `capitalize` che abbiamo scritto sopra prende il primo carattere della stringa, lo trasforma in maiuscolo, e poi lo attacca al resto della stringa. 
+
+## Per Ulteriori Informazioni
+
+- Elm: [Documentazione ufficiale](https://elm-lang.org/docs)
+- Stringhe in Elm: [Elm String - A Guide to Using Strings in Elm](https://www.kindsonthegenius.com/blog/elm-string-a-guide-to-using-strings-in-elm/)
+- `Char.toUpper`: [Elm - Funzione Char.toUpper](https://package.elm-lang.org/packages/elm/core/latest/Char)

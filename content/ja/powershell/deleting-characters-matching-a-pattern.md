@@ -1,7 +1,7 @@
 ---
-title:                "パターンにマッチする文字を削除する"
-html_title:           "PowerShell: パターンにマッチする文字を削除する"
-simple_title:         "パターンにマッチする文字を削除する"
+title:                "パターンに一致する文字を削除する"
+html_title:           "C: パターンに一致する文字を削除する"
+simple_title:         "パターンに一致する文字を削除する"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,44 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## これは何ですか？ 
-パターンに合致する文字を削除することは、プログラマーがテキストデータを操作する際に使用する一般的な作業です。 これを行うことで、不要な文字を簡単に削除し、データの処理を容易にすることができます。
+## 何となぜ？
 
-## 方法： 
-以下は、PowerShellでパターンに合致する文字を削除する方法の例です。
+文字列から特定のパターンに一致する文字を削除することは、不要な文字や特定の形式に適合しない文字を取り除くための一般的な走査です。これは、データの統一性を確保し、あるいはデータの解析や操作を容易にするために、プログラマがしばしば行う作業です。
 
-```PowerShell
-# テキストデータを作成
-$text = "これは、サンプルテキストです。"
+## 使い方
 
-# "は"を含む文字列を削除
-$text -replace "は", ""
-Output: "これ、サンプルテキストです。"
-```
+以下に例を示します：
 
 ```PowerShell
-# キーワードを含む行を削除
-$text = @"
-行1
-キーワード
-行2
-"@
+# 文字列定義
+$str = "b2b4b7"
 
-$text -split "`n" -notlike "*キーワード*"
-Output: "行1
-行2"
+# パターン一致する文字を削除
+$pattern = "[0-9]"
+$str -replace $pattern, ""
 ```
 
-## 詳細について 
-### 歴史的な背景 
-パターンに合致する文字を削除する機能は、テキスト編集ソフトウェアで使われ始めました。この機能は、主にユーザーが正規表現を使用してパターンマッチングを行うことを可能にしました。
+実行結果：
 
-### 代替手段 
-パターンに合致する文字を削除する方法は、プログラマーがよく使用するテキスト処理の手段の一つですが、同様の機能を提供する他の方法もあります。例えば、PowerShellの`Select-String`コマンドレットを使用することで、検索と置換を同時に行うことができます。
+```PowerShell
+bbb
+```
 
-### 基本操作の詳細 
-パターンに合致する文字を削除する際に注意すべきポイントは、使用する正規表現のパターンを正確に理解することです。また、置換する文字列が正しく指定されているかも確認する必要があります。
+数字'2','4','7'が削除され、結果として'b2b4b7'が'bbb'に変換されます。
 
-## 関連情報 
-- [PowerShell 正規表現入門](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
-- [PowerShell Select-String コマンドレットのドキュメント](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7.1)
+## 深掘り
+
+歴史的なコンテキストでは、パターンに一致する文字列の削除はテキストデータの解析や操作で常に有用であり、それは古くからプログラミングの要素の一つでした。PowerShellでは、-replace演算子を使ってこのタスクを達成します。他の方法としては、[regex]::replaceメソッド挙げられます。
+
+実装の詳細については、-replace演算子は、パターンに一致する全てのインスタンスを削除します。また、この操作は大文字と小文字を区別します。
+
+## 参考資料
+
+詳しくは以下を参照してください：
+
+- PowerShellの置換演算子について：https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_comparison_operators
+- 正規表現の使用方法について：https://docs.microsoft.com/ja-jp/dotnet/standard/base-types/regular-expression-language-quick-reference
