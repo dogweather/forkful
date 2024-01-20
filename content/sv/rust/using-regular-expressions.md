@@ -1,7 +1,7 @@
 ---
-title:                "Att använda reguljära uttryck"
-html_title:           "Rust: Att använda reguljära uttryck"
-simple_title:         "Att använda reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,44 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Användning av reguljära uttryck, även kallat regex, är en vanlig praxis bland programmerare för att söka och manipulera textsträngar. Det är ett kraftfullt verktyg som kan användas för att identifiera mönster och utföra sök- och ersättningsoperationer på text.
+Regular expressions, eller regex, är mönster för att matcha textsträngar. Programmerare använder dem för att söka, validera, eller redigera text effektivt.
 
-## Så här gör du:
-```Rust
-use regex::Regex;
-
-fn main() {
-    // Skapa ett nytt reguljärt uttryck för att söka efter "hello world"
-    let re = Regex::new(r"hello world").unwrap();
-
-    // Skapa en textsträng att söka igenom
-    let text = "Hello world, detta är en exempelsträng";
-
-    // Utför sökningen och skriv ut resultatet
-    println!("{}", re.find(text).unwrap().as_str()); // Output: hello world
-}
-```
+## Hur gör man?
+I Rust använder vi `regex`-cratet. Här är ett exempel på sökning:
 
 ```Rust
 use regex::Regex;
 
 fn main() {
-    // Skapa ett nytt reguljärt uttryck för att ersätta "hej" med "hello"
-    let re = Regex::new(r"hej").unwrap();
+    let text = "Hitta nummer: 12345.";
+    let re = Regex::new(r"\d+").unwrap();
 
-    // Skapa en textsträng att utföra ersättningen på
-    let text = "Hej alla, vad gör ni?";
-
-    // Utför ersättningen och skriv ut resultatet
-    println!("{}", re.replace_all(text, "hello")); // Output: hello alla, vad gör ni?
+    let cap = re.find(text).unwrap();
+    println!("Hittat: {}", &cap.as_str());
 }
 ```
 
-## Djupdykning:
-Reguljära uttryck har funnits sedan 1950-talet och används i många programmeringsspråk, inte bara i Rust. Alternativ till regex inkluderar strängmanipuleringsfunktioner och parseringsbibliotek.
+Output:
+```
+Hittat: 12345
+```
 
-Implementationen av regex i Rust är byggd på NFA (Non-deterministic Finite Automata) och erbjuder hög prestanda och korrekthet för komplexa mönster.
+Och för att ersätta text:
 
-## Se även:
-- [Rust regex dokumentation](https://docs.rs/regex/1.5.4/regex/)
-- [Regular Expressions Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+```Rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\b(\w+)\s+\1\b").unwrap();
+    let result = re.replace_all("hej hej världen", "hej");
+
+    println!("Uppdaterad text: {}", result);
+}
+```
+
+Output:
+```
+Uppdaterad text: hej världen
+```
+
+## Fördjupning
+Regex har sitt ursprung i teoretisk datavetenskap och automatteori från 1950-talet. Alternativ till regex innefattar strängmanipulationsfunktioner och parser kombinator-bibliotek. I Rust implementeras regex med en bakomliggande deterministisk ändlig automaton (DFA) för prestanda och säkerhet.
+
+## Se även
+- [Rust Regex Crates dokumentation](https://docs.rs/regex/)
+- [Rust bokkapitel om mönstermatchning](https://doc.rust-lang.org/book/ch18-00-patterns.html)
+- [Playground för att testa Rust kod](https://play.rust-lang.org/)
+- [Artikel om komplexitet av regex-engines](https://swtch.com/~rsc/regexp/regexp1.html)

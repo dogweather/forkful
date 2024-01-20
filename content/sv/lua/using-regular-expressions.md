@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Lua: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -11,22 +11,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Reguljära uttryck är en vanlig programmeringskoncept för att söka och manipulera strängar med hjälp av mönster. Programmers använder reguljära uttryck för att effektivt söka och ersätta text inom stora mängder data eller för att validera användarinput. Det sparar tid och minimerar risken för fel i koden.
+Reguljära uttryck är mönster för att matcha textsträngar. De används för att söka, redigera och manipulera text snabbt och effektivt.
 
-## Så här gör du:
-Här är ett enkelt exempel som visar hur man använder en reguljär uttrycksmönster för att söka och ersätta text i en sträng i Lua:
-
+## Hur gör man:
 ```Lua
-local text = "Hej! Mitt namn är Julia."
-local nyText = string.gsub(text, "Julia", "Anna")
-
-print(nyText) -- Output: Hej! Mitt namn är Anna.
+local text = "Hej, det är Lua-programmering!"
+-- Hitta alla ord som börjar med 'p'
+for word in text:gmatch("%fp%w+") do
+    print(word)
+end
+-- Output: programmering
+```
+Enkelt mönster för att validera ett svenskt personnummer:
+```Lua
+local pnr = "850709-1234"
+local match = string.match(pnr, "^%d%d%d%d%d%d%-%d%d%d%d$")
+if match then
+    print("Giltigt personnummer.")
+else
+    print("Ogiltigt personnummer.")
+end
+-- Output: Giltigt personnummer.
 ```
 
-I detta exempel har vi bytt ut namnet "Julia" till "Anna" i vår ursprungliga sträng.
+## Fördjupning
+Reguljära uttryck är inte nytt; de kom på 1950-talet i automatteori och formaliserades av Stephen Kleene. Lua har inte standard regexp-stöd som Perl eller Java, men erbjuder mönstermatchning som täcker många användningsfall. Lua-mönster är enklare men kan vara mindre kraftfulla. Att använda externa bibliotek som `lrexlib` ger tillgång till fulla reguljära uttryck.
 
-## Djupdykning:
-Reguljära uttryck har funnits sedan 1950-talet och används i många programmeringsspråk, inklusive Lua. Alternativen till reguljära uttryck kan vara strängfunktioner som söker efter specifika tecken eller substrängar. Implementationen av reguljära uttryck kan variera mellan språk, men de grundläggande koncepten och mönster är desamma.
-
-## Se även:
-Om du vill lära dig mer om reguljära uttryck i Lua, kan du besöka Lua's officiella dokumentationssida eller titta på olika resurser online, som videor eller blogginlägg. Det finns också många användbara verktyg som hjälper till att bygga och testa reguljära uttryck lättare. Ta en titt och se vilket som fungerar bäst för dig och dina kodningsbehov. Lycka till!
+## Se Även
+- Lua-users Wiki om mönstermatchning: http://lua-users.org/wiki/PatternsTutorial
+- Online Lua mönster matchning verktyg: https://www.lua.org/cgi-bin/demo
+- `lrexlib` dokumentation för avancerad mönstermatchning: https://github.com/rrthomas/lrexlib

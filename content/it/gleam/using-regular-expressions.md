@@ -1,7 +1,7 @@
 ---
-title:                "Utilizzare le espressioni regolari"
-html_title:           "Gleam: Utilizzare le espressioni regolari"
-simple_title:         "Utilizzare le espressioni regolari"
+title:                "Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,32 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché?
-Le espressioni regolari sono uno strumento fondamentale per i programmatori per trovare e manipolare testo in modo efficiente e preciso. Sono utilizzate in molte lingue di programmazione, tra cui Gleam, per cercare corrispondenze tra pattern e stringhe di testo.
+## What & Why?
+Le espressioni regolari sono modelli usati per corrispondere a stringhe di testo. I programmatori le utilizzano per validare, estrarre o sostituire testo, rendendo le operazioni su stringhe efficienti e potenti.
 
-## Come fare:
-Le espressioni regolari in Gleam possono essere create usando il modulo `regex` della libreria standard. Ad esempio, per trovare una corrispondenza di un numero telefonico in una stringa di testo, possiamo usare il seguente codice:
+## How to:
+Per utilizzare le espressioni regolari in Gleam, dobbiamo usare il pacchetto `gleam_regex`. Esempio di ricerca di numeri in una stringa:
 
-```Gleam
-import regex
+```gleam
+import gleam/regex
 
-let telefono_regex = regex.compile("([0-9]{3})-([0-9]{3})-([0-9]{4})")
-
-let stringa_di_testo = "Il mio numero di telefono è 555-123-4567"
-let risultato = stringa_di_testo
-  |> regex.find(telefono_regex)
-  |> Option.map(fn {region, _} -> region)
-
-// Risultato = Some("555-123-4567")
+pub fn main() {
+  let pattern = regex.from_string("\\d+") // Compila il pattern per numeri
+  case pattern {
+    Ok(regex) ->
+      regex.find_all("Hai 3 messaggi e 4 notifiche.")
+    Error(_) ->
+      []
+  }
+}
 ```
 
-Il codice sopra importa il modulo `regex`, compila un'espressione regolare per il formato di un numero di telefono americano e usa il metodo `find` per cercare una corrispondenza all'interno della stringa di testo. Il risultato è un `Option` contenente la corrispondenza trovata.
+Output di esempio:
 
-## Approfondimento:
-Le espressioni regolari sono state inventate negli anni '50 dall'informatico statunitense Stephen Kleene. Oggi sono utilizzate in molte lingue di programmazione e strumenti di ricerca avanzata, come gli editor di testo. In alternativa alle espressioni regolari, ci sono anche altre tecniche di matching come le grammatiche regolari e i parser.
+```
+["3", "4"]
+```
 
-Un'implementazione popolare di espressioni regolari è quella del motore di ricerca `PCRE`, che viene utilizzato in molti linguaggi di programmazione. Nel caso di Gleam, l'implementazione è basata sulla libreria `re2`, che è veloce e sicura da usare in un ambiente di concorrenza come quello di Erlang.
+Per sostituire testo usando una regex:
 
-## Vedi anche:
-- Documentazione ufficiale di Gleam sul modulo `regex`: https://gleam.run/modules/regex/
-- Tutorial su come utilizzare espressioni regolari in altre lingue di programmazione: https://www.regular-expressions.info/tutorial.html
+```gleam
+import gleam/regex.{replace}
+
+pub fn main() {
+  let my_text = "Hello, world!"
+  let my_regex = regex.from_string("world")? // '?' gestisce l'errore
+  replace(my_regex, my_text, "Gleam")
+}
+```
+
+Output di esempio:
+
+```
+"Hello, Gleam!"
+```
+
+## Deep Dive
+Le espressioni regolari hanno origine negli anni '50 e sono diventate uno strumento standard in programmazione. Alternativamente, puoi usare funzioni di stringa native o parser dedicati, ma spesso sono meno flessibili. Gleam utilizza il pacchetto `regex` che compila le regex in codice che manipola le stringhe efficacemente.
+
+## See Also
+- Tutorial interattivi per le regex in generale: [https://regexone.com/](https://regexone.com/)

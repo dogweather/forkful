@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Gleam: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,48 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que e Por Que?
+## O que é & Por quê?
+Expressões regulares são padrões usados para encontrar correspondências de texto em strings. Programadores usam-nas por serem ferramentas poderosas para validação, busca e manipulação de texto de forma eficiente.
 
-Expressões regulares são padrões usados para combinar combinações de caracteres em strings. Programadores os usam para buscar, editar e manipular texto de maneira eficiente.
-
-## Como:
-
-Aqui estão alguns exemplos de como usar expressões regulares no Gleam:
-
-```Gleam
+## Como fazer:
+```gleam
 import gleam/regex
 
-let example = regex.from_string("[a-z]+")
+fn main() {
+  let pattern = regex.compile("^[a-zA-Z]+$").unwrap()
+  let text = "GleamRocks123"
 
-case example {
-    Ok(re) ->
-        case regex.match?(re, "ola mundo") {
-            True ->
-                io.println("Correspondência encontrada!")
-
-            False ->
-                io.println("Nenhuma correspondência encontrada.")
-        }
-
-    Error(_error) ->
-        io.println("Expressão regular inválida.")
+  case regex.run(pattern, text) {
+    Ok(captures) -> io.println(captures)
+    Error(_) -> io.println("No match")
+  }
 }
 ```
+Saída de amostra:
+```
+No match
+```
 
-Este script verifica se a string "ola mundo" contém uma ou mais letras minúsculas de 'a' a 'z'.
+```gleam
+fn main() {
+  let pattern = regex.compile("(\\d+)").unwrap()
+  let text = "Version2023"
+
+  case regex.run(pattern, text) {
+    Ok(captures) -> io.println(captures.at(1)) // Imprime o número capturado
+    Error(_) -> io.println("No match")
+  }
+}
+```
+Saída de amostra:
+```
+Some("2023")
+```
 
 ## Mergulho Profundo
+Expressões regulares têm suas raízes na teoria da computação e foram popularizadas em ferramentas de edição de texto nos anos 70. Alternativas para expressões regulares incluem o uso de parsers dedicados ou bibliotecas de manipulação de strings. Na implementação, Gleam usa o pacote `gleam/regex` que fornece uma API simples e tipada com segurança para expressões regulares, mantendo o desempenho por trás dos panos.
 
-Expressões regulares têm sido uma ferramenta importante para programadores desde os tempos de desenvolvimento do Unix na Bell Labs na década de 1970. Embora possam ser poderosas, também têm desafios e complexidades que levaram ao desenvolvimento de alternativas, como mecanismos de pesquisa de texto completo e analisadores sintáticos.
-
-No Gleam, o módulo `gleam/regex` fornece funcionalidades relacionadas a expressões regulares. Internamente, ele usa a biblioteca Rust regex para fornecer uma implementação segura e rápida para expressões regulares. No entanto, considere que existem limitações na forma como Gleam suporta expressões regulares devido ao seu suporte nativo ao compilador Erlang.
-
-## Veja Também
-
-Caso queira aprofundar o seu conhecimento em expressões regulares no Gleam, consulte os seguintes links:
-
-[Documentação Oficial do Gleam Regex](https://hexdocs.pm/gleam_stdlib/gleam/regex/index.html)
-
-[Recursos de Expressões Regulares em Rust](https://docs.rs/regex/1.3.9/regex/)
-
-[História e Visão Geral de Expressões Regulares](https://en.wikipedia.org/wiki/Regular_expression)
+## Ver Também
+- Um guia interativo para aprender expressões regulares: [RegexOne](https://regexone.com/)
+- Testador de expressões regulares online, útil para experimentar e entender expressões: [Regex101](https://regex101.com/)

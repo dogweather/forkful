@@ -11,30 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Regular Expressions (RegEx) are sequences of characters that match or find other strings or sets of strings, following specific rules. Programmers use it for string searching and manipulation.
+Regular expressions (regex) are patterns that define search criteria for text. Programmers use them for matching, replacing, or extracting bits from strings based on these patterns—think complex find-and-replace on steroids.
 
 ## How to:
-
-Here's a simple example showing how to use regular expressions in Bash to find all "txt" files.
-
 ```Bash
-for file in $(ls | grep -P '\.txt$')
-do
-    echo $file
-done
+# Matching a pattern
+echo "I love to code in Bash" | grep -oP 'code'
+
+# Output:
+code
+
+# Replacing string using regex with sed
+echo "Bash 2023" | sed -E 's/[0-9]+/2024/'
+
+# Output:
+Bash 2024
+
+# Extracting substring with regex
+echo "Error: Line 42" | grep -oP '(?<=Line )\d+'
+
+# Output:
+42
 ```
 
-This script lists only "txt" files in the current directory. `-P` flag enables perl-regexp for advanced functionality.
+## Deep Dive
+Regular expressions have been around since the 1950s, originally conceived by mathematician Stephen Kleene. Alternatives to Bash regex include using `awk` or `perl`, which have their own regex capabilities. Implementation-wise, Bash uses grep for matching, `sed` for find-and-replace, and `=~` operator within `[[ ]]` for conditionals. Be aware that regex can vary between tools (`grep`, `egrep`, `sed`, and `awk`), so know the flavor you're working with.
 
-## Deep Dive:
-
-RegEx has been around since the '50s and is extensively used in computer programming. The feature is integral in pattern matching, string parsing, data validation, and more. Despite its power, RegEx can be complex and tricky to handle for intricate patterns; hence alternatives like string functions or parsers are sometimes preferred for simplicity's sake.
-
-Bash uses POSIX standard for regular expressions. It doesn't support perl-regexp natively but uses `grep -P`. Unfortunately, this doesn't work in all systems. In Mac, you might need to install `ggrep`.
-
-## See Also:
-
-1. [GNU Bash Reference Manual](https://www.gnu.org/software/bash/manual/bash.html)
-2. [Grep Man Page](https://man7.org/linux/man-pages/man1/grep.1.html)
-3. [Advanced Bash-Scripting Guide: Regular Expressions](http://tldp.org/LDP/abs/html/regexp.html#REGEXREF)
+## See Also
+- [GNU Grep Manual](https://www.gnu.org/software/grep/manual/grep.html)
+- [Sed - An Introduction and Tutorial](https://www.grymoire.com/Unix/Sed.html)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [Regex101: Online Regex Tester and Debugger](https://regex101.com/)

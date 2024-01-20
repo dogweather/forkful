@@ -1,7 +1,7 @@
 ---
-title:                "Użycie wyrażeń regularnych"
-html_title:           "Javascript: Użycie wyrażeń regularnych"
-simple_title:         "Użycie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,23 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robić?
-Wykorzystanie wyrażeń regularnych w programowaniu jest bardzo powszechne. Są to specjalne wzorce lub wyrażenia, które pozwalają na wykonywanie operacji na ciągach tekstowych w sposób bardziej złożony i elastyczny. Programiści używają wyrażeń regularnych, aby skanować, porównywać, wyciągać lub modyfikować dane w dokumentach tekstowych, logach, bazach danych i wielu innych miejscach.
+## What & Why? (Co i dlaczego?)
+Wyrażenia regularne to wzorce służące do wyszukiwania i manipulacji tekstami. Programiści używają ich, by łatwo znajdować, porządkować i edytować dane tekstowe, szczególnie przy dużych objętościach lub złożonych strukturach danych.
 
-## Jak to zrobić:
-W poniższych przykładach wykorzystamy funkcję test() do sprawdzania dopasowania wyrażeń regularnych w tekście. Aby rozpocząć, musimy stworzyć wzorzec, który zostanie porównany z tekstem. Wzorce w wyrażeniach regularnych są otoczone ukośnikami ```/``` i mogą zawierać litery, cyfry, znaki specjalne i wiele innych. Na przykład, aby znaleźć wszystkie wystąpienia słowa "hello" w tekście, użyjemy wzorca ```/hello/```, a następnie użyjemy funkcji test() aby sprawdzić, czy wzorzec pasuje do tekstu.
-```Javascript
-//Przykład 1
-var text1 = "Hello World!";
-var pattern1 = /Hello/;
-console.log(pattern1.test(text1));//true
+## How to: (Jak to zrobić?)
+```javascript
+// Znalezienie numerów w tekście
+let tekst = "Zamówienie 123, pozycja 456.";
+let regExpNumer = /\d+/g;
+console.log(tekst.match(regExpNumer)); // Output: ['123', '456']
 
-//Przykład 2
-var text2 = "Hi there!";
-console.log(pattern1.test(text2));//false
+// Zamiana danych w tekście
+let maskownieEmaili = (email) => email.replace(/(\w+)@(\w+)\.(\w+)/g, '***@***.***');
+console.log(maskownieEmaili("jan.kowalski@example.com")); // Output: '***@***.***'
+
+// Weryfikacja formatu kodu pocztowego
+let kodPocztowy = '00-700';
+let regExpKod = /^\d{2}-\d{3}$/;
+console.log(regExpKod.test(kodPocztowy)); // Output: true
 ```
-## Głębsze wgrzebanie:
-Wyrażenia regularne zostały opatentowane w 1957 roku przez Stephena Cole'a Kleene'a. Od tego czasu wyrażenia regularne przeszły długą drogę i są obecnie obsługiwane przez wiele języków programowania, w tym przez JavaScript. Alternatywne sposoby na wykonywanie operacji na tekście to m.in. pętle lub wbudowane metody dla stringów, ale wyrażenia regularne pozwalają na wykonywanie bardziej skomplikowanych zadań, takich jak wyszukiwanie wzorców, które nie są dokładnie określone.
 
-## Zobacz również:
-Jeśli chcesz dowiedzieć się więcej o wyrażeniach regularnych w JavaScript, polecam przeczytać dokumentację na MDN: https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Regular_Expressions
+## Deep Dive (Głębsze spojrzenie)
+Wyrażenia regularne, znane jako regex, sięgają lat 50. XX wieku. Były częścią składnika teoretycznej informatyki - teorii automatów i języków formalnych. W JavaScript, wyrażenia regularne są obiektami klasy `RegExp`. Istnieją alternatywy do regexów, takie jak funkcje `indexOf` czy `includes`, ale żadna z nich nie oferuje takiej elastyczności. Wyrażenia regularne obrabiają stringi na niskim poziomie, co może wpłynąć na wydajność; wartość rozpoznać potrzebę ich używania.
+
+## See Also (Zobacz także)
+- MDN Web Docs na temat wyrażeń regularnych: [MDN RegExp](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
+- Tutorial do wyrażeń regularnych w JavaScript: [JavaScript RegExp Tutorial](https://www.regular-expressions.info/javascript.html)
+- Interaktywny tester wyrażeń regularnych: [RegExr](https://regexr.com/)

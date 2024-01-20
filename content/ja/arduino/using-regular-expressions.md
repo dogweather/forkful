@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使用する"
-html_title:           "Arduino: 正規表現を使用する"
-simple_title:         "正規表現を使用する"
+title:                "正規表現の使用"
+html_title:           "C: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,66 +10,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何 & なぜ？
-正規表現を使用することは、特定のパターンにマッチする文字列を検索するための便利な方法です。プログラマーがこれを行う理由は、文字列やパターンを効率的に比較できるためです。
+## What & Why? (なにとなぜ？)
 
-## 方法：
-```
-// コード例1:
-// キーワード「hello」を含むすべての文字列を検索する。
-Arduino ... 
+正規表現とは文字列パターンを識別・操作するためのテキスト式。プログラマは煩雑なテキスト処理を効率化するために使用する。
 
-#include<regex.h>
+## How to (実装方法):
 
-// 文字列を定義する。
-String text = "こんにちは、私の名前はJohnです。";
+```Arduino
+#include <regex.h>
 
-// 正規表現オブジェクトを作成する。
-regex_t regex;
+void setup() {
+  Serial.begin(9600);
+  // 待機状態になるまで待つ
+  while (!Serial) {}
+  
+  regex_t reg;
+  const char * pattern = "[A-Za-z]+"; // 英字のみを検出するパターン
+  char inputString[] = "Arduino123Programming456";
 
-// 「hello」を含むパターンを設定する。
-regcomp(&regex, "hello", 0);
-
-// 文字列がパターンにマッチするかチェックする。
-if(regexec(&regex, text.c_str(), 0, NULL, 0) == 0){
-    // マッチする場合は「hello」が含まれるというメッセージを出力する。
-    Serial.println("この文字列には「hello」が含まれています。");
+  if(regcomp(&reg, pattern, REG_EXTENDED) == 0) { // 正規表現をコンパイル
+    regmatch_t matches[10]; // マッチ情報を格納する配列
+    if(regexec(&reg, inputString, 10, matches, 0) == 0) { // マッチを実行
+      for(int i = 0; i < 10 && matches[i].rm_so != -1; i++) {
+        int start = matches[i].rm_so;
+        int end = matches[i].rm_eo;
+        Serial.print("Match: ");
+        Serial.println(String(inputString).substring(start, end));
+      }
+    } else {
+      Serial.println("No match found");
+    }
+  } else {
+    Serial.println("Regex pattern compilation failed");
+  }
+  regfree(&reg); // リソースの解放
 }
 
-// 作成した正規表現オブジェクトを消去する。
-regfree(&regex);
+void loop() {
+  // ここでは何もしません。
+}
 ```
 
+サンプル出力:
+
 ```
-// コード例2:
-// 指定したパターンにマッチするすべての文字列を置換する。
-Arduino ... 
-
-#include<regex.h>
-
-// 文字列を定義する。
-String nameList = "John, Bob, Alice, Kate";
-
-// 正規表現オブジェクトを作成する。
-regex_t regex;
-
-// 「Bob」という文字列を「Mike」に置換するパターンを設定する。
-regcomp(&regex, "Bob", 0);
-
-// 文字列を「Mike」に置換する。
-String updatedList = regreplace(nameList.c_str(), regex, "Mike");
-
-// 置換後の文字列を出力する。
-Serial.println(updatedList);
-
-// 作成した正規表現オブジェクトを消去する。
-regfree(&regex);
+Match: Arduino
+Match: Programming
 ```
 
-## 深く掘り下げる：
-正規表現は、1960年代から存在している古いテキスト処理方法です。他のパターン検索や置換方法と比較すると、正規表現はより柔軟で強力なツールであると言えます。また、Arduinoはプログラミング言語のC++の一部を使用しており、その言語には既に正規表現の機能が組み込まれています。
+## Deep Dive (深堀り):
 
-## 関連リンク：
-- [正規表現の解説 (Wikipedia)](https://ja.wikipedia.org/wiki/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE)
-- [Arduino公式サイト](https://www.arduino.cc/)
-- [C++の正規表現の使い方 (cpprefjp)](https://cpprefjp.github.io/reference/regex.html)
+正規表現は1940年代の数学概念。多言語ライブラリとの互換性を求めるなら`std::regex`の代わりに`regex.h`をアルドゥイーノで使用する。しかし、正規表現を使わずに文字列関数（`indexOf`, `substring`など）で簡単な文字列操作可能。
+
+## See Also (関連リンク):
+
+- 正規表現メタキャラクタ一覧: https://www.boost.org/doc/libs/release/libs/regex/doc/html/boost_regex/syntax/perl_syntax.html
+- Arduino `String` クラス: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- `regex.h` マニュアル: https://linux.die.net/man/3/regex

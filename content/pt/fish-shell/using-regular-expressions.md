@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Gleam: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,36 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por que?
-Regular Expressions (expressões regulares) são sequências de caracteres que formam um padrão de pesquisa. Programadores usam expressões regulares para manipular texto de forma mais eficiente e simplificar processos de validação de strings.
+## O Que São & Por Que Usar?
+Expressões regulares são padrões usados ​​para encontrar correspondências de texto de acordo com regras definidas. Programadores utilizam para pesquisar, substituir e manipular strings com eficiência e precisão.
 
-## Como fazer:
-Vamos dar uma olhada em alguns exemplos básicos usando o Fish Shell.
-
-- Para verificar se uma string está dentro de outra string, você poderia usar o comando `string match`.
-
+## Como Fazer:
 ```Fish Shell
-set minha_string "Olá, mundo!"
-string match -r "mundo" $minha_string
+# Encontrar todos os arquivos .txt
+ls *.txt
+
+# Procurar pela palavra 'fish' em um arquivo
+grep 'fish' arquivo.txt
+
+# Substituir 'fish' por 'shark' em todos os arquivos .txt
+sed -i 's/fish/shark/g' *.txt
+
+# Exemplo de saída para o comando grep
+arquivo.txt: Esta linha contém a palavra fish.
 ```
 
-Saída:
-```
-mundo
-```
+## Mergulho Profundo
+Expressões regulares têm sua origem nos anos 1950, com linguagens formais e teoria dos autômatos. Alternativas incluem a busca simples por texto ou o uso de parsers para estruturas complexas. Na Fish Shell, os comandos `grep`, `sed` e `awk` são frequentemente utilizados para trabalhar com regex, mas a linguagem não possui um operador de regex embutido como em algumas outras shells.
 
-- Buscando todas as ocorrências de uma string específica em um arquivo usamos `grep`:
-
-```Fish Shell
-grep -o 'Mundo' meu_arquivo.txt
-```
-
-## Aprofundamento
-(1) As expressões regulares têm sua origem na teoria formal de linguagem e automatos da ciência da computação. Elas se tornaram especialmente populares após serem incluídas no utilitário de edição de texto Unix, `ed`, em 1970.  
-(2) Alternativas: Padrões de pesquisa semelhantes podem ser implementados também usando wildcards ou globbing, mas são menos poderosos e flexíveis em comparação com as expressões regulares. 
-(3) Fish Shell usa uma implementação de expressões regulares baseada em POSIX, que é uma das implementações de expressões regulares mais comuns, bastante utilizada em Unix-like systems.
-
-## Veja também
-- Documentação oficial do Fish Shell: https://fishshell.com/docs/current/index.html
-- Guia de expressões regulares: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions
-- Para uma compreensão mais profunda da teoria por trás das expressões regulares, consulte este tutorial do MIT: https://ocw.mit.edu/courses/electrical-engineering-and-computer-science/6-045j-automata-computability-and-complexity-spring-2011/lecture-notes/MIT6_045JS11_lec04.pdf.
+## Veja Também
+- Tutorial oficial do `grep`: https://www.gnu.org/software/grep/manual/grep.html
+- Documentação do `sed`: https://www.gnu.org/software/sed/manual/sed.html
+- Um guia online para testar regex: https://regexr.com/
+- Documentação da Fish Shell: https://fishshell.com/docs/current/index.html

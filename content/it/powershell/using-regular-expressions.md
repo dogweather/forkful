@@ -1,7 +1,7 @@
 ---
-title:                "Utilizzando le espressioni regolari"
-html_title:           "PowerShell: Utilizzando le espressioni regolari"
-simple_title:         "Utilizzando le espressioni regolari"
+title:                "Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché usarlo?
+## Cosa & Perché?
+Le espressioni regolari sono sequenze di caratteri che definiscono un pattern di ricerca. I programmatori le usano per cercare, sostituire o manipolare stringhe con precisione e velocità.
 
-Le espressioni regolari sono un insieme di pattern che permettono di identificare e manipolare testo in maniera efficiente attraverso la ricerca di modelli specifici. I programmatori le usano spesso per trovare e sostituire porzioni di testo all'interno di un documento, o per filtrare input da utenti che seguono uno specifico formato.
-
-## Come utilizzarle:
-
-Se vuoi trovare tutte le parole "gatto" in un documento, puoi usare il comando seguente:
+## How to:
 ```PowerShell
-Select-String -Pattern "gatto" -Path C:\MieiDocumenti\Testo.txt
+# Trovare una corrispondenza in una stringa
+$testo = "Ciao, mondo! 123"
+$pattern = "\b[^\d\W]+\b"
+[regex]::Matches($testo, $pattern) | ForEach-Object { $_.Value }
+
+# Sostituire le parole che iniziano con 'm' con 'X'
+$testo = "mela casa mondo"
+$pattern = "\bm\w*"
+$resultato = [regex]::Replace($testo, $pattern, "X")
+$resultato
 ```
-Questo comando tornerà una lista di tutte le linee del documento che contengono la parola "gatto".
-
-Puoi anche usare espressioni regolari per sostituire testo all'interno di un documento. Supponiamo che vuoi sostituire tutte le parole "gatto" con "cane". Il seguente codice farà il lavoro:
-```PowerShell
-Get-Content C:\MieiDocumenti\Testo.txt | ForEach-Object { $_ -replace "gatto", "cane" }
+Output:
 ```
-Questo comando legge il contenuto del tuo documento, itera attraverso ogni linea e sostituisce "gatto" con "cane" all'interno di essa.
+Ciao
+mondo
+X casa X
+```
 
-## Analisi approfondita:
+## Deep Dive
+Le espressioni regolari risalgono agli anni '50 con la loro teoria formalizzata da matematici come Stephen Kleene. In PowerShell, il modulo 'Microsoft.PowerShell.Utility' contiene cmdlet come `Select-String` che facilitano l'uso di regex. Come alternativa ai regex si possono usare metodi come `.Contains()`, `.StartsWith()`, `.EndsWith()` e `.IndexOf()` per ricerche più semplici.
 
-Le espressioni regolari sono state sviluppate negli anni '50 e hanno trovato ampio utilizzo nella programmazione e nell'editoria. Anche oggi, sono ancora una delle tecniche più efficienti per manipolare il testo. Tuttavia, ci sono anche alternative come i linguaggi di programmazione specifici per la manipolazione di stringhe.
-
-Per utilizzare le espressioni regolari in PowerShell, è necessario utilizzare il cmdlet Select-String o la classe [Regex]. Puoi anche trovare informazioni più dettagliate sulle opzioni di sintassi e altri comandi da utilizzare nelle pagine di riferimento di Microsoft o in vari tutorial su Internet.
-
-## Vedi anche:
-
-- [Documentazione ufficiale Microsoft] (https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.core/select-string?view=powershell-7.1)
-- [Tutorial su espressioni regolari in PowerShell] (https://adamtheautomator.com/powershell-regular-expressions/)
+## See Also
+- Documentazione sulle espressioni regolari .NET: [docs.microsoft.com/dotnet/standard/base-types/regular-expressions](https://docs.microsoft.com/dotnet/standard/base-types/regular-expressions)
+- Esercitazioni e test interattivi sui regex: [regex101.com](https://regex101.com)

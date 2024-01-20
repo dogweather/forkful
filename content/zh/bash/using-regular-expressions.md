@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Arduino: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,46 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
+## What & Why? (是什么？为什么？)
+正则表达式是文本搜索、替换和格式化的强大工具。程序员使用它进行复杂的文本操作，快速而准确。
 
-## 什么 & 为什么？
-
-正则表达式（Regular expressions）是用来检查和操作字符串的强大工具。程序员使用正则表达式来节省时间，提高编程效率。
-
----
-
-## 操作说明：
-
-用Bash用正则表达式的代码例子如下：
-
+## How to (如何操作？)
+### 搜索文本
 ```Bash
-#!/bin/bash
-text="Welcome to AI world."
-pattern="AI"
-
-if [[ $text =~ $pattern ]]; then
-   echo "Pattern found!"
-fi
+echo "找找 'bash' 在不在这句话里。" | grep -Eo 'bash'
+```
+输出：
+```
+bash
 ```
 
-运行这段代码，输出就是 "Pattern found!"。如果你修改文本里的"AI"，输出就会变。
+### 文件中替换字符串
+```Bash
+echo -e "老王\n老李\n老赵" | sed 's/老/小/g'
+```
+输出：
+```
+小王
+小李
+小赵
+```
 
----
+### 校验格式
+```Bash
+[[ "example@domain.com" =~ ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$ ]] && echo "有效的邮箱地址" || echo "无效的邮箱地址"
+```
+输出：
+```
+有效的邮箱地址
+```
 
-## 深入解析：
+## Deep Dive (深入了解)
+正则表达式起源于1950年代的理论计算机科学。与通配符不同，它允许非常特定的字符串搜索模式。在各种编程语言和文本处理工具中有实现，但有细微差别。除了标准的Unix工具如grep和sed，现代编程语言如Python、Perl和Java均内建有强大的正则表达式库。
 
-### 历史：正则表达式最早在上世纪60年代由Ken Thompson所创。起初是作为Unix操作系统的一部分，现在已经成为几乎所有操作系统和编程语言不可或缺的一部分。
-
-### 另类：正则表达式是处理字符串非常强大的工具，尽管有些编程语言提供了相似的功能，比如Python的字符串方法，但是它们的功能还是无法和正则表达式相比。
-
-### 实现细节：当你在Bash脚本中使用正则表达式时，你实际上是在调用GNU的正则表达式库。这个库包含了一系列函数，能让你在字符串中执行复杂的查找和替换操作。
-
----
-
-## 参考链接：
-
-1. [GNU正则表达式库](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-2. [正则表达式进阶教程](https://regexone.com/)
-3. [Bash编程指南](http://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html)
-
----
+## See Also (另请参阅)
+- [GNU Bash 文档](https://www.gnu.org/software/bash/manual/bash.html)
+- [grep 手册页面](https://www.gnu.org/software/grep/manual/grep.html)
+- [sed 手册页面](https://www.gnu.org/software/sed/manual/sed.html)
+- [正则表达式教程](https://www.regular-expressions.info/tutorial.html)

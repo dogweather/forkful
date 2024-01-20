@@ -1,7 +1,7 @@
 ---
-title:                "שימוש בביטויים רגילים"
-html_title:           "C: שימוש בביטויים רגילים"
-simple_title:         "שימוש בביטויים רגילים"
+title:                "שימוש בביטויים רגולריים"
+html_title:           "Arduino: שימוש בביטויים רגולריים"
+simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -11,36 +11,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
-בתכנות, רגילר אקספרשנז (Regular Expressions) הם סימני מבנה שמשמשים לזיהוי וחילוץ תבניות בטקסט. תוכניותיסטים משתמשים בפקודות רגילר אקספרשנז בכדי למצוא ועבד נתונים טקסטואליים באופן מהיר ויעיל.
+Regular expressions, רגקס בקיצור, הן כלים לחיפוש ועיבוד טקסט באמצעות פטרנים. תוכניתנים משתמשים בהם כי הם מאפשרים חיפוש מהיר וחכם של מחרוזות, תיקונים מורכבים, ואימות קלט.
 
-## איך ל:
-רגילר אקספרשנז משתמשים בביטויים רגולריים כדי לזהות תבניות מסוימות בטקסט. הנה דוגמאות לסימני מבנה נפוצים וכיצד להשתמש בהם בתוך קוד C:
+## איך לעשות:
+```C
+#include <stdio.h>
+#include <regex.h>
 
+int main() {
+    regex_t regex;
+    int result;
+    result = regcomp(&regex, "^a[[:alnum:]]", 0); // קומפילציה של רגקס לחיפוש מילים המתחילות ב-'a'
+    if (result) { 
+        printf("הרגקס לא חוקי.\n");
+        return 1;
+    }
+  
+    result = regexec(&regex, "apple", 0, NULL, 0);
+    if (!result) {
+        printf("המילה מתאימה!\n");
+    } else if (result == REG_NOMATCH) {
+        printf("אין התאמה.\n");
+    } else {
+        printf("שגיאת חיפוש.\n");
+    }
+
+    regfree(&regex); // ניקוי הרגקס
+    return 0;
+}
 ```
-// לחילוץ מספרים מתוך מחרוזת
-int num = 0;
-char string[] = "יותר ממאה שנים אסור לגלגל עגלות בני החמור";
-sscanf(string, "%d", &num); // num יכיל את המספר 100
-
-// לחילוץ מחרוזת של אימייל
-char email[] = "example@gmail.com";
-regex_t regex;
-int result;
-result = regcomp(&regex, "[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}", 0); // מגדיר את התבנית של האימייל
-result = regexec(&regex, email, 0, NULL, 0); // בודק האם האימייל מתאים לתבנית, אם כן התוצאה תהיה 0
-
-// למציאת התאמה בין שתי מחרוזות
-char string1[] = "שלום, העולם!";
-char string2[] = "העולם!";
-regex_t regex;
-int result;
-result = regcomp(&regex, "העולם", 0); // מגדיר את התבנית של "העולם"
-result = regexec(&regex, string1, 0, NULL, 0); // בודק האם המחרוזת string1 מכילה את "העולם", אם כן התוצאה תהיה 0
-result = regexec(&regex, string2, 0, NULL, 0); // בודק האם המחרוזת string2 מכילה את "העולם", אם כן התוצאה תהיה 0
+פלט דוגמה:
+```
+המילה מתאימה!
 ```
 
-## כייל
-רגילר אקספרשנז נמצאים בשימוש כבר מאז תחילת שנות ה-70 ונהפכו לכלי חשוב בתכנות. אלטרנטיבות לרגילר אקספרשנז כוללות פקודות טקסט מובנות בשפות תכנות, כגון Python ו-Java. המימוש של רגילר אקספרשנז נמצא במגוון שפות תכנות ומערכות ניהול משתמש. מעבר למציאת תבניות בטקסט, רגילר אקספרשנז גם מאפשרים חיפוש והחלפת טקסט או מחרוזות בטקסטים גדולים במהירות.
+## צלילה לעומק
+השימוש ברגקסים סביב מאז השנות ה-50 והתפתח במרוצת השנים. יש אלטרנטיבות כמו חיפוש טקסט קלאסי, אך הם פחות גמישים. ב-C, רגקסים ממומשים דרך הספרייה regex.h, לעיתים קרובות עובדים ביחד עם מחרוזות סטנדרטיות בממשק POSIX.
 
 ## ראה גם
-- [מדריך להתחיל ללמוד רגילר אקספרשנז ב-C](https://www.cs.cf.ac.uk/Dave/C/node33.html)
+- [GNU C Library Manual – Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [regex(7) - Linux man page](https://man7.org/linux/man-pages/man7/regex.7.html)
+- [POSIX Regular Expressions](https://en.wikipedia.org/wiki/Regular_expression#POSIX_basic_and_extended)

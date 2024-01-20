@@ -11,36 +11,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions (regex) are sequences used to match character combinations in strings. Programmers use them for pattern matching with strings, or string searching and replacing operations.
+Regular expressions (regex) are patterns used to match character combinations in strings. Programmers use them for searching, editing, or manipulating text, simplifying tasks like form validation or parsing data.
 
 ## How to:
-In Elm, the `Regex.regex` function is used to create a pattern, and `contains` checks if that pattern exists within a string. Here's an example:
+
+Elm doesn't have built-in regex capabilities, but you can use the `elm/regex` package. Here's how to use regex for common tasks:
 
 ```Elm
-import Regex
+import Regex exposing (..)
 
-pattern : Maybe Regex.Regex
-pattern =
-    Regex.regex "Elm"
+-- Examples of regex usages in Elm --
 
-main =
+-- Checking if a string contains "hello"
+checkForHello : String -> Bool
+checkForHello input =
     let
-        res =
-            case pattern of
-                Nothing ->
-                    False
-
-                Just re ->
-                    Regex.contains re "Hello Elm!"
+        pattern = "hello"
+        regex = Regex.fromString pattern |> Maybe.withDefault (regex ".")
     in
-    Html.text <| toString res
-```
+    Regex.contains regex input
 
-Run this and you'll get `True` because the string "Hello Elm!" contains "Elm".
+-- Sample Output
+checkForHello "hello, world!" -- True
+
+-- Extracting digits from a string
+extractDigits : String -> List String
+extractDigits input =
+    let
+        regex = Regex.fromString "\\d+" |> Maybe.withDefault (regex ".")
+    in
+    Regex.find (All) regex input |> List.map .match
+
+-- Sample Output
+extractDigits "elm123rocks" -- ["123"]
+```
+Remember, you need to handle Maybe for potential pattern-matching failures when using `Regex.fromString`.
 
 ## Deep Dive
-Elm's regular expressions come from JavaScript, and hence carry some JavaScript flavor. They're defined as ‘patterns’ of characters used in pattern matching with strings. Alternatives to regex in Elm could be functions like `String.startsWith`, `String.endsWith` or `String.contains`. These are good when you're dealing with simple matching scenarios, but nothing beats regex when it comes to complex pattern searches and manipulations. Implementation wise, Elm uses JavaScript regex under the hood.
+
+Regex goes back to the 1950s, with roots in automata theory and formal language theory. Over time, regex became a powerful tool in text processing, integrated into many programming languages and command-line utilities.
+
+Alternatives to regex in Elm include string functions like `String.contains`, `String.startsWith`, `String.split`, etc. While simpler, they're less powerful for complex pattern matching.
+
+Implementation-wise, regex in Elm is built on top of JavaScript's regex engine, courtesy of Elm's runtime. This means regex behavior in Elm can mirror JavaScript's capabilities and limitations.
 
 ## See Also
-Delve deep into regex with official Elm documentation at: http://package.elm-lang.org/packages/elm/regex/latest/Regex
-Or explore JavaScript's Regex, which Elm uses, at: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions
+
+- Elm Regex Package: [package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
+- Regular Expressions in JavaScript: [developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Regex Testers and Debuggers: [regex101.com](https://regex101.com)

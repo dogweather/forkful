@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "Go: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,31 +10,52 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que les expressions régulières et pourquoi les programmeurs les utilisent-ils?
+## Quoi et Pourquoi ?
 
-Les expressions régulières sont un outil puissant pour manipuler et rechercher des motifs dans des chaînes de caractères. De nombreux programmeurs les utilisent pour effectuer des tâches telles que la validation de données utilisateur, le filtrage de chaînes de caractères et la recherche de motifs spécifiques.
+Les expressions régulières (regex) filtrent et manipulent les textes selon des motifs définis. C'est puissant pour valider, extraire ou remplacer des chaînes de caractères rapidement et efficacement.
 
-# Comment faire:
+## Comment ça marche ?
 
-```
-Go: package main import "fmt" import "regexp"
+```Go
+package main
+
+import (
+    "fmt"
+    "regexp"
+)
 
 func main() {
-    // Créer une expression régulière pour rechercher le motif "go"
-    regex := regexp.MustCompile("go")
+    // Exemple de validation de motif e-mail simple
+    regexEmail, _ := regexp.Compile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)
+    email := "exemple@domaine.fr"
+    fmt.Println("E-mail valide ? ", regexEmail.MatchString(email))
 
-    // Rechercher le motif dans une chaîne de caractères
-    result := regex.FindString("Je suis un programmeur Go")
+    // Extrait tous les numéros dans une chaîne (pattern \d+ pour les chiffres)
+    regexNumbers, _ := regexp.Compile(`\d+`)
+    text := "Le prix est de 100 euros."
+    nums := regexNumbers.FindAllString(text, -1)
+    fmt.Println("Numéros trouvés : ", nums)
 
-    // Afficher le résultat
-    fmt.Println(result) // Output: go
+    // Remplacement de texte
+    regexReplace, _ := regexp.Compile(`\bJava\b`)
+    replacedText := regexReplace.ReplaceAllString("Java est fun. JavaScript est différent de Java.", "Go")
+    fmt.Println("Texte après remplacement : ", replacedText)
 }
 ```
 
-# Plongée en profondeur:
+Output:
+```
+E-mail valide ?  true
+Numéros trouvés :  [100]
+Texte après remplacement :  Go est fun. JavaScript est différent de Go.
+```
 
-Les expressions régulières ont été inventées dans les années 1950 et ont depuis été utilisées dans de nombreux langages de programmation. Cependant, avec l'avènement du langage Go, les programmeurs ont maintenant accès à une manière plus simple et plus efficace d'utiliser les expressions régulières. Les alternatives à l'utilisation des expressions régulières incluent la manipulation de chaînes de caractères en utilisant des méthodes de manipulation de chaînes de base, mais cela peut être fastidieux et moins robuste.
+## Plongée en profondeur
 
-# Voir aussi:
+Regex existait avant Go : Perl et Python l'ont popularisé. Alternatives en Go : packages comme `bytes` et `strings` pour certaines tâches, mais regex est plus universel et souple. Implementation : la librairie `regexp` de Go utilise RE2, évitant les catastrophes de performances des expressions régulières "exponentielles".
 
-- [Documentation officielle de Go sur les expressions régulières](https://golang.org/pkg/regexp/)
+## Voir aussi
+
+- Go documentation officielle pour regexp : https://golang.org/pkg/regexp/
+- Tutoriel interactif pour apprendre regex : https://regexone.com/
+- Outil en ligne pour tester des expressions régulières : https://regex101.com/

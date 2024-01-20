@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Gleam: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por Quê?
+## O Que é & Por Que Usar?
+Expressões regulares são padrões que definem conjuntos de strings. Programadores as utilizam para buscar, substituir e validar textos de maneira rápida e flexível.
 
-As expressões regulares (regex) são uma técnica poderosa para o reconhecimento e manipulação de padrões de texto. Programadores recorrem a elas por sua eficiência em tarefas como validação de dados, busca e substituição de texto.
-
-## Como fazer:
-Expressões regulares no Elixir podem ser usadas com o módulo Regex. Aqui está um exemplo de uso:
-
+## Como Fazer:
 ```elixir
-iex> Regex.match?(~r/elixir/, "Hello, Elixir")
-false
-iex> Regex.match?(~r/elixir/i, "Hello, Elixir")
-true
+# Encontrando padrões
+regex = ~r/hello/
+"Hola! Hello! Hallo!" |> String.split() |> Enum.filter(&Regex.match?(regex, &1))
+# Saída: ["Hello!"]
+
+# Substituindo texto
+String.replace("2023 Ano do Café", ~r/\d+/, "2022")
+# Saída: "2022 Ano do Café"
+
+# Validando um email
+Regex.match?(~r/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, "exemplo@email.com")
+# Saída: true
 ```
-No primeiro exemplo, ele retorna `false` porque a correspondência é sensível a maiúsculas e minúsculas, porém no segundo caso adicionamos o `i` no fim do regex para torná-lo insensível ao caso.
 
-## Mergulho Profundo:
+## Aprofundamento
+Expressões regulares, ou regex, surgiram na década de 1950, derivadas de teorias formais da computação e linguística. Alternativas a regex incluem o parseamento de strings com algoritmos específicos ou o uso de bibliotecas de análise sintática. Em Elixir, regex é implementado por meio da biblioteca Erlang `:re`, que por sua vez é baseada na biblioteca PCRE - Perl Compatible Regular Expressions.
 
-As expressões regulares têm uma longa história, sendo derivadas da teoria das linguagens de programação formal. No Elixir, elas são implementadas usando a biblioteca PCRE de alto desempenho, que oferece muitos recursos avançados.
-
-Em termos de alternativas, Elixir oferece outras formas de manipulação de string, como a função `String.split/1` para divisão de strings, e as funções de mapeamento e redução para processamento adicional.
-
-Porém, pense duas vezes antes de substituir as expressões regulares. Eles são uma ferramenta poderosa, mas com grande poder vem grande responsabilidade. A complexidade das expressões regulares pode tornar o seu código difícil de ler e manter.
-
-## Ver também:
-
-A documentação oficial do módulo Regex do Elixir é um excelente local para começar: [Regex - Elixir](https://hexdocs.pm/elixir/Regex.html)
-
-Se você quiser ir além, o capítulo sobre expressões regulares na Learn You Some Erlang é uma leitura excelente: [LYSE: Regular Expressions](http://learnyousomeerlang.com/regular-expressions) 
-
-Para praticar suas habilidades com expressões regulares, confira o exercício no Exercism: [Exercism Elixir Track](https://exercism.io/tracks/elixir)
+## Veja Também
+- [Documentação oficial de Regex em Elixir](https://hexdocs.pm/elixir/Regex.html)

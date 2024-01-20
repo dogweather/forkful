@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Gleam: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,45 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Porquê?
+## What & Why?
+Expressões regulares são padrões usados para encontrar correspondências de textos. Programadores as utilizam para busca, substituição e análise de dados de forma eficiente e flexível.
 
-Expressões regulares (regex) são um sistema para encontrar e manipular partes específicas de texto. Programadores usam porque facilita a procura, substituição e manipulação de textos complexos e variados.
-
-## Como Fazer:
-
-No Bash, usamos `grep` para usar expressões regulares. Aqui estão alguns exemplos:
+## How to:
+Para usar expressões regulares em Bash, podemos empregar comandos como `grep`, `sed`, e `awk`. Aqui estão alguns exemplos:
 
 ```Bash
-# Encontre linhas que contêm 'abc'
-grep 'abc' arquivo.txt
+# Encontrar linhas que contenham "casa":
+echo -e "minha casa\nseu carro\nnossa casa" | grep 'casa'
 
-# Encontre linhas que começam com 'abc'
-grep '^abc' arquivo.txt
+# Substituir 'gato' por 'cachorro' em um texto:
+echo "O gato subiu no telhado" | sed 's/gato/cachorro/'
 
-# Encontre linhas que terminam com 'abc'
-grep 'abc$' arquivo.txt
-```
-Output:
-```
-abc é fácil
-Isso é abc
-Eu amo abc
+# Filtrar linhas e mostrar apenas números de um arquivo:
+cat numeros.txt | awk '/^[0-9]+$/'
 ```
 
-## Mergulho Profundo
+Saída esperada pode ser algo como:
+```
+minha casa
+nossa casa
+O cachorro subiu no telhado
+123
+456
+```
 
-Expressões regulares foram desenvolvidas na decada de 1950 e estão presentes em muitas linguagens de programação. Alternativas incluem o uso de funções de manipulação de strings inerentes a cada linguagem. No entanto, expressões regulares vêm com o benefício adicional de serem universais e poderosas.
+## Deep Dive
+Expressões regulares surgiram nos anos 1950 com trabalhos teóricos do matemático Stephen Kleene. O `grep` foi um dos primeiros programas a implementar expressões regulares de forma prática. Alternativas a expressões regulares incluem parsers de sintaxe específica e algoritmos de busca de texto. Expressões regulares em Bash são geralmente mais básicas quando comparadas com as disponíveis em linguagens como Perl ou Python, mas ainda assim são poderosas para operações de linha de comando.
 
-## Veja Também
-
-- Livros e Tutoriais:
-1. "Mastering Regular Expressions" por Jeffrey E.F. Friedl
-2. [RegexOne](https://regexone.com/): Tutorial interativo online
-
-
-- Websites Oficiais:
-1. [GNU Bash](https://www.gnu.org/software/bash/)
-2. [GNU grep](https://www.gnu.org/software/grep/)
-
-- Guias de estilo e boas práticas:
-1. Google's Shell Style Guide: [Guide](https://google.github.io/styleguide/shellguide.html)
+## See Also
+- Documentação do GNU `grep`: https://www.gnu.org/software/grep/manual/grep.html
+- Tutorial interativo de expressões regulares: https://regexone.com/
+- `sed` & `awk` 101 Hacks: https://www.thegeekstuff.com/2010/01/awk-introduction-tutorial-7-awk-print-examples/

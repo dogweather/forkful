@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Gleam: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Regular expressionien käyttö on tapa etsiä ja muokata tekstejä käyttämällä erityisiä merkkijonoja ja sääntöjä, joita kutsutaan lausekkeiksi. Tämä on hyödyllistä ohjelmoijille, jotka haluavat hakea ja muokata tiettyjä tietoja tekstidatasta nopeasti ja tarkasti.
+## What & Why?
+Regex on kuvioiden vertailuun käytetty syntaksi. Ohjelmoijat käyttävät sitä tekstin hakuun, korvaamiseen ja validoimiseen nopeasti.
 
-# Miten?
-Gleam sisältää vakio-kirjaston regular expressionien käyttöön. Alla olevassa esimerkissä näytämme, kuinka voit käyttää regular expressioneja Gleamin kanssa.
+## How to:
 
-```
-Gleam.String.split("Tämä on esimerkki!", ~pattern="\\s")
-|> Debug.todo
-```
+```gleam
+import gleam/regex
 
-Tässä esimerkissä käytämme `split`-funktiota jakamaan tekstin, joka perustuu sääntöön "\s", eli kaikki sanat erotettuna välilyönneillä. Tämän jälkeen käytämme `Debug.todo`-funktiota tulostamaan jakautuneet sanat.
+fn main() {
+  let pattern = regex.compile("moi").unwrap()
+  let result = regex.find(pattern, "Hei, moi, maailma!")
 
-```
-Tämä |> on |> esimerkki!
-```
-
-Tulostettu tulos olisi:
-
-```
-["Tämä", "on", "esimerkki!"]
+  case result {
+    Ok(matches) => io.print(matches), // Tulostaa: ["moi"]
+    Error(_) => io.print("Kuvion haku epäonnistui.")
+  }
+}
 ```
 
-# Syventymistä
-Regular expressionit ovat olleet osa ohjelmointia jo vuosikymmeniä ja niitä käytetään edelleen paljon eri kielissä. Vaikka Gleamin valmiiksi määritetty regular expression-kirjasto on hyvä, on olemassa myös muita vaihtoehtoja, kuten PCRE ja POSIX. Myös eri käyttöjärjestelmät voivat tarjota omia versioitaan regular expressioneista, joilla voi olla pieniä eroja syntaxissa.
+## Deep Dive
+Regexpit ovat UNIXista peräisin. Nykyään monet kielet, kuten JavaScript, Python ja Gleam käyttävät niitä. Vaihtoehtoina ovat tekstihaun funktiot, kuten `string.contains`. Gleam käyttää Erlangin regex-kirjastoa, mikä tekee regexp-käsittelystä tehokasta.
 
-# Katso myös
-- [PCRE - Regular expression library](https://www.pcre.org/)
-- [POSIX - Portable Operating System Interface](https://en.wikipedia.org/wiki/POSIX)
+## See Also
+- RegExr, for building and testing regex patterns: [https://regexr.com/](https://regexr.com/)
+- Interactive Gleam Playground: [https://gleam.run/](https://gleam.run/)

@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "Bash: Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,43 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
+## Cosa e Perché?
 
-Le espressioni regolari (RegEx) sono strumenti usati per abbinare, cercare o sostituire stringhe di testo. I programmatori le utilizzano per rendere il codice più compatto, veloce ed efficiente.
+Le espressioni regolari consentono di analizzare le stringhe di testo per cercare modelli. I programmatori le utilizzano per validare l’input, estrarre dati, e semplificare la ricerca e la sostituzione di testo.
 
 ## Come fare:
-
-Con Arduino, possiamo utilizzare la libreria `<regex.h>` per utilizzare le espressioni regolari. Ecco un esempio basilare:
 
 ```Arduino
 #include <regex.h>
 
+const char *stringaTest = "Ciao, io sono il numero 12345";
+regex_t regex;
+int risultato;
+
 void setup() {
   Serial.begin(9600);
-  regex_t regex;
-  int result;
-  result = regcomp(&regex, "a", 0);
-  Serial.println(result);  // restituirà 0 se la compilazione è andata a buon fine
+  if (regcomp(&regex, "\\b\\d{5}\\b", REG_EXTENDED) == 0) { // Cerca 5 numeri consecutivi
+    Serial.println("Espressione regolare compilata correttamente.");
+  } else {
+    Serial.println("Errore nella compilazione dell'espressione regolare.");
+  }
+  risultato = regexec(&regex, stringaTest, 0, NULL, 0);
+  if (!risultato) {
+    Serial.println("Corrispondenza trovata!");
+  } else if (risultato == REG_NOMATCH) {
+    Serial.println("Nessuna corrispondenza trovata.");
+  } else {
+    Serial.println("Errore nell'esecuzione dell'espressione regolare.");
+  }
+  regfree(&regex);
 }
 
 void loop() {
-  // Cosa inserire qui dipende dalla tua applicazione
+  // Esempio non richiede loop.
 }
 ```
 
-L'output sarà `0`, che indica che l'espressione regolare è stata compilata correttamente.
+Output:
+```
+Espressione regolare compilata correttamente.
+Corrispondenza trovata!
+```
 
 ## Approfondimento
 
-Storicamente, le espressioni regolari derivano dalla teoria delle espressioni regolari in teoria degli automi. Questa tecnica di ricerca e sostituzione di stringhe è stata implementata per la prima volta nel linguaggio di programmazione Perl, ed è ora disponibile in molte lingue, compreso l'Arduino.
+Le espressioni regolari esistono fin dagli anni '50. In Arduino, la libreria `<regex.h>` è spesso meno potente rispetto a linguaggi come Python o JavaScript. Come alternativa, le funzioni `String` native possono essere usate per operazioni più semplici su stringhe. Per i microcontroller, l'implementazione di espressioni regolari deve essere leggera a causa delle limitate risorse hardware.
 
-Ci sono alternative alle espressioni regolari, naturalmente. Metodi tradizionali come `strstr()`, `strcmp()`, e `sprintf()` possono essere usati, ma potrebbero richiedere più codice e potrebbero non essere così efficienti.
+## Altre Risorse
 
-Le espressioni regolari in Arduino sono implementate attraverso l'uso di una libreria, che offre molte funzioni tra cui `regcomp()`, `regexec()`, `regerror()`, e `regfree()`.
-
-## Vedi anche
-
-Per ulteriori informazioni e esempi, consulta le seguenti risorse:
-
-- [Guida alle espressioni regolari di Arduino](https://www.arduino.cc/en/Reference/HomePage)
-- [Tutorial dettagliato sulle espressioni regolari](https://www.regular-expressions.info/tutorial.html)
+- [Arduino Reference: String](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [RegexOne: Imparare le Espressioni Regolari](https://regexone.com)
+- [Stack Overflow: RegEx Matching in Arduino](https://stackoverflow.com/questions/tagged/regex+arduino)

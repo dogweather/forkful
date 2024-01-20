@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,40 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
+## What & Why?
+RegExpit eli säännölliset lausekkeet etsivät kaavoja tekstistä. Käytämme niitä tekstidatan siivoamiseen, analysointiin ja validointiin – tehostavat ja automatisoivat monia tehtäviä.
 
-Säännölliset lausekkeet ovat kaavoja, joita käytetään merkkijonojen etsimiseen ja korvaamiseen. Ohjelmoijat käyttävät niitä, koska ne säästävät aikaa ja tekevät koodista selkeää.
-
-## Näin tehdään:
-
-Käytä `Text.Regex.Posix`-moduulia merkkijonojen käsittelemiseen. Tässä on esimerkki säännöllisen lausekkeen käytöstä.
+## How to:
+Haskellissa säännöllisiä lausekkeita käytetään regex-pakettien kautta. Esimerkiksi, `regex-tdfa` on hyvä ja yleinen valinta.
 
 ```Haskell
-import Text.Regex.Posix
+import Text.Regex.TDFA ((=~))
 
-lahtoteksti = "Hello, Haskell!"
+-- Tarkistetaan, sisältääkö teksti sähköpostiosoitteen
+hasEmail :: String -> Bool
+hasEmail text = text =~ "[a-zA-Z0-9.-_]+@[a-zA-Z0-9.-_]+\\.[a-zA-Z]{2,}"
 
-lahtoteksti =~ "Haskell" :: Bool
+main :: IO ()
+main = do
+  print $ hasEmail "test@example.com" -- True
+  print $ hasEmail "ei sähköpostia"   -- False
 ```
 
-Jos "Haskell" löytyy `lahtotekstistä`, tuloksena on `True`.
+## Deep Dive
+RegExpit ovat olleet ohjelmoinnin työkalupakissa jo 1950-luvulta. Alternatiiveja ovat esimerkiksi merkkijonokirjastot ja parserigeneraattorit. Haskellin RegExp-implementaatio nojaa automaatteihin ja ohjelmointikielen laiskaan evaluointiin, mahdollistaen tehokkaiden ja monimutkaisten kuvioiden käsittelyn.
 
-## Syvällisemmin:
-
-### Historia:
-
-Säännölliset lausekkeet tulivat tunnetuiksi ed-vi-tekstieditorin myötä 1970-luvulla. Haskell-ohjelmointikielessä niiden käyttöön otettiin `Text.Regex`-kirjasto.
-
-### Vaihtoehdot:
-
-`Text.Regex.Posix` on suosittu, mutta tilanteesta riippuen voit käyttää `Text.Regex.PCRE` tai `Text.Regex.TDFA` -kirjastoja.
-
-### Toteutus:
-
-Haskellissa säännölliset lausekkeet käsitellään monadisen tyylin mukaisesti, joka takaa laskennan laiskuuden ja parantaa suorituskykyä.
-
-## Tutustu myös:
-
-[Learn You a Haskell for Great Good](http://learnyouahaskell.com/) on hyvä resurssi Haskelliin ja sen ominaisuuksiin.
-
-[Haskell Text.Regex.Posix documentation](https://hackage.haskell.org/package/regex-posix-0.96.0.0/docs/Text-Regex-Posix.html) sisältää kaiken tiedon mitä tarvitset `Text.Regex.Posix`-kirjaston käyttöön.
+## See Also
+- `regex-tdfa` paketin dokumentaatio: https://hackage.haskell.org/package/regex-tdfa
+- Real World Haskell, luku 8 (säännölliset lausekkeet): http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html
+- Haskell Wiki: https://wiki.haskell.org/Regular_expressions

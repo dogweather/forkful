@@ -1,6 +1,6 @@
 ---
 title:                "正規表現の使用"
-html_title:           "PHP: 正規表現の使用"
+html_title:           "C: 正規表現の使用"
 simple_title:         "正規表現の使用"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,46 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## なに & なぜ?
+## What & Why? (なにとなぜ？)
+正規表現は、文字列内でパターンを探す手段だ。プログラマーはコードをスリムにし、テキストデータを効率的に解析、変換するために使う。
 
-正規表現を使うことは、テキストパターンを検索および置換する手段です。プログラマーは、データの整形やバリデーション、または文字列の処理において、この機能を使用します。
+## How to: (方法)
+```PHP
+<?php
+$subject = "今日は2023年3月15日です。";
+$pattern = '/\d{4}年\d{1,2}月\d{1,2}日/';
 
-## 使い方:
-
-```php
-// 文字列中のメールアドレスの検索
-$string = "Contact us at info@example.com";
-$pattern = '/[\w.%+-]+@[\w.-]+\.[A-Za-z]{2,3}/';
-preg_match($pattern, $string, $matches);
-echo $matches[0]; // 出力: info@example.com
-```
-
-```php
-// 正規表現を使った置換
-$text = "Hello, my name is John.";
-$pattern = '/John/';
-$replacement = "Jane";
-echo preg_replace($pattern, $replacement, $text); // 出力: Hello, my name is Jane.
-```
-
-```php
-// パスワードのバリデーション
-$password = "abc123$";
-$pattern = '/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[$@$!%*?&])[A-Za-z0-9$@$!%*?&]{8,}$/';
-if (preg_match($pattern, $password)) {
-  echo "Valid Password";
+// マッチする文字列を探す
+if (preg_match($pattern, $subject, $matches)) {
+    echo "見つかった日付: " . $matches[0]; // 出力: 見つかった日付: 2023年3月15日
 } else {
-  echo "Invalid Password";
+    echo "日付は見つかりませんでした。";
 }
+
+// 文字列置換
+$replacement = '[日付]';
+$newString = preg_replace($pattern, $replacement, $subject);
+echo "\n置換後の文字列: " . $newString; // 出力: 置換後の文字列: 今日は[日付]です。
+?>
 ```
 
-## 深堀り:
+## Deep Dive (深み)
+正規表現は、1960年代に発展した。実用性の高いパターンマッチングツールとして拡大し、今や多くのプログラミング言語で標準機能となっている。PHPでは`preg`関数ファミリー（PCRE - Perl Compatible Regular Expressions を使用）を用いる。`preg_match`はマッチするかテストする時、`preg_replace`は置換に。`strstr`や`strpos`といった単純な文字検索関数もあるけど、パターンマッチングの柔軟性には劣る。
 
-- 正規表現は、アメリカのコンピューターサイエンスで生まれましたが、現在では世界中のプログラミング言語で使用されています。
-- PHPでは、preg_レギュラーエクスプレッション関数を使うことで正規表現を処理できますが、別の方法として、Perl互換正規表現(PCRE)を使う方法もあります。
-- 正規表現は、パフォーマンスが重要なアプリケーションでは避けるべきです。処理するテキストが長くなると、正規表現は大変負荷がかかります。
-
-## 関連リソース:
-
-- [PHPで正規表現を使う方法](https://www.php.net/manual/en/book.pcre.php)
-- [PHP正規表現チュートリアル](https://www.tutorialspoint.com/php/php_regular_expression.htm)
+## See Also (関連情報)
+- [PHP: preg_match - Manual](https://www.php.net/manual/function.preg-match.php)
+- [PHP: preg_replace - Manual](https://www.php.net/manual/function.preg-replace.php)
+- [PHP Regular Expressions (PHP: PCRE) - Manual](https://www.php.net/manual/book.pcre.php)

@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "PHP: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,20 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Säännöllisten lausekkeiden käyttäminen on tapa tarkistaa ja muokata tekstiä tietyllä kaavalla. Ohjelmoijat tekevät niin helpottamaan tiettyjen kuvioitten ja sääntöjen tunnistamista ja muokkaamista suurista tekstimääristä.
+## What & Why? - "Mitä & Miksi?"
+Käytämme säännöllisiä lausekkeita (regex) tekstiä käsitellessä, kun etsitään, tarkastetaan tai muokataan merkkijonoja. Ne säästävät aikaa ja tekevät monimutkaisista tehtävistä yksinkertaisia.
 
-## Miten:
+## How to: - "Kuinka:"
 ```PHP
-$string = "Tämä on esimerkkiteksti!";
-$result = preg_match("/[a-zA-Z]+/", $string);
-echo $result; // outputs "1"
+<?php
+// Etsitään puhelinnumeroa
+$teksti = "Hei, soita minulle numeroon +358 40 1234567.";
+$pattern = "/\+358 \d{2} \d{7}/";
+
+if (preg_match($pattern, $teksti, $matches)) {
+    echo "Puhelinnumero löydetty: " . $matches[0];
+} else {
+    echo "Numeroa ei löytynyt.";
+}
+// Näyttää: Puhelinnumero löydetty: +358 40 1234567
+
+// Korvataan sähköpostiosoitteet
+$korvattavaTeksti = "Ota yhteyttä meihin: esimerkki@osoite.com.";
+$korvattuTeksti = preg_replace("/\b[\w\.-]+@[\w\.-]+\.\w{2,}\b/", "[sähköposti]", $korvattavaTeksti);
+echo $korvattuTeksti;
+// Näyttää: Ota yhteyttä meihin: [sähköposti].
+?>
 ```
 
-Säännöllisissä lausekkeissa käyttämämme ```preg_match``` -funktio tarkistaa, täsmääkö annettu teksti haluamaamme kaavaan. Tässä esimerkissä on tarkistettu, sisältääkö merkkijono vähintään yhden aakkosen. Olemme käyttäneet ```[a-zA-Z]+``` kaavaa, joka tarkoittaa "yhtä tai useampaa pienaakkosta tai isoaakkosta". Funktio palauttaa arvon "1" jos lauseke löytyy tekstistä ja "0" jos ei.
+## Deep Dive - "Syväsukellus":
+Regexien käyttö alkoi 1950-luvulla. Nykyisin ne ovat osa monia ohjelmointikieliä, PHP mukaan lukien `preg_*` funktioiden kautta. Vaihtoehtoisesti `strpos()` funktiota voidaan käyttää yksinkertaiseen etsintään, mutta se ei tarjoa regexien joustavuutta. Regexien toteutus PHP:ssa perustuu PCRE (Perl Compatible Regular Expressions) -kirjastoon, mikä takaa tehokkuuden ja monipuolisuuden.
 
-## Syventävä tarkastelu:
-Säännölliset lausekkeet ovat olleet käytössä jo vuosikymmeniä ja niitä käytetään monissa ohjelmointikielissä, myös PHP:ssa. Niitä käytetään esimerkiksi validointiin, tekstien muokkaamiseen ja tietojen hakuun. Toisinaan säännöllisiä lausekkeita voidaan korvata muilla menetelmillä, kuten PHP:n sisäänrakennetulla ```strpos``` -funktiolla, joka etsii merkkijonosta halutun tekstinpätkän. Säännölliset lausekkeet vaativat harjoittelua ja niiden käyttö on yleensä helpompaa, kun ymmärrät niiden toimintaperiaatteen.
-
-## Katso myös:
-- [W3Schools: PHP Regular Expressions](https://www.w3schools.com/php/php_regex.asp)
+## See Also - "Katso Myös":
+- PHP Manual - Regular Expressions (Perl-Compatible): https://www.php.net/manual/en/book.pcre.php
+- Regex101 - Interaktiivinen työkalu regexien testaamiseen ja opetteluun: https://regex101.com/
+- Regexone - Interaktiivisia harjoituksia regexien oppimiseen: https://regexone.com/

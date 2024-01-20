@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Python: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,41 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué & Por qué?
+## Qué y Por Qué?
 
-El uso de expresiones regulares es una herramienta muy útil para los programadores de Python. Estas expresiones nos permiten buscar y manipular cadenas de texto de manera eficiente y precisa. Los programadores utilizan expresiones regulares para realizar tareas como validar entradas de usuarios, buscar información en archivos de texto y filtrar datos.
+Las expresiones regulares (regex) son patrones usados para encontrar coincidencias y manipular cadenas de texto. Programadores las usan por su poder y flexibilidad para buscar y reemplazar texto de forma precisa y eficiente.
 
-# Cómo:
+## Cómo hacerlo:
 
-Para utilizar expresiones regulares en Python, primero debemos importar el módulo "re". A continuación, podemos utilizar diferentes métodos como "search", "match" y "findall" para buscar patrones en una cadena de texto. Veamos un ejemplo:
+Aquí tienes ejemplos prácticos:
 
 ```Python
 import re
 
-texto = "¡Hola! Mi nombre es Juan y tengo 25 años."
+# Encontrar todas las coincidencias de 'python'
+texto = "Python 3.8 es impresionante. python hace la programación divertida."
+coincidencias = re.findall('python', texto, re.IGNORECASE)
+print(coincidencias)  # ['Python', 'python']
 
-# Buscamos la palabra "Juan" en el texto:
-resultado = re.search("Juan", texto)
-print(resultado.group())
-# Output: Juan
+# Reemplazar 'python' por 'Java'
+texto_reemplazado = re.sub('python', 'Java', texto, flags=re.IGNORECASE)
+print(texto_reemplazado)  # Java 3.8 es impresionante. Java hace la programación divertida.
 
-# Podemos utilizar expresiones regulares para buscar patrones más específicos:
-resultado = re.search("[0-9]+", texto)
-print(resultado.group())
-# Output: 25
-
-# También podemos utilizar expresiones regulares para reemplazar cadenas de texto:
-nuevo_texto = re.sub("Juan", "Maria", texto)
-print(nuevo_texto)
-# Output: ¡Hola! Mi nombre es Maria y tengo 25 años.
+# Validar formato de correo electrónico
+correo = "usuario@example.com"
+es_valido = re.fullmatch(r"[^@]+@[^@]+\.[^@]+", correo)
+print(es_valido)  # <re.Match object; span=(0, 19), match='usuario@example.com'>
 ```
 
-# Profundizando:
+## Profundización
 
-Las expresiones regulares se basan en una sintaxis específica que permite buscar patrones en cadenas de texto. Esta técnica es muy útil en muchos lenguajes de programación y tiene una larga historia, habiendo sido desarrollada por el matemático Stephen Kleene en la década de 1950.
+Las expresiones regulares surgieron en los años 50 y tienen sus raíces en la teoría de autómatas y lenguajes formales. Alternativas a regex incluyen trabajar con métodos de cadenas en Python, como `.find()` y `.replace()`, o utilizar bibliotecas de parsing especializadas según el contexto, como `BeautifulSoup` para HTML. En cuanto a implementación, Python utiliza la librería `re`, que ofrece una interfaz para trabajar con expresiones regulares aprovechando el motor de regex de Perl.
 
-Aunque las expresiones regulares son muy poderosas, también pueden ser difíciles de entender y utilizar correctamente. Algunos programadores prefieren utilizar métodos más simples y menos enrevesados para manipular cadenas de texto, como el método "find" o el uso de slices.
+## Ver También
 
-# Ver también:
+Para profundizar en expresiones regulares y su uso en Python, estos enlaces son útiles:
 
-Si quieres aprender más sobre cómo utilizar expresiones regulares en Python, puedes consultar la documentación oficial en: https://docs.python.org/es/3/howto/regex.html También puede ser útil utilizar algún sitio web o aplicación que te permita testear tus expresiones regulares antes de incorporarlas en tu código, como Regex101: https://regex101.com/
+- Documentación oficial: https://docs.python.org/3/library/re.html
+- Tutorial de regex en Python: https://realpython.com/regex-python/
+- Expresiones regulares para principiantes: https://www.regular-expressions.info/

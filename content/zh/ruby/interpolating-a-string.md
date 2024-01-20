@@ -37,6 +37,3 @@ puts "一天有 #{hours * 60 * 60} 秒"
 1. 历史背景：Ruby从早期版本开始，就支持了字符串插值，使得构造字符串变得更加灵活和便捷。
 2. 替代方案：除了插值方法，还可以使用串联或者`format/sprintf`方法来拼接字符串，但这些方法相对复杂，不如使用字符串插值直接简洁。
 3. 实现细节：在Ruby中，字符串插值是通过`Kernel#sprintf`原生方法实现的，这也是为什么你在字符串插值中可以使用格式说明符，如`%s`，`%d`，等等。
-
-## 还可以看看：
-1. Ruby官方文档的字符串插值说明：[https://ruby-doc.org/core/String.html#method-i-25](https://ruby-doc.org/core/String.html#method-i-25)

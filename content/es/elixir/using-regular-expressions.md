@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "Go: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## ¿Qué y Por Qué?
+Las expresiones regulares son patrones usados para encontrar coincidencias y manipular texto. Los programadores las usan por su potencia y flexibilidad para validar, buscar y editar cadenas de caracteres de manera eficiente.
 
-Las expresiones regulares son pautas que permiten a los programadores hacer coincidir, buscar y manejar texto. Los programadores las utilizan para validar entradas, buscar y reemplazar texto, y dividir cadenas.
-
-## Cómo hacer:
-
-Usando el módulo Regex en Elixir, puedes compilar, ejecutar e incluso reemplazar coincidencias de expresiones regulares en cadenas de texto. Aquí te enseñaremos cómo.
-
+## Cómo hacerlo:
 ```elixir
-#Compilando una expresión regular usando Regex.compile.
-{:ok, regex} = Regex.compile("~r{[a-z]}")
-#=> {:ok, ~r/[a-z]/}
+# Definir una expresión regular
+regex = ~r/elixir/
 
-#Encontrando una coincidencia con Regex.match?
-Regex.match?(regex, "elixir")
-#=> true
+# Encontrar una coincidencia en una cadena
+"Me encanta programar en Elixir". =~ regex
+# Resultado: true
 
-#Reemplazando texto con Regex.replace
-Regex.replace(~r{a}, "Elixir", "x")
-#=> "Elixir"
+# Extraer todas las coincidencias
+Regex.scan(~r/\d/, "Año 2023: el futuro del Elixir")
+# Resultado: [["2"], ["0"], ["2"], ["3"]]
+
+# Reemplazar texto que coincida
+Regex.replace(~r/\s/, "espacio por guión", "-")
+# Resultado: "espacio-por-guión"
 ```
-## Inmersión Profunda:
 
-Las expresiones regulares tienen una larga historia que se remonta a los años 50 del siglo pasado, fueron popularizadas en los años 70 y hasta hoy día son una parte indispensable de la programación. En Elixir, los regex se importan del módulo Erlang llamado 're'.
-
-Alternativas a `Regex` en Elixir son `String.contains?`, `String.match?` y `String.split`. Sin embargo, estas son menos eficientes para patrones de coincidencia complejos.
-
-En cuanto a los detalles de implementación, Elixir se basa en la biblioteca de PCRE (Perl Compatible Regular Expressions) para hacer coincidir las expresiones regulares, lo que significa que es bastante rápido y puede trabajar con multitud de patrones de búsqueda.
+## En Profundidad:
+Históricamente, las expresiones regulares vienen de la teoría de autómatas y lenguajes formales. En Elixir, las regex se implementan mediante la biblioteca `:re`, que es una API de Erlang para el motor de expresiones regulares PCRE (Perl Compatible Regular Expressions). Como alternativas a las regex, a veces se pueden usar funciones del módulo `String` para tareas simples, aunque con menos potencia.
 
 ## Ver También:
-
-Para obtener más información, consulta la documentación oficial de Elixir:
-
-- [`Regex` module documentation](https://hexdocs.pm/elixir/Regex.html)
-- [Elixir Guides on `Strings and Binaries`](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-- [Erlang's `re` module documentation](http://erlang.org/doc/man/re.html)
+- [Documentación de `Regex` en Elixir](https://hexdocs.pm/elixir/Regex.html)
+- [Guía de inicio rápido de expresiones regulares](https://www.regular-expressions.info/quickstart.html)
+- [PCRE(Perl Compatible Regular Expressions)](http://www.pcre.org/)

@@ -1,7 +1,7 @@
 ---
-title:                "L'utilisation des expressions régulières."
-html_title:           "Javascript: L'utilisation des expressions régulières."
-simple_title:         "L'utilisation des expressions régulières."
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,34 +10,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Qu'est-ce que c'est et pourquoi les programmeurs utilisent-ils des expressions régulières?
-Les expressions régulières, également connues sous le nom de "RegEx", sont des motifs utilisés pour rechercher et manipuler du texte dans les programmes informatiques. Elles offrent aux programmeurs un moyen puissant et flexible de trouver et de modifier des portions de texte dans leurs codes.
+## Quoi & Pourquoi ?
+Les expressions régulières sont des séquences de caractères formant un schéma de recherche. On les utilise pour fouiller, manipuler ou valider des chaînes de texte.
 
-# Comment faire:
-Voici quelques exemples de code en Javascript montrant comment utiliser des expressions régulières :
-
+## Comment faire :
 ```Javascript
-// Rechercher un nombre dans une chaîne de caractères
-let string = "Il y a 5 pommes dans le panier.";
-let pattern = /\d/; // utiliser l'expression régulière \d pour trouver un chiffre
-let result = string.match(pattern);
-console.log(result); // affiche 5
+// Trouver tous les numéros dans une chaîne de texte
+let texte = "Il y a 12 pommes et 33 bananes";
+let regex = /\d+/g;
+console.log(texte.match(regex)); // Affiche ["12", "33"]
 
-// Remplacer un mot dans une phrase
-let sentence = "Je mange du pain au petit-déjeuner.";
-let newWord = "croissant";
-let oldWord = "pain";
-let pattern = new RegExp(oldWord, 'g'); // utiliser la méthode RegExp pour créer une expression régulière avec le mot à remplacer et l'indicateur "g" pour le trouver partout dans la phrase
-let newSentence = sentence.replace(pattern, newWord);
-console.log(newSentence); // affiche "Je mange du croissant au petit-déjeuner."
+// Valider le format d'un email
+let email = "exemple@domaine.fr";
+let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+console.log(regexEmail.test(email)); // Affiche true
 ```
 
-# Plongée en profondeur:
-Les expressions régulières sont nées dans les années 1950 avec le langage SNOBOL. Elles sont devenues populaires en informatique grâce aux langages Perl et Unix. Les autres alternatives pour la recherche de texte incluent les fonctions de chaîne de caractères en Javascript, mais les expressions régulières offrent une plus grande flexibilité et plus de fonctionnalités.
+## Exploration
+Les expressions régulières existent depuis les années 1950; leur conception est attribuée à l'informaticien Stephen Cole Kleene. Il y a des alternatives comme le parcours de chaîne de caractères manuel, mais les regex sont plus concises et puissantes. En JavaScript, elles sont implémentées via l'objet `RegExp` et peuvent être utilisées avec différentes méthodes de chaîne, telles que `.match()`, `.replace()`, `.search()`, et `.split()`.
 
-Outre la méthode `match()` utilisée dans l'exemple ci-dessus, Javascript propose également les méthodes `test()`, `replace()` et `split()` pour travailler avec des expressions régulières. Il est également possible d'utiliser des drapeaux tels que "i" pour ignorer la casse ou "g" pour trouver toutes les occurrences.
-
-# Voir aussi:
-Pour en savoir plus sur les expressions régulières en Javascript, consultez ces sources :
-- [La documentation officielle de Mozilla](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_r%C3%A9guli%C3%A8res)
-- [Regex101.com - un site pour tester et debugger des expressions régulières](https://regex101.com/)
+## Voir Aussi
+- [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) - Guide complet sur les expressions régulières en JavaScript.
+- [Regex101](https://regex101.com/) - Outil en ligne pour tester et apprendre les expressions régulières.
+- [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) - Référence W3Schools pour l'objet RegExp.

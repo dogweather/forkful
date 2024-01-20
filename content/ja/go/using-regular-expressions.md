@@ -1,7 +1,7 @@
 ---
-title:                "正規表現の利用"
-html_title:           "Go: 正規表現の利用"
-simple_title:         "正規表現の利用"
+title:                "正規表現の使用"
+html_title:           "C: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? / 何となぜ？
+正規表現は文字列を検索・置換するパターンです。速くて柔軟だから、テキスト処理やデータ検証でプログラマがよく使います。
 
-正規表現を使うとは、コンピュータ言語におけるパターンマッチングの手法です。プログラマーはこれを使うことで、文字列やテキストデータから特定のパターンを抽出したり、置換したりすることができます。
-
-## 方法：
-
-Go言語では、正規表現パターンを表す ```regexp``` パッケージを使います。下記の例では、指定した文字列に「こんにちは」という単語が含まれているかどうかをチェックして、結果を返します。
-
+## How to: / どうやって：
 ```Go
-#include <regexp>
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
 
 func main() {
-  input := "こんにちは、世界！"
-  re := regexp.MustCompile("こんにちは")
-  match := re.MatchString(input)
+	// 正規表現のパターンを定義
+	pattern := "\\bhello\\b"
+	input := "hello world, hello Go, hallo world"
 
-  if match {
-    fmt.Println("指定した文字列に「こんにちは」という単語が含まれています")
-  } else {
-    fmt.Println("指定した文字列に「こんにちは」という単語が含まれていません")
-  }
+	// 正規表現オブジェクトを作成
+	re := regexp.MustCompile(pattern)
 
+	// マッチする部分を探す
+	matches := re.FindAllString(input, -1)
+	fmt.Println(matches) // ["hello", "hello"]
+
+	// 文字列を置換
+	replaced := re.ReplaceAllString(input, "hi")
+	fmt.Println(replaced) // hi world, hi Go, hallo world
 }
 ```
 
-出力は以下のようになります。
-
+出力:
 ```
-指定した文字列に「こんにちは」という単語が含まれています
+[hello hello]
+hi world, hi Go, hallo world
 ```
 
-## 深く掘り下げる
+## Deep Dive / 詳細:
+正規表現は1960年代に発明されました。`regexp`パッケージ以外に`bytes`や`strings`パッケージも似た機能を提供しますが、パターンマッチング能力に劣る。Go言語の正規表現はRE2エンジンをベースにしていて速くて安全。
 
-正規表現は、1960年代にケン・トンプソンが開発したもので、今でも広く使われています。Go言語以外にも、PerlやPythonなどの言語でもサポートされています。
-
-正規表現では、パイプ記号(|)やワイルドカード(*)など、特殊文字を使ってパターンを指定します。また、より細かい検索や変換をするために、文字列やグループをキャプチャすることもできます。
-
-## 関連情報を参照する
-
-Go言語で正規表現を使う方法については、公式ドキュメントを参照することができます。また、レギュラーテーブルを生成するツールとして、「RegExr」や「RegexBuddy」などがあります。
+## See Also / 参照:
+- Go言語の正規表現パッケージ: https://pkg.go.dev/regexp
+- 正規表現のテストと練習: https://regex101.com/
+- RE2正規表現エンジン: https://github.com/google/re2

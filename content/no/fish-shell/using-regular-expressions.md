@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Arduino: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -12,36 +12,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## Hva & Hvorfor?
 
-Regulære uttrykk (regex) er tekstsekvenser som representerer søkemønster. Dette er nyttig for programmerere til å finne, erstatte eller manipulere tekst etter spesifikke mønstre. 
+Regulære uttrykk er en teknikk for å søke og erstatte tekst ved å bruke et mønster. Programmerere bruker dem fordi de er kraftig og fleksibel for teksthåndtering.
 
 ## Hvordan:
 
-Fish Shell tilbyr flere måter å bruke regulære uttrykk på. Her er et eksempel:
-
 ```Fish Shell
-echo 'Hello World' | string match -r 'World'
+# Eksempel: Finne alle filer med 'log' i navnet
+ls | grep 'log'
+
+# Utfall:
+error_log
+access_log
+
+# Eksempel: Erstatte 'foo' med 'bar' på tvers av flere filer
+sed -i 's/foo/bar/g' *.txt
 ```
-Output:
-```Fish Shell
-World
-```
-Bovenstående kode vil utskrive "World" fordi "World" samsvarer med mønsteret gitt til `match` kommandoen.
 
-## Dyp Dykk:
+## Dypdykk
 
-### Historisk Kontekst:
-Regulære uttrykk ble opprinnelig designet for å beskrive regulære språk i formell språkteori. Siden har det blitt et viktig verktøy i mange programmeringsspråk.
+Regulære uttrykk har eksistert siden 1950-årene, utviklet fra automatteorien. Alternativer inkluderer strengmatching og innebygde funksjoner i programmeringsspråk, men regulære uttrykk tilbyr mer kompleksitetskontroll. For implementasjon i Fish Shell, `grep` og `sed` er vanlige verktøy som benytter PCRE (Perl Compatible Regular Expressions).
 
-### Alternativer:
-Det er flere alternativer til regulære uttrykk som for eksempel strengmanipulasjonsfunksjoner (`string split`, `string match`, etc.) i Fish Shell. Men regex gir mer fleksibilitet og kraft ved utføring av komplekse tekstoperasjoner.
+## Se Også
 
-### Implementeringsdetaljer:
-Fish Shell bruker intern en regex-motor for å utføre tekstmatchingsoppgaver. Den støtter de fleste POSIX regex-funksjoner og tilbyr en rik syntaks for å manipulere tekst.
-
-## Se Også:
-
-For mer informasjon om bruk av regulære uttrykk i Fish Shell, besøk følgende ressurser:
-
-- Fish Shell dokumentasjon: [Regular Expressions in Fish Shell](https://fishshell.com/docs/current/index.html)
-- Regex Tutorial: [Learn-regex](https://github.com/ziishaned/learn-regex)
-- Online regex tester og debugger: [Regex101](https://regex101.com/)
+- Official Fish documentation: https://fishshell.com/docs/current/index.html
+- Grep manual page: https://man7.org/linux/man-pages/man1/grep.1.html
+- Sed manual page: https://man7.org/linux/man-pages/man1/sed.1.html
+- Regular expressions in-depth tutorial: https://www.regular-expressions.info/tutorial.html

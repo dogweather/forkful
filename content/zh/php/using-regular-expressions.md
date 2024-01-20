@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "PHP: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "PHP"
 category:             "PHP"
@@ -10,34 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是正则表达式，为什么程序员要用它？
+## 什么 & 为什么?
+正则表达式是模式匹配的工具，可以处理字符串的搜索和替换。程序员常用它处理文本数据，快速有效地执行复杂的匹配和数据提取。
 
-正则表达式是一种强大的文本匹配工具，它可以帮助程序员快速有效地搜索和处理文本数据。程序员使用正则表达式来执行各种任务，比如验证输入数据、提取信息和替换文本。
+## 如何操作:
+```PHP
+<?php
+// 示例：匹配邮箱
+$emailPattern = "/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/";
+$email = "example@mail.com";
+if (preg_match($emailPattern, $email)) {
+    echo "有效的邮箱地址";
+} else {
+    echo "无效的邮箱地址";
+}
+// 输出：有效的邮箱地址
 
-如何使用：
-
-使用PHP内置的preg_match（）函数可以进行正则表达式匹配。在括号中，第一个参数是需要匹配的正则表达式模式，第二个参数是要搜索的文本，第三个参数是一个变量，用于存储匹配的结果。
-
+// 示例：替换字符串中的空格为下划线
+$text = "Hello World!";
+$replacedText = preg_replace("/\s+/", "_", $text);
+echo $replacedText;
+// 输出：Hello_World!
 ```
-$pattern = '/hello/';
-$text = 'Hello world';
-preg_match($pattern, $text, $matches);
 
-print_r($matches);
-// output: Array ( [0] => Hello )
-```
+## 深度解析:
+正则表达式起源于20世纪50年代的理论计算机科学。它们是由数学家Stephen Kleene发明的，作为对字符集合进行操作的一种方式。尽管如今还有其他字符串处理方法，如字符串函数或解析库，但正则表达式因其强大灵活而独占鳌头。在PHP中，通过preg_*系列函数实现了PCRE（Perl Compatible Regular Expressions）标准，提供了丰富的正则表达功能。
 
-深入了解：
-
-正则表达式最早是由贝尔实验室的计算机科学家Ken Thompson和Rob Pike发明的。它们被用于早期的UNIX操作系统中，用来搜索和替换文本。
-
-除了PHP，其他编程语言也支持正则表达式，如Perl、Python和Java。每种语言都有不同的语法和特性，但原理都是相同的。
-
-在实现正则表达式时，通常会使用有限状态自动机（Finite-state Machine）来处理原始文本和正则表达式。这样可以实现高效的匹配算法，因此正则表达式可以处理大量的文本数据。
-
-相关资源：
-
-- PHP官方文档：https://www.php.net/manual/en/function.preg-match.php
-- Perl官方文档：https://perldoc.perl.org/perlre.html
-- Python官方文档：https://docs.python.org/3/library/re.html
-- Java官方文档：https://docs.oracle.com/javase/tutorial/essential/regex/
+## 参考链接:
+- [PHP官方文档：PCRE函数](https://www.php.net/manual/zh/book.pcre.php)
+- [正则表达式基础教程](https://www.regular-expressions.info/tutorial.html)
+- [在线正则表达式测试器](https://regex101.com/)

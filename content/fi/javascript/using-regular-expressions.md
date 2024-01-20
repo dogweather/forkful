@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Javascript: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Säännöllisten lausekkeiden käyttäminen on olennainen osa nykyaikaista ohjelmointia. Se on menetelmä, joka mahdollistaa tekstin käsittelyn ja löytämisen tietyn säännön mukaan. Näin ollen säännöllisten lausekkeiden avulla voidaan helposti etsiä ja korvata tiettyjä merkkijonoja tai suorittaa monimutkaisia tiedonhakutehtäviä. Ohjelmoijat käyttävät säännöllisiä lausekkeita tehdäkseen koodistaan tehokkaampaa ja luotettavampaa.
+## What & Why?
+Regulaarilausekkeet (regex) ovat kaavoja tekstissä haun ja manipuloinnin tehostamiseen. Ne säästävät aikaa ja rivejä koodia tekstin monimutkaisten kuvioitten käsittelemisessä.
 
-## Miten?
-Käytettäessä säännöllisiä lausekkeita Javascriptissä, käytetään RegExp-olioita ja niiden metodeja. Alla on yksinkertainen esimerkki säännöllisen lausekkeen käytöstä. Tässä tapauksessa säännöllisen lausekkeen avulla tarkistetaan, löytyykö merkkijonosta tiettyjä numeroita:
-
+## How to:
 ```Javascript
-let string = "Tässä on 123 testimerkkijono";
-let regex = /\d+/; // \d+ tarkoittaa yhtä tai useampaa numeroa
-console.log(regex.test(string)); //tulostaa true, sillä merkkijonosta löytyy numeroita
+// Yksinkertainen regex esimerkki: sähköpostiosoitteen etsiminen
+const emailPattern = /\S+@\S+\.\S+/;
+const text = "Ota yhteyttä example@domain.com kautta.";
+const emailMatch = text.match(emailPattern);
+console.log(emailMatch[0]); // Tulostaa: example@domain.com
+
+// Lippujen käyttö: i lipulla unohdetaan kirjainkoon merkitys
+const caseInsensitivePattern = /hello/i;
+console.log("Hello world!".match(caseInsensitivePattern)); // Tulostaa: ['Hello']
+
+// Korvaa-toiminto: vaihda kaikki esiintymät
+const replacePattern = /vanha/g;
+console.log("Vanha auto, vanha talo".replace(replacePattern, 'uusi')); // Tulostaa: Uusi auto, uusi talo
 ```
 
-Tämä oli vain yksi yksinkertainen esimerkki säännöllisen lausekkeen käytöstä. Säännöllisiä lausekkeita voidaan myös käyttää esimerkiksi tarkistamaan, onko sähköpostiosoite oikeassa muodossa, suodattamaan tietyn muotoisia merkkijonoja tai etsimään tietoa suuresta tekstimäärästä.
+## Deep Dive
+Regulaarilausekkeet tulivat käyttöön 1950-luvun algoritmi-tutkimuksessa. Niiden vaihtoehtoja ovat merkkijonojen metodeita kuten `indexOf` ja `includes`, mutta regex on tehokkaampi monissa tilanteissa. JavaScriptin regex toteutus perustuu Perl-kielen syntaksiin ja sen RegExp-olio käsittelee lausekkeita.
 
-## Syvemmälle
-Säännöllisten lausekkeiden historia juontaa juurensa 1950-luvulle, mutta niiden käyttö yleistyi vasta 1980-luvulla. Nykyään ne ovat osa lähes jokaista ohjelmointikieltä. Jotkut ohjelmoijat eivät kuitenkaan pidä säännöllisten lausekkeiden lukemisesta ja kirjoittamisesta, joten on olemassa myös muita vaihtoehtoja, kuten kirjastot ja ohjelmistot, jotka tekevät säännöllisten lausekkeiden käytöstä helpompaa ja intuitiivisempaa. 
-
-Säännöllisten lausekkeiden käyttöliittymä Javascriptissä on suhteellisen yksinkertainen. Rakentaaksesi RegExp-olion käytät RegExp-konstruktoria, joka ottaa ensimmäisenä parametrina vastaan säännöllisen lausekkeen ja toisena parametrina mahdolliset asetukset. Sitten voit käyttää erilaisia metodeja, kuten test(), exec() ja match(), säännöllisten lausekkeiden käsittelyyn.
-
-## Lue Lisää
-- [MDN Web Docs - Säännölliset lausekkeet](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Regex101 - Säännöllisten lausekkeiden testaaja ja selityksiä](https://regex101.com/)
+## See Also
+- [Mozilla Developer Network, RegExp](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regex101: Regex-testaustyökalu](https://regex101.com/)
+- [Eloquent JavaScript, Regexp-luku](https://eloquentjavascript.net/09_regexp.html)

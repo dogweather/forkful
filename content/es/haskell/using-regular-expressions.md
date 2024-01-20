@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Haskell: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,31 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# ¿Qué y por qué?
-Usar expresiones regulares es una forma de buscar y manipular patrones de texto en un programa Haskell. Los programadores a menudo lo utilizan para validar entradas de usuario, hacer búsquedas en bases de datos y realizar transformaciones en línea de texto.
+## Qué y Por Qué?
 
-# Cómo:
-Los patrones de expresiones regulares se pueden especificar utilizando el módulo de texto "Text.Regex.Posix". Aquí hay un ejemplo de código que busca y reemplaza todas las vocales en una cadena con la letra 'x'.
+Las expresiones regulares son patrones utilizados para coincidir con combinaciones de caracteres en cadenas de texto. Los programadores las usan para buscar, editar o validar datos de manera rápida y eficiente.
 
-```Haskell
-import Text.Regex.Posix
+## Cómo hacerlo:
 
--- Cadena de entrada
-let input = "Hola mundo"
+Primero, instala el paquete `regex-posix` si aún no lo tienes:
 
--- Patrón y reemplazo
-let pattern = "[aeiou]"
-let replacement = "x"
-
--- Función de búsqueda y reemplazo
-let output = subRegex (mkRegex pattern) input replacement
-
--- Salida: Hxlx mxndx
+```shell
+cabal update
+cabal install regex-posix
 ```
 
-# Profundizando:
-Las expresiones regulares se basan en una teoría matemática desarrollada en la década de 1940 por el matemático Stephen Cole Kleene. Aunque Haskell tiene excelentes funciones integradas para manipular cadenas de texto, a veces es más eficiente y legible usar expresiones regulares. Alternativamente, también puede utilizar el paquete regex-pcre, que proporciona una mayor compatibilidad con otras implementaciones de expresiones regulares.
+Ahora, puedes usar expresiones regulares en Haskell. Aquí unos ejemplos:
 
-# Vea también:
-- [Documentación oficial de expresiones regulares en Haskell](https://hackage.haskell.org/package/regex-posix)
-- [Documentación oficial del paquete regex-pcre en Haskell](https://hackage.haskell.org/package/regex-pcre)
+```haskell
+import Text.Regex.Posix
+
+-- Verifica si un texto coincide con un patrón
+"hello world" =~ "world" :: Bool
+-- Salida: True
+
+-- Busca y extrae la primera coincidencia
+"busco un número 123" =~ "[0-9]+" :: String
+-- Salida: "123"
+
+-- Encuentra todas las coincidencias
+"los números son 123 y 456" =~ "[0-9]+" :: [String]
+-- Salida: ["123", "456"]
+```
+
+## Profundización
+
+Las expresiones regulares tienen sus raíces en la teoría de autómatas y lenguajes formales, siendo popularizadas en las décadas de 1960 y 1970 con herramientas como `grep` en UNIX. Alternativas en Haskell incluyen los paquetes `regex-pcre` y `regex-tdfa`, cada uno con diferentes capacidades y rendimiento. Internamente, las expresiones regulares pueden implementarse con algoritmos de backtrack o a través de construcción y simulación de autómatas finitos.
+
+## Ver También
+
+- [Hackage: regex-posix](https://hackage.haskell.org/package/regex-posix)
+- [Haskell Wiki: Regular Expressions](https://wiki.haskell.org/Regular_expressions)
+- [Learn You a Haskell for Great Good! - Using regex with Haskell](http://learnyouahaskell.com/input-and-output#files-and-streams)

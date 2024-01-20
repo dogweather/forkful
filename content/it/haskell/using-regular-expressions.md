@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "Haskell: Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -10,27 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Cosa e Perché?
-L'utilizzo di espressioni regolari è uno dei metodi più comuni per la manipolazione dei testi nel mondo della programmazione. Consiste nell'utilizzare uno schema di caratteri per identificare determinati pattern all'interno di una stringa. I programmatori lo utilizzano per semplificare il processo di ricerca, estrazione o sostituzione di parti specifiche all'interno di un testo.
+## What & Why?
+Le espressioni regolari (regex) permettono di cercare e manipolare testo secondo pattern definiti. Sono strumenti potenti per il matching di stringhe, utili per la validazione, la ricerca e la sostituzione di testo.
 
-# Come fare:
-Per utilizzare espressioni regolari in Haskell, è necessario importare il modulo `Text.Regex.Posix` e utilizzare la funzione `matchRegex` o `matchRegexAll`. Ad esempio, se vogliamo trovare tutte le parole che terminano con "ing" in una stringa, possiamo utilizzare il seguente codice:
+## How to:
+In Haskell, possiamo utilizzare il pacchetto `regex-posix` per gestire le regex. Prima installalo con `cabal install regex-posix`.
 
-```Haskell
+```haskell
 import Text.Regex.Posix
 
-matches = matchRegexAll (mkRegex "([a-z]+)ing") "I am coding in Haskell"
+-- Fa il match di tutte le occorrenze di "Haskell"
+example :: String -> Bool
+example input = input =~ "Haskell" :: Bool
+
+main :: IO ()
+main = do
+    let testo = "Haskell è fantastico. Tutti dovrebbero provare Haskell!"
+    print $ example testo  -- Stampa "True"
 ```
 
-Il risultato sarà una lista di tuple, ogniuna contenente la posizione iniziale e finale della parola trovata. In questo caso, `("coding", 7, 12)` e `("Haskell", 18, 26)`.
+## Deep Dive
+Le regex in Haskell si appoggiano su librerie come `regex-posix` o `regex-pcre`, derivando le loro funzionalità dai rispettivi standard POSIX e PCRE. Alternative a regex includono parsing combinators, ad esempio usando la libreria `parsec`, che offre maggiore potenza e flessibilità ma è più complessa. L'efficienza dell’implementazione delle regex in Haskell dipende dall'algoritmo di matching e dalla struttura interna utilizzata, come automi finiti e backtracking.
 
-# Approfondimento:
-Le espressioni regolari sono state introdotte per la prima volta negli anni '50 da Stephen Kleene, matematico e informatico statunitense. Oggi sono supportate da numerosi linguaggi di programmazione, tra cui Haskell, e sono utilizzate in molti settori come il web scraping, il filtraggio dei dati e la validazione dei formati di input.
-
-Un'alternativa alle espressioni regolari è l'utilizzo delle funzioni di manipolazione delle stringhe fornite dal linguaggio di programmazione stesso. Tuttavia, le espressioni regolari offrono una maggiore flessibilità e potenza di ricerca rispetto a queste funzioni.
-
-Per quanto riguarda l'implementazione, le espressioni regolari in Haskell utilizzano il Motore POSIX di espressioni regolari, che è il più usato a livello globale.
-
-# Vedi anche:
-- La documentazione ufficiale del modulo `Text.Regex.Posix` di Haskell: https://hackage.haskell.org/package/regex-compat-0.95.1/docs/Text-Regex-Posix.html
-- Un tutorial completo sull'utilizzo di espressioni regolari in Haskell: https://www.haskell.org/tutorial/patterns.html#regular-expressions
+## See Also
+Visita la [documentazione di regex-posix](https://hackage.haskell.org/package/regex-posix) per maggiori dettagli.
+L’articolo ["Regular Expressions for Lexing and Parsing"](https://wiki.haskell.org/Regular_expressions_for_lexing_and_parsing) spiega come utilizzare le regex per l'analisi sintattica in Haskell.
+Per approfondire il parsing senza regex, consulta la [documentazione di parsec](https://hackage.haskell.org/package/parsec).

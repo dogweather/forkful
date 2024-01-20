@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "Rust: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## What & Why?
+Les expressions régulières (regex), c'est filtrer du texte avec précision. On les utilise pour chercher, valider ou remplacer du texte par motifs.
 
-L'utilisation des expressions régulières est un outil essentiel pour les programmeurs. Cela leur permet de trouver et de manipuler facilement des motifs spécifiques dans des chaînes de caractères. Les expressions régulières sont particulièrement utiles pour les tâches de détection de données, de validation de saisie ou de filtrage de résultats.
+## How to:
+Rust incorpore `regex` via une crate externe. Voici comment s'en servir :
 
-## Comment faire :
-
-Voici un exemple de code en Rust pour utiliser des expressions régulières :
-
-```
+```rust
 use regex::Regex;
 
 fn main() {
-    // Définir le motif
-    let re = Regex::new(r"([a-z]+) ([0-9]+)").unwrap();
-    
-    // La chaîne de caractères à tester
-    let text = "hello 123";
-    
-    // Rechercher la correspondance
-    if let Some(captures) = re.captures(text) {
-        // Afficher les résultats
-        println!("Mot trouvé : {}", captures.get(1).unwrap().as_str());
-        println!("Nombre trouvé : {}", captures.get(2).unwrap().as_str());
+    let texte = "Le numéro de Rust est 1.58.1";
+    let regex = Regex::new(r"\d+\.\d+\.\d+").unwrap();
+
+    match regex.find(texte) {
+        Some(matched) => println!("Version trouvée : {}", matched.as_str()),
+        None => println!("Aucune version détectée."),
     }
 }
 ```
 
-Sortie :
-
+Sortie:
 ```
-Mot trouvé : hello
-Nombre trouvé : 123
+Version trouvée : 1.58.1
 ```
 
-## Plongée en profondeur :
+## Deep Dive
+Les regex en Rust sont basées sur la librairie `regex` écrite en Rust. Avant ça, on utilisait souvent des libs en C. Alternatives? `grep` en shell, ou `str` méthodes de Rust. Les regex de Rust sont rapides et évitent les problèmes de sécurité communs.
 
-Les expressions régulières ont été inventées dans les années 1950 par un mathématicien américain, Stephen Kleene, pour décrire certains motifs dans les langages formels. Les alternatives à l'utilisation des expressions régulières incluent l'utilisation de boucles et de méthodes de chaîne de caractères telles que `find` et `replace`. Les expressions régulières en Rust sont implémentées avec la bibliothèque standard `regex`, qui offre une syntaxe similaire à celle des autres langages.
-
-## Voir aussi :
-
-- [Site de référence pour tester et expérimenter des expressions régulières en temps réel](https://regex101.com/)
+## See Also
+- La documentation officielle [`regex` crate](https://docs.rs/regex)
+- [Syntaxe des expressions régulières](https://www.regular-expressions.info/)
+- Le chapitre sur les expressions régulières dans [The Rust Programming Language](https://doc.rust-lang.org/book/ch08-02-strings.html#searching-for-patterns-in-strings)

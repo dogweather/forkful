@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Python: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,42 +10,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Was & Warum?
+## What & Why?
+Reguläre Ausdrücke, kurz Regex, sind Muster, um Text nach bestimmten Regeln zu durchsuchen und zu manipulieren. Programmierer verwenden sie, weil sie mächtig und effizient für Textanalyse und -verarbeitung sind.
 
-Wenn wir in der Programmierung Daten, Zeichenfolgen oder Wörter analysieren und bearbeiten müssen, ist ein Werkzeug besonders nützlich: reguläre Ausdrücke (auch bekannt als "regex"). Dies sind spezielle Ausdrücke, die uns helfen, bestimmte Muster in Texten zu finden und zu extrahieren. Warum nutzen Programmierer also reguläre Ausdrücke? Weil es uns Zeit spart und uns ermöglicht, komplexe Aufgaben schneller zu lösen.
+## How to:
 
-## Wie geht's?
-
-Hier ist ein Beispiel, wie wir reguläre Ausdrücke in Python verwenden können:
+In Python verwenden wir das `re`-Modul, um mit Regulären Ausdrücken zu arbeiten. Hier sind ein paar Beispiele:
 
 ```Python
 import re
 
-text = "Hallo, mein Name ist Max und ich bin ein Programmierer."
-
-# Wir definieren ein reguläres Ausdrucksmuster, das nach Namen sucht.
-name_pattern = r"Mein Name ist (\w+)"
-match = re.search(name_pattern, text) # Wir suchen nach Übereinstimmungen.
-
+# Beispiel: Überprüfe, ob eine Zeichenkette eine E-Mail-Adresse enthält
+text = "schreib.mir@beispiel.de"
+match = re.search(r"\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b", text)
 if match:
-  # Wenn es eine Übereinstimmung gibt, drucken wir den Namen aus.
-  print("Mein Name ist", match.group(1))
-else:
-  print("Kein Name gefunden.")
+    print("Gefundene E-Mail-Adresse:", match.group())
+
+# Beispiel: Trenne Text an jedem Komma
+text = "Apfel, Birne, Banane, Kiwi"
+gesplittet = re.split(r",\s*", text)
+print("Aufgeteilte Wörter:", gesplittet)
+
+# Beispiel: Ersetze alle Zahlen durch das Wort "Zahl"
+text = "In diesem Jahr, 2021, wird Python 30."
+ersetzt = re.sub(r"\d+", "Zahl", text)
+print("Text mit ersetzen Zahlen:", ersetzt)
 ```
 
-Das wird als Output "Mein Name ist Max" geben. Wir können auch mit regulären Ausdrücken suchen und ersetzen, Zeichenfolgen splitten und vieles mehr.
+Erwartete Ausgabe:
 
-## Tief eintauchen
+```
+Gefundene E-Mail-Adresse: schreib.mir@beispiel.de
+Aufgeteilte Wörter: ['Apfel', 'Birne', 'Banane', 'Kiwi']
+Text mit ersetzen Zahlen: In diesem Jahr, Zahl, wird Python Zahl.
+```
 
-Reguläre Ausdrücke haben eine lange Geschichte und werden seit den 1950er Jahren in der Informatik verwendet. Obwohl sie sehr leistungsfähig sind, können sie auch komplex und schwer zu lesen sein. Eine Alternative zu regulären Ausdrücken ist die Verwendung von String-Methoden in Python, die eine einfachere Syntax haben.
+## Deep Dive
 
-Hier sind einige nützliche Ressourcen zum Lernen von regulären Ausdrücken:
+Reguläre Ausdrücke haben ihre Wurzeln in der theoretischen Informatik, speziell in der Automatentheorie und der formalen Sprache. Sie wurden in den 1950er Jahren entwickelt und sind seitdem in verschiedenen Formen in Programmiersprachen und Texteditoren integriert worden.
 
-- [Offizielle Python-Dokumentation](https://docs.python.org/3/library/re.html)
-- [Regular Expressions 101](https://www.regular-expressions.info/tutorial.html)
+Alternativen zu Regulären Ausdrücken sind Parser sowie textbasierte Such- und Ersetzungsfunktionen, die jedoch oft weniger mächtig sind.
 
-## Weitere Informationen
+Was das Arbeiten mit Regex in Python angeht, findet die Verarbeitung größtenteils im `re`-Modul statt. Dieses Modul verwendet eine Syntax, die sehr ähnlich zu anderen Programmiersprachen ist, wodurch die erlernten Muster oft portierbar sind.
 
-- [Wikipedia-Artikel zu regulären Ausdrücken](https://de.wikipedia.org/wiki/Regul%C3%A4rer_Ausdruck)
-- [Sammlung von regulären Ausdrücken](https://github.com/ziishaned/learn-regex) für verschiedene Programmiersprachen.
+## See Also
+
+Weitere Informationen und tiefergehende Tutorials findest du in der offiziellen Python-Dokumentation zum `re`-Modul: https://docs.python.org/3/library/re.html
+
+Für interaktives Üben empfehle ich Seiten wie https://regexr.com oder https://regex101.com, wo du Reguläre Ausdrücke testen und lernen kannst. 
+
+Außerdem ist das Buch "Mastering Regular Expressions" von Jeffrey Friedl eine ausgezeichnete Ressource, um tiefer in das Thema einzutauchen.

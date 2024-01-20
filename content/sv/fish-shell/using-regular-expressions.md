@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Fish Shell: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & varför?
+## Vad & Varför?
+Reguljära uttryck är mönstersökning på steroider. Programmerare använder det för att finna, ersätta och manövrera text snabbt och precist.
 
-Reguljära uttryck är en enhetlig och kraftfull metod för att söka efter mönster och matcha textsträngar. Programmörer använder dem för att snabbt och effektivt manipulera data och utföra komplexa sökningar och ersättningar.
-
-## Hur man:
-
-### Grunda dig
+## Hur gör man:
 ```
-Fish Shell har inbyggt stöd för reguljära uttryck genom kommandot "grep". Du kan använda det på följande sätt:
+# Exempel: Hitta alla filer som slutar med .txt
+ls *.txt
 
-grep <mönster> <filnamn>
-
-Till exempel:
-
-grep "hund" djur.txt
+# Byt ut "fisk" med "fågel" i samtliga filer med .md-ändelse
+sed -i 's/fisk/fågel/g' *.md
 ```
 
-### Kombinera med andra kommandon
+Output:
 ```
-Du kan också kombinera grep med andra Fish Shell kommandon för att få mer avancerad funktionalitet. Till exempel:
-
-ls | grep "txt"
-
-Det här kommandot kommer att lista alla .txt-filer i din nuvarande mapp.
+1. dokument.txt
+2. anteckningar.txt
 ```
 
 ## Djupdykning:
+Reguljära uttryck (regex) härstammar från 1950-talets automatteori. Alternativ till Fish är bash, zsh och PowerShell. Fish implementerar regex via kommandon som `string match` och externa verktyg som `grep`.
 
-### Historisk kontext
-Reguljära uttryck utvecklades ursprungligen för användning inom datavetenskap på 1950-talet. Sedan dess har de blivit en viktig del av programmering och används inom många olika programmeringsspråk och verktyg.
-
-### Alternativ
-Det finns många olika verktyg och bibliotek för reguljära uttryck, men Fish Shell's inbyggda stöd för grep är ett enkelt och effektivt sätt att komma igång med reguljära uttryck.
-
-### Implementation detaljer
-Fish Shell använder sig av standardbiblioteket för reguljära uttryck, PCRE (Perl Compatible Regular Expressions), vilket ger en flexibel och kraftfull funktionalitet.
-
-## Se också:
-- [En interaktiv handledning för reguljära uttryck](https://regexone.com/)
+## Se även:
+- Fish Shell dokumentation: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
+- Regex grunder: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)
+- Sed och Grep guider: `man sed`, `man grep`

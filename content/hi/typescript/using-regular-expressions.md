@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग"
-html_title:           "TypeScript: नियमित अभिव्यक्तियों का उपयोग"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,32 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-Regular Expressions (सामान्य अभिव्यक्तियों)दो प्रकार से समझा जा सकता है। पहले, ये स्ट्रिंग पैटर्न को खोजने और मैचिंग करने की तकनीक है। और दूसरे, ये डाटा को फॉर्मैट, वैधता या डेटा रीप्लेसमेंट करने के लिए इस्तेमाल होते हैं। कंप्यूटर प्रोग्रामिंग में, ये डेटा मैनिपुलेशन का एक आधार है जो कि अलग अलग मामलों में मिश्रित डेटा की ढूंढ़ने और फॉर्मैटिंग करने में मदद करता है।
+## What & Why? (क्या और क्यों?)
+रेग्युलर एक्सप्रेशन (Regular Expressions) पैटर्न से टेक्स्ट को ढूंढने और मैनेज करने की एक तकनीक है। प्रोग्रामर्स इसका इस्तेमाल डाटा वैलिडेशन, पार्सिंग या टेक्स्ट रिप्लेसमेन्ट के लिए करते हैं क्योंकि यह शक्तिशाली और फ्लेक्सिबल होता है।
 
-## कैसे करें?
-यहां हमें TypeScript में सामान्य अभिव्यक्तियों का लाभ उठाना सीखने के लिए कुछ उदाहरण दिए गए हैं।
+## How to: (कैसे करें:)
+```typescript
+// TypeScript में RegEx का उपयोग करके ईमेल वैलिडेशन करना:
+function validateEmail(email: string): boolean {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return regex.test(email);
+}
 
-### Match करना
-```TypeScript
-// यदि आपके पास कोई टेक्स्ट स्ट्रिंग हो, तो आप उस स्ट्रिंग की मैच ढूंढ सकते हैं।
-let string = "यह हमारी डेटा अभिव्यक्ति है।";
-let pattern = /डेटा/;
-let result = string.match(pattern);
-console.log(result); // डेटा
+// ईमेल वैलिड है या नहीं चेक करें:
+console.log(validateEmail('example@domain.com')); // true
+console.log(validateEmail('wrong-email@')); // false
 ```
 
-### Replace करना
-```TypeScript
-// आप शीर्ष  के स्थान पर उसी के विकल्प के साथ एक स्ट्रिंग वापस कर सकते हैं।
-let string = "यह हमारी डेटा अभिव्यक्ति है।";
-let pattern = /क्रमबद्ध/;
-let result = string.replace(pattern, "सामान्य");
-console.log(result); // यह हमारी सामान्य डेटा अभिव्यक्ति है।
+```typescript
+// TypeScript में RegEx का उपयोग करके स्ट्रिंग से नंबर्स निकालना:
+function extractNumbers(text: string): number[] {
+  const regex = /\d+/g;
+  const matches = text.match(regex);
+  return matches ? matches.map(Number) : [];
+}
+
+// परिणाम देखें:
+console.log(extractNumbers('abc123def45')); // [123, 45]
+console.log(extractNumbers('no numbers')); // []
 ```
 
-## गहराई चारण
-सामान्य अभिव्यक्ति का विकास 20वीं शताब्दी की शुरुआत में चुनौतीपूर्ण और साधन से भरा निकला। ये मूख्यत डेटा स्ट्रिंग पैटर्न के साथ मैचिंग के लिए शुरु हुआ था। आज, ये वैधता और डेटा फॉर्मैटिंग के लिए इस्तेमाल किया जाता है। सामान्य अभिव्यक्ति की कुछ आल्टरेनेटिव्स हैं जैसे कि एकमेल और ट्रैन्सडुक्टरी स्क्रिप्टिंग सीस्टम। निर्माण की बात करें, ये बहुत से भाषाओं में उपलब्ध हैं जैसे कि जावास्क्रिप्ट, पायथन और जावा।
+## Deep Dive (गहराई से जानकारी)
+रेग्युलर एक्सप्रेशन्स साइंटिस्ट (Scientist) स्टीफेन क्लेन (Stephen Kleene) ने 1950s में बनाए थे। यह तब से प्रोग्रामिंग, टेक्स्ट एडिटिंग और थ्योरेटिकल कंप्यूटर साइंस में एक महत्वपूर्ण उपकरण बन गया है। विकल्प के रूप में पार्सर जनरेटर्स जैसे ANTLR या लेक्सिकल एनालाइज़र होते हैं, लेकिन उनका उपयोग जटिल होता है। TypeScript में, रेग्युलर एक्सप्रेशन्स का इंप्लीमेंटेशन जावास्क्रिप्ट (JavaScript) की तरह ही है क्योंकि TypeScript जावास्क्रिप्ट में ट्रांसपाइल हो जाता है।
 
-## और भी देखें
-- [TypeScript आधिकारिक साइट](https://www.typescriptlang.org/)
+## See Also (देखें भी)
+- [MDN Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [RegExr: ऑनलाइन RegEx टेस्टर और डीबगर](https://regexr.com/)
+- [TypeScript Official Documentation](https://www.typescriptlang.org/docs/)

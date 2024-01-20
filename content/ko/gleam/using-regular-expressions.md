@@ -1,7 +1,7 @@
 ---
-title:                "정규식 사용하기"
-html_title:           "Gleam: 정규식 사용하기"
-simple_title:         "정규식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,25 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why? (무엇이며 왜?)
+정규 표현식(Regular expressions)은 문자열의 패턴을 찾기 위해 사용됩니다. 프로그래머들은 데이터 검증, 검색, 텍스트 가공 등 여러 상황에서 효과적으로 사용합니다.
 
-정규 표현식을 사용한다는 것은 간단히 말해, 문자열에서 특정한 패턴을 찾아내는 것입니다. 프로그래머들은 이를 사용하여 데이터 검증, 검색 및 변환 등 다양한 작업을 쉽고 빠르게 처리할 수 있습니다.
+## How to: (어떻게 사용할까?)
+```gleam
+import gleam/regex
 
-## 방법:
-
-```Gleam 
-import Regex
-
-Regex.match("Gleam", ~r/[A-Z][a-z]/)
-=> True
+pub fn run() {
+  let pattern = "^The"
+  let text = "The quick brown fox jumps over the lazy dog"
+  case regex.run(pattern, text) {
+    Ok(matches) -> io.println(matches)
+    Error(_error) -> io.println("No matches found")
+  }
+}
+```
+예제 출력:
+```
+["The"]
 ```
 
-위의 예제에서는 정규 표현식 패턴을 사용하여 Gleam에서 첫 글자가 대문자이고 두 번째 글자가 소문자인 경우를 찾았습니다. 이와 같은 방식으로, 여러분은 다양한 패턴을 사용하여 원하는 결과를 얻을 수 있습니다.
+## Deep Dive (심화 탐구)
+정규 표현식은 1950년대 후반에 수학자 스티븐 클리니에 의해 처음 소개되었습니다. 대안으로 문자열 함수나 파싱 라이브러리를 사용할 수 있지만, 정규 표현식은 강력하고 다목적입니다. Gleam에서는 `gleam/regex` 라이브러리를 통해 엔진을 구현하며, Erlang의 레겍스와 호환됩니다.
 
-## 심층 분석:
-
-(1) 정규 표현식은 1950년대에 등장한 마카이 파슨 (Ken Thompson)이 먼저 개발했습니다. (2) 다른 대안으로는 문자열 메소드를 사용하는 것이 있지만, 정규 표현식은 더 복잡한 패턴을 쉽게 처리할 수 있습니다. (3) Gleam에서는 *Regex* 모듈을 사용하여 정규 표현식을 쉽게 적용할 수 있습니다.
-
-## 관련 자료:
-
-- [Gleam 공식 문서](https://gleam.run/documentation/)
+## See Also (추가 정보)
+- [Regular Expressions Quick Start Guide](https://www.regular-expressions.info/quickstart.html)
+- [Stack Overflow Regular Expressions Questions](https://stackoverflow.com/questions/tagged/regex)

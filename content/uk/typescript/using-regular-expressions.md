@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "TypeScript: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,29 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
+## Що це таке та навіщо?
+Регулярні вирази - механізм пошуку та маніпуляції текстом. Програмісти використовують їх для заміни тексту, валідації вводу, пошуку і вилучення данних.
 
-Регулярні вирази (або regex) - це потужний інструмент, який використовується для пошуку, заміни та перевірки тексту за певними шаблонами. Програмісти використовують регулярні вирази для розбору інформації, очищення даних та перевірки їх на відповідність заданим умовам.
+## Як це зробити:
+```typescript
+const text: string = "Телефон Олени: 067-123-4567, робочий: 098-765-4321.";
+const regExp: RegExp = /\b(\d{3})-(\d{3})-(\d{4})\b/g;
 
-Як це робити:
+// Пошук номерів телефонів
+const matches = text.match(regExp);
+console.log(matches);
+// Вивід: ['067-123-4567', '098-765-4321']
 
-```TypeScript
-// Знайдемо у тексті слово "hello" 
-let regex = /hello/;
-let text = "Привіт, як справи?";
-console.log(regex.test(text)); // Виведе true, тому що слово "hello" міститься у тексті
-
-// Замінимо у тексті всі числа на слово "number"
-let regex = /\d+/g;
-let text = "Вчора було 20 градусів, сьогодні 15";
-console.log(text.replace(regex, "number")); // Виведе "Вчора було number градусів, сьогодні number"
+// Заміна формату номера телефона
+const formatted = text.replace(regExp, '+38 ($1) $2-$3');
+console.log(formatted);
+// Вивід: Телефон Олени: +38 (067) 123-4567, робочий: +38 (098) 765-4321.
 ```
 
-Глибоке занурення:
+## Поглиблений аналіз:
+Регулярні вирази прийшли з теорії автоматів і були популяризовані у програмуванні UNIX інструментами типу grep. Альтернативи включають роботу з текстом через вбудовані функції мови, але вони часто менш гнучкі. При роботі з TypeScript, регулярні вирази реалізовані через вбудований об'єкт RegExp, який підтримує більшість можливостей ECMAScript специфікації.
 
-Регулярні вирази мають відносно довгу історію, вони з'явилися ще у 1950-х роках і використовувалися для роботи зі строками у текстових процесорах. У сучасному світі regex використовується практично у всіх мовах програмування та інструментах. На сьогоднішній день існує багато альтернатив регулярним виразам, таких як готові бібліотеки для обробки тексту або інструменти з більш простим синтаксисом.
-
-Рекомендовані джерела:
-
-- [Документація TypeScript щодо регулярних виразів](https://www.typescriptlang.org/docs/handbook/declaration-files/do-s-and-don-ts.html#regular-expressions) - корисні приклади та пояснення синтаксису для використання регулярних виразів у TypeScript.
-- [Regex101](https://regex101.com/) - інтерактивний інструмент для перевірки та виправлення регулярних виразів. Тут також є багато корисних ресурсів та посібників для вивчення регулярних виразів.
+## Більше інформації:
+- MDN Web Docs: RegExp - [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- RegExp тести онлайн: [https://regex101.com/](https://regex101.com/)
+- TypeScript Handbook: Regular Expressions - [https://www.typescriptlang.org/docs/handbook/2/objects.html#regex-patterns](https://www.typescriptlang.org/docs/handbook/2/objects.html#regex-patterns)

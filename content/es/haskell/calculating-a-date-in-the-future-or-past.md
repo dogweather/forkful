@@ -53,4 +53,3 @@ Al calcular fechas futuras o pasadas, hay que tener en cuenta los años bisiesto
 
 1. ['Data.Time' en Hackage](http://hackage.haskell.org/package/time-1.10/docs/Data-Time.html) - Documentación oficial de la biblioteca `Data.Time`.
 2. [Calculating Dates in the Future - Stack Overflow](https://stackoverflow.com/questions/46319252/calculating-dates-in-the-future) - Discusión en Stack Overflow sobre cómo calcular fechas en el futuro.
-3. [Programming in Haskell by Graham Hutton](http://www.cs.nott.ac.uk/~pszgmh/pih.html) - Un libro de texto excelente para principiantes en Haskell que incluye una discusión sobre el uso de la biblioteca `Data.Time`.

@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Arduino: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,34 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
+Regulære uttrykk finner tekst etter mønstre. Programmerere bruker det for å søke, erstatte og validere data raskt og fleksibelt.
 
-Bruken av regulære uttrykk (Regular Expressions eller Regex) er et kraftig verktøy for strengmanipulering innen programmering. Programmerere bruker det hovedsakelig for matching, selektering og splitting av tekststrenger basert på definerte mønstre.
+## Hvordan:
+```Clojure
+;; Søker etter ordet "Clojure"
+(re-find #"\bClojure\b" "Lær mer om Clojure programmering!")
 
-## Hvordan bruke:
-
-Vi vil bruke Clojure's `re-seq` funksjon for å illustrere bruken av Regex.
-
-```Clojure 
-(def teksten "Hei På Deg, Norge123!")
-(def mønsteret "\\w+")
-
-(prn (re-seq (re-pattern mønsteret) teksten))
-
+;; Skriver ut: "Clojure"
 ```
 
-Output:
+```Clojure
+;; Splitter string på komma
+(re-seq #"[^,]+" "clojure,java,python,ruby")
+
+;; Skriver ut: ("clojure" "java" "python" "ruby")
 ```
-("Hei" "På" "Deg" "Norge123")
+
+```Clojure
+;; Sjekker om en e-post er gyldig
+(boolean (re-matches #"[^\s@]+@[^\s@]+\.[^\s@]+" "din.email@domene.no"))
+
+;; Skriver ut: true
 ```
-Mønsteret "\\w+" gir oss en sekvens av alle ordene i tekststrengen. 
 
-## Dypere Inn:
+## Dypdykk
+De første regulære uttrykkene ble brukt på 1950-tallet. Alternativer til regulære uttrykk inkluderer streng-manipulasjons-funksjoner og spesialiserte biblioteker, men de har ofte mindre makt. Clojure bruker Javas Pattern-klassen, så ytelsen er lik Java sin.
 
-Historisk sett, regulære uttrykk ble først brukt i Unix operativsystemer. Selv om bruk av regulære uttrykk kan være forvirrende for en nybegynenr, kan det være utrolig kraftig når det brukes riktig. Det er alternativer til regex, som string manipulasjon funksjoner, men disse tilbyr ikke samme nivå av fleksibilitet og kontroll. I termen av implementering, har Clojure en rekke regex funksjoner som `re-find`, `re-matches`, `re-seq`, og andre.
-
-## Se Også: 
-
-For ytterligere lesning og ressurser, se de følgende kildene:
-
-- [Clojure Regex Manual](https://clojuredocs.org/clojure.core/re-seq)
-- [Regular Expressions Intro](https://www.regular-expressions.info/tutorial.html)
+## Se Også
+- ClojureDocs (https://clojuredocs.org/)
+- Java Pattern dokumentasjon (https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+- "Mastering Clojure" av Akhil Wali (for videre lesing om Clojure)

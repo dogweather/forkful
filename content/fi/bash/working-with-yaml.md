@@ -48,6 +48,5 @@ YAML (Yet Another Markup Language) luotiin vuonna 2001 ja se on muodostunut suos
 YAML koostuu avain-arvo pareista, jotka on erotettu kaksoispisteillä ja välilyönneillä. Tiedostot päättyvät .yml-päätteellä. Bashilla, YAML-tiedostoja voi käsittellä helposti ja niitä voi käyttää tietojen tallentamiseen tai lukemiseen monissa ohjelmissa ja skripteissä.
 
 ## Katso myös
-- [YAML-tutoriali](https://rollout.io/blog/yaml-tutorial-everything-you-need-get-started/)
 - [Bash-ohjelmointi](https://www.tutorialspoint.com/unix/shell_scripting.htm)
 - [YAML-spesifikaatiot](https://yaml.org/spec/)

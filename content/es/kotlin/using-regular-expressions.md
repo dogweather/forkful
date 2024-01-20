@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Kotlin: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,21 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
-Las expresiones regulares son patrones de búsqueda que se utilizan para encontrar cadenas de texto específicas dentro de un texto más grande. Los programadores las utilizan para buscar y manipular datos de una manera más eficiente y precisa.
+## Qué son y por qué usarlos?
+Las expresiones regulares (regex) permiten buscar patrones específicos en texto. Son herramientas potentes para la validación de formatos, la extracción de información, y la manipulación de cadenas de texto.
 
-## Cómo:
-```Kotlin
-val texto = "¡Hola! Soy un texto de ejemplo."
-val regex = Regex("[A-Za-z]+")
+## Cómo hacerlo:
+```kotlin
+fun main() {
+    // Definir un patrón de regex para números de teléfono
+    val patron = "\\d{3}-\\d{3}-\\d{4}".toRegex()
 
-println(regex.find(texto)?.value) // Imprime "Hola"
-println(regex.findAll(texto).toList()) // Imprime ["Hola", "Soy", "un", "texto", "de", "ejemplo"]
-println(regex.replace(texto, "Adiós")) // Imprime "¡Adiós! Adiós un Adiós Adiós."
+    // Texto de ejemplo para la búsqueda
+    val texto = "Mi número es 123-456-7890."
+
+    // Buscar coincidencias
+    val resultado = patron.find(texto)
+
+    // Imprimir el resultado
+    resultado?.let {
+        println("Número encontrado: ${it.value}")
+    }
+}
+```
+Salida: 
+```
+Número encontrado: 123-456-7890
 ```
 
-## Profundizando:
-Las expresiones regulares tienen su origen en la teoría matemática y son una herramienta poderosa y versátil en programación. Existen alternativas como el uso de funciones de cadenas o el uso de bibliotecas externas, sin embargo, las expresiones regulares siguen siendo una opción popular debido a su eficiencia y flexibilidad. En Kotlin, se pueden utilizar a través de la clase `Regex` que permite buscar, reemplazar y manipular cadenas de texto.
+## Análisis Profundo:
+Las expresiones regulares tienen su origen en los trabajos de teoría matemática del siglo XX. En Kotlin, y en muchos otros lenguajes, se implementan utilizando clases específicas que encapsulan tanto el patrón como las operaciones de búsqueda y manipulación. Hay alternativas como métodos de cadenas (split, replace) para operaciones simples, pero regex es superior en flexibilidad y potencia.
 
-## Ver también:
-- [Documentación oficial de expresiones regulares en Kotlin](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+## Ver También:
+- [Documentación oficial de Kotlin sobre Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/index.html)
+- [Tutorial interactivo de Regex](https://regexone.com/)
+- [Herramienta online para probar expresiones regulares](https://regex101.com/)

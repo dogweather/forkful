@@ -10,52 +10,57 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Regular Expressions in C Programming
-
 ## What & Why?
-Regular expressions (regex) are sequences of characters that form search patterns. They are used in programming for matching, searching, and manipulating text strings. 
+Regular expressions (regex) search, match, and manipulate strings. Programmers use them for text validation, searching, and transformations, speeding up text processing tasks.
 
-## How to: 
-Using regex in C programming typically involves the `regex.h` library. Let's dive right in and write a simple program that checks if the user's input is a valid email:
+## How to:
+C doesn't have built-in regex support, but you can use libraries like `regex.h`. Here's a simple pattern match.
 
-```C
+```c
 #include <stdio.h>
 #include <regex.h>
 
 int main() {
     regex_t regex;
-    int return_value;
-    char email[100];
+    int result;
+    char *pattern = "^hello";
+    char *text = "hello world";
 
-    return_value = regcomp(&regex, "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$", 0);
+    // Compile regex
+    result = regcomp(&regex, pattern, REG_EXTENDED);
+
+    if (result) {
+        printf("Regex compilation failed.\n");
+        return 1;
+    }
+
+    // Execute regex
+    result = regexec(&regex, text, 0, NULL, 0);
     
-    printf("Enter your email: ");
-    fgets(email, 100, stdin);
+    // Check for match
+    if (!result) {
+        printf("Match found.\n");
+    } else if (result == REG_NOMATCH) {
+        printf("No match.\n");
+    } else {
+        printf("Regex execution failed.\n");
+    }
 
-    return_value = regexec(&regex, email, 0, NULL, 0);
-    
-    if(!return_value)
-        printf("Valid Email.\n");
-    else if(return_value == REG_NOMATCH)
-        printf("Invalid Email.\n");
-    else
-        printf("An error occurred.\n");
-
+    // Free up regex
     regfree(&regex);
 
     return 0;
 }
 ```
-This code compiles the regex for a valid email and uses `regexec()` to match it against the user's input.
+Sample Output:
+```
+Match found.
+```
 
 ## Deep Dive
-Regular expressions have been around since the early 1960s, and have become an integral part of text parsing and manipulation in almost all high-level programming languages. 
-
-In C programming, one could argue there are simpler methods for some specific tasks. However, regex provides powerful versatility unmatched by methods such as `strstr()` or `strpbrk()`. 
-
-In terms of implementation details, note that `regcomp()` compiles a regular expression into a form that `regexec()` can use, and `regfree()` frees up any memory that `regcomp()` allocated.
+Regular expressions have been in use since the 1950s, proliferating with Unix's `ed` and `grep`. Alternatives in C include string function libraries and custom parsers, but regex is more versatile. Under the hood, `regex.h` implements regex functionality, usually through NFA (Non-deterministic Finite Automaton) or DFA (Deterministic Finite Automaton) engines.
 
 ## See Also
-For more advanced usage of regular expressions in C programming, refer to the following links: 
-- GNU C Library: [Regular Expression Library](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- Comparison of Regular Expression Engines: [Wikipedia](https://en.wikipedia.org/wiki/Comparison_of_regular_expression_engines)
+- POSIX standard: https://pubs.opengroup.org/onlinepubs/9699919799/
+- Regular Expressions (regex) tutorial: https://www.regular-expressions.info/
+- POSIX regex in C: http://man7.org/linux/man-pages/man3/regcomp.3.html

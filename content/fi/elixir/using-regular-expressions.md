@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,46 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Säännölliset lausekkeet ovat mallipohjaisia hakuja tekstissä. Niitä käytetään monimutkaisten merkkijonohakujen ja -korvausten toteuttamiseen nopeasti ja tehokkaasti.
 
-Regular expressions, tai säännölliset lausekkeet, ovat sarja merkkejä, joita käytetään kuvaamaan ja löytämään tekstipattereita. Ohjelmoijat käyttävät niitä näiden kaavojen nopeaan ja tehokkaaseen tunnistamiseen ja käsittelyyn.
-
-## Näin se tapahtuu:
-
-Elixirissa säännöllisten lausekkeiden käyttämisessä on muutama askel. Ensinnäkin, meidän on luotava säännöllinen lauseke käyttämällä Erlangin `:re` moduulia:
-
-```
-regex = ~r/[A-Z]/
-```
-
-Sitten voimme käyttää `Regex.run/2` -toimintoa etsimään ensimmäisen ottelun:
+## How to:
+Elixirisssa säännöllisiä lausekkeita käytetään `Regex`-moduulin avulla:
 
 ```elixir
-iex> Regex.run(regex, "Hello")
-["H"]
+# Haku mallilla
+regex = ~r/hello/
+"hello world" |> Regex.match?(regex)
+# Output: true
+
+# Korvaus
+"hello world" |> Regex.replace(~r/o/, "a")
+# Output: "hella world"
+
+# Kaikki osumat listana
+"hello world, hello universe" |> Regex.scan(~r/hello/)
+# Output: [["hello"], ["hello"]]
 ```
 
-Tai `Regex.scan/2` toimintoa löytämään kaikki tekstipatterit:
+## Deep Dive
+Säännölliset lausekkeet juontavat juurensa 1950-luvun lopun automaattiteoriaan. Elixir käyttää BEAM-koneen (Erlang virtuaalikone) tarjoamaa toteutusta, mikä on yhteneväinen Perl-tyylisiin ilmaisuihin. Vaihtoehtoina ovat esimerkiksi merkkijonojen sisäänrakennetut funktiot ja String-moduuli, mutta ne eivät ole yhtä joustavia monimutkaisissa hauissa.
 
-```elixir
-iex> Regex.scan(regex, "Hello World")
-[["H"], ["W"]]
-```
-
-## Syvempi sukellus 
-
-Säännölliset lausekkeet, ovat kehittyneet foorumi softasta UNIX:n grep komentoon. Elixir perii Erlangin tehokkaan säännöllisten lausekkeiden moottorin, joka puolestaan perustuu PCRE:hen, joka on nopea ja erittäin luotettava.
-
-Kuten kaikilla työkaluilla, säännöllisillä lausekkeilla on omat rajoitteensa ja tehokkuuden heikkenemistä. Joskus on parempi harkita vaihtoehtoja, kuten merkkijonoja tai ottelijoita Elixirin sopivuudella.
-
-Säännöllisten lausekkeiden käyttö Elixirissa toteutetaan moniin funktioihin pakatuissa Regix-moduuleissa. Ne mahdollistavat monimutkaisten tekstipatternien luomisen, matchingin ja manipuloinnin.
-
-## Katso myös:
-
-Elixirin regex-moduulin dokumentaatio: https://hexdocs.pm/elixir/Regex.html
-
-Opas Elixirin säännöllisten lausekkeiden käytöstä: https://elixirschool.com/en/lessons/advanced/regex/
-
-Erlangin säännöllisten lausekkeiden viite: https://erlang.org/doc/man/re.html
-
-PCRE:n kotisivu: http://www.pcre.org/
+## See Also
+Elixirin virallinen dokumentaatio: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
+Säännöllisten lausekkeiden perusteet: [https://www.regular-expressions.info](https://www.regular-expressions.info)
+BEAM: [https://erlang.org/doc/apps/erts/erl_intro.html](https://erlang.org/doc/apps/erts/erl_intro.html)

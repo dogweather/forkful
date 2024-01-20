@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "Go: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,36 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
-Las expresiones regulares son patrones utilizados para encontrar coincidencias de caracteres en el texto. Los programadores las usan para ahorrar tiempo y mejorar la eficiencia de la manipulación de texto.
+## Qué y Por Qué?
+Las expresiones regulares son patrones usados para encontrar coincidencias y manipular texto. Los programadores las utilizan para validar, buscar, o reemplazar texto de manera eficiente.
 
-## ¿Cómo?
-Aquí hay algunos ejemplos de cómo usar expresiones regulares en Gleam.
+## Cómo hacerlo:
+Ejemplo: buscar todos los números en una cadena de texto.
 
-```Gleam
+```gleam
 import gleam/regex
 
-let re = regex.from_string("[0-9]+")
-
-case re {
-  Ok(re) ->
-    regex.find(re, "Hello, I am 28 years old and my phone number is 123456789")
-  Error(_) ->
-    "Invalid regex"
+fn main() {
+  let re = regex.from_str(r"\d+").unwrap()
+  let text = "Los números son 123 y 456."
+  let matches = regex.find_all(re, text)
+  
+  case matches {
+    Ok(vals) -> vals |> io.debug // Muestra ["123", "456"]
+    Error(_) -> io.debug("No se encontraron coincidencias")
+  }
 }
 ```
-Output:
 
-```Gleam
-Ok([#Ok("28"), #Ok("123456789")])
-```
-## Inmersión Profunda
-En cuanto al contexto histórico, las expresiones regulares se popularizaron con las primeras versiones de Perl en los años 80. Pero en estos días, casi todos los lenguajes de programación las admiten, incluido Gleam.
-
-En términos de alternativas, en algunos casos podrías usar métodos de cadena integrados (como `to_string()` o `split()`), pero las expresiones regulares suelen ser más versátiles.
-
-Las expresiones regulares en Gleam están implementadas a través del uso de las bibliotecas de Rust subyacentes, lo que garantiza un rendimiento y seguridad potentes.
+## Profundizando
+Históricamente, las expresiones regulares provienen de la teoría de autómatas y lenguajes formales. Existen alternativas como el parseo estructurado o las librerías específicas para hacer coincidir patrones. En Gleam, el módulo `gleam/regex` implementa estos patrones ofreciendo flexibilidad y potencia para trabajar con texto.
 
 ## Ver También
-2. [Manual de usuario regex](https://www.regular-expressions.info/tutorial.html)
-3. [Practicar regex online](https://regex101.com/)
+- [Documentación oficial de Gleam](https://gleam.run/)
+- [Expresiones regulares en la programación](https://www.regular-expressions.info/)

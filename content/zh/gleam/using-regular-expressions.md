@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Gleam: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么要用？
+## What & Why? (是什么 & 为什么？)
+在编程中使用正则表达式进行文本搜索、替换、分析等任务。为快速高效处理字符串数据，编程中常用这个强大的工具。
 
-正则表达式是一种强大的文本匹配工具，可以帮助程序员更有效地处理和操作文本数据。程序员使用正则表达式的原因通常是为了节省时间和精力，在处理大量文本数据时能够更快速地完成任务。
+## How to: (怎么做：)
+在Gleam中，可以用标准库里的`regex`包处理正则表达式。以下是简单示例：
 
-## 如何：
+```gleam
+import gleam/regex
 
-```Gleam
-import gleam/strings/regex
-"example1" |> Regex.match?("regex")
-// => false
-"example2" |> Regex.match?("ex")
-// => true
+pub fn demo() {
+  let pattern = regex.regex("world").unwrap()
+  regex.find(pattern, "Hello, world!")
+}
 ```
 
-```Gleam
-import gleam/strings/regex
-let pattern = Regex.compile("*example")
-let matches = pattern |> Regex.matches("some example")
-// => ["some example"]
+输出为匹配结果，如下：
+
+```gleam
+Some(#(BitString(7..12), []))
 ```
 
-## 深入探讨：
+## Deep Dive (深入了解)
+正则表达式起源于20世纪50年代的神经生理学研究。今天，多种语言支持正则表达式，如Perl、Python、JavaScript。Gleam提供的`regex`库基于Rust的正则表达式引擎，性能高效。如果考虑性能或可读性，还可以用`String`模块的函数替代部分正则功能。
 
-正则表达式最初是在20世纪50年代由美国数学家Stephen Kleene发明的，随着计算机的发展，它变得越来越流行。除了Gleam，许多编程语言都内置了对正则表达式的支持，例如Java，Python和JavaScript。对于某些任务，正则表达式可能会比其他方法（如循环）更高效。然而，过于复杂的正则表达式可能会导致性能下降或产生错误的匹配。
-
-## 参考链接：
-
-- [正则表达式维基百科页面](https://zh.wikipedia.org/zh-hans/正则表达式)
-- [Java官方文档中关于使用正则表达式的教程](https://docs.oracle.com/javase/tutorial/essential/regex/index.html)
+## See Also (另请参见)
+- 正则表达式快速参考：[Regexr](https://regexr.com/)
+- Rust正则表达式库文档：[Rust Regex](https://docs.rs/regex/)

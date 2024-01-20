@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Haskell recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Haskell"
 category:             "Haskell"
@@ -11,46 +11,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Regular expressions, or regex, is a sequence of characters used to define a search pattern. It allows programmers to efficiently search through text and extract specific information. It is commonly used to validate input in web forms, search through large datasets, and transform data. 
+Regular expressions (regex) search and manipulate strings based on patterns. Programmers use them for tasks like form validation, parsing, and text processing because they're powerful and concise.
 
 ## How to:
-
-Using regular expressions in Haskell is simple and powerful. The `Text.Regex.Posix` module provides functions for working with regex. 
-
-To search for a pattern in a string, use the `=~` operator followed by the regex pattern and the string you want to search. For example, to find all email addresses in a string, you can do:
+In Haskell, you can use regex with the `regex-tdfa` package. Here, we grab numbers from a string.
 
 ```Haskell
-import Text.Regex.Posix ((=~))
+import Text.Regex.TDFA ((=~))
 
-let text = "My email is john@example.com"
-let pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}"
-let matches = text =~ pattern :: Bool
+main :: IO ()
+main = do
+  let text = "Order 531 has 2 items"
+  let numbers = text =~ "[0-9]+" :: [String]
+  print numbers
 ```
 
-The `=~` operator returns a `Bool` value, indicating whether the pattern was found in the string or not. 
+Output:
+```
+["531","2"]
+```
 
-To extract specific information from a string, use the `=~~` operator, followed by the string to match against and a `Capture` representing the capture group. For example, to extract the domain name from an email address, you can do:
+To replace text, you can use `subRegex` from `regex-compat`.
 
 ```Haskell
-import Text.Regex.Posix ((=~))
+import Text.Regex (subRegex, mkRegex)
 
-let email = "john@example.com"
-let captureGroup = email =~ "[a-z0-9._%+-]+@([a-z0-9.-]+\\.[a-z]{2,4})"
-let domain = captureGroup :: [String]
+main :: IO ()
+main = do
+  let text = "Hello, 2023!"
+  let regex = mkRegex "[0-9]+"
+  let newText = subRegex regex text "YEAR"
+  putStrLn newText
 ```
 
-The `domain` variable will now hold the domain name from the email address. 
+Output:
+```
+Hello, YEAR!
+```
 
-## Deep Dive:
+## Deep Dive
+Regular expressions date back to the 1950s, conceptualized by mathematician Stephen Kleene. While Haskell was later to the game, it now has a rich set of regex libraries like `regex-tdfa` for POSIX regex, and `regex-pcre` for Perl compatibility. Alternatives to regex include parser combinator libraries like `parsec`, which can offer more readability and maintainability. Regex's in Haskell are not built into the language syntax but are provided through these libraries.
 
-Regular expressions have been around since the 1950s and have since been implemented in many programming languages, including Haskell. In addition to the `Text.Regex.Posix` module, Haskell also has the `Text.Regex.PCRE` module for working with Perl Compatible Regular Expressions (PCRE). 
-
-Alternatives to using regular expressions in Haskell include string manipulation functions, such as `splitOn` and `intercalate` from the `Data.List.Split` module, or using the powerful parser combinator libraries like `parsec` and `attoparsec`. 
-
-Regular expressions in Haskell are implemented using automata theory, specifically finite state machines. This allows for efficient matching of patterns, making it a popular choice for data transformation and validation tasks. 
-
-## See Also:
-
-- [Real World Haskell - Chapter on regular expressions](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)
-- [Hackage - Text.Regex package documentation](https://hackage.haskell.org/package/regex-base)
+## See Also
+- Hackage libraries:
+  - regex-tdfa: http://hackage.haskell.org/package/regex-tdfa
+  - regex-compat: http://hackage.haskell.org/package/regex-compat
+  - regex-pcre: http://hackage.haskell.org/package/regex-pcre
+- The Haskell Wiki on regular expressions: https://wiki.haskell.org/Regular_expressions
+- "Real World Haskell" by Bryan O'Sullivan, Don Stewart, and John Goerzen for in-depth treatment: http://book.realworldhaskell.org/

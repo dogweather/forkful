@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Go: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,35 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 이게 뭐고, 왜 해야 할까요?
+## What & Why? (무엇과 왜?)
+정규 표현식은 문자열에서 패턴을 찾고 내용을 처리하는 강력한 방법입니다. 프로그래머들은 데이터 검증, 검색, 텍스트 변환 등 다양한 작업을 위해 정규 표현식을 사용합니다.
 
-정규 표현식은 문자열에서 패턴을 찾거나 조작하기 위한 도구입니다. 프로그래머들은 이것을 사용하는 이유는 간단합니다. 정규 표현식은 복잡한 문자열 작업을 더 쉽고 간단하게 만들어주기 때문입니다.
-
-## 사용 방법:
-
+## How to: (방법)
 ```Go
-// 패키지 가져오기
-import "regexp"
+package main
 
-// 정규 표현식 패턴 정의
-pattern := "a.c"
+import (
+	"fmt"
+	"regexp"
+)
 
-// 패턴과 일치하는 첫 번째 문자열 찾기
-match := regexp.MustCompile(pattern).FindString("abc")
-fmt.Println(match) // 출력값: abc
+func main() {
+	// 정규 표현식 컴파일
+	re := regexp.MustCompile(`\d+`)
 
-// 패턴과 일치하는 모든 문자열 찾기
-matches := regexp.MustCompile(pattern).FindAllString("abracadabra", -1)
-fmt.Println(matches) // 출력값: [abc ac]
-
+	// 문자열에서 숫자 찾기
+	str := "주문번호: 123456, 제품코드: 654321"
+	matches := re.FindAllString(str, -1)
+	
+	// 결과 출력
+	fmt.Println(matches) // ["123456", "654321"]
+}
 ```
 
-## 깊은 곳으로:
+## Deep Dive (심화 학습)
+1. **역사적 맥락**: 1950년대에 소개된 이후, 정규 표현식은 컴퓨터 과학과 텍스트 처리에서 중요한 도구가 되었습니다.
+2. **대안**: 정규 표현식 외에도, 문자열 처리를 위해 문자열 함수 라이브러리나 파싱 라이브러리를 사용할 수 있습니다.
+3. **실행 세부 정보**: Go 언어는 `regexp` 패키지를 통해 정규 표현식을 지원하며, RE2 엔진을 사용해 실행 속도와 보안을 보장합니다.
 
-정규 표현식은 1950년대에 개발된 존 프러트(John Pinkerton)의 아이디어에서 시작되었습니다. 다른 대안으로는 문자열 패턴 매칭을 위한 다양한 라이브러리나 툴이 존재하지만, 정규 표현식은 가장 많이 사용되는 방법 중 하나입니다. Go에서의 정규 표현식 구현 방식은 DFA(결정적 유한 상태 자동기계) 기반으로 작성되어 있습니다.
-
-## 관련 자료:
-
-- 정규 표현식 기본 개념: https://www.regular-expressions.info/
-- Go 공식 문서: https://golang.org/pkg/regexp/
-- 정규 표현식 테스트: https://regex101.com/
+## See Also (참고 자료)
+- Go 정규 표현식 패키지: https://pkg.go.dev/regexp
+- Go by Example의 정규 표현식 예제: https://gobyexample.com/regular-expressions
+- 정규 표현식 연습 사이트: https://regex101.com/

@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "Arduino: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "C"
 category:             "C"
@@ -10,11 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
-Регулярні вирази - це могутній інструмент для роботи з рядками, що дозволяє знаходити, перевіряти або заміняти підрядки згідно з вказаним шаблоном. Програмісти використовують їх для ефективної обробки тексту та поверхової перевірки вводу.
+## Що це таке & навіщо?
 
-## Як це робиться:
-Отже, як ми можемо використовувати регулярні вирази в С? Використовуйте бібліотеку `<regex.h>`.
+Регулярні вирази - це потужний інструмент для пошуку та заміни тексту за певними патернами. Програмісти використовують їх для ефективної роботи з рядками: валідація даних, парсинг файлів, автоматизація текстових трансформацій.
+
+## Як це зробити:
+
+У C нема вбудованої підтримки регулярних виразів, але можна використати бібліотеку `<regex.h>`. Ось приклад простого пошуку:
 
 ```C
 #include <stdio.h>
@@ -22,35 +24,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 int main() {
     regex_t regex;
-    int reti;
-
-    reti = regcomp(&regex, "[а-яА-Я]*", 0);
-    if (reti) {
-        printf("Could not compile regex\n");
+    int ret;
+    ret = regcomp(&regex, "^[a-z]+@[a-z]+\\.[a-z]+$", REG_EXTENDED);
+    if (ret) {
+        fprintf(stderr, "Could not compile regex\n");
         return 1;
     }
-
-    reti = regexec(&regex, "Привіт, Світ!", 0, NULL, 0);
-    if (!reti) {
-        puts("Match");
-    } else if (reti == REG_NOMATCH) {
-        puts("No match");
+    
+    // Матчимо email
+    ret = regexec(&regex, "user@example.com", 0, NULL, 0);
+    if (!ret) {
+        puts("Valid email");
+    } else if (ret == REG_NOMATCH) {
+        puts("Invalid email");
     } else {
-        printf("Regex match failed\n");
-        return 1;
+        regerror(ret, &regex, 0, 0);
+        fprintf(stderr, "Regex match failed\n");
     }
-
+    
     regfree(&regex);
     return 0;
 }
 ```
-Якщо буде застосовано зазначений вище код, він перевірить, чи "Привіт, Світ!" є українським словом чи ні, і поверне "Match" або "No match".
 
-## Зануримося глибше
-Регулярні вирази виникли у 1956 році і є основою багатьох сучасних мов. Є також альтернативи, такі як парсери, для виконання більш складних завдань. 
-Зверніть увагу, що регулярні вирази можуть бути дуже повільними, якщо ви використовуєте їх неправильно або великими масивами. 
+Виведе: `Valid email`
 
-## Дивись також
-- POSIX regex documentation: http://pubs.opengroup.org/onlinepubs/009695399/basedefs/regex.h.html
-- Stackoverflow How Do You Use Regular Expressions in C?: https://stackoverflow.com/questions/1085083/regular-expressions-in-c-examples
-- Wikipedia article on Regular Expressions: https://uk.wikipedia.org/wiki/Регулярні_вирази
+## Під водою:
+
+Регулярні вирази виникли у 1950-х, коли математик Стівен Кліни запропонував використання цих виразів для опису комплексних шаблонів у стрічках. У C підтримка регулярних виразів не вбудована на відміну від мов як Perl чи Python. Використовуючи `<regex.h>`, важливо звертати увагу на вивільнення пам'яті через `regfree`. Є альтернативні бібліотеки, як PCRE (Perl Compatible Regular Expressions), які пропонують більше можливостей.
+
+## Також гляньте:
+
+- POSIX regex MAN page: `man 7 regex`
+- PCRE library: https://www.pcre.org/
+- Online regex tester: https://regexr.com/

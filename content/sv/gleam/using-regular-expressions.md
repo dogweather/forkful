@@ -1,6 +1,6 @@
 ---
 title:                "Använda reguljära uttryck"
-html_title:           "Gleam: Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,30 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
-Reguljära uttryck (regex) är ett kraftfullt verktyg för att matcha och bearbeta strängar. Det används av utvecklare för att spara tid och för att effektivisera koden genom att hitta specifika mönster av tecken i en textvaror.
+## What & Why?
+Reguljära uttryck, eller regex, är mönster som hjälper dig hitta textbaserad information. Programmerare använder dem för att effektivisera textbearbetning - det är snabbt, kraftfullt och sparar tid.
 
-## Hur man:
-Här är några exempel på Gleam-kod som visar hur man använder regex:
+## How to:
+Gleam använder Rust's `regex` bibliotek. Installera först med `gleam add regex`. Här är grunderna:
 
-```Gleam 
+```gleam
 import gleam/regex
 
-let phones = regex.from_string("(07|08)[0-9]{8}") |> should.from_result!
+// Hitta första matchningen
+fn find_example() {
+  let re = regex.new("hej").unwrap()
+  regex.find(re, "hej värld")
+  |> io.debug // Skriver ut: "Some(Match(start: 0, end: 3))"
+}
 
-"0734567890, 0834567890, 0934567890"
-|> regex.find_all(phones)
-|> should.equal(Ok(["0734567890", "0834567890"]))
+// Se om det finns någon matchning
+fn is_match_example() {
+  let re = regex.new("värld").unwrap()
+  regex.is_match(re, "hej värld")
+  |> io.debug // Skriver ut: true
+}
+
+// Ersätt text
+fn replace_example() {
+  let re = regex.new("värld").unwrap()
+  regex.replace(re, "hej värld", "sverige")
+  |> io.debug // Skriver ut: "hej sverige"
+}
+
+find_example()
+is_match_example()
+replace_example()
 ```
 
-Koden ovan matchar alla telefonnummer som börjar med 07 och 08 och har totalt 10 siffror. De telefonnummer som matchar detta mönster returneras sedan.
+## Deep Dive
+Reguljära uttryck har använts sedan 1950-talet och populariserades i Unix-verktyg på 1970-talet. Alternativ till regex inkluderar strängmanipuleringsfunktioner och parser generators, men de är oftast mer komplexa. Implementationen i Gleam via Rust's `regex` är snabb och säker, tack vare Rust's minneshantering och typsystem.
 
-## Fördjupning
-Reguljära uttryck har funnits sedan 1950-talet och är ett etablerat verktyg inom programmering. Alternativ till regex finns, exempelvis strängmanipulationsfunktioner, men de når inte upp till regex flexibilitet och effektivitet.
-
-Implementera regex i Gleam kan vara lite komplicerat eftersom du behöver matcha strängen exakt. Du behöver alltid börja med att importera regex-modulen.
-
-## Se även
-Vill du veta mer? Här är några användbara länkar:
-
-Ovanstående länkar erbjuder djupgående studiematerial och verktyg för att vidareutveckla din förståelse och färdigheter inom regex.
+## See Also
+- Rust's regex-bibliotek: [https://docs.rs/regex](https://docs.rs/regex)
+- Ett interaktivt regex-verktyg: [https://regex101.com/](https://regex101.com/)

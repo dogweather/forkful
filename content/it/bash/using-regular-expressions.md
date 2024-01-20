@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "Bash: Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,42 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Bash e le Espressioni Regolari: Una Guida Pratica
+## What & Why? (Cosa e Perché?)
+Le espressioni regolari sono modelli usati per trovare corrispondenze di testo. I programmatori le usano per semplificare compiti come la ricerca, la validazione dei dati, e la manipolazione di stringhe.
 
-## Cos'è e Perché?
-
-Le Espressioni Regolari, o Regex, sono strumenti potenti per l'elaborazione di testi. Gli sviluppatori le usano per cercare, sostituire e manipolare stringhe in modo efficiente ed efficace.
-
-## Come si fa:
-
-Qui ci sono alcuni esempi di come utilizzare le espressioni regolari in Bash.
+## How to: (Come fare:)
+Ecco alcuni esempi di base:
 
 ```Bash
-# Trovare le righe che contengono "test"
-grep 'test' filename.txt
+# Trova tutte le occorrenze di 'casa' in un file
+grep 'casa' nomi_case.txt
+
+# Sostituisce 'ciao' con 'salve' in tutte le righe di un file
+sed -i 's/ciao/salve/g' saluti.txt
+
+# Estrae tutti gli indirizzi email da un file, usando un'expressione regolare
+grep -oP '([a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6})' email.txt
 ```
 
-```Bash
-# Trovare le righe che iniziano con "test"
-grep '^test' filename.txt
+Output per il terzo comando potrebbe essere:
+```
+mario.rossi@email.it
+luigi.bianchi@email.com
 ```
 
-```Bash
-# Trovare le righe che terminano con "test"
-grep 'test$' filename.txt
-```
+## Deep Dive (Approfondimento)
+Le regex esistono dai primi anni '50, sviluppate da matematici come Stephen Kleene. Alternative moderne incluiscono parser e linguaggi specifici di dominio (DSL), anche se le regex restano un'utilità per la loro velocità e espressività. Vari linguaggi implementano regex in modi leggermente diversi, perciò è importante verificare la compatibilità con Bash.
 
-## Approfondimento
-
-Le espressioni regolari nascono nei primi tempi dell'informatica, con la teoria degli automi e le linguistica computazionale. Oggi sono un ingrediente chiave in quasi tutti i linguaggi di programmazione.
-
-Un'alternativa all'uso di Regex in Bash potrebbe essere l'uso della manipolazione delle stringhe incorporata nel linguaggio, ma per operazioni complesse e avanzate, le espressioni regolari sono generalmente la scelta migliore.
-
-In Bash, le espressioni regolari sono interpretate dall'argomento del comando o dalla funzione che le utilizza. `grep`, `sed`, e `awk` sono comandi comuni che usano le espressioni regolari.
-
-## Vedi Anche
-
-Per saperne di più sulle espressioni regolari e su come utilizzarle in Bash, guarda questi collegamenti:
-
-- [Guida ufficiale GNU a Grep](https://www.gnu.org/software/grep/manual/grep.html)
-- [Tutorial sulle Espressioni Regolari di Ryan's Tutorials](https://ryanstutorials.net/regular-expressions-tutorial/)
+## See Also (Vedi Anche)
+- [GNU Grep Documentation](https://www.gnu.org/software/grep/manual/grep.html)
+- [Sed - An Introduction and Tutorial by Bruce Barnett](https://www.grymoire.com/Unix/Sed.html)
+- [Regex101: Online regex tester and debugger](https://regex101.com/) per testare le tue espressioni regolari online.

@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "Bash: Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,30 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è e Perché?
+## What & Why? (Cosa & Perché?)
+Le espressioni regolari (regex) sono modelli per cercare e manipolare testo. Sono usate dai programmatori per validare, estrarre o sostituire parti di stringhe con precisione e velocità.
 
-Le espressioni regolari (regex) sono un potente strumento che permette ai programmatori di riconoscere, cercare e manipolare stringhe di testo basandosi su pattern specifici. Queste sono estremamente importanti per la manipolazione dei dati e la validazione dell'input dell'utente.
-
-## Ecco Come:
-
-Clojure fornisce diverse funzioni utili per lavorare con regex. Di seguito è illustrato un esempio di come utilizzare la funzione `re-find`:
+## How to (Come fare):
+Ecco alcuni esempi in Clojure:
 
 ```Clojure
-(let [frase "Ciao, mi chiamo Mario"]
-  (re-find #"mi chiamo (\w+)" frase))
-;; => ["mi chiamo Mario" "Mario"]
+;; Trovare una corrispondenza
+(re-find #"\d+" "L'anno è 2023") ; => "2023"
+
+;; Trovare tutte le corrispondenze
+(re-seq #"\d+" "Appuntamento alle 9 e poi alle 17") ; => ("9" "17")
+
+;; Sostituire una corrispondenza
+(clojure.string/replace "3 gatti, 2 cani" #"\d" "*") ; => "* gatti, * cani"
+
+;; Validare una stringa rispetto a un pattern
+(boolean (re-matches #"\d{4}" "2023")) ; => true
+(boolean (re-matches #"\d{4}" "anno")) ; => false
 ```
-In questo esempio, `re-find` cerca nella stringa `frase` l'espressione regolare `#"mi chiamo (\w+)"` e restituisce una coppia di risultati: l'intero match e il gruppo catturato.
 
-## Approfondimenti
+## Deep Dive (Analisi approfondita)
 
-(1) Storicamente, le espressioni regolari sono nate negli anni '50 per teorizzare il concetto di "automi" e "linguaggi formali". Sono diventate uno strumento essenziale nella programmazione per la loro capacità di manipolare efficacemente le stringhe.
+1. Storia: Le espressioni regolari sono nate negli anni '50.
+2. Alternative: Altre opzioni includono il parsing manuale o l'utilizzo di librerie per l'analisi sintattica (parsing).
+3. Dettagli di implementazione: Regex in Clojure è basato su Java, quindi segue il set di funzionalità Java Pattern class.
 
-(2) Ci sono diverse alternative alle espressioni regolari. Ad esempio, i parser di stringhe o gli algoritmi di manipolazione di stringhe personalizzati. Tuttavia, le espressioni regolari sono spesso più efficienti e più facili da utilizzare per le operazioni di stringhe comuni.
+## See Also (Vedi anche)
 
-(3) Clojure implementa le espressioni regolari con le Java regex. Quindi, quando si lavora con regex in Clojure, si sta realmente utilizzando le potenti funzionalità delle Java regex.
-
-## Vedere Anche
-
-- Per esercizi pratici sulle regex in Clojure, visita [4Clojure](http://www.4clojure.com)
-- Per maggiori dettagli sulla storia ed utilizzo delle espressioni regolari, vedi [Wikipedia](https://it.wikipedia.org/wiki/Espressione_regolare)
+- Clojure Documentation: https://clojure.org/guides/learn/functions#_regex
+- Java Pattern class: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+- Online Regex Tester (for experimentation): https://regexr.com/

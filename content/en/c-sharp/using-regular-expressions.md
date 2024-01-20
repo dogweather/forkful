@@ -10,46 +10,99 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Tackling Regular Expressions in C#
-
 ## What & Why?
-
-Regular expressions (regex) are powerful tools used for pattern matching and manipulation of strings. Programmers use regex to cut time on mundane tasks, to validate input, and to transform data.
+Regular expressions (regex) are patterns used to match string sequences. Programmers use them for searching, editing, or validating text. They're powerful and efficient, slicing through strings like a hot knife through butter.
 
 ## How to:
+Let's look at matching, replacing, and splitting strings using regex in C#.
 
-To leverage the power of regex in C#, we use the `System.Text.RegularExpressions` namespace. Let's look at a few examples. Remember to include the namespace by using `using System.Text.RegularExpressions;`.
+**Match a Phone Number:**
 
-#### Matching:
-To check if a pattern exists in a text, we use `Regex.IsMatch(string, pattern)` function.
 ```C#
-string test = "Hello4123";
-Console.WriteLine(Regex.IsMatch(test, @"\d")); //Outputs: True
-```
-Here, `\d` is the pattern that matches any digit. The output is `True` because '4123' contains digits.
+using System;
+using System.Text.RegularExpressions;
 
-#### Replacing:
-To replace the occurrences of a pattern with a specified string, we use `Regex.Replace(string, pattern, replacement)` function.
+public class Example
+{
+    public static void Main()
+    {
+        string pattern = @"\b\d{3}[-.]?\d{3}[-.]?\d{4}\b";
+        string text = "Call me on 123-456-7890 or 987.654.3210.";
+        MatchCollection matches = Regex.Matches(text, pattern);
+
+        foreach (Match match in matches)
+           Console.WriteLine(match.Value);
+    }
+}
+```
+
+Output:
+```
+123-456-7890
+987.654.3210
+```
+
+**Replace New Lines:**
+
 ```C#
-string test = "Hello4123";
-Console.WriteLine(Regex.Replace(test, @"\d", "*")); //Outputs: Hello****
+using System;
+using System.Text.RegularExpressions;
+
+public class Example
+{
+    public static void Main()
+    {
+        string text = "First line.\nSecond line.\nThird line.";
+        string pattern = @"\n";
+        string replacement = " ";
+
+        string result = Regex.Replace(text, pattern, replacement);
+        Console.WriteLine(result);
+    }
+}
 ```
-Again, `\d` is the pattern that matches any digit. The function replaces every digit with '*'. So, the output is "Hello****".
 
-## Deep Dive:
+Output:
+```
+First line. Second line. Third line.
+```
 
-The theory of regular expressions originated in the 1950s, from the work of mathematical logician Stephen Cole Kleene. The application of regex in programming languages really boomed with the advent of Perl in the 1980s.
+**Split a CSV:**
 
-While powerful, regex can be complex and tricky to optimize. C# provides alternatives such as `String.Contains`, `String.StartsWith`, and `String.EndsWith` for simple scenarios.
+```C#
+using System;
+using System.Text.RegularExpressions;
 
-Implementation-wise, C# regex employs a backtracking algorithm for pattern matching. Careful crafting of expressions is needed to avoid excessive backtracking, which can slow down your app.
+public class Example
+{
+    public static void Main()
+    {
+        string text = "one,two,three,four";
+        string pattern = @",";
 
-Regex also supports various options like case-insensitive (`RegexOptions.IgnoreCase`), multiline (`RegexOptions.Multiline`), etc., further increasing its versatility.
+        string[] substrings = Regex.Split(text, pattern);
+        foreach (string match in substrings)
+        {
+            Console.WriteLine(match);
+        }
+    }
+}
+```
 
+Output:
+```
+one
+two
+three
+four
+```
+
+## Deep Dive
+Regex has been around since the 1950s, thanks to mathematician Stephen Kleene. Alternatives to regex include string methods like `Contains`, `IndexOf`, `StartsWith`, etc., but they're less powerful for complex patterns.
+
+Talking implementation, C#'s `Regex` class lives in `System.Text.RegularExpressions`. It leverages backtracking algorithms for pattern matching. Regex operations can be costly; use with care to avoid performance hits.
 
 ## See Also
-- [MSDN Regex Class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=net-framework-4.8)
-- [Learn Regex The Hard Way](https://regex.learncodethehardway.org/book/)
-- [Regex Crossword – a crossword puzzle with regular expressions](https://regexcrossword.com/)
-
-Tap into regex's potential to become a more productive C# coder. The flexibility and power make them an indispensable tool in your coding toolkit.
+- [Microsoft's Regex Documentation](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Regex Tester & Debugger](https://regex101.com/)
+- [Mastering Regular Expressions](https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/) by Jeffrey Friedl - for those who want to get serious with regex.

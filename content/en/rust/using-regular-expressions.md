@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Rust recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Rust"
 category:             "Rust"
@@ -11,49 +11,63 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Regular expressions, or "regex" for short, are a tool used by programmers to search, manipulate, and validate text strings based on patterns. They can save time and effort when working with large amounts of text data, allowing for more efficient and accurate coding.
+Regular expressions, or regex for short, are sequences of characters forming search patterns. Programmers use regex to search, edit, or manipulate text by matching complex patterns, often for validation or parsing purposes.
 
 ## How to:
+Rust uses the `regex` crate for regex operations. First, add it to your `Cargo.toml`:
 
-To use regular expressions in Rust, you can use the crate `regex`. This crate provides a Regex type that represents a compiled regular expression. Here's an example of how to use it:
-
+```toml
+[dependencies]
+regex = "1"
 ```
+
+Then, you can match strings like so:
+
+```rust
 use regex::Regex;
 
-// Create a regular expression to match a phone number with optional country code
-let re = Regex::new(r"^\+?([0-9]{1,3})?([0-9]{3})([0-9]{3})([0-9]{4})$").unwrap();
+fn main() {
+    let re = Regex::new(r"^\d{4}-\d{2}-\d{2}$").unwrap();
+    let date = "2023-04-01";
 
-// Test if a phone number is a match
-let phone_number = "+1 (123) 456-7890";
-if re.is_match(phone_number) {
-    println!("Valid phone number");
-} else {
-    println!("Invalid phone number");
+    println!("Does the text match the date pattern? {}", re.is_match(date));
 }
-
-// Extract the country code and local number from the phone number
-let caps = re.captures(phone_number).unwrap();
-println!("Country code: {}", caps.get(1).map_or("", |m| m.as_str()));
-println!("Local number: {}", caps.get(2).unwrap().as_str());
 ```
 
-This will output:
+Output:
 
 ```
-Valid phone number
-Country code: 1
-Local number: 1234567890
+Does the text match the date pattern? true
 ```
 
-## Deep Dive:
+For capturing groups:
 
-Regular expressions have been around for decades and have been implemented in many programming languages, including Rust. They were first introduced in the 1950s by mathematician Stephen Kleene as a way to represent patterns in formal languages. Today, they are widely used in text processing tasks, such as search and replace, email validation, and data extraction.
+```rust
+use regex::Regex;
 
-There are some alternatives to using regular expressions in Rust, such as the `str::contains` and `str::starts_with` methods. While these may be simpler to use in certain cases, regular expressions offer more advanced pattern matching capabilities.
+fn main() {
+    let re = Regex::new(r"(\w+)@(\w+)\.(\w+)").unwrap();
+    let email = "user@example.com";
 
-For those interested in the nitty gritty details, the `regex` crate uses an algorithm called "DFA" (deterministic finite automaton) to efficiently match text against a regular expression. It also supports Unicode, making it easier to work with non-ASCII characters.
+    match re.captures(email) {
+        Some(caps) => {
+            println!("User: {}, Domain: {}, Extension: {}", &caps[1], &caps[2], &caps[3]);
+        }
+        None => println!("No match found."),
+    }
+}
+```
 
-## See Also:
+Output:
 
-- [Regex101: An Online Regular Expression Tester](https://regex101.com/)
+```
+User: user, Domain: example, Extension: com
+```
+
+## Deep Dive
+Regex has been around since the 1950s, with roots in automata theory and formal language. Rust's `regex` module is built for speed and safety, focusing on compiling efficient regex patterns at runtime. Alternatives to regex include string functions like `find`, `split`, and `replace`, which cover simpler use cases without patterns. Regexes in Rust are particularly efficient due to extensive optimization and compilation of the regex patterns.
+
+## See Also
+- The `regex` crate documentation: https://docs.rs/regex/
+- Rust's book section on regex: https://doc.rust-lang.org/book/ch18-00-patterns.html
+- Regular Expressions chapter of "The Rust Programming Language": https://doc.rust-lang.org/stable/book/ch18-03-pattern-syntax.html

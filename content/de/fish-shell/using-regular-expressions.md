@@ -1,7 +1,7 @@
 ---
-title:                "Die Verwendung von regulären Ausdrücken"
-html_title:           "Fish Shell: Die Verwendung von regulären Ausdrücken"
-simple_title:         "Die Verwendung von regulären Ausdrücken"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,35 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Was ist das Fish Shell?
+## Was & Warum?
+Reguläre Ausdrücke sind Muster, mit denen man Text suchen und bearbeiten kann. Programmiere nutzen sie, um effizient Daten zu filtern, zu ersetzen oder zu extrahieren.
 
-Das Fish Shell ist ein fortschrittlicher, benutzerfreundlicher Shell für das Betriebssystem Linux. Es unterscheidet sich von anderen Shells durch seine intelligente Autovervollständigung und seine einfache Syntax.
-
-Warum verwenden Programmierer reguläre Ausdrücke?
-
-Reguläre Ausdrücke sind ein sehr nützliches Werkzeug für Programmierer, da sie es ermöglichen, komplexe Suchmuster in Texten zu definieren und zu finden. Sie sind besonders hilfreich, wenn man nach bestimmten Mustern in großen Datenmengen sucht oder Daten filtern und verarbeiten möchte.
-
-So funktionieren reguläre Ausdrücke im Fish Shell:
-
+## How to:
 ```Fish Shell
-# Beispiel für eine reguläre Ausdrucksuche
-grep -E "a+b" text.txt
+# Suche nach dem Wort 'Fisch' in 'Ich habe einen Fisch im Teich.'
+echo "Ich habe einen Fisch im Teich." | string match -r 'Fisch'
+# Ausgabe: Fisch
 
-# Dies würde alle Zeilen im Textdokument ausgeben, die das Muster "a+b" enthalten, z.B. "aaaab" oder "abbbbb".
+# Ersetze 'Fisch' durch 'Karpfen'
+echo "Ich habe einen Fisch im Teich." | string replace 'Fisch' 'Karpfen'
+# Ausgabe: Ich habe einen Karpfen im Teich.
+
+# Extrahiere Zahlen aus einem String
+echo "Im Jahr 2023 ist Fish die Shell der Wahl." | string match -r '[0-9]+'
+# Ausgabe: 2023
 ```
 
-Tief einsteigen:
+## Deep Dive
+Reguläre Ausdrücke (RegEx) wurden in den 1950ern von Stephen Cole Kleene entwickelt. Alternativen zu RegEx sind parsers oder spezifische Textverarbeitungstools, aber RegEx ist wegen seiner Flexibilität und Effizienz einzigartig. In Fish Shell verwendet man `string match` um mit RegEx zu arbeiten, was direkt in die Shell integriert ist und keine externen Programme wie `grep` benötigt.
 
-Reguläre Ausdrücke haben eine lange Geschichte und wurden zuerst in den 1950er Jahren von einem Mathematiker namens Stephen Cole Kleene erfunden. Sie sind auch in anderen Programmiersprachen wie Perl, Python und JavaScript verfügbar. Es gibt jedoch Unterschiede in der Syntax und den unterstützten Funktionen.
-
-Es gibt auch Alternativen zu regulären Ausdrücken, wie zum Beispiel die Verwendung von Zeichenkettenfunktionen oder die Verwendung von Bibliotheken, die speziell für bestimmte Aufgaben entwickelt wurden. Am Ende hängt es von der Art der Anwendung und den persönlichen Vorlieben des Programmierers ab.
-
-In Bezug auf die Implementierung verwendet das Fish Shell das Programm "grep" für reguläre Ausdrücke. Dieses Programm wird auch in anderen Linux-Shells verwendet und ist bekannt für seine Effizienz und Geschwindigkeit.
-
-Weiterführende Informationen:
-
-Es gibt viele Ressourcen zu regulären Ausdrücken im Internet, aber hier sind einige ausgewählte Links, die besonders hilfreich für Anfänger sind:
-
-- [Fish Shell Manual](https://fishshell.com/docs/current/index.html#regexp)
-
-Jetzt bist du bereit, reguläre Ausdrücke im Fish Shell zu verwenden und deine Programmieraufgaben zu erleichtern!
+## See Also
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Reguläre Ausdrücke (RegEx) – Ein schneller Einstieg](https://www.regular-expressions.info/)
+- [GNU Grep Documentation](https://www.gnu.org/software/grep/manual/grep.html)

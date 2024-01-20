@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,25 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Regular expressions, eli säännölliset lausekkeet, ovat tapa etsiä tekstistä tiettyjä malleja. Ohjelmoijat käyttävät niitä tiedon suodatukseen, validointiin ja muokkaamiseen.
+## What & Why?
+Säännölliset lausekkeet ovat haku- ja korvausoperaatioihin käytettyjä tekstipätkiä. Ohjelmoijat käyttävät niitä tekstidatan tehokkaaseen prosessointiin ja validointiin.
 
-## Miten:
-Voimme hakea tekstistä "klo" ja tämän perässä tulevat numerot seuraavasti:
-
+## How to:
 ```Clojure
-(re-seq #"klo (\d+:\d+)" "klo 14:30, klo 15:00, klo 16:30")
-;; => (["klo 14:30" "14:30"] ["klo 15:00" "15:00"] ["klo 16:30" "16:30"])
+; Stringiin sopimisen tarkistus
+(re-matches #"\b[Cc]lojure\b" "I love Clojure!")
+; => "Clojure"
+
+; Etsi osuvat osajonot
+(re-seq #"\b\w+" "Clojure, Java & Haskell")
+; => ("Clojure" "Java" "Haskell")
+
+; Korvaa sopivat osuudet
+(clojure.string/replace "Clojure on hauskaa!" #"[aou]" "i")
+; => "Clijiire in haiskii!"
 ```
-Säännöllinen lauseke `"klo (\d+:\d+)"` etsii jonoja, jotka alkavat merkkejä "klo ", jonka perässä on numerot pilkkuun asti. 
 
-## Syvällämmälle:
-Säännölliset lausekkeet lanseerattiin ensimmäisen kerran 1950-luvun lopulla matemaatikon, Stephen Kleenen, toimesta. Nykyisin monilla ohjelmointikielillä, mukaan lukien Clojure, on niiden tuki sisäänrakennettuna.
+## Deep Dive
+Säännöllisiä lausekkeita kehiteltiin alun perin 1950-luvulla automaattisten kielentunnistajien yhteydessä. Perl kielen popularisoinnin myötä ne levisivät laajempaan käyttöön. Clojuressa, kuten muissakin moderneissa kielissä, säännölliset lausekkeet toimivat osana standardikirjastoa. Perl-tyylisten regex-moottorien ohella olemassa on myös muiden tyyppisiä, kuten POSIX. Tietyissä tapauksissa tekstinkäsittelyn voi tehdä myös ilman säännöllisiä lausekkeita, esimerkiksi käyttämällä merkkijonojen omaa `split`, `join` tai `contains?` funktioita.
 
-Vaihtoehtoisia tapoja tekstien muodostamiseen ja käsittelyyn ovat esim. merkkijono-funktiot ja tietorakenteet. Kuitenkin säännölliset lausekkeet tarjoavat usein tehokkaamman ja mukautuvamman ratkaisun.
-
-Clojuren `re-seq`-funktio palauttaa sekvenssin otteluista annetussa merkkijonossa. Jos otteluja ei ole, it returns `nil`.
-
-## Katso myös:
-- [Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html)
-- [Säännöllisten lausekkeiden tutoriaali](https://regexone.com/)
+## See Also
+- [ClojureDocs Regular Expressions](https://clojuredocs.org/clojure.core/re-matches)
+- [Clojure: java.util.regex](https://clojure.org/reference/java_interop#_java_util_regex)
+- [Java Pattern class documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)

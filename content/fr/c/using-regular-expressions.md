@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "C: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,44 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi ?
+## What & Why? (Quoi et Pourquoi ?)
+Les expressions régulières sont des séquences de caractères formant un motif de recherche. Les programmeurs les utilisent pour trouver ou remplacer du texte selon des règles définies, ou pour valider des formats de données (ex. emails).
 
-Les expressions régulières sont des séquences de caractères permettant de trouver des motifs dans du texte. Les programmeurs les utilisent pour parcourir les chaînes de caractères de façon rapide et efficace.
-
-## Comment faire :
-
-Voici comment on pourrait utiliser les expressions régulières en C. 
+## How to: (Comment faire : )
+En C, l’utilisation des expressions régulières passe par la bibliothèque `<regex.h>`. Voici un exemple de comment vérifier un format d'email :
 
 ```C
-#include <regex.h> 
+#include <stdio.h>
+#include <regex.h>
 
 int main() {
     regex_t regex;
-    int return_val;
-    return_val = regcomp(&regex, "c", 0); 
-    return_val = regexec(&regex, "Coding", 0, NULL, 0);  
-    if (return_val == 0) {
-        printf("Match");
-    } 
-    else {
-        printf("No Match");
+    int ret;
+    char *email = "contact@example.com";
+
+    // Compile l'expression régulière
+    ret = regcomp(&regex, "^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,}$", REG_ICASE);
+    if (ret) {
+        fprintf(stderr, "Compilation de l'expression régulière échouée\n");
+        return 1;
     }
+
+    // Exécute l'expression régulière
+    ret = regexec(&regex, email, 0, NULL, 0);
+    if (!ret) {
+        puts("L'email est valide.");
+    } else if (ret == REG_NOMATCH) {
+        puts("L'email n'est pas valide.");
+    } else {
+        char message[100];
+        regerror(ret, &regex, message, sizeof(message));
+        fprintf(stderr, "Erreur d'expression régulière : %s\n", message);
+        return 1;
+    }
+
+    // Libère la mémoire allouée à l'expression régulière compilée
+    regfree(&regex);
+
     return 0;
 }
 ```
-La sortie de ce programme serait `Match` car "c" est bien présent dans "Coding".
 
-## Immersion :
+Sortie attendue : `L'email est valide.`
 
-Les expressions régulières existent depuis les années 50 et ont été intégrées dans divers langages de programmation. En C, le traitement d'expressions régulières n'est pas intégré de manière native, mais est supporté au travers de la bibliothèque `<regex.h>`. 
+## Deep Dive (Plongée en profondeur)
+Historiquement, les expressions régulières viennent de la théorie formelle des langages. Bien avant C, elles étaient utilisées dans des éditeurs de texte comme `sed` et `awk`. En C, `<regex.h>` n'est pas la seule option ; il y a aussi des bibliothèques comme PCRE (Perl Compatible Regular Expressions). Elles peuvent offrir plus de fonctionnalités mais ne sont pas standard. Les implémentations standardisées comme POSIX peuvent varier en performance et en compatibilité selon les systèmes.
 
-Comme alternative, les programmeurs peuvent utiliser `strstr` pour la recherche de sous-chaînes, mais cela n'est pas aussi flexible que les expressions régulières. 
-
-Le traitement des expressions régulières en C est basé sur l'algorithme de Thompson, qui convertit l'expression régulière en un automate non déterministe (NFA) pour effectuer la recherche. 
-
-## A voir également :
-
-Pour plus d'informations sur les expressions régulières, consultez ces liens :
-
-1. Documentation GNU sur regex.h : https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-2. Cours sur les expressions régulières : https://www.coursera.org/lecture/data-structures-optimizing-efficiency/lecture-2-regular-expressions-p1mtK
+## See Also (Voir aussi)
+- Documentation sur POSIX regex (expressions régulières) : https://man7.org/linux/man-pages/man7/regex.7.html
+- PCRE - Perl Compatible Regular Expressions : https://www.pcre.org/
+- Article Wiki sur les expressions régulières : https://fr.wikipedia.org/wiki/Expression_r%C3%A9guli%C3%A8re

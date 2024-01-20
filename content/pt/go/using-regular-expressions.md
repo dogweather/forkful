@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Go: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,30 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
-Regular expressions, ou expressões regulares, são padrões de texto usados para buscar e manipular valores em uma string. Programadores as utilizam para validar dados de entrada, fazer substituições em documentos e realizar buscas em grandes conjuntos de dados.
+## O Que São & Por Que Usar?
+Regular expressions são padrões usados para encontrar correspondências dentro de strings. Programadores as utilizam para validar, extrair ou substituir texto de forma rápida e eficiente.
 
-## Como fazer:
-Veja abaixo alguns exemplos de como usar expressões regulares em Go:
+## Como Fazer:
 
 ```Go
-// Encontre todas as palavras que começam com "go"
-re := regexp.MustCompile(`go\S*`)
-fmt.Println(re.FindAllString("go time, gophers!", -1))
+package main
 
-// Resultado:
-// [go time, gophers!]
+import (
+	"fmt"
+	"regexp"
+)
 
-// Substitua todas as ocorrências de "gopher" por "Golang"
-re := regexp.MustCompile(`gopher`)
-fmt.Println(re.ReplaceAllString("Gophers are amazing!", "Golang"))
+func main() {
+	// Compilar a expressão regular
+	r, _ := regexp.Compile("p([a-z]+)ch")
 
-// Resultado:
-// Golangs are amazing!
+	// Testar se a expressão corresponde
+	fmt.Println(r.MatchString("peach")) // Output: true
+
+	// Encontrar a primeira correspondência
+	fmt.Println(r.FindString("peach punch")) // Output: peach
+
+	// Encontrar todas as correspondências com limite
+	fmt.Println(r.FindAllString("peach punch pinch", -1)) // Output: [peach punch pinch]
+
+	// Substituir texto correspondente
+	fmt.Println(r.ReplaceAllString("a peach", "an apple")) // Output: an apple
+}
 ```
 
-## Deep Dive:
-As expressões regulares foram inventadas em 1951 pelo matemático Stephen Cole Kleene para descrever linguagens formais. Elas são suportadas em muitas linguagens de programação, incluindo Go. Alternativas para expressões regulares incluem a função "strings.Contains" em Go e a biblioteca "parse" em Python. Para implementar expressões regulares em Go, a biblioteca "regexp" inclui funções para compilar, pesquisar e substituir padrões em strings.
+## Mergulho Profundo:
 
-## Veja também:
-- [Documentação oficial do pacote "regexp" em Go](https://golang.org/pkg/regexp/)
+As expressões regulares surgiram nos anos 1950 com teoria de autômatos e linguagem formal. Hoje, linguagens modernas como Go oferecem bibliotecas poderosas para regex. Alternativas incluem bibliotecas de análise sintática que são mais apropriadas para processar linguagens complexas. Em Go, regex é implementado no pacote `regexp`, que compila expressões para um formulário interno antes da execução, o que melhora a performance.
+
+## Veja Também:
+- Documentação oficial do pacote `regexp`: [Package regexp](https://pkg.go.dev/regexp)
+- Tutorial interativo de regex: [RegexOne](https://regexone.com/)
+- Ferramenta online para testar expressões regulares: [RegExr](https://regexr.com/)

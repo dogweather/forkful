@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Ruby: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,34 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Regular expressions är sökmönster för att hitta och hantera textsträngar. Programmerare använder det för att effektivisera textprocessning, validera data och skripta komplexa uppgifter.
 
-Reguljära uttryck, ofta förkortade som regex, är ett praktiskt verktyg som hjälper programmerare att söka och manipulera text data på ett effektivt sätt genom användande av mönster. Vanligtvis används de för att söka efter och extrahera specifika delar av en text eller för att ersätta ett visst mönster med annan information. Regex kan också användas för att validera indata och hantera felmeddelanden. Många programmeringsspråk, inklusive Ruby, har inbyggda stöd för reguljära uttryck.
+## How to:
+Exempel på användning av regular expressions i Ruby:
 
-## Hur man:
-
-För att använda reguljära uttryck i Ruby, används två främsta metoder: `match` och `gsub`. `Match` används för att hitta en matchning av ett visst mönster i en textsträng och returnerar det matchande resultatet. Till exempel, om vi vill hitta alla siffror i en text kan vi använda följande kod:
 ```Ruby
-text = "Det finns 10 olika typer av människor i världen"
-match = text.match(/\d+/)
-puts match #kommer att skriva ut "10" 
+# Hitta första förekomsten av ett mönster
+text = "Ruby är fantastiskt!"
+match = text[/fantastiskt/]
+puts match  # Output: "fantastiskt"
+
+# Ersätta text med sub-metoden
+ny_text = text.sub(/är/, 'är verkligen')
+puts ny_text  # Output: "Ruby är verkligen fantastiskt!"
+
+# Validera formatet på en e-postadress
+email = "exempel@domain.com"
+valid_email = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i.match?(email)
+puts valid_email  # Output: true
+
+# Extrahera alla telefonnummer från en text
+text_med_nummer = "Ring mig på 070-1234567 eller 08-7654321."
+telefonnummer = text_med_nummer.scan(/\b\d{2,3}-\d{5,7}\b/)
+puts telefonnummer.join(', ')  # Output: "070-1234567, 08-7654321"
 ```
-`Gsub` däremot, används för att ersätta olika delar av en text enligt ett givet mönster. Till exempel, om vi vill byta ut alla förekomster av bokstaven "e" med bokstaven "a" i en text kan vi använda följande kod:
-```Ruby
-text = "Hello World!"
-new_text = text.gsub(/e/, "a")
-puts new_text #kommer att skriva ut "Hallo Warld!" 
-```
 
-## Deep Dive:
+## Deep Dive
+Regular expressions (regex) skapades på 1950-talet och har sedan dess vuxit i popularitet inom programmering. Alternativ till regex inkluderar inbyggda strängfunktioner, som indexOf eller split i andra språk, men de är inte lika kraftfulla. Ruby använder Oniguruma-biblioteket för regex, vilket stödjer olika encodings och användarvänlig syntax.
 
-Reguljära uttryck skapades ursprungligen av matematikern Stephen Cole Kleene under 1950-talet. Då användes de i språkteorin för att beskriva formella språk. Det var först under 1960-talet som Ken Thompson och Dennis Ritchie implementerade reguljära uttryck i programvaran för operativsystemet Unix.
-
-Alternativ till reguljära uttryck inkluderar att använda inbyggda metoder som `include?` eller `scan` för att söka efter en viss text i en sträng. En annan möjlighet är att använda olika XML-parser för att söka och manipulera data.
-
-Implementeringen av reguljära uttryck i Ruby bygger på ett bibliotek som heter Oniguruma, som är skrivet i C. Detta bibliotek ger snabb prestanda och stöd för Unicode-teckenkodning. Ruby har en lättanvänd syntax för reguljära uttryck, vilket gör det enkelt för utvecklare att lära sig och implementera dem i sina projekt.
-
-## Se även:
-
-Om du vill lära dig mer om reguljära uttryck i Ruby, rekommenderar jag att läsa dokumentationen på [Ruby-doc.org](https://ruby-doc.org/core-3.0.0/Regexp.html). Du kan också titta på [The Ruby Regexp Bible](https://www.rubyguides.com/2015/06/ruby-regex/) för djupare förståelse och användbara exempel. Andra relevanta källor inkluderar [Ruby Regular Expression Tutorial](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm) och [Regular Expressions i Ruby](https://www.rubyguides.com/2015/06/ruby-regex/).
-
-Nu när du har en grundläggande förståelse för reguljära uttryck och hur man använder dem i Ruby, är det dags att experimentera och använda dem i dina egna projekt!
+## See Also
+- Ruby-dokumentation om regular expressions: [https://ruby-doc.org/core-2.7.0/Regexp.html](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- Oniguruma GitHub-repository: [https://github.com/kkos/oniguruma](https://github.com/kkos/oniguruma)
+- Regexp: [https://www.regular-expressions.info/ruby.html](https://www.regular-expressions.info/ruby.html)

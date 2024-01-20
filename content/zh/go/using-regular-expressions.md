@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Go: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Go"
 category:             "Go"
@@ -10,32 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 甚麼 & 為什麼？
-使用正則表達式是一種在程式設計中常用的技術。它可以讓我們更有效地搜尋、替換和檢查字串。許多程式設計師喜歡使用正則表達式，因為它們可以讓他們更快速地處理複雜的字串操作。
+## What & Why? (是什么？为什么用？)
+正则表达式是用来匹配字符串模式的。程序员用它来搜索、替换、验证文本数据。
 
-# 如何：
-接下來我們將使用 Go 語言來示範如何使用正則表達式。首先，我們需要導入 "regexp" 套件來使用正則表達式功能。然後，我們可以使用 ```regexp.Compile``` 函式來編譯我們需要的正則表達式，並使用 ```MatchString``` 函式來確認字串是否符合正則表達式的規則。
-
+## How to (如何使用)
 ```Go
-import "regexp"
+package main
 
-// 編譯正則表達式
-phoneRegExp := regexp.MustCompile(`\d{4}-\d{6}`)
+import (
+	"fmt"
+	"regexp"
+)
 
-// 確認字串是否符合規則
-fmt.Println(phoneRegExp.MatchString("0911-123456")) // 輸出：true
-fmt.Println(phoneRegExp.MatchString("abc123")) // 輸出：false
+func main() {
+	// 匹配email地址
+	re := regexp.MustCompile(`\b[\w\.-]+@[\w\.-]+\.\w{2,4}\b`)
+	fmt.Println(re.MatchString("test@email.com")) // 输出: true
+	fmt.Println(re.MatchString("no-at-symbol"))   // 输出: false
+	
+	// 查找匹配项
+	result := re.FindString("contact: test@email.com")
+	fmt.Println(result)  // 输出: "test@email.com"
+	
+	// 替换文本
+	replaced := re.ReplaceAllString("reach me at test@email.com", "hidden")
+	fmt.Println(replaced) // 输出: "reach me at hidden"
+}
 ```
 
-# 深入了解：
-正則表達式是在 20 世紀 50 年代由數學家 Stephen Cole Kleene 發明的，它的概念是基於正規語言的理論。除了在程式設計中常用的字串操作外，正則表達式也被應用在文本搜尋、資料驗證等領域。除了 Go 語言之外，其他程式語言也都支援使用正則表達式，如 Python、JavaScript 等。
+## Deep Dive (深入探究)
+1. **历史背景**: 正则表达式起源于20世纪60年代的理论计算机科学。
+2. **替代品**: 除了正则表达式，你也可以使用字符串匹配和解析库。
+3. **实现细节**: Go的regexp包是基于RE2引擎，相比其他引擎避免了某些复杂正则表达式的安全问题。
 
-如果你想要更深入地了解正則表達式的用法，可以參考下列連結：
-
-- [Go 語言官方正則表達式文件](https://golang.org/pkg/regexp/)
-- [正規語言基礎知識](https://zh.wikipedia.org/zh-tw/%E6%AD%A3%E5%88%99%E8%AF%AD%E8%A8%80)
-- [Regex101：正則表達式測試器](https://regex101.com/)
-
-# 相關資源：
-- [Go 語言官方網站](https://golang.org/)
-- [Awesome Go：收藏了許多 Go 語言相關的資源](https://github.com/avelino/awesome-go)
+## See Also (了解更多)
+- Go语言正则表达式官方文档: https://pkg.go.dev/regexp
+- 正则表达式的入门教程: http://www.regular-expressions.info/tutorial.html
+- 玩转正则表达式的更多示例: https://github.com/google/re2/wiki/Syntax

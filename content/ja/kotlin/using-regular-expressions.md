@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使用する"
-html_title:           "Kotlin: 正規表現を使用する"
-simple_title:         "正規表現を使用する"
+title:                "正規表現の使用"
+html_title:           "C: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,22 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## リギユラエクスプレッションって何？
-リギユラエクスプレッションとは、文字列を検索や置換をするために使用するパターンマッチングのことです。プログラマーは、正規表現を使用することで、文字列から特定のパターンにマッチする部分を見つけたり、置換したりすることができます。
+## What & Why? (何となぜ？)
 
-## 使い方：
-```Kotlin
-val pattern = Regex("\\d{2}-\\d{3}")
-val result = pattern.find("私の郵便番号は12-345です")
-println(result?.value)
+正規表現は文字列内のパターンを検索・置換するためのツールです。効率的にデータを操作・解析するため、プログラマーはこれを利用します。
+
+## How to: (使い方)
+
+```kotlin
+fun main() {
+    val text = "Kotlinは2021年にリリースされました。"
+    val regex = Regex("[0-9]+")
+    val found = regex.find(text)
+    println(found?.value) // "2021"
+    
+    val replaced = text.replace(regex, "2022")
+    println(replaced) // "Kotlinは2022年にリリースされました。"
+}
 ```
 
-出力結果：12-345
+## Deep Dive (深掘り)
 
-## ディープダイブ：
-1. 歴史的背景：正規表現は、1960年代にリユン・トンプソンによって最初に開発されました。その後、プログラミング言語やテキストエディタなどのさまざまなツールにも導入されました。
-2. 代替手段：正規表現以外にも文字列検索や置換のために使用できるツールはありますが、正規表現はより柔軟なパターンの指定や効率的な処理が可能であるため、プログラマーにとって重要なツールとなっています。
-3. 実装の詳細：Kotlinでは、Regexクラスを使用して正規表現を扱います。また、infix関数によってより簡潔に正規表現を記述することができます。
+歴史的に、正規表現はPerl言語で広く使われてきたため高い柔軟性と強力な機能を持っています。Kotlinでは`Regex`クラスを使用し、Javaの`java.util.regex`ライブラリを内部で利用しています。また、正規表現には多くの代替方法がありますが、パターンマッチングや文字列解析では正規表現が最適な選択肢であることが多いです。
 
-## 参考:
-Kotlin正規表現のドキュメント：https://kotlinlang.org/docs/tutorials/regular-expressions.html
+## See Also (関連情報)
+
+- Kotlin公式ドキュメントの正規表現: [Regular expressions](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- `java.util.regex`パッケージドキュメンテーション: [java.util.regex package summary](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html)
+- 日本語での正規表現チュートリアル: [正規表現チュートリアル](https://www.javadrive.jp/regex/)

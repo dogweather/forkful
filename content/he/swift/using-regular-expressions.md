@@ -1,7 +1,7 @@
 ---
-title:                "שימוש בביטויים רגילים"
-html_title:           "Swift: שימוש בביטויים רגילים"
-simple_title:         "שימוש בביטויים רגילים"
+title:                "שימוש בביטויים רגולריים"
+html_title:           "Bash: שימוש בביטויים רגולריים"
+simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,33 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
+## מה ולמה?
+בשימוש רגולרי בביטויים תכניתיים, אנו מחפשים ומניפולים טקסט בהתאם לתבניות מורכבות. זה כלי חזק לממצא ואימות נתונים שכיח בפרויקטים תכנותיים.
 
-שימוש בביטויים רגולריים הוא דרך לחיפוש והתאמה של טקסט מתאים לתבנית מסוימת. זה מאפשר למתכנתים לבדוק ולעבד מידע בקלות ומהירות, ולאפשרות לפענח ולפענח מחרוזות בצורה יעילה.
-
-# איך לעשות:
-
+## איך לעשות:
 ```Swift
-let inputString = "ברוכים הבאים להרשמה לקורס פיתוח ויבסי"
-let pattern = "הרשמה לקורס"
+import Foundation
+
+let testString = "אהלן, החשבון שלך הוא 123-45-6789."
+let pattern = "\\b\\d{3}-\\d{2}-\\d{4}\\b"
+
 do {
     let regex = try NSRegularExpression(pattern: pattern)
-    let matches = regex.matches(in: inputString, range: NSRange(inputString.startIndex..., in: inputString))
-    print(matches.count) // Output: 1
+    let matches = regex.matches(in: testString, range: NSRange(testString.startIndex..., in: testString))
+
+    if let match = matches.first {
+        let range = Range(match.range, in: testString)!
+        print(testString[range]) // הדפיסו "123-45-6789"
+    }
 } catch {
-    print("Regex error: \(error.localizedDescription)")
+    print("שגיאה ביצירת ביטוי רגולרי: \(error.localizedDescription)")
 }
 ```
-בדוגמה זו, אנו מגדירים מחרוזת כניסה ותבנית לחיפוש. באמצעות טכניקות של דוגמה, אנו בודקים את הספירה של התבנית הנתונה מול המחרוזת המקורית.
 
-# מקור עמוק:
+## נים תוך:
+ביטויים רגולריים הם לא חידוש - הם התפתחו בשנות ה-50 והם בשימוש נרחב בכל היבט של מחשוב. ישנן חלופות כמו חיפוש בינארי או פרסינג של סינטקס, אבל לעיתים רק ביטוי רגולרי יעשה את העבודה. Swift משתמש ב-`NSRegularExpression`, אשר מגיע מ-Objective-C ומתאים לכל טקסט Unicode, כולל עברית.
 
-עבור רוב המתכנתים, ביטויים רגולריים הינם כלי חיוני לפיתוח ותחזוקת תוכניות. כמו כן, הם נמצאים בשימוש נרחב באבטחת המידע, תכנות המחשב ואחרים. ישנן גם אלטרנטיבות לביטויים רגולריים, כגון פיתוח נאיבי ותכנות פיתון, אך הם לא מספקים את אותו רמת יעילות ופונקציונליות.
-
-# ראו כן:
-
-למאמר זה ישנן הרבה מקורות נוספים על ביטויים רגולריים בשפת Swift. כאן ניתן למצוא סרטוני לימוד, מדריכים ומאמרים כדי לעזור לך להתחיל ולשפר את כישוריך בשימוש בהם:
-
-- [רכיבי String וסקנט](https://developer.apple.com/documentation/foundation/nsregularexpression)
-- [regex101](https://regex101.com/) - אתר חינמי לבדיקת ביטויים רגולריים עם תמיכה לשפת Swift
-- [מדריך לביטויים רגולריים בSwift](https://medium.com/@abhimuralidharan/regular-expression-in-swift-2-0-3032271fcf20)
+## ראו גם:
+- [Apple's NSRegularExpression Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Ray Wenderlich's Regular Expressions Tutorial](https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started)
+- [RegexOne: Learn Regular Expressions with simple, interactive exercises.](https://regexone.com/)

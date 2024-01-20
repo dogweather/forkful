@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Java: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,23 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Las expresiones regulares son secuencias de caracteres que se utilizan para buscar y manipular patrones en un texto. Los programadores utilizan expresiones regulares para realizar tareas como validar entradas de usuario y buscar información en grandes cantidades de datos.
+## Qué y Por Qué?
 
-## ¿Cómo hacerlo?
-Para utilizar expresiones regulares en Java, necesitas importar la clase java.util.regex. Luego, puedes utilizar sus métodos para buscar patrones en una cadena de texto. Por ejemplo:
+Las expresiones regulares, o regex, son secuencias de caracteres que forman un patrón de búsqueda. Los programadores las usan para encontrar, reemplazar o manipular texto de manera eficiente y precisa.
+
+## Cómo usar:
+
 ```Java
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-String codigoPostal = "12345";
-boolean resultado = Pattern.matches("\\d{5}", codigoPostal);
-System.out.println(resultado);
+public class RegexExample {
+    public static void main(String[] args) {
+        String texto = "El número de contacto es 123-456-7890.";
+        String regex = "\\d{3}-\\d{3}-\\d{4}";
+        
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(texto);
+
+        if (matcher.find()) {
+            System.out.println("Número encontrado: " + matcher.group());
+        }
+    }
+}
 ```
-Este código verifica si la variable "codigoPostal" es un código postal válido de 5 dígitos. En este caso, el resultado sería "true".
 
-## Profundizando
-Las expresiones regulares tienen su origen en la teoría computacional de los años 50 y fueron adoptadas por primera vez en Unix en los años 70. Actualmente, existen otros métodos para manipular patrones en texto, como las funciones de búsqueda y reemplazo, pero las expresiones regulares siguen siendo una herramienta importante para los programadores.
+Salida de muestra:
 
-## Ver También
-- [Documentación de java.util.regex](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [Tutorial de expresiones regulares de Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+```
+Número encontrado: 123-456-7890
+```
+
+## Inmersión Profunda:
+
+Históricamente, las expresiones regulares nacen en la década de 1950 y se popularizan en los '70 con el lenguaje Perl. Alternativas a regex incluyen el procesamiento manual de strings (menos eficiente) y bibliotecas de análisis (parsing) especializadas (más complejas). Internamente, Java utiliza DFA (autómatas finitos deterministas) y NFA (no deterministas) para implementar regex, lo cual afecta el rendimiento y capacidades de las expresiones.
+
+## Ver También:
+
+Para más información echa un vistazo a:
+
+- [Documentación oficial de las clases Pattern y Matcher](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+- [Java Regular Expressions Tutorial](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+- [RegexOne](https://regexone.com/) – Aprende con ejercicios interactivos.

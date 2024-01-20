@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Fish Shell: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,38 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 어떤거고 왜 하는 거야?
-정규표현식을 사용하는 것은 무엇인지 알려주고, 프로그래머들이 이것을 왜 사용하는지 설명해 줄게.
+## What & Why? (무엇이고, 왜 사용하는가?)
 
-정규표현식은 문자열에서 특정한 패턴을 찾아내는 데 사용되는 문자열 검색 도구야. 우리가 필요한 정보를 쉽게 추출하거나, 데이터를 정제하거나, 유효성 검사를 할 때 유용하게 쓰이지. 프로그래밍 작업을 더욱 효율적으로 하기 위해 정규표현식을 사용하는 경우가 많아.
+정규 표현식은 텍스트 패턴을 찾고 조작할 때 사용하는 강력한 도구입니다. 프로그래머는 코드를 더 깔끔하게 작성하고, 복잡한 문자열 처리 작업을 빠르게 수행할 수 있기 때문에 정규 표현식을 사용합니다.
 
-## 어떻게 하는거야?
-Fish Shell의 정규표현식을 사용하는 예제와 그 결과를 ```Fish Shell ... ```코드 블록 안에서 보여줄게.
+## How to: (방법:)
 
-### 이메일 주소 추출하기
-`echo "제 이메일 주소는 example@example.com입니다." | fish -c "string match -r '([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})' >> 이메일 주소 추출 결과.txt"`
+Fish Shell에서 정규 표현식을 사용하는 예시를 보여드리겠습니다.
 
-`cat 이메일 주소 추출 결과.txt`
+```Fish Shell
+# 예시 1: 문자열이 'fish'로 시작하는지 확인
+echo "fishing for compliments" | string match -r '^fish'
+
+# 출력: fishing
+
+# 예시 2: 파일 이름 목록에서 '.txt'로 끝나는 파일 찾기
+string match -r '*.txt' (ls)
+
+# 출력:
+# document.txt
+# notes.txt
+
+# 예시 3: 문자열에서 숫자만 추출
+echo "My number is 12345" | string match -r '[0-9]+'
+
+# 출력: 12345
 ```
-example@example.com
-```
 
-### 숫자만 추출하기
-`echo "판매량: 3456개" | fish -c "string match -r '([0-9]+)' >> 숫자 추출 결과.txt"`
+## Deep Dive (심층 분석):
 
-`cat 숫자 추출 결과.txt`
-```
-3456
-```
+정규 표현식은 1950년대 초반부터 수학자들 사이에서 사용되기 시작했습니다. POSIX와 Perl 호환 정규 표현식은 두 가지 주요한 표준입니다. Fish Shell은 기본적으로 Perl 호환 정규 표현식을 지원합니다. 그러나, Fish Shell은 string 명령을 이용하여 보다 명확하고 직관적인 문자열 처리를 제공하려고 노력합니다. 이는 문자열 작업을 위한 별도의 형식과 명령을 제공함으로써, 표준 Unix 도구들에 대한 의존성을 줄여줍니다.
 
-## 깊게 파고들기
-정규표현식은 켄 톰슨이 개발한 텍스트 처리 도구인 ed의 일부기능으로 1950년대에 처음 사용되었어. 현재까지도 널리 사용되지만, 다른 문자열 처리 방법과 비교하면 익숙하지 않은 문법이라 사용하기 어려울 수도 있어.
+## See Also (관련 자료):
 
-또한, 정규표현식 대신 문자열 처리 라이브러리를 사용하는 방법도 있어. 하지만 정규표현식은 여러 패턴을 한 번에 검색할 수 있다는 장점이 있어서 가독성이나 성능 면에서 더 좋은 선택일 수 있어.
-
-Fish Shell의 정규표현식은 C 언어의 정규표현식을 기반으로한 자체 구현체를 사용해. 따라서 C 언어의 정규표현식 문법을 그대로 적용할 수 있어서 익숙한 사용이 가능해.
-
-## 관련 자료
-- [Fish Shell 공식 홈페이지](https://fishshell.com/)
-- [Fish Shell GitHub 레포지토리](https://github.com/fish-shell/fish-shell)
-- [C 언어 정규표현식 문법](https://www.gnu.org/software/gawk/manual/gawk.html#Regexp-Operators)
+- Fish Shell 공식 문서: [Regular Expressions in Fish](https://fishshell.com/docs/current/index.html#syntax-regular-expressions)
+- 정규 표현식에 대한 더 깊은 이해를 위한 자료: [Regular-Expressions.info](https://www.regular-expressions.info/)
+- 다른 프로그래밍 언어에서 정규 표현식 사용법: [MDN Web Docs 정규 표현식](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)

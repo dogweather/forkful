@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Lua: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,43 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das und warum? 
-Wenn du schon einmal an einem komplizierten Dokument gearbeitet hast und nach bestimmten Textfragmenten suchen musstest, weißt du, wie mühsam das sein kann. Hier kommen reguläre Ausdrücke (regular expressions) ins Spiel. Es ist eine Art von spezieller Schreibweise, die es uns ermöglicht, nach bestimmten Mustern in einem Text zu suchen und sie zu manipulieren. Programmierer nutzen reguläre Ausdrücke, um schneller und effizienter Daten zu verarbeiten.
+## Was & Warum?
+Reguläre Ausdrücke, auch Regex genannt, sind Muster, mit denen man Text nach bestimmten Regeln durchsucht, ersetzt oder aufteilt. Programmierer nutzen sie, weil sie mächtige Werkzeuge sind, um komplexe Textbearbeitungen effizient durchzuführen.
 
-## So geht's:
-Ein Beispiel: Um in einem Text nach allen Telefonnummern zu suchen, die im Format xxx-xxx-xxxx geschrieben sind, könnten wir folgenden regulären Ausdruck verwenden: `(\d{3})-(\d{3})-(\d{4})`. Im Code würde es so aussehen:
+## How to:
+Lua verwendet Patterns, die ähnlich, aber nicht so umfangreich wie reguläre Ausdrücke sind. Hier ein paar Beispiele:
 
+Suchen:
 ```Lua
-text = "Meine Telefonnummer ist 123-456-7890 und die meines Freundes ist 987-654-3210"
-pattern = "(\d{3})-(\d{3})-(d{4})"
-numbers = {}
-
-for a, b, c in text:gmatch(pattern) do
-  table.insert(numbers, a)
-  table.insert(numbers, b)
-  table.insert(numbers, c)
+local text = "Hallo Welt!"
+if string.match(text, "Welt") then
+  print("Gefunden!")
 end
+-- Ausgabe: Gefunden!
+```
 
-print("Gefundene Nummern: ")
-for i, number in ipairs(numbers) do
-  print(number)
+Ersetzen:
+```Lua
+local text = "Hallo Welt!"
+local neuer_text = string.gsub(text, "Welt", "Lua")
+print(neuer_text)
+-- Ausgabe: Hallo Lua!
+```
+
+Zerlegen:
+```Lua
+local text = "Anna:Berta:Charlie"
+local namen = {}
+for name in string.gmatch(text, "[^:]+") do
+  table.insert(namen, name)
 end
-
+print(table.concat(namen, ", "))
+-- Ausgabe: Anna, Berta, Charlie
 ```
 
-Die Ausgabe wäre dann:
-```
-123
-456
-7890
-987
-654
-3210
-```
+## Deep Dive
+Reguläre Ausdrücke, wie in vielen anderen Sprachen bekannt, wären in Lua eine Überfrachtung gewesen, also entschieden sich die Entwickler für einfachere Muster (patterns). Alternativen zu Luas eingebauten Patterns sind externe Bibliotheken wie `LuaPCRE` oder `rex`. Diese bieten vollständige Regex-Unterstützung, erfordern aber zusätzliche Installationen. Bei der Performance hängt es vom Anwendungsfall ab – eingebaute Patterns sind in Lua oft schneller, während komplexere Regex-Operationen mithilfe externer Bibliotheken oftmals besser gehandhabt werden können.
 
-## Tiefes Eintauchen:
-Reguläre Ausdrücke wurden in den 1950er Jahren von einem Mathematiker entwickelt und ursprünglich von Texteditoren verwendet. Heutzutage werden sie von vielen Programmiersprachen unterstützt, einschließlich Lua. Es gibt auch Alternative Methoden zur Textmanipulation, wie z.B. das Verwenden von Mustern und das Splitten von Textstrings. Die Implementierung von regulären Ausdrücken in Lua basiert auf dem sogenannten "Pattern Matching", das auf Algorithmen der formalen Spracherkennung beruht.
-
-## Sieh dir auch an:
-- [Tutorial zur Verwendung von regulären Ausdrücken in Lua](https://www.tutorialspoint.com/pattern-matching-in-lua)
-- [Lua regelbasierte Ausdrücke reference manual](https://www.lua.org/manual/5.3/manual.html#6.4.1)
+## See Also
+- Lua 5.4 Referenzhandbuch: https://www.lua.org/manual/5.4/
+- Lua Users Wiki zu Patterns: http://lua-users.org/wiki/PatternsTutorial
+- LuaPCRE auf GitHub: https://github.com/rrthomas/luapcre
+- rexlib: http://rrthomas.github.io/lrexlib/

@@ -1,6 +1,6 @@
 ---
 title:                "Använda reguljära uttryck"
-html_title:           "Gleam: Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
 programming_language: "Java"
 category:             "Java"
@@ -11,33 +11,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
-Reguljära uttryck, eller regex, är starka verktyg för att matcha, hitta och manipulera strängar i Java. Programmers använder dem för att effektivisera och förenkla textbearbetning och dataextraktion.
+Reguljära uttryck är mönster för att matcha textsträngar. Programmerare använder detta för textbearbetning, dataextraktion och validering.
 
 ## Hur man gör:
-Att arbeta med regex i Java är relativt enkelt. Här är några exempel:
-
 ```Java
-import java.util.regex.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
-public class Main {
-    public static void main(String[] args) {
-        // Skapa ett mönster att matcha emot
-        Pattern pattern = Pattern.compile("hej");
-        // Skapa en matchare med mönstret
-        Matcher matcher = pattern.matcher("hej där");
+public class RegexExample {
+  public static void main(String[] args) {
+    String text = "Hej! Mitt telefonnummer är 070-123 45 67.";
+    String patternString = "\\d{3}-\\d{3} \\d{2} \\d{2}";
 
-        // Kontrollera om mönstret matchar
-        boolean matchFound = matcher.find();
-        System.out.println(matchFound); // Skriver ut 'true' eftersom "hej" finns i "hej där"
+    Pattern pattern = Pattern.compile(patternString);
+    Matcher matcher = pattern.matcher(text);
+
+    if (matcher.find()) {
+      System.out.println("Hittade nummer: " + matcher.group());
     }
+  }
 }
 ```
+Utskrift:
+```
+Hittade nummer: 070-123 45 67
+```
 
-## Djupdykning
-Reguljära uttryck härstammar från teoretisk datavetenskap, men har blivit väsentliga verktyg för praktisk kodning. Alternativ till regex i Java inkluderar String-klassens metoder som `contains()`, `startsWith()`, osv. Men dessa metoder tillåter inte komplexa matchningskrav som regex gör. Regex i Java implementeras via java.util.regex-biblioteket som innehåller `Pattern`- och `Matcher`-klasserna.
+## Fördjupning
+Reguljära uttryck härstammar från teoretisk datavetenskap och automatteori. Alternativ till Java's inbyggda klasser inkluderar bibliotek som Apache Commons Lang. Implementationen använder vanligtvis tillståndsmaskiner för att tolka och matcha mönstren.
 
-## Se också
-Följande resurser erbjuder mer detaljerade insikter om regex och dess användning i Java:
-1. [Java Docs: Class Pattern](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/regex/Pattern.html)
-2. [Java Docs: Class Matcher](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/util/regex/Matcher.html)
-3. [RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
+## Se även
+- Java Dokumentation på Pattern Class: https://docs.oracle.com/javase/10/docs/api/java/util/regex/Pattern.html
+- Oracle Tutorial på reguljära uttryck: https://docs.oracle.com/javase/tutorial/essential/regex/
+- Apache Commons Lang: https://commons.apache.org/proper/commons-lang/

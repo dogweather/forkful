@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Bash: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,28 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why?
+정규 표현식이란 문자열에 있는 특정 패턴을 찾고 조작하기 위한 문자 조합입니다. 프로그래머들이 사용하는 이유는 데이터 검증, 검색, 텍스트 처리 등 복잡한 문자열 작업을 효율적으로 다루기 위해서입니다.
 
-정규식(regular expression)은 특정 패턴이 문자열에 포함되어 있는지 여부를 확인할 때 사용하는 강력한 도구입니다. 프로그래머들은 효율적인 문자열 검색, 치환 등을 위해 정규식을 활용합니다.
-
-## 사용법:
-
-여러분이 정규식을 활용하여 한 문자열에서 다른 문자열을 찾아내는 방법을 알려 드리겠습니다.
-
+## How to:
 ```Bash
-echo "Welcome to Bash programming!" | grep -o "Bash"
+# 문자열에서 간단한 매칭 찾기
+echo "Hello World" | grep "World"
+
+# 출력: World
+
+# 정규 표현식을 사용해서 이메일 형식 찾기
+echo "my.email@example.com" | grep -E "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+
+# 출력: my.email@example.com
+
+# sed를 이용한 검색 및 대체 (s/찾을패턴/새로운문자열/)
+echo "The rain in Spain" | sed 's/rain/sun/'
+
+# 출력: The sun in Spain
+
+# 파일에서 패턴에 일치하는 줄 찾기
+grep -E "^\s*error" /var/log/syslog
+
+# 패턴에 일치하는 줄 여러 개가 출력될 수 있음
 ```
 
-이 명령어를 실행하면 #### 창에 'Bash'라는 단어가 표시됩니다. `grep` 명령은 입력받은 문자열에서 검색하고자 하는 패턴을 찾는 역할을 합니다. `-o` 옵션을 사용하면 일치하는 정확한 단어만 표시하게 됩니다.
+## Deep Dive
+1980년대 초, Ken Thompson이 정규 표현식을 UNIX의 ed 에디터에 도입했습니다. 정규 표현식을 활용한 유명한 도구로는 grep, sed, awk가 있습니다. Perl, Python 같은 프로그래밍 언어도 정규 표현식을 내장하고 있습니다. 정규 표현식은 POSIX 표준과 Perl 호환 표현식인 PCRE (Perl Compatible Regular Expressions)로 나뉩니다.
 
-## 깊이 알기:
-
-정규식은 1950년대에 이론화되어, 다양한 언어와 시스템에서 반복적 작업을 처리하는 데 사용됩니다. `awk` 또는 `sed` 같은 방식도 문자열 처리를 위해 사용되지만, `grep`은 가장 일반적인 방식입니다.
-
-정규식의 구현은 대체로 최소화 DFA(Deterministic Finite Automaton를 활용한 컴파일과정을 통해 이루어집니다. 이는 복잡하지만, 자세한 내용은 우리 토픽 범위를 벗어나므로 이 부분은 패스하겠습니다.
-
-## 참고 자료:
-
-- [정규 표현식 쿡북 2판](https://www.hanbit.co.kr/store/books/look.php?p_code=B4300598719)
-- [Bash에서 정규식 사용하기](https://wiki.kldp.org/wiki.php?page=RegularExpression%20in%20Bash)
-- [정규식에 대한 MDN 문서](https://developer.mozilla.org/ko/docs/Web/JavaScript/Guide/Regular_Expressions)
+## See Also
+- GNU grep 매뉴얼: https://www.gnu.org/software/grep/manual/grep.html
+- sed 사용법: https://www.gnu.org/software/sed/manual/sed.html
+- 정규 표현식에 대한 더 깊은 학습: https://www.regular-expressions.info/
+- 온라인 정규 표현식 테스터: https://regexr.com/

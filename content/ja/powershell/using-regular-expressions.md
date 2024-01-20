@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使う"
-html_title:           "PowerShell: 正規表現を使う"
-simple_title:         "正規表現を使う"
+title:                "正規表現の使用"
+html_title:           "C: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,36 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何して:
-プログラミングの世界では、正規表現を使っています。正規表現とは、テキストのパターンを一致させることができる機能です。プログラマーは、特定の文字列やパターンを検索したり、置換したりするために正規表現を使用します。
+## What & Why? (何となぜ？)
+Regular expressionsを使用することは、テキストパターンを識別・操作するための強力な方法です。プログラマーはデータ検索、置換、検証作業を簡単かつ効率的に行うためにこれを利用します。
 
-## 方法:
-
+## How to: (やり方)
 ```PowerShell
-# テキストの中からパターンを検索する例
-$Text = "こんにちは、今日は良い天気ですね。"
-$Pattern = "今日"
-
-if ($Text -match $Pattern) {
-    Write-Host "パターンが見つかりました：" $Matches[0]
-    # パターンが見つかりました：今日
+# 文字列内でパターンを探す例
+$text = "PowerShellは強力です。"
+$pattern = '強力'
+if ($text -match $pattern) {
+    "パターンが見つかりました：$matches"
 }
+
+# 結果:
+# パターンが見つかりました：@{0=強力}
+
+# 文字列置換の例
+$replacedText = $text -replace '強力', '素晴らしい'
+"置換後のテキスト：$replacedText"
+
+# 結果:
+# 置換後のテキスト：PowerShellは素晴らしいです。
 ```
 
-```PowerShell
-# テキストを置換する例
-$Text = "私の電話番号は070-1234-5678です。"
-$Pattern = "\d{3}-\d{4}-\d{4}"
-$Replacement = "XXX-XXXX-XXXX"
+## Deep Dive (深堀り)
+Regex、または正規表現は、1940年代に神経生理学者のウォーレン・マカラクと数学者のウォルター・ピッツが提案した概念から発展しています。Alternativesには`like`演算子や`contains`メソッドなどがありますが、正規表現はより高度なパターンマッチングを提供します。PowerShellでは`-match`、`-replace`、`-split`といったオペレータを使い正規表現を実装しています。
 
-$NewText = $Text -replace $Pattern, $Replacement
-Write-Host "置換後のテキスト：" $NewText
-# 置換後のテキスト：私の電話番号はXXX-XXXX-XXXXです。
-```
-
-## 詳細情報:
-正規表現は、1960年代に誕生したテキスト処理のための強力なツールです。Perl言語で最初に実装されましたが、今ではほとんどのプログラミング言語でサポートされています。他のオプションとして、PowerShellでは「Like」演算子を使ってパターンマッチングができますが、正規表現はより柔軟な方法でパターンを一致させることができます。正規表現は、文法やメタキャラクターなどの専門的な概念を覚える必要がありますが、慣れると便利なツールとなります。
-
-## 関連リンク:
-- 正規表現入門(Powershell版): http://www-creators.com/archives/1658
-- PowerShellの置換と正規表現: https://powershell.keicode.com/script/alphabet-matching-string-with-regex.php
+## See Also (関連情報)
+- [about_Regular_Expressions](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
+- [Regular-Expressions.info](https://www.regular-expressions.info)
+- [Regex101: Online regex tester and debugger](https://regex101.com)

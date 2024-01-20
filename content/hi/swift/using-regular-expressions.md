@@ -1,7 +1,7 @@
 ---
-title:                "रेगुलर एक्सप्रेशन का उपयोग करना"
-html_title:           "Swift: रेगुलर एक्सप्रेशन का उपयोग करना"
-simple_title:         "रेगुलर एक्सप्रेशन का उपयोग करना"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,51 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-रेगुलर एक्सप्रेशन का उपयोग क्या है और क्यों हम इसे प्रोग्रामर्स द्वारा किया जाता है, इसके बारे में दो से तीन सेंटेंसों में समझाएं। रेगुलर एक्सप्रेशन स्ट्रिंग मैचिंग के लिए एक शक्तिशाली और अनिवार्य टूल है जो स्ट्रिंग के साथ तार्किक और रूपांतरण का समर्थन करता है।
+## What & Why? (क्या और क्यों?)
+रेगुलर एक्सप्रेशन्स (Regular expressions) पैटर्न मैचिंग का एक तरीका हैं, जो टेक्स्ट को सर्च और मैनिप्युलेट करने के लिए इस्तेमाल होते हैं। प्रोग्रामर्स इसका इस्तेमाल डाटा वेलिडेशन, पार्सिंग, और टेक्स्ट एनालिसिस के लिए करते हैं क्योंकि ये शक्तिशाली और फ्लेक्सिबल होते हैं।
 
-## कैसे करें:
-यहां हम स्विफ्ट भाषा का उपयोग करके रेगुलर एक्सप्रेशन को कैसे इस्तेमाल करेंगे उसके बारे में कुछ उदाहरण और आउटपुट से जानेंगे। पहले हम एक सामान्य प्रारंभिक उदाहरण देखेंगे, जैसे कि स्ट्रिंग मैचिंग और पिछला उदाहरण और फिर हम कुछ जटिल प्रारंभिक उदाहरण देखेंगे। निम्नलिखित स्निपेट को कॉपी करके आप स्विफ्ट प्लेग्राउंड में चला सकते हैं और परिणाम देख सकते हैं।
-
+## How to (कैसे करें):
 ```Swift
-// सामान्य उदाहरण:
+import Foundation
 
-let string1 = "Hello, Swift!"
-let string2 = "Best language: Swift"
-let pattern = "Swift"
+let input = "मेरा ईमेल user@example.com पर है।"
+let pattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+let regex = try! NSRegularExpression(pattern: pattern, options: [])
 
-let match = string1.range(of: pattern)
-print(match)
+let matches = regex.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
 
-let noMatch = string2.range(of: pattern)
-print(noMatch)
-
-// जटिल उदाहरण:
-
-let string3 = "Swift is the best language for iOS development!"
-let pattern = "Sw\\w?ft"
-
-let matches = string3.ranges(
-    for: pattern, options: .regularExpression, range: nil, locale: nil)
-print(matches)
+if let match = matches.first {
+    let range = Range(match.range, in: input)!
+    let found = input[range]
+    print("मिला ईमेल: \(found)")
+}
 ```
-
 आउटपुट:
-```swift
-// सामान्य उदाहरण:
-Optional(Range(_: 7..<12))
-nil
+`मिला ईमेल: user@example.com`
 
-// जटिल उदाहरण:
-[Range(_: 0..<5), Range(_: 38..<44)]
-```
+## Deep Dive (गहराई से जानकारी):
+रेगुलर एक्सप्रेशन्स 1950 के दशक में थ्योरेटिक कंप्यूटर साइंस में आए थे। उनका मैचिंग पैटर्न्स शुरू में टेक्स्ट एडिटर्स और Unix टूल्स में इस्तेमाल हुआ। स्विफ्ट में, `NSRegularExpression` एपीआई का इस्तेमाल इनके लिए होता है। विकल्प के रूप में, `String` मेथड्स भी सरल पैटर्न्स को मैनेज कर सकते हैं। परफॉरमेंस के लिहाज से, जितना संभव हो सके पैटर्न सिम्पल रखना चाहिए।
 
-## गहराई में जाएं:
-रेगुलर एक्सप्रेशनों को आपस में मैचिंग करने के लिए सामान्य उपयोग करने के लिए पॉजिटिव लुकआहेड्स के डेट और क्रोनोमेटर दिया गया था। अब दिन दूसरी तरीके से डेटा के साथ standardization की रचना करता है। विभिन्न तरह के प्रारम्भिक उदाहरण।
-
-मा॰द्रासङ्ग एजिनीरिंग कॉलेज़ तो कागज़ न हुआ ही था जिसने जानकारी को दोबारा बताया था कि डेटा को क्रोनोमेटर को हां ज़ैक्टी किया गया।
-
-एहसास हो सकता है कि प्रयोगशील सामान्य उदाहरण वाला उस तरह मामे चर्च थे। जैसा कि स्विफ्ट अस्पताल के आविष्कार से स्विफ्ट अस्पताल अधिकारि थे और स्विफ्ट रेगुलर एक्सप्रेशन पर कोई अभभभभंभ साल का कागज था। लॉगिस्टिकियाँ हैं मुखौपRecord बनाती है।
-
-## इससे जुड़े और भी देखें:
-इस अनुच्छेद में आपने स्विफ्ट म
+## See Also (देखें भी):
+- Swift की ऑफिशियल दस्तावेज़ पर NSRegularExpression: https://developer.apple.com/documentation/foundation/nsregularexpression
+- रेगुलर एक्सप्रेशन्स के ट्यूटोरियल: https://www.regular-expressions.info/
+- रेगुलर एक्सप्रेशन्स की किताबें और संसाधन: https://www.regexbuddy.com/regex.html

@@ -1,6 +1,6 @@
 ---
 title:                "正規表現の使用"
-html_title:           "Bash: 正規表現の使用"
+html_title:           "C: 正規表現の使用"
 simple_title:         "正規表現の使用"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,44 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
+## What & Why? (何となぜ?)
+正規表現は、文字列内パターン検索と操作のための構文です。プログラマは、テキストデータのバリデーションや解析、変更を効率的にするために使います。
 
-正規表現は、パターンマッチングやパターン検索に使用する一連の文字列です。このパワフルなツールを使うことで、コードの一貫性と効率性を向上させることができます。
-
-## 使用方法：
-
-Elmで正規表現を使用してみましょう。以下に簡単なコードを示します。
-
+## How to: (方法)
+Elmにおける正規表現の使用例です：
 ```Elm
-import Regex
-import String
+import Regex exposing (Regex, fromString, find, FindResult)
 
-main =
- let
-  regex = Regex.regex "a.b"
-  in
-  case Regex.contains regex "axb" of
-   True -> "マッチしました"
-   False -> "マッチしませんでした"
+-- 正規表現を作成
+regex : Regex
+regex = Regex.fromString "\\d+" |> Maybe.withDefault (Regex.fromString "" |> Maybe.withDefault Regex.never)
+
+-- 文字列から数字を検索
+findNumbers : String -> List String
+findNumbers str =
+    find regex str |> List.map .match
+
+-- 結果のサンプル
+sampleOutput : List String
+sampleOutput = findNumbers "今日の温度は23度です"
+
+-- sampleOutput の期待される出力：["23"]
 ```
 
-このコードの実行結果は次のとおりです。
+## Deep Dive (深い潜入)
+正規表現は1960年代に起源を持ち、Elmでは`Regex`モジュールを通じて提供されています。`String.contains`, `String.startsWith`, または`String.endsWith`関数を使うことで単純なパターンマッチングの代替が可能ですが、複雑な検索には不向きです。Elmの正規表現はJavaScriptの正規表現構文を基にしていて、`find`や`replace`などの関数を使って操作します。
 
-```Elm
-"マッチしました"
-```
-
-## ディープダイブ:
-
-1. 歴史的な背景: 正規表現は1950年代に数学者スティーブン・クリーンによって導入され、以来、プログラミングで広く利用されています。
-
-2. 代替案: 正規表現は強力ですが、用途によっては他の手段（文字列関数など）の方が適している場合もあります。
-
-3. 実装詳細: Elmでは`Regex`モジュールを使用して正規表現を扱います。非常に効率的で、高度な定数時間でパターンマッチングを可能にします。
-
-## 関連情報:
-
-ぜひ以下のリンクもご覧ください:
-
-- Elmの公式ドキュメント: [Regex](https://package.elm-lang.org/packages/elm/regex/latest/)
-- さまざまな正規表現に関するチュートリアル: [Regular-Expressions.info](https://www.regular-expressions.info/)
+## See Also (関連項目)
+- Elmの`Regex`モジュールドキュメント: https://package.elm-lang.org/packages/elm/regex/latest/Regex
+- JavaScriptの正規表現ガイド (Elmの正規表現はJavaScriptに基づいています。): https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
+- Elmコミュニティのディスカッションとサポート: https://discourse.elm-lang.org/

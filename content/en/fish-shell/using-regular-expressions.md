@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Fish Shell recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,43 +11,60 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Using regular expressions in programming is a way to search and manipulate text using a set of patterns and rules. It allows programmers to quickly find and extract specific data from a large amount of text, making it a powerful tool for tasks such as data validation, text processing, and data scraping. Regular expressions can significantly increase efficiency and accuracy when working with text-based data.
+Regular expressions, or regex, are patterns that describe sets of strings. Programmers use them to search, match, and manipulate text — super handy for finding needles in data haystacks.
 
 ## How to:
+The Fish Shell has built-in regex support in commands like `string`. Let's dive into some examples:
 
-Coding with regular expressions in Fish Shell is done using the built-in `string` command. Here are a few examples of how it can be used:
+**Basic Search:**
 
-```
-# Match a specific pattern in a string
-string match "word" "This is a sentence with the word hello"
-# Output: hello
-```
+Find if "fish" is in the string:
 
-```
-# Find all instances of a pattern in a string
-string match -a "a" "aaaaa"
-# Output: a a a a a
+```fish
+echo "I love to fish for fish in my fish tank" | string match -r "fish"
 ```
 
+Output:
+
 ```
-# Replace a pattern in a string with another string
-string replace "word" "replacement" "This is a sentence with the wrong word"
-# Output: This is a sentence with the wrong replacement
+fish
+fish
+fish
+```
+
+**Capture Groups:**
+
+Extract matched groups using parentheses:
+
+```fish
+echo "Color: Blue, Code: #0000FF" | string match -r "Color: (\w+)"
+```
+
+Output:
+
+```
+Color: Blue
+Blue
+```
+
+**Replace Text:**
+
+Swap "fish" with "shark":
+
+```fish
+echo "One fish, two fish, red fish, blue fish" | string replace -ar "fish" "shark"
+```
+
+Output:
+
+```
+One shark, two shark, red shark, blue shark
 ```
 
 ## Deep Dive:
-
-The use of regular expressions can be traced back to the 1950s when mathematician Stephen Cole Kleene introduced the concept in formal language theory. However, it was not until the 1980s that it gained popularity in computer programming.
-
-Although regular expressions can be written in various languages, using them in Fish Shell allows for a more concise and simple syntax. Additionally, Fish Shell's `string` command is optimized for performance, making it a reliable and efficient option for regular expression tasks.
-
-Alternatives to using regular expressions in Fish Shell include using built-in string methods or external packages such as `grep` or `sed`. However, these alternatives may not have the same level of functionality and flexibility as regular expressions.
-
-Another interesting aspect of using regular expressions in Fish Shell is the ability to define your own custom aliases and functions. This can help simplify complex regular expressions and make them easier to use in your code.
+Regular expressions hail from theoretical computer science, concocted in the 1950s. Alternatives? Sure, you've got simple string searches or parsers for more structure, but regex is sweet for quick and dirty tasks. The Fish Shell uses PCRE (Perl Compatible Regular Expressions) under the hood, ensuring a robust set of features for pattern matching.
 
 ## See Also:
-
-- [Fish Shell Official Documentation on Regular Expressions](https://fishshell.com/docs/current/commands.html#string)
-- [Regular Expression 101 - Online regex tester and debugger](https://regex101.com/)
-- [Introduction to Regular Expressions - Tutorial by Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Official Fish Shell documentation: [The string Command](https://fishshell.com/docs/current/cmds/string.html)
+- Regex tutorial for beginners: [Regular Expressions 101](https://regex101.com/)
+- In-depth understanding: [Mastering Regular Expressions by Jeffrey Friedl](http://shop.oreilly.com/product/9780596528126.do)

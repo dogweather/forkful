@@ -1,7 +1,7 @@
 ---
-title:                "השתמשות בביטויים רגולריים"
-html_title:           "Java: השתמשות בביטויים רגולריים"
-simple_title:         "השתמשות בביטויים רגולריים"
+title:                "שימוש בביטויים רגולריים"
+html_title:           "Bash: שימוש בביטויים רגולריים"
+simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,32 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# מה ולמה?
-שימוש בביטויים רגילים הוא שיטה נפוצה בתכנות שבה ניתן לחפש ולהתאים מבנים טקסטואליים מסוימים. זהו כלי חזק ומועיל במיוחד עבור תרגום, חלוקת טקסט ליחידות ובדיקת תקינות קלט.
+## מה ולמה?
+רגולר אקספרשנז (ביטויים רגילים) הם כלים לחיפוש ומניפולציה של מחרוזות בהתאם לתבניות מסוימות. תכניתנים משתמשים בהם כדי לחסוך זמן, לקודד בצורה יעילה יותר ולהבטיח נכונות וביטחון של הנתונים.
 
-## כיצד להשתמש:
-להלן דוגמאות של קוד Java לשימוש בביטויים רגילים והפלט שמתקבל:
-
-```java
-String text = "האם אתה משתמש בביטויים רגילים בתכנות?";
-String pattern = "האם .+ תכנות\\?";
-boolean matches = text.matches(pattern);
-System.out.println(matches); // פלט: true
-```
+## איך לעשות:
+הנה כמה דוגמאות בשפת ג'אווה:
 
 ```java
-String text = "למה לא נכנסתי לתוכנית הפנימית של הקורס?";
-String pattern = "(למה|מדוע).*תוכנית.*קורס\\?";
-boolean matches = text.matches(pattern);
-System.out.println(matches); // פלט: true
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexExamples {
+    public static void main(String[] args) {
+        // זיהוי תבנית מייל
+        String emailRegex = "^(.+)@(.+)$";
+        Pattern emailPattern = Pattern.compile(emailRegex);
+        Matcher emailMatcher = emailPattern.matcher("example@domain.com");
+
+        if (emailMatcher.find()) {
+            System.out.println("מייל חוקי: " + emailMatcher.group());
+        } else {
+            System.out.println("מייל לא חוקי.");
+        }
+        
+        // החלפת טקסט
+        String text = "תפוחים 5, תפוזים 3, גזר 4";
+        String replacedText = text.replaceAll("\d", "#");
+        System.out.println(replacedText);  // "תפוחים #, תפוזים #, גזר #"
+    }
+}
+```
+פלט דוגמה:
+```
+מייל חוקי: example@domain.com
+תפוחים #, תפוזים #, גזר #
 ```
 
-## טיול עמוק:
-ביטויים רגילים פותחו לראשונה בשנת 1951 על ידי ברד קול וקנות ריצ'יי, יצרני שפת התכנות קובול. שימוש בביטויים רגילים יכול להיות אפשרות יעילה מבחינה זמנית עבור בקשות מסוימות, אך ישנן אפשרויות נוספות כמו חיפוש עם מילולות ממולכמות או בידוד תת-מחרוזות עם עצרות (capture groups).
+## צלילה לעומק:
+בשנת 1950, מתמטיקאי בשם סטיבן קליני המציא את מושג הביטויים הרגילים. כיום ישנם אלטרנטיבות כמו פרסרים של דקדוקים פורמליים, אך רגולר אקספרשנז עדיין נפוצים בשל פשטותם והיעילות שהם מציעים. בג'אווה, המחלקה `Pattern` מבצעת קומפילציה של הביטוי הרגיל והמחלקה `Matcher` משמשת לזיהוי התאמות ולביצוע פעולות עם הביטויים הרגילים.
 
-כדי לבדוק את התאמת הביטויים הרגילים שלך ולדעת מה הוא מתאים בפועל, ניתן להשתמש בכלי כמו regex101 או RegexBuddy.
-
-## ראו גם:
-- [Oracle אינדקס טכני על ביטויים רגילים](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [ויקיפדיה - ביטוי רגיל](https://en.wikipedia.org/wiki/Regular_expression)
-- [ביטויים רגילים בג'אבה](http://tutorials.jenkov.com/java-regex/pattern.html)
+## ראי גם:
+- התיעוד הרשמי של ג'אווה לרגולר אקספרשנז: [Java Regex](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/util/regex/Pattern.html)
+- מדריך ויזואלי לרגולר אקספרשנז: [Regexr](https://regexr.com/)
+- ספר מקוון חינמי על רגולר אקספרשנז: [RegexOne](https://regexone.com/)

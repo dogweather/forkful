@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "PowerShell: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是正则表达式？
-正则表达式是一种用于匹配文本模式的工具，它可以在程序中用来对字符串进行搜索、匹配和替换。程序员通常会使用正则表达式来处理大量的文本数据，例如从文件中提取特定模式的信息或者验证用户输入的格式是否正确。
+## What & Why? 
+什么 & 为什么？
 
-## 如何操作？
-使用正则表达式的第一步是创建一个匹配模式，这个模式可以是一个简单的字符，也可以是一个复杂的表达式。然后，我们可以使用`-match`和`-replace`的PowerShell运算符来对文本进行搜索和替换操作。下面是一个示例代码和输出结果：
+正则表达式是一种强大的文本模式匹配和查找工具。程序员用它来搜索、编辑或处理复杂文本和数据结构，以节省时间和增加代码的灵活性。
 
-```
-PowerShell $myString = "Hello World!"
-PS C:\> $myString -match "Hello"
-True
-```
-```
-PowerShell $myString = "PowerShell is awesome!"
-PS C:\> $myString -replace "awesome", "cool"
-PowerShell is cool!
+## How to:
+怎么做：
+
+```PowerShell
+# 查找数字
+$text = "订单号12345和54321随时准备发货。"
+$matches = [regex]::Matches($text, '\d+')
+$matches.Value
+
+# 输出
+12345
+54321
+
+# 替换字符串
+$text = "这是一个old item。"
+$newText = $text -replace 'old', 'new'
+$newText
+
+# 输出
+这是一个new item。
 ```
 
-## 深入了解
-正则表达式最早是由计算机科学家之一的Stephen Kleene在20世纪50年代提出的，它的出现极大地简化了文本处理的工作。除了PowerShell，其他编程语言如Python、Java和C#也都可以使用正则表达式来进行文本处理。当然，还有许多其他的文本处理工具也可以用来完成类似的任务，但正则表达式通常是最简单、最有效的解决方案。如果你想深入了解正则表达式的语法和使用技巧，可以参考下方的相关资源。
+## Deep Dive
+深入探究：
 
-## 链接参考
-- [正则表达式教程（网易云课堂）](https://study.163.com/course/courseMain.htm?courseId=1005498027)
+正则表达式起源于20世纪50年代的自动理论和形式语言。针对不同编程问题，你可以选择字符串函数或解析器作为替代方案。在PowerShell中，regexp是.NET的System.Text.RegularExpressions命名空间底下实现的，这意味着它们非常强大且高效。
+
+## See Also
+另请参阅：
+
+- [Microsoft Docs: about_Regular_Expressions](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions)
+- [Regular-Expressions.info](https://www.regular-expressions.info/powershell.html)
+- [.NET System.Text.RegularExpressions Namespace](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions?view=netframework-4.8)

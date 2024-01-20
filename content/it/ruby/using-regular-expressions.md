@@ -1,7 +1,7 @@
 ---
-title:                "Utilizzare le espressioni regolari"
-html_title:           "Ruby: Utilizzare le espressioni regolari"
-simple_title:         "Utilizzare le espressioni regolari"
+title:                "Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,42 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché?
+## What & Why?
+Le espressioni regolari (regex) sono strumenti che consentono di cercare pattern di testo con grande flessibilità. I programmatori le usano per validare, estrarre e manipolare dati in maniera efficiente e precisa.
 
-Le espressioni regolari, o "regular expressions" in inglese, sono uno strumento potentissimo per manipolare e cercare testo all'interno di stringhe. Sono utilizzate principalmente dai programmatori per automatizzare determinate operazioni e trovare corrispondenze all'interno di grandi quantità di testo.
-
-## Come si usa:
-
-Usare le espressioni regolari in Ruby è molto semplice. Basta utilizzare il metodo `=~` su una stringa e passare come argomento l'espressione regolare desiderata, racchiusa tra due slash `//`. Vediamo un esempio:
-
+## How to:
 ```Ruby
-text = "Questo è un testo di prova"
-puts text =~ /testo/  # output: 15
+# Trovare se una stringa contiene un numero
+contiene_numero = /\d/.match?("Hai 2 messaggi")
+puts contiene_numero  # => true
+
+# Estrarre tutti i numeri da una stringa
+numeri = "L'anno è 2023 e siamo in aprile".scan(/\d+/)
+puts numeri.join(', ')  # => "2023, 4"
+
+# Sostituire testo in una stringa
+stringa_modificata = "ruby è divertente".gsub(/divertente/, 'fantastico')
+puts stringa_modificata  # => "ruby è fantastico"
 ```
 
-In questo caso, il metodo `=~` restituisce l'indice in cui viene trovata la prima occorrenza della stringa "testo" all'interno della variabile `text`, ovvero 15. È possibile utilizzare anche una sintassi più compatta, inserendo direttamente l'espressione regolare dopo il segno `=~`:
+## Deep Dive
+Le espressioni regolari sono nate negli anni '50 con automi e teoria degli insiemi. Alternatives include string parsing libraries or specific parser for structured data like JSON or XML. In Ruby, le regex sono implementate con la libreria Onigmo, che supporta diversi flussi e codifiche di caratteri.
 
-```Ruby
-puts /testo/ =~ text  # output: 15
-```
-
-Se si vuole sostituire un match con una stringa diversa, si può utilizzare il metodo `gsub` sulla stringa e passare come primo argomento l'espressione regolare e come secondo argomento la stringa sostituita. Vediamo un esempio:
-
-```Ruby
-puts text.gsub(/testo/, "esempio")  # output: Questo è un esempio di prova
-```
-
-## Approfondimento:
-
-Le espressioni regolari sono state sviluppate negli anni '50 da matematici e informatici per codificare pattern di ricerca complessi. Oggi, molte lingue di programmazione, tra cui Ruby, supportano l'utilizzo delle espressioni regolari.
-
-Invece di utilizzare le espressioni regolari, i programmatori possono ricorrere ad altri metodi per manipolare il testo, come ad esempio l'utilizzo delle funzioni `include?` e `index` in Ruby. Tuttavia, le espressioni regolari risultano più potenti e flessibili per la maggior parte delle operazioni di ricerca e sostituzione di testo.
-
-Per chi volesse approfondire l'argomento, esistono molti tutorial e documentazione online riguardanti le espressioni regolari in Ruby, sia in italiano che in inglese.
-
-## Vedi anche:
-
-- Documentazione ufficiale di Ruby sulle espressioni regolari: https://ruby-doc.org/core/Regexp.html
-- Tutorial sulle espressioni regolari in Ruby: https://www.rubyguides.com/ruby-tutorial/regexp/
-- Articolo su Espressioni Regolari e Ruby: https://www.rubyguides.com/ruby-tutorial/regexp/
-- `intro-exp-ruby` gem: https://github.com/julik/intro-exp-ruby
+## See Also
+- [Ruby Regular Expressions](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Rubular: a Ruby regular expression editor](http://rubular.com/)
+- [Ruby Learning - Regular Expressions](http://rubylearning.com/satishtalim/ruby_regular_expressions.html)

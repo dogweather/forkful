@@ -52,5 +52,4 @@ La funzione `stat()` utilizzata qui è parte della libreria POSIX C ed è dispon
 Una volta richiamata la funzione `stat()`, si riempie una struttura `stat` con informazioni sul percorso. La macro `S_ISDIR()` controlla se il percorso rappresenta una directory.
 
 ## Vedi Anche
-- Documentazione di `opendir()`: [http://man7.org/linux/man-pages/man3/opendir.3.html](http://man7.org/linux/man-pages/man3/opendir.3.html)
 - Dettagli sulla struttura `stat` e la macro `S_ISDIR()`: [https://pubs.opengroup.org/onlinepubs/007904975/basedefs/sys/stat.h.html](https://pubs.opengroup.org/onlinepubs/007904975/basedefs/sys/stat.h.html)

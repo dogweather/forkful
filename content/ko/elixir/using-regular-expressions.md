@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Bash: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,32 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
+## What & Why?
+(무엇과 왜?)
+정규 표현식은 문자열에서 특정 패턴을 찾고 조작하기 위한 강력한 도구입니다. 프로그래머들은 데이터 유효성 검사, 문자열 검색 및 변환 작업을 자동화하기 위해 정규 표현식을 사용합니다.
 
-정규 표현식은 텍스트를 검색하고 수정하는데 사용되는 패턴입니다. 프로그래머는 텍스트 데이터를 효율적이고 정확하게 처리하기 위해 이를 활용합니다.
+## How to:
+(어떻게 하나요?)
+Elixir에서 정규 표현식을 사용하려면 `Regex` 모듈을 활용하세요. 아래 예시를 확인해보세요:
 
-## 어떻게 사용하나요:
-
-Elixir에서 정규 표현식을 사용하는 방법은 쉽습니다. 아래 코드를 살펴봅시다.
-
-```Elixir
-  string = "Hello, Elixir programmers!"
-  Regex.scan(~r/[A-Z][a-z]+/, string)
+```elixir
+# 정규 표현식으로 이메일 주소 찾기
+email_pattern = ~r/[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}/
+emails = "contact@example.com, not-an-email, admin@test.co.kr"
+matches = Regex.scan(email_pattern, emails)
+IO.inspect(matches) # [["contact@example.com"], ["admin@test.co.kr"]]
 ```
 
-이 코드의 출력값은 다음과 같습니다.
-
-```Elixir
-  [["Hello"], ["Elixir"]]
+```elixir
+# 문자열 교체하기
+hello_pattern = ~r/\bhello\b/
+greetings = "hello world, hello elixir"
+new_greetings = Regex.replace(hello_pattern, greetings, "hi")
+IO.puts(new_greetings) # "hi world, hi elixir"
 ```
 
-위의 코드는 대문자로 시작하는 단어를 찾는 정규 표현식입니다.
+## Deep Dive:
+(심층 탐구)
+정규 표현식은 1950년대 매튜키-McNaughton 이론과 자동 상태 머신으로 거슬러 올라갑니다. Elixir에서는 Erlang의 정규 표현식 엔진을 사용합니다. `String` 모듈 함수들과 패턴 매칭을 사용한 간단한 검색 및 문자열 처리가 가능하지만, 복잡한 규칙을 다룰 때는 정규 표현식이 더 효과적일 수 있습니다.
 
-## 깊게 보기:
-
-정규 표현식 체계는 먼저 1950년대에 개발되었습니다. Elixir에서 정규 표현식을 사용하면, 텍스트에서 특정 패턴을 효율적으로 찾고 대체할 수 있습니다. 그러나 사용자가 잘못 사용하면 코드의 가독성을 떨어뜨릴 가능성이 있으므로 주의가 필요합니다. Elixir의 `String` 모듈 안에는 정규 표현식 없이도 텍스트를 쉽게 처리할 수 있는 함수들이 많습니다.
-
-## 참고 자료:
-
-* Elixir 정규 표현식 공식 문서: [link](https://hexdocs.pm/elixir/1.12/Regex.html)
-* Elixir `String` 모듈 공식 문서: [link](https://hexdocs.pm/elixir/1.12/String.html)
+## See Also:
+(참조하기)
+- Elixir 공식 문서 [Regex 모듈](https://hexdocs.pm/elixir/Regex.html)
+- [Rubular: 정규 표현식 테스트 도구](http://rubular.com/)

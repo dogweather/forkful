@@ -1,7 +1,7 @@
 ---
-title:                "Att använda reguljära uttryck"
-html_title:           "Swift: Att använda reguljära uttryck"
-simple_title:         "Att använda reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,33 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why?
+Användning av reguljära uttryck är matchning av textmönster. Programmerare använder dem för att validera, extrahera eller ersätta text, vilket effektiviserar och automatiserar textbearbetning.
 
-Reguljära uttryck är ett sätt för programmerare att söka och manipulera textsträngar på ett strukturerat sätt. Det är särskilt användbart för att hitta specifika mönster eller uttryck i en lång text. Programmerare använder reguljära uttryck för att effektivt bearbeta och hantera stora mängder data.
-
-## Såhär:
-
-Ett grundläggande sätt att använda reguljära uttryck i Swift är med hjälp av metoden `matches` på en sträng. Till exempel, om vi vill söka efter alla förekomster av bokstaven "a" i en sträng, kan vi använda följande kod:
-
+## How to:
 ```Swift
-let str = "Det var en gång en ko som hette Anna"
-let matches = str.matches(for: "a")
+import Foundation
 
-print(matches) // ["a", "a", "a", "a"]
+let text = "Kontakta oss på info@example.se eller 08-123 45 67."
+let emailPattern = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+let phonePattern = "\\d{2}-\\d{3}\\s\\d{2}\\s\\d{2}"
+
+if let emailRange = text.range(of: emailPattern, options: .regularExpression),
+   let phoneRange = text.range(of: phonePattern, options: .regularExpression) {
+    let email = String(text[emailRange])
+    let phone = String(text[phoneRange])
+    print("E-post hittad: \(email)")
+    print("Telefonnummer hittat: \(phone)")
+}
+```
+Sample output:
+```
+E-post hittad: info@example.se
+Telefonnummer hittat: 08-123 45 67
 ```
 
-Vi kan också använda reguljära uttryck för att hitta mer komplicerade mönster. Till exempel, om vi vill hitta alla email-addresser i en text, kan vi använda följande reguljära uttryck:
+## Deep Dive
+Reguljära uttryck (regex) har funnits sedan 1950-talet, skapade av matematikern Stephen Kleene. Swift använder ICU:s (International Components for Unicode) regex-motor. Alternativ till regex är String-metoder som .contains eller .split men de erbjuder inte samma flexibilitet. Vid implementation, var medveten om regex kan vara resource-intensive; överanvändning bör undvikas för prestanda.
 
-```Swift
-let str = "Kontakta mig på john.doe@example.com eller jane_smith@mail.com"
-let pattern = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,}"
-let matches = str.matches(for: pattern)
-
-print(matches) // ["john.doe@example.com", "jane_smith@mail.com"]
-```
-
-## Fördjupning:
-
-Reguljära uttryck har funnits sedan 1950-talet och används i många olika programmeringsspråk. Det finns också alternativ till reguljära uttryck, såsom strängmanipulationsfunktioner eller andra sökmetoder.
-
-I Swift används reguljära uttryck genom att använda strukturen `NSRegularExpression`. Det finns också många olika metoder för att söka och manipulera text med hjälp av reguljära uttryck, t.ex. `replacingMatches` och `rangeOfFirstMatch`.
+## See Also
+- [NSRegularExpression Apple Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift.org String and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
+- [RegexOne: Learning Regular Expressions with Interactive Exercises](https://regexone.com/)

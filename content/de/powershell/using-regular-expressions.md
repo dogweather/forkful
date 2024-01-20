@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung regulärer Ausdrücke"
-html_title:           "PowerShell: Verwendung regulärer Ausdrücke"
-simple_title:         "Verwendung regulärer Ausdrücke"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -11,25 +11,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind eine Möglichkeit, in Programmen Text zu durchsuchen und zu manipulieren. Programmierer verwenden sie, um effizient und genau bestimmte Teile von Strings zu finden oder anzupassen.
+Reguläre Ausdrücke, oft Regex genannt, sind Muster zur Textsuche und -manipulation. Programmierer verwenden sie, um Textdaten effizient zu durchsuchen, zu überprüfen und zu bearbeiten.
 
-## So geht's:
+## How to:
+PowerShell lässt dich leicht mit Regex arbeiten. Hier ein paar Beispiele:
+
 ```PowerShell
-# Beispiel 1: Suchen eines bestimmten Wortes
-$text = "Dies ist ein Beispieltext."
-$text -match "Beispiel"
-# Output:
-True
+# Finde alle E-Mail-Adressen in einem Text
+$text = "Kontaktiere uns unter info@example.com oder support@example.org."
+$pattern = "\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z]{2,}\b"
+[regex]::Matches($text, $pattern).Value
 
-# Beispiel 2: Ersetzen eines bestimmten Musters
-$text = "Die Telefonnummer ist 123-456-7890."
-$text -replace "\d{3}-\d{3}-\d{4}", "555-555-5555"
-# Output:
-Die Telefonnummer ist 555-555-5555.
+# Ergebnis:
+# info@example.com
+# support@example.org
 ```
 
-## Eintauchen:
-Reguläre Ausdrücke haben ihren Ursprung in der Theoretischen Informatik und wurden erstmals in den 1950er Jahren von Stephen Cole Kleene eingeführt. Eine Alternative zu regulären Ausdrücken ist die Verwendung von String-Methoden in verschiedenen Programmiersprachen. In PowerShell können reguläre Ausdrücke mit dem -match und -replace Operator verwendet werden.
+```PowerShell
+# Ersetze Zahlen durch das Wort 'Zahl'
+$text = "Es gibt 3 Äpfel und 4 Birnen."
+$pattern = "\d+"
+$replacement = "Zahl"
+$text -replace $pattern, $replacement
 
-## Siehe auch:
-- [PowerShell Regular Expressions Documentation](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1)
+# Ergebnis:
+# Es gibt Zahl Äpfel und Zahl Birnen.
+```
+
+```PowerShell
+# Validiere ein deutsches Kfz-Kennzeichen
+$licensePlate = "B-AB 1234"
+$pattern = "^[A-Z]{1,3}-[A-Z]{1,2} \d{1,4}$"
+if ($licensePlate -match $pattern) {
+    "$licensePlate ist ein gültiges Kennzeichen."
+} else {
+    "$licensePlate ist kein gültiges Kennzeichen."
+}
+
+# Ergebnis:
+# B-AB 1234 ist ein gültiges Kennzeichen.
+```
+
+## Deep Dive
+Die Nutzung von Regex geht auf die 1950er Jahre zurück und ist tief in der Informatik verwurzelt. Alternativen zu Regex sind spezialisierte Parser, Text-to-SQL-Abfragekonverter und String-Funktionen, die ohne Mustererkennung auskommen, aber weniger mächtig sind. PowerShell verwendet das .NET Regex-Objekt, welches eine Implementation der Regex-Funktionalität mit Zusatzfeatures wie benannten Gruppen und Lookaheads bietet.
+
+## See Also
+- Online Regex Tester und Debugger: [regex101](https://regex101.com/)
+- Einsteigerfreundliches Regex-Tutorial: [RegexOne](https://regexone.com/)

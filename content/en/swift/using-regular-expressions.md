@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Swift recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Swift"
 category:             "Swift"
@@ -11,39 +11,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Using regular expressions in Swift is a way for programmers to search, match, and manipulate text using pattern matching. This can be useful for tasks such as data validation, parsing, and text replacement.
+Regular expressions, or regex, are patterns used to match character combinations in strings. Programmers use them for searching, editing, or validating text, making tasks that deal with string manipulation more efficient and less error-prone.
 
 ## How to:
+In Swift, you use the `NSRegularExpression` class to handle regex. You define a pattern, create a regex object, and then use it to search or replace text. Here's a basic example:
 
 ```Swift
-// Example 1: Matching a specific string
-let string = "The quick brown fox jumps over the lazy dog"
-let pattern = "fox"
-let regex = try NSRegularExpression(pattern: pattern)
-if let match = regex.firstMatch(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count)) {
-    print("Found match: \(string.substring(with: match.range))") // Output: "fox"
-}
+import Foundation
 
-// Example 2: Matching a phone number
-let phoneNumber = "123-456-7890"
-let pattern = "^[0-9]{3}-[0-9]{3}-[0-9]{4}$"
-let regex = try NSRegularExpression(pattern: pattern)
-if regex.matches(phoneNumber) {
-    print("Valid phone number!") // Output: "Valid phone number!"
+let input = "Call me at 555-1234 or 555-5678."
+let pattern = "\\d{3}-\\d{4}" // Matches a pattern like 555-1234
+
+do {
+    let regex = try NSRegularExpression(pattern: pattern)
+    let matches = regex.matches(in: input, range: NSRange(input.startIndex..., in: input))
+    
+    for match in matches {
+        if let range = Range(match.range, in: input) {
+            let phoneNumber = String(input[range])
+            print("Found phone number: \(phoneNumber)")
+        }
+    }
+} catch {
+    print("Regex error: \(error.localizedDescription)")
 }
 ```
 
-## Deep Dive:
+Sample output:
+```
+Found phone number: 555-1234
+Found phone number: 555-5678
+```
 
-Regular expressions have been around since the 1950s, but it wasn't until the 1960s and 1970s with the development of Unix tools such as grep and sed that they became popular. In Swift, regular expressions can be used with the NSRegularExpression class from Foundation framework.
+## Deep Dive
+Regex has been around since the 1950s, originating in formal language theory and becoming widely used in Unix tools. In Swift, we use the `NSRegularExpression` class inherited from Objective-C, which relies on the ICU library for Unicode support.
 
-An alternative to using regular expressions is the Swift "range(of:)" method, which can also search for a string within another string. However, regular expressions offer more flexibility and control over the search pattern.
+Alternatives to regex in Swift include using `String`'s `contains`, `split`, or `range(of:)` methods for simple cases. For more complex pattern matching, Swift doesn't offer built-in alternatives to regex.
 
-Under the hood, regular expressions use a technique called "finite state machine" or "DFA" (deterministic finite automaton) to efficiently search through text. This is much faster than manually searching for a match character by character.
+When implementing regex, it's crucial to optimize the pattern to avoid slow searches, especially with large text bodies. Additionally, remember that regex operations can throw exceptions, so always handle them with `try-catch` blocks.
 
-## See Also:
-
-- NSRegularExpression Documentation: https://developer.apple.com/documentation/foundation/nsregularexpression
-- Regular Expressions 101 (online regex tester): https://regex101.com/
-- Swift Strings and Characters Guide: https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID290
+## See Also
+- [NSRegularExpression Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [Swift String Documentation](https://developer.apple.com/documentation/swift/string)
+- [Ray Wenderlich's Guide to NSRegularExpression in Swift](https://www.raywenderlich.com/2725-nsregularexpression-tutorial-and-cheat-sheet)

@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग करना"
-html_title:           "Arduino: नियमित अभिव्यक्तियों का उपयोग करना"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग करना"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,49 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों ("What & Why?")
+## क्या और क्यों? (What & Why?)
 
-रेगुलर एक्सप्रेशन्स यानि सामान्य अभिव्यक्तियाँ, विभिन्न पैटर्न्स की पहचान करने का तरीका होती हैं। प्रोग्रामर इसका उपयोग तेजी से और सरल ढंग से डाटा में पैटर्न्स ढूंढने, संशोधित करने और बदलने के लिए करते हैं। 
+रेग्युलर एक्सप्रेशन्स यानि नियमित अभिव्यक्तियाँ पैटर्न मैचिंग के लिए इस्तेमाल होती हैं। ये प्रोग्रामर्स को टेक्स्ट खोजने, बदलने और मैनेज करने में मदद करती हैं।
 
-## कैसे ("How to:")
+## कैसे करें? (How to:)
 
-निम्नलिखित एक आर्डुइनो कोड ब्लॉक है, जिसमें एक रेगुलर एक्सप्रेशन द्वारा एक पैटर्न खोजा जा रहा है.
+Arduino में रेग्युलर एक्सप्रेशंस का सीधा समर्थन नहीं है, पर हम स्ट्रिंग फंक्शन्स से समान काम कर सकते हैं। उदाहरण:
 
-```Arduino
-#include <regex.h>
-void setup() {
-  Serial.begin(9600);
-  regex_t regex;
-  int retval = regcomp(&regex, "o[0-9]?", 0);
-  if (retval != 0) {
-    Serial.println("Could not compile regular expression.");
-  } 
-}
-
-void loop() {
-  char msg[100];
-  strcpy(msg, "Checking pattern o1 in Arduino");
-  regmatch_t matches;
-  if (regexec(&regex, msg, 1, &matches, 0) == 0) {
-    Serial.println("Pattern found.");
-  } else {
-    Serial.println("Pattern not found.");
-  }
+```arduino
+String inputData = "Temp=25*C";
+int tempIndex = inputData.indexOf("Temp=");
+if(tempIndex != -1) {
+  int valueStart = tempIndex + 5;
+  String tempValue = inputData.substring(valueStart, valueStart + 2);
+  Serial.println(tempValue); // 25
 }
 ```
-इस कोड का आउटपुट होता है:
-```
-Pattern found.
-```
-इस उदाहरण में, हमने "o1" पैटर्न की खोज की है जिसे "Pattern found" के साथ पाया गया है।
 
-## गहरा अध्ययन ("Deep Dive")
+## गहराई से जानकारी (Deep Dive)
 
-रेगुलर एक्सप्रेशन का इतिहास 1956 में केन थंपसन के द्वारा Unix ऑपरेटिंग सिस्टम के साथ शुरू हुआ था। इसके विकल्प के रूप में स्ट्रिंग फ़ंक्शन्स भी हैं, लेकिन वे अक्सर अधिक कोड और कम त्वरिता की आवश्यकता होती है। रेगुलर एक्सप्रेशन का उपयोग करना सीखना शुरू में कठिन हो सकता है, लेकिन यह अत्यंत शक्तिशाली उपकरण होता है जिसका अभ्यास करने से अच्छा परिणाम मिलता है।
+Arduino पर रेग्युलर एक्सप्रेशंस का इतिहास कम है क्योंकि यह हल्के-फुल्के माइक्रोकंट्रोलर्स के लिए बानी भाषा है। यदि आवश्यकता पड़ी, तो हम बाहरी लाइब्रेरीज़ का इस्तेमाल कर सकते हैं या फिर प्रोसेसिंग पावर वाले डिवाइस पर कर सकते हैं।
 
-## देखें भी ("See Also")
+## यह भी देखें (See Also)
 
-रेगुलर एक्सप्रेशन को आर्दुइनो में उपयोग करने के बारे में और जानकारी के लिए, निम्नलिखित स्रोतों का संदर्भ लें:
-
-1. [Arduino Regular Expression Library](https://playground.arduino.cc/Main/Regexp)
-2. [Regular Expressions in Arduino](https://stackoverflow.com/questions/9072320/split-string-with-delimiters-in-c)
+- Arduino String Reference: https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/
+- Arduino External Libraries: https://www.arduino.cc/en/Guide/Libraries

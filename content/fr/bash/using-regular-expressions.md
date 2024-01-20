@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "C: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,44 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est & Pourquoi ?
+## What & Why? (Quoi et Pourquoi ?)
+Les expressions régulières (regex) sont des motifs de chaînes utilisés pour rechercher et manipuler du texte. Les développeurs les utilisent pour la simplicité et l'efficacité qu'elles apportent dans le filtrage et le traitement des données textuelles.
 
-Les expressions régulières, aussi appelées "regex", sont des suites de caractères formant un motif de recherche. Elles sont utilisées pour manipuler des chaînes de caractères (le texte) en facilitant les tâches de recherche, d'extraction et de remplacement d'information. 
-
-## Comment faire:
-
-Voici des exemples simples pour démarrer.
-
-Pour trouver tous les fichiers dans un répertoire qui ont 'txt' dans leur nom:
-
+## How to: (Comment faire :)
 ```Bash
-ls | grep 'txt'
+# Recherche d'un motif simple
+echo "Le renard brun rapide saute par-dessus le chien paresseux" | grep 'renard'
+
+# Utilisation des classes de caractères
+echo "Bonjour 123" | grep '[0-9]'
+
+# Capturer un groupe et le réutiliser
+echo "File_1234.png" | sed -r 's/(File_)([0-9]+)\.png/\1\2_modified.png/'
+
+# Exemple avec grep et regex pour filtrer des adresses email
+cat emails.txt | grep -E '[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}'
+```
+Output:
+```
+Le renard brun rapide saute par-dessus le chien paresseux
+123
+File_1234_modified.png
+# Les adresses email correspondantes dans `emails.txt`
 ```
 
-Pour trouver tous les chiffres dans une chaîne:
+## Deep Dive (Plongée en profondeur)
+Les regex sont nées dans les années 1950 avec les travaux du mathématicien Stephen Kleene. Alternatives: awk, perl. En bash, `grep` et `sed` utilisent les regex POSIX par défaut; pour plus de fonctionnalités, activez les expressions étendues avec `-E`.
 
-```Bash
-echo "abc123xyz" | grep -o '[0-9]'
-```
-
-Affiche:
-
-```Bash
-1
-2
-3
-```
-
-## Approfondissement
-
-Historiquement, les regex ont été introduites dans les années 50 avec l'éditeur de texte QED. 
-
-Comme alternatives, certaines langages (comme Python) ont leurs propres bibliothèques pour manipuler des chaînes sans avoir besoin des regex, et les SGBD ont des fonctionnalités pour gérer directement les chaînes au niveau de la base de données.
-
-Les expressions régulières sont implémentées différemment selon les langages de programmation. En Bash, ils sont supportés depuis la version 3.0 grâce à l'opérateur `=~`. 
-
-## Voir aussi
-
-- Tutorial Bash : https://tldp.org/HOWTO/Bash-Prog-Intro-HOWTO.html
-- Guide des expressions régulières : https://www.regular-expressions.info/tutorial.html
-- Documentation officielle de la commande `grep` : http://man7.org/linux/man-pages/man1/grep.1.html
+## See Also (Voir aussi)
+- La page de manuel de `grep` via la commande `man grep` dans le terminal.
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [GNU Sed](https://www.gnu.org/software/sed/manual/sed.html), pour une exploration plus approfondie de `sed`.
+- [The Open Group Base Specifications Issue 7, 2018 edition - Shell & Utilities: grep](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/grep.html), standards techniques pour `grep`.
+- [AWK - A Pattern Scanning and Processing Language](https://www.gnu.org/software/gawk/manual/gawk.html), documentation de AWK, une alternative à regex en bash.

@@ -1,6 +1,6 @@
 ---
 title:                "Utilizando expressões regulares"
-html_title:           "Lua: Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,29 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Expressões regulares são um recurso importante para programadores que desejam realizar buscas e substituições de texto de forma eficiente. Elas permitem criar padrões de texto que podem ser usados para encontrar, filtrar ou alterar determinadas partes de uma string. Os programadores usam expressões regulares para economizar tempo e evitar a criação de funções complexas para manipulação de texto.
+## O quê & Por quê?
+Expressões regulares são padrões usados para encontrar correspondências específicas em textos. Programadores as utilizam para validar, buscar, substituir e analisar dados de forma eficiente e rápida.
 
 ## Como fazer:
-Veja abaixo alguns exemplos de como usar expressões regulares em Lua:
-
 ```Lua
--- Encontrar todas as instâncias do padrão "maçã" em uma string
-local str = "Eu quero uma maçã verde e suculenta."
-local matches = string.match(str, "maçã")
-print(matches) --> maçã
-
--- Substituir todas as letras maiúsculas por minúsculas
-str = "Olá, Mundo!"
-local replaced = string.gsub(str, "%u", function(c)
-    return string.lower(c)
-end)
-print(replaced) --> olá, mundo!
+local texto = "Hoje é dia 04/03/2023."
+-- Encontrando uma data no formato dd/mm/aaaa
+local padrao = "(%d%d)/(%d%d)/(%d%d%d%d)"
+local dia, mes, ano = string.match(texto, padrao)
+print("Dia encontrado:", dia)
+print("Mês encontrado:", mes)
+print("Ano encontrado:", ano)
+```
+Saída:
+```
+Dia encontrado: 04
+Mês encontrado: 03
+Ano encontrado: 2023
 ```
 
-## Mergulho profundo:
-As expressões regulares foram inventadas na década de 1950 por Stephen Cole Kleene, um matemático americano. Elas podem parecer confusas no início, mas com prática se tornam uma ferramenta poderosa para manipulação de texto. Além disso, existem alternativas para expressões regulares em Lua, como o uso de funções de manipulação de string, mas elas são menos eficientes e complexas. As expressões regulares em Lua seguem a sintaxe padrão do conjunto de linguagens de programação POSIX.
+Para substituir texto:
+```Lua
+local frase = "Lua é divertido!"
+local nova_frase = string.gsub(frase, "divertido", "incrível")
+print(nova_frase)
+```
+Saída:
+```
+Lua é incrível!
+```
 
-## Veja também:
-- [Documentação oficial de strings em Lua](https://www.lua.org/manual/5.4/manual.html#6.4.2)
-- [Ferramenta online para testar expressões regulares em Lua](https://regex101.com/r/8cFjZA/1/)
+## Aprofundamento
+Expressões regulares surgiram na década de 1950, com base nos trabalhos de teoria de linguagem formal e automata. Em Lua, as expressões regulares são implementadas através de padrões, que são simplificações das regex encontradas em outras linguagens. Alternativas incluem o uso de bibliotecas externas como Lrexlib ou LPeg, que permitem regex mais complexas e com recursos avançados.
+
+## Ver Também
+- [Lua 5.4 Reference Manual (Patterns)](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+- [Lrexlib](https://github.com/rrthomas/lrexlib): Uma coleção de binding para diferentes bibliotecas de expressões regulares.
+- [LPeg](http://www.inf.puc-rio.br/~roberto/lpeg/): Uma biblioteca para análise de padrões (patterns) com gramáticas de Parsing Expression.
+- [Lua-users wiki: Patterns Tutorial](http://lua-users.org/wiki/PatternsTutorial): Um tutorial sobre o uso de padrões em Lua.

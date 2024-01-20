@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Go: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,37 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Używanie wyrażeń regularnych jest jednym z narzędzi, które programiści używają do przetwarzania i manipulacji tekstu. Może to być przydatne w przypadku wstępnego przetwarzania danych lub w wyszukiwaniu określonych wzorców w tekście. Programiści często korzystają z wyrażeń regularnych, aby przyspieszyć swoją pracę i upewnić się, że ich kod jest dokładny i precyzyjny.
+Reguły wyrażeń regularnych (regex) pozwalają szukać wzorców w tekście. Programiści używają regex do weryfikacji, wyszukiwania i manipulacji danymi tekstowymi.
 
 ## Jak to zrobić:
 ```Go
-// Przykładowy kod w języku Go wykorzystujący wyrażenia regularne
 package main
+
 import (
-    "fmt"
-    "regexp"
+	"fmt"
+	"regexp"
 )
 
 func main() {
-    // Tworzenie wyrażenia regularnego
-    pattern := regexp.MustCompile("(?i)hello")
-
-    // Sprawdzanie, czy wyrażenie pasuje do tekstu
-    fmt.Println(pattern.MatchString("Hello world!")) // Output: true
-    
-    // Wyszukiwanie wszystkich wystąpień wyrażenia w tekście
-    fmt.Println(pattern.FindAllString("Hello my friend, hello again!", -1)) // Output: [Hello, hello]
-
-    // Zastępowanie wyrażenia w tekście innym wyrażeniem lub stałą
-    fmt.Println(pattern.ReplaceAllString("Hello Go!", "Hi")) // Output: Hi Go! 
+	emailRegex := regexp.MustCompile(`^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$`)
+	email := "przyklad@domena.pl"
+	match := emailRegex.MatchString(email)
+	fmt.Printf("Czy '%s' to poprawny email? %v\n", email, match)
+	
+	searchPattern := regexp.MustCompile(`\bGo\b`)
+	text := "Uczę się Go i używam Go w codziennej pracy."
+	matches := searchPattern.FindAllString(text, -1)
+	fmt.Printf("Znalezione dopasowania: %v\n", matches)
 }
 ```
+Wyjście:
+```
+Czy 'przyklad@domena.pl' to poprawny email? true
+Znalezione dopasowania: [Go Go]
+```
 
-## Głębsza analiza:
-Wyrażenia regularne zostały wprowadzone w 1951 roku przez Stephena Cole Kleene'a jako środek do opisywania wzorców w językach formalnych. W dzisiejszych czasach jest to powszechnie używane narzędzie w wielu językach programowania, a także w aplikacjach internetowych i edytorach tekstu. Alternatywami dla wyrażeń regularnych są m.in. parser-generatory oraz biblioteki tokenizacyjne. W języku Go wyrażenia regularne są implementowane przez pakiet "regexp" i korzystają z wyrażeń zwyczajnych lub składni PCRE.
+## Deep Dive
+Wyrażenia regularne powstały w latach 50. Alternatywami dla regex są parser textu lub wyszukiwanie za pomocą metod znakowych. W Go, regex implementowany jest przez pakiet `regexp`, który korzysta z silnika RE2, zapewniającego bezpieczeństwo przed słynnym problemem "catastrophic backtracking".
 
 ## Zobacz również:
-- Oficjalna dokumentacja wyrażeń regularnych w języku Go: https://golang.org/pkg/regexp/
-- Przewodnik po wyrażeniach regularnych w języku Go: https://github.com/siongui/userpages/wiki/regexp
-- Narzędzie online do testowania wyrażeń regularnych w języku Go: https://regex-golang.appspot.com/
-- Przydatny artykuł na temat wyrażeń regularnych w języku Go: https://blog.golang.org/regular-go
+- Dokumentacja Go `regexp` package: https://golang.org/pkg/regexp/
+- Tutorial o wyrażeniach regularnych: https://www.regular-expressions.info/tutorial.html
+- Testowanie wyrażeń regularnych online: https://regex101.com/

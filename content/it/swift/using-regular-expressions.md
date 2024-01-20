@@ -1,7 +1,7 @@
 ---
-title:                "Utilizzare le espressioni regolari"
-html_title:           "Swift: Utilizzare le espressioni regolari"
-simple_title:         "Utilizzare le espressioni regolari"
+title:                "Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -10,45 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è e perché usarlo?
+## What & Why?
+Le espressioni regolari (Regex) filtrano e manipolano testo. I programmatori le usano per la potenza e flessibilità di ricerca e sostituzione nei dati testuali.
 
-Le espressioni regolari sono uno strumento utilizzato dai programmatori per gestire ricerce avanzate all'interno di testi. Ciò può semplificare e velocizzare l'analisi di stringhe di testo, consentendo di individuare pattern specifici o eseguire sostituzioni di testo in modo efficiente.
+## How to:
+Per applicare le regex in Swift, usa la classe `NSRegularExpression`. Qui sotto, un esempio per trovare e-mail in una stringa.
 
-## Come utilizzarle:
+```Swift
+import Foundation
 
-Le espressioni regolari vengono utilizzate nel linguaggio Swift mediante una classe chiamata `NSRegularExpression`. Per utilizzarla, è necessario includere la seguente dichiarazione all'inizio del codice:
+let testo = "mandami una mail a mario.rossi@example.com o a luigi.bianchi@example.it"
+let regex = try! NSRegularExpression(pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}", options: [])
 
-`import Foundation`
-
-Dopo di che, possiamo creare un'istanza della classe `NSRegularExpression` come mostrato di seguito:
-
-```
-let regex = try NSRegularExpression(pattern: "[abc]", options: [])
-```
-
-In questo esempio, stiamo cercando un pattern che corrisponda a una delle lettere a, b o c.
-
-Per eseguire una ricerca all'interno di una stringa, utilizziamo il metodo `matches(in:options:range:)` passando come parametro la stringa in cui eseguire la ricerca. Questo metodo restituisce un array di oggetti `NSTextCheckingResult` contenente tutte le corrispondenze trovate. Possiamo quindi utilizzare il metodo `range` per ottenere la posizione della corrispondenza all'interno della stringa originale.
-
-```
-let text = "abc123"
-let matches = regex.matches(in: text, options: [], range: NSRange(location: 0, length: text.utf16.count))
+let matches = regex.matches(in: testo, options: [], range: NSRange(testo.startIndex..., in: testo))
 
 for match in matches {
-    let range = match.range
-    // qui possiamo effettuare le operazioni desiderate con la posizione della corrispondenza trovata
+    if let range = Range(match.range, in: testo) {
+        let email = testo[range]
+        print(email)
+    }
 }
 ```
 
-## Approfondimento:
+Output:
+```
+mario.rossi@example.com
+luigi.bianchi@example.it
+```
 
-Le espressioni regolari sono state introdotte da Stephen Kleene negli anni '50 per rappresentare linguaggi formali come i linguaggi di programmazione. Oggi vengono utilizzate in molti linguaggi di programmazione, compreso Swift, per gestire ricerche avanzate all'interno di stringhe di testo.
+## Deep Dive
+Le regex risalgono agli anni '50 e sono state implementate in molti linguaggi. In Swift, NSRegularExpression segue ICU (International Components for Unicode), che differisce dal PCRE (Perl Compatible Regular Expressions) usato in altri linguaggi. Alternativamente, si hanno librerie come RegexKitLite per altre sintassi o prestazioni.
 
-Come alternativa alle espressioni regolari, è possibile utilizzare il framework `String` di Swift per effettuare ricerche di testo più semplici e generiche. Tuttavia, le espressioni regolari offrono una maggiore precisione e flessibilità per la ricerca di pattern specifici.
-
-Per maggiori informazioni sull'utilizzo delle espressioni regolari in Swift, si consiglia la documentazione Apple [Regular Expressions](https://developer.apple.com/documentation/foundation/nsregularexpression).
-
-## Altri riferimenti:
-
-- [Regular Expression Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
-- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)
+## See Also
+- La documentazione ufficiale di Swift su NSRegularExpression: https://developer.apple.com/documentation/foundation/nsregularexpression
+- Tutorial di Ray Wenderlich sulle regex in Swift: https://www.raywenderlich.com/5765-nsregularexpression-tutorial-getting-started
+- ICU User Guide for Regular Expressions: http://userguide.icu-project.org/strings/regexp

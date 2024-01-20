@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "C: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,39 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## C'est quoi et pourquoi?
+## What & Why? (Quoi et Pourquoi ?)
+Les expressions régulières permettent de chercher et manipuler du texte en suivant des patterns. Les programmeurs les utilisent pour la puissance et la flexibilité qu'elles offrent dans le traitement des chaînes de caractères.
 
-Les expressions régulières (regular expressions) sont des séquences de caractères utilisées pour définir des modèles de recherche dans des chaînes de caractères. Les programmeurs les utilisent pour la manipulation de chaînes de caractères, le filtrage de données, et d'autres tâches de traitement du texte.
-
-## Comment faire :
-
-Voici comment utiliser les expressions régulières dans Gleam.
+## How to: (Comment faire : )
+Le code Gleam pour utiliser les expressions régulières est simple. Voici un exemple :
 
 ```gleam
 import gleam/regex
 
-let phrase = "Salut tout le monde!"
-let pattern = regex.from_string("tout").unwrap() // créer un motif à partir d'une chaîne
-
-case regex.find(pattern, phrase) {
-  Ok(match) ->
-    io.println(match) // Output: ["tout"]
-  Error(_) ->
-    io.println("Rien trouvé")
+fn main() {
+  let pattern = regex.from_string("Hello (\\w+)!").unwrap()
+  let result = regex.find(pattern, "Hello World!")
+  result
 }
 ```
 
-## Plongée en profondeur :
+Sortie attendue:
 
-Historiquement, les expressions régulières sont apparues dans le langage Perl, mais ont depuis été adoptées par de nombreux autres langages de programmation. Dans Gleam, les expressions régulières sont supportées par le module `gleam/regex`.
+```
+[Match(data="Hello World!", start=0, end=12)]
+```
 
-Les alternatives aux expressions régulières incluent la recherche simple de chaînes et le parsing de chaînes, bien que ces méthodes soient généralement moins puissantes et flexibles.
+## Deep Dive (Plongée en Profondeur)
+Les expressions régulières tirent leurs origines des théories mathématiques des années 1950. Des alternatives, comme le parsing structuré, existent mais sont souvent plus complexes pour des tâches simples. En Gleam, l'utilisation des expressions régulières est rendue plus sûre grâce à la gestion d'erreur de la fonction `from_string`.
 
-Quant à l'implémentation, Gleam utilise la bibliothèque Erlang pour fournir une interface d'expressions régulières à la fois riche et performante.
-
-## Voir aussi :
-
-Pour plus d'informations, consultez les sources suivantes :
-
-2. RegexOne, un excellent tutoriel interactif pour apprendre les expressions régulières : [RegexOne](https://regexone.com/)
-3. Erlang Regular Expressions: [Erlang Regex](https://erlang.org/doc/man/re.html)
+## See Also (Voir Aussi)
+- Tutoriel interactif Regex: [RegexOne](https://regexone.com/)
+- 'A Play on Regular Expressions' pour comprendre les expressions régulières en s'amusant: [Regex Crossword](https://regexcrossword.com/)

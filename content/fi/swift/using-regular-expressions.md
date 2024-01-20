@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Swift: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,38 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja Miksi?
+## What & Why?
 
-Regular expressions, eli säännölliset lausekkeet, ovat hyödyllisiä työkaluja, joita ohjelmoijat käyttävät tekstin käsittelyssä. Ne ovat eräänlaisia kuvauksia, joiden avulla voidaan löytää ja manipuloida tiettyjä tekstin muotoja. Niitä käytetään usein esimerkiksi tietojen etsimisessä ja korvaamisessa.
+Regular expressions (regex) ovat tapa etsiä kaavoja tekstistä. Ohjelmoijat käyttävät niitä tekstin prosessointiin, validointiin ja hakutulosten jalostamiseen.
 
-# Miten?
-
-Regular expression -ilmaisuja voi kirjoittaa suoraan koodissa käyttämällä Swiftin sisäänrakennettuja työkaluja. Esimerkiksi seuraava koodinpätkä etsii kaikki merkkijonot, jotka sisältävät sanan "apple" ja tulostaa ne näytölle:
+## How to:
 
 ```Swift
-let pattern = "apple"
-let text = "I love apples and apple pie."
-let matches = try! NSRegularExpression(pattern: pattern, options: []).matches(in: text, range: NSRange(text.startIndex..., in: text))
+import Foundation
 
-for match in matches {
-    let range = Range(match.range, in: text)
-    print(text[range!])
+let testString = "Hello, world! 123456"
+let regexPattern = "\\b\\w+\\b"
+
+// Luodaan regular expression
+if let regex = try? NSRegularExpression(pattern: regexPattern) {
+    // Etsitään kaikki täsmäävät tulokset
+    let matches = regex.matches(in: testString, range: NSRange(testString.startIndex..., in: testString))
+    
+    // Tulostetaan löydetyt tulokset
+    for match in matches {
+        if let range = Range(match.range, in: testString) {
+            print(testString[range])
+        }
+    }
 }
 
+// Output:
+// Hello
+// world
+// 123456
 ```
 
-Tulostus:
-```
-apple
-apple
-```
+## Deep Dive
 
-# Syvemmälle
+Regular expressions juontavat juurensa teoreettiseen tietojenkäsittelytieteeseen, 1950-luvulle. Vaihtoehtoja regexille ovat mm. merkkijonojen manuaalinen käsittely tai parserit. Swiftin `NSRegularExpression`-luokan taustalla on ICU-kirjasto, joka on yleinen C-ohjelmointikielen regex-kirjasto.
 
-Regular expressions kehitettiin alun perin 1950-luvulla matemaatikko Stephen Kleenen työn tuloksena. Ne ovat edelleen tärkeä osa monien ohjelmointikielten ja tekstin käsittelytyökalujen toimintaa. Vaihtoehtoina säännöllisille lausekkeille on esimerkiksi käyttää merkkijonon metodeja, mutta ne eivät välttämättä ole yhtä tehokkaita tai joustavia.
+## See Also
 
-# Katso myös
-
-Voit lukea lisää säännöllisistä lausekkeista esimerkiksi Swiftin virallisesta dokumentaatiosta osoitteessa https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID291
-
-Lisäksi voit löytää erilaisia käyttötapauksia ja harjoituksia säännöllisten lausekkeiden käytölle esimerkiksi sivustolta https://regex101.com/
+- Swift-turorialit ["NSRegularExpression"](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- ICU User Guide Regex-osio ["ICU User Guide"](https://unicode-org.github.io/icu/userguide/strings/regexp.html)

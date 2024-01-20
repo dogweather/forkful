@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Kotlin: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,42 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co to jest i dlaczego to robią programiści?
+## Co i dlaczego?
 
-Regular expressions (wyrażenia regularne) są to wzorce, które służą do wyszukiwania i manipulowania tekstem w sposób bardziej zaawansowany niż tradycyjny napisany ciągiem. Programiści korzystają z wyrażeń regularnych, aby szybko i precyzyjnie przetwarzac dane w swoich programach.
+Wyrażenia regularne (regex), to narzędzie do szukania i manipulacji tekstami. Programiści używają ich dla szybkości i elastyczności w przetwarzaniu wzorców w tekście.
 
 ## Jak to zrobić:
 
-Wykorzystaj operator `match` wraz z wyrażeniami regularnymi, aby sprawdzić, czy dany ciąg znaków pasuje do wzorca. Na przykład, `Kotlin` to wyrażenie regularne, które dopasuje się do wyrazu "Kotlin". Można również użyć wyrażenia regularnego wewnątrz zmiennej `Regex` i wykorzystać metody, takie jak `find`, `replace` czy `split` do przetwarzania tekstu.
+```kotlin
+fun main() {
+    val text = "To jest przykładowy tekst z numerem telefonu 123-456-7890."
+    val regex = "\\d{3}-\\d{3}-\\d{4}".toRegex()
 
-```Kotlin
-val text = "Witajcie w świecie programowania Kotlin!"
-val pattern = Regex("Kotlin")
+    // Wyszukiwanie pasujących ciągów
+    val found = regex.find(text)
+    println(found?.value) // Output: 123-456-7890
 
-//sprawdź, czy ciąg znaków pasuje do wzorca
-val matches = pattern.matches(text)
-println(matches)
+    // Zastępowanie pasujących ciągów
+    val replaced = text.replace(regex, "###-###-####")
+    println(replaced) // Output: To jest przykładowy tekst z numerem telefonu ###-###-####.
 
-//zamień wszystkie wystąpienia wzorca na napis "Java"
-val replacedText = pattern.replace(text, "Java")
-println(replacedText)
-
-//podziel ciąg znaków na podstawie wzorca
-val splittedText = pattern.split(text)
-println(splittedText)
+    // Sprawdzanie dopasowania
+    val isMatch = regex.matches("123-456-7890")
+    println(isMatch) // Output: true
+}
 ```
 
-Output:
-```
-true
-Witajcie w świecie programowania Java!
-[Witajcie w świecie programowania , !]
-```
+## Deep Dive
 
-## Głębsze zagadnienia:
+Wyrażenia regularne mają korzenie w teorii automatów i formalnych języków—są stworzone w latach 50. Istnieją alternatywy jak `String.contains`, `String.startsWith` dla prostych przypadków. Kotlin używa silnika regex Javy, ale udostępnia własne API, aby ułatwić pracę.
 
-Wyrażenia regularne zostały wprowadzone przez matematyka Stephena Kleene'a w latach 50. XX wieku. Obecnie są powszechnie wykorzystywane w wielu językach programowania, m.in. w Kotlinie. Istnieją również alternatywne rozwiązania, takie jak biblioteki do przetwarzania wyrażeń regularnych. W Kotlinie wyrażenia regularne są zaimplementowane za pomocą języka Java i wykorzystują klasę `Pattern` do obsługi wzorców.
+## See Also
 
-## Zobacz również:
-
-- [Praktyczne zastosowania wyrażeń regularnych](https://www.rexegg.com/)
+- Dokumentacja Kotlin Regex: https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/
+- Tutorial Java Regex dla głębszego zrozumienia: https://www.vogella.com/tutorials/JavaRegularExpressions/article.html
+- Projekt "regular expressions" w teorii obliczeń: https://www.cs.rochester.edu/~nelson/courses/csc_173/computation/regex.html

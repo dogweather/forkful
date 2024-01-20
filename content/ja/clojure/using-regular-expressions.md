@@ -1,6 +1,6 @@
 ---
 title:                "正規表現の使用"
-html_title:           "Bash: 正規表現の使用"
+html_title:           "C: 正規表現の使用"
 simple_title:         "正規表現の使用"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,36 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-正規表現は文字列から特定のパターンを検索、置換したり一致するものを見つけたりする技法です。これがあると、データ検証、スクレイピング、パターンマッチングなどを効率的に行うことができます。
+## What & Why? - 正規表現とは？なぜ使う？
 
-## 使い方:
-次のコード例では、特定の文字列("Clojure")がテキスト内に存在するかどうかを確認します。
+正規表現は文字列のパターンマッチングに使います。シンプルかつ効率的に文字列を検索・置換するためにプログラマーが利用しています。
 
-```Clojure
-(defn contains-clojure? [text]
-  (re-find #"Clojure" text))
-
-(println (contains-clojure? "I love Clojure programming")) ; => "Clojure"
-```
-
-また、次のコード例では、数字を全て抽出します。
+## How to: - 使い方
 
 ```Clojure
-(defn extract-numbers [text]
-  (re-seq #"\d+" text))
+;; 文字列にマッチさせる
+(re-seq #"\b[Cc]lojure\b" "Clojure has clojure and more CLOJURE")
+;; => ("Clojure" "clojure")
 
-(println (extract-numbers "I have 2 apples and 3 oranges.")) ; => ("2" "3")
+;; 文字列を置換する
+(clojure.string/replace "Learning Clojure programming" #"\b[Cc]lojure\b" "LISP")
+;; => "Learning LISP programming"
+
+;; 文字列を分割する
+(clojure.string/split "a,b,c,d" #",")
+;; => ["a" "b" "c" "d"]
 ```
 
-## ディープダイブ:
-正規表現は1950年代に開発され、その後多くのプログラミング言語で採用されてきました。Clojureでも`java.util.regex`パッケージを用いています。
+## Deep Dive - 詳細情報
 
-しかし、正規表現を書くのは複雑であるため、必要に応じてORMや専用の検索エンジンなどの代替手段を利用することもあります。
+正規表現は、1960年代に発展し、多くのプログラミング言語に組み込まれています。Clojureでは`java.util.regex`パッケージを内部的に利用しています。`re-find`, `re-seq`, `re-matches`などの関数が提供されており、柔軟に正規表現を扱うことができます。Clojureにおける代替手段としては、文字列関数やパーサーコンビネータがありますが、正規表現は一般に最も高速です。
 
-正規表現の動作は、入力テキストの長さに対して時間的に線形となることが多いですが、特定のパターンでは非常に時間がかかることもあります。
+## See Also - 参照
 
-## 参考情報:
-- Clojure公式ドキュメンテーションの正規表現セクション: [Here](https://clojure.org/reference/other_functions#regex)
-- 正規表現の詳細: [Regular-Expressions.info](https://www.regular-expressions.info/)
-- Clojureでの正規表現使用例: [Prismatic's Schema](https://github.com/plumatic/schema)
+- Clojureの公式ドキュメント: [clojure.java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
+- Javaの `Pattern` クラス: [java.util.regex.Pattern](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)

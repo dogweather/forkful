@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "PowerShell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,46 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä ja miksi?
-Säännölliset lausekkeet ovat erilaisia ilmaisuja, joita käytetään tekstien ja merkkijonojen hakuun ja muokkaamiseen. Ohjelmoijat käyttävät niitä yleisesti, koska ne ovat tehokas tapa löytää ja työstää tiettyjä osia tekstistä.
+## What & Why?
+"## Mikä & Miksi?"
 
-# Miten:
-Koodiesimerkit ja tulosteesi:
+Säännölliset lausekkeet, regex, ovat tekstinhakupatterneja. Ne auttavat löytämään, korvaamaan ja validoidaan tietoa nopeasti.
 
-```PowerShell
-# Esimerkki 1 - Merkin etsiminen
-$text = "Tämä on esimerkki tekstistä."
-if ($text -match "esimerkki") {
-    Write-Host "Löydettiin merkkijono 'esimerkki' tekstistä."
-} else {
-    Write-Host "Merkkijonoa 'esimerkki' ei löytynyt tekstistä."
-}
+## How to:
+"## Kuinka tehdä:"
 
-# Esimerkki 2 - Numerojen poimiminen
-$numbers = Get-Content .\numerot.txt
-$pattern = "\d+" # Hakee kaikki numerot
-$matches = [regex]::Matches($numbers, $pattern)
-foreach ($match in $matches) {
-    Write-Host $match.Value # Tulostaa löydetyn numeron
-}
-```
-
-Tuloste:
+Esimerkki: Hae kaikki email-osoitteet merkkijonosta.
 
 ```PowerShell
-Esimerkki 1 - Merkin etsiminen
-Löydettiin merkkijono 'esimerkki' tekstistä.
-
-Esimerkki 2 - Numerojen poimiminen
-123
-456
-789
+$text = 'jukka@mehilainen.fi lorem ipsum petri@terveydeksi.fi'
+$pattern = '[\w\.-]+@[\w\.-]+\.\w+'
+[regex]::Matches($text, $pattern) | ForEach-Object { $_.Value }
 ```
 
-# Syväsukellus:
-Säännölliset lausekkeet kehitettiin 1950-luvulla matematiikan ja laskennan alueella, mutta niitä alettiin pian käyttää myös tiedonkäsittelyssä ja ohjelmoinnissa. Niiden avulla voidaan säästää aikaa ja vaivaa, kun etsitään ja muokataan tiettyjä merkkijonoja. Vaihtoehtoja säännöllisille lausekkeille ovat esimerkiksi merkkijonojen etsimiseen ja muokkaamiseen tarkoitetut funktiot, mutta säännölliset lausekkeet ovat yleensä tehokkaampi ja monipuolisempi vaihtoehto.
+Tulostus:
 
-Säännöllisten lausekkeiden toteutus PowerShellissä perustuu .NET Frameworkin System.Text.RegularExpressions-luokkaan. Tämä luokka tarjoaa useita hyödyllisiä ominaisuuksia, kuten kyvyn poimia säännöllisillä lausekkeilla määrättyjä osia merkkijonosta.
+```
+jukka@mehilainen.fi
+petri@terveydeksi.fi
+```
 
-# Katso myös:
-- [Säännöllisten lausekkeiden opas (W3Schools)](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
+## Deep Dive
+"## Syväsukellus"
+
+Historia: Regex syntyi 1950-luvulla. Nykyään se on ohjelmoinnin peruskauraa. Vaihtoehtoja regexille on kuten String haku, mutta ne ovat hitaampia ja vähemmän monipuolisia. Toteutus: PowerShell käyttää .NET regex -luokkaa, joka tarjoaa vankan toteutuksen.
+
+## See Also
+"## Katso myös"
+
+- [Microsoftin regex-opas](https://docs.microsoft.com/fi-fi/dotnet/standard/base-types/regular-expressions)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [PowerShellin about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.2)

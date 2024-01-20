@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Lua: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,27 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Lua에서 정규식 사용하기
+## What & Why? (무엇이며 왜 사용하는가?)
+정규 표현식은 문자열 패턴을 찾고 조작하는 방법이다. 프로그래머들은 코드 간결화, 데이터 검증, 검색 및 대체 작업을 위해 이를 사용한다.
 
-## 정규식이란 무엇이며 왜 사용할까요?
-정규식은 문자열에서 특정한 패턴을 찾거나 대체하고자 할 때 사용하는 패턴 매칭 도구입니다. 이것은 프로그래머에게 강력한 문자열 처리를 제공하며, 특히 복잡한 문자열을 다룰 때 유용합니다.
+## How to: (사용법)
+Lua에서 정규 표현식은 패턴 매칭 기능을 사용해 구현된다. 여기 몇 가지 예제가 있다:
 
-## 사용 방법:
-Lua에서 정규식을 사용하려면, 먼저 ```Lua``` 코드 블록 안에 ```string``` 라이브러리의 ```match()``` 함수를 사용해야 합니다. 아래 예제를 참조하세요.
+```Lua
+
+-- 문자열 검색
+local text = "Lua를 배웁시다"
+if string.match(text, "배웁시다") then
+  print("일치하는 단어가 있습니다!")
+end
+
+-- 출력: 일치하는 단어가 있습니다!
+
+-- 대체
+local text = "Lua는 멋지다"
+local new_text = string.gsub(text, "멋지다", "재미있다")
+print(new_text)
+
+-- 출력: Lua는 재미있다
+
+-- 패턴 매칭
+local date = "오늘 날짜는 2023-04-01입니다."
+for year, month, day in string.gmatch(date, "(%d+)-(%d+)-(%d+)") do
+  print(year, month, day)
+end
+
+-- 출력:
+-- 2023    04    01
 
 ```
--- 문자열에서 'hello'를 찾아 출력하기
-local str = "안녕하세요, hello, こんにちは"
-print(str:match("hello")) -- output: hello
 
--- 패턴 매칭을 이용해 일본어 문장에서 한국어 문장 추출하기
-local sentence = "すみません、こんにちは、ごめんなさい"
-print(sentence:match("こんにちは、(.*)")) -- output: ごめんなさい
-```
+## Deep Dive (심층 분석)
+Lua에서 정규 표현식의 개념은 다른 언어의 정규 표현식처럼 포괄적이지 않고 '패턴 매칭'으로 알려져 있다. 1993년에 Lua가 처음 등장했을 때부터 패턴 매칭은 문자열 작업의 중요한 부분이었다. Lua의 패턴 매칭은 POSIX 또는 Perl과 같은 전통적인 정규 표현식 엔진만큼 강력하지 않지만, 대부분의 일상적인 작업에는 충분하다. 대안으로 Lua 패턴 매칭보다 더 복잡한 작업이 필요하다면 PCRE(Perl 호환 정규 표현식) 라이브러리와 같은 외부 라이브러리를 사용할 수 있다.
 
-## 깊게 들어가보기:
-정규식은 1950년대 부터 사용되어 온 기술로, 프로그래밍에서 적극적으로 활용됩니다. 다른 대안으로는 정규식 대신 문자열의 일부를 직접 추출하는 방법이 있지만, 정규식을 사용하는 것이 더 유연하고 효율적입니다. Lua에서는 정규식 엔진으로 PCRE(Perl 호환)를 사용하며, 특수한 문자 패턴을 표현하기 위해 이스케이프 문자를 사용할 수 있습니다.
-
-## 관련 자료:
-- [Lua string 라이브러리 문서](http://lua-users.org/wiki/StringLibraryTutorial)
-- [PCRE 패턴 문법 가이드](http://www.lua.org/manual/5.3/manual.html#6.4.2)
+## See Also (관련 링크)
+- Lua 5.4 매뉴얼: https://www.lua.org/manual/5.4/
+- Lua-users Wiki: http://lua-users.org/wiki/
+- 패턴 매칭 튜토리얼: http://lua-users.org/wiki/PatternsTutorial
+- PCRE (Perl 호환 정규 표현식) 라이브러리: https://www.pcre.org/

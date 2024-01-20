@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Fish Shell: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,34 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Wykorzystywanie wyrażeń regularnych to metoda programowania, która pozwala na wyszukiwanie i manipulowanie tekstem w sposób wyrafinowany. Programiści często używają regularnych wyrażeń, ponieważ są potężnym narzędziem do transformacji i analizy danych tekstowych.
+## What & Why? - Co i dlaczego?
+Wyrażenia regularne to wzorce używane do wyszukiwania i manipulowania tekstami. Programiści używają ich, bo pozwalają na zaawansowane przetwarzanie tekstu niewielkim kosztem.
 
-## Jak to zrobić:
-```Fish Shell``` dostarcza nam funkcję `string match`, która umożliwia użycie wyrażeń regularnych w naszych skryptach. Niech poniższe przykłady będą dla Ciebie jasnym wytłumaczeniem działania wyrażeń regularnych.
+## How to: - Jak to zrobić:
+Znajdowanie słów zaczynających się na "pl" w pliku `tekst.txt`:
 
-#### Wyszukiwanie dopasowań:
 ```Fish Shell
-string match 'kota' 'Lubię koty.'
-``` 
-```Kota```
-
-#### Zastępowanie tekstu:
-```Fish Shell
-string match -r -R 'kota' 'Małe kotki.' 'pies'
+grep '^pl' tekst.txt
 ```
-```Małe pieski.```
 
-#### Podział tekstu:
+Zastępowanie "fish" słowem "shell" w `skrypt.fish`:
+
 ```Fish Shell
-string match --split -r '[\.\?\!]' 'Cześć! Jak się masz?'
+sed 's/fish/shell/g' skrypt.fish > skrypt_zmieniony.fish
 ```
-```Cześć```  
-```Jak się masz```  
 
-## Głębokie zanurzenie:
-Wyrażenia regularne są powszechnie stosowane w programowaniu tekstowym od lat 50-tych. Istnieje wiele alternatywnych narzędzi, takich jak ```grep``` czy ```sed```, jednak składnia ```Fish Shell``` jest prostsza i bardziej przejrzysta. Wewnętrznie, ```Fish Shell``` wykorzystuje język ```C``` oraz bibliotekę ```PCRE``` (Perl Compatible Regular Expressions).
+Wyszukiwanie wszystkich plików `.fish` wyświetlając linie pasujące do wzorca "function":
 
-## Zobacz też:
-- [Oficjalna dokumentacja wyrażeń regularnych w Fish Shell](https://fishshell.com/docs/current/cmds/string.html#description)
-- [Język programowania C](https://www.learn-c.org/)
+```Fish Shell
+grep 'function' *.fish
+```
+
+## Deep Dive - Zagłębienie się
+Wyrażenia regularne powstały w latach 50, kiedy to Stephen Cole Kleene opisał teoretyczny model zwany "regular expressions". Obecnie istnieje wiele odmian, np. POSIX czy Perl-Compatible Regular Expressions (PCRE), a każda implementacja ma swoje unikalne cechy. W skorupce Fish zazwyczaj korzysta się z narzędzi jak `grep`, `sed`, `awk`, które używają regular expressions w sposób charakterystyczny dla systemu Unix.
+
+## See Also - Zobacz też
+Dokumentacja `grep`: https://www.gnu.org/software/grep/manual/grep.html
+
+Dokumentacja `sed`: https://www.gnu.org/software/sed/manual/sed.html
+
+Tutorial wyrażeń regularnych: https://www.regular-expressions.info/tutorial.html
+
+Podręcznik skorupki Fish: https://fishshell.com/docs/current/index.html

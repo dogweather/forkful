@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का प्रयोग करना"
-html_title:           "Go: नियमित अभिव्यक्तियों का प्रयोग करना"
-simple_title:         "नियमित अभिव्यक्तियों का प्रयोग करना"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,33 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-ऑनलाइन सर्च या टेक्स्ट प्रोसेसिंग के दौरान आपने शायद शब्द जोड़ने या निकालने को एक ही वाक्य में संक्षिप्त और प्रभावी ढंग से करने के लिए विशेष तरीके से धुंध ही होंगे। यही चीज़ रेगुलर एक्सप्रेशन हमारे लिए कर सकते हैं। प्रोग्रामर्स इसका इस्तेमाल करते हैं ताकि वे स्ट्रिंग पैटर्न को ढूंढ़ सकें जो उनके कोड में समान हो। 
+## What & Why? (क्या और क्यों?)
+रेगुलर एक्सप्रेशन्स टेक्स्ट से पैटर्न मैच करने के लिए एक तकनीक है। प्रोग्रामर इसे इसलिए इस्तेमाल करते हैं क्योंकि यह डेटा वैलिडेशन, सर्चिंग, और टेक्स्ट मैनिपुलेशन को आसान और तेज़ बना देता है।
 
-## कैसे करें:
-``` Go
+## How to (कैसे करें):
+```Go
 package main
 
 import (
-    "fmt"
-    "regexp"
+	"fmt"
+	"regexp"
 )
 
 func main() {
-    // एक सामान्य रेगुलर एक्सप्रेशन का उपयोग करके स्ट्रिंग के साथ खेलें।
-    
-    // इस स्ट्रिंग अंतरिक्ष में "Gopher" ढूंढ़ें।
-    match, _ := regexp.MatchString("Gopher", "Welcome to the Golang World!")
-    fmt.Println(match) // true
-    
-    // स्थान पर रिप्लेस करने के लिए "Gophers" से "Golang" पर रिप्लेस करें।
-    re := regexp.MustCompile("Gophers")
-    fmt.Println(re.ReplaceAllString("I love Gophers!", "Golang")) // I love Golang!
+	// Regex pattern: ईमेल एड्रेस मैच करें
+	pattern := `\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b`
+	email := "namaste@duniya.com"
+
+	// Compile the regex
+	regex, _ := regexp.Compile(pattern)
+
+	// चेक करें कि ईमेल मैच करता है या नहीं
+	matched := regex.MatchString(email)
+	fmt.Printf("क्या '%s' एक वैध ईमेल है? %t\n", email, matched)
+	
+	// Output: क्या 'namaste@duniya.com' एक वैध ईमेल है? true
 }
 ```
 
-## गहराई में जाएं:
-रेगुलर एक्सप्रेशन को 1950 लोकनाथ जी के समय से लगभग ७० साल पहले डेवलप किया गया था। निकटतम [वैकल्पिक](https://en.wikipedia.org/wiki/Regular_expression#Comparison_of_regular_expression_engines) में शामिल भाषाएं पुराने ग्रीक मौलिक शंख रूपी दो बिंदुओं का उपयोग करती हैं। और कई भाषा [अल्गोरिदम](https://en.wikipedia.org/wiki/Pattern-searching_algorithm) का उपयोग करती हैं जो पैटर्न पहचान और स्थान पर रिप्लेस करने में मदद करते हैं। रेगुलर एक्सप्रेशन के अधिक शुद्ध [विशलेषण](https://ryanstutorials.net/regular-expressions-tutorial/) क्योंकि उन्हें एक अल्गोरिदम या परिसर के रूप में डीबग किया जा सकता है।
+## Deep Dive (गहराई से जानकारी):
+रेगुलर एक्सप्रेशन्स का इतिहास 1950 के दशक में शुरू होता है, थियोरिटिकल कंप्यूटर साइंस और फॉर्मल लैंग्वेज थियरी में। Go भाषा में `regexp` पैकेज उपयोगकर्ताओं को रेगुलर एक्सप्रेशन्स को आसानी से इम्प्लीमेंट करने देता है। विकल्पों में `strings` पैकेज के साथ साइंपल सर्च ऑपरेशन शामिल हैं, लेकिन रेगुलर एक्सप्रेशन्स अधिक शक्तिशाली और लचीले हैं। `regexp` पैकेज में 'Compile' फंक्शन कॉम्प्लेक्स पैटर्न्स को ओप्टिमाइज़ करने और बार-बार उपयोग में लाने के लिए एक `Regexp` टाइप बनाता है।
 
-## इसके अलावा देखें:
-रेगुलर एक्सप्रेशन के बारे में अधिक जानने के लिए आप [गोलंग पैकेज डॉक्यूमेंटेशन](https://golang.org/pkg/regexp/) का उपयोग कर सकते हैं जहाँ आपको एक उदाहरण और फ़ंक्शन की सूची मिलेगी। आप [regular-expressions.info](https://www.regular-expressions.info/) जैसी वेबसाइट से भी रेगुलर एक्सप्रेशन के बारे में व्यापक जानकारी प्राप्त कर सकते हैं।
+## See Also (इसके अलावा):
+- Go `regexp` package documentation: [pkg.go.dev/regexp](https://pkg.go.dev/regexp)
+- Regular Expressions tutorial: [Regular Expressions.info](https://www.regular-expressions.info/)
+- Go by Example: Regular Expressions: [gobyexample.com/regular-expressions](https://gobyexample.com/regular-expressions)

@@ -1,7 +1,7 @@
 ---
-title:                "שימוש בביטויים רגילים"
-html_title:           "Fish Shell: שימוש בביטויים רגילים"
-simple_title:         "שימוש בביטויים רגילים"
+title:                "שימוש בביטויים רגולריים"
+html_title:           "Bash: שימוש בביטויים רגולריים"
+simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,31 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה זה ולמה? 
-במונחים של תכנות, ביטויים רגילים (Regular Expressions) הם דרך לחפש תבניות במחרוזות. מתכנתים משתמשים בהם כדי לחסוך זמן, למצוא שגיאות, ולנתח נתונים בצורה אפקטיבית.
+## What & Why?
+מה זה ביטויים רגולריים? זהו שפת תיאור לחיפוש ועיבוד טקסטים בצורה נוחה וגמישה. למה מתכנתים משתמשים בזה? כדי לאתר תווים או מחרוזות בתוך טקסט גדול, לבצע החלפות או לבדוק התאמות עם יעילות.
 
-## איך לכתוב קוד:
-להלן דוגמה של קוד באליקסיר (Elixir) המשתמש בביטויים רגילים.
+## How to:
 ```Elixir
-defmodule Demo do
-  def check_pattern do
-    regex = ~r/[A-Z][a-z]*/
-    String.match?("Elixir", regex) # Output: true
-    String.match?("elixir", regex) # Output: false
-  end
-end
+# מציאת מחרוזת
+regex = ~r/hello/
+"hello world" =~ regex
+# פלט: true
+
+# פיצול טקסט לפי רווחים
+String.split("שלום עולם", ~r/ /)
+# פלט: ["שלום", "עולם"]
+
+# החלפת תבנית במחרוזת
+String.replace("דוד מלך ישראל", ~r/דוד/, "שלמה")
+# פלט: "שלמה מלך ישראל"
 ```
-הדוגמה מעלה מראה איך ליצור ביטוי רגיל וכיצד לבדוק אם מחרוזת מתאימה לביטוי.
 
-## שיעור מעמיק 
-ראשית, ביטויים רגילים נולדו בשנות ה-50 כחלק משפת התכנות ALGOL. הם מאפשרים חיפוש והחלפה מהירה של תבניות מסוימות, והם התפתחו במהלך השנים להכיל מאפיינים מורכבים יותר. 
+## Deep Dive
+ביטויים רגולריים התפתחו בשנות ה-60 והם חלק אינטגרלי בעיבוד טקסטים. ישנם חלופות כגון חיפושים סטטיים או שימוש ב-parserים, אך ביטויים רגולריים מציעים גמישות מרבית. ב-Elixir, המימוש מתבצע בעזרת המודול Regex, שמתבסס על הסיפרייה הסטנדרטית של Erlang.
 
-דרך אחרת לבדוק תבניות במחרוזות היא שימוש בפונקציות סטנדרטיות של מחרוזות, אך הן לעיתים לא מספיק מורכבות או אפקטיביות. 
-
-בספריה הסטנדרטית של אליקסיר, ביטויים רגילים מממשים באמצעות הספריה הC NIF, שמשתמשת בPCRE (Perl-Compatible Regular Expressions) כדי להפעיל את הקוד.
-
-## ראה גם
-1. [Elixir Official Regex Documentation](https://hexdocs.pm/elixir/Regex.html)
-3. [Regular-Expressions.info - Tutorial](https://www.regular-expressions.info/tutorial.html)
-
-מאמר זה מתאים למתכנתים שמחפשים להבין יותר על ביטויים רגילים באליקסיר.
+## See Also
+- [Elixir Regex documentation](https://hexdocs.pm/elixir/Regex.html)
+- [Regex101 for testing expressions](https://regex101.com/)
+- [RegexOne for learning regex with interactive exercises](https://regexone.com/)

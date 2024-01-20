@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "PowerShell: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,31 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué? 
-Explicamos brevemente qué son las expresiones regulares y por qué los programadores las utilizan. 
+## ¿Qué es y por qué?
+Las expresiones regulares son patrones usados para encontrar coincidencias de texto según reglas definidas. Los programadores las usan porque permiten buscar y manipular texto de manera eficiente y sofisticada.
 
-Las expresiones regulares son patrones de texto utilizados para buscar y manipular cadenas de caracteres. Los programadores las utilizan para realizar operaciones de texto de manera más eficiente y precisa, en lugar de tener que escribir una gran cantidad de código para realizar la misma tarea. 
+## Cómo hacerlo:
+Aquí te muestro cómo hacer coincidir y reemplazar texto usando expresiones regulares en PowerShell con los cmdlets `-match`, `-replace`, y `Select-String`.
 
-## ¿Cómo?: 
-Ejemplos de código y salida de muestra dentro de los bloques de código ```PowerShell ...```
+### Encontrar coincidencias
+```PowerShell
+$texto = "Hola, mi número de teléfono es 123-456-7890."
+$patron = '\d{3}-\d{3}-\d{4}'
+if ($texto -match $patron) {
+    "Coincidencia encontrada: " + $Matches[0]
+} else {
+    "No se encontró la coincidencia."
+}
+```
+Salida: `Coincidencia encontrada: 123-456-7890`
 
-Para buscar un patrón específico en una cadena de texto, podemos usar el cmdlet ```Select-String```. Por ejemplo, si queremos encontrar todas las direcciones de correo electrónico en un archivo de texto, podemos usar el siguiente comando: 
+### Reemplazar texto
+```PowerShell
+$textoReemplazado = $texto -replace $patron, 'XXX-XXX-XXXX'
+$textoReemplazado
+```
+Salida: `Hola, mi número de teléfono es XXX-XXX-XXXX.`
 
-```PowerShell 
-Select-String -Path C:\ejemplo.txt -Pattern "\w+@\w+\.\w+" 
-``` 
+### Extraer coincidencias con `Select-String`
+```PowerShell
+$lineas = Get-Content .\archivo.txt
+$lineas | Select-String $patron
+```
+Este comando extraerá y mostrará las líneas del archivo `archivo.txt` que contengan el patrón definido.
 
-Esto devolverá todas las direcciones de correo electrónico que coincidan con el patrón en el archivo de texto. Podemos usar expresiones regulares para una variedad de tareas, como validación de entradas de usuario, extracción de información específica de un texto y reemplazo de cadenas de caracteres.
+## Profundizando
+Las expresiones regulares tienen sus raíces en la teoría de autómatas y lenguajes formales. Alternativas al uso de regex incluyen el uso de funciones de texto simples o parsers específicos para la estructura de datos. En PowerShell, las expresiones regulares están implementadas a través del .NET Framework, lo que las hace muy potentes pero también pueden ser complejas para los principiantes.
 
-## Profundizando:
-Información adicional sobre el contexto histórico, alternativas y detalles de implementación de expresiones regulares en PowerShell. 
-
-Las expresiones regulares han estado presentes en lenguajes de programación desde la década de 1950, pero se volvieron más populares en la década de 1990 con la aparición de Perl y su compatibilidad incorporada con expresiones regulares. En PowerShell, las expresiones regulares se pueden utilizar en cmdlets como ```Select-String```, ```Where-Object``` y ```ForEach-Object```. También se pueden usar para la validación de parámetros en funciones y scripts.
-
-En lugar de expresiones regulares, se pueden utilizar otras técnicas, como las funciones de búsqueda y reemplazo de cadenas de caracteres en PowerShell, aunque no son tan poderosas y versátiles como las expresiones regulares.
-
-## Vea también:
-Enlaces a fuentes relacionadas con el uso de expresiones regulares en PowerShell. 
-
-- [Documentación de Microsoft sobre Expressions regulares en PowerShell](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7)
-- [Tutorial en YouTube sobre expresiones regulares en PowerShell por LearnWinAutomation](https://www.youtube.com/watch?v=xX3c-kQ94Sg)
+## Ver También
+- [about_Regular_Expressions](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7.1) - Documentación oficial de PowerShell sobre expresiones regulares.
+- [Regex class](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex) - Documentación de la clase Regex de .NET.
+- [Learn Regular Expressions](https://regexone.com/) - Recurso interactivo para aprender expresiones regulares desde cero.

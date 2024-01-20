@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "Go: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,51 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
----
 ## ¿Qué & Por Qué?
-Las expresiones regulares son una potente herramienta, usada en la programación para coincidir, encontrar o reemplazar patrones en los textos. Los programadores las utilizan para ahorrar tiempo y para manejar complejos patrones de búsqueda y reemplazo.
+
+Las expresiones regulares son herramientas de búsqueda y manipulación de texto que siguen patrones definidos. Los programadores las utilizan para validar, extraer, o sustituir cadenas dentro de un texto de manera eficiente y precisa.
 
 ## Cómo hacerlo:
-En C, utilizamos la biblioteca regex.h para trabajar con expresiones regulares. Les comparto un ejemplo de cómo detectar si un texto coincide con un patrón:
+
+Para usar expresiones regulares en C, se necesita la biblioteca `regex.h`. Aquí tienes algunos ejemplos:
 
 ```C
-#include <regex.h>
 #include <stdio.h>
+#include <regex.h>
 
 int main() {
-    regex_t regex;    
-    // Compila la expresión regular
-    if (regcomp(&regex, "hola", 0)) {
-        printf("No se pudo compilar\n");
-        return 1;
+    regex_t regex;
+    int resultado;
+    resultado = regcomp(&regex, "^[0-9]+\\.[0-9]+$", 0);
+    resultado = regexec(&regex, "23.45", 0, NULL, 0);
+    if (resultado == 0) {
+        printf("¡La cadena coincide!\n");
+    } else {
+        printf("No coincide.\n");
     }
-
-    // Revisa si el texto cumple con el patrón
-    int res = regexec(&regex, "hola mundo", 0, NULL, 0);
-    
-    if (!res) printf("Coincide\n");
-    else if (res == REG_NOMATCH) printf("No coincide\n");
-    else printf("Error\n");
-
     regfree(&regex);
     return 0;
 }
 ```
 
-El output sería:
+Al ejecutarlo:
 
 ```
-Coincide
+¡La cadena coincide!
 ```
 
-## Deep Dive
-Las expresiones regulares datan de la década de los 50, desarrolladas por el matemático Stephen Cole Kleene. No son exclusivas de C y en realidad se pueden encontrar en la mayoría de los lenguajes de programación.
+## Análisis Profundo:
 
-Hay otras herramientas que también son capaces de manejar búsqueda y reemplazo de patrones, como 'strstr' en C pero no son tan poderosas como las expresiones regulares. 
+Las expresiones regulares tienen su origen en la teoría de automatas y lenguajes formales. En C, `regex.h` es una parte estándar de POSIX; sin embargo, no todos los compiladores la soportan de forma nativa. Alternativas como las bibliotecas PCRE (Perl Compatible Regular Expressions) ofrecen mayor potencia y flexibilidad. La implementación y eficiencia pueden variar según la función utilizada y la complejidad del patrón de la expresión regular.
 
-La implementación de las expresiones regulares en C se maneja a través de la biblioteca regex.h, que nos permite utilizar funciones para compilar y aplicar las expresiones regulares.
+## Ver Además:
 
-## Ver también
-- Documentación oficial de regex.h en C: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-- Herramienta en línea para probar expresiones regulares: https://regex101.com
-- Curso intensivo de Regex para principiantes: https://www.codecademy.com/learn/learn-regex
+- Tutorial de regex en C: http://www.regular-expressions.info/c.html
+- Documentación de GNU C Library: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
+- Sitio web de PCRE: https://www.pcre.org/

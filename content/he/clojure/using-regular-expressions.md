@@ -1,6 +1,6 @@
 ---
 title:                "שימוש בביטויים רגולריים"
-html_title:           "Clojure: שימוש בביטויים רגולריים"
+html_title:           "Bash: שימוש בביטויים רגולריים"
 simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-מה ולמה?
+## מה ולמה?
+השימוש בביטויים רגולריים מאפשר חיפוש והתאמה של טקסט על פי תבנית. תכנתים עושים זאת כדי למצוא, להחליף או לבדוק תוכן טקסט בצורה חכמה ויעילה.
 
-שימוש בביטויים רגולריים הוא כלי חשוב לתכנותנים בכדי לחפש ולעבד מחרוזות בצורה יעילה. הכוח של ביטויים רגולריים נמצא ביכולתם לתאר תבניות מורכבות של טקסט ולמצוא או להחליף אותן בצורה מהירה ונוחה. למרבה המזל, רוב התכנותנים בכל שפת תכנות מודרנית כוללת תמיכה לביטויים רגולריים ולכן זה כלי מאוד שימושי בעבודתנו היום יום.
-
-איך לעשות את זה:
+## איך לעשות:
+ב-Clojure, אנו משתמשים בביטויים רגולריים בעזרת סינטקסיס דומה ל-Java. זה כולל פונקציות כמו `re-find`, `re-seq` לחיפוש, ו `re-matches` לבדיקת התאמות.
 
 ```Clojure
-(require '[clojure.string :as str])
+; חיפוש התאמה יחידה
+(def pattern #"\b[Cc]lojure\b")
+(re-find pattern "Clojure is awesome!") ; => "Clojure"
 
-(str/replace "Hello, world!" #"world" "John") ; => "Hello, John!"
-(str/replace-first "Hello, hello, hello!" #"hello" "there") ; => "Hello, there, hello!"
-(str/join "," ["John" "Paul" "George" "Ringo"]) ; => "John,Paul,George,Ringo"
+; מציאת כל ההתאמות
+(re-seq pattern "Clojure and clojure are both cool.") ; => ("Clojure" "clojure")
+
+; בדיקת התאמה מלאה
+(re-matches pattern "Clojure") ; => "Clojure"
+(re-matches pattern "I love Clojure") ; => nil
 ```
 
-עמוק יותר:
+## צלילה לעומק:
+ביטויים רגולריים הם חלק מתכנות כמעט מהימים הראשונים שלו. במקור פותחו על ידי תאורטיקנים של מדעי המחשב כמו Ken Thompson. חלופות כוללות פרסור סינטקסי מובנית, אולם ביטויים רגולריים עדיין נשארים פופולריים בגלל הגמישות והעוצמה שלהם. בקרבת, יעילות אלגוריתמים כמו סיבוכיות זמן עבודה הינה נושא חשוב.
 
-ביטויי רגולריים כמונח נוצרו כחלק מתיאוריה השפתית הפותחת על ידי המתמטיקאי סטפן קולורוזה בשנות ה-1950. מאז, הם נעשו כלי נפוץ וכמעט הכרחי בעולם התכנות. עם זאת, חשוב לזכור שישנם תחליפים לביטויים רגולריים כמו פונקציות מחרוזות ופונקציות חיתוך של מחרוזות, אך האלגוריתמים שלהם פחות מורכבים. בכדי לעבוד עם ביטויים רגולריים בקוד שלנו בצורה יותר בטוחה ויותר מוצלחת, עלינו להכיר את המנגנונים שלהם כמו קוונטים, תווים מיוחדים ושיעורי חדות.
-
-עיון נוסף:
-
-- דוסנט, א.
-
-המדריך המקיף לביטויים רגלוריים בקלוקלואר.
-
-- אתר אינטרנט של Perl ביטויים מנחגרוזת רגולרית
-
-- תיעוד של Clojure: פונקציות ביטויים רגולריים
+## ראה גם:
+- [ClojureDocs - Regular Expressions](https://clojuredocs.org/clojure.core/re-find)
+- [Mozilla Developer Network - Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

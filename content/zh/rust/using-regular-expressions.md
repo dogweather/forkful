@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Rust: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,39 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是正则表达式？为什么程序员会使用它？
-正则表达式是一种用来匹配文本模式的方式，它允许程序员在处理字符串时进行更加灵活和精确的操作。程序员通常会使用正则表达式来搜索、替换、验证和提取文本中需要的信息。
+## What & Why? (是什么 & 为什么?)
+正则表达式用于文本搜索、替换、验证等操作。程序员使用它们因为它们强大、高效、灵活。
 
-## 如何使用正则表达式：
+## How to: (如何做)
 ```Rust
-// 导入正则表达式库
 use regex::Regex;
 
-// 创建一个匹配数字的正则表达式
-let number_regex = Regex::new(r"[0-9]+").unwrap();
+fn main() {
+    let re = Regex::new(r"\b\w{5}\b").unwrap(); // 查找所有五个字母的单词
+    let text = "Rust语言简洁又强大。";
 
-// 检查字符串是否匹配正则表达式
-let string = "123abc";
-if number_regex.is_match(string) {
-    println!("字符串{}匹配了正则表达式！", string);
-}
-
-// 提取字符串中的匹配部分
-let result = number_regex.find(string);
-match result {
-    Some(matched) => println!("匹配的字符串是： {}", matched.as_str()),
-    None => println!("没有匹配的字符串！"),
+    for word in re.find_iter(&text) {
+        println!("找到单词: {}", word.as_str());
+    }
 }
 ```
+输出:
+```
+找到单词: 语言
+找到单词: 简洁
+```
 
-以上代码展示了正则表达式的基本用法，通过导入正则表达式库和创建一个正则表达式对象，我们可以检查字符串是否符合特定的模式，并提取出需要的信息。
+## Deep Dive (深入探究)
+1. 正则表达式起源于1950年代的神经生物学研究。
+2. 替代方案包括字符串搜索（更简单但功能有限）和解析库（更复杂）。
+3. Rust中正则表达式的实现被设计为快速且安全。
 
-## 深入了解：
-正则表达式最早由计算机科学家 Stephen Cole Kleene 在1956年提出，经过多年发展，已成为编程世界中不可或缺的工具。除了 Rust 中使用的 regex crate，还有其他编程语言内置的正则表达式库，比如 Perl、Python、Java 等。值得注意的是，正则表达式的语法在不同的语言中可能稍有差别，因此在切换语言时需要小心谨慎。
-
-除了正则表达式，程序员也可以使用字符串处理函数来实现相同的功能。但是正则表达式通常更加灵活和强大，在处理复杂的文本模式时可以大大提高效率。
-
-## 参考链接：
-- [Rust 正则表达式库文档](https://docs.rs/regex/latest/regex/)
-- [正则表达式入门教程](https://www.regular-expressions.info/tutorial.html)
-- [正则表达式在线测试工具](https://regex101.com/)
+## See Also (另请参阅)
+- Rust 的正则表达式库官方文档: [docs.rs/regex](https://docs.rs/regex/)
+- 正则表达式学习资源: [regex101.com](https://regex101.com/)
+- Rust 编程语言书: [doc.rust-lang.org/book/](https://doc.rust-lang.org/book/)

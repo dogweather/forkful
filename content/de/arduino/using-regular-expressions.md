@@ -1,7 +1,7 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
-html_title:           "Bash: Reguläre Ausdrücke verwenden"
-simple_title:         "Reguläre Ausdrücke verwenden"
+title:                "Verwendung von regulären Ausdrücken"
+html_title:           "Arduino: Verwendung von regulären Ausdrücken"
+simple_title:         "Verwendung von regulären Ausdrücken"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -11,51 +11,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Reguläre Ausdrücke (Regex) sind Muster zur Textsuche und -manipulation. Programmierer nutzen sie, um Textdaten effizient zu durchsuchen, zu validieren oder zu bearbeiten.
 
-Reguläre Ausdrücke (oder Regex) sind eine Art Muster, die hilft, Zeichenketten zu matchen, zu suchen, zu ersetzen und zu manipulieren. Programmierer verwenden sie, um Zeit zu sparen und Fehler bei der Bearbeitung von Strings zu vermeiden.
-
-## So geht's:
-
-Um Regex in Arduino zu verwenden, wird eine Bibliothek benötigt. Hier sind einige einfache Beispiele, wie man es macht:
+## How to:
+Arduino unterstützt reguläre Ausdrücke nicht standardmäßig. Abhilfe schafft die Einbindung von Bibliotheken wie `Regexp`. Hier ein Beispiel:
 
 ```Arduino
-#include <regex.h>
+#include <Regexp.h>
 
 void setup() {
     Serial.begin(9600);
-  
-    regex_t regex;
-  
-    if (regcomp(&regex, "a", 0)) {
-        Serial.println("Regexp Compile Error");
-    }
-  
-    if (!regexec(&regex, "This is a test.", 0, NULL, 0)) {
-        Serial.println("Regexp Match");
-    } else {
-        Serial.println("Regexp No Match");
-    }
+    while (!Serial);
 
-    regfree(&regex);
+    MatchState ms;
+    ms.Target ("Das ist ein Test 123.");
+    
+    char result = ms.Match ("(\\w+)\\s(\\w+)");
+  
+    if (result == REGEXP_MATCHED) {
+        char buf[100];
+
+        ms.GetCapture (buf, 0);
+        Serial.println (buf); // "ist"
+        
+        ms.GetCapture (buf, 1);
+        Serial.println (buf); // "ein"
+    }
 }
 
 void loop() {
+    // Nichts zu tun hier.
 }
 ```
 
-Dieses Programm verwendet den regulären Ausdruck `a`, um nach diesem Buchstaben im gegebenen String zu suchen.
+Ausgabe:
+```
+ist
+ein
+```
 
-## Vertiefung:
+## Deep Dive
 
-Obwohl reguläre Ausdrücke schon seit Jahrzehnten existieren, sind sie in jüngerer Zeit in vielen Programmiersprachen angekommen. Obwohl Arduino reguläre Ausdrücke nicht nativ unterstützt, gibt es Bibliotheken wie `regex.h` die dies ermöglichen.
+Reguläre Ausdrücke wurden in den 1950er Jahren konzipiert und sind seitdem fester Bestandteil vieler Programmiersprachen. Arduino hingegen bietet nativ keine Regex-Unterstützung, doch Bibliotheken wie `Regexp` füllen diese Lücke. Diese Bibliotheken bieten meist eine reduzierte Funktionalität im Vergleich zu vollausgestatteten Regex-Engines in Sprachen wie Python oder Java.
 
-Alternativen zu regulären Ausdrücken sind Funktionen wie `strstr()` oder `strtok()`, die aber nicht die gleiche Flexibilität und Benutzerfreundlichkeit bieten.
+Alternativen zu Regex sind gezielte String-Operationen und -Suchfunktionen, die in Arduino selbst eingebaut sind. Diese können einfacher sein, sind aber weniger mächtig und flexibel.
 
-Wenn es um die Implementierungsdetails geht, ist zu beachten, dass die Regex-Verarbeitung oft zeitaufwendig sein kann, insbesondere auf Mikrocontrollern mit begrenzten Ressourcen.
+Bei der Implementierung von Regex in Arduino-Projekten muss der begrenzte Speicherplatz berücksichtigt werden. Reguläre Ausdrücke können schnell komplex und ressourcenintensiv werden.
 
-## Siehe auch:
+## See Also
 
-Weitere Informationen und Beispiele finden Sie unter diesen Links:
-
-1. [C++ Reguläre Ausdrücke (RegEx) - cppreference.com](https://en.cppreference.com/w/cpp/regex)
-2. [Arduino-Referenz - Arduino.cc](https://www.arduino.cc/reference/en/)
+- Arduino String Library: https://www.arduino.cc/reference/en/language/variables/data-types/string/
+- Regexp-Bibliothek für Arduino: https://github.com/nickgammon/Regexp
+- RegexOne – Lernen von Regex mit interaktiven Übungen: https://regexone.com/

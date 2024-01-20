@@ -37,5 +37,3 @@ Historiskt sett användes konvertering till gemener i början av datortiden för
 Ett alternativ till `string.to_lower` kan vara att skriva en egen funktion, men detta rekommenderas inte eftersom det är troligt att det blir fel. 
 
 `to_lower`-funktionen i Gleam fungerar genom att gå igenom varje tecken i strängen, kolla om det är en stor bokstav, och om det är, ändra den till en liten bokstav.
-
-## Se även

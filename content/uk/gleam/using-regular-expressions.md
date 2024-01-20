@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "Gleam: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "Gleam"
 category:             "Gleam"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Чому?
+## Що та Чому?
+Регулярні вирази - це шаблони для пошуку й маніпуляції текстом. Програмісти використовують їх для валідації даних, парсингу та заміни тексту ефективно.
 
-Користуватися регулярними виразами в програмуванні означає використовувати шаблони для пошуку та заміни тексту в рядках коду. Програмісти використовують цей підхід для більш ефективної та точної обробки текстових даних, зокрема при перевірці формату вводу користувачів або видаленні непотрібних символів зі строки.
+## Як це зробити:
+У Gleam застосування регулярних виразів вимагає зовнішньої бібліотеки, такої як `gleam_regex`. Ось базовий приклад:
 
-## Як?
+```gleam
+import gleam/regex
 
-```Gleam
-import regex
-
-let re = regex": *[A-Z][a-z]+ *"
-
-let name = "John Doe"
-let has_name = regex.matches(re, name)
-let no_name = regex.matches(re, "jane smith")
-
-println(has_name) // output: True
-println(no_name) // output: False
+pub fn demo() {
+  let pattern = regex.from_string("[a-zA-Z]+").unwrap()
+  let result = regex.find(pattern, "Hello Gleam")
+  case result {
+    Ok(matches) -> matches |> regex.Match.group(0) |> io.println
+    Error(_) -> "No match found" |> io.println
+  }
+}
 ```
 
-## Поглиблене дослідження
+При запуску коду виведеться:
+```
+Hello
+```
 
-Регулярні вирази були розроблені у 1956 році та використовуються у багатьох мовах програмування, включаючи Gleam. Є альтернативи, наприклад, бібліотеки для роботи зі звичайними виразами, але вони зазвичай не так ефективні та прості у використанні. У Gleam регулярні вирази реалізовані за допомогою стандартної бібліотеки та мають широкий функціонал для зручної роботи з текстовими даними.
+## Поглиблено:
+Регулярні вирази сягають корінням у теорію автоматів 1950-х років. Альтернативами є парсер-комбінатори або написання власних парсерів, але це зазвичай більш складно. У Gleam регулярні вирази реалізовані через бібліотеки, що забезпечують інтерфейс до відповідних можливостей базової мови, такої як Erlang або Elixir.
 
-## Дивіться також
-
-- [Regular Expression Cheat Sheet](https://www.rexegg.com/regex-quickstart.html)
+## Див. також:
+- Офіційний сайт Gleam: [https://gleam.run](https://gleam.run)
+- Вступ до Regular Expressions: [https://www.regular-expressions.info/](https://www.regular-expressions.info/)

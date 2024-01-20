@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "Lua: Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,34 +10,27 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Che cos'è & Perché usarle?
+## What & Why?
+Le espressioni regolari sono modelli per cercare corrispondenze in stringhe di testo. I programmatori le usano per validare, estrarre e manipolare dati con precisione e velocità.
 
-Le espressioni regolari, o "regex" per gli amici, sono una forma di sintassi utilizzata dai programmatori per cercare e manipolare stringhe di testo in modo preciso e veloce. Vengono spesso utilizzate per cercare determinati pattern all'interno di un testo o per effettuare sostituzioni automatiche. I programmatori utilizzano le espressioni regolari perché offrono una soluzione più efficace rispetto all'uso di metodi di ricerca e manipolazione stringhe tradizionali.
-
-## Come si usano:
-
+## How to:
 ```Lua
--- Controlla se la parola "ciao" è presente in una stringa
-if string.match("Ciao a tutti!", "ciao") ~= nil then
-    print("La stringa contiene la parola ciao")
-else
-    print("La stringa non contiene la parola ciao")
-end
+local testo = "Oggi è il 3 aprile 2023"
+local pattern = "%d+ %a+ %d+" -- Cerca data nel formato "giorno mese anno"
 
--- Sostituisci ogni vocale con una "x"
-print(string.gsub("Ciao a tutti!", "[aeiou]", "x"))
--- Output: Cxx xm txxxtx!
+-- Trova la corrispondenza
+local match = string.match(testo, pattern)
+print(match)  -- Output: 3 aprile 2023
 
--- Cerca e salva un numero di telefono in una stringa
-local phone_number = string.match("Il mio numero di telefono è 123-456-7890", "%d%d%d%-%d%d%d%-%d%d%d%d")
-print("Il numero di telefono è " .. phone_number)
--- Output: Il numero di telefono è 123-456-7890
+-- Sostituisci la corrispondenza
+local testo_modificato = string.gsub(testo, pattern, "1 maggio 2024")
+print(testo_modificato)  -- Output: Oggi è il 1 maggio 2024
 ```
 
-## Approfondimento:
+## Deep Dive
+Le espressioni regolari, o regex, nascono negli anni '50 e si sono evolute in diversi standard. In Lua, le espressioni regolari sono più semplici rispetto a quelle in altri linguaggi e sono chiamate pattern matching. Alternativamente, si possono utilizzare librerie esterne come `lrexlib` o `LPeg` per funzionalità più avanzate. Lua implementa i pattern matching limitando la complessità per mantenere leggerezza e velocità.
 
-Le espressioni regolari sono state inventate negli anni '40 da un matematico americano e successivamente sviluppate e rese popolari da linguaggi di programmazione come Perl e Java. Una loro alternativa più moderna è rappresentata dalle "lingue di templating", come Mustache e Handlebars, che offrono delle sintassi più intuitive e leggibili per manipolare dati testuali. Le espressioni regolari vengono implementate nella maggior parte dei linguaggi di programmazione, incluso Lua, tramite l'utilizzo di librerie apposite.
-
-## Vedi anche:
-
-Per un approfondimento sulle espressioni regolari in Lua e per imparare i vari comandi e shortcut disponibili, si consiglia di consultare la documentazione ufficiale sul sito di Lua. Inoltre, ci sono molti tutorial e video online che illustrano l'utilizzo delle espressioni regolari in linguaggi di programmazione diversi, che possono essere utili per approfondire le proprie conoscenze su questo argomento.
+## See Also
+- [Lua 5.4 Reference Manual - Patterns](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+- [LPeg Library](http://www.inf.puc-rio.br/~roberto/lpeg/)
+- [Lua-users wiki: Patterns tutorial](http://lua-users.org/wiki/PatternsTutorial)

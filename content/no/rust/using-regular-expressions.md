@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Rust: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,37 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-Regular expressions er et uttrykk brukt til å beskrive mønstre innenfor en tekst eller en streng av tegn. Det kan brukes til å søke, erstatte og manipulere tekst på en effektiv måte. Programmere bruker det for å utføre avansert tekstbehandling, validering av brukerinput og databehandling.
+Regular expressions, eller regulære uttrykk, lar deg lete etter mønstre i tekst. Programmerere bruker dette for å finne, validere, manipulere eller trekke ut data på en fleksibel måte.
 
-## Hvordan:
-La oss si at vi har en liste over e-postadresser og vi ønsker å filtrere ut alle adressene som ender på "gmail.com". Vi kan bruke Rusts regex biblotek for å oppnå dette:
+## Slik gjør du:
+For å bruke regulære uttrykk i Rust, installer `regex`-biblioteket. Bruk `Regex::new()` for å kompilere et uttrykk, og søk deretter gjennom tekst med metoder som `is_match`, `find`, eller `captures`.
 
 ```Rust
 use regex::Regex;
 
 fn main() {
-    let email_list = ["john@test.com", "sarah@test.com", "mark@gmail.com", "jane@gmail.com"];
-    let gmail_regex = Regex::new(r"gmail.com$").unwrap();
+    let re = Regex::new(r"\bprogrammer(ing)?\b").unwrap();
+    let tekst = "Jeg liker programmering og å være programmerer!";
     
-    for email in email_list {
-        if gmail_regex.is_match(email) {
-            println!("{}", email);
-        }
+    // Sjekk om det er et treff
+    println!("Treff funnet: {}", re.is_match(tekst)); // Treff funnet: true
+
+    // Finn det første treffet
+    if let Some(matched) = re.find(tekst) {
+        println!("Første treff: {}", &tekst[matched.start()..matched.end()]); // Første treff: programmering
     }
 }
 ```
 
-Dette vil gi følgende utskrift:
-```
-mark@gmail.com
-jane@gmail.com
-```
-
-## Dykke dypere:
-Regular expressions har eksistert i mange år og har blitt brukt i mange programmeringsspråk. Alternativene inkluderer Perl, Python og JavaScript. I Rust finnes det mange tredjepartsbiblioteker som tilbyr regex-funksjonalitet, men standardbiblioteket inkluderer nå et eget regex-modul.
-
-Implementeringen av regex i Rust er basert på NFA (Non-Deterministic Finite Automaton) og brukes for å bygge et state machine for å matche og søke gjennom tekst. Rusts regex-bibliotek er også utfordret til å være en av de raskeste sammenlignet med andre programmeringsspråk.
+## Dybdegående
+Regulære uttrykk ble popularisert på 1960-tallet av Stephen Kleene. Alternativer til regulære uttrykk inkluderer strengsøk-biblioteker eller innebygde funksjoner som `str::contains` i Rust for enklere mønstre. Rusts `regex`-bibliotek kompilerer regulære uttrykk til bytecode som utføres av en virtual maskin, noe som gir en god balanse mellom ytelse og fleksibilitet.
 
 ## Se også:
-- [The Rust Programming Language](https://www.rust-lang.org/)
-- [Rust Regex Dokumentasjon](https://docs.rs/regex/)
+- Rust `regex` bibliotekets dokumentasjon: https://docs.rs/regex/
+- En introduksjonsveileder for regex i Rust: https://doc.rust-lang.org/book/ch18-00-patterns.html
+- "The Rust Programming Language" bokens kapittel om mønstre og regulære uttrykk (engelsk): https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html

@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "Java: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "Java"
 category:             "Java"
@@ -10,44 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Що і чому?
-Використання регулярних виразів у програмуванні - це процес пошуку збігів у тексті за допомогою спеціальних шаблонів. Це дозволяє програмістам більш ефективно обробляти та аналізувати великі обсяги даних.
+## What & Why?
+Регулярні вирази - це шаблони для пошуку та маніпуляції текстом. Програмісти використовують їх для валідації вводу, пошуку чи заміни підрядків.
 
-Як?
-Перш ніж почати використовувати регулярні вирази в Java, необхідно імпортувати пакет java.util.regex. Нижче наведені приклади коду, які демонструють основи використання регулярних виразів у Java:
+## How to:
+```java
+import java.util.regex.*;
 
-```Java
-// Перевірка чи відповідає рядок певному шаблону
-String pattern = "a*b";
-String input = "aaab";
-boolean isMatch = Pattern.matches(pattern, input);
-System.out.println(isMatch); // вивід: true
-```
+public class RegexExample {
+    public static void main(String[] args) {
+        
+        // Example: Validate email address
+        String emailRegex = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+        String emailToCheck = "vash_email@example.com";
+        Pattern emailPattern = Pattern.compile(emailRegex);
+        Matcher emailMatcher = emailPattern.matcher(emailToCheck);
+        boolean isEmailValid = emailMatcher.matches();
+        System.out.println("Email is valid: " + isEmailValid);  // Output: Email is valid: true
 
-```Java
-// Заміна підрядка у рядку за допомогою регулярного виразу
-String pattern = "a*b";
-String input = "Hello aaaaab World";
-input = input.replaceAll(pattern, "X");
-System.out.println(input); // вивід: Hello X World
-```
-
-```Java
-// Вибірка смайликів з тексту за допомогою регулярного виразу
-String pattern = "(:|;)(-|~)?(\\)|D|P)";
-String input = "Hello :) World :D";
-Pattern smileyPattern = Pattern.compile(pattern);
-Matcher matcher = smileyPattern.matcher(input);
-while (matcher.find()) {
-    System.out.print(matcher.group() + " "); // вивід: :) :D
+        // Example: Find and replace all occurrences
+        String text = "Котики милі, котики класні, усі люблять котиків.";
+        String searchText = "котиків";
+        String replaceText = "песиків";
+        String replacedText = text.replaceAll(searchText, replaceText);
+        System.out.println(replacedText); // Output: Котики милі, котики класні, усі люблять песиків.
+    }
 }
 ```
 
-Поглиблене вивчення
-Використання регулярних виразів доволі поширена практика у програмуванні. Історично, ця технологія була вперше використана в Unix-системах для обробки текстових файлів. Однак, на сьогоднішній день існують інші альтернативи, такі як функції заміни та пошуку у рядках, але регулярні вирази залишаються більш гнучким та потужним інструментом.
+## Deep Dive
+Регулярні вирази з'явилися в 1950-х. Головною альтернативою їм є парсери та текстові функції, але вони не такі гнучкі. У Java Pattern і Matcher класи з пакету `java.util.regex` відповідають за роботу з регулярними виразами.
 
-Для запам'ятовування регулярних виразів у Java використовується синтаксис, що базується на Perl, де кожен символ у шаблоні відповідає певній комплексній послідовності символів. Детальніше про синтаксис можна почитати у документації Java.
-
-Дивитися також
-- [Документація Java про регулярні вирази](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html)
-- [Інтерактивний гайд про використання регулярних виразів у Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+## See Also
+- [Java Pattern Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+- [Java Matcher Class](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Matcher.html)
+- [Oracle's regex tutorial](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [Regular Expressions in Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)

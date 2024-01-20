@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "Python: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -11,51 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Regular expressions (regex) hjälper till att söka och manipulera strängar baserat på mönster. Programmerare använder regex för att effektivisera textbearbetning, validering och dataextraktion.
 
-Att använda reguljära uttryck (regular expressions) inom programmering handlar om att hitta, hantera och manipulera textsträngar på ett effektivt sätt. Det kan vara till nytta för att söka efter specifika mönster i text eller för att göra omfattande sökningar och ersättningar i stora mängder data. Reguljära uttryck är ett kraftfullt verktyg som kan spara tid och förbättra effektiviteten i din kod.
-
-## Hur man gör:
-
-För att använda reguljära uttryck i Python behöver du importera modulet "re". Sedan kan du använda olika metoder för att söka och manipulera data. Nedan följer några exempel på hur man kan använda reguljära uttryck:
-
-```Python
-# Importera re modulet
+## Hur gör man:
+```python
 import re
 
-# Söka efter ett specifikt ord
-text = "Hej, detta är en textsträng med några ord."
-resultat = re.search("textsträng", text)
-print(resultat.group())
-
-# Hitta alla ord som börjar med en vokal
-ordlista = ["äpple", "banan", "citron", "druva", "ägg"]
-for ord in ordlista:
-  if re.findall("^[aäeioöuüyå]", ord):
-    print(ord)
-
-# Ersätta alla siffror med ett X
-nummer = "123-45-678910"
-nytt_nummer = re.sub("\d", "X", nummer)
-print(nytt_nummer)
+# Hitta alla orden som börjar med 'b' och följs av en vokal
+text = "Baren är öppen, bära eller byta?"
+mönster = r"\bb[aeiouyåäö]\w+"
+hittade_ord = re.findall(mönster, text, re.IGNORECASE)
+print(hittade_ord)  # Output: ['Baren', 'bära', 'byta']
 ```
 
-Output:
-
+```python
+# Validera ett svenskt personnummer
+personnummer = "850709-1234"
+validera_pnr = r"^\d{6}-\d{4}$"
+match = re.fullmatch(validera_pnr, personnummer)
+print('Giltigt' if match else 'Ogiltigt')  # Output: Giltigt
 ```
-textsträng
-äpple
-ägg
-XXX-XX-XXXXXX
-```
 
-## Fördjupning:
+## Djupdykning
+Regex härstammar från 1950-talets teoretiska arbete med formella språk. Alternativ till regex inkluderar strängmetoder som `find()` eller bibliotek som `string`. Python implementerar regex via `re`-modulen, som använder en bakåtkompatibel variant av Perl's regex-motor.
 
-Reguljära uttryck har funnits sedan 1950-talet och är en viktig del av många programmeringsspråk och textbehandlingsprogram. Förutom i Python kan man även använda reguljära uttryck i andra språk som t.ex. Perl, JavaScript och Java. Det finns även andra sätt att söka och manipulera data, som t.ex. på listaformat eller med hjälp av inbyggda string-metoder, men reguljära uttryck är oftast mer kraftfulla och flexibla.
-
-När man implementerar reguljära uttryck är det viktigt att ha en tydlig förståelse för hur de olika symbolerna och uttrycken fungerar. Det finns många resurser på nätet där man kan lära sig mer om reguljära uttryck och hur man använder dem på bästa sätt.
-
-## Se även:
-
-- [Reguljära uttryck i Python dokumentationen](https://docs.python.org/3/library/re.html)
-- [En guide till reguljära uttryck på W3Schools](https://www.w3schools.com/python/python_regex.asp)
-- [Reguljära uttryck - Ett kraftfullt verktyg för textbearbetning](https://www.linuxjournal.com/article/2852)
+## Se även
+- Python's `re` modul i dokumentation: https://docs.python.org/3/library/re.html
+- RegExr, för att experimentera med regex online: https://regexr.com/
+- Regex101, med stöd för python-syntax: https://regex101.com/

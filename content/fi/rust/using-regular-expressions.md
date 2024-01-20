@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Rust: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Rust"
 category:             "Rust"
@@ -10,33 +10,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
-Regular expressions eli säännölliset lausekkeet ovat keino käsitellä merkkijonoja tavalla, joka on joustava ja monipuolinen. Ohjelmoijat käyttävät niitä usein datan käsittelemiseen, validointiin ja hakemiseen. Säännöllisten lausekkeiden avulla voit etsiä tiettyjä merkkijonon osia ja tehdä niihin muutoksia luovalla tavalla.
+## What & Why?
+Regular expressions, eli säännölliset lausekkeet, ovat mallipohjaisia merkkijonoja tekstin tunnistukseen ja käsittelyyn. Ohjelmoijat käyttävät niitä monimutkaisen tekstidataan etsimiseen, validoimiseen ja modifiointiin nopeasti ja tehokkaasti.
 
-## Miten:
-```Rust
-// Esimerkki: Etsi ja korvaa
-let sana = "Tänään on aurinkoinen päivä!";
-let muokattu_sana = sana.replace("aurinkoinen", "sateinen");
+## How to:
+Asennetaan `regex`-kirjasto lisäämällä `Cargo.toml`-tiedostoon riippuvuus:
 
-println!("Oli sää mikä tahansa, se on aina hyvä päivä. {}", muokattu_sana);
-// Tulostus: Oli sää mikä tahansa, se on aina hyvä päivä. Tänään on sateinen päivä!
+```toml
+[dependencies]
+regex = "1.5.4"
 ```
 
-```Rust
-// Esimerkki: Tarkista sähköpostiosoite
-let osoite = "esimerkki@esimerkki.com";
+Peruskäyttö esimerkki hakemaan päivämääriä:
 
-if osoite.contains("@") && osoite.contains(".") {
-    println!("Sähköposti on kelvollinen.");
-} else {
-    println!("Sähköposti ei ole kelvollinen.");
+```rust
+use regex::Regex;
+
+fn main() {
+    let re = Regex::new(r"\d{4}-\d{2}-\d{2}").unwrap();
+    let text = "Tärkeitä päivämääriä: 2023-04-01, 2022-12-24.";
+
+    for date in re.find_iter(text) {
+        println!("Löydetty päivämäärä: {}", date.as_str());
+    }
 }
-// Tulostus: Sähköposti on kelvollinen.
 ```
 
-## Suurennuslasin alla:
-Säännölliset lausekkeet ovat olleet käytössä jo 1950-luvulta lähtien ja niitä käyttävät monet ohjelmointikielet, kuten Perl ja Python. Rust tarjoaa Tetchi-makroja, jotka mahdollistavat säännöllisten lausekkeiden käytön tavallisten ilmaisujen sijaan. Toisin kuin joidenkin muiden kielten tapauksessa, Rustin säännölliset lausekkeet ovat täysin kääntämisaikaisia, mikä tarkoittaa, että ne tarkistetaan jo ennen ohjelman suorittamista. Tämä auttaa havaitsemaan mahdolliset virheet jo ennen ohjelman suorittamista.
+Tuloste:
 
-## Katso myös:
-* [Hyödyllisiä vinkkejä ja temppuja Rustin säännöllisiin lausekkeisiin](https://medium.com/@krishna14anu/mastering-regular-expressions-in-rust-ba32ca8b8e01)
+```
+Löydetty päivämäärä: 2023-04-01
+Löydetty päivämäärä: 2022-12-24
+```
+
+## Deep Dive
+Regular expressions eli regex, juontaa juurensa 1950-luvulta, matemaatikko Stephen Kleenen teoriasta. Alternatiiveina toimii tekstinkäsittelymenetelmät kuten Stringin omat metodit ja parserit, muta regex on yleisesti tehokkain. Rustin `regex`-kirjaston suorituskyky on huippuluokkaa, ja se käyttää automaattisesti "lazy DFA" algoritmia tehon maksimointiin.
+
+## See Also
+- Rust `regex`-kirjasto: https://crates.io/crates/regex
+- Regex101, säännöllisten lausekkeiden testaamista varten: https://regex101.com/
+- Rust-koodausohjeet ja style-guide: https://doc.rust-lang.org/cargo/

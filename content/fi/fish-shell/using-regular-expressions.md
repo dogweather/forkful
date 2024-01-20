@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -11,26 +11,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Mitä & Miksi?
-Säännölliset lausekkeet tai "regex:it" ovat tehokas tapa vastata kysymyksiin kuin "löytyykö tästä merkkijonosta tietty kuvio?" Ohjelmoijat käyttävät regex:ja tekstien käsittelyssä, kuten syötteen validoinnissa, tiedostojen jäsennyksessä ja datan suodattamisessa.
+Regulaarilausekkeet on työkaluja tekstijonon kuvailuun ja manipulointiin. Ohjelmoijat käyttävät niitä, koska ne tarjoavat voimakkaan tavan etsiä, korvata ja analysoida tekstitietoja nopeasti.
 
-## Miten:
+## How to:
 ```Fish Shell
-# Luoja funktio joka luetella kaikki teksti tiedostot päätteellä .txt
-function list_txt_files
-   for file in *.txt
-       echo $file
-   end
-end
-
-# Suorita funktio
-list_txt_files
+# Esimerkki: Etsi kaikki 'fish' sanaa vastaavat merkkijonot
+echo "fish are friends, not food." | string match -r 'fish'
 ```
-Tässä esimerkissämme Fish Shell tulostaa kaikki .txt-päätteiset tiedostot hakemistossa.
+Output:
+```
+fish
+```
 
-## Syvällisemmin:
-Regex:ien historia juontaa juurensa 1950-luvun matemaattisiin malleihin, joita sovellettiin 1970-luvulla Unix-tekstieditoriin. Regex:eille on muitakin vaihtoehtoja, kuten jäsennyspuut ja synteettiset ilmaisimet. Fish Shell toteuttaa regex:it POSIX-yhteensopivalla tavalla, ja se tarkistaa vastaavuudet laiskasti, mikä tarkoittaa, että se lopettaa tarkistuksen heti kun match löytyy.
+```Fish Shell
+# Esimerkki: Korvaa 'fish' sanalla 'shark'
+echo "fish are friends, not food." | string replace 'fish' 'shark'
+```
+Output:
+```
+shark are friends, not food.
+```
 
-## Katso myös:
-1. [Fish Shellin viralliset dokumentit](https://fishshell.com/docs/current/index.html)
-2. [POSIXin määrittelemät säännölliset lausekkeet](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html)
-3. [Unixin ed:in manuaali](https://www.gnu.org/software/ed/manual/ed_manual.html#Regular-Expressions), jossa regex:it ensin esiteltiin.
+```Fish Shell
+# Esimerkki: Etsi kaikki numerot tekstistä
+echo "I have 2 fish and 1 dog" | string match -r '[0-9]+'
+```
+Output:
+```
+2
+1
+```
+
+## Deep Dive
+Regulaarilausekkeet, eli regex, syntyi 1950-luvulla Stephen Kleenen kehittämänä teoreettisena konseptina. Vaihtoehtona regex-käytölle voidaan käyttää käsitteleviä kirjastoja tai kielen omia tekstin käsittelykykyjä. Fish Shellissä regex-tuki tulee komennosta `string`, joka sisältää alikomennon `match` hakemista varten ja `replace` korvaamista varten, sekä muita.
+
+## See Also
+- [Fish Shell Documentation](https://fishshell.com/docs/current/index.html)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [GNU Grep Manual](https://www.gnu.org/software/grep/manual/grep.html)

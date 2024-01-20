@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Arduino: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,52 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & hvorfor?
+## Hva & Hvorfor?
+Regulære uttrykk (regex) lar deg søke og manipulere tekst ved å definere mønstre. Programmerere bruker det for effektivitet og fleksibilitet i tekstbehandling, som validering, søking og tekstsubstitusjon.
 
-Regulære uttrykk brukes til å søke etter spesifikke mønstre i en streng. Det brukes av programmerere for data validering, søk & erstatt og streng redigering.
-
-## Hvordan:
-
-La oss lage et enkelt C-program som bruker regex. Det inkluderer `'regex.h'` headerfilen og bruker `'regcomp()` og `'regexec()'` funksjoner for å matche regulære uttrykk.
+## Hvordan gjøre det:
+I C, bruk biblioteket `<regex.h>` for regex-funksjoner. Her er en enkel eksempelkoden:
 
 ```C
-#include <regex.h> 
 #include <stdio.h>
+#include <regex.h>
 
 int main() {
     regex_t regex;
     int ret;
-    ret = regcomp(&regex, "[a-z]", 0);
+    // Kompilerer regex for å finne ordet 'norsk'
+    ret = regcomp(&regex, "norsk", 0);
     if (ret) {
-        printf("Kunne ikke kompilere regex\n");
-        return(1);
+        fprintf(stderr, "Kunne ikke kompilere regex\n");
+        return 1;
     }
-    ret = regexec(&regex, "abc", 0, NULL, 0);
+    // Matcher teksten
+    ret = regexec(&regex, "Jeg elsker norsk mat!", 0, NULL, 0);
     if (!ret) {
-        printf("Match funnet\n");
+        printf("Fant et treff!\n");
     } else if (ret == REG_NOMATCH) {
-        printf("Ingen match\n");
+        printf("Ingen treff.\n");
     } else {
-        printf("Regex match feilet\n");
+        fprintf(stderr, "Regex match feilet\n");
     }
+    // Frigjør minnet som regexen bruker
     regfree(&regex);
     return 0;
 }
 ```
 
-I denne koden kompilerer 'regcomp()' regulært uttrykk i sin interne form, og 'regexec()' sjekker om tekststrengen matcher det kompilerte regulære uttrykket.
+Kjører du koden over, vil output være `Fant et treff!`, siden 'norsk' fins i teksten.
 
-## Dypdykk:
-
-Bruk av regulære uttrykk har røtter i teoretisk informatikk og formalisering av syntaksanalyse. 
-
-Alternativer til bruk av regulære uttrykk inkluderer spørringsbaserte språk som SQL og XPath, og kodespesifikke søkeverktøy.
-
-Det er også lite kjente implementeringsdetaljer. For eksempel kan kompilering av et regulært uttrykk resultere i ulike interne former, avhengig av C-bibliotekets implementasjon.
+## Dykk dypere:
+Regex har røtter tilbake til 1950-tallet og er essensielt i scripting og programmering. Alternativer som `strstr()` i C er enklere men mindre kraftfulle. Regex-biblioteket i C støtter POSIX regex standarder, men kan variere mellom systemer i ytelse og funksjoner.
 
 ## Se også:
-
-For mer dyptgående detaljer om regulære uttrykk i C, sjekk ut følgende ressurser:
-- POSIX regulære uttrykk: http://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html 
-- Regulære Uttrykk Tutorial: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html 
-- Regulære Uttrykk med eksempler: https://www.geekhideout.com/regex.html
+- Online regex tester: https://regex101.com/
+- POSIX regex dokumentasjon: https://pubs.opengroup.org/onlinepubs/009696799/basedefs/xbd_chap09.html
+- GNU C Library regex dokumentasjon: https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html

@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Elm: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,25 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co & Dlaczego?
+## What & Why? (Co i Dlaczego?)
 
-Wykorzystywanie regularnych wyrażeń to częsty element w pracy programistów. Są to wzorce, które pomagają w znajdowaniu określonych ciągów znaków w tekście. Programiści stosują je, aby szybko i skutecznie przetestować oraz manipulować danymi. Dzięki nim można bez problemu wyodrębnić numery telefonów, adresy email czy zakodowane informacje.
+Regular expressions (regex) to wzorce służące do wyszukiwania i manipulowania tekstami. Programiści używają ich, by łatwo znajdować, weryfikować i zamieniać ciągi znaków przy minimalnym kodzie.
 
-## Jak to zrobić?
+## How to: (Jak to zrobić:)
 
-Aby użyć regularnych wyrażeń w Elm, należy pobrać moduł "Regex" z biblioteki standardowej. Następnie wykorzystuje się funkcje takie jak "Regex.match" lub "Regex.contains", aby przetestować czy dany wzorzec znajduje się w tekście. Zobacz poniższy przykład:
+Elm używa pakietu `Regex` do pracy z wyrażeniami regularnymi. Poniżej kilka przykładów:
 
 ```Elm
-import Regex exposing (match)
+import Regex exposing (..)
 
--- Sprawdzamy, czy w tekście znajduje się wyraz "wesoły"
-match "Cześć wesoły wesoły!" (Regex.regex "wesoły") 
--- Zwraca Just (List [ { match = "wesoły" , submatches = [] } ]) 
-``` 
-## Głębsza analiza
+-- Sprawdzanie czy tekst pasuje do wzorca
+isMatch : String -> String -> Bool
+isMatch pattern text =
+    case Regex.fromString pattern of
+        Just re -> Regex.contains re text
+        Nothing -> False
 
-Regularne wyrażenia są rozwiązaniem bardzo wszechstronnym. Pierwotnie zostały stworzone w latach 50. XX wieku przez amerykańskiego matematyka Stephena Kleene'a. W obecnej wersji języka Elm wykorzystują one składnię JavaScript, a więc mogą być użyte w złożonych wzorcach. Alternatywnym rozwiązaniem jest również korzystanie z wbudowanego narzędzia rywalizującej biblioteki Posix.
+-- Użycie isMatch
+isEmail : String -> Bool
+isEmail email = isMatch "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$" email
 
-## Zobacz też
+-- Wynik sprawdzenia
+exampleEmailCheck : Bool
+exampleEmailCheck = isEmail "example@test.com"
+```
 
-Dla bardziej zaawansowanych zastosowań warto zapoznać się z modułem Regex.Experimental, który oferuje możliwość użycia wyrażeń regularnych w innym kontekście niż tekst. Można również znaleźć różne przydatne narzędzia do testowania i debugowania wyrażeń regularnych, takie jak regex101.com czy regtester.com.
+Przykład zwróci `True`, ponieważ string pasuje do wzorca emaila.
+
+## Deep Dive (Więcej szczegółów)
+
+Wyrażenia regularne mają korzenie w teorii automatów i języków formalnych z lat 50. Ich implementacje różnią się w zależności od języka, ale idea pozostaje taka sama. W Elm, regex obsługiwany jest przez pakiet `Regex`, ale jest mniej rozbudowany niż w językach takich jak JavaScript czy Python. Alternatywą może być stosowanie funkcji `String`, gdy potrzebujemy prostszej manipulacji tekstami.
+
+## See Also (Zobacz też)
+
+- Dokumentacja Elm `Regex`: https://package.elm-lang.org/packages/elm/regex/latest/Regex
+- Interaktywny tester wyrażeń regularnych: https://regex101.com/
+- Tutorial RegExp w JavaScript (dobrze tłumaczy podstawy, które są podobne): https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions

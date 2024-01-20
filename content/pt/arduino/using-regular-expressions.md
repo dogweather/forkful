@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Gleam: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,45 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por quê?
-
-As expressões regulares são eficientes para procurar, substituir e manipular textos em seu código. Programadores as usam para tornar seu código mais compacto e ordenado.
+## O Que & Por Que?
+Expressões regulares (regex) são padrões usados para encontrar correspondências de texto. Elas são úteis para validação de dados, busca, e manipulação de texto de maneira eficiente.
 
 ## Como Fazer:
-
-Para usar uma expressão regular em Arduino, você precisa da biblioteca "regex.h”. Vamos tentar encontrar a palavra "Arduino" numa frase.
+Em Arduino, você usará bibliotecas como `Regexp` para trabalhar com expressões regulares. Aqui está um exemplo:
 
 ```Arduino
-#include < regex.h >
-char string [] = "Eu amo programar em Arduino!";
-char regex [] = "Arduino";
+#include <Regexp.h>
 
-regex_t regexStr;
-regcomp(&regexStr, regex, 0);
-int status = regexec(&regexStr, string, 0, NULL, 0);
-if (status == 0) 
-{
-  Serial.println("Palavra encontrada.");
-} 
-else 
-{
-  Serial.println("Palavra não encontrada.");
+void setup() {
+  Serial.begin(9600);
+
+  // Padrao regex: uma letra seguida por dois digitos
+  MatchState ms;
+  ms.Target ("A23 B56 X99 Y11");
+
+  char result = ms.Match ("[A-Z][0-9]{2}");
+
+  if (result == REGEXP_MATCHED) {
+    // Encontrado
+    Serial.println("Padrao encontrado");
+  } else {
+    // Não encontrado
+    Serial.println("Padrao nao encontrado");
+  }
+}
+
+void loop() {
+  // Nada aqui
 }
 ```
-A saída será:
+Resultado esperado:
 ```
-Palavra encontrada.
+Padrao encontrado
 ```
-## Excursão Profunda:
 
-Historicamente, as expressões regulares começaram com linguagens de programação como Perl. Em Arduino, o suporte a expressões regulares é um pouco limitado devido à sua capacidade reduzida.
+## Aprofundando
+As expressões regulares têm raízes na teoria da computação e na linguística formal. Enquanto Arduino não tem suporte nativo a regex, bibliotecas como a `Regexp` oferecem funcionalidades limitadas. Alternativas incluem implementar suas próprias funções de busca de padrões ou usar funções simples de string quando adequado.
 
-Existem alternativas às expressões regulares em Arduino, como funções tradicionais de string como indexOf() e substring(). No entanto, para expressões mais complexas, regex pode ser a melhor opção.
-
-A implementação de regex em Arduino é baseada em bibliotecas integradas. Estas proporcionam funções para compilar e executar expressões regulares.
-
-## Ver Também:
-
-[Usando expressões regulares](https://www.arduino.cc/reference/en/)
-[Técnicas de manipulação de strings sem Regex](https://startingelectronics.org/software/arduino/learn-to-program-course/16-strings-char-variables/)
-[Documentação Regex](http://www.cplusplus.com/reference/regex/)
+## Veja Também
+- Documentação da biblioteca `Regexp`: http://www.gammon.com.au/Arduino/Regexp.zip
+- Tutorial Regex: https://www.regular-expressions.info/tutorial.html
+- Artigo sobre expressões regulares na programação: https://www.arduino.cc/reference/en/libraries/regexp/

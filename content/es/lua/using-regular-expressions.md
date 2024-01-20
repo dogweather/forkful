@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "Go: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,56 +10,25 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Expresiones regulares en Lua
+## Qué & Por Qué?
+Las expresiones regulares son patrones que se usan para encontrar y manipular texto. Los programadores las utilizan porque son herramientas poderosas y eficientes para validar, buscar, y reemplazar secuencias de caracteres dentro de strings.
 
-## ¿Qué y por qué?
-
-Las expresiones regulares son patrones que se utilizan para encontrar ciertas combinaciones de caracteres dentro de una cadena de texto. Los programadores las usan porque pueden simplificar la tarea de buscar, dividir y reemplazar texto.
-
-## Cómo hacerlo
-
-En Lua, utilizamos la biblioteca `string` para trabajar con expresiones regulares. Aquí te dejamos un ejemplo de cómo encontrar y reemplazar texto.
-
+## Cómo hacerlo:
 ```Lua
-text = "¡Hola, mundo!"
-print(string.gsub(text, "mundo", "programador"))
+local texto = "Hola, mi número es 123-456-7890."
+-- Busca un número de teléfono
+local patron = "%d%d%d%-%d%d%d%-%d%d%d%d"
+print(texto:match(patron))  -- Output: 123-456-7890
+
+-- Reemplaza números de teléfono con 'PRIVADO'
+local texto_modificado = texto:gsub(patron, "PRIVADO")
+print(texto_modificado)  -- Output: Hola, mi número es PRIVADO.
 ```
 
-Salida:
+## Inmersión Profunda
+Las expresiones regulares en Lua tienen su origen en las herramientas de manipulación de texto UNIX, pero son más simples y limitadas en funcionalidad. Alternativas como PCRE (Perl Compatible Regular Expressions) ofrecen una riqueza mayor en expresiones complejas, pero para su uso en Lua, se requieren bibliotecas adicionales. A nivel de implementación, Lua maneja las expresiones regulares a través de su propia librería de patrones, la cual difiere de la sintaxis POSIX o Perl típica.
 
-```
-¡Hola, programador!
-```
-
-Y aquí un ejemplo de cómo dividir un texto en palabras usando la función `gmatch`.
-
-```Lua
-text = "programación en Lua"
-for word in string.gmatch(text, "%a+") do
-   print(word)
-end
-```
-
-Salida:
-
-```
-programación
-en
-Lua
-```
-
-## Profundización
-
-Las expresiones regulares se utilizan desde los inicios de las ciencias de la computación. Si bien Lua no ofrece soporte completo para expresiones regulares como Perl o Python, su conjunto de funciones en la biblioteca `string` es suficiente para tareas básicas de procesamiento de texto.
-
-Existen bibliotecas de terceros como `lrexlib` y `lua-aho-corasick` que ofrecen una mayor funcionalidad si necesitas un análisis más complejo.
-
-La implementación de las expresiones regulares en Lua es más eficiente en términos de memoria y rendimiento en comparación con otros lenguajes de scripting, lo cual hace de Lua una elección sólida para el procesamiento de texto en aplicaciones con recursos limitados.
-
-## Ver también
-
-Puedes aprender más sobre el manejo de cadenas de caracteres y expresiones regulares en Lua en los siguientes recursos:
-
-- [Manual de referencia de Lua](http://www.lua.org/manual/5.3/)
-- [Programación en Lua](http://www.lua.org/pil/)
-- [Biblioteca de cadenas de Lua](http://lua-users.org/wiki/StringLibraryTutorial)
+## Ver También
+- [Referencia de Patrones de Lua](https://www.lua.org/manual/5.4/manual.html#6.4.1)
+- [Tutorial en línea de Lua](https://www.lua.org/pil/20.2.html)
+- [Wikilibros sobre Expresiones regulares](https://en.wikibooks.org/wiki/Regular_Expressions)
