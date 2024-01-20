@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "Swift: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "Swift"
 category:             "Swift"
@@ -10,25 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому? 
-Використання регулярних виразів (Regular Expressions) дозволяє програмістам швидко та ефективно виконувати пошук та заміну тексту, використовуючи певні шаблони. Це особливо корисно при обробці текстових даних, таких як імена, адреси електронної пошти, номери телефонів та інше. Програмісти використовують регулярні вирази, щоб спростити складні пошукові запити та автоматизувати рутинні завдання.
+## Що це таке & Навіщо?
+Регулярні вирази - це шаблони для пошуку та маніпуляції текстом. Програмісти використовують їх для ефективної роботи зі строками - валідації, пошуку, заміни та аналізу даних.
 
-## Як: 
-```Swift
-let string = "Привіт! Мене звати Лілія, а мій електронний лист - liliya@email.com"
-let regex = try NSRegularExpression(pattern: "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,64}", options: .caseInsensitive)
-let matches = regex.matches(in: string, options: [], range: NSRange(location: 0, length: string.utf16.count))
-for match in matches {
-  let email = (string as NSString).substring(with: match.range)
-  print(email)
+## Як це робити:
+```swift
+import Foundation
+
+let text = "hello@example.com"
+let regexPattern = "^[a-z0-9.]+@[a-z]+\\.[a-z]{2,}$"
+
+if let regex = try? NSRegularExpression(pattern: regexPattern) {
+    let range = NSRange(location: 0, length: text.utf16.count)
+    if regex.firstMatch(in: text, options: [], range: range) != nil {
+        print("Valid email.")
+    } else {
+        print("Invalid email.")
+    }
+} else {
+    print("Invalid regex pattern.")
 }
 ```
+#### Вихідні дані:
+```
+Valid email.
+```
 
-Вищенаведений приклад дозволяє знайти та вивести адреси електронної пошти з рядка тексту. Використовуючи певний шаблон, ми можемо легко визначити, що це є адреса електронної пошти та отримати її значення. Цей підхід дозволяє ефективно обробляти великі обсяги даних та дозволяє точно визначати необхідну інформацію.
+## Поглиблений розгляд:
+Регулярні вирази беруть свій початок із теоретичної інформатики і були вперше введені в 1950х. Як альтернативу можна використовувати string методи `contains`, `range(of:)` або `hasPrefix`. На практиці, `NSRegularExpression` у Swift - це обгортка навколо ICU (International Components for Unicode), що забезпечує розширені можливості для роботи з регулярними виразами.
 
-## Глибші дослідження: 
-Історично, регулярні вирази виникли у 1956 році, коли математик Стівен Коул (Stephen Cole Kleene) представив математичний формалізм для описує регулярні мови. Згодом, в 1968 році, Кен Томпсон (Ken Thompson) використав ці ідеї для створення першого пошукового двигуна під назвою "QED". У сучасному програмуванні, наряду з регулярними виразами, існує багато альтернативних засобів обробки тексту, таких як функції додатків рядків або регулярні вирази на базі дерев або негативних наборів.
-
-## Дивіться також: 
-- [Офіційна документація Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html#ID287)
-- [Відеоуроки по регулярним виразам на YouTube](https://www.youtube.com/playlist?list=PL1QoYy59E_fiedCVpgabxVh4BoANL8gqn)
+## Див. також:
+- Документація Apple про NSRegularExpression: [Пряме посилання](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- Руководство по регулярним виразам у Swift: [raywenderlich.com](https://www.raywenderlich.com/books/advanced-ios-app-architecture/v2.0/chapters/5-regular-expressions)
+- Online regex tester (для випробування та освоєння регулярних виразів): [Ресурс](https://regexr.com)

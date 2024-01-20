@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Javascript: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,30 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
-
-Regulære uttrykk er et verktøy som brukes av programmører for å søke og manipulere tekst på en effektiv måte. Det gjør det enklere å finne spesifikke strenger av tegn eller ord i en større tekst. Dette er nyttig når man for eksempel ønsker å finne spesifikke mønstre i en tekst, som for eksempel e-postadresser eller telefonnumre.
+## Hva & Hvorfor?
+Regular expressions (regex) hjelper oss med å søke og manipulere tekst ved å definere et søkemønster. De er uunnværlige for tekstbehandling, validering og parsing fordi de sparer tid og kode.
 
 ## Hvordan:
+```Javascript
+// Sjekke om strengen inneholder et telefonnummer i format: 123-456-7890
+let telefonRegex = /\d{3}-\d{3}-\d{4}/;
+console.log(telefonRegex.test('Ring meg på 123-456-7890.')); // Output: true
 
- ```Javascript
-let text = "Heisenberg, Walter and Jesse have been working together to make meth.";
+// Erstatte små bokstaver med store bokstaver
+let tekst = 'hei på deg!';
+let erstattRegex = /[a-z]/g;
+console.log(tekst.replace(erstattRegex, letter => letter.toUpperCase())); // Output: 'HEI PÅ DEG!'
 
-let pattern = /Jesse/; // regex pattern to match the string "Jesse"
-
-console.log(pattern.test(text)); // output: true
- ```
-
-I dette eksempelet bruker vi et regulært uttrykk (`/Jesse/`) for å finne om teksten inneholder strengen "Jesse". Vi bruker også metoden `.test()` for å teste om uttrykket matcher med teksten. I dette tilfellet vil uttrykket matche og derfor vil `.test()` returnere `true`.
+// Trekke ut alle ord
+let ordRegex = /\w+/g;
+let minTekst = 'Regex er kult!';
+console.log(minTekst.match(ordRegex)); // Output: ['Regex', 'er', 'kult']
+```
 
 ## Dypdykk:
+Regular expressions stammer fra 1950-tallets arbeid med formalisert språkteori og automatateori. Alternativer til regex inkluderer string metoder som `.indexOf()` og `.includes()`, men de er mindre kraftfulle. Ved implementering bør man være oppmerksom på 'greedy' vs 'non-greedy' matching og potensielle ytelsesproblemer ved komplekse mønstre.
 
-Regulære uttrykk har eksistert siden 1950-tallet og har blitt en viktig del av programmering siden da. Alternativene til å bruke regulære uttrykk inkluderer å bruke innebygde funksjoner som `indexOf()` eller `includes()` for å søke etter enkel strenger. Men disse kan være begrensende når man ønsker å finne mer komplekse mønstre.
-
-For å bruke regulære uttrykk i Javascript, må du bruke `RegExp` konstruktøren og et set av flagg for å endre oppførselen. Det finnes også flere nettsider og programmer som kan hjelpe deg med å lage og teste regulære uttrykk.
-
-## Se også:
-
-- [MDN - Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [W3Schools - Regular Expressions](https://www.w3schools.com/js/js_regexp.asp)
-- [Regex101 - Online Regex Tester and Debugger](https://regex101.com/)
+## Se Også:
+- [MDN Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regex101: Online regex tester og debugger](https://regex101.com/)
+- [ECMAScript 2018 Language Specification](https://tc39.es/ecma262/#sec-regexp-regular-expression-objects)

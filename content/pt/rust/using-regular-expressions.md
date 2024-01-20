@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Rust: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -10,29 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que São & Porquê Usar?
+Expressões regulares são padrões usados para encontrar correspondências de texto. Programadores as usam para busca e substituição de texto, validação de entrada de dados e análise de texto complexo de forma eficiente.
 
-Expressões regulares, ou "regex", são sequências de caracteres especiais usadas para procurar, substituir ou verificar padrões em strings. Programadores as utilizam para facilitar a busca e manipulação de texto, economizando tempo e aumentando a eficiência do código.
+## Como Fazer:
+```Rust
+extern crate regex;
+use regex::Regex;
 
-## Como usar:
+fn main() {
+    let re = Regex::new(r"(\w+)@(\w+)\.com").unwrap();
+    let email = "hello@world.com";
 
+    // Verifica se a string corresponde à expressão regular
+    println!("Email válido? {}", re.is_match(email));  // Saída: Email válido? true
+
+    // Encontra e imprime as partes capturadas pelo grupo
+    if let Some(captures) = re.captures(email) {
+        println!("Usuário: {}", captures.get(1).unwrap().as_str());  // Saída: Usuário: hello
+        println!("Domínio: {}", captures.get(2).unwrap().as_str()); // Saída: Domínio: world
+    }
+}
 ```
-let texto = "A linguagem de programação Rust é incrível!";
-let padrao = Regex::new(r"Rust").unwrap();
-println!("Regex encontrou a palavra \"{}\" no texto!", padrao.find(texto).unwrap().as_str());
 
-// Output:
-// Regex encontrou a palavra "Rust" no texto!
-```
+## Mergulho Profundo
+1. **Contexto Histórico**: As expressões regulares têm origem nos anos 50 com trabalhos sobre a teoria dos autômatos. Sua inclusão em linguagens de programação adquiriu popularidade com o Perl.
+2. **Alternativas**: Há outras formas de processar texto, como o uso de parsers específicos para línguas naturais ou sistemas baseados em IA. Contudo, para validações simples, as expressões regulares são mais leves e rápidas.
+3. **Detalhes de Implementação**: Rust usa a biblioteca `regex`, que compila as expressões regulares para um autômato que realiza a busca. Isso é diferente de outras linguagens que podem usar interpretação direta, o que pode ser mais lento.
 
-Neste exemplo, definimos uma variável com um texto e outra com o padrão que queremos procurar. Em seguida, usamos o método `.find()` para procurar o padrão na string e imprimir o resultado. Para utilizar Regex em seu código, você precisará importar a biblioteca `regex` em seu arquivo.
-
-## Mergulho Profundo:
-
-O conceito de expressões regulares não é novo, ele remonta aos anos 50 e 60. No entanto, foi no final dos anos 80 que elas foram padronizadas e amplamente utilizadas pelos programadores. Existem várias alternativas às expressões regulares, como o uso de métodos de string, mas a conveniência e poder das regex as tornam uma ferramenta valiosa no arsenal de um programador.
-
-A implementação de expressões regulares em Rust é fornecida pela biblioteca `regex`, que usa a sintaxe padrão de regex, mas também tem suas próprias peculiaridades. É importante ter cuidado ao utilizar regex, pois elas podem ser complexas e difíceis de depurar.
-
-## Veja também:
-
-- [Documentação da biblioteca `regex` para Rust](https://docs.rs/regex/1.3.9/regex/)
+## Veja Também
+- Documentação do `regex` crate: [https://docs.rs/regex](https://docs.rs/regex)
+- Livro "Rust by Example" sobre expressões regulares: [https://doc.rust-lang.org/rust-by-example/std/regex.html](https://doc.rust-lang.org/rust-by-example/std/regex.html)
+- Tutorial "The Rust Programming Language" para manipulação de strings: [https://doc.rust-lang.org/book/ch08-02-strings.html](https://doc.rust-lang.org/book/ch08-02-strings.html)

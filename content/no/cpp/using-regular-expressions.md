@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Arduino: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,44 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Regelrette uttrykk i C++
-
 ## Hva & Hvorfor?
+Regulære uttrykk er mønstre brukt for å matche tekst. De er essensielle for søking, validering og tekstmanipulasjon, fordi de effektiviserer og automatiserer kompleks tekstbehandling.
 
-Regelrette uttrykk, også kjent som 'regex', er et kraftig verktøy som lar programmerere matche, søke, erstatte og manipulere tekst med mønstre. De brukes fordi de er effektive for tekstbehandling og datautvinning.
-
-## Hvordan gjøre det
-
-Med moderne C++ (C++11 og nyere), kan vi enkelt bruke regex. Her er et grunnleggende eksempel:
-
-```C++
-#include <regex>
-#include <string>
+## How to:
+```cpp
 #include <iostream>
+#include <regex>
+using namespace std;
 
-int main(){
-    std::string s ("hello world");
-    std::regex e ("\\b(sub)?\\w*"); 
+int main() {
+    // Definerer et regex-mønster for e-postvalidering
+    regex epost_mønster(R"([a-zA-Z0-9\.-_]+@[a-zA-Z0-9\.-]+\.[a-zA-Z]{2,})");
 
-    while (std::regex_search (s,e)) {
-        auto match = std::smatch_result.cpp;
-        std::regex_search (s,m,e);
-        std::cout << match.str() << "\n";
-        s = match.suffix().str();
+    // Tekststreng som skal sjekkes
+    string tekst = "Min e-post er eksempel@domene.no";
+
+    // Søker etter mønsteret i teksten
+    smatch resultat;
+    if(regex_search(tekst, resultat, epost_mønster)) {
+        cout << "Fant en e-post: " << resultat[0] << endl;
+    } else {
+        cout << "Ingen gyldig e-post funnet." << endl;
     }
+
     return 0;
 }
 ```
+Output:
+```
+Fant en e-post: eksempel@domene.no
+```
 
-I dette eksemplet søker vi etter ord som starter med "sub", i strengen "hello world". Utgangen vil være et ord som matcher uttrykket.
+## Deep Dive
+Regulære uttrykk oppsto på 1950-tallet og har utviklet seg til et kraftig verktøy innen programmering. Alternativer som tekststrengsfunksjoner (som `find`, `substring`) eksisterer, men mangler fleksibiliteten til regulære uttrykk. C++ bruker `<regex>` biblioteket for å implementere dette, og det følger POSIX- og Perl-kompatible mønsterstandarder.
 
-## Dyp Dykking
-
-Regulære uttrykk har en lang historie, først oppfunnet på 1950-tallet og har siden da blitt inkludert i mange programmeringsspråk, inkludert C++. Alternativer til regex inkluderer strengfunksjoner (f.eks. str.find(), str.replace()) og PEG-baserte parserbiblioteker, som er mer kraftige, men også mer kompliserte.
-
-Implementeringsdetaljene av regex i C++ kan variere avhengig av operativsystem og kompilatoren som du bruker. Vanligvis bruker `std::regex` klassen i STL (Standard Template Library), men noen kompilatorer kan også støtte egendefinerte regexp-klasser.
-
-## Se også
-
-- C++ Reference: [regex](http://www.cplusplus.com/reference/regex/)
-- Stack Overflow: [How to use regex in C++](https://stackoverflow.com/questions/12530406/is-c11-regex-library-broken)
+## See Also
+- [cppreference.com Regex library](https://en.cppreference.com/w/cpp/regex)
+- [Regular Expressions Quick Start](https://www.regular-expressions.info/quickstart.html)
+- [Using std::regex in C++11 and C++14](https://www.modernescpp.com/index.php/regular-expressions-in-c-11-and-c-14)

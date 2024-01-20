@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यंजनों का उपयोग"
-html_title:           "C#: नियमित अभिव्यंजनों का उपयोग"
-simple_title:         "नियमित अभिव्यंजनों का उपयोग"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,30 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+Regular expressions (regex) का इस्तेमाल टेक्स्ट को पैटर्न के अनुसार खोजने, बदलने या उस पर ऑपरेशन करने के लिए किया जाता है। Programmers इसका इस्तेमाल इसलिए करते हैं क्योंकि यह जटिल टेक्स्ट प्रोसेसिंग टास्क को आसान और जल्दी हल करने में मदद करता है। 
 
-रेगुलर एक्सप्रैशन प्रोग्रामिंग में उपयोग किया जाने वाला एक वेरीफायर है। इसका उपयोग डेटा को ढूढ़ने और उसकी पहचान करने में किया जाता है। प्रोग्रामर रेगुलर एक्सप्रैशन का उपयोग अन्य जानकारों द्वारा डेटा को संरक्षण और मेंपुलेट करने के लिए किया जाता है।
+## How to: (कैसे करें:)
+साधारण regex पैटर्न के इस्तेमाल का उदाहरण:
+```C#
+using System;
+using System.Text.RegularExpressions;
 
-## कैसे करें:
-
-```c#
-string text = "Some sample text";
-Regex regex = new Regex("sample");
-Match match = regex.Match(text);
-if (match.Success)
+class Program
 {
-  Console.WriteLine("Match found!");
+    static void Main()
+    {
+        string text = "मेरा ईमेल है example@domain.com";
+        string pattern = @"\w+@\w+\.\w+"; // ईमेल पते के लिए regex pattern
+
+        Match match = Regex.Match(text, pattern);
+
+        if (match.Success)
+        {
+            Console.WriteLine("मिला हुआ ईमेल: " + match.Value);
+        }
+    }
 }
 ```
+Sample Output:
+```
+मिला हुआ ईमेल: example@domain.com
+```
 
-इस उदाहरण में, हमने एक स्ट्रिंग को बनाया है और उसमें से एक शब्द को खोजने के लिए एक रेगुलर एक्सप्रैशन बनाया है। फिर हमने इस एक्सप्रैशन को मैच करने के लिए उपयोग किया और अगर मैच पाया जाता है तो उसके लिए एक संदेश प्रिंट किया है। इस तरह, रेगुलर एक्सप्रैशन का उपयोग डेटा को पहचानने और मैनिपुलेट करने में किया जाता है।
+## Deep Dive (गहराई में जानकारी):
+Regex का प्रयोग प्रोग्रामिंग में 1950 के दशक से होता आया है। इसके विकल्प के रूप में string मेथोड्स का उपयोग हो सकता है लेकिन वे regex की तरह शक्तिशाली और सुगम नहीं हैं। C# में, regex की कार्यान्वयन `System.Text.RegularExpressions` नामस्थान (namespace) में होती है और यह .NET Framework का भाग है, जोकि powerful regex engine प्रदान करता है।
 
-## गहराई में जाएँ:
-
-इतिहासिक परिस्थितियों के बारे में, वैकल्पिक विकल्पों के बारे में और रेगुलर एक्सप्रैशन का लागू करने के बारे में विवरणीक जानकारी है। रेगुलर एक्सप्रैशन का उपयोग करने के लिए, आपको स्ट्रिंग प्रोसेसिंग और पैटर्न मैचिंग की समझ होनी चाहिए। यह एक शक्तिशाली डेटा मैनिपुलेशन उपकरण है जो प्रोग्रामरों को उनके क्षेत्र में सुधार करने में मदद करता है।
-
-## देखें भी:
-
-- [C# रेगुलर एक्सप्रैशन गाइड] (https://www.javatpoint.com/c-sharp-regular-expression)
-- [वीडियो: कैसे करें रेगुलर एक्सप्रैशन?] (https://www.youtube.com/watch?v=aO23SACWw1A)
-- [रेगुलर एक्सप्रैशन का उपयोग करने के लिए 10 उदाहरण] (https://www.educba.com/regex-examples-in-c-sharp/)
+## See Also (इसे भी देखें):
+- [.NET डॉक्स पर Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+- [Regex101: ऑनलाइन regex tester और debugger](https://regex101.com/)
+- [जावा स्क्रिप्ट और पाइथन में regex की तुलना](https://www.regular-expressions.info/reflanguages.html)
+- [Regex सीखने के लिए interactive exercises](https://regexone.com/)

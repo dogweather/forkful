@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "Bash: Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,23 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cos'è & Perché?
-Le espressioni regolari (RegEx) sono strumenti utilizzati per manipolare stringhe di testo. I programmatori le utilizzano per ricercare, sostituire e riconoscere pattern all'interno del testo, risparmiando tempo e semplificando il codice.
+## What & Why?
+Le espressioni regolari sono strumenti per trovar corrispondenze in stringhe di testo. Le usiamo perché sono efficienti per la validazione, la ricerca e la manipolazione di testo.
 
-## Come si fa:
-Ecco un esempio di come si utilizzano le RegEx in Elm:
-```Elm
-import Regex exposing (contains, regex)
+## How to:
+Elm usa il pacchetto `regex` per gestire le espressioni regolari. Ecco come usarlo:
 
-verificaEmail : String -> Bool
-verificaEmail email =
-    contains (regex "[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+") email
+```elm
+import Regex exposing (fromString, contains)
+
+main =
+    let
+        regex = fromString "^[a-zA-Z0-9]*$"
+        isMatch = contains regex
+    in
+    isMatch "ContenutoValido123" -- True
 ```
-Questo codice verifica se una stringa è un indirizzo email valido. Se corretto, restituisce "True", altrimenti "False".
 
-## Approfondimento
-Le espressioni regolari sono state create negli anni '50 per la manipolazione dei linguaggi formali. Oltre alle RegEx, esistono alternative come le string matching API per la manipolazione di stringhe. Tuttavia, l'implementazione delle RegEx in Elm è semplice e robusta, facendo di esse la scelta preferita quando si tratta di gestire pattern di stringhe complessi.
+Esempio con sostituzione:
 
-## Vedi anche
-Per approfondire il tuo apprendimento su Elm e RegEx, consulta queste risorse:
-1. [Elm Regex Package](http://package.elm-lang.org/packages/elm/regex/latest): Documentazione ufficiale del pacchetto RegEx di Elm.
+```elm
+import Regex exposing (replace, All, regex)
+
+main =
+    let
+        pattern = regex "\\s+"
+        replacement = "_"
+        cleanString = replace All pattern (\_ -> replacement)
+    in
+    cleanString "Sostituisci   spazi   con underscore." -- "Sostituisci_spazi_con_underscore."
+```
+
+## Deep Dive
+Elm richiede una virgola di escape aggiuntiva quando si usano espressioni regolari. Prima dell'avvento dei pacchetti dedicati le alternative erano limitate, ma ora il pacchetto `regex` è robusto e ben integrato. Funziona convertendo le espressioni regolari in motori di ricerca interni ottimizzati per Elm.
+
+## See Also
+- Documentazione Elm [`Regex` package](https://package.elm-lang.org/packages/elm/regex/latest/).
+- [elm-community/string-extra](https://package.elm-lang.org/packages/elm-community/string-extra/latest/): offre funzioni di manipolazione delle stringhe che possono essere usate insieme alle espressioni regolari.
+- Tutorial su espressioni regolari: [RegexOne](https://regexone.com/).

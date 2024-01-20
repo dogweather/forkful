@@ -1,7 +1,7 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
-html_title:           "Arduino: Korzystanie z wyrażeń regularnych"
-simple_title:         "Korzystanie z wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,41 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
-Regularne wyrażenia to sekwencje znaków, które służą do dopasowywania i manipulowania łańcuchów. Programiści używają ich przede wszystkim do przeszukiwania, dzielenia i zastępowania łańcuchów, co może znacznie ułatwić pracę.
+## What & Why? (Co i dlaczego?)
+Regular expressions to wzorce służące do przeszukiwania, dopasowywania i manipulowania tekstami. Programiści wykorzystują je do efektywnego przetwarzania ciągów znaków, sprawdzania poprawności danych wejściowych czy automatyzacji zadań.
 
-## Jak to zrobić:
-Oto bardzo prosty przykład użycia regularnych wyrażeń w C++:
-
+## How to: (Jak to zrobić?)
 ```C++
-#include <regex>
-#include <string>
 #include <iostream>
+#include <regex>
+using namespace std;
 
 int main() {
-    std::string text = "Całkiem przyjemny; dzień, nieprawdaż?";
-    std::regex delim("[;,]");
-    std::sregex_token_iterator iter(text.begin(), text.end(), delim, -1);
-    std::sregex_token_iterator end;
-    for ( ; iter != end; ++iter)
-        std::cout << *iter << '\n';
+    string data = "example@example.com";
+    regex email_regex(R"(\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b)");
+
+    bool is_valid = regex_match(data, email_regex);
+    
+    if (is_valid) {
+        cout << "Valid email!" << endl;
+    } else {
+        cout << "Invalid email!" << endl;
+    }
+
     return 0;
 }
 ```
-W wyniku otrzymamy:
-
+Output:
 ```
-Całkiem przyjemny
- dzień
- nieprawdaż?
+Valid email!
 ```
-Jak widać, nasz program rozdzielił napis na podstawie średników i przecinków.
 
-## Deep Dive
-Regularne wyrażenia wywodzą się z teorii języków formalnych i automatów, do której to teorii powstały w latach '50. W C++, regularne wyrażenia zostały wprowadzone w standardzie C++11. Mimo że są bardzo wygodne, nie zawsze są one idealnym rozwiązaniem - dla prostych zadań często łatwiej i szybciej jest użyć standardowych funkcji na łańcuchy. Co więcej, implementacja regularnych wyrażeń w bibliotece standardowej C++ jest dość skomplikowana i może wpływać na wydajność programu, więc warto z nich korzystać rozważnie.
+## Deep Dive (Głębsze spojrzenie)
+Regularne wyrażenia ewoluowały od lat 50.; obecnie są niezastąpionym narzędziem w programowaniu. Alternatywami mogą być parsery czy funkcje typu `find` i `substring`, ale są one mniej elastyczne. Implementacja RegExp w C++ wykorzystuje bibliotekę `<regex>` od standardu C++11, zapewniając klasy takie jak `std::regex` i `std::smatch`.
 
-## Zobacz również
-Jeśli chcesz dowiedzieć się więcej o regularnych wyrażeniach w C++, sprawdź te źródła:
-
-1. Dokumentacja C++: [link](http://www.cplusplus.com/reference/regex/)
-3. StackOverflow: "C++ Regular expressions in practice": [link](https://stackoverflow.com/questions/37854322/c-regular-expressions-in-practice)
+## See Also (Zobacz także)
+- [cppreference.com Regex library](https://en.cppreference.com/w/cpp/regex)
+- [Regular Expressions in C++](https://www.cplusplus.com/reference/regex/)
+- [Modern C++ Tutorial: C++11/14/17/20](https://changkun.de/modern-cpp/)

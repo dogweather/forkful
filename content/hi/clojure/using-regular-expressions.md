@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग करना"
-html_title:           "Arduino: नियमित अभिव्यक्तियों का उपयोग करना"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग करना"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,27 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
+## What & Why? (क्या और क्यों?)
+रेगुलर एक्सप्रेशंस पैटर्न्स का उपयोग है जो टेक्स्ट मैचिंग में मदद करता है। प्रोग्रामर्स इसका उपयोग डेटा पार्सिंग, वैलिडेशन, और सर्चिंग के लिए करते हैं।
 
-नियमित अभिव्यक्तियों का उपयोग पाठ डेटा के नमूनों (patterns) को मिला और मिलाने के लिए होता है। प्रोग्रामर्स इसे कार्य प्रवाह को बचती समय और सुधारे गए सत्यापन के लिए उपयोग करते हैं।
+## How to: (कैसे करें:)
+Clojure में रेगुलर एक्सप्रेशंस का उपयोग कुछ इस तरह से किया जाता है:
 
-## कैसे:
+```Clojure
+;;स्ट्रिंग में ईमेल ढूँढना
+(re-find #"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" "मेरा ईमेल example@example.com है.")
+;; आउटपुट: "example@example.com"
 
-```clojure
-(defn pattern-match [re string]
-  (re-find (re-pattern re) string))
-
-(pattern-match "\\d+" "Hello123")  ; ➞ "123"
+;; ईमेल के पैटर्न्स की लिस्ट बनाना 
+(re-seq #"[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" "भेजें: example1@example.com, example2@example.com")
+;; आउटपुट: ("example1@example.com" "example2@example.com")
 ```
-यह कोड Clojure में एक नियमित अभिव्यक्ति मिलाने के लिए `re-find` और `re-pattern` फंक्शन्स का उपयोग करता है। यह "Hello123" में दिए गए पहली संख्या श्रृंखला को लौटाएगा, जो इस मामले में "123" है।
 
-## गहरी डुबकी
-1. इतिहास: नियमित अभिव्यक्तियां केन थॉम्प्सन द्वारा 1960 में Unix टेक्स्ट एडिटर "ed" के लिए विकसित की गई थी।
-2. विकल्प: पाठ पैटर्न मिलान के अन्य तरीके में वाईल्डकार्ड, ग्लोबिंग, और धागे समावेश होते हैं।
-3. कार्यान्वयन: Clojure में, नियमित अभिव्यक्तियों को JVM के वर्गों के जरिए लागू किया जाता है, देखें `java.util.regex`.
+यहाँ `re-find` और `re-seq` फंक्शंस का उपयोग हुआ है जो रेगुलर एक्सप्रेशंस का मैच खोजते हैं।
 
-## अधिक देखें
+## Deep Dive (गहराई में जानकारी)
+रेगुलर एक्सप्रेशन्स का इतिहास 1950 के दशक से शुरू होता है। समय के साथ, वे विकसित होते गए और आज हर प्रोग्रामिंग भाषा का हिस्सा हैं। Clojure में रेगुलर एक्सप्रेशंस Java की `Pattern` क्लास का उपयोग करते हैं, क्योंकि Clojure JVM के ऊपर बनी है। लेकिन इसके अलावा, पार्सर कॉम्बिनेटर जैसे, `Instaparse` Clojure में उपलब्ध एक विकल्प हैं।
 
-1. ClojureDoc पर नियमित अभिव्यक्तियाँ: https://clojuredocs.org/clojure.core/re-find
-2. Clojure प्रोग्राम की उचित बुनियादी: https://www.braveclojure.com/assets/clojure-for-the-brave-and-true.pdf
-3. Java नियमित अभिव्यक्ति गाइड: http://tutorials.jenkov.com/java-regex/index.html
+## See Also (और भी देखें)
+- Clojure Official Documentation: https://clojure.org/
+- Java Pattern class: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+- Instaparse library: https://github.com/Engelberg/instaparse
+
+रेगुलर एक्सप्रेशंस पर Clojure के चित्रण के लिए ऊपर दिए गए लिंक उपयोगी होंगे।

@@ -1,6 +1,6 @@
 ---
 title:                "Använda reguljära uttryck"
-html_title:           "Gleam: Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
 programming_language: "C++"
 category:             "C++"
@@ -10,43 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad & Varför?
+## What & Why? / Vad & Varför?
+Regular expressions är textmönster som gör det smidigt att matcha, söka och hantera strängar. Programmerare använder det för att effektivisera och förenkla string manipulering och data validering.
 
-Reguljära uttryck, eller regex, används för att matcha specifika mönster i strängar. Denna teknik är mycket användbar för att söka, ersätta, och validera data.
-
-## Hur man:
-
+## How to: / Hur man gör:
 ```C++
-// inkludera regex-biblioteket
+#include <iostream>
 #include <regex>
 
-int main()
-{
-    // Skapa ett regex-objekt
-    std::regex re("a..a");
-
-    // En teststräng
-    std::string str = "abra";
-
-    // Använd 'std::regex_match' för att jämföra strängen med regex-objektet
-    if (std::regex_match(str, re)) {
-        std::cout << "Matchar!\n";
+int main() {
+    std::string input = "Koda med stil i C++ 2023!";
+    std::regex reg("(\\bC\\+\\+\\b)");
+    
+    // Kollar om input matchar regular expression
+    if (std::regex_search(input, reg)) {
+        std::cout << "Match hittades!" << std::endl;
     } else {
-        std::cout << "Matchar inte!\n";
+        std::cout << "Ingen matchning." << std::endl;
     }
+
+    // Exempel på att ersätta text
+    std::string nyStr = std::regex_replace(input, reg, "C#");
+    std::cout << nyStr << std::endl;  // Output: Koda med stil i C# 2023!
 
     return 0;
 }
 ```
 
-Programmet skriver ut "Matchar!" eftersom "abra" matchar mönstret "a..a".
+## Deep Dive / Djupdykning:
+Regular expressions, eller regex, har anor från 1950-talet men blev populärt genom Perl under 80-talet. Alternativ till regex inkluderar parsing libraries eller manuell strängmanipulering, men de kan vara mer tidskrävande. C++ använder `<regex>` biblioteket från C++11 och framåt där `std::regex` är centrala klassen för hantering av regular expressions.
 
-## Djupdykning:
-
-Regex skapades i slutet av 60-talet och har sedan dess blivit ett standardverktyg i programmerarens verktygslåda. Alternativ till regex finns. I C++, till exempel, kan man använda str.find() metoden för att göra enklare sökningar i strängar. Men regex ger betydligt mer flexibilitet och kraft.
-
-När det gäller genomförande använder C++ regex-biblioteket ECMAScript-syntak, om inte annat anges. Det ger en bra bas att bygga komplexa mönster. 
-
-## Se Även:
-
-- För ytterligare studier om reguljära uttryck, besök: [C++ Reguljära Uttryck](http://www.cplusplus.com/reference/regex/)
+## See Also / Se även:
+- C++ Standards Committee papers: https://isocpp.org/std/the-standard
+- Regex101, för att testa regex online: https://regex101.com
+- Cppreference - Regular expressions: https://en.cppreference.com/w/cpp/regex

@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "Go: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -10,44 +10,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué & Por qué?
+## Qué y Por Qué?
+Las expresiones regulares son patrones usados para encontrar coincidencias en textos, como palabras o secuencias específicas. Los programadores las utilizan para validar, buscar, editar, y manipular datos de manera eficiente y concisa.
 
-Las expresiones regulares (RegExp por sus siglas en inglés) son patrones que se utilizan para coincidir combinaciones de caracteres en cadenas. Los programadores las usan para buscar, reemplazar y desglosar datos de manera compleja y eficiente.
-
-## Cómo hacerlo:
-
-Clojure proporciona una serie de funciones para trabajar con RegExp, tales como re-find, re-seq, replace, etc. Aquí hay un ejemplo simple.
-
+## Cómo Hacerlo:
 ```Clojure
-(defn example-regexp []
-  (let [pattern #"(?i)clojure"
-        string "Clojure es un lenguaje de programación."]
-    (re-find pattern string)))
-```
-Salida:
-```
-"Clojure"
-```
-En este ejemplo, "#(?i)clojure" es nuestro patrón RegExp. Esto buscará la palabra "clojure" sin importar el caso.
+;; Comprobando si un string contiene un número
+(re-find #"\d+" "La fecha es 13/04/2023")
+;; => "13"
 
-## Inmersión profunda:
+;; Extrayendo todos los números de un string
+(re-seq #"\d+" "Pedido Nº 234: 10 items")
+;; => ("234" "10")
 
-Las RegExp se originaron en los años 50 y han sido parte de la mayoría de los lenguajes de programación. En Clojure, la api RegExp está diseñada para ser simple y eficiente. Sin embargo, existen alternativas como los operadores de secuencias si los patrones RegExp se vuelven demasiado complejos.
+;; Reemplazando coincidencias
+(clojure.string/replace "23/04/2023" #"/" "-")
+;; => "23-04-2023"
 
-Las RegExp en Clojure son cautelosas y retornan la primera coincidencia que encuentran, por lo que podrías necesitar iterar sobre una cadena si buscas todas las coincidencias. También es importante recordar escapar caracteres especiales correctamente si planeas usarlos en tus patrones.
+;; Validando un formato de email simple
+(defn validar-email [email]
+  (re-matches #".+@.+\..+" email))
 
-```Clojure
-(defn escape-example-regexp []
-  (let [pattern #"\\d+"
-        string "El precio es $20."]
-    (re-find pattern string)))
+(validar-email "usuario@example.com")
+;; => "usuario@example.com"
+
+(validar-email "no es email")
+;; => nil
 ```
-Salida:
-```
-"20"
-```
-En este ejemplo, "\\d+" es nuestro patrón RegExp que busca uno o más dígitos.
 
-## Ver también:
+## Inmersión Profunda
+Las expresiones regulares se originaron en la década de 1950 con el trabajo teórico de Stephen Kleene. Alternativas a las expresiones regulares incluyen el uso de parsers o bibliotecas de manipulación de texto específicas. En Clojure, trabajamos con regex haciendo uso de Java bajo el capó, por lo que su rendimiento es sólido.
 
-Para más información, puedes referirte a la [documentación oficial de Clojure](https://clojure.org/api/api) y a las [guías de aprendizaje de Clojure](https://clojure.org/guides/getting_started), o puedes leer más sobre las [expresiones regulares en general.](https://en.wikipedia.org/wiki/Regular_expression)
+## Ver También
+- [ClojureDocs](https://clojuredocs.org/), para ejemplos y documentación extra de funciones Clojure.
+- [The Java Tutorials - Regex](https://docs.oracle.com/javase/tutorial/essential/regex/), para referencia detallada en la implementación Java de expresiones regulares.
+- [Clj-commons/clj-regex](https://github.com/clj-commons/clj-regex), un repositorio GitHub para una biblioteca Clojure que simplifica trabajar con expresiones regulares.

@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Gleam: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Gleam"
 category:             "Gleam"
 tag:                  "Strings"
@@ -10,29 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dla Czego?
+## What & Why? (Co i dlaczego?)
+Wzorce wyrażeń regularnych są jak filtr do przeszukiwania tekstu. Pozwalają programistom na szybkie znajdowanie, weryfikowanie i manipulowanie danymi w stringach. Dlaczego? Bo czas to pieniądz, a wyrażenia regularne oszczędzają oba.
 
-Używanie wyrażeń regularnych (regular expressions) jest powszechną praktyką wśród programistów. Jest to sposób na wyszukiwanie, zastępowanie i manipulację tekstem zgodnie z określonymi wzorcami. Dzięki temu, programiści mogą szybko i dokładnie odnaleźć potrzebne im informacje w długich i skomplikowanych plikach tekstowych.
+## How to: (Jak to zrobić:)
+```gleam
+import gleam/regex
 
-## Jak To Zrobić?
-
-Gleam oferuje bogaty zestaw funkcji do obsługi wyrażeń regularnych. Przykładowo, jeśli chcemy odnaleźć wszystkie liczby całkowite w ciągu znaków, możemy użyć funkcji ```Regex.matches``` w ten sposób:
-
-```Gleam
-Regex.matches("[0-9]+", "123 abc 456")
+fn main() {
+  let pattern = regex.from_string("[a-zA-Z]+") // Wzorzec dla słów
+  // Szukajmy wszystkich pasujących
+  let result = regex.find_all(pattern, "Hello, Gleam!")
+  // Wynik
+  case result {
+    Ok(matches) -> matches 
+    Error(_) -> []
+  }
+}
+```
+Sample output (Przykładowy wynik):
+```gleam
+["Hello", "Gleam"]
 ```
 
-Output: ["123", "456"]
+## Deep Dive (Dogłębna analiza)
+Wyrażenia regularne mają korzenie w teorii automatów i języków formalnych. Alternatywy? Parser tekstowy dla bardziej skomplikowanych zadań. W Gleamie wykorzystywane jest moduł `gleam/regex`, który opiera się na silniku wyrażeń regularnych z Erlanga.
 
-Możemy również użyć wildcardów (znak przypominający wielokropek) do dopasowania dowolnego znaku lub ciągu znaków. Na przykład, jeśli chcemy znaleźć wszystkie wyrazy zaczynające się na "a" i kończące się na "b", możemy użyć wyrażenia ```a*b```.
-
-## Zagłębianie Się W Temat
-
-Wyrażenia regularne mają długą historię i są obecne w wielu językach programowania. Jednym z popularnych zastosowań jest walidacja formularzy na stronach internetowych. Istnieją również inne metody manipulacji tekstem, takie jak użycie parserów lub bibliotek do parsowania HTML.
-
-Podczas implementacji wyrażeń regularnych, ważne jest zapoznanie się z dostępnymi regexowymi operatorami i składnią. Można także skorzystać z istniejących bibliotek, jeśli potrzebujemy bardziej złożonych funkcji.
-
-## Zobacz Również
-
-- Oficjalna dokumentacja Gleam: https://gleam.run/stdlib/regex.html
-- Poradnik na temat wyrażeń regularnych w języku angielskim: https://www.regular-expressions.info/
+## See Also (Zobacz też)
+- Dokumentacja `gleam/regex`: [https://hexdocs.pm/gleam_stdlib/gleam/regex](https://hexdocs.pm/gleam_stdlib/gleam/regex)
+- Interaktywny edytor wyrażeń regularnych: [https://regex101.com/](https://regex101.com/)
+- Krótki kurs wyrażeń regularnych: [https://regexone.com/](https://regexone.com/)

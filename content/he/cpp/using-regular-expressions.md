@@ -1,7 +1,7 @@
 ---
-title:                "שימוש בביטויים רגילים"
-html_title:           "Fish Shell: שימוש בביטויים רגילים"
-simple_title:         "שימוש בביטויים רגילים"
+title:                "שימוש בביטויים רגולריים"
+html_title:           "Bash: שימוש בביטויים רגולריים"
+simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -11,35 +11,43 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## מה ולמה?
+**Regular Expressions** (ביטויים רגולריים) מאפשרים לך לחפש תבניות בטקסט. הם כלי חזק בכל ידי משימות כמו ולידציה, פילוח, והחלפת מחרוזות. מתכנתים משתמשים בהם כי הם יעילים וחסכוניים בזמן.
 
-סדרי ביטויים רגולריים משמשים למציאת מחרוזות, אימות התאמה, והחלפה במחרוזת. הם נמשכים בשפות תכנות כי הם מאפשרים קריאה ותיקונים מהירים של מידע מטקסט.
-
-## כיצד להשתמש:
-
-להלן דוגמאות לקוד ותוצאות מדגמים ב C++:
+## איך לעשות:
+ב-C++ אנו משתמשים בספריית `<regex>` לעבודה עם ביטויים רגולריים:
 
 ```C++
+#include <iostream>
 #include <regex>
-#include <string>
 
-int main(){
-   std::string s = "hello world in 2021";
-   std::regex e ("\\b\\w{5}\\b");
-
-   bool match = std::regex_search(s, e);
-   printf("match: %d", match);
-
-   return 0;
+int main() {
+  std::string text = "Hello 123, easy as 456, ABC.";
+  std::regex number_regex("(\\d+)");
+  
+  std::smatch matches;
+  while (std::regex_search(text, matches, number_regex)) {
+    std::cout << "Number found: " << matches[0] << '\n';
+    text = matches.suffix().str();
+  }
+  
+  return 0;
 }
 ```
-זוהי תוכנית בסיסית שמחפשת מחרוזת שמכילה מילים באורך של חמישה תווים. התוצאה תהיה "1" (המשמע היא נמצאה תאמתן) או "0" (לא נמצאה).
+
+פלט:
+```
+Number found: 123
+Number found: 456
+```
 
 ## צלילה עמוקה:
+**היסטוריה**: ביטויים רגולריים שורשיהם בתורת האוטומטים ובלשנות. הם עברו תהליך של התפתחות, והיום ישנן שפות תכנות רבות המשתמשות בהם.
 
-סדרי ביטויים רגולריים הוצאו לראשונה לפועל באמצעות שפת Unix ED ב-1970. הם התפתחו למורכבות מעטה מכך, אבל הרעיון הבסיסי נשאר אותו הדבר. לאחרונה, אפשרויות אחרות כמו שפת התכנות Python או ספרייה של Java 8 streams התווספו להם. ההבדל המרכזי בפרטי המימוש הוא שהגרסה של C++ משתמשת בהרבה יותר ממונה מאשר Python או Java.
+**אלטרנטיבות**: במקרים פשוטים, ניתן להשתמש בחיפוש רגיל או פונקציות כמו `find()` או `substr()`.
 
-## ראו גם:
+**פרטי יישום**: C++ תומכת בביטויים רגולריים דרך שימוש בספריית ה-`<regex>`. זה כולל מחלקות ופונקציות למציאה, התאמה, וחלוקה של מחרוזות לפי תבניות.
 
-1. [סדרי ביטויים רגולריים ב- C++](https://www.cplusplus.com/reference/regex/)
-2. [תיעוד ה- C++ STL regex](http://www.cplusplus.com/reference/regex/)
-3. [ניתוח סדרי ביטויים רגולריים](https://en.wikipedia.org/wiki/Regular_expression).
+## ראה גם:
+- [cppreference.com - Regex library](https://en.cppreference.com/w/cpp/regex)
+- [cplusplus.com - Regular Expressions in C++](http://www.cplusplus.com/reference/regex/)
+- [Regular Expressions.info - Tutorial](https://www.regular-expressions.info/tutorial.html)

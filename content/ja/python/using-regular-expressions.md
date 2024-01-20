@@ -1,7 +1,7 @@
 ---
-title:                "正規表現を使用する"
-html_title:           "Python: 正規表現を使用する"
-simple_title:         "正規表現を使用する"
+title:                "正規表現の使用"
+html_title:           "C: 正規表現の使用"
+simple_title:         "正規表現の使用"
 programming_language: "Python"
 category:             "Python"
 tag:                  "Strings"
@@ -10,41 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何が何故?
+## What & Why?
+## 何となぜ？
 
-プログラマーにとって、正規表現は非常に便利なツールです。正規表現とは、特定のパターンに一致する文字列を検索・抽出するための方法です。プログラマーが正規表現を使う理由は、大量のテキストデータから必要な情報を効率的に取得するためです。
+Regular expressions (regex) allow you to search for patterns in text. Programmers use them for tasks like validity checking, searching, and text processing because of their power to work with strings effectively.
 
-## 使い方:
+## How to:
+## 方法：
 
-```Python
-# 文字列の中から特定のパターンを検索する例
+Let's search for dates in the format 'YYYY-MM-DD'.
+
+```python
 import re
 
-text = "ユーザー名: John123, パスワード: abc123"
-pattern = r"ユーザー名: (\w+), パスワード: (\w+)"
-# \wは任意の単語文字を表す特殊文字です。
-# ()はグループ化して後で取り出すためのものです。
+text = 'Important dates are 2023-04-01 and 2024-08-21.'
+pattern = r'\d{4}-\d{2}-\d{2}'
 
-match = re.search(pattern, text)
-# search関数は、文字列の中からパターンに一致する最初の部分を探し出します。
-# matchオブジェクトが返されます。
-
-username = match.group(1)
-# group(1)はパターンの最初のグループを取り出します。
-password = match.group(2)
-
-print(f"ユーザー名: {username}, パスワード: {password}")
-# 出力: ユーザー名: John123, パスワード: abc123
+matches = re.findall(pattern, text)
+print(matches)
 ```
 
-## 深堀り:
+Output:
 
-正規表現は、1960年代に計算機科学者のKen Thompsonと他の研究者によって開発されました。現在では、ほとんどのプログラミング言語やテキストエディタなどで使用することができます。正規表現には他にも様々なパターンマッチングの手法がありますが、プログラマーにとって最も普及しているのは正規表現でしょう。
+```
+['2023-04-01', '2024-08-21']
+```
 
-正規表現を使う際に注意すべき点として、特殊文字をエスケープする必要があることが挙げられます。例えば、ドット(.)やバックスラッシュ(\)などは特殊文字として解釈されるため、文字として検索したい場合はバックスラッシュを前に付ける必要があります。
+Now, let's extract the year, month, and day separately.
 
-## 関連リンク:
+```python
+match = re.search(pattern, text)
+year, month, day = match.groups()
+print(f"Year: {year}, Month: {month}, Day: {day}")
+```
 
-- [正規表現チートシート (Python)](https://www.debuggex.com/cheatsheet/regex/python)
-- [RegexOne - Learn Regular Expressions with simple, interactive exercises](https://regexone.com/)
-- [Python reモジュール公式ドキュメント](https://docs.python.org/ja/3/library/re.html)
+Error – No group in pattern. Let's revise the pattern to include groups.
+
+```python
+pattern = r'(\d{4})-(\d{2})-(\d{2})'
+match = re.search(pattern, text)
+
+if match:
+    year, month, day = match.groups()
+    print(f"Year: {year}, Month: {month}, Day: {day}")
+```
+
+Output:
+
+```
+Year: 2023, Month: 04, Day: 01
+```
+
+## Deep Dive:
+## 徹底解説：
+
+Regular expressions originated in the 1950s with mathematician Stephen Kleene. They've become integral in text processing in Unix, and by extension, in modern programming languages. Alternatives include string methods like `str.find()` or `str.split()`, but these lack pattern matching capabilities. Python uses a library called `re`, which implements regex according to the Perl standard, known for its flexibility and speed.
+
+## See Also:
+## 参照：
+
+- Python's re module documentation: https://docs.python.org/3/library/re.html
+- Regular expression basics: https://www.regular-expressions.info/
+- Regex testing tool: https://regex101.com/

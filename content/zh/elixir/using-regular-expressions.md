@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Elixir: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,37 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是正则表达式，为什么程序员要使用它？
+## What & Why?
+什么是正则表达式？简单来说就是搜索和替换文本的格式化工具。为什么程序员要用它？因为它强大、灵活，还能让代码更简洁。
 
-正则表达式是一种用来匹配和操作文本模式的工具，它可以帮助程序员更有效地处理字符串。程序员在处理文本时，经常会遇到需要匹配特定模式的情况，正则表达式可以帮助他们快速解决这些问题。
+## How to:
+```Elixir
+# 创建正则表达式
+regex = ~r/hello/
 
-## 如何使用正则表达式：
-
-```
-Elixir Regex模块提供了许多内置功能来操作正则表达式。
-
-匹配文本中的电话号码：
-Regex.match?(~r/[0-9]{3}-[0-9]{3}-[0-9]{4}/, "123-456-7890")
+# 匹配字符串
+"hello world" =~ regex
 # 输出: true
 
-替换文本中的敏感信息：
-Regex.replace(~r/[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}/i, "john.doe@example.com", "REDACTED")
-# 输出: REDACTED
+# 查找匹配
+Regex.scan(regex, "hello world")
+# 输出: [["hello"]]
 
-提取文本中的URL：
-Regex.scan(~r/https?:\/\/\S+/i, "Check out this link: https://www.example.com")
-# 输出: [["https://www.example.com"]]
+# 替换文本
+Regex.replace(regex, "hello world", "hi")
+# 输出: "hi world"
 ```
 
-## 深入了解：
+## Deep Dive
+正则表达式起源于20世纪50年代的神经生物学研究。现在，几乎所有编程语言都支持。Elixir中使用Regex模块进行操作，该模块底层基于Erlang的re模块。除了正则表达式，Elixir也可以使用模式匹配和String模块方法处理字符串，但正则表达式在处理复杂文本时更有优势。
 
-正则表达式最早由美国计算机科学家Stephen Cole Kleene在1950年左右提出，是一种形式化的语法符号，用来描述一系列文本模式。除了Elixir的内置Regex模块，还有其他许多编程语言也支持正则表达式，如Perl，Java，Python等。
-
-除了使用内置模块外，程序员也可以使用第三方库来处理更复杂的正则表达式，如re2和pcre。
-
-具体实现上，Elixir的Regex模块使用了Erlang的re模块，该模块基于多核并发设计，可以快速处理大量文本。
-
-## 查看更多：
-
-- [Elixir Regex文档](https://hexdocs.pm/elixir/Regex.html)
-- [正则表达式教程（英文）](https://www.regular-expressions.info/)
+## See Also
+- [Elixir Regex 文档](https://hexdocs.pm/elixir/Regex.html)
+- [在线正则表达式测试器](https://regex101.com/)
+- [Elixir School 正则表达式教学](https://elixirschool.com/zh/lessons/basics/regex/)

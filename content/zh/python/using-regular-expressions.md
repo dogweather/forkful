@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Python: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Python"
 category:             "Python"
@@ -10,38 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# 什么是正则表达式和为什么程序员要使用它？
-正则表达式是一种在文本中搜索特定模式的工具。程序员使用它来处理字符串数据，例如在文本编辑器中查找和替换文本，或者在程序中解析和验证用户输入。使用正则表达式可以大大提高处理文本数据的效率和准确性。
+## What & Why? (是什么以及为什么？)
+正则表达式是文本处理的强大工具，用于匹配、搜索和替换文本模式。程序员使用它们来简化复杂的字符串操作，高效地处理数据。
 
-# 如何使用正则表达式：
-我们可以使用Python中的内置re模块来操作正则表达式。下面是一个例子：
-
+## How to (怎么做)
 ```Python
-import re # 导入re模块
+import re
 
-text = "欢迎来到我的博客，这是关于编程和技术的地方。"
-pattern = "博客" # 定义要搜索的模式
-result = re.search(pattern, text) # 在文本中搜索模式
+# 匹配邮箱
+pattern = re.compile(r'\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b')
+text = "联系我: example@mail.com"
+match = pattern.search(text)
+print(match.group())  # 输出: example@mail.com
 
-print(result.group()) # 输出找到的结果
+# 替换字符串中的数字为星号
+replaced_text = re.sub(r'\d', '*', '密码1234')
+print(replaced_text)  # 输出: 密码****
 ```
 
-输出：
+## Deep Dive (深入了解)
+正则表达式起源于1950年代的神经生物学。后来, 在1960年代被引入计算机科学用于字符串处理。Python内置 `re` 模块就是它的实现之一。虽然正则表达式非常强大，它也有一些缺点，比如可读性差和某些情况下的效率不高。其他文本处理方法，比如字符串方法或解析库（如`pyparsing`），可以作为替代选择在特定场景下使用。
 
-```
-博客
-```
-
-除了search()方法，还有其他方法可以对文本进行匹配、查找、提取和替换。查看Python官方文档以了解更多详情。
-
-# 深入了解：
-正则表达式最初由美国计算机科学家Ken Thompson在20世纪60年代发明，用于在操作系统Unix上编写程序。随后，它成为了计算机科学领域中非常重要的工具。
-
-除了Python的re模块，还有其他编程语言也支持正则表达式，例如Perl、Java和JavaScript。每种语言的正则表达式语法可能略有不同，但基本原理相同。
-
-在使用正则表达式时，我们需要注意表达式的效率和准确性。过于复杂或冗长的表达式可能会导致程序运行缓慢，甚至出现错误。因此，使用正则表达式时需要仔细考虑并进行优化。
-
-# 相关资源：
-- [Python官方文档 - re模块](https://docs.python.org/3/library/re.html)
-- [正则表达式教程](https://www.regular-expressions.info/)
-- [正则表达式在线测试工具](https://regex101.com/)
+## See Also (另请参阅)
+- Python 官方文档 `re` 模块：https://docs.python.org/3/library/re.html
+- 正则表达式测试器：https://regex101.com/
+- 正则表达式速查表：https://www.debuggex.com/cheatsheet/regex/python

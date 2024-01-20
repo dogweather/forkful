@@ -1,7 +1,7 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
-html_title:           "Arduino: Korzystanie z wyrażeń regularnych"
-simple_title:         "Korzystanie z wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,46 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
-Wyrażenia regularne to jeden ze składników programowania Arduino, które pozwalają programistom dopasować, szukać, a nawet zastępować konkretne ciągi znaków. Programiści korzystają z nich, aby skrócić i uprzystępnić ikod oraz szybko przeszukiwać dane.
+## Co i dlaczego?
+Regularne wyrażenia (regex) to potężne narzędzie do wyszukiwania i manipulowania tekstami. Programiści korzystają z nich, by szybko znaleźć, sprawdzić lub zmienić fragmenty kodu według konkretnego wzorca.
 
-## Jak to Zrobić:
-Tworzenie kodu z wyrażeniami regularnymi na Arduino jest proste. Zobacz poniższy przykład:
+## Jak to zrobić:
+Arduino nie ma wbudowanej obsługi regex, ale możesz użyć funkcji `indexOf()`, `lastIndexOf()`, `startsWith()`, `endsWith()` i `substring()` do prostego przetwarzania tekstu. Możliwa jest także integracja z zewnętrznymi bibliotekami.
+```Arduino
+String data = "Temp: 24C, Hum: 60%";
+int tempIndex = data.indexOf("Temp:");
+int tempValueStart = data.indexOf(" ", tempIndex);
+int tempValueEnd = data.indexOf("C", tempValueStart);
+String temp = data.substring(tempValueStart + 1, tempValueEnd);
+Serial.println("Temperatura: " + temp + " stopni Celsjusza");
 
-```Arduino 
-#include <regex.h>
-
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  regex_t regex;
-  int reti;
-  char msgbuf[100];
-
-  reti = regcomp(&regex, "^a[[:alnum:]]", 0);
-  if(reti){ Serial.println("Could not compile regex"); }
-
-  reti = regexec(&regex, "abc", 0, NULL, 0);
-  if(!reti){
-    Serial.println("Match");
-  }else if(reti == REG_NOMATCH){
-    Serial.println("No match");
-  }else{
-    regerror(reti, &regex, msgbuf, sizeof(msgbuf));
-    Serial.println("Regex match failed");
-  }
-
-  regfree(&regex);
-}
+int humIndex = data.indexOf("Hum:");
+int humValueStart = data.indexOf(" ", humIndex);
+int humValueEnd = data.indexOf("%", humValueStart);
+String humidity = data.substring(humValueStart + 1, humValueEnd);
+Serial.println("Wilgotność: " + humidity + "%");
 ```
-Gdy uruchomisz ten kod, otrzymasz komunikat "Match", ponieważ ciąg "abc" pasuje do wyrażenia regularnego "^a[[:alnum:]]".
+Wyjście próbki:
+```
+Temperatura: 24 stopni Celsjusza
+Wilgotność: 60%
+```
 
-## Głębszy Wgląd:
-Pojęcie wyrażenia regularnego powstało w teorii automatów i języków formalnych, a swoje początki bierze od matematyka Stephena Kleene'a w latach 50. XX wieku. Alternatywą dla wyrażenia regularnego w Arduino może być ręczne przeszukiwanie ciągów znaków, ale jest to proces mniej efektywny i trudniejszy w zarządzaniu. Co więcej, Arduino obsługuje kompilację wyrażeń regularnych przez procedury C, dlatego potrzebujemy dołączyć bibliotekę  `<regex.h>`.
+## Głębsze spojrzenie:
+Historia regex zaczyna się w latach 50. jako teoria automatów i języków formalnych. Na Arduino alternatywą dla regex może być użycie funkcji `String` lub skomplikowanej logiki z użyciem typów danych `char` i tablic. Implementacja pełnej obsługi regex wymagałaby znacznych zasobów, co jest wyzwaniem w ograniczonym środowisku mikrokontrolerów.
 
-## Zobacz także:
-* Świetne źródło do nauki wyrażeń regularnych: https://regexone.com/ 
-* Oryginalna praca Stephena Kleene'a: https://www.jstor.org/stable/1968861
-* Dokumentacja Arduino Regex: https://www.arduino.cc/reference/en/
+## Zobacz również:
+- [Arduino Reference: String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- [Arduino Playground: Text Parsing Library](http://playground.arduino.cc/Code/TextFinder)
+- [Regex Tutorial](https://www.regular-expressions.info/tutorial.html)

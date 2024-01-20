@@ -1,7 +1,7 @@
 ---
-title:                "Korzystanie z wyrażeń regularnych"
-html_title:           "Arduino: Korzystanie z wyrażeń regularnych"
-simple_title:         "Korzystanie z wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,44 +10,50 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i Dlaczego?
+## What & Why? (Co i Dlaczego?)
+Regularne wyrażenia to wzorce służące do wyszukiwania i manipulacji tekstami. Programiści używają ich do walidacji danych, analizy i przetwarzania ciągów znaków szybko i efektywnie.
 
-Regularne wyrażenia to skuteczne narzędzie do przeszukiwania i podmieniania tekstów. Programiści używają ich przede wszystkim ze względu na ich potężne możliwości i efektywność.
+## How to: (Jak to zrobić:)
+W C korzystamy z biblioteki `<regex.h>` do obsługi regularnych wyrażeń. Oto prosty przykład:
 
-## Jak to zrobić:
-```C
+```c
+#include <stdio.h>
 #include <regex.h>
 
 int main() {
-   regex_t regex;
-   char msgbuf[100];
+    regex_t regex;
+    int return_value;
+    char *pattern = "^[0-9]+[A-Z]*$";
+    char *test_string = "1234ABCD";
 
-   regcomp(&regex, "abc", 0);
-   if (regexec(&regex, "abcdef", 0, NULL, 0) == 0) {
-      printf("Dopasowano\n");
-   } else {
-      regerror(reti, &regex, msgbuf, sizeof(msgbuf));
-      printf("Dopasowanie nie powiodło się: %s\n", msgbuf);
-   }
+    // Kompilacja wzorca regularnego wyrażenia
+    return_value = regcomp(&regex, pattern, 0);
 
-   regfree(&regex);
-   return 0;
+    // Wykonanie dopasowania
+    return_value = regexec(&regex, test_string, 0, NULL, 0);
+
+    if (!return_value) {
+        printf("Wzorzec pasuje.\n");
+    } else {
+        printf("Wzorzec nie pasuje.\n");
+    }
+
+    // Zwolnienie pamięci
+    regfree(&regex);
+
+    return 0;
 }
 ```
 
-Przykładowe wyjście:
+Wynik:
 ```
-Dopasowano
+Wzorzec pasuje.
 ```
 
-## Pogłębienie
+## Deep Dive (Dogłębna analiza)
+Regularne wyrażenia mają korzenie w teorii automatów i języków formalnych. Alternatywy dla `<regex.h>` w C to biblioteki zewnętrzne jak PCRE (Perl Compatible Regular Expressions). Implementowanie regularnych wyrażeń może być różnorodne; np. deterministyczny automat skończony (DFA) może być użyty dla wydajności kosztem pamięci, a niedeterministyczny automat skończony (NFA) dla oszczędności pamięci kosztem czasu wykonywania.
 
-Pierwsze regularne wyrażenia zostały opracowane w laboratoriach AT&T Bell w latach 50. i 60. XX wieku. Wprowadzenie ich do C dość długo trwało, ale ostatecznie znalazły swoje miejsce w bibliotece POSIX.
-
-Alternatywą dla standardowych wyrażeń regularnych w C jest użycie bibliotek zewnętrznych, takich jak PCRE (Perl Compatible Regular Expressions).
-
-Ważne jest, że mimo iż potentat w swojej domenie, regularne wyrażenia nie są panaceum na wszystko. Większość problemów "pasuje do" regularnych wyrażeń, ale niektóre są poza ich zasięgiem — na przykład parsing zagnieżdżonych struktur.
-
-## Zobacz również
-- [Manual GNU](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Regular Expressions in C](https://www.lemoda.net/c/unix-regex/)
+## See Also (Zobacz również)
+- [PCRE library](https://www.pcre.org/)
+- [GNU C Library: Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Regular Expression Basic Syntax Reference](https://www.regular-expressions.info/reference.html)

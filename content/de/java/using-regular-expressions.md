@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Java: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,26 +10,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Was ist das & Warum?
-Reguläre Ausdrücke sind spezielle Zeichenfolgen, die verwendet werden, um bestimmte Muster in Texten zu erkennen. Programmierer nutzen sie, um schnell und effizient große Mengen von Text zu durchsuchen und zu manipulieren.
+## Was & Warum?
 
-## Wie funktioniert es?
-Java bietet standardmäßig eine Klasse namens "Pattern", die es uns ermöglicht, reguläre Ausdrücke zu erstellen und auf Text anzuwenden. Zum Beispiel können wir mit dem folgenden Code eine E-Mail-Adresse aus einem Text extrahieren:
+Reguläre Ausdrücke, oder Regex, ermöglichen das Suchen und Manipulieren von Text mittels Mustern. Sie sind extrem nützlich zur Validierung, Formatierung und Extraktion von Daten aus Zeichenketten.
 
-```Java
-String text = "Meine E-Mail-Adresse ist max_mustermann@example.com";
-Pattern pattern = Pattern.compile("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}");
-Matcher matcher = pattern.matcher(text);
-if (matcher.find()) {
-  System.out.println("Gefundene E-Mail-Adresse: " + matcher.group());
+## How to:
+
+```java
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class RegexBeispiel {
+    public static void main(String[] args) {
+        String text = "Hallo, ich habe 15 Äpfel und 12 Birnen.";
+        String regex = "\\b\\d+\\b";
+        
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
+
+        while(matcher.find()) {
+            System.out.println(matcher.group());
+        }
+    }
 }
 ```
+**Ausgabe:**
+```
+15
+12
+```
 
-Ausgabe: Gefundene E-Mail-Adresse: max_mustermann@example.com
+## Deep Dive
 
-## Eintauchen in die Details
-Reguläre Ausdrücke haben ihren Ursprung in den 1950er Jahren in der theoretischen Informatik. Heutzutage gibt es viele Alternativen zu regulären Ausdrücken, wie z.B. das "String"-Objekt in Java. Bei der Verwendung von regulären Ausdrücken ist es wichtig zu beachten, dass sie sehr leistungsfähig sind, aber auch sehr komplex. Daher ist es ratsam, sie nur dann zu verwenden, wenn sie tatsächlich benötigt werden.
+Reguläre Ausdrücke sind seit den 1950er Jahren Teil der Informatik, erdacht von Stephen Cole Kleene. Java hat sie durch das `java.util.regex`-Paket im JDK 1.4 eingeführt. Alternativen zu Regex sind Parser für strukturierte Daten, automatische Texterkennung über KI oder spezifische String-Operationen. In Java ist die Regex-Verarbeitung relativ effizient, kann aber bei komplexen Mustern langsam sein.
 
-## Weitere Informationen
-- Java Regex Tutorial: https://www.javatpoint.com/java-regex
-- Pattern-Klasse in der Java-Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+## See Also
+
+- [Die offizielle Java-Dokumentation zu Pattern](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/Pattern.html)
+- [Oracle Java Tutorial zu regulären Ausdrücken](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [RegExr: Lernwerkzeug und Community für Regex](https://regexr.com/)

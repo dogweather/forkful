@@ -1,6 +1,6 @@
 ---
 title:                "Använda reguljära uttryck"
-html_title:           "Gleam: Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
 programming_language: "Bash"
 category:             "Bash"
@@ -11,31 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Vad & Varför?
+Reguljära uttryck är mönster för att matcha textsträngar i data. Programmerare använder det för att söka, extrahera och manipulera specifik text snabbt och effektivt.
 
-Reguljära uttryck är kraftfulla verktyg för att matcha och manipulera text i Bash-skript. Programmerare använder dem för att effektivt söka, ersätta och validera textmönster.
-
-## Hur till:
-
-Låt oss dyka in i några praktiska exempel:
-
+## Hur gör man:
+Exempel 1: Sök efter ordet "fisk" i en fil.
 ```Bash
-# Matcha en specifik text
-echo "Hej Världen" | grep "Hej"
+grep "fisk" min-fil.txt
 ```
-Utskrift: "Hej Världen" (Matchade texten "Hej")
-
+Exempel 2: Byt ut "katt" mot "hund" i en sträng.
 ```Bash
-# Sök och ersätt text
-echo "Bash är fantastisk" | sed 's/fantastisk/incredible/'
+echo "Jag gillar katter mer än hundar" | sed 's/katt/hund/'
 ```
-Utskrift: "Bash är incredible" (Ersatt 'fantastisk' med 'incredible')
+Exempel 3: Finn alla filer med .txt-suffix.
+```Bash
+ls *.txt
+```
 
-## Djupdykning:
+## Djupdykning
+Reguljära uttryck har används sedan 1950-talet, med rötter i teoretisk datalogi och formaliserade i automatteori. Alternativ till Bash inkluderar Perl och Python som erbjuder ännu mer kraftfulla och flexibla regexp-implementeringar. Bash använder GREP och SED för regexp, vilka är kraftfulla men kan skilja sig i syntax mellan versioner och system.
 
-Reguljära uttryck har sitt ursprung från matematisk notation för att beskriva språkmönster. Deras användning inom programmering har utvidgats för att göra textmanipulering mer bekväm och effektiv. Det finns olika alternativ till Bash för att hantera reguljära uttryck, till exempel Perl och Python. Hur Bash tolkar och genomför reguljära uttryck beror på dess interna implementation, vilket går över detta artikels omfattning.
-
-## Se även:
-
-För mer detaljerad information och praktiska exempel, ta en titt på dessa källor:
-
-3. [Sed & Awk - Två textmanipuleringsverktyg](https://www.oreilly.com/library/view/sed-awk/1565922255/)
+## Se även
+- GNU GREP manual: https://www.gnu.org/software/grep/manual/grep.html
+- SED - Stream Editor: https://www.gnu.org/software/sed/manual/sed.html
+- RegExr - Lär dig och testa reguljära uttryck: https://regexr.com/

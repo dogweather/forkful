@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Lua: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Lua"
 category:             "Lua"
 tag:                  "Strings"
@@ -10,43 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og hvorfor?
-Regular expressions (regulære uttrykk) er et uttrykk i programmering som brukes til å søke og manipulere tekststrenger. Dette er spesielt nyttig når man skal finne eller endre deler av tekst som følger et gitt mønster. Programmere bruker regelmessig uttrykk for å effektivt behandle store mengder tekst og automatisere repetitiv oppgaver.
+## Hva & Hvorfor?
+Regulære uttrykk er mønstre for å matche tekststrenger. Programmerere bruker dem for å søke, erstatte, og validere tekst på en kjapp og fleksibel måte.
 
-## Slik gjør du det:
-Kodingseksemplene nedenfor bruker Lua sin standardmodul `string` for å demonstrere hvordan man kan bruke regulære uttrykk.
+## Hvordan:
+```Lua
+-- Søker etter ordet "Norge" i en tekststreng
+local tekst = "Jeg elsker Norge!"
+local funnet = string.match(tekst, "Norge")
+print(funnet) -- Output: Norge
 
-```Lua 
--- Søke etter et mønster i en tekststreng
-local text = "Hei, mitt navn er Lua"
-local pattern = "Lua"
-print(string.match(text, pattern)) 
--- Output: Lua
+-- Erstatter "blå" med "rød" i en tekststreng
+local fargetekst = "Himmelen er blå."
+local byttetFarge = string.gsub(fargetekst, "blå", "rød")
+print(byttetFarge) -- Output: Himmelen er rød.
 
--- Erstatt deler av tekst basert på et mønster
-local email = "navn@eksempel.com"
-local pattern = "@"
-local replacement = "[at]"
-print(string.gsub(email, pattern, replacement)) 
--- Output: navn[at]eksempel.com
-
--- Finne deler av tekst som matcher et mønster og legge dem i en tabell
-local sentence = "Lua er et morsomt programmeringsspråk"
-local pattern = "%a+"
-local words = {}
-for word in string.gmatch(sentence, pattern) do
-  table.insert(words, word)
-end
-print(table.concat(words, ", ")) 
--- Output: Lua, er, et, morsomt, programmeringsspråk
+-- Validerer et enkelt e-post format
+local email = "ola@nordmann.no"
+local match = string.match(email, "[%w._%-%+]+@[%w._%-]+%.%w+")
+print(match == email) -- Output: true
 ```
 
-## Dypdykk:
-Regulære uttrykk ble introdusert på 1950-tallet og har siden blitt en viktig del av mange programmeringsspråk, inkludert Lua. Alternativer til å bruke regulære uttrykk inkluderer å bruke innebygde funksjoner som `string.find` og `string.sub` eller å lage egne funksjoner for å håndtere tekstbehandling. Implementasjonen av regulære uttrykk varierer mellom ulike programmeringsspråk, men de følger stort sett samme mønster og uttrykk.
+## Dykk Ned:
+Historisk sett kommer regulære uttrykk fra teoretisk informatikk og var blant de første automatiseringsverktøyene i databehandling. I Lua er det begrensede, innebygde støtten sammenlignet med språk som Perl eller Python. Man kan bruke biblioteker som `lpeg` eller `rex` for mer komplekse behov. Lua bruker egne mønstre som er lik, men ikke identisk med standard POSIX- eller Perl-kompatible regulære uttrykk.
 
-## Se også:
-For mer informasjon om regulære uttrykk og deres bruk i Lua, kan du sjekke ut følgende ressurser:
-
-- Offisiell Lua dokumentasjon for `string`-modulen: https://www.lua.org/manual/5.3/manual.html#6.4
-- Online regex tester og dokumentasjon: https://regex101.com/
-- Tutorial om regulære uttrykk i Lua: https://www.lua.org/pil/20.2.html
+## Se Også:
+- [Lua Users Wiki: Patterns](http://lua-users.org/wiki/Patterns)
+- [GitHub: lpeg - Parsing Expression Grammars For Lua](https://github.com/sqmedeiros/lpeg)
+- [GitHub: rex - Regular Expressions for Lua](https://github.com/rrthomas/lua-rex)
+- [Stack Overflow: Lua Pattern Matching vs. Regular Expressions](https://stackoverflow.com/questions/2925159/lua-pattern-matching-vs-regular-expressions)

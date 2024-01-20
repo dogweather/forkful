@@ -1,6 +1,6 @@
 ---
 title:                "Utilizando expressões regulares"
-html_title:           "Kotlin: Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,46 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que usar expressões regulares?
+## What & Why?
+Expressões regulares, ou regex, são ferramentas para encontrar padrões em texto. Programadores as utilizam para buscar, substituir ou validar dados de forma eficiente.
 
-Expressões regulares são uma forma de representar padrões em texto, permitindo que os programadores possam pesquisar, validar e manipular dados de maneira eficiente. Eles são amplamente utilizados em linguagens de programação para trabalhar com strings de forma mais eficaz.
+## How to:
 
-## Como usar:
+```kotlin
+fun main() {
+    val texto = "O Kotlin é divertido! Versão 2023."
 
-### Correspondência de padrões:
-```Kotlin
-val texto = "Olá, meu nome é João!"
-val pattern = Regex("meu nome é (\\w+)")
-val matchResult = pattern.find(texto)
+    // Procurar por palavras que começam com "d"
+    val regex = Regex("\\bd\\w+")
+    val resultado = regex.find(texto)
+    println(resultado?.value)  // Saída: "divertido"
 
-matchResult?.groups?.get(1)?.value // Output: João
+    // Substituir "divertido" por "incrível"
+    val textoAtualizado = texto.replace(regex, "incrível")
+    println(textoAtualizado)  // Saída: "O Kotlin é incrível! Versão 2023."
+
+    // Validar formato de data (DD/MM/AAAA)
+    val regexData = Regex("\\b\\d{2}/\\d{2}/\\d{4}\\b")
+    val dataValida = "15/10/2023"
+    val dataInvalida = "32/13/2023"
+
+    println(regexData.matches(dataValida))    // Saída: true
+    println(regexData.matches(dataInvalida))  // Saída: false
+}
 ```
 
-### Substituição de padrões:
-```Kotlin
-val texto = "Temos 10 maçãs e 5 laranjas."
-val pattern = Regex("\\d+")
-val resultado = pattern.replace(texto, "2")
+## Deep Dive
+Expressões regulares surgiram nos anos 1950 com o matemático Stephen Kleene. Alternativas incluem parsers de strings e linguagens específicas de domínio (DSLs), mas são mais complexas pra implementar. A biblioteca `kotlin.text` oferece suporte a regex com classes como `Regex` e funções como `matches`, `find`, e `replace`.
 
-resultado // Output: Temos 2 maçãs e 2 laranjas.
-```
+## See Also
 
-### Validação de padrões:
-```Kotlin
-val email = "exemplo@dominio.com"
-val pattern = Regex("[a-z]+@[a-z]+\\.[a-z]+")
-val valido = pattern.matches(email)
-
-valido // Output: true
-```
-
-## Profundidade:
-Expressões regulares têm sido amplamente usadas desde os anos 50, com sua popularidade aumentando com o advento da internet. Embora sejam poderosas, elas também podem ser complexas e difíceis de entender. Como alternativa, existem bibliotecas e ferramentas que ajudam na criação e manipulação de expressões regulares, como o Regex Teste (https://regex101.com/), que permite testar e experimentar expressões regulares em tempo real. 
-
-Além disso, expressões regulares também têm algumas limitações em termos de eficiência e funcionalidade em comparação com outras abordagens de processamento de texto, como o uso de funções de string específicas da linguagem de programação.
-
-## Veja também:
-- Tutorial de Expressões Regulares em Kotlin (https://kotlinlang.org/docs/reference/regular-expressions.html)
-- 10 Dicas úteis sobre Expressões Regulares (https://medium.com/swlh/10-useful-regular-expression-tips-for-developers-793349cfaf2d)
-- Regexr - Ferramenta interativa para criar e testar expressões regulares (https://regexr.com/)
-- Documentação oficial Kotlin (https://kotlinlang.org/docs/home.html)
+- [Documentação Oficial Kotlin - Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [w3schools - Regex Tutorial](https://www.w3schools.com/java/java_regex.asp)
+- [Regex101 - Teste suas Expressões Regulares](https://regex101.com/)

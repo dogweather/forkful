@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Arduino: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "C++"
 category:             "C++"
@@ -10,44 +10,35 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么?
+## What & Why? (是什么 & 为什么?)
+正则表达式是个强大的文本处理工具，用于搜索、替换、检查模式。程序员用它来处理复杂的文本任务，快速又省力。
 
-正则表达式是一种强有力的文本处理工具，主要用于匹配和操作字符串。程序员使用它们因为它们可以以极其简洁的方式实现复杂的文本处理任务。
+## How to: (如何操作)
+```cpp
+#include <iostream>
+#include <regex>
+#include <string>
 
-## 如何使用:
+int main() {
+    std::string text = "程序设计很有趣!";
+    std::regex vowelRegex("[aeiouAEIOU]");
 
-以下是一段简单的C++代码，演示如何使用正则表达式匹配文本。
-
-```C++
-#include<regex>
-#include<iostream>
-
-int main(){
-    std::string s ("hello world");
-    std::regex e ("\\b\\w+\\b");
-
-    std::regex_iterator<std::string::iterator> rit ( s.begin(), s.end(), e );
-    std::regex_iterator<std::string::iterator> rend;
-
-    while (rit!=rend) {
-        std::cout<<rit->str()<<std::endl;
-        ++rit;
-    }
+    // 替换所有的英文元音字母为星号
+    std::string replacedText = std::regex_replace(text, vowelRegex, "*");
+    std::cout << replacedText << std::endl;
 
     return 0;
 }
 ```
-这段代码会输出文本中的每个单词, 分别是 "hello" 和 "world".
+输出：
+```
+程序设计很有趣!
+```
 
-## 深入解析:
+## Deep Dive (深入探索)
+正则表达式起源于20世纪50年代的自动机理论。C++在`<regex>`库中提供正则表达式支持。除了正则表达式，字符串搜索可以用find函数等简单方法，但不如正则强大。实现细节上，编译器用有限状态机来解析和执行模式。
 
-正则表达式的概念最早由美国计算机科学家肯·汤普森在1968年创造，用于编写Unix操作系统的编辑器。正则表达式现在已被广泛应用于各种编程语言中，包括C++。
-
-除了正则表达式，还有其他一些方法也可以进行字符串处理，例如字符串查找和替换函数，但是它们的功能远不如正则表达式强大。
-
-在C++中，使用正则表达式需要包含 `<regex>` 头文件，它定义了基于NFA的ECMAScript兼容的正则表达式引擎。
-
-## 更多信息:
-
-- 正则表达式在线测试工具: [https://regex101.com/](https://regex101.com/)
-- ECMAScript正则表达式规范: [https://www.ecma-international.org/ecma-262/5.1/#sec-15.10](https://www.ecma-international.org/ecma-262/5.1/#sec-15.10)
+## See Also (另请参阅)
+- [C++ `<regex>` documentation](http://www.cplusplus.com/reference/regex/)
+- [Regex101: Online regex tester and debugger](https://regex101.com/)
+- [Regular Expressions - Modern C++](https://en.cppreference.com/w/cpp/regex)

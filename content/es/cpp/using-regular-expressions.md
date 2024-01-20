@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "Go: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "C++"
 category:             "C++"
 tag:                  "Strings"
@@ -10,38 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Las expresiones regulares (regex) son una herramienta para buscar patrones en texto. Los programadores las usan para encontrar, reemplazar y manipular estos patrones de manera eficiente y flexible.
+## Qué y Por Qué?
 
-## ¿Cómo?
-Aquí te muestro cómo utilizar regex en C++ para buscar una secuencia de dígitos en un string:
+Las expresiones regulares (regex) permiten buscar patrones en textos. Los programadores las usan para validar, encontrar o reemplazar datos de manera eficiente y flexible.
 
-```C++
+## Cómo hacerlo:
+
+En C++ con la librería estándar `<regex>`, puedes usar expresiones regulares así:
+
+```cpp
+#include <iostream>
 #include <regex>
 #include <string>
 
-int main()
-{
-   std::string s = "abc123def456ghi789";
-   std::regex e ("\\d+");
+int main() {
+    std::string texto = "Encuentrame en info@example.com o en web@example.net";
+    std::regex patron_email(R"(\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b)");
 
-   // Buscando la regex en el string
-   bool match = std::regex_search(s, e);
-   
-   std::cout << (match ? "Match encontrado" : "Match no encontrado");
-   return 0;
+    std::smatch resultados;
+    
+    while (std::regex_search(texto, resultados, patron_email)) {
+        std::cout << "Email encontrado: " << resultados[0] << '\n';
+        texto = resultados.suffix().str();
+    }
+    
+    return 0;
 }
 ```
-Con este código, la salida será: `Match encontrado`, ya que hemos averiguado que existen dígitos en la cadena.
 
-## Inmersión Profunda
-Las regex tienen sus raíces en la teoría de autómatas y la teoría formal del lenguaje. Su uso es muy extendido en los lenguajes de programación por su flexibilidad y eficiencia al manipular cadenas de texto.
+Salida:
+```
+Email encontrado: info@example.com
+Email encontrado: web@example.net
+```
 
-Alternativas a su uso pueden ser el uso de funciones básicas de manipulación de strings o el diseño de algoritmos personalizados, pero estos enfoques pueden ser más engorrosos y menos eficientes.
+## Profundización
 
-La implementación de regex en C++ utiliza una clase del estándar STL, std::regex, que permite utilizarlas directamente en tu código. C++ proporciona múltiples funciones para buscar y manipular cadenas de texto utilizando regex, como regex_search y regex_replace.
+Las regex existen desde los años 50, evolucionando desde teoría de autómatas hasta herramientas prácticas en la mayoría de lenguajes de programación. Alternativas a regex incluyen el procesamiento de texto vía análisis sintáctico (parsing) cuando se necesitan estructuras más complejas. En C++, regex se implementa mediante la clase std::regex y funciones asociadas en la cabecera `<regex>`.
 
 ## Ver También
-Para buscar más información sobre el uso y las capacidades de las expresiones regulares, puedes consultar los siguientes recursos:
 
-- Documentación oficial de C++ [regex](http://www.cplusplus.com/reference/regex/)
+- Documentación de regex en cppreference: [https://en.cppreference.com/w/cpp/regex](https://en.cppreference.com/w/cpp/regex)
+- "Mastering Regular Expressions" por Jeffrey E.F. Friedl, un recurso completo para entender y aplicar regex.
+- Herramienta online para probar expresiones regulares: [https://regex101.com/](https://regex101.com/)

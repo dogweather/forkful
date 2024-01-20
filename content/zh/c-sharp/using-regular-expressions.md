@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Arduino: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "C#"
 category:             "C#"
@@ -10,16 +10,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么与为什么？
+## What & Why? 什么和为什么？
+正则表达式用于模式匹配和文本处理，非常灵活。程序员用它们来快速找到、替换或检查复杂的文本模式，节省时间和精力。
 
-正则表达式是用于处理字符串的强大工具，程序员们使用它来匹配，查找，替换或切分字符串。
-
-## 如何操作：
-
-让我们开始编写一些使用正则表达式的C#代码。
-
-创建一个程序，检查文本字符串是否包含指定的模式。我们将使用“System.Text.RegularExpressions”命名空间中的“Regex”类。
-
+## How to: 如何操作？
 ```C#
 using System;
 using System.Text.RegularExpressions;
@@ -28,36 +22,26 @@ class Program
 {
     static void Main()
     {
-        string sampleText = "我学习C#编程";
-        string pattern = @"\bC#\b";
+        string text = "您好，我的邮箱是 example@example.com";
+        string pattern = @"\w+@\w+\.\w+";
 
-        Match match = Regex.Match(sampleText, pattern);
-
+        Match match = Regex.Match(text, pattern);
         if (match.Success)
         {
-            Console.WriteLine("找到了匹配项: " + match.Value);
-        }
-        else
-        {
-            Console.WriteLine("没有找到匹配项。");
+            Console.WriteLine($"找到邮箱: {match.Value}");
         }
     }
 }
 ```
-运行结果将显示："找到了匹配项: C#"
+输出:
+```
+找到邮箱: example@example.com
+```
 
-## 深度挖掘：
+## Deep Dive 深入探讨
+正则表达式起源于上世纪50年代的理论计算机科学。而在.NET框架中，正则表达式由 `System.Text.RegularExpressions` 命名空间提供支持。除了内置方法外，你还可以使用LINQ或者字符串的内置方法进行文本处理，但正则表达式提供更强大的模式匹配功能。性能方面，恰当使用时正则表达式可以很快，但复杂的表达式可能会慢。
 
-1. 历史背景: 正则表达式起源于20世纪70年代的Unix环境，用于文本处理。后来，在很多编程语言中都引入了正则表达式。
-
-2. 替代方案: 尽管正则表达式很强大，但也有许多库和方法可以在不使用正则表达式的情况下完成字符串处理，例如“String.Contains”，“String.StartsWith”，“String.EndsWith”等。
-
-3. 实现细节: 在C#中，正则表达式主要通过“System.Text.RegularExpressions”名称空间中的类实现，其中最重要的类是“Regex”。此外，C#中的正则表达式是基于.NET Framework标准，所以在任何支持.NET的环境中都可以运行。
-
-## 另请参阅：
-
-以下链接包含有关C#中正则表达式的更多信息：
-
-1. [Microsoft官方文档：正则表达式](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expressions)
-2. [Codeproject 上的正则表达式教程](https://www.codeproject.com/Articles/9099/The-30-Minute-Regex-Tutorial)
-3. [StackOverflow中关于C#正则表达式的讨论](https://stackoverflow.com/questions/tagged/c%23+regex)
+## See Also 参考链接
+- [正则表达式 - .NET](https://docs.microsoft.com/zh-cn/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [在线正则表达式测试器](https://regex101.com/)
+- [正则表达式学习资源 - RegexOne](https://regexone.com/)

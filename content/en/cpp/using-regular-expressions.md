@@ -10,55 +10,65 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Article: Using Regular Expressions in C++ 
-
 ## What & Why?
 
-Regular expressions (regex) are a quick way to match patterns in text. Programmers use regex to efficiently search, modify, or validate text against multiple conditions.
+Regular expressions are patterns used for matching character combinations in text. Programmers use them for tasks like validation, search, and text manipulation due to their power and flexibility.
 
 ## How to:
 
-Here's how to use regex with C++:
+To use regular expressions in C++, you'll need to include the `<regex>` library. Here’s how you match, search, and replace text:
 
-```C++
-#include <regex>
+```cpp
 #include <iostream>
+#include <regex>
 
 int main() {
-    std::string myString = "I have 2 cats but I want 3 dogs.";
-    std::regex myRegex ("\\d+");
-
-    std::sregex_iterator it(myString.begin(), myString.end(), myRegex);
-    std::sregex_iterator end;
-
-    while (it != end) {
-        std::cout << it->str() << "\n";
-        ++it;
+    std::string target("Hello World. This is a regex test.");
+    
+    // Match
+    std::regex match_pattern("Hello World");
+    bool is_match = std::regex_match(target, match_pattern);
+    std::cout << (is_match ? "Matched" : "Not matched") << "\n";
+    
+    // Search
+    std::regex search_pattern("\\bis\\b");
+    std::smatch matches;
+    if (std::regex_search(target, matches, search_pattern)) {
+        std::cout << "Found: " << matches[0] << "\n";
     }
 
+    // Replace
+    std::regex replace_pattern("World");
+    std::string result = std::regex_replace(target, replace_pattern, "Universe");
+    std::cout << "After replace: " << result << "\n";
+    
     return 0;
 }
 ```
 
-This code will output:
+Sample output:
 
-```C++
-2
-3
 ```
-
-The code uses the `\\d+` regular expression to find all occurrences of one or more digits in the input string.
+Matched
+Found: is
+After replace: Hello Universe. This is a regex test.
+```
 
 ## Deep Dive
 
-- **Historical context**: Regular expressions originated in the 1950s, grew in popularity in Unix-based systems, and today, they are found in virtually all programming languages.
+Regular expressions have been a part of computer science since the 1950s, popularized by utilities like grep in Unix. C++ adopted them much later, with std::regex in C++11. Native support varies by compiler; some may lag in full regex feature support.
 
-- **Alternatives**: For very complex text manipulation, a full-fledged parser might be more appropriate. Lighter tasks can be done with basic string functions.
+Alternatives to `std::regex` include libraries like Boost.Regex or PCRE (Perl Compatible Regular Expressions). Boost.Regex, for instance, often outperforms `std::regex` and has a richer feature set.
 
-- **Implementation details**: In C++, regex functionality is provided by the `<regex>` library. Keep in mind regex can be slow. Use wisely to not impact performance.
+Implementation-wise, `std::regex` can be slower than some custom parsing algorithms, especially for simple patterns. Understanding the trade-off between regex convenience and potential performance issues is key.
 
-## See Also:
+## See Also
 
-- Learn more about regex in C++ at [cplusplus.com](http://www.cplusplus.com/reference/regex/)
-- Test and learn regex interactively [Regex101.com](https://regex101.com/)
-- Understand C++ performance implications at [cppreference.com](https://en.cppreference.com/w/cpp/regex)
+- C++ reference on `<regex>`: https://en.cppreference.com/w/cpp/regex
+- Boost.Regex documentation: https://www.boost.org/doc/libs/release/libs/regex/
+- PCRE's official site: https://www.pcre.org/
+
+Further reading and tools to improve your regex skills:
+
+- Regular-Expressions.info Tutorial: https://www.regular-expressions.info/tutorial.html
+- Regex101 (online tester): https://regex101.com/

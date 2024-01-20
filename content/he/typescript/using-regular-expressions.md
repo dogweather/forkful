@@ -1,7 +1,7 @@
 ---
-title:                "שימוש בביטויים רגילים"
-html_title:           "TypeScript: שימוש בביטויים רגילים"
-simple_title:         "שימוש בביטויים רגילים"
+title:                "שימוש בביטויים רגולריים"
+html_title:           "Bash: שימוש בביטויים רגולריים"
+simple_title:         "שימוש בביטויים רגולריים"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,33 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## מה ולמה?
-שימוש בביטויים רגולריים הוא כלי חזק שנמצא בכלי הכתיבה של תכנותנים. זה מאפשר לנו לחפש ולהתאים מדויק טקסט באמצעות דפוס מתאים. תכנתנים משתמשים בו בכדי לחפש ולעבד קלט טקסט מגוון ולקבל תוצאות מדויקות יותר.
+## What & Why? (מה ולמה?)
+מבטאים רגולריים זה כלי לחיפוש וחלפת טקסט לפי תבניות. מתכנתים משתמשים בהם כדי לעבד נתונים ולוודא אמיתות קלט מהר ובקלות.
 
-## כיצד ל:
-הליכי דוגמא ופלט נכתבים בתוך ספרות "TypeScript ... ". כאן נדגים איך לחפש מילים שונות בטקסט ולשנות את התוצאה הסופית:
+## How to: (איך לעשות:)
+```TypeScript
+// חיפושים פשוטים
+const text: string = 'מצא את כל המילים שמתחילות באות "ה"';
+const regex: RegExp = /ה\w+/g;
+const found: string[] = text.match(regex);
+console.log(found); // ['המילים', 'המתחילות']
 
+// חלפת טקסט
+const newText: string = text.replace(regex, "היי");
+console.log(newText); // "מצא את כל היי שהיי באות "ה"
+
+// ולידציית קלט
+const email: string = 'example@mail.com';
+const emailRegex: RegExp = /^\S+@\S+\.\S+$/;
+console.log(emailRegex.test(email)); // true
 ```
-TypeScript
 
-// חפש כל מילה שמתחילה עם אות "S"
-let regex = /S\w*/;
-let str = "Search is a powerful tool for programmers";
-console.log(str.match(regex));
-// Output: ["Search"]
+## Deep Dive (לעומק העניינים)
+ב-1960, מתמטיקאי בשם סטיבן קליני תיאר תחביר שנקרא כעת "מבטאים רגולריים". בתכנות מודרני, קיימות אלטרנטיבות כמו פרסרים סינטקטיים לתרחישים מורכבים, אבל מבטאים רגולריים נותרים יעילים לביצועי רוב המשימות הקשורות לטקסט. רוב שפות התכנות כוללות תמיכה מובנית במבטאים רגולריים, וב-TypeScript תמיכה זו מגיעה דרך המחלקה RegExp של JavaScript.
 
-// החלף את המילה "powerful" עם "useful"
-let newString = str.replace("powerful", "useful");
-console.log(newString);
-// Output: "Search is a useful tool for programmers"
-
-```
-
-## עמוק בלבד:
-* היסטוריה: ביטויים רגולריים נמצאים אז מאוד מאוחר וניצלו בכלי הכתיבה של פורמטים שונים עד שלסוף באננו לתכנות.
-* אלטרנטיבות: תכנתנים יכולים גם להשתמש בטכניקות נוספות עבור חיפוש ועיבוד טקסט, כמו פקודות כמו ```indexOf()``` and ```substring()```, אבל הם לא יכולים לספק את אותה רמת תמיכה כמו ביטויים רגולריים.
-* פרטים למימוש: תכנתנים מקריאים מתיר האמרגוזים נוספים של יישומים ביטויים רגולאריים. כאילו דוגמאות נוספות, כיצד לשפר קוד חיפוש ודפוס בביטויים רגולריים עי רשמות ושאר פירטימו.
-
-## ראה גם:
-להלן כמה קישורים למידע נוסף על ביטויים רגולריים בתוכנה TypeScript:
-* [מדריך תברואתית ביטויים רגולריים ב-TypeScript נכתב ב־CodeTuts+](https://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know-a-tutorial-by-the-experts--net-6149)
+## See Also (ראה גם)
+- [MDN Regular Expressions Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) - מדריך על מבטאים רגולריים ב-JavaScript, שקשורים ישירות ל-TypeScript.
+- [RegExr](https://regexr.com/) - כלי אינטרנטי לבדיקת ולמידת מבטאים רגולריים.
+- [RegExp TypeScript Documentation](https://www.typescriptlang.org/docs/handbook/2/objects.html#regexps) - תיעוד רשמי על שימוש ב-RegExp ב-TypeScript.

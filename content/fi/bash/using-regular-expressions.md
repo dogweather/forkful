@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,32 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä & Miksi?
-Säännölliset lausekkeet ovat syötteiden käsittelyyn tarkoitettu työkalu, ne ovat tehokkaita mallinsovitustekniikoita. Ohjelmoijat käyttävät niitä tiedostojen ja datan läpikäynnin tehostamiseen haarautumis- ja silmukkatietojen sijaan.
+## What & Why?
+Regulääri-ilmaisut on hakujen ja tekstinkäsittelyn työkalu. Käyttäjät voivat nopeasti etsiä, korvata tai validoida tekstiä koodissa.
 
-## Kuinka:
-Tässä on joitain esimerkkejä:
-```Bash
-# Etsii tekstiä
-grep "etsi minua" tiedosto.txt
-
-# Regex or-kysely
-grep "sana1\sana2" tiedosto.txt
-
-# Regex ja-kysely
-grep -P "sana1.*sana2|sana2.*sana1" tiedosto.txt
-``` 
-Tulostettava tulos näyttää suurin piirtein tältä:
-```Bash
-# Otteita tiedosto.txt:stä
-etsi minua
-sana1 sana2
+## How to:
 ```
-## Syvällisempi katsaus
-Shell-scriptauksen historia on pitkä, se ulottuu aina 1970-luvulle. Säännöllisten lausekkeiden vaihtoehtoja ovat esimerkiksi AWK ja Sed, mutta grep-yhdistelmän yksinkertaisuus ja nopeus tekevät siitä erittäin suositun. Nykyisin, säännöllisten lausekkeiden toteutus voi vaihdella hieman eri järjestelmissä, mutta yleiset periaatteet pysyvät ennallaan.
+# Etsi sanoja, jotka alkavat "ha" ja päättyvät "ku"
+echo "haku helikopteri hattu hernekuja" | grep -o '\bha\w*ku\b'
 
-## Katso myös
-1. [GNU Grep Manuaali](https://www.gnu.org/software/grep/manual/grep.html) - Lisätietoja ja usein kysyttyjä kysymyksiä.
-2. [RegExr](https://regexr.com/) - Opettele, rakenna ja testaa RegEx.
-3. [Sed - An Introduction and Tutorial](https://www.grymoire.com/Unix/Sed.html) - Lisää vaihtoehtoja säännöllisille lausekkeille.
-4. [AWK - A Tutorial and Introduction](https://www.grymoire.com/Unix/Awk.html) - Lisää korkeamman tason skriptikieliä tiedostojen käsittelyyn.
+# Tulostus:
+haku
+hernekuja
+
+# Etsi kaikki riviä, joihin ei sisälly sana "koira"
+echo -e "kissa\nkoira\nhamsteri" | grep -v "koira"
+
+# Tulostus:
+kissa
+hamsteri
+```
+
+## Deep Dive
+Regulääri-ilmaisut juontavat juurensa teoreettisesta automaattiteoriasta ja formaalikielistä. Vaihtoehtoina ovat mm. pelkkä tekstihaku tai parserit. Bash käyttää useimmiten POSIX-regulääri-ilmaisun syntaksia, mutta moderneissa työkaluissa kuten `grep` on myös laajennettu tuki (esim. PCRE).
+
+## See Also
+- GNU grep manuaali: [https://www.gnu.org/software/grep/manual/grep.html](https://www.gnu.org/software/grep/manual/grep.html)
+- Regex101, testaa regulääri-ilmaisuja: [https://regex101.com](https://regex101.com)
+- Regulääri-ilmaisujen pikakurssi: [https://regexone.com](https://regexone.com)

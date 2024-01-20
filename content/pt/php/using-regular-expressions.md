@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Gleam: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "PHP"
 category:             "PHP"
 tag:                  "Strings"
@@ -10,44 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O Que & Por quê?
+## What & Why? (O Que & Por Quê?)
+Regular expressions, ou regex, são uma ferramenta para busca e manipulação de texto usando padrões definidos. Programadores usam regex para validação de dados, busca, substituição e parsing de textos de forma eficiente e concisa.
 
-Expressões regulares, ou regex, são sequências de caracteres que formam um padrão de busca. Programadores as usam para economizar tempo, implementando buscas e substituições de texto de uma forma rápida e fácil.
-
-## Como Fazer:
-
-Vamos usar a função `preg_match()` do PHP para um exemplo simples de expressão regular. Observe que a expressão regular é colocada entre barras.
-
+## How to: (Como Fazer:)
 ```PHP
 <?php
-  $str = "Olá, Programador!";
-  $padrao = "/Programador/"; 
-  if (preg_match($padrao, $str)) {
-    echo "A palavra foi encontrada!";
-  } else {
-    echo "A palavra não foi encontrada!";
-  }
+$texto = 'O email do contato é contato@exemplo.com';
+$padrao = '/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}/';
+
+if (preg_match($padrao, $texto, $matches)) {
+    echo "Email encontrado: " . $matches[0];
+} else {
+    echo "Nenhum email válido encontrado.";
+}
 ?>
 ```
+Saída: Email encontrado: contato@exemplo.com
 
-Neste exemplo, estamos procurando a palavra "Programador" na string. A saída será:
+## Deep Dive (Mergulho Profundo)
+As expressões regulares originaram-se na década de 1950. Alternativas incluem métodos de string como strpos() e strstr() no PHP, mas eles não oferecem a mesma flexibilidade. Quanto à implementação, o PHP usa a biblioteca PCRE (Perl Compatible Regular Expressions) para processar regex, o que proporciona uma rica variedade de opções e sintaxe.
 
-```PHP
-A palavra foi encontrada!
-```
-
-## Mergulho Profundo:
-
-Expressões regulares foram introduzidas pela primeira vez na década de 1950, mas só tiveram seu potencial plenamente reconhecido na década de 1960. 
-
-As alternativas ao uso de expressões regulares incluem a busca literal de strings e o uso de funções de manipulação de strings, mas nenhuma delas oferece a mesma flexibilidade e eficiência que as expressões regulares.
-
-Muitos programas PHP internos usam bibliotecas de expressões regulares, como PCRE (Perl Compatible Regular Expressions), para implementar sua funcionalidade. Elas tornam as expressões regulares uma ferramenta valiosa para qualquer programador PHP.
-
-## Veja Também:
-
-Para mais informações sobre expressões regulares em PHP, confira os seguintes links:
-
-- [PHP Manual - Preg Functions](https://www.php.net/manual/en/ref.pcre.php)
-- [Regular-Expressions.info - Tutorial](https://www.regular-expressions.info/tutorial.html)
-- [Regex101 - Online Regex Tester](https://regex101.com/)
+## See Also (Veja Também)
+- Documentação oficial do PHP sobre regex: [PHP PCRE](https://www.php.net/manual/pt_BR/book.pcre.php)
+- Tutorial interativo de regex: [Regex101](https://regex101.com/)
+- Artigo sobre expressões regulares: [Regular Expressions in PHP](https://www.phpliveregex.com/)

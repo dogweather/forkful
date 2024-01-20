@@ -1,7 +1,7 @@
 ---
-title:                "Utilizzare le espressioni regolari"
-html_title:           "Fish Shell: Utilizzare le espressioni regolari"
-simple_title:         "Utilizzare le espressioni regolari"
+title:                "Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
+simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
 tag:                  "Strings"
@@ -10,39 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Cosa & Perché? 
+## What & Why? (Cosa & Perché?)
+Le espressioni regolari, o regex, sono pattern che aiutano a identificare sequenze di caratteri all'interno di stringhe di testo con grande flessibilità, adattandosi ai vari casi con precisione. I programmatori le usano per effettuare ricerche complesse, convalidare dati, e manipolare testo in maniera efficiente.
 
-Usare le espressioni regolari (regex) è una pratica comune tra i programmatori per gestire e manipolare dati di testo. Questi sono modelli di ricerca che consentono di trovare e sostituire testo in modo efficiente in un file o in una stringa di testo. I regex possono essere utilizzati in molti linguaggi di programmazione, incluso Fish Shell.
+## How to: (Come fare:)
+```Fish Shell
+# Ricerca di parole che iniziano con 'es' e finiscono con 'oni'
+echo "espressioni estensioni esami esagoni" | string match -r 'es\w*oni'
 
-## Come fare:
-
-Utilizzare le espressioni regolari in Fish Shell è semplice e molto simile ad altri linguaggi di programmazione. Di seguito sono riportati alcuni esempi di codice e il loro output utilizzando le espressioni regolari in Fish Shell.
-
-```
-Fish Shell> string='La mia password è p@ssw0rd'
-Fish Shell> echo $string | grep -o '\S*@'     
-p@ssw0rd
-```
-
-In questo esempio, utilizziamo `grep` per estrarre la nostra password dalla stringa utilizzando l'espressione regolare `'\S*@'`, che significa "trova qualsiasi sequenza di caratteri non vuoti seguita da una @". Il risultato che otteniamo è la nostra password, risolta correttamente.
-
-```
-Fish Shell> string='Maria ha 30 anni, Giovanni ne ha 25.'
-Fish Shell> echo $string | grep -o '\d\d'
-30
-25
+# Output:
+espressioni
+estensioni
 ```
 
-In questo secondo esempio, utilizziamo nuovamente `grep` per trovare tutti i numeri all'interno della stringa, utilizzando il comando `'\d\d'`, che significa "trova qualsiasi sequenza di due numeri consecutivi". Il risultato è l'elenco dei numeri trovati nella stringa.
+```Fish Shell
+# Sostituzione di 'windows' con 'linux' in una frase
+set frase "Preferisco usare windows al posto di linux"
+echo $frase | string replace -r 'windows' 'linux'
 
-## Approfondimento:
+# Output:
+Preferisco usare linux al posto di linux
+```
 
-Le espressioni regolari sono state originariamente sviluppate negli anni '50 e sono state successivamente incorporate in molti linguaggi di programmazione. Alcuni altri strumenti utilizzati per il matching di pattern nei testi sono AWK e SED.
+```Fish Shell
+# Validazione di indirizzi email formati correttamente
+echo "mario.rossi@example.com ciao@example m.rossi@ex@ample.com" | string match -r '([A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,6})'
 
-Inoltre, è importante notare che l'uso delle espressioni regolari può differire leggermente tra i vari linguaggi di programmazione. Ad esempio, in Fish Shell, è possibile utilizzare `egrep` invece di `grep`, per ottenere una versione estesa di `grep` che supporta sintassi delle espressioni regolari aggiuntive.
+# Output:
+mario.rossi@example.com
+```
 
-Per approfondire l'uso delle espressioni regolari in Fish Shell, è possibile consultare la documentazione ufficiale sul sito [Fish Shell](https://fishshell.com/docs/current/guides.html).
+## Deep Dive (Approfondimento)
+Le regex esistono da decenni, evolvendo dai semplici wildcard a sistemi complessi gestiti dai moderni motori regex come quelli di Perl e PCRE (Perl Compatible Regular Expressions). Fish Shell non include un motore regex proprio ma utilizza comandi come `string match`, che usa le regex di sistema. Ci sono alternative come grep, sed, e awk, ma `string` in Fish è più coerente con il suo design moderno e user-friendly. Per l'implementazione, Fish usa regex ERE (Espressioni Regolari Estese) che sono potenti e flessibili.
 
-## Vedi anche:
-
-- [Utilizzare AWK per operazioni con i dati di testo](https://www.gnu.org/software/gawk/manual/gawk.html#AWK-Introduction)
+## See Also (Vedi Anche)
+- La documentazione ufficiale di Fish sulla manipolazione di stringhe: [fishshell.com/docs/current/cmds/string.html](https://fishshell.com/docs/current/cmds/string.html)
+- Una guida interattiva alle regex: [regexr.com](https://regexr.com/)
+- Il manuale di PCRE per approfondire l’uso delle regex: [pcre.org](https://www.pcre.org/)

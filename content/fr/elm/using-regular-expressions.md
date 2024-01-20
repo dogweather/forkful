@@ -1,7 +1,7 @@
 ---
-title:                "Utilisation des expressions régulières."
-html_title:           "Elm: Utilisation des expressions régulières."
-simple_title:         "Utilisation des expressions régulières."
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,31 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi le faire?
+## Quoi et Pourquoi ?
+Les expressions régulières filtrent et manipulent du texte selon un schéma défini. Les développeurs les utilisent pour la recherche, la validation, et le traitement de données textuelles de manière rapide et concise.
 
-Les expressions régulières sont un outil utile pour rechercher et manipuler des motifs de texte. Les programmeurs les utilisent pour effectuer des opérations telles que la validation de formats de saisie utilisateur, le filtrage de données et la recherche de mots-clés dans du texte.
-
-## Comment faire:
-
-Utiliser des expressions régulières en Elm est assez simple. Tout d'abord, importez le module `Regex` dans votre fichier. Ensuite, utilisez la fonction `Regex.regex` pour créer un objet de type `Regex` en passant un motif de texte comme argument. Vous pouvez ensuite utiliser les fonctions `Regex.find` ou`Regex.replace` pour effectuer des opérations de recherche ou de remplacement avec votre expression régulière.
-
-```
-Elm
+## Comment faire :
+```Elm
 import Regex
 
--- Crée un objet Regex pour rechercher "elm"
-rechercheRegex = Regex.regex "elm"
+-- Trouver des mots qui commencent par "Elm"
+let
+    regex = Maybe.withDefault Regex.never <| Regex.fromString "^Elm\\w*"
+in
+    Regex.find regex "Elm est super. ElmLang rocks!"
+-- Résultat : [Match {match = "Elm", index = 0, submatches = []}, Match {match = "ElmLang", index = 14, submatches = []}]
 
--- Effectue une recherche dans le texte "Ce cours est pour vous, novice d'Elm!"
-Regex.find rechercheRegex "Ce cours est pour vous, novice d'Elm!"
-
--- Résultat: Juste (Ok (Match "elm"))
+-- Vérifier si un format de courriel est valide
+let
+    regex = Maybe.withDefault Regex.never <| Regex.fromString "^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$"
+in
+    Regex.contains regex "exemple@domaine.com"
+-- Résultat : True
 ```
 
-## Plongée en profondeur:
+## Plongée en Profondeur
+Historiquement, les expressions régulières datent des années 1950, mais leur popularité a augmenté avec les langages de script dans les années 1980. En Elm, `Regex` est un module core qui offre une interface typée aux expressions régulières. Des alternatives incluent l'usage de fonctions de chaîne de caractères ou des bibliothèques tierces pour des cas simples. Elm gère les expressions régulières dans une manière sûre et prévisible, évitant les pièges commun à d'autres langages comme le "backtracking" excessif.
 
-Les expressions régulières sont basées sur une notation appelée "expressions régulières". Elles ont été inventées par un informaticien américain Kenneth Thompson dans les années 1950. Bien qu'elles soient largement utilisées dans les langages de programmation, il existe d'autres outils tels que les lexiques basés sur les expressions régulières et d'autres langages spécifiques à un domaine.
-
-## Voir aussi:
-
-Pour en savoir plus sur les expressions régulières en Elm, vous pouvez consulter la documentation officielle sur le module `Regex` : https://package.elm-lang.org/packages/elm/regex/latest/Regex. Vous pouvez également trouver utile de consulter des ressources supplémentaires telles que https://regexone.com/ pour apprendre davantage sur les motifs de texte et leur utilisation dans les expressions régulières.
+## Voir Aussi
+- Documentation Elm de `Regex`: https://package.elm-lang.org/packages/elm/core/latest/Regex
+- MDN Web Docs sur les expressions régulières: https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Regular_Expressions
+- Elm Lang Slack pour poser des questions: http://elmlang.herokuapp.com/

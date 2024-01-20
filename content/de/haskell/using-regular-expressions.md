@@ -1,7 +1,7 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
-html_title:           "Bash: Reguläre Ausdrücke verwenden"
-simple_title:         "Reguläre Ausdrücke verwenden"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -11,26 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Reguläre Ausdrücke sind Muster, um Text nach bestimmten Regeln zu durchsuchen und zu bearbeiten. Programmierer nutzen sie, weil sie leistungsstark sind und komplexe Textoperationen vereinfachen.
 
-Reguläre Ausdrücke (Regular Expressions oder Regex) werden verwendet, um Muster in Strings zu finden und zu manipulieren. Sie sind ungemein nützlich für Textverarbeitungsaufgaben und Datenvalidierung.
-
-## Wie man:
-
-Verwenden Sie in Haskell das Modul `Text.Regex.Posix` für Regex-Operationen. Hier ist ein einfaches Beispiel:
+## How to:
+In Haskell verwenden wir das `regex` Paket, um mit regulären Ausdrücken zu arbeiten. Installiere es mit `cabal install regex-posix`. Hier sind einige Beispiele:
 
 ```Haskell
 import Text.Regex.Posix
 
-main = putStrLn $ show ("1234" =~ "[0-9]+" :: Bool)
+-- Überprüfung, ob ein Text einem Muster entspricht
+"hello world" =~ "hello" :: Bool
+-- True
+
+-- Ersetze alle Instanzen von "world" mit "Haskell"
+"hello world" =~ "world" :: String -> "hello Haskell"
+-- "hello Haskell"
+
+-- Extrahiere Zahlen aus einem String
+"Kaufe 3 Äpfel und 5 Bananen" =~ "[0-9]+" :: [[String]]
+-- [["3"], ["5"]]
 ```
 
-Ausführen dieses Codes gibt "`True`" zurück, da der String "`1234`" das Muster "`[0-9]+`" (ein oder mehr Ziffern) entspricht.
+## Deep Dive
+Reguläre Ausdrücke sind nicht neu. Sie entstanden in den 1950er Jahren und sind in vielen Programmiersprachen eingebettet. Alternativen zu regulären Ausdrücken sind Stringverarbeitungsfunktionen oder Parser-Kombinatoren, beispielsweise das Paket `parsec` in Haskell. Bei der Implementierung wird ein regulärer Ausdruck häufig in einen Zustandsautomaten übersetzt, der effizient Text verarbeiten kann.
 
-## Vertiefung:
-
-Reguläre Ausdrücke haben eine lange Geschichte, die bis in die 1950er Jahre zurückreicht und sind integraler Bestandteil vieler Programmiersprachen. In Haskell gibt es auch Alternativen wie Parsec und Megaparsec, die eine funktionalere Art der Textverarbeitung ermöglichen. Beim Arbeiten mit Regex in Haskell ist es wichtig zu wissen, dass diese Operationen die Unterstützung durch Posix Regex Bibliothek in Betriebssystemebene verwenden.
-
-## Siehe auch:
-
-- Eine vollständige Referenz von Regex-Syntax in [RegexOne](https://regexone.com/).
-- Die offizielle Dokumentation für die [Text.Regex.Posix](https://hackage.haskell.org/package/regex-posix) Bibliothek.
+## See Also
+- Haskell `regex-posix` Paket: https://hackage.haskell.org/package/regex-posix
+- Haskell Wiki über reguläre Ausdrücke: https://wiki.haskell.org/Regular_expressions
+- `parsec` Parsing-Bibliothek: https://hackage.haskell.org/package/parsec

@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "C: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Arduino: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Arduino"
 category:             "Arduino"
 tag:                  "Strings"
@@ -10,33 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi?
+## What & Why?
+Utiliser des expressions régulières, c’est chercher des patterns dans du texte. Les programmeurs s'en servent pour valider, rechercher et manipuler des données de façon efficace.
 
-Les expressions régulières sont des séquences de caractères formulant un motif de recherche. Les programmeurs les utilisent pour rechercher, correspondre et manipuler des chaînes de caractères dans le texte.
-
-## Comment:
-
-Écrivez l'expression régulière entre des guillemets pour commencer.
+## How to:
+Arduino n’a pas de support natif pour les expressions régulières, mais on peut utiliser la bibliothèque `Regexp` disponible via le Gestionnaire de bibliothèque. Voici comment matcher un motif simple.
 
 ```Arduino
-String data = "Arduino 2.34"; 
-Serial.println(data.matches("Arduino \\d\\.\\d\\d")); 
+#include <Regexp.h>
+
+void setup() {
+  Serial.begin(9600);
+
+  // Crée un objet MatchState
+  MatchState ms;
+  // La chaîne à analyser
+  char input[] = "Ceci est un test 1234.";
+  
+  // La pattern pour matcher des chiffres
+  ms.Target(input);
+  char result = ms.Match ("[0-9]+");
+
+  if (result > 0) {
+    char match[100];
+    ms.GetMatch(match, 0);
+    Serial.println(match); // Affiche les chiffres trouvés
+  } else {
+    Serial.println("Pas de chiffres trouvés.");
+  }
+}
+
+void loop() {
+  // Ici, le contenu ne change pas
+}
 ```
 
-Cela renverra `true` si votre chaîne correspond au motif que vous avez spécifié. Le `\\d` signifie un chiffre, donc nous cherchons le mot "Arduino" suivi d'un espace, d'un chiffre, d'un point et de deux autres chiffres.
+Exemple de sortie:
 
-## Plongée en Profondeur
+```
+1234
+```
 
-Historiquement, les expressions régulières ont des racines dans les mathématiques théoriques du XXe siècle. Conçues en 1956, elles sont devenues une caractéristique inévitable de nombreux langages de programmation. Cependant, Arduino n'a pas de support natif pour les expressions régulières, mais plusieurs bibliothèques tierces peuvent être utilisées.
+## Deep Dive
+Les expressions régulières existent depuis les années 1950. Arduino, manquant d'opérations sur les chaînes de caractères complexes, ne les intègre pas nativement. Les bibliothèques comme `Regexp` offrent une solution. Elles ne sont pas aussi performantes que celles intégrées dans des langages tels que Python ou JavaScript, mais elles suffisent pour des tâches simples en embarqué.
 
-En ce qui concerne les alternatives, vous pouvez utiliser la manipulation de chaînes classique, mais elle peut devenir complexe pour les motifs plus difficiles à gérer.
-
-Concernant la mise en œuvre, la correspondance de motif implique souvent un backtracking, un processus récursif qui peut être coûteux en termes de performance, il est donc important d'utiliser judicieusement les expressions régulières.
-
-## Voir Aussi
-
-Pour plus d'informations sur la programmation Arduino avec les expressions régulières, vous pouvez consulter les sources suivantes :
-
-- Site officiel d'Arduino : https://www.arduino.cc/
-- Documentation des expressions régulières : https://regexone.com/
-- Stack Overflow en Français : https://fr.stackoverflow.com/questions/tagged/arduino.
+## See Also
+- [Documentation Arduino sur les strings](https://www.arduino.cc/reference/en/language/variables/data-types/string/)
+- [Bibliothèque `Regexp` pour Arduino](https://github.com/nickgammon/Regexp)
+- [Tutorial sur les expressions régulières](http://www.regular-expressions.info/tutorial.html)

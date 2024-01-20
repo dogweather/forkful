@@ -1,7 +1,7 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
-html_title:           "Bash: Reguläre Ausdrücke verwenden"
-simple_title:         "Reguläre Ausdrücke verwenden"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Clojure"
 category:             "Clojure"
 tag:                  "Strings"
@@ -11,35 +11,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Reguläre Ausdrücke sind Muster, die zum Suchen und Ersetzen von Text dienen. Programmierer verwenden sie, um Daten zu analysieren und zu manipulieren, da sie leistungsstark und flexibel sind.
 
-Regular Expressions (RegEx) sind Muster, die helfen, Zeichenketten darzustellen und zu suchen. Programmierer nutzen sie, um effizienter Code zu schreiben und wiederholte Muster in Strings zu finden oder zu ersetzen.
-
-## Wie geht das:
-
-Mit Clojure können wir RegEx nutzen, um komplexe Such- und Ersetzungsvorgänge auszuführen. Hier ist ein einfaches Beispiel:
-
+## How to:
 ```Clojure
-(re-seq #"\w+" "Hallo, Welt!")
+;; Matching a pattern
+(re-find #"\bClojure\b" "I love programming in Clojure!")
+; => "Clojure"
+
+;; Splitting a string at each whitespace
+(re-seq #"\s+" "Split this string at spaces")
+; => (" " " " " " " ")
+
+;; Replacing all occurrences of a pattern
+(clojure.string/replace "Replace dashes-with spaces" #"-+" " ")
+; => "Replace dashes with spaces"
+
+;; Extracting all words from a string
+(re-seq #"\w+" "Find all words in 2023!")
+; => ("Find" "all" "words" "in" "2023")
 ```
 
-Dieses Code-Schnipsel findet alle Worte in dem gegebenen String. Die Ausgabe sieht so aus:
+## Deep Dive
+Reguläre Ausdrücke entstanden in den 1950ern und wurden durch Tools wie grep in Unix populär. Alternativen wie String-Manipulationsfunktionen oder Parsers bieten oft mehr Lesbarkeit und Wartbarkeit. Clojure's `re-find`, `re-seq`, und Funktionen des `clojure.string` Namespaces implementieren reguläre Ausdrücke effizient, indem sie auf Java's `java.util.regex` API aufbauen.
 
-```Clojure
-("Hallo" "Welt")
-```
-
-## Tiefer Eintauchen:
-
-RegEx gibt es schon lange. In den 1950ern entwickelten Wissenschaftler sie, um die Verarbeitung von Zeichenketten zu verbessern. In Clojure verwenden wir den #"..." Syntax für RegEx, der bindungslos ist.
-
-Alternativen zu RegEx sind Tools wie Texteditoren oder Shell-Skripte, aber wegen der Macht und Flexibilität von RegEx sind sie oft die erste Wahl. Trotzdem, bei sehr komplexen Mustern kann RegEx unübersichtlich und schwierig zu warten sein.
-
-Die Implementierung von RegEx in Clojure basiert auf der Java Struktivierung. Weil Java RegEx auch unterstützt, kann Clojure auf dieses mächtige Werkzeug zugreifen und seine Vorteile nutzen.
-
-## Siehe auch:
-
-Für weitere Informationen, hier einige Links:
-
-- Clojure Doku: https://clojure.org/guides/weird_characters
-- Java RegEx: https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html
-- Praktischer Leitfaden für RegEx: https://www.regular-expressions.info/tutorial.html
+## See Also
+- ClojureDocs zu regulären Ausdrücken: https://clojuredocs.org/clojure.core/re-find
+- Java Pattern Klasse Dokumentation: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html
+- Online Regex Tester und Debugger: https://regex101.com/

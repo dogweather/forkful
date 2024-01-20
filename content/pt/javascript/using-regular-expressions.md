@@ -1,6 +1,6 @@
 ---
 title:                "Utilizando expressões regulares"
-html_title:           "Javascript: Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Javascript"
 category:             "Javascript"
@@ -10,22 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que é e por que usamos Expressões Regulares?
-Expressões Regulares (Regex) são sequências de caracteres que definem um padrão de texto a ser correspondido em uma string. Usando Regex, os programadores podem realizar operações de busca, substituição, validação e extração de informações de maneira mais eficaz e precisa. 
+## O Que São & Por Que Usar?
 
-## Como fazer:
-Você pode criar uma expressão regular em Javascript usando a classe RegExp ou por meio do uso de literais de expressão regular (entre barras ```/expressão/```). Por exemplo, ```/bola/``` irá corresponder a qualquer string que contenha a palavra "bola". Alguns caracteres especiais também são usados na criação de expressões regulares, como "^" para indicar o início de uma string e "$" para indicar o final. Através do método ```match()``` podemos testar se uma string corresponde a uma expressão regular, retornando um array contendo as correspondências encontradas. Por exemplo:
+Expressões regulares são padrões usados para encontrar combinações de caracteres em strings. Programadores usam-nas para validação de dados, busca e substituição de texto e para tarefas de análise de texto mais complexas, devido à sua poderosa flexibilidade.
 
-```Javascript
-var string = "Eu amo expressões regulares!"
-var regex = /amo/
-console.log(string.match(regex))
-// saída: ["amo"]
+## Como Fazer:
+
+```javascript
+// Validando um email
+const validarEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+console.log(validarEmail("exemplo@dominio.com")); // true
+console.log(validarEmail("exemplo@dominio")); // false
+
+// Encontrando todos os números em uma string
+const numeros = "Os números 2, 42 e 789 estão aqui.";
+const regexNumeros = /\d+/g;
+const resultado = numeros.match(regexNumeros);
+console.log(resultado); // ["2", "42", "789"]
 ```
 
 ## Mergulho Profundo:
-As expressões regulares têm sua origem na década de 1950, com a criação dos primeiros sistemas para processamento de texto. Hoje, diversas linguagens de programação têm suporte à utilização de expressões regulares, além de existirem ferramentas online para testá-las. Alternativas para o uso de expressões regulares incluem bibliotecas específicas de manipulação e validação de dados, como o Validator.js. Quanto à implementação em Javascript, as expressões regulares são suportadas em todos os navegadores modernos e é importante levar em consideração as diferenças entre maiúsculas e minúsculas na hora de fazer uma correspondência.
 
-## Veja também:
-- [Documentação oficial da classe RegExp em Javascript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/RegExp)
-- [Validator.js - biblioteca para validação de dados em Javascript](https://www.npmjs.com/package/validator)
+Historicamente, as expressões regulares têm suas raízes na teoria dos autômatos e na linguística formal. Linguagens de programação modernas, como JavaScript, implementam expressões regulares compatíveis com a sintaxe introduzida pelo Perl, que popularizou seu uso.
+
+Alternativas às expressões regulares incluem o uso de métodos de string como `indexOf`, `split` e `replace`, mas estes são geralmente mais limitados e menos potentes para padrões complexos.
+
+Quanto à implementação, JavaScript usa expressões regulares baseadas na biblioteca PCRE (Perl Compatible Regular Expressions). Uma expressão regular em JavaScript é um objeto `RegExp` que pode ser construído literalmente ou através de um construtor.
+
+## Veja Também:
+
+- MDN Web Docs sobre expressões regulares em JavaScript: [MDN RegExp](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Livro "Expressões regulares - Uma abordagem divertida": [Casa do Código](https://www.casadocodigo.com.br/products/livro-regex)
+- Testador de expressões regulares online: [RegExr](https://regexr.com/)
+- Resumo de métodos e propriedades de `RegExp` no JavaScript: [JavaScript RegExp Reference](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)

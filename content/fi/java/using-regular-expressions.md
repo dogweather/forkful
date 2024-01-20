@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Java: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Java"
 category:             "Java"
@@ -10,40 +10,56 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Mitä & Miksi?
-Säännöllisten lausekkeiden käyttäminen on tärkeä osa Java-ohjelmoijan työkalupakkia. Se on tapa löytää ja manipuloida tiettyjä tekstejä helposti ja tarkasti. Ohjelmoijat käyttävät säännöllisiä lausekkeita esimerkiksi tietojen validointiin ja muokkaamiseen.
+## What & Why?
+Regulaarilausekkeet (regular expressions) on hakemisto työkaluja tekstisyötteiden käsittelyyn. Ne auttavat löytämään, erottamaan, ja muuttamaan tekstiä tehokkaasti. Koodarit käyttävät niitä, koska ne säästävät aikaa ja tekevät monimutkaiset tekstihaasteet yksinkertaisiksi.
 
-# Miten:
+## How to:
+### Tekstin etsiminen
+Etsitään kaikki luvut annetusta tekstistä.
+```java
+import java.util.regex.*;
 
-Java-ohjelmointikielellä on sisäänrakennettu tuki säännöllisille lausekkeille. Voit käyttää niitä esimerkiksi String-luokan matches() -metodilla. Alla on muutamia esimerkkejä säännöllisten lausekkeiden käytöstä ja niiden tulosteista:
+public class RegexExample {
+    public static void main(String[] args) {
+        String text = "Tervetuloa ohjelmoimaan vuonna 2023!";
+        Pattern pattern = Pattern.compile("\\d+");
+        Matcher matcher = pattern.matcher(text);
 
-```Java
-// Tarkistetaan, onko teksti "Tervetuloa" säännöllinen lauseke "[a-zA-Z]+"
-boolean match = "Tervetuloa".matches("[a-zA-Z]+");
-
-// Tulostaa true
-System.out.println(match);
-
-// Etsitään kaikki numerot tekstistä "Ostoslista: 1. maito, 2. leipä, 3. kahvi"
-// ja tulostetaan ne yksi kerrallaan
-String teksti = "Ostoslista: 1. maito, 2. leipä, 3. kahvi";
-Pattern pattern = Pattern.compile("[0-9]+");
-Matcher matcher = pattern.matcher(teksti);
-while (matcher.find()) {
-    System.out.println(matcher.group());
+        while (matcher.find()) {
+            System.out.println(matcher.group());
+        }
+    }
 }
-
-// Tuloste:
-// 1
-// 2
-// 3
+```
+Tulostus:
+```
+2023
 ```
 
-# Syvemmälle:
-Säännölliset lausekkeet ovat olleet osa ohjelmointia jo pitkään ja niitä löytyy useista eri kielistä. Java on ottanut ne käyttöön jo vuodesta 1995. Säännöllisten lausekkeiden lisäksi on olemassa myös muita tapoja käsitellä merkkijonoja, kuten String-luokan substring() -metodi.
+### Tekstin korvaaminen
+Korvataan kaikki välimerkit tyhjällä merkkijonolla.
+```java
+public class RegexReplace {
+    public static void main(String[] args) {
+        String text = "Hei, miten menee? Oletko ohjelmoija!";
+        String modifiedText = text.replaceAll("\\p{Punct}", "");
+        System.out.println(modifiedText);
+    }
+}
+```
+Tulostus:
+```
+Hei miten menee Oletko ohjelmoija
+```
 
-Säännölliset lausekkeet ovat erittäin hyödyllisiä silloin, kun tekstien käsittely vaatii tarkkaa ja monimutkaista haku- ja muokkaustoimintoa. Niiden avulla voi esimerkiksi validoida käyttäjän syöttämiä tietoja ja etsiä tietyiä osia suurista tekstimassoista.
+## Deep Dive
+Regulaarilausekkeet otettiin käyttöön 1950-luvulla ja ovat sittemmin kehittyneet. Java käyttää `java.util.regex` pakettia regexp-tukeen. Vaihtoehtoisia menetelmiä tekstinkäsittelyyn on kuten `String`-luokan metodeja, mutta ne eivät yllä regulaarilausekkeiden joustavuuteen ja voimaan. Suorituskyvyn kannalta on hyvä muistaa, että regulaarilausekkeiden tehokkuus riippuu paljon niiden monimutkaisuudesta ja käytetystä JDK:sta.
 
-# Katso myös:
-- Java String-luokan javadoc: https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/lang/String.html
-- Regular-Expressions.info sivusto: https://www.regular-expressions.info/
+## See Also
+Java regulaarilausekkeista lisää:
+- [Oracle's official Java tutorials on regex](https://docs.oracle.com/javase/tutorial/essential/regex/)
+- [regular-expressions.info Tutorial](https://www.regular-expressions.info/tutorial.html)
+
+Haluatko testata regulaarilausekkeita helposti?
+- [RegExr](https://regexr.com/) - Sivusto regulaarilausekkeiden testaamiseen ja opetteluun.
+- [Regex101](https://regex101.com/) - Regulaarilausekkeiden testaustyökalu ja oppimisympäristö.

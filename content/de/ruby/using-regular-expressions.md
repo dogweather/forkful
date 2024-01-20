@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Ruby: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -11,26 +11,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind Muster oder Musterfolgen, die verwendet werden, um Text zu suchen und zu manipulieren. Programme nutzen reguläre Ausdrücke, um eine effiziente und präzise Möglichkeit zu haben, bestimmte Zeichenkombinationen im Text zu finden und zu bearbeiten.
+Reguläre Ausdrücke, kurz Regex, sind Muster zur Textsuche und -manipulation. Sie sind mächtig für das Parsen von Strings, Validieren von Eingaben und das Filtern von Daten.
 
 ## Wie geht das:
-Um reguläre Ausdrücke in Ruby zu verwenden, benutze die `=~` Operator und zwei forward Slashes (/ /) um den Ausdruck anzugeben, den du suchen möchtest. Hier ist ein einfaches Beispiel:
-
 ```Ruby
-str = “Hallo, ich bin ein Ruby Programmierer!”
-if str =~ /Hallo/
-  puts “Ich wurde gefunden!”
-else
-  puts “Leider nicht gefunden…”
-end
+text = "Ruby ist fantastisch. Ruby-Version 3.1.2"
+
+# Findet das Wort "Ruby"
+puts text.scan(/Ruby/)
+
+# Prüft, ob der String mit "Ruby" beginnt
+puts text.start_with?("Ruby")
+
+# Ersetzt "fantastisch" durch "großartig"
+puts text.gsub(/fantastisch/, 'großartig')
+```
+Ausgabe:
+```
+Ruby
+Ruby
+Ruby ist großartig. Ruby-Version 3.1.2
 ```
 
-Das obere Beispiel sucht nach dem Wort "Hallo" in der Variable `str`. Wenn es gefunden wird, wird die entsprechende Nachricht ausgegeben.
+## Tiefer Eintauchen:
+Reguläre Ausdrücke stammen aus der theoretischen Informatik und wurden in den 1950er-Jahren populär. Alternativen zu Regex sind spezialisierte Parser oder String-Funktionen, die allerdings oft weniger flexibel sind. Bei der Implementierung in Ruby wird meist die Bibliothek Oniguruma verwendet, die vollständige Regex-Funktionalität ermöglicht.
 
-## Tiefer in die Materie:
-Reguläre Ausdrücke wurden in den 50er Jahren entwickelt und fanden in den 60er Jahren ihren Weg in die Programmierung. Es gibt auch andere Optionen, um Text zu suchen und zu manipulieren, wie z.B. die Verwendung von String-Operationen in Ruby. Reguläre Ausdrücke bieten jedoch eine präzisere und effizientere Möglichkeit, komplexe Muster im Text zu finden und zu bearbeiten.
-
-Um reguläre Ausdrücke in Ruby zu implementieren, verwendet Ruby die Oniguruma-Bibliothek. Diese Bibliothek unterstützt alle regulären Ausdrucksoperatoren und bietet auch einige zusätzliche Funktionen, wie z.B. die Möglichkeit, bedingte Ausdrücke zu verwenden.
-
-## Sieh dir auch an:
-- [Reguläre Ausdrücke als Werkzeug für effiziente Textmanipulation](https://medium.com/free-code-camp/an-introduction-to-regular-expressions-regex-in-ruby-5786cf8b900c)
+## Siehe auch:
+- Ruby-Dokumentation zu Regex: [Ruby Regexp](https://ruby-doc.org/core-3.1.2/Regexp.html)
+- Online Regex Tester und Debugger: [Rubular](http://rubular.com/)
+- Regex Lernressourcen: [RegexOne](https://regexone.com/)

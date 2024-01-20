@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Elm: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -10,20 +10,45 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
-정규 표현식을 사용하는 것은 문자열에서 특정 패턴을 찾아내는 방법입니다. 프로그래머들은 이를 자주 사용하는 이유는 문자열 처리가 필요한 다양한 경우에 유용하기 때문입니다.
+## What & Why? (무엇과 왜?)
+정규 표현식은 문자열에서 패턴을 찾기 위한 표현 방법입니다. 프로그래머들은 데이터 검증, 검색 및 문자열 조작을 자동화하기 위해 사용합니다.
 
-## 방법:
-Elm에서 정규 표현식을 사용하는 과정은 간단합니다. 문자열에 매칭되는 패턴을 정의하고, 이를 활용하여 문자열을 검색하거나 수정할 수 있습니다. 예를 들어, 다음 코드는 문자열에서 숫자만 추출하는 예제입니다.
+## How to: (방법)
+Elm에서 정규 표현식을 사용하는 예시 코드와 결과를 보여드립니다.
+
 ```Elm
-import Regex
+import Regex exposing (fromString, find, Match)
 
-Regex.find Regex.AllNumbers "Hello world 123" == Just "123"
+findNumbers : String -> List Match
+findNumbers text =
+    let
+        numberRegex = fromString "\\d+"
+    in
+    case numberRegex of
+        Nothing ->
+            []
+
+        Just regex ->
+            find regex text
+
+-- 샘플 사용법
+sampleText : String
+sampleText =
+    "각 숫자는 123과 456이 있다."
+
+-- 샘플 출력
+sampleOutput : List Match
+sampleOutput =
+    findNumbers sampleText
+-- Output: [ Match (0, 3, "123", []), Match (7, 10, "456", []) ]
 ```
 
-## 자세히 살펴보기:
-정규 표현식은 1950년대에 개발된 이후로 컴퓨터 지원 언어에서 많이 사용되었습니다. 현재는 문자열 처리 뿐만 아니라 데이터 유효성 검사 등에서도 널리 사용되고 있습니다. 다른 언어에서도 정규 표현식을 사용할 수 있지만, Elm의 표현식은 간결하고 강력한 장점을 가지고 있습니다. 정규 표현식은 문자열에 대한 변경을 하기 위해 많은 반복 작업을 필요로 하는 다른 방식과 비교할 때 더욱 효율적입니다.
+## Deep Dive (심층적인 이해)
+정규 표현식은 1950년대에 발명되어 컴퓨팅의 다양한 분야에서 중요한 역할을 합니다. Elm에서는 `Regex` 모듈을 사용해 정규 표현식을 처리합니다. 다른 대안으로 문자열 처리 함수나 파서(combinator) 라이브러리를 사용할 수 있습니다. 에러 처리를 위해 `Nothing`과 `Just` 패턴을 사용, 가독성과 안정성을 도모합니다.
 
-## 관련 자료:
-- [Elm 정규 표현식 공식 문서](https://package.elm-lang.org/packages/elm/regex/latest/)
-- [정규 표현식 소개 영상](https://www.youtube.com/watch?v=8CEYlKUCN-k)
+## See Also (더 보기)
+정규 표현식과 관련된 추가 자료를 찾으려면 다음 링크를 참조하세요.
+
+- Elm `Regex` 모듈의 공식 문서: [Elm Regex Documentation](http://package.elm-lang.org/packages/elm-lang/core/latest/Regex)
+- 정규 표현식을 직접 테스트해볼 수 있는 온라인 툴: [Regex101](https://regex101.com)
+- 정규 표현식에 대한 자세한 튜토리얼: [Regular Expressions Tutorial](https://www.regular-expressions.info/tutorial.html)

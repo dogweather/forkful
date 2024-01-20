@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "C"
 category:             "C"
@@ -10,57 +10,54 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+Säännölliset lausekkeet (regex) auttavat tekstissä etsimisessä ja manipuloinnissa. Niitä käytetään, koska ne tekevät monimutkaisista kuvioista tunnistamisen ja korvaamisen nopeaksi ja helpoksi.
 
-Säännölliset lausekkeet (engl. regular expressions) ovat merkkijonohakutyökaluja, joilla voi löytää ja vaihtaa tietyt kuviot tekstistä. Ne säästävät ohjelmoijien aikaa ja energiaa, koska niiden avulla voidaan tehdä monimutkaisia hakuja ja manipulointeja teksteissä.
-
-## Kuinka:
+## How to:
 ```C
-#include <regex.h>   
 #include <stdio.h>
-#define MAX_MATCHES 1 // Määritellään maksimaalisten ottelujen määrä 
-
-void match_regex(char *to_search) {
-    regex_t regex_compiled;
-    regmatch_t group_array[MAX_MATCHES];
-
-    if (regcomp(&regex_compiled, "[a-z]+", REG_EXTENDED)) {
-        printf("Could not compile regular expression.\n");
-        return;
-    };
-    
-    if (regexec(&regex_compiled, to_search, MAX_MATCHES, group_array, 0) == 0)  {
-        char source_copy[strlen(to_search) + 1];
-        strcpy(source_copy, to_search);
-        source_copy[group_array[0].rm_eo] = 0;
-        printf("Matched: %s\n", source_copy + group_array[0].rm_so);
-    } else {
-        printf("No matches found.\n");
-    }
-    
-    // Muistin vapautus
-    regfree(&regex_compiled);
-}
+#include <regex.h>
 
 int main() {
-    match_regex("lautaselle");
-    match_regex("opeinohjelmoimaan");
+    regex_t regex;
+    int reti;
+    char msgbuf[100];
+    
+    // Kompiloidaan säännöllinen lauseke
+    reti = regcomp(&regex, "^a[[:alnum:]]", 0);
+    if (reti) {
+        fprintf(stderr, "Ei voitu kompiloida regexiä\n");
+        return 1;
+    }
+
+    // Suoritetaan regex vertailu
+    reti = regexec(&regex, "abc123", 0, NULL, 0);
+    if (!reti) {
+        puts("Sopii!");
+    }
+    else if (reti == REG_NOMATCH) {
+        puts("Ei vastaa.");
+    }
+    else {
+        regerror(reti, &regex, msgbuf, sizeof(msgbuf));
+        fprintf(stderr, "Regex virhe vertailussa: %s\n", msgbuf);
+        return 1;
+    }
+
+    // Vapautetaan varattu muisti regexille
+    regfree(&regex);
     return 0;
 }
 ```
-Otosta:
+Output:
 ```
-Matched: lautaselle
-Matched: opeinohjelmoimaan
+Sopii!
 ```
 
-## Syvällinen sukellus
+## Deep Dive
+Säännölliset lausekkeet juontavat juurensa teoreettiseen tietojenkäsittelytieteeseen 1950-luvulta. Vaihtoehtoja niille tarjoavat kuvioiden tunnistamiseen tarkoitetut kirjastot tai kielet, kuten SQL 'LIKE' tai XPath. C-kielessä POSIX regex -kirjasto tarjoaa työkalut säännöllisten lausekkeiden käsittelyyn.
 
-Säännöllisiä lausekkeita ovat käyttäneet ohjelmoijat jo vuodesta 1956, kun ne esiteltiin automaattiteorian osana. Vaihtoehtoja on useita eri kieliä ja kirjastoja, kuten Perl, Python ja JavaScript. C:ssä säännöllisten lausekkeiden toteutus löytyy POSIX-kirjastosta. Säännölliset lausekkeet ovat tehokkaita, mutta niillä on haasteensa, kuten ylläpidettävyyden vaikeus ja heikko luettavuus. Naive-suodin voi olla parempi vaihtoehto yksinkertaisille kuvioille.
-
-## Katso myös
-
-* Ohjelmoinnin säännölliset lausekkeet (Wikipedia): https://fi.wikipedia.org/wiki/Säännöllinen_lauseke
-* POSIX regular expressions (GNU) : https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-* Mastering Regular Expressions (O'Reilly): https://www.oreilly.com/library/view/mastering-regular-expressions/0596528124/
-* RegexOne: Learn Regular Expressions: https://regexone.com/
+## See Also
+- POSIX regex manuaali: http://man7.org/linux/man-pages/man7/regex.7.html
+- Tutorial muiden regex-funktioiden käyttöstä: https://www.regular-expressions.info/posix.html
+- Säännöllisten lausekkeiden harjoittelutyökalu: https://regex101.com/

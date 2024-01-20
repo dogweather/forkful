@@ -1,6 +1,6 @@
 ---
 title:                "Utilizzo delle espressioni regolari"
-html_title:           "Bash: Utilizzo delle espressioni regolari"
+html_title:           "Arduino: Utilizzo delle espressioni regolari"
 simple_title:         "Utilizzo delle espressioni regolari"
 programming_language: "C#"
 category:             "C#"
@@ -10,16 +10,10 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Uso delle Espressioni Regolari in C#
-
-## Cosa & Perché?
-
-Le espressioni regolari, o regex, sono potenti strumenti utilizzati per identificare schemi in stringhe di testo. Consentono di effettuare complesse operazioni di ricerca, verifica e sostituzione su codici con semplicità e precisione.
+## Cosa e Perché?
+Le espressioni regolari (regex) filtrano e manipolano il testo. Vengono utilizzate per la loro potenza ed efficienza nell'eseguire matching e sostituzioni complesse in stringhe.
 
 ## Come Fare:
-
-Ecco un esempio di come usare le espressioni regolari in C#. Tutto ciò che devi fare è importare il modulo Regex e utilizzarlo!
-
 ```C#
 using System;
 using System.Text.RegularExpressions;
@@ -28,29 +22,27 @@ class Program
 {
     static void Main()
     {
-        string input = "Ciao, mi chiamo Mario e il mio numero di telefono è 123-456-7890.";
-        Regex regex = new Regex(@"\d{3}-\d{3}-\d{4}");
-        Match match = regex.Match(input);
+        string testo = "Salve, il mio numero è: 123-45-6789.";
+        string pattern = @"\d{3}-\d{2}-\d{4}";
+
+        Match match = Regex.Match(testo, pattern);
         
-        if (match.Success)
+        if(match.Success)
         {
-            Console.WriteLine("Il numero di telefono rilevato è: " + match.Value);
+            Console.WriteLine($"Numero trovato: {match.Value}");
         }
     }
 }
 ```
-Questo programma stamperà: `Il numero di telefono rilevato è: 123-456-7890`.
+Output:
+```
+Numero trovato: 123-45-6789
+```
 
 ## Approfondimento
+Le espressioni regolari sono nate negli anni '50. Alternativa alle regex sono le classiche funzioni stringa, però meno potenti per compiti complessi di matching. Le regex in C# sono implementate nel namespace `System.Text.RegularExpressions` e sono basate sulle regex Perl.
 
-Le espressioni regolari sono presenti nella programmazione sin dagli albori. Sono uno strumento ereditato dalla teoria della computazione, diffuso in molti linguaggi di programmazione moderni, incluso C#.
-
-Ci sono alternative alle espressioni regolari per operazioni semplici, come l'uso di metodi stringa predefiniti per la ricerca o la sostituzione. Tuttavia, per operazioni più complesse, le regex spesso offrono la soluzione più flessibile ed efficiente.
-
-In C#, le espressioni regolari sono implementate nel modulo `System.Text.RegularExpressions`, che fornisce metodi per eseguire corrispondenze, ricerche e sostituzioni.
-
-## Per Saperne di Più
-
-Per ulteriori dettagli su come usare le espressioni regolari in C#, visita la [documentazione ufficiale di Microsoft](https://docs.microsoft.com/it-it/dotnet/api/system.text.regularexpressions.regex?view=net-6.0).
-
-Per approfondimenti sulla teoria delle espressioni regolari e su come comporre i tuoi modelli, consulta [Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html).
+## Vedi Anche
+- [MSDN Documentation on Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
+- [Regex Tester and Debugger](https://regex101.com/)
+- [Regex Quick Reference](https://www.rexegg.com/regex-quickstart.html)

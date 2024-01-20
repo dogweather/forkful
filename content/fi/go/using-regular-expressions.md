@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Go: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Go"
 category:             "Go"
@@ -10,40 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mikä ja Miksi?
+## What & Why?
+Regular expressions (regex) ovat kuvioiden haku- ja manipulointimenetelmiä, joita käytetään tekstin käsittelyssä. Ohjelmoijat käyttävät regexejä, koska ne tekevät monimutkaisten merkkijonojen etsinnästä ja valvonnasta tehokasta ja joustavaa.
 
-Säännöllisten lausekkeiden käyttö on tapa etsiä ja korvata tekstissä esiintyviä merkkijonoja tiettyjen sääntöjen mukaan. Ohjelmoijat käyttävät tätä työkalua parantaakseen koodin tehokkuutta ja tarkkuutta.
-
-## Kuinka tehdä:
-
-Koodiesimerkit ja näytetulosteet:
-
-```Go
+## How to:
+```
 package main
 
 import (
-    "fmt"
-    "regexp"
+	"fmt"
+	"regexp"
 )
 
 func main() {
-    // Luodaan säännöllinen lauseke, joka etsii kaikki sanat, jotka alkavat kirjaimella "G"
-    pattern := regexp.MustCompile(`\bG\w+`)
-    phrase := "Go programming is great!"
-    // Etsitään lausekkeen avulla sana, joka alkaa kirjaimella "G" ja tulostetaan se
-    result := pattern.FindString(phrase)
-    fmt.Println(result)
-    // => "Go programming"
+	// Esimerkki: Sähköpostiosoitteen validoiminen regexillä
+	emailRegex := regexp.MustCompile(`^[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,4}$`)
+	email := "esimerkki@domain.fi"
+
+	match := emailRegex.MatchString(email)
+	fmt.Println("Onko sähköpostiosoite kelvollinen:", match)
+	// Tulostus: Onko sähköpostiosoite kelvollinen: true
+
+	// Esimerkki: Merkkijonojen etsiminen ja korvaaminen
+	text := "Go on mahtava kieli. Go-kehittäjät rakastavat Go:n selkeyttä."
+	regex := regexp.MustCompile(`Go`)
+	newText := regex.ReplaceAllString(text, "Golang")
+	fmt.Println(newText)
+	// Tulostus: Golang on mahtava kieli. Golang-kehittäjät rakastavat Golang:n selkeyttä.
 }
 ```
 
-## Syväluotaus:
+## Deep Dive
+Regex syntaksi on kehittynyt useiden vuosikymmenten aikana, Unix-järjestelmästä alkaen. Vaikka Go:n regex-kirjasto ei ole yhtä tehokas kuin joissakin muissa kielissä, kuten Perlissä, se sopii useimpiin perustarpeisiin. Vaihtoehtoisia kirjastoja, kuten RE2, löytyy suorituskykyä vaativiin tehtäviin. Go:n regex-kirjasto tekee kompromisseja nopeuden ja muistinkäytön suhteen, mutta on turvallinen reentrancy- ja backtracking-ongelmien kannalta.
 
-Säännölliset lausekkeet ovat olleet olemassa jo vuosikymmeniä ja ne ovat edelleen suosittu työkalu ohjelmoinnissa. On myös vaihtoehtoja, kuten positiivisen ja negatiivisen katkelman tunnistimet, mutta säännölliset lausekkeet tarjoavat laajemman valikoiman ominaisuuksia.
-
-Go-kielessä säännölliset lausekkeet on toteutettu käyttäen pakettia "regexp", joka tarjoaa helpon ja tehokkaan tavan käsitellä tekstiä. Lausekkeet voivat sisältää erilaisia ​​operaattoreita ja metakaraktereita, jotka tekevät niistä erittäin monipuolisia työkaluja.
-
-## Katso myös:
-
-- "regexp" -pakettidokumentaatio: https://golang.org/pkg/regexp/
-- Säännöllisten lausekkeiden opas: https://www.regular-expressions.info/
+## See Also
+- Go:n regex-paketin dokumentaatio: https://pkg.go.dev/regexp
+- Google's RE2 regex-moottori GitHubissa: https://github.com/google/re2
+- Regexperin visuaalinen regex-testeri: https://regexper.com/

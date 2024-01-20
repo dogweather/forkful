@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग"
-html_title:           "C: नियमित अभिव्यक्तियों का उपयोग"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,37 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## आमतौर पर आपने शायद नहीं सुना होगा, लेकिन रेगुलर एक्सप्रेशन्स का उपयोग योगदानकारियों के लिए काफी सामान्य है। चाहे आप किसी जोड़ स्ट्रिंग को खोजें या प्रोग्राम को डेटा को फिल्टर करने के लिए भी, रेगुलर एक्सप्रेशन्स आपको इस सब का आसान और अक्षम समाधान प्रदान करते हैं।
+## What & Why? (क्या और क्यों?)
 
-## कैसे करें:
+रेगुलर एक्सप्रेशंस, यानी कि सामान्य व्यंजक, पाठ को प्रोसेस करने का एक शक्तिशाली तरीका हैं। प्रोग्रामर्स इनका इस्तेमाल पैटर्न मिलान, खोज और डेटा संशोधन के लिए करते हैं।
+
+## How to: (कैसे करें:)
+
 ```C
 #include <stdio.h>
 #include <regex.h>
 
 int main() {
     regex_t regex;
-    char *pattern = "apple";
-    char *input = "I love apples!";
-    regcomp(&regex, pattern, 0);
-    int result = regexec(&regex, input, 0, NULL, 0);
-    if (result == 0) {
-        printf("Input में pattern मिल गया!");
+    int return_value;
+    char *pattern = "^शु.+म$";
+    char *test_string = "शुभकामनाएं";
+
+    // रेगुलर एक्सप्रेशन तैयार करें
+    return_value = regcomp(&regex, pattern, REG_EXTENDED);
+
+    // टेस्ट करें
+    return_value = regexec(&regex, test_string, 0, NULL, 0);
+
+    if (return_value == 0) {
+        printf("पैटर्न मिला: %s\n", test_string);
     } else {
-        printf("Input में pattern नहीं मिला।");
+        printf("पैटर्न नहीं मिला.\n");
     }
+
+    // रेगुलर एक्सप्रेशन मुक्त करें
     regfree(&regex);
+    
     return 0;
 }
 ```
 
-उपरोक्त कोड में, हमने रेगुलर एक्सप्रेशन का उपयोग करके "apple" को ढूंढने का प्रयास किया है और उसे मिलने या ना मिलने की सूचना दी है। आप अपने विशेषाधिकार के अनुसार इनपुट और पैटर्न को बदल सकते हैं।
+```output
+पैटर्न मिला: शुभकामनाएं
+```
 
-## गहराई में जाएं:
-रेगुलर एक्सप्रेशन शब्द शुरू से ही इंगित होता है कि ये कुछ सामान्य है और जोड़ के रूप में स्ट्रिंग को खोजने के लिए हार्डकोड करना या उसे खोजने के लिए प्रवेश शब्द का उपयोग करना कोई चुनौती नहीं है। यह आमतौर पर डेटा को फिल्टर करने या संशोधित करने के लिए उपयोग किया जाता है। अल्टर्नेटिव के रूप में, परोयोजना के अभिकल्प और परिभाषाएं हो सकती हैं, संप्रति में, पश्चिम से रूट किए गए "ग्रिप" और "सेड" काफी लोकप्रिय हैं। रेगुलर एक्सप्रेशन लोगों को इसे प्रयास करने के लिए भी अनुमोदन करती हैं, यानी आप उसकी मदद से रेगुलर एक्सप्रेशन स्ट्रिंग्स का उपयोग कर सकते हैं।
+## Deep Dive (गहराई से जानकारी)
 
-## देखें भी:
-- [regex.h संदर्भ दस्तावेज़ीकरण] (https://pubs.opengroup.org/onlinepubs/009695399/basedefs/regex.h.html)
-- [GNU glibc रेगुलर एक्सप्रेशन विशेषताएं] (https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
-- [Edsger Dijkstra का रेगुलर एक्सप्रेशनों पर विचार] (https://www.cs.utexas.edu/users/EWD/transcriptions/EWD08xx/EWD871.html)
+रेगुलर एक्सप्रेशन्स का विकास केन थॉम्पसन ने किया था और यह सबसे पहले Unix में प्रयुक्त हुए। विकल्प के रूप में, आप स्ट्रिंग खोज फंक्शन्स का इस्तेमाल कर सकते हैं, पर वे उतने शक्तिशाली नहीं होते। C लाइब्रेरी 'regex.h' प्रोग्रामिंग के लिए POSIX रेगुलर एक्सप्रेशन API प्रदान करती है।
 
-रेगुलर एक्सप्रेशन्स का उपयोग आसान और अक्षम समाधान प्रदान करने के लिए किया जाता है। हालांकि, आपको इसे खोजने या समझने में कुछ समय लग सकता है। इसलिए, अगर आपको किसी सूचना या मदद की आवश्यकता होती है
+## See Also (इसे भी देखें)
+
+- [GNU C Library Manual: Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [RegexOne: Learn Regular Expressions](https://regexone.com/)
+- [POSIX Regular Expressions](https://en.wikipedia.org/wiki/POSIX_basic_and_extended_regular_expressions)

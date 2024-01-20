@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Haskell: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,37 +10,58 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
+## O Que & Por Quê?
 
-Regular expressions (ou expressões regulares) são sequências de caracteres que definem um padrão de texto para serem procurados e manipulados em uma grande quantidade de dados. É uma ferramenta comum usada por programadores para fazer correspondências complexas de padrões de texto em seus scripts e aplicativos.
+Regular expressions, ou regex, são padrões usados para encontrar correspondências de texto. Programadores utilizam regex para busca e substituição de texto, validação de dados e análise sintática de cadeias de caracteres.
 
-## Como fazer:
+## Como Fazer:
 
-Os programadores podem usar a biblioteca "Text.Regex.TDFA" do Haskell para trabalhar com expressões regulares. Por exemplo, para verificar se uma string contém um número de telefone válido:
+Em Haskell, você pode usar o pacote `regex-posix` para trabalhar com regex. Aqui estão exemplos de código e saída mostrando como usar regex para encontrar correspondências de texto:
 
-```Haskell
-import Text.Regex.TDFA
+```haskell
+import Text.Regex.Posix
 
-telefone = "123-456-7890"
-padrao = "^\\(?\[0-9]{3}\\)?\[ -\]?\\[0-9]{3}\\[ -\]?\\[0-9]{4}$" :: String
+-- Verifica se uma string corresponde a um padrão regex
+corresponde :: String -> String -> Bool
+corresponde texto padrão = texto =~ padrão :: Bool
 
-if telefone =~ padrao then
-    putStrLn "Número de telefone válido!"
-else
-    putStrLn "Número de telefone inválido."
+main :: IO ()
+main = do
+    print $ "123abc" `corresponde` "[a-zA-Z]+"
+    print $ "abc" `corresponde` "[a-zA-Z]+"
 ```
 
 Saída:
+
 ```
-"Número de telefone válido!"
+False
+True
 ```
 
-## Deep Dive:
+Encontrando todas as correspondências em uma string:
 
-Expressões regulares têm suas origens na teoria da computação e em linguagens formais, mas se tornaram mais populares com o advento da linguagem Perl na década de 1980. Embora sejam poderosas e úteis, elas podem ser difíceis de ler e entender, especialmente para padrões mais complexos. Existem também outras alternativas para trabalhar com padrões de texto, como parsers combinadores. A implementação geralmente segue o algoritmo de correspondência de padrões de Thompson.
+```haskell
+-- Encontra todas as correspondências
+findMatches :: String -> String -> [String]
+findMatches texto padrão = texto =~ padrão :: [String]
 
-## Veja também:
+main :: IO ()
+main = do
+    print $ findMatches "a1 b2 c3" "[a-zA-Z]"
+```
 
-- [Documentação da biblioteca "Text.Regex.TDFA"](https://hackage.haskell.org/package/regex-tdfa/docs/Text-Regex-TDFA.html)
-- ["Expressões regulares em 5 minutos"](https://www.youtube.com/watch?v=Hztic4Y6ON0)
-- [Parsers combinadores no Haskell](https://wiki.haskell.org/Parsing_a_simple_imperative_language)
+Saída:
+
+```
+["a","b","c"]
+```
+
+## Visão Detalhada:
+
+O uso de regex em Haskell é suportado por vários pacotes, como `regex-posix` que segue POSIX regex, e `regex-pcre`, que oferece compatibilidade com a biblioteca PCRE. Regex surgiu nos anos 1950 com o matemático Stephen Kleene e evoluiu significativamente desde então. Alternativas para regex incluem parsers combinator e linguagens específicas de domínio (DSLs), que podem oferecer maior clareza e desempenho em determinados contextos. Internamente, regex é implementado utilizando automatos finitos para análise e correspondência de padrões.
+
+## Veja Também:
+
+- Documentação do regex-posix: [Hackage: regex-posix](https://hackage.haskell.org/package/regex-posix)
+- Tutorial Haskell sobre regex: [HaskellWiki: Regular expressions](https://wiki.haskell.org/Regular_expressions)
+- Comparação de regex e parser combinators: [Stack Overflow: Regex vs. Parser Combinators](https://stackoverflow.com/questions/30734615/regex-vs-parser-combinators)

@@ -1,7 +1,7 @@
 ---
-title:                "Bruke regulære uttrykk"
-html_title:           "Elm: Bruke regulære uttrykk"
-simple_title:         "Bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,36 +11,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Hva & Hvorfor?
-
-Regulære uttrykk er verktøy som hjelper programmerere å gjenkjenne, manipulere og matche tekststrenger. De brukes bringer effektivitet og presisjon i tekstbehandlingen.
+Regex, eller regulære uttrykk, lar deg søke etter mønstre i tekst. Programmerere bruker det for effektivt å finne, erstatte eller validere tekstdata.
 
 ## Hvordan:
-
-Her er noen grunnleggende eksempler på hvordan du kan bruke regulære uttrykk i Elixir.
+Bruk `Regex` modulen i Elixir:
 
 ```elixir
-# Matche et ord i en tekststreng
-Regex.match?(~r/hallo/, "Hallo verden") # ==> true
+text = "Elixir er magi for programmerere."
+pattern = ~r/programmerere/
 
-# Finn og erstatt tekst
-String.replace("Elixir er kult", ~r/kult/, "fantastisk") # ==> "Elixir er fantastisk"
+# Finne et match
+match = Regex.run(pattern, text)
+IO.inspect(match) # => ["programmerere"]
 
-# Splitt en tekststreng ved forhåndsdefinerte tegn
-String.split("En-to-tre", ~r/-/) # ==> ["En", "to", "tre"]
+# Finne alle matcher
+matches = Regex.scan(pattern, text)
+IO.inspect(matches) # => [["programmerere"]]
+
+# Erstatte tekst
+replaced_text = Regex.replace(pattern, text, "utviklere")
+IO.puts(replaced_text) # => "Elixir er magi for utviklere."
+
+# Sjekk om et mønster finnes i teksten
+if Regex.match?(pattern, text) do
+  IO.puts "Fant et match!"
+else
+  IO.puts "Ingen treff."
+end
 ```
 
-## Dypdykk 
+## Deep Dive
+Regular expressions har eksistert siden 1950-tallet og er integrert i mange programmeringsspråk. Alternativer inkluderer string-funksjoner, men de mangler fleksibiliteten til regex. Elixir bruker `Regex` modulen, som er basert på Erlangs `:re` modul og bygger på Perl Compatible Regular Expressions (PCRE)-biblioteket.
 
-Regulære uttrykk kommer fra teoretisk datavitenskap og har hundreårs historie bak seg. De er implementert i nesten all programmeringspråk, inkludert Elixir. Regex-modulen i Elixir bruker PCRE (Perl Compatible Regular Expressions) biblioteket som gir tilgang til avanserte sammenkoblingsfunksjoner.
-
-Alternativer til regulære uttrykk inkluderer strengmanipulasjoner ved hjelp av innebygde funksjoner og kraftigere parserbiblioteker. Men for de fleste praktiske behov gir regulære uttrykk et enkelt og kraftig alternativ.
-
-Elixir's regulære uttrykk er vanligvis 'greedy'. Det betyr at de vil trenge den lengste mulige matchen. Dette er viktig å huske når du designer dine mønstre.
-
-## Se Også 
-
-[Elixir offisielle Regex-dokumentasjon](https://hexdocs.pm/elixir/Regex.html)
-
-[PragDave's online kurs om Elixir](https://pragdave.podia.com/categories/elixir)
-
-[LearnElixir's Regex-utorial](https://www.learnelixir.tv/courses/elixir-foundations/episodes/elixir-regular-expressions)
+## See Also
+- [Elixir Regex Docs](https://hexdocs.pm/elixir/Regex.html)
+- [Erlang :re module](https://erlang.org/doc/man/re.html)
+- [Regular-Expressions.info](https://www.regular-expressions.info) for en omfattende guide.
+- [Rubular](http://rubular.com/) for å teste Regex mønstre i Ruby (nær Elixir).

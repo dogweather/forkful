@@ -1,6 +1,6 @@
 ---
 title:                "Utilisation des expressions régulières"
-html_title:           "Lua: Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
 simple_title:         "Utilisation des expressions régulières"
 programming_language: "Lua"
 category:             "Lua"
@@ -10,37 +10,40 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
+Utiliser des expressions régulières, c'est chercher et manipuler du texte avec des motifs précis. Les programmeurs s'en servent pour valider, trouver, remplacer ou diviser des données textuelles facilement.
 
-Une expression régulière est une séquence de caractères qui est utilisée pour trouver des motifs dans une chaîne de texte. Les programmeurs utilisent des expressions régulières pour rechercher et manipuler des données textuelles de manière efficace.
-
-## Comment faire :
+## How to:
+Lua ne supporte pas les expressions régulières comme Perl ou Python. Il utilise ses propres motifs. Voici quelques exemples :
 
 ```Lua
--- Créer une expression régulière pour trouver toutes les occurrences de "chat" dans une chaîne de texte
-
-local txt = "J'aime les chats, les chiens et les oiseaux."
-local pattern = "chat"
-local matches = string.gmatch(txt, pattern)
-
-for match in matches do
-  print(match)
+-- Recherche de motif
+local texte = "Bonjour le monde!"
+if string.find(texte, "monde") then
+  print("Motif trouvé !")
 end
+-- Output: Motif trouvé !
+
+-- Remplacement de texte
+local remplacé = string.gsub(texte, "Bonjour", "Salut")
+print(remplacé)
+-- Output: Salut le monde!
+
+-- Recherche de patterns complexes
+local emails = "nom@domaine.com autre@mail.fr"
+for email in emails:gmatch("[A-Za-z0-9%.]+@%a+%.[a-z]+") do
+  print(email)
+end
+-- Output: nom@domaine.com
+-- Output: autre@mail.fr
 ```
 
-Résultat :
-```
-chat
-```
+## Deep Dive
+Les motifs Lua s'inspirent du standard POSIX et des expressions régulières de Perl, mais plus simples. Pour des motifs avancés, on utilise `lrexlib` ou `LPeg`. `lrexlib` s'appuie sur des librairies regex comme PCRE. `LPeg` propose une alternative puissante avec des parsing expressions grammars.
 
-## Plongée en profondeur :
+## See Also
+- Documentation Lua sur les motifs : https://www.lua.org/manual/5.4/manual.html#6.4.1
+- `LPeg`, une bibliothèque pour des motifs avancés : http://www.inf.puc-rio.br/~roberto/lpeg/
+- `lrexlib`, pour des regex comme dans d’autres langages : https://github.com/rrthomas/lrexlib
 
-(1) Les expressions régulières ont été inventées dans les années 1950 par le mathématicien Stephen Kleene pour décrire des langages formels.
-
-(2) Bien qu'elles soient largement utilisées, il existe d'autres méthodes pour traiter les données textuelles, telles que les algorithmes de recherche ou les analyseurs lexicaux.
-
-(3) Lua utilise le module string pour gérer les expressions régulières, qui sont basées sur les expressions régulières POSIX.
-
-## Voir aussi :
-
-- [Autre tutoriel sur les expressions régulières en Lua](https://www.lua.org/pil/20.2.html)
+Cet article a donné une vue d'ensemble rapide. Pour approfondir, consultez les liens. Bon codage !

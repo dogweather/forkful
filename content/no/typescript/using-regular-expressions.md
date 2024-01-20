@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "TypeScript: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,18 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Bruk av regulære uttrykk (også kjent som regex) er en måte å søke og manipulere tekst på i programmering. Det er mye brukt av utviklere for å finne og utskifte deler av tekst eller for å validere tekstformater. Regex er en kraftig verktøy som kan gjøre tekstbehandling enklere og mer effektivt.
+## What & Why?
+Regulære uttrykk, eller regex, er søkemønstre for tekstmanipulasjon. De brukes fordi de kan raskt finne, erstatte, eller validere kompleks tekstdata.
 
-## Hvordan:
-Bruk av regex i TypeScript er enkelt. I følgende eksempel viser vi hvordan vi kan finne alle tall i en tekst og skrive dem ut:
-
+## How to:
 ```TypeScript
-let tekst = "Jeg har 3 epler og 5 bananer.";
-let tall = tekst.match(/\d+/g);
-console.log(tall);
-```
-Output vil være `[ '3', '5' ]` som innebærer at vi har funnet og fanget to tall fra teksten.
+// Finn alle forekomster av "eple"
+const text = "Eplekake og eplejuice er fantastisk.";
+const regex = /eple/gi;
+console.log(text.match(regex));
+// Output: [ 'Eple', 'eple' ]
 
-## Dypdykk:
-Regulære uttrykk har eksistert siden 1950-tallet og blir brukt i flere programmeringsspråk. I tillegg til TypeScript, kan du også bruke regex i språk som Python og Perl. Alternativene til regex inkluderer stringmetoder som søking og erstattning, men disse er ikke like kraftige som regex og kan bli mer komplisert når man håndterer komplekse mønstre. Implementeringen av regex i TypeScript er basert på standarden for regulære uttrykk fra ECMAScript.
+// Erstatt "eple" med "banan"
+console.log(text.replace(regex, 'banan'));
+// Output: Banankake og bananjuice er fantastisk.
+
+// Sjekk om en string er en gyldig e-postadresse
+const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+const email = "eksempel@domene.no";
+console.log(emailRegex.test(email));
+// Output: true
+```
+
+## Deep Dive
+Regex eksisterte lenge før TypeScript, fra 1950-tallet. Alternativer inkluderer string-matching biblioteker eller innebyggede funksjoner som `startsWith`, `endsWith`, og `includes`. Ved å bruke regex i TypeScript, utføres tekstmanipulasjon direkte ved hjelp av JavaScript-motoren, noe som gir høy ytelse.
+
+## See Also
+- [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [Regex Tester](https://regexr.com/)
+- [TypeScript Handbook](https://www.typescriptlang.org/docs/handbook/intro.html)

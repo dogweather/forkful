@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Go: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -10,26 +10,74 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why?
+Regular expressions, ofte kalt regex, er et kraftig verktøy for å søke og manipulere tekst basert på mønstre. De hjelper programmerere å matche, finne og håndtere komplekse tekststrenger effektivt.
 
-Å bruke regulære uttrykk er en måte for programmerere å søke etter og manipulere tekst på en effektiv måte. Det er spesielt nyttig når man ønsker å finne mønstre i store mengder tekst eller å gjøre omformatering av data. Regulære uttrykk finnes i de fleste programmeringsspråk, inkludert Go, og er et viktig verktøy for å strukturere og prosessere tekst.
+## How to:
+### Basic Match
+```
+package main
 
-## Slik gjør du det:
+import (
+    "fmt"
+    "regexp"
+)
 
-For å bruke regulære uttrykk i Go, kan du bruke "regexp" pakken. Først må du lage et regulært uttrykk ved å bruke funksjonen "Compile" og angir mønsteret du ønsker å finne. Deretter kan du bruke funksjoner som "Match" eller "FindString" for å finne matchende tekst eller "ReplaceAllString" for å endre teksten.
-
-```Go
-re := regexp.Compile("a+[b-z]+c+")
-matches := re.FindString("abcdefg") // matches = "abc"
-newString := re.ReplaceAllString("abcdefg", "123") // newString = "123defg"
+func main() {
+    re := regexp.MustCompile(`\d+`)
+    fmt.Println(re.FindString("123ABC456"))
+}
+```
+Output:
+```
+123
 ```
 
-## Dykk dypere:
+### Replace Text
+```
+package main
 
-Regulære uttrykk ble først introdusert i programmeringsspråket SNOBOL i 1960-årene. De har siden blitt en viktig del av programmering og finnes i dag i de fleste programmeringsspråk. Noen alternativer til regulære uttrykk er string-manipuleringsfunksjoner som "Split" og "Replace" i Go eller "grep" kommandoen i terminalen. Det er også verdt å merke seg at noen mønstre kan være vanskelige å uttrykke med regulære uttrykk og kan kreve mer komplekse algoritmer.
+import (
+    "fmt"
+    "regexp"
+)
 
-## Se også:
+func main() {
+    re := regexp.MustCompile(`\d+`)
+    fmt.Println(re.ReplaceAllString("123ABC456", "NUM"))
+}
+```
+Output:
+```
+NUMABCNUM
+```
 
-- https://golang.org/pkg/regexp/
-- https://regexr.com/
-- https://www.regular-expressions.info/
+### Complex Pattern Matching
+```
+package main
+
+import (
+    "fmt"
+    "regexp"
+)
+
+func main() {
+    re := regexp.MustCompile(`(?i)hello\s(\w+)`)
+    match := re.FindStringSubmatch("Hello Gopher! What's up?")
+    if match != nil {
+        fmt.Printf("Found greeting for: %s", match[1])
+    }
+}
+```
+Output:
+```
+Found greeting for: Gopher
+```
+
+## Deep Dive
+Regex har sine røtter tilbake til 1950-tallet og har vært en del av programmeringsspråk som Perl og Java. I Go er regex implementert i `regexp` pakken; den følger RE2-syntaks og balanserer hastighet med fleksibilitet. Alternativer inkluderer biblioteker som oniguruma for mer kompleks funksjonalitet men til kostnad av ytelse.
+
+## See Also
+- [Go’s regexp/pkg documentation](https://pkg.go.dev/regexp)
+- [A Tour of Go: Regular Expressions](https://tour.golang.org/moretypes/23)
+- [RE2 syntax documentation](https://github.com/google/re2/wiki/Syntax)

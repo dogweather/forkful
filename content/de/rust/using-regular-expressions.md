@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Rust: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Rust"
 category:             "Rust"
 tag:                  "Strings"
@@ -11,34 +11,53 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind ein leistungsstarkes Werkzeug, das Programmierer verwenden, um Textmuster in Zeichenketten zu suchen und zu verarbeiten. Sie sind besonders nützlich, um bestimmte Zeichenfolgen in großen Datenmengen zu finden oder zu verändern. Durch den Einsatz von regulären Ausdrücken können Programmierer effizienter arbeiten und sparen Zeit bei der Bearbeitung von Texten.
+Reguläre Ausdrücke sind Muster, die in Texten nach spezifischen Sequenzen suchen. Programmierer nutzen sie, um Textdaten schnell zu durchsuchen, zu validieren oder zu manipulieren.
 
-## Wie geht das?
-Die Verwendung von regulären Ausdrücken in Rust ist relativ einfach. Zunächst müssen wir das Modul `regex` importieren. Dann können wir mithilfe von Mustern, die spezielle Syntax verwenden, bestimmte Zeichenfolgen in einer gegebenen Eingabe suchen. Ein gängiges Beispiel ist die Verwendung von regulären Ausdrücken, um E-Mail-Adressen zu validieren.
-
+## Wie geht das:
 ```Rust
-// Importiere das `regex` Modul
+extern crate regex;
 use regex::Regex;
 
-// Definiere ein reguläres Ausdrucksmuster, um eine gültige E-Mail-Adresse zu prüfen
-let email_regex = Regex::new(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$").unwrap();
-
-// Überprüfe, ob eine E-Mail-Adresse gültig ist
-if email_regex.is_match("example@email.com") {
-  println!("Die E-Mail-Adresse ist gültig!");
-} else {
-  println!("Die E-Mail-Adresse ist ungültig!");
+fn main() {
+    let re = Regex::new(r"\b\d{4}\b").unwrap();
+    let text = "Das Jahr 2021 war turbulent, aber 2023 sieht besser aus.";
+    
+    for caps in re.find_iter(text) {
+        println!("Gefundene Zahl: {}", caps.as_str());
+    }
 }
 ```
+Ausgabe:
+```
+Gefundene Zahl: 2021
+Gefundene Zahl: 2023
+```
 
-Die Ausgabe des obigen Beispiels wird `Die E-Mail-Adresse ist gültig!` sein, da die E-Mail-Adresse dem angegebenen regulären Ausdrucksmuster entspricht.
+```Rust
+extern crate regex;
+use regex::Regex;
 
-## Tiefergehende Informationen
-Reguläre Ausdrücke wurden erstmals in den 1950er Jahren von dem Mathematiker Stephen Cole Kleene entwickelt. Sie sind in vielen Programmiersprachen und Texteditoren verfügbar, aber die Syntax kann je nach Implementierung variieren. In Rust verwendet das `regex` Modul die PCRE-Bibliothek, die als Standard bei vielen Programmiersprachen gilt.
+fn main() {
+    let re = Regex::new(r"(\w+@\w+\.\w+)").unwrap();
+    let text = "Meine Email ist jemand@beispiel.de und ich benutze auch info@example.com.";
 
-Alternativen zu regulären Ausdrücken sind beispielsweise String-Methoden oder die Verwendung von externen Bibliotheken. Auch in Rust gibt es alternative Libraries wie `regex-crate` oder `regex-syntax`, die in bestimmten Fällen möglicherweise besser geeignet sind.
+    let emails: Vec<_> = re.captures_iter(text).filter_map(|cap| {
+        cap.get(1).map(|email| email.as_str())
+    }).collect();
+    
+    println!("Gefundene Emails: {:?}", emails);
+}
+```
+Ausgabe:
+```
+Gefundene Emails: ["jemand@beispiel.de", "info@example.com"]
+```
 
-Bei der Verwendung von regulären Ausdrücken müssen Programmierer auch auf die Effizienz achten, da komplexe Ausdrücke die Ausführungsgeschwindigkeit beeinträchtigen können. Deshalb ist es wichtig, das richtige Gleichgewicht zwischen Codelesbarkeit und Leistung zu finden.
+## Deep Dive
+Reguläre Ausdrücke (RegEx) haben ihren Ursprung in der theoretischen Informatik und der formalen Sprachtheorie. Sie sind mächtiger als einfaches String-Matching, können aber auch komplex und schwer zu lesen sein. Alternativen wie String-Methoden (`contains`, `startsWith`, `endsWith`) oder Parsing-Bibliotheken (z. B. `nom` in Rust) bieten manchmal einfachere Lösungen, sind jedoch nicht so flexibel wie RegEx. Die Rust `regex`-Bibliothek basiert auf einem Backtracking-Algorithmus und bietet umfangreiche Optimierungen für schnelle Suchvorgänge.
 
-## Weitere Informationen
-- [Rust-Bibliothek für reguläre Ausdrücke](https://github.com/rust-lang/regex)
+## Siehe auch
+- Rust `regex` Dokumentation: https://docs.rs/regex/
+- Online RegEx Tester und Debugger: https://regex101.com/
+- RegEx Tutorial: https://www.regular-expressions.info/tutorial.html
+- Vergleich populärer Parsing-Bibliotheken in Rust: https://lib.rs/search?q=parsing

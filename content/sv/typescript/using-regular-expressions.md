@@ -1,7 +1,7 @@
 ---
-title:                "Användning av reguljära uttryck"
-html_title:           "TypeScript: Användning av reguljära uttryck"
-simple_title:         "Användning av reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,19 +10,33 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Reguljära uttryck är en metod som används för att söka efter tillhörigheter av textmönster inom en sträng. Detta är användbart för programmerare som behöver effektivt hitta, ersätta eller manipulera specifika delar av texter i sina kodprojekt.
+## Vad & Varför?
+Regular expressions, eller regex, är mönster som används för att matcha karaktärsföljder i text. Programmerare använder det för att söka, validera, extrahera och manipulera data effektivt.
 
-## Så här:
-Att använda reguljära uttryck är enkelt med TypeScript. Här är ett exempel på hur man kan hitta alla "a" i en sträng och ersätta dem med "b":
+## Hur gör man:
 ```TypeScript
-let str = "abcde";
-let modifiedStr = str.replace(/a/g, "b");
-console.log(modifiedStr); // bcdeb
+const text = "Hitta nummer: 073-1234567";
+const regexPattern = /\d{3}-\d{7}/;
+const match = text.match(regexPattern);
+
+console.log(match[0]); // Skriver ut "073-1234567"
 ```
 
-## Djupdykning:
-Reguljära uttryck har funnits sedan 50-talet och har utvecklats till en standard för textmönster-sökning. Alternativ till reguljära uttryck inkluderar metoder som strängmanipulering och bibliotek som lodash, men dessa är oftast mer komplicerade och inte lika effektiva. Implementeringen av reguljära uttryck skiljer sig åt beroende på programmeringsspråk men i TypeScript behöver man bara använda RegExp-klassen för att skapa uttryck och använda dess metoder för att söka och manipulera text.
+```TypeScript
+const email = "exempel@domain.se";
+const emailPattern = /\S+@\S+\.\S+/;
+const isValidEmail = emailPattern.test(email);
 
-## Se även:
-- [MDN Reguljära Uttryck Guide](https://developer.mozilla.org/sv-SE/docs/Web/JavaScript/Guide/Regular_Expressions)
+console.log(isValidEmail); // Skriver ut true
+```
+
+## Fördjupning
+Regular expressions har använts sedan 1950-talet; de integrerades först i Unix-verktyg som `grep`. Alternativ till regex inkluderar string-metoder som `indexOf()` eller `includes()`, men dessa är oftast mindre kraftfulla. I TypeScript körs regex via JavaScript engine (som V8 i Chrome), och dess prestanda kan variera mellan olika webbläsare och Node.js.
+
+## Se även
+- MDN Regular Expressions Guide:
+  [developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- RegExp i TypeScript Handbook:
+  [typescriptlang.org/docs/handbook/2/everyday-types.html#regex](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#regexp)
+- Regex101 (för att testa regex online):
+  [regex101.com](https://regex101.com)

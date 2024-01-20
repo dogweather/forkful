@@ -1,7 +1,7 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
-html_title:           "Bash: Reguläre Ausdrücke verwenden"
-simple_title:         "Reguläre Ausdrücke verwenden"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -11,30 +11,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Reguläre Ausdrücke sind Muster zur Textsuche und -verarbeitung. Programmierer nutzen sie, um Textmuster effizient zu erkennen, extrahieren und zu manipulieren.
 
-Reguläre Ausdrücke (Regular Expressions/Regex) sind Muster, mit denen Entwickler Sequenzen in Text suchen, ersetzen oder validieren können. Sie sind ein nützliches und effizientes Werkzeug für Datenmanipulation und Textverarbeitung.
+## How To:
+Mit Elixir kannst du mit regulären Ausdrücken arbeiten, indem du das Modul `Regex` verwendest. Hier ein paar Beispiele:
 
-## Wie geht das:
-
-Hier ist, wie Sie reguläre Ausdrücke in Elixir verwenden können. 
-
-Sie können das Regex-Modul in Elixir verwenden, um reguläre Ausdrücke zu kompilieren und damit zu arbeiten. Hier ist ein einfacher Code zum Suchen eines Musters in einer Zeichenkette.
-
+### Match finden
 ```elixir
-String.match?("Hallo, Elixir Welt!", ~r/Elixir/)
+Regex.match?(~r/hallo/, "hallo welt!")
+# Ausgabe: true
 ```
-Die Ausgabe dieses Beispiels wird `true` sein, da das Wort "Elixir" in der Zeichenkette enthalten ist.
 
-## Vertiefung:
+### Alle Vorkommen finden
+```elixir
+Regex.scan(~r/\d+/, "Es gibt 3 Äpfel und 5 Birnen.")
+# Ausgabe: [["3"], ["5"]]
+```
 
-Historisch gesehen waren reguläre Ausdrücke in verschiedenen Programmiersprachen vorhanden, und Elixir ist keine Ausnahme. Elixir implementiert seine Regex-Unterstützung über das Erlang :re Modul, das auf dem PCRE (Perl Compatible Regular Expressions) Bibliothek basiert.
+### Ersetzen
+```elixir
+Regex.replace(~r/ä/, "Kätzchen", "ae")
+# Ausgabe: "Kaetzchen"
+```
 
-Es gibt Alternativen zu regulären Ausdrücken in Elixir, z.B. die Verwendung von eingebauten String-Funktionen wie `String.contains?/2` oder `String.split/2`.
+### Capture Groups
+```elixir
+Regex.run(~r/(Apache) (\d+.\d+)/, "Server-Version: Apache 2.4")
+# Ausgabe: ["Apache 2.4", "Apache", "2.4"]
+```
 
-Es ist wichtig zu wissen, dass die Verwendung von regulären Ausdrücken in Elixir bei komplexen Mustern rechenintensiv sein kann, da das Kompilieren eines regulären Ausdrucks eine aufwendige Operation ist.
+## Deep Dive
+Historisch gesehen entstammen reguläre Ausdrücke der Theorie formaler Sprachen und wurden in den 1950ern konzipiert. Alternativen zu regulären Ausdrücken in Elixir sind String-Funktionen oder pattern matching, die in manchen Fällen lesbarer oder schneller sein können. Die `Regex`-Module in Elixir nutzen die PCRE-Bibliothek (Perl Compatible Regular Expressions), welche eine reichhaltige Auswahl an Pattern-Matching-Optionen bieten.
 
-## Weiterführende Informationen:
-
-Weitere nützliche Ressourcen zu regulären Ausdrücken in Elixir finden Sie unter:
-
-2. [Elixir official Regex module documentation](https://hexdocs.pm/elixir/Regex.html)
+## See Also
+- Elixir Dokumentation zu Regex: [https://hexdocs.pm/elixir/Regex.html](https://hexdocs.pm/elixir/Regex.html)
+- Online Regex Tester und Debugger: [https://regex101.com/](https://regex101.com/)
+- Einführung in Elixir Pattern Matching: [https://elixir-lang.org/getting-started/pattern-matching.html](https://elixir-lang.org/getting-started/pattern-matching.html)

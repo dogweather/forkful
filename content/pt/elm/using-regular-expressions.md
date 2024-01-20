@@ -1,6 +1,6 @@
 ---
 title:                "Utilizando expressões regulares"
-html_title:           "Elm: Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,29 +10,51 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e Porque?
-
-Expressões regulares são padrões utilizados para identificar texto em uma determinada sequência de caracteres. Elas são utilizadas por programadores para encontrar e manipular informações em grande quantidade de dados. Com elas, é possível realizar validações em campos de formulários, buscar informações específicas em um texto, entre outros usos.
+## O Que & Porquê?
+Usar expressões regulares é sobre procurar padrões em texto. Programadores as utilizam para validar, buscar, e manipular dados de forma eficiente.
 
 ## Como Fazer:
+Elm usa o pacote `regex` para trabalhar com expressões regulares. Vamos a alguns exemplos:
 
-```elm
-string = "O dia está ensolarado!"
-regex = RegExp.fromPattern "dia.*ensolarado" False False
-RegExp.match regex string
+```Elm
+import Regex
+
+-- Verificando se um padrão existe no texto
+isMatch : Regex -> String -> Bool
+isMatch =
+    Regex.contains
+
+-- Uso
+exampleIsMatch : Bool
+exampleIsMatch =
+    isMatch (Regex.fromString "^[a-zA-Z]+$" |> Maybe.withDefault Regex.never) "ElmLang"
+
+-- Substituindo texto com padrão
+replace : Regex -> String -> String -> String
+replace pattern replacement text =
+    Regex.replace pattern (\_ -> replacement) text
+
+-- Uso
+exampleReplace : String
+exampleReplace =
+    replace (Regex.fromString "\\d+" |> Maybe.withDefault Regex.never) "NUM" "Elm 0.19.1"
 ```
 
-Saída:
-
+Output para `exampleIsMatch`:
 ```
-["dia está ensolarado"]
+True
 ```
 
-## Explorando Mais:
+Output para `exampleReplace`:
+```
+"Elm NUM.NUM"
+```
 
-As expressões regulares foram inventadas por Stephen Coleman Kleene na década de 1950 e desde então se tornaram amplamente utilizadas em diferentes linguagens de programação. Existem opções de bibliotecas para lidar com expressões regulares em Elm, como a RegExp, que faz parte da biblioteca "elm/parser". Algumas alternativas às expressões regulares incluem a utilização de funções de manipulação de strings, porém, essas podem ser mais limitadas em termos de funcionalidade. No Elm, expressões regulares são implementadas de forma eficiente com o suporte do motor de busca Thompson NFA.
+## Aprofundando
+Expressões regulares existem há décadas, sendo parte integrante de várias linguagens de programação. Alternativas incluem parsers dedicados ou usar funções de string específicas, mas expressões regulares muitas vezes são mais rápidas e mais versáteis. No Elm, você trabalha com elas através do pacote `regex`, que usa o `Maybe` para lidar com padrões inexistentes de forma segura.
 
-## Veja Também:
+## Veja Também
 
-- Aprenda mais sobre expressões regulares em [regexone.com](https://regexone.com/)
-- Conheça a biblioteca para expressões regulares em Elm em [package.elm-lang.org](https://package.elm-lang.org/packages/elm/parser/latest)
+- Documentação oficial do pacote `regex`: [package.elm-lang.org/packages/elm/regex/latest](https://package.elm-lang.org/packages/elm/regex/latest)
+- Artigo "Elm e Expressões Regulares": [elm-lang.org/examples/regular-expressions](https://elm-lang.org/examples/regular-expressions)
+- Tutorial interativo de regex: [regexone.com](https://regexone.com)

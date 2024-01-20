@@ -1,7 +1,7 @@
 ---
-title:                "Reguläre Ausdrücke verwenden"
-html_title:           "Bash: Reguläre Ausdrücke verwenden"
-simple_title:         "Reguläre Ausdrücke verwenden"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -11,29 +11,26 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Reguläre Ausdrücke (RegEx) sind Muster zur Textsuche und -bearbeitung. Programmierer nutzen sie, weil sie mächtige Werkzeuge sind, um komplexe Textaufgaben effizient zu lösen.
 
-Reguläre Ausdrücke (Regular Expressions, Regex) sind eine mächtige Methode zum Musterabgleich in Textdaten. Sie werden von Programmierern eingesetzt, um komplizierte Textmanipulationen und Datenerkennung zu vereinfachen.
-
-## So geht's:
-
-Sie können reguläre Ausdrücke im Bash-Skript verwenden, zum Beispiel mit `grep`. Hier ein einfacher Code:
+## How to:
+Hier sind einfache Beispiele für die Nutzung von RegEx in Bash:
 
 ```Bash
-echo "Hallo Welt" | grep -P "^H.*t$"
+echo "Die PLZ 10115 gehört zu Berlin." | grep -oP '\b\d{5}\b'
+# Ausgabe: 10115
+
+echo "Kontakt: max@beispiel.de" | grep -oP '\S+@\S+'
+# Ausgabe: max@beispiel.de
+
+# Dateinamen ausgeben, die mit 'log' enden und eine Nummer enthalten
+ls | grep -P 'log\-\d+'
 ```
 
-Dieser Code sucht nach Sätzen, die mit "H" beginnen und "t" enden. In diesem Fall wird "Hallo Welt" ausgegeben.
+## Deep Dive
+Reguläre Ausdrücke kamen in den 1950er Jahren auf und wurden im Unix-Tool 'grep' populär. Alternativen zu Bash-RegEx sind Tools wie 'awk' und 'sed'. Beim Implementieren von RegEx sollte man jedoch auf Effizienz achten, da komplexe Muster rechenintensiv sein können.
 
-## Vertiefung:
-
-Reguläre Ausdrücke wurden in den 1950ern von mathematischen Theorien über Sprachformen (Automatentheorie) inspiriert. Sie sind in fast allen modernen Programmiersprachen implementiert.
-
-Alternativen wie `fnmatch` oder `expr` existieren, sind aber weniger kraftvoll und flexibel.
-
-Eine Implementation von Regex in Bash kann aufwendiger sein, da Regex in bash nicht nativ ist. Viele Skripter bevorzugen die Verwendung von `perl`-kompatiblen Ausdrücken mit `grep -P`.
-
-## Siehe auch:
-
-Für mehr Informationen und Tutorials, besuchen Sie bitte:
-- [Tutorial - Regular Expressions](https://www.gnu.org/software/grep/manual/html_node/Regular-Expressions.html)
-- [Bash Regex Manual](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
+## See Also
+Offizielle GNU-Bash-Dokumentation zu RegEx: https://www.gnu.org/software/bash/manual/
+Interaktiver RegEx-Tester: https://regex101.com/
+Tutorial zum Umgang mit RegEx in Bash: https://www.tldp.org/LDP/abs/html/regexps.html

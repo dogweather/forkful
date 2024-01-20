@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Haskell: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,28 +10,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Hva er regulære uttrykk og hvorfor bruker programmerere det?
+## Hva & Hvorfor?
+Regular expressions, eller regex, lar oss søke og manipulere tekst med et "wildcard"-språk. Programmere bruker det for å filtrere, finne, eller erstatte spesifikke mønstre i tekst.
 
-Regulære uttrykk er et verktøy som hjelper programmere å søke og manipulere tekststrenger basert på visse mønstre. Dette gjøres ved å definere et mønster som matcher deler av tekststrengen. Programmere bruker regulære uttrykk for å effektivt gjøre operasjoner som filtrering, erstattning og ekstraksjon av informasjon fra store mengder tekst.
-
-# Hvordan gjør du dette?
+## Hvordan:
+Haskell bruker `regex`-pakker for mønstergjenkjenning. Her er en enkel brukerveiledning:
 
 ```Haskell
-import Text.Regex.Posix
+import Text.Regex.TDFA ((=~))
 
+-- Finn om 'Hello, world!' inneholder ordet 'world'
 main :: IO ()
-main = do
-  let string = "Hello, world!"
-  let pattern = "Hello, (.*)!" -- Dette er vårt mønster, og "world" er en "submatch"
-  let result = string =~ pattern :: [[String]] -- =~ matcher mønsteret mot tekststrengen og returnerer en liste med treff
-  print result -- [["Hello, world!","world"]]
+main = print $ "Hello, world!" =~ "world" :: Bool
+
+-- Resultat
+True
 ```
 
-# Dykk ned i detaljene
+Mer avanserte bruksmål:
 
-(1) Regulære uttrykk har vært en del av programmering siden 1950-tallet, da det ble utviklet som en del av matematisk teori. (2) Alternativer som ligner på regulære uttrykk inkluderer "glob patterns" og "wildcards". (3) I Haskell er et regulært uttrykk representert ved hjelp av typen `Regex` fra `Text.Regex.Posix` modulen.
+```Haskell
+import Text.Regex.TDFA
 
-# Se også
+-- Finn alle ord som starter på 'h'
+finnOrd :: String -> [String]
+finnOrd tekst = tekst =~ "\\bh\\w*"
 
-- https://en.wikipedia.org/wiki/Regular_expression
-- https://hackage.haskell.org/package/regex-posix-0.95.2/docs/Text-Regex-Posix.html
+-- Eksempel
+main :: IO ()
+main = print $ finnOrd "heisann sveisann, Hva skjer?"
+
+-- Resultat
+["heisann", "Hva"]
+```
+
+## Dypdykk
+Regex i Haskell er hovedsakelig håndtert av biblioteker som `regex-tdfa` og `regex-posix`. Disse bygger på eldre regex-biblioteker, men er tilpasset for Haskell og støtter avanserte regex-funksjoner som "lazy" matching og back-references.
+
+Alternativer inkluderer å bruke innebygde strengoperasjoner eller parserbiblioteker som Parsec for mer strukturert tekstanalyse.
+
+Implementasjonsdetaljer for regex-biblioteker i Haskell kan variere, men de fleste benytter seg av Thompson's construction algoritme for å konvertere regexer til nondeterministic finite automata (NFA), hvilket er kjent for sin effektivitet.
+
+## Se Også
+- Hackage for regex-tdfa: [https://hackage.haskell.org/package/regex-tdfa](https://hackage.haskell.org/package/regex-tdfa)
+- Haskell Wiki om regex: [https://wiki.haskell.org/Regular_expressions](https://wiki.haskell.org/Regular_expressions)
+- "Real World Haskell" om regex: [http://book.realworldhaskell.org/read/regular-expressions.html](http://book.realworldhaskell.org/read/regular-expressions.html)

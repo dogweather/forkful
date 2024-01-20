@@ -1,6 +1,6 @@
 ---
 title:                "正規表現の使用"
-html_title:           "TypeScript: 正規表現の使用"
+html_title:           "C: 正規表現の使用"
 simple_title:         "正規表現の使用"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,40 +10,37 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-「##  何のためなのか？ 」
+## What & Why? (何となぜ？)
 
-正規表現を使うとはどういうことか、それともプログラマーがなぜそれを使うのかをふたつの文で説明します。
+正規表現は文字列をパターンで扱うための方法です。これにより、検索、置換、データの検証などが簡単かつ効率的に行えます。
 
-正規表現とは、文字列のパターンを検索したり、置換したりするための強力なツールです。プログラマーは、大量のテキストデータから必要な情報を抽出するために、正規表現を使用します。
+## How to: (方法)
 
-「## 方法：」
+正規表現の基本的な使用法とTypeScriptでの具体例を示します。
 
-まずは、TypeScriptで正規表現を使用するための基本的な構文を紹介します。それから、実際のコーディング例を示し、その出力を示します。
+```typescript
+const text: string = "TypeScriptを学ぼう！2023年はプログラミングスキルの向上を目指そう。";
 
-```TypeScript
-// 正規表現を使って、文字列内の数字を抽出する
-const myString: string = "今日の天気は23℃です";
-const pattern = /\d+/g; // 数字のパターンにマッチする
-const result = myString.match(pattern); // ["23"]
+// 単語を検索
+const pattern: RegExp = /\bTypeScript\b/;
+console.log(pattern.test(text)); // true
+
+// 数字を全て抽出
+const numbers: RegExp = /\d+/g; 
+console.log(text.match(numbers)); // ['2023']
+
+// '年'で続く数字を置換
+const newText: string = text.replace(/(\d+)年/, '$1/');
+console.log(newText); // TypeScriptを学ぼう！2023/はプログラミングスキルの向上を目指そう。
 ```
 
-この例では、myStringという文字列内の数字を抽出するために正規表現を使用しています。まず、抽出したい要素のパターンを定義し、そのパターンに一致する箇所をresultという変数に格納しています。
+## Deep Dive (深堀り)
 
-```TypeScript
-// 正規表現を使って、文字列内のタグを置換する
-const htmlString: string = "<p>こんにちは</p>";
-const pattern = /<p>(.*?)<\/p>/g; // pタグの中身にマッチする
-const result = htmlString.replace(pattern, "こんにちは！"); // "<p>こんにちは！</p>"
-```
+正規表現は1960年代に発明され、UNIXのツールで幅広く使われました。同様の機能をもつ代替手段には、文字列関数やパーサーがありますが、複雑な文字列操作には正規表現が便利です。TypeScriptでは内部的にJavaScriptのRegExpオブジェクトを使用し、パターンマッチングを行っています。
 
-この例では、htmlStringという文字列内のpタグの中身を「こんにちは！」に置換するために正規表現を使用しています。まず、置換したい要素のパターンを定義し、そのパターンに一致する箇所を置換文字列に置き換えています。
+## See Also (関連項目)
 
-「## 詳細を調べる」
-
-正規表現は、1960年代に誕生し、その後様々なプログラミング言語で使用されるようになりました。しかし、正規表現を使う代わりに、プログラマーは独自の文字列操作方法を作成することもできます。正規表現の実装には、詳細な文法ルールがありますが、この記事では紹介しません。詳細を知りたい場合は、このリンクを参考にしてください。
-
-「## 関連リンク」
-
-- 正規表現の基本構文：https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions
-- TypeScriptでの正規表現の使用方法：https://www.typescriptlang.org/docs/handbook/regular-expressions.html
-- 正規表現の文法ルール：https://www.regular-expressions.info/
+- MDN Web Docs: [正規表現](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+- 正規表現のチュートリアル: [RegExr](https://regexr.com/)
+- TypeScript Handbook: [Basic Types](https://www.typescriptlang.org/docs/handbook/basic-types.html)
+- JavaScriptエンジンの正規表現パフォーマンス: [Regex Performance](https://benchmarksgame-team.pages.debian.net/benchmarksgame/fastest/node-javascript.html)

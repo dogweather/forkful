@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "PowerShell: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "PowerShell"
 category:             "PowerShell"
 tag:                  "Strings"
@@ -10,29 +10,55 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
-Regular expressions, eller regex på engelsk, er et viktig verktøy i programmering for å finne og manipulere tekst basert på mønstre. De lar deg søke etter spesifikke ord, tall, symboler og mer, slik at du effektivt kan håndtere store mengder data. Regulære uttrykk er brukt i mange programmeringsspråk, inkludert PowerShell, for å gjøre kompleks tekstbehandling mye enklere og raskere.
+## What & Why?
+Regulære uttrykk er søkemønstre som brukes for å matche tekststrenger. Programmerere bruker det for å finne, erstatte, og validere tekst raskt og konsist.
 
-## Hvordan:
+## How to:
+
+### Finne en match
 ```PowerShell
-
-# Slik søker du etter en spesifikk tekst i en streng
-
-$tekst = "Jeg elsker å kode"
-if ($tekst -match "elsker") {
-    Write-Host "Finner teksten" 
+$text = 'Finn kode: PS-1234'
+$pattern = 'PS-\d+'
+if ($text -match $pattern) {
+    "Match funnet: $($matches[0])"
 }
-
-# Output: Finner teksten
+```
+#### Output
+```
+Match funnet: PS-1234
 ```
 
-Regex-mønstre begynner og slutter alltid med en skråstrek "/", etterfulgt av eventuelle flagg som sier hvordan søket skal utføres (som å søke uavhengig av store og små bokstaver). Mønsteret mellom skråstrekene er det søkbare uttrykket. I eksempelet ovenfor bruker vi "-match" operatøren for å se om $tekst variabelen inneholder "elsker".
+### Erstatte tekst
+```PowerShell
+$nyTekst = $text -replace $pattern, 'NO-4321'
+"Erstattet tekst: $nyTekst"
+```
+#### Output
+```
+Erstattet tekst: Finn kode: NO-4321
+```
 
-## Deep Dive:
-Regulære uttrykk ble utviklet i 1951 av matematikeren Stephen Cole Kleene og siden da har de blitt implementert i mange programmeringsspråk. De gir utrolig fleksibilitet og kraft i tekstbehandling og er spesielt nyttige for å finne og erstatte mønstre i store dokumenter eller datasett.
+### Validere e-post
+```PowerShell
+$epost = 'bruker@example.com'
+$epostMønster = '^\S+@\S+\.\S+$'
+if ($epost -match $epostMønster) {
+    "E-posten er valid."
+} else {
+    "E-posten er ikke valid."
+}
+```
+#### Output
+```
+E-posten er valid.
+```
 
-I PowerShell er det også andre metoder for å søke etter tekst, som for eksempel "-like" operatøren. Det som gjør regulære uttrykk spesielt nyttige er muligheten til å søke etter mer komplekse mønstre og å bruke flagg for å tilpasse søket enda mer. Det er også mange online biblioteker og verktøy for å teste og lage regex-mønstre, noe som gjør det enklere å lære seg å bruke dem.
+## Deep Dive
 
-## Se også:
-- [PowerShell's offisielle dokumentasjon om regulære uttrykk](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/select-string?view=powershell-7)
-- [Online regex-tester og biblioteker](https://regex101.com/)
+Regular expressions, eller "regex", har sin historie helt tilbake til 1950-tallet. Alternativene til regex inkluderer tekstbehandling ved hjelp av vanlige strengefunksjoner eller parsere, som kan være tregere og mindre fleksible. Regex i PowerShell bruker .NET sitt regex-bibliotek, noe som gjør det kraftig og i stand til komplekse søkeoperasjoner.
+
+## See Also
+
+- Microsofts dokumentasjon om regulære uttrykk: [About Regular Expressions](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/regular-expressions?view=powershell-7.1)
+- RegExr, et online verktøy for å lære, bygge, og teste regulære uttrykk: [RegExr](https://regexr.com/)
+- PowerShell sin offisielle dokumentasjonsside: [PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)

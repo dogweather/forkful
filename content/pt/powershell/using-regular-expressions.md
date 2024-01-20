@@ -1,6 +1,6 @@
 ---
 title:                "Utilizando expressões regulares"
-html_title:           "PowerShell: Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "PowerShell"
 category:             "PowerShell"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Por quê?
+## O Que & Porquê?
+Regular expressions, ou regex, são padrões usados para encontrar correspondências em strings de texto. Programadores usam regex pela sua eficiência e flexibilidade na busca e manipulação de dados.
 
-Expressões regulares são padrões utilizados para realizar buscas e manipulações de texto em documentos ou códigos. Programadores as utilizam para tornar o processo de pesquisa e substituição de texto mais eficiente e preciso.
-
-## Como fazer:
-
-Para utilizar expressões regulares no PowerShell, primeiro você precisa importar o módulo `Microsoft.PowerShell.Utility`. Em seguida, você pode usar o operador `-match` para buscar por padrões e o `-replace` para substituir trechos de texto.
-
-Exemplo:
+## Como Fazer:
 ```PowerShell
-# Busca por qualquer palavra que comece com "a" e termine com "o"
-"arroz abacaxi banana batom" -match "a.*o"
+# Encontrando um código postal em um texto
+$texto = "Meu CEP é 70040-020"
+$regex = "\b\d{5}-\d{3}\b"
+if ($texto -match $regex) {
+    "Encontrado: " + $matches[0]
+}
 
-# Saída:
-arroz abacaxi banana batom
-
-# Substitui a palavra "amarelo" por "vermelho"
-"O céu é amarelo" -replace "amarelo", "vermelho"
-
-# Saída:
-O céu é vermelho
+# Substituindo espaços duplicados por um único espaço
+$texto_corrigido = "Este    texto tem espaços    extras"
+$texto_corrigido -replace '\s+', ' '
+```
+Saída de exemplo:
+```
+Encontrado: 70040-020
+Este texto tem espaços extras
 ```
 
-## Imersão Profunda:
+## Mergulho Profundo
+As expressões regulares têm suas raízes na teoria dos autômatos e linguagem formal, materializadas na década de 1950 pelo matemático americano Stephen Cole Kleene. Alternativas ao uso de regex incluem o processamento de strings com métodos tradicionais, embora muitas vezes sejam menos eficientes. No PowerShell, regex é implementado através do .NET, fornecendo uma variedade de operadores e classes para manipular texto.
 
-As primeiras expressões regulares foram utilizadas na década de 1950 por matemáticos e linguistas em análise de linguagem natural. Hoje, elas são amplamente utilizadas em programação com diferentes sintaxes para cada linguagem. No PowerShell, além do operador `-match`, também podemos utilizar o comando `[regex]::Match()` para buscar padrões. Alguns programadores preferem usar o módulo `Regex.Match()` do .NET Framework em vez do operador `-match`.
-
-## Veja também:
-
-- [Documentação oficial do PowerShell sobre expressões regulares](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_regular_expressions?view=powershell-7)
+## Veja Também
+- [Documentação oficial do PowerShell sobre regex](https://docs.microsoft.com/pt-br/powershell/scripting/learn/deep-dives/regular-expressions?view=powershell-7.1)
+- [Tutorial interativo de regex](https://regexone.com/)
+- [Testador de regex online](https://regexr.com/)

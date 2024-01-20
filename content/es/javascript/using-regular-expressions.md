@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Javascript: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,36 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y por qué?
+## ¿Qué y Por Qué?
 
-Las expresiones regulares en Javascript son patrones de búsqueda utilizados para verificar y manipular cadenas de texto. Los programadores las utilizan para encontrar y reemplazar partes específicas de cadenas de texto de manera más eficiente que con métodos tradicionales.
+Usar expresiones regulares es buscar patrones en strings. Programadores las utilizan para validar, remplazar y extraer info con precisión.
 
-## ¿Cómo?
+## How to:
 
-Para utilizar expresiones regulares en Javascript, simplemente necesitamos el objeto RegExp y el método ```.test()```. Por ejemplo:
+```javascript
+// Validar formato de email
+const validarEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-```Javascript
-let regex = new RegExp("patrón");
-let string = "Esta es una cadena de texto con una palabra 'patrón' que queremos encontrar.";
+console.log(validarEmail('ejemplo@correo.com')); // true
+console.log(validarEmail('esto-no-es-un-email')); // false
 
-console.log(regex.test(string));
+// Encontrar todas las coincidencias de un patrón
+const texto = 'Los números son 123, 456 y 7890.';
+const regex = /\b\d+\b/g; // \d es un dígito. + significa uno o más. \b límite de palabra.
+const coincidencias = texto.match(regex);
+
+console.log(coincidencias); // ['123', '456', '7890']
+
+// Reemplazar palabras en una frase
+const frase = 'Javascript es asombroso, Javascript es divertido.';
+const fraseModificada = frase.replace(/Javascript/g, 'Python');
+
+console.log(fraseModificada); // 'Python es asombroso, Python es divertido.'
 ```
 
-Este código imprimirá ```true``` en la consola, ya que encontró el patrón en la cadena de texto. También podemos utilizar expresiones regulares directamente en los métodos de cadena de texto, como en el siguiente ejemplo:
+## Deep Dive
 
-```Javascript
-let string = "Esta es otra cadena de texto con una palabra 'patrón' que queremos encontrar.";
+Las expresiones regulares nacieron en los años 1950 y fueron formalizadas por matemático Stephen Kleene. Alternativas modernas incluyen parsers y bibliotecas especializadas, pero las "regex" siguen siendo únicas por su potencia y versatilidad en la manipulación de strings. En Javascript, regex se implementan como objetos `RegExp` o literales regex entre barras.
 
-console.log(string.match(/patrón/));
-```
+## See Also
 
-Este código también imprimirá ```true``` y nos mostrará más información sobre la coincidencia del patrón, como su posición en la cadena de texto.
-
-## Profundizando
-
-Las expresiones regulares se basan en una sintaxis desarrollada en la década de 1950 y han sido utilizadas en diferentes lenguajes de programación desde entonces. Además de la clase RegExp, también podemos utilizar el método ```.search()``` para buscar un patrón en una cadena de texto y el método ```.replace()``` para reemplazar una parte de la cadena de texto por otra.
-
-## Ver también
-
-- [Introducción a las expresiones regulares en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
-- [Expresiones regulares en Javascript en W3Schools](https://www.w3schools.com/js/js_regexp.asp)
+- [MDN Web Docs: Expresiones Regulares](https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [RegExr: Herramienta para aprender y probar expresiones regulares](https://regexr.com/)
+- [Wikipedia: Expresión Regular](https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular)

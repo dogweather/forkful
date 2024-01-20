@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "Kotlin recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -11,59 +11,42 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-
-Regular expressions are a way for programmers to express patterns and manipulate text. Using regular expressions allows for efficient searching, matching, and replacing of text within a larger body of text. Programmers use regular expressions to quickly and accurately perform tasks such as data validation, string manipulation, and text processing.
+Regular expressions (regex) are tools for matching patterns in text. Programmers use them to search, validate, or manipulate data efficiently.
 
 ## How to:
-
-To use regular expressions in Kotlin, first import the Regex class:
-
-```Kotlin
-import kotlin.text.Regex
-```
-
-Then, you can create a Regex object with the pattern you want to search for:
+Kotlin makes regex easy. Let’s see some practical code examples:
 
 ```Kotlin
-val regex = Regex("[0-9]+")
+fun regexFind() {
+    val pattern = "Kotlin".toRegex()
+    val text = "Learning Kotlin is fun!"
+    val matchResult = pattern.find(text)
+    println(matchResult?.value) // Output: Kotlin
+}
+
+fun regexReplace() {
+    val regex = "\\d+".toRegex()
+    val address = "123 Main Street"
+    val sanitizedAddress = regex.replace(address, "###")
+    println(sanitizedAddress) // Output: ### Main Street
+}
+
+fun regexValidate() {
+    val passwordPattern = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$".toRegex()
+    val password = "Password123"
+    val isPasswordValid = passwordPattern.matches(password)
+    println(isPasswordValid) // Output: true
+}
+
+regexFind()
+regexReplace()
+regexValidate()
 ```
 
-To match this pattern in a string, use the `find()` method and store the result in a `MatchResult?` variable:
+## Deep Dive
+Regex has been a staple in programming since the 1950s, invented by mathematician Stephen Kleene. Alternatives to regex include string methods like `contains`, `startsWith`, or `split`, but they're less powerful. Kotlin regex is built atop Java's `Pattern` and `Matcher` classes, giving it robust performance and utility.
 
-```Kotlin
-val result: MatchResult? = regex.find("I am 25 years old.")
-
-// result?.value will return "25"
-```
-
-You can also use the `matchEntire()` method to match the entire string:
-
-```Kotlin
-val result: MatchResult? = regex.matchEntire("12345")
-
-// result?.value will return "12345"
-```
-
-To replace text using a regular expression, use the `replace()` method:
-
-```Kotlin
-val newString = "Hello, World!".replace(Regex("[Hh]ello"), "Hi")
-
-// newString will return "Hi, World!"
-```
-
-## Deep Dive:
-
-The origins of regular expressions can be traced back to the 1950s, when mathematician Stephen Cole Kleene developed a notation for describing patterns in formal languages. This notation was later adapted by computer scientists and became known as regular expressions.
-
-In Kotlin, regular expressions are represented by the `Regex` class, which is based on the Java `java.util.regex` package. This class provides various methods for performing operations on regular expressions, such as `find()`, `matchEntire()`, `matches()`, and `replace()`.
-
-Although regular expressions are a powerful tool for text manipulation, it is important to keep in mind their performance implications. Complex regular expressions can be computationally expensive and may slow down your code. It is also worth exploring other string manipulation methods in Kotlin, such as the `replace()` and `split()` functions.
-
-## See Also:
-
-For more information on regular expressions in Kotlin, check out the official Kotlin documentation on [regular expressions](https://kotlinlang.org/docs/regular-expressions.html).
-
-You can also find further resources on regular expressions in other programming languages, such as [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions) and [Python](https://docs.python.org/3/library/re.html).
-
-For a fun and interactive way to learn and practice regular expressions, try out [Regex Crossword](https://regexcrossword.com/).
+## See Also
+- Kotlin Docs on Regex: [kotlinlang.org](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- Regex Testing Tool: [regex101.com](https://regex101.com/)
+- Regex Tutorial: [regular-expressions.info](https://www.regular-expressions.info/tutorial.html)

@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung von regulären Ausdrücken"
-html_title:           "Go: Verwendung von regulären Ausdrücken"
-simple_title:         "Verwendung von regulären Ausdrücken"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Go"
 category:             "Go"
 tag:                  "Strings"
@@ -11,38 +11,38 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
-Reguläre Ausdrücke sind ein nützliches Werkzeug in der Programmierung, mit dem man Texte auf bestimmte Muster überprüfen und bearbeiten kann. Programmierer nutzen reguläre Ausdrücke, um Textdateien zu durchsuchen, Eingaben von Nutzern zu validieren oder Daten aus komplexen Dateiformaten zu extrahieren.
+Reguläre Ausdrücke (Regex) sind Muster, die in Textstrings suchen und manipulieren. Entwickler nutzen sie, um effizient Daten zu validieren, zu extrahieren oder zu ersetzen.
 
 ## How to:
-In Go können reguläre Ausdrücke mit dem Paket "regexp" verwendet werden. Zunächst muss das Paket importiert werden:
-```
-import "regexp"
-```
-Dann kann man ein reguläres Ausdrucksobjekt erstellen, indem man den gewünschten Ausdruck und die zu untersuchende Zeichenkette übergeben:
-```
-re := regexp.MustCompile("ab+c")
-str := "abbc"
-```
-Um zu überprüfen, ob die Zeichenkette dem regulären Ausdruck entspricht, kann man die "MatchString" Funktion verwenden:
-```
-matches := re.MatchString(str)
-fmt.Println(matches) // true
-```
-Man kann auch den regulären Ausdruck direkt in die MatchString Funktion schreiben:
-```
-matches := regexp.MatchString("ab+c", "abbbc")
-fmt.Println(matches) // true
-```
-Um Teile der gefundenen Muster zu extrahieren, kann man die "FindString" Funktion verwenden:
-```
-result := re.FindString(str)
-fmt.Println(result) // abbc
+In Go verwendet man das `regexp` Package, um mit Regex zu arbeiten. Hier ein paar Beispiele:
+
+```Go
+package main
+
+import (
+	"fmt"
+	"regexp"
+)
+
+func main() {
+	// Ein einfaches Pattern finden
+	re := regexp.MustCompile(`\w+`)
+	fmt.Println(re.FindString("hello world")) // gibt "hello" aus
+
+	// Alle Vorkommen finden
+	reAll := regexp.MustCompile(`\w+`)
+	fmt.Println(reAll.FindAllString("go gopher", -1)) // gibt ["go", "gopher"] aus
+
+	// Strings ersetzen
+	reReplace := regexp.MustCompile(`f\w+`)
+	fmt.Println(reReplace.ReplaceAllString("foo fighter fight", "bar")) // gibt "bar barer bar" aus
+}
 ```
 
-## Deep Dive:
-Reguläre Ausdrücke wurden ursprünglich in den 1950er Jahren von dem Mathematiker Stephen Kleene entwickelt. Sie wurden in den 1960er Jahren in verschiedenen Programmiersprachen implementiert und sind seitdem ein wichtiger Bestandteil der Programmierung. Es gibt auch alternative Methoden wie String-Suchalgorithmen, aber reguläre Ausdrücke bieten eine kompaktere und einfacher zu lesende Möglichkeit, Muster in Texten zu finden und zu manipulieren.
+## Deep Dive
+Reguläre Ausdrücke gibt es seit den 1950er Jahren. In Go basieren sie auf Ken Thompsons 'grep' Konvention. Alternativen zu Regex sind String-Methoden wie `Contains`, `Index`, oder Parsing-Bibliotheken, falls Regex zu langsam oder zu kompliziert werden. Die Regex-Implementierung in Go ist rekursiv und kann nicht von evil Regex ausgenutzt werden, was in manchen anderen Sprachen zu Denial-of-Service führen kann.
 
-Die Implementierung von regulären Ausdrücken in Go basiert auf der PCRE (Perl Compatible Regular Expression) Bibliothek. Go bietet jedoch zusätzliche Funktionen und Erweiterungen, wie zum Beispiel die "MatchString" Funktion, die es einfacher macht, reguläre Ausdrücke in Go zu verwenden als in anderen Sprachen.
-
-## See Also:
-- [Golang 'regexp' Paket Dokumentation](https://golang.org/pkg/regexp/)
+## See Also
+- Go Dokumentation zum `regexp` Package: [https://pkg.go.dev/regexp](https://pkg.go.dev/regexp)
+- Wiki über reguläre Ausdrücke: [https://en.wikipedia.org/wiki/Regular_expression](https://en.wikipedia.org/wiki/Regular_expression)
+- Online Regex-Testwerkzeuge wie [https://regex101.com/](https://regex101.com/) zum Experimentieren mit Regex-Patterns.

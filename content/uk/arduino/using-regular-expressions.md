@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "Arduino: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,47 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і чому?
+## Що це та навіщо?
+Регулярні вирази – це шаблони, щоб знайти та керувати текстом. Програмісти використовують їх для пошуку, валідації та заміни даних.
 
-Регулярні вирази, або RegExp, це потужний інструмент для пошуку і маніпуляцій з текстом у коді. Програмісти використовують їх для ефективного виявлення, витягування та заміни певних шаблонів у стрічках.
-
-## Як це працює:
-
-Нижче наведено приклад пошуку стрічки, що містить слово "Arduino" за допомогою регулярних виразів.
+## Як це зробити:
+Arduino не має вбудованої підтримки регулярних виразів, але можна використати бібліотеки сторонніх розробників.
 
 ```Arduino
 #include <regex.h>
-String input = "I love Arduino";
-regex_t regex;
-int check;
 
-check = regcomp(&regex, "Arduino", 0);
-check = regexec(&regex, input.c_str(), 0, NULL, 0);
+void setup() {
+  Serial.begin(9600);
+  regex_t reg;
+  const char * regex_text = "Arduino";
+  const char * find_text = "I love Arduino boards!";
 
-if(!check) {
-  Serial.println("Match found");
-} else if(check == REG_NOMATCH) {
-  Serial.println("No match");
-} else {
-  regerror(check, &regex, input, sizeof(input));
-  Serial.println("Regex match failed");
+  if (regcomp(&reg, regex_text, REG_EXTENDED) == 0) {
+    regmatch_t matches[MAX_MATCHES];
+    if (regexec(&reg, find_text, MAX_MATCHES, matches, 0) == 0) {
+      Serial.println("Match found!");
+    } else {
+      Serial.println("No match found.");
+    }
+  }
+  regfree(&reg);
+}
+
+void loop() {
+  // Nothing to do here
 }
 ```
 
-Виведення:
-
-```Arduino
-"Match found"
+Sample output:
+```
+Match found!
 ```
 
-## Глибше занурення
+## Поглиблений огляд:
+Регулярні вирази з'явились у 1950-х, до Arduino часів. Без прямої підтримки, в Arduino можна використовувати бібліотеки `regex.h` або аналоги. Важливо знати: регулярні вирази вимагають більше пам'яті.
 
-1. Регулярні вирази були вперше впроваджені в 1951 році в теорію формальних мов та автоматів. Вони стали основою багатьох сучасних мов програмування включно з Arduino.
-
-2. Альтернативами RegExp є методи пошуку та заміни вбудованих бібліотек стрічок, але вони не надають такої гнучкості та точності.
-
-3. Arduino підтримує більшість стандартних синтаксисів RegExp, але можуть бути виключення в залежності від версії та бібліотеки.
-
-## Дивись також
-
-3. [Довідник по регулярним виразам](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+## Дивись також:
+- [Arduino Regex Library by Nick Gammon](http://www.gammon.com.au/forum/?id=11063)
+- [Regular Expressions - Arduino Reference](https://www.arduino.cc/reference/en/libraries/regex/)
+- [Matching Strings with Regular Expressions in C++](https://www.cplusplus.com/reference/regex/)

@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का प्रयोग करना"
-html_title:           "Javascript: नियमित अभिव्यक्तियों का प्रयोग करना"
-simple_title:         "नियमित अभिव्यक्तियों का प्रयोग करना"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "Javascript"
 category:             "Javascript"
 tag:                  "Strings"
@@ -10,16 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## क्या और क्यों?
-Regular Expressions का उपयोग करना एक तरह से code का उपयोग करना है, जो डाटा पर नियंत्रण रखने और उसे खोजने का एक तरीका है। प्रोग्रामर्स को इसका उपयोग इसलिए करना होता है क्योंकि ये उन्हें अपने कोड को अधिक साफ, संगठित और मजबूत बनाता है।
+## What & Why? (क्या और क्यों?)
+रेगुलर एक्सप्रेशन (Regular Expressions) यानी RegExp, एक पैटर्न है जिसका उपयोग स्ट्रिंग से डेटा खोजने के लिए किया जाता है। प्रोग्रामर्स RegExp का उपयोग इसलिए करते हैं क्योंकि यह टेक्स्ट प्रोसेसिंग को आसान और फास्ट बनाता है।
 
-## कैसे करें:
-आप जावास्क्रिप्ट में regular expressions का उपयोग करना चाहते हैं तो आप "RegExp" फंक्शन का उपयोग कर सकते हैं। इसका एक सरल उदाहरण है:
-```Javascript
-var pattern = /hello/;
-console.log(pattern.test("hello world"));
+## How to: (कैसे करें:)
+```javascript
+// सरल RegExp - मोबाइल नंबर्स का पैटर्न खोजना
+let text = 'मेरा मोबाइल नंबर 9876543210 है।';
+let regex = /\b\d{10}\b/;
+let found = text.match(regex);
+console.log(found[0]); // 9876543210
+
+// ग्लोबल सर्च - सभी ईमेल पते ढूँढना
+let emailText = 'संपर्क करें: example@test.com, info@test.co.in';
+let emailRegex = /\S+@\S+\.\S+/g;
+let emailFound = emailText.match(emailRegex);
+console.log(emailFound); // ['example@test.com', 'info@test.co.in']
 ```
-इस कोड ब्लॉक में, हमने एक pattern बनाया है और उसे "hello world" string पर test किया है। यह true को रिटर्न करेगा क्योंकि string में "hello" शब्द मौजूद है।
 
-## गहराई की खोज:
-Regular Expressions को 1950 के दशक में जन्म दिया गया था। ये Ken Thompson और Dennis Ritchie द्वारा बनाया गया था, जो उस समय बेल लैबोरेट्रीज में काम कर रहे थे। इसके अलावा, regular expressions के दूसरे विकल्प भी मौजूद हैं, जैसे "match" और "search" methods। आप regular expressions को अपने आवश्यकताओं के अनुसार adjust कर सकते हैं, जो आसानी से प्रोग्रामिंग को अनुकूलित करता है।
+## Deep Dive (गहराई से जानकारी):
+1. **ऐतिहासिक संदर्भ**: RegExp का आविष्कार 1950-60 के दशक में हुआ था और यह टेक्स्ट सर्च और मैनिपुलेशन की दुनिया में क्रांतिकारी साबित हुआ।
+2. **विकल्प**: RegExp के अलावा, सामान्य स्ट्रिंग मेथड्स जैसे `indexOf()`, `lastIndexOf()`, `startsWith()`, `endsWith()` आदि का उपयोग करके भी सर्चिंग और मैचिंग की जा सकती है, लेकिन ये RegExp की शक्ति और लचीलापन प्रदान नहीं करते।
+3. **कार्यान्वयन विवरण**: JavaScript में RegExp ऑब्जेक्ट का निर्माण दो तरीकों से किया जा सकता है - लिटरल नोटेशन (`/abc/`) या कंस्ट्रक्टर (`new RegExp('abc')`) का उपयोग करके। `g` फ्लैग ग्लोबल सर्च के लिए, `i` फ्लैग केस इनसेंसिटिव मैच के लिए और `m` फ्लैग मल्टी-लाइन सर्च के लिए होता है। 
+
+## See Also (इसे भी देखें):
+- MDN Web Docs पर RegExp गाइड: [MDN Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- RegExp टेस्टिंग टूल: [RegExr](https://regexr.com/)
+- RegExp ट्यूटोरियल: [Regular Expressions Tutorial](https://www.regular-expressions.info/javascript.html)

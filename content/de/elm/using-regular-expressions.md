@@ -1,7 +1,7 @@
 ---
-title:                "Verwendung regulärer Ausdrücke"
-html_title:           "Elm: Verwendung regulärer Ausdrücke"
-simple_title:         "Verwendung regulärer Ausdrücke"
+title:                "Einsatz von regulären Ausdrücken"
+html_title:           "Bash: Einsatz von regulären Ausdrücken"
+simple_title:         "Einsatz von regulären Ausdrücken"
 programming_language: "Elm"
 category:             "Elm"
 tag:                  "Strings"
@@ -11,30 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Was & Warum?
+Reguläre Ausdrücke sind Muster, um Text nach spezifischen Regeln zu durchsuchen und zu manipulieren. Sie sparen Zeit und Codezeilen, wenn es um komplexe Textoperationen geht.
 
-Reguläre Ausdrücke ermöglichen es uns, in Texten nach bestimmten Mustern zu suchen und diese zu manipulieren. Programmierer verwenden sie, um komplexe Aufgaben wie das Validieren von Eingaben oder das Durchsuchen von Dateien schnell und präzise zu erledigen.
-
-## Wie geht's:
-
-Das Grundgerüst eines regulären Ausdrucks in Elm ist das Paket "Regex". Es enthält Funktionen wie "Regex.match", "Regex.replace" und "Regex.split". Zum Beispiel können wir mit "Regex.match" nach bestimmten Zeichenfolgen suchen, mit "Regex.replace" diese Zeichenfolgen in einem Text manipulieren und mit "Regex.split" einen Text in abschnittsweisen Teile teilen.
+## How to:
+Elm hat standardmäßig keine eingebauten Funktionen für reguläre Ausdrücke, daher benötigst du das Paket `elm/regex`. Hier ist ein Beispiel, wie man es benutzt:
 
 ```Elm
 import Regex
 
--- Sucht nach dem Wort "Hallo" in einem Text
-Regex.match "Hallo" "Hallo, wie geht es dir?" -- gibt "True" zurück
+findUrls : String -> List String
+findUrls text =
+    let
+        regex = Regex.fromString "https?://[\\w-_.]+"
+    in
+    case regex of
+        Nothing ->
+            []
 
--- Ersetzt das Wort "heißt" mit "ist" in einem Text
-Regex.replace "heißt" "Mein Name ist Jake" "Mein Name heißt Jake" -- gibt "Mein Name ist Jake" zurück
-
--- Teilt einen Text an jedem Leerzeichen
-Regex.split " " "Eins Zwei Drei Vier" -- gibt ["Eins", "Zwei", "Drei", "Vier"] zurück
+        Just re ->
+            Regex.find re text
+                |> List.map .match
 ```
 
-## Tiefes Eintauchen:
+Ausführen von `findUrls "Check out this website: https://example.com and this one: http://elm-lang.org"` gibt `[ "https://example.com", "http://elm-lang.org" ]` zurück.
 
-Reguläre Ausdrücke wurden erstmals in den 1950er Jahren von Mathematikern und Linguisten entwickelt. Sie haben seitdem viele Anwendungen gefunden, einschließlich der Verwendung in Programmiersprachen wie Elm. Es gibt auch alternative Methoden, um nach Mustern in Texten zu suchen, wie zum Beispiel die Verwendung von "String.contains" oder "String.split". Die Implementierung von regulären Ausdrücken in Elm verwendet eine sogenannte "Regular Expression Engine", die aus mehreren Komponenten besteht und die Regeln des regulären Ausdrucks interpretiert.
+## Deep Dive
+Reguläre Ausdrücke kamen in den 1950ern auf und sind seitdem in fast allen Programmiersprachen verfügbar. Alternativen zu regulären Ausdrücken sind String-Parser oder spezialisierte Such- und Ersetzungs-Funktionen, die jedoch oft weniger leistungsfähig sind. Wenn man reguläre Ausdrücke in Elm einsetzt, laufen sie auf JavaScripts RegEx-Engine, da Elm zu JavaScript kompiliert wird.
 
-## Siehe auch:
-
-Weitere Informationen zu regulären Ausdrücken in Elm finden Sie in der offiziellen Dokumentation unter https://elm-lang.org/docs/regular-expressions. Sie können auch auf der Seite des Regex-Pakets auf GitHub nach zusätzlichen Funktionen suchen: https://package.elm-lang.org/packages/elm/regex/latest/.
+## See Also:
+- Elm Regex Paket: https://package.elm-lang.org/packages/elm/regex/latest/
+- Regex101 zum Testen von regulären Ausdrücken: https://regex101.com/
+- Elm Guide für String-Parsing: https://guide.elm-lang.org/patterns/string_parsing.html

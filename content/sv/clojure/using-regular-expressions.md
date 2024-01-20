@@ -1,6 +1,6 @@
 ---
 title:                "Använda reguljära uttryck"
-html_title:           "Gleam: Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
 programming_language: "Clojure"
 category:             "Clojure"
@@ -10,31 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och Varför?
-Enkelt uttryckt, användningen av reguljära uttryck (regex) är processen att matcha textsträngar baserat på specifika mönster. Programmerare utför detta för att sålla, identifiera eller ersätta specifika datastycken i en text.
+## Vad & Varför?
+Reguljära uttryck, ofta förkortat regex, är mönster som hjälper till att hitta, matcha och hantera textsträngar. Programmerare använder det för att effektivisera textbearbetning, validera input eller göra komplexa textmanipulationer.
 
-## Hur gör man:
-Här är ett grundläggande exempel på hur du kan använda regex i Clojure:
+## How to:
+Clojure använder Java's `java.util.regex.Pattern` för reguljära uttryck. Nedan är grunderna för att söka och ersätta text.
 
+**Sökning:**
 ```clojure
-(defn matcher [pattern str]
-  (re-seq (re-pattern pattern) str))
-```
-Om vi kör metoden `matcher` med ordet "apples" och strängen "apples are yummy and apples are red", vi skulle få:
-
-```clojure
-(print (matcher "apples" "apples are yummy and apples are red"))
+(re-find #"\b[Cc]lojure\b" "Jag älskar att programmera i Clojure.")
+;; => "Clojure"
 ```
 
-Resultatet skulle vara `("apples" "apples")`.
+**Hitta alla matchningar:**
+```clojure
+(re-seq #"[Ss]v(ensk[a]?)\b" "Svenska är roligt, och svenska filmer är intressanta.")
+;; => ("Svenska" "svenska")
+```
 
-## Djupdykning:
-1. Historiskt sammanhang: Regex började användas i UNIX-världen på 1960-70-talet. Sedan dess används det i nästan alla programmeringsspråk, inklusive Clojure.
-2. Alternativ: Det finns bibliotek som Specter som kan användas för komplex databehandling. Men när det gäller textbearbetning är regex fortfarande svårslagen.
-3. Implementeringsdetaljer: Clojure använder Javas regex-motor som tillhandahåller två grundläggande regex-funktioner `re-matcher` och `re-pattern`.
+**Ersätt text:**
+```clojure
+(clojure.string/replace "Ersätt Java med Clojure!" #"\bJava\b" "Clojure")
+;; => "Ersätt Clojure med Clojure!"
+```
 
-## Se också:
-För mer detaljerade information om regex i Clojure, kolla in dessa länkar:
-- ClojureDoc - Regular Expressions: https://clojuredocs.org/clojure.core/re-matcher
-- The Clojure Cookbook: https://www.clojure-cookbook.com/recipes/regular-expressions
-- Clojure från början - Regular Expressions: https://kimh.github.io/clojure-by-example/#regular-expressions
+## Deep Dive
+Reguljära uttryck har sitt ursprung i teoretisk datalogi och formell språkteori. Alternativ till regex inkluderar strängmetoder som `contains?`, `starts-with?`, och `ends-with?`. Clojure's regex-funktionalitet är en direkt bro till Java's `Pattern`-klass, vilket betyder att alla Java regex-funktioner kan användas direkt i Clojure.
+
+## See Also
+- [Clojure's official documentation on regex](https://clojure.org/guides/learn/functions#_regex)
+- [Java Pattern class documentation](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+- [Regular-Expressions.info](https://www.regular-expressions.info/tutorial.html), en omfattande guide till regex.

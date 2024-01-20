@@ -1,6 +1,6 @@
 ---
 title:                "Använda reguljära uttryck"
-html_title:           "Gleam: Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
 simple_title:         "Använda reguljära uttryck"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,38 +10,29 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Vad och varför?
+## Vad & Varför?
 
-Regular expressions (regex) används för att matcha mönster i strängar. Programmerare använder dem för att snabbt och effektivt utföra handlingar som att söka, matcha och ersätta tecken i en text.
+Regular expressions (regex) är mönster för att matcha textsträngar inom data. Programmerare använder regex för textbearbetning, dataextraktion och validering på ett kraftfullt och flexibelt sätt.
 
-## Hur man gör:
-
-Använd `Regex` modul att arbeta med regular expressions i Elixir. Här är några exempel:
+## Hur gör man:
 
 ```Elixir
-# Söka efter en sträng
-{:ok, regex} = Regex.compile("hej")
-Regex.match?(regex, "hej världen")
-# => true
+# Definiera ett regex-mönster
+regex = ~r/hello/
 
-# Ersätta sträng
-{:ok, regex} = Regex.compile("världen")
-Regex.replace(regex, "hej världen", "elixer")
-# => "hej elixer"
+# Använda Regex.match? för att kolla om mönstret finns i en sträng
+IO.puts Regex.match?(regex, "hello world") # Skriver ut: true
+
+# Använda Regex.scan för att hitta alla förekomster
+IO.inspect Regex.scan(~r/\d+/, "Det finns 12 äpplen och 55 bananer") # Utskrift: [["12"], ["55"]]
 ```
-
-Som du kan se, `Regex.compile/1` används för att skapa en regular expression. Med den kan du sedan söka eller ersätta text.
 
 ## Djupdykning:
 
-Regular expressions härstammar från teoretisk datavetenskap, särskilt formell språkteori. De har varit en grundläggande del av Unix och dess textbearbetningsverktyg sedan 70-talet.
+Regular expressions härstammar från automatteori och formella språk, koncept som utvecklades på 1950- och 60-talen. I Elixir implementeras regex genom biblioteket `Regex`, som bygger på Erlang's `:re` modul, vilket i sin tur använder PCRE-biblioteket. Det erbjuder en hög prestanda och flexibilitet men kan vara klurigt att behärska till fullo. Alternativ till regex inkluderar strängfunktioner som `String.contains?` eller att skriva egna parser med hjälp av Elixir's makron och funktioner.
 
-Exempelvis finns det bibliotek som `:re2` eller `:oniguruma`. Dessa bibliotek kan vara snabbare eller mer funktionella beroende på användningsfallet, men `Regex` är inbyggd och tillräckligt kraftfull för de flesta ändamål.
+## Se även:
 
-När det gäller implementationen använder Elixir Erlang/OTP's Regex-bibliotek, vilket är en inbäddad wrapper för PCRE (Perl Compatible Regular Expressions).
-
-## Se också:
-
-- Elixir officiella dokumentation om `Regex` modul: https://hexdocs.pm/elixir/Regex.html
-- Erlang/OTP's `re` modul: https://erlang.org/doc/man/re.html
-- Learn You Some Erlang's kapitel om regex: http://learnyousomeerlang.com/starting-out-with-regular-expressions
+- Elixir's officiella dokumentation för `Regex` modulen: https://hexdocs.pm/elixir/Regex.html
+- PCRE's dokumentation för att fördjupa sig i mönstersyntax: https://www.pcre.org/
+- ”Learn Regex The Hard Way” för praktisk lärande av regex: https://learnregexthehardway.org/

@@ -1,6 +1,6 @@
 ---
 title:                "Utilizando expressões regulares"
-html_title:           "Python: Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
 simple_title:         "Utilizando expressões regulares"
 programming_language: "Python"
 category:             "Python"
@@ -10,26 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que e por que?
-Regular expressions, também conhecidas como regex, são uma poderosa ferramenta usada em programação para encontrar e manipular padrões de texto. Isso significa que, com elas, podemos procurar por certos padrões em strings de texto e fazer alterações se necessário. Programadores usam regular expressions para automatizar tarefas de manipulação de texto que seriam tediosas e demoradas para serem feitas manualmente.
+## O que é & Por quê?
 
-## Como usar:
+Expressões regulares são padrões usados para encontrar correspondências de strings de texto. Programadores usam-nas para validação de dados, busca e substituição de texto complexo, e manipulação de strings com eficiência e precisão.
+
+## Como fazer:
+
 ```Python
 import re
 
-texto = "Olá, eu sou um texto de exemplo!"
-padrao = "texto"
+# Encontrar todos os e-mails
+texto = "contato@exemplo.com, suporte@exemplo.br, user@domain.info"
+emails = re.findall(r'\b[\w.-]+@[\w.-]+\.\w{2,4}\b', texto)
+print(emails)
 
-match = re.search(padrao, texto) #procura pelo padrão no texto
+# Validar um número de telefone brasileiro (formato simples)
+telefone = "+55 (21) 90000-0000"
+if re.match(r'\+\d{2} \(\d{2}\) \d{5}-\d{4}', telefone):
+    print("Telefone válido")
+else:
+    print("Telefone inválido")
 
-print(match.group()) #imprime o resultado
+# Substituir espaços múltiplos por um único espaço
+texto_com_espacos = "Texto   com  espaços desnecessários."
+texto_limpo = re.sub(r'\s+', ' ', texto_com_espacos)
+print(texto_limpo)
 ```
-  Output: "texto"
 
-## Aprofundando:
-As expressões regulares foram inventadas pelo matemático americano Stephen Kleene na década de 1950. Desde então, elas se tornaram uma ferramenta fundamental em programação. Em Python, podemos usar regular expressions através do módulo "re". No entanto, existem outras opções, como a biblioteca "regex" ou até mesmo funções nativas da linguagem, como o "split" e "replace". A principal diferença entre essas alternativas é a sintaxe utilizada.
+Saída:
 
-## Veja também:
-- Documentação oficial do módulo "re": https://docs.python.org/3/library/re.html
-- Tutorial de Regular Expressions em Python: https://www.w3schools.com/python/python_regex.asp
-- Outras bibliotecas úteis para manipulação de texto em Python: https://realpython.com/python-string-manipulation/#python-text-manipulation-tools
+```
+['contato@exemplo.com', 'suporte@exemplo.br', 'user@domain.info']
+Telefone válido
+Texto com espaços desnecessários.
+```
+
+## Mergulho Profundo
+
+Expressões regulares surgiram nos anos 1950 com o matemático Stephen Cole Kleene. Alternativas a expressões regulares incluem métodos de string específicos como `str.find()` ou `str.replace()`, mas eles não têm a mesma potência ou flexibilidade. Sob o capô, expressões regulares utilizam um motor de busca que pode ser do tipo "greedy" (guloso) ou "non-greedy" (não-guloso), sendo o primeiro o padrão em muitas implementações, o que significa que busca a maior correspondência possível.
+
+## Veja Também
+
+- Documentação oficial do Python sobre expressões regulares: https://docs.python.org/3/library/re.html
+- Tutorial interativo de expressões regulares: https://regexr.com/
+- Artigo sobre a teoria computacional por trás das expressões regulares: https://www.geeksforgeeks.org/regular-expressions-in-python/

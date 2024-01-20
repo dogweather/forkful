@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Arduino: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,32 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva & Hvorfor?
+## What & Why? (Hva & Hvorfor?)
+Regulære uttrykk lar deg søke og manipulere tekst basert på mønstre. Programmerere bruker det for effektivitet og nøyaktighet ved tekstbehandling.
 
-Regulære uttrykk er mønstre som brukes for å matche kombinasjoner av tegn i tekst. Programmerere bruker det fordi det gir dem muligheten til å søke, erstatte, og manipulere tekst mer effektivt.
-
-## Hvordan
-
-Enkelte eksempler på hvordan man kan bruke regulære uttrykk i Bash:
+## How to (Hvordan gjøre det)
+Søk etter ord som starter med 'bok' i en tekstfil:
 
 ```Bash
-# Sjekke om et ord finnes i en tekststring
-echo "Hei verden" | grep -o "verden"
-
-# Erstatte et ord i en tekststring
-echo "Hei verden" | sed 's/verden/alle/'
-
-# Sjekke om en tekststring matcher et bestemt mønster
-[[ "abc123" =~ [a-zA-Z]+[0-9]+ ]] && echo "match!"
+grep '^bok' filnavn.txt
 ```
-Utskriften vil være henholdsvis: "verden", "Hei alle", og "match!".
 
-## Dypdykk
+Finn og erstatt alle instanser av 'eple' med 'pære' i en fil:
 
-Regulære uttrykk oppsto først på 50-tallet og har siden blitt et essensielt verktøy i alle programmerere sin verktøykasse. Det finnes mange alternativer til regulære uttrykk som for eksempel "wildcards" og "globbing", men ingen gir den samme fleksibiliteten. Når du bruker regulære uttrykk i Bash er det viktig å bruke dem i kontekst av grep, sed, eller lignende kommandoer som forstår og kan tolke dem.
+```Bash
+sed 's/eple/pære/g' filnavn.txt
+```
 
-## Se også
+Valider e-postadresser i en liste:
 
-For mer informasjon om regulære uttrykk: 
-- [GEDP online regex tester](https://regex101.com/)
-- [Stack Overflow tråder om regulære uttrykk](https://stackoverflow.com/questions/tagged/regex).
+```Bash
+grep -E "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" epostliste.txt
+```
+
+## Deep Dive (Dypdykk)
+Regulære uttrykk stammer fra teoretisk matematikk og ble populære i dataprogrammering med Unix. Alternativer inkluderer tekstbehandlingsverktøy slik som `awk` og `tr`. Implementasjonsdetaljer kan variere mellom verktøy og programmeringsspråk, men grunnleggende syntax er ganske konsekvent.
+
+## See Also (Se Også)
+- GNU Grep Documentation: https://www.gnu.org/software/grep/manual/grep.html
+- Sed by Example: https://www.gnu.org/software/sed/manual/sed.html
+- Regular-Expressions.info for et dypere dykk: https://www.regular-expressions.info/

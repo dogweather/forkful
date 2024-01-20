@@ -1,6 +1,6 @@
 ---
 title:                "正規表現の使用"
-html_title:           "Bash: 正規表現の使用"
+html_title:           "C: 正規表現の使用"
 simple_title:         "正規表現の使用"
 programming_language: "Bash"
 category:             "Bash"
@@ -10,43 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 何となぜ？
-正規表現は、文字列のパターンを検索や置換するためのパワフルなツールです。プログラマは、複雑なテキスト処理を考える代わりに、高速でスケーラブルなソリューションを得るためにこれを使用します。
+## What & Why? (何となぜ？)
 
-## 使用方法：
-正規表現を使った基本的な文字列の検索を見てみましょう。
+正規表現はテキスト検索・置換に使います。パターンを定義して、大量のデータから必要な情報をササッと探すためにプログラマーは使います。
 
+## How to: (使い方)
+
+grepの例:
 ```Bash
-echo "Hello, Coders of Japan" | grep -o "Hello"
+echo "ハローワールド123" | grep -oE '[0-9]+'  # 数字を検索
 ```
+出力: `123`
 
-出力：
-
+sedで置換:
 ```Bash
-Hello
+echo "ハローワールド123" | sed -E 's/[0-9]+/456/'  # 数字を456に置換
 ```
+出力: `ハローワールド456`
 
-grepと正規表現を使用して特定のパターンをマッチングする方法もあります。たとえば、aからzまでの小文字アルファベットを検索したい場合は、以下のようにします。
+## Deep Dive (深掘り)
 
-```Bash
-echo "Hello, Coders of Japan" | grep -o "[a-z]*"
-```
+正規表現は1960年代に登場。他にも検索・置換にはawkやperlがあります。Bashではgrep, sed, awkなど複数のツールで正規表現が使え、それぞれにパフォーマンスや機能の差があります。
 
-出力：
+## See Also (関連情報)
 
-```Bash
-ello
-oders
-of
-apan
-```
-
-## ディープダイブ：
-正規表現は、初めて1950年代に作られ、数十年にわたり、その能力と柔軟性を増してきました。Bashでの実装はPCRE(Perl Compatible Regular Expressions)に似ており、いくつかの特性と利点があります。
-
-代替案としては、awkやsedのようなテキスト処理ツールがありますが、大規模なテキスト処理においては、正規表現が一番パフォーマンスが高いです。
-
-## 参考文献：
-1. [正規表現チュートリアル](https://www.regular-expressions.info/tutorial.html)
-2. [Bashでの正規表現の詳細](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
-3. [正規表現とは何か](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide/Regular_Expressions)
+- grep マニュアル: https://www.gnu.org/software/grep/manual/grep.html
+- sed マニュアル: https://www.gnu.org/software/sed/manual/sed.html
+- 正規表現について深く学ぶ: https://www.regular-expressions.info/tutorial.html

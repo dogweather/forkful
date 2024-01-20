@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Kotlin: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Kotlin"
 category:             "Kotlin"
@@ -10,55 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Kotlin ja säännölliset lausekkeet - mitä ne ovat ja miksi ohjelmoijat niitä käyttävät?
-
 ## What & Why?
-
-Säännölliset lausekkeet ovat erityinen merkkijonojen käsittelytekniikka, joka auttaa tarkistamaan ja löytämään tiettyjä merkkijonoja tai malleja tekstissä. Ohjelmoijat käyttävät säännöllisiä lausekkeita useisiin tarkoituksiin, kuten tekstien analysointiin, tiedon hakemiseen ja manipulointiin.
+Regulaarilausekkeet ("regex") on työkalu merkkijonojen käsittelyyn. Niiden avulla voimme suodattaa, korvata tai tarkistaa merkkijonot kuvioiden mukaan – nopeasti ja tehokkaasti.
 
 ## How to:
+Käytetään regexiä Kotlinissa. Piirretään esimerkki merkkijonon tarkistuksesta ja korvaamisesta.
 
-Käyttämällä säännöllisiä lausekkeita Kotlin-ohjelmoinnissa, voit ensin luoda säännöllinen lauseke-luokan käyttämällä Regex() -funktiota ja antamalla sille haluamasi lausekkeen. Sitten voit käyttää erilaisia metodeja, kuten find(), replace() ja match(), hakeaksesi tietoa ja manipuloidaksesi merkkijonoja.
-
-Esimerkki 1: Hae numerot listasta
 ```Kotlin
-val text = "Tämä on lista numeroista: 1, 2, 3 ja 4"
-val regex = Regex("\\d+")
-val matches = regex.findAll(text)
-matches.forEach { println(it.value) }
-```
-Tulostus:
-```
-1
-2
-3
-4
-```
-
-Esimerkki 2: Vaihda sanat listassa
-```Kotlin
-val text = "Tämä on lista sanoista: kissa, koira, lintu ja kala"
-val regex = Regex("\\w+")
-val result = regex.replace(text) { match ->
-    when (match.value) {
-        "kissa" -> "hevonen"
-        "koira" -> "leijona"
-        "lintu" -> "papukaija"
-        "kala"  -> "valas"
-        else -> match.value
-    }
+fun main() {
+    val teksti = "Kotlin on huippu 2023!"
+    
+    // Tarkistetaan onko vuosi merkkijonossa
+    val vuosiRegex = """\b\d{4}\b""".toRegex()
+    println(vuosiRegex.containsMatchIn(teksti)) // Tulostaa: true
+    
+    // Korvataan "huippu" sanalla "mahtava"
+    val korvaus = teksti.replace("huippu", "mahtava")
+    println(korvaus) // Tulostaa: Kotlin on mahtava 2023!
 }
-println(result)
-```
-Tulostus:
-```
-Tämä on lista sanoista: hevonen, leijona, papukaija ja valas
 ```
 
-## Deep Dive:
+## Deep Dive
+Regulaarilausekkeet ovat peräisin 1950-luvulta, Stephen Kleenen teoriasta. Regexin vaihtoehtoja on lukuisia: saatat käyttää `String`-metodeja kuten `contains` tai `startsWith`. Kotlinin `Regex`-luokka käyttää alaisuudessaan Javan `Pattern`- ja `Matcher`-luokkia, joten sen suorituskyky on vertailukelpoinen.
 
-Säännölliset lausekkeet ovat olleet käytössä jo yli 60 vuotta ja niitä käytetään laajasti eri ohjelmointikielissä. Ne voivat olla hyödyllisiä monissa projekteissa, mutta on myös vaihtoehtoja, kuten string-metodeja ja lambda-funktioita, joiden avulla voidaan saavuttaa samat tavoitteet. Kotlinissa säännölliset lausekkeet on toteutettu Java-kielen Regex-luokan avulla, joten sinun ei tarvitse opetella uutta syntaksia.
-
-## See Also:
-
-Voit lukea lisää Kotlinin säännöllisistä lausekkeista Kotlin-julkaisukirjasta ja Kotlinin virallisilta verkkosivuilta. Voit myös tutustua Java-kielen Regex-luokan dokumentaatioon, jotta ymmärrät paremmin sen käyttöä Kotlinissa.
+## See Also
+- [Kotlinin virallinen dokumentaatio regexistä](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [RegExr](https://regexr.com/): interaktiivinen työkalu regexien harjoitteluun ja testaamiseen
+- [RegEx101](https://regex101.com/): toinen vaihtoehto regexien testaamiseen online.

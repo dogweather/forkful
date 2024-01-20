@@ -1,7 +1,7 @@
 ---
-title:                "Å bruke regulære uttrykk"
-html_title:           "Ruby: Å bruke regulære uttrykk"
-simple_title:         "Å bruke regulære uttrykk"
+title:                "Bruk av regulære uttrykk"
+html_title:           "Bash: Bruk av regulære uttrykk"
+simple_title:         "Bruk av regulære uttrykk"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,51 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Hva og Hvorfor?
+## Hva & Hvorfor?
+Regulære uttrykk er tekst-søkemønstre. Programmerere bruker dem for å finne, hente ut, erstatte eller validere tekst.
 
-Regular expressions er en måte å søke og manipulere tekst på i programmering. Det er en nyttig verktøy for å søke etter spesifikke mønstre, som for eksempel e-postadresser eller telefonnummer, i store tekstfiler.
-
-Programmerere bruker regelmessige uttrykk for å effektivt behandle og transformere data, spesielt når det kommer til store tekstmengder. Det gjør at de kan automatisk finne og endre tekst på et bestemt mønster, noe som sparer tid og gjør kodingen mer nøyaktig.
-
-## Slik gjør du:
-
-For å bruke regulære uttrykk i Ruby må du først opprette et uttrykk ved å bruke et spesielt syntaks:
-
+## How to:
 ```Ruby
-regex = /mønster/
+# Finne tall i en streng
+streng = "Det er 12 epler og 7 bananer."
+tall = streng.scan(/\d+/)
+puts tall
+# Output: 12 7
+
+# Validering av e-postformat
+epost = "ola@nordmann.no"
+valid = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i.match?(epost)
+puts valid ? "Gyldig" : "Ugyldig"
+# Output: Gyldig
+
+# Erstatte bokstaver
+tekst = "foobar"
+ny_tekst = tekst.sub(/o/, "0")
+puts ny_tekst
+# Output: f0obar
 ```
 
-Deretter kan du bruke ulike metoder for å søke etter og manipulere tekst basert på dette mønsteret. For eksempel kan du bruke `match` for å finne alle forekomster av mønsteret i en tekststreng:
+## Deep Dive
+Regular expressions, eller regex, ble skapt på 1950-tallet. I Ruby, er Oniguruma biblioteket brukt for regex - raskt og kraftig. Alternativer? Strengmanipulering med Ruby metoder som `include?`, `split`, `gsub`, men de er mindre fleksible.
 
-```Ruby
-text = "Jeg liker å spise epler og bananer"
-mønster = /epler/
-
-puts text.match(mønster)
-
-# => epler
-```
-
-Her blir bare "epler" returnert siden det er det eneste mønsteret i tekststrengen. Du kan også bruke `sub` for å erstatte en tekst som matcher mønsteret med en annen tekst:
-
-```Ruby
-text = "Jeg liker å spise epler og bananer"
-mønster = /epler/
-
-puts text.sub(mønster, "appelsiner")
-
-# => Jeg liker å spise appelsiner og bananer
-```
-
-## Dypdykk:
-
-Bruken av regulære uttrykk går tilbake til 1950-tallet da det ble utviklet innenfor matematikk og lingvistikk. Det har blitt en viktig del av programmering, spesielt for å arbeide med tekstdata.
-
-Det finnes alternative måter å behandle tekst på i Ruby, som for eksempel `String#scan` metoden. Men regulære uttrykk er ofte foretrukket fordi det tillater mer komplekse og nøyaktige søk. Det er også en del av programmeringskunnskap som er nyttig for å forstå og implementere.
-
-## Se også:
-
-For mer informasjon om bruk av regulære uttrykk i Ruby, sjekk ut disse ressursene:
-
-- [Ruby Regexp dokumentasjon](https://ruby-doc.org/core/Regexp.html)
-- [Pragmatic Programing: Chapter 7 - Regular Expressions](https://pragprog.com/book/btlang/best-of-ruby-quiz)
+## See Also
+- [Ruby-Dokumentasjon for Regulære Uttrykk](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- [Rubular: en Ruby-basert regulær uttrykk redigerer](http://rubular.com/)
+- [Ruby Quicktips: Regulære uttrykk](http://www.rubyquicktips.com/post/44385425189/regular-expressions)

@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "C#: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "C#"
 category:             "C#"
@@ -10,39 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що і Зачем?
-Регулярні вирази - це інструмент, який дозволяє нам шукати та змінювати текст за певним шаблоном. Програмісти використовують регулярні вирази, щоб швидко та ефективно обробляти великі обсяги тексту, використовуючи мінімум коду.
+## Що це таке & Навіщо?
+Використання регулярних виразів дає змогу фільтрувати та маніпулювати текстом за допомогою паттернів. Програмісти користуються ними, щоб швидко обробляти великі об'єми текстів, валідувати дані чи витягувати інформацію.
 
-## Як використовувати?
-У даному прикладі ми будемо використовувати регулярні вирази для перевірки коректності введеного email адресу.
-
+## Як це зробити:
 ```C#
-//створюємо регулярний вираз для перевірки email адреси
-string pattern = @"^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+$";
-//створюємо рядок для перевірки
-string email = "hello@example.com";
+using System;
+using System.Text.RegularExpressions;
 
-//перевіряємо, чи введено коректну email адресу за допомогою методу Regex.Match()
-if (Regex.Match(email, pattern).Success)
+class RegexExample
 {
-    //якщо адреса коректна - виводимо повідомлення
-    Console.WriteLine("Email адреса коректна!");
+    static void Main()
+    {
+        string pattern = @"\b[A-Za-z]{6,}\b";
+        string text = "Regex is powerful and often quite useful in programming.";
+
+        MatchCollection matches = Regex.Matches(text, pattern);
+
+        Console.WriteLine("Words with 6 or more letters:");
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+    }
 }
-else
-{
-    //якщо адреса некоректна - виводимо повідомлення про помилку
-    Console.WriteLine("Введено некоректну email адресу!");
-}
+```
+Виведення:
+```
+powerful
+programming
 ```
 
-### Вихід:
-```
-Email адреса коректна!
-```
+## Поглиблений аналіз:
+Створені у 1950-х, регулярні вирази наснажили UNIX utilities. Зараз є інші інструменти як LINQ чи парсери для складних задач, та регулярні вирази — оптимальний вибір для текстових паттернів. С# використовує клас `Regex` з `System.Text.RegularExpressions`.
 
-## Глибше:
-Регулярні вирази були винайдені в 1951 році американським математиком Стівеном Клейном. Вони є потужним інструментом для роботи з текстом, альтернатива якому може бути використання циклів та умовних операторів. У C# регулярні вирази підтримуються за допомогою класу Regex, який надає багато методів для роботи з текстом, використовуючи регулярні вирази.
-
-## Дивись також:
-- [Документація по класу Regex в C#](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex?view=netcore-3.1)
-- [Регулярні вирази для початківців](https://habr.com/en/post/115825/)
+## Додаткове джерело:
+- Microsoft документація про `Regex`: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex
+- Про регулярні вирази загалом: https://www.regular-expressions.info/
+- Онлайн-інструменти для тестування регулярних виразів, як Regex101: https://regex101.com/

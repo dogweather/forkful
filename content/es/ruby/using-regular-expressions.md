@@ -1,7 +1,7 @@
 ---
-title:                "Utilizando expresiones regulares"
-html_title:           "Ruby: Utilizando expresiones regulares"
-simple_title:         "Utilizando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,18 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
-Usar expresiones regulares en programación consiste en buscar y manipular patrones de texto dentro de una cadena de caracteres. Los programadores recurren a esta técnica para ahorrar tiempo y esfuerzo al procesar grandes cantidades de datos y simplificar la lógica de sus programas.
+## ¿Qué y Por Qué?
+Las expresiones regulares (regex) son patrones usados para encontrar coincidencias o reemplazar textos. Los programadores las utilizan por su potencia y flexibilidad para manejar cadenas de caracteres y automatizar tareas de validación y análisis.
 
-## Cómo:
-Las expresiones regulares en Ruby se definen entre dos barras / / y utilizan diferentes caracteres especiales para representar patrones. Por ejemplo, /hello/ buscará la palabra "hello" en una cadena de caracteres. Para contar cuántas coincidencias hay en una cadena, se puede utilizar el método scan() combinado con la expresión regular. Por ejemplo:
-```Ruby 
-   "hello, goodbye, hello".scan(/hello/)
-   #=> ["hello", "hello"]
+## How to:
+Aquí tienes ejemplos sencillos que muestran cómo utilizar expresiones regulares en Ruby:
+
+```Ruby
+# Búsqueda básica de un patrón
+texto = "Hola, mundo!"
+patron = /mundo/
+coincide = texto.match(patron)
+puts coincide # => #<MatchData "mundo">
+
+# Reemplazo de texto
+nuevo_texto = texto.sub(patron, "Ruby")
+puts nuevo_texto # => "Hola, Ruby!"
+
+# Validar formato de email
+email = "usuario@example.com"
+email_patron = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+valido = email.match(email_patron) ? "válido" : "inválido"
+puts "El email es #{valido}" # => "El email es válido"
 ```
 
-## Inmersión Profunda:
-Las expresiones regulares tienen su origen en la década de 1950, cuando el matemático Stephen Kleene desarrolló los "autómatas finitos", una herramienta teórica para emparejar patrones de texto. Aunque hay alternativas a las expresiones regulares, como el uso de funciones de cadena más específicas para ciertos patrones, las expresiones regulares siguen siendo una herramienta poderosa y ampliamente utilizada en la programación. En Ruby, se implementan utilizando la biblioteca Oniguruma, que proporciona soporte para varios idiomas y estándares de expresiones regulares.
+## Deep Dive:
+Las expresiones regulares en Ruby se inspiran en Perl, conocidas por su eficacia. Existen alternativas como `String#scan` para encontrar todas las ocurrencias de un patrón o `String#gsub` para reemplazarlas. Al implementar regex, Ruby compila los patrones a un bytecode interno, optimizando su ejecución.
 
-## Ver También:
-Para un tutorial más detallado sobre el uso de expresiones regulares en Ruby, puedes consultar la documentación oficial de Ruby en https://ruby-doc.org/core-2.7.0/Regexp.html. También puedes explorar otras herramientas y bibliotecas relacionadas en la página de RubyGems dedicada a expresiones regulares: https://rubygems.org/search?utf8=%E2%9C%93&query=regular+expressions.
+## See Also:
+- [Documentación oficial de Ruby sobre Regexp](https://ruby-doc.org/core-2.7.1/Regexp.html)
+- [Rubular: Un editor de expresiones regulares para Ruby](http://rubular.com/)
+- [Learn Ruby Regexp](https://learn.co/lessons/ruby-regex)

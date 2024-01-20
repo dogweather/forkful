@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Ruby: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,32 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Co i dlaczego?
+## What & Why?
+W Ruby regexy to narzędzia do wyszukiwania wzorców w tekście. Służą do walidacji, przeszukiwania czy też transformowania stringów – zwiększają elastyczność i efektywność kodu.
 
-Używanie wyrażeń regularnych, czyli krótkich i zwięzłych wzorców znaków, jest niezbędnym narzędziem dla programistów Ruby. Dzięki nim możemy szybko i precyzyjnie znajdować i manipulować tekstem w programach. Innymi słowy, jest to potężne narzędzie, które pomaga nam przetwarzać dane w wysoce efektywny sposób.
-
-## Jak to zrobić?
+## How to:
+Użycie regexpa w praktyce:
 
 ```Ruby
-# Szukanie wystąpienia słowa "programowanie" w tekście
-tekst = "Uwielbiam programowanie w Ruby!"
-if (tekst =~ /programowanie/)
-  puts "Znalazłem!"
+# Wyszukiwanie słowa 'ruby'
+text = "Lubię programować w Ruby!"
+pattern = /ruby/i
+puts "Znaleziono!" if text.match(pattern)
+
+# Output: Znaleziono!
+
+# Podmiana tekstu
+text = "Jest zimno i pada śnieg"
+new_text = text.gsub(/zimno/, 'ciepło')
+puts new_text
+
+# Output: Jest ciepło i pada śnieg
+
+# Capturing groups - wyłuskanie danych
+date = "Data wydarzenia: 2023-04-26"
+pattern = /(\d{4})-(\d{2})-(\d{2})/
+if date =~ pattern
+  puts "Rok: #{$1}, Miesiąc: #{$2}, Dzień: #{$3}"
 end
+
+# Output: Rok: 2023, Miesiąc: 04, Dzień: 26
 ```
 
-```Ruby
-# Zamiana wszystkich liter na wielkie
-tekst = "to jest super fajny program"
-zamieniony_tekst = tekst.upcase
-puts zamieniony_tekst
-# Output: TO JEST SUPER FAJNY PROGRAM
-```
+## Deep Dive:
+Regularne wyrażenia, czyli regexy, pojawiły się w latach 50. XX wieku. Są standardem w większości języków programowania. Alternatywą dla regexów jest manualne przeszukiwanie stringów, co jest pracochłonne i mniej wydajne. W Ruby regexy są wbudowane i korzystają z różnych implementacji, np. Oniguruma.
 
-## W głąb informacji
-
-Wyrażenia regularne mają swoje korzenie w matematyce, a zostały wprowadzone do programowania w latach 50. XX wieku. W Ruby, możemy również używać metody `match` zamiast operatora `=~`, ale często jest to kwestia preferencji. Alternatywnym rozwiązaniem dla wyrażeń regularnych są parser-y tekstowe, ale często są one bardziej skomplikowane w użyciu.
-
-## Zobacz też
-
-- [Dokumentacja Ruby o wyrażeniach regularnych](https://ruby-doc.org/core-3.0.0/Regexp.html)
+## See Also:
+- Ruby's Regex dokumentacja: [Ruby-Doc Regex](https://ruby-doc.org/core/doc/regexp_rdoc.html)
+- Dokładniejsze wyjaśnienie regexów: [rubular.com](http://rubular.com/)
+- Interaktywne tutoriali: [regexone.com](https://regexone.com/)

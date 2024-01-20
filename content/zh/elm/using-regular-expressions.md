@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Elm: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Elm"
 category:             "Elm"
@@ -10,30 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么是正则表达式? 
-正则表达式是一种用来匹配和搜索文本模式的特殊字符串。程序员通常会使用正则表达式来快速有效地处理文本数据。它们可以用来验证输入，搜索特定模式的文本，甚至更改文本格式。
+## What & Why? (什么以及为什么？)
+使用正则表达式可以检查、检索及替换文本模式。程序员用它们来处理字符串，因为它效率高，灵活性强。
 
-## 如何使用: 
-Elm中使用正则表达式非常简单。你只需使用内置的Regex模块，并调用相应函数即可。以下是几个示例：
+## How to: (如何操作：)
+Elm 没有内建的正则表达式支持，你需要使用额外的库，如 `elm/regex`。
 
 ```Elm
--- 验证电子邮件格式是否符合标准
-Regex.isMatch Regex.email "user@example.com" --> True
+import Regex exposing (..)
 
--- 替换文本中的特定字符
-Regex.replace (Regex.regex "-") (always "_") "Elm-is-awesome" --> "Elm_is_awesome"
+-- 检测字符串是否匹配模式
+isMatch : String -> Bool
+isMatch text =
+    Regex.fromString "^[a-zA-Z0-9]+$"
+        |> Maybe.andThen (\regex -> Just <| Regex.contains regex text)
+        |> Maybe.withDefault False
 
--- 搜索文本中包含特定模式的字符串
-Regex.find Regex.word "Hello, world!" --> Just "Hello"
-
--- 匹配多个模式
-Regex.all [Regex.word, (Regex.regex ",")] "Hello, world!" --> Just ["Hello", ","]
+-- 输出
+isMatch "ElmLang123"  -- 结果: True
+isMatch "你好"        -- 结果: False
 ```
 
-## 深入了解: 
-正则表达式的历史可以追溯到20世纪50年代的数学领域。在编程中，它们通常被用来替代繁琐的字符串操作。除了Elm之外，还有许多其他编程语言也使用正则表达式，例如JavaScript和Python。在Elm中使用正则表达式的实现是通过使用JavaScript的RegExp对象来实现的。
+## Deep Dive (深入探讨)
+正则表达式有个悠久历史，于1950年代起源于形式语言理论。Elm中使用正则表达式，你可能需要借助 `elm/regex`；这在一定程度上限制了表达式的复杂性。如果需要更复杂的使用场景，JavaScript互操作是个选择。
 
-## 查看更多: 
-要了解更多关于Elm中使用正则表达式的知识，可以参考官方文档中的Regex模块部分：https://package.elm-lang.org/packages/elm/regex/latest
-
-也可以查看一些有用的正则表达式在线测试工具，例如Regexr：https://regexr.com/
+## See Also (参考链接)
+- Elm正则表达式库文档：[https://package.elm-lang.org/packages/elm/regex/latest/](https://package.elm-lang.org/packages/elm/regex/latest/)
+- 正则表达式介绍：[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- Elm关于与外部JavaScript代码通讯的官方指南：[https://guide.elm-lang.org/interop/](https://guide.elm-lang.org/interop/)

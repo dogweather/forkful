@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "C#"
 category:             "C#"
@@ -10,44 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why? (Mitä & Miksi?)
 
-Säännölliset lausekkeet tai tuttavallisemmin regex, ovat merkkijonoja, jotka kuvaavat merkkijonojen kuvioita. Ohjelmoijat käyttävät niitä arjen tehtäviin, kuten syötteen validointiin, merkkijonojen hakuun ja korvaamiseen sekä tekstin jakamiseen osiin.
+Regular expressions eli säännölliset lausekkeet ovat kuvioita tekstinhakuun ja -käsittelyyn. Ne auttavat löytämään, korvaamaan tai tarkistamaan tekstiä nopeasti ja monipuolisesti.
 
-## Näin tehdään:
+## How to: (Kuinka tehdä:)
 
-Katsotaanpa kuinka tehdään muutamia perustyötehtäviä regexien avulla C#:ssa.
 ```C#
+using System;
 using System.Text.RegularExpressions;
 
-// Sähköpostin validointi
-string email = "testi@testi.fi";
-bool IsValidEmail = Regex.IsMatch(email, 
-@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" + 
-@"\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\" + 
-@".)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
-Console.WriteLine(IsValidEmail); // Tulostaa: True
-
-// Merkkijonojen etsintä
-string teksti = "Hei, olen C# ohjelmoija";
-Match match = Regex.Match(teksti, @"\bC#\b",
-RegexOptions.IgnoreCase);
-if (match.Success)
+class RegexDemo
 {
-   Console.WriteLine("Löydetty: " + match.Value); // Tulostaa: Löydetty: C#
+    static void Main()
+    {
+        // Etsi kaikki sähköpostiosoitteet
+        string teksti = "Otto on otto@example.com, Liisa on liisa99@anothermail.fi";
+        string pattern = @"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b";
+
+        MatchCollection matches = Regex.Matches(teksti, pattern);
+
+        foreach (Match match in matches)
+        {
+            Console.WriteLine(match.Value);
+        }
+
+        // Output:
+        // otto@example.com
+        // liisa99@anothermail.fi
+    }
 }
 ```
 
-## Sukellus syvemmälle
+## Deep Dive (Sukellus syvemmälle):
 
-Regex syntaksi perustuu UNIXin egrep-komentoon, ja se on peräisin 1950-luvulta. Vaihtoehtoisia tapoja merkkijonojen käsittelyyn ovat esimerkiksi perus merkkijono-funktiot, jotka voivat olla helpompia yksinkertaisissa tapauksissa. Toisaalta regex sallii monimutkaisemmat merkkijono-kuvion tarkistukset.
+Säännölliset lausekkeet juontavat juurensa matemaatikko Stephen Kleenen työhön 1950-luvulla. Vaihtoehtoja säännöllisille lausekkeille ovat mm. string-menetelmät (esim. `Contains`, `IndexOf`) ja parserit, mutta ne eivät yltä regexien monipuolisuuteen. Regexeissä on monia toteutustapoja, C# käyttää .NETin Regex-luokkaa, joka on tehokas ja monipuolinen.
 
-On tärkeää huomata, että Regex-luokka C#:ssa varastoi viimeksi käytetyn lausekkeen automaattisesti. Tilanteissa, joissa lauseke muuttuu harvoin, tämä optimoi suorituskykyä.
+## See Also (Katso myös):
 
-## Katso myös:
-
-Dokumentaatio, jonka Microsoft tarjoaa, on erinomainen resurssi: [System.Text.RegularExpressions](https://docs.microsoft.com/fi-fi/dotnet/api/system.text.regularexpressions.regex)
-
-Selkeä opas regexin perusteista löytyy myös osoitteesta: [regexone.com](https://regexone.com/)
-
-Regexin testaamiseen on useita online työkaluja, kuten [regex101.com](https://regex101.com/)
+- Microsoftin ohjeet regexeille: [docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- Regex101, harjoittele ja testaa regex-kuvioita: [regex101.com](https://regex101.com/)
+- Regexr, opettele regexien käyttöä: [regexr.com](https://regexr.com/)

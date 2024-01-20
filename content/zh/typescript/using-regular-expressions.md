@@ -1,7 +1,7 @@
 ---
-title:                "使用正则表达式。"
-html_title:           "TypeScript: 使用正则表达式。"
-simple_title:         "使用正则表达式。"
+title:                "使用正则表达式"
+html_title:           "C: 使用正则表达式"
+simple_title:         "使用正则表达式"
 programming_language: "TypeScript"
 category:             "TypeScript"
 tag:                  "Strings"
@@ -10,33 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## What & Why? (什么与为什么？)
+正则表达式是模式匹配的工具，用来检索、替换文本。程序员用它是因为它强大而灵活，可以用很短的代码做复杂的文本处理。
 
-正则表达式是一种在文本中查找和匹配特定模式的技术。程序员使用它来简化文本处理，例如验证用户输入或从字符串中提取信息。
+## How to: (怎么做：)
+在TypeScript里使用正则表达式很简单。以下是例子：
 
-## 如何使用：
-
+匹配电子邮件地址：
 ```TypeScript
-// 定义一个正则表达式，用于匹配3-6位数字
-const regex = /^\d{3,6}$/;
-
-// 检查一个字符串是否符合正则表达式
-console.log(regex.test('123')); // 输出 true
-console.log(regex.test('1234567')); // 输出 false
-
-// 提取字符串中匹配的文本片段
-const match = regex.exec('abc123def');
-if (match) {
-    console.log(match[0]); // 输出 123
-}
+const emailPattern = /\S+@\S+\.\S+/;
+const email = "example@example.com";
+const isEmailValid = emailPattern.test(email);
+console.log(isEmailValid); // 输出: true
 ```
 
-## 深入了解：
+替换字符串中的空格：
+```TypeScript
+const spacesPattern = /\s+/g;
+const stringWithSpaces = "This is a test string.";
+const stringWithoutSpaces = stringWithSpaces.replace(spacesPattern, "_");
+console.log(stringWithoutSpaces); // 输出: "This_is_a_test_string."
+```
 
-- 正则表达式最早由美国计算机科学家Ken Thompson在1968年开发出来，它已成为绝大多数编程语言中的一项基础功能。
-- 虽然正则表达式强大，但也有一些替代方案，如字符串方法、自定义函数等。
-- 在TypeScript中，可以使用内置的RegExp对象来创建和操作正则表达式。
+## Deep Dive (深入探讨)
+正则表达式起源于20世纪60年代的理论计算机科学，并且被广泛用于Unix工具中。除了正则表达式，我们还可以用字符串方法（如`indexOf`, `split`, `replace`）或者第三方库比如lodash来处理文本。在TypeScript中，正则表达式是通过`RegExp`类来实现的，支持使用构造函数或者直接使用字面量语法。
 
-## 参考资料：
-
-- [正则表达式基础教程](https://www.runoob.com/regexp/regexp-syntax.html)
+## See Also (参见)
+- MDN 正则表达式指南：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions
+- TypeScript 官方手册：https://www.typescriptlang.org/docs/
+- RegExp 类参考文档：https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/RegExp

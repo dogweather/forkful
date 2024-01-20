@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Bash: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,43 +10,46 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇 & 왜?
+## What & Why?
+(무엇이며 왜 사용하는가?)
+정규 표현식은 문자열 패턴 매칭을 위한 도구입니다. 프로그래머들이 데이터 검증, 검색, 추출, 대체 작업을 쉽고 효율적으로 하기 위해 사용합니다.
 
-정규 표현식은 문자열의 특정 패턴을 찾거나 수정하는 유용한 도구입니다. 이를 사용하면 복잡한 텍스트 처리 및 검증 작업을 간단하게 해결할 수 있습니다.
-
-## 실제 코드:
-
+## How to:
+(어떻게 사용하는가?)
 ```C#
 using System;
 using System.Text.RegularExpressions;
 
-class Program {
-    static void Main() {
-        // 입력 문자열 
-        string input = "Hello, my phone number is 987-654-3210.";
+class Program
+{
+    static void Main()
+    {
+        // 이메일 유효성 검사
+        string pattern = @"\w+@\w+\.\w+";
+        string testEmail = "example@email.com";
         
-        // 정규표현식을 사용하여 전화번호 패턴 찾기
-        string pattern = @"\d{3}-\d{3}-\d{4}";
-        Match m = Regex.Match(input, pattern);
+        bool isValidEmail = Regex.IsMatch(testEmail, pattern);
+        Console.WriteLine("이메일 유효: " + isValidEmail);  // 출력: 이메일 유효: True
 
-        if (m.Success) {
-            Console.WriteLine("Match found: " + m.Value);
+        // 문자열에서 숫자 추출
+        string data = "Price: 1234 Won";
+        string numPattern = @"\d+";
+        
+        MatchCollection matches = Regex.Matches(data, numPattern);
+        foreach (Match match in matches)
+        {
+            Console.WriteLine("숫자 추출: " + match.Value);  // 출력: 숫자 추출: 1234
         }
     }
 }
 ```
-이 코드를 실행하면 출력결과는 `Match found: 987-654-3210` 입니다.
 
-## 심층 분석:
+## Deep Dive:
+(심층 분석)
+정규 표현식은 1950년대 수학자 스티븐 클리니가 발명했습니다. 널리 쓰이는 대안으로는 문자열 함수들이 있지만, 정규 표현식이 훨씬 강력합니다. C#에서는 `System.Text.RegularExpressions` 네임스페이스 안의 `Regex` 클래스를 통해 구현됩니다. 속도가 중요하다면, 정규 표현식의 컴파일 옵션을 고려할 수 있습니다.
 
-(1) **역사적 배경**: 정규 표현식은 1950년대에 수학자 스티븐 콜 클레니에 의해 개발되었습니다. 처음에는 문자열 처리를 위한 유용한 수학적 표현식이었지만, 이후에 컴퓨터 공학 분야에서 널리 이용되기 시작했습니다.
-
-(2) **대체 수단**: 정규 표현식 라이브러리가 없는 경우 또는 더 간단한 작업의 경우, 문자열 메서드를 직접 이용해도 됩니다. 예를 들어, 'StartsWith', 'EndsWith', 'IndexOf', 'LastIndexOf' 등의 메서드가 있습니다.
-
-(3) **구현 세부사항**: C#에서는 `System.Text.RegularExpressions` 네임스페이스에 있는 `Regex` 클래스를 사용하여 정규 표현식을 구현합니다. `Match`, `Matches`, `IsMatch`, `Replace`, `Split` 등 여러 메서드들이 제공됩니다.
-
-## 참고:
-
-- [Microsoft Official Documentation: Regular Expressions](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)
-- [RegexOne - Learn Regular Expressions](https://regexone.com/)
-- [StackOverflow: Understanding Regular Expressions](https://stackoverflow.com/questions/4736/understanding-regular-expressions)
+## See Also:
+(더 보기)
+- [Microsoft Docs: .NET 정규 표현식](https://docs.microsoft.com/ko-kr/dotnet/standard/base-types/regular-expression-language-quick-reference)
+- [Regex101: 정규 표현식 테스트](https://regex101.com/)
+- [Stack Overflow: 정규 표현식 질문](https://stackoverflow.com/questions/tagged/regex)

@@ -1,7 +1,7 @@
 ---
-title:                "Att använda reguljära uttryck"
-html_title:           "Kotlin: Att använda reguljära uttryck"
-simple_title:         "Att använda reguljära uttryck"
+title:                "Använda reguljära uttryck"
+html_title:           "Bash: Använda reguljära uttryck"
+simple_title:         "Använda reguljära uttryck"
 programming_language: "Kotlin"
 category:             "Kotlin"
 tag:                  "Strings"
@@ -10,23 +10,32 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Vad och varför?
-Användning av reguljära uttryck (regular expressions) inom programmering handlar om att söka efter och matcha mönster i textsträngar. Det kan användas för att göra sökningar, ersättningar eller validering av text. Programmerare använder dessa uttryck för att effektivt hantera och manipulera data i sina applikationer.
+## Vad & Varför?
+Reguljära uttryck (regex) är textmatchningsmönster. Programmerare använder dem för att söka, validera eller manipulera text effektivt.
 
-# Hur gör man?
-För att använda reguljära uttryck i Kotlin, behöver du importera Regex-paketet in i ditt program. Sedan kan du använda Regex.bitestate() -funktionen för att skapa ett reguljärt uttryck och sedan använda find(), match() eller replace() för att manipulera texten. Här är ett exempel på att hitta första förekomsten av ett mönster och ersätta den med en annan text:
+## Så Gör Du:
+```kotlin
+fun main() {
+    val text = "Hej, Välkommen till Kotlin!"
+    val regex = Regex(pattern = "\\bKotlin\\b")
+    val found = regex.containsMatchIn(input = text)
 
-```Kotlin
-val text = "Hello, World!"
-val pattern = Regex("[H|h]ello")
-println(pattern.replace(text, "Hi"))
+    println("Hittade Kotlin i texten? $found")
+    
+    val regexReplace = text.replace(Regex("\\bKotlin\\b"), "Java")
+    println("Ersättning: $regexReplace")
+}
 ```
-Output: Hi, World!
+Output:
+```
+Hittade Kotlin i texten? true
+Ersättning: Hej, Välkommen till Java!
+```
 
-# Deep Dive
-Reguljära uttryck har funnits sedan 1950-talet och används inom många programmeringsspråk som Java, Python och Perl. De är väldigt effektiva för att söka och manipulera text, men vissa programmerare föredrar att använda String-metoder istället för reguljära uttryck för enklare uppgifter.
+## Fördjupning
+Regular expressions härstammar från teoretisk datavetenskap på 1950-talet. Alternativ till regex inkluderar parserbibliotek och inbyggda strängmetoder, men dessa saknar regex' flexibilitet. Regex använder en kompileringstid vid första anropet för bättre prestanda vid upprepade sökningar.
 
-# Se även
-- [Kotlins dokumentation om reguljära uttryck](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
-- [En grundlig introduktion till reguljära uttryck av Regular-Expressions.info](https://www.regular-expressions.info)
-- [En interaktiv lektion om reguljära uttryck av RegexOne](https://regexone.com/)
+## Se Även
+- [Kotlin Dokumentation för Regex](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-regex/)
+- [Regex101: Online regex tester och debugger](https://regex101.com/)
+- [Mozilla Developer Network Regex Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

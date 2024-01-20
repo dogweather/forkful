@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Arduino: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Arduino"
 category:             "Arduino"
@@ -10,53 +10,44 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 什么 & 为什么？
+## What & Why? (是什么以及为什么？)
+正则表达式是字符串匹配的强有力工具，用于高效查找、替换文本。程序员使用它们进行复杂文本分析，简化字符串操作。
 
-正则表达式是查找和替换文本的强大工具。程序员使用此工具处理复杂的搜索条件和模式替换。
+## How to: (如何操作：)
+Arduino 本身不直接支持正则表达式，但你可以使用标准的字符串函数或通过外部库来处理。下面是简单字符串搜索的例子：
 
-## 如何做：
-
-以下是在Arduino中使用正则表达式的示例：
-
-```Arduino
-#include <Regexp.h>
-
-char msg[64] = "temp=24.2_hum=46.6";
-MatchState ms;
+```arduino
+#include <Arduino.h>
 
 void setup() {
   Serial.begin(9600);
-  ms.Target(msg);
-
-  char buf[10];
-
-  ms.Match("temp=([-0-9.]+)_hum=([-0-9.]+)");
-  ms.GetCapture(buf, 0);
-  float temp = atof(buf);
+  // 搜索的字符串
+  String haystack = "Arduino123";
+  // 要搜索的内容
+  String needle = "123";
   
-  ms.GetCapture(buf, 1);
-  float hum = atof(buf);
-
-  Serial.println(temp);
-  Serial.println(hum);
+  if (haystack.indexOf(needle) > -1) {
+    Serial.println("找到了!");
+  } else {
+    Serial.println("没找到.");
+  }
 }
 
 void loop() {
-
+  // 无需循环代码
 }
 ```
 
-上述代码中的"temp=([-0-9.]+)_hum=([-0-9.]+)"是一个正则表达式。它可以解析字符串"temp=24.2_hum=46.6"从而得到温度和湿度的数值。
+输出样例：
+```
+找到了!
+```
 
-## 深度挖掘：
+## Deep Dive (深入探讨)
+- Arduino 不内置正则表达式功能，因为它设计用于更直接、资源受限的嵌入式系统中。
+- 替代方案: 可以使用 `String` 类的 `indexOf()`, `lastIndexOf()`, `startsWith()`, `endsWith()` 等方法进行简单文本搜索。
+- 实现细节: 第三方库如 `regex.h` 可能提供额外正则表达式支持，但要注意内存和处理速度限制。
 
-正则表达式起源于20世纪50年代，作为一种操纵复杂字符模式的算法。用于Arduino的Regexp库，是这个历史概念在嵌入式系统环境中的较新实现。
-
-选用正则表达式的原因是它可以处理非常复杂的搜索和替换情况。然而，对于简单的文本搜索和替换，"String.replace"函数就足够了，它在处理简单情况时更为高效。
-
-在Arduino中使用正则表达式需要`Regexp`库，否则，Arduino不支持正则表达式。该库是为Arduino编写的轻量级正则表达式引擎，可用于解析接收到的数据。
-
-## 参考资料：
-* Arduino官方文档（https://www.arduino.cc/reference/en/）
-* Regexp库的源代码（https://github.com/nickgammon/Regexp）
-* 在线正则表达式测试（https://regex101.com/）
+## See Also (参考链接)
+- Arduino String 类参考：[https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
+- Arduino 第三方正则表达式库：搜索在线 Arduino 库资源。

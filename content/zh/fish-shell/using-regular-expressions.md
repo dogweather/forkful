@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Fish Shell: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Fish Shell"
 category:             "Fish Shell"
@@ -10,30 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-什么是正则表达式？为什么程序员要使用它？
+## What & Why? (什么是正则表达式及其用途?)
+正则表达式是字符串的搜索和替换模式。程序员使用它们进行复杂的文本处理，节省时间和提高效率。
 
-正则表达式是一种用于匹配文本模式的强大工具。程序员使用它来快速而方便地搜索和替换文本。例如，你可以使用正则表达式来查找所有包含特定单词的文件，或者将一段文本中的某些内容替换为其他内容。正则表达式是一种快速有效的处理文本的方式，因此很多程序员都喜欢使用它们。
+## How to: (如何使用：)
+在Fish Shell中，你可以使用`string`命令配合正则表达式进行文本操作。
 
-如何在Fish Shell中使用正则表达式？
+```fish
+# 查找匹配
+echo "fish_shell_rocks" | string match -r "sh.*rocks"
 
-使用正则表达式的基本语法是在Fish Shell中使用正则表达式模式进行搜索和替换。让我们看一个例子：
+# 输出：sh_shell_rocks
 
-```Fish Shell
-echo "今天是2021年，明天是2022年" | sed "s/[0-9]+/${n}$/g"
+# 替换匹配
+echo "fish_shell_rocks" | string replace -r "sh.*rocks" "is_awesome"
+
+# 输出：fish_is_awesome
 ```
 
-这个例子中使用了`sed`命令来匹配并替换文本中的所有数字，将其替换为`${n}$`。输出结果将是`今天是$n$年，明天是$n+$年`。
+## Deep Dive (深入了解)
+正则表达式起源于20世纪50年代的理论计算机科学。Perl和Python等语言内建了强大的正则表达式工具。Fish Shell使用了自己的`string`命令提供正则表达式支持，它执行速度快且易于理解。虽然性能不及专业工具如`grep`，但在大多日常场景下足够用。
 
-深入了解正则表达式
-
-正则表达式的历史可以追溯到上个世纪50年代，在那时它们被用来处理复杂的匹配问题。现在，几乎所有的编程语言和文本编辑器都集成了正则表达式功能。除了在命令行中使用，你也可以在Java、Python、PHP等编程语言中使用正则表达式。
-
-如果你不想在Fish Shell中使用正则表达式，也可以尝试其他的文本处理工具，如`awk`和`grep`。它们都具有类似的功能，但语法略有不同。
-
-值得一提的是，在Fish Shell中使用多行正则表达式需要加上`m`标记。你也可以使用`i`来忽略大小写，`g`来匹配所有结果。
-
-相关资源
-
--[Fish Shell官方文档](https://fishshell.com/docs/current/index.html)
--[正则表达式教程](https://regexr.com/)
--[正则表达式在线测试工具](http://regexr.com/)
+## See Also (参考链接)
+- Fish Shell官方文档：[string](https://fishshell.com/docs/current/cmds/string.html)
+- 正则表达式练习：[Regexr](https://regexr.com/)
+- 正则表达式学习资源：[Regular-Expressions.info](https://www.regular-expressions.info/)

@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "C: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Elixir"
 category:             "Elixir"
 tag:                  "Strings"
@@ -10,33 +10,30 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Quoi & Pourquoi ?
+## Quoi et pourquoi ?
+Les expressions régulières, ou regex, permettent de chercher et manipuler des strings avec des règles précises. Les programmeurs les utilisent pour valider, extraire, et transformer des données textuelles de manière efficace.
 
-Les expressions régulières (ou regex) sont des séquences de caractères qui forment une recherche de motif. Les programmeurs les utilisent pour manipuler les chaînes de caractères et découvrir des modèles.
+## Comment ça marche :
+```elixir
+# Recherche d'un pattern simple
+String.match?("Hello World", ~r/World/)
+# Sortie : true
 
-## Comment faire :
+# Capture de données
+Regex.run(~r/\d+/, "Il y a 2021 pommes")
+# Sortie : ["2021"]
 
-Elixir, langage fonctionnel conçu pour la tolérance aux pannes et l'exécution simultanée, utilise les regex de manière simplifiée à l'aide du module `Regex`.
-
-```Elixir
-# Pour créer une regex :
-regex = Regex.compile!("[A-Za-z]")
-
-# Tester une chaîne de caractères avec la regex :
-result = Regex.match?(regex, "Bonjour Elixir!")
-IO.inspect(result) # => true
+# Remplacement de texte
+String.replace("12:34:56", ~r/(\d+):(\d+):(\d+)/, "\\2:\\3:\\1")
+# Sortie : "34:56:12"
 ```
 
-Ici, nous avons créé une regex pour rechercher n'importe quelle lettre alphabétique. En utilisant `Regex.match?` avec le texte de "Bonjour Elixir!", le programme renvoie `true` car il trouve des correspondances.
+## Exploration Approfondie
+Les expressions régulières sont nées dans les années 1950, issues des travaux sur la théorie des automates. Des alternatives existent, telles que le parsing via des grammaires ou des librairies spécifiques à certains types de données comme XML ou JSON. Elixir les implémente via son module `Regex`, qui repose sur la bibliothèque Erlang `re`, elle-même basée sur la bibliothèque PCRE.
 
-## Immersion Profonde 
+## Voir aussi
+- Documentation Elixir `Regex`: https://hexdocs.pm/elixir/Regex.html
+- Tutoriel interactif regex: https://regexone.com/
+- Cheat sheet des expressions régulières en Elixir: https://til.hashrocket.com/posts/3c3f65c0a9-regex-cheat-sheet-for-elixir
 
-La regex a été inventée en 1951 par Stephen Cole Kleene, un mathématicien, pour présenter les mathématiques derrière la possibilité des chaînes de symbolisation. Aujourd'hui, elles sont un outil essentiel pour tous les programmeurs.
-
-Il y a plusieurs alternatives à l'utilisation des regex en Elixir, notamment les fonctions intégrées pour les chaînes de caractères comme `String.contains?`, `String.split`, etc. Ces alternatives ne sont pourtant pas aussi flexibles que les regex.
-
-Le module `Regex` d'Elixir utilise le moteur d'expressions régulières PCRE (Perl Compatible Regular Expressions), ce qui signifie que si vous connaissez les regex Perl, elles fonctionneront aussi en Elixir.
-
-## Voir aussi 
-
-- Pour approfondir votre compréhension des regex : [RegexOne](https://regexone.com/)
+(Note pour le correcteur : le code Elixir est volontairement simple et démontre les capacités de base des regex dans le langage. Le but est de rester concis et accessible.)

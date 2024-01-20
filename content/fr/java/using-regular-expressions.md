@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser des expressions régulières"
-html_title:           "Java: Utiliser des expressions régulières"
-simple_title:         "Utiliser des expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Java"
 category:             "Java"
 tag:                  "Strings"
@@ -10,49 +10,39 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c'est et pourquoi?
+## What & Why?
 
-Les expressions régulières (ou regexp) sont un outil de programmation puissant utilisé pour rechercher et manipuler des chaînes de caractères dans un texte. Les programmeurs les utilisent pour effectuer des opérations telles que la validation d'entrées utilisateur, la recherche de motifs dans un fichier ou la modification de données. Les expressions régulières sont un moyen efficace de traiter de grandes quantités de données avec une seule instruction.
+Utiliser des expressions régulières (regex) permet de chercher des motifs de texte complexes. Les développeurs s'en servent pour valider, rechercher, et manipuler des données textuelles efficacement.
 
-## Comment faire:
-
-Voici un exemple de code Java pour rechercher et afficher les noms avec un préfixe "M." dans une liste de noms:
+## How to:
 
 ```java
 import java.util.regex.*;
 
-public class RegularExpressions {
-
+public class RegexExample {
     public static void main(String[] args) {
+        // Créer un pattern pour détecter des adresses email valides
+        Pattern pattern = Pattern.compile("[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}");
+        Matcher matcher = pattern.matcher("contactez-moi sur monmail@exemple.com ou admin@mailserver.fr");
 
-        // Crée un motif pour correspondre au préfixe "M."
-        Pattern pattern = Pattern.compile("M\\..*");
-
-        // Initialise une liste de noms
-        String[] names = {"M. Smith", "John", "M. Johnson", "Samantha"};
-
-        // Boucle à travers les noms et vérifie le motif
-        for (String name : names) {
-            Matcher matcher = pattern.matcher(name);
-            if (matcher.matches()) {
-                System.out.println(name);
-            }
+        while (matcher.find()) {
+            System.out.println("Email trouvé: " + matcher.group());
         }
     }
 }
 ```
-
-Output:
+Sortie:
 ```
-M. Smith
-M. Johnson
+Email trouvé: monmail@exemple.com
+Email trouvé: admin@mailserver.fr
 ```
 
-## Plongée en profondeur:
+## Deep Dive
 
-Les expressions régulières existent depuis les années 1950 et ont été inventées par le mathématicien Stephen Cole Kleene. Bien qu'elles soient largement utilisées dans de nombreux langages de programmation, il existe des alternatives telles que les méthodes de manipulation de chaînes de caractères intégrées dans certains langages. Les expressions régulières peuvent être complexes à comprendre et à utiliser au début, mais une fois maîtrisées, elles peuvent être très utiles pour effectuer des tâches répétitives.
+Les expressions régulières existent depuis les années 1950, liées aux théories de l'automate de Stephen Kleene. JDK (Java Development Kit) a intégré le support de regex à partir de la version 1.4. Bien que puissantes, les regex ne sont pas toujours la solution optimale : elles peuvent être moins lisibles et plus lentes que d'autres méthodes, comme des parsers dédiés. Java utilise le moteur de regex NFA (Non-deterministic Finite Automaton), qui gère bien les cas complexes, mais avec une performance parfois non prédictible pour des motifs ambiguës ou mal conçus.
 
-## Voir aussi:
+## See Also
 
-- [Documentation officielle de Java sur les expressions régulières](https://docs.oracle.com/javase/8/docs/api/java/util/regex/package-summary.html)
-- [Tutoriel complet sur les expressions régulières en Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
+- Documentation Oracle sur regex: https://docs.oracle.com/javase/tutorial/essential/regex/
+- Pour tester vos regex interactivement, utilisez des outils en ligne comme Regex101: https://regex101.com/
+- Tutoriel Java sur les regex de W3Schools: https://www.w3schools.com/java/java_regex.asp

@@ -1,7 +1,7 @@
 ---
-title:                "Usando expresiones regulares"
-html_title:           "Go: Usando expresiones regulares"
-simple_title:         "Usando expresiones regulares"
+title:                "Uso de expresiones regulares"
+html_title:           "Arduino: Uso de expresiones regulares"
+simple_title:         "Uso de expresiones regulares"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,45 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## ¿Qué y Por qué?
+## What & Why?
+Usar expresiones regulares es como pescar palabras o patrones en un mar de texto. Los programadores las usan porque son potentes y precisas para buscar, validar o manipular datos en cadenas de texto.
 
-Las expresiones regulares, o regex, son una forma de encontrar patrones en las cadenas de texto. Los programadores las usan para operaciones como buscar, reemplazar y validar cadenas.
+## How to:
+Para trabajar con expresiones regulares en C#, necesitas incluir el espacio de nombres `System.Text.RegularExpressions`. Aquí hay un ejemplo simple para validar un correo electrónico:
 
-## Cómo se hace:
-
-Utilicemos un ejemplo sencillo para ver cómo se implementan las expresiones regulares en C#. Imagine que necesita verificar si un texto contiene un número de teléfono.
-
-```C#
+```c#
+using System;
 using System.Text.RegularExpressions;
 
-string pattern = @"(\d{3})-\d{3}-\d{4}";
-string input = "Llámame al 555-123-4567 por favor.";
+class Program {
+    static void Main() {
+        string emailPattern = @"^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$";
+        string emailToTest = "hola@example.com";
 
-if(Regex.IsMatch(input, pattern))
-{
-  Console.WriteLine("Un número de teléfono es detectado.");
-} 
-else 
-{
-  Console.WriteLine("No se detecta ningún número telefónico.");
+        bool isValidEmail = Regex.IsMatch(emailToTest, emailPattern);
+        
+        Console.WriteLine(isValidEmail ? "Email válido" : "Email inválido");
+    }
 }
 ```
+Salida esperada: `Email válido`
 
-La salida será: "Un número de teléfono es detectado."
+## Deep Dive
+Las expresiones regulares tienen raíces en la teoría de autómatas y lenguajes formales. Alternativamente, para buscar sin regex, puedes usar métodos como `Contains`, `StartsWith` o `EndsWith`. Pero las regex ofrecen una flexibilidad inigualable. Recuerda que son costosas en cuanto a rendimiento, así que úsalas solo cuando sea necesario.
 
-## Análisis a Profundidad:
-
-Las expresiones regulares tienen una amplia historia y se han implementado en varios lenguajes de programación, incluyendo C#. Ofrecen una forma poderosa y flexible de manejar texto, pero también pueden ser bastante complejas y difíciles de leer si se mal utilizan.
-
-Existen alternativas a las regex para manejar cadenas de texto, dependiendo del caso de uso. Existe la opción de usar métodos incorporados en el lenguaje, como los de la clase `string` en C# para manipulación de cadenas. 
-
-Implemetar regex en C# es bastante sencillo gracias a la clase `Regex`. Esta clase incluye varios métodos útiles como `IsMatch`, `Match`, `Matches`, `Replace` y otros que facilitan su manejo.
-
-## Ver También:
-
-Para aprender más acerca de las expresiones regulares, recomiendo los siguientes enlaces (todos en inglés):
-
-1. [La documentación oficial de Microsoft](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
-2. [Un tutorial en W3Schools](https://www.w3schools.com/jsref/jsref_obj_regexp.asp)
-3. [Un creador y tester de expresiones regulares](https://regexr.com/)
-4. [La guía de StackOverflow sobre expresiones regulares](https://stackoverflow.com/questions/22937618/reference-what-does-this-regex-mean)
+## See Also
+Aquí tienes algunas fuentes útiles para profundizar en las expresiones regulares:
+- Documentación de Microsoft sobre `System.Text.RegularExpressions`: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex
+- Tutorial interactivo de Regex: https://regexone.com/
+- Herramienta para probar tus expresiones regulares: https://regexr.com/

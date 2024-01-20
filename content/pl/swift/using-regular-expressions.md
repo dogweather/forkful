@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Swift: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Wykorzystanie wyrażeń regularnych"
+html_title:           "Arduino: Wykorzystanie wyrażeń regularnych"
+simple_title:         "Wykorzystanie wyrażeń regularnych"
 programming_language: "Swift"
 category:             "Swift"
 tag:                  "Strings"
@@ -11,26 +11,48 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## Co i dlaczego?
-Używanie wyrażeń regularnych to technika, która umożliwia programistom przeszukiwanie i manipulowanie tekstami w sposób bardziej precyzyjny i elastyczny niż standardowe operacje stringów. Regular expressions są szczególnie przydatne przy analizowaniu danych, parsowaniu dokumentów lub walidowaniu formularzy.
+RegEx, czyli wyrażenia regularne, to wzorce szukania i manipulowania tekstami. Programiści używają ich do weryfikacji, podziału lub modyfikacji ciągów znaków, szybko i elastycznie.
 
-## Jak to zrobić?
+## Jak to zrobić:
+Wyrażenia regularne w Swift używasz poprzez `NSRegularExpression`. Przykład:
+
 ```Swift
-// Sprawdzenie, czy tekst zawiera numer telefonu w formacie (123)456-7890
-let expression = "^\\(\\d{3}\\)\\d{3}-\\d{4}$"
-let phoneRegex = try! NSRegularExpression(pattern: expression, options: [])
-let phoneString = "(123)456-7890"
+import Foundation
 
-if phoneRegex.firstMatch(in: phoneString, options: [], range: NSRange(location: 0, length: phoneString.utf16.count)) != nil {
-    print("Ten tekst zawiera poprawny numer telefonu!")
-} else {
-    print("Ten tekst nie zawiera poprawnego numeru telefonu.")
+let sampleText = "Jabłka są zielone i czerwone."
+
+if let regex = try? NSRegularExpression(pattern: "\\bzielone\\b", options: .caseInsensitive) {
+    let range = NSRange(location: 0, length: sampleText.utf16.count)
+    if regex.firstMatch(in: sampleText, options: [], range: range) != nil {
+        print("Znaleziono dopasowanie!")
+    } else {
+        print("Brak dopasowania.")
+    }
 }
-// Output: Ten tekst zawiera poprawny numer telefonu!
 ```
 
-## Głębszy wgląd
-Wyrażenia regularne zostały stworzone w latach 50. przez matematyka Stephena Cole Kleene. Dzięki nim, programiści mogą dziś w prosty sposób manipulować tekstami, wykorzystując ich logiczną ogólną strukturę. Alternatywami dla wyrażeń regularnych są np. parser-y lub metody specyficzne dla danego języka programowania. W Swift, regular expressions są wbudowane w framework NSRegularExpression.
+Output:
+```
+Znaleziono dopasowanie!
+```
 
-## Zobacz także
-1. [Dokumentacja wyrażeń regularnych w Swift](https://developer.apple.com/documentation/foundation/nsregularexpression)
-2. [Wprowadzenie do wyrażeń regularnych w Swift](https://www.hackingwithswift.com/articles/108/a-swift-introduction-to-regular-expressions)
+Zamiana tekstu:
+
+```Swift
+let replacedText = regex.stringByReplacingMatches(in: sampleText, options: [], range: range, withTemplate: "pomarańczowe")
+print(replacedText)
+```
+
+Output:
+```
+Jabłka są pomarańczowe i czerwone.
+```
+
+## Deep Dive
+Wyrażenia regularne mają swoje korzenie w teorii języków formalnych i automatach – matematycy jak Stephen Kleene zdefiniowali je w latach 50. Alternatywnie, do manipulacji tekstami można wykorzystać metody `String`, ale są one mniej wydajne dla skomplikowanych wzorców. Implementacja RegEx w Swift używa bibliotek Foundation i jest kompatybilna z wyrażeniami regularnymi POSIX.
+
+## See Also
+Świetne źródła do nauki i eksperymentowania z wyrażeniami regularnymi:
+- [NSRegularExpression Apple Documentation](https://developer.apple.com/documentation/foundation/nsregularexpression)
+- [RegExr](https://regexr.com/) – narzędzie online do testowania wyrażeń regularnych.
+- [Swift Algorithms Club - Regular Expressions Tutorial](https://www.raywenderlich.com/86205/nsregularexpression-swift-tutorial)

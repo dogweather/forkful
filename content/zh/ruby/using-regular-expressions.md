@@ -1,6 +1,6 @@
 ---
 title:                "使用正则表达式"
-html_title:           "Ruby: 使用正则表达式"
+html_title:           "C: 使用正则表达式"
 simple_title:         "使用正则表达式"
 programming_language: "Ruby"
 category:             "Ruby"
@@ -10,27 +10,36 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-Regular Expressions in Ruby: Simplifying Your Programming Life
+## What & Why? (什么和为什么？)
+正则表达式是一种文字模式匹配的工具。程序员用它来搜索、编辑或处理复杂的文本数据。
 
-## 什么是正则表达式？为什么程序员要用它？
-正则表达式是一种强大的字符串匹配工具，它可以帮助程序员快速、准确地在文本中查找、替换、提取符合特定模式的内容。程序员经常使用正则表达式来简化复杂的字符串处理任务，节省大量时间和精力。
-
-## 如何使用正则表达式：
+## How to (如何操作)
 ```Ruby
-string = "Hello World123"
+# 查找第一个匹配
+puts "hello world".match(/o/)
 
-# 使用正则表达式匹配并替换
-string.gsub!(/[^\w\s]/, '') # 删除所有非字母数字和空格的字符
-puts string # 输出: HelloWorld123
+# 全局匹配
+puts "hello world".scan(/l/)
 
-# 使用正则表达式提取内容
-string = "My email is example@example.com"
-regex = /(?<=My email is )\S+/
-puts string.match(regex) # 输出: example@example.com
+# 替换文本
+puts "hello world".sub(/o/, "0")
+
+# 替换所有匹配的文本
+puts "hello world".gsub(/l/, "1")
 ```
 
-## 深入了解：
-正则表达式最早由计算机科学家肯·汤普森和罗·贝利发明于20世纪60年代，它是一种通用的模式匹配语言，被应用在各种不同的编程语言和软件中。除了Ruby自带的正则表达式引擎外，程序员还可以选择使用其他第三方库，如Nokogiri和Pcre，来完成更复杂的字符串处理任务。
+输出:
+```
+o
+["l", "l", "l"]
+hell0 world
+he11o wor1d
+```
 
-## 相关资料：
-- [Ruby Regular Expressions](https://ruby-doc.org/core-3.0.0/Regexp.html)
+## Deep Dive (深入探索)
+正则表达式的历史可以追溯到20世纪50年代。替代品包括纯字符串查找和处理函数，但它们不如正则表达式强大。在Ruby中，通过`Regexp`类实现正则表达式，它提供了灵活和强大的模式匹配功能。
+
+## See Also (另请参阅)
+- Ruby官方文档中关于Regexp的介绍：[Ruby Regexp](https://ruby-doc.org/core-3.1.2/Regexp.html)
+- 正则表达式的互动教程：[Rubular](http://rubular.com/)
+- 正则表达式学习指南：[Regular-Expressions.info](https://www.regular-expressions.info/)

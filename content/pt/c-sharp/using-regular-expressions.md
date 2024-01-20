@@ -1,7 +1,7 @@
 ---
-title:                "Usando expressões regulares"
-html_title:           "Gleam: Usando expressões regulares"
-simple_title:         "Usando expressões regulares"
+title:                "Utilizando expressões regulares"
+html_title:           "Bash: Utilizando expressões regulares"
+simple_title:         "Utilizando expressões regulares"
 programming_language: "C#"
 category:             "C#"
 tag:                  "Strings"
@@ -10,13 +10,13 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## O que & Porquê?
+## O Que & Porquê?
 
-Expressões regulares (Regex) são uma ferramenta poderosa e flexível para manipulação de strings. Os programadores usam Regex para encontrar, substituir e validar padrões em textos, o que ajuda a tornar o código mais compacto e eficiente.
+Expressões regulares (regex) vasculham texto para padrões específicos — útil para validações, busca, e substituições automáticas. Programadores usam para poupar tempo e evitar erros repetitivos.
 
 ## Como Fazer:
 
-Em C#, usamos a classe `Regex` no namespace `System.Text.RegularExpressions`. Aqui está um exemplo simples que procura palavras que começam com "a":
+Código básico para validar um email:
 
 ```C#
 using System;
@@ -24,30 +24,52 @@ using System.Text.RegularExpressions;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        string frase = "O avião está no alto.";
-        Match match = Regex.Match(frase, @"\ba\w*\b");
+        string email = "usuario@example.com";
+        bool isValid = Regex.IsMatch(email, @"^[^@\s]+@[^@\s]+\.[^@\s]+$");
 
-        if (match.Success)
-        {
-            Console.WriteLine("Encontrado: " + match.Value);
-        }
+        Console.WriteLine(isValid ? "Email válido." : "Email inválido.");
     }
 }
 ```
-Esta execução retorna `Avião`.
 
-É importante notar que os caracteres `\b` definem limites de palavras e o `\w*` significa qualquer caracter alfanumérico ou underscore. 
+Saída esperada:
 
-## Mergulho Profundo
+```
+Email válido.
+```
 
-Expressões regulares têm raízes históricas na teoria das linguagens formais e automação. Embora sejam extremamente úteis, elas têm suas limitações e pode haver alternativas dependendo do sistema ou da situação. 
+Substituir espaços por traços em uma string:
 
-Por exemplo, para tarefas de manipulação de strings muito complexas, pode ser melhor usar um analisador sintático. Além disso, a implementação de Regex pode variar ligeiramente entre diferentes linguagens de programação, portanto, é essencial verificar a documentação relevante.
+```C#
+using System;
+using System.Text.RegularExpressions;
 
-Para otimizar a performance, C# compila as expressões regulares para o código Intermediate Language (IL) no primeiro uso, e as expressões compiladas são armazenadas em cache para uso futuro.
+class Program
+{
+    static void Main()
+    {
+        string texto = "Texto com espaços";
+        string substituido = Regex.Replace(texto, @"\s+", "-");
 
-## Veja Também
-- Documentação Microsoft Regex: [https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0](https://docs.microsoft.com/pt-br/dotnet/api/system.text.regularexpressions.regex?view=net-5.0)
-- Regex Tutorial Interactivo: [https://regexone.com/](https://regexone.com/)
+        Console.WriteLine(substituido);
+    }
+}
+```
+
+Saída esperada:
+
+```
+Texto-com-espaços
+```
+
+## Visão Detalhada:
+
+Regex vem da década de 1950, com uso em teoria da computação e linguística formal. Alternativas incluem parsing manual ou bibliotecas especializadas de manipulação de strings; no entanto, regex oferece flexibilidade inigualável. No C#, a implementação de regex é feita através do namespace `System.Text.RegularExpressions`, que compila expressões regulares para um formato intermediário rápido e eficiente.
+
+## Ver Também:
+
+- [Documentação oficial de expressões regulares em C#](https://docs.microsoft.com/pt-br/dotnet/standard/base-types/regular-expressions)
+- [Tutorial interativo de regex](https://regexone.com/)
+- [Ferramenta online para testar regex](https://regexr.com/)

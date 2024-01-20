@@ -1,6 +1,6 @@
 ---
 title:                "Використання регулярних виразів"
-html_title:           "Arduino: Використання регулярних виразів"
+html_title:           "Bash: Використання регулярних виразів"
 simple_title:         "Використання регулярних виразів"
 programming_language: "Elixir"
 category:             "Elixir"
@@ -10,31 +10,28 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Що та навіщо?
-
-Регулярні вирази - це могутній інструмент для обробки рядків в програмуванні. Вони допомагають швидко виключити, замінити або перевірити успіх певного патерна в тексті.
+## Що це таке & Чому?
+Регулярні вирази - це шаблони для пошуку та маніпулювання текстом. Програмісти використовують їх для валідації, парсингу, і розбору рядків - швидко і гнучко.
 
 ## Як це робиться:
+```elixir
+# Знайти всі слова, які починаються з "c"
+regex = ~r/c\w*/
+string = "Elixir connects concurrency with simplicity."
+matches = Regex.scan(regex, string)
+IO.inspect(matches) # => [["connects"], ["concurrency"]]
 
-Ось приклад коду в Elixir:
-
-```Elixir
-regex = ~r/elixir/
-IO.puts Regex.match?(regex, "Hello, Elixir!") # Отримаємо "true"
-IO.puts Regex.scan(~r/\w+/, "Hello, Elixir!") # Отримаємо [["Hello"], ["Elixir"]]
+# Замінити всі цифри зірочками
+regex = ~r/\d/
+string = "Room 404: Resource not found."
+new_string = Regex.replace(regex, string, "*")
+IO.puts(new_string) # => "Room ***: Resource not found."
 ```
-Перший рядок коду створює регулярний вираз, другий перевіряє, чи збігається він з вказаним рядком, третій рядок використовує метод `scan`, щоб отримати всі входження, що відповідають регулярному виразу.
 
-## Поглиблений розгляд:
+## Занурення у деталі:
+Регулярні вирази запозичені з теорії формальних мов і були популяризовані в Unix утилітах, в 70-их. В Elixir вони вбудовані і використовують бібліотеку регулярних виразів Erlang. Альтернативи включають String.contains?, String.split і String.match?, але вони менш потужні. Під капотом Elixir використовує потужний і оптимізований двигун регулярних виразів, що практично виконує зразки вбудованим кодом.
 
-Регулярні вирази мають довгу історію, починаючи ще з 1950-х років. Особливо вони стали популярні завдяки мовам програмування на основі тексту, таким як Perl і Ruby.
-
-Еліксир, як і багато інших мов програмування, використовує бібліотеку регулярних виразів PCRE (Perl Compatible Regular Expressions), що пропонує широкий спектр можливостей.
-
-Альтернативами регулярних виразів можуть бути методи обробки рядків мови Elixir, такі як `String.replace/4`, `String.split/3` і т.д., але вони зазвичай не є такими потужними.
-
-## Див. також:
-
-1. [Офіційна документація Elixir про регулярні вирази](https://hexdocs.pm/elixir/Regex.html)
-2. [Про регулярні вирази на Wikipedia](https://uk.wikipedia.org/wiki/Регулярний_вираз)
-3. [Подальше читання про PCRE](http://www.pcre.org/)
+## Дивіться також:
+- [Elixir Regex Docs](https://hexdocs.pm/elixir/Regex.html)
+- [Erlang's re module](http://erlang.org/doc/man/re.html)
+- [Regular Expressions in Programming](https://en.wikipedia.org/wiki/Regular_expression#History) - історія регулярних виразів.

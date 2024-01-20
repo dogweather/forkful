@@ -1,6 +1,6 @@
 ---
 title:                "Using regular expressions"
-html_title:           "PHP recipe: Using regular expressions"
+html_title:           "Bash recipe: Using regular expressions"
 simple_title:         "Using regular expressions"
 programming_language: "PHP"
 category:             "PHP"
@@ -11,43 +11,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 {{< edit_this_page >}}
 
 ## What & Why?
-Regular expressions, also known as regex, are special sequences of characters used to find and manipulate patterns in text. They are commonly used in programming to search, replace, and validate text data. This makes it easier and more efficient for programmers to process large amounts of data, especially when dealing with complex patterns.
+Regular expressions (regex) are search patterns used to match character combinations in strings. Programmers use them for tasks like validation, searching, and parsing text, because they're powerful and save time.
 
 ## How to:
-Using regular expressions in PHP is simple and straightforward. The ```preg_match()``` function is used to search for a specific pattern in a string, while the ```preg_replace()``` function is used to replace a pattern with a specified string. Let's take a look at some examples:
+To use regex in PHP, you typically use `preg_match` for finding a match, or `preg_replace` for search-and-replace. Here's a quick look:
 
-#### Searching for a Specific Pattern
-In this example, we want to find all email addresses in a given string. We can use the ```preg_match()``` function along with a regular expression to do this.
+```php
+<?php
+$string = "The quick brown fox jumps over the lazy dog.";
 
-```
-$email = "john@example.com, jane@example.net";
+// Check if 'quick' is in the string
+if (preg_match("/quick/", $string)) {
+  echo "Match found!";
+} else {
+  echo "No match found.";
+}
+// Output: Match found!
 
-// Using preg_match() to find email addresses
-preg_match("/[\w.-]+@[\w.-]+\.[a-z]{2,3}/", $email, $matches);
-
-// $matches[0] will contain the first match
-echo $matches[0]; // john@example.com 
-```
-
-#### Replacing a Pattern
-In this example, we want to replace all instances of "apple" with "orange" in a given string. Again, we can use the ```preg_replace()``` function with a regular expression to achieve this.
-
-```
-$text = "I love apples, apples are my favorite fruit.";
-
-// Using preg_replace() to replace "apple" with "orange"
-$new_text = preg_replace("/apple/", "orange", $text);
-
-echo $new_text; // I love oranges, oranges are my favorite fruit.
+// Replace 'brown' with 'red'
+$replacedString = preg_replace("/brown/", "red", $string);
+echo $replacedString;
+// Output: The quick red fox jumps over the lazy dog.
+?>
 ```
 
-## Deep Dive:
-Regular expressions have been around since the 1950s and have become an integral part of many programming languages including PHP. They were first used in Unix tools like grep, sed, and awk for text processing and have since been adopted by many other languages.
+## Deep Dive
+Regular expressions have been around since the 1950s and were implemented in Perl extensively, influencing many other languages, including PHP. Alternatives to regex in PHP include functions like `strpos()` for finding substrings or `str_replace()` for replacing text. The PCRE (Perl Compatible Regular Expressions) library is what PHP uses under the hood for regex functions, offering rich and powerful pattern-matching capabilities.
 
-While regular expressions are great for text processing, they do have their alternatives. These include using string functions like ```strpos()``` and ```str_replace()```, or using PHP's built-in ```filter_var()``` function with the appropriate filter.
-
-When implementing regular expressions in PHP, it's important to use delimiters. These act as start and end markers for the regular expression and are usually a forward slash (/), but any non-alphanumeric character can be used as long as it's consistently used throughout the expression. 
-
-## See Also:
-- [PHP Manual on Regular Expressions](https://www.php.net/manual/en/regexp.reference.php)
-- [Online regex tester](https://regex101.com/)
+## See Also
+- [PHP Official Documentation on PCRE](https://www.php.net/manual/en/book.pcre.php)
+- [Regular-Expressions.info](https://www.regular-expressions.info/) - for a thorough understanding of regex.
+- [Regex101](https://regex101.com/) - for testing and debugging your regex patterns.

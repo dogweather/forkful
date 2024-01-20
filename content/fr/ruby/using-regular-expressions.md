@@ -1,7 +1,7 @@
 ---
-title:                "Utiliser les expressions régulières"
-html_title:           "Ruby: Utiliser les expressions régulières"
-simple_title:         "Utiliser les expressions régulières"
+title:                "Utilisation des expressions régulières"
+html_title:           "Bash: Utilisation des expressions régulières"
+simple_title:         "Utilisation des expressions régulières"
 programming_language: "Ruby"
 category:             "Ruby"
 tag:                  "Strings"
@@ -10,37 +10,41 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Qu'est-ce que c’est & pourquoi?
-Les expressions régulières sont des séquences de caractères utilisées pour rechercher et manipuler du texte selon un motif pré-défini. Les programmeurs les utilisent pour effectuer des tâches telles que la validation des entrées de l'utilisateur, le filtrage de données et la recherche de chaînes de caractères spécifiques dans un grand ensemble de données.
+## What & Why?
+*Quoi & Pourquoi ?*
 
-## Comment faire:
-Les expressions régulières sont écrites avec une syntaxe spécifique et peuvent sembler intimidantes au premier abord, mais elles sont en réalité très puissantes et utiles pour résoudre des problèmes courants de traitement de texte. Voyons un exemple simple en utilisant Ruby:
+Les expressions régulières permettent de chercher, modifier et valider des chaînes de caractères. Les devs les utilisent pour la puissance et la flexibilité qu'elles offrent lors du traitement de texte.
 
-```
-texte = "Bonjour! Comment allez-vous?"
-patron = /bonjour/i
+## How to:
+*Comment faire :*
 
-if patron.match?(texte)
-  puts "Salut!"
-else
-  puts "Je ne peux pas trouver de correspondance."
+```Ruby
+# Recherche simple
+phrase = "Bienvenue dans le monde de Ruby!"
+if phrase =~ /Ruby/
+  puts "Mot 'Ruby' trouvé!"
 end
+# Output: Mot 'Ruby' trouvé!
+
+# Remplacer un mot
+nouvelle_phrase = phrase.gsub(/Ruby/, 'Python')
+puts nouvelle_phrase
+# Output : Bienvenue dans le monde de Python!
+
+# Valider un format d'email
+email = "contact@exemple.fr"
+puts "Format valide!" if email.match?(/\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i)
+# Output: Format valide!
 ```
 
-Ici, nous utilisons ```/bonjour/i``` pour créer notre expression régulière, en utilisant le «i» pour indiquer que nous voulons ignorer la casse et trouver «Bonjour» dans notre texte, qu'il soit écrit en majuscules ou en minuscules. Ensuite, nous utilisons la méthode ```match?``` pour vérifier si notre expression régulière trouve une correspondance dans notre texte. Si c'est le cas, nous affichons "Salut!", sinon nous affichons un message d'erreur. Dans cet exemple, notre expression régulière a trouvé une correspondance et nous avons donc obtenu la sortie suivante:
+## Deep Dive
+*Plongée en profondeur*
 
-```
-Salut!
-```
+Les regex ont été popularisées par Perl, influençant de nombreux autres langages, y compris Ruby. Sans elles, on devrait écrire des parseurs personnalisés - fastidieux et plus sujets aux erreurs. Ruby utilise une librairie regex nommée Onigmo, une évolution d'Oniguruma. Elle supporte diverses encodages et des constructions de syntaxe avancée.
 
-## Plongée en profondeur:
-Les expressions régulières ont été inventées dans les années 1950 par le scientifique américain Stephen Cole Kleene. Aujourd'hui, elles sont supportées par de nombreux langages de programmation, dont Ruby. Il existe également des alternatives aux expressions régulières, telles que les expressions rationnelles, qui offrent une syntaxe plus simple mais avec moins de fonctionnalités.
+## See Also
+*Voir aussi*
 
-Les expressions régulières peuvent sembler compliquées au début, mais avec de la pratique, vous pourrez les utiliser pour effectuer des tâches complexes de manière rapide et efficace. Ruby propose également des méthodes telles que ```gsub``` et ```scan``` qui prennent en charge les expressions régulières et facilitent leur utilisation dans votre code.
-
-## Voir aussi:
-Pour en savoir plus sur les expressions régulières en Ruby, voici quelques ressources utiles:
-
-- [Ruby regular expressions cheat sheet](https://www.ruby-lang.org/en/documentation/quickstart/2/)
-- [Rubular](https://rubular.com/): un outil pour tester vos expressions régulières en toute simplicité
-- [The Ruby regex tutorial](https://www.tutorialspoint.com/ruby/ruby_regular_expressions.htm): un tutoriel complet sur les expressions régulières en Ruby.
+- Documentation Ruby sur les regex: [Regexp](https://ruby-doc.org/core-2.7.0/Regexp.html)
+- Un tutoriel interactif pour apprendre les regex: [Rubular](http://rubular.com/)
+- Article sur l'histoire des regex et leur implémentation: [Regular Expressions History](https://www.regular-expressions.info/history.html)

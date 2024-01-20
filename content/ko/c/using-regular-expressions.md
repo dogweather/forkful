@@ -1,7 +1,7 @@
 ---
-title:                "정규 표현식 사용하기"
-html_title:           "Bash: 정규 표현식 사용하기"
-simple_title:         "정규 표현식 사용하기"
+title:                "정규 표현식 활용하기"
+html_title:           "Arduino: 정규 표현식 활용하기"
+simple_title:         "정규 표현식 활용하기"
 programming_language: "C"
 category:             "C"
 tag:                  "Strings"
@@ -10,59 +10,47 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## 무엇이며 왜?
+## What & Why? (무엇이며, 왜 사용하는가?)
+정규 표현식은 문자열 검색, 추출, 대체를 간단히 하는 패턴이다. 프로그래머는 코드를 짧고, 빠르며, 유연하게 작성하기 위해 사용한다.
 
-정규 표현식은 텍스트 내에 있는 패턴을 찾고 조작하는 데 사용됩니다. 이는 데이터 검증, 검색 및 수정작업이 필요한 프로그래머에게 도움이 됩니다.
-
-## 어떻게?
-
-`regex.h`를 사용하여 C에서 정규 표현식을 사용할 수 있습니다. 하기 예제를 참조하십시오.
-
+## How to (사용 방법):
+C에서 정규 표현식을 사용하기 위해서는 `regex.h` 헤더 파일을 포함시켜야 한다. 아래 예제는 정규 표현식을 사용해서 이메일 형식을 찾는 방법을 보여준다.
 ```C
-#include <regex.h>  
 #include <stdio.h>
-
-void match_pattern(char* pattern, char* candidate) {
-    regex_t regex_comp;
-    regcomp(&regex_comp, pattern, REG_EXTENDED);
-    
-    if (REG_NOMATCH != regexec(&regex_comp, candidate, 0, NULL, 0)) {
-        printf("\"%s\" matches pattern \"%s\"\n", candidate, pattern);
-    } else {
-        printf("\"%s\" does not match pattern \"%s\"\n", candidate, pattern);
-    }
-
-    regfree(&regex_comp);
-}
+#include <stdlib.h>
+#include <regex.h>
 
 int main() {
-   char* pattern = "h[aeiou]llo";
-   match_pattern(pattern, "hallo");
-   match_pattern(pattern, "hello");
-   match_pattern(pattern, "halo");
+    regex_t regex;
+    int ret;
+    ret = regcomp(&regex, "[[:alnum:]]+@[[:alnum:]]+\\.[a-zA-Z]{2,}", 0);
+    if (ret) { exit(1); } // 컴파일 실패 처리
 
-   return 0;
+    const char *test_email = "user@example.com";
+    ret = regexec(&regex, test_email, 0, NULL, 0);
+
+    if (!ret) {
+        printf("\"%s\" is a valid email.\n", test_email);
+    } else {
+        printf("\"%s\" is not a valid email.\n", test_email);
+    }
+
+    // 메모리 해제
+    regfree(&regex);
+
+    return 0;
 }
 ```
-이 코드를 실행하면 다음과 같은 출력이 나옵니다.
-
+출력:
 ```
-"hallo" matches pattern "h[aeiou]llo"
-"hello" matches pattern "h[aeiou]llo"
-"halo" does not match pattern "h[aeiou]llo"
+"user@example.com" is a valid email.
 ```
 
-## 심화 학습
+## Deep Dive (심층 분석):
+정규 표현식은 1950년대에 시작되어, 1980년대에 Perl 언어에 도입됐고, 많은 언어가 따라했다. C언어에서 `regex.h`는 POSIX 표준에 따른다. `regcomp`는 패턴을 컴파일하고, `regexec`는 비교를 실행한다. `grep`, `sed`, `awk` 등의 대체 방법도 있다. 하지만 정규 표현식은 복잡한 문자열 작업에 탁월하다.
 
-정규 표현식은 초기 시스템 통신의 필요성으로부터 비롯되었습니다. 다양한 언어, 플랫폼 및 도구에서 사용되어 왔습니다.
-
-정규 표현식 대신 사용할 수 있는 것들은 문자열 검색 함수, 문자열 조작 함수, 운영 체제 함꼐 긴밀히 연결된 특정 일치 방식 등이 있습니다.
-
-정규 표현식의 구현 세부사항은 사용되는 리소스, 속도, 정확성, 그리고 지원하는 기능을 포함한 것들에 따라 상당히 다릅니다.
-
-## 참고 문헌
-
-1. https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html
-2. https://www.regular-expressions.info/tutorial.html
-3. http://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html
-4. https://www.pcre.org/original/doc/html/pcreapi.html
+## See Also (추가 정보):
+- [GNU C Library: Regular Expressions](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)
+- [Regular-Expressions.info](https://www.regular-expressions.info/)
+- [POSIX Regular Expressions](https://pubs.opengroup.org/onlinepubs/009695399/basedefs/xbd_chap09.html)
+- [Learn Regex The Hard Way](https://regex.learncodethehardway.org/book/)

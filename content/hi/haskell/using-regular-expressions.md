@@ -1,7 +1,7 @@
 ---
-title:                "नियमित अभिव्यक्तियों का उपयोग करना"
-html_title:           "Haskell: नियमित अभिव्यक्तियों का उपयोग करना"
-simple_title:         "नियमित अभिव्यक्तियों का उपयोग करना"
+title:                "रेगुलर एक्सप्रेशन का उपयोग"
+html_title:           "Bash: रेगुलर एक्सप्रेशन का उपयोग"
+simple_title:         "रेगुलर एक्सप्रेशन का उपयोग"
 programming_language: "Haskell"
 category:             "Haskell"
 tag:                  "Strings"
@@ -10,26 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Regular Expressions: Kya Aur Kyun?
-Regular Expressions ek programming concept hai jo string matching aur manipulation mein kaafi madad karta hai. Ye ek text pattern ko define karta hai jo ko use karke strings ke matching, searching, aur replacing ka kaam aasan banata hai. Programmers regular expressions ka upyog isliye karte hain kyunki ye code ko powerful bana deta hai aur kam samay mein jyada kaam karne mein madad karta hai.
+## क्या और क्यों?
+रेगुलर एक्सप्रेशन्स या रेजेक्स पैटर्न मैचिंग का एक तरीका है जिससे टेक्स्ट को ढूँढा और मैनिपुलेट किया जा सकता है। प्रोग्रामर्स इसे कोड को सिंपलीफाई करने और तेज़ी से डेटा प्रोसेस करने के लिए इस्तेमाल करते हैं।
 
-## Kaise Karein:
-`Haskell` mein regular expressions bahut asaani se use kiye ja sakte hain, iske liye `Text.Regex.TDFA` library ka upyog karein.
+## कैसे करें:
+Haskell में रेगुलर एक्सप्रेशन्स का इस्तेमाल करने के लिए `regex` पॅकेज होता है। इसे इंस्टॉल करने के बाद, आप पैटर्न मैचिंग कर सकतें हैं:
+
+```Haskell
+import Text.Regex.TDFA ((=~))
+
+-- पैटर्न मैचिंग उदाहरण
+main :: IO ()
+main = do
+  let text = "यहाँ कुछ टेक्स्ट है"
+  let pattern = "कुछ"
+  print $ text =~ pattern :: Bool
 ```
-import Text.Regex.TDFA
+आउटपुट:
 ```
-Iss library mein `=~` operator ka use karke hum string ko regex pattern ke sath match kar sakte hain aur `=~~` operator se hum replace aur extraction ka kaam kar sakte hain. Ye operators `=~` aur `=~~` same tarah se kaam karte hain jaise `==` aur `=` karte hain, bas inmein variable ek string ho aur dusra ek regex pattern ho.
+True
+```
 
-Regex ko miltiple lines se match karne ke liye ```=~//m``` ka upyog karein. Aur inki case sensitive behaviour ko control karne ke liye ```=~//i``` ka upyog karein. Ye library pure Haskell basis par kaam karti hai aur cross-platform hai, isliye aap isko asaani se apne code mein add kar sakte hain.
+## गहराई से डाइव:
+रेगुलर एक्सप्रेशन्स का इतिहास 1950 के दशक में शुरू हुआ था। अलग-अलग प्रोग्रामिंग भाषाओं और टूल्स में रेजेक्स का अपना-अपना वर्शन होता है। Haskell में, `regex` पॅकेज द्वारा उपलब्ध किे गए फ़ंक्शन्स परफॉर्मेंट होते हैं और पॉवरफुल पैटर्न मैचिंग प्रदान करते हैं। वैकल्पिक तौर पर, `string` और `text` पॅकेजेस में सिंपल सर्च ऑपरेशंस के फ़ंक्शन्स भी होते हैं जो बेसिक टेक्स्ट मैनिपुलेशन के लिए काफी होते हैं।
 
-## Behetareen Jaankari:
-Regex ka itihaas 1951 mein ek mathematician aur computer scientist, Stephen Kleene, ne develop kiya tha. Ye us time ke programs mein bahut kaam aata tha par dheere dheere developers ne iski importance ko samjha aur use karne lage. Aaj bhi regex ek popular aur widely used concept hai, aur kayi languages jaise Python, Java, aur JavaScript mein bhi iska upyog hota hai.
-
-Regex ke alawa bhi string matching aur manipulation ke liye kayi alternative techniques hain, jaise ki string functions, pattern matching, aur parsing. Par regex ka upyog karna code ko concise aur efficient banata hai, especially jab hume complex string patterns ko manipulate karna hota hai.
-
-Regular expressions implement karne ke liye kayi algorithms aur techniques hain, aur har language mein iski implementation alag alag ho sakti hai. Isliye jab aap regex ka upyog karte hain, aapko language specific libraries aur implementions ko dhyaan mein rakhna chahiye.
-
-## Zyaada Jaankari ke Liye:
-Agar aapko regular expressions ke baare mein aur jaankari chahiye to aap iske official documentation aur tutorials par refer kar sakte hain. Aur agar aapko specific languages jaise Python ya Java mein regex ka upyog karna hai, to aap us language ke official documentation aur tutorials par bhi refer kar sakte hain.
-
-Ab aap regular expressions ke basic concept aur implementation ko samajh gaye hain, to aap isse apne programming skills ko improve karne mein use kar sakte hain. All the best!
+## देखें भी:
+- Real World Haskell किताब: http://book.realworldhaskell.org/read/regular-expressions.html
+- Learn You a Haskell for Great Good (रेजेक्स सेक्शन): http://learnyouahaskell.com/input-and-output#files-and-streams
+- Hackage `regex-tdfa` पॅकेज: https://hackage.haskell.org/package/regex-tdfa

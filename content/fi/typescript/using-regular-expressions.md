@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Haskell: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "TypeScript"
 category:             "TypeScript"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä & Miksi?
+## What & Why?
+"Mitä ja Miksi?"
+Käytämme säännöllisiä lausekkeita tekstin hakuun ja manipulointiin. Ne säästävät aikaa ja vaivaa kun tarvitsemme suodattaa, etsiä tai korvata tekstiä koodissa.
 
-Säännölliset lausekkeet eli regex, ovat työkaluja tekstien hakemiseen, korvaamiseen ja analysoimiseen. Ohjelmoijat käyttävät niitä, koska ne tekevät monimutkaisista tekstinkäsittelytehtävistä nopeita ja tehokkaita.
-
-## Kuinka:
-
-Tässä on esimerkki kuinka käyttää säännöllisen lausekkeen TypeScriptissä:
+## How to:
+"Kuinka:"
+```TypeScript
+// Etsitään sanoja, jotka alkavat 'p' kirjaimella.
+let pattern = /\bp\w+/g;
+let text = "programming in TypeScript is pretty fun";
+let matches = text.match(pattern);
+console.log(matches); // Tulostuu: ['programming', 'pretty']
+```
 
 ```TypeScript
-let regex = /Hello World/g;
-let txt = "Hello World! Hello World!";
-let result = txt.match(regex);
-console.log(result);
-```
-Tulos olisi:
-
-```
-[ 'Hello World', 'Hello World' ]
+// Korvataan kaikki numerot tähdillä.
+let digitPattern = /\d+/g;
+let input = "Yhdeksänkymmentä9 kakkosta2";
+let output = input.replace(digitPattern, '*');
+console.log(output); // Tulostuu: "Yhdeksänkymmentä* kakkosta*"
 ```
 
-## Syvempi sukellus:
+## Deep Dive
+"Sukellus syvyyksiin"
+Säännölliset lausekkeet ovat syntyneet 1950-luvulla matemaatikko Stephen Kleenen töiden pohjalta. JavaScriptin säännölliset lausekkeet perustuvat Perl-kielen standardiin. Vaihtoehtoja säännöllisille lausekkeille voivat olla merkkijonojen sisäänrakennetut metodit, kuten `.indexOf` tai `.startsWith`, mutta ne eivät ole yhtä joustavia. TypeScript toteuttaa säännölliset lausekkeet pohjautuen JavaScriptin `RegExp`-objektiin.
 
-**Historiallinen konteksti:** Regex syntyi 1950-luvulla, ja sen jälkeen se on tullut kiinteäksi osaksi ohjelmointikieliä tehostaen merkkijonojen käsittelyä.
-
-**Vaihtoehdot:** Regexin sijaan voidaan käyttää myös manuaalista tekstinkäsittelyä tai kirjastoja, kuten XRegExp. Mutta ne eivät tarjoa regexin tehokkuutta ja monipuolisuutta.
-
-**Toteutustiedot:** Säännölliset lausekkeet syntaksin ja toiminnallisuuden yksityiskohdat voivat vaihdella eri ohjelmointikielissä, myös TypeScriptissä. Käyttöön tarvitaan tehokkuutta ja tarkkuutta.
-
-## Katso myös:
-
-1. [MDN dokumentit säännöllisistä lausekkeista](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Regular_Expressions)
-2. [TypeScriptin virallinen dokumentaatio](https://www.typescriptlang.org/docs/)
-3. [RegexOne, oppia regex interaktiivisesti](https://regexone.com/)
+## See Also
+"Katso Myös"
+- [MDN Web Docs: Regular Expressions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [RegExr: Learn, Build, & Test RegEx](https://regexr.com/)
+- [TypeScript Handbook: Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-assertions)

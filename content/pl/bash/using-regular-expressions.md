@@ -1,7 +1,7 @@
 ---
-title:                "Używanie wyrażeń regularnych"
-html_title:           "Bash: Używanie wyrażeń regularnych"
-simple_title:         "Używanie wyrażeń regularnych"
+title:                "Korzystanie z wyrażeń regularnych"
+html_title:           "Bash: Korzystanie z wyrażeń regularnych"
+simple_title:         "Korzystanie z wyrażeń regularnych"
 programming_language: "Bash"
 category:             "Bash"
 tag:                  "Strings"
@@ -10,23 +10,31 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-# Co i dlaczego?
+## What & Why? (Co i dlaczego?)
+Regularne wyrażenia to wzorce, które pomagają w przeszukiwaniu tekstu, sprawdzaniu formatu i manipulacji danymi. Programiści używają ich, by szybko i efektywnie obrabiać teksty i dane.
 
-Regularne wyrażenia są narzędziem wykorzystywanym przez programistów do wyszukiwania i manipulacji tekstem w sposób bardziej skuteczny i efektywny. Pozwalają one na zdefiniowanie wzorców, których szukamy w tekście i wykonaniu na nich określonych operacji.
+## How to: (Jak to zrobić?)
+```Bash
+# Wyszukiwanie słowa 'baz' w pliku 'foo.txt':
+grep 'baz' foo.txt
 
-# Jak to zrobić:
+# Zamiana 'http' na 'https' we wszystkich plikach .txt:
+sed -i 's/http/https/g' *.txt
 
-W Bashu możemy użyć polecenia `grep` do wyszukiwania wzorców w plikach tekstowych. Na przykład, jeśli chcemy wyszukać wszystkie linie zaczynające się od słowa "Hello", można to zrobić za pomocą polecenia `grep "^Hello" nazwa_pliku.txt`. Wynik wyświetli się na ekranie.
+# Wyciągnięcie samych numerów z pliku (np. '123'):
+grep -o '[0-9]\+' plik.txt
 
-Możemy również wykorzystać regulaminowe wyrażenia do zastępowania wybranych części tekstu. Na przykład, jeśli chcemy zamienić wszystkie wystąpienia słowa "cat" na "dog" w pliku tekstowym, użyjemy polecenia `sed 's/cat/dog/g' nazwa_pliku.txt`.
+# Przykładowe wyjście pokazujące znalezione numery
+123
+256
+789
+```
 
-# Wnikliwe spojrzenie:
+## Deep Dive (Dogłębna analiza)
+Regularne wyrażenia, znane jako *regex*, narodziły się w latach 50. XX wieku. Współczesne implementacje bazują na notacjach Perl i POSIX. Alternatywy dla *regex* mogą obejmować parserowanie za pomocą dedykowanych bibliotek językowych. W Bashu głównie używa się *grep* do wyszukiwania i *sed* do manipulacji tekstami za pomocą regularnych wyrażeń.
 
-Regularne wyrażenia zostały wprowadzone w 1951 roku przez amerykańskiego matematyka Stephena Kleene. Z czasem zostały one wykorzystane w wielu językach programowania, w tym w Bashu. W Bashu możemy również wykorzystać wyrażenia regularne do sprawdzania poprawności wprowadzanego przez użytkownika tekstu lub do wykonywania bardziej skomplikowanych operacji na stringach.
-
-Alternatywnym podejściem do użycia regulaminowych wyrażeń jest wykorzystanie narzędzi takich jak AWK czy Perl, które posiadają wbudowaną obsługę wyrażeń regularnych. Jednakże, wykorzystanie wyrażeń regularnych w Bashu jest wygodne, ponieważ jest to wbudowane polecenie i nie wymaga dodatkowych instalacji.
-
-# Zobacz również:
-
-- [Bash: Polecenie Grep](https://pl.wikipedia.org/wiki/Grep)
-- [Oficjalna Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
+## See Also (Zobacz również)
+- [GNU Grep Documentation](https://www.gnu.org/software/grep/manual/grep.html)
+- [GNU Sed Documentation](https://www.gnu.org/software/sed/manual/sed.html)
+- [Regex101: Online regex tester and debugger](https://regex101.com/)
+- [Regular Expressions Info](https://www.regular-expressions.info/)

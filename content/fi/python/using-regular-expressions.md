@@ -1,6 +1,6 @@
 ---
 title:                "Säännöllisten lausekkeiden käyttö"
-html_title:           "Python: Säännöllisten lausekkeiden käyttö"
+html_title:           "Bash: Säännöllisten lausekkeiden käyttö"
 simple_title:         "Säännöllisten lausekkeiden käyttö"
 programming_language: "Python"
 category:             "Python"
@@ -10,36 +10,34 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 {{< edit_this_page >}}
 
-## Mitä ja miksi?
+## What & Why?
+Pythonissa säännölliset lausekkeet, eli regex, ovat tekstinhakutyökalu. Niillä löydetään, tarkastetaan ja muokataan merkkijonoja nopeasti ja tehokkaasti.
 
-Säännölliset lausekkeet ovat tapa ilmaista ja hakea kuvioita merkkijonoista. Ohjelmoijat käyttävät niitä erilaisten tietojen käsittelyyn, kuten käyttäjän syötteiden validoimiseen ja tekstin etsimiseen suurista tietokannoista.
-
-## Kuinka tehdä:
-
-Pythonilla säännöllisten lausekkeiden käyttö on helppoa. Alla on esimerkki koodista, jossa etsitään kaikki puhelinnumeroita tekstimuodossa olevasta tiedostosta ja tulostetaan ne.
+## How to:
+Pythoniin sisäänrakennettu `re`-moduuli käsittelee regexiä. Tässä pari esimerkkiä.
 
 ```Python
 import re
 
-# Määritetään hakukuvio säännöllisen lausekkeen avulla
-pattern = r"\d{3}-\d{3}-\d{4}"
+# Etsitään kaikki sanat, jotka alkavat 'h' ja päättyvät 'n'
+teksti = "hello world, hyvää huomenta, henkilö, huon"
+pattern = r'\bh\w*n\b'
+matches = re.findall(pattern, teksti)
+print(matches)  # Output: ['hen', 'huon']
 
-# Luetaan tiedosto ja etsitään kaikki vastaavuudet hakukuvion mukaan
-with open('tiedosto.txt', 'r') as file:
-    data = file.read()
-    matches = re.findall(pattern, data)
-
-# Tulostetaan löydetyt puhelinnumerot
-for match in matches:
-    print(match)
+# Korvataan kaikki numerot tähdillä
+teksti = "H4u37t2 5k4iv44t!"
+pattern = r'\d'  # \d vastaa numeroita
+korvattu_teksti = re.sub(pattern, '*', teksti)
+print(korvattu_teksti)  # Output: H*u**t* *k*iv**t!
 ```
 
-Tämän esimerkin avulla voit soveltaa säännöllisiä lausekkeita myös omassa koodissasi.
+## Deep Dive:
+Regexit kehittyivät 1950-luvulla auttamaan merkkijonon käsittelyä. Nykyisin niitä on lähes kaikissa ohjelmointikielissä. Vaihtoehtoina regexille voidaan käyttää esim. Pythonin merkkijonometodeja, mutta ne ovat usein hitaampia monimutkaisemmissa hakutehtävissä. Pythonin `re`-moduulissa käytetään backtracking-algoritmia tehokkuuden vuoksi.
 
-## Syvempi sukellus:
+## See Also:
+Regexin opetteluun ja testaamiseen:
 
-Säännölliset lausekkeet ovat olleet käytössä jo yli 70 vuotta ja ne ovat olennainen osa monia ohjelmointikieliä, kuten Pythonia. Vaikka niiden käyttöä voidaan korvata esimerkiksi silmukoiden avulla, säännölliset lausekkeet tarjoavat tehokkaamman ja monipuolisemman tavan kuvioihin perustuvassa tiedonkäsittelyssä.
-
-## Katso myös:
-
-Tutustu lisää säännöllisiin lausekkeisiin ja niiden käyttöön Pythonissa Dokumentaatiosta: https://docs.python.org/3/library/re.html
+- Pythonin viralliset `re`-moduulin dokumentit: https://docs.python.org/3/library/re.html
+- Regex101, interaktiivinen regex-testaustyökalu: https://regex101.com/
+- Pythex, toinen hyvä regex-testeri: https://pythex.org/
