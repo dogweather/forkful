@@ -45,6 +45,5 @@ A implementação da análise de HTML depende do seu objetivo final. Em termos d
 
 ## Veja Também
 
-1. [MDN Documentação DOMParser](https://developer.mozilla.org/pt-BR/docs/Web/API/DOMParser): documentação oficial para a API DOMParser.
 2. [jQuery API](https://api.jquery.com/): documentação oficial para a sintaxe jQuery.
 3. [Cheerio.js](https://cheerio.js.org/): excelente biblioteca para análise de HTML no ambiente Node.js.

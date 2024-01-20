@@ -43,4 +43,3 @@ compareDates = compare date1 date2
 
 1. [Elm प्रशिक्षण सामग्री](https://github.com/dwyl/learn-elm)
 2. [Elm दस्तावेज़ीकरण](https://package.elm-lang.org/packages/elm/time/latest/)
-3. [Elm दिनांक की तुलना](https://elmprogramming.com/comparing-dates.html)

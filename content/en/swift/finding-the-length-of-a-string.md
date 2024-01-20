@@ -50,8 +50,5 @@ The implementation of the string `count` property in Swift is interesting. It do
 
 ## See Also:
 
-1. [String Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/stringsChapters.html#//apple_ref/doc/uid/TP40009472): Learn more about the intricacies of working with strings in Apple's documentation.
 
 2. [The Swift Programming Language](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html): More details about strings and characters in the official Swift language guide.
-
-3. [Swift.org - Strings](https://swift.org/blog/strings/): A blog post from Swift.org featuring strings, their storage, and more.

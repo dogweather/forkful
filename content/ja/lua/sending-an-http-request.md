@@ -47,7 +47,6 @@ LuaではHTTPリクエストを送信するためにコルーチンを使用す�
 
 ## 参考リンク：
 
-1. [LuaSocket Tutorial](http://w3.impa.br/~diego/software/luasocket/tutorial.html): チュートリアルではLuaSocketを用いたより詳細なネットワークプログラミングについて解説しています。
 
 2. [HTTP made really easy](http://www.jmarshall.com/easy/http/): HTTPプロトコルの基本から詳細まで説明している資料です。
 

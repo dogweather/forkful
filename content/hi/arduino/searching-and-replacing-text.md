@@ -27,7 +27,6 @@ Serial.println(str); // "Hello Arduino" प्रिंट होगा
 
 ## यदि आप और जानना चाहते हैं:
  
-1. [Arduino दस्तावेज़ीकरण: String.replace()](https://www.arduino.cc/reference/en/language/variables/data-types/String/functions/replace/)
 2. [Arduino दस्तावेज़ीकरण: विस्तृत](https://www.arduino.cc/en/Tutorial/Foundations/)
 
 (यदि आपको अन्य Arduino संबंधी स्रोत मिलते हैं, तो आप उन्हें इस सेक्शन में जोड़ सकते हैं।)

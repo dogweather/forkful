@@ -53,6 +53,4 @@ Die Methode `HttpClient.newHttpClient()` erstellt einen neuen HttpClient mit Sta
 ## Siehe Auch
 
 1. [Offizielle Java-Dokumentation für HttpClient](https://docs.oracle.com/en/java/javase/16/docs/api/java.net.http/java/net/http/HttpClient.html)
-2. [Oracle Guide to the HttpClient API](https://www.oracle.com/technical-resources/articles/java/http-client-api.html)
 3. [OkHttp Library](https://square.github.io/okhttp/)
-4. [Apache HttpClient Library](https://hc.apache.org/httpcomponents-client-5.0.x/index.html)

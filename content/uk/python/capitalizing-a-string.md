@@ -59,5 +59,4 @@ print(title_s)
 ## Дивіться також:
 
 1. [Python Strings](https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str) (документація про рядки Python)
-2. [How To Capitalize a String in Python](https://realpython.com/python-capitalize-string/) (детальний туторіал на Real Python) 
 3. [Difference between str.title() and str.capitalize()](https://stackoverflow.com/questions/23877049/difference-between-str-title-and-str-capitalize) (обговорення на StackOverflow)

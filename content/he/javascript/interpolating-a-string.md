@@ -43,5 +43,3 @@ console.log(message); // שלום, דני!
 # ראה גם: 
 
 1. [Template literals (Template strings) - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)
-2. [JavaScript String Interpolation | DigitalOcean](https://www.digitalocean.com/community/tutorials/using-string-interpolation-in-javascript)
-3. [Template Strings - JavaScript | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Using_template_strings)

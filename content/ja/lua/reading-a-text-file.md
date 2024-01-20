@@ -39,4 +39,3 @@ print(content)
 
 1. [公式Lua 5.3 マニュアル](https://www.lua.org/manual/5.3/)
 2. [Lua-Users wiki: Tutorial File IO](http://lua-users.org/wiki/TutorialFileIo)
-3. [LuaFileSystem公式ドキュメンテーション](https://keplerproject.github.io/luafilesystem/)

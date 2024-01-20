@@ -37,4 +37,3 @@ JavaScript 내부에서 `Date` 객체는 UTC를 기준으로 시간을 계산하
 
 1. MDN Web Docs - [Date 객체](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Date)
 2. W3Schools - [JavaScript Date Formats](https://www.w3schools.com/js/js_date_formats.asp)
-3. Eloquent JavaScript - [Handling dates and time](https://eloquentjavascript.net/12_date.html)

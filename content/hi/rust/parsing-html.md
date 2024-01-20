@@ -53,5 +53,4 @@ HTML पार्सिंग का कार्य, एक HTML डाक्�
 ## भी देखें:
 
 1. [HTML5ever documentation](https://docs.rs/html5ever/0.25.1/html5ever/)
-2. [Rust web scraping tutorial](https://www.ameyalokare.com/rust/2017/10/12/rust-web-scraping.html)
 3. [Rust HTML parsing comparison](https://medium.com/@pmzubar/rust-and-the-curse-of-the-static-html-parser-564ce58f0d0e)

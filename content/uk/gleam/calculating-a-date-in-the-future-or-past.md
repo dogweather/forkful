@@ -46,9 +46,3 @@ fn main() {
 2. **Альтернативи**: Існують інші способи обчислення дати в майбутньому або минулому в Gleam, наприклад, використовуючи функції `datetime.add` або `datetime.subtract`. Вибір залежить від конкретного сценарію.
 
 3. **Деталі реалізації**: в `gleam/date`, додавання днів до дати обчислюється шляхом конвертації дати в юліанську дату, додаванням потрібної кількости днів, а потім конвертацією назад в григоріанську дату.
-
-## Дивіться також:
-
-1. [Документація `gleam/date`](https://hexdocs.pm/gleam_stdlib/date.html)
-2. [Gleam Cookbook: Working with Dates and Times](https://gleam.run/book/tour/dates-and-times.html)
-3. [Gleam Forum: Date Calculations](https://gleam.run/forum/t/date-calculations/145)

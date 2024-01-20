@@ -49,4 +49,3 @@ Hier sind einige nützliche Links, die dir weiterhelfen könnten:
 
 1. Apple Dokumentation : [FileManager](https://developer.apple.com/documentation/foundation/filemanager)
 2. StackOverflow: [Temporary Files in Swift](https://stackoverflow.com/questions/27327067/temporary-files-in-swift)
-3. Swift Buch: [Datei- und Verzeichnismanagement](https://books.apple.com/de/book/swift/id1018922151)

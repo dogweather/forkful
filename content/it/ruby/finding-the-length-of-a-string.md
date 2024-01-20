@@ -50,5 +50,4 @@ Per quel che riguarda i dettagli di implementazione, `length` e `size` sono impl
 Per ulteriori informazioni e dettagli, puoi fare riferimento a queste risorse:
 
 1. Documentazione ufficiale Ruby: [https://ruby-doc.org/core-3.0.3/String.html](https://ruby-doc.org/core-3.0.3/String.html)
-2. "The Ruby Way" di Hal Fulton: [https://www.amazon.com/Ruby-Way-Techniques-Programming-Addison-Wesley/dp/0321714636](https://www.amazon.com/Ruby-Way-Techniques-Programming-Addison-Wesley/dp/0321714636) 
 3. "Programming Ruby 1.9 & 2.0": [https://pragprog.com/book/ruby4/programming-ruby-1-9-2-0](https://pragprog.com/book/ruby4/programming-ruby-1-9-2-0)

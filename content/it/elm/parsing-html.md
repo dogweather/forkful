@@ -46,7 +46,4 @@ Quando esegui questo codice, otterrai l'output "Ciao mondo". Questo è un esempi
 
 ## Vedi anche
 
-Se sei interessato ad approfondire il parsing HTML in Elm, ecco alcuni link utili che potrebbero aiutarti: 
-1. [Documentazione ufficiale del modulo Html.Parser di Elm](https://package.elm-lang.org/packages/elm/elm-markup/latest/Html-Parser)
-2. [Un esempio complesso di parsing HTML in Elm](https://korban.net/posts/elm/2019-11-12-complex-example-parsing-html-elm/)  
-3. [Web Scraping e Parsing HTML con Elm](https://becoming-functional.com/web-scraping-in-elm-part-1-7fc2b9dde867)
+Se sei interessato ad approfondire il parsing HTML in Elm, ecco alcuni link utili che potrebbero aiutarti:

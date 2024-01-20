@@ -38,4 +38,3 @@ Para mais informações sobre a manipulação de strings em Gleam, você pode ve
 
 1. Documentação oficial de Gleam para a Função String: [Clique aqui](https://gleam.run/book/tour/strings.html)
 2. Tutorial de YouTube sobre a linguagem de programação Gleam: [Clique aqui](https://www.youtube.com/watch?v=R2FtPcXkYEo)
-3. Curso online gratuito sobre principais funções de string no Gleam: [Clique aqui](https://www.learn-gleam-free.com/string-functions)

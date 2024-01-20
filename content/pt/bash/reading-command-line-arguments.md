@@ -44,4 +44,3 @@ Para mais detalhes e exemplos, veja estas fontes:
 
 1. [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_02.html)
 2. [How to Read Command Line Arguments in a Bash Script](https://www.tutorialspoint.com/how-to-read-command-line-arguments-in-a-bash-script)
-3. [Command Line Arguments in Shell Scripting](https://www.geeksforgeeks.org/command-line-arguments-in-shell-scripting/)

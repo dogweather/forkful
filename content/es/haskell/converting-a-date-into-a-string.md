@@ -42,5 +42,4 @@ La implementación de `showGregorian` está basada en la división y módulo de 
 Si deseas leer más sobre el manejo de fechas en Haskell, aquí algunas fuentes útiles:
 
 1. [El módulo Data.Time en Hackage](http://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html).
-2. [Cómo manipular el tiempo en Haskell](https://wiki.haskell.org/Manipulating_the_time).
 3. [Información más avanzada sobre las fechas y el tiempo en Haskell](https://two-wrongs.com/haskell-time-library-tutorial).

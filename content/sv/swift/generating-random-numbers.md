@@ -37,6 +37,5 @@ Det är viktigt att notera att Swift's slumpmässiga nummergenerator är tillrä
 
 ## Se också:
 
-1. [Swifts officiella dokumentation om 'random'](https://developer.apple.com/documentation/swift/random)
 2. [Apple's GameplayKit](https://developer.apple.com/documentation/gameplaykit)
 3. [Kryptografiskt säkra pseudoslump Generators](https://en.wikipedia.org/wiki/Cryptographically_secure_pseudorandom_number_generator).

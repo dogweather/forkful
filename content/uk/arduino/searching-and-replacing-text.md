@@ -36,6 +36,5 @@ Serial.println(txt);
 ## Також дивіться:
 
 1. [Докладніше про метод replace() в Arduino](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-2. [Стаття про методи обробки рядків в Arduino](https://startarduino.info/urok-19-stroki-string-v-arduino/)
 3. [Пошук та заміна тексту в Python](https://www.w3schools.com/python/ref_string_replace.asp)
 4. [Java String replace() метод](https://www.javatpoint.com/java-string-replace)

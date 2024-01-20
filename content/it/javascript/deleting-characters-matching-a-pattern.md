@@ -46,6 +46,5 @@ Questo codice fornisce lo stesso risultato. `split()` divide la stringa in un ar
 
 Per approfondire ulteriormente le espressioni regolari in Javascript, è possibile consultare queste risorse:
 
-1. [MDN Regular Expressions](https://developer.mozilla.org/it/docs/Web/JavaScript/Guida/Regular_Expressions): Un'ampia panoramica delle espressioni regolari in Javascript.
 2. [RegExr](https://regexr.com/): Uno strumento online per esercitarsi con le espressioni regolari.
 3. [RegExp JavaScript](https://www.w3schools.com/jsref/jsref_obj_regexp.asp) su W3School: offre esempi concreti su come utilizzare le RegExp in JavaScript. Il sito è in inglese, ma è molto intuitivo.

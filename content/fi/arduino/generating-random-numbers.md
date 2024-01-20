@@ -34,6 +34,5 @@ Satunnaislukujen luomisen historia ulottuu kauas kreikkalaiseen ajanlaskuun, jos
 Voit syventää tietämystäsi satunnaislukujen luomisesta ja eri menetelmistä seuraavien linkkien kautta:
 1. [Random Number Generation in C++](https://www.cplusplus.com/reference/random/)
 2. [Generating random numbers in Python](https://docs.python.org/3/library/random.html)
-3. [Understanding Random Numbers in JavaScript](https://www.javascripttutorial.net/javascript-random/)
 
 Päätimme tässä vaiheessa, koska tämä artikkeli on tarkoitettu olemaan epämuodollinen ja suoraviivainen introduktio Arduino-ohjelmointiin suunnattuna suomalaisille lukijoille. Toivottavasti nautit oppimasta!

@@ -37,6 +37,5 @@ if (Test-Path C:\example) {
 ## 抛砖引玉
 
 1. PowerShell官方文档，关于 `Test-Path` cmdlet 的介绍：[阅读更多](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7.1)
-2. 更深入的讨论关于权限、访问和路径在PowerShell中的关系：[阅读更多](https://devblogs.microsoft.com/scripting/hey-scripting-guy-what-is-the-story-with-powershell-and-path-validation/)
 
 以上就是PowerShell中检查目录存在性的全部内容，掌握这些可避免许多程序运行错误，实为必备知识。

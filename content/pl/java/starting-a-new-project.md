@@ -42,7 +42,5 @@ Witaj, świecie!
 
 ## Zobacz także
 
-1. [Podstawy Java dla nowych programistów](https://java.com/pl/download/help/new_to.html)
-2. [Jak skonfigurować projekt w Javie](https://www.codejava.net/ides/eclipse/how-to-create-a-java-project-with-eclipse)
 3. [Samouczek Java dla początkujących](https://www.learnjavaonline.org/)
 4. [Tworzenie pierwszego projektu w Javie korzystając z IntelliJ IDEA](https://www.jetbrains.com/help/idea/creating-and-running-your-first-java-application.html)

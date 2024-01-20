@@ -36,5 +36,4 @@ __आउटपुट:__
 
 ## यह भी देखें: (See Also):
 
-1. Swift दस्तावेज़ीकरण का `.count` प्रॉपर्टी: [https://developer.apple.com/documentation/swift/string/2949117-count](https://developer.apple.com/documentation/swift/string/2949117-count)
 2. यूनिकोड स्केलर वेल्यूज़ के बारे में अधिक जानकारी: [https://www.unicode.org/glossary/#unicode_scalar_value](https://www.unicode.org/glossary/#unicode_scalar_value)

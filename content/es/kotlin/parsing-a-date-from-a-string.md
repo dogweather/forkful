@@ -40,6 +40,5 @@ La salida será: `2022-06-18`.
 
 ## Ver También:
 
-1. Documentación oficial de Kotlin: [DateTimeFormatter](https://kotlinlang.org/api/latest/jvm/stdlib/java.time.format/-date-time-formatter/)
 2. Joda-Time: [Documentación](http://joda-time.sourceforge.net/)
 3. Tutorial paso a paso: [Parsear Fechas en Kotlin](https://www.baeldung.com/kotlin-dates)

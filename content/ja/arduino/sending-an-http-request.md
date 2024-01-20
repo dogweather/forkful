@@ -86,5 +86,4 @@ HTTPリクエストの送信は、初期のインターネットの時代、つ�
 
 ## 参考資料
 
-1. Arduino公式ドキュメンテーション：[https://www.arduino.cc/en/main/docs](https://www.arduino.cc/en/main/docs)
 2. WiFi.hライブラリのドキュメンテーション：[https://www.arduino.cc/en/Reference/WiFi](https://www.arduino.cc/en/Reference/WiFi)

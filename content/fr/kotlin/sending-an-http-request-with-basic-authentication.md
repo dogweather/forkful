@@ -47,6 +47,5 @@ Pour aller plus loin, vous pouvez utiliser des méthodes d'authentification plus
 
 ## Voir Aussi
 
-1. Kotlin HTTP Request - [khttp](https://github.com/asofterspace/khttp)
 2. Alternatives to khttp - [Fuel](https://github.com/kittinunf/Fuel), [OkHttp](https://square.github.io/okhttp/), [ktor](https://ktor.io/)
 3. Basic and Digest Access Authentication - [RFC2617](https://tools.ietf.org/html/rfc2617)

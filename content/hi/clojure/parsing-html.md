@@ -45,6 +45,5 @@ HTML पार्सिंग की आवश्यकता सामान्
 
 ## अधिक देखें:
 HTML पार्सिंग के बारे में और अधिक जानकारी के लिए, यह लिंक्स देखें:
-1. [Clojure प्रलेखन](https://clojure.org/guides/content)
 2. [Enlive डॉक्स](https://github.com/cgrand/enlive)
 3. [HTML पार्सिंग का प्रलेखन](https://developer.mozilla.org/en-US/docs/Web/HTML)

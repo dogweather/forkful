@@ -43,4 +43,3 @@ Algunos servicios web pueden requerir otros encabezados además de la autenticac
 ## Ver también
 1. [Invoke-RestMethod documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
 2. [Invoke-WebRequest documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-3. [Base64 encoding in PowerShell](https://devblogs.microsoft.com/powershell/encoding-and-decoding-base64/)

@@ -49,5 +49,4 @@ Olá, Mundo!
 3. *Detalhes de implementação:* `strcat()` e `strncat()` ambas alteram a string original, portanto, verifique por espaço suficiente na string de destino para evitar erros de execução.
 
 ## Veja Também
-1. [Documentação strcat na Library GNU](https://www.gnu.org/software/libc/manual/html_node/String-Concatenation.html)
 2. [Documentação strncat na Library GNU](https://www.gnu.org/software/libc/manual/html_node/Concatenating-Strings.html)

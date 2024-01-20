@@ -50,4 +50,3 @@ main = do
 
 1. [TagSoup库官方文档](https://hackage.haskell.org/package/tagsoup)
 2. [Neil Mitchell的博客](http://neilmitchell.blogspot.com/)
-3. [Haskell HTML解析教程](https://wiki.haskell.org/Parsing_HTML)

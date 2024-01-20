@@ -55,4 +55,3 @@ Szczegóły implementacji: Zastanów się nad przypadek, gdy dodajesz dni do dat
 
 1. [Dokumentacja języka C - funkcja mktime](https://en.cppreference.com/w/c/chrono/mktime)
 2. [StackOverflow: How to add days to the current date?](https://stackoverflow.com/questions/1442116/how-to-get-the-date-of-7-days-ago-in-c)
-3. [GitHub: Various Date and Time functions for C](https://github.com/clibs/timefmt)

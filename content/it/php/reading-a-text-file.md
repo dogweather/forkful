@@ -43,6 +43,5 @@ Ciao, sono il contenuto di miofile.txt.
 (3) Il flag `'r'` nell'apertura del file sta per 'lettura'. PHP supporta diversi flag come `'w'` per la scrittura, `'a'` per l'aggiunta, `'x'` per la creazione, ecc. 
 
 ## Per Saperne Di Più
-1. Manuale PHP - [Filesystem functions](https://www.php.net/manual/it/ref.filesystem.php)
 
 2. Stack Overflow - [How to read a large file line by line?](https://stackoverflow.com/questions/4204561/how-to-read-a-large-file-line-by-line)

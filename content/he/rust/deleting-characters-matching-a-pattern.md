@@ -35,4 +35,3 @@ Hello World!
 
 ## ראה גם 
 1. [חיברן הכלאים של Rust](https://doc.rust-lang.org/book/ch08-02-strings.html)
-2. [המדריך השלם לתכנות Rust](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

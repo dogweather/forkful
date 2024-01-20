@@ -40,4 +40,3 @@ func main() {
 ## Дивіться ще 
 1. [Dokumentatsiya po biblioteke strings](https://golang.org/pkg/strings/)
 2. [Dokumentatsiya po regularnym vyrazheniyam v Go](https://golang.org/pkg/regexp/)
-3. [Funktsiya Replace v Go](https://www.socketloop.com/tutorials/golang-replace-all-occurrences-of-character-in-string)

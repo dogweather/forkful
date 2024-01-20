@@ -38,5 +38,4 @@ Se o diretório existir, o código acima enviará a mensagem "O diretório exist
 ## Veja também
 
 1. Documentação oficial Elixir para `File.dir?/1`: [Link](https://hexdocs.pm/elixir/File.html#dir%3F/1)
-2. Um tutorial interessante sobre manipulação de arquivos e diretórios em Elixir: [Link](https://elixirschool.com/en/lessons/basics/io/)
 3. Para mais funções relacionadas a arquivos e diretórios no módulo `File` do Elixir: [Link](https://hexdocs.pm/elixir/File.html)

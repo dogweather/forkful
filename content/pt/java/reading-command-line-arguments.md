@@ -44,5 +44,4 @@ Os detalhes da implementação são importantes. Embora comandos em lote e scrip
 ## Veja Também
 
 1. [Oracle Java Documentation on the Main Method](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-2. [Apache Commons CLI Library](https://commons.apache.org/proper/commons-cli/) 
-3. [Java Command-Line Argument Reading Tutorial by Jenkov](http://tutorials.jenkov.com/java-command-line-argument.html)
+2. [Apache Commons CLI Library](https://commons.apache.org/proper/commons-cli/)

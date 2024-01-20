@@ -43,5 +43,3 @@ Em termos de implementação, a biblioteca httpc oferece uma interface simples e
 1. [Documentação oficial do httpc](http://erlang.org/doc/man/httpc.html)
 
 2. [Documentação de Gleam](https://gleam.run)
-
-3. [Diferentes métodos de extração de dados da web](https://www.octoparse.com/blog/5-ways-to-extract-data-from-webpage/)

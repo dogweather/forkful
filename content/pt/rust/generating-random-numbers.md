@@ -51,6 +51,4 @@ O `rand` utiliza um gerador de números pseudoaleatórios sob o capô. Como esse
 
 ## Ver Também
 
-1. Documentação da Crates.io para `rand`: [link](https://crates.io/crates/rand)
 2. Livro do Rust sobre geradores de números aleatórios: [link](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html)
-3. Documentação mais aprofundada sobre `rand::Rng`: [link](https://doc.rust-lang.org/rand/rand/trait.Rng.html)

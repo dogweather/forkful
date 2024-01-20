@@ -46,5 +46,4 @@ Historisk sett ble HTML-parsing i C# påbegynt med biblioteker som HtmlAgilityPa
 ## Se også:
 1. [HtmlAgilityPack dokumentasjon](https://html-agility-pack.net/)
 2. [AngleSharp: En alternativ HTML-parser i C#](https://anglesharp.github.io/)
-3. [Microsofts Web-scraping-guide](https://docs.microsoft.com/nb-no/azure/search/search-howto-web-scrape)
 4. [Offisielle HTML5 Spesifikasjoner](https://www.w3.org/TR/html52/)

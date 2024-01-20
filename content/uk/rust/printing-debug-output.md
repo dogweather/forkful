@@ -60,5 +60,4 @@ Test {
 ## Дивіться також:
 
 1. [Офіційна документація Rust по форматуванню налагодження](https://doc.rust-lang.org/std/fmt/)
-2. [Вікі Книга по Rust](https://uk.wikibooks.org/wiki/%D0%A0%D0%B0%D1%81%D1%82_(%D0%BC%D0%BE%D0%B2%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F))
 3. [Форум спільноти Rust для пошуку та обговорення різних рішень](https://users.rust-lang.org/)

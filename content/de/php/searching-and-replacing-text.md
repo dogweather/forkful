@@ -47,6 +47,5 @@ Das Verständnis des genauen Prozesses, wie `str_replace()` arbeitet, kann Ihnen
 ## Siehe auch:
 
 1. PHP-Handbuch zu `str_replace()`: [https://www.php.net/manual/de/function.str-replace.php](https://www.php.net/manual/de/function.str-replace.php)
-2. Unterschied zwischen `str_replace()` und `preg_replace()`: [https://www.geekhideout.com/str_replace-vs-preg_replace.shtml](https://www.geekhideout.com/str_replace-vs-preg_replace.shtml)
 3. PHP-Dokumentation zu `preg_replace()`: [https://www.php.net/manual/de/function.preg-replace.php](https://www.php.net/manual/de/function.preg-replace.php)
 4. PHP-Dokumentation zu `str_ireplace()`: [https://www.php.net/manual/de/function.str-ireplace.php](https://www.php.net/manual/de/function.str-ireplace.php)

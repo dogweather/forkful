@@ -38,4 +38,3 @@ iex> Date.from_iso8601("20190101")
 
 1. Elixir官方文件: [Date.from_iso8601/2](https://hexdocs.pm/elixir/Date.html#from_iso8601/2)
 2. 關於ISO 8601格式: [ISO 8601 - Wikipedia](https://zh.wikipedia.org/wiki/ISO_8601)
-3. Timex文件: [Timex](https://hexdocs.pm/timex/readme.html)

@@ -37,5 +37,3 @@ Extraktion av delsträngar kommer från tidiga dagar av programmering när ren d
 För mer detaljerade tekniker och strategier för substräng extraktion i Swift, besök:
 
 1. Swift Docs: [Arbeta med strängar](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-2. Swift by Sundell: [Effektiv stränghantering i Swift](https://www.swiftbysundell.com/articles/string-management-swift/)
-3. Swift Post: [Substrängar i Swift](https://theswiftpost.co/substr-strings-in-swift/)

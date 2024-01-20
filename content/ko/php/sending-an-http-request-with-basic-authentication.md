@@ -40,7 +40,6 @@ $response = file_get_contents('http://example.com', false, $context);
 
 ## 참고자료:
 
-1. [PHP에서 HTTP 클라이언트로서의 Guzzle](https://guzzlephp.org/)
 2. [PHP cURL 공식 문서](https://www.php.net/manual/en/book.curl.php)
 3. [Basic Authentication에 대한 모질라(Mozilla) 문서](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
 4. [OAuth에 대한 RFC 문서](https://tools.ietf.org/html/rfc6749)

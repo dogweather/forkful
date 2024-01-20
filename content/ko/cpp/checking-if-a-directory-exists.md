@@ -47,4 +47,3 @@ int main() {
 
 1. [C++17 Filesystem Library - cppreference.com](https://en.cppreference.com/w/cpp/filesystem)
 2. [How to check if a directory exists in C++ - StackOverflow](https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi)
-3. [C++ Tutorial: File I/O - 2021 - bogotobogo](https://www.bogotobogo.com/cplusplus/files.php)

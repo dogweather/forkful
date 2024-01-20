@@ -45,4 +45,3 @@ Implementeringsdetaljer: Funktionen `parsec()` är inte begränsad till förinst
 
 1. [DateTimeFormatter dokumentation](http://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 2. [Tutorial på Oracle](https://docs.oracle.com/javase/tutorial/datetime/iso/format.html)
-3. [How to Convert String to Localdate in Java](https://www.callicoder.com/java-string-to-localdate-example/) - Ett exempel på datestängar parsning i Java på Callicoder.

@@ -45,6 +45,5 @@ HTTP-запити є основою веб-спілкування. Вони бу
 
 ## Дивись також:
 
-1. [Робота з HTTP-запитами з допомогою Axios в JavaScript](https://www.digitalocean.com/community/tutorials/working-with-axios-as-a-http-client-in-javascript)
 2. [Node.js HTTP-документація](https://nodejs.org/api/http.html)
 3. [Вивчення асинхронного програмування](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous)

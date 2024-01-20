@@ -62,4 +62,3 @@ It's important to remember when using print debug to clean up afterwards. Debugg
 1. [Ruby documentation on IO](https://ruby-doc.org/core-2.7.0/IO.html#method-c-puts)
 2. [Byebug debugger for Ruby](https://rubygems.org/gems/byebug)
 3. [Ruby documentation on Debugger](https://ruby-doc.org/stdlib-3.0.3/libdoc/debug/rdoc/DEBUGGER__.html)
-4. [Thoughtbot post on Ruby Print Debugging](https://thoughtbot.com/blog/print-debugging-ruby)

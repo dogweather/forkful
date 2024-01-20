@@ -52,4 +52,3 @@ Interpolacja łańcuchów w PowerShell jest obsługiwana poprzez zastosowanie me
 ## Zobacz również:
 1. [Wsparcie dla interpolacji łańcuchów w dokumentacji Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_quoting_rules?view=powershell-7.1#string-expansion-within-double-quotes)
 2. [Poradnik dotyczący operatora -f na stronie SS64](https://ss64.com/ps/syntax-f-operator.html)
-3. [Porównanie różnych metod manipulacji łańcuchami w PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/string-formatting-in-powershell/)

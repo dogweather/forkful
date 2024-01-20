@@ -41,5 +41,4 @@ Hello, John!
 
 ## 另请参阅: 
 1. [PHP官方文档关于字符串插值的页面](https://www.php.net/manual/en/language.types.string.php#language.types.string.parsing.complex)
-2. [StackOverflow上的相关讨论](https://stackoverflow.com/questions/9257505/variable-interpolation-php) 
-3. [W3Schools的PHP教程](https://www.w3schools.com/php/php_strings.asp)
+2. [StackOverflow上的相关讨论](https://stackoverflow.com/questions/9257505/variable-interpolation-php)

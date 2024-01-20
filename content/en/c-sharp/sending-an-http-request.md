@@ -64,5 +64,4 @@ When you instantiate `HttpClient`, it opens a socket that stays open until it's 
 
 ## See Also
 1. [Microsoft Docs: HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)
-2. [Introduction to HttpClient](https://learn.microsoft.com/en-us/archive/blogs/henrik_friis/introduction-to-httpclient)
 3. [HttpClient vs HttpWebRequest](https://www.infoworld.com/article/2993352/httpclient-vs-httpwebrequest-dont-use-httpwebrequest.html)

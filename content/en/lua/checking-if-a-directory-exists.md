@@ -42,6 +42,5 @@ A popular alternative to the `lfs` module approach is executing OS commands with
 Under the hood, `lfs.attributes(path, 'mode')` retrieves the `mode` attribute of the file/directory at the given `path`. If this `mode` is 'directory', the function returns `true`, indicating that a directory exists at the given `path`.
 
 ## See Also
-1. [Lua File System Tutorial](https://keplerproject.github.io/luafilesystem/tutorial.html)
 2. [Lua `os` Library](https://www.lua.org/manual/5.3/manual.html#6.9) (Remember, it's powerful but use with caution!)
 3. [Tutorial on Manipulating Files and Directories in Lua](https://www.tutorialspoint.com/lua/lua_file_io.htm)

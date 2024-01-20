@@ -45,4 +45,3 @@ En annen viktig detalj er håndteringen av 'IndexOutOfBoundsException'. Dersom d
 ## Se også:
 
 1. [Offisiell Kotlin dokumentasjon på substrings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/substring.html)
-2. [En detaljert tutorial på tekstbehandling i Kotlin](https://www.baeldung.com/kotlin/strings)

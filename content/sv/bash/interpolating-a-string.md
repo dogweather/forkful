@@ -39,6 +39,5 @@ För mer information om Bash och stränginterpolation, se följande länkar:
 
 1. [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_03.html)
 2. [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/string-manipulation.html)
-3. [Bash vs Python: stränginterpolation](https://opensource.com/article/19/10/bash-vs-python)
    
 Notera: för att läsa artiklarna ovan behöver du engelska kunskap.

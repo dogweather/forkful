@@ -42,5 +42,4 @@ Implementasjonen av `Substring()`-metoden i C# er rask og effektiv, men man bør
 ## Se også:
 
 1. MSDN String.Substring Method: [Link](https://msdn.microsoft.com/library/aka44szs.aspx)
-2. C# Corner: Understanding String Manipulation in C#: [Link](https://www.c-sharpcorner.com/article/understanding-string-manipulation-in-c-sharp/)
 3. Dot Net Perls - Substring: [Link](https://www.dotnetperls.com/substring)

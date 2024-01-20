@@ -51,5 +51,4 @@ Vaihtoehtoisesti, voit käyttää `/dev/urandom` tai `/dev/random` laitteita ent
 ## Katso myös:
 
 1. Bash manuaali: [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-2. Stack Overflow: [How to generate a random number in Bash?](https://stackoverflow.com/questions/8988902/how-to-generate-a-random-number-in-bash) 
-3. Ubuntu Manpages: [random, urandom - kernel random number source devices](http://manpages.ubuntu.com/manpages/cosmic/man4/random.4.html)
+2. Stack Overflow: [How to generate a random number in Bash?](https://stackoverflow.com/questions/8988902/how-to-generate-a-random-number-in-bash)

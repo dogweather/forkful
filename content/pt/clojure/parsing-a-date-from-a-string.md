@@ -40,5 +40,4 @@ Com relação aos detalhes de implementação, em clj-time, a string é dada a u
 
 ## Veja também
 1. Para a documentação completa da biblioteca clj-time, veja [https://github.com/clj-time/clj-time](https://github.com/clj-time/clj-time)
-2. Para uma introdução mais aprofundada à analise de data e hora em Clojure, veja [https://www.baeldung.com/clojure-date-time](https://www.baeldung.com/clojure-date-time)
 3. Para uma compreensão mais profunda sobre a biblioteca Joda-Time que está por baixo do clj-time, veja [https://www.joda.org/joda-time/](https://www.joda.org/joda-time/)

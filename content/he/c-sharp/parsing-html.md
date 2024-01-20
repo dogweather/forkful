@@ -37,5 +37,4 @@ foreach(var node in Nodes)
 ## ראו גם
 למדע נוסף על בניית HTML משובצת ואופטימיזציה של קוד ניתוח, ראו את המקורות הבאים:
 1. [מסמכי HtmlAgilityPack](https://html-agility-pack.net/)
-2. [היכן לקרוא על AngleSharp](https://anglesharp.github.io/docs/)
 3. [CSQuery ב- GitHub](https://github.com/jamietre/csquery)

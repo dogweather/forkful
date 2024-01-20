@@ -53,7 +53,3 @@ En Java, l'impression de débogage est généralement effectuée en utilisant la
 Pour en savoir plus sur le débogage en Java, consultez ces liens utiles :
 
 1. Oracle Official Documentation : [Débogage des applications Java](https://docs.oracle.com/javase/7/docs/technotes/guides/debug/index.html)
-
-2. Tutorialspoint : [Débogage Java](https://www.tutorialspoint.com/java/java_debugging.htm)
-
-3. Baeldung : [Un guide pour le débogueur Java](https://www.baeldung.com/java-debugging)

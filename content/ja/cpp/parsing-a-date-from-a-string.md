@@ -59,6 +59,5 @@ Fri Sep  9 20:30:00 2022
 
 以下に、関連するリンクと情報を提供します:
 
-1. [cplusplus.com](http://www.cplusplus.com/reference/ctime/get_time/) - `std::get_time`の詳細と使用方法について説明しています。
 2. [Cppreference](https://en.cppreference.com/w/cpp/io/manip/get_time) - もっと深い理解のためのRvalue, Lvalueなどの概念と使い方を説明しています。
 3. [Boost](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html) - C++のBoostライブラリの日付と時間操作についての詳細なドキュメンテーションがあります。

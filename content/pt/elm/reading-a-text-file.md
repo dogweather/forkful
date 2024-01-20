@@ -57,5 +57,4 @@ Uma alternativa seria usar JavaScript para ler o arquivo e, em seguida, passar o
 
 ## Veja Também:
 1. Documentação oficial do Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-2. Para saber mais sobre como integrar Elm com JavaScript: [https://guide.elm-lang.org/interop/javascript.html](https://guide.elm-lang.org/interop/javascript.html)
 3. Arquivos e I/O em Elm na plataforma Ellie: [https://ellie-app.com/cZr5sbrVWNa1](https://ellie-app.com/cZr5sbrVWNa1)

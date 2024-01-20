@@ -52,6 +52,5 @@ Quant à l'implémentation, les parsers HTML utilisent généralement l'algorith
 
 Voici quelques liens utiles pour en savoir plus sur l'extraction HTML en C++ :
 
-1. [HTML parsing libraries](https://www.htmlgoodies.com/beyond/webmaster/toolbox/article.php/3888101/HTML-Parsing-Libraries-for-C-Cplusplus.htm)
 2. [Gumbo parser Github](https://github.com/google/gumbo-parser)
 3. [C++ HTML parser stack overflow discussion](https://stackoverflow.com/questions/126279/c-html-parser-library)

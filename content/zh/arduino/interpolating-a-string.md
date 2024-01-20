@@ -41,5 +41,4 @@ The current temperature is: 22
 
 ## 参阅其他：
 
-1. [Arduino串口通信](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialCommunication)
 2. [C语言字符串处理](https://www.runoob.com/cprogramming/c-strings.html)

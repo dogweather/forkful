@@ -38,5 +38,3 @@ Mit PHP wird der Inhalt mit der Funktion `file_get_contents()` heruntergeladen. 
 ## Siehe auch:
 
 1. [PHP: file_get_contents - Manual](https://www.php.net/manual/de/function.file-get-contents.php)
-2. [Python Web Scraping Libraries: BeautifulSoup, Selenium, Scrapy, etc](https://www.geeksforgeeks.org/python-libraries-web-scraping/)
-2. [Website-Kopie – Wikipedia](https://de.wikipedia.org/wiki/Website-Kopie)

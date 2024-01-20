@@ -34,6 +34,4 @@ echo 'Hello Dev!' | grep -o 'He.*'
 
 ## Додатково:
 
-1. [Bash Guide for Beginners](https://www.bash.academy/)
-2. [Regex Tutorial - A quick cheatsheet by examples](https://www.factorypattern.co.uk/blog/regex-tutorial-a-quick-cheatsheet-by-examples/)
 3. [GNU Bash Manual - Pattern Matching](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)

@@ -44,5 +44,4 @@ En ce qui concerne la mise en œuvre, il faut savoir que `random()` utilise une 
 Pour en savoir plus sur la génération de nombres aléatoires dans Kotlin, consultez ces liens:
 
 1. Documentation Kotlin sur les nombres aléatoires: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
-2. Génération de nombres aléatoires en Kotlin: [https://www.geeksforgeeks.org/kotlin-random/](https://www.geeksforgeeks.org/kotlin-random/)
 3. Sécurité numérique en Kotlin: [https://proandroiddev.com/securerandom-c33906d12179](https://proandroiddev.com/securerandom-c33906d12179)

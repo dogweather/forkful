@@ -36,5 +36,4 @@ Lowered String: hello, world!
 
 ## 参见：
 1. [Microsoft官方文档 - ToLower方法](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_methods?view=powershell-7.1#to-lower-case)
-2. [W3Schools在线教程 - PowerShell字符串方法](https://www.w3schools.com/powershell/powershell_string_methods.asp)
 3. [StackOverflow讨论 - PowerShell字符串转换大小写](https://stackoverflow.com/questions/23066770/change-string-to-uppercase)

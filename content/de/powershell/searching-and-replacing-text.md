@@ -51,4 +51,3 @@ Weitere hilfreiche Ressourcen zu diesem Thema findest du hier:
 
 1. [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
 2. [Regular Expressions in PowerShell](https://www.regular-expressions.info/powershell.html)
-3. [.NET String Manipulation Guide](https://docs.microsoft.com/en-us/dotnet/standard/base-types/string-manipulation)

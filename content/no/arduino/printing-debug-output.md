@@ -38,5 +38,4 @@ Fra implementeringsperspektivet er `Serial.print` og `Serial.println` funksjoner
 
 ## Se Også
 1. [Arduino Reference - Serial](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-2. [Arduino debug techniques](https://www.baldengineer.com/arduino-debug-techniques.html)
 3. [Understanding the Serial.print() Function in Arduino](https://www.makerguides.com/arduino-serial/)

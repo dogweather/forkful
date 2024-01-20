@@ -44,6 +44,5 @@ Når det gjelder implementeringsdetaljer, bruker `rand()` en pseudotilfeldig alg
 
 For en mer utfyllende studie av tilfeldige tallgenerering i C, ta en titt på følgende ressurser:
 
-1. GNU C Library: [Random Numbers](https://www.gnu.org/software/libc/manual/html_node/Random-Numbers.html)
 
 2. StackOverflow: [Why do I always get the same sequence of random numbers with rand() ?](https://stackoverflow.com/questions/4768180/why-do-i-always-get-the-same-sequence-of-random-numbers-with-rand)

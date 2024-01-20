@@ -56,5 +56,3 @@ Para saber mais sobre como verificar se um diretório existe em C#, você pode v
 1. Documentação Microsoft Directory.Exists: [https://docs.microsoft.com/pt-br/dotnet/api/system.io.directory.exists](https://docs.microsoft.com/pt-br/dotnet/api/system.io.directory.exists)
 
 2. StackOverflow - Como verificar se um diretório existe em C#: [https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-file-or-a-directory](https://stackoverflow.com/questions/1395205/better-way-to-check-if-a-path-is-a-file-or-a-directory)
-
-3. Blog de programação de C# - Verificando a existência do diretório: [https://www.c-sharpcorner.com/article/c-sharp-how-to-test-if-a-directory-or-file-already-exists/](https://www.c-sharpcorner.com/article/c-sharp-how-to-test-if-a-directory-or-file-already-exists/)

@@ -33,8 +33,6 @@ Fish 쉘의 `random` 명령어는 내부적으로 `/dev/urandom`을 사용하여
 ## 참고 자료
 
 1. [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
-2. [Random number generation in Linux](https://www.howtogeek.com/118594/how-the-linux-random-number-generator-works/)
-3. [Openssl rand](https://www.openssl.org/docs/man1.1.0/man1/rand.html)
 4. [Linux random vs urandom](https://www.2uo.de/myths-about-urandom) 
 
 끝까지 읽어 주셔서 감사합니다. 행복한 코딩 되세요!

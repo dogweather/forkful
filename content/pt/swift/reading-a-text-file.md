@@ -44,4 +44,3 @@ Para mais detalhes sobre a linguagem Swift e leitura de arquivos, confira estes 
 
 1. [Documentação Oficial Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 2. [Leitura de arquivos com Swift por Ray Wenderlich](https://www.raywenderlich.com/418-working-with-the-filemanager-in-swift)
-3. [Tratamento de strings e arquivos com Swift](https://learnappmaking.com/string-swift-how-to/)

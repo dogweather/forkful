@@ -53,5 +53,3 @@ iex> past_date = Date.add(~D[2022-05-20], -5)
 ## Читайте також:
 
 1. [Date documentation in Elixir](https://hexdocs.pm/elixir/Date.html)
-2. [Calculating dates in the past and future in Elixir](https://www.rubyguides.com/2019/04/ruby-date-time/)
-3. [Working with time and date in Elixir](https://blog.appsignal.com/2020/02/18/working-with-time-and-date-in-elixir.html)

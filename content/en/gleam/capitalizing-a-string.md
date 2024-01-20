@@ -49,4 +49,3 @@ For a better grasp, check out these useful sources.
 
 1. [Gleam String documentation](https://gleam.run/book/tour/strings.html) : An all-inclusive guide on string manipulation in Gleam.
 2. [Case conversion in various languages](https://en.wikipedia.org/wiki/Capitalization): To understand how different languages handle string capitalization.
-3. [Gleam standard library](https://hexdocs.pm/gleam_stdlib/readme.html): Handy for exploring other built-in Gleam functions.

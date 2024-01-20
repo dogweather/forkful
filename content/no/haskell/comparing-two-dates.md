@@ -48,5 +48,4 @@ Sammenligning av datoer i Haskell er en grei prosess fordi alle datoobjekter er 
 For mer informasjon om dato- og tidsfunksjoner i Haskell, se følgende kilder:
 
 1. [Data.Time](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time.html)
-2. [Sammenligning av tid og dato](https://wiki.haskell.org/Time_and_dates) på HaskellWiki.
 3. For et dypere dykk med tid og dato håndtering i Haskell, sjekk [School of Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks).

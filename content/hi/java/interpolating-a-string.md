@@ -49,4 +49,3 @@ System.out.println(greeting);
 
 1. [Java String Formatting (Oracle Java Documentation)](https://docs.oracle.com/javase/tutorial/java/data/numberformat.html)
 2. [Java 15 Text Blocks (JEP 378)](https://openjdk.java.net/jeps/378)
-3. [Java String Interpolation (Baeldung)](https://www.baeldung.com/java-string-interpolation-pattern)

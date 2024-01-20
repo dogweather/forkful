@@ -36,5 +36,3 @@ Serial.println(greeting);
 ## यह भी देखें:
 
 1. [Arduino String Interpolation](https://www.arduino.cc/en/Tutorial/StringAdditionOperator)
-
-2. [Arduino sprintf()](https://www.arduino.cc/reference/tr/language/functions/characters/printf/)

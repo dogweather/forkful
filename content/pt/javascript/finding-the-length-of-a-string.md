@@ -58,7 +58,6 @@ console.log(textoSemEspacos.length);  // Saída: 11
 ## Veja Também
 
 1. [MDN Web Docs: String.length](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-2. [JavaScript.Info: Strings](https://pt.javascript.info/string)
 3. [W3Schools: JavaScript String Length Property](https://www.w3schools.com/jsref/jsref_length_string.asp)
 
 Espero que este guia simplificado tenha te ajudado a entender melhor como encontrar o comprimento de uma string em JavaScript. Continue praticando e explore as referências fornecidas para dominar os conceitos.

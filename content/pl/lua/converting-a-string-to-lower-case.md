@@ -31,4 +31,3 @@ Różne języki programowania mają różne sposoby konwersji łańcuchów na ma
 ## Zobacz tez
 1. Dokumentacja Lua: [String Manipulation](https://www.lua.org/pil/20.html)
 2. Stack Overflow: [Lowercase a String in Lua](https://stackoverflow.com/questions/20284515/lowercase-a-string-in-lua)
-3. GitHub: [Lua Examples](https://github.com/LuaDist/examples)

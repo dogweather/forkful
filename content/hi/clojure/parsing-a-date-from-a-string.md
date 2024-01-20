@@ -45,7 +45,6 @@ Clojure में, हमें Java के java.time लाइब्रेर�
 
 ## और देखें:
 
-1. [Clojure का विस्तार पर पाठ्यक्रम](https://www.clojure.org/guides/learn/)
 
 2. [clj-time GitHub](https://github.com/clj-time/clj-time)
 

@@ -47,4 +47,3 @@ Per ulteriori informazioni, consultare le seguenti risorse:
 
 1. [Package io - The Go Programming Language - golang.org](https://golang.org/pkg/io/)
 2. [Reading Files in Go - Go by Example - gobyexample.com](https://gobyexample.com/reading-files)
-3. [Working with Files in Go - The Go Programming Language Blog - blog.golang.org](https://blog.golang.org/go1.16-embed-iofs)

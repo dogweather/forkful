@@ -52,6 +52,5 @@ Go का `net/html` पैकेज, जो Golang का कोर लाइ�
 
 ## "और भी देखें:"
 
-1. Go द्वारा HTML पार्सिंग: [Link](https://golang.org/pkg/net/html/)
 2. Python BeautifulSoup HTML पार्सिंग: [Link](https://beautiful-soup-4.readthedocs.io/)
 3. JavaScript Cheerio HTML पार्सिंग: [Link](https://cheeriojs.github.io/cheerio/)

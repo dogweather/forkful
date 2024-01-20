@@ -48,6 +48,5 @@ Det finns massor att lära sig när det gäller C++. Här är några relaterade 
 
 1. [C++ string library](https://en.cppreference.com/w/cpp/string)
 2. [Boost Libraries for C++](https://www.boost.org/)
-3. [C++ Reference](http://www.cplusplus.com/doc/tutorial/strings/) for working with strings. 
 
 God programmeringslycka!

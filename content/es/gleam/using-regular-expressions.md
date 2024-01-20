@@ -41,6 +41,5 @@ En términos de alternativas, en algunos casos podrías usar métodos de cadena 
 Las expresiones regulares en Gleam están implementadas a través del uso de las bibliotecas de Rust subyacentes, lo que garantiza un rendimiento y seguridad potentes.
 
 ## Ver También
-1. [Documentación de Gleam/Regex](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 2. [Manual de usuario regex](https://www.regular-expressions.info/tutorial.html)
 3. [Practicar regex online](https://regex101.com/)

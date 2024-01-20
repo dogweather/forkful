@@ -35,7 +35,6 @@ I detta fall kan variablerna `name` och `age` variera, vilket gör stränginterp
 
 ## Se också
 Om du vill lära dig mer om stränginterpolation i TypeScript och dess användning, se följande resurser:
-1. TypeScript's officiella dokumentation: [Stränginterpolation](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
 2. Stack Overflow: [Hur man använder stränginterpolation i TypeScript](https://stackoverflow.com/questions/3304014/how-to-interpolate-strings-in-typescript)
 
 Kom ihåg att stränginterpolation kan gör din kod mer läsbar och underlätta skapandet av dynamiska strängar!

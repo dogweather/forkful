@@ -53,6 +53,5 @@ Em C#, a classe 'Debug' é parte do namespace 'System.Diagnostics' e fornece mé
 
 **## Veja Também**
 
-1. [Conceitos de Depuração em C#](https://docs.microsoft.com/pt-br/visualstudio/debugger/debugging-concepts-in-visual-studio?view=vs-2019)
 2. [System.Diagnostics.Debug Class](https://docs.microsoft.com/pt-br/dotnet/api/system.diagnostics.debug?view=net-5.0)
 3. [Como: Imprimir a Saída de Depuração](https://docs.microsoft.com/pt-br/dotnet/api/system.diagnostics.debug.writeline?view=net-5.0)

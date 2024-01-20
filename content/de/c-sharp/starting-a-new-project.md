@@ -53,6 +53,4 @@ Bei der Implementierung geht es darum, die Projektstruktur zu erstellen und die 
 
 ## Siehe Auch
 1. [Microsoft Dokumentation - Erstellen von Projekten](https://docs.microsoft.com/de-de/visualstudio/get-started/csharp/tutorial-console?view=vs-2019)
-2. [Einführung in die Programmierung mit C#](https://www.learnvisualstudio.net/courses/csharp/)
 3. [Erstellen einer Konsolenanwendung in .NET Core](https://docs.microsoft.com/de-de/dotnet/core/tutorials/with-visual-studio?tabs=csharp)
-4. [Arbeiten mit Projekten und Lösungen - Visual Studio](https://docs.microsoft.com/de-de/visualstudio/ide/working-with-projects-and-solutions?view=vs-2019)

@@ -49,6 +49,5 @@ tsc --init
 
 1. [Офіційний сайт TypeScript](https://www.typescriptlang.org/)
 2. [TypeScript у деталях на Medium](https://medium.com/tech-tajawal/typescript-why-should-one-use-it-a539faa92010)
-3. [TypeScript Tutorial на freeCodeCamp](https://www.freecodecamp.org/news/typescript-javascript-with-superpowers/)
 4. [Документація npm](https://docs.npmjs.com/)
 5. [Порівняння між TypeScript та JavaScript на Stack Overflow](https://stackoverflow.com/questions/12694530/what-is-typescript-and-why-would-i-use-it-in-place-of-javascript)

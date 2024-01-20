@@ -48,4 +48,3 @@ För mer djupgående lärande, se följande länkar:
 
 1. [The Rust Book: The Slice Type](https://doc.rust-lang.org/book/ch04-03-slices.html#string-slices)
 2. [Rust By Example: Primitives](https://doc.rust-lang.org/rust-by-example/primitives/tuples.html)
-3. [Understanding String Slicing in Rust](https://www.forrestthewoods.com/blog/understanding-rust-string-string-slicing/)

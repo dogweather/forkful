@@ -50,4 +50,3 @@ arg3
 
 如果你想了解更多关于命令行参数的信息，可以查看下面的链接：
 1. [Wikipedia: Command-line argument](https://en.wikipedia.org/wiki/Command-line_interface#Arguments)
-2. [Geek's for geeks: Command line arguments in various languages](https://www.geeksforgeeks.org/command-line-arguments-in-various-programming-languages/)

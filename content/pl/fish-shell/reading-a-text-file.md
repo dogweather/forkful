@@ -40,5 +40,3 @@ To jest mój plik tekstowy.
 ## Zobacz też:
 
 1. [Dokumentacja Fish Shell](https://fishshell.com/docs/current/index.html)
-2. [Poradnik odczytywania plików tekstowych w Bash](https://www.cyberciti.biz/faq/unix-linux-bsd-appleosx-bash-read-comma-separated-cvsfile/)
-3. [Porównanie różnych powłok](https://www.howtogeek.com/211516/bash-vs.-zsh-vs.-fish-which-shell-is-right-for-you/)

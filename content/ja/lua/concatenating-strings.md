@@ -45,5 +45,4 @@ print(message)
 ## 関連リンク:
 
 1. [Luaの公式ドキュメンテーション](https://www.lua.org/manual/5.4/)
-2. [Luaの文字列連結のWikiブック](https://en.wikibooks.org/wiki/Lua_Programming/string_concatenation)
 3. [StackOverflow上の文字列連結ディスカッション](https://stackoverflow.com/questions/987772/lua-string-concatenation-performance)

@@ -39,4 +39,3 @@ echo "{$greeting}, {$name}!";
 
 1. [PHP मैनुअल: स्ट्रिंग्स](https://www.php.net/manual/en/language.types.string.php)
 2. [स्टैक ओवरफ्लो](https://stackoverflow.com/questions/2631749/php-variable-interpolation-vs-concatenation) पर PHP स्ट्रिंग इंटरपोलेशन बनाम संयोजन पर एक चर्चा.
-3. [PHP के लिए गूगल कोड यूनिवर्सिटी](https://developers.google.com/edu/php/) पर स्ट्रिंग इंटरपोलेशन का उदाहरण और सरलचीन स्ट्रिंग इंटरपोलेशन।

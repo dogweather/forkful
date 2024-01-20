@@ -51,6 +51,4 @@ DS3231-kirjaston `getDateStr()`-funktio antaa oikeanmuotoisen päivämäärän (
 
 ## Katso myös:
 
-1. DS3231 RTC -moduulin yksityiskohtainen käyttö [Gregorio Liten's Blogissa](https://gregorioliten.com/how-to-use-ds3231-rtc-module-in-arduino/).
 2. Miten käyttää NTP:tä ajan saamiseksi Arduinossa [Random Nerd Tutorials](https://randomnerdtutorials.com/esp8266-nodemcu-date-time-ntp-client-server-arduino/).
-3. Yleistä tietoa I2C-protokollasta [SparkFun](https://www.sparkfun.com/docs/I2C).

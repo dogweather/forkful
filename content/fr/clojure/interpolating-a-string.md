@@ -43,6 +43,4 @@ C'est important à noter que l'interpolation de chaînes a été introduite dans
 ## Voir aussi:
 Pour plus d'informations et d'exemples sur l'interpolation de chaînes, consultez ces sources :
 
-1. [Clojure - String Interpolation](http://clojure.org/reference/strings#_string_interpolation)
 2. [ClojureDocs - clojure.string](https://clojuredocs.org/clojure.string)
-3. [Code Examples - Clojure String Interpolation](https://www.codegrepper.com/code-examples/clojure/clojure+string+interpolation)

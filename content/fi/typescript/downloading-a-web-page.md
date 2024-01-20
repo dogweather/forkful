@@ -51,6 +51,5 @@ Axios-kirjasto käsittelee HTTP-pyynnöt ja vastaukset. Käytämme tässä esime
 
 1. [Axios GitHub](https://github.com/axios/axios) - Täydellinen axios-kirjaston dokumentaatio
 2. [Fetch API](https://developer.mozilla.org/fi/docs/Web/API/Fetch_API) - Kätevä tapa tehdä verkkopohjaisia ​​pyyntöjä
-3. [Request Promise](https://github.com/request/promise) - Kevyempi vaihtoehto lataamiseen
 4. [HTTP-viestit](https://developer.mozilla.org/fi/docs/Web/HTTP/Messages) - Selitys HTTP-pyynnöistä ja vastauksista
 5. [Lupaukset JavaScriptissä](https://developer.mozilla.org/fi/docs/Web/JavaScript/Guide/Using_promises) - Perusteellisempi katsaus lupauksiin.

@@ -66,6 +66,5 @@ As a matter of implementation, Fish handles debug output at shell level, not wit
 
 1. [Fish Official Documentation](https://fishshell.com/docs/current/index.html) for an extensive guide to Fish Shell programming.
 2. [Fish GitHub Repository](https://github.com/fish-shell/fish-shell) to catch up with ongoing development.
-3. [Fish Shell Tutorial by DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell) for a comprehensive, user-friendly start. 
 
 Remember, mastering debug is what separates good coders from rushed ones. So, off you go! Happy Fishing!

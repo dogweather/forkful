@@ -41,7 +41,4 @@ occupation: Programmer
 
 ## 参考链接
 1. [YAML官方网站](https://yaml.org/)
-2. [YAML格式指南](https://www.digitalocean.com/community/tutorials/an-introduction-to-yaml)
-3. [YAML vs XML vs JSON](https://stackify.com/xml-vs-json-vs-yaml/)
-4. [YamlBeans](https://mvnrepository.com/artifact/com.esotericsoftware/yamlbeans)
 5. [snakeyaml](https://mvnrepository.com/artifact/org.yaml/snakeyaml)

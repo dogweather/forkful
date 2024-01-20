@@ -39,5 +39,3 @@ Command Line Arguments का उपयोग करने का विचा�
 ## अन्य लिंक
 
 1. [Swift Language Guide's Section on Command line arguments](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-2. [Basic Command Line Scripting in Swift](https://www.swiftbysundell.com/basics/command-line-scripting/)
-3. [Handle command line arguments in a Swift script](https://augmentedcode.io/2019/04/07/handle-command-line-arguments-in-a-swift-script/)

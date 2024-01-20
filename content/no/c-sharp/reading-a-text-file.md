@@ -52,7 +52,6 @@ Dette er en prøvetekst.
 
 ## Se også
 
-1. Microsoft Docs: [How to read a text file one line at a time (Visual C#)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/file-system/how-to-read-a-text-file-one-line-at-a-time)
 2. StackOverflow: [How to read a large text file line by line using Java?](https://stackoverflow.com/questions/5868369/how-to-read-a-large-text-file-line-by-line-using-java)
 3. Microsoft Docs: [Streamreader Class (System.IO)](https://docs.microsoft.com/en-us/dotnet/api/system.io.streamreader)
 ---

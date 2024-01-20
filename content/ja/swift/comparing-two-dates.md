@@ -49,5 +49,3 @@ if date1.compare(date2) == .orderedSame {
 次のリンクは日付の比較、操作、および他の関連するトピックについての詳細を提供します：
 
 1. Appleの公式ドキュメンテーション: [Date - Foundation](https://developer.apple.com/documentation/foundation/date)
-   
-2. Swiftでの日付と時間の操作： [Working with Dates and Time in Swift](https://www.swiftbysundell.com/basics/dates-and-times/)

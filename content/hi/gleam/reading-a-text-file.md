@@ -42,6 +42,4 @@ fn main() {
 
 अगर आप और जानकारी चाहते हैं, तो निम्नलिखित लिंक्स देखें:
 
-1. [Gleam का विश्लेषण](https://gleam.run/tour/)
 2. [Gleam के रिपॉजिटरी](https://github.com/gleam-lang/gleam)
-3. [फ़ाइल IO के बारे में](https://gleam.run/book/tour/filesystem.html)

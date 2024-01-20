@@ -37,4 +37,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 1. [Fish Shell डॉक्यूमेंटेशन](https://fishshell.com/docs/current/index.html): Fish Shell के बारे में और गहराई से जानें। 
 2. [Fish Shell GitHub](https://github.com/fish-shell/fish-shell): Fish Shell के स्रोत कोड की Jankari।
-3. [Unix - Read a text file](https://www.geeksforgeeks.org/unix-read-a-file/): Unix पर टेक्स्ट फ़ाइल कैसे पढ़ें, यह सीखें।

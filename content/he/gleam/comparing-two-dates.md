@@ -31,7 +31,4 @@ equal(date1, date2)
 פרטי היישום: אנחנו משתמשים במתודה `from_iso8601` ליצירת תאריכים ממחרוזות. את ההשוואה אנחנו מבצעים בעזרת פונקציה `equal`, שמחזירה `False` או `True`.
 
 ## ראה גם:
-1. [תיעוד `gleam/date_time`](https://hexdocs.pm/gleam_date_time/gleam/date_time.html)
-2. [תיעוד `gleam/stdlib`](https://hexdocs.pm/gleam_stdlib/gleam/stdlib.html)
 3. [פורום של קהילת Gleam](https://gleam.run/community/)
-4. [קורס אונליין בנושא Gleam programming](https://gleam.run/tutorials/)

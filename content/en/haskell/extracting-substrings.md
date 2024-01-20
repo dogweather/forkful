@@ -53,7 +53,6 @@ They all essentially use the 'List' implementation within Haskell because, withi
 
 1. `take` and `drop` in Haskell's official documentation [here](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#g:4).
 
-2. Deep dive into String handling within Haskell [here](http://www.cse.unsw.edu.au/~en1000/haskell/inbuilt.html#strings). 
 
 3. Alternative approaches, including Haskell Libraries for regex pattern matching (like Text.Regex) [here](https://wiki.haskell.org/Regular_expressions).
 

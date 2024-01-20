@@ -46,8 +46,6 @@ Para aprofundar seu conhecimento sobre strings e substrings no Arduino, confira 
 
 1. [Arduino String Reference](https://arduino.cc/reference/en/language/variables/data-types/string)
 
-2. [Arduino String Functions](https://arduino.cc/en/Tutorial/StringFunctions)
 
-3. [Arduino String Constructors](https://arduino.cc/reference/en/language/variables/data-types/string/constructors/)
 
 Lembre-se, a prática é o caminho para aperfeiçoamento, então continue programando e experimentando!

@@ -48,5 +48,4 @@ Szczegóły implementacji: Funkcja tolower() przekształca dane na niskich pozio
 
 ## Zobacz także:
 1. [Dokumentacja Funkcji tolower()](https://www.cplusplus.com/reference/cctype/tolower/)
-2. [Ciągi w języku C](https://pl.wikipedia.org/wiki/Ciąg_(informatyka))
 3. [Porównywanie ciągów C](https://www.tutorialspoint.com/c_standard_library/c_function_strcmp.htm)

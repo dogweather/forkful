@@ -48,4 +48,3 @@ HTTP 요청이 성공하면 웹페이지의 HTML을 보여줍니다.
 ## 참고자료
 1. [cURL 공식 문서](https://curl.haxx.se/)
 2. [HTTP 인증 - MDN 웹 문서](https://developer.mozilla.org/ko/docs/Web/HTTP/Authentication)
-3. [Bash 스크립팅: 기본부터 고급까지](https://devowen.com/744)

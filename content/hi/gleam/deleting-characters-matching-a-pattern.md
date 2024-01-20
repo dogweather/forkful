@@ -32,7 +32,3 @@ assert result == "नमस्तेदुनिया"
 **विकल्प:** ध्यान दें, कि कुछ अवस्थाओं में आप चाहते हैं कि मैच करने के बजाय अनमिलान वर्ण हटाए जाएं, इसके लिए आप replace() функцию 'in' के साथ उपयोग कर सकते हैं।
 
 **उपहार:** जब आप कोड में वर्ण हटाते हैं, तो आपके पास वर्णों केवल वापसी मान होती है, लेकिन मूल स्ट्रिंग प्रभावित नहीं होती है।
-
-## यदि आप और जानना चाहते हैं:
-1. ऑफिशियल Gleam डॉक्यूमेंटेशन: [https://gleam.run/docs](https://gleam.run/docs)
-2. 'String manipulation in Gleam' ट्यूटोरियल: [https://gleam.run/news/strings-and-their-professors/](https://gleam.run/news/strings-and-their-professors/)

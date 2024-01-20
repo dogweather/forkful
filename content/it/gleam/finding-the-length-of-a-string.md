@@ -38,5 +38,3 @@ Quando si parla di implementazione, è importante notare che la funzione `string
 Per ulteriori informazioni sulla gestione delle stringhe in Gleam, vedere le seguenti risorse:
 
 1. [Gleam String Module Documentation](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
-2. [Unicode in Gleam](https://gleam.run/book/tour/unicode.html)
-3. [Gleam Programming Language: A First Look](https://dev.to/jfacorro/gleam-programming-language-a-first-look-3ef2)

@@ -52,4 +52,3 @@ W Arduino, drukowanie komunikatów diagnostycznych jest realizowane za pomocą i
 
 1. Dokumentacja Arduino na temat drukowania na porcie szeregowym: [Serial.print()](https://www.arduino.cc/reference/en/language/functions/communication/serial/print/)
 2. Poradnik na temat debugowania programów Arduino: [Debugging Arduino Code](https://www.arduino.cc/en/Tutorial/LibraryExamples/SoftwareSerialExample)
-3. Tutorial na temat użycia debugowania szeregowego w Arduino: [Serial Debugging](https://learn.sparkfun.com/tutorials/serial-debugging)

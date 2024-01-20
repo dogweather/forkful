@@ -45,8 +45,6 @@ When sending an HTTP request, you shouldn't have to worry about the underlying i
 
 For further knowledge on HTTP requests, check these links:
 
-1. Official Ktor Documentation: [Ktor Docs](https://ktor.io/docs/http-client.html)
-2. Comparison of HTTP Libraries in Kotlin: [Kotlin HTTP Libraries](https://blog.autsoft.hu/a-confusing-dependency-ktor-okhttp-and-retrofit/)
 3. Understanding HTTP: [HTTP Basics](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 
 Please note that this article assumes a working knowledge of Kotlin. If you're new to Kotlin or need a refresher, it may be best to start here: [Kotlin Basics](https://kotlinlang.org/docs/kotlin-docs.pdf).

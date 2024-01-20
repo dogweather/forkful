@@ -48,6 +48,5 @@ Testing ke concept mein sabse pehle parikalan ka naam aata hai. Puri tareh se va
 
 ## Juddhein (See Also)
 
-1. [XCTest Documentation](https://developer.apple.com/documentation/xctest/testing_with_xctest_without_xcode)
 2. [Quick Framework](https://github.com/Quick/Quick)
 3. [Nimble Framework](https://github.com/Quick/Nimble)

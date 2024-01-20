@@ -41,4 +41,3 @@ Debug: The value of variable is 5
 
 1. [std::debug in C++](https://en.cppreference.com/w/cpp/io/cerr)
 2. [Debugging with Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
-3. [Effective Debugging Methods](https://www.wiley.com/en-us/Effective+Debugging%3A+66+Specific+Ways+to+Debug+Software+and+Systems-p-9780134395076)

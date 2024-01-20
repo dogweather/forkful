@@ -35,7 +35,6 @@ main = do
 
 ## देखें भी:
 
-1. [Haskell Wiki: Random Numbers](https://wiki.haskell.org/Random_numbers)
 2. [Haskell Docs: System.Random](https://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
 3. [Introduction to Randomness and Random Numbers by Dr Mads Haahr](https://www.random.org/randomness/)
 4. [Haskell Stack Overflow: How do you generate a random int value in Haskell?](https://stackoverflow.com/questions/30740366/list-with-random-numbers-in-haskell)

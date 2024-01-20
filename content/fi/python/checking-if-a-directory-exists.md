@@ -57,4 +57,3 @@ Tämä tarjoaa saman toiminnallisuuden, mutta elegantimman syntaksin.
 Lisätietoja Pythonin kansio- ja tiedostokäsittelystä saat seuraavista lähteistä:
 
 1. Pythonin virallinen ohjedokumentaatio: [os](https://docs.python.org/3/library/os.html) ja [pathlib](https://docs.python.org/3/library/pathlib.html)
-2. Tutorial: [Python 101: File and Directory Access](https://www.blog.pythonlibrary.org/2016/05/24/python-101-working-with-file-system-path-and-directory-access/)

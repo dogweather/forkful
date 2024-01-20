@@ -46,4 +46,3 @@ Basic Auth HTTP अनुरोध में Authentication header के रू
 ## देखें भी:
 1. RFC 2617, HTTP Authentication: [Basic and Digest Access Authentication](https://tools.ietf.org/html/rfc2617)
 2. Gleam प्रशासनिक [दस्तावेज़ीकरण](https://gleam.run/getting-started/)
-3. `httpc` [मॉड्यूल दस्तावेज़ीकरण](https://hexdocs.pm/gleam_httpc/gleam/httpc@v1.0.0.html)

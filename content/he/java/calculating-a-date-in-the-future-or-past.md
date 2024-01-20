@@ -37,5 +37,4 @@ System.out.println("Seven days ago was: " + result);
 ## ראו גם
 
 1. [Java SE 8 תיעוד Date and Time API](https://docs.oracle.com/javase/8/docs/api/java/time/package-summary.html)
-2. [Oracle חדשות ומאמרים: עבודה עם תאריכים, זמנים, ותאריכים](https://www.oracle.com/technical-resources/articles/java/jf14-datetime.html)
 3. [מאמר SO: כיצד להוסיף ימים לתאריך ב-Java](https://stackoverflow.com/questions/10953659/how-to-add-days-to-a-date-in-java)

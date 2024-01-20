@@ -62,5 +62,4 @@ void loop() {
 
 ## ראו גם:
 1. [מסמך עזר ל-WEB Client של Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/WebClient)
-2. [הסבר על שימוש ב-WIFI Client](https://www.arduino.cc/en/Tutorial/WiFiWebClient)
 3. [תיעוד של שרת הרשת של Arduino](https://www.arduino.cc/en/Tutorial/WebServer)

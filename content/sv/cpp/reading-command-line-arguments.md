@@ -48,7 +48,6 @@ C++
 
 ## Se också:
 
-1. [C++ comand line arguments](https://www.learncpp.com/cpp-tutorial/73-command-line-arguments/)
 2. [Boost.Program_options documentation](https://www.boost.org/doc/libs/1_75_0/doc/html/program_options.html)
 
 Glöm inte, förståelse kring kommandoradsargument kan vara nyckeln till att skapa mer dynamiska och användarvänliga program.

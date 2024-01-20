@@ -46,5 +46,4 @@ IO.puts(byte_size("Привіт"))
 ## Дивіться також
 
 1. [Elixir Getting Started Guide](https://elixir-lang.org/getting-started/introduction.html)
-2. [Elixir School on Strings](https://uk.elixirschool.com/lessons/basics/strings) 
 3. [How Does the Length Function work?](https://stackoverflow.com/questions/4859217/how-does-the-length-function-work-in-erlang)

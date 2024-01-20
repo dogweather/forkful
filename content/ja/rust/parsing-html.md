@@ -43,9 +43,6 @@ HTML解析はウェブクローリングおよびウェブスクレイピング�
 
 ## 参考資料：
 
-1. [HTML Parsing - Wikipedia](https://en.wikipedia.org/wiki/HTML_parsing)
 2. [Select.rs Documentation](https://docs.rs/select)
-3. [Web scraping in 2020: A practical guide](https://www.parsehub.com/blog/web-scraping-in-2020-a-practical-guide/)
-4. [Rust and Web scraping](https://msram.xyz/post/rust-and-web-scraping/)
 
  注意：あくまでRustでHTMLをパースするのは一例です。用途により、適切なツール・言語を選択することが重要です。

@@ -54,5 +54,4 @@ Alternativer til cURL inkluderer biblioteker som libcurl i C, og Requests i Pyth
 
 ## Se Også 
 1. [cURL Official Documentation](https://curl.haxx.se/libcurl/c/)
-2. [How the web works - A beginner’s guide to HTTP and HTML](https://www.freecodecamp.org/news/how-the-web-works-a-beginners-guide-to-http-html-db3e7f7961e1/)
 3. [A complete tutorial on Web Scraping](https://www.datacamp.com/community/tutorials/web-scraping-using-python)

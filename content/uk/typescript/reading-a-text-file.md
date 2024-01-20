@@ -37,4 +37,3 @@ try {
 1. Документація Node.js 'fs' модуля: [тут](https://nodejs.org/api/fs.html)
 2. Бібліотека 'fs-extra' на npm: [тут](https://www.npmjs.com/package/fs-extra)
 3. StackOverflow обговорення про `readFileSync` vs `readFile`: [тут](https://stackoverflow.com/questions/17604866/difference-between-readfile-vs-readfilesync)
-4. Курс "The Complete Node.js Developer Course" на Udemy: [тут](https://www.udemy.com/course/the-complete-nodejs-developer-course-2/)

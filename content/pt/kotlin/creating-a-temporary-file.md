@@ -39,5 +39,4 @@ Os detalhes da implementação da função `createTempFile` mostram que o Kotlin
 
 ## Veja Também
 
-1. Documentação do Kotlin sobre criação de arquivos temporários: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
 2. Documentação do Java sobre criação de arquivos temporários: [https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String)](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#createTempFile(java.lang.String,%20java.lang.String))

@@ -51,6 +51,5 @@ Intern konvertiert das `Date.today`-Verfahren das Gregorianische Datum, das es v
 
 Für weitere Informationen sehen Sie es sich bitte die folgenden Resourcen an:
 
-1. [Ruby's Date Class Documentation](https://ruby-doc.org/standard-2.5.1/libdoc/date/rdoc/Date.html)
 2. [Getting the current Time instance](https://ruby-doc.org/core-2.5.1/Time.html#method-c-now)
 3. [About Date and DateTime Implementation (StackOverflow)](https://stackoverflow.com/questions/5937082/what-difference-between-date-and-datetime-in-ruby)

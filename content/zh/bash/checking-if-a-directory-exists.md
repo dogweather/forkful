@@ -51,5 +51,4 @@ fi
 ## 参考资料：
 
 1. [GNU Bash Manual - Conditional Expressions](https://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html)
-2. [Bash Shell: Check If Directory Exists](https://www.cyberciti.biz/faq/bash-shell-check-if-directory-exists/)
 3. [Testing Files in Bash](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_07_02.html)

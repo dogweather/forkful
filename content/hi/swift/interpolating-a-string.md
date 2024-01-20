@@ -42,5 +42,4 @@ String Interpolation का विधान Swift भाषा के साथ 
 अधिक जानकारी के लिए, आपको निम्नलिखित स्रोतों पर जाना चाहिए:
 
 1. [Swift Documentation: String Interpolation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-2. [Apple Developer: String Interpolation](https://developer.apple.com/documentation/swift/string_interpolation)
 3. [Hacking with Swift: String Interpolation](https://www.hackingwithswift.com/read/0/5/string-interpolation)

@@ -39,5 +39,4 @@ fs.createReadStream('дані.csv')
 ## Дивіться також:
 
 1. [Модуль fs в Node.js](https://nodejs.org/api/fs.html)
-2. [csv-parser на GitHub](https://github.com/ryu1kn/csv-parser)
 3. [papaparse на GitHub](https://github.com/mholt/PapaParse)

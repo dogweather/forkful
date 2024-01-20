@@ -39,5 +39,4 @@ Ciekawostką jest fakt, że `size` działa nie tylko na łańcuchach, ale równi
 
 ## Zobacz również
 
-1. [Dokumentacja Gleam's String](https://hexdocs.pm/gleam_stdlib/gleam/string@v0.18.2.html) - zawiera pełną listę funkcji łańcuchowych dostępnych w Gleam.
 2. [Erlang String Operations](http://erlang.org/doc/man/erlang.html#length-1) - dla zrozumienia, jak Gleam, będąc bazowany na Erlangu, implementuje operacje na łańcuchach.

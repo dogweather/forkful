@@ -42,5 +42,4 @@ IO.puts String.length("ã")
 Se você quiser se aprofundar mais em string em Elixir, explore os links abaixo:
 
 1. [Documentação oficial da Elixir sobre strings](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-2. [Manipulação de strings em Elixir - Blog post](https://schoolofcode.me/elixir-string-manipulation)
 3. [Trabalhando com strings em Elixir - Elixir School](https://elixirschool.com/pt/lessons/basics/strings/)

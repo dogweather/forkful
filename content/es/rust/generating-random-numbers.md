@@ -41,5 +41,4 @@ La clave de la generación de números aleatorios en Rust es la interfaz del gen
 
 ## Ver También:
 1. Rust `rand` Crate Documentation: [https://docs.rs/rand](https://docs.rs/rand)
-2. Generación de Números Aleatorios en Rust: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
 3. Métodos para la Generación de Números Aleatorios: [https://en.wikipedia.org/wiki/Random_number_generation](https://en.wikipedia.org/wiki/Random_number_generation)

@@ -49,4 +49,3 @@ Die `rand()` Funktion erzeugt deterministische Zufallszahlen, was bedeutet dass 
 1. [C Standard Library - stdlib.h](http://www.cplusplus.com/reference/cstdlib/)
 2. [Dokumentation zu rand() und srand()](https://docs.microsoft.com/de-de/cpp/c-runtime-library/reference/rand?view=msvc-160)
 3. [Wikipedia über Zufallszahlen](https://de.wikipedia.org/wiki/Zufallszahl)
-4. [Weitere Methoden zur Erzeugung zufälliger Zahlen](https://www.geekhideout.com/rand48.shtml)

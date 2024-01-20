@@ -44,4 +44,3 @@ O Fish implementa a leitura de argumentos como um array indexado de `$argv`, com
 
 1. [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/index.html)
 2. [Guia de argumentos de linha de comando do Fish Shell](https://fishshell.com/docs/current/commands.html#arguments)
-3. [Tutorial de programação em Fish Shell](https://scriptingosx.com/2017/05/fish-shell-scripting/)

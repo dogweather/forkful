@@ -66,6 +66,4 @@ Ao enviar um pedido HTTP a partir de um Arduino, estamos na verdade enviando um 
 
 Para mais exemplos e detalhes sobre pedidos HTTP em Arduino, você pode consultar os seguintes recursos:
 
-1. [Documentação oficial do Arduino HTTPClient](https://www.arduino.cc/en/Tutorial/LibraryExamples/HTTPClient)
 2. [Biblioteca HTTP do Arduino no GitHub](https://github.com/espressif/arduino-esp32/tree/master/libraries/HTTPClient)
-3. [Tutorial de Programação Arduino - W3Schools](https://www.w3schools.com/arduino/)

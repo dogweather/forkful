@@ -40,7 +40,3 @@ Serial.println(str1);         // 输出：Hello, World!
 比如，C++中连接字符串的方法与Arduino中的方法有所不同，主要原因是Arduino使用的是缩小版的C++，有一些特别的库和操作被舍去以减小Arduino的运行和内存负担。
 
 此外，关于字符串连接，还有一个重要的执行细节需要注意。那就是，连接字符串会消耗更多的RAM（随机存取存储器）。因为在Arduino中，每使用"+="、"+"或`concat()`函数来连接字符串，就会创建一个新的字符串，这会消耗更多的内存。所以，为了效率，程序员需要权衡在连接字符串和节省内存之间的取舍。
-
-## 另请参阅：
-1. [Arduino字符串教程](http://www.arduino.cc/en/Tutorial/StringTutorial)
-2. [Arduino字符串库参考](http://www.arduino.cc/en/Reference/StringObject)

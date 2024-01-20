@@ -44,5 +44,4 @@ Dette kan være nyttig hvis du vil kontrollere formatet på utdataene dine på e
 ## Se også
 For mer hjelp og informasjon om Bash og strenginterpolering, sjekk ut følgende lenker:
 
-1. The Bash Guide: [Variable Substitution](https://guide.bash.academy/variables/#variable-substitution)
 2. GNU Bash Manual: [Shell Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)

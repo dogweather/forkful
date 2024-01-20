@@ -43,7 +43,5 @@ Jedną z kluczowych kwestii związanych z tworzeniem plików tymczasowych jest t
 
 ## Zobacz też
 
-1. [Dokumentacja Kotlin - Tworzenie plików](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
-2. [Java NIO.2 File API w Kotlinie](https://www.baeldung.com/kotlin/java-nio2-file-api)
 
 Pamiętaj, że tworzenie plików tymczasowych to potężne narzędzie, ale jej używanie powinno być dobrze przemyślane. Zawsze zastanów się nad zaletami i wadami takiego podejścia.

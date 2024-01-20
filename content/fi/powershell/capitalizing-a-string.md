@@ -57,8 +57,6 @@ Kuitenkin tätä menetelmää varoen, sillä se käsittelee merkkijonon kunkin s
 
 Voit saadana lisätietoa merkkijonojen manipuloinnista PowerShellissa seuraavilla linkeillä:
 
-1. [Microsoft Docs: String](https://docs.microsoft.com/fi-fi/powershell/module/microsoft.powershell.core/about/about_string?view=powershell-7.1)
 2. [Microsoft Docs: TextInfo.ToTitleCase](https://docs.microsoft.com/fi-fi/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0)
-3. [PowerShell Tutorial: String Manipulation](https://www.tutorialspoint.com/powershell/powershell_string_manipulation.htm)
 
 -------------------

@@ -46,5 +46,3 @@ Javaでは、`java.util.Date`が元々日付および時刻を扱うためのク
 以下のリンクで、Javaの日付と時刻に関するさらに詳しい情報を得ることができます：
 
 1. [Oracle Official Documentation](https://docs.oracle.com/javase/tutorial/datetime/)
-2. [Java 8 Date – LocalDate, LocalTime, LocalDateTime](https://www.mkyong.com/java8/java-8-date-localdate-localdatetime-instant/)
-3. [Comparing Java Date Libraries: An Overview](https://dzone.com/articles/comparing-java-date-libraries)

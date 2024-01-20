@@ -44,6 +44,5 @@ fn main() {
 
 다음은 문자열 대문자화에 대한 추가 정보에 도움이 될 수 있는 링크입니다.
 
-1. Gleam string 모듈 공식 문서: [https://hexdocs.pm/gleam_stdlib/gleam/string](https://hexdocs.pm/gleam_stdlib/gleam/string)
 2. "문자열 대문자화에 대한 팁": [https://stackoverflow.com/questions/17252232/what-is-the-best-way-to-convert-all-letters-to-uppercase](https://stackoverflow.com/questions/17252232/what-is-the-best-way-to-convert-all-letters-to-uppercase) (StackOverflow)
 3. 유니코드 텍스트 정규화에 대한 "유니코드 표준 문서": [https://www.unicode.org/reports/tr15](https://www.unicode.org/reports/tr15) (Unicode Consortium)

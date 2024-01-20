@@ -49,5 +49,4 @@ Elixirの場合、`String.replace/3`関数はこの目的のために使用さ�
 以下のリンクでは、Elixirの文字列操作についてさらに詳しく見ることができます。
 
 1. Elixir公式ドキュメンテーションの[Stringモジュール](https://hexdocs.pm/elixir/String.html)
-2. Elixir Schoolの[Strings and Character Lists](https://elixirschool.com/jp/lessons/basics/strings-and-characters/)
 3. [Elixirでの文字列の使用](https://elixir-lang.jp/getting-started/io-and-the-file-system.html) - 初心者向けのチュートリアル

@@ -52,6 +52,4 @@ Como alternativa, Clojure também fornece formas mais sofisticadas de lidar com 
 
 Para mais detalhes e para se aprofundar mais na extração e manipulação de strings em Clojure, consulte os seguintes recursos:
 
-1. [Documentação oficial do Clojure](https://clojure.org/guides/learn/strings)
 2. [Clojure String API - Documentação oficial](https://clojuredocs.org/clojure.string)
-3. [Clojure para a Bravo Lusitana - Extração de Substrings](http://nostarch.com/clojurebravo.htm)

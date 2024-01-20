@@ -36,5 +36,4 @@ echo $string1$string2
 Якщо вас цікавить дізнатись більше про обробку рядків у Fish Shell або інших мовах програмування, оці сайти можуть стати в нагоді:
 
 1. [Офіційна документація Fish Shell](https://fishshell.com/docs/current/index.html)
-2. [Стаття про конкатенацію рядків в Bash](https://www.baeldung.com/linux/bash-string-concatenation)
 3. [Вихідний відкритий код Fish Shell на GitHub](https://github.com/fish-shell/fish-shell)

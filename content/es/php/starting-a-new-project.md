@@ -44,7 +44,6 @@ Respecto a detalles de implementación, PHP es un lenguaje de scripting de lado 
 ## Ver También
 
 1. [Documentación oficial de PHP](https://www.php.net/manual/es/)
-2. [Iniciando con PHP: Guía para principiantes](https://developer.mozilla.org/es/docs/Learn/Server-side/PHP/Getting_Started) 
 3. [Tutorial PHP](https://www.w3schools.com/php/)
    
 Rápido, sencillo y directo al grano, así se realiza un nuevo proyecto con PHP.

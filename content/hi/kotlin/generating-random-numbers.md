@@ -40,6 +40,5 @@ fun main(){
 ## यह भी देखें:
 
 अधिक जानकारी के लिए निम्नलिखित स्रोतों का उपयोग करें:
-1. [जावा उत्कृष्ट प्रयोग (हिंदी)](https://www.baeldung.com/java-random)
 2. [कोटलिन डॉक्स](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.random/-random/)
 3. [Apache Commons Math](http://commons.apache.org/proper/commons-math/)

@@ -40,6 +40,5 @@ Elixirin komentoriviparametrien käsittely tapahtuu `System.argv` funktion kautt
 ## Katso myös:
 
 1. [Elixirin virallinen dokumentaatio](https://hexdocs.pm/elixir/System.html#argv/0)
-2. [Elixir School: Command-line argumenteista](https://elixirschool.com/blog/elixir-and-the-command-line/)
 3. [Erlang and OTP in Action](http://shop.oreilly.com/product/9781933988788.do):
 Erlangin historiasta ja toteutuksesta, sisältää tietoa komentoriviparametrien käsittelystä.

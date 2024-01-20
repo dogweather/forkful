@@ -41,5 +41,3 @@ La fonction `System.argv/0` en Elixir simplement renvoie les arguments lancés a
 Voici quelques liens pour approfondir vos connaissances sur le sujet:
 
 1. [System.argv — Elixir v1.11.3](https://hexdocs.pm/elixir/System.html#argv/0)
-2. [Lecture des arguments depuis la ligne de commande - Wikilivres](https://fr.wikibooks.org/wiki/Programmation_Python/Lecture_des_arguments_depuis_la_ligne_de_commande)
-3. [How Command Line Parameters Are Parsed](https://docs.microsoft.com/en-us/previous-versions//17w5ykft(v=vs.85))

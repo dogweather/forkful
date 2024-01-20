@@ -45,6 +45,4 @@ public class Program
 
 ## ראו גם
 ביקור בקישורים הבאים יספק לך מידע נרחב יותר:
-1. [מסמך Microsoft: ייחוס זמן ב-C#](https://docs.microsoft.com/he-il/dotnet/csharp/programming-guide/concepts/datetime)
 2. [ראיון עם מפתחים של C# על DateTime](https://youtu.be/N_fb4-BHNWc)
-3. [השוואה בין DateTime ו-TimeSpan ב-C#](https://www.c-sharpcorner.com/article/difference-between-datetime-and-timespan-in-chash/)

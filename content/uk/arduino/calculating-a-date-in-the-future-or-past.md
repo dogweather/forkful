@@ -50,5 +50,4 @@ void loop () {
 ## Див. також:
 
 1. [Arduino the Time Library](https://www.arduino.cc/playground/Code/time) - Офіційна документація про бібліотеку часу Arduino
-2. [Date and Time](https://www.arduino.cc/reference/en/libraries/datetime/) - Огляд бібліотеки DateTime.
 3. [NTP Servers](https://www.ntppool.org/) - Перелік доступних NTP серверів для синхронізації часу.

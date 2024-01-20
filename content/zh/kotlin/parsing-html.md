@@ -47,5 +47,4 @@ fun main(args: Array<String>) {
 以下是一些相关链接，它们提供了更多关于HTML解析和其在Kotlin中的实现的详细信息：
 
 1. [Jsoup官方文档](https://jsoup.org/)
-2. [解析HTML Wiki](https://en.wikipedia.org/wiki/HTML_parsing)
 3. [Kotlin官方网站](https://kotlinlang.org/)

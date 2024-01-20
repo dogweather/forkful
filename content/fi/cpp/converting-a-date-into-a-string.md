@@ -41,5 +41,4 @@ Vaihtoehtoisia metodeja päivämäärän merkkijonoksi muuntamiseen on olemassa,
 1. [C++ Standard Library: <chrono>](http://www.cplusplus.com/reference/chrono/)
 2. [C++ Standard Library: <iomanip>](http://www.cplusplus.com/reference/iomanip/)
 3. [C++ Date and Time - Cplusplus.com](http://www.cplusplus.com/doc/tutorial/ntcs/)
-4. [Support for ISO 8601 formats for date and time - cppreference.com](https://en.cppreference.com/w/cpp/chrono/io/put_time)
 5. [C++ Boost Date_Time library](https://www.boost.org/doc/libs/1_77_0/doc/html/date_time.html)

@@ -48,6 +48,5 @@ For flere detaljer om Swift og avansert tekstbehandling, ta en titt på disse re
 
 1. Apples Swift Programming Language Guide: [Swift Programming Guide](https://docs.swift.org/swift-book/)
 2. NSHipster's article on `NSRegularExpression`: [NSRegularExpression](https://nshipster.com/nsregularexpression/)
-3. The Swift Algorithm Club's guide on Swift Strings and Character handling: [Swift Algorithm Club](https://www.raywenderlich.com/1058926-swift-algorithm-club-swift-string-data-structure)
    
 ---

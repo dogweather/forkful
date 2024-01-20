@@ -35,7 +35,6 @@ end
 
 ## ראה גם
 1. [Elixir Official Regex Documentation](https://hexdocs.pm/elixir/Regex.html)
-2. [Elixir School - Regular Expressions](https://elixirschool.com/en/lessons/libraries/regex/)
 3. [Regular-Expressions.info - Tutorial](https://www.regular-expressions.info/tutorial.html)
 
 מאמר זה מתאים למתכנתים שמחפשים להבין יותר על ביטויים רגילים באליקסיר.

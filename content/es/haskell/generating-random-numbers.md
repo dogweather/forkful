@@ -43,6 +43,5 @@ En cuanto a los detalles de implementación, `randomR` genera un número aleator
 
 2. [Introducción a `System.Random` en Haskell](http://book.realworldhaskell.org/read/using-typeclasses.html#id689872)
 
-3. [Guía básica de generación de números aleatorios en Haskell](https://wiki.haskell.org/Random_numbers)
 
 Estos recursos pueden proporcionarte más detalles sobre cómo trabajar con números aleatorios en Haskell.

@@ -43,6 +43,4 @@ Lembre-se de que a contagem de caracteres é sensível à cultura e à codifica�
 
 ## Ver Também
 
-1. Sobre objects no PowerShell: [link](https://docs.microsoft.com/pt-br/powershell/scripting/learn/deep-dives/everything-about-objects?view=powershell-5.1)
 2. Métodos e propriedades de string no .NET: [link](https://docs.microsoft.com/pt-br/dotnet/api/system.string?view=net-5.0)
-3. Codificação de caracteres e Unicode: [link](https://docs.microsoft.com/pt-br/windows/uwp/design/globalizing/unicode)

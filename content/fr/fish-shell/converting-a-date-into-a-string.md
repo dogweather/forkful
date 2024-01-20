@@ -64,6 +64,3 @@ Il est important de noter que `strftime` est une implémentation de la norme C u
 Pour plus d'informations sur la conversion d'une date en chaîne de caractères dans Fish Shell, consultez les ressources suivantes:
 
 1. [Fish Shell Documentation](https://fishshell.com/docs/3.1/)
-2. [Commandes Fish Shell](https://fishshell.com/docs/3.1/cmds.html)
-3. [Syntaxe Fish Shell](https://fishshell.com/docs/3.1/syntax.html)
-4. [Time and date in Fish Shell](https://jorgebucaran.github.io/fish-cookbook/recipes/date-time.html)

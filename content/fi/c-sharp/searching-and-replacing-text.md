@@ -42,4 +42,3 @@ Tekstin hakeminen ja korvaaminen on ollut tärkeä osa ohjelmointia sen varhaisi
 
 1. Microsoftin C#-dokumentaatio `String.Replace` -metodista: [Linkki](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
 2. Stack Overflow: "Miten korvata merkkijono toisella C#":ssa: [Linkki](https://stackoverflow.com/questions/1466000/how-to-replace-a-string-in-c)
-3. C# Corner: "Tekstin korvaaminen C#":ssa: [Linkki](https://www.c-sharpcorner.com/article/string-replace-method-in-chash/)

@@ -39,5 +39,4 @@ parseDate str =
 ## Дивитися також:
 
 1. [Офіційна документація Elm з модулем Date](https://package.elm-lang.org/packages/elm/time/latest/Time)
-2. [Руководство Elm для часу та дати](https://elmprogramming.com/time-and-date.html)
 3. [Стаковерфлоу: Розбір дати у Elm](https://stackoverflow.com/questions/48257896/date-and-time-in-elm)

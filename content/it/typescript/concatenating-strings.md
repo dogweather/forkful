@@ -44,5 +44,4 @@ Tuttavia, per stringhe più lunghe o complesse, l'uso di `+` o dei template di s
 
 Per ulteriori dettagli sulla concatenazione delle stringhe in TypeScript, consultare:
 
-1. [Stringhe - TypeScript Deep Dive](https://basarat.gitbook.io/typescript/type-system/string)
 2. [Metodo `concat()` - MDN Web Docs](https://developer.mozilla.org/it/docs/Web/JavaScript/Reference/Global_Objects/String/concat)

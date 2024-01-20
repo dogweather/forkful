@@ -73,4 +73,3 @@ Per approfondire, consiglio questi link:
 1. [What does strstr do in C/C++?](https://www.tutorialspoint.com/c_standard_library/c_function_strstr.htm) - Tutorials Point
 2. [How do I replace a substring in a string in C?](https://stackoverflow.com/questions/779875/what-function-is-to-replace-a-substring-from-a-string-in-c) - Stack Overflow
 3. [C Library - <string.h>](https://www.tutorialspoint.com/c_standard_library/string_h.htm) - Tutorials Point
-4. [C Regex Tutorial](https://www.tutorialspoint.com/c_standard_library/c_regex) - Tutorials Point

@@ -49,5 +49,4 @@ Jeżeli chodzi o szczegóły implementacji, tablica `arg` zawiera nie tylko argu
 Poniżej jest kilka linków do dodatkowych zasobów dotyczących czytania argumentów linii poleceń:
 
 1. [Dokumentacja Lua gdzie opisana jest tablica `arg`](http://www.lua.org/manual/5.4/manual.html#pdf-arg)
-2. [Tutorial jak korzystać z argumentów linii poleceń w Lua](https://www.tutorialspoint.com/lua/lua_command_line_arguments.htm)
 3. [Poradnik jak przerabiać argumenty linii poleceń w Pythonie](https://docs.python.org/3/howto/argparse.html)

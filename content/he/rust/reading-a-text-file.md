@@ -39,4 +39,3 @@ fn main() -> std::io::Result<()> {
 
 1. [תיעוד ה-Rust](https://doc.rust-lang.org/book/ch04-02-references-and-borrowing.html)
 2. [מדריך לקריאת קבצים ב-Rust על StackOverflow](https://stackoverflow.com/questions/31192956/whats-the-de-facto-way-of-reading-and-writing-files-in-rust-1-x)
-3. [פוסט בנושא קריאת קבצים ברשת](https://blog.learningrust.net/2019/11/10/reading-a-file/)

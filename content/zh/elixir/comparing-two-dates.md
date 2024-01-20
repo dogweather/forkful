@@ -34,5 +34,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## 另请参阅：
 如要深入了解 Elixir 中的日期函数，如 `Date.compare/2`，`DateTime.compare/2` 以及其它日期相关操作，你可以访问以下链接：
 - [官方文档](https://hexdocs.pm/elixir/Date.html#compare/2)
-- [Elixir School - Date & Time BASICs](https://elixirschool.com/en/lessons/basics/date_time/)
 - [Elixir Forum - Working with dates](https://elixirforum.com/t/working-with-dates-times-and-timezones-in-elixir-a-brief-guide/19196)

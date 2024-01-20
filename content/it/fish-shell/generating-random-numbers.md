@@ -35,4 +35,3 @@ Un dettaglio implementativo interessante di `random` in Fish Shell è che usa l'
 
 ## Vedi anche:
 1. [Documentazione ufficiale Fish Shell 'random' Command](https://fishshell.com/docs/current/commands.html#random)
-2. [Generazione di numeri casuali - Wikipedia](https://it.wikipedia.org/wiki/Generazione_di_numeri_casuali)

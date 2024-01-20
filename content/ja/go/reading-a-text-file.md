@@ -46,4 +46,3 @@ fmt.Println(string(b))
 
 1. [Go言語のパッケージドキュメンテーション](https://golang.org/pkg/)
 2. [ioutil.ReadAllについての詳細](https://golang.org/pkg/io/ioutil/#ReadAll)
-3. [テキストファイル読み書きのメソッド比較](https://yourbasic.org/golang/read-file/)

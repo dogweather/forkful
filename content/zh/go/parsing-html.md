@@ -66,5 +66,3 @@ func visit(links []string, n *html.Node) []string {
 关于更多的Go编程技巧和HTML解析的资料，欢迎访问以下网站：
 
 1. "[Go Programming Language](https://golang.org/)" - Go语言的官方网站，你可以在这里找到详细的Go编程指南和教程。
-
-2. "[HTML Parsing in Go](https://dzone.com/articles/html-parsing-go)" - 这篇文章详细介绍了在Go中解析HTML的基础知识。

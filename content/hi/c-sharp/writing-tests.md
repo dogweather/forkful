@@ -30,6 +30,5 @@ Test.AreEqual(5, 2+3);
 
 1. [Microsoft के C# अधिकारिया](https://docs.microsoft.com/en-us/dotnet/csharp/)
 2. [W3Schools के C# अनुप्रयोग](https://www.w3schools.com/cs/default.asp)
-3. [C# ComplexPad में विषयों](https://www.complexpad.com/tags/csharp)
 
 शुभकामनाएं और टेस्ट लिखने का आनंद लें!

@@ -39,7 +39,5 @@ Jednym z ciekawych aspektów drukowania debugowania w C jest fakt, że funkcja �
 
 ## Zobacz też:
 
-1. [Debugowanie w języku C](http://www.learn-chinese-mandarin-language.com/debugowanie-w-jezyku-c)
-2. [Jak korzystać z funkcji printf w C](http://www.learn-c.org/en/printf)
 
 Pamiętaj, że drukowanie debugowe jest potężnym narzędziem, ale używaj go mądrze! Nadmierne drukowanie może zaszkodzić wydajności Twojego kodu, a także utrudnić zrozumienie, co się dzieje.

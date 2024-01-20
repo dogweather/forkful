@@ -42,4 +42,3 @@ fun main() {
 1. [Kotlin документація](https://kotlinlang.org/docs/home.html)
 2. [Jsoup документація](https://jsoup.org/)
 3. [HtmlCleaner документація](https://htmlcleaner.sourceforge.io/)
-4. [TagSoup документація](https://home.ccil.org/~cowan/XML/tagsoup/)

@@ -32,8 +32,3 @@ Historia Bash'a sięga końca lat 80-tych, kiedy to został stworzony jako darmo
 Istnieją jednak alternatywy dla wbudowanej funkcji `date`. Możemy na przykład użyć komendy `printf` albo skorzystać z zewnętrznych narzędzi jak `awk`.
 
 Szczegóły implementacji poleceń są zazwyczaj ukrywane dla użytkownika, ale jeśli jesteś ciekawy, zajrzyj do man page dla `date` (wpisz `man date`), gdzie znajdziesz wszystko, co musisz wiedzieć.
-
-## Zobacz też
-1. [Bash Date Command](https://linuxize.com/post/bash-date/)
-2. [Date Command In Bash](https://www.cyberciti.biz/faq/unix-linux-shell-scripting-formatting-dates/)
-3. [Bash Date Format: A complete guide to formatting dates](https://phoenixnap.com/kb/bash-date-format)

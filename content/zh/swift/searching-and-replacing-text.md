@@ -43,5 +43,4 @@ print(str)
 如果你对Swift的字符串操作感兴趣，以下是一些相关的链接：
 
 1. Apple的官方Swift编程语言指南: [Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-2. Swift标准库参考 - [replacingOccurrences(of:with:)](https://developer.apple.com/documentation/foundation/nsstring/1416398-replacingoccurrences)函数的官方文档
 3. [Regular Expressions](https://nshipster.com/swift-regular-expressions/) in Swift - 一个关于如何在Swift中使用正则表达式的深入教程

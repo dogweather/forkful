@@ -43,4 +43,3 @@ console.log(newStr);
 
 1. [MDN replace() method](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
 2. [JavaScript RegExp](https://www.w3schools.com/js/js_regexp.asp)
-3. [Understanding JavaScript's replace()](https://www.digitalocean.com/community/tutorials/js-string-replace-method)

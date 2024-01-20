@@ -46,5 +46,3 @@ Implementation speaking, Haskell's length function operates on Lists, which Stri
 ## See Also
 1. [Haskell 2010 Language Report](https://www.haskell.org/onlinereport/haskell2010/haskellch18.html)
 2. [Real World Haskell, Chapter 6: Using Typeclasses](http://book.realworldhaskell.org/read/using-typeclasses.html)
-3. [Haskell Wiki: Length of a List](https://wiki.haskell.org/How_to_determine_the_length_of_a_list)
-4. [Introduction to Haskell: Lazy Evaluation](http://intro.cs.auckland.ac.nz/Y.2019/CS1PPT/#/3/22)

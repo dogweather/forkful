@@ -40,5 +40,4 @@ En parlant de l'implémentation, `jsdom` utilise document.implementation.createH
 ## Voir Aussi
 
 1. Documentation de Jsdom: [https://github.com/jsdom/jsdom](https://github.com/jsdom/jsdom)
-2. Articles sur le parsing de HTML avec jsdom: [https://dev.to/thawkin3/jsdom-vs-cheerio-15ic](https://dev.to/thawkin3/jsdom-vs-cheerio-15ic)
 3. API de CreateHTMLDocument() : [https://developer.mozilla.org/fr/docs/Web/API/DOMImplementation/createHTMLDocument](https://developer.mozilla.org/fr/docs/Web/API/DOMImplementation/createHTMLDocument)

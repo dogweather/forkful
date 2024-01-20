@@ -41,5 +41,4 @@ print(data)
 ## और देखें:
 1. [Python Official Documentation](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)
 2. [File handling in Python](https://www.simplylearnt.com/topic/File-handling-in-Python)
-3. [Reading and Writing to Text Files](https://www.learnpython.dev/02-introduction-to-python/110-filehandling/10-reading-and-writing-to-text-files/)
 4. [Working with File I/O](https://www.geeksforgeeks.org/file-handling-python/)

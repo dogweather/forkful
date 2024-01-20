@@ -55,4 +55,3 @@ print(lowercase_string)
 ## 関連リンク：
 
 1. [Python official documentation: String methods](https://docs.python.org/ja/3/library/stdtypes.html#string-methods)
-2. [Python: lower() vs casefold()](https://www.journaldev.com/23598/python-string-lower-casefold)

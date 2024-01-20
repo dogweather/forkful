@@ -46,6 +46,5 @@ Per ulteriori informazioni sul download di pagine Web con Swift, controllate que
 
 1. Documentazione URLSession Apple: [https://developer.apple.com/documentation/foundation/urlsession](https://developer.apple.com/documentation/foundation/urlsession)
 2. Alamofire su GitHub: [https://github.com/Alamofire/Alamofire](https://github.com/Alamofire/Alamofire)
-3. Corso su Networking con Swift su Udemy: [https://www.udemy.com/course/swift-networking/](https://www.udemy.com/course/swift-networking/)
 
 Ricorda sempre il tuo continuo apprendimento e buona codificazione!

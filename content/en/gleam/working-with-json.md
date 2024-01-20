@@ -66,6 +66,5 @@ For JSON in Gleam, we use the 'gleam/decode' lib. Decoding is explicit due to st
 ## See Also
 
 For detailed JSON and Gleam understanding, look at:
-1. Gleam JSON Decoding [Docs](https://hexdocs.pm/gleam_decode/readme.html)
 2. Gleam's Github [Repo](https://github.com/gleam-lang/gleam)
 3. JSON Documentation on [MDN](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/JSON)

@@ -48,5 +48,4 @@ int main() {
 ## ראה גם (See Also)
 
 1. [תיעוד של strftime](https://www.cplusplus.com/reference/ctime/strftime/)
-2. [Date & Time in C Programming](https://www.geeksforgeeks.org/date-time-c-programming/)
 3. [C library function - strftime()](https://www.tutorialspoint.com/c_standard_library/c_function_strftime.htm)

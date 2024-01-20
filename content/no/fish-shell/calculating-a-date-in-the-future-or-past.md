@@ -39,5 +39,4 @@ Tidligere Dato: 2022-05-05T14:30:15
 ## Se Også:
 Her er noen nyttige lenker relatert til dette emnet:
 1. Fish Shell Dokumentasjon: [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-2. Dato og tid i Shell Scripting: [https://bash.cyberciti.biz/time-and-date/working-with-date-and-time-in-bash/](https://bash.cyberciti.biz/time-and-date/working-with-date-and-time-in-bash/)
 3. WWikipedia's ISO 8601 artikkel: [https://en.wikipedia.org/wiki/ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)

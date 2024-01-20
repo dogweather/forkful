@@ -54,6 +54,4 @@ Desde el punto de vista de la implementación, es importante tener en cuenta que
 
 ## Consulta También 
 
-1. Entrada de la documentación de Microsoft sobre cadenas de caracteres en PowerShell: [About Strings](https://docs.microsoft.com/es-es/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
-2. Blog técnico de Microsoft con detalles más profundos sobre la concatenación de cadenas: [ASCII Madness](https://blogs.technet.microsoft.com/heyscriptingguy/2013/08/26/ascii-madness-from-powershell/)
 3. Documentación completa de PowerShell: [Documentación de PowerShell en Docs](https://docs.microsoft.com/es-es/powershell/scripting/overview?view=powershell-7.1)

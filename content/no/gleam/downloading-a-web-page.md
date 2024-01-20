@@ -57,5 +57,3 @@ Her er noen nyttige lenker til relaterte emner:
 
 1. Gleam HTTP-klientdokumentasjon: [Gleam HTTP](https://hexdocs.pm/gleam_http/)
 2. HTTP-protokollen: [HTTP/1.1: Semantics and Content](https://tools.ietf.org/html/rfc7231)
-3. Gleam programmeringsspråkdokumentasjon: [Gleam Language](https://gleam.run/docs/)
-4. Veiledning for nettverskraping: [Web Scraping Tutorial](https://www.datacamp.com/community/tutorials/web-scraping-tutorial-python)

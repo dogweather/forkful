@@ -40,6 +40,4 @@ print(lowerCasedString)
 
 ## और देखें:
 
-1. Apple Developer Documentation: [LowerCase](https://developer.apple.com/documentation/swift/string/2295421-lowercased)
 2. Stack Overflow: [Converting String to Lower Case in Swift](https://stackoverflow.com/questions/26351055/swift-constant-conversion-to-lower-case)
-3. Swift String Cheat Sheet: [String Manipulation in Swift](https://learnappmaking.com/swift-string-how-to/)

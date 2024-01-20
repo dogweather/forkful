@@ -36,5 +36,3 @@ I dettagli di implementazione di `string.lower` variano da piattaforma a piattaf
 Per approfondire quanto discusso in questo articolo, segui questi collegamenti utili:
 
 1. [Documentazione Lua](https://www.lua.org/manual/5.3/manual.html)
-2. [Corso di programmazione Lua](https://www.luascript.com/)
-3. [Guide di programmazione Lua](https://lua.space/)

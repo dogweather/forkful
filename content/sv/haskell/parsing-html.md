@@ -56,4 +56,3 @@ När det gäller utförande behandlar `tagsoup` HTML som en sekvens av öppna oc
 
 1. [Hackage: TagSoup](http://hackage.haskell.org/package/tagsoup)
 2. [School of Haskell: Parsing HTML](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/tagsoup)
-3. [GitHub: html-conduit](https://github.com/snoyberg/html-conduit)

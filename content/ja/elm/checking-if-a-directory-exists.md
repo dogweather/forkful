@@ -36,4 +36,3 @@ port resultOfCheck : (Bool -> msg) -> Sub msg
 ## 関連リンク
 1. ElmとJavaScriptの接続: [ElmとJavaScriptの相互作用](https://guide.elm-lang.org/interop/)
 2. Elmについてさらに学ぶ: [Elm公式ガイド](https://guide.elm-lang.org/)
-3. Elmがファイルシステムにアクセスしない理由: [Elmの哲学](https://github.com/elm/compiler/blob/master/hints/philosophy.md)

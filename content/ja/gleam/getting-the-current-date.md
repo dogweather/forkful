@@ -34,8 +34,6 @@ fn main() {
 歴史的に、現在の日付を取得する方法はさまざまなプログラミング言語やシステムで異なります。例えばUnixシステムでは、`time()`関数を使用して1970年1月1日からの秒数を取得し、それを日付に変換します。しかし、Gleamの現在のバージョンでは、組み込みのdatetimeモジュールの`Now.now()`関数を使用します。他の方法としては、外部サービスに問い合わせたり、ユーザーに入力させたりすることもあります。最終的な選択は、用途と精度の要件によります。
 
 ## 参照
-1. Gleamの公式ドキュメンテーション: [gleam/datetime](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html)
-2. Gleamでの日付と時刻: [Gleam実践ガイド](https://gleam.run/book/src/appendix-1-date-and-time-in-gleam.html)
 3. Present time in Unix: [unix.com](https://www.unix.com/man-page/posix/time-2/)
 
 以上が、`Gleam`で現在の日付を取得する基本的な手順です。コードを試したり、参考リンクからさらに学んでみてください。

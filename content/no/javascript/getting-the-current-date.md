@@ -46,6 +46,5 @@ Implementeringsdetaljer: Når du kaller new Date() i JavaScript, returnerer den 
 
 Her er noe relatert lesning for å lære mer:
 
-1. MDN Web Docs for [Date](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Reference/Global_Objects/Date)
 2. Moment.js [documentation](https://momentjs.com/)
 3. [ECMAScript 1 standard](http://www.ecma-international.org/ecma-262/10.0/index.html#Title) som først introduserte Date objektet.

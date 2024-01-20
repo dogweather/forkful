@@ -40,8 +40,6 @@ puts secure_rand_num
 
 ## 함께 보기
 
-1. [Ruby Doc - Kernel.rand](https://ruby-doc.org/core/Kernel.html#method-i-rand)
-2. [Ruby Doc - SecureRandom](https://ruby-doc.org/stdlib/libdoc/securerandom/rdoc/SecureRandom.html)
 3. [Wikipedia - Random number generation](https://en.wikipedia.org/wiki/Random_number_generation)
 
 이 글을 통해 Ruby에서 랜덤 수를 어떻게 생성하는지, 그리고 왜 그것이 중요한지 배웠기를 바랍니다. 더 깊게 파보고 싶으시다면 위의 링크를 참조하세요.

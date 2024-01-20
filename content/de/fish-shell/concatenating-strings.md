@@ -47,4 +47,3 @@ Um mehr über Verkettung von Zeichenketten zu lernen, schauen Sie sich diese Res
 
 1. [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
 2. [String Join Doku](https://fishshell.com/docs/current/cmds/string-join.html)
-3. [Tutorial zur Fish Shell Programmierung](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell)

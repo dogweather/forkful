@@ -47,5 +47,4 @@ Regularne wyrażenia wywodzą się z teorii języków formalnych i automatów, d
 Jeśli chcesz dowiedzieć się więcej o regularnych wyrażeniach w C++, sprawdź te źródła:
 
 1. Dokumentacja C++: [link](http://www.cplusplus.com/reference/regex/)
-2. Tutorial: "Using Regular Expressions in C++": [link](https://www.geekhideout.com/regex.htm)
 3. StackOverflow: "C++ Regular expressions in practice": [link](https://stackoverflow.com/questions/37854322/c-regular-expressions-in-practice)

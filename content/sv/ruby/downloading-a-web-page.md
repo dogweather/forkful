@@ -39,4 +39,3 @@ För mer information om att hämta en webbsida i Ruby, se följande resurser:
 1. [Net::HTTP Dokumentation](https://ruby-doc.org/stdlib-2.7.1/libdoc/net/http/rdoc/Net/HTTP.html)
 2. [Open-URI Dokumentation](https://ruby-doc.org/stdlib-2.6.3/libdoc/open-uri/rdoc/OpenURI.html)
 3. [Faraday införande](https://lostisland.github.io/faraday/)
-4. [Web Scraping med Ruby](https://coderwall.com/p/ek0pqg/web-scraping-in-ruby)

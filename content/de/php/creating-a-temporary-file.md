@@ -43,5 +43,4 @@ Die `tmpfile()` Funktion erstellt eine Datei mit einem einzigartigen Namen im te
 ## **Weiterführende Links**
 
 1. [PHP: tmpfile - Manual](https://www.php.net/manual/en/function.tmpfile.php)
-2. [PHP: tempnam - Manual](https://www.php.net/manual/en/function.tempnam.php) 
-3. [Understanding PHP Temporary File Functions](https://www.geekhideout.com/php-temp.php)
+2. [PHP: tempnam - Manual](https://www.php.net/manual/en/function.tempnam.php)

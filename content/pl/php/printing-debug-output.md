@@ -50,4 +50,3 @@ W implementacji, `var_dump()` rzeczywiście korzysta z `zend_print_zval_r` w ją
 ## Zobacz również
 
 1. [Xdebug](https://xdebug.org/): Potężne narzędzie do debugowania PHP. Pozwala na śledzenie wykonania kodu i przechwytywanie stack trace.
-2. [Documentacja PHP: Debugging w PHP](https://www.php.net/manual/pl/debugger.php): Opis różnych narzędzi i technik do debugowania PHP.

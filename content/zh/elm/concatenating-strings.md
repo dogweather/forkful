@@ -40,4 +40,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 1. Elm文档 String的部分：[链接](http://package.elm-lang.org/packages/elm-lang/core/5.1.1/String)
 2. StackOverflow上关于Elm字符串连接的讨论：[链接](https://stackoverflow.com/questions/48716683/concatenate-strings-in-elm)
-3. Elm中的字符串操作例子：[链接](https://korban.net/posts/elm/2018-11-20-elm-for-javascript-programmers-string-manipulation/)

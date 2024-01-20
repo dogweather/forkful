@@ -57,6 +57,4 @@ Reading a file involves three key steps: (1) opening the file, (2) reading the c
 
 ## See Also
 
-1. [File I/O in C](https://www.learn-c.org/en/File_IO)
-2. [Reading and Writing Files in C](https://www.geeksforgeeks.org/c-programming-file-io-character-wise/)
 3. [Text Files in C](https://www.tutorialspoint.com/cprogramming/c_file_io.htm)

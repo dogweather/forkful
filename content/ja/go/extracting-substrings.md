@@ -49,6 +49,5 @@ func main() {
 
 2. Go by Example: [String Functions](https://gobyexample.com/string-functions)
 
-3. The Go Playground: [Substring examples](https://play.golang.org/p/j-I9BGgj2SW)
 
 さらなる学習と努力により、部分文字列の抽出技術を磨くことができます！

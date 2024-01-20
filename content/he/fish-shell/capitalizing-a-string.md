@@ -27,5 +27,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ראה גם
 1. [דוקומנטציה רשמית של Fish Shell](https://fishshell.com/docs/current/index.html)
-2. [ספר המתכנתים של Fish של Jafar Ahmed](https://github.com/jbucaran/fish-codex)
 3. [טיפים וטריקים של Fish Shell](https://github.com/jorgebucaran/awesome-fish)

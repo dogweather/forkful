@@ -45,5 +45,4 @@ HTTP के विकल्पों में gRPC, WebSockets और GraphQL (
 ## भी देखें:
 
 1. Apple Developer Documentation: [URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-2. Swift HTTP Networking: A Comprehensive Guide [Article](https://www.raywenderlich.com/1548775-urlsession-tutorial-getting-started)
 3. HTTP and REST [Video Lecture](https://www.youtube.com/watch?v=1XY1L7lP_8I)

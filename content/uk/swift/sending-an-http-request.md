@@ -47,5 +47,4 @@ task.resume()
 
 1. "URLSession" - Офіційна документація Apple: [посилання](https://developer.apple.com/documentation/foundation/urlsession)
 2. "Alamofire" - Бібліотека HTTP Networking для Swift: [посилання](https://github.com/Alamofire/Alamofire)
-3. "Робота з веб-даними в Swift за допомогою URLSession та Codable" [посилання](https://www.swiftbysundell.com/articles/working-with-web-data-in-swift-using-urlsession-and-codable/)
 4. "How to send HTTP requests using URLSession" - стаття від Hacking with Swift: [посилання](https://www.hackingwithswift.com/example-code/networking/how-to-send-http-requests-using-urlsession)

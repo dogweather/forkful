@@ -47,5 +47,3 @@ int main() {
 
 ##相关阅读:
 1. [小白也能搞懂的测试驱动开发](https://www.jianshu.com/p/6758e6148013)
-2. [为什么软件测试很重要？](http://cruft.io/posts/why-quality-matters/)
-3. [Google Test官方文档](https://github.com/google/googletest/blob/master/googletest/docs/Primer.md)

@@ -52,4 +52,3 @@ print(teil2) // Ausgabe: "ich bin"
 ## Siehe auch:
 1. Apple's officielle Dokumentation: ["Substring"](https://developer.apple.com/documentation/swift/substring)
 2. [Swift-String und deren Manipulation](https://www.hackingwithswift.com/articles/115/introduction-to-string-manipulation-in-swift)
-3. [Arbeiten mit Strings in Swift](https://www.swiftbysundell.com/articles/strings-in-swift/)

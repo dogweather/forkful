@@ -50,4 +50,3 @@ Muista tutkia nämä linkit lisätietoja varten:
 
 1. Chrono Crate Dokumentaatio: [https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)
 2. Rust Ohjelmointikielen Dokumentaatio: [https://doc.rust-lang.org/stable/book/](https://doc.rust-lang.org/stable/book/)
-3. Rust By Example: DateTime: [https://doc.rust-lang.org/stable/rust-by-example/std_misc/datetime.html](https://doc.rust-lang.org/stable/rust-by-example/std_misc/datetime.html)

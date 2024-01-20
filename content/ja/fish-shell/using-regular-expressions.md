@@ -38,4 +38,3 @@ Hello, programmer!
 
 1. [Fish Shellの公式ドキュメンテーション](https://fishshell.com/docs/current/index.html)
 2. [正規表現の詳細](https://www.regular-expressions.info/)
-3. [POSIX正規表現](https://www.gnu.org/software/grep/manual/html_node/POSIX_002dBasic-Regular-Expressions.html)

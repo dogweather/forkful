@@ -49,5 +49,4 @@ Es ist wichtig zu beachten, dass die `DateTime::add`- und `DateTime::sub`-Method
 ## Weiterführende Informationen 
 
 1. [Offizielle PHP-Dokumentation zur DateTime-Klasse](https://www.php.net/manual/de/class.datetime.php)
-2. [Tutorial zur Date/Time-Manipulation in PHP](https://www.learn-php.org/en/Date_and_Time)
 3. [Unterschied zwischen DateTime, strtotime und mktime](https://stackoverflow.com/questions/3896591/difference-between-datetime-strtotime-and-mktime)

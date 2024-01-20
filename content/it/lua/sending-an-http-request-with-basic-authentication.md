@@ -52,7 +52,5 @@ Per quanto riguarda i dettagli implementativi, è importante capire che dovremmo
 
 ## Altre fonti:
 
-1. [HTTP Autentication - Wikipedia](https://it.wikipedia.org/wiki/HTTP_Authentication)
 2. [Modulo LuaSocket - Documentazione](http://w3.impa.br/~diego/software/luasocket/http.html)
-3. [Modulo LuaSec - Documentazione](https://github.com/brunoos/luasec/wiki) 
-4. [Autenticazione di Base vs Autenticazione Digest](https://www.cloudflare.com/it-it/learning/access-management/http-authentication/)
+3. [Modulo LuaSec - Documentazione](https://github.com/brunoos/luasec/wiki)

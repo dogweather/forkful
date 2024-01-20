@@ -46,4 +46,3 @@ Clojureでは、java.nio.fileパッケージを使用して一時ファイルを
 
 1. Clojure公式ドキュメンテーション: [Clojure - java.io](https://clojure.github.io/clojure/clojure.java.io-api.html)
 2. Java公式ドキュメンテーション: [Files (Java Platform SE 8)](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-3. Clojureによるファイル操作のチュートリアル: [Manipulating Files in Clojure](https://www.baeldung.com/clojure-file-manipulation)

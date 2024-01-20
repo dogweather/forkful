@@ -39,6 +39,5 @@ tr -d 명령어의 내부 로직은 일련의 문자를 읽고, 제거를 위한
 
 ## 참고 자료
 
-1. [Shell Scripting 튜토리얼](https://www.shellscript.sh/tutorials/)
 2. [대체할 수 있는 방법: Sed](https://www.grymoire.com/Unix/Sed.html)
 3. [Bash에서의 문자열 조작](https://tldp.org/LDP/abs/html/string-manipulation.html)

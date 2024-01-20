@@ -41,7 +41,6 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 ## Додаткові матеріали:
 Для того щоб дізнатися більше про обробку рядків в Clojure, відвідайте ці посилання:
 
-1. [Clojure - String Functions](https://www.tutorialspoint.com/clojure/clojure_string_functions.htm)
 2. [Clojure - Regular Expressions](https://www.tutorialspoint.com/clojure/clojure_regular_expressions.htm)
 
 Також підкреслюється важливість розуміння регулярних виразів для обробки рядків. Для цього сильно раджу вам:

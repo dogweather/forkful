@@ -36,5 +36,3 @@ Die `println()` Funktion in Kotlin implementiert ihre Aufgabe, indem sie den `Sy
 
 ## Siehe auch:
 1. [Offizielle Kotlin-Dokumentation](https://kotlinlang.org/docs/home.html)
-2. [Einführung in das Logging mit Kotlin](https://www.loggly.com/blog/introduction-logging-kotlin/)
-3. [Java-Debugging mit IntelliJ IDEA](https://www.jetbrains.com/de-de/idea/guide/tutorials/debugging-a-java-application/)

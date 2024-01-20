@@ -42,4 +42,3 @@ Når det gjelder implementering, bruker Rust eierskapsmodellen for å tillate b�
 For mer informasjon om hvordan du jobber med strenger i Rust, kan du se følgende ressurser:
 1. Rusts offisielle dokumentasjon på styring av strenger: [link](https://doc.rust-lang.org/stable/book/ch08-02-strings.html).
 2. For en mer dyptgående diskusjon om regulære uttrykk i Rust, sjekk ut tutorialen her: [link](https://rust-lang-nursery.github.io/rust-cookbook/text/regex.html).
-3. Hvis du vil utforske mer om Rusts eierskapsmodell, kan denne bloggposten være nyttig: [link](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html).

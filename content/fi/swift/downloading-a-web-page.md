@@ -44,5 +44,4 @@ Huomaa kuitenkin, että tämä luo uuden tietojenkäsittelytehtävän ja käynni
 Lisäreferenssejä Swiftin verkkosivun lataamisesta ja sen toiminnallisuudesta:
 
 1. [Apple Developer - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-2. [Swift 5 Network Programming](https://programmingwithswift.com/swift-networking-with-urlsession/)
 3. [HackerRank - Downloading Web Content](https://www.hackerrank.com/topics/downloading-web-content-in-swift)

@@ -51,6 +51,5 @@ str_len' = foldl' (\n _ -> n + 1) 0
 
 ## Якщо цікавить детальніше
 
-1. [Введення в тип String](https://www.haskell.org/tutorial/strings.html)
 2. [Функція length в Prelude](http://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:length)
 3. [Функція foldl' в Data.List](http://hackage.haskell.org/package/base-4.14.0.0/docs/Data-List.html#v:foldl-)

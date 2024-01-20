@@ -44,8 +44,4 @@ Vale lembrar que a biblioteca "gleam/time" utiliza Posix timestamp para calcular
 
 ## Veja Também:
 
-Além do método acima, você também pode querer explorar a biblioteca "gleam/calendar" para possíveis alternativas. Também vale a pena conferir a documentação oficial do Gleam para mais detalhes e técnicas relacionadas: 
-
-1. [Biblioteca Gleam/time](https://hexdocs.pm/gleam_stdlib/gleam/time.html)
-2. [Biblioteca Gleam/calendar](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)
-3. [Documentação Oficial do Gleam](https://gleam.run/docs/introduction/)
+Além do método acima, você também pode querer explorar a biblioteca "gleam/calendar" para possíveis alternativas. Também vale a pena conferir a documentação oficial do Gleam para mais detalhes e técnicas relacionadas:

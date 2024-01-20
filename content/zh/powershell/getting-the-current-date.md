@@ -31,4 +31,3 @@ PowerShell 中获取当前日期的方式有着悠久的历史。自从 PowerShe
 ## 延伸阅读
 1. Microsoft Docs, [Get-Date](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
 2. Stack Overflow, [How to get current datetime on Windows command line, in a suitable format for using in a filename?](https://stackoverflow.com/questions/203090/how-to-get-current-datetime-on-windows-command-line-in-a-suitable-format-for-us)
-3. PowerShell 中文大学，[PowerShell Start-Guide](https://www.pstips.net/powershell-start-guide.html)

@@ -33,7 +33,6 @@ Ciao, Mondo!
 3. Dettagli implementativi: Per iniziare un nuovo progetto PHP, avrai bisogno di un server web come Apache o Nginx, un interprete PHP e un'IDE o un editor di codice. Impara il flusso di base del software PHP, per esempio, come funzionano le richieste HTTP e la sessione PHP.
 
 ## Vedi anche
-1. Documentazione PHP ufficiale: [https://www.php.net/manual/it/](https://www.php.net/manual/it/)
 2. Laravel: [https://laravel.com/](https://laravel.com/)
 3. Symfony: [https://symfony.com/](https://symfony.com/)
 

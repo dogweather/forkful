@@ -44,5 +44,4 @@ int main() {
 ## Katso myös
 
 1. C Standard Library - [`rand` ja `srand`](http://www.cplusplus.com/reference/cstdlib/rand/)
-3. Opengroupin dokumentaatio - [`arc4random`](https://pubs.opengroup.org/onlinepubs/9699919799/functions/arc4random.html)
 4. [Lineaaristen yhtälöryhmien](https://en.wikipedia.org/wiki/Linear_congruential_generator) Wikipedia-sivu

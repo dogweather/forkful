@@ -43,4 +43,3 @@ För mer djupgående information, kolla in följande källor:
 
 1. [Fish Shell Dokumentation](https://fishshell.com/docs/current/index.html)
 2. [GNU Coreutils: Shuf](https://www.gnu.org/software/coreutils/manual/html_node/shuf-invocation.html)
-3. [The Jot Command](http://manpages.ubuntu.com/manpages/eoan/man1/jot.1.html)

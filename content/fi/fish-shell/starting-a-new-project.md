@@ -43,4 +43,3 @@ Fish Shell on toteutettu C++-kielellä ja se on cross-platform, mikä tarkoittaa
 
 1. Fish Shell Ohjeet: [Fish Documentation](https://fishshell.com/docs/current/index.html)
 2. Hienoja koodivinkkejä Fish Shell -käyttöön: [Awesome Fish](https://github.com/jorgebucaran/awesome.fish)
-3. Miten vaihtaa oletus Shelliksi Fish Shellin: [Changing your default shell to fish](https://davidgonsalves.github.io/2013-04-14-change-default-shell-to-fish/)

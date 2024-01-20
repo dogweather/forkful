@@ -43,4 +43,3 @@ subscriptions _ =
 ## 参考链接
 1. Elm官方文档：[Elm Time](https://package.elm-lang.org/packages/elm/time/latest/)
 2. Elm官方裸板：[Random.Generator](https://package.elm-lang.org/packages/elm/random/latest/Random-Generator)
-3. Elm语言和时间处理-同步异步：[Elm tutorial](https://www.elm-tutorial.org/en-v01/async/time.html)

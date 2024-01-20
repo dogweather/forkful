@@ -36,6 +36,3 @@ In Gleam wird `replace` als native Funktion in der `gleam/string` Bibliothek gel
 
 ## Siehe auch
 Weitere relevante Ressourcen für das Arbeiten mit Text in Gleam sind:
-
-1. Die vollständige [Gleam String API Dokumentation](https://hexdocs.pm/gleam_stdlib/gleam/string/)
-2. Mehr über Textverarbeitung in der Informatik auf [Wikipedia](https://de.wikipedia.org/wiki/Textverarbeitung_(Informatik))

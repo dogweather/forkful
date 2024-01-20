@@ -66,4 +66,3 @@ HTTP请求的定义和实现始于1990年代初的Web发展。因此HTTP请求�
 更多关于发送HTTP请求和Ktor库的信息，您可以参考以下资源：
 
 1. 官方文档：[http://ktor.io/clients/http-client.html](http://ktor.io/clients/http-client.html)
-2. Github示例: [https://github.com/ktorio/ktor-documentation/tree/main/codeSnippets/snippets/client-simple](https://github.com/ktorio/ktor-documentation/tree/main/codeSnippets/snippets/client-simple)

@@ -45,6 +45,5 @@ When reading command line arguments in C#, the arguments are stored in the `args
 
 ## See Also
 
-1. More on command-line arguments in .NET: [https://docs.microsoft.com/en-us/dotnet/core/tutorials/cmdline](https://docs.microsoft.com/en-us/dotnet/core/tutorials/cmdline)
 2. Other ways to provide app configuration: [https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/configuration)
 3. For understanding the C# Main method: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/).

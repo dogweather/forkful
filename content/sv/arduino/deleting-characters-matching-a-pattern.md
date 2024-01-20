@@ -33,5 +33,3 @@ För mer information om string-manipulation i Arduino, kontrollera följande kä
 
 1. [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
 2. [Manipulating Characters and Digging Deeper into ASCII in Arduino](https://create.arduino.cc/projecthub/electropeak/manipulating-characters-and-digging-deeper-into-ascii-in-arduino-fd6a45)
-3. [Arduino String Tutorial: How to Split a String into Substrings](https://lastminuteengineers.com/arduino-string-tutorial/)
-4. [Arduino Cookbook, Text Strings](https://www.oreilly.com/library/view/arduino-cookbook/9781449313876/ch04s07.html)

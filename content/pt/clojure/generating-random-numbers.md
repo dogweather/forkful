@@ -42,5 +42,4 @@ Ao usar `rand` e `rand-int`, você está tecnicamente gerando números pseudoale
 ## Veja Também
 
 1. Clojure - Funções matemáticas : [https://clojuredocs.org/clojure.core/rand](https://clojuredocs.org/clojure.core/rand)
-2. Clojure - Usando Java Interop para acessar java.util.Random : [https://clojuredocs.org/clojure.core/java_interop](https://clojuredocs.org/clojure.core/java_interop)
 3. Geradores de números pseudoaleatórios : [https://pt.wikipedia.org/wiki/Gerador_de_números_pseudoaleatórios](https://pt.wikipedia.org/wiki/Gerador_de_números_pseudoaleatórios).

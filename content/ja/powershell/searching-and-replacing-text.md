@@ -45,6 +45,4 @@ Hello, Sam!
 
 ## 関連情報：
 
-1. [PowerShellの正規表現](https://docs.microsoft.com/ja-jp/powershell/scripting/learn/ps101/04-working-with-strings?view=powershell-7.1)
-2. [PowerShellでのテキスト操作](https://devblogs.microsoft.com/scripting/use-powershell-to-replace-text-in-strings/)
 3. [PowerShell `-replace` 演算子](https://docs.microsoft.com/ja-jp/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1#replace-operator)

@@ -42,4 +42,3 @@ Sat Jan 01 00:00:00 EET 2022
 ## Дивись також:
 1. [Java SimpleDateFormat](https://developer.android.com/reference/java/text/SimpleDateFormat)
 2. [Java LocalDate](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/LocalDate.html)
-3. [Kotlin type conversions](https://discuss.kotlinlang.org/t/string-to-date-conversion/5206)

@@ -49,4 +49,3 @@ The value of myVariable is: 5
 
 1. Microsoft的Debug类文档：[https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-5.0](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-5.0)
 2. Debugging in Visual Studio: [https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
-3. 构建配置（Debug与Release）： [https://docs.microsoft.com/en-us/learn/modules/csharp-select-configure/](https://docs.microsoft.com/en-us/learn/modules/csharp-select-configure/)

@@ -34,6 +34,4 @@ Alternative metoder for å finne en strenglengde kan inkludere å bruke en telle
 
 For mer informasjon om Haskell og strengbehandling, besøk følgende lenker:
 
-1. Haskell Wiki: [Text Processing](https://wiki.haskell.org/Text_Processing)
-2. Real world Haskell: [Coping with Strings](http://book.realworldhaskell.org/read/using-strings.html)
 3. Stack Overflow thread: [How to count number of characters in a string in Haskell?](https://stackoverflow.com/questions/3963269/split-a-string-in-haskell)

@@ -58,4 +58,3 @@ Per quanto riguarda i dettagli di implementazione, `print()` e `logging.debug()`
 Per maggiori informazioni, consulta le seguenti risorse:
 - [Python's official documentation on the print function](https://docs.python.org/3/library/functions.html#print)
 - [Python's official documentation on logging](https://docs.python.org/3/library/logging.html)
-- [Python Debugging Techniques](https://realpython.com/python-debugging/)

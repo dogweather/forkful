@@ -36,4 +36,3 @@ Hinsichtlich der Implementierung: eine temporäre Datei ist nicht mehr als eine 
 ## Siehe auch:
 1. [GNU mktemp man page](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)
 2. [Linux Documentation Project - Temp Files](https://tldp.org/LDP/abs/html/tempfiles.html)
-3. [Creating temporary files in Bash with mktemp](https://www.howtogeek.com/269569/creating-temporary-files-in-bash-with-mktemp/)

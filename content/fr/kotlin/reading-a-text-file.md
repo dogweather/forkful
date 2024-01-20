@@ -40,6 +40,5 @@ Ces méthodes sont assez simples pour les fichiers petits à moyens. Pour de tr�
 
 ## Voir aussi :
 
-1. [Documentation de Kotlin sur la lecture de fichiers](https://kotlinlang.org/docs/tutorials/kotlin-for-py/io.html)
 2. [Tutorial: Lire un fichier en Kotlin](https://www.baeldung.com/kotlin/read-file)
 3. [API Java.io.File](https://docs.oracle.com/javase/7/docs/api/java/io/File.html)

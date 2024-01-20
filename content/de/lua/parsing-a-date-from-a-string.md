@@ -40,5 +40,4 @@ Die `os.date` Funktion in Lua geht auf die Unix-Ära zurück, als die Umwandlung
 ## Siehe auch
 
 1. Lua String Library Dokumentation: [https://www.lua.org/manual/5.3/manual.html#6.4](https://www.lua.org/manual/5.3/manual.html#6.4)
-2. LuaRocks Date Parser Modul: [https://luarocks.org/modules/Tieske/date](https://luarocks.org/modules/Tieske/date)
 3. Lua OS Library Dokumentation: [https://www.lua.org/manual/5.4/manual.html#6.9](https://www.lua.org/manual/5.4/manual.html#6.9)

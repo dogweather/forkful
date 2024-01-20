@@ -42,5 +42,3 @@ In Bezug auf Implementierungsdetails sollte die Geschwindigkeit von `Serial.begi
 ## Siehe auch:
 
 1. Offizielle Arduino-Referenz zur `Serial` Klasse: [Link](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-2. Weitere Informationen zum Debuggen von Arduino mit serieller Ausgabe: [Link](https://maker.pro/arduino/tutorial/how-to-debug-your-arduino-projects-with-serial-monitor)
-3. Verwenden von Alternativen zum Drucken von Debug-Ausgaben auf Arduino: [Link](https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/arduino-code)

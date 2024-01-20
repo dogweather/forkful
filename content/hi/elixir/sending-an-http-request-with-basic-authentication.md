@@ -35,5 +35,4 @@ IO.inspect response.status_code
 ## देखे भी 
 
 1. [HTTPoison documentation](https://hexdocs.pm/httpoison/readme.html)
-2. [Elixir School on HTTPoison](https://elixirschool.com/en/lessons/libraries/httpoison/)
 3. [Basic Authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication)

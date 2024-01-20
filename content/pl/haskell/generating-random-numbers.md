@@ -39,6 +39,5 @@ W Haskellu domyślnie używamy generatora Mersenne Twister, choć dostępne są 
 
 Jak już potraficie tworzyć proste liczby losowe, możecie zainteresować się bardziej skomplikowanymi technikami. Tutaj są linki, które mogą pomóc:
 
-1. [Tutorial na generowanie rozkładów probabilistycznych w Haskellu](http://random.mat.sbg.ac.at/results/karl/server/node3.html)
 2. [Dokumentacja System.Random](http://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
 3. [Artykuł na temat jakości różnych generatorów liczb losowych](https://www.jstatsoft.org/article/view/v008i14)

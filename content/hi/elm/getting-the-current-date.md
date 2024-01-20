@@ -34,6 +34,5 @@ getCurrentTime =
 
 ## यदि आपको भी देखना हो
 1. [Elm समय पुस्तिका](https://package.elm-lang.org/packages/elm/time/latest/)
-2. [Elm तारीख पुस्तिका](https://package.elm-lang.org/packages/elm/date/latest/)
 3. [Unix समय की परिभाषा](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now)
 4. [POSIX समय निर्देशिका](https://pubs.opengroup.org/onlinepubs/9699919799/basedefs/V1_chap03.html#tag_03_343)

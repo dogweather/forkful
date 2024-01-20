@@ -51,5 +51,4 @@ Po uruchomieniu powyższego kodu, wyjście będzie wyglądać tak:
 ## Zobacz także
 
 1. Dokumentacja `select.rs` [link](https://docs.rs/select)
-2. A Look at Rust for Web Parsing  [link](https://dev.to/evanx/a-look-at-rust-for-web-parsing-esp-html-aai)
 3. Source code examples [link](https://github.com/utkarshkukreti/select.rs).

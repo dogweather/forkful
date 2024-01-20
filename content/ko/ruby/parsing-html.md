@@ -39,5 +39,4 @@ HTML 파싱은 웹의 초기 단계부터 있어왔고, 데이터 마이닝, 검
 
 1. Nokogiri documentation [here](http://nokogiri.org/)
 2. HTML parsing with Hpricot [here](https://github.com/hpricot/hpricot)
-3. An alternative with HTML-Parser [here](https://github.com/postmodern/html-parser)
 4. Libxml2 library [here](http://xmlsoft.org/)

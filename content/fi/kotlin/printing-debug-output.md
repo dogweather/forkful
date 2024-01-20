@@ -38,4 +38,3 @@ Tulostaminen debug-tiedotuksena on vanha ohjelmoinnin käytäntö ja se on yksi 
 ## Katso Myös:
 
 1. [Kotlinin virallinen dokumentaatio](https://kotlinlang.org/docs/reference/)
-2. [Debuggaus Kotlinissa](https://kotlinlang.org/docs/tutorials/debugging-with-intellij-idea.html)

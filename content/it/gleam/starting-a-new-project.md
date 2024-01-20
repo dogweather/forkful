@@ -41,7 +41,6 @@ Gleam è un linguaggio di programmazione staticamente tipizzato progettato per i
 
 Per ulteriori informazioni su Gleam, potete consultare le seguenti risorse:
 
-1. [La documentazione ufficiale di Gleam](https://gleam.run/docs/)
 2. [Una guida introduttiva a Gleam](https://gleam.run/getting-started/)
 3. [Il repository GitHub di Gleam](https://github.com/gleam-lang/gleam)
 

@@ -51,8 +51,6 @@ An alternative to write file could be employing Elixir functions from within Gle
 
 ## See Also
 
-1. [Gleam-Lang official documentation](https://gleam.run/docs/)
 2. [Erlang/OTP documentation](http://erlang.org/doc/apps/stdlib/index.html)
 3. [Elixir official documentation](https://elixir-lang.org/docs.html)
-4. [Tutorial on using Elixir from Gleam](https://gleam.run/news/calling-elixir-from-gleam/)
 5. [Erlang File Module documentation](https://erlang.org/doc/man/file.html)

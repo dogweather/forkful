@@ -38,6 +38,5 @@ En cuanto a la implementación, cuando Bash evalúa `${#string}`, realiza un rec
 
 Para más información, echa un vistazo a estos recursos:
 
-1. [Guía completa de Bash String Length](https://www.baeldung.com/linux/bash-string-length)
 2. [Documentación oficial de Bash](https://www.gnu.org/software/bash/manual/bash.html)
 3. [Explicación más detallada de las operaciones de cadena de Bash](https://www.tutorialkart.com/bash-shell-scripting/bash-string/)

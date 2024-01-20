@@ -38,7 +38,3 @@ Historisk sett har programmerere gjort bruk av teknikker for å endre saken for 
 
 ## Se Også
 For mer detaljer om tekstmanipulasjon i PowerShell, se de offisielle Microsoft-dokumentene:
-
-1. [String manipulation with PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/samples/string-manipulation-with-powershell?view=powershell-7.1)
-2. [Formatting Text in PowerShell](https://devblogs.microsoft.com/scripting/formatting-text-in-powershell-with-format-table-and-more/)
-3. [Working with Strings in PowerShell](https://ss64.com/ps/syntax-strings.html)

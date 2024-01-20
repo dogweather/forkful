@@ -39,4 +39,3 @@ $length
 
 ## Дивись також
 1. [String.Length Property (Майкрософт офіційна документація)](https://docs.microsoft.com/dotnet/api/system.string.length)
-2. [Learn how to use PowerShell (Майкрософт офіційний курс)](https://docs.microsoft.com/powershell/scripting/learn?view=powershell-7.1)

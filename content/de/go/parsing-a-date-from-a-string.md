@@ -52,4 +52,3 @@ Implementierungsdetails: Unter der Haube verwendet `time.Parse` eine Layout-Zeic
 
 1. Die Go Standardbibliothek Dokumentation für das `time` Paket: [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
 2. Ein ausführlicher Artikel über das Arbeiten mit Datums- und Zeitwerten in Go: [https://yourbasic.org/golang/format-parse-string-time-date-example/](https://yourbasic.org/golang/format-parse-string-time-date-example/)
-3. Ein Beispiel für das Parsen von Datums- und Zeitstempeln aus einem JSON-Feed: [https://www.alexedwards.net/blog/formatting-date-time-and-number-values-in-go](https://www.alexedwards.net/blog/formatting-date-time-and-number-values-in-go)

@@ -49,4 +49,3 @@ hello world!
 
 ## Див. також
 1. [Документація по функції `tolower`](https://en.cppreference.com/w/c/string/byte/tolower)
-2. [Стаття про роботу з рядками в C](https://www.geeksforgeeks.org/string-handling-c/)

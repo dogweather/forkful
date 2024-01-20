@@ -62,4 +62,3 @@ Vaikka tämä menetelmä on helpompi aloittelijoille ymmärtää, se ei välttä
 ## Katso myös
 1. [Oracle Java Docs: Checking a File or Directory](https://docs.oracle.com/javase/tutorial/essential/io/check.html)
 2. [Kotlin Docs: java.io.File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-3. [Baeldung: How to Check if a Directory Exists in Java](https://www.baeldung.com/java-check-directory-exists)

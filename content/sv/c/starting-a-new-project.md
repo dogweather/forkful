@@ -48,4 +48,3 @@ När du startar ett nytt projekt i C, finns det tre huvudkomponenter att tänka 
 
 1. För mer om C programmering: [C Tutorial](https://www.learn-c.org/)
 2. En guide för att skapa en Makefile: [Makefile Tutorial](https://makefiletutorial.com/)
-3. För att förstå vikten av dokumentation, se: [The Importance of Code Documentation](https://www.softwareyoga.com/the-importance-of-code-documentation/)

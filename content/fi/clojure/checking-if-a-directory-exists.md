@@ -47,4 +47,3 @@ Lisätietoja voit saada seuraavista viitteistä:
 1. [Clojure's 'java.io' library documentation](https://clojuredocs.org/clojure.java.io)
 2. [Java 7 java.nio.file documentation](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html)
 3. [StackOverflow: How to check if a file exists? (in Clojure)](https://stackoverflow.com/questions/2028158/how-to-check-if-a-file-exists-in-clojure)
-4. [Blog: Clojure file and directory operations](https://kimh.github.io/clojure-by-example/posts-output/2014-11-22-file-and-directory-operations.html)

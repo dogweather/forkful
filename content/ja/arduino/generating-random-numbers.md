@@ -44,5 +44,4 @@ Arduinoでは、`random()`と`randomSeed()`といった関数が提供されて�
 ## 参考情報
 
 1. Arduino公式サイトでの[random関数](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/) のドキュメンテーション。
-2. [エントロピーソース](https://en.wikipedia.org/wiki/Entropy_(computing)) とは何かについての詳細情報。
 3. 特定の範囲内で等確率のランダム数を生成するための[カスタム関数](https://forum.arduino.cc/index.php?topic=261053.0)の例。

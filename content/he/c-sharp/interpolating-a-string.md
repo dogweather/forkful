@@ -46,6 +46,5 @@ Console.WriteLine($"הסכום של {x} פלוס {y} שווה: {x+y}");
 
 1. [C# String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated)
 2. [The evolution of C#](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-version-history)
-3. [Effective C# String and I/O Operations](https://www.pluralsight.com/courses/csharp-effective-string-io)
 
 תודה על קריאת המאמר!

@@ -45,7 +45,6 @@ Pythonin `print`-funktion kautta voidaan tulostaa debug-tekstiä lähes mihin ta
 
 1. [Pythonin virallinen dokumentaatio](https://docs.python.org/3/)
 2. [Logging in Python](https://realpython.com/python-logging/)
-3. [Making use of Python logging](https://www.pylenin.com/blogs/python-logging-guide/) 
 
 ***
 

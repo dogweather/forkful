@@ -42,4 +42,3 @@ my_project ~> touch main.fish
 
 1. Офіційна документація Fish Shell: [тут](https://fishshell.com/docs/current/index.html)
 2. Розширений інструктаж для Fish Shell: [тут](https://fishshell.com/docs/current/tutorial.html)
-3. Курси по Fish Shell: [тут](https://www.learnshell.fish/en/)

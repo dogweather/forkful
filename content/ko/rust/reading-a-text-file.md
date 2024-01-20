@@ -48,5 +48,4 @@ Rust에서 텍스트 파일을 읽는 또 다른 방법으로 `BufRead` trait를
 ## 참고 자료:
 
 1. [Rust Book - File I/O](https://doc.rust-lang.org/stable/book/ch12-02-reading-a-file.html)
-2. [Rust by Example - File I/O](https://doc.rust-lang.org/rust-by-example/std_misc/file/read_files.html)
 3. [Rust API - std::fs::File](https://doc.rust-lang.org/std/fs/struct.File.html)

@@ -69,6 +69,5 @@ Ruby er et tolket, høy-nivå, generelt bruk programmeringsspråk. Det betyr at 
 
 1. [Offisiell Ruby-Dokumentasjon](https://www.ruby-lang.org/en/documentation/)
 2. [Yehuda Katz's Guide to Building Gems](https://yehudakatz.com/2010/12/16/clarifying-the-roles-of-the-gemspec-and-gemfile/)
-3. [Praktisk Ruby for Systemansvarlige](https://www.apress.com/gp/book/9781484220633)
 
 Husk, øvelse gjør mester. Lykke til med Ruby-prosjektet ditt!

@@ -39,5 +39,4 @@ Under huven, funktioner som `printf` i Haskell genomförer stränginterpolation 
 
 För mer detaljerad diskussion om stränginterpolation i Haskell, besök följande länkar:
 
-- SO Diskussion: [String interning i Haskell](https://stackoverflow.com/questions/6116309/string-interning-in-haskell)
 - Haskell Café: [String Interpolation i Heterogen List](https://mail.haskell.org/pipermail/haskell-cafe/2010-February/073593.html)

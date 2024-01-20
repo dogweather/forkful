@@ -52,4 +52,3 @@ In this code:
 ## See Also
 1. [Oracle's `Java.net.http` package documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/package-summary.html)
 2. [Baeldung's guide to HttpClient](https://www.baeldung.com/httpclient-guide)
-3. [Jakob Jenkov's HttpClient examples](http://tutorials.jenkov.com/java-http-client/index.html).

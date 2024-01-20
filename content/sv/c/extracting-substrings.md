@@ -50,5 +50,3 @@ När det gäller att extrahera understängar, är det viktigt att notera att C s
 För mer information och relaterade ämnen, behandlade på djupet, besök följande länkar:
 
 1. [C programming Guide on Programiz](https://www.programiz.com/c-programming/c-strings)
-2. [C String handling functions on GeeksforGeeks](https://www.geeksforgeeks.org/string-handling-in-c-set-1/)
-3. [C Programming Strings on W3Schools](https://www.w3schools.com/C/c_strings.asp)

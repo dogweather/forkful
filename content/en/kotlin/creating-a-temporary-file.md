@@ -57,4 +57,3 @@ Alternatives to `createTempFile()`? You have the `Files.createTempFile()` from J
 2. Kotlin `Path` API: A more modern, flexible way to handle file paths.
 3. [Kotlin Documentation](https://kotlinlang.org/docs/home.html): The best place to go for learning more about Kotlin.
 4. [Java IO Tutorial](http://tutorials.jenkov.com/java-io/index.html): An in-depth look at Java's IO and NIO APIs.
-5. [Temporary Files in Java](https://www.baeldung.com/java-create-temporary-file): A detailed article on creating temp files, if you want to work with Java's native functions.

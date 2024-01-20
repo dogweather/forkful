@@ -60,6 +60,5 @@ print(f'こんにちは、{name}!')
 ## 参考に :
 1. [Python公式ドキュメンテーション: 文字列メソッド](https://docs.python.org/ja/3/library/stdtypes.html#string-methods)
 2. [PEP 498 -- Literal String Interpolation](https://peps.python.org/pep-0498/) (f-stringのこと)
-3. [Pythonの文字列フォーマットの完全ガイド](https://note.nkmk.me/python-string-format/)
 
 以上がPythonでの文字列連結についての紹介です。具体的な使い方や選択肢を説明するため、さまざまな情報を提供しました。これらを参考に、あなたのプログラムに最適な解決策を見つけてください。

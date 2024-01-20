@@ -53,4 +53,3 @@ end
 
 1. Documentación oficial de Ruby para la clase File: [https://ruby-doc.org/core-3.0.0/File.html](https://ruby-doc.org/core-3.0.0/File.html)
 2. Documentación oficial de Ruby para la clase IO: [https://ruby-doc.org/core-3.0.0/IO.html](https://ruby-doc.org/core-3.0.0/IO.html)
-3. Tutorial sobre la lectura y escritura de archivos en Ruby: [http://tutorials.jumpstartlab.com/...](http://tutorials.jumpstartlab.com/...)

@@ -46,7 +46,5 @@ L'implémentation de ces bibliothèques est basée sur des calculs calendriques 
 
 1. [Paquet `time` sur Hackage](https://hackage.haskell.org/package/time)
 2. [Paquet `thyme` sur Hackage](https://hackage.haskell.org/package/thyme)
-3. [Paquet `data-dates` sur Hackage](https://hackage.haskell.org/package/data-dates)
-4. [Tutoriel sur la manipulation de la date et heure en Haskell](https://www.schoolofhaskell.com/user/commercial/content/time)
 
 Prenez le temps d'explorer ces liens pour avoir une meilleure compréhension de la manipulation des dates et horaires dans Haskell.

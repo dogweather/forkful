@@ -46,4 +46,3 @@ Warto zwrócić uwagę na sposób, w jaki PHP obsługuje indeksy - PHP zaczyna n
 
 1. Szczegółowy opis funkcji `substr()`: [PHP: substr - Manual](https://www.php.net/manual/en/function.substr.php)
 2. Więcej na temat `strpos()` i `strrpos()`: [PHP: strpos - Manual](https://www.php.net/manual/en/function.strpos.php) oraz [PHP: strrpos - Manual](https://www.php.net/manual/en/function.strrpos.php)
-3. Omówienie ciągów i manipulacji nimi w PHP: [Manipulating PHP Strings](https://www.netsparker.com/blog/web-security/manipulating-php-strings/)

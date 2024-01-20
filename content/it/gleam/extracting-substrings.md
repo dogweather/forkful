@@ -31,7 +31,6 @@ Nell'esempio, `string.slice(s, 0, 4)` estre la sottostringa di `s` da indizio 0 
 Historicamente, l'estrazione di sottostringhe è una funzione fondamentale negli linguaggi di programmazione. In Gleam, usiamo `string.slice` per estrarre sottostringhe, ma ci sono alternative come `string.drop` e `string.take` che eliminano o prendono un certo numero di caratteri dalla stringa. Ricorda, gli indici in Gleam iniziano da 0, non da 1.
 
 ## Vedi Anche:
-1. [Gleam Documentation - String](https://hexdocs.pm/gleam_stdlib/gleam/string/)
 2. [An introduction to Gleam](https://gleam.run/book/)
 
 Non esitate a sperimentare su [Gleam's Online Playground](https://play.gleam.run/) per capire meglio come si estraggono le sottostringhe!

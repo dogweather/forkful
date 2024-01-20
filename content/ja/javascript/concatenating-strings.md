@@ -49,5 +49,4 @@ console.log(greeting); //"こんにちは、世界!"
 
 詳しく調べるための素晴らしいリソースをいくつか以下に紹介します：
 
-1. [MDN Web Docs](https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Operators/String_Operators): "+"演算子やテンプレートリテラルについて詳しく解説。
 2. [JavaScript Info](https://javascript.info/string): JavaScriptの文字列関連の詳細な情報。

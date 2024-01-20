@@ -44,5 +44,4 @@ Esimerkki tulostaa päivämäärän muodossa 'dd-mm-YYYY HH:MM:SS TZ', joka on m
 
 ## Katso myös:
 
-1. Fish Shell Date Documentation: [Link here](https://fishshell.com/docs/current/cmds/date.html)
 2. GNU Coreutils Date Documentation: [Link here](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

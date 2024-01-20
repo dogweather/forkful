@@ -33,6 +33,4 @@ När det gäller implementeringsdetaljer, `& args` i `-main` funktionen samlar a
 
 ## Se också
 
-1. Clojure Documentation: [Command Line Arguments](https://clojure.org/guides/repl/command_line_arguments)
-2. Blog Post: [Command Line Arguments in Clojure](https://www.baeldung.com/clojure-command-line-arguments)
 3. Stack Overflow: [How to pass command line arguments in Clojure](https://stackoverflow.com/questions/4301629/how-to-pass-command-line-arguments-to-a-clojure-program)

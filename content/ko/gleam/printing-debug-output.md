@@ -41,6 +41,4 @@ fn main() {
 
 디버그에 대한 좀 더 자세한 내용은 다음의 문서를 참고해보세요.
 
-1. [Gleam 공식 문서](https://gleam.run/docs/)
 2. [디버깅 기술에 대한 아티클](https://medium.com/@alchemist.unicorn/a-guide-to-debugging-d8bd4237fdfb)
-3. [프로그래밍에서 디버깅의 역사](https://sloanreview.mit.edu/article/coding-that-spans-an-abstraction-layer/)

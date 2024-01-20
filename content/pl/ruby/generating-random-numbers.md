@@ -34,7 +34,5 @@ Przy implementacji generatorów liczb losowych, warto zwrócić uwagę na "ziarn
 Przydatne linki do dalszego czytania i zrozumienia generowania liczb losowych:
 
 1. [Random number generator - Ruby Docs](https://ruby-doc.org/core-2.6.3/Random.html)
-2. [How to Generate Random Numbers in Ruby](https://www.thoughtco.com/generate-random-numbers-in-ruby-2907768)
-3. [Exploring Random Numbers in Ruby](https://www.sitepoint.com/exploring-random-numbers-ruby/).
 
 Pamiętaj, praktyka czyni mistrza. Próbuj generować różne typy danych losowych, a z czasem nabierzesz większej pewności.

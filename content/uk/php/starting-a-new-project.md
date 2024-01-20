@@ -45,6 +45,5 @@ PHP було створено у 1995 році Rasmus Lerdorf, і з того ч
 
 ## Дивись також
 
-1. [Офіційна документація PHP](https://www.php.net/manual/uk/)
 2. [Проекти в GitHub на PHP](https://github.com/trending/php)
 3. [Туторіали PHP на W3Schools](https://www.w3schools.com/php/)

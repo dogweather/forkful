@@ -34,6 +34,4 @@ Implementering av konvertering til lavere case i Arduino Zone klasse er relativt
 ## Se Også
 For mer informasjon om strengmanipulering i Arduino, sjekk ut disse ressursene:
 
-1. [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
 2. [Text String Manipulation In Arduino](http://playground.arduino.cc/Main/TextString)
-3. [Arduino Programming Notebook](http://www.arduino.cc/playground/uploads/Main/arduino_notebook_v1-1.pdf)

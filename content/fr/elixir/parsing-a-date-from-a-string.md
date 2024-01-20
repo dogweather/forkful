@@ -41,5 +41,3 @@ end
 
 ## Voir aussi
 1. Le module [Date](https://hexdocs.pm/elixir/Date.html) de la documentation officielle d'Elixir.
-2. La bibliothèque [Timex](https://hexdocs.pm/timex/readme.html) pour des fonctionnalités de date et heure plus avancées.
-3. Article : [Elixir School - Working with date and time in Elixir](https://elixirschool.com/en/lessons/basics/date_time/).

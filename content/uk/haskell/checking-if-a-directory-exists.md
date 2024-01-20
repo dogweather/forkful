@@ -31,4 +31,3 @@ main = do
 
 ## Дивитися також
 1. [Документація про System.Directory](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-2. [Haskell Wiki про обробку файлів і директорій](https://wiki.haskell.org/Introduction_to_IO/File_IO)

@@ -43,4 +43,3 @@ Dla dalszej lektury i nauki, sprawdź te zasoby:
 
 1. [Python String capitalize()](https://www.programiz.com/python-programming/methods/string/capitalize)
 2. [Python String title()](https://www.w3schools.com/python/ref_string_title.asp)
-3. [Alternatives of capitalize in Python](https://stackabuse.com/python-capitalize-and-title-methods/)

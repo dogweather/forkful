@@ -37,5 +37,4 @@ echo $newText
 ## देखने के लिए:
 
 1. [PowerShell का ऑफिशियल डॉक्युमेंटेशन](https://docs.microsoft.com/en-us/powershell/)
-2. [PowerShell की सर्च और रिप्लेस ट्यूटोरियल](https://www.tutorialspoint.com/powershell/powershell_regular_expressions.htm)
 3. [StackOverflow पर PowerShell के सम्बंधित प्रश्न](https://stackoverflow.com/questions/tagged/powershell)

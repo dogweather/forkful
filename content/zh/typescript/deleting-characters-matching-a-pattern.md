@@ -40,4 +40,3 @@ console.log(result); // 输出 “H, W!”
 
 1. [TypeScript 文档：正则表达式](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#string)
 2. [MDN Web 文档：String.prototype.replace()](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-3. [JavaScript 正则表达式入门教程](http://www.ruanyifeng.com/blog/2013/03/javascript_regex.html)

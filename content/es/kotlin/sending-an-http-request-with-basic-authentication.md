@@ -58,4 +58,3 @@ Al usar Basic Auth con Fuel en Kotlin, las credenciales se convierten en una cad
 
 1. Kotlin Programming Language: [Web oficial](https://kotlinlang.org/)
 2. Kotlin Fuel HTTP: [Repositorio de GitHub](https://github.com/kittinunf/Fuel)
-3. Autenticación HTTP: [Wikipedia](https://es.wikipedia.org/wiki/Autenticaci%C3%B3n_HTTP)

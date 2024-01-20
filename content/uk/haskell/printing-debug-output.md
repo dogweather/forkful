@@ -51,4 +51,3 @@ Haskell має багато вбудованих функцій для діаг�
 
 1. [Debug.Trace документація](https://hackage.haskell.org/package/base-4.15.0.0/docs/Debug-Trace.html)
 2. [Обговорення про Debug.Trace vs. putStrLn](https://stackoverflow.com/questions/23202702/why-does-debug-trace-cause-a-runtime-error-in-the-pure-part-of-a-haskell-functio)
-3. [Haskell перехід на безпечніше відлагодження](https://skillsmatter.com/skillscasts/4177-safe-debugging)

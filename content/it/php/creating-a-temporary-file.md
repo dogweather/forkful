@@ -37,4 +37,3 @@ I file temporanei creati tramite `tmpfile()` sono gestiti da PHP stesso. Questo 
 Per saperne di più su come lavorare con i file in PHP, dai un'occhiata a queste risorse:
 1. [PHP: tmpfile - Manual](https://www.php.net/manual/en/function.tmpfile.php)
 2. [PHP: tempnam - Manual](https://www.php.net/manual/en/function.tempnam.php)
-3. [Working with Files in PHP](https://www.tutorialrepublic.com/php-tutorial/php-file-handling.php)

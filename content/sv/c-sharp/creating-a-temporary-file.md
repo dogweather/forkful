@@ -50,5 +50,3 @@ När du kör innebörden av denna kod hittar du "Detta är en exempeltext." på 
 Vill du veta mer? Här är några relaterade resurser:
 
 1. [Microsoft_docs: Path.GetTempFileName -Metod](https://docs.microsoft.com/sv-se/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
-2. [Användning och hantering av temporära filer i .NET](https://www.codeguru.com/columns/experts/temporary-files-and-folders-in-net.html)
-3. [Temporär datahantering med C#!](https://www.c-sharpcorner.com/UploadFile/2b876a/handle-temporary-files-and-folder-in-net-framework/)

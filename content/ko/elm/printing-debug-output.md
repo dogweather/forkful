@@ -46,5 +46,3 @@ Elm은 `Debug.log`이외에도 `Debug.todo`나 `Debug.toString` 같은 다른 �
 Elm 프로그래밍에 관한 더 많은 정보는 다음 사이트에서 찾을 수 있습니다:
 
 1. [Elm 공식 문서](https://elm-lang.org/docs)
-2. [Elm Debugging guide](https://guide.elm-lang.org/error_handling/debug.html)
-3. [Elm에서의 디버깅 방법](https://korhner.github.io/elm/elm-debugging/)

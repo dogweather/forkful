@@ -29,6 +29,5 @@ Utskriften kommer att vara: "Hej Swift!".
 3. Implementeringsdetaljer: "replacingOccurrences(of:)" -metoden kommer från Swifts utökning av NSString-klassen. Den letar igenom hela strängen, så tänk på prestanda vid arbete med stora textfiler.
 
 ## Se även
-1. Apple Developer Documentation: [replacingOccurrences(of:with:)](https://developer.apple.com/documentation/foundation/nsstring/1416398-replacingoccurrences)
 2. Swift by Sundell: [Working with strings in Swift](https://www.swiftbysundell.com/basics/strings/)
 3. Hacking with Swift: [How to replace occurrences of a string within a string](https://www.hackingwithswift.com/example-code/strings/how-to-replace-occurrences-of-a-string-within-a-string)

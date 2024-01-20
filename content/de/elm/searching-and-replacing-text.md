@@ -36,6 +36,5 @@ Das Suchen und Ersetzen von Text hat eine lange Geschichte in der Informatik. Es
 Zum Vertiefen der Inhalte eignen sich folgende Ressourcen:
 
 1. Elm Dokumentation für das [`String`](https://package.elm-lang.org/packages/elm/core/latest/String) Modul.
-2. Implementation des `replace`-Algorithmus in [Elm Core](https://github.com/elm/core/blob/1.0.2/src/Native/String.js#L143).
 3. Ein Tutorial über [reguläre Ausdrücke](https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Regular_Expressions) auf MDN Web Docs.
 4. Ein Artikel über die Nutzung von [CRDTs](https://josephg.com/blog/crdts-are-the-future/) in der Programmierung.

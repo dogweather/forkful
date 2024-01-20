@@ -42,7 +42,6 @@ La implementación de `size` en Gleam simplemente recorre la cadena y cuenta cad
 
 Para más información sobre cadenas en Gleam, puedes visitar los siguientes enlaces:
 
-1. [Gleam String Docs](https://hexdocs.pm/gleam_stdlib/gleam/string/index.html)
 2. [Gleam Programming Language Overview](https://gleam.run/)
 
 Recuerda que la programación es un viaje de aprendizaje constante. ¡No tengas miedo de experimentar con nuevas funciones y enfoques!

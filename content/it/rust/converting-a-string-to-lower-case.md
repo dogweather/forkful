@@ -50,4 +50,3 @@ Per ulteriori dettagli sulla manipolazione delle stringhe in Rust, dai un'occhia
 
 1. [La documentazione ufficiale di Rust sulla stringa](https://doc.rust-lang.org/std/string/struct.String.html)
 2. [Rust by Example: Stringa vs Str](https://doc.rust-lang.org/rust-by-example/std/str.html)
-3. [Sovraccarico di Stringhe e Str in Rust](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

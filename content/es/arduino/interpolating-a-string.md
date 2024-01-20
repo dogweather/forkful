@@ -45,6 +45,4 @@ Serial.println(saludo); // El resultado será: Hola, Juan
 
 Para más detalles sobre la concatenación de cadenas y la interpolación, puede visitar los siguientes enlaces:
 
-1. [Documentación Oficial de Arduino - StringAdditionOperator](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/addition/)
-2. [Tutoría de Arduino – Cadenas de carácteres](https://www.programoergosum.com/cursos-online/arduino-para-jovenes-y-no-tan-jovenes/1637-cadenas-de-caracteres-string-const-char-caracteres-ascii-arduino)
 3. [Stackoverflow - ¿Cómo concatenar múltiples cadenas de caracteres en Arduino?](https://es.stackoverflow.com/questions/126571/c%C3%B3mo-concatenar-m%C3%BAltiples-cadenas-de-caracteres-en-arduino)

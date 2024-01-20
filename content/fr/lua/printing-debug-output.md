@@ -34,5 +34,4 @@ En parlant de la mise en œuvre, la fonction `print()` en Lua convertit tous les
 ## Voir Aussi
 1. [Guide Lua pour les débutants](https://learnxinyminutes.com/docs/fr-fr/lua-fr/)
 2. [Documentation Lua 5.2](http://www.lua.org/manual/5.2/manual.html)
-3. [ZeroBrane - Un environnement de développement Lua](https://studio.zerobrane.com/docLua-debugging-guide)
 4. [Apprendre à coder en Lua](https://www.tutorialspoint.com/lua/index.htm)

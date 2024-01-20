@@ -48,4 +48,3 @@ Perusautentikointi toimii lähettämällä HTTP-otsakkeina base64-koodattu käyt
 
 1. [HTTP-autentikointi: Perus- ja Digest -autentikointi](https://developer.mozilla.org/fi/docs/Web/HTTP/Authentication)
 2. [Curl-komennon virallinen dokumentaatio](https://curl.se/docs/manpage.html)
-3. [Turvallisuus ja HTTP-pyynnöt](https://owasp.org/www-community/Secure_HTTP)

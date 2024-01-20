@@ -44,6 +44,4 @@ Vertailuoperaattorit Gleamissa antavat joko totuusarvoja (`true` tai `false`) ta
 
 Jos haluat syventää tietojasi Gleamin päivämäärien vertailusta, katso seuraavat lähteet:
 
-1. Gleam Documentation: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
-2. Gleam GitHub: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam) 
-3. Gleam Date & Time Library: [https://gleam.run/stdlib/datetime.html](https://gleam.run/stdlib/datetime.html)
+2. Gleam GitHub: [https://github.com/gleam-lang/gleam](https://github.com/gleam-lang/gleam)

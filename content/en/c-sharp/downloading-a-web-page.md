@@ -59,9 +59,3 @@ Also, always respect the robots.txt file, and be mindful of a website's terms of
 Further Reading:
 
 1. [MSDN Documentation on HttpClient.GetStringAsync Method](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient.getstringasync)
-
-2. [Web Scraping with C#](http://goalkicker.com/CSharpBook/CSharpNotesForProfessionals334.pdf)
-
-3. [WebClient vs HttpClient vs HttpWebRequest](https://www.darkcoding.net/software/webclient-vs-httpclient-vs-httpwebrequest/) 
-
-4. [How To Handle Errors In HttpClient](https://www.talkingdotnet.com/how-to-handle-exceptions-in-httpclient/)

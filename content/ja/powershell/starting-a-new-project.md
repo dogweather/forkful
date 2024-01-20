@@ -36,4 +36,3 @@ New-Project -Name "MyFirstProject"
 
 1. [Microsoft - "Creating New Projects in PowerShell"](https://docs.microsoft.com/en-us/powershell/scripting/how-to-use-docs?view=powershell-7.1)
 2. [StackOverflow - "How to start a new project in PowerShell?"](https://stackoverflow.com/questions/51472277/how-do-i-create-a-new-project-in-powershell)
-3. [DigitalOcean - "How To Use PowerShell on Ubuntu 16.04 LTS"](https://www.digitalocean.com/community/tutorials/how-to-use-powershell-on-ubuntu-16-04)

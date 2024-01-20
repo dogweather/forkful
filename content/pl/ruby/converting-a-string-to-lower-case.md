@@ -38,5 +38,3 @@ tu jest jakiś tekst
 Wybierz jedno z poniższych źródeł, aby dowiedzieć się więcej o pracy z łańcuchami znaków w Ruby:
 1. Dokumentacja języka Ruby: [String — Ruby 3.0.0](https://ruby-doc.org/core-3.0.0/String.html)
 2. "Programming Ruby": [Operacje na łańcuchach](http://ruby-doc.com/docs/ProgrammingRuby/)
-3. "Wprowadzenie do Ruby": [Łańcuchy znaków](http://intro-to-ruby.com/strings/)
-4. Ruby Guides: [Poradnik pracy z łańcuchami znaków w Ruby](https://www.rubyguides.com/working-with-strings-in-Ruby/)

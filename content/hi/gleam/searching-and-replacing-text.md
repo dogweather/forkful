@@ -30,7 +30,4 @@ fn replace_text() {
 शुरुआत में, पाठ स्थानांतरण के लिए विभिन्न अनुकूलित कार्यों का निर्माण किया गया था। लेकिन, इसे संगठनात्मक करने और त्रुटियों को कम करने के लिए, `replace` फ़ंक्शन का उपयोग किया जाता है। इसके विकल्प में `split` और `join` आदान-प्रदान का उपयोग करके पाठ को बदलना शामिल है। इसके अंतर्गत यह शोध स्ट्रिंग के आभासी प्रतिष्ठान को प्रवेश करता है और प्रत्येक मिलान को बदलने का कार्य करता है।
 
 ## देखें भी:
-1. [Gleam डॉक्यूमेंटेशन](https://gleam.run/docs/)
-2. [Gleam रेजेक्स मॉड्यूल](https://hexdocs.pm/gleam_stdlib/gleam/regex/#replace/3)
-3. [Gleam Cookbook](https://github.com/gleam-lang/gleam-cookbook)
 4. [Replace function in text processing](https://en.wikipedia.org/wiki/Text_processing)

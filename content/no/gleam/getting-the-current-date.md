@@ -40,5 +40,4 @@ Implementeringen av 'date' funksjonen i Erlang er basert på Gregorian kalendere
 
 ## Se Også
 For mer informasjon om Gleam og Erlang, besøk følgene kilder:
-1. [Offisiell Gleam dokumentasjon](https://gleam.run/docs/)
 2. [Erlang 'date' funksjon dokumentasjon](http://erlang.org/doc/man/erlang.html#date-0)

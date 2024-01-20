@@ -37,6 +37,5 @@ Implementeringsdetaljer spesielle for Fish Shell inkluderer at lokale variabler 
 ## Se Også
 For mer informasjon, ta en titt på følgende kilder:
 
-1. Fish Shell offisielle dokumentasjon: [https://fishshell.com/docs/current/index.html.](https://fishshell.com/docs/current/index.html.)
 2. Dato-kommando detaljer: [https://linux.die.net/man/1/date.](https://linux.die.net/man/1/date.)
 3. Forstå grown-ups' datoer og tid: [https://yourbasic.org/golang/format-parse-string-time-date-example/.](https://yourbasic.org/golang/format-parse-string-time-date-example/.)

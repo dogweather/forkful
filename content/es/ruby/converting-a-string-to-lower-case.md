@@ -45,6 +45,5 @@ Para aprender más acerca de las cadenas en Ruby, consulta los siguientes enlace
 
 2. Tutoriales de Ruby sobre Cadenas y Métodos de Cadenas: [https://www.rubyguides.com/ruby-tutorial/ruby-string-methods/](https://www.rubyguides.com/ruby-tutorial/ruby-string-methods/)
 
-3. Amplia gama de métodos de transformación de cadenas en Ruby: [https://www.thoughtco.com/string-transformations-in-ruby-2907742](https://www.thoughtco.com/string-transformations-in-ruby-2907742)
 
 Ten en cuenta que este enfoque solo funcionará para las letras del alfabeto inglés. Para otros idiomas, es posible que necesites una solución más compleja que trate con especificidades lingüísticas.

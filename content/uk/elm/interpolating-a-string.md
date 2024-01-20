@@ -33,5 +33,3 @@ greeting = str ++ name
 
 ## Що ще подивитись:
 1. Документація Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-2. Інтерполяція рядків в Elm - Дискусія: [https://discourse.elm-lang.org/t/string-interpolation/524](https://discourse.elm-lang.org/t/string-interpolation/524)
-3. `elm-format-string` на GitHub: [https://github.com/zwilias/elm-format-string](https://github.com/zwilias/elm-format-string)

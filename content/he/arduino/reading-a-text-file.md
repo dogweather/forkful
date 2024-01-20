@@ -63,5 +63,4 @@ void loop()
 
 ## קישורים רלוונטיים (See Also)
 1. [מערכת קבצים SD](https://www.arduino.cc/en/reference/SD)
-2. [דרך לטיפול בערכים ממסד נתונים](https://learn.adafruit.com/adafruit-datalogger-shield/using-the-real-time-clock-3)
 3. [ניתוח YAML וקובצים JSON](https://arduinojson.org/)

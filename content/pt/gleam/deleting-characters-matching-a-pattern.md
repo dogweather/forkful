@@ -42,6 +42,4 @@ Em termos de implementação, Gleam baseia-se na biblioteca Erlang's string, for
 
 Para mais informações sobre programação em Gleam e manipulação de strings, visite esses links:
 
-1. Docs do Gleam: [Gleam Docs](https://gleam.run/docs/)
-2. Tutorial da string do Gleam: [Gleam String](https://gleam.run/tour/strings/)
 3. Biblioteca de strings do Erlang: [Erlang String](http://erlang.org/doc/man/string.html)

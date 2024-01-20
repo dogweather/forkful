@@ -41,7 +41,3 @@ main =
 
 ## Дивіться також:
 1. [Офіційна документація Elm про Debug.log](https://package.elm-lang.org/packages/elm/core/latest/Debug#log)
-
-2. [Посібник по налагодженню Elm](https://debug.elm-lang.org/)
-
-3. [Стаття про вивід для налагодження в Elm](https://elmprogramming.com/debugging.html)

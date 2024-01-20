@@ -45,4 +45,3 @@ console.log(`Дата у минулому: ${pastDate}`);
 
 1. [Date - JavaScript | MDN](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
 2. [Moment.js](https://momentjs.com/)
-3. [Handling Dates And Time In TypeScript And JavaScript](https://serokell.io/blog/dates-and-times-in-typescript)

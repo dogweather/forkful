@@ -51,4 +51,3 @@ int main() {
 1. Стрічкова висічка в Python: [Python Slice](https://docs.python.org/3/whatsnew/2.3.html#slice)
 2. Використання slice() в Javascript: [JavaScript Slice](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
 3. Більше про C++ substr(): [cppreference substr](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-4. Історія String в комп'ютерних науках: [Wikipedia](https://en.wikipedia.org/wiki/String_(computer_science))

@@ -60,7 +60,6 @@ if($onnistuuko) {
 
 ## Katso myös:
 
-1. [Päivämäärän muuntaminen merkkijonoksi](https://docs.microsoft.com/fi-fi/dotnet/standard/base-types/how-to-convert-a-string-to-a-date-and-time)
 2. [DateTime.TryParse-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime.tryparse?view=net-5.0)
 3. [DateTime.ParseExact-metodi](https://docs.microsoft.com/fi-fi/dotnet/api/system.datetime.parseexact?view=net-5.0)
 

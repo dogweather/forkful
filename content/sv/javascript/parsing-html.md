@@ -48,5 +48,4 @@ När det gäller implementation, så skapar DOMParser ett nytt `Document` objekt
 
 För ytterligare information, refererar jag till följande källor:
 1. [MDN Web Docs - DOMParser](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser)
-2. [JavaScript Info - Parsing HTML](https://javascript.info/dom-parsing)
 3. [Stack Overflow - Parse HTML string with JavaScript](https://stackoverflow.com/questions/3103962/converting-html-string-into-dom-elements)

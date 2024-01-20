@@ -48,7 +48,6 @@ Bei `replacingOccurrences` handelt es sich um eine hochstabile Methode aus der S
 
 ## Siehe auch:
 
-1. Swift-Dokumentation über das Löschen von Zeichen: [Apple Developer Documentation](https://developer.apple.com/documentation/swift/string/2893962-replacingoccurrences)
 
 2. Mehr zu regulären Ausdrücken: [Regular Expressions in Swift](https://www.raywenderlich.com/5765-regular-expressions-tutorial-getting-started)
 

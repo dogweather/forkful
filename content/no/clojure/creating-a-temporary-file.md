@@ -59,5 +59,4 @@ Det er viktig å merke seg at programmereren er ansvarlig for sikker opprydding 
 ## Se Også:
 
 1. [Offisiell clojure.java.io Dokumentasjon](https://clojure.github.io/clojure/clojure.java.io-api.html)
-2. [Clojure - Working With Files](https://www.learn-clojurescript.com/section/clojure-working-with-files/)
 3. [Oracle Java Dokument – deleteOnExit()](https://docs.oracle.com/javase/7/docs/api/java/io/File.html#deleteOnExit())

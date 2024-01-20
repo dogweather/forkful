@@ -47,4 +47,3 @@ Temp File: C:\Users\Username\AppData\Local\Temp\tmpXXXX.tmp
 
 1. [Path.GetTempFileName メソッド (System.IO)](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.path.gettempfilename?view=net-5.0)
 2. [File.Create メソッド (System.IO)](https://docs.microsoft.com/ja-jp/dotnet/api/system.io.file.create?view=net-5.0)
-3. [一時ファイルを安全に使用するには？](http://www.example.com/safely-use-temp-files)

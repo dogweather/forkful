@@ -39,7 +39,5 @@ main = do
 
 ## Посилання
 
-1. [Руководство по строкам в Haskell](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/strings)
 2. [Вбудовані функції для обробки рядків в Haskell](https://hackage.haskell.org/package/base-4.12.0.0/docs/Data-String.html)
 3. [Працюйте з рядками в Haskell, використовуючи бібліотеку `text`](https://hackage.haskell.org/package/text)
-4. [Efficient string handling in Haskell](http://book.realworldhaskell.org/read/efficient-string-processing.html)

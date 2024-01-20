@@ -41,5 +41,3 @@ Un'alternativa valida alla gestione delle date è l'uso della libreria Timex, ch
 ## Ulteriori Letture
 1. [Documentazione Elixir sul modulo Date](https://hexdocs.pm/elixir/Date.html)
 2. [Documentazione Elixir sul modulo DateTime](https://hexdocs.pm/elixir/DateTime.html)
-3. [Documentazione sulla Libreria Timex in Elixir](https://hexdocs.pm/timex/readme.html) 
-4. [Approfondimento su Calendar Sigils](https://hexdocs.pm/elixir/master/Kernel.SpecialForms.html#sigil_D/2)

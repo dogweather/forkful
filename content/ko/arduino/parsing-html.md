@@ -46,5 +46,3 @@ HTML 파싱은 웹 크롤링의 주요 요소여서, 인터넷 초기 단계부�
 ## 참고 링크:
 
 1. [ArduinoJson 라이브러리](https://arduinojson.org/)
-2. [HTML 파싱에 대한 자세한 안내서](https://developer.mozilla.org/en-US/docs/Web/API/HTML_Parser)
-3. [ArduinoHttpClient 라이브러리](https://www.arduino.cc/en/Reference/HttpClient)

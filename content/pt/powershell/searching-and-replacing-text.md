@@ -48,6 +48,4 @@ Boa tarde, amigos!
 ## Veja Também
 Para mais detalhes, você pode consultar os seguintes links:
 
-1. [PowerShell Basics: String manipulation](https://www.randika.info/2020/05/23/powershell-basics-string-manipulation-methods/)
 2. [PowerShell Replace “Method” Versus “Operator”](https://adamtheautomator.com/powershell-replace/)
-3. [Introduction to Regular Expressions (Regex) in PowerShell](https://adamtheautomator.com/regex-powershell/)

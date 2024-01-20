@@ -58,5 +58,3 @@ Hvordan strenginterpolering fungerer i bakgrunnen i PowerShell er ganske enkelt:
 Sjekk ut disse ressursene for mer informasjon:
 
 1. [Microsofts offisielle dokumentasjon om strenginterpolering](https://docs.microsoft.com/powershell/)
-2. [Les om forskjellen mellom dobbelt og enkelt anførselstegn i PowerShell](https://ss64.com/ps/syntax-quotes.html)
-3. [Får mer avansert bruk av strenginterpolering](https://www.powershellmagazine.com/2012/11/06/pstip-string-interpolation-in-powershell/)

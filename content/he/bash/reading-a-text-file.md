@@ -30,4 +30,3 @@ done < "file.txt"
 חפשו מידע נוסף באתרים הבאים:
 1. [בסיסי Bash Scripting ב-GNU.org](https://www.gnu.org/software/bash/manual/bash.html)
 2. [מדריך לקריאת קבצים ב-Python ב-Real Python](https://realpython.com/read-write-files-python/)
-3. [המדריך של Node.js לעבודה עם מערכת הקבצים](https://nodejs.dev/learn/the-nodejs-fs-module)

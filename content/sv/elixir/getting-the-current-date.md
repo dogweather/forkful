@@ -36,4 +36,3 @@ Detaljer om implementation: När `DateTime.utc_now()` kallas, hämtas det aktuel
 1. [`DateTime` dokumentation](https://hexdocs.pm/elixir/DateTime.html) - Fullständig dokumentation för DateTime modulen.
 2. [`Date` dokumentation](https://hexdocs.pm/elixir/Date.html) - Användbart om du bara vill hantera datum.
 3. [`NaiveDateTime` dokumentation](https://hexdocs.pm/elixir/NaiveDateTime.html) - Utforska detta om du inte behöver tidszonsinfo.
-4. [Tidszonsdatabas i Elixir](https://hexdocs.pm/elixir/TimeZoneDatabase.html) - Lär dig om hur Elixir hanterar tidszoner.

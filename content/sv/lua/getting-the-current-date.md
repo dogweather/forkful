@@ -42,6 +42,5 @@ Tidsfunktionerna i Lua är baserade på de POSIX-standarder som finns på de fle
 
 1. [Lua 5.4 Referensmanual - os.date](https://www.lua.org/manual/5.4/manual.html#6.9)
 2. [Lua Användar-Wiki - Datum och Tid](http://lua-users.org/wiki/DateAndTime)
-3. [Lär dig Lua programmeringsspråk](https://learnxinyminutes.com/docs/sv-se/lua-sv/)
    
 Kom ihåg, att det är avgörande att hantera tid och datum korrekt i din programvara. Lycka till med programmeringen!

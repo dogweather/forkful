@@ -41,5 +41,4 @@ Podczas korzystania z PowerShell warto pamiętać o pewnych szczegółach implem
 ## Zobacz też:
 
 1. Szerokie omówienie `Invoke-WebRequest`: [Link](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-2. Przetwarzanie stron internetowych w PowerShell: [Link](https://4sysops.com/archives/use-powershell-to-download-a-file-with-http-get-and-ssl/)
 3. Obsługa stron z dużą ilością JavaScriptu: [Link](https://stackoverflow.com/questions/46372116/powershell-invoke-webrequest-and-javascript)

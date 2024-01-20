@@ -40,5 +40,4 @@ fn main() {
 
 अधिक जानकारी के लिए, निम्नलिखित स्रोतों की जांच करें:
 
-1. [Rust के औपचारिक दस्तावेज़ीकरण](https://doc.rust-lang.org/rand/rand/index.html)
 2. [The Rust Programming Language (संगणक प्रोग्रामिंग भाषा)](https://doc.rust-lang.org/book/)

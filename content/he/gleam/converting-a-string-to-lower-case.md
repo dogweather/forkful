@@ -40,5 +40,4 @@ let lower_case_string = string.lowercase(my_string)
 ##ראה גם
 
 1. [מסמך שפת Gleam](https://gleam.run/book/tour/strings.html)
-2. [ויקיפדיה - אות קטנה](https://he.wikipedia.org/wiki/%D7%90%D7%95%D7%AA_%D7%A7%D7%98%D7%A0%D7%94)
 3. [Erlang - string:lowercase/1](https://erlang.org/doc/man/string.html#lowercase-1)

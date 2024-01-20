@@ -60,4 +60,3 @@ olá, mundo!
 2. Método ToLower(): [aqui](https://docs.microsoft.com/pt-br/dotnet/api/system.string.tolower)
 3. Método ToLowerInvariant(): [aqui](https://docs.microsoft.com/pt-br/dotnet/api/system.string.tolowerinvariant)
 4. Discussão sobre ToLower vs. ToLowerInvariant na StackOverflow: [aqui](https://stackoverflow.com/questions/2801508/lowercasestring-tolower-vs-tolowerinvariant)
-5. Mais informações sobre strings imutáveis em C# (aplicável ao PowerShell): [aqui](https://www.c#tutorial.net/csharp-string-immutable/)

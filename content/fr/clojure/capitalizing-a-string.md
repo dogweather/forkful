@@ -64,6 +64,4 @@ Note : L'opération de capitalisation dans Clojure n'est pas locale (elle ne tie
 
 ## Voir aussi :
 
-1. [Documentation officielle de Clojure](https://clojure.org/reference/strings)
-2. [Guide de programmation de Clojure pour les opérations sur les chaînes de caractères](https://clojure.org/guides/learn/strings)
 3. [API Java pour la manipulation en majuscules/minuscules de la chaîne](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html#toUpperCase())

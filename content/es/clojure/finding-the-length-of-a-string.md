@@ -49,7 +49,6 @@ Esto daría el mismo resultado que la función `count`. Sin embargo, esta opció
 
 Para más detalles sobre las cadenas y su manipulación en Clojure, consulta estos recursos:
 
-1. [Clojure Strings - Clojure Documentation](https://clojure-doc.org/articles/tutorials/strings.html)
 2. [Strings and Characters - Clojure Programming Cookbook](https://www.oreilly.com/library/view/clojure-programming-cookbook/9781785885037/ch01s04.html)
 3. [Clojure from the ground up: basic types](https://aphyr.com/posts/302-clojure-from-the-ground-up-basic-types)
 4. [Clojure for the Brave and True: Learn the Ultimate Language and Become a Better Programmer](https://www.braveclojure.com/)

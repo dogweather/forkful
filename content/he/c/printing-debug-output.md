@@ -47,4 +47,3 @@ Debug Mode On
 
 1. [תיעוד רשמי של C - printf](https://www.gnu.org/software/libc/manual/html_node/Formatted-Output-Functions.html)
 2. [מאמר StackOverflow - מדוע אנו משתמשים ב-debug output?](https://stackoverflow.com/questions/888255/why-use-debug-output)
-3. [ספר web.developer – תכנות בשפת C](https://www.w3resource.com/c-programming/c-debugging.php)

@@ -43,6 +43,5 @@ grep -o '<a href=['"'"'"][^"'"'"']*['"'"'"]' example.html
 
 如果你想更深入地了解 Bash 和 HTML 解析，以下是一些有用的资源：
 
-1. 博客["shell中使用wget和grep抓取数据"](https://blog.csdn.net/z20905547/article/details/81742330)（Mandarin）
 2. 视频教程["shell script之wget和grep基础功能使用"](https://www.bilibili.com/video/BV1hV411b7Rj/) (Mandarin)
 3. 官方文档["grep 用户手册"](http://www.gnu.org/software/grep/manual/grep.html)、["wget 指南"](https://www.gnu.org/software/wget/manual/wget.html)

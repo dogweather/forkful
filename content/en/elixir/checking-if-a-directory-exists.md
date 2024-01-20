@@ -41,4 +41,3 @@ Check out these useful resources that contribute further to this topic:
 
 1. Elixir's official `File` module documentation: [https://hexdocs.pm/elixir/File.html](https://hexdocs.pm/elixir/File.html)
 2. Erlang's `:file` module documentation: [http://erlang.org/doc/man/file.html](http://erlang.org/doc/man/file.html)
-3. More on Elixir's roots and inheritance from Erlang: [https://elixir-lang.org/getting-started/erlang.html](https://elixir-lang.org/getting-started/erlang.html)

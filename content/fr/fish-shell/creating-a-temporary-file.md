@@ -39,6 +39,5 @@ Pour générer un fichier temporaire dans Fish Shell, nous avons utilisé la com
 Vous pouvez en savoir plus sur la programmation avec Fish Shell en consultant les liens suivants:
 1. [Fish Shell Documentation Officielle](https://fishshell.com/docs/current/index.html)
 2. [Introduction à Fish Shell](https://flaviocopes.com/fish-shell/)
-3. [Fish Shell pour les Bashers](https://olivergondza.github.io/2019/01/20/fishshell.html)
 
 N'oubliez pas, apprenez en faisant. Continuez à expérimenter!

@@ -58,5 +58,4 @@ A fun fact with PowerShell getting the current date is its ability to retrieve i
 
 For more details, you can check out these resources:
 1. Get-Date cmdlet:[Microsoft Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.2)
-2. Date formatting in PowerShell: [Windows IT Pro Center](https://www.itprotoday.com/development-techniques-and-management/how-can-i-format-date-days-week-months-years)
 3. .NET DateTime methods: [.NET API Browser](https://docs.microsoft.com/en-us/dotnet/api/system.datetime?view=net-6.0)

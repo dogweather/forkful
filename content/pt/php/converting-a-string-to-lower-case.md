@@ -53,6 +53,4 @@ Implementar a conversão para minúsculo em PHP é simples, pois as funções `s
 Aqui estão alguns links para documentação relevante e tutoriais:
 
 1. [Documentação oficial do PHP para strtolower](https://www.php.net/manual/en/function.strtolower.php)
-2. [PHP: Lowercase a String](https://www.tutorialrepublic.com/php-tutorial/php-string-tolowercase.php)
 3. [mb_strtolower - Manual do PHP](https://www.php.net/manual/pt_BR/function.mb-strtolower.php)
-4. [Converting Strings to Lowercase in PHP](https://www.baeldung.com/php-convert-string-to-lowercase)

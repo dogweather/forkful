@@ -38,6 +38,4 @@ Embora este artigo mostre um exemplo simples, implementações reais podem exigi
 
 ## Veja Também
 Para mais informações e exemplos mais profundos sobre a análise de datas a partir de strings em Bash, você pode verificar:
-1. [Data e Hora no Bash](https://linuxize.com/post/how-to-compare-dates-in-bash/)
 2. [GNU Date](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-3. [Tutorial detalhado sobre string de data e hora](https://ryanstutorials.net/bash-scripting-tutorial/bash-time.php)

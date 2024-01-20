@@ -33,7 +33,3 @@ Jane, 30, Project Manager
 1. **Історичний контекст:** CSV був розроблений в 1972 році істориком Харві Хартером в рамках свого дисертаційного дослідження. Це формат дозволяє зберігати дані у табличній формі і використовується до цього дня в різних програмах.
 2. **Альтернативи:** Крім CSV, існують інші формати для збереження табличних даних, такі як JSON, XML та Excel.
 3. **Деталі реалізації:** У PowerShell є вбудовані команди для роботи з CSV, які дозволяють ефективно читати, записувати та обробляти дані у цьому форматі.
-
-## Дивіться також:
-1. [Робота з CSV файлами в PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/samples/working-with-csv-files?view=powershell-7.1)
-2. [Керування та обробка даних в PowerShell](https://blogs.technet.microsoft.com/heyscriptingguy/2011/03/28/using-powershell-to-manage-and-process-csv-data/)

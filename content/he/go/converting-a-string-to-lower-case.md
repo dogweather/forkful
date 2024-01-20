@@ -37,5 +37,3 @@ lower := strings.ToLower(original)
 
 ## להמשיך לקרוא
 1. [מסמך הפונקציות הרשמי של Go](https://golang.org/pkg/strings/#ToLower)
-2. [מדריך לעבודה עם מחרוזות ב-Go](https://www.callicoder.com/golang-string/)
-3. [איך לשלוט במחרוזות: מדריך של Go](http://www.golangpro.com/2016/03/manipulate-string-golang.html)

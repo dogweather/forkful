@@ -52,5 +52,4 @@ fn main() {
 对于Rust中具体的网络编程和HTTP请求处理，您可以访问以下链接：
 
 1. 官方文档：[Rust reqwest文档](https://docs.rs/reqwest/0.11.3/reqwest/)
-2. 其他教程：[Rust 网络编程](https://kaisery.github.io/rust-book-chinese/)
 3. 相关资讯：[Rust 完整指南](https://learnku.com/docs/rust-lang/2020/ch17-01-what-is-async-io/7962)

@@ -37,6 +37,5 @@ Alternativ till kommandoradsargument i Ruby inkluderar att använda standard inp
 En viktig detalj att notera om ARGV i Ruby är att den inte inkluderar det första argumentet (skriptnamnet / filnamnet). Detta är en konvention som kommer från C och Unix, och har bevarats i Ruby för kompatibilitet och förväntan.
 
 ## Se Även
-1. [ARGV i Ruby](https://ruby-doc.org/core-2.7.0/ARGV.html) - RubyDOC om ARGV global array, med fler exempel och detaljer.
 2. [Kommandoradsargument i UNIX](https://www.gnu.org/software/libc/manual/html_node/Argument-Syntax.html) - En historisk översyn av argument syntax i UNIX, där ideerna för kommandoradsargument ursprungligen kommer ifrån.
 3. [Kommandoargument vs stdin](http://www.linfo.org/standard_input.html) - En jämförelse mellan kommandoradargument och standard input, från Linux Information Project.

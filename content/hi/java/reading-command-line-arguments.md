@@ -53,4 +53,3 @@ public class CommandLineArgs {
 
 ## देखें भी: ("See Also")
 1. Oracle Docs: [Command-Line Arguments](https://docs.oracle.com/en/java/javase/17/docs/specs/man/java.html)
-2. GeeksforGeeks: [Java and Command Line Arguments](https://www.geeksforgeeks.org/command-line-arguments-java/)

@@ -47,5 +47,4 @@ print(math.random(10)) -- salida: un número diferente cada vez
 ## Ver Además:
 
 1. [Documentación oficial de Lua para la función Math.random](https://www.lua.org/manual/5.3/manual.html#6.7)
-2. [Curso en línea de Programación en Lua](https://www.learn-lua.org/en/Random_Numbers)
 3. [Wikipedia: Generador de números aleatorios](https://es.wikipedia.org/wiki/Generador_de_n%C3%BAmeros_aleatorios)

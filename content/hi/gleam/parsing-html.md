@@ -40,6 +40,4 @@ HTML पार्सिंग का विचार पहली बार 1990
 एक HTML पार्सर का उद्देश्य है एक HTML डॉक्यूमेंट को एक संरचनात्मक रूप में बदलना, जिसे DOM (Document Object Model) कहा जाता है।
 
 ## अन्य पढ़ने के लिए:
-1. Gleam का आधिकारिक डॉक्यूमेंटेशन: [https://gleam.run/docs/](https://gleam.run/docs/)
-2. HTML Parsing के बारे में विस्तार से: [https://developer.mozilla.org/en-US/docs/Web/HTML/Parser](https://developer.mozilla.org/en-US/docs/Web/HTML/Parser)
 3. Python और अन्य भाषाओं में HTML पार्सिंग: [https://www.crummy.com/software/BeautifulSoup/bs4/doc/](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)

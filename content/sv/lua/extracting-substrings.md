@@ -36,4 +36,3 @@ Implementationen av `string.sub()` i Lua använder faktiskt C standarbiblioteket
 
 1. [Officiell Lua Dokumentation](https://www.lua.org/manual/5.4/manual.html): För en fullständig genomgång av alla strängfunktioner i Lua. 
 2. [Lua-Users Wiki](http://lua-users.org/wiki/): Ett bra ställe för användarbidrag och avancerade ämnen.
-3. [Programmeringsbok om Lua](https://www.amazon.com/Programming-Lua-Fourth-Roberto-Ierusalimschy/dp/8590379868): En gedigen bok för att få en ännu djupare förståelse för Lua-projekt.

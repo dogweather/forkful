@@ -48,4 +48,3 @@ main =
 ## Дивись також:
 1. [Elm Guide on Interacting with JavaScript](https://guide.elm-lang.org/interop/)
 2. [Elm package for File Handling](https://package.elm-lang.org/packages/elm/file/latest/)
-3. [Blog post on Reading files in Elm](https://orasund.gitbook.io/elm-cookbook/direct-manipulation/javascript-interop-part1)

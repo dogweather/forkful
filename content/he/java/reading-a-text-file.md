@@ -60,5 +60,4 @@ public class Main {
 
 1. [BufferedReader (Oracle Docs)](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/BufferedReader.html)
 2. [FileReader (Oracle Docs)](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/FileReader.html) 
-3. [Code Ranch: Guide to Scanner vs BufferedReader](https://coderanch.com/t/419192/java/java/Scanner-BufferedReader) 
-4. [Baeldung: Guide to Java FileInputStream](https://www.baeldung.com/java-file-input-stream)
+3. [Code Ranch: Guide to Scanner vs BufferedReader](https://coderanch.com/t/419192/java/java/Scanner-BufferedReader)

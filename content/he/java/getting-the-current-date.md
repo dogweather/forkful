@@ -41,5 +41,4 @@ The current date and time is: 2022-04-10T13:48:03.711
 ## ראה גם
 
 1. [Java API documentation on LocalDateTime](https://docs.oracle.com/en/java/javase/15/docs/api/java.base/java/time/LocalDateTime.html)
-2. [Java 8 Date - LocalDate, LocalTime, LocalDateTime](https://www.mkyong.com/java8/java-8-date-localdate-localdatetime-instant/) 
 3. [Accessing the System's Current Date/Time](https://docs.oracle.com/javase/tutorial/datetime/iso/system.html)

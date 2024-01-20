@@ -36,5 +36,4 @@ Pamiętaj jednak, że konkatenacja w Arduino jest złożonym procesem. Arduino n
 ## Zobacz też:
 
 1. [Arduino String concat()](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/)
-2. [Arduino String Addition Operator](https://www.arduino.cc/reference/en/language/variables/data-types/string/operators/addition/) 
 3. [Arduino String Reference](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)

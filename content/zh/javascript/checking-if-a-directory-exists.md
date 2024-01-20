@@ -56,6 +56,5 @@ if (fs.existsSync('/path/to/directory')) {
 ## 参看资料：
 
 1. [Node.js fs library](https://nodejs.org/api/fs.html)
-2. [File system in Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)
 
 -

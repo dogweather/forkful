@@ -41,5 +41,4 @@ På implementeringsnivå bruker PHP interne støttebiblioteker for å håndtere 
 Her er noen eksterne ressurser som kan være nyttige for å lære mer om midlertidige filer i PHP:
 
 1. PHP Manual on Temporary Files: [Link](https://www.php.net/manual/en/function.tmpfile.php)
-2. Understanding file handling in PHP: [Link](https://www.geeksforgeeks.org/php-file-handling/)
 3. Usage and examples with tmpfile(): [Link](https://www.w3schools.com/php/func_filesystem_tmpfile.asp)

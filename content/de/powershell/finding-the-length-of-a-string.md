@@ -36,5 +36,3 @@ Das `.Length` Property wird tatsächlich von der System.String-Klasse in .NET zu
 ## Siehe auch
 
 1. [Microsoft Docs: String.Length Property](https://docs.microsoft.com/de-de/dotnet/api/system.string.length?view=net-5.0)
-2. [About Strings in PowerShell](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
-3. [PowerShell String Manipulation](https://adamtheautomator.com/powershell-string-manipulation/)

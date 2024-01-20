@@ -55,5 +55,4 @@ Cette version peut retourner des informations détaillées sur le répertoire, m
 
 1. Documentation de Node.js fs.existsSync(): [fs.existsSync()](https://nodejs.org/api/fs.html#fs_fs_existssync_path)
 2. Documentation de Node.js fs.statSync(): [fs.statSync()](https://nodejs.org/api/fs.html#fs_fs_statsync_path_options)
-3. Plus d'informations sur la gestion d'exceptions en TypeScript : [TypeScript Deep Dive: Error Handling](https://basarat.gitbook.io/typescript/postmessage/error-handling)
 4. Documentation officielle de TypeScript : [TypeScript Doc](https://www.typescriptlang.org/)

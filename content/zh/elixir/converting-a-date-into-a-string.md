@@ -37,5 +37,4 @@ iex> to_string(dt)
 ## 参见
 
 1. Elixir DateTime官方文档: [https://hexdocs.pm/elixir/DateTime.html](https://hexdocs.pm/elixir/DateTime.html)
-2. Elixir DateFormat模块: [https://hexdocs.pm/elixir/DateFormat.html](https://hexdocs.pm/elixir/DateFormat.html)
 3. Elixir基础函数: [https://hexdocs.pm/elixir/String.html](https://hexdocs.pm/elixir/String.html)

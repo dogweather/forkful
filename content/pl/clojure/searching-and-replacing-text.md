@@ -37,5 +37,3 @@ Szczegóły implementacji: `clojure.string/replace` to uniwersalna funkcja, któ
 
 ## Zobacz również:
 1. Dokumentacja Clojure na temat [manipulacji tekstem](https://clojuredocs.org/clojure.string)
-2. Dobry tutorial o [wyrażeniach regularnych w Clojure](https://www.regular-expressions.info/clojure.html)
-3. Poradnik [Refactoring w Clojure](https://dev.to/petrussola/refactoring-in-clojure-with-cognitects-refactor-nrepl-and-emacs-90a) - przykład użycia funkcji replace w praktyce.

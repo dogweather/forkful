@@ -48,5 +48,3 @@ Argumentti: kolme
 ## Katso myös:
 
 1. [ARGV Ruby-dokumentaatio](http://ruby-doc.org/core-2.1.4/ARGF.html)
-2. [Option-parserin syntaksi](https://docs.ruby-lang.org/en/latest/libraries/OptParse.html)
-3. [Getoptin dokumentaatio](https://docs.ruby-lang.org/en/latest/libraries/Getopt.html)

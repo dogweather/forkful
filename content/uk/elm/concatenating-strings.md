@@ -42,5 +42,4 @@ greeting = String.concat [ "Привіт, ", "Іван", "!" ]
 Для більш глибокого розуміння рядків і їх конкатенації в Elm, ознайомтеся з офіційною документацією Elm та різними ресурсами в інтернеті:
 
 1. [Elm Documentation: String](https://package.elm-lang.org/packages/elm/core/latest/String)
-2. [Learn Elm: Strings and concatenation](https://elmprogramming.com/strings-and-concatenation.html)
 3. [GitHub: Elm - String operations](https://github.com/dwyl/learn-elm/issues/6)

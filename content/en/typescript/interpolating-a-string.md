@@ -50,5 +50,4 @@ Under the hood, string interpolation converts your expressions into a string and
 
 ## See Also 
 
-1. [TypeScript Official Docs - String Interpolation](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
 2. [MDN Web Docs - Template literals (embedded expressions)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals)

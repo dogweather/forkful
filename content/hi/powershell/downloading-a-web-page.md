@@ -49,6 +49,5 @@ $page.Content
 
 1. [PowerShell स्क्रिप्टिंग गाइड](https://powershell.org/) - बहुत अच्छा स्रोत PowerShell सीखने के लिए। 
 
-2. [वेब स्क्रैपिंग गाइड](https://www.datacamp.com/community/tutorials/web-scraping-tutorial-python) - एक उपयोगी गाइड वेब स्क्रैपिंग के बारे में अधिक जानकारी प्राप्त करने के लिए। 
 
 3. [वेब रिक्वेस्ट संकेतांक](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1) - `Invoke-WebRequest` कमांडलेट का विस्तृत विवरण।

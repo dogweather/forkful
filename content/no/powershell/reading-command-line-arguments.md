@@ -43,6 +43,4 @@ Argument funnet: Hei. Detaljert modus er True
 PowerShell sin handling av kommandolinjeargumenter har likheter til UNIX-baserte shell-script. Det finnes også alternativer til  `Param` nøkkelordet, som `$args` array variabelen, men de gir ikke like mye kontroll over hvilke argumenter som godtas. Gjennom deklarasjonen av spesifikke parametere kan vi håndtere input på en kontrollert og definert måte.
 
 ## Se Også 
-1. [Microsofts offisielle dokumentasjon om argumenter i PowerShell](https://docs.microsoft.com/no-no/powershell/module/microsoft.powershell.core/about/about_command_line_arguments?view=powershell-7.1)
 2. [Detaljert Stack Overflow tråd om PowerShell argumenthåndtering](https://stackoverflow.com/questions/2157554/how-to-handle-command-line-arguments-in-powershell)
-3. [Bloggpost om bruk av Param og andre alternativer](https://devblogs.microsoft.com/scripting/passing-parameters-to-a-script-in-an-executable-file/)

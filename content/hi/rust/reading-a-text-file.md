@@ -44,4 +44,3 @@ fn main() -> std::io::Result<()> {
 
 यदि आप और जानना चाहते हैं, तो यदि आप यहाँ जा सकते हैं:
 1. Rust की आधिकारिक पुस्तक: [File I/O](https://doc.rust-lang.org/stable/book/ch12-02-reading-a-file.html)
-2. एक अच्छा ब्लॉग पोस्ट: [Rust से फाइल संबंधित I/O करना](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html).

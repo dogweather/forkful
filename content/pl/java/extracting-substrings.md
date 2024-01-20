@@ -38,6 +38,5 @@ Implementacja: `substring()` działa na zasadzie indeksowania znaków. Pierwszy 
 
 ## Zobacz też:
 
-1. [Java String substring() Method - w3schools](https://www.w3schools.com/java/ref_string_substring.asp) 
 2. [Java String - Extracting More Than One Substring - stackoverflow](https://stackoverflow.com/questions/14536187/java-string-extracting-more-than-one-substring)
 3. [StringUtils - Apache Commons Lang](https://commons.apache.org/proper/commons-lang/javadocs/api-release/org/apache/commons/lang3/StringUtils.html)

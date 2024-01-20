@@ -47,5 +47,3 @@ Substring-funktion suorituskyky ja tehokkuus riippuvat sen implementoinnista. Er
 Lisätietoa löytyy näistä lähteistä:
 
 1. [C++ String substr() - CPP Reference](https://en.cppreference.com/w/cpp/string/basic_string/substr)
-2. [C++ std::String Class - GeeksforGeeks](https://www.geeksforgeeks.org/c-string-class-and-its-application/)
-3. [Laiska leikkaus - Wikipedia](https://fi.wikipedia.org/wiki/Laiska_leikkaus)

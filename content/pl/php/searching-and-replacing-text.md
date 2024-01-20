@@ -35,9 +35,3 @@ Do zobaczenia, Świecie!
 Wyszukiwanie i zastępowanie tekstu jest podstawową operacją, która ma swoje korzenie w starożytnych technologiach tekstowych, takich jak edytory tekstów linii poleceń. W PHP można to zrobić na kilka sposobów, na przykład poprzez używanie wyrażeń regularnych z pomocą funkcji preg_replace().
 
 Ale dla większości przypadków str_replace() jest wystarczająco szybki i łatwy do zrozumienia. Wewnątrz, str_replace() iteruje wszystkie znaki w ciągu, sprawdzając, czy pasują do ciągu szukanego. Jeśli tak, zastępuje go ciągiem do zastąpienia.
-
-## Zobacz także
-
-1. [Dokumentacja PHP str_replace()](https://www.php.net/manual/pl/function.str-replace.php)
-2. [Przewodnik na temat wyrażeń regularnych w PHP](https://www.php.net/manual/pl/book.pcre.php)
-3. [Wyszukaj i zastąp tekst za pomocą wyrażeń regularnych w PHP](https://www.phpro.org/tutorials/Replacing-Text-With-PHP.html)

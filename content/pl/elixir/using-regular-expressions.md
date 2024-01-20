@@ -41,6 +41,5 @@ Alternatywą dla regexów mogą być funkcje dostępne w Elixir, takie jak `Stri
 
 ## Zobacz także:
 
-1. Dokumentacja Elixir'a o regexach: [Erlang :re](https://hexdocs.pm/elixir/1.12/regex.html)
 2. Tutorial o regularnych wyrażeniach: [RexEgg](http://www.rexegg.com/)
 3. Weryfikacja poprawności regularnego wyrażenia: [RegExr](https://regexr.com/)

@@ -36,5 +36,4 @@ Dettagli di implementazione: maketrans() restituisce una tabella di traduzione u
 Per approfondire, visita questi collegamenti:
 1. Documentazione Python sul metodo [translate()](https://docs.python.org/3/library/stdtypes.html#str.translate)
 2. Documentazione Python sul metodo [maketrans()](https://docs.python.org/3/library/stdtypes.html#str.maketrans)
-3. Articolo GitHub sulle [operazioni con le stringhe in Python](https://github.com/trekhleb/learn-python/tree/master/src/data_structures/string)
 4. Post del blog [TutorialsPoint](https://www.tutorialspoint.com/python/string_translate.htm) sul metodo translate() in Python.

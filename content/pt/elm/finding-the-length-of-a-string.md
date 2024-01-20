@@ -37,4 +37,3 @@ A implementação interna de `length` em Elm trabalha contando cada elemento uni
 ## Veja Também:
 1. Documentação do Elm sobre a função String.length: [https://package.elm-lang.org/packages/elm/core/latest/String#length](https://package.elm-lang.org/packages/elm/core/latest/String#length)
 2. Discussão sobre eficiência de String.length: [https://discourse.elm-lang.org/t/string-length-efficiency/5578](https://discourse.elm-lang.org/t/string-length-efficiency/5578)
-3. Guia sobre String em Elm: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)

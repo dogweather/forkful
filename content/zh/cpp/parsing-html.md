@@ -58,4 +58,3 @@ HTML解析历来是网页抓取、内容提取和自动化测试的关键步骤�
 ## 参见：
 1. [Gumbo文档](https://github.com/google/gumbo-parser)
 2. [W3C对HTML解析的规定](https://html.spec.whatwg.org/multipage/parsing.html)
-3. [HTML解析的维基百科](https://en.wikipedia.org/wiki/HTML_parsing)

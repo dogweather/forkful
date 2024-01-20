@@ -58,4 +58,3 @@ Hello,World!
 
 1. `str_replace()` का PHP प्रलेखन: [https://www.php.net/manual/en/function.str-replace.php](https://www.php.net/manual/en/function.str-replace.php)
 2. `preg_replace()` का PHP प्रलेखन: [https://www.php.net/manual/en/function.preg-replace.php](https://www.php.net/manual/en/function.preg-replace.php)
-3. PHP `preg` फंक्शन्स ट्यूटोरियल: [https://www.guru99.com/php-preg-functions.html](https://www.guru99.com/php-preg-functions.html)

@@ -59,4 +59,3 @@ For more details, check out the official Microsoft documentation:
 2. [`Get-ChildItem` - Microsoft Docs](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7.1)
 
 For cmd.exe command usage in PowerShell:
-3. [Running Windows/DOS Commands in PowerShell](https://www.thegeekstuff.com/2016/12/powershell-run-external-command/)

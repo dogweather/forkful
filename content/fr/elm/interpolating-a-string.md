@@ -35,4 +35,3 @@ L'interpolation de chaînes est une fonctionnalité courante dans de nombreux la
 Pour plus d'informations sur l'interpolation de chaînes et ses alternatives, consultez ces liens :
 1. [Elm String Docs](https://package.elm-lang.org/packages/elm/core/latest/String) 
 2. [Discussion Elm sur String Concatenation vs Interpolation](https://discourse.elm-lang.org/t/string-concatenation-vs-interpolation/310)
-3. [Performance de String.join vs ++](https://www.brianthicks.com/post/2018/03/27/concatenate-your-strings-with-string-join/)

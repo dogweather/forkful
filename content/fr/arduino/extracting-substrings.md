@@ -38,5 +38,3 @@ En ce qui concerne les détails de mise en œuvre, la méthode substring commenc
 Pour plus d'informations sur la manipulation de chaînes avec Arduino, consultez ces ressources:
 
 1. La documentation officielle d'Arduino sur la classe String: [Lien](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-2. Une explication détaillée sur Instructables de l'utilisation des chaînes avec Arduino: [Lien](https://www.instructables.com/Arduino-String-Manipulation-Using-String-Functions/)
-3. Un guide complet de MakeUseOf sur la programmation Arduio pour débutants: [Lien](https://www.makeuseof.com/tag/arduino-programming-for-beginners/)

@@ -54,9 +54,3 @@ Isso retornará `true` se `date1` for antes de `date2`, e `false` caso contrári
 **Detalhes de Implementação**
 
 A função `compare` compara os componentes individuais das datas na seguinte ordem: ano, mês, dia, hora, minuto, segundo e milissegundo.
-
-## Veja Também:
-
-1. [clj-time Documentation](https://clojure.github.io/clj-time/)
-2. [Clojure Date Time Tutorial](https://www.baeldung.com/clojure-date-time)
-3. [Clojure Cookbook: Dates and Times](https://clojure-cookbook.com/clojure_cookbook/Dates_and_Times.html)

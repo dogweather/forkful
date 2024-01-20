@@ -41,6 +41,5 @@ Clojureでは、デバッグ出力は通常、`println`や`prn`関数を用い�
 ## 参考資料:
 
 1. Official Clojure Documentation: [https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
-2. Clojure Debugging Tools: [https://clojure.org/guides/debugging](https://clojure.org/guides/debugging)
 
 以上がClojureによるデバッグ出力の基本です。より深く理解し、適切に活用する事が大切です。

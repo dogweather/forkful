@@ -50,4 +50,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 1. [रस्ट अधिकारिक दस्तावेज़ीकरण](https://doc.rust-lang.org/std/string/struct.String.html) स्ट्रिंग्स के बारे में और सीखने के लिए  
 2. [The Rust Programming Language Book](https://doc.rust-lang.org/book/ch08-02-strings.html#operations-on-strings) स्ट्रिंग्स के बारे में और गहराई से जानने के लिए
-3. [रस्ट ब्लॉग](https://blog.rust-lang.org/inside-rust/2020/10/23/What-the-error-handling-project-group-is-working-on.html) स्ट्रिंग्स की लेटेस्ट उपयोगिताओं के बारे में जानने के लिए

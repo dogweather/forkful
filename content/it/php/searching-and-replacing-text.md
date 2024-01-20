@@ -36,6 +36,4 @@ La funzione `str_replace()` è incorporata in PHP dalla sua versione 4.0.2. Un'a
 Quando `str_replace()` viene eseguito, PHP cerca la corrispondenza del testo in modo sequenziale e sostituisce tutte le occorrenze trovate. È case-sensitive di default, cioè distingue tra maiuscole e minuscole. Per una ricerca senza distinzione tra maiuscole e minuscole, utilizza `str_ireplace()`.
 
 ## Vedi Anche:
-1. [Documentazione PHP str_replace()](https://www.php.net/manual/it/function.str-replace.php)
-2. [Documentazione PHP preg_replace()](https://www.php.net/manual/it/function.preg-replace.php)
 3. [StackOverflow - When to use preg_replace?](https://stackoverflow.com/questions/6723591/preg-replace-vs-str-replace)

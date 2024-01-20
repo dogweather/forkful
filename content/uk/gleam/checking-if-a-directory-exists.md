@@ -38,8 +38,5 @@ fn main() {
 ## Дивитись також:
 Посилання на інші ресурси:
 
-1. Документація Gleam по модулю `filesystem`: [gleam/filesystem](https://hexdocs.pm/gleam_stdlib/gleam/filesystem#file_exists)
 
 2. SO відомий в кіл приклад перевірки наявності директорії в Python: [Stackoverflow Python Example](https://stackoverflow.com/questions/893323/how-to-find-if-directory-exists-in-python)
-
-3. Порівняння методів перевірки існування директорії в різних мовах програмування: [Comparison of Directory Existence Checking](https://www.geekhideout.com/dir_exists.shtml).

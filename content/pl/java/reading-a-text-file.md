@@ -63,4 +63,3 @@ public class ReadFile {
 
 1. [Dokumentacja Java NIO](https://docs.oracle.com/javase/8/docs/api/java/nio/package-summary.html) - szczegółowa dokumentacja o klasach Java NIO.
 2. [Przewodnik Oracle's File I/O](https://docs.oracle.com/javase/tutorial/essential/io/) - bardziej szczegółowy przewodnik po I/O w Javie.
-3. [Porównanie BufferedReader vs Scanner](https://www.baeldung.com/java-buffered-reader-vs-scanner) - porównanie dwóch popularnych klas do czytania plików tekstowych.

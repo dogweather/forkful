@@ -49,4 +49,3 @@ void loop() {
 
 ## 참고 자료:
 1. Arduino SD 라이브러리: [https://www.arduino.cc/en/reference/SD](https://www.arduino.cc/en/reference/SD)
-2. 텍스트 파일 처리에 대한 추가 정보: [https://www.arduino.cc/en/Tutorial/FileRead](https://www.arduino.cc/en/Tutorial/FileRead)

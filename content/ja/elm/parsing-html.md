@@ -45,4 +45,3 @@ main source =
 ## 関連リンク
 1. Elmの公式ドキュメント：[公式ドキュメント](https://elm-lang.org/docs)
 2. Html ParserのAPIガイド：[APIツールガイド](https://package.elm-lang.org/packages/elm/parser/latest/)
-3. ElmのHtml Parserのチュートリアル：[チュートリアル](https://elmprogramming.com/parsing-html.html)

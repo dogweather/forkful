@@ -54,4 +54,3 @@ Command line arguments का सामान्य उपयोग उन scrip
 
 1. Ruby Docs on Command Line Arguments: [https://docs.ruby-lang.org/en/2.1.0/ARGF.html](https://docs.ruby-lang.org/en/2.1.0/ARGF.html)
 2. Stack Overflow discussion on ARGV: [https://stackoverflow.com/questions/9861301/what-is-argv-in-ruby](https://stackoverflow.com/questions/9861301/what-is-argv-in-ruby)
-3. Tutorial on command line arguments in Ruby: [https://www.tutorialspoint.com/ruby/ruby_command_line_arguments.htm](https://www.tutorialspoint.com/ruby/ruby_command_line_arguments.htm)

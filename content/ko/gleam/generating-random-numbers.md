@@ -44,6 +44,4 @@ Gleam에서도 `gleam/random` 모듈의 `generator` 함수를 이용해 난수�
 
 ## 참고하십시오:
 
-1. [Gleam 문서: Random](https://gleam.run/documentation/libraries/gleam-lang/stdlib/gleam_random/)
-2. [랜덤 숫자 의미](https://www.exploratorium.edu/ronh/numbers/numbers_2.html)
 3. [PRNG의 상세 내용](https://en.wikipedia.org/wiki/Pseudorandom_number_generator)

@@ -40,6 +40,4 @@ Dettagli implementativi specifici possono variare, ma la semplicità e l'efficie
 
 Per ulteriori informazioni su come lavorare con stringhe e sottostringhe in Swift, consultare i seguenti collegamenti:
 
-1. Documentazione Apple su [String and Character](https://developer.apple.com/documentation/swift/string_and_characters) (Inglese)
-2. Guida rapida a [Substring in Swift](https://learnappmaking.com/substring-swift-how-to/) (Inglese)
 3. Tutorial su [How to Split a String into an Array in Swift](https://www.hackingwithswift.com/example-code/strings/how-to-split-a-string-into-an-array-swift-strings) (Inglese)

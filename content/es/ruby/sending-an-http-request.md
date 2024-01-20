@@ -41,4 +41,3 @@ En cuanto a los detalles de implementación, Net::HTTP en Ruby abre una conexió
 1. Biblioteca Net::HTTP [Documentación Oficial](https://ruby-doc.org/stdlib-3.1.0/libdoc/net/http/rdoc/Net/HTTP.html)
 2. Biblioteca 'rest-client' [Documentación Oficial](https://www.rubydoc.info/gems/rest-client/2.1.0)
 3. Biblioteca 'HTTParty' [Documentación Oficial](https://www.rubydoc.info/github/jnunemaker/httparty)
-4. [Protocolo HTTP](https://developer.mozilla.org/es/docs/Web/HTTP/Protocolo_HTTP_B%C3%A1sico) en la documentación de MDN.

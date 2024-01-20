@@ -30,6 +30,5 @@ main = do
 Історично, операції над рядками були важливою складовою програмування. У Haskell підхід до роботи з рядками спрощений, але все ж потужний. Ще одним способом видалення символів є використання функції delete, але вона видаляє лише один екземпляр символу. Наступним кроком може бути створення більш складного паттерну, який використовує регулярні вирази. Пам'ятайте, на Haskell важливо розуміти час виконання та кількість пам'яті, яку використовує ваше рішення.
 
 ## Додатково
-1. Haskell: [Туторіал по рядкам](https://www.haskell.org/tutorial/strings.html)
 2. Real World Haskell: [Розділ про рядки та символи](http://book.realworldhaskell.org/read/efficient-file-processing-regular-expressions-and-file-name-matching.html)
 3. Haskell Guidelines: [Рекомендації щодо обробки рядків](https://wiki.haskell.org/Performance/Strings)

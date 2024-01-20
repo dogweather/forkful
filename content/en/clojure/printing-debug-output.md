@@ -56,5 +56,4 @@ Remember, `println` directly outputs to the console, whereas `tools.logging` giv
 Additional information and related topics can be found at:
 
 1. [Tools.Logging Clojure Documentation](https://clojure.github.io/tools.logging/)
-2. [Clojure Debugging](https://clojuredocs.org/clojure.repl/printf)
 3. [Clojure - A Beginner’s Guide](https://www.braveclojure.com/getting-started/)

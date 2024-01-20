@@ -51,6 +51,5 @@ int main() {
 1. Функція 'strncpy': [link](https://www.cplusplus.com/reference/cstring/strncpy/)
 2. Функції 'strchr' та 'strrchr': [link](http://www.cplusplus.com/reference/cstring/strrchr/)
 3. Функція 'strncmp': [link](https://www.cplusplus.com/reference/cstring/strncmp/)
-4. Створення власних функцій вилучення підрядків в C: [link](https://www.geeksforgeeks.org/c-program-to-extract-a-portion-of-string/) 
 
 Програмування на мові C потребує розуміння як працювати з рядками та вилучати підрядки. Це важливий навик, який допоможе вам стати кращим програмістом.

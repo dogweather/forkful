@@ -33,6 +33,4 @@ Tietysti on myös vaihtoehtoja. `.upcase` muuttaa kaikki kirjaimet isoiksi, ja `
 `.capitalize` toteutetaan sisäisesti verraten verraten ensimmäistä merkkiä ASCII-koodistossa ja muuttamalla se isoksi, jos se on pieni.
 
 ## Katso myös
-1. Ruby String capitalize-metodi: [https://www.rubyguides.com/2018/10/ruby-string-methods/](https://www.rubyguides.com/2018/10/ruby-string-methods/)
 2. ASCII-koodiston taulukko: [https://www.asciitable.com/](https://www.asciitable.com/)
-3. Lyhyt opas Ruby String-metodeille: [https://mixandgo.com/learn/25-ruby-string-methods-you-should-know](https://mixandgo.com/learn/25-ruby-string-methods-you-should-know)

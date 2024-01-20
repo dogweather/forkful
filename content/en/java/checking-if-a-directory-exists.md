@@ -62,4 +62,3 @@ These small, robust methods can handle your directory validity requirements seam
 1. [Oracle: Java NIO Files class documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
 2. [Oracle: Java NIO Path class documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Path.html)
 3. [StackOverflow: How to check if a directory exists in Java](https://stackoverflow.com/questions/3775694/how-to-check-if-a-directory-exists-in-java)
-4. [GeeksForGeeks: How to check if a directory exists in Java](https://www.geeksforgeeks.org/how-to-check-if-a-directory-exists-in-java/)

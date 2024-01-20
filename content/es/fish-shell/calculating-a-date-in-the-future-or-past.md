@@ -41,5 +41,4 @@ La implementación detallada de estos cálculos depende en gran medida de las bi
 
 ## Ver También
 1. Documentación oficial de Fish Shell - [https://fishshell.com/docs/current/index.html](https://fishshell.com/docs/current/index.html)
-2. Tutorial de Fish Shell de DigitalOcean - [https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell](https://www.digitalocean.com/community/tutorials/how-to-use-the-fish-shell)
 3. Manual de la fecha de GNU - [https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)

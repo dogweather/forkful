@@ -69,5 +69,4 @@ Aussi, implémentation de la concaténation en PowerShell accorde indirectement 
 Posez un coup d'oeil à ces ressources pour plus d'informations :
 
 1. Documentation Microsoft sur les opérations de chaîne de caractères : [Lien](https://docs.microsoft.com/fr-fr/dotnet/csharp/programming-guide/strings/)
-2. Article sur la manipulation de chaînes en PowerShell : [Lien](https://devblogs.microsoft.com/scripting/manipulating-strings-with-powershell/)
 3. Documentation Microsoft sur la méthode Format : [Lien](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.format?view=net-5.0)

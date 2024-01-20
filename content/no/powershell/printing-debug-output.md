@@ -66,4 +66,3 @@ VERBOSE: Inside the function
 ## Se Også:
 
 1. Offisiell PowerShell dokumentasjon: [About PREFERENCE Variables](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7)
-2. Velgjørende Bloggartikkel: [Debugging with PowerShell](https://devblogs.microsoft.com/scripting/debugging-with-powershell/)

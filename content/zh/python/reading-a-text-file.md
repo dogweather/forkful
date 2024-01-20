@@ -43,5 +43,4 @@ print(data)
 实现细节：`with` 关键字用在文件操作中，可以确保文件在处理完后正确关闭。
 
 ## 查看更多：
-1. Python 官方文档关于文件操作的部分: [https://docs.python.org/current/tutorial/inputoutput.html#reading-and-writing-files](https://docs.python.org/current/tutorial/inputoutput.html#reading-and-writing-files)
 2. Python 文件读取的基础知识：[https://www.w3schools.com/python/python_file_handling.asp](https://www.w3schools.com/python/python_file_handling.asp)

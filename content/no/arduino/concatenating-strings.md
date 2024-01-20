@@ -45,5 +45,4 @@ Arduino implementerer konkatenering ved bruk av '+' operatøren i String-klassen
 Besøk disse linkene for mer informasjon og relaterte emner:
 
 1. For mer om strenger i Arduino: [Arduino Reference](https://www.arduino.cc/reference/en/language/variables/data-types/string/).
-2. For å mestre '+' operatør for strenger: [Arduino String Addition Operator](https://www.arduino.cc/reference/en/language/variables/data-types/string/operators/addition/).
 3. Mer om forskjellige funksjoner som concat og sprintf: [Arduino String Concat Function](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/concat/).

@@ -35,4 +35,3 @@ end
 ## ראה גם:
 1. [דוגמאות IO של Elixir](https://hexdocs.pm/elixir/IO.html)
 2. [מדריך תיקון שגיאות אליקסיר](https://elixirschool.com/en/lessons/specifics/debugging/)
-3. [עיונים במערכת erlang](http://erlang.org/doc/apps/erts/io_protocol.html)

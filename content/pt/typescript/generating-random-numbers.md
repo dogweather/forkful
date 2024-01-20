@@ -40,5 +40,4 @@ No JavaScript (e consequentemente TypeScript), `Math.random()` gera números pse
 ## Veja Também:
 
 1. [MDN: Math.random()](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-2. [Número pseudo-aleatório - Wikipedia](https://pt.wikipedia.org/wiki/Número_pseudo-aleatório)
 3. [Random-js (NPM)](https://www.npmjs.com/package/random-js)

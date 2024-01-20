@@ -38,6 +38,4 @@ Et alternativ til å bruke `string`-kommandoen for å slette karakterer, er å b
 Når det gjelder implementeringen i Fish, har `string replace`-kommandoen flere alternativer for styring av hvilke strenger som skal erstattes, for eksempel `-r` for å bruke regular expressions, og `-a` for å erstatte alle forekomster.
 
 ## Se også:
-1. Fish Documentation: [www.fishshell.com/docs/current](www.fishshell.com/docs/current)
-2. String handling: [wiki.bash-hackers.org/syntax/pe](wiki.bash-hackers.org/syntax/pe)
 3. Unix for Poets: [https://www.cs.upc.edu/~padro/Unixforpoets.pdf](https://www.cs.upc.edu/~padro/Unixforpoets.pdf)

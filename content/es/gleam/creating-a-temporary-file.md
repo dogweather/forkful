@@ -49,5 +49,3 @@ Respecto a los detalles de implementación, Gleam crea un archivo temporal en el
 Para obtener más información acerca de la creación de archivos temporales y trabajos con archivos en Gleam, revisa estos enlaces:
 
 1. [Documentación oficial de Gleam](https://gleam.run)
-2. [Función Temp.file() en Gleam](https://hexdocs.pm/gleam_stdlib/gleam/fs/temp)
-3. [Trabajando con archivos en Gleam](https://dev.to/tuhlmann/working-with-files-in-gleam-5d4n)

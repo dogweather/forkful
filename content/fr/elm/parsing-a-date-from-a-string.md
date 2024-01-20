@@ -54,5 +54,3 @@ La fonction `Time.fromCalendarDate` convertit un ensemble d'entiers en un type T
 Pour plus d'informations sur le travail avec les dates et le temps en Elm, vous pouvez consulter:
 
 1. [La documentation officielle Elm sur le module Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
-
-2. [Bibliothèque elm/iso8601-date-strings pour le parsing](https://package.elm-lang.org/packages/elm/iso8601-date-strings/latest)

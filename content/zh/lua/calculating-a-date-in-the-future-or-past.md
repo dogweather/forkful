@@ -40,5 +40,4 @@ Lua的日期和时间处理已经有一段历史了，从最初的os库就存在
 ## 参考资料：
 1. [Lua-users wiki: Date and Time](http://lua-users.org/wiki/DateAndTime)  
 2. [Lua 5.1 Reference Manual](https://www.lua.org/manual/5.1/)  
-3. [LuaDate Documentation](https://tieske.github.io/date/)  
-4. [Chronos Documentation](https://github.com/chronos-tachyon/chronos)
+3. [LuaDate Documentation](https://tieske.github.io/date/)

@@ -35,5 +35,4 @@ print("אורך המחרוזת הוא \(str.count)")
 
 ## ראה גם:
 1. [מדריך Swift הרשמי ](https://developer.apple.com/swift/) - המקום הטוב ביותר להתחיל למכשיר iOS או MacOS.
-2. [מציאת אורך של מחרוזת ב-C#](https://www.c-sharpcorner.com/UploadFile/mahesh/length-of-string-in-C-Sharp/) - אם אתה מעוניין להשוות.
 3. [מידע נוסף על המודל המחרוזת ב-Swift](https://swift.org/documentation/#section-3) - משמש להבנה עמוקה יותר של שפה.

@@ -39,5 +39,3 @@ app.listen(3000, () => {
 より深く学びたい方のために、以下に参考リンクを提供します。
 
 1. JavaScriptチュートリアル: [Mozilla JavaScriptガイド](https://developer.mozilla.org/ja/docs/Web/JavaScript/Guide)
-2. プロジェクト開始のベストプラクティス: [Node.jsでのプロジェクト管理](https://www.sitepoint.com/managing-projects-javascript-npm/)
-3. フレームワーク比較:  [JavaScriptフレームワークの比較](https://www.airpair.com/javascript/posts/javascript-framework-comparison)

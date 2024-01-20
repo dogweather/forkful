@@ -47,5 +47,3 @@ Elm non offre funzionalità per la creazione di file temporanei, poiché la sua 
 
 1. Documentazione ufficiale Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
 2. Uso dei porti in Elm: [https://guide.elm-lang.org/interop/ports.html](https://guide.elm-lang.org/interop/ports.html)
-3. Interfacciare Elm con server: [https://elm-lang.org/guide/reactivity#talking-to-servers](https://elm-lang.org/guide/reactivity#talking-to-servers)
-4. Tutorial HTTP in Elm: [https://elmprogramming.com/sending-http-requests.html](https://elmprogramming.com/sending-http-requests.html)

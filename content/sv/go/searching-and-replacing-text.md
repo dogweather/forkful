@@ -49,6 +49,4 @@ Från implementationssynpunkt använder Go's `strings.Replace` metoden en enkel 
 ## Se Även:
 
 1. Go's officiella dokumentation: [https://golang.org/pkg/strings/#Replace](https://golang.org/pkg/strings/#Replace)
-2. Sökande och ersättande text på Coursera (Python): [https://www.coursera.org/lecture/python-text-mining/](https://www.coursera.org/lecture/python-text-mining/)
-3. Ett djupare dykning på textersättning i Java: [https://www.baeldung.com/java-replace](https://www.baeldung.com/java-replace)
 4. En tutorial på att använda JavaScripts `replace` funktion: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/replace)

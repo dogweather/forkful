@@ -43,6 +43,5 @@ Nykyisen päivämäärän saaminen Kotlinissa on varsin suoraviivaista. Yllä es
 
 ## Katso myös:
 
-1. Kotlinin virallinen dokumentaatio [`java.time.LocalDate`](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/index.html)
 2. Stack Overflow -keskustelu nykyisen päivämäärän saamisesta [`LocalDate`](https://stackoverflow.com/questions/66907223/how-to-get-current-date-in-kotlin)
 3. Verkkosivusto, josta tarjoaa monia esimerkkejä päivämäärän ja ajan kanssa työskentelystä Kotlinissa: [Baeldung](https://www.baeldung.com/kotlin-dates)

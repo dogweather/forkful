@@ -54,4 +54,3 @@ La formtación específica de cómo se lee el archivo - línea por línea, o tod
 
 1. [Documentación Node.js fs](https://nodejs.org/api/fs.html)
 2. [Node.js readline en la documentación oficial](https://nodejs.org/api/readline.html)
-3. [Cómo trabajar con archivos de texto en JavaScript](https://developer.mozilla.org/es/docs/Learn/JavaScript/Guide/Working_with_text_files)

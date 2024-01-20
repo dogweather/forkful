@@ -51,5 +51,4 @@ En pratique, l'interpolation de chaînes en Kotlin est mise en œuvre en traduis
 Pour en savoir plus, considérez ces ressources :
 
 1. [Documentation officielle sur l'interpolation des chaînes en Kotlin](https://kotlinlang.org/docs/basic-syntax.html#string-templates)
-2. [Article de blog sur l'interpolation des chaînes en Kotlin](https://www.baeldung.com/kotlin-string-interpolation)
 3. [Discussion StackOverflow sur l'interpolation des chaînes en Kotlin](https://stackoverflow.com/questions/46450220/when-should-i-use-string-interpolation-in-kotlin)

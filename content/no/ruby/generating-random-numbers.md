@@ -40,5 +40,3 @@ Implementeringen av tilfeldige tall i Ruby bruker en metode kjent som Mersenne T
 
 ## Se også
 1. Stabling av seddel: [Ruby-dokumentasjon på Random Numbers](https://ruby-doc.org/core-2.5.1/Random.html)
-2. Tutorialspunkt: [Ruby – Random Numbers](https://www.tutorialspoint.com/ruby/ruby_random_numbers.htm)
-3. Rubyguides: [Ruby Random Numbers: Guide & Solutions](https://www.rubyguides.com/2019/05/ruby-random-numbers/)

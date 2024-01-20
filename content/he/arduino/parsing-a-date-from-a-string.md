@@ -53,6 +53,4 @@ void loop() {
 
 ## ראה גם:
 
-1. [דוקומנטציה של ספריית Arduino TimeLib](https://www.arduino.cc/reference/en/libraries/timelib/)
 2. [דוקומנטציה של ספריית Arduino RTClib](https://www.arduino.cc/reference/en/libraries/rtclib/)
-3. [איך להשתמש ב-DS1307 RTC module עם Arduino](https://www.instructables.com/How-to-use-DS1307-RTC-module-with-Arduino/)

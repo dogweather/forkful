@@ -51,6 +51,4 @@ The Serial communication method shown in the example uses the built-in UART, whi
 ## See Also
 For more insights, check these out:
 
-1. [Arduino Serial communication](https://www.arduino.cc/en/Serial.Read)
-2. [Parsing command line arguments in classic C](https://crasseux.com/books/ctutorial/argc-and-argv.html)
 3. [Arduino UART Tutorial](https://www.makerguides.com/arduino-serial-communication/)

@@ -40,5 +40,4 @@ main = print (length myString)
 ## 参考文献:
 
 1. [Learn You a Haskell for Great Good - Strings](http://learnyouahaskell.com/starting-out#strings)
-2. [Real World Haskell - Lists and Tuples](http://book.realworldhaskell.org/read/lists-and-tuples.html)
 3. [Haskell Documentation - Data.List.length](https://hackage.haskell.org/package/base-4.14.1.0/docs/Data-List.html#v:length)

@@ -47,4 +47,3 @@ Per un ulteriore approfondimento sulla generazione di numeri casuali in Clojure,
 
 1. Documentazione ufficiale di Clojure - [Random numbers](https://clojuredocs.org/clojure.core/rand)
 2. StackOverflow - [Clojure - generate random number](https://stackoverflow.com/questions/2655009/clojure-generate-random-number)
-3. JavaRandom - [Random Numbers in Java](https://www.baeldung.com/java-random)

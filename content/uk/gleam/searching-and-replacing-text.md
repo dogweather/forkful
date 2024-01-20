@@ -34,4 +34,3 @@ let new_message = message.replace("Світе", "Україно")
 
 ## Дивитись також
 1. [Пошук тексту в Gleam](https://gleam.run/book/tour/strings.html)
-2. [Документація по функції "replace"](https://gleam.run/stdlib/gleam_string.html#replace).

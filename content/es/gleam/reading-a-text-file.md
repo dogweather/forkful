@@ -35,8 +35,5 @@ En Gleam, la implementación de la lectura de archivos es muy directa gracias a 
 
 ## Ver también:
 
-1. [Documentación oficial de Gleam](https://gleam.run/docs/)
 
 2. [Gleam en GitHub](https://github.com/gleam-lang/gleam)
-
-3. [Gleam IO (Entrada/Salida) documentación](https://hexdocs.pm/gleam_stdlib/gleam/io/index.html)

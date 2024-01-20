@@ -38,5 +38,4 @@ echo "${string^^}"
 ## और देखें:
 
 1. [Bash scripting guide](https://devhints.io/bash)
-2. [Bash parameter transformations](http://wiki.bash-hackers.org/syntax/pe#case_modification)
 3. [FreeCodeCamp article on Bash commands](https://www.freecodecamp.org/news/the-linux-commands-handbook/)

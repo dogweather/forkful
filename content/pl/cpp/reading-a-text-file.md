@@ -47,4 +47,3 @@ Pod kątem implementacji, kiedy otwierasz plik w C++, tworzony jest strumień, k
 1. [I/O Stream Library](https://en.cppreference.com/w/cpp/io): Więcej informacji o bibliotece strumieniowej C++.
 2. [File I/O in C++](http://www.cplusplus.com/doc/tutorial/files/): Tutorial do pierwszych kroków w I/O plików w C++.
 3. [Boost Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm): Zaawansowana biblioteka do operacji na plikach.
-4. [C++ I/O Streams and File I/O](https://www.programiz.com/cpp-programming/file-io): Więcej przykładów i szczegółów na temat obsługi plików w C++.

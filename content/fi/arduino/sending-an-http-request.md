@@ -62,4 +62,3 @@ Mitä tulee toteutukseen, Arduino ylläpitää avoimen standardin Ethernet-kirja
 
 1. [Arduinon Ethernet-kirjasto](https://www.arduino.cc/en/Reference/Ethernet)
 2. [HTTP-pyynnöt selitetty](https://www.tutorialspoint.com/http/http_requests.htm)
-3. [HTTP:n historiaa](https://www.lifewire.com/history-of-http-817945)

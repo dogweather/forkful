@@ -50,5 +50,4 @@ Under the hood, `str` uses StringBuilder for concatenation, which is more effici
 ## See Also
 
 1. [Clojure - Strings](https://www.tutorialspoint.com/clojure/clojure_strings.htm)
-2. [Concatenate Strings in Clojure](http://benhowell.github.io/coding/2015/05/16/concatenate-strings-in-clojure.html)
 3. [Clojure Docs - str](https://clojuredocs.org/clojure.core/str)

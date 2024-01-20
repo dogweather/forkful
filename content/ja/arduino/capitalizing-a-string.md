@@ -33,4 +33,3 @@ Serial.println(str);  // HELLO WORLD
 ## 関連する情報源
 1. Arduino公式リファレンスのtoUpperCase関数 ([公式リファレンス](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/touppercase/))
 2. ASCIIコード ([ASCIIコード](https://www.asciitable.com/))
-3. 文字列操作全般 ([関連記事](https://www.arduino.cc/en/Tutorial/StringManipulation))

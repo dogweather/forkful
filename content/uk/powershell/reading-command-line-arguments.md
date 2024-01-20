@@ -38,4 +38,3 @@ Write-Host "Привіт, $name!"
 
 ## Подивитися також
 1. Процедурне програмування PowerShell: [Введення в PowerShell](https://docs.microsoft.com/uk-ua/powershell/scripting/overview?view=powershell-7.1)
-2. Використання аргументів командного рядка в PowerShell: [Параметри PowerShell](https://docs.microsoft.com/uk-ua/powershell/scripting/learn/deep-dives/everything-about-parameters?view=powershell-7.1)

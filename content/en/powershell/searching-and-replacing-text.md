@@ -63,4 +63,3 @@ For more insights and details on search and replace text in PowerShell, you can 
 
 1. [Microsoft - About Comparison Operators](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_comparison_operators?view=powershell-7.1)
 2. [Microsoft - Replace Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=netcore-3.1)
-3. [Regular Expressions in PowerShell](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-lessons-learned/)

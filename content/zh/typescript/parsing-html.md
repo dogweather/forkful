@@ -54,5 +54,4 @@ Title found!
 ## 另请参阅：
 
 1. [htmlparser2的GitHub仓库](https://github.com/fb55/htmlparser2)
-2. [MDN Web Docs上的HTML解析指南](https://developer.mozilla.org/zh-CN/docs/Web/API/HTML_Parser)
 3. [JSoup的主页](https://jsoup.org/)

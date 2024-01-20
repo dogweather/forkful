@@ -37,6 +37,4 @@ print(same) // Prints "true"
 
 ### Se även: 
 För relaterade ämnen och läsning kan du kolla följande länkar: 
-1. Swifts dokumentation om metoden [`lowercased()`](https://developer.apple.com/documentation/swift/string/2293039-lowercased)
-2. Swifts dokumentation om metoden [`caseInsensitiveCompare(_:)`](https://developer.apple.com/documentation/foundation/nsstring/1407807-caseinsensitivecompare)
 3. Stack Overflow diskussion om att använda `lowercased()` - [länk här](https://stackoverflow.com/questions/26322681/should-i-use-string-lowercase-string-or-string-caseinsensitivecompare-in-swift)

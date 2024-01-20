@@ -47,4 +47,3 @@ A substituição é feita lendo a entrada linha por linha. Isto significa que n�
 1. [Documentação do Fish Shell 'string replace'](https://fishshell.com/docs/current/cmds/string.html#string-replace)
 2. [Tutorial de grep](https://ryanstutorials.net/linuxtutorial/grep.php)
 3. [Introdução ao sed](https://www.digitalocean.com/community/tutorials/the-basics-of-using-the-sed-stream-editor-to-manipulate-text-in-linux)
-4. [Tutorial de awk](https://www.geekhideout.com/awk.shtml)

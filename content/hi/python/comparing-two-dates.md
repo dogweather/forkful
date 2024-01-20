@@ -47,5 +47,4 @@ Python में तारीखों की तुलना करने क�
 ## और भी देखें:
 
 1. [Python कोर डॉक्युमेंटेशन: datetime](https://docs.python.org/3/library/datetime.html)
-2. [GeeksForGeeks: तारीखों की तुलना करनें के विकल्पों](https://www.geeksforgeeks.org/how-to-compare-two-dates-in-python/)
 3. [StackOverflow: तारीखों की गहरी तुलना](https://stackoverflow.com/questions/39533247/compare-two-dates)

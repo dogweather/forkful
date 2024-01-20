@@ -64,5 +64,3 @@ public class Main {
 
 1. [Documentação do java.util.Random](https://docs.oracle.com/javase/7/docs/api/java/util/Random.html)
 2. [Documentação do java.security.SecureRandom](https://docs.oracle.com/javase/7/docs/api/java/security/SecureRandom.html)
-3. [Gerando números aleatórios em Java](https://www.baeldung.com/java-random)
-4. [Como usar o SecureRandom](https://www.mkyong.com/java/java-securerandom-examples/)

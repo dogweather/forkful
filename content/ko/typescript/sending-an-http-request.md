@@ -43,6 +43,4 @@ TypeScript에서 HTTP 요청을 보내기 위해, Node.js의 `http` 모듈을 �
 
 ## 참고 자료
 1. [MDN - HTTP 가이드](https://developer.mozilla.org/ko/docs/Web/HTTP)
-2. [Node.js - `http` 모듈 문서](https://nodejs.dev/learn/making-http-requests-with-nodejs)
 3. [GraphQL 공식 홈페이지](https://graphql.org/)
-4. [WebSocket API - 웹소켓 개요](https://developer.mozilla.org/ko/docs/Web/API/WebSockets_API/Writing_WebSocket_servers)

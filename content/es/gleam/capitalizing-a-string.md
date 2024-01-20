@@ -37,5 +37,4 @@ El código anterior convertirá "hola mundo" en "Hola Mundo".
 
 Para obtener más información sobre la manipulación de cadenas en Gleam, te recomendamos visitar:
 
-1. [Gleam string module documentation](https://hexdocs.pm/gleam_stdlib/gleam/string/)
 2. [Capitalization in different programming languages](https://en.wikipedia.org/wiki/Capitalization#Computing) for a broad view.

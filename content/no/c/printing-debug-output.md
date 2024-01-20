@@ -37,9 +37,3 @@ Historien om feilsøkingsutskrifter er nesten like gammel som programmering selv
 Det finnes mange alternativer til 'printf' debugging, som for eksempel å bruke en interaktiv debugger. Når det er sagt, vil utskrift av feilsøkingsutdata alltid være en rask og enkel måte å sjekke koden din på. 
 
 'printf' funksjonen er en del av standardbiblioteket i C og er tilgjengelig i de fleste C-dialekter. Den er veldig allsidig og kan brukes til å skrive ut en rekke datatyper.
-
-## Se Også:
-
-1. [Hvordan Bruke printf for Feilsøking](https://link.to.example1)
-2. [Alternativer til printf-Feilsøking](https://link.to.example2)
-3. [Historien om printf](https://link.to.example3)

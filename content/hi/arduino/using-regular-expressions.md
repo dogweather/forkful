@@ -56,4 +56,3 @@ Pattern found.
 
 1. [Arduino Regular Expression Library](https://playground.arduino.cc/Main/Regexp)
 2. [Regular Expressions in Arduino](https://stackoverflow.com/questions/9072320/split-string-with-delimiters-in-c)
-3. [Nikhil Arya's Arduino Lessons](https://nikhilaryan.com/tag/arduino)

@@ -51,5 +51,4 @@ Haskell використовує дату Грегоріанського кал�
 ## Зверніть увагу також:
 
 1. [Офіційна документація Haskell по часу](https://hackage.haskell.org/package/time-1.9.3/docs/Data-Time-Clock.html)
-2. [Основи дати та часу в Haskell (на англійській мові)](https://williamyaoh.com/posts/2019-09-16-time-in-haskell.html)
 3. [Вступ до вбудованого порядку в Haskell](http://learnyouahaskell.com/making-our-own-types-and-typeclasses#the-algebraic-in-lists)

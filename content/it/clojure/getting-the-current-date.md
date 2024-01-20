@@ -51,9 +51,3 @@ Un'altra opzione è utilizzare la libreria Joda-Time che fornisce una gestione p
 
 ### Dettagli implementativi
 `java.util.Date` restituisce la data e l'ora correnti in millisecondi da mezzanotte del 1° gennaio 1970 GMT, una convenzione molto comune nella programmazione denominata "Epoch Time" o "Unix Time".
-
-## Vedere Anche
-
-1. [Clojure - Date Time](https://www.tutorialspoint.com/clojure/clojure_date_time.htm)
-2. [Joda-Time with Clojure](https://andrewclements.me/2013/05/joda-time-with-clojure/)
-3. [Unix Time - Wikipedia](https://it.wikipedia.org/wiki/Tempo_UNIX)

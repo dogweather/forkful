@@ -36,5 +36,4 @@ No que diz respeito aos detalhes de implementação, a Classe `fmt::format` faz 
 
 ## Ver Também
 1. [Documentação oficial fmtlib](https://fmt.dev/latest/index.html)
-2. [Artigo detalhado sobre interpolação de strings no C++](https://www.fluentcpp.com/2018/12/06/strong-types-for-strong-interfaces/)
 3. [Stack Overflow: Interpolação de strings em C++](https://stackoverflow.com/questions/2342162/stdstring-formatting-like-sprintf)

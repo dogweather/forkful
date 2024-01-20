@@ -59,4 +59,3 @@ Voici quelques références qui pourraient vous intéresser pour approfondir vos
 
 1. Documentation .NET sur `String.Concat`: [Lien](https://docs.microsoft.com/fr-fr/dotnet/api/system.string.concat)
 2. Documentation .NET sur `StringBuilder`: [Lien](https://docs.microsoft.com/fr-fr/dotnet/api/system.text.stringbuilder)
-3. Article de blog sur les performances en matière de concaténation de chaînes : [Lien](https://devblogs.microsoft.com/premier-developer/the-cost-of-string-concatenation/)

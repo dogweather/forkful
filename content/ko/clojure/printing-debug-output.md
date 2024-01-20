@@ -37,5 +37,4 @@ Clojure에서는, 간단한 `println` 함수를 사용하여 출력을 생성하
 관련된 몇 가지 자료 리스트입니다:
 
 1. Clojure 공식 문서 ([바로가기](https://clojure.org/guides/learn/functions))
-2. “디버깅”에 대한 Clojure가이드 ([바로가기](https://clojure.org/guides/debugging))
 3. Clojure의 `println` 함수에 대한 설명 ([바로가기](https://clojuredocs.org/clojure.core/println))

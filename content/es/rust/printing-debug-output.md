@@ -50,4 +50,3 @@ Las salidas serán: `(32, "Hola")` y `[1, 2, 3]` respectivamente.
 
 1. [Documentación oficial de Rust](https://doc.rust-lang.org/book/ch18-03-pattern-syntax.html)
 2. [El Libro de Rust](https://doc.rust-lang.org/book/ch18-02-refutability.html)
-3. [Guía de Rust](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

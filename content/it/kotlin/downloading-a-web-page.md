@@ -52,5 +52,4 @@ Quando esegui il codice, vedrai qualcosa come:
 ## Vedere Anche
 
 1. La documentazione ufficiale di Jsoup per ulteriori informazioni ([link](https://jsoup.org/)).
-2. Una guida più approfondita al web scraping con Kotlin e Jsoup ([link](https://www.baeldung.com/kotlin-jsoup)).
 3. Un tutorial video su come scaricare pagine web con Kotlin ([link](https://www.youtube.com/watch?v=ZIZjvTKVIzM)).

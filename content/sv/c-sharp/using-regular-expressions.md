@@ -49,6 +49,4 @@ RegEx härstammar från 1950-talets teoretiska datavetenskap, men har anammats i
 
 ## Se även
 
-1. Microsoft's officiella dokumentation: [Regular Expressions (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/regular-expressions)
 2. Video tutorial: [C# Regular Expressions](https://www.youtube.com/watch?v=OwDt-klLgE0)
-3. Online regex testare: [Regex Storm](https://regexstorm.net/tester)

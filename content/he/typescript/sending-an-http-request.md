@@ -37,5 +37,3 @@ axios.get('https://api.example.com/data')
 
 ## ראו גם:
 1. מזהים ל-APIים מרשת על מנת לבדוק בקשות HTTP - https://www.postman.com/
-2. מידע נוסף לגבי בקשות HTTP בצד השרת - [Server-side Requests with Node.js](https://nodejs.dev/learn/making-http-requests-with-nodejs)
-3. עוד מדריך פופולרי לבקשות HTTP בעזרת TypeScript - [An Introduction to TypeScript: Static Typing for the Web](https://www.sitepoint.com/an-introduction-to-typescript/)

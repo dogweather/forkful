@@ -42,4 +42,3 @@ hello, world!
 
 1. [PHP: strtolower - Manual](https://www.php.net/manual/en/function.strtolower.php)
 2. [PHP: mb_strtolower - Manual](https://www.php.net/manual/en/function.mb-strtolower.php)
-3. [Comparison of PHP string functions](https://www.geeksforgeeks.org/comparison-of-php-string-functions/)

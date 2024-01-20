@@ -34,6 +34,5 @@ Po uruchomieniu powyższego kodu, Gleam wyśle żądanie GET do "https://example
 3. Wysyłanie żądania HTTP to nie tylko wysyłanie tekstu do serwera. Za kulisami, Gleam musi nawiązać bezpieczne połączenie z serwerem, odpowiednio sformatować żądanie, a następnie przetworzyć odpowiedź serwera.
 
 ## Zobacz też
-1. Dokumentacja HTTP Gleam: [link](https://hexdocs.pm/gleam/http/readme.html)
 2. Szczegółowe informacje o protokole HTTP: [link](https://developer.mozilla.org/pl/docs/Web/HTTP)
 3. Biblioteki HTTP w innych językach: [reqwest](https://docs.rs/reqwest/), [http.client](https://docs.python.org/3/library/http.client.html), [axios](https://www.npmjs.com/package/axios)

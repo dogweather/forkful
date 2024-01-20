@@ -34,7 +34,6 @@ fclose($myfile); // 파일 닫기
 
 ## 참고 자료:
 
-1. [PHP에서 파일 읽고 쓰기](https://opentutorials.org/course/62/5127) 강좌에서 더 많은 예제 코드와 실습을 할 수 있습니다.
 
 2. PHP가 아닌 다른 언어로 파일을 읽고 쓰는 방법을 배우기 위해 [w3schools - 파일 처리](https://www.w3schools.com/php/php_file_open.asp)를 참고해보세요.
 

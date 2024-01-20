@@ -46,4 +46,3 @@ En cuanto a la implementación, `getArgs` proviene del módulo `System.Environme
 
 1. Documentación de Haskell sobre getArgs en Hackage [(enlace)](http://hackage.haskell.org/package/base-4.9.1.0/docs/System-Environment.html#v:getArgs)
 2. Tutorial de Haskell sobre argumentos de la línea de comandos [(enlace)](https://wiki.haskell.org/Command_line_option_parsers)
-3. Lección sobre argumentos de la línea de comandos en Learn You a Haskell [(enlace)](http://learnyouahaskell.com/io)

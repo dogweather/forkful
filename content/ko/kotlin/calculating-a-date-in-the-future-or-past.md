@@ -50,4 +50,3 @@ fun main() {
 1. Kotlin 공식 문서: [Kotlin Date and Time API](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-duration/index.html)
 2. Oracle 공식 문서: [Java Date Time API](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/package-summary.html)
 3. 스택 오버플로우: [Kotlin에서 시간데이터 가장 활용하기 좋은 방법](https://stackoverflow.com/questions/58789502/what-is-the-best-way-to-deal-with-date-time-in-kotlin)
-4. [Kotlin-Android 날짜 및 시간 API 활용 가이드](https://www.raywenderlich.com/6640148-working-with-date-and-time-in-kotlin-on-android)

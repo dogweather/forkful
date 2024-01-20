@@ -32,6 +32,4 @@ Debug आउटपुट हमेशा से ही कोड डीबग �
 यह इनका इस्तेमाल बहुत ही विविध और आसान बना देता है।
 
 ## और भी देखें: 
-1. [PowerShell Debugging (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/scripting/learn/debugging-scripts?view=powershell-7.1)
 2. [PowerShell Write-Debug (Microsoft Docs)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7)
-3. [Advanced PowerShell Debugging Techniques (PowerShell Magazine)](http://www.powershellmagazine.com/2014/03/18/pstip-advanced-powershell-debugging-techniques/)

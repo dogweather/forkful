@@ -47,6 +47,4 @@ No que diz respeito à implementação, `Write-Verbose` envia objetos para o pip
 
 Para saber mais sobre o assunto, veja os seguintes recursos:
 
-1. [Debugging Scripts](https://docs.microsoft.com/en-us/powershell/scripting/learn/debugging-scripts?view=powershell-7.1): Veja como utilizar o debugger do PowerShell.
 2. [Write-Verbose](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_preference_variables?view=powershell-7.1): Saiba mais sobre o cmdlet Write-Verbose.
-3. [PowerShell Tutorial](https://www.janbasktraining.com/blog/powershell-tutorial/): Um tutorial completo em PowerShell para iniciantes.

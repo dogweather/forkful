@@ -54,4 +54,3 @@ println(toLowercaseWithLocale)
 ## Se även:
 Du kan även kolla in dessa referenser för mer information:
 1. Kotlin's officiella dokumentation om `toLowerCase()` funktion: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-lower-case.html)
-2. Artiklar om textbehandling i Kotlin: [https://www.baeldung.com/kotlin-collections-and-string-api-tutorial](https://www.baeldung.com/kotlin-collections-and-string-api-tutorial)

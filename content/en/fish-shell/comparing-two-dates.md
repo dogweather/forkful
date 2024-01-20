@@ -53,6 +53,4 @@ In the Fish Shell, `date` command along with Unix timestamps is often favored fo
 
 For more about date comparisons and working with Unix timestamps, check out:
 
-1. [How to Get Current Timestamp in Linux](https://www.shellhacks.com/linux-date-command-format/)
-2. [Working with Dates and Times in Shell Scripting](https://www.tecmint.com/work-with-date-and-time-in-shell-script/)
 3. [Fish Shell Tutorial](https://fishshell.com/docs/current/tutorial.html)

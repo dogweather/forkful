@@ -53,4 +53,3 @@ Un dettaglio importante da considerare quando si fa parsing di date in Go è che
 
 1. [Il pacchetto time della libreria standard Go](https://golang.org/pkg/time/).
 2. [Pacchetto dateparse](https://github.com/araddon/dateparse).
-3. [Pacchetto strtime](https://github.com/stvp/strtime).

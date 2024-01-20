@@ -44,6 +44,5 @@ Haskellの`toLower`関数は`Data.Char`モジュールに定義されており�
 ## 参考文献
 以下のリンクでは、Haskellでの文字列操作についてさらに詳しく知ることができます：
 
-1. [Haskell Wiki - String Conversion](https://wiki.haskell.org/String_conversion)
 2. [Haskell Library - Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
 3. [Haskell Documentation - map function](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:map)

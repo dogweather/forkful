@@ -32,5 +32,3 @@ A função `string sub` em Fish foi implementada como uma maneira menos verbosa 
 ## Ver Também
 Para mais informações sobre a manipulação de strings no Fish Shell, confira os seguintes links:
 1. [Documentação oficial do Fish Shell](https://fishshell.com/docs/current/commands.html#string)
-2. [Tutorial sobre a manipulação de strings no Fish](https://jorge.fbarr.net/2011/11/27/fish-shell-string-functions/)
-3. [Exemplos de uso do comando `string sub`](https://www.baeldung.com/linux/fish-shell-string-operations)

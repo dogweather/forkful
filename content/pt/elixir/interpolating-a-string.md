@@ -46,4 +46,3 @@ Internamente, quando você interpola strings no Elixir, está apenas chamando a 
 
 1. Documentação Elixir sobre [Strings e Binários](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html#interpolation)
 2. Discussão no fórum Elixir [sobre interpolação de Strings](https://elixirforum.com/t/what-does-interpolation-in-elixir-mean/21402)
-3. Blog: [Elixir: Strings vs Binaries](https://learningelixir.joekain.com/elixir-string-vs-binary/)

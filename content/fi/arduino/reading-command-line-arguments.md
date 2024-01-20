@@ -40,4 +40,3 @@ Arduino-ohjelmointiin liittyvät linkit, mukaan lukien lisätietoja sarjaportin 
 
 1. [Arduino Sarjaväylän Käyttö](https://www.arduino.cc/en/Tutorial/BuiltInExamples/SerialEvent)
 2. [Komentoriviparametrit C++ -ohjelmassa](https://www.cplusplus.com/articles/DEN36Up4/)
-3. [Koodiesimerkkejä komentoriviparametrien lukemisesta](https://gist.github.com/jimfleming/0afa8c0f360a7dd09469)

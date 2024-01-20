@@ -44,6 +44,5 @@ Jest też alternatywa do `fs.existsSync()`, to `fs.stat()` lub `fs.access()`. Al
 ## Zobacz też
 
 1. [Dokumentacja Node.js fs](https://nodejs.org/api/fs.html)
-2. [Porównanie fs.existsSync() z fs.access()](https://nodejs.dev/learn/check-if-a-file-exists-in-nodejs)
 
 W pracy z katalogami takimi jak te, pamiętaj, aby zawsze być precyzyjnym w ścieżkach, którymi się poruszasz. Kod, który działa poprawnie na jednym komputerze, może zwrócić błędy na innym, jeżeli katalogi są inaczej strukturyzowane.

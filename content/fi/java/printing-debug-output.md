@@ -39,5 +39,4 @@ On myös olemassa alternativeja `System.out.println` komennolle, kuten loggauske
 ## Katso myös:
 1. Oracle Java Documentation: [System (Java Platform SE 8 )](https://docs.oracle.com/javase/8/docs/api/java/lang/System.html)
 2. Apache Logging Services: [Log4j](https://logging.apache.org/log4j/2.x/)
-3. Baeldung Tutorial: [Guide to Logging in Java](https://www.baeldung.com/java-logging)
 4. StackOverflow Discussion: [When and why is it appropriate to use System.out.println() for debugging?](https://stackoverflow.com/questions/1778689/when-and-why-is-it-appropriate-to-use-system-out-println-for-debugging)

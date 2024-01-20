@@ -40,5 +40,3 @@ int main() {
 ## Більше інформації
 1. [Man Page для strptime](https://man7.org/linux/man-pages/man3/strptime.3.html)
 2. [C Library Functions - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/)
-3. [Linux Time - Tutorialspoint](https://www.tutorialspoint.com/unix_time/index.htm)
-4. [С Unix Time на Wikipedia](https://uk.wikipedia.org/wiki/Unix-%D1%87%D0%B0%D1%81)

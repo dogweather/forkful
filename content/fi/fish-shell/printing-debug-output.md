@@ -38,4 +38,3 @@ Lisätietoja Fish Shell -ohjelmoinnista ja debug -tulostuksesta voit löytää s
 1. [Fish Shell viralliset dokumentit](https://fishshell.com/docs/current/index.html)
 2. [Fish Shell GitHub](https://github.com/fish-shell/fish-shell)
 3. [Stack Overflow: How to debug in Fish Shell](https://stackoverflow.com/questions/32764976/how-do-i-debug-fish-shell-scripts)
-4. [Debugging Fish Shell Scripts](https://opensource.com/article/19/8/debugging-fish-shell)

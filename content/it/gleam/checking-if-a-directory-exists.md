@@ -42,4 +42,3 @@ L'output sarà "La directory esiste" se la directory esiste e "La directory non 
 
 1. [La documentazione ufficiale di Gleam](https://gleam.run/documentation/)
 2. [Gleam su GitHub](https://github.com/gleam-lang/gleam)
-3. [Funzioni di filesystem in Gleam](https://gleam.run/stdlib/gleam_filesystem/)

@@ -52,6 +52,4 @@ O SwiftSoup implicitamente implementa o que é conhecido como um analisador desc
 ## Veja Também
 
 1. [Documentação do SwiftSoup](https://scinfu.github.io/SwiftSoup/)
-2. [Parsing HTML no Swift com Kanna](https://www.raywenderlich.com/141274/beautiful-soup-go-swift-4)
 3. [Parsing HTML com Ji](https://github.com/honghaoz/Ji)
-4. [Introdução à análise de linguagens formais e autûmatos](https://www.coursera.org/learn/formal-lang-automata)

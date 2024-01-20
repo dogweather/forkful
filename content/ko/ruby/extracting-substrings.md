@@ -46,4 +46,3 @@ puts str[7, 4]
 
 1. [Ruby 문서 - String](https://ruby-doc.org/core/String.html): 이 사이트에서는 루비의 String 클래스에 대한 공식 문서를 보실 수 있습니다.
 2. [루비 문자열 쪼개기](https://www.rubyguides.com/2018/01/ruby-string-methods/#ruby-split): this is a good detailed guide on working with Strings in Ruby.
-3. [루비에서 `slice` 사용 예제](https://www.geeksforgeeks.org/ruby-string-slice-function-with-examples/): this site provides a detailed explanation and examples of `slice` usage in Ruby.

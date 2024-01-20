@@ -51,8 +51,5 @@ Geração de números aleatórios em Elixir é baseada em semente. Isso signific
 
 1. [Documentação do Elixir](https://hexdocs.pm/elixir/String.html): Explore o poderoso e elegante Elixir, com foco em sua simplicidade e alta produtividade.
 
-2. [REPL do Elixir](https://elixir-repl.com/): Pratique Elixir em tempo real sem instalar nada no seu sistema.
 
 3. [Exercism Elixir Track](https://exercism.io/tracks/elixir): Aprenda Elixir através de exercícios práticos e obtenha feedback de mentores.
-
-4. [Documentação OTP](http://erlang.org/doc/apps/stdlib/rand.html): Aprofunde-se na biblioteca padrão do Erlang/OTP, usada extensivamente em Elixir.

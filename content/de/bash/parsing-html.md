@@ -28,7 +28,6 @@ Dieser Befehl gibt den Titel der Webseite von 'https://beispielwebsite.de/' zur�
 HTML-Parsing stammt aus den Anfängen des Internets, als Websites hauptsächlich auf HTML basierten und es daher notwendig war, HTML strukturiert zu analysieren, um Daten zu extrahieren. Alternativen zu Bash für das Parsen von HTML umfassen die Verwendung von Java, Python und Ruby, die eingebaute Funktionen für das HTML-Parsing mit komplexeren Funktionalitäten bieten. Die Implementierung des Parsing in Bash umfasst im Wesentlichen die Verwendung von regulären Ausdrücken oder Tools zur Textverarbeitung wie `grep` und `sed`.
 
 ## Weiterführende Links:
-1. [Learn Shell: HTML Parsing](https://www.learnshell.org/en/Parsing_html)
 2. [GNU Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
 
 Um dein Wissen zu vertiefen, lies die angeführten Ressourcen und übe, um besser zu werden. Lerne mehr, sei mehr!

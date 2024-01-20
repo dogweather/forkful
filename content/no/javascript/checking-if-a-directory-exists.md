@@ -37,5 +37,4 @@ Metoden 'fs.access()' brukes her fordi det er asynkront, dvs. det blokkerer ikke
 ## Se Også:
 1. Node.js fs Docs: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
 2. Alternativer til Node.js fs: [https://www.npmjs.com/package/graceful-fs](https://www.npmjs.com/package/graceful-fs)
-3. Mer om asynkron programmering i Node.js: [https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks](https://nodejs.dev/learn/javascript-asynchronous-programming-and-callbacks)
 4. Generelle feilhåndtering i JavaScript: [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Control_flow_and_error_handling)

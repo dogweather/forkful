@@ -51,7 +51,4 @@ Szczegóły implementacji: Operator `+` lub metoda `.concat()` łączy łańcuch
 
 ## Zobacz również:
 
-1. [MDN Web Docs: String.prototype.concat()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/String/concat)
-2. [MDN Web Docs: Template literals (szablony łańcuchów)](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/template_strings)
-3. [JavaScript Info: Konkatenacja łańcuchów](https://pl.javascript.info/string#konkatenacja-czyli-laczenie-lancuchow) 
 4. [W3Schools: JavaScript String Methods](https://www.w3schools.com/js/js_string_methods.asp)

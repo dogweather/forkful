@@ -44,4 +44,3 @@ Funzioni come `doesDirectoryExist` sono fondamentali in qualsiasi linguaggio di 
 
 ## Vedi Anche
 1. [Modulo System.Directory - Hackage Haskell](https://hackage.haskell.org/package/directory-1.3.6.0/docs/System-Directory.html)
-2. [File e directory in Haskell - Wiki Haskell](https://wiki.haskell.org/High-level_directory_manipulation)

@@ -43,4 +43,3 @@ PowerShell - це мова сценаріїв, що була розроблен�
 ## Дивіться також:
 
 1. Офіційна документація PowerShell: [https://docs.microsoft.com/uk-ua/powershell/](https://docs.microsoft.com/uk-ua/powershell/)
-2. Навчальний курс по PowerShell від Microsoft: [https://docs.microsoft.com/uk-ua/learn/modules/powershell-basics/](https://docs.microsoft.com/uk-ua/learn/modules/powershell-basics/)

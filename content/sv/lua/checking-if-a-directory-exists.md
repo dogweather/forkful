@@ -42,5 +42,4 @@ Det är viktigt att notera att funktionen lfs.attributes i exemplet ovan returne
 
 ## Se även
 
-1. [LuaFileSystem dokumentation](http://keplerproject.github.io/luafilesystem/manual.html#attributes)
 2. [Lua User Wiki: Fil och Mapp funktioner](http://lua-users.org/wiki/FileAndDirectoryOperations)

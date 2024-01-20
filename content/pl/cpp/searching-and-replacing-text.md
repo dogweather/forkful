@@ -49,4 +49,3 @@ W powyższym kodzie, metoda `find()` wyszukuje "programistą" w tekście, a `rep
 
 1. Dokumentację standardowej biblioteki szablonów C++ (STL): [STL Dokumentacja](http://www.cplusplus.com/reference/string/string/)
 2. Dokumentacja biblioteki Boost: [Boost Dokumentacja](https://www.boost.org/doc/libs/)
-3. "Effective Modern C++" autorstwa Scott Meyersa: [Effective Modern C++](https://www.amazon.com/Effective-Modern-Specific-Ways-Improve/dp/1491903996)

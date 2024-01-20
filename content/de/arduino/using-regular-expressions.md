@@ -59,4 +59,3 @@ Weitere Informationen und Beispiele finden Sie unter diesen Links:
 
 1. [C++ Reguläre Ausdrücke (RegEx) - cppreference.com](https://en.cppreference.com/w/cpp/regex)
 2. [Arduino-Referenz - Arduino.cc](https://www.arduino.cc/reference/en/)
-3. [Reguläre Ausdrücke in C - tutorialspoint.com](https://www.tutorialspoint.com/c_standard_library/c_function_regexec.htm)

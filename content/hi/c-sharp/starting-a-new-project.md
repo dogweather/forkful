@@ -44,6 +44,4 @@ namespace NewProjectExample
 ## यह भी देखें:
 
 1. [Microsoft: .NET प्रोजेक्ट बनाएं](https://docs.microsoft.com/hi-in/dotnet/core/tools/dotnet-new)
-2. [Visual Studio पर प्रोजेक्ट बनाएँ](https://docs.microsoft.com/hi-in/visualstudio/ide/how-to-create-new-projects?view=vs-2022) 
 3. [C# प्रोग्रामिंग गाइड](https://docs.microsoft.com/hi-in/dotnet/csharp/)
-4. [C# प्रोजेक्ट ट्यूटोरियल](https://www.tutorialsteacher.com/csharp/csharp-programming)

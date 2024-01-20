@@ -57,4 +57,3 @@ Salida del programa: Si el código es exitoso, no habrá ninguna salida. Si fall
 
 1. Biblioteca libcurl: [https://curl.haxx.se/libcurl/c/](https://curl.haxx.se/libcurl/c/)
 2. Solicitudes HTTP: [https://developer.mozilla.org/es/docs/Web/HTTP/Overview](https://developer.mozilla.org/es/docs/Web/HTTP/Overview)
-3. Apuntes: AWS para programadores en C: [https://aws.github.io/aws-sdk-cpp/guide/](https://aws.github.io/aws-sdk-cpp/guide/)

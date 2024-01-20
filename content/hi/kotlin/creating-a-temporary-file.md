@@ -41,7 +41,5 @@ fun main() {
 
 ## देखने के लिए भी:
 
-1. [Kotlin डॉक्यूमेंटेशन: अस्थायी फ़ाइलें](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/create-temp-file.html)
 
 2. [StackOverflow: कैसे अस्थायी फ़ाइलें Kotlin में बनाएं](https://stackoverflow.com/questions/5694385/creating-temporary-files-in-android)
-3. [Baeldung: Java में अस्थायी फ़ाइलें](https://www.baeldung.com/java-create-temporary-file)

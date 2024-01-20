@@ -37,5 +37,4 @@ Swift의 DateFormatter는 유연한 날짜 파싱을 가능하게 하지만, 사
 
 ## 참고자료:
 1. [Apple Developer Documentation: DateFormatter](https://developer.apple.com/documentation/foundation/dateformatter)
-2. [Parsing Dates and Times in Swift](https://nshipster.com/dateformatter/)
 3. [Formatting Dates in Swift](https://www.hackingwithswift.com/articles/141/working-with-dates-in-swift)

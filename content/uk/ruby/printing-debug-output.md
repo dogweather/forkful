@@ -39,5 +39,3 @@ puts "Значення number: #{number}"
 
 ## Дивись також:
 1. [Розробка програмного забезпечення в Wikipedia](https://uk.wikipedia.org/wiki/%D0%A0%D0%BE%D0%B7%D1%80%D0%BE%D0%B1%D0%BA%D0%B0_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BD%D0%BE%D0%B3%D0%BE_%D0%B7%D0%B0%D0%B1%D0%B5%D0%B7%D0%BF%D0%B5%D1%87%D0%B5%D0%BD%D0%BD%D1%8F)
-2. [Відлагодження в Ruby](https://www.rubyguides.com/2015/06/ruby-debugging/)
-3. [Ruby Documentation: Debugger](https://ruby-doc.org/stdlib-2.5.1/libdoc/debugger/rdoc/DEBUGGER__.html)

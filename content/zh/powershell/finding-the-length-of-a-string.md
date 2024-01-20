@@ -37,6 +37,5 @@ The length of the string is: 13
 
 ## 参见：
 
-1. [Microsoft 官方文档：关于字符串](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_strings)
 2. [Stack Overflow 讨论：如何在 PowerShell 中获取字符串长度](https://stackoverflow.com/questions/1264499/how-do-i-find-the-length-of-a-string-in-powershell)
 3. [Microsoft 文档：Measure-Object](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.utility/measure-object)

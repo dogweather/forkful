@@ -46,7 +46,5 @@ Marchelito 패키지는 환경 변수를 읽어 오는 Code가 자동으로 생�
 
 ## 참조 자료:
 
-1. [Marchelito documentation](https://package.elm-lang.org/packages/marcelrienks/marchelito/latest/) 
 2. [Elm official documentation](https://elm-lang.org/) 
-3. [Processing command-line arguments in Elm](https://korban.net/posts/elm/2018-11-25-processing-command-line-arguments-in-elm/)
 4. [Elm guide on interactivity](https://guide.elm-lang.org/interop/)

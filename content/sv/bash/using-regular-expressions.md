@@ -38,6 +38,4 @@ Reguljära uttryck har sitt ursprung från matematisk notation för att beskriva
 
 För mer detaljerad information och praktiska exempel, ta en titt på dessa källor:
 
-1. [Reguljära Uttryck Guide](https://linuxconfig.org/learning-linux-commands-grep)
-2. [Bash-reguljära uttrycksexempel](https://ryanstutorials.net/bash-scripting-tutorial/bash-regular-expressions.php)
 3. [Sed & Awk - Två textmanipuleringsverktyg](https://www.oreilly.com/library/view/sed-awk/1565922255/)

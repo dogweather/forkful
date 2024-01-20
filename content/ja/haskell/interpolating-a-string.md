@@ -43,6 +43,4 @@ Haskellでは、`Text.Printf`モジュールの`printf`関数を使用して文�
 
 ## 関連情報 ("See Also")
 
-1. `printf`関数の詳細: [Haskellでprintfを使う](https://www.haskell.org/tutorial/printf.html)
 2. `Text.Printf`モジュールの詳細: [HaskellのText.Printfモジュール](https://hackage.haskell.org/package/base-4.14.1.0/docs/Text-Printf.html)
-3. Haskellでの文字列連結: [Haskellで文字列をつなげる](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/string-concatenation)

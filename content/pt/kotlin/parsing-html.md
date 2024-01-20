@@ -56,6 +56,4 @@ A implementação básica do parsing de HTML em Kotlin envolve o uso de uma bibl
 
 1. [Jsoup - Library de Parsing em Java](https://jsoup.org/)
 2. [HtmlCleaner - Java HTML Parser](https://htmlcleaner.sourceforge.io/)
-3. [Jericho HTML Parser](https://jericho.htmlparser.net/docs/index.html)
 4. [Análise de HTML no Android](https://developer.android.com/guide/topics/ui/declaring-layout)
-5. [Parseando HTML em Kotlin com Jsoup](https://www.baeldung.com/kotlin-jsoup)

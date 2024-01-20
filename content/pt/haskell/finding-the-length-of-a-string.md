@@ -48,5 +48,4 @@ Você pode aprender mais sobre strings e listas em Haskell nos seguintes recurso
 
 1. LYAHFGG (Learn You a Haskell For Great Good) sobre [listas](http://learnyouahaskell.com/starting-out#tuples)
 2. Real World Haskell: [Strings e listas de caracteres](http://book.realworldhaskell.org/read/using-typeclasses.html)
-3. A implementação da função [length](https://hackage.haskell.org/package/base-4.15.0.0/docs/src/GHC.List.html#length) na biblioteca padrão de Haskell
 4. Se você é novo em Haskell, você pode achar útil esse tutorial sobre [setup de ambiente e sintaxe básica](http://learnyouahaskell.com/introduction).

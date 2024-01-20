@@ -45,5 +45,4 @@ fn main() {
 
 ## Дивіться також:
 
-1. [Офіційна документація Rust з порівнянням дат](https://lifthrasiir.github.io/rust-almanac/item/datetime.html)
 2. [Бібліотека Chrono Rust](https://docs.rs/chrono/0.4.11/chrono/)

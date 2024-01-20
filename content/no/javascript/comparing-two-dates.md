@@ -52,6 +52,5 @@ Når det gjelder implementeringsdetaljer, når du bruker `new Date()`, bruker Ja
 
 ## Se også:
 
-1. [MDN Web Docs: Date](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Reference/Global_Objects/Date)
 2. [ECMAScript 2016: Date Objects](https://www.ecma-international.org/ecma-262/7.0/index.html#sec-date-objects)
 3. [StackOverflow: Hvordan sammenligne datoer i JavaScript](https://stackoverflow.com/questions/492994/compare-two-dates-with-javascript)

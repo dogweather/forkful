@@ -35,6 +35,5 @@ println(date)
 实施日期解析有两个主要步骤。首先，函数读取并分析字符串中的每个字符。一旦发现匹配ISO 8601格式的字符序列，函数就会把它们装换成日期对象。
 
 ## 另请参阅：
-1. Gleam官方文档的“DateTime”的部分：[https://hexdocs.pm/gleam_stdlib/gleam/datetime.html](https://hexdocs.pm/gleam_stdlib/gleam/datetime.html)。
 2. 关于ISO 8601的详细信息：[https://en.wikipedia.org/wiki/ISO_8601](https://en.wikipedia.org/wiki/ISO_8601)。
 3. 基于Rust的日期和时间库：[https://docs.rs/chrono/0.4.19/chrono/](https://docs.rs/chrono/0.4.19/chrono/)。

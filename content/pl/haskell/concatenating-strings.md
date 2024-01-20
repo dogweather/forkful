@@ -34,4 +34,3 @@ Szczegółem implementacji jest to, że `++` ma złożoność O(n), więc jeśli
 ## Zobacz także
 1. [Dokumenty Hackage dla `++`](http://hackage.haskell.org/package/base-4.14.0.0/docs/Prelude.html#v:-43--43-)
 2. [Haskell Wiki o ciągach](https://wiki.haskell.org/Strings)
-3. [Haskell Wiki o Data.Text](https://wiki.haskell.org/Data.Text_Function_cheatsheet)

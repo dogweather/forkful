@@ -38,5 +38,4 @@ Szczegółowo, PowerShell korzysta z COM interfejsu HTML Document, który reprez
 ## Zobacz również:
 
 1. [Podstawowe nasłuchiwacze DOM](https://developer.mozilla.org/pl/docs/Web/API/Document_Object_Model)
-2. [Parsowanie zawartości strony internetowej z PowerShell](https://4sysops.com/archives/parsing-html-webpages-with-powershell/)
 3. [Dokumentacja `Invoke-WebRequest`](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)

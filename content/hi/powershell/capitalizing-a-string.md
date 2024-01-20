@@ -36,6 +36,4 @@ Powershell में स्ट्रिंग्स की मूंटनी
 ## अधिक जानकारी:
 यदि आप PowerShell के कठिन समस्याओं का समाधान करने में रुचि रखते हैं, तो निम्नलिखित लिंक आपके लिए उपयोगी हो सकते हैं:
 
-1. [PowerShell स्ट्रिंग्स ट्यूटोरियल](https://docs.microsoft.com/hi-in/powershell/scripting/developer/text/string-type?view=powershell-7.1): हाउटूज और उदाहरणों के साथ विभिन्न स्ट्रिंग ऑपरेशन्स।
 2. [.NET डॉक्यूमेंटेशन](https://docs.microsoft.com/hi-in/dotnet/api/system.globalization.textinfo.totitlecase?view=net-5.0): `ToTitleCase` मेथड का विस्तृत विवरण।
-3. [कन्वर्जन और कास्टिंग](https://www.sapien.com/blog/2014/09/10/powershell-casting-and-conversion/): PowerShell में टाइप कन्वर्जन कैसे किया जाता है।

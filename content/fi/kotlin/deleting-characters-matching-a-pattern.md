@@ -42,5 +42,4 @@ Tässä esimerkissä käytämme regex lauseketta "\\d+", joka tunnistaa yhden ta
 ## Katso myös
 
 1. [Kotlinin virallinen dokumentaatio replace()-funktiosta](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
-2. [Tietoa säännöllisistä lausekkeista (regex) Kotlinissa](https://www.programiz.com/kotlin-programming/regex)
 3. [Kattava opas regex-syntaksiin](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions)

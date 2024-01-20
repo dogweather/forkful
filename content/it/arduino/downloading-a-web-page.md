@@ -61,5 +61,3 @@ Storicamente, avevamo bisogno di computer potenti per scaricare pagine web. Ma a
 Per approfondire, dai un'occhiata a queste risorse:
 
 1. Documentazione ufficiale dell'Arduino su Ethernet - [https://www.arduino.cc/en/Reference/Ethernet](https://www.arduino.cc/en/Reference/Ethernet)
-2. Tutorial su come utilizzare la libreria WiFi101 - [https://www.arduino.cc/en/Guide/WiFi101](https://www.arduino.cc/en/Guide/WiFi101) 
-3. Una guida al web scraping etico - [http://webscraping.com/data-extraction-guide](http://webscraping.com/data-extraction-guide)

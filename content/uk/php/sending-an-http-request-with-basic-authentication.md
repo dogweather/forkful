@@ -46,4 +46,3 @@ if ($response) {
 ## Додатково:
 1. [Основна аутентифікація HTTP (MDN)](https://developer.mozilla.org/uk/docs/Web/HTTP/Authentication)
 2. [HTTP-аутентифікація в PHP (PHP.net)](https://www.php.net/manual/en/features.http-auth.php)
-3. [Алтернативи основної аутентифікації (authentication.com)](https://authentication.com/alternative-authentication-methods-to-basic-authentication)

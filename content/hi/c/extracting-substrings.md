@@ -40,4 +40,3 @@ int main () {
 ## और देखें:
 1. [C String Manipulation](https://www.tutorialspoint.com/cprogramming/c_strings.htm)
 2. [C String Functions](https://www.cplusplus.com/reference/cstring/)
-3. [C Programming in Hindi](https://www.geekhideout.com/courses/c-programming-in-hindi/)

@@ -46,4 +46,3 @@ Haskell의 `System.Directory` 모듈에서 제공하는 `doesDirectoryExist` 함
 
 1. [Haskell Documentation : System.Directory](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
 2. [Learn Haskell for Great Good!](http://learnyouahaskell.com)
-3. [Haskell Tutorial on Reading, Writing and Appending Files](https://www.tutorialspoint.com/haskell/haskell_file_io.htm)

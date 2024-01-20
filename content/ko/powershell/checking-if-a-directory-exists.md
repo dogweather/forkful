@@ -51,4 +51,3 @@ Directory Does Not Exist
 
 1. [Test-Path 명령어](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/test-path?view=powershell-7)
 2. [Get-ChildItem 명령어](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.management/get-childitem?view=powershell-7)
-3. [PowerShell 디렉토리 검색](https://ss64.com/ps/syntax-dir.html)

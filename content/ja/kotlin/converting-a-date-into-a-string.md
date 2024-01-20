@@ -41,5 +41,3 @@ JavaScriptやPython等の他の言語でも同様の日付変換処理が存在�
 ##  参考資料もご覧ください: 
 
 Kotlinでの日時操作についてさらに詳しく知りたい方は以下のリンクを参照してください。
-
-- [StackOverflow: Formatting date in Kotlin](https://stackoverflow.com/questions/50716187/formatting-date-in-kotlin)

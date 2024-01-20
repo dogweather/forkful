@@ -50,4 +50,3 @@ strncat(char *dest, const char * src, size_t n)
 
 1. [Стрічки в C - GeeksforGeeks](https://www.geeksforgeeks.org/strings-in-c-2/)
 2. [C Library Functions - Tutorialspoint](https://www.tutorialspoint.com/c_standard_library/index.htm)
-3. [C String Concatenation: strncat() - Programiz](https://www.programiz.com/c-programming/string-concatenation)

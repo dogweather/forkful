@@ -43,5 +43,4 @@ Kun ajat tätä koodia, se tulostaa "esimerkki.txt"-tiedoston sisällön.
 ## Katso myös:
 
 1. Ruby-Dokumentaatio: [File Class](https://ruby-doc.org/core-2.7.0/File.html)
-2. Opiskelu Materiaali: [Learn Ruby - File I/O](https://www.learnrubyonline.org/en/File-I%2FO)
 3. Foorumi: [Stack Overflow - Ruby](https://stackoverflow.com/questions/tagged/ruby)

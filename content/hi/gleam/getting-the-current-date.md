@@ -37,4 +37,3 @@ fn get_current_date() {
 ## यह भी देखें
 
 1. [Erlang Documentation - Time and Date](https://erlang.org/doc/apps/erts/time_correction.html)
-2. [Gleam Documentation - Interoperability](https://gleam.run/book/tour/interop.html)

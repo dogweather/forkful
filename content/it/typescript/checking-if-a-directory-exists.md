@@ -51,5 +51,4 @@ access('/path/to/dir', error => {
 ## Vedi anche
 
 1. Documentazione Node.js `fs`: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-2. Guida all'utilizzo di `fs` in TypeScript/Node.js: [https://masteringjs.io/tutorials/node/fs-exists](https://masteringjs.io/tutorials/node/fs-exists)
 3. Stack Overflow - 'fs.existsSync vs fs.access': [https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)

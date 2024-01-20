@@ -44,4 +44,3 @@ regfree(&regex);
 ## ראה גם
 1. [מבוא אינטרנטי לביטויים מתוקנים](https://developer.mozilla.org/he/docs/Web/JavaScript/Guide/Regular_Expressions)
 2. [מדריך שפת תכנות באינטרנט שבו מוסברות הבניות של ביטויים מתוקנים](https://regexone.com/)
-3. [רשימת משאבים ללמידת ביטויים מתוקנים ב-Dev.to](https://dev.to/davidmm1707/regular-expressions-resources-3cf7)

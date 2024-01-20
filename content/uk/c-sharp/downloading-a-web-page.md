@@ -55,6 +55,5 @@ HttpClient був створений з метою поліпшення проц
 ## Див. також:
 
 1. [MSDN HttpClient Class](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient)
-2. [Comparison of Different Ways to Download Web Pages in .NET](https://exceptionnotfound.net/the-ultimate-guide-to-the-async-and-await-keywords-in-c-sharp/)
 3. [ScrapySharp](https://github.com/rflechner/ScrapySharp)
 4. [HtmlAgilityPack](https://html-agility-pack.net/)

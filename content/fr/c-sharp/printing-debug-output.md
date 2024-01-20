@@ -45,7 +45,3 @@ En interne, `Debug.WriteLine` en C# écrit dans une ou plusieurs "écoutes", qui
 ## Voir aussi:
 
 1. [Documentation Microsoft sur System.Diagnostics.Debug](https://docs.microsoft.com/fr-fr/dotnet/api/system.diagnostics.debug?view=net-5.0)
-
-2. [Article sur les principes fondamentaux de la sortie de débogage](https://docs.microsoft.com/fr-fr/visualstudio/debugger/essential-debugging-guide?view=vs-2019)
-
-3. [Utilisation de la sortie de débogage dans Visual Studio](https://docs.microsoft.com/fr-fr/visualstudio/debugger/how-to-use-the-debugger-feature-of-the-output-window?view=vs-2019)

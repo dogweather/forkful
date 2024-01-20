@@ -44,6 +44,5 @@ Detalles de la implementación: `replacingOccurrences(of:with:)` funciona realiz
 
 ## Ver También
 
-1. La [documentación oficial de Swift](https://developer.apple.com/documentation/swift/string/2893961-replacingoccurrences) sobre el método `replacingOccurrences(of:with:)`.
 2. [Una introducción a las expresiones regulares en Swift](https://www.hackingwithswift.com/articles/108/how-to-use-regular-expressions-in-swift).
 3. [Un video tutorial](https://www.youtube.com/watch?v=HZ7TOJ61V70) sobre cómo usar el método `replacingOccurrences(of:with:)`.

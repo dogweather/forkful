@@ -54,5 +54,4 @@ Detalles de implementación: El método Jsoup.connect() establece una conexión 
 ## Ver también
 
 1. [Documentación de JSoup](https://jsoup.org/)
-2. [Guía de HttpClient de Apache](http://hc.apache.org/httpcomponents-client-4.5.x/tutorial/html/)
 3. [Clase HttpURLConnection de Java](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)

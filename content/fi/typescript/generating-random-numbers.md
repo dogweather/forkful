@@ -36,6 +36,5 @@ TypeScriptin satunnaislukujen luominen pohjautuu JavaScriptin Math.random():iin 
 
 Jos haluat laajentaa tietojasi satunnaislukujen luomisesta ja sen käytön eri  yhteyksissä, katso seuraavat linkit:
 
-1. ["JavaScript: The Good Parts" by Douglas Crockford](http://bdcampbell.net/javascript/book/javascript_the_good_parts.pdf)
 2. [MDN Math.random() documentation](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
 3. [Mozilla Quantum Random Number Generator](https://developer.mozilla.org/en-US/docs/Web/API/Window/crypto)

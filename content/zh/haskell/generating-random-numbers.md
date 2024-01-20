@@ -38,5 +38,4 @@ main = do
 关于生成随机数和Haskell的更多信息，您可以参照以下链接：
 
 1. [Haskell Library - System.Random](http://hackage.haskell.org/package/random-1.1/docs/System-Random.html)
-2. [Haskell Wiki - Random Numbers](https://wiki.haskell.org/Random_numbers)
 3. [Learn You a Haskell For Great Good - Input and Output](http://learnyouahaskell.com/input-and-output)

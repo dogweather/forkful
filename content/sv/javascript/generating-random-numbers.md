@@ -57,6 +57,5 @@ Det är viktigt att notera att Math.random() inte genererar kryptografiskt säkr
 ## Se även:
 
 1. [MDN Web Docs: Math.random()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random)
-2. [Javascript.info: Genererar slumpmässiga värden](https://javascript.info/random)
 3. [NPM: Lodash](https://www.npmjs.com/package/lodash), [NPM: Chance](https://www.npmjs.com/package/chance)
 4. [Säkerhet.stackexchange: Använda Math.random() för kryptografiska ändamål](https://security.stackexchange.com/questions/14357/is-javascripts-math-random-cryptographically-secure)

@@ -51,5 +51,4 @@ Write-Output $dateString
 ## Дивіться також:
 
 1. [Документація по датах і часу в .Net](https://docs.microsoft.com/uk-ua/dotnet/standard/datetime/)
-2. [Форматування дати і часу в PowerShell](https://www.cyberciti.biz/faq/powershell-get-current-date/)
 3. [Функція ToString() в .Net](https://docs.microsoft.com/uk-ua/dotnet/api/system.datetime.tostring)

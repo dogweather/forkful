@@ -49,6 +49,4 @@ echo $diff_days
 ## Див. також:
 
 1. Детально про [Fish Shell](https://fishshell.com/docs/current/index.html)
-2. Порівняння дат у інших [мовах програмування](https://www.baeldung.com/cs/comparing-dates)
 3. Unix [час](https://en.wikipedia.org/wiki/Unix_time)
-4. Більше про [операції з датами в Fish Shell](https://fishshell.com/docs/current/cmds/date.html)

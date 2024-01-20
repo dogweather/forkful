@@ -37,4 +37,3 @@ Bash는 나열되는 많은 셀 스크립트 언어 중 하나로, 문자열 보
 
 1. [Bash Beginners Guide](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_03_03.html)
 2. [Bash Scripting Tutorial](https://www.shellscript.sh/variables1.html)
-3. [String Interpolation in Bash](https://linuxize.com/post/bash-variable-in-string/)

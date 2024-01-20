@@ -41,7 +41,6 @@ Det finns alternativ till `date`, såsom `strftime` i C/C++. Det är mjukvara so
 Mer information om `date` och relaterade ämnen:
 
 1. [Bash Manual](https://www.gnu.org/software/bash/manual/bash.html)
-2. [Date (Unix)- Wikipedia](https://en.wikipedia.org/wiki/Date_(Unix))
 3. [Datetime i Bash - Stack Overflow](https://stackoverflow.com/questions/1401482/yyyy-mm-dd-format-date-in-shell-script)
 
 Lycka till med dina Bash-programmeringsäventyr!

@@ -34,4 +34,3 @@ hello world
 ## देखिए भी:
 1. [GNU Bash डॉक्यूमेंटेशन](https://www.gnu.org/software/bash/)
 2. [tr कमांड का उपयोग करना](http://www.linfo.org/tr.html)
-3. [Bash में स्ट्रिंग्स को लोअरकेस में बदलने के अन्य तरीके](https://www.cyberciti.biz/faq/unix-linux-idowncase-string-bash-ksh-shell/)

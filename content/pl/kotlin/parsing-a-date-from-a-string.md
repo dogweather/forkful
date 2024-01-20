@@ -42,6 +42,4 @@ W Kotlinie, do parsowania daty ze stringa, używany jest obiekt `DateTimeFormatt
 
 ## Zobacz również:
 
-1. Kotlin dokumentacja do DateTimeFormatter: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.js/-date-time-formatter/index.html)
 2. Tutorial o manipulacji datami w Kotlinie: [link](https://www.baeldung.com/kotlin/dates)
-3. Podcast na temat zarządzania datami w Kotlinie: [link](https://talkingkotlin.com/dates/)

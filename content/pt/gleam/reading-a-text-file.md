@@ -45,7 +45,3 @@ Em termos de implementação, Gleam usa funções de Elixir subjacentes para int
 ## Veja Também
 
 Aqui estão alguns links úteis para aprender mais sobre programação Gleam e leitura de arquivos de texto:
-
-1. Documentação oficial do Gleam: [https://gleam.run/docs/introduction/](https://gleam.run/docs/introduction/)
-2. Tutorial de Arquivos de Texto em Gleam: [https://example.com/tutorial](https://example.com/tutorial)
-3. Recursos de Programação Gleam: [https://example.com/resources](https://example.com/resources)

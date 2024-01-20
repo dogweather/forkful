@@ -46,5 +46,3 @@ parseDate "2021-09-15"
 व्या पार्सिंग के सम्बंध में अधिक जानकारी के लिए, निम्नलिखित स्रोतों की जांच करें:
 
 1. [Haskell time package](https://hackage.haskell.org/package/time)
-2. [Parse, format, and manipulate dates with Haskell](https://williamyaoh.com/posts/2019-09-16-date-parsing-haskell.html)
-3. [Haskell Date and Time manipulation guide](https://adit.io/posts/2013-04-10-date-time-manipulation-in-haskell.html)

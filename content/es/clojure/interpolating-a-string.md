@@ -46,5 +46,4 @@ Resultado:
 
 1. Documentación oficial de Clojure: [format](https://clojuredocs.org/clojure.core/format)
 2. Página de Clojure de Wikipedia: [Clojure](https://es.wikipedia.org/wiki/Clojure)
-3. Guía práctica de Clojure: [Aprendiendo Clojure](https://www.learn-clojure.com/)
 4. `str` vs `format` en Clojure: [Debate en StackOverflow](https://stackoverflow.com/questions/46275278/string-concatenation-vs-format-performance-in-clojure)

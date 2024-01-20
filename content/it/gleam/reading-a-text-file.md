@@ -44,6 +44,5 @@ In Gleam, la lettura di un file di testo sfrutta le funzionalità del modulo fil
 
 Di seguito alcuni link a risorse correlate che potrebbero interessarti:
 
-1. [Documentazione ufficiale Gleam](https://gleam.run/docs/)
 2. [Guida pratica Gleam](https://gleam.run/book/tour/)
 3. [Documentazione del modulo Erlang OTP file](https://erlang.org/doc/man/file.html)

@@ -52,5 +52,3 @@ I ovanstående kod beräknar vi skillnaden mellan dagens datum och ett specifikt
 2. [`std::tm` strukturen på cppreference.com](https://en.cppreference.com/w/cpp/chrono/c/tm)
 
 3. [Deep Dive into C++ Date and Time på stackoverflow.com](https://stackoverflow.com/questions/997946/how-to-get-current-time-and-date-in-c)
-
-4. [Alternatives for handling dates and times in C++](Https://stackabuse.com/how-to-get-the-current-date-and-time-in-c/)

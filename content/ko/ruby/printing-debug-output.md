@@ -47,8 +47,6 @@ logger.info "This is an information"
 
 ## 참고 자료:
 
-1. [DEBUGGING WITH RUBY](https://www.ruby-lang.org/en/documentation/debugging/)
-2. [Ruby Logger](https://ruby-doc.org/stdlib/libdoc/logger/rdoc/Logger.html)
 3. [pry](https://github.com/pry/pry)
 
 이외에도 많은 디버그 라이브러리와 도구들이 있으니 참고하시기 바랍니다.

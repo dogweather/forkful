@@ -49,4 +49,3 @@ Welcome to My New Project!
 ## ראה גם:
 1. [התיעוד הרשמי של Kotlin](https://kotlinlang.org/docs/home.html)
 2. ["קורס למדריך עבודה מעשית עם Kotlin"](https://www.youtube.com/playlist?list=PLQQYSgDznKyvc1xTypQYTDJla1oMh5I-4)
-3. ["היכן להתחיל עם Kotlin?"](https://www.quora.com/Where-do-I-start-with-Kotlin)

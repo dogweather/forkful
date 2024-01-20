@@ -53,6 +53,5 @@ Informações importantes de implementação: no PowerShell, a interpolação de
 Para mais informações sobre a interpolação de strings no PowerShell, consulte os links abaixo:
 
 1. [String Interpolation in PowerShell](https://ss64.com/ps/syntax-operators.html)
-2. [Understanding strings in PowerShell](https://www.computerperformance.co.uk/powershell/powershell-3-about-strings)
 
 Lembre-se, a melhor maneira de aprender é praticando, então tente usar a interpolação de strings no seu próximo programa PowerShell.

@@ -60,4 +60,3 @@ int main() {
 
 1. [W3Schools HTML Parsing](https://www.w3schools.com/php/php_ref_simplexml.asp)
 2. [HTML Parsing in Python](https://docs.python.org/3/library/html.parser.html)
-3. [Boost Library for HTML Parsing in C++](https://www.boost.org/doc/libs/1_74_0/libs/beast/doc/html/beast/using_http/basics.html)

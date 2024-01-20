@@ -80,7 +80,6 @@ For more details and examples, check the official Go documentation:
 - [bytes package](https://golang.org/pkg/bytes/)
 
 Also, see these articles for a deeper understanding:
-1. [String concatenation in Go](https://yourbasic.org/golang/string-concatenation/)
 2. [Go by Example: String Functions](https://gobyexample.com/string-functions)
 
 Remember, choosing the correct way to concatenate depends on your scenario. Always keep performance in mind when working with large amounts of data.

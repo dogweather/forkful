@@ -49,5 +49,4 @@ print("I am {}. years old.".format(age))
 
 ## ראה גם
 1. [מדריך Python - מחרוזות מעוצבות](https://docs.python.org/3/tutorial/inputoutput.html#fancier-output-formatting)
-2. [אינטרפולציה של מחרוזות - Python Wiki](https://wiki.python.org/moin/StringInterpolation)
 3. [אינטרפולציה של מחרוזות נכונה ב-Python - Real Python](https://realpython.com/python-f-strings/)

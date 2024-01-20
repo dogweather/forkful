@@ -49,5 +49,4 @@ Tuttavia, l'interpolazione di stringhe è generalmente considerata più leggibil
 
 ## Vedere Anche
 
-1. [Guida ufficiale di PowerShell sulla manipolazione delle stringhe](https://docs.microsoft.com/it-it/powershell/scripting/samples/string-manipulation?view=powershell-7.1)
 2. [Documentazione di Microsoft su `-f` operator](https://docs.microsoft.com/it-it/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#format-operator-f)

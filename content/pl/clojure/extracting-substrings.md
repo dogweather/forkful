@@ -39,6 +39,4 @@ Implementacja: Warto zauważyć, że indeksy w Clojure, jak w wielu językach pr
 
 ## Zobacz również
 Dla dalszego rozwinięcia tematu polecam następujące źródła:
-1. Oficjalna dokumentacja Clojure na temat obsługi ciągów: [Clojure Strings](https://clojure.org/reference/strings) 
-2. 'Clojure for the Brave and True' - doskonałe źródło dla początkujących: [Odczytywanie danych z ciągów](https://www.braveclojure.com/reading-data-from-string/) 
 3. Stackoverflow - Zawsze pełne przydatnych wątków na temat programowania: [Clojure tags on Stackoverflow](https://stackoverflow.com/questions/tagged/clojure)

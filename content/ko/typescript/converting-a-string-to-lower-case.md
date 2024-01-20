@@ -44,4 +44,3 @@ let lowerCaseStr = [...str].map(ch => ch.toLowerCase()).join('');
 다음은 배울 수 있는 관련 자료들 입니다:
 
 1. [MDN Web Docs - String.prototype.toLowerCase()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-2. [TypeScript - Working with Strings](https://www.typescripttutorial.net/typescript-tutorial/typescript-strings/)

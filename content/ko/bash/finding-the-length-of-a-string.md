@@ -33,5 +33,4 @@ Bash에서 문자열 길이를 찾는 방법은 간단히는 ${#변수명} 구�
 
 ## 참조 자료
 1. [GNU Bash Manual : Shell Parameter Expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
-2. [How to find length of string in bash](https://www.cyberciti.biz/faq/unix-linux-bash-find-out-length-of-string/)
 3. [Using wc command in Linux](https://www.geeksforgeeks.org/wc-command-linux-examples/)

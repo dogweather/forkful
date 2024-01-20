@@ -53,6 +53,4 @@ After a week, the date will be: 2022-03-17
 
 ## अधिक जानकारी के लिए:
 
-1. [C Date & Time](https://www.tutorialspoint.com/c_standard_library/time_h.html)
 2. [Adding days to date in C](https://stackoverflow.com/questions/25010159/adding-days-to-date-in-c)
-3. [C Programming Times & Dates](https://www.learn-cocoa.org/in_depth_4/)

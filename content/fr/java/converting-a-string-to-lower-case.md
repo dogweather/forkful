@@ -35,5 +35,3 @@ Les détails de l'implémentation de la méthode `toLowerCase()` en Java dépend
 
 ## Voir aussi :
 1. [Java String toLowerCase() Method - w3schools](https://www.w3schools.com/java/ref_string_tolowercase.asp)
-2. [Java – Convert String to lower case - mkyong](https://mkyong.com/java/java-convert-string-to-lower-case/)
-3. [String toLowerCase() function in Java with Examples - GeeksforGeeks](https://www.geeksforgeeks.org/string-tolowercase-function-in-java-with-examples/)

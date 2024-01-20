@@ -49,4 +49,3 @@ Więcej informacji o Fish Shell i manipulacji stringami można znaleźć poniże
 1. Fish Shell Documentation: [Link](https://fishshell.com/docs/current/index.html)
 2. Fish Shell Tutorial: [Link](https://fishshell.com/docs/current/tutorial.html)
 3. String Manipulation in Fish Shell: [Link](https://fishshell.com/docs/current/commands.html#string)
-4. Your First Script in Fish Shell: [Link](https://github.com/jorgebucaran/fish-cookbook/blob/master/examples/your-first-script.fish)

@@ -44,5 +44,4 @@ func main() {
 לינקים למקורות מקוונים נוספים על הנושא:
 
 1. [מסמכי ה-API של Golang לגבי Time](https://golang.org/pkg/time/#Time)
-2. [Tutorial Golang שלנו על שימוש בספרייה של Time](https://www.tutorialspoint.com/go/go_date_time.htm)
 3. [שאלות נפוצות על נושא ב-StackOverflow](https://stackoverflow.com/questions/tagged/go+time)

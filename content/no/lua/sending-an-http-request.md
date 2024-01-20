@@ -43,6 +43,5 @@ En HTTP-forespørsel kan bli sendt ved å bruke forskjellige metoder som GET, PO
 
 1. [HTTP-forespørselsmetoder](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 2. [Lua 5.1 Nettverksstøtte: socket.http](http://w3.impa.br/~diego/software/luasocket/http.html)
-3. [Lua HTTP-forespørselsbiblioteker](https://luarocks.org/modules/luarocks/luajit-request)
 
 Ikke glem å prøve ut forskjellige forespørselsmetoder og se hvordan serveren reagerer. Lykke til med læringen!

@@ -41,4 +41,3 @@ fs.writeFile(tmpFile, 'Деякий текст', (err) => {
 
 1. [Навчальний посібник Node.js про файлову систему](https://nodejs.org/api/fs.html)
 2. [Генерація тимчасових файлів в Node.js](https://www.npmjs.com/package/tmp)
-3. [Створення та видалення тимчасових файлів в JavaScript](https://www.geekhideout.com/javascript-create-temp-file.shtml)

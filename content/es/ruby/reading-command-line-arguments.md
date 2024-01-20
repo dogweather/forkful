@@ -49,8 +49,6 @@ Este fragmento de código hace que el programa acepte una opción `--age` o `-a`
 ## Ver También:
 Aquí tienes algunos enlaces de interés para más detalles:
 
-1. [Argumentos de Línea de Comandos en Ruby](https://ruby-doc.org/core-2.6.1/ARGV.html)
 2. [Ruby OptionParser](https://ruby-doc.org/stdlib-2.6.1/libdoc/optparse/rdoc/OptionParser.html) 
-3. [Historia de la Línea de Comandos](https://www.howtogeek.com/439199/why-was-the-unix-command-line-designed-as-it-was/)
 
 Por último, ¡Asegúrate de practicar la lectura de los argumentos de la línea de comandos! Es una habilidad útil en la caja de herramientas de cada programador Ruby.

@@ -45,4 +45,3 @@ When picking a method, consider usage context. `.slice()` modifies the original 
 
 1. Ruby Doc String slice : [https://ruby-doc.org/core-2.7.0/String.html#method-i-slice](https://ruby-doc.org/core-2.7.0/String.html#method-i-slice)
 2. Ruby Doc Regex: [https://ruby-doc.org/core-2.7.1/Regexp.html](https://ruby-doc.org/core-2.7.1/Regexp.html)
-3. Substrings in Ruby: [https://www.rubyguides.com/2015/03/ruby-strings/](https://www.rubyguides.com/2015/03/ruby-strings/)

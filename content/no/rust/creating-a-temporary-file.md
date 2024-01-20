@@ -36,8 +36,6 @@ Rust sin implementasjon for å opprette midlertidige filer sikrer automatisk fje
 
 ## Se Også:
 
-1. ["The Rust Standard Library: tempfile"](https://doc.rust-lang.org/std/fs/struct.tempfile.html): Dette er dokumentasjonen for tempfile i Rust, med mer detaljert informasjon og eksempler.
 
-2. ["Programming Rust: Fast, Safe Systems Development''](https://www.amazon.com/Programming-Rust-Fast-Safe-Development/dp/1491927283): For en mer inngående forståelse av Rust programmering, sjekk ut denne boken.
 
 3. ["Rust questions on StackOverflow"](https://stackoverflow.com/questions/tagged/rust): For å få hjelp med spesifikke spørsmål eller problemer, er StackOverflow et ypperlig sted å stille spørsmål til Rust community.

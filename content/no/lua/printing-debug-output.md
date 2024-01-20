@@ -40,4 +40,3 @@ Når det gjelder implementeringsdetaljer, bruker Lua en virtuell stackmaskin for
 
 1. Lua 5.4 referanse manual: [https://www.lua.org/manual/5.4/manual.html](https://www.lua.org/manual/5.4/manual.html)
 2. "Programming in Lua" av Roberto Ierusalimschy: [https://www.lua.org/pil/](https://www.lua.org/pil/)
-3. Lua logging bibliotek: [https://keplerproject.github.io/lualogging/manual.html](https://keplerproject.github.io/lualogging/manual.html)

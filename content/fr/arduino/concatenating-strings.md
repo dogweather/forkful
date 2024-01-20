@@ -50,5 +50,4 @@ La fonction Arduino append(), qui ajoute un caractère ou une chaîne de caract�
 ## Voir Aussi :
 
 1. [Documentation Arduino](https://www.arduino.cc/reference/fr/language/variables/data-types/string/functions/concat/): Détails sur les string en Arduino
-2. [Arduino `+=` operator](https://www.arduino.cc/reference/tr/language/variables/data-types/string/operators/concat/): Détails sur l'opérateur `+=` en Arduino pour la Concaténation de chaînes
 3. [Wikipedia Concatenation](https://fr.wikipedia.org/wiki/Concat%C3%A9nation): L'article Wikipedia sur l'histoire et l'application générale de la concaténation de chaînes.

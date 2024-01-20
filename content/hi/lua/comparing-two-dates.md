@@ -40,5 +40,4 @@ Date 1 is earlier than Date 2
 अधिक जानकारी के लिए, निम्नलिखित संसाधनों पर जाएँ:
 
 1. [Lua 5.3 रेफरेंस मैनुअल](http://www.lua.org/manual/5.3/)
-2. [Lua प्रोग्रामिंग/डेटास और समय](https://en.wikibooks.org/wiki/Lua_Programming/dates_and_time)
 3. [Lua उपयोगकर्ता विकी - os.date और os.time](http://lua-users.org/wiki/OsLibraryTutorial)

@@ -34,6 +34,4 @@ Själva utförandet av 'replace' funktionen sker via noggrann strängbearbetning
 
 ## Se även:
 För mer detaljerad information och vidare läsning om hur du hanterar strängar i Kotlin, följ dessa länkar:
-1. Officiell Kotlin dokumentation för strängar: [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/index.html)
 2. Tutorial för att förstå `replace`-funktioner i Kotlin: [https://www.programiz.com/kotlin-programming/string](https://www.programiz.com/kotlin-programming/string)
-3. Diskussion och exempel på att använda regelbundna uttryck (regex) med Kotlin: [https://www.baeldung.com/kotlin-regex](https://www.baeldung.com/kotlin-regex).

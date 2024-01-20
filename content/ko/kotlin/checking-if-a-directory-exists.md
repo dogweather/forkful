@@ -39,5 +39,4 @@ fun main() {
 1. [Kotlin 공식 문서](https://kotlinlang.org/docs/reference/)
 2. [Oracle Java NIO 문서](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html#exists-java.nio.file.Path-java.nio.file.LinkOption...-)
 3. [Oracle Java IO 문서](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#exists--)
-4. [Kotlin과 자바의 파일 핸들링 비교](http://www.differencebetween.net/technology/difference-between-kotlin-and-java/#:~:text=Difference%20Between%20Kotlin%20and%20Java)
 5. [StackOverflow: 디렉터리 존재 확인 방법 비교](https://stackoverflow.com/questions/3775694/checking-if-a-folder-exists-in-java)

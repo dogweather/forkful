@@ -51,7 +51,5 @@ En termes d'implémentation, Elm étant un langage strictement évalué, l'expre
 Pour plus d'informations sur la gestion des chaînes en Elm, vous pouvez consulter les ressources suivantes :
 
 1. [Documentation officielle Elm sur les chaînes](https://package.elm-lang.org/packages/elm/core/latest/String)
-2. [Elm - Guide de programmation fonctionnelle](https://www.learn-elm.org)
-3. [Concatenation de chaînes en Elm: Approches Profondes](https://elmprogramming.com/string-concatenation.html)
 
 N'oubliez pas, en programmation, la pratique est essentielle. Allez-y, expérimentez avec la concaténation de chaînes en Elm et voyez ce que vous pouvez créer. Bonne programmation!

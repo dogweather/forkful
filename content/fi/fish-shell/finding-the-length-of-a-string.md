@@ -42,6 +42,4 @@ Merkkijonojen pituuden selvittämiseen liittyy yksityiskohtia, kuten se, että t
 
 ## Katso myös:
 
-1. Fish Shell dokumentaatio - [Merkkijonot](https://fishshell.com/docs/current/commands.html#string) 
-2. Tutorial - [Merkkijonojen käsittely Fish Shellissä](https://www.baeldung.com/linux/string-operations-fish-shell) 
-3. Lisätietoja `wc`-komennoista - [Wc (Unix)](https://en.wikipedia.org/wiki/Wc_(Unix))
+1. Fish Shell dokumentaatio - [Merkkijonot](https://fishshell.com/docs/current/commands.html#string)

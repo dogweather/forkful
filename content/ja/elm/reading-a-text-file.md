@@ -53,7 +53,6 @@ main =
 
 ## 関連リンク：
 1. Elmの公式ドキュメント: [http.get命令](https://package.elm-lang.org/packages/elm/http/latest/Http#get)
-2. Elmのファイル読み込みに関するディスカッション: [Elm Discourse ](https://discourse.elm-lang.org/t/reading-files-in-elm/226)
 3. ElmとJavaScriptの連搐に関する情報: [Elm Ports](https://guide.elm-lang.org/interop/ports.html)
 
 以上がElmでのテキストファイルの読み込みについての概要です。具体的な問題解決に向けた実装や、具体的なコード例はこの記事が役立つことを願っています。

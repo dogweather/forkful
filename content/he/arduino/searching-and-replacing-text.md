@@ -36,5 +36,3 @@ Serial.println(s); // "שלום ארדואינו"
 ## ראו גם:
 
 1. [מערכת Arduino Reference: String](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/replace/)
-2. [Arduino Forum: עזרה ב- replace()](https://forum.arduino.cc/index.php?topic=593582.0)
-3. [מדריך String Manipulation ל-Arduino](https://programmingelectronics.com/an-arduino-string-manipulation-arduino-to-arduino-tutorial/)

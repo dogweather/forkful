@@ -47,4 +47,3 @@ Il valore di a è: 5
 
 ## Vedi anche:
 1. [Classe Debug (Microsoft Docs)](https://docs.microsoft.com/it-it/dotnet/api/system.diagnostics.debug?view=net-5.0)
-2. [Come utilizzare la finestra di output (Microsoft Docs)](https://docs.microsoft.com/it-it/visualstudio/ide/how-to-use-the-output-window?view=vs-2019)

@@ -48,8 +48,6 @@ Implementation-wise, Gleam's `file.read` function uses the underlying file readi
 
 ## See Also
 
-1. [Gleam's file module documentation](https://hexdocs.pm/gleam_stdlib/gleam/file/read/1)
 2. [Gleam - Getting started guide](https://gleam.run/getting-started/)
 3. [Elixir - File docs](https://hexdocs.pm/elixir/File.html)
 4. [Erlang - File docs](http://erlang.org/doc/man/file.html)
-5. [File I/O in BEAM languages](https://fazibear.me/elixir-erlang-io-performance/)

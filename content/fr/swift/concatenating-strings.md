@@ -54,6 +54,5 @@ print(salutation)  // Affiche: "Bonsoir, Stéphanie"
 
 1. [The Swift Programming Language (Swift 5.4): Strings and Characters](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 2. [Apple's developer documentation: String](https://developer.apple.com/documentation/swift/string)
-3. [Working with Strings in Swift - A Comprehensive guide by Prograils](https://prograils.com/posts/working-with-strings-in-swift-comprehensive-guide)
 
 <p></p>

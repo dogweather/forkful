@@ -46,4 +46,3 @@ Lors de la création d'un fichier temporaire en TypeScript, vous pouvez définir
 
 1. [Introduction à Node.js](http://nodejs.org/) : Pour en savoir plus sur la plateforme qui rend possible la programmation TypeScript côté serveur.
 2. [Documentation de tmp-promise](https://github.com/benjamingr/tmp-promise) : Pour des informations détaillées sur les méthodes utilisées dans cet exemple.
-3. [Méthodes alternatives pour gérer les fichiers temporaires](https://nodejs.dev/learn/working-with-file-system-module) : Ce guide présente d'autres façons de gérer les fichiers temporaires en Node.js.

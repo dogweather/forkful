@@ -64,5 +64,4 @@ Go offre una serie di vantaggi. È efficiente, veloce, e grazie alla natura conc
 Puoi trovare ulteriori informazioni sui seguenti link:
 
 1. Documentazione Go net/http package: [https://golang.org/pkg/net/http](https://golang.org/pkg/net/http/)
-2. Un tutorial Go su come scaricare file: [https://golangcode.com/download-a-file-from-a-url/](https://golangcode.com/download-a-file-from-a-url/)
 3. Un articolo su come usare Go per il web scraping: [https://edmundmartin.com/writing-a-web-crawler-in-golang/](https://edmundmartin.com/writing-a-web-crawler-in-golang/)

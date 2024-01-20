@@ -39,7 +39,3 @@ En ce qui concerne les détails de l'implémentation, `filter` en Swift retourne
 Pour plus d'information, visitez ces liens:
 
 1. Le Guide de la Programmation Swift par Apple (Disponible gratuitement sur l'Apple Store): [Guide Swift](https://developer.apple.com/swift/)
-
-2. Documentation officielle de la fonction `filter` dans Swift: [Filter Swift Documentation](https://developer.apple.com/documentation/swift/array/2297359-filter)
-
-3. Codes Swift pour débutants sur GitHub: [GitHub Swift Beginners](https://github.com/kingreza/Swift)

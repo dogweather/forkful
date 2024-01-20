@@ -43,6 +43,3 @@ HELLO, WORLD!
 ## Дивіться також:
 
 1. [Official Microsoft Documentation for ToUpper()](https://docs.microsoft.com/en-us/dotnet/api/system.string.toupper?view=net-5.0)
-2. [Powershell 101: Step into scripting](https://www.microsoft.com/en-us/microsoft-365/blog/2015/11/30/powershell-101-from-a-to-z/)
-3. [Manipulating Strings in Your PowerShell Scripts](https://www.petri.com/manipulating-strings-in-your-powershell-scripts)
-4. [String manipulation in PowerShell](https://devblogs.microsoft.com/scripting/manipulating-strings)

@@ -52,4 +52,3 @@ Istotnym aspektem implementacji `ioutil.TempFile` jest to, że nie tylko tworzy 
 ## Zobacz także:
 
 1. Dokumentacja Golang na temat tworzenia plików tymczasowych: [https://golang.org/pkg/io/ioutil/#TempFile](https://golang.org/pkg/io/ioutil/#TempFile)
-2. Blog o zarządzaniu plikami tymczasowymi w Go: [Temp Files in Go - GopherAcademy](https://blog.gopheracademy.com/advent-2015/tmpfile/)

@@ -57,6 +57,5 @@ match httpc.send(request) {
 
 ## 参考資料:
 
-1. [Gleam httpc](https://docs.rs/gleam_httpc/0.3.1/gleam_httpc/)
 2. [HTTP Basic Authentication](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication)
 3. [Gleam Programming Language](https://gleam.run/)

@@ -51,5 +51,3 @@ The `toUpperCase()` function operates by iterating through the string and conver
 For more insights and examples in Arduino Programming, visit:
 
 1. [Official Arduino Language Reference](https://www.arduino.cc/reference/en/)
-2. [Arduino String Object - Programming Electronics Academy](https://www.programmingelectronics.com/tutorial-18-break-arduino-guide-understanding-programming-syntax/)
-3. [Arduino Text Strings - Adafruit](https://learn.adafruit.com/adafruit-arduino-lesson-22-arduino-%20-%20%20%20-%20-%20%20-%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20lcd-display-part-1/arduino-%20-%20%20%20-%20-%20%20-%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20%20%20-%20-%20-%20%20-%20%20%20-%20text-strings)

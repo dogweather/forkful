@@ -34,8 +34,6 @@ Tämä toiminto toimii etsimällä tietoa jokaisesta jonon osasta, kunnes se lö
 
 ## Katso myös:
 
-1. Tekstin käsittely Kotlissa: [Linkki](https://kotlinlang.org/docs/text-operations.html)
-2. Säännölliset lausekkeet Kotlinissa: [Linkki](https://kotlinlang.org/docs/regular-expressions.html)
 3. Tietoa Kotlinin `replace`-funktiosta: [Linkki](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
 
 ---

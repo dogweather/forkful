@@ -40,6 +40,5 @@ $newdata
 
 ## ראה גם
 
-1. [Strings](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_strings?view=powershell-7.1)
 2. [Replace Operator](https://docs.microsoft.com/powershell/module/microsoft.powershell.core/about/about_operators?view=powershell-7.1#replace-operator)
 3. [Regex.Replace Method](https://docs.microsoft.com/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)

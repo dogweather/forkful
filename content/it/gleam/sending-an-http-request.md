@@ -51,6 +51,4 @@ Gleam utilizza il modulo `httpc` per inviare richieste HTTP. Un URI viene passat
 
 ## Vedi Anche:
 
-1. Documentazione ufficiale di Gleam sugli [moduli HTTP](https://gleam.run/book/tour/http-requests.html)
-2. Post sul blog su [Come iniziare con Gleam](https://dev.to/gleam/starting-with-gleam-30j1)
 3. Documentazione [HTTP](https://developer.mozilla.org/it/docs/Web/HTTP) da Mozilla Developer Network.

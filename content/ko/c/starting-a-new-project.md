@@ -35,5 +35,4 @@ Hello, World!
 3. 구현 세부사항: C언어 프로젝트는 보통 컴파일러를 통해 실행 가능한 바이너리를 생성합니다. 이 프로세스는 소스 코드, 컴파일, 링크 등 여러 단계로 구성됩니다.
 
 ## 참고 자료
-1. C 프로그래밍 언어에 대한 깊은 이해를 위해, Dennis Ritchie의 ["C 프로그래밍 언어"](https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628)를 추천합니다.
 2. 이집트의 프로그래머인 Joel Spolsky가 쓴 ["스택 오버플로우: 가이드"] (https://www.amazon.com/Joel-Software-Occasionally-Developers-Designers/dp/1430209879)도 유익한 참고자료가 될 수 있습니다.

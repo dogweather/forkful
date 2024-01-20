@@ -40,7 +40,5 @@ Bash käyttää sisäisesti C-kieltä merkkijonon pituuden määrittämiseen. T�
 Jos haluat tutkia lisää Bashista ja merkkijonon käsittelystä, alla on joitakin hyödyllisiä linkkejä:
 
 1. [Bash beginners guide](http://tldp.org/LDP/Bash-Beginners-Guide/html/index.html)
-2. [Bash string manipulation guide](https://www.cyberciti.biz/faq/unix-linux-bash-find-length-of-string/)
-3. [Bash programming in Linux](https://www.linuxjournal.com/content/programming-bash-0)
 
 Loppujen lopuksi, Bashin merkkijonon pituuden määrittäminen on hyödyllinen taito, joka helpottaa tietojen käsittelyä.+

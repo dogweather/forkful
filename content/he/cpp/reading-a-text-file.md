@@ -50,7 +50,6 @@ int main ()
 ## עיין גם 
 מסמכי יחס על C++ iostreams והיסטוריה שלהם:
 1. [Cppreference - Input/output with files](https://en.cppreference.com/w/cpp/io/c)
-2. [Learn Cpp - 27.9 A Brief Introduction to C++ File I/O](https://www.learncpp.com/cpp-tutorial/279-a-brief-introduction-to-c-file-io/)
 
 מסמכים על שיטות קריאת קבצים בשפות אחרות:
 1. [Python File Reading](https://docs.python.org/3/tutorial/inputoutput.html)

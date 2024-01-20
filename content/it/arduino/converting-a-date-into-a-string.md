@@ -47,6 +47,5 @@ Dettagli di implementazione: `sprintf` in Arduino non supporta direttamente i fo
 
 ## Vedere anche
 
-1. [Arduino String formattazione](https://www.arduino.cc/en/Reference.StringFormat)
 2. [Funzioni di stringa C++](http://www.cplusplus.com/reference/cstdio/sprintf/)
 3. [Documentazione DateTime Arduino](https://playground.arduino.cc/Code/DateTime/)

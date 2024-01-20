@@ -38,4 +38,3 @@ console.log(currentDate);
 ## Дивіться також:
 1. [MDN Web Docs - Date](https://developer.mozilla.org/uk/docs/Web/JavaScript/Reference/Global_Objects/Date)
 2. [Moment.js](https://momentjs.com/)
-3. [TypeScript - Handling Date](https://www.tutorialsteacher.com/typescript/typescript-date)

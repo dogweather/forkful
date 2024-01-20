@@ -36,4 +36,3 @@ logging.debug("This is debug output")
 ## देखने के लिये:
 
 1. [Python's official debugging documentation](https://docs.python.org/3/library/debug.html)
-2. [Python logging to console and file](https://www.scalyr.com/blog/python-logging-best-practices-tips/)

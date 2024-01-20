@@ -56,6 +56,5 @@ Puoi approfondire la generazione di numeri casuali in Lua e in altri linguaggi d
 
 1. [Lua 5.2 Reference Manual](http://www.lua.org/manual/5.2/manual.html#6.7)
 2. [Mersenne Twister in Lua](https://create.stephan-brumme.com/mersenne-twister/)
-3. [xoroshiro/splitmix64 library in Lua](https://luarocks.org/modules/luarocks/xoroshiro)
 
 Non dimenticare che la pratica è la chiave per padroneggiare l'arte della programmazione!

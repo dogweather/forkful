@@ -57,4 +57,3 @@ time_point2 is later than time_point1.
 
 1. [C++ Date & Time](https://www.tutorialspoint.com/cplusplus/cpp_date_time.htm)
 2. [Chrono Library](https://en.cppreference.com/w/cpp/chrono)
-3. [C++ Time Function](https://www.tutorialspoint.com/cplusplus/cpp_time.htm)

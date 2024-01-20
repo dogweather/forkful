@@ -52,7 +52,6 @@ Rust में, `reqwest` क्रेट (crate) HTTP अनुरोध को
 ## देखें भी:
 रस्ट (Rust) में Proceeding HTTP अनुरोध करने के बारे में और जानने के लिए, निम्नलिखित संसाधनों का अन्वेषण करें:
 
-1. Rust's [official documentation](https://doc.rust-lang.org/rust-by-example/std_misc/net/fetch.html) for performing HTTP requests.
 2. The [reqwest crate](https://docs.rs/reqwest/0.11.3/reqwest/) documentation.
 3. [Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#Basic_authentication_scheme)
 4. [How to send HTTP Requests in Rust](https://www.section.io/engineering-education/rust-http-request/) guide.

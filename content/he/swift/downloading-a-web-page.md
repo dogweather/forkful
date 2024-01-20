@@ -54,5 +54,3 @@ Received data:
 ## ראו גם:
 
 1. [URLSession - Documentation | Apple Developer](https://developer.apple.com/documentation/foundation/urlsession)
-2. [Working with URLs in Swift](https://rudrank.blog/2019/05/27/working-with-urls-in-swift/)
-3. [Swift Networking: How to Download a File with URLSession](https://www.avanderlee.com/swift/save-data-to-disk-urlsession-download-task/)

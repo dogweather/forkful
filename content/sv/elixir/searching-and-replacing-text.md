@@ -38,5 +38,4 @@ Viktig detalj att notera är att Elixir är opåverkbar (immutable), vilket inne
 
 ## Se också
 1. [Elixir String-module documentation](https://hexdocs.pm/elixir/String.html)
-2. [Elixir School String lesson](https://elixirschool.com/lessons/shell/history-and-help/)
 3. [Elixir Regex-module documentation](https://hexdocs.pm/elixir/Regex.html)

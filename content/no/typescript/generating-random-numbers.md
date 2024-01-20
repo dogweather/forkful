@@ -42,7 +42,6 @@ console.log(getRandomArbitrary(1,100));
 
 ## Se Også
 
-1. [The Art of Computer Programming: Volume 2](https://www.amazon.com/books/dp/8120315221) - Bestselgeren av Donald E. Knuth dekker mange forskjellige aspekter, inkludert tilfeldige tall.
 
 2. [Mozilla's Math.random() dokumentasjon](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random) gir mer innsikt i hvordan denne funksjonen fungerer.
 

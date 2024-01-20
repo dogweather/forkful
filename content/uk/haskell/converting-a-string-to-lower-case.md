@@ -52,4 +52,3 @@ lowerCaseStrT = unpack . toLower . pack
 
 1. Haskell Documentation: [Data.Char](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
 2. Learn You a Haskell for Great Good: [Modules](http://learnyouahaskell.com/modules)
-3. School of Haskell: [Working with Text](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/working-with-text)

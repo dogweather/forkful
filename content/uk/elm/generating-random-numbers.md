@@ -49,4 +49,3 @@ update msg model =
 
 1. [Random - Elm package](https://package.elm-lang.org/packages/elm/random/latest/)
 2. [Generating random numbers in Elm](https://medium.com/@julianjelfs/generating-random-numbers-in-elm-58495e9fff9f)
-3. [Using Random in Elm](https://elmprogramming.com/random-numbers.html)

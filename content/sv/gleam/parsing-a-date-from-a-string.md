@@ -52,9 +52,7 @@ När det gäller implementeringsdetaljer fungerar Gleam på Erlang's underliggan
 
 För mer information och detaljer, kolla in följande resurser:
 
-1. Gleam Official Documentation: [Gleam Docs](https://gleam.run/docs/)
 
-2. Date parsing with Gleam: [Forum Post](https://gleam.run/forum/str-to-date/)
 
 3. ISO 8601 Standard: [ISO 8601](https://www.iso.org/iso-8601-date-and-time-format.html)
 

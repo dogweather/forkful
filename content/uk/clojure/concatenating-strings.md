@@ -37,4 +37,3 @@ Clojure використовує Java String для маніпуляцій з р
 
 ## Дивіться також:
 1. Clojure for the Brave and True: [Strings](http://www.braveclojure.com/clojure-for-the-brave-and-true#Strings)
-2. Clojure Documentation: [clojure.string](https://clojuredocs.org/clojure.string/)

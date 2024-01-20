@@ -39,7 +39,6 @@ Det er mange måte å lage midlertidige filer på. For eksempel kan det brukes b
 Skapingen av midlertidige filer i Swift er en enkel og sikker affære. NSURL.fileURL(withPath: NSTemporaryDirectory(), isDirectory: true) koden brukes til å få tilgang til midlertidige kataloger, mens UUID().uuidString brukes for å sikre at filen har et unikt navn. Feilhåndtering blir brukt gjennom Swift sine do-try-catch blokker.
 
 ## Se Også:
-1. Apple Developer Documentation: [NSTemporaryDirectory()](https://developer.apple.com/documentation/foundation/1413049-nstemporarydirectory)
 2. Swift Documentation: [Error Handling](https://docs.swift.org/swift-book/LanguageGuide/ErrorHandling.html)
 3. Stack Overflow: [How to create a temporary directory/folder in Swift?](https://stackoverflow.com/questions/37401342/how-to-create-a-temporary-directory-folder-in-swift)
 4. UUID: [UUID in Swift](https://developer.apple.com/documentation/foundation/uuid)

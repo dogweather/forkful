@@ -43,5 +43,4 @@ Elixir में String.replace फ़ंक्शन निम्नलिख�
 
 ## देखें भी
 1. [Elixir का आधिकारिक डॉक्यूमेंटेशन](https://elixir-lang.org/getting-started/binaries-strings-and-char-lists.html)
-2. [Erlang का आधिकारिक डॉक्यूमेंटेशन](https://erlang.org/doc/apps/stdlib/string_processing.html)
 3. [Elixir की RegEx मॉड्यूल का डॉक्यूमेंटेशन](https://hexdocs.pm/elixir/1.12/Regex.html)

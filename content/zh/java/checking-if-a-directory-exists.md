@@ -65,4 +65,3 @@ public class Test {
 
 1. [Oracle官方文档 - The Java Tutorials: Path Operations](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
 2. [Apache Commons IO](https://commons.apache.org/proper/commons-io/)
-3. [Java NIO Path by Java Code Geeks](https://www.javacodegeeks.com/2012/09/java-nio-path.html)

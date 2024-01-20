@@ -54,5 +54,3 @@ echo "字符串长度为: $len"
 1. [Bash Guide for Beginners](https://tldp.org/LDP/Bash-Beginners-Guide/html/Bash-Beginners-Guide.html#chap_10)
 
 2. [Bash String Manipulation](https://www.thegeekstuff.com/2010/07/bash-string-manipulation/)
-
-3. [Bash – String Length](https://www.baeldung.com/linux/bash-string-length)

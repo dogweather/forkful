@@ -43,5 +43,3 @@ Funktionen `String.length/1` i Elixir är baserat på UTF-8 kodade binärer och 
 1. Officiellt dokument för [String-modul](https://hexdocs.pm/elixir/String.html).
 
 2. Djupare förståelse för [UTF-8 kodning](https://unicode.org/faq/utf_bom.html).
-
-3. Elixir-forumtråd om när man använder [byte_size mot string_length](https://elixirforum.com/t/byte-size-vs-string-length/12032).

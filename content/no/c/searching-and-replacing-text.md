@@ -75,5 +75,4 @@ Disse funksjonene baserer seg på å streife gjennom hvert karakter av strengen,
 ## Se Også:
 
 For mer info om tekstbehandling i C, sjekk ut:
-1. [C-programmeringsspråk](https://no.wikipedia.org/wiki/C_(programmeringsspr%C3%A5k))
 2. [C String-handling Library](https://www.tutorialspoint.com/c_standard_library/string_h.htm)

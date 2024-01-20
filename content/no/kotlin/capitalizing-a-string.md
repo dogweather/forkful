@@ -50,5 +50,4 @@ Observer at `capitalize()` -funksjonen tar hensyn til regex og andre språkskape
 ## Se Også
 For ytterligere lesing, sjekk ut disse linkene:
 
-- [Kotlin, Capitalizing Strings](https://stackoverflow.com/questions/50549973/kotlin-capitalize-method-is-deprecated-what-is-the-alternative)
 - [Understanding Kotlin’s capitalization functions](https://proandroiddev.com/understanding-kotlins-capitalization-functions-5c4fee13e31e)

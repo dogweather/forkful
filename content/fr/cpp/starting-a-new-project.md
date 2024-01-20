@@ -40,4 +40,3 @@ Les détails de l'implémentation peuvent varier en fonction de l'IDE utilisé, 
 1. [Documentation C++](https://en.cppreference.com/w/)
 2. [Guide de programmation C++](https://www.cplusplus.com/doc/tutorial/)
 3. [Visual Studio Code C++ Documentation](https://code.visualstudio.com/docs/languages/cpp)
-4. [Guide pour les débutants Hot to Start a New C++ Project in Visual Studio](https://www.wikihow.com/Start-a-New-C%2B%2B-Project-in-Visual-Studio)

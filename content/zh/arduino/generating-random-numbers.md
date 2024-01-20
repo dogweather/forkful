@@ -47,6 +47,5 @@ void loop() {
 
 1. Arduino 官方文档: [random()](https://www.arduino.cc/reference/en/language/functions/random-numbers/random/) 函数和 [randomSeed()](https://www.arduino.cc/reference/en/language/functions/random-numbers/randomseed/) 函数。
 
-2. [每日一编：如何在 Arduino 上生成伪随机数](https://chinese.makezine.com/2013/04/02/daily-arduino-tip-how-to-generate-pseudo-random-numbers-on-an-arduino/)
 
 3. Seifer Tim的博文: [真随机还是伪随机？计算机如何生成随机数](https://medium.com/@timseifer/random-or-pseudo-random-how-computers-generate-random-numbers-74971cd6f131)

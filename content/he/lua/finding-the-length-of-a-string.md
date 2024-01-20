@@ -39,4 +39,3 @@ print(string.len("אני אוהב לכתוב ב-Lua"))
 עיין במסמכים הבאים ללמידה נוספת:
 1. [Lua מאמר מרכזי](https://www.lua.org/pil/11.1.html) 
 2. [דוקומנטציה רשמית](https://www.lua.org/manual/5.3/manual.html#pdf-string.len)
-3. [חיפוש אורך מחרוזת ב-Wikipedia](https://en.wikipedia.org/wiki/String_length_function)

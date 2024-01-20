@@ -53,6 +53,4 @@ HTML解析源于网页的历史。早在1990年，最初的网络浏览器就开
 
 # 另请参阅：
 
-1. [在 Rust 中解析 HTML](https://kadekillary.work/post/webscraping-rust/)
 2. [Rust Scraper库文档](https://docs.rs/scraper/0.12.0/scraper/)
-3. [更多关于HTML解析](https://developer.mozilla.org/en-US/docs/Web/HTML/Parser)

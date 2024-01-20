@@ -51,5 +51,4 @@ Furthermore, note `Files/exists` might not work as expected with symbolic links 
 To further your knowledge in Clojure's filesystem interactions:
 
 1. [Clojure.java.io documentation](https://clojure.github.io/clojure/clojure.java.io-api.html)
-2. [Official Clojure Programming book - I/O Chapter.](https://www.amazon.com/Clojure-Programming-Robert-Echo-White/dp/1449394701)
 3. [java.nio.file API](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/nio/file/package-summary.html)

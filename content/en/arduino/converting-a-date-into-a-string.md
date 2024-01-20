@@ -62,7 +62,6 @@ A deeper implementation detail to note is that the Time library used above provi
 
 ## See Also
 
-1. Arduino official reference on `sprintf`: [sprintf - Arduino Reference](https://www.arduino.cc/reference/en/language/functions/characters/strings/sprintf/).
 
 2. A useful introduction to Time library is available at: [Arduino - Time Library](https://playground.arduino.cc/Code/time/).
 

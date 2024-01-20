@@ -44,5 +44,4 @@ Conseil: Pour des performances optimales, évitez de créer inutilement des sous
 Consultez les liens ci-dessous pour plus d'informations sur les opérations liées aux chaînes en Java:
 
 1. Documentation Oracle pour [String](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
-2. Tutorial [Java String substring() Method with Examples](https://www.w3schools.com/java/ref_string_substring.asp)
 3. Article [Effective Java, Item 54 – Use standard libraries](https://modernpathshala.com/Article/1176/Item-54-Use-standard-libraries) qu'explique pourquoi et comment utiliser efficacement les bibliothèques Java standard.

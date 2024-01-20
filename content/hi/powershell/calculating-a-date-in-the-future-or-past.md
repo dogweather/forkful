@@ -53,5 +53,3 @@ Wednesday, February 1, 2023 12:05:28 PM
 ## अधिक देखें:
 
 1. [PowerShell Get-Date cmdlet Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)
-2. [PowerShell language reference](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-datetime?view=powershell-7.1)
-3. [Calculate dates in the future or past with PowerShell](https://www.tutorialspoint.com/powershell/powershell_working_with_dates.htm)

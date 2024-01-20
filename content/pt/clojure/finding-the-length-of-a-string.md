@@ -42,4 +42,3 @@ Clojure implementa a função `count` em termos de `java.lang.CharSequence.lengt
 
 1. Documentação do Clojure para [count](https://clojuredocs.org/clojure.core/count)
 2. Diferença entre String Length e Character Count in [StackOverflow](https://stackoverflow.com/questions/2932892/difference-between-string-length-and-character-count)
-3. String Manipulation em Clojure [blog post](https://www.baeldung.com/clojure-string-manipulation)

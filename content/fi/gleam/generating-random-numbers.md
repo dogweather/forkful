@@ -41,7 +41,5 @@ Tässä koodissa luodaan uusi satunnaislukugeneraattori, jonka jälkeen tuotamme
 ## Katso myös
 
 1. Erlang `rand`-moduuli: [linkki](http://erlang.org/doc/man/rand.html)
-2. Gleam API documentation for random: [linkki](https://docs.gleam.run/stdlib/random/)
-3. Understanding Random number generator: [linkki](https://www.geeksforgeeks.org/understanding-random-number-generators-and-their-implementation-in-c/) 
 
 ---

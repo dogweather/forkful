@@ -44,8 +44,6 @@ HTTP-pyynnön lähettäminen perustodentamisella on ollut käytössä pitkään,
 
 Lisätietoja ja muita lähteitä voi löytää seuraavista linkeistä:
 
-1. [Gleam HTTP Package Documentation](https://hexdocs.pm/gleam_http/readme.html)
-2. [How To Use HTTP Basic Authentication With HTTP Package In Gleam](https://gleam.run/book/tour/http-features.html)
 3. [RFC7617- Basic Authentication Scheme](https://datatracker.ietf.org/doc/html/rfc7617)
 
 Suosittelen tutustumaan näihin aiheisiin syvällisemmin etenkin, jos teet paljon verkko-ohjelmointia tai työskentelet arkaluonteisten tietojen kanssa.

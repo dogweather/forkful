@@ -47,4 +47,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 有关`java.nio.file`库和Clojure文件I/O的更多信息：
 
 1. [`java.nio.file`文档](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
-2. [Clojure-cookbook的文件I/O章节](https://www.braveclojure.com/related-documents)

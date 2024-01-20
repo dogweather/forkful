@@ -62,6 +62,5 @@ Rubyの文字列連結は、新しい文字列を作成せずに元の文字列�
 
 1. Ruby Documentation: [String Concatenation](https://ruby-doc.org/core-2.6.1/String.html#method-i-2B)
 2. Ruby Guides: [Understanding String Interpolation in Ruby](https://www.rubyguides.com/2018/01/ruby-string-methods/)
-3. Ruby Monstas: [String Concatenation and Interpolation](http://ruby-for-beginners.rubymonstas.org/built_in_classes/strings_concatenation.html)
 
 これらのリソースを使用して、文字列の連結と操作についてさらに理解を深めてください！

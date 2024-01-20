@@ -50,6 +50,5 @@ En del av implementeringsdetaljene å merke seg er at funksjonen `std::filesyste
 ## Se også
 
 Her er noen nyttige linker til andre kilder og relatert materiale:
-1. [C++ std::filesystem dokumentasjon](http://www.cplusplus.com/reference/filesystem/)
 2. [Stackoverflow - Sjekk om mappe eksisterer](https://stackoverflow.com/questions/8233842/how-to-check-if-directory-exist-using-c-and-winapi)
 3. [Boost Filesystem Library](https://www.boost.org/doc/libs/1_75_0/libs/filesystem/doc/index.htm)

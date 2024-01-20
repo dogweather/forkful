@@ -37,5 +37,4 @@ Es ist wichtig zu wissen, dass die Verwendung von regulären Ausdrücken in Elix
 
 Weitere nützliche Ressourcen zu regulären Ausdrücken in Elixir finden Sie unter:
 
-1. [Elixir School - Regular Expressions](https://elixirschool.com/en/lessons/advanced/regular-expressions/)
 2. [Elixir official Regex module documentation](https://hexdocs.pm/elixir/Regex.html)

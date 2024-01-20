@@ -32,6 +32,5 @@ Haskell lee archivos a través de su biblioteca de E/S recursiva. Esto significa
 ## Ver También
 Para profundizar, les sugiero estos recursos:
 
-1. [Haskell Wiki on File I/O](https://wiki.haskell.org/File_IO)
 2. [Real World Haskell: Input and Output](http://book.realworldhaskell.org/read/io.html)
 3. [Learn You a Haskell for Great Good: Chapter 7 Input and Output](http://learnyouahaskell.com/input-and-output)

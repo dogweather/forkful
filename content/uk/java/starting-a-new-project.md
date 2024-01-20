@@ -50,4 +50,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 1. Документація по Eclipse IDE: [link](https://help.eclipse.org/2020-12/index.jsp)
 2. Офіційна документація Java: [link](https://docs.oracle.com/en/java/)
-3. Практичні рекомендації з створення Java проектів: [link](https://www.javaworld.com/article/2076204/java-app-dev/structuring-your-java-application-projects.html)

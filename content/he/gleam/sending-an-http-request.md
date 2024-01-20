@@ -38,5 +38,4 @@ fn fetch_data() {
 ## לראות גם:
 למידע נוסף שאולי יעזור לך להבין:
 1. [HTTP ב-VMDN](https://developer.mozilla.org/en-US/docs/Web/HTTP) 
-2. [מסמך ספרייה HTTP של Gleam](https://hexdocs.pm/httpc/readme.html)
 3. [מבוא ל-Gleam](https://gleam.run/getting-started/)

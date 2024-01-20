@@ -39,5 +39,4 @@ Historiallisesti Unix-komentorivikielet, kuten Bash, sisälsivät alimerkkijonok
 Bash-programmoinnin syvällisempään oppimiseen suosittelemme seuraavia lähteitä:
 
 1. GNU Bash-ohje: [http://www.gnu.org/software/bash/manual/bash.html](http://www.gnu.org/software/bash/manual/bash.html)
-2. Cut-Komennon Käyttö: [https://linuxize.com/post/how-to-use-cut-command-in-linux/](https://linuxize.com/post/how-to-use-cut-command-in-linux/)
 3. Bash String Manipulations: [https://tldp.org/LDP/abs/html/string-manipulation.html](https://tldp.org/LDP/abs/html/string-manipulation.html)

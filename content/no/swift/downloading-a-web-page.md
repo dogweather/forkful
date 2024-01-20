@@ -49,4 +49,3 @@ Hvis du ønsker å lære mer, her er noen ekstra ressurser:
 
 1. Apple Developer Documentation om URLSession: [Her](https://developer.apple.com/documentation/foundation/urlsession)
 2. Alamofire Home Page: [Her](https://github.com/Alamofire/Alamofire)
-3. Guide om asynkron programmering i Swift: [Her](https://www.vadimbulavin.com/asynchronous-programming-with-futures-and-promises-in-swift-with-combine-framework/)

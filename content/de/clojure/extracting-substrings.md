@@ -37,6 +37,4 @@ Was die Implementierung betrifft, verwendet Clojure bei der Verwendung der "subs
 
 Um Ihr Wissen und Ihre Fähigkeiten im Umgang mit Strings in Clojure weiter zu vertiefen, sehen Sie sich bitte die folgenden Ressourcen an:
 
-1. [Clojure Documentation: String](https://clojure.org/guides/learn/strings)
 2. [Clojure: String Functions](https://clojuredocs.org/clojure.string)
-3. [Regular Expressions in Clojure](https://www.regular-expressions.info/clojure.html)

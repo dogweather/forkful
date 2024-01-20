@@ -60,5 +60,4 @@ Debug mode is ON. Test_var is Test Variable
 ## Дивіться також:
 
 1. [Advanced Bash-Scripting Guide](http://www.tldp.org/LDP/abs/html/debugging.html): Подробиці про відлагодження у Bash.
-2. [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html): Рекомендації щодо стилів у Bash. 
-3. [Bash Debugging](https://ryanstutorials.net/bash-scripting-tutorial/bash-debugging.php): Більше інформації про відлагодження в Bash.
+2. [Google Shell Style Guide](https://google.github.io/styleguide/shellguide.html): Рекомендації щодо стилів у Bash.

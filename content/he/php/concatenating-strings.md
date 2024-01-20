@@ -57,8 +57,3 @@ echo $str;  // תוצאה: "שלום, עולם!"
    echo "שלום, $world";  // תוצאה: "שלום, עולם!"
    ?>
    ```
-
-## ראו גם
-
-1. [המתיחה למתנדבים בחרוזות של PHP ב- PHP Manual](https://www.php.net/manual/he/language.operators.string.php)
-2. [המחרוזת של הפונקציות ב- PHP Manual](https://www.php.net/manual/he/book.strings.php)

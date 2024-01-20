@@ -44,4 +44,3 @@ För implementation detaljer, sök upp substränghandfunktionen i Fish Shells k�
 2. [Forum för Fish Shell Community](https://github.com/fish-shell/fish-shell/issues)
 3. [Extrahera substrängar i Bash](https://www.gnu.org/software/bash/manual/bash.html#Shell-Parameter-Expansion)
 4. [Extrahera substrängar i Zsh](http://zsh.sourceforge.net/Doc/Release/Expansion.html#Substring-Flags)
-5. [Extrahera substrängar i Tcsh](https://www.tcsh.org/tcsh.html/Shell_002fvariables.html)

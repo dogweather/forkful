@@ -52,6 +52,5 @@ void loop() {
 
 ## देखें भी 
 
-1. [Arduino कमांड लाइन टूल](https://www.arduino.cc/en/Main/CommandLine)
 2. [Arduino बोर्ड के लिए रास्पबेरी पाई](https://www.raspberrypi.org/)
 3. [Arduino फोरम](https://forum.arduino.cc/index.php)

@@ -39,4 +39,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 1. [学习Swift](https://developer.apple.com/documentation/swift)
 2. [设置新的Xcode项目](https://help.apple.com/xcode/mac/current/#/dev5a8256ff1)
-3. [Swift历史背景](https://en.wikipedia.org/wiki/Swift_(programming_language))

@@ -55,4 +55,3 @@ For mer informasjon om sammenkobling av strenger i C, se disse nyttige ressursen
 
 1. strcat() - [https://www.cplusplus.com/reference/cstring/strcat/](https://www.cplusplus.com/reference/cstring/strcat/)
 2. strncat() - [https://www.cplusplus.com/reference/cstring/strncat/](https://www.cplusplus.com/reference/cstring/strncat/)
-3. Teksthåndtering i C - [https://www.learn-c.org/en/Text_strings](https://www.learn-c.org/en/Text_strings)

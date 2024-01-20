@@ -45,6 +45,4 @@ Write-Host $dateStr2
 
 ## ראה גם
 
-1. [תיעוד המרת מחרוזת ב-Microsoft](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/convert-to-date?view=powershell-7.1)
-2. [פורמטים מותאמים אישית להמרת תאריך למחרוזת](https://www.gngrninja.com/script-ninja/2016/5/24/powershell-getting-a-handle-on-dates-and-times) 
 3. [הבנת מחרוזות בפורמט תאריך ושעה ב-PowerShell](https://ss64.com/ps/syntax-f-operator.html)

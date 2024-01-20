@@ -59,5 +59,3 @@ Beim Parsen lesen und analysieren wir den HTML-Code Zeile für Zeile. Welche Met
 ## Siehe auch
 1. [Jsoup offizielle Dokumentation](https://jsoup.org/)
 2. [HTMLUnit offizielle Dokumentation](http://htmlunit.sourceforge.net/)
-3. [TagSoup offizielle Dokumentation](http://home.ccil.org/~cowan/XML/tagsoup/)
-4. [JDom offizielle Dokumentation](http://www.jdom.org/docs/index.html)

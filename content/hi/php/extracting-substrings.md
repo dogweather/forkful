@@ -34,4 +34,3 @@ echo substr($str, 7);  // Output: World!
 
 1. [PHP String Functions Manual](https://www.php.net/manual/en/ref.strings.php)
 2. [Introduction to Substring in PHP](https://www.geeksforgeeks.org/php-substr-function/)
-3. [Extracting Substrings in PHP](https://stackabuse.com/how-to-extract-substrings-in-php/)

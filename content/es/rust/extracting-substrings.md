@@ -62,4 +62,3 @@ En un entorno real, podrías encontrar otras bibliotecas útiles que te permiten
 
 1. Documentación oficial de Rust: [https://doc.rust-lang.org/book/](https://doc.rust-lang.org/book/)
 2. Un buen tutorial sobre las cadenas en Rust: [https://tourofrust.com/chapter_4_fr.html](https://tourofrust.com/chapter_4_fr.html)
-3. Más detalles sobre el manejo de cadenas y caracteres: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)

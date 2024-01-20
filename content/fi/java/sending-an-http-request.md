@@ -52,6 +52,5 @@ On tärkeää huomioida, että Java HTTP Client toimii sekä synkronisessa että
 ## Katso myös
 
 1. Java 11 HttpClient dokumentaatio: [linkki](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
-2. Täysi opas HTTP-pyynnön lähettämiseen Javassa: [linkki](https://www.baeldung.com/http-requests-java)
 3. OkHttp kirjasto: [linkki](https://square.github.io/okhttp/)
 4. Apache HttpClient kirjasto: [linkki](https://hc.apache.org/httpcomponents-client-4.5.x/index.html)

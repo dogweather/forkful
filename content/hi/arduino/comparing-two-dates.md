@@ -44,6 +44,5 @@ Arduino बोर्ड में RTC (Real-Time Clock) module का उपय�
 
 ## देखें भी:
 
-1. [Arduino Official Time Library Doc](https://www.arduino.cc/en/reference/time)
 2. [Arduino Libraries](https://www.arduino.cc/en/guide/libraries)
 3. [Arduino and Real Time Clock](https://randomnerdtutorials.com/guide-for-real-time-clock-rtc-module-with-arduino-ds1307-and-ds3231/)

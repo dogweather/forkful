@@ -30,7 +30,6 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 अधिक जानकारी के लिए, निम्नलिखित लिंक्स का पालन करें:
 
-1. [File I/O in Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)
 2. [Temporary Files in Python](https://docs.python.org/3/library/tempfile.html)
 3. [Elm Official Website](https://elm-lang.org/)
 4. [Functional programming in Elm](https://elmprogramming.com/)

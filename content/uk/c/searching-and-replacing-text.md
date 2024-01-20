@@ -60,5 +60,4 @@ Hello, Programmer!
 ## Додатково
 Ви можете дізнатись більше про текстові операції в C, відвідавши ці ресурси:
 1. [Strings in C](https://www.geeksforgeeks.org/strings-in-c-2/)
-2. [String Manipulations In C Programming Using Library Functions](https://www.softwaretestinghelp.com/c-strings-and-string-functions/)
 3. [Regular Expressions in C](https://www.gnu.org/software/libc/manual/html_node/Regular-Expressions.html)

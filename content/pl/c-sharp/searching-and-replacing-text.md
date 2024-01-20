@@ -47,7 +47,6 @@ class Program
 Jeśli chcesz dowiedzieć się więcej o szukaniu i zamianie tekstu w C#, sprawdź poniższe źródła:
 
 1. ["String.Replace Method" (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/api/system.string.replace?view=net-5.0)
-2. ["Jak użyć wyrażeń regularnych w C#" (Microsoft Docs)](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/how-to-use-regular-expressions)
 3. ["Manipulacja ciągami w C#" (tutorialsteacher.com)](https://www.tutorialsteacher.com/csharp/csharp-string)
 
 +-

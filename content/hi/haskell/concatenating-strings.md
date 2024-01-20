@@ -35,6 +35,4 @@ Prelude> str1 ++ str2
 ## यह भी देखें
 (See Also)
 
-1. [Haskell दस्तावेज़ीकरण](https://docs.haskell-lang.org/)
-2. [पाठ और स्ट्रिंग](https://haskell-lang.org/tutorial/string)
 3. [हास्केल के `(++)` और `concat` कार्यक्रम](https://hoogle.haskell.org/?hoogle=%28++%29+or+concat)

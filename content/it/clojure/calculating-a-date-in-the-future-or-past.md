@@ -50,7 +50,3 @@ Dal punto di vista dell'implementazione, sia jt/plus che jt/minus creano una nuo
 
 ## Guarda Anche
 Per maggiori dettagli sulla manipolazione delle date in Clojure, vedi:
-
-1. La documentazione ufficiale di [Java-Time](https://cljdoc.org/d/org.clojure/java-time/0.3.2/doc/readme)
-2. La guida pratica al [manipolazione del tempo in Clojure](https://clojure-cookbook.com)
-3. Il tutorial su [Data e tempo in Clojure](https://www.learn-clojure.com/lessons/datetimes) per esplorare concepti vari.

@@ -40,7 +40,5 @@ false
 לאור ההשפעה של Java על Kotlin, המידע שאנו שמים כאן הגיע אלינו דרך java.time API. הAPI המקורי לא הציע את התמיכה המלאה בתאריכים, אז נפתח פרויקט תוספת שנקרא "Joda-Time". כיום, הממשקים השלמים של java.time מתמקדים בעבודה עם תאריכים. חשוב לזכור שניתן לבדוק גם את הדרך שנכתבה בביבליות שלך: Android's TimeUtils, or the Apache Commons Lang DateUtils class.
 
 ## ראו גם:
-1. [מדריך לתאריך ושעה ב-Kotlin](https://www.baeldung.com/kotlin/date-time)
 2. [Java 8 Date-Time API](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-3. [Comparing Dates in Android](https://developer.android.com/reference/android/text/format/TimeUtils)
 4. [Apache's Commons Lang DateUtils class](https://commons.apache.org/proper/commons-lang/javadocs/api-3.1/org/apache/commons/lang3/time/DateUtils.html)

@@ -45,5 +45,4 @@ func main() {
 ## देखने के लिए भी:
 
 1. [Go strings package documentation](https://golang.org/pkg/strings/)
-2. [A guide to string literals in Go](https://www.digitalocean.com/community/tutorials/understanding-strings-in-go)
 3. [Go by Example: String Functions](https://gobyexample.com/string-functions)

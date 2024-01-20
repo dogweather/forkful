@@ -36,5 +36,3 @@ IO.inspect trunc(:rand.uniform() * 100)
 
 1. [Elixir's Random module](https://hexdocs.pm/elixir/Kernel.html#rand/1)
 2. [Random number generation in Erlang](http://erlang.org/doc/man/rand.html)
-3. [Exs1024 library](https://hex.pm/packages/exs1024)
-4. [Understanding random numbers in Elixir](https://blog.notnot.services/understanding-random-numbers-in-elixir/)

@@ -49,6 +49,4 @@ On tärkeää myös ymmärtää, että `toUpperCase`-metodi muuttaa alkuperäise
 ## Katso Myös:
 
 Jos haluat oppia lisää merkkijonojen muuntamisesta, tässä on muutamia linkkejä, jotka voivat olla hyödyllisiä:
-1. Arduino String Functions: [Link](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-2. How to Manipulate Strings in C and C++ : [Link](https://learn.adafruit.com/manipulating-c-and-c-plus-plus-strings/)
 3. Arduino Programming Course: [Link](https://startingelectronics.org/software/arduino/learn-to-program-course/)

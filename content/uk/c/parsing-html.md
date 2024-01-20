@@ -64,7 +64,6 @@ int main() {
 ## Дивіться також 
 
 1. [Офіційна документація Gumbo](https://github.com/google/gumbo-parser)
-2. [Туторіал по Gumbo](https://2ton.com.au/Library/gumbo/)
 3. [DOM у веб API](https://developer.mozilla.org/uk/docs/Web/API/Document_Object_Model) 
 4. [Основи BeautifulSoup в Python](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) 
 5. [Швидкий початок з Cheerio в Javascript](https://cheerio.js.org/)

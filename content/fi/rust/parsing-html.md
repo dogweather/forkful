@@ -58,4 +58,3 @@ HTML -jäsentämisen toteutuksessa tärkeitä seikkoja ovat mm. sen kyky käsite
 2. [Rust documentation](https://www.rust-lang.org/tools/install)
 3. [BeautifulSoup documentation](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 4. [Jsoup documentation](https://jsoup.org/)
-5. [Web scraping with Rust](https://kadekillary.work/post/webscraping-rust/)

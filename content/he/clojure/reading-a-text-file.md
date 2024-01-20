@@ -33,5 +33,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ראה גם:
 1. [מדריך לקריאת דיקשנרי מקובץ טקסט](http://learn-clojure.com/read-dict-from-file)
-2. [מסמך המסביר יותר מעמיקים את הפונקציה 'slurp'](https://clojure.org/guides/slurp)
 3. [דיון על 'slurp' מול 'line-seq'](https://stackoverflow.com/questions/37992580/clojure-when-to-use-slurp-vs-line-seq)

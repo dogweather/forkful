@@ -44,5 +44,4 @@ main = do
 
 ## 另请参阅 (See Also)
 为了更深入理解Haskell中的日期和时间，以下链接可能会有帮助：
-1. [Haskell日期和时间教程](http://learnyouahaskell.com/dates-and-times)
 2. [关于Haskell在Hackage的Data.Time库文档](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)

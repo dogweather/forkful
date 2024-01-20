@@ -57,4 +57,3 @@ WebResponse response = request.GetResponse();
 1. [Documentazione ufficiale HttpClient](https://docs.microsoft.com/dotnet/api/system.net.http.httpclient)
 2. [WebRequest vs HttpClient](https://stackoverflow.com/questions/37796954/webrequest-vs-httpclient)
 3. [HttpClient Best Practices](https://aspnetmonsters.com/2016/08/2016-08-27-httpclientwrong/)
-4. [HTTP Protocol Basics](https://www.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)

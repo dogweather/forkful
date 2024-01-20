@@ -54,7 +54,5 @@ Dużą zaletą jest możliwość dowolnego formatowania daty. Możemy ustawić d
 
 Jeśli chcesz dowiedzieć się więcej o Fish Shell i manipulacji datami, oto kilka linków do powiązanych źródeł:
 
-1. [Dokumentacja Fish Shell](https://fishshell.com/docs/)
-2. [Artykuł na temat formatowania dat w Unix](https://www.geekhideout.com/date.shtml)
 3. [Kurs online o Fish Shell](https://www.learnshell.org/)
 4. [Dyskusja na StackExchange na temat konwersji daty na ciąg znaków](https://unix.stackexchange.com/questions/4671/date-command-conversion-to-string)

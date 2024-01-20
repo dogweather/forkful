@@ -44,5 +44,4 @@ Co więcej, warto pamiętać, że podczas tworzenia plików tymczasowych istniej
 Dla szczegółów i przykładów z innych języków programowania, odwiedź:
 
 1. [Tworzenie i usuwanie plików tymczasowych w Pythonie](https://docs.python.org/3/library/tempfile.html)
-2. [Praca z plikami tymczasowymi w Java](https://www.journaldev.com/9481/java-temporary-file)
 3. [Tworzenie plików tymczasowych w Node.js](https://www.npmjs.com/package/tmp)

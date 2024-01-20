@@ -51,6 +51,4 @@ Oppretting av midlertidige filer har en lang historie i programmering og var spe
 
 ## Se Også:
 
-1. Gleam dokumentasjon om [processer](https://gleam.run/book/tour/processes.html)
-2. Erlang [otp doc](http://erlang.org/doc/man/otp_app.html) for mer informasjon om prosessene.
 3. Historien til midlertidige filer i [Unix](http://www.tldp.org/LDP/Linux-Filesystem-Hierarchy/html/var.html).

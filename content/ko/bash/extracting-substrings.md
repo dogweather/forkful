@@ -47,5 +47,4 @@ echo $substring
 
 아래 링크에서 더 많은 정보를 얻을 수 있습니다:
 1. [Advanced Bash-Scripting Guide: String Manipulations](https://tldp.org/LDP/abs/html/string-manipulation.html)
-2. [Bash substring explanation](https://www.cyberciti.biz/faq/bash-shell-substring-syntax/)
 3. [Python substring guide](https://www.journaldev.com/23584/python-slice-string)

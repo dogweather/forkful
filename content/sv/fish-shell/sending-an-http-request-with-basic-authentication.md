@@ -43,5 +43,4 @@ För implementationen, `curl -u "$username:$password"` genererar en sträng `$us
 
 ## Se även
 1. Fish shell dokumentation: [Fish shell official documentation](https://fishshell.com/docs/current/index.html)
-2. Mer om curl: [curl official guide](https://curl.haxx.se/docs/guide.html)
 3. Mer om HTTP Basic Authentication: [HTTP Basic Authentication on MDN](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

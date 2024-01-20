@@ -47,5 +47,3 @@ Lembre-se que lidar com datas e horas em programação pode ser complicado devid
 ## Veja Também
 
 1. Documentação oficial Elm: [https://elm-lang.org/docs](https://elm-lang.org/docs)
-2. Uma explicação detalhada do tempo na programação:  [https://www.vaidehiagar.io/blog/a-beginner-s-guide-to-time-in-elm](https://www.vaidehiagar.io/blog/a-beginner-s-guide-to-time-in-elm)
-3. Discussão no fórum Elm sobre manipulação de data e hora: [https://discourse.elm-lang.org/t/date-arithmetics-library-design/3976](https://discourse.elm-lang.org/t/date-arithmetics-library-design/3976)

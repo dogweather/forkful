@@ -37,7 +37,6 @@ void parse(const std::string &html) {
 
 ## ראה גם
 
-1. [מסמך המאיה גומבו](https://google.github.io/gumbo-parser/api.html)
 2. [jsoup: מנתח HTML עבור Java](https://jsoup.org/)
 3. [BeautifulSoup: מנתח תוכן HTML וXML ב-Python](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 4. [StackOverflow: "איך אני מנתח HTML ב-C++?"](https://stackoverflow.com/questions/352800/how-do-i-parse-html-in-c)

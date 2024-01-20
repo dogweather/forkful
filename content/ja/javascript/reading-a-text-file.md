@@ -41,5 +41,4 @@ fs.readFile('example.txt', 'utf8', function(err, data) {
 ## 参考資料
 
 1. Node.js 'fs'モジュールのドキュメンテーション: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html)
-2. ファイルシステムとストリームの関係:[https://nodejs.dev/learn/the-nodejs-fs-module](https://nodejs.dev/learn/the-nodejs-fs-module)
 3. JavaScript非同期処理の解説: [https://developer.mozilla.org/ja/docs/Learn/JavaScript/Asynchronous](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Asynchronous)

@@ -58,5 +58,3 @@ Aquí tienes algunos enlaces que podrían ser de tu interés:
 1. Documentación oficial de Ruby sobre la biblioteca Date: [Ruby Doc - Date](https://ruby-doc.org/stdlib-2.7.0/libdoc/date/rdoc/Date.html)
 
 2. Tutorial rápido sobre el tiempo y las fechas en Ruby: [Dates and Times in Ruby](http://www.tutorialspoint.com/ruby/ruby_date_time.htm)
-
-3. Opciones avanzadas para trabajar con fechas y horas en Ruby: [Working with Dates and Times in Ruby](https://www.learnhowtoprogram.com/ruby-and-rails/getting-started-with-ruby/working-with-dates-and-times-in-ruby)

@@ -43,7 +43,6 @@ HelloWorld!
 
 ## अन्य स्रोतों के लिए:
 
-1. [Kotlin Official Documentation on Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
 2. [Java String replaceAll()](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String))
 
 इन स्रोतों में आपको String के साथ काम करते समय नियमबद्धताओं और विस्तार की जानकारी मिलेगी।

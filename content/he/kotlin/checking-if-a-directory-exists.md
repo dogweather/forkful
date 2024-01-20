@@ -53,6 +53,4 @@ fun main() {
 3. פרטי המימוש: נתיבים רשאים להיות נתיבים מוחלטים או נתיבים יחסיים למחיצה.
 
 ## ראו גם
-1. המסמכים של Kotlin על אובייקט File: [כאן](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/)
-2. בדיקת קיום של קובץ או תיקייה ב- Kotlin: [כאן](https://www.baeldung.com/kotlin/file-exists)
 3. המסמכים של Java על האובייקט Paths: [כאן](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Paths.html)

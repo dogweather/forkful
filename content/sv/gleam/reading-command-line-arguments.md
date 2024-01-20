@@ -55,4 +55,3 @@ För att dyka djupare in i Gleam-programmering och kommandoradsargument, konsult
 1. [Gleam's stora bok om programmering](https://gleam.run/book/)
 2. [Erlang -- User's Guide](https://erlang.org/doc/man/erl.html)
 3. [Elixir School - Kommandoradsargument](https://elixirschool.com/en/lessons/advanced/escripts/)
-4. [Haskell Wiki - Kommandoradsargument](https://wiki.haskell.org/Command_line_argument_parsing)

@@ -41,5 +41,3 @@ Under the hood, the `string sub` operates by considering strings as arrays of ch
 ## See Also
 Get more grip on Fish Shell Strings:
 1. [Official Fish Documentation on Strings](https://fishshell.com/docs/current/cmds/string.html)
-2. [Fish Shell String Operations](https://www.baeldung.com/linux/fish-shell-string-operations)
-3. [Getting Started with Fish Shell](https://opensource.com/article/19/11/getting-started-fish-shell)

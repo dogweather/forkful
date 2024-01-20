@@ -44,4 +44,3 @@ class Program
 
 1. [קריאת קובץ טקסט בעזרת StreamReader](https://docs.microsoft.com/he-il/dotnet/api/system.io.streamreader?view=net-5.0)
 2. [קריאת קובץ טקסט באופן אסינכרוני](https://docs.microsoft.com/he-il/dotnet/csharp/programming-guide/concepts/async/)
-3. [חיבור לממשקי API לגישה למידע](https://docs.microsoft.com/he-il/learn/modules/csharp-make-http-requests/)

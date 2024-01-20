@@ -46,4 +46,3 @@ Historisch wird Kotlin als flexibler und leistungsfähiger Nachfolger von Java b
 
 1. [Offizielle Kotlin-Dokumentation](https://kotlinlang.org/docs/home.html)
 2. [Kostenloser Kotlin-Kurs auf Codecademy](https://www.codecademy.com/learn/learn-kotlin)
-3. [Kotlin für Anfänger](https://www.udemy.com/course/kotlin-for-beginners/) auf Udemy.

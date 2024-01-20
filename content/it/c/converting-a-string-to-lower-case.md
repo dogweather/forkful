@@ -49,6 +49,5 @@ In termini di implementazione, la funzione `tolower()` lavora per caratteri. Con
 
 ## Vedi anche
 1. [Documentazione della funzione tolower](https://www.cplusplus.com/reference/cctype/tolower/)
-2. [Funzione strlwr non standard](http://www.cplusplus.com/reference/cstring/strlwr/)
 3. [Tabella ASCII](https://www.asciitable.com/)
 4. [Confronto di stringhe insensibile alla differenza tra maiuscole e minuscole in C](https://stackoverflow.com/questions/5820810/case-insensitive-string-comp-in-c)

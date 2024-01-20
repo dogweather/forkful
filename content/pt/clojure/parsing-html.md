@@ -48,5 +48,4 @@ Nas entranhas, o `hickory` usa a biblioteca Java `jsoup` para converter HTML em 
 
 ## Veja Também
 1. Documentação do Hickory: [https://github.com/davidsantiago/hickory](https://github.com/davidsantiago/hickory)
-2. Um tutorial sobre análise HTML com Clojure: [https://www.tutorialspoint.com/clojure/clojure_web_programming.htm](https://www.tutorialspoint.com/clojure/clojure_web_programming.htm)
 3. Documentação do jsoup: [https://jsoup.org/](https://jsoup.org/)

@@ -48,5 +48,3 @@ public class Program
 ## 参考链接：
 1. [HttpClient类文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.net.http.httpclient?view=net-5.0)
 2. [HttpClientFactory使用指南](https://docs.microsoft.com/zh-cn/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests)
-3. [RestSharp官方文档](https://restsharp.dev/getting-started/)
-4. [Flurl.Http官方文档](https://flurl.dev/docs/flurl-http/)

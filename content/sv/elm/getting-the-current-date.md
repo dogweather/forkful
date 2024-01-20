@@ -74,5 +74,3 @@ Följande resurser kan hjälpa dig att förstå mer om hur Elm hanterar tid:
 1. Elm’s officiella dokumentation om `Time` modulen: [https://package.elm-lang.org/packages/elm/time/latest/](https://package.elm-lang.org/packages/elm/time/latest/)
 
 2. Elm's `Process` module: [https://package.elm-lang.org/packages/elm/core/latest/Process](https://package.elm-lang.org/packages/elm/core/latest/Process)
-
-3. En detaljerad blogg post från Elm’s skapare om att hantera tid: [https://elm-lang.org/news/elm0.19.1](https://elm-lang.org/news/elm0.19.1)

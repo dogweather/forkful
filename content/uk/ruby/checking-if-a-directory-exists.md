@@ -34,4 +34,3 @@ end
   
 ## Додатково:
 - [Ruby Doc Dir Exist?](https://ruby-doc.org/core-2.5.1/Dir.html#method-c-exist-3F)
-- [Ruby Dir Class](https://ruby-doc.org/core-2.5.1/Dir.html)

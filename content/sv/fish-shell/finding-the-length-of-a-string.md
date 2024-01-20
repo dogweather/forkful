@@ -37,5 +37,4 @@ När du hittar längden på en sträng är det viktigt att förstå att Fish She
 
 För mer information om strängmanipulation i Fish Shell, se följande länkar:
 1. [Fish Shell: string length](https://fishshell.com/docs/current/cmds/string-length.html)
-2. [Fish Shell: wc -m](https://fishshell.com/docs/current/cmds/wc.html)
 3. [Fish Shell: set](https://fishshell.com/docs/current/cmds/set.html)

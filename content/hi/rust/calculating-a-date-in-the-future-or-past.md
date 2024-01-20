@@ -48,5 +48,3 @@ fn main() {
 ## देखें भी:
 
 1. और अधिक जानकारी के लिए [Rust डेटाइम गणना](https://docs.rs/chrono/0.4.19/chrono/index.html)
-2. [Rust डेटाइम](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html) के तत्वों की व्याख्या
-3. कैसे करें [Rust में समय का प्रबंधन](https://blog.thoughtram.io/time-management-in-rust.html)

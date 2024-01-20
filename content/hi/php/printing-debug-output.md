@@ -34,5 +34,3 @@ Debug: This is an error message.
 ## देखें भी:
 
 1. [PHP Manual: Debugging in PHP](https://www.php.net/manual/en/debugger.php)
-2. [PHP Debugging Tools](https://www.cloudways.com/blog/top-php-debugging-tools/)
-3. [PHP Debugging Techniques](https://www.sitepoint.com/debugging-tips-php/)

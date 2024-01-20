@@ -48,4 +48,3 @@ Argument 2 : World
 
 1. [C Library - <stdio.h>](https://www.tutorialspoint.com/c_standard_library/stdio_h.htm): Djupdykning till C's stdio.h library.
 2. [Command Line Arguments in C/C++](https://www.geeksforgeeks.org/command-line-arguments-in-c-cpp/): En annan bra artikel om kommandoradsargument.
-3. [C Programming for Beginners](https://www.udemy.com/course/c-programming-for-beginners-/): En Udemy-kurs för nybörjare i C programmering.

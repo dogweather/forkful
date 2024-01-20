@@ -40,5 +40,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## अधिक देखें:
 
-1. [Gleam का ऑफिसियल डॉक्युमेंटेशन](https://gleam.run/docs/): ग्लीम की आधिकारिक डॉक्युमेंटेशन में स्ट्रिंग्स के साथ काम करने के लिए आवश्यकता की सारी जानकारी मिलेगी। 
 2. [Erlang's efficiency guide](https://erlang.org/doc/efficiency_guide/myths.html) आपको स्ट्रिंग कॉनकैटनेशन के बारे में और अधिक विवरण प्रदान करेगा।

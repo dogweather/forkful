@@ -45,8 +45,5 @@ Le fonctionnement de cette fonction Gleam est assez simple. Il commence par anal
 
 ## Voir Aussi
 
-1. [Documentation Gleam](https://gleam.run/docs/)
-2. [Module Gleam URI](https://gleam.run/docs/stdlib/uri/)
-3. [Module Gleam HTTPc](https://gleam.run/docs/stdlib/httpc/)
 4. [Autres ressources sur Erlang](https://www.erlang.org/docs)
 5. [Documentation sur Elixir](https://hexdocs.pm/elixir/Kernel.html)

@@ -34,8 +34,5 @@ echo $string.Length
 
 ## और देखें:
 
-1. [https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-comparisons?view=powershell-7.1](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-string-comparisons?view=powershell-7.1)
-2. [https://www.tutorialspoint.com/powershell/powershell_strings.htm](https://www.tutorialspoint.com/powershell/powershell_strings.htm)
-3. [https://www.learntek.org/blog/powershell-string-manipulation/](https://www.learntek.org/blog/powershell-string-manipulation/)
 
 ध्यान देने वाला बिन्दु यह है कि पावरशेल PowerShell 7.1 वर्जन पर आधारित हैं।

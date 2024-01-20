@@ -33,5 +33,4 @@ cat welcome.txt
 ## 另请参见
 想要了解更多关于 Fish Shell 和文件处理的信息，可以访问以下链接：
 1. [Fish Shell 官方文档](https://fishshell.com/docs/current/index.html)
-2. [Linux 文件和目录的处理](https://www.tutorialspoint.com/unix/linux-file-system.htm)
 3. [Fish Shell 编程教程](https://fishshell.com/docs/current/tutorial.html)

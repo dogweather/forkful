@@ -55,4 +55,3 @@ For more details on working with strings in C#, you can refer to these sources:
 
 1. [Strings (C# Programming Guide)](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
 2. [String.Length Property](https://docs.microsoft.com/en-us/dotnet/api/system.string.length) in the .NET API browser
-3. [Count Chars with LINQ](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/concepts/linq/how-to-count-characters-in-a-string)

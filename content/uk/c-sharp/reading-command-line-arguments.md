@@ -47,4 +47,3 @@ Arg[2]: arg3
 ## Скористайтесь також
 
 1. Документація Microsoft з аргументами командного рядка: [https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/main-and-command-args/)
-2. Туторіал з аргументами командного рядка в C#: [https://www.c-sharpcorner.com/UploadFile/570c05/console-application-and-command-line-arguments-at-a-glance/](https://www.c-sharpcorner.com/UploadFile/570c05/console-application-and-command-line-arguments-at-a-glance/)

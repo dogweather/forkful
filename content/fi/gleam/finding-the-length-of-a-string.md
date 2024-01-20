@@ -37,6 +37,4 @@ Merkkijonon pituuden saaminen Gleamissa voi vaikuttaa yksinkertaiselta, mutta se
 
 Parhaita lähteitä merkkijonojen pituuden löytämiseksi Gleamissa ovat:
 
-1. Gleam ohjelmointikielen dokumentaatio: [unicode.length/1](https://hexdocs.pm/gleam_stdlib/gleam/unicode/0.2.0/function/length/1)
 2. Stack Overflow -keskustelut aiheesta: [Finding String Length in Gleam](https://stackoverflow.com/questions/tagged/gleam?tab=Votes)
-3. Blogikirjoituksia samaan teemaan liittyen: [Working with strings in Gleam](https://example.com/blog/gleam-and-strings)

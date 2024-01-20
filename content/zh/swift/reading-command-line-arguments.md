@@ -40,5 +40,4 @@ for argument in arguments {
 Swift实现读取命令行参数的机制其实很简单。在程序启动时，命令行参数被以字符串数组的形式传给程序。其中第一个元素是用于启动程序的命令，剩余的元素则是各个参数，按照命令行中的顺序排列。
 
 ## 另请参阅
-1. Apple官方文档: [命令行参数和环境变量](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Strings/Articles/CommandArgs.html)
 2. Swift官方文档: [命令行参数](https://docs.swift.org/swift-book/LanguageGuide/Functions.html#ID158)

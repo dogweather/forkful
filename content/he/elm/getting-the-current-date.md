@@ -38,5 +38,4 @@ getTime =
 ## ראו גם:
 
 1. [Time.Posix documentation](https://package.elm-lang.org/packages/elm/time/latest/Time-Posix): הסביר את זה באופן מפורט יותר. 
-2. [Working with time in Elm](https://elmprogramming.com/working-with-time.html): המדריך הזה מסביר איך עובדים עם Time באמת. 
 3. [Elm’s Time module documentation](https://package.elm-lang.org/packages/elm/time/latest/Time): כל אפשרויות השימוש של מודול Time.

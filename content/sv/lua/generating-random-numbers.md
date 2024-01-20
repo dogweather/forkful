@@ -41,6 +41,5 @@ Implementationen av `math.random` i Lua baseras på C-funktionen `rand`, vilket 
 
 För vidare läsning och mer ingående förståelse, här är några länkar:
 1. Official Lua Documentation: [math.random](https://www.lua.org/manual/5.3/manual.html#6.7)
-2. Tutorialspoint: [Lua - Math.random function](https://www.tutorialspoint.com/lua/lua_math_random.htm)
 
 ---

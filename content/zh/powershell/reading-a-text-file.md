@@ -49,6 +49,5 @@ foreach($line in $content){
 
 1. 关于 `Get-Content` 的详细信息和更多示例，参见[官方文档](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.management/get-content).
 
-2. 想了解文件的底层读取机制，参考 [Understanding Hard Disk](https://www.tutorialspoint.com/computer_fundamentals/computer_hard_disk.htm).
 
 3. 更多 `NET platform` 文件操作，详见 [MSDN 文档](https://docs.microsoft.com/zh-cn/dotnet/api/system.io.file?view=netframework-4.8).

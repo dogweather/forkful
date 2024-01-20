@@ -46,8 +46,6 @@ No entanto, `Add-Days` é recomendado por ser mais flexível e fácil de usar. A
 ## Veja Também:
 Aqui estão alguns links para fontes relacionadas para obter mais informações:
 
-1. [PowerShell Basics: Working with Dates](https://www.petri.com/powershell-basics-working-dates)
 
-2. [Manipulating Dates and Times with PowerShell](https://techgenix.com/manipulating-dates-times-powershell/)
    
 3. [Working with PowerShell Date Command (Get-Date)](https://adamtheautomator.com/powershell-get-date/)

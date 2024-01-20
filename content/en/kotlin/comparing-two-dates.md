@@ -50,6 +50,5 @@ To explore more about the Date and Time API, see these docs:
 
 1. [Java SE 8 Date and Time](https://docs.oracle.com/javase/tutorial/datetime/index.html)
 
-2. [Kotlin's java.time.LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/index.html)
 
 Note: This article assumes familiarity with basic Kotlin syntax. If not, start with the [Kotlin docs](https://kotlinlang.org/docs/home.html).

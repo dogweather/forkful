@@ -35,9 +35,3 @@ Esse método de busca e substituição é um truque útil e tem sua origem na pr
 Quando o `String::replace()` é chamado, ele percorre a string original da esquerda para a direita. Quando localiza a primeira ocorrência da sub-string de pesquisa, ele a substitui pela sub-string de substituição.
 
 Ao contrário de alguns outros sistemas de programação, o Arduino não possui funções nativas para expressões regulares. Portanto, se precisar de uma funcionalidade de pesquisa e substituição mais avançada, talvez precise implementar uma biblioteca adicional.
-
-## Veja também:
-
-1. Documentação oficial da biblioteca String no Arduino:[String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
-2. Um tutorial mais aprofundado sobre a manipulação de strings no Arduino: [Arduino String Manipulation](https://learn.adafruit.com/adafruit-arduino-lesson-17-email-sending-movement-detector/string-manipulation)
-3. Se estiver interessado em expressões regulares, confira: [Regex on the Arduino](https://arduinoregex.com/)

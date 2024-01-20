@@ -41,7 +41,5 @@ fun main() {
 
 ## 另请参阅:
 1. [Kotlin 文档 - java.io.File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/)
-2. [Kotlin file operations](http://kotlinexpertise.com/kotlin-file-read-write/)
-3. [Kotlin read file tutorial](https://www.journaldev.com/19187/kotlin-read-file)
 
 注: 如需对文件进行更复杂的操作，比如异步读写、非阻塞IO，可以尝试使用Java的NIO API或者Kotlin的协程。

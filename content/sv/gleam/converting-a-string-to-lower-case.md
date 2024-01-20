@@ -39,11 +39,3 @@ Ett alternativ till `string.to_lower` kan vara att skriva en egen funktion, men 
 `to_lower`-funktionen i Gleam fungerar genom att gå igenom varje tecken i strängen, kolla om det är en stor bokstav, och om det är, ändra den till en liten bokstav.
 
 ## Se även
-1. Gleam language doc - [Link](https://gleam.run/book/tour/basics.html)
-2. Expand your Gleam skills with "Learn X in Y minutes: Gleam" - [Link](https://learnxinyminutes.com/docs/gleam)
-3. For more on string manipulation, here's a [Link](https://gleam.run/stdlib/string.html) to the official String module docs.
-
-## See Also
-1. Gleam språkdokumentation - [Länk](https://gleam.run/book/tour/basics.html)
-2. Bredda dina Gleam färdigheter med "Learn X in Y minutes: Gleam" - [Länk](https://learnxinyminutes.com/docs/gleam)
-3. För mer om strängmanipulation, här är en [Länk](https://gleam.run/stdlib/string.html) till den officiella dokumentationen för String-modulet.

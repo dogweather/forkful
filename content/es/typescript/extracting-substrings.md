@@ -65,4 +65,3 @@ Para más información sobre extracción de subcadenas, consulta:
 
 1. [Documentación de TypeScript: metodo substring()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substring)
 2. [Documentación de TypeScript: método substr()](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/String/substr)
-3. [Substrings en TypeScript: Comprender con Ejemplos](https://www.geekhideout.com/dir/index.php)

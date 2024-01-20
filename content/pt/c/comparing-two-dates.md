@@ -47,8 +47,3 @@ Diferença em segundos: 432000
 A função `difftime` foi introduzida no C89, e é muito usada até hoje para comparar duas datas. Uma alternativa é usar a função `memcmp`, mas tem implicações e não é recomendada.
 
 Detalhes de implementação: A `difftime` retorna a diferença em segundos. Portanto, para converter em dias, precisamos dividir por (60*60*24). Note que a estrutura `tm` tem o mês começando em 0 (Janeiro) e o ano desde 1900.
-
-## Ver Também:
-
-1. Documentação do GNU para a função difftime: [https://www.gnu.org/software/libc/manual/html_node/Elapsed-Time.html](https://www.gnu.org/software/libc/manual/html_node/Elapsed-Time.html)
-2. Tutorial prático sobre a biblioteca de timestamps em C: [https://beginnersbook.com/2017/08/c-timestamp/](https://beginnersbook.com/2017/08/c-timestamp/)

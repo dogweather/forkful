@@ -44,5 +44,4 @@ Entenda que a eficácia da função de conversão de datas em Bash depende do si
 ## Veja mais:
 
 1. Manual do comando Date: [Link Aqui](https://man7.org/linux/man-pages/man1/date.1.html)
-2. Bash para iniciantes: [Link Aqui](https://www.hostinger.com.br/tutoriais/tutorial-do-bash-script)
 3. Guia de formatação da data do GNU: [Link Aqui](http://www.gnu.org/software/coreutils/manual/html_node/Date-input-formats.html)

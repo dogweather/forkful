@@ -41,4 +41,3 @@ Die Methode, um die Länge eines Strings in C++ zu finden, hat sich seit der ers
 
 ## Siehe auch
 1. [C++ Stringfunctionen Referenz](http://www.cplusplus.com/reference/string/string/)
-2. [Effektiver Umgang mit Strings](https://www.geeksforgeeks.org/string-in-cpp/)

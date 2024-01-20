@@ -41,4 +41,3 @@ W celu dalszego zgłębiania wiedzy na temat pracy z katalogami i plikami w Elix
 
 1. [Dokumentacja modułu File](https://hexdocs.pm/elixir/File.html)
 2. [Praca z plikami i katalogami w Elixir](https://elixir-lang.org/getting-started/io-and-the-file-system.html)
-3. [Elixir School: Pliki i katalogi](https://elixirschool.com/pl/lessons/basics/files/)

@@ -52,5 +52,3 @@ När en temporär fil skapas i Python, görs detta med hjälp av systemanrop til
 För mer information om att skapa temporära filer i Python, se följande länkar:
 
 1. [Python’s Official Documentation for the tempfile Module](https://docs.python.org/3/library/tempfile.html)
-2. [Python's `tempfile` — Generate Temporary Files and Directories](https://realpython.com/python-tempfile/)
-3. [How To Create a Temporary File in Python](https://www.delftstack.com/howto/python/create-a-temporary-file-in-python/)

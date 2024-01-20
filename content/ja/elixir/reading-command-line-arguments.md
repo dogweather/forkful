@@ -41,5 +41,3 @@ System.argv |> Test.main
 ## 関連情報
 
 1. [Elixir公式ドキュメンテーション - System.argv/0](https://hexdocs.pm/elixir/System.html#argv/0)
- 
-2. [Elixir School - コマンドライン引数](https://elixirschool.com/jp/lessons/basics/io/)

@@ -45,5 +45,3 @@ DEBUG: Це повідомлення для відлагодження
 ## Дивіться також:
 
 1. [Write-Debug (docs.microsoft.com)](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/write-debug?view=powershell-7.1)
-2. [Debugging Scripts (docs.microsoft.com)](https://docs.microsoft.com/en-us/powershell/scripting/learn/debugging-scripts?view=powershell-7.1)
-3. [How can I use the Write-Debug cmdlet? (devblogs.microsoft.com)](https://devblogs.microsoft.com/scripting/how-can-i-use-the-write-debug-cmdlet/)

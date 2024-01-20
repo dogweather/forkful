@@ -35,6 +35,5 @@ Aquí, `${nombre}` se reemplaza por el valor de la variable `nombre`.
 ## Ver Más
 Para obtener más información y práctica de interpolación de cadenas en JavaScript, consulta los siguientes recursos:
 1. [Interpolación de cadenas en MDN](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Template_literals)
-2. [Ejercicios de Interpolación de cadenas](https://www.javascript.com/try/5bb3a7ebe109ee00103b7b5a)
 
 Recuerda, practicar constantemente es la clave para entender bien cualquier concepto nuevo. ¡Sigue programando!

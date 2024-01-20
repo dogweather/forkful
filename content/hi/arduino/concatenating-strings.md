@@ -27,6 +27,5 @@ Serial.println(s3); // Outputs "नमस्ते दुनिया"
 
 ## अन्य स्रोतों के लिए:
 अधिक विवरण के लिए, आप इनका अन्वेषण कर सकते हैं:
-1. Arduino स्ट्रिंग विवरण : [Arduino String Functions](https://www.arduino.cc/reference/en/language/variables/data-types/string/functions/)
 2. Arduino स्ट्रिंग एपीआई संदर्भ : [String Object](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
 3. sprintf और snprintf संदर्भ: [sprintf](http://www.cplusplus.com/reference/cstdio/sprintf/), [snprintf](http://www.cplusplus.com/reference/cstdio/snprintf/)

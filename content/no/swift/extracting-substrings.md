@@ -51,5 +51,4 @@ print(sisteTre)
 
 For mer informasjon og øvelser på substrings i Swift, kan du lese:
 
-1. Swift dokumentasjon på substrings: [https://docs.apple.com/swift/standard-library/SubString](https://docs.apple.com/swift/standard-library/SubString) 
 2. Bloggpost på "Working with Strings in Swift": [https://www.hackingwithswift.com/articles/141/working-with-strings-in-swift](https://www.hackingwithswift.com/articles/141/working-with-strings-in-swift)

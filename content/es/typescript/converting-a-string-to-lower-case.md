@@ -33,4 +33,3 @@ En JavaScript, del cual TypeScript es un superconjunto, existen métodos alterna
 
 ## Ver También
 1. [Método toLowerCase() - Mozilla Developer Network](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)
-2. [Método toLocaleLowerCase() - Microsoft Docs](https://docs.microsoft.com/es-es/javascript/api/built-ins/string/tolocalelowercase?view=javascript-1.6)

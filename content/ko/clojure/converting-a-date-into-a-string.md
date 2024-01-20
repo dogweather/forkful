@@ -40,6 +40,4 @@ Clojure에서는 `java.text.SimpleDateFormat` 클래스를 이용하여 날짜�
 
 ## 참고 자료
 
-1. [Clojure에서 날짜 다루기](https://clojure-doc.org/articles/tutorials/dates_and_time.html)
-2. [Java SimpleDateFormat 문서](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html) 
-3. [Clojure에서 java.time 사용하기](https://clojure.github.io/clojure/java.time.html)
+2. [Java SimpleDateFormat 문서](https://docs.oracle.com/javase/8/docs/api/java/text/SimpleDateFormat.html)

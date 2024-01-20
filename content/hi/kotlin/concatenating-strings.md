@@ -57,4 +57,3 @@ fun main() {
 अधिक जानकारी के लिए, कृपया निम्नलिखित रिसोर्सेस का अन्वेषण करें:
 
 1. Kotlin के [official documentation](https://kotlinlang.org/docs/reference/basic-types.html#string-literals) की जांच करें।
-2. अधिक उदाहरण और विवरण के लिए programmer's guide to [string concatenation in Kotlin](https://www.baeldung.com/kotlin-string-concatenation).

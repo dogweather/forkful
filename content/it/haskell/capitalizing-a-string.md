@@ -59,6 +59,4 @@ Per quel che riguarda l'implementazione, la funzione `toUpper` fa parte del modu
 
 Per ulteriori informazioni su come lavorare con le stringhe in Haskell, consulta le risorse seguenti:
 
-1. [Haskell String Tutorial](https://www.tutorialspoint.com/haskell/haskell_strings.htm)
-2. [Haskell Wiki: String Manipulation](https://wiki.haskell.org/String_manipulation)
 3. [Data.Char Module Documentation](https://hackage.haskell.org/package/base-4.14.0.0/docs/Data-Char.html)

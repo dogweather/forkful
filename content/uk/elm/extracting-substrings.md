@@ -38,5 +38,4 @@ main =
 ## Див. також
 
 1. [Official Elm Documentation for String](https://package.elm-lang.org/packages/elm/core/latest/String#slice): офіційне керівництво Elm для рядків, в тому числі `String.slice`.
-2. [Practical Elm Tutorial on Extracting Substrings](https://elmprogramming.com/strings.html): керівництво по Elm із практичними прикладами використання `String.slice`.
 3. [Regular Expressions in Elm](https://package.elm-lang.org/packages/elm/regex/latest/): якщо ви зацікавлені в користуванні регулярними виразами для витягування підрядків.

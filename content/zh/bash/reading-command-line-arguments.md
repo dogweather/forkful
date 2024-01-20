@@ -53,4 +53,3 @@ bash script.bash arg1 arg2
 
 1. [Bash 脚本教程](https://linux.cn/article-4271-1.html)
 2. [处理 Bash 命令行参数](https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_09_07.html)
-3. [使用getopt解析bash脚本参数](https://www.baeldung.com/linux/getopt-command)

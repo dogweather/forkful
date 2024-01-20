@@ -50,4 +50,3 @@ Elm에서는 저수준 날짜 및 시간 처리를 제공하는 `Time` 패키지
 
 1. [Elm 공식 문서](https://package.elm-lang.org/packages/elm/time/latest/)
 2. [ISO 8601 Wiki](https://ko.wikipedia.org/wiki/ISO_8601)
-3. [Elm-Date-Extra 라이브러리](https://package.elm-lang.org/packages/justinmimbs/date-extra/latest/)

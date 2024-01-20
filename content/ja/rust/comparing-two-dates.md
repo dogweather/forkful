@@ -54,6 +54,5 @@ Rustで日付を比較する際には`std::cmp::Ordering`を使います。こ�
 
 ## 参考情報
 
-1. [Rustの日付と時刻](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html)
 2. [`chrono` crate](https://docs.rs/chrono/0.4.19/chrono/)
 3. [Rustでの日付の操作](https://doc.rust-jp.rs/book-ja/ch12-01-accepting-command-line-arguments.html)

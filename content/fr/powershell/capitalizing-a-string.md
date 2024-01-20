@@ -53,5 +53,3 @@ Pour information, la méthode `(Get-Culture).TextInfo.ToTitleCase()` fonctionne 
 Pour d'autres ressources sur PowerShell, consultez les liens ci-dessous:
 
 1. [_Documentation officielle de PowerShell_](https://docs.microsoft.com/fr-fr/powershell/)
-2. [_PowerShell Basic Cheat Sheet_](https://www.withdave.com/2017/11/powershell-basic-cheat-sheet/)
-3. [_String Manipulation with PowerShell_](https://adamtheautomator.com/string-manipulation-with-powershell/)

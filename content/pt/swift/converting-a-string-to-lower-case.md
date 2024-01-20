@@ -43,7 +43,5 @@ Agora, se falarmos sobre detalhes de implementação, o método **lowercased()**
 ## Veja Também:
 
 1. [String Manipulation in Swift](https://developer.apple.com/documentation/swift/string)
-2. [Swift Documentation: lowercased() function](https://developer.apple.com/documentation/swift/string/2290197-lowercased)
-3. [Swift Documentation: localizedLowercase](https://developer.apple.com/documentation/swift/string/1641535-localizedlowercase)
 
 Lembre-se de que, ao manipular strings, é importante entender bem as funções que está a usar para evitar erros inesperados. E sempre que ficar em dúvida, consulte a documentação oficial do Swift fornecida pela Apple.

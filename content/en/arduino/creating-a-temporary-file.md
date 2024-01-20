@@ -61,6 +61,5 @@ An alternative to SD cards for temporary storage is EEPROM, but this is limited 
 
 1. Learn more about file handling with SD cards in Arduino: [Arduino SD Library](https://www.arduino.cc/en/Reference/SD)
 
-2. To explore how temporary files are managed in more traditional operating systems: [Temporary Files in Windows](https://docs.microsoft.com/en-us/troubleshoot/windows-client/performance/temporary-windows-files)
 
 3. Arduino's guide to using the onboard EEPROM for persistent storage: [Arduino EEPROM Library](https://www.arduino.cc/en/Reference/EEPROM)

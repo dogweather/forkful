@@ -39,4 +39,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 1. [Clojure का आधिकारिक दस्तावेज](https://clojure.org/): Clojure भाषा के विवरण और अन्य फ़ंक्शन के लिए।
 2. [`count`](https://clojuredocs.org/clojure.core/count) Clojure डॉक्स: `count` फ़ंक्शन के विवरण और उदाहरण के लिए।
-3. [`clojure.string/length`](https://clojuredocs.org/clojure.string/length) Clojure डॉक्स: Clojure का एन्क्लोजर या बंद फ़ंक्शन 'स्ट्रिंग की लंबाई' के अधिक विवरण के लिए।

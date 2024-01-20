@@ -52,5 +52,3 @@ Fjerning av tegn som matcher et mønster er en strengoperasjon som ofte brukes, 
 ## Se Også
 
 1. [Regex.Replace Method (System.Text.RegularExpressions)](https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions.regex.replace?view=net-5.0)
-2. [C# Regular Expressions](https://www.tutorialsteacher.com/csharp/csharp-regex) 
-3. [C# String Manipulation: How to Use Strings in C#](https://stackify.com/csharp-string-manipulation/)

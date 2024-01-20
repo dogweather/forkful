@@ -41,4 +41,3 @@ Console.WriteLine(newSentence); // אני למדתי C#
 
 1. [מדריך Microsoft על פונקציית Replace()](https://docs.microsoft.com/en-us/dotnet/api/system.string.replace?view=net-5.0)
 2. [טיפים לשימוש בביטויים רגילים בC#](https://www.dotnetperls.com/regex)
-3. [פרק מחברת קורס Learn-C#.org על מחרוזות](https://www.learn-c#.org/strings/)

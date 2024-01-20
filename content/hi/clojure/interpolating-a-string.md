@@ -37,5 +37,4 @@ Clojure में, आप `str` फ़ंक्शन का उपयोग क
 
 और अधिक जानने के लिए, आप निम्नलिखित स्रोतों पर जा सकते हैं:
 1. Clojure के आधिकारिक पुस्तकालय [str function](https://clojuredocs.org/clojure.core/str)
-2. Clojure में स्ट्रिंग संभंधी [guide](https://clojure.org/guides/learn/strings)
 3. [Format function](https://clojuredocs.org/clojure.core/format) के उपयोग के बारे में पढ़ें।

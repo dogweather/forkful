@@ -63,6 +63,4 @@ The implementation of creating a temporary file is simple - it just picks a rand
 
 ## See Also:
 
-1. [PowerShell Basic Cheat Sheet](https://devblogs.microsoft.com/scripting/powershell-basic-cheat-sheet/)
-2. [Understanding the PowerShell New-TemporaryFile Cmdlet](https://adamtheautomator.com/new-temporaryfile-powershell/)
 3. [New-TemporaryFile Microsoft Official Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/new-temporaryfile?view=powershell-7.1)

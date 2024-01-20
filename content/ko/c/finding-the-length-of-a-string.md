@@ -51,4 +51,3 @@ C 언어에서 "strlen" 함수는 문자열의 마지막에 자동으로 추가�
 ## 추가 정보 :
 
 1. [C 언어 문자열 관련 함수 설명서](https://www.tutorialspoint.com/c_standard_library/string_h.htm)
-2. [C 프로그래밍에서 문자열 처리에 대한 자세한 이해](https://www.geeksforgeeks.org/string-in-c/)

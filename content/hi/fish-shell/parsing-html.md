@@ -25,10 +25,4 @@ curl -sL $url | pup 'p text{}'
 
 ## गहराई में: 
 
-HTML पार्सिंग का इतिहास CGI (Common Gateway Interface) से शुरू हुआ था। PHP, Python के BeautifulSoup और Ruby के Nokogiri library इत्यादि वैकल्पिक उपकरण हैं। Fish Shell में 'pup' उपकरण, Go भाषा पर आधारित है, जो बहुत ही तेज और विश्वसनीय है। 
-
-## और भी देखें:
-
-1. [HTML पार्सिंग के विकल्प](https://html-parsing-library.valid.url)
-2. [और जानें 'pup'](https://pup.docs.valid.url)
-3. [हाउ टू वेब स्क्रैप with ब्यूटीफुल सूप](https://beautiful-soup-url.valid.url)
+HTML पार्सिंग का इतिहास CGI (Common Gateway Interface) से शुरू हुआ था। PHP, Python के BeautifulSoup और Ruby के Nokogiri library इत्यादि वैकल्पिक उपकरण हैं। Fish Shell में 'pup' उपकरण, Go भाषा पर आधारित है, जो बहुत ही तेज और विश्वसनीय है।

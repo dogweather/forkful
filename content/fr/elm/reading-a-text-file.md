@@ -49,5 +49,4 @@ L'implémentation, comme mentionné précédemment, nécessite une communication
 ## Voir Aussi
 1. [Documentation Elm](https://package.elm-lang.org/packages/elm/browser/latest/)
 2. [Documentation FileReader JavaScript](https://developer.mozilla.org/fr/docs/Web/API/FileReader)
-3. [Node.js pour lire les fichiers](https://nodejs.org/en/knowledge/file-system/how-to-read-files-in-nodejs/)
 4. [Python pour lire les fichiers](https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files)

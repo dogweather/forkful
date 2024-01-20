@@ -45,4 +45,3 @@ print("Мене звати {} і мені {} років.".format(name, age))
 
 1. [Документація Python про f-рядки](https://docs.python.org/3/reference/lexical_analysis.html#f-strings)
 2. [Порівняння інтерполяції рядків у Python](https://realpython.com/python-f-strings/)
-3. [Інтерполяція рядків у Python: .format(), %, f-strings](https://www.learnbyexample.org/python-string-interpolation/)

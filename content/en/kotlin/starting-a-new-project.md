@@ -51,6 +51,5 @@ Certain specifics vary depending on the project type. For instance, while starti
 Further Reading and Extendable Knowledge:
 
 1. [Kotlin Official Documentation](https://kotlinlang.org/docs/home.html)
-2. [Starting New Project - IntelliJ IDEA](https://www.jetbrains.com/help/idea/creating-and-running-your-first-kotlin-application.html)
 3. [Kotlin for Java Developers - Coursera Course](https://www.coursera.org/learn/kotlin-for-java-developers)
 4. [Kotlin Programming - Big Nerd Ranch Guide](https://www.bignerdranch.com/books/kotlin-programming-the-big-nerd-ranch-guide/)

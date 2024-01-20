@@ -48,5 +48,3 @@ void loop() {
 ## 参考资料:
 
 1. [ArduinoJson库官方文档](https://arduinojson.org/v6/doc/deserialization/)
-2. [htmlText库的Github页面](https://github.com/netguy204/arduino-htmltext)
-3. [Arduino HTML Parser库的Github页面](https://github.com/joergbonner/Arduino-HTML-Parser)

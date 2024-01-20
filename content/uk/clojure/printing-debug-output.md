@@ -43,5 +43,4 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 Розглядаючи деталі реалізації, Clojure наслідує свої функції виведення відлагодження від своєї головної платформи - JVM. Це означає, що можуть виникнути певні обмеження або виключения, які стосуються всієї платформи.
 
 ## Дивіться також
-1. [Clojure for the Brave and True: Debugging with the Repl](https://www.braveclojure.com/debugging/) - Матеріал про використання REPL для відлагодження в Clojure.
 2. [Debugging with CIDER](https://docs.cider.mx/cider/debugging/debugger.html) - Розглядається використання відлагоджувача CIDER для Clojure.

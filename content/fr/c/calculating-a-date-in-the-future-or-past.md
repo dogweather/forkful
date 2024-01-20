@@ -51,6 +51,3 @@ N'oubliez pas que la structure tm et les fonctions associées établissent le mo
 ## Voir Aussi:
 
 Pour de l'information supplémentaire, vous pouvez consulter:
-1. [Documentation de la bibliothèque time.h](https://www.gnu.org/software/libc/manual/html_node/Time-Library.html)
-2. [Calculer le temps écoulé en C](https://www.geeksforgeeks.org/calculate-elapsed-time-two-dates-c/)
-3. [Travailler avec le temps en C](https://www.programiz.com/c-programming/library-function/time.h)

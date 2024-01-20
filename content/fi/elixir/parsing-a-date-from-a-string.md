@@ -42,5 +42,3 @@ Elixirin DateTime-muunnin toimii ISO 8601 muotoisten päivämäärien kanssa. IS
 
 1. [DateTime Elixir dokumentaatio](https://hexdocs.pm/elixir/DateTime.html)
 2. [ISO 8601 Wikipedia](https://fi.wikipedia.org/wiki/ISO_8601)
-3. [Elixir School - Däärien & ajan käsittely](https://elixirschool.com/en/lessons/basics/date_time/)
-4. [Elixir Forum - DateTime jäsentäminen](https://elixirforum.com/t/parsing-date-time-values-from-string/22417)

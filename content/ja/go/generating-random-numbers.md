@@ -48,4 +48,3 @@ func main() {
 
 1. Go公式ドキュメンテーション: [rand package - math/rand](https://golang.org/pkg/math/rand/)
 2. Go公式ドキュメンテーション: [rand package - crypto/rand](https://golang.org/pkg/crypto/rand/)
-3. The Go Playground: [Random number generator example](https://play.golang.org/p/_Z4koiVmrFQ)

@@ -47,5 +47,3 @@ Hola mundo
 
 1. [Documentación jsoup](https://jsoup.org/)
 2. [Biblioteca HtmlUnit](http://htmlunit.sourceforge.net/)
-3. [Parser Jericho HTML](https://jericho.htmlparser.net/)
-4. [Biblioteca TagSoup](https://home.ccil.org/~cowan/XML/tagsoup/)

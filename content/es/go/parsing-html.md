@@ -63,5 +63,4 @@ Detalles de implementación: 'net/html' utiliza una máquina de estado para pars
 ## Ver También
 
 1. [Documentación oficial de la biblioteca 'net/html'](https://pkg.go.dev/golang.org/x/net/html) - Para leer más sobre 'net/html'.
-2. [Guía de parseo de HTML de Mozilla](https://developer.mozilla.org/es/docs/Web/HTML/Parser) - Para entender el proceso general de parseo del HTML.
 3. ['Beautiful Soup'](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) - Para comparar con una alternativa en Python.

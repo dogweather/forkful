@@ -56,5 +56,4 @@ Når det gjelder implementeringsdetaljer, kan konverteringsfunksjoner variere ba
 Hvis du er interessert i å lære mer om dette emnet, kan du sjekke ut de følgende lenkene:
 
 1. [Elm Time Package](https://package.elm-lang.org/packages/elm/time/latest/)
-2. [Elm tutorial](https://elmprogramming.com/time.html)
 3. [Date to String conversion techniques](https://www.w3schools.com/js/js_date_methods.asp)

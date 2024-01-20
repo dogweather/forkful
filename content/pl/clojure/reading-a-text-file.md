@@ -40,4 +40,3 @@ Wykonanie powyższego kodu spowoduje wyświetlenie zawartości pliku `plik.txt`.
 ## Zobacz też:
 
 - [Clojure Docs - clojure.java.io/reader](https://clojuredocs.org/clojure.java.io/reader): Dokumentacja tej funkcji w Clojure.
-- [StackOverflow - How to read a large text file line by line in Clojure](https://stackoverflow.com/questions/44722222/how-to-read-a-large-text-file-line-by-line-in-clojure): Wątek na StackOverflow omawiający, jak odczytywać duże pliki tekstowe linia po linii w Clojure.

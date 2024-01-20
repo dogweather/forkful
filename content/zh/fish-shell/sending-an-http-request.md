@@ -35,6 +35,5 @@ curl http://example.com
 发送HTTP请求有着积极的历史背景，它最初是为了使网络通信变得更加简单和便捷. 除了 `curl`，我们还有其他一些选择，例如 `wget` 或者 `httpie`。 在 Fish Shell 中发送HTTP请求的实现细节其实就是通过网络协议向服务器发送一些预先设定的数据。
 
 ## 参考链接：
-1. [Curl command Line](https://www.learnshell.org/en/Curl)
 2. [HTTPie – command line HTTP client](https://httpie.org/)
 3. [Wget command Examples](https://www.tecmint.com/10-wget-command-examples-in-linux/)

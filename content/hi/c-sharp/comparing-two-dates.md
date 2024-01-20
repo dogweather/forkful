@@ -56,4 +56,3 @@ Date1 is earlier than Date2.
 ## देखें भी:
 1. [DateTime.Compare Method](https://docs.microsoft.com/en-us/dotnet/api/system.datetime.compare?view=net-5.0) 
 2. [TimeSpan Structure](https://docs.microsoft.com/en-us/dotnet/api/system.timespan?view=net-5.0)
-3. [C# DateTime](https://www.w3schools.com/cs/cs_datetime.asp)

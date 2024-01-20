@@ -44,5 +44,4 @@ Från en implementeringssynpunkt använder ToLower()-metoden i .NET Framework in
 Här är några användbara referenser för att utforska mer om strängmanipulering i PowerShell:
 
 1. Officiell dokumentation för [PowerShell](https://docs.microsoft.com/en-us/powershell/).
-2. [PowerShell String Manipulation](https://www.technipages.com/powershell-string-manipulation).
 3. [.NET String.ToLower Method](https://docs.microsoft.com/en-us/dotnet/api/system.string.tolower).

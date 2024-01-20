@@ -46,5 +46,4 @@ In Basic auth, client sends Base64 encoded credentials in `Authorization` header
 Take a look at these related resources:
 
 1. Learn more about Fetch API via [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API).
-2. Read about alternatives to basic auth in this [OAuth vs Basic Authentication article](https://dzone.com/articles/oauth-vs-basic-authentication-everything-you-wante).
 3. Understand the [in-depth details of Basic access authentication on Wikipedia](https://en.wikipedia.org/wiki/Basic_access_authentication).

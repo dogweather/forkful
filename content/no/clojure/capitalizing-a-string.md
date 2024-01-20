@@ -48,7 +48,6 @@ Fordi Clojure kjører på JVM (Java Virtual Machine), bruker vår funksjon under
 ## Se også:
 For et dypere dykk inn i tekstmanipulasjon i Clojure, sjekk ut disse kildene:
 
-1. [Clojure String Cookbook](https://clojure-cookbook.com): Et omfattende oppslagsverk for strengoperasjoner i Clojure, inkludert oppskrifter på alt fra grunnleggende manipulasjoner til avansert regulært uttrykk og Unicode-håndtering.
 
 2. [Clojure Docs](https://clojuredocs.org): En omfattende kilde til dokumentasjon som dekker Clojure's mange innebygde funksjoner, inkludert de for tekstmanipulasjon.
 

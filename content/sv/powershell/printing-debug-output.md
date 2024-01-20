@@ -42,8 +42,3 @@ Implementationdetaljer av debugutskrift i PowerShell är att den är kopplad til
 ## Se också
 
 För mer information om debugging i PowerShell, se följande länkar:
-
-1. Officiella Microsoft-dokumentationen: [Att skriva debug output](https://docs.microsoft.com/sv-se/powershell/scripting/learn/debugging-scripts?view=powershell-7.1)
-2. Bloggartikel: [PowerShell Debugging: En djupdykning](https://devblogs.microsoft.com/scripting/powershell-debugging-deep-dive/)
-3. PowerShell-rörströmmar: [Översikt](https://docs.microsoft.com/sv-se/powershell/scripting/learn/concepts/powershell-pipelines?view=powershell-7.1) 
-4. GitHub: [Kolla in kodsamlingar](https://github.com/PowerShell/Debugger) för PowerShell Debugger på GitHub för att se hur samhället använder dessa tekniker för att bygga kraftfulla skript och arbetsflöden.

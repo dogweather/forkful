@@ -53,6 +53,4 @@ Implementation details: Lua's `arg` is a simple table holding all arguments. `ar
 ## See Also:
 
 1. [Lua 5.1 Reference Manual](https://www.lua.org/manual/5.1/manual.html) - The official Lua manual.
-2. [Deciphering Lua Command Line Arguments](https://www.tutorialspoint.com/lua/lua_command_line_arguments.htm) - A tutorial on reading command line arguments in Lua.
 3. [Penlight library](https://stevedonovan.github.io/Penlight/api/index.html) - A popular utility library for Lua.
-4. [Lapp library](https://github.com/luapower/lapp) - A library for handling command line arguments in a declarative way.

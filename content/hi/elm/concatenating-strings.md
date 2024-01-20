@@ -31,6 +31,4 @@ main =
 
 ## भी देखें:
 
-1. Elm का अधिकारिक दस्तावेज़ीकरण: [String.concat](https://package.elm-lang.org/packages/elm/core/latest/String#concat) और [String.append](https://package.elm-lang.org/packages/elm/core/latest/String#append) 
-2. [Elm का एक प्रारंभिक हाथों-पे ट्यूटोरियल](https://www.elm-tutorial.org/en/)
-3. [Elm का सम्पूर्ण गाइड इन हिन्दी](https://www.learnxinyminutes.com/docs/hi-hi/elm/)
+1. Elm का अधिकारिक दस्तावेज़ीकरण: [String.concat](https://package.elm-lang.org/packages/elm/core/latest/String#concat) और [String.append](https://package.elm-lang.org/packages/elm/core/latest/String#append)

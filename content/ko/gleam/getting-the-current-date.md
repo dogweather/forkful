@@ -37,6 +37,5 @@ Gleam 프로그래밍 언어에서는 `gleam/date` 라이브러리를 통해 이
 ## 참고 자료
 날짜와 시간에 대한 Gleam 프로그래밍의 더 자세한 내용은 아래 링크를 참조하세요:
 
-1. [Gleam 날짜와 시간 라이브러리 공식 문서](https://hexdocs.pm/gleam_stdlib/gleam/date.html)
 2. [Gleam 시간대 처리에 대한 블로그 글](https://gleam.run/news/gleam-v0.14-released/)
 3. [ISO 8601 날짜와 시간 표준에 대한 위키백과 글](https://en.wikipedia.org/wiki/ISO_8601)

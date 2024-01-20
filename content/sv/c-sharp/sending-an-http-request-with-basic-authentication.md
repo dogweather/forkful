@@ -52,5 +52,4 @@ Under huven konverterar HttpClient klassen i C# först 'username:password' strä
 För mer information om HTTP och autentisering, se dessa källor:
 
 1. [Mozilla Developer Network: HTTP Authentication](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-2. [Microsoft Tutorial: Consume a Web API from .NET](https://docs.microsoft.com/en-us/ado-net/data-services/consume/web-api-client)
 3. [Microsoft Docs: HttpClient Class](https://docs.microsoft.com/en-us/dotnet/api/system.net.http.httpclient)

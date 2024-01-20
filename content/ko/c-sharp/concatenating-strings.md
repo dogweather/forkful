@@ -55,4 +55,3 @@ C#의 문자열은 변경 불가능하며, 문자열을 연결할 때마다 실�
 
 1. [Microsoft 문서: C# 문자열](https://docs.microsoft.com/ko-kr/dotnet/csharp/programming-guide/strings/)
 2. [Stack Overflow: When to use StringBuilder in C#](https://stackoverflow.com/questions/407255/difference-between-stringbuilder-and-string-concatenation-stringbuilder-in-csh)
-3. [GeeksforGeeks: C# String concatenation](https://www.geeksforgeeks.org/c-sharp-string-concatenation/)

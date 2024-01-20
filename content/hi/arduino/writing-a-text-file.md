@@ -32,5 +32,3 @@ myFile.close();
 आप अधिक जानकारी और संबंधित स्रोतों के लिए निम्न लिंकों पर जा सकते हैं:
 1. [आर्दुइनो वेबसाइट पर SD Files का स्केच संग्रह](https://www.arduino.cc/en/Tutorial/Files)
 2. [आर्दुइनो फ़ाइल्स लाइब्रेरी डॉक्यूमेंटेशन](https://www.arduino.cc/en/Reference/SD)
-3. [टेक्स्ट फ़ाइल क्या है? और इसका उपयोग कैसे किया जाता है?](https://www.techopedia.com/definition/28656/text-file)
-4. [टेक्स्ट फ़ाइल के बारे में और अधिक जानें।](https://www.geeksforgeeks.org/reading-and-writing-text-files-using-filesystem-in-arduino/)

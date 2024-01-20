@@ -47,5 +47,4 @@ Maailma
 # Lisätietolähteitä:
 
 1. Pythonin virallinen dokumentaatio: [sys.argv](https://docs.python.org/3/library/sys.html)
-2. Pythonin virallinen dokumentaatio: [argparse](https://docs.python.org/3/library/argparse.html) 
-3. Blogikirjoitus: [Command Line arguments in Python](https://realpython.com/pyscripter-command-line-arguments/)
+2. Pythonin virallinen dokumentaatio: [argparse](https://docs.python.org/3/library/argparse.html)

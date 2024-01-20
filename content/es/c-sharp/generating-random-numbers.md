@@ -60,6 +60,5 @@ Número aleatorio: 7
 ## Consulta también
 
 1. Clase Random en C# [(Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.random?view=net-5.0)
-2. Generando Números Aleatorios con C# [(CsharpStation)](https://www.csharp-station.com/howto/random)
 3. RNGCryptoServiceProvider [(Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.security.cryptography.rngcryptoserviceprovider?view=net-5.0)
 4. System.Security.Cryptography.RandomNumberGenerator [(Microsoft Docs)](https://docs.microsoft.com/es-es/dotnet/api/system.security.cryptography.randomnumbergenerator?view=net-5.0)

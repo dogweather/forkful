@@ -34,6 +34,5 @@ console.log(name.length);
 ## देखिए भी:
 
 1. [JavaScript string length property | MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-2. [Understanding JavaScript's `length`](https://v8.dev/blog/strings#but-first-the-length)
 
 TypeScript में स्ट्रिंग की लंबाई खोजना आसान है, परन्तु विविध परिस्थितियों में दाक्षिण्य एंड ध्यान देने की आवश्यकता है। जन्नती गहराई में जानेवालों के लिए, अपने ज्ञान को बढाने के लिए ऊपर दिए गए लिंक्स पर जाएं।

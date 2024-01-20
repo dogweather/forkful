@@ -48,4 +48,3 @@ func main() {
 
 1. [Документація Go для ioutil.TempFile](https://golang.org/pkg/io/ioutil/#TempFile)
 2. [Створення та робота з файлами Go](https://www.devdungeon.com/content/working-files-go)
-3. [Tutorial: How to create, open, read, write, and delete a file in Go](https://dev.to/sagar/how-to-create-open-read-write-and-delete-a-file-in-go-3cl3)

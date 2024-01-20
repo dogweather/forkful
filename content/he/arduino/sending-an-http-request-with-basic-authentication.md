@@ -60,6 +60,4 @@ void loop() {
 שליחת בקשת HTTP באמצעות אימות בסיסי היא מרכיב מרכזי באינטרנט מאז שהוא נוצר. ישנם גם שיטות אלטרנטיביות, כמו אימות Digest או אימות Bearer, אך הם מסובכים יותר. השיטה המוצגת כאן משתמשת בספריית ESP8266HTTPClient של Arduino, שמסתפקת בהוספת שורה אחת עם השם משתמש והסיסמה לבקשה.
 
 # עוד מקורות למידע
-1. [מידע על ESP8266HTTPClient](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
 2. [מידע על אימות בסיסי](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)
-3. [מדריך לשליחת בקשות HTTP ב-Arduino](https://techtutorialsx.com/2020/09/12/esp32-esp8266-http-post-requests-with-basic-authentication/)

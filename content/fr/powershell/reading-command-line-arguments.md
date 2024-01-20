@@ -55,4 +55,3 @@ Pour plus d'informations sur les techniques et les options avancées lors de la 
 
 1. [Documentation officielle de PowerShell](https://docs.microsoft.com/fr-fr/powershell/)
 2. [Guide PowerShell sur les arguments de la ligne de commande](https://ss64.com/ps/syntax-args.html)
-3. [Arguments de la ligne de commande dans PowerShell pour les débutants](https://www.howtogeek.com/163127/how-powershell-differ-from-the-windows-command-prompt/)

@@ -30,5 +30,3 @@ Le espressioni regolari sono state create negli anni '50 per la manipolazione de
 ## Vedi anche
 Per approfondire il tuo apprendimento su Elm e RegEx, consulta queste risorse:
 1. [Elm Regex Package](http://package.elm-lang.org/packages/elm/regex/latest): Documentazione ufficiale del pacchetto RegEx di Elm.
-2. [Regular Expressions in Elm](https://elmprogramming.com/regular-expressions.html): Una guida più dettagliata sulle espressioni regolari in Elm.
-3. [Elm by Example](https://elm-by-example.org/): Una collezione di esempi di codice Elm, compresi casi d'uso per le espressioni regolari.

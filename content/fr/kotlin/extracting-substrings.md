@@ -53,7 +53,6 @@ La méthode `.substring()` effectue une copie de la portion de la chaîne origin
 Pour plus d'informations sur les string en Kotlin, consultez ces sources :
 
 1. [Documentation Officielle Kotlin- Strings](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin/-string/)
-2. [Baeldung - Manipuler les string en Kotlin](https://www.baeldung.com/kotlin/strings)
 3. [Medium - Exploring Strings in Kotlin](https://medium.com/androiddevelopers/exploring-kotlins-hidden-costs-part-1-fbb9935d9b62)
 
 Ces ressources couvrent bien les différentes méthodes pour manipuler les chaînes de caractères en Kotlin et vous donneront une meilleure compréhension de comment utiliser efficacement ces méthodes.

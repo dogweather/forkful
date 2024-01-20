@@ -44,7 +44,4 @@ Il funzionamento interno di `ARGV` è piuttosto semplice: è un array di stringh
 ## Per saperne di più
 Potrebbe essere utile consultare i seguenti link per ulteriori informazioni sugli argomenti da linea di comando in Ruby:
 
-1. [Ruby Doc - ARGV](https://docs.ruby-lang.org/en/latest/variable.html#ARGV)
-2. [Ruby Doc - OptionParser](https://docs.ruby-lang.org/en/latest/lib/OptionParser.html)
 3. [Stack Overflow - How do I parse command line arguments in Ruby?](https://stackoverflow.com/questions/483210/how-do-i-parse-command-line-arguments-in-ruby)
-4. [RubyGuides - Command Line Arguments](https://www.rubyguides.com/2018/09/ruby-argv-command-line-arguments/)

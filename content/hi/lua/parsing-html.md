@@ -27,7 +27,5 @@ Hello World!
 HTML पार्सिंग का इतिहास में अनेक चरण रहे हैं, पहले इसे ऑटोमेशन और डाटा माइनिंग के लिए किया जाता था, अब इसका उपयोग वेब ऐप्लिकेशन में डाटा प्रसंस्करण और मैनीपुलेशन के लिए होता है। वैकल्पिक तरीके जैसे कि RegEx का उपयोग किया जा सकता है, लेकिन वे HTML के जटिल संरचना को सही तरीके से पार्स नहीं कर पाते। HTML पार्सर मूल रूप से HTML टैग्स, विशेषताओं और पाठ्य को विश्लेषित करके, उन्हें प्रक्रियायोग्य आंतरिक संरचना में परिवर्तित करते हैं।
 
 ## देखने योग्य
-1. ['Lua-users'](https://lua-users.org/wiki/)
 2. [Programming in Lua (book)](https://www.lua.org/pil/)
 3. [Official Lua Documentation](https://www.lua.org/manual/5.4/manual.html)
-4. [HTML Parsing Libraries for Lua](https://lua-toolbox.com/categories/html_parsing.html)

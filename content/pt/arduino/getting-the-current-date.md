@@ -64,7 +64,6 @@ Para obter a data e a hora atuais do RTC, você precisa inicializá-lo previamen
 
 ## Veja Também:
 
-1. Documentação oficial do Arduino: [https://www.arduino.cc/en/main/docs](https://www.arduino.cc/en/main/docs)
 2. Módulo RTC DS3231: [https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/](https://lastminuteengineers.com/ds3231-rtc-arduino-tutorial/)
 3. Biblioteca RTClib (usada neste artigo): [https://github.com/adafruit/RTClib](https://github.com/adafruit/RTClib)
 4. Módulo alternativo RTC DS1307: [https://lastminuteengineers.com/ds1307-rtc-arduino-tutorial/](https://lastminuteengineers.com/ds1307-rtc-arduino-tutorial/)

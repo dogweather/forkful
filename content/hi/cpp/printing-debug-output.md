@@ -49,7 +49,5 @@ cerr और cout के अलावा, आप लॉग फ़ाइल मे
 
 डीबगगिंग के भीतर और बाहर विशेष ध्यान देने योग्य कुछ संसाधन नीचे दिए गए हैं:
 
-1. [Effective Debugging: A brief guide](https://effectivecpp.com/2017/02/12/effective-debugging-a-brief-guide/)
-2. [Step-By-Step guide to Debugging](https://www.codeproject.com/Articles/8889/Step-by-Step-Method-to-Accessing-the-Internal-Work)
 3. [Understanding Streambuf in C++](http://www.cplusplus.com/reference/streambuf/)
 4. [Exceptions and Error handling in C++](https://www.tutorialspoint.com/cplusplus/cpp_exceptions_handling.htm)

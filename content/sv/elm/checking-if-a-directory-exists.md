@@ -34,8 +34,6 @@ Implementeringsdetaljer gäller begränsningarna i att använda webbläsarbasera
 
 ## Se även:
 
-1. Elm Officiella Dokument [Elm Language Docs](http://elm-lang.se/)
-2. More on Ports in Elm [Ports in Elm](http://elm-lang.se/tutorial/external-commands-and-subscriptions)
 3. Node.js's fs package documentation [Node.js's fs](https://nodejs.org/api/fs.html)
 4. Learning more about JavaScript [Mozilla JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide)
 5. More about filesystem operations in JavaScript [Node.js File System](https://www.w3schools.com/nodejs/nodejs_filesystem.asp)

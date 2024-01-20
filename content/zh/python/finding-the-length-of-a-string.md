@@ -51,4 +51,3 @@ print(counter)
 
 1. [Python 官方文档 - len() 函数](https://docs.python.org/zh-cn/3/library/functions.html#len)
 2. [String Methods in Python - Tutorialspoint](https://www.tutorialspoint.com/python/python_strings.htm)
-3. [Understand Python String Length with Examples](https://pythonguides.com/python-string-length/)

@@ -37,4 +37,3 @@ echo "Привіт, $name"
 
 1. [Руководство по Bash от GNU](https://www.gnu.org/software/bash/manual/bash.html)
 2. [Стрічкова інтерполяція в Bash | StackOverflow](https://stackoverflow.com/questions/415403/whats-the-best-way-to-ensure-only-non-special-characters-are-in-a-bash-variable)
-3. [Використання printf в Bash](https://www.cyberciti.biz/faq/unix-printf-examples/)

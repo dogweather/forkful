@@ -40,5 +40,3 @@ En parlant de détails d'implémentation, la concaténation de chaînes en Gleam
 
 ## Voir aussi
 1. [Documentation officielle imprimante Gleam](https://gleam.run/)
-2. [Exemples de code Gleam](https://github.com/gleam-lang/example)
-3. [Tutoriel d'introduction à Gleam](https://gleam.run/tour/)

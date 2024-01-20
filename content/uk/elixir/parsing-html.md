@@ -48,5 +48,4 @@ end
 
 ## Див собі і тут:
 1. [Floki on Hex](https://hex.pm/packages/floki)
-2. [HTML Parsing section on Elixir School](https://elixirschool.com/en/lessons/advanced/nerves/#parsing-html-with-nerves-and-floki)
 3. [The Beauty of Elixir: Building a HTML parser using Elixir’s metaprogramming](https://itnext.io/building-a-html-parser-using-elixirs-metaprogramming-9ee0a3fd0ca1)

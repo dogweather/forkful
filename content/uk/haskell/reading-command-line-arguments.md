@@ -37,4 +37,3 @@ main = do
 
 1. Більше про `System.Environment` тут: [Haskell 2010 Libraries](https://www.haskell.org/onlinereport/haskell2010/haskellch36.html#x43-460004.2)
 2. Більше інформації про використання командного рядка в Haskell: [Real World Haskell](https://book.realworldhaskell.org/read/io.html)
-3. Загальна інформація про аргументи командного рядка: [Wikipedia](https://uk.wikipedia.org/wiki/Аргумент_командного_рядка).

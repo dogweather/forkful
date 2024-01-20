@@ -50,5 +50,4 @@ Go מציעה שערים חלופיים לכך, כולל `ParseInLocation`, אש
 עיין במקורות הבאים למידע נוסף ומתקדם יותר:
 
 1. [מסמך רשמי של Go לגבי Time](https://golang.org/pkg/time/)
-2. [פרסום ב-Blog בנושא parsing dates in Go](https://www.golangprograms.com/go-language/date-and-time.html)
 3. [מדריך מקוצר ל-Go Date & Time Parsing](https://yourbasic.org/golang/format-parse-string-time-date-example/)

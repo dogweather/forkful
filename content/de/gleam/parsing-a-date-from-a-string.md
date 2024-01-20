@@ -40,6 +40,4 @@ Eine wichtige Sache zu beachten ist, dass parsen immer fehlerbehaftet ist. Das h
 ## Siehe auch
 
 Schauen Sie sich weitere Ressourcen an, um mehr über das Parsen von Datum zu lernen:
-1. [Gleam’s offizielle Dokumentation](https://gleam.run/docs/)
 2. [ISO 8601 Standard](https://www.iso.org/iso-8601-date-and-time-format.html)
-3. [Dokumentation der `gleam/calendar` Bibliothek](https://hexdocs.pm/gleam_stdlib/gleam/calendar.html)

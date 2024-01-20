@@ -43,7 +43,6 @@ Tiistai, 14. tammikuuta 2022 13:48:26
 
 ## Katso myös 
 
-1. Microsoft PowerShell Documentation: [https://docs.microsoft.com/is-fi/powershell/](https://docs.microsoft.com/is-fi/powershell/)
 2. Python DateTime Module: [https://docs.python.org/3/library/datetime.html](https://docs.python.org/3/library/datetime.html)
   
 Jotta voit parantaa taitojasi päivämäärien ja ajan manipuloinnissa, suosittelemme, että tutustut myös muiden ohjelmointikielten dokumentaatioon.

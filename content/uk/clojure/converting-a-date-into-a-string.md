@@ -41,6 +41,5 @@ Clojure надає зручний спосіб конвертації дати �
 
 ## Дивіться також:
 
-1. [Clojure - java.time](https://clojure.github.io/clojure/clojure.java-time-api.html)
 2. [Java DateTime tutorial](https://www.baeldung.com/java-8-date-time-intro)
 3. [ISO 8601 Date Format](https://en.wikipedia.org/wiki/ISO_8601)

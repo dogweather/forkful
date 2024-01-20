@@ -52,4 +52,3 @@ El método anterior es bastante rudimentario y no es equivalente a una verdadera
 ## Ver También
 1. Universo Arduino - Introducción a la programación de Arduino: [link](https://www.universoarduino.com)
 2. Arduino - Referencia de la función Serial.readString(): [link](https://www.arduino.cc/reference/en/language/functions/communication/serial/readstring/)
-3. ESP32 - Desarrollo de una interfaz de línea de comandos: [link](https://randomnerdtutorials.com/esp32-cmd-command-line-interface-uart-tutorial/)

@@ -39,8 +39,6 @@ Når vi snakker om implementeringsdetaljer, er det viktig å merke seg at parsin
 
 ## Se også:
 
-1. [Parse5 API Dokumentasjon](https://parse5.github.io/parse5/api.html)
 
-2. ["HTML Parsing" på MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Parser)
 
 3. [Cheerio.js API Dokumentasjon](https://cheerio.js.org/)

@@ -33,7 +33,6 @@ Serial.println(dateStr);
 - **実装の詳細**：上記のコード例では、「sprintf」関数を使って日付を「YYYY/MM/DD」形式の文字列に変換しています。ここで言う「%04d」や「%02d」は、整数を4桁や2桁の文字列に変換する書式指定子です。
 
 ## 参照資料：
-1. Arduino `sprintf`関数のドキュメンテーション: [Arduino sprintf](https://www.arduino.cc/reference/en/language/functions/characters/sprintf/)
 2. 日付を文字列に変換する他の手法: [Using Time Library](https://playground.arduino.cc/code/time)
 
 この記事があなたのプロジェクトに役立つことを願っています。幸運を祈ります！

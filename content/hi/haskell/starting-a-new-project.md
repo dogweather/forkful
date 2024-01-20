@@ -45,4 +45,3 @@ main = print (addNumbers 3 5)
 
 ## अधिक जानकारी के लिए :
 1. [Haskell शुरू करने के लिए गाइड](https://learnyouahaskell.com/chapters)
-2. [Wikipedia पर Haskell](https://en.wikipedia.org/wiki/Haskell_(programming_language))

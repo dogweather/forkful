@@ -47,5 +47,4 @@ Den grunnleggende implementeringen av kommandolinjeargumenter i C er gjennom bru
 ## Se også
 For mer detaljert informasjon, sjekk ut disse nyttige lenkene:
 1. [Command Line Arguments in C](https://www.gnu.org/software/libc/manual/html_node/Program-Arguments.html)
-2. [Understanding main function](https://www.learncpp.com/cpp-tutorial/main-function-command-line-arguments/)
 3. [Command Line Arguments in Unix](https://www.ibm.com/docs/en/aix/7.2?topic=applications-command-line-arguments)

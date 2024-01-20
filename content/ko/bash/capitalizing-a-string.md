@@ -37,6 +37,5 @@ Bash에서 문자열을 대문자로 바꾸는 기능은 내부적으로 ASCII �
 
 ## 참고자료:
 
-1. [Bash문자열대문자로바꾸기](https://www.shell-tips.com/bash/uppercase-string/)
 2. [ASCII테이블](http://www.asciitable.com/)
 3. [Python.upper()메소드](https://www.w3schools.com/python/ref_string_upper.asp)

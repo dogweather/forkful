@@ -40,5 +40,3 @@ Dal punto di vista dell'implementazione, tenete a mente che l'operatore di conca
 Se desiderate saperne di più su come lavorare con le stringhe in Elm, potete esplorare le seguenti risorse:
 
 1. [Guida ufficiale di Elm sulla String](https://package.elm-lang.org/packages/elm/core/latest/String)
-2. [Elm: Concatenazione della Stringa](https://elm-lang.org/examples/string-concat)
-3. [Stringhe in Elm - Scuola di Elm (Inglese)](https://elmprogramming.com/strings.html)

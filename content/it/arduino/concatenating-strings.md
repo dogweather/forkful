@@ -45,6 +45,4 @@ Tuttavia, tenga presente che la concatenazione di stringhe può essere una opera
 
 ## Vedi Anche:
 
-1. Documentazione Arduino: [String Objects](https://www.arduino.cc/reference/en/language/variables/data-types/stringobjects/)
 2. Tutorial sull'uso delle Stringhe in Arduino: [Arduino String Manipulation](https://startingelectronics.org/articles/arduino/switching-arduino-on-off-string/)
-3. Introduzione alla programmazione con Arduino: [Arduino Programming](https://maker.pro/arduino/tutorial/introduction-to-data-types-and-arithmetic-operators-an-arduino-tutorial)

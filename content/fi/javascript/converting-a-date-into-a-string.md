@@ -51,4 +51,3 @@ Kun muunnat päivämäärän merkkijonoksi JavaScriptillä, päivämäärä kaps
 1. [MDN Web Docs: Date](https://developer.mozilla.org/fi/docs/Web/JavaScript/Reference/Global_Objects/Date)
 2. [W3Schools: JavaScript Date Reference](https://www.w3schools.com/jsref/jsref_obj_date.asp)
 3. [JavaScript.Info: Date and Time](https://javascript.info/date)
-4. [JavaScript Kit: Date and Time in Javascript](http://www.javascriptkit.com/javatutors/datetime.shtml)

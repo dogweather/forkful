@@ -41,4 +41,3 @@ Fish Shellの`string replace`コマンドの代替としては、`sed`コマン�
 
 1. [Fish Shell Official Documentation](https://fishshell.com/docs/current/index.html)
 2. [Fish Shell's string replace - StackOverflow](https://stackoverflow.com/questions/3293786/find-and-replace-in-fish-shell)
-3. [Fish Shell Tutorial - Ryuichi](https://tutorial.ryuichi.io/fish-shell-tutorial/replace-text)

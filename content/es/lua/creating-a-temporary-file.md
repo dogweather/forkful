@@ -50,7 +50,6 @@ print(tmp:read("*all")) -- Debería imprimir: "¡Hola Mundo!"
 
 A continuación te dejo algunos enlaces útiles para entender mejor los archivos temporales en Lua:
 
-1. [Manual de Referencia de Lua](https://www.lua.org/manual/5.3/es/manual.html) - Para más detalle acerca de la biblioteca de entrada/salida (`io`) y la biblioteca del sistema operativo (`os`).
 2. [Stack Overflow](https://es.stackoverflow.com/questions/tagged/lua) - Para discusiones y preguntas acerca de la programación en Lua.
 3. [Learn X in Y Minutes (Aprende X en Y Minutos)](https://learnxinyminutes.com/docs/lua/) - Para un repaso rápido de la sintaxis de Lua y sus conceptos básicos.
 4. [Pilas en Lua](https://www.lua.org/pil/contents.html) - Para un estudio profundo de la programación en Lua.

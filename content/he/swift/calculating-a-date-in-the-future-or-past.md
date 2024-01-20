@@ -38,4 +38,3 @@ let pastDate = Calendar.current.date(byAdding: .day, value: -daysToSubtract, to:
 
 ## ראה גם:
 1. ["מדריך למתכנת Swift"](https://docs.swift.org/swift-book/) – המדריך הרשמי של Apple לשפת Swift.
-2. ["השוואת תאריכים ב-Swift"](https://nshipster.com/date/) – מאמר שמסביר את ההבדלים בין `Date`, `DateComponents` ו- `TimeInterval`.

@@ -43,4 +43,3 @@ Per approfondire le modalità di utilizzo delle espressioni regolari in Elixir, 
 
 1. Documentazione ufficiale di Elixir: [Regex](https://hexdocs.pm/elixir/Regex.html)
 2. Erlang/OTP: [modulo `:re`](http://erlang.org/doc/man/re.html)
-3. Learn Elixir: [Manipulating strings and binaries in Elixir](https://elixirschool.com/en/lessons/basics/binaries_strings_and_charlists/)

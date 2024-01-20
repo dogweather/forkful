@@ -53,5 +53,4 @@ Die Implementierungsdetails variieren, abhängig von der verwendeten Bibliothek 
 Hier sind einige Ressourcen, die dir bei der Arbeit helfen könnten:
 
 1. [Axios-Dokumentation](https://github.com/axios/axios)
-2. [Node.js http Module](https://nodejs.de/api/http.html)
 3. [Fetch API](https://developer.mozilla.org/de/docs/Web/API/Fetch_API)

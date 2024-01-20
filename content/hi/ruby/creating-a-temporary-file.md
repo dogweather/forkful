@@ -40,4 +40,3 @@ file.close          # फ़ाइल को बंद करने के ल�
 ## अन्य जानकारी के लिए:
 
 1. [Ruby Tempfile Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/tempfile/rdoc/Tempfile.html)
-2. [Ruby TmpDir Documentation](https://ruby-doc.org/stdlib-3.0.1/libdoc/tmpdir/rdoc/Tmpdir.html)

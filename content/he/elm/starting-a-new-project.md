@@ -46,5 +46,4 @@ main =
 
 ## ראה גם:
 1. [תיעוד האלם הרשמי](https://package.elm-lang.org/packages/elm/core/latest/)
-2. [קורס אינטראקטיבי למתחילים באלם](https://www.elm-tutorial.org/en/)
 3. [הספר "Programming Elm: Build Safe, Sane, and Maintainable Front-End Applications"](https://pragprog.com/titles/jfelm/programming-elm/)

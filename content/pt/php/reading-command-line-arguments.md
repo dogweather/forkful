@@ -51,4 +51,3 @@ A implementação de leitura de argumentos de linha de comando é nativa no PHP,
 
 1. Documentação oficial do PHP para Obter Opções de Console: [link](https://www.php.net/manual/en/function.getopt.php)
 2. Artigo sobre Argumentos da Linha de Comando PHP na Php.net: [link](https://www.php.net/manual/pt_BR/reserved.variables.argv.php)
-3. Artigo do PhpDelusions sobre Argumentos da Linha de Comando: [link](https://phpdelusions.net/articles/cli)

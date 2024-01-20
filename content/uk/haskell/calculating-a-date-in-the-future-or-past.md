@@ -41,7 +41,3 @@ main = do
 ## Див. також:
 
 1. [Документація Haskell Time](https://hackage.haskell.org/package/time-1.6/docs/Data-Time-Clock.html).
-
-2. [Туторіал по Data.Time бібліотеці](http://chrisdone.com/posts/haskell-time).
-
-3. [Бібліотека date-arithmetic](https://hackage.haskell.org/package/date-arithmetic).

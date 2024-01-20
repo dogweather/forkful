@@ -46,4 +46,3 @@ Le code ci-dessus récupère le contenu de Google's main page.
 
 1. Documentation clj-http : [https://github.com/dakrone/clj-http](https://github.com/dakrone/clj-http)
 2. Pour analyser le HTML : [https://github.com/cgrand/enlive](https://github.com/cgrand/enlive)
-3. Descendre en profondeur dans HTTP avec Clojure : [http://nbeloglazov.com/2011/12/26/clojure-and-http.html](http://nbeloglazov.com/2011/12/26/clojure-and-http.html)

@@ -40,6 +40,5 @@ En Clojure hay alternativas como `java.time.format.DateTimeFormatter`. Y tambié
 Respecto a la implementación, Clojure aprovecha la librería Java de manejo de tiempo y fechas, proporcionando sus propias wrappers funcionales sobre estas clases para una mayor comodidad.
 
 ## Ver También
-1. Documentación oficial de Clojure - [`java.time`](https://clojuredocs.org/clojure.java.time)
 2. Documentación oficial de [`clj-time`](https://github.com/clj-time/clj-time)
 3. Guía sobre Java Date Time API - [Baeldung Tutorial](https://www.baeldung.com/java-8-date-time-intro)

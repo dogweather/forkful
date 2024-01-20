@@ -50,4 +50,3 @@ Swiftにはデバッグ出力のために`print`と`debugPrint`の2つの主要�
 
 1. Appleの[公式ドキュメント](https://developer.apple.com/documentation/swift/1541053-print)
 2. Swiftのデバッグ出力に関する[ブログ記事](https://nshipster.com/customplaygrounddisplayconvertible/)
-3. Swiftでのロギングのベストプラクティスについての[解説記事](https://www.raywenderlich.com/6059-logging-in-swift)

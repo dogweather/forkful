@@ -56,6 +56,5 @@ Détails d'implémentation: la manipulation des dates avec java.time est largeme
 
 ## Voir aussi:
 
-1. [Documentation officielle de Kotlin sur java.time](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/)
 2. [Guide pratique pour Joda-Time](http://www.joda.org/joda-time/quickstart.html)
 3. [Guide Java sur le travail avec java.time](https://www.baeldung.com/java-8-date-time-intro)

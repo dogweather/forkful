@@ -37,5 +37,4 @@ Substring 추출은 문자열의 일부분을 접근하고 처리하는 기본�
 
 ## 참고 자료:
 1. [PowerShell Substring 메서드 문서](https://docs.microsoft.com/en-us/dotnet/api/system.string.substring?view=net-5.0)
-2. [PowerShell에서 정규표현식 사용하기](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-regex?view=powershell-7.1)
 3. [자연어 처리를 위한 문자열 처리](https://realpython.com/natural-language-processing-spacy-python/)

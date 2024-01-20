@@ -50,6 +50,5 @@ For å få en dypere forståelse, ta gjerne en titt på disse kildene:
 
 1. [Node.js File System API](https://nodejs.org/api/fs.html) - Tilbyr ingebouwd support til å lage og manipulere filer.
 2. [tmp-promise GitHub](https://github.com/benjamingr/tmp-promise) - poporært TypeScript/JavaScript bibliotek for å lage midlertidige filer og mapper.
-3. [Understanding Temp File](https://blogs.oracle.com/unixman/understanding-temp-file) - En bloggpost som dykker dypere inn i bruk av midlertidige filer på Unix-lignende systemer.
 
 Husk, selv om midlertidige filer er nyttige, er det veldig viktig å slette dem når de ikke er nødvendige for å unngå å bruke for mye lagringsplass.

@@ -43,5 +43,3 @@ currentTime = getPOSIXTime
 ## भी देखें
 अधिक जानकारी के लिए जरूर देखें:
 1. Haskell का आधिकारिक डॉक्युमेंटेशन `Data.Time`: [यहां](https://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
-2. बारेंड डुकास का लेख POSIX समय मापदंड पर: [यहां](https://www.barre.land/blog/posix-time-in-haskell)
-3. अधिक जानकारी Haskell समय लाइब्रेरी पर: [यहां](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/daemons-and-services/haskell-and-posix-pipes-part-2)

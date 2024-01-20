@@ -38,7 +38,6 @@ Detta kodavsnitt tar dagens datum, formaterar det i formatet "dd/M/yyyy" och skr
 3. Implementationsdetaljer: `SimpleDateFormat` använder specifika bokstäver för att beteckna delarna av datumet, till exempel "dd" för dagen, "MM" för månaden och "yyyy" för året. Detta gör att vi kan anpassa formatet för det önskade utseendet.
 
 ## Se även:
-1. [Kotlin's SimpleDateFormat documentation for Date Formatting](https://kotlinlang.org/api/latest/jvm/stdlib/java.text/-simple-date-format/)
    
 2. [Java's Date and Time tutorial to understand more about date conversions](https://docs.oracle.com/javase/tutorial/datetime/iso/index.html) 
 

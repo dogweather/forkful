@@ -32,6 +32,4 @@ HTML पार्सिंग की जरूरत 1990 के दशक क�
 
 अधिक विस्तार से जानने के लिए, निम्नलिखित स्रोतों पर जाएं:
 
-1. [HTML Parsing Tutorial](https://www.journaldev.com/33363/html-parsing-python-beautiful-soup)
 2. [HTML Parsing with Python](https://realpython.com/beautiful-soup-web-scraper-python/)
-3. [HTML Parsing with Perl](https://www.perl.com/pub/2001/01/parsinghtml.html/)

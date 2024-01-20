@@ -44,7 +44,6 @@ IO.puts("Hello, my name is " <> name <> " and I'm " <> Integer.to_string(age) <>
 ## 更多参考
 1. Elixir官方文档 [Strings in Elixir](https://elixir-lang.org/getting-started/sigils.html#strings)
 
-2. [A Dive into String Interpolation in Elixir](https://blog.appsignal.com/2019/03/19/strings-in-elixir.html)
 
 3. [Elixir String Interpolation](https://hexdocs.pm/elixir/String.html#module-interpolation) 
 

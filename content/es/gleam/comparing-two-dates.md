@@ -39,7 +39,6 @@ Alternativas: En otros lenguajes de programación, como JavaScript o Python, la 
 Detalles de Implementación: La función `compare` implementada en Gleam devuelve uno de los tres valores predefinidos `Equal`, `Greater`o `Less` lo que facilita mucho la comprensión y el uso de la comparación de fechas.
 
 ## Ver También
-1. [Documentación oficial de Gleam](https://gleam.run/docs/introduction/)
 2. [Gleam en GitHub](https://github.com/gleam-lang/gleam)
 3. [Comparar fechas en otros lenguajes](https://stackoverflow.com/questions/tagged/date-comparison)
    

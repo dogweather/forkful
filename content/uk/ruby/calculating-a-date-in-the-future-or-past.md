@@ -60,6 +60,5 @@ puts past_date
    - `Time`: https://ruby-doc.org/stdlib-2.7.0/libdoc/time/rdoc/Time.html
    - `active_support/time`: https://api.rubyonrails.org/classes/ActiveSupport/TimeWithZone.html
 
-2. Цікава стаття про роботу з датами і часом у Ruby: [Working with Time in Ruby](https://www.toptal.com/software/working-with-dates-in-ruby-on-rails).
 
 ---

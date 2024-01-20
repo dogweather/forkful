@@ -38,6 +38,4 @@ if fileManager.fileExists(atPath: folderPath) {
 
 ## 更多相关资源:
 1. Apple Developer Documentation: [fileExists(atPath:)](https://developer.apple.com/documentation/foundation/filemanager/1410277-fileexists)
-2. Swift by Sundell: [Working with files in Swift](https://www.swiftbysundell.com/basics/working-with-files-in-swift/)
 3. Stack Overflow thread: [Checking if a folder exists in Swift](https://stackoverflow.com/questions/24097826/read-and-write-a-string-from-text-file)
-4. Swift Tutorial: [How to use FileManager in Swift](https://learnappmaking.com/filemanager-swift-how-to/)

@@ -36,5 +36,4 @@ I detta exempel ändras strängen "2019-07-26" till ett datumobjekt som Elixir k
 ## Se Även
 
 1. [Elixir Date Official Documentation](https://hexdocs.pm/elixir/Date.html).
-2. [Timex Official Documentation](https://hexdocs.pm/timex/readme.html).
 3. [ISO 8601 Datumstandard](https://www.iso.org/iso-8601-date-and-time-format.html).

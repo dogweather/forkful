@@ -36,5 +36,4 @@ iex> Date.add(date, 30)
 ## 另请参阅
 
 - Elixir官方文档：Date：[官方链接](https://hexdocs.pm/elixir/Date.html)
-- Elixir学习教程：[链接](https://elixirschool.com/zh-hans/)
 - Timex库：[GitHub链接](https://github.com/bitwalker/timex)

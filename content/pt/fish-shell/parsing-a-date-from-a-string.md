@@ -33,6 +33,5 @@ No Fish Shell, as datas são representadas internamente como timestamps Unix - o
 ## Veja também
 Confira estes recursos se você está procurando mais informações sobre análise de datas em Fish Shell ou programação de shell em geral.
 
-1. [Documentation for the date command](https://fishshell.com/docs/current/cmds/date.html) - A documentação oficial para o comando `date`, que é usado para obter e manipular datas.
 2. [Unix Time](https://en.wikipedia.org/wiki/Unix_time) - Uma explicação mais aprofundada dos timestamps Unix, como eles funcionam e por que são usados.
 3. [Fish shell scripting tutorial](https://fishshell.com/docs/current/tutorial.html) - Um tutorial útil se você estiver interessado em aprender mais sobre script Fish Shell.

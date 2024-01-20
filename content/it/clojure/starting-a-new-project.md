@@ -48,6 +48,5 @@ Implementare un nuovo progetto in Clojure richiede una buona conoscenza di Cloju
 
 1. [Leiningen Homepage](https://leiningen.org/)
 2. [Clojure CLI](https://clojure.org/guides/getting_started)
-3. [Documentaziome Ufficiale di Clojure](https://clojure.org/reference/readme)
 4. [Impara Clojure in Y minuti](https://learnxinyminutes.com/docs/clojure/)
 5. [Introduzione a Clojure - Video Corso](https://www.youtube.com/watch?v=VSdnJDO-xdg)

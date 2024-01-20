@@ -49,6 +49,4 @@ Kotlin에서 날짜를 비교하는 방법은 Java에서 시작된 java.time 패
 
 ## 참고자료:
 
-1. [Kotlin Documentation: java.time.LocalDate](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/)
 2. [Oracle Documentation: java.time.LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
-3. [Baeldung: Compare Dates in Java](https://www.baeldung.com/java-date-comparison)

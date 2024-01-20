@@ -45,4 +45,3 @@ Für weitere Details und Anwendungen verweise ich auf diese nützlichen Quellen:
 1. Lua-Dokumentation: [os.time](https://www.lua.org/manual/5.3/manual.html#6.9)
 2. Lua-Dokumentation: [table constructor](https://www.lua.org/pil/3.3.html)
 3. Bibliotheken für erweiterte Datumsoperationen: [date](https://github.com/Tieske/date), [Penlight](https://stevedonovan.github.io/Penlight/api/index.html)
-4. [Lua programming language on Wikipedia](https://de.wikipedia.org/wiki/Lua_(Programmiersprache)) für einen allgemeineren Überblick über Lua.

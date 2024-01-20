@@ -48,6 +48,4 @@ public class Example {
 
 1. Java Documentation: [SimpleDateFormat](https://docs.oracle.com/javase/7/docs/api/java/text/SimpleDateFormat.html) 
 
-2. Java Documentation: [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html) 
-
-3. [HowToDoInJava: Java Convert Date to String](https://howtodoinjava.com/java/date-time/java-convert-date-to-string/)
+2. Java Documentation: [DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)

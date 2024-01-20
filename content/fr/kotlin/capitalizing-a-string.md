@@ -37,6 +37,5 @@ Bonjour Tout Le Monde
 
 ## Voir aussi
 
-1. Documentation officielle de Kotlin sur les chaînes : [https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
 2. Guide de l'utilisateur Kotlin sur la gestion des chaînes : [https://kotlinlang.org/docs/basic-types.html#string-literals](https://kotlinlang.org/docs/basic-types.html#string-literals)
 3. Autres techniques de manipulation de chaînes en Kotlin : [https://www.programiz.com/kotlin-programming/string](https://www.programiz.com/kotlin-programming/string)

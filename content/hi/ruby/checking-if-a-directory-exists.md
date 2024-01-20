@@ -43,4 +43,3 @@ end
 **## और देखें:**
 
 1. Ruby के आधिकारिक डॉक्यूमेंटेशन के लिए [Dir.exist?](https://ruby-doc.org/core-2.6.5/Dir.html#method-c-exist-3F) पर जाएं।
-2. सामान्य Ruby IO प्रबंधन के बारे में अधिक जानने के लिए [Ruby IO और फ़ाइल सिस्टम गाइड](https://www.rubyguides.com/ruby-tutorial/io/) देखें।

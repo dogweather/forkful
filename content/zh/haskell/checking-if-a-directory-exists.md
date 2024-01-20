@@ -41,5 +41,4 @@ main = do
 ## 另请参见
 以下是一些相关的学习资源，帮助您更深入理解这个主题：
 1. Haskell官方文档：[System.Directory](http://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-2. 实用Haskell教程：[操作系统交互](https://loveforprogramming.quora.com/Tutorial-5-Interacting-with-the-OS)
 3. Learn You a Haskell for Great Good：[IO](http://learnyouahaskell.com/input-and-output)

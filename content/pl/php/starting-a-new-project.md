@@ -52,6 +52,4 @@ Oprócz korzystania z "gołego" PHP, innym popularnym podejściem jest korzystan
 
 ## Zobacz także:
 
-1. [Oficjalna dokumentacja PHP](https://php.net/manual/pl/index.php)
-2. [Jak zacząć z PHP?](https://developer.mozilla.org/pl/docs/Learn/Server-side/PHP/Wprowadzenie)
 3. [Podstawy programowania w PHP](https://www.codecademy.com/learn/learn-php)

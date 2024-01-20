@@ -39,6 +39,5 @@ Quando enviamos um pedido HTTP com autenticação básica, as credenciais são i
 
 ## Veja Também:
 
-1. [Autenticação básica na Wikipédia](https://pt.wikipedia.org/wiki/Autentica%C3%A7%C3%A3o_b%C3%A1sica_de_acesso)
 2. [Documentação do System.Net.NetworkCredential](https://docs.microsoft.com/pt-br/dotnet/api/system.net.networkcredential?view=net-5.0)
 3. [Autenticação OAuth na Wikipédia](https://pt.wikipedia.org/wiki/OAuth).

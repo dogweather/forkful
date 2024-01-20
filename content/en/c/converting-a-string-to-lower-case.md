@@ -48,5 +48,3 @@ One alternative to using the `ctype.h` library would be to manipulate the ASCII 
 ## See Also:
 
 1. [C Library - ctype.h](https://www.tutorialspoint.com/c_standard_library/ctype_h.htm)
-2. [C String manipulation functions](https://www.geeksforgeeks.org/string-handling-in-c/) 
-3. [Converting Strings and Characters to Lowercase in C](https://pagefault.blog/2021/01/15/converting-strings-and-characters-to-lowercase-in-c/)

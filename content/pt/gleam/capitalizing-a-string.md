@@ -36,5 +36,4 @@ Neste exemplo, o método `string.capitalise` é usado para capitalizar a string.
 ## Veja Também
 -Algumas fontes para aprender mais sobre Gleam e suas funções de string:
 1. Documentação Oficial do Gleam: [https://gleam.run/book/tour/strings.html](https://gleam.run/book/tour/strings.html)
-2. Tutorial Gleam para iniciantes: [https://dev.to/alisinabh/a-tour-of-gleam-5f0m](https://dev.to/alisinabh/a-tour-of-gleam-5f0m)
 3. API de string Gleam: [https://hexdocs.pm/gleam_stdlib/gleam/string.html](https://hexdocs.pm/gleam_stdlib/gleam/string.html)

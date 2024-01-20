@@ -36,6 +36,5 @@ iex> DateTime.from_iso8601("2001-02-03T04:05:06Z")
 Elixir의 날짜와 시간에 대한 더 많은 정보를 위해 다음 사이트를 방문해보세요.
 
 1. 공식 Elixir 문서: [DateTime](https://hexdocs.pm/elixir/DateTime.html#content)
-2. Timex 라이브러리: [Timex Documentation](https://hexdocs.pm/timex/readme.html) 
 
 Remember, the landscape of date parsing is rich and varied. 각 사용 사례에 최적화된 도구와 라이브러리를 찾는 것이 중요합니다.

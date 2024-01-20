@@ -40,7 +40,4 @@ fn main() {
 
 ## Див. також
 
-1. [Gleam String module](https://hexdocs.pm/gleam_stdlib/gleam/string)
 2. [Unicode and text encoding](https://realpython.com/python-encodings-guide/)
-3. [The History of Erlang](https://www.erlang.org/course/history)
-4. [Learn Gleam: Strings and Characters](https://gleam.run/book/tour/strings-and-characters.html)

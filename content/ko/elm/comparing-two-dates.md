@@ -51,5 +51,4 @@ Elm에 관한 다른 정보를 찾고 싶다면 아래 링크들을 참고하세
 
 1. [Elm 공식 문서](https://guide.elm-lang.jp/)
 2. [Elm 시간 관련 패키지](https://package.elm-lang.org/packages/elm/time/latest/)
-3. [Elm에 대한 추가 학습 자료](https://www.elm-tutorial.org/en/)
 4. [Elm 커뮤니티 포럼](https://discourse.elm-lang.org/)

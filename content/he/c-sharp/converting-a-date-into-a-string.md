@@ -39,4 +39,3 @@ Console.WriteLine(dateStr);
 מגוון מקורות נוספים מסבירים את הפעולה של המרת תאריך למחרוזת ומסבירים את השימושים שלה:
 1. [מאמר Microsoft](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
 2. [פוסט בבלוג StackOverflow](https://stackoverflow.com/questions/10158508/how-to-convert-date-to-string-format-dd-mm-yyyy-in-linq-query-result)
-3. [אתר C# Corner](https://www.c-sharpcorner.com/blogs/convert-datetime-to-string-format-in-c-sharp1)

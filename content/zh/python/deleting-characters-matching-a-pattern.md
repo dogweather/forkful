@@ -44,4 +44,3 @@ print("删除数字后的字符串:", result)
 删除字符和正则表达式的概念，您可以参考以下几个链接深入研究：
 1. [Python正则表达式](https://docs.python.org/3/library/re.html)
 2. [Python字符串translate()方法](https://www.runoob.com/python/att-string-translate.html)
-3. [字符串处理的历史背景](https://en.wikipedia.org/wiki/String_(computer_science))

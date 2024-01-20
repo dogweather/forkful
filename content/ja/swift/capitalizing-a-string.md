@@ -50,5 +50,4 @@ Swiftでは、 `uppercased()` と `capitalized` は共に `String` タイプの�
 
 ## 参照
 
-1. [Apple 文字列と文字 - Swift プログラミングガイド](https://developer.apple.com/jp/documentation/swift/String_and_Character)
 2. [スタック・オーバーフロー - Swiftで文字列を大文字にする](https://stackoverflow.com/questions/24159386/swift-capitalize-words-in-string)

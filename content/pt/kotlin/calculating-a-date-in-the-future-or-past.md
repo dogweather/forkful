@@ -54,4 +54,3 @@ Como estamos trabalhando com datas, temos que estar cientes dos detalhes de impl
 
 1. [Documentação Oficial Java.time](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html)
 2. [Joda-Time](https://www.joda.org/joda-time/)
-3. [Treinamento de Kotlin na plataforma Udemy](https://www.udemy.com/topic/kotlin/) - a seção sobre o manuseio de datas é relevante.

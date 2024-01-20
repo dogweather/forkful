@@ -40,5 +40,4 @@ Elixir, presentato per la prima volta nel 2011, ha adottato la concatenazione de
 ## Leggi Anche:
 
 1. Documentazione ufficiale di Elixir sulla concatenazione delle stringhe: [https://hexdocs.pm/elixir/String.html#concat/2](https://hexdocs.pm/elixir/String.html#concat/2)
-2. Post del blog sulla manipolazione delle stringhe in Elixir: [https://www.poeticoding.com/working-with-strings-in-elixir](https://www.poeticoding.com/working-with-strings-in-elixir)
 3. Discussione su Stackoverflow sulla concatenazione delle stringhe in Elixir: [https://stackoverflow.com/questions/27398325/how-to-concatenate-strings-in-elixir](https://stackoverflow.com/questions/27398325/how-to-concatenate-strings-in-elixir)

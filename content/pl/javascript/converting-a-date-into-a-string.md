@@ -54,5 +54,4 @@ console.log(data.toLocaleDateString('pl-PL', opcje)); // "długi dzień miesiąc
 ## Zobacz także:
 
 1. Dokumentacja MDN na temat [`toLocaleDateString()`](https://developer.mozilla.org/pl/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleDateString)
-2. Wyjaśnienie [Converting a Date object to a string](https://www.w3resource.com/javascript/date-object-toLocaleDateString.php) na W3 Resource
 3. Poradnik [Working with JavaScript Date](https://flaviocopes.com/javascript-dates/) na Flavio Copes blogu.

@@ -64,4 +64,3 @@ print("\(components.day!)-\(components.month!)-\(components.year!)")
 ## Vedere Anche
 
 1. [Date and Time Programming Guide](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/DataFormatting/Articles/dfDateFormatting10_4.html#//apple_ref/doc/uid/TP40002369-SW1): Un completo tutorial su come utilizzare `DateFormatter` dall'Apple Developer Documentation.
-2. [Working with Dates in Swift](https://www.swiftbysundell.com/articles/dates-and-time-in-swift/): Un utile articolo che fornisce una panoramica dettagliata su come lavorare con date in Swift.

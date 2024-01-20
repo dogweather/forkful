@@ -43,5 +43,4 @@ Gleam implementa la stampa di debug attraverso il modulo `gleam/io`. Questo modu
 ## Vedi anche
 
 1. [Guida ufficiale alla programmazione in Gleam](https://gleam.run/book/)
-2. [Documentazione delle librerie standard di Gleam](https://hexdocs.pm/gleam_stdlib/readme.html)
 3. [Articolo sull'utilizzo della stampa di debug nel linguaggio Gleam](https://joseconsdorf.medium.com/debug-print-statements-in-gleam-3a153e175f87)

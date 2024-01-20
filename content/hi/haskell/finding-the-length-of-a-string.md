@@ -38,4 +38,3 @@ print myStringLength
 ## अन्य संसाधन
 
 1. [Haskell String Length](https://learnyouahaskell.com/starting-out#an-intro-to-lists): यहां पर आपको `length` function की अधिक जानकारी मिलेगी।
-2. [Haskell Strings Documentation](https://www.haskell.org/tutorial/strings.html): Haskell स्ट्रिंग्स के बारे में अधिक विस्तार से जानने के लिए यह डॉक्यूमेंटेशन संदर्भित करें।

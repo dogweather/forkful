@@ -21,9 +21,4 @@ val newText = text.replace("מדגם", "חדש")
 println(newText) // מודפס: "זה הוא טקסט חדש"
 ```
 ## צלילה עמוקה:
-בעבר, הפונקציה replace() הייתה ממומשת באמצעות פקודות לולאה טרדיציונאליות, אך Kotlin מבצעת שיפור זה באמצעות Regular Expressions. גרסאות ברנופ"פ חזורה מאפשרות התאמה גדולה יותר. יש גם אפשרויות אחרות לחיפוש והחלפה, כמו הפונקציה split(). 
-
-## ראו גם:
-1. [Kotlin Text Functions - replace()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/replace.html)
-2. [Kotlin Text Functions - split()](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/split.html)
-3. [An Introduction to Regular Expressions (Regex) In Kotlin](https://jivimberg.io/blog/2018/05/20/regular-expressions-in-kotlin-part-1/)
+בעבר, הפונקציה replace() הייתה ממומשת באמצעות פקודות לולאה טרדיציונאליות, אך Kotlin מבצעת שיפור זה באמצעות Regular Expressions. גרסאות ברנופ"פ חזורה מאפשרות התאמה גדולה יותר. יש גם אפשרויות אחרות לחיפוש והחלפה, כמו הפונקציה split().

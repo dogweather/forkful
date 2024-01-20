@@ -40,6 +40,4 @@ cat myfile.txt
 
 ## Див. також:
 
-1. [Детальний огляд команди `cat`](https://en.wikipedia.org/wiki/Cat_(Unix))
-2. [Перегляд команди `less`](https://en.wikipedia.org/wiki/Less_(Unix))
 3. [Офіційна документація Fish Shell](https://fishshell.com/docs/current/index.html).

@@ -43,5 +43,3 @@ Internamente, a comparação de datas no Swift é possível porque a classe Date
 ## Veja Também 
 
 1. [Documentação oficial do Swift - Date](https://developer.apple.com/documentation/foundation/date)
-2. [Comparing Dates in Swift](https://useyourloaf.com/blog/comparing-dates-in-swift/)
-3. [Swift by Sundell - Working with dates](https://www.swiftbysundell.com/basics/dates/)

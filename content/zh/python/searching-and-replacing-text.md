@@ -39,4 +39,3 @@ print(new_text)
 
 1. [Python官方文档关于str.replace()的解释](https://docs.python.org/3/library/stdtypes.html#str.replace)
 2. [Python官方文档关于re模块的解释](https://docs.python.org/3/library/re.html)
-3. [搜索与替换算法的详细解释](https://www.geeksforgeeks.org/string-matching-algorithms/)

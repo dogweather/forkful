@@ -38,5 +38,4 @@ Elm에서는 `Time` 모듈을 통해 날짜와 시간 관련 처리를 할 수 �
 
 ## 다음으로 보기
 1. 공식 문서: [Elm Time](https://package.elm-lang.org/packages/elm/time/latest/).
-2. [Elm에서 날짜와 시간 다루기](https://korhner.github.io/elm/playing-with-dates-and-times-in-elm/).
 3. [JavaScript에서 날짜 파싱하기: Moment.js](https://momentjs.com/docs/#/parsing/string/).

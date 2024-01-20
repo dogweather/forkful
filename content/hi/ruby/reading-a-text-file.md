@@ -30,6 +30,5 @@ file.close
 
 ## भी देखें:
 1. [Ruby का अधिकृत दस्तावेज़ीकरण](https://ruby-doc.org/core-2.7.0/File.html)
-2. [GeeksforGeeks पर Ruby File IO](https://www.geeksforgeeks.org/ruby-file-io/)
 
 Note: This article is targeted towards Hindi readers who already have a basic understanding of computer programming concepts and Ruby programming.

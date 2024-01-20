@@ -41,7 +41,5 @@ Ainoa sääntö on, että ongelmien välttämiseksi sinun on aina noudatettava v
 
 Seuraavat linkit tarjoavat hyödyllistä tietoa ja syvällisempää tietoa aiheesta:
 
-1. [How to Download a Web Page in Haskell](https://www.stackbuilders.com/tutorials/haskell/web-scraping-wreq/)
 2. [http-conduit GitHub](https://github.com/snoyberg/http-client)
-3. [Scraping the Web in Haskell](https://aikikode.github.io/posts/2020-04-03-web-scraping-with-haskell/)
 4. [Robot Exclusion Standard](https://www.robotstxt.org/orig.html)

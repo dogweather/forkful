@@ -52,6 +52,5 @@ In terms of implementation, `string.replace` scans the input for occurrences of 
    
 2. [Gleam Programming Language Home](https://gleam.run)
    
-3. [String Manipulation Article on Gleam by Lambda Soup](https://www.lambdasoup.com/posts/gleam_string_manipulation/)
    
 There you have it! Happy Gleaming!

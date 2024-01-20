@@ -26,7 +26,5 @@ Po uruchomieniu kodu powyżej, zostanie wygenerowany tymczasowy plik, wpis do ni
 Tworzenie tymczasowych plików ma swoje korzenie w starszych systemach operacyjnych, które wykorzystywały takie pliki do przechowywania tymczasowych danych podczas wykonywania długotrwałych operacji. Istnieją alternatywy dla `mktemp`, takie jak utworzenie pliku o unikalnej nazwie za pomocą kombinacji daty i czasu. Szczegół implementacji polecenia `mktemp` polega na tworzeniu pliku w katalogu /tmp systemu Linux.
 
 ## Zobacz Również:
-1. [Tworzenie plików tymczasowych w Pythonie](http://python-examples.com/python-tempfile/)
-2. [Tworzenie plików tymczasowych w C++](http://cpp-examples.com/cpp-tempfile/)
 3. [Dokumentacja Bash](https://www.gnu.org/software/bash/manual/bash.html)
 4. [Dokumentacja mktemp](https://www.gnu.org/software/coreutils/manual/html_node/mktemp-invocation.html)

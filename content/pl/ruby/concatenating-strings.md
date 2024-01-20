@@ -43,4 +43,3 @@ Istnieją również metody alternatywne, takie jak `concat()` lub `join()`. Wyma
 ## Zobacz także:
 
 1. Dokumentacja Ruby dla łańcuchów znaków: [https://ruby-doc.org/core/String.html](https://ruby-doc.org/core/String.html)
-2. Wyjaśnienie różnych metod łączenia łańcuchów znaków: [https://www.rubyguides.com/2018/06/ruby-string-concatenation](https://www.rubyguides.com/2018/06/ruby-string-concatenation)

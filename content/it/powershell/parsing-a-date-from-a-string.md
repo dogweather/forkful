@@ -57,5 +57,3 @@ Inoltre, il parsing delle date può essere influenzato da molte impostazioni, co
 Di seguito alcuni link utili che potrebbero aiutarti a saperne di più:
 
 1. Documentazione ufficiale Microsoft per l'uso di DateTime in PowerShell: [https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
-   
-2. Articolo su come usare DateTime in PowerShell: [https://www.howtogeek.com/501256/how-to-use-datetime-in-powershell/](https://www.howtogeek.com/501256/how-to-use-datetime-in-powershell/)

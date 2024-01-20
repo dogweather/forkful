@@ -45,6 +45,5 @@ Szczegół implementacji polega na tym, że konwersja wykorzystuje klasy `.NET`,
 
 ## Zobacz również
 Zobacz te zasoby, jeśli chcesz dowiedzieć się więcej o pracy z datami w PowerShell:
-1. [Praca z datami i czasem w PowerShell](https://docs.microsoft.com/pl-pl/powershell/scripting/learn/deep-dives/everything-about-datetime?view=powershell-7.1)
 2. [Formatowanie dat i czasu w .NET](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/standard-date-and-time-format-strings)
 3. [Get-Date w PowerShell](https://docs.microsoft.com/pl-pl/powershell/module/microsoft.powershell.utility/get-date?view=powershell-7.1)

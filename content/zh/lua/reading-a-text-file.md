@@ -42,5 +42,4 @@ Lua读取文件的详细实现如下：lua采用缓冲IO操作，让读取文件
 
 ## 参考资源：
 1. [Lua 5.3 Reference Manual - File Input and Output](https://www.lua.org/manual/5.3/manual.html#6.9) 
-2. [Learn Lua - File I/O](https://www.learn-lua.org/en/File_I/O/)
 3. [Lua-users wiki: File Input/Output](http://lua-users.org/wiki/FileInputOutput)

@@ -39,4 +39,3 @@ Historia JavaScript nie jest pełna informacji na temat tworzenia plików tymcza
 Aby dowiedzieć się więcej, zajrzyj na poniższe strony:
 
 1. Oficjalna dokumentacja `tmp` [dostępna tutaj](https://www.npmjs.com/package/tmp)
-2. Post na temat różnic pomiędzy przechowywaniem danych w plikach, pamięci podręcznej i sesji [dostępny tutaj](https://stackoverflow.com/questions/47833664/when-to-use-cache-vs-session-vs-temporary-file-in-a-web-application)

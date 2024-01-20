@@ -41,4 +41,3 @@ fn main() {
 
 1. Gleam 文档: [Gleam regex module](https://hexdocs.pm/gleam_stdlib/gleam/regex.html)
 2. 模式匹配在编程中的应用: [Pattern Matching in Programming](https://www.cs.princeton.edu/courses/archive/spr09/cos333/beautiful.html)
-3. Perl 创建者关于模式匹配的历史讨论: [History of Pattern Matching](http://www.wall.org/~larry/nifty.html)

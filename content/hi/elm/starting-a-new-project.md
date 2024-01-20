@@ -44,5 +44,4 @@ main =
 
 ## अन्य देखें
 1. [Elm Official Guide](https://guide.elm-lang.org/)
-2. [Learn Elm Programming](https://www.elm-tutorial.org/)
 3. [Elm Vs Other](https://elm-lang.org/news/compilers-as-assistants)

@@ -56,4 +56,3 @@ En cuanto a la implementación, Gleam usa la interfaz de línea de comandos del 
 ## Ver También:
 
 1. [Documentación oficial de Gleam](https://gleam.run/): Para obtener más información sobre Gleam y cómo funciona.
-2. [Documentación de módulos OS](https://hexdocs.pm/gleam_stdlib/gleam/os/): Para obtener más detalles sobre los argumentos de línea de comandos y otras funciones del módulo de sistema operativo en Gleam.

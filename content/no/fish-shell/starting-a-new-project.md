@@ -50,4 +50,3 @@ Fish Shell er kjent for sin brukervennlighet og sin utenom det vanlige støtte f
 Du kan hente mer informasjon fra følgende kilder:
 1. [Fish Shell dokumentasjon](https://fishshell.com/docs/current/index.html)
 2. [Hvordan starte et nytt programmeringsprosjekt: En trinnvis guide](https://guides.github.com/introduction/git-handbook/)
-3. [Tips for å starte et nytt programvareprosjekt](https://opensource.com/article/18/6/tips-starting-new-programming-project)

@@ -39,5 +39,4 @@ Write-Output $מספר_אקראי
 ## ראה גם:
 
 1. [Microsoft Docs: Get-Random](https://docs.microsoft.com/he-il/powershell/module/microsoft.powershell.utility/get-random)
-2. [Stack Overflow: Generating Random Numbers in PowerShell](https://stackoverflow.com/questions/4753702/generating-random-numbers-in-powershell) 
-3. [PowerShell Tutorial: Random Number Generator](https://www.tutorialspoint.com/powershell/powershell_random_number_generator.htm)
+2. [Stack Overflow: Generating Random Numbers in PowerShell](https://stackoverflow.com/questions/4753702/generating-random-numbers-in-powershell)

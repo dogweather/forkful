@@ -42,4 +42,3 @@ Friday, March 12, 2021 12:00:00 AM
 
 1. [MSDN - DateTime.ParseExact Method](https://msdn.microsoft.com/en-us/library/w2sa9yss(v=vs.110).aspx)
 2. [MSDN - DateTime.TryParseExact Method](https://msdn.microsoft.com/en-us/library/ms131044(v=vs.110).aspx)
-3. [PowerShell Basics: Parsing and creating date time values](https://adamtheautomator.com/powershell-date-format/)

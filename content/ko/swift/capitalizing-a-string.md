@@ -38,6 +38,5 @@ Swift의 `.uppercased()` 함수는 문자열을 통해 호출되며, 모든 문�
 
 1. "The Swift Programming Language" Apple의 공식 소개서에서 Swift에 대해 더욱 자세히 배울 수 있습니다. [링크](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 
-2. "Mastering Swift"는 Swift의 고급 기능과 개념에 대해 깊이 있게 다룹니다. [링크](https://www.packtpub.com/product/mastering-swift-5/9781839215427)
 
 3. "Pro Swift"는 Swift를 사용하여 실제 프로젝트를 어떻게 수행할 수 있는지에 대해 설명합니다. [링크](https://www.hackingwithswift.com/store/pro-swift)

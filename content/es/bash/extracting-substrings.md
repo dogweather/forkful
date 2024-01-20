@@ -41,7 +41,6 @@ Detrás de escena, cuando extraes una subcadena, Bash la recorre desde el índic
 
 ## Ver También
 
-1. [Tutorial de Bash](https://www.learnshell.org/es/Bash_Scripting)
 2. [Bash en Wikipedia](https://es.wikipedia.org/wiki/Bash)
 3. [Extraer subcadenas en Bash](http://tldp.org/LDP/abs/html/string-manipulation.html)
 

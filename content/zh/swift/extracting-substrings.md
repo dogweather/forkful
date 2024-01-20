@@ -34,5 +34,4 @@ print(substring)
 
 ## 另请参阅:
 1. [Swift官方文档: 子字符串](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-2. [Substring In Swift](https://learnappmaking.com/substring-swift/)
 3. [Working with Strings in Swift](https://www.hackingwithswift.com/articles/175/working-with-strings-in-swift)

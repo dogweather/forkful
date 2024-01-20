@@ -43,6 +43,5 @@ Implementation wise, you might wonder what happens when a string has no uppercas
 
 ## See Also
 
-1. [Official documentation](https://docs.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-string-comparisons?view=powershell-7.1) about string comparisons in PowerShell, courtesy of Microsoft.
 2. [Converting Strings to DateTime](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convert-string?view=powershell-7.1) in PowerShell.
 3. For more into the .NET framework's `String` class, check out [Microsoft’s Official Documentation](https://docs.microsoft.com/dotnet/api/system.string?view=net-5.0).

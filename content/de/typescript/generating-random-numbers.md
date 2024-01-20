@@ -51,8 +51,6 @@ Alternativ könnten Sie ein Paket wie `crypto-random` verwenden, das kryptograph
 ## Siehe auch
 
 1. [JavaScript Math Reference - W3Schools](https://www.w3schools.com/js/js_math.asp)
-2. [The Mathematics of JavaScript - DZone](https://dzone.com/articles/the-mathematics-of-javascript)
-3. [JavaScript’s Math Object Demystified - SitePoint](https://www.sitepoint.com/javascripts-math-object-demystified/)
 4. [Crypto-random - npm](https://www.npmjs.com/package/crypto-random)
 
 Bitte beachten Sie, dass, obwohl diese Links spezifisch für JavaScript sind, die meisten dieser Konzepte auch auf TypeScript anwendbar sind, da TypeScript eine Superset-Sprache von JavaScript ist.

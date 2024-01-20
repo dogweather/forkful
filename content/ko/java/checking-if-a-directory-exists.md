@@ -48,4 +48,3 @@ public class Main {
 
 1. Java 공식 문서: [java.nio.file 패키지](https://docs.oracle.com/javase/8/docs/api/java/nio/file/package-summary.html)
 2. [Apache Commons IO 라이브러리](https://commons.apache.org/proper/commons-io/)
-3. [A Guide to java.nio.file.Path](https://www.baeldung.com/java-nio-path) at Baeldung

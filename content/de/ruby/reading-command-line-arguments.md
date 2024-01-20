@@ -51,8 +51,5 @@ Argument: drei
 
 ## Siehe auch:
 
-1. [Ruby Dokumentation zu ARGV](https://ruby-doc.org/core-2.7.2/ARGV.html)
 
 2. [Ruby Dokumentation zu OptionParser](https://ruby-doc.org/stdlib-2.7.0/libdoc/optparse/rdoc/OptionParser.html)
-
-3. [Ruby Monstas Tutorial zu Eingabeaufforderungsargumenten](http://ruby-for-beginners.rubymonstas.org/advanced/argv.html)

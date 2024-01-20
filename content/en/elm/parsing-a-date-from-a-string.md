@@ -44,7 +44,3 @@ The parsing mechanism works by looking for patterns in the string provided, such
 ## See Also
 
 1. [Official Elm Date Documentation](https://package.elm-lang.org/packages/elm/time/latest/)
-
-2. [Elm's Date.Extra module](https://package.elm-lang.org/packages/elm-community/date-extra/latest/)
-
-3. [Discussion on Date Parsing in Elm](https://discourse.elm-lang.org/t/parsing-date-strings-in-elm-0-19/2671)

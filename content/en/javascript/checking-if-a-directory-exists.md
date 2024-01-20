@@ -54,5 +54,4 @@ Remember that these methods only work server-side with Node.js. For client-side 
 For more in-depth info: 
 
 1. Node.js documentation on the `fs` module: [https://nodejs.org/api/fs.html](https://nodejs.org/api/fs.html).
-2. Blog post discussing `fs.access()` vs `fs.existsSync()`: [https://ar.al/2015/10/03/synchronous-and-asynchronous-error-handling-in-node.js/](https://ar.al/2015/10/03/synchronous-and-asynchronous-error-handling-in-node.js/).
 3. StackOverflow post about client-side JavaScript limitations: [https://stackoverflow.com/questions/183214/javascript-node-js-file-system-operations-are-limited](https://stackoverflow.com/questions/183214/javascript-node-js-file-system-operations-are-limited).

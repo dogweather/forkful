@@ -47,7 +47,3 @@ Clojureには `clojure.string/replace` の他にも、 `clojure.string/replace-f
 Clojureに関するより詳しい情報は、以下のリンクを参照してください：
 
 1. Clojure公式ドキュメンテーション：[https://clojure.org/guides/getting_started](https://clojure.org/guides/getting_started)
-
-2. Clojureによるテキスト処理：[https://clojure.co/guides/content](https://clojure.co/guides/content)
-
-3. Regular Expressions in Clojure：[https://www.regular-expressions.info/clojure.html](https://www.regular-expressions.info/clojure.html)

@@ -47,4 +47,3 @@ When you run `mix new`, under the hood, Mix creates a basic directory structure 
 ## See Also
 1. [Elixir's Official Documentation on Mix](https://elixir-lang.org/getting-started/mix-otp/introduction-to-mix.html)
 2. [Introduction to Mix on Elixir School](https://elixirschool.com/en/lessons/basics/mix/)
-3. [Rebar3 documentation](https://rebar3.readme.io/)

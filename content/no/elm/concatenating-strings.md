@@ -48,4 +48,3 @@ Detaljer rundt hvordan strenger sammenføyes i Elm avhenger av spesifikasjonene 
 Hvis du vil lære mer om strenger og deres funksjoner i Elm, sjekk ut disse ressursene:
 
 1. Offisiell Elm dokumentasjon om strengfunksjoner: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
-2. Invisible Universe's Guide to Elm Strings: [https://guide.elm-lang.org/appendices/strings.html](https://guide.elm-lang.org/appendices/strings.html)

@@ -43,5 +43,4 @@ Powershell utför analysen genom COM-objektet MSHTML, vilket innebär att analys
 ## Länkar till vidare läsning:
 
 1. Powershell dokumentation på [Invoke-WebRequest](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
-2. En bra artikel om [Web scraping med Powershell](https://adamtheautomator.com/web-scraping-with-powershell/)
 3. Officiella [HTML5-specifikationen](https://www.w3.org/TR/html5/) är oumbärliga om du vill djupdyka in i HTML-analys.

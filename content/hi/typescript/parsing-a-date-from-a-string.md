@@ -39,5 +39,4 @@ console.log(timeStamp); // Outputs: 1652678400000
 
 ## अधिक जानकारी के लिए:
 1. [MDN Web Docs: Date.parse()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/parse)
-2. [TypeScript: Date Object](https://www.typescripttutorial.net/typescript-tutorial/typescript-date-object/)
 3. [ECMAScript 2021 Language Specification](https://tc39.es/ecma262/#sec-date.parse)

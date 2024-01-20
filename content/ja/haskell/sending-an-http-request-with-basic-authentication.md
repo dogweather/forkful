@@ -50,5 +50,4 @@ Body: <the response body>
 ## 関連情報
 
 1. [Haskellの基本認証](https://hackage.haskell.org/package/http-client-0.7.3/docs/Network-HTTP-Client.html)
-2. [HaskellによるHTTP](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/http)
 3. [基本認証のセキュリティ上の警告](https://developer.mozilla.org/ja/docs/Web/HTTP/Authentication#Security)

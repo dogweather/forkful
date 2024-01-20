@@ -46,4 +46,3 @@ Implementeringsdetaljer: Swift optimaliserer strengkonkatenering i bakgrunnen. I
 
 ## Se Også:
 1. Swift dok: [https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-2. Swift String Interpolation: [https://www.hackingwithswift.com/new-syntax-swift-2-string-interpolation](https://www.hackingwithswift.com/new-syntax-swift-2-string-interpolation)

@@ -56,6 +56,5 @@ Za przykładem kodu, który przedstawiliśmy, kryje się wiele szczegółów imp
 ## Zobacz też
 
 1. [Przewodnik Oracle na temat połączeń HTTP](https://docs.oracle.com/javase/tutorial/networking/urls/index.html)
-2. [Artykuł o alternatywach dla zwykłej autentykacji](https://www.loginradius.com/engineering/blog/login-methods/)
 3. [Dokumentacja JDK na temat klasy Base64](https://docs.oracle.com/javase/8/docs/api/java/util/Base64.html)
 4. [Dokumentacja JDK na temat klasy HttpURLConnection](https://docs.oracle.com/javase/8/docs/api/java/net/HttpURLConnection.html)

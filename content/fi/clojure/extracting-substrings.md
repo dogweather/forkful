@@ -40,5 +40,4 @@ Clojuren `subs`-implementointi käyttää Javan `substring`-metodia. Yksi tärke
 ## Katso Myös:
 
 1. [Clojuren Dokumentaatio](https://clojuredocs.org/clojure.core/subs): Syvä sukellus `subs`-funktion käyttöön Clojuressa.
-2. [Guide to String in Clojure](https://www.baeldung.com/clojure-string): Opas merkkijonojen käsittelyyn Clojuressa, mukaan lukien alimerkkijonot.
 3. [Clojuren Sydän](https://www.youtube.com/watch?v=xguCXp0P1zE): Hyvä video, joka kattaa Clojuren Collection APIn, mukaan lukien merkkijonot.

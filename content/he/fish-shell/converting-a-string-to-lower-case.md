@@ -30,4 +30,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 
 ## ראה גם:
 1. [מדריך לשל Fish](https://fishshell.com/docs/current/index.html)
-2. [מדריך המרת מחרוזות לאותיות קטנות](https://www.journaldev.com/23666/python-string-lowercase)

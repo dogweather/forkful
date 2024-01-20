@@ -37,4 +37,3 @@ $name = "Vijay"
 
 ## और देखें
 1. [स्ट्रिंग इंटरपोलेशन में PowerShell](https://docs.microsoft.com/powershell/scripting/learn/deep-dives/everything-about-string-substitutions?view=powershell-7.1)
-2. [PowerShell कोडिंग स्टैंडर्ड्स और प्रथाएं](https://poshcode.gitbooks.io/powershell-practice-and-style/content/Style-Guide/Quoting-Rules.html)

@@ -44,6 +44,5 @@ W powyższym kodzie tworzymy obiekt formatu daty, a następnie przekształcamy d
 
 ## Zobacz również:
 
-1. Dokumentacja Kotlin do formatowania dat: [link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.time/-date-time-formatter/index.html)
 2. Dokumentacja Java Time: [link](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html)
 3. Przewodnik po różnych szablonach formatowania dat: [link](https://www.ibm.com/docs/en/i/7.2?topic=concepts-date-time-format)

@@ -45,4 +45,3 @@ PS C:\> ./test.ps1 arg1 arg2 arg3
 
 1. [PowerShell 官方参数文档](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_parameters?view=powershell-7.1)
 2. [PowerShell 官方 "$args" 变量文档](https://docs.microsoft.com/zh-cn/powershell/module/microsoft.powershell.core/about/about_automatic_variables?view=powershell-7.1#args)
-3. [关于 PowerShell 和 Unix shell 参数的比较](https://adamtheautomator.com/powershell-args/)

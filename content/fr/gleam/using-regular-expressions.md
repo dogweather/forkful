@@ -44,6 +44,5 @@ Quant à l'implémentation, Gleam utilise la bibliothèque Erlang pour fournir u
 
 Pour plus d'informations, consultez les sources suivantes :
 
-1. Documentation officielle Gleam : [Regex Module](https://hexdocs.pm/gleam_stdlib/gleam/regex/)
 2. RegexOne, un excellent tutoriel interactif pour apprendre les expressions régulières : [RegexOne](https://regexone.com/)
 3. Erlang Regular Expressions: [Erlang Regex](https://erlang.org/doc/man/re.html)

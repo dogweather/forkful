@@ -42,5 +42,3 @@ Per quanto riguarda i dettagli di implementazione, `chrono::format::strftime` è
 Per informazioni più dettagliate sulle operazioni di data e ora in Rust, visita i seguenti link:
 
 1. [La documentazione ufficiale di Rust su 'chrono'](https://docs.rs/chrono/0.4.19/chrono/)
-2. [Un post del blog su 'Gestione del tempo in Rust'](https://blog.excid3.com/articles/rust-time/)
-3. ['Rust per principianti' su Manipolazione di Date e Ora](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html#dates-and-times-chrono)

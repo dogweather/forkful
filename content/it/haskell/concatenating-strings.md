@@ -39,5 +39,4 @@ Ciao Mondo!
 
 ## Vedi Anche
 
-1. [Haskell String](https://www.haskell.org/tutorial/strings.html): Documentazione ufficiale di Haskell sulle stringhe.
 2. [Learn You a Haskell](http://learnyouahaskell.com/starting-out#an-intro-to-lists): una risorsa incredibilmente dettagliata per l'apprendimento di Haskell, che include anche informazioni sul concatenamento di stringhe.

@@ -44,5 +44,4 @@ print(table.concat(response))
 
 ## 참고 자료:
 
-* [Lua 소켓 라이브러리 문서](http://w3.impa.br/~diego/software/luasocket/http.html)
 * [새로운 인증 방식에 대한 명세: OAuth](https://oauth.net/2/)

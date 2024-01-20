@@ -55,4 +55,3 @@ The 'khttp' library simplifies the process by managing the encoding of username 
 2. [HTTP Authentication RFC](https://www.ietf.org/rfc/rfc2617.txt)
 3. [httpbin.org](http://httpbin.org/)
 4. [Digest Authentication - Wikipedia](https://en.wikipedia.org/wiki/Digest_access_authentication)
-5. [Token-based authentication - Wikipedia](https://en.wikipedia.org/wiki/Token-based_authentication)

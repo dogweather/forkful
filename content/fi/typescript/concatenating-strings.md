@@ -46,7 +46,6 @@ Tämä on erityisen hyödyllistä, jos haluat koota merkkijonon dynaamisesti luo
 
 1. [MDN Web Docs - String concatenation](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Strings#string_concatenation)
 
-2. [TypeScript Handbook - Template Literals](https://www.typescriptlang.org/docs/handbook/2/template-literals.html)
 
 ---
 

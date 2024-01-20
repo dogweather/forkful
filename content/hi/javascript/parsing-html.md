@@ -37,5 +37,3 @@ HTML पार्सिंग का एक और महत्वपूर्�
 ## देखें भी:
 
 1. [Mozilla Developer Network (MDN) DOM Parsing Guide](https://developer.mozilla.org/en-US/docs/Web/API/DOMParser): डितेल्ड गाइड और मेथड एप्लीकेशन का विवरण।
-2. [W3Schools HTML DOM Parser](https://www.w3schools.com/js/js_htmldom_parser.asp): मूलभूत गाइड और एग्जाम्पल।
-3. [HTML Parser by Node.js](https://nodejs.org/api/html.html): Node.js का HTML पार्सर डॉक्युमेंटेशन।

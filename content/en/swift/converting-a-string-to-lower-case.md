@@ -49,6 +49,5 @@ Detailed information related to Swift's string manipulation can be found in thes
 1. [String and Character operations - Swift Documentation](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
 2. [Swift Basic Operators](https://docs.swift.org/swift-book/LanguageGuide/BasicOperators.html)
 3. [Unicode Case Mappings](https://unicode.org/charts/case/)
-4. ["LowercaseStrings", a coding challenge on the Swift Algorithm Club](https://www.raywenderlich.com/developers/swift-algorithm-club)
    
 Happy coding!

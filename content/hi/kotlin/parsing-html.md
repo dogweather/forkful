@@ -54,6 +54,5 @@ Body: <body><p>यह मेरा पेज है</p></body>
 1. [Jsoup डॉक्युमेंटेशन](https://jsoup.org/cookbook/extracting-data/selector-syntax)
 2. [Kotlin डॉक्युमेंटेशन](https://kotlinlang.org/docs/home.html)
 3. [HTMLUnit](http://htmlunit.sourceforge.net/)
-4. [Jericho HTML Parser](https://jericho.htmlparser.net/docs/index.html)
 
 ---

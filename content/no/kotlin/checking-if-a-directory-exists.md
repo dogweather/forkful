@@ -39,6 +39,5 @@ Historisk sett, før introduksjonen av NIO API i Java 7 og i koden deretter Kotl
 Den underliggende implementeringen av `exists()` går gjennom katalogindeksen på filsystemet, noe som gjør det mye raskere enn å manuelt skanne gjennom hele filsystemet.
 
 ## Se Også
-1. Kotlin Dokumentasjon på Path API: [Link](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io.-paths/index.html)
 2. Java Dokumentasjon på Path API: [Link](https://docs.oracle.com/javase/tutorial/essential/io/pathOps.html)
 3. Stack Overflow Diskusjoner: [Link](https://stackoverflow.com/questions/46561458/how-to-check-if-folder-exists-if-not-the-folders-should-be-created-in-kotlin)

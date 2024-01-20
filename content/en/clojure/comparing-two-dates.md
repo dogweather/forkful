@@ -50,6 +50,5 @@ For non-JDK means, you can rely on libraries like `clj-time` which provide a Clo
 
 ## See Also
 
-1. Clojure docs on [Date-Time](https://clojure.org/about/date_time): Offers insights into Clojure's date and time handling capabilities.
 2. Official Java 8 [LocalDate](https://docs.oracle.com/javase/8/docs/api/java/time/LocalDate.html) docs
 3. [clj-time](https://github.com/clj-time/clj-time) on GitHub: A Clojure Library for creating, parsing and manipulating dates and times.

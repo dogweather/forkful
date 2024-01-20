@@ -35,7 +35,6 @@ Alternativer til `lfs.attributes` funksjonen finnes, som bruk av `os.execute` fu
 Implementeringsdetaljene for å sjekke om en katalog eksisterer i Lua stammer fra `lfs.attributes` funksjonen som er en del av LuaFileSystem-biblioteket. Når det gis en sti og 'mode' som argumenter, returnerer det modusattributtet til den gitte stien, noe som muliggjør verifikasjon av om stien er en katalog.
 
 ## Se også:
-1. [LuaFileSystem Dokumentasjon](http://keplerproject.github.io/luafilesystem/manual.html)
 2. [Lua Programmeringsguide](http://www.lua.org/pil/contents.html)
 3. ['lfs.attributes' funksjonsdetaljer på Stack Overflow](https://stackoverflow.com/questions/1340230/check-if-directory-exists-in-lua)
 4. [Sikker kodepraksis for Lua på Lua-Users](http://lua-users.org/wiki/SecureProgramming)

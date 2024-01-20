@@ -47,6 +47,3 @@ Szczegóły implementacji Gleam mogą się różnić. Argumenty z linii poleceń
 ## Zobacz także:
 
 Możesz znaleźć więcej informacji na ten temat w oficjalnych dokumentach Gleam:
-
-1. [Dokumentacja Gleam](https://hexdocs.pm/gleam_erlang_stdlib/sys.html#args)
-2. [Poradnik "komenda linii poleceń" na mdn](https://developer.mozilla.org/pl/docs/Learn/JavaScript/First_steps/CommandLine)

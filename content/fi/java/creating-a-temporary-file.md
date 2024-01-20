@@ -54,4 +54,3 @@ Java luo väliaikaiset tiedostot käyttäjän kotihakemiston alihakemistoon. Voi
 
 1. [Oracle Java File Documentation](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/io/File.html)
 2. [Oracle Java IO tutorial](https://docs.oracle.com/javase/tutorial/essential/io/)
-3. [How to create temporary file in Java](https://www.journaldev.com/960/java-create-temporary-file)

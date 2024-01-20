@@ -42,6 +42,3 @@ The implementation of Write-Debug in PowerShell is part of Microsoft's wider ini
 
 ## See Also
 1. [Write-Debug Documentation](https://docs.microsoft.com/powershell/module/Microsoft.PowerShell.Utility/Write-Debug)
-2. [PowerShell Debugging](https://docs.microsoft.com/en-us/powershell/scripting/learn/debugging-scripts?view=powershell-7.1)
-3. [Write-Host vs Write-Output vs Write-Debug](https://adamtheautomator.com/write-host-powershell/)
-4. [PowerShell Streams: Debug, Verbose, Warning, Error, Output, Information Streams](https://adamtheautomator.com/powershell-streams/)

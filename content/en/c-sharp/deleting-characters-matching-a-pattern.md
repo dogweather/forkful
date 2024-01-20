@@ -46,4 +46,3 @@ For more insights and to deepen your understanding, refer to these resources:
 
 1. [Microsoft Documentation on Regular Expressions in .NET](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expressions)
 2. [C# String Manipulation](https://learn.microsoft.com/en-us/dotnet/csharp/how-to/modify-string-contents)
-3. [Regex tutorial — A quick cheatsheet by examples](https://www.freecodecamp.org/news/regex-tutorial-a-simple-cheatsheet-by-examples/)

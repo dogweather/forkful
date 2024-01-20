@@ -72,5 +72,4 @@ El detalle de la implementación es que, debajo del capó, Elm recurre a la func
 
 ## Consultar También
 1. Documentación oficial de Elm sobre `Time`: [elm/time](https://package.elm-lang.org/packages/elm/time/latest/)
-2. Una explicación más detallada de la función `Time.now`: [kraklin/learning-elm](https://learning-elm.github.io/07-time.html)
 3. Para más preguntas sobre Elm en Español: [discord de Elm en español](https://discord.com/invite/elm-es)

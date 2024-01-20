@@ -68,6 +68,5 @@ En alternativ metod är att använda token-baserad autentisering, till exempel J
 Beträffande implementeringsdetaljer, konstruerar vi HTTP-begäran, inkluderar autentiseringsinformationen (användarnamn och lösenord) i headers, och skicka begäran till den angivna servern.
 
 ## Se även
-1. Följande Arduino-dokumentation för mer information om [HTTPClient-biblioteket](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html).
 2. [RFC 7617](https://tools.ietf.org/html/rfc7617) för mer information om grundläggande autentisering.
 3. En bra artikel på svenska om [Token-baserad autentisering](https://www.minhembio.com/forum/index.php?showtopic=337993).

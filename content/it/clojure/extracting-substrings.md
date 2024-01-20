@@ -42,4 +42,3 @@ Alternativamente, per stringhe molto grandi, potrebbe essere più efficiente usa
 
 1. [Clojure Documentation - `subs`](https://clojuredocs.org/clojure.core/subs)
 2. [Clojure School - Working with Strings](https://clojure.org/community/resources#_clojure_from_the_ground_up)
-3. [Practical Clojure - String Manipulation](https://practical.li/clojure/clojure.string-and-java-string.html)

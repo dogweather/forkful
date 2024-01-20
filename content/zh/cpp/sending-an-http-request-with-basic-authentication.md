@@ -53,6 +53,5 @@ int main(){
 
 ## 另请参阅：
 
-1. [CPR库](https://whoshuu.github.io/cpr/)：C ++的Curl for People，一个轻量且易于使用的网络库。
 2. [HTTP Basic, Digest, NTLM 认证](https://en.wikipedia.org/wiki/Basic_access_authentication)：深度理解基本认证及其替代方案。
 3. [RFC 7617](https://tools.ietf.org/html/rfc7617)：HTTP Basic and Digest access authentication的标准文档。

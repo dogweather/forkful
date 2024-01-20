@@ -42,5 +42,4 @@ Para el rendimiento, cuando extraes un substring, Kotlin no crea un nuevo objeto
 ## Ver También
 
 1. La documentación oficial de Kotlin sobre el [trabajo con cadenas](https://kotlinlang.org/docs/idioms.html#working-with-collections)
-2. Un tutorial más detallado sobre [substrings y rangos en Kotlin](https://www.baeldung.com/kotlin-substring)
 3. Para los nuevos en Kotlin, comienza con el [Tutorial oficial de Kotlin para principiantes](https://kotlinlang.org/docs/tutorials/)

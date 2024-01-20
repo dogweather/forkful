@@ -43,5 +43,4 @@ O método "exists()" retorna um booleano verdadeiro se o Path referir-se a um di
 Existem muitos recursos úteis sobre este tópico que você pode querer verificar. Aqui estão alguns links úteis:
 
 1. Documentação oficial do Rust sobre o método 'exists()': [https://doc.rust-lang.org/std/path/struct.Path.html#method.exists](https://doc.rust-lang.org/std/path/struct.Path.html#method.exists)
-2. Um tutorial útil sobre trabalho com sistemas de arquivos em Rust: [https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html)
 3. Para informações mais profundas sobre a implementação do Rust Path and metadata(), confira: [https://doc.rust-lang.org/std/fs/struct.Metadata.html](https://doc.rust-lang.org/std/fs/struct.Metadata.html)

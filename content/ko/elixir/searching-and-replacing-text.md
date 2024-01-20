@@ -32,6 +32,5 @@ IO.puts String.replace(sentence, "Elixir", "프로그래밍")
 다음은 추후 참고할 수 있는 관련 소스입니다.
 1. Elixir 공식 문서의 문자열 모듈: [링크](https://hexdocs.pm/elixir/String.html)
 2. Elixir School의 제어 흐름에 관한 세부 정보: [링크](https://elixirschool.com/en/lessons/basics/control-structures/)
-3. Elixir의 정규 표현식 사용법: [링크](https://elixir-lang.org/getting-started/regex.html)
 
 이해를 돕기 위한 충분한 정보를 제공했기를 바랍니다. 행운을 빕니다!

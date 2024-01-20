@@ -55,7 +55,6 @@ public class Main {
 
 ## Katso myös:
 
-1. [Java String length() -metodi](https://www.geeksforgeeks.org/string-length-java/)
 2. [Java String -luokka (Oracle Docs)](https://docs.oracle.com/javase/10/docs/api/java/lang/String.html)
 
 Syvempiä tietoja ja lisää esimerkkejä yllä olevista linkeistä. Opettele, koodaa ja kehitä taitojasi!

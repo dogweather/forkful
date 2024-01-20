@@ -36,6 +36,3 @@ Unter der Haube erzeugt Gleam bei der Verwendung von `++` eine neue Zeichenkette
 ## Weiterführende Literatur
 
 Weitere Informationen und Beispiele zum Arbeiten mit Zeichenketten in Gleam finden Sie in der offiziellen Gleam-Dokumentation:
-
-1. Strings in Gleam: [https://gleam.run/tour/strings](https://gleam.run/tour/strings)
-2. String.join: [https://hexdocs.pm/gleam_stdlib/gleam/string](https://hexdocs.pm/gleam_stdlib/gleam/string)

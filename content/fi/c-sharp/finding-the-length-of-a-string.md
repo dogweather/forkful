@@ -55,5 +55,4 @@ Tämä johtuu siitä, että joidenkin merkkien, kuten emojien, pituus on tavalli
 ## Katso myös:
 
 1. Microsoftin dokumentaatio merkkijonon pituudesta C#-kielessä: [Linkki](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/strings/)
-2. Tarkempi tieto merkkijonojen käsittelemisestä C#-kielessä: [Linkki](https://www.c-sharpcorner.com/blogs/string-and-stringbuilder-in-c-sharp1)
 3. Miten laskea merkkijonojen pituus muilla ohjelmointikielillä: [Linkki](https://www.w3schools.com/jsref/jsref_length_string.asp)

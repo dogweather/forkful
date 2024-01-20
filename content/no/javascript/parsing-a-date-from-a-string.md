@@ -46,6 +46,5 @@ Koden over vil utskrive en dato-objekt som inkluderer tiden 14:20.
 
 ## Se også:
 
-1. [MDN Web Docs: Date](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Reference/Global_Objects/Date)
 2. [JavaScript Date Objects](https://www.w3schools.com/js/js_date_methods.asp)
 3. [Moment.js](https://momentjs.com/)

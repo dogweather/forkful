@@ -39,6 +39,5 @@ La creación de archivos temporales tiene muchas raíces en el pasado, su utiliz
 ## Ver también
 Para obtener más información, consulta los siguientes recursos:
 
-1. [Documentación oficial de Apple sobre la Escritura y lectura de archivos](https://developer.apple.com/documentation/foundation/url/1408481-write)
 2. [Discusión en StackOverflow sobre el manejo de archivos temporales en Swift](https://stackoverflow.com/questions/37956482/read-write-text-file-in-swift)
 3. [NSHipster: una mirada a NSTemporaryDirectory()](https://nshipster.com/nstemporarydirectory/)

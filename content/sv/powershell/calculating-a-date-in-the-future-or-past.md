@@ -43,7 +43,6 @@ Implementation av PowerShell-datummatematik är förvånansvärt enkelt tack var
 
 För mer att läsa om datum- och tidsmanipulation i PowerShell, kolla in följande länkar:
 
-1. [Arbeta med datum och tidsobjekt i PowerShell](https://docs.microsoft.com/sv-se/powershell/scripting/samples/working-with-date-and-time-objects?view=powershell-7.1)
 2. [Om DateTime-objekt i .NET](https://docs.microsoft.com/sv-se/dotnet/api/system.datetime?view=net-5.0)
 
 Dyka djupare in i dessa ämnen hjälper till att illustrera flexibiliteten och kraften i PowerShell som ett verktyg för både administratörer och utvecklare. Lycka till!

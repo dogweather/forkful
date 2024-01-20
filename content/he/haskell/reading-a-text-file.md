@@ -42,7 +42,6 @@ main = do
 
 ## ראה גם:
 
-1. [Haskell Wiki - עבודה עם קבצים](https://wiki.haskell.org/Working_with_files)
 2. [Real World Haskell - קריאת וכתיבת קבצים](http://book.realworldhaskell.org/read/io.html)
 3. [Hoogle - System.IO](https://hackage.haskell.org/package/base-4.15.0.0/docs/System-IO.html)
 4. [Stack Overflow - דיון בנושא קריאת קבצים ב-Haskell](https://stackoverflow.com/questions/7860351/reading-from-files-in-haskell)

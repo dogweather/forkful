@@ -57,5 +57,4 @@ Si estás interesado en aprender más sobre TypeScript, te recomiendo los siguie
 
 1. [Documentación Oficial de TypeScript](https://www.typescriptlang.org/docs/) - Este es el recurso definitivo para aprender TypeScript directamente de la fuente.
 2. [TypeScript Deep Dive](https://basarat.gitbook.io/typescript/) - Un libro que cubre TypeScript de manera exhaustiva.
-3. [Cursos de Udemy sobre TypeScript](https://www.udemy.com/topic/typescript/) - Un excelente recurso para el aprendizaje interactivo.
 4. [Curso de TypeScript en Codecademy](https://www.codecademy.com/learn/learn-typescript) - Otro gran recurso para aprender TypeScript de manera efectiva.

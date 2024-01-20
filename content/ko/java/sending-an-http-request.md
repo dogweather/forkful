@@ -54,4 +54,3 @@ Java에서는 여러 가지 방법으로 HTTP 요청을 보낼 수 있습니다.
 
 1. [Oracle의 HttpClient 문서](https://docs.oracle.com/en/java/javase/11/docs/api/java.net.http/java/net/http/HttpClient.html)
 2. [모던 Java에서의 HTTP 통신](https://www.baeldung.com/httpclient-guide)
-3. [Java와 HTTP 통신](https://www.javaworld.com/article/2078583/java-concurrency/building-an-http-server-in-java-part-1--multi-threaded-server.html)

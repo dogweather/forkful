@@ -35,4 +35,3 @@ console.log(obj.hobbies) // ["hiking", "reading", "cooking"]
 ## Дивись також:
 1. [Офіційна сторінка YAML](https://yaml.org/)
 2. [Документація по Javascript для роботи з YAML](https://www.npmjs.com/package/js-yaml)
-3. [Порівняння YAML та інших форматів даних](https://stackify.com/yaml-vs-json-xml/)

@@ -44,6 +44,3 @@ public DateTime AddDays(double value);
 
 ## 另请参阅：
 以下是一些相关参考链接:
-1. [Working with Dates and Times in PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/learn/deep-dives/everything-about-datetime?view=powershell-7.1)
-2. [PowerShell Basic Cheat Sheet](https://www.itprotoday.com/powershell/powershell-basic-cheat-sheet)
-3. [Date and Time Arithmetic with PowerShell](https://learn-powershell.net/2010/11/08/date-and-time-arithmetic-with-powershell/)

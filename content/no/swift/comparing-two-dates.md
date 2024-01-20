@@ -46,5 +46,3 @@ Implementeringsdetaljer: Swift `Date`-objekter er lagret internt som antall seku
 ## Se også:
 
 1. Swift Date Klasseforskrift: [Link](https://developer.apple.com/documentation/foundation/date)
-2. Håndtering av Dato og Tid i Swift: [Link](https://www.swiftbysundell.com/articles/handling-date-and-time-in-swift/)
-3. Sammenlign Datoer med Swift: [Link](https://useyourloaf.com/blog/swift-date-comparison/)

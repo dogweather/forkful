@@ -37,4 +37,3 @@ HelloWorld
 
 1. [דוקומנטציה של Fish Shell](https://fishshell.com/docs/current/commands.html)
 2. [הדרכה על ביטויים רגולריים](https://www.regular-expressions.info/)
-3. [הבדלים בין המעטפות: Fish, Bash ו-Zsh](https://www.slant.co/versus/2443/15872/~fish_vs_oh-my-zsh)

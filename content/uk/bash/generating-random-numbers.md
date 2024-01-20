@@ -43,6 +43,4 @@ openssl rand -rand /dev/urandom 1 | od -An -i | awk -v f=0 -v r=9 '{printf "%i\n
 
 **## Див. також:**
 
-1. [Bash `RANDOM`: Генерація випадкових чисел в Bash](https://linuxconfig.org/random-number-generator-in-bash)
 2. [Процедурна генерація випадкових чисел](https://uk.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%86%D0%B5%D0%B4%D1%83%D1%80%D0%BD%D0%B0_%D0%B3%D0%B5%D0%BD%D0%B5%D1%80%D0%B0%D1%86%D1%96%D1%8F)
-3. [OpenSSL: Генерація випадкових чисел](https://www.openssl.org/docs/manmaster/man7/rand.html)

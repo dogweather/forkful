@@ -34,6 +34,5 @@ os.date के विकल्प में, आप "date" इंतजार �
 
 ## यदि देखना हो (See Also)
 
-1. [Lua तारीख और समय](https://www.tutorialspoint.com/lua/lua_date_and_time.htm)
 2. [Lua os.date](https://www.lua.org/pil/22.1.html)
 3. [Lua: कैसे करें सीरीज](https://luatut.com/crash-course.html)

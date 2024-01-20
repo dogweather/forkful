@@ -44,7 +44,6 @@ Haskell의 경우, `Network.HTTP.Conduit` 모듈의 `simpleHttp` 함수를 사�
 다음 링크는 Haskell로 웹 페이지를 다운로드하는 방법과 관련된 추가 정보를 제공합니다:
 
 1. [Haskell HTTP Conduit Library](https://hackage.haskell.org/package/http-conduit)
-2. [Haskell Web Scraping](https://wiki.haskell.org/Web_Scraping)
 3. [Haskell HTTP Client](https://hackage.haskell.org/package/http-client)
 4. [Web Programming in Haskell (Video)](https://www.youtube.com/watch?v=2VG3pSi7MMo)
 

@@ -47,4 +47,3 @@ Uno de los aspectos más importantes de la manipulación de fechas es tener en c
 1. Documentación oficial de Microsoft .NET: [[Enlace]](https://docs.microsoft.com/es-es/dotnet/api/system.datetime.adddays?view=net-5.0)
 2. Foro de discusión StackOverflow: [[Enlace]](https://stackoverflow.com/questions/3786612/c-sharp-datetime-subtraction)
 3. Guía de Microsoft para la manipulación de fechas: [[Enlace]](https://docs.microsoft.com/es-es/dotnet/standard/datetime/)
-4. Artículo de blog sobre el trabajo con fechas y horas en C#: [[Enlace]](https://code-maze.com/datetime-in-csharp/)

@@ -41,5 +41,4 @@ Ricorda che in Java le stringhe sono immutabili: quando "modifichi" una stringa,
 Per approfondire la manipolazione di stringhe in Java, consulta le seguenti risorse:
 
 - [Documentazione ufficiale della classe String](https://docs.oracle.com/javase/7/docs/api/java/lang/String.html)
-- [Guida alle espressioni regolari in Java](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
 - [Metodo `replace()`](https://www.w3schools.com/java/ref_string_replace.asp)

@@ -41,4 +41,3 @@ Ciao Mario, hai 25 anni.
 ## Da Vedere Anche:
 1. [Printf in Haskell](http://hackage.haskell.org/package/base-4.12.0.0/docs/Text-Printf.html) - Documentazione ufficiale di Text.Printf in Haskell.
 2. [Printf Programming](https://en.wikipedia.org/wiki/Printf_format_string) - Wikipedia entry that explains the details of printf-style string formatting.
-3. [Haskell for Beginners](https://www.fpcomplete.com/haskell/tutorial-for-beginners/) - Resources for learning more about programming in Haskell.

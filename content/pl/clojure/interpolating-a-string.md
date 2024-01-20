@@ -35,4 +35,3 @@ Informacje o implementacji: Clojure wykorzystuje Java String Formatter do implem
 
 1. [Java String Formatter](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/util/Formatter.html)
 2. [Clojure String documentation](https://clojuredocs.org/clojure.core/format)
-3. [More about Clojure](https://clojure.org/about/differences)

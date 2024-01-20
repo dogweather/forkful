@@ -47,6 +47,5 @@ For more deep-dives on date and time handling in PHP:
 
 1. [PHP: DateTime - Manual](https://www.php.net/manual/en/class.datetime.php)
 2. [PHP Date/Time Functions - W3Schools](https://www.w3schools.com/php/php_ref_date.asp)
-3. [Handling Date and Time in PHP and MySQL - Procedural Version](https://www.sitepoint.com/working-with-dates-and-times-in-php-and-mysql-a2/)
 
 Keep coding, keep exploring!

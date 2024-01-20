@@ -50,6 +50,4 @@ printf("%s\n", greeting);
 ## Se Även
 För en djupare förståelse av stränginterpolering och formatering, kolla på följande källor:
 
-1. [C Tutorial på formaterade utdata](https://www.learn-c.org/en/Formatted_output)
-2. [printf och scanf i C](https://www.geeksforgeeks.org/printf-scanf-c-language/)
 3. [String Interpolation i C](https://www.dummies.com/programming/c/string-interpolation-in-c/)

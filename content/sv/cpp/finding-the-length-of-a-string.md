@@ -49,6 +49,5 @@ När det gäller implementeringsdetaljer, det är värt att notera att både `le
 
 För ytterligare läsning, hänvisas läsaren till följande källor:
 
-1. [C++ string length() - Programiz](https://www.programiz.com/cpp-programming/library-function/string/length)
 2. [C++ string::length - C++ 98, C++ 11 - cppreference.com](https://en.cppreference.com/w/cpp/string/basic_string/length)
 3. [The C++ String Toolkit Library (StrTk) Split function - CodeProject](https://www.codeproject.com/Articles/21086/The-C-String-Toolkit-Library-StrTk-Split-function)

@@ -36,5 +36,3 @@ No PowerShell, a conversão de datas em strings é feita através da classe .NET
 Para dives mais profundos no tema de conversão de data para string, consulte os seguintes recursos:
 
 1. [Microsoft Documentation - ToString Method](https://docs.microsoft.com/pt-br/dotnet/api/system.datetime.tostring?view=net-6.0)
-2. [PowerShell Basics: Formatting Dates and Times](https://devblogs.microsoft.com/scripting/poweshell-basics-formatting-dates-and-times/)
-3. [DateTime Formats in PowerShell](https://www.howtogeek.com/409615/datetime-formats-in-powershell/)

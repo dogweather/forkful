@@ -48,5 +48,4 @@ Em relação ao `std::put_time`, por trás dos panos, a função pega uma estrut
 ## Veja Também
 
 1. Para obter mais informações sobre a biblioteca `std::put_time` do C++, consulte [aqui](http://www.cplusplus.com/reference/iomanip/put_time/).
-2. Para um guia mais aprofundado de datas e horários no C++, veja [este link](http://www.cplusplus.com/doc/tutorial/ctime/).
 3. Para saber mais sobre a biblioteca Boost Date_Time, veja [este link](https://www.boost.org/doc/libs/1_76_0/doc/html/date_time.html).

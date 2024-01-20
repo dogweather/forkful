@@ -38,4 +38,3 @@ fs.readFile('example.txt', 'utf8', function(err, data) {
 
 1. [Node.js fs.readFile() method](https://nodejs.org/api/fs.html#fs_fs_readfile_path_options_callback)
 2. [Using fs.readFile in Node.js](https://stackabuse.com/read-files-with-node-js/)
-3. [Understanding file streams in Node.js](https://www.tutorialsteacher.com/nodejs/nodejs-filestream)

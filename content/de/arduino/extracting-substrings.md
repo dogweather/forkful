@@ -33,5 +33,4 @@ Die Implementierung von substring() in Arduino erstellt intern eine neue Instanz
 Um dein Wissen über das Arbeiten mit Strings in Arduino weiter zu vertiefen, sieh dir bitte die folgenden Links an:
 
 1. [Arduino String-Referenz](https://www.arduino.cc/reference/de/language/variables/data-types/string/): Hier findest du die offizielle Dokumentation zur Arbeit mit Strings in Arduino.
-2. [Substring in Arduino: A complete guide](https://www.makerguides.com/arduino-string-substring/): In diesem Leitfaden werden alle Aspekte bezüglich Teilstrings in Arduino eingehend behandelt. 
-3. [Arduino String substring()](https://www.electroons.com/arduino/substring) - Eine weitere Quelle für das Analysieren und Arbeiten mit Teilstrings in Arduino.
+2. [Substring in Arduino: A complete guide](https://www.makerguides.com/arduino-string-substring/): In diesem Leitfaden werden alle Aspekte bezüglich Teilstrings in Arduino eingehend behandelt.

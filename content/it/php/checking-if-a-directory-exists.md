@@ -37,8 +37,3 @@ Il principio dell'esistenza della directory è in atto da quando i file system s
 Come alternativa, è possibile utilizzare le funzioni `file_exists()` o `opendir()`. La prima verifica l'esistenza di un file o una directory, mentre la seconda tenta di aprire una directory e restituisce FALSE se non riesce.
 
 Per quanto riguarda l'implementazione, `is_dir()` chiama semplicemente la funzione di sistema `stat` sul sistema operativo. Questa funzione restituisce una struttura di dati che contiene tutte le informazioni sul file, inclusa la sua tipologia.
-
-## Vedi anche:
-1. [Manuale PHP: is_dir](https://www.php.net/manual/it/function.is-dir)
-2. [Manuale PHP: file_exists](https://www.php.net/manual/it/function.file-exists)
-3. [Manuale PHP: opendir](https://www.php.net/manual/it/function.opendir)

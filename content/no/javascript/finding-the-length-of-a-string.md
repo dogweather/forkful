@@ -37,6 +37,5 @@ Når det gjelder implementeringsdetaljer, så er `.length` egentlig en innebygd 
 
 For å lære mer om strenger og deres handlinger i Javascript, kan du ta en titt på disse nyttige linkene:
 
-1. [Mozilla's guide on Javascript Strings](https://developer.mozilla.org/nb-NO/docs/Web/JavaScript/Guide/Text_formatting)
 2. [W3Schools' tutorial on Javascript String length](https://www.w3schools.com/jsref/jsref_length_string.asp)
 3. [Exploring JS: Strings and their properties](http://exploringjs.com/es6/ch_strings.html)

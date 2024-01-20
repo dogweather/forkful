@@ -53,11 +53,8 @@ As for implementation, when Bash capitalizes a string, it changes the ASCII valu
 
 Here are a few resources for more in-depth information:
 
-1. [String Manipulation in Bash](https://www.baeldung.com/linux/bash-string-manipulations)
-2. [Bash String Operations](https://www.linuxjournal.com/content/bash-string-manipulations)
 
 For capitalizing strings in other programming languages:
 
-1. [Python: How to Capitalize a String?](https://www.geeksforgeeks.org/python-string-capitalize/)
 2. [JavaScript: Capitalizing Strings](https://www.w3schools.com/jsref/jsref_touppercase.asp)
 3. [Java: String Manipulation](https://docs.oracle.com/javase/tutorial/java/data/strings.html)

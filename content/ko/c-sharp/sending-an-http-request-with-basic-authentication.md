@@ -54,4 +54,3 @@ C#에서는 `HttpClient` 객체와 `AuthenticationHeaderValue` 클래스를 사�
 
 1. [HttpClient 클래스 (Microsoft 공식 문서)](https://docs.microsoft.com/ko-kr/dotnet/api/system.net.http.httpclient)
 2. [HTTP Basic Access Authentication (Wikipedia)](https://en.wikipedia.org/wiki/Basic_access_authentication)
-3. [Basic 인증과 Digest 인증](http://blog.naver.com/PostView.nhn?blogId=hdktmac&logNo=150175858527)

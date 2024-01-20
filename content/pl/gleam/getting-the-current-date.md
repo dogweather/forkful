@@ -40,5 +40,4 @@ Ciekawą rzeczą w implementacji `datetime` jest to, że jest on oparty na UTC, 
 ## Zobacz także:
 
 Jeśli chcesz dowiedzieć się więcej o modułach czasu i dacie w Gleam, zobacz rowniez:
-1. Dokumentacja datetime Gleam: [Link](https://hexdocs.pm/gleam_stdlib/gleam/datetime)
 2. GitHub Repo Gleam: [Link](https://github.com/gleam-lang/gleam)

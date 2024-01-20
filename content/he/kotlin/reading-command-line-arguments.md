@@ -30,6 +30,4 @@ Argument 1 is: World
 קריאת ארגומנטים מהשורה היא משהו שמתכנתים עשו מאז הימים הראשונים של שפת המחשב. חלופות נוספות כוללות פרסרים פקודות (המאפשרים למתכנתים ליצור ארגומנטים באמצעות כמה שפות שולחנות) וקבצים תצורה. בדרך כלל ארגומנטים מהשורה משמשים כאשר התוצאה הרצויה ממרות למרות, ומתהדרים בפשטות.
 
 ## ראה גם
-1. [Kotlin Programming Cookbook](https://www.amazon.com/Kotlin-Programming-Cookbook-Building-Applications/dp/1788472144): מתכנים של תוכנית הקלט לנשלחים של שורת פקודה.
-2. [Kotlin Command Line](https://kotlinlang.org/docs/command-line.html): הוראות מהאתר הרשמי של Kotlin. 
-3. [GeekForge - Processing Command Line Params](http://geekforge.org/android/kotlin/2018/01/27/processing-command-line-arguments-in-kotlin.html): קוד כולל שלויות, בדיקות קצה ותיעוד.
+2. [Kotlin Command Line](https://kotlinlang.org/docs/command-line.html): הוראות מהאתר הרשמי של Kotlin.

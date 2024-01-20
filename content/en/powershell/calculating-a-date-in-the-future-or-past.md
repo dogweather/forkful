@@ -64,8 +64,5 @@ Under the hood, these functions work on the DateTime object of the .NET Framewor
 
 ## See Also
 
-1. For more information on date and time in PowerShell, see the [official documentation](https://docs.microsoft.com/powershell/scripting/samples/working-with-dates-and-times?view=powershell-7.1).
    
-2. To understand more about .NET DateTime, refer to the [.NET documentation](https://docs.microsoft.com/dotnet/api/system.datetime?view=net-5.0). 
-
-3. For an in-depth discussion on time manipulation in PowerShell, visit [ITPro Today](https://www.itprotoday.com/powershell/date-and-time-math-powershell).
+2. To understand more about .NET DateTime, refer to the [.NET documentation](https://docs.microsoft.com/dotnet/api/system.datetime?view=net-5.0).

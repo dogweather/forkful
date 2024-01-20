@@ -38,6 +38,4 @@ Alternativer til strenginterpolering inkluderer bruk av `sprintf` metode eller `
 En detalj om implementering av strenginterpolering i Ruby: Ruby tolker strengen og erstatter interpolasjoner med verdien av uttrykket i interpolasjonen ved kjøring, ikke ved tolking.
 
 ## Se Også
-1. [The Ruby Programming Language](https://www.ruby-lang.org/en/documentation/) - Offisiell dokumentasjon for Ruby 
-2. [Ruby Inside](https://www.rubyinside.com/) - Populært online Ruby-magasin
-3. [String Interpolation in Ruby](https://www.rubyguides.com/2018/11/ruby-string-formatting/) - En mer dyptgående guide til string-interpolering i Ruby.
+1. [The Ruby Programming Language](https://www.ruby-lang.org/en/documentation/) - Offisiell dokumentasjon for Ruby

@@ -49,5 +49,4 @@ public class Main {
 У цьому розділі надаються посилання на додаткові ресурси для глибшого вивчення теми. Звернете увагу на наступне:
 
 1. [Офіційна документація Oracle про аргументи командного рядка](https://docs.oracle.com/javase/tutorial/essential/environment/cmdLineArgs.html)
-2. [Jenkov Tutorials: Командна лінія Java](http://tutorials.jenkov.com/java/command-line-arguments.html)
 3. [GeeksforGeeks: Командний рядок Аргументи в Java](https://www.geeksforgeeks.org/command-line-arguments-in-java/)

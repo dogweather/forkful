@@ -55,4 +55,3 @@ Ta metoda korzysta z przekazywania tablicy do funkcji i wyszukuje odpowiednich w
 
 1. [Tutorial Lua](http://tylerneylon.com/a/learn-lua/) - dla nauki podstaw Lua.
 2. [Dokumentacja Lua](https://www.lua.org/manual/5.4/) - aby uzyskać więcej informacji o funkcji `string.format` i innych funkcjach Lua.
-3. [Artykuł o interpolacji łańcuchów](https://en.wikibooks.org/wiki/Lua_Programming/Strings) - dla bardziej szczegółowych szczegółów i porównań z innymi językami.

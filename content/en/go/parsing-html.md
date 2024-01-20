@@ -66,6 +66,5 @@ Underlying details? `goquery` employs Cascading Style-Style (CSS) selectors for 
 
 ## See Also 
 
-1. Go documentation: [https://golang.org/pkg/net/html/](https://golang.org/pkg/net/html/)
 2. Goquery documentation: [https://godoc.org/github.com/PuerkitoBio/goquery](https://godoc.org/github.com/PuerkitoBio/goquery)
 3. Htmlquery documentation: [https://github.com/antchfx/htmlquery](https://github.com/antchfx/htmlquery)

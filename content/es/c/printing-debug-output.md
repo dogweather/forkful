@@ -34,5 +34,4 @@ En C, la función `printf` se implementa en la biblioteca estándar y utiliza un
 ## Ver También
 Para información más detallada, por favor consulta los siguientes enlaces:
 1. [Documentación de printf](http://www.cplusplus.com/reference/cstdio/printf/)
-2. [Depuración en C](https://www.learn-c.org/en/Debugging)
 3. [GDB: The GNU Project Debugger](https://www.gnu.org/software/gdb/)

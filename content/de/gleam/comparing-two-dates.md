@@ -46,6 +46,4 @@ Die Implementierung des Vergleichs von Daten in Gleam ist relativ einfach und zu
 
 ## Siehe auch:
 Für weitere Lektüre und Ressourcen, lesen Sie bitte:
-1. [Zeit- und datumsbezogene Funktionen in Gleam](https://docs.gleam.run/stdlib/time/)
 2. [Gleam Github Repository](https://github.com/gleam-lang/gleam)
-3. [Ein Vergleich von Datumsvergleichsfunktionen in verschiedenen Programmiersprachen](http://rosettacode.org/wiki/Date_comparison)

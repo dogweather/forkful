@@ -57,6 +57,4 @@ echo $sb.ToString()
 
 以下に、文字列連結についての追加情報を提供するリソースへのリンクを示します。
 
-1. [PowerShellの基本的な文字列操作](https://docs.microsoft.com/ja-jp/powershell/scripting/samples/working-with-strings?view=powershell-7.1)
 2. [StringBuilderクラス](https://docs.microsoft.com/ja-jp/dotnet/api/system.text.stringbuilder?view=netframework-4.8)
-3. [PowerShellの文字列結合](https://qiita.com/hirosystems/items/b3d61db2a681830044fa)

@@ -64,6 +64,5 @@ Today is: 2022-05-18
 
 1. Kotlin公式ドキュメンテーション (Kotlin official documentation): [https://kotlinlang.org/docs/reference/](https://kotlinlang.org/docs/reference/)
 
-2. LocalDateクラス (LocalDate Class): [https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/-local-date/)
 
 3.  JavaのDateとCalendarクラスについて (About Java's Date and Calendar Classes): [https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html](https://docs.oracle.com/javase/tutorial/datetime/iso/datetime.html)

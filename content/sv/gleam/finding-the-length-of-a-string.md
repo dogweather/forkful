@@ -41,4 +41,3 @@ För mer information om strängar i Gleam, kolla in följande länkar:
 
 1. [Gleam's String Documentation](https://gleam.run/book/tour/strings.html)
 2. [Why use String length method](https://stackoverflow.com/questions/37756389/why-use-string-length-method)
-3. [Learn Gleam: Strings and their length](https://gleam.run/tour/strings.html)

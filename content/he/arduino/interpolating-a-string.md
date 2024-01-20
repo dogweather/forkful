@@ -29,4 +29,3 @@ Serial.println(temp);
 
 ## ראה גם
 עיינו במקורות הבאים למידע נוסף:
-- [היסטוריה של אינטרפולציה של מחרוזות](https://stackoverflow.com/questions/89007/string-interpolation-in-javascript)

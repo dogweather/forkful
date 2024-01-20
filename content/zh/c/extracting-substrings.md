@@ -50,6 +50,5 @@ C语言的字符串处理函数起源于早期UNIX系统，而分割字符串功
 
 1. [C语言库函数](http://www.runoob.com/cprogramming/c-standard-library.html): Runoob.com提供的C标准库函数列表和使用详解
 
-2. [C的指针操作](https://learnku.com/docs/p/learn-clang/2018/a-simple-pointer/6073): 这是一个关于C语言指针基础和操作的入门指南。
 
 3. [字符串的内部表示](https://en.wikipedia.org/wiki/String_interning): 认识字符串的内部表示和实现方式。

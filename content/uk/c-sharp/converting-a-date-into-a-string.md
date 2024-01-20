@@ -31,6 +31,4 @@ Console.WriteLine(dateString);
 3. **Деталі реалізації**: ToString("dd.MM.yyyy") використовує форматний рядок, який визначає, як дата має бути представлена. "dd" означає день, "MM" - місяць, а "yyyy" - рік. Ви можете змінити ці параметри, щоб отримати потрібний вам формат. 
 
 ## Дивитись також
-1. [Уроки з перетворення datetime в string у C#](https://www.c-sharpcorner.com/article/convert-datetime-to-string-in-c-sharp/)
 2. [Офіційна документація Microsoft з перетворення дати в рядок](https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings)
-3. [Допоміжні матеріали по форматуванню дати](https://www.completecsharptutorial.com/basic/complete-format-date.php)

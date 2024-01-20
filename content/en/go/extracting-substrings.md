@@ -70,5 +70,4 @@ Check out these additional resources for string manipulations and regular expres
 
 1. [String manipulations in Go](https://golang.org/pkg/strings/)
 2. [Regular expressions in Go](https://golang.org/pkg/regexp/)
-3. [Go by Example: String Functions](https://gobyexample.com/string-functions) 
-4. [An Introduction to Regular Expressions in Go](https://digitalocean.com/community/tutorials/how-to-work-with-regular-expressions-in-go)
+3. [Go by Example: String Functions](https://gobyexample.com/string-functions)

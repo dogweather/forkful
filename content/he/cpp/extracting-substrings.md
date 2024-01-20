@@ -42,10 +42,4 @@ World
 
 בניגוד לפונקציה `substr()`, C++ גם כוללת את התוספות `find_first_of()` ו- `find_last_of()`. אלו מאפשרים למתכנתים לחפש סוף ותחילת תת-מחרוזת.
 
-היא גם מיישמת את substring על ידי שימוש בשני מידעים – האינדקס שבו אנו רוצים להתחיל והאורך של התת-מחרוזת. 
-
-## ראו גם
-
-1. [C++ string substr() - w3schools](https://www.w3schools.com/cpp/cpp_string_substr.asp)
-2. [C++ substr() Function - tutorialspoint](https://www.tutorialspoint.com/cplusplus/cpp_string_substr.htm)
-3. [Working With String Substrings in C++ - programiz](https://www.programiz.com/cpp-programming/library-function/cctype/substr)
+היא גם מיישמת את substring על ידי שימוש בשני מידעים – האינדקס שבו אנו רוצים להתחיל והאורך של התת-מחרוזת.

@@ -42,6 +42,5 @@ foreach($arguments as $key => $value) {
 ## 相关资源：
 这些是一些有关PHP命令行参数的其他资源：
 
-1. PHP官方文档中关于命令行用法的页面: [https://php.net/manual/cli.php](https://php.net/manual/cli.php)
 2. PHP官方文档中关于 `getopt` 函数的页面：[https://php.net/manual/function.getopt.php](https://php.net/manual/function.getopt.php)
 3. 一个关于PHP命令行参数处理的细致教程：[https://www.sitepoint.com/php-command-line-1/](https://www.sitepoint.com/php-command-line-1/)

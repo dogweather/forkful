@@ -56,4 +56,3 @@ Rubyにはputsやprint、p等のデバッグ用の組み込み関数以外にも
 
 1. Rubyのオフィシャルな[ドキュメンテーション](https://www.ruby-lang.org/ja/documentation/)
 2. デバッグの[基本](https://guides.rubyonrails.org/debugging_rails_applications.html)について
-3. [Ruby Debugging Magic Cheat Sheet](https://www.rubyguides.com/2015/06/ruby-debugging/)

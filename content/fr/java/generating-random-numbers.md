@@ -45,4 +45,3 @@ Pour en savoir plus sur la génération de nombres aléatoires en Java, consulte
 
 1. Oracle Java Documentation: [Class Random](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html)
 2. Oracle Java Tutorial: [How to Generate Random Numbers](https://docs.oracle.com/javase/tutorial/essential/math/random.html)
-3. Blog Post: [Pseudo-random Numbers in Java](https://www.baeldung.com/java-random)

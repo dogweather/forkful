@@ -41,4 +41,3 @@ puts str_today
 
 1. [Ruby का आधिकारिक डॉक्यूमेंटेशन](https://www.ruby-lang.org/en/documentation/)
 2. [Ruby strftime मेथड](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html#method-i-strftime)
-3. [Ruby Date के बारे में सीखें](https://www.rb-path.com/ruby-date.html)

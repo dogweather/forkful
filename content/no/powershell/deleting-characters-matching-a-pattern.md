@@ -49,4 +49,3 @@ For mer informasjon om PowerShell og dets funksjoner, gå til:
 
 1. Offisielt PowerShell Dokumentasjon: [link](https://docs.microsoft.com/en-us/powershell/)
 2. Om Regulære Uttrykk: [link](https://www.regular-expressions.info/powershell.html)
-3. PowerShell strengoperasjoner: [link](https://www.tutorialspoint.com/powershell/powershell_string_operators.htm)

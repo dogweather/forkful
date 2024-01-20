@@ -46,6 +46,3 @@ La función `directory_exists` en Gleam trabaja a un nivel más bajo. Utiliza ll
 Para información adicional y fuentes relacionadas, consulte los siguientes enlaces:
 
 1. [Documentación oficial de Gleam](https://gleam.run/)
-2. [Módulo Gleam Filesystem](https://hexdocs.pm/gleam_stdlib/gleam/filesystem/)
-3. [Tutorial de programación de Gleam](https://gleam.run/tour/)
-4. [Funciones y errores IO en Gleam](https://hexdocs.pm/gleam_stdlib/gleam/io/error/)

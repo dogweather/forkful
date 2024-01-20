@@ -54,6 +54,5 @@ Dettagli di implementazione: quando si effettua il parsing di una data, è impor
 
 ## Vedi anche:
 
-1. [Kotlin Official Docs: java.time Library](https://kotlinlang.org/api/latest/jvm/stdlib/java.time/)
 2. [Java 8 Date/Time API - Tutorial by Oracle](https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html)
 3. [Guide to the Date and Time API in Java](https://www.baeldung.com/java-8-date-time-intro)

@@ -52,5 +52,4 @@ Exemplet ovan skapar en HTTP-anslutning till `http://example.com` med användaru
 
 1. Officiell Java-dokumentation: [URL-klassen](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/URL.html)
 2. Officiell Java-dokumentation: [HttpURLConnection-klassen](https://docs.oracle.com/en/java/javase/14/docs/api/java.base/java/net/HttpURLConnection.html)
-3. [Basic Authentication på Wikipedia](https://sv.wikipedia.org/wiki/Basic_access_authentication)
 4. [Alternativa autentiseringsmetoder](https://auth0.com/docs/protocols)

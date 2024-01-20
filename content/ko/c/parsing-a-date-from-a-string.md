@@ -43,6 +43,4 @@ Parsed date is: 14 Sep 2022 23:50
 C 언어에서는 `strptime` 함수를 사용하여 문자열에서 날짜 정보를 해석할 수 있습니다. 하지만 언어마다 사용하는 날짜 구문 분석 함수가 다를 수 있으며, 때로는 구체적인 요구에 따라 직접 구문 분석 코드를 작성해야 할 수도 있습니다.
 
 ## 참조 자료:
-1. [C library function - Strptime](https://www.programiz.com/c-programming/library-function/time.h/strptime)
-2. [C library function - Strftime](https://www.programiz.com/c-programming/library-function/time.h/strftime)
 3. [ISO 8601 date and time format](https://www.iso.org/iso-8601-date-and-time-format.html)

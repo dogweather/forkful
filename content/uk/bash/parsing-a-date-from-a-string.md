@@ -37,4 +37,3 @@ echo $result_date
 ## Що ще подивитись:
 1. Офіційна документація Bash: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
 2. Мануал про команду `date`: [https://www.man7.org/linux/man-pages/man1/date.1.html](https://www.man7.org/linux/man-pages/man1/date.1.html)
-3. Стаття про роботу з датою та часом в Bash: [https://www.linuxtechi.com/date-command-examples-for-linux/](https://www.linuxtechi.com/date-command-examples-for-linux/)

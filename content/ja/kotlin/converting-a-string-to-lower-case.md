@@ -43,7 +43,6 @@ hello world
 
 ## 関連リンク
 
-1. [Kotlinでの文字列操作](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/-string/)
 
 2. [toUpperCaseメソッドについて](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/to-upper-case.html)
 

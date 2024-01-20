@@ -53,6 +53,5 @@ Voit käytää `duration_cast` funktiota jos haluat tarkempia ajanjaksoja esimer
 
 ## Katso myös:
 
-1. C++ chrono-kirjaston dokumentointi: [cppreference.com/w/cpp/chrono](https://cppreference.com/w/cpp/chrono)
 2. Ajan käsittely C++:ssa videoesittely: [youtube.com/watch?v=uf1zJyk36P8](https://www.youtube.com/watch?v=uf1zJyk36P8)
 3. Päivämäärän laskeminen C++:ssa StackOverflow: [stackoverflow.com/questions/1068827/date-calculation](https://stackoverflow.com/questions/1068827/date-calculation)

@@ -52,5 +52,4 @@ std::string str5 = ss.str();   // "Hallo, Welt!"
 ```
 
 ## Siehe Auch
-1. [C++ String-Theorie und Praxis](https://www.learncpp.com/cpp-tutorial/4-1-the-stdstring-class/)
 2. [C++ Strings](https://www.w3schools.com/cpp/cpp_strings.asp)

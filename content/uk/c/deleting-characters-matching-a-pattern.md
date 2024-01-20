@@ -47,4 +47,3 @@ int main() {
 1. [Документація C library function - strpbrk()](https://www.tutorialspoint.com/c_standard_library/c_function_strpbrk.htm)
 2. [C library function - memmove()](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm)
 3. [C library function - strlen()](https://www.tutorialspoint.com/c_standard_library/c_function_strlen.htm)
-4. [Регулярні вирази в C](https://www.geekhideout.com/regex.htm)

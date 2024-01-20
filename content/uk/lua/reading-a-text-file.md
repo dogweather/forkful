@@ -44,5 +44,4 @@ print(content)
 ## Див. також:
 
 1. Офіційна документація по Lua: [Детально про io.open](https://www.lua.org/pil/21.2.html)
-2. Вікіпедія: [Загальна інформація про читання текстових файлів](https://uk.wikipedia.org/wiki/Text_file)
 3. Документація Luvit: [Асинхронне читання файлів](https://luvit.io/docs.html)

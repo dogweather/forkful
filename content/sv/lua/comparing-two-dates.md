@@ -42,4 +42,3 @@ När man jämför datum i Lua, är det viktigt att notera att os.time skapar en 
 För mer information om hur du hanterar datum och tid i Lua, kan följande resurser vara användbara:
 1. [Lua-Users Wiki: Dates and Time](http://lua-users.org/wiki/DatesAndTime) – Djupgående information om datum och tid i Lua.
 2. [Programming in Lua : 22.1](https://www.lua.org/pil/22.1.html) – Det officiella avsnittet för datum och tidshantering i Lua.
-3. [Lua os Library](https://www.tutorialspoint.com/lua/lua_os_library.htm) – En sammanfattning av Luas os-bibliotek, inklusive datum och tid.

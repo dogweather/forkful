@@ -46,5 +46,4 @@ In termini di prestazioni, l'operazione `drop n` può essere costosa se `n` è g
 Per ulteriori approfondimenti su come lavorare con le stringhe in Haskell, consulta le seguenti risorse:
 
 1. [Lavorare con le Stringhe in Haskell](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
-2. [Haskell: Manipolazione delle stringhe](https://www.schoolofhaskell.com/user/peter/substring)
 3. [Hoogle: Una Ricerca API per Haskell](https://www.haskell.org/hoogle/)

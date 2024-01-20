@@ -40,5 +40,4 @@ console.log("Future date is: ", futureDate);
 ## अन्य स्रोत:
 
 1. [MDN Web Docs: Date - JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)
-2. [Moment.js](https://momentjs.com/) 
-3. [TypeScript - Date Object](https://www.tutorialsteacher.com/typescript/typescript-date-object)
+2. [Moment.js](https://momentjs.com/)

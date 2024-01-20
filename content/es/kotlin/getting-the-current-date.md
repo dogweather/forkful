@@ -53,7 +53,6 @@ Este código te dará un resultado similar a nuestro ejemplo anterior. La elecci
 Para más detalles sobre el manejo de fechas y horas en Kotlin, puedes visitar los siguientes recursos:
 
 1. Documentación oficial de Kotlin: [Java Interop](https://kotlinlang.org/docs/java-interop.html)
-2. Guía de Kotlin de Baeldung: [LocalDateTime with Kotlin](https://www.baeldung.com/kotlin/localdatetime)
 3. Documentación de Kotlin de Medium: [Working with Date and Time in Kotlin](https://medium.com/@kashifoza/working-with-date-and-time-in-kotlin-46f4a06675b1)
 
 Recuerda, la clave para ser un buen programador es mantener la curiosidad y estar dispuesto a aprender constantemente. ¡Feliz programación!

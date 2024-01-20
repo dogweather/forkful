@@ -46,4 +46,3 @@ fun main(){
 
 1. [Java 文档：File exists()](https://docs.oracle.com/javase/8/docs/api/java/io/File.html#exists--)
 2. [Java 文档：Files exists()](https://docs.oracle.com/javase/7/docs/api/java/nio/file/Files.html#exists(java.nio.file.Path,%20java.nio.file.LinkOption...))
-3. [Kotlin kotlinx.io 库文档](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/-file/exists.html)

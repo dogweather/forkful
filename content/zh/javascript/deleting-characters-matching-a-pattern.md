@@ -42,4 +42,3 @@ console.log(newStr);
 
 1. [MDN Web Docs 上的正则表达式教程](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
 2. [Javascript String replace 方法的具体用法](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/String/replace)
-3. [介绍 split 和 join 方法的博客文章](https://blog.csdn.net/weixin_38416551/article/details/79938950)

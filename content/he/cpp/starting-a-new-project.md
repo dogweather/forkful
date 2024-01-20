@@ -44,5 +44,3 @@ int main()
 ## ראה גם:
 
 1. [איך ליצור פרויקט C++ ב-Visual Studio](https://docs.microsoft.com/en-us/cpp/build/vscpp-step-0-installation?view=vs-2019)
-2. [טיפים לניהול פרויקטים C++ בצורה מסודרת](https://www.fluentcpp.com/2018/09/28/cpp-project-structure/)
-3. [איך להגדיר מבנה של פרויקט C++](https://subscription.packtpub.com/book/programming/9781786465154/1/ch01lvl1sec14/defining-the-structure-of-a-c-project)

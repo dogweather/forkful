@@ -35,6 +35,5 @@ console.log(capitalizeString("hello, world!")) // "Hello, World!"
 3. Деталі реалізації: Наша функція `capitalizeString` використовує регулярний вираз `/ \b\w / g` для пошуку першої букви кожного слова в рядку та заміни її на прописний варіант за допомогою методу `toUpperCase()`.
 
 ## Дивіться також
-1. [TypeScript - String toUpperCase()](https://www.tutorialsteacher.com/typescript/typescript-string-touppercase)
 2. [Javascript String toUpperCase()](https://www.w3schools.com/jsref/jsref_touppercase.asp)
 3. [Mastering JavaScript Single Line String Manipulation](https://itnext.io/making-your-javascript-functions-more-readable-by-writing-less-c0a351af38e4)

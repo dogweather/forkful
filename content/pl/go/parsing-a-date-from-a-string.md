@@ -42,5 +42,4 @@ Szczegół implementacji: `time.Parse` zasługuje na wzmiankę, że format, któ
 
 ## Zobacz Również
 1. Dokumentacja Golang na temat pakietu czasu [tutaj](https://golang.org/pkg/time/).
-2. Przykłady kodu [tutaj](https://golangcode.com/convert-string-to-datetime/). 
 3. Historia standardu ISO 8601 [tutaj](https://en.wikipedia.org/wiki/ISO_8601).

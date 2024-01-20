@@ -33,4 +33,3 @@ app.Main.init({flags: input});
 ## और भी देखें:
 
 1. Elm में Flags का उपयोग करें: [https://guide.elm-lang.org/interop/flags.html](https://guide.elm-lang.org/interop/flags.html)
-2. Elm के साथ Node.js का उपयोग करें: [https://www.linkedin.com/pulse/running-elm-nodejs-j%C3%A9r%C3%B4me-lauret/](https://www.linkedin.com/pulse/running-elm-nodejs-j%C3%A9r%C3%B4me-lauret/)

@@ -49,4 +49,3 @@ editURL:              "https://github.com/dogweather/forkful/blob/master/content
 # ראה גם
 1. [הדרכת תחילה של Clojure](https://www.braveclojure.com/clojure-for-the-brave-and-true/)
 2. [תיעוד Clojure](https://clojuredocs.org/)
-3. [Clojure - הצירוף של מחרוזות](https://www.learn-clojure.com/clojure-concatenation/)

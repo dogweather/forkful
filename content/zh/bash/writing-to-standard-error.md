@@ -41,7 +41,6 @@ x不能为负数
 
 如果想了解更多关于标准错误的内容，可以参考以下资源：
 
-1. [Linux公共版权](https://wiki.archlinux.org/index.php/Standard_error_(简体中文))
 2. [GNU Bash文档](https://www.gnu.org/software/bash/manual/html_node/Redirections.html)
 
 请注意，这些资源是英文的，需要有一定的英文阅读能力。同时，也可以参考其他中文的博客和教程来学习标准错误的应用。

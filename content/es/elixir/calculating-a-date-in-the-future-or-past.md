@@ -55,4 +55,3 @@ Aquí hay algunos recursos adicionales sobre el manejo de fechas en Elixir:
 1. [Documentación oficial de Elixir para `Date`](https://hexdocs.pm/elixir/Date.html)
 2. [`Date.add/2` en HexDocs](https://hexdocs.pm/elixir/Date.html#add/2)
 3. [Timex en GitHub](https://github.com/bitwalker/timex)
-4. [Manipulación de la fecha en Elixir en Pragmatic Studio](https://pragmaticstudio.com/tutorials/elixir-date-and-time)

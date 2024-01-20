@@ -40,6 +40,5 @@ Detail implementacji funkcji `Math.random` jest trochę skomplikowany - nie jest
 
 ## Zobacz również:
 
-1. [MDN Web Docs: Math.random()](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Math/random)
 2. [Wikipedia: Generator liczb pseudolosowych](https://pl.wikipedia.org/wiki/Generator_liczb_pseudolosowych)
 3. [npm: Mersenne Twister package](https://www.npmjs.com/package/mersenne-twister)

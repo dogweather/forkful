@@ -58,6 +58,5 @@ Le détail de l'implémentation "dir_exists" utilise la fonction "lfs.attributes
 ## Voir aussi 
 Pour plus d'informations, visitez les liens ci-dessous :
 
-1. [LuaFileSystem Documentation](http://keplerproject.github.io/luafilesystem/manual.html)
 2. [Lua OS Library](https://www.lua.org/pil/23.1.html)
 3. [Lua tutorials on File I/O](https://www.tutorialspoint.com/lua/lua_file_io.htm)

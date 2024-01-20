@@ -63,4 +63,3 @@ int main()
 
 1. [GNU C Library: File System Interface](https://www.gnu.org/software/libc/manual/html_node/File-System-Interface.html)
 2. [Stack Overflow: How to check if a directory exists in C?](https://stackoverflow.com/questions/12510874/how-can-i-check-if-a-directory-exists)
-3. [Cplusplus.com: <sys/stat.h>](http://www.cplusplus.com/reference/clibrary/csys/stat/)

@@ -57,5 +57,3 @@ let multilineString = """
 
 1. [Документація Swift: Strings and Characters](https://developer.apple.com/documentation/swift/string)
 2. [Stack Overflow: String concatenation vs. interpolation in Swift](https://stackoverflow.com/questions/24092884/get-nth-character-of-a-string-in-swift-programming-language)
-3. [Swift Tutorial: Multiline String](https://learnappmaking.com/multiline-string-literals-swift-how-to/)
-4. [Swift by Sundell: String concatenation and interpolation](https://www.swiftbysundell.com/tips/string-concatenation-and-interpolation/)

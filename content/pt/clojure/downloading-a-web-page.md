@@ -52,7 +52,6 @@ A função `client/get` do `clj-http` envia uma solicitação GET para o URL esp
 ## Veja Também
 
 1. [Documentação do clj-http](https://github.com/dakrone/clj-http)
-2. [Outro tutorial útil sobre raspagem da web](https://www.toptal.com/clojure/web-scraping-with-clojure)
 3. [Detalhes técnicos sobre o protocolo HTTP](https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview)
 
 Feliz programação em Clojure!

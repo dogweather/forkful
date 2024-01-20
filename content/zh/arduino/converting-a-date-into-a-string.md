@@ -47,5 +47,4 @@ void loop() {
 ## 另见 （See Also）
 
 1. Time库的GitHub仓库：[https://github.com/PaulStoffregen/Time](https://github.com/PaulStoffregen/Time)
-2. Arduino官方关于Time库的教程： [https://www.arduino.cc/en/Reference.Time](https://www.arduino.cc/en/Reference.Time)
 3. 关于Unix时间戳的更多信息： [https://www.unixtimestamp.com/](https://www.unixtimestamp.com/)

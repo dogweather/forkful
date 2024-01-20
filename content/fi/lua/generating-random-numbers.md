@@ -40,5 +40,3 @@ Yksityiskohdat toteutuksesta: 'math.randomseed' -funktiota tulisi kutsua kerran 
 ## Katso myös:
 
 1. Lua math.random dokumentaatio: [Link](https://www.lua.org/manual/5.4/manual.html#6.7)
-2. Mersenne Twister Wikipedia: [Link](https://fi.wikipedia.org/wiki/Mersenne_twister)
-3. Xorshift Wikipedia: [Link](https://fi.wikipedia.org/wiki/Xorshift)

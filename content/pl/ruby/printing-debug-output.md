@@ -43,5 +43,4 @@ Szczegóły implementacji `puts` mogą różnić się w zależności od użytego
 
 ## Zobacz także:
 
-1. [Debugging Techniques in Ruby (Techniki debugowania w Ruby)](https://www.toptal.com/ruby/ruby-debugging-techniques)
 2. [In-depth look at Ruby's 'puts' (Głębsze spojrzenie na 'puts' w Ruby)](https://ruby-doc.org/core/Kernel.html#method-i-puts)

@@ -38,6 +38,5 @@ echo $content;
 
 ## 另请参阅
 
-1. [PHP 文件系统函数](https://www.runoob.com/manual/php/filesystem.functions.php) 
 2. [PHP 文件 I/O 教程](https://www.w3schools.com/php/php_file.asp)
 3. [关于 PHP file_get_contents()函数的深入理解](https://www.cnblogs.com/Anker/p/3271773.html)

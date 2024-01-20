@@ -56,7 +56,6 @@ La implementación en C++ requiere el uso de librerías como cURL o Boost. En pa
 ## Véase también:
 
 1. [Documentación de cURL](https://curl.se/libcurl/c/)
-2. [Autenticación básica de HTTP en Wikipedia](https://es.wikipedia.org/wiki/Autenticación_de_acceso_básico)
 3. [Librería Boost.Asio](https://www.boost.org/doc/libs/1_77_0/doc/html/boost_asio.html)
 4. [OAuth](https://oauth.net/)
 5. [JWT (JSON Web Tokens)](https://jwt.io/)

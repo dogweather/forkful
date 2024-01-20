@@ -39,5 +39,3 @@ Elm 对日期的处理最早来源于时间函数库(Time libraries) Time.Posix 
 ## 参考资料
 你可以从以下资源获得更多关于比较两个日期的信息：
 1. [Elm Time库文档](https://package.elm-lang.org/packages/elm/time/latest/)
-2. [Elm discuss: Date Comparison](https://discourse.elm-lang.org/t/date-comparison/2649)
-3. [Elm入门教程](https://tech.paiza.io/entry/2016/05/30/140814be) (日语，麦爪翻译)

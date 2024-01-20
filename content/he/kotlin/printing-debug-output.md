@@ -30,6 +30,5 @@ fun main() {
 3. פרטי מימוש: במחשבים מודרניים, "print" עכשיו מחזיר פלט למסוף. בעבר, הייתה היכולת להדפיס את הפלט ישירות למדפסת!
 
 ## ראה גם:
-1. [דיבוג ב-Kotlin](https://kotlinlang.org/docs/tutorials/cotlin-android-runnable-debugger.html)
 2. [איך להדפיס ב-Java](https://www.w3schools.com/java/java_user_input.asp)
 3. [פקודת הדפסה ב-Python](https://docs.python.org/3/tutorial/inputoutput.html)

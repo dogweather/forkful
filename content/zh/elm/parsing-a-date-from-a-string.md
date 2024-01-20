@@ -52,6 +52,5 @@ Elm在1.0.0版本引入了Time模块以更好地支持日期和时间处理。�
 
 1. Elm的官方时间模块文档:[Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
 
-2. Elm与日期处理相关的讨论: [ISO 8601 Parsing](https://discourse.elm-lang.org/t/iso-8601-parsing/2357)
 
 3. 其他日期解析及操作库: [elm-date-extra](https://package.elm-lang.org/packages/rluiten/elm-date-extra/latest/)

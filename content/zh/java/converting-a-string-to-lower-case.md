@@ -44,4 +44,3 @@ hello world!
 
 1. Oracle Java 文档: [String.toLowerCase()](https://docs.oracle.com/en/java/javase/13/docs/api/java.base/java/lang/String.html#toLowerCase())
 2. W3Schools 教程: [Java String toLowerCase() Method](https://www.w3schools.com/java/ref_string_tolowercase.asp)
-3. GeeksforGeeks 文章: [String toLowerCase() Method in Java](https://www.geeksforgeeks.org/java-string-tolowercase-method-example/)

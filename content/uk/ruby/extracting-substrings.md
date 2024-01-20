@@ -43,5 +43,4 @@ p str.slice(7,5)     # "світе"
 ## Дивіться також:
 
 1. [Офіційна документація Ruby про видобуток підрядків](https://ruby-doc.org/core-2.7.1/String.html#method-i-5B-5D)
-2. [Порівнянні видобутку підрядків в різних мовах програмування](https://www.techotopia.com/index.php/Ruby_Substring_Extraction)
 3. [Розширений огляд рядків в Ruby, включаючи видобуток підрядків](https://www.tutorialspoint.com/ruby/ruby_strings.htm)

@@ -53,4 +53,3 @@ String.slice(our_string, -6, 4)
 
 1. [`String.slice/3` Elixir官方文档](https://hexdocs.pm/elixir/String.html#slice/2)
 2. [`binary_part/3` Erlang官方文档](https://www.erlang.org/doc/man/binary.html#part-3)
-3. [Working with Strings in Elixir](https://open.appacademy.io/learn/full-stack-online/software-engineering-foundations/working-with-strings-in-elixir)

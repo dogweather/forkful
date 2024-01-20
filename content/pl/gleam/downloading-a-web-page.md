@@ -42,5 +42,3 @@ Po uruchomieniu tego kodu z prawidłowym URL, otrzymamy treść strony jako wyni
 1. Dokumentacja Gleam HTTPc: [https://hexdocs.pm/gleam_httpc/gleam/httpc.html](https://hexdocs.pm/gleam_httpc/gleam/httpc.html)
 
 2. Krótki wprowadzenie do HTTP: [https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html](https://www3.ntu.edu.sg/home/ehchua/programming/webprogramming/HTTP_Basics.html)
-
-3. Obsługa błędów w Gleam: [https://gleam.run/book/tour/errors.html](https://gleam.run/book/tour/errors.html)

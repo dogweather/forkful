@@ -39,4 +39,3 @@ Szczegóły implementacji `replace()` zależą od implementacji konkretnej JVM. 
 ## Zobacz też:
 1. Dokumentacja Kotlin: [replace](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
 2. Dokumentacja Kotlin: [replaceFirst](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace-first.html)
-3. Głębokie zrozumienie JVM i jej wpływ na funkcje Kotlin: [JVM Deep Dive](https://www.baeldung.com/jvm-architecture)

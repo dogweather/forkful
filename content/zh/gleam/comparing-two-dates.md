@@ -51,6 +51,4 @@ End time: 2022-03-16 16:50:02 GMT
 3. 实现细节：Gleam使用Erlang的标准库进行日期操作。你可以使用`now()`获取当前的时间戳，然后通过`>`运算符比较两个时间戳。
 
 ## 另请参阅：
-1. [Gleam Docs](https://docs.gleam.run) ：Gleam官方文档，了解更多关于Gleam的所有特性。
 2. [Gleam's Github page](https://www.github.com/gleam-lang/gleam)：Gleam的Github页面，查看Gleam的最新开发情况和版本更新。
-3. [Erlang's time module](https://erlang.org/doc/man/time.html)：深入了解Erlang的时间模块和它如何在Gleam中工作。

@@ -43,7 +43,4 @@ Vaihtoehtoisesti, voit käyttää myös muita Gleam-kirjastoja kuten `time`-kirj
 Gleamissa päivämäärän haku perustuu Erlangin kerrosalustaan, joka antaa hyvän tarkkuuden ja suorituskyvyn.
 
 ## Katso myös
-1. Gleam's DateTime dokumentaatio: [https://hexdocs.pm/gleam_datetime/readme.html](https://hexdocs.pm/gleam_datetime/readme.html)
-2. Gleam's Locale dokumentaatio: [https://hexdocs.pm/gleam_locale/readme.html](https://hexdocs.pm/gleam_locale/readme.html)
-3. Gleamin opas: [https://gleam.run/book/tour/dates-and-time.html](https://gleam.run/book/tour/dates-and-time.html)
 4. Erlangin DateTime-moduuli: [https://erlang.org/doc/man/calendar.html](https://erlang.org/doc/man/calendar.html)

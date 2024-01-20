@@ -44,4 +44,3 @@ Zapoznaj się z innymi źródłami, które pomogą Ci lepiej zrozumieć i wykorz
 
 1. [Dokumentacja printf()](https://www.cplusplus.com/reference/cstdio/printf/)
 2. [Tutorial o interpolacji ciągów](https://www.programiz.com/c-programming/c-strings)
-3. [Przewodnik po formatowaniu ciągów](https://www.learn-c.org/en/String_Formatting_with_Printf)

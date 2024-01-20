@@ -45,6 +45,5 @@ Esplora più a fondo con queste risorse:
 
 1. [JSDOM GitHub](https://github.com/jsdom/jsdom)
 2. [Cheerio GitHub](https://github.com/cheeriojs/cheerio)
-3. [Node.js](https://nodejs.org/it/)
 4. [npm](https://www.npmjs.com/)
 5. [Parse5 GitHub](https://github.com/inikulin/parse5)

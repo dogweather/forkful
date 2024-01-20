@@ -39,5 +39,3 @@ Quanto à implementação, numa visão mais aprofundada, o código `(x:xs)` usa 
 
 ## Veja Também: 
 1. Biblioteca [Haskell `Data.Char`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html)
-2. Documentação [Haskell `pattern matching`](https://learn.haskell.org/en/docs/pattern-matching/)
-3. Tutorial [Haskell `map` function](https://www.tutorialspoint.com/haskell/haskell_map_function.htm)

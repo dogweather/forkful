@@ -44,6 +44,4 @@ puts str1
 
 ## ראה גם:
 
-1. [חיבור מחרוזות | תכנות ברובי](https://he.wikibooks.org/wiki/%D7%AA%D7%9B%D7%A0%D7%95%D7%AA_%D7%91%D7%A8%D7%95%D7%91%D7%99/%D7%97%D7%99%D7%91%D7%95%D7%A8_%D7%9E%D7%97%D7%A8%D7%95%D7%96%D7%95%D7%AA)
-2. [Concatenation - The Ruby Way](https://www.rubyguides.com/2018/06/ruby-string-concatenation/)
 3. [Why use two string concatenation techniques?](https://stackoverflow.com/questions/4684446/why-does-ruby-have-both-and-for-concatenation)

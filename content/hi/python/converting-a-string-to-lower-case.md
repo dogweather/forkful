@@ -42,4 +42,3 @@ print(str.lower())
 ## **इसके अलावा देखें:**
 
 1. [Python String lower() मेथड विवरण](https://www.tutorialspoint.com/python/string_lower.htm)
-2. [casefold() Vs lower() in Python](https://www.geeksforgeeks.org/casefold-in-python/)

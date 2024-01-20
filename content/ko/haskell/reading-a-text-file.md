@@ -48,6 +48,4 @@ main = do
 
 ## 추가 참조:
 
-1. [Haskell Wiki: File I/O](https://wiki.haskell.org/File_I/O)
-2. [Real World Haskell: ByteString](http://book.realworldhaskell.org/read/efficient-file-io-regular-expressions-and-file-name-matching.html) 
 3. [Learn You a Haskell for Great Good: Input and Output](http://learnyouahaskell.com/input-and-output)

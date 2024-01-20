@@ -60,5 +60,4 @@ int main() {
 
 ## ראה גם: 
 
-1. [מדריך לביטויים רגולריים ב-C](http://www.rexegg.com/regex-c.html)
 2. [פונקציות של מנהל זיכרון ב-C](http://www.cplusplus.com/reference/cstring/)

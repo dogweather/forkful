@@ -64,6 +64,5 @@ En envoyant une requête HTTP à l'aide d'Arduino, la gestion des connexions est
 
 ## Voir aussi :
 
-1. Documentation officielle Arduino : [https://www.arduino.cc/en/main/docs](https://www.arduino.cc/en/main/docs)
 2. Guide de l'ESP8266 WiFiBasic : [https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html](https://arduino-esp8266.readthedocs.io/en/latest/esp8266wifi/readme.html)
 3. Article de wikipedia sur l'authentification HTTP : [https://fr.wikipedia.org/wiki/Authentification_HTTP](https://fr.wikipedia.org/wiki/Authentification_HTTP)

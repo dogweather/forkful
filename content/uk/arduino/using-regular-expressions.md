@@ -53,6 +53,4 @@ if(!check) {
 
 ## Дивись також
 
-1. [Докладніше про регулярні вирази в Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/RegularExpression)
-2. [Документація по RegExp для програмістів Arduino](https://www.nongnu.org/avr-libc/user-manual/group__avr__regexp.html)
 3. [Довідник по регулярним виразам](https://docs.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-language-quick-reference)

@@ -50,4 +50,3 @@ Existem alternativas à concatenação de strings em programação. A mais notá
 
 1. Documentação oficial Rust [std::string::String](https://doc.rust-lang.org/std/string/struct.String.html)
 2. [Concatenate strings in Rust](https://stackoverflow.com/questions/30154541/how-do-i-concatenate-strings)
-3. [O guia do programador Rust](https://stevedonovan.github.io/rustifications/2018/08/18/common-rust-lifetime-misconceptions.html) sobre tempo de vida e posse de strings.

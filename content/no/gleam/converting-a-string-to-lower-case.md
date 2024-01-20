@@ -38,6 +38,5 @@ Alternative metoder for å oppnå dette i andre programmeringsspråk inkluderer 
 Hvordan dette faktisk fungerer i Gleam er, funksjonen `string.lowercase` gjennomgår hver bokstav i strengen, og erstatter den med dens små bokstavversjon.
 
 ## Se ogsa
-1. [Gleam Dokumentasjon](https://gleam.run/docs/)
 2. [Gleam String Moduler](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
 3. [Wikipedia: ASCII](https://no.wikipedia.org/wiki/ASCII)

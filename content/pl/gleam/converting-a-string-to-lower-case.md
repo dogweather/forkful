@@ -39,5 +39,4 @@ W niektórych językach, takich jak JavaScript, mamy alternatywne metody, takie 
 Nie jest jednak zawsze konieczne przechodzenie przez całą procedurę konwersji, jeżeli wiemy, że nasz tekst jest już znormalizowany. W Gleam, funkcja string.lower jest zrealizowana z użyciem funkcji 'str.toLocaleLowerCase()' z JavaScript.
 
 ## Zobacz też:
-1. [Dokumentacje Gleam (ang. Gleam Documentation)](https://gleam.run/docs/)
 2. [Więcej o funkcji str.toLocaleLowerCase (ang. str.toLocaleLowerCase function on MDN)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toLowerCase)

@@ -60,6 +60,4 @@ Our implementation detail is converting each date to a tuple and comparing their
 ## See Also
 
 1. For a deep understanding of date-related issues in Gleam, refer to the [Gleam documentation](https://gleam.run/documentation/).
-2. More about the comparison operations in Gleam can be found [here](https://gleam.run/book/tour/operators.html).
-3. For implementing date-time in Gleam, check out [this resource](https://github.com/gleam-experiments/date-time).
 4. For an understanding of different calendar systems, this [article](https://www.timeanddate.com/calendar/) offers a thorough explanation.

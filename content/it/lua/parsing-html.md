@@ -57,5 +57,4 @@ In termini di implementazione, la libreria LuaHtml crea un Document Object Model
 Per saperne di più sul parsing del HTML e le sue applicazioni, consulta:
 
 1. Tutti gli aspetti del web scraping: [link](https://realpython.com/tutorials/web-scraping/)
-2. Documentazione completa di LuaHtml: [link](https://luarocks.org/modules/tailhook/htmlua)
 3. Elementi fondamentali dell'HTML per programmatori: [link](https://developer.mozilla.org/it/docs/Web/HTML)

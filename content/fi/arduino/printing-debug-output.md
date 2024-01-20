@@ -40,6 +40,4 @@ Iteohjelmointiympäristössä, Arduinon `Serial`-olio sisältää funktion `prin
 Enemmän tietoa debuggauksesta ja sen työkaluista löydät näistä lähteistä:
 
 1. [Arduino Debugging](https://www.arduino.cc/en/Tutorial/LibraryExamples/SoftwareSerialExample)
-2. [Advanced Arduino Debugging](https://learn.sparkfun.com/tutorials/advanced-arduino-debugging)
 3. [Understanding Arduino UNO Hardware Design](https://www.allaboutcircuits.com/technical-articles/understanding-arduino-uno-hardware-design/)
-4. [Arduino Serial Communications Guide](https://store.arduino.cc/usa/arduino-hackspace-guide)

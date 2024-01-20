@@ -43,8 +43,3 @@ rm $tmpFile
 和 mktemp 相比，还有一种创建临时文件的替代方案下，那就是使用 /dev/shm 文件系统。这是一个内存文件系统，所有在其中创建的文件都将存储于内存中而不是硬盘。该方法的速度更快，但是使用的内存空间更多。
 
 在创建临时文件时，一个重要的实现细节是需要确保只有创建文件的用户才有权访问该文件。这是因为临时文件可能会包含敏感数据，如果任何人都可以访问，将有可能导致数据泄露。
-
-## 参考链接:
-
-1. [Linux mktemp command](https://www.computerhope.com/unix/umktemp.htm)
-2. [Bash mktemp - Make Temporary / Temp File](https://www.cyberciti.biz/faq/bash-shell-temp-file-temporary-file-creation-in-linux/)

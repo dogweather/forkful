@@ -39,6 +39,4 @@ PHP реалізує функцію `strlen()` за допомогою внут�
 
 ## Див. також:
 
-1. [Функція `strlen()` на php.net](https://www.php.net/manual/uk/function.strlen.php)
-2. [Функція `mb_strlen()` на php.net](https://www.php.net/manual/uk/function.mb-strlen.php)
 3. [Вираз "Hello, World!" в різних мовах програмування](https://uk.wikipedia.org/wiki/Hello,_world!)

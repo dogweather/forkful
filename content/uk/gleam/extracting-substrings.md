@@ -36,5 +36,4 @@ assert hello == "Привіт"
 
 ## Див. також:
 1. Документація Gleam про рядки: [https://hexdocs.pm/gleam_stdlib/gleam/string.html](https://hexdocs.pm/gleam_stdlib/gleam/string.html)
-2. Огляд основ обробки тексту: [https://www.tutorialspoint.com/computer_programming/computer_programming_text_processing.htm](https://www.tutorialspoint.com/computer_programming/computer_programming_text_processing.htm)
 3. Як працювати з рядками в Erlang: [https://erlang.org/doc/man/erl_syntax.html](https://erlang.org/doc/man/erl_syntax.html)

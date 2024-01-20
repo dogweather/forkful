@@ -52,5 +52,4 @@ puts rand(100) # Returns 69 due to the seed
 ## See Also 
 
 1. [Random numbers in Ruby (Ruby-Doc official documentation)](https://ruby-doc.org/core-2.7.1/Random.html)
-2. ['Mathn' in Ruby (Ruby-Doc official documentation)](https://ruby-doc.org/stdlib-2.7.0/libdoc/mathn/rdoc/Mathn.html)
 3. [Wikipedia page on pseudorandom number generators](https://en.wikipedia.org/wiki/Pseudorandom_number_generator).

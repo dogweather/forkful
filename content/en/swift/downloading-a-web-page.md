@@ -49,5 +49,4 @@ When downloading a webpage, it's worth noting it's a network-bound task. It migh
 
 1. Designated Initializers vs Convenience Initializers in Swift - [Link](https://docs.swift.org/swift-book/LanguageGuide/Initialization.html)
 2. More about URLSession and Swift Network Programming - [Link](https://developer.apple.com/documentation/foundation/urlsession)
-3. SwiftNIO, a cross-platform asynchronous event-driven network application framework - [Link](https://swift.org/swift-nio/)
 4. Alamofire, an HTTP networking library written in Swift - [Link](https://github.com/Alamofire/Alamofire)

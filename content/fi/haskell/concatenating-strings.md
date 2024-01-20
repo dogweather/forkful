@@ -41,6 +41,5 @@ Toteutuksen yksityiskohdat: Yhdistämisoperaattoria (++) tai concat-funktiota k�
 
 ## Katso myös:
 
-1. [Haskellin merkkijonot](https://www.haskell.org/tutorial/strings.html)
 2. [Haskellin listaoperaattorit](http://learnyouahaskell.com/starting-out#an-intro-to-lists)
 3. [Haskellin Concat-funktion dokumentaatio](https://hackage.haskell.org/package/base-4.15.0.0/docs/Prelude.html#v:concat)

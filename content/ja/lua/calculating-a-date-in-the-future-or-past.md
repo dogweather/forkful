@@ -42,4 +42,3 @@ os.time関数は、1970年1月1日からの経過秒数を返すため、未来�
 2. Lua 5.3 リファレンスマニュアル - os.time: [リンク](https://www.lua.org/manual/5.3/manual.html#pdf-os.time)
 3. Lua 5.3 リファレンスマニュアル - os.difftime: [リンク](https://www.lua.org/manual/5.3/manual.html#pdf-os.difftime)
 4. luadate : [リンク](https://github.com/Tieske/date)
-5. chronos : [リンク](https://github.com/prapin/chronos)

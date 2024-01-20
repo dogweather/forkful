@@ -48,5 +48,3 @@ Szczegóły implementacji: Waistliwe jest tworzenie pliku tymczasowego w Swift. 
 ## Zobacz też:
 
 1. [Podręcznik: Zarządzanie plikami w Swift](https://developer.apple.com/documentation/foundation/filemanager)
-2. [Poradnik: Tworzenie plików tymczasowych](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/Files/Articles/UsingTempFiles.html)
-3. [Poradnik: Pliki i foldery tymczasowe](https://www.swiftbysundell.com/articles/temporary-files-and-folders-in-swift/)

@@ -41,4 +41,3 @@ Do implementacji `replace()` w Java używa się algorytmu dwuetapowego. Najpierw
 1. [Dokumentacja Oracle för metody replace()](https://docs.oracle.com/javase/8/docs/api/java/lang/String.html#replace-char-char-)
 2. [Tutorial do używania metody replace()](https://www.javatpoint.com/java-string-replace)
 3. [Dyskusja o wydajności metody replace()](https://stackoverflow.com/questions/16228992/commons-lang-stringutils-replace-performance-vs-string-replace)
-4. [Porównanie replace() i replaceAll()](http://javaconceptoftheday.com/difference-between-replace-and-replaceall-in-java/)

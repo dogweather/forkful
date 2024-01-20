@@ -45,5 +45,4 @@ La mise en œuvre de l'analyse de date à partir d'une chaîne dépend des besoi
 
 1. Documentation PHP pour ```strptime```: [https://www.php.net/manual/fr/function.strptime.php](https://www.php.net/manual/fr/function.strptime.php)
 2. Documentation PHP pour ```strtotime```: [https://www.php.net/manual/fr/function.strtotime.php](https://www.php.net/manual/fr/function.strtotime.php)
-3. Article sur la façon dont le traitement des dates a évolué en PHP : [http://www.php-history.net](http://www.php-history.net)
 4. Documentation PHP pour la classe ```DateTime```: [https://www.php.net/manual/fr/class.datetime.php](https://www.php.net/manual/fr/class.datetime.php)

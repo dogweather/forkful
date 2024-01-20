@@ -48,5 +48,4 @@ Was die Implementierungsdetails angeht, verwendet die Funktion `contentsOfFile` 
 Für weitere Informationen und fortgeschrittene Nutzungsfälle, schauen Sie sich bitte die folgenden Ressourcen an:
 
 1. Apple's Swift-Dokumentation: [https://developer.apple.com/documentation/swift](https://developer.apple.com/documentation/swift)
-2. FileReader Bibliothek: [https://github.com/vincent/fileReader-Swift](https://github.com/vincent/fileReader-Swift)
 3. FileInputStream Guide: [https://www.hackingwithswift.com/example-code/system/how-to-read-the-contents-of-a-directory-using-filesystem](https://www.hackingwithswift.com/example-code/system/how-to-read-the-contents-of-a-directory-using-filesystem)

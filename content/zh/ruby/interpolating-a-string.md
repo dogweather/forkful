@@ -40,4 +40,3 @@ puts "一天有 #{hours * 60 * 60} 秒"
 
 ## 还可以看看：
 1. Ruby官方文档的字符串插值说明：[https://ruby-doc.org/core/String.html#method-i-25](https://ruby-doc.org/core/String.html#method-i-25)
-2. 阐述字符串插值的详细教程：[https://www.rubyguides.com/2018/11/ruby-string-interpolation/](https://www.rubyguides.com/2018/11/ruby-string-interpolation/)

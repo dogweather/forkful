@@ -52,7 +52,6 @@ I dette tilfellet, om svært nøyaktige tidspunkter (for eksempel i nanosekunder
 
 Følgende lenker gir mer sosial kontekst rundt Java datohåndtering:
 
-1. [Java 8 Date – LocalDateTime, LocalDate, Instant](https://kodejava.org/java-8-date-localdate-localdatetime-instant/)
 2. [Java SimpleDateFormat](https://www.javatpoint.com/java-simpledateformat)
 3. [Java Date and Time tutorial](https://www.w3schools.com/java/java_date.asp)
 4. [DateTimeFormatter API documentation](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/time/format/DateTimeFormatter.html)

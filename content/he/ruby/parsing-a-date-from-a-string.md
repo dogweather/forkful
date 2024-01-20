@@ -38,6 +38,5 @@ puts date.day     # => 15
 
 למידע נוסף אודות איך לעבוד עם תאריכים וזמנים ב-Ruby, בידק/י את המקורות הבאים:
 
-1. [מסמכי Ruby הקדמה לזמנים](https://www.rubyguides.com/ruby-tutorial/times-dates/)
 2. [מחלקה דאטה](http://ruby-doc.org/stdlib-2.6.3/libdoc/date/rdoc/Date.html) בתיעוד הרשמי של Ruby.
 3. [מחלקה טיים](https://ruby-doc.org/core-2.6.3/Time.html) בתיעוד הרשמי של Ruby.

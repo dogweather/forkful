@@ -35,5 +35,3 @@ C# 에서는 `Substring` 외에도 `Split`, `Remove`, `Replace` 등의 메소드
 ## 참고하면 좋을 사이트들: 
 1. [Microsoft Official C# Documentation](https://docs.microsoft.com/ko-kr/dotnet/csharp/)
 2. [C# Station Tutorial](https://www.csharp-station.com/tutorial)
-3. [C# Substring Tutorial With Examples](https://stackify.com/csharp-substring/)
-4. [Top C# Blogs](https://www.upguard.com/blog/top-50-csharp-blogs)

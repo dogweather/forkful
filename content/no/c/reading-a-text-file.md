@@ -61,7 +61,3 @@ Når det gjelder implementering av fillesing, er det viktig å huske på at filh
 ## Se Også:
 
 Her er noen nyttige lenker for mer informasjon:
-
-1. [C Programming/FILE](https://en.wikibooks.org/wiki/C_Programming/FILE)
-2. [A Tutorial on File I/O in C](https://www.learn-c.org/en/File_IO)
-3. [C file input/output](https://www.gnu.org/software/libc/manual/html_node/File-Input_002fOutput.html)

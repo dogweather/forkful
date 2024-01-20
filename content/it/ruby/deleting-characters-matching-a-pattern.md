@@ -50,4 +50,3 @@ Il dettaglio implementativo principale da ricordare è che `delete` è un metodo
 
 ## Vedi Anche
 Per approfondire su come eliminare i caratteri che corrispondono a un pattern in Ruby, dai un'occhiata a queste risorse:
-- Documentazione ufficiale di Ruby: [String#delete](https://ruby-doc.org/core-2.7.0/String.html#method-i-delete)

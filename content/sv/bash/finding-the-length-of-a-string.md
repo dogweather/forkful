@@ -43,6 +43,5 @@ echo $längd
 
 ## Se även
 
-1. [Bash String Operations](https://www.gnu.org/software/bash/manual/html_node/String-Operations.html): mer information om strängoperationer i Bash, inklusive att hitta stränglängder.
 2. [Pure bash bible](https://github.com/dylanaraps/pure-bash-bible): en bok med tips om strikt bash-programmering.
 3. [Advanced Bash-Scripting Guide](https://www.tldp.org/LDP/abs/html/): en omfattande guide till bash-scripting som också täcker stränglängder.

@@ -39,4 +39,3 @@ pub fn random_number() {
 Лінки з більш докладною інформацією про тему:
 1. [Генерація випадкових чисел в мові программування Python](https://docs.python.org/3/library/random.html) 
 2. [Erlang/OTP Random Module](http://erlang.org/doc/man/rand.html)
-3. [Gleam Language Official Docs](https://gleam.run/docs/)

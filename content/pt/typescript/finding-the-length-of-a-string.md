@@ -43,6 +43,4 @@ console.log(arrayDaPalavra.length); // Saída: 12
 
 Para saber mais sobre como trabalhar com strings em TypeScript, dê uma olhada nos seguintes recursos:
 
-1. [Manual oficial do TypeScript](https://www.typescriptlang.org/docs/handbook/2/strings.html)
 2. [Mozilla Developer Network's JavaScript reference](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/String/length)
-3. [W3Schools' TypeScript Strings](https://www.w3schools.com/typescript/ts_strings.asp)

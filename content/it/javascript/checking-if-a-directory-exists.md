@@ -52,5 +52,4 @@ Con `fs.exists()`, tuttavia, bisogna fare attenzione quando si lancia l'asincron
 
 ## Vedi anche:
 1. Documentazione Node.js: [fs.access()](https://nodejs.org/api/fs.html#fs_fs_access_path_mode_callback), [fs.exists()](https://nodejs.org/api/fs.html#fs_fs_exists_path_callback)
-2. Blog sullo sviluppo di Node.js: [Why using `fs.exists()` is a mistake](https://shapeshed.com/why-using-fs.exists-is-a-mistake/) 
 3. StackOverflow: [How to check if directory exists in Node.js?](https://stackoverflow.com/questions/4482686/check-synchronously-if-file-directory-exists-in-node-js)

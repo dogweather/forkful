@@ -44,4 +44,3 @@ Console.WriteLine(len);
 
 1. [Microsoft Docs: рядкові властивості](https://docs.microsoft.com/uk-ua/dotnet/api/system.string.length?view=net-5.0)
 2. [StackOverflow: розуміння властивості Length](https://stackoverflow.com/questions/1580786/length-of-string-in-c-sharp)
-3. [CsharpStar: робота з рядками в C#](http://www.csharpstar.com/csharp-string-length-property/)

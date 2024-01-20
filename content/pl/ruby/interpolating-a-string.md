@@ -42,6 +42,5 @@ Szczególne jest to, jak Ruby interpretuje wartości w ramach `#{}`. Wywołuje m
 ## Zobacz też:
 
 1. Dokumentacja Ruby: [Interpolacja ciągu](https://ruby-doc.org/core-2.2.0/doc/syntax/literals_rdoc.html#label-Strings)
-2. [Interpolacja ciągów vs. konkatenacja](https://www.speedshop.co/2017/10/12/string-concatenation-vs-interpolation-in-ruby.html)
  
 Uczyć się, praktykować i kodować!

@@ -39,5 +39,3 @@ Sebbene la lettura di un file con `cat` sia semplice, lo streaming di file di gr
 ## Vedere Anche:
 
 1. Il manuale di [Fish Shell](https://fishshell.com/docs/3.1/index.html).
-2. Il articolo '[Leggere un file di testo in Bash](https://linuxize.com/post/bash-read-file/)' per confrontare con altri metodi.
-3. Argomenti correlati alla manipolazione dei file del sito [How-To Geek](https://www.howtogeek.com/school/using-the-terminal/lesson10/).

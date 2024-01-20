@@ -33,4 +33,3 @@ echo (string length $my_string)
 
 1. Fish Shell का अधिकारिक दस्तावेज़ीकरण: [string length](https://fishshell.com/docs/current/commands.html#string-length)
 2. stackoverflow पर स्ट्रिंग लंबाई के विकल्पों के बारे में चर्चा: [Finding the length of a string in shell](https://stackoverflow.com/questions/17368067/length-of-string-in-bash)
-3. गैर-Fish Shell परिवेशों के लिए स्ट्रिंग लम्बाई: [How to get the length of a string in shell](https://linuxize.com/post/bash-string-length/)

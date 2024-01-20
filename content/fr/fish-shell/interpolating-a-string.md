@@ -43,5 +43,3 @@ Les détails de mise en œuvre sont relativement simples dans Fish Shell. Le sig
 Pour plus d'informations sur l'interpolation de chaînes dans Fish Shell, vous pouvez consulter les ressources suivantes:
 
 1. ["Fish Shell Documentation"](https://fishshell.com/docs/current/index.html): Comprend une variété de guides et de tutoriels pour aider les utilisateurs à comprendre Fish Shell.
-2. ["Learn X in Y Minutes: Fish"](https://learnxinyminutes.com/docs/fr-fr/fish-fr/): Un guide rapide et simple pour apprendre à utiliser Fish Shell.
-3. ["A Tutorial on Using String in Fish Shell"](https://www.digitalocean.com/community/tutorials/how-to-use-strings-in-fish-shell-on-a-vps): Cette ressource explique en détail comment utiliser les chaînes dans Fish Shell.

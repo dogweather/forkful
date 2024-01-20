@@ -60,6 +60,4 @@ Jeżeli wszystko pójdzie zgodnie z planem, output będzie wyglądał tak:
 
 ## Zobacz także
 
-1. Dokumentacja do HTTPClient: [http://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html](http://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
-2. Więcej o Basic Auth: [https://pl.wikipedia.org/wiki/HTTP_Basic_Auth](https://pl.wikipedia.org/wiki/HTTP_Basic_Auth)
 3. Poradnik Uwierzytelnianie HTTP ze stroną HTTPS: [https://create.arduino.cc/projecthub/Arduino_Scuola/http-authentication-with-httpclient-2bb90a](https://create.arduino.cc/projecthub/Arduino_Scuola/http-authentication-with-httpclient-2bb90a)

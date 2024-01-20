@@ -31,7 +31,3 @@ TypeScriptin `console.log()` on alun perin JavaScriptistä, ja se on useimmin k�
 
 ## Katso myös
 Seuraavaa resurssit auttavat sinua ymmärtämään debug-ulostuloa paremmin:
-
-1. MDN Web Docs, Debugging: [Link](https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Asynchronous/Debugging)
-2. Node.js Logging Basics: [Link](https://www.scalyr.com/blog/node-js-logging-basics/)
-3. Debugging TypeScript: [Link](https://www.typescriptlang.org/docs/handbook/debugging.html)

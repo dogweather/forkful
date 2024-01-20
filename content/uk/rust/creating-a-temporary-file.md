@@ -42,5 +42,4 @@ fn main() {
 ## Дивіться також:
 
 1. [Документація `std::fs::File` в Rust](https://doc.rust-lang.org/std/fs/struct.File.html).
-2. [Гайд про працю з файлами в Rust](https://www.tutorialspoint.com/rust/rust_file_io.htm).
 3. [Документація `tempfile` бібліотеки в Rust](https://docs.rs/tempfile/3.2.0/tempfile/).

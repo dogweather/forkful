@@ -42,4 +42,3 @@ I C# bruker vi `System.Diagnostics.Debug`-klassen for å skrive ut debugmeldinge
 
 1. [System.Diagnostics.Debug Class Dokumentasjon](https://docs.microsoft.com/en-us/dotnet/api/system.diagnostics.debug?view=net-5.0)
 2. [Debugging i Visual Studio](https://docs.microsoft.com/en-us/visualstudio/debugger/?view=vs-2019)
-3. [Feilsøkingstips og triks i C#](https://stackify.com/csharp-debugging-tips/)

@@ -66,5 +66,4 @@ Future date and time: Thu Jul 1 13:55:42 2021
 
 1. Онлайн C бібліотека. [time.h](https://www.cplusplus.com/reference/ctime/)
 2. Boost бібліотека. [date_time](https://www.boost.org/doc/libs/1_75_0/doc/html/date_time.html)
-3. С. Броуді "C Programming Language, 2nd Edition". [Chapter 7, Section 6 - Time of day and conversion functions](https://en.wikisource.org/wiki/The_C_Programming_Language_(2nd_Edition)/Chapter_7#7.6)
 4. Howard Hinnant's date library. [date.h](https://github.com/HowardHinnant/date)

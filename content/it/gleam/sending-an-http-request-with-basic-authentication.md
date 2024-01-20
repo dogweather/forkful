@@ -37,5 +37,3 @@ Se sei interessato ad approfondire l'autenticazione HTTP di base, ecco alcuni li
 
 1. [Documentazione ufficiale di Gleam](https://gleam.run/)
 2. [Specifiche HTTP](https://tools.ietf.org/html/rfc2617)
-3. [Una guida alla sicurezza delle richieste HTTP](https://owasp.org/www-community/attacks/Basic_Authentication_Scheme)
-4. [Guida all'autenticazione di base in Gleam](https://docs.gleam.run/tour/http-requests)

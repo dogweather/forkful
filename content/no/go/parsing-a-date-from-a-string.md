@@ -56,4 +56,3 @@ For mer informasjon, sjekk ut følgende lenker:
 
 1. Go's offisielle `time` pakke dokumentasjon: [https://golang.org/pkg/time/](https://golang.org/pkg/time/)
 2. Ytterligere forklaring på Go's dato og tidspakke: [https://gobyexample.com/time](https://gobyexample.com/time)
-3. En mer detaljert gjennomgang av dato og tidshantering i Go: [https://www.calhoun.io/working-with-dates-and-times-in-go/](https://www.calhoun.io/working-with-dates-and-times-in-go/)

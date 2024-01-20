@@ -42,5 +42,3 @@ type alias Model =
 ## Рекомендовані матеріали
 
 1. [Elm Flags офіційна документація](https://guide.elm-lang.org/interop/flags.html)
-2. [Elm - Передача даних в Elm з JavaScript](https://elm-lang.org/docs/interop)
-3. [Node.js - Обробка аргументів командного рядка](https://nodejs.dev/learn/command-line-arguments-in-nodejs)

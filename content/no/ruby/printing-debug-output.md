@@ -59,6 +59,5 @@ Hovedforskjellen mellom å skrive ut direkte og å bruke Logger er at Logger gir
 
 Hvis du vil lære mer om debugging og utskrift av debug-utdata i Ruby, sjekk ut disse nyttige lenkene:
 
-1. [Ruby Debugging Guide](https://www.rubyguides.com/2015/06/ruby-debugging/)
 2. [The Logger Library](https://ruby-doc.org/stdlib-2.5.1/libdoc/logger/rdoc/Logger.html)
 3. [Byebug Debugger](https://github.com/deivid-rodriguez/byebug)

@@ -38,6 +38,5 @@ puts text
 
 1. [Ruby Doc on gsub](https://ruby-doc.org/core-2.7.1/String.html#method-i-gsub)
 
-2. [Ruby on Replacing Strings](https://www.rubyguides.com/2019/07/ruby-string-methods/)
 
 3. [StackOverflow on gsub vs sub](https://stackoverflow.com/questions/19445003/using-ruby-what-does-sub-and-gsub-mean)

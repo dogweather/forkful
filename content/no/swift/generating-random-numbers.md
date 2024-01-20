@@ -45,8 +45,6 @@ Implementeringsdetaljer kan være komplekse, da de involverer forståelse av sta
 
 ## Se Også
 Du vil kanskje finne disse lenkene nyttige:
-1. [Apple's Random Documentation](https://developer.apple.com/documentation/swift/random)
 2. [Stack Overflow Swift Random Discussion](https://stackoverflow.com/questions/24007461/how-to-enumerate-an-enum-with-string-type)
-3. [Swift by Sundell on Random Numbers](https://www.swiftbysundell.com/articles/random-numbers-in-swift/)
    
 Fortsett å kode, ha det gøy, og la det være litt plass for tilfeldighetene!

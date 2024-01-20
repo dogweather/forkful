@@ -57,5 +57,4 @@ main =
 ## भी देखें:
 
 1. [Elm के आधिकारिक डॉक्यूमेंटेशन](https://guide.elm-lang.org/) 
-2. [Elm के साथ HTTP अनुरोध](https://korban.net/posts/elm/2018-11-28-elm-http-request) 
 3. [GitHub पर Elm-Http पैकेज](https://github.com/elm/http)

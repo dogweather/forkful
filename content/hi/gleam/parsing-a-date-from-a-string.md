@@ -42,7 +42,6 @@ Gleam में, यह एक `Uri.parse` कॉल से किया जा�
 
 ## अन्य उपयोगी स्रोत:
 
-1. [Gleam Documentation](https://gleam.run/docs/)
 2. [Parsing in Functional Programming](http://book.realworldhaskell.org/read/using-parsec.html)
 3. [DateTime Libraries](https://hex.pm/packages?search=datetime&sort=downloads)
 4. [Gleam Date and Time package](https://github.com/gleam-experiments/time)

@@ -46,4 +46,3 @@ Note that all these methods throw an exception if the targeted file does not exi
 ## See Also
 1. [Kotlin Standard Library Documentation - Reading a File](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.io/java.io.-file/read-lines.html)
 2. [Kotlin Documentation - More on Exceptions](https://kotlinlang.org/docs/reference/exceptions.html)
-3. [GeeksforGeeks - Reading a text file in Kotlin](https://www.geeksforgeeks.org/kotlin-read-a-text-file/).

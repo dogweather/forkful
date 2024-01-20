@@ -43,4 +43,3 @@ Lubię programować w Fish Shell
 ## Zobacz także:
 
 1. [Oficjalny dokument Fish Shell](https://fishshell.com/docs/current/index.html)
-2. ["Poradnik dotyczący interpolacji stringów w różnych językach"](https://www.digitalocean.com/community/tutorials/how-to-work-with-string-interpolation-in-ruby)

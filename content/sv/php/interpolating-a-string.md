@@ -48,6 +48,5 @@ Under huven konverterar PHP en interpolerad sträng till en konkatenerad sträng
 
 ## Se Även:
 För mer information om stränginterpolation och strängar i PHP, se följande källor:
-1. [PHP Dokumentation - Strängar](https://www.php.net/manual/se/language.types.string.php)
 2. [PHP: The Right Way - Strängar](https://phptherightway.com/#strings)
 3. [PHP String Interpolation vs Concatenation](https://stackoverflow.com/questions/1837432/php-string-interpolation-vs-concatenation)

@@ -46,4 +46,3 @@ Pour approfondir votre apprentissage de la programmation Arduino, voici quelques
 1. Le site officiel d'Arduino : [Arduino Official Website](https://www.arduino.cc/)
 2. Pour une référence rapide à la syntaxe : [Arduino Language Reference](https://www.arduino.cc/reference/en/)
 3. Pour des exemples de projets et tutoriels : [Arduino Project Hub](https://create.arduino.cc/projecthub).
-4. C++ pour Arduino - Un cours Udemy pour apprendre la programmation C++ pour Arduino : [C++ for Arduino](https://www.udemy.com/share/101qrk/).

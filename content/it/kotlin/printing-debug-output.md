@@ -57,6 +57,4 @@ La pratica di stampare l'output di debug risale ai primissimi giorni della progr
 
 Per saperne di più sulla stampa di output di debug e sulle tecniche correlate, potete consultare le seguenti risorse:
 
-1. [Documentazione ufficiale di Kotlin sulla stampa di output](https://kotlinlang.org/docs/println.html)
-2. [Introduzione a Log4j](https://logging.apache.org/log4j/2.x/manual/introduction.html)
 3. [Guida allo SLF4J](http://www.slf4j.org/manual.html)

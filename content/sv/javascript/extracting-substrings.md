@@ -40,6 +40,4 @@ Vi rekommenderar att du föredrar `slice()` över de andra två metoderna i de f
 
 För mer djupgående diskussion och jämförelser mellan olika delsträngsmetoder, se följande artiklar och goldbiter:
 
-1. [JavaScript Substring vs Substr vs Slice by DigitalOcean](https://www.digitalocean.com/community/tutorials/js-string-slice-substring-substr)
-2. [Differences between slice vs substr in JavaScript by freeCodeCamp](https://www.freecodecamp.org/news/lets-explore-javascript-string-slice-vs-substr-vs-substring-a05adefa17c7/)
 3. [JavaScript String prototype property on W3Schools](https://www.w3schools.com/js/js_string_methods.asp)

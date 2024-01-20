@@ -50,5 +50,4 @@ For å konvertere en streng til småbokstaver i TypeScript, lik mange andre prog
 
 ## Se også:
 
-1. [TypeScript String toLowerCase()](https://www.tutorialsteacher.com/typescript/typescript-string-tolowercase)
 2. [JavaScript String toLowerCase() Method](https://www.w3schools.com/jsref/jsref_tolowercase.asp)

@@ -54,6 +54,4 @@ void loop() {
 
 ## Дивіться Також:
 1. [Аутентифікація HTTP на Arduino](https://www.arduino.cc/en/Tutorial/LibraryExamples/HttpClient)
-2. [Arduino HttpClient Бібліотека](https://www.arduino.cc/en/Reference/ArduinoHttpClient)
 3. [Base64 шифрування на Arduino](https://create.arduino.cc/projecthub/arjun/encoding-decoding-base64-strings-with-arduino-4fad9e)
-4. [HTTPS на Arduino](https://www.arduino.cc/en/Tutorial/WiFiNINA-SSLClient)

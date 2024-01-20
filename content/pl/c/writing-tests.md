@@ -44,6 +44,4 @@ Przed upowszechnieniem technik testowania, debugowanie kodu było znacznie bardz
 
 # Zobacz także:
 
-1. [Tutorial: Jak pisać testy w C](https://www.freecodecamp.org/news/writing-and-running-c-program-in-your-terminal/)
-2. [Dokumentacja frameworka Unity](https://docs.unity3d.com/Manual/UnitTesting.html)
 3. [Inne narzędzia do testowania w C](https://en.wikipedia.org/wiki/List_of_unit_testing_frameworks#C)

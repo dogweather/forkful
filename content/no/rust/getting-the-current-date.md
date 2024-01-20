@@ -51,6 +51,5 @@ Når det gjelder implementeringsdetaljer, så bruker `chrono` systemets klokke f
 Følgende ressurser kan hjelpe deg lærer mer om å jobbe med datoer og tid i Rust:
 
 1. ["Chrono" dokumentasjon](https://docs.rs/chrono/)
-2. ["Time" dokumentasjon](https://doc.rust-lang.org/time/time/index.html)
 3. ["Working with Dates and Times in Rust"](https://www.andresriancho.com/2020/working-with-dates-and-times-in-rust/)
 4. Stack Overflow: ["How to get the current date and time in Rust?"](https://stackoverflow.com/questions/27334692/how-do-i-get-the-current-date-and-time-in-rust)

@@ -49,6 +49,5 @@ Ecco alcuni link utili per ulteriori dettagli e risorse correlate sulle richiest
 
 1. [Documentazione ufficiale clj-http](https://github.com/dakrone/clj-http)
 2. [Documentazione ufficiale http-kit](http://www.http-kit.org/)
-3. [HTTP su Clojure - Getting Started](https://purelyfunctional.tv/guide/http-in-clojure/)
 
 Felice programmazione in Clojure!

@@ -38,5 +38,4 @@ lowercaseAscii = map (\c -> if 'A' <= c && c <= 'Z' then toEnum (fromEnum c + 32
 
 ## ראה גם:
 1. [Hoogle Documentation - `toLower`](https://hackage.haskell.org/package/base-4.15.0.0/docs/Data-Char.html#v:toLower): מסמך ה-API של `toLower` במודול `Data.Char`.
-2. [Haskell Wiki - "Lists"](https://wiki.haskell.org/Lists): מידע נוסף על איך עובד `map`.
 3. [ASCII Table](http://www.asciitable.com/): מידע נוסף על קודי ASCII ואיך הם קשורים לאותיות גדולות וקטנות.

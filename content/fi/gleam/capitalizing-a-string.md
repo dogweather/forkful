@@ -35,5 +35,3 @@ Historiallisessa kontekstissa kirjainten muuttaminen isoiksi on pitkäaikainen o
 
 ## Katso myös
 Gleam-koodin kirjoittamista ja ymmärtämistä voi oppia lisää seuraavista lähteistä:
-1. [Gleam's str module documentation](https://docs.gleam.run/stdlib/str.html): Auttaa ymmärtämään Gleam-kielen `str`-moduulin tarjoamia funktioita.
-2. [Functional programming in Gleam](https://gleam.run/book/tour/functional-programming.html): Tarjoaa perusteellisen katsauksen funktionaaliseen ohjelmointiin Gleam-kielellä.

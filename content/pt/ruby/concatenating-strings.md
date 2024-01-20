@@ -54,4 +54,3 @@ Para mais detalhes, veja:
 
 1. [Ruby Docs: String](https://ruby-doc.org/core-2.7.3/String.html) - A documentação oficial sobre Strings em Ruby.
 2. [Stack Overflow: Ruby String Concatenation](https://stackoverflow.com/questions/10076579/ruby-string-concatenation) - Discussão da comunidade sobre concatenação de strings.
-3. [Sitepoint: Ruby String Interpolation](https://www.sitepoint.com/ruby-string-interpolation-tutorial/) - Tutorial detalhado sobre interpolação de strings em Ruby.

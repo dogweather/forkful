@@ -61,4 +61,3 @@ void loop()
 ## यदि आप देखना चाहते हैं
 
 1. [Arduino documentation on SD library](https://www.arduino.cc/en/Reference/SD)
-2. [Guide on working with Files in Arduino](https://learn.adafruit.com/adafruit-micro-sd-breakout-board-card-tutorial/files)

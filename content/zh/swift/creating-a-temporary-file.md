@@ -47,7 +47,3 @@ Temp file: file:///var/folders/xx/xx/xx/C/com.apple.dt.Xcode.pg/resources/123456
 ## 参考资料：
 
 以下是一些相关的学习资源链接：
-
-1. Apple Developer Documentation: [Creating Temporary Files in the File System](https://developer.apple.com/documentation/foundation/nsfilemanager/1412643-url)
-2. Swift by Sundell: [Working with files in Swift](https://www.swiftbysundell.com/posts/working-with-files-in-swift)
-3. "Use Your Loaf": [Working with Directories in Swift](https://useyourloaf.com/blog/working-with-directories-in-swift/)

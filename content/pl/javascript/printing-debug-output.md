@@ -33,6 +33,4 @@ Historia drukowania informacji diagnostycznych sięga początków programowania.
 Kiedy użyjemy `console.log`, zostaje wywołana wewnętrzna metoda `process.stdout.write`, która wypisuje informacje do strumienia wyjściowego procesu. Przy `console.debug`, informacje zostaną wyświetlone tylko wtedy, gdy jest ustawione odpowiednie środowisko (np. `NODE_DEBUG`).
 
 ## Zobacz także:
-1. [Loggery w Node.js](https://nodejs.dev/learn/the-console-module)
-2. [Debugowanie w JavaScript](https://developer.mozilla.org/pl/docs/Web/JavaScript/Guide/Debugging_in_JavaScript)
 3. [Metody obiektu konsoli](https://developer.mozilla.org/en-US/docs/Web/API/console)

@@ -40,9 +40,3 @@ Esimerkin tulostus näyttäisi tältä:
 2. Vaihtoehdot: Ruby tarjoaa myös 'debugger' -gem, joka tarjoaa kehittyneitä jäljitystyökaluja, kuten katkaisupisteitä ja koodin askellusta.
 
 3. Toteutuksen yksityiskohdat: 'puts' käyttää Rubyssa olevaa $stdout-objektia ja lisää aina rivinvaihdon loppuun. 'print' käyttää myös $stdout-objektia, mutta ei lisää rivinvaihtoa. 'p' on käytännöllinen, koska se lisää rivinvaihdon ja kutsuu inspect-metodia objekteilla, mikä antaa erityiskohtaisemman kuvauksen objektista.
-
-## Katso myös 
-
-1. '[Debugging with Pry](https://www.rubyguides.com/2020/04/debugging-ruby-with-pry/)': Kattava opas käyttämällä Pry komentoa Rubyssa.
-2. '[Ruby Debugging Magic Cheat Sheet](https://www.rubyguides.com/2015/06/ruby-debugging-magic-cheat-sheet/)': Cheat Sheet käsinti jäljitys -määritteille Rubyssa.
-3. '[Debugging Ruby: Understanding Ruby and Rails Logging](https://www.toptal.com/ruby/debugging-ruby-understanding-ruby-and-rails-logging)': Toinen tapa debugata ohjelmia on käyttää lokitietojen kirjoittamista Rubyssa ja Railsissa. Tämä opas tarjoaa lisätietoja aiheesta.

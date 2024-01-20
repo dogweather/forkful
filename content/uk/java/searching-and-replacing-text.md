@@ -48,4 +48,3 @@ public class Main {
 
 1. [Офіційна документація Java](https://docs.oracle.com/en/java/javase/16/docs/api/java.base/java/lang/String.html#replaceAll(java.lang.String,java.lang.String))
 2. [Посібник по регулярним виразам](https://www.vogella.com/tutorials/JavaRegularExpressions/article.html)
-3. [Туторіал по маніпуляціях з рядками в Java](https://www.baeldung.com/java-string-replace-tutorial)

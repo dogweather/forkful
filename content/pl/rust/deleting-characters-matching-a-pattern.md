@@ -37,5 +37,4 @@ Usunięcie znaków pasujących do wzorca jest czynnością wykonywaną od począ
 ## Zobacz także:
 
 1. [Dokumentacja Rust na `String::replace`](https://doc.rust-lang.org/std/string/struct.String.html#method.replace)
-2. [Poradnik Rust na manipulację łańcuchami](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-lifetime-misconceptions.html) 
 3. [Wyrażenia regularne w Rust](https://docs.rs/regex/1.3.9/regex/)

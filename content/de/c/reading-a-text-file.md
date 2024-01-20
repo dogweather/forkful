@@ -46,7 +46,6 @@ Es gibt auch alternative Funktionen zum Lesen von Textdateien in C, einschließl
 
 Für weitere Informationen, schauen Sie sich folgende Quellen an:
 
-1. [Lesen und Schreiben von Dateien in C](https://www.learn-c.org/de/Learn-C-files)
 2. [fgets, fscanf und fread in C](http://www.cplusplus.com/reference/cstdio/)
 
 Es ist immer gut, verschiedene Quellen zu überprüfen und zu sehen, wie die Praktiken variieren. Viel Spaß beim Codieren!

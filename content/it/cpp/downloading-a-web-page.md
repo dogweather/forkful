@@ -45,4 +45,3 @@ Tuttavia, l'utilizzo di C++ presenta alcuni vantaggi. È una lingua potente e ve
 ## Vedi Anche
 1. [CPR - Curl for People, a spiritual port of Python Requests](https://github.com/whoshuu/cpr)
 2. [Web Scraping with Python](https://realpython.com/python-web-scraping-practical-introduction/)
-3. [Web Scraping with Node.js](https://www.freecodecamp.org/news/the-ultimate-guide-to-web-scraping-with-node-js-daa2027d5313/)

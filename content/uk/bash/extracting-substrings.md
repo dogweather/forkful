@@ -33,5 +33,4 @@ echo ${str:7:10}
 
 ## Дивіться Також:
 1. [Руководство по Bash от GNU](https://www.gnu.org/software/bash/manual/bash.html)
-2. [Туториал по Bash від Ryans Tutorials](https://ryanstutorials.net/bash-scripting-tutorial/bash-string-manipulation.php)
 3. [Подробиці про виділення підрядків в Bash на StackOverflow](https://stackoverflow.com/questions/4277665/bash-how-do-i-extract-the-substrings-of-a-string)

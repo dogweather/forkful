@@ -44,4 +44,3 @@ Hallo, Welt!
 ## Siehe auch:
 
 1. Die PHP-Dokumentation für Zeichenketten: [PHP: Strings - Manual](https://www.php.net/manual/de/language.types.string.php)
-2. Ein informativer Artikel zur Verkettung von Zeichenketten in PHP: ['.' (Punkt) -  PHP Konkatenation (Zusammenführung) von Zeichenketten](https://www.php-einfach.de/php-tutorial/strings-verketten/)

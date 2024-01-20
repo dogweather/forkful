@@ -34,4 +34,3 @@ Bash शेल स्क्रिप्टिंग के प्रारंभ
 ## अन्य स्रोत:
 
 1. [Bash Debugging Guide](https://www.tldp.org/LDP/Bash-Beginners-Guide/html/sect_02_03.html) - यह गाइड उन लोगों के लिए है जो Bash Debugging की गहरी समझ प्राप्त करना चाहते हैं।
-2. [Debugging Bash scripts](https://linuxconfig.org/debugging-bash-scripts) - इस गाइड में Bash स्क्रिप्ट्स डीबग करने के तरीकों का विस्तार से वर्णन किया गया है।

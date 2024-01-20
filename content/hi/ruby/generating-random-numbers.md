@@ -37,4 +37,3 @@ Ruby में, विकल्प `rand` और `Random.new` भी उपल�
 
 1. [Ruby डॉक्यूमेंटेशन: Random](https://ruby-doc.org/core-2.7.1/Random.html)
 2. [Ruby डॉक्यूमेंटेशन: SecureRandom](https://ruby-doc.org/stdlib-2.5.1/libdoc/securerandom/rdoc/SecureRandom.html)
-3. [Random Number Generation in Ruby](https://www.geekhideout.com/rand.rb.shtml)

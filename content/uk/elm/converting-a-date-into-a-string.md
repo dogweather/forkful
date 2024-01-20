@@ -42,5 +42,3 @@ view (Time.posix 1638739200000)
 ## Дивись також
 
 1. [Time in Elm](https://package.elm-lang.org/packages/elm/time/latest/Time) - документація по роботі з часом в Elm.
-2. [Elm Date Libraries](https://community.elm-lang.org/t/date-libraries-in-elm/320/6) - обговорення різних бібліотек для роботи з датою в Elm.
-3. [Formatting Dates in Elm](https://korban.net/posts/elm/2019-10-15-formatting-dates-in-elm/) - стаття про форматування дат в Elm.

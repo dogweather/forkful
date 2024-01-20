@@ -48,5 +48,4 @@ HTML-jäsentämisen historia ulottuu aina 1990-luvun alkuvuosille, jolloin kehit
 
 ## Katso Myös
 1. SwiftSoup GitHub repo: [https://github.com/scinfu/SwiftSoup](https://github.com/scinfu/SwiftSoup)
-2. Swift ja HTML-jäsentäminen: [https://www.swiftbysundell.com/articles/parsing-html-in-swift-with-swiftsoup](https://www.swiftbysundell.com/articles/parsing-html-in-swift-with-swiftsoup)
 3. HTML-jäsentämisen historia ja tekniikat: [https://stackoverflow.com/questions/432992/technique-and-tools-for-parsing-html-documents](https://stackoverflow.com/questions/432992/technique-and-tools-for-parsing-html-documents)

@@ -47,9 +47,3 @@ echo $response;
 Choć `file_get_contents` jest prosta i popularna, istnieje wiele innych sposobów wysyłania zapytań HTTP w PHP. Biblioteka cURL jest jednym z popularnych wyborów ze względu na jej wszechstronność.
 
 Warto zauważyć, że pierwotna wersja PHP nie obsługiwała żądań HTTP. Funkcje te zostały dodane w późniejszych wersjach, gdy stało się jasne, że PHP jest doskonałym narzędziem do tworzenia dynamicznych stron internetowych opartych na danych serwera.
-
-## Zobacz Również:
-
-1. [Dokumentacja PHP na temat `file_get_contents`](https://www.php.net/manual/pl/function.file-get-contents.php)
-2. [Dokumentacja PHP na temat stream_context_create](https://www.php.net/manual/pl/function.stream-context-create.php)
-3. [Dokumentacja PHP na temat cURL](https://www.php.net/manual/pl/book.curl.php)

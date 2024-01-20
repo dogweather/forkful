@@ -46,5 +46,4 @@ Dato-sammenligningslogikken er veldig grunnleggende - det er et spørsmål om å
 
 For mer informasjon, følg disse koblingene: 
 1. [Lua 'os' Library](https://www.lua.org/pil/22.1.html)
-2. [Lua Date & Time](https://www.tutorialspoint.com/lua/lua_date_time.htm)
 3. [Lua Users Wiki](http://lua-users.org/wiki/OsLibraryTutorial)

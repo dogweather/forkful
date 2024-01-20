@@ -35,6 +35,4 @@ Case TestIod {
 ## ראו גם
 הקישורים הבאים מציגים מידע נוסף ובהם ניתן לבחון את נושא קריאת קובץ בעומק רב יותר:
 
-1. [Gleam I/O library](https://hexdocs.pm/gleam_stdlib/gleam/iod/file/#read)
-2. [File I/O in other languages](https://en.wikipedia.org/wiki/File_Input/output)
 3. [Stream processing in Gleam](https://github.com/gleam-lang/stdlib)

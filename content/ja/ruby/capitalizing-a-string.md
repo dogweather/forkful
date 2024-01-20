@@ -41,4 +41,3 @@ puts cap_str
 
 1. [Ruby API 文書](https://docs.ruby-lang.org/ja/latest/method/String/i/capitalize.html)
 2. [文字列をキャピタライズする方法](https://www.rubyguides.com/2018/01/ruby-string-methods/#capitalize)
-3. [Ruby String capitalize() メソッド](https://www.geekhideout.com/rubyhacker/ref/rubyref-String.html)

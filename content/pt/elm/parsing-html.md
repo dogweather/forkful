@@ -53,5 +53,4 @@ Existem alternativas ao `elm/html`, como o `hecrj/html-parser`, mas cada um tem 
 
 1. [Documentação do elm/html](https://package.elm-lang.org/packages/elm/html/latest/)
 2. [Análise de HTML com o hecrj/html-parser](https://package.elm-lang.org/packages/hecrj/html-parser/latest/)
-3. [Um guia mais detalhado sobre análise de HTML em Elm](https://elm-programming.com/parsing-html.html)
 4. [Análise de HTML com Regex, uma abordagem histórica](https://stackoverflow.com/questions/1732348/regex-match-open-tags-except-xhtml-self-contained-tags)

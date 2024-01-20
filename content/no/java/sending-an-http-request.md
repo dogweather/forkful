@@ -50,7 +50,6 @@ Når du kjører dette programmet, vil det sende en HTTP GET-forespørsel til `ht
 
 ## Se Også:
 
-1. [Java 11 HttpClient Dokumentasjon](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/net/http/HttpClient.html)
 2. [Mozilla HTTP Forespørsler Guide](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview)
 3. [OkHttp Bibliotek](https://square.github.io/okhttp/)
 4. [Apache HttpClient](https://hc.apache.org/httpcomponents-client-5.0.x/)

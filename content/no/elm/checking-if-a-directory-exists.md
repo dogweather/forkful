@@ -32,4 +32,3 @@ Hovedidéen bak å ikke tillate direkte filsystemtilgang i Elm er å holde den r
 ## Se Også
 1. [Elm guide for interoperabilitet med JavaScript](https://guide.elm-lang.org/interop/)
 2. [Node.js filsystem API](https://nodejs.org/api/fs.html) for hvordan du interagerer med filsystemet via JavaScript.
-3. [Elm Diskusjon om filsystemtilgang](https://discourse.elm-lang.org/t/reading-files-from-disk/6006) for samfunnets perspektiver og diskusjoner på dette emnet.

@@ -49,8 +49,5 @@ Det er viktig å understreke at disse metodene ikke endrer originale strengen. I
 
 For mer informasjon om streng manipulasjon i C#, sjekk ut disse ressursene:
 
-1. Microsoft's dokumentasjon på streng-klasser: [String-klassen (System)](https://docs.microsoft.com/no-no/dotnet/api/system.string?view=net-5.0)
-2. Microsoft's Guide om hvordan transformere streng: [Hvordan: Modifisere strenginnhold i C#](https://docs.microsoft.com/no-no/dotnet/csharp/how-to/modify-string-contents)
-3. Mer inngående diskusjon om uforanderlighet av strenger: [Immutability of Strings in C#](https://www.c-sharpcorner.com/article/immutability-of-string-in-c-Sharp/)
    
 Husk, det er mange veier til å oppnå samme resultat i programmering, så eksperimenter og finn det som fungerer best for deg.

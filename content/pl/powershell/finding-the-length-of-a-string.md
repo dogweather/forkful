@@ -40,6 +40,5 @@ Implementacja: Wewnętrznie, `Length` jest właściwością klasy string w .NET 
 ## Zobacz też
 
 1. [String.Length Property in .NET](https://docs.microsoft.com/en-us/dotnet/api/system.string.length)
-2. [Using the PowerShell "Length" Property](https://www.red-gate.com/simple-talk/sysadmin/powershell/powershell-day-to-day-admin-tasks-length-property/) 
 3. [Guide to PowerShell String](https://www.educba.com/powershell-string/)
 4. [PowerShell Measure-Object cmdlet](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/measure-object)

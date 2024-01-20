@@ -72,4 +72,3 @@ Für weitere Informationen zum Erstellen temporärer Dateien und zur Arbeit mit 
 
 1. [Go by Example: Temporäre Dateien und Verzeichnisse](https://gobyexample.com/temporary-files-and-directories)
 2. [Paket ioutil](https://golang.org/pkg/io/ioutil/#TempFile)
-3. [Go Dokumentation: Arbeiten mit Dateien](https://golang.org/doc/articles/files_and_folders.html)

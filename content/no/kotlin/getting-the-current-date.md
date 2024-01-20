@@ -42,7 +42,6 @@ Effektiv implementering av datoer krever forståelsen av tidszoner.
 ## Se Også
 For en mer inngående forståelse av dato og tid i Kotlin, sjekk ut disse linkene:
 
-1. [Kotlin dokumentasjon](https://kotlinlang.org/docs/dates-and-times.html)
 2. [Java 8 date and time guide](https://www.baeldung.com/java-8-date-time-intro)
 3. [Joda-Time Library](https://www.joda.org/joda-time/)
 4. [ThreeTenABP Library](https://github.com/JakeWharton/ThreeTenABP)

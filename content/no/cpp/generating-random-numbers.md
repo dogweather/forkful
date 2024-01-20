@@ -50,4 +50,3 @@ Her er noen lenker til litt mer om generering av tilfeldige tall i C++:
 1. [CPP Reference - Random](http://en.cppreference.com/w/cpp/numeric/random)
 2. [CPlusPlus.com - Random](http://www.cplusplus.com/reference/random/)
 3. [StackOverflow - What is the best random number generator in C++?](https://stackoverflow.com/questions/39288552/what-is-the-best-random-number-generator-in-c)
-4. [GeeksForGeeks - Random number generation in C++](https://www.geeksforgeeks.org/random-number-generation-in-cpp/)

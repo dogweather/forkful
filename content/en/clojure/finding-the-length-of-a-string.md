@@ -38,6 +38,4 @@ Clojure implements `count` in a such way that it runs efficiently (in constant t
 ## See Also
 Check out these great resources for more on Clojure strings:
 
-1. [Clojure Strings](https://clojuredocs.org/clojure.core/string): Official Clojure docs on strings.
-2. [String Functions in Clojure](https://www.learn-clojurescript.com/clojurescript/strings): Learn ClojureScript course's page dedicated to strings.
 3. [Clojure by Example](https://kimh.github.io/clojure-by-example/#strings): Practical examples of Clojure code, including string manipulation.

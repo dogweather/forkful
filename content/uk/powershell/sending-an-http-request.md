@@ -49,4 +49,3 @@ PowerShell почав використовувати HTTP-запити з її �
 
 1. [Повний огляд командлета `Invoke-WebRequest`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 2. [Альтернативне використання `Invoke-RestMethod`](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/invoke-restmethod?view=powershell-7.1)
-3. [Більше про HTTP-запити і як PowerShell їх використовує](https://adamtheautomator.com/powershell-http-request/)

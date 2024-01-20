@@ -45,5 +45,4 @@ int main()
 
 ## ראה גם:
 1. [strlen function (Wikipedia)](https://en.wikipedia.org/wiki/C_string_handling#strlen)
-2. [String handling functions in C (GeeksforGeeks)](https://www.geeksforgeeks.org/string-handling-functions-in-c-with-examples/)
 3. [C string.h Library (Programiz)](https://www.programiz.com/c-programming/library-function/string.h/)

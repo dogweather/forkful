@@ -46,6 +46,5 @@ getTimeAsStr model =
 נא להסתכל במקורות הללו למידע נוסף:
 
 1. הדרכות ומידע נרחב יותר על אלם: [Docs](https://package.elm-lang.org/packages/elm/time/latest/)
-2. איך להמיר פורמטים שונים של חותמת זמן מתוך אלם: [Time Formats in Elm](https://discourse.elm-lang.org/t/converting-different-time-stamp-formats/6748)
 
 לא יש כאן "חלק סיכום".

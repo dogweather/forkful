@@ -41,9 +41,3 @@ echo $length
 Cependant, `.Length` est plus rapide et plus efficace que `Measure-Object`, c'est donc généralement le choix préféré.
 
 Sur le plan de l'implémentation, `.Length` fait partie du framework .NET et est hérité par chaque chaîne dans PowerShell. Il compte les caractères Unicode, y compris les espaces, les ponctuations et les caractères spéciaux.
-
-# Voir aussi :
-
-1. Documentation officielle de Microsoft sur les opérations de chaînes en PowerShell : [Cliquez ici](https://docs.microsoft.com/fr-fr/powershell/module/microsoft.powershell.core/about/about_string)
-2. Guide de base de la chaîne PowerShell : [Cliquez ici](https://www.computerperformance.co.uk/powershell/powershell_string_length/)
-3. Blog dédié à l'exploration approfondie de `.Length` et `Measure-Object` : [Cliquez ici](https://adamtheautomator.com/powershell-string-length/)

@@ -36,6 +36,5 @@ Bonjour, nouveau projet!
 Historiquement, les projets Go étaient tous dans un même espace de travail ce qui causaient des conflits de dépendances. Vers Go 1.11, "Go modules" est devenu la nouvelle norme pour la gestion de projet - ses concurrents étant GB et Godep. Les modules ont permis d'avoir de multiples versions d'un même package dans un même espace de travail.
 
 ## Voir Également
-1. [Le guide 'Starting a Go project'](https://golang-standards.github.io/project-layout/)
 2. [Gérer les dépendances avec Go modules](https://blog.golang.org/using-go-modules)
 3. [Initier un nouveau projet Go avec VSCode](https://medium.com/@san40u/setting-up-golang-in-vscode-8ea79b2106fb)

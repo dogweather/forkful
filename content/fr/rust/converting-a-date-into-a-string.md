@@ -50,5 +50,4 @@ Cela convertira la date et l'heure actuelles en une chaîne de caractères lisib
 Pour plus d'informations, consultez les ressources suivantes :
 
 1. [La documentation officielle de Rust](https://doc.rust-lang.org/).
-2. [Le crate chrono sur crates.io](https://crates.io/crates/chrono).
 3. [Les spécifications ISO pour la représentation des dates et des heures](https://www.iso.org/standard/40874.html).

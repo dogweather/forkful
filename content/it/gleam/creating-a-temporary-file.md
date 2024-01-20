@@ -46,6 +46,4 @@ Gleam implementa i file temporanei utilizzando l'API del sistema operativo sotto
 
 ## Vedere anche 
 
-1. Modulo `gleam/temp`: [Documentazione ufficiale](https://hexdocs.pm/gleam_stdlib/gleam/temp)
-2. Introduzione alla programmazione in Gleam: [Gleam Learn X](https://learnxinyminutes.com/docs/gleam/)
 3. Alternative temporanee nel codice: [StackOverflow Discussion](https://stackoverflow.com/questions/3784462/what-are-some-good-uses-of-temporary-files-in-automated-scripts)

@@ -36,7 +36,5 @@ Clojure надає бібліотеку, яка дозволяє нам парс
 Використовуючи `enlive-html`, наш HTML документ розбивається на дерево вузлів, яке ми можемо легко переглядати та маніпулювати.
 
 ## Дивіться також
-1. [Clojure для новачків](http://clojurefordummies.com)
-2. [Парсинг HTML з Clojure](https://flyingmachinestudios.com/blog/html-parsing-in-clojure-with-enlive)
 3. [Офіційна документація Enlive](https://github.com/cgrand/enlive). 
 4. [Про XML в Clojure](https://clojuredocs.org/clojure.xml)

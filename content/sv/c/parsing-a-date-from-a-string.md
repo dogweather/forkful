@@ -41,5 +41,3 @@ Vad gäller interna detaljer om `strptime`, så konverterar den en tidsbeskrivni
 
 ## Se även
 1. [C Library - <time.h>](https://www.tutorialspoint.com/c_standard_library/time_h.htm)
-2. [C - Date & Time](https://www.tutorialspoint.com/cprogramming/c_date_time.htm)
-3. [Time Management in C](https://www.geeksforgeeks.org/time-management-in-c/)

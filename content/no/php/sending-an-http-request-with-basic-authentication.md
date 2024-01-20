@@ -64,6 +64,4 @@ Når det gjelder gjennomføring av detaljer, er brukernavn og passord kodet med 
 ## Se Også:
 
 1. [PHP: HTTP authentication with PHP - Manual](https://www.php.net/manual/en/features.http-auth.php)
-2. [PHP cURL Basic Authentication, Examples, and More | RapidAPI](https://rapidapi.com/blog/php-curl-basic-authentication/)
-3. [HTTP Authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication) 
-4. [The PHP CURL functions: an overview](https://www.tutorialrepublic.com/php-tutorial/php-curl-functions.php)
+3. [HTTP Authentication - MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

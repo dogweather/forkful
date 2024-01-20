@@ -36,5 +36,3 @@ Pakiet "tmp" używa `fs` pod spodem, ale zapewnia większą wygodę i bezpiecze�
 ## Zobacz również
 1. [Pakiet tmp na npm](https://www.npmjs.com/package/tmp)
 2. [Moduł fs w Node.js](https://nodejs.org/api/fs.html)
-3. [Praca z systemem plików w Node.js](https://nodejs.dev/learn/the-nodejs-fs-module)
-4. [Jak tworzyć i pracować z tymczasowymi plikami w Pythonie](https://www.tutorialsteacher.com/python/python-tempfile)

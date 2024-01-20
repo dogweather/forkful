@@ -42,6 +42,4 @@ Hello, World!
 当然，也有其它的方法来连接字符串，比如snprintf函数，这个函数可以设置目标字符串的最大长度，避免了字符串溢出的可能。
 
 ## 另请参见：
-1. C语言中其他字符串操作的函数： [C library function - String](https://www.tutorialspoint.com/c_standard_library/c_library_string.htm)
-2. 关于字符串安全操作的更多信息: [Secure C Programming](https://wiki.sei.cmu.edu/confluence/display/seccode/Secure+Coding)
 3. 维基百科上关于字符串连接的更多信息：[String concatenation](https://en.wikipedia.org/wiki/String_concatenation)

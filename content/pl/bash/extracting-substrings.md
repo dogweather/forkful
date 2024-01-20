@@ -39,6 +39,4 @@ Bash, dysponując funkcją wyodrębniania podciągów, kontynuuje tradycję pow�
 
 Zapoznaj się z tymi linkami, aby uzyskać dodatkowe informacje:
 
-1. [String Operations in Bash](https://www.baeldung.com/linux/string-operations-bash)
-2. [Extract Substring in Bash](https://linuxconfig.org/how-to-extract-substring-in-bash)
 3. [Bash Substring Documentation](https://tldp.org/LDP/abs/html/string-manipulation.html)

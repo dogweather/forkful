@@ -59,5 +59,4 @@ Received data:
 
 ## 参考資料: 
 1. [Apple Developer Documentation - URLSession](https://developer.apple.com/documentation/foundation/urlsession)
-2. [Using Basic Authentication with URL Session's dataTask()](https://www.xee.ai/2018/12/17/basic-authentication-with-urlsession/)
 3. [HTTP Basic Authentication - Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication)

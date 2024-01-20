@@ -39,4 +39,3 @@ end
 2. [Elixir Official Website](https://elixir-lang.org/)
 3. [Hex: package manager for the Erlang ecosystem](https://hex.pm/) 
 4. [Elixir School](https://elixirschool.com/en/)
-5. [Erlang Solutions Elixir Tutorials](https://www.erlang-solutions.com/resources/knowledge-hub/elixir-tutorials.html)

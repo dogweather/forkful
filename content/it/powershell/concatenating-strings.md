@@ -47,7 +47,4 @@ Ci sono numerose alternative per concatenare le stringhe in PowerShell, come l'u
 Quando si tratta di implementazione, implica semplicemente l'assegnazione di una nuova variabile con l'unione delle stringhe.
 
 ## Consulta anche
-1. [String interpolation: New and Improved in PowerShell 6, 7](https://adamtheautomator.com/powershell-string-interpolation/)
-2. [How to Use PowerShell String Concatenation](https://www.top-password.com/knowledge/powershell-string-concatenation.html)
 3. [Manipulating Strings in PowerShell](https://ss64.com/ps/syntax-operators.html)
-4. [Running powershell with arguments](https://docs.microsoft.com/it-it/powershell/scripting/learn/ps101/10-functions?view=powershell-7.1)

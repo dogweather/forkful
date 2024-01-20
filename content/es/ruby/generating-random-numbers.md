@@ -39,4 +39,3 @@ La generación de números aleatorios en Ruby está basada en un algoritmo pseud
 ## Ver También
 1. [La Doc oficial de `rand` en Ruby](https://ruby-doc.org/core-2.7.1/Kernel.html#method-i-rand)
 2. [SecureRandom](https://ruby-doc.org/stdlib-2.5.1/libdoc/securerandom/rdoc/SecureRandom.html)
-3. [Desafíos con la Generación de Números Aleatorios](https://www.toptal.com/developers/blog/the-challenges-with-random-number-generation)

@@ -39,5 +39,3 @@ The specific time format you use (ISO, Unix, etc.) will mostly depend on your pa
 Elm's documentation provides more specific details about working with time:
 
 1. [Elm - Time](https://package.elm-lang.org/packages/elm/time/latest/Time)
-2. [Elm - Date and Time](https://elmprogramming.com/date-and-time.html)
-3. [Elm - Tasks](https://guide.elm-lang.org/effects/tasks.html) (For understanding how `Time.now` works)

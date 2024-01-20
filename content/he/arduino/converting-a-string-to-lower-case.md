@@ -36,5 +36,4 @@ Serial.println(c);
 
 ## ראו גם:
 1. [תיעוד ה-API של Arduino עבור סטרינג](https://www.arduino.cc/reference/en/language/variables/data-types/stringobject/)
-2. [דוגמאת קוד של תיעוד Arduino להמרת מחרוזת לאותיות קטנות](https://www.arduino.cc/en/Tutorial.BuiltInExamples.StringCaseChanges)
 3. [תיעוד C++ עבור 'tolower'](https://en.cppreference.com/w/cpp/string/byte/tolower)

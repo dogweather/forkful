@@ -42,5 +42,3 @@ För mer information om ämnet, se följande källor:
 
 1. [Haskell http-conduit bibliotek](https://hackage.haskell.org/package/http-conduit)
 2. [HTTP protokollet](https://sv.wikipedia.org/wiki/Hypertext_Transfer_Protocol)
-3. [Fler HTTP-bibliotek i Haskell](https://wiki.haskell.org/Networking)
-4. [Webbskrapning i Haskell](https://www.schoolofhaskell.com/user/meiersi/wreq-0-3-0-0---web-browsing-in-haskell-revisited)

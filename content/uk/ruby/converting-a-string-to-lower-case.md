@@ -37,5 +37,4 @@ Method `downcase` працює за допомогою подорожі по к�
 ## Дивіться також:
 
 1. Документація String#downcase в Ruby - [Ruby-Doc](https://ruby-doc.org/core-2.7.0/String.html#method-i-downcase)
-2. Вступ до Ruby Strings для початківців - [Beginner's Guide to Ruby Strings](https://www.rubyguides.com/2015/05/ruby-strings/)
 3. Розповіді Stack Overflow про String#downcase в Ruby - [Stack Overflow](https://stackoverflow.com/questions/38375231/ruby-downcase-string)

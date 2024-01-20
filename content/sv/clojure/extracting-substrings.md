@@ -53,5 +53,4 @@ Implementationen av `subs` i Clojure bygger på Java's substring-metod, vilket i
 
 För en djupdykning i strängmanipulering och bearbetning i Clojure, rekommenderas följande länkar:
 
-1. [Clojure Docs om Strängbearbetning](https://clojure.org/guides/data_string)
 2. [Clojure for the Brave and True: Kapitel om Strängar](https://www.braveclojure.com/core-functions-in-depth)

@@ -62,8 +62,6 @@ HTTP 요청과 기본 인증의 사용은 웹과 IoT 시스템에서 정보를 �
 
 ## 함께 보기:
 
-1. [ESP8266HTTPClient 라이브러리](https://arduino-esp8266.readthedocs.io/en/latest/esp8266httpclient.html)
-2. [HTTP 기본 인증에 대한 위키](https://ko.wikipedia.org/wiki/%EA%B8%B0%EB%B3%B8_%EC%9D%B8%EC%A6%9D)
 3. [OAuth에 대한 위키](https://ko.wikipedia.org/wiki/OAuth)
 4. [Base64 인코딩에 대한 위키](https://ko.wikipedia.org/wiki/Base64)
 5. [Arduino WiFi 라이브러리](https://www.arduino.cc/en/Reference/WiFi)

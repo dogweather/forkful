@@ -49,4 +49,3 @@ dependencies {
 
 1. [Kotlin आधिकारिक वेबसाइट](https://kotlinlang.org/)
 2. [Gradle आधिकारिक वेबसाइट](https://gradle.org/)
-3. [Kotlin प्रोजेक्ट की स्थापना](https://kotlinlang.org/docs/kotlin-and-java.html)

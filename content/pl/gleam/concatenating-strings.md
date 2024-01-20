@@ -42,5 +42,3 @@ Po wykonaniu powyższego kodu, output wyglądałby tak:
 Jeśli chcesz dowiedzieć się więcej o stringach w Gleam, polecam odwiedzenie tych stron:
 
 1. [Oficjalna dokumentacja Gleam na temat String](https://gleam.run/book/tour/strings.html)
-2. [Wprowadzenie do Gleam: String Interpolation](https://dev.to/midasdev1618/a-quick-look-at-gleam-s-language-features-string-interpolation-33pf)
-3. [Manipulacje na stringach w Gleam](https://beautysuccessyangia.com/gleam-lang-string-manipulation/2974/)

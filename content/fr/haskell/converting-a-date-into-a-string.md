@@ -45,5 +45,3 @@ La fonction `formatTime` de la bibliothèque `Data.Time` prend deux arguments, u
 ## Voir aussi :
 
 1. [Data.Time - Haskell Documentation](http://hackage.haskell.org/package/time-1.11.1.1/docs/Data-Time.html)
-2. [Time-format - Haskell Documentation](http://hackage.haskell.org/package/time-format)
-3. [Introduction à Haskell - Conversion de données](https://www.lri.fr/~filliatr/ens/compil/s4.html)

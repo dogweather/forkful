@@ -41,4 +41,3 @@ Il modo in cui inizi un progetto in Swift può variare in base ai tuoi obiettivi
 1. Documentazione ufficiale di Swift: [link](https://docs.swift.org/swift-book/)
 2. Tutorial di programmazione Swift per principianti: [link](https://www.codecademy.com/learn/learn-swift)
 3. Introduzione ai progetti di Swift con Xcode: [link](https://developer.apple.com/library/archive/referencelibrary/GettingStarted/DevelopiOSAppsSwift/)
-4. Learn Swift with Bob: [link](https://learnswiftwithbob.com/)

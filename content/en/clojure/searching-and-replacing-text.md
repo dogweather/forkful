@@ -51,5 +51,3 @@ On implementation, `str/replace` functions will convert the pattern into a regex
 ## See Also:
 
 1. [Clojure Docs - clojure.string](https://clojuredocs.org/clojure.string)
-2. [Clojure - Regular expressions](https://clojure.org/guides/learn/regular_expressions)
-3. [Clojure Cookbook - String Manipulations](https://books.google.com/books?id=fiECBAAAQBAJ&pg=PT98)

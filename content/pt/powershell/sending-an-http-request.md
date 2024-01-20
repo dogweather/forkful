@@ -36,7 +36,6 @@ Ao enviar uma solicitação HTTP, o sistema cria uma conexão TCP com o servidor
 ## Veja também
 
 1. [Documentação oficial do Microsoft PowerShell](https://docs.microsoft.com/pt-br/powershell/)
-2. [Guia sobre solicitações HTTP em PowerShell](https://adamtheautomator.com/powershell-http-request/)
 3. [Página da web do PowerShell cmdlet Invoke-WebRequest](https://docs.microsoft.com/pt-br/powershell/module/microsoft.powershell.utility/invoke-webrequest?view=powershell-7.1)
 
 Lembre-se, a prática leva à perfeição. Continue codificando e explorando!

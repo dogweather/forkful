@@ -36,4 +36,3 @@ main = do
 
 ## 参照：
 1. ["Haskell Text" パッケージ](https://hackage.haskell.org/package/text)
-2. ["Haskellでの正規表現の扱い"](https://www.schoolofhaskell.com/school/starting-with-haskell/libraries-and-frameworks/text-manipulation/regex)

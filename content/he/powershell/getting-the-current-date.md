@@ -34,5 +34,4 @@ Get-Date
 
 ## ראה גם:
 1. [PowerShell Get-Date documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/get-date)
-2. [Use PowerShell to manipulate date object](https://devblogs.microsoft.com/scripting/powertip-use-powershell-to-manipulate-date-object)
 3. [.NET DateTime class](https://docs.microsoft.com/en-us/dotnet/api/system.datetime)

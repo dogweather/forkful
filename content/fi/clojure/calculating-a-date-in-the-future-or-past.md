@@ -47,5 +47,4 @@ Parasta Clojuressa on sen joustavuus ja yksinkertaisuus. Voit luoda oman funktio
 
 ## Katso myös
 1. Clojure for the Brave and True: [Ajan ja päivämäärän käsittely](https://www.braveclojure.com/core-functions-in-depth/)
-2. Java's Date and Time API: [How to use Java's Date and Time API with Clojure](https://www.baeldung.com/clojure-date-time)
 3. Clj-time GitHub: [clj-time:n dokumentaatio](https://github.com/clj-time/clj-time)

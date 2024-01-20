@@ -45,5 +45,4 @@ Da wir hier nur die Grundlagen abdecken können, empfehlen wir Ihnen folgende Re
 
 1. [Official Clojure Documentation](https://clojure.org/reference/reader)
 2. [Java's BufferedReader Class](https://docs.oracle.com/javase/8/docs/api/java/io/BufferedReader.html)
-3. [How to read files in Clojure](https://www.baeldung.com/clojure-read-file)
 4. [clojure.java.io API](https://clojure.github.io/clojure/clojure.java.io-api.html)

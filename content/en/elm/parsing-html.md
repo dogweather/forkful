@@ -56,5 +56,4 @@ Under the hood, Elm's HTML parser leverages a parsing approach that ensures inpu
 For more detailed info, refer to:
 
 1. Elm's [official guide](http://guide.elm-lang.org/) for version details.
-2. [HTML Parser package](https://package.elm-lang.org/packages/eeue56/elm-html-parser/latest/) documentation.
 3. Deeper dive into parser theory at [Wikipedia](https://en.wikipedia.org/wiki/Parsing).

@@ -49,5 +49,4 @@ Pour plus de détails d'implémentation, veuillez consulter la documentation off
 
 ## Voir aussi :
 1. [Elm Http - Github](https://github.com/elm/http)
-2. [Fetching data in Elm](https://korban.net/posts/elm/2018-07-09-basic-http-requests-in-elm/) 
 3. [Package manager for Elm](https://package.elm-lang.org/packages/elm/http/latest/Http)

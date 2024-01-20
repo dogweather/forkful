@@ -54,5 +54,3 @@ I vår implementering bruker vi `makeTime()` funksjonen for å konvertere vår s
 
 Følgende lenker inneholder mer informasjon om sammenligning av datoer og tid i Arduino:
 1. [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
-2. [DateTime Library For Arduino](https://www.arduino.cc/reference/en/libraries/rtc-datetime/)
-3. [Arduino Time Manipulation](https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/troubleshooting)

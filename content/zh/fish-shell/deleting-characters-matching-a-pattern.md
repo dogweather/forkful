@@ -33,5 +33,4 @@ Fish Shell 使用正则表达式来匹配字符串。这是一种模式匹配系
 删除匹配模式的字符是一个广泛的话题，如果你想要深入了解，请参阅以下资源：
 
 1. [Fish Shell文档](https://fishshell.com/docs/current/index.html)
-2. [正则表达式教程](https://www.lynda.com/Regular-Expressions-tutorials/Using-Regular-Expressions/85870-2.html)
 3. [Python文档](https://docs.python.org/3/library/re.html)

@@ -35,7 +35,5 @@ Hello, World!
 Historisk sett ble C programmeringsspråk utviklet på 1970-tallet, men det er fortsatt populært grunnet dets effektivitet og kontroll over systemet. Når det gjelder alternativer, kan du begynne prosjekter i andre språk, som Python, Java, eller JavaScript, avhengig av dine behov og preferanser. Merk at måten du starter et prosjekt på kan variere basert på språket du velger, og kompleksiteten av prosjektet ditt.
 
 ## Se også
-1. [C Programming History](https://en.wikipedia.org/wiki/C_(programming_language)#History)
 2. [Starting a project in Python](http://docs.python-guide.org/en/latest/writing/structure/)
 3. [Starting a project in Java](https://www.javatpoint.com/how-to-create-a-java-project)
-4. [Starting a project in JavaScript](https://www.digitalocean.com/community/tutorials/how-to-start-a-new-javascript-project-the-right-way)

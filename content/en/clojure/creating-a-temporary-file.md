@@ -46,6 +46,5 @@ For further reading, refer to:
 
 1. [Clojure java.io Documentation](https://clojure.github.io/clojure/clojure.java.io-api.html)
 2. [Java nio Files Documentation](https://docs.oracle.com/javase/8/docs/api/java/nio/file/Files.html)
-3. [Working with Files in Clojure](https://www.baeldung.com/clojure-file-io)
 
 Remember, practice is a key part of wrapping your head around this, so try it out!

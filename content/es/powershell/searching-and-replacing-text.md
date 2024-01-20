@@ -48,5 +48,3 @@ La utilidad '-replace' implementa la coincidencia de expresiones regulares. El p
 
 ## Véase También
 1. [Documentación oficial de PowerShell](https://docs.microsoft.com/es-es/powershell/)
-2. [Guía de introducción a las Expresiones regulares (regex) en PowerShell](https://www.jesusninoc.com/01/02/introduccion-a-las-expresiones-regulares-en-powershell/)
-3. [Reemplazo de texto en PowerShell con ejemplos prácticos](https://www.jesusninoc.com/01/01/sustitucion-de-texto-en-powershell-+-ejemplos/)

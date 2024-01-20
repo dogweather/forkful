@@ -58,4 +58,3 @@ if(date1.isLater(than: date2)) {
 Для детальнішої інформації дивіться офіційну документацію Swift про працю з `Date` та `DateFormatter`:
 1. [Дата та Час в Swift](https://developer.apple.com/documentation/foundation/date)
 2. [Форматтер Дати](https://developer.apple.com/documentation/foundation/dateformatter)
-3. [Порівняння Об'єктів в Swift](https://developer.apple.com/documentation/swift/comparing_data)

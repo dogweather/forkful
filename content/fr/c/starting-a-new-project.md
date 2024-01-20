@@ -33,7 +33,6 @@ Commencer un nouveau projet en C a une importance historique. C'est une langue a
 
 ## Voir aussi:
 Pour obtenir plus d'informations sur les projets en C, consultez les liens suivants:
-1. [Gestion de projet en C](https://www.projectmanagement.com/)
 2. [Introduction à la programmation en C](https://www.learn-c.org/)
 3. [Cours sur les structures de données en C](https://www.coursera.org/specializations/data-structures-algorithms)
 

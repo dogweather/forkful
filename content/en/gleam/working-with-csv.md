@@ -54,6 +54,5 @@ The provided Gleam implementation maps directly onto lists. It relies on the sim
 
 ## See Also
 
-1. Gleam Documentation: [https://gleam.run/docs/](https://gleam.run/docs/)
 2. The Gleam CSV Issue: [https://github.com/gleam-lang/](https://github.com/gleam-lang/)
 3. Gleam Community: [https://gleam.run/community/](https://gleam.run/community/)

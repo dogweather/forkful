@@ -42,5 +42,3 @@ Päivämäärien vertailussa DateTime-luokan ylikuormitettua ”<”, ”>” ja
 ## Katso myös:
 
 1. Arduinon virallinen aika-kirjasto: [Arduino Time Library](https://www.arduino.cc/reference/en/libraries/time/)
-2. Ajanhallinta Arduino-ohjelmoinnissa: [Arduino Time Management](https://learn.adafruit.com/multi-tasking-the-arduino-part-1/time-management)
-3. Lisätietoja DateTime-luokasta: [Arduino DateTime Class](https://www.arduino.cc/reference/en/libraries/datetime/)

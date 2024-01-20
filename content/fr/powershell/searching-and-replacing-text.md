@@ -47,5 +47,4 @@ La mise en œuvre de cette fonction est assez simple. Le `-replace` de PowerShel
 ## Voir aussi:
 
 1. [Official Microsoft Documentation](https://docs.microsoft.com/powershell/scripting/overview)
-2. [PowerShell -replace operator](https://ss64.com/ps/syntax-replace.html)
 3. [Regular Expressions in PowerShell](https://www.regular-expressions.info/powershell.html)

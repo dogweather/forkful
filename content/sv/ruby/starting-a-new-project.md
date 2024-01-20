@@ -56,5 +56,4 @@ När det gäller att starta ett nytt projekt, kom ihåg att en bra programmering
 
 1. The Ruby Programming Language, O'Reilly Media: [link here](https://www.oreilly.com/library/view/the-ruby-programming/9780596516178/)
 2. Ruby Documentation: [link here](https://www.ruby-lang.org/en/documentation/)
-3. Learn: Why's (Poignant) Guide to Ruby: [link here](http://mislav.uniqpath.com/poignant-guide/)
 4. The Basics of Creating a Ruby Gem: [link here](https://guides.rubygems.org/make-your-own-gem/)

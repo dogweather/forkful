@@ -74,5 +74,3 @@ int main() {
 ## 参考资料:
 
 1. [C library function - time()](https://www.tutorialspoint.com/c_standard_library/c_function_time.htm) - 更多有关 C 库函数 time() 的信息。
-2. [C programming dealing with Date and Time](https://aticleworld.com/c-programming-dealing-with-date-and-time) - 如何在 C 语言中处理日期和时间。
-3. [Time Manipulation in C using time.h](https://www.geeksforgeeks.org/time-manipulation-in-c-using-tm-structure) - 使用 C 的 time.h 进行时间操作。

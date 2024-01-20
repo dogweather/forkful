@@ -53,4 +53,3 @@ echo $response;
 1. [Документація PHP по `file_get_contents`](https://www.php.net/manual/en/function.file-get-contents.php)
 2. [Документація PHP по `cURL`](https://www.php.net/manual/en/book.curl.php)
 3. [Guzzle, PHP HTTP client](https://docs.guzzlephp.org/en/stable/)
-4. [PHP HTTP](https://pecl.php.net/package/pecl_http)

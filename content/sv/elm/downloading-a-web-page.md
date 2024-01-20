@@ -60,4 +60,3 @@ Om du vill fördjupa dina kunskaper om Elm-programmering kan du kolla in följan
 1. [Elm's offical guide](https://guide.elm-lang.org/)
 2. [Elm's Github repository](https://github.com/elm)
 3. [Elm's package documentation](https://package.elm-lang.org/packages/elm/http/latest/Http)
-4. [Elm's tutorial on web scraping](https://korban.net/posts/elm/2018-11-28-web-scraping-in-elm/)

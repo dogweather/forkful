@@ -53,4 +53,3 @@ La concatenación de cadenas, aunque es simple, puede ser costosa en términos d
 Para más información sobre la manipulación de cadenas en Lua, consulta las siguientes fuentes:
 1. [Lua-Users wiki: Strings Tutorial](http://lua-users.org/wiki/StringsTutorial)
 2. [Programming in Lua: Strings](https://www.lua.org/pil/2.4.html)
-3. [Learn X in Y Minutes: Lua](https://learnxinyminutes.com/docs/es-es/lua-es/)

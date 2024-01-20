@@ -38,6 +38,5 @@ public class Main {
 
 ## Дивіться також
 
-1. [Java String substring() Method - W3Schools](https://www.w3schools.com/java/ref_string_substring.asp)
 2. [Extract a substring in Java - Stack Overflow](https://stackoverflow.com/questions/16027229/extracting-a-substring-in-java)
 3. [Java String substring() method with examples - TutorialsPoint](https://www.tutorialspoint.com/java/java_string_substring.htm)

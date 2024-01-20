@@ -68,5 +68,4 @@ Til syvende og sist, vil teknikken du bruker avhenge av dine krav og hva du fore
 
 ## Se også:
 
-1. [Chrono biblioteket på crates.io](https://crates.io/crates/chrono)
 2. [Dokumentasjonen for `chrono::format::strftime` på Rust](https://docs.rs/chrono/0.4.19/chrono/format/strftime/index.html)

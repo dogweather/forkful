@@ -57,9 +57,3 @@ Gleam!
 替代方案：有时，数据太大，无法一次性读入内存，那么我们可以使用流式读取，从而提高内存效率。另一个方案是数据结构存储，比如数据库、键值对等。
 
 实现细节：读文件操作通常分为打开文件、读取文件、关闭文件三个步骤。在某些语言中(例如 C)，你需要手动关闭文件。而在 Gleam 中，这一切工作都由编译器自动完成。
-
-## 参见
-1. 官方文档 - [Gleam 文件操作文档](https://gleam.run/book/tour/files.html)
-2. 相关课程 - [Gleam 语言学习教程](https://gleam.run/learning/)
-3. 参考代码 - [GitHub 上的 Gleam 代码例子](https://github.com/gleam-lang/example/)
-4. 讨论区 - [Gleam 论坛](https://community.gleam.run/)

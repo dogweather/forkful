@@ -43,5 +43,4 @@ In Bezug auf die Implementierungsdetails extrahiert die `now` Funktion von Gleam
 
 Für weitere Informationen über Gleam und seine Funktionen, besuchen Sie:
 
-1. [Die offizielle Gleam Dokumentation](https://gleam.run/docs/)
 2. [Gleam Repositorium auf Github](https://github.com/gleam-lang/gleam)

@@ -52,6 +52,4 @@ app.ports.readFile.subscribe(function(filename) {
 ## इसे भी देखें:
 
 1. [Elm की औपचारिक गाइड](https://guide.elm-lang.org/)
-2. [Elm और जावास्क्रिप्ट इंटरोप ट्यूटोरियल](https://elmprogramming.com/interop.html)
 3. [File API और FileReader](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
-4. [Elm के संसाधन और उदासीनता](https://korban.net/posts/elm/2018-11-28-resources-and-trades-offs-elm-lang/)

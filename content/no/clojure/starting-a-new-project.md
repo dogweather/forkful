@@ -38,5 +38,4 @@ Det er viktig å merke seg at hvert prosjekt du oppretter kommer med en standard
 ## Se Også
 
 1. [Clojure - Getting Started](https://clojure.org/guides/getting_started)
-2. [Leiningen for Beginners](https://www.learnhowtoprogram.com/languages/clojure/leiningen-for-beginners)
 3. [The Boot Clojure Build Tool](https://boot-clj.com/)

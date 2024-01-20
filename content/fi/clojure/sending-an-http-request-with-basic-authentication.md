@@ -62,5 +62,4 @@ Natiivissa Clojuressa ei ole sisäänrakennettua kirjastoa tähän tehtävään,
 
 1. Clojure - [virallinen sivu](https://clojure.org/)
 2. http-kit - [GitHub-sivu](https://github.com/http-kit/http-kit)
-3. Perustodentaminen - [Wikipedia](https://fi.wikipedia.org/wiki/Perustodentaminen)
 4. OAuth - [Wikipedia](https://fi.wikipedia.org/wiki/OAuth)

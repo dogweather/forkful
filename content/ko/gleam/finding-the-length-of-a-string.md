@@ -46,6 +46,4 @@ fn main() {
 
 다른 관련된 소스는 아래에서 확인하세요:
 
-1. [Gleam Documentation - String Module](https://gleam.run/documentation/guide/#string)
 2. [String Functions - Elixir School](https://elixirschool.com/en/lessons/basics/strings/)
-3. [Gleam Language: A Type-Safe Language for the Beam VM](https://increment.com/programming-languages/gleam-language-a-type-safe-language-for-the-beam-vm/)

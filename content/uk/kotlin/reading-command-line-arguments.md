@@ -39,5 +39,4 @@ Ukraine
 ## Див. також
 
 1. [Документація Kotlin про аргументи командного рядка](https://kotlinlang.org/docs/tutorials/command-line.html)
-2. [Деталі про обробку аргументів командного рядка в Kotlin](https://www.baeldung.com/kotlin-command-line-args)
 3. [Обсуждение реализации обработки аргументов командной строки в Kotlin на StackOverflow](https://stackoverflow.com/questions/39598349/kotlin-command-line-parameters)

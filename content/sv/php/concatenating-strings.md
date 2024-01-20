@@ -59,4 +59,3 @@ PHP hanterar internt denna konkatenering genom att skapa en ny sträng och kopie
 
 1. [PHP String-operators på PHP.net](https://www.php.net/manual/en/language.operators.string.php)
 2. [PHP strängmanipulation på W3Schools](https://www.w3schools.com/php/php_ref_string.asp)
-3. [PHP strängövningar på PAH.com](https://practice-action-hero.com/php-string-exercises.html)

@@ -45,5 +45,4 @@ Szczególną rzeczą, na którą należy zwrócić uwagę, jest to, że metoda `
 Istnieje wiele źródeł, które pomogą ci zrozumieć ten temat:
 
 1. [Dokumentacja Microsoft na temat klasy DateTime](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime)
-2. [Przewodnik Microsoft na temat formatowania i analizowania dat](https://docs.microsoft.com/pl-pl/dotnet/standard/base-types/formatting-and-parsing-dates-and-times)
 3. [Dokumentacja Microsoft na temat metody ParseExact()](https://docs.microsoft.com/pl-pl/dotnet/api/system.datetime.parseexact)

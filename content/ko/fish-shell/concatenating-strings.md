@@ -48,4 +48,3 @@ string join -- "" $list
 
 1. [Fish Shell 공식 문서](https://fishshell.com/docs/current/index.html)
 2. [Fish 에서 string 조작에 대한 훌륭한 토론](https://stackoverflow.com/questions/27996706/string-manipulation-in-fish-shell)
-3. [문자열을 연결하는 다른 방법에 대한 블로그 게시물](https://www.baeldung.com/fish-shell-concatenate-strings)

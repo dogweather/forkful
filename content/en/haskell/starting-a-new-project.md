@@ -54,4 +54,3 @@ Staring a new project with Stack in Haskell is about setting up an isolated envi
 3. [Stack Documentation](https://docs.haskellstack.org/): For a deeper dive into Stack.
 4. [Nix Documentation](https://nixos.wiki/wiki/Nix): To get started with Nix.
 5. [The Cabal User Guide](https://cabal.readthedocs.io/): To understand more about Cabal.
-6. [What I Wish I Knew When Learning Haskell](http://dev.stephendiehl.com/hask/): A complete understanding of Haskell with concepts and exercises.

@@ -34,7 +34,5 @@ Gleamの代わりに、他のErlang VM言語（ElixirやLFEなど）を使用し
 
 ## 参考資料：
 
-1. [公式Gleamドキュメンテーション](https://gleam.run/docs/)
 2. [Gleamリポジトリ](https://github.com/gleam-lang/gleam)
-3. [新プロジェクトの開始に関するブログ記事](https://blog.gleam.run/introduction/)
 4. [Erlang](https://www.erlang.org/)

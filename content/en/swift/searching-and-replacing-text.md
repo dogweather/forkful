@@ -35,5 +35,4 @@ This code searches for the word "World" in the variable `str` and replaces it wi
 
 ## See Also 
 1. Swift Documentation on strings: [Strings and Characters - Swift](https://docs.swift.org/swift-book/LanguageGuide/StringsAndCharacters.html)
-2. Apple Developer Documentation: [replacingOccurrences(of:with:options:range:)](https://developer.apple.com/documentation/foundation/nsstring/1416398-replacingoccurrences)
 3. Guides on Swift String Manipulation: [Hacking with Swift](https://www.hackingwithswift.com)

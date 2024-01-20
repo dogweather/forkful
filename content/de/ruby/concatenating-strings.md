@@ -53,5 +53,4 @@ Im Gegensatz zu den anderen Operatoren erzeugt `+` immer einen neuen String, wä
 Weitere Informationen zu String-Verkettung und der Sprache können unter den folgenden Links gefunden werden:
 
 1. [String Concatenation (Ruby-Dokumentation)](https://ruby-doc.org/core-2.7.0/String.html#method-i-2B-40).
-2. [Ruby Basics: String Interpolation (Launch School)](https://launchschool.com/books/ruby/read/strings#stringinterpolation).
 3. [Stack Overflow: Difference between << and + for concatenating strings in Ruby](https://stackoverflow.com/questions/4684446/why-is-the-shovel-operator-preferred-over-plus-for-concatenating-ruby).

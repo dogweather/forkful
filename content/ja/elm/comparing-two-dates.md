@@ -47,4 +47,3 @@ main=
 
 1. [Elm公式ドキュメンテーション：Date](https://package.elm-lang.org/packages/elm/time/latest/Date)
 2. [StackOverflow：Elmでの日付比較](https://stackoverflow.com/questions/52920077/comparing-dates-in-elm)
-3. [Elm Cookbook：日付と時刻](https://elmprogramming.com/dates-and-times.html)

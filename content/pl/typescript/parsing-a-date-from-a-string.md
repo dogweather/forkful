@@ -34,7 +34,6 @@ Uważaj na format daty: "YYYY-MM-DDTHH:MM:SSZ" to tzw. format ISO, który jest o
 3. **Jak to działa:** Gdy używasz `new Date(dateString)`, tworzysz nowy obiekt daty, analizując podane łańcuch według ustalonego formatu.
 
 ## Zobacz również
-1. [Dokumentacja MDN na temat obiektów daty](https://developer.mozilla.org/pl/docs/Web/JavaScript/Referencje/Obiekty/Date)
 2. [Przetwarzanie daty w JavaScript](https://flaviocopes.com/javascript-dates/)
 3. [Biblioteka moment.js](https://momentjs.com/)
 4. [Biblioteka date-fns](https://date-fns.org/) 

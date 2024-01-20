@@ -43,5 +43,4 @@ Sobre a implementação, `length()` e `size()` são implementadas como funções
 ## Veja Também
 
 1. [Documentação Oficial do C++](http://www.cplusplus.com/)
-2. [C++ para Iniciantes](https://beginnersbook.com/2017/08/cpp-strings/)
 3. [Tutorial de Strings em C++ no Programiz](https://www.programiz.com/cpp-programming/strings)

@@ -52,6 +52,4 @@ Beim HTML-Parsing mit jsoup handelt es sich um top-down-Parsing. Erst wird die g
 ## Siehe auch
 Für weitere Informationen über das HTML-Parsing in Kotlin, werfen Sie einen Blick auf folgende Quellen:
 1. [jsoup Dokumentation](https://jsoup.org/cookbook/)
-2. [HtmlCleaner GitHub](https://github.com/HolgerBrandl/theduplicates)
-3. [Jericho HTML Parser](https://jericho.htmlparser.net/docs/index.html)
 4. [Kotlin-Dokumentation](https://kotlinlang.org/docs/reference/)

@@ -37,4 +37,3 @@ Cette application va afficher un message "Bonjour tout le monde! Je suis en trai
 ## Voir aussi :
 1. Guide officiel Elm : [Elm Language](https://elm-lang.org/)
 2. Documentation Elm HTML : [Elm HTML](https://package.elm-lang.org/packages/elm/html/latest/)
-3. Tutoriel Parsing HTML en Elm : [Elm HTML Parsing](https://elmprogramming.com/parsing-html.html)

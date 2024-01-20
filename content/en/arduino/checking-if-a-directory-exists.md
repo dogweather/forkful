@@ -48,5 +48,4 @@ When `SD.exists("/exampleDirectory")` is called in Arduino, it executes a functi
 ## See Also:
 
 1. [Arduino SD Library Documentation](https://www.arduino.cc/en/Reference/SD) - Official documentation for the SD library.
-2. [Arduino File Manipulation](https://www.arduino.cc/en/Tutorial/FileManipulation) - Learn more about managing files and directories.
 3. [Arduino SD Card Tutorial](https://www.makerguides.com/arduino-sd-card-tutorial/) - Comprehensive guide for handling SD card data with Arduino.

@@ -44,5 +44,4 @@ Medan `filter`-metoden går igenom varje tecken i strängen och kontrollerar om 
 För att fördjupa dig mer i Swifts stränghantering, ta en titt på dessa länkar:
 
 1. Apples dokumentation om strängar och karaktärer: [https://developer.apple.com/documentation/swift/string](https://developer.apple.com/documentation/swift/string)
-2. Swift String Cheat Sheet: [https://useyourloaf.com/assets/cheat-sheets/swift-string-cheat-sheet.pdf](https://useyourloaf.com/assets/cheat-sheets/swift-string-cheat-sheet.pdf)
 3. Ray Wenderlich's artikel om strängmanipulation i Swift: [https://www.raywenderlich.com/449-swift-string-cheat-sheet-and-quick-reference](https://www.raywenderlich.com/449-swift-string-cheat-sheet-and-quick-reference)

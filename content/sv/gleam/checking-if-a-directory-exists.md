@@ -49,6 +49,3 @@ För att göra detta i Gleam, använder vi modulen `gleam/directory` och funktio
 
 ## Se även
 För mer information om hantering av mappar och filer i Gleam, se de officiella dokumenten:
-
-1. Gleam Directory Module: [https://hexdocs.pm/gleam_stdlib/gleam/directory](https://hexdocs.pm/gleam_stdlib/gleam/directory)
-2. Gleam IO Module: [https://hexdocs.pm/gleam_stdlib/gleam/io](https://hexdocs.pm/gleam_stdlib/gleam/io)

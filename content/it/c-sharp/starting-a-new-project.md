@@ -47,8 +47,5 @@ Avviare un nuovo progetto non è solo scrivere codice. È necessario un contesto
 3. Implementazione - L'implementazione di un nuovo progetto ha bisogno di una pianificazione accurata. Devi considerare l'architettura del software, la gestione dei dati, le interfacce utente e altro ancora.
 
 ## Per saperne di più
-1. [Recap sulle fondamenta di C#](https://www.microsoft.com/it-it/learn/csharp)
-2. [Guida all'Avvio di un Nuovo Progetto in C#](https://www.c-sharpcorner.com/tutorial/c-sharp-project-deployment)
-3. [Alternative a C#: un confronto](https://stackify.com/csharp-vs-python-vs-java/) 
 
 Ricorda, imparare dalla pratica è il modo migliore per diventare un esperto programmatore C#. Buona codificazione!

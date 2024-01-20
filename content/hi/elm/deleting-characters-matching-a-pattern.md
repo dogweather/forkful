@@ -48,8 +48,6 @@ patternDelete "aeiou" "Hello, World"
 
 नीचे दिए गए कुछ साधारण और उन्नत टुटोरियल्स और स्रोतों पर जाएं जो आपको और अधिक सीखने में मदद करेंगे:
 
-1. [Elm पाठ्यक्रम](https://www.elm-tutorial.org/en/)
-2. [Elm संदर्भ पुस्तिका](https://package.elm-lang.org/packages/elm/core/latest/String-)
 3. [Elm और pattern matching पर डीप डाइव](https://elmprogramming.com/pattern-matching.html) 
 
 ध्यान दें कि Elm भाषा शुद्ध कार्यों और असिंक्रोन प्रोग्रामिंग के बीच अद्वितीय संतुलन की सिफारिश करती है, जिससे कार्यक्रमकर्ताओं को सुरक्षित और सटीक कोड लिखने में मदद मिलती है।

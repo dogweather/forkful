@@ -40,6 +40,5 @@ An interesting detail about Elm's `String.split` is that it doesn't treat the in
 
 ## See Also
 
-1. String Processing in Elm: [https://elmprogramming.com/strings.html](https://elmprogramming.com/strings.html)
 2. String functions in Elm: [https://package.elm-lang.org/packages/elm/core/latest/String](https://package.elm-lang.org/packages/elm/core/latest/String)
 3. More on Functional Programming in Elm: [https://guide.elm-lang.org/](https://guide.elm-lang.org/)

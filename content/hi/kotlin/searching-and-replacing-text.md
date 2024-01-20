@@ -39,4 +39,3 @@ Hello Kotlin!
 ## देखने के लिए:
 1. [Kotlin डॉक्यूमेंटेशन - रिप्लेस फंक्शन](https://kotlinlang.org/api/latest/jvm/stdlib/kotlin.text/replace.html)
 2. [StackOverflow: Kotlin में स्ट्रिंग को कैसे बदलें](https://stackoverflow.com/questions/52213017/how-do-i-replace-string-in-kotlin)
-3. [ब्लॉग: Kotlin में रेगेक्स इस्तेमाल करने पर गाइड](https://intellij-support.jetbrains.com/hc/en-us/community/posts/360000137344-How-to-use-regular-expressions-in-Kotlin-with-Intellij-IDEA)

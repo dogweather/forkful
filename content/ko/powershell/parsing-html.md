@@ -45,5 +45,4 @@ PowerShell에서는 HTML 파서 -ComObject를 통해 파싱을 실행합니다. 
 HTML 파싱에 대해 더 알아보고 싶다면 아래 링크를 참조하세요.
 
 1. [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
-2. [An introduction to HTML Parsing in PowerShell](https://4sysops.com/archives/an-introduction-to-html-parsing-in-powershell/)
 3. [HtmlAgilityPack](https://html-agility-pack.net/)

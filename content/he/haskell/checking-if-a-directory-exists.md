@@ -33,4 +33,3 @@ main = do
 
 ## ראה גם:
 1. [תיעוד של System.Directory](https://hackage.haskell.org/package/directory-1.3.6.1/docs/System-Directory.html)
-2. [פוסט בבלוג על קריאות לקובץ ולספריות בהאסקל](https://www.fpcomplete.com/blog/2017/10/Haskells-missing-concurrency-shell-promises/)

@@ -48,5 +48,4 @@ Co do szczegółów implementacji, Go korzysta z generatora liczb pseudolosowych
 
 1. [Dokumentacja Go na temat pakietu math/rand](https://golang.org/pkg/math/rand/)
 2. [Dokumentacja Go na temat pakietu crypto/rand](https://golang.org/pkg/crypto/rand/)
-3. [Blog Go na temat generowania liczb losowych](https://blog.golang.org/random-number-generation)
 4. [Opis algorytmu PCG](https://www.pcg-random.org/)

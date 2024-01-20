@@ -42,4 +42,3 @@ $currentDateString = $currentDate.ToString('dddd, MMMM dd, yyyy')
 以下のリンクでは、このトピックに関してさらに詳細な情報を得ることができます。
 1. PowerShellの公式ドキュメンテーション: [https://docs.microsoft.com/ja-jp/powershell/](https://docs.microsoft.com/ja-jp/powershell/)
 2. `.ToString`メソッドの詳細: [https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.tostring](https://docs.microsoft.com/ja-jp/dotnet/api/system.datetime.tostring)
-3. PowerShellでの日付と時刻の規則: [https://docs.microsoft.com/ja-jp/powershell/scripting/samples/working-with-dates-and-times](https://docs.microsoft.com/ja-jp/powershell/scripting/samples/working-with-dates-and-times)

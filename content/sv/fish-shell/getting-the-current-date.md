@@ -41,4 +41,3 @@ För mer information om att använda datumkommandot och andra relaterade ämnen,
 1. Fish Shell dokumentation: [Fish Shell](https://fishshell.com/docs/current/index.html)
 2. GNU Core Utilities manual: [Date-command](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
 3. Strftime manuella sidan: [Strftime](https://man7.org/linux/man-pages/man3/strftime.3.html)
-4. C++ dokumentation: [clock_gettime](http://www.cplusplus.com/reference/ctime/clock_gettime/)

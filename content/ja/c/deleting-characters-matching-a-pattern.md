@@ -55,5 +55,4 @@ int main() {
 ## 参照
 
 1. C library function - [memmove()](https://www.tutorialspoint.com/c_standard_library/c_function_memmove.htm) 
-2. C library function - [strchr()](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm) 
-3. [Deleting 'n' Characters From A String In C](https://www.codingeek.com/tutorials/c-programming/deleting-n-characters-from-a-string-in-c/)
+2. C library function - [strchr()](https://www.tutorialspoint.com/c_standard_library/c_function_strchr.htm)

@@ -60,7 +60,6 @@ I moderne programmering er det alternativer til Basic Authentication, slik som O
 I forhold til implementasjon, skal du ta hensyn til at Basic Authentication sender brukernavn og passord i klartekst (Base64-kodet, ikke kryptert). Derfor skal det brukes sammen med HTTPS for å unngå at sensitiv informasjon blir hacket.
 
 ## Se Også 
-1. [Mozilla Developer Network - HTTP autentisering](https://developer.mozilla.org/nb/docs/Web/HTTP/Authentication)
 2. [libcurl - Tutorial](https://curl.se/libcurl/c/libcurl-tutorial.html)
 3. [JWT.io - Introduksjon til JSON Web Tokens](https://jwt.io/introduction/)
 4. [OAuth (offisielle side)](https://oauth.net/)

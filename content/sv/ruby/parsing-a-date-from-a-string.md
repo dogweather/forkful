@@ -59,6 +59,3 @@ Det är så enkelt att göra det i Ruby. Standardbiblioteket `Date` tar varje st
 ## Se Också:
 
 1. [Ruby Date Documentation](https://ruby-doc.org/stdlib-2.5.1/libdoc/date/rdoc/Date.html)
-2. [Tolkning av strängar i Ruby](https://www.rubyguides.com/2018/10/parsing-dates-in-ruby/)
-3. [Ruby `strptime` Documentation](https://www.rubydoc.info/stdlib/core/Date.strptime)
-4. [Ruby Built-in Classes and Modules](https://docs.ruby-lang.org/en/3.0.0/syntax/built_in_classes_and_modules_rdoc.html)

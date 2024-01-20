@@ -49,4 +49,3 @@ fn main() {
 
 1. [Rust डॉक्यूमेंटेशन](https://doc.rust-lang.org/book/)
 2. [Tempfile crate डॉक्यूमेंटेशन](https://docs.rs/tempfile/3.2.0/tempfile/)
-3. [Rust File IO - फ़ाइलों को लिखने और पढ़ने](https://stevedonovan.github.io/rustifications/2018/09/08/common-rust-io-idioms.html)

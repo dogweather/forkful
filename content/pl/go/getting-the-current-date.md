@@ -47,4 +47,3 @@ Bieżąca Data : 2021-12-15
 
 1. Dokumentacja Go na temat pakietu `time`: [Kliknij tutaj](https://golang.org/pkg/time/)
 2. Artykuł na temat formatowania czasu w Go: [Kliknij tutaj](https://yourbasic.org/golang/format-parse-string-time-date-example/)
-3. Tutorial na temat manipulacji datą i czasem w Go: [Kliknij tutaj](https://tutorialedge.net/golang/working-with-dates-golang/)

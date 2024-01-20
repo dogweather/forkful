@@ -35,5 +35,4 @@ Denna kod skapar en ny sträng `text` som kommer vara "KalleAnka".
 
 ## Se även
 1. Officiell Gleam-dokumentation: https://gleam.run/
-2. Gleams intext-funktion: [Gleam-intertext-dokumentation](https://hexdocs.pm/intertext/readme.html)
 3. En djupdykning i strängsammanslagningar: [Strängsammanslagning på Wikipedia](https://en.wikipedia.org/wiki/Concatenation)

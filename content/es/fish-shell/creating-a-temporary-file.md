@@ -38,6 +38,5 @@ Cabe destacar que `mktemp` en Fish Shell implementa una característica segura l
 ## Ver También
 Para obtener más información, consulta las fuentes recomendadas:
 1. [Documentación oficial de Fish Shell](http://fishshell.com/docs/current/index.html)
-2. [Guía de archivos temporales en Linux](https://www.linux.com/topic/desktop/temporary-files-and-directory-fundamental-linux/)
 3. [Mitigación de "File Race Condition"](https://en.wikipedia.org/wiki/Time_of_check_to_time_of_use)
 4. [Principios de manipulación de archivos temporales](https://www.ibm.com/docs/es/zos/2.3.0?topic=concepts-temporary-file-handling)

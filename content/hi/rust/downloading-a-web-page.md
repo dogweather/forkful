@@ -39,4 +39,3 @@ async fn main() -> Result<(), reqwest::Error> {
 ## देखें भी
 1. [Reqwest दस्तावेज़ीकरण](https://docs.rs/reqwest/)
 2. [Rust आधिकारिक दस्तावेज़](https://www.rust-lang.org/learn)
-3. [Rust प्रोग्रामिंग भाषा द्वारा हाउर्स ऑफ कोड](https://www.hackerrank.com/domains/tutorials/rust)

@@ -40,4 +40,3 @@ En Clojure, `println` imprime les arguments, qui sont convertis en chaînes, à 
 
 ## Voir aussi
 1. Documentation officielle de Clojure pour println : [https://clojuredocs.org/clojure.core/println](https://clojuredocs.org/clojure.core/println)
-2. Guide de débogage Clojure : [https://clojure.org/guides/debugging](https://clojure.org/guides/debugging)

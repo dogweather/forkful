@@ -41,4 +41,3 @@ $ ./myscript.sh אהלן שלום
 ## ראה גם
 
 1. מדריך Bash מאת GNU: [https://www.gnu.org/software/bash/manual/bash.html](https://www.gnu.org/software/bash/manual/bash.html)
-2. ממשק משורת פקודה מאת Wikipedia: [https://he.wikipedia.org/wiki/חלון_שורת_פקודה](https://he.wikipedia.org/wiki/חלון_שורת_פקודה)

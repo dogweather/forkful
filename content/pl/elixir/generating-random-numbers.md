@@ -31,12 +31,4 @@ Generowanie liczb losowych to stary koncept w dziedzinie informatyki. W dawniejs
 
 Alternatywą dla Enum.random może być korzystanie z :rand.uniform w Elixirze. Na przykład, :rand.uniform(10) wygeneruje losową liczbę od 1 do 10.
 
-Ważne jest jednak, że "losowe" liczby generowane przez komputery są de facto pseudolosowe, co oznacza, że są one wygenerowane na podstawie określonego (choć skomplikowanego) algorytmu. 
-
-## Zobacz również
-
-1. "Jak generować losowe liczby": [Link do tutoriala](http://example.com/tutorial)
-
-2. "Różne metody generowania liczb losowych": [Link do artykułu](http://example.com/article)
-
-3. Kod źródłowy Elixir: [Link do GitHub](http://example.com/elixir)
+Ważne jest jednak, że "losowe" liczby generowane przez komputery są de facto pseudolosowe, co oznacza, że są one wygenerowane na podstawie określonego (choć skomplikowanego) algorytmu.
